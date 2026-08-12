@@ -4,17 +4,17 @@ class VapoursynthSub < Formula
   url "https://ghfast.top/https://github.com/vapoursynth/subtext/archive/refs/tags/R6.tar.gz"
   sha256 "536e2f056c7b318b0104b8b9050bb17c00d8ca60b0e5fdecf1ee92879c5f9165"
   license "MIT"
-  revision 1
+  revision 2
   version_scheme 1
   head "https://github.com/vapoursynth/subtext.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "e72c530140ff3bce81a7456029227c2a3859fbae3c5091405b9dc6c6788ddd1e"
-    sha256 cellar: :any, arm64_sequoia: "3df48df43f512e50f4763e543b95635a11a634e688ca408703a38e866e23d4f0"
-    sha256 cellar: :any, arm64_sonoma:  "a5db7fd939deb265993977a742827c0a8cd5ba0ed99eebc9fc56b9fa7d5f7c02"
-    sha256 cellar: :any, sonoma:        "396b89abb44cb82ae675eb8cd9e807a5d073c91a5d327ace62ef02d7173e647a"
-    sha256               arm64_linux:   "49b9af9319e5d58e32704946ae287872b3a975825373d5affdc63d9ea9f1837a"
-    sha256               x86_64_linux:  "a5dbbb47bb1afa5d0dba1422c737fb5e526330c9f91601d03d692854f945bc5a"
+    sha256 cellar: :any, arm64_tahoe:   "f56f0a10b08f066c5909a4273f0a986e40081291eb107abe9d79ff51cf67a5e1"
+    sha256 cellar: :any, arm64_sequoia: "eaf9bea7b6a8acc2d51a31e9ea67107ebc6dc0d12c35eca8bbc919365fbc5fc6"
+    sha256 cellar: :any, arm64_sonoma:  "6a8c5478e72add6ca4c8b7450820d1e73ead6f91354b5000a2fa5f6f8880442e"
+    sha256 cellar: :any, sonoma:        "5f75a967dca0985a69441ff1be78350f69ebbf9480d52a6c3c7255454eb9474b"
+    sha256               arm64_linux:   "7a60dac36d34316d9b2d6105cf7c76b918a8f133236ac2e876024ba135b6470e"
+    sha256               x86_64_linux:  "b4af8d5b051d336e07eefddacea443225381f3e6ea80803c079709ee13425b43"
   end
 
   depends_on "meson" => :build

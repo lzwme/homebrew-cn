@@ -40,22 +40,13 @@ class Deno < Formula
 
   conflicts_with "dxpy", because: "both install `dx` binaries"
 
-  def llvm
-    Formula["llvm"]
-  end
+  def llvm = Formula["llvm"]
 
   def install
-    inreplace "Cargo.toml" do |s|
-      # https://github.com/Homebrew/homebrew-core/pull/227966#issuecomment-3001448018
-      s.gsub!(/^lto = true$/, 'lto = "thin"')
-
-      # Avoid vendored dependencies.
-      s.gsub!(/^libffi = "(.+)"$/, 'libffi = { version = "\\1", features = ["system"] }')
-      s.gsub!(/^rusqlite = { version = "(.+)", features = \["unlock_notify", "bundled", "session"/,
-              'rusqlite = { version = "\\1", features = ["unlock_notify", "session"')
-    end
-
+    # Avoid vendored dependencies.
+    ENV["CARGO_FEATURE_SYSTEM"] = "1" # libffi
     ENV["LCMS2_LIB_DIR"] = formula_opt_lib("little-cms2")
+    ENV["LIBSQLITE3_SYS_USE_PKG_CONFIG"] = "1"
     # env args for building a release build with our python3 and ninja
     ENV["PYTHON"] = which("python3")
     ENV["NINJA"] = which("ninja")
@@ -67,8 +58,8 @@ class Deno < Formula
     ENV["GN_ARGS"] = "clang_version=#{llvm.version.major} use_lld=#{OS.linux?}"
 
     # Enable V8 without `__runtime_defaults`, which brings the `upgrade` subcommand and vendored zlib-ng
-    system "cargo", "install", "--no-default-features", "--features", "deno_core/v8,v8/v8",
-                    "-vv", *std_cargo_args(path: "cli")
+    features = ["deno_core/v8", "v8/v8"]
+    system "cargo", "install", "--no-default-features", "-vv", *std_cargo_args(path: "cli", features:)
     bin.install_symlink bin/"deno" => "dx"
     generate_completions_from_executable(bin/"deno", "completions")
   end

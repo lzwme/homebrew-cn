@@ -1,9 +1,10 @@
 class Lume < Formula
   desc "Create and manage Apple Silicon-native virtual machines"
   homepage "https://cua.ai"
-  url "https://ghfast.top/https://github.com/trycua/cua/archive/refs/tags/lume-v0.19.0.tar.gz"
-  sha256 "7d293bec0aa983ef8734890537b673894abcc2b8df103a5668644a146d8bd5c7"
+  url "https://ghfast.top/https://github.com/trycua/cua/archive/refs/tags/lume-v0.5.3.tar.gz"
+  sha256 "4585ebc2b492bfa839ae6b2d1a18c1dac6eded6e0c54a9d42885956962233a8c"
   license "MIT"
+  version_scheme 1
   head "https://github.com/trycua/cua.git", branch: "main"
 
   livecheck do
@@ -12,8 +13,8 @@ class Lume < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f157e4a87e4969ec546d72d2e0b94bae2ef083746652febbc730da422f37dabc"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6f1995d6827018fda0baa1faf48cb9cc7d81d6e8d6316dc6598b0d4e3ce70c32"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ab0d9458b6da654116d7ce851e35fe6234a5915fa08c8935fb3c5d84c34c2173"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "40ff1b2f1821475bdb08905364ade2feeb909adb929b60cb0864e21d1e0710dd"
   end
 
   depends_on xcode: ["16.0", :build]

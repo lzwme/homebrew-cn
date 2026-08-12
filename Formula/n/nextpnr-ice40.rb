@@ -1,18 +1,18 @@
 class NextpnrIce40 < Formula
   desc "Portable FPGA place and route tool for Lattice iCE40"
   homepage "https://github.com/YosysHQ/nextpnr"
-  url "https://ghfast.top/https://github.com/YosysHQ/nextpnr/archive/refs/tags/nextpnr-0.11.tar.gz"
-  sha256 "feb39c421cd432b3ecca004a6fdf0b7578375a7f12401906dd27c25eb948cdc3"
+  url "https://ghfast.top/https://github.com/YosysHQ/nextpnr/archive/refs/tags/nextpnr-0.11.1.tar.gz"
+  sha256 "2af682d94abf3f3e116f2fad36dc7db314fa93bfbb185e63619f2ec4f5fe40dc"
   license "ISC"
   head "https://github.com/YosysHQ/nextpnr.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "ff780eeaef569fe6521ad141f7a27d56ef76a62e775e685771c59dbabdf8ff8b"
-    sha256 cellar: :any, arm64_sequoia: "6a277ea7b8678f8524aa43f835e7f7b1c2902c96d2c9a38191cf8cf200a90609"
-    sha256 cellar: :any, arm64_sonoma:  "a1413efe21ccbfa48948df3e20c8d33f4e386067a465a6b5f02f610dbbb83674"
-    sha256 cellar: :any, sonoma:        "2a24d363c32cd11d267fb95889858ae46009ab2a74405d6a5fadb61d8c70381a"
-    sha256 cellar: :any, arm64_linux:   "98ebcf1a3112fd18c0530c252fbf95084f2a0106015a4ec1a88151185e68ef8f"
-    sha256 cellar: :any, x86_64_linux:  "13248d0a201ba7f9d518c681a8953bf82b18c88cec580f7d828f32f8f7bc984a"
+    sha256 cellar: :any, arm64_tahoe:   "f72cfb9a7f583c9072aded271abf4f3fe8143a6d47df13d7848028d42eedc2f8"
+    sha256 cellar: :any, arm64_sequoia: "940feded7a9ea0122ae2932102c21c72aeadd3aab5a5bb4cc560ad520fb96256"
+    sha256 cellar: :any, arm64_sonoma:  "2d19ce48c42a580b331d6c334ee63dad056c5766975ae1bdbb566e3de52d85e3"
+    sha256 cellar: :any, sonoma:        "a93f9f6d0b94d344a78073b1949474d72fbdb9646b6b67ec433e2a950c73d165"
+    sha256 cellar: :any, arm64_linux:   "5c21de7b896a1e8e9e89752f7f50710e4ace878a0fdf142b05750884dd8461f0"
+    sha256 cellar: :any, x86_64_linux:  "7ce87bdac12cde51ddb91a869ede8654a9620c1081ecdf1a11c5b7977967e75f"
   end
 
   depends_on "cmake" => :build

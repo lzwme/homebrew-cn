@@ -1,23 +1,29 @@
 class Pake < Formula
   desc "Turn any webpage into a desktop app with Rust with ease"
   homepage "https://github.com/tw93/Pake"
-  url "https://registry.npmjs.org/pake-cli/-/pake-cli-3.15.5.tgz"
-  sha256 "a248e756b65cc9e1ec982f326761a548018483aeb6698aa4e7028433f52e19bd"
+  url "https://registry.npmjs.org/pake-cli/-/pake-cli-3.15.6.tgz"
+  sha256 "3cfd9681aa737c07b7444910c3b4d88a81af7a4ac8c7d3b116a987b47bbd6483"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "54fee23881afb21bc545e1f9584d31aff034da88b662f3f04c8a905c12f572c7"
-    sha256 cellar: :any, arm64_sequoia: "54fee23881afb21bc545e1f9584d31aff034da88b662f3f04c8a905c12f572c7"
-    sha256 cellar: :any, arm64_sonoma:  "54fee23881afb21bc545e1f9584d31aff034da88b662f3f04c8a905c12f572c7"
-    sha256 cellar: :any, sonoma:        "f4efe4d2efd73fe4724ae245aa9895fb64b7a73250dbc67a8e3227758e47183d"
-    sha256 cellar: :any, arm64_linux:   "cf07a4fd84e007514892f1ed04d3483f9fb2a6e9d7e8a0bf199f259b15f27e4d"
-    sha256 cellar: :any, x86_64_linux:  "861812b6ce9c583edfe05f567e83aa4e3b0d60c003a09d5d3ac10e8b7372fd5c"
+    sha256               arm64_tahoe:   "1aa8b78520f4cf15553375165e229293016a080e6529ed86dd4f8155235fad2f"
+    sha256               arm64_sequoia: "dda228e9a8496305e89ad65a8ab6a4a58f15d1cea7f2ec92eee0f980a7bf299f"
+    sha256               arm64_sonoma:  "75fac1e647655b929b3b56a39d7577a9ac432a34e000a1041307fdf31d40d33e"
+    sha256               sonoma:        "6fa9994c2a076809247c05be42f229f2b3e4f020f63f7dac026f89a79eabc469"
+    sha256 cellar: :any, arm64_linux:   "b16db9a98a692415107917126ff03d5d777d10616640cac60f2b1a6201f0cc00"
+    sha256 cellar: :any, x86_64_linux:  "b93784f448e8ae4a0f136232701cd6f988739c09e4257b652f2fa92d67392761"
   end
 
+  depends_on "pkgconf" => :build
+  depends_on "glib"
   depends_on "node"
   depends_on "pnpm"
   depends_on "rust"
   depends_on "vips"
+
+  on_macos do
+    depends_on "gettext"
+  end
 
   # Resources needed to build sharp from source to avoid bundled vips
   # https://sharp.pixelplumbing.com/install/#building-from-source
@@ -32,16 +38,30 @@ class Pake < Formula
   end
 
   def install
-    ENV["SHARP_FORCE_GLOBAL_LIBVIPS"] = "1"
-
     system "npm", "install", *std_npm_args, *resources.map(&:cached_download)
     bin.install_symlink libexec.glob("bin/*")
 
     node_modules = libexec/"lib/node_modules/pake-cli/node_modules"
-    rm_r(libexec.glob("#{node_modules}/icon-gen/node_modules/@img/sharp-*"))
-
     libexec.glob("#{node_modules}/.pnpm/fsevents@*/node_modules/fsevents/fsevents.node").each do |f|
       deuniversalize_machos f
+    end
+
+    ENV["SHARP_FORCE_GLOBAL_LIBVIPS"] = "1"
+
+    # `node-addon-api` 8 needs C++17, which the older `sharp` predates
+    inreplace node_modules/"icon-gen/node_modules/sharp/src/binding.gyp" do |s|
+      s.gsub! "'-std=c++0x'", "'-std=c++17'"
+      s.gsub! "'c++11'", "'c++17'"
+    end
+
+    # `icon-gen` pins an older `sharp` whose bundled `vips` shares the brewed soname
+    { node_modules => "build", node_modules/"icon-gen/node_modules" => "install" }.each do |dir, script|
+      rm_r(dir.glob("@img/sharp-*/lib/*.node"))
+      rm_r(dir.glob("@img/sharp-libvips-*/lib/libvips-cpp.*"))
+      cd dir/"sharp" do
+        system "npm", "run", script
+        rm_r("src/build/Release/obj.target")
+      end
     end
   end
 

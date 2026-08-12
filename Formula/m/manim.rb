@@ -6,19 +6,19 @@ class Manim < Formula
   url "https://files.pythonhosted.org/packages/dc/3b/ad54ce02f3e95d17d016cb1254708ae3795b60d5661f3b2085655940a565/manim-0.20.1.tar.gz"
   sha256 "1e9747fb2fc1bde58ad09bcbd77d141793ce4b61811726a7fce537193d92e16b"
   license "MIT"
+  revision 1
   head "https://github.com/manimCommunity/manim.git", branch: "main"
 
   # FIXME: Fails trying to resolve pycairo as pip tries compiling it but cannot find cairo
   no_autobump! because: "`update-python-resources` cannot determine dependencies"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "13acd509cdff96f5bbc8cca01745e1953d583c050f3aadd9b31c6aab62554e42"
-    sha256 cellar: :any, arm64_sequoia: "4de7cfdb7c236d8a1c44d27a4937d7c111fa7e2b4f2a40cc33c974d11b8516bb"
-    sha256 cellar: :any, arm64_sonoma:  "77d64398017bd99d1f5af121d55b4f785f13e247c2cc0bcfafc310d2cf33f071"
-    sha256 cellar: :any, sonoma:        "15f70366503c6469ccc2e782e767a9b7fa6d8d798f1de97f42b32930f49c646f"
-    sha256 cellar: :any, arm64_linux:   "d7f48ec24e10c85e650e1751137d2566613182da54a4e10876ae94457cfcda9e"
-    sha256 cellar: :any, x86_64_linux:  "a2b33f6012b3169ff2994cfdacf71031b7ce9ce12e3e2e08b2ffe2d841a54eb3"
+    sha256 cellar: :any, arm64_tahoe:   "e9b8dcf893e651660fcd329ff2cf1e0bc16ddcd97e3fa6a66d2539c4c731e21f"
+    sha256 cellar: :any, arm64_sequoia: "b0f3bd6781fe7e17ebe9ba4137c0f8f1a7ab4f25edab0361b483bb02976ce084"
+    sha256 cellar: :any, arm64_sonoma:  "a550fadccc90d321c09cd38f5764533b176ea85386a77c0291dd2d86e1b88850"
+    sha256 cellar: :any, sonoma:        "bc300a6b4a8cb4dc85c7b62ba43aed318b784a8ed2174737b490953e25fb0c0e"
+    sha256 cellar: :any, arm64_linux:   "b84d0fbe6e1918cfd6caaa49dfe1aaa32e96672cd4d9b32a2daa498163b7938a"
+    sha256 cellar: :any, x86_64_linux:  "6efeaeb76911150baa467dd9fb2474020ed8cabc5df00c6af475970bf67d5996"
   end
 
   depends_on "cmake" => :build # for mapbox_earcut

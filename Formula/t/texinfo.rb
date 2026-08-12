@@ -5,18 +5,18 @@ class Texinfo < Formula
   mirror "https://ftp.gnu.org/gnu/texinfo/texinfo-7.3.tar.xz"
   sha256 "51f74eb0f51cfa9873b85264dfdd5d46e8957ec95b88f0fb762f63d9e164c72e"
   license "GPL-3.0-or-later"
+  revision 1
   compatibility_version 1
 
   bottle do
-    rebuild 1
-    sha256 arm64_tahoe:   "5fe5b4bf293e3358e7f2b176f64373414bec1cdbc64f73765111129d19a9ef52"
-    sha256 arm64_sequoia: "c92803efbc90d37ef09db1dd6fb8df4295fa69452097066b0f32e0e58895f739"
-    sha256 arm64_sonoma:  "d5b3098faede3e0b74d269dde3f0c571360a4acb04aa0d98ca8c53ccb3102dbd"
-    sha256 tahoe:         "9b0fadc6c61e02804f2e1bc8d84e7344fa582745eb4bd30ef5ce4986ffddcc3b"
-    sha256 sequoia:       "41529bcf8e41750bf1b14fc59a03d89b0a219db7c1f0c4e45f943c4182db5d87"
-    sha256 sonoma:        "906bf2b96c0c9b4ecf640c74fdb36ac171793644f5e47b96a1b9c7c6bc033aaa"
-    sha256 arm64_linux:   "8b64bc637ddb9054822f0890283a54d0c54e25606734ec59e3f8592d706f4972"
-    sha256 x86_64_linux:  "5f143c0103716ee72ddcee40d88784cf6d474ee6f0322ecfa7ad33880e35255a"
+    sha256 arm64_tahoe:   "17f0c0cf884670ec1cb6ef941804649a40a46599f3157d66eb3462cc6555bfdd"
+    sha256 arm64_sequoia: "8fee9bab9242aba8f21e468b7e3261ce8c4bf8963c0b5590329131a129d2a197"
+    sha256 arm64_sonoma:  "72fa6078b2d0f710a791a9522ad99893dc683ad1cab898cdb55c8d65adb597be"
+    sha256 tahoe:         "3549fa66f7921336908d81eeb9fc922ea01017ffd6ff5aa35f819d29e8b03e3e"
+    sha256 sequoia:       "7b4c695db9ec5cd2dc8a7c73311b4ba1cbc17f60c2b6f583afc6d45801059de3"
+    sha256 sonoma:        "c6718d55dfbfc3fc6b7eafbcf45737ae460f2b5824c6499a0361af0b343712cf"
+    sha256 arm64_linux:   "238df7fe5e95a98dfcc37b537bf236ccd156fea72d616f0fbc3ed4f6c4561376"
+    sha256 x86_64_linux:  "1efa090b410b8c515e4d373f33abcf90d0ccb05bbf353a34ce2351f1f324c5ae"
   end
 
   uses_from_macos "ncurses"

@@ -34,7 +34,7 @@ class Cdo < Formula
   end
 
   on_sequoia do
-    depends_on xcode: ["26.0", :build] if DevelopmentTools.clang_build_version >= 1700
+    depends_on xcode: ["26.0", :build] if DevelopmentTools.clang_build_version >= 1700 # for std::jthreads
   end
 
   on_linux do

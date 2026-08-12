@@ -4,18 +4,17 @@ class Qmmp < Formula
   url "https://qmmp.ylsoftware.com/files/qmmp/2.3/qmmp-2.3.3.tar.bz2"
   sha256 "51c964e9e685cf67266b2e8e3135ee4504b6bf6b2283f46bbfd4abe36ae3690d"
   license "GPL-2.0-or-later"
+  revision 1
   livecheck do
     url "https://qmmp.ylsoftware.com/downloads.php"
     regex(/href=.*?qmmp[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "493ef1cf3ffbbe1077c3b3ac692655cc830fdcaf73a1cc688d0b2bddf162d08b"
-    sha256 cellar: :any, arm64_sequoia: "b3c77711013fb3f6347510b948d4fd204b18f97559ab74cbb5301aa84a25aa6e"
-    sha256 cellar: :any, arm64_sonoma:  "768b02ecf88020f60ce1b899329e2fd2af1808e93a8505da448a83d2e8f80a50"
-    sha256 cellar: :any, sonoma:        "1898df5b393ff1e17cb428f5c3815700f1fcb11caa662fb38d3b0c28a4099d72"
-    sha256 cellar: :any, arm64_linux:   "f8874d45bc43b02a3e37dd9c63b56559110a58fccac53721f57b8bc166c5b6a5"
-    sha256 cellar: :any, x86_64_linux:  "b2e7460a40f924c619146d4918a044895b58b293712b562b816092dfe243a44b"
+    sha256 cellar: :any, arm64_tahoe:   "1865b69804ef1bda0069697fcfde99aabf2ff5cd2a096c469404d8ea996becbc"
+    sha256 cellar: :any, arm64_sequoia: "08c11bb4104678232cdac5318c79524bda92b08609a97a782f437d713d0c2c03"
+    sha256 cellar: :any, arm64_sonoma:  "c06d038cfef00cf01932af238eb1576b48fe5fd18bd09d140103fe08d925d349"
+    sha256 cellar: :any, arm64_linux:   "1de75fffe5485be7240118143d87a4dcbc8cd2f08f8333546699fa7549de2e0e"
   end
 
   depends_on "cmake" => :build

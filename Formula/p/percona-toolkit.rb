@@ -5,6 +5,7 @@ class PerconaToolkit < Formula
   version "3.7.1-4"
   sha256 "c4a2502bba0118c0e4a72faa58a3174d793431e65d9aee6c260eae49216ead14"
   license any_of: ["GPL-2.0-only", "Artistic-1.0-Perl"]
+  revision 1
   head "https://github.com/percona/percona-toolkit.git", branch: "3.x"
 
   livecheck do
@@ -19,12 +20,12 @@ class PerconaToolkit < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7275d4c15bac065f3166de29c8d6144cd81c8f7750e11a4c7a7dfaca75cf6352"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d5e06870dd78edfa06d6752766d988570649f3d4ef64be4009eda917153ed767"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0cfec2e69b6ae5d6519be27970fbdbd2e1aab75cb0f583464329716b6f6f89c6"
-    sha256 cellar: :any_skip_relocation, sonoma:        "42d8212dfa352a40972e2cba96041b638e81fc12c4e1ddcc7942627e975efabc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0aaa34073e5fd06fb6946363d183b4557399975ab3d5d5366d3241b33e8be511"
-    sha256 cellar: :any,                 x86_64_linux:  "2717ba75fe1b3ceef73c444a459d9e0855ae410b827ecd7def8631aeb59553a3"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "819f94a7dbab83b32b4b6cd08f33197368446ee13b618545c89ef59fe301fa54"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c27b2b1848dcfb449196bc87ea5720f895c5a4cd3457127fcb090617ca5ceab2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ca09fe7d25e340c3e89acc236a2b5b79c1fc9df3f912d38e415dd8d52d0b8c79"
+    sha256 cellar: :any_skip_relocation, sonoma:        "407f3bb0a5dceb0acd0347ba18f049123fd07ed98fb7a27c8cdcfa98322cc62a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c11d58efad22c5a362ee938b48044d45c25c3083f5c940767b77963d4139bf2f"
+    sha256 cellar: :any,                 x86_64_linux:  "76654b7bc5787c22de0f31039fd9e873b72dce54457ba7ce1ee37fe97a72b3f3"
   end
 
   depends_on "go" => :build

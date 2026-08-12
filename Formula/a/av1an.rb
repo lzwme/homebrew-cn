@@ -2,7 +2,7 @@ class Av1an < Formula
   desc "Cross-platform command-line encoding framework"
   homepage "https://github.com/rust-av/Av1an"
   license "GPL-3.0-only"
-  revision 1
+  revision 2
   head "https://github.com/rust-av/Av1an.git", branch: "master"
 
   stable do
@@ -20,12 +20,12 @@ class Av1an < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0e59c6f11824fead9ebdd454be5ededda07cf453f0b68342353a631ced93122f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "efd4ff1cf229885f8f242b90d1d6acf94ce42320249daf7ba6b16e8c1c68998f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4da98b6acae00b4c3387e6c09ac1c73bc481258ecee56b44d0ee17199e94cb13"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2becd76d0713bd7583bba85ed8c3ff866aefdf06c8f0e9d4c402d046c3ec5c78"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "29c62ae87a2f908f2de1e134fa87e08f943d70719a8cdac8e55496982a91659a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "55bd69992e240b0dcfc1e9ee91d5658a7d83100c81b4e260bfd22ea0bfa3f5ae"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7fe39b03d44ab8ea709e74b0a025799e378ac8ee0b887997050da2ddcf3c36a7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5703c8154d5d8456048b22401c0b5de715afbe5b597af423b3f2bc98ee628b12"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "50ae3bf46bd4ae35d3fd6cbe0a27853e8c85b04ec10bbcd03723ee33c6574111"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4482d4bcacb71192138c0259c28ceb101cb119e87c3ae0a4a5d12b967250b22d"
+    sha256 cellar: :any,                 arm64_linux:   "4c83ef03746c3d256b2cf8ce20902ec8e6c24afe84f48c052fd2a7d25f41013a"
+    sha256 cellar: :any,                 x86_64_linux:  "26a5b533f84a2c7f34bd05f032e1f63da4f76576a67b6fbb33f2d3a6b0a11188"
   end
 
   depends_on "rust" => :build

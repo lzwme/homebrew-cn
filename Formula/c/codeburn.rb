@@ -1,17 +1,17 @@
 class Codeburn < Formula
   desc "See where your AI coding tokens go - by task, tool, model, and project"
   homepage "https://codeburn.app/"
-  url "https://registry.npmjs.org/codeburn/-/codeburn-0.9.19.tgz"
-  sha256 "e5314f2504c37e7e8079ab70d4d081c14eff4815e79fb20a8364cf815afe17e4"
+  url "https://registry.npmjs.org/codeburn/-/codeburn-0.9.20.tgz"
+  sha256 "4416d3b074047dba22b909a34347dd0d388d06679c7ca6e4d2d98420bef21d1c"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6fff238f753c0a7da91926a267ee40e59dac82124ab0af55179e1148d2d14f7a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6fff238f753c0a7da91926a267ee40e59dac82124ab0af55179e1148d2d14f7a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6fff238f753c0a7da91926a267ee40e59dac82124ab0af55179e1148d2d14f7a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a3bbe4e422af1ea7004cb55f5cd167b8713ae756b910de3fca8314802db756f4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a3bbe4e422af1ea7004cb55f5cd167b8713ae756b910de3fca8314802db756f4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a3bbe4e422af1ea7004cb55f5cd167b8713ae756b910de3fca8314802db756f4"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b2b22a243b836921cca6fae4441b8ffaf7e8c9661df5616ce5669fb66b048d2f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b2b22a243b836921cca6fae4441b8ffaf7e8c9661df5616ce5669fb66b048d2f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b2b22a243b836921cca6fae4441b8ffaf7e8c9661df5616ce5669fb66b048d2f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2c242a7119f6393e0cbe3b0a0892a85f42a0b1de3a0f6a9e8f89e02bc31d9e59"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2c242a7119f6393e0cbe3b0a0892a85f42a0b1de3a0f6a9e8f89e02bc31d9e59"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2c242a7119f6393e0cbe3b0a0892a85f42a0b1de3a0f6a9e8f89e02bc31d9e59"
   end
 
   depends_on "node"

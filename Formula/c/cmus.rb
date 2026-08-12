@@ -2,7 +2,7 @@ class Cmus < Formula
   desc "Music player with an ncurses based interface"
   homepage "https://cmus.github.io/"
   license "GPL-2.0-or-later"
-  revision 3
+  revision 4
   head "https://github.com/cmus/cmus.git", branch: "master"
 
   stable do
@@ -33,13 +33,12 @@ class Cmus < Formula
   end
 
   bottle do
-    rebuild 2
-    sha256 arm64_tahoe:   "00ca0987ecc6c79c9b380a96ca9ad3d261567ce97903554ab0367530a39d59bf"
-    sha256 arm64_sequoia: "5301455c054375b174fc71cf627383fe7c612d27ac65cdbf9eaf6fd4f3a86343"
-    sha256 arm64_sonoma:  "18859fcf9d5693580cb8124027b64a29e6f8820be0d95a9f116e5b87982a7bb5"
-    sha256 sonoma:        "e7a5d77b9e0c334f4c5309fb10a163eb80ed8a01dd3f5224c98339cf55bc1bee"
-    sha256 arm64_linux:   "2205b91cc172119113461b5a6cbc82d2bcaa557ae484042e9b15acec432b3197"
-    sha256 x86_64_linux:  "9af11bfb0fd581b8ccad7ae05a6e1cf30a63b8858167cc25f0859c25917a79e5"
+    sha256 arm64_tahoe:   "210377c9fda621f2405c82368826b836f477a2b6c810074ade5827d838bf3dd3"
+    sha256 arm64_sequoia: "cfe58b83c5dcd733e8d0b30920ab783cb68518e6369fd7fa66f2a15f806fa72e"
+    sha256 arm64_sonoma:  "f051ca658766a48c546040fc6fed6d76f2a5014174e2ac8dddd34b23cfa36a88"
+    sha256 sonoma:        "e557635620a6cb4182d3ad7dd754b41ccfd41060183346e808236c2a4438626c"
+    sha256 arm64_linux:   "27ad28ba4977fe3cba76ba21fca347507b66fd97e297761224da4bcb2cc73d9b"
+    sha256 x86_64_linux:  "74ac30d857315bdd36ca022035ba04b2326486ead7c9ab44853536a48e807670"
   end
 
   depends_on "pkgconf" => :build

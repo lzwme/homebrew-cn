@@ -1,17 +1,17 @@
 class Flyline < Formula
   desc "Supercharged Bash plugin replacement for readline"
   homepage "https://github.com/HalFrgrd/flyline"
-  url "https://ghfast.top/https://github.com/HalFrgrd/flyline/archive/refs/tags/v1.6.0.tar.gz"
-  sha256 "26b78ead85fd772d92396301e535b2557a97a0a469f41362bd673528bd73508b"
+  url "https://ghfast.top/https://github.com/HalFrgrd/flyline/archive/refs/tags/v1.6.2.tar.gz"
+  sha256 "9bcacde196d9b46550c1b87605e8ef30c6bdf907d4a0816bf6f9348b57645cc6"
   license any_of: ["GPL-3.0-only", "MIT"]
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "ea75f1480b560ca941b0f4aacc99e6311ee69a6843a6bafe0a515650e5156d2c"
-    sha256 cellar: :any, arm64_sequoia: "21d2beb0f04a2d21dfff0e303c55be45c630f7d25c9db4e257a685574dcc3d71"
-    sha256 cellar: :any, arm64_sonoma:  "b222679a00e99b8e39823feeb2f6f2a4c82655ac1c00c5b08ee751008fba880e"
-    sha256 cellar: :any, sonoma:        "b25e1042e3788939dab95da4696f2cae21102daa037c2811ce64f66c2e3d6d3b"
-    sha256 cellar: :any, arm64_linux:   "74a245f4311d39fadda607b0fb63f3e0d38174e59dac3e11e61d793c84c78e35"
-    sha256 cellar: :any, x86_64_linux:  "8b80e5746f6c1462aa0b2b1f661942352a629ec58a3b8cce64019634b2b60ba0"
+    sha256 cellar: :any, arm64_tahoe:   "f1b7d1976a96a59813b34265bd06ede1780c0733456bede22796c3690f52d9b3"
+    sha256 cellar: :any, arm64_sequoia: "f5e4dccd5d2e907235e04e5fc833eb0c6a85644a527ef8fee2fa3095dc0dc294"
+    sha256 cellar: :any, arm64_sonoma:  "a0aa20bb22b5513872b51d7af7201650e067252b37751caf7021f691194ff417"
+    sha256 cellar: :any, sonoma:        "5098891ea963742e09900b8d486cdebc5266769353902116bbb361b294cfa1e5"
+    sha256 cellar: :any, arm64_linux:   "c33748194a5dd81b984bb535b738e65ef6fd13d00d349b21063d1c867c6da20a"
+    sha256 cellar: :any, x86_64_linux:  "099fc2f460ba33f48b31e7455aba824b07b017a8ee8e389e7fbca89016f5d568"
   end
 
   depends_on "rust" => :build
@@ -24,26 +24,28 @@ class Flyline < Formula
   end
 
   test do
-    Open3.popen2("script", "-q", "screenlog.txt") do |input, _, thr|
-      input.puts "#{formula_opt_bin("bash")}/bash -il"
-      sleep 5
-      input.puts "stty rows 80 cols 130"
-      input.puts "export LC_CTYPE=en_US.UTF-8 LANG=en_US.UTF-8 TERM=xterm"
-      input.puts "enable flyline"
-      # The terminal backend blocks on a cursor position report for each capability it probes
-      input.write "\e[1;1R" * 10
-      sleep 2
-      input.puts "flyline changelog | grep -F 1.3.0"
-      sleep 2
-      input.puts "exit"
-      sleep 5
-      input.close
+    require "io/console"
+    require "pty"
+
+    output_log = testpath/"output.log"
+    PTY.spawn(formula_opt_bin("bash")/"bash", "--noprofile", "--norc", "-i",
+              [:out, :err] => output_log.to_s) do |r, w, pid|
+      r.winsize = [80, 130]
+      w.puts "enable flyline"
+      w.puts "flyline version"
+      w.puts "flyline changelog"
+      w.puts "exit"
+      r.read
+    rescue Errno::EIO
+      # GNU/Linux raises EIO when read is done on closed pty
     ensure
-      Process.kill("TERM", thr.pid)
+      r.close
+      w.close
+      Process.wait(pid)
     end
 
-    screenlog = (testpath/"screenlog.txt").binread
-    # Match the tooltip that should be displayed for the last input line
-    assert_match "Display the changelog", screenlog
+    output = output_log.read
+    assert_match "# Changelog", output
+    assert_match version.to_s, output
   end
 end

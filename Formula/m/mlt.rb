@@ -4,16 +4,16 @@ class Mlt < Formula
   url "https://ghfast.top/https://github.com/mltframework/mlt/releases/download/v7.40.0/mlt-7.40.0.tar.gz"
   sha256 "f11c30e21670f62a3dfc56a31306ac02f3feea00908a2821a4a0bf3e989d3d6a"
   license "LGPL-2.1-only"
-  revision 1
+  revision 2
   head "https://github.com/mltframework/mlt.git", branch: "master"
 
   bottle do
-    sha256 arm64_tahoe:   "0463ca39d1781d3c4cf201b56f1a2aa752c9677d1a398f0d66a1d4aab58afcbc"
-    sha256 arm64_sequoia: "f59881c75605c6a3fa05e64425312d0063e42430516f5e01094e40284ef61035"
-    sha256 arm64_sonoma:  "4837c3f75837874f357ac63855224405bd8deaaa8d35fdfcb313c1b15cacf343"
-    sha256 sonoma:        "011a7cc1d534bbfd8a028f8e789afd6b1629055fed144ab9d991fd2f6755373d"
-    sha256 arm64_linux:   "e80678a264238f4c4ca87fc11aae069b49b8e016f2e0d9b92f527c6a74a3d478"
-    sha256 x86_64_linux:  "1e2cd9aa006a5ce5ddde467e5716b705cee8de6d6188a56272a807056fb19a3b"
+    sha256 arm64_tahoe:   "de84a17457c3fe52588cf4ec306cc75d1a1b1ed769acbeb64b9551d05d91feb8"
+    sha256 arm64_sequoia: "bf6942edd42c50934c82e32a846f567252f18828b8e2a2cdb7c55ee96c939795"
+    sha256 arm64_sonoma:  "7882bc987e09701d3706405750a02aab0f74a78928672d0a5ff8746ba253cfb8"
+    sha256 sonoma:        "f66603b9b100c0778993c49ea6bc5b7af49d9a6fc8c3f6f18892ea2727e756b4"
+    sha256 arm64_linux:   "a50204956044e9e5a73d78725c9de4adb34b1352ff1013cd455e6a39115b27fb"
+    sha256 x86_64_linux:  "3b8aae840653ec2f374865804b64ecd40b090715ff888b689f38494f73fdd9de"
   end
 
   depends_on "cmake" => :build
@@ -51,6 +51,14 @@ class Mlt < Formula
   on_linux do
     depends_on "alsa-lib"
     depends_on "pulseaudio"
+  end
+
+  # Fix builds with FFmpeg 9. Remove with the next release.
+  patch do
+    url "https://github.com/mltframework/mlt/commit/68bceba12a3c3278ce69033c3e7dadaa13d45811.patch?full_index=1"
+    sha256 "a2e7acbb2c3b585a36ae5fcddada634220c8bb30ebb75922958b5b7b30d49f96"
+    type :backport
+    resolves "https://github.com/mltframework/mlt/pull/1281"
   end
 
   def install

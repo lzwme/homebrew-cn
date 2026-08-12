@@ -4,15 +4,16 @@ class Lcov < Formula
   url "https://ghfast.top/https://github.com/linux-test-project/lcov/releases/download/v2.5/lcov-2.5.tar.gz"
   sha256 "7e5e5a154bd5f3557659c328cab376764e7abd238bb403c424472c296b175126"
   license "GPL-2.0-or-later"
+  revision 1
   head "https://github.com/linux-test-project/lcov.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2e011a49bdaaa3f14a2196cb58f83862c3809b1451dc996568ed294e016f09d6"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3e4ea06ac77f732dfb36537d548c6c459f0cd6c3e03d9ee6f22aa9e894cdda32"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "324b7d488025074e74bcd90db782d1ab7402a9a7372bf98e71d832aa88005be4"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4c424d1e056ab869bff7c9ccdf5c43f0594921a4499de26a2e464cd7274e7fcb"
-    sha256 cellar: :any,                 arm64_linux:   "eb39a13a9ac8c53b9f1e2bc1af7f24a9443645907bd1bec1de7bb939aec07222"
-    sha256 cellar: :any,                 x86_64_linux:  "54d4f1466283ba1e19f1993e983371efd850dcf683599891c4532c254f4b266c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0339c052f980b5221138a890499b037ce9be0989428116be8293315f6cdf2312"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "264e190fc3712dc2ea033d3e95c140bcbef9d7c4f4cc04a3be805fb4da5c08c5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b04ff0abfa6a93050a5c97d44c86d490ab4b7bf3da9df77055c03b38194c7644"
+    sha256 cellar: :any_skip_relocation, sonoma:        "61f99b6f9d03220b35d79f0869ac22804c186c778af200d4cfa1f64a215556e5"
+    sha256 cellar: :any,                 arm64_linux:   "6ea84ac3f401d9e8488b3fe405ec7ce0fe537b925ed4b02b03a70310f1f98f21"
+    sha256 cellar: :any,                 x86_64_linux:  "98aabc087e2052c2c32baf8b5f4fdf9646185b561bafcc1ea491a8bb1cf2af06"
   end
 
   depends_on "sphinx-doc" => :build

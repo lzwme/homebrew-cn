@@ -67,7 +67,6 @@ class Pyside < Formula
   uses_from_macos "libxslt"
 
   on_macos do
-    depends_on xcode: :build
     depends_on "qtshadertools"
   end
 

@@ -4,6 +4,7 @@ class Nikto < Formula
   url "https://ghfast.top/https://github.com/sullo/nikto/archive/refs/tags/2.6.1.tar.gz"
   sha256 "d1ca1acb05d81a5a6f374c0afdd76b33afa0089278631a20673c0210a71d992f"
   license "GPL-3.0-only"
+  revision 1
 
   livecheck do
     url :stable
@@ -11,12 +12,14 @@ class Nikto < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ed05be1a7cda80dade2c231fc2c14e90ef3ae55320e74547d5e9a63ce28d00c5"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ed05be1a7cda80dade2c231fc2c14e90ef3ae55320e74547d5e9a63ce28d00c5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ed05be1a7cda80dade2c231fc2c14e90ef3ae55320e74547d5e9a63ce28d00c5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ed05be1a7cda80dade2c231fc2c14e90ef3ae55320e74547d5e9a63ce28d00c5"
-    sha256 cellar: :any,                 arm64_linux:   "975cec7d7abe3472c96d51a1d2898337b00525bc4ee7c4826ac0dc97eee65b1d"
-    sha256 cellar: :any,                 x86_64_linux:  "5332300fd6fb6117111ff8aa1c7227cb26e8689dc8fd75f9c957eb3e9412881f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "509554a0dc1926484896618e1791bd5ca0ce9ec18b6bf1d9a070e13fcecb36a6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "509554a0dc1926484896618e1791bd5ca0ce9ec18b6bf1d9a070e13fcecb36a6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "509554a0dc1926484896618e1791bd5ca0ce9ec18b6bf1d9a070e13fcecb36a6"
+    sha256 cellar: :any_skip_relocation, tahoe:         "509554a0dc1926484896618e1791bd5ca0ce9ec18b6bf1d9a070e13fcecb36a6"
+    sha256 cellar: :any_skip_relocation, sequoia:       "509554a0dc1926484896618e1791bd5ca0ce9ec18b6bf1d9a070e13fcecb36a6"
+    sha256 cellar: :any_skip_relocation, sonoma:        "509554a0dc1926484896618e1791bd5ca0ce9ec18b6bf1d9a070e13fcecb36a6"
+    sha256 cellar: :any,                 arm64_linux:   "ccc5b28402631afb9bf000029cec799911e4370be34485e3c5a3a99488015933"
+    sha256 cellar: :any,                 x86_64_linux:  "a0f96a84ce423f9250ce6b879b028728008f2309684c572812e25ec4b0d3c596"
   end
 
   uses_from_macos "perl"

@@ -3,17 +3,17 @@ class Flexget < Formula
 
   desc "Multipurpose automation tool for content"
   homepage "https://www.flexget.com"
-  url "https://files.pythonhosted.org/packages/48/78/88ee7cc6079959bcb9cc72ada63819b855de1c513ca3960c337b6c55b9a8/flexget-3.20.3.tar.gz"
-  sha256 "ed621389c41c8dccc07ab461ac1c8d3757f38c66fe071b7c84e9d26ab95b62f4"
+  url "https://files.pythonhosted.org/packages/96/83/b3c3d1d1c1a7f5f4650768986d0573cb6d7faf8c063af3a172b49a5694c4/flexget-3.20.4.tar.gz"
+  sha256 "e7494f1b884a05fc0dbbbad138e4e96307bf5c243be6d87718103a94c2067ccd"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "90a8b746e8fdafc9bfd9b16de2fefa24c38eb4e85f44d45764705b0cab9f1681"
-    sha256 cellar: :any, arm64_sequoia: "417d91e5e7e569a215b5ccd19107983257f7bb4b681970bb2b3f1bdd4daa2716"
-    sha256 cellar: :any, arm64_sonoma:  "7d710f327dcfb81c2436b7833b0a84dd71543a7022716e7ea948340bfa97addc"
-    sha256 cellar: :any, sonoma:        "594241ca60d69a734e0c2dea5d58c118ad35c9304d28c4de52498cc55502c16a"
-    sha256 cellar: :any, arm64_linux:   "8fa2d2bb295328bb759c132298b327cd2e90f3b97702778752061f6accd7b7cc"
-    sha256 cellar: :any, x86_64_linux:  "98f13c2d0bc7b55b7332cf1870757e0e8d5c2062ef46cbd2289d1bb780ad1c3e"
+    sha256 cellar: :any, arm64_tahoe:   "ca2579bd8fb5399f1fa57f8e480f32e0b21b528c913239d19941c4e4f0b08467"
+    sha256 cellar: :any, arm64_sequoia: "99a4d2429d626b5e0f619a0cb400be057e293722b7f032810909c10a0e8dc9e6"
+    sha256 cellar: :any, arm64_sonoma:  "861767bb5875eaed4bb87ffe455d549fc2614a15e615d161459630f448837ad5"
+    sha256 cellar: :any, sonoma:        "fa1ab67f070de64cfede6ee9717d3de9a2e20020c652bbe747b452a2c5b24cf1"
+    sha256 cellar: :any, arm64_linux:   "2f6843d4c1e9e0b496c898c732793a0112d486882334d16c0a136759b4413558"
+    sha256 cellar: :any, x86_64_linux:  "1efec3fc59a63368b4ea15dd356b71bd68c17a552ef59a49b11310f5b2e87f4b"
   end
 
   depends_on "rust" => :build
@@ -128,8 +128,8 @@ class Flexget < Formula
   end
 
   resource "greenlet" do
-    url "https://files.pythonhosted.org/packages/a3/74/b13368064b09053253555d3f2839cc2684d22d5aed0d2ccffbf7a6736558/greenlet-3.5.4.tar.gz"
-    sha256 "0232ae1de90a8e07867bb127d7a6ba2301e859145489f25cda8a6096dabe1d20"
+    url "https://files.pythonhosted.org/packages/0b/d8/7cc97c142388aef03f622e001c572c4f84e9252a439549d483f555771970/greenlet-3.5.5.tar.gz"
+    sha256 "adb4bae02e91a8e863e48b177e4014bdcac8a6b5e047ea1df687a61534b85e6c"
   end
 
   resource "guessit" do
@@ -349,8 +349,8 @@ class Flexget < Formula
   end
 
   resource "transmission-rpc" do
-    url "https://files.pythonhosted.org/packages/68/b8/dc4debf525c3bb8a676f4fd0ab8534845e3b067c78a81ad05ac39014d849/transmission_rpc-7.0.11.tar.gz"
-    sha256 "5872322e60b42e368bc9c4724773aea4593113cb19bd2da589f0ffcdabe57963"
+    url "https://files.pythonhosted.org/packages/bb/9d/c4e24d5bd0a1166935ca146dfb99b7041e54a38a6eed600e6c9798e98f58/transmission_rpc-7.0.12.tar.gz"
+    sha256 "b65f195a26bf3db792f88ee93211929144321fbc3a4f018bf7029996304fcfa5"
   end
 
   resource "typer" do

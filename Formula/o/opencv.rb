@@ -25,12 +25,12 @@ class Opencv < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "c48b2dd2b6bcb5dc29ee5b49f94d7a6f6ba0f4a566ce448c73736a5ece6b3890"
-    sha256 arm64_sequoia: "d512a4585c14178ffa73e74e50a84efdbccb822da36eda1ae3a37d1966c339bc"
-    sha256 arm64_sonoma:  "0bc857b7c1b469346db012d49a85f0581a04853fe263b30bb939f6770f72a685"
-    sha256 sonoma:        "204c2cec364c16c0e758e3108e05bf0fa71ff62fe89efaa33177a9f4001802f3"
-    sha256 arm64_linux:   "c3191d11f1847701612c3e5b4af463f1683813c2df6bc9cc10be2ddeaad3c363"
-    sha256 x86_64_linux:  "fb3ccb606368689cf1f0a3fce2634710e3d02355aa75e9296c2727b3b3b8ad52"
+    rebuild 1
+    sha256 arm64_tahoe:   "fe14fb83c00a5a565044107c01757f76b0db9d7551ddebe7244eb05919cfc487"
+    sha256 arm64_sequoia: "769f7d686b4f559e3ff851e62d168381777c6e423f9a0d46c285a45f4d56df67"
+    sha256 sonoma:        "c9d3c26b6d97ae81733a0e0c896fd3ab692304ba8b2fb0494a20206e7bce3426"
+    sha256 arm64_linux:   "11ae0e8d073aa4ed274fa762ef47e2815716766d5be74e2fd1e79c18e5c76b48"
+    sha256 x86_64_linux:  "5da50fedcf5e8e09cd9675f13d527aae615a29d6c763367af011495deec1112e"
   end
 
   head do
@@ -92,6 +92,21 @@ class Opencv < Formula
     sha256 "3813186a3e0c7f8c366b11c64f112d31a4f8c9709de333a2532e85142bea25bf"
     type :backport
     resolves "https://github.com/opencv/opencv/pull/29425"
+  end
+
+  # Fix builds with FFmpeg 9.
+  patch do
+    url "https://github.com/opencv/opencv/commit/7551012b4e1c854c1dc36483c893f90b1c236977.patch?full_index=1"
+    sha256 "0e662fbfd9949c4588138fcdb49bff124bf5e092ecfaa4db07938f50bb3ee1de"
+    type :backport
+    resolves "https://github.com/opencv/opencv/pull/29533"
+  end
+
+  patch do
+    url "https://github.com/opencv/opencv/commit/a6f17e1f6a53f8bb016acfbcd55b61cbe220f5c8.patch?full_index=1"
+    sha256 "f9fc79e1783debed6530600044c73f9a7d816c3b3095c260e1769bd04a62eb7d"
+    type :backport
+    resolves "https://github.com/opencv/opencv/pull/29662"
   end
 
   def install

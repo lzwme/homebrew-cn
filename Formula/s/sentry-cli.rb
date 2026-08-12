@@ -1,24 +1,24 @@
 class SentryCli < Formula
   desc "Command-line utility to interact with Sentry"
   homepage "https://docs.sentry.io/cli/"
-  url "https://ghfast.top/https://github.com/getsentry/sentry-cli/archive/refs/tags/3.6.2.tar.gz"
-  sha256 "f2b2471393efe7df74d980829df6bb2af3bd0036f5f8bf3204717d96393e6205"
+  url "https://ghfast.top/https://github.com/getsentry/sentry-cli/archive/refs/tags/2.58.2.tar.gz"
+  sha256 "f548e09d13f8bbaab9f65d552699c939c2d2674d8f119f857bcfb61e52f6f266"
   license "BSD-3-Clause"
+  revision 1
+  version_scheme 1
   head "https://github.com/getsentry/sentry-cli.git", branch: "master"
 
-  livecheck do
-    url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  bottle do
+    sha256 cellar: :any, arm64_tahoe:   "cf435cb02574ee268a951dcf550c34c8ef4ca2a565b221a90bc1c591d435e242"
+    sha256 cellar: :any, arm64_sequoia: "1f049731875db3bcbdbd34eb35f524ea0202d3ecc88599698413332f76e6d6c7"
+    sha256 cellar: :any, arm64_sonoma:  "5829a74093cbedbf58178b731b9db6e0162fc83ee1fd4f481a721cc3238fdb57"
+    sha256 cellar: :any, sonoma:        "91000c5e97e1fa1fcabbfde21b0cd294f23c3d3f47f7c64a3778e79507973dc1"
+    sha256 cellar: :any, arm64_linux:   "0d1878f7f5d225fbc0f77400de98ba5220565f022c5aec0ded437ec0d0d92ce1"
+    sha256 cellar: :any, x86_64_linux:  "506b8fed27a31901281a01013af18e735c8c41d18d7dd10baa9499e1dc864ec0"
   end
 
-  bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "caf02d9e2688dee8b0c3b1cea59d14819981aea0897dc97e6c7802dcfc4881b8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6362c28613343efec60dab15323b994a0ee4980aad4e2abc296305e0cd3ff161"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a405bf145fef48bbd55a97281696c0a19bf4116207cc3992f6d6bc7d87a53301"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8634fb94be5c0096d1c6cc5b71231dbce3bc55e3170ba27f09843e63540b9850"
-    sha256 cellar: :any,                 arm64_linux:   "1106fbfeba96bf46f27b17a331126720425d0825e8c28ea9e7db39476c2a4eaa"
-    sha256 cellar: :any,                 x86_64_linux:  "947b1b1591baecbfb43a8c9eacc37d489edffab3b8c6174f1404cfe0c4cb5314"
-  end
+  deprecate! date: "2026-08-11", because: "changed its license to FSL-1.1-MIT in 2.58.3"
+  disable! date: "2026-11-11", because: "changed its license to FSL-1.1-MIT in 2.58.3"
 
   depends_on "pkgconf" => :build
   depends_on "rust" => :build

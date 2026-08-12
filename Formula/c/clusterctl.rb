@@ -1,8 +1,8 @@
 class Clusterctl < Formula
   desc "Home for the Cluster Management API work, a subproject of sig-cluster-lifecycle"
   homepage "https://cluster-api.sigs.k8s.io"
-  url "https://ghfast.top/https://github.com/kubernetes-sigs/cluster-api/archive/refs/tags/v1.13.4.tar.gz"
-  sha256 "6fd06b65ec1dcb03d8991852935d841e8e8c03c2d2014c7f57200b81339f1ad8"
+  url "https://ghfast.top/https://github.com/kubernetes-sigs/cluster-api/archive/refs/tags/v1.14.0.tar.gz"
+  sha256 "f7f14651f28c08678c4e66402b86ae455e8569e0faa0f6800794bee400a21d48"
   license "Apache-2.0"
   head "https://github.com/kubernetes-sigs/cluster-api.git", branch: "main"
 
@@ -17,12 +17,12 @@ class Clusterctl < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ce9063529f6c4ae1499644fe80cc5f64d6599a70ed31a8751461503348e70eb2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3eb787edb706563d91972da4d4688d5ac0072743df4ac12ccd0319e6293df814"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fe28c61a1ea4a00be4d79d90fe78898ea1bdcadb7e966120ac4a27971769258f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6246a72efc6439ac77e2d8a0fffd303047752f008e80e2f0d94263d57cf74026"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4b7ba6bd0c476bdabdef17a8ad4b7fe8de27e92bde56b9e0663fe3dae3ec68e3"
-    sha256 cellar: :any,                 x86_64_linux:  "808da7cd70699c7f9832bfa2ce7a97fceea673a60089e01f20f2953f070d3be2"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "698768dcf93818eb14896aabec2a717567ca23ad22f438ccb266190845daf25f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3a730c843e621c065f5e8c945f304f35fd5d6a5037e1936cd4b8852c3c441f54"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "edf8a6d5915c518bdefe8e853c65dd6856928d3dc5db92b7795759430fc2b44a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "443dfd178cbf57ac21ef2f418be2a5e8d5877e9fb8e7a573dbd1da65ee074791"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bf452e8582cf1d3ac88b0bf6317f185696e17fcca4f067e67790762bb10a26cc"
+    sha256 cellar: :any,                 x86_64_linux:  "55e9925c956d9c2413c6cc824a7c498b59f357cdf307eac0d2565fb44e0da539"
   end
 
   depends_on "go" => :build

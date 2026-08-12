@@ -1,18 +1,18 @@
 class CargoRelease < Formula
   desc "Cargo subcommand `release`: everything about releasing a rust crate"
   homepage "https://github.com/crate-ci/cargo-release"
-  url "https://ghfast.top/https://github.com/crate-ci/cargo-release/archive/refs/tags/v1.1.4.tar.gz"
-  sha256 "0000ac4540ad506d5d3ff4e1b1b3e487d644e21e3a3a571995fc78bad863cc32"
+  url "https://ghfast.top/https://github.com/crate-ci/cargo-release/archive/refs/tags/v1.1.5.tar.gz"
+  sha256 "6d02028b9b1525ad6890a792854ad6e74c2a7cd791f118c442293538ae6bbf8d"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/crate-ci/cargo-release.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "32e4b0090a58cf75a3be680b8bca06cfed6b8cccf473ce0b15ac9f3b6caac5ff"
-    sha256 cellar: :any, arm64_sequoia: "02bb1c8452399d74272d766a683f1869771360bacb92c304a520242456536bc5"
-    sha256 cellar: :any, arm64_sonoma:  "00f9b079d2c0af1bc481b8400ee442de5e08a8033e6747ac3aef2b6b13cd6b12"
-    sha256 cellar: :any, sonoma:        "54bf8d16b9f4432e8b8f8002948bfddd0d7949260a09491049a37a95becadf5d"
-    sha256 cellar: :any, arm64_linux:   "c83c7958b14a88eb333fd6f6be78a1bf03dddb02cdba9d541344d08ed65dbaa6"
-    sha256 cellar: :any, x86_64_linux:  "1804a2d5278ecbb2b54006824ddb1b28464533eb19504e01bcb08bbd0b2f3c2f"
+    sha256 cellar: :any, arm64_tahoe:   "e8143b3b07f8a3db22aa5c9f41626a9407683c2279307f3b54452588633453c2"
+    sha256 cellar: :any, arm64_sequoia: "c67179f0c3287daa8b30816c17db24a97d86cc54ad375b6d8698d3fe1caa7987"
+    sha256 cellar: :any, arm64_sonoma:  "f907623a89a752758a85aa0d618e4fc8a22c9ba4530ada1edda4a4fcd534fb63"
+    sha256 cellar: :any, sonoma:        "8cd9a7eac06dc602d82238a0a30f34fa3facb880a043afacda76270b2b66b285"
+    sha256 cellar: :any, arm64_linux:   "6fd38b5892f5375026aa7709e229ddf89fffb6d6bceb179e2c757f64be3d3fbf"
+    sha256 cellar: :any, x86_64_linux:  "d7e30f0990b38b86522c2d0462a8f5fe5022472cbd168d23b56c1eb8d73c4765"
   end
 
   depends_on "pkgconf" => :build

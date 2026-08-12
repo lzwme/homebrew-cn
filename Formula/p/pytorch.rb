@@ -38,7 +38,6 @@ class Pytorch < Formula
   depends_on "sleef"
 
   on_macos do
-    depends_on xcode: :build
     depends_on "libomp"
     depends_on macos: :monterey # MPS backend only supports 12.3 and above
   end
@@ -159,7 +158,7 @@ class Pytorch < Formula
     venv.pip_install resources
 
     # PyTorch needs to pass `-march=armv8.2-a+fp16` to compile runtime detected code
-    ENV.runtime_cpu_detection if OS.linux? && Hardware::CPU.arch == :arm64
+    ENV.runtime_cpu_detection if OS.linux? && Hardware::CPU.arm64?
 
     venv.pip_install_and_link(buildpath, build_isolation: false)
 

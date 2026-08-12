@@ -4,15 +4,15 @@ class Libgr < Formula
   url "https://ghfast.top/https://github.com/sciapp/gr/archive/refs/tags/v0.73.26.tar.gz"
   sha256 "6dfe5bbd0c321d0714f391ad2e65b983fc0c34f518df773f7c7fa18545fd0fb5"
   license "MIT"
+  revision 1
 
   bottle do
-    rebuild 1
-    sha256 arm64_tahoe:   "a0a40ac3003f214395ec8f74665c39f0b11255423741841dd1a03e29e63c770a"
-    sha256 arm64_sequoia: "e98facddb85efc8b70b920c33f60a6434cff95157d955c383b69b7874535a488"
-    sha256 arm64_sonoma:  "5f25340467060f37087bd15fc476a2bd6bec82b630337c6fcd8a2ffe176a901f"
-    sha256 sonoma:        "6abaaf907ae7b63402fe855738a31c26281a4828475e0eecd9fed57df1b8a4b7"
-    sha256 arm64_linux:   "50cb0dc26f7f409922ade13d5dd36093f05bfb19b6cf7c9f9b60f82cde8e2667"
-    sha256 x86_64_linux:  "a60298a5a1f4c1040a88655ffd33a1b258c68d2eba984759a93a5cd1f32baa8a"
+    sha256 arm64_tahoe:   "df84bca8c6672788b45ac0fd47d526325642e507481bf572732aefc8d8dc2e9d"
+    sha256 arm64_sequoia: "7c99767fd4717119bc3e1ec42ced9d45746c335e05a2e5b7e5562979d0ec91a6"
+    sha256 arm64_sonoma:  "54c1bd6545bb169622b4019fdc9f2fa1063018430728a4bab65d1dc9f34a8ecb"
+    sha256 sonoma:        "8b2f783b9c422a569bdbb309eafee70565fb16647238bf49a6a4a2b3fcd0ee17"
+    sha256 arm64_linux:   "ae7f272f71041b2752b8d36cade1bdaf7890a7b046ae7925f5d4b30f7fa66ef9"
+    sha256 x86_64_linux:  "9d10dcbe39053245393e5b5defa607c93d15e373a1333d3a5af38f6fb1ccba87"
   end
 
   depends_on "cmake" => :build

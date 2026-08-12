@@ -213,7 +213,7 @@ Homebrew-homebrew-core/Formula/a/apprise.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/appstream-glib.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/appstream.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/apptainer.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/a/appwrite.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/a/appwrite.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/apr-util.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/apr.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/apt-dater.rb, Homebrew/homebrew-core, 1
@@ -1972,6 +1972,7 @@ Homebrew-homebrew-core/Formula/e/evernote-backup.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/e/evernote2md.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/evil-helix.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/evince.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/e/evnx.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/evtx.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/ex-vi.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/e/exact-image.rb, Homebrew/homebrew-core, 0
@@ -3548,6 +3549,7 @@ Homebrew-homebrew-core/Formula/k/kargo.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/karmadactl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/karn.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kaskade.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/k/kata.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/katago.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/katana.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kawa.rb, Homebrew/homebrew-core, 0
@@ -5083,6 +5085,7 @@ Homebrew-homebrew-core/Formula/n/nasm.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/n/nativefiledialog-extended.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/nats-server.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/nats-streaming-server.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/n/nats.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/naturaldocs.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/n/nauty.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/n/nave.rb, Homebrew/homebrew-core, 1
@@ -14877,7 +14880,6 @@ Homebrew-homebrew-cask/Casks/r/rstudio@daily.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/rsyncosx.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/r/rsyncui.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/r/rubymine.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/r/rubymotion.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/runelite.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/r/runescape.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/runjs.rb, Homebrew/homebrew-cask, 1
@@ -15180,7 +15182,6 @@ Homebrew-homebrew-cask/Casks/s/soulver.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/sound-control.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/sound-siphon.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/soundanchor.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/s/soundboosterlite.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/soundflower.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/soundsource.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/soundsource@test.rb, Homebrew/homebrew-cask, 0

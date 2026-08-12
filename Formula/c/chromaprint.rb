@@ -4,14 +4,15 @@ class Chromaprint < Formula
   url "https://ghfast.top/https://github.com/acoustid/chromaprint/releases/download/v1.6.1/chromaprint-1.6.1.tar.gz"
   sha256 "3368805af0ee47b9df74df10b5001a44569e01df2844dab520031720dde9ad23"
   license "LGPL-2.1-or-later"
+  revision 1
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "41d809b84ff08b6041ebb8d8145362ef4ed5d6b39dcc9ca722926a6b0a989d37"
-    sha256 cellar: :any, arm64_sequoia: "eec71c010dd50027135f1962f2837375fc1ba31dc5d744e070547718946c9980"
-    sha256 cellar: :any, arm64_sonoma:  "d0986aaa88db13f2422d0fda2cd8fd3def8f17c628173f5e8529b098c75e639c"
-    sha256 cellar: :any, sonoma:        "e538e18809a4413f8a4d24c1aa1329543229117a04f5a70a2d3e46debe445c96"
-    sha256 cellar: :any, arm64_linux:   "d0bfcdf6f5378c517e4984d18fc176b37d9c378a830dedf5ff77e4f07c4841aa"
-    sha256 cellar: :any, x86_64_linux:  "4059dd2e35d812d544a21e9c46cb46fe8881a5d3a78f45a8857bfe5b1c1962fe"
+    sha256 cellar: :any, arm64_tahoe:   "4bbfd1fff49b1e3f602e4c22fc57432e3235ed93c931d18f6e16c9e8f5ac61a8"
+    sha256 cellar: :any, arm64_sequoia: "2707ad3b5485c678f3f291c02ab621d30771c89509b1df446458e49610b3f197"
+    sha256 cellar: :any, arm64_sonoma:  "6ec11502595524570391b3afbd99910216272d8d1444e24214b1570d0c34936d"
+    sha256 cellar: :any, sonoma:        "454684649fd41eace479350f18b1fc2602f4e08747e74f5a0c187a7dd29fec9d"
+    sha256 cellar: :any, arm64_linux:   "1c468590de3d8df81fe2a37748cfaa56a0f972bb01ed86a6bf9a1208bd2463ec"
+    sha256 cellar: :any, x86_64_linux:  "59606ff7903edb508f2b2db6f48e8e7b76943a9010940274db833515c18a5ae9"
   end
 
   depends_on "cmake" => :build

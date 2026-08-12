@@ -22,7 +22,6 @@ class Nagios < Formula
   uses_from_macos "unzip" => :build
 
   on_macos do
-    depends_on xcode: :build
     depends_on "jpeg-turbo"
   end
 

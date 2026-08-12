@@ -15,9 +15,8 @@ class MacosTrash < Formula
 
   keg_only :shadowed_by_macos
 
-  depends_on xcode: ["16.0", :build]
-  depends_on :macos
-  uses_from_macos "swift", since: :tahoe # Swift 6.2
+  depends_on macos: :ventura
+  uses_from_macos "swift" => :build, since: :sequoia # swift 6.2+
 
   conflicts_with "osx-trash", because: "both install a `trash` binary"
   conflicts_with "trash-cli", because: "both install a `trash` binary"

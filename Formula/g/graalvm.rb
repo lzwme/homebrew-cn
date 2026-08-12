@@ -37,7 +37,7 @@ class Graalvm < Formula
   uses_from_macos "cups" => :no_linkage
 
   on_macos do
-    depends_on xcode: :build
+    depends_on xcode: :build # for metal
     depends_on arch: :arm64
   end
 

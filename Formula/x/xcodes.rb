@@ -11,37 +11,19 @@ class Xcodes < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b24c153e54448a55cfed1f1e2d547cc714abf15faefc187d72443306c4cfc054"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c1adf300abc73b959d49ac48a92424fed029a4dc63d044dac05a589e97915b2b"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "293fc783fe123d6964c9d7bf5e06d020e04c98c3e2b8d98183a6fbc65f868527"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c372609e4c77866cb942add04f9f45d7f5cab96dc819a513ba26c9fc823aa26b"
   end
 
-  depends_on xcode: ["16.4", :build]
-  depends_on :macos
+  depends_on macos: :sequoia # older SDK fail to build on non-'Sendable' type 'Logger'
 
   uses_from_macos "swift"
 
-  resource "XcodesKit" do
-    url "https://ghfast.top/https://github.com/XcodesOrg/XcodesKit/archive/refs/tags/v1.0.3.tar.gz"
-    sha256 "b8b1740467752421515cc741de2e066f104c66ac0c70fc8e7676816261c37685"
-  end
-
-  resource "XcodesLoginKit" do
-    url "https://ghfast.top/https://github.com/XcodesOrg/XcodesLoginKit/archive/refs/tags/v1.0.0.tar.gz"
-    sha256 "d0e25a892b03c272a533f7e9ea7f9ea9f6bbd34c51dbfef1d0069f5787e154a6"
-  end
-
   def install
-    (buildpath/"xcodes").mkpath
-    mv Dir["*"] - ["xcodes"], buildpath/"xcodes"
-
-    resource("XcodesKit").stage(buildpath/"XcodesKit")
-    resource("XcodesLoginKit").stage(buildpath/"XcodesLoginKit")
-
-    cd "xcodes" do
-      system "swift", "build", *std_swift_args
-      bin.install ".build/release/xcodes"
-      generate_completions_from_executable(bin/"xcodes", "--generate-completion-script")
-    end
+    system "swift", "build", *std_swift_args
+    bin.install ".build/release/xcodes"
+    generate_completions_from_executable(bin/"xcodes", "--generate-completion-script")
   end
 
   test do

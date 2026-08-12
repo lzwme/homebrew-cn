@@ -2,17 +2,17 @@ class Xq < Formula
   desc "Command-line XML and HTML beautifier and content extractor"
   homepage "https://github.com/sibprogrammer/xq"
   url "https://github.com/sibprogrammer/xq.git",
-      tag:      "v1.4.0",
-      revision: "02a8c391497a63acbea1c57f036770cef2e87b65"
+      tag:      "v1.5.0",
+      revision: "e1abbb35e250246385b942d055ba800fe04887d6"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "44d099153ec4a4be002387d1ad5c3217abe3ef79505690586c958114e6ff19b3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "44d099153ec4a4be002387d1ad5c3217abe3ef79505690586c958114e6ff19b3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "44d099153ec4a4be002387d1ad5c3217abe3ef79505690586c958114e6ff19b3"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9837eca65155b5e8d9ac7343865a0aaaf6c4c9da667827b9e2b5a667b00e6c59"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d0d82a46bd720fb0b7d0c963261efc56cdf3588ebb77525324dba58ce8253be1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0a4c75879494e05edd80fd217c005edd65f1580856e9b613ca8f1118a0337f3f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "254665c5dddb0e4c7d78e8eeae3f9402c31a71e5b2c9bbb11ee9b017d085dca4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "254665c5dddb0e4c7d78e8eeae3f9402c31a71e5b2c9bbb11ee9b017d085dca4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "254665c5dddb0e4c7d78e8eeae3f9402c31a71e5b2c9bbb11ee9b017d085dca4"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9b83960e853b4fc15f384b970aba16bd581fe56f23b4608000e00f3873607bd1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c532d7a2642810ede92fb6e1cfaa73337dec2354244dbbee57db20e8a0991000"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4cf4645404f4ae9db691c82459b81681d9f15fad9cb8a364259c918003ae6a16"
   end
 
   depends_on "go" => :build

@@ -4,6 +4,7 @@ class Corsixth < Formula
   url "https://ghfast.top/https://github.com/CorsixTH/CorsixTH/archive/refs/tags/v0.70.0.tar.gz"
   sha256 "e8f9803f6f64d23f057506202fbf275fe136c3245bab4bc19ff4c63691459cb7"
   license "MIT"
+  revision 1
   head "https://github.com/CorsixTH/CorsixTH.git", branch: "master"
 
   # Upstream uses GitHub releases to indicate that a version is released
@@ -15,12 +16,12 @@ class Corsixth < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "c2f44746fccfed23663c8b1c5cc41ab0a0c264a71860c0a2b843ed7348dc1339"
-    sha256 arm64_sequoia: "50133c3874f56ac6c2dc0126b98ed7daed0b0410efcac73db947af9ca97743ee"
-    sha256 arm64_sonoma:  "6312add17f21b3133b7bd430219afd1a72e1aca567cc7a16bfea87b8a245c4ab"
-    sha256 sonoma:        "f695a84aa4a1c991ff1d5d1ee47a97a38d035fe65147ca9a228a87082f852bf0"
-    sha256 arm64_linux:   "b0f5c368c5ca1195cf28c92a919ca4260c267f81daf92a82e8844e247bbe9693"
-    sha256 x86_64_linux:  "be31e89507ee3aa2a8f3cc6b2254a175a0b1eb1843acc0a03aea62a6c88622a6"
+    sha256 arm64_tahoe:   "8dda55adc97e54242a3c4e1c2229f78263f117a8adbbaf1e02e03009d9d4ac9b"
+    sha256 arm64_sequoia: "06450af92e3a1a2d2583a90ec8c1d08bd3b6946d7a3031887ce5b277bed46ae0"
+    sha256 arm64_sonoma:  "0db373ffb97cc6951975e3c71787cde04539253e32a10d165022adee7642b911"
+    sha256 sonoma:        "5b04b97ae0475912357864c670ad60519fb36372d66c85e2928812a109fdcdd0"
+    sha256 arm64_linux:   "2aa9985af2b19dbb5eb9adcf78bf37761ac3284aa873bd6b0f727147bb6cb521"
+    sha256 x86_64_linux:  "e5f3eb35cf8ca7e49d9bdf81bd4f6b19518d49cc5879c1564335ecb071507705"
   end
 
   depends_on "cmake" => :build

@@ -4,6 +4,7 @@ class VapoursynthBestsource < Formula
   url "https://ghfast.top/https://github.com/vapoursynth/bestsource/archive/refs/tags/R20.tar.gz"
   sha256 "e44d84ce80be44f5e65a8daf007fa082af00a2aa81a2f19448acfa6abb49048a"
   license "MIT"
+  revision 1
   head "https://github.com/vapoursynth/bestsource.git", branch: "master"
 
   livecheck do
@@ -12,12 +13,12 @@ class VapoursynthBestsource < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "ff9f173e184757520863933ece6f30c76f5e824a8c43140ea07eaaf25c09db11"
-    sha256 cellar: :any, arm64_sequoia: "abf3087114f317a2bd33d7f1863bf06524c4a96953893dcddc76257b7a2f8091"
-    sha256 cellar: :any, arm64_sonoma:  "f3113a9abbe83aba967ce0f7172225c4d3d7518e892fd254a47bccf0cbee2a60"
-    sha256 cellar: :any, sonoma:        "457cc7ea98b70c2293b75547b348fa4cb4f1561ab0f948bc831d189ab69b2f35"
-    sha256               arm64_linux:   "a9f6826364b8d341a6254e4fafa96621549c1e314e66e56554abb0520b71ead5"
-    sha256               x86_64_linux:  "5588b715c3be40662f0f3a9630bb76638f6ce08a2ffa843a81a04cf7cb0e19d5"
+    sha256 cellar: :any, arm64_tahoe:   "624b66a7b6b96836cf29c55dbb5ed554ddd4bb003dfbb4b7d0819b2cbd528f40"
+    sha256 cellar: :any, arm64_sequoia: "3356ec4b767395809f81331850efed2b24f3c22b9e03cd4c0a8ee066a05bde04"
+    sha256 cellar: :any, arm64_sonoma:  "3a158397750869fe8a5f53ad4a42f6c79a0cde3fe6e5b213d39fdb6d6256d18e"
+    sha256 cellar: :any, sonoma:        "754c4f93d6abda14acabd4b19331ac7c08508e3c4e4f2b4fc3777a7360940738"
+    sha256               arm64_linux:   "43ca97373669e63342b5e7574a16d270310a621a213fba17cab6c5ed89a6b2d4"
+    sha256               x86_64_linux:  "ae5eaa2550915c163fd48ec9e9ee466caee463ea13046bc075cb20b9dcc7e102"
   end
 
   depends_on "avisynthplus" => :build

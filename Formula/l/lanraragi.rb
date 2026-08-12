@@ -4,15 +4,16 @@ class Lanraragi < Formula
   url "https://ghfast.top/https://github.com/Difegue/LANraragi/archive/refs/tags/v.0.9.81.tar.gz"
   sha256 "d4ded2cde7d30b5d565da8a0f85014a245cefe9a8f969a45aa0eec57854beadc"
   license "MIT"
+  revision 1
   head "https://github.com/Difegue/LANraragi.git", branch: "dev"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "551ab84fa54db44dfd2aafafa0e6ec4745548274681cc1f3c60f6d6022aabb2f"
-    sha256 cellar: :any, arm64_sequoia: "b06f4583be4309e19ee488abc102e4ce618b08fcb1fd191b5b7f39142cf2f3ee"
-    sha256 cellar: :any, arm64_sonoma:  "861a2807810738dab63a3065d0796e4b7bae3da79ee09c48853b58ba328babe9"
-    sha256 cellar: :any, sonoma:        "3632216976918163574ac54da3c850775b14a900f41ceebeef4bd9da98fe654d"
-    sha256 cellar: :any, arm64_linux:   "10b182c3bba1d8d762794930884e4006d798872654cb3ee0e67837c0b191bd8d"
-    sha256 cellar: :any, x86_64_linux:  "a59891228116507eec551d5b21ff31dcb323d439cccf26ba0b102e17c7c3d175"
+    sha256 cellar: :any, arm64_tahoe:   "02cbfef2afa717a23561d235b8dce37fe3cd30a5241319feec8e7bd14bafdd8e"
+    sha256 cellar: :any, arm64_sequoia: "aa264163195fa4b019be99e155468a69856996b4904dc28885da9f3dcf47ce10"
+    sha256 cellar: :any, arm64_sonoma:  "855f4ba8df233db48991edab679a1bd8f293f8ca5f9da762809725e137c71f74"
+    sha256 cellar: :any, sonoma:        "16633e3eae9473433674819bd6bc944712043b99acea860c1d8c98196dcd17d9"
+    sha256 cellar: :any, arm64_linux:   "ac4d358b763fb0eaaac350aa66844bc409744351669c080d91c4bf7548e2e9f9"
+    sha256 cellar: :any, x86_64_linux:  "241b3853dd472045b0e99bac8057bef50c2a16e7c554c00a2e341ed80cf30866"
   end
 
   depends_on "cpanminus" => :build
@@ -38,6 +39,13 @@ class Lanraragi < Formula
     end
   end
 
+  # The last stable release does not build with perl 5.44's stricter `xsubpp`
+  # TODO: Remove this when the next release of this resource is out.
+  resource "Sys::CpuAffinity" do
+    url "https://cpan.metacpan.org/authors/id/M/MO/MOB/Sys-CpuAffinity-1.13_05.tar.gz"
+    sha256 "cd5ac2f3e2dfd60c4eb8a6f8df04646337611caf24fdcfce5e026e01b492125f"
+  end
+
   def install
     ENV.prepend_create_path "PERL5LIB", libexec/"lib/perl5"
     ENV["OPENSSL_PREFIX"] = formula_opt_prefix("openssl@3")
@@ -56,6 +64,8 @@ class Lanraragi < Formula
     end
 
     system "cpanm", "Config::AutoConf", "--notest", "-l", libexec
+    resource("Sys::CpuAffinity").stage { system "cpanm", ".", "--notest", "-l", libexec }
+
     system "npm", "install", *std_npm_args(prefix: false)
     system "perl", "./tools/install.pl", "install-full"
 

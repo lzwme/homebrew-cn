@@ -4,15 +4,16 @@ class AutoEditor < Formula
   url "https://ghfast.top/https://github.com/WyattBlue/auto-editor/archive/refs/tags/31.4.2.tar.gz"
   sha256 "c12b00ad1fcad4d62bdc863c41c42a245410f8c74e3bdd6d1b5d4916786e3ce0"
   license "Unlicense"
+  revision 1
   head "https://github.com/WyattBlue/auto-editor.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "9cc4ef6b08b544c85d1d841eefffebeb19b196b9646cd6f0c589cdc1250e4a5c"
-    sha256 cellar: :any, arm64_sequoia: "d3dd782a55ab1985d5d56f06c6db687f556ebec0b090b8a996f1689ec2c19a97"
-    sha256 cellar: :any, arm64_sonoma:  "7656866f767bb6854d42ecaad3f50554dcb8880570830798838a71cc21ad90d3"
-    sha256 cellar: :any, sonoma:        "81910a4e962a845c9c58cc3f373053b4a576e860507b24406c515393e4ab0c6c"
-    sha256 cellar: :any, arm64_linux:   "0a116896f1ffd05b87bc3ae364bd170776c1ba5b7f4b1a94e9a1d661cc87b407"
-    sha256 cellar: :any, x86_64_linux:  "1c02435cd16a14084abf7b3850c31559c94fd992f67eb5846a43d53fe37bc1db"
+    sha256 cellar: :any, arm64_tahoe:   "6c6a751397dd82efa263da9abb57f284baa025e5b3467823729554e4dde58994"
+    sha256 cellar: :any, arm64_sequoia: "94fe5c97c08ea6045643d78c8025d00390c098bb00d89c32d8475a78f86e37f2"
+    sha256 cellar: :any, arm64_sonoma:  "66ab4c1a3b81d3503ed63972bc87406228d2a31b8281bbfafbd44fd9e706c5af"
+    sha256 cellar: :any, sonoma:        "ccded83b04898647854b7b02adc318cb23745699428db687e95baf8d17f621f5"
+    sha256 cellar: :any, arm64_linux:   "1ec4f4526171d3bf9c1b89ec2e9e084d240b4a10389e9b3bff5a87674b53360c"
+    sha256 cellar: :any, x86_64_linux:  "908ad07b9321fa99e478edd0afe11e31371a1e690b256e37801807000b09430a"
   end
 
   depends_on "nim" => :build
@@ -20,6 +21,13 @@ class AutoEditor < Formula
   depends_on "ffmpeg"
   depends_on "ggml"
   depends_on "whisper-cpp"
+
+  # Fix builds with FFmpeg 9. Remove with the next release.
+  patch do
+    url "https://github.com/WyattBlue/auto-editor/commit/be5ca8116a7fd179837301e3fe1383fff6b24a2e.patch?full_index=1"
+    sha256 "ab37864e4de76b711dc3867ecf7fcfb7abf9d6bad5bd2f4d800383c9013e28f2"
+    type :backport
+  end
 
   def install
     system "nimble", "brewmake"

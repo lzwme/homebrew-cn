@@ -4,17 +4,16 @@ class Uwsgi < Formula
   url "https://files.pythonhosted.org/packages/9f/49/2f57640e889ba509fd1fae10cccec1b58972a07c2724486efba94c5ea448/uwsgi-2.0.31.tar.gz"
   sha256 "e8f8b350ccc106ff93a65247b9136f529c14bf96b936ac5b264c6ff9d0c76257"
   license "GPL-2.0-or-later"
-  revision 2
+  revision 3
   head "https://github.com/unbit/uwsgi.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 arm64_tahoe:   "4ab17d58083bb0411e52c4611fcb9aab6dd6803be4392a47e4d640f935292edb"
-    sha256 arm64_sequoia: "bb2d659327d2856a28f89a04af2451de5521cad1e8125d1d1747bef509ebeb6c"
-    sha256 arm64_sonoma:  "f81ee8317fa3966427972ec82b7082cee921db42d48425ded4161ae4868bb710"
-    sha256 sonoma:        "737efa50d5cd8cf50911148ecbd25d755eae9f90704107fb3f27a433d75360e7"
-    sha256 arm64_linux:   "8ca4d508ab750c799edb6069db147600674dc7fcc86bca8141a0c5f03100471a"
-    sha256 x86_64_linux:  "8e3840b2f7cb4b22a490d02b7c3d668dc414809041a37f4aa22455bebc31eb0d"
+    sha256 arm64_tahoe:   "8dd8f54a7be80ec021184630117cbe46686d1cae882d9810a4a9ebef828e74d8"
+    sha256 arm64_sequoia: "27e31b191d640607160d070ef0ebfa5f0bf5589c53c6c940726a4f48ab4b48ed"
+    sha256 arm64_sonoma:  "ab6bf0340b7c8ddfbd391781f45dd2d19ceca19ba2911f9321479ff15aaa37b6"
+    sha256 sonoma:        "3b99b7a279046bcb989caaf7eb2c5e97554dce20ac05c758bb079dcef4833cc3"
+    sha256 arm64_linux:   "714fd6fe7f6666bb298fdb4032e4ed683fb2e9a543316099265cd2dac8c91304"
+    sha256 x86_64_linux:  "3df9e1bafa096221e61f8c5fd50b39e71bdaf9d481164142423553bba0bdbcf3"
   end
 
   depends_on "pkgconf" => :build
