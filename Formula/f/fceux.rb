@@ -6,7 +6,7 @@ class Fceux < Formula
     "LGPL-2.1-or-later", # src/drivers/common/{hq2x.cpp,nes_ntsc*}
     "MIT", # src/emufile*, src/drivers/Qt/TasEditor/, src/lua/
   ]
-  revision 10
+  revision 11
   head "https://github.com/TASEmulators/fceux.git", branch: "master"
 
   stable do
@@ -18,15 +18,22 @@ class Fceux < Formula
     patch do
       file "Patches/fceux/2.6.6-arm.patch"
     end
+
+    # Fix builds with FFmpeg 9.
+    patch do
+      file "Patches/fceux/2.6.6-ffmpeg9.patch"
+      type :unofficial
+      resolves "https://github.com/TASEmulators/fceux/pull/850"
+    end
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "eda75ca31699038d2701df7112e28a64c5576885cf5a7071360dc941a491eaf1"
-    sha256 cellar: :any,                 arm64_sequoia: "93fdf378700e89e4b70cba656619c560afcab371b387d5432f5f384347561eca"
-    sha256 cellar: :any,                 arm64_sonoma:  "51e19e49e7678e85f05ed847d8ece770120abb775d522557ff4e98cfea3cedf1"
-    sha256                               sonoma:        "6d3e851b8a1bfea64f473e05562347575e0a0a0b7dc601085e5549e0cbf9efe3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "671d185e43e348cf7e2b1a72ddd80fa6a08a477dd62f9f22a217492d4a8a50da"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "79ae76477708e3f7b73e7065f16fd99470770f13bf5e98abfe3b3e02571b1665"
+    sha256 cellar: :any, arm64_tahoe:   "92df75e7917ef2f4faeabad8adc78dea125ab3acf5443e9fd67e2d278a0ae2e3"
+    sha256 cellar: :any, arm64_sequoia: "e700ee95280afdab48f196664c007404619fc7e9e4d2c88333cb76c3f8e077e9"
+    sha256 cellar: :any, arm64_sonoma:  "c8fae80fef16812835d724185abc326b14824b592261e140e6d98289243f004b"
+    sha256               sonoma:        "70ab74969a2f35f6daa44a8c512c4706fe9a730aff877b238e480be8b1b7231e"
+    sha256 cellar: :any, arm64_linux:   "2b458ef6942759b53cc8d26d213cec088a76f7d65e268a1b15a87a8facd07539"
+    sha256 cellar: :any, x86_64_linux:  "6b1058958a75ec98979e5d132e021f7bd90fb4bd2a247583b263c2d4518d63e7"
   end
 
   depends_on "cmake" => :build

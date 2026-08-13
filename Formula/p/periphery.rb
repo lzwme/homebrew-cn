@@ -16,6 +16,10 @@ class Periphery < Formula
   # We need the CLT installed for libIndexStore.dylib.
   pour_bottle? only_if: :clt_installed
 
+  # https://github.com/peripheryapp/periphery/commit/56a0eb6fb97b785c8fbc1044ccbc7b5d9f06ebec
+  deprecate! date: "2026-08-12", because: :repo_archived
+  disable! date: "2027-08-12", because: :repo_archived
+
   uses_from_macos "curl"
   uses_from_macos "libxml2"
   uses_from_macos "swift"

@@ -3,18 +3,18 @@ class PreCommit < Formula
 
   desc "Framework for managing multi-language pre-commit hooks"
   homepage "https://pre-commit.com/"
-  url "https://files.pythonhosted.org/packages/25/3a/ddb78f32a0814e66b18a099377a106a2dcdce92d86a034d69d65df9b256e/pre_commit-4.6.1.tar.gz"
-  sha256 "03e809865c7d178b9979d06c761fcbfe6808fdaded8581a745bb110e52050421"
+  url "https://files.pythonhosted.org/packages/74/89/1f3e8e1fc3e97de0fa963495832f581f025f29471602a309e48808244292/pre_commit-4.6.2.tar.gz"
+  sha256 "8f5d7bfb021ecdbcd9d49d89847082dd24172ccde534390081a679ad046e2441"
   license "MIT"
   head "https://github.com/pre-commit/pre-commit.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "d286e81ca8cb994086d3fffa7c01beb7a70bfc855941103e36701a60cd06b97d"
-    sha256 cellar: :any, arm64_sequoia: "8296b5d781c5fe719997536780a5078ca5014e0d6a7156e77aafe052e5568d31"
-    sha256 cellar: :any, arm64_sonoma:  "ee414ad1b4e038b4438f8f46c5a0e6226eff7a234b698dbdd7cfce4575fc0b3c"
-    sha256 cellar: :any, sonoma:        "401f4ff4a991099923f32a5399e688f7d3996ee0636c16a56beaaad085e3d04a"
-    sha256 cellar: :any, arm64_linux:   "a1d66f45e191c3aeeaa7c6a0b479b5ff9c07a4214459ce34c19a0ca43f72e716"
-    sha256 cellar: :any, x86_64_linux:  "009e548f41d061f5cc5f5f21a2c05b5328c4c6e3fbb39d90c8526d7921f25fdc"
+    sha256 cellar: :any, arm64_tahoe:   "6e19586944da89f126da4303b0a777dd949142ca2fbe50fd8c715773e5fbc9b2"
+    sha256 cellar: :any, arm64_sequoia: "f02188cae037a791e41adf6dc054166b3a74a642865bfe216d6995f1282d5dc5"
+    sha256 cellar: :any, arm64_sonoma:  "7239c28ec92740baf44199dd3cccfc6f2cc56f55e9cb8e156e872cef63879937"
+    sha256 cellar: :any, sonoma:        "1495121c0f63e579e31e33e8c767e93e0fb3a35cd71d4beaf9e3ae47a0b20d0e"
+    sha256 cellar: :any, arm64_linux:   "00e23fe447c972938d588d41932085ab6345bd2936ecc3dc50007382c8f3b903"
+    sha256 cellar: :any, x86_64_linux:  "1c8f6521a7ab71e074d2e0a12921f004505f7157f056259e9c8b190854a9424e"
   end
 
   depends_on "libyaml"
@@ -31,8 +31,8 @@ class PreCommit < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/c0/80/8232b582c4b318b817cf1274ba74976b07b34d35ef439b3eb948f98645a1/filelock-3.32.0.tar.gz"
-    sha256 "7be2ad23a14607ccc71808e68fe30848aeace7058ace17852f68e2a68e310402"
+    url "https://files.pythonhosted.org/packages/f6/57/3ba6e6cb097f85b855b00163d169f35365f44277df044dcf96d55b8f62a3/filelock-3.32.2.tar.gz"
+    sha256 "c33351e1f49cae33414acbc6d56784e6ecee82514ec90795da1161fc4836b5b8"
   end
 
   resource "identify" do
@@ -46,13 +46,13 @@ class PreCommit < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/78/9b/560e4be8e26f6fd133a03630a8df0c663b9e8d61b4ade152b72005aec83b/platformdirs-4.11.0.tar.gz"
-    sha256 "0555d18370482847566ffabcaa53ad7c6c1c29f195989ae1ed634a05f76ea1e0"
+    url "https://files.pythonhosted.org/packages/e5/98/0bf930c4f97d0266b58a89e36c015f56232c52b5d2f207215d48cca9e8f7/platformdirs-4.11.2.tar.gz"
+    sha256 "3a2ae5fca3520a01ab1be8b45613537f52ddf5b5f6f53d88233892dfbf0cd82d"
   end
 
   resource "python-discovery" do
-    url "https://files.pythonhosted.org/packages/f1/51/276f964496a5714ab9f320896195639086881c2b39c03b5ad13de84acbb8/python_discovery-1.5.0.tar.gz"
-    sha256 "3e014c6327154d3dda27939a9a0dc9c5c000439f1906d3f303b48f984bd2ecef"
+    url "https://files.pythonhosted.org/packages/04/b7/1581a8103855c43567776aa34135e5ec3c597346c23bfd10c7eb5e0b10a4/python_discovery-1.5.1.tar.gz"
+    sha256 "e2ea8b884cd1701f386eda8cf327b87743f1dc21b7f784470799537d95635384"
   end
 
   resource "pyyaml" do
@@ -61,8 +61,8 @@ class PreCommit < Formula
   end
 
   resource "virtualenv" do
-    url "https://files.pythonhosted.org/packages/fe/25/e367a7229b0914772ca8d81b41fde012d9feda68523b52644a571bb21ce8/virtualenv-21.7.0.tar.gz"
-    sha256 "7f9519b9432ff11b6e1a3e94061664efc2ff99ea21780e3cf4f6bd0a5da8b37c"
+    url "https://files.pythonhosted.org/packages/2d/dc/a6eb1ddfa7f1e390fa599b078453c97edb3f6f846b34fb4eac3e8ea16401/virtualenv-21.7.4.tar.gz"
+    sha256 "c9d960c95fa458171e58222a5ccab7465298e4b6559977865e627c4719f1e825"
   end
 
   def python3

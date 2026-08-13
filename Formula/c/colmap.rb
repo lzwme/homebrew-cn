@@ -4,15 +4,15 @@ class Colmap < Formula
   url "https://ghfast.top/https://github.com/colmap/colmap/archive/refs/tags/4.1.1.tar.gz"
   sha256 "0cadd938756d7046055751ca35bcf0d35911403fcb65b91d022ddc418dc110a5"
   license "BSD-3-Clause"
-  revision 1
+  revision 2
 
   bottle do
-    sha256               arm64_tahoe:   "27c39cefba9302d37d3eede1d0501c64c53ea1e32760c0f392815f512f27496d"
-    sha256               arm64_sequoia: "384b70e8d885e8503d649ee11ae4dfa70da6854f14502706cba05b78ec71201d"
-    sha256               arm64_sonoma:  "d0f131eaf74c0c66d525a588204cac682c84ed7f99990f22d7fef128c3a55b92"
-    sha256 cellar: :any, sonoma:        "cc9c44da4ae177dd6db4976665ed926dc25742f57df84647f2ad6af8111b5317"
-    sha256 cellar: :any, arm64_linux:   "6c0e104651c475ca182c888652d632b3cdccfbf7fe470279a1a9cc8e281048d8"
-    sha256 cellar: :any, x86_64_linux:  "70e9ba849073d9f0721ea0cdae8750107d31bc8c2398939a3d16fa5e09829ae3"
+    sha256               arm64_tahoe:   "1ac7f7d96767da385c220dc3888b0ffa224f8f27e2f4026ff4231ad78b682869"
+    sha256               arm64_sequoia: "b187521c6fb5e98e9eba4ee0e89e8912a6bfc9b8fb11c439b8031e25ec289f9d"
+    sha256               arm64_sonoma:  "3126bca3f04c9cd26c6b069835599e8205512c4dd7f0b8fcd84c21e48d451386"
+    sha256 cellar: :any, sonoma:        "676a71c29ce715dd3f215ca0df6972bf84f51aba0dad156c1381d25a348a7daf"
+    sha256 cellar: :any, arm64_linux:   "5c352565389dc8b2119456a323eceb825cecbfb01db0223e64d95fa5de8c72e4"
+    sha256 cellar: :any, x86_64_linux:  "1196b3eb118b4cbfd21cc06e0bb2f904d6af78b0676bc78c575c64f5940eb186"
   end
 
   depends_on "cmake" => :build

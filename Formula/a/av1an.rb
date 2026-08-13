@@ -2,7 +2,7 @@ class Av1an < Formula
   desc "Cross-platform command-line encoding framework"
   homepage "https://github.com/rust-av/Av1an"
   license "GPL-3.0-only"
-  revision 2
+  revision 3
   head "https://github.com/rust-av/Av1an.git", branch: "master"
 
   stable do
@@ -20,12 +20,12 @@ class Av1an < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7fe39b03d44ab8ea709e74b0a025799e378ac8ee0b887997050da2ddcf3c36a7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5703c8154d5d8456048b22401c0b5de715afbe5b597af423b3f2bc98ee628b12"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "50ae3bf46bd4ae35d3fd6cbe0a27853e8c85b04ec10bbcd03723ee33c6574111"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4482d4bcacb71192138c0259c28ceb101cb119e87c3ae0a4a5d12b967250b22d"
-    sha256 cellar: :any,                 arm64_linux:   "4c83ef03746c3d256b2cf8ce20902ec8e6c24afe84f48c052fd2a7d25f41013a"
-    sha256 cellar: :any,                 x86_64_linux:  "26a5b533f84a2c7f34bd05f032e1f63da4f76576a67b6fbb33f2d3a6b0a11188"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6408b362fc09ef34a7d5518b4e963f975fbfcab9686605be0aff8b971e9f8ded"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "940cbc4f300478586beeed81b3cbfd1cf8e13e799ab2ce66d1397c8d57ddd72a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1af81225e8802d91363c75c58cfd492308710819c4e9b778db02b2fb612ff45c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "1cbb38b5c91e2c114fbc06f49ef3c7693e49447efbdff876a151624e5db8275a"
+    sha256 cellar: :any,                 arm64_linux:   "c200efae60ac1c56f75b277546d1ebe8cfbb0d54ca683830480d351c0b288223"
+    sha256 cellar: :any,                 x86_64_linux:  "cc0d5d979af9062de3ae2d2031749b38e49e3393158385f429732b8a1151fb9b"
   end
 
   depends_on "rust" => :build
@@ -35,6 +35,12 @@ class Av1an < Formula
 
   on_intel do
     depends_on "nasm" => :build
+  end
+
+  # Fix compatibility with FFmpeg 9.
+  patch do
+    url "https://github.com/rust-av/Av1an/commit/9bbd829c480e58625842d43b7c8f54962914e9a6.patch?full_index=1"
+    sha256 "78a74c9f236141bbc35e1a7e039b5f3b45d730ad7bb7bda62b337b95daf50e55"
   end
 
   def install

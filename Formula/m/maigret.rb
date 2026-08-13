@@ -3,19 +3,18 @@ class Maigret < Formula
 
   desc "Collect a dossier on a person by username from thousands of sites"
   homepage "https://github.com/soxoj/maigret"
-  url "https://files.pythonhosted.org/packages/b8/18/78400780e8b5a12dc52d42ffa2ee37b66ddffa452b81bd80886c5554ab18/maigret-0.6.3.tar.gz"
-  sha256 "064e50c09548aae426d2ba79731e4f33e40691cc8514555de3ca444db9647f51"
+  url "https://files.pythonhosted.org/packages/82/4a/04438d079ebec6489bc46a79109a732752b94f14f9254d93511e5caba620/maigret-0.6.4.tar.gz"
+  sha256 "cb1bae3ae4a1f6e49198512bb02897afd8e4a7b0e41fb88d3252e87afb975efd"
   license "MIT"
-  revision 1
   head "https://github.com/soxoj/maigret.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bce9568a8e222cc3ba359e55af31b525a527d615b182270535b13c8ed3e2f661"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "afd52e816632d2ebbed6a5607f725a91d1c6567c81a9ee7dd4f1ca332871d4c1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "aa444c5482dd01dae5169ad11b9f170105ced06ec50baef416298b1da6a8e0c4"
-    sha256 cellar: :any_skip_relocation, sonoma:        "94f886a173f6ef6a4f2aa619be4cf23243990c5f1896e4804c4c4e4da1c3b354"
-    sha256 cellar: :any,                 arm64_linux:   "0f8063a6100a671e86f553289dbb705f346fa53e1e9dd822bf5d049531af561a"
-    sha256 cellar: :any,                 x86_64_linux:  "4e3297829fd4910dd089849d07228cb6c80c684c4698a367a8d094fc371030a0"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3654af4bc4c5593898f4db7ec647e1f3740c5158c813c3f9685cadc514ef9b01"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5e78a111fb0645cee3a91d61105e2372c14d4d262aeda83449461bcee060a6ef"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "20c649ae0089f2d80b5fd05827bb095fdba4fa36a2c4908a30537c13d22d8abe"
+    sha256 cellar: :any_skip_relocation, sonoma:        "152098b5b29de96b5abb9b3927abcfa7506804c2c615d6c6fc10b5a8b512aa0a"
+    sha256 cellar: :any,                 arm64_linux:   "4f7f9af2893b059fcce9d8159501f2f9a6d919c2f9d429fab1e929893448e2f2"
+    sha256 cellar: :any,                 x86_64_linux:  "723249f56e3388df7430140e83d5ba7835b952626c0103af6a6a79b6cfd93f76"
   end
 
   depends_on "cmake" => :build # for pycares
@@ -95,8 +94,8 @@ class Maigret < Formula
   end
 
   resource "cffi" do
-    url "https://files.pythonhosted.org/packages/57/5f/ff100cae70ebe9d8df1c01a00e510e45d9adb5c1fdda84791b199141de97/cffi-2.1.0.tar.gz"
-    sha256 "efc1cdd798b1aaf39b4610bba7aad28c9bea9b910f25c784ccf9ec1fa719d1f9"
+    url "https://files.pythonhosted.org/packages/9e/ef/008a1939e372c06329a3fce4279c02f328488f3526744906eeec3da7ad5f/cffi-2.1.1.tar.gz"
+    sha256 "dd31f52ea1086513bb9df30f8fcee9b8918323ae067a3d5b78bc826a000712be"
   end
 
   resource "charset-normalizer" do
@@ -231,8 +230,8 @@ class Maigret < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/78/9b/560e4be8e26f6fd133a03630a8df0c663b9e8d61b4ade152b72005aec83b/platformdirs-4.11.0.tar.gz"
-    sha256 "0555d18370482847566ffabcaa53ad7c6c1c29f195989ae1ed634a05f76ea1e0"
+    url "https://files.pythonhosted.org/packages/e5/98/0bf930c4f97d0266b58a89e36c015f56232c52b5d2f207215d48cca9e8f7/platformdirs-4.11.2.tar.gz"
+    sha256 "3a2ae5fca3520a01ab1be8b45613537f52ddf5b5f6f53d88233892dfbf0cd82d"
   end
 
   resource "prompt-toolkit" do
@@ -325,8 +324,8 @@ class Maigret < Formula
   end
 
   resource "soupsieve" do
-    url "https://files.pythonhosted.org/packages/d9/38/e12680bbe6b4f8f3d17adcaf38d26850aa756c85cf4a80e79fc12a018fe8/soupsieve-2.9.1.tar.gz"
-    sha256 "c33e6605bbc71dd628b00c632d58ae607c22bade247e52553928f83bbb75b4ba"
+    url "https://files.pythonhosted.org/packages/69/99/a6ca3beb3ccacb41fb3321d8a60e5566f9e6467601ef8eba6a17e1b89778/soupsieve-2.9.2.tar.gz"
+    sha256 "4a55d8cf158a9c2e587fa4922f1bbb91d68ac829e2d6f25403a85747c71daf74"
   end
 
   resource "stack-data" do

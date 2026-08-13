@@ -7,27 +7,30 @@ class Gecode < Formula
   compatibility_version 1
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "23b12e1d877493ae754f3d70141930bb0e5c1ce5d75cf5b54c3606dce464d316"
-    sha256 cellar: :any, arm64_sequoia: "91d7a03c1ca180a5585ee2ad5e7494b6012c5c1b02aa0f35d4d8b0c103b1137c"
-    sha256 cellar: :any, arm64_sonoma:  "68968c925bf66bb0d542dddb2550128fa41604ff43a3009f629f11a540fce6b1"
-    sha256 cellar: :any, sonoma:        "cff4b6bed88f6ebbb0e518bdc4bc379b3dd29c938bffd69962d6dccb05725f59"
-    sha256 cellar: :any, arm64_linux:   "49c7e26b8c74152c60f5b7cc2d1b21000bb64137e57539f17f7cb3e964a3aa92"
-    sha256 cellar: :any, x86_64_linux:  "5750be52017bc170d54237ac24e426a5dbb9c23159572d08ec691611474efaec"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "c1af270f7d409a951da92ca72fd36b6ef1e9e93309436bfe4d48abdb19ca4348"
+    sha256 cellar: :any, arm64_sequoia: "9baaf5b2e7a92df403a8803df2b1f5af30167af6e05b1e2ca203237ef785c35e"
+    sha256 cellar: :any, arm64_sonoma:  "09c9a1c1cab4871e9d4579977f2d4cf223eeed16852a1df8d690c49a0784fe32"
+    sha256 cellar: :any, sonoma:        "f6f9fad598c2f3cc07dcc313fa2f35512cabd848bd32a52bfc1ee5bd7bdb229f"
+    sha256 cellar: :any, arm64_linux:   "7c006d234dfec33ffd670506904609655a71cb822be8fb05e1eb2ac917551477"
+    sha256 cellar: :any, x86_64_linux:  "177253ab8d6c6374ca31dc7d77d979784e256f9b8985f38110e120d41a2b1bee"
   end
 
-  depends_on "uv" => :build
+  depends_on "cmake" => :build
   depends_on "pkgconf" => :test
   depends_on "qtbase"
 
   def install
-    args = %W[
-      --prefix=#{prefix}
-      --disable-examples
-      --disable-mpfr
-      --enable-qt
+    args = %w[
+      -DGECODE_ENABLE_EXAMPLES=OFF
+      -DGECODE_ENABLE_GIST=ON
+      -DGECODE_ENABLE_MPFR=OFF
+      -DGECODE_ENABLE_QT=ON
     ]
-    system "./configure", *args
-    system "make", "install"
+
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do

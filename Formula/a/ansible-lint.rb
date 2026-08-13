@@ -6,15 +6,15 @@ class AnsibleLint < Formula
   url "https://files.pythonhosted.org/packages/4c/e5/547e64cf118392fb4d02c179eb0cd86b06145bf7c8e18ab49cc6de5e9886/ansible_lint-26.6.0.tar.gz"
   sha256 "790d08ff6ee56525244677411c90a17b374245d3913bc6a462b5d913ece6d615"
   license all_of: ["MIT", "GPL-3.0-or-later"]
-  revision 1
+  revision 2
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "1b24376306c6db2b8a3ed109991a64e9f81fd08df39069b2ebfe72cd65e48371"
-    sha256 cellar: :any, arm64_sequoia: "6dc134761bcc60f8de2ce4b4aa0658e41f1debeff5cc440f3226219f7601188e"
-    sha256 cellar: :any, arm64_sonoma:  "51792b4fcc5e7fec8dd100a82a270f2046bd93d81b9c79dbf5e0abb4f54e45a4"
-    sha256 cellar: :any, sonoma:        "7891d85139748811eb85d6efa1fbb8f8d9a5d6ddd3863b53d628965fd5b35f15"
-    sha256 cellar: :any, arm64_linux:   "ea12de9c2c77f5a52c7e69341011e83f987ad96f052ea066c243398f0f7f42a9"
-    sha256 cellar: :any, x86_64_linux:  "ba6d14a9c2846ca7872e9d8ebe5b170b68af8dc616fd9421575e977f2bdab59d"
+    sha256 cellar: :any, arm64_tahoe:   "821ba9c400d5d3397ad380a97267c3ee7cad23f77a1e39475773a229982ed90d"
+    sha256 cellar: :any, arm64_sequoia: "2a4ec60c0c3af9269046075f99e4129fa86910678b181f40c6506a0368d0003d"
+    sha256 cellar: :any, arm64_sonoma:  "6a01be5f4c490478c49ffbfc74589023b636b46c6aacb61e3ff5d1947a61b734"
+    sha256 cellar: :any, sonoma:        "db87631b3834a573af41eda33a1850a3c065b90723936ef4ea6831b82e8985ad"
+    sha256 cellar: :any, arm64_linux:   "b3acdc01836a11fc27c158a1888d6912267714eb2b43fc86d80c71f6e6502189"
+    sha256 cellar: :any, x86_64_linux:  "cc5b0d519c35aa1a226377bcaf54979b4fdfc62e24bc8ab70ac72eb02fe7455e"
   end
 
   depends_on "pkgconf" => :build
@@ -33,8 +33,8 @@ class AnsibleLint < Formula
   end
 
   resource "ansible-core" do
-    url "https://files.pythonhosted.org/packages/a1/6d/14fbdae14e7d02fd8349e6a52a76c144a1f92a2df3236c46bd7030cafdce/ansible_core-2.21.2.tar.gz"
-    sha256 "c6139e662eda1bfb5af16029f12afa5edfc7f95f8cd44281b1bdb434a6d9dc70"
+    url "https://files.pythonhosted.org/packages/1c/11/cb53834d320c38d739e756e2458852d6e74a6c7018a9ab9f6d4ab5e5196e/ansible_core-2.21.3.tar.gz"
+    sha256 "4194fbd82273cbacfd06d86d74d2d7168c3c4b8426c03e93562cd7217f811ae1"
   end
 
   resource "attrs" do
@@ -48,8 +48,8 @@ class AnsibleLint < Formula
   end
 
   resource "bracex" do
-    url "https://files.pythonhosted.org/packages/d0/f5/4473ad9b48cd0420a2d762a3750fa0e078e23e060b1af72662e5987e5530/bracex-3.0.tar.gz"
-    sha256 "b73f718d6bd98d8419e45df02426c86e9967c179949f779340d6c3a8c83b9111"
+    url "https://files.pythonhosted.org/packages/ac/01/5f394b8bcd6e5b92f73130990960423bbb19711f906bd9fe9ea5557c667c/bracex-3.0.1.tar.gz"
+    sha256 "4e38e32392e4a4780fe15d644bfc7c8514057cfc3861e060b11814ce829c25e4"
   end
 
   resource "click" do
@@ -63,8 +63,8 @@ class AnsibleLint < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/35/94/00f2059e4835eace3ae8fde680b932c496f8ec7bdc99168dfa53fb2e6b79/filelock-3.29.7.tar.gz"
-    sha256 "5b481979797ae69e72f0b389d89a80bdd585c260c5b3f1fb9c0a5ba9bb3f195d"
+    url "https://files.pythonhosted.org/packages/f6/57/3ba6e6cb097f85b855b00163d169f35365f44277df044dcf96d55b8f62a3/filelock-3.32.2.tar.gz"
+    sha256 "c33351e1f49cae33414acbc6d56784e6ecee82514ec90795da1161fc4836b5b8"
   end
 
   resource "jinja2" do
@@ -93,8 +93,8 @@ class AnsibleLint < Formula
   end
 
   resource "packaging" do
-    url "https://files.pythonhosted.org/packages/d7/f1/e7a6dd94a8d4a5626c03e4e99c87f241ba9e350cd9e6d75123f992427270/packaging-26.2.tar.gz"
-    sha256 "ff452ff5a3e828ce110190feff1178bb1f2ea2281fa2075aadb987c2fb221661"
+    url "https://files.pythonhosted.org/packages/7d/fa/3944b40b07da9ce895c0e6303a5ab7d53da063554f534556b134a54d6093/packaging-26.3.tar.gz"
+    sha256 "94edc256424af38762eb31306eed28beb9f0efc50a8837492c9d6fd6004aed79"
   end
 
   resource "pathspec" do
@@ -103,8 +103,8 @@ class AnsibleLint < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/d7/47/e4501f49c178ae1d9f4a75073fda4204f52647993f075a9db4d14930e0c5/platformdirs-4.10.0.tar.gz"
-    sha256 "31e761a6a0ca04faf7353ea759bdba55652be214725111e5aac52dfa29d4bef7"
+    url "https://files.pythonhosted.org/packages/e5/98/0bf930c4f97d0266b58a89e36c015f56232c52b5d2f207215d48cca9e8f7/platformdirs-4.11.2.tar.gz"
+    sha256 "3a2ae5fca3520a01ab1be8b45613537f52ddf5b5f6f53d88233892dfbf0cd82d"
   end
 
   resource "pytokens" do

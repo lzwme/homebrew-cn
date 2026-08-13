@@ -1,19 +1,18 @@
 class AvroCpp < Formula
   desc "Data serialization system"
   homepage "https://avro.apache.org/"
-  url "https://www.apache.org/dyn/closer.lua?path=avro/avro-1.12.1/cpp/avro-cpp-1.12.1.tar.gz"
-  mirror "https://archive.apache.org/dist/avro/avro-1.12.1/cpp/avro-cpp-1.12.1.tar.gz"
-  sha256 "18a0d155905a4dab0c2bfd66c742358a7d969bcff58cf6f655bcf602879f4fe7"
+  url "https://www.apache.org/dyn/closer.lua?path=avro/avro-1.12.2/cpp/avro-cpp-1.12.2.tar.gz"
+  mirror "https://archive.apache.org/dist/avro/avro-1.12.2/cpp/avro-cpp-1.12.2.tar.gz"
+  sha256 "5e4cea5d9dc59bbc0e3e1967fd8f8a86b4cb7c1452c4b252561b8137e949f6fd"
   license "Apache-2.0"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "f35e56a672cf8d1a65f78f197f60ac5d150b048fddb580ca74e9fd503c784b8b"
-    sha256 cellar: :any,                 arm64_sequoia: "aa5264f1917927f3f685343124b31c09313c586859540bc902b03158d4f8989c"
-    sha256 cellar: :any,                 arm64_sonoma:  "a53f31ef421e8b05a64395839c204ceb958a06f320f984eda2b9d3c9c5c94fea"
-    sha256 cellar: :any,                 sonoma:        "80606fa222e24a27963e33edd318f261dadf5f286e51ac70479b3d9bbc1befa8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "080d12251a43917ee3c4a1dacdefa49004b5a751f7086ceb587cd668b6eba7a7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b6f9ddd021abcff92b6023d26799fb130a245a254f61f058da1d11980c0aac97"
+    sha256 cellar: :any, arm64_tahoe:   "343c94a7d5a32e0b30742e9d775351e3ce51662d833bfca085fcac25b42e19b3"
+    sha256 cellar: :any, arm64_sequoia: "edb049813644cdef22c0f1a94d9c27121630760ed939b836f770d41b4e18207f"
+    sha256 cellar: :any, arm64_sonoma:  "8d5179f11cf31c7b4dacb5b59378a68e5c68412edf95dbc052a49f3fecccae20"
+    sha256 cellar: :any, sonoma:        "73e67a5ac48130fb59827861a2865144a36358890d368ae30114f467a3980f45"
+    sha256 cellar: :any, arm64_linux:   "e7a314d79d8557e10a35fe3cb743bd24d86a6c9b9fba1f7b17d2afbe045809ec"
+    sha256 cellar: :any, x86_64_linux:  "d42cf3ab2efbc34b80056802d3b702886da89bfe871c0db15026d21058c416f4"
   end
 
   depends_on "cmake" => :build
@@ -28,8 +27,12 @@ class AvroCpp < Formula
 
   # Add missing cmake file from git
   resource "avro-cpp-config.cmake.in" do
-    url "https://github.com/apache/avro/raw/refs/tags/release-1.12.1/lang/c++/cmake/avro-cpp-config.cmake.in"
-    sha256 "2f100bed5a5ec300bc16e618ef17c64056c165a3dba8dde590a3ef65352440fa"
+    url "https://github.com/apache/avro/raw/refs/tags/release-1.12.2/lang/c++/cmake/avro-cpp-config.cmake.in"
+    sha256 "0edd19477321eea574be10972f65fc958bd7ae907de1a3974d9bffec238a01e6"
+
+    livecheck do
+      formula :parent
+    end
   end
 
   def install

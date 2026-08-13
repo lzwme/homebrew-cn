@@ -5,6 +5,11 @@ class RRig < Formula
   sha256 "a0f00e7c84573c15819cf7d907dd8668ad67a31784b07e1edd59039e514675fd"
   license "MIT"
 
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "65b85df1c4324713324196fb256f99a49b66699dada1f040e71451610c39eae6"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "d4e421e0ab51394d40e0e8e72513a0465753840c809808c87605dd471a6b7bc9"

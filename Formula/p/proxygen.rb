@@ -15,10 +15,9 @@ class Proxygen < Formula
     sha256 cellar: :any, x86_64_linux:  "02bc3fd314ae4743c21a57c05070b50d26e482b51df93c0346b0793d0e2eb9fd"
   end
 
+  depends_on "boost" => :build
   depends_on "cmake" => :build
-  depends_on "boost"
   depends_on "c-ares"
-  depends_on "double-conversion"
   depends_on "fizz"
   depends_on "fmt"
   depends_on "folly"

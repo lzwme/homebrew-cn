@@ -3,17 +3,17 @@ class Mycli < Formula
 
   desc "CLI for MySQL with auto-completion and syntax highlighting"
   homepage "https://www.mycli.net/"
-  url "https://files.pythonhosted.org/packages/5e/eb/e6a3ee090bfeac1fec7dfcbf248b52f60f528480d1d5e2281ddc365f124d/mycli-2.12.0.tar.gz"
-  sha256 "9375d32b7fa4709bd2b59e4e3ba28de0c0aa24ff36745626a0678c2e05bcfbb4"
+  url "https://files.pythonhosted.org/packages/96/d4/6babf3d60074025744431e22c3cd837185749843525a2e780ac923a460f3/mycli-2.13.1.tar.gz"
+  sha256 "fdd61a6a481563fbecbb42908851dffbe0410293fc931159bb5c864b03aaa3ad"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "51251e5f1b15e76d22c7df369d4525b8a731e1aa0f715a720c58d1711b9baa60"
-    sha256 cellar: :any, arm64_sequoia: "7d0673233431ea8e68d8bbd8a0dd1325b2998465a5ac4d0f268537521a52ff50"
-    sha256 cellar: :any, arm64_sonoma:  "1cdbcffc04a4d4df812977a32bd154026f3e2c5354cc4e1e3be1b8df2ca46d7b"
-    sha256 cellar: :any, sonoma:        "be01b9caefe7ac0b2294ebc860adf030eeb926d90c9aa05b5f0a84c459ed1aee"
-    sha256 cellar: :any, arm64_linux:   "8f19926dbc1be2aa4e2e0e7aec233bd232fd93a7fa316e05e5ab51b71a742692"
-    sha256 cellar: :any, x86_64_linux:  "186994989042cccbda10edb7dd9b88e39f036bc1309d11c487050b786b4d69c0"
+    sha256 cellar: :any, arm64_tahoe:   "4eb4a7f758bb37de57c208e9b0ecdc077fccacaa83429e44cdade7e5fd701cbb"
+    sha256 cellar: :any, arm64_sequoia: "643b7dbee58a6c876d1e55f130fa0dd7d3f0a95fc7afbef95da008e33ac6ed7c"
+    sha256 cellar: :any, arm64_sonoma:  "8be83b95dfd1141e0b6c5bd4a71753fc064580f3013726affe67c77affd706e3"
+    sha256 cellar: :any, sonoma:        "b17ec4dc3b838beb55b85d80228f775df4a51d93fa16ccb7f9348f4f43cdbecb"
+    sha256 cellar: :any, arm64_linux:   "6f18401655b2b2f60fa38406a9f3c078e12bd8f34355f38a54c3ce5247a41c11"
+    sha256 cellar: :any, x86_64_linux:  "c4da0874cf4f8b7b721f73669362ef7f7c810ac1c2ff923f3876608142dca606"
   end
 
   depends_on "rust" => :build # for jiter, polars, vl-convert

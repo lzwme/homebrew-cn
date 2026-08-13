@@ -1,8 +1,8 @@
 class C2patool < Formula
   desc "CLI for working with C2PA manifests and media assets"
   homepage "https://contentauthenticity.org"
-  url "https://ghfast.top/https://github.com/contentauth/c2pa-rs/archive/refs/tags/c2patool-v0.27.10.tar.gz"
-  sha256 "255ddb62e6bac00023db17c4d15a32dc5d7876bed078d04fd76ff676c88168b4"
+  url "https://ghfast.top/https://github.com/contentauth/c2pa-rs/archive/refs/tags/c2patool-v0.27.12.tar.gz"
+  sha256 "9b40a7c64125a6176feda20daf6555017885beed31b6d99fec4ddfc8e0a8bdec"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/contentauth/c2pa-rs.git", branch: "main"
 
@@ -12,12 +12,12 @@ class C2patool < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "8b6d58b5bceb94a6fcbd17db04969b5447445c2690e8d8b63e0d5a16123fe431"
-    sha256 cellar: :any, arm64_sequoia: "98b2af364f986cef685e09219a647e2b5cbec979cf9755c190a2d8bd1e977669"
-    sha256 cellar: :any, arm64_sonoma:  "e31e8dcda1c288a5264c6f137542d5c270cedff347f71c47c43c4410cdf39bcb"
-    sha256 cellar: :any, sonoma:        "fe9aed4b29209abf58a2e9507d78c3ea81f49bedc62e8f0a1994d2a0047dfe3c"
-    sha256 cellar: :any, arm64_linux:   "d9cc693c9bb4a256d44ff0684b137c4df1e71182b031135cdc46828bea78ede5"
-    sha256 cellar: :any, x86_64_linux:  "7ef8de938f66e767638f9d29d929d2438f2f11cbe51150de4c3b20455909f051"
+    sha256 cellar: :any, arm64_tahoe:   "a49469307aab47e2e5f375f34b5af0c809108f25b7aeceee8ddc2a511c734ca7"
+    sha256 cellar: :any, arm64_sequoia: "5bea97758ed0f0178676ad9f4f8934fbc662dc44087a120a7822358e3a498b48"
+    sha256 cellar: :any, arm64_sonoma:  "4ad6f77d604108d1917888aa045e8ca2c50f42a37e23082d5e588f105308aa55"
+    sha256 cellar: :any, sonoma:        "4b475b4ce5f8f60295075ade1157fb6af5114283e7d72f97a7a5f9bff0116815"
+    sha256 cellar: :any, arm64_linux:   "e987f18fc6238d63eda8b120c4dc9c5831f3e1bd685ee1d19c42a7fc43b331e0"
+    sha256 cellar: :any, x86_64_linux:  "51f2353b7f813549ba1c5dcff44e26160761c8e2453cbab6a13af3b67cb72938"
   end
 
   depends_on "pkgconf" => :build
