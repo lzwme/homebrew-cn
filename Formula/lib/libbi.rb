@@ -16,13 +16,18 @@ class Libbi < Formula
     sha256 cellar: :any,                 x86_64_linux:  "e5493553074c94f9ac1269af3e5fc941b99395a74a9d34ed2c974f78e3d5c385"
   end
 
+  depends_on "autoconf"
   depends_on "automake"
-  depends_on "boost"
-  depends_on "gsl"
-  depends_on "netcdf"
-  depends_on "qrupdate"
+  depends_on "boost" => :no_linkage
+  depends_on "gsl" => :no_linkage
+  depends_on "netcdf" => :no_linkage
+  depends_on "qrupdate" => :no_linkage
 
   uses_from_macos "perl"
+
+  on_linux do
+    depends_on "openblas" => :no_linkage
+  end
 
   resource "Test::Simple" do
     url "https://cpan.metacpan.org/authors/id/E/EX/EXODIST/Test-Simple-1.302133.tar.gz"

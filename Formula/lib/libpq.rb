@@ -1,8 +1,8 @@
 class Libpq < Formula
   desc "Postgres C API library"
   homepage "https://www.postgresql.org/docs/current/libpq.html"
-  url "https://ftp.postgresql.org/pub/source/v18.4/postgresql-18.4.tar.bz2"
-  sha256 "81a81ec695fb0c7901407defaa1d2f7973617154cf27ba74e3a7ab8e64436094"
+  url "https://ftp.postgresql.org/pub/source/v18.6/postgresql-18.6.tar.bz2"
+  sha256 "555610c24d53e4316da5b7d3fc25c279d96856d5e0e23ee308c328c5fa881d9f"
   license "PostgreSQL"
   compatibility_version 1
 
@@ -12,13 +12,12 @@ class Libpq < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_tahoe:   "dc42d07661bb1abb1f023155fc506db7f61e5dcdbb236048654540699e4f1ee5"
-    sha256 arm64_sequoia: "1647097313da545e3742d17f2b9875a941079a96be8d743d1d11316895fa25d7"
-    sha256 arm64_sonoma:  "ee5d207f0924b765f19f7dda6802abc11aed8d790b8bc6b07564b3bfdddf6143"
-    sha256 sonoma:        "9a0549142e54c7aeaf023087a64729704e9209d200b867dd18aa0d8f072728fa"
-    sha256 arm64_linux:   "01389abb039d97d3178066b12a696c02151b767f0979e9ad520a993ddf6af9df"
-    sha256 x86_64_linux:  "6ba1e7e120c0e8208738bab6e22cf1adf316e7c1e299cc006454648dfbea7cc7"
+    sha256 arm64_tahoe:   "6fadf0b2e2ba3f6008086e624cb2417823988e78bccbe07b93a5f3cefc7573c1"
+    sha256 arm64_sequoia: "f660d66a19e3960f16426f34b0350a84946672c23ce375408ff1d501e1a6d090"
+    sha256 arm64_sonoma:  "00c6d6128a75ac52740c79f65af01961fd2c0408a3ce0797b7c185408a079c59"
+    sha256 sonoma:        "509cb83e2fb3075e51c44d83a6db67d4f3dc1487a2996b101d4eeb304617b013"
+    sha256 arm64_linux:   "ee5ac4a2e3c39f7756c2781f049068a155f5d6af3e74c56d6e4c05c034bc51e3"
+    sha256 x86_64_linux:  "e4d1403cdb9c4f2c23551036ffc87f0ee3b5bc86df130caffcab9ed9cf6467e7"
   end
 
   keg_only "it conflicts with PostgreSQL"

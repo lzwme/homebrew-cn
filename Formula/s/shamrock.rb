@@ -22,7 +22,6 @@ class Shamrock < Formula
   depends_on "nlohmann-json" => :build
   depends_on "pybind11" => :build
   depends_on "adaptivecpp"
-  depends_on "boost"
   depends_on "open-mpi"
   depends_on "python@3.14"
 

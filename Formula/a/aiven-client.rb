@@ -3,13 +3,13 @@ class AivenClient < Formula
 
   desc "Official command-line client for Aiven"
   homepage "https://aiven.io/docs/tools/cli"
-  url "https://files.pythonhosted.org/packages/db/29/a1999da4d4ad1c5ab22f8c818af266d9f20427dad2f12ba045735594b106/aiven_client-4.16.0.tar.gz"
-  sha256 "469f9b9f73761dabe2ab7b8d70a593c6ace2a4a3c47fcf0a44a6e308cc813ccb"
+  url "https://files.pythonhosted.org/packages/75/6e/13c5c76ebbc360dfca16abc8892fae63214418ac852dc1cd1d89504fb8aa/aiven_client-4.17.0.tar.gz"
+  sha256 "777d91ae0e6492e4c4f6f7d20c5680ae8d82057d8e9372c6ae3e6020939161f5"
   license "Apache-2.0"
   head "https://github.com/aiven/aiven-client.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "8fcd05c5dced53c5c4ef5031552a201096b1df907aead5b60c8fdd1aed3ab2cf"
+    sha256 cellar: :any_skip_relocation, all: "b02d8307ddcd9416974dd1ac92347f415defc47fb8923ea238996076e8da5de4"
   end
 
   depends_on "certifi"

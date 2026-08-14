@@ -19,7 +19,7 @@ class Vineyard < Formula
   # - https://github.com/v6d-io/v6d/issues/2041
   # - https://github.com/v6d-io/v6d/pull/2066
   deprecate! date: "2026-02-13", because: :unsupported
-  disable! date: "2027-02-13", because: :unsupported
+  disable! date: "2026-08-13", because: :unsupported
 
   depends_on "cmake" => [:build, :test]
   depends_on "llvm" => :build # for clang Python bindings

@@ -441,6 +441,7 @@ Homebrew-homebrew-core/Formula/b/b2sum.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/b3sum.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/b4.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/b43-fwcutter.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/b/b4n.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/babel.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/babeld.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/babelfish.rb, Homebrew/homebrew-core, 1
@@ -635,6 +636,7 @@ Homebrew-homebrew-core/Formula/b/bltool.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bluepill.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/blueprint-compiler.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/bluetoothconnector.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/b/bluetuith.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/blueutil.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bluez.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/bmake.rb, Homebrew/homebrew-core, 0
@@ -1096,6 +1098,7 @@ Homebrew-homebrew-core/Formula/c/cling.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/clingo.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/clip.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/clipboard.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/c/cliphist.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/clipper.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/clipper2.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/clippy.rb, Homebrew/homebrew-core, 1
@@ -2320,6 +2323,7 @@ Homebrew-homebrew-core/Formula/f/funzzy.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fuse-overlayfs.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fuse-zip.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/fuseki.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/f/fusesoc.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/futhark.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fuzzy-find.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fvm.rb, Homebrew/homebrew-core, 1
@@ -3935,7 +3939,7 @@ Homebrew-homebrew-core/Formula/l/lpc21isp.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/lpeg.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/lr.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lrdf.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/l/lrzip.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/l/lrzip.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lrzsz.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/ls-hpack.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/ls-lint.rb, Homebrew/homebrew-core, 1
@@ -12795,6 +12799,7 @@ Homebrew-homebrew-cask/Casks/g/gitup-app.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/g/gitx.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/g/glance-chamburr.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/g/glaze-app.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/g/glean.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/glide-browser.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/g/glide.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/g/glkvm.rb, Homebrew/homebrew-cask, 0
@@ -12882,6 +12887,7 @@ Homebrew-homebrew-cask/Casks/g/grids.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/gridtracker2.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/grisbi.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/groestlcoin-core.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/g/grok-bot.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/grok-build.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/groove-omnidialer.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/grs-bluewallet.rb, Homebrew/homebrew-cask, 1
@@ -15328,6 +15334,7 @@ Homebrew-homebrew-cask/Casks/s/sublime-text@dev.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/submariner.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/subsurface.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/subsync.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/s/subtitle-edit.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/subtitle-studio.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/subtools.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/sunlogincontrol.rb, Homebrew/homebrew-cask, 0

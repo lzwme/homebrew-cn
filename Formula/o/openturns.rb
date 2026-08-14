@@ -7,21 +7,21 @@ class Openturns < Formula
   head "https://github.com/openturns/openturns.git", branch: "master"
 
   bottle do
-    sha256 arm64_tahoe:   "aaa16e0b8d9da6cef2358dba2a4fd34922cef041fd35a7e8c34241571bb0315b"
-    sha256 arm64_sequoia: "06934d525285f51512c94932c946eded4e0fac890a0bff46b42d41d53ee6d85d"
-    sha256 arm64_sonoma:  "a6156e3e65bf9ae1e0a727875030291c11e809e9d971c8ab02a7af5160acc40c"
-    sha256 sonoma:        "92854218f776b545973a02f52690f5915ed418966c35536e478925dca7284445"
-    sha256 arm64_linux:   "4eebeb920de7da4b555b960d4e8f07ac1fe3f60b4cde3c8edc2174b4fc9fd9b7"
-    sha256 x86_64_linux:  "385da5290a0c8e5557d4f5f982d509b3c2ad0bfa912438495dd3868e95d4ad98"
+    rebuild 1
+    sha256 arm64_tahoe:   "2f150a1b12c631f1d86abf83327222c98410292d937f35d4f38404be16cd0c0e"
+    sha256 arm64_sequoia: "ba3391c01827910522fca5736530d941911dacde3d870178e9cb2b7e144e6802"
+    sha256 arm64_sonoma:  "a284e8de20f151f73c7ca8e0e2a94bc6bcaf211b1a8e13dba02415383ebed5fa"
+    sha256 sonoma:        "62828cc8463fa2a7409bcfa9ca5deac8b927bb8c51124df23ce0ed1b4fd62435"
+    sha256 arm64_linux:   "510dd85645562892344ab26d036cabf02e5d4bf7e95c6affc7ac606ea49804dc"
+    sha256 x86_64_linux:  "a5c2832548ef87987705919b55382328f649b5b3332c66da834edf75d125a132"
   end
 
+  depends_on "boost" => :build
   depends_on "cmake" => :build
   depends_on "nanoflann" => :build
   depends_on "spectra" => :build
 
-  depends_on "boost"
   depends_on "cminpack"
-  depends_on "gmp"
   depends_on "hdf5"
   depends_on "highs"
   depends_on "ipopt"
@@ -50,6 +50,7 @@ class Openturns < Formula
     ]
 
     args << "-DBLA_VENDOR=#{OS.mac? ? "Apple" : "OpenBLAS"}"
+    args << "-DCMAKE_SHARED_LINKER_FLAGS=-Wl,-dead_strip_dylibs" if OS.mac?
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"

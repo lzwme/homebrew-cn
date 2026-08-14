@@ -3,17 +3,17 @@ class Flexget < Formula
 
   desc "Multipurpose automation tool for content"
   homepage "https://www.flexget.com"
-  url "https://files.pythonhosted.org/packages/96/83/b3c3d1d1c1a7f5f4650768986d0573cb6d7faf8c063af3a172b49a5694c4/flexget-3.20.4.tar.gz"
-  sha256 "e7494f1b884a05fc0dbbbad138e4e96307bf5c243be6d87718103a94c2067ccd"
+  url "https://files.pythonhosted.org/packages/3e/47/c8b56fc220a9cfea3bd615693bb15166991569ce9ceb0b4641cebaa0e381/flexget-3.20.5.tar.gz"
+  sha256 "ca48b0b1a6973e1b918a207cfedead096c31c21cbd26145037d42639152630c1"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "ca2579bd8fb5399f1fa57f8e480f32e0b21b528c913239d19941c4e4f0b08467"
-    sha256 cellar: :any, arm64_sequoia: "99a4d2429d626b5e0f619a0cb400be057e293722b7f032810909c10a0e8dc9e6"
-    sha256 cellar: :any, arm64_sonoma:  "861767bb5875eaed4bb87ffe455d549fc2614a15e615d161459630f448837ad5"
-    sha256 cellar: :any, sonoma:        "fa1ab67f070de64cfede6ee9717d3de9a2e20020c652bbe747b452a2c5b24cf1"
-    sha256 cellar: :any, arm64_linux:   "2f6843d4c1e9e0b496c898c732793a0112d486882334d16c0a136759b4413558"
-    sha256 cellar: :any, x86_64_linux:  "1efec3fc59a63368b4ea15dd356b71bd68c17a552ef59a49b11310f5b2e87f4b"
+    sha256 cellar: :any, arm64_tahoe:   "3dc5d0a1eb3a21fa3bd49217cb65887b392f4f5b0a0ff708c8d46b75383f8de7"
+    sha256 cellar: :any, arm64_sequoia: "f7d564b41714c4bc24386edd6a0341233f87f0390ff7cb4d1fbeb1ccb023231b"
+    sha256 cellar: :any, arm64_sonoma:  "05be534069a43b7cc36845aa50b4f41c6b0beee6d989fb17a0528b59750a3ae3"
+    sha256 cellar: :any, sonoma:        "495213d597256e5ed233d9a9989f8609263a7fc91f03e5f8f8554f48afeba3b6"
+    sha256 cellar: :any, arm64_linux:   "5e029ca75a532a5aa5120995ebde48b0cc71a5292a31f13ebb7b1e78cae9c6e5"
+    sha256 cellar: :any, x86_64_linux:  "4de943344b8db8c7984d26ffdbb7b9db7330e912d7106674597559c255cbbee0"
   end
 
   depends_on "rust" => :build
@@ -294,8 +294,8 @@ class Flexget < Formula
   end
 
   resource "rebulk" do
-    url "https://files.pythonhosted.org/packages/f2/06/24c69f8d707c9eefc1108a64e079da56b5f351e3f59ed76e8f04b9f3e296/rebulk-3.2.0.tar.gz"
-    sha256 "0d30bf80fca00fa9c697185ac475daac9bde5f646ce3338c9ff5d5dc1ebdfebc"
+    url "https://files.pythonhosted.org/packages/09/d4/77c29644d1f9b1ef2881211c9c2a0f89d437f28c80edbc74c698f23055bd/rebulk-6.0.1.tar.gz"
+    sha256 "d6df0c8c896e160087c6981f3770ed513ec973a9f4066b9e4b0614eb08ba0ce1"
   end
 
   resource "referencing" do
@@ -339,8 +339,8 @@ class Flexget < Formula
   end
 
   resource "sqlalchemy" do
-    url "https://files.pythonhosted.org/packages/02/f1/a7a892f18d4d224e6b26f706531eafccc41e37594d37d304786969ee13cb/sqlalchemy-2.0.51.tar.gz"
-    sha256 "804dccd8a4a6242c4e30ad961e540e18a588f6527202f2d6791b01845d59fdc9"
+    url "https://files.pythonhosted.org/packages/3b/21/77b4c147963073040dc3c3a5cb7a8c3001a1893c0209432cb77f9df836aa/sqlalchemy-2.0.52.tar.gz"
+    sha256 "5e2d46356ac2ccb7d268ab6c2319ac6a2b42f1b8d5fd8bd3d46855cd82abee97"
   end
 
   resource "tempora" do

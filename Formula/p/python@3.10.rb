@@ -1,10 +1,9 @@
 class PythonAT310 < Formula
   desc "Interpreted, interactive, object-oriented programming language"
   homepage "https://www.python.org/"
-  url "https://www.python.org/ftp/python/3.10.20/Python-3.10.20.tgz"
-  sha256 "4ff5fd4c5bab803b935019f3e31d7219cebd6f870d00389cea53b88bbe935d1a"
+  url "https://www.python.org/ftp/python/3.10.21/Python-3.10.21.tgz"
+  sha256 "f276987f06270ae6c1fb4da620bd105edf78c31368c2f7e85e6c1d51c560b04b"
   license "Python-2.0"
-  revision 4
   compatibility_version 1
 
   livecheck do
@@ -13,13 +12,13 @@ class PythonAT310 < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "ea1c9cb2149edad18c4e625efb6bf9cc668abff3d3f57239c08eba2244a95c5d"
-    sha256 arm64_sequoia: "2a6745a2fd54d57c488927363f9592196d02e4cd43dff19740606455ad319411"
-    sha256 arm64_sonoma:  "5d95e8ae1b4c3e1f4a47c80cb5465f2ed2aa63be9e108e03c39bd8282fdbc81d"
-    sha256 sequoia:       "14d302792da10c3f5eba30562853f6c4125e3139a78603b321276bd870fa80d4"
-    sha256 sonoma:        "1bc7350a79708fe45e62b9dcf2ee835bd86ff4f83d69b0406e3e2bc400a41b34"
-    sha256 arm64_linux:   "739ff96381ba4a58a68e2cf4ce4eeb58560bdf0d83ae8e4783b97a4c9b8acfc4"
-    sha256 x86_64_linux:  "e8cfb801a0eface1cb2577553dbe1bf6ea856119b7f116b53bdedbc13231bb33"
+    sha256 arm64_tahoe:   "8504eaa9a4b4cf052c1c1620e88fb6ceae15868a34a7b5e04785d79f33b34db7"
+    sha256 arm64_sequoia: "88daade5b0e3e3c2d52502fa88d83f9d63b635c25d4d75e91d8b272933add252"
+    sha256 arm64_sonoma:  "63e4a7a2eeb97ec66beba93be7f3fd24e065daa5900ad166e7b8521e23f15ae8"
+    sha256 sequoia:       "1a1580395c24ae740dac208faa6a3b6329106732cd108a93128ae106497b1401"
+    sha256 sonoma:        "f8392affff160948f4282b65c4dc34dec295c911ac7a0708e768375938e2d715"
+    sha256 arm64_linux:   "8766e2d78a83f379aa6dd695426cc5a1705b7a6f026e72b39886a2b39ea66e52"
+    sha256 x86_64_linux:  "d5a0e35333527cb6d80d9f61ed8d746f68c9c304f2a69188cc328a147a1a4b98"
   end
 
   # setuptools remembers the build flags python is built with and uses them to
@@ -55,28 +54,28 @@ class PythonAT310 < Formula
 
   # Always update to latest release
   resource "flit-core" do
-    url "https://files.pythonhosted.org/packages/69/59/b6fc2188dfc7ea4f936cd12b49d707f66a1cb7a1d2c16172963534db741b/flit_core-3.12.0.tar.gz"
-    sha256 "18f63100d6f94385c6ed57a72073443e1a71a4acb4339491615d0f16d6ff01b2"
+    url "https://files.pythonhosted.org/packages/46/ef/34533186e76c526d9ec17a1ad9a10c7354cbfb20f51583cc36dfe4bdccd0/flit_core-4.0.2.tar.gz"
+    sha256 "b6929defd93884b584d7c87829e0e7b5c26ed6be17b0b873979019314aa841c8"
   end
 
   resource "packaging" do
-    url "https://files.pythonhosted.org/packages/d7/f1/e7a6dd94a8d4a5626c03e4e99c87f241ba9e350cd9e6d75123f992427270/packaging-26.2.tar.gz"
-    sha256 "ff452ff5a3e828ce110190feff1178bb1f2ea2281fa2075aadb987c2fb221661"
+    url "https://files.pythonhosted.org/packages/7d/fa/3944b40b07da9ce895c0e6303a5ab7d53da063554f534556b134a54d6093/packaging-26.3.tar.gz"
+    sha256 "94edc256424af38762eb31306eed28beb9f0efc50a8837492c9d6fd6004aed79"
   end
 
   resource "pip" do
-    url "https://files.pythonhosted.org/packages/01/91/47e7d486260f618783899587af63ccf7980fb60245c3e63dd4571c6b57ad/pip-26.1.2.tar.gz"
-    sha256 "f49cd134c61cf2fd75e0ce2676db03e4054504a5a4986d00f8299ae632dc4605"
+    url "https://files.pythonhosted.org/packages/ae/15/4500e320e6b101ec3b719ae85b697d9940b6cda672bc555bd6016fc60c6f/pip-26.2.1.tar.gz"
+    sha256 "f6ad667e89a1fe78046c8f13232b247200f5258d7828f3f7883d660878e0813f"
   end
 
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/34/26/f5d29e25ffdb535afef2d35cdb55b325298f96debd670da4c325e08d70f4/setuptools-83.0.0.tar.gz"
-    sha256 "025bccbbf0fa05b6192bc64ae1e7b16e001fd6d6d4d5de03c97b1c1ade523bef"
+    url "https://files.pythonhosted.org/packages/6d/44/f5da03a8ef95d369145c5bb53050e7877c9f3d312e128605fd9504829143/setuptools-84.0.0.tar.gz"
+    sha256 "f4695c21257f0d9b537ec2692c941d02ee143b7cc1276941349a546573b2ef73"
   end
 
   resource "wheel" do
-    url "https://files.pythonhosted.org/packages/39/62/75f18a0f03b4219c456652c7780e4d749b929eb605c098ce3a5b6b6bc081/wheel-0.47.0.tar.gz"
-    sha256 "cc72bd1009ba0cf63922e28f94d9d83b920aa2bb28f798a31d0691b02fa3c9b3"
+    url "https://files.pythonhosted.org/packages/d0/20/50ed6bdf27dec98b568a8ae25dc599f35baa3d9709f9e83fd1edb56b9a90/wheel-0.48.0.tar.gz"
+    sha256 "94800765601e9171bf5d58d066e640662842bcedcbab982b2c90787a2c987322"
   end
 
   # Modify default sysconfig to match the brew install layout.

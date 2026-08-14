@@ -1,17 +1,17 @@
 class SentryNative < Formula
   desc "Sentry SDK for C, C++ and native applications"
   homepage "https://docs.sentry.io/platforms/native/"
-  url "https://ghfast.top/https://github.com/getsentry/sentry-native/archive/refs/tags/0.16.2.tar.gz"
-  sha256 "09ef8eabf879cccba9903b268014a450b0f358673df57d84c52cec08fcf578b7"
+  url "https://ghfast.top/https://github.com/getsentry/sentry-native/archive/refs/tags/0.16.3.tar.gz"
+  sha256 "6fdf32c2d6dd6b121e43be4104b05e52f16329d801f3611fd0a08164f716418f"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "38434506e1b3366a9027cf8de1703bba3ad07f3d9cc6b833d487bde4d73477c1"
-    sha256 cellar: :any, arm64_sequoia: "630110a1ae40ff71e2f716c651842568b4c6be06e1463046ee184c0d9493e918"
-    sha256 cellar: :any, arm64_sonoma:  "4c5237e79c3a83bb91b9f286e3a1897147fd11254e699aef4ec3ce5fd93854e1"
-    sha256 cellar: :any, sonoma:        "86a4e845ad261661b34335494842839187d1bd9d9983ec29369eb05562bae4a7"
-    sha256 cellar: :any, arm64_linux:   "22429fd12e6d2fc5772853e32e7bea05c43b4c7519d14def804d20b31ce8d1f7"
-    sha256 cellar: :any, x86_64_linux:  "11113e5ded0431a6ab3c8e63f82bda5a6b28cd67f2ed67493996dbd1a45ec910"
+    sha256 cellar: :any, arm64_tahoe:   "bb5dee4e78c875010234068a545390cc6073abf2514ff5742f37e2a8ca9b697f"
+    sha256 cellar: :any, arm64_sequoia: "80b43f44d321013398596a87b879c0c9f02a0620a45b0a7d83981c1e8134e705"
+    sha256 cellar: :any, arm64_sonoma:  "a14f66d7e59521923a55768405e58c6c1884211cf5800d757c0dc6af278de3ed"
+    sha256 cellar: :any, sonoma:        "83f2a44d105a1173f1ef1e1e7beae829b88ec937f21dd98f0665c5e875f0c750"
+    sha256 cellar: :any, arm64_linux:   "c61792b2a73eaeafc51075ee5bc7fc082c8f9416b1020e4040ca5bfefcae7480"
+    sha256 cellar: :any, x86_64_linux:  "357d7aebf2a24d769035c34f3ccca8046fe296990a013b6c3f5767ea9c1fabc3"
   end
 
   depends_on "cmake" => :build

@@ -3,17 +3,17 @@ class Mycli < Formula
 
   desc "CLI for MySQL with auto-completion and syntax highlighting"
   homepage "https://www.mycli.net/"
-  url "https://files.pythonhosted.org/packages/96/d4/6babf3d60074025744431e22c3cd837185749843525a2e780ac923a460f3/mycli-2.13.1.tar.gz"
-  sha256 "fdd61a6a481563fbecbb42908851dffbe0410293fc931159bb5c864b03aaa3ad"
+  url "https://files.pythonhosted.org/packages/75/dc/23f477b6716c8d329d527ed1cf8d36fe53e1b47f81c9d962622b44a22213/mycli-2.13.2.tar.gz"
+  sha256 "3f56e719285da6760dfd1f66491cdefdddca44e91a0d236bae2f85901e7bbf37"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "4eb4a7f758bb37de57c208e9b0ecdc077fccacaa83429e44cdade7e5fd701cbb"
-    sha256 cellar: :any, arm64_sequoia: "643b7dbee58a6c876d1e55f130fa0dd7d3f0a95fc7afbef95da008e33ac6ed7c"
-    sha256 cellar: :any, arm64_sonoma:  "8be83b95dfd1141e0b6c5bd4a71753fc064580f3013726affe67c77affd706e3"
-    sha256 cellar: :any, sonoma:        "b17ec4dc3b838beb55b85d80228f775df4a51d93fa16ccb7f9348f4f43cdbecb"
-    sha256 cellar: :any, arm64_linux:   "6f18401655b2b2f60fa38406a9f3c078e12bd8f34355f38a54c3ce5247a41c11"
-    sha256 cellar: :any, x86_64_linux:  "c4da0874cf4f8b7b721f73669362ef7f7c810ac1c2ff923f3876608142dca606"
+    sha256 cellar: :any, arm64_tahoe:   "a82e6a465a54fee1f6bac46e319b4e142cfb9861ea79350ac228ee4e91b3097f"
+    sha256 cellar: :any, arm64_sequoia: "70984bba221fac7c24e34d7fa0060611b2755c3b73b0c59c13d1d7d46f84e4e4"
+    sha256 cellar: :any, arm64_sonoma:  "620ffad83e6753bcd27812838b47db882178b2a94011f05404f36d582af8800c"
+    sha256 cellar: :any, sonoma:        "85b0514b8a47d0f46b2fe15bfdb471d49aa085dc3d63cc5e861d2f1e6395a94b"
+    sha256 cellar: :any, arm64_linux:   "17818fb91001957490cddc2ab2be0e3fe2e2bb8f92b76eb1db031b402a8d2a81"
+    sha256 cellar: :any, x86_64_linux:  "11281e3fdf6f1a5bc2707bd40d12aa4774cffdfde52596220815b5da11df3abd"
   end
 
   depends_on "rust" => :build # for jiter, polars, vl-convert
@@ -170,8 +170,8 @@ class Mycli < Formula
   end
 
   resource "openai" do
-    url "https://files.pythonhosted.org/packages/ef/cf/36e3e7235fdf6d125c052acc0970924611b17a20a4fe580596faf4566a65/openai-2.53.0.tar.gz"
-    sha256 "baf5802ad08980e1d9d561e1b996e800c8bcd14af5847c6d0e7a5cc59e4d4116"
+    url "https://files.pythonhosted.org/packages/2a/ae/d4d1835488c0350424009dac5095b9a3e173bee12fd2e421ee27e2142c42/openai-2.48.0.tar.gz"
+    sha256 "231b1e7661dda14574986c2f71451e9d584b7fe69e0ee6480e12ed090b48fc16"
   end
 
   resource "packaging" do

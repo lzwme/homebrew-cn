@@ -1,8 +1,8 @@
 class Ocp < Formula
   desc "UNIX port of the Open Cubic Player"
   homepage "https://stian.cubic.org/project-ocp.php"
-  url "https://stian.cubic.org/ocp/ocp-3.4.1.tar.xz"
-  sha256 "dfa4f63eb67536373c7eb1e8cd8b71d78b871d9d41a96e6bb1e4c131144c23f7"
+  url "https://stian.cubic.org/ocp/ocp-3.5.0.tar.xz"
+  sha256 "914e6ed4ae7702fed569c72bac778ddec377150767c5942aa9aa491f08818eec"
   license "GPL-2.0-or-later"
   head "https://github.com/mywave82/opencubicplayer.git", branch: "master"
 
@@ -12,12 +12,12 @@ class Ocp < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "366b1fbb57f6941fbd5d5ada922489c02cbec5e7547162dc04963f587718014b"
-    sha256 arm64_sequoia: "b7798be42d1077853a828d60828a10c1b51f1463b0ff592cf9aef2419dd9a76e"
-    sha256 arm64_sonoma:  "1676c20721c3721d21ee3da31e8c2d5c80de5ef2983e5173e1e7017ba5a9f959"
-    sha256 sonoma:        "a14d290f7b7db175310f61f07551d32e212da9f8e3b7b7941a20727c8308ba99"
-    sha256 arm64_linux:   "13f6f092d454efddd68813da1d4876366d788441130985507b11e7ec04548f1d"
-    sha256 x86_64_linux:  "fbf4a6e4d780a134cc66647e87d205622a1b0333dee7c427082c08cf346d6e83"
+    sha256 arm64_tahoe:   "7f029bd8a9ea98c6a85482757e87978c7abdca9ac088ceda8b3b46d328815381"
+    sha256 arm64_sequoia: "6500942cdd655aedbde7a7d187215bb8e5e0969a3073fe17c277ca6a92d4d0d6"
+    sha256 arm64_sonoma:  "5f3bd8bfdec82a2914ee872553fec8f45c705990b8b8d689553ef3f63b1af8d2"
+    sha256 sonoma:        "48f7c62aa7f0b6120c1171cd645766ba9180e439f21a88bbf8ecfa7997ed19d2"
+    sha256 arm64_linux:   "df9e75706cb63e6c3f0164bc70d671e399d2a3dcc5a0c13093961f230d1a10ba"
+    sha256 x86_64_linux:  "bc4e8d0a25baabe06d61d3c16cf3af0ea861341a5181536376648cc17d23abc1"
   end
 
   depends_on "pkgconf" => :build
@@ -30,6 +30,7 @@ class Ocp < Formula
   depends_on "game-music-emu"
   depends_on "jpeg-turbo"
   depends_on "libdiscid"
+  depends_on "libogg"
   depends_on "libpng"
   depends_on "libvorbis"
   depends_on "mad"
@@ -38,13 +39,10 @@ class Ocp < Formula
   uses_from_macos "bzip2"
   uses_from_macos "ncurses"
 
-  on_macos do
-    depends_on "libogg"
-  end
-
   on_linux do
     depends_on "util-linux" => :build # for `hexdump`
     depends_on "alsa-lib"
+    depends_on "opus"
     depends_on "zlib-ng-compat"
   end
 

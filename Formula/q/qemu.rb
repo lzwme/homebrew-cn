@@ -1,8 +1,8 @@
 class Qemu < Formula
   desc "Generic machine emulator and virtualizer"
   homepage "https://www.qemu.org/"
-  url "https://download.qemu.org/qemu-11.0.3.tar.xz"
-  sha256 "da5fcffc32762820568b828ed430a728864d34d50b6d2f30358597760cbb0523"
+  url "https://download.qemu.org/qemu-11.1.0.tar.xz"
+  sha256 "6ee1d1a61f68212476b27108c26da5f449dc09b626d42f8279ba0dc2e08fa858"
   license "GPL-2.0-only"
   compatibility_version 1
   head "https://gitlab.com/qemu-project/qemu.git", branch: "master"
@@ -13,14 +13,15 @@ class Qemu < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "cad70866b9b9c6e9e88c4b250637ea0c9fb7227d99bf36f58e5e32eeb5536f55"
-    sha256 arm64_sequoia: "22fbe3c94472e124eaa4829b776bc3e7228c1a94b8ba5783229d422ca3e64763"
-    sha256 arm64_sonoma:  "16bc71899cd919e69258abe366a9ed0a7d8211efd809330ecc03a50e53b9efba"
-    sha256 sonoma:        "ea65f5d43bad7b097b28a5e07047212de59cd1205f9a85eb2cbf019c4a25fe5e"
-    sha256 arm64_linux:   "b8599b302b0f4d38e280d6bf2b3c8dd96d3c195f8f3f798c68233c2afb686b31"
-    sha256 x86_64_linux:  "d4066d891b708a60cdf91a853dc67b9bc7162efd1db74a6099f20db71bfb5621"
+    sha256 arm64_tahoe:   "a7591d88f0633d33e00faf209151fe4223966ad59c7087b9bc9c115703f6479d"
+    sha256 arm64_sequoia: "cab7aaab68df6467cbb67a89b8106dfa69560ef16d39736bdfaa74290775fc09"
+    sha256 arm64_sonoma:  "3d7212ed258d812eb8d014601aad6b79d77dc4b2ff0f9b8518fb055cf375f0a5"
+    sha256 sonoma:        "a70a4e6a0e5803fe49e462f0ceab5f1c4c55247836ddb1807d113264897076dd"
+    sha256 arm64_linux:   "12469212a03d91422d1ab96573726ceca70332d4b4b36569522eed12d895fe29"
+    sha256 x86_64_linux:  "565c7975e793f10807d3e2dd19eee037a00033507fe9e4178ac35808ea189907"
   end
 
+  depends_on "bison" => :build # >= 3.0
   depends_on "libtool" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
@@ -45,7 +46,6 @@ class Qemu < Formula
   depends_on "vde"
   depends_on "zstd"
 
-  uses_from_macos "bison" => :build
   uses_from_macos "flex" => :build
   uses_from_macos "bzip2"
 
@@ -98,6 +98,9 @@ class Qemu < Formula
     # obtain sensible runtime errors. This will also be compatible with
     # Samba installations from external taps.
     args << "--smbd=#{HOMEBREW_PREFIX}/sbin/samba-dot-org-smbd"
+
+    # The arm64 HVF backend needs the macOS 15 SDK for its EL2 sysregs and vGIC
+    args << "--disable-hvf" if OS.mac? && Hardware::CPU.arm? && MacOS.version <= :sonoma
 
     args += if OS.mac?
       ["--disable-gtk", "--enable-cocoa"]

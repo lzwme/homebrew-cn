@@ -1,19 +1,18 @@
 class AutoEditor < Formula
   desc "Effort free video editing!"
   homepage "https://auto-editor.com"
-  url "https://ghfast.top/https://github.com/WyattBlue/auto-editor/archive/refs/tags/31.4.2.tar.gz"
-  sha256 "c12b00ad1fcad4d62bdc863c41c42a245410f8c74e3bdd6d1b5d4916786e3ce0"
+  url "https://ghfast.top/https://github.com/WyattBlue/auto-editor/archive/refs/tags/31.5.0.tar.gz"
+  sha256 "c2e2328d38f54428f9efde76e2e3f51716e82b34ffb3d75337e0826fa08d4e1e"
   license "Unlicense"
-  revision 1
   head "https://github.com/WyattBlue/auto-editor.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "6c6a751397dd82efa263da9abb57f284baa025e5b3467823729554e4dde58994"
-    sha256 cellar: :any, arm64_sequoia: "94fe5c97c08ea6045643d78c8025d00390c098bb00d89c32d8475a78f86e37f2"
-    sha256 cellar: :any, arm64_sonoma:  "66ab4c1a3b81d3503ed63972bc87406228d2a31b8281bbfafbd44fd9e706c5af"
-    sha256 cellar: :any, sonoma:        "ccded83b04898647854b7b02adc318cb23745699428db687e95baf8d17f621f5"
-    sha256 cellar: :any, arm64_linux:   "1ec4f4526171d3bf9c1b89ec2e9e084d240b4a10389e9b3bff5a87674b53360c"
-    sha256 cellar: :any, x86_64_linux:  "908ad07b9321fa99e478edd0afe11e31371a1e690b256e37801807000b09430a"
+    sha256 cellar: :any, arm64_tahoe:   "a67fe98e1592de90fb9e5e9df84ffa5309fb2a401530f3ad05f3b5094f636027"
+    sha256 cellar: :any, arm64_sequoia: "92e733bb0e13c189164da633c92e1c8a8a401cbe75e4f28bce3c012fbb1cf0a6"
+    sha256 cellar: :any, arm64_sonoma:  "ed8c96632687ac7bfaefbeddc5b6aba6102c44c7c4961f6a4e601c5906923414"
+    sha256 cellar: :any, sonoma:        "4ccb34a72c7137ae8d7df12cc8393dad9d083fe7faac10581bef3b913f169dec"
+    sha256 cellar: :any, arm64_linux:   "0dbcf5e380bcdab7144da792f838bfd031ccfc52a8a034800cbfc292bd7b7745"
+    sha256 cellar: :any, x86_64_linux:  "96873d7b907125846b130598bc006e89ce6c90a794e1a75a387095d1b3dce9a9"
   end
 
   depends_on "nim" => :build
@@ -21,13 +20,6 @@ class AutoEditor < Formula
   depends_on "ffmpeg"
   depends_on "ggml"
   depends_on "whisper-cpp"
-
-  # Fix builds with FFmpeg 9. Remove with the next release.
-  patch do
-    url "https://github.com/WyattBlue/auto-editor/commit/be5ca8116a7fd179837301e3fe1383fff6b24a2e.patch?full_index=1"
-    sha256 "ab37864e4de76b711dc3867ecf7fcfb7abf9d6bad5bd2f4d800383c9013e28f2"
-    type :backport
-  end
 
   def install
     system "nimble", "brewmake"

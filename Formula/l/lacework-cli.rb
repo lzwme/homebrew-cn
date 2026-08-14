@@ -1,9 +1,9 @@
 class LaceworkCli < Formula
   desc "CLI for managing Lacework"
-  homepage "https://docs.lacework.com/cli"
+  homepage "https://github.com/lacework/go-sdk"
   url "https://github.com/lacework/go-sdk.git",
-      tag:      "v2.15.1",
-      revision: "554a118f95baeaba249ae95d005735fdef951b5f"
+      tag:      "v2.15.2",
+      revision: "301df8688dcd5eac2b471ba141c400fa36d00aeb"
   license "Apache-2.0"
   head "https://github.com/lacework/go-sdk.git", branch: "main"
 
@@ -16,12 +16,12 @@ class LaceworkCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "30dfd7cd39ba37e6c916dc32cd0dac4d23342432eedd8650f809df638f8dbae8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "30dfd7cd39ba37e6c916dc32cd0dac4d23342432eedd8650f809df638f8dbae8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "30dfd7cd39ba37e6c916dc32cd0dac4d23342432eedd8650f809df638f8dbae8"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e43626d62801356b1632b941a2ca717804cf621070dea953fdddeb9eab6a9b8d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "49738fe99314be98f14473b2bd4bb1dfb0da1a9baec1d43624df2601d3b34d9d"
-    sha256 cellar: :any,                 x86_64_linux:  "5c69f3a027081faa986079557afb18929c3e7b56181de7ff0f216508dc4e505f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5c169f3671b78bd2d86f7378cf76ed1493c1b765874301aabef0a156fbf660e2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5c169f3671b78bd2d86f7378cf76ed1493c1b765874301aabef0a156fbf660e2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5c169f3671b78bd2d86f7378cf76ed1493c1b765874301aabef0a156fbf660e2"
+    sha256 cellar: :any_skip_relocation, sonoma:        "89a49a2bdca71af4747d8a6e04d17ef4506cef438ade125ba594792b856ea522"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6db7457c36ac31f71ff18ecf87de75483396108c8220c9b1661de05bebb5215e"
+    sha256 cellar: :any,                 x86_64_linux:  "fcbe4d0457fd2c48cb8d1546bed590ba5fae1f5edc8cffff8ef9d3d9c621ea65"
   end
 
   depends_on "go" => :build

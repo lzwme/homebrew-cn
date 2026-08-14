@@ -2,8 +2,9 @@ class LandoCli < Formula
   desc "Cli part of Lando"
   homepage "https://docs.lando.dev/cli"
   url "https://ghfast.top/https://github.com/lando/core/archive/refs/tags/v3.26.8.tar.gz"
-  sha256 "03347869863605bad123b48660c3a3429c97fce92020737cf195412b604f3c85"
+  sha256 "3ea7993d42c747c174823df6b89404c6d1e2a0dd1bc7864ad13a2aaa025b5c2b"
   license "MIT"
+  revision 1
   head "https://github.com/lando/core.git", branch: "main"
 
   livecheck do
@@ -12,12 +13,12 @@ class LandoCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fe7601f34cce01677435ebd55899f56f9250501b11866c6541b6870c7658ffe0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fe7601f34cce01677435ebd55899f56f9250501b11866c6541b6870c7658ffe0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fe7601f34cce01677435ebd55899f56f9250501b11866c6541b6870c7658ffe0"
-    sha256 cellar: :any_skip_relocation, sonoma:        "fe7601f34cce01677435ebd55899f56f9250501b11866c6541b6870c7658ffe0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b9b8ae302fcdd533b6b980f14cc7dc37342d17a919428fba5702bf5a3adda16b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b9b8ae302fcdd533b6b980f14cc7dc37342d17a919428fba5702bf5a3adda16b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "80742158d267937efa38dc1393d4442c8dde907a52592b21fdc7365a228186e8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "80742158d267937efa38dc1393d4442c8dde907a52592b21fdc7365a228186e8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "80742158d267937efa38dc1393d4442c8dde907a52592b21fdc7365a228186e8"
+    sha256 cellar: :any_skip_relocation, sonoma:        "80742158d267937efa38dc1393d4442c8dde907a52592b21fdc7365a228186e8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b01685c496c00a10738be019d776da87bcdf637e080c915109f4ae14636d5899"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b01685c496c00a10738be019d776da87bcdf637e080c915109f4ae14636d5899"
   end
 
   depends_on "node"

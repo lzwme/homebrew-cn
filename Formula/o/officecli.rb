@@ -1,17 +1,17 @@
 class Officecli < Formula
   desc "Read, edit, and automate Office documents (.docx, .xlsx, .pptx)"
   homepage "https://github.com/iOfficeAI/OfficeCLI"
-  url "https://ghfast.top/https://github.com/iOfficeAI/OfficeCLI/archive/refs/tags/v1.0.143.tar.gz"
-  sha256 "3e4851edbbc2c49ef832e0160536265a0d31c00fb28d4b104901e1b071d6011e"
+  url "https://ghfast.top/https://github.com/iOfficeAI/OfficeCLI/archive/refs/tags/v1.0.144.tar.gz"
+  sha256 "58077ce6d719ef13ef24641cdf49e84c0123f48bad9625562b04f25c493c888d"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b20c97ad944c9f95c991f9fa4a76f30d1de5e1e7d17b972fae7bfd395a14f685"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f4dbbcc4d218b8384a53779ed526131ca6b2e2ab34ecbee0aa573d403a9986ee"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c88c897a4233d130851679c72170e42bfc28ba6ef5372480a3233cd849b891dd"
-    sha256 cellar: :any_skip_relocation, sonoma:        "dfd01d73b993224f0f639fe218fd8c2f1a21190abd228c64f7409f2b3d0b54e5"
-    sha256 cellar: :any,                 arm64_linux:   "41704e3c781cc740e927222c4f0f50bf7fa1a07a6c9e0f7feaa010b330d137b2"
-    sha256 cellar: :any,                 x86_64_linux:  "ca8de1f26aa50dd59032883c2a6977831a00d46ecacde087be6b4821c887eecd"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d23567a796da16ef3a232a93d3216eaf16bd93224f02027c0e9552a37dba2a5d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2b237743d0218b6c88868e143e66b2640e0f16b38d823cacf52f411eb7a2dcd5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "27dc078da705965fd905e5868a3d91d332dd51b9ca1b99876401f18e85129e62"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8ad9dd78560197c537c2436095e8c9709b42fccd1e14f10751376ca89563f1b5"
+    sha256 cellar: :any,                 arm64_linux:   "7ac70c671e13ac0844657ffbff9dc7652f8cfc2c0edd197836410129ec2baee3"
+    sha256 cellar: :any,                 x86_64_linux:  "8b8a7ae350ee3bfb24fa0ee6c29425dedd3d18d1f112e329ee01f174f9cdac26"
   end
 
   depends_on "dotnet"

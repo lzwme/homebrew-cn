@@ -3,17 +3,17 @@ class Cfripper < Formula
 
   desc "Library and CLI tool to analyse CloudFormation templates for security issues"
   homepage "https://cfripper.readthedocs.io"
-  url "https://files.pythonhosted.org/packages/0c/6b/ae7ef7f1984222dd5a93cf53cdda8f802cf9c3e0855f671dcb15b3a2a89a/cfripper-1.21.0.tar.gz"
-  sha256 "20e9c1b1cb7b2f656ad43fbc1253d80e50b77dc303b873d7520c8be4f6a55a8c"
+  url "https://files.pythonhosted.org/packages/ad/ab/cf03ff1c0e248e1a5de91b603a5dbba6855e6069670a390f139669f61e9c/cfripper-1.21.1.tar.gz"
+  sha256 "e0f5f17e0869764d5ef6394a70898d9485c4d200b0b1e3b04e57e7c940bf9731"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "813008f3ae0dae59afb16c0418afaa35c39d9961ab0653a43009bc75790b465c"
-    sha256 cellar: :any, arm64_sequoia: "3278a06efc9a52192dbf0a426dbf0140ba7179759632d4161bd3c56ef685fd3a"
-    sha256 cellar: :any, arm64_sonoma:  "f7c98d094ba05d4f91cf7d9d25ca1cdf54e1a54ba27a7ad94a47544ccd9f9486"
-    sha256 cellar: :any, sonoma:        "04295ad5d3e601988d866a15ae323e248e4c39991ef1a0ce461468e653def75f"
-    sha256 cellar: :any, arm64_linux:   "892f0835eaeed4eb8326c977d25448d082df14399b253224950d758d8fbe737b"
-    sha256 cellar: :any, x86_64_linux:  "9f7864c3a3ddc8a9e63b382416398056020d1f484d24c6ff7390f2d1661257a7"
+    sha256 cellar: :any, arm64_tahoe:   "4bb0162dee5f1a5376fd6d189cee47768be22df1ee406d14611540d3632c1ff6"
+    sha256 cellar: :any, arm64_sequoia: "d11f0a815152fe384d6f301da7862e5719577169a1d25c80cc16a0aa6d71e5d2"
+    sha256 cellar: :any, arm64_sonoma:  "337aa41f97fda097554ec2cab1dcc863c6a20b86a26b666ec2908ff471cf7fc7"
+    sha256 cellar: :any, sonoma:        "2663879891cd4e11f1f60ee6b35994e6fa874eb4d9e932bb7417360a205f0dbf"
+    sha256 cellar: :any, arm64_linux:   "bdab79eb12e9397533a9a1a2cd90c2448a7646b0993627f645ad43f10259163b"
+    sha256 cellar: :any, x86_64_linux:  "27bfe3dacc9279128f2b405fd017657f0b82b21e83dba4a68dbcf539edad5b00"
   end
 
   depends_on "libyaml"
@@ -23,13 +23,13 @@ class Cfripper < Formula
   pypi_packages exclude_packages: "pydantic"
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/fa/8b/281ca08c796322a36a639b76c714dc4c4323cab4563a492e6a923aa5f15d/boto3-1.43.37.tar.gz"
-    sha256 "cf7e75963229b337d1b0e37c46de6f3c2c2290d186157729c8e7afb12909bfc0"
+    url "https://files.pythonhosted.org/packages/45/8f/315e908f5abaab5deb77196117f66c1badc9093b03dc152b0b8231b0112b/boto3-1.43.69.tar.gz"
+    sha256 "76297a0b415849c63575ae08a4f1661b2dc8ee0100f104b86f98aa69b47fa2c7"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/c4/a8/3409b5df7e6a562be82e409ba5a976e7ac3df8d5567552c23d44b367a40b/botocore-1.43.37.tar.gz"
-    sha256 "46a7982815579cfe8c7851036b1f51237e35e7937456341df55bc5c36a316145"
+    url "https://files.pythonhosted.org/packages/84/da/726b23443ebc77078387fbf330ef7240bc6a96553e566e45a647cd8f714c/botocore-1.43.69.tar.gz"
+    sha256 "5caa46b740d9a886137146ffbb69edb691f702bfe74c64e85621947ae00181fd"
   end
 
   resource "cfn-flip" do
@@ -53,8 +53,8 @@ class Cfripper < Formula
   end
 
   resource "pycfmodel" do
-    url "https://files.pythonhosted.org/packages/da/18/09339f32224d2bf0d68638bfee7abb033f944173adf4f0e5350200cf721c/pycfmodel-2.1.1.tar.gz"
-    sha256 "95535d05c6fc0c89a05c610802ea1f7d95c66b07236d2fa7118ba5ad2964f642"
+    url "https://files.pythonhosted.org/packages/0a/db/58f46626c8c33da9115dd3263e6cbea7edc66806671203d610bb6827ff09/pycfmodel-2.1.2.tar.gz"
+    sha256 "437b535efea69eae77be59b369ebad19214afd808bf1ddf95387456096dcd019"
   end
 
   resource "pydash" do
@@ -73,8 +73,8 @@ class Cfripper < Formula
   end
 
   resource "s3transfer" do
-    url "https://files.pythonhosted.org/packages/f6/94/dcdaeb1713cab9c84def276cfac7388b17c7d9855bbcfe88d77e4dbafd44/s3transfer-0.19.0.tar.gz"
-    sha256 "ce436931687addc4c1712d52d40b32f53e88315723f107ffa20ba82b05a0f685"
+    url "https://files.pythonhosted.org/packages/76/43/35e4d8aa320bffe8287fe8f65f578fa2d2db0a64212f0e710dce58267854/s3transfer-0.19.2.tar.gz"
+    sha256 "ba0309fd86be3c27dbf78cdd813c13c5e1df16e5874b99d2535ebbdfb9892993"
   end
 
   resource "six" do

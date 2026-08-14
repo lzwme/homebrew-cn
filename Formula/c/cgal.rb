@@ -18,14 +18,10 @@ class Cgal < Formula
 
   depends_on "cmake" => [:build, :test]
   depends_on "qtbase" => :test
-  depends_on "boost"
-  depends_on "eigen"
-  depends_on "gmp"
-  depends_on "mpfr"
-
-  on_linux do
-    depends_on "openssl@3"
-  end
+  depends_on "boost" => :no_linkage
+  depends_on "eigen" => :no_linkage
+  depends_on "gmp" => :no_linkage
+  depends_on "mpfr" => :no_linkage
 
   # Backport fix for .debug_gdb_scripts section to avoid errors on some linkers
   patch :p2 do

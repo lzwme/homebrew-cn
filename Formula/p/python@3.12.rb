@@ -1,10 +1,9 @@
 class PythonAT312 < Formula
   desc "Interpreted, interactive, object-oriented programming language"
   homepage "https://www.python.org/"
-  url "https://www.python.org/ftp/python/3.12.13/Python-3.12.13.tgz"
-  sha256 "0816c4761c97ecdb3f50a3924de0a93fd78cb63ee8e6c04201ddfaedca500b0b"
+  url "https://www.python.org/ftp/python/3.12.14/Python-3.12.14.tgz"
+  sha256 "6c6df908d2c3fd24e6d76869e92542abd0f33aec9dfc18df8875f89660286d43"
   license "Python-2.0"
-  revision 4
   compatibility_version 1
 
   livecheck do
@@ -13,15 +12,14 @@ class PythonAT312 < Formula
   end
 
   bottle do
-    rebuild 2
-    sha256 arm64_tahoe:   "659fe17ffa45737acf153b6baaf3fa735b346b8ee191610517d81bdd0b84ea48"
-    sha256 arm64_sequoia: "6891247b265604f1017acddf0d36a0a18ba8d22f94d152f87673a5a9d460ab62"
-    sha256 arm64_sonoma:  "be7efe29ac1d26f89c241a0161aefc145358cf9025076ad8536b07e310295631"
-    sha256 tahoe:         "ce0a418a6634e2754d1b2619b17e01cdd99b5396f5c3338350081b6ee2e98163"
-    sha256 sequoia:       "40f4b28fe9d1fb1da601046eade86ccd3eb6f59561f76d67dc19ac8c39e15057"
-    sha256 sonoma:        "431d539f4b4a6b5d16d115235cfde7cf6755e40cd0e7ea326630582983d88828"
-    sha256 arm64_linux:   "c510379d54acc30e2092c31ed1ba2bcd46ee037c1be182b2bdf512b22f31c2db"
-    sha256 x86_64_linux:  "8ec7b34517ec4c1210f6178cdbfa40e3f1e5d5780d7f26567593a07e425045ff"
+    sha256 arm64_tahoe:   "9dbfce6b803e6f3c0f875fb0753eb2330873e5a06548ae588d6551ad1586c0fa"
+    sha256 arm64_sequoia: "6aabd42f9c268c44f42b4cd7871257d9ea36ec74654539302f14f549353137dc"
+    sha256 arm64_sonoma:  "bf53b71588348014ac3981519dd2b41091bcd79e638bdb4d89252f154d75e53c"
+    sha256 tahoe:         "f322b56e269170bf393e434beb7d04bab965ba00c9097f7aabbe3ad5515a7560"
+    sha256 sequoia:       "32b2af787f1e1145ba3045bfa11c7420a168b80bbbd85c8abe7e0be2dd1ed25d"
+    sha256 sonoma:        "2d15e2889b2a7313ec9d5e745c925f1d1a9b63fcb8e89d1174ac42a9f5015a77"
+    sha256 arm64_linux:   "e323ad386b8b6536eac76ccf1b750ac432f4b3392658fa28949ede0aa83f7d88"
+    sha256 x86_64_linux:  "4799434324207a8c553527a1d5f59ab5efb77fc9019d565717aa1a219446a013"
   end
 
   # https://devguide.python.org/versions/#versions
@@ -54,23 +52,23 @@ class PythonAT312 < Formula
                 extra_packages: %w[flit-core pip wheel]
 
   resource "flit-core" do
-    url "https://files.pythonhosted.org/packages/69/59/b6fc2188dfc7ea4f936cd12b49d707f66a1cb7a1d2c16172963534db741b/flit_core-3.12.0.tar.gz"
-    sha256 "18f63100d6f94385c6ed57a72073443e1a71a4acb4339491615d0f16d6ff01b2"
+    url "https://files.pythonhosted.org/packages/46/ef/34533186e76c526d9ec17a1ad9a10c7354cbfb20f51583cc36dfe4bdccd0/flit_core-4.0.2.tar.gz"
+    sha256 "b6929defd93884b584d7c87829e0e7b5c26ed6be17b0b873979019314aa841c8"
   end
 
   resource "packaging" do
-    url "https://files.pythonhosted.org/packages/d7/f1/e7a6dd94a8d4a5626c03e4e99c87f241ba9e350cd9e6d75123f992427270/packaging-26.2.tar.gz"
-    sha256 "ff452ff5a3e828ce110190feff1178bb1f2ea2281fa2075aadb987c2fb221661"
+    url "https://files.pythonhosted.org/packages/7d/fa/3944b40b07da9ce895c0e6303a5ab7d53da063554f534556b134a54d6093/packaging-26.3.tar.gz"
+    sha256 "94edc256424af38762eb31306eed28beb9f0efc50a8837492c9d6fd6004aed79"
   end
 
   resource "pip" do
-    url "https://files.pythonhosted.org/packages/01/91/47e7d486260f618783899587af63ccf7980fb60245c3e63dd4571c6b57ad/pip-26.1.2.tar.gz"
-    sha256 "f49cd134c61cf2fd75e0ce2676db03e4054504a5a4986d00f8299ae632dc4605"
+    url "https://files.pythonhosted.org/packages/ae/15/4500e320e6b101ec3b719ae85b697d9940b6cda672bc555bd6016fc60c6f/pip-26.2.1.tar.gz"
+    sha256 "f6ad667e89a1fe78046c8f13232b247200f5258d7828f3f7883d660878e0813f"
   end
 
   resource "wheel" do
-    url "https://files.pythonhosted.org/packages/39/62/75f18a0f03b4219c456652c7780e4d749b929eb605c098ce3a5b6b6bc081/wheel-0.47.0.tar.gz"
-    sha256 "cc72bd1009ba0cf63922e28f94d9d83b920aa2bb28f798a31d0691b02fa3c9b3"
+    url "https://files.pythonhosted.org/packages/d0/20/50ed6bdf27dec98b568a8ae25dc599f35baa3d9709f9e83fd1edb56b9a90/wheel-0.48.0.tar.gz"
+    sha256 "94800765601e9171bf5d58d066e640662842bcedcbab982b2c90787a2c987322"
   end
 
   # Modify default sysconfig to match the brew install layout.

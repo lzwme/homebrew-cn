@@ -1,8 +1,8 @@
 class DatadogStaticAnalyzer < Formula
   desc "Static analysis tool for code quality and security"
   homepage "https://docs.datadoghq.com/security/code_security/static_analysis/"
-  url "https://ghfast.top/https://github.com/DataDog/datadog-static-analyzer/archive/refs/tags/0.9.0.tar.gz"
-  sha256 "4766edbc9d88ccbbb42e1e28ad90af9d3a5e5367541b9829aec12c7c91b641a6"
+  url "https://ghfast.top/https://github.com/DataDog/datadog-static-analyzer/archive/refs/tags/0.9.1.tar.gz"
+  sha256 "5ffe264d7f85650d4b25217712d1a9e3c602afb681bf3b8b11bb9c6f0a0a3942"
   license "Apache-2.0"
   head "https://github.com/DataDog/datadog-static-analyzer.git", branch: "main"
 
@@ -12,12 +12,12 @@ class DatadogStaticAnalyzer < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "cb9cba68a2988589a7a584dfce1b6b06870c917eb962afe681b4e01deacc3ff8"
-    sha256 cellar: :any, arm64_sequoia: "7447c84c0c2fd4e167ada8c5a88a4f6302eb1a9b4ffdcc56ecbb106de9d3f670"
-    sha256 cellar: :any, arm64_sonoma:  "2a9f134a6dee5efb71980353a1d152551edee2659d0f4df907966892100fda8c"
-    sha256 cellar: :any, sonoma:        "d1e18d6c9c5367bcbfd9a2b19f5cc47be46000a67fd8ff1c7f0a511f5b4430bb"
-    sha256 cellar: :any, arm64_linux:   "8c0670877b8ab0742c1edd5873ecfb5a9feca340bb35c0771b43388b4b9ef880"
-    sha256 cellar: :any, x86_64_linux:  "4f4920174022ca4d441ba02fb3f14a54e801730c5b362201becdddc3b4c2c5fc"
+    sha256 cellar: :any, arm64_tahoe:   "f685ed74285699ea7e5e1a2e8dce2ce8ac66b3a72329a736d74d7d1d612a0174"
+    sha256 cellar: :any, arm64_sequoia: "a78015aca17bad5f0fe16814a39044cc4c44e12bef210d3257825096f9a280e3"
+    sha256 cellar: :any, arm64_sonoma:  "2ec8a79dab63fb2248beebbbfb968a84600f7030943ce271921370937ea193e6"
+    sha256 cellar: :any, sonoma:        "5d1ff9110f6dbeb0d4f927f51f5fafd74c624649031bbfd8dc74af81cc0a8e6e"
+    sha256 cellar: :any, arm64_linux:   "f7558e4580b32dc92f8f750fbf450ba970975b95519a4f732919a491b786bb83"
+    sha256 cellar: :any, x86_64_linux:  "0c9fbde69af11273a336b15264838a10332120425d9f0818dca5d929a93c9497"
   end
 
   depends_on "pkgconf" => :build

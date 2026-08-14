@@ -1,8 +1,8 @@
 class Goimports < Formula
   desc "Go formatter that additionally inserts import statements"
   homepage "https://pkg.go.dev/golang.org/x/tools/cmd/goimports"
-  url "https://ghfast.top/https://github.com/golang/tools/archive/refs/tags/v0.48.0.tar.gz"
-  sha256 "26829576e4bb8e3fee60d2da2fcfb5f5b6c4780154b76cf73a667cd33a664a3c"
+  url "https://ghfast.top/https://github.com/golang/tools/archive/refs/tags/v0.49.0.tar.gz"
+  sha256 "df7f087706730d85ced76f5f2e3d1a51703de3beb305acc72d1170d405f5a21e"
   license "BSD-3-Clause"
   head "https://github.com/golang/tools.git", branch: "master"
 
@@ -12,12 +12,12 @@ class Goimports < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cfbb53980737d272fabbe98a292d5c3d7e97d7edbeb17af5fe68a7094d763095"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cfbb53980737d272fabbe98a292d5c3d7e97d7edbeb17af5fe68a7094d763095"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cfbb53980737d272fabbe98a292d5c3d7e97d7edbeb17af5fe68a7094d763095"
-    sha256 cellar: :any_skip_relocation, sonoma:        "fccc0f8ede4f41848515978172f23c43e1e3250fb5cb630c19e6d453468159b9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b3f32c6c05669185142666538ce206407e2d1cf74a757f5a8e02404a73d22e12"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "41bae1e8ff24656dfbf84ae57821fcf32c940ed12021d33e2620ac02127fbd10"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "86f5f48d0cdac1376a2ea4ed730c36c970910eee27965ab596530b48cf78a783"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "86f5f48d0cdac1376a2ea4ed730c36c970910eee27965ab596530b48cf78a783"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "86f5f48d0cdac1376a2ea4ed730c36c970910eee27965ab596530b48cf78a783"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8f99566b870b10f7cbee3c22e6be6c59648fbf0f61305da1eec0cb3f4bd71c21"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "403f06cfe5a8855c36d3fc9a5893338bdf04f3f0431c91a67b0c36998a0983a0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "05fa520b201aeb8f8d5e1ddbe0660377da9cf553ae56a29d21e68d17de2e9f2c"
   end
 
   depends_on "go"

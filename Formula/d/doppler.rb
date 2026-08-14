@@ -1,18 +1,18 @@
 class Doppler < Formula
   desc "CLI for interacting with Doppler secrets and configuration"
   homepage "https://docs.doppler.com/docs"
-  url "https://ghfast.top/https://github.com/DopplerHQ/cli/archive/refs/tags/3.76.1.tar.gz"
-  sha256 "ea645c8ddd90f54255bcfb936d892681532c4ecdd7b538b000fd90662ddfaeba"
+  url "https://ghfast.top/https://github.com/DopplerHQ/cli/archive/refs/tags/3.76.4.tar.gz"
+  sha256 "d190f2d1cec27cb120b705b10adac4d9b49f64637bf53b521ded906831298559"
   license "Apache-2.0"
   head "https://github.com/DopplerHQ/cli.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d2a580fa62640c7af72f904efe423e2af4fdbf3386fc1721f06695845b609054"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d2a580fa62640c7af72f904efe423e2af4fdbf3386fc1721f06695845b609054"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d2a580fa62640c7af72f904efe423e2af4fdbf3386fc1721f06695845b609054"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4d83504ac3a4fbb6de2e071dcd4d83695297be44fcce8258e40c95a7a89b349b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9013724292e44225a00155e3bd42e9fefe573c55c7a949497e22308e9a1e5abf"
-    sha256 cellar: :any,                 x86_64_linux:  "3aa3d9c7df01b36e87868a1e89d3763ff9c0b1533169e5a0dbc4f1fdc47a9cfd"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4863cf37bb2b72925ac5e4bec255c1557b69a7d04b9d7541b13a8e3db2d0517b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4863cf37bb2b72925ac5e4bec255c1557b69a7d04b9d7541b13a8e3db2d0517b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4863cf37bb2b72925ac5e4bec255c1557b69a7d04b9d7541b13a8e3db2d0517b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ff48f9ea42b9f0bfcbc2baf4c08a571f634b23e96c6ba4f09565d86759d01cd3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "663aceec6393495301e757559346f984da6164e7390d88723ebce669ba653528"
+    sha256 cellar: :any,                 x86_64_linux:  "b267475789f429af8ebcd349ac495893663593d6cf81242676fab31dfb57cde9"
   end
 
   depends_on "go" => :build

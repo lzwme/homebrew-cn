@@ -14,8 +14,8 @@ class Kfr < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "ae7a12b26f03bbc10216e6b018499cf826967814c5067df3631928b84bce4eb5"
   end
 
+  depends_on "boost" => :build
   depends_on "cmake" => :build
-  depends_on "boost"
 
   on_arm do
     # FIXME: `uses_from_macos` is not allowed in `on_arm` block

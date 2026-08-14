@@ -1,17 +1,17 @@
 class CalmCli < Formula
   desc "CLI allows you to interact with the Common Architecture Language Model (CALM)"
   homepage "https://github.com/finos/architecture-as-code/tree/main/cli"
-  url "https://registry.npmjs.org/@finos/calm-cli/-/calm-cli-1.54.0.tgz"
-  sha256 "f41b27558ca641503d9d81af5da2e9d11d81cfb1e869f4e99e8b457729a8b4a0"
+  url "https://registry.npmjs.org/@finos/calm-cli/-/calm-cli-1.55.0.tgz"
+  sha256 "fcfcd6c35a54e92f5be31ce68f6b2c175c509fac6bc028d1e8faf6347cba56ea"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b0483240c76fbad492a143457ed31ca5eb0cbd24cac76348c1ae213e0e14f2cc"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b0483240c76fbad492a143457ed31ca5eb0cbd24cac76348c1ae213e0e14f2cc"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b0483240c76fbad492a143457ed31ca5eb0cbd24cac76348c1ae213e0e14f2cc"
-    sha256 cellar: :any_skip_relocation, sonoma:        "176fd53c21a7f4e24f1ecc3d22191e9662c6d44c0f80ef852580dd5928c23e02"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e81a8b65ce36ba3a583422c8b09db295eae0276aea63e21d2adc04587fafdf95"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d9f0bbbbecadac8e686e1345f13976156fbf8bfe41870b5d885c1d1ce7eb58ef"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7a0d953390a4dfb954379acc00aea9ac2a8a396e4124f1f0e9be1832bd90f741"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7a0d953390a4dfb954379acc00aea9ac2a8a396e4124f1f0e9be1832bd90f741"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7a0d953390a4dfb954379acc00aea9ac2a8a396e4124f1f0e9be1832bd90f741"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e462d5a2c52e9a248f2be6703d081fa4c2af2c57a70d40d3e4ea4673d7754098"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cfb22bb6cab71aa71f89899658e3daa8277f5797a982cfcb718a3e52b5d41f1e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "532e988078f97989b1f4c6c9be1b40eeaa4fff65f7c25d66ce78311c6f22686c"
   end
 
   depends_on "node"

@@ -1,20 +1,10 @@
 class Sapling < Formula
   desc "Source control client"
   homepage "https://sapling-scm.com"
+  url "https://ghfast.top/https://github.com/facebook/sapling/archive/refs/tags/0.2.20260811-150444+8fb02b32.tar.gz"
+  sha256 "5815b3b70c73b7731c611bcfeee44ac2bc7be84dbdaf4738366396d0dbc8de4f"
   license "GPL-2.0-or-later"
   head "https://github.com/facebook/sapling.git", branch: "main"
-
-  stable do
-    url "https://ghfast.top/https://github.com/facebook/sapling/archive/refs/tags/0.2.20260522-084851+1e764c94.tar.gz"
-    sha256 "2b2d3023ec10478e3d9d4db3240b71bc4068a63dd11f98f11d399372c62a5f9a"
-
-    # Backport commit for Python 3.13
-    patch do
-      url "https://github.com/facebook/sapling/commit/3b640b74fe351c80d60954c8ea611d4b354187a4.patch?full_index=1"
-      sha256 "4d85e880b1455ebde41d0419f952572e6a71ddb772f4ea594e9abaf80802b4e6"
-      type :backport
-    end
-  end
 
   livecheck do
     url :stable
@@ -25,13 +15,12 @@ class Sapling < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    rebuild 1
-    sha256 arm64_tahoe:   "9294201a8dec757bf5bd55c4a44376894363228b81024a5b3e4717455ad2fe52"
-    sha256 arm64_sequoia: "9e6fdbb40e7ec40cc405cfcec3c719203f0db744cba29e46463241a4c8963d5f"
-    sha256 arm64_sonoma:  "fc7e4f14c5849c393080bc3b9a7b5c33be2c37ad5e8bda36cb49465cbc6b4cc4"
-    sha256 sonoma:        "10738cb4a907d8364db3ade320f3bc7cbe92f95de2f2393c35f3ab80b37732f4"
-    sha256 arm64_linux:   "3c421260021a090f145878201fca5eb7693508d19ee9b446fe24f70f762b7331"
-    sha256 x86_64_linux:  "21e72a841ef9f852836eba10ba4a88a4a7ca074b7fd53585efd60eecf6efe4e3"
+    sha256 arm64_tahoe:   "be95ffb437fc3a142b6dea912b7ef36e6cd02d55af963741acfa5717dade0552"
+    sha256 arm64_sequoia: "0fbf197d7028aa47e8130d2faa7d76eac762dffee2a4d6646dfe96116479f7f1"
+    sha256 arm64_sonoma:  "cd329c11db2197f30e3a7071363439dccb95edcef18e35297b7f506cc6889dbb"
+    sha256 sonoma:        "1e74dcea49f06cbe517f50a667e0fd1fdeaaa6c886487a348bf9e6eabbd1e316"
+    sha256 arm64_linux:   "7f59eb4713ed6ef2495103f9680c753bec5308bf6ec348f3970da472f8476412"
+    sha256 x86_64_linux:  "2307350bd965975748a44d3de2e5b0095e05d39cb94b55b7f53bac87165b69d3"
   end
 
   depends_on "cmake" => :build

@@ -4,14 +4,15 @@ class PandocCrossref < Formula
   url "https://ghfast.top/https://github.com/lierdakil/pandoc-crossref/archive/refs/tags/v0.3.25.tar.gz"
   sha256 "cb42b8319a59f258fea191e4660b62bdd9a90a9099322ae0f17203bc5986498a"
   license "GPL-2.0-or-later"
+  revision 1
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "6273630e628147c3867825c59f4d1701420a0f5dcba722d58a7dfada3ee66269"
-    sha256 cellar: :any, arm64_sequoia: "ab6ad052f45b7af74ba24e73fb1f9159b82680f4c4345ef241e19cfd212feaca"
-    sha256 cellar: :any, arm64_sonoma:  "df653d4a9ccc9cb723160d751a3672cebcd4838d80abd0756185743ff4fafab3"
-    sha256 cellar: :any, sonoma:        "f507e4c2192c863cafd1a0a6ff0440580ac1d210d349006a91eb9f4419be849e"
-    sha256 cellar: :any, arm64_linux:   "e7cbb5f4519594cae33210e71732b3141e8465b2612fb38409353c5ef25df6d4"
-    sha256 cellar: :any, x86_64_linux:  "b6037d6ad7acde6b0af51636af2ccac7ee5d8f8d366f6e96347046852f8faee8"
+    sha256 cellar: :any, arm64_tahoe:   "866aa0a29786db950b528e19151f6638bce273a5cd40c1df80c477feda0b1932"
+    sha256 cellar: :any, arm64_sequoia: "391544a14cd89f253ea4c968d8aa4b6fb92ec0e9c896e8f4bbb415a2874728dc"
+    sha256 cellar: :any, arm64_sonoma:  "259da75e1c909ba68d6d1c275afe75923f5b06cf46adcc117a4eead17e42759b"
+    sha256 cellar: :any, sonoma:        "bf616685c61af5d7f3f268942703b3ddf47717c74b01faee1c3e89a37385bc98"
+    sha256 cellar: :any, arm64_linux:   "12b38b236f67baca69ea4c57d4ce16bea8003fcf39927cb1289a6392a845b528"
+    sha256 cellar: :any, x86_64_linux:  "e1efed30a2df80e82222bb9fd57a5e3daa7b80ecd6a18b97c58953befaec25ac"
   end
 
   depends_on "cabal-install" => :build
