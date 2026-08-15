@@ -1,18 +1,18 @@
 class HfMount < Formula
   desc "Mount Hugging Face Buckets and repos as local filesystems"
   homepage "https://github.com/huggingface/hf-mount"
-  url "https://ghfast.top/https://github.com/huggingface/hf-mount/archive/refs/tags/v0.9.0.tar.gz"
-  sha256 "5b605ae805c05a1238eca341795a0718581c757e31677d8a088bc00707c31acc"
+  url "https://ghfast.top/https://github.com/huggingface/hf-mount/archive/refs/tags/v0.9.2.tar.gz"
+  sha256 "c74136c6f827655e8517c8881b9b03c1c7ab6b6dcc63f6f0ec530dd946fadc60"
   license "Apache-2.0"
   head "https://github.com/huggingface/hf-mount.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ccc2a932da6ffb63d25eefe56ee380c1abc65875a29a1432a8d8760cc52b69f1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b2de94518fabd79e36762d68cbac4c32346f8a5d56197ddc7fb7ed63a0d45afe"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e9a72a3b3567914f1fee96df59c5e0a5d9744aa311c8c066a108b8bea1305188"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c0e03cdde596afda871e088d7f10a052e43396e3813e65abb3bb3d9dacfb6537"
-    sha256 cellar: :any,                 arm64_linux:   "8c1de7989add3f97de25f53ad74a2b8d8eb3da63a63749ffd1dc0d8ea20c6aef"
-    sha256 cellar: :any,                 x86_64_linux:  "e9b29d7f1bca4ace429a3df535d9729866747e0332cdc57699e81f1744584a2c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "eb0ee32dbf4ffad6bfaf5c3e28796f563a3158fadda01c8e59ebe6fcd1ab2ac3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "25fb398b145f3f6f36a94f65d53bb1a56fb2a146a4211df6a6f328f0f07545e3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cbbb0a118725ec6b2d6227fceac922b49ff8134c70c7e9fa0bd3f80168a28697"
+    sha256 cellar: :any_skip_relocation, sonoma:        "93fec9da19740e47a4d21f1151a91d218e842bfb87e2f821c8ad206af2d58109"
+    sha256 cellar: :any,                 arm64_linux:   "3cbbaba33cd63c7f0eac7b4358d591ee6d818d3a32d3de8d687025fcc0de9950"
+    sha256 cellar: :any,                 x86_64_linux:  "76f5d0f24689408e6874638c97bc657fc124ebaa2c53efcffcc50238de20631d"
   end
 
   depends_on "pkgconf" => :build

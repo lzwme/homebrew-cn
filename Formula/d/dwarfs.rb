@@ -4,6 +4,7 @@ class Dwarfs < Formula
   url "https://ghfast.top/https://github.com/mhx/dwarfs/releases/download/v0.15.6/dwarfs-0.15.6.tar.xz"
   sha256 "087b77c1d6a1f253df896b054f95ef17469c63b00be51f4d081633cc8817481c"
   license "GPL-3.0-or-later"
+  revision 1
 
   livecheck do
     url :stable
@@ -12,12 +13,12 @@ class Dwarfs < Formula
   end
 
   bottle do
-    sha256               arm64_tahoe:   "38ff88183d70f551d39b833ca48f5c27d0ec785b0d46ccaf06cabf11e73382fa"
-    sha256               arm64_sequoia: "7b7dcf46c73ccd6ed5b0127e826d3623083630243fa0f93e31c036a57a4a1599"
-    sha256               arm64_sonoma:  "15341ad76adb01750f22280b4e308c7151d9c3c42bb0d64daf3e701473d41ba2"
-    sha256 cellar: :any, sonoma:        "a4d9962007494b030b916222c6e7af32a44d21d1a116f6609b1ce6e3824aacc8"
-    sha256 cellar: :any, arm64_linux:   "bb4a6fe1a28f5159c3331c9e2bac2266232a3cc87f5c9407f2f48e3a9ec3d6e2"
-    sha256 cellar: :any, x86_64_linux:  "8822600415f04ebdf83e76647188e864b6f51c23d2feffbfe57264ef821d6831"
+    sha256               arm64_tahoe:   "63b397314401edc3e15b73766d29f80d7bd73f22ea51aa26a58b3e7f00d3c698"
+    sha256               arm64_sequoia: "8215d5880d11a768eb178a3e552ce48ab43ed82d2b7162738981011552603535"
+    sha256               arm64_sonoma:  "67398d29589fe65d5879475a54989634c09f41be359e08112f4d257553e448fb"
+    sha256 cellar: :any, sonoma:        "4e04048bddf039470771fb7eb4beae08c954ca576f95219366c1d60138d09e72"
+    sha256 cellar: :any, arm64_linux:   "171056f34b9d39ca019d61ff6dee017b307280c412d6ba3a74e2a0406a26b15b"
+    sha256 cellar: :any, x86_64_linux:  "f90ad90e2265b937bc576a6bf4517ce268d8e83a970daa4e85b741334b4b1b01"
   end
 
   depends_on "cmake" => :build

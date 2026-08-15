@@ -6,7 +6,7 @@ class GraphTool < Formula
   url "https://downloads.skewed.de/graph-tool/graph-tool-2.98.tar.bz2"
   sha256 "eef1948b937f5f043749eee75fe0c6d7e8f036551d945e9d55e37870b06cc527"
   license "LGPL-3.0-or-later"
-  revision 4
+  revision 5
 
   livecheck do
     url "https://downloads.skewed.de/graph-tool/"
@@ -14,13 +14,12 @@ class GraphTool < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256               arm64_tahoe:   "6afb00c1f7d70785dc11cee93c8e1737cb2d5418fe3277fa21bc82fada367d88"
-    sha256               arm64_sequoia: "6145b7a963a4d27c599e8f178bac270735416155fa8927a17ccdad5d89d54c41"
-    sha256               arm64_sonoma:  "b56bc924ea55f7c925469ffd2c1749f69c9c9ad5d27e7769ef6b619b43ac408c"
-    sha256               sonoma:        "ce2bccff3d23b5c7a5f26306a47104c1d0c5566fbf6bf84ee5f7e1e4b43ff592"
-    sha256               arm64_linux:   "500f1643dbc65fc8c035570ebb5cb2645f4b8f5f19206515bb0ce75436664e2c"
-    sha256 cellar: :any, x86_64_linux:  "aacef17c2a0dd105ba0b6e380bba2149d431212e44324949c4149e92cf60c8a3"
+    sha256               arm64_tahoe:   "846935614fa4f53fd822a78f60a605f721799802661a7532c9980dea956d273c"
+    sha256               arm64_sequoia: "987e29d22d26fb54af1c79c83c63db68c3fe092382bbec66cae2bd6c1b0ae63f"
+    sha256               arm64_sonoma:  "14804f3eb2ef6c0d3532c608d40e1e48e95ab92867dfd486a81d693585d3de2c"
+    sha256               sonoma:        "9164b500375f9bd859f33f1bd83de228f66e0315c6b3e205388034cf8d108583"
+    sha256               arm64_linux:   "27a8ab11d0eca3f7e861d55845824bbd8e9bce4ff81492fa9cbc0b38a2b50007"
+    sha256 cellar: :any, x86_64_linux:  "f28db54631e464f1a52416140cf558204194eabbdf5602ea653e20e0cfbb823f"
   end
 
   depends_on "cgal" => :build

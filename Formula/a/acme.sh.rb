@@ -6,7 +6,8 @@ class AcmeSh < Formula
   license "GPL-3.0-only"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "30fcd885633e9d644317dcc96fcc7499ea2e967715d14a5c9aec7389f3bbf647"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "13ea07a8e98a225adb6ed188db305c805e1cf3677582b9e83074781f7c88dd95"
   end
 
   deny_network_access!
@@ -20,6 +21,7 @@ class AcmeSh < Formula
     ]
 
     bin.install_symlink libexec/"acme.sh"
+    bash_completion.install "acme.sh.completion" => "acme.sh"
   end
 
   test do

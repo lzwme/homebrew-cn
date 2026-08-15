@@ -4,6 +4,7 @@ class Stp < Formula
   url "https://ghfast.top/https://github.com/stp/stp/archive/refs/tags/2.4.1.tar.gz"
   sha256 "6f8bca3612e3d61868450dbf7771897b2a909f446e8de460bdf31f13a6cd0318"
   license "MIT"
+  revision 1
   compatibility_version 1
   head "https://github.com/stp/stp.git", branch: "master"
 
@@ -13,12 +14,12 @@ class Stp < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "aead025077170229619fdf5a1eeaac64f65b5a26ee5b9f011dba66b5d3ed98b2"
-    sha256 cellar: :any, arm64_sequoia: "7596f3a38a7598bb79f902542b66d072f47279cf67d77480ade5639c598d1a93"
-    sha256 cellar: :any, arm64_sonoma:  "cb9cb24faa3aabf827fc542d1123c998b93428553a36c16fe708b519f5c39c62"
-    sha256 cellar: :any, sonoma:        "14171818a71026c870bf7776932b772af9d9569a6df6af3725975d6586f8194e"
-    sha256 cellar: :any, arm64_linux:   "b7231874389086da91a9cd636f23c94663abcdd86e30b4f33b1099fcf9d9899b"
-    sha256 cellar: :any, x86_64_linux:  "02384ee385a88a4b0b2aa05166b33a419663b7e5f9415f0fdec9ca407de6eff2"
+    sha256 cellar: :any, arm64_tahoe:   "8c80280e9010ee4f6d9b8d3209a22db3165174ad547995c864b70deb05c01519"
+    sha256 cellar: :any, arm64_sequoia: "566f097aa3fd82f63b405394b3dfd22d0fc6d97f083771f51c8fe3949c86043f"
+    sha256 cellar: :any, arm64_sonoma:  "6ffeab720b5ba93ee2d2b5aaec0fc0d11be336ceb33cf6c226c87b5dc088608e"
+    sha256 cellar: :any, sonoma:        "3b8b9955b7c6785bcc1223282d97fea39279c6f1bc21d6aff9c9d8647f3b20fd"
+    sha256 cellar: :any, arm64_linux:   "6fed04895b8b20d2e8f7584b33ac235c31d472a5cbbde9f5c525068c33214530"
+    sha256 cellar: :any, x86_64_linux:  "86e662b2511abad1e3044eec93c903554f308e853dad949c4ec45c02939b73a9"
   end
 
   # stp refuses to build with system bison and flex

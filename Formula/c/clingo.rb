@@ -1,8 +1,8 @@
 class Clingo < Formula
   desc "ASP system to ground and solve logic programs"
   homepage "https://potassco.org/clingo/"
-  url "https://ghfast.top/https://github.com/potassco/clingo/archive/refs/tags/v5.8.1.tar.gz"
-  sha256 "28fe78322cefb92e0f68f350777e19407d07bbb5179ca725fc6f77d538f0d19a"
+  url "https://ghfast.top/https://github.com/potassco/clingo/archive/refs/tags/v5.8.2.tar.gz"
+  sha256 "af961e4e8122b9e1fa325ae20c98f0a17b2087e2c777832ae6e47025ec921331"
   license "MIT"
 
   livecheck do
@@ -11,12 +11,12 @@ class Clingo < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "0e424c4a9e979b143f0326cb78d06438617496fd000297dcfb62f84d6cf6a0d5"
-    sha256 cellar: :any, arm64_sequoia: "a7bddee88a7c5df01211135f95760d636026666237a44374cfce6ed349bb7a17"
-    sha256 cellar: :any, arm64_sonoma:  "45d9cd732fc516af09949797f5835d6d2996dbbf8b2a28c04eb648d5533c57bf"
-    sha256 cellar: :any, sonoma:        "59055292fb91cca6687b37156d29569c58c01686e843bfe0bdf46397f7f67aaf"
-    sha256 cellar: :any, arm64_linux:   "17d32bfab00a31b0ae9968b417e4638abe87d01a9549200a3db44ed098999cfc"
-    sha256 cellar: :any, x86_64_linux:  "542bc0ee263128d9876bc9e9b296debab3d60ce91bda175e04c7e3f83080f118"
+    sha256 cellar: :any, arm64_tahoe:   "e95810838c24931f9a858562a4b54f1256fd3133109146f33002a4383a50de43"
+    sha256 cellar: :any, arm64_sequoia: "ba7d57a8181c4eea2b51b11e77464ad37b3c828fddceb726dd929dc2268a9dc4"
+    sha256 cellar: :any, arm64_sonoma:  "b26d698136874ab953848a78d9007bb9dc52f0030567ab37a42c7df771b4fb61"
+    sha256 cellar: :any, sonoma:        "f69dcbb6973c1a5a503f26b2f6315e71e9cfa5cdc86bd048fa683fd343e2deac"
+    sha256 cellar: :any, arm64_linux:   "359298c5bd3fdece07490baf1e45ed557449c4a60036204f0d1249befb17c55d"
+    sha256 cellar: :any, x86_64_linux:  "a06aebbfccc1dbe2eb145b426a0d1971fd91a207b05c84461ee29c67503ae4c4"
   end
 
   head do

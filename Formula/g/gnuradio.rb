@@ -6,7 +6,7 @@ class Gnuradio < Formula
   url "https://ghfast.top/https://github.com/gnuradio/gnuradio/archive/refs/tags/v3.10.12.0.tar.gz"
   sha256 "fe78ad9f74c8ebf93d5c8ad6fa2c13236af330f3c67149d91a0647b3dc6f3958"
   license "GPL-3.0-or-later"
-  revision 11
+  revision 12
   head "https://github.com/gnuradio/gnuradio.git", branch: "main"
 
   livecheck do
@@ -15,12 +15,12 @@ class Gnuradio < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "04b24dab7794061979cfe115228969b8164835bac1b1c53539b03d3ee15d87f9"
-    sha256 cellar: :any,                 arm64_sequoia: "6e4f6fdc30c70e88f1340aea1b97ec8cbeda7c86b1c38c5b39cb99d305c35a93"
-    sha256 cellar: :any,                 arm64_sonoma:  "c04ade2daaea459c03e67089f8736aeabc4b30cabc56b96d3edd9668146e11d0"
-    sha256 cellar: :any,                 sonoma:        "b9c1172e9b14064cb0cd5c09cad7ce4910d0c7e42ef133575cac203903ab4046"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d467ad9df35d96bd47c2032ab0b1b49b139e8e16a9a3c4ccf31818a304b1aa05"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2ec015bf6a0f0091abf7502acefccb202895e590b3beeae8e9edb0dbf6946fd1"
+    sha256 cellar: :any, arm64_tahoe:   "1aff863f0f672224103484bf0a729dc632f861e3e11ff7554e1cec04faf04093"
+    sha256 cellar: :any, arm64_sequoia: "73822f1b1a2c39e84eb7b6831e474404a60e04a1466b5695389709bda5343805"
+    sha256 cellar: :any, arm64_sonoma:  "c5ff5d588c47c8dc808278ec87448c527059792e598c53b7f53516bb511aa5a9"
+    sha256 cellar: :any, sonoma:        "138476af82b855a6eb7bc5a902ef405507aa1fd0cdbb7669431e6b3597194d1d"
+    sha256 cellar: :any, arm64_linux:   "a73825fad0f50abd0bfeae28e2059743a3612f9d55b619c68ebccb6f348b51ca"
+    sha256 cellar: :any, x86_64_linux:  "423de43d5eebbacd8d4281470bc7ac442bfef3c24c8c091b1c55331df8d385bf"
   end
 
   # Can undeprecate if new release with Qt 6 support is available.
@@ -28,7 +28,6 @@ class Gnuradio < Formula
   deprecate! date: "2026-05-19", because: "needs end-of-life Qt 5. gr-qtgui support will be removed after 2026-11-19"
 
   depends_on "cmake" => :build
-  depends_on "doxygen" => :build
   depends_on "pkgconf" => :build
   depends_on "pybind11" => :build
   depends_on "adwaita-icon-theme"

@@ -1,18 +1,18 @@
 class OpenCodeReview < Formula
   desc "AI-powered code review tool with deterministic pipelines and an LLM agent"
   homepage "https://github.com/alibaba/open-code-review"
-  url "https://ghfast.top/https://github.com/alibaba/open-code-review/archive/refs/tags/v1.9.2.tar.gz"
-  sha256 "0f89e3e7c29a788eca37688599cd3c8f57e4f1be811feb2738fd7f1d2b987b52"
+  url "https://ghfast.top/https://github.com/alibaba/open-code-review/archive/refs/tags/v1.9.3.tar.gz"
+  sha256 "c15029d280e758ae5f3f9db88deb80a6cbc81f1e3a7e3eb5d4fec15f8d25068b"
   license "Apache-2.0"
   head "https://github.com/alibaba/open-code-review.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "272b67cd8aa4fd1db33f1bab07f579b0ffa2127b57ba1b925df6390014eb7ca1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "272b67cd8aa4fd1db33f1bab07f579b0ffa2127b57ba1b925df6390014eb7ca1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "272b67cd8aa4fd1db33f1bab07f579b0ffa2127b57ba1b925df6390014eb7ca1"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5e8465363fbbf3d9cc864b5cb8bedda0955533cacb67274caa38892dfa3c68f2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ea1e6390b39b5f4615a685b2535a7557188b934a00528f11bc6146740f1c76cc"
-    sha256 cellar: :any,                 x86_64_linux:  "0e578bb3ebe2cf1f379ac1d54120debac6cfa3cfffea951c74ccfa4a03d89796"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6b27f03fda383cc816d445a3c97043a40e70f3d66ab748d8f3564fcd710c797b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6b27f03fda383cc816d445a3c97043a40e70f3d66ab748d8f3564fcd710c797b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6b27f03fda383cc816d445a3c97043a40e70f3d66ab748d8f3564fcd710c797b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "cb368201d62e14074803090f81f491571eef67d54e2b338fbc1bd6c8d4c043bc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "affd5985894151f44c10a6bcfd7f9abc4cabe11bcbb23009780481e3076787d0"
+    sha256 cellar: :any,                 x86_64_linux:  "596702734b88885373e3ac89dc86e8d6c1744ad443e826a3228c95fac6149172"
   end
 
   depends_on "go" => :build

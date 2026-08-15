@@ -4,16 +4,15 @@ class C10t < Formula
   url "https://ghfast.top/https://github.com/udoprog/c10t/archive/refs/tags/1.7.tar.gz"
   sha256 "0e5779d517105bfdd14944c849a395e1a8670bedba5bdab281a0165c3eb077dc"
   license "BSD-3-Clause"
-  revision 13
+  revision 14
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "008b33ff7cc9eec1c4fce9a3fac4d9e5b3f30ad9a66b29edf911ab97f81e5238"
-    sha256 cellar: :any,                 arm64_sequoia: "7626d665eb9ba168ec3b5fcbd59a1f3ddb508e829e214ec0b91b3d699e4266cd"
-    sha256 cellar: :any,                 arm64_sonoma:  "7d941ed1197d163ca2831dc84f76cec0e2758ef2f6809190f634656e9d5ecc2b"
-    sha256 cellar: :any,                 sonoma:        "7f8f155159ede038b7c498b3cff8c224f0a703abbeb3c916b0836cb43eca4de8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2e1aa30f8e012ee8f21b97f26ca60c36781f4e7cffe3827795449464660db66f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "969f026850262233ec26984b700383db9a6fcbcd9c8601a98e34683bd419b838"
+    sha256 cellar: :any, arm64_tahoe:   "5ca341f82db975b0e1c4acee78df074d57c6e65d2b6be401dd57eb2afc0525fa"
+    sha256 cellar: :any, arm64_sequoia: "07ccefb123d13aa7214e2dc0cfd452fe30e50085614192e608abc4c7f8fc5002"
+    sha256 cellar: :any, arm64_sonoma:  "1bf373157b77d6b31fffe5572dcad5efe6c0c14362d6086ffffdcc30b4f454a5"
+    sha256 cellar: :any, sonoma:        "1b12e4d2a0d7f702dd0b67e71128a7ed98b59c0b1ae2f1976a6a8167e5e4d52e"
+    sha256 cellar: :any, arm64_linux:   "7b389137fda756cdeef2f8e3d8ca17694d60908681494369b97f31c2233f1021"
+    sha256 cellar: :any, x86_64_linux:  "13bbf9c09f97add49cfbf9c0baef95139d5e19d6e759ad4538899260e5206f96"
   end
 
   depends_on "cmake" => :build

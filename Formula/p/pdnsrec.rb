@@ -4,6 +4,7 @@ class Pdnsrec < Formula
   url "https://downloads.powerdns.com/releases/pdns-recursor-5.4.5.tar.xz"
   sha256 "13105768d9490067596f263d7d348bcc0c6798574c7d991cc40952f18b9dac11"
   license "GPL-2.0-only" # with OpenSSL Exception (non-SPDX)
+  revision 1
 
   livecheck do
     url "https://downloads.powerdns.com/releases/"
@@ -11,12 +12,12 @@ class Pdnsrec < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "72ced3f0d883329059015750ef5a209c03b9d316a66ff4a5824f856fcdcf722b"
-    sha256 arm64_sequoia: "f612e183409cccca9dd9d3baa9ece36081368fba349bb5dda26be958ab89196e"
-    sha256 arm64_sonoma:  "e6f4b3e0460f91bb8d777b955697f103c50852c2a44f233c2c176cf1fea1c7f8"
-    sha256 sonoma:        "ff8870101a3d39a1c30d3947229c61a89944766aedda5111959f1d742dcc0dbe"
-    sha256 arm64_linux:   "7bd009b6f43c4e01b00882823c0129efdc2ee1f46a5252586b81f7677b5d50a5"
-    sha256 x86_64_linux:  "7c8dd3ff20c2fa6be235d6881a8a01f5de2acc320d37e0e6bd6e55ca69bf497c"
+    sha256 arm64_tahoe:   "a5bf9567a112023359c4165145562560502d9dee934c41b13afb55f900a85175"
+    sha256 arm64_sequoia: "2c03657faae5a9e2aca1ffeefe930303d0a942afa62d5b5197232e9e94e51314"
+    sha256 arm64_sonoma:  "cf50d9a2463eccf5211872490e62af4286a98db986b35dbdf12d6ba2aa9c8265"
+    sha256 sonoma:        "5a065581c40cc757bb7a96fc68a57b313860399b15344ccf8cd68077d1139d7a"
+    sha256 arm64_linux:   "91a86ae5b28936cad1f4e9c08c3d2076c7604bee3c3b09b02b5b1afb51fe74d9"
+    sha256 x86_64_linux:  "fa807c80fa3e260889a4bb45160bb718f733837a201921648651ef075feef7ae"
   end
 
   depends_on "pkgconf" => :build

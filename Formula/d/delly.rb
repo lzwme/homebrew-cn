@@ -4,15 +4,16 @@ class Delly < Formula
   url "https://ghfast.top/https://github.com/dellytools/delly/archive/refs/tags/v2.5.1.tar.gz"
   sha256 "84abfb79bfbb8489758b76cab6908e6d5de586752892a07dd7d1c887027962cf"
   license "BSD-3-Clause"
+  revision 1
   head "https://github.com/dellytools/delly.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "4088454ed5ca7ac8670b5e960412b78096cf0e0769d9c447f07b857b1ba641b1"
-    sha256 cellar: :any, arm64_sequoia: "942a2ca59a32af91288551cfc7bed4c3c6197de4bc0856ae2d9d0d050e922b24"
-    sha256 cellar: :any, arm64_sonoma:  "ef4fabd74415c33bbd501eb8128bc7c549084defd4b08791f06ae0a2d4358a53"
-    sha256 cellar: :any, sonoma:        "22d4e7a9de2f5499e0318cf2ed018ddcebb9c74ce54fc2d12bd7cae29cab253b"
-    sha256 cellar: :any, arm64_linux:   "afd4fcfba2d743ec98b6dafe78328001a0269eefc781a6606ba29f95472d82df"
-    sha256 cellar: :any, x86_64_linux:  "0ecfbcff146589ec05fdbf42d08b19ebb2777e79700fd3609f3041b74e2d44a2"
+    sha256 cellar: :any, arm64_tahoe:   "36dfb049a4ec6f0250623be98b8145012c31628259f2a32cab858bd20ce69c8e"
+    sha256 cellar: :any, arm64_sequoia: "1bd470ca188b2ccf2481b2daa13cbca247cbbba1283be2bc61f9740817e1404f"
+    sha256 cellar: :any, arm64_sonoma:  "6dd826bbc9edc51025b05bd3727bd6b4ee7cf5cc0236b9de295e4ac27847dd48"
+    sha256 cellar: :any, sonoma:        "1186ae403979d15544e7faff266ada6bc221a671f31a22faf85fb19b4a18b19f"
+    sha256 cellar: :any, arm64_linux:   "6059e8ac3cdd5f7c454692ffa5cc41dbe30f28ea771a85208d3e3bc4e38e9ed6"
+    sha256 cellar: :any, x86_64_linux:  "c8fa26582386d495bd0b4e991c63eb4aabdf99113e6281afe783e469bdfc04e1"
   end
 
   depends_on "boost"

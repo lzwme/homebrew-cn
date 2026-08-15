@@ -1,18 +1,18 @@
 class GitPkgsForge < Formula
   desc "Go library and CLI for working with git forges"
   homepage "https://github.com/git-pkgs/forge"
-  url "https://ghfast.top/https://github.com/git-pkgs/forge/archive/refs/tags/v0.7.0.tar.gz"
-  sha256 "dfbe5b6ffe24d93d37f3a3aab8eddf6081eb2b44fdd37aad293201a316e1574d"
+  url "https://ghfast.top/https://github.com/git-pkgs/forge/archive/refs/tags/v0.8.0.tar.gz"
+  sha256 "25faad2e6d25e4b30639272a8116f957afc38b8c1e6e97cd55410fe8b76f9055"
   license "MIT"
   head "https://github.com/git-pkgs/forge.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "430cf7c160735215672e98a9e88abac07c7cd04476ba7006f1b85925add48e67"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "430cf7c160735215672e98a9e88abac07c7cd04476ba7006f1b85925add48e67"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "430cf7c160735215672e98a9e88abac07c7cd04476ba7006f1b85925add48e67"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2a1589f532f699a59b60b23c28a1ff6ae637e0dc3c5b7884439836f057ba3659"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ece6c47433bf10ca61ed14d38aaa4645263fee4ff5dd7ea3dd3548c2400a85bc"
-    sha256 cellar: :any,                 x86_64_linux:  "1a0a8dfb2e89586f0970e57b213000894acce5d4602b1dd9136410c4bbf7f5fb"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "eb75f8838db5e36983c252ae5640135312c4f1ef8c178ddf9d0dfe6fc55e1830"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "eb75f8838db5e36983c252ae5640135312c4f1ef8c178ddf9d0dfe6fc55e1830"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "eb75f8838db5e36983c252ae5640135312c4f1ef8c178ddf9d0dfe6fc55e1830"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f4c810e893f96251f2abf6dd264eb0c57c1ded69b4e06d65123fae3a02ef8c3f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0497553bff26fb51da8609c43cf090a4657b85ef09f628ed8d61cf32fc4342bb"
+    sha256 cellar: :any,                 x86_64_linux:  "394611da86ba5e18097ed75a63922a6fa54050f8a31f3fbd32528a6dae61c753"
   end
 
   depends_on "go" => :build

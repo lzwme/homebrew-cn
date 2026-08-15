@@ -4,6 +4,7 @@ class OsrmBackend < Formula
   url "https://ghfast.top/https://github.com/Project-OSRM/osrm-backend/archive/refs/tags/v26.8.0.tar.gz"
   sha256 "793c1b6335bdd56fe3207267c63490cf0b462aed2765fd747c297ada494ff188"
   license "BSD-2-Clause"
+  revision 1
   head "https://github.com/Project-OSRM/osrm-backend.git", branch: "master"
 
   livecheck do
@@ -12,12 +13,12 @@ class OsrmBackend < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "e7434b720b33a53ac46bc87f26882c175dec68bf6461fd11a927b5ec6e399a56"
-    sha256 cellar: :any, arm64_sequoia: "77309b97db32b785e3502ff6ffeb82ef199810c7e6bd18aefdc788f04638811b"
-    sha256 cellar: :any, arm64_sonoma:  "22feed5addd30221d4ecd1e78e7eb4b5a379b4d10057dec65b1a3549264e8407"
-    sha256 cellar: :any, sonoma:        "b2f0260385e85a6bb61f229a0695982e63be1ae6220a4917f47caab40438bafe"
-    sha256 cellar: :any, arm64_linux:   "e0f7b0d25044710ab308c15f82876163b730ffc69ec127e03ad10b0942b5a937"
-    sha256 cellar: :any, x86_64_linux:  "ad49f6da88d3395b06f61029d864a386e73f700f1438a950514ff5cdcc1f5f0c"
+    sha256 cellar: :any, arm64_tahoe:   "af546dc333315a81e53dfe8644aa2dd5a13fd6b0c9a5667c5a0e1f4a3b15caa4"
+    sha256 cellar: :any, arm64_sequoia: "2668466ea631d4a1e6ecf715324380e43ea4227994dbc1dbd2facb33dc56c3c1"
+    sha256 cellar: :any, arm64_sonoma:  "04164a35f288cb165d5af44fda24ae1ad7e9ed69927db4c5e5a376b32a07f9c0"
+    sha256 cellar: :any, sonoma:        "b4fca76498520b7b9f368aa8ed786590adff4e93c611f3a94833d9c388bb8062"
+    sha256 cellar: :any, arm64_linux:   "2d7cba75a86d3d22ad8839ce0e9410353bc31aebb42a39a8106d2765e335099a"
+    sha256 cellar: :any, x86_64_linux:  "3f997a3244665f0e9a313cfb6699149376cf964b90849452577fa9f0a70405f0"
   end
 
   depends_on "cmake" => :build

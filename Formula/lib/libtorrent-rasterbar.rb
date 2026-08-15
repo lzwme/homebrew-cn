@@ -4,6 +4,7 @@ class LibtorrentRasterbar < Formula
   url "https://ghfast.top/https://github.com/arvidn/libtorrent/releases/download/v2.1.1/libtorrent-rasterbar-2.1.1.tar.gz"
   sha256 "0f163516ecef2e3331500266751de3098835a3c3ae0c2290448046c632bc0e93"
   license "BSD-3-Clause"
+  revision 1
   compatibility_version 1
   head "https://github.com/arvidn/libtorrent.git", branch: "RC_2_1"
 
@@ -13,12 +14,12 @@ class LibtorrentRasterbar < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "da0d73346910c97677eb41af467277a450c8036edd0c43b3231d9f3a6c124d5a"
-    sha256 cellar: :any, arm64_sequoia: "22029e5292adb8b353f1914858566799a83986c43136aa112a5cc8b7bd747a3c"
-    sha256 cellar: :any, arm64_sonoma:  "f6f9fbac6292ff340cd0208c14b42be2024c5b1bb36c539050e9c7557e1a1f9e"
-    sha256 cellar: :any, sonoma:        "3eb3b644f5049e269a5f82590c35e3c69837adb9b6930a84160472c24f6a6998"
-    sha256 cellar: :any, arm64_linux:   "8e61067dead0229f00f3e3934aa16b1cdc3daf6674719e1af59594043dd23cbe"
-    sha256 cellar: :any, x86_64_linux:  "810650bde78dd17f96a3b3fcb177b6b554b09f648d4e6c6e5e522d60821c296b"
+    sha256 cellar: :any, arm64_tahoe:   "0fc57ac1c7e5282e8ee53d1f7669a43b83895ec5e9e01ec319fdc8588475c6fd"
+    sha256 cellar: :any, arm64_sequoia: "cbd7bcc10d0f39a94ae4e840efb3d20276fed1ce35f712c0337583338ef4cad2"
+    sha256 cellar: :any, arm64_sonoma:  "8d023bf7105bb19804d1687f176bb6d2d222865c23599471aa9e37f93e5b96f1"
+    sha256 cellar: :any, sonoma:        "b743c21dc561aec8a7aba1fa16e22fb00c831801ba5394dabef728a33d5117cb"
+    sha256 cellar: :any, arm64_linux:   "991c9397f2dabaa5165fbd54b497e5c7cc5a915bdfae0b0333a99bbe54490406"
+    sha256 cellar: :any, x86_64_linux:  "e47e247a055d9d0a9fc1029f90ee38f3d7e5391430ab971ccf4ff6d8a83480af"
   end
 
   depends_on "cmake" => :build

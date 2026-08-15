@@ -5,6 +5,7 @@ class Mkvtoolnix < Formula
   mirror "https://fossies.org/linux/misc/mkvtoolnix-100.0.tar.xz"
   sha256 "74480d07a261beeaa8baf898248e668ecc56335e2527bbffa841ef056dc028a1"
   license "GPL-2.0-or-later"
+  revision 1
   compatibility_version 1
 
   livecheck do
@@ -13,12 +14,12 @@ class Mkvtoolnix < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "2cb5d24bb8b5553d70ba187a16c17732df49270bc42f109e11aae8fa9c98e059"
-    sha256 cellar: :any, arm64_sequoia: "6c529514df4e0ef58c486871fa6c9a4e640e2dc1b6b109cfddaca1274474d2b4"
-    sha256 cellar: :any, arm64_sonoma:  "4268f1f41e1807b4ff64fc944a7eacbb40d14cb384b1a9938a0d5850c245d031"
-    sha256 cellar: :any, sonoma:        "58e29b0da0257af913932e788cb37644b8ccaa88988aea9505e7775c44960f32"
-    sha256               arm64_linux:   "dcdbf2577410caafe48d44c5793f7a6d8a6c10aaa6b1735102da58614588ecde"
-    sha256               x86_64_linux:  "4507c52a90a798a9df09d6da8560195f6e4d30466029e2eeacae0dc241bfdd81"
+    sha256 cellar: :any, arm64_tahoe:   "52eb23767fbd584b2e031aa579499490c07c2f7fb019f47d9590ff70b8d4b04b"
+    sha256 cellar: :any, arm64_sequoia: "8991df383d4864b9abfa415213c7e4303c949cd86459bcbadaf930346638e85a"
+    sha256 cellar: :any, arm64_sonoma:  "08213519ac3a191b670dcebbef75996ace3bd59e7ee5e3d336b77b02238a9f5b"
+    sha256 cellar: :any, sonoma:        "9b02181683dadf4e184faf6fd4ea574ac2f1ecd423fce46b575ad1dc8835a2e0"
+    sha256               arm64_linux:   "d613bee84bbdde1b66fab2da93a8df321659a2c59f777eb20f6dae8f305e6d64"
+    sha256               x86_64_linux:  "0cd2df8bc5402cdcb14fb1fec812346c03a6b26bd076264c88404bccd5efa3f0"
   end
 
   head do

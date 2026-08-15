@@ -2,7 +2,7 @@ class Innoextract < Formula
   desc "Tool to unpack installers created by Inno Setup"
   homepage "https://constexpr.org/innoextract/"
   license "Zlib"
-  revision 13
+  revision 14
   head "https://github.com/dscharrer/innoextract.git", branch: "master"
 
   stable do
@@ -32,12 +32,12 @@ class Innoextract < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "1150222eb02fdb776418d3253e62ba75592481225b162026bf45ad687784d730"
-    sha256 cellar: :any,                 arm64_sequoia: "9231e79c53ec988162f3173dad48d1e9a3d104af8b21e10f6837c922d4d12d99"
-    sha256 cellar: :any,                 arm64_sonoma:  "6ce904e75b4a103173837ba1c26d8b595d66123fbf5550a53ec83ff6b9bedc66"
-    sha256 cellar: :any,                 sonoma:        "eccddde976f66e9cddc35f6f72cac7c2377312343bb8cdfb954797c3173ead17"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "54d89c53d511089ab43432dc90c8cf8acc3ea5c3bb5ddf0f01f1954bcd9ec4ab"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4fcfb3e634def1947791fab8be9c9b2ede7a6c453de29d92491a35638090afee"
+    sha256 cellar: :any, arm64_tahoe:   "1da3c10fc5c1a8f061e9416279c26ce59d0bd8f5d46a1ca7081a0d958e69f6b4"
+    sha256 cellar: :any, arm64_sequoia: "5365fa60d73761684e6dfec465542cd2f36563e3753bf99bda2c209fd46c3f25"
+    sha256 cellar: :any, arm64_sonoma:  "9f8a39c109afe223626ba99ee2fb50362ccc999325cf1fa2835afc720b0a7338"
+    sha256 cellar: :any, sonoma:        "26bdfa048bcb7acec125efa29e7da88f1dccd0d47387621eb93e923a356f86ad"
+    sha256 cellar: :any, arm64_linux:   "8db38f19c0ae4adf9deb9a3c831857b90144331f8baf3bf409cabb9417c2987f"
+    sha256 cellar: :any, x86_64_linux:  "cc9a7777af293272e353d830b61c9cdb27d635eaf28818774840db28f2dd3f14"
   end
 
   depends_on "cmake" => :build

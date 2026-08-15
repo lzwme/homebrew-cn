@@ -1,8 +1,8 @@
 class AwsVault < Formula
   desc "Securely store and access AWS credentials in development environments"
   homepage "https://github.com/ByteNess/aws-vault"
-  url "https://ghfast.top/https://github.com/ByteNess/aws-vault/archive/refs/tags/v7.13.3.tar.gz"
-  sha256 "17cd4e75c76ac04f0c4aa1709eed60644458e916668fd25affd138eeceb4e657"
+  url "https://ghfast.top/https://github.com/ByteNess/aws-vault/archive/refs/tags/v7.13.4.tar.gz"
+  sha256 "7372e1ed8f9efc86fe667788aea023094c137393881a302f7f10b2a1563a57b1"
   license "MIT"
   head "https://github.com/ByteNess/aws-vault.git", branch: "main"
 
@@ -12,12 +12,12 @@ class AwsVault < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a10b355e03e0accf502cdf2340c8d13be277c2a997c7467a67707dce997f8d40"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "73514ff8aa56c3750413bbc686427d3ae41381fbc34a83ddf557beddcf494ee8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7380241d55122809ec4818b682cebe3d6178219b53d3dfdb241c19319dd71de4"
-    sha256 cellar: :any_skip_relocation, sonoma:        "42bb59de3d4fe3c49bf980664aa7fb52ae493967073d20efd4081ab2e032b1e2"
-    sha256 cellar: :any,                 arm64_linux:   "9b1b401b5ab6b43952a20b56e20a146e1e2dbc235e92f76ebfc178c205b5b47f"
-    sha256 cellar: :any,                 x86_64_linux:  "54b987cb0a132c383d645630e0b0df20cfe2c7efe6044d146eb8b948a11359c4"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8e72a5203a4a0fcfafe7aab1ca49c9e8db8c3fd8fb1d0efccab9cf9939ac6592"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a163215673f171e723ac44abccfcdef365f27449e9c7bd94ae7f049944232674"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6bd1d298ea41c8815d8386731fd0013a95bef24e288f10adfc2e36a287732950"
+    sha256 cellar: :any_skip_relocation, sonoma:        "68e7656dfc578cb24f7078c7b7d8aa901a7247d1076c21a03e835d9edc801b98"
+    sha256 cellar: :any,                 arm64_linux:   "2f402439e5db58b27a2ac73a678fcd1c1fcf88e775e5123c8641b301fb8a7493"
+    sha256 cellar: :any,                 x86_64_linux:  "cb61c2df099be0de428b03e7b34c0f3674ae5d5fb1e04a22e12b436917b12cb9"
   end
 
   depends_on "go" => :build

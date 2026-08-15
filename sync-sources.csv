@@ -7918,13 +7918,14 @@ Homebrew-homebrew-core/Formula/v/vamp-plugin-sdk.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vampire.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vapor.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vapoursynth-bestsource.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/v/vapoursynth-bm3d.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/v/vapoursynth-bm3d.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/v/vapoursynth-descale.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vapoursynth-imwri.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vapoursynth-mvtools.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vapoursynth-ocr.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/v/vapoursynth-sub.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/v/vapoursynth.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/v/vapoursynth-subtext.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/v/vapoursynth-vszip.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/v/vapoursynth.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/v/varlock.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/v/varnish.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vault-cli.rb, Homebrew/homebrew-core, 0
@@ -15083,6 +15084,7 @@ Homebrew-homebrew-cask/Casks/s/simplex.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/simply-fortran.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/simplysign.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/simsim.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/s/sina-finance.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/singlebox.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/singlecrystal.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/singularity.rb, Homebrew/homebrew-cask, 0

@@ -3,14 +3,14 @@ class RapidMlx < Formula
 
   desc "Fast local AI engine for Apple Silicon with an OpenAI-compatible API"
   homepage "https://github.com/raullenchai/Rapid-MLX"
-  url "https://files.pythonhosted.org/packages/8c/49/98b3d6d219be206d8ffde3bffe1d8d1038e833a0316fb69152ff29095fb6/rapid_mlx-0.12.11.tar.gz"
-  sha256 "15419c0cca600929f7305b1e45b3494b4faa282cb650703cc46246751722f535"
+  url "https://files.pythonhosted.org/packages/5a/6c/dd8a9b97617deecbc8b9c2e05ac02fa3e4587f5eaaf47847dc3d948c7e8b/rapid_mlx-0.12.12.tar.gz"
+  sha256 "23df28e91fc0f7569e479c25c68bfeb9903c86794a76a8a9c37595786b0f6e6b"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "a531880673cc47bd5a34a012af65027976069976eca0e4e47133023c6e65f85d"
-    sha256 cellar: :any, arm64_sequoia: "a5957a0ae41f6471ecbfc2181ac951802dbad0893a406cc300b3c54d92116b4c"
-    sha256 cellar: :any, arm64_sonoma:  "29d1df603997cd561899badad6cd9dd1043a3f2b130590d8fbda8ff3fdc81234"
+    sha256 cellar: :any, arm64_tahoe:   "b12317a9714c2f44f8931c88b1d7e2c8924a45d934956406d329b7c1506757c6"
+    sha256 cellar: :any, arm64_sequoia: "47ccd103f4d587490adbf603f2c44da644e82b0e11d8b0910a79e31780e34a15"
+    sha256 cellar: :any, arm64_sonoma:  "287bdd0e0cacd705c87b6dfb553220efe7f4cc0d5bc92364d03fc0dff41423d7"
   end
 
   depends_on "cmake" => :build
@@ -65,8 +65,8 @@ class RapidMlx < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/f6/57/3ba6e6cb097f85b855b00163d169f35365f44277df044dcf96d55b8f62a3/filelock-3.32.2.tar.gz"
-    sha256 "c33351e1f49cae33414acbc6d56784e6ecee82514ec90795da1161fc4836b5b8"
+    url "https://files.pythonhosted.org/packages/7d/64/a02e6765de08964ed371eca577870593245afc9dfac16d037de7c10d18e6/filelock-3.32.3.tar.gz"
+    sha256 "0ffa185a3540854c95caa7fa76b76cb219d907415e2c5dc9af25fd970563487f"
   end
 
   resource "fsspec" do
@@ -295,8 +295,8 @@ class RapidMlx < Formula
   end
 
   resource "uvicorn" do
-    url "https://files.pythonhosted.org/packages/03/18/ccce41535dee1be77735592bd19965f3972c82e07ee703d324709496b716/uvicorn-0.52.1.tar.gz"
-    sha256 "112ec661814189acbccd3f7b86460147cc065fc92c0821afa78918780e4354dd"
+    url "https://files.pythonhosted.org/packages/2e/28/64ca011edf31c715b4fad359c587ea52391aaffa125065695590241ff617/uvicorn-0.52.3.tar.gz"
+    sha256 "18857b9e6579300be55c91c0a1cfd37d9a2cf0cabea33b88275f199eb73b8b58"
   end
 
   resource "websockets" do

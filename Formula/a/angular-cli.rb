@@ -1,12 +1,12 @@
 class AngularCli < Formula
   desc "CLI tool for Angular"
   homepage "https://angular.dev/cli/"
-  url "https://registry.npmjs.org/@angular/cli/-/cli-22.1.3.tgz"
-  sha256 "b24e14c18678e042da07707aeb55ed2ae77c0bd7b33c18b9d492b59773188c2e"
+  url "https://registry.npmjs.org/@angular/cli/-/cli-22.1.4.tgz"
+  sha256 "e71e56e4a449a486f003457815a42df8f9effdfdc4f52b5b5387230c548bb9b4"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "360cffb00a1fba7afbb18140eb54c0395cef569251bdef16109e874e9300de2a"
+    sha256 cellar: :any_skip_relocation, all: "15687c434a5f2bdfd7c6e95fe04fc7e73689043fd80e81fd64a97d7638f9c099"
   end
 
   depends_on "node"

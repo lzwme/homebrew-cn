@@ -23,7 +23,6 @@ class JpegXl < Formula
   depends_on "asciidoc" => :build
   depends_on "cmake" => :build
   depends_on "docbook-xsl" => :build
-  depends_on "doxygen" => :build
   depends_on "pkgconf" => [:build, :test]
   depends_on "sphinx-doc" => :build
   depends_on "webp" => :build
@@ -60,6 +59,7 @@ class JpegXl < Formula
                     "-DJPEGXL_FORCE_SYSTEM_LCMS2=ON",
                     "-DJPEGXL_FORCE_SYSTEM_HWY=ON",
                     "-DJPEGXL_ENABLE_DEVTOOLS=ON",
+                    "-DJPEGXL_ENABLE_DOXYGEN=OFF",
                     "-DJPEGXL_ENABLE_MANPAGES=ON",
                     "-DJPEGXL_ENABLE_JNI=OFF",
                     "-DJPEGXL_ENABLE_JPEGLI=OFF",

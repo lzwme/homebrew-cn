@@ -4,16 +4,17 @@ class Edencommon < Formula
   url "https://ghfast.top/https://github.com/facebookexperimental/edencommon/archive/refs/tags/v2026.07.27.00.tar.gz"
   sha256 "7be895a8d9a6eb88523488142503ce9b14d097b518967dd50b9c4cf7675c8080"
   license "MIT"
+  revision 1
   compatibility_version 1
   head "https://github.com/facebookexperimental/edencommon.git", branch: "main"
 
   bottle do
-    sha256               arm64_tahoe:   "12225362d169f3500cc762e2f9a224d4dcf8ac3f4b03c6d9315143ba72fb354f"
-    sha256               arm64_sequoia: "0feb7f6414e6b0103449d2b6a10690407669094f45b870cbef2b20c11317fbb4"
-    sha256               arm64_sonoma:  "cc02614e068580fcd8234fe3ace6d008836e4321655f2336453d84b9a43f4099"
-    sha256 cellar: :any, sonoma:        "ddafcc84b7d86a727f0c3a7977a3ee92e30e19e5ef6cffc8820301094b7922a0"
-    sha256 cellar: :any, arm64_linux:   "6828f90b0d651ecd8a26b5a88ae24edb4079853acb3d95f077ff23745a94581e"
-    sha256 cellar: :any, x86_64_linux:  "4ca46e69397424c7650fd3ec1fb2ef09649aeef1bdc85f8238c5b620ea8a2781"
+    sha256               arm64_tahoe:   "a383d39e667eddaf4e0e99aec0ea721c259a85a024825a37051ff494f6d8b494"
+    sha256               arm64_sequoia: "4a467cb502c1c63b9ea93a41cfbb5023914d56b46b81fe794266045a7b4432c1"
+    sha256               arm64_sonoma:  "191759e6fcee746840053a1905bd5aa5c86d49fe01879b42806fd1c500a8c7a9"
+    sha256 cellar: :any, sonoma:        "f81229eb96a146cac1d15bc610b9e106d08d798e3d60fa6a936704e9f94e9cb7"
+    sha256 cellar: :any, arm64_linux:   "502b1f1a25c311f44ff1e1a20ab3baa9cdb9c550a9b85a6eb0be5523b7926e93"
+    sha256 cellar: :any, x86_64_linux:  "e5cabb86e645026ad23c8a0d83e9035aba08ca59494a81f1a3b0c0d187555147"
   end
 
   depends_on "cmake" => :build

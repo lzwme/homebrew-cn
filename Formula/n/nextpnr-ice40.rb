@@ -4,15 +4,16 @@ class NextpnrIce40 < Formula
   url "https://ghfast.top/https://github.com/YosysHQ/nextpnr/archive/refs/tags/nextpnr-0.11.1.tar.gz"
   sha256 "2af682d94abf3f3e116f2fad36dc7db314fa93bfbb185e63619f2ec4f5fe40dc"
   license "ISC"
+  revision 1
   head "https://github.com/YosysHQ/nextpnr.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "f72cfb9a7f583c9072aded271abf4f3fe8143a6d47df13d7848028d42eedc2f8"
-    sha256 cellar: :any, arm64_sequoia: "940feded7a9ea0122ae2932102c21c72aeadd3aab5a5bb4cc560ad520fb96256"
-    sha256 cellar: :any, arm64_sonoma:  "2d19ce48c42a580b331d6c334ee63dad056c5766975ae1bdbb566e3de52d85e3"
-    sha256 cellar: :any, sonoma:        "a93f9f6d0b94d344a78073b1949474d72fbdb9646b6b67ec433e2a950c73d165"
-    sha256 cellar: :any, arm64_linux:   "5c21de7b896a1e8e9e89752f7f50710e4ace878a0fdf142b05750884dd8461f0"
-    sha256 cellar: :any, x86_64_linux:  "7ce87bdac12cde51ddb91a869ede8654a9620c1081ecdf1a11c5b7977967e75f"
+    sha256 cellar: :any, arm64_tahoe:   "06da19337d5526520681227e15b7a67a60add9a4deef6c96b7a12e8248fdff4b"
+    sha256 cellar: :any, arm64_sequoia: "21172ef4af4a7b965b33a811b7399d0ece75a9a6bd5cbbdc731e35e7e17f9fde"
+    sha256 cellar: :any, arm64_sonoma:  "6a3bf25630d719bcbe77000d92ea2ce177c091739af3e1ab46620480d82b8d45"
+    sha256 cellar: :any, sonoma:        "5475075b5e67b7edce0671caec59b011787a7c2003cfb4f77b5687e71835e887"
+    sha256 cellar: :any, arm64_linux:   "af1abce4aa122decb55f37a2835a1c9bb1aa2596b482e42ee05646ce499c2eeb"
+    sha256 cellar: :any, x86_64_linux:  "44d5867bdfd66a47ecc5afa81343a1daf0394b88f1367e53d2d05711589885c4"
   end
 
   depends_on "cmake" => :build

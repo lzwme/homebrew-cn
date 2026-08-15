@@ -3,7 +3,7 @@ class Standardese < Formula
   homepage "https://standardese.github.io"
   # TODO: use resource blocks for vendored deps
   license "MIT"
-  revision 23
+  revision 24
   head "https://github.com/standardese/standardese.git", branch: "master"
 
   # Remove stable block when patch is no longer needed.
@@ -38,12 +38,12 @@ class Standardese < Formula
   end
 
   bottle do
-    sha256                               arm64_tahoe:   "842c08d83d331c26b95f718e07b43df23a1f9c5ef4f6df0c9920c3099773353f"
-    sha256                               arm64_sequoia: "a9662431f2198cfd684c82f08671fd792a5038f79d63ddc5aea0e612a0740d92"
-    sha256                               arm64_sonoma:  "190e0fa5e3adda972a28e6c2d18e9634f4890320b1f9b4928da67de1cb8392a7"
-    sha256                               sonoma:        "f28825f01b0cbbe6f6ec257a3b81cd4e0f8c2883550fb12de3ffb9bbb3220e05"
-    sha256                               arm64_linux:   "9152354c175bc7115c52d5e876332dd323d6f590b953b33fe0993894b5ba79a8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "31405149c51d6b9ae4e25e1b10ecd5b822d7f1a6b38a748920a310719bcf7e8d"
+    sha256               arm64_tahoe:   "02650f5f4cf05d0ceb43b84e961212f94f0c3f8688aa4a59822de3ba7dbb9e88"
+    sha256               arm64_sequoia: "6fcd27cbbf062db43f605889d470370afcbefd2e9c280ab1e1480e2c1a6ad7be"
+    sha256               arm64_sonoma:  "964f027d8dba659ae6b5cf4cb77d42580b2c161c89fbc2697329a735d9953f0e"
+    sha256               sonoma:        "4cd4a037661c297fcbe04c97d0607fb5e092f166a49c318a1b95a75b465e9719"
+    sha256               arm64_linux:   "a3e9bef78629337245d0abd0b7fdec775f345bd5c7c7405804a5213eba7bdb8b"
+    sha256 cellar: :any, x86_64_linux:  "11c3636d297e1abf4e4380db2cd5918a5039ba5b1a69ce3bdefc6f366add499e"
   end
 
   depends_on "cmake" => :build

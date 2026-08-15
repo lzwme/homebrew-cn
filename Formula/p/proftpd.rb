@@ -1,9 +1,9 @@
 class Proftpd < Formula
   desc "Highly configurable GPL-licensed FTP server software"
   homepage "http://www.proftpd.org/"
-  url "https://ghfast.top/https://github.com/proftpd/proftpd/archive/refs/tags/v1.3.9c.tar.gz"
-  version "1.3.9c"
-  sha256 "724a6aead2f4a284c1df0c96ad778da2a45d38474bb46db8db0921d2b222f300"
+  url "https://ghfast.top/https://github.com/proftpd/proftpd/archive/refs/tags/v1.3.9d.tar.gz"
+  version "1.3.9d"
+  sha256 "68b094b1c57c775ad00ef469e9a87783dbbf31a85f98f48faf60becc2e84e4ec"
   license "GPL-2.0-or-later"
 
   # Proftpd uses an incrementing letter after the numeric version for
@@ -16,12 +16,12 @@ class Proftpd < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "d8de1aa870ee47c2a5ebe7905e3cad315c2814329bd490bddf5f0b5bc00d7472"
-    sha256 arm64_sequoia: "c55532eeaa091a06c4e91b565a31d983171b6134b1823afb285242957166f389"
-    sha256 arm64_sonoma:  "b19cf9e3134b167b58466ef20293645f7843cde1f81191c080340c20e66940da"
-    sha256 sonoma:        "c17dde0269ac184bec7eb5c197491d2bc0234594494badab445f0033f73e80b4"
-    sha256 arm64_linux:   "b2b0f70c318ecad6803b89bf610dd511ccad6961a8038ebef56e887e32ff3b32"
-    sha256 x86_64_linux:  "dd7b921beebfe9fd6f7fb92844d2fd1139fcc4d5e9939607f01567dedfc13407"
+    sha256 arm64_tahoe:   "b8ea38cc378fe88efacdfc5d60bfd464688f8786998c46346da80dc9ab79f2db"
+    sha256 arm64_sequoia: "c9f09a9d1f4b9a8bc19232184e06cef8c2168aa46fd7141aa2984aa4db7293ac"
+    sha256 arm64_sonoma:  "2b154e2f05adc0f926d2c55d4e801858240f311159190e7bf43a705907642de3"
+    sha256 sonoma:        "83270a21221a36d2e9d07e17268f3bef06e0dec27c4c07ca064ad13707777935"
+    sha256 arm64_linux:   "74ec79dd63a01e2efc723e881750fe275eaab901a68f369005f097756f192e31"
+    sha256 x86_64_linux:  "4e4593fe9bc9e4f0481b7934416feafd2f23295877e2827f5c85d959ca487719"
   end
 
   depends_on "inetutils" => :test

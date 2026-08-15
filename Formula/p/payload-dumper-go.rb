@@ -1,20 +1,17 @@
 class PayloadDumperGo < Formula
   desc "Android OTA payload dumper written in Go"
   homepage "https://github.com/ssut/payload-dumper-go"
-  url "https://ghfast.top/https://github.com/ssut/payload-dumper-go/archive/refs/tags/1.3.0.tar.gz"
-  sha256 "d7ba33a80c539674c0b63443b8c6dd9c2040ec996323f38ffe72e024d302eb2d"
+  url "https://ghfast.top/https://github.com/ssut/payload-dumper-go/archive/refs/tags/2.0.0.tar.gz"
+  sha256 "e36f1df812fef68bff1a43ebf5596164fc06438dd63ce217fc16427037dd418e"
   license "Apache-2.0"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "97ce35198d98de962751f7815760e8ba1a9887feb3b999aa65f68a04d2e47e57"
-    sha256 cellar: :any,                 arm64_sequoia: "298d73ff6bdcbe98ec51938eda5d6df35f4a67eb48538ab3d0a8d5e7f5ededea"
-    sha256 cellar: :any,                 arm64_sonoma:  "a6be6a71b98e5cbccf85f5fd5ddf49ec28792545ebdff739a275c6c32a7ee34c"
-    sha256 cellar: :any,                 arm64_ventura: "adc25ef9cc348ff0f4e72aee84a8d73d4eecc77ec8228b8ef451a1ba52947a3c"
-    sha256 cellar: :any,                 sonoma:        "43c27225c84681b696cc133dd3027dcdb8a99434eaaae57adf9d24b10a761b09"
-    sha256 cellar: :any,                 ventura:       "9a7fe312cc474f61625712007bb096a34ec93fb165afe887cd2786c7fbd71ee1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f89b0e2f2ffb8fc2ec9c58f91aa50ea18243bbb2c15c4682df72931fda29c21c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dec1676646bcf9b015900ac1d9c7f5f1912671bdd034e511235b38c95e63cc3c"
+    sha256 cellar: :any, arm64_tahoe:   "08832517683954eba85c508a5f55a7c3225bae298fad5273801cb43e2befe88d"
+    sha256 cellar: :any, arm64_sequoia: "c007448539631a34fb2d9dbf1c7088fce2cc04a20f0d84a45a6d1a23d2cdc1cc"
+    sha256 cellar: :any, arm64_sonoma:  "b0e48cfecdeccb77a31a940ee56f3c0ea6891e62fc1548fd8506e5b2d52907cd"
+    sha256 cellar: :any, sonoma:        "a84f8dff828cb9a89d1249bafc64d013910ed413f9da5f14c29f5f0b75fa5064"
+    sha256 cellar: :any, arm64_linux:   "21739dec02b4839175dcba9885cf2b1c157261ed46c803743225555c3fc07bd4"
+    sha256 cellar: :any, x86_64_linux:  "b74df7572ae11bc0eb4defeb3a3fd3457f508e2f059d09d76862f1718e755e61"
   end
 
   depends_on "go" => :build

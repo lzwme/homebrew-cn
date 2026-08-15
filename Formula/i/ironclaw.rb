@@ -1,8 +1,8 @@
 class Ironclaw < Formula
   desc "Security-first personal AI assistant with WASM sandbox channels"
   homepage "https://www.ironclaw.com"
-  url "https://ghfast.top/https://github.com/nearai/ironclaw/archive/refs/tags/ironclaw-v1.1.0.tar.gz"
-  sha256 "07117026742b1e95fea03d2ce209bef31d3f871aa7ec3a5a4ce9eee8d801000f"
+  url "https://ghfast.top/https://github.com/nearai/ironclaw/archive/refs/tags/ironclaw-v1.2.0.tar.gz"
+  sha256 "4d64c4fce52fadf47b7d793d24d4e3085f68fe3fb7395a9d6fc1e5ddc9fbf8bb"
   license any_of: ["MIT", "Apache-2.0"]
   head "https://github.com/nearai/ironclaw.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Ironclaw < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "583de1da633396cebee33b34f2dd026e730a096d42a40480bf34b6895b91a3b8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4afc3ff552d91f35c9983983eae79e890519b514f7526e1eb8aa6ce496d13e9f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "562d5ab0629cef3554dcef0c85df6563a30e07cd90f59b14da8151a1399fa398"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4e264b23690ee6bb26ffc155ce3414591053ef2165ec0228ca90f4bf721c758f"
-    sha256 cellar: :any,                 arm64_linux:   "e93cb3a2c9e9c7a18385289328e244ae04b06b7c4e6ae60048b0a264f43049fe"
-    sha256 cellar: :any,                 x86_64_linux:  "9ef058013c8820e8053cbb4572f2f8a2d907b13c02b26e771a1cf1babb67125a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "23f272e0d41df365b7c80f33fef8397d95f30b6b9022f20c40c5251ff01cfc80"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "86a4ea1ae7e294c6f00499998525c8cd741b054ae2608b88acd725a2c686cea8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9aea65fd01c6d0ce34b9c875414f0f5057114f6344d0da9c46d0571fe7d9c2e8"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e04f588cfa25cd528780761227e90919a5d75b010a031fb6cd9394be7c088447"
+    sha256 cellar: :any,                 arm64_linux:   "29dfcc86e0caf9e942d6067922bda2e835c1079a193e86a84f2fb852635942cc"
+    sha256 cellar: :any,                 x86_64_linux:  "46b61fab36d5caca43671c1c98652849a238a275dbefd884467506e4fd05a1f8"
   end
 
   depends_on "corepack" => :build
@@ -31,7 +31,7 @@ class Ironclaw < Formula
   def install
     ENV["COREPACK_ENABLE_DOWNLOAD_PROMPT"] = "0"
 
-    system "cargo", "install", *std_cargo_args(path: "crates/ironclaw_reborn_cli")
+    system "cargo", "install", *std_cargo_args(path: "crates/app/ironclaw_cli")
   end
 
   service do

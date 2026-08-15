@@ -38,12 +38,25 @@ class CyrusSasl < Formula
   uses_from_macos "libxcrypt"
 
   def install
-    with_env(NOCONFIGURE: 1) { system "./autogen.sh" } if build.head?
-    system "./configure",
-      "--disable-macos-framework",
-      "--disable-dependency-tracking",
-      "--disable-silent-rules",
-      "--prefix=#{prefix}"
+    # Workaround for missing time.h. Fixed upstream but backport would require autotools deps
+    # https://github.com/cyrusimap/cyrus-sasl/commit/266f0acf7f5e029afbb3e263437039e50cd6c262
+    # Also force C standard on newer GCC to avoid build failures
+    if build.stable?
+      odie "Remove workarounds!" if version > "2.1.28"
+      ENV.append_to_cflags "-include time.h"
+      if ENV.compiler.to_s.start_with?("gcc") && DevelopmentTools.gcc_version(ENV.compiler) >= 15
+        ENV.append "CFLAGS", "-std=gnu17"
+      end
+    end
+
+    args = %w[
+      --disable-macos-framework
+      --disable-sample
+      --disable-silent-rules
+    ]
+
+    configure = build.head? ? "./autogen.sh" : "./configure"
+    system configure, *args, *std_configure_args
     system "make", "install"
   end
 

@@ -4,6 +4,7 @@ class Morpheus < Formula
   url "https://gitlab.com/morpheus.lab/morpheus/-/archive/v2.4.1/morpheus-v2.4.1.tar.gz"
   sha256 "27da3928bfbc58c592d598a0c91b81990b97f0e37c00d1b8071fc208d91875fc"
   license "BSD-3-Clause"
+  revision 1
 
   livecheck do
     url :stable
@@ -11,13 +12,12 @@ class Morpheus < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256               arm64_tahoe:   "f485887d696a9020b16e88c634b6b07338fae2e54f81a7f9efe0491e5561f9c6"
-    sha256               arm64_sequoia: "f8450f202416e4a3a5f8e58480a0e65003adf5f68a621cd90e128aea3eb6adca"
-    sha256               arm64_sonoma:  "cea5cbdfc33824ab1f6714055c2995840b8f3b684abbb93395cdb405d649445c"
-    sha256 cellar: :any, sonoma:        "2ec6cf82fadf399526e44bead6dc39fb6b462b82a0483aca36371bf5cbeb508d"
-    sha256 cellar: :any, arm64_linux:   "5f4ec47bed5ced6b7499e98108c8fc1ab0f8d631341f978f87a47087334cafb2"
-    sha256 cellar: :any, x86_64_linux:  "9c3870575860267c0423e1501d8083097bfb9110b145252f689ca9704773cae6"
+    sha256               arm64_tahoe:   "72759851ae282a2ba52bea87780c8cdcb7f9dc7d8e852bfc1cd5506a5a07bebe"
+    sha256               arm64_sequoia: "4d8cf6c34f1211ff2058cc07a52ebb8fa3f9873cf2e2e30a35e0220b6bac4322"
+    sha256               arm64_sonoma:  "9def5c730d929ec321454ad5a06124aa18b3604c227fa188edd74272a118ec11"
+    sha256 cellar: :any, sonoma:        "4fa0385a3b6ffd3d62746874bb27165c8a6680bcfa1ccd01b1f89e819114784f"
+    sha256 cellar: :any, arm64_linux:   "1f447e55fa70882c92a2b8f98d6c76f86ef6b12a47dd03a62f6a98f6857dac23"
+    sha256 cellar: :any, x86_64_linux:  "eb68b74d3c70d48d28d3cd1a52bb8ec318a9e64361551298424fdbd89128a614"
   end
 
   # Can undeprecate if new release with Qt 6 support is available.

@@ -1,8 +1,8 @@
 class Ompl < Formula
   desc "Open Motion Planning Library consists of many motion planning algorithms"
   homepage "https://ompl.kavrakilab.org/"
-  url "https://ghfast.top/https://github.com/ompl/ompl/archive/refs/tags/2.0.1.tar.gz"
-  sha256 "365f052d5fb4419ed016394ddb26ab83dee6514b90565ad30af044a09b122aef"
+  url "https://ghfast.top/https://github.com/ompl/ompl/archive/refs/tags/2.0.2.tar.gz"
+  sha256 "d867190a46a7f730923475a68af2e09fc9e796017a59be395a4bf3900d0c3ae4"
   license "BSD-3-Clause"
   head "https://github.com/ompl/ompl.git", branch: "main"
 
@@ -14,12 +14,12 @@ class Ompl < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "8e000a77945fbd5bd95799ef5d5fa961bfa94def6eeaca5b27f445cb3cc8abfa"
-    sha256 cellar: :any, arm64_sequoia: "e8a19a344fddff584c95b7b72915de586c517f6a8c27a87a3350916971c234bd"
-    sha256 cellar: :any, arm64_sonoma:  "ec2c1bd99389b032b8b482f9a78be798d89984c8d4847c93cac0b0ddc6bd430a"
-    sha256 cellar: :any, sonoma:        "6ad7a9c1a99f1ea17d5b2639f18daad64fadd66921885ac5636829912e17ccde"
-    sha256 cellar: :any, arm64_linux:   "adda85d7b46f075d4db02ee76e88ee3aacb3fa0dde58837e9a3ea46d244172a5"
-    sha256 cellar: :any, x86_64_linux:  "a24bd68455b6a4cfd091627b23f214b5db000530def25f84d09a53ef0099c4cd"
+    sha256 cellar: :any, arm64_tahoe:   "55d5ef7ad11a283d7ada5fa15f76794a7ed542eafbe4f563c0d68973dde566a8"
+    sha256 cellar: :any, arm64_sequoia: "ce11e695bb6f5e344cab1f280fe50613ba6539ca3fb6f9f499d1bf1ec6d7a0a7"
+    sha256 cellar: :any, arm64_sonoma:  "96de4cd0a0d1e9b81f1506a53ab3bacb0dc39f61b3edc75267b352a32b179ae3"
+    sha256 cellar: :any, sonoma:        "f7a86396228b982f81ee3ac54c7f88297487f2115c5095a6474a0b109b722562"
+    sha256 cellar: :any, arm64_linux:   "5460ad1f16d99311ff5c18ef9eaf0fe7ab70fe96f6f259f47bb41223ef041402"
+    sha256 cellar: :any, x86_64_linux:  "9b0573e7972ce788cab912cf97c807876545846f70bab2a29fc53d36b522d889"
   end
 
   depends_on "cmake" => :build
