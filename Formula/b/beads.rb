@@ -1,19 +1,19 @@
 class Beads < Formula
   desc "Memory upgrade for your coding agent"
   homepage "https://github.com/gastownhall/beads"
-  url "https://ghfast.top/https://github.com/gastownhall/beads/archive/refs/tags/v1.2.1.tar.gz"
-  sha256 "b38552d1a310d93f4b7b23f15bf1d0cefd53e565d7f43ccc90f8956111905cf7"
+  url "https://ghfast.top/https://github.com/gastownhall/beads/archive/refs/tags/v1.2.2.tar.gz"
+  sha256 "892b8b641d1f9eb3fa9f0cddf704f3f41aea0da872e546fe623ddec30b2ea9cf"
   license "MIT"
   compatibility_version 1
   head "https://github.com/gastownhall/beads.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "f8e7608f48d4ad95d4536adb5f7e40c4af264feaa6744dcbe3641692e85bd3f1"
-    sha256 cellar: :any, arm64_sequoia: "f767d54d71733ade3031c0596bd5c3b3b15d9b8607f67c240d252975ab473b0b"
-    sha256 cellar: :any, arm64_sonoma:  "0459c86c6b4bf4763efb0b661838663a9ba5029eb24af2fb9a57872a2ee40509"
-    sha256 cellar: :any, sonoma:        "72d506aa08d2e13999f55dadf90a1224f700b95f1c99b209138707f48a1c674f"
-    sha256 cellar: :any, arm64_linux:   "1461d6fbc213ade114fff277e257b93e2ae326f61707d200efe9c26dc5d411b4"
-    sha256 cellar: :any, x86_64_linux:  "3fd5b4572ee0ddbc380e370091039255d45e89be6aadaeae7c9f31223b82f9e2"
+    sha256 cellar: :any, arm64_tahoe:   "177187f3b96cbb368afeb6c6183df127366542e31b18869b3c73cf1281c29a6e"
+    sha256 cellar: :any, arm64_sequoia: "c5d25601126a203f1aad282f46b1e325b02db54bfd68989067b16d5e1449ee4f"
+    sha256 cellar: :any, arm64_sonoma:  "6dc2c1d63a641b0781b5599185895f55ba36a83bf4a7d4af637d620365a33fbb"
+    sha256 cellar: :any, sonoma:        "94ffc4b49596090b1d917693d4c83ce32673954321aa7d36ad8a7a5ef679e757"
+    sha256 cellar: :any, arm64_linux:   "24bc1bb65a8441983afc2a78427c32e02a2b23efe07241501934162308f9f7ac"
+    sha256 cellar: :any, x86_64_linux:  "69775853ae28bafa20f1b280753424146360231c4a28ff1b324036a69028777d"
   end
 
   depends_on "go" => :build

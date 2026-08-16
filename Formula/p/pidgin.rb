@@ -10,6 +10,8 @@ class Pidgin < Formula
 
     depends_on "intltool" => :build
     depends_on "at-spi2-core"
+    depends_on "cairo"
+    depends_on "gdk-pixbuf"
     depends_on "gnutls"
     depends_on "gtk+"
     depends_on "libgcrypt"
@@ -61,7 +63,6 @@ class Pidgin < Formula
   head do
     url "https://keep.imfreedom.org/pidgin/pidgin/", using: :hg
 
-    depends_on "gi-docgen" => :build
     depends_on "gobject-introspection" => :build
     depends_on "gstreamer" => :build
     depends_on "mercurial" => :build
@@ -75,13 +76,12 @@ class Pidgin < Formula
     depends_on "libadwaita"
     depends_on "libsoup"
     depends_on "libspelling"
+    depends_on "qrencode"
     depends_on "sqlite"
   end
 
   depends_on "gettext" => :build
   depends_on "pkgconf" => :build
-  depends_on "cairo"
-  depends_on "gdk-pixbuf"
   depends_on "glib"
   depends_on "libidn"
   depends_on "pango"

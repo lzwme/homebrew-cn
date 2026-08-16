@@ -1,20 +1,20 @@
 class Libpsl < Formula
   desc "C library for the Public Suffix List"
   homepage "https://rockdaboot.github.io/libpsl"
-  url "https://ghfast.top/https://github.com/rockdaboot/libpsl/releases/download/0.23.2/libpsl-0.23.2.tar.gz"
-  mirror "http://distfiles.macports.org/libpsl/libpsl-0.23.2.tar.gz"
-  mirror "http://ftp2.osuosl.org/pub/blfs/conglomeration/libpsl/libpsl-0.23.2.tar.gz"
-  sha256 "f2ea0e59bffb36597a872f6ef89893ffa4c30196c87eff7aeb2c47e4e8c98133"
+  url "https://ghfast.top/https://github.com/rockdaboot/libpsl/releases/download/0.23.3/libpsl-0.23.3.tar.gz"
+  mirror "http://distfiles.macports.org/libpsl/libpsl-0.23.3.tar.gz"
+  mirror "http://ftp2.osuosl.org/pub/blfs/conglomeration/libpsl/libpsl-0.23.3.tar.gz"
+  sha256 "93941f85a1e7bd593fa94f299233cb5dfc91cd144fd9a78a6ceb75001c5b03be"
   license "MIT"
   compatibility_version 1
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "d6dbe5f5903dc8a0e3667b783af379ad147776a34bc8928d67f29be430d98605"
-    sha256 cellar: :any, arm64_sequoia: "117abeb239a574dc7ec9695dc00c1666c09c7cfcc289f418e94d417dc4ef2c7c"
-    sha256 cellar: :any, arm64_sonoma:  "c4d97b158a12a1ae192d8ad4156d66c163855ca74982db3da6334cb495466824"
-    sha256 cellar: :any, sonoma:        "8e78447cb0741b831d5f7c6f6ff529f18fb527ea8996aa53610b82571dbcc6c9"
-    sha256 cellar: :any, arm64_linux:   "4feb7829f1319d5a9268cf6164735dd96feb45299f2743cf03489b95021b4448"
-    sha256 cellar: :any, x86_64_linux:  "a7e76b26729382fed49aa584dcf7f2df252fb331aa8b9c897679bdd20713c416"
+    sha256 cellar: :any, arm64_tahoe:   "3058120ea617a1ba193463788e81b8afd08fcf0abdbaf0bb5bfa85eebc695761"
+    sha256 cellar: :any, arm64_sequoia: "392f0aceca4e4febcb583688fa4bb701853e4a41a3d11446b0deac5231c32a53"
+    sha256 cellar: :any, arm64_sonoma:  "c26c327af497356f04a3f818da2d073a7f9833a7494231d8808b85599e029bbd"
+    sha256 cellar: :any, sonoma:        "a8461dfee9fad01788669d0afbdcfd92c112708e220c4a8a371c3cfca3da1b8e"
+    sha256 cellar: :any, arm64_linux:   "939526d6284bf9296521d430a86e30b9226bd0618a558a0a58e5c2729b6f891e"
+    sha256 cellar: :any, x86_64_linux:  "31ef3766b6b2f2c78a82e9f8b1d902e06d03ec33e1170694e298296ad7c3fba5"
   end
 
   depends_on "pkgconf" => :build

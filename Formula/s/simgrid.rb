@@ -23,7 +23,6 @@ class Simgrid < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "doxygen" => :build
   depends_on "boost"
   depends_on "graphviz"
 

@@ -1,17 +1,17 @@
 class Alda < Formula
   desc "Music programming language for musicians"
   homepage "https://alda.io"
-  url "https://ghfast.top/https://github.com/alda-lang/alda/archive/refs/tags/release-2.4.4.tar.gz"
-  sha256 "155fd3e7ca8082e3dc5f934e026502e9295b21f3f77f9922084bc221dbcbbd82"
+  url "https://ghfast.top/https://github.com/alda-lang/alda/archive/refs/tags/release-2.4.5.tar.gz"
+  sha256 "6c917d53631b2513c7ffefc0a1295046b40560cd5479c98699921bd56238dd07"
   license "EPL-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "078defa06a017764b5d242fcfdf6918d72de858ea9eecb5bafd11132f4ba9666"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ed9c65f6dc2f0d61a75253430d3137567e5c878cf0538ab3e2e1cf20bcdbef5d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "44e4561b2a304d85621ab6694ef48b7be7ca9dd3151249e838cdf19d321a1403"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b47643d8effead531a026381542faec2c4175e74b2e89c741e55ba436e5da973"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0799dafa7fb4c3888d176e52cc5dcc2434c4393ecba798d812e78491ea332020"
-    sha256 cellar: :any,                 x86_64_linux:  "814b7b8b5841697a28c0d1a6b49a1c80d17c3912d5b98e669616ae328340e244"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1b15c5bc7eb600a7ee63f444115f61a0b6245b7bc450a5ebcf6a01023a8edae7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ee1c7664dbd9b692fe370c3f21eb26420fda2b1c149b333e0b8ca50ce2b0e80d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2f24e18c228375c454de85c4e94e49f3428c2a8a82203ac472126a9a6d2abcee"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0573f2c6104ae07d3c34b7555e44daf5f9db80c76c1f40ead2240df6f46b97e8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a7d950cc3c9b80e4793a9c5ec6119fc97798817e3daeb8f77de3f136fbadc9f1"
+    sha256 cellar: :any,                 x86_64_linux:  "45f41f4f1658731be2410f2eb63f8ce44006f5f908fe155eb956d1554c105cfc"
   end
 
   depends_on "go" => :build

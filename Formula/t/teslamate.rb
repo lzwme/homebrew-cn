@@ -1,17 +1,17 @@
 class Teslamate < Formula
   desc "Self-hosted data logger for your Tesla"
   homepage "https://docs.teslamate.org"
-  url "https://ghfast.top/https://github.com/teslamate-org/teslamate/archive/refs/tags/v4.0.1.tar.gz"
-  sha256 "508dea91bfcd331d3acfbde90b3e7fe4c5755bb4b8080577053cd8f111f4c3d1"
+  url "https://ghfast.top/https://github.com/teslamate-org/teslamate/archive/refs/tags/v4.1.1.tar.gz"
+  sha256 "8eea8a4e06bca8deea40cb129647db179b544f6749f39ea22f85ba537892bc6f"
   license "AGPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "c2b6b81913b478919a272635f32cb49b1a3f42b2ad32973788245625763c522c"
-    sha256 cellar: :any, arm64_sequoia: "8708c52ad2195f401ae551fda328d243526ef8d7da20ac9bdf7435b7e373fbf3"
-    sha256 cellar: :any, arm64_sonoma:  "62db33e7bd1cb265b103838a28f5199cbd8c5a6a914b2c2f8724e6172fdb4158"
-    sha256 cellar: :any, sonoma:        "7104643be2adf2f809e4809ce12b5e5fe45c89ad696761ff1d7b77319184a755"
-    sha256 cellar: :any, arm64_linux:   "773309a92574ff0eadeac2f6c9350a0b1a6382a2441eb34ef5fa036ac050db53"
-    sha256 cellar: :any, x86_64_linux:  "34d227f71557a1ff5d4ec89241a75fdf10606b76593dfe8e27a34efb986ce520"
+    sha256 cellar: :any, arm64_tahoe:   "b9587b58bd21ed7dfc1bc5bd32703dc28f0b98d947451cc32f5d1e1be60f881e"
+    sha256 cellar: :any, arm64_sequoia: "2f9baffdbb9f0868477a36b6303956b6f822c6f6d5bcded89f27356b46d929c6"
+    sha256 cellar: :any, arm64_sonoma:  "29ae621dd496f0a3715e747fd2b75207b9a8362a0c8a76deec081c06461e8506"
+    sha256 cellar: :any, sonoma:        "3d01be13357f5b6e9dacfc11ca131149f9779a94863961d63d7516624142de7e"
+    sha256 cellar: :any, arm64_linux:   "c16f8e6bdad4f78fdbd1dcc41e3b6791824a597331277c12b1dcf1f7d66ff9f1"
+    sha256 cellar: :any, x86_64_linux:  "e41d60ed9699f76648793f8df899e3a6f9510545ede07030005d141b35a3d3b2"
   end
 
   depends_on "elixir" => :build
@@ -87,16 +87,18 @@ class Teslamate < Formula
       ENV["DATABASE_HOST"] = "127.0.0.1"
       ENV["DATABASE_PORT"] = pg_port.to_s
       ENV["DISABLE_MQTT"] = "true"
+
       log_file = testpath/"teslamate_test.log"
+      endpoint_message = "Access TeslaMateWeb.Endpoint at http://localhost"
+
       File.open(log_file, "w") do |file|
         pid = spawn(opt_bin/"teslamate_brew_services", out: file, err: file)
-        sleep 20
+        sleep 1 until log_file.read.include?(endpoint_message)
         system opt_bin/"teslamate", "stop"
         Process.kill("KILL", pid)
         Process.wait(pid)
       end
-      output = log_file.read
-      assert_match "Access TeslaMateWeb.Endpoint at http://localhost", output
+      assert_match endpoint_message, log_file.read
     ensure
       system pg_ctl, "stop", "-D", datadir
     end

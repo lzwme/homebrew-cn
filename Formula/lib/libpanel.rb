@@ -22,7 +22,6 @@ class Libpanel < Formula
   depends_on "vala" => :build
 
   depends_on "cairo"
-  depends_on "gi-docgen"
   depends_on "glib"
   depends_on "graphene"
   depends_on "gtk4"

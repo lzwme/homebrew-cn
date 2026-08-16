@@ -1,8 +1,8 @@
 class Libical < Formula
   desc "Implementation of iCalendar protocols and data formats"
   homepage "https://libical.github.io/libical/"
-  url "https://ghfast.top/https://github.com/libical/libical/releases/download/v4.0.4/libical-4.0.4.tar.gz"
-  sha256 "c851cdb46da5e6397881dafaa592c5516fb49da05dd1bb095f711a6d20eac422"
+  url "https://ghfast.top/https://github.com/libical/libical/releases/download/v4.0.5/libical-4.0.5.tar.gz"
+  sha256 "cc09a3ac41d60e6144e644bd3fcf97d47106d659c4a0b8965102581401e67c9c"
   license any_of: ["LGPL-2.1-or-later", "MPL-2.0"]
   compatibility_version 1
 
@@ -12,12 +12,12 @@ class Libical < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "185d8edd4a5f7d4dbfd3d8844d7e973ed5034c0100c8888898f952886daf1eb2"
-    sha256 cellar: :any, arm64_sequoia: "e9268082dd51e9db25864b2033071fd5024254561c7888d2382f704102af07da"
-    sha256 cellar: :any, arm64_sonoma:  "288d4eea1bee1e4790c822764618fbedbbf8e7a0b4add78036f2e93f2d940836"
-    sha256 cellar: :any, sonoma:        "a4786ad0db88646e1d7699f4687304641b2a7a92bb9633b39a0214233b2407e0"
-    sha256 cellar: :any, arm64_linux:   "5435b57a3f9cb810883a0143fd89d2ea0eecca0f08f0193200b83a17e4d8cf6e"
-    sha256 cellar: :any, x86_64_linux:  "8ffe7ba5c510dad4c4bf0609c6944ab2694b834a92695308175924db26484415"
+    sha256 cellar: :any, arm64_tahoe:   "f1de09188a68e831bdd83655483216b53ef49c5335e4450b4fac95badf587796"
+    sha256 cellar: :any, arm64_sequoia: "e29340ff7ce9cdb11c7f8f4f9c7a3e9a7412b8cdc8cdaea9e5b5faa5468cbdf4"
+    sha256 cellar: :any, arm64_sonoma:  "62aa6a36d618e228f58564b31286960b34df4241661f8d7ebdd5ad1a99cebfd8"
+    sha256 cellar: :any, sonoma:        "bd4a3ef9c7aca5b77697562c3499f9eb96da5ea4a49c302ad73085ebc6c1f804"
+    sha256 cellar: :any, arm64_linux:   "77f9a63ebfe12a913f3ff7303e91161d8fa38fdf0f29073cec6dd96e160063e3"
+    sha256 cellar: :any, x86_64_linux:  "3184327968b165956effba33099920b62ac22e68ccbaf29ffc259a8513ed24de"
   end
 
   depends_on "cmake" => :build

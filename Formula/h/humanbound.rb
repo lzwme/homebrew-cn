@@ -3,17 +3,17 @@ class Humanbound < Formula
 
   desc "Adversarial security testing engine, SDK, and CLI for AI agents"
   homepage "https://docs.humanbound.ai/"
-  url "https://files.pythonhosted.org/packages/e2/b3/3abb213424f962e4c31cc50e11a8d235a56bcc1c4b39c6b7fbd448f032a7/humanbound-2.8.0.tar.gz"
-  sha256 "2e7ed1c2ecbceff77eec48b478e39ae40326df81d4409985c1518251dbb74f2d"
+  url "https://files.pythonhosted.org/packages/dd/df/5284e3ee04b7467426b977706539d3b2f95ee4bd0b1873d49691167b5e5f/humanbound-2.9.0.tar.gz"
+  sha256 "d2f56710227546b269cd7865d634cad90f566a5ea2540deecff4e083b012b600"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "7dfac711033ea1dd99cc342a1d98f17f2a2df2b12e121047ef3893040034893e"
-    sha256 cellar: :any, arm64_sequoia: "86ef8225af04d66d581d0aeaccaca65f8f9695591cfef2ba05278268bbce9c70"
-    sha256 cellar: :any, arm64_sonoma:  "47748d13ed1a6187378893af8ba915ab93ac401d4c4ed3804836c68c1c02b4f4"
-    sha256 cellar: :any, sonoma:        "c31d4fe7701237814fdbe274a829ba6fe8fe422654d9cb084e3b9732352ce656"
-    sha256 cellar: :any, arm64_linux:   "4d5747d5d2f33783bec2aa03d6ab4e76a85bfecf7b6e59935b150fb0088438c2"
-    sha256 cellar: :any, x86_64_linux:  "b8b23588923e5cb6b90b1108bf6b5c317b4fbcc8ceefa42b31d330bc4ff2979b"
+    sha256 cellar: :any, arm64_tahoe:   "74543678ffa7ae02259dc6d3da2b5339a914416fd07a8cf63efed276c179c9ca"
+    sha256 cellar: :any, arm64_sequoia: "cf92ab29f4206b2df92ce1e0181ef2aa299a55938e73178a44ae934138b9e974"
+    sha256 cellar: :any, arm64_sonoma:  "00f4a6b7c5df64517ee51233f3d2fd90127f31d2798c882afdd27a12c678ac06"
+    sha256 cellar: :any, sonoma:        "2630f8ba6b64236b61bf5ac887baa959d9d91b6225ca200374d146b8c785720e"
+    sha256 cellar: :any, arm64_linux:   "00e9f6e098bec7b3c4ceddccc681e8abc309b40d47a701c912d7994e2cf161f0"
+    sha256 cellar: :any, x86_64_linux:  "738f43c13b28c04a844d26b8966448108feec5261c09463acf7451a6423068b3"
   end
 
   depends_on "certifi" => :no_linkage
@@ -34,8 +34,8 @@ class Humanbound < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/bd/2a/23f34ec9d04624958e137efdc394888716353190e75f25dd22c7a2c7a8aa/charset_normalizer-3.4.9.tar.gz"
-    sha256 "673611bbd43f0810bec0b0f028ddeaaa501190339cac411f347ac76917c3ae7b"
+    url "https://files.pythonhosted.org/packages/cb/31/4971872b3ed8715346231fb6eb4da8fcba65a4143c189db151ee28a2812b/charset_normalizer-3.5.0.tar.gz"
+    sha256 "49bd5feb59b0bf3cbf6ebcf4352e371c95b9da9bacd4449f8b64d0ad2c10a26e"
   end
 
   resource "click" do
@@ -78,9 +78,14 @@ class Humanbound < Formula
     sha256 "bb413d29f5eea38f31dd4754dd7377d4465116fb207585f97bf925588687c1ba"
   end
 
+  resource "pathspec" do
+    url "https://files.pythonhosted.org/packages/5a/82/42f767fc1c1143d6fd36efb827202a2d997a375e160a71eb2888a925aac1/pathspec-1.1.1.tar.gz"
+    sha256 "17db5ecd524104a120e173814c90367a96a98d07c45b2e10c2f3919fff91bf5a"
+  end
+
   resource "posthog" do
-    url "https://files.pythonhosted.org/packages/4b/8e/d664a1f9d51871412853702e39ddb23806807b14cb21d7744b1b95f4e2af/posthog-7.33.0.tar.gz"
-    sha256 "963b18cee5315eae51830f7cb2a0bba217d1131ca636a19c45d7c34e69e9ae0e"
+    url "https://files.pythonhosted.org/packages/4f/77/3737f60571995ba07677b058bb1523b7c26f28570806b8ffaf83a66df18c/posthog-7.39.1.tar.gz"
+    sha256 "0d184596e35057457fc1094883646fd23de2d6338db8b9c3ea770643fb55d8a2"
   end
 
   resource "pygments" do

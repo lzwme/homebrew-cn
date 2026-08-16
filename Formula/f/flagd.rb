@@ -2,8 +2,8 @@ class Flagd < Formula
   desc "Feature flag daemon with a Unix philosophy"
   homepage "https://flagd.dev"
   url "https://github.com/open-feature/flagd.git",
-      tag:      "flagd/v0.16.1",
-      revision: "fce10902c22e820a0e392514a6f4530479f77e51"
+      tag:      "flagd/v0.16.2",
+      revision: "e04523785a745c48c552101901b0ea858efbd73a"
   license "Apache-2.0"
   head "https://github.com/open-feature/flagd.git", branch: "main"
 
@@ -18,12 +18,12 @@ class Flagd < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "001750bc1487cef3930552f6c34870c3896241459e4f05a432735b15002fd683"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d884d0629dcef129e23e2c424971e1972bd03387e1b1d87afc5602f820abcc44"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "db0bda30bcc2c1685a8797182d240b9952a48da5af8ba0fd4abba1e9dd0b9519"
-    sha256 cellar: :any_skip_relocation, sonoma:        "874883d502f09bf67dfd77bd2827b4fc5af87d2a219d832b428776cbf45824c8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b0bef49f5f817961d772a95df977998192ce2df1052b9f27eca326436cb6e2a9"
-    sha256 cellar: :any,                 x86_64_linux:  "54ee87cd0f6f88532a6e6eb91df467cf0c4f7c403ac38918355b8ca84f56729a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "856230f14af44e476511429ebaf331a8c4dd43901d5dab0bf38ac296783699e2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7299cdd24d90b66babd45605c3082bf326ba7227ddf52ce19e5baf9d70a257fe"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "42018413a820819a660f7025aa96a92b49cb7965479db9ce05d7dc44ee975d82"
+    sha256 cellar: :any_skip_relocation, sonoma:        "abb24e17d9c8297c205903b5b1edf094e2b343c63de9654aaaecbae82fdaa409"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8d9998f7a0baf6d76d65ab3f6742cdc8e8e31dfe16a7eed3897c9c9b591b1c23"
+    sha256 cellar: :any,                 x86_64_linux:  "12969b358598cd622a4640ae7602e7edbd851a9908299304e95bd5e73d7ccd72"
   end
 
   depends_on "go" => :build

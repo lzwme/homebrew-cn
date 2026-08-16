@@ -8,17 +8,17 @@ class FluidSynth < Formula
   head "https://github.com/FluidSynth/fluidsynth.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "97f4af43ead953c3975585f766de7b7316c6d20cf0d486b981f7419105f39908"
-    sha256 cellar: :any, arm64_sequoia: "347fa76b8e4203a432e00da81b1932da2aa495e76c205f77d4d7d1aa254363e2"
-    sha256 cellar: :any, arm64_sonoma:  "8a4d8aee0954aee660940948cdb3c5761396e9c1ce6288dce23a71876abdd089"
-    sha256 cellar: :any, sonoma:        "5979aa60289291cfa804b7f666a920cffb1ee0a48d99180f145fae24f5bc0cb1"
-    sha256 cellar: :any, arm64_linux:   "36d0d49365dd00dab7a312e2d4a3e051ee721e740ae6acd87044ccf64fca4139"
-    sha256 cellar: :any, x86_64_linux:  "865a1530db493afe85359223e3a6d94ed873645eb6408c7003e26969ef8e58c0"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "d8b747a9ff97a161f4070893f4696b0b38d97b4df330cbc65a928310d59db070"
+    sha256 cellar: :any, arm64_sequoia: "a4e9f7ee53c7686e9754f9cda183fd3c0c67016066fe94d5d95e51dbcf55e347"
+    sha256 cellar: :any, arm64_sonoma:  "2117d00c6144072495f32a990651eb26c6035cb9997d31485e47771208623f79"
+    sha256 cellar: :any, sonoma:        "fde767271878df2ac852e8441e21c4bc6fd50a38ce6498c3be2b90c64d625d48"
+    sha256 cellar: :any, arm64_linux:   "f75a056938d32df69fce52ab30269a10e246c62446563459925c50f72bb719e6"
+    sha256 cellar: :any, x86_64_linux:  "aca3051684229e9c139c1d3f01e685de2931d2ef82029d0fb63747ed84a25616"
   end
 
   depends_on "cmake" => :build
   depends_on "pkgconf" => [:build, :test]
-  depends_on "glib"
   depends_on "libsndfile"
   depends_on "readline"
 
@@ -42,7 +42,6 @@ class FluidSynth < Formula
       -Denable-coverage=OFF
       -Denable-coreaudio=#{OS.mac?}
       -Denable-coremidi=#{OS.mac?}
-      -Denable-dart=OFF
       -Denable-dbus=OFF
       -Denable-dsound=OFF
       -Denable-floats=OFF
@@ -51,8 +50,6 @@ class FluidSynth < Formula
       -Denable-ipv6=ON
       -Denable-jack=#{OS.linux?}
       -Denable-ladspa=OFF
-      -Denable-lash=OFF
-      -Denable-libinstpatch=OFF
       -Denable-libsndfile=ON
       -Denable-midishare=OFF
       -Denable-network=ON
@@ -65,7 +62,7 @@ class FluidSynth < Formula
       -Denable-profiling=OFF
       -Denable-pulseaudio=#{OS.linux?}
       -Denable-readline=ON
-      -Denable-sdl2=OFF
+      -Denable-sdl3=OFF
       -Denable-systemd=#{OS.linux?}
       -Denable-trap-on-fpe=OFF
       -Denable-threads=ON
@@ -88,10 +85,6 @@ class FluidSynth < Formula
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
     pkgshare.install "sf2"
-
-    system "cmake", "-S", ".", "-B", "static", *args, *std_cmake_args, "-DBUILD_SHARED_LIBS=OFF"
-    system "cmake", "--build", "static"
-    lib.install "static/src/libfluidsynth.a"
   end
 
   test do

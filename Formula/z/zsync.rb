@@ -1,8 +1,8 @@
 class Zsync < Formula
   desc "File transfer program"
   homepage "https://zsync.moria.org.uk/"
-  url "https://zsync.moria.org.uk/download/zsync-0.7.2.tar.gz"
-  sha256 "51a54a2bcf60311f108924b5f8795fb7a8eeeedd0b52f4f634842ea3470978a2"
+  url "https://zsync.moria.org.uk/download/zsync-0.8.0.tar.gz"
+  sha256 "58b02f27e14326b62b7fdd6ed431a3e243b1c5a3ea9e3c1678e136dbf00c238d"
   license "Artistic-2.0"
   head "https://github.com/cph6/zsync.git", branch: "master"
 
@@ -12,12 +12,12 @@ class Zsync < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d2cfa51dff3ded22fde01b7dfe046efad9929c3228dc3f05f7ea98f70b5babfc"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d2cfa51dff3ded22fde01b7dfe046efad9929c3228dc3f05f7ea98f70b5babfc"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d2cfa51dff3ded22fde01b7dfe046efad9929c3228dc3f05f7ea98f70b5babfc"
-    sha256 cellar: :any_skip_relocation, sonoma:        "74a2e931d6afbe5f3fa26404ded4c315aaf0f3e43c005c2d7dd4568101729df7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "63e76167039ecb67b01cb528fb44f11071ed79a159f329dfcf5ca17158228f16"
-    sha256 cellar: :any,                 x86_64_linux:  "4aede5f74cbfa704369228eae8d8a223485164569ad7ea07b235fb9a4cb1bad1"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a4acdec8c2fc88425b1389ac2839c04af8f182b5c19885ddf9dd6525074cd21e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a4acdec8c2fc88425b1389ac2839c04af8f182b5c19885ddf9dd6525074cd21e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a4acdec8c2fc88425b1389ac2839c04af8f182b5c19885ddf9dd6525074cd21e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "237ea6250c443d6e9f7fac829d9b320f1ddf5d1f0a84cf51eeca8b23e609a93e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f516760650bc9a934de177a23391b4c7c9758f6ae64c0d5881ebeb6655149241"
+    sha256 cellar: :any,                 x86_64_linux:  "bd673f47540a39f84abbf844762e25920da491c01d6c792aaad07778568c80a5"
   end
 
   depends_on "go" => :build
@@ -32,7 +32,7 @@ class Zsync < Formula
   test do
     touch testpath/"foo"
     system bin/"zsyncmake", "foo"
-    sha1 = "da39a3ee5e6b4b0d3255bfef95601890afd80709"
-    assert_match "SHA-1: #{sha1}", (testpath/"foo.zsync").read
+    sha256 = "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    assert_match "File-Hash: SHA-256:#{sha256}", (testpath/"foo.zsync").read
   end
 end

@@ -3,19 +3,19 @@ class Ansible < Formula
 
   desc "Automate deployment, configuration, and upgrading"
   homepage "https://www.ansible.com/"
-  url "https://files.pythonhosted.org/packages/8a/90/a6456454613292692740054eb919181c25a8dc22ff77a73ce627b4f02501/ansible-14.3.0.tar.gz"
-  sha256 "15d253ecc90e809e396323367b55f59fdc666e035f0fd98c3326757eb52d09c8"
+  url "https://files.pythonhosted.org/packages/78/db/0ecc5cfa006064fd4cd0c3b5b3b6b6950245548d2ea48a4d2a68cbfb33f7/ansible-14.3.1.tar.gz"
+  sha256 "98d4ad2b355feac8dc04d99e8377d6cb801b1d58bbfadd6d80534e4607fb5c4d"
   license "GPL-3.0-or-later"
   compatibility_version 5
   head "https://github.com/ansible/ansible.git", branch: "devel"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "0e31d8187c5e7dcfc4ec3fda70ee0511429e6d5cef78e1c3d591a58cfefdce1a"
-    sha256 cellar: :any, arm64_sequoia: "924f6cbe32752631e5a5bea43462ea44fed0bdb947e36c9b5457fe6b89853ef8"
-    sha256 cellar: :any, arm64_sonoma:  "21855885b59eb86f1a9a779d1b937c6b0dac01204a07628c546e6230f6596dea"
-    sha256 cellar: :any, sonoma:        "cf6e339ac52f7057d41abb97a0249700fcaa5d404bafe1de845d9d8c64fd8e34"
-    sha256 cellar: :any, arm64_linux:   "8ddf9b4b0b8d42f7df9f9983dfb03f96f90d6f754a0c4e959827c4a9bf746ef4"
-    sha256 cellar: :any, x86_64_linux:  "bc7ac610d83c7fcbfa6e75a1aa70a5074bcf9b8ee6a12bbab401ee6ae64bc17c"
+    sha256 cellar: :any, arm64_tahoe:   "5fb6c1177f6ea3a6c9f070b360303a3e34ad5da77d72d3342f303dd582f02d85"
+    sha256 cellar: :any, arm64_sequoia: "4aa4ed8d6ca74550265994183b788eddc4ab2fb807785337c97e473513ddadbd"
+    sha256 cellar: :any, arm64_sonoma:  "9b7ca77c8e778cb40af51d60246f40245ce08c63c64de2f405cccaff34a6c449"
+    sha256 cellar: :any, sonoma:        "7ae8f746d43f47657ae9add3aae1cda8ef5c728ecb6e97a6e3d63e9a6dbc33ea"
+    sha256 cellar: :any, arm64_linux:   "9d161a019372a0864ef5b5c8d0315cd2847797838ccc7e5ac3f685eac0ea3f9b"
+    sha256 cellar: :any, x86_64_linux:  "fafc122a84a2f099b8e571d106db3b74812f864b638dfa64046336fd192bb9a5"
   end
 
   # `pkgconf` and `rust` are for bcrypt
@@ -87,18 +87,18 @@ class Ansible < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/35/40/95db6388539e6194b7d8863e4228263e7a778fff0164b17d0e4530d44ce2/boto3-1.43.68.tar.gz"
-    sha256 "4be7531c45fbf8eb145ecd0f385c7b8f9d66ba2fd0c256522717260e67fca89d"
+    url "https://files.pythonhosted.org/packages/96/cc/f22093524c3b38e94ba2d0e6743d7e264f7190d149c8dceaf9603822c595/boto3-1.43.72.tar.gz"
+    sha256 "6280ce03cc85e9110fd9fb7e2fbf11eae0b1177cb041a0d69aa88edc9d178cf9"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/e1/dc/ff7e35ecb25e2584e22ce8d5a13c5f991687597fd77d7cc388f2e4768cf3/botocore-1.43.68.tar.gz"
-    sha256 "a6c7ac88724c96f2ad5a7657f87d545d8218a74a1b219ba4397e3d37481941cd"
+    url "https://files.pythonhosted.org/packages/a1/99/a8cfeaea98d5085a493af909d09d174466482235a7fda291be18c9a5a76e/botocore-1.43.72.tar.gz"
+    sha256 "1b878c69081e8e9d55aa4c0d85683e7b07f0e274a5554662f9507a46641be3d2"
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/bd/2a/23f34ec9d04624958e137efdc394888716353190e75f25dd22c7a2c7a8aa/charset_normalizer-3.4.9.tar.gz"
-    sha256 "673611bbd43f0810bec0b0f028ddeaaa501190339cac411f347ac76917c3ae7b"
+    url "https://files.pythonhosted.org/packages/cb/31/4971872b3ed8715346231fb6eb4da8fcba65a4143c189db151ee28a2812b/charset_normalizer-3.5.0.tar.gz"
+    sha256 "49bd5feb59b0bf3cbf6ebcf4352e371c95b9da9bacd4449f8b64d0ad2c10a26e"
   end
 
   resource "cliff" do
@@ -351,8 +351,8 @@ class Ansible < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/e5/98/0bf930c4f97d0266b58a89e36c015f56232c52b5d2f207215d48cca9e8f7/platformdirs-4.11.2.tar.gz"
-    sha256 "3a2ae5fca3520a01ab1be8b45613537f52ddf5b5f6f53d88233892dfbf0cd82d"
+    url "https://files.pythonhosted.org/packages/b8/d7/e7bfbc86e9f99ff7807e24de7703f032e9c9ba80bb355cf26e0e9bc5a75e/platformdirs-4.11.3.tar.gz"
+    sha256 "66a73d38a849810252df809a3d8bcbda8e26f6c189920e7535ad608a48dbb5ab"
   end
 
   resource "prettytable" do

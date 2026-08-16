@@ -1,9 +1,9 @@
 class Libopenmpt < Formula
   desc "Software library to decode tracked music files"
   homepage "https://lib.openmpt.org/libopenmpt/"
-  url "https://lib.openmpt.org/files/libopenmpt/src/libopenmpt-0.8.7+release.autotools.tar.gz"
-  version "0.8.7"
-  sha256 "275c29ef47be9992f62a35fcc96f7ca05c06d2fd05c9298b8dee9f743f75b089"
+  url "https://lib.openmpt.org/files/libopenmpt/src/libopenmpt-0.8.8+release.autotools.tar.gz"
+  version "0.8.8"
+  sha256 "d4f00ddd29eecb9594bda7be76c13aaa2de1dadc18391c3e905f728ec9af8822"
   license "BSD-3-Clause"
   compatibility_version 1
 
@@ -13,12 +13,12 @@ class Libopenmpt < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "44c2f214834049b267bfc0f60c83ea55a075fc6a8bd47c1e519dc2cb0d15bf40"
-    sha256 cellar: :any,                 arm64_sequoia: "bc708899711a61484b79d6d4321e7f563be779b8cf0c440c8c272bfb41dd2546"
-    sha256 cellar: :any,                 arm64_sonoma:  "01ff6518ccedcabeb522ad3e6036211d5f616fbcb6df95554e6f68ad672378a7"
-    sha256 cellar: :any,                 sonoma:        "59a042bde6f7e62f335531818fd2f56e5d699c437558a8259aae594a2b5e5d27"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f244118a7c1632090a2ad16651f3d539cc1559cb87a73f15e9e1ef23dbb21429"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "764f762cfe1d332f9bf4a5affdb9707df29218e1c25abff5d5cc09c8921b8a28"
+    sha256 cellar: :any, arm64_tahoe:   "75d2ade1bc5ef183f4809d292797b9b5168cb226b783d0e7e41aab8674dfbab3"
+    sha256 cellar: :any, arm64_sequoia: "c01076f03b5d7d7ca5fc7342c5539431e7764de39ebb3714792b7269f15284a5"
+    sha256 cellar: :any, arm64_sonoma:  "2f40386cb5dc616a55f79199383f49ae98d4395f7b41d988eec4e61751ea4700"
+    sha256 cellar: :any, sonoma:        "cedfd7ee581b7e5654fca24125bf4f51ef10e2cdb583af4f078be9bc87384693"
+    sha256 cellar: :any, arm64_linux:   "e93e8e4a9826907bc1e38b103970ac28229615e687687940e9072523eb17cc2a"
+    sha256 cellar: :any, x86_64_linux:  "1a44606570aeb0da5a3cd1d780600f5acb9aff40c65d35f8c1888810077ef2bb"
   end
 
   depends_on "pkgconf" => :build

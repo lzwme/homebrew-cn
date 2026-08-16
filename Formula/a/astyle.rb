@@ -1,8 +1,8 @@
 class Astyle < Formula
   desc "Source code beautifier for C, C++, C#, and Java"
   homepage "https://astyle.sourceforge.net/"
-  url "https://downloads.sourceforge.net/project/astyle/astyle/astyle%203.6/astyle-3.6.17.tar.bz2"
-  sha256 "edc839b80077e60ed5786b6394d442b4eb10156ccbdd5944b4b360e125afb3e1"
+  url "https://downloads.sourceforge.net/project/astyle/astyle/astyle%203.6/astyle-3.6.18.tar.bz2"
+  sha256 "d4fc433cfeacc952de295961bc8ae9eab722e08580baa6c1e8e7b39a7a2fbb48"
   license "MIT"
   head "https://svn.code.sf.net/p/astyle/code/trunk/AStyle"
 
@@ -12,12 +12,12 @@ class Astyle < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "18544865526fe7c53e0e38ab86daaf104ddb39d1d0f4c30add8d1d21d3ba281d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "432d963169b3e2a719c2a23fa56837e0df101e4d7cfcf38f994521fb0e6a7470"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "64291227c7edddf30f44e4a213d60e06fda2bb0ce8682661b22ad7c527128717"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e3674609be157ef6a71472748aeb01c7991fc9038304f0cfd2e5fe300e5f6b48"
-    sha256 cellar: :any,                 arm64_linux:   "d6f04a3665abc89a6afc03df9a7ffbd18584044dd9b7dcde3b1ccfbc7c7e5fb7"
-    sha256 cellar: :any,                 x86_64_linux:  "2fcdf255b964e8b5cf604b7d8c807e5d49901e2885ecebc6f1e6ed8e5dfc4d20"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f44c126a208d5e6c1277c9c7722bd20fb9ae1da3e2781950487ed226c6a63a0e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e8a747bdb1accf93177d97ded09a1a7c23bf199a438b35a87b24c8cddd9367c0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d39d060d92601f73dcc25d3b1837ac41e5bc4b8f31471ad87e73c34a91f573f3"
+    sha256 cellar: :any_skip_relocation, sonoma:        "648e3c6ca5ca7af567625bb1729e5575d06c47b1e0e56e7d6a8889844aa125bf"
+    sha256 cellar: :any,                 arm64_linux:   "70c6838fa6012874469d740318aeffb96891fc1d6b0ab961bef0b20d7241c176"
+    sha256 cellar: :any,                 x86_64_linux:  "89f81baf1877187103cb38dec4f9e7409ee35e843f3d31289c3716bc0f8fcaa5"
   end
 
   depends_on "cmake" => :build

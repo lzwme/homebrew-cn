@@ -4,10 +4,11 @@ class Container < Formula
   url "https://ghfast.top/https://github.com/apple/container/archive/refs/tags/1.2.2.tar.gz"
   sha256 "61841d675a6542179aaa1b48ec00dc2ff8b888a58d9ec0d87fa279b30b9b5ced"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/apple/container.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe: "3d0839a9ac3e8376bcd8b865fce165160b65d52237a34ce29c773cf814dc7f12"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe: "73abfead9c7f27b216ce4c325117bda5ebfce00ac10c4c7085bb05ba5fee8ab2"
   end
 
   depends_on xcode: ["26.0", :build]
@@ -39,6 +40,8 @@ class Container < Formula
       "container-runtime-linux" => { source: "RuntimeLinux",     entitlements: true  },
       "machine-apiserver"       => { source: "MachineAPIServer", entitlements: false,
                                      resources: ["init", "create-user.sh"] },
+      "k8s"                     => { source: "K8s",              entitlements: false,
+                                     resources: ["kindnet.yaml"] },
     }
     plugins.each do |bin_name, opts|
       plugin_dir = libexec/"container-plugins/#{bin_name}"

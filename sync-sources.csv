@@ -1404,6 +1404,7 @@ Homebrew-homebrew-core/Formula/c/curseofwar.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/custom-install.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cutadapt.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/cutter-cli.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/c/cuttlefish.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cve-bin-tool.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/cvs-fast-export.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/cvs.rb, Homebrew/homebrew-core, 1
@@ -9717,6 +9718,7 @@ Homebrew-homebrew-cask/Casks/d/dropshare.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/dropshelf.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/dropzone.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/drovio.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/d/ds4-control.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/dteoh-devdocs.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/duckduckgo.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/duckietv.rb, Homebrew/homebrew-cask, 1
@@ -9870,7 +9872,7 @@ Homebrew-homebrew-cask/Casks/e/eurkey-next.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/e/eurkey.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/e/eusamanager.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/e/ev3-classroom.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/e/eve-launcher.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/e/eve-online.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/e/evernote.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/e/evkey.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/e/exactscan.rb, Homebrew/homebrew-cask, 0
@@ -11606,6 +11608,7 @@ Homebrew-homebrew-cask/Casks/font/font-n/font-news-cycle.rb, Homebrew/homebrew-c
 Homebrew-homebrew-cask/Casks/font/font-n/font-newsreader.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-n/font-nexon-bazzi.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-n/font-nexon-football-gothic.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/font/font-n/font-nexon-kart-gothic.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-n/font-nexon-lv1-gothic.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-n/font-nexon-lv2-gothic.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-n/font-nexon-maplestory.rb, Homebrew/homebrew-cask, 0

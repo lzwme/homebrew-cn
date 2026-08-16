@@ -8,6 +8,11 @@ class Vtk < Formula
   compatibility_version 3
   head "https://gitlab.kitware.com/vtk/vtk.git", branch: "master"
 
+  livecheck do
+    url "https://vtk.org/download/"
+    regex(/href=.*?vtk[._-]v?(\d+(?:\.\d+)+)\.t/i)
+  end
+
   bottle do
     sha256 cellar: :any, arm64_tahoe:   "0868c03624da48f7e9bc2271b4bf7b90669ebe1c2680df2081f96fdba03a6dd5"
     sha256 cellar: :any, arm64_sequoia: "02e50fb48b76619297c6f6033396a3f3c229126ddf57de39f92c9aafd8cd5692"

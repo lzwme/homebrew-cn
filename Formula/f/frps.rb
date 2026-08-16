@@ -1,18 +1,18 @@
 class Frps < Formula
   desc "Server app of fast reverse proxy to expose a local server to the internet"
   homepage "https://github.com/fatedier/frp"
-  url "https://ghfast.top/https://github.com/fatedier/frp/archive/refs/tags/v0.70.1.tar.gz"
-  sha256 "67246606f504cb15df72193f1a83911259e92b6a87838cff8850031efd406dc8"
+  url "https://ghfast.top/https://github.com/fatedier/frp/archive/refs/tags/v0.71.0.tar.gz"
+  sha256 "1dd367d6d822a7fce1d3012fce0a6e778bc90c454e2c7baa0eb1e6de6054c61b"
   license "Apache-2.0"
   head "https://github.com/fatedier/frp.git", branch: "dev"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d2632df2ba4dbc1607fbca1e8ee97c6ffd9f7d9ff7f00963f5a7ec4dc2ee6c56"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d2632df2ba4dbc1607fbca1e8ee97c6ffd9f7d9ff7f00963f5a7ec4dc2ee6c56"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d2632df2ba4dbc1607fbca1e8ee97c6ffd9f7d9ff7f00963f5a7ec4dc2ee6c56"
-    sha256 cellar: :any_skip_relocation, sonoma:        "433f2c1f063130472e340e07a7c4ef7f786bc25fa0d498c5a30181deec11e26d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7ff69385dbc8936e964db1a39bc84ac013e83236c0ce7dc1834bd067ba055fdd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2205d5078a0a47cb21fd1253ccd56d6007f55f7b29ea7974ce5f6fbc3eee6e38"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3441d6d6bf5101947401f27cea2265ec66e53e492521c67c60fd33fdb9334b37"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3441d6d6bf5101947401f27cea2265ec66e53e492521c67c60fd33fdb9334b37"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3441d6d6bf5101947401f27cea2265ec66e53e492521c67c60fd33fdb9334b37"
+    sha256 cellar: :any_skip_relocation, sonoma:        "18323a3812a3abab7a9b768bcb84e98f35409c25443ccf22a629956d6d937b06"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2951b9f94b57589cc9ce26a2e981bae0a1676a0cb734186cccf3065e3ea7238e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "03b579fb0524da8dc8f37f214362f14b1f60850bb288ceb39977aa3208e2b9a0"
   end
 
   depends_on "go" => :build
@@ -21,7 +21,7 @@ class Frps < Formula
   def install
     cd "web/frps" do
       system "npm", "install", *std_npm_args(prefix: false)
-      system "npm", "run", "build"
+      system "npm", "run", "build-only"
     end
 
     ENV["CGO_ENABLED"] = "0"

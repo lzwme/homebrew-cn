@@ -15,8 +15,8 @@ class Appstream < Formula
     sha256 x86_64_linux:  "4cf5ebf9c58f4659768fe851823fdc32c5a299be41a0239b5eab87e52b767dc2"
   end
 
+  depends_on "docbook-xsl" => :build
   depends_on "gobject-introspection" => :build
-  depends_on "gtk-doc" => :build
   depends_on "itstool" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build

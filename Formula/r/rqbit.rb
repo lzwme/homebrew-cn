@@ -1,20 +1,18 @@
 class Rqbit < Formula
   desc "Fast command-line bittorrent client and server"
   homepage "https://github.com/ikatson/rqbit"
-  url "https://ghfast.top/https://github.com/ikatson/rqbit/archive/refs/tags/v8.1.1.tar.gz"
-  sha256 "452b8260fabba938567e1819a9edfcf6b69579ecd5f8b87fee4ca1666fa8fede"
+  url "https://ghfast.top/https://github.com/ikatson/rqbit/archive/refs/tags/v9.0.0.tar.gz"
+  sha256 "a5c549c35e5a1e643e67376fd465158421a57e600594b69438f444b804fb6f34"
   license "Apache-2.0"
   head "https://github.com/ikatson/rqbit.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e67ea2e32ddb0dfa94f7f369f5067e4b87d4ba989942e5a1eabc150fe6992d63"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "92e638e63d0887e92e07f9269a0780efc424b129c2c6c77defeeb475815733b6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "abde32ab711dfb6e35b4820298f253cde4f4a3d7f1004b269dccff61869754ad"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "535aff6ec35570430fd0c2cf2032a1beffc33b381855e5ebb4a4946e343cab43"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0738b342798a9e02ce8e754e5bec29167e05bffe04c3877e4ab90111ef58488a"
-    sha256 cellar: :any_skip_relocation, ventura:       "5e46d0d0d6ddec3d97d0ff3aee5ce554439edc45f009e9f3646c6df2633a3de1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0fc58d1f39c3788a5b19b90a18a8735ffaa1cc8b0478c43c39a4ed5f07dcc68d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6392ea3522c23a0c05d5fffb972545fbbd38a32eee31883f64a4e59d87970580"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7ea18b3c71572ff7929eec91eb4fb7920125b3e80ac1194643bcc0c06578136a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dbd898c38cdf10af068948a14fa0611607699b23789109d8a6c4589851e55a17"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d955ab06760962d9f546ee8a4d56c8729e1f8cd9e72e5bb8079555c7a0006181"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ee5092fc4be98c9ba6b60d61d8c180d4f314b82990ed74c30a87ba3ba0b879aa"
+    sha256 cellar: :any,                 arm64_linux:   "7d0eee71de9c9104343f7661fb6cd92c3aa14c77a71c507725a3e3d0ae28286f"
+    sha256 cellar: :any,                 x86_64_linux:  "07ff34ad28683b1492e609e23ee7f90269ae91a93c2b50c134dbe1ebe8fb04de"
   end
 
   depends_on "node" => :build
@@ -59,6 +57,6 @@ class Rqbit < Formula
     EOS
 
     output = shell_output("#{bin}/rqbit download --list --output-folder #{testpath} '#{magnet_uri}'")
-    assert_match " File \"archlinux-2017.02.01-dual.iso\", size 870.0Mi", output
+    assert_match "File archlinux-2017.02.01-dual.iso, size 870.0Mi", output
   end
 end

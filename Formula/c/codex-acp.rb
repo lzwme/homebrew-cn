@@ -1,18 +1,18 @@
 class CodexAcp < Formula
   desc "ACP server that exposes Codex CLI functionality for ACP-compatible clients"
   homepage "https://github.com/agentclientprotocol/codex-acp"
-  url "https://registry.npmjs.org/@agentclientprotocol/codex-acp/-/codex-acp-1.2.0.tgz"
-  sha256 "56b0c98459aeb16d09dccd9848e1ebd8f32a8dfbc969ee86d4ff07f47bf507ba"
+  url "https://registry.npmjs.org/@agentclientprotocol/codex-acp/-/codex-acp-1.3.0.tgz"
+  sha256 "63596b17c0b01dd9d0cc71896bae4f53f1ee8e3267cdf4e0cb094326558b8807"
   license "Apache-2.0"
   head "https://github.com/agentclientprotocol/codex-acp.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "838a48731a6b9865fa4cc7c175605dff099cd83d4ac6ae037286385a7ec3ac52"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "838a48731a6b9865fa4cc7c175605dff099cd83d4ac6ae037286385a7ec3ac52"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "838a48731a6b9865fa4cc7c175605dff099cd83d4ac6ae037286385a7ec3ac52"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f616b39d64377a65bea23337f7f6f79b8f511fac079ad1d6759c01a8352b9b5d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2ad63d6f58b26d0d56f21b65deab38fe0ee98145d711dbd497e6fcbe512403f9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b71aa43e9d40b09e91ee92997e9dc46fd446da701178b80c6c144ffe994f6cfe"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9ea31fbb10e3a5e81e0a16031e45de3e77a2e162b82761b5b7fecb5656ddf7a5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9ea31fbb10e3a5e81e0a16031e45de3e77a2e162b82761b5b7fecb5656ddf7a5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9ea31fbb10e3a5e81e0a16031e45de3e77a2e162b82761b5b7fecb5656ddf7a5"
+    sha256 cellar: :any_skip_relocation, sonoma:        "feef7166623f1bbe9199eb30b3fb4014c9dc5542442b73bec8710ac99409c7de"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "30318503d8745d8d06c1afa198e42ec62a9072e0c6ee794b8dcad86c3b290cd8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "af56f5f7f181a89b41060543d8ca96b100bd3befc5b4f859284924ce0e30f284"
   end
 
   depends_on "node"

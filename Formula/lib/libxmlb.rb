@@ -18,7 +18,6 @@ class Libxmlb < Formula
     sha256               x86_64_linux:  "a64a9b8b8e43a14508becec1a0e7a2948cc2b605587d36f58d1ef85af5ad557c"
   end
 
-  depends_on "gi-docgen" => :build
   depends_on "gobject-introspection" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build

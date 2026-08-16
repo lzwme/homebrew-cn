@@ -1,8 +1,8 @@
 class Nushell < Formula
   desc "Modern shell for the GitHub era"
   homepage "https://www.nushell.sh"
-  url "https://ghfast.top/https://github.com/nushell/nushell/archive/refs/tags/0.114.1.tar.gz"
-  sha256 "48ef2fb6bb3ec2b1dcff87a792aeebdfab10b29f3119a62291075b17e4ad25d5"
+  url "https://ghfast.top/https://github.com/nushell/nushell/archive/refs/tags/0.115.0.tar.gz"
+  sha256 "09859dde0207804abdd6f574c5b2f0946041555418bb6d3c44d4b9f86c7efd78"
   license "MIT"
   head "https://github.com/nushell/nushell.git", branch: "main"
 
@@ -13,12 +13,12 @@ class Nushell < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "78b13979ae8435f632514bbd0b80965165c60e169245693f129b03b3ebe0fd2b"
-    sha256 cellar: :any, arm64_sequoia: "43935b4b33f36d158927ab7ba9b968ea852e3f08b8171b0e20d525d402e67cf6"
-    sha256 cellar: :any, arm64_sonoma:  "12ccbf1995c845a4b97d3348361330057b05df1621ef21a59ceeb898ef8b1eff"
-    sha256 cellar: :any, sonoma:        "0414d5c1985845afef89a32674b3dc37b5c16dbe38ef3be8f5bed80deb0a3d94"
-    sha256 cellar: :any, arm64_linux:   "29f83c9cc14aff2bc57e73c7fd9af9cda90c561bf16ced0fca88c1c8140146f1"
-    sha256 cellar: :any, x86_64_linux:  "cccb83967934a5bb271f2f0041e157e40224fdcb37ed2e661434c8c69e31b661"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "79f19134e6573994c2ed3b213e31f8aac187b5a427af426dd3a5b66d9a271916"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "37c9e358756531993dfb9ef3cbc3a8c35e2d612054243597ebb4c3e5ed30e3b6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "548da87c6891bbd706c1d0b96b4ba1accf0a6509f6cbe2932594e8da552ce2fc"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6ec30412fa15d29c9194ea3c7d953247e50a1ca838b742813312495559277503"
+    sha256 cellar: :any,                 arm64_linux:   "f09ff3db10ab77e36cbe4ad4c2d1c930da730a15d9e2a59b471bee31c33923d8"
+    sha256 cellar: :any,                 x86_64_linux:  "9c6be23a7e24245b94d211a566969478c777b91017c0c69b36e7f518ecbd4e86"
   end
 
   depends_on "pkgconf" => :build

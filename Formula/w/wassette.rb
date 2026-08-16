@@ -8,7 +8,7 @@ class Wassette < Formula
 
   livecheck do
     url :stable
-    strategy :gtihub_latest
+    strategy :github_latest
   end
 
   bottle do

@@ -16,6 +16,14 @@ class SimpleAmqpClient < Formula
       type :backport
       resolves "https://github.com/alanxz/SimpleAmqpClient/commit/d271adb8a795e6aa98c09507b3401fc4d8ab21c1"
     end
+
+    # Fix build with Boost 1.89.0, pr ref: https://github.com/alanxz/SimpleAmqpClient/pull/356
+    patch do
+      url "https://github.com/alanxz/SimpleAmqpClient/commit/3d3c669608b0dc3ae54e9caae6244bdcc38ca054.patch?full_index=1"
+      sha256 "652aad326ace036498e2f990f6fecaa9d2472e04885f581d773fb1fbf3809e9c"
+      type :backport
+      resolves "https://github.com/alanxz/SimpleAmqpClient/pull/356"
+    end
   end
 
   bottle do
@@ -28,23 +36,11 @@ class SimpleAmqpClient < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "doxygen" => :build
   depends_on "boost"
   depends_on "rabbitmq-c"
 
-  # Fix build with Boost 1.89.0, pr ref: https://github.com/alanxz/SimpleAmqpClient/pull/356
-  patch do
-    url "https://github.com/alanxz/SimpleAmqpClient/commit/3d3c669608b0dc3ae54e9caae6244bdcc38ca054.patch?full_index=1"
-    sha256 "652aad326ace036498e2f990f6fecaa9d2472e04885f581d773fb1fbf3809e9c"
-    type :backport
-    resolves "https://github.com/alanxz/SimpleAmqpClient/pull/356"
-  end
-
   def install
-    system "cmake", "-S", ".", "-B", "build",
-           "-DCMAKE_INSTALL_LIBDIR=lib",
-           "-DCMAKE_CXX_STANDARD=14",
-           *std_cmake_args
+    system "cmake", "-S", ".", "-B", "build", "-DBUILD_API_DOCS=OFF", "-DCMAKE_CXX_STANDARD=14", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end
