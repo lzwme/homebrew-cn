@@ -22,17 +22,6 @@ class Symengine < Formula
   depends_on "libmpc"
   depends_on "llvm"
   depends_on "mpfr"
-  depends_on "zstd"
-
-  uses_from_macos "ncurses"
-
-  on_macos do
-    depends_on "z3"
-  end
-
-  on_linux do
-    depends_on "zlib-ng-compat"
-  end
 
   # Backport support for LLVM 22
   patch do

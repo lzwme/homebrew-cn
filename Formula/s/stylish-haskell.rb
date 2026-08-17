@@ -7,13 +7,13 @@ class StylishHaskell < Formula
   head "https://github.com/haskell/stylish-haskell.git", branch: "main"
 
   bottle do
-    rebuild 3
-    sha256 cellar: :any, arm64_tahoe:   "9409346c277a94ec8eeaccf8b6a87ba26ebf340c7ab4d094d63bf5c587910739"
-    sha256 cellar: :any, arm64_sequoia: "95834b9abae9b296d5a69e0503da11827aced2d9c3b27f3fff9b3097aa2de4b2"
-    sha256 cellar: :any, arm64_sonoma:  "99ec18fd4bc31f757f99c507616d651655213ae17e916019fd5f74703e60bdc2"
-    sha256 cellar: :any, sonoma:        "f23166e343e57e6b0fd940e29d0baeab2df8e69e44a0db777115268d6c5b1404"
-    sha256 cellar: :any, arm64_linux:   "449d0fd363eee6f2c1b2627f8a6e386bf158b4b3dcdbaf061c381f04edd02c14"
-    sha256 cellar: :any, x86_64_linux:  "02a90e71c972ef6c47e696490469a84b892d10eb7c849b8ad060f84658563fb8"
+    rebuild 4
+    sha256 cellar: :any, arm64_tahoe:   "a4f78bcd8ce59aec4e06a0cfc88954a75684ebb8305ac5e0c58e45e79a21c66c"
+    sha256 cellar: :any, arm64_sequoia: "b1e5697193a7f1cf3b72032cd8979406c074fba9f016eeeb189bc64b1ff807f7"
+    sha256 cellar: :any, arm64_sonoma:  "437113d6529d3f00612edff31bb8b89b4c149754c47884b3b5a66026b434c698"
+    sha256 cellar: :any, sonoma:        "0c9c411096f25025890fc55cb4825ff6c6e502e831322ebcac7682bfba7453a2"
+    sha256 cellar: :any, arm64_linux:   "56ff3634ea64b1be1fc7c5fb0eaef1ed7dc0571502c1b15386f7ab2bec84fc6b"
+    sha256 cellar: :any, x86_64_linux:  "413b44a4bc58973d5568bfdaf4d18092707c83802879d30cdcfb3917f3c16083"
   end
 
   depends_on "cabal-install" => :build
@@ -21,6 +21,14 @@ class StylishHaskell < Formula
   depends_on "gmp"
 
   uses_from_macos "libffi"
+
+  # Support Cabal 3.18
+  patch do
+    url "https://github.com/haskell/stylish-haskell/commit/8982d5ebb30fd26afffc6a4bb4c7757891ee8c86.patch?full_index=1"
+    sha256 "6be3185315aeff68f05c2539376f3ab0b1e3ac858913fd1d888f2d3e7d8a50dd"
+    type :unofficial
+    resolves "https://github.com/haskell/stylish-haskell/pull/502"
+  end
 
   def install
     # Workaround to build aeson with GHC 9.14, https://github.com/haskell/aeson/issues/1155

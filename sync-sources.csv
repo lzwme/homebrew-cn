@@ -3883,6 +3883,7 @@ Homebrew-homebrew-core/Formula/l/lld.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lld@19.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lld@20.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lld@21.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/l/lld@22.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lldpd.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/llgo.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/llhttp.rb, Homebrew/homebrew-core, 1
@@ -3898,6 +3899,7 @@ Homebrew-homebrew-core/Formula/l/llvm@18.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/llvm@19.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/llvm@20.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/llvm@21.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/l/llvm@22.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lm-sensors.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lm4tools.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lmdb.rb, Homebrew/homebrew-core, 0
@@ -7299,6 +7301,7 @@ Homebrew-homebrew-core/Formula/s/svg2pdf.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/svg2png.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/svgbob.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/svgo.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/s/svlang.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/svlint.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/svls.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/svt-av1.rb, Homebrew/homebrew-core, 0
@@ -13851,6 +13854,7 @@ Homebrew-homebrew-cask/Casks/m/mongodb-compass.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mongodb-compass@beta.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mongodb-realm-studio.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/mongotron.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/m/mongrel.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/monitorcontrol.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/mono-mdk-for-visual-studio.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mono-mdk.rb, Homebrew/homebrew-cask, 0
@@ -14287,6 +14291,7 @@ Homebrew-homebrew-cask/Casks/o/overview.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/ovice.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/ovito-pro.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/ovito.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/o/owlocr.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/owncloud.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/owocr.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/oxygen-xml-developer.rb, Homebrew/homebrew-cask, 0
@@ -14387,6 +14392,7 @@ Homebrew-homebrew-cask/Casks/p/permute.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/perplexity.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/persepolis-download-manager.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/pester.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/p/petdex.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/petrichor.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/pext.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/pgadmin4.rb, Homebrew/homebrew-cask, 0

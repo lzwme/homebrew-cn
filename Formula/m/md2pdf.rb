@@ -1,18 +1,18 @@
 class Md2pdf < Formula
   desc "CLI utility that generates PDF from Markdown"
   homepage "https://github.com/solworktech/md2pdf"
-  url "https://ghfast.top/https://github.com/solworktech/md2pdf/archive/refs/tags/v2.2.19.tar.gz"
-  sha256 "5e1c8edfd48a88679880817b243f0d2068a695143dbf31bdbb85dfbf2e6febee"
+  url "https://ghfast.top/https://github.com/solworktech/md2pdf/archive/refs/tags/v2.2.20.tar.gz"
+  sha256 "7f33cd1ca648b081640ecbf654704fcbab9be78823dbb7e4aad3691bb0470648"
   license "MIT"
   head "https://github.com/solworktech/md2pdf.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2da752b31bd705f20e3bac7119450945cca69888cdb7d69a381474680fa832a0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2da752b31bd705f20e3bac7119450945cca69888cdb7d69a381474680fa832a0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2da752b31bd705f20e3bac7119450945cca69888cdb7d69a381474680fa832a0"
-    sha256 cellar: :any_skip_relocation, sonoma:        "41decd85836a3599972ddb903fbbe2ce684aa27193c924e6abbf3fcdbd2d4265"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7ef0f14a22be7663a5a3db503f5270747a754493d0c72c0bb260ab3c3b897ea7"
-    sha256 cellar: :any,                 x86_64_linux:  "9407646fb7454ba0d92ed60be10aafcc38dc52619c3ca2239f7ba6beb7bd2dae"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5f79d85bfe8c3485d7bef386f0b509d786fdb3ebc0d402f9f7caf89e06b6ca03"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5f79d85bfe8c3485d7bef386f0b509d786fdb3ebc0d402f9f7caf89e06b6ca03"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5f79d85bfe8c3485d7bef386f0b509d786fdb3ebc0d402f9f7caf89e06b6ca03"
+    sha256 cellar: :any_skip_relocation, sonoma:        "db98558a30d42803b3ebc2e15c52a4821fb5d4d25af3403f741e756e55fdc638"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7690604638d92638f7206bc612dae29099370905a36909ae2c718ddf36862de7"
+    sha256 cellar: :any,                 x86_64_linux:  "a3c53d5a5416244731338cad04dcd464ca004342e94da7106ce839e2b7280781"
   end
 
   depends_on "go" => :build

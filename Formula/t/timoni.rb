@@ -1,18 +1,18 @@
 class Timoni < Formula
   desc "Package manager for Kubernetes, powered by CUE and inspired by Helm"
   homepage "https://timoni.sh/"
-  url "https://ghfast.top/https://github.com/stefanprodan/timoni/releases/download/v0.31.0/timoni_0.31.0_source_code.tar.gz"
-  sha256 "550ef8f06ac153ab355506301ce764cf07dace697fa410773471ac26a1cecb81"
+  url "https://ghfast.top/https://github.com/stefanprodan/timoni/releases/download/v0.32.0/timoni_0.32.0_source_code.tar.gz"
+  sha256 "356434fdba6077f13e40aad300d4b3e56a11eb410d1f447da9f921523df0b09f"
   license "Apache-2.0"
   head "https://github.com/stefanprodan/timoni.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c61a8337c679341267a564c831b3f3369fee6700f00097d4f45628d23227a93b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "801eac96e3677f1e3e1e6094fdd30510ab4fca487a34ba57aae016314755ff23"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f7929b1fe2f6e02a4abcf6834d2aa36046bac7ac82c41925694c6084290d494e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f29ded762cd0a0f851583a5046ff1325b77c768bbdb45ea2a3752694a036a83e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "83e7a0ff090a57d6ee6c40dca363958e457f19ab7bdbc2ffdf002c5e396ff820"
-    sha256 cellar: :any,                 x86_64_linux:  "57fe28da826b1023ba523b520a847ac37cc00ed767a55b2073e2599b096db675"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cf44a8160394c945ee60d516531d88821d0fda82e16defb70b12ebd83adf6532"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "94a0fb18f72362ecefeaa49eeabbe58b43f0ac982cdd1a245e749373575752c7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cad601d30922634743f6e12fa031d803e731d1f26bef3e4be487122b856e727c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b135ab29bc088416050db5e837843f2bd777c657f1872a3ff120e05cdc3825b4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ef19aab3735362842e64156bb72cca7a35eefed8f014b3eb0a63884d12f2567c"
+    sha256 cellar: :any,                 x86_64_linux:  "e7b1a32ad4480d67e9c8a11011aa39fd3f59d1044c59a70644d8f6a833bbaa2a"
   end
 
   depends_on "go" => :build

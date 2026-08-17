@@ -1,17 +1,18 @@
 class Classifier < Formula
-  desc "Text classification with Bayesian, LSI, Logistic Regression, and kNN"
+  desc "Text classification with Bayes, LSI, kNN, Logistic Regression, and TF-IDF"
   homepage "https://rubyclassifier.com"
   url "https://ghfast.top/https://github.com/cardmagic/classifier/archive/refs/tags/v2.7.0.tar.gz"
   sha256 "3e0cf89c758eb4e7cb96a24dd39a422ec55c742d9663ee5fbb7fc63433deb872"
   license "LGPL-2.1-or-later"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "f443d16f0a1138701b3ef07935c3209d3ed3ab21bbdacbc1508ba26f2a69a374"
-    sha256 cellar: :any, arm64_sequoia: "dad6fc29671e905a7f01f5bcc792607b2b69f8e54b6f5f2f5d7a67ef84270aca"
-    sha256 cellar: :any, arm64_sonoma:  "e374ef33c6049031f61d0938201d1a1599dcdf04681f85f200012f9059dfbd37"
-    sha256 cellar: :any, sonoma:        "6cd35ad2db7be955bd6979632f02164c2cca364b8419cca427217d39a242b601"
-    sha256 cellar: :any, arm64_linux:   "0b9b27c8f0797dc96ae847b3c0ade46b1f5a5ff3fdfc7687005cb1e040ce06c9"
-    sha256 cellar: :any, x86_64_linux:  "c677f8b26275509284121958b3de6a984df6a38a7d9dd8cdba7c9ac0a90cf4cf"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "ba0432ac209fb148332377e1498b1e49bd711358e563011214302d9318405357"
+    sha256 cellar: :any, arm64_sequoia: "872a0c9dd40f86f84a8de9c558f937ae482731ab2e0bdb95c0a26f35e32f7b28"
+    sha256 cellar: :any, arm64_sonoma:  "cac7241f79adae3ec89c452270d31e2a1bda06dcb4d1b2af6bb7ccde040099cf"
+    sha256 cellar: :any, sonoma:        "cdf1690ab9b7b7ed6fba8d98cd1d7b9d9607e8e42b346d99ff432806a7d73d45"
+    sha256 cellar: :any, arm64_linux:   "47832ef61940bb4896389ade3d5615d744fe51c0f75b2f2534cc75f913be9e9a"
+    sha256 cellar: :any, x86_64_linux:  "b293072ae4316ab3e797b5d1d622a1381af5475c61f8fc5d14a9c60ad38a13ae"
   end
 
   depends_on "ruby"
@@ -27,6 +28,7 @@ class Classifier < Formula
     system "gem", "install", "--ignore-dependencies", "#{name}-#{version}.gem"
 
     bin.install libexec/"bin/classifier"
+    bin.install libexec/"bin/keywords"
     bin.env_script_all_files(libexec/"bin", GEM_HOME: ENV["GEM_HOME"])
   end
 
@@ -39,5 +41,19 @@ class Classifier < Formula
 
     output = shell_output("#{bin}/classifier -r sms-spam-filter 'Meeting at 3pm tomorrow'")
     assert_match "ham", output.downcase
+
+    assert_match version.to_s, shell_output("#{bin}/keywords --version")
+
+    # keywords ships no pre-trained model, so fit a vocabulary first
+    (testpath/"corpus.txt").write <<~TEXT
+      Ruby is an elegant programming language
+      Python is a popular programming language
+      Machine learning uses neural networks
+    TEXT
+    system bin/"keywords", "fit", "-m", testpath/"model.json", testpath/"corpus.txt"
+    assert_path_exists testpath/"model.json"
+
+    output = shell_output("#{bin}/keywords -m #{testpath}/model.json 'elegant ruby'")
+    assert_match "elegant", output
   end
 end

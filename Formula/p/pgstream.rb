@@ -6,12 +6,13 @@ class Pgstream < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "994748ba6b5dc0dc15700f9f42f1a9e78ed05ea864a1ab7885cb089bf9565cc3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "eab70b6c6bc1f2e54801850dd2ec4776ab2aaea0479c1b653a635bc5606c1ca1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "eab665465269c805bf68457b4bea5c4d2bba5847d118903316b03802f89f2b72"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d1576a776c8865cc4c88baf1968c0096f0c3beb91eb0263c650d087897f68091"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3e549366c2627bddbf26649907ae75223532266b61853a08cc5870680efae2ee"
-    sha256 cellar: :any,                 x86_64_linux:  "e90cc7bdc25249a91743af31d8824858d064ca3c93a0aa4b0b2606c9827492d4"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3e094d456472d4f22e546aaacbcb9f88af626a64d99f4f78f13ef97e148b239a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9c4962f7bafe356c8ebf37b6d1701a86a40a6711c5bd07c2cfca52ea6d29e67b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ed6730791905e1a24d16453bdb056377d97c989cff98d96c9a9e3c785c2bf33a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "487741c58123d3e64b167fa41cdce7c0f3a3342d7ff9fd2c49509d04ecf11164"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3538b962237086ec7ea5b1aae4a933611ee55dcc0267d07f320b2fe1a9bfca93"
+    sha256 cellar: :any,                 x86_64_linux:  "e51d4f0b09a816874845d305b4d8145bac126b333170d5c6fe968083d4886a40"
   end
 
   depends_on "go" => :build
@@ -38,6 +39,7 @@ class Pgstream < Formula
     (testpath/"test/postgresql.conf").write <<~CONF, mode: "a+"
       port = #{port}
       shared_preload_libraries = 'wal2json'
+      output_plugin_libraries = 'pgoutput, test_decoding, wal2json'
       wal_level = logical
     CONF
     system pg_ctl, "start", "-D", testpath/"test", "-l", testpath/"log"

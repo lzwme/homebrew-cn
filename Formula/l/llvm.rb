@@ -3,6 +3,7 @@ class Llvm < Formula
   homepage "https://llvm.org/"
   # The LLVM Project is under the Apache License v2.0 with LLVM Exceptions
   license "Apache-2.0" => { with: "LLVM-exception" }
+  revision 1
   compatibility_version 1
   head "https://github.com/llvm/llvm-project.git", branch: "main"
 
@@ -25,12 +26,12 @@ class Llvm < Formula
   end
 
   bottle do
-    sha256               arm64_tahoe:   "d83ee9d03be9f9a5e5795b3ada6b67847735615f4721d19f424dce3632075d19"
-    sha256               arm64_sequoia: "5819a7751ca18dd6dd54e182464de9d3c911ccf13900ed94a631ce64e414d710"
-    sha256               arm64_sonoma:  "fb93c3924b51bf22452d4bd7b1287e1413ed92aa632be2b17ff6e653f6a33a57"
-    sha256 cellar: :any, sonoma:        "2f07536754d0854565f9ac37436681bb3d04a4fbb15c45c51896933262df5e48"
-    sha256 cellar: :any, arm64_linux:   "a6e3a38557f177517bdd1aa4d4c2f3f6c92c470815ab873f4851154c45a2c48b"
-    sha256 cellar: :any, x86_64_linux:  "69ab817bad2fd10427709b74e13699b5ca81a190be9b740d4e903635fd878a10"
+    sha256               arm64_tahoe:   "67d391532c4ec25f77d2974789e036c87547546bbb7ab18f59a8222dd5e4a1f9"
+    sha256               arm64_sequoia: "6392268ba95ba5e795247facc07080db3cbc214826d1d6807cc9f47c5e246528"
+    sha256               arm64_sonoma:  "59d4be56d763ad9f73a772598246e655ad6253e715aab5f79ae82048a7155a9c"
+    sha256 cellar: :any, sonoma:        "ddd92fe84caed90f6a121137efba9225576f0f3e88af0adc22296f3906eda96c"
+    sha256 cellar: :any, arm64_linux:   "03a57a49f3a88fa74ab98024bc7761458df2c876c1f9ebb9e3aa96b71fec269e"
+    sha256 cellar: :any, x86_64_linux:  "600e848234b1e71847e40bf15832b8bfbe707014069ab2135032617ae1a696ad"
   end
 
   keg_only :provided_by_macos
@@ -121,6 +122,7 @@ class Llvm < Formula
       -DLLVM_ENABLE_EH=OFF
       -DLLVM_ENABLE_FFI=ON
       -DLLVM_ENABLE_RTTI=ON
+      -DLLVM_INCLUDE_BENCHMARKS=OFF
       -DLLVM_INCLUDE_DOCS=OFF
       -DLLVM_INCLUDE_TESTS=OFF
       -DLLVM_INSTALL_UTILS=ON

@@ -23,7 +23,7 @@ class Lume < Formula
 
   def install
     cd "libs/lume" do
-      system "swift", "build", "--disable-sandbox", "-c", "release", "--product", "lume"
+      system "swift", "build", "--product", "lume", *std_swift_args
       system "/usr/bin/codesign", "-f", "-s", "-",
              "--entitlements", "resources/lume.local.entitlements", # Avoid SIGKILL with ad-hoc signing.
              ".build/release/lume"

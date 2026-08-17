@@ -1,17 +1,17 @@
 class Dskditto < Formula
   desc "Ultra-fast duplicate file finder TUI/GUI"
   homepage "https://github.com/jdefrancesco/dskDitto"
-  url "https://ghfast.top/https://github.com/jdefrancesco/dskDitto/archive/refs/tags/v0.5.9.tar.gz"
-  sha256 "66732c8727a514d69ef6290df8a78ce249ce54dcabdcc43439ede902c4e1b0c9"
+  url "https://ghfast.top/https://github.com/jdefrancesco/dskDitto/archive/refs/tags/v0.6.2.tar.gz"
+  sha256 "22eb67b680df785709d3cdb0343f7db1e9c99c51788fa518ab0da52d1475e737"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8fb274bfaaab2c4ad140f511a9a486665699d26eac5e0ffef1463b9b3a6cdea6"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c5fe9522c277ff305fdeed39517b8e64aee75cc83a78d52fd24c63c2528c7e1a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "38855948e1f3567655bf46c6357409d9f5683aa782eabb7bfc8802f96394597e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4cdc1d5709e0dd3c0cdd8a977d9a60fc4dbe860d510a4fc879bfff66e0059d28"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e493616a32ab0a323ab33978674cfb5e052ddc4188a099237f996eea585b9f3a"
-    sha256 cellar: :any,                 x86_64_linux:  "fe2cfd5a0c8ba3d3e124c8be841ce1b96a078531f6b3255453719c6616cd23cf"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "77aed6edb4dd72dbd72789c70f133ad1ced9434d14d14113de5aae5744b28609"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "72a2e13c6d44e7da7fba371a10317c47409bf22a6d1067ebd1f1d38e2a7797eb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6794c196365af15e59e612b836e971016347aeba90aa3948c997004519f166d6"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2ccf4d828605f0eb27f330d9759256641d5eb3db06689ed270c573ea3b93e71e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1c2bc6da92134992cf7772f612d8d4088d5aafc0aacd45f2a9c63b899fc23e9a"
+    sha256 cellar: :any,                 x86_64_linux:  "be75aea33d6dfd2e62f326cec7fc75bdd0f3b67d09234ad71e92cde90cc50f15"
   end
 
   depends_on "go" => :build

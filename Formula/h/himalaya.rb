@@ -1,17 +1,17 @@
 class Himalaya < Formula
   desc "CLI email client written in Rust"
   homepage "https://pimalaya.org"
-  url "https://ghfast.top/https://github.com/pimalaya/himalaya/archive/refs/tags/v2.0.0.tar.gz"
-  sha256 "0f58a5761490c2a96105073358487fa6032c79c0f07e962a65f6e8aeef782fd9"
+  url "https://ghfast.top/https://github.com/pimalaya/himalaya/archive/refs/tags/v2.1.0.tar.gz"
+  sha256 "491c7e51aa58874e2b70b4a0377e1770a1d3522392b9a9b867f965ac9d75aaa5"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "16674e960b32ed7295279ce54484b5825af639d00c3099f0ba0d71266d5f044e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8f171ebf557234779dd24e5489aa3e404990862db994a2333e5b7fd136ffa19b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "996494c7d83916dca29b1803eb7d0d4a5c357321821e90d10f639471fe3820fd"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5815b6cf30fa22c6856e425a5863eeb14cf704bb54ed47ba7d84340ab5636adc"
-    sha256 cellar: :any,                 arm64_linux:   "9a86645a57a4f1d16c5d6f3893c944f9f846c6b8f3e3ff7cf460171236339c5e"
-    sha256 cellar: :any,                 x86_64_linux:  "f5268464cc2ca301ea468398c54d4f65d7c4391b53c039725b534fe565fcd22b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bf93247c63b1452a46d4dd5cef349a422116c41d7523b3715d7df715156c0b37"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a49034e4c13c93092c494ff52ed5469371a087e41c7c9e8aae5621b82085fbb1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d8bd69f718b12a0a0f23239cd4b858e8c4f3be8811f9b822ca8b7a9a4ba8fbc7"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3f7b50b2533d2638842096a32c3c24360fed668fb43894e52a826304c9b5702d"
+    sha256 cellar: :any,                 arm64_linux:   "8638c2ba2f083f0b76448dfd647c55c2910529f652d40d4ad1f7694422f374b3"
+    sha256 cellar: :any,                 x86_64_linux:  "e7406de7206ff4bb320b73bc72b401b524b1a57af4143228b2262cbdf4cd0e19"
   end
 
   depends_on "pkgconf" => :build

@@ -5,7 +5,7 @@ class Klee < Formula
   desc "Symbolic Execution Engine"
   homepage "https://klee-se.org"
   license "NCSA"
-  revision 4
+  revision 5
 
   stable do
     url "https://ghfast.top/https://github.com/klee/klee/archive/refs/tags/v3.2.tar.gz"
@@ -21,11 +21,11 @@ class Klee < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "b183270701fa8dfadaa3fd4cc2bf3544c28627c0a2a1e991f47186628e76c30b"
-    sha256 arm64_sequoia: "58e3053c688cb865c8343017e4306860783db9a3774ad52a7dca88ff893035cb"
-    sha256 arm64_sonoma:  "66a7539afe96b446281576753628359dfd5f85bdf3700c396aaf4f1b8ecfa9dc"
-    sha256 sonoma:        "562d6b3eab534db3213f75598829c903a10c8b41c2527636b7262529e8976fc5"
-    sha256 x86_64_linux:  "061ff90c401d5b1d36f01f9f83230865bf03600fa7d2733d7217a0b83b646a82"
+    sha256 arm64_tahoe:   "1b3ef1ad37955159f8cde98e88e8cecfde8aaacc401b6fb684923754feabbee3"
+    sha256 arm64_sequoia: "ce519cf9f41a8bfc975705fcf3e1136c116353f38eeca803f971ce1d00a19662"
+    sha256 arm64_sonoma:  "c3aa6c3641da591643c20feb4ef552e384ac00ccc5ea2222fe891027cf91d6ae"
+    sha256 sonoma:        "cdd5e054247e4c60dd30e421be5a113546442699cb42d41e5a3e151f56e49096"
+    sha256 x86_64_linux:  "18e2e50ccd1ab881689da05f8473565e6bde762c65d56b126ad9c425bf363d15"
   end
 
   head do

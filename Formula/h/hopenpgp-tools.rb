@@ -1,18 +1,18 @@
 class HopenpgpTools < Formula
   desc "Command-line tools for OpenPGP-related operations"
   homepage "https://hackage.haskell.org/package/hopenpgp-tools"
-  url "https://hackage.haskell.org/package/hopenpgp-tools-0.25.5/hopenpgp-tools-0.25.5.tar.gz"
-  sha256 "2a0b4b0e3d97d98c2e49e799e5bedd8e4b9ca697d4d5f396f05606ec2285cf18"
+  url "https://hackage.haskell.org/package/hopenpgp-tools-0.25.6/hopenpgp-tools-0.25.6.tar.gz"
+  sha256 "91727808b23c6aa528dac7bd97429483e812cf86e1268be56ba81ce9208372d9"
   license "AGPL-3.0-or-later"
   head "https://salsa.debian.org/clint/hOpenPGP.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "2214b33d22a61e5330830a8316b8ab4bd25434f7236edc734a8d9a5411ee7c7b"
-    sha256 cellar: :any, arm64_sequoia: "188101e4ba9e8b99dfebc68eef5667d948509bcddb1a973f8e37d6cdc15d4442"
-    sha256 cellar: :any, arm64_sonoma:  "b78b53d214c7539ce3b0b5e9908014841efea614f92de101c43759d3443320d9"
-    sha256 cellar: :any, sonoma:        "fff1061575dd7f88306101ad52911cda2f9d3a5e2f528c60699d6b304ced0b3f"
-    sha256 cellar: :any, arm64_linux:   "ac272c8fb0fb03d11e13e42ffe5ed6bd9e95063d4bff8f7c1977aa53022e55d8"
-    sha256 cellar: :any, x86_64_linux:  "866602e1bcc6f5b6e30990a1c5ff6243792dc75fd99a5b6de868ffe0399ad7c0"
+    sha256 cellar: :any, arm64_tahoe:   "5411d5b6e7c32ec824df0c77b8b1eebbcb50c5eaeb332ac2d420a8fc18aeceac"
+    sha256 cellar: :any, arm64_sequoia: "4cbe85a7e3811632380ef893c2cbb8ab7becf63809103d40aff604ee310705cd"
+    sha256 cellar: :any, arm64_sonoma:  "3aef424586fae489e702f1a501635b35a78c5e8c216e4cba8cdef2915305a43d"
+    sha256 cellar: :any, sonoma:        "64ad180737ae88b4d28a898525ace5ee834a929f947be79e5b5ee5f585fada1d"
+    sha256 cellar: :any, arm64_linux:   "9e9ec8c80c62000eb7c9d434eff6e6748a93000c54b6b303005b35e947b684ca"
+    sha256 cellar: :any, x86_64_linux:  "8c7461cf943bd322538be40bba2ce8925a0a58600dac5ffb895f2636aedbc574"
   end
 
   depends_on "cabal-install" => :build

@@ -3,8 +3,8 @@ class HermesAgent < Formula
 
   desc "Self-improving AI agent that creates skills from experience"
   homepage "https://hermes-agent.nousresearch.com"
-  url "https://ghfast.top/https://github.com/NousResearch/hermes-agent/archive/refs/tags/v2026.8.13.tar.gz"
-  sha256 "2b202b0cbcecfaeec85572b60d66cd481ca387248b592878bf92204de78abefe"
+  url "https://ghfast.top/https://github.com/NousResearch/hermes-agent/archive/refs/tags/v2026.8.16.tar.gz"
+  sha256 "655639384767611feee5ef5d6871e1a1b2294f7b1fd80fb401e9b888a418f4f9"
   license "MIT"
   head "https://github.com/NousResearch/hermes-agent.git", branch: "main"
 
@@ -14,12 +14,12 @@ class HermesAgent < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "c20cce84d0e6773ff2aeada2c43cc5657fb6487c97e148daa8d1962a2b67fa0b"
-    sha256 cellar: :any, arm64_sequoia: "7a8c77af1be3f40e7be2553b21359403e1dff0821605413163bc7c51c6a33a1d"
-    sha256 cellar: :any, arm64_sonoma:  "7fad2abc96547bb4af2a1bfe98e0dd670f7cfe9108bc60eda661bb72b67d20a5"
-    sha256 cellar: :any, sonoma:        "2fdd344de843cd91c22aea2a80ed5eeef9afdaa3a6669b65939d2a5db8ba161d"
-    sha256 cellar: :any, arm64_linux:   "c53fa58d8128ecaf36ac69981fa9f67796febf264b1222be7571f4314479e1eb"
-    sha256 cellar: :any, x86_64_linux:  "23cc905dea584ac9933fcd7c0cbc255896e3c36deca830355ac309eb4482b7a8"
+    sha256 cellar: :any, arm64_tahoe:   "5ec7a9a14a67e4322b27bcdc49b0e1adb557d48af7b8db01cb447048fb0cce95"
+    sha256 cellar: :any, arm64_sequoia: "3a8823ff526514236023d2dd8af4c8d87a8146dbb4e8e37461440ecc7a5eb37b"
+    sha256 cellar: :any, arm64_sonoma:  "d621f264548ac7fbbfa5e5dd6f709bb99892656384bd1467b981c215def33074"
+    sha256 cellar: :any, sonoma:        "a83d7ff828fac720551f0ba35bc54221bba2905ff49c6422fc2369fe2b37eaa4"
+    sha256 cellar: :any, arm64_linux:   "73abd67735038dc90dd3651f72186afe3b43e445b8d316b0d51d813ad1e046f3"
+    sha256 cellar: :any, x86_64_linux:  "ae0bf1dd8f9ed7a10f2e4cd1cac253d5db79fd220794bc36162f56eaa88b6f21"
   end
 
   depends_on "pkgconf" => :build
@@ -47,8 +47,8 @@ class HermesAgent < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/cb/31/4971872b3ed8715346231fb6eb4da8fcba65a4143c189db151ee28a2812b/charset_normalizer-3.5.0.tar.gz"
-    sha256 "49bd5feb59b0bf3cbf6ebcf4352e371c95b9da9bacd4449f8b64d0ad2c10a26e"
+    url "https://files.pythonhosted.org/packages/e5/3f/143b048436775b0f76ac3eec145c019e8173ccc2885c8f20319b996d5e83/charset_normalizer-3.5.1.tar.gz"
+    sha256 "6117b84ea48435e5356dc737f5121485c30920ba43375fa7b434fd753df0eac3"
   end
 
   resource "click" do
@@ -132,8 +132,8 @@ class HermesAgent < Formula
   end
 
   resource "nemo-relay" do
-    url "https://files.pythonhosted.org/packages/58/81/a7a545ac3a2f8c670d261c89df599aa8fbf49d8be45fd1f52efb36b489eb/nemo_relay-0.7.2.tar.gz"
-    sha256 "828d9f6c7d7e4e42276bb7192bd44202c761e0c76fa4943d84e051b5a99028e5"
+    url "https://files.pythonhosted.org/packages/cd/e5/a259aac8df4aa78c0b3a6f3ad0fbf6305666bfaad5c29d9adc26db0f9e27/nemo_relay-0.7.3.tar.gz"
+    sha256 "ea5a1bb52e25e001dcbf6af1830616be181845e978cc848df58562556bba5604"
   end
 
   resource "openai" do
@@ -270,8 +270,8 @@ class HermesAgent < Formula
   end
 
   resource "uvicorn" do
-    url "https://files.pythonhosted.org/packages/c3/53/be79eff13cc289570b4c6875fa4641a91a1dc51ece7f6213f364b0a58c4c/uvicorn-0.52.2.tar.gz"
-    sha256 "4294500b9c8f7a3ef3e975d9e4be08c3eb76441af449a9e6e10146c6a182ffec"
+    url "https://files.pythonhosted.org/packages/2e/28/64ca011edf31c715b4fad359c587ea52391aaffa125065695590241ff617/uvicorn-0.52.3.tar.gz"
+    sha256 "18857b9e6579300be55c91c0a1cfd37d9a2cf0cabea33b88275f199eb73b8b58"
   end
 
   resource "uvloop" do
@@ -292,14 +292,6 @@ class HermesAgent < Formula
   resource "websockets" do
     url "https://files.pythonhosted.org/packages/21/e6/26d09fab466b7ca9c7737474c52be4f76a40301b08362eb2dbc19dcc16c1/websockets-15.0.1.tar.gz"
     sha256 "82544de02076bafba038ce055ee6412d68da13ab47f0c60cab827346de828dee"
-  end
-
-  # Package the top-level module that `hermes_cli.plugins` imports
-  patch do
-    url "https://github.com/NousResearch/hermes-agent/commit/89d3e43f5e61146bff46923dd8a9fc7a6cfc9d63.patch?full_index=1"
-    sha256 "0613fbb11a8f9c66889cfa5e058ee4154906984837dbaeaed3c7ddfe66fc400a"
-    type :backport
-    resolves "https://github.com/NousResearch/hermes-agent/pull/85160"
   end
 
   def install

@@ -3,31 +3,31 @@ class Mypy < Formula
 
   desc "Experimental optional static type checker for Python"
   homepage "https://www.mypy-lang.org/"
-  url "https://files.pythonhosted.org/packages/12/af/4e516a05d3ca2eb9283e9ec45b2c02225c1514dd6da49fd3c9eaa6639370/mypy-2.3.0.tar.gz"
-  sha256 "465965d41cd9a2726694e983e8ce7113259327bec798115d1e1dfa2a52fb666e"
+  url "https://files.pythonhosted.org/packages/82/6a/878cc1097d4035f82bd516658d0c528d2a9955bc7b363afcbd0b07fea11b/mypy-2.3.1.tar.gz"
+  sha256 "47c1b1207258513a9d93495f69c8be9de73916186f0e52703e8c461b7a623419"
   license "MIT"
   head "https://github.com/python/mypy.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "8fb4bd2736ed9c4dd6d056b68bedb3b2c90477ca931cb4dbfd94effdede8cda8"
-    sha256 cellar: :any, arm64_sequoia: "ff66fc3e241c10739a348db466e40e0047f2eb0c8a7911265d990d80558accf5"
-    sha256 cellar: :any, arm64_sonoma:  "b96c9d43d1e71b959cd2a8cbbcbba16ce72395bb9e11c72dbeb2d31f5a414233"
-    sha256 cellar: :any, sonoma:        "5a23623476a29244fd816a73b664b39db600c13733b0bc32eb94e2591e8bd8f4"
-    sha256 cellar: :any, arm64_linux:   "c601a2a7ea82d5fd309b5c26dd7a8c126e84b2a850443f2c0f01041f5d766962"
-    sha256 cellar: :any, x86_64_linux:  "6d2c66e65f898d0dcc55e3160a251ee93069cc49aceb7b2956ed1e12b4d5dc20"
+    sha256 cellar: :any, arm64_tahoe:   "59f0c8fd330bf6af943895992125c637f83924bfa3d46d6549914914d37ae70a"
+    sha256 cellar: :any, arm64_sequoia: "1e75f3e3e3d147cdb8710f9551e200abbd67fe840703f2466eaa068a8cdf7ec2"
+    sha256 cellar: :any, arm64_sonoma:  "6996e04b925fbbf2bbf42fa6e2a3d4dd9171dfa11d9bf16d2a3b51c4ad642a05"
+    sha256 cellar: :any, sonoma:        "e8f4d0b98197f196d318e240f79392b07e730d0f13558abf83e889f7fc3ffd11"
+    sha256 cellar: :any, arm64_linux:   "91cd8ab965f162b06d6ae545408325751a4e3edaf3abf984cb90e10bbbc0f2fd"
+    sha256 cellar: :any, x86_64_linux:  "7266220087d1ccff94d178dd1ca46993352ccb9577289cc30fa0d7f17852788f"
   end
 
   depends_on "rust" => :build # `ast-serialize`
   depends_on "python@3.14"
 
   resource "ast-serialize" do
-    url "https://files.pythonhosted.org/packages/58/ad/0d70a3a2d6e01968d985415259e8ec7ad3f777903f9b1c1f3c8c44642c60/ast_serialize-0.6.0.tar.gz"
-    sha256 "aadd3ffcf4858c9726bf3515f7b199c7eadbe504f96028e4a87172c0da65a8fe"
+    url "https://files.pythonhosted.org/packages/e1/a9/11851c3e02a3fea2ddc9932d1fdc7d2edaeecc0d2e11bc5f2a7fde2b0934/ast_serialize-0.8.0.tar.gz"
+    sha256 "6c37c43e4004dfb42d321ddedc569dc17ff4259296f3af577c9ea46a809bc010"
   end
 
   resource "librt" do
-    url "https://files.pythonhosted.org/packages/dc/2f/3908645ddddab7120b46295e541ead308109fa48dbec7d67d7a778870d60/librt-0.13.0.tar.gz"
-    sha256 "1d2a610c14ac0d0750ee0a3ab8548e83155258387891caaca04def4bf7289781"
+    url "https://files.pythonhosted.org/packages/36/9b/356320fbae2ac8467e21c5e73e1389c80468e4998c62cc7d3536cc51b614/librt-0.15.0.tar.gz"
+    sha256 "4e66cbe84437497d951b799d3e1551291b6fb3d643820a7014b3655d57a59162"
   end
 
   resource "mypy-extensions" do

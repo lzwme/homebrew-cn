@@ -1,18 +1,18 @@
 class GoLibrespot < Formula
   desc "Spotify client"
   homepage "https://github.com/devgianlu/go-librespot"
-  url "https://ghfast.top/https://github.com/devgianlu/go-librespot/archive/refs/tags/v0.8.0.tar.gz"
-  sha256 "444e32986bf61a2b011bb672793d0d2ebcf07ccdcefab8dc8b99c618bd4ad6bc"
+  url "https://ghfast.top/https://github.com/devgianlu/go-librespot/archive/refs/tags/v0.9.0.tar.gz"
+  sha256 "54f5edebeedf32785383b56be0c5f4c93fbbc4189e54812c9da0a0cbde607b7e"
   license "GPL-3.0-only"
   head "https://github.com/devgianlu/go-librespot.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "af91ed2a7fa5b360232fb7be532317c60b97ca3895a44597146b494bf4a3c8b9"
-    sha256 cellar: :any, arm64_sequoia: "aff082cffcb89a414f7f1fde6fc97a208d80169ca2b2f31ed07e4c9a74996c67"
-    sha256 cellar: :any, arm64_sonoma:  "771473b3521998c975652c45aa295df749b60748f0dbdbdb1852baef6f203a59"
-    sha256 cellar: :any, sonoma:        "6281998d9b89238f40a8b98a766b098605fd46e975a615f6970e21ea2e27d152"
-    sha256 cellar: :any, arm64_linux:   "748e92a4e045fe441507483df07ddc71342523e536a366e01d2d6c147a4ce43a"
-    sha256 cellar: :any, x86_64_linux:  "746cc4edd99cfef5c63f7722f2872c34474727a07802895f2e23f45883d1f546"
+    sha256 cellar: :any, arm64_tahoe:   "8142a70e2b53b8d4afc88fa9e4660d3bebdaec78820597500d142e0af9f58e0e"
+    sha256 cellar: :any, arm64_sequoia: "985958da0a233c8d60defe869e87763814bdcc37b3eb080c062b1616db35923e"
+    sha256 cellar: :any, arm64_sonoma:  "e52904211aa94a12cf447c7170943f094fc73f486ad7893d1266a7b0adcdb402"
+    sha256 cellar: :any, sonoma:        "eede32f9f6995a24584d4812bd7be44dd55058ed556529052c1e005f0d1db390"
+    sha256 cellar: :any, arm64_linux:   "02a54a8f020f615cc4bfec182f8b3a718eb161b58183f89149ed914fd3e8b9c5"
+    sha256 cellar: :any, x86_64_linux:  "1363b51e5176242e1165c9ba525b641dc5c60d87d3b809b9a64e84d85289f0c3"
   end
 
   depends_on "go" => :build
@@ -20,6 +20,7 @@ class GoLibrespot < Formula
   depends_on "flac"
   depends_on "libogg"
   depends_on "libvorbis"
+  depends_on "mpg123"
 
   on_linux do
     depends_on "alsa-lib"

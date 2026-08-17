@@ -3,20 +3,20 @@ class Harlequin < Formula
 
   desc "Easy, fast, and beautiful database client for the terminal"
   homepage "https://harlequin.sh"
-  url "https://files.pythonhosted.org/packages/1b/f4/57f891b274f67ce48ce433646bf21beb5a0feee181fc2cf8f4a687cffee0/harlequin-2.8.1.tar.gz"
-  sha256 "acc71b0588df2ecc4fd7de82d05c50b92d7725d50afb3253e1bc18132fe6bd76"
+  url "https://files.pythonhosted.org/packages/9f/94/8d5b85872b4f694ddf26e48992d02ebee26924f5b87476a255d518157b33/harlequin-2.9.0.tar.gz"
+  sha256 "b1824b0ba790e65ea3092000a95660d1ba3836c8729b7f7d7dd18364488b4dae"
   license "MIT"
   head "https://github.com/tconbeer/harlequin.git", branch: "main"
 
   no_autobump! because: "has non-PyPI resources"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "a11d31c7d10226d35f1882148aab9f2b6d7d1a9ae75849259a49beb050b89a9a"
-    sha256 cellar: :any, arm64_sequoia: "74a46c30890e221d15b9d817395c49b413214c64bd3a6234f3afe08901a96814"
-    sha256 cellar: :any, arm64_sonoma:  "21d908657e647138f5fc6127d39432ebc8e86a38c0c71667bed72d0a17daff60"
-    sha256 cellar: :any, sonoma:        "fae49a395e4a6c93a53284a02a0d008ee00a08115c45d31f32b0a657d7312851"
-    sha256               arm64_linux:   "1459225b7bc85f465578f5d45a49a2914a09e23d81e80d5c178f17a842c76c95"
-    sha256               x86_64_linux:  "b85644043947fcc30ec4dd1ee203a8456c6c5e81607bac63d029f7419558e11b"
+    sha256 cellar: :any, arm64_tahoe:   "7996bd9c6b1c0af4216b5bd532a85ea27a2ff39b0a8e78495b5485e3cc61f071"
+    sha256 cellar: :any, arm64_sequoia: "f86abb84dc204f636e7e2ece2ebb5c99d2104e7170e914108eb26ba048771245"
+    sha256 cellar: :any, arm64_sonoma:  "4a22c2774da1cf8ff7fd93a5cd75449023e6264e99831ade483183661667afcb"
+    sha256 cellar: :any, sonoma:        "10584c07e8c20f2d7bfa20093fa38422dbcafe6b084a725f4d526d2c831ddccb"
+    sha256 cellar: :any, arm64_linux:   "9ff0edf7f57f6f5b46b5c1a6cc2d52d44eb6c4ec49a8c9a27d8bd37d682a7d4e"
+    sha256 cellar: :any, x86_64_linux:  "bfc794f1428627bb1e447d44cf23ba4cb388c087fac05e34feb6bf18eb80fc22"
   end
 
   depends_on "cmake" => :build
@@ -38,8 +38,8 @@ class Harlequin < Formula
                 extra_packages:   "psycopg-c"
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/bb/63/f9e1ea081ce35720d8b92acde70daaedace594dc93b693c869e0d5910718/click-8.3.3.tar.gz"
-    sha256 "398329ad4837b2ff7cbe1dd166a4c0f8900c3ca3a218de04466f38f6497f18a2"
+    url "https://files.pythonhosted.org/packages/76/d4/81420972a676e8ffea40450d8c8c92943e7218a78fe9b64359836cc9876b/click-8.4.2.tar.gz"
+    sha256 "9a6cea6e60b17ebe0a44c5cc636d94f09bd66142c1cd7d8b4cd731c4917a15f6"
   end
 
   resource "duckdb" do
@@ -103,13 +103,13 @@ class Harlequin < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/36/0a/062135c9a98dac804265073cc3afdbec5ae1aa37980bb354f461bafe81b4/platformdirs-4.11.1.tar.gz"
-    sha256 "bb1af68078f25e2f3e111e2d43b8d536df41b73c8a684b40bb018223b66fae27"
+    url "https://files.pythonhosted.org/packages/b8/d7/e7bfbc86e9f99ff7807e24de7703f032e9c9ba80bb355cf26e0e9bc5a75e/platformdirs-4.11.3.tar.gz"
+    sha256 "66a73d38a849810252df809a3d8bcbda8e26f6c189920e7535ad608a48dbb5ab"
   end
 
   resource "prompt-toolkit" do
-    url "https://files.pythonhosted.org/packages/fb/93/180be2342f89f16543ec4eb3f25083b5b84eba5378f68efff05409fb39a9/prompt_toolkit-3.0.36.tar.gz"
-    sha256 "3e163f254bef5a03b146397d7c1963bd3e2812f0964bb9a24e6ec761fd28db63"
+    url "https://files.pythonhosted.org/packages/7d/ea/39b988c938f75cb75d7045b5c69f8bfed47ee2152c8837fb403de29d6fb8/prompt_toolkit-3.0.53.tar.gz"
+    sha256 "9ec8a0ad96d5c56148b3f914aa79c1564c3fde5d2e6b876e7bc327e353cf8fa6"
   end
 
   resource "psycopg" do
@@ -128,8 +128,8 @@ class Harlequin < Formula
   end
 
   resource "pyarrow" do
-    url "https://files.pythonhosted.org/packages/27/f3/95428098d1fa7d04432fb750eed06b41304c2f6a5d3319985e64db2d9d41/pyarrow-25.0.0.tar.gz"
-    sha256 "d2d697008b5ec06d75952ef260c2e9a8a0f6ccfce24266c04c9c8ade927cb3b4"
+    url "https://files.pythonhosted.org/packages/3d/e3/27f57f80141379d60defe6703eb50a707325706f07fedfd1312c7a751995/pyarrow-25.0.1.tar.gz"
+    sha256 "9150a83248bfed9813ea3c3af74c3856c1984d444aa28e58bf7733b9750ddf6a"
   end
 
   resource "pygments" do
@@ -153,8 +153,8 @@ class Harlequin < Formula
   end
 
   resource "questionary" do
-    url "https://files.pythonhosted.org/packages/84/d0/d73525aeba800df7030ac187d09c59dc40df1c878b4fab8669bdc805535d/questionary-2.0.1.tar.gz"
-    sha256 "bcce898bf3dbb446ff62830c86c5c6fb9a22a54146f0f5597d3da43b10d8fc8b"
+    url "https://files.pythonhosted.org/packages/f6/45/eafb0bba0f9988f6a2520f9ca2df2c82ddfa8d67c95d6625452e97b204a5/questionary-2.1.1.tar.gz"
+    sha256 "3d7e980292bb0107abaa79c68dd3eee3c561b83a0f89ae482860b181c8bd412d"
   end
 
   resource "rich" do
@@ -168,8 +168,8 @@ class Harlequin < Formula
   end
 
   resource "shandy-sqlfmt" do
-    url "https://files.pythonhosted.org/packages/88/a5/d33e5c90339eae4fd0114b3e976333049f2a9ad0479b4b1b955983cb5bb7/shandy_sqlfmt-0.31.0.tar.gz"
-    sha256 "229306cc1f3a4b38987bd298e2c51029dddd50783629adcd625fe7feb515cde6"
+    url "https://files.pythonhosted.org/packages/18/61/29e13aa8c39da9fe821fb393c4113b166517a38d8a2bb53142c9b6dd0892/shandy_sqlfmt-0.32.0.tar.gz"
+    sha256 "f1e93928659f8159e399f189050b60dbe2135812eccfc1566b04644fb0dc3304"
   end
 
   resource "six" do
@@ -183,8 +183,8 @@ class Harlequin < Formula
   end
 
   resource "textual-fastdatatable" do
-    url "https://files.pythonhosted.org/packages/82/2a/f5844539d1ab139a220ee29ca81552cdd3e794048456a4b23a714f868e11/textual_fastdatatable-0.17.0.tar.gz"
-    sha256 "3b1ea1f78aa7aa7ab41df9fb2b3b926fb274bbe8cb2e4f622b16a500eeb2157c"
+    url "https://files.pythonhosted.org/packages/56/3e/6447bf2d06247229c617457f2d005fe9c3eda24d73071c324d0da1f13adc/textual_fastdatatable-0.17.1.tar.gz"
+    sha256 "401865e706b882f9d750424674a6ce782bffd42c6087221d9d87c4857680e252"
   end
 
   resource "textual-textarea" do
@@ -193,8 +193,8 @@ class Harlequin < Formula
   end
 
   resource "tomlkit" do
-    url "https://files.pythonhosted.org/packages/cc/18/0bbf3884e9eaa38819ebe46a7bd25dcd56b67434402b66a58c4b8e552575/tomlkit-0.13.3.tar.gz"
-    sha256 "430cf247ee57df2b94ee3fbe588e71d362a941ebb545dec29b53961d61add2a1"
+    url "https://files.pythonhosted.org/packages/94/96/e07752635b98536177fa1f37671c8f3cdde2e724c6bcf6034b2cfb571565/tomlkit-0.15.1.tar.gz"
+    sha256 "e25bbf38843005246210a12982776f27f99cb9be67160e14434d0c0d21ee1e97"
   end
 
   resource "tqdm" do

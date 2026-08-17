@@ -5,8 +5,8 @@ class ForgejoCli < Formula
   head "https://codeberg.org/forgejo-contrib/forgejo-cli.git", branch: "main"
 
   stable do
-    url "https://codeberg.org/forgejo-contrib/forgejo-cli/archive/v0.6.0.tar.gz"
-    sha256 "8b91194cb1886f253261a4567ee6f83aa34b05a9637644793f88b40b7110322a"
+    url "https://static.crates.io/crates/forgejo-cli/forgejo-cli-0.6.0.crate"
+    sha256 "4d56acd6ab5caab2870d6e301cd6e42741ca98761fc1d5890dad09b21b44780e"
 
     # Fix issue with shell completions.
     # Remove with `stable` block with next release.

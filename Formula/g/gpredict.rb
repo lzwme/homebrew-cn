@@ -1,8 +1,8 @@
 class Gpredict < Formula
   desc "Real-time satellite tracking/prediction application"
   homepage "https://oz9aec.dk/gpredict/"
-  url "https://ghfast.top/https://github.com/csete/gpredict/releases/download/v2.5.2/gpredict-2.5.2.tar.bz2"
-  sha256 "186907660a96a95e70df2212d9d783710bcf53079b1508eb55a13dbed60573bc"
+  url "https://ghfast.top/https://github.com/csete/gpredict/releases/download/v2.6/gpredict-2.6.tar.bz2"
+  sha256 "f4e6967cb2eeb6d74b8e8208c90dc8f4b1c00955ae1049753ad8352c927e54a3"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -11,12 +11,12 @@ class Gpredict < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "d9ab2d3280d4329fd3f56a3d583eac3d606c29a8ba46e1f158b2e7a3fe50d54e"
-    sha256 arm64_sequoia: "91159d82d835bf0aacf058c975eec6a3335cac2d485d1b25b38bacb3fdbd5aae"
-    sha256 arm64_sonoma:  "0ee89cf98b62cb777eb770c6eb027821efa1aec058f1ba9aeaee7933c0d04b12"
-    sha256 sonoma:        "22d91137ad9925c30e1e9333d79228986ae43e583e826c4ea057e0f06b1c20e6"
-    sha256 arm64_linux:   "0bd70156ae632d56d3cba9291956f63a9c882f3ee7a5d0ab80a48c89cfd9eb8c"
-    sha256 x86_64_linux:  "7a02d601451b1b15166e32b8ce5a54e3951dd3bd7efc1e9707d28637dbddb39f"
+    sha256 arm64_tahoe:   "f8c9b2ea6c7c613968ed61ec00ef72cb897ede678f428ad5a2107c706504463b"
+    sha256 arm64_sequoia: "9332a1c6ba2c43e207305c0bca832a84027895724c5e5149589aa47c183debfa"
+    sha256 arm64_sonoma:  "a0cdca7cc480453838f440fe8a2103b97ef89ff4bf49ae2c885ad202ed80bfda"
+    sha256 sonoma:        "5c0e019f9018ffe5ac78e68389b45c56dd3f33b9ffba0ffb0613e6234f71468c"
+    sha256 arm64_linux:   "c52fdcdfaa81e8a571176bc769d8a7360b29dcc04fc0409a974912ef5bbc27da"
+    sha256 x86_64_linux:  "6c985a8fb04516aac9e28e7bd717c20e784ca199bccea3a32a537c6028fa0420"
   end
 
   head do

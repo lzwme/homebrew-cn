@@ -1,17 +1,17 @@
 class Pake < Formula
   desc "Turn any webpage into a desktop app with Rust with ease"
   homepage "https://github.com/tw93/Pake"
-  url "https://registry.npmjs.org/pake-cli/-/pake-cli-3.15.6.tgz"
-  sha256 "3cfd9681aa737c07b7444910c3b4d88a81af7a4ac8c7d3b116a987b47bbd6483"
+  url "https://registry.npmjs.org/pake-cli/-/pake-cli-3.15.7.tgz"
+  sha256 "3fea5e929effcddded6ef2fb6fc7bdc49c32f560697b338013733d95b42b0e7d"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256               arm64_tahoe:   "1aa8b78520f4cf15553375165e229293016a080e6529ed86dd4f8155235fad2f"
-    sha256               arm64_sequoia: "dda228e9a8496305e89ad65a8ab6a4a58f15d1cea7f2ec92eee0f980a7bf299f"
-    sha256               arm64_sonoma:  "75fac1e647655b929b3b56a39d7577a9ac432a34e000a1041307fdf31d40d33e"
-    sha256               sonoma:        "6fa9994c2a076809247c05be42f229f2b3e4f020f63f7dac026f89a79eabc469"
-    sha256 cellar: :any, arm64_linux:   "b16db9a98a692415107917126ff03d5d777d10616640cac60f2b1a6201f0cc00"
-    sha256 cellar: :any, x86_64_linux:  "b93784f448e8ae4a0f136232701cd6f988739c09e4257b652f2fa92d67392761"
+    sha256               arm64_tahoe:   "17918a9790b3169f6928eec4d4653334d250c3173e363796cf4264544693ada7"
+    sha256               arm64_sequoia: "a1e90cdf4b118870246492e1753174d0a39e621b25e20baf2c4bc66c5b12fb14"
+    sha256               arm64_sonoma:  "b307229a46ba9d03c0aa1413d1ad4d99a6d0cade55f72b4d5259d1421158acdb"
+    sha256               sonoma:        "c4253e57fbdcccdbc281a2f8d8d6a1186f438e4e363a823af0f914aa7fe31711"
+    sha256 cellar: :any, arm64_linux:   "5e4da0913afa6859dedbf1ef4e5997197dc86369934b9891d75c1c349f83f10f"
+    sha256 cellar: :any, x86_64_linux:  "8cd55d183712f5ff7e726ad51f16fa4c04bdb024c6f058105d19a20815aa703b"
   end
 
   depends_on "pkgconf" => :build
@@ -48,20 +48,12 @@ class Pake < Formula
 
     ENV["SHARP_FORCE_GLOBAL_LIBVIPS"] = "1"
 
-    # `node-addon-api` 8 needs C++17, which the older `sharp` predates
-    inreplace node_modules/"icon-gen/node_modules/sharp/src/binding.gyp" do |s|
-      s.gsub! "'-std=c++0x'", "'-std=c++17'"
-      s.gsub! "'c++11'", "'c++17'"
-    end
-
-    # `icon-gen` pins an older `sharp` whose bundled `vips` shares the brewed soname
-    { node_modules => "build", node_modules/"icon-gen/node_modules" => "install" }.each do |dir, script|
-      rm_r(dir.glob("@img/sharp-*/lib/*.node"))
-      rm_r(dir.glob("@img/sharp-libvips-*/lib/libvips-cpp.*"))
-      cd dir/"sharp" do
-        system "npm", "run", script
-        rm_r("src/build/Release/obj.target")
-      end
+    # `sharp` ships prebuilds whose bundled `vips` shares the brewed soname
+    rm_r(node_modules.glob("@img/sharp-*/lib/*.node"))
+    rm_r(node_modules.glob("@img/sharp-libvips-*/lib/libvips-cpp.*"))
+    cd node_modules/"sharp" do
+      system "npm", "run", "build"
+      rm_r("src/build/Release/obj.target")
     end
   end
 
