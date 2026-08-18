@@ -3,8 +3,8 @@ class Keychain < Formula
 
   desc "User-friendly front-end to ssh-agent(1)"
   homepage "https://www.funtoo.org/Keychain"
-  url "https://ghfast.top/https://github.com/danielrobbins/keychain/archive/refs/tags/3.0.2.tar.gz"
-  sha256 "48ccbf24d7775b96f1730b3a1a95cd06bb73f267f126b9da36ccfba0e8c02f2f"
+  url "https://ghfast.top/https://github.com/danielrobbins/keychain/archive/refs/tags/3.0.3.tar.gz"
+  sha256 "ef6e087dcc0de79076caca7e39b08d4b7794127c54155889d92c4ad2d3930d35"
   license "GPL-3.0-only"
 
   livecheck do
@@ -13,7 +13,7 @@ class Keychain < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "200f4292d5ddc357c3734b28ebb9088b3cb986919a1d71bd127160ad8ce403c1"
+    sha256 cellar: :any_skip_relocation, all: "88b3495e10e5ece4fbfa27fcd7e35630711309f7267832a0aff2c63209138243"
   end
 
   depends_on "python@3.14"

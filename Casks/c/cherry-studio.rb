@@ -2,11 +2,11 @@ cask "cherry-studio" do
   arch arm: "arm64", intel: on_system_conditional(macos: "x64", linux: "x86_64")
   url_end = on_system_conditional macos: "dmg", linux: "AppImage"
 
-  version "2.0.5"
-  sha256 arm:          "9e9b127ba1f91ee501d2005ba702c0c4706cd96d5de16931b17c5eaa27dccfc1",
-         intel:        "6ac352dd71f7370b5c00e43e3e2b8e68ccaa9da89beed47357b237d3504d198c",
-         arm64_linux:  "333582bd797def95605ced790cdc9ccd67522ae59fe72aa9966fc6d57768142c",
-         x86_64_linux: "509313baec07b9fec7d737ecf3382c40be6442df8c71761751676ca7bff82bd2"
+  version "2.0.7"
+  sha256 arm:          "2ecaeb6de6b902d1932d913491b248cbbc56619752ddbed3f3b24a2bc3ae77d6",
+         intel:        "70536075f7be84357cb010ef7f832b882ce95957a8ea93fb9ad3a3fb6d7ec743",
+         arm64_linux:  "dcb97873a9ee2ae4ebff2fc4a77359c7ac2769bb32bf1e6aeeb47a56b6d88b04",
+         x86_64_linux: "0942a15496bea643aa4ba561472aed4e05fb716ccdc96092fbd69c00cff94d24"
 
   on_macos do
     depends_on macos: :monterey

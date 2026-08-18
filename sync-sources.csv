@@ -423,6 +423,7 @@ Homebrew-homebrew-core/Formula/a/awsdac.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/awslogs.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/awsume.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/awsweeper.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/a/awww.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/axel.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/ayatana-ido.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/azcopy.rb, Homebrew/homebrew-core, 1
@@ -2466,7 +2467,6 @@ Homebrew-homebrew-core/Formula/g/ghalint.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/ghc.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/ghc@9.10.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/ghc@9.12.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/g/ghc@9.2.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/ghc@9.4.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/ghc@9.6.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/ghc@9.8.rb, Homebrew/homebrew-core, 0
@@ -2731,7 +2731,6 @@ Homebrew-homebrew-core/Formula/g/go-size-analyzer.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/go-statik.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/go-task.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/go.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/g/go@1.21.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/go@1.22.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/go@1.23.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/go@1.24.rb, Homebrew/homebrew-core, 0
@@ -3290,6 +3289,7 @@ Homebrew-homebrew-core/Formula/i/innoextract.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/i/innotop.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/inotify-tools.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/insect.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/i/inshellisense.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/i/inspectrum.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/inspircd.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/install-nothing.rb, Homebrew/homebrew-core, 1
@@ -6339,6 +6339,7 @@ Homebrew-homebrew-core/Formula/r/rakudo-star.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rakudo.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/ralph-orchestrator.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/ramalama.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/r/rammap.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rancher-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rancher-machine.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rancid.rb, Homebrew/homebrew-core, 0
@@ -8322,6 +8323,7 @@ Homebrew-homebrew-core/Formula/x/xlsclients.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/x/xlslib.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/x/xlsxio.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/x/xmake.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/x/xmedcon.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/x/xml-coreutils.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/x/xml-security-c.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/x/xml-tooling-c.rb, Homebrew/homebrew-core, 0

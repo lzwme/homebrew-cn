@@ -283,7 +283,7 @@ class CondaLock < Formula
       channels:
         - conda-forge
       dependencies:
-        - python=3.14
+        - python=3.12
     YAML
     system bin/"conda-lock", "-p", "osx-64", "-p", "osx-arm64",
                              "--conda", formula_opt_bin("micromamba")/"mamba"

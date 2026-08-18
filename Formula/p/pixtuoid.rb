@@ -1,18 +1,18 @@
 class Pixtuoid < Formula
   desc "Terminal pixel-art office for AI coding agents"
   homepage "https://github.com/IvanWng97/pixtuoid"
-  url "https://ghfast.top/https://github.com/IvanWng97/pixtuoid/archive/refs/tags/v0.16.0.tar.gz"
-  sha256 "3ea09fca426234ec7a311bacb683320b74442474413ebab81a7c1134abd80ab5"
+  url "https://ghfast.top/https://github.com/IvanWng97/pixtuoid/archive/refs/tags/v0.17.0.tar.gz"
+  sha256 "8af540ebf7eb0c0ea9f835fb9e76879ea186d4e3f2b6627bb9a7b9a44562da82"
   license "MIT"
   head "https://github.com/IvanWng97/pixtuoid.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "37d22ee48f1c9f14fce99897e578a682855744f7b8e284b6d8df96a2b9511c16"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5a390e933070cf08315f7ea2a2b03dec79d9214f6691a5fba163b707e4ddfd2c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3d858b43eb6eddb7dd2216d9faee2908586dcaeb6862db64d5793ea1d3e0eabb"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7f0f1112b37f5b7fdbe9121dc43842b06cbb9d5d590d0c02ef196667b0ad76f3"
-    sha256 cellar: :any,                 arm64_linux:   "5cc259128e9b92ca682e33793afd8d4947e5ab15843abf1109bd997366dad4de"
-    sha256 cellar: :any,                 x86_64_linux:  "138917a4c040626e93fb88f90b7c3f40a132a56192aaace5aea75eab42fc94e9"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9bbc2ae8dd2ea49a87cebf34fdc19fc796c30f6125ac8e15c55fad860c266591"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "206eb1cae224b23c368eb2968d5a229153a3a2f62f29edf01b95947e3587a9f3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0325bebfe491194647210fffbe9509ff39e5d171c02a145f6cd274e1200b2e98"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ad43a0806467a7b642f59e4926dbc6dbd12ac176295687b9f20761f8f9103240"
+    sha256 cellar: :any,                 arm64_linux:   "6bbe93bf94f8f3f50105a75b121082daa5b8b4eb99eac18bf76ac60937da6a21"
+    sha256 cellar: :any,                 x86_64_linux:  "5084bb184b4492878f839a62a73d7827eb66be3e46a6c51eb9493d2038b66bba"
   end
 
   depends_on "pkgconf" => :build

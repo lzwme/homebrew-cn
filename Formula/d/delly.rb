@@ -1,19 +1,18 @@
 class Delly < Formula
   desc "Structural variant discovery by paired-end and split-read analysis"
   homepage "https://github.com/dellytools/delly"
-  url "https://ghfast.top/https://github.com/dellytools/delly/archive/refs/tags/v2.5.1.tar.gz"
-  sha256 "84abfb79bfbb8489758b76cab6908e6d5de586752892a07dd7d1c887027962cf"
+  url "https://ghfast.top/https://github.com/dellytools/delly/archive/refs/tags/v2.6.0.tar.gz"
+  sha256 "fab93a5d7cfbf7b069c2d082f68dfe968799f0612b28a22aada9eda50b87595e"
   license "BSD-3-Clause"
-  revision 1
   head "https://github.com/dellytools/delly.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "36dfb049a4ec6f0250623be98b8145012c31628259f2a32cab858bd20ce69c8e"
-    sha256 cellar: :any, arm64_sequoia: "1bd470ca188b2ccf2481b2daa13cbca247cbbba1283be2bc61f9740817e1404f"
-    sha256 cellar: :any, arm64_sonoma:  "6dd826bbc9edc51025b05bd3727bd6b4ee7cf5cc0236b9de295e4ac27847dd48"
-    sha256 cellar: :any, sonoma:        "1186ae403979d15544e7faff266ada6bc221a671f31a22faf85fb19b4a18b19f"
-    sha256 cellar: :any, arm64_linux:   "6059e8ac3cdd5f7c454692ffa5cc41dbe30f28ea771a85208d3e3bc4e38e9ed6"
-    sha256 cellar: :any, x86_64_linux:  "c8fa26582386d495bd0b4e991c63eb4aabdf99113e6281afe783e469bdfc04e1"
+    sha256 cellar: :any, arm64_tahoe:   "6c02376e67ac46f63b6818772049ff523bbae5cf60e69b8c1ce746fe49b45dcc"
+    sha256 cellar: :any, arm64_sequoia: "2a2812eacf50740f0b03fc9058d5e23aba3edea581ccc200a3a83646153b5546"
+    sha256 cellar: :any, arm64_sonoma:  "4dc43e7e60de469381b722802da29cd216e0f5e556c3d00aa20c666850b29bb6"
+    sha256 cellar: :any, sonoma:        "bdf7c33718038fc106b4d5fbf7cac37cfa618e11ca1ac784f8d35af60fcc3bf6"
+    sha256 cellar: :any, arm64_linux:   "fe68cd948ac753d60b6ad0d22e02e07ac668c1d92add5d17f7f6c5fc7b88e966"
+    sha256 cellar: :any, x86_64_linux:  "c192be9439c3b7fff3a7ac88b9ef5416ac711aad8ea43b4e250afdb2d728100b"
   end
 
   depends_on "boost"

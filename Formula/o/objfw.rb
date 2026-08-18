@@ -24,10 +24,7 @@ class Objfw < Formula
   depends_on "automake" => :build
   depends_on "openssl@3"
 
-  on_linux do
-    depends_on "llvm"
-    depends_on "zlib-ng-compat"
-  end
+  uses_from_macos "llvm" => :no_linkage
 
   fails_with :gcc
 

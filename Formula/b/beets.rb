@@ -17,20 +17,13 @@ class Beets < Formula
     sha256 cellar: :any, x86_64_linux:  "7bfc26fb7c7c3f77596b6ec6899a5cf60acd631acc3a2500519ea074bcfd5f7a"
   end
 
-  depends_on "cmake" => :build
   depends_on "cython" => :build
   depends_on "python-setuptools" => :build
   depends_on "rust" => :build # for jellyfish
   depends_on "certifi" => :no_linkage
   depends_on "libyaml"
-  depends_on "llvm"
   depends_on "numpy" => :no_linkage
   depends_on "python@3.14"
-  depends_on "zstd"
-
-  on_linux do
-    depends_on "patchelf" => :build
-  end
 
   pypi_packages exclude_packages: %w[certifi numpy]
 
@@ -120,7 +113,6 @@ class Beets < Formula
   end
 
   def install
-    ENV["LLVMLITE_SHARED"] = "1"
     ENV.append_to_rustflags "-C link-arg=-Wl,-undefined,dynamic_lookup" if OS.mac?
     python3 = "python3.14"
     ENV.append_path "PYTHONPATH", formula_opt_libexec("cython")/Language::Python.site_packages(python3)

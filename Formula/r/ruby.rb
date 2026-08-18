@@ -2,6 +2,7 @@ class Ruby < Formula
   desc "Powerful, clean, object-oriented scripting language"
   homepage "https://www.ruby-lang.org/"
   license "Ruby"
+  revision 1
   compatibility_version 1
 
   stable do
@@ -29,13 +30,12 @@ class Ruby < Formula
   end
 
   bottle do
-    rebuild 3
-    sha256 arm64_tahoe:   "bd8f32a4445f0e1c551ef9227592c6bab35c4c1a3de6be0dba9cd25125c376c8"
-    sha256 arm64_sequoia: "6776190aba0f889f914f00959e252fd5e36fedb102ab3ecd5f4b7aecd2e89306"
-    sha256 arm64_sonoma:  "bf154fbc27d6103f1285acf9b4442de8b619733bbb424acf89356c07e8588957"
-    sha256 sonoma:        "43c1a1271f645ef6de164667a2049b07958587c5125b04e703aaef9cd44a5be8"
-    sha256 arm64_linux:   "7a3a42e745603d8728eb137065a9765c0e09652e172d8b0cffc4bfec1f24a452"
-    sha256 x86_64_linux:  "e2917053994c092c539ed7c342e65831e8eb37b8e6afb4abfedad8078e43c736"
+    sha256 arm64_tahoe:   "4ce78c01101674d6b7f4fabbaf6c4fdc09ee735827faa2865348777b815421b8"
+    sha256 arm64_sequoia: "836525a563d1cb7ff0d141b2a8a520a8e97c839576ab5c967a953b58f77f872c"
+    sha256 arm64_sonoma:  "aaa0345bf1d54313c2a08c1a41ea332e69ff4dea340b3b4af2aa2111e9158ec3"
+    sha256 sonoma:        "1256484800a5d262029f6a72551985ef40b2411b187c6c0e3309718586663382"
+    sha256 arm64_linux:   "244296422f82d4bd785a9d75e893eae8e8137fa271ee424f0592f999d5adf848"
+    sha256 x86_64_linux:  "8f6668cf18a8036389893b2dd38c0b49bd72873c35a386efeef544afaeac3b15"
   end
 
   head do

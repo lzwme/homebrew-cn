@@ -1,8 +1,8 @@
 class Lighthouse < Formula
   desc "Rust Ethereum 2.0 Client"
   homepage "https://lighthouse.sigmaprime.io/"
-  url "https://ghfast.top/https://github.com/sigp/lighthouse/archive/refs/tags/v8.2.1.tar.gz"
-  sha256 "2cfcd398812c31f9302b61e18cfa537c193268c7db5a96b57cb97c0bfcbd68c9"
+  url "https://ghfast.top/https://github.com/sigp/lighthouse/archive/refs/tags/v8.2.2.tar.gz"
+  sha256 "d7c2db0cfb18ad4748600b44c872714a1302b437cb8fd98ea42d4d311a0e3f8f"
   license "Apache-2.0"
 
   livecheck do
@@ -11,12 +11,12 @@ class Lighthouse < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3c359536d5fa3d1f9bd49f4b3fb94f52db63fb833d52e9b8797a760864d6b08d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "95209fd3a6fd9ed268857e748f2c242ba3f36af660c7e4f3c3cd77128bbb12ed"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "20a6684c51048966e8e5822805b5f6b2501d6f1f6f3dde0e8cba44b495e838a6"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8a183726f9c92a23e289c7921efe5fd7002f549f3e1f44c8c17f5e4a2995e34e"
-    sha256 cellar: :any,                 arm64_linux:   "071333df7c613cb93755ae058d1d0dfb8bff62d915323ec0b1e2b2df670f7d12"
-    sha256 cellar: :any,                 x86_64_linux:  "77e902e2a42b7afef15fdb63b516dd7910bbed2a30ef41e00a3b78113f9cd411"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8b2647bb0c98201ee467e5908cbb70c9fcf7274a2fabe9f4650e777c4ed8a27f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a267a85d21783618b287962ed520c5ee8c095a7d6dbbce350115938fcce7f09e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ec9db22729d6dcb6f6460077afae159b5653b6ab2410755d30dec3ed73f2bc39"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ec8d6a540168f52fdaf8bc557cd5e8b3308f9681823e85a0ff410f5405a3ed90"
+    sha256 cellar: :any,                 arm64_linux:   "644cfaab1283328169841955c493d01daae1bb1a2bc2c06900f956711b0b92b9"
+    sha256 cellar: :any,                 x86_64_linux:  "99a1348b937b0e1499ee70a9317bfb733fd56120672247de78245756ad174d82"
   end
 
   depends_on "cmake" => :build

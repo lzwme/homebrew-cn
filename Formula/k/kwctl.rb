@@ -1,18 +1,18 @@
 class Kwctl < Formula
   desc "CLI tool for the Kubewarden policy engine for Kubernetes"
   homepage "https://www.kubewarden.io/"
-  url "https://ghfast.top/https://github.com/kubewarden/adm-controller/archive/refs/tags/v1.37.1.tar.gz"
-  sha256 "70548acbd8415eaa37b3900b673deb733d5380899b6cb0fd89e2861593d170a6"
+  url "https://ghfast.top/https://github.com/kubewarden/adm-controller/archive/refs/tags/v1.37.2.tar.gz"
+  sha256 "08a374c320d7014a399111a88a7949886ee381b4df2bd94485ae9d7f2a2646ba"
   license "Apache-2.0"
   head "https://github.com/kubewarden/adm-controller.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b1e3277a01fbad7cc0367b70f5bdd018f31cf08129b699acdafc93ff5fada495"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f6adaf51f90f0827f26eaa77e02a240cc1ee8705c43e64614e2e7ae70b57c663"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ef05b2287703178ef08570c078b007bba36e1a59ac72982fa21a7e26d502faaa"
-    sha256 cellar: :any_skip_relocation, sonoma:        "562699a76636a6047bc351c797803d764b3d19085750019a82039b989d746ea5"
-    sha256 cellar: :any,                 arm64_linux:   "5025ab87ec8ad03933b79137cd6570c3702d71c850ea2ef58b9a8058d9698bc2"
-    sha256 cellar: :any,                 x86_64_linux:  "6ca95354c214b4faf7d570bfdb2bd28b7ec98d412eb32404be1eaf506c920b5a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "aa3b3b9a679328629fb1bd22a877e8e858980da307b7fb7e0f1fc28154f8f6b8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cb4ddd2fe66a8f75206f6c3e24bda5ca7865951acea3adc597eaa89e9808924f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b2f628d0d6f3479fad45c9fe276990c4e591e68e32c5b1b8f9cbea32757f5442"
+    sha256 cellar: :any_skip_relocation, sonoma:        "79a877d74bde9758d1f9e2df44b117ce87bf9547b3cceeccde225f212cf730b5"
+    sha256 cellar: :any,                 arm64_linux:   "de877e4f82577420fe015396ab96c88f207a93a94645b26b8977dc9ebc12192e"
+    sha256 cellar: :any,                 x86_64_linux:  "cded51da47522bc1ca44018949500507932e6bdbe6e64d1cd72cc6c449161742"
   end
 
   depends_on "pkgconf" => :build

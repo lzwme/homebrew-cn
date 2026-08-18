@@ -1,8 +1,8 @@
 class Ratify < Formula
   desc "Artifact Ratification Framework"
   homepage "https://ratify.dev"
-  url "https://ghfast.top/https://github.com/notaryproject/ratify/archive/refs/tags/v1.4.4.tar.gz"
-  sha256 "e5f2da2e9c43d575faf52e56dfc2d28d3ebb7e09f99e9b541c998b8fe7078f5c"
+  url "https://ghfast.top/https://github.com/notaryproject/ratify/archive/refs/tags/v1.4.5.tar.gz"
+  sha256 "82b05fc373327e71495cbec472afd2eec81e08a30b472e2c634eda507d3baa00"
   license "Apache-2.0"
   head "https://github.com/notaryproject/ratify.git", branch: "main"
 
@@ -14,12 +14,12 @@ class Ratify < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "600a8fb4cf442e5b299f5c602b856f1e7b9dde6949cedc737eeab470d5970326"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "efcafab70b13423cc9f2e9ed590f48496b51782958e72b1fe866f6f3e8724a2f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "17cbc3480343af44511e4795f39b658c37da2c1779f6aa45942ad28f37ec35a6"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f818cfce318d6eab9db5eef3b9d40f663173d6a55e078c35e47f8b9cacdcb59b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "39ada5c96ade587d3e464328c7dec7b32270017a1c0d11bbd6ea29504522964f"
-    sha256 cellar: :any,                 x86_64_linux:  "c8d24e1b883f36f3ca8096d6dc07a2b9b745e04e789380faf99c729730769dc4"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "138ff2891fc6d28cffa3afc63552d7800abdcf7ac5e3b943f6c4c50712554dc1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bccb8c1b10b819dece823328d6bc546aa2d7199f3947bb480a4f65932739e065"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b41d9dae5ef28639388da97e914ccc17515d1726dd36e1e41868dc978f03d354"
+    sha256 cellar: :any_skip_relocation, sonoma:        "573b841032f0500c9d80c9fec0e5d323a7ab17fd90616a5719f087b1c0570301"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4e0d4355b3d54e5e99f6f33aa50ed324c962a91e4f4ae2281e64070934c78ee3"
+    sha256 cellar: :any,                 x86_64_linux:  "9ad4310af1f42945f2b52f78991a0a2efefecc9dba064a9f6d38793f8a100a8a"
   end
 
   depends_on "go" => :build

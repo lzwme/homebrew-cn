@@ -1,18 +1,18 @@
 class Wails < Formula
   desc "Create beautiful applications using Go"
   homepage "https://wails.io"
-  url "https://ghfast.top/https://github.com/wailsapp/wails/archive/refs/tags/v2.14.0.tar.gz"
-  sha256 "57961d21f74e2752c609d0a0f63f32cf7e910d76a006309ccd1b92fc64112227"
+  url "https://ghfast.top/https://github.com/wailsapp/wails/archive/refs/tags/v2.15.0.tar.gz"
+  sha256 "4c865cbd5ab81401cf4557e54dfe517efc90d29980ccdaa54178b426fdd6d4a3"
   license "MIT"
   head "https://github.com/wailsapp/wails.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "00c9eaa273abe24a0972c0284768170a4d33b95c3137db30a34d38fc104f376e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "00c9eaa273abe24a0972c0284768170a4d33b95c3137db30a34d38fc104f376e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "00c9eaa273abe24a0972c0284768170a4d33b95c3137db30a34d38fc104f376e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d4069d1b28ed1089aca6ae1131f9c3b2d432e5204f5264690037e1e95d5bd4bd"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6dfe8f85f9bc1fdaf022672bcb998d980ed7b4e8d78e358522622eaef0d03e09"
-    sha256 cellar: :any,                 x86_64_linux:  "8e739126a3bcf02df0fe84fb500389cca3a2914e2a2aa43813784d2e2318e8a6"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a5eab148839191d87a163c1ad5eeca7258e3acca5b1df034e57826552fbb5e62"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a5eab148839191d87a163c1ad5eeca7258e3acca5b1df034e57826552fbb5e62"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a5eab148839191d87a163c1ad5eeca7258e3acca5b1df034e57826552fbb5e62"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5d4be922e46a7ac09e69cd7eceed7ef36500e7e2522076f6f5ce520c65803cfc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "54e2ac22637a88ee8cae8d49cea730202eaeb969e27d57fd9eb11428f55fbf7f"
+    sha256 cellar: :any,                 x86_64_linux:  "9029c77c6e45f8bac90ce565ecb76a2c2a77e9bca950d378328f358b66628f23"
   end
 
   depends_on "go"

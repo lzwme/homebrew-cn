@@ -1,17 +1,17 @@
 class Flyline < Formula
   desc "Supercharged Bash plugin replacement for readline"
   homepage "https://github.com/HalFrgrd/flyline"
-  url "https://ghfast.top/https://github.com/HalFrgrd/flyline/archive/refs/tags/v1.6.2.tar.gz"
-  sha256 "9bcacde196d9b46550c1b87605e8ef30c6bdf907d4a0816bf6f9348b57645cc6"
+  url "https://ghfast.top/https://github.com/HalFrgrd/flyline/archive/refs/tags/v1.7.0.tar.gz"
+  sha256 "de8b969ec75af2e22f62f09c28b9951706ad9fed1616bfb45dad64675922a08c"
   license any_of: ["GPL-3.0-only", "MIT"]
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "f1b7d1976a96a59813b34265bd06ede1780c0733456bede22796c3690f52d9b3"
-    sha256 cellar: :any, arm64_sequoia: "f5e4dccd5d2e907235e04e5fc833eb0c6a85644a527ef8fee2fa3095dc0dc294"
-    sha256 cellar: :any, arm64_sonoma:  "a0aa20bb22b5513872b51d7af7201650e067252b37751caf7021f691194ff417"
-    sha256 cellar: :any, sonoma:        "5098891ea963742e09900b8d486cdebc5266769353902116bbb361b294cfa1e5"
-    sha256 cellar: :any, arm64_linux:   "c33748194a5dd81b984bb535b738e65ef6fd13d00d349b21063d1c867c6da20a"
-    sha256 cellar: :any, x86_64_linux:  "099fc2f460ba33f48b31e7455aba824b07b017a8ee8e389e7fbca89016f5d568"
+    sha256 cellar: :any, arm64_tahoe:   "25210d5c1a44a74337b38196c0281c1ab69c09526e64f070c0ce75bca47cc23d"
+    sha256 cellar: :any, arm64_sequoia: "43bd6f6be6674f81f1dfce2da494479f33bf45148170fb5854a1f15ce7a01c24"
+    sha256 cellar: :any, arm64_sonoma:  "dc516a7864e1ea714609f2bd7918cd6e7711b2ba6973f6fe6e2e4945ee47b807"
+    sha256 cellar: :any, sonoma:        "f186bdeb6647867b0d3c000cf86a1ee317e46619e1921c26ce6c9780d89646a3"
+    sha256 cellar: :any, arm64_linux:   "de45b19f5a6814988a4cda08e9e49807bc792db4122f87a93a53ef0896987f68"
+    sha256 cellar: :any, x86_64_linux:  "f787cdf60b550eac1d3d3cce420d938c5ba62462fb3cbc0ba0decb0cffd3ed16"
   end
 
   depends_on "rust" => :build
@@ -45,7 +45,7 @@ class Flyline < Formula
     end
 
     output = output_log.read
-    assert_match "# Changelog", output
+    assert_match "Changelog", output
     assert_match version.to_s, output
   end
 end

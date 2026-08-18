@@ -1,18 +1,18 @@
 class B4n < Formula
   desc "Terminal user interface (TUI) for Kubernetes API written in Rust"
   homepage "https://github.com/fioletoven/b4n"
-  url "https://ghfast.top/https://github.com/fioletoven/b4n/archive/refs/tags/v0.5.5.tar.gz"
-  sha256 "8764b07ae11c0474337112b5da1387c01cb137b71d4def93b0eeee72db9af495"
+  url "https://ghfast.top/https://github.com/fioletoven/b4n/archive/refs/tags/v0.5.6.tar.gz"
+  sha256 "c016fa33229c5be961d0dfe9ab23aede7404c184f59135f85f11af685c43d973"
   license "MIT"
   head "https://github.com/fioletoven/b4n.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "40974eb4865721db8ea01edf42c79b4a109d5e78d9d130ee344453a9b58dfc4e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "13f85c15b6afcba269790cbf0fb2e8a8644eded2a3bf7db2f6c2ec063d720ec4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0d708b6b7065da37c7ea33cddf227d36a151d123e12f66b422dcfea305238e5b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "074cfd06b108c257ef830606fa3dc8a66c8fa081134850e82c2f690ff83febf7"
-    sha256 cellar: :any,                 arm64_linux:   "4a2081aca456f3e5a710bd2a12ccc6adec06435995a341b34ade1c87d786d6b5"
-    sha256 cellar: :any,                 x86_64_linux:  "e25a5e93cfaca959479400f4f5a7019f4df32a4da601ed84a1a163f1b61a3a87"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f6f00a06ea3de3a7ff3d07f5f0726d3a30499c3283fae38e7ed18c5b23013042"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bf673d79cbea786c72e2e4ca52e2906856d6aabe997775de130e5049ef0b707d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ca72b8cac00cf7c5c86e7ff59f43e7ce3e3b4649f21ab571c7e9a468945d76f4"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8fd157f4464039d5200f5020ce581d2b0e373cb529f79e7202d959580b6ef770"
+    sha256 cellar: :any,                 arm64_linux:   "6f3efbe0d6628a8a554e596ac7b3a222df66be8be519b907fd2cf4b1b56a4811"
+    sha256 cellar: :any,                 x86_64_linux:  "56510a98fe42f0e8b52784af455a7256dc04ddd924a60e0b3ed1e4f84108bda8"
   end
 
   depends_on "rust" => :build

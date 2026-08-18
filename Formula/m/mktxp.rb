@@ -3,17 +3,17 @@ class Mktxp < Formula
 
   desc "Prometheus Exporter for Mikrotik RouterOS devices"
   homepage "https://github.com/akpw/mktxp"
-  url "https://files.pythonhosted.org/packages/d2/a7/65696f79c7a7d275c7d08d82155b26460ce34d5a08d3014e9666876f4027/mktxp-1.2.19.tar.gz"
-  sha256 "e840c4e0a7a7894c56a20e4fea73d44020f93344f61339b197f20a669cc89b8e"
+  url "https://files.pythonhosted.org/packages/27/c6/cb2ff652ad6610ff29f61cf9f89fc4cae7f6fc48f54aa18ae25ac2b7334a/mktxp-1.2.20.tar.gz"
+  sha256 "6b8c5d77f7a248f89ff4f0de5175e187e8ec9417387a149f302f4cfc10a43299"
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "e95996c589987de900957f9a3a5a0fa12c011695a904a9d20a1d317d22ed4bed"
-    sha256 cellar: :any, arm64_sequoia: "eabbd504e3153efafd55cdd4024c765cf7167d44137abf89d3f8ecbfb6002905"
-    sha256 cellar: :any, arm64_sonoma:  "644c81e61193ffca06eb7b6ebd550d83f712bbd29dda4c030ef904fc06336ca6"
-    sha256 cellar: :any, sonoma:        "ca04406ec4bef0b79f4a8a9262837b17fb271520b411ff0d034f54959e78a9d9"
-    sha256 cellar: :any, arm64_linux:   "597a9b7d18f7ea6f37bb78aec1dfd10daf3a561309253afb626e5e85568e8eff"
-    sha256 cellar: :any, x86_64_linux:  "429de3d36f7c6247b03b1b493cae5e8ebcb722b2c403b81526993f87bb5f2bd4"
+    sha256 cellar: :any, arm64_tahoe:   "a320f66b10c9284ca40917a5b459611a454256f71c116dd53e32ac2ace844901"
+    sha256 cellar: :any, arm64_sequoia: "db72bcea5adcd630e3a076843c342d5641feba9b5ec3baf14f534125d93ee8b8"
+    sha256 cellar: :any, arm64_sonoma:  "f315cd26cefb04323c7f0ab009b87d39b0f60d9cb57b29b9f2b9e08306af88cf"
+    sha256 cellar: :any, sonoma:        "43afb8fd7d5cec2b82dd73099c52b95e0d1418b5176d109f57891ad4a08ba60c"
+    sha256 cellar: :any, arm64_linux:   "58f8f94874968b24935053d3efc303e35b690656e3fcf10eb6361c49f22db91f"
+    sha256 cellar: :any, x86_64_linux:  "1e31becd2aa9c7ed8dd962885e3a19142dc7b2e4a1d74543f50c670a87f233b0"
   end
 
   depends_on "libyaml"
@@ -30,13 +30,13 @@ class Mktxp < Formula
   end
 
   resource "packaging" do
-    url "https://files.pythonhosted.org/packages/d7/f1/e7a6dd94a8d4a5626c03e4e99c87f241ba9e350cd9e6d75123f992427270/packaging-26.2.tar.gz"
-    sha256 "ff452ff5a3e828ce110190feff1178bb1f2ea2281fa2075aadb987c2fb221661"
+    url "https://files.pythonhosted.org/packages/7d/fa/3944b40b07da9ce895c0e6303a5ab7d53da063554f534556b134a54d6093/packaging-26.3.tar.gz"
+    sha256 "94edc256424af38762eb31306eed28beb9f0efc50a8837492c9d6fd6004aed79"
   end
 
   resource "prometheus-client" do
-    url "https://files.pythonhosted.org/packages/1b/fb/d9aa83ffe43ce1f19e557c0971d04b90561b0cfd50762aafb01968285553/prometheus_client-0.25.0.tar.gz"
-    sha256 "5e373b75c31afb3c86f1a52fa1ad470c9aace18082d39ec0d2f918d11cc9ba28"
+    url "https://files.pythonhosted.org/packages/52/73/f1334c29c2af4cd9dba6c7817e61b611bd0215e2eb5565c6064a4de18802/prometheus_client-0.26.0.tar.gz"
+    sha256 "04a91bcf94e2cf74a44a1a874d651a2e853ed354b6e822f3b7487751465d5c2b"
   end
 
   resource "pyyaml" do

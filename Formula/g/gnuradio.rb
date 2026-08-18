@@ -15,12 +15,13 @@ class Gnuradio < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "1aff863f0f672224103484bf0a729dc632f861e3e11ff7554e1cec04faf04093"
-    sha256 cellar: :any, arm64_sequoia: "73822f1b1a2c39e84eb7b6831e474404a60e04a1466b5695389709bda5343805"
-    sha256 cellar: :any, arm64_sonoma:  "c5ff5d588c47c8dc808278ec87448c527059792e598c53b7f53516bb511aa5a9"
-    sha256 cellar: :any, sonoma:        "138476af82b855a6eb7bc5a902ef405507aa1fd0cdbb7669431e6b3597194d1d"
-    sha256 cellar: :any, arm64_linux:   "a73825fad0f50abd0bfeae28e2059743a3612f9d55b619c68ebccb6f348b51ca"
-    sha256 cellar: :any, x86_64_linux:  "423de43d5eebbacd8d4281470bc7ac442bfef3c24c8c091b1c55331df8d385bf"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "c58f17fb1842b683ca2b1da90e1ce945ffbcc1a12fd3cd5d06f5f23181d00dcf"
+    sha256 cellar: :any, arm64_sequoia: "3276915ae3de66a9e12a3438d9bf3218c656e597fedcfe7b0d17da500649ec7b"
+    sha256 cellar: :any, arm64_sonoma:  "ea636cd143aad90f1ac466764f31e6f6f4c1b51254bca2ba6c192641ac604fe0"
+    sha256 cellar: :any, sonoma:        "b9c9ca90bcc5392396f71e22906f037f843cc932966419d185f7a41d4de7e889"
+    sha256 cellar: :any, arm64_linux:   "8b67a7f5ec5eddc173271d488f83df23dd102c76c6cad2e626c572ace7de706c"
+    sha256 cellar: :any, x86_64_linux:  "a9275f625dc889a850fea0c1a2d74fb4700ece22c1010db2ac8ad2f30b881d92"
   end
 
   # Can undeprecate if new release with Qt 6 support is available.
@@ -28,11 +29,11 @@ class Gnuradio < Formula
   deprecate! date: "2026-05-19", because: "needs end-of-life Qt 5. gr-qtgui support will be removed after 2026-11-19"
 
   depends_on "cmake" => :build
+  depends_on "cppzmq" => :build
   depends_on "pkgconf" => :build
   depends_on "pybind11" => :build
   depends_on "adwaita-icon-theme"
   depends_on "boost"
-  depends_on "cppzmq"
   depends_on "fftw"
   depends_on "fmt"
   depends_on "gmp"
@@ -41,15 +42,14 @@ class Gnuradio < Formula
   depends_on "jack"
   depends_on "libsndfile"
   depends_on "libyaml"
-  depends_on "numpy"
+  depends_on "numpy" => :no_linkage
   depends_on "portaudio"
-  depends_on "pygobject3"
-  depends_on "pyqt@5"
+  depends_on "pygobject3" => :no_linkage
+  depends_on "pyqt@5" => :no_linkage
   depends_on "python@3.14"
   depends_on "qt@5" # Qt6 issue: https://github.com/gnuradio/gnuradio/issues/7708
   depends_on "qwt-qt5"
-  depends_on "rpds-py"
-  depends_on "soapyrtlsdr"
+  depends_on "rpds-py" => :no_linkage
   depends_on "soapysdr"
   depends_on "spdlog"
   depends_on "uhd"
@@ -61,7 +61,7 @@ class Gnuradio < Formula
 
   on_linux do
     depends_on "alsa-lib"
-    depends_on "llvm"
+    depends_on "libunwind"
   end
 
   pypi_packages package_name:     "",

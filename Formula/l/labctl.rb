@@ -1,17 +1,17 @@
 class Labctl < Formula
   desc "CLI tool for interacting with iximiuz labs and playgrounds"
   homepage "https://labs.iximiuz.com/playgrounds"
-  url "https://ghfast.top/https://github.com/iximiuz/labctl/archive/refs/tags/v0.1.102.tar.gz"
-  sha256 "0ad128ed956dcf2fecd36fed907615da18dccf949e014778766b03c37a02fb5d"
+  url "https://ghfast.top/https://github.com/iximiuz/labctl/archive/refs/tags/v0.1.103.tar.gz"
+  sha256 "7e990a2353182738b4ea71c55e81019d76094b540c9bf00b381803067daf3ac2"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "04641d610ea19334315a11efa665b3f2820bcf3293fa2c6479c4a318ef8d9f54"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "04641d610ea19334315a11efa665b3f2820bcf3293fa2c6479c4a318ef8d9f54"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "04641d610ea19334315a11efa665b3f2820bcf3293fa2c6479c4a318ef8d9f54"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7fe2d59b43d33fdafe6c57bb8fcc1af5a5f4690fa541f795684feb87123d4e2f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f1c12dab4a4b88f0648e46598e679cfc8df660556c5ebd2e3d96895a0071eef7"
-    sha256 cellar: :any,                 x86_64_linux:  "62d195f9c9c502c56359ab3dc8a7d4d38d74885dc4ac3ee5db8d5e1e17e66427"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b47bf01cd7061c7c261fcece40eb5759acbfc71727efe65f17f3ed56ccc17357"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b47bf01cd7061c7c261fcece40eb5759acbfc71727efe65f17f3ed56ccc17357"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b47bf01cd7061c7c261fcece40eb5759acbfc71727efe65f17f3ed56ccc17357"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ef2bc504a673ee99fadc3172fcaff9b20f1bc84c05bbb700f9dfb0014253d0e6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "861bbfc84c485f4629d759551efb880b7d06e875c8119da322ab48fb4676588a"
+    sha256 cellar: :any,                 x86_64_linux:  "b7f23860bd00e83a610edadb0ef1bb959c833f3e18767b3bf68cdb7ed0858b62"
   end
 
   depends_on "go" => :build
