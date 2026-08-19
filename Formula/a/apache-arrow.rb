@@ -1,22 +1,34 @@
 class ApacheArrow < Formula
   desc "Columnar in-memory analytics layer designed to accelerate big data"
   homepage "https://arrow.apache.org/"
-  url "https://www.apache.org/dyn/closer.lua?path=arrow/arrow-25.0.1/apache-arrow-25.0.1.tar.gz"
-  mirror "https://archive.apache.org/dist/arrow/arrow-25.0.1/apache-arrow-25.0.1.tar.gz"
-  sha256 "43d5de0a581f43cf63a2c06b4dcf13b9ff6fcd800f023324596e5781093bc500"
   license "Apache-2.0"
-  revision 1
+  revision 2
   compatibility_version 3
   head "https://github.com/apache/arrow.git", branch: "main"
 
+  stable do
+    url "https://www.apache.org/dyn/closer.lua?path=arrow/arrow-25.0.1/apache-arrow-25.0.1.tar.gz"
+    mirror "https://archive.apache.org/dist/arrow/arrow-25.0.1/apache-arrow-25.0.1.tar.gz"
+    sha256 "43d5de0a581f43cf63a2c06b4dcf13b9ff6fcd800f023324596e5781093bc500"
+
+    # Apply commit from Debian maintainer's upstream PR to support CPUs older than SSE4.2.
+    patch do
+      on_intel do
+        url "https://github.com/apache/arrow/commit/d048f71964fe2df5540be2256048eb15f830962b.patch?full_index=1"
+        sha256 "1a6b6924e505f4d1c70a24240e52be90b00aa25b116e7db52fd69f76d2b7e189"
+        type :backport
+        resolves "https://github.com/apache/arrow/pull/50547"
+      end
+    end
+  end
+
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "f8fbc3614e9c91b1a577dd001befb44b467a8696af29a672b8cf588dbf34dcd3"
-    sha256 cellar: :any, arm64_sequoia: "0bd1dc4d82e2b6f9f44ff6bd1cea6a770a0b1bc3e9c2726bd06192feb2b830f9"
-    sha256 cellar: :any, arm64_sonoma:  "d86a22c028d37e67eed212c620c6edbca5feb52adecd13798bfb814308f4e16a"
-    sha256 cellar: :any, sonoma:        "e48bdaf9d83391c35a5afe048042e487fa36bc618e8f6cb3ec94aaae6daf3c99"
-    sha256               arm64_linux:   "eb271e9cefdcf51984fc4c0a9e077163c2cbf3b015d3716862b3740e5cf1277c"
-    sha256               x86_64_linux:  "f34680321b7bb1fa75db9160f581d8777a496446f8891075a56fd9aa28f03115"
+    sha256 cellar: :any, arm64_tahoe:   "c6f5b4c06b66330f1ef7621837135fb7bcf317703c9bbfb8ed5b20cb0ac7aba0"
+    sha256 cellar: :any, arm64_sequoia: "a1e3ce6b80b3c3a22d45f8ca0baca92e2db869a95f89d6a9533f0d7c10b7203a"
+    sha256 cellar: :any, arm64_sonoma:  "025151051c413b846e45c73db7064bb49dba965fd5cc6fb6ef977b57c31bef39"
+    sha256 cellar: :any, sonoma:        "a5c2d773f7a9f288801a86f4348559a71595b78e5db9109fce3fb5cab1d972d1"
+    sha256               arm64_linux:   "d6242b05f0deb63fb87c9e51704465c60dcad426671d365a3f6c3e836f11ca03"
+    sha256               x86_64_linux:  "0c4a3a9ae231cd12ad37e15bc36e212d9602c0bd091ff2b67222aee7ab382d59"
   end
 
   depends_on "boost" => :build
@@ -29,7 +41,7 @@ class ApacheArrow < Formula
   depends_on "aws-sdk-cpp"
   depends_on "brotli"
   depends_on "grpc"
-  depends_on "llvm"
+  depends_on "llvm@22"
   depends_on "lz4"
   depends_on "openssl@3"
   depends_on "protobuf"
@@ -51,22 +63,12 @@ class ApacheArrow < Formula
     cause "fails handling PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED"
   end
 
-  # Apply commit from Debian maintainer's upstream PR to support CPUs older than SSE4.2.
-  patch do
-    on_intel do
-      url "https://github.com/apache/arrow/commit/fe4ed9e5d3aa9ce921ba6ba98b7f1ea678f833a9.patch?full_index=1"
-      sha256 "568ea5843d499f972e8861758747701e29e17babf183461bd0479746d03e4380"
-      type :unofficial
-      resolves "https://github.com/apache/arrow/pull/50547"
-    end
-  end
-
   def install
     ENV.runtime_cpu_detection
 
     args = %W[
       -DCMAKE_INSTALL_RPATH=#{rpath}
-      -DLLVM_ROOT=#{formula_opt_prefix("llvm")}
+      -DLLVM_ROOT=#{formula_opt_prefix("llvm@22")}
       -DARROW_DEPENDENCY_SOURCE=SYSTEM
       -DARROW_ACERO=ON
       -DARROW_COMPUTE=ON

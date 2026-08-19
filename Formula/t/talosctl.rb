@@ -6,6 +6,11 @@ class Talosctl < Formula
   license "MPL-2.0"
   head "https://github.com/siderolabs/talos.git", branch: "main"
 
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4fb1840d6dfe0cea843da83a75767c8fc8ab6df3dd02b3ddc925b82b4a3267e6"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "35e5c56d422f372f97b824b5b3b93672dbd481247c6f8b13189184f1491b0377"

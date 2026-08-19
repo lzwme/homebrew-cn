@@ -1,18 +1,18 @@
 class Xcsift < Formula
   desc "Swift tool to parse xcodebuild output for coding agents"
   homepage "https://ldomaradzki.github.io/xcsift/"
-  url "https://ghfast.top/https://github.com/ldomaradzki/xcsift/archive/refs/tags/v1.3.1.tar.gz"
-  sha256 "47aa9295c04e53033805c74069c73fe2d6e091f4ccbba5889c74bfe10b138294"
+  url "https://ghfast.top/https://github.com/ldomaradzki/xcsift/archive/refs/tags/v1.4.1.tar.gz"
+  sha256 "6c9556bdc74a78d6c2e50d7fd9949eaa2ba82b5f7f41ac178ca53bfc7247a651"
   license "MIT"
   head "https://github.com/ldomaradzki/xcsift.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ec142d86fa655ebc0d4024dfef55d255bfa2901b8708abeaef3f29f34338bc05"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f62b48cfbc2d4d7384c6f24172b03be3b129ee69268864bba5602541c6d6a1af"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "21e4bf2f2278704cdfe56c052c04198d20a72f9b0ec28a5338a4ffc35cc89546"
-    sha256 cellar: :any_skip_relocation, sonoma:        "77339974c2a08a80a272ea9b51d69d5f229a6ecc6b971267e13d42c6f2bbcab9"
-    sha256 cellar: :any,                 arm64_linux:   "2de2b2d90ea995cbbf44ca575197a7908b183f169fe77824e780d49c744af42d"
-    sha256 cellar: :any,                 x86_64_linux:  "5be4785031071d0b9821a9f010f33e6121fb01c25e634f6584a951b06abb8c82"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f945a1d3b2f2e12e03d2c912661ded368efc932b1e05f086d9400a289606084e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1eefee55a3a0af81dcf66a33860281944a983d0ab3c78901b0c7a330703f0781"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9dfc64aff2e326dc6dd322bad2035136f64f8396d435ca5b496bd1d7fc0fcd95"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e2868d92ef2824f53c042e814af3a46a9a3f0582e4881dcc46c3388967f5360c"
+    sha256 cellar: :any,                 arm64_linux:   "1660602cfb35dc1fb574aef68669e847a85dfb98d06864c963de86fb6c70ca5f"
+    sha256 cellar: :any,                 x86_64_linux:  "a8d4c46f0eee175a97df739745d41c364c8ebff7babae3b6d1e2c3af0d1d7cff"
   end
 
   uses_from_macos "swift" => :build, since: :sonoma

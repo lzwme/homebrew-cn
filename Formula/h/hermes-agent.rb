@@ -3,8 +3,8 @@ class HermesAgent < Formula
 
   desc "Self-improving AI agent that creates skills from experience"
   homepage "https://hermes-agent.nousresearch.com"
-  url "https://ghfast.top/https://github.com/NousResearch/hermes-agent/archive/refs/tags/v2026.8.16.2.tar.gz"
-  sha256 "0e8e38da0b2b130cdaed97303f943f8c58c579a842ea44e9a1deae827eb1d7d8"
+  url "https://ghfast.top/https://github.com/NousResearch/hermes-agent/archive/refs/tags/v2026.8.18.tar.gz"
+  sha256 "1e3d39d3638ec15fa9d31af262568a953e9272090deb1c50c44cd401175f5b80"
   license "MIT"
   head "https://github.com/NousResearch/hermes-agent.git", branch: "main"
 
@@ -14,12 +14,12 @@ class HermesAgent < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "4d03504079e8f9071f75b7e8b69d94ac5539d1bdf81ba7a6a85ada0650c702fd"
-    sha256 cellar: :any, arm64_sequoia: "251ae6ffc239129a02d411fcadab63bfc809a9247fe4a01dac0f20fbd3eb569d"
-    sha256 cellar: :any, arm64_sonoma:  "7b24171d6034fa47aeae4d0231159dab79a94870a474b1755b5d413a2dca6330"
-    sha256 cellar: :any, sonoma:        "40d635c5e320bd95b9235ebd32a9039d74b99f16c63645f2711942aaa929fd24"
-    sha256 cellar: :any, arm64_linux:   "a29167f92774f802c2166ebf81d5377324e740a68103992fe3c81d732530cca7"
-    sha256 cellar: :any, x86_64_linux:  "2234f2ca3384bae88f091932e3cbc2f36dec615764da88f093f34598803af34a"
+    sha256 cellar: :any, arm64_tahoe:   "619a440b87085f4d3cfc8f40144f52e3fae0282df94ed9f6b63bff4ed0adc2c4"
+    sha256 cellar: :any, arm64_sequoia: "f22a83f010ccbd99373e1386e7e761511aea354db4097a4c90383af06789d3e5"
+    sha256 cellar: :any, arm64_sonoma:  "de7f30ff27ea4965effd77250c450e49f35a1e64740c2fd9cfd1a04b6ef6ae8d"
+    sha256 cellar: :any, sonoma:        "75e23937222538582699d33a107b6c241a0cd734e576eb5939091b36f487db49"
+    sha256 cellar: :any, arm64_linux:   "2767906b068ccaa5d58b53698901286ce868b1b402abfd04297924891a6bad3c"
+    sha256 cellar: :any, x86_64_linux:  "ff49018cf3127504d67e1254d0ecbb290e82d4a0ff37863784be8b1be631dfea"
   end
 
   depends_on "pkgconf" => :build

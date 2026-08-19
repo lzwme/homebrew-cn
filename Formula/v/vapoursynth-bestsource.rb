@@ -1,10 +1,9 @@
 class VapoursynthBestsource < Formula
   desc "Audio/video source and FFmpeg wrapper"
   homepage "https://github.com/vapoursynth/bestsource"
-  url "https://ghfast.top/https://github.com/vapoursynth/bestsource/archive/refs/tags/R20.tar.gz"
-  sha256 "e44d84ce80be44f5e65a8daf007fa082af00a2aa81a2f19448acfa6abb49048a"
+  url "https://ghfast.top/https://github.com/vapoursynth/bestsource/archive/refs/tags/R21.tar.gz"
+  sha256 "37bfc1a40c04506e7a2906bf09b4ac12ebe161a9d6aa1cf06d866b61230f81c1"
   license "MIT"
-  revision 1
   head "https://github.com/vapoursynth/bestsource.git", branch: "master"
 
   livecheck do
@@ -13,12 +12,12 @@ class VapoursynthBestsource < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "624b66a7b6b96836cf29c55dbb5ed554ddd4bb003dfbb4b7d0819b2cbd528f40"
-    sha256 cellar: :any, arm64_sequoia: "3356ec4b767395809f81331850efed2b24f3c22b9e03cd4c0a8ee066a05bde04"
-    sha256 cellar: :any, arm64_sonoma:  "3a158397750869fe8a5f53ad4a42f6c79a0cde3fe6e5b213d39fdb6d6256d18e"
-    sha256 cellar: :any, sonoma:        "754c4f93d6abda14acabd4b19331ac7c08508e3c4e4f2b4fc3777a7360940738"
-    sha256               arm64_linux:   "43ca97373669e63342b5e7574a16d270310a621a213fba17cab6c5ed89a6b2d4"
-    sha256               x86_64_linux:  "ae5eaa2550915c163fd48ec9e9ee466caee463ea13046bc075cb20b9dcc7e102"
+    sha256 cellar: :any, arm64_tahoe:   "0fae161dc623ebd34acf7b5029c3444dfade4069cb206fb62dd603298ef76cec"
+    sha256 cellar: :any, arm64_sequoia: "632e26f30d52ec3bbbee064973540d8e1beab36624219233819f8422389ca704"
+    sha256 cellar: :any, arm64_sonoma:  "dc9b9bba33649512d87cfea9ad387a724a21a2febb6bd4514428ec1ffd27314b"
+    sha256 cellar: :any, sonoma:        "8c548d9106de9713e05d1ef824e3303269a75443d150b83ef78f80d590c9c229"
+    sha256               arm64_linux:   "bb5d49a9f8d49e3970568104556b68aaf85127926a50de94d3970c47ba5d24c5"
+    sha256               x86_64_linux:  "3d09f51b11b7a0907cd3b43029fb2c27216c20ab04600ba33b0c61c4bb9825b1"
   end
 
   depends_on "avisynthplus" => :build

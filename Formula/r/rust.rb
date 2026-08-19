@@ -4,21 +4,22 @@ class Rust < Formula
   url "https://static.rust-lang.org/dist/rustc-1.97.1-src.tar.gz"
   sha256 "622c2b429c53cbfdc0dd3a51d03554e91cd63ebec1912c1f5709640cdfef1a9d"
   license any_of: ["Apache-2.0", "MIT"]
+  revision 1
   compatibility_version 1
   head "https://github.com/rust-lang/rust.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "87ad7cb4794cd3f71fec2421551a194093495cab24d7bbca6b58388389e5bee2"
-    sha256 cellar: :any, arm64_sequoia: "6400607a427bc326262ec57775d66f56f0b043d373fd6edae65a9d3bbb87e91e"
-    sha256 cellar: :any, arm64_sonoma:  "daa91e45a7bcc6a145dc35fcb6e3afc8496c1dc5ef5134b010a0b29683b35534"
-    sha256 cellar: :any, sonoma:        "9690452bd6994c91256d5a01ef778c0c6b3dffc05628bc75ad2f787d4fe193dc"
-    sha256 cellar: :any, arm64_linux:   "a50c082a879bc1998d2af5f94067a603bbcb58f6246a8b53441adecff4752545"
-    sha256 cellar: :any, x86_64_linux:  "677b22aec0231eb985c0cbf30ad84923761b0e6ee300d47d16d93b866e8adb85"
+    sha256 cellar: :any, arm64_tahoe:   "dc391f2a71b8e48c7d0f8ed3c4f3e14df9bb991c6dddd1414664e84479bce646"
+    sha256 cellar: :any, arm64_sequoia: "25ff6081fac97e06b375c93eb4ff9c6e0141ec79c260980f0bc4cfef91a368b9"
+    sha256 cellar: :any, arm64_sonoma:  "2f34e9569144e19525b94a5a2292d377a5c7d0d207210fb267852768b5866fd8"
+    sha256 cellar: :any, sonoma:        "b4981bdf4f2c4029b4a76558483148598ab5eb4455d55218c2d5312989636d9b"
+    sha256 cellar: :any, arm64_linux:   "2b6fa64888235aca5d12040ba56321ff091328de700519e50ffd92c7e0cbe171"
+    sha256 cellar: :any, x86_64_linux:  "4a46dd3e1d009e18e17ca702ee293abfbdfa2ba82491172b5d7bf4604dc40eef"
   end
 
   depends_on "libgit2"
   depends_on "libssh2"
-  depends_on "llvm"
+  depends_on "llvm@22"
   depends_on "openssl@3"
   depends_on "pkgconf"
   depends_on "sqlite"
@@ -109,7 +110,7 @@ class Rust < Formula
   end
 
   def llvm
-    Formula["llvm"]
+    Formula["llvm@22"]
   end
 
   def install

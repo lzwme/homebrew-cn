@@ -2,8 +2,8 @@ class Openbao < Formula
   desc "Provides a software solution to manage, store, and distribute sensitive data"
   homepage "https://openbao.org/"
   url "https://github.com/openbao/openbao.git",
-      tag:      "v2.6.1",
-      revision: "ba7ad8861d0578cd4da4f7b9e5a6756d30484f8f"
+      tag:      "v2.6.2",
+      revision: "dd9c19c37a878cf4a81b18efb8d6f0599c7da923"
   license "MPL-2.0"
   head "https://github.com/openbao/openbao.git", branch: "main"
 
@@ -13,12 +13,12 @@ class Openbao < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a2af509e6b4a72ac0da92b49f495ce0bd1fcf2c01469f30efcdb8950f2849cfa"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fa1fbfb55dd911a70d4b76b1cbd7fb8ecab7581f296fa0e11fd25992d6b3664d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3be960e326ba9283e61ee6f60c1787548678c8a875b868ff0bba459360dbb8db"
-    sha256 cellar: :any_skip_relocation, sonoma:        "427f48159edd8b97ccc33247db471da2b70840947e666615a7fb956857b6c127"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "39518923d2d0e820af8f5b5aefa5d5031b7eb6d7c6da1f560a0694c4c9612a1e"
-    sha256 cellar: :any,                 x86_64_linux:  "b5e200ad215659d639a39662425a8897100a4c3afbded77c920722a1e6bcc7f7"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d0104caeb286c38a7a9f920f9c93e21ec542274fe35fb1618f921fcd52fde4b6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7c83911684793c99ce8192304aa6f60ea9741a398bf9e9e51d5623b5ce556797"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f7ef2a38eed42d7a5cc6ec6bda937b8e0edc12dbb313a587d7da92f3b0a7018a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d3d56fe3db5327332c44833c7ad657bd26a79f5d1ea96e0bcae283e5261a33aa"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bb438ff14b3e20ce2d3dfc66f810f76af0f437a762e8398749dbb24f0761c552"
+    sha256 cellar: :any,                 x86_64_linux:  "888e53f7fa454054b602a0872cbb8993d5398f71aa9b49b7b5cd8a6c997317ad"
   end
 
   depends_on "go" => :build

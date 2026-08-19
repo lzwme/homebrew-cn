@@ -4,20 +4,21 @@ class ClangUml < Formula
   url "https://ghfast.top/https://github.com/bkryza/clang-uml/archive/refs/tags/0.6.3.tar.gz"
   sha256 "6bd077062761e18881b5d4a300993243c09730f0cda449a9920333db6e1fccdd"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/bkryza/clang-uml.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "a38a3060972f892635f0a519f0d406cdfd52b38b8f80c545de2cb8c6ebf32e64"
-    sha256 cellar: :any, arm64_sequoia: "7d655e8fe427dbd9a148f3cc6474bd52faf31ec178d17210a36a38519c216b84"
-    sha256 cellar: :any, arm64_sonoma:  "84589f3c95cda0f40600ca849a5273943980e1464e4e05c9a281d3db50c12dfb"
-    sha256 cellar: :any, sonoma:        "7a5eebe83e9ad760ec60f00ebb54fb836db3d46badf62f8077f9306fe12c37a5"
-    sha256 cellar: :any, arm64_linux:   "eeb4e3e1566b073f1ccfc5571ab5ec56ab984ec643a4f91106d0ca5173555f77"
-    sha256 cellar: :any, x86_64_linux:  "c0b8afd94dc6897215f58f494ea18986fb989b98d93f4f85046d1bb4af91c506"
+    sha256 cellar: :any, arm64_tahoe:   "b0973e4c60640441b2437dbf1300330c2edbd15dacd28d91f36fe2002de78dba"
+    sha256 cellar: :any, arm64_sequoia: "b0e81d9d8c5bb4b5132d5a2b7a0c2989ab584a7454dc1a740025a51a64ec22b2"
+    sha256 cellar: :any, arm64_sonoma:  "53ffcb31c0cb681a84dffc177b313fdcd2c5edfbe382916d575d9a64aa20221e"
+    sha256 cellar: :any, sonoma:        "058f3a7265843d4cb03ad3a1297498ac84333c5008680f92ec19aefab854cd12"
+    sha256 cellar: :any, arm64_linux:   "9529b1fa7f299dc8c338c521454a85f5ded7ff321edbea04dc2ea6a0602ffc01"
+    sha256 cellar: :any, x86_64_linux:  "fbd208536d3b5d16849d7ce2dcfbbf2e0b54033b3d5e3ba5b5c6b1edb82f1b86"
   end
 
   depends_on "cmake" => [:build, :test]
   depends_on "pkgconf" => :build
-  depends_on "llvm"
+  depends_on "llvm@22"
   depends_on "yaml-cpp"
 
   def llvm

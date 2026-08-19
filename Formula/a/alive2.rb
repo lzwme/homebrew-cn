@@ -2,7 +2,7 @@ class Alive2 < Formula
   desc "Automatic verification of LLVM optimizations"
   homepage "https://github.com/AliveToolkit/alive2"
   license "MIT"
-  revision 5
+  revision 6
   head "https://github.com/AliveToolkit/alive2.git", branch: "master"
 
   stable do
@@ -17,15 +17,23 @@ class Alive2 < Formula
       type :backport
       resolves "https://github.com/AliveToolkit/alive2/pull/1265"
     end
+
+    # Backport commit for LLVM 23
+    patch do
+      url "https://github.com/AliveToolkit/alive2/commit/155386f37536a8f64d78c0ef7d52f7d3f1926cd1.patch?full_index=1"
+      sha256 "01b319ccbfdb2a8c2a98bd2d5fc2e5b9564511f2738afae1b8d125d014af1678"
+      type :backport
+      resolves "https://github.com/AliveToolkit/alive2/pull/1309"
+    end
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "d8b384601767e9c413bced5f996d4263ff931464a2abf3af811ca81ac7c09b87"
-    sha256 cellar: :any, arm64_sequoia: "9ab4bfa2e366f04f47c08cf051063482a3873f5f5269e25141c83f8b61365f9e"
-    sha256 cellar: :any, arm64_sonoma:  "a21eb80647241c7eae74b3f4fa38ac8948ed3fe2ee009dd2d9052adf6bf8f37e"
-    sha256 cellar: :any, sonoma:        "b34ccff603f47bacca8ab16dc91075250e1915a37cdf6d3455383622977d71bc"
-    sha256 cellar: :any, arm64_linux:   "292adfebad8a79d09f5901e5251b2ec69ca3106a69c65d3fc33c652fc07e0ce1"
-    sha256 cellar: :any, x86_64_linux:  "a6dedf169a09424f88927cf95fd7ecf71f6b29d15d3c0a6a6ffc9d5d55b53816"
+    sha256 cellar: :any, arm64_tahoe:   "b9e8841f08496058eff115a0ebf798cdc8c77c37702cea28f6106a9e3ab6d638"
+    sha256 cellar: :any, arm64_sequoia: "619e135e6047099e77321e96e6f5d0a6d6edc7bbb84080425574d883124256d0"
+    sha256 cellar: :any, arm64_sonoma:  "a98cbbdeac8cb881206cd2716beccf6f9da5ef7158316db647ce57718750effa"
+    sha256 cellar: :any, sonoma:        "5efb790e848c145a255d1af531d11b06ca55d67aee8487a131eeaa69388baba4"
+    sha256 cellar: :any, arm64_linux:   "499ba5b84275e135acaa4fef1789b88d079da085791c3f25bec4f4eb8046dda9"
+    sha256 cellar: :any, x86_64_linux:  "7bff7aba2f8248a9ae4bbd2a8ca1d74b96095eac10ef4d972904b0c56c84a508"
   end
 
   depends_on "cmake" => :build

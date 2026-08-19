@@ -3,20 +3,20 @@ class Pyinstaller < Formula
 
   desc "Bundle a Python application and all its dependencies"
   homepage "https://pyinstaller.org/"
-  url "https://files.pythonhosted.org/packages/c3/28/11937d2d139139d5645cbaf905f7dcaa9c4929bd7b740ad9157af730fd39/pyinstaller-6.22.1.tar.gz"
-  sha256 "4e7ed495fccb9974d47cf72ef8cffc92afa05d60bc265c5585a68f3d229ca8d1"
+  url "https://files.pythonhosted.org/packages/cc/2b/836d9def811c02522e0921d8b8cdf0c16b0545a216e97e71041758057859/pyinstaller-6.22.2.tar.gz"
+  sha256 "89b65a3ad07d9dd5832253e37bc45f31872d10d7f9d5c9fd0fdd6088a83829dd"
   license "GPL-2.0-or-later"
   head "https://github.com/pyinstaller/pyinstaller.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a3843b85d2f0be024827199bc193146ad5f7aa23a400648a4d901c0d542eb0ce"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "622c778b2cd8407db8d8f828be607095fc781a5cc076d474c8bd738e43363817"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f7f3cdd7c21c376b6aa2e272d5c8bd6ffc18346db4ebe79269f37e7b6d117545"
-    sha256 cellar: :any_skip_relocation, tahoe:         "608e7c592d3dcf7e7e310aa900dfe0c731b0de962ea3e9079c0c703e663864d9"
-    sha256 cellar: :any_skip_relocation, sequoia:       "b3fa19c292fa28941c457ce7e62697ec672aaa581a0b65e1e83de55bb9ad0623"
-    sha256 cellar: :any_skip_relocation, sonoma:        "61b6544e5fb8384dae2df5c982e121f63a33fea9654da56d0d21e796d6c8cf7c"
-    sha256 cellar: :any,                 arm64_linux:   "619b5570ff3ef2f3f20f1ccbe40d9af6ef9db4e4cbee38ba764f27ed1214e4c0"
-    sha256 cellar: :any,                 x86_64_linux:  "e0e6cb49c01a9e92fd9d285941440c0a8a2bf489611a7cded0cc00fd6252e5a1"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "305ab3f270881769096ec82fa71d1d80bc80ef8c7894f1e958852f7c4bbe1238"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5b86a3cf26e8a1c9cd37aa206a96d9a419021ef76de3fa3ee8045d7fd5050286"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "54f3b1afacf067554db230ce01ede693275db1365f3c86f8b13df5452386ae82"
+    sha256 cellar: :any_skip_relocation, tahoe:         "8a418fb9d32e8e5a04409087c928c434f802b69cc4a5d2e2aa6a65de8840ac4b"
+    sha256 cellar: :any_skip_relocation, sequoia:       "f006f5b002bd964e595927074134db9ab5a69336884187f3b78c4831367b5384"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7e26b9fdfbd92b66d88eaf1d35e6fec6606c1a364838699a734f6975c2e9b044"
+    sha256 cellar: :any,                 arm64_linux:   "84231b49c33542e16f0fc650e7e56e0101f92b65d97e2e7527bb944e4815b64b"
+    sha256 cellar: :any,                 x86_64_linux:  "b72336867aa0cda5311b29bba3b1263283d58e27f72402690431bb1893da451b"
   end
 
   depends_on "python@3.14"

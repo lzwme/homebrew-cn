@@ -7673,6 +7673,7 @@ Homebrew-homebrew-core/Formula/t/tproxy.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tracebox.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/tracetest.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tractorgen.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/t/tracy-genomics.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tracy.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tradcpp.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/trader.rb, Homebrew/homebrew-core, 0
@@ -8947,6 +8948,7 @@ Homebrew-homebrew-cask/Casks/b/batteryboi.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/b/battle-net.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/battlescribe.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/bazecor.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/b/bb.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/b/bbackupp.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/b/bbedit.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/bbedit@14.rb, Homebrew/homebrew-cask, 0
@@ -9760,6 +9762,7 @@ Homebrew-homebrew-cask/Casks/e/ears.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/e/easy-move+resize.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/e/easydevo.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/e/easydict.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/e/easydmg.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/e/easyeda.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/e/easyfind.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/e/ebmac.rb, Homebrew/homebrew-cask, 0
@@ -11897,7 +11900,6 @@ Homebrew-homebrew-cask/Casks/font/font-n/font-nuosu-sil.rb, Homebrew/homebrew-ca
 Homebrew-homebrew-cask/Casks/font/font-o/font-ocr.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-o/font-odibee-sans.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-o/font-odor-mean-chey.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/font/font-o/font-office-code-pro.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-o/font-offside.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-o/font-ofl-sorts-mill-goudy-tt.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-o/font-oi.rb, Homebrew/homebrew-cask, 0
@@ -12721,6 +12723,7 @@ Homebrew-homebrew-cask/Casks/g/gama-jdk.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/g/gama-platform.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/g/gamehub.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/gamemaker.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/g/gamemaker@lts.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/gamma-control.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/gams.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/ganttproject.rb, Homebrew/homebrew-cask, 1
@@ -15380,7 +15383,6 @@ Homebrew-homebrew-cask/Casks/s/surge-xt.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/surge.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/surge@4.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/suspicious-package.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/s/suspicious-package@preview.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/suuntodm5.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/svp.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/swama.rb, Homebrew/homebrew-cask, 1

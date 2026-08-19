@@ -4,6 +4,7 @@ class NodeAT22 < Formula
   url "https://registry.npmmirror.com/-/binary/node/v22.23.2/node-v22.23.2.tar.xz"
   sha256 "bbe768df8d5815d7fa76124052985332452e0a4742d39f32027550d1aab8f6fb"
   license "MIT"
+  revision 1
   compatibility_version 1
 
   livecheck do
@@ -12,12 +13,12 @@ class NodeAT22 < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "cc27e4db995bcb169c9eb2c930da7475f0b826d403ffb19842c42c522730f88c"
-    sha256 cellar: :any, arm64_sequoia: "86d4f0637b727da4d092c91aab09becf9d7c5f07c30ceacd8e1f0297f8699360"
-    sha256 cellar: :any, arm64_sonoma:  "f968621f7a9e80ccc20bee74f3f6b3a27c88920c88ae61df6fe6e4052f9a6f49"
-    sha256 cellar: :any, sonoma:        "324166ede3cf9a3cfb359641e10582e46810a522aa6e63ccffa9af030f2863d7"
-    sha256 cellar: :any, arm64_linux:   "ec557768a2080c2ff294664dc254c28e308d7940eb4c35c455a0164a0a9c1b57"
-    sha256 cellar: :any, x86_64_linux:  "c9de37ac13b1096130dbe150f02257ca4c78a96b49665edd9447d79cdd2c2755"
+    sha256 cellar: :any, arm64_tahoe:   "ca2b1dca80c2927498b70b624d4bfbc681505d01fc12676c878f6175d39e299d"
+    sha256 cellar: :any, arm64_sequoia: "cabc159506a07f890f26be2f5fec5d90227a82f820662447050de2b769697c8e"
+    sha256 cellar: :any, arm64_sonoma:  "be9465bf1d840b4de70c5f9470d741f3915a8a11c1b5a7536cbfd34cf3cbb039"
+    sha256 cellar: :any, sonoma:        "503e4b9c2e5f4bb43de88fe8c8157d56fd819f3698fa0e91c948b18a5b192f0a"
+    sha256 cellar: :any, arm64_linux:   "8df1014332b7c56ffc293f29b42af0d2ac0f75cf640f8f70ae65ff0dbbe48635"
+    sha256 cellar: :any, x86_64_linux:  "ac9b2c1dd9b79f0e7c380807017108b1bdd492cf5ab23796b7a2d5de16c22e38"
   end
 
   keg_only :versioned_formula

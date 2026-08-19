@@ -1,7 +1,7 @@
 class WasiRuntimes < Formula
   desc "Compiler-RT and libc++ runtimes for WASI"
   homepage "https://wasi.dev"
-  # TODO: Check if any build changes are needed after https://github.com/WebAssembly/wasi-sdk/pull/585
+  # TODO: update targets and other steps when wasi-sdk-34 / wasi-libc 34 is stable
   url "https://ghfast.top/https://github.com/llvm/llvm-project/releases/download/llvmorg-22.1.8/llvm-project-22.1.8.src.tar.xz"
   sha256 "922f1817a0df7b1489272d18134ee0087a8b068828f87ac63b9861b1a9965888"
   license "Apache-2.0" => { with: "LLVM-exception" }
@@ -28,8 +28,10 @@ class WasiRuntimes < Formula
   depends_on "wasmtime" => :test
   depends_on "llvm"
 
+  uses_from_macos "python" => :build
+
   def wasi_sdk_targets
-    # See targets at: https://github.com/WebAssembly/wasi-sdk/blob/wasi-sdk-30/CMakeLists.txt#L14-L15
+    # See targets at: https://github.com/WebAssembly/wasi-sdk/blob/wasi-sdk-33/CMakeLists.txt#L14
     %w[
       wasm32-wasi
       wasm32-wasip1
@@ -49,7 +51,7 @@ class WasiRuntimes < Formula
     wasi_sdk_cpu_cflags = "-mcpu=lime1"
 
     # Compiler flags taken from following tag, excluding unused CMAKE_MODULE_PATH
-    # https://github.com/WebAssembly/wasi-sdk/blob/wasi-sdk-30/cmake/wasi-sdk-sysroot.cmake#L40-L57
+    # https://github.com/WebAssembly/wasi-sdk/blob/wasi-sdk-33/cmake/wasi-sdk-sysroot.cmake#L56-L73
     default_cmake_args = %W[
       -DCMAKE_SYSTEM_NAME=WASI
       -DCMAKE_SYSTEM_VERSION=1
@@ -71,8 +73,8 @@ class WasiRuntimes < Formula
       -DCMAKE_VERBOSE_MAKEFILE=ON
       -DCMAKE_PROJECT_TOP_LEVEL_INCLUDES=#{HOMEBREW_LIBRARY_PATH}/cmake/trap_fetchcontent_provider.cmake
     ]
-    # Compiler flags taken from following commit (HEAD at time of update):
-    # https://github.com/WebAssembly/wasi-sdk/blob/a64d51d14378e306add001fad180d5733df1491c/cmake/wasi-sdk-sysroot.cmake#L75-L95
+    # Configuration taken from:
+    # https://github.com/WebAssembly/wasi-sdk/blob/wasi-sdk-33/cmake/wasi-sdk-sysroot.cmake#L90-L110
     compiler_rt_args = %W[
       -DLLVM_ENABLE_PER_TARGET_RUNTIME_DIR=ON
       -DCOMPILER_RT_BAREMETAL_BUILD=ON
@@ -131,7 +133,7 @@ class WasiRuntimes < Formula
 
     wasi_sdk_targets.each do |target|
       # Configuration taken from:
-      # https://github.com/WebAssembly/wasi-sdk/blob/wasi-sdk-30/cmake/wasi-sdk-sysroot.cmake#L209-L215
+      # https://github.com/WebAssembly/wasi-sdk/blob/wasi-sdk-33/cmake/wasi-sdk-sysroot.cmake#L244-L250
       pic = target.end_with?("-threads") ? "OFF" : "ON"
       target_flags = target.end_with?("-threads") ? ["-pthread"] : []
 
@@ -147,26 +149,23 @@ class WasiRuntimes < Formula
       #   `-DLIBCXX_ENABLE_SHARED=#{pic}`
       #   `-DLIBCXXABI_ENABLE_SHARED=#{pic}`
       # but the build fails with linking errors.
-      # See: https://github.com/WebAssembly/wasi-sdk/blob/a64d51d14378e306add001fad180d5733df1491c/cmake/wasi-sdk-sysroot.cmake#L255-L305
-      # NOTE: disabled LIBCXX_HAS_MUSL_LIBC for LLVM 22 based on https://github.com/WebAssembly/wasi-sdk/pull/585
+      #
+      # Configuration taken from:
+      # https://github.com/WebAssembly/wasi-sdk/blob/wasi-sdk-33/cmake/wasi-sdk-sysroot.cmake#L302-L346
       target_cmake_args = %W[
         -DCMAKE_INSTALL_INCLUDEDIR=#{share}/wasi-sysroot/include/#{target}
         -DCMAKE_STAGING_PREFIX=#{share}/wasi-sysroot
         -DCMAKE_POSITION_INDEPENDENT_CODE=#{pic}
-        -DCXX_SUPPORTS_CXX11=ON
         -DLIBCXX_ENABLE_THREADS:BOOL=ON
         -DLIBCXX_HAS_PTHREAD_API:BOOL=ON
         -DLIBCXX_HAS_EXTERNAL_THREAD_API:BOOL=OFF
-        -DLIBCXX_BUILD_EXTERNAL_THREAD_LIBRARY:BOOL=OFF
         -DLIBCXX_HAS_WIN32_THREAD_API:BOOL=OFF
         -DLLVM_COMPILER_CHECKED=ON
         -DLIBCXX_ENABLE_SHARED:BOOL=OFF
-        -DLIBCXX_ENABLE_EXPERIMENTAL_LIBRARY:BOOL=OFF
         -DLIBCXX_ENABLE_EXCEPTIONS:BOOL=OFF
         -DLIBCXX_ENABLE_FILESYSTEM:BOOL=ON
         -DLIBCXX_ENABLE_ABI_LINKER_SCRIPT:BOOL=OFF
         -DLIBCXX_CXX_ABI=libcxxabi
-        -DLIBCXX_CXX_ABI_INCLUDE_PATHS=#{buildpath}/libcxxabi/include
         -DLIBCXX_HAS_MUSL_LIBC:BOOL=OFF
         -DLIBCXX_ABI_VERSION=2
         -DLIBCXXABI_ENABLE_EXCEPTIONS:BOOL=OFF
@@ -175,9 +174,7 @@ class WasiRuntimes < Formula
         -DLIBCXXABI_ENABLE_THREADS:BOOL=ON
         -DLIBCXXABI_HAS_PTHREAD_API:BOOL=ON
         -DLIBCXXABI_HAS_EXTERNAL_THREAD_API:BOOL=OFF
-        -DLIBCXXABI_BUILD_EXTERNAL_THREAD_LIBRARY:BOOL=OFF
         -DLIBCXXABI_HAS_WIN32_THREAD_API:BOOL=OFF
-        -DLIBCXXABI_ENABLE_PIC:BOOL=#{pic}
         -DLIBCXXABI_USE_LLVM_UNWINDER:BOOL=OFF
         -DUNIX:BOOL=ON
         -DCMAKE_C_FLAGS=#{extra_cflags}

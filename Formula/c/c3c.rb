@@ -4,6 +4,7 @@ class C3c < Formula
   url "https://ghfast.top/https://github.com/c3lang/c3c/archive/refs/tags/v0.8.3.tar.gz"
   sha256 "95e6b7fdf74eb150bbfc8b2128e8d9818a116e7bdd2a8c5f092d58168b17b13b"
   license "LGPL-3.0-only"
+  revision 1
   head "https://github.com/c3lang/c3c.git", branch: "master"
 
   # Upstream creates releases that use a stable tag (e.g., `v1.2.3`) but are
@@ -15,23 +16,23 @@ class C3c < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "2b920747cf299b3243c8d177e02de177c7841983e9994c84371e38f0f822a4d3"
-    sha256 cellar: :any, arm64_sequoia: "6dd2e7a037879cfbc4ecc617452c210bc18ad584bf98446d7f033ee821556d21"
-    sha256 cellar: :any, arm64_sonoma:  "692bdb6181fd73f980b68ec7a03757c4ccd0ca9dd48a06ceeb10f5ece630eefd"
-    sha256 cellar: :any, sonoma:        "5eb2b0f9040ea43d89fbb05ce6a23938ecfa6ac9b322923a58b57d688028c021"
-    sha256 cellar: :any, arm64_linux:   "f014fc78118de82967280f162015afd0666cee73c30967140dfe65a5dc0c5554"
-    sha256 cellar: :any, x86_64_linux:  "acc722facd36e774c11dee155d050c098e9d0fadf63ff75efc01666277667309"
+    sha256 cellar: :any, arm64_tahoe:   "474a0d657aba7c5c88654c6807a3be95524076a84e0ebf2be452a0ebcf49da68"
+    sha256 cellar: :any, arm64_sequoia: "731a13f2c7bafef8d70395def9862381d18dd05ebb39f15b001d2dd0df9e13d7"
+    sha256 cellar: :any, arm64_sonoma:  "d16ff42855af1bcb5ef5a7e26a09f1f51d5f375de75c7cbe890403380a9f45ad"
+    sha256 cellar: :any, sonoma:        "84180833c7589f48763356bffee04ac740f5d89cf78aea0ed715b029fac40bcb"
+    sha256 cellar: :any, arm64_linux:   "9b6b1ccb4d8c6ea3c7737fc9cf4e9120252a44ec6ba6494b8781c1b7cf996b7f"
+    sha256 cellar: :any, x86_64_linux:  "ff754382d7660d33b25ba40c95667aa7cb187c8a78e54fae81411fe6590201cf"
   end
 
   depends_on "cmake" => :build
-  depends_on "lld"
-  depends_on "llvm"
+  depends_on "lld@22"
+  depends_on "llvm@22"
 
   uses_from_macos "curl"
 
   def install
-    lld = Formula["lld"]
-    llvm = Formula["llvm"]
+    lld = Formula["lld@22"]
+    llvm = Formula["llvm@22"]
 
     args = [
       "-DC3_LINK_DYNAMIC=ON",

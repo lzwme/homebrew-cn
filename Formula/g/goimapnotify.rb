@@ -1,18 +1,18 @@
 class Goimapnotify < Formula
   desc "Execute scripts on IMAP mailbox changes using IDLE"
   homepage "https://gitlab.com/shackra/goimapnotify"
-  url "https://gitlab.com/shackra/goimapnotify/-/archive/2.5.7/goimapnotify-2.5.7.tar.bz2"
-  sha256 "26475e54d7834ca6778737494d69477e7a13a0296195af7fb4f69472b8839bb6"
+  url "https://gitlab.com/shackra/goimapnotify/-/archive/2.5.8/goimapnotify-2.5.8.tar.bz2"
+  sha256 "0d5764737ca6b76a3b4c0ddb25671de059abfe8b8e51686ffc3cf526bc605618"
   license "GPL-3.0-or-later"
   head "https://gitlab.com/shackra/goimapnotify.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "679141c81158f5612ec571d8ffcc69b2482afedadd5ba7ff4b74ec17070dd5d2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "679141c81158f5612ec571d8ffcc69b2482afedadd5ba7ff4b74ec17070dd5d2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "679141c81158f5612ec571d8ffcc69b2482afedadd5ba7ff4b74ec17070dd5d2"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4ff3a898b6fd76c5fffc9b9c368936d8e15968fb34100e86c4ac602165b12262"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2f1e8aba002953b3cf81b2ac5c816efe3ebf8e2f331929e6602b12164f814cdb"
-    sha256 cellar: :any,                 x86_64_linux:  "b73e1ade1cbce3ab294da429870fe48b14cfacce489492752eaf3b53a8366234"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ca0760f3957439af109e497f88e06a5f517867cbef43cefa59e2edcd75cec53b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ca0760f3957439af109e497f88e06a5f517867cbef43cefa59e2edcd75cec53b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ca0760f3957439af109e497f88e06a5f517867cbef43cefa59e2edcd75cec53b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "70a6bf4686f3597892f5860bdeb7c29ac27b3763ee63a89dcd162612c949a6d8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7c00d6e51d166f09fbda993e46c0746c7018c6140adb0b734e50636b0a831469"
+    sha256 cellar: :any,                 x86_64_linux:  "00cc8ca8e7dd00fb2d59781ce7888d4cada021e1258db597f34ba6eeabca9907"
   end
 
   depends_on "go" => :build

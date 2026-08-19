@@ -4,6 +4,7 @@ class Faust < Formula
   url "https://ghfast.top/https://github.com/grame-cncm/faust/releases/download/2.85.9/faust-2.85.9.tar.gz"
   sha256 "0cd00968f81357b78df64c25aad12ec94bd4b75bd489ca0449fe7f7b1ad0efe1"
   license "GPL-2.0-or-later"
+  revision 1
 
   # Upstream creates releases that use a stable tag (e.g., `v1.2.3`) but are
   # labeled as "pre-release" on GitHub before the version is released, so it's
@@ -14,19 +15,19 @@ class Faust < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "f2584ee1bd5ffb05502293a98da9e1d35df5673cba433aea6d625bcb8497e6b8"
-    sha256 cellar: :any, arm64_sequoia: "eaa2092cbe61169c948fc01812f1dda2a66ba864c613828da7da5eeecc5f0e30"
-    sha256 cellar: :any, arm64_sonoma:  "4fd967f93f2174bf24fc769ab457fc803036e72904b92b6c2e689ff36d4886f1"
-    sha256               sonoma:        "e157f608ca0da112aee9ef1742b237fb1f49f8fe9ee69b0aff2886896607fc4c"
-    sha256 cellar: :any, arm64_linux:   "5811eb6959f3f54dff425d20fa5941b669acdeeb8dd32967dc557d9bf1d53346"
-    sha256 cellar: :any, x86_64_linux:  "cc4b02dbda3cd7b72ae1db97187c0f37bdaf6d91e77ab30e66ce6c423f4589cc"
+    sha256 cellar: :any, arm64_tahoe:   "583df2489e564948010f63e7db96c3946620b6574d9ea6f55c180cd1de0e3609"
+    sha256 cellar: :any, arm64_sequoia: "a91455ad39ceab4f8c3f9bb0f82850544b68bef53dbc8b8023f96a3424a5c25d"
+    sha256 cellar: :any, arm64_sonoma:  "31c47744240b27588a6f08f34910d8a50d1a2d06e6284905d88c311f3a09bbf5"
+    sha256               sonoma:        "45ef79ea86ca9938652bcf5f7f743c64765d1f3c8d6481538b94feb1bbd542c5"
+    sha256 cellar: :any, arm64_linux:   "88b69a7855ffced9d18c3e2b8724d55e0fa17c9a3c9a28f6ffa05b6d4fbb2180"
+    sha256 cellar: :any, x86_64_linux:  "50b0845bc291fd3fca26b1c00d5e0096cb194a8a13619081c5753a0e84a6809d"
   end
 
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
   depends_on "libmicrohttpd"
   depends_on "libsndfile"
-  depends_on "llvm"
+  depends_on "llvm@22"
 
   def install
     # `brew linkage` doesn't like the pre-built Android libsndfile.so for faust2android.

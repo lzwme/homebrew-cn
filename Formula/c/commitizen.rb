@@ -3,18 +3,18 @@ class Commitizen < Formula
 
   desc "Defines a standard way of committing rules and communicating it"
   homepage "https://commitizen-tools.github.io/commitizen/"
-  url "https://files.pythonhosted.org/packages/87/af/510e0659cf66dadddd769c1c955dc0b28a4685dd69bfd34e6e6ee35c7c41/commitizen-4.17.0.tar.gz"
-  sha256 "e5bcabed3474029cc8f5a5c62216130bc2999f7bc29a3b9884bcd426d7f35c5a"
+  url "https://files.pythonhosted.org/packages/d5/cb/5bab072c2bdaaf161263af96ff6b1551160cb65fde46ac60253aa80f73c3/commitizen-4.17.1.tar.gz"
+  sha256 "4a7c3bfc10e90e48cb58ac5614aed33cda0ca9d3d8eabda462110a521437b745"
   license "MIT"
   head "https://github.com/commitizen-tools/commitizen.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "c776205df4dacac932d20f6362c14f067a063ba70a2d8068679a6da7aa9f1f0e"
-    sha256 cellar: :any, arm64_sequoia: "2cd48994ec7b82bc27cb14a4419c26ece43bbd6a2cbb88c6d3f25599c71099df"
-    sha256 cellar: :any, arm64_sonoma:  "10cc8f4347d012de112686ed61ecf08b95e8a986b68036bc0784ec6e6a8ab2fb"
-    sha256 cellar: :any, sonoma:        "6ab0829d5fa75c2ba8a494e0d413dff7ec5027c0d3f0128e29cd641e051403ae"
-    sha256 cellar: :any, arm64_linux:   "d17aaf37fcc4c07a5c386a1bae18af1ceeba9218a55e59588e2cd8ad4aaf2758"
-    sha256 cellar: :any, x86_64_linux:  "f187b4e952dfbcfe254d442f7b948f4f04b1dd1d23a7bacfde90ec2e6108e8f3"
+    sha256 cellar: :any, arm64_tahoe:   "1c415c1aaa6900b592467040a1d2efa463348de27eb0eb0861fef16048383931"
+    sha256 cellar: :any, arm64_sequoia: "d4eb4ab9e66733b9390fdad416301ed27506b109dd5539f8770cfcf440e43a93"
+    sha256 cellar: :any, arm64_sonoma:  "907f35d0962664cd0f625ebacf452f32ee718f668a9782d40e26c261e0d3381e"
+    sha256 cellar: :any, sonoma:        "fb6f8863b4c6208d2a5825fb2fa60dda32fdb08b64baec93cae8ff33811e0d78"
+    sha256 cellar: :any, arm64_linux:   "682223db775fea9722ce443304503162f215faf3f58f6e0ad2763f603d657fa3"
+    sha256 cellar: :any, x86_64_linux:  "2ba66967201ec4f074777a2faad57cd9be6deabb2f1c1e7b5afb8720c7798695"
   end
 
   depends_on "maturin" => :build
@@ -23,13 +23,13 @@ class Commitizen < Formula
   depends_on "python@3.14"
 
   resource "argcomplete" do
-    url "https://files.pythonhosted.org/packages/95/c0/c8e94135e66fabf89a120d9b4b123fe6993506beca6c1938a74c24cfa5fd/argcomplete-3.7.0.tar.gz"
-    sha256 "afde224f753f874807b1dc1414e883ab8fe0cda9c04807b6047dcb8e1ac23913"
+    url "https://files.pythonhosted.org/packages/87/6f/5a73f04007ca950701765949209f068da628bd11f9c2da287278ce91e0ee/argcomplete-3.7.2.tar.gz"
+    sha256 "aad8b69a0b9969edb62db0d1752354c0d50717b10e0cbb00e2a958381b9fc6b9"
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/bd/2a/23f34ec9d04624958e137efdc394888716353190e75f25dd22c7a2c7a8aa/charset_normalizer-3.4.9.tar.gz"
-    sha256 "673611bbd43f0810bec0b0f028ddeaaa501190339cac411f347ac76917c3ae7b"
+    url "https://files.pythonhosted.org/packages/e5/3f/143b048436775b0f76ac3eec145c019e8173ccc2885c8f20319b996d5e83/charset_normalizer-3.5.1.tar.gz"
+    sha256 "6117b84ea48435e5356dc737f5121485c30920ba43375fa7b434fd753df0eac3"
   end
 
   resource "colorama" do
@@ -58,8 +58,8 @@ class Commitizen < Formula
   end
 
   resource "packaging" do
-    url "https://files.pythonhosted.org/packages/d7/f1/e7a6dd94a8d4a5626c03e4e99c87f241ba9e350cd9e6d75123f992427270/packaging-26.2.tar.gz"
-    sha256 "ff452ff5a3e828ce110190feff1178bb1f2ea2281fa2075aadb987c2fb221661"
+    url "https://files.pythonhosted.org/packages/7d/fa/3944b40b07da9ce895c0e6303a5ab7d53da063554f534556b134a54d6093/packaging-26.3.tar.gz"
+    sha256 "94edc256424af38762eb31306eed28beb9f0efc50a8837492c9d6fd6004aed79"
   end
 
   resource "prompt-toolkit" do

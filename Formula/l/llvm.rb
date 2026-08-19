@@ -3,7 +3,7 @@ class Llvm < Formula
   homepage "https://llvm.org/"
   # The LLVM Project is under the Apache License v2.0 with LLVM Exceptions
   license "Apache-2.0" => { with: "LLVM-exception" }
-  revision 1
+  revision 2
   compatibility_version 1
   head "https://github.com/llvm/llvm-project.git", branch: "main"
 
@@ -26,12 +26,12 @@ class Llvm < Formula
   end
 
   bottle do
-    sha256               arm64_tahoe:   "67d391532c4ec25f77d2974789e036c87547546bbb7ab18f59a8222dd5e4a1f9"
-    sha256               arm64_sequoia: "6392268ba95ba5e795247facc07080db3cbc214826d1d6807cc9f47c5e246528"
-    sha256               arm64_sonoma:  "59d4be56d763ad9f73a772598246e655ad6253e715aab5f79ae82048a7155a9c"
-    sha256 cellar: :any, sonoma:        "ddd92fe84caed90f6a121137efba9225576f0f3e88af0adc22296f3906eda96c"
-    sha256 cellar: :any, arm64_linux:   "03a57a49f3a88fa74ab98024bc7761458df2c876c1f9ebb9e3aa96b71fec269e"
-    sha256 cellar: :any, x86_64_linux:  "600e848234b1e71847e40bf15832b8bfbe707014069ab2135032617ae1a696ad"
+    sha256               arm64_tahoe:   "2658532afda21bbcda52807c463b1efddf2bc1e7d59f7415fd7bd295c72f5d3e"
+    sha256               arm64_sequoia: "9879522c00f5f7eda58b81ea0bc626b4e025a2f5b8ae155ec2699a1312e908aa"
+    sha256               arm64_sonoma:  "6cb18d6c4307825ca4e1db3b420e1e6061d9225ec60baf50d194a5d76c031ff4"
+    sha256 cellar: :any, sonoma:        "9201a38c2614edf8243dc5e3b1734f3c48a359059a5f5dadf1e56472dcf384ea"
+    sha256 cellar: :any, arm64_linux:   "e35875ebf6f9d968b163be1cccd8dc1f2f94ad8efc7f6fb4971f905a9be253cd"
+    sha256 cellar: :any, x86_64_linux:  "acecee779a55db8a3931ff0481c676299dbc887047e177690e60b7e7cec5aed4"
   end
 
   keg_only :provided_by_macos
@@ -88,6 +88,7 @@ class Llvm < Formula
     ]
 
     unless versioned_formula?
+      odie "Remove Z3 solver!" if build.stable? && version >= "24"
       enable_z3 = deps.map(&:name).include?("z3")
       projects << "lldb"
 
@@ -501,6 +502,9 @@ class Llvm < Formula
 
       LLD is now provided in a separate formula:
         brew install lld
+
+      Z3 solver support will be removed in LLVM 24 as it is unsupported upstream,
+      see https://github.com/llvm/llvm-project/pull/205370
     EOS
 
     on_macos do

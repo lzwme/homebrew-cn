@@ -3,19 +3,18 @@ class Parsedmarc < Formula
 
   desc "DMARC report analyzer and visualizer"
   homepage "https://domainaware.github.io/parsedmarc/"
-  url "https://files.pythonhosted.org/packages/c2/36/d61b20760f702b777df885e821fbaf63aa39cefcea66d56a850352979d58/parsedmarc-10.4.1.tar.gz"
-  sha256 "08d3d50a3dabec2b5a9d26b76ad179b839d9c7a7914302086c6985cc623a5b77"
+  url "https://files.pythonhosted.org/packages/b4/05/2e9a446383a56b3785a68394411bd0970bf09df949816ba3edd74c097d6b/parsedmarc-10.4.2.tar.gz"
+  sha256 "a6c7a33a80eb6e9145437f9decbbfaf0a2c9b13a84e81c5b6e497534830f6944"
   license "Apache-2.0"
-  revision 1
   head "https://github.com/domainaware/parsedmarc.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "2df8353625732404b3532073bafccda9982f09c11c1ab2b94b2c1ed2dec2f815"
-    sha256 cellar: :any, arm64_sequoia: "cd50fe5fb09ea7690f1de5023cca69be8706b61a5f13fbccdc42f4ea273c7b7f"
-    sha256 cellar: :any, arm64_sonoma:  "bd02d3a2b7ab0b8d7812fcf7c192548e527df78dec10b6c7de2ea2e47158d4a0"
-    sha256 cellar: :any, sonoma:        "bd0dcb32dc470505cdee9c6c98f5695bca657da55e5c48d5f00d81ba616278f2"
-    sha256 cellar: :any, arm64_linux:   "d47804be8f06e303436fc00425f54a2c45f496d6f7f8d6c66895262d2ac9cfec"
-    sha256 cellar: :any, x86_64_linux:  "6978a345f833991e7de2487d06eb306c10bcaa3f9c2081aae117705e211973ec"
+    sha256 cellar: :any, arm64_tahoe:   "515bb8091e538c3d27fd923d0bb02c38b50cb81b4a8be43132fe06ac72ef2591"
+    sha256 cellar: :any, arm64_sequoia: "bc1b4a6e565bbd5363ed163613fb4270a3db5a2e04be25b67edde68df0c2cfa7"
+    sha256 cellar: :any, arm64_sonoma:  "eaf834c9c70a5a6076775d41f9055a9353c5c1c77d58cb2d638567d0c0428fed"
+    sha256 cellar: :any, sonoma:        "ae3d5848f36ccba1ed7c4b7c40c3050aec3f2254f4994c1896fe0b498fd10d75"
+    sha256 cellar: :any, arm64_linux:   "e51e14eb79321ef5ddbdbcdaf55583dbf944f96c517bd4ea364209094c67bc1c"
+    sha256 cellar: :any, x86_64_linux:  "071893cbd9f9651964d8ab6d846ff80664bd5a66cf5fab87a99144f96bdbe95c"
   end
 
   depends_on "rust" => :build
@@ -75,18 +74,18 @@ class Parsedmarc < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/51/87/d61a5a76088240012800f303d3b910c259f6c630e395a013fa1a1216fdae/boto3-1.43.65.tar.gz"
-    sha256 "f2331154aee1ae97ece48077d77f41d3bd5ea39eb4e3037030448b58695a3a79"
+    url "https://files.pythonhosted.org/packages/47/e4/139572e2459b7e10cd3409888a7312b8b5054c85ea41b28af417002af1c4/boto3-1.43.73.tar.gz"
+    sha256 "6e6c755e5039f204882c01d7936a46abce539b3f5bbb534a23a3f2afbc86f576"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/fa/86/65c298732919b84a3ecf331caeb47b8efcc1ce0537e8fdecad2cfee39174/botocore-1.43.65.tar.gz"
-    sha256 "eea5440cf4b850d0f4de4f7eda418c325c87de6d8980873f8b636bb482b31d0f"
+    url "https://files.pythonhosted.org/packages/e3/ea/c8482ada4f409c91e6f9d640ee15838975f2a7c481dff98419a6d176b81a/botocore-1.43.73.tar.gz"
+    sha256 "0fa1e63c24b3531be3e1bc1687a88b3be9e63a430153f24edd93efc162bb1c51"
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/bd/2a/23f34ec9d04624958e137efdc394888716353190e75f25dd22c7a2c7a8aa/charset_normalizer-3.4.9.tar.gz"
-    sha256 "673611bbd43f0810bec0b0f028ddeaaa501190339cac411f347ac76917c3ae7b"
+    url "https://files.pythonhosted.org/packages/e5/3f/143b048436775b0f76ac3eec145c019e8173ccc2885c8f20319b996d5e83/charset_normalizer-3.5.1.tar.gz"
+    sha256 "6117b84ea48435e5356dc737f5121485c30920ba43375fa7b434fd753df0eac3"
   end
 
   resource "dateparser" do
@@ -225,8 +224,8 @@ class Parsedmarc < Formula
   end
 
   resource "kafka-python" do
-    url "https://files.pythonhosted.org/packages/2b/1a/828be30211d0c78d02a7b3bd6dd36d6cc39539693600960315d41192bd5e/kafka_python-3.0.10.tar.gz"
-    sha256 "06950fed5e705ec5207458ca6ae43b6c0ae1de4146ddbf7877f42a893830100c"
+    url "https://files.pythonhosted.org/packages/d5/6a/8a3bfb819b5350652dfa5365409b7c611eed8ae0b37c84f53d0a26ae9513/kafka_python-3.0.11.tar.gz"
+    sha256 "a003d927e79c801d6cfd1e59ceaaf78807351e75cdb5b8ee9ce4262586f9780f"
   end
 
   resource "lxml" do
@@ -235,13 +234,13 @@ class Parsedmarc < Formula
   end
 
   resource "mail-parser" do
-    url "https://files.pythonhosted.org/packages/4e/4d/5fe2ab8505a0f1fe2160e4fdd42500dac32a7ea41a55709aeb2025ba4dbd/mail_parser-4.5.0.tar.gz"
-    sha256 "9ce06b44332115d43b82ee6d21a77a4e2a25cc42e219efe43730534b70c77a7e"
+    url "https://files.pythonhosted.org/packages/e4/6a/757fec81cd21048d1c18b21813280c222422a7d6bcd7e4c09d09f516b6db/mail_parser-4.6.2.tar.gz"
+    sha256 "5b402aa262df7faa8c05759dc35003fef332cbeaba0e4d8753639acbab50841f"
   end
 
   resource "mailsuite" do
-    url "https://files.pythonhosted.org/packages/9c/8f/e0119c739835bc0c7077e8c2f37a167771efbe65de090dbc8c70009f1bce/mailsuite-2.2.2.tar.gz"
-    sha256 "d1a45d3539e72022a5ee0966e9deb66924363f6121a3041a963d54725773e103"
+    url "https://files.pythonhosted.org/packages/43/e1/328dafc069c0b22dbafc545b1dd5a25d26f6eaddbe443f56b3a17522bef0/mailsuite-2.3.0.tar.gz"
+    sha256 "159f05b1e15d0a3eb60713cc6d18015581e25a1365ba9edde99e78f41f27bbdc"
   end
 
   resource "maxminddb" do
@@ -250,38 +249,38 @@ class Parsedmarc < Formula
   end
 
   resource "microsoft-kiota-abstractions" do
-    url "https://files.pythonhosted.org/packages/da/1e/cc7e180dd044fed808663d4433f024f07f9dbf190923324c528101173127/microsoft_kiota_abstractions-1.11.7.tar.gz"
-    sha256 "04fc310c3f4d28fc4fe3de56fbe734aa359ff08f28fe20bf1ddd9b71228038dc"
+    url "https://files.pythonhosted.org/packages/d4/30/00121e45175d11dbb24203a670d27513ff0ae761ffcb7c5c76354621dd82/microsoft_kiota_abstractions-1.11.9.tar.gz"
+    sha256 "c731f270573689437c07b3ecd9533fed7d6d895e19d98ed5d3df5cec1750fe14"
   end
 
   resource "microsoft-kiota-authentication-azure" do
-    url "https://files.pythonhosted.org/packages/79/ed/5c9c7ce16070c41b284d22969c1d3738049a0a015703b42e8689fe81d98d/microsoft_kiota_authentication_azure-1.11.7.tar.gz"
-    sha256 "1052ea952955475a164ba4486085e0de9fcaa978c7c0b73202bc6a9eabd9b412"
+    url "https://files.pythonhosted.org/packages/cb/ff/d046a015e5865074c51a3b5275e3e4104075073b6c0ba94d803e00a475c8/microsoft_kiota_authentication_azure-1.11.9.tar.gz"
+    sha256 "41ac68bb2b91488306742d4bdaa52d10d7fa4ecf61bd5aaeaebe0691bf2a17c0"
   end
 
   resource "microsoft-kiota-http" do
-    url "https://files.pythonhosted.org/packages/15/5a/ba9934a75da29a861856ac7aa11d970b04092786bf42bbf8d7ba6b6ac56e/microsoft_kiota_http-1.11.7.tar.gz"
-    sha256 "0f6563db3c86ea5bb95798a4eccea50b0233d403af0ac1dc461be6bf6333cecc"
+    url "https://files.pythonhosted.org/packages/20/48/333f4d5e9af6e59e2529895777b18b78382f23d0ad3f88defb62d4ecf8b0/microsoft_kiota_http-1.11.9.tar.gz"
+    sha256 "a7254df64665cadb1ff081f6c8c4df86b98d2e901985b56e746ab91bfa516d75"
   end
 
   resource "microsoft-kiota-serialization-form" do
-    url "https://files.pythonhosted.org/packages/e9/f0/870b13f491d1dfd710a5c186a5c253f91b15ce62e8108a19ccedfbecc36f/microsoft_kiota_serialization_form-1.11.7.tar.gz"
-    sha256 "817899bc08f11287ef27707f2c28b1469ef7fdac285aa94ad88301a1073f4a4e"
+    url "https://files.pythonhosted.org/packages/97/b1/3e69a62f9a18e6ac59e6852d6743a092be2811e3da57ae21f4cc05972121/microsoft_kiota_serialization_form-1.11.9.tar.gz"
+    sha256 "b4130eba95ab49e358d0726408387c87943d740ed0cbe73697c292d78f4ee6a1"
   end
 
   resource "microsoft-kiota-serialization-json" do
-    url "https://files.pythonhosted.org/packages/f6/de/ae5f3e18b80a4fe9620d3813f6c2c8c5da7e9ac6fa2cb66029be778bdf30/microsoft_kiota_serialization_json-1.11.7.tar.gz"
-    sha256 "73cffbaf784e5626124e9d0a7012c99b4bf2d035d4ed03efbd00d85643642d24"
+    url "https://files.pythonhosted.org/packages/20/8f/c3473031f1d09f92e4d46c6632ab0dbe5c66678c0d591a9ea427daa032b8/microsoft_kiota_serialization_json-1.11.9.tar.gz"
+    sha256 "1c577ddd479051a34a92c889ab85bbd37cbc76fed661b0f40ecbbd96e98947c5"
   end
 
   resource "microsoft-kiota-serialization-multipart" do
-    url "https://files.pythonhosted.org/packages/a5/f4/54db286be36a7583b77cdf0b13b048bd9449a3a1b910e7ce9ba48f56f21a/microsoft_kiota_serialization_multipart-1.11.7.tar.gz"
-    sha256 "f4455a3f8de6329167ee459e454a6d1a13c0d7aea31b597d0b665227e9f01507"
+    url "https://files.pythonhosted.org/packages/cc/f7/7f1cc3d102cd44cb8e98c902b36b9ac373b88205a6775261fe3bc5caa247/microsoft_kiota_serialization_multipart-1.11.9.tar.gz"
+    sha256 "ad815dfba1618cf8be3a20f5355aa7e97947efbc06dfeca086360c0cd1b18dd8"
   end
 
   resource "microsoft-kiota-serialization-text" do
-    url "https://files.pythonhosted.org/packages/59/0c/28e7b67dc4541dff0560a64416da7c6d087b8ca34738d6b4b3706592409b/microsoft_kiota_serialization_text-1.11.7.tar.gz"
-    sha256 "3def21c2552c886a16db42aff51e6cde10eca82a06edec1ef83f9810eff3bfb9"
+    url "https://files.pythonhosted.org/packages/bb/cf/5e276a80380d6cc0430f601535916d7987ccbb9c6e38e2fa4923a82f3940/microsoft_kiota_serialization_text-1.11.9.tar.gz"
+    sha256 "d47e8c0b754e7f9716962fbef2ff10d23675c0e5a51993ea519fa05c775bbec0"
   end
 
   resource "msal" do
@@ -360,8 +359,8 @@ class Parsedmarc < Formula
   end
 
   resource "publicsuffixlist" do
-    url "https://files.pythonhosted.org/packages/b1/2c/ba07f8c6fde9954c050797a9de4b93b209f94ba93001bb236c1b2c4129da/publicsuffixlist-1.0.2.20260726.tar.gz"
-    sha256 "6abd9eace2fa7a8734fdae9c8b32403a8c6b22c5872dad59367f19bc83d990ea"
+    url "https://files.pythonhosted.org/packages/d2/bf/35bd7dc084c53cced65599969ad934eaffc31671fb4aaf36906288e4259d/publicsuffixlist-1.0.2.20260815.tar.gz"
+    sha256 "1b66ddb654990327af8c43db20a1d217e1856176214a3c9bd548fbae34d68373"
   end
 
   resource "pyasn1" do

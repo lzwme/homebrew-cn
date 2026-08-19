@@ -4,6 +4,7 @@ class Oclgrind < Formula
   url "https://ghfast.top/https://github.com/jrprice/Oclgrind/archive/refs/tags/v26.03.1.tar.gz"
   sha256 "d21a705a2b71491b1505f34a50e14f9666516d1654c0e6745983408bb300e4c2"
   license "BSD-3-Clause"
+  revision 1
 
   livecheck do
     url :stable
@@ -11,13 +12,12 @@ class Oclgrind < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "31ae206f1e532e12e6c91ea8a04d2bb45eac04840037d166b4be646bb0807a83"
-    sha256 cellar: :any, arm64_sequoia: "93b1e1b3a1e98e44373d6f86796bf330ff2fb6925d6bfa2419c502f535c77032"
-    sha256 cellar: :any, arm64_sonoma:  "eea3648c693fac210cfc3b36edacd2a81ab6c4330aecffa775a8fbe8bb85c651"
-    sha256 cellar: :any, sonoma:        "6f9a1a027083d754f8add426deda21eb2b461d7c7d607ef1031c25924fbe3f47"
-    sha256 cellar: :any, arm64_linux:   "92a93c6980a57cf9e4331597dd012e111dacd85e55f2213ce7f3843afd75a37c"
-    sha256 cellar: :any, x86_64_linux:  "b55aa809bcaaaff3bed3f385ee9d0bb5b77a852607d78a9e34f08e5ba5a8e408"
+    sha256 cellar: :any, arm64_tahoe:   "5ca45349ce2fa614c8337c1480c442a3e358181578b343a993afa9a1805ecb4f"
+    sha256 cellar: :any, arm64_sequoia: "c092799a3eb5d3bde8cd2bf6d87f944dcf2750ee8027763f96e5e465fc772bfb"
+    sha256 cellar: :any, arm64_sonoma:  "8901090df7cdcd4eb51147b2f31bb026d5502174c454c654a68cdc5125cfe1b3"
+    sha256 cellar: :any, sonoma:        "f65c84f9d47f3c62a0dc08627f5be4154b9abf5ccc915376ac7c18ee472b59e3"
+    sha256 cellar: :any, arm64_linux:   "9f4123596fb4b1a955f5af926d38d61ef58b9a88034b85fbfc3a4288c4e86bed"
+    sha256 cellar: :any, x86_64_linux:  "669b3e5304273cbc343ec74aad6016a6447aac6ace4178d5f5127ae36f8ae81e"
   end
 
   depends_on "cmake" => :build
@@ -30,7 +30,7 @@ class Oclgrind < Formula
 
   on_linux do
     depends_on "opencl-headers" => :test
-    depends_on "llvm"
+    depends_on "llvm@22"
   end
 
   def install

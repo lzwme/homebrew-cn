@@ -4,7 +4,7 @@ class Esbmc < Formula
   url "https://ghfast.top/https://github.com/esbmc/esbmc/archive/refs/tags/v8.4.tar.gz"
   sha256 "9959fef848ffae597adac6fa2d74063f9553b4fcee93ed7cbe8aae3bd667bf91"
   license "Apache-2.0"
-  revision 2
+  revision 4
   head "https://github.com/esbmc/esbmc.git", branch: "master"
 
   livecheck do
@@ -13,12 +13,12 @@ class Esbmc < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "3c80c9521c24bc9c7219ead5c9a3477c455aba2ad144767e2fd201222d3e1d16"
-    sha256 cellar: :any, arm64_sequoia: "e618b6458ca262aff836354d5878b2b7f1dcde1cc259e0ac2295d7af2212132a"
-    sha256 cellar: :any, arm64_sonoma:  "d61eea6354e01bd65c5d80257b5752a47fadfac1a611d9d02b270fc672af59b3"
-    sha256 cellar: :any, sonoma:        "774aa3c7e38f2b90a57e6a98d1db9636602fab30622af33dcf375c73133aa843"
-    sha256 cellar: :any, arm64_linux:   "5fabf12f57b705cb7f16457cafa4cb1d925d6c55225de93977876a4d21632b0b"
-    sha256 cellar: :any, x86_64_linux:  "b5332aa0bb864286152f7aafe4583092aa9583bd29d41383ff120e6c47155844"
+    sha256 cellar: :any, arm64_tahoe:   "d9b364b9779d8c84beb79b10806b0635f3abaed58f2748869085b185ff93c787"
+    sha256 cellar: :any, arm64_sequoia: "b1501e2be91fe3317f95016510e12a0dcb3dc3c1c2e92af180ff36bd221a01a0"
+    sha256 cellar: :any, arm64_sonoma:  "0a1f50bcaa9171da3b8d272253c05c84d9516710bd17b570b0c67bcc784247aa"
+    sha256 cellar: :any, sonoma:        "81bfad135da43fdea6c9c893a5449ee1c5e0989c2849db601e1c0a9e8616d575"
+    sha256 cellar: :any, arm64_linux:   "750acdb4b29b89de8730a6ee808312e232f316961ded4388ffdbf74356d85c52"
+    sha256 cellar: :any, x86_64_linux:  "de000804e238d5cc8d3c72708337c1de905be2de39a8d50ccbd6e5abc2f75e71"
   end
 
   depends_on "bison" => :build # macOS ships 2.3; esbmc requires >= 2.6.1
@@ -30,7 +30,7 @@ class Esbmc < Formula
   depends_on "boost"
   depends_on "fmt"
   depends_on "gmp"
-  depends_on "llvm"
+  depends_on "llvm@22"
   depends_on "python@3.14"
   depends_on "yaml-cpp"
   depends_on "z3"
@@ -41,8 +41,8 @@ class Esbmc < Formula
     python3 = which("python3.14")
 
     args = %W[
-      -DLLVM_DIR=#{formula_opt_lib("llvm")}/cmake/llvm
-      -DClang_DIR=#{formula_opt_lib("llvm")}/cmake/clang
+      -DLLVM_DIR=#{formula_opt_lib("llvm@22")}/cmake/llvm
+      -DClang_DIR=#{formula_opt_lib("llvm@22")}/cmake/clang
       -DPython3_EXECUTABLE=#{python3}
       -DBitwuzla_DIR=#{formula_opt_prefix("bitwuzla")}
       -DENABLE_PYTHON_FRONTEND=ON

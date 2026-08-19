@@ -17,7 +17,7 @@ class ProtocGenDoc < Formula
   end
 
   depends_on "go" => :build
-  depends_on "protobuf"
+  depends_on "protobuf" => :no_linkage
 
   def install
     system "go", "build", *std_go_args, "./cmd/protoc-gen-doc"

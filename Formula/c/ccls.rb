@@ -20,6 +20,13 @@ class Ccls < Formula
       sha256 "13c2503f682d7b2932a2a4544f1fc32ace8799be9e9234b2f1df0867536a20fc"
       type :backport
     end
+
+    # Backport support for LLVM 23
+    patch do
+      url "https://github.com/MaskRay/ccls/commit/e74892376d8a280c5ee99c19cb2349e6ca834bad.patch?full_index=1"
+      sha256 "e1b6edd49d6e8dc7ed4d9955c094c32d2329ada2dc6fe4d2bf8e4347c7e778e8"
+      type :backport
+    end
   end
 
   bottle do

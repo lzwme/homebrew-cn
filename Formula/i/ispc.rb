@@ -4,6 +4,7 @@ class Ispc < Formula
   url "https://ghfast.top/https://github.com/ispc/ispc/archive/refs/tags/v1.31.0.tar.gz"
   sha256 "671c79bdff2d97aead3897da1a6b67a163af8c4e329350d07cf3e63d592955ff"
   license "BSD-3-Clause"
+  revision 1
 
   # Upstream sometimes creates releases that use a stable tag (e.g., `v1.2.3`)
   # but are labeled as "pre-release" on GitHub, so it's necessary to use the
@@ -14,18 +15,18 @@ class Ispc < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "ffdd73c5e458c0d49466e2360d14688c28ca228bac4e2ca39f695bb19a58fda1"
-    sha256 cellar: :any, arm64_sequoia: "cafff95451ca7067fbf72c6c8578743d4f6cb601ad5bfa910f2378b4aec5b041"
-    sha256 cellar: :any, arm64_sonoma:  "d36642f65f7e4b67159884021c869eb9965535cf5c571051312745c97c346e61"
-    sha256 cellar: :any, sonoma:        "fa87249c0024ea329cff337e8ec8b11b7368af319f0306a8a3a20d68b10b293e"
-    sha256 cellar: :any, arm64_linux:   "17d0ac4ee38b3a49c3ae58d03f9993fff4d09b5327172d889ca6c75394c8ccc1"
-    sha256 cellar: :any, x86_64_linux:  "674ccfdcca55acd48f89d43c2a21dc2368a3ffd48a3e6e02d95efd0aae4fee8f"
+    sha256 cellar: :any, arm64_tahoe:   "1c27e7b22b2d8bc1bdee0e0ce6e167ccecbff130b00d2c407d04bcaaaf9a75bf"
+    sha256 cellar: :any, arm64_sequoia: "ad0ac922f31c76f5ecf0232520466dbec4172c062a7acd7fc83b1c0538dfda45"
+    sha256 cellar: :any, arm64_sonoma:  "4024f80c33dd1bd300fa33c090f55866dba123585fd750f5564fbf65f73400d4"
+    sha256 cellar: :any, sonoma:        "87b33c51f994bfd8ff01557a081643505d0be68295194368ff02e52e035d421a"
+    sha256 cellar: :any, arm64_linux:   "799d33e2c0deda1c85e9761c83e05be55d187c1c4ff7ffeb1d360a53ef7ae5dd"
+    sha256 cellar: :any, x86_64_linux:  "04a0e27587dc7a90b5d6e3dc7b7d18b816fe8d9356b753476cd9cb159d31c0a3"
   end
 
   depends_on "bison" => :build
   depends_on "cmake" => :build
   depends_on "flex" => :build
-  depends_on "llvm"
+  depends_on "llvm@22"
 
   uses_from_macos "python" => :build
 

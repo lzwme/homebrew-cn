@@ -1,16 +1,16 @@
 class Astra < Formula
   desc "Command-Line Interface for DataStax Astra"
   homepage "https://docs.datastax.com/en/astra-cli"
-  url "https://ghfast.top/https://github.com/datastax/astra-cli/archive/refs/tags/v1.1.0.tar.gz"
-  sha256 "c6103d7de4abea0c5780dfdfbd19945af5d5662d9ce50c03ff7845cd688aca27"
+  url "https://ghfast.top/https://github.com/datastax/astra-cli/archive/refs/tags/v1.1.1.tar.gz"
+  sha256 "c9caeb332381ec2de0723036ee8f3e266b89634fcae13396400590d781a97637"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "eb2fac9c17c5f503ac89a005dd905cc2f1f5236a02942e5da751899786901c73"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a75c955163c229fdd2f9c0b87491c23a1240fbe3919d710a514b54877ab9737c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "40cb7437f75d9ee90c53f2e0ee3ad3e11b88eeeedf5f1e08e59b5fd4f24e09c6"
-    sha256 cellar: :any,                 arm64_linux:   "ceebea8e1e6770dd7338da019f8524358906df174b1597c5b730db96f80575aa"
-    sha256 cellar: :any,                 x86_64_linux:  "4f3ce475e726fa4af58b9d4ce1a90859711a130f8949f0404f118ca2ec7bc0bd"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e4ce67b664941e3055fdd1359c5e03dabcef6d683cf5b1744a2bec57caa0b5dc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "91d6c285db4ae2faee015db871a32e2c4f75432ba2e71d808295ecdd1284e2b6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8aa7ec69950ad1b27c169a0e326b96432320623a76bcd0b108c4270defae4f88"
+    sha256 cellar: :any,                 arm64_linux:   "5820c76a74f47a63a1234b332750267cd98b7fcecbb9387c26b02f4204209c43"
+    sha256 cellar: :any,                 x86_64_linux:  "7b178c44ca9552fb032c3fa359d513c2758a1d64090436623bf9688051bcf42e"
   end
 
   depends_on "graalvm" => :build

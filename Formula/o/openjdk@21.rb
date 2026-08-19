@@ -1,8 +1,8 @@
 class OpenjdkAT21 < Formula
   desc "Development kit for the Java programming language"
   homepage "https://openjdk.org/"
-  url "https://ghfast.top/https://github.com/openjdk/jdk21u/archive/refs/tags/jdk-21.0.12-ga.tar.gz"
-  sha256 "1efd38fa2729d32cdf0ed4c9197c31ee31890ad1b7bff82984992e0c2c67c72b"
+  url "https://ghfast.top/https://github.com/openjdk/jdk21u/archive/refs/tags/jdk-21.0.12.1-ga.tar.gz"
+  sha256 "9c719670e7be6080a46ebeb1223a375bd53818ba7c5ae11f11a02907b593775f"
   license "GPL-2.0-only" => { with: "Classpath-exception-2.0" }
   compatibility_version 1
 
@@ -12,12 +12,12 @@ class OpenjdkAT21 < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "d9d5f0ba1c060b12ce29767b68c93ccf33a91ea58e87acb97a73fff9b5104260"
-    sha256 cellar: :any, arm64_sequoia: "a5db84dbe32b257534198440249eb72d3051736826f72c1865f767ac819e8ec6"
-    sha256 cellar: :any, arm64_sonoma:  "520741c8c85d58afbe198531bb338a19b89ffcb6057e7b45e37378eb51ce6078"
-    sha256 cellar: :any, sonoma:        "c51912c14abe9eab56e8c43f50514575b8923045470cc2d7a0c04f76a583a010"
-    sha256               arm64_linux:   "a41a6aaee5daebe8a2f6c1206d546dea2f32bd4e28add6adef534055304ba750"
-    sha256               x86_64_linux:  "d34df84d4630162d336eb8347db2b04c04dcb453ae252b503a1c8f910da29d44"
+    sha256 cellar: :any, arm64_tahoe:   "b4f233ded4853f0196312ed48cf4a2608b3b8d9174921b728ba84d8c60acf37d"
+    sha256 cellar: :any, arm64_sequoia: "af7d080dcef9170222f2dbceb9ab84d6ffdde877af864ea071ccb3bb09e94022"
+    sha256 cellar: :any, arm64_sonoma:  "ca715809bd25603e5be5a27ddc0041a63bfdb33c3a89a1829a984c48a7720cc5"
+    sha256 cellar: :any, sonoma:        "add3941082aca7d38a4d254ccffb1e5da1fcd49d7c46494f783e11c5e0851ce3"
+    sha256               arm64_linux:   "ef0362bbd59ba540fa4b88e368601036b6cd29123e25a1d1a490d1e02109a11a"
+    sha256               x86_64_linux:  "c5f20db30e9d58438cf396786f089ba21af7d7211fc82724081ebe0311a00aa2"
   end
 
   keg_only :versioned_formula

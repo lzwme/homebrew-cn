@@ -1,8 +1,8 @@
 class OpenjdkAT17 < Formula
   desc "Development kit for the Java programming language"
   homepage "https://openjdk.org/"
-  url "https://ghfast.top/https://github.com/openjdk/jdk17u/archive/refs/tags/jdk-17.0.20-ga.tar.gz"
-  sha256 "ba3ac4b9d7f2c050f46ddcec39b4258660a3f09836f5a71617fd3f7311d06c0b"
+  url "https://ghfast.top/https://github.com/openjdk/jdk17u/archive/refs/tags/jdk-17.0.20.1-ga.tar.gz"
+  sha256 "8e5f18f6f75a759fc9584c3c2f8c44a5737692f3ea348cc1f9e63704b9dd81ee"
   license "GPL-2.0-only" => { with: "Classpath-exception-2.0" }
   compatibility_version 1
 
@@ -12,12 +12,12 @@ class OpenjdkAT17 < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "a78892bef5ec94a569e749fe6b1b39701f49df20ed7749cde7b5c9061a82d31a"
-    sha256 cellar: :any, arm64_sequoia: "f92c469c7db8603afc883123c556aa0d8a2d05cc091f4c4993ad6b3b0f075cea"
-    sha256 cellar: :any, arm64_sonoma:  "fd0ffc137ec10948adfc779a49c181e0315d7f09a66f41257f4320c9eeb0c6f6"
-    sha256 cellar: :any, sonoma:        "f3af6ccb0b80f3150bcc6a696f9516e6503f7ac9c3212bace038bad78d484ef9"
-    sha256               arm64_linux:   "c56ad947faf222bb467793ec0b39f85c72c1288df6319448f321fd8bee3fde08"
-    sha256               x86_64_linux:  "0a9bce5ba024f7eec9b554758fbc7fb7b8736969a125782a51674c14ea56a934"
+    sha256 cellar: :any, arm64_tahoe:   "574e7c7169103e68312a87af27a6ce27de8f473031a22fd5babd4eeebb195c81"
+    sha256 cellar: :any, arm64_sequoia: "96b8ced169f8234f67aa01adef2d89a111a93cb1bdba464cf1972df3578dfb79"
+    sha256 cellar: :any, arm64_sonoma:  "338ca05773a7a98670d26ca0475b238a02d888c65d643b727835265c873cb0bf"
+    sha256 cellar: :any, sonoma:        "61363ead3988dfcf77fb0b24683903e16df46706faba5f20f62752ad8221c621"
+    sha256               arm64_linux:   "20700602d7849f1d4f860cb503573217dde83a0e22a860ea2b5dcb62ce842728"
+    sha256               x86_64_linux:  "c4d7d14b912a175747502a41875e8c70a2c30975748f4f8c5ab00c1ba954810e"
   end
 
   keg_only :versioned_formula

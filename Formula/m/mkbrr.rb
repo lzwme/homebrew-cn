@@ -1,18 +1,18 @@
 class Mkbrr < Formula
   desc "Is a tool to create, modify and inspect torrent files. Fast"
   homepage "https://mkbrr.com/introduction"
-  url "https://ghfast.top/https://github.com/autobrr/mkbrr/archive/refs/tags/v1.24.1.tar.gz"
-  sha256 "4618314638dff4a22bac14d208963750a17fc366f4aec4c5e31787c41977e922"
+  url "https://ghfast.top/https://github.com/autobrr/mkbrr/archive/refs/tags/v1.25.0.tar.gz"
+  sha256 "8ae71c48e7615b6753f3d10dc255ecc6a41985a000b263f2d69aac467afb4fdc"
   license "GPL-2.0-or-later"
   head "https://github.com/autobrr/mkbrr.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5538dd3558d1dd3ace502e90ef3e742f31003ea5112f154c18bd04b213b32c8e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5538dd3558d1dd3ace502e90ef3e742f31003ea5112f154c18bd04b213b32c8e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5538dd3558d1dd3ace502e90ef3e742f31003ea5112f154c18bd04b213b32c8e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "140269e98bd3ccf78b5fa5b17e838b02cc9f651ec86e377ad7a4e18a14592322"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f2f75aa6f40d5f658898a3c2a7fc28ef73b1fcad53f23388a28b9eb5f09af14f"
-    sha256 cellar: :any,                 x86_64_linux:  "e1f925a9627f6ed37e1ba4d63012f42ea9f02bf0d88885c47f2fd5052dae7de9"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6bbd8371f8f34981a60227fed3b54ec24225f8a621c2f729ba93a643c1272f11"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6bbd8371f8f34981a60227fed3b54ec24225f8a621c2f729ba93a643c1272f11"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6bbd8371f8f34981a60227fed3b54ec24225f8a621c2f729ba93a643c1272f11"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b14b5fae3a96620ba0abd81471553d1e130aab84b6858cb850fc9439032030c9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8aaf4a309c68c3226af1c857b6aaf2c9a32da2bd9e97ac501eebd29203605bc0"
+    sha256 cellar: :any,                 x86_64_linux:  "5e2fb50b3c294bca1e67fc59b32275867a09c6b05f51cb50a3195ead2bfc374a"
   end
 
   depends_on "go" => :build

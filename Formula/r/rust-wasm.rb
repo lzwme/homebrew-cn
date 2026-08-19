@@ -4,22 +4,23 @@ class RustWasm < Formula
   url "https://static.rust-lang.org/dist/rustc-1.97.1-src.tar.gz"
   sha256 "622c2b429c53cbfdc0dd3a51d03554e91cd63ebec1912c1f5709640cdfef1a9d"
   license any_of: ["Apache-2.0", "MIT"]
+  revision 1
 
   livecheck do
     formula "rust"
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a43cc53ad6f93181d866add98e107136eea3951b00b7af4715793bc078b3e583"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a43cc53ad6f93181d866add98e107136eea3951b00b7af4715793bc078b3e583"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a43cc53ad6f93181d866add98e107136eea3951b00b7af4715793bc078b3e583"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4443a5f831b95873e2a5baf8cf23a91b9718fc9e5e594c165ee6db39bbe917de"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0a2e031c3f008624e9ce1ae96bf39469946e3298b7b1297861a7519dcd086f2c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "36ec7d9e41e07606a99e622cccc8041ae5ac8181b5931563ff54dbbccb4711ac"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a2a025eddabd286683a57df898c57faa4fe7f725dc9757cceefd857bab18b711"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a2a025eddabd286683a57df898c57faa4fe7f725dc9757cceefd857bab18b711"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a2a025eddabd286683a57df898c57faa4fe7f725dc9757cceefd857bab18b711"
+    sha256 cellar: :any_skip_relocation, sonoma:        "36e1f9a9cbdd8af0622bbd2aebc34ef28523fab55ff3b07b9aacf4d410dbc5ae"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "db9ef63960eceff9c4be18897b803d4ec3f73f2c538dd0d0bdbed319927090d1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fee79e1eb1af305dc167a5b628a135f2e7d9a42649c807fdda01f45bf8776253"
   end
 
   depends_on "wasmtime" => :test
-  depends_on "lld"
+  depends_on "lld@22"
   depends_on "rust"
   depends_on "wasi-libc"
   depends_on "wasm-component-ld"
@@ -137,6 +138,7 @@ class RustWasm < Formula
   end
 
   test do
+    ENV.prepend_path "PATH", formula_opt_bin("lld@22")
     config = pkgshare/"cargo-config.toml"
 
     # wasm32-unknown-unknown has no OS or runtime, so just confirm we can link a

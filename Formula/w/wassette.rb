@@ -1,8 +1,8 @@
 class Wassette < Formula
   desc "Security-oriented runtime that runs WebAssembly Components via MCP"
   homepage "https://microsoft.github.io/wassette/"
-  url "https://ghfast.top/https://github.com/microsoft/wassette/archive/refs/tags/v0.5.0.tar.gz"
-  sha256 "949d7a5541c58bf0ebad35213b233a6a9e2f95cf70e89294862ac2f2662d2f33"
+  url "https://ghfast.top/https://github.com/microsoft/wassette/archive/refs/tags/v0.6.0.tar.gz"
+  sha256 "a2a95a418a3f9983adabee2ec9d3db427ac460f9f1ca6b93f0970242ac0cba94"
   license "MIT"
   head "https://github.com/microsoft/wassette.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Wassette < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4b31065340f948e3dbb160e8b14fc2d787f7411c761a5796c0835bf3cc184e54"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6e7c01e5c302d044ab93ba95f39edf19e431b10778826fd9cc93f81dff644cf3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b698445146c954db277dc0d8949524bb517b22a2e6a672988348dfa335bff818"
-    sha256 cellar: :any_skip_relocation, sonoma:        "256a0813be8d18c75005883f2c83af17d86ebc711eab332cca9baf90d1f8217d"
-    sha256 cellar: :any,                 arm64_linux:   "25c6965dbda1c6d952812e94104630bb91ad9a4eecf563b1085b05f0648a4b3d"
-    sha256 cellar: :any,                 x86_64_linux:  "bce5ab85dbf846d0df51b662511ef01a634943b176ddb32c943e7820239258a5"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c50ea9d7540893f2af3c23bc8484a718a1d904e6c2eb2510567e2495a19c082a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a23d340109ad899b1d75c0f0e928789f2f041c458d92594731179eb7c8b1b195"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "423fd41d4b55299ddce37c0ab2d51fcc57a31ead6f7ae2944029a14ffb2406ad"
+    sha256 cellar: :any_skip_relocation, sonoma:        "758020a559b222bf84a04bc63bc093ffbdb5ad586fe45836b5e82347bcd1c59a"
+    sha256 cellar: :any,                 arm64_linux:   "d3b7d99ccdbd7be11f913d3f5511f660c87034a47f7df0c82e3a40f0139a084e"
+    sha256 cellar: :any,                 x86_64_linux:  "3679b440834198e49ba6d91e89ff3b1a39ca60e205d79a43d855af746c89f18b"
   end
 
   depends_on "pkgconf" => :build
@@ -28,7 +28,7 @@ class Wassette < Formula
   end
 
   def install
-    system "cargo", "install", *std_cargo_args
+    system "cargo", "install", *std_cargo_args(path: "crates/wassette-mcp-server")
   end
 
   test do

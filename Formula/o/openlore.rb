@@ -1,16 +1,16 @@
 class Openlore < Formula
   desc "Persistent architectural memory and structural cognition for AI coding agents"
   homepage "https://github.com/clay-good/OpenLore"
-  url "https://registry.npmjs.org/openlore/-/openlore-2.1.9.tgz"
-  sha256 "98f1af606fc8e28d0a8797466e7ba34ff41c713716275ebd905590efb84928b2"
+  url "https://registry.npmjs.org/openlore/-/openlore-2.2.0.tgz"
+  sha256 "b21d2142e1a45113682fa7b671e3073a8ed49f552d10427755f6f79bbce67127"
   license "MIT"
 
   bottle do
-    sha256               arm64_tahoe:   "98ce38b5d06e2d29bb05e16abae80bf36e57f8e49e235d82443751ac1d8cd7b4"
-    sha256               arm64_sequoia: "f6464cae51e35020b460d406153440bd02ef5ee25087528430a2eb38e8ffafaf"
-    sha256               arm64_sonoma:  "a463d353837d3a0da6b04b56b7a1e349245a0ca1932b238335abc05059a86751"
-    sha256 cellar: :any, arm64_linux:   "bdba21584d1a0b89df5395121aab4dacf693d35a06fce2c665c85555044be493"
-    sha256 cellar: :any, x86_64_linux:  "4461e0b161c4143691e0630e8c6a1d40f7b77c246b071e69c4c1b12648442e3f"
+    sha256               arm64_tahoe:   "92d84f183dbc5dde0c47d5f3fb4a506f4d359744b8809e53828884093f360d1a"
+    sha256               arm64_sequoia: "ec9892dbbff3c3df2599a09acbc926523015fa36e19e77be2094feb8d21849ff"
+    sha256               arm64_sonoma:  "42816c870c997ade0475f9854d738e023bda363ec1084c450feb0571f69d484c"
+    sha256 cellar: :any, arm64_linux:   "82db8aec2f93a34998db1fe171c22ebb6b05c0e8b1bd7052fa8e9cca0a35998d"
+    sha256 cellar: :any, x86_64_linux:  "342b303051f3bd40c19578305783e883cf51f20049b08e91b61c292f4d1e70a6"
   end
 
   depends_on "c-ares"

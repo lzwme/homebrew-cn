@@ -3,19 +3,18 @@ class Bzt < Formula
 
   desc "BlazeMeter Taurus"
   homepage "https://gettaurus.org/"
-  url "https://files.pythonhosted.org/packages/2c/1a/09bc3986815f899d27f8ce60e9e82527cb81afee3e2b5cdd318dfd810e52/bzt-1.16.51.tar.gz"
-  sha256 "f57f7c50302c3c1aa36365b2b3a761b51015522597580730f2447b939147bf8a"
+  url "https://files.pythonhosted.org/packages/9d/d4/a1fb3eed9bdc489288b619811a5727a043f1afbfdd7324f7a9116959417c/bzt-1.17.0.tar.gz"
+  sha256 "bf000dc518f4b3c3c04c7b5b54d8e9160f6f8fcbb199e90aec4a117c649afba2"
   license "Apache-2.0"
-  revision 2
   head "https://github.com/Blazemeter/taurus.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "400c69e743b77199c05dd7e75930fe88e28e42fc96a8050a11e88806f6720115"
-    sha256 cellar: :any, arm64_sequoia: "240c472077ab83c3fc5c242189490b48720d3b4d1f5f0a0ead018009043dc3da"
-    sha256 cellar: :any, arm64_sonoma:  "1475bbbc8f1988c25239676aebab46bc0d1e0dac76238b76ab19f10fd91c84cd"
-    sha256 cellar: :any, sonoma:        "857ac71983c6753edf97d251b6f9ec74fa00389a5ceebeb62cba32f124340103"
-    sha256 cellar: :any, arm64_linux:   "bef9fef7fde45b429d436a55bd57c39aa377c222ca42ab56e84445bf0dc89f05"
-    sha256 cellar: :any, x86_64_linux:  "e76a790f6005b978da7b0a655a1015303d49e33188b7d575d97ac2b6fa67f942"
+    sha256 cellar: :any, arm64_tahoe:   "41bae9a5871973b817662175460bf5d8e5dd67c2d3fe0776872ba662e749ef5f"
+    sha256 cellar: :any, arm64_sequoia: "62fa8380570861d6d958184b8040d1ac46301324c11285157efbf6753da4f5b6"
+    sha256 cellar: :any, arm64_sonoma:  "e896e5c0be2196114ce70ac795887ae0066fc6b17df11512173108172fb60c4c"
+    sha256 cellar: :any, sonoma:        "a06727ec5da16a6f0a48ad39e64ca35956b43d90206d879223cd58508912af12"
+    sha256 cellar: :any, arm64_linux:   "c59de24610d29c1ab44c72772c25f95066b5fdb9aea4c7d53b4e48c0032edd39"
+    sha256 cellar: :any, x86_64_linux:  "5f24a4f873fbd088ff5c22fd8c76940bf4234b4787fba96b2a333bf51ce66213"
   end
 
   depends_on "cmake" => :build
@@ -67,8 +66,8 @@ class Bzt < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/bd/2a/23f34ec9d04624958e137efdc394888716353190e75f25dd22c7a2c7a8aa/charset_normalizer-3.4.9.tar.gz"
-    sha256 "673611bbd43f0810bec0b0f028ddeaaa501190339cac411f347ac76917c3ae7b"
+    url "https://files.pythonhosted.org/packages/e5/3f/143b048436775b0f76ac3eec145c019e8173ccc2885c8f20319b996d5e83/charset_normalizer-3.5.1.tar.gz"
+    sha256 "6117b84ea48435e5356dc737f5121485c30920ba43375fa7b434fd753df0eac3"
   end
 
   resource "colorlog" do
@@ -104,6 +103,11 @@ class Bzt < Formula
   resource "h11" do
     url "https://files.pythonhosted.org/packages/01/ee/02a2c011bdab74c6fb3c75474d40b3052059d95df7e73351460c8588d963/h11-0.16.0.tar.gz"
     sha256 "4e35b956cf45792e4caa5885e69fba00bdbc6ffafbfa020300e549b208ee5ff1"
+  end
+
+  resource "hdrhistogram" do
+    url "https://files.pythonhosted.org/packages/79/ba/0f5b04dd55da744e1f8ed251f12286fb21e488f6c9671323016e4e56a106/hdrhistogram-0.10.7.tar.gz"
+    sha256 "bed4785a5e40e6260306e8e27ee3d31299263640cd7618040df88447ed57c2bd"
   end
 
   resource "hdrpy" do
@@ -152,8 +156,13 @@ class Bzt < Formula
   end
 
   resource "packaging" do
-    url "https://files.pythonhosted.org/packages/d7/f1/e7a6dd94a8d4a5626c03e4e99c87f241ba9e350cd9e6d75123f992427270/packaging-26.2.tar.gz"
-    sha256 "ff452ff5a3e828ce110190feff1178bb1f2ea2281fa2075aadb987c2fb221661"
+    url "https://files.pythonhosted.org/packages/7d/fa/3944b40b07da9ce895c0e6303a5ab7d53da063554f534556b134a54d6093/packaging-26.3.tar.gz"
+    sha256 "94edc256424af38762eb31306eed28beb9f0efc50a8837492c9d6fd6004aed79"
+  end
+
+  resource "pbr" do
+    url "https://files.pythonhosted.org/packages/5e/ab/1de9a4f730edde1bdbbc2b8d19f8fa326f036b4f18b2f72cfbea7dc53c26/pbr-7.0.3.tar.gz"
+    sha256 "b46004ec30a5324672683ec848aed9e8fc500b0d261d40a3229c2d2bbfcedc29"
   end
 
   resource "progressbar33" do
@@ -182,13 +191,13 @@ class Bzt < Formula
   end
 
   resource "python-engineio" do
-    url "https://files.pythonhosted.org/packages/cf/56/10a529f5396df653181f747997f970dba31f8f2eac3b9a88c1f9d7bb25c3/python_engineio-4.13.4.tar.gz"
-    sha256 "413cb98d56c62f0f5ef29931592a360d437b82b3fa7ab415da3f6c7d3ebc0cb7"
+    url "https://files.pythonhosted.org/packages/df/d8/65cc479ab697a2e7fdee83a9bd8a06b61ec68bf763a58a302cf161bf38bb/python_engineio-4.13.5.tar.gz"
+    sha256 "b5764d62243e3ffbc4c76dda3d7897c329dc52294c80c27105f9faa054e76897"
   end
 
   resource "python-socketio" do
-    url "https://files.pythonhosted.org/packages/32/2d/ffce71017c106b75099fea569df6518c63fee5d6202ce0cfe7b01e6f22c3/python_socketio-5.16.3.tar.gz"
-    sha256 "89b136f677ae65607a84cecda9b4d6c5377b40a97582c504c25df89af16d520e"
+    url "https://files.pythonhosted.org/packages/06/5e/87d6b547c87c6d64f4a05f5bfaf6f42e9b786561216434290fdaa83f8667/python_socketio-5.16.4.tar.gz"
+    sha256 "f7fa4a43cc8e687930b5c6e44d6e2efc2071eca4bef49b8bb3dc0827f7f92235"
   end
 
   resource "pytz" do
@@ -217,8 +226,8 @@ class Bzt < Formula
   end
 
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/bb/71/b6365e6325b3290e14957b2c3a804a529968c77a049b2ed40c095f749707/setuptools-79.0.1.tar.gz"
-    sha256 "128ce7b8f33c3079fd1b067ecbb4051a66e8526e7b65f6cec075dfc650ddfa88"
+    url "https://files.pythonhosted.org/packages/76/95/faf61eb8363f26aa7e1d762267a8d602a1b26d4f3a1e758e92cb3cb8b054/setuptools-80.10.2.tar.gz"
+    sha256 "8b0e9d10c784bf7d262c4e5ec5d4ec94127ce206e8738f29a437945fbc219b70"
   end
 
   resource "simple-websocket" do
@@ -257,8 +266,8 @@ class Bzt < Formula
   end
 
   resource "wheel" do
-    url "https://files.pythonhosted.org/packages/39/62/75f18a0f03b4219c456652c7780e4d749b929eb605c098ce3a5b6b6bc081/wheel-0.47.0.tar.gz"
-    sha256 "cc72bd1009ba0cf63922e28f94d9d83b920aa2bb28f798a31d0691b02fa3c9b3"
+    url "https://files.pythonhosted.org/packages/d0/20/50ed6bdf27dec98b568a8ae25dc599f35baa3d9709f9e83fd1edb56b9a90/wheel-0.48.0.tar.gz"
+    sha256 "94800765601e9171bf5d58d066e640662842bcedcbab982b2c90787a2c987322"
   end
 
   resource "wsproto" do

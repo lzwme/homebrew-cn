@@ -4,21 +4,22 @@ class Crystalline < Formula
   url "https://ghfast.top/https://github.com/elbywan/crystalline/archive/refs/tags/v0.19.0.tar.gz"
   sha256 "7cab91e23bf2e7d87ab3e63c60a555507a00da709af1fad5fe55de44dadea71a"
   license "MIT"
+  revision 1
 
   bottle do
-    sha256 arm64_tahoe:   "271065743219a98bbdfa2cf54bf0e8c0843f61b547e7a85bea1beb79494ad37c"
-    sha256 arm64_sequoia: "81b18f436f8ba89702095829121aac7d9e9b8bf4d0ec2627a8186db4e6ddc745"
-    sha256 arm64_sonoma:  "0d92647878164a397b81865615cbe68b493e32c1c6e9a0c67b5805cc46c565dd"
-    sha256 sonoma:        "b902653312d57df9c6602b092913251c0fbc5ec99f74c0497e14e479f018fe52"
-    sha256 arm64_linux:   "2266e86d128eb1f8e274765c3f3614d5b9292557afbff21dfac5644face3aecf"
-    sha256 x86_64_linux:  "2b1698e798b88998ba1fe168269b0cbeefacef19a2ead5311d7aa51fa52a4aa5"
+    sha256 arm64_tahoe:   "f07c7d13ef5fdf413d9258e4a4c421163c8a821c7853d7c03ad15f34c4b28af5"
+    sha256 arm64_sequoia: "77134e5b99a0c697210112504b1e499313858cc3c4ce6ad34ccd186577b16652"
+    sha256 arm64_sonoma:  "1dd71e2bfe371c7af0f60db6932fa708bbfec066de4220695f44529e207e5d69"
+    sha256 sonoma:        "005a9d70afbd4d50f30a92594270775dd0e44648b6b4c514ef3222ea7807dd4b"
+    sha256 arm64_linux:   "1a8246f537582e818bd14d55345edbd691605d83fd6dc79fb1b3cd165455484c"
+    sha256 x86_64_linux:  "c469a271f9fb95142f7bd22971e3f0785f088af26b6d9134e7516c6262ecc418"
   end
 
   depends_on "bdw-gc"
   depends_on "crystal"
   depends_on "libevent"
   depends_on "libyaml"
-  depends_on "llvm"
+  depends_on "llvm@22"
   depends_on "pcre2"
 
   def install

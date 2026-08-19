@@ -3,18 +3,18 @@ class Cycode < Formula
 
   desc "Boost security in your dev lifecycle via SAST, SCA, Secrets & IaC scanning"
   homepage "https://github.com/cycodehq/cycode-cli"
-  url "https://files.pythonhosted.org/packages/b7/e1/edad0f61a5df7fc392525c9d4c52e420d2a95a80b95bd896700f1d62a8d5/cycode-3.19.1.tar.gz"
-  sha256 "5052f543af02ed724f17bdb31183d320f7fea36d0804cb650c6f4d49c4bfa2a3"
+  url "https://files.pythonhosted.org/packages/55/55/5230d063054dab9d365724648afd1037a3e557c8964e2f84c9269e8584b2/cycode-3.20.0.tar.gz"
+  sha256 "e5d45e561bbe08cea967137117505633eb6078bfb03794a1a86277afd9162465"
   license "MIT"
   head "https://github.com/cycodehq/cycode-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "94b483e1c92514e1c7bee582fa48cae8e5f02509774197b6ee8eeb292979c264"
-    sha256 cellar: :any, arm64_sequoia: "9d21ca6a83e603c34c9090f5d7246dca0683c22747d5e3d8a88eb8429133a536"
-    sha256 cellar: :any, arm64_sonoma:  "309ccbf66c71d9c4a043a7968350b1b34edb9224d401c32c4c7d11fd9399091b"
-    sha256 cellar: :any, sonoma:        "da0ebbc44eecaa9fd6701bc3e12868445ae6921c9d7b2ab7e225597796348b50"
-    sha256 cellar: :any, arm64_linux:   "4a7479446a94735f62dd6d12884625b05de6a2b46cc1781d4ad3fd6ef699609b"
-    sha256 cellar: :any, x86_64_linux:  "ca60a2175506e8a65bff05ae1d3f4cd6344b926cf3bd97d404ca0262030bc900"
+    sha256 cellar: :any, arm64_tahoe:   "87de1a69ad3107f298b74ed64bf8da662a78cb1a0849b74053997982c17ea873"
+    sha256 cellar: :any, arm64_sequoia: "c37335172a656f102209315c8b19cd4e0960643af077cd1789b2a0254250a57a"
+    sha256 cellar: :any, arm64_sonoma:  "1b41adce7336c25e38ceda032fe5dfeea38d5e17f3f599dbde7739393d215eae"
+    sha256 cellar: :any, sonoma:        "cf2bf210577c09d956d26184312e1dd29d4b1bef0c40e350e5c9a74b81b7b8eb"
+    sha256 cellar: :any, arm64_linux:   "9fececc7fd8764e57716555d77d79b7682e6d2c8508e8f22aecc1600d3e20408"
+    sha256 cellar: :any, x86_64_linux:  "2c69f1ec0637bef91fbec8091fecc52f193620fa24de68ac9e84b1abafe0440c"
   end
 
   depends_on "certifi" => :no_linkage
@@ -42,8 +42,8 @@ class Cycode < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/cb/31/4971872b3ed8715346231fb6eb4da8fcba65a4143c189db151ee28a2812b/charset_normalizer-3.5.0.tar.gz"
-    sha256 "49bd5feb59b0bf3cbf6ebcf4352e371c95b9da9bacd4449f8b64d0ad2c10a26e"
+    url "https://files.pythonhosted.org/packages/e5/3f/143b048436775b0f76ac3eec145c019e8173ccc2885c8f20319b996d5e83/charset_normalizer-3.5.1.tar.gz"
+    sha256 "6117b84ea48435e5356dc737f5121485c30920ba43375fa7b434fd753df0eac3"
   end
 
   resource "click" do
@@ -137,8 +137,8 @@ class Cycode < Formula
   end
 
   resource "pygments" do
-    url "https://files.pythonhosted.org/packages/c3/b2/bc9c9196916376152d655522fdcebac55e66de6603a76a02bca1b6414f6c/pygments-2.20.0.tar.gz"
-    sha256 "6757cd03768053ff99f3039c1a36d6c0aa0b263438fcab17520b30a303a82b5f"
+    url "https://files.pythonhosted.org/packages/49/2e/ced460408999b33da6b31b0021b0f37d329e202d4169aeb164493778f25b/pygments-2.21.0.tar.gz"
+    sha256 "610ca751c9bc2492b38eb9a38a7fbc93edbbb2d7182edaf34e66ae493dee5c8c"
   end
 
   resource "pyjwt" do
@@ -152,8 +152,8 @@ class Cycode < Formula
   end
 
   resource "python-dotenv" do
-    url "https://files.pythonhosted.org/packages/82/ed/0301aeeac3e5353ef3d94b6ec08bbcabd04a72018415dcb29e588514bba8/python_dotenv-1.2.2.tar.gz"
-    sha256 "2c371a91fbd7ba082c2c1dc1f8bf89ca22564a087c2c287cd9b662adde799cf3"
+    url "https://files.pythonhosted.org/packages/6a/53/ed9d74092561d4b01a2ef1349d52cdbc135e526c245f366b089cfca6de49/python_dotenv-1.2.3.tar.gz"
+    sha256 "a20a594dabeaa385725aa239d5244871c143ecb356add8a20fcf23773a6c3a35"
   end
 
   resource "python-multipart" do
@@ -232,8 +232,8 @@ class Cycode < Formula
   end
 
   resource "uvicorn" do
-    url "https://files.pythonhosted.org/packages/c3/53/be79eff13cc289570b4c6875fa4641a91a1dc51ece7f6213f364b0a58c4c/uvicorn-0.52.2.tar.gz"
-    sha256 "4294500b9c8f7a3ef3e975d9e4be08c3eb76441af449a9e6e10146c6a182ffec"
+    url "https://files.pythonhosted.org/packages/2e/28/64ca011edf31c715b4fad359c587ea52391aaffa125065695590241ff617/uvicorn-0.52.3.tar.gz"
+    sha256 "18857b9e6579300be55c91c0a1cfd37d9a2cf0cabea33b88275f199eb73b8b58"
   end
 
   def install

@@ -1,18 +1,18 @@
 class Asc < Formula
   desc "Fast, lightweight CLI for App Store Connect"
   homepage "https://asccli.sh"
-  url "https://ghfast.top/https://github.com/rorkai/App-Store-Connect-CLI/archive/refs/tags/4.4.3.tar.gz"
-  sha256 "e50c0c1d3b9a6b6ee88a23b48dd26c79186dd088e8042fc1c7d1b8e706bc4561"
+  url "https://ghfast.top/https://github.com/rorkai/App-Store-Connect-CLI/archive/refs/tags/4.5.0.tar.gz"
+  sha256 "3d2dbe59110623e7201df4afa1818cb98e7c1e3fd30318f97626dc9057128ddb"
   license "MIT"
   head "https://github.com/rorkai/App-Store-Connect-CLI.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ae0b2ddf0d7182917ebf9adb74a6e3d1ae34cc43b78fe4a530a41ff7c8ee4b5c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "68f7c4693c8a41aa5918d5eb3fcb6f99ab4bae7ad430867c18f71bb87bb61f63"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f0451f0900eed2762b84a5484b7f2d1a0bad4d631a56cccd19e33dc16f931a2c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "347afee651fd7099b142c57efbbb7897761d51e3b206f4ae5d0e4437a7601af9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "860e102fd461c542c586f9eddad4ac2f21520d863a29f226d5929544e60dde31"
-    sha256 cellar: :any,                 x86_64_linux:  "b1953a24f54865bf81dd12399d45f48586a10cf7fd19745372d11f840af3cd90"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "35b43458475a59efa0e856b799a150c06eeaab868026fd490c69fc79805f01a7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c67751272ed1f8b944cda8eb5d04f58db02f797594371e7f020a32a8d93b4bcd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dcce569e625a25eea67ddf4961b2382a454317627fa708dfabb5f39026ed763f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b9064447db0cb13d85152c6f1c5abefcf8e6945acd63b7a9250cb00c5aca93c1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "895eb18f0f79b727f1b896dc568de0772137a36223e3ecc4d9d5650e273c24e8"
+    sha256 cellar: :any,                 x86_64_linux:  "679e2944cb2a03ce3be766b3b7f8211115b9c8c6cb90cf257beea771c843815f"
   end
 
   depends_on "go" => :build

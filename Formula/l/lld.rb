@@ -3,7 +3,6 @@ class Lld < Formula
   homepage "https://lld.llvm.org/"
   url "https://ghfast.top/https://github.com/llvm/llvm-project/releases/download/llvmorg-22.1.8/llvm-project-22.1.8.src.tar.xz"
   sha256 "922f1817a0df7b1489272d18134ee0087a8b068828f87ac63b9861b1a9965888"
-  # The LLVM Project is under the Apache License v2.0 with LLVM Exceptions
   license "Apache-2.0" => { with: "LLVM-exception" }
   compatibility_version 1
   head "https://github.com/llvm/llvm-project.git", branch: "main"
@@ -37,7 +36,6 @@ class Lld < Formula
     system "cmake", "-S", "lld", "-B", "build",
                     "-DBUILD_SHARED_LIBS=ON",
                     "-DCMAKE_INSTALL_RPATH=#{rpath}",
-                    "-DLLD_BUILT_STANDALONE=ON",
                     "-DLLD_VENDOR=#{tap&.user}",
                     "-DLLVM_ENABLE_LTO=ON",
                     "-DLLVM_INCLUDE_TESTS=OFF",
@@ -48,6 +46,8 @@ class Lld < Formula
   end
 
   test do
+    assert_match version.major_minor_patch.to_s, shell_output("#{bin}/wasm-ld --version")
+
     (testpath/"bin/lld").write <<~BASH
       #!/bin/bash
       exit 1

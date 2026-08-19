@@ -1,17 +1,17 @@
 class Tabiew < Formula
   desc "TUI to view and query tabular files (CSV,TSV, Parquet, etc.)"
   homepage "https://github.com/shshemi/tabiew"
-  url "https://ghfast.top/https://github.com/shshemi/tabiew/archive/refs/tags/v0.14.1.tar.gz"
-  sha256 "88876174a3a008618e5b2a55df5dffa26cc0593ce2dcf6b057900ffc303732a8"
+  url "https://ghfast.top/https://github.com/shshemi/tabiew/archive/refs/tags/v0.14.2.tar.gz"
+  sha256 "20e1d8c101d8882860f52d3fa5106382544ff1441d57565824dce65c091e8360"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "cb87a123a11233d70c9aa7e14782882a8100d2182e630c2deb65a99c1d03fd5f"
-    sha256 cellar: :any, arm64_sequoia: "af95a38dd261b57bc99bce39b3b9334df498c9f3b125debf62449719af82e476"
-    sha256 cellar: :any, arm64_sonoma:  "b27719475764134ad5530898d4592287303077c4a9cf041330f69a931512f42f"
-    sha256 cellar: :any, sonoma:        "55bb40a1701f9dd99f5fdd11c0b935acde0b2e71f334d46742db26cacb6bb5cd"
-    sha256 cellar: :any, arm64_linux:   "4b8e97dffba63a2444a3dc380f0f9198cad6d2aa0b10790bf9905a9cd181ebd4"
-    sha256 cellar: :any, x86_64_linux:  "2d0bc86b6ecf2011a1fc251aa5e796b3fa5921242fe37e352a6b17c76aeebc31"
+    sha256 cellar: :any, arm64_tahoe:   "778bb2729869b8c824e9f38a6e9d7f7c45e5d216aa0d22e2ee596c89eed845b5"
+    sha256 cellar: :any, arm64_sequoia: "947cbddcd80d4cb8a49efeffdf3c8281838e9f8cff3017b394edbc7e240b4fe2"
+    sha256 cellar: :any, arm64_sonoma:  "25f6db107858ec79ade9185b08d713baa41ab531d74f7bf036844b42cba7ac56"
+    sha256 cellar: :any, sonoma:        "4c1cf6e1d2d015bdeea198c12423af2bd87dc862f12f059e59ffabcbb73ac135"
+    sha256 cellar: :any, arm64_linux:   "76119ed39335e3596ffdd0efdffee9e4a40c0f2ca8776f7e3c41421a5f63f895"
+    sha256 cellar: :any, x86_64_linux:  "a61885ec93d6fea35b441256bacaf402a0024455ac37da36b2ee4bda7ff43a23"
   end
 
   depends_on "pkgconf" => :build
@@ -47,7 +47,7 @@ class Tabiew < Formula
       r.winsize = [80, 130]
       r.set_encoding("UTF-8")
       refute_nil r.expect(/\e\[6n/, 10), "expected cursor position query"
-      w.write "\e[1;1R\r"
+      w.write "\e[1;1R"
       refute_nil r.expect("you think?", 30), "expected the CSV to render"
       w.write ":Query\r"
       w.write "select wait from test where tide < 40\r"
