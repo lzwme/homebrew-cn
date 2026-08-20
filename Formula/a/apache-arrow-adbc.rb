@@ -7,6 +7,11 @@ class ApacheArrowAdbc < Formula
   compatibility_version 1
   head "https://github.com/apache/arrow-adbc.git", branch: "main"
 
+  livecheck do
+    url "https://archive.apache.org/dist/arrow/"
+    regex(%r{href=["']?apache-arrow-adbc[._-]v?(\d+(?:\.\d+)*)/}i)
+  end
+
   bottle do
     sha256 cellar: :any, arm64_tahoe:   "5f6de2cd522f1f1d2524591be801b25bf805138ab6f83d68e5125123f0f16c7f"
     sha256 cellar: :any, arm64_sequoia: "045de67546f16a3e1afae952546c1f9b2e6c945cd19d49ec27d9a03f00f99471"

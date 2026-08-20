@@ -1,18 +1,18 @@
 class Gammu < Formula
   desc "Command-line utility to control a phone"
   homepage "https://wammu.eu/gammu/"
-  url "https://ghfast.top/https://github.com/gammu/gammu/releases/download/1.44.0/Gammu-1.44.0.tar.gz"
-  sha256 "0f511812483f7e05143ffba568e30af4a3210a0cd53fe41abf4ed2c02ef99740"
+  url "https://ghfast.top/https://github.com/gammu/gammu/releases/download/1.44.1/Gammu-1.44.1.tar.gz"
+  sha256 "59876301ed7556c909b656b09c07d9d43ef167eba1ae976175710024188f053d"
   license "GPL-2.0-or-later"
   head "https://github.com/gammu/gammu.git", branch: "master"
 
   bottle do
-    sha256 arm64_tahoe:   "25f648c33ccf24574deb307e68c29995b7489c215592185f9092ce507e4f490a"
-    sha256 arm64_sequoia: "a803e8a35a2dc9b464829eed033030028021ab7669a3d7aa12d43c28317e881c"
-    sha256 arm64_sonoma:  "b345782fa58b97716a043ee35a57e295d4fc39eecde9c8f3ff24ad6609ae7fc3"
-    sha256 sonoma:        "70205916795a6449b78024e024fcf7a8e3cdc40f2b82a83b49fe316a4e00d50c"
-    sha256 arm64_linux:   "2c4ba294a224e3e6ebdf03574758f2397bc958494ab12a1fd6ff8acc2c79fc08"
-    sha256 x86_64_linux:  "ec8d64bae9dd9de155b9fa92096bb477c51de3ce366d906c04ab8e21e1abb82e"
+    sha256 arm64_tahoe:   "6ba632ae130339512b36d44aa4edd45f07644a6f96e2c17680cb1afb4338ab75"
+    sha256 arm64_sequoia: "fcfc3cd0d52f54de9006b306c77a1b482585781f9fd8856f5f42401c2b59b0a8"
+    sha256 arm64_sonoma:  "25e598940d6a204c28f1b4a6467baef9d43573cd04cfd9184b8114deecc7c816"
+    sha256 sonoma:        "15f0d17e675bf02aed63e8903ef168b7944cc4d0faa7aa2d89d90bcb4b3a0cb9"
+    sha256 arm64_linux:   "7dbd3a9ec24fec4a4aac3589de5db0590688084f36492674cd49ca878cd074e3"
+    sha256 x86_64_linux:  "8b663a772f2d96bc76548e0347a6b6f9c2aa197fc995734edf00b2ced27a3fb1"
   end
 
   depends_on "cmake" => :build

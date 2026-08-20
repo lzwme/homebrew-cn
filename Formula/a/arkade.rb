@@ -1,8 +1,8 @@
 class Arkade < Formula
   desc "Open Source Kubernetes Marketplace"
   homepage "https://blog.alexellis.io/kubernetes-marketplace-two-year-update/"
-  url "https://ghfast.top/https://github.com/alexellis/arkade/archive/refs/tags/0.11.119.tar.gz"
-  sha256 "563918636a83f977ec6b2ed7e6768f709d7c377a572cb4e8307ad330700f1841"
+  url "https://ghfast.top/https://github.com/alexellis/arkade/archive/refs/tags/0.11.121.tar.gz"
+  sha256 "40b49129896efc89982636caa0c22df6f49fb427d5d689d5e2344151c2e24678"
   license "MIT"
   head "https://github.com/alexellis/arkade.git", branch: "master"
 
@@ -12,12 +12,12 @@ class Arkade < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b16210b6431ca333ad28be45461f497e522fd3a4a3726da779e8d51c705a086b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b16210b6431ca333ad28be45461f497e522fd3a4a3726da779e8d51c705a086b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b16210b6431ca333ad28be45461f497e522fd3a4a3726da779e8d51c705a086b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0d832f51ed815658edea85b77de1ee599bd98b74a7676baf50d335396c12fd95"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5dafd6dc3f525c90304c8ba25b2847c6bc5be1099de19a38c4348154e5502c39"
-    sha256 cellar: :any,                 x86_64_linux:  "178ff08b883dab63d987097a966ce8fa11926909b82024d8d6109b7f528c2522"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "97060a9a80c3bcc0392989bca9011513bbb9741f4fd50fe592c434ea6d3e982d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "97060a9a80c3bcc0392989bca9011513bbb9741f4fd50fe592c434ea6d3e982d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "97060a9a80c3bcc0392989bca9011513bbb9741f4fd50fe592c434ea6d3e982d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b84dd578998a2eb127432402e552c5f39b75debb9623cad9d14355c8cbfcfd68"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bdb3c4625b10cbbf660fb37ba6826c569061a67640a27c0faa06d396c592f66d"
+    sha256 cellar: :any,                 x86_64_linux:  "f04be4eae458590b40e4f2e5ff217f98a8eae98ce7de2b4b0ed1a12dcfd296c9"
   end
 
   depends_on "go" => :build

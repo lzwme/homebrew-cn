@@ -1,18 +1,18 @@
 class Auth0 < Formula
   desc "Build, manage and test your Auth0 integrations from the command-line"
   homepage "https://auth0.github.io/auth0-cli"
-  url "https://ghfast.top/https://github.com/auth0/auth0-cli/archive/refs/tags/v1.32.0.tar.gz"
-  sha256 "50d25c4b4bb89465664b558d00623008c0c366ae2596b440e3c0b3fbdaedd626"
+  url "https://ghfast.top/https://github.com/auth0/auth0-cli/archive/refs/tags/v1.33.0.tar.gz"
+  sha256 "b4488d0d4d07e6aa810121801d49ba73ba66aafe3ebb5f3b993fabf88f51c8f9"
   license "MIT"
   head "https://github.com/auth0/auth0-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "541888e73eb1ca643101373cac8e973316bd7d5cb883adab75b7ff2de2c04cd0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "541888e73eb1ca643101373cac8e973316bd7d5cb883adab75b7ff2de2c04cd0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "541888e73eb1ca643101373cac8e973316bd7d5cb883adab75b7ff2de2c04cd0"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1a7baf8a8f518cacc79307f8942c506ba22500b7bcb0e741aaaf6a841ac2e5f6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "49ba104a4fb3ac6fbefad3e13d70e2d83379948df0df84abfd0f99996f4b47ea"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e57cc4bea454f1a1903cc01273429b50c404e14d2f473861f58d4e14d11fabda"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "44fb517c005b10333cf61ff74873192453cd770b7e52ce2c2d75ebe8d8c4fbf8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "44fb517c005b10333cf61ff74873192453cd770b7e52ce2c2d75ebe8d8c4fbf8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "44fb517c005b10333cf61ff74873192453cd770b7e52ce2c2d75ebe8d8c4fbf8"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2da7774c2ae45bf46326e92f25220a99bf6a0515292b594f071b72886aa740a4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "97f27156f1da7191fb47e5e088859bbc7c72d970d096282880ec2a00e73fd716"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a3cdfb299da353dddead15367e838e4636c2058c2d33fbdf2c399fd63d208383"
   end
 
   depends_on "go" => :build

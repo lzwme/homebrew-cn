@@ -1,8 +1,8 @@
 class Onednn < Formula
   desc "Basic building blocks for deep learning applications"
   homepage "https://www.oneapi.io/open-source/"
-  url "https://ghfast.top/https://github.com/uxlfoundation/oneDNN/archive/refs/tags/v3.13.tar.gz"
-  sha256 "f90a34cc3f1a5af511570d72f4437205efdf97e1d28c576418daa7ef1a34daaa"
+  url "https://ghfast.top/https://github.com/uxlfoundation/oneDNN/archive/refs/tags/v3.13.1.tar.gz"
+  sha256 "911275081f9cc3406cb3e7754a0f7a8200adcbff09439d6cde0a1e543f343c5b"
   license "Apache-2.0"
   head "https://github.com/uxlfoundation/oneDNN.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Onednn < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "e3c79d1dc6b878eed0e201d8f6c643bafc9434291bea6831478f014f6fccf824"
-    sha256 cellar: :any, arm64_sequoia: "9e4232c18a514bd861171c4ee3f91252db3d92a78afd3dcf2f55fa50ba15d33d"
-    sha256 cellar: :any, arm64_sonoma:  "1c9a94e72f7586dd771c3de00d191b9677ed4af989f00c6375b6394a8287ac1f"
-    sha256 cellar: :any, sonoma:        "2403e502f0351aa69fa8fd2685fbab56580cda44f03007fcb4090b10b9c3b6f6"
-    sha256 cellar: :any, arm64_linux:   "d925663eac698814a77bc9580e8cf043a65588d3f2b426e4c3e355bad676ba75"
-    sha256 cellar: :any, x86_64_linux:  "2923619372a5381b502741989ffc9f8e2f02a812a2ccc4a27543b841c8e9b85a"
+    sha256 cellar: :any, arm64_tahoe:   "facfc1f780fad43511232ab75f2cfebf678fedcff3524e71bc698134b5a00a45"
+    sha256 cellar: :any, arm64_sequoia: "4d35520bd8d5bd5414fd7d19f1cad760c471634e8c0cd26697e4419abf03a478"
+    sha256 cellar: :any, arm64_sonoma:  "15ecfc8355103f86f41d0610f8df4eebba3b956c9bc24ead8f1e249a8ca44aea"
+    sha256 cellar: :any, sonoma:        "ddf739856bd9fe693bb14eafd9ea6cf4b12b89e6f366274fc5b8877c9f2e6c84"
+    sha256 cellar: :any, arm64_linux:   "85e4ee3f0e131cbf69618e7644e9ade7e4764461c5d8ebc4dab1f301115d1f0a"
+    sha256 cellar: :any, x86_64_linux:  "deff1e8da8ee1aaf4efbe84eda84c2f4fe89242c9ea99ffb9d535dabf83b627b"
   end
 
   depends_on "cmake" => :build

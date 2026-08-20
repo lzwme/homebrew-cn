@@ -1,9 +1,9 @@
 cask "neat" do
   arch arm: "-arm64"
 
-  version "0.0.58"
-  sha256 arm:   "61299c283780ac21ab9ea97fd269361f3adc7b1065d8b68ac0af48f6d160e09c",
-         intel: "8ba6f14fb57ba7e48316312e071f7f02bbece2c4b3ed626c00766140fac4bb8f"
+  version "0.0.63"
+  sha256 arm:   "52e31f839420ab47a7bb00b2d6570def5e332ddf56e9512814350ee57816430a",
+         intel: "6f53e67fec43e9c9d004a766281e74a0b2d76433e372ca2b8b888f804df0abc8"
 
   url "https://ghfast.top/https://github.com/neat-run/activity-feed-public/releases/download/v#{version}/Neat-#{version}#{arch}.dmg",
       verified: "github.com/neat-run/activity-feed-public/"
@@ -16,7 +16,7 @@ cask "neat" do
     strategy :github_latest
   end
 
-  depends_on :macos
+  depends_on macos: :monterey
 
   app "Neat.app"
 

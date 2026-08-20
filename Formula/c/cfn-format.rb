@@ -6,10 +6,6 @@ class CfnFormat < Formula
   license "Apache-2.0"
   head "https://github.com/aws-cloudformation/rain.git", branch: "main"
 
-  livecheck do
-    formula "rain"
-  end
-
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "49758cff5c060a914dd2517a7c2d2d5bae834904e76ce7456734de86f94a4d58"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "49758cff5c060a914dd2517a7c2d2d5bae834904e76ce7456734de86f94a4d58"

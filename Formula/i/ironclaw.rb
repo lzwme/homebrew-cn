@@ -1,8 +1,8 @@
 class Ironclaw < Formula
   desc "Security-first personal AI assistant with WASM sandbox channels"
   homepage "https://www.ironclaw.com"
-  url "https://ghfast.top/https://github.com/nearai/ironclaw/archive/refs/tags/ironclaw-v1.2.0.tar.gz"
-  sha256 "4d64c4fce52fadf47b7d793d24d4e3085f68fe3fb7395a9d6fc1e5ddc9fbf8bb"
+  url "https://ghfast.top/https://github.com/nearai/ironclaw/archive/refs/tags/ironclaw-v1.3.0.tar.gz"
+  sha256 "431154b5ee1ab9647faa422eb98827a1d3e92560ba16ecf2c9d756f5736d7688"
   license any_of: ["MIT", "Apache-2.0"]
   head "https://github.com/nearai/ironclaw.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Ironclaw < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "23f272e0d41df365b7c80f33fef8397d95f30b6b9022f20c40c5251ff01cfc80"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "86a4ea1ae7e294c6f00499998525c8cd741b054ae2608b88acd725a2c686cea8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9aea65fd01c6d0ce34b9c875414f0f5057114f6344d0da9c46d0571fe7d9c2e8"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e04f588cfa25cd528780761227e90919a5d75b010a031fb6cd9394be7c088447"
-    sha256 cellar: :any,                 arm64_linux:   "29dfcc86e0caf9e942d6067922bda2e835c1079a193e86a84f2fb852635942cc"
-    sha256 cellar: :any,                 x86_64_linux:  "46b61fab36d5caca43671c1c98652849a238a275dbefd884467506e4fd05a1f8"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ab62f29863706a41ea6e2b8f9f1d41c5541554cc5e928a335cd03b1ec2a5bd50"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3c4acc0493c8f6a38c3150fa89ceea51bd130ae7afb2a62d1d6df3e21856d851"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0b07eed876e8f8419f3d90c992571318b1ecf5b0e400cbc4788b5e9ca81ac72b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4824873ee2927679c13cafdcc10aef247844250229ecb419b943fb5520000842"
+    sha256 cellar: :any,                 arm64_linux:   "2841842cace6e4c769f38366636d31ef3435029f6235057fbd62dd5111fbad49"
+    sha256 cellar: :any,                 x86_64_linux:  "06b1f249514d1b656c4e64891bd2683a4daeabac5c465ae74a88e468aa421149"
   end
 
   depends_on "corepack" => :build

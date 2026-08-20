@@ -1,8 +1,8 @@
 class Atlantis < Formula
   desc "Terraform Pull Request Automation tool"
   homepage "https://www.runatlantis.io/"
-  url "https://ghfast.top/https://github.com/runatlantis/atlantis/archive/refs/tags/v0.46.0.tar.gz"
-  sha256 "35ee65ebecd4c9999e9841aaa3e5bce626f292de6b4bcf22fd5c4599898f1178"
+  url "https://ghfast.top/https://github.com/runatlantis/atlantis/archive/refs/tags/v0.47.0.tar.gz"
+  sha256 "e216b4da18baa9f5778a6fdeccad45e5df39370066005bf6f3532812986b3538"
   license "Apache-2.0"
   head "https://github.com/runatlantis/atlantis.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Atlantis < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2b7ba09f0d0d86b6e20ecce71f5a1c60f6b4d9d8fb915b50d2713082474456c1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2b7ba09f0d0d86b6e20ecce71f5a1c60f6b4d9d8fb915b50d2713082474456c1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2b7ba09f0d0d86b6e20ecce71f5a1c60f6b4d9d8fb915b50d2713082474456c1"
-    sha256 cellar: :any_skip_relocation, sonoma:        "36620502559085f9e3607ed68b17c93eb555fee83d6158b7f24986104bc265e9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e1c65ebca144c3943c39f10d7c6b04271573f00686256f8bd04eb6e9291974f4"
-    sha256 cellar: :any,                 x86_64_linux:  "549b7dc6488dd7fa5e7f70f0b6a4e70e60a37da2db684f71a04b3eba7624630f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "667b0f36e9f970b2c8513a5be35e118c2edc61a6b376f0971f72f6f9c437d959"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "667b0f36e9f970b2c8513a5be35e118c2edc61a6b376f0971f72f6f9c437d959"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "667b0f36e9f970b2c8513a5be35e118c2edc61a6b376f0971f72f6f9c437d959"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3af3c8ed20df2e7a25e919c073c1e28c54473455c3db0a94bbe4c943bd10670a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "33570ae87fd5d55bdb909c672c371142024278d35c01e38fb1cad0c7c98e44c4"
+    sha256 cellar: :any,                 x86_64_linux:  "5b31bb2302b3aa1ecef6f0b1e547d8d52e7e4ebfb4072964d4b779a0f114f628"
   end
 
   depends_on "go" => :build

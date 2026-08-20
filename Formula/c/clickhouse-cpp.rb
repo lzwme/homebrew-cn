@@ -4,16 +4,16 @@ class ClickhouseCpp < Formula
   url "https://ghfast.top/https://github.com/ClickHouse/clickhouse-cpp/archive/refs/tags/v2.6.2.tar.gz"
   sha256 "bac497857759e991fa4e1638bccf936cb36d10ad79273695a570272cc4891428"
   license "Apache-2.0"
-  revision 1
+  revision 2
   head "https://github.com/ClickHouse/clickhouse-cpp.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "37ca89079fefc10f2cf686da11d36e5f4495a7906283c21d67bbb5c3bfe1702e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6429bb137ec8ac420b6bebf958725f78a4f851cfa78f16a529d751e75b52627b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8eaef3c9de5312c4aedfde5d9449fa4bf07825a701282de9bc0e466600044ff2"
-    sha256 cellar: :any_skip_relocation, sonoma:        "33bfa318c532cc02c9a98fc9961872e769014f5cf5c73e7f8d22768ddcda2ca6"
-    sha256 cellar: :any,                 arm64_linux:   "d3639f10f9fcae002b9567249d3ad618150e70f0ee50d6bb739d1ad2326a8d84"
-    sha256 cellar: :any,                 x86_64_linux:  "9b52025f5185d3b85666a5f485d7a9fc94545ef31d0e8115f76f1835c89d3e5f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cc59c8e3812ac0243f69277819fb097c4b94edff75ec71eaf442d4fd08b87566"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ca145c9c1ae7a243e04cf0a778f4584c4bd94670856caf81a8cbaa1b12b1b19d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d5137ef34624dc1d60aab6785255f463573817185a5f8c7ddbd522759bf482d2"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f317b491cfea5a75a3b80ae807030bd39d9de290137567ff124f67f6d685abe4"
+    sha256 cellar: :any,                 arm64_linux:   "7aad58121084d70034101aebbb4dc4ea48849d9bb00dc8cfead4f09ae6c15066"
+    sha256 cellar: :any,                 x86_64_linux:  "be84342d0c97860051537d8c5e2557e16ffbc8d26cbf5419f8b6bab9532b6e64"
   end
 
   depends_on "cmake" => :build

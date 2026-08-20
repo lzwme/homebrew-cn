@@ -1,19 +1,19 @@
 class Coacd < Formula
   desc "Approximate convex decomposition for 3D meshes with collision-aware concavity"
   homepage "https://github.com/SarahWeiii/CoACD"
-  url "https://ghfast.top/https://github.com/SarahWeiii/CoACD/archive/refs/tags/1.0.12.tar.gz"
-  sha256 "9357bd6da525127ce538f6f0a3996e33573089848449bd70a2ae0c9bb82966c6"
+  url "https://ghfast.top/https://github.com/SarahWeiii/CoACD/archive/refs/tags/1.0.13.tar.gz"
+  sha256 "0e9e875fc55e6e399d4691cc4a47e36d0f64d076937de6f78bc7c4aa28bb472b"
   license "MIT"
 
   head "https://github.com/SarahWeiii/CoACD.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "83ca233838964637ff85cc749f565f5385b0e181ddb69452af0ff8f2623b92ab"
-    sha256 cellar: :any, arm64_sequoia: "18fc2d14e9b128ffa926834167fa1e921926a769342a9f78ddb27e606889f368"
-    sha256 cellar: :any, arm64_sonoma:  "8706c6c23bd27ada580c0ae287a97db48eee340b32ca55e40c23420fb00d01d5"
-    sha256 cellar: :any, sonoma:        "04c5ec45be4d1eed41e046ba6b6eda936fdb4a98943256b73279c4527dd73e43"
-    sha256 cellar: :any, arm64_linux:   "0de096a5ece2b61d2fd5c9b6c91ab0dd2aa1c7aaa2921be41f0f86b9ea16bbb6"
-    sha256 cellar: :any, x86_64_linux:  "cd9ddee7b59615a3a1d04faee0c896a4327a751cbb5738f5655963011ce9fa66"
+    sha256 cellar: :any, arm64_tahoe:   "e2cdb593865c4be52a7f5a7129893dd8198c421258abd7c8b7ba6cd5c17bb098"
+    sha256 cellar: :any, arm64_sequoia: "c32f5f6c1f2bbe66dccfe486f5a9fe3771691bf1807d72dd4f8edb3c045af7b0"
+    sha256 cellar: :any, arm64_sonoma:  "8fab80ee535fe28c5121c61c258e54e544373c8e516f4feccb8070785fae5337"
+    sha256 cellar: :any, sonoma:        "d2996af51734b5d1f4329f5bcd8991bbe8544adeddd2b6a3a3338b39101a12a4"
+    sha256 cellar: :any, arm64_linux:   "17d70e43ee8b450f47a1d33a34adb495d95c55506739a2a14959ded6b7da22b0"
+    sha256 cellar: :any, x86_64_linux:  "24748509bb5d113c63b82352df1c965f45269581cf373d4e3169b8e725422962"
   end
 
   depends_on "cmake" => :build

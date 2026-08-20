@@ -3884,6 +3884,7 @@ Homebrew-homebrew-core/Formula/l/lld@19.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lld@20.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lld@21.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lld@22.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/l/lldb.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lldpd.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/llgo.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/llhttp.rb, Homebrew/homebrew-core, 1
@@ -9395,7 +9396,6 @@ Homebrew-homebrew-cask/Casks/c/combine-pdfs.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/comet.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/comfy.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/comictagger.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/c/comma-chameleon.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/command-pad.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/command-tab-plus.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/commander-one.rb, Homebrew/homebrew-cask, 0
@@ -12471,6 +12471,7 @@ Homebrew-homebrew-cask/Casks/font/font-s/font-sudo.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-s/font-sue-ellen-francisco.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-s/font-suez-one.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-s/font-suit.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-s/font-suite.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-s/font-sulphur-point.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-s/font-sumana.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-s/font-sunflower.rb, Homebrew/homebrew-cask, 0

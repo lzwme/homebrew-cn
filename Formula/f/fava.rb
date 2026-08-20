@@ -3,18 +3,18 @@ class Fava < Formula
 
   desc "Web interface for the double-entry bookkeeping software Beancount"
   homepage "https://beancount.github.io/fava/"
-  url "https://files.pythonhosted.org/packages/d2/0c/1e098493e8a61a67d69ccd3ab872136ff9d049c21b4d58c7cc8829046e02/fava-1.30.15.tar.gz"
-  sha256 "fbcec2df1c2ebd35756fb1b8b771f549bd84a019fb0e16bede99f1b4adc91847"
+  url "https://files.pythonhosted.org/packages/3d/06/2c40e01ea4b2e52d7ec7d96aba7c971ce4c32d8fc91a6e781ad069bc4f50/fava-1.30.16.tar.gz"
+  sha256 "447425cca159e34dfb230e5c93d5af9e202f366fc4508dc398b13e126c8f9c37"
   license "MIT"
   head "https://github.com/beancount/fava.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "e2feb3a378b9585698b6f371b079c47ab044c1d20b6a35de7dbd00f7f047c980"
-    sha256 cellar: :any, arm64_sequoia: "2379da580a98bebdd42a600bd55ff497b6b10f22a19ab3424c0caebe19180fc3"
-    sha256 cellar: :any, arm64_sonoma:  "c48c3132c514aaf6aa35d285fd7a105d60a9f5d0a0f1f06b0f2e8ae1ffa509c8"
-    sha256 cellar: :any, sonoma:        "e90bf66e1a6ff8eccd2cbfcc62d88ad03a7c4f0a751b7a33af0e5d385f7d657f"
-    sha256 cellar: :any, arm64_linux:   "35d6a6d91ccace0768ed9bbdc6ce44bc0e0cba0799fe548750374e22c0276c3e"
-    sha256 cellar: :any, x86_64_linux:  "9f2c4bee2c967fcbb1c11f7f5a2020166472279b750bab36a6a546b3ee57c38a"
+    sha256 cellar: :any, arm64_tahoe:   "b31bd43086f00e3d07a9c8cea860002e2ba7e07fefe4039e905f688377684908"
+    sha256 cellar: :any, arm64_sequoia: "d5daff18b1e78f52542c165c8f4fc6e1d44d6078067ceeeeedcf767fb2a42144"
+    sha256 cellar: :any, arm64_sonoma:  "46e3be0f80cd7fb8d0b94ae2fbe1c4edaa9147c3fb7b0a162ff56c308ae28331"
+    sha256 cellar: :any, sonoma:        "75d540099505fa77094f26df6e3ccea981023d6ec99432786623322ade3708e6"
+    sha256 cellar: :any, arm64_linux:   "176e10696b74c22b6b13e46b7cc8e034ad6217f614f6c79e47584dd12bfed247"
+    sha256 cellar: :any, x86_64_linux:  "279ef935b783af73fcbad9bd0e121f0d55a2ce46815cff7ef43f11a8793fd89c"
   end
 
   depends_on "bison" => :build # for beancount
@@ -95,8 +95,8 @@ class Fava < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/cd/63/9496c57188a2ee585e0f1db071d75089a11e98aa86eb99d9d7618fc1edce/idna-3.18.tar.gz"
-    sha256 "ffb385a7e039654cef1ab9ef32c6fafe283c0c0467bba1d9029738ce4a14a848"
+    url "https://files.pythonhosted.org/packages/5f/f7/abb373e5757eaec4b922b92f97ec8d6d7e057cf06778247604fbc4e7c3f3/idna-3.19.tar.gz"
+    sha256 "5e0811a4383b21dc5838069f801c4fb62113b7447663d2530d2bd6e77b49bf15"
   end
 
   resource "itsdangerous" do

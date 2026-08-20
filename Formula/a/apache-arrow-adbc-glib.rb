@@ -7,6 +7,10 @@ class ApacheArrowAdbcGlib < Formula
   revision 1
   head "https://github.com/apache/arrow-adbc.git", branch: "main"
 
+  livecheck do
+    formula "apache-arrow-adbc"
+  end
+
   bottle do
     sha256 cellar: :any, arm64_tahoe:   "ebf8cbb9f09b50648c862485614c1cc7246f9fa52160e6313de72f26a544780e"
     sha256 cellar: :any, arm64_sequoia: "42ab2cba36d98d42217d1f36f45077f845cfb679dae5df10cd429c686ee401fe"

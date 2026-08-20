@@ -1,8 +1,8 @@
 class Deepline < Formula
   desc "CLI for Deepline data enrichment and durable plays"
   homepage "https://code.deepline.com"
-  url "https://registry.npmjs.org/deepline/-/deepline-0.2.40.tgz"
-  sha256 "59ad8ceb3cef258f3962c88d89e701be8d30773a20e9aa6bd78c85e21ec0cd55"
+  url "https://registry.npmjs.org/deepline/-/deepline-0.2.60.tgz"
+  sha256 "741b67ab8795a1147f7c56612f0e2f60125acfec44f22a34fe6ffb74ee36fbdd"
   license "MIT"
 
   livecheck do
@@ -10,12 +10,12 @@ class Deepline < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c863cf1d2a41b09097387e1b8ad6a00e84a9531b25239accf201921ceeac79bb"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c863cf1d2a41b09097387e1b8ad6a00e84a9531b25239accf201921ceeac79bb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c863cf1d2a41b09097387e1b8ad6a00e84a9531b25239accf201921ceeac79bb"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a353761362b9abc7963872a6af8dabab5d9bbb372b574415c4465723713a3f03"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fcea608967508617429016efddc1548c6c700285276a78401990f0c849925431"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d786dc66e625a084cf728bd543be7036dc6dc4e5c892dddb6abf2190cdf0c364"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a96451c09c49cc8f16898bb90b93b5d19df064c6ef540f0d2f1e7e1263d80444"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a96451c09c49cc8f16898bb90b93b5d19df064c6ef540f0d2f1e7e1263d80444"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a96451c09c49cc8f16898bb90b93b5d19df064c6ef540f0d2f1e7e1263d80444"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c8b07d4a4497b6816ccd4260f994ec4ab53335084700c8d387a9ea2889821364"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7c5ad97b54dff1e71815b208f0b289774d321c0853cdb1ffcb2b253b049163bc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f28279b1fed5b5f2d59adf0a7364f4ceecfb6830334f08be01d8075266208c39"
   end
 
   depends_on "node"

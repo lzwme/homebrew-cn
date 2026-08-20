@@ -5,16 +5,16 @@ class Brpc < Formula
   mirror "https://archive.apache.org/dist/brpc/1.17.0/apache-brpc-1.17.0-src.tar.gz"
   sha256 "30fc544c74ef51419d262d279571c2c1b5db7dda1bc3bad893b1397d676fd02a"
   license "Apache-2.0"
-  revision 1
+  revision 2
   head "https://github.com/apache/brpc.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "7fd8baf767991673bba617384ec439e08470bb42a5b679b0f99cf9eaa8d26025"
-    sha256 cellar: :any, arm64_sequoia: "6d2313037b1c3aeaa5ba115adc652853d0f3c902f1b6b88232d0c93a128094ce"
-    sha256 cellar: :any, arm64_sonoma:  "e61659c49d7af11b031c9c3981077eaf9b5d193f60689c92507c2aa0bd89bc32"
-    sha256 cellar: :any, sonoma:        "80e31ae699d6e09b700b7cc5bb780319f1b7ff229525d8be2bc2b9adcc352328"
-    sha256               arm64_linux:   "77f534789724d3585deae2366b4ff5a9048e003382b83fea2be96eb839239230"
-    sha256               x86_64_linux:  "1dfa5ea83cc675b6eb3089fc4335ba3c9b50fb472acff5bfc3cffb1715dcb6ba"
+    sha256 cellar: :any, arm64_tahoe:   "a4eb547d9d6da5e9472847dce64c946d0eaa5195c69071ddab7c015141804d6a"
+    sha256 cellar: :any, arm64_sequoia: "591cc9d48c09b7326aa3b578cc606e935cf2940f3e8563566b76efe690f366f3"
+    sha256 cellar: :any, arm64_sonoma:  "da3d12411529265a34ba6b1261ec47d40624bfa92b44e718311ec0646b6ded8b"
+    sha256 cellar: :any, sonoma:        "131974e33f8a7dd281d9b00e640616250368b2717f732ae284990ddaa3a5e61b"
+    sha256               arm64_linux:   "aa7b392fb1167f175f2499d715fa97f732abe8cc4b2fbdf599bc41b379789dc8"
+    sha256               x86_64_linux:  "da46c490dcb0cc9641405fd5af2ece725657adb15d317c4060a0e9b4832b2a2c"
   end
 
   depends_on "cmake" => :build

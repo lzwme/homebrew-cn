@@ -6,6 +6,11 @@ class Hookdeck < Formula
   license "Apache-2.0"
   head "https://github.com/hookdeck/hookdeck-cli.git", branch: "main"
 
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ca22512684caeecdf7453c151e70f81f2ff8b05d97a8d40c8e85407ca531d574"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "ca22512684caeecdf7453c151e70f81f2ff8b05d97a8d40c8e85407ca531d574"

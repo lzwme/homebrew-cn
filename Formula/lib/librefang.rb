@@ -1,18 +1,18 @@
 class Librefang < Formula
   desc "Self-hostable operating system for autonomous AI agents"
   homepage "https://librefang.ai"
-  url "https://ghfast.top/https://github.com/librefang/librefang/archive/refs/tags/v2026.7.31.tar.gz"
-  sha256 "a72af257a64f3a5ebe8e418c2ef8d1c6455762d61f2e0b0473d12ea6680abafc"
+  url "https://ghfast.top/https://github.com/librefang/librefang/archive/refs/tags/v2026.8.19.tar.gz"
+  sha256 "630cd6cce50e19e26254de107ff6478549038fbb2aefddfa0449f99aac00f385"
   license "MIT"
   head "https://github.com/librefang/librefang.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "67418d7bcfbe1040812ab30ec8b16cece9f1330afb88369d95043f02e8f8fcb0"
-    sha256 cellar: :any, arm64_sequoia: "80018fdd3ef1df21f1fbe5f4fb8087afdc3705728ab76337777ce5e11109086f"
-    sha256 cellar: :any, arm64_sonoma:  "4d01abd103c052359790ca22e9f7eca8bb2a685ccaa20cf37367f43951d06853"
-    sha256 cellar: :any, sonoma:        "859e30b3eb6eb499cf381822a75e0365e60af606c78bd66b064d80abf28f1e3d"
-    sha256 cellar: :any, arm64_linux:   "ab04b282a1825ee1c9fffbdd3bc48490bb96f4a4b64a6d31be70eec135a4e150"
-    sha256 cellar: :any, x86_64_linux:  "5fc99fad51a56e190a12fa3982634a93f66898c51865b027b4dfd33e8fefbf82"
+    sha256 cellar: :any, arm64_tahoe:   "312893e9369680e3e3e2b0c5ca61923b4a707eb52e2181041467322840e5ca7d"
+    sha256 cellar: :any, arm64_sequoia: "fa7fc894c6c66e78a94b3bbeeb9d4028eef66ec8bf7376b3d625353d215c0cee"
+    sha256 cellar: :any, arm64_sonoma:  "09f9f368f136989c137b38728ffba201702f6ad46bcf8418dbd02435d94b8838"
+    sha256 cellar: :any, sonoma:        "fd1face71c6cccec526cc2ee41020e0ecbbe634b4bc857eb44fbd4c5f17640fa"
+    sha256 cellar: :any, arm64_linux:   "837493c253f113cce11aa0eb112957d32d0e28fd447d400e72266ce35fe1ceff"
+    sha256 cellar: :any, x86_64_linux:  "a87fa0f3890b55a938da1d35c3cad052451c9138539e48300bef48ed57124e14"
   end
 
   depends_on "pkgconf" => :build

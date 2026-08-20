@@ -1,17 +1,17 @@
 class NetworkDoctor < Formula
   desc "Network troubleshooting TUI"
   homepage "https://github.com/heymaikol/network-doctor/"
-  url "https://ghfast.top/https://github.com/heymaikol/network-doctor/archive/refs/tags/v1.11.4.tar.gz"
-  sha256 "fdaaef6ec3df6d88f483c39ef96f80857e755fceb4363f2bb8819c31154679c9"
+  url "https://ghfast.top/https://github.com/heymaikol/network-doctor/archive/refs/tags/v1.11.5.tar.gz"
+  sha256 "73f4c715add069acacc8ee871644fae5d6851e0ebd59039102567bcec5d23d8f"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e0ab12a6f35b3b3be786b87b3eec9d7039f4375fce80b998342a8e751d6ba40a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e0ab12a6f35b3b3be786b87b3eec9d7039f4375fce80b998342a8e751d6ba40a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e0ab12a6f35b3b3be786b87b3eec9d7039f4375fce80b998342a8e751d6ba40a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "efd86840209d08ea9f1cea5ae76ca932cf10fdf6519032733ba45b5480edf1fb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8f9679c878b4961d740d1829452299a31c3b5440503bfc30d9147793eede1377"
-    sha256 cellar: :any,                 x86_64_linux:  "3fb88eae6d0a7d07d0ee1ac54abc9c8ffc0e6806ea0403e75127f44ea581be9c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a2072c6ea4204f6e480a76fe87eb157e2881320e7e7b65ced99bb64d56e74b86"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a2072c6ea4204f6e480a76fe87eb157e2881320e7e7b65ced99bb64d56e74b86"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a2072c6ea4204f6e480a76fe87eb157e2881320e7e7b65ced99bb64d56e74b86"
+    sha256 cellar: :any_skip_relocation, sonoma:        "586606d5084400fd525ec8c7cdfe0c1b2fa0bdfaf250f32d65e5ec4724c9bd34"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "545d55a3aacd4ac87ee866e1408112c665fac82bc09631e1fdc150b58625e92f"
+    sha256 cellar: :any,                 x86_64_linux:  "b856dafa9c302498a086f6687081bb6f840afea0efacc11ad4e6599d11c5ffb1"
   end
 
   depends_on "go" => :build

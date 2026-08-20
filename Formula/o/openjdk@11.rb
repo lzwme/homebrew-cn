@@ -1,8 +1,8 @@
 class OpenjdkAT11 < Formula
   desc "Development kit for the Java programming language"
   homepage "https://openjdk.org/"
-  url "https://ghfast.top/https://github.com/openjdk/jdk11u/archive/refs/tags/jdk-11.0.32-ga.tar.gz"
-  sha256 "d0ff21a9964fe143a43a2bc011c8fecdd995f4cfa2eeda53b2fe95e4382ad464"
+  url "https://ghfast.top/https://github.com/openjdk/jdk11u/archive/refs/tags/jdk-11.0.32.1-ga.tar.gz"
+  sha256 "918a42d31544c5e7f70182c6ee76c95b1f042f914c375b814b64144cc8611adb"
   license "GPL-2.0-only"
   compatibility_version 1
 
@@ -12,12 +12,12 @@ class OpenjdkAT11 < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "dea9d66cc45daf06d90a9b24c31d4d7995166fd76d7670e6445fe4bfa5a7080c"
-    sha256 cellar: :any, arm64_sequoia: "12160d78c69c98f5e2eb063961aa6b01b1fdc17262eb4ffb2bc978c10caeebca"
-    sha256 cellar: :any, arm64_sonoma:  "4882b6da99588bb04aad158d7ab9d515ca6df7c30f66dd0df4439c9b12655a15"
-    sha256 cellar: :any, sonoma:        "0c1422deb80ee2c3f39a6238eddab2373d8cc5f766ea41d6478a4a024c67d462"
-    sha256 cellar: :any, arm64_linux:   "dcbbe429caf325994f3c24f61ef6451c898925d98ba70594fd44548379c1a2dc"
-    sha256 cellar: :any, x86_64_linux:  "60daf5c0655401f5cc2d05dc14afcaccdaefc473b20d194b036290839acb59d6"
+    sha256 cellar: :any, arm64_tahoe:   "b5ba74af74273f4135ed3b5474ec929dd41c7e6d573bbdbe398ac3c8ae8e11dc"
+    sha256 cellar: :any, arm64_sequoia: "f11b64f7d65c682021c685666177692bbd0f60c24aca99143e678d4c281ce0da"
+    sha256 cellar: :any, arm64_sonoma:  "14e45df7da45432b56bc0f89ac2c7447977389eb7999d1c2e5d2918cb8bedcc0"
+    sha256 cellar: :any, sonoma:        "f89945555fcb8bdce60f23b9a66a9f0ba1bbf9e85d051f4d4c652077ee92b58f"
+    sha256 cellar: :any, arm64_linux:   "a47fbdf47640b64dd1ca336706940ed5beb7d6adff241d369b246c9ff06c361c"
+    sha256 cellar: :any, x86_64_linux:  "871aea10e596355fe739f92b37076df6fc2f71e0a3bfb936f48fa608448872a3"
   end
 
   keg_only :versioned_formula

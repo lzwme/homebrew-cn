@@ -3,18 +3,18 @@ class Parsedmarc < Formula
 
   desc "DMARC report analyzer and visualizer"
   homepage "https://domainaware.github.io/parsedmarc/"
-  url "https://files.pythonhosted.org/packages/b4/05/2e9a446383a56b3785a68394411bd0970bf09df949816ba3edd74c097d6b/parsedmarc-10.4.2.tar.gz"
-  sha256 "a6c7a33a80eb6e9145437f9decbbfaf0a2c9b13a84e81c5b6e497534830f6944"
+  url "https://files.pythonhosted.org/packages/e0/34/d9b91a88e213b026c1ae4878622aca771601987ac0a1b3715caa8a7669d0/parsedmarc-10.4.3.tar.gz"
+  sha256 "8f79566ecf0c44df3787b6bd332c755bc35fb72995f7cde454b6a73bdab17753"
   license "Apache-2.0"
   head "https://github.com/domainaware/parsedmarc.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "515bb8091e538c3d27fd923d0bb02c38b50cb81b4a8be43132fe06ac72ef2591"
-    sha256 cellar: :any, arm64_sequoia: "bc1b4a6e565bbd5363ed163613fb4270a3db5a2e04be25b67edde68df0c2cfa7"
-    sha256 cellar: :any, arm64_sonoma:  "eaf834c9c70a5a6076775d41f9055a9353c5c1c77d58cb2d638567d0c0428fed"
-    sha256 cellar: :any, sonoma:        "ae3d5848f36ccba1ed7c4b7c40c3050aec3f2254f4994c1896fe0b498fd10d75"
-    sha256 cellar: :any, arm64_linux:   "e51e14eb79321ef5ddbdbcdaf55583dbf944f96c517bd4ea364209094c67bc1c"
-    sha256 cellar: :any, x86_64_linux:  "071893cbd9f9651964d8ab6d846ff80664bd5a66cf5fab87a99144f96bdbe95c"
+    sha256 cellar: :any, arm64_tahoe:   "e5a82ee9f0d47081b683691bec6a5a44b80118e3ef2320f1ccad43158d4cdd9e"
+    sha256 cellar: :any, arm64_sequoia: "798f6d8d47212290d9e5f6e82ff472216220582beadf815ee01b41e55429e443"
+    sha256 cellar: :any, arm64_sonoma:  "76cba78893f6cc906dcc1c2e777d8803973a598a3095f7276b1049498f4b7b2f"
+    sha256 cellar: :any, sonoma:        "9eb0fb3483089f0208c8cdf7cf2b228e8a3c0e6279c65eb2fd62423c284b6e66"
+    sha256 cellar: :any, arm64_linux:   "4b42b304b07733c1f923b042d9d026e83f853dafe9e6f89af360fcabbc812a90"
+    sha256 cellar: :any, x86_64_linux:  "c5ec60d8994ca2d1d01dadae648e52fcc35d61a35f8b184293642f765291cb6b"
   end
 
   depends_on "rust" => :build
@@ -74,13 +74,13 @@ class Parsedmarc < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/47/e4/139572e2459b7e10cd3409888a7312b8b5054c85ea41b28af417002af1c4/boto3-1.43.73.tar.gz"
-    sha256 "6e6c755e5039f204882c01d7936a46abce539b3f5bbb534a23a3f2afbc86f576"
+    url "https://files.pythonhosted.org/packages/02/3b/a8c14b2390a54189b0b14c03376e05150dcc4c1a875d18bff8f6594d7494/boto3-1.43.74.tar.gz"
+    sha256 "9d4d0dcf81c941cfe7d927486435521e0f3bf657cb68b10dfe445cfe311f8839"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/e3/ea/c8482ada4f409c91e6f9d640ee15838975f2a7c481dff98419a6d176b81a/botocore-1.43.73.tar.gz"
-    sha256 "0fa1e63c24b3531be3e1bc1687a88b3be9e63a430153f24edd93efc162bb1c51"
+    url "https://files.pythonhosted.org/packages/1d/fb/00969dfa9fee1d1e278a0e65109d07acacceae4acd177d9d9413479720ab/botocore-1.43.74.tar.gz"
+    sha256 "b127b24d49532b5d7b0851b4abb3d3b99f58a121f87f07c23dac7c4d88b25c72"
   end
 
   resource "charset-normalizer" do
@@ -204,8 +204,8 @@ class Parsedmarc < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/cd/63/9496c57188a2ee585e0f1db071d75089a11e98aa86eb99d9d7618fc1edce/idna-3.18.tar.gz"
-    sha256 "ffb385a7e039654cef1ab9ef32c6fafe283c0c0467bba1d9029738ce4a14a848"
+    url "https://files.pythonhosted.org/packages/5f/f7/abb373e5757eaec4b922b92f97ec8d6d7e057cf06778247604fbc4e7c3f3/idna-3.19.tar.gz"
+    sha256 "5e0811a4383b21dc5838069f801c4fb62113b7447663d2530d2bd6e77b49bf15"
   end
 
   resource "imapclient" do
@@ -239,8 +239,8 @@ class Parsedmarc < Formula
   end
 
   resource "mailsuite" do
-    url "https://files.pythonhosted.org/packages/43/e1/328dafc069c0b22dbafc545b1dd5a25d26f6eaddbe443f56b3a17522bef0/mailsuite-2.3.0.tar.gz"
-    sha256 "159f05b1e15d0a3eb60713cc6d18015581e25a1365ba9edde99e78f41f27bbdc"
+    url "https://files.pythonhosted.org/packages/67/26/1541682687781c85f8eac157847671bbfaf2a1abc581c534879bbec56538/mailsuite-2.3.1.tar.gz"
+    sha256 "5dce87cf3f463492a76d41fec5ac148b8b19a62078dec168a8dd7587e55acb27"
   end
 
   resource "maxminddb" do

@@ -1,12 +1,12 @@
 class Skills < Formula
   desc "Open agent skills ecosystem"
   homepage "https://skills.sh"
-  url "https://registry.npmjs.org/skills/-/skills-1.5.22.tgz"
-  sha256 "10cee39139debe6c0188f4727194ade59234b277ccca2320e3ed6b620ee7f14b"
+  url "https://registry.npmjs.org/skills/-/skills-1.5.23.tgz"
+  sha256 "a4ddbadeedfd7aee5e1823c2037b0a313ce4017a8ff1f23b9f7fe30d52a1c963"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "a0547d264e2653705178edba2507ea79d1d05500e3859bd210481282d591ae40"
+    sha256 cellar: :any_skip_relocation, all: "cc8b6e7c92379e2f8c1afe85dd541e6b52ccfea90a67745fac6410ff3233743d"
   end
 
   depends_on "node"

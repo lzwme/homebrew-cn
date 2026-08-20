@@ -3,14 +3,14 @@ class RapidMlx < Formula
 
   desc "Fast local AI engine for Apple Silicon with an OpenAI-compatible API"
   homepage "https://github.com/raullenchai/Rapid-MLX"
-  url "https://files.pythonhosted.org/packages/14/ac/dbdeeed3dbe851ef5c03bdd9a55ea47aa706c134c96b342e351437182133/rapid_mlx-0.12.14.tar.gz"
-  sha256 "5762261d9f91eb55010f4cb1e05c37c3a85b28016816083f625c6888c14d490d"
+  url "https://files.pythonhosted.org/packages/98/12/7d812cc002d779640e3c7cba8fb6927529b24f7c9027eec66662a35717d3/rapid_mlx-0.12.15.tar.gz"
+  sha256 "d50901621414c15ab0b45b5895ee98e2768db6ae2d1c42eb34beefcc4398af28"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "6cbb7f213fcb3cafb0432f3166565b07f0488ecee313f97f83358d8972349a50"
-    sha256 cellar: :any, arm64_sequoia: "0fc94fdcad8aa1472d763a386f59fb19917aa99cf27fb521995fa697c43365dc"
-    sha256 cellar: :any, arm64_sonoma:  "ce6f4fba0fd97d5c5d70c1e8012d4b256c48f7699f6c4dc0218603f4559ef44f"
+    sha256 cellar: :any, arm64_tahoe:   "6e22d785bf5e139b7e05cb7b71932a13396a0b3ea94dd02f94f09b823e4a64c0"
+    sha256 cellar: :any, arm64_sequoia: "511368423ca2850196f5024ce1fb50d0ab95b600b1324a1c35436122c7fe8e6d"
+    sha256 cellar: :any, arm64_sonoma:  "bc3b3db0096ee096166f5e3537e879183d5d11a609351bbc4197ea644b33a258"
   end
 
   depends_on "cmake" => :build
@@ -90,8 +90,8 @@ class RapidMlx < Formula
   end
 
   resource "httpcore2" do
-    url "https://files.pythonhosted.org/packages/a9/83/a896fc59940fc5a6e2aff3a4be1d92fa890112936803b331cae75a993c34/httpcore2-2.10.0.tar.gz"
-    sha256 "13c0cc3d1919d4f28457f60cd2c2abe04113a8af184ccf1142811beba936f9dc"
+    url "https://files.pythonhosted.org/packages/30/7d/ee6787efd5fe675d7cfd5eb149e40ccb5bdfc7e7c9252edcf7825c38986f/httpcore2-2.11.0.tar.gz"
+    sha256 "82e6fc95d784e6ee22ebd4b2cb57df53a2efb13ad6a11260a236ecebbc5f50c7"
   end
 
   resource "httpx" do
@@ -100,8 +100,8 @@ class RapidMlx < Formula
   end
 
   resource "httpx2" do
-    url "https://files.pythonhosted.org/packages/bd/3d/f9a8c07a3884f3e5b26205e8436a18b3af61c5d53192c3bea235574dbbec/httpx2-2.10.0.tar.gz"
-    sha256 "8741d7329fe2c7885fc9ceb61c8217acfb87a85f75723714b89ebf7ad7196338"
+    url "https://files.pythonhosted.org/packages/d5/4d/b3fcae38f29bfb0f300517d085c488f41f65e5b0a73023976b2122f568cc/httpx2-2.11.0.tar.gz"
+    sha256 "ea01b2e8febfb026e2601814c77ecb1e64fff114a87bc789cb520e67f27e7809"
   end
 
   resource "huggingface-hub" do
@@ -110,8 +110,8 @@ class RapidMlx < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/cd/63/9496c57188a2ee585e0f1db071d75089a11e98aa86eb99d9d7618fc1edce/idna-3.18.tar.gz"
-    sha256 "ffb385a7e039654cef1ab9ef32c6fafe283c0c0467bba1d9029738ce4a14a848"
+    url "https://files.pythonhosted.org/packages/5f/f7/abb373e5757eaec4b922b92f97ec8d6d7e057cf06778247604fbc4e7c3f3/idna-3.19.tar.gz"
+    sha256 "5e0811a4383b21dc5838069f801c4fb62113b7447663d2530d2bd6e77b49bf15"
   end
 
   resource "jinja2" do
@@ -190,8 +190,8 @@ class RapidMlx < Formula
   end
 
   resource "pygments" do
-    url "https://files.pythonhosted.org/packages/c3/b2/bc9c9196916376152d655522fdcebac55e66de6603a76a02bca1b6414f6c/pygments-2.20.0.tar.gz"
-    sha256 "6757cd03768053ff99f3039c1a36d6c0aa0b263438fcab17520b30a303a82b5f"
+    url "https://files.pythonhosted.org/packages/49/2e/ced460408999b33da6b31b0021b0f37d329e202d4169aeb164493778f25b/pygments-2.21.0.tar.gz"
+    sha256 "610ca751c9bc2492b38eb9a38a7fbc93edbbb2d7182edaf34e66ae493dee5c8c"
   end
 
   resource "pyjwt" do

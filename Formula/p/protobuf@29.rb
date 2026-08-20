@@ -4,7 +4,7 @@ class ProtobufAT29 < Formula
   url "https://ghfast.top/https://github.com/protocolbuffers/protobuf/releases/download/v29.6/protobuf-29.6.tar.gz"
   sha256 "877bf9f880631aa31daf2c09896276985696728137fcd43cc534a28c5566d9ba"
   license "BSD-3-Clause"
-  revision 1
+  revision 2
   compatibility_version 1
 
   livecheck do
@@ -13,12 +13,12 @@ class ProtobufAT29 < Formula
   end
 
   bottle do
-    sha256               arm64_tahoe:   "d64260e5486d84f5a1b9d148b312195cd0cad01ffaa6650be7f398641f7b7837"
-    sha256               arm64_sequoia: "8a2480de12ff62bcdda1ff470fa5262b9dc3dda3d6003c31db1cd4518f6084f6"
-    sha256               arm64_sonoma:  "21c12ab9181ce3d69269bf8a201c9c294ed3b1100bc01e7a7160791d44ef90ff"
-    sha256 cellar: :any, sonoma:        "4d9c428a6e05002587f2c1bf3570d5d47eccad3e11d067f10099b78bacc66231"
-    sha256               arm64_linux:   "802b6d94a6d56d39b68724bf54fb9b9955a6a07e6f74df07f7dabe009be65973"
-    sha256               x86_64_linux:  "ecc26644a590791965934f99f0c3d1ae7f4a1cf16377528b58f177e0104cda6e"
+    sha256               arm64_tahoe:   "c2effd4944e3617f67cdc91b4ffcd48a9250e362beff8ff3785d35aafe361869"
+    sha256               arm64_sequoia: "00412e2075877e31bfb4da918420dd219981762845ae486df8fa85dc7c406732"
+    sha256               arm64_sonoma:  "fa47cdb16cd6cb0697667764421b6ab2226eecdd4b3b8db859ba048385b74dbc"
+    sha256 cellar: :any, sonoma:        "eaf9d5a787e19d0cb138df62d57dc0643978547001f22e98d4f3bbfe4c712d57"
+    sha256               arm64_linux:   "3612f295657bcb4ee3961de69dbbd41d8aacf7eea99d503a053280d53a76c28e"
+    sha256               x86_64_linux:  "d0a15e23918212083bc319b4a26bddc1dc97acd940f03b9f9c6fe6ec9118866c"
   end
 
   keg_only :versioned_formula

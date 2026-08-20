@@ -4,12 +4,12 @@ class Unisonlang < Formula
   license "MIT"
 
   stable do
-    url "https://ghfast.top/https://github.com/unisonweb/unison/archive/refs/tags/release/1.3.0.tar.gz"
-    sha256 "9a9c53fcb7a6913504d3356b5661eae33c28271d6253fd5cb08cb5e93bd67295"
+    url "https://ghfast.top/https://github.com/unisonweb/unison/archive/refs/tags/release/1.4.0.tar.gz"
+    sha256 "43fd81354afd6f16adefb6beda6bb06f3df853ba74cf0ae3e85baa4018c22b31"
 
     resource "local-ui" do
-      url "https://ghfast.top/https://github.com/unisonweb/unison-local-ui/archive/refs/tags/release/1.3.0.tar.gz"
-      sha256 "80e097c82b6a38f16d3c3b42463c331e3e63f4d39f4360d894c82dd447237bee"
+      url "https://ghfast.top/https://github.com/unisonweb/unison-local-ui/archive/refs/tags/release/1.4.0.tar.gz"
+      sha256 "36e5b24d4e9836b5b7bb52669fcd59bc5a952777c8a69c5136a61e606fa08a13"
 
       livecheck do
         formula :parent
@@ -23,13 +23,12 @@ class Unisonlang < Formula
   end
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any, arm64_tahoe:   "4de5a870d24353cf61446d20b66563aaff8d3b7cbbc5bdf6996fa3679a4c606b"
-    sha256 cellar: :any, arm64_sequoia: "cd704f4f317b10defdd31d3dd4a9b8e8cb33f4e027dd8ef8c8cff6df7eede96e"
-    sha256 cellar: :any, arm64_sonoma:  "baa9e8b7ff3893ecc28d0560b8ed257fae625fa49298e2b0239fe608e6435b57"
-    sha256 cellar: :any, sonoma:        "a86929f4a586fdec23b082bd83b6c8862a0dba013edd8be6be7b3ed7786a723d"
-    sha256 cellar: :any, arm64_linux:   "ab02cb2f9d303085c6682a1a667322932fb05559cb88f1f05f8bec28fe3dfea4"
-    sha256 cellar: :any, x86_64_linux:  "ea7a04ca72740e8f4ff79334ccd8ed651de5046ebba835c9462669b0b6861750"
+    sha256 cellar: :any, arm64_tahoe:   "e1b182aaa2007527105a98e8d11683fe393902fb51e07ce9b8c09d36db70ad7f"
+    sha256 cellar: :any, arm64_sequoia: "a788df11b94caf5e1dc7aca9d27a4ea55d3ad7b2815de476a93a5482737016e9"
+    sha256 cellar: :any, arm64_sonoma:  "d6c410157b80a751527439ca540d77ab4847c6a4e177b6b61480b703b6540a95"
+    sha256 cellar: :any, sonoma:        "e4dfacde76d8a10d1bbe5bf6822cc3d5aeff21345e797c336420102fc1ea7710"
+    sha256 cellar: :any, arm64_linux:   "02f273b7190cb560122167ae28f46844e7481fcec589c21b7c70d78e1d552e93"
+    sha256 cellar: :any, x86_64_linux:  "b2748c470b5e364faac2d2322da18e478357a0232d12d93024b503367ade718a"
   end
 
   head do

@@ -6,6 +6,11 @@ class Execline < Formula
   license "ISC"
   head "git://git.skarnet.org/execline", branch: "main"
 
+  livecheck do
+    url :homepage
+    regex(/href=.*?execline[._-]v?(\d+(?:\.\d+)+)\.t/i)
+  end
+
   bottle do
     sha256 cellar: :any, arm64_tahoe:   "a34cd2a4118064e562ccf4129012601a1ff827035231835e244613520f04c055"
     sha256 cellar: :any, arm64_sequoia: "0c821be5ea7210ce575c0dd8dd4555e6f3766192b9ef41a4fb6867461340afc0"

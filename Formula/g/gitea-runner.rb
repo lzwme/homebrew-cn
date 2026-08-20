@@ -1,17 +1,17 @@
 class GiteaRunner < Formula
   desc "Official Actions runner for Gitea"
   homepage "https://gitea.com/gitea/runner"
-  url "https://gitea.com/gitea/runner/archive/v3.1.0.tar.gz"
-  sha256 "15991f1c0b4b5752d5ade4d812ff395ead5f8d2b8b9778065946286dce64ec3b"
+  url "https://gitea.com/gitea/runner/archive/v3.2.0.tar.gz"
+  sha256 "ddb864d468df3847842d1764f9bf617821bec69fbcc203d03ed472f2b2e4f6fa"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8081709134035648b615dbea93c375da15fe99f844717481132dd906accc363a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f4042e257886f1328f020f364582b8afbd9ff829f971311242eaacf58efd94ed"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5d241906a9cb0081dd5f576ab3fdafdfc919b90b306994bb9c7d16497fb53e53"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0c0e0c9bfa7582762c9fd083da7f88bcbaf31c593e08b0ef4bcb32972b83996e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3c105ef989249961015ef2945e946ad23979f2538194500e266a6131eee4067f"
-    sha256 cellar: :any,                 x86_64_linux:  "644b91c6b58162d913b5e14db87cc0a22b8a49eff877382a20cb24a23d0d6b79"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f25ba7d5b09e83045a25d4493249ac5367a69b1a839b1790b13db3e0f93630c6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c1679066eb7bdaadb5ca0b9eccd65b7225977a79bb7f63009efd2c762e9e3fb9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3018a02b53e6634e0455b73932b4fe569d8216cb83d0fe883a1053afe0163ac2"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3fe29b3755d7a5a86dd0868d2db7febfbeb7f7cb0f3f2a746d7cde52cc0cf649"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "41898d95ee55fe41b413459ece29a8e7edd0c1e106aed433276ee076911c1e04"
+    sha256 cellar: :any,                 x86_64_linux:  "1a7fbbc9754e65ad5946cf8288300c48a669a1b27284485e12e65c2e537bd535"
   end
 
   depends_on "go" => :build

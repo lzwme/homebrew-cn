@@ -1,8 +1,8 @@
 class SwiftSection < Formula
   desc "CLI tool for parsing mach-o files to obtain Swift information"
   homepage "https://github.com/MxIris-Reverse-Engineering/MachOSwiftSection"
-  url "https://ghfast.top/https://github.com/MxIris-Reverse-Engineering/MachOSwiftSection/archive/refs/tags/0.15.2.tar.gz"
-  sha256 "da737c566f615a1a2e3a50af1ebc647aca2d1ad95a49730641e095eca568d70b"
+  url "https://ghfast.top/https://github.com/MxIris-Reverse-Engineering/MachOSwiftSection/archive/refs/tags/0.16.0.tar.gz"
+  sha256 "19af8a2c34e0cf0a2cc8ad4291ca945dd238633e51449ab1baba528f12ee8470"
   license "MIT"
   head "https://github.com/MxIris-Reverse-Engineering/MachOSwiftSection.git", branch: "main"
 
@@ -12,13 +12,12 @@ class SwiftSection < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "95f90932598ca2d8c0814c207a4480d84abd95b65ec9a44ced7a4d457c10d4c6"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4caf40d2d8c4f86b57e9bbfee1bbce5b9086c3797f192ecb2c268a12fd0e99a7"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe: "2b1ac783287624b21d63a31a109e01a32045436fa252c5b125b2111c85e53e1b"
   end
 
-  # The Package.swift file requires Swift 5.10 or later.
-  # But it is actually only builable with Swift 6.1+ due to the usage of trailing commma in comma-separated lists.
-  depends_on xcode: ["16.3", :build]
+  # The Package.swift file requires Swift 6.2 or later.
+  # But it is failed to build on Sequoia with Xcode 26.3
+  depends_on xcode: ["26.4", :build]
   depends_on :macos
 
   uses_from_macos "swift" => :build

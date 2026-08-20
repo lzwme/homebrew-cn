@@ -1,18 +1,17 @@
 class GitMediate < Formula
   desc "Utility to help resolve merge conflicts"
   homepage "https://github.com/Peaker/git-mediate"
-  url "https://ghfast.top/https://github.com/Peaker/git-mediate/archive/refs/tags/1.1.0.tar.gz"
-  sha256 "f8bacc2d041d1bef9288bebdb20ab2ee6fbd7d37d4e23c84f8dda27ff5b8ba59"
+  url "https://ghfast.top/https://github.com/Peaker/git-mediate/archive/refs/tags/1.2.0.tar.gz"
+  sha256 "841f48c18f83f3be05a7227f429310d0ff3fc2275e285b46fc23c38bd7407ac7"
   license "GPL-2.0-only"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "69a57ba7f69a6c867af27eb65efed17666280a53a30c762a7943ab5384205713"
-    sha256 cellar: :any, arm64_sequoia: "99ac6bb97c0dacdd5bf9067192fc031f738b5ace8fefae55e464bd5820639232"
-    sha256 cellar: :any, arm64_sonoma:  "e5f2cabad4b3400197969d8e34b759634a30676f161a37f29c400d1da0a4f397"
-    sha256 cellar: :any, sonoma:        "94b9dbf70889d3a4a70bcc0d7a8079db0c9797bd861fc44a4ddbdfe4486e3bd5"
-    sha256 cellar: :any, arm64_linux:   "570da92723300a3fcd66ea2fa46f6e5ce03059a07c12f0a8b2733e35a696ffc4"
-    sha256 cellar: :any, x86_64_linux:  "00f6e2e4642851eb2236a4a4aa316f199cd184213040492bbf1747a6aab7de1c"
+    sha256 cellar: :any, arm64_tahoe:   "8c13903130eae451fc26489fe0d5649eea73d90e20a179ebf981e8045d78e782"
+    sha256 cellar: :any, arm64_sequoia: "b2ac564be2115a343eead38b9f39b50ccb1327cbbade8bb6f27858cae5969883"
+    sha256 cellar: :any, arm64_sonoma:  "3469431bc834ffd3ff6debe44fade46b9bc21139d5888eb5677820fef94f74d0"
+    sha256 cellar: :any, sonoma:        "41a5cd8f4e1b89da621108410d33fb442aadb4c36af73c0f0d82530b1ff595fd"
+    sha256 cellar: :any, arm64_linux:   "c4b7dd5f856589897576c95975b0f844b3511f5d8772c2e83a9752994544c788"
+    sha256 cellar: :any, x86_64_linux:  "c227d7594c93ec201e98a6ebb8735114d81720b6926a777f5bcb5fa39d789cf3"
   end
 
   depends_on "cabal-install" => :build

@@ -24,6 +24,7 @@ class OpensslAT30 < Formula
 
   # See: https://www.openssl.org/policies/releasestrat.html
   deprecate! date: "2026-09-07", because: :unsupported
+  disable! date: "2027-03-07", because: :unsupported
 
   depends_on "ca-certificates" => :no_linkage
 
