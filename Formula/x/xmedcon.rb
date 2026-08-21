@@ -7,6 +7,11 @@ class Xmedcon < Formula
   license all_of: ["GPL-2.0-or-later", "LGPL-2.0-or-later"]
   head "https://git.code.sf.net/p/xmedcon/code.git", branch: "master"
 
+  livecheck do
+    url "https://xmedcon.sourceforge.io/Main/Download"
+    regex(/href=.*?xmedcon-(\d+(?:\.\d+)+)-gtk3\.t/i)
+  end
+
   bottle do
     sha256 arm64_tahoe:   "1fee4aa59ac8f21772d17208e7dc675ec19a0dfdf3118312c0711c0e0ee152e2"
     sha256 arm64_sequoia: "45b73ae10dd4fef8fa1f6756ebe61477d622104dec80d402705240bbcb268b14"

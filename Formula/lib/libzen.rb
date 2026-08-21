@@ -19,6 +19,11 @@ class Libzen < Formula
     end
   end
 
+  livecheck do
+    url "https://mediaarea.net/en/MediaInfo/Download/Source"
+    regex(/href=.*?libzen[._-]v?(\d+(?:\.\d+)+)\.t/i)
+  end
+
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:    "ac591a473fcc4560644040121ea380ff05b3c9d376cae1e9126c40a62e2daf03"
     sha256 cellar: :any,                 arm64_sequoia:  "de3f0317ed82fd66a7bf6d5a4e876693c932b1a32f2974b02c4abf7b9ab79221"

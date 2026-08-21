@@ -1,13 +1,13 @@
 class Baguette < Formula
   desc "Headless iOS Simulator manager and host-side input injection for iOS 26"
   homepage "https://tddworks.github.io/baguette/"
-  url "https://ghfast.top/https://github.com/tddworks/baguette/archive/refs/tags/v0.1.92.tar.gz"
-  sha256 "f75272129f50b4c5afc19c789444d370fd2b0a6cdb5416fbcf9f287c11ff6950"
+  url "https://ghfast.top/https://github.com/tddworks/baguette/archive/refs/tags/v0.1.93.tar.gz"
+  sha256 "f80b5d0dfc4e03a2b627ee68aab67fe815f2b4cd067cc9da5a50250c3c55c8f4"
   license "Apache-2.0"
   head "https://github.com/tddworks/baguette.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe: "902c5cba54e44408d40dbb08ff7faf6a34edef24d50700a5679bcfbf5377fe84"
+    sha256 cellar: :any, arm64_tahoe: "3c845138743aae1ab849eaf790b554a3e963680bc8e3457b9b36d4aff894f47c"
   end
 
   depends_on xcode: ["26.0", :build]
@@ -21,16 +21,17 @@ class Baguette < Formula
               %Q(let baguetteVersion = "#{version}")
 
     # Rebuild the iOS-Simulator injection dylibs from source: upstream ships them prebuilt and universal,
-    # which `brew audit` rejects. Mirrors VirtualCamera/build.sh and VirtualMotion/build.sh, this arch only.
+    # which `brew audit` rejects. Mirrors each Injected/*/build.sh, for this arch only.
     # `-target *-simulator` stamps the iOS-Simulator platform load command, and `-headerpad_max_install_names`
     # leaves room for the Cellar-path ID Homebrew writes during relocation. Homebrew re-signing over
     # `-adhoc_codesign` is fine: baguette copies the dylib to a content-hashed path before injecting it.
     arch = Hardware::CPU.arch.to_s
     sdk = Utils.safe_popen_read("xcrun", "--sdk", "iphonesimulator", "--show-sdk-path").chomp
     dylibs = {
-      "VirtualCamera" => %w[Foundation UIKit QuartzCore CoreGraphics AVFoundation CoreMedia CoreVideo
-                            ImageIO CoreServices],
-      "VirtualMotion" => %w[Foundation CoreMotion],
+      "VirtualCamera"  => %w[Foundation UIKit QuartzCore CoreGraphics AVFoundation CoreMedia CoreVideo
+                             ImageIO CoreServices],
+      "VirtualMotion"  => %w[Foundation CoreMotion],
+      "VirtualNetwork" => %w[Foundation],
     }
     dylibs.each do |name, frameworks|
       dylib = "Sources/Baguette/Resources/#{name}/#{name}.dylib"
@@ -40,13 +41,13 @@ class Baguette < Formula
         -arch #{arch} -isysroot #{sdk}
         -target #{arch}-apple-ios17.0-simulator
         -dynamiclib -fobjc-arc -ldl
-        -I #{name}/Sources -o #{dylib}
+        -I Injected/#{name}/Sources -o #{dylib}
         -install_name @rpath/#{name}.dylib
         -Wl,-headerpad_max_install_names
         -Wl,-adhoc_codesign
       ]
       clang_args += frameworks.flat_map { |framework| ["-framework", framework] }
-      clang_args += Dir["#{name}/Sources/*.m"]
+      clang_args += Dir["Injected/#{name}/Sources/*.m"]
 
       system "xcrun", "clang", *clang_args
     end

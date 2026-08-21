@@ -1,17 +1,17 @@
 class Pop < Formula
   desc "Send emails from your terminal"
   homepage "https://github.com/charmbracelet/pop"
-  url "https://ghfast.top/https://github.com/charmbracelet/pop/archive/refs/tags/v0.4.0.tar.gz"
-  sha256 "1ac694148e286bf9bd75387a98ee66b41c554e989fae41314f4b762210e14436"
+  url "https://ghfast.top/https://github.com/charmbracelet/pop/archive/refs/tags/v0.5.0.tar.gz"
+  sha256 "c577d4f3edf403e34832013b79ddc159c1eec938e0bd452b2623c853f752a75c"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d40656b18811c7b842f55f5af03316af80f37a4d3adfb57c56355b64f14f0baa"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d40656b18811c7b842f55f5af03316af80f37a4d3adfb57c56355b64f14f0baa"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d40656b18811c7b842f55f5af03316af80f37a4d3adfb57c56355b64f14f0baa"
-    sha256 cellar: :any_skip_relocation, sonoma:        "593ca788f28b3401496656e1acb7aebb52ddca911569e43990fd1d6a69d5d10a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "478e821c128f3a9b133e63759cffc23299d2357e48492b490cc37181b59c4108"
-    sha256 cellar: :any,                 x86_64_linux:  "29ea0d37afd5137f74da17a157c69e2feb50a2b1b377073ef67398a43328eead"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "14e534422878d8bd5f21a115f639daaf9fe0b90f0b81fe8204fc481ec4b25463"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "14e534422878d8bd5f21a115f639daaf9fe0b90f0b81fe8204fc481ec4b25463"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "14e534422878d8bd5f21a115f639daaf9fe0b90f0b81fe8204fc481ec4b25463"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0ff5ac45ee5e933a2c2735a0ddfa214a49f2734b90a24655558db9a94774a375"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "759abf4c656a319cc362fa83cbaec47e3ba3d74036038bf92d120c25f4e53477"
+    sha256 cellar: :any,                 x86_64_linux:  "cb685c08066b7924e262f99c717e2531835a177cdbf84bc6f9dacb097a676b5b"
   end
 
   depends_on "go" => :build

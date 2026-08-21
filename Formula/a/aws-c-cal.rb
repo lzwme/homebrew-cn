@@ -4,27 +4,29 @@ class AwsCCal < Formula
   url "https://ghfast.top/https://github.com/awslabs/aws-c-cal/archive/refs/tags/v0.9.15.tar.gz"
   sha256 "215dd31c12ea49c4f40aa7882a800f9648e4095cfcb2d6abdd27e957574ad6e2"
   license "Apache-2.0"
+  revision 1
   compatibility_version 1
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "efee39054e3a3767e680302e9f21c115a2d02ece4aa0c6eb62358b7a07466df7"
-    sha256 cellar: :any, arm64_sequoia: "c2a83bb06344454dca62bc9fdb54b0c4ba5e41369c0a0f98fda1d99168e4e9c2"
-    sha256 cellar: :any, arm64_sonoma:  "7f896b2c00826cf6196ff88801926339c99b84a80f5b03435737abafc9e9e14e"
-    sha256 cellar: :any, sonoma:        "a70fd9b69352b0c2a57eb1c1d013d8d564d41ba2fe5b2803725fb1f52c0cb000"
-    sha256 cellar: :any, arm64_linux:   "42f9e2f1a6353b64eebc51e9f91ffdba870440c37638b7e2b619b015fa919296"
-    sha256 cellar: :any, x86_64_linux:  "04096dd1f1262bb94fa7320e87eeba03136c6f0c4da17d92fc6987d9948861cf"
+    sha256 cellar: :any, arm64_tahoe:   "d9be4b708353b4fc843571b73c2158e4f31b4f58fb83e798ac7647316b84f373"
+    sha256 cellar: :any, arm64_sequoia: "ed9604374a8eb18b868848674403c958435597de24ee14345bea99cd1526e558"
+    sha256 cellar: :any, arm64_sonoma:  "d20adad5a3ff2cb48d6259a1d7838edb35a44030bbd1deb4a5bcc709da5e44be"
+    sha256 cellar: :any, sonoma:        "b68a7770b2afca362cb8a1907c4a56e5d58a076f31c3284f93d391b88b177f76"
+    sha256 cellar: :any, arm64_linux:   "248336995ac68a05e9b79cdeb0f96ddd94c304e276835dd6882956bc4ca5208c"
+    sha256 cellar: :any, x86_64_linux:  "2cd1004cb330e21c4510edaa9b16f1f3705673918f98bee487c2d598888f1120"
   end
 
   depends_on "cmake" => :build
   depends_on "aws-c-common"
-
-  on_linux do
-    depends_on "openssl@3"
-  end
+  depends_on "openssl@3"
 
   def install
-    args = ["-DBUILD_SHARED_LIBS=ON"]
-    args << "-DUSE_OPENSSL=ON" if OS.linux?
+    # ed25519 is needed by awscli
+    args = %w[
+      -DAWS_USE_LIBCRYPTO_TO_SUPPORT_ED25519_EVERYWHERE=ON
+      -DBUILD_SHARED_LIBS=ON
+      -DUSE_OPENSSL=ON
+    ]
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"

@@ -2,18 +2,18 @@ class Packetbeat < Formula
   desc "Lightweight Shipper for Network Data"
   homepage "https://www.elastic.co/products/beats/packetbeat"
   url "https://github.com/elastic/beats.git",
-      tag:      "v9.5.1",
-      revision: "53197d5422766e985c2aa0f56607750d34d0e912"
+      tag:      "v9.5.2",
+      revision: "8f4fe1e5dec067a139dce33d3af88c24b58c3660"
   license "Apache-2.0"
   head "https://github.com/elastic/beats.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "18f227e1160862aa65131baf04acb17898c953d8d8ccf3d7040b82b9c064e569"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ba32e90553a0de5156bf8d794b5921510ae6387e59e348062835618f3baff101"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "84e16073847b96f30f4b2a7bae0be3e7c9e3555db35700590df1c5862055c6ed"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2ae14ab20214bac5d02bb7f4d3c40f82f06ac3202ad7a55a6467ea751332770b"
-    sha256 cellar: :any,                 arm64_linux:   "72c93547ab76e007dc15e5c550a99865f94f3fab794ca99b277efbc4d85990a9"
-    sha256 cellar: :any,                 x86_64_linux:  "51a706e76ed98dac15dbcb6b381211957e57ac815cff78c2d9780ef30a02c740"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d7797de65bf0e829c5408a0dc4192d190d663b2d193f345f8d299f74ddc9a839"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e48b20fb3d7588f72a6e2c8c18b0f21a64349c2d74b738805de7c9fcbfe4f7d5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4529256a9f3182a0543415a3616232fb15b6e01eab229b4b53ea2b1ca1aff4a2"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9cdcf5230c93f649d3b4f2f65c4504fecf7de7da43ad8eafa253187d8152d7b4"
+    sha256 cellar: :any,                 arm64_linux:   "a938a2ebf14582a16326c0ebed0aa0f59a40235c37841981f0b02c9d976f5e25"
+    sha256 cellar: :any,                 x86_64_linux:  "d8093b7495f2797e0bbc2abee049999e83bcf7d6bca23ad6303b29a86d5a2f53"
   end
 
   depends_on "go" => :build

@@ -3,14 +3,14 @@ class RapidMlx < Formula
 
   desc "Fast local AI engine for Apple Silicon with an OpenAI-compatible API"
   homepage "https://github.com/raullenchai/Rapid-MLX"
-  url "https://files.pythonhosted.org/packages/98/12/7d812cc002d779640e3c7cba8fb6927529b24f7c9027eec66662a35717d3/rapid_mlx-0.12.15.tar.gz"
-  sha256 "d50901621414c15ab0b45b5895ee98e2768db6ae2d1c42eb34beefcc4398af28"
+  url "https://files.pythonhosted.org/packages/4b/42/2cf593e84274a0cd471e9a38426420b7071df4b496a023ad20b825559655/rapid_mlx-0.12.16.tar.gz"
+  sha256 "10300f2cf93e87ba19fea7bd8fcab0b64c7e31147a4395ff02992df1c33f4993"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "6e22d785bf5e139b7e05cb7b71932a13396a0b3ea94dd02f94f09b823e4a64c0"
-    sha256 cellar: :any, arm64_sequoia: "511368423ca2850196f5024ce1fb50d0ab95b600b1324a1c35436122c7fe8e6d"
-    sha256 cellar: :any, arm64_sonoma:  "bc3b3db0096ee096166f5e3537e879183d5d11a609351bbc4197ea644b33a258"
+    sha256 cellar: :any, arm64_tahoe:   "2de9d75eb02a1aa99d7e7222c74dc91b128df83287f0f2d15bc34d1653c84536"
+    sha256 cellar: :any, arm64_sequoia: "e15f691d6fb4511b09cec931083d0a5b6d9e023e0345329cbe938c791eb3c15b"
+    sha256 cellar: :any, arm64_sonoma:  "4b915bbeb14f476176a19c71e7526a9c8aa4c7dc69b4ae1536739971848b47c1"
   end
 
   depends_on "cmake" => :build
@@ -90,8 +90,8 @@ class RapidMlx < Formula
   end
 
   resource "httpcore2" do
-    url "https://files.pythonhosted.org/packages/30/7d/ee6787efd5fe675d7cfd5eb149e40ccb5bdfc7e7c9252edcf7825c38986f/httpcore2-2.11.0.tar.gz"
-    sha256 "82e6fc95d784e6ee22ebd4b2cb57df53a2efb13ad6a11260a236ecebbc5f50c7"
+    url "https://files.pythonhosted.org/packages/be/ad/f4f0e57345f1870f3e8cb624e058d7eca6e5a27d33bcc3311d9b618734cd/httpcore2-2.12.0.tar.gz"
+    sha256 "9293522bba0aa7c4c8e9e3f040c16575bd8868e155a77fa30c7a9085a5eae648"
   end
 
   resource "httpx" do
@@ -100,13 +100,13 @@ class RapidMlx < Formula
   end
 
   resource "httpx2" do
-    url "https://files.pythonhosted.org/packages/d5/4d/b3fcae38f29bfb0f300517d085c488f41f65e5b0a73023976b2122f568cc/httpx2-2.11.0.tar.gz"
-    sha256 "ea01b2e8febfb026e2601814c77ecb1e64fff114a87bc789cb520e67f27e7809"
+    url "https://files.pythonhosted.org/packages/7f/f8/579a8b51e42e38ee32647df9f08aa25643ae788e275cc625b199829c4671/httpx2-2.12.0.tar.gz"
+    sha256 "7631fe9887a8a2275f4a2540e053aa670fcc50742864a9ae7c66e609fdcf12cf"
   end
 
   resource "huggingface-hub" do
-    url "https://files.pythonhosted.org/packages/3e/9b/ddf3d02a8681f1b9ce52fda03d755dad6b74c4f8172304c4c8d2975450f9/huggingface_hub-1.27.0.tar.gz"
-    sha256 "c1fed40ea82a6b41b477f5243546549b792ae0a93abcea608cff66089bf8f8df"
+    url "https://files.pythonhosted.org/packages/c6/ae/222a91937ebee7f62c0ca8f5ee0afd97577caf24c0abb927d1f5c7e9f6d2/huggingface_hub-1.28.0.tar.gz"
+    sha256 "46a2e950c09234de54093d587d1675382f0d08dbd600d9fb599b5932f5b2c6cb"
   end
 
   resource "idna" do
@@ -295,8 +295,8 @@ class RapidMlx < Formula
   end
 
   resource "uvicorn" do
-    url "https://files.pythonhosted.org/packages/2e/28/64ca011edf31c715b4fad359c587ea52391aaffa125065695590241ff617/uvicorn-0.52.3.tar.gz"
-    sha256 "18857b9e6579300be55c91c0a1cfd37d9a2cf0cabea33b88275f199eb73b8b58"
+    url "https://files.pythonhosted.org/packages/f2/0f/3f86e61397dd33bf2ccf28188c40db6a740658aeebbbf6e7dbc101a1f487/uvicorn-0.52.4.tar.gz"
+    sha256 "73acfee47a0b133c5de13d219492d62d8a31e935f4fe6e41a232451a15379f86"
   end
 
   resource "websockets" do

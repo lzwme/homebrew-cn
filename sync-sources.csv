@@ -12777,6 +12777,7 @@ Homebrew-homebrew-cask/Casks/g/gfxcardstatus.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/g/gg.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/g/ghdl.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/g/ghost-browser.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/g/ghost-downloader.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/g/ghostpepper.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/g/ghosttile.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/ghostty.rb, Homebrew/homebrew-cask, 0
@@ -13851,6 +13852,7 @@ Homebrew-homebrew-cask/Casks/m/monal.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/monal@beta.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/monarch.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/monero-wallet.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/m/monet.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/moneydance.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/moneymanager.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/moneymoney.rb, Homebrew/homebrew-cask, 0
@@ -16120,9 +16122,6 @@ Homebrew-homebrew-cask/Casks/x/x-swiftformat.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/x/x2goclient.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/x/x32-edit.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/x/xact.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/x/xamarin-android.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/x/xamarin-ios.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/x/xamarin-mac.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/x/xampp.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/x/xampp@7.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/x/xaos.rb, Homebrew/homebrew-cask, 1

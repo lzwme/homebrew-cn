@@ -3,17 +3,17 @@ class Gersemi < Formula
 
   desc "Formatter to make your CMake code the real treasure"
   homepage "https://github.com/BlankSpruce/gersemi"
-  url "https://files.pythonhosted.org/packages/96/3d/babcff7d305561ebe96124298dbb7e3acaaa21f04a6490a8f0987130233e/gersemi-0.28.0.tar.gz"
-  sha256 "984b488fd7b4c6a77fb41e4291ca63b08fc2dfe46a722b6309e23b4fee5df7e0"
+  url "https://files.pythonhosted.org/packages/24/e8/089e6b68a3640ca8e16ec99280a4f1b3504865d04f00179b0a1b58d64b43/gersemi-0.28.1.tar.gz"
+  sha256 "a05086e4b975fd784d562b8053ddd96340cdc64ca092cc63a77c3e6be5a2c43f"
   license "MPL-2.0"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "2389f2894544ec62f211109773c5a5a3643b261500b55c125f9f4572495eda06"
-    sha256 cellar: :any, arm64_sequoia: "b955f7afe598da5b00caf9337298c5fa1407e6d9ee30e074a136d756be7524ed"
-    sha256 cellar: :any, arm64_sonoma:  "f7394d7aa3b9ef1e5a5cc868ac7b784e40420ce22712c1dcb4981250fec57e84"
-    sha256 cellar: :any, sonoma:        "46e42f2f1957afa2dabfd0d770d1995caa048e2d0c9b75a0c34225d9b42ac610"
-    sha256 cellar: :any, arm64_linux:   "3684d103d292c75bed2bc8b3b15a03cf4a96284e47ce228703530ff705606635"
-    sha256 cellar: :any, x86_64_linux:  "4d73a742db89cb75a7d4cdb7b069bb0344851d2550146d74df72c666d5ab6738"
+    sha256 cellar: :any, arm64_tahoe:   "9f6ed0fbd6e98d100079f24715f3985cdd660f976a2c472f7de8e394a21f6833"
+    sha256 cellar: :any, arm64_sequoia: "61d8d2c16fa995becf416e58abc49f05e65bf9786aa17e1a09a122d334cfe009"
+    sha256 cellar: :any, arm64_sonoma:  "5c548f75e248cd9dba5910cd3ba7b27fd5a1a027a2094d2aa1242f87b7f403b3"
+    sha256 cellar: :any, sonoma:        "4ec361fb3fc1c0d74de401307a64cbd51cdbc92acfa48da68f533a09254adf3d"
+    sha256 cellar: :any, arm64_linux:   "19de9cd79a606ddf7ed17629839f04b4ebd4594a99b77a7228e274a0aebbdccc"
+    sha256 cellar: :any, x86_64_linux:  "b4f165b6440befe7195eeab580636cc152cf4d190df9fc65839a4f808352a472"
   end
 
   depends_on "rust" => :build

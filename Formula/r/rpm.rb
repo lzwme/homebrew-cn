@@ -2,8 +2,8 @@ class Rpm < Formula
   desc "Standard unix software packaging tool"
   homepage "https://rpm.org/"
   # Using GitHub tarball rather than ftp.osuosl.org to support autobump
-  url "https://ghfast.top/https://github.com/rpm-software-management/rpm/releases/download/rpm-6.0.2-release/rpm-6.0.2.tar.bz2"
-  sha256 "66a4998e020d7354a804fde83801a9d7157b20f5e08198f7fde69d3a0ab683fe"
+  url "https://ghfast.top/https://github.com/rpm-software-management/rpm/releases/download/rpm-6.1.0-release/rpm-6.1.0.tar.bz2"
+  sha256 "f520810d27c74bf1c5d8b8885845c61e0c845f62d33e68b02e020633a8b62fe3"
   license all_of: [
     "GPL-2.0-or-later",
     "LGPL-2.0-or-later", # rpm-sequoia
@@ -18,12 +18,12 @@ class Rpm < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "85b28257b443c715ec1ee352a3a2044138d008a8c1d9925bba9988bfc66bb864"
-    sha256 arm64_sequoia: "fa56fd7e7b8c2a725abdaab889fa893c1f0741e3e3009178fd82b93ab3954bc5"
-    sha256 arm64_sonoma:  "c678282544199c2d323b3fabecc4d771e4aedb3d7954bda00232b79705f250c1"
-    sha256 sonoma:        "ee4352e0bd6d8895ef486d605d4f9f0ec87e4a163254ba3af9a6f6e5299e1ba7"
-    sha256 arm64_linux:   "b16ba06fda8e6867c7bd6b6b8e6b9f6d49c2074edfed551ac87a2b0d3b9f673d"
-    sha256 x86_64_linux:  "f4c414f88d69cda16b5996e7dfb1ce55f3fae917f763067f89b3cb5621455c9b"
+    sha256 arm64_tahoe:   "d05318fd8cd639a10d516353fa2b1f64cd5955e610b2ee13c035bb997b1357ed"
+    sha256 arm64_sequoia: "363200736332adcfa7cac84e5ff32ac1048aa3d0f6b2610f0d29bf7e3c746bfd"
+    sha256 arm64_sonoma:  "490697dfae364ebee811d76c2fa3145be7f80c81198437637de72a88e2ad8736"
+    sha256 sonoma:        "e762a6d1e18fd2cc12334bdc05eb809e05c22fd6d111a5025a12415766391c93"
+    sha256 arm64_linux:   "4fa984eb8ebf0fe293012bf18c2bb42a279211bddcffa2bc15978603d27cc935"
+    sha256 x86_64_linux:  "d58417ed3db12fd1dd1638167d7556a3b14008bf1433c421a675676f80af8fb2"
   end
 
   depends_on "cmake" => :build
@@ -186,13 +186,13 @@ class Rpm < Formula
     assert_path_exists testpath/"rpmbuild/RPMS/noarch/test-1.0-1.noarch.rpm"
 
     info = shell_output("#{bin}/rpm --query --package -i #{testpath}/rpmbuild/RPMS/noarch/test-1.0-1.noarch.rpm")
-    assert_match "Name        : test", info
-    assert_match "Version     : 1.0", info
-    assert_match "Release     : 1", info
-    assert_match "Architecture: noarch", info
-    assert_match "Group       : Development/Tools", info
-    assert_match "License     : Public Domain", info
-    assert_match "Source RPM  : test-1.0-1.src.rpm", info
+    assert_match "Name         : test", info
+    assert_match "Version      : 1.0", info
+    assert_match "Release      : 1", info
+    assert_match "Architecture : noarch", info
+    assert_match "Group        : Development/Tools", info
+    assert_match "License      : Public Domain", info
+    assert_match "Source RPM   : test-1.0-1.src.rpm", info
     assert_match "Trivial test package", info
 
     files = shell_output("#{bin}/rpm --query --list --package #{testpath}/rpmbuild/RPMS/noarch/test-1.0-1.noarch.rpm")

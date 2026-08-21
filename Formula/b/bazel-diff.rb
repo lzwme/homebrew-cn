@@ -1,17 +1,17 @@
 class BazelDiff < Formula
   desc "Performs Bazel Target Diffing between two revisions in Git"
   homepage "https://github.com/Tinder/bazel-diff/"
-  url "https://ghfast.top/https://github.com/Tinder/bazel-diff/archive/refs/tags/v44.0.0.tar.gz"
-  sha256 "5b4a4490fd25e3561b37d172cbf7806bff3e07bf5b7fbb5efbd22e700ef914c0"
+  url "https://ghfast.top/https://github.com/Tinder/bazel-diff/archive/refs/tags/v44.0.1.tar.gz"
+  sha256 "49b3835655852a8b87f13b2c0f4bca64b265e41700f44159b69b13130dac8e02"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e748c4e9cd9fd28df17531d2549e4dba5dfb682f34f0225f37ad31d440117317"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e748c4e9cd9fd28df17531d2549e4dba5dfb682f34f0225f37ad31d440117317"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e748c4e9cd9fd28df17531d2549e4dba5dfb682f34f0225f37ad31d440117317"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e748c4e9cd9fd28df17531d2549e4dba5dfb682f34f0225f37ad31d440117317"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "71acf077053d2fc3371cfc2d0570a7b2325d4a94dc00494df9a071dfe6cfca22"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "71acf077053d2fc3371cfc2d0570a7b2325d4a94dc00494df9a071dfe6cfca22"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6f878c26dbb97dc9fd62244eea34cfee6a47bb48aea3ed75fdb88669ab6cc8d6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6f878c26dbb97dc9fd62244eea34cfee6a47bb48aea3ed75fdb88669ab6cc8d6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6f878c26dbb97dc9fd62244eea34cfee6a47bb48aea3ed75fdb88669ab6cc8d6"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6f878c26dbb97dc9fd62244eea34cfee6a47bb48aea3ed75fdb88669ab6cc8d6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c105ca532535ee03b4285eeccc4a783bd94468ec01141d1b9574c0c59e01dfbd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c105ca532535ee03b4285eeccc4a783bd94468ec01141d1b9574c0c59e01dfbd"
   end
 
   depends_on "bazel" => [:build, :test]

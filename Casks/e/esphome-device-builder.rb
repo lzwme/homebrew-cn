@@ -1,11 +1,11 @@
 cask "esphome-device-builder" do
   os macos: "dmg", linux: "AppImage"
 
-  version "1.1.0"
-  sha256 arm:          "c27559428dc0197736e7041610a5ca8615e0aa6dee0ed128fa9bb25044724638",
-         intel:        "dded71756f6929b3889ad4756ec365e892bb3f4d9a54cbe36e55a08b3faf3124",
-         arm64_linux:  "c9f9350c515d55426c5bb48ff1af4e482e97b8cdd6759478fc392021dd78ee56",
-         x86_64_linux: "bdc64c5f3b509c743bb2d27aea5a23b7bd8f011cddf0c4340887492f04120497"
+  version "1.1.2"
+  sha256 arm:          "bc0a3da75fd642de4ad7289b170abd44b76c59961a5b1cb8670373fd3a5006bf",
+         intel:        "7789c1e18606bcc9219a009444a3caae8c61412ac0887d3d052059b1d5144bfc",
+         arm64_linux:  "79d557e2173a126ed03cc2c87686d1ec696d6833b1c89b1329d3be8f0b5f8013",
+         x86_64_linux: "8af5515181b3c4e63e24ddee7e27b4c465b5eb997e202739ef1ac949acf67c1c"
 
   on_macos do
     arch arm: "aarch64", intel: "x64"

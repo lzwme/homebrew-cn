@@ -3,13 +3,13 @@ class Internetarchive < Formula
 
   desc "Python wrapper for the various Internet Archive APIs"
   homepage "https://github.com/jjjake/internetarchive"
-  url "https://files.pythonhosted.org/packages/c8/ec/0418239bf633729e87465298767c244752fd882e09b09bf94d5a9c4f39be/internetarchive-5.11.0.tar.gz"
-  sha256 "58366050a46255d689f82bcc996710adb56a0f6876b0a6c781332c1eefdb96f0"
+  url "https://files.pythonhosted.org/packages/99/f7/86a84bfdc32c0b3d3fafe90a299a131d2aa661b57cab3d14a506f42405db/internetarchive-5.11.1.tar.gz"
+  sha256 "2ae0a529ffe4195c5294a0277e0a9afb83fc00fee5695c6597f65c64e95da44a"
   license "AGPL-3.0-or-later"
   head "https://github.com/jjjake/internetarchive.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "3a690e7cfbb8ea44e0715fffa5810d4a4bacb89382f783f574412be19f5497ab"
+    sha256 cellar: :any_skip_relocation, all: "1075547625e5f32ec67d4504686e4bee194758139909955ea3aa8d3b3ec0c2eb"
   end
 
   depends_on "certifi"
@@ -18,13 +18,13 @@ class Internetarchive < Formula
   pypi_packages exclude_packages: "certifi"
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/bd/2a/23f34ec9d04624958e137efdc394888716353190e75f25dd22c7a2c7a8aa/charset_normalizer-3.4.9.tar.gz"
-    sha256 "673611bbd43f0810bec0b0f028ddeaaa501190339cac411f347ac76917c3ae7b"
+    url "https://files.pythonhosted.org/packages/e5/3f/143b048436775b0f76ac3eec145c019e8173ccc2885c8f20319b996d5e83/charset_normalizer-3.5.1.tar.gz"
+    sha256 "6117b84ea48435e5356dc737f5121485c30920ba43375fa7b434fd753df0eac3"
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/cd/63/9496c57188a2ee585e0f1db071d75089a11e98aa86eb99d9d7618fc1edce/idna-3.18.tar.gz"
-    sha256 "ffb385a7e039654cef1ab9ef32c6fafe283c0c0467bba1d9029738ce4a14a848"
+    url "https://files.pythonhosted.org/packages/5f/f7/abb373e5757eaec4b922b92f97ec8d6d7e057cf06778247604fbc4e7c3f3/idna-3.19.tar.gz"
+    sha256 "5e0811a4383b21dc5838069f801c4fb62113b7447663d2530d2bd6e77b49bf15"
   end
 
   resource "jsonpatch" do
@@ -43,8 +43,8 @@ class Internetarchive < Formula
   end
 
   resource "tqdm" do
-    url "https://files.pythonhosted.org/packages/8c/69/40407dfc835517f058b603dbf37a6df094d8582b015a51eddc988febbcb7/tqdm-4.69.0.tar.gz"
-    sha256 "700c5e85dcd5f009dd6222588a29180a193a748247a5d855b4d67db93d79a53b"
+    url "https://files.pythonhosted.org/packages/21/3b/6c24bec5be5e743ffd99576daa5cc077722fc7d5bbc00bd133fa0c698dc6/tqdm-4.70.0.tar.gz"
+    sha256 "55b0b0dbd97462d06ebee91e4dac24ed4d4702be82b24f07e6c1d27e08cea220"
   end
 
   resource "urllib3" do

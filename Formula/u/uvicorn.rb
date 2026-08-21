@@ -3,18 +3,18 @@ class Uvicorn < Formula
 
   desc "ASGI web server"
   homepage "https://uvicorn.dev/"
-  url "https://files.pythonhosted.org/packages/2e/28/64ca011edf31c715b4fad359c587ea52391aaffa125065695590241ff617/uvicorn-0.52.3.tar.gz"
-  sha256 "18857b9e6579300be55c91c0a1cfd37d9a2cf0cabea33b88275f199eb73b8b58"
+  url "https://files.pythonhosted.org/packages/f2/0f/3f86e61397dd33bf2ccf28188c40db6a740658aeebbbf6e7dbc101a1f487/uvicorn-0.52.4.tar.gz"
+  sha256 "73acfee47a0b133c5de13d219492d62d8a31e935f4fe6e41a232451a15379f86"
   license "BSD-3-Clause"
   head "https://github.com/Kludex/uvicorn.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "e8681059776088b3051741215c6b8400f6a2aaa4da55c94c59a8a03465b723ce"
-    sha256 cellar: :any, arm64_sequoia: "a92bb81e3da87376ccf97edbf8659a849cd9b673b7d7c3e9ce0288aa7fd802df"
-    sha256 cellar: :any, arm64_sonoma:  "fb3900bbb3657c6b1873c727ec6a50e6756dc30bb02982ad6cb98cb7d688ad6a"
-    sha256 cellar: :any, sonoma:        "f82042e2e5be4b63595e63c70e92bb3161e17898e20d53f544e9e592edc3732a"
-    sha256 cellar: :any, arm64_linux:   "28cca3b563a8b192a86a0cef635153c472f82c4d2441f300c343358a7609aa36"
-    sha256 cellar: :any, x86_64_linux:  "3938216f57536df765f78c1b21488c67b532ce114e9c33deeadaed9f3c9835bf"
+    sha256 cellar: :any, arm64_tahoe:   "570d14dabf66471f18963c1a09949b6985399631fd8252be08ad2facea7d0384"
+    sha256 cellar: :any, arm64_sequoia: "241e83dba13dfabd967ba0295c0b822c484b3f9389cf47c4e98f5e4999997ea9"
+    sha256 cellar: :any, arm64_sonoma:  "86a4c496c3e37377526110d99849e49a2d212cf7a864ce9bc5d247666a33a4aa"
+    sha256 cellar: :any, sonoma:        "528dfb22681dc52e72ce6f363a7ff9d50252c0eba1b6a1699f1e51a16db1aaf0"
+    sha256 cellar: :any, arm64_linux:   "94994ef15e6fcf65504ccb2bbd46d2662adad887c87984eda273d6e0579e3b26"
+    sha256 cellar: :any, x86_64_linux:  "5a6cf5901201b6b8b0cbfad7fae20e5578b9fb2ed5186d8e9027b61d7833012e"
   end
 
   depends_on "rust" => :build
@@ -44,13 +44,13 @@ class Uvicorn < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/cd/63/9496c57188a2ee585e0f1db071d75089a11e98aa86eb99d9d7618fc1edce/idna-3.18.tar.gz"
-    sha256 "ffb385a7e039654cef1ab9ef32c6fafe283c0c0467bba1d9029738ce4a14a848"
+    url "https://files.pythonhosted.org/packages/5f/f7/abb373e5757eaec4b922b92f97ec8d6d7e057cf06778247604fbc4e7c3f3/idna-3.19.tar.gz"
+    sha256 "5e0811a4383b21dc5838069f801c4fb62113b7447663d2530d2bd6e77b49bf15"
   end
 
   resource "python-dotenv" do
-    url "https://files.pythonhosted.org/packages/82/ed/0301aeeac3e5353ef3d94b6ec08bbcabd04a72018415dcb29e588514bba8/python_dotenv-1.2.2.tar.gz"
-    sha256 "2c371a91fbd7ba082c2c1dc1f8bf89ca22564a087c2c287cd9b662adde799cf3"
+    url "https://files.pythonhosted.org/packages/6a/53/ed9d74092561d4b01a2ef1349d52cdbc135e526c245f366b089cfca6de49/python_dotenv-1.2.3.tar.gz"
+    sha256 "a20a594dabeaa385725aa239d5244871c143ecb356add8a20fcf23773a6c3a35"
   end
 
   resource "pyyaml" do

@@ -1,17 +1,17 @@
 class Rabbitmqadmin < Formula
   desc "Command-line tool for RabbitMQ that uses the HTTP API"
   homepage "https://www.rabbitmq.com/docs/management-cli"
-  url "https://ghfast.top/https://github.com/rabbitmq/rabbitmqadmin-ng/archive/refs/tags/v2.33.0.tar.gz"
-  sha256 "0eea0ef610383d4270a1aed8f2ca39a218d212406fae5ec2df9bf08bb81a00de"
+  url "https://ghfast.top/https://github.com/rabbitmq/rabbitmqadmin-ng/archive/refs/tags/v2.34.0.tar.gz"
+  sha256 "f364a4306be8dc9bddaa01274fc05c44b8d0dec3f03daf2c1f30d56a20752913"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2ee39240210dc58e43484b3be9e713f1ff6dceb0c20085dcd3c56c881cdb71d3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "887445fb5ad5c4a515d6ffc44dd74d2bd256159078ddf915f3db512394f11444"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "59f12d5eaabbcc61afe4f9001ac57f4bd4a97a26a93da98f687f31665ea59304"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0790858af041b453d3248e2fbcf22c064b0425e9f610193eaa2651a44eaf6cfa"
-    sha256 cellar: :any,                 arm64_linux:   "92e24729c739b2c3adf70b098b3393b688af31346d15d4708ac3d4b13a2871ea"
-    sha256 cellar: :any,                 x86_64_linux:  "9414c66d052d8916b91592ca3e54c2de3a9043b5329d4752343bafe525acfed4"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9ad4ee2a8f9a9b023f9044bb44b3f7fffad87b5ddb44aa89bbebb216238b7af6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "20862bc43a3ec6ca2dba3e32fb5fcc7571d684a1648b200e67d7ca7cba87d68a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d503ac0d6f8cc8328f611d830856529fc766509c064f84bfc218c04bfc71fe58"
+    sha256 cellar: :any_skip_relocation, sonoma:        "53e312005864832d995b14bae3c2a4a273a7365e3d359c532bd0892330273021"
+    sha256 cellar: :any,                 arm64_linux:   "beb0cb2b01f38b2ac05e8a02ee3428e8aa5fae22b93cbb22168e72f255b31cf1"
+    sha256 cellar: :any,                 x86_64_linux:  "04081a7adbee0eadbaa1ac1164e79a1f1211089e3e1ba5725160166746a67ef7"
   end
 
   depends_on "rust" => :build

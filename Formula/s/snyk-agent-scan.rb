@@ -3,17 +3,17 @@ class SnykAgentScan < Formula
 
   desc "Constrain, log and scan your MCP connections for security vulnerabilities"
   homepage "https://github.com/snyk/agent-scan"
-  url "https://files.pythonhosted.org/packages/1a/2c/214d69763d954d37d896efaed9c8a7f69a7d46351159a6bd1d953d0fb54a/snyk_agent_scan-0.5.17.tar.gz"
-  sha256 "11b5d34d0c50e2b5086405dc8aa033217db1377ca43500746566d74617b9a90c"
+  url "https://files.pythonhosted.org/packages/4a/27/976c0a773bb2b2c9e0131b74db2ff14da85186d071314d231c6a753f4b4f/snyk_agent_scan-0.6.0.tar.gz"
+  sha256 "0c338366b1313f27389a2132262bb41f82775c8bb3a91af2e1e09d594693b69a"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "a3f595426c2c94d7cc4ee6c7c77f7cae8fe47c149e2df4a9a82f4d5477f3005d"
-    sha256 cellar: :any, arm64_sequoia: "2bddef71ce00bf490857728f62ec4fb8d6fce8f2e933dd10dd39bd6733057369"
-    sha256 cellar: :any, arm64_sonoma:  "f9e6b440609a46602fc9a58c43e29775cb24f8b7ec943add716ce5935920024d"
-    sha256 cellar: :any, sonoma:        "4253136b311fccd5d8081fb205111ad60e6f38aa5ed0a9cc26abd951693a3eaa"
-    sha256 cellar: :any, arm64_linux:   "5a6768403a8bf64dc249fccc60a596a82dd226ed5ef2a34722a0f09afa9cdb01"
-    sha256 cellar: :any, x86_64_linux:  "6532b8ed105eef76d94901d5c53ce0b6b3e6b02f843d3b4e138b67c8a04da728"
+    sha256 cellar: :any, arm64_tahoe:   "d9726857469fbce59169100ebec48e3fad924130a0b2f306bc9a8c924d086df5"
+    sha256 cellar: :any, arm64_sequoia: "6683531fe5d74d645582ec8cfc49c04dbd2146e7fb25be702e0ac7e86e187601"
+    sha256 cellar: :any, arm64_sonoma:  "4ea7701a0300b0d6df709ecc445753b09e9895b98769f65d37790d06aa53bc6e"
+    sha256 cellar: :any, sonoma:        "378cc9f5236a6fda9545af6525f182da0233b6ee9fe96971f81055c50ae08b5d"
+    sha256 cellar: :any, arm64_linux:   "3ea7318b76ab58e89d9ae07ca0b81fa3cd751a67ba634429432b4acad268fdee"
+    sha256 cellar: :any, x86_64_linux:  "9e21f6815c30b0451ad49ab3682920606bcc1664c1a97e64fdc73e14b09e66b2"
   end
 
   depends_on "certifi" => :no_linkage
@@ -56,8 +56,8 @@ class SnykAgentScan < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/bd/2a/23f34ec9d04624958e137efdc394888716353190e75f25dd22c7a2c7a8aa/charset_normalizer-3.4.9.tar.gz"
-    sha256 "673611bbd43f0810bec0b0f028ddeaaa501190339cac411f347ac76917c3ae7b"
+    url "https://files.pythonhosted.org/packages/e5/3f/143b048436775b0f76ac3eec145c019e8173ccc2885c8f20319b996d5e83/charset_normalizer-3.5.1.tar.gz"
+    sha256 "6117b84ea48435e5356dc737f5121485c30920ba43375fa7b434fd753df0eac3"
   end
 
   resource "click" do
@@ -96,8 +96,8 @@ class SnykAgentScan < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/cd/63/9496c57188a2ee585e0f1db071d75089a11e98aa86eb99d9d7618fc1edce/idna-3.18.tar.gz"
-    sha256 "ffb385a7e039654cef1ab9ef32c6fafe283c0c0467bba1d9029738ce4a14a848"
+    url "https://files.pythonhosted.org/packages/5f/f7/abb373e5757eaec4b922b92f97ec8d6d7e057cf06778247604fbc4e7c3f3/idna-3.19.tar.gz"
+    sha256 "5e0811a4383b21dc5838069f801c4fb62113b7447663d2530d2bd6e77b49bf15"
   end
 
   resource "jsonschema" do
@@ -151,8 +151,8 @@ class SnykAgentScan < Formula
   end
 
   resource "pygments" do
-    url "https://files.pythonhosted.org/packages/c3/b2/bc9c9196916376152d655522fdcebac55e66de6603a76a02bca1b6414f6c/pygments-2.20.0.tar.gz"
-    sha256 "6757cd03768053ff99f3039c1a36d6c0aa0b263438fcab17520b30a303a82b5f"
+    url "https://files.pythonhosted.org/packages/49/2e/ced460408999b33da6b31b0021b0f37d329e202d4169aeb164493778f25b/pygments-2.21.0.tar.gz"
+    sha256 "610ca751c9bc2492b38eb9a38a7fbc93edbbb2d7182edaf34e66ae493dee5c8c"
   end
 
   resource "pyjson5" do
@@ -166,8 +166,8 @@ class SnykAgentScan < Formula
   end
 
   resource "python-dotenv" do
-    url "https://files.pythonhosted.org/packages/82/ed/0301aeeac3e5353ef3d94b6ec08bbcabd04a72018415dcb29e588514bba8/python_dotenv-1.2.2.tar.gz"
-    sha256 "2c371a91fbd7ba082c2c1dc1f8bf89ca22564a087c2c287cd9b662adde799cf3"
+    url "https://files.pythonhosted.org/packages/6a/53/ed9d74092561d4b01a2ef1349d52cdbc135e526c245f366b089cfca6de49/python_dotenv-1.2.3.tar.gz"
+    sha256 "a20a594dabeaa385725aa239d5244871c143ecb356add8a20fcf23773a6c3a35"
   end
 
   resource "python-multipart" do
@@ -236,8 +236,8 @@ class SnykAgentScan < Formula
   end
 
   resource "uvicorn" do
-    url "https://files.pythonhosted.org/packages/03/18/ccce41535dee1be77735592bd19965f3972c82e07ee703d324709496b716/uvicorn-0.52.1.tar.gz"
-    sha256 "112ec661814189acbccd3f7b86460147cc065fc92c0821afa78918780e4354dd"
+    url "https://files.pythonhosted.org/packages/f2/0f/3f86e61397dd33bf2ccf28188c40db6a740658aeebbbf6e7dbc101a1f487/uvicorn-0.52.4.tar.gz"
+    sha256 "73acfee47a0b133c5de13d219492d62d8a31e935f4fe6e41a232451a15379f86"
   end
 
   resource "yarl" do

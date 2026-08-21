@@ -1,17 +1,17 @@
 class Dispenso < Formula
   desc "High-performance C++ library for parallel programming"
   homepage "https://github.com/facebookincubator/dispenso"
-  url "https://ghfast.top/https://github.com/facebookincubator/dispenso/archive/refs/tags/v1.6.1.tar.gz"
-  sha256 "fefabf77cfda64e42190335693c0a8b4b2201bf07f360b37a098a0396c7737a9"
+  url "https://ghfast.top/https://github.com/facebookincubator/dispenso/archive/refs/tags/v1.6.2.tar.gz"
+  sha256 "9641511a6b14a77f68817f1a6e72fa9e55bc3ef2628a10011dcab07c6ba10539"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "8012ee3c6ba9d59a3fba1c5ff75be213aaa2d4f1522d4917cb577c6f68ea391d"
-    sha256 cellar: :any, arm64_sequoia: "328df74a05790e2ab360857534577379e003169235e3bda7eccb8d89bad041ba"
-    sha256 cellar: :any, arm64_sonoma:  "ea7aa45139f52b60d3eb93eebfe387dd07247db051ce0adac75588d41be09b86"
-    sha256 cellar: :any, sonoma:        "5ec73f838050bde9546949da2c76d7b001f8fb37b96790f9d2e3256e787f209e"
-    sha256 cellar: :any, arm64_linux:   "189cf224f1c8838ac9e92817a26db18ca3aba2625afae42ff22559e8237d0243"
-    sha256 cellar: :any, x86_64_linux:  "93d5d92f727af9015c8053c26514fabbbaf745209eb75d93739f9b837de41f50"
+    sha256 cellar: :any, arm64_tahoe:   "1683251bb66439c05113af8b801ec85da7cafaea986a322dc03f0cab906e174d"
+    sha256 cellar: :any, arm64_sequoia: "fad3b39753c1ccf1437783ab5bcde5d416d3980669fd8133d2f080b8041bf23f"
+    sha256 cellar: :any, arm64_sonoma:  "4193ee973260262457af019855da0170697bdbc66ae2cbc9ade2a44494f97857"
+    sha256 cellar: :any, sonoma:        "c1648469d0d8b1ade806d0230eaafb2d04bd16b45dec6bd2d8bfcf3bbea09626"
+    sha256 cellar: :any, arm64_linux:   "2151910393738f931e6e5b87727c9e8f96dda2a86c0fc8e202bf8cbc440c3cb6"
+    sha256 cellar: :any, x86_64_linux:  "ca370ab686b76575790531ed190070a358146ee849fce6c43635d4140a165f01"
   end
 
   depends_on "cmake" => [:build, :test]

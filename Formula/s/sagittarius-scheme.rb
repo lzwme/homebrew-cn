@@ -1,10 +1,9 @@
 class SagittariusScheme < Formula
   desc "Free Scheme implementation supporting R6RS and R7RS"
   homepage "https://github.com/ktakashi/sagittarius-scheme"
-  url "https://ghfast.top/https://github.com/ktakashi/sagittarius-scheme/releases/download/v0.9.14/sagittarius-0.9.14.tar.gz"
-  sha256 "2f464a0a249b9de59ed7e7338fcdf1f9b0873d9c35bae612749c0a1e9e2a4e79"
+  url "https://ghfast.top/https://github.com/ktakashi/sagittarius-scheme/releases/download/v0.9.15/sagittarius-0.9.15.zip"
+  sha256 "81044f1dfe567125bf83f18f21d2c31a4c9c6b476a2d8e63d7547fe1bdb8d4e4"
   license "BSD-2-Clause"
-  revision 1
 
   livecheck do
     url :stable
@@ -12,12 +11,12 @@ class SagittariusScheme < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "ad5004fa271ebcaa7519e492b83d48a76b7250f76d4073fc094a4428699f89b6"
-    sha256 cellar: :any,                 arm64_sequoia: "90ea14cc78c6637f0cb2a1f579588240557b7f3c13c020356320be5eae3a70e0"
-    sha256 cellar: :any,                 arm64_sonoma:  "b6eeff24a55efe3434fe40a606eb31678ee5be6c16ad8a4e509c9410d45f6975"
-    sha256 cellar: :any,                 sonoma:        "7af7102f09f4b90f602150606ac082e1cc12f0bd9c11b5e19c9d271148d098c2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6577a128adc9ea05588f5eba70bbd2f91cb9b2595f249c3e41fb37c10c448041"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bbd1c66405bcc43eac8afc154d3a9063d40729a72a33513c8ef8c6662fda9c4a"
+    sha256 cellar: :any, arm64_tahoe:   "4b5179ebf49b9a7b9b0ce0b9c88a3b90470875dfdc351c73ce2341b3c701a43b"
+    sha256 cellar: :any, arm64_sequoia: "69fd440a93deb6eb0691814116e8e4c049faf2c85ce4bffa09ab8fbe873f1329"
+    sha256 cellar: :any, arm64_sonoma:  "5aa56c2bf406cab788092245c9311d93e6d2f5a42b4d72b65bdb933a677ef453"
+    sha256 cellar: :any, sonoma:        "57191c461ca4d5e3ecd7676a788dfa0d6c3042e22e632c1930ce5584fefa72d8"
+    sha256 cellar: :any, arm64_linux:   "2ef225fb754ce2915909159c4bc9c0b80fcb547113f698cd5d74abef8e014572"
+    sha256 cellar: :any, x86_64_linux:  "93776c5c3618e967f0ef36cad2f2abf1c3a730b4d32a1dc72ab3475b95bea206"
   end
 
   depends_on "cmake" => :build

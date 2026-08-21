@@ -3,18 +3,18 @@ class McpAtlassian < Formula
 
   desc "MCP server for Atlassian tools (Confluence, Jira)"
   homepage "https://github.com/sooperset/mcp-atlassian"
-  url "https://files.pythonhosted.org/packages/4a/0b/2ca4875a53d8924191b5b9dffe9b7c95be75ac4a28d8deeee83784262902/mcp_atlassian-0.23.0.tar.gz"
-  sha256 "9757ebf145b036a2a2acf943287df66fad86d990c49900be43e81e18d5691c49"
+  url "https://files.pythonhosted.org/packages/d6/95/0447fe71406c95f7bbc2d0c762ea83b473c5e7b12f09caa47867068dcf0c/mcp_atlassian-0.23.1.tar.gz"
+  sha256 "6b57391928887f5334fe854073b09e3a49bb7dae0d55a1b1276f4d910607a0f1"
   license "MIT"
   head "https://github.com/sooperset/mcp-atlassian.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "46fc680e8fc87f7813057d43cf7a3e969ab56852723212bd6b160b6cb05d576a"
-    sha256 cellar: :any, arm64_sequoia: "5528e6020d698d1ce45d87c7a6c302d23512968945fefb38bd4272a40b24ea85"
-    sha256 cellar: :any, arm64_sonoma:  "baa2cb3319660c8800a520ea1d05f3dcb25eda3de32864395fa29f64fb6035f7"
-    sha256 cellar: :any, sonoma:        "50f6e5681fc0661e449d43604ca4b4a20ca8c43776d25271a3afac78202126aa"
-    sha256 cellar: :any, arm64_linux:   "e18fc5176f1de28d857e6a7a9d3d40f652c0b18cadf798456716bfd767013cea"
-    sha256 cellar: :any, x86_64_linux:  "4a572e13ecc0474b0b88694d9c9b637446897872450e54770c345945b58b3618"
+    sha256 cellar: :any, arm64_tahoe:   "a9839989d3789b5f07c2ba4da82ebfb17d1499a96be295f2a773a283aa7e2b82"
+    sha256 cellar: :any, arm64_sequoia: "b14a9a58062373201a93f4ee0791e7c49110b2c4fe94dfba63bf268957632149"
+    sha256 cellar: :any, arm64_sonoma:  "70b0d6de5609f35439141e20cc2e60d7dc79960ff00c98288dcca5786f677fdd"
+    sha256 cellar: :any, sonoma:        "d9b7cdb870f4e6f1f9e78b4197e2ae5f5808bcf1e28deb7aa4738bb3aeed97e1"
+    sha256 cellar: :any, arm64_linux:   "e2792e734f3d6eebd3e96d62207fb2174e0be926d5aa211c64198326e236106a"
+    sha256 cellar: :any, x86_64_linux:  "7ec47094734f3a940d5c21ec723aecad94a7b1d26c80c6b8752ddce360685735"
   end
 
   depends_on "pkgconf" => :build
@@ -33,8 +33,8 @@ class McpAtlassian < Formula
                 extra_packages:   %w[jeepney secretstorage]
 
   resource "aiofile" do
-    url "https://files.pythonhosted.org/packages/48/41/2fea7e193e061ce54eacc3b7bc0e6a99e4fcff43c78cf0a76dd781ed8334/aiofile-3.11.1.tar.gz"
-    sha256 "1f91912c6643d2a4e49ca4ae3514f0bf3867ce948a36d99a6411b8f4755f4cf9"
+    url "https://files.pythonhosted.org/packages/14/31/edb06aabd8f8f0b56d659f30800795f40b93cba96be946ce179f6931e3a5/aiofile-3.12.3.tar.gz"
+    sha256 "caa6aa746b5e47e2165f7abd741b6415e49cf4d44fddc0f61844612cc3924d41"
   end
 
   resource "anyio" do
@@ -68,13 +68,13 @@ class McpAtlassian < Formula
   end
 
   resource "cachetools" do
-    url "https://files.pythonhosted.org/packages/f4/8b/0d3945a13955303b81272f759a0331e54c5c793da455e6f5706b89d2639c/cachetools-7.1.4.tar.gz"
-    sha256 "437f55a4e0c1b01a4f3077cc470e6991d47430970e36fbcb77e2be0df4fc1cd6"
+    url "https://files.pythonhosted.org/packages/70/d2/47e8bc06fe2a06d3f5bdf20f1126ab66c4e99dc48d940e7ba873f7ac7131/cachetools-7.1.7.tar.gz"
+    sha256 "a3e2a00b14d8f8a6b70c1dae7b4685e7ad3bc965c5b42124a2d6ce895da6cf50"
   end
 
   resource "caio" do
-    url "https://files.pythonhosted.org/packages/92/88/b8527e1b00c1811db339a1df8bd1ae49d146fcea9d6a5c40e3a80aaeb38d/caio-0.9.25.tar.gz"
-    sha256 "16498e7f81d1d0f5a4c0ad3f2540e65fe25691376e0a5bd367f558067113ed10"
+    url "https://files.pythonhosted.org/packages/75/c8/82b3c760141a1076408164b03e8789b51809add6aecd48aa9d7651cf6b59/caio-0.12.2.tar.gz"
+    sha256 "87a67c0dccc60e432888bd532ec504b66e124a5d8b391aab894583b55abd39ea"
   end
 
   resource "cattrs" do
@@ -83,8 +83,8 @@ class McpAtlassian < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/bd/2a/23f34ec9d04624958e137efdc394888716353190e75f25dd22c7a2c7a8aa/charset_normalizer-3.4.9.tar.gz"
-    sha256 "673611bbd43f0810bec0b0f028ddeaaa501190339cac411f347ac76917c3ae7b"
+    url "https://files.pythonhosted.org/packages/e5/3f/143b048436775b0f76ac3eec145c019e8173ccc2885c8f20319b996d5e83/charset_normalizer-3.5.1.tar.gz"
+    sha256 "6117b84ea48435e5356dc737f5121485c30920ba43375fa7b434fd753df0eac3"
   end
 
   resource "click" do
@@ -93,8 +93,8 @@ class McpAtlassian < Formula
   end
 
   resource "cyclopts" do
-    url "https://files.pythonhosted.org/packages/ce/27/562193a26941bdf980e1b74aa4a7485d8851996ba830e1192383533458a8/cyclopts-4.21.1.tar.gz"
-    sha256 "db8464ba9cc7edaba59202937c911848469260ddafc6fa348071a8a6fb588dae"
+    url "https://files.pythonhosted.org/packages/5e/62/1b160d5e8c20174392a3a5e3e7e6542e02e6f6922b35ba0962829a6b5c90/cyclopts-4.23.0.tar.gz"
+    sha256 "2f764bbd90f1888073971c09576f90e594f80353588e10aa615b7d59bc009821"
   end
 
   resource "deprecated" do
@@ -128,18 +128,18 @@ class McpAtlassian < Formula
   end
 
   resource "fastmcp" do
-    url "https://files.pythonhosted.org/packages/9c/f7/5188565d1b93ad611cbd80bf473e7ad669d1f3b689c4bedcd304e1ec3472/fastmcp-3.4.4.tar.gz"
-    sha256 "378202e26ec15b23819d9a1c0d1b0ebda096bc712720532010a0b82a45c2b1df"
+    url "https://files.pythonhosted.org/packages/62/dd/fd444d94ae7afdaf5b6dd168799d34023f576b405872d6a27d5686a9d1f4/fastmcp-3.4.7.tar.gz"
+    sha256 "43117aca886f5ee2f6a569bba91cef02b59c339aad04ba29950ff18d251c822a"
   end
 
   resource "fastmcp-slim" do
-    url "https://files.pythonhosted.org/packages/45/79/f35661c6a1d76dfbe17a079f912d96fffcfdd40fad5a9144bb9e7dfb1fdf/fastmcp_slim-3.4.4.tar.gz"
-    sha256 "dcaa3e0be2127d7eacdce592c2ef0039204923dc0ec396454615cb4a3275b078"
+    url "https://files.pythonhosted.org/packages/12/ac/7924e803368d0758ee4d6b1259066550df78f58f0f9f8bfebd5a123e957d/fastmcp_slim-3.4.7.tar.gz"
+    sha256 "06b32a358320a7dc2b2ee040ba89ea55ddc20763dff2949f384f7974b13b5d8f"
   end
 
   resource "griffelib" do
-    url "https://files.pythonhosted.org/packages/33/e4/8d187ea29c2e30b3a09505c567513077d6117861bde1fbd997a167f262ec/griffelib-2.1.0.tar.gz"
-    sha256 "762a186d2c6fd6794d4ea20d428d597ffb857cb56b66421651cbba15bdd5e813"
+    url "https://files.pythonhosted.org/packages/f0/b4/a767e91c606deefc447a96eaf59edd77397960b1d677dffd833ee8449831/griffelib-2.2.0.tar.gz"
+    sha256 "e1bc36fe9cd21d4b6b659b456346755e4cfdc5676c0a5214083126ee12612b3c"
   end
 
   resource "h11" do
@@ -163,8 +163,8 @@ class McpAtlassian < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/cd/63/9496c57188a2ee585e0f1db071d75089a11e98aa86eb99d9d7618fc1edce/idna-3.18.tar.gz"
-    sha256 "ffb385a7e039654cef1ab9ef32c6fafe283c0c0467bba1d9029738ce4a14a848"
+    url "https://files.pythonhosted.org/packages/5f/f7/abb373e5757eaec4b922b92f97ec8d6d7e057cf06778247604fbc4e7c3f3/idna-3.19.tar.gz"
+    sha256 "5e0811a4383b21dc5838069f801c4fb62113b7447663d2530d2bd6e77b49bf15"
   end
 
   resource "jaraco-classes" do
@@ -193,8 +193,8 @@ class McpAtlassian < Formula
   end
 
   resource "joserfc" do
-    url "https://files.pythonhosted.org/packages/d4/c6/b1cac0280f8efc57626ea8804866b37099f23cae11b1485a42b213245e31/joserfc-1.7.3.tar.gz"
-    sha256 "116955c2587139dba20621fd0bd7fc9255fa960c9fe7f43c43ebef2e801dcfcf"
+    url "https://files.pythonhosted.org/packages/c7/e0/27a6a081ae25420eda6768ceae05d7022a7f2447f420588843f2a44e4298/joserfc-1.7.4.tar.gz"
+    sha256 "b3bc561672ae541b17a9237053b48a03dacddd92d68047b3ecdfb4b5714a88ed"
   end
 
   resource "jsonref" do
@@ -228,8 +228,8 @@ class McpAtlassian < Formula
   end
 
   resource "markdown" do
-    url "https://files.pythonhosted.org/packages/2b/f4/69fa6ed85ae003c2378ffa8f6d2e3234662abd02c10d216c0ba96081a238/markdown-3.10.2.tar.gz"
-    sha256 "994d51325d25ad8aa7ce4ebaec003febcce822c3f8c911e3b17c52f7f589f950"
+    url "https://files.pythonhosted.org/packages/29/6f/da4c6aea59b3001f2e8c0ec7497475aadaf3b021c10cab5b2858f0f32b26/markdown-3.10.3.tar.gz"
+    sha256 "3589362618f743188b4d955b874402bc814f4f83f544dc207719f4baa7d9c45f"
   end
 
   resource "markdown-it-py" do
@@ -238,8 +238,8 @@ class McpAtlassian < Formula
   end
 
   resource "markdown-to-confluence" do
-    url "https://files.pythonhosted.org/packages/56/aa/7c01517ab8cfd531dda2aefdbb832d6d1786a046c5bde679dd2b74b16cf8/markdown_to_confluence-0.6.1.tar.gz"
-    sha256 "2f5cc303310285a3089be0009a7688a5d2386fecb13542b9ae22d22a5ef60e45"
+    url "https://files.pythonhosted.org/packages/0a/7a/7dba168786853d1db11a1de361fabf673a0c03de6129dce33e720e988663/markdown_to_confluence-0.6.2.tar.gz"
+    sha256 "15f44e940d5f2894c3e52afce51fc12f8e9d3c9ba341ed971af1bd9de363d8c8"
   end
 
   resource "markdownify" do
@@ -248,8 +248,8 @@ class McpAtlassian < Formula
   end
 
   resource "mcp" do
-    url "https://files.pythonhosted.org/packages/6e/77/9450b8f251a13affb6281997d0523c4615f8a8b35d0b21ff30db3a5aac9d/mcp-1.28.1.tar.gz"
-    sha256 "d51e36a5f5644faea4f85ea649bfffa6bc6c26770d42798ad6a3de3d2ba69683"
+    url "https://files.pythonhosted.org/packages/30/d3/f9acc21dfc886e4f78e2add1a47db46ce16884346afde53f8a064c02c891/mcp-1.29.0.tar.gz"
+    sha256 "52d01f334de1868cc3bb2d6604931126a67631f99a6c5d3b82ba47290315ec36"
   end
 
   resource "mdurl" do
@@ -278,8 +278,8 @@ class McpAtlassian < Formula
   end
 
   resource "orjson" do
-    url "https://files.pythonhosted.org/packages/7e/0c/964746fcafbd16f8ff53219ad9f6b412b34f345c75f384ad434ceaadb538/orjson-3.11.9.tar.gz"
-    sha256 "4fef17e1f8722c11587a6ef18e35902450221da0028e65dbaaa543619e68e48f"
+    url "https://files.pythonhosted.org/packages/0f/f3/742fb1f62b825f2c010697eaf4e828004bc2a81e7e806666989c132c7c42/orjson-3.12.0.tar.gz"
+    sha256 "d14203fb1aae2ad9b3d52f8a0e82aeb10197ef1c9bc61da7f358bd70b00123d5"
   end
 
   resource "outcome" do
@@ -288,8 +288,8 @@ class McpAtlassian < Formula
   end
 
   resource "packaging" do
-    url "https://files.pythonhosted.org/packages/d7/f1/e7a6dd94a8d4a5626c03e4e99c87f241ba9e350cd9e6d75123f992427270/packaging-26.2.tar.gz"
-    sha256 "ff452ff5a3e828ce110190feff1178bb1f2ea2281fa2075aadb987c2fb221661"
+    url "https://files.pythonhosted.org/packages/7d/fa/3944b40b07da9ce895c0e6303a5ab7d53da063554f534556b134a54d6093/packaging-26.3.tar.gz"
+    sha256 "94edc256424af38762eb31306eed28beb9f0efc50a8837492c9d6fd6004aed79"
   end
 
   resource "pathable" do
@@ -297,9 +297,14 @@ class McpAtlassian < Formula
     sha256 "6404b8b82aef5ff0fd478934137128b99b12212ba35afdde5525ca4f8388ea58"
   end
 
+  resource "pathspec" do
+    url "https://files.pythonhosted.org/packages/5a/82/42f767fc1c1143d6fd36efb827202a2d997a375e160a71eb2888a925aac1/pathspec-1.1.1.tar.gz"
+    sha256 "17db5ecd524104a120e173814c90367a96a98d07c45b2e10c2f3919fff91bf5a"
+  end
+
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/d7/47/e4501f49c178ae1d9f4a75073fda4204f52647993f075a9db4d14930e0c5/platformdirs-4.10.0.tar.gz"
-    sha256 "31e761a6a0ca04faf7353ea759bdba55652be214725111e5aac52dfa29d4bef7"
+    url "https://files.pythonhosted.org/packages/b8/d7/e7bfbc86e9f99ff7807e24de7703f032e9c9ba80bb355cf26e0e9bc5a75e/platformdirs-4.11.3.tar.gz"
+    sha256 "66a73d38a849810252df809a3d8bcbda8e26f6c189920e7535ad608a48dbb5ab"
   end
 
   resource "py-key-value-aio" do
@@ -308,13 +313,13 @@ class McpAtlassian < Formula
   end
 
   resource "pydantic-settings" do
-    url "https://files.pythonhosted.org/packages/5c/b5/8f48e906c3e0205276e8bd8cb7512217a87b2685304d64be27cad5b3019f/pydantic_settings-2.14.2.tar.gz"
-    sha256 "c19dd64b19097f1de80184f0cc7b0272a13ae6e170cbf240a3e27e381ed14a5f"
+    url "https://files.pythonhosted.org/packages/68/ca/31c57507b13119d7d3cfa1576dad2911a4861e3be07b579395f4e9d393f9/pydantic_settings-2.15.0.tar.gz"
+    sha256 "694b793e84f766ba76a90ebdefc01d0a9a045dab0382bee70393da93712ad117"
   end
 
   resource "pygments" do
-    url "https://files.pythonhosted.org/packages/c3/b2/bc9c9196916376152d655522fdcebac55e66de6603a76a02bca1b6414f6c/pygments-2.20.0.tar.gz"
-    sha256 "6757cd03768053ff99f3039c1a36d6c0aa0b263438fcab17520b30a303a82b5f"
+    url "https://files.pythonhosted.org/packages/49/2e/ced460408999b33da6b31b0021b0f37d329e202d4169aeb164493778f25b/pygments-2.21.0.tar.gz"
+    sha256 "610ca751c9bc2492b38eb9a38a7fbc93edbbb2d7182edaf34e66ae493dee5c8c"
   end
 
   resource "pyjwt" do
@@ -343,8 +348,8 @@ class McpAtlassian < Formula
   end
 
   resource "python-dotenv" do
-    url "https://files.pythonhosted.org/packages/82/ed/0301aeeac3e5353ef3d94b6ec08bbcabd04a72018415dcb29e588514bba8/python_dotenv-1.2.2.tar.gz"
-    sha256 "2c371a91fbd7ba082c2c1dc1f8bf89ca22564a087c2c287cd9b662adde799cf3"
+    url "https://files.pythonhosted.org/packages/6a/53/ed9d74092561d4b01a2ef1349d52cdbc135e526c245f366b089cfca6de49/python_dotenv-1.2.3.tar.gz"
+    sha256 "a20a594dabeaa385725aa239d5244871c143ecb356add8a20fcf23773a6c3a35"
   end
 
   resource "python-multipart" do
@@ -363,8 +368,8 @@ class McpAtlassian < Formula
   end
 
   resource "redis" do
-    url "https://files.pythonhosted.org/packages/cc/c3/928b290c2c0ca99ab96eea5b4ff8f30be8112b075301a7d3ba214a3c8c12/redis-8.0.1.tar.gz"
-    sha256 "afc5a7a2f5a084f5b1880dec548dd45be17db7e43c82a30d84f952aefb05cfb0"
+    url "https://files.pythonhosted.org/packages/a8/99/604f0b666d4c616d891cf77ebb9db6bb21601344c051aebf1b72b9ff915f/redis-8.1.0.tar.gz"
+    sha256 "6e1a19beef9225c83efd689c7e6b7da2d5215b1f42cd13b7fc3714d0a09c7b25"
   end
 
   resource "referencing" do
@@ -413,18 +418,18 @@ class McpAtlassian < Formula
   end
 
   resource "soupsieve" do
-    url "https://files.pythonhosted.org/packages/47/2c/0a5f6f8ee0d5589e48c7640213ed5175d52cf540a06725b628cc1a45d6ce/soupsieve-2.8.4.tar.gz"
-    sha256 "e121fd02e975c695e4e9e8774a5ee35d74714b59307868dcc5319ad2d9e3328e"
+    url "https://files.pythonhosted.org/packages/69/99/a6ca3beb3ccacb41fb3321d8a60e5566f9e6467601ef8eba6a17e1b89778/soupsieve-2.9.2.tar.gz"
+    sha256 "4a55d8cf158a9c2e587fa4922f1bbb91d68ac829e2d6f25403a85747c71daf74"
   end
 
   resource "sse-starlette" do
-    url "https://files.pythonhosted.org/packages/d2/1b/bc9e3e7a72dcdad7dc7888758f5d00f56f8909ed5cfdff822bd72bb4c520/sse_starlette-3.4.5.tar.gz"
-    sha256 "83072538bc211a2f68b7b0422226c4af3e9b62e106e07034664b832ca019842a"
+    url "https://files.pythonhosted.org/packages/f8/00/b42a44342a054d58cb1115d7c8aa9cb4290dd9442f9c1b91a4b8173dba22/sse_starlette-3.4.8.tar.gz"
+    sha256 "ed89ffbb75cbf78a5fe2f2109cd584792ee7f9dfac96f791db546df8f15f3f9c"
   end
 
   resource "starlette" do
-    url "https://files.pythonhosted.org/packages/eb/e3/7c1dc7381d9f8ab7d854328ebfa884e62cb3f3d8549ddfd37c7814f42afa/starlette-1.3.1.tar.gz"
-    sha256 "05d0213193f2fbaae60e2ecb593b4add4262ad4e46536b54abe36f11a71724e0"
+    url "https://files.pythonhosted.org/packages/b5/b4/205b0d5241d934e8add0c38aa924c4f9fb7330834ff11e5444db964ec3f9/starlette-1.6.0.tar.gz"
+    sha256 "d4e3ac5e546444960c710297a3c9fc3f7ebae1b7e963f3d36173b49da535be9b"
   end
 
   resource "thefuzz" do
@@ -433,8 +438,8 @@ class McpAtlassian < Formula
   end
 
   resource "trio" do
-    url "https://files.pythonhosted.org/packages/52/b6/c744031c6f89b18b3f5f4f7338603ab381d740a7f45938c4607b2302481f/trio-0.33.0.tar.gz"
-    sha256 "a29b92b73f09d4b48ed249acd91073281a7f1063f09caba5dc70465b5c7aa970"
+    url "https://files.pythonhosted.org/packages/92/dc/a2d25ed73ad49cfd79bf18d262577c3731c98e382284e28d522f49a0df35/trio-0.34.0.tar.gz"
+    sha256 "63b9485408bdfdde544fced107045a8c0086cdc4bd0ef2f797b9e0dd111b964b"
   end
 
   resource "truststore" do
@@ -448,13 +453,13 @@ class McpAtlassian < Formula
   end
 
   resource "types-python-dateutil" do
-    url "https://files.pythonhosted.org/packages/df/9a/aefb9f80ff79641d36149352afe66ca835c5e6894deb518418f786f4b8ad/types_python_dateutil-2.9.0.20260716.tar.gz"
-    sha256 "1d55d1c3024bdb4861bb6a6622c9ec800c433d87bdc5b16fb84cdd0eed4ef2cb"
+    url "https://files.pythonhosted.org/packages/c8/4e/b3fa538f9cb38dfece0d6ccf6d3d0d925bdedb144fb9c8129dfc007cd003/types_python_dateutil-2.9.0.20260807.tar.gz"
+    sha256 "e0b8a90d464c8684c66b7b8e4556d9074afdddcc56ca45323f0987134f9e7034"
   end
 
   resource "uncalled-for" do
-    url "https://files.pythonhosted.org/packages/b5/82/345cc927f7fbdae6065e7768759932fcc827fc20b29b45dfbafa2f1f7da4/uncalled_for-0.3.2.tar.gz"
-    sha256 "89f5dbcd71e2b8f47c030b1fa302e6cce2ec795d1ac565eeb6525c5fe55cb8a2"
+    url "https://files.pythonhosted.org/packages/6b/5a/92ce0b3ea5481915f55da994c2c2c5f7a3c09949afde196ee89f8ab961aa/uncalled_for-0.4.0.tar.gz"
+    sha256 "335b95bd2422332ec210d518f314a16e4c640921c39fc8bf2ad095bd3538f4af"
   end
 
   resource "unidecode" do
@@ -468,8 +473,8 @@ class McpAtlassian < Formula
   end
 
   resource "uvicorn" do
-    url "https://files.pythonhosted.org/packages/a2/65/b7c6c443ccc58678c91e1e973bbe2a878591538655d6e1d47f24ba1c51f3/uvicorn-0.51.0.tar.gz"
-    sha256 "f6f4b69b657c312f516dd2d268ab9ae6f254b11e4bac504f37b2ab58b24dd0b0"
+    url "https://files.pythonhosted.org/packages/2e/28/64ca011edf31c715b4fad359c587ea52391aaffa125065695590241ff617/uvicorn-0.52.3.tar.gz"
+    sha256 "18857b9e6579300be55c91c0a1cfd37d9a2cf0cabea33b88275f199eb73b8b58"
   end
 
   resource "watchfiles" do
@@ -478,13 +483,13 @@ class McpAtlassian < Formula
   end
 
   resource "websockets" do
-    url "https://files.pythonhosted.org/packages/21/f7/bc3a25c5ec26ce62ce487690becc2f3710bbc7b33338f005ad390db0b986/websockets-16.1.1.tar.gz"
-    sha256 "db234eda965dcce15df96bb9709f587cd87d4d52aaf0e80e2f34ec04c7670c57"
+    url "https://files.pythonhosted.org/packages/f7/96/e01084f83a64bcb3a27994bd0cb0db68ff29d9c6707fae37ec19b18ba990/websockets-17.0.1.tar.gz"
+    sha256 "5baa9bc0dfbae8c507e51c8cf1b6d4628086f7a87bbd3a9952bd5f035451f1cc"
   end
 
   resource "wrapt" do
-    url "https://files.pythonhosted.org/packages/fe/a4/282c8e64300a59fc834518a54bf0afabb4ff9218b5fa76958b450459a844/wrapt-2.2.2.tar.gz"
-    sha256 "0788e321027c999bf221b667bd4a54aaefd1a36283749a860ac3eb77daed0302"
+    url "https://files.pythonhosted.org/packages/2b/b0/c1f5a970721f06b85c0cd5142e0ff8fe067708abd779b0c4f4be7d61d09f/wrapt-2.3.0.tar.gz"
+    sha256 "681a2d0eefd721998f90642762b8e75c2159ec531b20ad5e437245ea7b06a107"
   end
 
   def install

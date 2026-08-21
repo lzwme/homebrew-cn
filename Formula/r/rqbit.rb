@@ -1,18 +1,18 @@
 class Rqbit < Formula
   desc "Fast command-line bittorrent client and server"
   homepage "https://github.com/ikatson/rqbit"
-  url "https://ghfast.top/https://github.com/ikatson/rqbit/archive/refs/tags/v9.0.0.tar.gz"
-  sha256 "a5c549c35e5a1e643e67376fd465158421a57e600594b69438f444b804fb6f34"
+  url "https://ghfast.top/https://github.com/ikatson/rqbit/archive/refs/tags/v9.0.1.tar.gz"
+  sha256 "62a42c56259b737eea6580b63061589dc9940b145c40991cfff83470aa783291"
   license "Apache-2.0"
   head "https://github.com/ikatson/rqbit.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7ea18b3c71572ff7929eec91eb4fb7920125b3e80ac1194643bcc0c06578136a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dbd898c38cdf10af068948a14fa0611607699b23789109d8a6c4589851e55a17"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d955ab06760962d9f546ee8a4d56c8729e1f8cd9e72e5bb8079555c7a0006181"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ee5092fc4be98c9ba6b60d61d8c180d4f314b82990ed74c30a87ba3ba0b879aa"
-    sha256 cellar: :any,                 arm64_linux:   "7d0eee71de9c9104343f7661fb6cd92c3aa14c77a71c507725a3e3d0ae28286f"
-    sha256 cellar: :any,                 x86_64_linux:  "07ff34ad28683b1492e609e23ee7f90269ae91a93c2b50c134dbe1ebe8fb04de"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4dca7d2cd2f280e9faf40def0976b4af3376ccf0fa55a97542825fbb92b22d14"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5e2f6c877977e8cf35fe3d594b2765f1c32e74574b5e93df44f59519cc787427"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5140af1afa446f83e16b442e21b4c8e7c2719978ab93d277594e0fffef3c030f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a6ddf1439b0d0d2c817e05e56783995efc31b2a82eab0cfe3eb20e5d2996fec6"
+    sha256 cellar: :any,                 arm64_linux:   "68a70796b2f168200ea6f0f819a83c00978304ccc6c435453bb26582df07b1e9"
+    sha256 cellar: :any,                 x86_64_linux:  "19cf681f97b552aff7540b3c156264c59329182dbbb3d4fa0d3f74c168608188"
   end
 
   depends_on "node" => :build

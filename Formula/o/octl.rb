@@ -1,18 +1,18 @@
 class Octl < Formula
   desc "Modern CLI for Outscale"
   homepage "https://github.com/outscale/octl"
-  url "https://ghfast.top/https://github.com/outscale/octl/archive/refs/tags/v0.0.30.tar.gz"
-  sha256 "3b7428a07d73785cd8eb9e633d349a9c215db50e848c72fbeacc38df76200bd0"
+  url "https://ghfast.top/https://github.com/outscale/octl/archive/refs/tags/v0.0.31.tar.gz"
+  sha256 "683ad1acb62889cc9167f39ed76228bdf002fe7fb72cf1882f887228d81acf8b"
   license "BSD-3-Clause"
   head "https://github.com/outscale/octl.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "89fb0ce0e095a9d089813dfac941f32db975281c2346ebc0bc07e857b9482e51"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e281b0fb5cba093b1a739473280a8ae9556440733ce5ef4f4f8ff415caf6642c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3350631a83d663731aa70d8bfe8ba84c4aab8260b1d73d3a6c0d83eb13e526b5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9f308c396923465f22e48dcc87e370d6f9b7ff7f2b38d3936c0c7481cd5ab240"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0fada54a38d7a84bea02a8f13dfd522c198c55a0d95638c399c98569b61f3fe9"
-    sha256 cellar: :any,                 x86_64_linux:  "c5b87b4a74533d55da0de4cd2f2c122af2f8f25ac18d9dc24e55bd9ac5ea8924"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2c974c1664d1598d0538332d0754154493f64851f66b9beb3625df95188d2643"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5847ce3c8644f8fe46ae4a80031dda566cee2ea66399ac34553b596b3fdfcdbd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "271c319a32acd52d707ace4e15599caf8ada4997a984cde43c63cbd754c21a0b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4efec24641e04c3024291c32db089759643fe53e4af9ae5721b6a53dc2cfca45"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4ac8ea737c08ec7641ecff2bf82a464177f5b68304020ab44120415fa5145ddf"
+    sha256 cellar: :any,                 x86_64_linux:  "681e0ae7660cb66264776be6f316e359c96e219b9b9afaa1f8de319451f714a0"
   end
 
   depends_on "go" => :build

@@ -1,17 +1,17 @@
 class Kata < Formula
   desc "Local-first, federated issue tracker for humans and coding agents"
   homepage "https://katatracker.com"
-  url "https://ghfast.top/https://github.com/kenn-io/kata/releases/download/v0.15.0/kata_0.15.0_source.tar.gz"
-  sha256 "8ad56ae9987fe8450e27343f8241f61951916e59219be1f9b5d87fa42ea96cdb"
+  url "https://ghfast.top/https://github.com/kenn-io/kata/releases/download/v0.15.1/kata_0.15.1_source.tar.gz"
+  sha256 "ef16e992bce0689fb4eed54115f9ac41038aab027b53e0f4bbbaa41e638d9a4d"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6ee9c439830558829256d7377d8896504068dd05d4e5d1c8643c78e477681447"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6ee9c439830558829256d7377d8896504068dd05d4e5d1c8643c78e477681447"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6ee9c439830558829256d7377d8896504068dd05d4e5d1c8643c78e477681447"
-    sha256 cellar: :any_skip_relocation, sonoma:        "26a3c906d337cc60d38333579ff23ad5dacc79da827ad652439c29eb5ef9c847"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fc586982d7a7492e6a0559746930776c19b1e94a1bf72bf2e126709d1bcdbde5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c28f1787cb8a17cba71274f3c7abb00445160d080c5401dda9cb2b58b79b8d6e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "867be9a4eb3ae1a97caecb8d914d11395fb8cafd24330c5ee3d3a562501efe80"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "867be9a4eb3ae1a97caecb8d914d11395fb8cafd24330c5ee3d3a562501efe80"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "867be9a4eb3ae1a97caecb8d914d11395fb8cafd24330c5ee3d3a562501efe80"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8950a6ff80d0554d4786accae01fc160abc981acfba56f59d92bacd3721488eb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4df8b049e42bc0df052552e344b77be7c85b7f1efb91e4f9f06066aba9d1f2ba"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "adf4f5b3e61a37257970f01453ca2dcfac8c3057c177031b3d4ac9a5039863aa"
   end
 
   depends_on "go" => :build

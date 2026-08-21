@@ -6,6 +6,11 @@ class Mlpack < Formula
   license all_of: ["BSD-3-Clause", "MPL-2.0", "BSL-1.0", "MIT"]
   head "https://github.com/mlpack/mlpack.git", branch: "master"
 
+  livecheck do
+    url "https://www.mlpack.org/download.html"
+    regex(/href=.*?mlpack[._-]v?(\d+(?:\.\d+)+)\.t/i)
+  end
+
   bottle do
     sha256 cellar: :any, arm64_tahoe:   "2e6b526883e1455de59704ca34e42e2775df5f78bd4d2e04497eb0b5cc9f420f"
     sha256 cellar: :any, arm64_sequoia: "75c24e1ad876fe3a34c4c07a86cec2988c7d3d40e41b81c57f883f345cca2840"

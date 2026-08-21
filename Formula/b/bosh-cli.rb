@@ -1,18 +1,18 @@
 class BoshCli < Formula
   desc "Cloud Foundry BOSH CLI v2"
   homepage "https://bosh.io/docs/cli-v2/"
-  url "https://ghfast.top/https://github.com/cloudfoundry/bosh-cli/archive/refs/tags/v7.10.9.tar.gz"
-  sha256 "69d548986a4261a43a932520ec6696c96d56e166db3401c6257a9a8c160a49d4"
+  url "https://ghfast.top/https://github.com/cloudfoundry/bosh-cli/archive/refs/tags/v7.10.10.tar.gz"
+  sha256 "72e1bfbbf920edfb3e4bcec0e8e9c13ee1c3e9015e2cbf7d858bdc8220c13287"
   license "Apache-2.0"
   head "https://github.com/cloudfoundry/bosh-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c0deebc894acd8d918f016e4c33e940066da0ac0055bd94bb522b5bfba705e02"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c0deebc894acd8d918f016e4c33e940066da0ac0055bd94bb522b5bfba705e02"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c0deebc894acd8d918f016e4c33e940066da0ac0055bd94bb522b5bfba705e02"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f842732d42127779421c6408bf4a777a5c5eaf0db0ccf8f9d55fe13e5cb2a197"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "52424e0d266ea44748036af8cef2409998f46fc29553b845508166f46f198ba7"
-    sha256 cellar: :any,                 x86_64_linux:  "5d33f1abc8788797afc6046202484259c6d28e4583801300b0b8ca531b89c0c0"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3e3a91310519e9af82a4777a7336445d6692b16d6a0b410837909046276182fe"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3e3a91310519e9af82a4777a7336445d6692b16d6a0b410837909046276182fe"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3e3a91310519e9af82a4777a7336445d6692b16d6a0b410837909046276182fe"
+    sha256 cellar: :any_skip_relocation, sonoma:        "be46848d48874e3bd17c33a2be489aab6d5607297ea863efdc602e111f491236"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ecab199d86034179358c3d1030d70d23132caf2c22f29751acf549d104bb2b7f"
+    sha256 cellar: :any,                 x86_64_linux:  "6d4daae0b0d4333e5dfd18fba4abe3fce99f25f800ee49b327131ae02311a271"
   end
 
   depends_on "go" => :build

@@ -1,17 +1,17 @@
 class Openspec < Formula
   desc "Spec-driven development (SDD) for AI coding assistants"
   homepage "https://openspec.dev/"
-  url "https://registry.npmjs.org/@fission-ai/openspec/-/openspec-1.9.0.tgz"
-  sha256 "c31b792d1437a62b94fbff7b33889b4a6411d086fa2c1fe550aa14f77c515b2c"
+  url "https://registry.npmjs.org/@fission-ai/openspec/-/openspec-1.10.0.tgz"
+  sha256 "fefcf1b7d1e38cf06a3279c6245170dcb0d261d8d6c8ead3f3096b41f4b971fc"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "60958b71b5e236e16b8ec4ca090c5337c0eb651dc6b9e50d53b66b13028a2614"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "60958b71b5e236e16b8ec4ca090c5337c0eb651dc6b9e50d53b66b13028a2614"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "60958b71b5e236e16b8ec4ca090c5337c0eb651dc6b9e50d53b66b13028a2614"
-    sha256 cellar: :any_skip_relocation, sonoma:        "263344c7842800984709dc950c9bbd0f3253c37e4933754e9a3e5673fb9d2932"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "263344c7842800984709dc950c9bbd0f3253c37e4933754e9a3e5673fb9d2932"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "263344c7842800984709dc950c9bbd0f3253c37e4933754e9a3e5673fb9d2932"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c0f7b8373e4db514eac4a6ca2ad4a0185780a525a4f74906e134a561e8acb17a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c0f7b8373e4db514eac4a6ca2ad4a0185780a525a4f74906e134a561e8acb17a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c0f7b8373e4db514eac4a6ca2ad4a0185780a525a4f74906e134a561e8acb17a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "735b3e3d9ccc1f0a37fc20b2c590729f22e7823d928547a8b64bbfaab09683bb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "735b3e3d9ccc1f0a37fc20b2c590729f22e7823d928547a8b64bbfaab09683bb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "735b3e3d9ccc1f0a37fc20b2c590729f22e7823d928547a8b64bbfaab09683bb"
   end
 
   depends_on "node"

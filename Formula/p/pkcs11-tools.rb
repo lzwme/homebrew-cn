@@ -5,6 +5,11 @@ class Pkcs11Tools < Formula
   sha256 "da87f7371be0c94e6ae11cb65c033fbdc9be5549430b7c6f7a90abca200dcfcf"
   license "Apache-2.0"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     sha256 cellar: :any, arm64_tahoe:   "c226d97ae6a863b54da9102b0e957528b0916d7c5301928d0be68589cbcf8d80"
     sha256 cellar: :any, arm64_sequoia: "e9c6808bf746910582e3d676f0c2e7df3fcbe9a0735eb68c546dc001c59876c0"

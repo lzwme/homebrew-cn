@@ -6,6 +6,11 @@ class Newsboat < Formula
   license "MIT"
   head "https://github.com/newsboat/newsboat.git", branch: "master"
 
+  livecheck do
+    url :homepage
+    regex(/href=.*?newsboat[._-]v?(\d+(?:\.\d+)+)\.t/i)
+  end
+
   bottle do
     sha256 arm64_tahoe:   "91917308c99d3f4c520f0212ab9f597345105d5341a643521b48712f3f1d90ae"
     sha256 arm64_sequoia: "b809a6a65a626b2e779f57a8c7d2e4e33167fcf69f13e6254621689064ccaffa"
