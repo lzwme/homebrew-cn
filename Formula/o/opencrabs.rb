@@ -1,18 +1,18 @@
 class Opencrabs < Formula
   desc "Autonomous, self-improving AI agent in a single Rust binary"
   homepage "https://opencrabs.com"
-  url "https://ghfast.top/https://github.com/adolfousier/opencrabs/archive/refs/tags/v0.3.81.tar.gz"
-  sha256 "b863fbe0634abebee714f1bf6ec54b0db6a5e52972a0988a99f9d5b93565f281"
+  url "https://ghfast.top/https://github.com/adolfousier/opencrabs/archive/refs/tags/v0.3.82.tar.gz"
+  sha256 "14c8d19da3280da5ae56207b69b3a7eb0e752c0053ffb7cc4c4bda6db7873e0e"
   license "MIT"
   head "https://github.com/adolfousier/opencrabs.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "dff95921ceae16e97bb823ba8598bbf3ed122298190dc93e8a67cd47869b8920"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7e1cc4245b562127661d911062d7461d1f3daea5aab89d9acf2e8e43387943e6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c9f25797b2c0b19ea1001c4dd56f33d8633df67580ca62320acb7bc9f2ce412e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0513ecbbdd9958b2edf3ba27d93d61ca3281602231e23201931be5cc3205ba4d"
-    sha256 cellar: :any,                 arm64_linux:   "aa16df276618c0b1433f0adbb358691dfaf6078d2b7d019ef33c2c444c82b8b0"
-    sha256 cellar: :any,                 x86_64_linux:  "5fcba94c8969e0042c787f6a7fb552b218af18ae079b06947be2c864b559927f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "987b2e113d7c608d1d11e5354717078779b54e619276a45fc8e11050f5c674bb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "921750fc1cff7b783fe3c556a4ec2eceb9be607523cdaab2428b17f80b705434"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f46fabc87108b35a3aa54be5193d75a48cb6677c497665300bcf7334b13f0424"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d94ce4538e59e6ab55f5e4f1f7bb7591b59e821e920df2bfde86bf5d5fe135e2"
+    sha256 cellar: :any,                 arm64_linux:   "a251b96a32f7a80f217d55e0a341a006ace5ddb92c8c0ef9555a172812314c4e"
+    sha256 cellar: :any,                 x86_64_linux:  "33532fce1ab29c6a5ddefbcfa81b7d6ff86c873677809e2e29adee25e7ae5783"
   end
 
   depends_on "cmake" => :build

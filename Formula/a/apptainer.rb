@@ -14,7 +14,9 @@ class Apptainer < Formula
   # No relocation, the localstatedir to find configs etc is compiled into the program
   pour_bottle? only_if: :default_prefix
 
-  depends_on "go" => :build
+  # TODO: unpin go@1.26 when apptainer release supports go 1.27
+  # ref: https://github.com/apptainer/apptainer/pull/3563
+  depends_on "go@1.26" => :build
   depends_on "pkgconf" => :build
   depends_on "libseccomp"
   depends_on :linux

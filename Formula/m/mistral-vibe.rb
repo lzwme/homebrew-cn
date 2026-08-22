@@ -3,18 +3,18 @@ class MistralVibe < Formula
 
   desc "Minimal CLI coding agent"
   homepage "https://github.com/mistralai/mistral-vibe"
-  url "https://files.pythonhosted.org/packages/87/a5/f38225de17644cfed077fa4222d22251a76167a5f89dd5f9e3342a267341/mistral_vibe-2.24.2.tar.gz"
-  sha256 "be62b3148a9640ab2d72ab9849a40499d1680aa59589b01deb62c5eb08df269d"
+  url "https://files.pythonhosted.org/packages/ba/31/daac21ad11c619cc7e02bf5f2ce09dedabde45e52307c412076ee27617dd/mistral_vibe-2.24.3.tar.gz"
+  sha256 "a7b954f2a86d71b96b0bca4afc89f6c7df45ae093349b567ba49af0c44725be7"
   license "Apache-2.0"
   head "https://github.com/mistralai/mistral-vibe.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "189b57ed4ffcb0847feb78dd3cb5ed8a2d6404f0d09a59a6fda0702267afb5b7"
-    sha256 cellar: :any, arm64_sequoia: "4bec5de5086999a412b37bc62cc407858fcef1f17dff8a05d1e19d4b2a5e7364"
-    sha256 cellar: :any, arm64_sonoma:  "bb1b089e93fd7584ef85baa84d565af912b0460d687612e824803eacd4a47cbe"
-    sha256 cellar: :any, sonoma:        "e63b1f27f5f0c0a5ed69f37e05b4f0978219f116f9c83df43a495f3777823726"
-    sha256 cellar: :any, arm64_linux:   "41b7c98d26419944fe72ae1072fe8bba883636eb54856a1c82a6d32061871ce0"
-    sha256 cellar: :any, x86_64_linux:  "e85863e41c066e51b6caa3514e4eb90a5ba7584e12dc48c667ade0cd99758e57"
+    sha256 cellar: :any, arm64_tahoe:   "e9151cfe2991e82d2dacda65c4f4396b60f403ca69f2be2bda08384ba231940f"
+    sha256 cellar: :any, arm64_sequoia: "3bda973e7ee396576d37b2ac7ff5842dde9740ee0273a0198eb2eb1a1e916d58"
+    sha256 cellar: :any, arm64_sonoma:  "648a9535cf1d0100c630ba7cc079f120f6ccfc5b271757a0ac10c985023f378a"
+    sha256 cellar: :any, sonoma:        "a7053367e41bc46637cd9250c74fecd5018afc44b15b990d02ac70c8b58e34a8"
+    sha256 cellar: :any, arm64_linux:   "45513f5e18d65dfb254ea76f027f2e2724020b1b56d87138a7baa58a2af719fa"
+    sha256 cellar: :any, x86_64_linux:  "6f24502f96fe90152db7007a5a7cc88b616744ccaf7d62cc06acc3342ebc4823"
   end
 
   depends_on "rust" => :build
@@ -73,8 +73,8 @@ class MistralVibe < Formula
   end
 
   resource "gitpython" do
-    url "https://files.pythonhosted.org/packages/ba/0d/132ed135c871b6bf91adf16a0e43797cd535b81d4973b5d09291c54fc5ee/gitpython-3.1.57.tar.gz"
-    sha256 "c493ec57c0ef6b19743798b6a5af859c71814b524e7e6f97baa2f8e658961488"
+    url "https://files.pythonhosted.org/packages/26/d6/5f358ff283325580c2003a6d953aea18cfe10ae87b46f5ebc80fa3a386dc/gitpython-3.1.58.tar.gz"
+    sha256 "621416df10ef3fd0e19fabf9172ddeed0fa704d353d04f194eec56a625a95b22"
   end
 
   resource "giturlparse" do
@@ -345,6 +345,11 @@ class MistralVibe < Formula
   resource "sentry-sdk" do
     url "https://files.pythonhosted.org/packages/60/31/b7341f156a5f6f36f0b4845d6f1c28a2ae4799171dba7007f3a1e9b234b4/sentry_sdk-2.64.0.tar.gz"
     sha256 "68be2c29e14ae310f8a39e1a79916b6d85c6cb41dcce789d14ff05fe293e4c55"
+  end
+
+  resource "setproctitle" do
+    url "https://files.pythonhosted.org/packages/8d/48/49393a96a2eef1ab418b17475fb92b8fcfad83d099e678751b05472e69de/setproctitle-1.3.7.tar.gz"
+    sha256 "bc2bc917691c1537d5b9bca1468437176809c7e11e5694ca79a9ca12345dcb9e"
   end
 
   resource "six" do

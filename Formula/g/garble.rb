@@ -16,7 +16,8 @@ class Garble < Formula
     sha256 cellar: :any,                 x86_64_linux:  "9390904c7afab4c67480f73c44d18e6911801d1ff7ed37df15b9f4d79f5890a0"
   end
 
-  depends_on "go" => [:build, :test]
+  # TODO: unpin go@1.26 when garble supports go 1.27
+  depends_on "go@1.26" => [:build, :test]
 
   def install
     system "go", "build", *std_go_args
@@ -32,6 +33,9 @@ class Garble < Formula
           fmt.Println("Hello World")
       }
     GO
+
+    # TODO: remove when unpinning go 1.26
+    ENV.prepend_path "PATH", formula_opt_libexec("go@1.26")/"bin" # for keg_only go 1.26 binary
 
     # `garble` breaks our git shim by clearing the environment.
     # Remove once git is no longer needed. See caveats:

@@ -6,6 +6,11 @@ class XorgServer < Formula
   license all_of: ["MIT", "APSL-2.0"]
   compatibility_version 1
 
+  livecheck do
+    url :stable
+    regex(/href=.*?xorg-server[._-]v?(\d+\.\d+(?:\.(?:\d|[0-8]\d+))+)\.t/i)
+  end
+
   bottle do
     sha256 arm64_tahoe:   "277d48e1ae129f621928d182dfb59d436bee94ef8c82f8ab18740b117b599ad0"
     sha256 arm64_sequoia: "0d8b6a8652cae487783f961c1a6d0f77f64542ca0d3a268f4f0386005ec538ff"

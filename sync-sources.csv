@@ -2735,6 +2735,7 @@ Homebrew-homebrew-core/Formula/g/go@1.22.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/go@1.23.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/go@1.24.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/go@1.25.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/g/go@1.26.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/goaccess.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/goat.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/goawk.rb, Homebrew/homebrew-core, 1
@@ -2830,6 +2831,7 @@ Homebrew-homebrew-core/Formula/g/gpgmepy.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gphoto2.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gphotos-uploader-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gping.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/g/gpk.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gplcver.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gplugin.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gpp.rb, Homebrew/homebrew-core, 0
@@ -3377,6 +3379,7 @@ Homebrew-homebrew-core/Formula/j/jailkit.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/j/janet.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/jansson.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/jaq.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/j/jarl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/jasmin.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/j/jasper.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/java-service-wrapper.rb, Homebrew/homebrew-core, 0
@@ -3589,7 +3592,7 @@ Homebrew-homebrew-core/Formula/k/keystone.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/keyutils.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/k/kfr.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/khal.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/k/khaos.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/k/khaos.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/khard.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/k/khiva.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/k/ki.rb, Homebrew/homebrew-core, 1
@@ -5292,6 +5295,7 @@ Homebrew-homebrew-core/Formula/n/ntl.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/n/ntopng.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/ntp.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/n/nu.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/n/nub.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/nuclei.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/nudoku.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/nuget.rb, Homebrew/homebrew-core, 0
@@ -6601,6 +6605,7 @@ Homebrew-homebrew-core/Formula/r/rtl_433.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rtmidi.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rtmpdump.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/rtorrent.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/r/rtp2httpd.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rtptools.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rttr.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rubberband.rb, Homebrew/homebrew-core, 0
@@ -7230,7 +7235,7 @@ Homebrew-homebrew-core/Formula/s/stella.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/stellar-cli.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/stellar-core.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/stellar-xdr.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/s/stencil.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/s/stencil.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/step.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/stepci.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/stern.rb, Homebrew/homebrew-core, 1

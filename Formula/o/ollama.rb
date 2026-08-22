@@ -2,8 +2,8 @@ class Ollama < Formula
   desc "Create, run, and share large language models (LLMs)"
   homepage "https://ollama.com/"
   url "https://github.com/ollama/ollama.git",
-      tag:      "v0.32.14",
-      revision: "d67ad83426633195089509347ffd4fe795120198"
+      tag:      "v0.32.15",
+      revision: "b7871fc0d1d82fe109536efa3e0e8e411c766c75"
   license "MIT"
   head "https://github.com/ollama/ollama.git", branch: "main"
 
@@ -16,12 +16,12 @@ class Ollama < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d1c4bfe39274239a9f3510806738ba1036e37503099fa7f8dc1febef5c6f2fa2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5f9fece5e747f68761957b05eb3d67a82167d03267e5d0a89507aa50ea0e8707"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1266a333fd20998fecb9b0b09fa3d155f7c7d90a9fbb7f714815eaefdab6705a"
-    sha256 cellar: :any,                 sonoma:        "72e947e59910595b078f4579a4d1a140e0643c1c43222121d6328cb7c18e7c06"
-    sha256 cellar: :any,                 arm64_linux:   "411e19891b19f724d26865ac95a31ffbef037a716ead40e77421ea3bf07aefd1"
-    sha256 cellar: :any,                 x86_64_linux:  "a3bb902214f049bf342e2b7d2ba6fe7bdfab98a5482d352ae78b25105afe188b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2bc9bd9efad19830386fdbae22dc55d488bdb7d5d2d1b627987fd84376cce92f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8c50ade984dff2df2be40cf25c3ab731964c1016bbcc308efe874953221b104e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "584febeaa14ce3e2bfce934195dd2b06145ad2f992225d817f7468c3d76439b9"
+    sha256 cellar: :any,                 sonoma:        "56ef64a61d95c82538bbb99455edb23b8029ad63cd8739cdd8716168b434046f"
+    sha256 cellar: :any,                 arm64_linux:   "4999786a4444aed7d99767bd36959615507080cea80f7df96313ec3c1906a335"
+    sha256 cellar: :any,                 x86_64_linux:  "d80922c4f01abef0c6cd3814b836e71917ccb142e4f6f4acdd1fc08384192a30"
   end
 
   depends_on "ccache" => :build
@@ -31,6 +31,10 @@ class Ollama < Formula
   on_macos do
     on_arm do
       depends_on "mlx-c" => :no_linkage
+
+      # Build with the mlx-c bindings for tagged MLX 0.32.1. Upstream targets a later MLX commit:
+      # https://github.com/ollama/ollama/commit/0bb09259203ff8f6d361faae1d40c4f83d2a99f7
+      patch :DATA
     end
   end
 
@@ -39,8 +43,8 @@ class Ollama < Formula
   # Pinned dependency required by llama-server
   resource "llama.cpp" do
     url "https://github.com/ggml-org/llama.cpp.git",
-        tag:      "b10434",
-        revision: "7e4c0a96880dae4fc4268ad441f8a6446bd5460a"
+        tag:      "b10488",
+        revision: "9d77fa17254e1dee4b9e92504c91611a60b1359f"
 
     livecheck do
       url "https://ghfast.top/https://raw.githubusercontent.com/ollama/ollama/refs/tags/v#{LATEST_VERSION}/LLAMA_CPP_VERSION"
@@ -177,3 +181,12 @@ class Ollama < Formula
     end
   end
 end
+
+__END__
+diff --git a/x/mlxrunner/mlx/fast.go b/x/mlxrunner/mlx/fast.go
+index 27d5724..f38a670 100644
+--- a/x/mlxrunner/mlx/fast.go
++++ b/x/mlxrunner/mlx/fast.go
+@@ -24 +24 @@ func FastScaledDotProductAttention(q, k, v *Array, scale float32, mode string, m
+-	C.mlx_fast_scaled_dot_product_attention(&out.ctx, q.ctx, k.ctx, v.ctx, C.float(scale), cMode, maskCtx, sinks.ctx, C.bool(false), DefaultStream().ctx)
++	C.mlx_fast_scaled_dot_product_attention(&out.ctx, q.ctx, k.ctx, v.ctx, C.float(scale), cMode, maskCtx, sinks.ctx, DefaultStream().ctx)

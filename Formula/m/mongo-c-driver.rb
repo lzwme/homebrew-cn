@@ -1,8 +1,8 @@
 class MongoCDriver < Formula
   desc "C driver for MongoDB"
   homepage "https://github.com/mongodb/mongo-c-driver"
-  url "https://ghfast.top/https://github.com/mongodb/mongo-c-driver/archive/refs/tags/2.4.0.tar.gz"
-  sha256 "e924836aaf4cd8c9b26b587b993aeef5b4976c71fd9c8b8a7165dc76ff36e00c"
+  url "https://ghfast.top/https://github.com/mongodb/mongo-c-driver/archive/refs/tags/2.5.0.tar.gz"
+  sha256 "3ecf5ffe9c442cd05a79e0e9e7797a2bacd2977733a3d53555ba6fa54936f7b3"
   license "Apache-2.0"
   compatibility_version 1
   head "https://github.com/mongodb/mongo-c-driver.git", branch: "master"
@@ -13,12 +13,12 @@ class MongoCDriver < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "de62c3536e6fce1925cbf05be31bcb386ac85077f3260c09c86648870f21ca73"
-    sha256 cellar: :any, arm64_sequoia: "a2fc9ef3acdf1d4318b5d7deaf75a5d1f13636b18385c4407bb186c9841b0aed"
-    sha256 cellar: :any, arm64_sonoma:  "621ae07fbc528c19a13603468c28188e19bf8344dad1dcb5527b377dfc7ab4db"
-    sha256 cellar: :any, sonoma:        "da665db020b7ee5b25d1bbf184ae9934274e8fcdf6de3b63e7ec7605236bc648"
-    sha256 cellar: :any, arm64_linux:   "5ec6454ca9b0ae4f802d9351b7841bd07f938934e39cb08081450a1440ba8bf1"
-    sha256 cellar: :any, x86_64_linux:  "62644e02292073e63f2e4d97417fac7eaa61696899946168cffd6833435d79e2"
+    sha256 cellar: :any, arm64_tahoe:   "4dc068504cbfcba9f16009e998949395afba22d866e1432bcb91c2e67b97bfbb"
+    sha256 cellar: :any, arm64_sequoia: "e0ceb69835b518144123ae68297fc26fdfe0df3861aaefc38ce12576839bb0d0"
+    sha256 cellar: :any, arm64_sonoma:  "9b88823ec957f06c28948b6d040657096df17d186b75cb3814281f7cc46207d8"
+    sha256 cellar: :any, sonoma:        "9478062d9afa5a15f1cd6dc1ba307e6a6e621792f79be163d1a03e99d2143036"
+    sha256 cellar: :any, arm64_linux:   "0b9540bcfef0df728a3e45f98c734fe6cbb1e61de5325bc84bd7ac6968ce99c0"
+    sha256 cellar: :any, x86_64_linux:  "3ce27f63717432c439310b14bc1c1ea4e1cf6e54bcc38546cbfcd844ecb8ae75"
   end
 
   depends_on "cmake" => :build

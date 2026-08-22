@@ -1,8 +1,8 @@
 class Openkermit < Formula
   desc "Scriptable network and serial communication for UNIX and VMS"
   homepage "https://www.openkermit.org/"
-  url "https://ghfast.top/https://github.com/openkermit/ckermit/archive/refs/tags/v11.0.508.tar.gz"
-  sha256 "252f716bbac57d0a665a0c087f18abab095acc8369786cd08d1dde831ecd4747"
+  url "https://ghfast.top/https://github.com/openkermit/ckermit/archive/refs/tags/v11.0.509.tar.gz"
+  sha256 "628f756a93dc366dd3f51954e11fe6d6d80c00b6f0aace0efc2487f64abe67bf"
   license "BSD-3-Clause"
 
   livecheck do
@@ -11,12 +11,12 @@ class Openkermit < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6a27f9fdccd0290d437eacf1108c73ba18768d90836fd0208ee4521a6ff4728a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cc5ee0bb4451f27e0900220856a949dac43131698af3f4cc85964d28305dc268"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d239d522b4c39b44a9c313c8b511d640eb38927b08b8c5918ebc2e2ea1d2e26c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "43059d0a433087016ce8bc31560f35596cf3f3e0a9c76c49dd1866a0934bb904"
-    sha256 cellar: :any,                 arm64_linux:   "0e61ab994f9a71816f69e12da71aed42f2d9fdaa91a7f154d770de716b23db9a"
-    sha256 cellar: :any,                 x86_64_linux:  "40ddfc156749ec87f67a57e79022f021862fe406cea573fbee626187ab6dae0a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "664063edb5f7590c9de44b548d61896e551f775bfae2d4bb808dc2a7548bcfad"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fe3463c097de830c9f0782a95c70ceddbbbcff8d2bc45071cac64692ff528406"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "88c22b6cb44241014f4c2420444884a6369c5322c468b5071442c6bc0211db10"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c4d64c74de7fcb26c74b636fc590685a7e365d6f11a9ef2ebb32f3e1df833af7"
+    sha256 cellar: :any,                 arm64_linux:   "5e79bcf4c51eeff886789a939bf817881e7db4be5976891fac3dc6a36a3ae8dc"
+    sha256 cellar: :any,                 x86_64_linux:  "39423bf1bb25c8ab3a2b506dee36a4263133424a0175ec0f33662bccb79786f8"
   end
 
   uses_from_macos "libxcrypt"

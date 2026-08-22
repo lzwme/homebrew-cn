@@ -23,7 +23,8 @@ class Kubo < Formula
     sha256 cellar: :any,                 x86_64_linux:  "85c792f90c9d268ab9243198dc7b9b3e4d749c83b2f8c45e5c9388415ab4218a"
   end
 
-  depends_on "go" => :build
+  # TODO: unpin go@1.26 when kubo supports go 1.27
+  depends_on "go@1.26" => :build
 
   def install
     ldflags = "-X github.com/ipfs/kubo.CurrentCommit=#{tap.user}"

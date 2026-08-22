@@ -20,7 +20,9 @@ class Dumpling < Formula
     sha256 cellar: :any,                 x86_64_linux:  "0b8460f873d54c893405bd1fc1efbc2e6893632d06c47b73e56dfe28b7485b87"
   end
 
-  depends_on "go" => :build
+  # TODO: unpin go@1.26 when dumpling supports go 1.27
+  # ref: https://github.com/pingcap/tidb/issues/70069
+  depends_on "go@1.26" => :build
 
   def install
     project = "github.com/pingcap/tidb/dumpling"

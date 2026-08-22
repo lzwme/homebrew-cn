@@ -1,26 +1,26 @@
 class Stencil < Formula
   desc "Modern living-template engine for evolving repositories"
   homepage "https://stencil.rgst.io"
-  url "https://ghfast.top/https://github.com/rgst-io/stencil/archive/refs/tags/v2.18.2.tar.gz"
-  sha256 "de2d799a906f6c0b77373780a3dff242762a96da83469e12b1f06064563f7f46"
+  url "https://git.rgst.io/rgst-io/stencil/archive/v3.0.0.tar.gz"
+  sha256 "b690da33cf271b33e479b9d40f0763bd7dfbfe7dc8dc7fc00fc32d481c329c4a"
   license "Apache-2.0"
-  head "https://github.com/rgst-io/stencil.git", branch: "main"
+  head "https://git.rgst.io/rgst-io/stencil.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5d6af811e0e86b4964ad09055270f402fd9e415b4afe24f33203488484151dc0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "663a72ddfb7b3ca036c00ded3dc2c33296a89f9390ba5464431df0b0cfe5e6bb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "37550a28224a9127b31dea0b9098ae8edc4be2cd30b7c8d77184dc8eea8c5dab"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0b21958ddc906133816d8746b07412e039c79d317cb4b7091d48edff658f8059"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "123f5538efd74e7d4aac9c22fdc971ec03e6f9e5011e6f68d894df18545d715c"
-    sha256 cellar: :any,                 x86_64_linux:  "1c265d15519770549f8913c04101d2a3130a0f00a467114e57ceae38338b96e7"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0a551b284ff04bcdbe0c28b46cfe8893eea083ea54ca3a9d95ed3f3e75621325"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3fc4abc2fdede423bc19679f7231f4677aeb8057bdef5e0f307981b6a8bbfb18"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dd5140d3690bd6414174d27cec1ee3221e97b06a415ceec684286d8ef7ba14ef"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4d7d6174207b8a786fd0148069c3b6a7c5fa38c5e2fc78f3cf34dbac3dccb452"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bb6b85b1b2eef23c6584017cdf1231fda0be4ae53d049e8e9ec04d1c9154ea32"
+    sha256 cellar: :any,                 x86_64_linux:  "0f751736f51cb30545e05cb45d3bc4b63f63550fa814e57a82fea3999e95d6bd"
   end
 
   depends_on "go" => :build
 
   def install
     ldflags = %W[
-      -X go.rgst.io/stencil/v2/internal/version.version=#{version}
-      -X go.rgst.io/stencil/v2/internal/version.builtBy=#{tap.user}
+      -X go.rgst.io/stencil/v3/internal/version.version=#{version}
+      -X go.rgst.io/stencil/v3/internal/version.builtBy=#{tap.user}
     ]
 
     system "go", "build", *std_go_args(ldflags:), "./cmd/stencil"

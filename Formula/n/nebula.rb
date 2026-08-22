@@ -1,18 +1,18 @@
 class Nebula < Formula
   desc "Scalable overlay networking tool for connecting computers anywhere"
   homepage "https://github.com/slackhq/nebula"
-  url "https://ghfast.top/https://github.com/slackhq/nebula/archive/refs/tags/v1.11.0.tar.gz"
-  sha256 "d570e30a04e4e25fb1bddac6e131f26b325f7c5226c4961c6c37ef6f297d60a6"
+  url "https://ghfast.top/https://github.com/slackhq/nebula/archive/refs/tags/v1.11.1.tar.gz"
+  sha256 "bcd5f144aa7bbf06dc62bc64b1734b0f33759b2eb13798ce2d93f16d4afc0ac3"
   license "MIT"
   head "https://github.com/slackhq/nebula.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7db853812b7f745d64bfa566d03bb0eee45b3915e1fe7d5e33a51b11f43c88fc"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7db853812b7f745d64bfa566d03bb0eee45b3915e1fe7d5e33a51b11f43c88fc"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7db853812b7f745d64bfa566d03bb0eee45b3915e1fe7d5e33a51b11f43c88fc"
-    sha256 cellar: :any_skip_relocation, sonoma:        "af617a61b5a4f6a67b00c8565cc1f030c99da0ef1a23be304b12f1ee5f613ae3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "bdc02bfb5635d7694292c57e857c572e0139c65d89f92ccd99fc0f064eb06970"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1fcab803f717ccf287c6cca554db23960e77ba6170ee1bb6c33e0c7177f6572e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e8f5c8366bfb83134b0433889dd3c10a0dc77c3227221098c8bb2141dc14c4d9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e8f5c8366bfb83134b0433889dd3c10a0dc77c3227221098c8bb2141dc14c4d9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e8f5c8366bfb83134b0433889dd3c10a0dc77c3227221098c8bb2141dc14c4d9"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6b295ad0fe6efee4dca3025e89a3da5fb85700f305ed91640d37c8cc880f2160"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "722fc2a2bfc7d06342a0cb5effb8535996133cee99bfc852f96347c3270c7053"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0edb45ca078f56bda3021bbbc75dab173e97c73b4aa6440c8280519cf9e0b751"
   end
 
   depends_on "go" => :build

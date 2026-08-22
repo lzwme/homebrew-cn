@@ -1,8 +1,8 @@
 class FleetCli < Formula
   desc "Manage large fleets of Kubernetes clusters"
   homepage "https://fleet.rancher.io/"
-  url "https://ghfast.top/https://github.com/rancher/fleet/archive/refs/tags/v0.16.0.tar.gz"
-  sha256 "a176763f626b7658c444029fb24d823d0506765cf3245ddf8b5b1068d21f417e"
+  url "https://ghfast.top/https://github.com/rancher/fleet/archive/refs/tags/v0.16.1.tar.gz"
+  sha256 "95c60643fb1de6c3f9d22ae3ddf02d334e91cb3160b8cf71d06d289cc345ddb9"
   license "Apache-2.0"
   head "https://github.com/rancher/fleet.git", branch: "main"
 
@@ -12,12 +12,12 @@ class FleetCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ccf90b00eafe59a25efde9c84ec60261760ae07c18dcc85e2fae4c57698204b0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ebcf369151106cc85c84bb45a2ec876531de5c2b24071e8ca3579560cac5a55c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f7705cae39064ba0316d1b671074c34223875997aecb7c40f2f127f415827f6e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7958aa65fa5b9ffd00f1f72c70921bae5ea6ef711a769a78573fa4b92105d670"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1aa0264322fd11db01ea58730dc12c98c7038ad114d5cc4c34f1f09006f023f2"
-    sha256 cellar: :any,                 x86_64_linux:  "1ae59da648e9551f0759d0a9378855c2e7af9eefa8aea8f9848babbfeedf51e9"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "75f2e274897b2103149a1178683839796567e310d50e5799a733257fa01687a1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7582af24149d23125e1a4720faa697fedf19ec180a8551441e926dc7761664de"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ca9f51339d4835bec662b474dcef6bb381c80593c00df14e3bb20df360acea58"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a16f44c78282c598f02dc4b4c017633673cb8c00c0412a03e36ef9f9348390e7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "aeec16d964fba65735f07151d6a3e26e5c5d3976ffe37f55ebeb7a690c6278df"
+    sha256 cellar: :any,                 x86_64_linux:  "a06a660176087be292078277c087243c98e2df73007d8516d0a787ec06e4bb6c"
   end
 
   depends_on "go" => :build

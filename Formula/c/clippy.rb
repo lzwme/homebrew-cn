@@ -1,15 +1,15 @@
 class Clippy < Formula
   desc "Copy files from your terminal that actually paste into GUI apps"
   homepage "https://github.com/neilberkman/clippy"
-  url "https://ghfast.top/https://github.com/neilberkman/clippy/archive/refs/tags/v1.8.0.tar.gz"
-  sha256 "3cf962b49bdca960700838616a51aaa9af6803dfee588166602e22b02782c530"
+  url "https://ghfast.top/https://github.com/neilberkman/clippy/archive/refs/tags/v1.9.0.tar.gz"
+  sha256 "972f06f79678a3792900f7fdd943a663f8822e8d2f88e1c4be589ca616abf7a1"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bd5e1429146815793f1acbfecb608db09b14fa0eab6a50434d0a6ffa1301b1bd"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "35dfceba5d311e8fecc2a0afb03891c8184fe3f5ea47990fe350aefdc028739c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "60e7bde4edf569649f4e6f6de95f38bd49f274a126942d1fd197f2157eb26f04"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4ab02fba39e81c84d525b646d209e31221f8d8378b1c6bb1038113b49998645d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7080c15bbbbc4e90ef131df4c09f97e92413c40fe8ca47172cff10ab0ac074c5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "87b4b272e78275b8681adf1d2448bc36eb29c21355e03268f01645faf507d250"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "406c6f33810eadf92ca040b87015293c4a101606cd85760e5f7909703ef3b273"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d648e9e4d8e03bc7510225c0a97db5367403bb7380e57e8c1b8814d05f15ca3e"
   end
 
   depends_on "go" => :build

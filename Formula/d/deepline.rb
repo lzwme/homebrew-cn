@@ -1,8 +1,8 @@
 class Deepline < Formula
   desc "CLI for Deepline data enrichment and durable plays"
   homepage "https://code.deepline.com"
-  url "https://registry.npmjs.org/deepline/-/deepline-0.2.60.tgz"
-  sha256 "741b67ab8795a1147f7c56612f0e2f60125acfec44f22a34fe6ffb74ee36fbdd"
+  url "https://registry.npmjs.org/deepline/-/deepline-0.3.0.tgz"
+  sha256 "4c8c382631a64f819cfe4f1e69f4739f72e1903bfd8a4d236c28feb30a45a721"
   license "MIT"
 
   livecheck do
@@ -10,12 +10,12 @@ class Deepline < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a96451c09c49cc8f16898bb90b93b5d19df064c6ef540f0d2f1e7e1263d80444"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a96451c09c49cc8f16898bb90b93b5d19df064c6ef540f0d2f1e7e1263d80444"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a96451c09c49cc8f16898bb90b93b5d19df064c6ef540f0d2f1e7e1263d80444"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c8b07d4a4497b6816ccd4260f994ec4ab53335084700c8d387a9ea2889821364"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7c5ad97b54dff1e71815b208f0b289774d321c0853cdb1ffcb2b253b049163bc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f28279b1fed5b5f2d59adf0a7364f4ceecfb6830334f08be01d8075266208c39"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ab33c9186ff5cf19d85723a3d2822f88ea47e5bb0f9ba7f2a7f812f3deb1394a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ab33c9186ff5cf19d85723a3d2822f88ea47e5bb0f9ba7f2a7f812f3deb1394a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ab33c9186ff5cf19d85723a3d2822f88ea47e5bb0f9ba7f2a7f812f3deb1394a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "53fe6685944e7ae4e42a9b1366521e50c8da442bfaa0a97eaa0cbec622b1bdf3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b07e5fcdaf315df1f09a73da97554be7510e859808274eca7d0d388a4b391226"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e6852b5b001b1821778db30956f0ee74bb5020c1352e8dfe375d54528ceaac4a"
   end
 
   depends_on "node"

@@ -15,7 +15,11 @@ class Ipget < Formula
     sha256 cellar: :any,                 x86_64_linux:  "6465567cd07e7a520d5d233cdd25951d3b0d2e94baa87c7b7145c02ad30e4522"
   end
 
-  depends_on "go" => :build
+  deprecate! date: "2026-08-21", because: :repo_archived, replacement_formula: "kubo"
+  disable! date: "2027-08-21", because: :repo_archived, replacement_formula: "kubo"
+
+  # TODO: unpin go@1.26 when ipget supports go 1.27
+  depends_on "go@1.26" => :build
 
   def install
     system "go", "build", *std_go_args

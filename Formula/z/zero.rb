@@ -1,18 +1,18 @@
 class Zero < Formula
   desc "Terminal coding agent you own"
   homepage "https://zero.gitlawb.com/"
-  url "https://ghfast.top/https://github.com/Gitlawb/zero/archive/refs/tags/v0.7.0.tar.gz"
-  sha256 "ddb686009ab5fbd73e596577fff01b03ed1699b7fd1f8e07594432403eb37ca5"
+  url "https://ghfast.top/https://github.com/Gitlawb/zero/archive/refs/tags/v0.8.0.tar.gz"
+  sha256 "5ceef2a00c1ba3a50e564f25c079d2cab7ebda4984761122a5e45b7aa45b4342"
   license "MIT"
   head "https://github.com/Gitlawb/zero.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8e6506f99a087a735ac7182d53b1a80e8c9b068f04115b2b4fb7126d62e573bf"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8e6506f99a087a735ac7182d53b1a80e8c9b068f04115b2b4fb7126d62e573bf"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8e6506f99a087a735ac7182d53b1a80e8c9b068f04115b2b4fb7126d62e573bf"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ea8c359b6346b76f2c8d7c79538bdfe456409f3e6660204a9a313622e009240e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "55a47ef38aabefac398415c8e2b2ae03a4cd5692caa313f7188683bbc83e3a43"
-    sha256 cellar: :any,                 x86_64_linux:  "948c61249a29aa2004de8cefeaf95787b12e8a1c9d5796ca9b2af40a45446d1c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "799246fc0f2a1db9fdfa888654bce463ad1ffbe0c45fda6927f0c1fdecd8881a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "799246fc0f2a1db9fdfa888654bce463ad1ffbe0c45fda6927f0c1fdecd8881a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "799246fc0f2a1db9fdfa888654bce463ad1ffbe0c45fda6927f0c1fdecd8881a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "77ceed32553bdc61a0aeab8e1f7ad7fcd68cb53b15fddc84d7da8cdaf36a690e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e6341741e994e1b1130d0d525b45f91acdabd9f77e7fd8dfed0d0f8d3bcdfde8"
+    sha256 cellar: :any,                 x86_64_linux:  "b1c1c2fa3892f6b6d49a4d765361fa483696f82cc8ff51a8dd1095b49ba1c6e9"
   end
 
   depends_on "go" => :build

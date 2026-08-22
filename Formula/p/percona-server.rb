@@ -1,10 +1,9 @@
 class PerconaServer < Formula
   desc "Drop-in MySQL replacement"
   homepage "https://www.percona.com"
-  url "https://downloads.percona.com/downloads/Percona-Server-8.4/Percona-Server-8.4.10-10/source/tarball/percona-server-8.4.10-10.tar.gz"
-  sha256 "2231de7e561cdc031dea13570c461e8179b5e308f2b7d857de0215b4e4336ae5"
+  url "https://downloads.percona.com/downloads/Percona-Server-8.4/Percona-Server-8.4.11-11/source/tarball/percona-server-8.4.11-11.tar.gz"
+  sha256 "2fb90e235c25183d73c972cba481a32ea2d90cefca0669fe0786defc2acdfa18"
   license "BSD-3-Clause"
-  revision 2
 
   livecheck do
     url "https://www.percona.com/wp-admin/admin-ajax.php", post_form: {
@@ -22,12 +21,12 @@ class PerconaServer < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "4c3772b7715ee7d8b975dba3c7280e715980938ac7fc90c50b1cbdd8743931c3"
-    sha256 arm64_sequoia: "8f7a85fdd88056f374be10e952a377a5e8bd0bf72fd1c617079440fad320554c"
-    sha256 arm64_sonoma:  "48d3ac909ff90356014cdc261eaeb412f0af07531448a5354f04238af3b1593e"
-    sha256 sonoma:        "740b50f0aba56d2b81022a181210a01ae3b3bfddb456d525ad5d992f1ef48e28"
-    sha256 arm64_linux:   "51456e0a7859f355ed35d9735bab8b40ccb32272a84e3da045bb6dc16dd1e162"
-    sha256 x86_64_linux:  "ea8f93131efc9e8a09dac511012c5d2d4a986c1a746179c52b275c7771127679"
+    sha256 arm64_tahoe:   "5e8897e7f409bd09c34d45949af5fe1c4b649ba3c8f48fc00434268799f41937"
+    sha256 arm64_sequoia: "e87b9efb3572fc607a83c25ef2649a4de1571a0107d59f3de06433d5be27361c"
+    sha256 arm64_sonoma:  "378ed5e4f00fb5170a968eb2c5e773f893c8fc2ddabdc7ebde28361f4308cb9e"
+    sha256 sonoma:        "e0cd021e261e7087d34e7c731e65fe29ad5c8c50294a753eb7a9139dad10eade"
+    sha256 arm64_linux:   "ac9af5e7f71f7aee137ecff43ab85f26d4baf2c0e15ca7c961eab9f123c556c6"
+    sha256 x86_64_linux:  "9b1043a19c00447844b2cd8109295df5b183a1a455e1110724d119ba95d2a101"
   end
 
   depends_on "bison" => :build
@@ -74,7 +73,10 @@ class PerconaServer < Formula
     # Remove bundled libraries other than explicitly allowed below.
     # `boost` and `rapidjson` must use bundled copy due to patches.
     # `lz4` is still needed due to xxhash.c used by mysqlgcs
-    keep = %w[boost coredumper duktape libbacktrace libcno libkmip lz4 opensslpp rapidjson unordered_dense xxhash]
+    keep = %w[
+      boost coredumper duktape jwt-cpp libbacktrace libcno
+      libkmip lz4 opensslpp rapidjson unordered_dense xxhash
+    ]
     (buildpath/"extra").each_child { |dir| rm_r(dir) unless keep.include?(dir.basename.to_s) }
 
     # Find Homebrew OpenLDAP instead of the macOS framework

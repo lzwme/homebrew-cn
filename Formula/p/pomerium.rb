@@ -15,7 +15,8 @@ class Pomerium < Formula
     sha256 cellar: :any,                 x86_64_linux:  "78f897db5b01b7713ff13d39ebdd6837a7bb77a4c2f1bcd689f355d5e575310f"
   end
 
-  depends_on "go" => :build
+  # TODO: unpin go@1.26 when pomerium supports go 1.27
+  depends_on "go@1.26" => :build
   depends_on "node" => :build
 
   # Upstream dropped darwin x86_64 support in 0.33.0

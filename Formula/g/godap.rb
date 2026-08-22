@@ -1,18 +1,18 @@
 class Godap < Formula
   desc "Complete TUI (terminal user interface) for LDAP"
   homepage "https://github.com/Macmod/godap"
-  url "https://ghfast.top/https://github.com/Macmod/godap/archive/refs/tags/v2.12.0.tar.gz"
-  sha256 "996dbf0f66a681de337b65caee65a55af3d52894049dd61e66eb429c96d24a4a"
+  url "https://ghfast.top/https://github.com/Macmod/godap/archive/refs/tags/v2.12.2.tar.gz"
+  sha256 "4e1d6e34c50fdeeb98e7d49d2e7164348c9395f5327920468ede0c32eb12adff"
   license "MIT"
   head "https://github.com/Macmod/godap.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cea4155507e230bfdb11e2b9690c2683472555cf0aab191761b881c8b8b202b3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cea4155507e230bfdb11e2b9690c2683472555cf0aab191761b881c8b8b202b3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cea4155507e230bfdb11e2b9690c2683472555cf0aab191761b881c8b8b202b3"
-    sha256 cellar: :any_skip_relocation, sonoma:        "62b2350285037dad4576fdf976c50c0c840f2cb977825ea0c62fab6683ef1054"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a42560bc144cb0f1b8b5e45673f43f2ed329f99c7d40f2a985b74d66ac0736a5"
-    sha256 cellar: :any,                 x86_64_linux:  "a023e8320f2af034185c70e5200bc0c125f4678f12e0e6ddcca28b559bd52486"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8dfffa83e0b66a22702b543ad5f55648e02e92b479924f488d447df36d1f13b7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8dfffa83e0b66a22702b543ad5f55648e02e92b479924f488d447df36d1f13b7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8dfffa83e0b66a22702b543ad5f55648e02e92b479924f488d447df36d1f13b7"
+    sha256 cellar: :any_skip_relocation, sonoma:        "bd9fe716f75539fa90f1703974e88587235c1480c4965812551f2cd9533fb099"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ea3549974673835520c900004bcc822ed67822f13e813d14ef48fd0f9d37367c"
+    sha256 cellar: :any,                 x86_64_linux:  "29be9e66fbd194161d2c8aa537888a97f7fca555860be213cb9847341a252257"
   end
 
   depends_on "go" => :build

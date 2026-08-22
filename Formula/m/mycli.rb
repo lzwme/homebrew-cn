@@ -3,17 +3,17 @@ class Mycli < Formula
 
   desc "CLI for MySQL with auto-completion and syntax highlighting"
   homepage "https://www.mycli.net/"
-  url "https://files.pythonhosted.org/packages/f7/d1/f87f4cfc8346afa97b1f6891133b9f585ab54752583baadcbf91fa4c2b0c/mycli-2.14.0.tar.gz"
-  sha256 "e019103cd8f1793ba396e77e6c2295f1a7ccee8edc1f5991ccd972efb4b6d22a"
+  url "https://files.pythonhosted.org/packages/43/46/16217d4b09b121a701f622d656e5ca724fa6f154be520f635d72fca17eae/mycli-2.15.0.tar.gz"
+  sha256 "3468002140b35e8eb511374157820a572f3e1427ff78b539691a96469c7ddb27"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "60d7778380bba42d3c855cd5732991c4e3c4fa143da2687fdb1a32f60df942d3"
-    sha256 cellar: :any, arm64_sequoia: "d8ba4c1df2387b4a7b9e0152f48c28aee392824821c32d423b4213a56af7188b"
-    sha256 cellar: :any, arm64_sonoma:  "47c0dee60ff9dd3c105e7276f90331f2f200ccf68036c109fbde2ee81d285839"
-    sha256 cellar: :any, sonoma:        "1cbadb03c46734cf862b9d5af1cd51fa2694f6bab270e24e282be95281dd6a48"
-    sha256 cellar: :any, arm64_linux:   "f034f44701bd298f6e9a2ecbcf14cc16f50a2127cda1b8a5c05b07e332eabad8"
-    sha256 cellar: :any, x86_64_linux:  "3f0fb5ab0dbbf30006dc41efd3a16ac3aa756217cc1f2b0ebeb57199a17f51a6"
+    sha256 cellar: :any, arm64_tahoe:   "e5b96917aa13160d8f532f4eef55355e9aaf3897fd2d01425319f2807175b828"
+    sha256 cellar: :any, arm64_sequoia: "d2738608382ecf2aade11361627a2c50b72596a34bfe70530bb3073e7ddef4d9"
+    sha256 cellar: :any, arm64_sonoma:  "69b67c943f307dc0e2f9fb814767ae7a1e9d4d9e83ab13a5b25436f630838304"
+    sha256 cellar: :any, sonoma:        "8867130ef9e03ae4020e28902341212bd5bbe1b1f32ce27064714570d86b6a7c"
+    sha256 cellar: :any, arm64_linux:   "33bf23597e3510d4b0c03b46bc2d15eb290acfff738ee025282546ceeb0b1e32"
+    sha256 cellar: :any, x86_64_linux:  "b0534d7bc9ada56fb250d59044b029011f3794fc9db8a7e3a151687e459d870b"
   end
 
   depends_on "rust" => :build # for jiter, polars, vl-convert
@@ -100,8 +100,8 @@ class Mycli < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/cd/63/9496c57188a2ee585e0f1db071d75089a11e98aa86eb99d9d7618fc1edce/idna-3.18.tar.gz"
-    sha256 "ffb385a7e039654cef1ab9ef32c6fafe283c0c0467bba1d9029738ce4a14a848"
+    url "https://files.pythonhosted.org/packages/5f/f7/abb373e5757eaec4b922b92f97ec8d6d7e057cf06778247604fbc4e7c3f3/idna-3.19.tar.gz"
+    sha256 "5e0811a4383b21dc5838069f801c4fb62113b7447663d2530d2bd6e77b49bf15"
   end
 
   resource "jaraco-classes" do

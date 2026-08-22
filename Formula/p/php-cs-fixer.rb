@@ -1,12 +1,12 @@
 class PhpCsFixer < Formula
   desc "Tool to automatically fix PHP coding standards issues"
   homepage "https://cs.symfony.com/"
-  url "https://ghfast.top/https://github.com/PHP-CS-Fixer/PHP-CS-Fixer/releases/download/v3.95.20/php-cs-fixer.phar"
-  sha256 "200595cda3f9d757627b8056c54d22a1d13e4008b89af6e21d5a8db8c7c11e71"
+  url "https://ghfast.top/https://github.com/PHP-CS-Fixer/PHP-CS-Fixer/releases/download/v3.95.21/php-cs-fixer.phar"
+  sha256 "58c4ae1af0c73b7bcb658387e88d2d60db3181a9e93af687e7c5594358a4cf7d"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "c216ffa95ecfefd400f9c89f449334f3e7d7142bd078ecf310be01bb26ec2577"
+    sha256 cellar: :any_skip_relocation, all: "902f7fa19043ca07d226587408b5a983eadfdb5161d3a29de98d65cea30eca95"
   end
 
   depends_on "php"

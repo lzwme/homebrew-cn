@@ -19,7 +19,8 @@ class Plakar < Formula
     sha256 cellar: :any,                 x86_64_linux:  "9d5af84ab961a3c448c817818ebc309433fa6e5f8a50187552fb0663d9afa1c1"
   end
 
-  depends_on "go" => :build
+  # TODO: unpin go@1.26 when plakar supports go 1.27
+  depends_on "go@1.26" => :build
 
   def install
     system "go", "build", *std_go_args
