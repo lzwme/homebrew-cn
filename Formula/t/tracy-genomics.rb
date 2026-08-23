@@ -7,12 +7,13 @@ class TracyGenomics < Formula
   head "https://github.com/gear-genomics/tracy.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "03b233c07a9b2441dd19e62db95c3c8e2a3d901b710db3416d25025629a8ee40"
-    sha256 cellar: :any, arm64_sequoia: "8480aabde3a9251a2bc98021bb8d41e40d599b40a8d137112e21250ab9eddfbd"
-    sha256 cellar: :any, arm64_sonoma:  "9e218176325bd0b1f7c0e81820c4c73eff674abaaff7586f65b8fb21f3dc0179"
-    sha256 cellar: :any, sonoma:        "1d6e33e946e312e1eac3c02cd78080aa932264dae27bbedeb5f3a4d86d1e1cd7"
-    sha256 cellar: :any, arm64_linux:   "e7b02a2350ef78abc15cffd7c06523d99e80850a2d6d93de41157df470908b84"
-    sha256 cellar: :any, x86_64_linux:  "89ed9facf052be133602e6768bc836eee681091424806b1835ec3892d0c74066"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "10879f7048d1bccb685f1568b5a0d26f889910cafba8cf2b9685260bb33ae311"
+    sha256 cellar: :any, arm64_sequoia: "8afe0caa96c67c7436c2b2cfc9330a14940cb3f3ed040d942ff2c098879ae36f"
+    sha256 cellar: :any, arm64_sonoma:  "112acdea080d28492287493fae0875c886eeee1a9ad661352c52db03f740ec85"
+    sha256 cellar: :any, sonoma:        "fdb996e8eefcf1ed0f8ed139f599c6fb201e55712b426a51efb663b6b460888f"
+    sha256 cellar: :any, arm64_linux:   "bbe01d4d2320574f9c369d6c2767da469532ee7fc51ec32267125556c1f3706c"
+    sha256 cellar: :any, x86_64_linux:  "810c0fc55893f416aca8df62bbe37de39a122551c9225dbda9c8ae3524cc6f6f"
   end
 
   depends_on "boost"
@@ -20,7 +21,10 @@ class TracyGenomics < Formula
   depends_on "xz"
 
   uses_from_macos "bzip2"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   conflicts_with "tracy", because: "both install `tracy` binaries"
 

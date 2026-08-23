@@ -11,12 +11,13 @@ class MipsLinuxGnuBinutils < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "1dc95e92059f444c2bbdf0a2f423773c761cecd87fbe557c88349515745a4bde"
-    sha256 arm64_sequoia: "f76ec09163bc47f161857ca701309c9cda6d739909799f6e9616428b479059ef"
-    sha256 arm64_sonoma:  "22a44edc099d4f6165b2d172cb31e2b54e4cc65fa23ab8be8f9a80543b4d5baa"
-    sha256 sonoma:        "601a50881c97f4c343dd351cbe2be60a680edf8f9c9715d8de2142ff100182b5"
-    sha256 arm64_linux:   "fc6fa3570e8fd594394a1c92ea52cff6258976c7743a50f43f3d60177d9be8ca"
-    sha256 x86_64_linux:  "dcf247249c8de84cddb3e3d3d3c68e7ff1e0fff8069251ff01245d8a5d9cd13e"
+    rebuild 1
+    sha256 arm64_tahoe:   "980558e817525f937d255feeb3fe04334261f903a169e76a5cbdef4a5cdffd2b"
+    sha256 arm64_sequoia: "1ec55ff7f1a0c691ab2566c2ef8b42fe48e0602bd3550da8b05329ca30d5a4f4"
+    sha256 arm64_sonoma:  "bc26ae6f64cdfff6bcf45163be239e242087c949b21353a17148cfadbf3e30f0"
+    sha256 sonoma:        "66d0f60b05eae9c0e256998fdee0f175be496dab0490d4d23e40d40220e71627"
+    sha256 arm64_linux:   "efbf454b8d303176868e658774f40a00cf4ef60286d447722338368b2df0690f"
+    sha256 x86_64_linux:  "663da8dfdfd845490e9fdf7fc76dc7a512f1062388a38c4cf3d69adbf4919491"
   end
 
   depends_on "pkgconf" => :build
@@ -30,16 +31,14 @@ class MipsLinuxGnuBinutils < Formula
     depends_on "zlib-ng-compat"
   end
 
-  conflicts_with "mipsel-linux-gnu-binutils", because: "both install `libdep.so` library"
-
   def install
     target = "mips-linux-gnu"
     system "./configure", "--target=#{target}",
-                          "--infodir=#{info}/#{target}",
+                          "--infodir=#{info/target}",
                           "--with-system-zlib",
                           "--with-zstd",
                           "--disable-nls",
-                          *std_configure_args(libdir: lib/"target")
+                          *std_configure_args(libdir: lib/target)
     system "make"
     system "make", "install"
   end

@@ -3,18 +3,17 @@ class WeaviateCli < Formula
 
   desc "Command-line interface for managing and interacting with Weaviate"
   homepage "https://pypi.org/project/weaviate-cli/"
-  url "https://files.pythonhosted.org/packages/ec/14/426d62dc2be16f0330db1c287ed1a0d0ef90a03e716979dcdbf4b0ecdbc3/weaviate_cli-3.4.1.tar.gz"
-  sha256 "27e9c1e057cf014da9215b0886637437b7c9a709052f642168482ee0a5756226"
+  url "https://files.pythonhosted.org/packages/a1/e8/4de5b5a3ebc1f1b20512159bda3c0379efe0f291eee2cbc876877ee560ba/weaviate_cli-3.4.2.tar.gz"
+  sha256 "eb4a3686a45d48bd2f8833af676b2f1c25effd43ef556ec28535b07fce44ce5c"
   license "BSD-3-Clause"
-  revision 2
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9fa955951ecf46bd9cb1aa7cedd51b1ec2eab8a306ae208268b5c00bfb5a8c8a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "941c6d1feb294e2075d7bf49544cd89f897a577af31f72ff969d83a2e541286d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d50f7e53f2f63ab448bdb4d57e9e1bfb8ebb40e016e8c2159576e31791cca4c3"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8b3ee2250a8c1b08a6e8d21ec3b4348da5f67bbff448927859d1cb1dd3a4b32a"
-    sha256 cellar: :any,                 arm64_linux:   "d5bfb2a05e3770d06519a134847b80e63b6568859292a102239051d3088586c5"
-    sha256 cellar: :any,                 x86_64_linux:  "9f97648c777e83c5f4717cc7ba3d7e4c49ec54c8d9645beb282a176209d282ee"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "94c3947bee11b8a480fa60ffa0ace1302536999eebda71ab748462cd07073b68"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "09baef3feab523a91f2b420236318dd5390d472a719f5f7f9dee8b06a2a3d2ce"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3364d82cf465cf72dd7db6a9dfed524fb89bb8a28d56ba24704a61abb3fadc39"
+    sha256 cellar: :any_skip_relocation, sonoma:        "bccd5758121b074c9202ee70e1d349b711888832927264695b298f95f47e44dd"
+    sha256 cellar: :any,                 arm64_linux:   "da3aef597aa0d0574f0e8976fff46ee2d47dfdb739b6c6a83d045a23462ca351"
+    sha256 cellar: :any,                 x86_64_linux:  "8b1c26d2dee3b62df1527775c2d79de038a93c16bccae9b7d99032c2bc2c6efd"
   end
 
   depends_on "cmake" => :build # contourpy
@@ -38,8 +37,8 @@ class WeaviateCli < Formula
   pypi_packages exclude_packages: %w[certifi cryptography numpy pillow pydantic]
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/3b/72/5562aabb8dd7181e8e860622a38bea08d17842b99ecd4c91f84ac95251b0/anyio-4.14.1.tar.gz"
-    sha256 "8d648a3544c1a700e3ff78615cd679e4c5c3f149904287e73687b2596963629e"
+    url "https://files.pythonhosted.org/packages/61/cc/a381afa6efea9f496eff839d4a6a1aed3bfafc7b3ab4b0d1b243a12573dd/anyio-4.14.2.tar.gz"
+    sha256 "cfa139f3ed1a23ee8f88a145ddb5ac7605b8bbfd8592baacd7ce3d8bb4313c7f"
   end
 
   resource "authlib" do
@@ -63,8 +62,8 @@ class WeaviateCli < Formula
   end
 
   resource "faker" do
-    url "https://files.pythonhosted.org/packages/f3/d6/fc071e5754815d9058e12ab549cc88e90f8f4ecf4dc33b6b750cdf4b622d/faker-40.23.0.tar.gz"
-    sha256 "f135e563f1f95f19346bb680bc2e43570bc43b7893e566023746f51f32c69dfc"
+    url "https://files.pythonhosted.org/packages/98/d2/026af1e002bbc6df534d1f8262b18ec79a974f928e9290bfbfdfe7c7b2af/faker-40.36.0.tar.gz"
+    sha256 "754048c76c03afa7de83eee8f4bcee3cf668cbb7d995f54a4e9678db7f110308"
   end
 
   resource "fonttools" do
@@ -93,8 +92,8 @@ class WeaviateCli < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/cd/63/9496c57188a2ee585e0f1db071d75089a11e98aa86eb99d9d7618fc1edce/idna-3.18.tar.gz"
-    sha256 "ffb385a7e039654cef1ab9ef32c6fafe283c0c0467bba1d9029738ce4a14a848"
+    url "https://files.pythonhosted.org/packages/5f/f7/abb373e5757eaec4b922b92f97ec8d6d7e057cf06778247604fbc4e7c3f3/idna-3.19.tar.gz"
+    sha256 "5e0811a4383b21dc5838069f801c4fb62113b7447663d2530d2bd6e77b49bf15"
   end
 
   resource "importlib-resources" do
@@ -103,8 +102,8 @@ class WeaviateCli < Formula
   end
 
   resource "joserfc" do
-    url "https://files.pythonhosted.org/packages/44/90/25cb27518750218e4f850be63d8bbb2343efaad1c01c3571aaa4b3c33bd7/joserfc-1.7.1.tar.gz"
-    sha256 "77d0b76514879c68c6f433bc5b7357a4ab72008ff1e33d8379fd11d72bd8ca81"
+    url "https://files.pythonhosted.org/packages/c7/e0/27a6a081ae25420eda6768ceae05d7022a7f2447f420588843f2a44e4298/joserfc-1.7.4.tar.gz"
+    sha256 "b3bc561672ae541b17a9237053b48a03dacddd92d68047b3ecdfb4b5714a88ed"
   end
 
   resource "kiwisolver" do
@@ -113,13 +112,13 @@ class WeaviateCli < Formula
   end
 
   resource "matplotlib" do
-    url "https://files.pythonhosted.org/packages/1f/24/080c99d223d158d3a8902769269ab6da5b50f7a0e6e072513907e02b7a6c/matplotlib-3.11.0.tar.gz"
-    sha256 "68c0c7be01b30dcca3638934f7f591df73401235cbdbf0d1ab1c71e7db7f8b57"
+    url "https://files.pythonhosted.org/packages/49/64/f9a391af28f518b11ad45a8a712353c94a0aefce09d3703200e5c54b610a/matplotlib-3.11.1.tar.gz"
+    sha256 "69647db5746941c793d6e445a4cd349323ffb87d9cc958c2ad84a659b4832d30"
   end
 
   resource "packaging" do
-    url "https://files.pythonhosted.org/packages/d7/f1/e7a6dd94a8d4a5626c03e4e99c87f241ba9e350cd9e6d75123f992427270/packaging-26.2.tar.gz"
-    sha256 "ff452ff5a3e828ce110190feff1178bb1f2ea2281fa2075aadb987c2fb221661"
+    url "https://files.pythonhosted.org/packages/7d/fa/3944b40b07da9ce895c0e6303a5ab7d53da063554f534556b134a54d6093/packaging-26.3.tar.gz"
+    sha256 "94edc256424af38762eb31306eed28beb9f0efc50a8837492c9d6fd6004aed79"
   end
 
   resource "prettytable" do
@@ -158,13 +157,13 @@ class WeaviateCli < Formula
   end
 
   resource "wcwidth" do
-    url "https://files.pythonhosted.org/packages/49/b4/51fe890511f0f242d07cb1ebe6a5b6db417262b9d2568b460347c57d95cc/wcwidth-0.8.1.tar.gz"
-    sha256 "faf5b4a5366a72dc49cad48cdf21f52bdf63bdda995178e483ba247ff79089b9"
+    url "https://files.pythonhosted.org/packages/34/74/c6428f875774288bec1396f5bfcbc2d925700a4dad61727fd5f2b12f249d/wcwidth-0.8.2.tar.gz"
+    sha256 "91fbef97204b96a3d4d421609b80340b760cf33e26da123ff243d76b1fda8dda"
   end
 
   resource "weaviate-client" do
-    url "https://files.pythonhosted.org/packages/34/2a/73cf7d6c7c6aa638738dfcb0d318e0404aab3c0673f82a1a4d89455b21a5/weaviate_client-4.22.0.tar.gz"
-    sha256 "0c50fbef546a522262a87d1138cde0509c7a8a48e702e967be33472e9f7fbae3"
+    url "https://files.pythonhosted.org/packages/20/9f/8bfe42e3c0693afa321fb712c0a1f1ff2b886059db33543120f6953dde8e/weaviate_client-4.23.0.tar.gz"
+    sha256 "19cc336b4c9e58f06cf01cb9aff8f6d8c0fe747f2e80192a9871c63823e8b18d"
   end
 
   def install

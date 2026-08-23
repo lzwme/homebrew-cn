@@ -1,8 +1,8 @@
 class Limine < Formula
   desc "Modern, advanced, portable, multiprotocol bootloader and boot manager"
   homepage "https://github.com/Limine-Bootloader/Limine"
-  url "https://ghfast.top/https://github.com/Limine-Bootloader/Limine/releases/download/v12.5.2/limine-12.5.2.tar.gz"
-  sha256 "1780781336d690c551fc5305604b4c3e3d7499f6cebc504bfa0cda3b712213c1"
+  url "https://ghfast.top/https://github.com/Limine-Bootloader/Limine/releases/download/v12.6.0/limine-12.6.0.tar.gz"
+  sha256 "3177b8a64297667a379feb3af6405b13c536409ce46d712ea1233e9ed1f87b9a"
   license "BSD-2-Clause"
 
   livecheck do
@@ -11,12 +11,12 @@ class Limine < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "133a10ca9f177a98dee9d7c3760bf2ee0ded95de912f95e5e039e6edc88c94d5"
-    sha256 arm64_sequoia: "83afc1d726bab6a4bb2e98dbd2a075b40b528e3e9bd4227193529f41804790b5"
-    sha256 arm64_sonoma:  "c89280093a15f7fd55c17755af95185e49fb47e257afaf51698ba4a1ced9469f"
-    sha256 sonoma:        "9c5e2973096c80d00a125572ba83c448c4c1949a90aaf2def8bb6e8bbfa9cd12"
-    sha256 arm64_linux:   "d2daa9f8fc32ec9a47d7bb344e190928026b069ae4b498bd7f602d7ebe7e631f"
-    sha256 x86_64_linux:  "c54d2bacb09a92cc95a3e436070a55158688ef210e7a3dab750341922b804d23"
+    sha256 arm64_tahoe:   "1455dae17a8dbac390c61a31cafeaaeef60ee71d09b79b02592a32f6f937d307"
+    sha256 arm64_sequoia: "ffa9b051ff44a145582384b4cddb49f9fa0ac4ca562fd8952055a238400b1d5f"
+    sha256 arm64_sonoma:  "e8a4781e1c02d04cf3ab798c316c80175a1d99b1521dc96dc97a8181cb75e9ec"
+    sha256 sonoma:        "b557abc3f8ad0cc71cd071611cc251390990869305308c4ee838f3e7c2af323b"
+    sha256 arm64_linux:   "58f070f0ec5d2f09f2f4d4ee8a88acd27824c9e24f5370112302b24e930cf64e"
+    sha256 x86_64_linux:  "aeb8b767720cb24c5f2d9e8bf447185a9b6d39b6b025f8cd269d3d70e61a975a"
   end
 
   # The reason to have LLVM and LLD as dependencies here is because building the
@@ -30,10 +30,20 @@ class Limine < Formula
   depends_on "mtools" => :build
   depends_on "nasm" => :build
 
+  on_macos do
+    # Make < 3.82 picks matching implicit pattern rules in definition order instead of shortest-stem order
+    # (https://lists.gnu.org/archive/html/info-gnu/2010-07/msg00023.html)
+    #
+    # Upstream is aware of this issue, try moving back to system `make` on next release.
+    depends_on "make" => :build
+  end
+
   def install
     # Homebrew LLVM is not in path by default. Get the path to it, and override the
     # build system's defaults for the target tools.
     llvm_bins = formula_opt_bin("llvm")
+
+    ENV.prepend_path "PATH", Formula["make"].libexec/"gnubin" if OS.mac?
 
     system "./configure", *std_configure_args, "--enable-all",
            "TOOLCHAIN_FOR_TARGET=#{llvm_bins}/llvm-",
@@ -46,7 +56,7 @@ class Limine < Formula
   test do
     bytes = 8 * 1024 * 1024 # 8M in bytes
     (testpath/"test.img").write("\0" * bytes)
-    output = shell_output("#{bin}/limine bios-install #{testpath}/test.img 2>&1")
-    assert_match "installed successfully", output
+    output = shell_output("#{bin}/limine bios-install #{testpath}/test.img 2>&1", 1)
+    assert_match "error: Could not determine if the device has a valid partition table.", output
   end
 end

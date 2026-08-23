@@ -7,12 +7,13 @@ class Delly < Formula
   head "https://github.com/dellytools/delly.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "6c02376e67ac46f63b6818772049ff523bbae5cf60e69b8c1ce746fe49b45dcc"
-    sha256 cellar: :any, arm64_sequoia: "2a2812eacf50740f0b03fc9058d5e23aba3edea581ccc200a3a83646153b5546"
-    sha256 cellar: :any, arm64_sonoma:  "4dc43e7e60de469381b722802da29cd216e0f5e556c3d00aa20c666850b29bb6"
-    sha256 cellar: :any, sonoma:        "bdf7c33718038fc106b4d5fbf7cac37cfa618e11ca1ac784f8d35af60fcc3bf6"
-    sha256 cellar: :any, arm64_linux:   "fe68cd948ac753d60b6ad0d22e02e07ac668c1d92add5d17f7f6c5fc7b88e966"
-    sha256 cellar: :any, x86_64_linux:  "c192be9439c3b7fff3a7ac88b9ef5416ac711aad8ea43b4e250afdb2d728100b"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "1457782beb0aae5db020fd5878adfc05199df2314ac8f32bbc5a7fb68a5eac72"
+    sha256 cellar: :any, arm64_sequoia: "4b6b3d698129a34927700e21527c47cb68ba76edb1fe7229be8b2e207fe6e9ae"
+    sha256 cellar: :any, arm64_sonoma:  "b0253b4ea8c4cfe16fbad2a66a06aa5642851a5e666dc650fcb3181c51530304"
+    sha256 cellar: :any, sonoma:        "ef84a6f6df952de40b6ae9f9d94c5ebebead55c9c4e6d503022526f64ac503df"
+    sha256 cellar: :any, arm64_linux:   "e3c60b96864c43f9a363566d7c26d0492257def838e202bd90f08ea0f21bae2f"
+    sha256 cellar: :any, x86_64_linux:  "6a5039f306ff0635f8e475ef6e44f5f35d336462c976a13eeea98729683ef081"
   end
 
   depends_on "boost"
@@ -20,7 +21,10 @@ class Delly < Formula
   depends_on "xz"
 
   uses_from_macos "bzip2"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     system "make", "src/delly",

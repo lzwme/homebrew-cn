@@ -2,18 +2,18 @@ class CyclonedxGomod < Formula
   desc "Creates CycloneDX Software Bill of Materials (SBOM) from Go modules"
   homepage "https://cyclonedx.org/"
   url "https://github.com/CycloneDX/cyclonedx-gomod.git",
-      tag:      "v1.11.0",
-      revision: "016a6750ec5b892ed27c3030f635ea15d479ec26"
+      tag:      "v1.12.0",
+      revision: "07257d5b9cbd2a3d4338a880c0ca50081e1ac445"
   license "Apache-2.0"
   head "https://github.com/CycloneDX/cyclonedx-gomod.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "709dcf93b0ce4f63f2dbe0ff70e7c9403bc248453eeacd4994daddaa45e9eb8e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "709dcf93b0ce4f63f2dbe0ff70e7c9403bc248453eeacd4994daddaa45e9eb8e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "709dcf93b0ce4f63f2dbe0ff70e7c9403bc248453eeacd4994daddaa45e9eb8e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d0f13aeaaf3201429fa437b4a7cfa195c0b38b9dbac2af64ba9a2006495bea71"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "43689e95dcc5462918678248cab87971c06bc2ee1df3ef35b6d4b79bddfe46c0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "632e86241891ebbdb74b148994950e19c4777f6bd698f4a89dc7b67381ef8a6b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bebe56e8e2a7d80c8df3b178aa9738603e09c0bce0db2930956bb6967d851f00"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bebe56e8e2a7d80c8df3b178aa9738603e09c0bce0db2930956bb6967d851f00"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bebe56e8e2a7d80c8df3b178aa9738603e09c0bce0db2930956bb6967d851f00"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ec71729b3cfd701f685750b625d58ee649d74faf7dabb150c2e10470de536093"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b249e6395e54b8ab5f706c867a2b913266b512de02d7c83971259b0496fe7cd3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "88a6a9fe3f35772910e96766438479b135b8cda7d2f2d842050047864fb50122"
   end
 
   depends_on "go" => [:build, :test]

@@ -1,18 +1,18 @@
 class Dagu < Formula
   desc "Lightweight and powerful workflow engine"
   homepage "https://dagu.sh"
-  url "https://ghfast.top/https://github.com/dagucloud/dagu/archive/refs/tags/v2.15.0.tar.gz"
-  sha256 "59817e7bde54296d15ba584b9ca5db84f7008d6a38bf077d370dace81ce58e86"
+  url "https://ghfast.top/https://github.com/dagucloud/dagu/archive/refs/tags/v2.15.1.tar.gz"
+  sha256 "a31ade9ce3959d4f2c11d34772d75642275ced41b8238a9dc77910cf0742dd0f"
   license "GPL-3.0-only"
   head "https://github.com/dagucloud/dagu.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b90017b31016e79ad90a1efde46cebb7d74b90de10ca99d6c1dd641e46b67644"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "44ff4043891092f2de526f539e704897417d9166d24ba41f5ca70274eca49f40"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c5454b188b18435238a9697776a941c41dd71165076f539b927188340da66a99"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2492b93b7b805f9534a5736398239c0c14d6445c34abb0b1c88accae8898b106"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "372cfdf1e8041049e53f21ad29abada89c68973baa0033dc1c0aba52449face7"
-    sha256 cellar: :any,                 x86_64_linux:  "7a50513aa2b8a24dc3efa2c64b2d10240be6d65b99481a480414442e4f78649f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b3a04bc066e25b420183e5ba376de8f4bd9f32d4d84175c5b598c4944a0de7b2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8c95cdf0b00b99b8a3b3b34ebdcfff5b83d87213b3d1965b63e1eff9b00d8742"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "62556fcfc36670dbcde6d1999933128d523f25483f2115175a93a558dd290aa7"
+    sha256 cellar: :any_skip_relocation, sonoma:        "bb27889fd88b2690552403bdc95257831ee70070aa37b7689bf6b177c7a52fcd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fa307abde89275de3411c3a56707b6e3c7242123c7543979f3f846430d034e9a"
+    sha256 cellar: :any,                 x86_64_linux:  "87738bb9a4af9220e8cb8b8501bf12b9f2cf55e8e374171f0a72a102bde4b5b8"
   end
 
   depends_on "go" => :build

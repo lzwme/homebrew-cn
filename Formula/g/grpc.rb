@@ -5,7 +5,7 @@ class Grpc < Formula
       tag:      "v1.83.0",
       revision: "c876f4da50f7da2f331888b88b2a7243514139fe"
   license "Apache-2.0"
-  revision 2
+  revision 3
   compatibility_version 5
   head "https://github.com/grpc/grpc.git", branch: "master"
 
@@ -21,12 +21,12 @@ class Grpc < Formula
   end
 
   bottle do
-    sha256               arm64_tahoe:   "9bdc51824ecead60f0ff0943d11829162c675b6bf08523f01c77b1fd65008a18"
-    sha256               arm64_sequoia: "bd7b9312eb75b721eee917b306f3fb84b56176cc98a1dd77cef455538b203028"
-    sha256               arm64_sonoma:  "b3f7b050864a7f0efa7529d04e7b6f333236971b2502e8c813f55db5565155fe"
-    sha256 cellar: :any, sonoma:        "f5fcdf4b2b9ea766ff5820e1126027b15576c95f8e0a53e1b5036c7f09a4af45"
-    sha256               arm64_linux:   "6119c94d8894f9aa7e49dd59cc0959eda4e37cf27a86b0ff4f05bd7c67614f2d"
-    sha256               x86_64_linux:  "a26279080e8ec14fb29cc9f7ea40a9de586399949e192c1a8976c82458d8e0f7"
+    sha256               arm64_tahoe:   "69b48f4163d684037c946677df9898579170d77305e5b735dc0c3a7ef90f5afb"
+    sha256               arm64_sequoia: "3e4091757d073253e8a2bc6f2e14dff60d7ca56b5503ba231f0094e7e8bb0dd8"
+    sha256               arm64_sonoma:  "20324e9c27329c4e90935e04474dda04910b5bc393511264549a00f112fc39b2"
+    sha256 cellar: :any, sonoma:        "98410ab86eb0ea8037677cc38cd40a54b411eda3f8a59fdbbc8ff52e072c103a"
+    sha256               arm64_linux:   "e9fd521cb43ca6c5fe8748f619cd9acca84273e6c3ff619451883f2483564d7e"
+    sha256               x86_64_linux:  "6168147cb202ea7ba1d91baa80ef762a0a2b0b9819c4aad61ed46539efbb7fa2"
   end
 
   depends_on "cmake" => :build

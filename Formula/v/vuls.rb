@@ -20,7 +20,9 @@ class Vuls < Formula
     sha256 cellar: :any,                 x86_64_linux:  "bfc81776e8cbaf72f3b5035e44947d66469b11b1f1b68467165c6b00fba52aa9"
   end
 
-  depends_on "go" => :build
+  # TODO: unpin go@1.26 when vuls (and trivy) support go 1.27
+  # ref: https://github.com/aquasecurity/trivy/pull/11127
+  depends_on "go@1.26" => :build
 
   def install
     ENV["GOEXPERIMENT"] = "jsonv2"

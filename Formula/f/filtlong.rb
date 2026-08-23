@@ -6,15 +6,18 @@ class Filtlong < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ee42060b9b7c55d85d703e19b39270f2d1b687c7f57573424c901aad58562c19"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "eb9cfb3edfa804f810a3180c00a7358f4a06e8bd396c8ac2036d4df53056fe02"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e0b8388b17425d31657d46c00975946c5f4bd67199d8fb14dadd09847c18b928"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5bf5298a7376a553572588d8249c59b10996d70ae797aaf48dc069282b4ef671"
-    sha256 cellar: :any,                 arm64_linux:   "baeeb1875799f337c988e667b4b3d5398e2668f19299c847c2abeee657d516f8"
-    sha256 cellar: :any,                 x86_64_linux:  "b658541b14b15f775f74b3f509dbffece3ac4a4d9cdabe1ca4ac69301fbd4074"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d967c6236ad5842685f8544adbc7ef6453daa89ec80878b6f246b41c481f2e45"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d9159034511e6b82c8bf41baf7b975bfea55a2f2ccc33526753f444bf6f42063"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5afa5a2204ffe2450f467a598720d96c6c484f6bd538e762f0b670db227ea62e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "32e497ffe6cca78134b859c3c3c315a2a07292ed4ac2331c9d4557decb0a1854"
+    sha256 cellar: :any,                 arm64_linux:   "2ebebc6f44a27b16b2cf4a242165351261d99c7180bfabae36896d8f866e73d8"
+    sha256 cellar: :any,                 x86_64_linux:  "be34ca8f4265931c437c47b6a6c7ee0334435aa08cbd381e441ab3f458b8ff20"
   end
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     system "make"

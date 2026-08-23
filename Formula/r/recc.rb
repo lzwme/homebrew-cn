@@ -4,15 +4,16 @@ class Recc < Formula
   url "https://gitlab.com/BuildGrid/buildbox/buildbox/-/archive/1.4.18/buildbox-1.4.18.tar.gz"
   sha256 "3749d7a8fa9db38d51f575a45214c4a0fafdde86574523ec6c460c12e7eff6e5"
   license "Apache-2.0"
+  revision 1
   head "https://gitlab.com/BuildGrid/buildbox/buildbox.git", branch: "master"
 
   bottle do
-    sha256 arm64_tahoe:   "6cb7074a7ce2780b5b45ad46fd84598a743bed59baf5a3c508ed043ed23bf450"
-    sha256 arm64_sequoia: "47803db23f7526a82ccb9f49cda3480e619273a665728a53f7f7e066e72636b0"
-    sha256 arm64_sonoma:  "5dffa616772206c5490e4dbc4e15bd581a320764504de0513b0d8934fb48efff"
-    sha256 sonoma:        "76aeb3a4e9164cfc46887cd531f666a32927def56d110ae70e586ee3854176da"
-    sha256 arm64_linux:   "5d1d97a640da1a6cbc1391c45c86477450487406cc615b2c5ab311a6103fc89e"
-    sha256 x86_64_linux:  "805bd7918264072909d9841cbf9de9875dc387b2e8ebde6201d1ceb50207a883"
+    sha256 arm64_tahoe:   "0a36e1ef720f697ac416725c1edbc5f518f1626111e82ad0d262544ca1f8c540"
+    sha256 arm64_sequoia: "693de9138cdbfe99b5630ea732c37195f92e29d3eec69d4ed201d5fbcbcc085d"
+    sha256 arm64_sonoma:  "e428b14b3962a23a13beb1e7ef4b1c03566fbb1683c6598deb9d040187bbb272"
+    sha256 sonoma:        "48bcb1597a3961a8b1f1a7680c1576a415c8123522692ecea42a6c56a244da52"
+    sha256 arm64_linux:   "c73da5cf8372d4b270e14a3bf00b339e6a37bfc75e0e8eda345d80ef58807eeb"
+    sha256 x86_64_linux:  "86dfaf4835f6e4063e5f77e42c0f30a17ff28ed0b5d9758c39219d5e0dd00a50"
   end
 
   depends_on "cmake" => :build

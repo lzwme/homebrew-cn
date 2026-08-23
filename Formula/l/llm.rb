@@ -3,17 +3,17 @@ class Llm < Formula
 
   desc "Access large language models from the command-line"
   homepage "https://llm.datasette.io/"
-  url "https://files.pythonhosted.org/packages/b7/bd/af98f3401bab026f3153de0edba65ff56e56ac7abaf34ab568cf461cd7f9/llm-0.32.tar.gz"
-  sha256 "76adad7cceddbe65e970a96ee879fc75709ce05fdfb7ca9503b66bede5933679"
+  url "https://files.pythonhosted.org/packages/99/48/fdc15f4d93145b804338c0b69192440eb8322a9e0a4f249caa84501619e4/llm-0.32.1.tar.gz"
+  sha256 "c8fa27fd88e19d8d9081724dc78ef1b94871c962592463145ad71b3fc5506f6a"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "d992021f54e5dd1780dc87138ce7862d6b2de83bd93fa4e1dead56882cc84033"
-    sha256 cellar: :any, arm64_sequoia: "d66cd0888928083588286913fb4da343b252b4bc53a146a79b1f00226b15856a"
-    sha256 cellar: :any, arm64_sonoma:  "f45cd71f57400d19fc0724ebfd41367c6b359564f0adfcffe5201d46020aaa7f"
-    sha256 cellar: :any, sonoma:        "ea860a9039078118978fd73d3dd0fdd38b7c7939dcf3ab0ec65fd185dfbe9083"
-    sha256 cellar: :any, arm64_linux:   "9f5cf3a5bed5c8d9bc8c6c5a0fa8dd969a688eed204bb057dccc548160a64af7"
-    sha256 cellar: :any, x86_64_linux:  "26be3b1e3c1efed05821379252c713adc6c8aac7cb019416f70f184d49f2acd7"
+    sha256 cellar: :any, arm64_tahoe:   "e2d22a6c5eeff219423d133f4336fb65c99e5e6866a333933fc618f0f822c388"
+    sha256 cellar: :any, arm64_sequoia: "58e56cf4ebe7b47fd0c5dbe4b916287f9bbf0ca47c8c5b4028295469c22ff426"
+    sha256 cellar: :any, arm64_sonoma:  "412a3cd9c03c4680912aaa57497fc38d3b5d831679d25cb2ce99a4a6c0aebc81"
+    sha256 cellar: :any, sonoma:        "33af9fec921fdca1d51e5df1a3457c7391f052dcd0f71b7fddfab86e79d919f2"
+    sha256 cellar: :any, arm64_linux:   "023ecb674e828d0f47d20b807bcb7068d2623e30a692ba39344892d6bcfdbee4"
+    sha256 cellar: :any, x86_64_linux:  "170517611bba602e64bef2d9eef4e1112b5a4d59940e6e750951441bc2f79925"
   end
 
   depends_on "rust" => :build # for jiter
@@ -65,8 +65,8 @@ class Llm < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/cd/63/9496c57188a2ee585e0f1db071d75089a11e98aa86eb99d9d7618fc1edce/idna-3.18.tar.gz"
-    sha256 "ffb385a7e039654cef1ab9ef32c6fafe283c0c0467bba1d9029738ce4a14a848"
+    url "https://files.pythonhosted.org/packages/5f/f7/abb373e5757eaec4b922b92f97ec8d6d7e057cf06778247604fbc4e7c3f3/idna-3.19.tar.gz"
+    sha256 "5e0811a4383b21dc5838069f801c4fb62113b7447663d2530d2bd6e77b49bf15"
   end
 
   resource "jiter" do
@@ -75,8 +75,8 @@ class Llm < Formula
   end
 
   resource "openai" do
-    url "https://files.pythonhosted.org/packages/ef/cf/36e3e7235fdf6d125c052acc0970924611b17a20a4fe580596faf4566a65/openai-2.53.0.tar.gz"
-    sha256 "baf5802ad08980e1d9d561e1b996e800c8bcd14af5847c6d0e7a5cc59e4d4116"
+    url "https://files.pythonhosted.org/packages/50/9a/8c75e8c8a5b407a0586faeb2afac91674ff955c191ecc1d6d3b6669f6788/openai-2.54.0.tar.gz"
+    sha256 "e3e6f8bc1ba30ddf381ace1a14340eed381cb984a1a59bd0f34b5be3b5d49cfa"
   end
 
   resource "pluggy" do
@@ -105,8 +105,8 @@ class Llm < Formula
   end
 
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/34/26/f5d29e25ffdb535afef2d35cdb55b325298f96debd670da4c325e08d70f4/setuptools-83.0.0.tar.gz"
-    sha256 "025bccbbf0fa05b6192bc64ae1e7b16e001fd6d6d4d5de03c97b1c1ade523bef"
+    url "https://files.pythonhosted.org/packages/6d/44/f5da03a8ef95d369145c5bb53050e7877c9f3d312e128605fd9504829143/setuptools-84.0.0.tar.gz"
+    sha256 "f4695c21257f0d9b537ec2692c941d02ee143b7cc1276941349a546573b2ef73"
   end
 
   resource "six" do
@@ -125,8 +125,8 @@ class Llm < Formula
   end
 
   resource "sqlite-utils" do
-    url "https://files.pythonhosted.org/packages/83/c1/fa8563039ec30b5cc6a532271e8cf90da37e4c649a3ad80b49fb6a39023e/sqlite_utils-4.1.1.tar.gz"
-    sha256 "cf97e620b3940cd541cae9117cc24af961a6da426189fdb662f20f1950ba1f49"
+    url "https://files.pythonhosted.org/packages/7e/6b/4a7b3d20c92e6c7acedc96ef620df8e1ea8f94a26a41ab788c1c08055815/sqlite_utils-4.2.1.tar.gz"
+    sha256 "76114b6a5414714e6c70e5fa5c4781b301b590f6951b5da39c8cc60c21382ba1"
   end
 
   resource "tabulate" do

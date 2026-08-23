@@ -1,16 +1,16 @@
 class Astra < Formula
   desc "Command-Line Interface for DataStax Astra"
   homepage "https://docs.datastax.com/en/astra-cli"
-  url "https://ghfast.top/https://github.com/datastax/astra-cli/archive/refs/tags/v1.1.2.tar.gz"
-  sha256 "698c14212df3301065bffe3c39744e51645c03c04f76223d251b8b9cdf0198c6"
+  url "https://ghfast.top/https://github.com/datastax/astra-cli/archive/refs/tags/v1.1.3.tar.gz"
+  sha256 "b252b461004d27c3331e456cb7a47f02c9b566025c61c74d8778fcb55f4508df"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0af51198f7cb0e04eb8a82b73bd8210746b9d8618f59675a61c05d21f444c804"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3871c579122f694c4b7fd092412c09d3aee0291382ab665b5b6ca4a3e61f49a8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "27f3569c725abf2623eff52019c726c0bda81a63d33acd48b2ff7c49965e5d16"
-    sha256 cellar: :any,                 arm64_linux:   "7c06c6ba76169e8be1c0854e306433b0352f4982692072b40e915ad5e68052ed"
-    sha256 cellar: :any,                 x86_64_linux:  "190510803806e777b6f3bbafcb3e3ad67807385cc76e2732819036cb211a09cf"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "549b8ebf33b3fa3cc353f80e7b7714c7f9880ab07e83db305ae9e4c19728e185"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c5731e1cf9b66d10c0e812b4b573538d88b8b006697b310e0844a19bc703cfc0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "24d51c01170b31935864a52e5c64cc8c38c3bf0b813bf7829b1938735c59ed6c"
+    sha256 cellar: :any,                 arm64_linux:   "7899b1bccb71899737a9baa9b3a881cedb75f3d03c5b0c8cf747412693298c68"
+    sha256 cellar: :any,                 x86_64_linux:  "690a2d57a00c5e640b3e56a13d539f8c67c53dab49daba5cf0054a2ff7dc3120"
   end
 
   depends_on "graalvm" => :build
@@ -34,6 +34,9 @@ class Astra < Formula
     system "gradle", "nativeCompile", "-Pprod", "--exclude-task", "test", "--no-daemon"
 
     bin.install "build/native/nativeCompile/astra"
+
+    # `astra compgen` writes an upgrade-notifier file under `ASTRA_HOME`, which defaults to `$HOME`
+    ENV["ASTRA_HOME"] = buildpath
 
     generate_completions_from_executable bin/"astra", "compgen", shell_parameter_format: :none, shells: [:bash, :zsh]
   end

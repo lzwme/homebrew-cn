@@ -7,21 +7,22 @@ class Pachi < Formula
     "GPL-2.0-only",
     "BSD-2-Clause", # `caffe`
   ]
-  revision 3
+  revision 4
   head "https://github.com/pasky/pachi.git", branch: "master"
 
   bottle do
-    sha256 arm64_tahoe:   "d9859f55e370f7a40e5df9bd3c76ae034b38e1df3f8a1315dd75929e8e285657"
-    sha256 arm64_sequoia: "edb8784a04900e8a338f58e12f3842bacf9c9c4470c8a9f9fc4a7078342c5afb"
-    sha256 arm64_sonoma:  "146d04c7584d7bc06f75ad3ad28c237be8e61ef72b8536341a08e424fb22e7e7"
-    sha256 sonoma:        "ec3949309e47af96914d38774b923e94d6ea1449eb09bf58ed236e7ac2b2b526"
-    sha256 arm64_linux:   "5a5b20a7a2cab6c40b3342c5f6138753f8cb0df9c5aa04f80e385405e5ad4977"
-    sha256 x86_64_linux:  "cd87de5d958a01bb059b0dd34823d1e08af5a75e3da58f2e5f3693d347879e64"
+    sha256 arm64_tahoe:   "6e8b04be22ef2385719b5d676e371e38f21e5f54b101925394d5aec19b6e36ce"
+    sha256 arm64_sequoia: "07386a3956ef25f08045c6c40bdebce1b22cbb28f93772bde61b2380f91b83eb"
+    sha256 arm64_sonoma:  "a9ac5dbc276a313a7de95998b548543441aab8ac58b6f2b4303e973521739bc2"
+    sha256 sonoma:        "a5ac11748e0cb469dfc91c7fe9aedf8d037c067bd2c20613dda7f33a24b31b48"
+    sha256 arm64_linux:   "e34aedee4472d8dfd954369bf2d85535d441f7e714b795fe93ee6b43c522df6a"
+    sha256 x86_64_linux:  "4972b64868e981524307b40263c42d9ce1acb5267bd5ec3df225ee9b8b077b82"
   end
 
   depends_on "cmake" => :build
   depends_on "ninja" => :build
   depends_on "wget" => :build
+  depends_on "abseil" # For caffe
   depends_on "boost" # For caffe
   depends_on "gflags" # For caffe
   depends_on "glog" # For caffe
@@ -49,6 +50,15 @@ class Pachi < Formula
     caffe_prefix = libexec/"caffe"
 
     resource("caffe").stage do
+      # Caffe's legacy protobuf discovery drops protobuf's transitive Abseil targets.
+      inreplace "cmake/ProtoBuf.cmake" do |s|
+        s.sub! "find_package( Protobuf REQUIRED )",
+               "find_package( Protobuf REQUIRED )\nfind_package(absl CONFIG REQUIRED)"
+        s.sub! "list(APPEND Caffe_LINKER_LIBS PUBLIC ${PROTOBUF_LIBRARIES})",
+               "list(APPEND Caffe_LINKER_LIBS PUBLIC ${PROTOBUF_LIBRARIES} " \
+               "absl::absl_check absl::absl_log)"
+      end
+
       # Abseil (via protobuf) is not on Caffe's default include path.
       ENV.append_to_cflags "-I#{formula_opt_include("abseil")}"
 

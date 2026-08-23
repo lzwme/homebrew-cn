@@ -1,18 +1,18 @@
 class NagaCli < Formula
   desc "Shader translation command-line tool"
   homepage "https://wgpu.rs/"
-  url "https://static.crates.io/crates/naga-cli/naga-cli-30.0.0.crate"
-  sha256 "70c089479ee0825b0786deb835b200cc2242bb8d210078837937e8ff885946c4"
+  url "https://static.crates.io/crates/naga-cli/naga-cli-30.0.1.crate"
+  sha256 "45283c11b8b1da1936214eefc9caf9c1bc74ae5c090023eaea84ba317a194c8c"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/gfx-rs/wgpu.git", branch: "trunk"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1930b3fad92dc46c9a9b8fc627b62b0e9bfccb244c3102b5402eba85aa327e29"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9b1b1856ea8a904558bdab666b6a6a93554f1a520c43ce9d329a0ee1498d280e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "67e82266dab1f0b917a0a5662f047b0044d53a3dc32f88c66dd86d4750b3c994"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ce9142a9d3f9244c5a4800f0cd51545bee7f67caea295e4b69b4126a4c5e635d"
-    sha256 cellar: :any,                 arm64_linux:   "921808aac88824ce4506241a85f493cbfbb55245f93ff524d1e6fdcc918197a1"
-    sha256 cellar: :any,                 x86_64_linux:  "653f6c21ab811f3c140ed2aeb224b6ba690885dc499689850958f1a9ecbf3605"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d44465b0a33c75c47bd023035a46f4bd498f4cfc0ccf780d79f4c8d52a58115e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5237159b728073fc30f6cffcfff69082d2b699d70915b493687f809daee449a4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8f39f0fb1ec58bb96a6b6cdf5d8ebf0c65057bb568f3369fbe4cd4403c02981e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c3acb2a0212acc143e4a4b03ad8cb9287af86251c0ded5443629308ab7bd28ac"
+    sha256 cellar: :any,                 arm64_linux:   "8ae808cead6861030360b53cb4fe19add216135bf87b0adebf80621030111d5e"
+    sha256 cellar: :any,                 x86_64_linux:  "2108881f0cfa71a0451fa471e7f1da1e8f3c4b4c4b513de11447e4594a453940"
   end
 
   depends_on "rust" => :build

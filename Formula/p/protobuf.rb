@@ -1,11 +1,10 @@
 class Protobuf < Formula
   desc "Protocol buffers (Google's data interchange format)"
   homepage "https://protobuf.dev/"
-  url "https://ghfast.top/https://github.com/protocolbuffers/protobuf/releases/download/v35.1/protobuf-35.1.tar.gz"
-  sha256 "f0b6838e7522a8da96126d487068c959bc624926368f3024ac8fd03abd0a1ac4"
+  url "https://ghfast.top/https://github.com/protocolbuffers/protobuf/releases/download/v36.0/protobuf-36.0.tar.gz"
+  sha256 "399931c793f4ac6db81045b00b06dd07c877b48aeecf36c797f65c541fb533e7"
   license "BSD-3-Clause"
-  revision 2
-  compatibility_version 4
+  compatibility_version 5
 
   livecheck do
     url :stable
@@ -13,12 +12,12 @@ class Protobuf < Formula
   end
 
   bottle do
-    sha256               arm64_tahoe:   "f579d1000d418a8ac86399089eec4c4c9ea4fd322817584a3567b0fc2c186af3"
-    sha256               arm64_sequoia: "58ccae0f98fc6c98171e99116d3b81dbd9a392f28fcd4a599f072c9d091bc3b9"
-    sha256               arm64_sonoma:  "681c5d62713c043317c6bece724013fffe50603225d41e9a205e24af41c2eb54"
-    sha256 cellar: :any, sonoma:        "9546e69532c62b73cf57f3566542fc6f51096d1879b11b6fb10c56a3dc2cc099"
-    sha256               arm64_linux:   "d10357f100cbfbaa65597afe4ffa16bd5bfbc2113adea00c58a04c11fbb87009"
-    sha256               x86_64_linux:  "74ac8787b70110453175d0fa59a614f4f0890c355e96fb4adc358ba0d58fa91d"
+    sha256               arm64_tahoe:   "b6d41daa3a6c3b85ca57e7bd4d8c59145a39b8acec5e1457934343161d019a22"
+    sha256               arm64_sequoia: "2b349795081ff0fe0c6a850f01dc96766771380a9b3798c604ecdd18ddd92a96"
+    sha256               arm64_sonoma:  "7eb27d1bf8e5791ed4dabd81b60fb15e3f91f910bd48597e60108daa00335b88"
+    sha256 cellar: :any, sonoma:        "1fb99f40afcfee4da81a2f1c49c35606623b201a7968e16bc2b6360b1a5fd7b3"
+    sha256               arm64_linux:   "67b7e8ffa74d2a15cebe883283f7c999f070ab8a0f91582c03101cdcdfc13315"
+    sha256               x86_64_linux:  "61ee855d1c53fba1a3cb4c5f3ac53dd549daf8cf83ef5ed7d6ff565735e7fa48"
   end
 
   depends_on "cmake" => :build

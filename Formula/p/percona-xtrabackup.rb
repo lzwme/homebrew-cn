@@ -4,6 +4,7 @@ class PerconaXtrabackup < Formula
   url "https://downloads.percona.com/downloads/Percona-XtraBackup-8.4/Percona-XtraBackup-8.4.0-6/source/tarball/percona-xtrabackup-8.4.0-6.tar.gz"
   sha256 "e0e886b78d18b34122bd15b2d80f52fc5df2422260edaa3074820902beecd351"
   license "GPL-2.0-only"
+  revision 1
 
   livecheck do
     url "https://www.percona.com/wp-admin/admin-ajax.php", post_form: {
@@ -21,12 +22,12 @@ class PerconaXtrabackup < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "8d1648808974f70924f16a95328468441bbdacd830b1554ffe6f33291a035bad"
-    sha256 arm64_sequoia: "01a75c71fdcc4db6043442076a887508f21bfa45a72e73c62019d31e1e5f032b"
-    sha256 arm64_sonoma:  "1ac86189566d6f85760bfe4d74d79e3b098fabb76b1e83daafb8053710064005"
-    sha256 sonoma:        "c6d16f65abd9651ac7c797a577f992b54d1a2d0f5c86ecd12f2a99a6158cbb8a"
-    sha256 arm64_linux:   "40689bd142a465a7d68f108732425b72780b59230c3ab624eb494987ffb280b7"
-    sha256 x86_64_linux:  "ba0e07f79a2294bb3b7b7538e91bca2f1208791b31481bb11f76749050abb2ad"
+    sha256 arm64_tahoe:   "0ef0bc76be9fb3f971a3d5d5b450a31a85e210fe01768da1ca3fefdd3cccfce3"
+    sha256 arm64_sequoia: "cd7d32afe465abb0eab24cb0527424cee3fa6588744410d57bad262e83a14703"
+    sha256 arm64_sonoma:  "8f686995ebeb48c00c53fba1ab8d01c0769ecbe662f97b0768d8243247dca0c4"
+    sha256 sonoma:        "d46a2f4e02831dad7874cb7886bd2704d81a9d5d66b71b5da8286550cff767d8"
+    sha256 arm64_linux:   "d141b54e841732275cece37050877d58cba0cf9cac96c09f7fc21534568296ad"
+    sha256 x86_64_linux:  "677fbd3f879a1d801b636278c8a19f958990aada3a18233378edddb5f167fb97"
   end
 
   depends_on "bison" => :build # needs bison >= 3.0.4
@@ -187,6 +188,8 @@ class PerconaXtrabackup < Formula
     (lib/"libmysqlservices.a").unlink
     # remove conflicting libraries/headers that are installed by percona-server
     (lib/"libkmip.a").unlink
+    (lib/"libkmipclient.a").unlink
+    (lib/"libkmipcore.a").unlink
     (lib/"libkmippp.a").unlink
     (include/"kmip.h").unlink
     (include/"kmippp.h").unlink

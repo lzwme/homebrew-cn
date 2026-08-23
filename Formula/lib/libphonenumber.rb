@@ -4,7 +4,7 @@ class Libphonenumber < Formula
   url "https://ghfast.top/https://github.com/google/libphonenumber/archive/refs/tags/v9.0.37.tar.gz"
   sha256 "4bd34bc3aec5a89dc9035d15aaf2256c5e8f7e0524e6eb3e7bac1e811987c230"
   license "Apache-2.0"
-  revision 1
+  revision 2
 
   livecheck do
     url :stable
@@ -12,12 +12,12 @@ class Libphonenumber < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "af75eab1f7aee968a3974bc8c56e934945fc33636f403c4b5d298315f5dd38ed"
-    sha256 cellar: :any, arm64_sequoia: "f972d77867515c5ccb86c870cfcb79660ccc9fd52a23b49b38033f84f42095a9"
-    sha256 cellar: :any, arm64_sonoma:  "90a34df7fa691b949f673e5cefc44f0f7211a7d111f87239e3daf2695c8685c3"
-    sha256 cellar: :any, sonoma:        "d3db3da6fd1a55952bbcd26dc96ac93017058a561b26296be13e403673276482"
-    sha256 cellar: :any, arm64_linux:   "e179792ae6367d1a09795007223418eea13020bd5531331d4f9d04980cc0beab"
-    sha256 cellar: :any, x86_64_linux:  "4ffb1143abe0519c34cb820c12653931551080905d85d57738567511c53533a7"
+    sha256 cellar: :any, arm64_tahoe:   "faa238a41f7868c60ae3a648b3949cdf4270cb1ece6fa75008bc96e2d75f7854"
+    sha256 cellar: :any, arm64_sequoia: "a5837c17360d9eaa00b07a0b12eef5ee362ddaea4129e895068b9cc94181a92c"
+    sha256 cellar: :any, arm64_sonoma:  "0976464dcdb1fc5655cdaed6b17fc4c79d7d7a03e1f14e164ce95b0156e1cad4"
+    sha256 cellar: :any, sonoma:        "e0be4d0def19beb28c0ff0e44577782732340b1279f144540206a282c63ad009"
+    sha256 cellar: :any, arm64_linux:   "60bd268547e5e6b424c0fafd1fff9b4e4ef18e7ca0ed53f703d1eba54d1af7d1"
+    sha256 cellar: :any, x86_64_linux:  "bac7ccd7d76c70873b0b2ef0faeaf5164aa23bc4cc7792ac2a7f5efcd5a180a5"
   end
 
   depends_on "cmake" => [:build, :test]

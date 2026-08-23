@@ -16,7 +16,9 @@ class Trivy < Formula
     sha256 cellar: :any,                 x86_64_linux:  "3ff0409831540fa6fdb8208be7bfb2e4d5acd45cdba93849e815bfd8242d9322"
   end
 
-  depends_on "go" => :build
+  # TODO: unpin go@1.26 when trivy supports go 1.27
+  # ref: https://github.com/aquasecurity/trivy/pull/11127
+  depends_on "go@1.26" => :build
 
   def install
     ENV["GOEXPERIMENT"] = "jsonv2"

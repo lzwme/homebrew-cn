@@ -4,16 +4,16 @@ class ProtobufC < Formula
   url "https://ghfast.top/https://github.com/protobuf-c/protobuf-c/releases/download/v1.5.2/protobuf-c-1.5.2.tar.gz"
   sha256 "e2c86271873a79c92b58fef7ebf8de1aa0df4738347a8bd5d4e65a80a16d0d24"
   license "BSD-2-Clause"
-  revision 17
+  revision 18
   compatibility_version 1
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "12fe5dd9e8a0e213423f19fff3615af2d5bd9beeb6a3f0612b10f1e25ffd323d"
-    sha256 cellar: :any, arm64_sequoia: "ce004b3bfd362fce6975373453ea23de33da42dec394202b99ef31307bdc46c7"
-    sha256 cellar: :any, arm64_sonoma:  "341a7ca73a47d0d5f02084e04011012f6060d22e5df2da172a11fa895459cf97"
-    sha256 cellar: :any, sonoma:        "64134f5fc8cf3fe4e3b1e392c6314deda752c03cbdb104f53d805c849c29effe"
-    sha256               arm64_linux:   "8242722d9ac36ebf7340c20845abf2d11a7fc32f4baead3ac75f785fb1072983"
-    sha256               x86_64_linux:  "bdfc407e535a37369e578a1ce3d0baa9475aab62c336fddad64315ac77075c0a"
+    sha256 cellar: :any, arm64_tahoe:   "224d1a4274360e9bb9f6978590dfba7f4cd2b8117a3d78924b519fb5cae2b29c"
+    sha256 cellar: :any, arm64_sequoia: "3e9dda2db5367332874363c93004038c3721b7b0d9cadd259aa2ef3972f324f2"
+    sha256 cellar: :any, arm64_sonoma:  "53d97d97edc83b70fa85cb0e1ad0aa9bed0e9a0fb2fefe2c27c3aee0ed584fdd"
+    sha256 cellar: :any, sonoma:        "01d46fdbd673b5057e1f91b49f64c9c7def7255b6e6fd794aee2a53e0e2149bc"
+    sha256               arm64_linux:   "7274627aeb63d76841695881300cd2d515aca8785d4be0aeefaf3b8f25e2759c"
+    sha256               x86_64_linux:  "871a94e5219259e793c7ab2aff5380baaa54a836731b0b36b8625b3aacf858a9"
   end
 
   head do

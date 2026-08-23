@@ -4,7 +4,7 @@ class Pypy311 < Formula
   url "https://downloads.python.org/pypy/pypy3.11-v7.3.23-src.tar.bz2"
   sha256 "f15c9c41e03f3f7ecc25228c6c67427b8918f21ef2d694215994b1fade20f69b"
   license "MIT"
-  revision 1
+  revision 2
 
   livecheck do
     url "https://downloads.python.org/pypy/"
@@ -12,12 +12,12 @@ class Pypy311 < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "b514cd171f5fa038f30daaab338b4ebf1bba30e7505fd714fc4b18eeafe3eeb4"
-    sha256 cellar: :any, arm64_sequoia: "d47f809ecf524251e045bc253c1f2e3d7515f767f025270dae2b3651fa399930"
-    sha256 cellar: :any, arm64_sonoma:  "b8a3e6b99d1a681cc140a070a3392796dd74387db8f2fa70d7d0263fc4a74005"
-    sha256 cellar: :any, sonoma:        "cb9cce87748367b7b24ac46ef41c80eaaa331353f0553b1c1441041c306a66f9"
-    sha256 cellar: :any, arm64_linux:   "1f8ea65f8bb78e499efb93f5cd32f677275b7c6d3f0db8c5b2a56589f07739f6"
-    sha256 cellar: :any, x86_64_linux:  "1745920536668478e1ae5efcaf39dbf7df0762a15b2cb72c225b3bcfafeb8501"
+    sha256 cellar: :any, arm64_tahoe:   "3c1660e17d7360389844c21e0dd90e40f291c04efc569b0d64cf96e1b89b4110"
+    sha256 cellar: :any, arm64_sequoia: "c4e23b23ed712b028f95f63665c161812aa866a09106ff8fc9e6fe1fa0a15fe3"
+    sha256 cellar: :any, arm64_sonoma:  "3f599b8f7b09b417fc02650f91c0e1ce11a0973bd67c8492e3c6a87c0e2ff5be"
+    sha256 cellar: :any, sonoma:        "8079052ae3bf3c1487087f6525f7e9bbb3f4a3f70b711f1234230747a59c2c9e"
+    sha256 cellar: :any, arm64_linux:   "3fb7fd9c301e8b9c916fab38ddd222af014f219b7eddad00b8d81b5f1b36bb46"
+    sha256 cellar: :any, x86_64_linux:  "36d4e831a1ccbabe784a220bbbbef72e52484265c2ab4831a86dd87c43196b0c"
   end
 
   depends_on "pkgconf" => :build
@@ -44,28 +44,28 @@ class Pypy311 < Formula
                 extra_packages: %w[flit-core pip setuptools wheel]
 
   resource "flit-core" do
-    url "https://files.pythonhosted.org/packages/69/59/b6fc2188dfc7ea4f936cd12b49d707f66a1cb7a1d2c16172963534db741b/flit_core-3.12.0.tar.gz"
-    sha256 "18f63100d6f94385c6ed57a72073443e1a71a4acb4339491615d0f16d6ff01b2"
+    url "https://files.pythonhosted.org/packages/46/ef/34533186e76c526d9ec17a1ad9a10c7354cbfb20f51583cc36dfe4bdccd0/flit_core-4.0.2.tar.gz"
+    sha256 "b6929defd93884b584d7c87829e0e7b5c26ed6be17b0b873979019314aa841c8"
   end
 
   resource "packaging" do
-    url "https://files.pythonhosted.org/packages/d7/f1/e7a6dd94a8d4a5626c03e4e99c87f241ba9e350cd9e6d75123f992427270/packaging-26.2.tar.gz"
-    sha256 "ff452ff5a3e828ce110190feff1178bb1f2ea2281fa2075aadb987c2fb221661"
+    url "https://files.pythonhosted.org/packages/7d/fa/3944b40b07da9ce895c0e6303a5ab7d53da063554f534556b134a54d6093/packaging-26.3.tar.gz"
+    sha256 "94edc256424af38762eb31306eed28beb9f0efc50a8837492c9d6fd6004aed79"
   end
 
   resource "pip" do
-    url "https://files.pythonhosted.org/packages/01/91/47e7d486260f618783899587af63ccf7980fb60245c3e63dd4571c6b57ad/pip-26.1.2.tar.gz"
-    sha256 "f49cd134c61cf2fd75e0ce2676db03e4054504a5a4986d00f8299ae632dc4605"
+    url "https://files.pythonhosted.org/packages/ae/15/4500e320e6b101ec3b719ae85b697d9940b6cda672bc555bd6016fc60c6f/pip-26.2.1.tar.gz"
+    sha256 "f6ad667e89a1fe78046c8f13232b247200f5258d7828f3f7883d660878e0813f"
   end
 
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/34/26/f5d29e25ffdb535afef2d35cdb55b325298f96debd670da4c325e08d70f4/setuptools-83.0.0.tar.gz"
-    sha256 "025bccbbf0fa05b6192bc64ae1e7b16e001fd6d6d4d5de03c97b1c1ade523bef"
+    url "https://files.pythonhosted.org/packages/6d/44/f5da03a8ef95d369145c5bb53050e7877c9f3d312e128605fd9504829143/setuptools-84.0.0.tar.gz"
+    sha256 "f4695c21257f0d9b537ec2692c941d02ee143b7cc1276941349a546573b2ef73"
   end
 
   resource "wheel" do
-    url "https://files.pythonhosted.org/packages/39/62/75f18a0f03b4219c456652c7780e4d749b929eb605c098ce3a5b6b6bc081/wheel-0.47.0.tar.gz"
-    sha256 "cc72bd1009ba0cf63922e28f94d9d83b920aa2bb28f798a31d0691b02fa3c9b3"
+    url "https://files.pythonhosted.org/packages/d0/20/50ed6bdf27dec98b568a8ae25dc599f35baa3d9709f9e83fd1edb56b9a90/wheel-0.48.0.tar.gz"
+    sha256 "94800765601e9171bf5d58d066e640662842bcedcbab982b2c90787a2c987322"
   end
 
   # Build fixes:

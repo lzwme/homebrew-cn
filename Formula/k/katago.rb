@@ -3,13 +3,12 @@ class Katago < Formula
   homepage "https://katagotraining.org/"
   # Occasionally check upstream docs in case recommended model/network is changed.
   # Ref: https://github.com/lightvector/KataGo?tab=readme-ov-file#other-questions
-  url "https://ghfast.top/https://github.com/lightvector/KataGo/archive/refs/tags/v1.17.2.tar.gz"
-  sha256 "d4531e969df138e1d0bc91f02dfd737c88c08296c922e78e63289af443ec501e"
+  url "https://ghfast.top/https://github.com/lightvector/KataGo/archive/refs/tags/v1.18.0.tar.gz"
+  sha256 "e6deda07ba926d9813bfcb56eac78f207fc206caff93fbaddc139a1f599d1827"
   license all_of: [
     "MIT",
     "CC0-1.0", # g170 resources
   ]
-  revision 2
 
   livecheck do
     url :stable
@@ -17,12 +16,12 @@ class Katago < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "d61dab05151dbd49e8bb0427cd9a37ad8de99df0f8df588db40373356dd11231"
-    sha256 cellar: :any, arm64_sequoia: "11c9cfdf1244b1041b75dbcc441613da6fcabc7b0da9b4515cf24254e15c3b6b"
-    sha256 cellar: :any, arm64_sonoma:  "6f82884d62beac77cf0d0739ba304bdda179b354edf9cb1284904beca2a69d3a"
-    sha256 cellar: :any, sonoma:        "c7da2be2330df71303aac81f1911fefcb547f795ba79db189f7f90ebdd0e4a9e"
-    sha256 cellar: :any, arm64_linux:   "60590282de10729bd77f4248b5cebf39813ec470c1e22f14a7a0391562fdbe72"
-    sha256 cellar: :any, x86_64_linux:  "d443344503024243f24cdc7f5a88e5e6483535f612bd6e1d5dfabe4e06eddef0"
+    sha256 cellar: :any, arm64_tahoe:   "d3d1de95feed943733df3d9875b1776a181df37818ac9a72881aafa7242df6e1"
+    sha256 cellar: :any, arm64_sequoia: "3493f8a86573109fb96b0253b782108479e5e82b5f36e75482f613f9c467999e"
+    sha256 cellar: :any, arm64_sonoma:  "055f54e8afc7cae1f6ddf7cf779f2021a2d6cc430e9e827ceed8ac218620396d"
+    sha256 cellar: :any, sonoma:        "74774c6b69a3d71ca74c76a03350ca46573a7200eedcde2eb7c657ee56e1c886"
+    sha256 cellar: :any, arm64_linux:   "763e64fb06563a376f5569e8bc7ba512542d659b4039f58ed76831c79f90baa7"
+    sha256 cellar: :any, x86_64_linux:  "8a6ee8ff0d27f804fb65f28c5e43138e147810fd2cf3a0e6ab81b305c43d1da9"
   end
 
   depends_on "cmake" => :build

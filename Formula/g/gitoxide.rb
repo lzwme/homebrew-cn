@@ -1,8 +1,8 @@
 class Gitoxide < Formula
   desc "Idiomatic, lean, fast & safe pure Rust implementation of Git"
   homepage "https://github.com/GitoxideLabs/gitoxide"
-  url "https://ghfast.top/https://github.com/GitoxideLabs/gitoxide/archive/refs/tags/v0.56.0.tar.gz"
-  sha256 "97331d654279b8af5d070c6d391c4edc341fa784f5c7e6120278f23b92537c84"
+  url "https://ghfast.top/https://github.com/GitoxideLabs/gitoxide/archive/refs/tags/v0.57.0.tar.gz"
+  sha256 "a81d98e99f91964f44675a8452ffe01dbbcc061997461ad82421c0cb61beac32"
   license "Apache-2.0"
   head "https://github.com/GitoxideLabs/gitoxide.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Gitoxide < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c2941b71a6d60e1865479b654646722e5d11219d8f3da498a84db86f6d012986"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b672015ab726dd206808d7ad3e47ce0c1eaf6f771b69fa6ffe73c7edfdd37556"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8efb6ad2516ef5a4707b320fc30b44d98ac458ed93bbc0cd52281a8a6b2d140b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7944d7f26ee2fc3cbe8cb0570952dd1bb6e71ba950100568f2450f2a616e44a0"
-    sha256 cellar: :any,                 arm64_linux:   "806a24a59d224f5a240e18b1f4e927499178832cfcb57b24bc3014373b4d455e"
-    sha256 cellar: :any,                 x86_64_linux:  "4e7edce12fabd68eb1a0971a5f26a8c5e825a36338695f3c5e8e71d2a8b16ebc"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "05268cbec9c3e71c62c33b879b8e37160d990d24189cc47c2b0e2d02c22f0084"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "77ae6b156584fc2feab103ece0f2e2cfb0d6dac5ede316904d313829b44dacd3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8b134c1c7ba3d74310ae0cb4d93f562d8dc1e242f1c8a5ba3615b209593245b7"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4c9bc1ef5600f11e473fe9b999aa0cd04b9a5d91b9e889b9441558d564dbe150"
+    sha256 cellar: :any,                 arm64_linux:   "8f1df919329ecbb5cb77df030ef29ec7e5bfa19a131425429947a072ff87c9ab"
+    sha256 cellar: :any,                 x86_64_linux:  "f68b147e6e08f01d7fd4ede546d2972fe3bbf4e24a570d37c2604544634df263"
   end
 
   depends_on "pkgconf" => :build

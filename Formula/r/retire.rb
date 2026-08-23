@@ -1,12 +1,12 @@
 class Retire < Formula
   desc "Scanner detecting the use of JavaScript libraries with known vulnerabilities"
   homepage "https://retirejs.github.io/retire.js/"
-  url "https://registry.npmjs.org/retire/-/retire-5.4.3.tgz"
-  sha256 "ca6fe44d02d7a8aeabd10cc15f766d8411be5b8aa42e37b50759bf028c75daea"
+  url "https://registry.npmjs.org/retire/-/retire-5.5.0.tgz"
+  sha256 "20d256021e955dcfe65363a03094d1aaa69f416cd0d691a408023f94d87822f9"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "bb7f0cb40972249b1bdb69a3b5ea9d028a29452450881c3a951e591400a42374"
+    sha256 cellar: :any_skip_relocation, all: "75d925bec3dcd9b4c6484b2748d46a23a2f1d10d12b541a8f24b56b1576fc67e"
   end
 
   depends_on "node"

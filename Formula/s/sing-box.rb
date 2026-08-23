@@ -16,7 +16,9 @@ class SingBox < Formula
     sha256 cellar: :any,                 x86_64_linux:  "ffb6e061396ca944d88745d6deda5ca46fefaf7caabd6bbf767223ad64be5ba3"
   end
 
-  depends_on "go" => :build
+  # TODO: unpin go@1.26 when sing-box supports go 1.27
+  # ref: https://github.com/SagerNet/sing-box/pull/4182
+  depends_on "go@1.26" => :build
   depends_on "llvm" => :build
   depends_on "ninja" => :build
   depends_on "python@3.14" => :build # extract_histograms.py fails with macOS python

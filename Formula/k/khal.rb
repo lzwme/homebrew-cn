@@ -3,14 +3,13 @@ class Khal < Formula
 
   desc "CLI calendar application"
   homepage "https://lostpackets.de/khal/"
-  url "https://files.pythonhosted.org/packages/31/30/04072c5adc3a5d4638a8c9f9c2cd8497832b079dbec0e32532cc95c1d74e/khal-0.14.0.tar.gz"
-  sha256 "10df243204b7a898e0ff89617ed9fd604a73fa1b4d37aac77c4470ad7519e16c"
+  url "https://files.pythonhosted.org/packages/7f/e3/982937a23abdba94e6f858cc4be5bf7bf032b96db4ce14c520a7d1868f61/khal-0.14.1.tar.gz"
+  sha256 "2b51679d80662b2d65e757c509813bd72b496043d789839bfd970f0026da687d"
   license "MIT"
-  revision 1
   head "https://github.com/pimutils/khal.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "a598a487199040d80d3ce7390275d25c3a385f60edf9f0bbd8e3e3403787d872"
+    sha256 cellar: :any_skip_relocation, all: "462a481392a29fd151d6eda8d1af77697f20cf803b8c4700f02bae5dfcca381e"
   end
 
   depends_on "python@3.14"
@@ -31,8 +30,8 @@ class Khal < Formula
   end
 
   resource "icalendar" do
-    url "https://files.pythonhosted.org/packages/2e/6c/3a20edd47656272f2d4016f6680f5bec6e2eb5ec7a23db97ebd1c15c384b/icalendar-7.2.0.tar.gz"
-    sha256 "32dacc396101825b82f9f1bbdf691c02be613130d5ab7a457e553fcd20959fdd"
+    url "https://files.pythonhosted.org/packages/47/2b/1bbf82d316df18c3331d9a06228819c8a5814ceda545a3e9980e52ffce1b/icalendar-7.3.0.tar.gz"
+    sha256 "7bd001c8e648205e1bde5c6a5b77096598e8d0893dcf57755c6c597635620132"
   end
 
   resource "python-dateutil" do
@@ -41,8 +40,8 @@ class Khal < Formula
   end
 
   resource "pytz" do
-    url "https://files.pythonhosted.org/packages/ff/46/dd499ec9038423421951e4fad73051febaa13d2df82b4064f87af8b8c0c3/pytz-2026.2.tar.gz"
-    sha256 "0e60b47b29f21574376f218fe21abc009894a2321ea16c6754f3cad6eb7cdd6a"
+    url "https://files.pythonhosted.org/packages/fb/48/fb042503b6ca6cd271261dc559fd6432f7d8c713153e9ec5c591af4dfc1c/pytz-2026.3.post1.tar.gz"
+    sha256 "2211d3fcf9a797d3405cac96ac7f61d80e6a644f72a3309607282fe8a2010c5d"
   end
 
   resource "pyxdg" do
@@ -71,8 +70,8 @@ class Khal < Formula
   end
 
   resource "urwid" do
-    url "https://files.pythonhosted.org/packages/e0/7d/4400463fb3f66c83094d97bc6c532d207996c928c83f150896cb3533422c/urwid-4.0.3.tar.gz"
-    sha256 "0f9a1d9b51a529f04c363d04c53dc446dada47a9eab641a82244ff9d1fe5029b"
+    url "https://files.pythonhosted.org/packages/02/82/8b338c753399ea5edd5907829b9a14e1abc6cc353a2d36039ac70b5aaca4/urwid-4.0.11.tar.gz"
+    sha256 "478efc158aa2713d9ba10ba3a66f383d9e7e49484d4325465b5749e8e0e99b62"
   end
 
   resource "wcwidth" do

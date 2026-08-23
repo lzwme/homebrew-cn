@@ -23,7 +23,8 @@ class Coder < Formula
     sha256 cellar: :any,                 x86_64_linux:  "8faa27118ec43d98bc0ee525b9a4dea7d6a2dfbfabfd3930a468462543b99767"
   end
 
-  depends_on "go" => :build
+  # TODO: unpin go@1.26 when coder supports go 1.27
+  depends_on "go@1.26" => :build
 
   def install
     ldflags = %W[
