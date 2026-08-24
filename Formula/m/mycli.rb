@@ -3,17 +3,17 @@ class Mycli < Formula
 
   desc "CLI for MySQL with auto-completion and syntax highlighting"
   homepage "https://www.mycli.net/"
-  url "https://files.pythonhosted.org/packages/43/46/16217d4b09b121a701f622d656e5ca724fa6f154be520f635d72fca17eae/mycli-2.15.0.tar.gz"
-  sha256 "3468002140b35e8eb511374157820a572f3e1427ff78b539691a96469c7ddb27"
+  url "https://files.pythonhosted.org/packages/42/91/9ca31b0fb2e8d55ebc6b7ad9480e7a0a4e8d7f3bfb420e120df8b1b75125/mycli-2.16.0.tar.gz"
+  sha256 "e1a567df0f4ec4d7fd537b12df8c664bdf6a03d480ff443b606b3c086d0de343"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "e5b96917aa13160d8f532f4eef55355e9aaf3897fd2d01425319f2807175b828"
-    sha256 cellar: :any, arm64_sequoia: "d2738608382ecf2aade11361627a2c50b72596a34bfe70530bb3073e7ddef4d9"
-    sha256 cellar: :any, arm64_sonoma:  "69b67c943f307dc0e2f9fb814767ae7a1e9d4d9e83ab13a5b25436f630838304"
-    sha256 cellar: :any, sonoma:        "8867130ef9e03ae4020e28902341212bd5bbe1b1f32ce27064714570d86b6a7c"
-    sha256 cellar: :any, arm64_linux:   "33bf23597e3510d4b0c03b46bc2d15eb290acfff738ee025282546ceeb0b1e32"
-    sha256 cellar: :any, x86_64_linux:  "b0534d7bc9ada56fb250d59044b029011f3794fc9db8a7e3a151687e459d870b"
+    sha256 cellar: :any, arm64_tahoe:   "ce58f213df8eec99522e85e7cdba6acdeb353c770fb3093ed40ceba5bcf14d63"
+    sha256 cellar: :any, arm64_sequoia: "7a9132d4ef83abac8571c559d8a5af0bde0c2ece21196bafc7a25565cf4dca38"
+    sha256 cellar: :any, arm64_sonoma:  "eeba6f87cb04d9c247e2002dc9649fae0c2b88c49cc3d3ef555096de1ba85113"
+    sha256 cellar: :any, sonoma:        "d3e0c2f2c85475f295ab9b9a9d67245a710ea3a6e5b8b1be3c71e6089f5137a7"
+    sha256 cellar: :any, arm64_linux:   "9dfa86c6582f9ae7d999035260bbdc2f5a8e393c308d1d170bbdadc616cc309c"
+    sha256 cellar: :any, x86_64_linux:  "53265251315d2e00963f1c92b080f3e2f3161bb00f34b865efe76e754a8ef6f9"
   end
 
   depends_on "rust" => :build # for jiter, polars, vl-convert
@@ -165,8 +165,8 @@ class Mycli < Formula
   end
 
   resource "narwhals" do
-    url "https://files.pythonhosted.org/packages/2b/1d/58946e5aab18393e793bd4add6985b95d0e01c3a2d832f38f54468b10dcd/narwhals-2.24.0.tar.gz"
-    sha256 "b5c0f684ccd9d7475b564111e319a4964abcf2baf79d3cf6b1003d06ac9b828d"
+    url "https://files.pythonhosted.org/packages/6f/7b/6248dada39781db1ab3ebf08943080df0796098515a87f6f8696d14ec744/narwhals-2.25.0.tar.gz"
+    sha256 "62c036c810662bf7820b7737077176313bc59350eeeefb808510f388c743e4b2"
   end
 
   resource "openai" do

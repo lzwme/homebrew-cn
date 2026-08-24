@@ -23,7 +23,7 @@ class VsPreview < Formula
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
-  depends_on "jpeg" => :build
+  depends_on "jpeg-turbo" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "certifi"

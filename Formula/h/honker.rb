@@ -1,17 +1,17 @@
 class Honker < Formula
   desc "SQLite message queue extension"
   homepage "https://honker.dev"
-  url "https://static.crates.io/crates/honker-extension/honker-extension-0.4.0.crate"
-  sha256 "fde7ef3e6cc439573683730d7bb5f598d804bfc169e0e9c8488e5e59ff762148"
+  url "https://static.crates.io/crates/honker-extension/honker-extension-0.5.0.crate"
+  sha256 "e63f3f389f225cd250a2846becbadf15c91dc25285cb1bd43901187c8f1e3774"
   license any_of: ["Apache-2.0", "MIT"]
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "43bbb0659318bb2ebc904b95ddfca94d316afa5c48943e94f971577121e21456"
-    sha256 cellar: :any, arm64_sequoia: "5c76772088e6ee172ac9d0d7a804a889111fc77b5f8bd65c4e77e51f07253845"
-    sha256 cellar: :any, arm64_sonoma:  "561d1622c5e10b8e54aad3dd4dc4ebf98fd25d5bd9a527e4dab8f09ce3ff0da0"
-    sha256 cellar: :any, sonoma:        "21feef5f4255d26a640f1cb9b98df975d8b4b745bd9a2a72a0a94faee521de42"
-    sha256 cellar: :any, arm64_linux:   "0ff5a67aed26923e25204bcca3f58e9bccb12ca7478a118beb020a5c08b5a604"
-    sha256 cellar: :any, x86_64_linux:  "a2ec37d52091c6b9d5c73ee2d2118bd3d138dab3f76f405bb8dcb2b783b9be52"
+    sha256 cellar: :any, arm64_tahoe:   "562bf73b8888259b4e1613e0567652fdf2ee502e4673212b49445de55d8f5908"
+    sha256 cellar: :any, arm64_sequoia: "8719b00e1fd3e2ab3cfba52260c1174e2e325ff6273032aeb7b03b47a8619d8c"
+    sha256 cellar: :any, arm64_sonoma:  "b35f326a013965b32b0cabdb0087fea3c7f6b8a8df0fd6f9d3a2b29b4d7e7207"
+    sha256 cellar: :any, sonoma:        "9cf40865171a765a1ace762cba0361eede5c0d877d0afe9e16859115e0e9eadd"
+    sha256 cellar: :any, arm64_linux:   "bf7dae7e1f3cd9a78a50b0481c888ea19aeb8fd9b7a00c68b376be5c3d93b1a6"
+    sha256 cellar: :any, x86_64_linux:  "c3dca99100c82b6d69de44b8cf1490ecde6c4e9ac6d5d8454696f17d522e3342"
   end
 
   depends_on "rust" => :build

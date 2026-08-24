@@ -1,26 +1,27 @@
-class MysqlClient < Formula
+class MysqlClientAT97 < Formula
   desc "Open source relational database management system"
   homepage "https://github.com/mysql/mysql-server"
-  url "https://cdn.mysql.com/Downloads/MySQL-26.7/mysql-26.7.0.tar.gz"
-  mirror "https://repo.mysql.com/apt/ubuntu/pool/mysql-innovation/m/mysql-community/mysql-community_26.7.0.orig.tar.gz"
-  sha256 "95e949183b94bbe39e70c6355e6c90d2a640a62ede996ca5f7a6a3e0827a3260"
+  url "https://cdn.mysql.com/Downloads/MySQL-9.7/mysql-9.7.2.tar.gz"
+  sha256 "e5a676c7cb73738dc6ea33db2093806ebd512b629a139b897fcab68fcd81aaa4"
   license "GPL-2.0-only" => { with: "Universal-FOSS-exception-1.0" }
-  compatibility_version 1
 
   livecheck do
-    formula "mysql"
+    formula "mysql@9.7"
   end
 
   bottle do
-    sha256 arm64_tahoe:   "3f655342bbb90437bdd0fc133d828d10d9b180d538a872a87f8cf2c5b03f5e67"
-    sha256 arm64_sequoia: "17894b365f010f08663cb42480338e10a71b7a0dc06af080a004e6d55964e080"
-    sha256 arm64_sonoma:  "ce8fe4eb5db85e2d7ff9a24ae44f9dfdd97eabc9f4d6842c367e302491faed71"
-    sha256 sonoma:        "8f98c6afa096b5f28cc5817fa102885646bb24c9a312670a117f5397ed495f88"
-    sha256 arm64_linux:   "dbd664e5e0d8104215a60d2876f27e6a79ddddf7cc168f57a7aebe0e5be9a130"
-    sha256 x86_64_linux:  "f285392a0803303256db9c87b1ac56ee208b16715fa764c55ac59e51abd05ab8"
+    sha256 arm64_tahoe:   "2cca5383f81238797edc113ffb42a82581a1d89f35f4e659e14644726a3f4593"
+    sha256 arm64_sequoia: "a732f3cc0b7defb8a9b6317bc7ee39ddd80a400818acf77394953428473467dd"
+    sha256 arm64_sonoma:  "aa51605824dd336c42700dd73c14b2f14f3436593e34bfdf3eebfb2b1231c687"
+    sha256 sonoma:        "acb57f24bea85cb21d1a1bcb8a2214570ca05627787be2fbf5ba987c851abab0"
+    sha256 arm64_linux:   "29fd350bdf8c3f6e4cd53f9466f89290f8f833ae0a5d1689caab6ef3e837631a"
+    sha256 x86_64_linux:  "52744624f607dbb78c94fddacbb102ecaebee9c3382b852d10312db5b00c2350"
   end
 
-  keg_only "it conflicts with mysql (which contains client libraries)"
+  keg_only :versioned_formula
+
+  # See: https://endoflife.date/mysql
+  deprecate! date: "2034-04-21", because: :unsupported
 
   depends_on "bison" => :build
   depends_on "cmake" => :build

@@ -1,18 +1,18 @@
 class Mcpsnoop < Formula
   desc "Transparent proxy and TUI for debugging MCP traffic"
   homepage "https://github.com/kerlenton/mcpsnoop"
-  url "https://ghfast.top/https://github.com/kerlenton/mcpsnoop/archive/refs/tags/v0.19.0.tar.gz"
-  sha256 "ab3181b8603c32606839d67721e5eadcf4942483fd80c8d9072f8352a1241df7"
+  url "https://ghfast.top/https://github.com/kerlenton/mcpsnoop/archive/refs/tags/v0.21.0.tar.gz"
+  sha256 "a0f29d27e44977b4d2ce484bdf5274ee1156beea59f768c85e6c42e54e5e2b38"
   license "MIT"
   head "https://github.com/kerlenton/mcpsnoop.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b60cd9a5fb26ce865266b4aea9e8444ac7530e960b43b3942868205e5a4c8e8d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b60cd9a5fb26ce865266b4aea9e8444ac7530e960b43b3942868205e5a4c8e8d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b60cd9a5fb26ce865266b4aea9e8444ac7530e960b43b3942868205e5a4c8e8d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8f038d4fd182ead2a842ca543c74fb00810d66b2df1394cda3ed11c7227dd28e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7b8c9680aab6bb810cb0c48ea9b37cb7e816c0a495705254dc53b7975c606aa6"
-    sha256 cellar: :any,                 x86_64_linux:  "9e549d513e1f4dc3dc567c68f122f661c450fea29b1bb4e09d179c1de532c103"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0227c3ec8ab4ee40334d63991b37ee311df98b78fe41d7e7ca03c5679c707237"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0227c3ec8ab4ee40334d63991b37ee311df98b78fe41d7e7ca03c5679c707237"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0227c3ec8ab4ee40334d63991b37ee311df98b78fe41d7e7ca03c5679c707237"
+    sha256 cellar: :any_skip_relocation, sonoma:        "1e6a6718374121a97666e5a0d90ddb103d5b6ccb76f48c5f26b725b261ffffa3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3d2f0e5b95c1c7fc2422e3b52a8e16959411c11e74cc73d71ea0212a54dae542"
+    sha256 cellar: :any,                 x86_64_linux:  "45dfda246d340b8c674cddceab0f5c6c36021604519387b6b8c8c0f1a90f791b"
   end
 
   depends_on "go" => :build

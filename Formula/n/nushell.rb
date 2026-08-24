@@ -1,8 +1,8 @@
 class Nushell < Formula
   desc "Modern shell for the GitHub era"
   homepage "https://www.nushell.sh"
-  url "https://ghfast.top/https://github.com/nushell/nushell/archive/refs/tags/0.115.0.tar.gz"
-  sha256 "09859dde0207804abdd6f574c5b2f0946041555418bb6d3c44d4b9f86c7efd78"
+  url "https://ghfast.top/https://github.com/nushell/nushell/archive/refs/tags/0.115.1.tar.gz"
+  sha256 "06df93281a0f858019d09ea6cf821b19a7cd9017cdfb9e898cfe8dd4bd8101c2"
   license "MIT"
   head "https://github.com/nushell/nushell.git", branch: "main"
 
@@ -13,12 +13,12 @@ class Nushell < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "79f19134e6573994c2ed3b213e31f8aac187b5a427af426dd3a5b66d9a271916"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "37c9e358756531993dfb9ef3cbc3a8c35e2d612054243597ebb4c3e5ed30e3b6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "548da87c6891bbd706c1d0b96b4ba1accf0a6509f6cbe2932594e8da552ce2fc"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6ec30412fa15d29c9194ea3c7d953247e50a1ca838b742813312495559277503"
-    sha256 cellar: :any,                 arm64_linux:   "f09ff3db10ab77e36cbe4ad4c2d1c930da730a15d9e2a59b471bee31c33923d8"
-    sha256 cellar: :any,                 x86_64_linux:  "9c6be23a7e24245b94d211a566969478c777b91017c0c69b36e7f518ecbd4e86"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7f678dfd862086ff6128b88dc81408627182bea32af9760922c901f33801507f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8ee47a2bf7b7cf524b3d1efb16f98218aee0e7202db44971a799b0580c8af1dd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fba8d351459ae7d1087fbac9e60d76ce8dee32ca1c1dea55c500e80df5c83416"
+    sha256 cellar: :any_skip_relocation, sonoma:        "619eeee5c683cb390c7f7341544c1689de6b99d5fea3fb352e7fdadea996842b"
+    sha256 cellar: :any,                 arm64_linux:   "b51ec5cf71f930dd3ac9cb0a75039a240cc79310ba65e77948c4005523fd9cd1"
+    sha256 cellar: :any,                 x86_64_linux:  "5d781a13a8866c7ee34fb9277da469154b0dfd2977ada6024e7431a5417827fa"
   end
 
   depends_on "pkgconf" => :build

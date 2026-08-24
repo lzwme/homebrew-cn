@@ -8,12 +8,13 @@ class Mlt < Formula
   head "https://github.com/mltframework/mlt.git", branch: "master"
 
   bottle do
-    sha256 arm64_tahoe:   "de84a17457c3fe52588cf4ec306cc75d1a1b1ed769acbeb64b9551d05d91feb8"
-    sha256 arm64_sequoia: "bf6942edd42c50934c82e32a846f567252f18828b8e2a2cdb7c55ee96c939795"
-    sha256 arm64_sonoma:  "7882bc987e09701d3706405750a02aab0f74a78928672d0a5ff8746ba253cfb8"
-    sha256 sonoma:        "f66603b9b100c0778993c49ea6bc5b7af49d9a6fc8c3f6f18892ea2727e756b4"
-    sha256 arm64_linux:   "a50204956044e9e5a73d78725c9de4adb34b1352ff1013cd455e6a39115b27fb"
-    sha256 x86_64_linux:  "3b8aae840653ec2f374865804b64ecd40b090715ff888b689f38494f73fdd9de"
+    rebuild 1
+    sha256 arm64_tahoe:   "da7b97a9f64c6d6106cbd82ae611ba51bdc5ee072031f19dac6dfe8fb16d6f74"
+    sha256 arm64_sequoia: "35b0784f25599dac56ec438093aa3876617104c3bdbdd44c3e55aadbf84a18c4"
+    sha256 arm64_sonoma:  "2fb1066b94087ba9369d64710c1c014bf8f0bf38b345dfa109c27d3a0fb3b6a7"
+    sha256 sonoma:        "b40e167e1035ef9157794e90a7ffbf54aabf4e16d047bc6ff94724e859ffac22"
+    sha256 arm64_linux:   "1a3f61c4bd14c1af14057de48edd773ad7becb055da316d0bafecc0991e0602d"
+    sha256 x86_64_linux:  "8aaa1d6afd45f7259db3a639870c0b7eaade242227f96e418d55f0c65de69ebb"
   end
 
   depends_on "cmake" => :build
@@ -27,7 +28,6 @@ class Mlt < Formula
   depends_on "glib"
   depends_on "libdv"
   depends_on "libexif"
-  depends_on "libomp"
   depends_on "libsamplerate"
   depends_on "libvidstab"
   depends_on "libvorbis"
@@ -46,6 +46,7 @@ class Mlt < Formula
     depends_on "freetype"
     depends_on "gettext"
     depends_on "harfbuzz"
+    depends_on "libomp"
   end
 
   on_linux do

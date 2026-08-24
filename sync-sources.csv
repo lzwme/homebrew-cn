@@ -1521,6 +1521,7 @@ Homebrew-homebrew-core/Formula/d/defuddle.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/deheader.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/dehydrated.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/deja-gnu.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/d/deja-vu.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/delly.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/delve.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/demumble.rb, Homebrew/homebrew-core, 1
@@ -2817,7 +2818,7 @@ Homebrew-homebrew-core/Formula/g/gotun.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gotz.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gource.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/govc.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/g/govulncheck.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/g/govulncheck.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gowall.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gowsdl.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/goyacc.rb, Homebrew/homebrew-core, 0
@@ -5066,12 +5067,14 @@ Homebrew-homebrew-core/Formula/m/mysql++.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mysql-client.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mysql-client@8.0.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mysql-client@8.4.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/m/mysql-client@9.7.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mysql-connector-c++.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mysql-search-replace.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mysql-to-sqlite3.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mysql.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mysql@8.0.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mysql@8.4.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/m/mysql@9.7.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mysqltuner.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/n.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/n8n-mcp.rb, Homebrew/homebrew-core, 0
@@ -5350,6 +5353,7 @@ Homebrew-homebrew-core/Formula/o/objc-codegenutils.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/objc-run.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/objconv.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/o/objfw.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/o/obscura.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/observerward.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/ocaml-findlib.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/ocaml-num.rb, Homebrew/homebrew-core, 1
@@ -9101,6 +9105,7 @@ Homebrew-homebrew-cask/Casks/b/box-tools.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/boxcryptor.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/boxy-suite.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/brainfm.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/b/bramble.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/b/brave-browser.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/brave-browser@beta.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/brave-browser@nightly.rb, Homebrew/homebrew-cask, 0

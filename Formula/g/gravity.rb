@@ -2,17 +2,18 @@ class Gravity < Formula
   desc "Embeddable programming language"
   homepage "https://www.gravity-lang.org/"
   url "https://ghfast.top/https://github.com/marcobambini/gravity/archive/refs/tags/0.9.8.tar.gz"
-  sha256 "7340092fb4b66a9ebda721cae39324422612d1b969ba70fee8eb7664951cdd80"
+  sha256 "c221a8dc747e46de61482631209efd1c3cd95c1b8dd441e7eeeefcdb2fbfce5a"
   license "MIT"
   head "https://github.com/marcobambini/gravity.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "40e6195395a39194489bb924a06e71b1e4aa82c27899acac3d89a649369be587"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ec721baa0abcf011583415394ba15e9fb745df30702b358c5e835bc51bc18796"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0fe303f1bbcfb030835a83673042ea2d137dd5fae65ee89bff2fd8b9e1e8e44c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c43a4dc57ae4046a8c38dacdb28017db9aed7d4951915e60ca658161a5a3f972"
-    sha256 cellar: :any,                 arm64_linux:   "e9328e3f108e8701508f6cbf00740007d2810943a15b1d38faaea718c52912f9"
-    sha256 cellar: :any,                 x86_64_linux:  "9f4f73c711cd472694e4bcc9353bff95f05670c1011d799ce2d38971b1c66aea"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d1b614f8dbfa6431e31a5d319074600edb9b7b2b7ecf4091206ca3f13db26c2b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "00d97ebd241f51fd20069ae0d1de6a80a333853c358dd81321eef7c5a20490d9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e1e247a20d7b3ff45c439260d96ed1cdda1ef5aaee838515ffddf99613ae09a8"
+    sha256 cellar: :any_skip_relocation, sonoma:        "71c5ca24b9c6de57d9ed7f236de8dd332b82a460ff95bf59e188b2f509fa9a38"
+    sha256 cellar: :any,                 arm64_linux:   "a11deed37024839e5844abe6b1dc3cff723eaad826c6f0efa1b5d6e4aea725c2"
+    sha256 cellar: :any,                 x86_64_linux:  "e75a4c3ff3d58a4aec68e194d9af29ca0d1a604c8d002e26fb980486616351cf"
   end
 
   def install

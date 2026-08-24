@@ -1,11 +1,17 @@
 class ApachePulsar < Formula
   desc "Cloud-native distributed messaging and streaming platform"
   homepage "https://pulsar.apache.org/"
-  url "https://www.apache.org/dyn/closer.lua?path=pulsar/pulsar-4.2.4/apache-pulsar-4.2.4-src.tar.gz"
-  mirror "https://archive.apache.org/dist/pulsar/pulsar-4.2.4/apache-pulsar-4.2.4-src.tar.gz"
-  sha256 "c3e2f12ac2160b11a23602583a900eefd959f01b8fb675f400f7642b895917c8"
   license "Apache-2.0"
-  head "https://github.com/apache/pulsar.git", branch: "master"
+
+  stable do
+    url "https://www.apache.org/dyn/closer.lua?path=pulsar/pulsar-4.2.4/apache-pulsar-4.2.4-src.tar.gz"
+    mirror "https://archive.apache.org/dist/pulsar/pulsar-4.2.4/apache-pulsar-4.2.4-src.tar.gz"
+    sha256 "c3e2f12ac2160b11a23602583a900eefd959f01b8fb675f400f7642b895917c8"
+
+    depends_on "maven" => :build
+    depends_on "protoc-gen-grpc-java" => :build
+    depends_on "openjdk@21"
+  end
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2fe67e7be69710722be40ff5f496ebb6c041f33e989addc3f8eaa58c9bfe313c"
@@ -16,31 +22,40 @@ class ApachePulsar < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "31af4a5234a6692a5f6eedfc5d5d5d4efd922294a16768de22a101009a8b170c"
   end
 
-  depends_on "maven" => :build
-  depends_on "protoc-gen-grpc-java" => :build
-  depends_on "openjdk@21"
+  head do
+    url "https://github.com/apache/pulsar.git", branch: "master"
+
+    depends_on "gradle" => :build
+    depends_on "openjdk@25"
+
+    uses_from_macos "zip" => :build
+  end
 
   def install
-    # Pin gRPC Java version to that of protoc-gen-grpc-java
-    inreplace "pom.xml",
-              %r{<grpc.version>\d+(?:\.\d+)+</grpc.version>},
-              "<grpc.version>#{Formula["protoc-gen-grpc-java"].version}</grpc.version>"
-
-    # Avoid using pre-built `protoc-gen-grpc-java`
-    grpc_java_files = ["pulsar-client/pom.xml", "pulsar-functions/proto/pom.xml"]
-    plugin_artifact = "io.grpc:protoc-gen-grpc-java:${protoc-gen-grpc-java.version}:exe:${os.detected.classifier}"
-    inreplace grpc_java_files, %r{<pluginArtifact>#{Regexp.escape(plugin_artifact)}\s*</pluginArtifact>}, ""
-
-    java_home_env = Language::Java.java_home_env("21")
-    with_env(TMPDIR: buildpath, **java_home_env) do
-      # Exclude the `docker` module, we don't need the image.
-      system "mvn", "clean", "package", "-DskipTests", "-Pcore-modules",
-                    "-pl", "!:docker-images,!:pulsar-docker-image,!:pulsar-all-docker-image"
-    end
-
     tarball = if build.head?
-      Dir["distribution/server/target/apache-pulsar-*-bin.tar.gz"].first
+      java_home_env = Language::Java.java_home_env("25")
+      ENV["JAVA_HOME"] = java_home_env[:JAVA_HOME]
+
+      system "gradle", "assemble", "--no-daemon"
+      Dir["distribution/server/build/distributions/apache-pulsar-*-bin.tar.gz"].first
     else
+      # Pin gRPC Java version to that of protoc-gen-grpc-java
+      inreplace "pom.xml",
+                %r{<grpc.version>\d+(?:\.\d+)+</grpc.version>},
+                "<grpc.version>#{Formula["protoc-gen-grpc-java"].version}</grpc.version>"
+
+      # Avoid using pre-built `protoc-gen-grpc-java`
+      grpc_java_files = ["pulsar-client/pom.xml", "pulsar-functions/proto/pom.xml"]
+      plugin_artifact = "io.grpc:protoc-gen-grpc-java:${protoc-gen-grpc-java.version}:exe:${os.detected.classifier}"
+      inreplace grpc_java_files, %r{<pluginArtifact>#{Regexp.escape(plugin_artifact)}\s*</pluginArtifact>}, ""
+
+      java_home_env = Language::Java.java_home_env("21")
+      with_env(TMPDIR: buildpath, **java_home_env) do
+        # Exclude the `docker` module, we don't need the image.
+        system "mvn", "clean", "package", "-DskipTests", "-Pcore-modules",
+                      "-pl", "!:docker-images,!:pulsar-docker-image,!:pulsar-all-docker-image"
+      end
+
       "distribution/server/target/apache-pulsar-#{version}-bin.tar.gz"
     end
 

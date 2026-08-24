@@ -22,6 +22,8 @@ class FxAgent < Formula
 
   depends_on "zig" => :build
 
+  conflicts_with "fx", because: "both install an `fx` binary"
+
   def install
     system "zig", "build", *std_zig_args
   end

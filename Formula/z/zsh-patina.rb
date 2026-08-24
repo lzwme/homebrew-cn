@@ -1,18 +1,18 @@
 class ZshPatina < Formula
   desc "Blazingly fast Zsh syntax highlighter"
   homepage "https://github.com/michel-kraemer/zsh-patina"
-  url "https://ghfast.top/https://github.com/michel-kraemer/zsh-patina/archive/refs/tags/1.9.0.tar.gz"
-  sha256 "a16736d510d3019edaabad3e54eaa39d2583fc15cb30463eb1dc9f3cb6b2fe77"
+  url "https://ghfast.top/https://github.com/michel-kraemer/zsh-patina/archive/refs/tags/1.10.0.tar.gz"
+  sha256 "045f219f9d73b8fd57fef619be307129b8b5b740d969a0c61fdbc709673a606e"
   license "MIT"
   head "https://github.com/michel-kraemer/zsh-patina.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6b89ff5698197c90670e4f2738900e99c46fd8484e1044dbae04d44b92ba0ad4"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3f2e9db3e8be1bcb7f5cb079a80ac2b63d9e146de17c4728c5c681db8b108ef5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b53c10d27e8fecb9e987f1d4b759c69263b938826083dab8b72a5ff69c5133e4"
-    sha256 cellar: :any_skip_relocation, sonoma:        "612e6e510fbd0b0292b404aa3bafacc661246a99dd251d92931287ede4d67035"
-    sha256 cellar: :any,                 arm64_linux:   "2ea504ba00eae76cadbedda73bdb63305444000a7339a2f6c42a99263983eab5"
-    sha256 cellar: :any,                 x86_64_linux:  "f7b35686460b1d11ed35fa8f2b4fa24b80de853d5005ceca5071f4afeccea836"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fc191ca58cdc0311a63c06e39648731bf8d80262d71129d26e2aee9e52bd40ec"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "24d05678e28fd76d2144c4fa9cd745d2a96d607ff8cb2886bc406055b824b602"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "940514999af87c27e5a43431e2484da3fa35844a5cce5c3377e84e5306f92515"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c41650b0d74b73562e0b0d7199f6d601f32b37e8c0bba92c284f289a74a7255c"
+    sha256 cellar: :any,                 arm64_linux:   "0a29df30fa0480bef0d35a45ca054436e0a873870705cef4f4dc639a8096b19a"
+    sha256 cellar: :any,                 x86_64_linux:  "c70a3dea00ffed9ce2d6657e4596b3d3d62696bb708a33ce2cbe02b8bd5ed8d3"
   end
 
   depends_on "rust" => :build

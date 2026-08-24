@@ -1,17 +1,17 @@
 class Teslamate < Formula
   desc "Self-hosted data logger for your Tesla"
   homepage "https://docs.teslamate.org"
-  url "https://ghfast.top/https://github.com/teslamate-org/teslamate/archive/refs/tags/v4.1.1.tar.gz"
-  sha256 "8eea8a4e06bca8deea40cb129647db179b544f6749f39ea22f85ba537892bc6f"
+  url "https://ghfast.top/https://github.com/teslamate-org/teslamate/archive/refs/tags/v4.2.0.tar.gz"
+  sha256 "423a138df210e2c26748c1d4321667920c2c5e71385d5da75c9f90309ec8990d"
   license "AGPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "b9587b58bd21ed7dfc1bc5bd32703dc28f0b98d947451cc32f5d1e1be60f881e"
-    sha256 cellar: :any, arm64_sequoia: "2f9baffdbb9f0868477a36b6303956b6f822c6f6d5bcded89f27356b46d929c6"
-    sha256 cellar: :any, arm64_sonoma:  "29ae621dd496f0a3715e747fd2b75207b9a8362a0c8a76deec081c06461e8506"
-    sha256 cellar: :any, sonoma:        "3d01be13357f5b6e9dacfc11ca131149f9779a94863961d63d7516624142de7e"
-    sha256 cellar: :any, arm64_linux:   "c16f8e6bdad4f78fdbd1dcc41e3b6791824a597331277c12b1dcf1f7d66ff9f1"
-    sha256 cellar: :any, x86_64_linux:  "e41d60ed9699f76648793f8df899e3a6f9510545ede07030005d141b35a3d3b2"
+    sha256 cellar: :any, arm64_tahoe:   "41cffdfed0efd57429b6f1d85b02f116083db51cabcd2cf2f9395c148527cab1"
+    sha256 cellar: :any, arm64_sequoia: "85cf442c05824866a7f6ba68da517f097d7e32ab65009ca663b1dd5b53273dc2"
+    sha256 cellar: :any, arm64_sonoma:  "5e80b78e00f9d0df21d40602f0717bb838a984ef13421ce8ba5de2dfd8794fac"
+    sha256 cellar: :any, sonoma:        "6463005c633cc797fb02dd95a994449f0822c3b561bb763c94b091715dae9bd9"
+    sha256 cellar: :any, arm64_linux:   "7d22150814d89449e3e239a3fc1c4feecfa19f982af0966863fdab7b47998197"
+    sha256 cellar: :any, x86_64_linux:  "6b94a2abdae7b276d1c04c9f547687632f5feaf846b2be9e39b24c7cd9a5fd9c"
   end
 
   depends_on "elixir" => :build

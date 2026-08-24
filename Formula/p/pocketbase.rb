@@ -1,17 +1,17 @@
 class Pocketbase < Formula
   desc "Open source backend for your next project in 1 file"
   homepage "https://pocketbase.io/"
-  url "https://ghfast.top/https://github.com/pocketbase/pocketbase/archive/refs/tags/v0.39.11.tar.gz"
-  sha256 "4923a08b91a67fed26b5936a11abc2007226f027aa863172a4b9de2ada26e954"
+  url "https://ghfast.top/https://github.com/pocketbase/pocketbase/archive/refs/tags/v0.40.0.tar.gz"
+  sha256 "5150686ca4d4dcecfd53f714b32efe0b57870a28868e43de5797383dd1dff04b"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1d1e22a3f9eba7ab087b2e54c74ae3899359b1434e930b355ff49272e0892d8e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1d1e22a3f9eba7ab087b2e54c74ae3899359b1434e930b355ff49272e0892d8e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1d1e22a3f9eba7ab087b2e54c74ae3899359b1434e930b355ff49272e0892d8e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9d5005333339676be1243363d61f23460cf5753d70c3855a6db7624bac0e763b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "15853e7171e909bf53459050848acdad1b959555a860967a81e936070c20b836"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "770cd8d9d179117dec8db8adc153479bf75da48c6d3caf4c7aa67f4e065a6b24"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6bf57948be27eaf6842d1e8a07326fa9b61596fa1a33746ce181b105b013007a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6bf57948be27eaf6842d1e8a07326fa9b61596fa1a33746ce181b105b013007a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6bf57948be27eaf6842d1e8a07326fa9b61596fa1a33746ce181b105b013007a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "919740032ce21b7956796bb9307fda73a68d8cc5cabd584a840c05a9758b428c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ec150c605c731bd28b66fbe5eb9f4dea50197c9442c4c0a7d9887f596a8ff40c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ef99a1a36a8bf9a5053060d776afc3c861ac8cbaf626f0640814c3f32b6a77a1"
   end
 
   depends_on "go" => :build

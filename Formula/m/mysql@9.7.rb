@@ -1,24 +1,28 @@
-class Mysql < Formula
+class MysqlAT97 < Formula
   desc "Open source relational database management system"
   homepage "https://github.com/mysql/mysql-server"
-  url "https://cdn.mysql.com/Downloads/MySQL-26.7/mysql-26.7.0.tar.gz"
-  mirror "https://repo.mysql.com/apt/ubuntu/pool/mysql-innovation/m/mysql-community/mysql-community_26.7.0.orig.tar.gz"
-  sha256 "95e949183b94bbe39e70c6355e6c90d2a640a62ede996ca5f7a6a3e0827a3260"
+  url "https://cdn.mysql.com/Downloads/MySQL-9.7/mysql-9.7.2.tar.gz"
+  sha256 "e5a676c7cb73738dc6ea33db2093806ebd512b629a139b897fcab68fcd81aaa4"
   license "GPL-2.0-only" => { with: "Universal-FOSS-exception-1.0" }
 
   livecheck do
-    url "https://dev.mysql.com/downloads/mysql/?tpl=files&os=src"
-    regex(/href=.*?mysql[._-](?:boost[._-])?v?(\d+(?:\.\d+)+)\.t/i)
+    url "https://dev.mysql.com/downloads/mysql/9.7.html?tpl=files&os=src"
+    regex(/href=.*?mysql[._-](?:boost[._-])?v?(9\.7(?:\.\d+)+)\.t/i)
   end
 
   bottle do
-    sha256 arm64_tahoe:   "5795d9a021e04ce40ced4b69d7861a24fad2777fb990a87a3fb08b933bcf4a9d"
-    sha256 arm64_sequoia: "505dfb7c75803ddb62eecadf04902eef7ee1e58c808035ddba0899ecc7572951"
-    sha256 arm64_sonoma:  "dc801ecb65f92018fba7841af901d0bc56a9eaa81fbdff362576414314ef1fcc"
-    sha256 sonoma:        "de7c8830bf67d0bfeb3fd53a0f9a2a3df7aab758e73ef9e6d7d8d22415602382"
-    sha256 arm64_linux:   "975c1b696cf6b7c15427228ccc41162682d06e39d25020284287c7331d35f295"
-    sha256 x86_64_linux:  "400bdad21ace969d38a10e37180def1fba23460aa22f731a4d519d1b1dc22978"
+    sha256 arm64_tahoe:   "bb270bfff714f88fe2a73214efbaa1d27b38bf962bdf81d7c379421c63224be5"
+    sha256 arm64_sequoia: "1f22ca4ce9e523055160ea862c1d4f00cedbe7d30433145f418975e00b0f7a99"
+    sha256 arm64_sonoma:  "2582f4b746e4f1a2ca7a2b7a44365834d817d913402437ec5b7d4fbeb5dfa7df"
+    sha256 sonoma:        "6e56cd237d7eb48e93a86afd59a2d0d797a80f7f9ff852f3d0b6c84a4e2b8439"
+    sha256 arm64_linux:   "1cf3b35d7b7da933227199319d0db4a6b11fe963303bb3d208069b93d6c9ca77"
+    sha256 x86_64_linux:  "5e765b3d6e632d4629a54c53078f1100060d7a94cd4639d7c8ba376099ba1533"
   end
+
+  keg_only :versioned_formula
+
+  # See: https://endoflife.date/mysql
+  deprecate! date: "2034-04-21", because: :unsupported
 
   depends_on "bison" => :build
   depends_on "cmake" => :build
@@ -49,8 +53,6 @@ class Mysql < Formula
     depends_on "patchelf" => :build
     depends_on "libtirpc"
   end
-
-  conflicts_with "mariadb", "percona-server", because: "both install the same binaries"
 
   fails_with :gcc do
     version "12"
