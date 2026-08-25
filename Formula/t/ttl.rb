@@ -1,19 +1,19 @@
 class Ttl < Formula
   desc "Modern traceroute/mtr-style TUI with hop stats and ASN/geo enrichment"
   homepage "https://github.com/lance0/ttl"
-  url "https://ghfast.top/https://github.com/lance0/ttl/archive/refs/tags/v0.21.0.tar.gz"
-  sha256 "bbc26008b9ee2879a08b0262016522e795c0c80c0f34f1936b5715536cca3358"
+  url "https://ghfast.top/https://github.com/lance0/ttl/archive/refs/tags/v0.22.0.tar.gz"
+  sha256 "4264dffa137a2eb1b8347aeaec08aa9fdc931b17dfaf71e31183e7c02a58a2e6"
   license "MIT"
 
   head "https://github.com/lance0/ttl.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c3eeca4a62eac597cd48aa855ad4dc334b0953d46771a8764677a175f1d1f035"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c6e41d1a097daceee7c5d1d422a668b23eb63b28a4705ec3be457cd24be9df6f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5b994249da7b0644d1883bcc0158f308190c6fa0c92b1a66824cd8767231c9ae"
-    sha256 cellar: :any_skip_relocation, sonoma:        "dbe56f8d47ca7c3b501d5591834797cdac08006fbe7702c5d26173e9b8291c3f"
-    sha256 cellar: :any,                 arm64_linux:   "fcd4afbfe9388e44c134090226c4c528312f6743f7f127e6427e237c2cd53867"
-    sha256 cellar: :any,                 x86_64_linux:  "d23fe859e59b74864177e9362e37b4b8b6917a983a2b07da53077936cc948fc1"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "068910111641e62250c297f4f8fd33cc6d0f87ca046bdb8eec5fb13abcd038b5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6954c9892557e85d05b2787abd980fa2e54582372c89978712ef29ff2c996524"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ff53954a563f175db3a819cce787b835785bb39db1b519301aa07d816f5a2251"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3fa8f811b6a171f6427f2e565448dfd5dc3a9a83a5c59308d1b6a2bcaf75fee7"
+    sha256 cellar: :any,                 arm64_linux:   "b23a93e9d83f0d7ac0819c88186d6780ed921da0474af26a3b07af810b18bd9d"
+    sha256 cellar: :any,                 x86_64_linux:  "e4606c1c71c5b443491f650fcbcf80fb5ac71ee2f1798b5975ddb3e5ca62b469"
   end
 
   depends_on "rust" => :build

@@ -3,19 +3,18 @@ class Uhdm < Formula
 
   desc "Universal Hardware Data Model, modeling of the SystemVerilog Object Model"
   homepage "https://github.com/chipsalliance/UHDM"
-  url "https://ghfast.top/https://github.com/chipsalliance/UHDM/archive/refs/tags/v1.86.tar.gz"
-  sha256 "179203b166be5d1be12b901c69c6a569ebebf4fe47bc674b1268bd9319216fce"
+  url "https://ghfast.top/https://github.com/chipsalliance/UHDM/archive/refs/tags/v1.87.tar.gz"
+  sha256 "877b74bf1a0ad5fc64f46df9e2af47a088e50b362469a36c5da5f96dc3926045"
   license "Apache-2.0"
-  revision 3
   head "https://github.com/chipsalliance/UHDM.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "d1bc246d32e8b91cc2be6330f68222af338d8341c824a64e055defefa9753cfc"
-    sha256 cellar: :any, arm64_sequoia: "bfdc0d43ce17ead8f030b087a05a92315d69b3ba626bab66ba35264b10d5be9a"
-    sha256 cellar: :any, arm64_sonoma:  "79e471e916af4b736f6e6fe5fca9342c7237edc6df2a9377e169212619106041"
-    sha256 cellar: :any, sonoma:        "cdba1e2e750beba762da2684b0e259fdfbc0443b615d19619004d24727a250aa"
-    sha256 cellar: :any, arm64_linux:   "8695f1743265dfa0b9dfe81a7d9157b8284971317a7ac23525530e5783c4232f"
-    sha256 cellar: :any, x86_64_linux:  "11e4a89ab35cf9cebfa778101cf88f27cd1c6d2ddfe808d62e3fe5ba21d9f449"
+    sha256 cellar: :any, arm64_tahoe:   "fcbce8c33693e89df27c415e5ff8e84c814d0b521514629762ccc2930d2d8edf"
+    sha256 cellar: :any, arm64_sequoia: "2347b003868577a54f2209b3a1e1fd2e04f568ade18197bcb8de8b7fa0732195"
+    sha256 cellar: :any, arm64_sonoma:  "f7625c203f0179593070fb879c6db569ad2ccc8a5fbc935289ffe698736809db"
+    sha256 cellar: :any, sonoma:        "23d836b3f21e4ee4edd378c70326108e6caf9517d2b3f73d1762b472317a4fd5"
+    sha256 cellar: :any, arm64_linux:   "5283c0153383bf25cfed03aa78a3f6fccf415610d17c383644f8dbf2332e778f"
+    sha256 cellar: :any, x86_64_linux:  "9ed54340103454bfba146eeeb9514899c73165e110d9e6a2d3429c468eb0303d"
   end
 
   depends_on "cmake" => :build

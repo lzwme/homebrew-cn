@@ -144,6 +144,11 @@ class Rust < Formula
       if (resource_version = resource("rustc-bootstrap").version) != bootstrap_version
         odie "Expected #{bootstrap_version} for bootstrap but got #{resource_version}!"
       end
+      # Apply same workaround as MacPorts to build on macOS 27 which hits
+      # https://github.com/rust-lang/rust/issues/157750 in bootstrap
+      # TODO: Remove in 1.99.0
+      odie "Remove CARGO_PROFILE_DEV_STRIP workaround!" if bootstrap_version >= "1.98.0"
+      ENV["CARGO_PROFILE_DEV_STRIP"] = "none" if OS.mac? && MacOS.version >= :golden_gate
 
       cache_date = File.basename(File.dirname(resource("rustc-bootstrap").url))
       build_cache_directory = buildpath/"build/cache"/cache_date

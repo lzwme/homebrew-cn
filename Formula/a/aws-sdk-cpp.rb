@@ -12,9 +12,9 @@ class AwsSdkCpp < Formula
   end
 
   bottle do
-    sha256               arm64_tahoe:   "273fa4254b2588ad97de087a62ade2783685660ef47eb313ba422db7a6e37867"
-    sha256               arm64_sequoia: "0fb4238fb3e1c35cac7e1617dd723d9e849db9bb319ba4acda0c42fae75ae3cd"
-    sha256               arm64_sonoma:  "40b7df3331e4fe3784cf7dadb8a3505130ed660004c7cfea3920a26574292f2b"
+    sha256 cellar: :any, arm64_tahoe:   "273fa4254b2588ad97de087a62ade2783685660ef47eb313ba422db7a6e37867"
+    sha256 cellar: :any, arm64_sequoia: "0fb4238fb3e1c35cac7e1617dd723d9e849db9bb319ba4acda0c42fae75ae3cd"
+    sha256 cellar: :any, arm64_sonoma:  "40b7df3331e4fe3784cf7dadb8a3505130ed660004c7cfea3920a26574292f2b"
     sha256 cellar: :any, sonoma:        "e241f8eabc494bd3286796b2c22a542610f02a47bd17a56c8d9e132525c8cc46"
     sha256 cellar: :any, arm64_linux:   "26fdefd5207064ca6c56e396b7991f31706b79febab530c1f361c7a24ef278a2"
     sha256 cellar: :any, x86_64_linux:  "7ff87a463aaeddfeffb907589e66290823d480845b6513d984d07ebeed983598"

@@ -25,6 +25,7 @@ class Expat < Formula
 
   head do
     url "https://github.com/libexpat/libexpat.git", branch: "master"
+
     depends_on "autoconf" => :build
     depends_on "automake" => :build
     depends_on "docbook2x" => :build
@@ -34,11 +35,12 @@ class Expat < Formula
   keg_only :provided_by_macos
 
   def install
-    cd "expat" if build.head?
-    system "autoreconf", "-fiv" if build.head?
-    args = ["--mandir=#{man}"]
-    args << "--with-docbook" if build.head?
-    system "./configure", *std_configure_args, *args
+    if build.head?
+      cd "expat"
+      system "./buildconf.sh"
+      args = ["--with-docbook"]
+    end
+    system "./configure", *args, *std_configure_args
     system "make", "install"
   end
 

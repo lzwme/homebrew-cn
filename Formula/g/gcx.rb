@@ -1,18 +1,18 @@
 class Gcx < Formula
   desc "CLI for managing Grafana Cloud resources"
   homepage "https://github.com/grafana/gcx"
-  url "https://ghfast.top/https://github.com/grafana/gcx/archive/refs/tags/v1.1.0.tar.gz"
-  sha256 "08ac57cbde273f0ca929e7ca32a90f0319a2dc65a961b637135331a28ce65887"
+  url "https://ghfast.top/https://github.com/grafana/gcx/archive/refs/tags/v1.1.1.tar.gz"
+  sha256 "67d80291d3305366495aa2f60cf7f3f9b673f029dc123a7e45c4871ae4c2ff1f"
   license "Apache-2.0"
   head "https://github.com/grafana/gcx.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3eb46707f04f314439830a79c04fc70a8acebda0c33514f98c8691f074195652"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8dd3ba73bf80a78c55c31436c27e797a33d19ff07422c591aa0ba00de4fb5f1c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dcf27da049d00dc81431063ead8df7599a98ac56023d26f4613538fc07d5641c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "82c4cf7c0a186dc21594b654ebdacb395c10dac04e9a6f033f3dc4f609952f83"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d16418833a63a799849cdc88b22281c9698fa3afe3388762b3d64520c9d37829"
-    sha256 cellar: :any,                 x86_64_linux:  "b2135b167a0ddc7ba9b3959fc13fe42390604e5b1f9873c977c18262b6176a60"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "26d450039eadcec286669698428aef850a97d175b64363fb7b5767d1719c2dc5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "48297f42aaa3600fe32d537f9caa7c3d43a735dc8bae5e7910d8077e5fb6d100"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "db3e67f5e63f9afeff9035b1fd4f13085f8062563cd92fea0d79888444f020d6"
+    sha256 cellar: :any_skip_relocation, sonoma:        "dcd820bd55229cc1ae00dd1be3cd9d52ad7a22fe94f7b3adddf34474e9f3d76e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f64b27ced7eedabaa41d3b29957829edb9531214b7de0b4e644475209e175512"
+    sha256 cellar: :any,                 x86_64_linux:  "15c23b44442819a0e554ee8e8e777989d0be395869a1859892c93d714faa10fd"
   end
 
   depends_on "go" => :build

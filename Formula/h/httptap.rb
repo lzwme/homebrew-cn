@@ -3,13 +3,12 @@ class Httptap < Formula
 
   desc "HTTP request visualizer with phase-by-phase timing breakdown"
   homepage "https://httptap.dev"
-  url "https://files.pythonhosted.org/packages/fe/b3/f339ce30071f20acd9e94894d52219723e781d603c4ff015aef462d8a51b/httptap-0.5.3.tar.gz"
-  sha256 "b1fd0f6b16b2d96207f357b9c050eaa774da47d83da5bb5645873b44a80061b6"
+  url "https://files.pythonhosted.org/packages/f7/4a/fcdd846abde9f55268026eb7432cd762fb593cdd271431b3941f2b716583/httptap-0.6.0.tar.gz"
+  sha256 "608d1980a0d8379cbcc945bc39125ec8831bb3a77b879fa4ddf7dea452e48843"
   license "Apache-2.0"
-  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "c5510c25e960be4ecee3a77098908727aaedbd3fdb41aaf2a51ecc48066165da"
+    sha256 cellar: :any_skip_relocation, all: "0094e6bc8828321597c088c8052f49a6ec8a257fac8f319a039a7de1a37849f2"
   end
 
   depends_on "rust" => :build
@@ -65,8 +64,8 @@ class Httptap < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/cd/63/9496c57188a2ee585e0f1db071d75089a11e98aa86eb99d9d7618fc1edce/idna-3.18.tar.gz"
-    sha256 "ffb385a7e039654cef1ab9ef32c6fafe283c0c0467bba1d9029738ce4a14a848"
+    url "https://files.pythonhosted.org/packages/5f/f7/abb373e5757eaec4b922b92f97ec8d6d7e057cf06778247604fbc4e7c3f3/idna-3.19.tar.gz"
+    sha256 "5e0811a4383b21dc5838069f801c4fb62113b7447663d2530d2bd6e77b49bf15"
   end
 
   resource "markdown-it-py" do
@@ -80,8 +79,8 @@ class Httptap < Formula
   end
 
   resource "pygments" do
-    url "https://files.pythonhosted.org/packages/c3/b2/bc9c9196916376152d655522fdcebac55e66de6603a76a02bca1b6414f6c/pygments-2.20.0.tar.gz"
-    sha256 "6757cd03768053ff99f3039c1a36d6c0aa0b263438fcab17520b30a303a82b5f"
+    url "https://files.pythonhosted.org/packages/49/2e/ced460408999b33da6b31b0021b0f37d329e202d4169aeb164493778f25b/pygments-2.21.0.tar.gz"
+    sha256 "610ca751c9bc2492b38eb9a38a7fbc93edbbb2d7182edaf34e66ae493dee5c8c"
   end
 
   resource "rich" do

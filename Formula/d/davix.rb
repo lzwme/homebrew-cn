@@ -1,10 +1,9 @@
 class Davix < Formula
   desc "Library and tools for advanced file I/O with HTTP-based protocols"
   homepage "https://github.com/cern-fts/davix"
-  url "https://ghfast.top/https://github.com/cern-fts/davix/releases/download/R_0_8_10/davix-0.8.10.tar.gz"
-  sha256 "66aa9adadee6ff2bae14caba731597ba7a7cd158763d9d80a9cfe395afc17403"
+  url "https://ghfast.top/https://github.com/cern-fts/davix/releases/download/R_0_9_0/davix-0.9.0.tar.gz"
+  sha256 "cf68461550fcd8fd88320658a42c55c7e7f6653e2be1461dfa95013adc56cced"
   license "LGPL-2.1-or-later"
-  revision 1
   head "https://github.com/cern-fts/davix.git", branch: "devel"
 
   livecheck do
@@ -16,15 +15,16 @@ class Davix < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "147668e36df19a8719d55dbb89b1e3e2cdd0d8c024e945986ff606182570db6e"
-    sha256 cellar: :any,                 arm64_sequoia: "8af6cc245e2a0e7b318bca8641aef15155c836c36d308eb872b139c7e338e90c"
-    sha256 cellar: :any,                 arm64_sonoma:  "02c4ea3debe63de32221f93acc59efbd82e86c6615e52a91b97fbbf27eb6c29a"
-    sha256 cellar: :any,                 sonoma:        "ca1f0617f83aa057c573860e846f9805f789b8ddbfa6bbcc4d5686b11b534406"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "90ba00d5d1122350f59985e06eee426689bf071bfb4afbfc1b1fcf039d2e3d8b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e8097034116f7ade56b9aa9206c51d823ddb1b687dd7c7d38eaf300fa25caa17"
+    sha256 cellar: :any, arm64_tahoe:   "768bab554a4616b78d60f68b8b59c54ac33ae321a0446c3b2d281ea553c98a5e"
+    sha256 cellar: :any, arm64_sequoia: "7b056970935b827997ff53f981bef6c09a7b565059713522eb70cb319d05ce4a"
+    sha256 cellar: :any, arm64_sonoma:  "7c82e7763b256d8a543569b8e87afb45b03061a2ec7f8e86f7222cb192864904"
+    sha256 cellar: :any, sonoma:        "b7f07ce68e60b17481a927d85c528d5b19d53d648fad7a6ead5583f2e1417a4d"
+    sha256 cellar: :any, arm64_linux:   "607a56eadd9d0b1c877ac42198065075ce30b46a2836e3af87a96f0bcbedb094"
+    sha256 cellar: :any, x86_64_linux:  "fde5fe3e3cd84a4e04df4150b9dcf46c8464138c2e50469e03dbed3abbd36b2c"
   end
 
   depends_on "cmake" => :build
+  depends_on "nlohmann-json" => :build
   depends_on "openssl@3"
 
   uses_from_macos "python" => :build

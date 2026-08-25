@@ -6,21 +6,21 @@ class Pgrx < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8e1a86e6418f1d96b22a6eb1d8424fa358c770a5bdb579f04a63a2ca19aa0fbe"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c662978a596249df2aeb88dc91c06ef648d776013662effb4c2d866be5ad7fee"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e2cb0d39d3caa07ef1bd9cf9154c3b3dedf14eab54d4a83408fed397c00554f4"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9a740a5bb64ad0d751a7e45aba535d0ff86aa1676ddb735e5bc211c6758fe12d"
-    sha256 cellar: :any,                 arm64_linux:   "bd92ad361e993917502d4bed8e3ba4c4ff8b502d871c9975859e1bff7c30f882"
-    sha256 cellar: :any,                 x86_64_linux:  "52db2c53486f7e58ac895aa5f55b795011e50e0e54aaec545e434da536edfc35"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "556061ef9dc90c485cff3092c87a6f18227773d8c931f8af65157de9bf7f9fcc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "05ce76447bad80ab2b95034d4c643aedf62060e7ed1585da66735ef2aa6655bb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6298246d4dab3424d595b109882d3888e9ceb5a7191fdc7ddfa039c81cef1779"
+    sha256 cellar: :any_skip_relocation, sonoma:        "fa1193484a327f86a023ef96589404ca032ba9651c8f3c3440a317845c2821be"
+    sha256 cellar: :any,                 arm64_linux:   "f3c115806a6b6af5268ddf015a3a019db5651778cd597f05076971871c436ddd"
+    sha256 cellar: :any,                 x86_64_linux:  "4729d9b62af60df34b07340e95bfb2e34490afda45a1aeac850ff4e2e6ea34ff"
   end
 
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "rustup" => :test
-  depends_on "openssl@3"
 
   on_linux do
-    depends_on "zlib-ng-compat"
+    depends_on "openssl@4"
   end
 
   def install

@@ -19,9 +19,9 @@ class Qtdeclarative < Formula
   end
 
   bottle do
-    sha256                               arm64_tahoe:   "aacbb6dcaeea70c2c3bd94cd1202791245d8c66cd9bccc23f3d8913f73a8b8ae"
-    sha256                               arm64_sequoia: "7cada376381dc2bba18264b2d9bca1b12e8fb8bebc1e69ace43ced2370f97f9d"
-    sha256                               arm64_sonoma:  "aa854c691cef234dd1311d41b7f8de836628ffe9cfac080e884a5ad81e6e8d0c"
+    sha256 cellar: :any,                 arm64_tahoe:   "aacbb6dcaeea70c2c3bd94cd1202791245d8c66cd9bccc23f3d8913f73a8b8ae"
+    sha256 cellar: :any,                 arm64_sequoia: "7cada376381dc2bba18264b2d9bca1b12e8fb8bebc1e69ace43ced2370f97f9d"
+    sha256 cellar: :any,                 arm64_sonoma:  "aa854c691cef234dd1311d41b7f8de836628ffe9cfac080e884a5ad81e6e8d0c"
     sha256 cellar: :any,                 sonoma:        "91ac1b7584bd5022e5d0cdcc8b894ad5b88ad68af543cd9d142086bb61db1423"
     sha256 cellar: :any_skip_relocation, arm64_linux:   "4b104ba8a9ad0da5730305d4bbef270e0150f933fe83c9c92757c9e9a0ca8619"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "d24bca1c690df08841efbae429b895941b587e807903e879774a178a9e279cac"

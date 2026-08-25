@@ -1,17 +1,17 @@
 class Fvm < Formula
   desc "Manage Flutter SDK versions per project"
   homepage "https://fvm.app"
-  url "https://ghfast.top/https://github.com/leoafarias/fvm/archive/refs/tags/4.2.0.tar.gz"
-  sha256 "0b5e1bcd5710367e760d258969e47a897d5b6abc383dcfdbcd2c7fedc397b289"
+  url "https://ghfast.top/https://github.com/leoafarias/fvm/archive/refs/tags/4.3.0.tar.gz"
+  sha256 "2e235266a540387d8a7c54472256abc2429d0770738e344bac89e24fa89bbfa6"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "62472a43cb288f9d6bae7c7055d0322922d3fdad72cce3f75dac3bf1631bde15"
-    sha256 cellar: :any,                 arm64_sequoia: "f00f10a801d47ca548ab9bd894731dafee88420c50ae62a9705f9bfbcfa75060"
-    sha256 cellar: :any,                 arm64_sonoma:  "19758065be63eeb895166e0bc445ce361db8ef0b989a0a3a3b91f7715303032b"
-    sha256 cellar: :any,                 sonoma:        "31de32409dcb2cb7ba9b17c6b2b75cca7c41dd7a456607d11827338fd826e547"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "34b75e668f31164bd613d84afe26db0f6e006d29dc74aa24d6d6f8efa1ac0a25"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b994f6a0fed87bf1d10330cfb34e9e3cc86863cc6fcd5af7fe2090608fed2727"
+    sha256 cellar: :any,                 arm64_tahoe:   "254550e6fded53f94681480c42ab9f8edb442e429629f0d91f7a553096f8073e"
+    sha256 cellar: :any,                 arm64_sequoia: "69831e970a5503948e7c0242c0e4c6c7eba0850a35b08661b5a0a2a1a9c37deb"
+    sha256 cellar: :any,                 arm64_sonoma:  "693022704abb92bda486001fe4be417a62cc6b7e2a227f41bb253c96ebd6d140"
+    sha256 cellar: :any,                 sonoma:        "044655a73bb1e619c2daa0bcc7ff32a02fe9cd302359147a9f4facce185c7278"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6aceee35cc7df23de2c183cd3f53eef25d038e12a268211732e2679089745d19"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "edcf4f11652ba84356a6750c4300ebfd201ab74c642c7fb4df46c92429a2746e"
   end
 
   depends_on "dart-sdk" => :build

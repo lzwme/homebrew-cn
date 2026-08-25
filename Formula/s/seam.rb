@@ -1,28 +1,44 @@
 class Seam < Formula
-  desc "This utility lets you control Seam resources"
-  homepage "https://github.com/seamapi/seam-cli"
-  url "https://registry.npmjs.org/seam-cli/-/seam-cli-0.0.61.tgz"
-  sha256 "64135eb8de1ddbc5190379088a34f87927b2e803a9bb71ce47cf1d873b1d94a0"
+  desc "Command-line interface (CLI) for interacting and developing with the Seam API"
+  homepage "https://github.com/seamapi/cli"
+  url "https://registry.npmjs.org/@seamapi/cli/-/cli-0.27.2.tgz"
+  sha256 "ddb148bf0cb69f50821dcfcb8bda803ec743536b26c0ae7ce1593359223b27fb"
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "e78f5c486295d6805811e6a48f3f0a1443706bc5d98430f3f860fc3ae84d8c99"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "88622228e3abea43a2aaffb45371f7950e3f05967e15b9be8fc37fb1067d1bb8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "357d2ebb780b8a77a273d30c5c5e5983a0b87780b272d083f64c934254c3e924"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bf2f8b203b6253564af715d92bd5ad4a3bd162d655d55e3962b0f3c1a5ceb412"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c8d5291d124e2108faa51bc80c97f8d6be977b424460ddf97f12b4cbdae8e081"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "78496a97c56d5d59b51aef6523e4634b4b2eca08ed6fd62cc1fb65b44dc1cfb0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "80a4f24fa304a51f72e0c8c66799f9015c7ee462dc56d323a3fbb35f4409acc0"
   end
 
   depends_on "node"
 
   def install
-    system "npm", "install", *std_npm_args
+    # Optional dependencies include `@anthropic-ai` packages
+    # which uses proprietary license.
+    (libexec/"seam").install buildpath.children
+    cd libexec/"seam" do
+      system "npm", "install", "--omit=optional", "--omit=dev", *std_npm_args(prefix: false)
+      with_env(npm_config_prefix: libexec) do
+        system "npm", "link"
+      end
+    end
+
     bin.install_symlink libexec.glob("bin/*")
 
-    # Build an `:all` bottle by removing workflow files
-    node_modules = libexec/"lib/node_modules"
-    rm_r node_modules/"seam-cli/ldid/.github"
+    generate_completions_from_executable bin/"seam",
+                                         "completion",
+                                         "--loader",
+                                         base_name: "seam"
   end
 
   test do
-    output = shell_output("#{bin}/seam seam devices list", 1)
-    assert_match "Not logged in. Please run \"seam login\"", output
+    output = shell_output("#{bin}/seam workspaces list 2>&1", 1)
+    assert_includes output, "seam login"
+    assert_match version.to_s, shell_output("#{bin}/seam --version")
+    refute_path_exists libexec/"seam/node_modules/@anthropic-ai"
   end
 end

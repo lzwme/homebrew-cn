@@ -12,9 +12,9 @@ class Metview < Formula
 
   bottle do
     rebuild 1
-    sha256                               arm64_tahoe:   "8ea0aac6d5efa12195864cd47b2a6c3f2947fb67c08dcd20484776aabc6ee1c8"
-    sha256                               arm64_sequoia: "8d3b1a19af31c9bd7e1c2bc0e9ee7d973531072b8a21809bf33c3f1fc1af19f2"
-    sha256                               arm64_sonoma:  "3c7f68f83c3a04ccf87213a3c2e658c5c1d8d3042e0bc938a6fc79c4822bceb5"
+    sha256 cellar: :any,                 arm64_tahoe:   "8ea0aac6d5efa12195864cd47b2a6c3f2947fb67c08dcd20484776aabc6ee1c8"
+    sha256 cellar: :any,                 arm64_sequoia: "8d3b1a19af31c9bd7e1c2bc0e9ee7d973531072b8a21809bf33c3f1fc1af19f2"
+    sha256 cellar: :any,                 arm64_sonoma:  "3c7f68f83c3a04ccf87213a3c2e658c5c1d8d3042e0bc938a6fc79c4822bceb5"
     sha256 cellar: :any,                 sonoma:        "9967ae04346f24e99ef21b3f8cb173b2bd60adc0282f0f148bff79b7917d6923"
     sha256 cellar: :any_skip_relocation, arm64_linux:   "7924342f589a4aa78003c16731d9a13dfdf2ce19cc2c666f214083a263c667fe"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "81dbd92e9ed28d630b33df5e19c966dde006ce193601edb94713d1a8c7d4636c"

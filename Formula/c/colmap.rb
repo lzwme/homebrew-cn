@@ -7,9 +7,9 @@ class Colmap < Formula
   revision 3
 
   bottle do
-    sha256               arm64_tahoe:   "e1751ac1e2ef1a407d0e6a2b455b93c2e5d6514aab241b6df162bd1deb1358b1"
-    sha256               arm64_sequoia: "63710bf2c48708309e9147b4cd669408ffd0c94064f14621693b9852b31293c5"
-    sha256               arm64_sonoma:  "9c29d290792ce7dd4e322014e3fb9beac5952dea893f7583956b0c078bd96982"
+    sha256 cellar: :any, arm64_tahoe:   "e1751ac1e2ef1a407d0e6a2b455b93c2e5d6514aab241b6df162bd1deb1358b1"
+    sha256 cellar: :any, arm64_sequoia: "63710bf2c48708309e9147b4cd669408ffd0c94064f14621693b9852b31293c5"
+    sha256 cellar: :any, arm64_sonoma:  "9c29d290792ce7dd4e322014e3fb9beac5952dea893f7583956b0c078bd96982"
     sha256 cellar: :any, sonoma:        "4b9ea15305d0ad94aa8441fefa3212d8da00969573d28cc5f43058cb12a027de"
     sha256 cellar: :any, arm64_linux:   "edf0463a635bd42b4c79371addbd7acf8fcde62b87caaac0295e8c45b0d6c8f2"
     sha256 cellar: :any, x86_64_linux:  "08d9dd4c6812b86caa36e74de8f06cc2d62be9374fa516a86ea8679864f06de8"

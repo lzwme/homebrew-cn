@@ -1,18 +1,18 @@
 class Tealdeer < Formula
   desc "Very fast implementation of tldr in Rust"
   homepage "https://tealdeer-rs.github.io/tealdeer/"
-  url "https://ghfast.top/https://github.com/tealdeer-rs/tealdeer/archive/refs/tags/v1.8.1.tar.gz"
-  sha256 "8b9ea7ef8dd594d6fb8b452733b0c883a68153cec266b23564ce185bdf22fcfa"
+  url "https://ghfast.top/https://github.com/tealdeer-rs/tealdeer/archive/refs/tags/v1.9.0.tar.gz"
+  sha256 "1387a04ddba714668ff0925377a2de0d0ab14533d44dd0766d673fbbd71e3119"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/tealdeer-rs/tealdeer.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "321141551f399aa5609cb97feb5f2c8fdfb4bebcaa1e8477f4989bfd396f581b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7b6c5618e65d4e910025fe8f878532ef3a99f05837b8058236a60aa4cfa8b59a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ca99e9f1dd7c009b339e5a3ccfd005f2f6eab770f42f1dab2430d1d0d8c61156"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5230103bb0be717cd7c36e3f281ae9685c46c7d983a4afdc6f059e3afc3ea230"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5984da1671a69eb623c7f5e47d2d8ffb3c6e7f96aecb13eaa25f3ffef0873da6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "06887fc14d9db667bcbd2bcf871fc4b7ab16d5f9755c1d1bb75afc52a90a3af9"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c3e2109975d3039ec3945ba16dae5267cb0373151d84b6ed88a961a5dccdc08c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9fbf3479e61e34797f4e0efec70f80ed5b24d7efd7da61d99869e704121f6baf"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2c8a304fb5ebdd0981b3835e468015999af4cce43fd0a92549a6bebb1efaee61"
+    sha256 cellar: :any_skip_relocation, sonoma:        "59f1baf546aa410a1c2372be9d019a1863400b746aa2a417d5e1eed98cd69507"
+    sha256 cellar: :any,                 arm64_linux:   "4a0563dead5e04f640bc5cca2fc48faed46caea0a570dabaf0dfb1f360fa8722"
+    sha256 cellar: :any,                 x86_64_linux:  "ad9e54703902ed0445daa4faf1559550f49310c0161e14d483ce0a64dc77f6a9"
   end
 
   depends_on "rust" => :build

@@ -2,27 +2,29 @@ class Zigmod < Formula
   desc "Package manager for the Zig programming language"
   homepage "https://nektro.github.io/zigmod/"
   url "https://ghfast.top/https://github.com/nektro/zigmod/archive/refs/tags/r104.tar.gz"
+  version "r104"
   sha256 "ae9d845a67750d5f7fae685768cc3bc9bf6de059b767502ffdd8064c5d8e4c96"
   license "MIT"
+  version_scheme 1
 
   livecheck do
     url :stable
-    regex(/^r(\d+)$/i)
+    regex(/^(r\d+)$/i)
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bcd9e783eced6eacc76d53a49ea43a88f9f8b3147136feb66656ef42656ef386"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e551eaac508c1b8117a8a0bae78976a979e0091fc27146c9944f34568d274a07"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2b6a145a55809eb0d695ab531e84e6afeae0f29888bf74a06c21455e8c8278fb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "68a2ac7c8b55cc61a780862cd195c2dffc5fbd30fe8271e46cbd2c093eaa848f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bf0aaf77776019d7e004d974ffa476dea039e6b7233ff2149ed1e70e476247cf"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "24411cf42bf88695a946e7316cbf83ea642e6ad3d9cd448bca43e85ff7516235"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2f26bd51f9efcb3fc47df72a9d6c2ee576b0ee270d17dc03148404a8ce07b140"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9a233864aea51cfece4e00886b86c88364a008ad4e7703db66c296c7491c9c72"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0e08b05a5912a0a0435d6414172f53d410caa4bf1b84152802ae39ed153057fc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7dcdcc22cb83227c174cf3d36d413869e61a4b23a644bdce315d1005e6367150"
   end
 
   depends_on "zig"
 
   def install
     args = %W[
-      -Dtag=r#{version}
+      -Dtag=#{version}
       -Dstrip=true
     ]
 
@@ -39,6 +41,7 @@ class Zigmod < Formula
       license: MIT
       description: Test zig.mod dependency
       min_zig_version: 0.11.0
+      min_zigmod_version: #{version}
       dependencies:
     YAML
     (testpath/"dependency/src/lib.zig").write <<~ZIG

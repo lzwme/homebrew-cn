@@ -1,8 +1,8 @@
 class OpenapiGenerator < Formula
   desc "Generate clients, server & docs from an OpenAPI spec (v2, v3)"
   homepage "https://openapi-generator.tech/"
-  url "https://search.maven.org/remotecontent?filepath=org/openapitools/openapi-generator-cli/7.24.0/openapi-generator-cli-7.24.0.jar"
-  sha256 "4b83ccc6fd43056c8c631cd0195e5100bd0550912502527bab09ac76152dab0c"
+  url "https://search.maven.org/remotecontent?filepath=org/openapitools/openapi-generator-cli/7.25.0/openapi-generator-cli-7.25.0.jar"
+  sha256 "41ce4f6b07f196676439d710759fa1ced7a08066d06ff1bf314681470289efae"
   license "Apache-2.0"
 
   livecheck do
@@ -11,7 +11,7 @@ class OpenapiGenerator < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "b1fd9c3a24531d02b9115b118b37aadcc0bf224ff23d2c64adfad79faa505053"
+    sha256 cellar: :any_skip_relocation, all: "a87ef0c871848e7e5a534a8b7724f7e1b0cf4f3ec9307fabb74e9d2e8121dfe8"
   end
 
   head do

@@ -60,9 +60,6 @@ class Openblas64 < Formula
     # https://github.com/OpenMathLib/OpenBLAS/issues/4212
     ENV["NO_SVE"] = "1" if Hardware::CPU.arm?
 
-    # ld denied .o file renamed by objconv that is not 8-byte aligned
-    ENV.append "LDFLAGS", "-Wl,-ld_classic" if OS.mac? && DevelopmentTools.clang_build_version >= 1700
-
     # Must call in two steps
     system "make", "CC=#{ENV.cc}", "FC=gfortran", "libs", "netlib", "shared"
     system "make", "PREFIX=#{prefix}", "install"

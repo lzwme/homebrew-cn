@@ -1,18 +1,18 @@
 class Kubeone < Formula
   desc "Automate cluster operations on all your environments"
   homepage "https://kubeone.io"
-  url "https://ghfast.top/https://github.com/kubermatic/kubeone/archive/refs/tags/v1.14.2.tar.gz"
-  sha256 "5dac29372ba3f093b562442b6a1730ede822e357ae78563a6b7f7eaca31ef176"
+  url "https://ghfast.top/https://github.com/kubermatic/kubeone/archive/refs/tags/v1.14.3.tar.gz"
+  sha256 "24af68b7971592c95c67517d129098d2a1332bb88d64f8f1d180d07e5e4c1e8c"
   license "Apache-2.0"
   head "https://github.com/kubermatic/kubeone.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0bcd393fcd6c194048a2d89f6ba13e5644ee9ea054fd7b58f97878ffab04e8e7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5631283c64102907effc6fd165f37ee200fd1f66f7e4e1644982b9cc1be51dff"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7a5b733bcad108199ff454186127d1e6307f66ac6f29eeea34abb52660c9a0a9"
-    sha256 cellar: :any_skip_relocation, sonoma:        "769ffd0b09ae7eef2166fdb7a116f2345863fef756a52b48545f96ae962f87ec"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c099dd191f1ea729318691b897f49f4a15d9b92d0d3a4d9f2fc9fcbc9f0c46b4"
-    sha256 cellar: :any,                 x86_64_linux:  "b439499c5746c8efe70443bef70a3ef76069973d847ae7a5cb6064fee4fb8e37"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3addb3af6f2574921dc5f7124903c657e622177c5f39f8a27d0ccf7fb5eef147"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "22625a9730f22f1e4f6b4eb3838bd800575b61721edc1ddc37ae790d209d1a34"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "78053b6af184a209f4f6bcf466c1502a27b7eff3c660dd46b4623fd81ffac1f5"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2cace3b1670b7a1502dc0672e5a25e17ab4c811328adde5c34f1549926388671"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ab3b3b23ebe81ebb7de82b06515d209cb671c0af31468be4033ffd9d7592c555"
+    sha256 cellar: :any,                 x86_64_linux:  "d1f1f0aa0fb03b50c413756f8804f7137fa88f86b7cfea7bdd50145935759dbb"
   end
 
   depends_on "go" => :build

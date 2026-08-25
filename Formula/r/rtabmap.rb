@@ -15,9 +15,9 @@ class Rtabmap < Formula
   end
 
   bottle do
-    sha256               arm64_tahoe:   "6af2dd0708d261cabd2cdff67558cf8c632c165f8ebdc05235bb59a91a0c3cf3"
-    sha256               arm64_sequoia: "7746776093a35f1fb73beebba31d5e313364de609420cf623d48c4975c980599"
-    sha256               arm64_sonoma:  "f064255f50196f936fa95477d8e1b9f20d06f493b128914f7ebca4534cccdc47"
+    sha256 cellar: :any, arm64_tahoe:   "6af2dd0708d261cabd2cdff67558cf8c632c165f8ebdc05235bb59a91a0c3cf3"
+    sha256 cellar: :any, arm64_sequoia: "7746776093a35f1fb73beebba31d5e313364de609420cf623d48c4975c980599"
+    sha256 cellar: :any, arm64_sonoma:  "f064255f50196f936fa95477d8e1b9f20d06f493b128914f7ebca4534cccdc47"
     sha256               sonoma:        "38e4569e7057bcdfd009581a4bec1ef0c630016b9a8d45c8852c1c0027fe0994"
     sha256 cellar: :any, arm64_linux:   "a4669d7444ee9e6a3c36452d7ab5508c35b328d438da2fa5e05584af6da916ed"
     sha256 cellar: :any, x86_64_linux:  "a2b65104f99801ddfb16fd1675a5e50612bb28bf9ce56dfdcdc247017d8040bf"

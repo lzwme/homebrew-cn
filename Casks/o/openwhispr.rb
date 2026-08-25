@@ -1,11 +1,26 @@
 cask "openwhispr" do
   arch arm: "-arm64"
+  url_end = on_system_conditional macos: ".dmg", linux: "-linux-x86_64.AppImage"
 
-  version "1.8.3"
-  sha256 arm:   "681e7616ac4dcdb130651939aba4f56bcb1565620a271f9c4ddf8863487a27cb",
-         intel: "2d40ee4c4774518da480acbd5980a94f82369ca3a4c45fa85fc3739b16bfe715"
+  version "1.9.0"
 
-  url "https://ghfast.top/https://github.com/OpenWhispr/openwhispr/releases/download/v#{version}/OpenWhispr-#{version}#{arch}.dmg"
+  on_macos do
+    sha256 arm:   "06e031d5f4ca6d1ab76919976e6b13c0fb0b5c5a3c3222303dcf56ea930277a9",
+           intel: "a78ddbe8e0970230e5905c881db5f64cf95b13b27e3db259890f32deb452e1da"
+
+    depends_on macos: :monterey
+
+    app "OpenWhispr.app"
+  end
+  on_linux do
+    sha256 "ff36f126a9bd62a5a0d9de73347e2ea78f1901e17a9380ef6950225d0492993d"
+
+    depends_on arch: :x86_64
+
+    app_image "OpenWhispr-#{version}-linux-x86_64.AppImage", target: "OpenWhispr.AppImage"
+  end
+
+  url "https://ghfast.top/https://github.com/OpenWhispr/openwhispr/releases/download/v#{version}/OpenWhispr-#{version}#{arch}#{url_end}"
   name "OpenWhispr"
   desc "Privacy-first voice-to-text dictation with AI agents"
   homepage "https://github.com/OpenWhispr/openwhispr"
@@ -16,12 +31,12 @@ cask "openwhispr" do
   end
 
   auto_updates true
-  depends_on macos: :monterey
-
-  app "OpenWhispr.app"
 
   zap trash: [
     "~/.cache/openwhispr",
+    "~/.config/autostart/open-whispr.desktop",
+    "~/.config/open-whispr",
+    "~/.local/share/icons/hicolor/256x256/apps/open-whispr.png",
     "~/.openwhispr",
     "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.gizmolabs.openwhispr.sfl*",
     "~/Library/Application Support/open-whispr",

@@ -6,7 +6,7 @@ class Fceux < Formula
     "LGPL-2.1-or-later", # src/drivers/common/{hq2x.cpp,nes_ntsc*}
     "MIT", # src/emufile*, src/drivers/Qt/TasEditor/, src/lua/
   ]
-  revision 11
+  revision 12
   head "https://github.com/TASEmulators/fceux.git", branch: "master"
 
   stable do
@@ -28,12 +28,12 @@ class Fceux < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "92df75e7917ef2f4faeabad8adc78dea125ab3acf5443e9fd67e2d278a0ae2e3"
-    sha256 cellar: :any, arm64_sequoia: "e700ee95280afdab48f196664c007404619fc7e9e4d2c88333cb76c3f8e077e9"
-    sha256 cellar: :any, arm64_sonoma:  "c8fae80fef16812835d724185abc326b14824b592261e140e6d98289243f004b"
-    sha256               sonoma:        "70ab74969a2f35f6daa44a8c512c4706fe9a730aff877b238e480be8b1b7231e"
-    sha256 cellar: :any, arm64_linux:   "2b458ef6942759b53cc8d26d213cec088a76f7d65e268a1b15a87a8facd07539"
-    sha256 cellar: :any, x86_64_linux:  "6b1058958a75ec98979e5d132e021f7bd90fb4bd2a247583b263c2d4518d63e7"
+    sha256 cellar: :any, arm64_tahoe:   "09ce9e2a81d5d7600c1921921d3e402f50c809855b411669c91613b0a8978bef"
+    sha256 cellar: :any, arm64_sequoia: "4741d14865c94f98a5f461304b7e73c725c36aae675c6345b8b36636f12100e8"
+    sha256 cellar: :any, arm64_sonoma:  "b8fae46121fd239d11c29ede067bd8747b2df42c832561d1e71b766c70cd58e2"
+    sha256               sonoma:        "8fe999ab9e68257e6cfb9c49bd98063f712361c4d15df40e2f907dfe1c045b21"
+    sha256 cellar: :any, arm64_linux:   "975c645737c4eab968780d8a9f499ade39d8080dcb4c461c55df98f46f5005b8"
+    sha256 cellar: :any, x86_64_linux:  "fc93c9a70f6d5e50ca69fa68d7513a156360eb2b6e4990c96bcc48115c525647"
   end
 
   depends_on "cmake" => :build

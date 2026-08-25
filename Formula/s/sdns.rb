@@ -1,18 +1,18 @@
 class Sdns < Formula
   desc "Privacy important, fast, recursive dns resolver server with dnssec support"
   homepage "https://sdns.dev/"
-  url "https://ghfast.top/https://github.com/semihalev/sdns/archive/refs/tags/v1.8.0.tar.gz"
-  sha256 "351df507dea8577bde74d2178d89d1cddb34c94a90695ff66ac63b755c2c83ae"
+  url "https://ghfast.top/https://github.com/semihalev/sdns/archive/refs/tags/v1.8.1.tar.gz"
+  sha256 "7f20214cf687754b500c7fea22d5c2fc2b4bd193810ad49562fea9bd3db94d81"
   license "MIT"
   head "https://github.com/semihalev/sdns.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "70167053dc21847e6245db7dca8f8d9deef5a94cd06b7e4f5becb84ca627f858"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cff1d2eefa14850a9f85cd90632c6c298ae04a849583d177a660c372aa4a0cf7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f3ed087fccbe2104cd494f493a6d72168d7117b6c5fd9966b1d99a5caca98416"
-    sha256 cellar: :any_skip_relocation, sonoma:        "82b1ce3d9a3c2cc213c7d23101076209d6988df34ea1112d4741a34638413130"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f7e5e54cfb35586a58206ab399e5b458e2fa32bba30fe11af6a22fc4e55be8bf"
-    sha256 cellar: :any,                 x86_64_linux:  "45300f4a4b00827b0c6973473d725ec89a81d53ff660fafe389684c9a7e78eb9"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a546e5869482224d853b89863d06ad36da222c70b368702cc4a27c62c8ec1a2e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7bf64a42f6b1d225ff6151fd9aebc0d94187bf800228b5c15542c1b44d67bc96"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cf6eaa206a9fb81e53b45d0d75ba801d80a1774a8323a64d39a4a4ae77cac78e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "12f75b4c212f8786b3d5f39dc6fef72b91d849448d48c12a7d7356479f8afbfa"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c3d5585b6e9133d463dd4a753194d23e564de8c372ae1e25d570026d7fb21f5b"
+    sha256 cellar: :any,                 x86_64_linux:  "80381cdb6c72a5b1c6011609688f84a4fbe830e65b897d8227d620f8e779fa13"
   end
 
   depends_on "go" => :build
@@ -32,8 +32,9 @@ class Sdns < Formula
   end
 
   test do
-    spawn bin/"sdns", "--config", testpath/"sdns.conf"
-    sleep 2
+    require "open3"
+    stdout, = Open3.capture3(bin/"sdns", "--config", testpath/"sdns.conf", "--test")
+    assert_match "Default config file generated", stdout
     assert_path_exists testpath/"sdns.conf"
   end
 end
