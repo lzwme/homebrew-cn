@@ -1,8 +1,8 @@
 class DuaCli < Formula
   desc "View disk space usage and delete unwanted data, fast"
   homepage "https://lib.rs/crates/dua-cli"
-  url "https://ghfast.top/https://github.com/Byron/dua-cli/archive/refs/tags/v2.42.1.tar.gz"
-  sha256 "31a452ce11ff6246da6298b70f892ae6b575eea5669adfd438381afd2157f748"
+  url "https://ghfast.top/https://github.com/Byron/dua-cli/archive/refs/tags/v2.43.0.tar.gz"
+  sha256 "0bdce37da1f5a3c04cb6b72e22fe3b02863367199c0af25201438ea101ab55e2"
   license "MIT"
 
   livecheck do
@@ -11,12 +11,12 @@ class DuaCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c3c9710c4e41c26f343c547dc513bac57f042b867c21a87ee7c49c95afa23d68"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "67f70d319699024b2f7e350cbb09d43d342d86b35cdc5a532db673c38a17ac99"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0b159795c77d09dc604c664e75d636f8e126dacbb7930081559ea5ba1d336a7f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "eaceacce70428ac52bcddc5d76a90fcd501e2df1b3bed2499d9b44e8809b2292"
-    sha256 cellar: :any,                 arm64_linux:   "38c6fc2132cda34fa1222d9544526eea8190358dbb2447a80e8782335849828b"
-    sha256 cellar: :any,                 x86_64_linux:  "4cd3d267cd9f6ff839a49ae3d29c8cfe6740f4fdecc268bec2906152678f50e3"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a48dc367c13201efe623b7b24316ccfa250b809dc306f4e9523379979acfde72"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8e7cf9e2f31679f8df66f1e41f6bcf79255261192bfd941135be4483761f1350"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8bb1dca5bca7dbb82dc1b9d8b8c82dd9b65e11adb5ff9723f2453a70e7cfc52e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2695769748b4ef1e1a12fdc3c5eca301b740289334209367ee0c095aa549e775"
+    sha256 cellar: :any,                 arm64_linux:   "427a33234ee172febfc53ac1b80dc8c47bbcf6faa7ccfca38c0d8a97564505dc"
+    sha256 cellar: :any,                 x86_64_linux:  "2d96d1e9773e42c722fdca29ae6d4cbab6a5d444bf3733f71c59db21974fa76d"
   end
 
   depends_on "rust" => :build
@@ -31,9 +31,9 @@ class DuaCli < Formula
     (testpath/"file.txt").write("01")
 
     expected = %r{
-      \e\[32m\s*0\s*B\e\[39m\ #{testpath}/empty.txt\n
-      \e\[32m\s*2\s*B\e\[39m\ #{testpath}/file.txt\n
-      \e\[32m\s*2\s*B\e\[39m\ total\n
+      \s*0\s*B\s*#{testpath}/empty.txt\n
+      \s*2\s*B\s*#{testpath}/file.txt\n
+      \s*2\s*B\s*total\n
     }x
     assert_match expected, shell_output("#{bin}/dua -A #{testpath}/*.txt")
   end

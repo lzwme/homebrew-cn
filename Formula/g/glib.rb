@@ -9,12 +9,13 @@ class Glib < Formula
   compatibility_version 1
 
   bottle do
-    sha256 arm64_tahoe:   "56f78bc6c2d3e68fa15a1c37e3ea6531ac90c3af20665e4a6418d285514ba5ce"
-    sha256 arm64_sequoia: "75a92e360363ebd719c655b3170b084dc3491811188b65fce0d97a45d554414e"
-    sha256 arm64_sonoma:  "86dc32e84bcecdb1c1ed1e277bcc7acffff2c8ab153cca0d86b39f048f30b931"
-    sha256 sonoma:        "68ac31bed02121ce2ed0ffd4defd2ed5e85195eb51aeeeae431b2156df788817"
-    sha256 arm64_linux:   "f7ec1dfffe7edcc23308e7c95f92b70f23158941ef4fade6755128cc0c52dccb"
-    sha256 x86_64_linux:  "abe7175c8efb207633f50e94b56d81ad3ce5750062da0b6fc086a2dfafea4333"
+    rebuild 1
+    sha256 arm64_tahoe:   "04cba8ddae9201ed3e950547bfdde97927e4151da37db32c80f5298bf4d6255f"
+    sha256 arm64_sequoia: "ca168ac34920f6ee13187d8e88af7d55c50b582fa78a5511e15fe9dd875e8b40"
+    sha256 arm64_sonoma:  "360e1e14e0db7d9374a2ebc5e0df52c3765e6f42e3d4c8080ac8df8289e181c8"
+    sha256 sonoma:        "77ecae9f10b03757b47b6c9dc2e8cadcace52a685dccc0f846871037628e1c3e"
+    sha256 arm64_linux:   "9362d75c1ee1db3ebb022d00d20a651e0dcc76293a51ad3182a5293953d14c97"
+    sha256 x86_64_linux:  "6e2840b72dee7594f310838f9b0b0b82894eb12e562894b3f1b43563487b9987"
   end
 
   depends_on "bison" => :build # for gobject-introspection
@@ -62,6 +63,8 @@ class Glib < Formula
   patch do
     file "Patches/glib/hardcoded-paths.diff"
   end
+
+  deny_network_access!
 
   def install
     # Avoid the sandbox violation when an empty directory is created outside of the formula prefix.

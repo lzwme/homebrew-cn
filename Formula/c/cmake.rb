@@ -18,14 +18,15 @@ class Cmake < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "207ce99392cf1560ad0ce1f3ca95d519645bbe7392a91321f37c2b8bfd9b8ae0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "849459c1ae2f185635f814092754f5eef09c08015f4492c8dee5c2445dd8dd07"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "20ea982f3c380079ecff6d2e935e2a4a2d1d7c72387924fbffea62b828d5ddf1"
-    sha256 cellar: :any_skip_relocation, tahoe:         "c3bc5d8d0304e0516fd728f0fed783cd6367284b66a61164a879a76d42ff52d6"
-    sha256 cellar: :any_skip_relocation, sequoia:       "9ac37870e734dc6c3daacb3613443e0e7bdfcca941fa4fbe600669fcb5dbc6fe"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e47932c1ef9a63c9cee792f5a1b04dacbb8d470ed199a8cc6eac1f73c58f0326"
-    sha256 cellar: :any,                 arm64_linux:   "d2332ba81b8f966db5222fb6042339992ba477d15ea3c0633d7219d8a5a46406"
-    sha256 cellar: :any,                 x86_64_linux:  "52c08b7c0b8448e8534e2f5c3e44b839bda607217f5f0b27e6254d0ad6d31278"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "78cc911818589c56f42f91db0ec3daa514b89dc6fd7b67a1bec8a44901376edb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c5251a447c1439c293dd3710cb641d53552a2be13c9e48b8f24f6546f40e726a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7b064870852fc1c3215df4e9fce5447514319be9a318507810e102eaa74e4bf5"
+    sha256 cellar: :any_skip_relocation, tahoe:         "d442d92e3005da20eba9d5e17a910843a1c52da6ae94b0aa444b9a1e3f3a852e"
+    sha256 cellar: :any_skip_relocation, sequoia:       "28aa07b4508d4d14fdf77a30274cd7b1f85a4f3cb29f02b531243f1369074844"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e10055c3703494ce63a07ab3f2f36e04cc5618779fb83d5440358add7a70bb47"
+    sha256 cellar: :any,                 arm64_linux:   "7d2fa78e71ca0b9d95d9f26dcc9ff6d5d6d8f53be2667046f16cd137396b98d4"
+    sha256 cellar: :any,                 x86_64_linux:  "5b44cb13b7e50d878bd1e0512030ee6d3aa192fe5f405d65488d48a7f1db21f4"
   end
 
   uses_from_macos "ncurses"
@@ -35,6 +36,8 @@ class Cmake < Formula
   end
 
   conflicts_with cask: "cmake-app"
+
+  deny_network_access!
 
   def install
     args = %W[

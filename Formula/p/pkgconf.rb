@@ -14,14 +14,15 @@ class Pkgconf < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "3be583e0665fcf0a9bdf93380bfdf65946c177b5d93a005fcc8d7c7dee638b2e"
-    sha256 arm64_sequoia: "c538c816c47b41c9ddbd82303d6c8d82fc2f6f21e3f65137cb4fbec285c225e1"
-    sha256 arm64_sonoma:  "936aaf3e6b3fabd21b62d939e225475a1e112c019f013c1e81674e178176013c"
-    sha256 tahoe:         "b11e7039b7b611cd40755186f4eafcffcf662b44b40daed8c02b9f95e62e042d"
-    sha256 sequoia:       "1e26d8d26082743bdb2afea6145f37bb3611f3c6d11dbe43a18939a51d6a9303"
-    sha256 sonoma:        "4d0ac8c0b1ba94184eae9fdae2aef654d1b4c140aa097c3558160d3ab8705598"
-    sha256 arm64_linux:   "4568f7e5808f1b40b90437ff45246e5984ca1df1c48e7451fdc72d99c8a11812"
-    sha256 x86_64_linux:  "92dd0c5e5a99e10c2b38427cf315cfdc6751183ea7f81ffed11ca1358865ee43"
+    rebuild 1
+    sha256 arm64_tahoe:   "fb0d6f455349a08a10b83119670d2dd5750ce5b22ad88f9b9688467b2c50ce05"
+    sha256 arm64_sequoia: "ec4fd0c30334ce21edbbc503a82e8ce73dd127532d6021d1d703c38c74ce1be6"
+    sha256 arm64_sonoma:  "5d55ff53bb261627ad63d35d9d61f04b8dc031e31f406a1d6353c06462c0e9be"
+    sha256 tahoe:         "40fb47fa0bcd78d5bcf13a879e2cab737c13b8bef11ba0d7613c839c2b8a4c35"
+    sha256 sequoia:       "d73a945d9dc05067f6b4a11f8f6cab1a6f0dcff5e8dee0ee07b4dd40d7830262"
+    sha256 sonoma:        "39cae29fa7487c6ebdd0763764543b242e76e2a0f1013e3f31dcd5a39fe00390"
+    sha256 arm64_linux:   "948113451c219c80e4ea0d6e7f8128bcba9a50b0e53f644b03a93353692970ed"
+    sha256 x86_64_linux:  "63ed34ad2cb251f599084688fb3477dd72e3e155731073cbab56927d6442f0d8"
   end
 
   head do
@@ -42,6 +43,8 @@ class Pkgconf < Formula
       end
     end
   end
+
+  deny_network_access!
 
   def install
     pc_path = %W[

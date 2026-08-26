@@ -1,8 +1,8 @@
 class OpensslAT35 < Formula
   desc "Cryptography and SSL/TLS Toolkit"
   homepage "https://openssl-library.org"
-  url "https://ghfast.top/https://github.com/openssl/openssl/releases/download/openssl-3.5.7/openssl-3.5.7.tar.gz"
-  sha256 "a8c0d28a529ca480f9f36cf5792e2cd21984552a3c8e4aa11a24aa31aeac98e8"
+  url "https://ghfast.top/https://github.com/openssl/openssl/releases/download/openssl-3.5.8/openssl-3.5.8.tar.gz"
+  sha256 "a8f84a39918ec6415ce765d9b429d313ba97b8143169c172e734b9514464f5b2"
   license "Apache-2.0"
 
   livecheck do
@@ -11,15 +11,14 @@ class OpensslAT35 < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_tahoe:   "f8273657dd4155be3f4758437fbd81442b43e1bb190a5f3674239b9a773beda0"
-    sha256 arm64_sequoia: "1a8b514403f1e28eeb017abea8bacc10d14045c86f91f936de6b09f4bc4ddf50"
-    sha256 arm64_sonoma:  "f15cf2e087411876bd85c5b50e9f5ba99c514ffc1a9c4c71f49719c83c84e2b9"
-    sha256 tahoe:         "671ddef2825f7ce133abd25ce851d831b566c1248a71fa456c08ee98d17c3e3a"
-    sha256 sequoia:       "cb090fc5bce77e39dc13f9edf8ceb624c2da273cbd647d8f267813e9a566c20c"
-    sha256 sonoma:        "c862626068d9bfd8d326df63d96174e212d9aca86a96cbaa40f8a43ab2871022"
-    sha256 arm64_linux:   "150eb0c6271e5975092191c0845a5272ddf783b4c0435a533f1bc8d7446fc412"
-    sha256 x86_64_linux:  "2a57d675d96eff269d61e0e701eb08dc2131f5cd130c6259befc37015cb26608"
+    sha256 arm64_tahoe:   "6195683a95e6a839c4694a656a89bc5f8a273a670e004362be176a0489c43b79"
+    sha256 arm64_sequoia: "1a4c97d1ab594a16b200f258fe208afc38d799e5584aebb143b51e54ab9e68db"
+    sha256 arm64_sonoma:  "31b9a3ebccd1782fe9313de5c1727352c96ddc23c475b4d04844d1d2d39ec2c2"
+    sha256 tahoe:         "8964c5484210bd921c5dfd9e5f26df9245ba3c759b066a503db121f6b884c7de"
+    sha256 sequoia:       "11af4da9ac7469aabf418a30ae480378aa5a882a80424ca24fd9e08b81bb3b98"
+    sha256 sonoma:        "c9052851587bbd82bd7dbd31d45bf10c27499e64231077e658149b216b2e43ba"
+    sha256 arm64_linux:   "996915f8a03fd0953f1e022fe1c1e4ce56b006b4021ebb547c06163512a5d5e1"
+    sha256 x86_64_linux:  "656278db8ef3e8c315cc1f46e79a91a215f5b18261020e3526a0685c41d60f43"
   end
 
   keg_only :versioned_formula
@@ -33,8 +32,8 @@ class OpensslAT35 < Formula
     end
 
     resource "Test::More" do
-      url "https://cpan.metacpan.org/authors/id/E/EX/EXODIST/Test-Simple-1.302220.tar.gz"
-      sha256 "bbca30d9fb64a67a28ccd9086cdc08cdb6046423fa032d9101f978d7ccd46cf9"
+      url "https://cpan.metacpan.org/authors/id/E/EX/EXODIST/Test-Simple-1.302224.tar.gz"
+      sha256 "6c366b8ab03553976dd1813940770b60bdb4396e7bbae8c263baa6e96ec52fd7"
     end
 
     resource "ExtUtils::MakeMaker" do

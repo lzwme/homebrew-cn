@@ -13,18 +13,22 @@ class Ripgrep < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "70d2dd4c77e3095797b768a1b6c1d092a1ef6db5ba81b38b422920b7b87c9886"
-    sha256 cellar: :any, arm64_sequoia: "aa54bb41d674d2872cd1586f4a71b9a712ab20dc5e80b58d464bb64462732fcc"
-    sha256 cellar: :any, arm64_sonoma:  "24ec18fde1c3dee7cd9646a67b92642bb3ee3f33ee4bdabbb27e03feb742b0a7"
-    sha256 cellar: :any, sonoma:        "1218ff07ff11402fc41e7cd2f52d4dc1ba50fde0568713e473c14e1cde51ef39"
-    sha256 cellar: :any, arm64_linux:   "f9aaf3150f27c6ee3c67a05e6c54a1d030fd57144eb33e87b2db67784b8b5ff9"
-    sha256 cellar: :any, x86_64_linux:  "1380aa0ce79e4e494201d66b55fa4301c4e23d72d70ceceb2c1c61e7613bf59f"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "7829e262f0ebbb51c4744b343bf801a5107479fe08c6d6f61f4d909748cba337"
+    sha256 cellar: :any, arm64_sequoia: "2754dac3a512be2007dde3a8a481f1753ea9b0e22041a1a32b544daed966981b"
+    sha256 cellar: :any, arm64_sonoma:  "8e485dfa978673c6ada6f83ca39f5f15f8b7444b0cdbe8814cd3d3d7bd83afa0"
+    sha256 cellar: :any, sonoma:        "9dd76bad725daf9ad1d4c983419e79ec92aefdae0cc9c92d465b424c8aea4808"
+    sha256 cellar: :any, arm64_linux:   "d3659fe11edcb52b93ce3510428435991fcb479c854d0b66bd14a2ffc7ef956a"
+    sha256 cellar: :any, x86_64_linux:  "b92a80402edd4e6fa17e9eb580d20e941c60787510c4ce2716fa53d2c6d4c432"
   end
 
   depends_on "asciidoctor" => :build
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "pcre2"
+
+  # downloads crates during install
+  allow_network_access! :build
 
   def install
     system "cargo", "install", *std_cargo_args(features: "pcre2")

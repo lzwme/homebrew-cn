@@ -1,8 +1,8 @@
 class Tetra < Formula
   desc "Tetragon CLI to observe, manage and troubleshoot Tetragon instances"
   homepage "https://tetragon.io/"
-  url "https://ghfast.top/https://github.com/cilium/tetragon/archive/refs/tags/v1.7.0.tar.gz"
-  sha256 "ccccbe870b880212a86f959ce6f3f9f2d378646ad314100862ea6db5cb5f0a2b"
+  url "https://ghfast.top/https://github.com/cilium/tetragon/archive/refs/tags/v1.7.1.tar.gz"
+  sha256 "d4de499f97899855329b5ab8d7fc9fed5be349abd6e45b673c70554e4918bd2a"
   license "Apache-2.0"
 
   livecheck do
@@ -11,23 +11,15 @@ class Tetra < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "29aa4d37b1ff8bdd54b6a4039dd292db75b79695565d2cc4ecccf70f89074b11"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "84d872433dac34a4357359cc8d49a15e2327846cbbecc247bac98d7e11a7c6d4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "de806a15af6d8b30163988588f8dffaa44f0f6f9a2714c7a29fe858b822419f6"
-    sha256 cellar: :any_skip_relocation, sonoma:        "924b2013ada6d0742ae86b7d4b608d6d3113812579b5a78a02fe5372ba5a0dc5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "30d831fbea91449d536d6b98576640831d9fea9d63893e23028b070da1bd09ac"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d9e1a3632043b8a745a4d9ab97615a5454b45955fb98f043427d1737600ac43f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "19de6f1783d1d9b2e33860c172d033a5abd4329969ad880633816687e08f1403"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8362b1a39aed776aceac2caeedd170eed45931c4ee281e5c37499357afece3a0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5d3eaa89db45b7578beeb8045fe2368089f945f8bce6878c7d0f2c300df8f138"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6ed24fa9479f2265d4b1f735193b67d4ceb378621b48ad776a7e121fe8a6f0db"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "40bdd8a674cf61b2775599e494f8d1a04f7ba8b5daf4649e764940868599a971"
+    sha256 cellar: :any,                 x86_64_linux:  "4b293c3e5579cf7eb19f4b44b5c34e60d894bc6d98a142d26e919ddaae65be5c"
   end
 
   depends_on "go" => :build
-
-  # Add missing darwin stub for bpfProbes function
-  patch do
-    url "https://github.com/cilium/tetragon/commit/c99f6bc0b8bebb40cf3cdaf1216e62c8717d85cc.patch?full_index=1"
-    sha256 "1a09f1f9324394a117a3f09a995ef56a5d7d4633169b9a8fe103425fabc840f3"
-    type :backport
-    resolves "https://github.com/cilium/tetragon/pull/4933"
-  end
 
   def install
     ldflags = "-X github.com/cilium/tetragon/pkg/version.Version=#{version}"

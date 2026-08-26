@@ -560,7 +560,6 @@ Homebrew-homebrew-core/Formula/b/bento.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bento4.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/berglas.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/berkeley-db.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/b/berkeley-db@4.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/berkeley-db@5.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bettercap.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/betterleaks.rb, Homebrew/homebrew-core, 1
@@ -659,7 +658,6 @@ Homebrew-homebrew-core/Formula/b/bomctl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bonnie++.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/bookloupe.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/bookokrat.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/b/boolector.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/boom-completion.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/boost-bcp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/boost-build.rb, Homebrew/homebrew-core, 1
@@ -6182,6 +6180,7 @@ Homebrew-homebrew-core/Formula/p/pyside.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pyspelling.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pystring.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pytest.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/p/pythia.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-argcomplete.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-build.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-freethreading.rb, Homebrew/homebrew-core, 0
@@ -8322,6 +8321,7 @@ Homebrew-homebrew-core/Formula/x/xdpyinfo.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/x/xe.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/x/xeol.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/x/xerces-c.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/x/xeve.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/x/xeyes.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/x/xfig.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/x/xgboost.rb, Homebrew/homebrew-core, 1
@@ -9014,6 +9014,7 @@ Homebrew-homebrew-cask/Casks/b/beyond-compare@4.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/bezel.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/bias-fx.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/bibdesk.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/b/bifrost.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/b/big-mean-folder-machine.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/biglybt.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/b/bike.rb, Homebrew/homebrew-cask, 0
@@ -9240,6 +9241,7 @@ Homebrew-homebrew-cask/Casks/c/chai.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/chainner.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/chalk.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/changes.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/c/channel-works.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/charles.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/charles@4.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/charmstone.rb, Homebrew/homebrew-cask, 0
@@ -11972,6 +11974,7 @@ Homebrew-homebrew-cask/Casks/font/font-p/font-palemonasmufi-italic.rb, Homebrew/
 Homebrew-homebrew-cask/Casks/font/font-p/font-palemonasmufi-regular.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-p/font-palette-mosaic.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-p/font-pangolin.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/font/font-p/font-paper-mono.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-p/font-paperlogy.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-p/font-paprika.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-p/font-parastoo.rb, Homebrew/homebrew-cask, 0
@@ -13315,6 +13318,7 @@ Homebrew-homebrew-cask/Casks/k/keyboard-maestro.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/k/keyboardcleantool.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/k/keyboardholder.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/k/keycastr.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/k/keychron-assistant.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/k/keyclu.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/k/keycombiner.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/k/keycue.rb, Homebrew/homebrew-cask, 0
@@ -13429,6 +13433,7 @@ Homebrew-homebrew-cask/Casks/l/leela.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/legcord.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/l/lego-mindstorms-ev3.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/lehreroffice.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/l/leigod.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/lemonade-server.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/l/lemonlime.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/l/lens.rb, Homebrew/homebrew-cask, 0
@@ -13908,6 +13913,7 @@ Homebrew-homebrew-cask/Casks/m/moscow-ml.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/motion.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/motionik.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/motrix.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/m/motrix@beta.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/motu-m-series.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mountain-duck.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mountain.rb, Homebrew/homebrew-cask, 0
@@ -14003,6 +14009,7 @@ Homebrew-homebrew-cask/Casks/n/nanosaur2.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/n/nao.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/naps2.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/n/nasas-eyes.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/n/nativ.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/n/native-access.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/natron.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/n/nault.rb, Homebrew/homebrew-cask, 1

@@ -13,18 +13,21 @@ class Docker < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b061dbca62960f6bbf16b983b156cb960bf810e678e14c6bd366b58506eb4f1a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ad069f0ad9f8396362a1c8d5bd8d6e764e0ed5846f31366346d539c377480bb4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d409d0b8e1824db53a2348dd11ace24dcf03e794a11b144ea0458dae26c3110b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "94e117e3b7892b9d5404dfc4361a976a3d3801f3722d4509b23538780a1d8b1c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2709b1c25296e3f150204c9f7547e2c6ea322c49d16aeaaf3deb9a6a4daed99a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2f8c811bfc6bad2e27e2a1b812a8e66aa6f93fe3335a0e7c82aabc689a306472"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e94049548c22f62264524c00bd2acd2c695e776b942250deddf0e97fd0188a35"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0addeb0d226bb91a8d5410119d181fe8249dc7e3179e3a2ecd245995532c58f6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e8a3900e7e6ffdfe275d7fb96c67c37ee792ae1156bdc0f86784d0afe59b037c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2d46d03905a31314e4757746256c261db8e328c4a894e1f637ceb5b8e800faac"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bfe7e765e0ccf2d9388837bffaf19a9ffaff929b32b17b017a0c489100b24d3b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2d66235029b0c303b078b846c96c875715c15ad56a53319899728177292adee6"
   end
 
   depends_on "go" => :build
   depends_on "go-md2man" => :build
 
   conflicts_with cask: "docker-desktop"
+
+  deny_network_access!
 
   def install
     ENV["CGO_ENABLED"] = OS.mac? ? "1" : "0"

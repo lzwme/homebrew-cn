@@ -3,19 +3,18 @@ class Jiratui < Formula
 
   desc "Textual User Interface for interacting with Atlassian Jira from your shell"
   homepage "https://jiratui.sh/"
-  url "https://files.pythonhosted.org/packages/79/eb/288a867b43b1f1ce167601fc3c231bd20978b6426b00f72f4377c2cf91f9/jiratui-1.12.0.tar.gz"
-  sha256 "9c5ea350be556f97bc1b31c2f66a21df7e7f19937c44013c9c534ab259c49ebb"
+  url "https://files.pythonhosted.org/packages/f2/b8/9b6bb4e75e516cd9377f46fcc7929ee3695daf3cd3183c1c9a9e88e6b379/jiratui-1.13.0.tar.gz"
+  sha256 "cf26b7271e0ec809210c71b5cd6e789a7da46ac5bd59b0e707361ced2f9c6fc9"
   license "MIT"
-  revision 1
   head "https://github.com/whyisdifficult/jiratui.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "73c6f03686aa61dbd860b368c841f728b18616c3b2064ea3d526444e362e3f28"
-    sha256 cellar: :any, arm64_sequoia: "e3abefd74edfe96b2a5c40b5880af65d4d67354040e688a06d296d6cd7966b08"
-    sha256 cellar: :any, arm64_sonoma:  "db71e1caeca0cec6603f58f300bc86415eb685f563b0928c881391adb931dd1d"
-    sha256 cellar: :any, sonoma:        "a3b31474be5404ecf96be86972a0bb5ead69df6b5abca216682a5e28dc7ccb21"
-    sha256 cellar: :any, arm64_linux:   "7b0947fb9635d62b464bf0f2172d7f797645bdc083637291a8d74a00bbf1053e"
-    sha256 cellar: :any, x86_64_linux:  "a8ebabc63389ad6ddb196d790f30133ad400e5140381b4c69d31662a7804b0a8"
+    sha256 cellar: :any, arm64_tahoe:   "44a2afd8e3feebb95924f6f51c332995dae7c20540476a8b2a3e9bf51c6434eb"
+    sha256 cellar: :any, arm64_sequoia: "b755a98ef95ded533e1beffe04ae1d4c4972b000855cbd0c71273a05dc25e0c5"
+    sha256 cellar: :any, arm64_sonoma:  "ce2a6c374db6e5f1a3a9168c4eea6ae4e648bac77a3e66d6dfb78522d2a07ea2"
+    sha256 cellar: :any, sonoma:        "c9d2ac956f6e9c41ccb17ea9a4beeafd0d434551dfa27b6b1c96752beee04f69"
+    sha256 cellar: :any, arm64_linux:   "d79f33bb260f1d0e57f137e98fee674d98fb4a7440088a18d60cf7014e2551a6"
+    sha256 cellar: :any, x86_64_linux:  "a4df7e62d5b70a1cbb549a484d86d7daffaa61f05b003e8a707fbd6d768aeed5"
   end
 
   depends_on "rust" => :build
@@ -56,8 +55,8 @@ class Jiratui < Formula
   end
 
   resource "gitpython" do
-    url "https://files.pythonhosted.org/packages/26/d6/5f358ff283325580c2003a6d953aea18cfe10ae87b46f5ebc80fa3a386dc/gitpython-3.1.58.tar.gz"
-    sha256 "621416df10ef3fd0e19fabf9172ddeed0fa704d353d04f194eec56a625a95b22"
+    url "https://files.pythonhosted.org/packages/ca/dc/126b28e76b24a9268ba931ad3e012f71ebdadf62fd9f17758f7074bb0b20/gitpython-3.1.59.tar.gz"
+    sha256 "0a1475cfdc38a5bfba1a3e9a4a9da52a39749ecec322b772915c019f94e5b7e4"
   end
 
   resource "h11" do
@@ -76,13 +75,13 @@ class Jiratui < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/cd/63/9496c57188a2ee585e0f1db071d75089a11e98aa86eb99d9d7618fc1edce/idna-3.18.tar.gz"
-    sha256 "ffb385a7e039654cef1ab9ef32c6fafe283c0c0467bba1d9029738ce4a14a848"
+    url "https://files.pythonhosted.org/packages/5f/f7/abb373e5757eaec4b922b92f97ec8d6d7e057cf06778247604fbc4e7c3f3/idna-3.19.tar.gz"
+    sha256 "5e0811a4383b21dc5838069f801c4fb62113b7447663d2530d2bd6e77b49bf15"
   end
 
   resource "linkify-it-py" do
-    url "https://files.pythonhosted.org/packages/2e/c9/06ea13676ef354f0af6169587ae292d3e2406e212876a413bf9eece4eb23/linkify_it_py-2.1.0.tar.gz"
-    sha256 "43360231720999c10e9328dc3691160e27a718e280673d444c38d7d3aaa3b98b"
+    url "https://files.pythonhosted.org/packages/53/3e/79f35b8c31a1881893b7e62be80b2573f06e38db47c33065749293ee1b97/linkify_it_py-2.1.1.tar.gz"
+    sha256 "a78f40fee177eb912e9d2375074108378523c38d3fde5d3ee804f465b6cfbfee"
   end
 
   resource "markdown-it-py" do
@@ -111,8 +110,13 @@ class Jiratui < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/78/9b/560e4be8e26f6fd133a03630a8df0c663b9e8d61b4ade152b72005aec83b/platformdirs-4.11.0.tar.gz"
-    sha256 "0555d18370482847566ffabcaa53ad7c6c1c29f195989ae1ed634a05f76ea1e0"
+    url "https://files.pythonhosted.org/packages/50/bb/ebc6636e1ae41314f796ebb7215fd28febb45f9aac72f2b04cb74b5071dc/platformdirs-4.11.4.tar.gz"
+    sha256 "f3373be828247211d0febabea97e238c3dfde8a60b3c90c32756fb52cb21556d"
+  end
+
+  resource "prompt-toolkit" do
+    url "https://files.pythonhosted.org/packages/7d/ea/39b988c938f75cb75d7045b5c69f8bfed47ee2152c8837fb403de29d6fb8/prompt_toolkit-3.0.53.tar.gz"
+    sha256 "9ec8a0ad96d5c56148b3f914aa79c1564c3fde5d2e6b876e7bc327e353cf8fa6"
   end
 
   resource "puremagic" do
@@ -121,13 +125,13 @@ class Jiratui < Formula
   end
 
   resource "pydantic-settings" do
-    url "https://files.pythonhosted.org/packages/5c/b5/8f48e906c3e0205276e8bd8cb7512217a87b2685304d64be27cad5b3019f/pydantic_settings-2.14.2.tar.gz"
-    sha256 "c19dd64b19097f1de80184f0cc7b0272a13ae6e170cbf240a3e27e381ed14a5f"
+    url "https://files.pythonhosted.org/packages/68/ca/31c57507b13119d7d3cfa1576dad2911a4861e3be07b579395f4e9d393f9/pydantic_settings-2.15.0.tar.gz"
+    sha256 "694b793e84f766ba76a90ebdefc01d0a9a045dab0382bee70393da93712ad117"
   end
 
   resource "pygments" do
-    url "https://files.pythonhosted.org/packages/c3/b2/bc9c9196916376152d655522fdcebac55e66de6603a76a02bca1b6414f6c/pygments-2.20.0.tar.gz"
-    sha256 "6757cd03768053ff99f3039c1a36d6c0aa0b263438fcab17520b30a303a82b5f"
+    url "https://files.pythonhosted.org/packages/49/2e/ced460408999b33da6b31b0021b0f37d329e202d4169aeb164493778f25b/pygments-2.21.0.tar.gz"
+    sha256 "610ca751c9bc2492b38eb9a38a7fbc93edbbb2d7182edaf34e66ae493dee5c8c"
   end
 
   resource "python-dateutil" do
@@ -136,18 +140,23 @@ class Jiratui < Formula
   end
 
   resource "python-dotenv" do
-    url "https://files.pythonhosted.org/packages/82/ed/0301aeeac3e5353ef3d94b6ec08bbcabd04a72018415dcb29e588514bba8/python_dotenv-1.2.2.tar.gz"
-    sha256 "2c371a91fbd7ba082c2c1dc1f8bf89ca22564a087c2c287cd9b662adde799cf3"
+    url "https://files.pythonhosted.org/packages/6a/53/ed9d74092561d4b01a2ef1349d52cdbc135e526c245f366b089cfca6de49/python_dotenv-1.2.3.tar.gz"
+    sha256 "a20a594dabeaa385725aa239d5244871c143ecb356add8a20fcf23773a6c3a35"
   end
 
   resource "python-json-logger" do
-    url "https://files.pythonhosted.org/packages/f7/ff/3cc9165fd44106973cd7ac9facb674a65ed853494592541d339bdc9a30eb/python_json_logger-4.1.0.tar.gz"
-    sha256 "b396b9e3ed782b09ff9d6e4f1683d46c83ad0d35d2e407c09a9ebbf038f88195"
+    url "https://files.pythonhosted.org/packages/21/25/5473e46b179f8e8b4ad3aeeb36773d1701b7770eaf5e5bc2025c7303b598/python_json_logger-4.2.0.tar.gz"
+    sha256 "e371ebe22ec01e289850102091a2b1f6fc9e655c7f1f5f29073936756c290afa"
   end
 
   resource "pyyaml" do
     url "https://files.pythonhosted.org/packages/05/8e/961c0007c59b8dd7729d542c61a4d537767a59645b82a0b521206e1e25c2/pyyaml-6.0.3.tar.gz"
     sha256 "d76623373421df22fb4cf8817020cbb7ef15c725b9d5e45f17e189bfc384190f"
+  end
+
+  resource "questionary" do
+    url "https://files.pythonhosted.org/packages/f6/45/eafb0bba0f9988f6a2520f9ca2df2c82ddfa8d67c95d6625452e97b204a5/questionary-2.1.1.tar.gz"
+    sha256 "3d7e980292bb0107abaa79c68dd3eee3c561b83a0f89ae482860b181c8bd412d"
   end
 
   resource "rich" do
@@ -268,6 +277,11 @@ class Jiratui < Formula
   resource "urllib3" do
     url "https://files.pythonhosted.org/packages/53/0c/06f8b233b8fd13b9e5ee11424ef85419ba0d8ba0b3138bf360be2ff56953/urllib3-2.7.0.tar.gz"
     sha256 "231e0ec3b63ceb14667c67be60f2f2c40a518cb38b03af60abc813da26505f4c"
+  end
+
+  resource "wcwidth" do
+    url "https://files.pythonhosted.org/packages/34/74/c6428f875774288bec1396f5bfcbc2d925700a4dad61727fd5f2b12f249d/wcwidth-0.8.2.tar.gz"
+    sha256 "91fbef97204b96a3d4d421609b80340b760cf33e26da123ff243d76b1fda8dda"
   end
 
   resource "xdg-base-dirs" do

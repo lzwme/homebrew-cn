@@ -31,7 +31,7 @@ class Libftdi < Formula
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
   depends_on "swig" => :build
-  depends_on "boost"
+  depends_on "boost" => :no_linkage
   depends_on "confuse"
   depends_on "libusb"
 

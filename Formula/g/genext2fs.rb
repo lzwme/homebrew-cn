@@ -1,17 +1,17 @@
 class Genext2fs < Formula
   desc "Generates an ext2 filesystem as a normal (non-root) user"
   homepage "https://genext2fs.sourceforge.net/"
-  url "https://ghfast.top/https://github.com/bestouff/genext2fs/archive/refs/tags/v1.6.2.tar.gz"
-  sha256 "b8aba9af48e664fa60134af696a57b3bb4ebd2b2878533d7611734e90b883ecc"
+  url "https://ghfast.top/https://github.com/bestouff/genext2fs/archive/refs/tags/v1.6.3.tar.gz"
+  sha256 "e3503a5bae3fd4b5b2c2d4f49b5b7f8d08e7accb20ab28c0f9647389b2c8a079"
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "21f58d67f7b4979133013a4afd31c5cc4aaca8880d3cd45d66051029c28f579a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "651094e32c8755021d58d7a1d6c4c7839ef4eec1ceed66d29c74cb8e4e07d9bf"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7b1f88dcf000f4cedd232f77a8848a040adbabd02172fcb029a476668ec5708a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "40fcbb32c1aa62ca0bfab62147eb53c4c6743d53d7234abd1c9ed50bf31ad787"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "bd2b569822378fce78f9bc56698aab03be94ef56b8620a22c0e89136ec1dcfe0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6534830d59287283bcabbb86cf09e73db7dac58d578a3dedcc4e0266b2466f3a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "19ec4b0b8fb9b9e6b9830566e37b7b0435227cef2ec768cf53548e0a354f0150"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "736e56e7b2f07cc5e22cf4c176c07881b49d6d60e0bc69bdca7e0c46d98dbe3f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fb296a5722ab03ecd56a05d609ef08e4bb7ccb047e7b66e73ef42bb112c8e2d6"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7f76028ee1aaf6e66a21b5680833f29a8dc5074691f6d3e1c3eb7df84e85b4d0"
+    sha256 cellar: :any,                 arm64_linux:   "3a56007a9ad692ab51b100f3dc02b47c7915a400d526077d625614e4aa8e6202"
+    sha256 cellar: :any,                 x86_64_linux:  "519507a41e89c153e17884befd473f386d08b782f4280407739529170e1d695b"
   end
 
   depends_on "autoconf" => :build

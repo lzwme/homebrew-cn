@@ -1,18 +1,17 @@
 class CloudformationGuard < Formula
   desc "Checks CloudFormation templates for compliance using a declarative syntax"
   homepage "https://github.com/aws-cloudformation/cloudformation-guard"
-  url "https://ghfast.top/https://github.com/aws-cloudformation/cloudformation-guard/archive/refs/tags/3.2.0.tar.gz"
-  sha256 "55327efeaf1b022815e92437a546157b00caa3017d70a20b33ba1e7ca2181c54"
+  url "https://ghfast.top/https://github.com/aws-cloudformation/cloudformation-guard/archive/refs/tags/3.2.1.tar.gz"
+  sha256 "9d5a2e73b70f854be721db20cc3910852fd95b41910a620ab770382543e04d68"
   license "Apache-2.0"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f9fb34acc786d34e3fea5a65f1247b839c12fe80b8094d2345aef10f38e25be2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b05179631ee4c2966763c043bc0ea9ea613434605753e02ae121ba7a64ff4db2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5e9bd81d7cdd41cadc72b376f4d56f3ad6372261fcc3ed3c2cbfb9a63af584c4"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e5fbcfe68ca3437637d3026d161ddec4fc92067285c42a8acacf17159851f590"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2e7f63073241eb277f8e9a250989af79c15519fe89cdbacf2a05e6a1b2ebd745"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d52af0ecca251ad205a93a59fbdbffe71f6d1eb72aa2f7be69fb27ed04559a16"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b53da47df79793f467a907af4f160f6067cb945a358c1f0cdcdaa14fc2c7162d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fc314e664ba9696aa368da7d2ca298bc399008ed003347c42cee4a5fc2a72096"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "49d51e445ee668338381236e168f2212a9e606ac0ee38767029cf5aa5f3ffa12"
+    sha256 cellar: :any_skip_relocation, sonoma:        "874d4007af533663849e8f6724fb7042d19efbd7aed12b3f23a5bdc6b577da7a"
+    sha256 cellar: :any,                 arm64_linux:   "895ade9c8af94ed6fe4f5c2c935a411aab76ae0765a005ef15980bf7905f7350"
+    sha256 cellar: :any,                 x86_64_linux:  "a4d1747b0232d4e19f6cfa1b21032c20bf5093953c274fec3173574612b2f7e5"
   end
 
   depends_on "rust" => :build

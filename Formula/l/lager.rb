@@ -11,8 +11,8 @@ class Lager < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "boost"
-  depends_on "zug"
+  depends_on "boost" => :no_linkage
+  depends_on "zug" => :no_linkage
 
   def install
     args = %w[

@@ -13,12 +13,13 @@ class Poppler < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "172f98096fe98c89233976d068755fdee0df52df13dfc35dcbb14327a65a0d19"
-    sha256 arm64_sequoia: "b1dabd3575777dad0b98948c30bb05ed160df36466277f78264993442c3277ce"
-    sha256 arm64_sonoma:  "03238f789bfbc36e00a6fab18e632367aac490917bddbe9abfcef51ff75de1a6"
-    sha256 sonoma:        "18f024db4c6578dc52b52247d460a52a3898a5d88dd45cbeecc73104d0d70351"
-    sha256 arm64_linux:   "3a68ed5765392b088303862d3de240a3ce273e275bb0a0dec58f92843071cfd3"
-    sha256 x86_64_linux:  "a42554d2a406339d6d00d200fbae1876c809f7ced17d79f251d168ce85b4de3f"
+    rebuild 1
+    sha256 arm64_tahoe:   "7d4aff5bf1637965fc5e190f517a972bdf4108a56b2154b726afb3616130a9eb"
+    sha256 arm64_sequoia: "122d6be92bc71edaf78c6cb47b4572945de6786d0444981bab110a5edcd7a6e7"
+    sha256 arm64_sonoma:  "6e22360243812d3f79cae4d0441a9090dce89bf2317f4a606d1309ed61f18a51"
+    sha256 sonoma:        "49a11635e1bf56a010293a22ff451f43dc684c80f93818c2680a941df6092999"
+    sha256 arm64_linux:   "2776fdad1318035cc1478cc88a4daddc7fa5337c99e13cbd1beafedab39a988e"
+    sha256 x86_64_linux:  "ae3d4331b7b79968e263542e427cff34092bd759f946620f9bd99704fb4ff23b"
   end
 
   depends_on "cmake" => :build
@@ -63,6 +64,8 @@ class Poppler < Formula
       regex(/href=.*?poppler-data[._-]v?(\d+(?:\.\d+)+)\.t/i)
     end
   end
+
+  deny_network_access!
 
   def install
     args = std_cmake_args + %W[

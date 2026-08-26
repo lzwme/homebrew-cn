@@ -10,8 +10,8 @@ class OpenMpi < Formula
   compatibility_version 1
 
   livecheck do
-    url :homepage
-    regex(/MPI v?(\d+(?:\.\d+)+) release/i)
+    url "https://www.open-mpi.org/software/ompi"
+    regex(/href=.*?openmpi[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   bottle do

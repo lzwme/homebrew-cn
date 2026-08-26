@@ -19,6 +19,8 @@ class FlowControl < Formula
 
   depends_on "zig@0.15" => :build
 
+  conflicts_with "flow", "flow-cli", because: "both install `flow` binaries"
+
   def install
     # Avoid an error when the git repository is detached from HEAD
     inreplace "build.zig",

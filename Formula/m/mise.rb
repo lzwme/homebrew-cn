@@ -1,8 +1,8 @@
 class Mise < Formula
   desc "Polyglot runtime manager (asdf rust clone)"
   homepage "https://mise.jdx.dev/"
-  url "https://ghfast.top/https://github.com/jdx/mise/archive/refs/tags/v2026.8.12.tar.gz"
-  sha256 "caf5c183df74c5999f386a51432c8da0a132de858a2b422b7f2d02e03db5187f"
+  url "https://ghfast.top/https://github.com/jdx/mise/archive/refs/tags/v2026.8.13.tar.gz"
+  sha256 "934e5ce1aef28d9e04aef21ec4f3c1275342e76f3d66195b356f541338eed095"
   license "MIT"
   head "https://github.com/jdx/mise.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Mise < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "557b78b25b1cff80c0fd14eb903b5feecffe2a9a0dad70f1a6c54ef6d3f2d0d3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1282974b6de618e1f538511da3e526538b47ce224a0c5815910600e2f745af27"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e41cc6ea7cdde4c6ab81f9fee029cf99971f6ff3c0391e32fff7dd2d8762847f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "18f4a0d9d86d887d38d5fe88bedbe8f4fef0da2b1456e5ba7bb4f0ac7189869f"
-    sha256 cellar: :any,                 arm64_linux:   "9134b256f9e52f7b71f446fc821ab386ae4785ae2637bd401d2c2d9dbcd56ff4"
-    sha256 cellar: :any,                 x86_64_linux:  "63af4989fabe1d48fa019acfcce3ea4a5bc1e21a202b52305bd29cc1168e716f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "817d07d696b7ee00a6209b982b4806f55343f0c6f5446de2633fbbc3909edd19"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7cc76082789bd63156229080828344173e63797c7a0aed10fb9c77ae08c960d4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4c0a3f8cc0b06796e6c7856332005795015fcc4f2a6ce34c1cda243304f31bf6"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2eb129fc083c907e25df79b3d6ea23e584fb6a88647ff504e900be7e6fd87e18"
+    sha256 cellar: :any,                 arm64_linux:   "30cd826e5ce642d54791d38c27eee1fea5e09066772872d7b0bd90a8e37de6ca"
+    sha256 cellar: :any,                 x86_64_linux:  "a60d0b5258c4f7c4b126f903775d82dffada2e00bc8d3dc94d9f6fe428dfb1f8"
   end
 
   depends_on "cmake" => :build
@@ -25,13 +25,14 @@ class Mise < Formula
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
 
-  depends_on "usage"
-
   uses_from_macos "bzip2"
 
   on_linux do
     depends_on "openssl@3"
   end
+
+  # downloads crates during install and binaries in the test
+  deny_network_access! :postinstall
 
   def install
     # Ensure that the `openssl` crate picks up the intended library.

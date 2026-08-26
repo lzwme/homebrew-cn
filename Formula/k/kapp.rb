@@ -1,8 +1,8 @@
 class Kapp < Formula
   desc "CLI tool for Kubernetes users to group and manage bulk resources"
   homepage "https://carvel.dev/kapp/"
-  url "https://ghfast.top/https://github.com/carvel-dev/kapp/archive/refs/tags/v0.65.3.tar.gz"
-  sha256 "ef9ddd75f1b77dc87e285fba47bac094543060a1b463aafcb37faf8536d17c07"
+  url "https://ghfast.top/https://github.com/carvel-dev/kapp/archive/refs/tags/v0.65.4.tar.gz"
+  sha256 "96ef9346efd6fcfe087441a16ae17c0c27a4174311322d41dbfbbd8014a24cdf"
   license "Apache-2.0"
   head "https://github.com/carvel-dev/kapp.git", branch: "develop"
 
@@ -12,12 +12,12 @@ class Kapp < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "576db089f2de933d95db8353fc668c54dddd8ff5e5f3a1514ee6c00942c65708"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "576db089f2de933d95db8353fc668c54dddd8ff5e5f3a1514ee6c00942c65708"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "576db089f2de933d95db8353fc668c54dddd8ff5e5f3a1514ee6c00942c65708"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f9ef388ddcafbb44e07edfc635884e820d5dad61c4b422b97fcdc9948efb9b67"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d46915f1571cde23ca182513551d0545de6d8a5245eb2fec7cda394cb439c985"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6a46570ac3f6c48999438d06cd78d01e212ba9fefea2e644ff15e19f85b619fa"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3c219034d8b60b2d8b865076e48dd82588b3ad1c3fe3bdf5a8cde33b5956e19c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3c219034d8b60b2d8b865076e48dd82588b3ad1c3fe3bdf5a8cde33b5956e19c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3c219034d8b60b2d8b865076e48dd82588b3ad1c3fe3bdf5a8cde33b5956e19c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5520b982838c60fbfb80a10eb249dd0f3a3c5e08f268e978cc60c25f8f2765ae"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "29814e111c5e24f4f7df161ee04cd27c69f2cd583051d15b3ba141a304cca000"
+    sha256 cellar: :any,                 x86_64_linux:  "a0675c094df1ddac15697ac010ed69de9c0833459cda047ba26d4331ef1e5818"
   end
 
   depends_on "go" => :build

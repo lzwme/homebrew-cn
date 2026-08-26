@@ -17,7 +17,7 @@ class Flow < Formula
 
   depends_on "rust" => :build
 
-  conflicts_with "flow-cli", because: "both install `flow` binaries"
+  conflicts_with "flow-cli", "flow-control", because: "both install `flow` binaries"
 
   def install
     ENV["RUSTC_BOOTSTRAP"] = "1"

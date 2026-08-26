@@ -4,17 +4,16 @@ class Mfem < Formula
   url "https://ghfast.top/https://github.com/mfem/mfem/archive/refs/tags/v4.9.tar.gz"
   sha256 "ea3ac13e182c09f05b414b03a9bef7a4da99d45d67ee409112b8f11058447a7c"
   license "BSD-3-Clause"
-  revision 1
+  revision 2
   head "https://github.com/mfem/mfem.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "a54e5122fd7056a63b49ae8792030d8282ff6fcba6165a72736be929a8a7f4f5"
-    sha256 cellar: :any, arm64_sequoia: "24fabdaf8c24694ccafd0aef12f7b7b91929d505d17b7ea1f37b2a75d86200cb"
-    sha256 cellar: :any, arm64_sonoma:  "34395676344ef42170fd5e9e3a6098955b848618b3303fba25239e5833c1c0f2"
-    sha256 cellar: :any, sonoma:        "53c833b0c1399ab4ad009ab7684f60ca0faa676277feaa8c6e129d07ee06f149"
-    sha256 cellar: :any, arm64_linux:   "dd75e7123c0f6b0054c074c518b8d3cc21f29c950c9cb1b7d85109b87687c4ca"
-    sha256 cellar: :any, x86_64_linux:  "3352b39f74d0b8eb05cce1d8c18fa67a91784fc3d026752a1c644cb0da4b935d"
+    sha256 cellar: :any, arm64_tahoe:   "ab9af5e6f8c9ca0520522c9473fb955d07d2c2962e69f8537f43f258260f7e9b"
+    sha256 cellar: :any, arm64_sequoia: "57f599adc593f46f61c7cf576f2d1e0fb2cf4c9660d3d5863c13f5f93ada8782"
+    sha256 cellar: :any, arm64_sonoma:  "c20b72b640ef303949fcc34f56598a14a5f34142d3cdfa71a480660c5b941b94"
+    sha256 cellar: :any, sonoma:        "4c5dd871cf6993bd2d3757751de00a4d5fcc8b38fefd6c6753c79380f1777bc2"
+    sha256 cellar: :any, arm64_linux:   "dd6f4d151c1ae7b5ce3274d450afa37e74cb4d8580af46fc24f4c1f89647e8ae"
+    sha256 cellar: :any, x86_64_linux:  "ab64368a4f7f0be0acb93072e9efed189bdad87c4446e6cc20df60f8e1e1ee9b"
   end
 
   depends_on "cmake" => :build

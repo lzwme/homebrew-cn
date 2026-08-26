@@ -14,15 +14,15 @@ class OpensslAT3 < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_tahoe:   "2d995a1bbbd8e6ee6a9042990dde87e7321d1ddd5716ffee53b140d23cb9f92f"
-    sha256 arm64_sequoia: "f8b0b5b2eda9321265b7483ce7ea167012c32afed73a127e8e18ebe9f1d9dffe"
-    sha256 arm64_sonoma:  "79774ba3c854f0a9f94d939c628414c9b3dd2ff5eeb1dc61743199c979dd3490"
-    sha256 tahoe:         "d17e12cebe59a324d5605b87dee03c5265d5ea32284e8a275294781ee6e9d990"
-    sha256 sequoia:       "5477285c4ebec45713873ae4002affece39e427c5f1b655c6a3df49c6b90f924"
-    sha256 sonoma:        "f641a0a3028a7ba2ab247767a6961226ba8c1777dac6e986e6fc62ec09e4a62a"
-    sha256 arm64_linux:   "a965701c8ed6f7e2bf971a7a5668381c5d4e11f4a680fcf19b79ecbdf097867c"
-    sha256 x86_64_linux:  "d9996e71b5caa202929fe512179516befeea35e205425beb8a35ed099eb8e47a"
+    rebuild 2
+    sha256 arm64_tahoe:   "2e0d0064219ff12cef90d794ac87da8d5dbc091060a1100291e692c9377a9328"
+    sha256 arm64_sequoia: "fe8806b81ab6906d2e355e7455b60fd73e2746bf8eaa257e03029b7fbadb51f4"
+    sha256 arm64_sonoma:  "bcc920ec4b157ba2fb001ef3e701ea35beb860814f21414a9af8d95ad9af4b27"
+    sha256 tahoe:         "65934be4cf0b0aa46d502f60ed15bf879c84932ab79d975ad73541c182a8df6e"
+    sha256 sequoia:       "639e9bd5f9002411601529fd7cfd23043670c451b7fef9356fafb9556e9ade69"
+    sha256 sonoma:        "756b4206f7032468825c0494ec46cc519666be06d40f068d68f20ad229a01681"
+    sha256 arm64_linux:   "8c149300f890514f89a883e60d6143e0eeb6213f32f457236cc2a8b3adde0597"
+    sha256 x86_64_linux:  "239ee48da2eafa3b5df11a20068e0dc3dfaa20f34bab097cb34733dc1d5166b2"
   end
 
   depends_on "ca-certificates" => :no_linkage
@@ -90,6 +90,9 @@ class OpensslAT3 < Formula
     end
     args
   end
+
+  # Tests require network access
+  allow_network_access! :build
 
   def install
     if OS.linux?

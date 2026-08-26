@@ -3,8 +3,8 @@ class V8 < Formula
   homepage "https://v8.dev/docs"
   # Track V8 version from Chrome stable: https://chromiumdash.appspot.com/releases?platform=Mac
   # Check `brew livecheck --resources v8` for any resource updates
-  url "https://ghfast.top/https://github.com/v8/v8/archive/refs/tags/15.2.124.13.tar.gz"
-  sha256 "65032d421b310f0dff7bac39402181da7030f910e4759eb366af6e7406db31d7"
+  url "https://ghfast.top/https://github.com/v8/v8/archive/refs/tags/15.2.124.18.tar.gz"
+  sha256 "2a737ad7edb8d2999313a7503d9958cec36a864639ee3b00f82c15b0114729c9"
   license "BSD-3-Clause"
 
   livecheck do
@@ -24,12 +24,12 @@ class V8 < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "f905ca854628efcbf877615f0756e55c16c99550bb4cc07f8deb9ef7cd5006ad"
-    sha256 cellar: :any, arm64_sequoia: "08009ce31c40d196a2893a2d01f8b6106b5eeee5f4fb362b200e40b333c96e79"
-    sha256 cellar: :any, arm64_sonoma:  "06e8bf1676ab56d933b5ee5334576f8a9c6b64d718bc470ff2ef9321894315cf"
-    sha256 cellar: :any, sonoma:        "7ecf049d2d8f30dc552d9293ef48e10692028fdfa61f037180b41dbc4da7ed65"
-    sha256 cellar: :any, arm64_linux:   "e6a0574583dab103ab3f31b4e76742e754f171170b5b120b0b062cce730b987f"
-    sha256 cellar: :any, x86_64_linux:  "f40c633006f2130e28f8cab57a64bda1e22eb96d1f9368f9bab5fe58b48ae0df"
+    sha256 cellar: :any, arm64_tahoe:   "452c93b2f4971a1434a5768c53b9ef35974f1d38731cecab56bff4f8cfd9b3e1"
+    sha256 cellar: :any, arm64_sequoia: "7fb9669e8d9b9bd04df83df28c01825d9502462d0436e3945c2a6eb23d994ec8"
+    sha256 cellar: :any, arm64_sonoma:  "b543b58cb4ed84531676a3593380669d6305d6a1912f9d3f332e40d585efc235"
+    sha256 cellar: :any, sonoma:        "1760e8d14363e7b04fbd802d48216f5fe860a919d3258d65d0ec8b53bc62997f"
+    sha256 cellar: :any, arm64_linux:   "84077e86f3ea9fdcdee70b7b6c7ef236446b420f91a39857a95a9b09445d5e1a"
+    sha256 cellar: :any, x86_64_linux:  "3b29f57e74f078d4bc1767d9d7e41bad5cd2472d228185d08e2b953903142ecc"
   end
 
   depends_on "llvm" => :build

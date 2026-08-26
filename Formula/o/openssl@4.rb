@@ -1,9 +1,9 @@
 class OpensslAT4 < Formula
   desc "Cryptography and SSL/TLS Toolkit"
   homepage "https://openssl-library.org"
-  url "https://ghfast.top/https://github.com/openssl/openssl/releases/download/openssl-4.0.1/openssl-4.0.1.tar.gz"
-  mirror "http://fresh-center.net/linux/misc/openssl-4.0.1.tar.gz"
-  sha256 "2db3f3a0d6ea4b59e1f094ace2c8cd536dffb87cdc39084c5afa1e6f7f37dd09"
+  url "https://ghfast.top/https://github.com/openssl/openssl/releases/download/openssl-4.0.2/openssl-4.0.2.tar.gz"
+  mirror "http://fresh-center.net/linux/misc/openssl-4.0.2.tar.gz"
+  sha256 "736b467530f916737b7031310ccb21d8218c6229e61e8e160cd1d3458cd543a8"
   license "Apache-2.0"
 
   livecheck do
@@ -12,13 +12,12 @@ class OpensslAT4 < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_tahoe:   "df1f1b0af55395e4b3527b2c6d94cb2372cdca8f8414a8290e33f5b1c878e371"
-    sha256 arm64_sequoia: "500c12b28d754f34b36a193f3f1f8bf676e9bef0de18e641792df7a258fbad5a"
-    sha256 arm64_sonoma:  "fd66bb871b71a8904acdb4770aaefba1d4bf1089b643f0fcf70f7fe21efd3e03"
-    sha256 sonoma:        "e30016697c6b4686b2821c4e48c3b66e724da218424a7512ca09544eb76251b6"
-    sha256 arm64_linux:   "f0b8ea03f7e55eef4cbddd7f7449f325a3334a5a650e41c3fb5103c2687e1f13"
-    sha256 x86_64_linux:  "a014111c512510f60006435d7f8104e98cfbfffbfaf52e0e63252de522de7754"
+    sha256 arm64_tahoe:   "2742943fdd8150e103c39a9aeed12e43f02fa000376325e7bf9777223e01d45a"
+    sha256 arm64_sequoia: "8179e41f918b17d5abb711cc4a82d7f3fd5e24ac754570b476fb4f10097934df"
+    sha256 arm64_sonoma:  "e64521a48ded0b9d6609944973314da009329d47516d85ba25c27ba7c60f172a"
+    sha256 sonoma:        "f4c03c28ad367d82fcb6df1bb14e0c5067ecfb4ff88a93cf22cd5d25ac856e47"
+    sha256 arm64_linux:   "e6bbb81518fc93b7c838dbd8ad7250542b6451c547bfa4f74b963c765bbcf40a"
+    sha256 x86_64_linux:  "a6c90e1d28e9162beda1bd23fbeb60f2b36196d89217092867e929f45aa76277"
   end
 
   keg_only :versioned_formula
@@ -27,17 +26,8 @@ class OpensslAT4 < Formula
 
   uses_from_macos "perl" => :build
 
-  # Backport commits to avoid test intermittent failures
-  patch do
-    url "https://github.com/openssl/openssl/commit/1e386aab890b52f46641ab18e1a56cabb1b8c47b.patch?full_index=1"
-    sha256 "636f11a33a39536c1cc69426c73863db2b57be636b5977a4076b0995c342ef30"
-    type :backport
-  end
-  patch do
-    url "https://github.com/openssl/openssl/commit/d9f73e36c5fe720b3367e0fc6501683a3f91193a.patch?full_index=1"
-    sha256 "3508588c5e03ba6d3898512f0e8e3aa1f177e243c026884d6c31020359cae59e"
-    type :backport
-  end
+  # Tests require an internet connection
+  allow_network_access! :build
 
   def install
     configure_args = %W[

@@ -14,12 +14,13 @@ class Imagemagick < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "e4dc1c8ce8d4ace4b4ef8035bb1901210ea2dbbaaa657b4d33837e0c3df9ee8a"
-    sha256 arm64_sequoia: "d37caa2095d1bc4fa706de9b0b6dc6e095d810fb0c886193144c21645811ae0d"
-    sha256 arm64_sonoma:  "9d33ef2f40876425cbfd46608e7a6c9c04811b89cd700b1e27d2146e1960401f"
-    sha256 sonoma:        "b72c5b2944aae1a7b88fc7167b365ad945eb972b60cbb730f447ecdce8567568"
-    sha256 arm64_linux:   "beca67c63a4d7dd8168dce83afa5bd103a90303629b8b447ed1d870ba4585c34"
-    sha256 x86_64_linux:  "8465fd0ff8e169910bb017b6effc32aebefc83f147970e4132c974277f779666"
+    rebuild 1
+    sha256 arm64_tahoe:   "c123820f95ba715beadf736469d9c23bcb4600fe651c778a1fdd1fc176a2f7aa"
+    sha256 arm64_sequoia: "73b7e276aa10a6454ab4d25a5bc2f80dad18022017188df1908b029e39e70819"
+    sha256 arm64_sonoma:  "a65ae756ae2a904c6c2b873242985c7c0bb614473689b2e70b3e901402a619ff"
+    sha256 sonoma:        "164ae91fd53b77aaced5fa4d8cc6e5018d19f1b026bff9880d5c3f7db9b11a09"
+    sha256 arm64_linux:   "2707c63ae6aec785de64236863da68cdef4ff234762bcb69cd56f4611b4a8a36"
+    sha256 x86_64_linux:  "185142fd8d7ba1eb59ed93b13b0cebd484c39f10ea5e7ab593cdf32e04fb7df1"
   end
 
   depends_on "pkgconf" => :build
@@ -46,6 +47,8 @@ class Imagemagick < Formula
   end
 
   skip_clean :la
+
+  deny_network_access!
 
   def install
     # Avoid references to shim

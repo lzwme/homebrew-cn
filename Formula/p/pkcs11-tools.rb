@@ -1,8 +1,8 @@
 class Pkcs11Tools < Formula
   desc "Tools to manage objects on PKCS#11 crypotographic tokens"
   homepage "https://github.com/Mastercard/pkcs11-tools"
-  url "https://ghfast.top/https://github.com/Mastercard/pkcs11-tools/releases/download/v3.0.0/pkcs11-tools-3.0.0.tar.gz"
-  sha256 "da87f7371be0c94e6ae11cb65c033fbdc9be5549430b7c6f7a90abca200dcfcf"
+  url "https://ghfast.top/https://github.com/Mastercard/pkcs11-tools/releases/download/v3.1.0/pkcs11-tools-3.1.0.tar.gz"
+  sha256 "ef6d07b5527214cf8dcbed4f017569146f74dd6eb6aa9d5e7297418299b7947d"
   license "Apache-2.0"
 
   livecheck do
@@ -11,12 +11,12 @@ class Pkcs11Tools < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "c226d97ae6a863b54da9102b0e957528b0916d7c5301928d0be68589cbcf8d80"
-    sha256 cellar: :any, arm64_sequoia: "e9c6808bf746910582e3d676f0c2e7df3fcbe9a0735eb68c546dc001c59876c0"
-    sha256 cellar: :any, arm64_sonoma:  "d1aa10759d83a4c6a9cdb66a2619a9b0a53dce443c4a9daad5971e5283df0356"
-    sha256 cellar: :any, sonoma:        "1e633c9727fdb43fc0096ef9d9ec96af9cc4b2ff50258d2d204ec0ce1e36193a"
-    sha256 cellar: :any, arm64_linux:   "152142a9362cad79d82dddbe8a58eea70980306428735d230dc86ce4c8d89861"
-    sha256 cellar: :any, x86_64_linux:  "9f508ab8f95eb06dcc84950bae1b5c2901a48014a606e0b250ac236b34328b10"
+    sha256 cellar: :any, arm64_tahoe:   "5b02e59c3f8c22113c8b018ff174c8161114bb71d6fda388d15a5909742f4b27"
+    sha256 cellar: :any, arm64_sequoia: "9d27731ea76ada1931c7640bdd28941d96be8b3530606ddd2fdd75a6f38c8e67"
+    sha256 cellar: :any, arm64_sonoma:  "dadb18faf7a87e2533761708ba4544c0f5888827e1c7825beb7e4e29db500baf"
+    sha256 cellar: :any, sonoma:        "29de8f4a0e24abc961812265ca1d38fcf80492b6852bc2370a655311c00e7ef3"
+    sha256 cellar: :any, arm64_linux:   "1bdf74894a71fb209115f44c7d31d3f6b764d7c9253a9a093a302867645e0a97"
+    sha256 cellar: :any, x86_64_linux:  "21fd610270f0466e7874a83f473ce0f0c3f37f8a182366e2b37457f81c4f8978"
   end
 
   depends_on "pkgconf" => :build
@@ -25,14 +25,6 @@ class Pkcs11Tools < Formula
 
   uses_from_macos "bison" => :build
   uses_from_macos "flex" => :build
-
-  # Add `x` permissions to `with_pkcs11_common` script
-  patch do
-    url "https://github.com/Mastercard/pkcs11-tools/commit/13154703de39827c791c8e11e1a43e23edec2894.patch?full_index=1"
-    sha256 "4e5fd88dc06c6376c1ced8ddd60346368b2723a062920189d082ac61a4ce45ce"
-    type :backport
-    resolves "https://github.com/Mastercard/pkcs11-tools/issues/85"
-  end
 
   # Fix Linux build error using gnulib upstream commit.
   # ../gl/string.h:965:1: error: expected ',' or ';' before '_GL_ATTRIBUTE_MALLOC'

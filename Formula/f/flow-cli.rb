@@ -1,8 +1,8 @@
 class FlowCli < Formula
   desc "Command-line interface that provides utilities for building Flow applications"
   homepage "https://onflow.org"
-  url "https://ghfast.top/https://github.com/onflow/flow-cli/archive/refs/tags/v2.17.4.tar.gz"
-  sha256 "9d3e89a99405cfa7b2bbc07db6530ea65a8b6537aff381fe61e4a74f2afd8c3f"
+  url "https://ghfast.top/https://github.com/onflow/flow-cli/archive/refs/tags/v2.18.0.tar.gz"
+  sha256 "c3783a0a00fcc78e03f505fca5bf993bbbf6739d84308e4c0eeb17b013f899ac"
   license "Apache-2.0"
   head "https://github.com/onflow/flow-cli.git", branch: "master"
 
@@ -12,17 +12,17 @@ class FlowCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c36d514d70d4c1c9d5741d8c1eb6b627147d9b679d074eb52fee92f240a262d4"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5002dbfe838b9eadfaf71c824eecac942c104482b6c5c53f5f4c470eb2fe8210"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b8b13337076ee85e84c337c235bd0d128bf064d662fbc933f5a6c44281c113c9"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3dce70cb710abd43a64a7ec778b35f4ecc630fa286c4805a972e2a58f3ee3ab9"
-    sha256 cellar: :any,                 arm64_linux:   "c7234e9488456e929816a415be2ca14d3cdf1c25f64d88c6ffb06b8be8d966f5"
-    sha256 cellar: :any,                 x86_64_linux:  "ef4b2c0411c9f25ecba1577752ccae47e32b76494485893010fe0dba95865883"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bcace948ac000b96e1a896811bed9b9bb4f08aedec46bd1a8051410371d3e8ae"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8d2115453e2ee52c99ee7b30d22cb4d6eb39d5c8bf3bbf32c4a1dcb0be82a7bf"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e0460312bc38530e03624ab44f9f046787f697e986f8a7060849a484de388b4d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "57cf2dc1730d6cb535318280a785e54fcd7bcd0beb0c0f550f4d480f0a9f06bb"
+    sha256 cellar: :any,                 arm64_linux:   "76186f09c1910e520cdc2dfcb345280970499f8e04830db74cf8a04f952f0b3c"
+    sha256 cellar: :any,                 x86_64_linux:  "5de16b0fa49523139ce367c55c4330702666f94b3c928dbaad54e79c0223dfda"
   end
 
-  depends_on "go@1.25" => :build
+  depends_on "go@1.26" => :build
 
-  conflicts_with "flow", because: "both install `flow` binaries"
+  conflicts_with "flow", "flow-control", because: "both install `flow` binaries"
 
   def install
     system "make", "cmd/flow/flow", "VERSION=v#{version}"
@@ -34,11 +34,11 @@ class FlowCli < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/flow version")
 
-    (testpath/"hello.cdc").write <<~EOS
+    (testpath/"hello.cdc").write <<~CDC
       access(all) fun main() {
         log("Hello, world!")
       }
-    EOS
+    CDC
 
     system bin/"flow", "cadence", "hello.cdc"
   end

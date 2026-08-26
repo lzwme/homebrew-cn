@@ -8,12 +8,15 @@ class Coreutils < Formula
   compatibility_version 1
 
   bottle do
-    sha256 arm64_tahoe:   "85beae05ca59ba87d10380b529d6fb3837f3527c79a6045abb52643eb3ff2316"
-    sha256 arm64_sequoia: "e75a85cd1f8b672e5201b0ceb01e0191256a883ef358607014d872e13abd7e8e"
-    sha256 arm64_sonoma:  "c129203771d9d9ed082bca8ae0cbd796c5894bfb46a376befac5eca5fdf923e5"
-    sha256 sonoma:        "8b7880f72dbbcebbeb2205dcd89c1b080c37348f4b88c0bae97ba27d7cd8ff9f"
-    sha256 arm64_linux:   "75a7c53b9f0f58c0cd9df9562c91a83d3ab828075d8b3929b0f96bcf1b8c0581"
-    sha256 x86_64_linux:  "897ba82f564f78ce7f4b1c3574bba98c5bf296b230654f2ccdc3087b088d455b"
+    rebuild 1
+    sha256 arm64_tahoe:   "1d83338bdaa5e88791ee93827c7c3300e53ebec1f49a7457ea2423c738640f09"
+    sha256 arm64_sequoia: "ca348f4f13dd894e18d144376c089f284ceaa6057ddb3ef619c21854ffe676dd"
+    sha256 arm64_sonoma:  "2e43c4567c18397e01cbc420b9b3517f1e7413eb06a6f8035e2b9e66d533483e"
+    sha256 tahoe:         "977efb0a453a9925357946303a3c65082ebc0730f909fbda4a1cda8fcbbc8ba5"
+    sha256 sequoia:       "dc73c410c602bd1a311d70d3ba5a196d768ff0c89c64dd9db0635b8df52249f2"
+    sha256 sonoma:        "db6408fe1fba42dd98d6bfa1743c3428eacaf86ff8908dc10364c64b2c192490"
+    sha256 arm64_linux:   "687d582969ecd08dcaf9c495aa68322125f3c43492917af8c2f1537afae2a2e1"
+    sha256 x86_64_linux:  "a8b81719a9e729f94c5396e88a943d7cec9ccc5c9abf926e6ff7860948e25aee"
   end
 
   head do
@@ -49,18 +52,19 @@ class Coreutils < Formula
     %w[dir dircolors vdir]
   end
 
+  deny_network_access!
+
   def install
     ENV.runtime_cpu_detection
     system "./bootstrap" if build.head?
 
-    args = %W[
-      --prefix=#{prefix}
+    args = %w[
       --program-prefix=g
       --with-libgmp
       --without-selinux
     ]
 
-    system "./configure", *args
+    system "./configure", *args, *std_configure_args
     system "make", "install"
 
     no_conflict = if OS.mac?

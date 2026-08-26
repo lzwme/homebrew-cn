@@ -7,19 +7,6 @@ class GoAT125 < Formula
   license "BSD-3-Clause"
   compatibility_version 3
 
-  livecheck do
-    url "https://go.dev/dl/?mode=json"
-    regex(/^go[._-]?v?(1\.25(?:\.\d+)*)[._-]src\.t.+$/i)
-    strategy :json do |json, regex|
-      json.map do |release|
-        next if release["stable"] != true
-        next if release["files"].none? { |file| file["filename"].match?(regex) }
-
-        release["version"][/(\d+(?:\.\d+)+)/, 1]
-      end
-    end
-  end
-
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "61be046a0f2c3b9728763ae50ffa7448914c8737a460a4ea7189b877b8277b24"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "61be046a0f2c3b9728763ae50ffa7448914c8737a460a4ea7189b877b8277b24"
@@ -30,6 +17,11 @@ class GoAT125 < Formula
   end
 
   keg_only :versioned_formula
+
+  # EOL with Go 1.27 release (2026-08-19)
+  # Ref: https://go.dev/doc/devel/release#policy
+  deprecate! date: "2026-08-25", because: :unsupported
+  disable! date: "2027-08-25", because: :unsupported
 
   depends_on "go" => :build
 

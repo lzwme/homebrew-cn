@@ -2,7 +2,7 @@ class Dartaotruntime < Formula
   desc "Command-line tool for running AOT-compiled snapshots of Dart code"
   homepage "https://dart.dev/tools/dartaotruntime"
   # NOTE: Using a placeholder file because the build source is fetched by gclient
-  url "https://ghfast.top/https://raw.githubusercontent.com/dart-lang/sdk/refs/tags/3.13.1/README.md"
+  url "https://ghfast.top/https://raw.githubusercontent.com/dart-lang/sdk/refs/tags/3.13.2/README.md"
   sha256 "ff4301ec8e5c1259c5778c4abc947e303308cd31af30acd55575f5ca7ed6f405"
   license "BSD-3-Clause"
   compatibility_version 3
@@ -12,12 +12,12 @@ class Dartaotruntime < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "10b2d1c7b734a6842cf29dbee6a81c8432c6d2091e76da41f74f0595ec859eaa"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f94851c839b1ad390c31b7eeed919d829e2a703fc3f2a68309b323972ba4ab54"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "259e6ece2db65062eaef102ac5d60450660d6d02b2dcd28c972c5fa9d3e411b3"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4b1486251df5e488e4451f0fcba80c978618eacf06af1abf8f70f205f1bf5ea8"
-    sha256 cellar: :any,                 arm64_linux:   "9de1f0c573f99be85a83fee02637fecb50baf99cafec4211f3438ffb794420d2"
-    sha256 cellar: :any,                 x86_64_linux:  "5203b1a6b6ed645b460943afbc6273f04de48c97c955e77b05a915ae0279985d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3f9a11b5904f2895f1fc88e38e75321310a9632188d34e57b43c7fa377ea0b0f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3442db62a853db0532be4795be25e918d5540c6ccccb194185d5034126efaf0c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e2c3c811d72ccac45cea76318cc6aa99ecce1f5783d8bc8629d34b7f2a5fd1f2"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9ea091ed5f2a6e2bd3a466f327ba445f54aca6bb8b37450ea67f5481e98dfed0"
+    sha256 cellar: :any,                 arm64_linux:   "48a8b69d174e8ff5038966437813d3d2c7776af8a6b1afee786d2e1873afe08a"
+    sha256 cellar: :any,                 x86_64_linux:  "fc4290733c513e269e73c4f181182f55aa65c319b87b23a1a9532cdd885d2a2e"
   end
 
   depends_on "ninja" => :build

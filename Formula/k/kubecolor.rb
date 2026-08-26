@@ -1,18 +1,18 @@
 class Kubecolor < Formula
   desc "Colorize your kubectl output"
   homepage "https://kubecolor.github.io/"
-  url "https://ghfast.top/https://github.com/kubecolor/kubecolor/archive/refs/tags/v0.6.0.tar.gz"
-  sha256 "99b2126c4d33664220ee8270def853d668ebdb1418b1eeaf93b1ab7d8799561c"
+  url "https://ghfast.top/https://github.com/kubecolor/kubecolor/archive/refs/tags/v0.7.1.tar.gz"
+  sha256 "7c56c03e5a72ad8d78a0da317ef6e1b7aa56dd573854e4277f544707e4f85c1f"
   license "MIT"
   head "https://github.com/kubecolor/kubecolor.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "36e71da500cbc59671b5b611bf461ca10b103e131a76a3e2ca7dec6363c3a60b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "36e71da500cbc59671b5b611bf461ca10b103e131a76a3e2ca7dec6363c3a60b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "36e71da500cbc59671b5b611bf461ca10b103e131a76a3e2ca7dec6363c3a60b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "bafa41807766b97484a2b52ce12a12a8073c3d0f8f42c9b1c22b2c096c463be0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "377a61b6e424a4ba02829e8269b96de7a09e2f62e1613d087f278f0c259fa250"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "51bedafaf03131d6e77b1f934e7bfd0a1511060b480f1166ce937fab36b1db76"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "047f880ed5a77aa531444fba7011668e0a809120b6c2db4ee2baf0adb7d612b7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "047f880ed5a77aa531444fba7011668e0a809120b6c2db4ee2baf0adb7d612b7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "047f880ed5a77aa531444fba7011668e0a809120b6c2db4ee2baf0adb7d612b7"
+    sha256 cellar: :any_skip_relocation, sonoma:        "85ba0dbfd11497501694537435b603ad3551218704d99859a95d9f9e92d896ab"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3142ed58b0c4c6470136b681ef72470717af9cd5e76fffc9cf29d07403819c25"
+    sha256 cellar: :any,                 x86_64_linux:  "fb07a18e26f80f9e50155d095417f93a04013014e4857e072cdc73065ef5389f"
   end
 
   depends_on "go" => :build

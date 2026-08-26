@@ -3,8 +3,8 @@ class Torrra < Formula
 
   desc "Find and download torrents without leaving your CLI"
   homepage "https://torrra.readthedocs.io/en/latest/"
-  url "https://files.pythonhosted.org/packages/4c/63/5f06c0390ab536b6c5db0136849880e61efe30f2e1860ffe6cbadc48f30e/torrra-2.1.3.tar.gz"
-  sha256 "365e713a2e4fb7349b62a76146c00a9d77a5b13924553c56d78ef3a77bba367d"
+  url "https://files.pythonhosted.org/packages/74/5a/73796382a329f9d76a7fd9793e85880e9b80de73200cfb7bb37a7b546707/torrra-2.3.0.tar.gz"
+  sha256 "04fc673af828e94d3c10f28934209ce7427d32ea82ed26f1ac209d0b990e5a8d"
   license "MIT"
   head "https://github.com/stabldev/torrra.git", branch: "main"
 
@@ -14,7 +14,7 @@ class Torrra < Formula
   no_autobump! because: "`update-python-resources` cannot determine dependencies"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "e19daa862db142763da7a87f956dc299913728daf8727ce3b3b08a28a24f9c83"
+    sha256 cellar: :any_skip_relocation, all: "3e3d1f17dbcea2eaeebeb92b5f252f2674cca535a1f33ad7ac1ae2af527e6468"
   end
 
   depends_on "certifi" => :no_linkage
@@ -79,8 +79,8 @@ class Torrra < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/b8/d7/e7bfbc86e9f99ff7807e24de7703f032e9c9ba80bb355cf26e0e9bc5a75e/platformdirs-4.11.3.tar.gz"
-    sha256 "66a73d38a849810252df809a3d8bcbda8e26f6c189920e7535ad608a48dbb5ab"
+    url "https://files.pythonhosted.org/packages/50/bb/ebc6636e1ae41314f796ebb7215fd28febb45f9aac72f2b04cb74b5071dc/platformdirs-4.11.4.tar.gz"
+    sha256 "f3373be828247211d0febabea97e238c3dfde8a60b3c90c32756fb52cb21556d"
   end
 
   resource "pygments" do

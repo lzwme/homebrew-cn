@@ -16,12 +16,13 @@ class Ollama < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2bc9bd9efad19830386fdbae22dc55d488bdb7d5d2d1b627987fd84376cce92f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8c50ade984dff2df2be40cf25c3ab731964c1016bbcc308efe874953221b104e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "584febeaa14ce3e2bfce934195dd2b06145ad2f992225d817f7468c3d76439b9"
-    sha256 cellar: :any,                 sonoma:        "56ef64a61d95c82538bbb99455edb23b8029ad63cd8739cdd8716168b434046f"
-    sha256 cellar: :any,                 arm64_linux:   "4999786a4444aed7d99767bd36959615507080cea80f7df96313ec3c1906a335"
-    sha256 cellar: :any,                 x86_64_linux:  "d80922c4f01abef0c6cd3814b836e71917ccb142e4f6f4acdd1fc08384192a30"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "79e247a6a1834c702f384145c792a6d705ec1798f79cfa0b154327c7a1f43cf0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "81d94a1442e1e6fafca036aa4f774eca72f9849a5e864fb43c9f5e16bce32c32"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "795ee81ce557d3390d5c57aa2c8e4fb9f7b03dfc68d4c29970b8e7252f935fca"
+    sha256 cellar: :any,                 sonoma:        "e217c86304076cc907c50fb9acc70657e4a1790634c14e8d5d306c76ab34b2a8"
+    sha256 cellar: :any,                 arm64_linux:   "4ac42530d8812df4dbaaae1f15fb3710c51d5064f185aef2be798f394e9766dc"
+    sha256 cellar: :any,                 x86_64_linux:  "9ce3069f545aba79c514ae3dacfd7619216ba77d3aaf8a2c05ef4caffd2a88e2"
   end
 
   depends_on "ccache" => :build
@@ -58,6 +59,9 @@ class Ollama < Formula
       type :unofficial
     end
   end
+
+  # downloads go modules in install and runs a server in test
+  deny_network_access! :postinstall
 
   def install
     # Build llama-server

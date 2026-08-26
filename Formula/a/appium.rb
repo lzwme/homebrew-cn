@@ -1,18 +1,18 @@
 class Appium < Formula
   desc "Automation for Apps"
   homepage "https://appium.io/"
-  url "https://registry.npmjs.org/appium/-/appium-3.6.0.tgz"
-  sha256 "ea722c272d117ffac7e265e6565651f3835efbcea670f82a16f4e75de120b76e"
+  url "https://registry.npmjs.org/appium/-/appium-3.7.0.tgz"
+  sha256 "a6f99adf70a8815039c8c20d07d359b11e60f062dd04b5171cfc84e429017599"
   license "Apache-2.0"
   head "https://github.com/appium/appium.git", branch: "master"
 
   bottle do
-    sha256               arm64_tahoe:   "45f86524720a42ca1364a4f2fcb84f83ca0542aedb11a90b23f8996854e858e2"
-    sha256               arm64_sequoia: "0f50607c1e63220d3ca04ed7781e716b46c3778366861b2891ef4414feb4cbcb"
-    sha256               arm64_sonoma:  "ab8e4eececf4d3db3a98b255290e7a5df1ec30a04644e7f3163dfceb87dc691b"
-    sha256               sonoma:        "bf21444ca92ed4ecf9dfc87527bfad786406016b14d36e56971c65724421a846"
-    sha256 cellar: :any, arm64_linux:   "d52a8cd203c1cde7bff6b42c90c24b0893cb2eb9eca4a01f904a98baef8bddc4"
-    sha256 cellar: :any, x86_64_linux:  "04873cf9795bc8d5308858e3d74eb12639f6e2e28f01a939298a3b45109b8029"
+    sha256               arm64_tahoe:   "6b7ce93a65aa46817aa047a3ffaf655e1b3c7b2dad74181943d8fc9d3fcfe075"
+    sha256               arm64_sequoia: "955a6808b9d1be5dfeeda02cbb11ecf1a97634ed820dceb50bb7e0fe37b1bdeb"
+    sha256               arm64_sonoma:  "cb186ec4f1d332088c5b0b47aa2c499e75041c772348a816154cd68472ff5efb"
+    sha256               sonoma:        "355bbff3a063c3d2c1dac9a08d59c3e7f7fcb8163d110639777ac33e26bf21aa"
+    sha256 cellar: :any, arm64_linux:   "32ca99cb37380a31b536ae0df2bf34da1b4c94f30d3dd7a844e43f8530136d4d"
+    sha256 cellar: :any, x86_64_linux:  "75af3b1ac2c7b69fcc111d62986115189aad8da477c3a9219bd20dc657acef6a"
   end
 
   depends_on "pkgconf" => :build
@@ -27,8 +27,8 @@ class Appium < Formula
   # Resources needed to build sharp from source to avoid bundled vips
   # https://sharp.pixelplumbing.com/install/#building-from-source
   resource "node-addon-api" do
-    url "https://registry.npmjs.org/node-addon-api/-/node-addon-api-8.9.0.tgz"
-    sha256 "19b87e2ce3a77fec0121ac97d7db088aae28aacfff481adab50d5f61b70e68f4"
+    url "https://registry.npmjs.org/node-addon-api/-/node-addon-api-8.9.2.tgz"
+    sha256 "4cd65698541b19a33f798f1dc25c02c6ed1c9d7749b8824b1a1ccecdd197c8ea"
   end
 
   resource "node-gyp" do

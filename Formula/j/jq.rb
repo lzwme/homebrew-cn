@@ -12,12 +12,13 @@ class Jq < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "f6ec821177b4c55fefb4c58f8e6f5d8386a5fce0a3c5d8811c4d6a0cc818dead"
-    sha256 cellar: :any, arm64_sequoia: "29c079abc7e165583b7fc4d3feba7a21a12160a414a7d4202731f7ffa2e349de"
-    sha256 cellar: :any, arm64_sonoma:  "c5710de7fe77793fda8d4c550e5450b9fd77f9caf4a90c01be3a0969a8c078e8"
-    sha256 cellar: :any, sonoma:        "0a471afde49b03dd7a8a1100c2581dc35ae49b3877a9c37fa219aeccdb998154"
-    sha256 cellar: :any, arm64_linux:   "30137e8a68ffb92bc8e16494f1509f0c08b404cae8a0842e15b63f46e4baf028"
-    sha256 cellar: :any, x86_64_linux:  "c3e26f0bff91db3e6606c3fc23ebe5dc2b1e9854252e6e4a3e03b17f7a3cde4e"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "ca67c64d0aaf1e5472790ec2cc081ff7972316f27095d8a8aab81b3321247036"
+    sha256 cellar: :any, arm64_sequoia: "ef70e236f58a8a781436ee400f9bdf847ad7d12e75115871fb6a94b9214a1a41"
+    sha256 cellar: :any, arm64_sonoma:  "39f30266edd431962b606353091035a9cec9a61437252f448a3a8cf69dbc0551"
+    sha256 cellar: :any, sonoma:        "af9ddba2379910ceed96961891002b1c8c133f6f3f290ccb3d7c7d877dd4e9e9"
+    sha256 cellar: :any, arm64_linux:   "d67a00e578f6684163660fed1accb56ef87b01651e37dec737d362d09ece9eab"
+    sha256 cellar: :any, x86_64_linux:  "631787d9b19df5e5557cc83f972080e541f543f8df2d1f212ca4290ff23e9764"
   end
 
   head do
@@ -29,6 +30,8 @@ class Jq < Formula
   end
 
   depends_on "oniguruma"
+
+  deny_network_access!
 
   def install
     system "autoreconf", "--force", "--install", "--verbose" if build.head?

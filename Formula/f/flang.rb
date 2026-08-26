@@ -3,7 +3,6 @@ class Flang < Formula
   homepage "https://flang.llvm.org/"
   url "https://ghfast.top/https://github.com/llvm/llvm-project/releases/download/llvmorg-22.1.8/llvm-project-22.1.8.src.tar.xz"
   sha256 "922f1817a0df7b1489272d18134ee0087a8b068828f87ac63b9861b1a9965888"
-  # The LLVM Project is under the Apache License v2.0 with LLVM Exceptions
   license "Apache-2.0" => { with: "LLVM-exception" }
   head "https://github.com/llvm/llvm-project.git", branch: "main"
 
@@ -12,27 +11,20 @@ class Flang < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "8892edbaad2e5bf56311a0d0ce8412f30a7fc3932011e96f11e76282b079b0ea"
-    sha256 cellar: :any, arm64_sequoia: "61ad234cf8b2d1c97186a5e41f96972d698528c5e4e6a5a5944190fc895959fb"
-    sha256 cellar: :any, arm64_sonoma:  "10241f1565721777b16e49700503f61660d6ec3b256aa5045af8c9629f6118e9"
-    sha256 cellar: :any, sonoma:        "eb2d34611686a91b0cdaf4082c74905c6d04360d7d497d6eaf4f43e87ceaf5a5"
-    sha256 cellar: :any, arm64_linux:   "b5874d42e2a440f514958fdf226c886b4413779baaed8136d2e1c1524779edf4"
-    sha256 cellar: :any, x86_64_linux:  "89f48f55804fc5cdbd5295b89ea59d77ec8fc3ed11fadfdb473f6a926fdd158e"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "20b758ea0f85206173d2e5d0cb1fae821c1e564734ef41710c0dcce16ecae001"
+    sha256 cellar: :any, arm64_sequoia: "52eda2ab54bbd01f932b378d0f9252c603991777e1a8ba82e1c2e0dcfb8008d5"
+    sha256 cellar: :any, arm64_sonoma:  "7d954df221c0306b9ac081664929e5e8d846af67f5369bb731c603003de15dfa"
+    sha256 cellar: :any, sonoma:        "ffa0ea875d7f2df92b0e6626ceefaf14b7bf9c1f6f770bbd732e54b04a172b10"
+    sha256 cellar: :any, arm64_linux:   "fa97216a9bbab8cb142d0a997971de723fa64e037d6bfc0e1129927a1a7ec0bf"
+    sha256 cellar: :any, x86_64_linux:  "2ffd460a8f75247262e09eb2854d007fa85b9c86a855196d78f6db4dd53a072a"
   end
 
   depends_on "cmake" => :build
   depends_on "ninja" => :build
   depends_on "llvm"
 
-  # Keep broken symlink if `llvm` has been unlinked on Linux.
-  skip_clean "lib/LLVMgold.so"
-
-  # Building with GCC fails at linking with an obscure error.
-  fails_with :gcc
-
-  def llvm
-    Formula["llvm"]
-  end
+  def llvm = Formula["llvm"]
 
   def install
     resource_dir = Pathname(Utils.safe_popen_read(llvm.opt_bin/"clang", "-print-resource-dir").chomp)
@@ -63,7 +55,7 @@ class Flang < Formula
       -DCMAKE_Fortran_COMPILER_WORKS=ON
       -DCMAKE_Fortran_COMPILER=#{bin}/flang
       -DFLANG_RT_ENABLE_SHARED=ON
-      -DFLANG_RT_ENABLE_STATIC=OFF
+      -DFLANG_RT_ENABLE_STATIC=ON
       -DFLANG_RT_INCLUDE_TESTS=OFF
       -DLLVM_BINARY_DIR=#{llvm.opt_prefix}
       -DLLVM_ENABLE_RUNTIMES=flang-rt
@@ -81,25 +73,19 @@ class Flang < Formula
     system "cmake", "--build", "build-rt"
     system "cmake", "--install", "build-rt"
 
-    # Add symlink for runtime library as it won't be found when resource-dir is
-    # overridden by flang.cfg. This also allows shared `flang-rt` on Linux to
-    # avoid extra RPATH. See if the upstream provides a better way of handling:
-    # https://github.com/llvm/llvm-project/blob/main/flang-rt/CMakeLists.txt#L120-L130
-    lib.install_symlink (prefix/relative_resource_dir).glob("**/#{shared_library("*")}")
+    # Add symlink to avoid extra RPATH on Linux. See if the upstream provides a better way of handling:
+    # https://github.com/llvm/llvm-project/blob/main/flang-rt/cmake/modules/AddFlangRT.cmake#L379-L392
+    lib.install_symlink (prefix/relative_resource_dir).glob("lib/*/#{shared_library("*")}")
 
-    # Allow flang -flto to work on Linux as it expects library relative to driver.
-    # The HOMEBREW_PREFIX path is used so that `brew link` skips creating a symlink.
-    lib.install_symlink HOMEBREW_PREFIX/"lib/LLVMgold.so" if OS.linux?
+    # Allow flang to find LLVM libraries as it expects them relative to driver
+    lto_library = shared_library(OS.mac? ? "libLTO" : "LLVMgold")
+    ln_s (llvm.opt_lib/lto_library).relative_path_from(lib), lib
+    (llvm.opt_prefix/relative_resource_dir).find do |src|
+      dst = prefix/src.relative_path_from(llvm.opt_prefix)
+      next if !src.file? || dst.exist?
 
-    libexec.install bin.children
-    bin.install_symlink libexec.children
-
-    # Help `flang` driver find `libLTO.dylib` and runtime libraries
-    # TODO: Try using CLANG_RESOURCE_DIR when building `llvm`
-    configs = ["-resource-dir=#{llvm.opt_prefix/relative_resource_dir}"]
-    configs << "-Wl,-lto_library,#{llvm.opt_lib}/libLTO.dylib" if OS.mac?
-    (libexec/"flang.cfg").atomic_write "#{configs.join("\n")}\n"
-
+      dst.make_relative_symlink src
+    end
     (prefix/"etc").install_symlink etc/"clang"
   end
 

@@ -1,17 +1,17 @@
 class Libre < Formula
   desc "Toolkit library for asynchronous network I/O with protocol stacks"
   homepage "https://github.com/baresip/re"
-  url "https://ghfast.top/https://github.com/baresip/re/archive/refs/tags/v4.10.0.tar.gz"
-  sha256 "b643ca0cb1a8fb8832124062ed4d3f31200f72f691423c6f8b64184a16606cd8"
+  url "https://ghfast.top/https://github.com/baresip/re/archive/refs/tags/v4.11.0.tar.gz"
+  sha256 "2a8cbf13719618d879464617512a80fe2c13fe63cd5461cf01a195fbe46b3ca4"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "bd03d105148fd0d49ffbf6b8ac9b32e56c559a92ae55647d8999d14714486659"
-    sha256 cellar: :any, arm64_sequoia: "5ef82c9afd07257e91246eed357fd062818c5af7683b2ce4783754dec3b2e8e2"
-    sha256 cellar: :any, arm64_sonoma:  "fd8e721edb17dcd71d4c337aa451e5d01cca6f23168d5bbd9020651211c75cc1"
-    sha256 cellar: :any, sonoma:        "a407602d0f57635da226ad915a00ab7dbe300107f2ed764408cec0a350813a5b"
-    sha256 cellar: :any, arm64_linux:   "e24c09aec039d167286a8a936a3be5a9ad6451231d643e95f1d45c1f4ec2ffff"
-    sha256 cellar: :any, x86_64_linux:  "8c8b9bab447ed04d1ec6dc7462df018453576fac0c3ef021c8152f208cba6313"
+    sha256 cellar: :any, arm64_tahoe:   "7c9675c05835fdbd4f376766c1b1ad3ecfd9391d169b4b453fd8d29e080b0c5c"
+    sha256 cellar: :any, arm64_sequoia: "3a57a3202d4ae5c0cd09ffab46bdf88ae9e2744e35dace9f3d36a485e9aacbba"
+    sha256 cellar: :any, arm64_sonoma:  "1fcc089c63d1547516603517ec686e8c739fafa095d32ba9e2b1cd5588672976"
+    sha256 cellar: :any, sonoma:        "56bde52ca922812b73a17dd46ccc379669741587f4e87d8df8514795205e4687"
+    sha256 cellar: :any, arm64_linux:   "cda723e5a2807fdd0a7109128f47dba4b7e129e74cac14100e58f75536aa8cd3"
+    sha256 cellar: :any, x86_64_linux:  "3f9a884f906877c1c7573e4ef63391291c45613cc9b33e69fd94fed6bcbcfa01"
   end
 
   depends_on "cmake" => :build

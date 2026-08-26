@@ -1,8 +1,8 @@
 class Limine < Formula
-  desc "Modern, advanced, portable, multiprotocol bootloader and boot manager"
+  desc "Modern, secure, portable, multiprotocol bootloader and boot manager"
   homepage "https://github.com/Limine-Bootloader/Limine"
-  url "https://ghfast.top/https://github.com/Limine-Bootloader/Limine/releases/download/v12.6.0/limine-12.6.0.tar.gz"
-  sha256 "3177b8a64297667a379feb3af6405b13c536409ce46d712ea1233e9ed1f87b9a"
+  url "https://ghfast.top/https://github.com/Limine-Bootloader/Limine/releases/download/v12.6.1/limine-12.6.1.tar.gz"
+  sha256 "76de3768cdd106ff54cdcbaa25c563971ee41ea17b11a9b0ffd5573d2b025c00"
   license "BSD-2-Clause"
 
   livecheck do
@@ -11,12 +11,12 @@ class Limine < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "1455dae17a8dbac390c61a31cafeaaeef60ee71d09b79b02592a32f6f937d307"
-    sha256 arm64_sequoia: "ffa9b051ff44a145582384b4cddb49f9fa0ac4ca562fd8952055a238400b1d5f"
-    sha256 arm64_sonoma:  "e8a4781e1c02d04cf3ab798c316c80175a1d99b1521dc96dc97a8181cb75e9ec"
-    sha256 sonoma:        "b557abc3f8ad0cc71cd071611cc251390990869305308c4ee838f3e7c2af323b"
-    sha256 arm64_linux:   "58f070f0ec5d2f09f2f4d4ee8a88acd27824c9e24f5370112302b24e930cf64e"
-    sha256 x86_64_linux:  "aeb8b767720cb24c5f2d9e8bf447185a9b6d39b6b025f8cd269d3d70e61a975a"
+    sha256 arm64_tahoe:   "b960d16d741f2e71f7b4be917fd886e75444bb387f2436b4a176b175f8b43b39"
+    sha256 arm64_sequoia: "37abbfef2bece3fa3fb2dffae3816b25a5935e0893eb245db9344e6a0040c670"
+    sha256 arm64_sonoma:  "e71b104ac4007438ccc6e2264da07706a5c9d30105f9e156649bf8f3eebe4247"
+    sha256 sonoma:        "6882a2928bca75a0a1f103f7450853e410b782e96d6f280cf484fcf9c42dc3ca"
+    sha256 arm64_linux:   "193261e4ae6d0abc5b6cac3b59497e3466458d66382815a3aff543392cd71af6"
+    sha256 x86_64_linux:  "f70781a317c785efd46bee3ecf588f749a61f0940d123b43c1223d74fb5a7115"
   end
 
   # The reason to have LLVM and LLD as dependencies here is because building the
@@ -30,20 +30,10 @@ class Limine < Formula
   depends_on "mtools" => :build
   depends_on "nasm" => :build
 
-  on_macos do
-    # Make < 3.82 picks matching implicit pattern rules in definition order instead of shortest-stem order
-    # (https://lists.gnu.org/archive/html/info-gnu/2010-07/msg00023.html)
-    #
-    # Upstream is aware of this issue, try moving back to system `make` on next release.
-    depends_on "make" => :build
-  end
-
   def install
     # Homebrew LLVM is not in path by default. Get the path to it, and override the
     # build system's defaults for the target tools.
     llvm_bins = formula_opt_bin("llvm")
-
-    ENV.prepend_path "PATH", Formula["make"].libexec/"gnubin" if OS.mac?
 
     system "./configure", *std_configure_args, "--enable-all",
            "TOOLCHAIN_FOR_TARGET=#{llvm_bins}/llvm-",

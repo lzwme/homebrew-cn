@@ -30,7 +30,7 @@ class JsonSpirit < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "boost"
+  depends_on "boost" => :no_linkage
 
   def install
     args = %w[

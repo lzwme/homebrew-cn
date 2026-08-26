@@ -1,8 +1,8 @@
 class CargoC < Formula
   desc "Helper program to build and install c-like libraries"
   homepage "https://github.com/lu-zero/cargo-c"
-  url "https://ghfast.top/https://github.com/lu-zero/cargo-c/archive/refs/tags/v0.10.24.tar.gz"
-  sha256 "91c6e0be34aa0ad26b7ef21ce21a390c95635e4e6e00b7a6ff07323f9af8550b"
+  url "https://ghfast.top/https://github.com/lu-zero/cargo-c/archive/refs/tags/v0.10.25.tar.gz"
+  sha256 "8054b12ae8b64259e7b63e40368406dd6b6510d5d92b658152b361c5d816a5de"
   license "MIT"
 
   livecheck do
@@ -11,12 +11,12 @@ class CargoC < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "66fa10af095494e68daa7d16baf8191e165135baf9dc82665b5cb0d981a91933"
-    sha256 cellar: :any, arm64_sequoia: "a7b9cdd530482eff1273e5cb2cd1c29e741e406adb259a52378900cdb7b03ef1"
-    sha256 cellar: :any, arm64_sonoma:  "97091b2ac1cc0557dde90136dc5c6918acc4b69d1b912a8389eb82847f44c6d9"
-    sha256 cellar: :any, sonoma:        "8833f495f8db789001c1f47a059166e2f63d3f6c2e4e56a480671f408f3ebe32"
-    sha256 cellar: :any, arm64_linux:   "457e66f7afa9f588b6d9e174facd2d73bc4ba0abee5ab92bee9bcbc59c8edd57"
-    sha256 cellar: :any, x86_64_linux:  "5086ad42e1dcdcccfdff9cb17d2d6f58a9d2c851b12b51ee3e501581add4629a"
+    sha256 cellar: :any, arm64_tahoe:   "e1b43d0a3545e016870eaaf8f56ea91a97bacde9ae62c75760ecf89072d6834d"
+    sha256 cellar: :any, arm64_sequoia: "d1eb740ec4422ff990e5ffb335d0f365f63819022024dd6a9c1d0bdbbadff0a5"
+    sha256 cellar: :any, arm64_sonoma:  "8e205671222539aef102d6b9bffbf01d87e274dc712a66160d5bad80297db49b"
+    sha256 cellar: :any, sonoma:        "55670bbbf5d710dfe39f5f37b108e01e2ea37837c71e51bbf580dd0d55ad97ba"
+    sha256 cellar: :any, arm64_linux:   "1bbab043357ea3f6258533f36e438c5dce8816fa7b2e7cb64ad334a956757a31"
+    sha256 cellar: :any, x86_64_linux:  "f3b1795463b298662aa084f2e09d0f50c5c41051d0f3b64be9d8f6cc3f13bada"
   end
 
   depends_on "pkgconf" => :build

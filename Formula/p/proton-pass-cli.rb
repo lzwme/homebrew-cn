@@ -1,22 +1,26 @@
 class ProtonPassCli < Formula
   desc "Command-line interface for Proton Pass"
   homepage "https://protonpass.github.io/pass-cli/"
-  url "https://ghfast.top/https://github.com/protonpass/pass-cli/archive/refs/tags/2.3.2.tar.gz"
-  sha256 "9b15641124c6a29eb7015f510cabc8f209fdef9274ace2821085eb02e37997ff"
+  url "https://ghfast.top/https://github.com/protonpass/pass-cli/archive/refs/tags/2.3.3.tar.gz"
+  sha256 "a064b89fc4fb5d2db47a99e46e1782b7672dc1078e2ecbb881d0910c01947611"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "38a6fa2eb26adc431cf0e61cb5ef9ed3d9b498e6ded13693976af4f9c2c61da7"
-    sha256 cellar: :any, arm64_sequoia: "a6d52f9747b9316f3e00b5c0cd03d69109bbdb4aa83cb22d6c8d8e34bac1d23a"
-    sha256 cellar: :any, arm64_sonoma:  "c817d8e5de79dc347620e0bcdb3806a169520d19e56d7cbb5d41f6e7e52553ec"
-    sha256 cellar: :any, sonoma:        "d11daf4c337ccbd8a8e40c88b0700ab2d8f56bfac367077129e004cc326c6075"
-    sha256 cellar: :any, arm64_linux:   "f819202a61dcad8a907a37c805e048bc3fcaabb44164a2b624a2cbb0803b9b60"
-    sha256 cellar: :any, x86_64_linux:  "118336f0c80d347450c1242a180fd7444524480845ea55d2bee3f2a44d0c8f3b"
+    sha256 cellar: :any, arm64_tahoe:   "7578f2ca2d0f263ab7b361d18a5859ff0df7aa2fcd2b44b59f283f1d6a385ca7"
+    sha256 cellar: :any, arm64_sequoia: "eae98cc909a9c68a05720dc53d287eec92ef241cb93df26b8c47fb75b7367696"
+    sha256 cellar: :any, arm64_sonoma:  "7c223fff651acee33bd3b45721748857a424ee4e25e748116f1b44b5883d17b2"
+    sha256 cellar: :any, sonoma:        "21cf3b64c173ed3632ac238564a1c8857ddafb62585b31dc90f5de9ccfa2615f"
+    sha256 cellar: :any, arm64_linux:   "8e4ed9615dff6a43ec79f6fa2fb9af170b710fff8b825aa73e1cb18c38e4bbbb"
+    sha256 cellar: :any, x86_64_linux:  "f18d354f99416626bce13f1911b36730e804eba7fc38f8f963a17b867572ee85"
   end
 
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "openssl@4"
+
+  # Upstream does not currently accept external contributions.
+  # Increase the recursion limit required to compile pass-cli 2.3.3.
+  patch :DATA
 
   def install
     system "cargo", "install", *std_cargo_args(path: "pass-cli")
@@ -40,3 +44,14 @@ class ProtonPassCli < Formula
     end
   end
 end
+
+__END__
+diff --git a/pass-cli/src/main.rs b/pass-cli/src/main.rs
+index 43cff31..55c8597 100644
+--- a/pass-cli/src/main.rs
++++ b/pass-cli/src/main.rs
+@@ -1,3 +1,4 @@
++#![recursion_limit = "256"]
+ /*
+  *  Copyright (c) 2026 Proton AG
+  *  This file is part of Proton AG and Proton Pass.

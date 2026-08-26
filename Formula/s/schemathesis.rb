@@ -3,17 +3,17 @@ class Schemathesis < Formula
 
   desc "Testing tool for web applications with specs"
   homepage "https://schemathesis.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/c9/e0/bba6582674338e217d3f21b989dd761c90e613f115aa16c0801c8eb415b6/schemathesis-4.25.0.tar.gz"
-  sha256 "656b945fd3ec4fc13fbf9922be0bf2b75234d02067ae2c8b4d399bd3a5b8f8aa"
+  url "https://files.pythonhosted.org/packages/6f/35/75220b21d261df932d516b3b75e525436b4e4f543c361728cbc943b2d48e/schemathesis-4.25.2.tar.gz"
+  sha256 "18bfad05b06b0442749b5bb232454798747eec5e8e71470da35cbfd92c12c6e4"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "f310fb3ecbab7d2359c37f3d100e5ade845fbb4cc568c768d5a3f58a2719256d"
-    sha256 cellar: :any, arm64_sequoia: "27e88e0fa9973836a62f9c5aeb96e4bb8474fae7a7b1ba7dea84a9d197184e85"
-    sha256 cellar: :any, arm64_sonoma:  "8ff9d43167ebc1f9b54a7ee70c756eeae8cc0ac872784707b34175b4c111fd85"
-    sha256 cellar: :any, sonoma:        "fc4876cffa18bcadd41215948b8af336a3a34852ea1cf48b03cbecf49f215aaf"
-    sha256 cellar: :any, arm64_linux:   "a7d50aa22ec567fdf2c4fcebaf8af36c57de0f04f558eea44f7ac41008b532a8"
-    sha256 cellar: :any, x86_64_linux:  "85ba5a8215433af0a504babbd203387a0355358d193aba8554b471854e400a4a"
+    sha256 cellar: :any, arm64_tahoe:   "68ed000fa4f2425d657ae29311cc921ff9121ff66ed76aa32e36ee81e6d94529"
+    sha256 cellar: :any, arm64_sequoia: "7329eeec845c7c56434b9853c0ced6af3f71cc5f7c904f3b5e5d0f0727e583c6"
+    sha256 cellar: :any, arm64_sonoma:  "0a873926966c05f9c577a34c6e014035e7ed9efbbd63f50224d2eac40ed9de45"
+    sha256 cellar: :any, sonoma:        "97bf7af4066d6d39888f60e9f3f43a5e38e3b50d36335015d4853f18594fb994"
+    sha256 cellar: :any, arm64_linux:   "76dfca2bb2701e80387d9f39f6a351f23810a36f43163ffc942bafb58ba120a1"
+    sha256 cellar: :any, x86_64_linux:  "2d20e99fb7e76fda8db63b4997b9af086d7240bda79b9449aec8b630555a0fac"
   end
 
   depends_on "rust" => :build # for jsonschema-rs
@@ -72,8 +72,8 @@ class Schemathesis < Formula
   end
 
   resource "jsonschema-rs" do
-    url "https://files.pythonhosted.org/packages/dc/4c/884abc9056018c2867da5769cf233813cad8273a2c882dd06aacec156d7b/jsonschema_rs-0.50.0.tar.gz"
-    sha256 "35e332764f46f5250fc752ea7ac7c975117f1727c324dbff09eb3d162a42b734"
+    url "https://files.pythonhosted.org/packages/cf/0d/b5c9780b84cd28ec49aed45aaf93be3b703cb2ece4752cfe1b298e045458/jsonschema_rs-0.51.0.tar.gz"
+    sha256 "151d00c74768a94010fabbc1156071838ec8dcdfa48b9efed34a542b1346ef0e"
   end
 
   resource "markdown-it-py" do

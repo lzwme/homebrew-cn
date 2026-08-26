@@ -8,17 +8,21 @@ class Fzf < Formula
   head "https://github.com/junegunn/fzf.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a00d85ae60381a4a945db1c6e0564a7d9236237242ac107f95f63269f891d2db"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a00d85ae60381a4a945db1c6e0564a7d9236237242ac107f95f63269f891d2db"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a00d85ae60381a4a945db1c6e0564a7d9236237242ac107f95f63269f891d2db"
-    sha256 cellar: :any_skip_relocation, sonoma:        "72719ff9522c1fce3245cfe9fcb04f6dd07c82788b78cb4f2bfcd7a05264de0b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "dd6d27a30bfec18151611fcdc4699a8bf23698d3414c680ac818a9e5d80d0150"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3da8748919980918205f6dd549a946bb95b10253c8f3c8f84c2dec39bf7e184d"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2ad5eca71970a9a7fdd5e6003d68f5dc2e2ef10e22215fb22e60ee1e14ec5877"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2ad5eca71970a9a7fdd5e6003d68f5dc2e2ef10e22215fb22e60ee1e14ec5877"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2ad5eca71970a9a7fdd5e6003d68f5dc2e2ef10e22215fb22e60ee1e14ec5877"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3a9d2260cdbe7895a49f6d7abe9d0833e0fb3867c3d439b79adf91d463fdce32"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a691456ecd9919d51d781ea93d7635106e30419a12efa3b5dda0eb46e6371bb3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b414418e73f90f291f356c7539953cd90653756996c733f94c0963b498cbd68f"
   end
 
   depends_on "go" => :build
 
   uses_from_macos "ncurses"
+
+  # install downloads go modules
+  allow_network_access! :build
 
   def install
     ENV["CGO_ENABLED"] = OS.mac? ? "1" : "0"

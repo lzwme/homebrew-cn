@@ -1,17 +1,17 @@
 class AgentBrowser < Formula
   desc "Browser automation CLI for AI agents"
   homepage "https://agent-browser.dev/"
-  url "https://ghfast.top/https://github.com/vercel-labs/agent-browser/archive/refs/tags/v0.34.0.tar.gz"
-  sha256 "9f7b8e0ff1ad2c414b0661e3910382c47d0e3cdc72ece07c00cf7f6319657074"
+  url "https://ghfast.top/https://github.com/vercel-labs/agent-browser/archive/refs/tags/v0.35.0.tar.gz"
+  sha256 "ea4331fae4ddbc1d787908011347234d5ddb88ec920dec7c7240801a9687d04a"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ece820bb4131e01775055576f3c4583d8ef2bbe72b947f50c24a4e5c871921d7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a25f2da0592d21272c7cb9e86a05d84ae0213048fff28f59618f73705b183f86"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "35c1c0c14795234e8c54e0311684769dcd69bbac7f2ac4c38a06ed0185538c4a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "75700283d2474e6c8a9e6fbfc79112da5a6116696bac61490206423bf398f0ab"
-    sha256 cellar: :any,                 arm64_linux:   "fb0b771f164107cd1354529504aa317961e0997ed050cbdb4435b5e6a18ca7d9"
-    sha256 cellar: :any,                 x86_64_linux:  "b4048a43ca45bf8f8b93099d4929c0db197fd62b1a23eafe7f14df4bf49e52e1"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ffc619ac94f05cabac74069055b21a37b4eef9b0208a8c02af65b940fb21c9c0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4b013fd19608b0bae0a9631b1b13d695ab3bbe0aa085df3af63554945c99fe4e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1d17f9620dd0f5b2767d9d77bfc8ee268b7c05251b283706b7afdff8b940fd61"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a17cf85bb326dff41d89efc302c830e218fa027cd528bdce437a3a09d832d59d"
+    sha256 cellar: :any,                 arm64_linux:   "e9cd3efce1d86ad9cc081148f509a721d2a58c55951513dccef7226d9e9db7f3"
+    sha256 cellar: :any,                 x86_64_linux:  "c8fca79ddba08a4fb9bf27b01c19ef685e2162f51727fe02722c12e7b37bfae3"
   end
 
   depends_on "rust" => :build

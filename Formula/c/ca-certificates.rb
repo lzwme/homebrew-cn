@@ -12,8 +12,11 @@ class CaCertificates < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "797af9bcf375fb49a98db40c3d5674276db1eb1b5e605ec98359619ed50948ba"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "37f5c1413f65c05d86e1279d76699f5d27ad77f8126f5776db13f3d64ee3d010"
   end
+
+  deny_network_access!
 
   def install
     pkgshare.install "cacert-#{version}.pem" => "cacert.pem"

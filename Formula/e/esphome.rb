@@ -3,8 +3,8 @@ class Esphome < Formula
 
   desc "Make creating custom firmwares for ESP32/ESP8266 super easy"
   homepage "https://esphome.io/"
-  url "https://files.pythonhosted.org/packages/74/51/9f1ba325fd0ee238c417b121a1b653387075b2f28bef34070d53aaaea144/esphome-2026.8.0.tar.gz"
-  sha256 "d203ed389016be7f8ace1ba7e74293b19ba136bf76f4551e2d134f92e6e84dc7"
+  url "https://files.pythonhosted.org/packages/46/7e/87496083330b2e16f2ca23f433dd48e04cf5876b2a80ae739f956d67c0fb/esphome-2026.8.1.tar.gz"
+  sha256 "e4abe58dec5f18e92df4fc80c667fdfafd583aab9d9eabe2834724660307e8b9"
   license "MIT"
   head "https://github.com/esphome/esphome.git", branch: "dev"
 
@@ -12,12 +12,12 @@ class Esphome < Formula
   no_autobump! because: "macOS resources cannot be updated on linux CI"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "0fd92c1b2863afaa0dfb3966b796272da2f94701432c2e9a440f277ce14470cc"
-    sha256 cellar: :any, arm64_sequoia: "d14e1506b0f03a40128100dd273ff204064fb2c57101644c25c97d6f13ca5bc3"
-    sha256 cellar: :any, arm64_sonoma:  "bd23fa1fe2819a2cf87a75c968b1fefa64c45be1302528bdfbfe1298e82b325a"
-    sha256 cellar: :any, sonoma:        "704f6879ece2599bdbae31f622495233a2d39991b3f247d9a87465ba974ccdb1"
-    sha256 cellar: :any, arm64_linux:   "817ee98015295785305a3ead66081a7871e937c6c755ad66b658ec0ae3c7b6bf"
-    sha256 cellar: :any, x86_64_linux:  "e82ede763929960239b090a07882dded967ff1189692d7df8be92f0daa7911be"
+    sha256 cellar: :any, arm64_tahoe:   "553358ecd1630eda79154b6da59e14ed6b2f9e57e5dba0da6ff5445b6ff9d265"
+    sha256 cellar: :any, arm64_sequoia: "5edc4700e4ed89120ecbaae1897496d4e72799a2d37a798afbfdf2f0efc53b39"
+    sha256 cellar: :any, arm64_sonoma:  "b43c5223721d153ec8517971568f9cdd74a77d0a799db1a2173b98ffae4ac7b1"
+    sha256 cellar: :any, sonoma:        "2b54d5cfeab21af6d30602443a2302fe0784b57d1b20b71f6a2efbb955d22c46"
+    sha256 cellar: :any, arm64_linux:   "fe6924ed2f31e9fe69f3389ee973a9e8cccc9634ca7d4031397c52c7e5d3a876"
+    sha256 cellar: :any, x86_64_linux:  "d0beb6f5e1c7e24b35f959620deddef993b60e4fb9e0d6fc1279851b0f307a72"
   end
 
   depends_on "rust" => :build
@@ -236,8 +236,8 @@ class Esphome < Formula
   end
 
   resource "protobuf" do
-    url "https://files.pythonhosted.org/packages/da/01/9ef0afd7999eb9badb3a768b4aedd78c86d4c65cfaf1958ab276199e76b4/protobuf-7.35.1.tar.gz"
-    sha256 "ce115a26fe0c39a2c29973d914d327e516a6455464489fe3cd1e51a1b354f81a"
+    url "https://files.pythonhosted.org/packages/a7/e7/0553e21d25ca4d9f573135775348a372c3ec34a93a71d5f297c3bac38341/protobuf-7.36.0.tar.gz"
+    sha256 "e8e09cb0d794c6687926fa558a8a6e72aa10edb997d5ca61da0765f12a3e00ea"
   end
 
   resource "psutil" do

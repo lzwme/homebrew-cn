@@ -1,8 +1,8 @@
 class FxAgent < Formula
   desc "Tiny, open, embeddable, native coding agent"
   homepage "https://fx.sh"
-  url "https://ghfast.top/https://github.com/vercel-labs/fx/archive/refs/tags/v0.0.5.tar.gz"
-  sha256 "f30e539ee943a5c70d3ba8d15f171e216798e0de368cf38eb7a90483e5eba582"
+  url "https://ghfast.top/https://github.com/vercel-labs/fx/archive/refs/tags/v0.0.6.tar.gz"
+  sha256 "30975a2f1b1ca07f132ee2641f904b6e30c64b3a05d5ed6edb27cf7bdd35b1ac"
   license "Apache-2.0"
   head "https://github.com/vercel-labs/fx.git", branch: "main"
 
@@ -12,12 +12,12 @@ class FxAgent < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ace185fc88d19677fd4ef395e0dfa16fda3888ded577aadd3f3cda413cacc811"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b77b09e4e60b1d787d9f1f4c163a4fa445bef413c91629e33f24619cdc730ee5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7d540236be76c76f02a14bbbe3ef4bc591e03947c48c47d6f553a41278c17e57"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2d22d79305050ec901b0d479529263a0f9f871e10314840658776ce83538f9a7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e00ee01560efc7ae044fec18f26d173343660e339238c895a65ea1806388f155"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8b5ebfa08877cc234674976c9c054edecf915a755dcd0cebadcb00137bb42631"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f7f11ba4891cc6d61c99755509c7b4f8d38c2f19e58423444e8424401d6606a5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9bdfbd1724750df2310b92495f231a0762a11c9030ac797a6365e97d9b81f534"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "adfbefcd7070c40f3a530df1e77d16bfa8845d20ddb4cd8bab72b2720d36287d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "982c866840d956a46ff5f4d70af9b21551824bdb5937226417665993aa1be5de"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "292b3812578b63dc59255743b6740bede217a4657e405799eb57944854fa423e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4c599602d657e1bdf3feaf6b50803af4fd46c2a7412212956501eedbfeb28158"
   end
 
   depends_on "zig" => :build

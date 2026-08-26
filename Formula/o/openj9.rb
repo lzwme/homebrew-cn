@@ -1,8 +1,8 @@
 class Openj9 < Formula
   desc "High performance, scalable, Java virtual machine"
   homepage "https://www.eclipse.org/openj9/"
-  url "https://ghfast.top/https://github.com/eclipse-openj9/openj9/archive/refs/tags/openj9-0.60.0.tar.gz"
-  sha256 "6f9f2a6afaaaf88f3eedd5224b303926f3386b96337c5d28bd71dae39e87f80d"
+  url "https://ghfast.top/https://github.com/eclipse-openj9/openj9/archive/refs/tags/openj9-0.61.0.tar.gz"
+  sha256 "903620a8a2625b2c1152a70cfb5ed935623da0b00b41ff12dbf34c526d5f5e17"
   license any_of: [
     "EPL-2.0",
     "Apache-2.0",
@@ -16,12 +16,12 @@ class Openj9 < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "d661591ff1c13949725265740f176cf79ddc82b5a13fbd95d888a1913d360b9b"
-    sha256 cellar: :any, arm64_sequoia: "7fd72691b782fe89b4adc42e6c5ecc95f038fd1cfb87425b11849cda8756f095"
-    sha256 cellar: :any, arm64_sonoma:  "745cc887bf4ad1c1537f0ad2421edb982e19cdda2d2668587cdc147fcb57f2aa"
-    sha256 cellar: :any, sonoma:        "2b4b07928126aeb9792d919e2850323e3b4439cd22352f3bcab38b86f2339566"
-    sha256               arm64_linux:   "44e2bb4d91fcd04e17cd95fe4b381ba8a725c896b3e83e501776d224f41d05d0"
-    sha256               x86_64_linux:  "8fe0396bf169be086335fa3cf2a5c25eba2df0e052c10ca29c76f158d574fae2"
+    sha256 cellar: :any, arm64_tahoe:   "8975b2aa675867b03babb4d95ab6ad79234bee91dfedfb15709f0d7d66dbb316"
+    sha256 cellar: :any, arm64_sequoia: "a4657536bfcb554f30285208dfd4fe411955ced94a731d2aa3fdb68062ddc5ff"
+    sha256 cellar: :any, arm64_sonoma:  "02c70e30a3f5997d9f3e6bd430d3c88513e3643041c613dc2564d8bf5344b089"
+    sha256 cellar: :any, sonoma:        "7df45ebe61b92d2927c7a16d54cdc595185c4809bf918bb98116c19d2618ea70"
+    sha256               arm64_linux:   "f46ad745dd7d13631120430a3b2e3deb53b7c6d5eae5c8047ef6bb6deec83ca5"
+    sha256               x86_64_linux:  "04675d6d8364029a190fec6013afed6c85700c98ceb7a3d46170729aefc7e600"
   end
 
   keg_only :shadowed_by_macos
@@ -66,9 +66,9 @@ class Openj9 < Formula
 
   resource "omr" do
     url "https://github.com/eclipse-openj9/openj9-omr.git",
-        branch:   "v0.60.0-release",
-        revision: "2e3166f7afc61f577ccaa63b85444b63b82491f7"
-    version "0.60.0"
+        branch:   "v0.61.0-release",
+        revision: "ebd02d9129dc06fa67a6f885f99a3926aa869154"
+    version "0.61.0"
 
     livecheck do
       formula :parent
@@ -80,9 +80,9 @@ class Openj9 < Formula
   # This matches official documentation and allows us to bootstrap from an OpenJDK formula
   resource "openj9-openjdk-jdk" do
     url "https://github.com/ibmruntimes/openj9-openjdk-jdk25.git",
-        branch:   "v0.60.0-release",
-        revision: "e4aaece3226fa3b588146d3ef3f52caa7afc3330"
-    version "0.60.0"
+        branch:   "v0.61.0-release",
+        revision: "fd5c7608e811f85a9c9ccaa7263dd52ae4171a0f"
+    version "0.61.0"
 
     livecheck do
       formula :parent
