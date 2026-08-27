@@ -49,13 +49,13 @@ class MariadbConnectorOdbc < Formula
       args << "-DICONV_LIBRARIES=#{MacOS.sdk_path}/usr/lib/libiconv.tbd"
     end
 
-    system "cmake", ".", *args, *std_cmake_args
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
 
     # By default, the installer pkg is built - we don't want that.
     # maodbc limits the build to just the connector itself.
     # install/fast prevents an "all" build being invoked that a regular "install" would do.
-    system "make", "maodbc"
-    system "make", "install/fast"
+    system "cmake", "--build", "build", "--target", "maodbc"
+    system "cmake", "--build", "build", "--target", "install/fast"
   end
 
   test do

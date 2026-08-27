@@ -2,8 +2,8 @@ class Ollama < Formula
   desc "Create, run, and share large language models (LLMs)"
   homepage "https://ollama.com/"
   url "https://github.com/ollama/ollama.git",
-      tag:      "v0.32.15",
-      revision: "b7871fc0d1d82fe109536efa3e0e8e411c766c75"
+      tag:      "v0.33.0",
+      revision: "ebf200f9521da9739a576a8bbf8cbf94e0cec6e3"
   license "MIT"
   head "https://github.com/ollama/ollama.git", branch: "main"
 
@@ -16,13 +16,12 @@ class Ollama < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "79e247a6a1834c702f384145c792a6d705ec1798f79cfa0b154327c7a1f43cf0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "81d94a1442e1e6fafca036aa4f774eca72f9849a5e864fb43c9f5e16bce32c32"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "795ee81ce557d3390d5c57aa2c8e4fb9f7b03dfc68d4c29970b8e7252f935fca"
-    sha256 cellar: :any,                 sonoma:        "e217c86304076cc907c50fb9acc70657e4a1790634c14e8d5d306c76ab34b2a8"
-    sha256 cellar: :any,                 arm64_linux:   "4ac42530d8812df4dbaaae1f15fb3710c51d5064f185aef2be798f394e9766dc"
-    sha256 cellar: :any,                 x86_64_linux:  "9ce3069f545aba79c514ae3dacfd7619216ba77d3aaf8a2c05ef4caffd2a88e2"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "28cc4db082d522e6f343913d12a3b21a68feeba136607d90b0dc8417464f4963"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ea72075419665f5db6f457c8e55a2c12bb37a36910f35e7649834a4c8187f431"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "04eb7d5734153af638f7d9183055fbcb08bd31c540020f3b1464ff27fa42849f"
+    sha256 cellar: :any,                 sonoma:        "468757a687075a47a72e35baeb538b6f0147420d735a7341cff8b0a95d308b86"
+    sha256 cellar: :any,                 arm64_linux:   "30a5e975c9568cfeb545d4f6ee00ded3e97db7a43494e95a0999b993da3ed7ee"
+    sha256 cellar: :any,                 x86_64_linux:  "f4c5fdaabd2229be6287c06616a7a96d0054542eba1acfbef41397364c103614"
   end
 
   depends_on "ccache" => :build

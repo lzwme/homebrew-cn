@@ -1,18 +1,18 @@
 class Cloudprober < Formula
   desc "Active monitoring software to detect failures before your customers do"
   homepage "https://cloudprober.org"
-  url "https://ghfast.top/https://github.com/cloudprober/cloudprober/archive/refs/tags/v0.14.4.tar.gz"
-  sha256 "2222863d15048b507b7f2ecbe45986d160654ce30034061423e640244b449c2e"
+  url "https://ghfast.top/https://github.com/cloudprober/cloudprober/archive/refs/tags/v0.14.5.tar.gz"
+  sha256 "0a12517c9e69e279d392e642b9b9040b4f7013a0035e496b7e23f08e978c82c3"
   license "Apache-2.0"
   head "https://github.com/cloudprober/cloudprober.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "98620d60e997c5fdc947b08cf9aa1e23c88f5d2726a1f9ea1e9d06465c072adc"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5f07c0d4803e1e4379f27055e9cc82d8286582a21817d9ee046601bbccb75f16"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7c1f1057ce7ddcb7f916477856a189a6a879e338f8a76be5a2b8cefd353acfc2"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e7a7052819d756b70e76a1df825d9a03ad2e5e65a703ef4581d4009b2c7b3c8e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6a427508ead40bca059414dc219e506fa95dbca3939409f3e7a66b0bde200838"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0e091ee05565985fc772cd2387f51bcae33d1c8f758eef5c56378fdb46e023cf"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b15dc8f8127d2ab035ec98791cd154d6065f58fde895c066591b9bdd9df67c77"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4442df6612be9a9aeb2363204499dcd3b651d1598e253c25b73d56acce18035e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fd1429f2155fcc2c08448914f11df44ff30a23233fabfe3f72a80539a7947583"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f7d60d6810bffd5ac870ec76fe24d800458349d55987d97cf5d08557235b0b4d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f1eea02a42fd51c04cbf37aad982fe690e258fa67d1119ae6ef16c8c056e07ec"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "02fa774371c89d65c8c1e382e5149736bebe8361823fc71c25af9f66975dcb21"
   end
 
   depends_on "go" => :build

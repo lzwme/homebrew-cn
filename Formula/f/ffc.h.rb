@@ -58,8 +58,8 @@ class FfcH < Formula
       target_link_libraries(ffc_install_test PRIVATE ffc::ffc)
     CMAKE
     ENV.prepend_path "CMAKE_PREFIX_PATH", prefix
-    system "cmake", "."
-    system "cmake", "--build", "."
-    system "./ffc_install_test"
+    system "cmake", "-S", ".", "-B", "build"
+    system "cmake", "--build", "build"
+    system "build/ffc_install_test"
   end
 end

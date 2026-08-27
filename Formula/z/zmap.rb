@@ -33,6 +33,8 @@ class Zmap < Formula
   uses_from_macos "flex" => :build
   uses_from_macos "libpcap"
 
+  deny_network_access!
+
   def install
     inreplace ["conf/zmap.conf", "src/constants.h", "src/zopt.ggo.in"], "/etc", etc
     args = %w[-DENABLE_DEVELOPMENT=OFF -DRESPECT_INSTALL_PREFIX_CONFIG=ON]

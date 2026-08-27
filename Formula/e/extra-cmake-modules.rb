@@ -35,9 +35,9 @@ class ExtraCmakeModules < Formula
       project(test)
       find_package(ECM REQUIRED)
     CMAKE
-    system "cmake", "."
+    system "cmake", "-S", ".", "-B", "build"
 
     expected = "ECM_DIR:PATH=#{HOMEBREW_PREFIX}/share/ECM/cmake"
-    assert_match expected, (testpath/"CMakeCache.txt").read
+    assert_match expected, (testpath/"build/CMakeCache.txt").read
   end
 end

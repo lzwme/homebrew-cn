@@ -2,8 +2,8 @@ class KubernetesCli < Formula
   desc "Kubernetes command-line interface"
   homepage "https://kubernetes.io/docs/reference/kubectl/"
   url "https://github.com/kubernetes/kubernetes.git",
-      tag:      "v1.36.4",
-      revision: "bb826b1d48562f110659e64e8ec444327433db95"
+      tag:      "v1.37.0",
+      revision: "f54c212e3a2f75d674b717a9b29052b20b60aefc"
   license "Apache-2.0"
   head "https://github.com/kubernetes/kubernetes.git", branch: "master"
 
@@ -13,12 +13,12 @@ class KubernetesCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d323ca79a98620e42213203b325fa65517280ec29359ea92b7e3a8a9ec1e93c5"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "64f40b1115c71ffb05905bda1f3b4ff1a2bab7498246b715f39ea5645ef1922b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "45e8dccb6fb540850d724a2050a502549cb1f3da87959e2b19152702b62b142c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "43270e71f53e5b2be4f6a1abbf9c5edeea4058b70c88b1dd9a0e95ee738c6f5f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5e98ada543cccc8f1ff303441ccebf1882a0a2857a44af40e0c527f0ded60664"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fdde2367cb05ce6ce7e8daeb20247d227a547a595875ca06a145b40176054d5c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d59d9b0bb76b639511954ba218a36cc56e097955ec8b74fde7d7c7457954ac76"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e2e9246d7ca9cab0fe14f95b748afbc92f740391ff5517f04c23424a2e6e50da"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a49e9a8e57b0cc08d96eb71f767eef0328ff6c8c18338d4eb9e4aea4bc5b0e96"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9d1c8e462f18489f32789a07ff911a8808a442d01043211961bfd7dd442b5220"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "28c865c371b31fa5a0637281c59d8e143cbf30c445fd8c0b783c339d019ef9de"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "da9b138e2251ca3d0fc2a3b35644fabf689d4ec552fc24e8e1d65682226622b0"
   end
 
   depends_on "go" => :build

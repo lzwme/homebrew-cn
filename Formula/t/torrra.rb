@@ -3,8 +3,8 @@ class Torrra < Formula
 
   desc "Find and download torrents without leaving your CLI"
   homepage "https://torrra.readthedocs.io/en/latest/"
-  url "https://files.pythonhosted.org/packages/74/5a/73796382a329f9d76a7fd9793e85880e9b80de73200cfb7bb37a7b546707/torrra-2.3.0.tar.gz"
-  sha256 "04fc673af828e94d3c10f28934209ce7427d32ea82ed26f1ac209d0b990e5a8d"
+  url "https://files.pythonhosted.org/packages/fe/57/40761bcc4eec8c7801ceea3475217e9538e7b1b4e4ae4cd81714814be79b/torrra-2.3.1.tar.gz"
+  sha256 "d9ad8f150eb3a7a259c4f850bdff144f307d4098fc4a30e82f2d7a9660f80f3a"
   license "MIT"
   head "https://github.com/stabldev/torrra.git", branch: "main"
 
@@ -14,7 +14,12 @@ class Torrra < Formula
   no_autobump! because: "`update-python-resources` cannot determine dependencies"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "3e3d1f17dbcea2eaeebeb92b5f252f2674cca535a1f33ad7ac1ae2af527e6468"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a147b56139c411ecdf3188c5033a9e72ddd422cea85bbae7751da943db8dbb33"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a147b56139c411ecdf3188c5033a9e72ddd422cea85bbae7751da943db8dbb33"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a147b56139c411ecdf3188c5033a9e72ddd422cea85bbae7751da943db8dbb33"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a147b56139c411ecdf3188c5033a9e72ddd422cea85bbae7751da943db8dbb33"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e2457a2c045ad8f083a96eae243ccc7a6ece4310e85c072bf6967aaa41132de0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e2457a2c045ad8f083a96eae243ccc7a6ece4310e85c072bf6967aaa41132de0"
   end
 
   depends_on "certifi" => :no_linkage
@@ -59,8 +64,8 @@ class Torrra < Formula
   end
 
   resource "linkify-it-py" do
-    url "https://files.pythonhosted.org/packages/2e/c9/06ea13676ef354f0af6169587ae292d3e2406e212876a413bf9eece4eb23/linkify_it_py-2.1.0.tar.gz"
-    sha256 "43360231720999c10e9328dc3691160e27a718e280673d444c38d7d3aaa3b98b"
+    url "https://files.pythonhosted.org/packages/53/3e/79f35b8c31a1881893b7e62be80b2573f06e38db47c33065749293ee1b97/linkify_it_py-2.1.1.tar.gz"
+    sha256 "a78f40fee177eb912e9d2375074108378523c38d3fde5d3ee804f465b6cfbfee"
   end
 
   resource "markdown-it-py" do

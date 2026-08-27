@@ -18,6 +18,8 @@ class Zlog < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "868ff2416cf589e55963163d173f2b30515350a114b0dc70183f6b0183c62191"
   end
 
+  deny_network_access!
+
   def install
     system "make", "PREFIX=#{prefix}"
     system "make", "PREFIX=#{prefix}", "install"

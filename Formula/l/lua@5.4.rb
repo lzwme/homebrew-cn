@@ -1,28 +1,26 @@
 class LuaAT54 < Formula
   desc "Powerful, lightweight programming language"
   homepage "https://www.lua.org/"
-  url "https://www.lua.org/ftp/lua-5.4.8.tar.gz"
-  sha256 "4f18ddae154e793e46eeab727c59ef1c0c0c2b744e7b94219710d76f530629ae"
+  url "https://www.lua.org/ftp/lua-5.4.9.tar.gz"
+  sha256 "2335b6c582a52654f94612bf10d2f4672805d05329aa6568b1d8cd9e5c6fb8e6"
   license "MIT"
   compatibility_version 1
 
-  # Check for new releases until https://www.lua.org/versions.html#5.4
-  # says "There will be no further releases of Lua 5.4".
-  livecheck do
-    url "https://www.lua.org/ftp/"
-    regex(/href=.*?lua[._-]v?(5\.4(?:\.\d+)+)\.t/i)
-  end
-
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "03d6162ac99acbf2b668ebabea5bdd675bd1a0ec3ce202f915d0e9e017fb1af6"
-    sha256 cellar: :any,                 arm64_sequoia: "374b0714ce6bf851fdf0d82ec0b203268c3fa4443108ad5aea6fface2466799f"
-    sha256 cellar: :any,                 arm64_sonoma:  "b59c0bb19df706992a9216b20753a541ca5888b6b7a365129e5fa1e9d7282dfd"
-    sha256 cellar: :any,                 sonoma:        "e3c4b81999ce73b9b4e0aa771e2deba2502fffe6f55d5f839d09fcd4ab912870"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b16b4a9a0c052ea268f89aaa66c1e5d0b9e0b076c33cafd77a05c3c341332073"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f25322e8dcb660cd7fd50f3511acbacf9b63c5d4bb4ba68a9ebfcf3ddfabf600"
+    sha256 cellar: :any, arm64_tahoe:   "209dbe6bdb75d426d1e92a1c7eb1c8d05c1b75a98bcc54d21a7fe9db2493ad91"
+    sha256 cellar: :any, arm64_sequoia: "14e2fe91a31d0bda4d02ec4839e56bc287f722e7e93c89f6fd8aefb5d86dd2c0"
+    sha256 cellar: :any, arm64_sonoma:  "1d4e39911fe6074ae9af23389bfc728301988895fa5f7672a78d81e67b65192e"
+    sha256 cellar: :any, sonoma:        "962190c154b83b2c965b91bb9cea35a9fee338d0a9b31781722097e3e9e6c770"
+    sha256 cellar: :any, arm64_linux:   "d6583ae636aff0d451020a2fb8c18bad3755b58327e6890b3e4832e9fdb36942"
+    sha256 cellar: :any, x86_64_linux:  "5e624addfcb1eb048c962f530561754d7d2c6715705e9a87843d315766182961"
   end
 
   keg_only :versioned_formula
+
+  # See: https://www.lua.org/versions.html#5.4
+  # Last release on 2026-08-25
+  deprecate! date: "2026-08-26", because: :unsupported
+  disable! date: "2027-08-26", because: :unsupported
 
   on_linux do
     depends_on "readline"

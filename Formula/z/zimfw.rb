@@ -11,6 +11,8 @@ class Zimfw < Formula
 
   uses_from_macos "zsh" => :test
 
+  deny_network_access!
+
   def install
     share.install "zimfw.zsh"
   end

@@ -1,8 +1,8 @@
 class Nexttrace < Formula
   desc "Open source visual route tracking CLI tool"
   homepage "https://www.nxtrace.org/"
-  url "https://ghfast.top/https://github.com/nxtrace/NTrace-core/archive/refs/tags/v1.7.2.tar.gz"
-  sha256 "e57b1884cede897cafbb2294c133193dc3db51e16771b6b2affab58c24e03507"
+  url "https://ghfast.top/https://github.com/nxtrace/NTrace-core/archive/refs/tags/v1.7.3.tar.gz"
+  sha256 "b598e678dda47ac1c7d598bd39ac36089252ff773912abfdcb14ba3fffd2e1cf"
   license "GPL-3.0-only"
   head "https://github.com/nxtrace/NTrace-core.git", branch: "main"
 
@@ -14,12 +14,12 @@ class Nexttrace < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "683e59c1daa67cf6f6a893611f33d27ab38f9592774fbe64d61b597293d7cbcc"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "686c94d1a32a4122b9bedff6f8b591fa2cdd763d8565dac6ad0e6e36f95af027"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "89b662856ade795d73ab2dcabeee55b63afe95378033d1e007ae7843b1f16567"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f50d5b15901f66cf84c299b5edd0c52cb0cc04afeb82942d9a9341f8c7d5d170"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a783aefc2b56eb2ddd1f7ed5baef08f1a03b6d175a4e2494e00d5c93e5a4d1e3"
-    sha256 cellar: :any,                 x86_64_linux:  "d6371495e0a3eca2c2bf62b463a5ef2c1b2f9f1cdb5a69a545794d5165539ab1"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bd033db30a430fac16d42da06c714a4961aef073d2a70dc0301c9b9718490d6d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0a8492778ee0b8baaee2962548b7a33702bad6b85fb7b8d9435cc2d6de8d7551"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3963868c368537c4d4443f22c7983ea63767e68b14421f3695c810c0662d860d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "727a9038c11d191d1d2ae9ad18adc6063dd7c6c9535074ce3dfc0065b695b613"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3816551f795a8544eaa8547b1165bb811665811c4809912fdc16ac31195ff8a6"
+    sha256 cellar: :any,                 x86_64_linux:  "5490dbae0637953d3442ee6072aa9498d59d7042b888fb1f58bc39493ac1e7e6"
   end
 
   depends_on "go" => :build

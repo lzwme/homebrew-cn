@@ -1,18 +1,18 @@
 class Zuban < Formula
   desc "Python language server and type checker, written in Rust"
   homepage "https://zubanls.com/"
-  url "https://ghfast.top/https://github.com/zubanls/zuban/archive/refs/tags/v0.9.1.tar.gz"
-  sha256 "02c73169050cc309bc5df9587481a8222888312f2e5aec46c94cb8f78e4bbca2"
+  url "https://ghfast.top/https://github.com/zubanls/zuban/archive/refs/tags/v0.9.2.tar.gz"
+  sha256 "3f2241835ea59f3ddef29feb11f8576f6737bc02a92d4c2347078bfe52b7041b"
   license "AGPL-3.0-only"
   head "https://github.com/zubanls/zuban.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e7841ba0176a94538b4d4a9c608a7c349595e0e8f1b1e43bc6f47e5d32df5d6b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1cd47c2307b91001b1490c5337fc99c09c2e156e49b53414765f6594eef37458"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2ce722f31f67c97def519c1cc4d0ceaa748127093085da2d97db9f5dbc44a440"
-    sha256 cellar: :any_skip_relocation, sonoma:        "fa737a8e95c058441655ea3bf313f4eeecd0f433fe323f3f5e40b488d6f5b6e5"
-    sha256 cellar: :any,                 arm64_linux:   "5da51daefcd309778eba0dbbb44f11420cfa4d5981c8ddcae5d4365a1bca9c1c"
-    sha256 cellar: :any,                 x86_64_linux:  "2ab592e58f34bc26cc80fb2b25407be28da61c1cfa8d78f2980c5459763d6529"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8881d85f8561fb03bbadff7b4d8ffa6f00f2c0fc3813b8770c3e782534d00bcb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2de9af8ed5c5aa331cf8b6aff3d0c41f4de9a5552e1563f5b244de5c072e423a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c1e461f306924f94312613c25a339defd93675b2d07ddd498e7a99ae16169de9"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5f7c21581a284fdaa9eac46c42df4418da956e0a0617b5b2f049d04d092f7430"
+    sha256 cellar: :any,                 arm64_linux:   "109738d18225b3bd4a25cf9898bd1df00a6776ed4566bde620ec84fcca5b178c"
+    sha256 cellar: :any,                 x86_64_linux:  "b04d8c10b6b24558a9f5d3f055f9d9abf50d89f21f2417ef462fe0839b38236e"
   end
 
   depends_on "rust" => :build

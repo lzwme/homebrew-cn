@@ -66,7 +66,7 @@ class Veraxx < Formula
       args = std_cmake_args
       args << "-DBUILD_SHARED_LIBS:BOOL=OFF"
       args << "-DCMAKE_INSTALL_PREFIX:PATH=#{buildpath}/3rdParty"
-      system "cmake", ".", *args
+      system "cmake", "-S", ".", "-B", ".", *args
       system "make", "install"
     end
 
@@ -77,7 +77,7 @@ class Veraxx < Formula
       args << "-DLUA_LIBRARIES:PATH=#{buildpath}/3rdParty/lib/liblua.a"
       args << "-DBOOST_ROOT:PATH=#{buildpath}/3rdParty"
       args << "-DCMAKE_INSTALL_PREFIX:PATH=#{buildpath}/3rdParty"
-      system "cmake", ".", *args
+      system "cmake", "-S", ".", "-B", ".", *args
       system "make", "install"
     end
 
@@ -98,7 +98,7 @@ class Veraxx < Formula
       # Revisit on release with Python 3: https://bitbucket.org/verateam/vera/issues/108/migrate-to-python-3
       args << "-DVERA_PYTHON=OFF"
     end
-    system "cmake", ".", *args
+    system "cmake", "-S", ".", "-B", ".", *args
     system "make", "install"
 
     resource("doc").stage do

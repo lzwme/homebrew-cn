@@ -58,6 +58,8 @@ class Zip < Formula
     type :unofficial
   end
 
+  deny_network_access!
+
   def install
     system "make", "-f", "unix/Makefile", "CC=#{ENV.cc}", "generic"
     system "make", "-f", "unix/Makefile", "BINDIR=#{bin}", "MANDIR=#{man1}", "install"

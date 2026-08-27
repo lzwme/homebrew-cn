@@ -12,6 +12,8 @@ class Zinit < Formula
 
   uses_from_macos "zsh"
 
+  allow_network_access! :test
+
   def install
     prefix.install Dir["*"]
     man1.install_symlink prefix/"doc/zinit.1"

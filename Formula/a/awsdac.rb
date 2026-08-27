@@ -1,18 +1,18 @@
 class Awsdac < Formula
   desc "CLI tool for drawing AWS architecture"
   homepage "https://github.com/awslabs/diagram-as-code"
-  url "https://ghfast.top/https://github.com/awslabs/diagram-as-code/archive/refs/tags/v0.23.tar.gz"
-  sha256 "df8f9ca155ec84e26db6f2060b20cda2e2d5b81d990ae96e7b26a006bee8fb33"
+  url "https://ghfast.top/https://github.com/awslabs/diagram-as-code/archive/refs/tags/v0.24.tar.gz"
+  sha256 "5744f58964e2c90cb8601c40060523b923205105f3456a7ac8ff0aa81070e7ce"
   license "Apache-2.0"
   head "https://github.com/awslabs/diagram-as-code.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2148b86ef64e6cb6dbe77a810cbfad514c751abd75f1853d50658c94649bf384"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2148b86ef64e6cb6dbe77a810cbfad514c751abd75f1853d50658c94649bf384"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2148b86ef64e6cb6dbe77a810cbfad514c751abd75f1853d50658c94649bf384"
-    sha256 cellar: :any_skip_relocation, sonoma:        "59d67de9c136c5f50e24a0dc6ab275b80fa891684139f2d546a609f355813161"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "573b86ff4ce244f1a8f0e8b03ad44e9350a59cf0656d4e853df1f612a8a8dc1d"
-    sha256 cellar: :any,                 x86_64_linux:  "9902cfe8841784875f3187702d8e9cffa40c7197cc5f4b4c69fbc8cc101f3067"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a632946d3a35ff29795bd7b34292b537a69793ca013d8dab6d5e9e3d50669854"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a632946d3a35ff29795bd7b34292b537a69793ca013d8dab6d5e9e3d50669854"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a632946d3a35ff29795bd7b34292b537a69793ca013d8dab6d5e9e3d50669854"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5d1f05cc95c768ffda7c0e6012baa5981d8e5cda82d9a3ca7f224dbb58ef055f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3f542aa7e73224d8d95117208278efee0b84df39bc51dca725b0e0b55d353369"
+    sha256 cellar: :any,                 x86_64_linux:  "6ce87c2e33290840ec5869a89ef6cd95138b50ea03ca96c30c736c1516d4dbe0"
   end
 
   depends_on "go" => :build

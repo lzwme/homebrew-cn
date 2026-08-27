@@ -156,9 +156,10 @@ class Vtk < Formula
       }
     CPP
 
-    system "cmake", ".", "-DCMAKE_BUILD_TYPE=Debug", "-DCMAKE_VERBOSE_MAKEFILE=ON", "-DVTK_DIR=#{vtk_dir}"
-    system "make"
-    system "./Distance2BetweenPoints"
+    system "cmake", "-S", ".", "-B", "build", "-DCMAKE_BUILD_TYPE=Debug", "-DCMAKE_VERBOSE_MAKEFILE=ON",
+                    "-DVTK_DIR=#{vtk_dir}"
+    system "cmake", "--build", "build"
+    system "build/Distance2BetweenPoints"
 
     (testpath/"Distance2BetweenPoints.py").write <<~PYTHON
       import vtk

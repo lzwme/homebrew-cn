@@ -3,19 +3,18 @@ class Overturemaps < Formula
 
   desc "Python tools for interacting with Overture Maps data"
   homepage "https://overturemaps.org"
-  url "https://files.pythonhosted.org/packages/36/fc/5b779bf6df4b3b868c26a0ca2d54af2700e630ebdd89d224bd51f3684455/overturemaps-1.0.1.tar.gz"
-  sha256 "c8a975dd8f64442187ce8a9e64840469cfcfac1c930ad09015acfcb1481e548b"
+  url "https://files.pythonhosted.org/packages/da/6b/d02503bba3a90fc333d6188b892554bcfccb30b6e3728086fa0fa4c2857f/overturemaps-1.0.2.tar.gz"
+  sha256 "e92355dcc2961da0ce95ab9837a59f2d15bcc357be51d0c415ceab3d812fc97d"
   license "MIT"
-  revision 1
   head "https://github.com/OvertureMaps/overturemaps-py.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "510af7586610fd3d7f9d173b118494da65415a600a2eaaefa4107d83b7bcc9f9"
-    sha256 cellar: :any, arm64_sequoia: "3aa55683cbb1da65b94ed34a7848cb982e48326fa4efdd4f0a9012fa42a91d88"
-    sha256 cellar: :any, arm64_sonoma:  "7367ac74cd858fd4c4e6fee3f57bf995d39eb29d1f4d64ff4729e80d431b83e5"
-    sha256 cellar: :any, sonoma:        "6e054714c642ccf4e0846712047c7352fdb0217d1e66707afd5e6d3ca4003118"
-    sha256 cellar: :any, arm64_linux:   "131b20bc244fb5de833bad3399f3385ec6c5e765ba826cb63d988204b1e4143f"
-    sha256 cellar: :any, x86_64_linux:  "f97f4deee47bafb97897ec65492da3963fbb47ab0299da267cb54335094af49b"
+    sha256 cellar: :any, arm64_tahoe:   "da396c9a1d123c727224653af61668f8ee746bd25fddbbe5f6f906e2cfd63155"
+    sha256 cellar: :any, arm64_sequoia: "4e29fec7adec9ec0f59a43b3600173da12c4427372c5db3c48449ba2a9036e38"
+    sha256 cellar: :any, arm64_sonoma:  "cdecdb7d492c274f9394a92beebc316b2189690a6821b7e055f0b57b8e278e34"
+    sha256 cellar: :any, sonoma:        "d15beb475498bc09d3514d2c129262a36df44a105f9a86e17ca151306dfbc04d"
+    sha256 cellar: :any, arm64_linux:   "1d85438ed32e08885197ed250d7cb2aeca85ef93b13277d1a28725479d9ad0ad"
+    sha256 cellar: :any, x86_64_linux:  "ee2d94999882b84ad727d330fef875b23f25c9e7bd380a07760ad769ccbb1a07"
   end
 
   depends_on "cmake" => :build  # for pyarrow
@@ -43,13 +42,13 @@ class Overturemaps < Formula
   end
 
   resource "orjson" do
-    url "https://files.pythonhosted.org/packages/7e/0c/964746fcafbd16f8ff53219ad9f6b412b34f345c75f384ad434ceaadb538/orjson-3.11.9.tar.gz"
-    sha256 "4fef17e1f8722c11587a6ef18e35902450221da0028e65dbaaa543619e68e48f"
+    url "https://files.pythonhosted.org/packages/0f/f3/742fb1f62b825f2c010697eaf4e828004bc2a81e7e806666989c132c7c42/orjson-3.12.0.tar.gz"
+    sha256 "d14203fb1aae2ad9b3d52f8a0e82aeb10197ef1c9bc61da7f358bd70b00123d5"
   end
 
   resource "pyarrow" do
-    url "https://files.pythonhosted.org/packages/91/13/13e1069b351bdc3881266e11147ffccf687505dbb0ea74036237f5d454a5/pyarrow-24.0.0.tar.gz"
-    sha256 "85fe721a14dd823aca09127acbb06c3ca723efbd436c004f16bca601b04dcc83"
+    url "https://files.pythonhosted.org/packages/3d/e3/27f57f80141379d60defe6703eb50a707325706f07fedfd1312c7a751995/pyarrow-25.0.1.tar.gz"
+    sha256 "9150a83248bfed9813ea3c3af74c3856c1984d444aa28e58bf7733b9750ddf6a"
   end
 
   resource "pyfiglet" do
@@ -63,8 +62,8 @@ class Overturemaps < Formula
   end
 
   resource "tqdm" do
-    url "https://files.pythonhosted.org/packages/87/d7/0535a28b1f5f24f6612fb3ff1e89fb1a8d160fee0f976e0aa6803862134b/tqdm-4.68.3.tar.gz"
-    sha256 "00dfa48452b6b6cfae3dd9885636c23d3422d1ec97c66d96818cbd5e0821d482"
+    url "https://files.pythonhosted.org/packages/21/3b/6c24bec5be5e743ffd99576daa5cc077722fc7d5bbc00bd133fa0c698dc6/tqdm-4.70.0.tar.gz"
+    sha256 "55b0b0dbd97462d06ebee91e4dac24ed4d4702be82b24f07e6c1d27e08cea220"
   end
 
   def install

@@ -19,6 +19,8 @@ class Zix < Formula
   depends_on "ninja" => :build
   depends_on "glib"
 
+  deny_network_access!
+
   def install
     args = %w[
       -Dbenchmarks=disabled

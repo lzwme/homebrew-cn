@@ -106,7 +106,7 @@ class EtcdCppApiv3 < Formula
     ENV.delete "CPATH"
 
     args = %W[
-      -Wno-dev
+      -Wno-author
       -DCMAKE_BUILD_RPATH=#{HOMEBREW_PREFIX}/lib
     ]
 

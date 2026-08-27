@@ -1,18 +1,18 @@
 class Gpk < Formula
   desc "TUI and CLI that unifies every package manager on the system"
   homepage "https://github.com/neur0map/glazepkg"
-  url "https://ghfast.top/https://github.com/neur0map/glazepkg/archive/refs/tags/v0.6.7.tar.gz"
-  sha256 "9dcdd0b102d8f5ae167c8215c9f730f85c0a712a7bb512d78fabea47f6616b14"
+  url "https://ghfast.top/https://github.com/neur0map/glazepkg/archive/refs/tags/v0.6.8.tar.gz"
+  sha256 "42c6a369bd97a0e084ecb878dc52122f4610071c846cd3bd8209518f2c468a7e"
   license "GPL-3.0-or-later"
   head "https://github.com/neur0map/glazepkg.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "83123d0b2b375b854837cd74cc570c0e6a5dab1358dcdb56b9ac330fcb84d47a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "83123d0b2b375b854837cd74cc570c0e6a5dab1358dcdb56b9ac330fcb84d47a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "83123d0b2b375b854837cd74cc570c0e6a5dab1358dcdb56b9ac330fcb84d47a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3eaebe1f60b4bee89dd544177555ba2d9b74f5260ae949bfe7eed06aaa7c9999"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2f5565f75bdff9cd5c21234bc6acb4976320802fdea3a30c4ea2956949fa7ea6"
-    sha256 cellar: :any,                 x86_64_linux:  "88c1dbb2e605ab2314d41b686dcfb649c3928e9dccd24affb479c08d58ea4e8e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0d9d4ff24f127d913c5238e379e36f8f89e6531d9f6d340f51cd14f49fa15af5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0d9d4ff24f127d913c5238e379e36f8f89e6531d9f6d340f51cd14f49fa15af5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0d9d4ff24f127d913c5238e379e36f8f89e6531d9f6d340f51cd14f49fa15af5"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9d2977707f4969b35ba3c24923eb4da3a3357fef1babaa2ac3a601879557861a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8a5114717d365aa1f4e449479bc68bb5ae5bd1d0763d0c13a8e36567f8af45c6"
+    sha256 cellar: :any,                 x86_64_linux:  "1a4d6025f36b7cf8e2f36eac7f1d35d4cf4291720fe31d3a142edb3b3999d789"
   end
 
   depends_on "go" => :build

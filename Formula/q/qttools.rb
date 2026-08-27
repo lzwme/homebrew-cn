@@ -105,11 +105,11 @@ class Qttools < Formula
     XML
 
     ENV["LC_ALL"] = "en_US.UTF-8"
-    system "cmake", "."
-    system "cmake", "--build", ".", "--target", "update_translations"
+    system "cmake", "-S", ".", "-B", "build"
+    system "cmake", "--build", "build", "--target", "update_translations"
     inreplace "hellotr_la.ts", '<translation type="unfinished"></translation>',
                                "<translation>Orbis, te saluto!</translation>"
-    system "cmake", "--build", "."
-    assert_equal "Orbis, te saluto!", shell_output("./hellotr")
+    system "cmake", "--build", "build"
+    assert_equal "Orbis, te saluto!", shell_output("build/hellotr")
   end
 end

@@ -1,9 +1,9 @@
 cask "bettershot" do
   arch arm: "arm64", intel: "x86_64"
 
-  version "0.3.7"
-  sha256 arm:   "ab68bf51f154e244c1178c8cd4ff38a48a6a9f60156242551374726b6a627ecf",
-         intel: "1ee2aef235c260a55e4f5ccdc738f144e81dcf34da7701dcc2d9eaf85dd3dac5"
+  version "0.4.2"
+  sha256 arm:   "7c12b12f09b66ee31308649d1c06893821c8f8de61a50a6893db2fd3664f2702",
+         intel: "308285851723367ad38170aee3bf3a28970045d77322c5aba1c7cfbdea9fe7f4"
 
   url "https://ghfast.top/https://github.com/KartikLabhshetwar/better-shot/releases/download/v#{version}/BetterShot-#{version}_#{arch}.dmg",
       verified: "github.com/KartikLabhshetwar/better-shot/"
@@ -17,9 +17,9 @@ cask "bettershot" do
   end
 
   auto_updates true
-  depends_on macos: :sonoma
+  depends_on macos: :tahoe
 
-  app "bettershot.app"
+  app "BetterShot.app"
 
   zap trash: [
     "~/Library/Application Support/com.kartiklabhshetwar.bettershot",

@@ -79,8 +79,8 @@ class Alpscore < Formula
       target_link_libraries(test ${ALPSCore_LIBRARIES})
     CMAKE
 
-    system "cmake", "."
-    system "cmake", "--build", "."
-    assert_equal "3 #2\n1 (type: double) (name='myparam')\n", shell_output("./test")
+    system "cmake", "-S", ".", "-B", "build"
+    system "cmake", "--build", "build"
+    assert_equal "3 #2\n1 (type: double) (name='myparam')\n", shell_output("build/test")
   end
 end

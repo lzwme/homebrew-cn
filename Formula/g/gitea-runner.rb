@@ -1,17 +1,17 @@
 class GiteaRunner < Formula
   desc "Official Actions runner for Gitea"
   homepage "https://gitea.com/gitea/runner"
-  url "https://gitea.com/gitea/runner/archive/v3.3.0.tar.gz"
-  sha256 "9c1140d4ef149c674f8344b9945c784b6774c9f2ce1c43647f22eabf4415c4de"
+  url "https://gitea.com/gitea/runner/archive/v3.3.1.tar.gz"
+  sha256 "a0146974eacddbb167e8316350a4b1fc1fa3010730866ec646ea660c008dfc67"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "984b1366073ff300d68a759d7450e9b2682d0d6cb658e5709332cd4357f58fdb"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f231c5c57ffa8221bcbb0e93545b975e47ad6f6920b138b98fda3cf07d22af62"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0bc74706b6d3bccc3038a42d37a997fc03b5dd6d3a3c238a7c1c644e01da6033"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2347b3764942bf71f78d83daddde9b932f1b2e68bc58e01691ebc14438c740de"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f2ff14d4afe8cac31fcffa4dd34b153b06c8682059628166a02ca1f355e13d09"
-    sha256 cellar: :any,                 x86_64_linux:  "ceed2d62a34f447ea94faaa939f73f42e1d1c70c41e53253814779ff82fa0b5f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2833b420377c208be1c221bbc20ec7e3fdb1a5537fb55692316cc6ebc562bc34"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1dd9ab49828aae250f4f35994ed46340631d037139862f3e98ffd432d8304b96"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c39def51cdef01f8f195644193dbd170ef1f397602e020c375ea81def1792846"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7241272116567093d086a0d00b6e1f119f42bda666d91dc21ebd7ce0d3591d3a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4e1f822c036a728d78c986e087b669fa57d6fa008197567a19407294508ebfcd"
+    sha256 cellar: :any,                 x86_64_linux:  "d8b68706754f756a55f73e7177beb51b4a8093ae6f2758e2fb21fae7413a1629"
   end
 
   depends_on "go" => :build
@@ -48,6 +48,6 @@ class GiteaRunner < Formula
       --token INVALID_TOKEN
     ]
     output = shell_output("#{bin}/gitea-runner register #{args.join(" ")} 2>&1", 1)
-    assert_match "Error: Failed to register runner", output
+    assert_match "Error: failed to register runner", output
   end
 end

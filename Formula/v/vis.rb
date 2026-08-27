@@ -1,25 +1,37 @@
 class Vis < Formula
   desc "Vim-like text editor"
   homepage "https://github.com/martanne/vis"
-  url "https://ghfast.top/https://github.com/martanne/vis/archive/refs/tags/v0.9.tar.gz"
-  sha256 "bd37ffba5535e665c1e883c25ba5f4e3307569b6d392c60f3c7d5dedd2efcfca"
   license "ISC"
   revision 1
   head "https://github.com/martanne/vis.git", branch: "master"
 
+  stable do
+    url "https://ghfast.top/https://github.com/martanne/vis/archive/refs/tags/v0.9.tar.gz"
+    sha256 "bd37ffba5535e665c1e883c25ba5f4e3307569b6d392c60f3c7d5dedd2efcfca"
+
+    # Apply Fedora patch to support Lua 5.5 until upstream has new release with
+    # https://github.com/martanne/vis/commit/b8fea9bcb14ea10e618c539c400139dd43d90e02
+    patch do
+      url "https://src.fedoraproject.org/rpms/vis/raw/bb0fc38581783fed74ead453dc216d17fbf551e4/f/vis-0.9-lua-5.5.patch"
+      sha256 "300bbabe3c149e94c5e5c64622087d40d2ce8c2f4cf2146e8f3e5a6d672fdae2"
+      type :unofficial
+    end
+  end
+
   bottle do
-    sha256 arm64_tahoe:   "48f1f7959be85ddf700d6a18f71e5f1597a490e2679f81038aac4506c3f33472"
-    sha256 arm64_sequoia: "c4cff2af4d8434d9c01314c8020c3831b3047fe2868c33c31210fbe13ed74ce6"
-    sha256 arm64_sonoma:  "bd83067d95abd29e175739d0ccb942008d3a77e8af0fd005073c1bff33a1516c"
-    sha256 sonoma:        "a7460f4c478624d321fcbf3c5eb60d323481d485e5448b295893ece018c17fef"
-    sha256 arm64_linux:   "21494a89af0e59a06cdd78d618c4de6dbe67b2d38421efc88f7500320dfe7b8f"
-    sha256 x86_64_linux:  "9e56addec38aa4ab41947607ed671c38dfa96e4eb0323890579d87ee4aeae839"
+    rebuild 1
+    sha256 arm64_tahoe:   "97ddde56165642945938829637059178f29af95c72a5482bb9a7272c626c61dc"
+    sha256 arm64_sequoia: "3f88d6256d0451e27a3ff8f196a8265ffeb0a3d342213a920b8241cae163f95e"
+    sha256 arm64_sonoma:  "51de2810491922e24ae72da32bc1294dfe65841ee08c684d2a30d3883039a0da"
+    sha256 sonoma:        "1078b13e6c05d6c896cac3243a460eab1cd4f664f98cba82edc98b37397fd10a"
+    sha256 arm64_linux:   "5ae58c3cd109e0034454061cb5dcdc0424ac7dba6d9d9dbef4597728158ed035"
+    sha256 x86_64_linux:  "0ae9466c15d8572690620c9db4dfb0b76445a1715217e2c9d4e4439770f92ff7"
   end
 
   depends_on "pkgconf" => :build
   depends_on "libtermkey"
   depends_on "lpeg"
-  depends_on "lua@5.4" # https://github.com/martanne/vis/commit/b8fea9bcb14ea10e618c539c400139dd43d90e02
+  depends_on "lua"
   depends_on "tre"
 
   uses_from_macos "unzip" => :build
@@ -30,9 +42,7 @@ class Vis < Formula
   end
 
   def install
-    odie 'Switch to `depends_on "lua"`!' if build.stable? && version > "0.9"
-
-    system "./configure", "--enable-lua", "--enable-lpeg-static=no", *std_configure_args
+    system "./configure", "--enable-lua", *std_configure_args
     system "make", "install"
 
     return unless OS.mac?

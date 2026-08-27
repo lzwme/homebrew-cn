@@ -1,8 +1,8 @@
 class Dnscontrol < Formula
   desc "Synchronize your DNS to multiple providers from a simple DSL"
   homepage "https://dnscontrol.org/"
-  url "https://ghfast.top/https://github.com/DNSControl/dnscontrol/archive/refs/tags/v4.46.0.tar.gz"
-  sha256 "8267bb9285291b06efa1d1aab872acb139e93d5a8186baac3e725847c6275250"
+  url "https://ghfast.top/https://github.com/DNSControl/dnscontrol/archive/refs/tags/v5.0.0.tar.gz"
+  sha256 "a7f2ea699f52f2fb9284e5c0be6569f2bad421563fd141963e23cb3c96ffd665"
   license "MIT"
   version_scheme 1
   head "https://github.com/DNSControl/dnscontrol.git", branch: "main"
@@ -16,12 +16,12 @@ class Dnscontrol < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2698880b0c7c0c42281b70b0fbcbce19a85020fdbd83e8d763494a3af1a6e8a7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d59bc88bdfe776f9d3321a0d0b9268b143049f4a02be4ec48e474a4c0662e31e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8b6b48ec888697959f8b391049778d052e543ce39b460cc4b7499dbaa7b3b4f5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "005db8d944b304de4dfce86232588a273b34258f0703cd5fe3ffbf7a3fd18794"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b21258da0df2f6795adbc6f0cb0bdb21c80c6a6412b38568198845d7d60c55fc"
-    sha256 cellar: :any,                 x86_64_linux:  "4e6c3ff611bb1a0f1d6c336ac2d5cfe77a69e7454d8e7d8b3ac6aff5b6685106"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d4832376e8246fb455b2001bcba74f83c9031ed3b5e0f3aca093ed9f03ecfc90"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "803a9b94eb154b67be3394ba73e14791474360442f10915f97ab1aaf666edcb4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "219cdbd558d12c71a14c271bd895a833b0a88c485f46e2298981bf02db615e70"
+    sha256 cellar: :any_skip_relocation, sonoma:        "36672b0e651766f7f566de4ff6ed7ac30686af6c711625109784b5ec2bab3a6d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cedfd91e98d0599bacabba726e627950ad1634f38f698d2f3756bfb490dcf292"
+    sha256 cellar: :any,                 x86_64_linux:  "4300e2396e00b68238a8c036c177bd39473e735d5ad42e4da0257f1209bef502"
   end
 
   depends_on "go" => :build

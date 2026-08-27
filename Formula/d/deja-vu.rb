@@ -1,18 +1,18 @@
 class DejaVu < Formula
   desc "Local searchable memory over the session histories of coding agents"
   homepage "https://github.com/vshulcz/deja-vu"
-  url "https://ghfast.top/https://github.com/vshulcz/deja-vu/archive/refs/tags/v0.18.0.tar.gz"
-  sha256 "9cb615c4b5e648f0d2f5dade3f02e49c653a0b2319a2117532d6d3ecc231804c"
+  url "https://ghfast.top/https://github.com/vshulcz/deja-vu/archive/refs/tags/v0.19.0.tar.gz"
+  sha256 "cdc728a1bba480f4df2aa19d26eb4e28eaec63bc7dbffb6a3741a962d86f1a06"
   license "MIT"
   head "https://github.com/vshulcz/deja-vu.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "956b66cdd2338a53000f2e6315c3d7509deb993c89e30bc129d7036bafbb80dc"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "956b66cdd2338a53000f2e6315c3d7509deb993c89e30bc129d7036bafbb80dc"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "956b66cdd2338a53000f2e6315c3d7509deb993c89e30bc129d7036bafbb80dc"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b7e49974618d7eeb8238c9fd0f1804a4718a309af2a1c450d2550c0046943723"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "73669c619405eedda605b6e4733ac382570140c997c08133173ba84ec6cb6e12"
-    sha256 cellar: :any,                 x86_64_linux:  "bebb1461acac508e615a26cfa53a513086309b96424bb6f702899a97d692c762"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5b9d3b3fb6f245978dfb30bedf556adf31d026da40290fa317650dd7661d3e09"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5b9d3b3fb6f245978dfb30bedf556adf31d026da40290fa317650dd7661d3e09"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5b9d3b3fb6f245978dfb30bedf556adf31d026da40290fa317650dd7661d3e09"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f1b86b1f3f1f93ca4bba949634b2fb57c5afcd3201c7b3733aa6b1e570f6cfdb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "947bf06dd929f46553462c9a9d3fbbf3d9f3d8533ee4e5b92e26a61aad528168"
+    sha256 cellar: :any,                 x86_64_linux:  "c8f852906a0154d4dc3d91ae988f36fe3d6585153528ed9b0929f05e7872edfe"
   end
 
   depends_on "go" => :build

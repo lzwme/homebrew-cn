@@ -16,6 +16,11 @@ class Wxlua < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "f71f373105d739d9bc0a282e11d6bf117ace64b56cbb60268f4f39141f5631bb"
   end
 
+  # Last release on 2022-11-07 and does not support Lua 5.5,
+  # https://github.com/pkulchenko/wxlua/pull/157
+  deprecate! date: "2026-08-26", because: :unmaintained
+  disable! date: "2027-02-26", because: :unmaintained
+
   depends_on "cmake" => :build
   depends_on "lua@5.4"
   depends_on "wxwidgets@3.2"

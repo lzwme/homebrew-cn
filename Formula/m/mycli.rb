@@ -3,17 +3,17 @@ class Mycli < Formula
 
   desc "CLI for MySQL with auto-completion and syntax highlighting"
   homepage "https://www.mycli.net/"
-  url "https://files.pythonhosted.org/packages/42/91/9ca31b0fb2e8d55ebc6b7ad9480e7a0a4e8d7f3bfb420e120df8b1b75125/mycli-2.16.0.tar.gz"
-  sha256 "e1a567df0f4ec4d7fd537b12df8c664bdf6a03d480ff443b606b3c086d0de343"
+  url "https://files.pythonhosted.org/packages/be/f8/d0ec4c48552eec51973698419e3fc84c1275e5e00c9512832e608cadc8f0/mycli-2.17.0.tar.gz"
+  sha256 "e86751b0d00a9640f1f88e165e4370e9191c9966c5bcc6e4a5a49093577c2e95"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "ce58f213df8eec99522e85e7cdba6acdeb353c770fb3093ed40ceba5bcf14d63"
-    sha256 cellar: :any, arm64_sequoia: "7a9132d4ef83abac8571c559d8a5af0bde0c2ece21196bafc7a25565cf4dca38"
-    sha256 cellar: :any, arm64_sonoma:  "eeba6f87cb04d9c247e2002dc9649fae0c2b88c49cc3d3ef555096de1ba85113"
-    sha256 cellar: :any, sonoma:        "d3e0c2f2c85475f295ab9b9a9d67245a710ea3a6e5b8b1be3c71e6089f5137a7"
-    sha256 cellar: :any, arm64_linux:   "9dfa86c6582f9ae7d999035260bbdc2f5a8e393c308d1d170bbdadc616cc309c"
-    sha256 cellar: :any, x86_64_linux:  "53265251315d2e00963f1c92b080f3e2f3161bb00f34b865efe76e754a8ef6f9"
+    sha256 cellar: :any, arm64_tahoe:   "5aa035ba9c38b283d003c60c69328d48a4680c00a82f4d4113b6fe2200c0b801"
+    sha256 cellar: :any, arm64_sequoia: "ddfc2bd698f03ae4d63d5cbc816846a1a597ec35727aeb673d9d190514140f85"
+    sha256 cellar: :any, arm64_sonoma:  "faa2d1046589ecb8ab847107e04565cb1d4d29a7781deff763bcc835ce7091bf"
+    sha256 cellar: :any, sonoma:        "381d6bcea5938d2e40d470cfc6d3e12174aa99345d7dcbcd14b68b96e57173c2"
+    sha256 cellar: :any, arm64_linux:   "76299fecd866df76d8223148c79b1bc1d51b11eb82c1fad7c7dda16073f960fe"
+    sha256 cellar: :any, x86_64_linux:  "cfc4a4ca35de702409f03d9128157fde85ee84eb57d30fe9b372e2f7596e91c9"
   end
 
   depends_on "rust" => :build # for jiter, polars, vl-convert
@@ -79,24 +79,19 @@ class Mycli < Formula
     sha256 "03c881bbf23aa07bccf1b837005975993c4ab4427ba57f959afdd9d1a2386848"
   end
 
-  resource "distro" do
-    url "https://files.pythonhosted.org/packages/fc/f8/98eea607f65de6527f8a2e8885fc8015d3e6f5775df186e443e0964a11c3/distro-1.9.0.tar.gz"
-    sha256 "2fa77c6fd8940f116ee1d6b94a2f90b13b5ea8d019b98bc8bafdcabcdd9bdbed"
-  end
-
   resource "h11" do
     url "https://files.pythonhosted.org/packages/01/ee/02a2c011bdab74c6fb3c75474d40b3052059d95df7e73351460c8588d963/h11-0.16.0.tar.gz"
     sha256 "4e35b956cf45792e4caa5885e69fba00bdbc6ffafbfa020300e549b208ee5ff1"
   end
 
-  resource "httpcore" do
-    url "https://files.pythonhosted.org/packages/06/94/82699a10bca87a5556c9c59b5963f2d039dbd239f25bc2a63907a05a14cb/httpcore-1.0.9.tar.gz"
-    sha256 "6e34463af53fd2ab5d807f399a9b45ea31c3dfa2276f15a2c3f00afff6e176e8"
+  resource "httpcore2" do
+    url "https://files.pythonhosted.org/packages/be/ad/f4f0e57345f1870f3e8cb624e058d7eca6e5a27d33bcc3311d9b618734cd/httpcore2-2.12.0.tar.gz"
+    sha256 "9293522bba0aa7c4c8e9e3f040c16575bd8868e155a77fa30c7a9085a5eae648"
   end
 
-  resource "httpx" do
-    url "https://files.pythonhosted.org/packages/b1/df/48c586a5fe32a0f01324ee087459e112ebb7224f646c0b5023f5e79e9956/httpx-0.28.1.tar.gz"
-    sha256 "75e98c5f16b0f35b567856f597f06ff2270a374470a5c2392242528e3e3e42fc"
+  resource "httpx2" do
+    url "https://files.pythonhosted.org/packages/7f/f8/579a8b51e42e38ee32647df9f08aa25643ae788e275cc625b199829c4671/httpx2-2.12.0.tar.gz"
+    sha256 "7631fe9887a8a2275f4a2540e053aa670fcc50742864a9ae7c66e609fdcf12cf"
   end
 
   resource "idna" do
@@ -150,8 +145,8 @@ class Mycli < Formula
   end
 
   resource "llm" do
-    url "https://files.pythonhosted.org/packages/02/2a/ac37d94f6ac91d501475d80a0a1d8fb6bce392f9d7b483bf87257342e0b7/llm-0.31.1.tar.gz"
-    sha256 "f99955cfd92cdf7b8dc08a795f68c688cefdbc4f9a67245988ccc1adb5c49eeb"
+    url "https://files.pythonhosted.org/packages/4d/f3/6eea036e9bf54f034d2d463b1552b41d0e5cf006152717fd682673a84427/llm-0.33.tar.gz"
+    sha256 "e491db0615679a6b40b842a6e4da18de14ced6b691788bcb080d2565b6198a65"
   end
 
   resource "markupsafe" do
@@ -170,8 +165,8 @@ class Mycli < Formula
   end
 
   resource "openai" do
-    url "https://files.pythonhosted.org/packages/2a/ae/d4d1835488c0350424009dac5095b9a3e173bee12fd2e421ee27e2142c42/openai-2.48.0.tar.gz"
-    sha256 "231b1e7661dda14574986c2f71451e9d584b7fe69e0ee6480e12ed090b48fc16"
+    url "https://files.pythonhosted.org/packages/7d/9c/ba0c292b4032ede74c249ca314ad64eb1bb5a03a843f6e01facb02f80cd8/openai-3.3.1.tar.gz"
+    sha256 "6f22807de1a976c932cecda620e8172a8c3fdbaeed29c7f21564e0c2410edf56"
   end
 
   resource "packaging" do
@@ -215,8 +210,8 @@ class Mycli < Formula
   end
 
   resource "pygments" do
-    url "https://files.pythonhosted.org/packages/c3/b2/bc9c9196916376152d655522fdcebac55e66de6603a76a02bca1b6414f6c/pygments-2.20.0.tar.gz"
-    sha256 "6757cd03768053ff99f3039c1a36d6c0aa0b263438fcab17520b30a303a82b5f"
+    url "https://files.pythonhosted.org/packages/49/2e/ced460408999b33da6b31b0021b0f37d329e202d4169aeb164493778f25b/pygments-2.21.0.tar.gz"
+    sha256 "610ca751c9bc2492b38eb9a38a7fbc93edbbb2d7182edaf34e66ae493dee5c8c"
   end
 
   resource "pymysql" do
@@ -294,11 +289,6 @@ class Mycli < Formula
     sha256 "78b05eeaf6680e9dbed8986bde011e9c086a06cb0c931b3cf7da94c214e8930c"
   end
 
-  resource "sqlite-migrate" do
-    url "https://files.pythonhosted.org/packages/2c/be/cb7cfb197a864c1676cb5e7721169de4923f26fb4c25351e492cbdde8c22/sqlite_migrate-0.2.tar.gz"
-    sha256 "c6b78b5bb486b541a5c484c93a22079ad7fab8c142a26793830748586457b3c8"
-  end
-
   resource "sqlite-utils" do
     url "https://files.pythonhosted.org/packages/7e/6b/4a7b3d20c92e6c7acedc96ef620df8e1ea8f94a26a41ab788c1c08055815/sqlite_utils-4.2.1.tar.gz"
     sha256 "76114b6a5414714e6c70e5fa5c4781b301b590f6951b5da39c8cc60c21382ba1"
@@ -319,9 +309,9 @@ class Mycli < Formula
     sha256 "348871ca648ec6a9a983a13ab626c0acce02f515b9e1983332b17af7979521c5"
   end
 
-  resource "tqdm" do
-    url "https://files.pythonhosted.org/packages/21/3b/6c24bec5be5e743ffd99576daa5cc077722fc7d5bbc00bd133fa0c698dc6/tqdm-4.70.0.tar.gz"
-    sha256 "55b0b0dbd97462d06ebee91e4dac24ed4d4702be82b24f07e6c1d27e08cea220"
+  resource "truststore" do
+    url "https://files.pythonhosted.org/packages/53/a3/1585216310e344e8102c22482f6060c7a6ea0322b63e026372e6dcefcfd6/truststore-0.10.4.tar.gz"
+    sha256 "9d91bd436463ad5e4ee4aba766628dd6cd7010cf3e2461756b3303710eebc301"
   end
 
   resource "vl-convert-python" do

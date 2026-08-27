@@ -1,8 +1,8 @@
 class Sprocket < Formula
   desc "Bioinformatics workflow engine built on the Workflow Description Language (WDL)"
   homepage "https://sprocket.bio"
-  url "https://ghfast.top/https://github.com/stjude-rust-labs/sprocket/archive/refs/tags/v0.29.0.tar.gz"
-  sha256 "e3fc518640fff8b59ee59ebaeef514f1f8d1ff6c6004f54910b5b5541178a94f"
+  url "https://ghfast.top/https://github.com/stjude-rust-labs/sprocket/archive/refs/tags/v0.30.0.tar.gz"
+  sha256 "ba465be9049007a31daa7d70369b3f82a086bf262e11bd62979da0137fb00950"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/stjude-rust-labs/sprocket.git", branch: "main"
 
@@ -12,13 +12,12 @@ class Sprocket < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "26de8d3a0c8d1b0d79fcf1a24b0f762683123fe4aded3d89473d13a67ff786fd"
-    sha256 cellar: :any, arm64_sequoia: "31a4b32ecd922f165695423a29d252ed97ec2988ca5312d369e4347b407a8043"
-    sha256 cellar: :any, arm64_sonoma:  "675c6407bc58131f4f76dda033062b6242ef4e81c7979274be37bf494cad77df"
-    sha256 cellar: :any, sonoma:        "7533d3c097ede54dd5f5e567b2d054efde76b946e448c6d5252551800c438957"
-    sha256 cellar: :any, arm64_linux:   "b9147dce111649fec260e5fb8a51a2e4f2c68fb22ad49cdc4e813e2d9ad478a0"
-    sha256 cellar: :any, x86_64_linux:  "6711351a9120da6255cc33ba9958895c922e2c2df62bc7d08d9011ba746a5784"
+    sha256 cellar: :any, arm64_tahoe:   "4ad84b43d6aa40e7826dfc8f2e2eb81bdc99081c6fd5539c870d5adf24960c77"
+    sha256 cellar: :any, arm64_sequoia: "84ccbf8ad9991b5627bbb4f109d174f9a770f4b5359af06de0c0f269f626859f"
+    sha256 cellar: :any, arm64_sonoma:  "6833e06b599af560e59c9a8f4717fcb2b2b784ffe3f3ff865f203ee518a3b0de"
+    sha256 cellar: :any, sonoma:        "096433c64ca81c1459aadf19ae9d215198230233d24f81df6fc59b7a4a133dcd"
+    sha256 cellar: :any, arm64_linux:   "592ac95da37b6edc0959ae63ea59f3d924af801af4c4d3633f1c02bb1ec254de"
+    sha256 cellar: :any, x86_64_linux:  "e6e9bb532ab19be82e503d644ac4bb30375dc9d0fdbabd766f7a5b339056b394"
   end
 
   depends_on "pkgconf" => :build

@@ -1,8 +1,8 @@
 class TinyRemapper < Formula
   desc "Tiny, efficient tool for remapping JAR files using \"Tiny\"-format mappings"
   homepage "https://fabricmc.net/"
-  url "https://maven.fabricmc.net/net/fabricmc/tiny-remapper/0.14.0/tiny-remapper-0.14.0-fat.jar"
-  sha256 "9dbaf8030981338373abe029cd9c07732bff437887a56de1735ba2c3c76b0acf"
+  url "https://maven.fabricmc.net/net/fabricmc/tiny-remapper/0.14.1/tiny-remapper-0.14.1-fat.jar"
+  sha256 "3d54d68fc747e0799f1080833aad2196fae8007ee9d588e5663dbc1258ff544b"
   license "LGPL-3.0-only"
 
   livecheck do
@@ -11,7 +11,7 @@ class TinyRemapper < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "ad03f9960d6d25762e84e6de5633a06828b3592b3779d8b06d0dd3374fd84270"
+    sha256 cellar: :any_skip_relocation, all: "5876ea3e7f013a4b16ec3ba4cc44e32edd0fd058291ea33b0658f8336b7790fb"
   end
 
   depends_on "openjdk"

@@ -24,16 +24,17 @@ class Dovecot < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "4fa34bd69496d02bdfb8c64c038b5e2de03810f7f97f6b66444bf3d46521209c"
-    sha256 arm64_sequoia: "b290b77243009dd0846888dbe59d4463e7567263548fe4a68405c20da147078e"
-    sha256 arm64_sonoma:  "3af4c12601fb9823912ff2dedb4d9de673957f8b9e478510d0ab6f8150b1d8fa"
-    sha256 sonoma:        "33403991fb03d4426bdfa0b378ec583bbcac7755b6427955a41f6beb3d8047b3"
-    sha256 arm64_linux:   "0c4b5d8405094e61a5831d7ec1d3edc6719d1fdb20c82415df77043a1dcf1351"
-    sha256 x86_64_linux:  "d2a8c71de64c864776ead15da14349c874a18253d66810aa5b4cff838b0cf8a9"
+    rebuild 1
+    sha256 arm64_tahoe:   "a3ab8944c5671452a67f243a13b3d11bcc0d575fa8d535580a6320775aadc8d1"
+    sha256 arm64_sequoia: "b69f0bfa942311d1014758a541b2aafc45b2871083344ed90cc94e6d74828865"
+    sha256 arm64_sonoma:  "ecc757940b06c365e1595446ec271a3c557b5af26168b867d24e24366c4f8699"
+    sha256 sonoma:        "b9b19fc4a03e368c616c189ddc996ad353fb9c75088400c605bbe7fb09ffc853"
+    sha256 arm64_linux:   "da90e7cee2c154b449ce319a2ae3aae0104109c70797af0f0237c153e906a0c3"
+    sha256 x86_64_linux:  "841e013f4a8cb960da528252f1327954f1c3fe409dd2f5ebcacbe12398e58e85"
   end
 
   depends_on "pkgconf" => :build
-  depends_on "lua@5.4"
+  depends_on "lua"
   depends_on "openldap"
   depends_on "openssl@3"
 
@@ -70,6 +71,13 @@ class Dovecot < Formula
   end
   # `plugins/var-expand-crypt` and `lib-storage-lua` missing `lib-var-expand` in LIBADD
   patch :DATA
+
+  # Apply Fedora patch to support Lua 5.5
+  patch do
+    url "https://src.fedoraproject.org/rpms/dovecot/raw/1b94c9d8fe9f5840e7a8dcd1268960fd4627d419/f/dovecot-2.4.2-lua-5.5.patch"
+    sha256 "e43bf7b80f6f5537178966b915c9d87cf80057da3d129148999b9ec7539f70ef"
+    type :unofficial
+  end
 
   def install
     # Re-generate file as only Linux has inotify support for imap-hibernate

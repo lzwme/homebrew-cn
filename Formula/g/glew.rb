@@ -67,8 +67,8 @@ class Glew < Formula
       }
     CPP
 
-    system "cmake", ".", "-Wno-dev"
-    system "make"
+    system "cmake", "-S", ".", "-B", "build", "-Wno-author"
+    system "cmake", "--build", "build"
 
     glut = if OS.mac?
       "GLUT"

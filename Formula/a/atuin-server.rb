@@ -1,18 +1,18 @@
 class AtuinServer < Formula
   desc "Sync server for atuin - Improved shell history for zsh, bash, fish and nushell"
   homepage "https://atuin.sh"
-  url "https://ghfast.top/https://github.com/atuinsh/atuin/releases/download/v18.20.0/source.tar.gz"
-  sha256 "d0a41cdf86122a3452873823c358d5c1e5e3f60a5c51d230ce887e80f0af19a6"
+  url "https://ghfast.top/https://github.com/atuinsh/atuin/releases/download/v18.20.1/source.tar.gz"
+  sha256 "c4faccd208fe3b407e83c6943b2d81081a94fe836da9b67f1a7b4d4f4bbb0fab"
   license "MIT"
   head "https://github.com/atuinsh/atuin.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "24427e3a5e44ce39539aa1d6a69324755db8308e1e1b0dc918868cab9f600cfd"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5ab069d7423673e6848c4e4010734e61fc0c8c9adddb5e6b1e68fddde25a902b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6ac5cf7142d33dc0919cf448f885e0984d84cfcd7d3021c10c54f9e6e90dded8"
-    sha256 cellar: :any_skip_relocation, sonoma:        "30f5425f127a88bf9bdc337559aa11841e7b1e4520af07c4491937187db895e6"
-    sha256 cellar: :any,                 arm64_linux:   "af5ee6274034b0afa5eaf39fa36cf9ffb2d7f0f1420e22a0cbb3eadda7e0f916"
-    sha256 cellar: :any,                 x86_64_linux:  "b0d1e2d09c635aade567a2ee9a2329dccd484d73238665e59ca49ad47ace535c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c1038bc416c901a63b077c371ae140c0895ffc33759512d3546721aa0e46ec48"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "39c39f17b1cd1252d9dab009c8efa83ac078df4a3fa187428b325eda87362668"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9e467dc05a6210b61b8eb29404c726c17013f8402c310c4f37bcf372ab75e42f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ec2ad623d76d5881519969c5fc1e6290df5986d66103dc5fa331516bd415bacf"
+    sha256 cellar: :any,                 arm64_linux:   "b8bd75f34e6c33d1bd727acd416327d0dba461a92793e1a27ff6255af674e0bd"
+    sha256 cellar: :any,                 x86_64_linux:  "4d965783d1201bf69033ff658ef8529677cc21e2996d119a1d1b09c4025f09cb"
   end
 
   depends_on "pkgconf" => :build

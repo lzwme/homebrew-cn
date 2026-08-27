@@ -77,8 +77,8 @@ class Corsixth < Formula
     # On Linux, install binary to libexec/bin so we can put an env script with LUA_PATH in bin.
     args << "-DCMAKE_INSTALL_BINDIR=#{libexec}/bin" unless OS.mac?
 
-    system "cmake", ".", *args
-    system "make"
+    system "cmake", "-S", ".", "-B", "build", *args
+    system "cmake", "--build", "build"
     if OS.mac?
       resources = %w[
         CorsixTH/CorsixTH.lua
@@ -88,10 +88,11 @@ class Corsixth < Formula
         CorsixTH/Graphics
         CorsixTH/Bitmap
       ]
-      cp_r resources, "CorsixTH/CorsixTH.app/Contents/Resources/"
-      prefix.install "CorsixTH/CorsixTH.app"
+      app = buildpath/"build/CorsixTH/CorsixTH.app"
+      cp_r resources, app/"Contents/Resources"
+      prefix.install app
     else
-      system "make", "install"
+      system "cmake", "--install", "build"
     end
 
     lua_env = { LUA_PATH: ENV["LUA_PATH"], LUA_CPATH: ENV["LUA_CPATH"] }

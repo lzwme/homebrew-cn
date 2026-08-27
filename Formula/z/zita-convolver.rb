@@ -28,6 +28,8 @@ class ZitaConvolver < Formula
 
   depends_on "fftw"
 
+  deny_network_access!
+
   def install
     cd "source" do
       inreplace "Makefile", "-Wl,-soname,", "-Wl,-install_name," if OS.mac?

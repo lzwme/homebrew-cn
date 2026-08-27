@@ -54,8 +54,8 @@ class GlobalArrays < Formula
       }
     CXX
 
-    system "cmake", "."
-    system "cmake", "--build", "."
-    assert_equal "2", shell_output("mpirun -n 2 ./test")
+    system "cmake", "-S", ".", "-B", "build"
+    system "cmake", "--build", "build"
+    assert_equal "2", shell_output("mpirun -n 2 build/test")
   end
 end

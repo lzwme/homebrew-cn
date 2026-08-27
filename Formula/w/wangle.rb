@@ -61,7 +61,7 @@ class Wangle < Formula
     CMAKE
 
     ENV.delete "CPATH"
-    system "cmake", "-S", ".", "-B", "build", "-DCMAKE_MODULE_PATH=#{testpath}/cmake", "-Wno-dev"
+    system "cmake", "-S", ".", "-B", "build", "-DCMAKE_MODULE_PATH=#{testpath}/cmake", "-Wno-author"
     system "cmake", "--build", "build"
 
     port = free_port

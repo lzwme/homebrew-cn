@@ -23,7 +23,6 @@ class Lpeg < Formula
   end
 
   depends_on "lua" => [:build, :test]
-  depends_on "lua@5.4" => [:build, :test] # TODO: remove once no dependents need Lua 5.4
   depends_on "luajit" => [:build, :test]
 
   def make_install_lpeg_so(luadir, dllflags, abi_version)

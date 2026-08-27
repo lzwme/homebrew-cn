@@ -3,8 +3,8 @@ require File.expand_path("../../Abstract/portable-formula", __dir__)
 class PortableOpenssl < PortableFormula
   desc "Cryptography and SSL/TLS Toolkit"
   homepage "https://openssl-library.org"
-  url "https://ghfast.top/https://github.com/openssl/openssl/releases/download/openssl-4.0.1/openssl-4.0.1.tar.gz"
-  sha256 "2db3f3a0d6ea4b59e1f094ace2c8cd536dffb87cdc39084c5afa1e6f7f37dd09"
+  url "https://ghfast.top/https://github.com/openssl/openssl/releases/download/openssl-4.0.2/openssl-4.0.2.tar.gz"
+  sha256 "736b467530f916737b7031310ccb21d8218c6229e61e8e160cd1d3458cd543a8"
   license "Apache-2.0"
 
   livecheck do
@@ -26,25 +26,13 @@ class PortableOpenssl < PortableFormula
 
   resource "cacert" do
     # https://curl.se/docs/caextract.html
-    url "https://curl.se/ca/cacert-2026-05-14.pem"
-    sha256 "86a1f3366afac7c6f8ae9f3c779ac221129328c43f0ab2b8817eb2f362a5025c"
+    url "https://curl.se/ca/cacert-2026-08-13.pem"
+    sha256 "f66dff1bdf8f96060b8177976f8b7d9254bc89bc4db933d769f7384d28480bc9"
 
     livecheck do
       url "https://curl.se/docs/caextract.html"
       regex(/href=.*?cacert[._-](\d{4}-\d{2}-\d{2})\.pem/i)
     end
-  end
-
-  # Backport fix for 70-test_quic_radix.t
-  patch do
-    url "https://github.com/openssl/openssl/commit/1e386aab890b52f46641ab18e1a56cabb1b8c47b.patch?full_index=1"
-    sha256 "636f11a33a39536c1cc69426c73863db2b57be636b5977a4076b0995c342ef30"
-    type :backport
-  end
-  patch do
-    url "https://github.com/openssl/openssl/commit/d9f73e36c5fe720b3367e0fc6501683a3f91193a.patch?full_index=1"
-    sha256 "3508588c5e03ba6d3898512f0e8e3aa1f177e243c026884d6c31020359cae59e"
-    type :backport
   end
 
   def openssldir
@@ -79,6 +67,9 @@ class PortableOpenssl < PortableFormula
       no-shared
     ]
   end
+
+  # Tests require network access
+  allow_network_access! :build
 
   def install
     # OpenSSL is not fully portable and certificate paths are backed into the library.

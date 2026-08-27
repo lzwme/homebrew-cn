@@ -3,18 +3,18 @@ class Cycode < Formula
 
   desc "Boost security in your dev lifecycle via SAST, SCA, Secrets & IaC scanning"
   homepage "https://github.com/cycodehq/cycode-cli"
-  url "https://files.pythonhosted.org/packages/55/55/5230d063054dab9d365724648afd1037a3e557c8964e2f84c9269e8584b2/cycode-3.20.0.tar.gz"
-  sha256 "e5d45e561bbe08cea967137117505633eb6078bfb03794a1a86277afd9162465"
+  url "https://files.pythonhosted.org/packages/e9/33/ad2206ec55eac0c07bf3677eefefd5260ff8c8138ed0206e5474363ff0c4/cycode-3.21.0.tar.gz"
+  sha256 "deca5400bd3948f335bc86fb4e71de34df2aa27d60a879ed2d7f2e9f748ebeab"
   license "MIT"
   head "https://github.com/cycodehq/cycode-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "87de1a69ad3107f298b74ed64bf8da662a78cb1a0849b74053997982c17ea873"
-    sha256 cellar: :any, arm64_sequoia: "c37335172a656f102209315c8b19cd4e0960643af077cd1789b2a0254250a57a"
-    sha256 cellar: :any, arm64_sonoma:  "1b41adce7336c25e38ceda032fe5dfeea38d5e17f3f599dbde7739393d215eae"
-    sha256 cellar: :any, sonoma:        "cf2bf210577c09d956d26184312e1dd29d4b1bef0c40e350e5c9a74b81b7b8eb"
-    sha256 cellar: :any, arm64_linux:   "9fececc7fd8764e57716555d77d79b7682e6d2c8508e8f22aecc1600d3e20408"
-    sha256 cellar: :any, x86_64_linux:  "2c69f1ec0637bef91fbec8091fecc52f193620fa24de68ac9e84b1abafe0440c"
+    sha256 cellar: :any, arm64_tahoe:   "20d764efb359fb52eed5e27d7e270dcd010934423d304eaf72c1fd2de3234e84"
+    sha256 cellar: :any, arm64_sequoia: "9d8939292d9c1972ef6fda667c9d655be4e8e41e843cb837ccc7c672683a68cd"
+    sha256 cellar: :any, arm64_sonoma:  "4c8d70c7173270f8738643dbe8be5845c56a61f7bec87c413cf77a64eecff839"
+    sha256 cellar: :any, sonoma:        "a0cc36b87a1cb290bb4ac4cb32d1c762a89aab56499ab6e9638dd22a37f7629c"
+    sha256 cellar: :any, arm64_linux:   "1ad93125e6caa5d8af3b3887b1cbc9f8cb88e1c7b7976e1202a94a42f3433714"
+    sha256 cellar: :any, x86_64_linux:  "2b207acebeaa93c0cb3f59eb5cf750499b532d7c572083038ae2e52bd3cffd46"
   end
 
   depends_on "certifi" => :no_linkage
@@ -87,8 +87,8 @@ class Cycode < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/cd/63/9496c57188a2ee585e0f1db071d75089a11e98aa86eb99d9d7618fc1edce/idna-3.18.tar.gz"
-    sha256 "ffb385a7e039654cef1ab9ef32c6fafe283c0c0467bba1d9029738ce4a14a848"
+    url "https://files.pythonhosted.org/packages/5f/f7/abb373e5757eaec4b922b92f97ec8d6d7e057cf06778247604fbc4e7c3f3/idna-3.19.tar.gz"
+    sha256 "5e0811a4383b21dc5838069f801c4fb62113b7447663d2530d2bd6e77b49bf15"
   end
 
   resource "jsonschema" do
@@ -112,8 +112,8 @@ class Cycode < Formula
   end
 
   resource "mcp" do
-    url "https://files.pythonhosted.org/packages/30/d3/f9acc21dfc886e4f78e2add1a47db46ce16884346afde53f8a064c02c891/mcp-1.29.0.tar.gz"
-    sha256 "52d01f334de1868cc3bb2d6604931126a67631f99a6c5d3b82ba47290315ec36"
+    url "https://files.pythonhosted.org/packages/b5/48/0bb26fdfe7ac16875f534a101ce2405eae192bdef37e7451f2f4507c13ec/mcp-1.29.1.tar.gz"
+    sha256 "1967ba4c315f7a375146209949f45950d18b0efd2f913d7cf3400bc723ee5f04"
   end
 
   resource "mdurl" do
@@ -216,6 +216,11 @@ class Cycode < Formula
     sha256 "2dd14fac5a47c27be9cd4c976af5a12d87fb1f0b4512f81d69cce3b35ae25021"
   end
 
+  resource "truststore" do
+    url "https://files.pythonhosted.org/packages/53/a3/1585216310e344e8102c22482f6060c7a6ea0322b63e026372e6dcefcfd6/truststore-0.10.4.tar.gz"
+    sha256 "9d91bd436463ad5e4ee4aba766628dd6cd7010cf3e2461756b3303710eebc301"
+  end
+
   resource "typer" do
     url "https://files.pythonhosted.org/packages/6c/89/c527e6c848739be8ceb5c44eb8208c52ea3515c6cf6406aa61932887bf58/typer-0.15.4.tar.gz"
     sha256 "89507b104f9b6a0730354f27c39fae5b63ccd0c95b1ce1f1a6ba0cfd329997c3"
@@ -232,8 +237,8 @@ class Cycode < Formula
   end
 
   resource "uvicorn" do
-    url "https://files.pythonhosted.org/packages/2e/28/64ca011edf31c715b4fad359c587ea52391aaffa125065695590241ff617/uvicorn-0.52.3.tar.gz"
-    sha256 "18857b9e6579300be55c91c0a1cfd37d9a2cf0cabea33b88275f199eb73b8b58"
+    url "https://files.pythonhosted.org/packages/f2/0f/3f86e61397dd33bf2ccf28188c40db6a740658aeebbbf6e7dbc101a1f487/uvicorn-0.52.4.tar.gz"
+    sha256 "73acfee47a0b133c5de13d219492d62d8a31e935f4fe6e41a232451a15379f86"
   end
 
   def install

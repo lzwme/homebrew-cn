@@ -17,6 +17,8 @@ class Zmqpp < Formula
 
   depends_on "zeromq"
 
+  deny_network_access!
+
   def install
     system "make"
     system "make", "install", "PREFIX=#{prefix}"

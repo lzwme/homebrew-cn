@@ -116,6 +116,6 @@ class BoostMpi < Formula
       cmake_minimum_required(VERSION 4.0)
       find_package(Boost COMPONENTS mpi REQUIRED)
     CMAKE
-    system "cmake", ".", "-Wno-dev"
+    system "cmake", "-S", ".", "-B", "build", "-Wno-author"
   end
 end

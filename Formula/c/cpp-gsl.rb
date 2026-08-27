@@ -1,13 +1,13 @@
 class CppGsl < Formula
   desc "Microsoft's C++ Guidelines Support Library"
   homepage "https://github.com/Microsoft/GSL"
-  url "https://ghfast.top/https://github.com/Microsoft/GSL/archive/refs/tags/v4.2.2.tar.gz"
-  sha256 "59e2a0a0ea22e8bcf9db2dc4d4bd21212ac6595748295fc27a7e02cf75eac4b5"
+  url "https://ghfast.top/https://github.com/Microsoft/GSL/archive/refs/tags/v5.0.0.tar.gz"
+  sha256 "e646da6ac00a885cfae33dc935e52bb42bd1d05e41b8437cbc25ca3d74930f35"
   license "MIT"
   head "https://github.com/Microsoft/GSL.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "3c3a1891a4006df525f0f380525eb1e35d9008886156cd24f50661084589588c"
+    sha256 cellar: :any_skip_relocation, all: "d44c0077b29023d3a9366763cf6d496f055c55b072eee40aea67eb982d14299b"
   end
 
   depends_on "cmake" => :build

@@ -97,7 +97,7 @@ class Visp < Formula
              "C Compiler:                  #{ENV.cc}\"")
     end
 
-    system "cmake", ".", "-DBUILD_APPS=OFF",
+    system "cmake", "-S", ".", "-B", "build", "-DBUILD_APPS=OFF",
                          "-DBUILD_DEMOS=OFF",
                          "-DBUILD_EXAMPLES=OFF",
                          "-DBUILD_TESTS=OFF",
@@ -139,17 +139,17 @@ class Visp < Formula
     # Replace generated references to OpenCV's Cellar path
     opencv = Formula["opencv"]
     opencv_references = Dir[
-      "CMakeCache.txt",
-      "CMakeFiles/Export/lib/cmake/visp/VISPModules.cmake",
-      "VISPConfig.cmake",
-      "VISPGenerateConfigScript.info.cmake",
-      "VISPModules.cmake",
-      "modules/**/flags.make",
-      "unix-install/VISPConfig.cmake",
+      "build/CMakeCache.txt",
+      "build/CMakeFiles/Export/lib/cmake/visp/VISPModules.cmake",
+      "build/VISPConfig.cmake",
+      "build/VISPGenerateConfigScript.info.cmake",
+      "build/VISPModules.cmake",
+      "build/modules/**/flags.make",
+      "build/unix-install/VISPConfig.cmake",
     ]
     inreplace opencv_references, opencv.prefix.realpath, opencv.opt_prefix
-    system "cmake", "--build", "."
-    system "cmake", "--install", "."
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
 
     # Make sure software built against visp don't reference opencv's cellar path either
     inreplace [lib/"pkgconfig/visp.pc", lib/"cmake/visp/VISPConfig.cmake"],

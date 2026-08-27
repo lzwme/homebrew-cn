@@ -1,18 +1,18 @@
 class Kind < Formula
   desc "Run local Kubernetes cluster in Docker"
   homepage "https://kind.sigs.k8s.io/"
-  url "https://ghfast.top/https://github.com/kubernetes-sigs/kind/archive/refs/tags/v0.32.0.tar.gz"
-  sha256 "e2e1eb04fed4eed0715cc1c5938453d1edbf92b3c097ebec0a05d0903ba15508"
+  url "https://ghfast.top/https://github.com/kubernetes-sigs/kind/archive/refs/tags/v0.33.0.tar.gz"
+  sha256 "8b00b127eb567f30b028cb032d236d990404e9fd83ce7798db7f9c7a305fab34"
   license "Apache-2.0"
   head "https://github.com/kubernetes-sigs/kind.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a80aae065ef141057b7f99ee4cc3681e940bb236527a336af7d0768251b6797d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a80aae065ef141057b7f99ee4cc3681e940bb236527a336af7d0768251b6797d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a80aae065ef141057b7f99ee4cc3681e940bb236527a336af7d0768251b6797d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "05f71589fa017a00a42a33082c462eaf5f1877d80c3c90546be90351c29d4375"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b3242f6189632d5baaa85c5118cb002b0abcaf480747c60882b0b2a96e4b7d2b"
-    sha256 cellar: :any,                 x86_64_linux:  "4d6eb8c7f34576bb16b476c8115d1fd6c0a1189c389357e661fc8d43fc1dd75b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6c9b4ede94b65b91d21dfc0517904a4e3ffea3e37be47289b1178bb9c7aac916"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6c9b4ede94b65b91d21dfc0517904a4e3ffea3e37be47289b1178bb9c7aac916"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6c9b4ede94b65b91d21dfc0517904a4e3ffea3e37be47289b1178bb9c7aac916"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9722eb27982aa3b12ede37bdd7e08067a43a07e770f9b16f07c6ead5808ec74e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5dea5933df7babbf42a6a8b43c0ecdb956ce55fac65e8bd02ba73f04a0e30084"
+    sha256 cellar: :any,                 x86_64_linux:  "b4af3c404e2c6c1c606ff9cf051da6073eac1c0307f230f2f770ab15993d10bc"
   end
 
   depends_on "go" => :build
