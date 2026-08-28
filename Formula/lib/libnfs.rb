@@ -1,18 +1,17 @@
 class Libnfs < Formula
   desc "C client library for NFS"
   homepage "https://github.com/sahlberg/libnfs"
-  url "https://ghfast.top/https://github.com/sahlberg/libnfs/archive/refs/tags/libnfs-7.0.0.tar.gz"
-  sha256 "d25c70537d60f1ab307b9cb5e9fb01acff71065fc9547b54dfaec109ba993003"
+  url "https://ghfast.top/https://github.com/sahlberg/libnfs/archive/refs/tags/libnfs-7.0.1.tar.gz"
+  sha256 "ba62a2705f7100727b8ea37741e6bb6d5e2ff9ec61fee4d77360793eca5eddc2"
   license "LGPL-2.1-or-later"
-  compatibility_version 1
+  compatibility_version 2
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "246ceb7d310d50823a082eb81bbcff812d181f65a4a19073a896922ec931096a"
-    sha256 cellar: :any, arm64_sequoia: "856f595a5f08c47b142d118d7acddee581228f72ced55dabb5e145ec5a1ddd0c"
-    sha256 cellar: :any, arm64_sonoma:  "cd93f0cbb54a6089b5d1a424213bcd35b90b1be6ae3108d43188bbe1e31b0f52"
-    sha256 cellar: :any, sonoma:        "992a6348ca9f3c7d96f6405cff8544c830452e68efdd8039953fcb75b98406ce"
-    sha256 cellar: :any, arm64_linux:   "8aefdb702cf9d593f1aa42c4605d92e21ff1ea33133e4946575c834ddb9120a2"
-    sha256 cellar: :any, x86_64_linux:  "228ed8878690d6eb3dc18876141007da180ba4be0848cba381dc3f83293e6a2e"
+    sha256 cellar: :any, arm64_tahoe:   "f659050963b83166026d6543e11d45ca28926801682b037b1d8206a03c386011"
+    sha256 cellar: :any, arm64_sequoia: "0bb7c6ef70ed90dd251fd9f77f272ae96d866c2da8eca6eba9c54d5aeec01205"
+    sha256 cellar: :any, arm64_sonoma:  "3f885ad22d5f1bb1dc8f6cbdbe09d07d860af37fee65c9b6433e5d258171b8b8"
+    sha256 cellar: :any, arm64_linux:   "9a5bd3b6e56e80168975d4c82b01029e6773162650ab6b90c394bbfc88664bb2"
+    sha256 cellar: :any, x86_64_linux:  "6d786f910b87ea409598ca7666d10f41b5e2f5582f2389c2df6fe0a6a0ceab00"
   end
 
   depends_on "cmake" => :build

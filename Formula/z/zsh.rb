@@ -49,6 +49,8 @@ class Zsh < Formula
     depends_on "texinfo" => :build
   end
 
+  deny_network_access!
+
   def install
     system "Util/preconfig" if build.head?
 

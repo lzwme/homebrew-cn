@@ -24,11 +24,12 @@ class Ncurses < Formula
 
   keg_only :provided_by_macos
 
+  deny_network_access!
+
   def install
     ENV.delete("TERMINFO")
 
     args = [
-      "--prefix=#{prefix}",
       "--enable-pc-files",
       "--with-pkg-config-libdir=#{lib}/pkgconfig",
       "--enable-sigwinch",
@@ -41,7 +42,7 @@ class Ncurses < Formula
     ]
     args << "--with-terminfo-dirs=#{share}/terminfo:/etc/terminfo:/lib/terminfo:/usr/share/terminfo" if OS.linux?
 
-    system "./configure", *args
+    system "./configure", *args, *std_configure_args
     system "make", "install"
     make_libncurses_symlinks
 

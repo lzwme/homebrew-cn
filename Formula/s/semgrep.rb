@@ -5,8 +5,8 @@ class Semgrep < Formula
   homepage "https://semgrep.dev"
   # Pull from git tag to get submodules, https://github.com/semgrep/semgrep/issues/10877
   url "https://github.com/semgrep/semgrep.git",
-      tag:      "v1.174.0",
-      revision: "829b72f16f5148e171059ed74518d2324294d1f1"
+      tag:      "v1.175.0",
+      revision: "7963c5a2d7e784ab24d0c14e29c63c6d53751336"
   license "LGPL-2.1-only"
   head "https://github.com/semgrep/semgrep.git", branch: "develop"
 
@@ -16,12 +16,11 @@ class Semgrep < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "a97ad90d3d25e8f153bceb89ba6cfd7fad49bc0d62af9ca3cefe869603a3cb41"
-    sha256 cellar: :any, arm64_sequoia: "7346a11c1e2cf0512c13f065d73049bc3035191348bb96eb53417cb9fadb1029"
-    sha256 cellar: :any, arm64_sonoma:  "621e43994fe204e3e0d1a16580310e1b2ec82503bdab3ff96d26c38615f8fa30"
-    sha256 cellar: :any, sonoma:        "897f34c0be14d30be7cfac4d7bce049aa67721781182fc53dee8626759251995"
-    sha256               arm64_linux:   "6bff894eb455be0795357e9d3bc3653a309ad818208836ece4dbe2452d6f133d"
-    sha256               x86_64_linux:  "1c88cd6e12cbd091408854d250b67adc51949155c3219f262fbb901fb9491de2"
+    sha256 cellar: :any, arm64_tahoe:   "976144c952c6a3e13c76804b48c61ecae0d3b44fc8e71fa5677a11b08390e063"
+    sha256 cellar: :any, arm64_sequoia: "aa65024e7c2f52e17af196f1e6cfbb7cfb98cadf91a700ce8198fdbcfe6f4e5d"
+    sha256 cellar: :any, arm64_sonoma:  "2d24236dd16e19035f5c6d2f2f822abfd77f0717cba12a7c037c0af82d6b95f7"
+    sha256               arm64_linux:   "e94f9dee5631f81724ef657813e4314504cae071328ee843b6573a53cfd80f9b"
+    sha256               x86_64_linux:  "ccdfc7afe91615c6bc70c5ed78b2f93ed40ff985179eddb0bdd3000cd662fe12"
   end
 
   depends_on "ocaml" => :build
@@ -107,8 +106,8 @@ class Semgrep < Formula
   end
 
   resource "googleapis-common-protos" do
-    url "https://files.pythonhosted.org/packages/72/73/74bcab964c9a7a61f2bb71e8179b0f13e6fa98f7ce00fd168aab291e4a2e/googleapis_common_protos-1.75.1.tar.gz"
-    sha256 "d3042c6c5a2d4e67113104d6b6818b59b6bd92a197f2a91508e801fe815cf071"
+    url "https://files.pythonhosted.org/packages/c0/90/fb8f1c84537fbf210c1f53a53ae473a805f6599c5a40b93c1bbadd211f7a/googleapis_common_protos-1.75.2.tar.gz"
+    sha256 "8829a3d1e4508c5b7b9a6b9525f7fccff611f8531644579a76466c29295d4bb2"
   end
 
   resource "h11" do

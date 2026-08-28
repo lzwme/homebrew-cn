@@ -29,6 +29,8 @@ class Libffi < Formula
 
   keg_only :provided_by_macos
 
+  deny_network_access!
+
   def install
     system "./autogen.sh" if build.head?
     system "./configure", *std_configure_args

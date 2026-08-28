@@ -23,6 +23,8 @@ class Zsign < Formula
     depends_on "zlib-ng-compat"
   end
 
+  deny_network_access!
+
   def install
     build_dir = OS.mac? ? "build/macos" : "build/linux"
     system "make", "-C", build_dir, "CXX=#{ENV.cxx}", "VERSION=#{version}", "SYSTEM_MINIZIP=ng"

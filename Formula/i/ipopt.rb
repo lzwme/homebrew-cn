@@ -1,21 +1,18 @@
 class Ipopt < Formula
   desc "Interior point optimizer"
   homepage "https://coin-or.github.io/Ipopt/"
-  url "https://ghfast.top/https://github.com/coin-or/Ipopt/archive/refs/tags/releases/3.14.19.tar.gz"
-  sha256 "b3eb84a23812b53a3325bcd2c599de2b0f5df45a18ed251f9e3c1cd893136287"
+  url "https://ghfast.top/https://github.com/coin-or/Ipopt/archive/refs/tags/releases/3.14.20.tar.gz"
+  sha256 "43bddd6fa793b1694aa94d6129fe3e4a8d452d97a84ef5f2ff721c8047c75605"
   license "EPL-2.0"
   compatibility_version 1
   head "https://github.com/coin-or/Ipopt.git", branch: "stable/3.14"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "94e96fc9b70faed386353442a5dbd7eb65cbca7d2eedb0d114d81781c3346702"
-    sha256 cellar: :any,                 arm64_sequoia: "847ce7b7dcfa69ea27a65ea01ac98cbe63d211d93b3075d44c75074824ac6c0c"
-    sha256 cellar: :any,                 arm64_sonoma:  "1f471be987f9e4a2b010f555ae5b9b06c5177feb05932e83814355534695f8ef"
-    sha256 cellar: :any,                 arm64_ventura: "ba168fca35523f7b6b75b04704fb22df58cc0ca2009a61e0de09647867ad7239"
-    sha256 cellar: :any,                 sonoma:        "df6a8e87d831c760a26ea98ca037c2c6d4bb37d7520ce62e68e2aa1aa53b616e"
-    sha256 cellar: :any,                 ventura:       "c5f584f91a6ae167306fae8f28574657d304643460e58a44d7edf3793c1dd960"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "51378444ce9b3c3dc91f94b3744f8a287a41ad62f0c12b51e728d94a1eaf2c00"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "546246a14d77bcd0401489732f9d8a43ce62b74aaede0bc88ac502f79d3c6f3c"
+    sha256 cellar: :any, arm64_tahoe:   "e4b7041cb746ff1320d6106736541a4e2de198683cbfd425430ed720e6c1f1b8"
+    sha256 cellar: :any, arm64_sequoia: "8920dc5c3ce9bb6a7394111af6a136c3a9569f39c073c5825d6e3aeac33c2448"
+    sha256 cellar: :any, arm64_sonoma:  "f8743bed926e11ceb367300edcf3ffbc94f22011449348953b92daa404b63ee7"
+    sha256 cellar: :any, arm64_linux:   "d4e412e60add7a503b878dbd1d145d7cc5a67885294a3de3e17810477b1ae294"
+    sha256 cellar: :any, x86_64_linux:  "822e41f4859327dc1beb834e1ccc1a50da15befee522c3b77003d0ce2260b860"
   end
 
   depends_on "openjdk" => :build

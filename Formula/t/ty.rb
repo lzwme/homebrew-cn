@@ -1,18 +1,17 @@
 class Ty < Formula
   desc "Extremely fast Python type checker, written in Rust"
   homepage "https://docs.astral.sh/ty/"
-  url "https://files.pythonhosted.org/packages/88/0f/c767853e88567a2ec7e996dd95e3105b1bc62c95d103689311ef0f4a603c/ty-0.0.74.tar.gz"
-  sha256 "da14344fc8625fc9ff359bafb856ad575636ea86d9bb6a629b146bff27b380e6"
+  url "https://files.pythonhosted.org/packages/81/d0/d0c96f898d6974a4a3569ab3efdf9512c04ad99f9203effb55f72497fe97/ty-0.0.75.tar.gz"
+  sha256 "4c5eead33dfbf6e2ebb4f400f74b51ffc9bab702a6f23ddb648a1cbb740387e3"
   license "MIT"
   head "https://github.com/astral-sh/ty.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5fd105507fa51e4e98a3dcae0b12fdbe629afc651c31ecc0387be0eac3b508f3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a58be479c714a01df6cf128cb9202591bfa5dc587275ab6985bc6eec84375ebc"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4a3201fb2cd19dad1d47715d29740871b147e7fcdfdba6705240a74ce0bede9a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "55964ab235bce2ce11585fa6bcdf20c196dc394d8efa8e07d9eca294d190a425"
-    sha256 cellar: :any,                 arm64_linux:   "bcfb223ac52a9a93334bd372dea672936a55810c8161930c718e097290f15bc8"
-    sha256 cellar: :any,                 x86_64_linux:  "31a64f60ebf6749ada5f86519b18c281fcf98d24a364c6462eac6e6c2b1fe581"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5a397e34a385107710669d7e48b899669b1f06feae9f5226864d586fd03de491"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e2e90d6c2ab3b9179ff87540e8b0a62d71e41d87f82c44f69f9249bdc92e6171"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ce620a7d909e1f0cc06bd17c3522fe9c00d460ed18e1699c15b06feee1a9389f"
+    sha256 cellar: :any,                 arm64_linux:   "401d6d3339e5b0a8a8945d54ed3d4b31650b524b97f677cf2e120691362ba4be"
+    sha256 cellar: :any,                 x86_64_linux:  "3c496c2798a9a6a8528ac2b3f091dc3019d0abc1f8301e7c4afc317c8654644d"
   end
 
   depends_on "rust" => :build

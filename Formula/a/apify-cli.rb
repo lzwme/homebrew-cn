@@ -1,19 +1,18 @@
 class ApifyCli < Formula
   desc "Apify command-line interface"
   homepage "https://docs.apify.com/cli/"
-  url "https://registry.npmjs.org/apify-cli/-/apify-cli-1.8.0.tgz"
-  sha256 "4943f2ae52bd2c37c6c283a205c415790f2e4ba0fdbfb90b1f5fcd6e0fabeed1"
+  url "https://registry.npmjs.org/apify-cli/-/apify-cli-1.9.0.tgz"
+  sha256 "dc737fc37a9d34bf0db399ed874cd8b8299d15fe36fb74c81e1bea3013c79045"
   license "Apache-2.0"
 
   no_autobump! because: :bumped_by_upstream
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "cbb446d0d31801c2d50fdf3ad26a038a1e40e8bb642c322dbe4054a6ec72cd5b"
-    sha256 cellar: :any, arm64_sequoia: "cbb446d0d31801c2d50fdf3ad26a038a1e40e8bb642c322dbe4054a6ec72cd5b"
-    sha256 cellar: :any, arm64_sonoma:  "cbb446d0d31801c2d50fdf3ad26a038a1e40e8bb642c322dbe4054a6ec72cd5b"
-    sha256 cellar: :any, sonoma:        "db976c473733bab5259cf5740d9dadb21be06525970454c4dd3143ac85148c42"
-    sha256 cellar: :any, arm64_linux:   "4b48e9c48407932352bf71c0ffc06dbbb96bc9c3d935d25254be7dd510a4a65b"
-    sha256 cellar: :any, x86_64_linux:  "a94db10b8a8546b14eef7bf57f5ca214cea4bc9172a5a4564f66fa9378919a59"
+    sha256 cellar: :any, arm64_tahoe:   "250a7fc65ee706991d6ad944de3afe6df58750043811c69ab70650d85398aa07"
+    sha256 cellar: :any, arm64_sequoia: "250a7fc65ee706991d6ad944de3afe6df58750043811c69ab70650d85398aa07"
+    sha256 cellar: :any, arm64_sonoma:  "250a7fc65ee706991d6ad944de3afe6df58750043811c69ab70650d85398aa07"
+    sha256 cellar: :any, arm64_linux:   "7abc4f3d9d5f7bc13e2a4401c71632c67dbb4a9bdb819d98e13b7afb87bb4304"
+    sha256 cellar: :any, x86_64_linux:  "5628552e88dcdda056364fc441e28cb98d80203460ef800ef13d321e258df474"
   end
 
   depends_on "node"

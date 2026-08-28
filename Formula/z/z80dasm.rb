@@ -1,15 +1,13 @@
 class Z80dasm < Formula
   desc "Disassembler for the Zilog Z80 microprocessor and compatibles"
-  # use debian site for now, cannot use debian mirror as it is still with 1.1.6
-  homepage "https://packages.debian.org/sid/z80dasm"
-  # Original homepage is down, use a reliable mirror
-  # url "https://www.tablix.org/~avian/z80dasm/z80dasm-1.2.0.tar.gz"
-  url "https://geeklan.co.uk/files/z80dasm-1.2.0.tar.gz"
+  homepage "https://www.tablix.org/~avian/blog/articles/z80dasm/"
+  url "https://www.tablix.org/~avian/z80dasm/z80dasm-1.2.0.tar.gz"
+  mirror "https://geeklan.co.uk/files/z80dasm-1.2.0.tar.gz"
   sha256 "8da2c4a58a3917a8229dec0da97e718f90ede84985424d74456575bf5acfeec8"
   license "GPL-2.0-or-later"
 
   livecheck do
-    url "https://geeklan.co.uk/files/"
+    url "https://www.tablix.org/~avian/z80dasm/"
     regex(/href=.*?z80dasm[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
@@ -28,8 +26,10 @@ class Z80dasm < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "3974fe69ab6b1bfddf25cdad7ff5e7c462b8df8c6605ef528a067aa5cffbb3ec"
   end
 
+  deny_network_access!
+
   def install
-    system "./configure", "--prefix=#{prefix}"
+    system "./configure", *std_configure_args
     system "make", "install"
   end
 

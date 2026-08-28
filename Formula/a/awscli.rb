@@ -3,19 +3,19 @@ class Awscli < Formula
 
   desc "Official Amazon AWS command-line interface"
   homepage "https://aws.amazon.com/cli/"
-  url "https://ghfast.top/https://github.com/aws/aws-cli/archive/refs/tags/2.36.32.tar.gz"
-  sha256 "f4b66c1654e7ec4cce75f6604a6962d62b577ef353b44753fe83caf20bf2bd22"
+  url "https://ghfast.top/https://github.com/aws/aws-cli/archive/refs/tags/2.36.33.tar.gz"
+  sha256 "15b947e233471187036a792585a3c93affe9e7c61bd227f29312e439144b2132"
   license "Apache-2.0"
+  revision 1
   compatibility_version 1
   head "https://github.com/aws/aws-cli.git", branch: "v2"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "823ade578f254de548bb445c73fc1ec15aada61a3de055e90a032e91ea0541ab"
-    sha256 cellar: :any, arm64_sequoia: "65810c6681cdcdee4cb3be31100480dca853533f397bd948f015f44a581c82a3"
-    sha256 cellar: :any, arm64_sonoma:  "139d99fb44378ddba8f79d3c8bd7d42758e1242fe97448a66a305eec3153b665"
-    sha256 cellar: :any, sonoma:        "024b20f4085b87b725d70f3e850798d1db6cfe063227b8984794d5666f9e9cbc"
-    sha256 cellar: :any, arm64_linux:   "0d3c60c8c6ffb879ecfff0ece7490f7231220e0a84866c5dbd30feedca5a8bd7"
-    sha256 cellar: :any, x86_64_linux:  "32eae079d6ca009176d48e290c6837ab7211e3f778852dd9cbed710ecf4acdab"
+    sha256 cellar: :any, arm64_tahoe:   "3e034fc15083e30943a7e6e50873e09cd77c2874530a25a9831f90c2128ae527"
+    sha256 cellar: :any, arm64_sequoia: "d42c3080e525dc212948e3ef4ef4e1b0e960817f07c0036978f58c7dde3d353d"
+    sha256 cellar: :any, arm64_sonoma:  "ec4c1b299e31feca34e2a33554b6f5c510183001e8cb1de35f0105506f36cbc1"
+    sha256 cellar: :any, arm64_linux:   "6358c8420735cc7c689898c13f196d36fc4cb7bc96c5dd5641cfcc43c163845e"
+    sha256 cellar: :any, x86_64_linux:  "6a08e422be2f29fde31d7cb8d5a3763e5fcfd0cd5efad61046c65f3f68014eee"
   end
 
   depends_on "aws-c-auth"
@@ -101,6 +101,9 @@ class Awscli < Formula
   def python3
     which("python3.14")
   end
+
+  # downloads wheels during build
+  allow_network_access! :build
 
   def install
     ENV["AWS_CRT_BUILD_USE_SYSTEM_LIBCRYPTO"] = "1"

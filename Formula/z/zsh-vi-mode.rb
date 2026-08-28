@@ -12,6 +12,8 @@ class ZshViMode < Formula
 
   uses_from_macos "zsh"
 
+  deny_network_access!
+
   def install
     pkgshare.install "zsh-vi-mode.zsh"
     pkgshare.install "zsh-vi-mode.plugin.zsh"

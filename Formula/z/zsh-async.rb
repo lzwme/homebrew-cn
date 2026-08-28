@@ -12,6 +12,8 @@ class ZshAsync < Formula
 
   uses_from_macos "zsh"
 
+  deny_network_access!
+
   def install
     zsh_function.install "async.zsh" => "async"
   end

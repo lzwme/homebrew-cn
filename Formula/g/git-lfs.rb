@@ -1,8 +1,8 @@
 class GitLfs < Formula
   desc "Git extension for versioning large files"
   homepage "https://git-lfs.com/"
-  url "https://ghfast.top/https://github.com/git-lfs/git-lfs/releases/download/v3.7.1/git-lfs-v3.7.1.tar.gz"
-  sha256 "8f56058622edfea1d111e50e9844ef2f5ce670b2dbe4d55d48e765c943af4351"
+  url "https://ghfast.top/https://github.com/git-lfs/git-lfs/releases/download/v3.8.0/git-lfs-v3.8.0.tar.gz"
+  sha256 "4f75492c6832038fa73d39a45316657208bb6caa23b273451cb4ec2358d42ccb"
   license "MIT"
   compatibility_version 1
 
@@ -14,12 +14,11 @@ class GitLfs < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "edf7cb5683caadeca2318d455130e4e67ddae8647594760aad039f77c7712df1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "edf7cb5683caadeca2318d455130e4e67ddae8647594760aad039f77c7712df1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "edf7cb5683caadeca2318d455130e4e67ddae8647594760aad039f77c7712df1"
-    sha256 cellar: :any_skip_relocation, sonoma:        "97e7aefe5058a1a4d7687c391c18baf20a2d6d387d038597de4d33002348c6eb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b0c10c6238b6b826c078809c7846b44d44ebed18212d61928dfca369e62c74db"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "93d215d3757e8e3249e22af329ade9d031312820e2e8565638d6c9f1337f4dd9"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fcefb0b6742a77251b31a71780e91baba1cc02d23e2d36ef577fc91d4e74d751"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fcefb0b6742a77251b31a71780e91baba1cc02d23e2d36ef577fc91d4e74d751"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fcefb0b6742a77251b31a71780e91baba1cc02d23e2d36ef577fc91d4e74d751"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "91f4dd352c1bb1963b87143524fc732e09ebc453d826a794e1e7bd15c0a55c1c"
+    sha256 cellar: :any,                 x86_64_linux:  "518268f40ab88089067c73ecde9776aa96e9cdd0c7d5e2f54561440065c5ee3d"
   end
 
   depends_on "asciidoctor" => :build

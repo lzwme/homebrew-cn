@@ -3,17 +3,16 @@ class Flexget < Formula
 
   desc "Multipurpose automation tool for content"
   homepage "https://www.flexget.com"
-  url "https://files.pythonhosted.org/packages/45/34/bccff53dd91602ad5e895a08f7d4c1b22ad5cf3c940123d402866336e963/flexget-3.20.7.tar.gz"
-  sha256 "640f558fa2c5da99e01cd3f3c5a673ad25eb87334ff2be22c8c4533848b4848f"
+  url "https://files.pythonhosted.org/packages/40/1d/66071935d200f775039c4738e721435b6e106ad72b10787bcda19e66e139/flexget-3.20.8.tar.gz"
+  sha256 "179dfdbebc93dc05f029be14fce33685c25158b328e61f8bee8f2337f2ebb7b2"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "7566b3b8e8b11ed8d922f1ff845beeb078dc9b50daafb45e72335cbfa11a9593"
-    sha256 cellar: :any, arm64_sequoia: "83f15cf7300da0106bb026a5f86a85b0d36f324103a0762f62d688220aa0abb5"
-    sha256 cellar: :any, arm64_sonoma:  "c948366b5cd1e172d2278e9f1b51f6fdfd8d87e6cf7c7ccc3a74f56e0a199228"
-    sha256 cellar: :any, sonoma:        "29ec8c5fef71d2deaa64439ab98abfa345bf06bdeab11657ded17dde38102153"
-    sha256 cellar: :any, arm64_linux:   "bf7bd5f2b1a2dcb1410fa259e693e843486e045e79f4234fb5b3d8d26cb5a271"
-    sha256 cellar: :any, x86_64_linux:  "c64f1c76a777fed905c1a69d18924da7bb90506415d9a0ce6a1092d62b4bae2e"
+    sha256 cellar: :any, arm64_tahoe:   "f5d68ab1e39d9280849ed08506dff505809b67134a1c4446c49f366fd21ad5ca"
+    sha256 cellar: :any, arm64_sequoia: "4a86eece81ce4b98efa01b7cfb96fadf165259ba0b18ee347b35c916e5d0bb9f"
+    sha256 cellar: :any, arm64_sonoma:  "25461f450becf02704d0ed988b3cf5b602315f7362448da47138099d4f8fac8e"
+    sha256 cellar: :any, arm64_linux:   "c10cd956f010a491e2b155fe8207941f8537d18c8156064288cb5f3fe5e52650"
+    sha256 cellar: :any, x86_64_linux:  "9c8ad690e483b08e4a6c63a1352cde7a0f399016f88f8fc7b11427c53ef95a8a"
   end
 
   depends_on "rust" => :build
@@ -83,13 +82,13 @@ class Flexget < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/76/d4/81420972a676e8ffea40450d8c8c92943e7218a78fe9b64359836cc9876b/click-8.4.2.tar.gz"
-    sha256 "9a6cea6e60b17ebe0a44c5cc636d94f09bd66142c1cd7d8b4cd731c4917a15f6"
+    url "https://files.pythonhosted.org/packages/c7/0e/7fa0ef50764b67090eca4114772a2abf8b6148198475e54c660b97caeee6/click-8.5.0.tar.gz"
+    sha256 "ba0d2089de75ea0310e2dde03160e6ca10009947fb95a182f9b54021bb272e34"
   end
 
   resource "curl-cffi" do
-    url "https://files.pythonhosted.org/packages/bb/df/8ef4b9a05139fdb6baf39ab44cc6529b91ef2425aab14d4f4a1dab940a56/curl_cffi-0.16.1.tar.gz"
-    sha256 "0662a4fe752d395ab3e2e23fbec68e34e1671884d0dd68dfc9671e150f634a99"
+    url "https://files.pythonhosted.org/packages/d1/f6/347067dfacb19e44a4166d7bdb183e3a2629680beceb5e52f7cb2cc1a3b4/curl_cffi-0.16.2.tar.gz"
+    sha256 "2986a86cdcf514ab73632c2de62a01db3cc97f7ecf17798a1be16180f4474198"
   end
 
   resource "feedparser" do

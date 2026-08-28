@@ -1,8 +1,8 @@
 class Wstunnel < Formula
   desc "Tunnel all your traffic over Websocket or HTTP2"
   homepage "https://github.com/erebe/wstunnel"
-  url "https://ghfast.top/https://github.com/erebe/wstunnel/archive/refs/tags/v10.6.2.tar.gz"
-  sha256 "3e4bb4169599ce83bdd64bc071b0435c58d9cf13b15d03693d0c962dbb5e8018"
+  url "https://ghfast.top/https://github.com/erebe/wstunnel/archive/refs/tags/v10.7.0.tar.gz"
+  sha256 "90025bc4ee46c8b1abffebb057a59fb0b3a4668eba58822c1b3889b5badce92d"
   license "BSD-3-Clause"
   head "https://github.com/erebe/wstunnel.git", branch: "main"
 
@@ -15,12 +15,11 @@ class Wstunnel < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6cda8b2154dab52d8c19c1ab6de04214cccc0ac306b1dc26b9f787b9d841bf79"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b5b442d1103e1761ae0d08ad4b6fa661b8dec92a1df14f50a70e39a3128935cd"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e8d498c11b305340088ee83832e277bf23a6933b4ea137758a7b21c06051395b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "770d1c74bfb0b303117a71fb8aaaabccbd3d24bdc3a34861a91e1eaa677a917d"
-    sha256 cellar: :any,                 arm64_linux:   "eb6a88a824a7ad434f67655d33102ee1d9313db80d07768735281769539ed3d4"
-    sha256 cellar: :any,                 x86_64_linux:  "2df2ff4f5b5d505a9276681017c2aa84dfc9cc2830431c7b75f2fbb8585d8239"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "28582c6575d5a42b871833e6a35dd95da3606be725771e5b6b87969624086a3f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2ded8fe3aa52855536b7c7b08223c88525c614e55a6ce15106cb21a204b816fb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "34c15922def12ee6e7a2054fb024a2a93ea4de580709ebc933c91172e1a0ed6e"
+    sha256 cellar: :any,                 arm64_linux:   "4c187cbb5bd153ff76e9839971cfd96807369d008cc3f27e009420fa49e5ebed"
+    sha256 cellar: :any,                 x86_64_linux:  "d02db9ecc0057dff3402133c9f9f7abaeebd6e1c3194c4122706a2a0d75c19dc"
   end
 
   depends_on "rust" => :build

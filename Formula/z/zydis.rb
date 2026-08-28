@@ -20,6 +20,8 @@ class Zydis < Formula
   depends_on "ronn-ng" => :build
   depends_on "zycore-c"
 
+  deny_network_access!
+
   def install
     args = %W[
       -DCMAKE_INSTALL_RPATH=#{rpath}

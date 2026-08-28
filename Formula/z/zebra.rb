@@ -34,6 +34,8 @@ class Zebra < Formula
     depends_on "zlib-ng-compat"
   end
 
+  deny_network_access!
+
   def install
     system "./configure", "--disable-silent-rules",
                           "--enable-mod-text",

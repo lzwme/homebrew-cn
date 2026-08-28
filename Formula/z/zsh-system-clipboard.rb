@@ -16,6 +16,8 @@ class ZshSystemClipboard < Formula
     depends_on "xclip" => :test
   end
 
+  deny_network_access!
+
   def install
     pkgshare.install "zsh-system-clipboard.zsh"
   end

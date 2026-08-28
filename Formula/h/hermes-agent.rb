@@ -14,12 +14,12 @@ class HermesAgent < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "c5ce82d33a840047d9d75f92881018cb438120616e2d43e219ffda8075ac633d"
-    sha256 cellar: :any, arm64_sequoia: "01bfee973458a3d37b8837e9bfd8be0f4151be1f97e8ab1239b9a05d7e638ba3"
-    sha256 cellar: :any, arm64_sonoma:  "e80677a1696e333b73d14142e8e73385d54a9b74d0becdcd520def39dbda36ce"
-    sha256 cellar: :any, sonoma:        "113b64393da64a1cf7c71430f9cc3bad0302bd16f548169d43dafa82474ad4f6"
-    sha256 cellar: :any, arm64_linux:   "b451ebd7777f37c2f564d76283c7396814b2423e76f8f31dde4ee3b1d9f97cff"
-    sha256 cellar: :any, x86_64_linux:  "1baccdb42d513ade89cd88d70390c34f07651da8d704ccfdc862fe7016b0f6ad"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "a8281d2c06b64e9faca6769e069653222236fcf90f62bdeaf40221fd05ab518b"
+    sha256 cellar: :any, arm64_sequoia: "c8ce8db436e2a0bf8a7e657bd456905be7ad1ef24369ab514be796f597829422"
+    sha256 cellar: :any, arm64_sonoma:  "4771bdda76a5567ca6267ba6e7b6f4ad4bf89f5080dbf67cf4aad4f88a8e921c"
+    sha256 cellar: :any, arm64_linux:   "bbeb26ae9bc6b19d004ab57d6e3bbaa539868fc2b2ea5194ef68ab6e2769f342"
+    sha256 cellar: :any, x86_64_linux:  "d9c8ecc99f13ace33f01bf513808013a0c1b008f936ba4cd73dd487688669370"
   end
 
   depends_on "pkgconf" => :build
@@ -30,7 +30,8 @@ class HermesAgent < Formula
   depends_on "node"
   depends_on "pillow" => :no_linkage
   depends_on "pydantic" => :no_linkage
-  depends_on "python@3.14"
+  # see: https://github.com/Homebrew/homebrew-core/issues/300738
+  depends_on "python@3.13"
   depends_on "ripgrep"
   depends_on "tirith"
 
@@ -296,9 +297,6 @@ class HermesAgent < Formula
 
   def install
     ENV["HERMES_NIX_BUILD"] = "1"
-    # Allow to build with Python 3.14
-    inreplace "pyproject.toml", "requires-python = \">=3.11,<3.14\"", "requires-python = \">=3.11,<3.15\""
-
     # Work around superenv breaking aws-lc-sys `-O0` needed to build CPU Jitter RNG
     ENV["AWS_LC_SYS_NO_JITTER_ENTROPY"] = "1"
 

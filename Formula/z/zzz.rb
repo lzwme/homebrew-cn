@@ -32,6 +32,8 @@ class Zzz < Formula
 
   depends_on :macos
 
+  deny_network_access!
+
   def install
     system "make", "install", "PREFIX=#{prefix}"
   end

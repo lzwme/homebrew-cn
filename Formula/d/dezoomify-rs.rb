@@ -1,8 +1,8 @@
 class DezoomifyRs < Formula
   desc "Tiled image downloader"
   homepage "https://dezoomify-rs.ophir.dev"
-  url "https://ghfast.top/https://github.com/lovasoa/dezoomify-rs/archive/refs/tags/v2.18.1.tar.gz"
-  sha256 "35c9006d408418f453e90194db4dc005e279612814760e837d6ee0940936dd75"
+  url "https://ghfast.top/https://github.com/lovasoa/dezoomify-rs/archive/refs/tags/v2.19.0.tar.gz"
+  sha256 "f19cf1560adcf398abbe6a5b9cbfc4734caf9a1b9b220c871848097e8d7104b0"
   license "GPL-3.0-only"
   head "https://github.com/lovasoa/dezoomify-rs.git", branch: "master"
 
@@ -15,12 +15,12 @@ class DezoomifyRs < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8b41d654f07a5bc5ee9f20f01e25835f0f76caaf8c58662695c404fd6565d86d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e0aea37bffd3d25471c46dfdf81c30023e751b88500db7e7019b9a154eae9162"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2342caa95e630623f295c71dfe030360f852818a071b06af812ac9bd96561b63"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a6471c476cfb8d5888a71f888d2bc6646d8d3816b7d4c31579b04847806c6961"
-    sha256 cellar: :any,                 arm64_linux:   "196d2d0a8cf3eb4b5f4f467542fad2390f3a51acec168fdef432e15b11f9e0fd"
-    sha256 cellar: :any,                 x86_64_linux:  "a0ef62c5a0a1419a6b1fa7dabdfc560c120c63c93e6f3d6c563b9549bf771a05"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e7a1f8e01226c39e70c0167470fb827943c89eca2e6fcd517b79bf5b77e64d66"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9d903806f2b75a343b369ee0b575db9ec04a0ba0a6532c094599246ba51a6c7e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "74d1d815d065749be5d4dc1186fecc9f53074ab9aa0724f6edab2d36b95b99fe"
+    sha256 cellar: :any_skip_relocation, sonoma:        "cc0bb9bda80b0bd63c9103f6d7ee3b2dd0dd1957779ad4afe8b6008610c53a25"
+    sha256 cellar: :any,                 arm64_linux:   "c5517b2b1dbaefec0ba54ccd3274ca2be310f36cba8a27d58ba1f7a86d967a5e"
+    sha256 cellar: :any,                 x86_64_linux:  "8f949fc467d4f23d1c01646d9c4b4831bec3a77e6cc40b36b42ef072300ea2fc"
   end
 
   depends_on "pkgconf" => :build

@@ -49,6 +49,9 @@ class Pipx < Formula
         .find { |f| f.name.start_with?("python@") }
   end
 
+  # downloads wheels during build and test
+  deny_network_access! :postinstall
+
   def install
     # Avoid Cellar path reference, which is only good for one version.
     inreplace "src/pipx/interpreter.py", "return _get_sys_executable()",

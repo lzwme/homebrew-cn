@@ -1,17 +1,16 @@
 class McpToolbox < Formula
   desc "MCP server for databases"
   homepage "https://github.com/googleapis/mcp-toolbox"
-  url "https://ghfast.top/https://github.com/googleapis/mcp-toolbox/archive/refs/tags/v1.9.0.tar.gz"
-  sha256 "a581c45d424d0da1ec6dfd3162509337084d214c10c33bfe9b389be7e627c75e"
+  url "https://ghfast.top/https://github.com/googleapis/mcp-toolbox/archive/refs/tags/v1.10.0.tar.gz"
+  sha256 "4540261dfc0151a9dcac52ab96886bccdd873e3c6265d7016aa2fa9e01d8b43a"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4fc656310445f2604aea3e6b1f48e7f9a793dee03c221b387516ea8257390b87"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dc92df5dd0afa80b3c1312db72e1e6a4157658ae1389b30798a62ca0e5d2325c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "35218ba4722933ef27b368419f772bdc01bb7b763a57d44b47b7550877586d8d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "58fbba30f597caeaf120e1564e1252928b627daa5677fe34307ae80eebc41123"
-    sha256 cellar: :any,                 arm64_linux:   "2b121422ebe10fabab9ef8da272142455f77eedaf9c7a857915c37972d7538bc"
-    sha256 cellar: :any,                 x86_64_linux:  "87a3287e6ff1d1028a328a916c3892da65bfc1f2b24979c7d525df79575585d6"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "957c10c2adbcc646d5eb6961f0e3a31351f7d384867accb1e7cb49e1b4493f78"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "85a1e7d917961b457e2d7eb1480675d788e0a0a90c5a94ef622277bcbd7434cf"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "789b6cc459813a4fddb31afcb167546c0b13a981359cf3acb29d8a013aa978bd"
+    sha256 cellar: :any,                 arm64_linux:   "7170c1dab82dfa8806dd768786e8757e27c489d3037ad983872c21d354b49826"
+    sha256 cellar: :any,                 x86_64_linux:  "921994701fc76289b4a6047c782f1f27b341af835434fe4224ffdbdb69e82df4"
   end
 
   depends_on "go" => :build

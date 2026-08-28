@@ -1,8 +1,8 @@
 class Pulsarctl < Formula
   desc "CLI for Apache Pulsar written in Go"
   homepage "https://streamnative.io/"
-  url "https://ghfast.top/https://github.com/streamnative/pulsarctl/archive/refs/tags/v4.2.1.12.tar.gz"
-  sha256 "f7889c92639982f64113f9c81c4f371880511f015c8de68d3f810fc3b8b5cfa4"
+  url "https://ghfast.top/https://github.com/streamnative/pulsarctl/archive/refs/tags/v4.2.1.13.tar.gz"
+  sha256 "34d2151785d0c958a8feab0efc8bb2d22f6de63ed07acc6d2651b2f87ef487c6"
   license "Apache-2.0"
   head "https://github.com/streamnative/pulsarctl.git", branch: "master"
 
@@ -19,12 +19,11 @@ class Pulsarctl < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e976a8b329a9bfe845ca26f1dedc0d7d48df2bc508b41de3929fe83783b147de"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e976a8b329a9bfe845ca26f1dedc0d7d48df2bc508b41de3929fe83783b147de"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e976a8b329a9bfe845ca26f1dedc0d7d48df2bc508b41de3929fe83783b147de"
-    sha256 cellar: :any_skip_relocation, sonoma:        "61b7b2a7e8ea0082d21a6ed4e8464154c8f2648c50ffcf88d8e77ebf7b7f15f3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2beb16d4ef715bc1acd286c4da215e7e7c43974fee84fee903fe398309639bbb"
-    sha256 cellar: :any,                 x86_64_linux:  "cc4a9781c084e2f6630623a64e84817f5c2b1d40353f587fd115a7caea8e0a0d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6fab930cc9189a49869bf245bbae59cb831773b5e71267cd94601e772f025892"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6fab930cc9189a49869bf245bbae59cb831773b5e71267cd94601e772f025892"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6fab930cc9189a49869bf245bbae59cb831773b5e71267cd94601e772f025892"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9b8fed32437df853c9a97ed3f337b24cda7bf485fa244a5d88fe7743332f4bb7"
+    sha256 cellar: :any,                 x86_64_linux:  "fc050028e6b1c48c5f2c81f1894098fd2364d0acbaec86c3c21dc270e2eea48d"
   end
 
   depends_on "go" => :build

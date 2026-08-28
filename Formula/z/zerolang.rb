@@ -20,6 +20,8 @@ class Zerolang < Formula
     sha256 cellar: :any,                 x86_64_linux:  "9ad8d2ce3afd8b7ee43eb254431fbd455a056abcff17482376d9ad7357b24e88"
   end
 
+  deny_network_access!
+
   def install
     system "make", "-C", "native/zero-c", "OUT=#{bin}/zero"
     rm bin/"zero.build"

@@ -22,6 +22,8 @@ class ZshCompletions < Formula
 
   uses_from_macos "zsh" => :test
 
+  deny_network_access!
+
   def install
     inreplace "src/_ghc", "/usr/local", HOMEBREW_PREFIX
     inreplace "src/_gio", "/usr/local/share", HOMEBREW_PREFIX/"share"

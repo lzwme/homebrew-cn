@@ -1,17 +1,16 @@
 class Supabase < Formula
   desc "Postgres development platform"
   homepage "https://supabase.com/docs/reference/cli/about"
-  url "https://registry.npmjs.org/supabase/-/supabase-2.115.0.tgz"
-  sha256 "97559fe62f73e476609d349f85ca0a4adc6a962080b127b0723e03bed83c5029"
+  url "https://registry.npmjs.org/supabase/-/supabase-2.116.0.tgz"
+  sha256 "f9c9071515da5148c751d2aff2c8c3e1c3272458075b65d86e6d46107bcd3371"
   license "MIT"
 
   bottle do
-    sha256                               arm64_tahoe:   "4c893b83513be6d264853f4da31ebc630d78c534c400f5e1f6115d5bc1594d77"
-    sha256                               arm64_sequoia: "4c893b83513be6d264853f4da31ebc630d78c534c400f5e1f6115d5bc1594d77"
-    sha256                               arm64_sonoma:  "4c893b83513be6d264853f4da31ebc630d78c534c400f5e1f6115d5bc1594d77"
-    sha256 cellar: :any_skip_relocation, sonoma:        "fd4e75ca78c4f4efbe7de9b92e11ac04463c9ec9c15259d6a3d26259ab372457"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3bb97f9b407790ac4680910014b064641d2f184d0050d19598817b3bcdb13970"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d867726a126d52616e85d868f4b0d4bad5bd76bb725402c549e749c01dcd667f"
+    sha256                               arm64_tahoe:   "efb43fab5284b53b6ea2793685c6922ce7c7419a54822e4bfc25b3576b135edc"
+    sha256                               arm64_sequoia: "efb43fab5284b53b6ea2793685c6922ce7c7419a54822e4bfc25b3576b135edc"
+    sha256                               arm64_sonoma:  "efb43fab5284b53b6ea2793685c6922ce7c7419a54822e4bfc25b3576b135edc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3a17609b1ba7b2ebaa26c636091d2e3301b59583b521cce58485bf5044cf9f37"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6a7cbc96f5a988818211a68cca723c7070609f843b0123784f4bc5e3fe034a25"
   end
 
   depends_on "node"

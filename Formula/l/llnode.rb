@@ -4,37 +4,31 @@ class Llnode < Formula
   url "https://ghfast.top/https://github.com/nodejs/llnode/archive/refs/tags/v4.0.0.tar.gz"
   sha256 "abc295c077443f823444faffb165ada4c6ca377f2b1af4c002e8a9eea0f30135"
   license "MIT"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:    "587328e971d8e18f42e15a58c9d1c94efe7cc2e48663d34de95e19a2921f7179"
-    sha256 cellar: :any,                 arm64_sequoia:  "33bb56546706b569104a07631b10c2b57fd0c6a95ddb5cfc8fed017856e2f57a"
-    sha256 cellar: :any,                 arm64_sonoma:   "7215a957ceb5664321af92bfcc1b8cc9e42ae9911a7b91ffacbd9127270b1552"
-    sha256 cellar: :any,                 arm64_ventura:  "c11ee956c445277d3a77bfe5ab6b3fa9553c922aabf22731af6e2135d1c2b361"
-    sha256 cellar: :any,                 arm64_monterey: "e1c93fd5aefebd887138fd244b50db737433cc30c278c6d18a3e87f0d6316f29"
-    sha256 cellar: :any,                 arm64_big_sur:  "a86c196564ac07429bc188fbeb4780d408865721cc7e929e9aceaf24f8e79109"
-    sha256 cellar: :any,                 sonoma:         "3551ad8a5cc42a007da92190d786a92e3aacffa7c017ada497ddaef17dd3ab69"
-    sha256 cellar: :any,                 ventura:        "ec584fb90528046e31353b134abf6e017a72da189ff394a72d3d9e1affc6b9f6"
-    sha256 cellar: :any,                 monterey:       "0737158c515f49e2cb56c68df835f789daa8d13f5b85a9a300532078318a86e5"
-    sha256 cellar: :any,                 big_sur:        "fb32b0d19ff9f0c760a79bafdc830f0574a85165601ab493a9b8c7737e5dfef7"
-    sha256 cellar: :any,                 catalina:       "d8d1926e4447e8a07e56744001bccd5661fce6186fbb33e75218d11bf57c4908"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "6259affcb6b5e18c934eae0510775580d184ca9e1e9a3c4a19c19400bdcb10b1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "343c83b8b3a42ad4496c3866dda8da056a4cea95a09bebdec3280cbe3c301484"
+    sha256 cellar: :any, arm64_tahoe:   "54c5851be0beb8120052a165ed72dd8476e567abb3f2de41c1c9b428df5d8f75"
+    sha256 cellar: :any, arm64_sequoia: "e65ad5f5498e21f7996650ba55c4fda69e6238965481761a8d363c473a4a5087"
+    sha256 cellar: :any, arm64_sonoma:  "3bd820e0cde64034c641b5499152deeb7b8f91986069ddf742b9f5160f9c1df2"
+    sha256 cellar: :any, sonoma:        "137619f190f0e99a585f54c88439541af85d196ea1dd92040e2152fb64efec67"
+    sha256 cellar: :any, arm64_linux:   "abc726d75152922c80e84dd621881c0c25df7b170b1863a79644f37b88d518fa"
+    sha256 cellar: :any, x86_64_linux:  "706bce498263aae2bf30fbf685a4fedc92dabaf135172cfdd58db0998176ab13"
   end
 
-  depends_on "llvm" => :build
+  depends_on "lldb" => :build
   depends_on "node" => [:build, :test]
 
-  uses_from_macos "llvm"
+  uses_from_macos "lldb"
 
   def llnode_so(root = lib)
     root/"llnode"/shared_library("llnode")
   end
 
   def install
-    ENV.append_path "PATH", Formula["node"].libexec/"lib/node_modules/npm/node_modules/node-gyp/bin"
+    ENV.append_path "PATH", formula_opt_libexec("node")/"lib/node_modules/npm/node_modules/node-gyp/bin"
     inreplace "Makefile", "node-gyp", "node-gyp.js"
 
-    ENV["LLNODE_LLDB_INCLUDE_DIR"] = formula_opt_include("llvm")
+    ENV["LLNODE_LLDB_INCLUDE_DIR"] = formula_opt_include("lldb")
     system "make", "plugin"
     bin.install "llnode.js" => "llnode"
     llnode_so.dirname.install shared_library("llnode")

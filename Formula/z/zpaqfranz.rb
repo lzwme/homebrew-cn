@@ -22,6 +22,8 @@ class Zpaqfranz < Formula
     sha256 cellar: :any,                 x86_64_linux:  "24a956caa2761b5594b378f38d4dde946b681e23c1376925966c9772d2775520"
   end
 
+  deny_network_access!
+
   def install
     bin.mkdir
 

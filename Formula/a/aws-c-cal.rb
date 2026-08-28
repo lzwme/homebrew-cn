@@ -1,19 +1,17 @@
 class AwsCCal < Formula
   desc "AWS Crypto Abstraction Layer"
   homepage "https://github.com/awslabs/aws-c-cal"
-  url "https://ghfast.top/https://github.com/awslabs/aws-c-cal/archive/refs/tags/v0.9.15.tar.gz"
-  sha256 "215dd31c12ea49c4f40aa7882a800f9648e4095cfcb2d6abdd27e957574ad6e2"
+  url "https://ghfast.top/https://github.com/awslabs/aws-c-cal/archive/refs/tags/v1.0.0.tar.gz"
+  sha256 "9c6d424d206dd7822aa44fa39ce31575dcbaa83133620abdac8e56e4cea9667c"
   license "Apache-2.0"
-  revision 1
-  compatibility_version 1
+  compatibility_version 2
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "d9be4b708353b4fc843571b73c2158e4f31b4f58fb83e798ac7647316b84f373"
-    sha256 cellar: :any, arm64_sequoia: "ed9604374a8eb18b868848674403c958435597de24ee14345bea99cd1526e558"
-    sha256 cellar: :any, arm64_sonoma:  "d20adad5a3ff2cb48d6259a1d7838edb35a44030bbd1deb4a5bcc709da5e44be"
-    sha256 cellar: :any, sonoma:        "b68a7770b2afca362cb8a1907c4a56e5d58a076f31c3284f93d391b88b177f76"
-    sha256 cellar: :any, arm64_linux:   "248336995ac68a05e9b79cdeb0f96ddd94c304e276835dd6882956bc4ca5208c"
-    sha256 cellar: :any, x86_64_linux:  "2cd1004cb330e21c4510edaa9b16f1f3705673918f98bee487c2d598888f1120"
+    sha256 cellar: :any, arm64_tahoe:   "dc874725a0fa415bd235f852c353f8d90de9e2e12c3fd3783ec9a79152d5be8c"
+    sha256 cellar: :any, arm64_sequoia: "f7bbcb8758802234d9d4003752cbc591f09a150dba7d57f0dba5df3fa3381ff1"
+    sha256 cellar: :any, arm64_sonoma:  "c767d2ed71a3268381bc1f5a2640f00de3c8d5b10505605e622ec171a079acad"
+    sha256 cellar: :any, arm64_linux:   "412c8abcfd0db18ae6d906e68041eda604588a85542b77a0c132954107da3be2"
+    sha256 cellar: :any, x86_64_linux:  "af1708f85c64e44c42c66b6087b42930f919758d18013f4a6f257093736b5ad4"
   end
 
   depends_on "cmake" => :build

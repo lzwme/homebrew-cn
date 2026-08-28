@@ -1,8 +1,8 @@
 class OhMyPosh < Formula
   desc "Prompt theme engine for any shell"
   homepage "https://ohmyposh.dev"
-  url "https://ghfast.top/https://github.com/JanDeDobbeleer/oh-my-posh/archive/refs/tags/v30.8.0.tar.gz"
-  sha256 "45626ff3991172b2adc43ee7b071aa28965cda37da7cafdcfe121a4ff6f6a761"
+  url "https://ghfast.top/https://github.com/JanDeDobbeleer/oh-my-posh/archive/refs/tags/v30.9.0.tar.gz"
+  sha256 "1f883716db56729bc2c97703673758892917502a81e844e2f6305067ebf968ce"
   license "MIT"
   head "https://github.com/JanDeDobbeleer/oh-my-posh.git", branch: "main"
 
@@ -15,12 +15,11 @@ class OhMyPosh < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "17914bb2218e9bcf7ffbf9238c98490f61f588b0e0c5c809872bf32f8e63861b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2e33709bc0f276c22764a69a56cd59c56fa76f54657e36c85e1022bd053cbb90"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7bb4e8f3c563223db77660613038798abb7da29be32df8da6af65e03ae13ff3b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "dde2c090b9a0850de4f859aaed9b23eed2074513c2f010f040666a951233c66f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1cabf101f76edf63e2fd4c6c486e966d97961528f8a61cb6d3d77bf980a5c618"
-    sha256 cellar: :any,                 x86_64_linux:  "d6ec72a7aa711aafcba053f1a3efbe42caba3774426a017e25002f829adbde3d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "38d439cd1dd06068366d48d70f58bb924027390a5f7cb2a57b1909f5438286a5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e5ef16d3020d63a1534937fd92da39f954070ac03a9fcac487178b87588e44cd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3f71229b83e4db7267432ac068bd466a3428b6d734ef34057cc67a76417a1e42"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "51afca90891038c4404b1d1d3d229995c14cd400a475d02b1b97b622cfe6a5ec"
+    sha256 cellar: :any,                 x86_64_linux:  "3e60c50f93b81f01525409165ca59374a980d3d0d5995bedc3b75b757bdc8afc"
   end
 
   depends_on "go" => :build

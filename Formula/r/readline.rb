@@ -86,8 +86,10 @@ class Readline < Formula
 
   uses_from_macos "ncurses"
 
+  deny_network_access!
+
   def install
-    system "./configure", "--prefix=#{prefix}", "--with-curses"
+    system "./configure", "--with-curses", *std_configure_args
     # FIXME: Setting `SHLIB_LIBS` should not be needed, but, on Linux,
     #        many dependents expect readline to link with ncurses and
     #        are broken without it. Readline should be agnostic about

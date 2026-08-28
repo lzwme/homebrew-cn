@@ -1,10 +1,9 @@
 class Mapnik < Formula
   desc "Toolkit for developing mapping applications"
   homepage "https://mapnik.org/"
-  url "https://ghfast.top/https://github.com/mapnik/mapnik/releases/download/v4.3.0/mapnik-v4.3.0.tar.bz2"
-  sha256 "cec8c2bf2fd5f46be0fdb77469761a3ba1d51bea7b3c16b91875e9f89867d141"
+  url "https://ghfast.top/https://github.com/mapnik/mapnik/releases/download/v4.3.1/mapnik-v4.3.1.tar.bz2"
+  sha256 "aadfe037a8fdf7524bca7d72594ed9783c7047b7a53c6cf2e767f6e802d53edd"
   license "LGPL-2.1-or-later"
-  revision 1
   head "https://github.com/mapnik/mapnik.git", branch: "master"
 
   livecheck do
@@ -13,12 +12,11 @@ class Mapnik < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "2cf57467d0bcd2e73d4edef4db84b626bdd934e3e455d9a70fbdb7cd18b3569a"
-    sha256 cellar: :any, arm64_sequoia: "79ab2ac708dd1be0cf8a0b21cdfcc10d4f8483a050f95671ffae4de58ad8619f"
-    sha256 cellar: :any, arm64_sonoma:  "4960f69f6a7efcccb4cdd62bf692bb8ca7823ec55905cdfe204603b9710e872c"
-    sha256 cellar: :any, sonoma:        "dbf5eba54315fa3eafdea977bfe4e99a35cdd62a8fb26744e02ee3242b414b29"
-    sha256 cellar: :any, arm64_linux:   "b186311caf300288f1ce5751458c9b5ed8bacb273938313b77f2af8fd7dfe98d"
-    sha256 cellar: :any, x86_64_linux:  "b7cf806b1df3616695de3bb037cb7492cdcf1ced628befb068d2c259889fcc78"
+    sha256 cellar: :any, arm64_tahoe:   "99db6651491ca3a306f61d5cbf6bca857f5031e1c13e982cdc72b7d9e5c76c80"
+    sha256 cellar: :any, arm64_sequoia: "64bbeca5e052b964c53ec208f4b5119c78d2270ded7f13d5682822baa0861cbd"
+    sha256 cellar: :any, arm64_sonoma:  "f27b4e8159b53d0f6ce40cb21e1ffc53adbb423b10c1d236614243af02cac79c"
+    sha256 cellar: :any, arm64_linux:   "f2c15b9d4d17f09a399172b6461b8e1d7b12a83812d84c71f237937429254c43"
+    sha256 cellar: :any, x86_64_linux:  "79ec3d1289b7955084669787f0d1a5cac52f2eb932d0d796af5002bd97ded36c"
   end
 
   depends_on "cmake" => :build

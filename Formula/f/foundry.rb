@@ -4,8 +4,8 @@ class Foundry < Formula
   # `build.rs` in `common` crate requires `.git` repository
   # https://github.com/foundry-rs/foundry/blob/4072e48705af9d93e3c0f6e29e93b5e9a40caed8/crates/common/build.rs#L9-L12
   url "https://github.com/foundry-rs/foundry.git",
-      tag:      "v1.7.1",
-      revision: "4072e48705af9d93e3c0f6e29e93b5e9a40caed8"
+      tag:      "v1.8.0",
+      revision: "61ae26af36320d4fa1020f7db53785885e29eeb5"
   license any_of: ["MIT", "Apache-2.0"]
   head "https://github.com/foundry-rs/foundry.git", branch: "master"
 
@@ -15,12 +15,12 @@ class Foundry < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "119bb98930237ad9d2e9ad01f43681e5f77db1a7bbaa22e6c151430b26e1dfce"
-    sha256 cellar: :any,                 arm64_sequoia: "8770d61a8b838e17e09ab9bf79cc597f8218469231e4ce29e9e89f762b071459"
-    sha256 cellar: :any,                 arm64_sonoma:  "e38cf2ed6246727f90875be95b3fd0571cf7d7cc63c2b02a90969ddc8bbf40c8"
-    sha256 cellar: :any,                 sonoma:        "9f089ce540310c86282e349921859da3025fbb2ec4b4341e407a4266171a31dc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7b910d388c08e13fa833c4784d0064faf15373d259ec5f64878e776cbe6804fa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8606052819eb6057fcd57918c79a4e53203eaf3f7dc783b1d0e32e38757f738c"
+    sha256 cellar: :any, arm64_tahoe:   "791a61ce583c14e715dd17d8aa4708eb3057ce472fe9c556a705e13918e5bc68"
+    sha256 cellar: :any, arm64_sequoia: "6258c4eb409b5c06725da59533e75a242736a679e928f6f76907660f4f2cafc4"
+    sha256 cellar: :any, arm64_sonoma:  "590d2bcb0ede5fdffd117f466cbea13528891c4c3ac3598fba523b936fb157df"
+    sha256 cellar: :any, sonoma:        "b427e7f45390d0cbc3569cc0095e13e70b5b5190f18b851906c0ae9ca3b2c128"
+    sha256 cellar: :any, arm64_linux:   "37e772dbe6f26dd41db8ef00b9d00735dbae5228acc5679588338e7716af45d0"
+    sha256 cellar: :any, x86_64_linux:  "738f034b2459f7ef3abed0ef7ffdbabf72c1cdc1945f7dfd981cdd8903ace0ed"
   end
 
   depends_on "help2man" => :build

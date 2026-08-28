@@ -1,8 +1,8 @@
 class Flashrom < Formula
   desc "Identify, read, write, verify, and erase flash chips"
   homepage "https://flashrom.org/"
-  url "https://download.flashrom.org/releases/flashrom-v1.7.0.tar.xz"
-  sha256 "4328ace9833f7efe7c334bdd73482cde8286819826cc00149e83fba96bf3ab4f"
+  url "https://download.flashrom.org/releases/flashrom-v1.8.0.tar.xz"
+  sha256 "654c9c61745c250cd3b5ccd0e56fc43ee76980f92a5e078420420639d66975a2"
   license "GPL-2.0-or-later"
   head "https://review.coreboot.org/flashrom.git", branch: "main"
 
@@ -12,13 +12,11 @@ class Flashrom < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "7f4b534c1651528d2f9d533d1d6086099c275f01ab2ed97d1dca416815ec4ac4"
-    sha256 cellar: :any, arm64_sequoia: "3c4d73c0956dff122759bf402e944c58f68863f3994a1653041287ed58ba6b3f"
-    sha256 cellar: :any, arm64_sonoma:  "6454b4ddab1122eaa09058f771eff661c4c1ad8c8be5489843117f867d329fb3"
-    sha256 cellar: :any, sonoma:        "9ad26e249cfab29b3c643cf7f97cb751beaa552f19ee03e544688ae2e99b8382"
-    sha256               arm64_linux:   "248fab896eaeb96a8ee1c619685d574fa2f3fed37c1e6cc7ba0a908fe874a624"
-    sha256               x86_64_linux:  "8ae4f697a10c6ef1b0da1383cad1e90e338536bc4af9319e99a0611605f72e37"
+    sha256 cellar: :any, arm64_tahoe:   "abef39cb494d1475064b425daa8a0d12562bab5e608860178ddceb74a3d4ae02"
+    sha256 cellar: :any, arm64_sequoia: "c9c225aa76b4dbdcfa75a7f8b2ab3f2bfb1db0bcf8980e837ea332dfa6e8dd40"
+    sha256 cellar: :any, arm64_sonoma:  "0e5d1e2587bcfbff9e208486f066f95fad7bc8e3768bbe8f4cedbba35c84b6f8"
+    sha256 cellar: :any, arm64_linux:   "62429c2654e7a723b1eba6f402f24a6862cb93e7e2e32e9f5453a33468942e26"
+    sha256 cellar: :any, x86_64_linux:  "d94065e9ad3a5c19cc2a5ae33f03eaef78694c1c3b179e2ab064f58b866ca4f0"
   end
 
   depends_on "meson" => :build

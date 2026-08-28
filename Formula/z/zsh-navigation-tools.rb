@@ -13,6 +13,8 @@ class ZshNavigationTools < Formula
 
   uses_from_macos "zsh"
 
+  deny_network_access!
+
   def install
     # Make the bottles uniform
     inreplace [".config/znt/n-cd.conf", "n-panelize"], "/usr/local", HOMEBREW_PREFIX

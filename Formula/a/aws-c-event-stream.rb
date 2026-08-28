@@ -1,18 +1,17 @@
 class AwsCEventStream < Formula
   desc "C99 implementation of the vnd.amazon.eventstream content-type"
   homepage "https://github.com/awslabs/aws-c-event-stream"
-  url "https://ghfast.top/https://github.com/awslabs/aws-c-event-stream/archive/refs/tags/v0.7.2.tar.gz"
-  sha256 "5245179ea6349f3d21ce8c30cbd2b5c831673d9098235c2680e43c60fd6e6e30"
+  url "https://ghfast.top/https://github.com/awslabs/aws-c-event-stream/archive/refs/tags/v1.0.0.tar.gz"
+  sha256 "c3817ab04bf9c70fa3582a31243666a9a643ebe45f121f58d5fef5ff4787f8e0"
   license "Apache-2.0"
-  compatibility_version 1
+  compatibility_version 2
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "98b495e574834fcd975fa1c8913a596f886c4c41caba60b5067f488aef3ab759"
-    sha256 cellar: :any, arm64_sequoia: "39237fbacdd156d1313bc690ed7030e0c90897146edade1f125f4fc445d230c1"
-    sha256 cellar: :any, arm64_sonoma:  "899155ff379e63c6567dcc43d96b10c9a8863de95a72576531fbd6d50c9fb1d3"
-    sha256 cellar: :any, sonoma:        "66fb8b51a34c827a4cfa407fa1dd4234585fdd45a938200cc321e1de5e9e5cb9"
-    sha256 cellar: :any, arm64_linux:   "4e0440a394fbeb4eb4a769ee27d53ad97e62a646a5c3a31fe34a3fde25d4ff7a"
-    sha256 cellar: :any, x86_64_linux:  "047e52624f511f8119555a218098a017c6070c02a132eda0b51c2317b60ab95f"
+    sha256 cellar: :any, arm64_tahoe:   "3421dc29eb43b10024b9344bdbccc0cc5ab8cfd9efa2206c0383c3aa6ee87350"
+    sha256 cellar: :any, arm64_sequoia: "eedbc91b7709177c64ffb9756c862c7c0970b807219260af9c8b24bc76aca66d"
+    sha256 cellar: :any, arm64_sonoma:  "a0c0c268dec6ab79ccceb4d56b45a96487091af29247a6fe0fcac9ebd3bd60ca"
+    sha256 cellar: :any, arm64_linux:   "a7f23e352bb33cb3c7714d974214329b901059cae6a3f5db30cec6c562926620"
+    sha256 cellar: :any, x86_64_linux:  "99ad7d1c690ce59b6bd7a48732c608d070400df5854ddf248c72347ab852cf20"
   end
 
   depends_on "cmake" => :build

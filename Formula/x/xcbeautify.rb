@@ -26,6 +26,9 @@ class Xcbeautify < Formula
     depends_on xcode: :build if DevelopmentTools.ld64_version >= "1221.4"
   end
 
+  # downloads swift packages during install
+  allow_network_access! :build
+
   def install
     system "swift", "build", *std_swift_args
     bin.install ".build/release/xcbeautify"

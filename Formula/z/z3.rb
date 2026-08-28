@@ -39,6 +39,8 @@ class Z3 < Formula
     cause "Requires C++20 std::format, https://gcc.gnu.org/gcc-13/changes.html#libstdcxx"
   end
 
+  deny_network_access!
+
   def python3
     which("python3.14")
   end

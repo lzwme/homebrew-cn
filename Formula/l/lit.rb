@@ -1,13 +1,12 @@
 class Lit < Formula
   desc "Portable tool for LLVM- and Clang-style test suites"
   homepage "https://llvm.org"
-  url "https://files.pythonhosted.org/packages/47/b4/d7e210971494db7b9a9ac48ff37dfa59a8b14c773f9cf47e6bda58411c0d/lit-18.1.8.tar.gz"
-  sha256 "47c174a186941ae830f04ded76a3444600be67d5e5fb8282c3783fba671c4edb"
+  url "https://files.pythonhosted.org/packages/f3/37/be14bf2cabacc40557a03cf4789d9a3335bf515b0ec3a655fdc84cae4779/lit-23.1.0.tar.gz"
+  sha256 "6fd50e0ca6fac61f4a672e9f30154edcab3d17c98aeb8202ac709bc353fe331f"
   license "Apache-2.0" => { with: "LLVM-exception" }
 
   bottle do
-    rebuild 3
-    sha256 cellar: :any_skip_relocation, all: "30d091941a71abc54232470d2b1ec34bd194ac2ff3af457c6ae8034243577e72"
+    sha256 cellar: :any_skip_relocation, all: "83970a9d30e801723d1ddaa7366c45d0513006687b2957ab55decfb8af6017cc"
   end
 
   depends_on "llvm" => :test
@@ -52,7 +51,7 @@ class Lit < Formula
       import lit.formats
 
       config.name = "Example"
-      config.test_format = lit.formats.ShTest(True)
+      config.test_format = lit.formats.ShTest()
 
       config.suffixes = ['.c']
     PYTHON

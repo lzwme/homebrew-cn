@@ -13,6 +13,8 @@ class ZshSyntaxHighlighting < Formula
 
   uses_from_macos "zsh" => [:build, :test]
 
+  deny_network_access!
+
   def install
     # Make the bottles uniform (modifying a comment with /usr/local path)
     inreplace "highlighters/main/main-highlighter.zsh", "/usr/local/bin", "#{HOMEBREW_PREFIX}/bin"

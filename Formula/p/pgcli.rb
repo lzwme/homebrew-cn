@@ -3,30 +3,30 @@ class Pgcli < Formula
 
   desc "CLI for Postgres with auto-completion and syntax highlighting"
   homepage "https://pgcli.com/"
-  url "https://files.pythonhosted.org/packages/e0/ca/b081f0ae381425f87dd751b449c33aca7398c2183799fc56501fe7c26975/pgcli-4.5.0.tar.gz"
-  sha256 "9dce07f5b628068156256cb818e5191a773afe6eeb7054f210fa892813625e3e"
+  url "https://files.pythonhosted.org/packages/97/5d/d6fcf98556e6089915e12af12c6189e9d774d82b473c4ce9e124a62ec235/pgcli-4.6.0.tar.gz"
+  sha256 "4b0633a6ce753ea38fb1fe2dc54b66b732c4d0b29fadf48cad78b2e7f6636d9d"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "06c83ddbb81fa0e4d307a2398b21c5cb9a2f44a5b415e3c6a85e74acc4b1028a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f3d50f821bcfd38fcc49c0f7c930055537919dcf1811e385d7845b438966f8af"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b3064eb2ace850c26aebbfd1a9eb687571aba4d777293bb10436387afa21b9ea"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6686534b552e5361011ba4509a17e0216b5566ceabda76cc847a94d27ce3245b"
-    sha256 cellar: :any,                 arm64_linux:   "951722d37b58ee9bf328392f1b6ed96936e1e3d271fc1ca5eb23c9141abe16ac"
-    sha256 cellar: :any,                 x86_64_linux:  "cfaea142b4106f8d6b6f81a4bba46b3144096193bc2a12878528ee400b34105b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "482b23c78df2b2d9e8162ca4bfbb3faf42edbe03fb9b3cc8a82242f95dab7af2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "93dd4abdbf90168ccba03d291f6c72a9cb2f59537eae9b856574050eccb76a25"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "901759856e69c0eab10d7a13a20f4d90ba9d16834291dee684694e4eb35f36b3"
+    sha256 cellar: :any_skip_relocation, sonoma:        "57964a8208659cf15900cd8b0afc66a64b555086695392acb9667666ea444fd3"
+    sha256 cellar: :any,                 arm64_linux:   "330e12582566f3dded4ce5197694a017de7c58e49fbc9cb658ab95bffd416f83"
+    sha256 cellar: :any,                 x86_64_linux:  "628a83a33f7fdf9d8f4bfc8cab765496e0f88fd25cc07ae0ec5222bad8db030c"
   end
 
   depends_on "libpq"
   depends_on "python@3.14"
 
   resource "cli-helpers" do
-    url "https://files.pythonhosted.org/packages/5e/d1/f83191ae4a8f6584876bc63e5e1ae39360f4de7ed74cce76f266ef9d5d10/cli_helpers-2.15.0.tar.gz"
-    sha256 "c2c5a1a5fd6a8ad51b1b99e80685cd04c006b0e29cacf4c24b1ba8a440ea8d4d"
+    url "https://files.pythonhosted.org/packages/3f/de/278f4885fcd03661ab9b69dba9fc745c27d820858dbc06e427057899dcf5/cli_helpers-2.15.1.tar.gz"
+    sha256 "e9c0826dda2855745eb63b3fd8e33b6ac8881188f2ba91e51a516ed833fc0cb8"
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/9b/98/518d8e5081007684232226f475082b30087d0f585e8457db087298259f49/click-8.4.1.tar.gz"
-    sha256 "918b5633eddf6b41c32d4f454bf0de810065c74e3f7dbf8ee5452f8be88d3e96"
+    url "https://files.pythonhosted.org/packages/76/d4/81420972a676e8ffea40450d8c8c92943e7218a78fe9b64359836cc9876b/click-8.4.2.tar.gz"
+    sha256 "9a6cea6e60b17ebe0a44c5cc636d94f09bd66142c1cd7d8b4cd731c4917a15f6"
   end
 
   resource "configobj" do
@@ -40,8 +40,8 @@ class Pgcli < Formula
   end
 
   resource "prompt-toolkit" do
-    url "https://files.pythonhosted.org/packages/a1/96/06e01a7b38dce6fe1db213e061a4602dd6032a8a97ef6c1a862537732421/prompt_toolkit-3.0.52.tar.gz"
-    sha256 "28cde192929c8e7321de85de1ddbe736f1375148b02f2e17edd840042b1be855"
+    url "https://files.pythonhosted.org/packages/7d/ea/39b988c938f75cb75d7045b5c69f8bfed47ee2152c8837fb403de29d6fb8/prompt_toolkit-3.0.53.tar.gz"
+    sha256 "9ec8a0ad96d5c56148b3f914aa79c1564c3fde5d2e6b876e7bc327e353cf8fa6"
   end
 
   resource "psycopg" do
@@ -50,8 +50,8 @@ class Pgcli < Formula
   end
 
   resource "pygments" do
-    url "https://files.pythonhosted.org/packages/c3/b2/bc9c9196916376152d655522fdcebac55e66de6603a76a02bca1b6414f6c/pygments-2.20.0.tar.gz"
-    sha256 "6757cd03768053ff99f3039c1a36d6c0aa0b263438fcab17520b30a303a82b5f"
+    url "https://files.pythonhosted.org/packages/49/2e/ced460408999b33da6b31b0021b0f37d329e202d4169aeb164493778f25b/pygments-2.21.0.tar.gz"
+    sha256 "610ca751c9bc2492b38eb9a38a7fbc93edbbb2d7182edaf34e66ae493dee5c8c"
   end
 
   resource "setproctitle" do
@@ -60,8 +60,8 @@ class Pgcli < Formula
   end
 
   resource "sqlparse" do
-    url "https://files.pythonhosted.org/packages/90/76/437d71068094df0726366574cf3432a4ed754217b436eb7429415cf2d480/sqlparse-0.5.5.tar.gz"
-    sha256 "e20d4a9b0b8585fdf63b10d30066c7c94c5d7a7ec47c889a2d83a3caa93ff28e"
+    url "https://files.pythonhosted.org/packages/5f/d3/3f06a1006f2261d1342aefb3c71eed02f5d4ca5bdbecd86ebc12ad38306e/sqlparse-0.6.0.tar.gz"
+    sha256 "113c35c75365ab9cc9c7231d68c6428fb11c085fc8e9eb1ad659b7ddbf6cd2b9"
   end
 
   resource "tabulate" do
@@ -70,13 +70,13 @@ class Pgcli < Formula
   end
 
   resource "tzlocal" do
-    url "https://files.pythonhosted.org/packages/8b/2e/c14812d3d4d9cd1773c6be938f89e5735a1f11a9f184ac3639b93cef35d5/tzlocal-5.3.1.tar.gz"
-    sha256 "cceffc7edecefea1f595541dbd6e990cb1ea3d19bf01b2809f362a03dd7921fd"
+    url "https://files.pythonhosted.org/packages/81/5b/879b2f932adfa7a053c360d50bc896c977fa6426109185f7c12ebdd0cb9d/tzlocal-5.4.4.tar.gz"
+    sha256 "8dbb8660838688a7b6ba4fed31d18dedf842afb4d47ca050d6d891c2c15f3be4"
   end
 
   resource "wcwidth" do
-    url "https://files.pythonhosted.org/packages/2c/ee/afaf0f85a9a18fe47a67f1e4422ed6cf1fe642f0ae0a2f81166231303c52/wcwidth-0.7.0.tar.gz"
-    sha256 "90e3a7ea092341c44b99562e75d09e4d5160fe7a3974c6fb842a101a95e7eed0"
+    url "https://files.pythonhosted.org/packages/34/74/c6428f875774288bec1396f5bfcbc2d925700a4dad61727fd5f2b12f249d/wcwidth-0.8.2.tar.gz"
+    sha256 "91fbef97204b96a3d4d421609b80340b760cf33e26da123ff243d76b1fda8dda"
   end
 
   def install

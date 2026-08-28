@@ -4,22 +4,21 @@ class StellarCli < Formula
   url "https://static.crates.io/crates/stellar-cli/stellar-cli-28.0.0.crate"
   sha256 "1772d04d1bcd1bc3d2aae81932f3dbad84bac9fdf8b4c76b72aa4eb11394ae64"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/stellar/stellar-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c5b0a5010dc03611779a9f69f397e6520fcbc7743580177ddf89d4943e76eb59"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c1977986042e891e2f7686eb7d4dc0a367b83e035e24d29ed371ad99724e995b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "51de3f5ddb063675ce687e5fb8588fd6c340227207d6e36dc080a6f299bf0bd3"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2e2df62c39ec584fdd52184f097cbfd4e12207f7ee155783ae05b17ae3552fc4"
-    sha256 cellar: :any,                 arm64_linux:   "b9af446c2f2b0dd02e4fe8df81f6512f0dff1a4a9539bd567962e475b2393e22"
-    sha256 cellar: :any,                 x86_64_linux:  "776275dbe66eedc75e75e41e39b644b16f95c1abca3098e5cb36ec17ef70fe3d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "84a177a0625c1a667148b3ee18c69ac9b5777b3f19cad6b121e9f51b19e3fc4a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f39567597c1b4549a2733b4bbfd30c13ab7f1ffa7b9037919dc1660dabd008b8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4ea22d68e99744ffe91cbf64d2b7f84f3ce991479fe18ff4f58a2a6d314e3652"
+    sha256 cellar: :any,                 arm64_linux:   "01d62b0a8bcd390df22b3270968504c7f94b9a0ca040f8d86e564d024b51ebdf"
+    sha256 cellar: :any,                 x86_64_linux:  "077514812a83ba583e2c74062dfd8740e06056ea40f0866b719a2b365f37796f"
   end
 
-  depends_on "pkgconf" => :build
   depends_on "rust" => :build
-  depends_on "openssl@3"
 
   on_linux do
+    depends_on "pkgconf" => :build
     depends_on "dbus"
     depends_on "systemd" # for libudev
   end

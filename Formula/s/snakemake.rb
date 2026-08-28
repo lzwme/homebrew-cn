@@ -3,18 +3,18 @@ class Snakemake < Formula
 
   desc "Pythonic workflow system"
   homepage "https://snakemake.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/ac/20/ae6d3794cfc522f5d50c1b6415b5fba5b6277c56f22774f536c1dc1a02e6/snakemake-9.25.2.tar.gz"
-  sha256 "dac732795a43eeb25c2a4f3f1441c66385911703493c6059efd8bc2efac956da"
+  url "https://files.pythonhosted.org/packages/64/a7/dcebe66ee0b427f2c6601693fe8275702114d52f373cbc377114d42d458b/snakemake-9.26.0.tar.gz"
+  sha256 "8e02617ef1a3022ab3ad707a314517f61bd781eefa58d73a8bd301abc5dfaa17"
   license "MIT"
   head "https://github.com/snakemake/snakemake.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "726ab8ca1d21852518d98a8ef0c5ef6401e1eea627097ff1e7ad16cba6d3547a"
-    sha256 cellar: :any, arm64_sequoia: "3f4b2e78393390575bce07b6f8f84413939ccfb69f8893d5c2eadec564a63ec7"
-    sha256 cellar: :any, arm64_sonoma:  "6f8ad82bb8ffcc6069e8e8a982c7518c536f85235bb8a2859aeba6280f66d2c5"
-    sha256 cellar: :any, sonoma:        "d1efa63fb482072cb8b4c4afc357a6aa09ce45bd0fa8359639662cbc3a5bfae8"
-    sha256 cellar: :any, arm64_linux:   "07e6506c3e938a1f1ead89914c0ead7cd584d2d9561d04b3c97b8e5aeff5a21f"
-    sha256 cellar: :any, x86_64_linux:  "4d9f05a30bb54316566937a488ebc6a974cebd7ffda396b997a44331a4b5128e"
+    sha256 cellar: :any, arm64_tahoe:   "219406eaac03f24d7458584eebd65a15c45190be1d17def34938b1e72f147f74"
+    sha256 cellar: :any, arm64_sequoia: "ec88b619524ca35121b38810c49d96b45ffbd4a110d8b6aca79c19bcc7f1140d"
+    sha256 cellar: :any, arm64_sonoma:  "e68d140dd4aebdee7eb7cd124668736cd100a9774855a5e1e4a09b8b4f136031"
+    sha256 cellar: :any, sonoma:        "4f6f8f188d5dbadced6d7e176ed6ae4eb8e63d92915c0520c488f3daaf6f069b"
+    sha256 cellar: :any, arm64_linux:   "12482bdb1c6c97f57dd99bc9b689f43a34513dfadb31bb26902f416bd2b26e25"
+    sha256 cellar: :any, x86_64_linux:  "5729ee033af142ba4cbf4bc6afd7cf1f98201e47a95eeff19052f6dba3c99ec3"
   end
 
   depends_on "rust" => :build # for appdirs
@@ -78,8 +78,8 @@ class Snakemake < Formula
   end
 
   resource "gitpython" do
-    url "https://files.pythonhosted.org/packages/ca/dc/126b28e76b24a9268ba931ad3e012f71ebdadf62fd9f17758f7074bb0b20/gitpython-3.1.59.tar.gz"
-    sha256 "0a1475cfdc38a5bfba1a3e9a4a9da52a39749ecec322b772915c019f94e5b7e4"
+    url "https://files.pythonhosted.org/packages/84/14/e6b1a48d831755a53c2029351fcef82e70db4a08f338daefe29d8d0cf31c/gitpython-3.1.60.tar.gz"
+    sha256 "e936431879fa85581b4311fa63492ea52251909e2d655b6529c704c904ddcc24"
   end
 
   resource "greenlet" do
@@ -138,8 +138,8 @@ class Snakemake < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/b8/d7/e7bfbc86e9f99ff7807e24de7703f032e9c9ba80bb355cf26e0e9bc5a75e/platformdirs-4.11.3.tar.gz"
-    sha256 "66a73d38a849810252df809a3d8bcbda8e26f6c189920e7535ad608a48dbb5ab"
+    url "https://files.pythonhosted.org/packages/50/bb/ebc6636e1ae41314f796ebb7215fd28febb45f9aac72f2b04cb74b5071dc/platformdirs-4.11.4.tar.gz"
+    sha256 "f3373be828247211d0febabea97e238c3dfde8a60b3c90c32756fb52cb21556d"
   end
 
   resource "psutil" do

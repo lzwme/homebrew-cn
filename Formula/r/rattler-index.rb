@@ -1,8 +1,8 @@
 class RattlerIndex < Formula
   desc "Index conda channels using rattler"
   homepage "https://github.com/conda/rattler"
-  url "https://ghfast.top/https://github.com/conda/rattler/archive/refs/tags/rattler_index-v0.31.3.tar.gz"
-  sha256 "b3ed51f2a5e5d088f33bb793f384e8a03928b3a631f2c0460c0a81a95016abfe"
+  url "https://ghfast.top/https://github.com/conda/rattler/archive/refs/tags/rattler_index-v0.31.4.tar.gz"
+  sha256 "97ca7cb991b181c545ac0d0fa31ba8c5b24ce22106a02865db0fc0be5283b9f6"
   license "BSD-3-Clause"
   head "https://github.com/conda/rattler.git", branch: "main"
 
@@ -12,12 +12,11 @@ class RattlerIndex < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3ff0982dfbc0d1f62e74dc2830391e8bf882b70ea3e735e03bf3d7077abd35cb"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "54be87cfb75c24dbf51773c60251ce8936f1dae65dc9ad1bd7e098d0ef4dd076"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c7c8c25eb59bcdb6e2468e8ce7a7aa5f586925cb5643ec01a99d6d533a3fa4b4"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3cb10d09a27e58c6201874da388ff932c51f9cf231740742583022cae8b76826"
-    sha256 cellar: :any,                 arm64_linux:   "a8394654ff2fe8bad64a449daf24374eb9b2028c415675b7041eef783b6fb3d7"
-    sha256 cellar: :any,                 x86_64_linux:  "472fd95d43f5f2df37dda994d45a38da71d2540e49810ff44496abcfc7ca0e06"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9b8be2b3a926c2a1bdfd6f1f23745c7e03c10e1078b562b96168168ebb8edaac"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5847db88650187e11a7743339c769aed01f60e8b4ee7f154d1f16f2802482282"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dbcd07ac03f40481dfdf8fc94c133f3483068a8d2074a1e9419346ed17d16f89"
+    sha256 cellar: :any,                 arm64_linux:   "8a85bed729ec2a637e2d01f26bac18697cfae439f33deb69aeefefa81c6df740"
+    sha256 cellar: :any,                 x86_64_linux:  "c392071a54b0539569ec6f5e453157a6dcb574ca7e784e5a8a661e157759f661"
   end
 
   depends_on "pkgconf" => :build

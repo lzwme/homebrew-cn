@@ -1,9 +1,9 @@
 class DockerMachine < Formula
   desc "Create Docker hosts locally and on cloud providers"
   homepage "https://docs.gitlab.com/runner/executors/docker_machine.html"
-  url "https://gitlab.com/gitlab-org/ci-cd/docker-machine/-/archive/v0.16.2-gitlab.52/docker-machine-v0.16.2-gitlab.52.tar.bz2"
-  version "0.16.2-gitlab.52"
-  sha256 "1d67717a83f53e409e1555642af44a1797e1f3d64cc80211599ede19665f9e79"
+  url "https://gitlab.com/gitlab-org/ci-cd/docker-machine/-/archive/v0.16.2-gitlab.53/docker-machine-v0.16.2-gitlab.53.tar.bz2"
+  version "0.16.2-gitlab.53"
+  sha256 "6dcf3b1e4f05d3fbc2de3674e7e5902ab2db170a1eaf4514f8841a72dd9fe282"
   license "Apache-2.0"
   compatibility_version 1
   head "https://gitlab.com/gitlab-org/ci-cd/docker-machine.git", branch: "main"
@@ -14,12 +14,12 @@ class DockerMachine < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "aba2cea8fa59c13524831085b70b12467011c4b86f21526cc3e56308404ada79"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "aba2cea8fa59c13524831085b70b12467011c4b86f21526cc3e56308404ada79"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "aba2cea8fa59c13524831085b70b12467011c4b86f21526cc3e56308404ada79"
-    sha256 cellar: :any_skip_relocation, sonoma:        "869557b665f17804e1ea1b88ccfe5d67532f0f387bd3543d4169d94ce2b927bf"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "92a13bf3d0d5beccb79fd560892d9fffa7a0428984d851c27298e57fc8ff08d0"
-    sha256 cellar: :any,                 x86_64_linux:  "a0e24a69e019195f3ecc247fb89dbd12b3d0bec27a8493afdb169f8ccac2bef8"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9cc2f8b140a658a2d16d8cca5a649c0a82800401f7a3116ce3151d4430107d20"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9cc2f8b140a658a2d16d8cca5a649c0a82800401f7a3116ce3151d4430107d20"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9cc2f8b140a658a2d16d8cca5a649c0a82800401f7a3116ce3151d4430107d20"
+    sha256 cellar: :any_skip_relocation, sonoma:        "68e48b7f28af03c817c2952adf701c53f343bfc1259f886258ad0e43fc5ba8c8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "be58d30716f2166a9612e14cf8febd3161e2d0b5594b02a958ae012a3f17999a"
+    sha256 cellar: :any,                 x86_64_linux:  "d84ee2fbe9a77dcf3488269ca24d391a8117f305dcda327c0d05164a61f9d958"
   end
 
   # After Docker ended support for original docker-machine[^1], we have used

@@ -37,13 +37,13 @@ class Codec2 < Formula
   depends_on "cmake" => :build
 
   def install
-    mkdir "build_osx" do
-      system "cmake", "..", *std_cmake_args, "-DCMAKE_EXE_LINKER_FLAGS=-Wl,-rpath,#{rpath}"
-      system "make", "install"
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args,
+                    "-DCMAKE_EXE_LINKER_FLAGS=-Wl,-rpath,#{rpath}"
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
 
-      bin.install "demo/c2demo"
-      bin.install Dir["src/c2*"]
-    end
+    bin.install "build/demo/c2demo"
+    bin.install Dir["build/src/c2*"]
   end
 
   test do

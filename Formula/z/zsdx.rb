@@ -28,6 +28,8 @@ class Zsdx < Formula
   uses_from_macos "zip" => :build
   uses_from_macos "unzip" => :test
 
+  deny_network_access!
+
   def install
     system "cmake", "-S", ".", "-B", "build",
                     "-DCMAKE_POLICY_VERSION_MINIMUM=3.5",
@@ -38,7 +40,7 @@ class Zsdx < Formula
   end
 
   test do
-    system Formula["solarus"].bin/"solarus-run", "-help"
+    system formula_opt_bin("solarus")/"solarus-run", "-help"
     system "unzip", pkgshare/"data.solarus"
   end
 end

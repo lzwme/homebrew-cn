@@ -29,6 +29,8 @@ class Zpaq < Formula
     sha256 "b110688939477bbe62263faff1ce488872c68c0352aa8e55779346f1bd1ed07e"
   end
 
+  deny_network_access!
+
   def install
     # When building on non-Intel this is supposed to be manually uncommented
     # from the Makefile!  (It's also missing "-D" though)

@@ -42,6 +42,8 @@ class Zyre < Formula
   depends_on "czmq"
   depends_on "zeromq"
 
+  deny_network_access!
+
   def install
     system "./autogen.sh" if build.head?
     system "./configure", "--disable-silent-rules", *std_configure_args

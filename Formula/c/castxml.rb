@@ -2,7 +2,7 @@ class Castxml < Formula
   desc "C-family Abstract Syntax Tree XML Output"
   homepage "https://github.com/CastXML/CastXML"
   license "Apache-2.0"
-  revision 1
+  revision 2
   head "https://github.com/CastXML/castxml.git", branch: "master"
 
   stable do
@@ -23,12 +23,12 @@ class Castxml < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "dac8eb2ebe8f34868e8f9e4851507ec1b36d2617be04670149d09df4ba7e8a77"
-    sha256 cellar: :any,                 arm64_sequoia: "1d8e8c80d511b4caf120b190aaec38308805f46d12d11f8a25e63823e38ffb51"
-    sha256 cellar: :any,                 arm64_sonoma:  "3dc6b1a96297fecf5c67837c55edf34d81900f8e9cecbc33ba9839a3dbfff643"
-    sha256 cellar: :any,                 sonoma:        "196b284a940cb82eeaaef68c69816322d3780fd0ccff403f238064dc08e79073"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a3582afd45fd31626602e6e800110bc4433c7aaee98552d590bea3d19b739aff"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c1746325a50cb2b71178fd06d9759de65091313333efe38bca72faff558deff9"
+    sha256 cellar: :any, arm64_tahoe:   "b314ee3515fa47020f68d782a51d86c2ea5693ffa321de28ef04c4542f78ea11"
+    sha256 cellar: :any, arm64_sequoia: "54caafe93e26de2dd56d6b4933f6252d83a2fdf5707181b265e51eb66a60cbc3"
+    sha256 cellar: :any, arm64_sonoma:  "f289845c384e94c6816951b3c2e3e389142e3f4875b7d224d8d5af36ff52915c"
+    sha256 cellar: :any, sonoma:        "6c8cd79db94b7e87b76d4b33566a30c4321eca470b03adbd1338036ee045e57a"
+    sha256 cellar: :any, arm64_linux:   "32f44b6a2ea6c0bd1cf5304e93aa054f6ab1cb60d600200d7671cc82d68be1ce"
+    sha256 cellar: :any, x86_64_linux:  "9f858a4677682b804335b6218db77406c4f7ee97b222da050e8cd6315f08a758"
   end
 
   depends_on "cmake" => :build

@@ -29,6 +29,8 @@ class Zboy < Formula
 
   depends_on "sdl2-compat"
 
+  deny_network_access!
+
   def install
     system "make", "-f", "Makefile.linux"
     bin.install "zboy"

@@ -1,19 +1,18 @@
 class Nzbget < Formula
   desc "Binary newsgrabber for nzb files"
   homepage "https://nzbget.com"
-  url "https://ghfast.top/https://github.com/nzbgetcom/nzbget/archive/refs/tags/v26.2.tar.gz"
-  sha256 "8642dda85b96e0af1acb927a0684cf84fa20c818aa989ebdc4569a254470319d"
+  url "https://ghfast.top/https://github.com/nzbgetcom/nzbget/archive/refs/tags/v26.3.tar.gz"
+  sha256 "3a6a2a7c8bf5e7156dacb563e76d65df4aa53390e24040115c4406771ec3a19b"
   license "GPL-2.0-or-later"
-  revision 1
   head "https://github.com/nzbgetcom/nzbget.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "6a0bc2c593cafb79ee3e3bfafa114c8458c6778e09a89d64c166c65eb5fde404"
-    sha256 cellar: :any, arm64_sequoia: "f26d24b20c481d59697b04efe2245ec873dad682e88acea0d9d526a3395eec8b"
-    sha256 cellar: :any, arm64_sonoma:  "ce3bfae2e1e20e9a66932730a99f1ca84f43a5bce0193dd53895be9d5a35fb84"
-    sha256               sonoma:        "fe985705c9813f7e08be390d86d2c169b2205d4233caa30eb5b004b7257195f5"
-    sha256 cellar: :any, arm64_linux:   "78dc82a82ea506e6af8164b36cca9f25e96b1764a939a00e0ceb340681a00ba2"
-    sha256 cellar: :any, x86_64_linux:  "5bb9327b5e30b9deccc827f730dd0e47d19f50746e48924aa03515276d4734a4"
+    sha256 cellar: :any, arm64_tahoe:   "6fc002036c997b87969be114ff9d4907b51d3724f49da1b4330300f2279bc0b4"
+    sha256 cellar: :any, arm64_sequoia: "41b13ca08f2e65a80d0438772b44a60c0f324af04c6d3ba1e186606f97a028ac"
+    sha256 cellar: :any, arm64_sonoma:  "e315d728749006e01b59eba7496f985a87b9e6bdd810880cb9353ace32fa8c33"
+    sha256               sonoma:        "d8c21a11f9028f519801a9faba068902662f9494a8e7b926914b0e6f94caf437"
+    sha256 cellar: :any, arm64_linux:   "f80497814b8e97d8c5488ffa4d91152f12d58ed0b44a6aa617670b205c585157"
+    sha256 cellar: :any, x86_64_linux:  "fdde4ce747047610e991505459bbc268878af68e38e01846705d8dda367faf6a"
   end
 
   depends_on "cmake" => :build

@@ -11,6 +11,8 @@ class ZshYouShouldUse < Formula
 
   uses_from_macos "zsh"
 
+  deny_network_access!
+
   def install
     pkgshare.install "you-should-use.plugin.zsh"
   end

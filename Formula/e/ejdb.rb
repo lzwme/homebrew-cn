@@ -36,11 +36,10 @@ class Ejdb < Formula
   end
 
   def install
-    mkdir "build" do
-      system "cmake", "..", *std_cmake_args
-      ENV.deparallelize # CMake Error: WSLAY Not Found
-      system "make", "install"
-    end
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    ENV.deparallelize # CMake Error: WSLAY Not Found
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do

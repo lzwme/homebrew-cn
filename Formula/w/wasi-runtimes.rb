@@ -2,8 +2,8 @@ class WasiRuntimes < Formula
   desc "Compiler-RT and libc++ runtimes for WASI"
   homepage "https://wasi.dev"
   # TODO: update targets and other steps when wasi-sdk-34 / wasi-libc 34 is stable
-  url "https://ghfast.top/https://github.com/llvm/llvm-project/releases/download/llvmorg-22.1.8/llvm-project-22.1.8.src.tar.xz"
-  sha256 "922f1817a0df7b1489272d18134ee0087a8b068828f87ac63b9861b1a9965888"
+  url "https://ghfast.top/https://github.com/llvm/llvm-project/releases/download/llvmorg-23.1.0/llvm-project-23.1.0.src.tar.xz"
+  sha256 "ab1f0e3ec52448c33e8782eaf0422504b87c7b016b22514653ee0d8fcee479ff"
   license "Apache-2.0" => { with: "LLVM-exception" }
   head "https://github.com/llvm/llvm-project.git", branch: "main"
 
@@ -12,13 +12,12 @@ class WasiRuntimes < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5c2cd9eb8102c4a91286d21af5ddc935fc7f3ed21943e6059a545dab84936072"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "abf0eebacf4a2ccfaf6eccdd9a4eb5622f1bd14e43b1a94c15049e36701414c0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "38c9096f0ab3199dc258ba2b6c4289f85390e787aae1e383ae125a7f94537d4e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3661c844d01caaeaa5e63a9fac964b8ad6d8dca4674f723394f7ee5159a5d201"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "27f87111b1e253b3cb75993b94f33f982a55acfdbe0a318dcd0580c60608b11e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "45e7c3dec6673695879c3bf861f37018d23e498c21dd47fe7bd2caaa5d58e698"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e86f9515a6fd3d035e8ce37e09d9ecf380bdfbdcf617d01477b0c57927d3be54"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0d82dbd32ff1a7082b4143a7d5e30ecb427661e64492c83d71325d75ed1ff4bb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "27208735f98abc98ea5b3b8435a2cdd30fd00d9fcf9a44fa2e769d6175315fa3"
+    sha256 cellar: :any_skip_relocation, sonoma:        "85461750319348b30e4e1ad112b859c3e4e54dd080b0f6b4dbce30e803376bfe"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1cfb6b4170bd2f3279b95b8e89e68f1cbd18320064024f0dc7ccee825e8e07bf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6c79317915bfbd4e8e83f95c1bfa6c5c2218ab655bdc2d050e51fecd3fd4faf4"
   end
 
   depends_on "cmake" => :build
@@ -29,6 +28,13 @@ class WasiRuntimes < Formula
   depends_on "llvm"
 
   uses_from_macos "python" => :build
+
+  # Apply patch from wasi-sdk to fix build with LLVM 23+
+  patch do
+    url "https://ghfast.top/https://raw.githubusercontent.com/WebAssembly/wasi-sdk/6911d9135dd3209083450d6a354e7e497e3a736e/src/llvm-undo-part-of-194317.patch"
+    sha256 "bd901d86af8f1e000aa7efeb4e3d3677292fe07a106e817b09a0a67124a7ad00"
+    type :unofficial
+  end
 
   def wasi_sdk_targets
     # See targets at: https://github.com/WebAssembly/wasi-sdk/blob/wasi-sdk-33/CMakeLists.txt#L14

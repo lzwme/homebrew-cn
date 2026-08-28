@@ -1,8 +1,8 @@
 class Glooctl < Formula
   desc "Envoy-Powered API Gateway"
   homepage "https://docs.solo.io/gloo-edge/main/reference/cli/glooctl/"
-  url "https://ghfast.top/https://github.com/solo-io/gloo/archive/refs/tags/v1.22.2.tar.gz"
-  sha256 "581e6e3755a97ea7ac4a932e471f64b2977a0607881429dedcb86e1acfa973c3"
+  url "https://ghfast.top/https://github.com/solo-io/gloo/archive/refs/tags/v1.22.3.tar.gz"
+  sha256 "69150674c01271cc1f9bd6b0970814f76e31d390d525a7662a5e983928ceb5d8"
   license "Apache-2.0"
   head "https://github.com/solo-io/gloo.git", branch: "main"
 
@@ -16,12 +16,11 @@ class Glooctl < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b8587a0c3b9f3fa308ce67bb1aa2b90de7c322ad016e700bedf42c345ed0acb6"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "339b3f01340ec83efbac7875927b0aed391d5d2d4a900daa0301b09a32d0bf76"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "397b9d91ad787b4cd50322735247a721f1dd1e92e13b2e8d164b83f021dfb42e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "dce672ac7eab7938a4f919a4da65bcf21ddba2d6a6d310c5af60d23bb956758f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f150fd988576184e19beb5133669c2a703ea80ec8047b52365abbb97577b7483"
-    sha256 cellar: :any,                 x86_64_linux:  "c924ab409cfd786e0114363d537498ec434e35d1a8d1c389b5e62dd2c44a0880"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b02ef50ef27e70bd06771cc4b4421bd80af2697489df5d8d83e7666193aa9c26"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3594730e1f3a296ac60a2a73523a6012c8ec4f2698b2a23cb961e9ed66e2c0d0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1a363bf94b8b4f9618ba6209f03c9dc8213f799c340f353a2afe07ca0ac4a583"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b6adda73bdf542a6e88ed59e29e11439b2175d0bafa35c38ff4f59955430a89d"
+    sha256 cellar: :any,                 x86_64_linux:  "cbcfc4e404d033f861ae32bc337af9e124936dd22b4bfea00baf611dab70ea4a"
   end
 
   deprecate! date: "2026-12-31", because: :deprecated_upstream

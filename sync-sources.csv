@@ -5878,6 +5878,7 @@ Homebrew-homebrew-core/Formula/p/pixi-pack.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pixi.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pixie.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pixiewps.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/p/pixivbiu.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pixlet.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pixman.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pixtuoid.rb, Homebrew/homebrew-core, 1
@@ -6418,6 +6419,7 @@ Homebrew-homebrew-core/Formula/r/readline.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/readosm.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/readpe.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/readsb.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/r/readwise-cli.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/reattach-to-user-namespace.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/reaver.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rebar3.rb, Homebrew/homebrew-core, 1
@@ -7454,6 +7456,7 @@ Homebrew-homebrew-core/Formula/t/teensy_loader_cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/teip.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tektoncd-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/teku.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/t/tele.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/telegraf.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/telegram-downloader.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/telegram-send.rb, Homebrew/homebrew-core, 0
@@ -8844,6 +8847,7 @@ Homebrew-homebrew-cask/Casks/a/ariang.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/ariax.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/arkiwi.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/arm-performance-libraries.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/a/arm-performix.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/armory.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/arq-cloud-backup.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/arq.rb, Homebrew/homebrew-cask, 0
@@ -9492,6 +9496,7 @@ Homebrew-homebrew-cask/Casks/c/creality-print.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/creality-slicer.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/creative.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/crescendo.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/c/crisp.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/cro-mag-rally.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/crossover.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/crosspaste.rb, Homebrew/homebrew-cask, 1

@@ -20,6 +20,8 @@ class Zsv < Formula
 
   uses_from_macos "ncurses"
 
+  deny_network_access!
+
   def install
     rm(Dir["app/external/{jq,pcre}*"])
 

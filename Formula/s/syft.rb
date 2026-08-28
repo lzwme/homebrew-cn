@@ -1,18 +1,17 @@
 class Syft < Formula
   desc "CLI for generating a Software Bill of Materials from container images"
   homepage "https://github.com/anchore/syft"
-  url "https://ghfast.top/https://github.com/anchore/syft/archive/refs/tags/v1.51.0.tar.gz"
-  sha256 "d48bca3091ec4862f5041af6cbdeedb3f2322ae7a059199a22d99e099cabd4ae"
+  url "https://ghfast.top/https://github.com/anchore/syft/archive/refs/tags/v1.51.1.tar.gz"
+  sha256 "da8d83cdca78f2c553e08a5ecb9734016a05adb904168531f582bebfbb9bb2cf"
   license "Apache-2.0"
   head "https://github.com/anchore/syft.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "37aa3d3abaee265b2cea65f50f4269eee65c71137e37cf24b2fab1b52c49c431"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7bd16589eca221710588572088897f9bcecdf8366ad3141e794df5b87a9e4641"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ae9c4a780f8f378cb2bf1ef3d40386e7bc2d50f867b4ab55ea0232572c870a88"
-    sha256 cellar: :any_skip_relocation, sonoma:        "cf7bfdad9a11b00032def27afd6fbd2f6f9dda0e1a5e1e26096cd9b6c53c06fe"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ecc19889369004d514e13e79dd1bb297fb0bd071909bb4a1331282ead7e1fc3b"
-    sha256 cellar: :any,                 x86_64_linux:  "4e0a5066e8ec542936f935771d8cd622dbbb68c413e4be2d0e7c82c8fe2fb319"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "953c3f99e76db3f63362fd035cf428ff75173ea858e86e321dd5eefacb210e57"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bbb1efdf4e878ae660528329c1c7b280d77ffb172a728b628b3dcb5658b442d1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ea350664ee8dc144de92ac4fdb07df0aa6c0bc97b18bac7bb738bf0be6d74316"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "dc10911dd732fde0c952dd1d32b9abfdb451021fbe023427991f51dca430be63"
+    sha256 cellar: :any,                 x86_64_linux:  "d234ac2d2401ddf8fff2befb4d2e36651cf630bd8f5f0c56b23f030a6bed1546"
   end
 
   depends_on "go" => :build

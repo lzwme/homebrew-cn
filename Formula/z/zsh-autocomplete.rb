@@ -13,6 +13,8 @@ class ZshAutocomplete < Formula
   depends_on "clitest" => :test
   uses_from_macos "zsh" => :test
 
+  deny_network_access!
+
   def install
     pkgshare.install Dir["*"]
   end

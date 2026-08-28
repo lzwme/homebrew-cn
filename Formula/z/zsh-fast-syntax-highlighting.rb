@@ -13,6 +13,8 @@ class ZshFastSyntaxHighlighting < Formula
 
   uses_from_macos "zsh" => [:build, :test]
 
+  deny_network_access!
+
   def install
     # build an `:all` bottle.
     inreplace %w[fast-highlight fast-theme test/parse.zsh test/to-parse.zsh],

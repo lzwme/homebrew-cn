@@ -5,6 +5,7 @@ class Aflxx < Formula
   version "5.02c"
   sha256 "118415843e5d289d63bd6d8f2252c18212978f15ac9e86acbbc75766cd45acde"
   license "Apache-2.0"
+  revision 1
 
   livecheck do
     url :stable
@@ -12,12 +13,12 @@ class Aflxx < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "a08c76e82f2deed0634e35b4447a5ea12b37814a236a2b0c0f92db36a0881932"
-    sha256 arm64_sequoia: "93ea9be855ca2a1b3c0d191a3e6a21947dca7e0aa31340b2f9fe5cea0d1f542e"
-    sha256 arm64_sonoma:  "0048a20058a4e870230b2dfebf27da2d072da464343b30b58ad4678f75cdd80a"
-    sha256 sonoma:        "8856b27c4d4cf0aee89bc61d51164e3ecf062193f84184485800b2fd0c80cca1"
-    sha256 arm64_linux:   "190a177af46d4dff6baf0564bca510e644095c461be2a0287adb45d1336542f0"
-    sha256 x86_64_linux:  "fa3a4b32f0064229d5ac5adf7b744abf5032b6d3c3415a4305da648ee426729a"
+    sha256 arm64_tahoe:   "c65ca15fb74976ee9bd2cffd7181a4e1b6f32644771be10fc2b3159f50b9cd89"
+    sha256 arm64_sequoia: "28973e03320f7def0fbdfbb932e17bd1a7c768563bb42d3ed3c8a2a99bf7156b"
+    sha256 arm64_sonoma:  "1eedd9b191dfa4b929a3473ae3da5db3733c4563917db9675d87647c703d1dee"
+    sha256 sonoma:        "c229850b10b570a40e0ff8f63bd93bb9f686ebc68db277df7aa71ebb27c1803e"
+    sha256 arm64_linux:   "56174c803fd4e44c50a17847b130dfc070bf28a6c497c2739a48adbd232b2c1d"
+    sha256 x86_64_linux:  "bee15548adfe3fb14f5a2935e1901d268fc9c86d397ca720f4b6a67122650b74"
   end
 
   depends_on "coreutils" => :build

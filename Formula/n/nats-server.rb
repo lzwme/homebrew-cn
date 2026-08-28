@@ -1,8 +1,8 @@
 class NatsServer < Formula
   desc "Lightweight cloud messaging system"
   homepage "https://nats.io"
-  url "https://ghfast.top/https://github.com/nats-io/nats-server/archive/refs/tags/v2.14.5.tar.gz"
-  sha256 "e52606786923a346de676ae238889a79f55df61680f492ee5e2b1353b58418b5"
+  url "https://ghfast.top/https://github.com/nats-io/nats-server/archive/refs/tags/v2.14.6.tar.gz"
+  sha256 "90aec2c35eaa94105354cbcdfb6d88cea5082415dc39409efdbe320fb66328bb"
   license "Apache-2.0"
   head "https://github.com/nats-io/nats-server.git", branch: "main"
 
@@ -12,12 +12,11 @@ class NatsServer < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "76f06a318a46a1d6a1e3bb898ee1abe48f1131253840e34d41ef321e5b8131d3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "76f06a318a46a1d6a1e3bb898ee1abe48f1131253840e34d41ef321e5b8131d3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "76f06a318a46a1d6a1e3bb898ee1abe48f1131253840e34d41ef321e5b8131d3"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0ad9c9603f108c62bf46c7e9646537b65cd01d37acd2a2804aed915a1a7899f3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e246875bc97245a4144b53b2837a435602016e917eb1c88771ec1425520205db"
-    sha256 cellar: :any,                 x86_64_linux:  "e01bdf5abeeeeee261f043a1c501270d3cd811826cf38675b112478e45ce54f2"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bbd2d1adbb10e0e8391bf06bd18188a6b19e3ce2ee20ec67bb05afdb10da5908"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bbd2d1adbb10e0e8391bf06bd18188a6b19e3ce2ee20ec67bb05afdb10da5908"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bbd2d1adbb10e0e8391bf06bd18188a6b19e3ce2ee20ec67bb05afdb10da5908"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "25378171785a7ce9f3b8608041e79bd83a7c4251306ff90c361b842786746c0a"
+    sha256 cellar: :any,                 x86_64_linux:  "a783565630fb0ed34add03db68fb044c249a8f4d28483af4b9e7aaedc380fcfb"
   end
 
   depends_on "go" => :build

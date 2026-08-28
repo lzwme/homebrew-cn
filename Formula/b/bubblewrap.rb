@@ -20,6 +20,8 @@ class Bubblewrap < Formula
   depends_on "libcap"
   depends_on :linux
 
+  deny_network_access!
+
   def install
     # Meson modifies RPATHs during install but cannot handle paths injected by
     # our shim and results in a non-relocatable binary. Instead, we can remove

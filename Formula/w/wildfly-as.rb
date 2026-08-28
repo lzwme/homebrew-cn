@@ -1,8 +1,8 @@
 class WildflyAs < Formula
   desc "Managed application runtime for building applications"
   homepage "https://www.wildfly.org/"
-  url "https://ghfast.top/https://github.com/wildfly/wildfly/releases/download/41.0.0.Final/wildfly-41.0.0.Final.tar.gz"
-  sha256 "d240795958e7d99b638cd4c3e0f9ba4b7d4c53b4f7996dfec1008250c4d48191"
+  url "https://ghfast.top/https://github.com/wildfly/wildfly/releases/download/41.0.1.Final/wildfly-41.0.1.Final.tar.gz"
+  sha256 "26e27908f5c720d53f24abb95f9575d04f580510e5d85fad513cda9ade8119c3"
   license "Apache-2.0"
 
   livecheck do
@@ -11,12 +11,11 @@ class WildflyAs < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "e6252f6d35b807bba7c4f12ab27c05ea909f2c9e9227a4da2258c91a6f3e4512"
-    sha256 cellar: :any, arm64_sequoia: "78fe24869f16ad21eb1bb6a940a74eb10c8e370a22b92f6182c694642806b817"
-    sha256 cellar: :any, arm64_sonoma:  "293ccabb7deae42550f918314154d4b26b1e4d8be0b227fc906cdc689764698a"
-    sha256 cellar: :any, sonoma:        "df794e48f1f9641cf7a979af6437d3c3636316fab8f5db592885108c38f61b40"
-    sha256 cellar: :any, arm64_linux:   "83f43dd0d6c6963734c8eb1c16647f86c169975e59d1afd137c9c9835716dd95"
-    sha256 cellar: :any, x86_64_linux:  "587eb162f2c06165ad6159e50557f0d3095e840775167926f3bd710d9f3f3d99"
+    sha256 cellar: :any, arm64_tahoe:   "1be4ec3dd7a30b951c56f2492213ec0177a19d00f0280df59e4b4b2fdf197db2"
+    sha256 cellar: :any, arm64_sequoia: "8970dbbd8f37695aa89ed381e99f406f3f4c5775d8d1f0397ee6f83fe5665748"
+    sha256 cellar: :any, arm64_sonoma:  "1f0d1acbc28fba0728b283f835a1274f20631fd5866c2a4ed1b75f62af7a75ca"
+    sha256 cellar: :any, arm64_linux:   "70a648063bce17649824bf821e05d3e11f1106690ed0a4e81b58eb5ba7d7e9b1"
+    sha256 cellar: :any, x86_64_linux:  "39f14eb487557bfb284d71c619c89169eecae3be4c135a3379cc5443c98a8c39"
   end
 
   depends_on "autoconf" => :build
@@ -43,8 +42,8 @@ class WildflyAs < Formula
   end
 
   resource "netty" do
-    url "https://ghfast.top/https://github.com/netty/netty/archive/refs/tags/netty-4.1.136.Final.tar.gz"
-    sha256 "109bb2ccfe821eb51288343836d8b8c98be74e7871af95344f0386d3b5601672"
+    url "https://ghfast.top/https://github.com/netty/netty/archive/refs/tags/netty-4.1.137.Final.tar.gz"
+    sha256 "8638b624ecb6cc4122439f78f74f707da46197cfade615b0c88239af9fe74e43"
 
     livecheck do
       url "https://ghfast.top/https://raw.githubusercontent.com/wildfly/wildfly/refs/tags/#{LATEST_VERSION}.Final/pom.xml"

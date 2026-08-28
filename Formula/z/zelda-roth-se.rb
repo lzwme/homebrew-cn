@@ -32,6 +32,8 @@ class ZeldaRothSe < Formula
   uses_from_macos "zip" => :build
   uses_from_macos "unzip" => :test
 
+  deny_network_access!
+
   def install
     system "cmake", "-S", ".", "-B", "build",
                     "-DCMAKE_POLICY_VERSION_MINIMUM=3.5",

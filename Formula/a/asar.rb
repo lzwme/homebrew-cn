@@ -22,9 +22,9 @@ class Asar < Formula
   end
 
   def install
-    system "cmake", "src", *std_cmake_args
-    system "make"
-    system "make", "install"
+    system "cmake", "-S", "src", "-B", "build", *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do

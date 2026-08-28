@@ -3,8 +3,8 @@ class Torrra < Formula
 
   desc "Find and download torrents without leaving your CLI"
   homepage "https://torrra.readthedocs.io/en/latest/"
-  url "https://files.pythonhosted.org/packages/fe/57/40761bcc4eec8c7801ceea3475217e9538e7b1b4e4ae4cd81714814be79b/torrra-2.3.1.tar.gz"
-  sha256 "d9ad8f150eb3a7a259c4f850bdff144f307d4098fc4a30e82f2d7a9660f80f3a"
+  url "https://files.pythonhosted.org/packages/9e/73/e6916c644f65640a62e07fbe9bf71f77d6d3c49b60cabdb57f7abf093dd5/torrra-2.3.2.tar.gz"
+  sha256 "8eb4c773a08103d87de149761ba6f6e6dd4a46c0e846503d5e8ff13f85e6e0c3"
   license "MIT"
   head "https://github.com/stabldev/torrra.git", branch: "main"
 
@@ -14,12 +14,12 @@ class Torrra < Formula
   no_autobump! because: "`update-python-resources` cannot determine dependencies"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a147b56139c411ecdf3188c5033a9e72ddd422cea85bbae7751da943db8dbb33"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a147b56139c411ecdf3188c5033a9e72ddd422cea85bbae7751da943db8dbb33"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a147b56139c411ecdf3188c5033a9e72ddd422cea85bbae7751da943db8dbb33"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a147b56139c411ecdf3188c5033a9e72ddd422cea85bbae7751da943db8dbb33"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e2457a2c045ad8f083a96eae243ccc7a6ece4310e85c072bf6967aaa41132de0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e2457a2c045ad8f083a96eae243ccc7a6ece4310e85c072bf6967aaa41132de0"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6253a17b74f8c297847647d7d962fc42987b7632403d11174df023b82af87048"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6253a17b74f8c297847647d7d962fc42987b7632403d11174df023b82af87048"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6253a17b74f8c297847647d7d962fc42987b7632403d11174df023b82af87048"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6253a17b74f8c297847647d7d962fc42987b7632403d11174df023b82af87048"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f98d2558fbe605cf9e24bcdf1de38509d8adf4d51945a3f66ef249849f3dea98"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6253a17b74f8c297847647d7d962fc42987b7632403d11174df023b82af87048"
   end
 
   depends_on "certifi" => :no_linkage

@@ -59,6 +59,8 @@ class Zbar < Formula
     resolves "https://github.com/mchehab/zbar/pull/299"
   end
 
+  deny_network_access!
+
   def install
     ENV["XML_CATALOG_FILES"] = etc/"xml/catalog"
 

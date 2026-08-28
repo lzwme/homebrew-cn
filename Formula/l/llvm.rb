@@ -1,15 +1,13 @@
 class Llvm < Formula
   desc "Next-gen compiler infrastructure"
   homepage "https://llvm.org/"
-  # The LLVM Project is under the Apache License v2.0 with LLVM Exceptions
   license "Apache-2.0" => { with: "LLVM-exception" }
-  revision 2
-  compatibility_version 1
+  compatibility_version 2
   head "https://github.com/llvm/llvm-project.git", branch: "main"
 
   stable do
-    url "https://ghfast.top/https://github.com/llvm/llvm-project/releases/download/llvmorg-22.1.8/llvm-project-22.1.8.src.tar.xz"
-    sha256 "922f1817a0df7b1489272d18134ee0087a8b068828f87ac63b9861b1a9965888"
+    url "https://ghfast.top/https://github.com/llvm/llvm-project/releases/download/llvmorg-23.1.0/llvm-project-23.1.0.src.tar.xz"
+    sha256 "ab1f0e3ec52448c33e8782eaf0422504b87c7b016b22514653ee0d8fcee479ff"
 
     # Fix triple config loading for clang-cl
     patch do
@@ -26,12 +24,12 @@ class Llvm < Formula
   end
 
   bottle do
-    sha256               arm64_tahoe:   "2658532afda21bbcda52807c463b1efddf2bc1e7d59f7415fd7bd295c72f5d3e"
-    sha256               arm64_sequoia: "9879522c00f5f7eda58b81ea0bc626b4e025a2f5b8ae155ec2699a1312e908aa"
-    sha256               arm64_sonoma:  "6cb18d6c4307825ca4e1db3b420e1e6061d9225ec60baf50d194a5d76c031ff4"
-    sha256 cellar: :any, sonoma:        "9201a38c2614edf8243dc5e3b1734f3c48a359059a5f5dadf1e56472dcf384ea"
-    sha256 cellar: :any, arm64_linux:   "e35875ebf6f9d968b163be1cccd8dc1f2f94ad8efc7f6fb4971f905a9be253cd"
-    sha256 cellar: :any, x86_64_linux:  "acecee779a55db8a3931ff0481c676299dbc887047e177690e60b7e7cec5aed4"
+    sha256               arm64_tahoe:   "a916d9bdae80f1ea47374528e43f5b1b5f864f3fc9c9ae6db02faa5cba6b3f25"
+    sha256               arm64_sequoia: "ccaf29d02d4dffa52584e5720c711accac378664f1098ef1232defa5d4eb53e0"
+    sha256               arm64_sonoma:  "93d3fc19acc5605054408ab47caed44e4d36729cc1cd5a29a524b9d8a312d5e3"
+    sha256 cellar: :any, sonoma:        "0b0168dc611a9d77aaa62d094178297f8a861d647cc59c43a5dc3f76bd6eb7b2"
+    sha256 cellar: :any, arm64_linux:   "1a2ddcf091e4d316f302ba561f5bf3741cd23e8f309ccb53df9b721c944145a3"
+    sha256 cellar: :any, x86_64_linux:  "654dd1c77fe25f5daca8e46de9c8e26da97ad30bcb6d3f13a00e74d36932b215"
   end
 
   keg_only :provided_by_macos
@@ -39,14 +37,11 @@ class Llvm < Formula
   # https://llvm.org/docs/GettingStarted.html#requirement
   depends_on "cmake" => :build
   depends_on "ninja" => :build
-  depends_on "swig" => :build # for lldb
-  depends_on "python@3.14"
-  depends_on "xz" # for lldb
+  depends_on "python@3.14" => [:build, :test]
   depends_on "zstd"
 
   uses_from_macos "libedit"
   uses_from_macos "libffi"
-  uses_from_macos "ncurses" # for lldb
 
   # Z3 needs C++20 std::format which is only available in Xcode 15.3 or later.
   # To avoid a dependency loop, we disable Z3 support on older macOS.
@@ -85,24 +80,17 @@ class Llvm < Formula
       libcxx
       libcxxabi
       libunwind
+      openmp
     ]
 
     unless versioned_formula?
       odie "Remove Z3 solver!" if build.stable? && version >= "24"
       enable_z3 = deps.map(&:name).include?("z3")
-      projects << "lldb"
-
-      if OS.mac?
-        runtimes << "openmp"
-      else
-        projects << "openmp"
-      end
     end
 
     python_versions = Formula.names
                              .select { |name| name.start_with? "python@" }
                              .map { |py| py.delete_prefix("python@") }
-    site_packages = Language::Python.site_packages(python3).delete_prefix("lib/")
 
     # compiler-rt has some iOS simulator features that require i386 symbols
     # I'm assuming the rest of clang needs support too for 32-bit compilation
@@ -111,9 +99,6 @@ class Llvm < Formula
     # can almost be treated as an entirely different build from llvm.
     ENV.permit_arch_flags
 
-    # we install the lldb Python module into libexec to prevent users from
-    # accidentally importing it with a non-Homebrew Python or a Homebrew Python
-    # in a non-default prefix. See https://lldb.llvm.org/resources/caveats.html
     args = %W[
       -DLLVM_ENABLE_PROJECTS=#{projects.join(";")}
       -DLLVM_ENABLE_RUNTIMES=#{runtimes.join(";")}
@@ -123,20 +108,15 @@ class Llvm < Formula
       -DLLVM_ENABLE_EH=OFF
       -DLLVM_ENABLE_FFI=ON
       -DLLVM_ENABLE_RTTI=ON
+      -DLLVM_ENABLE_Z3_SOLVER=#{enable_z3 ? "ON" : "OFF"}
       -DLLVM_INCLUDE_BENCHMARKS=OFF
       -DLLVM_INCLUDE_DOCS=OFF
       -DLLVM_INCLUDE_TESTS=OFF
       -DLLVM_INSTALL_UTILS=ON
-      -DLLVM_ENABLE_Z3_SOLVER=#{enable_z3 ? "ON" : "OFF"}
       -DLLVM_OPTIMIZED_TABLEGEN=ON
       -DLLVM_TARGETS_TO_BUILD=all
       -DLLVM_USE_RELATIVE_PATHS_IN_FILES=ON
       -DLLVM_SOURCE_PREFIX=.
-      -DLLDB_USE_SYSTEM_DEBUGSERVER=ON
-      -DLLDB_ENABLE_PYTHON=ON
-      -DLLDB_ENABLE_LUA=OFF
-      -DLLDB_ENABLE_LZMA=ON
-      -DLLDB_PYTHON_RELATIVE_PATH=libexec/#{site_packages}
       -DLIBOMP_INSTALL_ALIASES=OFF
       -DLIBCXX_INSTALL_MODULES=ON
       -DCLANG_PYTHON_BINDINGS_VERSIONS=#{python_versions.join(";")}
@@ -182,6 +162,8 @@ class Llvm < Formula
       args << "-DFFI_INCLUDE_DIR=#{formula_opt_include("libffi")}"
       args << "-DFFI_LIBRARY_DIR=#{formula_opt_lib("libffi")}"
 
+      # Disable OMPD gdb plugin to avoid Python linkage
+      args << "-DLIBOMP_OMPD_GDB_SUPPORT=OFF"
       # Disable `libxml2` which isn't very useful.
       args << "-DLLVM_ENABLE_LIBXML2=OFF"
       args << "-DLLVM_ENABLE_LIBCXX=OFF"
@@ -455,6 +437,15 @@ class Llvm < Formula
     # Install Emacs modes
     elisp.install llvmpath.glob("utils/emacs/*.el") + share.glob("clang/*.el")
 
+    # Install C/Fortran header. This is supposed to be installed by Flang to be used by Clang;
+    # however, Homebrew's layout results in it getting installed to an incompatible location.
+    # Fedora packages the header in `clang-libs` and Debian in `libclang-common-*-dev` so
+    # it is likely safe to install even when Flang is not installed.
+    unless versioned_formula?
+      resource_dir = Pathname(Utils.safe_popen_read(bin/"clang", "-print-resource-dir").chomp)
+      (resource_dir/"include").install "flang/include/flang/ISO_Fortran_binding.h"
+    end
+
     return unless lto_build
 
     # Convert LTO-generated bitcode in our static archives to MachO. Adapted from Fedora:
@@ -500,8 +491,9 @@ class Llvm < Formula
       CLANG_CONFIG_FILE_SYSTEM_DIR: #{clang_config_file_dir}
       CLANG_CONFIG_FILE_USER_DIR:   ~/.config/clang
 
-      LLD is now provided in a separate formula:
+      LLD and LLDB are now provided in separate formulae:
         brew install lld
+        brew install lldb
 
       Z3 solver support will be removed in LLVM 24 as it is unsupported upstream,
       see https://github.com/llvm/llvm-project/pull/205370
@@ -773,10 +765,7 @@ class Llvm < Formula
         }
       C
 
-      rpath_flag = "-Wl,-rpath,#{lib/Utils.safe_popen_read(bin/"clang", "--print-target-triple").chomp}" if OS.linux?
-      system bin/"clang", "-L#{lib}", "-fopenmp", "-nobuiltininc",
-                          "-I#{lib}/clang/#{llvm_version_major}/include",
-                          rpath_flag.to_s, "omptest.c", "-o", "omptest"
+      system bin/"clang", "-fopenmp", "omptest.c", "-o", "omptest"
       testresult = shell_output("./omptest")
 
       sorted_testresult = testresult.split("\n").sort.join("\n")
@@ -797,17 +786,7 @@ class Llvm < Formula
           return 0;
         }
       C
-      system bin/"clang", "--analyze", "-Xanalyzer", "-analyzer-constraints=z3", "unreachable.c"
-
-      # Check that lldb can use Python
-      lldb_script_interpreter_info = JSON.parse(shell_output("#{bin}/lldb --print-script-interpreter-info"))
-      assert_equal "python", lldb_script_interpreter_info["language"]
-      python_test_cmd = "import pathlib, sys; print(pathlib.Path(sys.prefix).resolve())"
-      assert_match shell_output("#{python3} -c '#{python_test_cmd}'"),
-                   pipe_output("#{bin}/lldb", <<~EOS)
-                     script
-                     #{python_test_cmd}
-                   EOS
+      system bin/"clang", "--analyze", "-Xanalyzer", "-analyzer-constraints=unsupported-z3", "unreachable.c"
     end
 
     # Ensure LLVM did not regress output of `llvm-config --system-libs` which for a time

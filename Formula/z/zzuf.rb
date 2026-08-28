@@ -30,6 +30,8 @@ class Zzuf < Formula
     depends_on "pkgconf" => :build
   end
 
+  deny_network_access!
+
   def install
     system "./bootstrap" if build.head?
 

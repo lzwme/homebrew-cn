@@ -1,9 +1,9 @@
 cask "motrix@beta" do
   arch arm: "-arm64", intel: "-x64"
 
-  version "2.0.0-beta.26"
-  sha256 arm:   "c7a9595e7df008318f10b5c2699e3fb49610a590a4802ec1b211064fa2b2ec98",
-         intel: "8b18482118f79034172e9c9a84734c5fbcaa5c38d02f3dce05177627547996cc"
+  version "2.0.0-beta.28"
+  sha256 arm:   "3f197f6cff314282da59fe063906c66cbc3b95ed0415591325695591a0fb599a",
+         intel: "aff6bc6a2d27e0ebed675516bf4a17fda6e7a0e7e347288286961761e77f1ddb"
 
   url "https://ghfast.top/https://github.com/agalwood/Motrix/releases/download/v#{version}/Motrix-#{version}#{arch}.dmg"
   name "Motrix Beta"

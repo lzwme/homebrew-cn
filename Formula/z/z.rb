@@ -17,6 +17,8 @@ class Z < Formula
     sha256 cellar: :any_skip_relocation, all: "8d048cdf7dd88dfdfe1e89e73a842fb91e743d6e0ec6c60fc99607e0c3d511b0"
   end
 
+  deny_network_access!
+
   def install
     (prefix/"etc/profile.d").install "z.sh"
     man1.install "z.1"

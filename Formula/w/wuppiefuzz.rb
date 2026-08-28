@@ -1,18 +1,16 @@
 class Wuppiefuzz < Formula
   desc "Coverage-guided REST API fuzzer developed on top of LibAFL"
   homepage "https://github.com/TNO-S3/WuppieFuzz"
-  url "https://ghfast.top/https://github.com/TNO-S3/WuppieFuzz/releases/download/v1.6.0/source.tar.gz"
-  sha256 "f22bd5f0f1f922dfa1481e752689fe043e49f68bb1139fab195359b388e461f0"
+  url "https://ghfast.top/https://github.com/TNO-S3/WuppieFuzz/releases/download/v1.7.1/source.tar.gz"
+  sha256 "93e3c143b90d552a2620211b866176cedfea58d263bf75331f2da550a55996f3"
   license "Apache-2.0"
-  revision 2
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "ecf9f532793558ed76c7602e8bc625eae1e1d0918afa24cf0d1715c528f07aca"
-    sha256 cellar: :any, arm64_sequoia: "41ad460d67a0e7618f64c8645cbf6693c22fdb9cc390543bbdd1bdb9de21aa74"
-    sha256 cellar: :any, arm64_sonoma:  "839f88a0d2f0629b9e0cc2b7b7910256595e9c75fe2da237fbc994923877b665"
-    sha256 cellar: :any, sonoma:        "298a9a2c84f2eaff5b821e9530e7366c07e43596d3afee70e8004227b5c0f132"
-    sha256 cellar: :any, arm64_linux:   "3d8a1873510193f44f9e4f44b5bb6ee8a383e9b5552a753158b8e4154df433e2"
-    sha256 cellar: :any, x86_64_linux:  "0958a40581dbb98d977a42323467d212184fbb134d19a266c16760a92591c5cd"
+    sha256 cellar: :any, arm64_tahoe:   "9c262ae160c959c3a173a1cdac5e8cc8dff007d76b2c9dec36bc18d6b0ffc933"
+    sha256 cellar: :any, arm64_sequoia: "5027f7c0331bf2f97d6ad18807862a9fef576718524fce430cc94afe05b375a6"
+    sha256 cellar: :any, arm64_sonoma:  "fd84fcf149222b32a825730a697d969e152e1837a83288041ae82fe2c6a28aa4"
+    sha256 cellar: :any, arm64_linux:   "30dd3db10fa7bb455866d9c55540b84534f5115f5503558c1192425028c8bfda"
+    sha256 cellar: :any, x86_64_linux:  "bac2b56b09e4d0357d4b02e9265c6df2febea55021bda69a3b04352c4a86919a"
   end
 
   depends_on "cmake" => :build
@@ -28,6 +26,7 @@ class Wuppiefuzz < Formula
   end
 
   def install
+    rm ".cargo/config.toml" # macOS `-stack_size` flag breaks proc-macro linking
     ENV["Z3_LIBRARY_PATH_OVERRIDE"] = formula_opt_lib("z3")
     ENV["Z3_SYS_Z3_HEADER"] = formula_opt_include("z3")/"z3.h"
     system "cargo", "install", "--no-default-features", *std_cargo_args(features: ["std"])

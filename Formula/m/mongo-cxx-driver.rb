@@ -1,8 +1,8 @@
 class MongoCxxDriver < Formula
   desc "C++ driver for MongoDB"
   homepage "https://github.com/mongodb/mongo-cxx-driver"
-  url "https://ghfast.top/https://github.com/mongodb/mongo-cxx-driver/releases/download/r4.5.0/mongo-cxx-driver-r4.5.0.tar.gz"
-  sha256 "327ec3f5b129abcf15adfa3177270fb41c23a794801d63f56e3292f5eb5c3dc9"
+  url "https://ghfast.top/https://github.com/mongodb/mongo-cxx-driver/releases/download/r4.5.1/mongo-cxx-driver-r4.5.1.tar.gz"
+  sha256 "e5e0ad56ce87b4654f7f9317188fbb1c446f57e5287502137c22a5b638d66a1b"
   license "Apache-2.0"
   head "https://github.com/mongodb/mongo-cxx-driver.git", branch: "master"
 
@@ -12,12 +12,11 @@ class MongoCxxDriver < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "fcfbf98d97c12eb3932f4a748dbfce74234fd0c7f9843ae0bf3da7df86a26da8"
-    sha256 cellar: :any, arm64_sequoia: "40d948c35bbc7f0b10d86dbb4eee4cfb6b077dd947db3bad4c587b705a2e9d1c"
-    sha256 cellar: :any, arm64_sonoma:  "45dad8b0f5d25508219cd663da39d9e07aa68c889a8baf78baee15dde197a0e0"
-    sha256 cellar: :any, sonoma:        "d93371b80062d4b9d01e59db33f65ae6dc947d4be7e1832073129e73ecebcecd"
-    sha256 cellar: :any, arm64_linux:   "663f7042e01ccd311df3a058121f3abdbc6892ad28aa1618b5ef9a6755670764"
-    sha256 cellar: :any, x86_64_linux:  "55953064d40b61540b43433c8ebd8b785de3f62566a732090eb12b6e49319576"
+    sha256 cellar: :any, arm64_tahoe:   "ae7b3cee5646ab05fcf1691b5c31d7aa08f43f4f013ba6a32677da1bbec33364"
+    sha256 cellar: :any, arm64_sequoia: "87b21375f3b8a41f97e9290dcb544c4f55faa4bdf3572a94ce2e40703a4ce720"
+    sha256 cellar: :any, arm64_sonoma:  "87c01cdbef0072dc45ab21fc0e4176b726ff3b7918c1e184a25679bb1b80beea"
+    sha256 cellar: :any, arm64_linux:   "5aaea0d0e45bfddeca3996b70cd67b0bbae6bffcb37f929b5b3157c706cb1930"
+    sha256 cellar: :any, x86_64_linux:  "eae990b05d3983b39b7aff6bc5b602cbdd3243055fbb9a7dc77f0a477e874436"
   end
 
   depends_on "cmake" => :build

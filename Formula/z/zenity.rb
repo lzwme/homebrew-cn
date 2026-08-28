@@ -31,6 +31,8 @@ class Zenity < Formula
     depends_on "gettext"
   end
 
+  deny_network_access!
+
   def install
     ENV["DESTDIR"] = "/"
 

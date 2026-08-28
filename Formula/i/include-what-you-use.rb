@@ -4,6 +4,7 @@ class IncludeWhatYouUse < Formula
   url "https://include-what-you-use.org/downloads/include-what-you-use-0.26.src.tar.gz"
   sha256 "5247c0c9a59df9d14e8aa7408ffec4134c6a4aef12f590929111fbfeac930a08"
   license "NCSA"
+  revision 1
   head "https://github.com/include-what-you-use/include-what-you-use.git", branch: "master"
 
   # This omits the 3.3, 3.4, and 3.5 versions, which come from the older
@@ -16,12 +17,12 @@ class IncludeWhatYouUse < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "e9305ba6904fb9eaf0667bf1ecb997ac246f9324a8a7ab8dda143cea9fe68d7f"
-    sha256 cellar: :any,                 arm64_sequoia: "682e8c9a6382511726473c66db09aa6d1ff49dcb9de8cadf5fb076c58640d692"
-    sha256 cellar: :any,                 arm64_sonoma:  "c22754d7c061f04621025f151d0aeee90da20bd9dfab05e92fe7e18d05e8050e"
-    sha256 cellar: :any,                 sonoma:        "fac4b6b56a0f3dd03be07545c89b3be4ac623398ccc8a6b8ea1e46117ba8a585"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "49d35bcdc687d3501d9c9e7c89f4d44d0650beb24f7f2f2562c2d0cd1075cfba"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e2d2879a2aa78ab98386305bf0f4b53b998ba4554f6bcf9cbd0422734c316974"
+    sha256 cellar: :any, arm64_tahoe:   "3a0f1c08f818d98e8ce861ac7e81f3fc1b961e4306fdbd16c01eca692251ceb3"
+    sha256 cellar: :any, arm64_sequoia: "be4e111aa8c0a6a8a23204459dd102e525efaa4a6042a39e21b01cfa6ddf39c9"
+    sha256 cellar: :any, arm64_sonoma:  "df2e90279bb2af185fdb734cf1dfa9d11e37315be75fd4f4cbee24f388758192"
+    sha256 cellar: :any, sonoma:        "065ee1cb122dca1383d8523118c2b5fa0bd37d8f8ec372cbefa7e68351729b27"
+    sha256 cellar: :any, arm64_linux:   "96b8344967aa0f947e016208ebbc886bc770c8d33de38b7026465c7bd05a751f"
+    sha256 cellar: :any, x86_64_linux:  "03fb836be4a0e4e78830bb6d5f36012c5848a0312400091198935cbf6dd13ba2"
   end
 
   depends_on "cmake" => :build

@@ -1,8 +1,8 @@
 class Scotch < Formula
   desc "Package for graph partitioning, graph clustering, and sparse matrix ordering"
   homepage "https://gitlab.inria.fr/scotch/scotch"
-  url "https://gitlab.inria.fr/scotch/scotch/-/archive/v7.0.13/scotch-v7.0.13.tar.bz2"
-  sha256 "63204a121fb2ea814f74a87b4c5f519f747bfb091e1288af391b62a44424c398"
+  url "https://gitlab.inria.fr/scotch/scotch/-/archive/v7.0.14/scotch-v7.0.14.tar.bz2"
+  sha256 "9801196eac89ad95f6331c15129cd072a7cf40513135f1975a33d1051d6bb38a"
   license "CECILL-C"
   head "https://gitlab.inria.fr/scotch/scotch.git", branch: "master"
 
@@ -12,12 +12,11 @@ class Scotch < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "7443e1bcf19514065b9ebf47e6d13cc28c045297e0ea1d1545cbe047d22bddfd"
-    sha256 cellar: :any, arm64_sequoia: "d3dd97eeadec62736035cc2183c1596702eda00635d7b818a86e7721773cffce"
-    sha256 cellar: :any, arm64_sonoma:  "4e1fa927efa0a873c2d05a1216e0de7131e0ce2462efbe05a06e503b18a17bd5"
-    sha256 cellar: :any, sonoma:        "83d358a865264b876371bc494bd9b62b4828f9baae68c2265b661597782f405b"
-    sha256 cellar: :any, arm64_linux:   "4fe06abc204cf98f13c80896521631701c704d957a4c931e6fe2d292c3a96772"
-    sha256 cellar: :any, x86_64_linux:  "30744e69c4750650b797b19c673009c8f07f80e7a0f6765f7e52c8c7c7096ff1"
+    sha256 cellar: :any, arm64_tahoe:   "92b6685ef53660a652820380b98d32412ba6adb225be00ac21b5a2f2a0e4513e"
+    sha256 cellar: :any, arm64_sequoia: "8c6792ac3ac708655715c1715cedf83e583acc45ad4ab4dfd3ce95fd13b6fee0"
+    sha256 cellar: :any, arm64_sonoma:  "82bb18bde1fdbacc50017888c7ea2f92fefd5efaf77602f18f1f7a90787517af"
+    sha256 cellar: :any, arm64_linux:   "849deb5401eb78221d780ef005b079c3819d82cb3e67dc387726be4533540532"
+    sha256 cellar: :any, x86_64_linux:  "bf94bd6d80e9ac0b21377f0573c451f0959f8e0ee264b20d3e917dc58fa643b7"
   end
 
   depends_on "bison" => :build

@@ -16,6 +16,8 @@ class ZshLovers < Formula
 
   uses_from_macos "xz" => :build
 
+  deny_network_access!
+
   def install
     system "ar", "x", "zsh-lovers_#{version}_all.deb"
     system "tar", "xf", "data.tar.xz"

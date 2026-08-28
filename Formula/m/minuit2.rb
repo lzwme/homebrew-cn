@@ -1,8 +1,8 @@
 class Minuit2 < Formula
   desc "Physics analysis tool for function minimization"
   homepage "https://root.cern.ch/doc/master/Minuit2Page.html"
-  url "https://root.cern.ch/download/root_v6.40.02.source.tar.gz"
-  sha256 "f631eebee3dbea128f1415f4b784f5e83637a2b431193bce75f10385f71efc56"
+  url "https://root.cern.ch/download/root_v6.40.04.source.tar.gz"
+  sha256 "44ada253b1935d34b6801222232d50731fe7c5e3cbcfab47734c85031cfbe4d3"
   license "LGPL-2.1-or-later"
   head "https://github.com/root-project/root.git", branch: "master"
 
@@ -11,12 +11,11 @@ class Minuit2 < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "ef68fe1ba7d43d170a5358cded925bccfe6cceb4292fa446c4c4555a26c490a1"
-    sha256 cellar: :any, arm64_sequoia: "d79b38cc0ba70b05a113fd20fc6807ae11c44244f40156c220175a77695d6573"
-    sha256 cellar: :any, arm64_sonoma:  "9f834f73d9915a2f062bb272a3c52815bf19df044011f9f7107290f0584ae765"
-    sha256 cellar: :any, sonoma:        "43ec264a53311f3e9a2e20c68a85ec784aa5b922e111a672633a84824d765b64"
-    sha256 cellar: :any, arm64_linux:   "56a8baec56d5854ba54bafe3f73e2bf5e035c9adca14eb9fabf9e62e7dcf70e8"
-    sha256 cellar: :any, x86_64_linux:  "df5355a064419cb52cca303571bc10f825aeaa43fc3a75a66b008e51d7e4297a"
+    sha256 cellar: :any, arm64_tahoe:   "5b42eee0e3c7cbeb2d1bd99b7fad530ea979de0f5451ce5b2475ce0d8dfe281e"
+    sha256 cellar: :any, arm64_sequoia: "29ac8bb3fd9ff98a216c2eb181c8de0e454cc5fe1a3893aa9b5140b550856f39"
+    sha256 cellar: :any, arm64_sonoma:  "f14bc00bcb166adfa4431e152fe3252b5fa2d041e8d844f077410c9ea25801a3"
+    sha256 cellar: :any, arm64_linux:   "0b206ef5b8e5a7d784ddeca32b842ec91b8bf12e23e5c2dc23052e8a4c612b40"
+    sha256 cellar: :any, x86_64_linux:  "f8aea9c171d574f69115878ddf2026d5e0617bff097e4360b75feec82bfed40f"
   end
 
   depends_on "cmake" => :build

@@ -1,13 +1,13 @@
 class Zinit < Formula
   desc "Flexible and fast Zsh plugin manager"
   homepage "https://zdharma-continuum.github.io/zinit/wiki/"
-  url "https://ghfast.top/https://github.com/zdharma-continuum/zinit/archive/refs/tags/v3.15.0.tar.gz"
-  sha256 "41e2861d81da3cacc7aacdae6a34daad22ed44be7695ba868cbe0bdae281d69f"
+  url "https://ghfast.top/https://github.com/zdharma-continuum/zinit/archive/refs/tags/v3.15.2.tar.gz"
+  sha256 "b1b6a98358c8285df5a1b4ee02b1f96c7356b3f35dce5232f229a30693ebf57b"
   license "MIT"
   head "https://github.com/zdharma-continuum/zinit.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "2fdcbc2caf61741e9ee9282077d37aeb209c5b24c2249ad617a2381bb88d07fe"
+    sha256 cellar: :any_skip_relocation, all: "599ce7c1a9d7bd312b7bf0f78d81f038cc38e606c7bd124307c51ee2912c0867"
   end
 
   uses_from_macos "zsh"

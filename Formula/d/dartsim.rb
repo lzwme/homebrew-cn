@@ -87,11 +87,8 @@ class Dartsim < Formula
                     "-L#{formula_opt_lib("fcl")}", "-lfcl",
                     "-std=c++17", "-o", "test"
     system "./test"
-    # build with cmake
-    mkdir "build" do
-      system "cmake", ".."
-      system "make"
-      system "./test_cmake"
-    end
+    system "cmake", "-S", ".", "-B", "build"
+    system "cmake", "--build", "build"
+    system "build/test_cmake"
   end
 end

@@ -1,18 +1,17 @@
 class AwsCCompression < Formula
   desc "C99 implementation of huffman encoding/decoding"
   homepage "https://github.com/awslabs/aws-c-compression"
-  url "https://ghfast.top/https://github.com/awslabs/aws-c-compression/archive/refs/tags/v0.3.3.tar.gz"
-  sha256 "33a91db709a547f417b1b23fdb76a64727ee8fb7ed88dd1a43be117f402db356"
+  url "https://ghfast.top/https://github.com/awslabs/aws-c-compression/archive/refs/tags/v1.0.0.tar.gz"
+  sha256 "d8e934da2086bfec41f97a0cff749d926f66ccb90f2052f1d70841916c1bf4d7"
   license "Apache-2.0"
-  compatibility_version 1
+  compatibility_version 2
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "c4f1e4af8a23d39df115f67f598f840e4acf9efbb4e797e46f031ff0fd668496"
-    sha256 cellar: :any, arm64_sequoia: "9f2620f8f5e2eb0be6f68843172896d682b1524e5efb22f50f9afad6147f2363"
-    sha256 cellar: :any, arm64_sonoma:  "3de77e3362b1c10bb1a4c4235c4c75c5a3634f0de7fd2477bcae84cff819363c"
-    sha256 cellar: :any, sonoma:        "a6a9d12acb54424e1e82888df8c2a7308c31ce30944c12d0595c5751911ff8bd"
-    sha256 cellar: :any, arm64_linux:   "84ba101845412dc7017689e04bec9a24e92a9b00b0c7e6c32a97076f54badbf6"
-    sha256 cellar: :any, x86_64_linux:  "197ada448e2f41d407b5ec3ecebca377306a8671d9a1e79e5f3d5974e4688993"
+    sha256 cellar: :any, arm64_tahoe:   "a2c53e81a0a8f5295ec41f79a5db591c1eea53b8eeac19b6c8649cdc2c676b46"
+    sha256 cellar: :any, arm64_sequoia: "688a0f79a1afe8229ccd16d7e08c4d6305769b97a95553ddfa0d4c16822d529b"
+    sha256 cellar: :any, arm64_sonoma:  "cf70d1c2341589cb2a83ea8921e25daa26576bca77f4deafac44b8cc72cb7a0c"
+    sha256 cellar: :any, arm64_linux:   "4833565f88f12bd9c6bf691625276b2f29490d698a498338a56705986428f103"
+    sha256 cellar: :any, x86_64_linux:  "ee4a9b37eb62286239c49703c84c71362c6e792460e7d042544191d27b8566b8"
   end
 
   depends_on "cmake" => :build

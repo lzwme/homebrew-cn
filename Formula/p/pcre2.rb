@@ -37,10 +37,10 @@ class Pcre2 < Formula
     depends_on "zlib-ng-compat"
   end
 
+  deny_network_access!
+
   def install
-    args = %W[
-      --disable-dependency-tracking
-      --prefix=#{prefix}
+    args = %w[
       --enable-pcre2-16
       --enable-pcre2-32
       --enable-pcre2grep-libz
@@ -52,7 +52,7 @@ class Pcre2 < Formula
 
     system "./autogen.sh" if build.head?
 
-    system "./configure", *args
+    system "./configure", *args, *std_configure_args
     system "make"
     system "make", "install"
   end

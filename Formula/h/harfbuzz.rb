@@ -1,19 +1,19 @@
 class Harfbuzz < Formula
   desc "OpenType text shaping engine"
   homepage "https://github.com/harfbuzz/harfbuzz"
-  url "https://ghfast.top/https://github.com/harfbuzz/harfbuzz/releases/download/14.3.1/harfbuzz-14.3.1.tar.xz"
-  sha256 "9dae9538aae2ffdf70cec31f2c27bf68e2aaeeae3112688467697d5faf6194f7"
+  url "https://ghfast.top/https://github.com/harfbuzz/harfbuzz/releases/download/14.4.0/harfbuzz-14.4.0.tar.xz"
+  sha256 "2357ed966c6ced7bfa720b0640c0231065af01158fbea215093ffa15aed44371"
   license "MIT"
   compatibility_version 1
   head "https://github.com/harfbuzz/harfbuzz.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "243ea1e71fb8329f24aea8b148616e2c49c32708ed080e9511877c08f5c3727b"
-    sha256 cellar: :any, arm64_sequoia: "20fca5cd4ab23f3a61e781439a926b47d07f008716aadaa7ff5bb3ff6a8515f3"
-    sha256 cellar: :any, arm64_sonoma:  "114b3725e3fcb328850f46cf7886a5d60eeb0642038a472148311a78ac48d844"
-    sha256 cellar: :any, sonoma:        "67895ad03fbdd496d3e09c8eaa60664037637221d6a12d1c6c1bb5a424aace6b"
-    sha256               arm64_linux:   "62631c0333bea12c0f67db4a646f202a02f91a9c0d229b1aba756a6fbcd235e4"
-    sha256               x86_64_linux:  "6c6352facf6fd17166f2c97e3953b23e71c48141b993bb53fae7e7baffcacbba"
+    sha256 cellar: :any, arm64_tahoe:   "05cf5776d8e75b155c6630532b8018a37a2fb56321ade7d46b70804ee23357a6"
+    sha256 cellar: :any, arm64_sequoia: "673d5f7f753ec7529960f06366adfb4b6f896e7eff6ce7fe8ab2626f8b5c3a57"
+    sha256 cellar: :any, arm64_sonoma:  "7beae4366dbd6d7ea9422263d0e9c916fdd1e6ff0ac9fea9219f8137b6685f1a"
+    sha256 cellar: :any, sonoma:        "f8d05176830f2a7dc5aa1c3a4e271515f798353cf2891c7d33b1717b543482d1"
+    sha256 cellar: :any, arm64_linux:   "2602b71e3df29d5a80f0885b8ba3f49707e1987733939e8231d307d8c2300c95"
+    sha256 cellar: :any, x86_64_linux:  "600ff248f89101b59d77be239bcac2a8262e32a0d4175bd99ec18b566391907f"
   end
 
   depends_on "gobject-introspection" => :build
@@ -32,6 +32,9 @@ class Harfbuzz < Formula
   on_linux do
     depends_on "zlib-ng-compat"
   end
+
+  # downloads test resources
+  allow_network_access! :test
 
   def install
     args = %w[

@@ -1,18 +1,17 @@
 class AwsCSdkutils < Formula
   desc "C99 library implementing AWS SDK specific utilities"
   homepage "https://github.com/awslabs/aws-c-sdkutils"
-  url "https://ghfast.top/https://github.com/awslabs/aws-c-sdkutils/archive/refs/tags/v0.2.10.tar.gz"
-  sha256 "23bfb010c7a5becc48b7e36212a4f401319a46ec3e981eb9adb9d6b215e7a65e"
+  url "https://ghfast.top/https://github.com/awslabs/aws-c-sdkutils/archive/refs/tags/v1.0.0.tar.gz"
+  sha256 "ddf9d09ba137ad0697afe1c09f5d778d6b2f1aadb277dffd231ff615ae34bc82"
   license "Apache-2.0"
-  compatibility_version 1
+  compatibility_version 2
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "fb0e452e0d5fd368ebc13c604a4acda9bc81c905c66062d37a8c501b8122489c"
-    sha256 cellar: :any, arm64_sequoia: "3473ca97c45b3386668aa8d5b3b3b24afc4bc8fa7a1c30f04195040e573f8400"
-    sha256 cellar: :any, arm64_sonoma:  "24f208f492d6a867711415024a0f9552073342af72ffaf081635736a2ac803fc"
-    sha256 cellar: :any, sonoma:        "9d906a80ed37da4082ffb6b6a2995498d395759749fbdf019ef3c8623b735018"
-    sha256 cellar: :any, arm64_linux:   "b1b6f25747719c5ddaf03b61f933915574547844b6ea94e4613e81f6ab00cb1b"
-    sha256 cellar: :any, x86_64_linux:  "c78a6f96439c9f0f2a8c51f2ec2e10cfe044c237a21d3caf06f71ccc893ae264"
+    sha256 cellar: :any, arm64_tahoe:   "d8c8dd2adee020199b6e165b41eb5b5e15ce98eedf402aed6f33878b4a8fced7"
+    sha256 cellar: :any, arm64_sequoia: "03bf903dcfb4c442dfa6d4c6d33fe6f65198ab0397d88386a70fdbdb5bbbc3e2"
+    sha256 cellar: :any, arm64_sonoma:  "4c1fac854ae9970781e1ec73c963e8ad0255dd8999283f8a262706aceed2da3c"
+    sha256 cellar: :any, arm64_linux:   "a8cfc7f6908f0a4e8c697205b417bed5862608f96ef7dd1e8f2a28d96c24c655"
+    sha256 cellar: :any, x86_64_linux:  "0cc97e4c629fcfde41f8dcf3112cd18e41c2114717ed30dafb3bde5cb8ae3f9b"
   end
 
   depends_on "cmake" => :build

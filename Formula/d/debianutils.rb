@@ -1,8 +1,8 @@
 class Debianutils < Formula
   desc "Miscellaneous utilities specific to Debian"
   homepage "https://tracker.debian.org/pkg/debianutils"
-  url "https://deb.debian.org/debian/pool/main/d/debianutils/debianutils_5.23.2.tar.xz"
-  sha256 "79e524b7526dba2ec5c409d0ee52ebec135815cf5b2907375d444122e0594b69"
+  url "https://deb.debian.org/debian/pool/main/d/debianutils/debianutils_5.24.tar.xz"
+  sha256 "bf79c301ad48e82ddb09d8c0770f6d44294ee9529ae5e54164072f7bf5c57016"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -11,14 +11,11 @@ class Debianutils < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "329887b6a8522b5f303b0787af83a7b26ae386d7feb87c069c4ce2387a9ab785"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "697c3bde9f2847949cd3b06bcb526b7afc8526828d5c9498b6826a77f5e69f3c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "05a1e2686176a116605d4ab6e5264340ca9dd83aca4533ada3f2cd56dc7a5dff"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "467ec22e22e45c4bf5ac0ec66521805fd548a2067fd35255e3cfc29a773aca36"
-    sha256 cellar: :any_skip_relocation, sonoma:        "08d55d96cb4eae2950159943ba4f0e010adfeb01c8541a2d14edce96a4bcb945"
-    sha256 cellar: :any_skip_relocation, ventura:       "cf09f6c0bd7042a1c473c9970ab98f28abc2fb3e7fb77cf51f7180ad05b07299"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8f255a4df75b8734c998aa1ba8215d945bc542ad7c119854f48cefbaa6ab8909"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3425081c6784a3a440bad62d02f8d0111decbf747bcf7df94676bd4b74e36e76"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bfb469effa35c07c7e0f45d63dfa6ac0829cf2c50c1e043dc9443dcd0f08f993"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "65e5a7a6ddd283487b870de85d0923236cf73a859cb9d6eef4a7cefd23ff5d9f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "01995d50a7cdf817d4c385cb46f81b23e341db6c221ac3ed8a7c0ba618f458e9"
+    sha256 cellar: :any,                 arm64_linux:   "c8477c286845207791beae9fbdd4c3bba1a784d90eebba6760a23c61776cda4e"
+    sha256 cellar: :any,                 x86_64_linux:  "eecd6810a9b410c133cb88b65f6855fd46c9073f2ae410a5daf784815d44cddf"
   end
 
   depends_on "autoconf" => :build

@@ -1,18 +1,18 @@
 class Xmake < Formula
   desc "Cross-platform build utility based on Lua"
   homepage "https://xmake.io/"
-  url "https://ghfast.top/https://github.com/xmake-io/xmake/releases/download/v3.1.0/xmake-v3.1.0.tar.gz"
-  sha256 "84aae0926d293f486297dfb63fc4cd802218124c9c91b141f2004dcc4d509fdd"
+  url "https://ghfast.top/https://github.com/xmake-io/xmake/releases/download/v3.1.1/xmake-v3.1.1.tar.gz"
+  sha256 "e67e6692bdf8fcb10cdb2cc78c0e8f0ae6c86ad3e3fc532880feca49eefb74b8"
   license "Apache-2.0"
   head "https://github.com/xmake-io/xmake.git", branch: "dev"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "548faa9d94bee48c6419f7325d9b6a3ed2c6b789dfcfa55c3c704cfe3a8d4dad"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a7b042c87cdc347dd541ab2e7cd29d57b3b22ba772ec1863696fc872f7d9875e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9d6831b93ace93c8d97bbd55d3a2c46c4f9ee6f22c8d0543f515035edd74237a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f8d91acf65694534db2d6458a503e23cc9afcc1b24a9f3fba3a743bfa6135ef4"
-    sha256 cellar: :any,                 arm64_linux:   "71bc88716f486e77fe8fb289b891352d60b4c4e355d8f25a01041ef35dfa01ed"
-    sha256 cellar: :any,                 x86_64_linux:  "1de20b3b613855b256a112453d03b62a8d71a93bbe41307f33c7069f20737760"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e55ab5f16a080f6e77393795f8bfad46bd466427e293e1e9a136870085f2d855"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e1ae8eca964dc9bf1a784f9020480afba1653bed4bb54a251dad691b46184e58"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "76fa1647e619b5d4c038f041077acf3f96cf05df977edbb1bbf89d5ebb4c7a3b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "afde5f5fc8bddf25cc92c664bb690d9015614a56fbc35c0d5d9c93d14e64c2b5"
+    sha256 cellar: :any,                 arm64_linux:   "8c4311435342921ab4ccf91ff5b4120e7d8946c870bb7b739aa707882cdc1153"
+    sha256 cellar: :any,                 x86_64_linux:  "a87e405c40405696cd84266da57a69fc70d5ec60564280b2d63faa40e5b4073a"
   end
 
   uses_from_macos "ncurses"

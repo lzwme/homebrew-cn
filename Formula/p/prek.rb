@@ -1,18 +1,18 @@
 class Prek < Formula
   desc "Fast Git hook manager written in Rust, drop-in alternative to pre-commit"
   homepage "https://prek.j178.dev/"
-  url "https://ghfast.top/https://github.com/j178/prek/archive/refs/tags/v0.4.14.tar.gz"
-  sha256 "6f0d3615690382d4a1339a81a2ada2330ac5141481eb79459ed8d63026efb9a0"
+  url "https://ghfast.top/https://github.com/j178/prek/archive/refs/tags/v0.5.0.tar.gz"
+  sha256 "3a19e696c7b06942947b8fd737c01a3ff0718a92460e59075828d43f80b6a814"
   license "MIT"
   head "https://github.com/j178/prek.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b3d92eb3168595f5279080ce37adb3ef33321c455ca119dd3f49d520f62cfb3a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4c5745e84841143f8203304b5a3ac36d57b5e1d339af6106300a245484aa9132"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c8da279b2ea4287c1c248caa2c6f7a92d979dfb9b8c4a87f56ad5678fd6309a1"
-    sha256 cellar: :any_skip_relocation, sonoma:        "eb54d34352cd55efe70ab499bc232970b995747c0812d0eca5a8870d8026d4f0"
-    sha256 cellar: :any,                 arm64_linux:   "23e1290e031b54e77141747e2faec3d14d823eb56484c6e52a5dd0b20f444465"
-    sha256 cellar: :any,                 x86_64_linux:  "36bda3ede820778930431ccdcb37cca2fd9d7864084adeb2d6c9992f76305433"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "83a4c0219d0436fb1cf96097a83d2c2337c5b3d95badb115ba3ab055777bc432"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4d59fffbb8e712206f81f285692748ce5f2fe8ef5a3ded92a7f137f73c58dc7b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "eefa9d56757f218eaeb1c7df52bd4182c9c16b477beeaf70e58b34130e90f534"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0fa1ce8c4dadcc98891d7b63b6910eb7ce778ac251250201813d89f440ae5d9c"
+    sha256 cellar: :any,                 arm64_linux:   "1900b1141894be4a37ca959bd4e5463fc1709bd6c1ee088315a26b44c11571d6"
+    sha256 cellar: :any,                 x86_64_linux:  "45db70d267bcea12ad1f7d734227c57e59521c096b4d94020fd110df9454f72a"
   end
 
   depends_on "rust" => :build

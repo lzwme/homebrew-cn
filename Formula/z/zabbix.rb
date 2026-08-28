@@ -24,6 +24,8 @@ class Zabbix < Formula
   depends_on "openssl@4"
   depends_on "pcre2"
 
+  deny_network_access!
+
   def install
     args = %W[
       --enable-agent

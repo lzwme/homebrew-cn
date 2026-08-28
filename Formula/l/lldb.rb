@@ -1,9 +1,10 @@
 class Lldb < Formula
   desc "Next generation, high-performance debugger"
   homepage "https://lldb.llvm.org/"
-  url "https://ghfast.top/https://github.com/llvm/llvm-project/releases/download/llvmorg-22.1.8/llvm-project-22.1.8.src.tar.xz"
-  sha256 "922f1817a0df7b1489272d18134ee0087a8b068828f87ac63b9861b1a9965888"
+  url "https://ghfast.top/https://github.com/llvm/llvm-project/releases/download/llvmorg-23.1.0/llvm-project-23.1.0.src.tar.xz"
+  sha256 "ab1f0e3ec52448c33e8782eaf0422504b87c7b016b22514653ee0d8fcee479ff"
   license "Apache-2.0" => { with: "LLVM-exception" }
+  compatibility_version 1
   head "https://github.com/llvm/llvm-project.git", branch: "main"
 
   livecheck do
@@ -11,16 +12,15 @@ class Lldb < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "6064cc1cf64460557845e50c789c37b5695881fda982ca16905288f6f3ae03d9"
-    sha256 cellar: :any, arm64_sequoia: "5ca4bbb30b87957d228713aaad6c4db762b8c7c74dea2e705db0df7350cc73f7"
-    sha256 cellar: :any, arm64_sonoma:  "e8f5aacc178bbcaddc739ef9288bf0254c8484dd4792b008fe876a84d5c7267c"
-    sha256 cellar: :any, sonoma:        "0853ee9d9721c9779d6abce757c237f553b33e415d0329867fd49aaf3df8de33"
-    sha256 cellar: :any, arm64_linux:   "6f55241ebcc61f7964d1d5ebdbed4957b1997bb5d7c09d323924633b7529794b"
-    sha256 cellar: :any, x86_64_linux:  "4ebf5aa7814723780cd37f110c67d2d2681f2d4d016269f4f943aabd4bbfa0e0"
+    sha256 arm64_tahoe:   "f2a3b40fece8d55bfd5da09768c7f14fa644f7a0fc0eda5debead23776e25ecc"
+    sha256 arm64_sequoia: "d35afd6d4b71526ec46daa78598021e5161fcfe7c310942b3f4059210c910795"
+    sha256 arm64_sonoma:  "8b9df261cdc258fd0804b0bc783ef013569691b48e5fdf7eb1828c9d1aeda631"
+    sha256 sonoma:        "8a9121cbc63f21ace8a26f474aba534949a2978a07e33c645419892b4a2d157f"
+    sha256 arm64_linux:   "1b82c11583239ef5f17de23042d6fa586bbef93cbd8618f6f597a51f38b8bacf"
+    sha256 x86_64_linux:  "4bce1f12a83b494cd40ba85f0331c60e41b7b8f2314977af27e193e8606524dc"
   end
 
-  # TODO: keg_only :provided_by_macos
-  keg_only "LLDB is provided by `llvm` until LLVM 23"
+  keg_only :provided_by_macos
 
   # https://lldb.llvm.org/resources/build.html
   depends_on "cmake" => :build
@@ -29,6 +29,8 @@ class Lldb < Formula
   depends_on "llvm"
   depends_on "python@3.14"
   depends_on "xz"
+  depends_on "z3" # TODO: remove in LLVM 24
+  depends_on "zstd"
 
   uses_from_macos "libedit"
   uses_from_macos "libxml2"
@@ -47,13 +49,6 @@ class Lldb < Formula
   def install
     # Features are set ON/OFF to avoid auto-detection impacting reproducibility.
     # See https://lldb.llvm.org/resources/build.html#optional-dependencies
-    #
-    # We install the lldb Python module into libexec to prevent users from
-    # accidentally importing it with a non-Homebrew Python or a Homebrew Python
-    # in a non-default prefix. See https://lldb.llvm.org/resources/caveats.html
-    #
-    # TODO: Try removing LLDB_PYTHON_RELATIVE_PATH in LLDB 23 as upstream no longer links on macOS:
-    # https://github.com/llvm/llvm-project/commit/3eb13f8db39ed42827122489c830c414cb6660e3
     args = %W[
       -DLLDB_ENABLE_CURSES=ON
       -DLLDB_ENABLE_LIBEDIT=ON
@@ -63,8 +58,8 @@ class Lldb < Formula
       -DLLDB_ENABLE_PYTHON=ON
       -DLLDB_ENABLE_TREESITTER=OFF
       -DLLDB_INCLUDE_TESTS=OFF
-      -DLLDB_PYTHON_RELATIVE_PATH=libexec/#{Language::Python.site_packages(python3).delete_prefix("lib/")}
       -DLLDB_USE_SYSTEM_DEBUGSERVER=ON
+      -DLLVM_BUILD_UTILS=ON
       -DLLVM_DIR=#{formula_opt_lib(name.sub("lldb", "llvm"))}/cmake/llvm
       -DLLVM_ENABLE_LTO=ON
     ]

@@ -11,6 +11,8 @@ class ZshAutosuggestions < Formula
 
   uses_from_macos "zsh" => :test
 
+  deny_network_access!
+
   def install
     pkgshare.install "zsh-autosuggestions.zsh"
   end

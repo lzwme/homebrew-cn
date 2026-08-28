@@ -27,6 +27,8 @@ class Zchunk < Formula
     depends_on "argp-standalone" => :build
   end
 
+  deny_network_access!
+
   def install
     system "meson", "setup", "build", *std_meson_args
     system "meson", "compile", "-C", "build", "--verbose"

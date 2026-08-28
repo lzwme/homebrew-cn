@@ -13,6 +13,8 @@ class Zplug < Formula
 
   uses_from_macos "zsh"
 
+  deny_network_access!
+
   def install
     bin.install Dir["bin/*"]
     man1.install "doc/man/man1/zplug.1"

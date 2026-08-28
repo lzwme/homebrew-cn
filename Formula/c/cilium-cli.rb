@@ -1,8 +1,8 @@
 class CiliumCli < Formula
   desc "CLI to install, manage & troubleshoot Kubernetes clusters running Cilium"
   homepage "https://cilium.io"
-  url "https://ghfast.top/https://github.com/cilium/cilium-cli/archive/refs/tags/v0.19.7.tar.gz"
-  sha256 "3bb9a91bbbede233cc5929208c6de1366b0d5df99a9d65728121589f7b1b81cf"
+  url "https://ghfast.top/https://github.com/cilium/cilium-cli/archive/refs/tags/v0.20.0.tar.gz"
+  sha256 "afdc484e06858349b69c3deac2f25326fee06cada31749195b22461b85d35c7e"
   license "Apache-2.0"
   head "https://github.com/cilium/cilium-cli.git", branch: "main"
 
@@ -15,12 +15,11 @@ class CiliumCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9c8742178912239dde8391394d833f0863acabe7a6eb49ece53273978b4f6e66"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8afb753e4f32cc8d3f7dbc45b571f3757f42bd4c29358343e104d22a116a0235"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3e28d8446bc3e02fb4c9273c8d4520930cb0768693c114894b6bc10d84350dab"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4b1b13f8bcf10287760ff3f898829045617bda24202fd3c64a8d57d3c4d03cb0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fcad62b1906192d80096ad844603dd60ec9d0c8cce8a3e51f70b685e13aa9e5a"
-    sha256 cellar: :any,                 x86_64_linux:  "0a7cb4abd8fca19879ff432db036c0bd88a9b48a4844da60fda764647b707e6d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5f5ecf74b40e705214e6703b029e46d4fc9587f1f06b357f934a67ae68b436bb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4f0af84735d655050137e1bce823f2cd622eca1a05b8b2a40c0fd28b8aac604f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "70b1e8f05fea717efe56ae680e128f987bcaaed7317667ef1aca44c794d6724f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "29977f59f500b770e6614f15599a0a46a7157c646adfa09d4e0fb6f1b68d089e"
+    sha256 cellar: :any,                 x86_64_linux:  "84d6729c9adc7b15398296d5d560cfb0c3cd1bd4e3255d7c60bc3513e4b44105"
   end
 
   depends_on "go" => :build

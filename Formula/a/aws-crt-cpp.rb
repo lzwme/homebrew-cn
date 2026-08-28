@@ -4,15 +4,15 @@ class AwsCrtCpp < Formula
   url "https://ghfast.top/https://github.com/awslabs/aws-crt-cpp/archive/refs/tags/v0.43.5.tar.gz"
   sha256 "8c83897fb827527b67377f08a5b349576c50add2406fa1ff372cf2dd16fc00f4"
   license "Apache-2.0"
+  revision 1
   compatibility_version 1
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "88db81839670dd39027495205f1946ab7e23e332e965f19ca4e6c7a5bb94ac0f"
-    sha256 cellar: :any, arm64_sequoia: "135991a9cbc3f97dd778ede25a8fffa6925b128fe7cc3db572e4592b1efa3cc7"
-    sha256 cellar: :any, arm64_sonoma:  "0baf3eaad4a20bd12cce0da95a152edaf98a625a24677d95035686bf7ab1a287"
-    sha256 cellar: :any, sonoma:        "41a3b98914346a02c5d060fdb6b61718aaeb7dcd5267cc27c82f43f6939358f1"
-    sha256 cellar: :any, arm64_linux:   "99d47c6d0a0b40312031ee09dbc3cbbe38f0850622c3f8ab636ad9b031383ce2"
-    sha256 cellar: :any, x86_64_linux:  "737a198f593bbf7e9cc374eb7bad2c97b00136e277cc4d10445e293cd16974d3"
+    sha256 cellar: :any, arm64_tahoe:   "4b0d056947f02ead01fdef841b431dee06c89489e2a2085b18a4a345615410e9"
+    sha256 cellar: :any, arm64_sequoia: "00dafd9817bbea5c7989f9a7dbde9d5fa9227f7013580345e6e52eac128da529"
+    sha256 cellar: :any, arm64_sonoma:  "9024eed383b38922460ce4e76e19c5ec04f25489bb8312ffa16a39a0765f8197"
+    sha256 cellar: :any, arm64_linux:   "252224dc5f22d0a2cb75e058c61e84b32dec10c31c70331d67995fc5fa46bdbc"
+    sha256 cellar: :any, x86_64_linux:  "c74a2dae9fbe71560a8c37853cebf0830abeaa544698feff6b8ecc7d2b340101"
   end
 
   depends_on "cmake" => :build

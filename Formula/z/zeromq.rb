@@ -37,6 +37,8 @@ class Zeromq < Formula
 
   depends_on "libsodium"
 
+  deny_network_access!
+
   def install
     ENV["XML_CATALOG_FILES"] = "#{etc}/xml/catalog"
 

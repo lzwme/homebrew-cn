@@ -1,18 +1,17 @@
 class Jsongrep < Formula
   desc "Query tool for JSON, YAML, TOML, and other structured formats"
   homepage "https://github.com/micahkepe/jsongrep"
-  url "https://ghfast.top/https://github.com/micahkepe/jsongrep/archive/refs/tags/v0.9.0.tar.gz"
-  sha256 "9ed0a0f7ca44652e7851ba7223bb69af56498311b1d5b2064f7bf532677c8a33"
+  url "https://ghfast.top/https://github.com/micahkepe/jsongrep/archive/refs/tags/v0.10.0.tar.gz"
+  sha256 "2467abc8e7f94219b70b5fd99a3a28937ca442721f1967fc910e3ce64dd0515c"
   license "MIT"
   head "https://github.com/micahkepe/jsongrep.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c99626120c03c11d6975816987703f4ed6bcec13d9d2d0d1d084acec3d15c4c3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f438dbd80f5932a8731835d0e6da1eb30e0b141c27b59c84b75922e25d9991a7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d2682a083792707f9985d714ca321e3c7aab54254e6b0e43714f6f61d1fb0680"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9861c77aa8e4474dce67405c48e2a2e707f7a0fa95a567a3d04dfe30f81c7bd6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "943944a9e855d47810df639c4028e97b6dfe519a2d6d6b81555035d43ec842c7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b8d9744e9327d7c11fd437e20ca3142d8af778fad3ab775dc7ccca4ed8d93737"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6a64b2104bc9e6a29df9e9ece2e68e3b19d10f93ed2deed7887d181f1c68a5d5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "aeebe70980bf32c52f3168cc8a59357964bcd54e2ff7f611082b5021d8bd7de0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7f22f19d0c8e48400a2cf06415f5503bd1cebf2cc9dd6ff9f40da0e9cf9b1704"
+    sha256 cellar: :any,                 arm64_linux:   "ea334655006e48a68a91a1cc14d13b62b41ab62f8a8bd2667c0daa748de09541"
+    sha256 cellar: :any,                 x86_64_linux:  "30c37b071c068beed522c514fadb4f78d8272f54a0693c11a5fd88c9dd6d2ff7"
   end
 
   depends_on "rust" => :build

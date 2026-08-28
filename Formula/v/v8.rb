@@ -3,8 +3,8 @@ class V8 < Formula
   homepage "https://v8.dev/docs"
   # Track V8 version from Chrome stable: https://chromiumdash.appspot.com/releases?platform=Mac
   # Check `brew livecheck --resources v8` for any resource updates
-  url "https://ghfast.top/https://github.com/v8/v8/archive/refs/tags/15.2.124.18.tar.gz"
-  sha256 "2a737ad7edb8d2999313a7503d9958cec36a864639ee3b00f82c15b0114729c9"
+  url "https://ghfast.top/https://github.com/v8/v8/archive/refs/tags/15.3.76.4.tar.gz"
+  sha256 "493a0dfcfa63370595b907928cb300de8f79c8664f1c08c354a67b458974dbe0"
   license "BSD-3-Clause"
 
   livecheck do
@@ -24,12 +24,12 @@ class V8 < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "452c93b2f4971a1434a5768c53b9ef35974f1d38731cecab56bff4f8cfd9b3e1"
-    sha256 cellar: :any, arm64_sequoia: "7fb9669e8d9b9bd04df83df28c01825d9502462d0436e3945c2a6eb23d994ec8"
-    sha256 cellar: :any, arm64_sonoma:  "b543b58cb4ed84531676a3593380669d6305d6a1912f9d3f332e40d585efc235"
-    sha256 cellar: :any, sonoma:        "1760e8d14363e7b04fbd802d48216f5fe860a919d3258d65d0ec8b53bc62997f"
-    sha256 cellar: :any, arm64_linux:   "84077e86f3ea9fdcdee70b7b6c7ef236446b420f91a39857a95a9b09445d5e1a"
-    sha256 cellar: :any, x86_64_linux:  "3b29f57e74f078d4bc1767d9d7e41bad5cd2472d228185d08e2b953903142ecc"
+    sha256 cellar: :any, arm64_tahoe:   "69741f5d97f7900022be9203091e369387765d30efd7140d4269db04a36a7b52"
+    sha256 cellar: :any, arm64_sequoia: "ee85d9b3c5b8a010991afdbf8adb1b28b93b31df0ac8ad7219242abda23cf88d"
+    sha256 cellar: :any, arm64_sonoma:  "b9223d3f885999bdf38e73ff1fbe85d0087977bb67134b4ef2d3467605180970"
+    sha256 cellar: :any, sonoma:        "b782af3a53cdd1ea9a8aa5abad5b3d884ad8ce35ed9c74fe240136ae0ff462a3"
+    sha256 cellar: :any, arm64_linux:   "1aef7a96a1e63f71607a1f0f5cf5ff3a3fd27e911e54bfb11b6ada0afecae377"
+    sha256 cellar: :any, x86_64_linux:  "c3ef9695c0cd383dbd9ff0a1f52730a31afed462b820e476e59471e44637f4f6"
   end
 
   depends_on "llvm" => :build
@@ -59,8 +59,8 @@ class V8 < Formula
   # e.g. for CIPD dependency gn: https://chromium.googlesource.com/v8/v8.git/+/refs/tags/<version>/DEPS#99
   resource "gn" do
     url "https://gn.googlesource.com/gn.git",
-        revision: "641ace93dd9560e75e7add0d08f77b446fbb3b78"
-    version "641ace93dd9560e75e7add0d08f77b446fbb3b78"
+        revision: "7324363900ccab92518649e9693d71a4ae71a747"
+    version "7324363900ccab92518649e9693d71a4ae71a747"
 
     livecheck do
       url "https://ghfast.top/https://raw.githubusercontent.com/v8/v8/refs/tags/#{LATEST_VERSION}/DEPS"
@@ -70,8 +70,8 @@ class V8 < Formula
 
   resource "build" do
     url "https://chromium.googlesource.com/chromium/src/build.git",
-        revision: "fab0ea1e4e8033be4088e2478d58cfac471b76ca"
-    version "fab0ea1e4e8033be4088e2478d58cfac471b76ca"
+        revision: "271143e8fbae4df2ae2c1a187d80b5738635e7c1"
+    version "271143e8fbae4df2ae2c1a187d80b5738635e7c1"
 
     livecheck do
       url "https://ghfast.top/https://raw.githubusercontent.com/v8/v8/refs/tags/#{LATEST_VERSION}/DEPS"
@@ -81,8 +81,8 @@ class V8 < Formula
 
   resource "buildtools" do
     url "https://chromium.googlesource.com/chromium/src/buildtools.git",
-        revision: "0d8a204ff274ee12fa9ace5e3ffd8e5fbcb54926"
-    version "0d8a204ff274ee12fa9ace5e3ffd8e5fbcb54926"
+        revision: "9e7655f4ee433ef4c6efcffd57e379db8f8c0432"
+    version "9e7655f4ee433ef4c6efcffd57e379db8f8c0432"
 
     livecheck do
       url "https://ghfast.top/https://raw.githubusercontent.com/v8/v8/refs/tags/#{LATEST_VERSION}/DEPS"
@@ -92,8 +92,8 @@ class V8 < Formula
 
   resource "third_party/abseil-cpp" do
     url "https://chromium.googlesource.com/chromium/src/third_party/abseil-cpp.git",
-        revision: "ff6e8ce3e932c16cebd1611c8fc42c45080a0e55"
-    version "ff6e8ce3e932c16cebd1611c8fc42c45080a0e55"
+        revision: "df548c50b2cda67158364d3d23c63043881b391d"
+    version "df548c50b2cda67158364d3d23c63043881b391d"
 
     livecheck do
       url "https://ghfast.top/https://raw.githubusercontent.com/v8/v8/refs/tags/#{LATEST_VERSION}/DEPS"
@@ -158,8 +158,8 @@ class V8 < Formula
 
   resource "third_party/icu" do
     url "https://chromium.googlesource.com/chromium/deps/icu.git",
-        revision: "d578f2e8b7bd5938e21cfb6bf15c079e0aa5b738"
-    version "d578f2e8b7bd5938e21cfb6bf15c079e0aa5b738"
+        revision: "8cc91d9b6ab9991802fd208ee03a69714fd0251c"
+    version "8cc91d9b6ab9991802fd208ee03a69714fd0251c"
 
     livecheck do
       url "https://ghfast.top/https://raw.githubusercontent.com/v8/v8/refs/tags/#{LATEST_VERSION}/DEPS"
@@ -180,8 +180,8 @@ class V8 < Formula
 
   resource "third_party/llvm-libc/src" do
     url "https://chromium.googlesource.com/external/github.com/llvm/llvm-project/libc.git",
-        revision: "75ae50cd48c8a9d70f552ccff040029968778da9"
-    version "75ae50cd48c8a9d70f552ccff040029968778da9"
+        revision: "6fd5620cc4fd3c55ee749e9bf71f52038431f76d"
+    version "6fd5620cc4fd3c55ee749e9bf71f52038431f76d"
 
     livecheck do
       url "https://ghfast.top/https://raw.githubusercontent.com/v8/v8/refs/tags/#{LATEST_VERSION}/DEPS"
@@ -202,8 +202,8 @@ class V8 < Formula
 
   resource "third_party/partition_alloc" do
     url "https://chromium.googlesource.com/chromium/src/base/allocator/partition_allocator.git",
-        revision: "66df8ef636795eff70efc52a47d8f62612800054"
-    version "66df8ef636795eff70efc52a47d8f62612800054"
+        revision: "7d6a15841642fa6b02874e3c461e332f17c7c33d"
+    version "7d6a15841642fa6b02874e3c461e332f17c7c33d"
 
     livecheck do
       url "https://ghfast.top/https://raw.githubusercontent.com/v8/v8/refs/tags/#{LATEST_VERSION}/DEPS"
@@ -224,8 +224,8 @@ class V8 < Formula
 
   resource "third_party/zlib" do
     url "https://chromium.googlesource.com/chromium/src/third_party/zlib.git",
-        revision: "42c2f19a14d33b4ed327ab898fe7b652013aa740"
-    version "42c2f19a14d33b4ed327ab898fe7b652013aa740"
+        revision: "c5cc9edf8992ff36dfca3c2c4f6c8327a66b6782"
+    version "c5cc9edf8992ff36dfca3c2c4f6c8327a66b6782"
 
     livecheck do
       url "https://ghfast.top/https://raw.githubusercontent.com/v8/v8/refs/tags/#{LATEST_VERSION}/DEPS"

@@ -1,18 +1,17 @@
 class OpenCodeReview < Formula
   desc "AI-powered code review tool with deterministic pipelines and an LLM agent"
   homepage "https://github.com/alibaba/open-code-review"
-  url "https://ghfast.top/https://github.com/alibaba/open-code-review/archive/refs/tags/v1.10.1.tar.gz"
-  sha256 "975c7cfb099cc824bc6000d009d6535580c81db79d6e395a2a40f17f4fdf142b"
+  url "https://ghfast.top/https://github.com/alibaba/open-code-review/archive/refs/tags/v1.11.0.tar.gz"
+  sha256 "9f834e916b5038bdbebba4dfd18283e2ead1648d305c894aa87520ccb8e875b2"
   license "Apache-2.0"
   head "https://github.com/alibaba/open-code-review.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9a110dc81d0b83a6041df847bfbdc7a4557398d8fc80c1bbdb9eab44083f2bc1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9a110dc81d0b83a6041df847bfbdc7a4557398d8fc80c1bbdb9eab44083f2bc1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9a110dc81d0b83a6041df847bfbdc7a4557398d8fc80c1bbdb9eab44083f2bc1"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d17c0489b6418dfcf2a7230b1ea99403cbefbadec36338671898bb9358f17e8d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a2136f4ae67d3d1dc7ec65cb8d5bc2b950bfe430834d6bd7710e8d1180668f09"
-    sha256 cellar: :any,                 x86_64_linux:  "a022d835b31a21a7dd28add82166ac65146e744f407d407677d1dcf8ee286c03"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "90308ef70d29d5db407ed434052286a4b1aa7781c96a9b2c6f5c15d0168dcb93"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "90308ef70d29d5db407ed434052286a4b1aa7781c96a9b2c6f5c15d0168dcb93"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "90308ef70d29d5db407ed434052286a4b1aa7781c96a9b2c6f5c15d0168dcb93"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0b7575b02bff57d1f6d6fbf25b888f07f8a3ff6f4a2b4926f27814210d39c0b2"
+    sha256 cellar: :any,                 x86_64_linux:  "346ee73daab10f33faa10e0c6af2d140955e35c590343e7d6b35ef56a67902c6"
   end
 
   depends_on "go" => :build

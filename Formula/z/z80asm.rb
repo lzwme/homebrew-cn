@@ -26,6 +26,8 @@ class Z80asm < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "17f78a08a62f5d5c322080e89ad6fb0d2887c5479b481e816c5253a5898df62d"
   end
 
+  deny_network_access!
+
   def install
     system "make"
 

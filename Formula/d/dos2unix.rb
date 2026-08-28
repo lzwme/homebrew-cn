@@ -1,8 +1,8 @@
 class Dos2unix < Formula
   desc "Convert text between DOS, UNIX, and Mac formats"
   homepage "https://waterlander.net/dos2unix/"
-  url "https://waterlander.net/dos2unix/files/dos2unix-7.5.6.tar.gz"
-  sha256 "63650acbd0c7fa8623429bcbf93a888e3351a1cad0f556cf41876f5673dd7d0b"
+  url "https://waterlander.net/dos2unix/files/dos2unix-7.5.7.tar.gz"
+  sha256 "669ee27120ae71589f638fe3a167d6ea54f8633f5ab1b282551bd7a7c9510dfa"
   license "BSD-2-Clause"
 
   livecheck do
@@ -11,12 +11,11 @@ class Dos2unix < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6114abd091cacf37f5b205f486b2f288577b695f16a9c8fc4a6677c8e77f5b4c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "de3ed10fa56965d80c1bd2a9a746444936d6db0693c7c58b42298a66b79b1b5f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1e4d437649306968689a212057c7892ab10cdae851dbf6c9a898b570749e3438"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5119f07165efb5b8c4e742bd26be1be8eae2bd84ad860f570393cfc3b91392f1"
-    sha256 cellar: :any,                 arm64_linux:   "9930687e50a3ae8860242ab384e994da9feb2624b9bcb242d7d8ef307f3247b1"
-    sha256 cellar: :any,                 x86_64_linux:  "7ce24121289809b17d480b45ee3b8020511548c2ea7d7a2bbecc32276ff0d9cf"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9f5c3269baaa4692d28c8764c330d7b57a211793f27d410a07a5dc64ef050fa4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8fcff72222089be3e3015f6b02d980bf81725390237c27d824d2a1ca6b9790e6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "33227a27d265055063f103eb3503ca93d90546cc52417503b60565caa30396d6"
+    sha256 cellar: :any,                 arm64_linux:   "ea643ad8db6b38be94b9c67ec1bfd1ef664067569df61745a040cdaa508472c0"
+    sha256 cellar: :any,                 x86_64_linux:  "16bdc27badba287098103e6b6f772e433e8191903d3beb4e662df3ee97695866"
   end
 
   def install

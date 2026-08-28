@@ -1,10 +1,10 @@
 class Lld < Formula
   desc "LLVM Project Linker"
   homepage "https://lld.llvm.org/"
-  url "https://ghfast.top/https://github.com/llvm/llvm-project/releases/download/llvmorg-22.1.8/llvm-project-22.1.8.src.tar.xz"
-  sha256 "922f1817a0df7b1489272d18134ee0087a8b068828f87ac63b9861b1a9965888"
+  url "https://ghfast.top/https://github.com/llvm/llvm-project/releases/download/llvmorg-23.1.0/llvm-project-23.1.0.src.tar.xz"
+  sha256 "ab1f0e3ec52448c33e8782eaf0422504b87c7b016b22514653ee0d8fcee479ff"
   license "Apache-2.0" => { with: "LLVM-exception" }
-  compatibility_version 1
+  compatibility_version 2
   head "https://github.com/llvm/llvm-project.git", branch: "main"
 
   livecheck do
@@ -12,12 +12,12 @@ class Lld < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "381a963786ccbb157adc92831a4cf7bbf0b2165832791b9248cfc395d135015d"
-    sha256 cellar: :any, arm64_sequoia: "6ff47141e7a3eb51a806c983a2ac8d002467a85ebab92a3d4a05eea5f5ef887f"
-    sha256 cellar: :any, arm64_sonoma:  "172b4b12ec4634ec932b0f81226fa4c3bec89e59a2f17a3aae1545632af1308a"
-    sha256 cellar: :any, sonoma:        "adf487ab016242753e3584b3b4731d60dad8d7ccab2de04d43534a1a0bd901d1"
-    sha256 cellar: :any, arm64_linux:   "32fc6be36a3205a1f50dfe493caf3605acddb83b41f3beb1a5563e822c99bf63"
-    sha256 cellar: :any, x86_64_linux:  "b37de4b98b81ca8667e8bcb5c23d3ca17b1a5f18a3bc4406074993ac26ae4f14"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "35b77bb8c0b2d5f23a348f567c5ea6fe88161ae93ea022c589d81c5c75efae4e"
+    sha256 cellar: :any, arm64_sequoia: "baee5d0dfcaa166bde65587605bfe981fa500da4993250dec584aa1c18278ee8"
+    sha256 cellar: :any, arm64_sonoma:  "cc216676219943696cf1a0d18fa3ca64e4d662686ba4a37d016c8b3a5f351b89"
+    sha256 cellar: :any, arm64_linux:   "1c7d56cc737195c9ee79e60ca7af4cb9bd324f8bf70f18747d8dc73870295e10"
+    sha256 cellar: :any, x86_64_linux:  "9976092bff4b2ce3b6cedab7cb15a5f7d20ae1be2fe5a46f7d08f831635ae1f6"
   end
 
   depends_on "cmake" => :build
@@ -43,6 +43,8 @@ class Lld < Formula
                     *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
+
+    man1.install Utils::Gzip.compress("lld/docs/ld.lld.1")
   end
 
   test do
