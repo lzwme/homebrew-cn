@@ -1,10 +1,9 @@
 class Qca < Formula
   desc "Qt Cryptographic Architecture (QCA)"
   homepage "https://userbase.kde.org/QCA"
-  url "https://download.kde.org/stable/qca/2.3.10/qca-2.3.10.tar.xz"
-  sha256 "1c5b722da93d559365719226bb121c726ec3c0dc4c67dea34f1e50e4e0d14a02"
+  url "https://download.kde.org/stable/qca/2.3.12/qca-2.3.12.tar.xz"
+  sha256 "d4a2b3aa0272d73ea0c4cd2140960177fa34ddc2030e59a48ecfb80c757572c3"
   license "LGPL-2.1-or-later"
-  revision 6
   head "https://invent.kde.org/libraries/qca.git", branch: "master"
 
   livecheck do
@@ -13,12 +12,11 @@ class Qca < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "5a6bfd54adc4e5ed70a78af3854f79ca747c85a972b872097d3ac1ec45b64055"
-    sha256 cellar: :any, arm64_sequoia: "2c594f99d538a1649ae31440f181e33ecff6f6c81074b91025f882839520b79d"
-    sha256 cellar: :any, arm64_sonoma:  "623128b7cd99bd594b51dfd22b16455d1447bdac2c9dd2b90dae395a2d28ce8f"
-    sha256 cellar: :any, sonoma:        "787043e5a1b58014a80d4f31f74df8c465f2c51c31419de1a55d85792e8a6b21"
-    sha256 cellar: :any, arm64_linux:   "768682786b53cfce293e229e834cd44bc8e15485103654d4809e6173f08381b5"
-    sha256 cellar: :any, x86_64_linux:  "cad4eeb33ee0c7f5dcf1c707f191df4f5e67a4b727ea6cf02bde7a79881edb9a"
+    sha256 cellar: :any, arm64_tahoe:   "1b02c8d91c73e0e3897966b6076078c3aa7cfbd18218020a39f8ecdc10609e30"
+    sha256 cellar: :any, arm64_sequoia: "c188a4063c87cfe175389fa942c472fdb26540b9e67307cada5b3ba3cb86cbbf"
+    sha256 cellar: :any, arm64_sonoma:  "a3a3b1ff0512ededc0b90b684ee4b97f74edf40bd1c4d950bdd430125fca71f9"
+    sha256 cellar: :any, arm64_linux:   "b58863a6431640cab90f23464ef35558366ef02ff00e7063d8b8776c6298dd8a"
+    sha256 cellar: :any, x86_64_linux:  "b9e7fc7481bbc7dae395e1ddf16069539c98666c28fa25745750a7f6bacd1360"
   end
 
   depends_on "cmake" => :build

@@ -1,25 +1,27 @@
 class Picat < Formula
   desc "Simple, and yet powerful, logic-based multi-paradigm programming language"
   homepage "https://picat-lang.org/"
-  url "https://picat-lang.org/download/picat39_11_src.tar.gz"
-  version "3.9.11"
-  sha256 "a605e9b181aa933afad15ce69b696c1a3a8bb5b7640738ae1a2461c0b740f14d"
+  url "https://picat-lang.org/download/picat39_12_src.tar.gz"
+  version "3.9.12"
+  sha256 "05322b324ee904a62ca5b892d99c0f3abcf3e8f2bad1ce64732c03d70ef5fadc"
   license "MPL-2.0"
 
   livecheck do
     url "https://picat-lang.org/download.html"
-    regex(/>\s*?Released version v?(\d+(?:[.#]\d+)+)\s*?,/i)
+    regex(/>\s*?Released\s+version\s+v?(\d+(?:[.#]\d+)+)[\s,]/im)
+    strategy :page_match do |page, regex|
+      page.scan(regex).map { |match| match[0].tr("#", ".") }
+    end
   end
 
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0a26cca61e7889ee9f2d02a1fe784ad7418371f124bd303b46ec7744a787e9a9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0c6df3d0189ec387829d19c3d246a53a7967142969c5a3dd8dd4f1d3c72aa40f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6cf3c6ae6b17ad5bb3ee4b32227f923f7af2df72ed7e19bac2d8533263e33d1b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "cbcdca4558b34ea8ce6ae06e65c15aafd654fd68a60c920e44ce21a1875fb176"
-    sha256 cellar: :any,                 arm64_linux:   "bbefff9d941d651cf2fc7ad28831ce2226b1766766b6987f9571c19dc4dcbf81"
-    sha256 cellar: :any,                 x86_64_linux:  "d9e2166ad195cc1e3f0c2f0679f44333ef9f899d0cd85e5e24ef317be84d9f16"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "96e54aaf25f40b328f5b46086782d64006789a374a3b9d20fb909e4851bc1f45"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bcf8820453e7a55a6dd0e0abed110cf3cd60e071c7e0599c7128afbf1f88ad6b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dda9e7c68bb84c5f1f25ab3e3467c1bd1e492d34423a5b69fbee7fc539b35508"
+    sha256 cellar: :any,                 arm64_linux:   "f7af4ba06b779531cc0619e23988afb47302b8f2c79fa543ae6dd58911208aab"
+    sha256 cellar: :any,                 x86_64_linux:  "d766512892f2c060ed297311fd7a0adc0f582ccaef1eb1cc9d98aa18a2200822"
   end
 
   def install

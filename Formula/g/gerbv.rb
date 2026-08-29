@@ -5,14 +5,22 @@ class Gerbv < Formula
   sha256 "b9a01ed892702f21f78b6ef4ec701e2db3220b5702d1cf93b10e843cad1e69a1"
   license "GPL-2.0-or-later"
 
-  bottle do
-    sha256 arm64_tahoe:   "4dc6433925aeac44a2a626ba71738c2e34758a19f4f50cad7a194e61f8052fa4"
-    sha256 arm64_sequoia: "359c1d89dffeabd88988af8a7c8d76d0decc38b25b34adeabd9b98d1e7b0dd71"
-    sha256 arm64_sonoma:  "721a75cbe5f39991039fe5a30fe70897f9054da0690f7bf9013b3d88642e7900"
-    sha256 sonoma:        "7520ca2ae7c43b1c466c3d150403cffd43815ad79c0ccfcca1d611ba8cbffdef"
-    sha256 arm64_linux:   "31c9be5a7194ec14a38eb81f4eb60ac0d8e7cef0bca37852a286d0a3c261790f"
-    sha256 x86_64_linux:  "1552e7fc822f0fb03a3768d7aa095d70c7b1bd9ebee8dfa4d6efa79b8e2155a7"
+  livecheck do
+    url :stable
   end
+
+  bottle do
+    rebuild 1
+    sha256 arm64_tahoe:   "bf6c87fbaf8c1ba9224b0114f8274c5428b8dd4f5a9c9fda72609f6241466bc1"
+    sha256 arm64_sequoia: "d13b732f78eed944284e3095d8c901212ff01398e2ca3396541725080054b19d"
+    sha256 arm64_sonoma:  "fb5a4094a415b80d3c321942fbaefff760ad3bf5ccb6ed1094d0ec40be460e32"
+    sha256 arm64_linux:   "a5a419bcdedf5f24b132a6d8b5208c7c50c7be99ea4a402805bcc8b15074e589"
+    sha256 x86_64_linux:  "d8b160c89e1f26c9259b1ea83ec5ac0e09ed317b9ccae0e1715d8b4c7e3409cd"
+  end
+
+  # Can be undeprecated if upstream moves to GTK 3/4: https://github.com/gerbv/gerbv/issues/71
+  deprecate! date: "2026-08-28", because: "needs EOL `gtk+`"
+  disable! date: "2027-08-28", because: "needs EOL `gtk+`"
 
   depends_on "cmake" => :build
   depends_on "gettext" => :build

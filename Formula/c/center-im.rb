@@ -23,6 +23,9 @@ class CenterIm < Formula
     sha256 x86_64_linux:   "7148aa25f016c25825f9ed5fb6526d14737ba38208779727937801f2c7dbc42f"
   end
 
+  deprecate! date: "2026-08-28", because: :unmaintained
+  disable! date: "2027-08-28", because: :unmaintained
+
   depends_on "cmake" => :build
   depends_on "gettext" => :build
   depends_on "pkgconf" => :build

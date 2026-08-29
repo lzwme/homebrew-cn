@@ -1,10 +1,10 @@
 class Elixir < Formula
   desc "Functional metaprogramming aware language built on Erlang VM"
   homepage "https://elixir-lang.org/"
-  url "https://ghfast.top/https://github.com/elixir-lang/elixir/archive/refs/tags/v1.20.3.tar.gz"
-  sha256 "ff22a894b130631443db1a193b4e8cb4762f697128566e43da848fd16c3777bd"
+  url "https://ghfast.top/https://github.com/elixir-lang/elixir/archive/refs/tags/v1.20.4.tar.gz"
+  sha256 "2f87be1702583ecbeee82c0ad4d6353de96463cfa0fa6e7557e05f68d90da869"
   license "Apache-2.0"
-  compatibility_version 5
+  compatibility_version 6
   head "https://github.com/elixir-lang/elixir.git", branch: "main"
 
   livecheck do
@@ -13,12 +13,11 @@ class Elixir < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0fd271048da435dd14e7973373804f4f88d44cd91881bd5c5ec01d42f2166496"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bcefd4c03a1c7bde292dd838c4e5b08ea90cde8cc35e2746e65acf243afa7029"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0e68220a48f915bf81211e68ba3ace335398dc84b8c9f07516543b8e91167422"
-    sha256 cellar: :any_skip_relocation, sonoma:        "cfd1860efc80b9df4294ae3e0381e5fbe4db15257469c5edddd3f7480fb88173"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d87fdfbb81758b5d74006beda945295d345dc3b3da8474b0ca7b7d363f3c05ce"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4722f537a599ef838ad01298ee004bb5045fc53a0ee860ce5ea525faa5743fee"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2db0649adb38e6bcbdb1198d43851886fb1dda4585a643df3752b9ae2c6d9206"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "66789763645f9ab609a834e12bf3152cfcde2b09cdec97b5de46dbebf67798a3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3a4a493efb376e6929fc0a22f3ddb2680305f6abd0c408009d639da5fa4fe951"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c960d2ed069fc1f92c64f72b751df69c5d2fdc45f29f007e58934f969c112bef"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9ac2b69aea3ec5889429cdc0223ef2d1883c9d6621e875ce9b07bb81d261dbe2"
   end
 
   depends_on "erlang"

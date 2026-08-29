@@ -1,10 +1,9 @@
 class Corsixth < Formula
   desc "Open source clone of Theme Hospital"
   homepage "https://github.com/CorsixTH/CorsixTH"
-  url "https://ghfast.top/https://github.com/CorsixTH/CorsixTH/archive/refs/tags/v0.70.0.tar.gz"
-  sha256 "e8f9803f6f64d23f057506202fbf275fe136c3245bab4bc19ff4c63691459cb7"
+  url "https://ghfast.top/https://github.com/CorsixTH/CorsixTH/archive/refs/tags/v0.70.1.tar.gz"
+  sha256 "b3a37b09f168f30600d305314f5a823d3af10bf407074e9a837e0e85acfe9ba3"
   license "MIT"
-  revision 1
   head "https://github.com/CorsixTH/CorsixTH.git", branch: "master"
 
   # Upstream uses GitHub releases to indicate that a version is released
@@ -16,12 +15,11 @@ class Corsixth < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "8dda55adc97e54242a3c4e1c2229f78263f117a8adbbaf1e02e03009d9d4ac9b"
-    sha256 arm64_sequoia: "06450af92e3a1a2d2583a90ec8c1d08bd3b6946d7a3031887ce5b277bed46ae0"
-    sha256 arm64_sonoma:  "0db373ffb97cc6951975e3c71787cde04539253e32a10d165022adee7642b911"
-    sha256 sonoma:        "5b04b97ae0475912357864c670ad60519fb36372d66c85e2928812a109fdcdd0"
-    sha256 arm64_linux:   "2aa9985af2b19dbb5eb9adcf78bf37761ac3284aa873bd6b0f727147bb6cb521"
-    sha256 x86_64_linux:  "e5f3eb35cf8ca7e49d9bdf81bd4f6b19518d49cc5879c1564335ecb071507705"
+    sha256 arm64_tahoe:   "7557dd28cec742e975a8d12022ea6b21a4083bf538dee279968e728badc80c0f"
+    sha256 arm64_sequoia: "e1c89b5f871313c7b3f646de6c5a6cd75cc2e7719af0a8c74a885a4705bfc421"
+    sha256 arm64_sonoma:  "d5f9cf90b301b0a1f87eb15a49d9dbc7303f70e9d9c988ed4be21ecdc618e4e0"
+    sha256 arm64_linux:   "1693d2b4220b7dfa9d62ec6dae6657aeee3d860c29adc267a7d1335af1068fc1"
+    sha256 x86_64_linux:  "bfd93732ee7667445750e9a0579a7c934abcc6ad7495b62223bd598c40fb4f39"
   end
 
   depends_on "cmake" => :build

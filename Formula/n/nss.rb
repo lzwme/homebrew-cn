@@ -1,8 +1,8 @@
 class Nss < Formula
   desc "Libraries for security-enabled client and server applications"
   homepage "https://firefox-source-docs.mozilla.org/security/nss/index.html"
-  url "https://ftp.mozilla.org/pub/security/nss/releases/NSS_3_127_RTM/src/nss-3.127.tar.gz"
-  sha256 "5a899cad21ae2c9d3c5132de79726eda8df3b7fdf18eeb239fc544d43b87338b"
+  url "https://ftp.mozilla.org/pub/security/nss/releases/NSS_3_128_RTM/src/nss-3.128.tar.gz"
+  sha256 "70ea638f4e4fc341b24782ef9af6d88a2d3280ef5e46736748411fe8ca586351"
   license "MPL-2.0"
   compatibility_version 1
 
@@ -15,12 +15,11 @@ class Nss < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "2e61382f5f1a9f3515f9d2207b94e01d526384ad760001f0940fcbaa7ebb16a3"
-    sha256 cellar: :any, arm64_sequoia: "125fa1f0188ed2e1ce4cb28f2e499850a3bf57243b131a18b975405651f60451"
-    sha256 cellar: :any, arm64_sonoma:  "6ae45d073e6439cd72dd55fa522fa658eb34a493fcf8a1679c0607d2a7b0f3eb"
-    sha256 cellar: :any, sonoma:        "118d0dc28e5a10b839f01bcd9f3a667ffdde7ed19ca0e67735d34d5875d5add3"
-    sha256 cellar: :any, arm64_linux:   "9baab32770beb374c4caa345c7bca9f50cc2eb89423227e96e1426aa2860c507"
-    sha256 cellar: :any, x86_64_linux:  "879e077598059b5aadf16b7d0766f315cda497f0eccb3684504ddfddd70d9f5f"
+    sha256 cellar: :any, arm64_tahoe:   "0c44c0480efbb6be252f33075c272609cdb9c4c7e7b4f1f4a16759b038c3b07b"
+    sha256 cellar: :any, arm64_sequoia: "3b2e1c490afbb0c660b993d8cb0dbc8df4413054a925831d6b034c37bc62c9f2"
+    sha256 cellar: :any, arm64_sonoma:  "8debda2455de366ed0b9074fb481c709e94c8ac2a2727f963b76f9039ca7e74f"
+    sha256 cellar: :any, arm64_linux:   "6064bda8e75cef023581eb6c65543536a2b7a6c7eaa16249894d8278b8d67a61"
+    sha256 cellar: :any, x86_64_linux:  "a64bb690a5e54dc99ab2d08b6b6430a596dd259e5829e3d59ea38c5828f75c5a"
   end
 
   depends_on "nspr"
@@ -50,6 +49,8 @@ class Nss < Formula
       NSPR_LIB_DIR=#{formula_opt_lib("nspr")}
       USE_64=1
     ]
+    # Darwin.mk never computes LITTLE_ENDIAN, so NSS 3.128 drops -DHAVE_PLATFORM_GHASH
+    args << "LITTLE_ENDIAN=1" if OS.mac?
 
     # Remove the broken (for anyone but Firefox) install_name
     inreplace "coreconf/Darwin.mk", "-install_name @executable_path", "-install_name #{lib}"

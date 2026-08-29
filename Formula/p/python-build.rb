@@ -3,20 +3,20 @@ class PythonBuild < Formula
 
   desc "Simple, correct PEP 517 build frontend"
   homepage "https://github.com/pypa/build"
-  url "https://files.pythonhosted.org/packages/2d/21/6ec54248b4d0d51f12f3ca4aa77a128077d747a5db86cb5a2fcd9aedecbd/build-1.5.1.tar.gz"
-  sha256 "94e17f1db803ab22f46049376c44c8437c52090f0dfdf1adc43df56542d644fb"
+  url "https://files.pythonhosted.org/packages/4d/b7/1db48a9ce2984842c8c886432ec8a2719613322e868a966ba82a28862f25/build-1.6.0.tar.gz"
+  sha256 "bd2c8afc603e7a2e0ce70e2ea85f0a6d02043bafbd307f5bada0f98669eca5af"
   license "MIT"
   head "https://github.com/pypa/build.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "908659c497fde5638cb00f1147992c631518fdbcdd0c9b215afffdd17c3a1fd4"
+    sha256 cellar: :any_skip_relocation, all: "c6b03432b1352bf4f852210ca28000f01f7f1187b49b363546e5bc1a68f248b7"
   end
 
   depends_on "python@3.14"
 
   resource "packaging" do
-    url "https://files.pythonhosted.org/packages/d7/f1/e7a6dd94a8d4a5626c03e4e99c87f241ba9e350cd9e6d75123f992427270/packaging-26.2.tar.gz"
-    sha256 "ff452ff5a3e828ce110190feff1178bb1f2ea2281fa2075aadb987c2fb221661"
+    url "https://files.pythonhosted.org/packages/7d/fa/3944b40b07da9ce895c0e6303a5ab7d53da063554f534556b134a54d6093/packaging-26.3.tar.gz"
+    sha256 "94edc256424af38762eb31306eed28beb9f0efc50a8837492c9d6fd6004aed79"
   end
 
   resource "pyproject-hooks" do

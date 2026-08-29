@@ -1,18 +1,17 @@
 class GoPassboltCli < Formula
   desc "CLI for passbolt"
   homepage "https://www.passbolt.com/"
-  url "https://ghfast.top/https://github.com/passbolt/go-passbolt-cli/archive/refs/tags/v0.5.1.tar.gz"
-  sha256 "845383bb8c33ec97d1e708a3e5a7a9475c970d977876faa307271d2d6ff77115"
+  url "https://ghfast.top/https://github.com/passbolt/go-passbolt-cli/archive/refs/tags/v0.5.2.tar.gz"
+  sha256 "a1956f16f207ee63fa6f6373ec93c9e3e4f9fc406af6424ac3ddd6962de11d14"
   license "MIT"
   head "https://github.com/passbolt/go-passbolt-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8ce1d304c7134b22a713f9564449fe90431252528a05206f44de6162476b8758"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8ce1d304c7134b22a713f9564449fe90431252528a05206f44de6162476b8758"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8ce1d304c7134b22a713f9564449fe90431252528a05206f44de6162476b8758"
-    sha256 cellar: :any_skip_relocation, sonoma:        "fd353d0c1787eacd08949d92b4574e1fe2bb4cb15c47693284fc40756637a205"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1c49f1e1192b21ad9fd73c3edf2c640123abf59e292a99e5363559c2300f4dde"
-    sha256 cellar: :any,                 x86_64_linux:  "471bd04f8770cb9a34bc15a0223b535454cb3d4911773669bf340358d1fb3115"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9672c3e8ed85c6aacfddd23df747a5adb33afc94a2df63a50dc01c89e261dc0a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9672c3e8ed85c6aacfddd23df747a5adb33afc94a2df63a50dc01c89e261dc0a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9672c3e8ed85c6aacfddd23df747a5adb33afc94a2df63a50dc01c89e261dc0a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b17aee4c4c92cc4982dc4e107342bc68f5ecb5cd6a865a6b826dc530a8db9e3d"
+    sha256 cellar: :any,                 x86_64_linux:  "50d3740c4ab7e97cabb8ef66bf9983070d4cbfa38eea6fdf82e8f424e0dfef6b"
   end
 
   depends_on "go" => :build

@@ -1,30 +1,30 @@
 class Boa < Formula
   desc "Embeddable and experimental Javascript engine written in Rust"
   homepage "https://github.com/boa-dev/boa"
-  url "https://ghfast.top/https://github.com/boa-dev/boa/archive/refs/tags/v0.21.1.tar.gz"
-  sha256 "fd0a45ff94673120f010d19dc44c411bc8fc5dcd3e5986e6f1dd5f005f918f22"
+  url "https://ghfast.top/https://github.com/boa-dev/boa/archive/refs/tags/v0.22.tar.gz"
+  sha256 "fd12f2cc173e162d0775b6dd07d4cbde0fc2485661a816cc4ef12f8239db96e7"
   license any_of: ["MIT", "Unlicense"]
   head "https://github.com/boa-dev/boa.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3e17114c6147b4911e8dce508ea3f9001be39690e0ee52547043caae40bb1a47"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e6b0c4732ea24156489c85dbecc161449f34aaa4e3b7e4110e18badfa5c1c778"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e809b2bb6aa9cdbc162da2fefa4e0f30c49edb3899935c457ea10e9c9115d6a1"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4f7ec93e805d5b4fc75ff6e466e80fc4590efcfe7cd69f7f0a0bcd726fdf76a7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7479bb490fae1e207d92bce71e2af2e5ecfb4d5ff3a405fdd5c38a453b15fc5a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c083f6db35bd00c0ac4cf40a1fa6b29af35795853ad738cb30394856a57baa70"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "734b4d4e1d779492698c4a3ff6fa71e831f4f3e4a11de3803d57448f2b96834b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "75ceb7e28892c7bbbeb8c530a32e13fccc4a8cece6cee118962bd28e3e77fd2f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "af9dd97d7410112767e97197f3988df7e344c6ee8f3b289e82f4bf5bd61170be"
+    sha256 cellar: :any,                 arm64_linux:   "3dfd882d066e3bfc0a595ce52cb8ad8d56567f34bec8af5e0da1c518e34489c7"
+    sha256 cellar: :any,                 x86_64_linux:  "943d9c6050470900410b6887cf9a300f2dada0828a1497c7cfd4643884d4e804"
   end
 
+  depends_on "cmake" => :build
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
 
   on_linux do
-    depends_on "openssl@3"
+    depends_on "openssl@4"
   end
 
   def install
     # Ensure that the `openssl` crate picks up the intended library.
-    ENV["OPENSSL_DIR"] = formula_opt_prefix("openssl@3")
+    ENV["OPENSSL_DIR"] = formula_opt_prefix("openssl@4")
 
     system "cargo", "install", *std_cargo_args(path: "cli")
   end

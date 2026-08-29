@@ -3,18 +3,17 @@ class Hf < Formula
 
   desc "Client library for huggingface.co hub"
   homepage "https://huggingface.co/docs/huggingface_hub/guides/cli"
-  url "https://files.pythonhosted.org/packages/c6/ae/222a91937ebee7f62c0ca8f5ee0afd97577caf24c0abb927d1f5c7e9f6d2/huggingface_hub-1.28.0.tar.gz"
-  sha256 "46a2e950c09234de54093d587d1675382f0d08dbd600d9fb599b5932f5b2c6cb"
+  url "https://files.pythonhosted.org/packages/64/35/42316e8f6908b6d21bc8df017cc6efba94fb5edbf99b64e28dd142325e20/huggingface_hub-1.29.0.tar.gz"
+  sha256 "6ebb385a581435325cf6d5c5b233d5d4bc91175834d99fd65dae14379b36e9ad"
   license "Apache-2.0"
   head "https://github.com/huggingface/huggingface_hub.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "95558fb8fd26f840427dc9db6292e9361fecbafb987fc8c00c3f6472887f8a8c"
-    sha256 cellar: :any, arm64_sequoia: "410a6ccd5012d075be4578cdb6fac2e13900b934c15de11e3527a99c06622d47"
-    sha256 cellar: :any, arm64_sonoma:  "d9a249f92492a1adf71a6bcc2ed49a667556e8a2d68dfbacf2f1459ae1649f87"
-    sha256 cellar: :any, sonoma:        "091300ac187ccb41b0cf3b81df7717a0bfbb4c30fc415480aa4552138f60b0ad"
-    sha256 cellar: :any, arm64_linux:   "b5dea88a35b7677ca64628344dd8b252246f186d56bba39f616cead6f4fbc538"
-    sha256 cellar: :any, x86_64_linux:  "a3cab6dabd40a67b7196804aa73c053455706ff2562f324fcd0139421273f92f"
+    sha256 cellar: :any, arm64_tahoe:   "436cd1c98400972ba6a43c100ed2643657c5e19e2917903fa53292462fda48ee"
+    sha256 cellar: :any, arm64_sequoia: "f114de2dfdbd552958e307af3ad50bc839da7c06d360f13b8ae223051764fe3b"
+    sha256 cellar: :any, arm64_sonoma:  "382869f3545480fd8f0d99f45edd6ca044b936512a667fece64ef954c59b67b6"
+    sha256 cellar: :any, arm64_linux:   "209675eb04d6a42e88234a2dc4c7c2034aa8319dfb93ef51c80cc0624eaac884"
+    sha256 cellar: :any, x86_64_linux:  "aaefa1c1d4e0be0553da1fa748d616354b758bc484ab257d4bd3afe0bb71a8f5"
   end
 
   depends_on "pkgconf" => :build
@@ -38,13 +37,13 @@ class Hf < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/76/d4/81420972a676e8ffea40450d8c8c92943e7218a78fe9b64359836cc9876b/click-8.4.2.tar.gz"
-    sha256 "9a6cea6e60b17ebe0a44c5cc636d94f09bd66142c1cd7d8b4cd731c4917a15f6"
+    url "https://files.pythonhosted.org/packages/c7/0e/7fa0ef50764b67090eca4114772a2abf8b6148198475e54c660b97caeee6/click-8.5.0.tar.gz"
+    sha256 "ba0d2089de75ea0310e2dde03160e6ca10009947fb95a182f9b54021bb272e34"
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/7d/64/a02e6765de08964ed371eca577870593245afc9dfac16d037de7c10d18e6/filelock-3.32.3.tar.gz"
-    sha256 "0ffa185a3540854c95caa7fa76b76cb219d907415e2c5dc9af25fd970563487f"
+    url "https://files.pythonhosted.org/packages/6d/30/03b03951873a1a0ffc7e8ca0e10c15597b59e8d0e39260704cd2ea087bc4/filelock-3.32.4.tar.gz"
+    sha256 "2bde2e4cf732e0153406d8a7bc80620ecf5e621fe0d25e41143c4e3b4733ff30"
   end
 
   resource "fsspec" do

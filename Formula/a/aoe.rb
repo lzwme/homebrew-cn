@@ -1,18 +1,17 @@
 class Aoe < Formula
   desc "Terminal session manager for AI coding agents"
   homepage "https://github.com/agent-of-empires/agent-of-empires"
-  url "https://ghfast.top/https://github.com/agent-of-empires/agent-of-empires/archive/refs/tags/v1.15.0.tar.gz"
-  sha256 "9801e1efc3348e9d3e84e4ec23e7de5a0e154e2f2cd325f46f4d6766c8e9d9f6"
+  url "https://ghfast.top/https://github.com/agent-of-empires/agent-of-empires/archive/refs/tags/v1.15.1.tar.gz"
+  sha256 "47e3253590092544d162db6fdc8eb52f4b0af2fadc6bdb512553331fabba7d3b"
   license "MIT"
   head "https://github.com/agent-of-empires/agent-of-empires.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "36ae620bb18a7d6f416f367eea220adcd9ef87c32ffd4f1d34e3501e82094388"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1399ae2f90574d78734076f77e13a50f9cc9b067fc3af496ea628f712ad733c8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "17d799097f06c4b8058029354a00512709200336e83ccf881c2b945392cffaee"
-    sha256 cellar: :any_skip_relocation, sonoma:        "20372c454e9f2627106b3fc3f531068a34e9fa8ffdc4eaf195e6e6bdc984307d"
-    sha256 cellar: :any,                 arm64_linux:   "4c5ddf8a5268dea708e3c3936a5fa802d3c611c121e02f740a3c0292facceff0"
-    sha256 cellar: :any,                 x86_64_linux:  "ddad7134341479d3ec391f515cab45f88fc752e3b2c91b5c1957aaaf5548151d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2b0eb9f1aac9b2a171b2b5a4bc2db2f3b92b2cb3717a3b10dfd7f595ea73c6ee"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6c4d38fa7cd4120e8d9e01683cdba1d363fa1697d06a5cf7fa3936facdcab30f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "72116ec1a6ab06242af6ce4d9e4453cf8466e3ef57c66cb5ab6e856814595670"
+    sha256 cellar: :any,                 arm64_linux:   "7244c62fdb4cf4c1a54201507924d1b855d87d4fb4f599d25a8d30876301ba5c"
+    sha256 cellar: :any,                 x86_64_linux:  "07c1b29cf2c228ec6c0db7d4bd0a72f0f42a14e03168465fdbd2a4e39d6e9f06"
   end
 
   depends_on "node" => :build

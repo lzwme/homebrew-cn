@@ -43,6 +43,11 @@ class Xsane < Formula
     depends_on "gtk+3"
   end
 
+  # Can be undeprecated if xsane 1.0.0 is released
+  # https://gitlab.com/sane-project/frontend/xsane/-/milestones/1#tab-issues
+  deprecate! date: "2026-08-28", because: "needs EOL `gtk+`"
+  disable! date: "2027-08-28", because: "needs EOL `gtk+`"
+
   depends_on "pkgconf" => :build
   depends_on "glib"
   depends_on "jpeg-turbo"

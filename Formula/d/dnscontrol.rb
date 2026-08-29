@@ -1,8 +1,8 @@
 class Dnscontrol < Formula
   desc "Synchronize your DNS to multiple providers from a simple DSL"
   homepage "https://dnscontrol.org/"
-  url "https://ghfast.top/https://github.com/DNSControl/dnscontrol/archive/refs/tags/v5.0.0.tar.gz"
-  sha256 "a7f2ea699f52f2fb9284e5c0be6569f2bad421563fd141963e23cb3c96ffd665"
+  url "https://ghfast.top/https://github.com/DNSControl/dnscontrol/archive/refs/tags/v5.0.2.tar.gz"
+  sha256 "0762bb5979dac5584410921d21b750511b6d296c9bb40838e5d3f83e3a964d69"
   license "MIT"
   version_scheme 1
   head "https://github.com/DNSControl/dnscontrol.git", branch: "main"
@@ -16,12 +16,11 @@ class Dnscontrol < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d4832376e8246fb455b2001bcba74f83c9031ed3b5e0f3aca093ed9f03ecfc90"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "803a9b94eb154b67be3394ba73e14791474360442f10915f97ab1aaf666edcb4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "219cdbd558d12c71a14c271bd895a833b0a88c485f46e2298981bf02db615e70"
-    sha256 cellar: :any_skip_relocation, sonoma:        "36672b0e651766f7f566de4ff6ed7ac30686af6c711625109784b5ec2bab3a6d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cedfd91e98d0599bacabba726e627950ad1634f38f698d2f3756bfb490dcf292"
-    sha256 cellar: :any,                 x86_64_linux:  "4300e2396e00b68238a8c036c177bd39473e735d5ad42e4da0257f1209bef502"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c01da977dc9addf3821ac2e328fa1b62e3e09fc2194506331978affe03b891ad"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "12e610ce5d6000f397bd070ca88517205b93140bf6ee29f01d22872bb9586539"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "35a087c86616206da17ab06f1900c0b13a4c0895ddf5163b8faa216fe3c0e50d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7559a5ad61e4ce2568069aa46a829aa77bc4cec00daf680710089a1cf190cfa4"
+    sha256 cellar: :any,                 x86_64_linux:  "da68334a6efa81858f53840ca57b7991afef2f2e222e2ed079991c43cef47c85"
   end
 
   depends_on "go" => :build

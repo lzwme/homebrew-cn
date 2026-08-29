@@ -1,18 +1,17 @@
 class Freeipmi < Formula
   desc "In-band and out-of-band IPMI (v1.5/2.0) software"
   homepage "https://www.gnu.org/software/freeipmi/"
-  url "https://ftpmirror.gnu.org/gnu/freeipmi/freeipmi-1.6.18.tar.gz"
-  mirror "https://ftp.gnu.org/gnu/freeipmi/freeipmi-1.6.18.tar.gz"
-  sha256 "8098b23820038ad0aa39abf0f9a012e24683d384d9f91e760acb2a68b465e0fe"
+  url "https://ftpmirror.gnu.org/gnu/freeipmi/freeipmi-1.6.19.tar.gz"
+  mirror "https://ftp.gnu.org/gnu/freeipmi/freeipmi-1.6.19.tar.gz"
+  sha256 "f95c2b73797c4a0341a42a7b3c43efb60954c4130d082ad348fd40da554b4e85"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 arm64_tahoe:   "9d7d6455f4f39dbb2d4ca9e2ba8f0c6f70b154076714af62c7ea27dadfe0d3df"
-    sha256 arm64_sequoia: "1489a97fd239243c5470a4354efb84e335c363ab941ee443903f5cafbc9d4c05"
-    sha256 arm64_sonoma:  "49fa11c2ed4abd96e3503951433031b657ced44fdb67149a3c6f0f7e350907fa"
-    sha256 sonoma:        "f711da760cbb1e6870665764fa23ceb835da106b06e95ca27c27e7dbd42eb956"
-    sha256 arm64_linux:   "53f437f835d8607f3f1f123d28a778c2c8271d2fe59c7471cb1160cb9a8056e9"
-    sha256 x86_64_linux:  "f72a49b937b18745dda867b623ebed942304f60f5eba7a53c6cb47fa378d6bfb"
+    sha256 arm64_tahoe:   "933c32ff1ce9a270259b70e1f49bd43347b2f9d894713bc1fdcc4a6cc615c8ff"
+    sha256 arm64_sequoia: "79aed80d0d1b688cd4effaa75f0a89baeb1c4e61df03e013c5c32cdb46ebf6e5"
+    sha256 arm64_sonoma:  "76a7ea8b1afc71d05a05f995b05d4e5cc6278cb69fb0c54f57c613a8f1c63cf1"
+    sha256 arm64_linux:   "7b98158e64e707986ae12a48d437c1d89f3087643317be3ea2843973581afc44"
+    sha256 x86_64_linux:  "1cf03b917ca8176822313b094af2f231ff4ab214e04bcb17ff8097991ab39e72"
   end
 
   depends_on "texinfo" => :build
@@ -33,9 +32,7 @@ class Freeipmi < Formula
 
     # Hardcode CPP_FOR_BUILD to work around cpp shim issue:
     # https://github.com/Homebrew/brew/issues/5153
-    inreplace "man/Makefile.in",
-      "$(CPP_FOR_BUILD) -nostdinc -w -C -P -I. -I$(top_srcdir)/man $@.pre $@",
-      "#{ENV.cxx} -E -nostdinc -w -C -P -I. -I$(top_srcdir)/man $@.pre > $@"
+    inreplace "man/Makefile.in", "$(CPP_FOR_BUILD)", "#{ENV.cxx} -E"
 
     system "./configure", *std_configure_args
     system "make", "install"

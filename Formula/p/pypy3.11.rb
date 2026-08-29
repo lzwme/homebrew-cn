@@ -21,7 +21,6 @@ class Pypy311 < Formula
   end
 
   depends_on "pkgconf" => :build
-  depends_on "pypy" => :build
   depends_on "gdbm"
   depends_on "openssl@3"
   depends_on "sqlite"
@@ -68,6 +67,29 @@ class Pypy311 < Formula
     sha256 "94800765601e9171bf5d58d066e640662842bcedcbab982b2c90787a2c987322"
   end
 
+  resource "bootstrap" do
+    on_macos do
+      on_arm do
+        url "https://downloads.python.org/pypy/pypy2.7-v7.3.23-macos_arm64.tar.bz2"
+        sha256 "f83d8fce9695f598dc55187c0f6c06c367dbf76d288d2bca7dbf040e4be15f37"
+      end
+      on_intel do
+        url "https://downloads.python.org/pypy/pypy2.7-v7.3.23-macos_x86_64.tar.bz2"
+        sha256 "edbddb678c00f29c2361dbe6c6ea634f5d62e6854a775a9209c6b789bb0dc00b"
+      end
+    end
+    on_linux do
+      on_arm do
+        url "https://downloads.python.org/pypy/pypy2.7-v7.3.23-aarch64.tar.bz2"
+        sha256 "b0bec20c16b6ab2bd46bd4f5d6049b6070a22a53eaed437ee9ac36d842ceda74"
+      end
+      on_intel do
+        url "https://downloads.python.org/pypy/pypy2.7-v7.3.23-linux64.tar.bz2"
+        sha256 "7833be48244a6f4aa0720c6b98f151428291a52697da849ef6b3ca7d5bf45b96"
+      end
+    end
+  end
+
   # Build fixes:
   # - Disable Linux tcl-tk detection since the build script only searches system paths.
   #   When tcl-tk is not found, it uses unversioned `-ltcl -ltk`, which breaks build.
@@ -106,7 +128,9 @@ class Pypy311 < Formula
 
     ENV["PYPY_USESSION_DIR"] = buildpath
 
-    python = formula_opt_bin("pypy")/"pypy"
+    resource("bootstrap").stage buildpath/"bootstrap"
+    python = buildpath/"bootstrap/bin/pypy"
+
     cd "pypy/goal" do
       system python, buildpath/"rpython/bin/rpython", "--opt", "jit",
                                                       "--cc", ENV.cc,

@@ -1,8 +1,8 @@
 class Discount < Formula
   desc "C implementation of Markdown"
   homepage "https://www.pell.portland.or.us/~orc/Code/discount/"
-  url "https://www.pell.portland.or.us/~orc/Code/discount/discount-3.0.1.3.tar.bz2"
-  sha256 "a4e3d4ead2412905b9d07954331cfde30c30743c5e0e4c57f40b3c2659efa30e"
+  url "https://www.pell.portland.or.us/~orc/Code/discount/discount-3.0.2.0.tar.bz2"
+  sha256 "4747d9e745c2bb6fc0f2cf24ebf27d8f5cc61d08c01fafa54db419b604f1b674"
   license "BSD-3-Clause"
   head "https://github.com/Orc/discount.git", branch: "main"
 
@@ -12,12 +12,11 @@ class Discount < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4c3ac17d7c61488e623460e15a5f68aa551861cd74b4703f17639e5f4b7f2883"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a8d7862110dcd83e16019616bec578ac420dc83e3114506947733e904f8d4067"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9d21f1ab8ca4ae336665b9f26d7757d8df71bbca06c8f06c367a231e747b998f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9877be726ce44371afc6e976c86dc6dca73cd0b6826ae65cfafcf0d193873aa1"
-    sha256 cellar: :any,                 arm64_linux:   "26f4c497eb1e707ed06fe69a4037e21224f6e887fda8935f7827fb973240df6e"
-    sha256 cellar: :any,                 x86_64_linux:  "beacb5c0d8983547323c500b029f4e1657a7d02abce4225e263a576ca3579972"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2ecfba03c385202b0e8b5978490e902a9ea0bfaa931f335b0373f06e307bfd1b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1de360ac09c26dae01e75c91be82789089e5b12b12a631d3f772cc8f7ad87ad0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6a1adcfef63d8392fc4afc07b7f7966ce179fec47307a72aea2f2090fb19eb90"
+    sha256 cellar: :any,                 arm64_linux:   "2e5e88312f78946d2952ae051bfb3616ac53d21e5890bcd4c7d72fa0cb30447d"
+    sha256 cellar: :any,                 x86_64_linux:  "12ead269cf940203e11c955208f1be1490ff357fe2754240d59b993d563530ec"
   end
 
   conflicts_with "markdown", because: "both install `markdown` binaries"

@@ -3,8 +3,8 @@ class HermesAgent < Formula
 
   desc "Self-improving AI agent that creates skills from experience"
   homepage "https://hermes-agent.nousresearch.com"
-  url "https://ghfast.top/https://github.com/NousResearch/hermes-agent/archive/refs/tags/v2026.8.19.tar.gz"
-  sha256 "8e7f7d2aa6be48ae8b5550325be44aef339413ceec6ed74c18287001103de8fd"
+  url "https://ghfast.top/https://github.com/NousResearch/hermes-agent/archive/refs/tags/v2026.8.27.tar.gz"
+  sha256 "e622723b5bf3cd6c1db974d92d32242f1cb63f61c1112b6f708b34d619ef0fc7"
   license "MIT"
   head "https://github.com/NousResearch/hermes-agent.git", branch: "main"
 
@@ -14,12 +14,11 @@ class HermesAgent < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "a8281d2c06b64e9faca6769e069653222236fcf90f62bdeaf40221fd05ab518b"
-    sha256 cellar: :any, arm64_sequoia: "c8ce8db436e2a0bf8a7e657bd456905be7ad1ef24369ab514be796f597829422"
-    sha256 cellar: :any, arm64_sonoma:  "4771bdda76a5567ca6267ba6e7b6f4ad4bf89f5080dbf67cf4aad4f88a8e921c"
-    sha256 cellar: :any, arm64_linux:   "bbeb26ae9bc6b19d004ab57d6e3bbaa539868fc2b2ea5194ef68ab6e2769f342"
-    sha256 cellar: :any, x86_64_linux:  "d9c8ecc99f13ace33f01bf513808013a0c1b008f936ba4cd73dd487688669370"
+    sha256 cellar: :any, arm64_tahoe:   "afa4b75f38fcdf9554e5f1f980fc9267049e6e6b60f38de9b3ff21ba08689cde"
+    sha256 cellar: :any, arm64_sequoia: "55276fd609a61527843ca431a37d1e47ccb6f6e161341350201d814fa093229e"
+    sha256 cellar: :any, arm64_sonoma:  "5935120f0bc842707e4479cb896f5347d0bbe010bfee34f68ad53e59f398b0f4"
+    sha256 cellar: :any, arm64_linux:   "712b450e3fa50fc98d892dad62e2e0d2a3ddce0048b91207c65fa49288b5d3a6"
+    sha256 cellar: :any, x86_64_linux:  "a44846e669bc97beb319a29c6986d3bb2c68a8bd5512046b0e88745b765b3275"
   end
 
   depends_on "pkgconf" => :build
@@ -53,8 +52,8 @@ class HermesAgent < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/76/d4/81420972a676e8ffea40450d8c8c92943e7218a78fe9b64359836cc9876b/click-8.4.2.tar.gz"
-    sha256 "9a6cea6e60b17ebe0a44c5cc636d94f09bd66142c1cd7d8b4cd731c4917a15f6"
+    url "https://files.pythonhosted.org/packages/c7/0e/7fa0ef50764b67090eca4114772a2abf8b6148198475e54c660b97caeee6/click-8.5.0.tar.gz"
+    sha256 "ba0d2089de75ea0310e2dde03160e6ca10009947fb95a182f9b54021bb272e34"
   end
 
   resource "croniter" do
@@ -230,6 +229,11 @@ class HermesAgent < Formula
   resource "sniffio" do
     url "https://files.pythonhosted.org/packages/a2/87/a6771e1546d97e7e041b6ae58d80074f81b7d5121207425c964ddf5cfdbd/sniffio-1.3.1.tar.gz"
     sha256 "f4324edc670a0f49750a81b895f35c3adb843cca46f0530f79fc1babb23789dc"
+  end
+
+  resource "snowballstemmer" do
+    url "https://files.pythonhosted.org/packages/43/f8/0a71edf031f03c40db17503cb8ca78a69a171254e568e7db241b0ab57ea1/snowballstemmer-3.1.1.tar.gz"
+    sha256 "e07bbc54a0d798fe6010a12398422e62a8bfbba95c394fd0956ef58cb4d3e260"
   end
 
   resource "socksio" do

@@ -1,8 +1,8 @@
 class BlockGooseCli < Formula
   desc "Open source, extensible AI agent that goes beyond code suggestions"
   homepage "https://goose-docs.ai/"
-  url "https://ghfast.top/https://github.com/aaif-goose/goose/archive/refs/tags/v1.47.0.tar.gz"
-  sha256 "0a4470fb0412f464528148f7b20812a2297494a3d72552b21c58a816b1f6fcc9"
+  url "https://ghfast.top/https://github.com/aaif-goose/goose/archive/refs/tags/v1.48.0.tar.gz"
+  sha256 "7b5d8713fc28e0b4760c9790e95dbacb7351706ec74f68667ec5f78ce6ddc38c"
   license "Apache-2.0"
   head "https://github.com/aaif-goose/goose.git", branch: "main"
 
@@ -12,12 +12,11 @@ class BlockGooseCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4569309b6126f645d94ebc8d6999e36c1a856234658c80ebc66e1356b4a7bc5d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c30a964ba9567d9eb313a4a6846b827057d80a777541d40a49501c17f9cc443f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "04d14547e6a8014e366a95e3ddc3d147fbbd0f65a1dfd016fa685bba003920eb"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1b8a6d4a94843fbac560dedc2d404ecca4a049d514ee6b5011d141ab82345e18"
-    sha256 cellar: :any,                 arm64_linux:   "99d6243e3faebc62cfc8ef9b15056f1aac2ccb057855f1af1263d39bbf2bebf9"
-    sha256 cellar: :any,                 x86_64_linux:  "99e5ed271ef9c01eabb40cbc986d69306cfb899edf3dea4d7a159dc06f88e7d6"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1bdbc0161c4dad6d54e29ab4f25e97985d5cd1fdcf8e8214eb426a05c4a1627a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1d963cc7f3b916701fb651151f2c472377e8d5a8b73e5751a8238010e8c8b59d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "41c8d3b5b530eaac998a62c406a77a1164a5c3cbfa39d18247f10de2cc93843e"
+    sha256 cellar: :any,                 arm64_linux:   "6f44b9dbe9a380323887f79a3c7e32b2ad79e38ea311fa23a2ddd3a4c8556e7f"
+    sha256 cellar: :any,                 x86_64_linux:  "6df61d6d6c2508b07d6319b24647efa6cbddd4988d08b4b5daa3fc110c54f322"
   end
 
   depends_on "cmake" => :build

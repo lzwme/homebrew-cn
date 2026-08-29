@@ -1,8 +1,8 @@
 class Radicle < Formula
   desc "Sovereign code forge built on Git"
   homepage "https://radicle.xyz"
-  url "https://files.radicle.xyz/releases/latest/heartwood-1.10.1.tar.gz"
-  sha256 "d46ca92664fd5b44939b362fe80d82a27e00050f01fa45b58451d5e51655e95a"
+  url "https://files.radicle.xyz/releases/latest/heartwood-1.10.2.tar.gz"
+  sha256 "4e8b124ecfb24706391c9a16d47ce4ea377a07385dfadf32f60be92cc1160ff7"
   license all_of: ["MIT", "Apache-2.0"]
 
   livecheck do
@@ -13,12 +13,11 @@ class Radicle < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1f96f91ae031be34f66030663e724093c5e3678767aaa8ac94f39a04bdd87239"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6fe8244b94215dc5e8a344e6de76a4b7ab78e5206d9b110a290b8d300c12ce71"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "17b025640876751d56c62acbf97847955b9d8c309da82ce390e06fb4f731fd84"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5df4d5587b53b129bd8b6d393dec4cc446f2c7d50f1dd73345d33de3d4d5bb8e"
-    sha256 cellar: :any,                 arm64_linux:   "a8e2fbd2e2eb455c4e9c4976d748940eca61371c4cfe64dcc4102a2892a9849b"
-    sha256 cellar: :any,                 x86_64_linux:  "281f3f82fefab7ec7daedcef4a132ed3ac41be444d0b41f8b219a12fbbcc06d6"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3c9d8aa920f3e749472b3e936d9a2b187d1b0ab94386d4dd6e47be0be5243ff0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b38fffead7ade319d453c70397a0b91ade6308b2ad216896386ca9b84b4167b0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "327b7a52947c37fdefeedac8f930366942b0b1add37273131c389ccf0986f755"
+    sha256 cellar: :any,                 arm64_linux:   "157bf9ee2b8a9f0c5093bddb67249feff73b4023a6ca523f38c7846e0e90e909"
+    sha256 cellar: :any,                 x86_64_linux:  "9380d3b1a1a2984311672ffc6c2e4726d9d3910ac953452c560911339036b3df"
   end
 
   depends_on "asciidoctor" => :build

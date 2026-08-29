@@ -5,6 +5,11 @@ class Pixivbiu < Formula
   sha256 "d657b9da0f2c845b75b2418fad30f622e895d12c386557797073b4c3e000a348"
   license "MIT"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "403308d0003d9790f73e4583c1aa61337ed7ef32f16a25cc630e10f677dee63b"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "d11e288bdd8c924384be9d4a755e078fb14b13a00c0f12aeda1dd61c32b412ba"

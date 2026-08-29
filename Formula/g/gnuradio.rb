@@ -3,11 +3,25 @@ class Gnuradio < Formula
 
   desc "SDK for signal processing blocks to implement software radios"
   homepage "https://www.gnuradio.org/"
-  url "https://ghfast.top/https://github.com/gnuradio/gnuradio/archive/refs/tags/v3.10.12.0.tar.gz"
-  sha256 "fe78ad9f74c8ebf93d5c8ad6fa2c13236af330f3c67149d91a0647b3dc6f3958"
   license "GPL-3.0-or-later"
   revision 12
-  head "https://github.com/gnuradio/gnuradio.git", branch: "main"
+
+  stable do
+    url "https://ghfast.top/https://github.com/gnuradio/gnuradio/archive/refs/tags/v3.10.12.0.tar.gz"
+    sha256 "fe78ad9f74c8ebf93d5c8ad6fa2c13236af330f3c67149d91a0647b3dc6f3958"
+
+    depends_on "pyqt@5" => :no_linkage
+    depends_on "qt@5" # Qt6 issue: https://github.com/gnuradio/gnuradio/issues/7708
+    depends_on "qwt-qt5"
+
+    # Fix build with Boost 1.89.0
+    patch do
+      url "https://github.com/gnuradio/gnuradio/commit/02aa698a05935fe350fb1772226e29605abd335e.patch?full_index=1"
+      sha256 "246d540bdd2025b3ad2ffc84adea84b378ea0d640e73809e3f0e48f9bb6d3881"
+      type :backport
+      resolves "https://github.com/gnuradio/gnuradio/pull/7904"
+    end
+  end
 
   livecheck do
     url :stable
@@ -22,6 +36,14 @@ class Gnuradio < Formula
     sha256 cellar: :any, sonoma:        "b9c9ca90bcc5392396f71e22906f037f843cc932966419d185f7a41d4de7e889"
     sha256 cellar: :any, arm64_linux:   "8b67a7f5ec5eddc173271d488f83df23dd102c76c6cad2e626c572ace7de706c"
     sha256 cellar: :any, x86_64_linux:  "a9275f625dc889a850fea0c1a2d74fb4700ece22c1010db2ac8ad2f30b881d92"
+  end
+
+  head do
+    url "https://github.com/gnuradio/gnuradio.git", branch: "main"
+
+    depends_on "pyqt" => :no_linkage
+    depends_on "qtbase"
+    depends_on "qwt"
   end
 
   # Can undeprecate if new release with Qt 6 support is available.
@@ -45,10 +67,7 @@ class Gnuradio < Formula
   depends_on "numpy" => :no_linkage
   depends_on "portaudio"
   depends_on "pygobject3" => :no_linkage
-  depends_on "pyqt@5" => :no_linkage
   depends_on "python@3.14"
-  depends_on "qt@5" # Qt6 issue: https://github.com/gnuradio/gnuradio/issues/7708
-  depends_on "qwt-qt5"
   depends_on "rpds-py" => :no_linkage
   depends_on "soapysdr"
   depends_on "spdlog"
@@ -142,14 +161,6 @@ class Gnuradio < Formula
     sha256 "f36b47402ecde768dbfafc46e8e4207b4360c654f1f3bb84475f0a28628fb19c"
   end
 
-  # Fix build with Boost 1.89.0
-  patch do
-    url "https://github.com/gnuradio/gnuradio/commit/02aa698a05935fe350fb1772226e29605abd335e.patch?full_index=1"
-    sha256 "246d540bdd2025b3ad2ffc84adea84b378ea0d640e73809e3f0e48f9bb6d3881"
-    type :backport
-    resolves "https://github.com/gnuradio/gnuradio/pull/7904"
-  end
-
   def python3
     "python3.14"
   end
@@ -168,10 +179,6 @@ class Gnuradio < Formula
       s.gsub! "${CMAKE_CXX_COMPILER}", ENV.cxx
     end
 
-    qwt = formula_opt_lib("qwt-qt5")
-    qwt_lib = OS.mac? ? qwt/"qwt.framework/qwt" : qwt/"libqwt.so"
-    qwt_include = OS.mac? ? qwt/"qwt.framework/Headers" : formula_opt_include("qwt-qt5")
-
     args = %W[
       -DGR_PKG_CONF_DIR=#{etc}/gnuradio/conf.d
       -DGR_PREFSDIR=#{etc}/gnuradio/conf.d
@@ -179,13 +186,17 @@ class Gnuradio < Formula
       -DENABLE_DEFAULT=OFF
       -DPYTHON_EXECUTABLE=#{venv.root}/bin/python
       -DPYTHON_VERSION_MAJOR=3
-      -DQWT_LIBRARIES=#{qwt_lib}
-      -DQWT_INCLUDE_DIRS=#{qwt_include}
-      -DCMAKE_PREFIX_PATH=#{formula_opt_lib("qt@5")}
-      -DQT_BINARY_DIR=#{formula_opt_bin("qt@5")}
       -DENABLE_TESTING=OFF
       -DENABLE_INTERNAL_VOLK=OFF
     ]
+
+    if OS.mac?
+      qwt = build.stable? ? "qwt-qt5" : "qwt"
+      args += %W[
+        -DQWT_LIBRARIES=#{formula_opt_lib(qwt)}/qwt.framework/qwt
+        -DQWT_INCLUDE_DIRS=#{formula_opt_lib(qwt)}/qwt.framework/Headers
+      ]
+    end
 
     enabled = %w[GNURADIO_RUNTIME GRC PYTHON VOLK]
     enabled_modules = %w[GR_ANALOG GR_AUDIO GR_BLOCKS GR_BLOCKTOOL
@@ -199,6 +210,7 @@ class Gnuradio < Formula
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
+    bin.children.reject(&:executable?).map(&:unlink)
 
     # Create a directory for Homebrew to put .pth files pointing to GNU Radio
     # plugins installed by other packages. An automatically-loaded module adds
@@ -215,9 +227,7 @@ class Gnuradio < Formula
     (venv.site_packages/"homebrew-gnuradio.pth").write pth_contents
 
     # Patch the grc config to change the search directory for blocks
-    inreplace etc/"gnuradio/conf.d/grc.conf", share.to_s, "#{HOMEBREW_PREFIX}/share"
-
-    bin.children.reject(&:executable?).map(&:unlink)
+    inreplace etc/"gnuradio/conf.d/grc.conf", share.to_s, "#{HOMEBREW_PREFIX}/share" if build.stable?
   end
 
   test do

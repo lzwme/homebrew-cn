@@ -1,8 +1,8 @@
 class RancherCli < Formula
   desc "Unified tool to manage your Rancher server"
   homepage "https://github.com/rancher/cli"
-  url "https://ghfast.top/https://github.com/rancher/cli/archive/refs/tags/v2.15.0.tar.gz"
-  sha256 "7250afa231aa6e6e80b1714fad98592d3dbe4e9261d7c16e19889f3681ced705"
+  url "https://ghfast.top/https://github.com/rancher/cli/archive/refs/tags/v2.15.1.tar.gz"
+  sha256 "99a9a459c2e366944d0fbc238b63077582b807b1cc5cb568653dacf13236b934"
   license "Apache-2.0"
   head "https://github.com/rancher/cli.git", branch: "main"
 
@@ -15,12 +15,11 @@ class RancherCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cd0df1cec672be902c248c82c2b9dc9768838485ca0f1c2cfec73b4a769b85ef"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7c0cc5f36bb2540efc4df3af7f09f9d4319ad7d5805826f8bfb1261e4be18d04"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "662ce1d543f45e8b45783ed863169408aa4665cc3dd9fef443d08b4bc799287c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1b532aced258842cdf529e46d793a4449b0734733ccbef4910e7f2f71da5d0fa"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d09ea024b1ce5268e8f837ac962a166c60d90180171f77c98d37fd5fc7e4461f"
-    sha256 cellar: :any,                 x86_64_linux:  "69085b94c3785d6a329badad227fc57380c5c16a130049f87d3e755201e7f707"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "388b0727343e1da266bf8e2286e1783d29b89fc2edd7d9830dcbc03a5db52db5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3084525cc424ce77ed85b2d9a7001463c6e6b4c7744c30e7dcac840150223be0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a58759dbe1691e82955cf7959323b053351862ad8a355a76e0bdc717409a54bc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5314cfe75ddc555a05a93786c27c623583205b1e61f3a3710046103dfcd9b063"
+    sha256 cellar: :any,                 x86_64_linux:  "7bee5b23bc5527c15901c90e2e1cea2a017b7297b674265633fa84ff451f7e65"
   end
 
   depends_on "go" => :build

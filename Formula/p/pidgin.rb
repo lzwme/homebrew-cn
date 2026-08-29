@@ -80,6 +80,10 @@ class Pidgin < Formula
     depends_on "sqlite"
   end
 
+  # Can be undeprecated if Pidgin 3 is released
+  deprecate! date: "2026-08-28", because: "needs EOL `gtk+` and `tcl-tk@8`"
+  disable! date: "2027-08-28", because: "needs EOL `gtk+` and `tcl-tk@8`"
+
   depends_on "gettext" => :build
   depends_on "pkgconf" => :build
   depends_on "glib"

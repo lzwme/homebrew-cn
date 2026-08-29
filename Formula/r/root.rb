@@ -2,20 +2,11 @@ class Root < Formula
   desc "Analyzing petabytes of data, scientifically"
   homepage "https://root.cern"
   license "LGPL-2.1-or-later"
-  revision 1
   head "https://github.com/root-project/root.git", branch: "master"
 
   stable do
-    url "https://root.cern/download/root_v6.40.02.source.tar.gz"
-    sha256 "f631eebee3dbea128f1415f4b784f5e83637a2b431193bce75f10385f71efc56"
-
-    # Fix variable quoting for CMake>v4.4
-    # Will be unnecessary as of root v6.40.04
-    patch do
-      url "https://github.com/root-project/root/commit/1cc376e3bf06ea54880fc4c14f0d3de6af82fdd3.patch?full_index=1"
-      sha256 "a3651e7de6c6de2f75e7f2f26c8120763fca74b194c7e5ec43255f7242b507c2"
-      type :backport
-    end
+    url "https://root.cern/download/root_v6.40.04.source.tar.gz"
+    sha256 "44ada253b1935d34b6801222232d50731fe7c5e3cbcfab47734c85031cfbe4d3"
 
     # Backport fix for PyROOT to use macOS libffi
     patch do
@@ -34,13 +25,11 @@ class Root < Formula
   end
 
   bottle do
-    rebuild 2
-    sha256 arm64_tahoe:   "1295ee48e44d00747dc07060bac4150da63538b6b430b0aeca7573db8fe82900"
-    sha256 arm64_sequoia: "c88684f23d01e226a495ad508bf29fb40b57094402c3cfb33384ef4173de6794"
-    sha256 arm64_sonoma:  "97690b0cdaa2225f46df2ffae07a6d659ffe8769df7f9fba6b2c9e5c8f0d01d4"
-    sha256 sonoma:        "6c05a5403658d07ce605a9e127a769afbf4382a3323f6c9cb86e6157f1f0fb91"
-    sha256 arm64_linux:   "11585005870385af8d1c78b0895405add975a77a9a4234fc8af78433dbe1a38d"
-    sha256 x86_64_linux:  "0945ac59403715af213ddba77742db60a85d785a7099411e1cf642316a0d76a1"
+    sha256 arm64_tahoe:   "94f7b838a7bdee3f23883db98e663ef0b71f55391236768e0a1cf10ed59b8e7b"
+    sha256 arm64_sequoia: "ae3ec829f8fa27a74261ea9cd4d51de122b72b70504b22bf36f4da500682391a"
+    sha256 arm64_sonoma:  "08f0018a99450e24b3e9bd266cd23fd2b390984c1e33afe12a4d2cc90e51cb18"
+    sha256 arm64_linux:   "3770a1310450cb190cce9b7ac519fe63030c64af91992bc4bc2841b8657659cc"
+    sha256 x86_64_linux:  "1ce144359de1568f340f297ff91068efb1684129b40a6b61c6732f6ffe22ecd4"
   end
 
   depends_on "cmake" => :build

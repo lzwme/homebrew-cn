@@ -4,7 +4,7 @@ class Ejabberd < Formula
   url "https://ghfast.top/https://github.com/processone/ejabberd/archive/refs/tags/26.07.tar.gz"
   sha256 "7b2e4efe2d5c867d2ced9cb1391731c5e6b9accd6f166ec71e734a3ae97813d7"
   license "GPL-2.0-or-later"
-  revision 1
+  revision 2
   head "https://github.com/processone/ejabberd.git", branch: "master"
 
   # There can be a notable gap between when a version is tagged and a
@@ -16,12 +16,11 @@ class Ejabberd < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "b309a064ee108b15b35fa1feda4001aa06f894a68f0f75bf5a39916c28e6e0c1"
-    sha256 cellar: :any, arm64_sequoia: "19cd1c281bd69940ccde4a76331d029afc9846d55335c5802f01e4149ca5f598"
-    sha256 cellar: :any, arm64_sonoma:  "746e4d31d4bab7976963cdaad524fc59d2349a12be32ce2b814eb1480789ec9f"
-    sha256 cellar: :any, sonoma:        "949f8430d68da474f60368edff9d294994b9bdf80c328726c602c4ec292ddb88"
-    sha256 cellar: :any, arm64_linux:   "332d39cfc9bf8c62898a835ba49326d2e856dc9330e6d9e2b019b32872ddfe96"
-    sha256 cellar: :any, x86_64_linux:  "42e7067209508b0a2beb7d11bccfba5766879370673a5536bb059d42c29cadd3"
+    sha256 cellar: :any, arm64_tahoe:   "7392a38aea2dbeec29d98ee5010acf9046ca0968c99014c96cdfa14f25abad9a"
+    sha256 cellar: :any, arm64_sequoia: "8537f2664cb8e8179fd1fab136fe2e8cb68575d3b0b612ba07161268829910e3"
+    sha256 cellar: :any, arm64_sonoma:  "1dca086a9ab019f8927735ed0e2b0324ba3a1eb1f5c6ac216de9f476de2e3c62"
+    sha256 cellar: :any, arm64_linux:   "01035a43dbda58abfd1521426371fdc33356eb0c1b239ed82547c45b587b5084"
+    sha256 cellar: :any, x86_64_linux:  "cfc59032c3e8c3d7317733d6d9366b11dfb6ecd9b95770b2a8abd68b9f259424"
   end
 
   depends_on "autoconf" => :build
@@ -69,11 +68,14 @@ class Ejabberd < Formula
     # on bootstrap zip extraction in non-interactive environments.
     ENV.deparallelize
 
+    # Makefile asks `elixir` for this and gets a versioned Cellar path, which breaks on every Elixir bump
+    elixir_libdir = "ELIXIR_LIBDIR_RAW=#{formula_opt_prefix("elixir")}/lib/elixir/lib"
+
     # Set CPP to work around cpp shim issue:
     # https://github.com/Homebrew/brew/issues/5153
-    system "make", "CPP=#{ENV.cc} -E"
+    system "make", "CPP=#{ENV.cc} -E", elixir_libdir
 
-    system "make", "install"
+    system "make", "install", elixir_libdir
 
     (etc/"ejabberd").mkpath
     (var/"lib/ejabberd").mkpath

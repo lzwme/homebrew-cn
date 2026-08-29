@@ -6,14 +6,15 @@ class Serialosc < Formula
       tag:      "v1.4.8",
       revision: "c96ea389dbf82c84d17f6f7adddaf311aed49438"
   license "ISC"
+  revision 1
   head "https://github.com/monome/serialosc.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "13eec3424390309cf2fd022d89f10236ee9b0ff690783fbb617cdc4a0116fc0a"
-    sha256 cellar: :any, arm64_sequoia: "c6876b51a57c4599f15f3bd2bc6e274004e21d071303ba5d364775eec57e4beb"
-    sha256 cellar: :any, arm64_sonoma:  "caa20739fbe77124af848faf83605b62274fc33777b5f70a553200119a760289"
-    sha256 cellar: :any, arm64_linux:   "fbf5efa296b342401c5e114a72e4d31e4f6238e842a8f163dbe48a5264cb782c"
-    sha256 cellar: :any, x86_64_linux:  "bb5e6faa8e562f665dfe6790fe4153145d722050cc2c7c5e248e875df456064e"
+    sha256 cellar: :any, arm64_tahoe:   "3f19816658fa50919906a72e6d4785939ff5518e7c2372bfe809d22f4ea58491"
+    sha256 cellar: :any, arm64_sequoia: "0876506d909bde218a5d22455974763dd822ce6bc41815d5870657347ba29347"
+    sha256 cellar: :any, arm64_sonoma:  "e3821fc60e00ff0b9dd4ff0161467c0dd3e9fc0cb8de78d22447e1b54568fda6"
+    sha256 cellar: :any, arm64_linux:   "2c5a518ea1f48ffc9513feeca36ac2d4d69927503db139ba1f92b2342027594c"
+    sha256 cellar: :any, x86_64_linux:  "cfc9138dccdd02c3ab0ff9b21add7a026fc8e7c7c4eeb1b284425a18ad84bb87"
   end
 
   depends_on "liblo"

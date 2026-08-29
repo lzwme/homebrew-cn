@@ -1,18 +1,17 @@
 class Reproc < Formula
   desc "Cross-platform (C99/C++11) process library"
-  homepage "https://github.com/DaanDeMeyer/reproc"
-  url "https://ghfast.top/https://github.com/DaanDeMeyer/reproc/archive/refs/tags/v14.2.7.tar.gz"
-  sha256 "77914ba566356d86986db240ecdb1762dfdd55bb1e8e127d016d9c5c4c9300e8"
+  homepage "https://github.com/daandemeyer/reproc"
+  url "https://ghfast.top/https://github.com/daandemeyer/reproc/archive/refs/tags/14.2.8.tar.gz"
+  sha256 "27c3b452bfc419a2deda23969aa10c77909c4ff9e71c549eb65d09ae6aa7aa32"
   license "MIT"
   head "https://github.com/DaanDeMeyer/reproc.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "363f30f229b7760de3e9fcc16c2d135e40820158eb31d361e14e390082a87f71"
-    sha256 cellar: :any,                 arm64_sequoia: "dcd90b82bef65e05b7b15f140ddd05e6719e4e3ff3f57bfc47bc0858817f8b51"
-    sha256 cellar: :any,                 arm64_sonoma:  "200ef9bcad2c67420c4bc9ef922638a20d2e6367357221d86d5c59523de4f84a"
-    sha256 cellar: :any,                 sonoma:        "e16eda0c89e30cf412e2f6efce08cfc475033fe05542d90adf0fa75ba4182894"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "bd077225e9b235645914ea8907d2b9f6be2d27ba1698a666e498cda446dbb881"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "27c91b3b4bce3543982d7f23575385562f212875d65896e45671db768fd01e24"
+    sha256 cellar: :any, arm64_tahoe:   "27f18791b89468ce7d3758a08063347709566ad357f3401a0261de11227a54e7"
+    sha256 cellar: :any, arm64_sequoia: "054a5692de1f7f7e626e0eb099f04e746de117f26660b52891097c9a1e7fb768"
+    sha256 cellar: :any, arm64_sonoma:  "749a780b152fdc954e22bbcf9e012302600fc1412e4b58c30a654a52d2b77720"
+    sha256 cellar: :any, arm64_linux:   "80ee42036c3ad55342d07b82905a35f67f3835bf7b00b9a3f71587e9064a7a31"
+    sha256 cellar: :any, x86_64_linux:  "f2cede72d8fd93d40c627137bb45bc3b8a7193f2d64f2bbc8d9dcb9ec40b77ab"
   end
 
   depends_on "cmake" => :build

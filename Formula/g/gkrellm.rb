@@ -19,6 +19,11 @@ class Gkrellm < Formula
     sha256 x86_64_linux:  "f3d9b23caf99e6749de17b505878868a235bb4e7cca6143470c32335a6a1fe7a"
   end
 
+  # Can be undeprecated if upstream moves to GTK 3 / cairo:
+  # https://git.srcbox.net/gkrellm/gkrellm/issues/1
+  deprecate! date: "2026-08-28", because: "needs EOL `gtk+`"
+  disable! date: "2027-08-28", because: "needs EOL `gtk+`"
+
   depends_on "gettext" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build

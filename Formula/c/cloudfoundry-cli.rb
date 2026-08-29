@@ -1,8 +1,8 @@
 class CloudfoundryCli < Formula
   desc "Official command-line client for Cloud Foundry"
   homepage "https://docs.cloudfoundry.org/cf-cli"
-  url "https://ghfast.top/https://github.com/cloudfoundry/cli/archive/refs/tags/v8.18.4.tar.gz"
-  sha256 "1371bedf6c3929d018edb18608634888c0e7a89f6d27faad24ce8bde25e91106"
+  url "https://ghfast.top/https://github.com/cloudfoundry/cli/archive/refs/tags/v8.19.0.tar.gz"
+  sha256 "bfbbb833c2727432e48d7b383ba749f6ca7e5c11c1377cc6cd22ddc802057d23"
   license "Apache-2.0"
   head "https://github.com/cloudfoundry/cli.git", branch: "main"
 
@@ -12,15 +12,15 @@ class CloudfoundryCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1d44610a8098f5a91af4964dfd33b93a2e190e4456b2aefe62818449a968e535"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1d44610a8098f5a91af4964dfd33b93a2e190e4456b2aefe62818449a968e535"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1d44610a8098f5a91af4964dfd33b93a2e190e4456b2aefe62818449a968e535"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1b3a7d679f59a3bed6016a527aa9f553305e79bc0b5f6173a9a3df7e1c02b36f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e4499c4b10b932185d59ee6b9ad92f0107cc12cfcbd16dfb9c784e1cc5f2d504"
-    sha256 cellar: :any,                 x86_64_linux:  "3301f2ecf831019db6ad3f9a08777eff0c3893ed0d383065b1d0eac884f6bade"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6a89bbbc6fd61c7f5c1f791eab969b24325deefe1cfcce67d53251a3527593bd"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6a89bbbc6fd61c7f5c1f791eab969b24325deefe1cfcce67d53251a3527593bd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6a89bbbc6fd61c7f5c1f791eab969b24325deefe1cfcce67d53251a3527593bd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7e4fd211e34340695a52e528d7444c5877b17785a84cd03ba0c766ca32f5b36e"
+    sha256 cellar: :any,                 x86_64_linux:  "5584469a2e82862f3b7dcec5f5b7f3ce282532c60a6ded55ff48e5617ca950ce"
   end
 
-  depends_on "go" => :build
+  # `SermoDigital/jose` registers `crypto.Hash(0)`, which Go 1.27 `RegisterHash` panics on
+  depends_on "go@1.26" => :build
 
   conflicts_with "cf", because: "both install `cf` binaries"
 

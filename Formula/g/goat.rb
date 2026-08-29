@@ -2,17 +2,16 @@ class Goat < Formula
   desc "General purpose AT Protocol CLI in Go"
   homepage "https://github.com/bluesky-social/goat"
   url "https://github.com/bluesky-social/goat.git",
-      tag:      "v0.2.3",
-      revision: "d064a46ac03be902dca493b6b2ce1659e8619c3a"
+      tag:      "v0.2.4",
+      revision: "f80010584f9bedd7d0e0a0100814e28e887f1cbc"
   license any_of: ["MIT", "Apache-2.0"]
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bbc22f94fbc87509b125760ce494928398a3d285425d9695fef3ea1122df53fe"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bd2d349dd06ec0f121a4688759f56e42f87cc25636c642a6d867b55e7530ccc4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "81cedaa97db152d867b68ac38c800affcc6733e109f3c6b0ddfdd78e8405a470"
-    sha256 cellar: :any_skip_relocation, sonoma:        "aca4313303e102764b77b3f43b3a3648261221c1b572e19a2ed978cc501b643c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "24d8aa8a1407b7669bd07fd27e17ec3720513fdd94e10ea05ef9fd4700a07105"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b3d597186e4b7accd5867e0394442bdffab0ee0e62d587ef1e7a38489a94cdfd"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "50bb8bab2bd28c8c33cf87da5b342dc52c8d61dcb6b49d169fb42cd7d4a29178"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7e7148ac2ed663ebac316b1ddc731b7446d793ef736c8de90eaa24fda24c575d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e7fbb4cfc90539740e362f83946d1ae9af85656c298176010e0d785244be8dae"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f967b674999f0dd7bef48cd2f99bc19b2195911e6ce5bd4bb9e9e85761a0e24b"
+    sha256 cellar: :any,                 x86_64_linux:  "3018a61e3bd4fe2230ad363d71407c41f6ec87983e643f5b592e924b6e48f85f"
   end
 
   depends_on "go" => :build

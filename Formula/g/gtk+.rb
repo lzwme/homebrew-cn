@@ -6,16 +6,6 @@ class Gtkx < Formula
   license "LGPL-2.0-or-later"
   revision 2
 
-  # From https://blog.gtk.org/2020/12/16/gtk-4-0/:
-  # "It does mean, however, that GTK 2 has reached the end of its life.
-  # We will do one final 2.x release in the coming days, and we encourage
-  # everybody to port their GTK 2 applications to GTK 3 or 4."
-  #
-  # TODO: Deprecate and remove livecheck once `gtk+` has no active dependents
-  livecheck do
-    skip "GTK 2 was declared end of life in 2020-12"
-  end
-
   bottle do
     sha256 arm64_tahoe:    "50bf4d48f706e87bc7bff60b97ea41bc0ca1d4616390be8fe2781360531244c2"
     sha256 arm64_sequoia:  "a431feb1110a7b24050d4115bf8a0701eefb6ea735c276acc99c23a9260f72e8"
@@ -28,6 +18,18 @@ class Gtkx < Formula
     sha256 arm64_linux:    "2738367a37a58ce253544f191877c5b653c3f6db7cbe3fd5ed3b3288b3bd243f"
     sha256 x86_64_linux:   "a73d8262778cf3541249d2ce04dbe9c2e545cc46401c695a77a893f812f35920"
   end
+
+  # From https://blog.gtk.org/2020/12/16/gtk-4-0/:
+  # "It does mean, however, that GTK 2 has reached the end of its life.
+  # We will do one final 2.x release in the coming days, and we encourage
+  # everybody to port their GTK 2 applications to GTK 3 or 4."
+  #
+  # This aligns with major Linux distros:
+  # * Arch Linux and RHEL 10 have already removed it
+  # * Debian is planning to remove in Forky, https://bugs.debian.org/947713
+  # * Gentoo is also working on removal, https://bugs.gentoo.org/768993
+  deprecate! date: "2026-08-28", because: :unsupported
+  disable! date: "2027-08-28", because: :unsupported
 
   depends_on "gobject-introspection" => :build
   depends_on "pkgconf" => [:build, :test]

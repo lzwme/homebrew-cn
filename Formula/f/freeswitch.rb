@@ -1,9 +1,9 @@
 class Freeswitch < Formula
   desc "Telephony platform to route various communication protocols"
   homepage "https://freeswitch.org"
-  url "https://files.freeswitch.org/releases/freeswitch/freeswitch-1.11.2.-release.tar.gz"
-  version "1.11.2"
-  sha256 "c362690b3bd8e7878ba7a46f5ba88bcdb1dad3eefae33d9e82c5378e6dbe7ba1"
+  url "https://files.freeswitch.org/releases/freeswitch/freeswitch-1.11.3.-release.tar.gz"
+  version "1.11.3"
+  sha256 "e7cfeed1cfbcaea31a30f4d21b778a2fb56c8bd534fdc2a864cec91c3fa3fd79"
   license all_of: [
     "MPL-1.1",
     "LGPL-2.1-only", # spandsp
@@ -17,12 +17,11 @@ class Freeswitch < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "657505d9b471e54eadeda1e90544dbd46b7995bf1a1241cfcc70e37b64c56dd7"
-    sha256 arm64_sequoia: "5c6ebb78fe2bb8c7dcebedfd3e2dcf815c234d8005a1b2267291ba54ded463fd"
-    sha256 arm64_sonoma:  "b203eaf94ceb74e7ebddb8dc1b191fb19568ad11947d9baf95091f5b4a1d5abe"
-    sha256 sonoma:        "12b680b0aabd41ccaadaba2f2df88b6af5e9999415cfb0ab783cba393f0e17de"
-    sha256 arm64_linux:   "6fb3118423c2e74943bf7ec99ac6c2851958ad6b0dacffd05c81578e4e4a6d1c"
-    sha256 x86_64_linux:  "1b69c0f2a1a7858ec922ae3420da7d2aa2618440e24625ae3647a5111bfc7940"
+    sha256 arm64_tahoe:   "9a09a3bfdbb424f15eea245c5f1819f26af2bde0e8000d3a10f57aa700da9297"
+    sha256 arm64_sequoia: "83c884f80736562c15d7bbbbe6861a7e1303cbb910a32dfea647e463703dbbe7"
+    sha256 arm64_sonoma:  "5a638db90d915f8e62ca24f938a6f2422a0e1fb4a6f8b21236062907eab3a7e8"
+    sha256 arm64_linux:   "139d5fdb2fd60b5c5bbbbbd611c8e4d4eae0224355f6d7cefc55f0b5ecd6d070"
+    sha256 x86_64_linux:  "0f64cac24482f7b431478b97eb1812724d85f0a2583b6213eeff3e932154283d"
   end
 
   depends_on "autoconf" => :build # for `spandsp`

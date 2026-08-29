@@ -1,8 +1,8 @@
 class TyposCli < Formula
   desc "Source code spell checker"
   homepage "https://github.com/crate-ci/typos"
-  url "https://ghfast.top/https://github.com/crate-ci/typos/archive/refs/tags/v1.49.1.tar.gz"
-  sha256 "cf03f43496e14c4925969aa5d583c02db74ea2711895d26cf0df0cdbb571ed7d"
+  url "https://ghfast.top/https://github.com/crate-ci/typos/archive/refs/tags/v1.50.0.tar.gz"
+  sha256 "00bb5b96e4c7f8a652ab26f2bec3f9babf40efd3260ed3cebac6737e5de5171c"
   license any_of: ["Apache-2.0", "MIT"]
 
   livecheck do
@@ -11,11 +11,11 @@ class TyposCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8ee87613e7f3c979036b133e0b63f5982e93b6dec722adc4608f4e55328fedee"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fab4cb3e599b6ae1fc3f1ffe2dcccc1193842427bb9850b46ccd8ec6ee57148b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1890f5b417a387d1cf33511c3ea26ffabe64f0111f2317d51ce2028db9ceb627"
-    sha256 cellar: :any,                 arm64_linux:   "73a73fbab87efe43670e2daa0a24973be295bcfa42b3c12b0eb5992edf98a429"
-    sha256 cellar: :any,                 x86_64_linux:  "4a63685ca2a4eff23174f77bd629c019af327de8a83915dd9e914cf4afa97fee"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "aac1b72aeae7eef46cc25f7bb4dc9f70392a402e312edc11ee9fa9c6774901b9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5390ef5f70e437c6cd59596884920961dec1b855d4e4f0935706c5385199aee5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e7fbe7b672c2568848a499694a10776eb6da4488da9e962f606ac0590f919a2b"
+    sha256 cellar: :any,                 arm64_linux:   "088b172a1adf9705f5d06f8c4c9b223ca6a1e92f12133f1c81814b368d525321"
+    sha256 cellar: :any,                 x86_64_linux:  "3e7ae51e631101373cbb59f7b6bdcec6984159bc1896a3c860a0186d2035be9e"
   end
 
   depends_on "rust" => :build

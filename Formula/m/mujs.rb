@@ -1,10 +1,10 @@
 class Mujs < Formula
   desc "Embeddable Javascript interpreter"
   homepage "https://www.mujs.com/"
-  url "https://mujs.com/downloads/mujs-1.3.9.tar.gz"
-  sha256 "956d5a20dd4efe5aa58673558787b9e2539255f9bf62585e90e1921fa040d89d"
+  url "https://mujs.com/downloads/mujs-1.3.10.tar.gz"
+  sha256 "6e36c15dbb84ff859320297c900852f241b131a7b6ddaea669ac9a65bd75571c"
   license "ISC"
-  compatibility_version 1
+  compatibility_version 2
   head "https://codeberg.org/ccxvii/mujs.git", branch: "master"
 
   livecheck do
@@ -13,12 +13,11 @@ class Mujs < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "2814b3eab41c69484ac739e66bfeaf6bb2f61b7df974c5866e3934844d8acc0b"
-    sha256 cellar: :any,                 arm64_sequoia: "0b8f0ef456a43755bc65a729760c2033f581db40b9843ac3247ef6aa79a2ddf5"
-    sha256 cellar: :any,                 arm64_sonoma:  "710aff8637dab71ffa1b013c9fe7108d7a14e644a252728674b82fe4d5dc62fb"
-    sha256 cellar: :any,                 sonoma:        "d3658e31032b05342d35990a7a4829922ddf5e40bfecd8c39669003bc50b154f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "62a937838c05b66d72f159d3bbd0a5f16a9b4132de069cbb07a2f75a610ce202"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6d65afabe2832997c8b0bac97b58f05a429b4404f726c089476fef68130df1da"
+    sha256 cellar: :any, arm64_tahoe:   "a74e150e1d09521e6105a443d5587ac33bf2ca3cac25390125ce6484bd4869b9"
+    sha256 cellar: :any, arm64_sequoia: "94b16a3d68483ee7257762d0ca37b30ba8c4437322047388b03840fe74dba305"
+    sha256 cellar: :any, arm64_sonoma:  "80859443a49f4fde57750b0bbfd4c143fe693ae0b4db8120f54ff320dae27baf"
+    sha256 cellar: :any, arm64_linux:   "b9acde876f72f8db40e2106fe863a8ed67dea2f789ea3707ae03f1cf0100763d"
+    sha256 cellar: :any, x86_64_linux:  "04c0e0954cc1634cfc55c73d4ee4d458a4a0a6a96ea87dfe61070dcba1f5e5f8"
   end
 
   depends_on "pkgconf" => :test

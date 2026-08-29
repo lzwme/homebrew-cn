@@ -2,10 +2,9 @@ class Rdkit < Formula
   desc "Open-source chemoinformatics library"
   homepage "https://rdkit.org/"
   # NOTE: Make sure to update RPATHs if any "@rpath-referenced libraries" show up in `brew linkage`
-  url "https://ghfast.top/https://github.com/rdkit/rdkit/archive/refs/tags/Release_2026_03_5.tar.gz"
-  sha256 "336b3ffd9b691e4bfcdf97d361c01e553de34d2ca85c64a941473e9e2f8b707e"
+  url "https://ghfast.top/https://github.com/rdkit/rdkit/archive/refs/tags/Release_2026_03_6.tar.gz"
+  sha256 "d4d20b3b140237084694518aab34fdba6929d44bd7f720bce69329516abef663"
   license "BSD-3-Clause"
-  revision 1
   head "https://github.com/rdkit/rdkit.git", branch: "master"
 
   livecheck do
@@ -17,12 +16,11 @@ class Rdkit < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "6db624a7e38978b358c930c0441e954bf068c4ca2b5a60b8b1e8294a40f7adfc"
-    sha256 cellar: :any, arm64_sequoia: "2b810c84305bec10472b21914905147b669fde9bf1835e176d7c86593b8191f1"
-    sha256 cellar: :any, arm64_sonoma:  "b222954b3fafe44f5c2263135d20b30df93e45c40c83c25713ebea9af0ec38ee"
-    sha256 cellar: :any, sonoma:        "5c4f7d1acbbfc885c56eab5fecc1a79b8ff9f3a4a51d8e44ec3e5c6e561d60f7"
-    sha256 cellar: :any, arm64_linux:   "11818f50edead9c8fca69fd6c133f654dbe61a2efe4f8c9cec90da479aa46af7"
-    sha256 cellar: :any, x86_64_linux:  "d7a6f19c660be57ea45476edfbba04c5afd1fe582898ecf9da75477e304ba3c9"
+    sha256 cellar: :any, arm64_tahoe:   "dedcf00d2c5b8b1021f3695eeb8788779886ad60dae6c14ac830f72e38ec5622"
+    sha256 cellar: :any, arm64_sequoia: "80273e89611148b15e117cfe2502494085a3eea88620e201b9c9561e06c9d176"
+    sha256 cellar: :any, arm64_sonoma:  "c9ef0680e9e1ff558ebf8b0b525aa70fc1172c392800311ab2917a4a88adf27f"
+    sha256 cellar: :any, arm64_linux:   "cb9c967c6c923c879fa93718c8c40a4b1203920f854f33f36f5f3665ffbfdf73"
+    sha256 cellar: :any, x86_64_linux:  "a5e9d3892a3c813d4f36f2faddceee1527ba5025118a98dec2a3a25de07081eb"
   end
 
   depends_on "catch2" => :build
@@ -54,14 +52,6 @@ class Rdkit < Formula
   resource "better_enums" do
     url "https://ghfast.top/https://github.com/aantron/better-enums/archive/refs/tags/0.11.3.tar.gz"
     sha256 "1b1597f0aa5452b971a94ab13d8de3b59cce17d9c43c8081aa62f42b3376df96"
-  end
-
-  # Support building with Boost 1.92.0
-  patch do
-    url "https://github.com/rdkit/rdkit/commit/831c34510763a073cc849911f84dc3f069f42010.patch?full_index=1"
-    sha256 "dde4a5a39547c5c23f05add61d63ec6d264e7dd4aa72b13daeb7034ba670c9fa"
-    type :unofficial
-    resolves "https://github.com/rdkit/rdkit/pull/9494"
   end
 
   def python3

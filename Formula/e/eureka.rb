@@ -1,19 +1,17 @@
 class Eureka < Formula
   desc "CLI tool to input and store your ideas without leaving the terminal"
   homepage "https://github.com/simeg/eureka"
-  url "https://ghfast.top/https://github.com/simeg/eureka/archive/refs/tags/v2.0.0.tar.gz"
-  sha256 "e874549e1447ee849543828f49c4c1657f7e6cfe787deea13d44241666d4aaa0"
+  url "https://ghfast.top/https://github.com/simeg/eureka/archive/refs/tags/v2.1.0.tar.gz"
+  sha256 "b9eb7d49b51341976d72280a7edb8857358ef8ec3715cf4f26da12420622c85b"
   license "MIT"
   head "https://github.com/simeg/eureka.git", branch: "master"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_tahoe:   "a6de6aac51a1f6070476d08477d227d50b78ffd6b4c6a0d5e2d49b4676ca8db8"
-    sha256 cellar: :any,                 arm64_sequoia: "cccdf775ed4f873ba36ce03a0f044c8332e72820aa2eac3415c863bff9f3bc3a"
-    sha256 cellar: :any,                 arm64_sonoma:  "23e91b5afc7970d9df55240b2253fccda506da2c433b35ced751b1d7af89743f"
-    sha256 cellar: :any,                 sonoma:        "3a266fce693e780d3544d243a2a3216f9af32954c983555bc92dfbb6ceb02876"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "40bc0dc3cca65bc7d4edfb6f40dfa33e5cdc742d462e63998b814e26d7959e21"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dbb5f7b3f67f69af0ee2a55e048b067d644a980fa8bac2915f413c96b2cb6d64"
+    sha256 cellar: :any, arm64_tahoe:   "826717f726c803fdef26a873db26395cb81014df82d595a8b49bc0927f456977"
+    sha256 cellar: :any, arm64_sequoia: "a23b5260da8f083b577d1f0f846abdd1819b7c3f4bf8a70ccad31c5de4abd359"
+    sha256 cellar: :any, arm64_sonoma:  "5b40ddf0db4ce3dce13efebcc2c70dd27548cd07c60f541276dd23e722f8516e"
+    sha256 cellar: :any, arm64_linux:   "6866da3bef018897c452a74157ea0274384bffbabf297a23b8b9fd49d7e0245b"
+    sha256 cellar: :any, x86_64_linux:  "3285a50b65d13c2fdeea4394192374ea2cafa4c0847346b6141fda31e08a4c1d"
   end
 
   depends_on "pkgconf" => :build

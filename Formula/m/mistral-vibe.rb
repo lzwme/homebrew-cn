@@ -3,18 +3,17 @@ class MistralVibe < Formula
 
   desc "Minimal CLI coding agent"
   homepage "https://github.com/mistralai/mistral-vibe"
-  url "https://files.pythonhosted.org/packages/ba/31/daac21ad11c619cc7e02bf5f2ce09dedabde45e52307c412076ee27617dd/mistral_vibe-2.24.3.tar.gz"
-  sha256 "a7b954f2a86d71b96b0bca4afc89f6c7df45ae093349b567ba49af0c44725be7"
+  url "https://files.pythonhosted.org/packages/a9/53/30c20ad3726fbb7876d8aaf92a86cd0ebaa5eb84a0e3e2f1a899057ff4c2/mistral_vibe-2.24.5.tar.gz"
+  sha256 "2f5e315e6d50a0647200d9e9aa99c55342f9a3e4d12f02c0d277ce8bba4e153e"
   license "Apache-2.0"
   head "https://github.com/mistralai/mistral-vibe.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "e9151cfe2991e82d2dacda65c4f4396b60f403ca69f2be2bda08384ba231940f"
-    sha256 cellar: :any, arm64_sequoia: "3bda973e7ee396576d37b2ac7ff5842dde9740ee0273a0198eb2eb1a1e916d58"
-    sha256 cellar: :any, arm64_sonoma:  "648a9535cf1d0100c630ba7cc079f120f6ccfc5b271757a0ac10c985023f378a"
-    sha256 cellar: :any, sonoma:        "a7053367e41bc46637cd9250c74fecd5018afc44b15b990d02ac70c8b58e34a8"
-    sha256 cellar: :any, arm64_linux:   "45513f5e18d65dfb254ea76f027f2e2724020b1b56d87138a7baa58a2af719fa"
-    sha256 cellar: :any, x86_64_linux:  "6f24502f96fe90152db7007a5a7cc88b616744ccaf7d62cc06acc3342ebc4823"
+    sha256 cellar: :any, arm64_tahoe:   "d2bb4f13e9fc21a42e7d90f64d80a028112ca85582046dc7cd455592d1adbb1c"
+    sha256 cellar: :any, arm64_sequoia: "df86739459055a0237d965391d84e01fc7041f1e6e03b7776c1a662cb0fbcbb4"
+    sha256 cellar: :any, arm64_sonoma:  "9f770861b7a12599cd91ca9697f79fea522c66aad61f08b89ee978689a757a01"
+    sha256 cellar: :any, arm64_linux:   "c0c77a4a99728da86cd482db9db4a1a99c5b298a04ec8d9d8f1ef6c68cc76888"
+    sha256 cellar: :any, x86_64_linux:  "81808eaa31fadb94879589c0e67f8c8918a68a4736edd310492228254bad2936"
   end
 
   depends_on "rust" => :build
@@ -330,6 +329,11 @@ class MistralVibe < Formula
   resource "requests" do
     url "https://files.pythonhosted.org/packages/ac/c3/e2a2b89f2d3e2179abd6d00ebd70bff6273f37fb3e0cc209f48b39d00cbf/requests-2.34.2.tar.gz"
     sha256 "f288924cae4e29463698d6d60bc6a4da69c89185ad1e0bcc4104f584e960b9ed"
+  end
+
+  resource "rfc8785" do
+    url "https://files.pythonhosted.org/packages/ef/2f/fa1d2e740c490191b572d33dbca5daa180cb423c24396b856f5886371d8b/rfc8785-0.1.4.tar.gz"
+    sha256 "e545841329fe0eee4f6a3b44e7034343100c12b4ec566dc06ca9735681deb4da"
   end
 
   resource "rich" do

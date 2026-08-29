@@ -1,18 +1,17 @@
 class Libjaylink < Formula
   desc "Provide interoperability with JLINK hardware"
   homepage "https://gitlab.zapb.de/libjaylink/libjaylink"
-  url "https://gitlab.zapb.de/libjaylink/libjaylink/-/archive/0.4.0/libjaylink-0.4.0.tar.bz2"
-  sha256 "492da550fe1093a9b2d958304deb386380abea13ef7ce694b2ef68bfdaec664d"
+  url "https://gitlab.zapb.de/libjaylink/libjaylink/-/archive/0.5.0/libjaylink-0.5.0.tar.bz2"
+  sha256 "6c03a9c4d9d781c41ca0f5203e46bebe47ecd5857c6a7d75cbc52accc7be73f8"
   license "GPL-2.0-or-later"
   head "https://gitlab.zapb.de/libjaylink/libjaylink.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "1b0d3f43054260068d75fe91f319341cd5889acc74f32a8e3b8f02e416023079"
-    sha256 cellar: :any, arm64_sequoia: "f5507c214aab5d0b41d0a38853b8de5391e2ffd8099519f05736e1e4292f9131"
-    sha256 cellar: :any, arm64_sonoma:  "7d11abee33f0afb168307e5d9870d5190ea7fe02aaf6a0013a44b2c77bacb447"
-    sha256 cellar: :any, sonoma:        "a4f3ab5d3da9182cfd98eb9bcb3993a529bba5bab9608e44fe17d0efee0d6c45"
-    sha256               arm64_linux:   "96f0b0dace9137e125de316598366cc47c10705c641a8bb1f0e0b0b94760a9ad"
-    sha256               x86_64_linux:  "a4811f0e7c8cf0d76c8e3e9b871af22bb272bebe6170c280db26de657832df9a"
+    sha256 cellar: :any, arm64_tahoe:   "8e3586f298a475f8d9991d9224d5c1182cc3fd93632f309d6350c1da189dfe22"
+    sha256 cellar: :any, arm64_sequoia: "06d29040f6a0484cda1d317d23a1f89507dc665060d41f6363a894c3601ae0e9"
+    sha256 cellar: :any, arm64_sonoma:  "91697f046621a9133a0157bec85e027b2c950ed42f488821049b086a5332f697"
+    sha256 cellar: :any, arm64_linux:   "7502574577d33de923e5295b8910537f06a09c98abadfaf2000eda61cdffda2b"
+    sha256 cellar: :any, x86_64_linux:  "c90a0fb93a281015e512488d7f88bb77bf31a85df8226e76a583ef2490a2f9d7"
   end
 
   depends_on "meson" => :build

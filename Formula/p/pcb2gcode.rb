@@ -28,13 +28,16 @@ class Pcb2gcode < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "a61d6217c2ce4a4f285e6a293e9360a37cc5d599176fb8cbf4d73320d92b10a6"
-    sha256 cellar: :any, arm64_sequoia: "d2cd1b79a3ef53f44dcc6925326322a1d832e856a912952d0d32bd978d239b56"
-    sha256 cellar: :any, arm64_sonoma:  "e327672859159b513ec7bd2f252ab634ff1c2c21a56c69c640d17307eb5c2744"
-    sha256 cellar: :any, sonoma:        "bb07d4a6fa70965965d3a0c7033df9873df5c602e1e0e41483fc7241c109a3ed"
-    sha256 cellar: :any, arm64_linux:   "5036973bc301e7f18d2a938188a1af76553efe3f15a37e7ff18c8837c4525213"
-    sha256 cellar: :any, x86_64_linux:  "616bea02b2e11a5266a152db3d104de5c714be791bb081769c63050e768e7004"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "cbe95f92cdb176d5c686ce4cc1bb1daffc7c787c868d34f868c17cc4b854ac4e"
+    sha256 cellar: :any, arm64_sequoia: "2d32f276420a6405a587a6c5ae851011c441f99ff5e73252bcec33940c9b561f"
+    sha256 cellar: :any, arm64_sonoma:  "e9bbb4b5dda395d3f121db13f2d07e16e9c451820031c8f3b2f69ee39d055c07"
+    sha256 cellar: :any, arm64_linux:   "79db6cfd400cffa86c6e3a5edd88e88bab36f4fdcc4369602b7f0a574ac379b4"
+    sha256 cellar: :any, x86_64_linux:  "2320761478615db219ce64902e39e738397dd7f829214dbe910e35c4d4cf1487"
   end
+
+  deprecate! date: "2026-08-28", because: "uses deprecated `gerbv` which needs EOL `gtk+`"
+  disable! date: "2027-08-28", because: "uses deprecated `gerbv` which needs EOL `gtk+`"
 
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build

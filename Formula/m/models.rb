@@ -1,18 +1,17 @@
 class Models < Formula
   desc "Fast TUI and CLI for browsing AI models, benchmarks, and coding agents"
   homepage "https://reyamira.github.io/models/"
-  url "https://ghfast.top/https://github.com/reyamira/models/archive/refs/tags/v0.14.0.tar.gz"
-  sha256 "668c931304d80d95aac4a2bcf3f85b6aa3e1e1a457901c943a16f6d7df6230cb"
+  url "https://ghfast.top/https://github.com/reyamira/models/archive/refs/tags/v0.14.1.tar.gz"
+  sha256 "74361e3fde193772cd0db2ce4c9394487e437c4d7e416ebfafb0af661291d58a"
   license "MIT"
   head "https://github.com/reyamira/models.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2ee53e5a1374c1762ec864bf8f1772e688cfc6a6488539c113eabdf46548bc06"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c115a0e92c715e55732c8b6dde0d1e573f19441f7af77c32a8e6bab719d59a84"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dd24f45ae54d697509f05f4d8864461aba6153c0a3fba8f3d13a0d9b9656b230"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d7b1b9a8027756f4a7da9c5ee02ee87bc1eed52e1902125e069ed0f3234153e3"
-    sha256 cellar: :any,                 arm64_linux:   "c445ac8d4fe8efc4e7cc081a021d330dc1e6ebcc7bb20ba840a45b9835173fd5"
-    sha256 cellar: :any,                 x86_64_linux:  "29cd5630d61efe290e089c8964f1424b8c5d1fa0d4369e2e5880cf15671d4d7a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "65438fd19e6cbcd13fbd7af709ace4794461cf5bda2ad70a7f9ea7f0e61bf658"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f7846c19f643d0e308239ed80491b0e23595994e47c6de25d9aceaa4c6f92311"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c552925b33399f6942f7d5c5048fd898da17a68e998e91719aa2606016486258"
+    sha256 cellar: :any,                 arm64_linux:   "6ab903439cd3f2cd30bad7c882eee87fc7b7d01c7f4f741a9ceab2a2d3b5c90c"
+    sha256 cellar: :any,                 x86_64_linux:  "0a21bebea6960918efbad8f8538e8811520a9f50bca68a41c2f1abcfc11062ff"
   end
 
   depends_on "rust" => :build

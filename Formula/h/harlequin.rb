@@ -3,19 +3,19 @@ class Harlequin < Formula
 
   desc "Easy, fast, and beautiful database client for the terminal"
   homepage "https://harlequin.sh"
-  url "https://files.pythonhosted.org/packages/e2/0b/3ef8981c42d1895941070654f4114183e59ac5093ee9a019d790b6eab9a4/harlequin-2.10.0.tar.gz"
-  sha256 "3a4e61a036367b756d68de494f4563e0086112ecb5194e6d64da769b6e468f96"
+  url "https://files.pythonhosted.org/packages/6c/f3/a5f4bbf03aad4c97442b3cc66db53b70b4c3d74126321f867a1028ca656b/harlequin-2.11.0.tar.gz"
+  sha256 "9d7d547d673a96fa2d4320934fdd16640999b421c2e72e0287b6c5d843a469c3"
   license "MIT"
   head "https://github.com/tconbeer/harlequin.git", branch: "main"
 
   no_autobump! because: "has non-PyPI resources"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "f66557d0b64ac0fde2eb803ee6cf6999ee44a42eabd7d8dc367d1e5138b5eec6"
-    sha256 cellar: :any, arm64_sequoia: "8520db2543cb879ec44f0cf2b34bff629f9f872408053167852956a895eacc81"
-    sha256 cellar: :any, arm64_sonoma:  "206d73ebcc90cc694ad8244e8214611720f40fe00dbe256dba06a28dd9100549"
-    sha256 cellar: :any, arm64_linux:   "d4d243de64be17cdb99b58b340b8b7c9b08f13e12f013bbd231395e705780904"
-    sha256 cellar: :any, x86_64_linux:  "f773bc1832df163c4b207a8c9007dde8eb243ad1a9f3d72b53f111074cb82e09"
+    sha256 cellar: :any, arm64_tahoe:   "99391d0d99a6f8144ff8838f31d178078204bc4d26826e35b6ac0b44315ff1b8"
+    sha256 cellar: :any, arm64_sequoia: "32897628e3c2d18bbfbdf6617dd0db79c14cb46f8566646d156f439d14ca6d45"
+    sha256 cellar: :any, arm64_sonoma:  "3949d3b079bcc9c5e5e9ec134f63fc2cc04f0b32fdf764b209ae55ffc002e3bd"
+    sha256 cellar: :any, arm64_linux:   "baa5edfabfd724366b496c59ee1e7d84c3f40fd8196aef78d43feb028e2e56c1"
+    sha256 cellar: :any, x86_64_linux:  "2f5927834a7aba39b2ac2e31ed467de12eea50b35bdac25fa17ebdc23a3f81d6"
   end
 
   depends_on "cmake" => :build
@@ -102,8 +102,8 @@ class Harlequin < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/50/bb/ebc6636e1ae41314f796ebb7215fd28febb45f9aac72f2b04cb74b5071dc/platformdirs-4.11.4.tar.gz"
-    sha256 "f3373be828247211d0febabea97e238c3dfde8a60b3c90c32756fb52cb21556d"
+    url "https://files.pythonhosted.org/packages/ea/06/cf1564dcc2e2261c8c8c6c05628dc8b418943bdae2a4e58640ceb2f770fa/platformdirs-4.11.5.tar.gz"
+    sha256 "e8b31f4f8bcbbedef91a6b57a706255e4f148d2a4e01648382a0a47342539173"
   end
 
   resource "prompt-toolkit" do

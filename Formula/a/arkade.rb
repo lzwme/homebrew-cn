@@ -1,8 +1,8 @@
 class Arkade < Formula
   desc "Open Source Kubernetes Marketplace"
   homepage "https://blog.alexellis.io/kubernetes-marketplace-two-year-update/"
-  url "https://ghfast.top/https://github.com/alexellis/arkade/archive/refs/tags/0.11.124.tar.gz"
-  sha256 "b9ea6634c53ff918093840386fd9bd43a8ae9b03228d06d55b0b24fad6188bd4"
+  url "https://ghfast.top/https://github.com/alexellis/arkade/archive/refs/tags/0.11.125.tar.gz"
+  sha256 "1c089d23271fc8e87891be42416a99c8a940d17f3bdcf55514e24444ad6393bb"
   license "MIT"
   head "https://github.com/alexellis/arkade.git", branch: "master"
 
@@ -12,12 +12,11 @@ class Arkade < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "debaad7785edce141e1e4b7a79a56b6332d3456b0f0eecc03e0da60a33dcae12"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "debaad7785edce141e1e4b7a79a56b6332d3456b0f0eecc03e0da60a33dcae12"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "debaad7785edce141e1e4b7a79a56b6332d3456b0f0eecc03e0da60a33dcae12"
-    sha256 cellar: :any_skip_relocation, sonoma:        "095d12d8b97e7e90cc42d9f007f7301c50c6dcc8262d2069b86fc97eebe98c4a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "034ce7cb826de07587ff988a51a16a793100bd45cd2a73d39cbc318a141cbcb0"
-    sha256 cellar: :any,                 x86_64_linux:  "f8fef2e6708af79e0aedde50446eeeecf4a817033e341a17fba92d96e4250b48"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "94a4f33d5cbe0f85f80d5966dee5603b90dbfe853a1ab53464376cedd3b615d6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "94a4f33d5cbe0f85f80d5966dee5603b90dbfe853a1ab53464376cedd3b615d6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "94a4f33d5cbe0f85f80d5966dee5603b90dbfe853a1ab53464376cedd3b615d6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1a61a7335c1f60341c07fb76d9eaf37f793009b11d688a3402d71750926c14c4"
+    sha256 cellar: :any,                 x86_64_linux:  "67fbaf685dada01bd457252a94e9ca9f2321415837a4711bf6569853734d1ec9"
   end
 
   depends_on "go" => :build

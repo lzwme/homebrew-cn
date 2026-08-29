@@ -43,6 +43,11 @@ class Gwyddion < Formula
     end
   end
 
+  # Can be undeprecated if gwyddion 4.x is released. Can also consider shipping
+  # the unstable 3.x series if sufficiently usable around disable time.
+  deprecate! date: "2026-08-28", because: "needs EOL `gtk+`"
+  disable! date: "2027-08-28", because: "needs EOL `gtk+`"
+
   depends_on "pkgconf" => [:build, :test]
   depends_on "cairo"
   depends_on "fftw"

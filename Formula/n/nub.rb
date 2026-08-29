@@ -5,6 +5,11 @@ class Nub < Formula
   sha256 "8bc59656c1469103e8a5100558a41d84c357cecd258c312e6f1eb2b4bcb44539"
   license "MIT"
 
+  livecheck do
+    url :stable
+    regex(/^v?(\d+\.\d+\.\d+)$/i)
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c7475584f265a438b177dba718af03c56ad5dd7ff246fb82f1c75f3b2da58be1"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "bb4ac2279d4e6c01c792e6572171448af2a3ffab563d55f9d642c08aa72b34cc"
