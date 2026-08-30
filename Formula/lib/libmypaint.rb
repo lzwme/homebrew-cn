@@ -17,7 +17,6 @@ class Libmypaint < Formula
     sha256 cellar: :any,                 ventura:        "4a895f28ea58e5415711bf7f3a415f639a958354992acd5a1ffd7719417fd5e9"
     sha256 cellar: :any,                 monterey:       "30623690f18dafe72d96daad871d4f7018ab3e89970ebdeda2fbf2d56c781c68"
     sha256 cellar: :any,                 big_sur:        "65d3c8c494c5e3a454526e4254c4f4c1a1883ca1e99c2dcb09c2abdff141d72a"
-    sha256 cellar: :any,                 catalina:       "699014970a67055822e7ee2abc92c4ea2b45e51bcd58cfa01cb24c2ed08f6a2b"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "3682eee52437a073b7ae1400df5ae48e4779815035f785118eb22ea571873c1e"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "6114302a8ff4e54cd64388fb0968dbb1fa4ab546bb9d2bbca786da787ec3bf62"
   end

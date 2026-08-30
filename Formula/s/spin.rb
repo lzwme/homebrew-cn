@@ -16,7 +16,6 @@ class Spin < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "6c6c7714cfa19cf39458ddccdd8323e7a08a21b99d59a02cb27d85f08a30f1dd"
     sha256 cellar: :any_skip_relocation, monterey:       "0d4b7b1254d58ccfb87f57dcedb3d86504c488bf7ca6ce8b44fd9d00523ec13c"
     sha256 cellar: :any_skip_relocation, big_sur:        "d49e61e18c0c65108a64d3e0c91addbd011b3fff90434509958ebfe33b14c6cd"
-    sha256 cellar: :any_skip_relocation, catalina:       "6432ab186b64f64851fa0f60dae53c13b6c9bfbc6195c41abc08f1ddfd824bf6"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "96bd5d61619965fa00551f10e67d3ffc694bce73b34256a20f734b72abaa1442"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "e6bc2cf070b8095de0b23f7ac8cd201c30c5e089c7635570b71ea7b9235753e1"
   end

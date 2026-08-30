@@ -17,7 +17,6 @@ class Pinfo < Formula
     sha256 ventura:        "d58cfe18f25ef00cf2ccf976de9be9d7ce169f67370710aa596d82c0b1722396"
     sha256 monterey:       "46b86e8f4ff8565977416468316300d749bc65850d5c6fb6afc4b5d8cbcf9162"
     sha256 big_sur:        "9d4ae5da430d85f09f2ef7a2b5292976c3db781f80fd1b249e9d0caa05f74c4e"
-    sha256 catalina:       "a41b568910292b2119d0f63f53d5015d781b03576a58f08d397535560d407bf5"
     sha256 arm64_linux:    "0fc3fd25aa157f655c7c9e98252b638f7233bb98de481e07808270df7f390a8f"
     sha256 x86_64_linux:   "9823885d8c5febf0b8415e6ac455fec62834b65b75333eec2a314dfeaf2bfd61"
   end

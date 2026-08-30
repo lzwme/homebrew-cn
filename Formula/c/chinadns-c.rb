@@ -16,7 +16,6 @@ class ChinadnsC < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "25c8e721baf2e9622339fd932f96af2e331aceafe6188f196536455cf4e77f20"
     sha256 cellar: :any_skip_relocation, monterey:       "3269038188274afa37cfbc4155f9aac9d63c5e47ac0e1cae9b10eb3e6eab63b5"
     sha256 cellar: :any_skip_relocation, big_sur:        "d15cde6788156aa67dffd280752d52f5aac1ef1e8f56c8e5864ce05b9c81647a"
-    sha256 cellar: :any_skip_relocation, catalina:       "0c4820f0e5a12421b0e64c3cb993608560817a446b8747e7119838cb271b9044"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "8b321cf1fe2ef28e58d94d640c4e5fe6fd31b0974efec84541ccf7c431b9a48a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "e7158e876b817917183a78e96e891dcd9ff9cefe333d1b139c73f9209fd585b0"
   end

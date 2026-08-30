@@ -17,7 +17,6 @@ class Woff2 < Formula
     sha256 cellar: :any,                 ventura:        "3583be57fecbc4f9c17c9bee38c9c484637bcb7b4868ff948811cdbe679a53c7"
     sha256 cellar: :any,                 monterey:       "04a13902818b9dfb1e5c82a8f5b50fae9681c058b6786a2bc86328543ed9c397"
     sha256 cellar: :any,                 big_sur:        "1f49de0effd6a13416745b3b9329aa42cefb0801eaa4740931b9c6669d18e1c9"
-    sha256 cellar: :any,                 catalina:       "7df9b4ada2d8a72546c5395fc92a7c5071f68be2fa12d336a194cee44adad5a5"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "7da30c0a9c4dfa9f52943749d7ec8bb8f25af1734a162015c009c422463fbb37"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "cc6bb16039075d8610786f74387551da3a4852d0d6227ebefe1c5ef9add29d43"
   end

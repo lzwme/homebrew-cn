@@ -17,7 +17,6 @@ class Yh < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "26c0d39a156eb0dfe843e5fe5a70ff7d6e83caa2198fcb6b9f9c859829504ed3"
     sha256 cellar: :any_skip_relocation, monterey:       "ea039f653c085836860511f1f626f9d9be4848b455b7019f8a52556721cfbfe0"
     sha256 cellar: :any_skip_relocation, big_sur:        "e8165967a843d90d96ed71a41b303b7b434cf855e1e456d428c694aeceeee737"
-    sha256 cellar: :any_skip_relocation, catalina:       "1a2425d399a63df18758dfabf9d50da2559fb489c32bfb4462d7437f64fc0817"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "a31f46802b6d13d9e654ceef943f861c8c06d44a5c92385df91f942f0e610d43"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "7d24c1a925e08cc62ccb741d0587e59fb79c76a34b4b5b23599c51fa58ad6dd2"
   end

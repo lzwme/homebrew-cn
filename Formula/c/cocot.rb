@@ -17,7 +17,6 @@ class Cocot < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "8c309ff7d2661f534506c63909107b699d469d782d659e86f765b9e2a28bd319"
     sha256 cellar: :any_skip_relocation, monterey:       "d01d5f49b3bc174be130e15d2fbe1a2515064c5eef1a6e402ab9d2957c181874"
     sha256 cellar: :any_skip_relocation, big_sur:        "2b1f6c60de8b11f5c3a3c454f30f551d2faf251185cfefacba11adbf61c12aaa"
-    sha256 cellar: :any_skip_relocation, catalina:       "c56c078fce103138a45bd1c715dc3854b9eddf207575fada0e736b866d4f46bb"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "9a9115e39b97cc0ff0b0097a76904c4e2947ea30efc4904fd9a214efa9b59c7a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "b2cd1dd3dbbe2f6474e43965f09859c3d9921a6b7e21507c2a2c70fe69335c01"
   end

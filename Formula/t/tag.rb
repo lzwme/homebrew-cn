@@ -18,7 +18,6 @@ class Tag < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "b8b8096c01415421b0b68db1e01003d7ce635db093f5f00120dd133055f782d3"
     sha256 cellar: :any_skip_relocation, monterey:       "4b70ddf8fa1ead9e8bffdd2d12194301be5c2be66ea3a355b62eee2836d5c0bc"
     sha256 cellar: :any_skip_relocation, big_sur:        "a63e067af22cda164f890108f610bfecd4bc3b2759fd1dd473dac59d1654a156"
-    sha256 cellar: :any_skip_relocation, catalina:       "e1572ae47d558d60983f7c1cbe9ae42a5c7f2dcb950762ab6c721e81351f5657"
   end
 
   depends_on :macos

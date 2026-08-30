@@ -22,7 +22,6 @@ class Writerperfect < Formula
     sha256 cellar: :any,                 ventura:        "1411634e211f31dd5ea7d9b6dee254337eb61a68a540104310d7f5ccc1f01ee3"
     sha256 cellar: :any,                 monterey:       "bcebaf60ba257cf542554dae36548c5fb0d7b8f1ef7a7c85b55637c1e8bc28aa"
     sha256 cellar: :any,                 big_sur:        "434788af114e54153fe89b17ff3c0ddfd879ffd0e59ac822821ede791a33d145"
-    sha256 cellar: :any,                 catalina:       "d9a391e73e78b29ced39f355c8d52fbba4198af66c578b9d41257422a969cd17"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "1880e89aea024d9aeb907f7aca699b2e6f4f6913ad2aa7c5cd8757e06cb80ec4"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "8ba99fa8423726871a3437205306e9cec03cc3715ed8630f1e29acd7ae74be14"
   end

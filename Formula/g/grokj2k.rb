@@ -63,11 +63,6 @@ class Grokj2k < Formula
       -DSPDLOG_FMT_EXTERNAL=ON
     ]
 
-    if OS.mac? && MacOS.version <= :catalina
-      # Workaround Perl 5.18 issues with C++11: pad.h:323:17: error: invalid suffix on literal
-      ENV.append "CXXFLAGS", "-Wno-reserved-user-defined-literal"
-    end
-
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"

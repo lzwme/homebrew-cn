@@ -22,7 +22,6 @@ class OsspUuid < Formula
     sha256 cellar: :any,                 ventura:        "be5ba7669ab915635b5d56d6bccfbaf39f6706acb66329e1ad194177eae2cb5b"
     sha256 cellar: :any,                 monterey:       "46c913bd5d404f0ea9dc7467a072ddf3d29f64dff75bfa4527476a5ed67ffd87"
     sha256 cellar: :any,                 big_sur:        "610cf9d70494965c79a4f1fc39a7b9e2854efa0e69fdd152cf54485e2d6b7958"
-    sha256 cellar: :any,                 catalina:       "fd727fb38c48eda8d6bcb36be17e281b2152a54144298d39cab50ec7743e8a95"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "d085b0474a2dce5f3e7c587c3fdce4c41a1ae312c5f75657494f69dab899bd8f"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "ec70863fae3001fc9281f76cef9ac231bd6dbb957c6382457a5848312ee1f1b0"
   end

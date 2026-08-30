@@ -19,7 +19,6 @@ class Libao < Formula
     sha256 ventura:        "9eda661b1d28f5da8c205660cf2c2b9a4ad71d086c39b186cb12d18ff81f9551"
     sha256 monterey:       "14bc27effce651df160ad5efbb377773479c6ea28b65f585760aa5316c3dc6ad"
     sha256 big_sur:        "f27a782e33661e2aa75cbfcbe775a2da08f7f781c6e7608e8f1e3a4a354c4cde"
-    sha256 catalina:       "b6ccd4915aa272b58f267995ce3c87ad42388926535fedea0243c9b0b9941089"
     sha256 arm64_linux:    "4afd643a9b5267277711e6d28a42d52f0bf7968d3973d3e325b4681a0b966929"
     sha256 x86_64_linux:   "bdb709d63e9de2e2dc947887fdc3a383b626d24c200cf80ce58eeaffa5ff7eb2"
   end

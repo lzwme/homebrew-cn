@@ -17,7 +17,6 @@ class Yacas < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "545dfeabd4103387c097ac475250b0dc63d03eaf5f552a5f846e621dc2b166d1"
     sha256 cellar: :any_skip_relocation, monterey:       "bb3448a3fa65b7a2f59240f7d434354e1a4c353ac37721e3c9490e6ce9067b7e"
     sha256 cellar: :any_skip_relocation, big_sur:        "3a0cccf6e345290321cf12858a60f9fd3ccbc3e7f05ad30f544d61b2946566b5"
-    sha256 cellar: :any_skip_relocation, catalina:       "304721aa2947579ecf84d13afca543a252a6ee6ec5d3efe1490d598988116497"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "2f451d69b6a8e395921daba81adfa55b8bb7230c4a4ea1b6e524b9ba1fadcc14"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "a754ab2fbf89ee984bdca70f8cdfec48f2323a8d4acba7813d7b7aa621df99d9"
   end

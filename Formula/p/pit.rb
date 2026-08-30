@@ -45,7 +45,6 @@ class Pit < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "43d88cf92d08f7169764740b0dcf55d529ad3e88e5297d8eede1b9cbcbca2849"
     sha256 cellar: :any_skip_relocation, monterey:       "cea94d460905b3f03d850b3e15a99d9a2e1d18558be52a8740dfbae36d7b27e4"
     sha256 cellar: :any_skip_relocation, big_sur:        "853489d4ee4f37e97f89415f5a3d1e0c225cb2dace8f61680293bb61ad57dd52"
-    sha256 cellar: :any_skip_relocation, catalina:       "3ff5098a860de65a101fafe58d9ef76ac4c392f0b127720ecb34f0141554c27d"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "cb9c8ae7f2445d94adf1d721988c9c03e4501ce200d9b82ddb6e278befe533d4"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "d9d22e313984a6d20930041fd3cbb5896826e0be8a687992866ceef0e79152c7"
   end

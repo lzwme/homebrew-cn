@@ -26,7 +26,6 @@ class Dnstracer < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "1e163d7856ec1f1d8a420f080ad6d1593c8c0977c1f3d1c22b9c19728abe4094"
     sha256 cellar: :any_skip_relocation, monterey:       "3d7210cdf69f4ebae90e2a1b65729dce288b4dab03a921d64d521ac9e137dfd1"
     sha256 cellar: :any_skip_relocation, big_sur:        "c6e0d89127fbc47d2b30cd7d2918279f858a79d87b2e32e63cccfcc4f92f3495"
-    sha256 cellar: :any_skip_relocation, catalina:       "953752b2c3a012b0e92cd6fc78ef47d7b585e9a3034ef667a9ce3d353c4bb1db"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "396697504e1ed5de305ae93a03540549bde4be87839036df19439584a39dcdfc"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "f5a8f70b7d7d09e10e995f908c4b581a9d3f2ea201719e768e7e65c022f8eb7d"
   end

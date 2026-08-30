@@ -22,7 +22,6 @@ class Cheops < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "1d04d8df7dddb24564f4ce0698f8a59ce7cd9aafcf600e27281ef65b307b42cf"
     sha256 cellar: :any_skip_relocation, monterey:       "56ebbbfb9dd3b62443b41aedea7561887f7b5bdd2414ea1a06ee9e344778d514"
     sha256 cellar: :any_skip_relocation, big_sur:        "ab84f53943ac8bae4739c5a14913ff9ecf3fec74271d20f056189d215c46e481"
-    sha256 cellar: :any_skip_relocation, catalina:       "df2ae1cf5f9b1b9ec0dc161da4d20fe4b24a5155c87e2c2466cbc26db9fce951"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "f7c9ea482150858e6ca729be10c9d215d50cea55d411b237c3ebf45cf355c7f1"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "94c3e683dcb5922d7060a9a8253825d79d5a699492770e3e59caca9674c9e09a"
   end

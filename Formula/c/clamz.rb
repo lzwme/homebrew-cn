@@ -17,7 +17,6 @@ class Clamz < Formula
     sha256 cellar: :any,                 ventura:        "b86ee0daaee591232ce488b2a0a6e5d13266b59d715bba72e9e1158b2c6376fc"
     sha256 cellar: :any,                 monterey:       "60b4d942e6b8fb59c134cd5776893216f6f5c9d44ac39023c81e1ed43f761e75"
     sha256 cellar: :any,                 big_sur:        "d7f6f8dc57d5498a54cd78356bc3097aa713a9000e876a6d3aaa12a10540d9d4"
-    sha256 cellar: :any,                 catalina:       "6dc5a22ec8b190b91bc3e825a23063f6096f447ed24cabf6d5bcb19da8ef58f3"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "57bbb9e4a40a6fba879e65f49b79177fe87c2c6a0592b4b06abc4a937535071c"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "bedccbcf92f7884cf99615ea347345f035a6693e953b6ebf90e51695e4351c95"
   end

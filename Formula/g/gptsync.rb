@@ -16,7 +16,6 @@ class Gptsync < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "c711d1ffe374d2c6e67b5d36ea3f83e25102c2c1eadde19187fe571307b3048d"
     sha256 cellar: :any_skip_relocation, monterey:       "2edbbc4007c73171bd87e60f073b42b525b70611f42c2b9e61fb7a665414eb8a"
     sha256 cellar: :any_skip_relocation, big_sur:        "7b7bf7603d6040dbb5b1982641e3a8f7bf70a7c96c5a8c476b57a344609b9705"
-    sha256 cellar: :any_skip_relocation, catalina:       "e6761d20c0090477f2914576cbb97654774a5de9cae4b3846187120961450ed0"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "7ba72e662e2aa7db8b0a35fe335c685095cc48a1b04a8270fcde4cd8348d2e29"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "6cf8612d628a08c143b24697ee37265edea17cfcfaa2bed8fa60be6a2e21356d"
   end

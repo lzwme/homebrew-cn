@@ -17,7 +17,6 @@ class Tpl < Formula
     sha256 cellar: :any,                 ventura:        "b67d07d542d44a4fd9f2bb91e6f080796a264229eaffee4b19fad72295576db5"
     sha256 cellar: :any,                 monterey:       "0b544b3ee645924b61bd2a7f2b2d237e02796e26fd57be3688a900b050c7fb33"
     sha256 cellar: :any,                 big_sur:        "cdfa3d793f5b6086e7f50abdce45fd21bb869444dc202e285f8c486f18e9f1f8"
-    sha256 cellar: :any,                 catalina:       "25b8a5fa1deda50c6dd07d69e96dd41e647b78b0f57f2696e5ddd056e509c71b"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "649efbc4c4e6c8e57d4f7207bc2ede36facb438e7fd272162722f9707db999bf"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "49c4f470d6782300dd24da0af8a3886cc977a9c24a0de37c606181b3db09e44d"
   end

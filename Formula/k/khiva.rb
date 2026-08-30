@@ -14,7 +14,6 @@ class Khiva < Formula
     sha256 cellar: :any,                 ventura:        "c3eefd4690eadad3ec6286d3ae1a95d354ed008612ffabbbbfcd82a1970794c4"
     sha256 cellar: :any,                 monterey:       "3c3fc743e58f62b1355ac3e942e1141cbf09b56de5e3516f522432c2de841491"
     sha256 cellar: :any,                 big_sur:        "9341225ecc460b464de3760bd654165199b598e6393bd2b92ffd24a6cdc0f7b6"
-    sha256 cellar: :any,                 catalina:       "798a2bd7f9071245ce4c0b7c6058ade9f815e071e549ef07145cffbe59d2dc40"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "1a6a2fad78cda325494014e7c43de7175b2e4859a4fdf4410febd7415e30f7e2"
   end
 

@@ -16,7 +16,6 @@ class Hoedown < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "141636a2e7dac87d21a6de5d3c31ab258048e641934b6da600b50c79a9b34290"
     sha256 cellar: :any_skip_relocation, monterey:       "a3a6b53be859368f6565a31c918758648fa6c41f833ccd2419961fb3b01ecaa9"
     sha256 cellar: :any_skip_relocation, big_sur:        "8878fa04ace3327364bb0d18113bbb56006f169d7f169bc41d03986e1bfe6270"
-    sha256 cellar: :any_skip_relocation, catalina:       "578d2db4436012569cd56a47cca8967e106cd83474ed80f52dd7deeda6b1a134"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "09bbf5d61c9d83cd75e37e09ac33cf02b267a99fb6702879bb28e096753d6470"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "3d9c93dc9fcdfd9daa56e0dc4c410ec0003a11150b211124bc0c367098fb5132"
   end

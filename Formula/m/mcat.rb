@@ -1,18 +1,17 @@
 class Mcat < Formula
   desc "Terminal image, video, directory, and Markdown viewer"
   homepage "https://github.com/Skardyy/mcat"
-  url "https://ghfast.top/https://github.com/Skardyy/mcat/archive/refs/tags/v0.6.4.tar.gz"
-  sha256 "148a37048e6aeaf3cb3e13aa107a5a8544d6bac24e24b9744dc16d075aab7ff5"
+  url "https://ghfast.top/https://github.com/Skardyy/mcat/archive/refs/tags/v0.6.5.tar.gz"
+  sha256 "d998b70d88acc06910c0092e5724b72e617abe2d34e7a8601c47f56ff25bd0e1"
   license "MIT"
   head "https://github.com/Skardyy/mcat.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1f133b96d6436c83264d87d0da0f983721b7ff0ef8fb64f1fad0df33dc3d22f3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c34a7a9db89706e472280ba0d908cec88aa93b2ad6cd251fbcd1e3b41d7c4708"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "70ba1ebcecce4dc8fe90a26c83e04ae576fccedda666079d2ed7597921144d81"
-    sha256 cellar: :any_skip_relocation, sonoma:        "025c6b7afe154bd537d3950dfcdc82be13568c56f403928236be26b5b648acd1"
-    sha256 cellar: :any,                 arm64_linux:   "e3868344dcca3c9d6f6c7487122eb64c5ea060045839c4f62bda8c15caa74837"
-    sha256 cellar: :any,                 x86_64_linux:  "5f2f390d6b80d0836826f54b72359bd94338042a3483615c316bbc48efb5a190"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "37eee59c4d98186de389836b9a70dea4e5a56654a5bf230924ca1f53f5144d9e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2bb0b6017ab2e805c7d19ae4abe23b776161149063225d86a6d48a0555f9bc33"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "eba8da8ec142bd8d603ed1998377ac926bf7a29c86e134d124745341af0be33b"
+    sha256 cellar: :any,                 arm64_linux:   "0edf6a0f117170b07bc1f8e54dedc3eb8e714fa9f0871c8463be15a4aebafb6f"
+    sha256 cellar: :any,                 x86_64_linux:  "ada543b6769a56b0632afc92284a26588fbb642e135200ac30b30678e69ce344"
   end
 
   depends_on "rust" => :build

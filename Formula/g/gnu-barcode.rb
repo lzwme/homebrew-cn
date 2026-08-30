@@ -17,7 +17,6 @@ class GnuBarcode < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "930679d903dca0fa945427cd97be4243a047e17c8be5e1f8085ddd34c13d5ec2"
     sha256 cellar: :any_skip_relocation, monterey:       "8442ab838d1f32813d7e8ffc4efec8a5c9bc32241cdbb8a9a3acd4efe506ff9f"
     sha256 cellar: :any_skip_relocation, big_sur:        "8db9cd7477dfce32af8a9451c792683d97ef0ab81d7929881ac59a6fab9d88aa"
-    sha256 cellar: :any_skip_relocation, catalina:       "237ba00c7acb6a0343b17cae529d6a854ae321a03136d0f2882b010f4107230c"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "9a87f687d36fddc89efcd6e0f668d483b6630617dd51179ed27a4e29f26176a0"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "9cea83cbded5ce1bf557f237984a5085ba5b5534980c64e0b7d97e6756ab01dd"
   end

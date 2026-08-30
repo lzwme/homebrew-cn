@@ -16,7 +16,6 @@ class Rsc2fa < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "ec0046a6c98d1fe4ac25ba97d805234e68b79158fa09019ee6a3ccf9ca0fcc98"
     sha256 cellar: :any_skip_relocation, monterey:       "aaf3afec742c3a53fd5a78e6677750b90120bc7803ac93c004d4f337d285a605"
     sha256 cellar: :any_skip_relocation, big_sur:        "7c0d499b3ee3fa0a1d2934e05fd36cdcf75f10710ec3fdc9192d07f74074262b"
-    sha256 cellar: :any_skip_relocation, catalina:       "7c0d499b3ee3fa0a1d2934e05fd36cdcf75f10710ec3fdc9192d07f74074262b"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "1bd79a650b944690c714fbcb94ccdd70424082eccab025081d98eb52dfc6ff2e"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "71c943ce568138c782321aaa436adf79d194707bd140f82b50046aff80851e3c"
   end

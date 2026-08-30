@@ -22,7 +22,6 @@ class Par < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "903d95c6efcc78e84ab33fbff492e320f0d02f451d4886b8d82d86d3e361b9cd"
     sha256 cellar: :any_skip_relocation, monterey:       "ea8a083d2e64d4f28515313b3d47ea7d63f6cc9b1b6cb60ddc88d7fd643e6265"
     sha256 cellar: :any_skip_relocation, big_sur:        "9af002ed591438fc64cf745df797fdd4c6138a847c6ffe650a8371ef6a2243fa"
-    sha256 cellar: :any_skip_relocation, catalina:       "457e5ff8ba94268a745fc954f84cbbaab7ac7d3a239ca602107a85a2e5d146a8"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "01aa6981e7f7fed828872aa316d7598667d1393db76ddfcd6a89f49fcd0db75d"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "236b24853fb3dab435d98266fd26a45f1d55653e8c032165b278e47c63c1789f"
   end

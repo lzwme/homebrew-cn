@@ -16,7 +16,6 @@ class Pipemeter < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "389145513b346cad14c8ae13c231816b9b679087464396182cdf047a04b93db9"
     sha256 cellar: :any_skip_relocation, monterey:       "55c1cfc32045a6ceeb62ce15159f5d5f43c807eb119eef4b32eb2359c37a7b59"
     sha256 cellar: :any_skip_relocation, big_sur:        "ef9f94223b9b5d583ca7f3714e85fbdc59721be6bdc31f46bda43cecb4a4c0b5"
-    sha256 cellar: :any_skip_relocation, catalina:       "faf2fcb90aebb9e26bfd1f9dcfd32bb43fd4247a87a466640dcd74824806da00"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "128d3f2743369e05eab0274a428c4f64054def38c7bdd6636602c66cbf8289cf"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "3bcb2fe10310749fb1afdee597abd956efefd6ad1b501440c322a7c876a7ad36"
   end

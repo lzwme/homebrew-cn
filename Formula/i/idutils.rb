@@ -24,7 +24,6 @@ class Idutils < Formula
     sha256 ventura:        "1d29ee25c018fa81e5cc297091cb8190fa0dbdb54c2ad21c8909cff989e8703c"
     sha256 monterey:       "e3fc421fedb08ac46a82fb2dd8127f4c7c03c6103d943b53a49e8220406ed157"
     sha256 big_sur:        "4e20dbb5fa6efb604aba5c3fab7b2fe948517c16569a3c27fa5b314e0d0730bf"
-    sha256 catalina:       "7e27c7bad2b5d30c4ee26ffb21cf0412706e83c17d0d55b7cefd1f63c919063c"
     sha256 arm64_linux:    "a82f5ffc54658cb4994b62c8db6217395eb90e9b863b2b4de410ef267db66ce9"
     sha256 x86_64_linux:   "54a8af17aba2695b61bd976d6ae4bf2f13c45cec787b1c14b497080d5bac9ce9"
   end

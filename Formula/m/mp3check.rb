@@ -16,7 +16,6 @@ class Mp3check < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "8223c78bae026c58b1e0407a174a3614201b7bb909fcb8ad699973c61ba3406e"
     sha256 cellar: :any_skip_relocation, monterey:       "f798432e9eae61bdf47178e912582b02d9482640375174d26714a59185e626db"
     sha256 cellar: :any_skip_relocation, big_sur:        "943c98e4c93c300a781541927303207319ba030227a0e1dd123fd83abb782ad0"
-    sha256 cellar: :any_skip_relocation, catalina:       "a98298c030d1ee1a28e2227ed41970fcad21d2af6486c471d045b07010ac232b"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "8625b856fd021c64af2aac4b515ae9a8be25c0949231f6b7b24ba16b8df75b52"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "72769405fb206a5851bac35ea59bc0d4b7663c57a62cdc8bfa172fa21379130e"
   end

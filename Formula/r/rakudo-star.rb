@@ -1,8 +1,8 @@
 class RakudoStar < Formula
   desc "Rakudo compiler and commonly used packages"
   homepage "https://rakudo.org/"
-  url "https://ghfast.top/https://github.com/rakudo/star/releases/download/2026.07/rakudo-star-2026.07.tar.gz"
-  sha256 "8d1127c8c60b2af0007e9c05a1bd3a5851472a01d6c91d098abb78d38d4b08d9"
+  url "https://ghfast.top/https://github.com/rakudo/star/releases/download/2026.08/rakudo-star-2026.08.tar.gz"
+  sha256 "a7b6fcfc7b6b7b6bc8bc5d347650736c01ff99de71c06157fc7440677b7a6ab3"
   license "Artistic-2.0"
 
   livecheck do
@@ -11,12 +11,11 @@ class RakudoStar < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "112fceb612726149572aacd5f70c5b599b07a1ecbcd0ac908cf73026e4a91455"
-    sha256 arm64_sequoia: "8d38e506d7ee7086df61d0abd74013a6089cafeffab6ee9e4856027b689b1374"
-    sha256 arm64_sonoma:  "d1a7311b15df67a6473937860cf398d68ad1a363421cba1c81e7d8d8307ea118"
-    sha256 sonoma:        "28172cfa45f9d22f81b344c3f8303f0115fff62da399eed1d35fceab11f5b670"
-    sha256 arm64_linux:   "b54b68ca19f27359bd9c2f4decfe0563318c0f1bc8c8b2cc41b4114efdc961c3"
-    sha256 x86_64_linux:  "59fbfcc04c9b8f2ca69db72ebe4453c8a49fb6ba5838e4c344269c1222eed6b6"
+    sha256 arm64_tahoe:   "a0f35795cdecb9d192e21f92b3a9077376bf7884bfc77cbcafd88c9c91c2b72e"
+    sha256 arm64_sequoia: "98cbeadfee3a1d6632b0d771e87e129581b2938d3e92ca2811353ef389880ea8"
+    sha256 arm64_sonoma:  "afe6741d66a5060648473f5844a782631e9b0e887d8bc33c03660cf9257b6c98"
+    sha256 arm64_linux:   "4bcca2415f098f3bf26518bb0eb3e270476a7fd70ee0bf125ef0e60484782e2f"
+    sha256 x86_64_linux:  "eb0dab208bc44869f6f2e547f5128b2313731b2616b10c8efb89dc466747bda8"
   end
 
   depends_on "pkgconf" => :build
@@ -83,7 +82,8 @@ class RakudoStar < Formula
     ENV["OPENSSL_PREFIX"] = formula_opt_prefix("openssl@3")
 
     rm buildpath.glob("src/rakudo-star-modules/**/*.o")
-    system "bin/rstar", "install", "-p", prefix.to_s
+    # Skip module tests probe for optional DB/client libraries and rely on the test block instead
+    system "bin/rstar", "install", "-T", "-p", prefix.to_s
 
     #  Installed scripts are now in share/perl/{site|vendor}/bin, so we need to symlink it too.
     bin.install_symlink (share/"perl6/vendor/bin").children.select(&:executable?)

@@ -19,7 +19,6 @@ class Enscript < Formula
     sha256 ventura:        "d8556f7d35ce02179e429d32250bceb3b0b87ea812a487b204e27fea4485f99a"
     sha256 monterey:       "841ac9a5d1dfd145ce137e8aadc664d747d5bff5e0e67c6176efaf83a1b7972c"
     sha256 big_sur:        "97b523c5513e54b82d963a7b34a4cfbcbe0af74399bc48839b5285cfce29a9a1"
-    sha256 catalina:       "3611a6a01c76502ae6d4b1ff13d802acc5b2a2a3f2cf647e6b9323b7e40bde7e"
     sha256 arm64_linux:    "9fc267a42a3689f1a8049af501c924fc2c7c767026018b699cca551db9e339fb"
     sha256 x86_64_linux:   "d968c97391029600c54ace8362e7293202ca6227421d626dced22f21b2ccfa26"
   end

@@ -17,7 +17,6 @@ class Lib3ds < Formula
     sha256 cellar: :any,                 ventura:        "43e5029413555b545a6b4177acdc9b254f3e6a82251ea5bded95dfa5b7f4d93f"
     sha256 cellar: :any,                 monterey:       "745bdb83e2fd03b6f96e163055971471f3f4e1ef6ea465adcb765e799b9a01d1"
     sha256 cellar: :any,                 big_sur:        "175e42127a596271ed3347b35eeb8088d684b1b46f6efa4d1bbb8d8ef9776605"
-    sha256 cellar: :any,                 catalina:       "0a5a1fdac0c459e011ef64556c872fdc61678ccc7e06d507239d03729a0a8613"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "9f4f7ee247f3625649c17b51c43edff23d98d7d3e84dc388a509ab1775ae43d3"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "7adf7c63871e56081abf7ecbf0327d77970aa925812d04082152d32a13d229e5"
   end

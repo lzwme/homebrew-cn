@@ -17,7 +17,6 @@ class Mon < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "44084ac7f259335761c5569cb0f59d00df44c39b5fea84d763140c364b3b9459"
     sha256 cellar: :any_skip_relocation, monterey:       "33b0a9658fe9c49984aeb76681165f01f586f25489b389db158bcbaac2a6ae2f"
     sha256 cellar: :any_skip_relocation, big_sur:        "6530e73e7a94297f2646a079361df7076cbc6a881b5baf227a703f1edd92cecc"
-    sha256 cellar: :any_skip_relocation, catalina:       "becdcce9ec6a3ec5156cf27db02c50c26e99a9db9626c864abf9eb2f178ea57e"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "00ecf73b33edac694c7a24207ead5f8604a20b0a97e681685d997d81080f19c1"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "98cf650f601c5c437802ac8a979d24bdd8fe39cef4a3937f440109c91cadd69a"
   end

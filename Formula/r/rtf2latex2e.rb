@@ -24,7 +24,6 @@ class Rtf2latex2e < Formula
     sha256 ventura:        "6c9d8dd73ea187545b5b6400918c8f2f493e32584c4ac01e9b035738c658fe66"
     sha256 monterey:       "3a88828b56f1fa396ee82d9b8e40f15631512a587b57489d9513a773bea157ac"
     sha256 big_sur:        "c0348eb7e801057a74bedb8665b51ab62d9239ee7d6fff51d2c094ce092b6e6e"
-    sha256 catalina:       "c7c3d46cf3f0b3a18dcb01aa9e1f2be4573f236e52f466d78eda4d659084e5bf"
     sha256 arm64_linux:    "2616c236d487e2a2ee9da2d9a858433363de29e8c4f15d8d29785a68ebde0244"
     sha256 x86_64_linux:   "be77a066d018ead2d07e0bdb5e535f597e2ccea5659a505a271efe017a16fd94"
   end

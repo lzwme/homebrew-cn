@@ -21,7 +21,6 @@ class TokyoDystopia < Formula
     sha256 cellar: :any,                 ventura:        "21e551f8a8e43d5c841619fa462b209aa25a18140cbe0ece3f923a14e3cab1fa"
     sha256 cellar: :any,                 monterey:       "60710bf05465d1a0d1b9820998971cbe2ba9387e4bb121bc6aeadc4aa00a2d91"
     sha256 cellar: :any,                 big_sur:        "f771602cfd9301739750f839295241f829528eee8ecfe02ac95b55fc24c3841e"
-    sha256 cellar: :any,                 catalina:       "eb04133c9d459ee1ab9a4fe00b3f6b31621d9df2672a252784779a44a5991b77"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "6c1c01fa3151f25a7d15fde5db6d0c5e27cf836b8b57d40c4f39bb3a82dddec7"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "1babf4df457924711f3ad2fc7e8f9f797950f53de9f1b740290ec1c112ca83e8"
   end

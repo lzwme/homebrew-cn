@@ -22,7 +22,6 @@ class Vramsteg < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "b1bd6ff70efa1795e140c5dd958bc9faab78c6ad0bc6be86c191e09aa53398a7"
     sha256 cellar: :any_skip_relocation, monterey:       "0464b7532d2b80277a1c560422b20affe4e7b5ce41b8d5e33937a5038fe35993"
     sha256 cellar: :any_skip_relocation, big_sur:        "d004f9d2ef1b642f8128c368e57235f6d2580fd90d928da9996684430a6881ee"
-    sha256 cellar: :any_skip_relocation, catalina:       "a6f6f99e3b12dca8a56919d1144b10e43a9059e7691d56dfdf8aab330e6febe8"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "c7d833b721091e38b120fb58944129769f20109b74d881735f7ab1dadf62b487"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "17541c74c89bdac3887fca1b40afe76b5a1778aef0ccb8dd092d04088ed3b281"
   end

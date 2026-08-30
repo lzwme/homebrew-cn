@@ -17,7 +17,6 @@ class Diction < Formula
     sha256 ventura:        "600f2890074435296fd68c07bb8cbcd69c3cee3f4bdf84fcfbd7c508e075da43"
     sha256 monterey:       "3ac10ac27b2fd8d0c961b256577a52eeb6bf5a8afce04afdc9c39d5a1403ae32"
     sha256 big_sur:        "cf3b827429c5513b3289ab9c0df46de743cf84c773102a2f01058c982721e4cc"
-    sha256 catalina:       "ff26ae017482eaef3a07b4c6522e65a84b2ec03b6afaffa20e0138a244edd5e2"
     sha256 arm64_linux:    "e73e21df8df919d01becb9b68654ec8b483dbb31207e4685f0b126b8d56c30de"
     sha256 x86_64_linux:   "fa36156d5d431720a8bc0c8b05a1681e9231cfce822b2b012c602fa1a8e3e159"
   end

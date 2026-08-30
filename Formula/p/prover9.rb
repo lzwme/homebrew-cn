@@ -22,7 +22,6 @@ class Prover9 < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "605c09fc8888af3a28e2b8de5b41fdb41ca19a8eb2d4f2f7f7e47187eae6ac4c"
     sha256 cellar: :any_skip_relocation, monterey:       "eb0ab8deaf0e9866c6fb241877767f99ca7b4d7d8b5268a0c6ce7ef9fb0cfbd3"
     sha256 cellar: :any_skip_relocation, big_sur:        "a81af1adbb27059709ec9bd9afd30e7819fbd750ea18736c079640058e9ca5b0"
-    sha256 cellar: :any_skip_relocation, catalina:       "1f637c295f07ddf31eedf6bcc73b957584da4d55cb92c7bfea3264d6c3780d1b"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "a61553c5a3e18b08afb168e0decbf7037fafca31b3b48430730096404520908c"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "9f1cf6703e83cffd06e2025d6b5062dbf7e4dd7f3ca398618ac688e8ce165e1d"
   end

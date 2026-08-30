@@ -19,7 +19,6 @@ class Lpc21isp < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "5f30330abb1e75c57fdbfe0177bda58a25c64598a8af7d008d04cfcbc930d6f0"
     sha256 cellar: :any_skip_relocation, monterey:       "60c1dfa18f24845046fd13390aab73665d086859831c999a75bed2dbb37d902f"
     sha256 cellar: :any_skip_relocation, big_sur:        "47edc941f73249c62b66a4d795bcec7c2916082ab60f1cc1e1c0c46ebe99b694"
-    sha256 cellar: :any_skip_relocation, catalina:       "e5231b41e3d08d835d4c3a457b594c60576c42802347c01555acc94c04067d94"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "2d7b449d040a4108099e8d6569fed602400b95b762da98e134867185b3d6419b"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "9b431e013e9df59ee8888f46bc8b972285c7f4c7d559c7441162179d7d920f66"
   end

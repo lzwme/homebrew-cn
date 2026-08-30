@@ -17,7 +17,6 @@ class Screenresolution < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "25f283268c93a7d6be4fa71f4eb08c0f618206a3beaf365338d52a11af0513e9"
     sha256 cellar: :any_skip_relocation, monterey:       "961b7f2ee25f6df43ac16338dc3e7b3fc23f76985a672084c37e193e1570ad0b"
     sha256 cellar: :any_skip_relocation, big_sur:        "234674351827f392bc7de0eb7ddb9855e6254c83a5bade7fa93b9e09ac71218b"
-    sha256 cellar: :any_skip_relocation, catalina:       "53636977689925be4ef97933dc0f1b411f0cd82f71a268cfe7c6f90d5a294f97"
   end
 
   depends_on :macos

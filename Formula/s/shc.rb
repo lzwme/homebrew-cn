@@ -17,7 +17,6 @@ class Shc < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "b08711bc5713b2cafa6ae423220b9f6f7046d2c2a4aa3d0c9d88104b6f64a8b6"
     sha256 cellar: :any_skip_relocation, monterey:       "8896b46bb8b312f24f98ae842c8edb5c7ba1321c21f9441c32c8218a15c596c9"
     sha256 cellar: :any_skip_relocation, big_sur:        "3866195be89821e424dca28e390d36060ad52be9030677498a300e39b7ece548"
-    sha256 cellar: :any_skip_relocation, catalina:       "cdfc62c7d9bd39ed7e956066f8d55a189c58b185b6abf7e45b5d8c63a6abe2d5"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "7f215d4f82dede86a688d3924fb39a447b87159ab534b336971f2741b7989cfe"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "2a659b8f040806dcf7303f42a3cc50eb61acf894c9d2066acefd897dc71f1452"
   end

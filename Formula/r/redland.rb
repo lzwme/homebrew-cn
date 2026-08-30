@@ -22,7 +22,6 @@ class Redland < Formula
     sha256 ventura:        "2c9931ba94fa4e8c4cd3b1983fdf55afa01838c3e6556664126733a7743c1575"
     sha256 monterey:       "f0b6b4b55556c730bb0eb720bcca0d4efd9ede0b13e15f39758fe2a193ce4933"
     sha256 big_sur:        "60ddb8775dfdff43901aac1138929c688b07e744304e24e1cd3d6183000620bf"
-    sha256 catalina:       "f30068d691ac2748619a288912235236e905f672b1f80a974e95425c5f102a10"
     sha256 arm64_linux:    "40dd4a3c37bd52eb17f97912ab8baaefd3164c84f57ec8d8be6200677af307c8"
     sha256 x86_64_linux:   "5439aed60715d12f7bce18e9292ce3301fc93b89cdb2eae2bd072a0a59a5fc6b"
   end

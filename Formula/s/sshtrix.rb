@@ -21,7 +21,6 @@ class Sshtrix < Formula
     sha256 cellar: :any,                 ventura:        "aa50c681c419c3d327a58150f23b165e153a02a91a298a4439d0569313b99837"
     sha256 cellar: :any,                 monterey:       "e7ec4cd1d49778f4b708093a7e7b44879cd7b63426f7f917d4445400712e44f6"
     sha256 cellar: :any,                 big_sur:        "b3962b5211858eb4f6e1478665bfbb578c1f9d1c393237b841f9261aab4cdbf9"
-    sha256 cellar: :any,                 catalina:       "e115c5a6f3378af5a0ab4297673bb7b659dd20054ab91d818b083ce13951e7da"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "c4f3ba3dfdc9ed9b9b5d0453cb4110923890b27d038fa9c906f992a9d2bb8c5b"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "4dfdb5cd8d621a41c636565b8e775d48e418feaf2f5a07dc773902d41cd13dd5"
   end

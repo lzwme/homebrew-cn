@@ -21,7 +21,6 @@ class Base64 < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "6fe7f731c8dae0f98208beedf2610c71cac50df042d133612fe9be00864cfec5"
     sha256 cellar: :any_skip_relocation, monterey:       "283b796362540fd1f3a006f537bc87c92cfe1c47071eb8d2d2c863334ada81d6"
     sha256 cellar: :any_skip_relocation, big_sur:        "4c9e32d24df53a042aec56518070159c224216e16346f7f567a4261521609efd"
-    sha256 cellar: :any_skip_relocation, catalina:       "f883e1602433f3a921fd1892747d76cf4548f75ac2e572be9eb0cfe0ced7290c"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "37aa1f30a578bdc6344258b905cf1e714d2dbc6323cbace378c07760d18e9817"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "9f8f96bcf972f99b8ca838f542a44c9b1f7bf8da7e66eb3333d941093ecbc199"
   end

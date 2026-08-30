@@ -20,7 +20,6 @@ class Tcpstat < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "64eeee455c63e53025d2bae91de42a412c3459afe2cd7c080f6ba272f66f2b7e"
     sha256 cellar: :any_skip_relocation, monterey:       "c4a031f93d9e107740f63c329da289a7b8534d168b66326f67b3f0dc5da82e6e"
     sha256 cellar: :any_skip_relocation, big_sur:        "1a8c9f2f529162b1b5fecee421aaa0c99b80864f752717142fb7f77c5f5acc43"
-    sha256 cellar: :any_skip_relocation, catalina:       "86c1f5aad64e2d611dcb9d74b4eb0f51f24f79d1cdcaf636f62199099d625fa1"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "bfd5b8071a1b3ad738db96ecd1ee944f6b58e781b9759cc9ec0d5be421fe99af"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "036527a4c4492a1ca44c9b7c29ab1437108fc2c57105ade2f98fa8cf43a4e839"
   end

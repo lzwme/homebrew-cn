@@ -21,7 +21,6 @@ class Kimwituxx < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "d434374974309b23dcf7aabe1778ac02b2328173c8723db794f9b22b8309db8c"
     sha256 cellar: :any_skip_relocation, monterey:       "6f02b1694547ba1ade265cbfaf9cf8357c64260e551abb34d8f5b3341dd16eaa"
     sha256 cellar: :any_skip_relocation, big_sur:        "0dcd1be78b92b98d73dad285fbaaf507bdc23805835a51f56236ddd8b0eb73f5"
-    sha256 cellar: :any_skip_relocation, catalina:       "470e06521034cea8db6ad07e8aab45c5bfbe3969cd03891799348eb4e9279c90"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "e0031ff223a86e82dfb9450e9d0b0f9a9f77a07f3ce4d4a1c7ed8d7103aff4fe"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "cece1163e971acd007363d1bd70c61a0d85a056b85cd878d53b520c330479754"
   end

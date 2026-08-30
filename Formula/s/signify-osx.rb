@@ -17,7 +17,6 @@ class SignifyOsx < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "b3118edf392c51017526fab8898c14855b9e3531fdebe3a0d98b65faf279e341"
     sha256 cellar: :any_skip_relocation, monterey:       "f3b58c34d1a01564e16b46364359f42330e1279f2a90025ce7541c9d5f69f370"
     sha256 cellar: :any_skip_relocation, big_sur:        "0a60c4b4955d38a1effe307e2326373c069621c1135e28820783aedd5aba9788"
-    sha256 cellar: :any_skip_relocation, catalina:       "74a8c2fa3d258ad59a5ab7302411a194903ea5295fbf5ecd95a43c2ac28677f4"
   end
 
   depends_on :macos

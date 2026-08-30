@@ -16,7 +16,6 @@ class Shmux < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "252d01294232eadb06c95e9fcd0dd73438a2871dfab43210481df95ad30df586"
     sha256 cellar: :any_skip_relocation, monterey:       "2ddc25900fb3603227d9ede578fffc8c96c414b8487f6a0d710ac0e39f6a52de"
     sha256 cellar: :any_skip_relocation, big_sur:        "6f8ae1c07788268ee86531da66940e7648dce1dc63a6ed118a2bacc0899beac9"
-    sha256 cellar: :any_skip_relocation, catalina:       "6781e9876911d4d44080b069dd3295c86520699ae24b3385980d51a53bc4d2f3"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "31b4fe74dd2467977c7653c9b58e27fed41ff1238daf825c193678986797521e"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "c1e347248987cfaeb250cff852feeab54fe709da0f69d9c560170f46c05feaf4"
   end

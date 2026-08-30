@@ -16,7 +16,6 @@ class Lzfse < Formula
     sha256 cellar: :any,                 ventura:        "907f55be17f387f646e1bf8e95b60cd64534ea8b39210bcdf29aa9fcde331a61"
     sha256 cellar: :any,                 monterey:       "11e09e89227d27ecba48954e45077fcc0d0b4c5f6e55e8540be252ffb3050770"
     sha256 cellar: :any,                 big_sur:        "77feda1fad9da3e2e867fb1a7ca2c56b9beb300cf9d5fa6c383c516f4613c34e"
-    sha256 cellar: :any,                 catalina:       "bf5a9fba1911206046cb4698e9b23ac23f247bcd1c47cdd779fa7a786c40aa27"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "5ed34f88c34b8be3427102200be747817b78462cc251f02bd29b5cc3df6180d0"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "13f5733f570ee2f8d436c66beed32cbece59522b57653fba497c9dda82bd0aed"
   end

@@ -23,7 +23,6 @@ class BpmTools < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "483c8d0501a94e517e62dda21c44474d9315286e206e7e61e990502bcad0717e"
     sha256 cellar: :any_skip_relocation, monterey:       "4429ecadee7430b8c147e1631cea030c10953a00b3ec04e0afd031ff74a0fd8d"
     sha256 cellar: :any_skip_relocation, big_sur:        "6ad965195d96e6d9f1b01732b1314af6211b101a6113aab02c9fbf799f3ded1d"
-    sha256 cellar: :any_skip_relocation, catalina:       "694afec7c21549badc5c2bf55ac3f3da588370affbaa78f1087e3bb204137f61"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "46138982bb7ffca2a4f763f1fde359ac3b0cddadb65e8f2e7dbadeede5274143"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "e78a1d3a9c96635e57bf0ce8c329a88b8b3406a0e0ba4a19cb97e4b42727f6a0"
   end

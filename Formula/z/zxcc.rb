@@ -21,7 +21,6 @@ class Zxcc < Formula
     sha256 ventura:        "08b4d0233886b19e05fdbe3f3bb90d25146716a354bcf7e07d89396ef6b53397"
     sha256 monterey:       "015f6a038fa59edef9b58d8edef90d4ad957c1275e581d2d9e645868b37dc9e1"
     sha256 big_sur:        "55897339c53884d74e51e270e458085e4c1a3c8494b7053d40205d511ae0759a"
-    sha256 catalina:       "748648c861049366a5bab8f7a101274da7bd2d2378237ccc4acd4cbd5b60fde1"
     sha256 arm64_linux:    "f03ecace625722887a14453a0a0d9c8901b0eb83e5f61e2f8f774a2002f0c225"
     sha256 x86_64_linux:   "8a5baf11b9060b7aedcf4f25afca690fbad80df406a66a70389ddd32fe2c6075"
   end

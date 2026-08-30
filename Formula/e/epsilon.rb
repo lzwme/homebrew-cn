@@ -24,7 +24,6 @@ class Epsilon < Formula
     sha256 cellar: :any,                 ventura:        "633feb4f0326003a7b01cb1c4879a334ce2f8872a008382ad9a8ea9110e04d2e"
     sha256 cellar: :any,                 monterey:       "85c792185e97c4bf15321c4947d284df6f8246d84c007a28d0f2ae269d37ba79"
     sha256 cellar: :any,                 big_sur:        "86724d0787346a00a324bc0204d7b141b43cee6969069351747626354f80507d"
-    sha256 cellar: :any,                 catalina:       "62d1ce5e34b79a09f68f079ec79768e85677ab5d6f3c13caedae9bd41399e052"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "f972e745ea9bbb3c9452a75a36d12eecde3ed86a1a0a93e45a924d5a3cce7c4a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "d74732822ae5b53c57fc5bc613e70de84daca229438e47739c875f6dc50b21b1"
   end

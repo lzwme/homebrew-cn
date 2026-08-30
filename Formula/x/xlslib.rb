@@ -16,7 +16,6 @@ class Xlslib < Formula
     sha256 cellar: :any,                 ventura:        "cf8a30118932104eb0e9a53bf3ca590356a6c4a8ab9b87229b9b3fc58df860ec"
     sha256 cellar: :any,                 monterey:       "f40738098dfd10961f28deb59266aa468165ca9011658852a3d8a97f51742175"
     sha256 cellar: :any,                 big_sur:        "a4b1d70f77f5cab84266761845d3910821315696114c3c19250660d4a9bd18a0"
-    sha256 cellar: :any,                 catalina:       "9db0f101930faf04be3a8c7cccfafefeb82efc3009e88ab7494296b371631bc3"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "40d32ca11dd587663402feb5883cddb2db289ec21b807ed6d462658fe1650cf7"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "5be639eb5da6af885ea1d8c549b8cf4a40aba417b550ea64b29caf6f9600bc4a"
   end

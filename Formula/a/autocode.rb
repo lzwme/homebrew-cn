@@ -17,7 +17,6 @@ class Autocode < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "70efb3eb2cd71248d2b6f239752f5e8155beab4f8cb33f9f6542aa58ac779e3a"
     sha256 cellar: :any_skip_relocation, monterey:       "cde7f8b32745f8ab929ace5952dafdec15cabdf92d2a96ab67ddeaad5479bee0"
     sha256 cellar: :any_skip_relocation, big_sur:        "ddfc5b923a862daf2c1489d942e83f03dc99fdb3dcb2b7eebd67e92582174867"
-    sha256 cellar: :any_skip_relocation, catalina:       "451224479d19854f4f802b0ec63077080df91196917ad14d16e4a2308f247527"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "f1e4d0a241cbecda677088d390da59e754c90f1236a101c6b36e5d3df6d3fc77"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "186b5262fed77462a1b2407dbd2106ebf80f9e1c48fd56bf57549f6716156f96"
   end

@@ -16,7 +16,6 @@ class Duff < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "ae67b1af84e554db4575280152fe634369a8248c1ca9cc358d4247e553ee87da"
     sha256 cellar: :any_skip_relocation, monterey:       "486d0ff26e56d7a23692b429a3441d965f61bf8e48038f5d582c9a0da5c6379e"
     sha256 cellar: :any_skip_relocation, big_sur:        "37eec490b6068cb6cb98f430740042712203e2bd2db39bfe25eeb5143f444965"
-    sha256 cellar: :any_skip_relocation, catalina:       "9c383331f4c0f5f8efb8364079dd76994d6e210e4bdd4d6f8e96c53d55ee88d0"
     sha256                               arm64_linux:    "80433cfcf07a77634af2a91f787dfeff3d45744977bcd6dee1d90713e7de074f"
     sha256                               x86_64_linux:   "d2e177f7c17a8dad92be2c7597844a572e4db8a8c4bba5db934843325c5edc90"
   end

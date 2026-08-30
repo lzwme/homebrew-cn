@@ -16,7 +16,6 @@ class Lrdf < Formula
     sha256 cellar: :any,                 ventura:        "d4e96a7ee4204f0e4a230563201bf725de915d560eee4465a18e09ecf8810254"
     sha256 cellar: :any,                 monterey:       "72177ed02a2a3e336775a7e0296f29bbe9923b8a4b3d1a994f9ffd8f29c3d928"
     sha256 cellar: :any,                 big_sur:        "860779b7babd494a2fa8833581bf5b518a7a8ec9c9b9ad7815f33fca52087e57"
-    sha256 cellar: :any,                 catalina:       "38b2c487542d1e264b31f560eb582829f178f2aa1abb28ce055475c9dffce9f4"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "7ebc904f67f824e682d13f0ca1f0176c17b8aadcea4270c1cf476a4bcfd40835"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "4cb0169c0f75331b17aedb8d9f54283c5487230015b284429f6a6ee9f72344d2"
   end

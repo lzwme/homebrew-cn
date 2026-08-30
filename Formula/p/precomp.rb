@@ -17,7 +17,6 @@ class Precomp < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "77b3e5aedbb4e12c3ded5f546045d04e8cecadcc2c5a4700299ffad6be3912b2"
     sha256 cellar: :any_skip_relocation, monterey:       "d7b2be3194f675f7db87d9952635a1f0bcb36b2b4cffdc63078d1adf8683bc63"
     sha256 cellar: :any_skip_relocation, big_sur:        "98d1f2f0987f9317b372895c3af39358585a461023e286baf2ebc67d118cf3be"
-    sha256 cellar: :any_skip_relocation, catalina:       "9ac9f156315ae463a1e378bdd9ed06d5f36437ccff4505740dfa10ee914b5adf"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "94d7a49395b7ea41b35d5ba993dc244fa2dd0795f300bc27b2f94821047daba3"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "7affc5c732e89618e28cbdc3a5b93adfd8588fe0af291dde9c940b0667ea8c06"
   end

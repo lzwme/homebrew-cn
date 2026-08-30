@@ -17,7 +17,6 @@ class FseventWatch < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "c6acaf3d89a88a1e1c776428193f711e4f80d1bdd244ce8eb223e5c41fab10af"
     sha256 cellar: :any_skip_relocation, monterey:       "c2b7b010f7c899dce0ee2554d4d0f9a660761c01ea9dfece15d1c11bef353957"
     sha256 cellar: :any_skip_relocation, big_sur:        "3450ed18ee786ff504e23bcd1d188511782661d49d9025be30227fefc43a30b8"
-    sha256 cellar: :any_skip_relocation, catalina:       "7947abb87aa8cc18551b2931374c7fc9a91503a8b637762360f67ad7fdcdc5ec"
   end
 
   depends_on :macos

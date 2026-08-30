@@ -16,7 +16,6 @@ class Ccd2iso < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "3fd3ad509a9207e16d00d0b00d34a3ee7b15318303d1a1ec5e94ddf40785e8d8"
     sha256 cellar: :any_skip_relocation, monterey:       "16d7cbbc96fab04752d418f7e4f196e2d0d36e494a27002bf76f907d160cba50"
     sha256 cellar: :any_skip_relocation, big_sur:        "1bd1d2fedb8cd0bfe682f80bffeced5c7e273a2d24c2dd01a7b777e4d3ee0115"
-    sha256 cellar: :any_skip_relocation, catalina:       "741bb587861701e9900ede511e2db1e73815428eb2f0f2c697313dad70609853"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "929e63160bead9e5533fea39f455a370513e0879b1c66205b570ef1f87e9feea"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "eca2835beb5b622b6f0b2b781524e638e67a65b8d4f683cb0984c74c34c1603b"
   end

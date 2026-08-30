@@ -21,7 +21,6 @@ class Utimer < Formula
     sha256 cellar: :any,                 ventura:        "ee2b3d29f6278e6a0195e0fccc6a787eb610a1b882960aad227a94ddcf19e6c8"
     sha256 cellar: :any,                 monterey:       "8f1bc7e7ea1445618ce50bfcc7c8aea1570ea70245d17e47b4ac7d9d6d68e295"
     sha256 cellar: :any,                 big_sur:        "35c830b5c976738af7451ff1d110028a351e1b16145efa54ba0d042ff43e8980"
-    sha256 cellar: :any,                 catalina:       "58144b80218183cb1cb0bdccd87baf86a4bddbab8b3107a2197227a15b6a4f27"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "afd0dd70f2d6382759333b763d794b5f309ecb15f48e5228f4df6c00787414f2"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "a44f6b1ef51bbbb0a61411585f06bc0d7e9d94083b04c11802f26ba2b2f36d8e"
   end

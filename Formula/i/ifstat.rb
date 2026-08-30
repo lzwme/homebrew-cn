@@ -23,7 +23,6 @@ class Ifstat < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "be15673cd3ce2675c9e2e350891ad0c888c0691b53be77f649a95556ca810307"
     sha256 cellar: :any_skip_relocation, monterey:       "963b568e9888e27dbbc4b93d94231713104fbe0ea48093eb6363b719dbb773f7"
     sha256 cellar: :any_skip_relocation, big_sur:        "e78cdbeab6d2b938879ae80e9a611ea2042cf2806f9d2447b6117518d545083b"
-    sha256 cellar: :any_skip_relocation, catalina:       "bc3d531dc3b4f6ff78a4acac901a9e6afc21a7994d7cbc3403839a5ae68b68b3"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "ccc66717dd6d93615459286fc714279141b2bbbaabe598dbc0aab40215161a43"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "80bb1ac13a6750229f428e108b349523896fa1bbe1823300f07e366e58cfa1c9"
   end

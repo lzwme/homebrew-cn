@@ -17,7 +17,6 @@ class Bookloupe < Formula
     sha256 cellar: :any,                 ventura:        "f39f6f8a9a229fcd14e1784dd57f1215afae5f8473ce0508392e64ba8063d540"
     sha256 cellar: :any,                 monterey:       "b2df92066e4e19f5a6c9eb4c0784b9f736e1e9043dcb83798e7f2bdf02295942"
     sha256 cellar: :any,                 big_sur:        "7ccdee4a97e6c705e478e38aeca1648b06a39c2edfcfa807a4a07ab12eb0d3c8"
-    sha256 cellar: :any,                 catalina:       "83e920e882a00717b094b14477917ed477fa3ab9ae02433d79bf4d374d5723a6"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "a0c355266c0aa5d07d939056e39cd9747d893d84e8f80814d7b75d6483e8ddba"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "9b7cdc047eeed0574f7b0c8bccae751fa4b047b0a2aa30d71153960b75b52444"
   end

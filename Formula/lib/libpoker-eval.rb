@@ -22,7 +22,6 @@ class LibpokerEval < Formula
     sha256 cellar: :any,                 ventura:        "47680460b617535c739e9185e07262ee04a63c449e0fed0decc319df46456f69"
     sha256 cellar: :any,                 monterey:       "48609ddd2db1e24baecede6fa77ef4845f4f48dfa0d8e8ce07b021c9f4552530"
     sha256 cellar: :any,                 big_sur:        "08b9a0817303ed87c19ce2345e92ccf6d1698d3b48f1d8ed7332663bb16dc227"
-    sha256 cellar: :any,                 catalina:       "803f48db07d845ec9784792ed0fe5cdc86cb67e6632ed9f72dde75619481bf83"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "6d17810f1cdeacb43e5ec95d567c84f39eb99582058d5d3ac2f110cca04d01b2"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "723cc1e71146dbe997acaacd71fd71f46266de3977b0ee24f3cf54fae280d208"
   end

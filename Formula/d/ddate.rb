@@ -17,7 +17,6 @@ class Ddate < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "dc6a83d4395ba0e0cc54890798b9dec02958912ad7f17fbadf2ca46c8236e9c8"
     sha256 cellar: :any_skip_relocation, monterey:       "f8c316d4c6b48ac80d5673f55bec768501c725d500ba9b926fdd347adf55cd79"
     sha256 cellar: :any_skip_relocation, big_sur:        "9e7f00a11029e70caa333a3c33367e564631fcea1d08b36f02437af7b03f810c"
-    sha256 cellar: :any_skip_relocation, catalina:       "2b9be177e37cb4650bae50a9527315e700592bdd8a5546cfb7b40cf201bb680c"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "85848eab10e14e64a60ffd85a3c5bbd2e72fc3d554ad28fcff82db7f9a44a686"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "75baa9706ec0453896edf597bc5a9c52c012ea9188555654f698794f578d9f62"
   end

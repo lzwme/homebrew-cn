@@ -23,7 +23,6 @@ class Since < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "75b5ed6525afee018674228668bf45b282016187f09dd42dd95fb474e0e1a232"
     sha256 cellar: :any_skip_relocation, monterey:       "3db05c5b4e33cc28cf9dd8352dbc6038b139cb6bf8056bc9c5a85bd0db7ee9c2"
     sha256 cellar: :any_skip_relocation, big_sur:        "60c3738e71c6455fa5a7445a21a79695d4644a34de06cbc05743a52c4f5b40f8"
-    sha256 cellar: :any_skip_relocation, catalina:       "20b3f4888282ed47021562eb24efe9c37ef3a652ad64164460a5f368260e75d8"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "e0686ce3cedc670157058d0c768236fd2276290197884ab1759aeba4f60789fb"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "db033c09d09fa627dd0d98d52a4b32231a6f696f925c77b0c91d7b8f057ea3f4"
   end

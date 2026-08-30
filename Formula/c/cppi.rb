@@ -17,7 +17,6 @@ class Cppi < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "eeed7bf193f6800050418eca626511ba5e3c76fb4ebd4f11ad67e93f1924b569"
     sha256 cellar: :any_skip_relocation, monterey:       "d1f346b4ed988e78ec44e4019b64c182bb660290d3cafdb65ab005321a554bec"
     sha256 cellar: :any_skip_relocation, big_sur:        "831418bd1a4c710184c6efb0b4a0476077f876cceedb9245dcf994ac7322e91b"
-    sha256 cellar: :any_skip_relocation, catalina:       "24e10e144f6a86bb893f886cb631b9f57a3c3073fc19a0829e512c87db465ef0"
     sha256                               arm64_linux:    "9f29c60a3728f80b7695a91ea71da089355422a06565faafa05074b6ddfef69d"
     sha256                               x86_64_linux:   "4c51c1d89a082e419ba33ab1c257fae2b1882125070d2e89ab2e49258164a7e5"
   end

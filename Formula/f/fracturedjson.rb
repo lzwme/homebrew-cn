@@ -1,8 +1,8 @@
 class Fracturedjson < Formula
   desc "JSON formatter that produces highly readable but fairly compact output"
   homepage "https://github.com/j-brooke/FracturedJson"
-  url "https://ghfast.top/https://github.com/j-brooke/FracturedJson/archive/refs/tags/cli-v1.0.1.tar.gz"
-  sha256 "9da9a09e1e512b114b220620cc2bdfe2db491eb8094d87a0b773d88a855e16c0"
+  url "https://ghfast.top/https://github.com/j-brooke/FracturedJson/archive/refs/tags/cli-v1.0.2.tar.gz"
+  sha256 "039e199c246206cb7a01dc800d10c60aced0e26572660c10148c7e6f303e3ab3"
   license "MIT"
 
   livecheck do
@@ -11,12 +11,11 @@ class Fracturedjson < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1dd71fb03ea6e15ff2b4b34255d76f7fb64a29e5b0098351b761ba1510cb74c7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2332fa83fc6098c1a04abd37f49e5be41e25005bc602ed039d77eee1496e19eb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fa6cd255c0057de51c05083eab084469b33d58ed125d2c2991cfede101facf06"
-    sha256 cellar: :any_skip_relocation, sonoma:        "31a5bd6552911fa0189e96031aac99bb82002fde4542118a7c95eeb852c247c6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fb23fe5446b5e3aa8990fee78c14ec5c98ef5a4d47ae47da812cd17b3fc9d286"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "53d0d41ec51fb341e160e8b01756124139cf983c118bdb7001d3023f5acc5cec"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "abb2da14912a49e0c78f00d589e486d7fb6f5a3c024833bf957fdcb78b795a87"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "24ec04771ada599b928f6fc4fedd45ee5e16e670b03959d9781fb1650526507e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4f118eca5e7ed9c0ee83255cccd608469d1dc31b3ee1f5b0c49952d831d7a76d"
+    sha256 cellar: :any,                 arm64_linux:   "1e5d27d48dba85088a5f9a667946137acd1b5fbace83cc5ed71c95b37d881d83"
+    sha256 cellar: :any,                 x86_64_linux:  "a010c974d6327aa06d0a2a31ea18b84da90db6d9e7f54d863eb496f7c78b6353"
   end
 
   depends_on "dotnet" => :build

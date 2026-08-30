@@ -19,7 +19,6 @@ class Plotutils < Formula
     sha256 cellar: :any,                 ventura:        "5b899b62f779098696d71a54ddba9ed0307110b9f04a21f6a7c11f65d777842a"
     sha256 cellar: :any,                 monterey:       "3ee9b41dfac9fef4f67c7cc09a10cc9ded3337ff31e1bcd3ddab89ab997f82ea"
     sha256 cellar: :any,                 big_sur:        "3ca14b49804af8b7364087731097dc992816d16a82fb6da2afeae18c1772e886"
-    sha256 cellar: :any,                 catalina:       "edab5b91771162c1783dc69482834de6a2ca0fd077ea83b79d1934a365f7276d"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "7f042f52c72e85c663689b220172d739a64e95948fc2c3b6175696c513fca1cc"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "74b0edefd4bc7eb703cf1579159b7d746502c77538f58b981405c1cf9ba6d042"
   end

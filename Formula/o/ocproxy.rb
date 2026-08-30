@@ -23,7 +23,6 @@ class Ocproxy < Formula
     sha256 cellar: :any,                 ventura:        "ddd7dee9b0d0f05232a844a56e2a9264504ba6abc0a16742640e92c408561ad9"
     sha256 cellar: :any,                 monterey:       "27e6a065435fd38f0b59ec01a38a424272d914574c2c1b36f5e90df3f05baeba"
     sha256 cellar: :any,                 big_sur:        "c215e90cdcbcd59674c111bd2bbdf157ad554247c65025560c6688677d25be53"
-    sha256 cellar: :any,                 catalina:       "53016c9f83444b015e71e2f1678b1aab1e7914f42a8c5d8de1ab581fca130ef8"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "f0a1a2ac8cb2cbb91663cfcf06be5ac5d931ea8e9168ddbd3ca498cd1e2ff98e"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "04fbf035ccc8cc3ab0073c0d2299d47276268f8d47aa298cac9b8897cc9065e1"
   end

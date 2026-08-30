@@ -1,19 +1,17 @@
 class Age < Formula
   desc "Simple, modern, secure file encryption"
   homepage "https://github.com/FiloSottile/age"
-  url "https://ghfast.top/https://github.com/FiloSottile/age/archive/refs/tags/v1.3.1.tar.gz"
-  sha256 "396007bc0bc53de253391493bda1252757ba63af1a19db86cfb60a35cb9d290a"
+  url "https://ghfast.top/https://github.com/FiloSottile/age/archive/refs/tags/v1.3.2.tar.gz"
+  sha256 "b07c28c6c4bdafa272073a310b75bc22c49da8904585a89c30e5ca4233e63843"
   license "BSD-3-Clause"
   head "https://github.com/FiloSottile/age.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "772ce6765f7cd9232cb23d1875cbe7617a762644c19acda569fb3770201cf2b9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "772ce6765f7cd9232cb23d1875cbe7617a762644c19acda569fb3770201cf2b9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "772ce6765f7cd9232cb23d1875cbe7617a762644c19acda569fb3770201cf2b9"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2bc02da642592314389de73ad5e955ff14c0f66ca7c86dd4a6ab2b1a1dc8d0d3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8aa780ecbc3ba748964014645045b51f7b2b1c42ec5e8681760030c37f8e6640"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b19b86729fad38f2f4067f2e2205b5b2009b6d2bdfac20065ec66780600cbf5d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "48bbd797cd00ab11ec496717f51205ba07f4f7fdc7c8a939c5f4b7b6a11d5287"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "48bbd797cd00ab11ec496717f51205ba07f4f7fdc7c8a939c5f4b7b6a11d5287"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "48bbd797cd00ab11ec496717f51205ba07f4f7fdc7c8a939c5f4b7b6a11d5287"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "09fbfab1b5c6a27c3c44a4436c50436ca1dfe261ecd9a396c5fe840c05f72d22"
+    sha256 cellar: :any,                 x86_64_linux:  "5f08c602724d0d9ad66f633301d209ee5ed81c160addd46779f08a0b83442ef1"
   end
 
   depends_on "go" => :build

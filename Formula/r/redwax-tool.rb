@@ -12,12 +12,12 @@ class RedwaxTool < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "2529ee7f15ecdd3248f57f4addc086c0afdef2de61f44d23a636dbbe48d95988"
-    sha256 arm64_sequoia: "2c481f5c7870e761dba5cfe94df7f63a31913858d39c53e55c3fa1e2e6435834"
-    sha256 arm64_sonoma:  "f68f532e621df9d89c65efe94f66c528e937910ce6af06fa7238236a7c17cbde"
-    sha256 sonoma:        "ce9b67daccd66bab249daf0a50039171ee3cfc2c2471520c2e7a0768ce5bdd78"
-    sha256 arm64_linux:   "936d3d2007956b068d9d0ada00d9c68a09de5b936912dc58fc68bd7aa4a9c186"
-    sha256 x86_64_linux:  "135cde0d7a1d503d9e760b1a87a71955ca335b53871c874da0854a2b5647e3c7"
+    rebuild 1
+    sha256 arm64_tahoe:   "eea04ff6d8b2b96bd5b45a44cd46ca2d43dd0e5d908a8cce4e158d1358a3a709"
+    sha256 arm64_sequoia: "3a5a410ad7d7bf75941824d2e7c2ed7fc529510d708fddb8b94e5e0a983b31a6"
+    sha256 arm64_sonoma:  "685ebfdf40654de305d8b7a9253871c0437d3ba2524c226b411109c771279e20"
+    sha256 arm64_linux:   "b34f0bc53cac8d035fc0ee35d0a3aa05351bfcf06a83b630161dec609a466167"
+    sha256 x86_64_linux:  "a6c78ac3c5a4cce63bd380af7f08fb6bbaacf76e2780d118dfe27f92df9de66b"
   end
 
   depends_on "pkgconf" => :build
@@ -31,18 +31,9 @@ class RedwaxTool < Formula
   depends_on "p11-kit"
   depends_on "unbound"
 
-  uses_from_macos "expat"
+  uses_from_macos "expat", since: :sequoia
 
   def install
-    # Work around superenv to avoid mixing `expat` usage in libraries across dependency tree.
-    # Brew `expat` usage in Python has low impact as it isn't loaded unless pyexpat is used.
-    # TODO: Consider adding a DSL for this or change how we handle Python's `expat` dependency
-    if OS.mac? && MacOS.version < :sequoia
-      env_vars = %w[CMAKE_PREFIX_PATH HOMEBREW_INCLUDE_PATHS HOMEBREW_LIBRARY_PATHS PATH PKG_CONFIG_PATH]
-      ENV.remove env_vars, /(^|:)#{Regexp.escape(formula_opt_prefix("expat"))}[^:]*/
-      ENV.remove "HOMEBREW_DEPENDENCIES", "expat"
-    end
-
     args = %w[
       --disable-silent-rules
       --with-openssl

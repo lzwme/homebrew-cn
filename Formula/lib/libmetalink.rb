@@ -21,7 +21,6 @@ class Libmetalink < Formula
     sha256 cellar: :any,                 ventura:        "458a2aed06056d0cc3dd1005f93210c9c686ba2515d8550ec0fd6f8348168da6"
     sha256 cellar: :any,                 monterey:       "c1a510079e53edc2ebd437321751752e897c253332dc6644ebc6b03cecbf48f2"
     sha256 cellar: :any,                 big_sur:        "ec4a4a8f898432cccfa2198c0e877daf2d80c2ab5bc92a7a9134a3dd75529a87"
-    sha256 cellar: :any,                 catalina:       "a18e6199b4d775a32693aa38b80551d547eb1de58c5d7c788f706276ce296d5e"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "3fdd87e5927d64ecdf222d1bb8527d43de66446ba24e07f54dfb4c37ebd93183"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "583e662593473f7310e1c3e3bed77a89a4dc43aed5fd1ce6a12a7260ec69c5f5"
   end

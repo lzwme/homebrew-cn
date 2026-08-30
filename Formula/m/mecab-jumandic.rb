@@ -21,7 +21,6 @@ class MecabJumandic < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "f033d5c87f53c348ad60a9de9e2f332248cc06d7c7bdfb32736ff86f2a9e080f"
     sha256 cellar: :any_skip_relocation, monterey:       "f033d5c87f53c348ad60a9de9e2f332248cc06d7c7bdfb32736ff86f2a9e080f"
     sha256 cellar: :any_skip_relocation, big_sur:        "6da8172f0b7ac280bce9b4cbd35f1d7c0346c16e9470df605d6527a62fb30b7c"
-    sha256 cellar: :any_skip_relocation, catalina:       "57d02ae309f76a73adeb47ddf1a02afaf21443c4516afadb0a4cb16b0b1a2a79"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "346aefc668bb17d6acb5990cf621a5c968d100654f3fbf92cac602cf92230e37"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "3c26464bbeb15378cbc88904a355bc5e3fca846cbd709a8d9d156c21822b2192"
   end

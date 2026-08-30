@@ -16,7 +16,6 @@ class Shivavg < Formula
     sha256 cellar: :any,                 ventura:        "0f6298f4a9c2aa7bb11d2b9d6a16a8c14a5699e333e41a167f356e7ae140b77c"
     sha256 cellar: :any,                 monterey:       "9c8b1b85cf294a3cbf74955d7b1f526069d8ddfaf239ecf1b62c21aaa4190675"
     sha256 cellar: :any,                 big_sur:        "2d89164bed390c7556dbf88d65bb25775ea17bc04e1e4bfb026792ef64fba6ed"
-    sha256 cellar: :any,                 catalina:       "b7c8f247b6db49cd1cabd2efd39d034c25d727f27bce09a329d9cc3c8e36a621"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "c0b735943a8d9d52d9089d252a1b7fb0d9aa4cb6630e24a284d082f0a29c6016"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "ae5c74db54f64e3a75e394cba457cd969612c741de20f12b5941af967db03470"
   end

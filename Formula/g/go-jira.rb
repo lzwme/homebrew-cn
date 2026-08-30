@@ -22,7 +22,6 @@ class GoJira < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "6abb3ebbda9a8a58d0cd89d9bdacf4e35bc0086acc951568454ca63ad5ff0c02"
     sha256 cellar: :any_skip_relocation, monterey:       "7e5fd3b74f5866d42899c6fb895c95b72465db1eb6a41be127e644c12cdf0f53"
     sha256 cellar: :any_skip_relocation, big_sur:        "40fd5a4ecfcb1f7a296651f59f28829e760a1ef69f884766b5262abf972663d6"
-    sha256 cellar: :any_skip_relocation, catalina:       "82a05966c4af4b6200507909bc37eaef905f96d69d1c790ae655e35741ca058c"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "138271ad126a983ec28561e6a57cc82755e3efd4eed795612cece818a482c42e"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "6892ea2385e3c1eb948612c8a9c98a14442ccbdb046779fb0948db892112dc74"
   end

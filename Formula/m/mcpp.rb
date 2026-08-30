@@ -22,7 +22,6 @@ class Mcpp < Formula
     sha256 cellar: :any,                 ventura:        "69aad3cd745bb5fb369475a44ac532848d2cedee77a832552cff37f522b19469"
     sha256 cellar: :any,                 monterey:       "fb4dbfea519b3df6d1b10a769ac1f25f53fccda42d2112602a9dcd2eee7bd791"
     sha256 cellar: :any,                 big_sur:        "ba1468299782ecb1de53cff2390096e7300f5c8f021cef623544d969a37240df"
-    sha256 cellar: :any,                 catalina:       "742a861cb7087caedaed90aa40c4780a1e6e4ad50be74ee64b251c6ae1ebe21c"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "e3b5ff7ba12b3476bfdbc98e83a6aefb67ccee2a96201ac521baa85389585e73"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "7869ff9d2c9946dd38a7891ea70766983208df755ca0f206016211b3239701c8"
   end

@@ -16,7 +16,6 @@ class MacRobber < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "5e6711eddd41368e2988dc8d834e0ff2470d9de53576bbb3a9ee757757f4a190"
     sha256 cellar: :any_skip_relocation, monterey:       "9a0cd671a8a723dc4a8207cfc7e5f08628d2cadda34debd8554a92beb3ad2ed5"
     sha256 cellar: :any_skip_relocation, big_sur:        "0cba6aa1a9eeca9b46559e0592b2b667d84d99f344781bce1b994aa5ad7a6e05"
-    sha256 cellar: :any_skip_relocation, catalina:       "cb1d422835804b5ea784a2b9157ae77a0940902771397b235d4ad784b88f961a"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "f1de023a55e034e053a0b9def5895de322fb65c50bbed184391cb1d7e98f877b"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "ac53384d4cfcdf2b78d8abc6e8882ce7e6efd95304a9f09895a9e8a6108a4a9a"
   end

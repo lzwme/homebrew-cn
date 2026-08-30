@@ -16,7 +16,6 @@ class Wput < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "40cca9132e6826d07f8237bbb27419b55012b3e45aee55c39e1e0945f8201afc"
     sha256 cellar: :any_skip_relocation, monterey:       "39c0ebbfc7502644b9df207fae398036caef7cfcee63d340776d036893964610"
     sha256 cellar: :any_skip_relocation, big_sur:        "2a5d49be96808777f249d96b6f86e2e0e0e301be0e929ba1eaea99cf79cacf42"
-    sha256 cellar: :any_skip_relocation, catalina:       "77703d5dfb1bde183ccc207ee5e3f14b1a677acc697806a2b16f00c56cc0595e"
     sha256                               arm64_linux:    "ec9a4b8e069c941c18e07b232a30c5e5daf926003d9ff6120b0ac1e21d1f0e5b"
     sha256                               x86_64_linux:   "0fb27e180b9a6f8ef2b3508530874b467449fdac55a347c63f2e86ca360db073"
   end

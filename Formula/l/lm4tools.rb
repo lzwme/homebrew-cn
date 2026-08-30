@@ -16,7 +16,6 @@ class Lm4tools < Formula
     sha256 cellar: :any,                 ventura:        "7c481d7dfe7be9b57aae020c7a46fafd5de306cfd687b02ec4857e4db9d694cc"
     sha256 cellar: :any,                 monterey:       "1bef37edda64611296ac2ba9df91d92d082dd2da0cac5673ef8735d0704330a8"
     sha256 cellar: :any,                 big_sur:        "2fca09b10fef4d8304ba4acdce164bbfc5f4fa9b8dd1eb6fcb60b8a58c7ac8d3"
-    sha256 cellar: :any,                 catalina:       "5d2e503a9c94226f9d3c6d1da1a54424be1c9a16279bcc94253ab0e2da2a3718"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "8ecfca1688d68be5eebd7cde61d6e6fcd55a2e614e70a5c3a2a0943dc1591da9"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "5afa96bcdab63596529b9202a6c985a4a1cd634235b2a3ab099805046384e405"
   end

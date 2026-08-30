@@ -29,7 +29,6 @@ class Loudmouth < Formula
     sha256 cellar: :any,                 ventura:        "7fbed66f2d4ded808afb89a793ae6355a9134fd361fdba0ab0e930be4535743d"
     sha256 cellar: :any,                 monterey:       "890ebdd35bf9275e771984de61b38557ff279e61d15e8c9d11813def0b65689a"
     sha256 cellar: :any,                 big_sur:        "d770f0cd1a81375c306d0bc6fdd81610d27bc844fd5086518aaa7f8fa6252a14"
-    sha256 cellar: :any,                 catalina:       "b83be4ad6fce30f484015b344d21e3e425860b3c8a2cb6a609e059611d03caf9"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "c68d8c7b9f5a4437ceb7697484a3609635d8b93fd24a37e1e7a5b973b8c2c9dd"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "6052693231034f7a87a85eb4e56755786089171b9ce5ad1e0babe0a891af55d9"
   end

@@ -16,7 +16,6 @@ class Mailcheck < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "d6e91d19af4b560df0f8a4c02dc922e7e31273812076b8d326109f394a8d7dbf"
     sha256 cellar: :any_skip_relocation, monterey:       "212f413b638cf5e1e95f27edec31f6f197cf4ff2f20d24e0580d7db1957b2ea6"
     sha256 cellar: :any_skip_relocation, big_sur:        "59d3c8716efff8670b81cec68c47b0663ffa079938ee6aae55078770564fa481"
-    sha256 cellar: :any_skip_relocation, catalina:       "66fa586c21ec0cd9a842fcb99e8bbf822681c8858b864b14aa7d57ea89c47a99"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "f1c3ac175abf729a56d77e55d0039cafe7f478c9e069961a8383f1b2c6f1e963"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "84fa4f1d288f0f8824334bb68621b8589b65e0d9e21a4ca0961a33aae5d0ef63"
   end

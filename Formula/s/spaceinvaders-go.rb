@@ -16,7 +16,6 @@ class SpaceinvadersGo < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "2f88ced1590ef728581255dab2de51ea7374d864bc2c4333c0a845fce83b1812"
     sha256 cellar: :any_skip_relocation, monterey:       "c23c5bfc361fe30fb1407a346a3c215629a2423c2123c3d99609cc7b820333d9"
     sha256 cellar: :any_skip_relocation, big_sur:        "c0ed01fe110f5d7d681d12883f58962ae5c0ea721b032e8d3ef0adee41956841"
-    sha256 cellar: :any_skip_relocation, catalina:       "1c4712409711d84aa1a7ce64214bb620e13660991f2afacd41681278ae0c3ba1"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "758693fc598848fccb124fed344f21e01a2f686e4883b312f26b83b809fa0fcd"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "4d2e59d2248dd8e1ce86416197eb5109f7c3c51d98b686517ce3d9fde948d572"
   end

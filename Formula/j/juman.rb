@@ -29,7 +29,6 @@ class Juman < Formula
     sha256 ventura:        "fea60e1ecb3168344e4d5576680b79b76036e6bf19d24553c5cde0c914ec8b1d"
     sha256 monterey:       "b8076e4c5626f942eff9a9e95ef8f06a9a2e013c344b626b2dc7c30756eb64aa"
     sha256 big_sur:        "69ca5acb9395c257b591bd6eedde58c0707929af25b767d470dcb5fef786c054"
-    sha256 catalina:       "0cb4d99f79b907922d8352e841096301a132ab0f385c75910ab53198b1f72ab7"
     sha256 arm64_linux:    "e04f2b077fb8fbaa2064b621c875966f1c6f8424f5f9c7d6d4ab2cd162b484bd"
     sha256 x86_64_linux:   "dc72214b5b06cb06dee3a256586b433541d36d3c1af89282952dbdc5e1f232b4"
   end

@@ -22,7 +22,6 @@ class Aldo < Formula
     sha256 cellar: :any,                 ventura:        "e81b0d99b63abac08c7768f017eae3c9d059012fa8867f0ff8d3d5bf76e81b7b"
     sha256 cellar: :any,                 monterey:       "266951db532a823d9241ad3e29d0e07b63f5b7dc5d4fcae3b3dfed117dfd9488"
     sha256 cellar: :any,                 big_sur:        "b6e5c413c1ca391cd040cadd7d2c153e7552ce43677da0d0f1aab1467e92bb3b"
-    sha256 cellar: :any,                 catalina:       "2a574bfd1a76ef4733d941234df142dfc87b05cefefaf58d0617113d7af85999"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "41aaf9303c8e8cac32a159590dc0e3f1c905d591cebf215a0e699c893feced08"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "660548eb8c93e2c78a50b925143a9b24400ee578790b62e7acde1d1aed360a98"
   end

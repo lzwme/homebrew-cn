@@ -3,18 +3,17 @@ class Snakemake < Formula
 
   desc "Pythonic workflow system"
   homepage "https://snakemake.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/64/a7/dcebe66ee0b427f2c6601693fe8275702114d52f373cbc377114d42d458b/snakemake-9.26.0.tar.gz"
-  sha256 "8e02617ef1a3022ab3ad707a314517f61bd781eefa58d73a8bd301abc5dfaa17"
+  url "https://files.pythonhosted.org/packages/3e/37/f999e99357a9b30c6f36c92027ab3b6f64cade4ec54840197853297d2e04/snakemake-9.26.1.tar.gz"
+  sha256 "091b5d480c0c5eb2ef75b2568e9885091f3e2f11372de358da98ef66ef66e1e0"
   license "MIT"
   head "https://github.com/snakemake/snakemake.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "219406eaac03f24d7458584eebd65a15c45190be1d17def34938b1e72f147f74"
-    sha256 cellar: :any, arm64_sequoia: "ec88b619524ca35121b38810c49d96b45ffbd4a110d8b6aca79c19bcc7f1140d"
-    sha256 cellar: :any, arm64_sonoma:  "e68d140dd4aebdee7eb7cd124668736cd100a9774855a5e1e4a09b8b4f136031"
-    sha256 cellar: :any, sonoma:        "4f6f8f188d5dbadced6d7e176ed6ae4eb8e63d92915c0520c488f3daaf6f069b"
-    sha256 cellar: :any, arm64_linux:   "12482bdb1c6c97f57dd99bc9b689f43a34513dfadb31bb26902f416bd2b26e25"
-    sha256 cellar: :any, x86_64_linux:  "5729ee033af142ba4cbf4bc6afd7cf1f98201e47a95eeff19052f6dba3c99ec3"
+    sha256 cellar: :any, arm64_tahoe:   "82ea2ad06cb87b18d6d87c862bf56e9fedfd1c4716af6c3b19be3c3b0d0b4b3c"
+    sha256 cellar: :any, arm64_sequoia: "24f91e1d56d8d574bf2dc86cce3d6dba745b686390e8f902fc8876a139f69eb7"
+    sha256 cellar: :any, arm64_sonoma:  "f25b1c0c7d76640727161e3440fafd472e8e646073a2898f2de205724cb1f23d"
+    sha256 cellar: :any, arm64_linux:   "891b6dd33439f4b04faf5d959e8c79ebf8ebf46897870df9f7f0d9d1b2becf78"
+    sha256 cellar: :any, x86_64_linux:  "c4bb2bf3eb51d42f46c1ee2eb255a97c06a6f8e9a283bb0b5046127e475fa732"
   end
 
   depends_on "rust" => :build # for appdirs
@@ -138,8 +137,8 @@ class Snakemake < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/50/bb/ebc6636e1ae41314f796ebb7215fd28febb45f9aac72f2b04cb74b5071dc/platformdirs-4.11.4.tar.gz"
-    sha256 "f3373be828247211d0febabea97e238c3dfde8a60b3c90c32756fb52cb21556d"
+    url "https://files.pythonhosted.org/packages/ea/06/cf1564dcc2e2261c8c8c6c05628dc8b418943bdae2a4e58640ceb2f770fa/platformdirs-4.11.5.tar.gz"
+    sha256 "e8b31f4f8bcbbedef91a6b57a706255e4f148d2a4e01648382a0a47342539173"
   end
 
   resource "psutil" do

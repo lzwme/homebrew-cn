@@ -32,7 +32,6 @@ class Splint < Formula
     sha256                               ventura:        "2b3eaa69bb97239d281a12e678c4a5314413d3cc6543742fd67a6ec1e7d987a6"
     sha256                               monterey:       "fa3307d22e30d030cc844b92c91891cfe0581226726a7ad54e1cec82dec07189"
     sha256 cellar: :any_skip_relocation, big_sur:        "bbe9dd0df4449df4259f44c16dc1505e6cdde38c0e7b7cc275d17ae974c8a3b2"
-    sha256 cellar: :any_skip_relocation, catalina:       "98cc2bfccef60b21ec014ff35e71cc91a85e77435b4e429090e2767d0696bef8"
     sha256                               arm64_linux:    "6003db1cf73e332befaff1d85a5a3c547a094594e014b775cfe55914158dff58"
     sha256                               x86_64_linux:   "fded0340d91cfcbd99ddf5a89b505fd59895e980d86366654196192d6358a97c"
   end

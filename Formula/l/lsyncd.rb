@@ -52,10 +52,6 @@ class Lsyncd < Formula
       url "https://ghfast.top/https://github.com/apple-oss-distributions/xnu/archive/refs/tags/xnu-7195.141.2.tar.gz"
       sha256 "ec5aa94ebbe09afa6a62d8beb8d15e4e9dd8eb0a7e7e82c8b8cf9ca427004b6d"
     end
-    on_catalina :or_older do
-      url "https://ghfast.top/https://github.com/apple-oss-distributions/xnu/archive/refs/tags/xnu-6153.141.1.tar.gz"
-      sha256 "886388632a7cc1e482a4ca4921db3c80344792e7255258461118652e8c632d34"
-    end
   end
 
   def install

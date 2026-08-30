@@ -16,7 +16,6 @@ class Envv < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "ab99488e9001da3147d116a80bc6f7235b60f6ca348587e573b92d20f88149aa"
     sha256 cellar: :any_skip_relocation, monterey:       "f58b94b534868176986117c6f3f2eb470388cc439c98308de6b2e99db8990c0a"
     sha256 cellar: :any_skip_relocation, big_sur:        "39f8b46cce79836ebbc2281f1836a30eb2440e5af70bdc251469c0cca36f7828"
-    sha256 cellar: :any_skip_relocation, catalina:       "54b7b425a3db83134fc9038b8672bd84a943413f5386d9cef92711eeaaade467"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "1a4f95cc571b62d3b42a9e96261ad3c1a79a0c22c9b2f09e1773f59748ca3e86"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "9cb0c8481042567e17ff04b7d5dd3cc46fccbc0e321203770791588fc51d11b7"
   end

@@ -22,7 +22,6 @@ class Mp3wrap < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "6f72f17884f6f657f8c8db28383b880d6fb4448181689997c9834d860d28b7bf"
     sha256 cellar: :any_skip_relocation, monterey:       "e07fa1bc62342d8166accae07efd264b0449ee57ed27224f05897444bbec43fc"
     sha256 cellar: :any_skip_relocation, big_sur:        "fb2198208b5da896231a815235652c3342ed305a858950c9fb10bc7e296d1e34"
-    sha256 cellar: :any_skip_relocation, catalina:       "fa93ce86b2a055521e166325b4219773f04c6886075bd77932dcb6dff436ddce"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "962b508b014f584bcb0ea88a84e150e6c0ebdb80573252a7ffca2c6bc25bb567"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "e666ba56f6a93702e3a37b4dd6f8d908b6a16246ba9ad5467518c970f4ac30ab"
   end

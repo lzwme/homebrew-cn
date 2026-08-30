@@ -23,7 +23,6 @@ class Ipinfo < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "b6200ef7097f9b8deaf0b7c28b968e6af3577e22a38345fccc859c89ded033b1"
     sha256 cellar: :any_skip_relocation, monterey:       "dd6a283e541551be0bda8e82d322dc5f057e363021482cb8111afd0d045d6924"
     sha256 cellar: :any_skip_relocation, big_sur:        "9b70f868f6a9a1c2e59247a09510e14e3da1a45c2acaa86fde9b93a155a14e68"
-    sha256 cellar: :any_skip_relocation, catalina:       "b2202f465e419b0bc7e3667d75247cc37a46b49d9a4eb5f23f1f63cb361fd366"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "7281f5fe0d2f917996b4049beb1753c4c4e22a808d9fbbdc3b1905c37365be70"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "91632022aa7d392d7f03002052683ca4d7bc9d09b16a6132d479b7263dd2969f"
   end

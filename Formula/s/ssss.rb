@@ -23,7 +23,6 @@ class Ssss < Formula
     sha256 cellar: :any,                 ventura:        "dc86cac011a3eaf6195850aeda5241784c51f7298e95ceccc622f6d1e62b4654"
     sha256 cellar: :any,                 monterey:       "9dc2e5f7a756608b8d979bc325ab16a466aaa650b836231d1cea1c4d816b8ca5"
     sha256 cellar: :any,                 big_sur:        "5ff50aef8004346c9cf21eb9aecae18ce2b7d4032c7460284b6c1903dc244d6f"
-    sha256 cellar: :any,                 catalina:       "ba1cd924e9aa97d91ff125c082ff9d1b2eb7ce3bea642edc1ae9c4f94340d19d"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "7b17a59f64cafbf6650d62aa354f65ff5971353ac0aa105652be34b091dca140"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "74cef70f4478596824e7ecdb1356b650c6d03e1bd4bcf8202822622c16faf6b2"
   end

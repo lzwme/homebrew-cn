@@ -17,7 +17,6 @@ class Webify < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "99d3f367eb9e00999b733e1aff3ab1d8000b4e36885a5e74ca1faf44e96274b8"
     sha256 cellar: :any_skip_relocation, monterey:       "fa86b0d119e772525b310e2074115745dfcd4791ab9a8401d43674b5d7d09b43"
     sha256 cellar: :any_skip_relocation, big_sur:        "284df018b49ddc0c2a3b8e0800c1997abebee41d198edbd7d725be2f88a8c5e4"
-    sha256 cellar: :any_skip_relocation, catalina:       "7b6543358b1c92e8e8cc71584ed52802a039c9327edc839dcc75216fbd23558c"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "ec575d86612a39bd2e879f5bc7d6ae16e8787670d66c8c23da15df7d09f8d378"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "9bfcea38ac0326979bfc1c189dd9bf3c19437a5d92c8cade9a41f3c1fe976d83"
   end

@@ -19,7 +19,6 @@ class Dfc < Formula
     sha256 ventura:        "fefbde9ea38d983a69c406f0ed63ceecdea1460fa34d97ca64a158b86da1f2f2"
     sha256 monterey:       "127dd250819075427ca4a6f35f292d29c4af8b070c6ee368645817d54ac5a50b"
     sha256 big_sur:        "a89714cadb5ca91708c9f0c0f37266726517418e0ee592003c1cff38cc7599b1"
-    sha256 catalina:       "cefa6f0f5e96a815ebbee4d4618dc927f88052f4137d52c31d21688fac211aa8"
     sha256 arm64_linux:    "210935ed2e087198b582b8c46b02bd88c0f95df0cc996b17310e38e56a711fcf"
     sha256 x86_64_linux:   "0d467920d7e3393975fc11b8fa07f84e177ddafdfa7139bc219183380f891d42"
   end

@@ -16,7 +16,6 @@ class Dvdrtools < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "bcc5fd8f00fad05c8027a1f151a39da5cf3e3a57ed84c8753834202ffd903797"
     sha256 cellar: :any_skip_relocation, monterey:       "63a9ae5cc3cf6c54d7d7302dab688c4cd560ce69d30eceaf0de09d7f5da53d7b"
     sha256 cellar: :any_skip_relocation, big_sur:        "c969433ed859dab8f0551c6eab562a4cc272b063f333e0208081ea3b5940c76b"
-    sha256 cellar: :any_skip_relocation, catalina:       "40f565db4f098c70bed700dc88edd45951e58a7f7c64583d52db81afcdbde704"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "8049f79b1ed1c0d2a581343623b60d621797365f0fdfec5f5b5e12ba1ea37650"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "b0ded8f875ea08da1c4ac07675a925b475414f03e03071b6e4445ec690494d88"
   end

@@ -17,7 +17,6 @@ class Libcsv < Formula
     sha256 cellar: :any,                 ventura:        "975bc0968b6d54eb26b6d21983086472cd473159163e525080e6ece157a3cc58"
     sha256 cellar: :any,                 monterey:       "6c4f06b89f9dea054ca3ee012d70b83268b9df1943b7e002a58b442f55ea126e"
     sha256 cellar: :any,                 big_sur:        "4edab615e912a3a0e931fff1b4f594093cfa1c4bc4869340046300b181f9ebc5"
-    sha256 cellar: :any,                 catalina:       "e596efc37a1bf77cdbbab5fdc904e6ffa796f221b3ffa531f3ac24f56237d18a"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "a313d8dd11bc697e7f0f45e36572a38c6a86c827b0309a564849c443ea573a78"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "a66bd666958e3125f08377688cf86c94cd38e077bedea9a70cb17c721794211f"
   end

@@ -16,7 +16,6 @@ class Tcpkali < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "e3a2e0de9e4081e5f2720aec73737040ad1449b1d69d4ce7fbd1cad1940f4c11"
     sha256 cellar: :any_skip_relocation, monterey:       "4fb40f82ea3e44a7903dea3e1ef6a950833368346a5810a91b393b7537ec8bd6"
     sha256 cellar: :any_skip_relocation, big_sur:        "6496fe2ab336a75fecc905017ea8886c67dff3e13139b37474e6f500eb98e0fa"
-    sha256 cellar: :any_skip_relocation, catalina:       "01bd403a6b94827f4670877d1e36ee4c439f708d84d364584e5b1538837e72d0"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "a21cdba0e1d2863bb691ab0b2a6b416f801b38236a399a3bd8d6cfc67762f539"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "ae1230bcf9879d1d8f09d5e0a3b80c9baf7f59c2bfa77a296a06ed6a821d5be7"
   end

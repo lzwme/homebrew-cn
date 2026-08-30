@@ -22,7 +22,6 @@ class Fortune < Formula
     sha256 ventura:        "eb226e3087a3f58f8bc0dc0eafabfb7625605bc6e023ed45d9386692cb26cc63"
     sha256 monterey:       "edf16c29c279acfdbeecb0202f93ef36852f96060fadf7645b94aa19b0cb054d"
     sha256 big_sur:        "de301856c24aee684544214cb83474fe8237104c9cf214df6777267418b17d9f"
-    sha256 catalina:       "9d1ed340349cd7995d1308fc09fc69c3520c96b329ab881dc0d96fce914e029c"
     sha256 arm64_linux:    "04f6e8b1d02ae3b6ab10b9b12083c88d44a8c149f46a9b7ecbfd135324014445"
     sha256 x86_64_linux:   "791d7f7963c86af2f2ef311f739f8faddcbd0448feb0b8213d2b3c2263fc317e"
   end

@@ -16,7 +16,6 @@ class SomagicTools < Formula
     sha256 cellar: :any,                 ventura:        "14d78478d89843bf095cc9bfe37d1df550b9344f7d5453d7a54ae61a55febb7a"
     sha256 cellar: :any,                 monterey:       "6307d97300f3ba6bdd7b8d63c3fcf01dba6329713e5fefb1c81c042f07fb0041"
     sha256 cellar: :any,                 big_sur:        "e96911a936eb3ed42923f4cba1f29dcc96f624ea5f6209b153b0922ee529d20e"
-    sha256 cellar: :any,                 catalina:       "59d88127409e26497afa4bb7d3afa04820dd1ccb56542096e01c85c733e53045"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "aa90bfa3a829c6d5073ffd2f7552173c4b33174aec52a32a75702a7bb55e61d0"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "b6a63036040014c766c494998f69b3be27f0ff5dccee6deba1a0f8ac7c6a05e3"
   end

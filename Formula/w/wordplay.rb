@@ -35,7 +35,6 @@ class Wordplay < Formula
     sha256                               ventura:        "1074a6a9d010d50bfe73cea4fbafb6a2d7d90155057e1c25e90394533c9eba83"
     sha256                               monterey:       "f456578ef358b10b91008a83f42e6877a4daa32615588fbb3ac629d9db804c5a"
     sha256                               big_sur:        "086d078ef82bce278ad9bc25d901f1ffd3bd539aef410c7e81466b0616ef2c32"
-    sha256                               catalina:       "bf3847365e1920baf313fc0286116de59fee392ccde5182173ed7198b9883626"
     sha256                               arm64_linux:    "40b8d661df34ff03a28922e62a862fa037d3b66925cd51528018f7f45de587d1"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "f7e8e9383f4bbbe56afbd9d2c400867ecf0f229a3aa3431c5b809dd95ffd6a30"
   end

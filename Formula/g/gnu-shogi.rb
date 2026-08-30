@@ -17,7 +17,6 @@ class GnuShogi < Formula
     sha256                               ventura:        "ef6c5d508b5a76bc305290ee3e644c2823691b168752feab79f3a4ce79379fb8"
     sha256                               monterey:       "c07b78082a29a7db9d4d19fa81f61e7dd89c0f1f184e946e2012fa2fc4bed9d0"
     sha256                               big_sur:        "70258434181a6f40b0c3cddb7e2a5f0119bf953bff5dbd3e795533f558a104ea"
-    sha256                               catalina:       "6c559fdfcd24543c1f83f681fe3337048783d17649804b642fb0063dee88d7c8"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "9f7b9bcfdffd2c110a5ad05cc370f4fcf322b655152482ed62e35426d61513d0"
     sha256                               x86_64_linux:   "7700579666c89c383d66c691c0deb1531fe3af8b886b1b74ed875803862c5223"
   end

@@ -16,7 +16,6 @@ class Hilite < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "5316dcf6b7f26ecf9a6149a3db6026a9b1c467f35af63e2dcd499f0262c3db52"
     sha256 cellar: :any_skip_relocation, monterey:       "5c5bf78c282a2858319b08bcfcc65af8be02431aeae83ac6654b32cc7c3bb605"
     sha256 cellar: :any_skip_relocation, big_sur:        "3f3139534dda449285ab33db2042a264bc553b7efa47ac86507b598c50a5a2d7"
-    sha256 cellar: :any_skip_relocation, catalina:       "31205045cec574039eca74d90f2701191f1192726943e5f7bbc37d1081e21c3e"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "1da54468f24162b4804bcca235bce6c1320c722fd9d5c1dfde11e71885bde309"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "45f0c131886b8932ee87061c612877ff71fa38650e81340eab5694de95e6cb40"
   end

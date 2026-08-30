@@ -16,7 +16,6 @@ class Ekhtml < Formula
     sha256 cellar: :any,                 ventura:        "3d1bdcc582ab80b004131b68622139a924f0dd4c1ee7a8f8fa3284d5736e4222"
     sha256 cellar: :any,                 monterey:       "252e39e34ceaa9454a21a16db39556a06ae13701f31671ec8354c86be76107c0"
     sha256 cellar: :any,                 big_sur:        "238ffdbf0c5a207667215d75c4a05f9b32af2ad6d9f53f256977c56623088d11"
-    sha256 cellar: :any,                 catalina:       "6599b50de97ee6aec9788ac0479c2ad25f335213b3bc9bbab0e5a8ae5c142482"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "3f2ab2f0d6601017ddf04993f8223350d37b134248701391503ad0914067d902"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "8841e4eeb677f92be17fbaa26ee2d5d1e2d6ce958eff178fdb4a9fcf33ea1363"
   end

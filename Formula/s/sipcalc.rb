@@ -21,7 +21,6 @@ class Sipcalc < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "83e31eb5e6862b8b43c64cc37f467514710165ddd129c9f7a79f34a28fd6d583"
     sha256 cellar: :any_skip_relocation, monterey:       "dc22b86797deef059d90b7bd8c07b235556acbad13e6df0575c99ea30359570a"
     sha256 cellar: :any_skip_relocation, big_sur:        "7ecd4de1c66d06136e36ec83e076b253212294f0407bf049e1bdf7746505c2ab"
-    sha256 cellar: :any_skip_relocation, catalina:       "4b211b4978bd165adb71435e19f19f146ee84f905555c3bce2d4652375067d3d"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "a08824e18de04aa9673ef0fe31bd7ea568eb4029210c58b57002f4f3110ba732"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "32b27f7515668c3962b6f3e629928524026bf005b6ed247449779064bb65e1d7"
   end

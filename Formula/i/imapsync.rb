@@ -80,10 +80,8 @@ class Imapsync < Formula
       url "https://cpan.metacpan.org/authors/id/L/LE/LEONT/ExtUtils-InstallPaths-0.014.tar.gz"
       sha256 "ae65d20cc3c7e14b3cd790915c84510f82dfb37a4c9b88aa74b2e843af417d01"
     end
-  end
 
-  resource "Module::Build" do
-    on_system :linux, macos: :catalina_or_older do
+    resource "Module::Build" do
       url "https://cpan.metacpan.org/authors/id/L/LE/LEONT/Module-Build-0.4234.tar.gz"
       sha256 "66aeac6127418be5e471ead3744648c766bd01482825c5b66652675f2bc86a8f"
     end

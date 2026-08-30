@@ -21,7 +21,6 @@ class Dmalloc < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "01adf9d08a79145edccb9004602becb64b659062815b15ce5504a80937c80970"
     sha256 cellar: :any_skip_relocation, monterey:       "e81b6c8a327baa3612aed45f6dfc157885344bb64f925dcf1cb00d12acfb2f9d"
     sha256 cellar: :any_skip_relocation, big_sur:        "300f9e7b54c15071bc36fb861cc6b75ef671052c8be6096a99314b1ca0077565"
-    sha256 cellar: :any_skip_relocation, catalina:       "770699ff908a65026ecdebbe57272a50e57f60341c2918302ee4b6729e866533"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "37749e2907a9db34407034a0c00e0f72e96584049a9daea5de8239e654731501"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "c170666de851ea2229c7c7e5dbd2d45960d8033bae31ceffd7eaf5289c1c7aba"
   end

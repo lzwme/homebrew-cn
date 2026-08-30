@@ -17,7 +17,6 @@ class Yconalyzer < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "91f17d0dc4ebdef21e2905a8f6ba20d465fd42b923904ff7ef86ff65a2f4c335"
     sha256 cellar: :any_skip_relocation, monterey:       "b44aa7bbb2dafbe58a1db1f4dfe228fc2cf7719e79f449185577817090d3a1a7"
     sha256 cellar: :any_skip_relocation, big_sur:        "2e6c3b8964a0feb62dc624f9359bd48e44c07929b1952c36fbc4d05be76ef871"
-    sha256 cellar: :any_skip_relocation, catalina:       "2e834b5134e7670fc97cb45131b732a7dc7a6f41598dacb20dd65b575713dc16"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "ceb7984dedb18edb2dcd60885d5cb626ce8217ebc2b11246ed47af4eeb5bdee5"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "c416d91d76c10a6331d9703d23597b5e03fb67c97155247cb6e5e3f852f89953"
   end

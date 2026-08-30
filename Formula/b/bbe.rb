@@ -16,7 +16,6 @@ class Bbe < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "81e9cc86f064e0e4a4b7dd44b6752a8f8643ba70dca6f08ae66dce92d4de58bd"
     sha256 cellar: :any_skip_relocation, monterey:       "1a2799215e2d472a9ae04a451e486da0853b2861e3e9e04d274c8ba5e0c30f30"
     sha256 cellar: :any_skip_relocation, big_sur:        "677a07ce2e73761b8403033706a969d15bd89f98401054dccae350c0d9acdf6b"
-    sha256 cellar: :any_skip_relocation, catalina:       "16ec8602703755894016b9ecd47ca9875a97c66ba259cdb8d7fa8902a17dd8d3"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "27f2ca2cf847bfde8d9ccba37c4678db988ac753755b97eec3da69f75092ba68"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "b683897c9241114a529a017dafad699e55a4bc3f19f1e3ef9bed408c8ee6c72f"
   end

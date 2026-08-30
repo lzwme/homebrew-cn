@@ -17,7 +17,6 @@ class Vstr < Formula
     sha256 cellar: :any,                 ventura:        "dfb9e211db08192d08eb31c1928a9664f102662bf97324dff1e8e2a1616882c3"
     sha256 cellar: :any,                 monterey:       "029df7c0188636bd34fdb8f2a26697f61cc140660623992ee38af2e1050417c5"
     sha256 cellar: :any,                 big_sur:        "cc1c69c834bde35ed9e0df8178e8e65d9ba5703fbf2cf896290aed6a7433c4b3"
-    sha256 cellar: :any,                 catalina:       "adbf13e88473af357032472ac09af1230667c5010089089a3c223819ef74c7f6"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "a7507e113107828ddec905dfb3c2b373d11f676800cc342fdf080a12038df960"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "8346f2277202db06584db705dcf754a00ca364c547791d911e7c3395072b1b6e"
   end

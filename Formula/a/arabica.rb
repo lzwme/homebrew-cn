@@ -30,7 +30,6 @@ class Arabica < Formula
     sha256 cellar: :any,                 ventura:        "6fc9d75c64dc7690bf5c6b4d07642b65cee5f5a7cd582e59dfa22cb5cf8cac07"
     sha256 cellar: :any,                 monterey:       "db7acb62fe52ebc6b315b9e1e94cbf5ead317e7856af95efa8d5eeb0a41f62bf"
     sha256 cellar: :any,                 big_sur:        "c1a63f10d7451ba663ad8d974a69d83091be30730ca962a2fbd0e36b95ab16d2"
-    sha256 cellar: :any,                 catalina:       "4fbf676c46941de213b095ab74f0b4973e5984c2bbaa7679757b0db4b369480a"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "fca2b168c6149c388d0692cecce3959175ef8aeec053cb64c0fa653f2c6553a2"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "129967d8e801a766a2d8209dff39cc8358bff641249838682ac1a943d0b7d385"
   end

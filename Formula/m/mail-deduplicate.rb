@@ -3,18 +3,17 @@ class MailDeduplicate < Formula
 
   desc "CLI to deduplicate mails from mail boxes"
   homepage "https://kdeldycke.github.io/mail-deduplicate/"
-  url "https://files.pythonhosted.org/packages/f9/c9/a80d901668896b00d20aab80c91c02cafdd203134245acc8c74099b4a1c7/mail_deduplicate-9.3.0.tar.gz"
-  sha256 "91da1ef5da2d22f125afaeea36a59aa8301707a3843361cce63081e416ef486e"
+  url "https://files.pythonhosted.org/packages/93/6f/74c987273c00163db2ea828f6e7a2e545605bce9608cf7d25ead5a1a0db0/mail_deduplicate-9.3.1.tar.gz"
+  sha256 "4e7968e0caef32635e9ed0198e795928c8728e8f6055064023a47fe29c883f59"
   license "GPL-2.0-or-later"
   head "https://github.com/kdeldycke/mail-deduplicate.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9446e03ee71dee544cf6b5641855f559732700e0f5973d931548700782c37f9b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9446e03ee71dee544cf6b5641855f559732700e0f5973d931548700782c37f9b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9446e03ee71dee544cf6b5641855f559732700e0f5973d931548700782c37f9b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "638ce0ee0d541e1f21379074628e7dedd918a89c8e9f71b7d583f7b1442236dc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "638ce0ee0d541e1f21379074628e7dedd918a89c8e9f71b7d583f7b1442236dc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "638ce0ee0d541e1f21379074628e7dedd918a89c8e9f71b7d583f7b1442236dc"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "57703fc7c9f2a2f3c7e1eed80bcc955dc229e2175b5693d5d2cbca182addd2c3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "57703fc7c9f2a2f3c7e1eed80bcc955dc229e2175b5693d5d2cbca182addd2c3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "57703fc7c9f2a2f3c7e1eed80bcc955dc229e2175b5693d5d2cbca182addd2c3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5c9cc70f9ed98c3825498e4bfbaf0dfb93c71b6db03df5943c28eb2b88bc3505"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5c9cc70f9ed98c3825498e4bfbaf0dfb93c71b6db03df5943c28eb2b88bc3505"
   end
 
   depends_on "rust" => :build # for click_extra > uv_build
@@ -35,13 +34,13 @@ class MailDeduplicate < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/76/d4/81420972a676e8ffea40450d8c8c92943e7218a78fe9b64359836cc9876b/click-8.4.2.tar.gz"
-    sha256 "9a6cea6e60b17ebe0a44c5cc636d94f09bd66142c1cd7d8b4cd731c4917a15f6"
+    url "https://files.pythonhosted.org/packages/c7/0e/7fa0ef50764b67090eca4114772a2abf8b6148198475e54c660b97caeee6/click-8.5.0.tar.gz"
+    sha256 "ba0d2089de75ea0310e2dde03160e6ca10009947fb95a182f9b54021bb272e34"
   end
 
   resource "click-extra" do
-    url "https://files.pythonhosted.org/packages/f6/f2/ab33d5d978f4ceb1b52eb3e4ee0538aa197768913d411380a7b318e45e91/click_extra-8.8.1.tar.gz"
-    sha256 "fc67535bbc186ac608b04f1da3dd1c442903567f08a12f484af89a894653f796"
+    url "https://files.pythonhosted.org/packages/fd/59/f527fbd7c2d36c057073900b69da480d928f2d91840d08dcf80929512c81/click_extra-8.9.1.tar.gz"
+    sha256 "18a99d91d94375aaa27dc6a5efdebf6cb0cd0637bae49fd1cb6d8a6398cf8294"
   end
 
   resource "cloup" do
@@ -50,18 +49,18 @@ class MailDeduplicate < Formula
   end
 
   resource "deepmerge" do
-    url "https://files.pythonhosted.org/packages/2a/78/6e9e20106224083cfb817d2d3c26e80e72258d617b616721a169b87081e0/deepmerge-2.1.0.tar.gz"
-    sha256 "07ca7a7b8935df596c512fa8161877c0487ac61f691c07766e7d71d2b23bdd2f"
+    url "https://files.pythonhosted.org/packages/b7/6c/9f4577a36d5f463a3a3f8322bd65d33e1a1a6b6ba1d692a5ebc3cba19015/deepmerge-3.0.tar.gz"
+    sha256 "14ed69f063de64b7743985c732ccff5d6c34ff4560946e7fbfd99086b853b9ce"
   end
 
   resource "extra-platforms" do
-    url "https://files.pythonhosted.org/packages/d0/20/3d7ba1bd9cd9235eda78a143adcb2a710c6117f5b3f500237bc2f240808c/extra_platforms-13.6.0.tar.gz"
-    sha256 "92b5800c0ca9767820ae2cf3d48b7037432c1360055ed1804bc43a8269a2a090"
+    url "https://files.pythonhosted.org/packages/3d/e1/01785853e8f1b1029b7417f4ca057ff1c58690e7e8bd97f2e79c101287ab/extra_platforms-13.7.0.tar.gz"
+    sha256 "888437802eb1734de914c1dce062371c1c942acdddbfa0b94dd04be99eec0240"
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/36/0a/062135c9a98dac804265073cc3afdbec5ae1aa37980bb354f461bafe81b4/platformdirs-4.11.1.tar.gz"
-    sha256 "bb1af68078f25e2f3e111e2d43b8d536df41b73c8a684b40bb018223b66fae27"
+    url "https://files.pythonhosted.org/packages/ea/06/cf1564dcc2e2261c8c8c6c05628dc8b418943bdae2a4e58640ceb2f770fa/platformdirs-4.11.5.tar.gz"
+    sha256 "e8b31f4f8bcbbedef91a6b57a706255e4f148d2a4e01648382a0a47342539173"
   end
 
   resource "tabulate" do
@@ -75,8 +74,8 @@ class MailDeduplicate < Formula
   end
 
   resource "wcmatch" do
-    url "https://files.pythonhosted.org/packages/16/25/1da725838132221e33568973da484ff43813662ccc06ebf7f6e3abddfcd5/wcmatch-11.0.tar.gz"
-    sha256 "55d95c2447789712774b198ceec72939e88b5618f1f8f0a9b605bf7740b63b96"
+    url "https://files.pythonhosted.org/packages/57/43/30e407989e313677dbb9d5f045f966549a7254834571e342eaa4b55cc67b/wcmatch-11.0.1.tar.gz"
+    sha256 "1ea2b4fa678b8ca268253798d5963935df39132d47c3e241c0a0732224005e7d"
   end
 
   resource "wcwidth" do

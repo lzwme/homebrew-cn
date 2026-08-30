@@ -17,7 +17,6 @@ class Vimpager < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "c37538249a0c974631d1b6b09d7dcb434a7cca9a9453d2c273ac23c0196932d1"
     sha256 cellar: :any_skip_relocation, monterey:       "37620c6662f65c8314c749c26260bafff4645b80877e9f152783d063dcae9283"
     sha256 cellar: :any_skip_relocation, big_sur:        "9ead831c50c50e1b95b18695737936bc907c9241867d3700c87120c8af09aea7"
-    sha256 cellar: :any_skip_relocation, catalina:       "2a409da1fc4a31e1165e33ed681ed15b874d514721c7295a0901ebf4516aa469"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "88731e26d05f8af78003b1fd55a7e19bb8c1bc3e1475ff4a5e995d459158acaf"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "305b43fcc4537a7e89d1a30aef599be641925cb68fe6f87de8216e9cec4391ad"
   end

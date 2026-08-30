@@ -16,7 +16,6 @@ class Rgxg < Formula
     sha256 cellar: :any,                 ventura:        "ed2bfec2c314aad06476ce78a33f9c6cc4d1c1f18e254dba53f71bfcbcf66596"
     sha256 cellar: :any,                 monterey:       "5c575a40c8ac2b3b133bf004af5562380d452d279f0c7d1819a394c686503089"
     sha256 cellar: :any,                 big_sur:        "37ed8cafce126a6ab77b1e367dbe2a72a68c6556569694366e16844b18071dce"
-    sha256 cellar: :any,                 catalina:       "4a07550d93bedfa3b2ac3cb77a8484951321697ca9384d2c2a0301ea261aa954"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "28194f32ee9974ae3367a4cc1fe604bd91534171a52a7d7bd0401379591d078f"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "b2295a106e3ff336aef5f2fccd382d123351ca6e29f863bbf62afaa90072bb16"
   end

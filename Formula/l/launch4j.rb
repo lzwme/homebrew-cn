@@ -21,7 +21,6 @@ class Launch4j < Formula
     sha256 cellar: :any_skip_relocation, ventura:  "15f9a731ba37cfd7cf90365c98f8d59ac5c5e482d2caf7561c83adccb81e8f16"
     sha256 cellar: :any_skip_relocation, monterey: "65e2841bc477c9fb1368d5fb38fa875a1f4233d75885a4a6e61eadf1e2eea2ae"
     sha256 cellar: :any_skip_relocation, big_sur:  "23513b54485b601791605269df164cdf4c77c84d122c61fff6db3bb5b65c8e59"
-    sha256 cellar: :any_skip_relocation, catalina: "8c114ad97d89fad8a9a1a9c6e54d1ce0604f28b71929438db26e97bda57eb58e"
   end
 
   # https://docs.brew.sh/Support-Tiers#future-macos-support

@@ -22,7 +22,6 @@ class Nvi < Formula
     sha256 cellar: :any,                 ventura:        "c7836fbb451c44095dec64bb0cac55e1b95829cca063201988a45eee538fcd09"
     sha256 cellar: :any,                 monterey:       "4bbbf70becf3cfa52340027bb81f0b39b8071638dcb9f042cf314bee7a8feeac"
     sha256 cellar: :any,                 big_sur:        "692b129c29e7018565decb9c3ece80c020028549eb571d638851bb0e8647b0d8"
-    sha256 cellar: :any,                 catalina:       "9443eb6edf1377a25a506245df2a20c0d2a7365d71eee720bb7152052b96d3e6"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "77dc49d28cfd69d761ae59838253f8ee295a2f966eacd89ca3e3d4b2499e890a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "d8eb6c0c8a8eef36a09bf55e35ced6d2e2afb4d75a70d93d96e88d9cbd5c4b56"
   end

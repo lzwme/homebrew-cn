@@ -19,7 +19,6 @@ class Mimic < Formula
     sha256 ventura:        "dee98adb3a5b5349d702a7ec8c781046d8ef54d143765d9c35b7e83055d3e9de"
     sha256 monterey:       "b5b3fbdb47926a507b67c517346e66e1b3deba2622f915eb66409c601fe2718b"
     sha256 big_sur:        "ef5067be11a74cc8cd63e266a775ece9ebcf59c9995b630f9717d7333dbdd924"
-    sha256 catalina:       "72b346f8eefbbc70abc0a67bc72265b3bec7f99e53b18418ad6835df52518f1e"
     sha256 arm64_linux:    "26e6f55397cb24207058e26f48ce78d837269e3063f295987eb12bf7a778159d"
     sha256 x86_64_linux:   "027d95ecca63daf3f9c20419da6630b9a6a2d00e92dbdccbbc5d1747e0aca4d4"
   end

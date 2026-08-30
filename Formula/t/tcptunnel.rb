@@ -16,7 +16,6 @@ class Tcptunnel < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "8eb0261ee4669e199766ea61e9b9f7ab7cd1b9ca51794f5d26650c542dc55e10"
     sha256 cellar: :any_skip_relocation, monterey:       "d75d983ef25fb64ae2d4fef51dd7c5a29451a3326ae99f2aaf24254d174d9f3b"
     sha256 cellar: :any_skip_relocation, big_sur:        "65ab13dc5646735a64d821e3eab7f04a55bd0739b83b36769b3d0664de74ed80"
-    sha256 cellar: :any_skip_relocation, catalina:       "e82c25ab68b43d632739d345b3ac1c3a6d22a9c8a51d44f9cfc3967e64469794"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "59d0cdd268a8b0d3fe0ca85c547c68b185b5a7b6f1159b3a8eb5ac9f50178785"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "b82ce2df1293960dc7d0e4b5b9d809198073121331d7287edacbd5cffe17d94c"
   end

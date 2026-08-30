@@ -17,7 +17,6 @@ class Ctail < Formula
     sha256 cellar: :any,                 ventura:        "c168ea95ba0e8639c4f1152c19a8cbb831ac1cd7f108c2fc9ac37eab03e0ed23"
     sha256 cellar: :any,                 monterey:       "be4aa07bfd921f4903112f0ff6dbccc979b86cae77cdd75fe4ae9e2bcb3ff101"
     sha256 cellar: :any,                 big_sur:        "31c851cee6019ade6def5da7a50b2d901d04e1038d9d01d6985ac57a700a810f"
-    sha256 cellar: :any,                 catalina:       "0821eb3a9bf969519149b7cb3038db2dc25836bc335c057e0ff263aa5fc2f7b2"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "f4eddd733efe18c74eadb393d0ab41d51a5b4972857c6022a39c955595e2ab2f"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "583c009e46c529593648a48442ba5544aa1ac7ebb3cf1309c2e1eb08ed9f9439"
   end

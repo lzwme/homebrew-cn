@@ -17,7 +17,6 @@ class Curseofwar < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "a188c211e65d756a13002d91f5e2b8dfd72fc0043a449f2e0661eeb85ab63449"
     sha256 cellar: :any_skip_relocation, monterey:       "896a5aef76086dee7da0fd8cc17ef67635592b9cc38a68945a53e0224a1bdad6"
     sha256 cellar: :any_skip_relocation, big_sur:        "ee70d95dcc146e21ceb5921f9fc6d5c77874af2571b69d0850eec729dc1cc0a4"
-    sha256 cellar: :any_skip_relocation, catalina:       "ddd5726a8951c2ec18c9f26bbed80d2d22baeef02eb6e1f313d4591f0db7064b"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "039f9f3db262c2aab1c8b50ac39a8212ad2f3beca7aba8d4d3ca53187b0159e0"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "1c3b72a5583689d3c22ed79c41229339e374695ea4975f38ba74cc72ea37cfe7"
   end

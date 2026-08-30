@@ -22,7 +22,6 @@ class Mkcue < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "9520bdcf630f2fa825fb050df73a645681d768e5a0975d743def37cab2a45f49"
     sha256 cellar: :any_skip_relocation, monterey:       "f2a6ae19648e6204511cc973856e605773903db8ad4c652166b614b3cee0c096"
     sha256 cellar: :any_skip_relocation, big_sur:        "daddca8c6a5648f6ac6b20228d3817515ea17396c4adfe53740b1ed8f79312b5"
-    sha256 cellar: :any_skip_relocation, catalina:       "04a1028cdb9608369a30f1c7f54204963bfd9ccac697d098499846df035c2886"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "d0bcd3ad24b610cb79b5b41498a9ec6428a42e921edc2ba21406c0804c176ff4"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "1ffe89a918fbd678d1dd78349a5cc46d6496f2150215f698560b9e4453f13143"
   end

@@ -21,7 +21,6 @@ class Xpipe < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "449fe37a5a028c9335f6750c41c60be9118b58ea4a5932e5244406eac6074974"
     sha256 cellar: :any_skip_relocation, monterey:       "f7b7d07da19d055e33168745cc88dc681bf8122bfc42a69baed6af85182b3f8e"
     sha256 cellar: :any_skip_relocation, big_sur:        "be1f56555c5846777c0a963cbf01f71f2b7fe5c6ca7fb17240fbcaf7937ccfdd"
-    sha256 cellar: :any_skip_relocation, catalina:       "06e9e1e3cb21acd053c218d5c0e34eb591bb54f7031b98b27116b302512cfc3a"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "fb963f6a0f7bd758bc4ade850635c64cad0c8955455d4aa8f3ad600fff8c1895"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "85269e2a82a5296f82eaba5e4fc1004ac1176cb1d2f672a7865480fcde33a452"
   end

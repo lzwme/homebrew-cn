@@ -17,7 +17,6 @@ class Libmms < Formula
     sha256 cellar: :any,                 ventura:        "d838b0cc94af92dba3197e2d55658eeb6758c04e089fe3eea9ace446b465b2b8"
     sha256 cellar: :any,                 monterey:       "83b2b74920729e81a9225065aaf75949add189c2ee5557d2cab410d45965d501"
     sha256 cellar: :any,                 big_sur:        "49439ac923403c34c9fb042ed167a8830d424cd113303d66ed2d70f7aeb23840"
-    sha256 cellar: :any,                 catalina:       "15016ca7557449405339f310e6feeccbc04094702fcc7d4be53909fc738b05f4"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "ed7a66b304d548c1426e5b0fa507a7cd3f06923aa13d8d14876b9e94e81146ff"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "5bf0654cdf09b4ca5c749e75d8920ff2eddee195e31a468c64bee07f74571b29"
   end

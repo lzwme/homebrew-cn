@@ -22,7 +22,6 @@ class Disktype < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "12c3b63110fa663a8a7fe20080db82f2968fc0ed6888bb3a53c37a74297f57df"
     sha256 cellar: :any_skip_relocation, monterey:       "edc7efe783d43679fea498893be6c511023d8ccf7d823eaf05ca57cde41202e6"
     sha256 cellar: :any_skip_relocation, big_sur:        "06ea5af49f19f974e3d7f91f9a8e9e178f90b5e8390c59c324179773e17e21ac"
-    sha256 cellar: :any_skip_relocation, catalina:       "6821d802c4418c949b8e3394893f03cf6152020881096b304ab0c87313fff2e3"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "7e5b37f738b0519b463163cdfcea5a7ee21c829e409f613be7f7cbc8f9120afa"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "4b0dcc67cc8fee509011e50ff1299b4205b424f83ee9aedff5d97fb2e603b6bc"
   end

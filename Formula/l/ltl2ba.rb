@@ -24,7 +24,6 @@ class Ltl2ba < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "18f8eb78ca95bd4217b9ca697e608c62cc0f0fb8a632585f3ce57f75e82b2b66"
     sha256 cellar: :any_skip_relocation, monterey:       "287ea81802bff62078478fccce3b85695feb945996f59bbf17d3e28712bb51ac"
     sha256 cellar: :any_skip_relocation, big_sur:        "c85c152985dcdd33f028941a0b2e62d20d5f247142111b9fb30c11ea9dd424b7"
-    sha256 cellar: :any_skip_relocation, catalina:       "ede3b5e5b22b886bce4f6f2ead352dc4a676e3d8a95f9543930f2be2b3a0b4b4"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "7dcc015888d23a53ef7cb653015c0a93abad381753c277e6f76f535a13351e82"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "948ef5632a4054316599f6361411d994459971c64749fe99609f13c3c51b9fe7"
   end

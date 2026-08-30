@@ -22,7 +22,6 @@ class Ptunnel < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "42d5d51d090829c42004c09ee3558247818c654f2adc25ea39f377f0c3cc54ee"
     sha256 cellar: :any_skip_relocation, monterey:       "58964687f840c6e5c7b785060b23068ab6735c798a284bd07bd8457747717def"
     sha256 cellar: :any_skip_relocation, big_sur:        "23ebdbcf1362144e6fc8b02d950ee43e6216338b940fd90c471a132c0e5f49b3"
-    sha256 cellar: :any_skip_relocation, catalina:       "15d1785092ce8788e96232fc051be9311aaa6565c6a65dfbb96d0ec597970384"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "8b8e66df9c54317634708382da6d32f7d5f0e8fa5b2e6a226dae499338e335ec"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "635b36ee0d56fa5b28aebb302aad7d8d3e922c4a143854b17cc8087e7f2c0683"
   end

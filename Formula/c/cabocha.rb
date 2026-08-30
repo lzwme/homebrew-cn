@@ -24,7 +24,6 @@ class Cabocha < Formula
     sha256 ventura:        "f4f6ff225aba6446a3d140dc258f66c55dd8b7077297fae888054c6e10d21c0d"
     sha256 monterey:       "7002f27098ec51a1832a5a39e1f8d55eb7d11b7fe37ce005ff0dfe7bb1be9e59"
     sha256 big_sur:        "1dd5c1474946aaab675326323c8f7e3d101687b50d5542464558f54a8c477cc8"
-    sha256 catalina:       "0cf6edea1fa69790984c762aaff33bcea3d6cf5206e06cf489c53e8644cbc9a4"
     sha256 arm64_linux:    "96598b2e47622193fb852eda64753fecff40b088afff67c37538a57f5600e912"
     sha256 x86_64_linux:   "182dfe90c7dcc7c8bf00ece489a1d03b39b1dc66719a58c52efce8f8a8b30b96"
   end

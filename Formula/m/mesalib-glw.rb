@@ -17,7 +17,6 @@ class MesalibGlw < Formula
     sha256 cellar: :any,                 ventura:        "04daf708d2f8327ba0ae42652d4b6d332fd560cdcf6c7ac9b09140bd0ced8a67"
     sha256 cellar: :any,                 monterey:       "a94da8b984b2f2f08057324d812b03bbd8108f541b409f481e4ea41d4323df30"
     sha256 cellar: :any,                 big_sur:        "9580a442aa0843b284317be696caa8742165a1574d20e8398c9fadbdfc426dc6"
-    sha256 cellar: :any,                 catalina:       "1a1690918045f775ea6d71216a5b674b5762556aeaf0285e70533150aa7f14b6"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "804dfa5c3d312c8b55d18b3665b5608ac7cd86440423718bfea467f069141c1b"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "f7ca035e7cb0fb4bb11fc7978a33f619b1adfb06678260f70df6b79f6dfcd91a"
   end

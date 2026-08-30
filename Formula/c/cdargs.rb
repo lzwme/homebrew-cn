@@ -17,7 +17,6 @@ class Cdargs < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "86be7bd36de93c3cd56ab18d4b4887a25abe3ece14e85fcf55867e73f453c586"
     sha256 cellar: :any_skip_relocation, monterey:       "8ab5eb91d90bb095fac13138ae4d86bd641075608aa173545fcca1c08f01bea1"
     sha256 cellar: :any_skip_relocation, big_sur:        "4c2ee17afed909adb4511fbbd7521e0cc4a852fd383f94735f1de76e63ffeeeb"
-    sha256 cellar: :any_skip_relocation, catalina:       "0a40505138d5465211cc963f438683e38b88518b9f854e58b75d245e7a6fcd16"
     sha256                               arm64_linux:    "2ad0944191220f6159c473279b6575743b2516589d835031c7bd914698dc1b93"
     sha256                               x86_64_linux:   "064d2b42b2a03248b41e077184e0244c28b65b7b0a7fab0711f4c9725fce3ba1"
   end

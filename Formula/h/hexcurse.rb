@@ -16,7 +16,6 @@ class Hexcurse < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "1ae6efc1513df7fccc4ed4e124f76b2a1cee2255503e5c495f0cfa53c61c9d81"
     sha256 cellar: :any_skip_relocation, monterey:       "7af11f5ed0d454f43e40d39f35fb1967414d81f314aa46fbadd556265c0966e3"
     sha256 cellar: :any_skip_relocation, big_sur:        "26bbc403b9590ad6891663edfb0c424c7497755098873e4f5cc95fb7231e259b"
-    sha256 cellar: :any_skip_relocation, catalina:       "977632cc06d33a8d2f7f44866a7497dc7f8b8b423869f348827f20811c024935"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "dfdd735912fd3c69d3e62a7b71b0e4e453b762e5ad5bc7c6788f19c83e4abb59"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "5a77e765183c6f25ab2334662999e980f9c3ee127394682d3723262e0e80b64a"
   end

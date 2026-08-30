@@ -19,7 +19,6 @@ class Ttyrec < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "e9de3489dab176b7c6335e02bf2e58dbc83a31687a714af08ec3a4c4d5cd4be1"
     sha256 cellar: :any_skip_relocation, monterey:       "2e9366729fa85940745e55645c77c6f22c2ba47ad356159e5fc5564988e88e0b"
     sha256 cellar: :any_skip_relocation, big_sur:        "dc7756b323c5faf2006093ac2873d7805f5ddfc06df6bf5bcbcdd4fa70b2c328"
-    sha256 cellar: :any_skip_relocation, catalina:       "6d893647087afa85234f60103507a5a878360d018816c557534d469c4edf7bf9"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "ea3a96ddfe71319d95009cd84257f98d42a335e692aea071b9d9a718e2d58a89"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "2dd1acdb4519d34c1b28fced057623dcd6457c60def91150fd042ed6be04e481"
   end

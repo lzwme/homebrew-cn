@@ -17,7 +17,6 @@ class Iamy < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "cb7d122b05b54d4bb580b923d100b0b0bd2e175f8bc69d92ffc6c2f4f46f2c65"
     sha256 cellar: :any_skip_relocation, monterey:       "df95bd8de163fb4fcecd92ba25fa559b75332c6fcb6a5aebb205ffbb3a4148dd"
     sha256 cellar: :any_skip_relocation, big_sur:        "59dde9a556103175d876fd1fba134133ddd1b162daa491cdbf35bb58bfb4fc85"
-    sha256 cellar: :any_skip_relocation, catalina:       "54c8b998bcfe19443e99f609e34864a39e9d3b49cd5f935c78b9654727a81137"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "bc327310da54a5217129a8e967420742c3264e4cc9913829b777f06b412344f9"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "dc26edb3bea1993f7650cce2cfd848318ba19cf3a155ae7838823b4f4c3c8041"
   end

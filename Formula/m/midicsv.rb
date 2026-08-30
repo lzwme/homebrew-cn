@@ -21,7 +21,6 @@ class Midicsv < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "e78e37dd91b60d40dc8aa27a2d897b625a1e4c866681f4a54aea088c401b1acc"
     sha256 cellar: :any_skip_relocation, monterey:       "5efa2f2fd0083a02275769715699af018f8949db77910ede750505da0600dad3"
     sha256 cellar: :any_skip_relocation, big_sur:        "e8d8481f70097bfa3d933af56c22f74891906cba93dc3952aad2a7f3f56b6feb"
-    sha256 cellar: :any_skip_relocation, catalina:       "5d36fed687c5f4b23c0705ff261a798697bcda5d4fefa6d86d6a1449ad1efa50"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "31000beeb43c4aed181a84d1ef69d516a7cc96515344b74a08c2989d2569fd36"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "683cf72afc59037843aed1da2bf95b0ba3927d8521aabcbc96702329bebf4ee4"
   end

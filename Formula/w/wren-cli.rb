@@ -16,7 +16,6 @@ class WrenCli < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "2ed8a9779e0eb400fb4ae0c6aa4db564e0ba996b449b267ea054d8220438a756"
     sha256 cellar: :any_skip_relocation, monterey:       "c4abf9f5a795361333ee735c25c0c72754b69c974f1a910af64414ff7912f398"
     sha256 cellar: :any_skip_relocation, big_sur:        "1eb3fa798b1204360be58481e36921299678ac6da63ab4f30009b2f452fc6baa"
-    sha256 cellar: :any_skip_relocation, catalina:       "726fa674e71292e1474d7f7d68b7b477f797112a1348cdb4a2240e5d48776a95"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "c0103413af78077f54ef210d0bb3ef707bfcc9301868252685ec6fb133087d36"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "2014cc9da16b381e355b12f19a020eaba1cc182c41f07fcb4a17dab5597f6a61"
   end

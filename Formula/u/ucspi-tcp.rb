@@ -21,7 +21,6 @@ class UcspiTcp < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "eebce9e4176167e4464bb3f411b786a32fe520c37dc7d070af949927337543de"
     sha256 cellar: :any_skip_relocation, monterey:       "4253dce5cb7114f47612bb7d84f9aeb61fca1da1d7afed62cfb00b4924811eb4"
     sha256 cellar: :any_skip_relocation, big_sur:        "e6e117599fbdb3619aa5bbc6dbc0dad76b73c507cab9fcf90b4e258b3a3ffb9f"
-    sha256 cellar: :any_skip_relocation, catalina:       "7daae5b06fc2d2d42c1fcfc02368bf84e565d0557de006c14c2a31cc91cd25ee"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "92866f7a65abdf24cf7d3cf1ef62ca038c7d8b8df368b0da9463e305c3c615c6"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "1403c13191ec33d523a407bcac88d15d712598e39629a265890805527bb2a566"
   end

@@ -17,7 +17,6 @@ class Sqlbench < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "fafa90b195b10fa34a841acec103788f7e83277ca5b58c8a5763868857409dd1"
     sha256 cellar: :any_skip_relocation, monterey:       "a59e25067b830b0062a0d3c7fa98da5c31ef16c0763303f5acf16238aead26a6"
     sha256 cellar: :any_skip_relocation, big_sur:        "9a74a774e1c5c5512b9230713af78f3694d38f237241817740c8f244febe8e09"
-    sha256 cellar: :any_skip_relocation, catalina:       "a138dbb8bf3fa6293e51b49e91e35078c8c2d7dc399c70a61705f047b519a8f1"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "8865da934790a89133f570b9e8501d9648fbaeb33f49ec8a21867625f5b8da41"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "e0e961ada32e3e6588b0a328d3030f39e7bcc1457b63573608347e28cd5960cf"
   end

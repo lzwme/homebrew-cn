@@ -17,7 +17,6 @@ class Cgoban < Formula
     sha256 cellar: :any,                 ventura:        "b0695f58c0e104e1bac7d68944abdf2d2a0432b47726a94474fe7bd16399b22b"
     sha256 cellar: :any,                 monterey:       "38db7de0defae5cc7cd3af37eb7ae2c9a3230d972d1136e5ad0768b845762a32"
     sha256 cellar: :any,                 big_sur:        "a224cfdd74e8cc232edf360168bc0a7061abf5ce58b8c0723e5df156cb00604d"
-    sha256 cellar: :any,                 catalina:       "e61d461ae44716ab681151657ff73af5b438f306419142a247543b14de951ab4"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "1dac96bacc582d1c69554faf9807257de09dde86d19a47b71bb5df991f851a45"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "19e955a8b73f238d18ccfe0737230ad8db200a27e7f00ae1f27ade5d5f8568b2"
   end

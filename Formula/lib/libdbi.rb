@@ -17,7 +17,6 @@ class Libdbi < Formula
     sha256 cellar: :any,                 ventura:        "31885b42cd8d58dfc149999219b6b741aee0fab16c19f1e6d9f60b5b2d7c9376"
     sha256 cellar: :any,                 monterey:       "4a524cd1c3ee5cb9c053b01f01125ecca43d4def593b5afcca64b84307dcf505"
     sha256 cellar: :any,                 big_sur:        "af53bebb0b59917b87468a5cc52b168c01e40b83c5eff987ffa2655c9e64ac3b"
-    sha256 cellar: :any,                 catalina:       "ce66e90000681c5f9174c3698ac4ceefd5d1be6ca4ffa574053f0705217c6837"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "161533543dcd589103b5e76e2bfb222e287dfe9b62816d2213d64858cf8da873"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "ac0e87e837a96a2147f0f95157ecbf6df333145cbbbfec466a9c18d794ffe8c1"
   end

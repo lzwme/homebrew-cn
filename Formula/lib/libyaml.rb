@@ -22,7 +22,6 @@ class Libyaml < Formula
     sha256 cellar: :any,                 ventura:        "b49e62f014b3e7d85a169b422b7521356700c7caaaea9f4901086cafe692a86e"
     sha256 cellar: :any,                 monterey:       "dbd54ce703c6d8eb77e708f75b4730ad2653d28f6291c4a26dc22158beb3f210"
     sha256 cellar: :any,                 big_sur:        "83547fba540a38c30705a59a2e746952c68857212e823c6ee97c186e088f75cd"
-    sha256 cellar: :any,                 catalina:       "56d3549b342cffb181e3eb05356697bbb362b9733c73e0eeff9b637ecf92cd23"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "c725eb08fc7ab6aad7f744a30b230f9b9efa33f8d694849a2d4aadfabb203df3"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "354677a745b6c62109e792ddbd0cbdaf9e6a471d84fdbde3a7d9bae36d832da8"
   end

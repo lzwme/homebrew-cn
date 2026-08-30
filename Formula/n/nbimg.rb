@@ -16,7 +16,6 @@ class Nbimg < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "e57f45a96041ad2e60e4f3203fab14346a85c67d05f87885bbac162a9f805b3c"
     sha256 cellar: :any_skip_relocation, monterey:       "906607cb9db983c3fc6db43774e66a1e33d19ceaacc5814dad554a9cf38364a5"
     sha256 cellar: :any_skip_relocation, big_sur:        "59cb045e4e21e2e205b0b51bbbaa189838c212741fdbbed061596e924286ec97"
-    sha256 cellar: :any_skip_relocation, catalina:       "50cafca29cd1fb950794b9f240da2813dbd7dc682dfdb8c75c091cdc9666737e"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "c337e9b4f70cc61fda6ad272b9760f456e3a32c36d7d9842e2c3bc44b06134eb"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "d4c91a552e56c4f2e78422c8a4721d7ffbb54bb0bdb326e983f9989c5c9500ce"
   end

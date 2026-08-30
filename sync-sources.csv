@@ -478,7 +478,7 @@ Homebrew-homebrew-core/Formula/b/baobab.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/bar.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/bareos-client.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/baresip.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/b/barman.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/b/barman.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/bartib.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bartycrouch.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/bas55.rb, Homebrew/homebrew-core, 0
@@ -8866,7 +8866,7 @@ Homebrew-homebrew-cask/Casks/a/astah-professional.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/astah-uml.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/astro-command-center.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/astro-editor.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/a/astrofox.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/a/astrofox.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/astropad-studio.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/atemosc.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/atext.rb, Homebrew/homebrew-cask, 0
@@ -15507,6 +15507,7 @@ Homebrew-homebrew-cask/Casks/t/taskwarrior-pomodoro.rb, Homebrew/homebrew-cask, 
 Homebrew-homebrew-cask/Casks/t/tastytrade.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/tau.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/tauritavern.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/t/tcp-viewer.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/td-agent.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/tdr-kotelnikov.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/tdr-molotok.rb, Homebrew/homebrew-cask, 0

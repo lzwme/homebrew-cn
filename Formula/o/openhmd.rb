@@ -17,7 +17,6 @@ class Openhmd < Formula
     sha256 cellar: :any,                 ventura:        "3f960a5ab5e3466341ac6fcf533c317e37183338d770ca5b63f8aec92f48cd1b"
     sha256 cellar: :any,                 monterey:       "5e04fd446926530d2a5349d07d0354c4943c75b73220319ec38d27db42bb281e"
     sha256 cellar: :any,                 big_sur:        "875f651a4d9b710ce00e899928b2b9dab6f26cbfee670135566821e524d5337a"
-    sha256 cellar: :any,                 catalina:       "351e8d9e6bfa22b63b035c0f9c0c7e37be52b9e4058c50d7b7ac321eca880e5b"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "73a9068341d342a933ae584e67ce2820ab612e05bd3ba35f9c2127102d9f2794"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "c07dcb0b3e3848fe49493fef2323a7f143fb70a695e67738355f3c1f30008d44"
   end

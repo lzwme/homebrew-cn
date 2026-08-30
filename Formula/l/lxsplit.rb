@@ -16,7 +16,6 @@ class Lxsplit < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "cc04acafa5e324481217f2ca6356f87e29418a169ba28042173be4650b8ee3af"
     sha256 cellar: :any_skip_relocation, monterey:       "5f89046f6987581afc236ac944ab9585136160a6f8f5d7f559a4fd18e45f43d4"
     sha256 cellar: :any_skip_relocation, big_sur:        "6fc68ea7f529c0d6d5a5efb98f9644c93cfb6472798e1686a4384be56381bfcd"
-    sha256 cellar: :any_skip_relocation, catalina:       "8f2c02d85a1aec1e2ec692564896c668cb6d7c4cd28b0d3b1f08da1be7070b07"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "25abf3d459e971588c1d58365ca4afdb710abd0a26a1dcdbb8470205e2d5bf9e"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "5be1da254e8200601318c6258e63e4052dea5d43446d10872f8aab55e83abd4b"
   end

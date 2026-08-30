@@ -17,7 +17,6 @@ class Netcat < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "de0cce7840c9836ae8003805ca0817d03e8c54e62ff4044fee1085a97883d033"
     sha256 cellar: :any_skip_relocation, monterey:       "7c33ed98a6c81011f5923240e11b87f07add5cea280f5e2754b2f3d7fc3d9eee"
     sha256 cellar: :any_skip_relocation, big_sur:        "ec93ed2ce809a78373e1b747f20075fabe5e9d612e2f84f85f125e4ce81eadb3"
-    sha256 cellar: :any_skip_relocation, catalina:       "13bd349dfb08b3a5a474498eec4e20ffff722f82446b255d9c6e0540b02b362b"
     sha256                               arm64_linux:    "eb080e6267d9f70f673e5069f58180210cabe7241fd1d3789415d72be31d9ada"
     sha256                               x86_64_linux:   "713b509412561ffe59ef45f828278384180ffc219547d9495409908ba421e259"
   end

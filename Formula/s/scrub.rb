@@ -17,7 +17,6 @@ class Scrub < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "73b9e1b20123abeb6c60b24965757c0b16eafd75fbc269e1c10a895c1f62fc1c"
     sha256 cellar: :any_skip_relocation, monterey:       "5a3fb4dfca2c4eb938f5c6a5d51071af0b0cc1dee2043a4af5eb970a6ae14c71"
     sha256 cellar: :any_skip_relocation, big_sur:        "ebb6d9f6cab14e6a4d7cab7336aa033c7e02b8ec50b4c0af6f8734ce92766e58"
-    sha256 cellar: :any_skip_relocation, catalina:       "01146146976c9be7bf2b74b018e7b98a158407f7318ffe604bee4603270e6f4f"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "13552750a7d0fe72a0aba49be8fa09171ef38c2601a0ea859ae279795f076255"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "7a70d052c1010c990d18bf17558ef04b4c9949ce65e42c25fddc9f8fcff2f371"
   end

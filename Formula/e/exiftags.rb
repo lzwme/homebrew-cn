@@ -21,7 +21,6 @@ class Exiftags < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "dbc075e01b52cabb93e00ab84498cbcb0e32e1597259f28630fed2524f8be6eb"
     sha256 cellar: :any_skip_relocation, monterey:       "d6dddffe9628d46253e6ec7af11a16cb60c2983c475210f718f1f69d030c99e2"
     sha256 cellar: :any_skip_relocation, big_sur:        "e6f10871b2577320dd9c219faa1e1b31fac8a311cde68810d233aaafa79a5a08"
-    sha256 cellar: :any_skip_relocation, catalina:       "f4236ab5e0f9f3710e32ca5a6932f47d0b11c232c6f84bfc4ac4694fb26ac832"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "548670490adcadbf70e7efc3e1fa7193a908abc34e75593bd0bcb52294120f44"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "9bb2331fd48ad529d9fe2c1cda8f11370d2982afbcebe6403ed18333d6a86416"
   end

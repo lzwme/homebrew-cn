@@ -17,7 +17,6 @@ class Cuetools < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "812f65a66d659a29eae61ad58c82c9ab2f993fd1ae26b8ec5f6577e07d5983f5"
     sha256 cellar: :any_skip_relocation, monterey:       "65929af8ca94c0c28f16886667d1869924da3bb193ed10797af30f0e43de1744"
     sha256 cellar: :any_skip_relocation, big_sur:        "f649575d3661f08e573a8e72aa3e45580ed8f75f89fbe2409b2684732ab0f0a3"
-    sha256 cellar: :any_skip_relocation, catalina:       "dc2d7bfcb8fd048421265da986fdb381007d64c7d2a45d45a53b896bad78bf18"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "333e324eaa7d67aaacbc2eaad315abc19fdc6fe52dd20220cb7fef4f0b73859d"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "45fd4566e2ce0650ad162fb32f3a12f30523efeded3f6d30612cdd8efca73ffc"
   end

@@ -34,7 +34,6 @@ class Projectm < Formula
     sha256 ventura:        "68f9b93a6f6abef42c42bbcc8a70be06fb9845bf1caa5b68cd7e14beba13ca5f"
     sha256 monterey:       "473cd386b1daec76f796cffff2c29b6b6cc57f749a517f91cc5466a7ccc2fd81"
     sha256 big_sur:        "c8ece4df06966643cf9aaae5f31610b98eaacddbfb7b0e56b21531d5e2f8f1a5"
-    sha256 catalina:       "8d11933c220cde67c4515ee5d42d99bc8e1c18479a4d3b746074c6080712cf0f"
     sha256 arm64_linux:    "c3813a64b58332351ad6fe801cd1ede4ac96bdc17d6eaae7937571e149f6a253"
     sha256 x86_64_linux:   "05caf42b3d5a023b4c22e2f51e7699645cc5077fbd37c7c27f1f8260025d608b"
   end

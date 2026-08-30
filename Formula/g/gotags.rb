@@ -18,7 +18,6 @@ class Gotags < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "ddb7aa582f4a228079c940fa4fb9a3cb003655e5ef73de506bb75aa23f49e070"
     sha256 cellar: :any_skip_relocation, monterey:       "703f8c955b818375693bbc165872b0253d9aedcff2c25cad5aeafc2d0e37448d"
     sha256 cellar: :any_skip_relocation, big_sur:        "fc346e7abc09f27730ca2face102e704855a4e105310b27d0dc25b465e8fb453"
-    sha256 cellar: :any_skip_relocation, catalina:       "c1b5430e2c3544fc021bc9bbc35c33a1f2c4482a30dbbc8d4977c1f0ee5638a1"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "054dd81acebaa03836623140d3083a451c17de08e5960da4db512f899255e04b"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "3ab74768df76e27509e7b8b1739646d0cbbc721f4004e98f56711f837f9d9cb9"
   end

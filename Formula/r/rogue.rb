@@ -25,7 +25,6 @@ class Rogue < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "cbb8530b652299bddc7a997cbb51205f58a89f88ed43a06dac27e784886deb11"
     sha256 cellar: :any_skip_relocation, monterey:       "0c169854e9edcfdf99c7c52e5fbfb39dbf883c74f076097aaf3027daf9f2064b"
     sha256 cellar: :any_skip_relocation, big_sur:        "c6e8bb630a966cd8885e378242f9175ffd8327e26ec1ed679016302b437a5156"
-    sha256 cellar: :any_skip_relocation, catalina:       "c576555f6857ff3ec7f0b2e39625d3c1f86989315b735a5e27d9416c095e5efc"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "6010fd6661da3ce1ab2a3115fa4776827e91a7da713a6c13ec5db192edcfd3c8"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "2edb3e1d6fb4af2f87d065012e68d09abda6035c5f4394d685336d0763f31869"
   end

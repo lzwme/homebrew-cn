@@ -16,7 +16,6 @@ class Mlogger < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "23fb2fbde1f3dcf119ad7d994555dd2920170009a3cf768af1e98b877521f981"
     sha256 cellar: :any_skip_relocation, monterey:       "234b0797fe08d79cd45ee6e2587fafe3322657b70b386e3327f4dc7a103edb3f"
     sha256 cellar: :any_skip_relocation, big_sur:        "251a03f6e4954f46183a2eaa1ead28e993974d1ab5e6b4b6ae85d1777b15a379"
-    sha256 cellar: :any_skip_relocation, catalina:       "553fe787f0d6a1982544a74ec268d3db6bdf800d538238cd627ba39d8bb1cc37"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "4a8e20b3e717630d8811f612f1808671a08b0e231048d2c014e4b3bc1e4bd424"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "893dd3f909fe05978eef82de9222ba24cb05e208d73d63f5ef591098df8ceb56"
   end

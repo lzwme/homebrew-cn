@@ -17,7 +17,6 @@ class Dwarf < Formula
     sha256 cellar: :any,                 ventura:        "bce795ff823288cbfe918b0b3f8ed08f9cd7aab506e25fe104ff15d9174c2079"
     sha256 cellar: :any,                 monterey:       "cf1b9df9782554d32d6827b89b29195ed7f391a37cd0b9cbab9a63e0ceacec20"
     sha256 cellar: :any,                 big_sur:        "b0bec07c54898e3506e249b3c18fde361772367f1e2d8cc2ee6726a678aea7cd"
-    sha256 cellar: :any,                 catalina:       "1d0e1d803ab771d58a56cd52939d01b7c9e1a8474cb80c21b2251320340e5dc2"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "bb1f87a3d1dc58e5d5d651e9645a08653db6835b0503ec8f780a0dbbd7a87443"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "15de6388ac637850379a4b2cf37e2089b97b96cf0df0ed536f3c7b7b19a9c641"
   end

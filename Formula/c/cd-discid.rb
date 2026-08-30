@@ -28,7 +28,6 @@ class CdDiscid < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "29d889c70841d76b9e01b6d2ab4d482fd7ee7e8ac67ba36a4720b457444f48b1"
     sha256 cellar: :any_skip_relocation, monterey:       "d90c6640e3b67fb2140a10da27714f30a302187bb0f0b13477a53936a2a66456"
     sha256 cellar: :any_skip_relocation, big_sur:        "6ffa8010d3a9ebbd8475901bca190ed9fe786ff7b9ff32ff161347b10ecd87fd"
-    sha256 cellar: :any_skip_relocation, catalina:       "0a9f85136e9727175a4d861f759236d62cf24f19170e27bfd9bf8aeddbc4c8b3"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "92144152a7fa53e3cbe4c6eced912ab7a569079a1d40fb9a72c73635f70027c3"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "c6e37cc61545d58bebb66ffffada804ca5e39e47e503684c7ed84cfa856dbb14"
   end

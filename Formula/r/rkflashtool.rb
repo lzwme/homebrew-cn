@@ -17,7 +17,6 @@ class Rkflashtool < Formula
     sha256 cellar: :any,                 ventura:        "5d00a439fe6a9c9f4b09ed9612e5b4536c1497e5baf33c0b95c06279b734fa6f"
     sha256 cellar: :any,                 monterey:       "7a80ef4c1271eb9bec9209bde3c1a0292e08bbeed130d290024e0877e3b9df9f"
     sha256 cellar: :any,                 big_sur:        "f3e27586cacbbe32859c4e29b681913204e1a52bd5a5761697edc37d1cc2d88c"
-    sha256 cellar: :any,                 catalina:       "19915af37cac5f04cea6d0aa71a533ce6fd2a9aa549820286736b526e4be80cc"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "740d373e5d0bb55ce6cda1a391bda5cc95f75f61537f91f5de2b24b7d09cc722"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "c38a8b6e2f2f2b8dd7b437c07916c5624076f472392a2899fbb3c397c07bb4a3"
   end

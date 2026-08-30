@@ -16,7 +16,6 @@ class Pngpaste < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "b41718216a8c084f6c8aa9324e17083daa05dd4a1099e71f0e317cbfca2f92d6"
     sha256 cellar: :any_skip_relocation, monterey:       "e9a350b69811aa02e6b01d906cc184f35a8806e322bf62430b81bff8a6d27fd2"
     sha256 cellar: :any_skip_relocation, big_sur:        "20d394d6036f0ffe382b36151c15d3ea9b20ce9d1e5fe6166ce11546c5e871f4"
-    sha256 cellar: :any_skip_relocation, catalina:       "692e8f099ee7426310daa078d6bf2103b763b4549804f1775a5238acb1ead616"
   end
 
   depends_on :macos

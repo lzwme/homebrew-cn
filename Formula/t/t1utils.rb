@@ -16,7 +16,6 @@ class T1utils < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "0745253b0e4c533a823d4f550523ce3eb714df032cd3734f865da685bb5fa562"
     sha256 cellar: :any_skip_relocation, monterey:       "af52f609acbfc2496ef0592b5d42e8e61bb074289592334049bc59995a7551b2"
     sha256 cellar: :any_skip_relocation, big_sur:        "f00f838c4ebef97926c3a2cd9940d2105029839a25543f9861903ec1a71939e1"
-    sha256 cellar: :any_skip_relocation, catalina:       "dfaaef0c838273e5c4cee7d6d2eb515e91c77c3226913b4c4486ca0086c2e6bc"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "e74d6d74eb231a5293e768585845df223e2f6825bdaaf432497b393af5324be5"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "bc65100916f687ae2019390d262a22eb6bfa2e203bb3f125be5d7d10469764e4"
   end

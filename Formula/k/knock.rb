@@ -21,7 +21,6 @@ class Knock < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "765d3a0f6ae6560d5c274cda7330e50faaa3412d11251594a8463b5acd9a0539"
     sha256 cellar: :any_skip_relocation, monterey:       "964a0505b7d815efb5be3a9ecf3e935d19e07e8fb9245fc292dda30501d089cd"
     sha256 cellar: :any_skip_relocation, big_sur:        "b8d423345658b70c35b16a032ace493f1da244144dbfe0f4c4b0ed79ce0ac560"
-    sha256 cellar: :any_skip_relocation, catalina:       "2c9a3167f4b08e9b4ed890f6cc165eda8e813da9c911e741fd9cdb5d3742de31"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "cb2b4fc229f51debb0a56914b078a7c10f9ce2bd479e14104bf2c8d8e520abdf"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "92ee3bfd7171b2fd896bda24b35ccb710365acf17e8c87b01d6a119a5133d996"
   end

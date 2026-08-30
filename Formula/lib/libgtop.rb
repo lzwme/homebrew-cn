@@ -18,7 +18,6 @@ class Libgtop < Formula
     sha256 ventura:        "ead43b0acfd3e16e8075e97d6e20809103058a8e56d0558353eb6da6b9487d62"
     sha256 monterey:       "96b3327e8a7cce44d856f6a2968512ad75a121901378ef5bdff0530999dd42c2"
     sha256 big_sur:        "e749a43ebcc150fba221570873bb6df8765eedd1719ad7080dbbb84b809b477d"
-    sha256 catalina:       "9946efd963f1911a13a57d684d9b441ce804777711cfb88fc48fdcf55e6ba620"
     sha256 arm64_linux:    "43bbad6856591e1a58262e9abfc56ae5bb28f3bc0b5e727d2ce547a4bc0b92db"
     sha256 x86_64_linux:   "e397a31d868662a5cdc37e9c4f6dba1557a0f6d07d76c212f7ccf5775b7a70a3"
   end

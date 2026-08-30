@@ -18,7 +18,6 @@ class Unrtf < Formula
     sha256 ventura:        "9371bbf23b01669c95f9742f469f0762e83c7f86c29234d9975f81936f8cdcb0"
     sha256 monterey:       "ca17c1fba58a187402fd76342528ce8da2c391d25622b425c2db15c8f0345d71"
     sha256 big_sur:        "198691cb483c4ae73b4c676d289bee8040937afe2881e07afbfb7b9f1e99a760"
-    sha256 catalina:       "90361817069fa7149b201a0caf5e65abd872d10f8fdda154ff450511debf1d99"
     sha256 arm64_linux:    "97ef0301bf3d4b776f44f968d7e50c6926ee24a5667c405ded4d84eccd762ad1"
     sha256 x86_64_linux:   "c3e2f45e057ebc00b8a825db67d9bd29396038f2beb692edcea2815c7b9d1284"
   end

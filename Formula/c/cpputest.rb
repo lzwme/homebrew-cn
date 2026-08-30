@@ -18,7 +18,6 @@ class Cpputest < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "ee957c107b4c8972e0acdf8b23db196e710a3eddbc9efe76bb14f9cf1f0e5e8d"
     sha256 cellar: :any_skip_relocation, monterey:       "2ebba02ed9e1c87a6805e2c402433e59c9c9a0e377e179dc65e3d7c9f56dbbea"
     sha256 cellar: :any_skip_relocation, big_sur:        "37ccb80c5598e80ecacd6b5b33a610ce38666e9878cb7365a0f79e5705df49a0"
-    sha256 cellar: :any_skip_relocation, catalina:       "9e06d26ed7a552c818c7f1d6bb68ef16e7185238a14bdf0ae337a410ecb46384"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "d93627b9eacfae5a05edbc1a678dfb89652ca842905d10993b35861913fde598"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "a4fb771aa9c96a9d5fa6f88f1172d94ed171b1b2ce87a353828771b48d732c68"
   end

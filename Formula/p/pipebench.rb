@@ -23,7 +23,6 @@ class Pipebench < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "d9faf1c0f4d7a4986a7137f14eb3fe246351b594e64fe6bb07622b282d72da3e"
     sha256 cellar: :any_skip_relocation, monterey:       "f367e67b0def209b0553b577a767a8451f91f21d321f1addf6f01e5920c162dc"
     sha256 cellar: :any_skip_relocation, big_sur:        "5e5856f67d0e9f663d04895b33cf50406b8fc584f2d01cf9c364b8a549620184"
-    sha256 cellar: :any_skip_relocation, catalina:       "a7a63d8cdd084919304019c06290b7b808f637071c30f688219b47e2cc49f469"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "8f0404896dc102bec6f5934ed5f5cff1a9458b1afc182ebd0feab239bb0caa1c"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "2230dc11d838a89ac74db6c346dee27398a0d4fb7377c93ca9f27876f51a6591"
   end

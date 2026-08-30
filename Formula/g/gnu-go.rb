@@ -21,7 +21,6 @@ class GnuGo < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "aa6a55c92da6fc437dfc599fc84ec2a1f0e53d069efbfcb335d6a78da06d9177"
     sha256 cellar: :any_skip_relocation, monterey:       "b9394ee3acacef9bcb2c8df6a9fdd7547c99af2c0fd81f1dc1faa9e1b35c94df"
     sha256 cellar: :any_skip_relocation, big_sur:        "41b40531006a8e8c83d81b0c7628b7bd25a946e9d322e0ac8d5b5a91c999c0d4"
-    sha256 cellar: :any_skip_relocation, catalina:       "b756b9307e6ff0a0cb9c05eca13ae12b3a9f6ee44219fa4a899e5301fffa2483"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "66bcee409ac058dc82af44e5ef563cee1dedaab9f2d1e0b2e527a8b5aacc8336"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "99e7447f557b3af1f8c1e56d9a30cbe4315bd9f05ec734fb2fadac5887ab0474"
   end

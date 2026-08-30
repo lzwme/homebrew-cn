@@ -22,7 +22,6 @@ class Clog < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "4c5b54b76cf6efd8d72d07b3dfa526605c1a69c93109155a9fd2d1e985e71455"
     sha256 cellar: :any_skip_relocation, monterey:       "71bcca7b6cb4bf84c6c0c678d45b593f551e9b351bcb0fd557e7e7c0b90648c7"
     sha256 cellar: :any_skip_relocation, big_sur:        "864d26fdc6960a6b4daf9ca76ef52e5e2db4a8ece187dbc7d8b87939e4823d32"
-    sha256 cellar: :any_skip_relocation, catalina:       "0a5985eee7c41d2199e64105cb0d32b8e065b57257841f48b2eb36a3a662bc7b"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "1d94d1596bb077ec7890f1bee8650ecf592c75c9415e310eb55f541df1d52c13"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "74b571a8740f2d0d8798ed8ee046d9239404ec6789987b98eb48b25c122c00e3"
   end

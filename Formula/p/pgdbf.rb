@@ -16,7 +16,6 @@ class Pgdbf < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "30721323815b2ff787ea33a99a3a693e126eb4f3222c447a59c8b10d3fa677ba"
     sha256 cellar: :any_skip_relocation, monterey:       "6381607bca777a7beb5d475f656a949e580e82b15d1f63fa109764c652da5d9c"
     sha256 cellar: :any_skip_relocation, big_sur:        "efd6ad07c77d7c973b9d4bd8e13ea837b43ac281c817f3ce300ac6c46de3f2e4"
-    sha256 cellar: :any_skip_relocation, catalina:       "ae8050a5d6a6f91f529a0985a5626981d22573094791274c7bc1759b2770c4c7"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "6ae4511e609fa6ac9a2b0566969f0e511756b9e6b6c55f17655333aa7ddd01a0"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "7f2e231fc1b78b7837dfe257a04e2495128237e5800609675573dd2734185ea5"
   end

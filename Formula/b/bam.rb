@@ -17,7 +17,6 @@ class Bam < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "75d5f23cc6cfc164c893479517a3cfbdcae7f08ccade50ab8408a83cd5939e54"
     sha256 cellar: :any_skip_relocation, monterey:       "be83765718e57f62d746cd72d15451e4074bd34aa334f235dd0aeefbb760ba13"
     sha256 cellar: :any_skip_relocation, big_sur:        "0bd9f6ad25f64fc5282dd4facfea787bbca5855eb855c12eebb12cb60d82261b"
-    sha256 cellar: :any_skip_relocation, catalina:       "de24826592ac3d7a97f2ea0372d6a002e67e39bc1f10dc5d2e54563f84953690"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "c8b66adf43d301d47e35cb5b45bf01bed4923f7eaf7496d08ded5d2bf70b2b64"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "1220e1a71792eacface17e8168d217ca657aeecf3b30a672a0815375536e2d1d"
   end

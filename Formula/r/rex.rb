@@ -20,10 +20,9 @@ class Rex < Formula
   uses_from_macos "expat"
   uses_from_macos "perl"
 
-  on_system :linux, macos: :catalina_or_older do
+  on_linux do
     resource "Module::Build" do
-      # AWS::Signature4 requires Module::Build v0.4205 and above, while standard
-      # MacOS Perl installation has 0.4003
+      # AWS::Signature4 requires Module::Build v0.4205 and above.
       url "https://cpan.metacpan.org/authors/id/L/LE/LEONT/Module-Build-0.4234.tar.gz"
       sha256 "66aeac6127418be5e471ead3744648c766bd01482825c5b66652675f2bc86a8f"
     end

@@ -21,7 +21,6 @@ class Mkhexgrid < Formula
     sha256 cellar: :any,                 ventura:        "213ee8b435eacf2f9bd1c50c8ba5a389ce3792c6a11626c0dbc3f8abca859469"
     sha256 cellar: :any,                 monterey:       "54d4b953eefd88048279f0742a636d343aa81cc1b077f4cffd40c57e1b49ceb9"
     sha256 cellar: :any,                 big_sur:        "ea516f25e28f2f0dae0223de16f1d27abd08f658ee85fb8caab7c41f02f3932b"
-    sha256 cellar: :any,                 catalina:       "0e358685212d241af28055f0a47392bf077575469426e5bc4e38352847451325"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "77c7cc16e457e6287b0103e3ed7d2468aa87c6c49886ecac6b00651fad089bcb"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "a52fcf963685daee9a1f8ab938b009639886dfb1f2a71cdf93969ff4a5d6bfc3"
   end

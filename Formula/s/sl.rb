@@ -17,7 +17,6 @@ class Sl < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "8b15e6fced6896f40152c7fa8950be193da18999f32cd487293bd0db339b5088"
     sha256 cellar: :any_skip_relocation, monterey:       "128d4b542acd951da4edebc83f18d51c2ee3a9ef941e3e369648b977ee2d0771"
     sha256 cellar: :any_skip_relocation, big_sur:        "0300afadf35bb67efe622add3f7a928bf123dd855e37376e278052b4787e65d4"
-    sha256 cellar: :any_skip_relocation, catalina:       "31b8e67d984635b74aec3a5b47b6145789ed9c09d065751cac862eec1386502d"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "036507954ad40e929a63e30e6feb092a7bf142a6d08c15bdb9d43ac34feeb0cc"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "2afd20ebfe0276c9b39a77ef22611e8815eb936c3c21abb31cfd8f097f161476"
   end

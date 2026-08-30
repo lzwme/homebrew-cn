@@ -17,7 +17,6 @@ class Mbelib < Formula
     sha256 cellar: :any,                 ventura:        "81eca52ffaa4828961e274c2c00ff39574ed1f9fddbc2d55fbea56068d2882e5"
     sha256 cellar: :any,                 monterey:       "925321b8a121e7cae27ec3736d1035d27d9945255ea9113f430c5dd15e7d4b7e"
     sha256 cellar: :any,                 big_sur:        "508ed0ed1f9603c7c3e50accea0e201d391f673b63a4acb71574827fddcbb1ef"
-    sha256 cellar: :any,                 catalina:       "fb29c40fb9af7c0303d9f7929e61941e8c10c8aad57662f366a671d3a73be116"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "bd598eb6c1483c8d083384b4e8edce2a37fbdebaf0efcfd7585f26440ffd66f5"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "2aa416bb9571e03c0bb7b877a44f08e874f069367367ca6c3bd6cefb87ecd70d"
   end

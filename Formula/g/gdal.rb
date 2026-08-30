@@ -12,12 +12,12 @@ class Gdal < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "de88d6090f36405661f17c6958710e26ab6e1234a6369c2d3edb220e801223f7"
-    sha256 arm64_sequoia: "b5bd7be5f0fc49779221aa059e0d3d9ed94c8fd5c950a5526061e058c79b7a65"
-    sha256 arm64_sonoma:  "c68f9d113dc25c2721dc34c531fc8ddf8c587aa525443b63511d8e887e01187a"
-    sha256 sonoma:        "7d54ca478264c4e19e3900e419d1960994d5a204cd6c2a180e2e9257cf134af6"
-    sha256 arm64_linux:   "a169b8c33497549ca6be8d1845a250b900f28cb7cdf1672d34a9ffc32317ce3a"
-    sha256 x86_64_linux:  "8710628014480cf80f64e74bab3716ac37704f612d3005ff7556f462e46ba845"
+    rebuild 1
+    sha256 arm64_tahoe:   "c2e354962725c4d18baa7d28478071c1e06b823db44dccf10f068e3707395c66"
+    sha256 arm64_sequoia: "aca1fdbc33a5d59667433260064e381de294374a66545088493df686756ed567"
+    sha256 arm64_sonoma:  "49f6d8598d5afb0043b3c67f36aa9b10be3a5de97a883672e01d80e42400e9df"
+    sha256 arm64_linux:   "39e82f589a322b9a38a3aa94e22a2ce28507af902d8b039c68d20e07dcbd5971"
+    sha256 x86_64_linux:  "d314ee795e27ff36ec03e2d3061cab02597a7704a6002d0d706d96d495c0761c"
   end
 
   head do
@@ -75,7 +75,7 @@ class Gdal < Formula
   depends_on "zstd"
 
   uses_from_macos "curl"
-  uses_from_macos "expat"
+  uses_from_macos "expat", since: :sequoia
 
   on_macos do
     depends_on "minizip"
@@ -98,22 +98,9 @@ class Gdal < Formula
     resolves "https://github.com/OSGeo/gdal/pull/15042"
   end
 
-  def python3
-    "python3.14"
-  end
-
-  # Work around superenv to avoid mixing `expat` usage in libraries across dependency tree.
-  # Brew `expat` usage in Python has low impact as it isn't loaded unless pyexpat is used.
-  # TODO: Consider adding a DSL for this or change how we handle Python's `expat` dependency
-  def remove_brew_expat
-    env_vars = %w[CMAKE_PREFIX_PATH HOMEBREW_INCLUDE_PATHS HOMEBREW_LIBRARY_PATHS PATH PKG_CONFIG_PATH]
-    ENV.remove env_vars, /(^|:)#{Regexp.escape(formula_opt_prefix("expat"))}[^:]*/
-    ENV.remove "HOMEBREW_DEPENDENCIES", "expat"
-  end
+  def python3 = "python3.14"
 
   def install
-    remove_brew_expat if OS.mac? && MacOS.version < :sequoia
-
     site_packages = prefix/Language::Python.site_packages(python3)
     # Work around Homebrew's "prefix scheme" patch which causes non-pip installs
     # to incorrectly try to write into HOMEBREW_PREFIX/lib since Python 3.10.
@@ -134,9 +121,6 @@ class Gdal < Formula
       -DCMAKE_CXX_STANDARD=17
       -DGDAL_USE_OPENMP=OFF
     ]
-
-    # JavaVM.framework in SDK causing Java bindings to be built
-    args << "-DBUILD_JAVA_BINDINGS=OFF" if OS.mac? && MacOS.version <= :catalina
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"

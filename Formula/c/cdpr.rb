@@ -16,7 +16,6 @@ class Cdpr < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "bb8bee00358b95fe993e2afb2af08573ead8e170b15f788fe96c8d23d4f186fd"
     sha256 cellar: :any_skip_relocation, monterey:       "6dd8c4aa87c35167d8fb95ed0e450da18e3697a3dd6cf28e50b443e872b4a104"
     sha256 cellar: :any_skip_relocation, big_sur:        "256d525f93fcdfb7f8c765ca45c6c3b422f00386045a9feb3bd99a083382c9c8"
-    sha256 cellar: :any_skip_relocation, catalina:       "62e58521757a1dd5020d962dc9a5d00647e920a66347b5d5e58c1e8920db822f"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "ea696f5689ebc5dd7ca3dfc9621e40da5ceb24b4016607c713a7f05d5de2a130"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "6a2162fee06fc9c03e01a2a6787a18f1d8a0c241a0c315d76878b09ea787c7b6"
   end

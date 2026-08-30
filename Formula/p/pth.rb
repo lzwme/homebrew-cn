@@ -18,7 +18,6 @@ class Pth < Formula
     sha256 cellar: :any,                 ventura:        "eb899862aa5c37f46b09b483a9dd2808fd3459f459fa0ebb715a56055e501e1f"
     sha256 cellar: :any,                 monterey:       "13d83d8a576279a5487fe65a8973ac416aacec3f2ca87a8ab3a85bb46b169148"
     sha256 cellar: :any,                 big_sur:        "ce0bf2885f2ff76922d2306e84e328b3bcbe5b3c8365806a66f75d5fce0568fb"
-    sha256 cellar: :any,                 catalina:       "4e468eea8984b9eb265dcd2f1e10a12ec5827088986042cea278b24f1a4dc1d4"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "a8ac563cbeacea2eab01935e62cc4835b1811dfac30f9fb3c0d6a80cfc8b3f41"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "66cd52703b09b137d33237be545677ba50729264ef0ad34d5f4c3891bba86173"
   end

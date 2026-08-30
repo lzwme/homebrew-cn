@@ -21,7 +21,6 @@ class Nsuds < Formula
     sha256 ventura:        "f83642d920b2f5b8c053bf29acbcc582215568a0a646e5797f7026daa099342d"
     sha256 monterey:       "2a9d8df67a2c0b7689a48960487bc7f240db19f321f492448c30608de7f59c2d"
     sha256 big_sur:        "17ff896355ee4f8905783422f8e1dbb68b88d45ba1ca6cc46116c93ec35bc2ef"
-    sha256 catalina:       "dcccae0ffd504a9a09ed57bfe0ac26127723c92513177eb862fa132e21c6968a"
     sha256 arm64_linux:    "e38b08c1f769caeeca6deaca0f3a1c0d22364ad89f38973edd6dd3edc6bfc5b0"
     sha256 x86_64_linux:   "bebff61d5efe0ebc66d905824e0316e2c2f46b0c48128855478271de5abb9bb0"
   end

@@ -21,7 +21,6 @@ class Libtecla < Formula
     sha256 cellar: :any,                 ventura:        "156d7de2fd3f8d531266f8df1178e26e5779cd93eb36a38062e9611d1fc8fbbf"
     sha256 cellar: :any,                 monterey:       "7e9cdf4692258796b655934aa501b94a46b88291334b1bed79a44dd4ea205b20"
     sha256 cellar: :any,                 big_sur:        "d0f28c06cf9d2d1669298104439c4e194d21df65fc17e9b95e9dec0383aa7fef"
-    sha256 cellar: :any,                 catalina:       "a6bbfa1cee4b62a03186d6fa1a153fceb2b3b9ae5cdf63411d6432c6251c753b"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "3a0a9b8648b8766487a1d4c13c394f2560d4b24af9df0e10109fa89dd87b0415"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "8bcf6021a1cff18af685065c3778f709fdcc17e22767818c6e5fef4e309adc3e"
   end

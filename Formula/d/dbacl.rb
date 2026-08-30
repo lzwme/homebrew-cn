@@ -16,7 +16,6 @@ class Dbacl < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "016b9c97da07866abe32a76f55a0e8e28744cb34aa5a71eae7e3b2033f8a71d7"
     sha256 cellar: :any_skip_relocation, monterey:       "70c98f90cec395f2366d669999f11334f95c8e97657f9845307c3bc37d67278a"
     sha256 cellar: :any_skip_relocation, big_sur:        "643c9891b075b1f8a766269cc1a9f5ec6b541e23055124f7cb2d289650bf08d0"
-    sha256 cellar: :any_skip_relocation, catalina:       "d81fd1fc86703610737cfd9d24f8c3c8db2e97ef4148f1f7f91a43c81c8762c6"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "4e4f747f411c297f6c0eedf5f0da68f7c48df9190beba950accc13837ef5a912"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "27ddb0fca1dfb2cc615befe472927ff657b689dad255e26913ce118f7d83dfcb"
   end

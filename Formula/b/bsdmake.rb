@@ -17,7 +17,6 @@ class Bsdmake < Formula
     sha256 ventura:        "706f2a70bcadbfd643fdc3e6ca944de50c63fde0a23de03244ea4770f192e49a"
     sha256 monterey:       "303f1fce21a307e0ecb01214f64ba7c3f26c21aeafb44d803120d26500dd387a"
     sha256 big_sur:        "6b1aef88ae6c6b11cee8062b64f5fe2e1c337e3029833eaded84b6e740ae0391"
-    sha256 catalina:       "5075d566898ea241d7251734f82f6846c288a49d939f8842fa566ea706e2417f"
   end
 
   # bsdmake-24 is from 2009-04-08 and was removed in Mac OS X Lion 10.7

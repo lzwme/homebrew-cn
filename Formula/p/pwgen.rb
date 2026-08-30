@@ -16,7 +16,6 @@ class Pwgen < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "8c83635eedb3e60f976b8b36c618cd29b8e08fabd8cda8cfecad02d04b74169c"
     sha256 cellar: :any_skip_relocation, monterey:       "d83b242a43d7403f540e56a85399132205a38f5972e8eb2b8744e709b1da2bf4"
     sha256 cellar: :any_skip_relocation, big_sur:        "0a47de6eec09b1a2e938da0bebca8386261bb63040f9ca77fadfc3d28db7efc8"
-    sha256 cellar: :any_skip_relocation, catalina:       "725911d1fd71b259acb7b907c09ef86a03545afe95e161856130992fc0789ffc"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "6115d9586e530f771801c25cde3ba6c33b287db18d84b73911d68721b5cd7eb0"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "d869f0f3b08bf09648754a037fedc9a729b1b5e718bc366e2cf9a7cca2861813"
   end

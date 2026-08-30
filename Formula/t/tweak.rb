@@ -21,7 +21,6 @@ class Tweak < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "f124b1cff60dee61f0128c440f647f34e8b38bedc1b9120b822a5a3b50e4c2c8"
     sha256 cellar: :any_skip_relocation, monterey:       "398bfc5cdc33b289dd14f243ba00a3bfc9281878588fd2995931931e87dfdeb8"
     sha256 cellar: :any_skip_relocation, big_sur:        "db84e159f437b7ba3c6592ee9564842e6d21823325777c2317acdda483d452bd"
-    sha256 cellar: :any_skip_relocation, catalina:       "a38441e05b3953b324cee772161ebb1ccf12bf2262c476af921fee963fdee413"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "5e1f2f53b18e654221c1d61699c1e766fe53d5df15add6ef0b4aac050ea7b618"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "44b7907316240a0b5efb6a1025c22664da20e509d1d7d9787a7bdaa060d4c06f"
   end

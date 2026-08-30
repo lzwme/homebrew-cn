@@ -1,8 +1,8 @@
 class Llgo < Formula
   desc "Go compiler based on LLVM integrate with the C ecosystem and Python"
   homepage "https://github.com/xgo-dev/llgo"
-  url "https://ghfast.top/https://github.com/xgo-dev/llgo/archive/refs/tags/v1.0.0.tar.gz"
-  sha256 "ad31bdf097990cccd96c8703452a59f790ecdc3efd7a0fcf1f6465c026b99748"
+  url "https://ghfast.top/https://github.com/xgo-dev/llgo/archive/refs/tags/v1.0.1.tar.gz"
+  sha256 "f79aa5da8c7baad55b0a287c0c9c7d073428156a58750204ef0fa9098ea71f5d"
   license "Apache-2.0"
   head "https://github.com/xgo-dev/llgo.git", branch: "main"
 
@@ -12,17 +12,15 @@ class Llgo < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "f964a7f956ca6d9b514f154c2004fe04789b5ba2ad3e3eed453a0b800a97517c"
-    sha256 cellar: :any, arm64_sequoia: "02d0321541dd15706c33b32c5988a0758ffa6cd6c6ff752f3360cd8b0fbf46e7"
-    sha256 cellar: :any, arm64_sonoma:  "02e60d16600ad54a55a2216f82819ee66bc01535ce8ef5ceddcc9024b325a2c6"
-    sha256 cellar: :any, sonoma:        "0dd707b9ee40e3b7e0d00c16c6af03bf8ea53f0104e2726b341abefd804f29ca"
-    sha256               arm64_linux:   "4cc3e750cc7a9e0b9338e4b3c46497446d1ffc5d73ba38e114aac896be4a8485"
-    sha256               x86_64_linux:  "4445689f4654eb3f4a63a026bce11b2ec0003a6c12ed6e758b8836093c6963d6"
+    sha256 cellar: :any, arm64_tahoe:   "a1b93a51f8113cf721a4476b4c551671d7d4ada058e877d8536a2f7aa15a4d6f"
+    sha256 cellar: :any, arm64_sequoia: "15443597e404a1c13e89987fcebb0e5809280156adc53d201296918ae287e860"
+    sha256 cellar: :any, arm64_sonoma:  "cf9b9e247503025306e7b8d33c025dfec006a0a294dd264584d1834cf32e3ed8"
+    sha256               arm64_linux:   "de3c42a43fc4ef504c001abdbd5a22d2dec9c026c1b6783b0e6189bbd05ea436"
+    sha256               x86_64_linux:  "26bdb4af0b6d70d1efe9a176ad0e88d782097a5c664f83294a4ca0d3529f8e9a"
   end
 
   depends_on "bdw-gc" => :no_linkage
-  depends_on "go@1.26" # TODO: unpin go@1.26 when llgo supports go 1.27
+  depends_on "go"
   depends_on "libuv" => :no_linkage
   depends_on "openssl@3"
   depends_on "pkgconf"

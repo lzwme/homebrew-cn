@@ -21,7 +21,6 @@ class Newlisp < Formula
     sha256 ventura:        "bd14b986d863616e21e87c3be80588f2e085c7e0ba6dde2021a86b3d362df0e0"
     sha256 monterey:       "e7e6ab4d066923848b35a24c5a85cb357be0ab15d76fc9dbe5c87e2625c18b1a"
     sha256 big_sur:        "509f6892a0eabf53cebe424f2f2163ded090b7942e8fe8e43047f43781b0535e"
-    sha256 catalina:       "62fd116459d24ab0db976221fb16fd83a7a7db5447298bcc7f8b0dbf9a55f91f"
     sha256 arm64_linux:    "edfae18568fbac79130190be9410e674c4955be13f666e19b5dd5a1782633ea8"
     sha256 x86_64_linux:   "27f5be3e4e9319afe264a0394127ddbfdaf6d4f8da25b790af9b25d559c23c13"
   end

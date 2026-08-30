@@ -16,7 +16,6 @@ class Aspcud < Formula
     sha256 ventura:        "89f0c16b2804c20cda2b800f9504753b2151ab6b2418d77e55eee1b35a3cb652"
     sha256 monterey:       "8920dad4979d2ae3542553312c906d917ad1cbfe9f9059f4ee6bd726408489df"
     sha256 big_sur:        "8b458c28102da4cbc936a8ee349f4ce95764c801a70e0031dd2007b94e93d1ef"
-    sha256 catalina:       "ae23d915a2acf5de9083c065c41df839558ac272725ef76e8ac269498b5cabe0"
     sha256 arm64_linux:    "eda6f25c685bc5b196faf5a997403db0ed730f2cf4e7f680ca316861ac979bce"
     sha256 x86_64_linux:   "38882525e9e80e2f8436800e20415bd7f584130f264fdacf484c4c11a2ee0076"
   end

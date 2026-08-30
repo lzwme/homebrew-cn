@@ -24,7 +24,6 @@ class Libreplaygain < Formula
     sha256 cellar: :any,                 ventura:        "35848fd5f3cfbea613b2a2a017e10b7a1ede2cadbaab00da1d9dac1168b2af7e"
     sha256 cellar: :any,                 monterey:       "ea6a3522033b4b63e6f8786f14036cd2e3f685b8ad57050d9a64fc1adcf24e45"
     sha256 cellar: :any,                 big_sur:        "b7a2c4c9ab84445dbe76e5ba32cc84e5f64b4dca4bd0c6ceda202d024a4fcbe6"
-    sha256 cellar: :any,                 catalina:       "34a785ef56c26e506e4e225ace636163dd3b5dd310448a7b63d1ba1c99a2ea77"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "d8f6ee7956817e86f157467092d3040167e1c1cc09fcb0503fca830c7bb08540"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "e25a808e70aa00573bcb1f195bb76b774e8060031e8a188d47eda1fb30fc6a4f"
   end

@@ -37,7 +37,6 @@ class Tcptraceroute < Formula
     sha256 cellar: :any,                 ventura:        "029ae4c460d3454865fed73329f641b0788d9f4f7f2fc079b04954f0145e6e41"
     sha256 cellar: :any,                 monterey:       "b9308ddeb907678411916f047d9119350c5054afd5e995e113cf5ad287156e9c"
     sha256 cellar: :any,                 big_sur:        "f0e063340080998a098d428af420778bf27b0d5b772943b482152ad9e2793db2"
-    sha256 cellar: :any,                 catalina:       "32a7e7e680f6e481353c0ab25fbfebb1f79f48bce4d2215d4765211e3494d450"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "93f9bdf4d9051c31897edf8d96ea5b78e55ec2d1b8abb4b5f05f06ada2d7256a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "97750459321657901904cd492047c4d011d7e7b705d01ce37d82fe5622dec168"
   end

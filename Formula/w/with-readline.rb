@@ -22,7 +22,6 @@ class WithReadline < Formula
     sha256 cellar: :any,                 ventura:        "e4a501c322f47879d36712e61bb9dc2885b2b3ec66e5e44b8f44c3fbdbb53b25"
     sha256 cellar: :any,                 monterey:       "96e916f5b1f84b40c4aca915dce1731428e4fadf69269932098a8ffa87168554"
     sha256 cellar: :any,                 big_sur:        "0700f15130da53328bff304e2cfdb422ad2bc4fff64a0377063af94cf46d3655"
-    sha256 cellar: :any,                 catalina:       "b0ba2ed66eff2c432234e5885ebeca2a671bb556024ad038563883b3c14a64b4"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "13a2d06bb7d6b22f037485e8e59d402cd10c20ade9be3919a1ca8d98511ce796"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "fa9469fdae3e63ea2e6bba4850d405878c6a782b703f978ee04e28a49285e39b"
   end

@@ -21,7 +21,6 @@ class Apparix < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "f8146185bc73258782bfed5b8155d7f20bcaf74cbc14de2ecb94316247e397be"
     sha256 cellar: :any_skip_relocation, monterey:       "7409c547247d36188c88db44981e1b60174b34d627fbf181be554ce25498e4a8"
     sha256 cellar: :any_skip_relocation, big_sur:        "a7c4e0d0754712277af33217475b179c898bbd965b5bff85f845658791eda9f8"
-    sha256 cellar: :any_skip_relocation, catalina:       "27524421291472bcc5ef8dc6a19d7b6cb7aab1d6a7dffd326c4594a11f3ce4e8"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "b30647a456f6b9b5d8990f73fc9cf1ef2f4456a666123f396914fb56a136af18"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "0597c7147ee8a66fe491ccb3e8c386e1580953cc1eedbc9ddbb0349037f312d7"
   end

@@ -17,7 +17,6 @@ class Nesc < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "4608c4e67325022c55a0f991afcad53aa00355a559b33dcfe6bdf61d0a883aed"
     sha256 cellar: :any_skip_relocation, monterey:       "77f2ceb7722575686a928f300064a5df68d46d89f97648662a90321e2aec179a"
     sha256 cellar: :any_skip_relocation, big_sur:        "9f1a0aa5ac89e1c7b0f278aaab584ce98dd4ae31a94fd9bb111287e8fcba8131"
-    sha256 cellar: :any_skip_relocation, catalina:       "b2ce356c9fb1177a17e2e2b82cc7e91f9126ecc68435ba0cea0ea94f65def27c"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "a1bfde913670c487ed3a9f22f68189d9255b8ba6557f9100243ccdcb5182f83b"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "09def7e758ed0e91c1557f6ee6994815db45bb14c9f3f3bcba5848f6e1fa2bf3"
   end

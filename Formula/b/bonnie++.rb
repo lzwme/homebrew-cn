@@ -21,7 +21,6 @@ class Bonniexx < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "6f87cb770bbb2cac134625c7998bd3bc0974ceaaf9d352045a5659adba6d6ae6"
     sha256 cellar: :any_skip_relocation, monterey:       "d6203a132a5f2e56a85356d5dd9c4545af59e7199b72eaca3a9571d171322d5a"
     sha256 cellar: :any_skip_relocation, big_sur:        "75e1876579c6638c1e4c0509af5c76950ae379b034e6a051d091593cb08c1ddd"
-    sha256 cellar: :any_skip_relocation, catalina:       "83df0761686086ae64a3c08433613908d9c39d85daa7f81011b5bd70d2d5eb3d"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "d88efefa2ddd179f4ba11870b49a1c4166b44be03930ed9b801c070dd6f86ceb"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "f0418a37628a09a44eeb05aecca9b6fc6149dcfdf40729d4a41f754f030fac51"
   end

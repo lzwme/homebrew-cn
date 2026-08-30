@@ -21,7 +21,6 @@ class Vbindiff < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "b937359639366c69a2b3227d6c1c5ce6590fcbf30e7a8242e87e37772f42c575"
     sha256 cellar: :any_skip_relocation, monterey:       "e6a1e5857b109bfc7d8f195d34dac26362adba2650385edbc23de485cf4c49f0"
     sha256 cellar: :any_skip_relocation, big_sur:        "0e5988880d2866314fe6fae0eb5ce97c863396553f9575d6d70b0da8b2b66128"
-    sha256 cellar: :any_skip_relocation, catalina:       "c7e303922a1f33af5fe107d192a530cfb3d545a55d4b7e681cdb5603e24cdfb6"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "1775e6fbae0723ad70926c4fe72cf62b4627880df9d2c05ae035eec0813ec335"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "e67eb1ec328a7cdfc6a1ffa6f6b8cdf60f106040ef5714d6b1b15067a37f6214"
   end

@@ -17,7 +17,6 @@ class Brightness < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "ad0f98500a441f754f2f832e9d797f4dde7261874ceaee0a4d632f025d6d6985"
     sha256 cellar: :any_skip_relocation, monterey:       "b8eb62151ad68eaec24fedcd6e4f7a7f97970f044736cec19818c88d8ba9afca"
     sha256 cellar: :any_skip_relocation, big_sur:        "687b60a636da1664c3c16ef69e84556cfe78d04e3e080de1ca0182847df2afc1"
-    sha256 cellar: :any_skip_relocation, catalina:       "d9a033e343696c88863a7d231197d27be9611a2c8c56c83b4fd2747e2a2e5a7e"
   end
 
   depends_on :macos

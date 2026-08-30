@@ -21,7 +21,6 @@ class Proctools < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "7beaae2873e1c6c390b4a9471ea9bc4f16cb4a4f591a7ba5119546ab46169132"
     sha256 cellar: :any_skip_relocation, monterey:       "9bdbe7d4b78f52517f8c215c2aea77a49e988d9fb473d6277b5dbe1cc4b737e4"
     sha256 cellar: :any_skip_relocation, big_sur:        "3a8ffd535edba47371a0617666b6eced7b0b13c4b27b4303b483d71f07de2e04"
-    sha256 cellar: :any_skip_relocation, catalina:       "f0fe70530d22c270ac3d5a105f2dbbbb0dc6a664acd03f3ad7da3f86255fd548"
   end
 
   # Last release on 2003-12-07. macOS has included pgrep/pkill since OS X Mountain Lion 10.8

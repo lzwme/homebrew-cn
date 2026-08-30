@@ -20,7 +20,6 @@ class Sha1dc < Formula
     sha256 cellar: :any,                 ventura:        "320528612c69085d4e283dba52d84dd5101fb2348ff15955a480c08cfe4f06d0"
     sha256 cellar: :any,                 monterey:       "8034c9dce92fc85c8f79c22f01becabacb0efed4cf40bf19ba750e8539ebed55"
     sha256 cellar: :any,                 big_sur:        "9f927c95f5b3838ba7c269a3376f52d5bc9ddea216f6cbf6d07e667fa6c1a829"
-    sha256 cellar: :any,                 catalina:       "ed78939b30e385c3adeac725b9f2865d60b8c0e15e1ec75d1b6c90855dc14206"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "e70a02cce5e9c673cd751665e913a54e3db1e67530aa702b86c3452e5d45db90"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "981db3d0b2fcf5e914e1506a746dfb2bd14d83a191f268d8cdf5cb57401c0475"
   end

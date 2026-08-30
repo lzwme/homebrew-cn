@@ -17,7 +17,6 @@ class Eg < Formula
     sha256                               ventura:        "7934ccf9ab53a286897f8bf177884685ab0ea5ca2db8918428643b3bb8f54067"
     sha256                               monterey:       "038f9c8d57195f049357e2baa6b001f04bd6946e697f89a932530db05e3e52c8"
     sha256                               big_sur:        "cde213a2d4559ebbe2b3c964735e39bb4389eff052105d789f72cbabf9c4189d"
-    sha256                               catalina:       "82c5cb9c305f5bcda5af0bac6143b6dec9798b7b301c17249e769e4018322225"
     sha256                               arm64_linux:    "99299828caf70e443733441b290c14d8a3c4fdb74de9f5d63be1678ca7ca88fc"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "b56cf6712f27d8ec7ef757e04232e7d67921566701656a983a4eedcba812843f"
   end

@@ -17,7 +17,6 @@ class Jshon < Formula
     sha256 cellar: :any,                 ventura:        "642bbf1d65f96c69316ce7e0294bb750107912515d47d92417a5482e73ba7e2b"
     sha256 cellar: :any,                 monterey:       "9f42af851267206d434ccbd1765c6bf9044ddcca29682b3a8b88947dbb8f5dab"
     sha256 cellar: :any,                 big_sur:        "301ae5b178d603c79eb0ae2316647ea558c0eaea4331a525a9bc52f6f6387203"
-    sha256 cellar: :any,                 catalina:       "ec755371878b6471b6d5fb0dac981f7969dad3a42b9aa2e9be60f7a303b3fffe"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "0afe7df1a37e88dd5f3f54e74c972fb4e8233722b321b6e67f5a0318720fe7be"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "75afb2192ca7b1257b811c27359474bed0d281e1d67eb3fdb86fbf04005563db"
   end

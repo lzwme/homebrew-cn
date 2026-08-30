@@ -21,7 +21,6 @@ class FseventsTools < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "3136f299634d309fd98b7aaec18e4b03b28b4c61716b86e8a32f3933f0bba669"
     sha256 cellar: :any_skip_relocation, monterey:       "1d2134afbb595faece7c4025d78a7f0de8c52e3c90ff8c6965aa645526fb867a"
     sha256 cellar: :any_skip_relocation, big_sur:        "da9e4eed81589e2ea9e7f6a9186cd178ad965d5cba6b71ed2a3515729cd1cfb7"
-    sha256 cellar: :any_skip_relocation, catalina:       "a59b40a61a49089e4a3ba5bbf0bd51790f043975c51c05c8eec39bf54425ae2e"
   end
 
   head do

@@ -21,7 +21,6 @@ class Liboping < Formula
     sha256 cellar: :any,                 ventura:        "8866dff120426703941ef3eff9e6253c9ed14fde9181dc4a65207599926d973a"
     sha256 cellar: :any,                 monterey:       "0e71715fba4fca28f5488409e5529ac61b7f166cea4cc2180967cc4d9a50dda6"
     sha256                               big_sur:        "0edb72c3d81dbc8869b28d27f063372f7eed0ac4318624fe94e4ac5be7d2337a"
-    sha256                               catalina:       "997e8eb17c7878cbd0c34bd6532b76ef804899751a58b3b434656d1b9ced07d9"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "71cfbc992467da7e4933d64ac61454004ddac15ab93c28b33e502299e2789a88"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "8f3979a8a214b2384b5c18cb7ad0d1ed49d27896b7972a2ce93dce2e0d76ad82"
   end

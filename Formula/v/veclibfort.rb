@@ -17,7 +17,6 @@ class Veclibfort < Formula
     sha256 cellar: :any, ventura:        "0a676d0549289fbebc869eda43fd21372f03114c6323925edbfa61c3c9d77485"
     sha256 cellar: :any, monterey:       "8463699f6cec5840357d1b49f41ee8f322da64626122628442f9f4fb1649c076"
     sha256 cellar: :any, big_sur:        "7df1325737661d476ef4619a4519204818966161ef040c96debdcfe47409714c"
-    sha256 cellar: :any, catalina:       "b44b455df99aa2601fb3418445c812d5b0d639bef588f3550716e5984985fa2e"
   end
 
   depends_on "gcc" # for gfortran

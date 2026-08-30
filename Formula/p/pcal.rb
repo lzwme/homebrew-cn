@@ -16,7 +16,6 @@ class Pcal < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "3c4d6d54cba50845f194e621e60a86d71f16712a1bf643eeff14cd669b08a7d1"
     sha256 cellar: :any_skip_relocation, monterey:       "8b780cbb1c7a72381be2baf453fc7f9f3940aa30e73608928682a2acf6266fab"
     sha256 cellar: :any_skip_relocation, big_sur:        "53c8157fa626298655248853dc283fe15947f47c725de2ea0c934773f0470063"
-    sha256 cellar: :any_skip_relocation, catalina:       "9d7f46d2cbf308cd81bcce8fb98e48d295917562a46e509e739cad51d90dcf2c"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "e8f41a9d2ac3d3944d6e0e64a4d502f9c317cfbd47ed8471c4b230b159a653d9"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "e4ca61c591e3d9f96352a2b83689f5dad406082f164eeb621602400aed315a9a"
   end

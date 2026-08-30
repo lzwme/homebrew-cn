@@ -21,7 +21,6 @@ class Libpointing < Formula
     sha256 cellar: :any,                 ventura:        "97732d46ffab874e21adbaeaf3a6953df026772565ccfa5dcb5f5d51378ac75e"
     sha256 cellar: :any,                 monterey:       "9fad8e2c767cc76679b49546cf443a0ec1d7b7115dbd82faaff20649b3b77ff4"
     sha256 cellar: :any,                 big_sur:        "e9168eee924fc759e012e3ef41d64750d732f0d09a7af068fd935746835da472"
-    sha256 cellar: :any,                 catalina:       "d56d66f5df0d6e1c80cc4e4951e8add9cbb0c5fb76080c9107f66665b8b46e48"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "ffb598217e1da31c8150b384ff7a88d6afdb3c5980edf11f7422033ca5bb2972"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "0bb26145aac1e2fa3a1a552c8120a5f2f6fbd0fb7b9836dfccdbbaaeec7e161c"
   end

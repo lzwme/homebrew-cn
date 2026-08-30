@@ -23,7 +23,6 @@ class BashCompletion < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "1a5cc6b613a97f1a15f87725d8343b4358e56acaa230f7cec64c77d4566a6f80"
     sha256 cellar: :any_skip_relocation, monterey:       "1a5cc6b613a97f1a15f87725d8343b4358e56acaa230f7cec64c77d4566a6f80"
     sha256 cellar: :any_skip_relocation, big_sur:        "8fe573529e08174b26d4379d92a42a7c38138c712e4e998541e8892fc6a376e7"
-    sha256 cellar: :any_skip_relocation, catalina:       "bd0c84cc6df9d3ff06ac081d85fdcc052b9e63136f4e2aa5fd2f2a0b7f654c84"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "f741b3bdcb0a881ab7b961a7ee397014f964440c74b4949f118a79540d8aba01"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "c34ba8272f8e85e7f453c76e0fee07d8d35831e6b6365588a80ef240f9524e50"
   end

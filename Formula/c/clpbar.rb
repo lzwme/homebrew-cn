@@ -16,7 +16,6 @@ class Clpbar < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "536fa2e325dad3dfa4bb63876bc54c9ebea202dadd68d8a87c517842906df821"
     sha256 cellar: :any_skip_relocation, monterey:       "90f14242e4340c8c8a9ec84271d5e629c03314df3761fc6033430cd3d9ae33ec"
     sha256 cellar: :any_skip_relocation, big_sur:        "4ba23543dd87e39ec0baea12951bcc835b65b67b8ef56b024a39d282781f3b62"
-    sha256 cellar: :any_skip_relocation, catalina:       "86aefc9d1110a945b62a9dbd9d1efe2a1c4ebaade84ad56d00084857439914a8"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "a8ddd40caccc3e89ff5a39180cf69afcbec356f9579d9c40c5798cddfbfd46c6"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "34f612cc13329af2cb8bb90f7457a5222538acbd7304ad2ebf0a16650bec2dfc"
   end

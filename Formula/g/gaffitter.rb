@@ -16,7 +16,6 @@ class Gaffitter < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "8334784dfa8795b86f4a542de4e5e70e3ed1d9985b06ae68c90560ed592e116d"
     sha256 cellar: :any_skip_relocation, monterey:       "0f766c5240ed9824f0cb041a3de1c8ea8d170586c4c248b3289ae9a3c9793745"
     sha256 cellar: :any_skip_relocation, big_sur:        "59d1100a675e8b09edd424abee8c091c76e249118aa31d4a13a65196a217372b"
-    sha256 cellar: :any_skip_relocation, catalina:       "a2381f4f6c482bc267117d445b342b599ec9fd67970a542bc1c680ece5e2cbfb"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "7932b1fe151d9f7ac8a018292fd05a15b2e0ae8204b553e6cca6767ce54e409f"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "03da21621437817c39c5760eaf043615e7fe2d7653581763acc5ed87a71b2c6c"
   end

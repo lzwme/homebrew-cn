@@ -16,7 +16,6 @@ class Doublecpp < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "b734b575fec9d1c01c97e96c283caf593ba17a2650bf5071e4523f0851d04e04"
     sha256 cellar: :any_skip_relocation, monterey:       "3ec3e4517d9a99533a08932492764f0578122528585b5955ef5f6b092a8ba806"
     sha256 cellar: :any_skip_relocation, big_sur:        "3f4d63ed1afe1fa65825d925b8e90ff32e867de820c41159f52c4532a4df92b7"
-    sha256 cellar: :any_skip_relocation, catalina:       "429cf6757b46b6f0289439d40db98e3a574a4bf0bde930f8b9ae25a55f4452cb"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "59e9b672d857ae8953d8555b9687be1508f38f1c9702eaa27a67caba2d60b08c"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "989076ce2ebaba5ca834b159332a0e4b4bf15dd51d5dc2617594d367bffee9f2"
   end

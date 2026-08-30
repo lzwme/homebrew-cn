@@ -22,7 +22,6 @@ class RegexOpt < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "086aadac89bc6873dea864407ea634b84bc2b092ae6625a28ccb731ca9ac8fe0"
     sha256 cellar: :any_skip_relocation, monterey:       "1e232a280f15762a4de83d47a3bce3ae4ac726e9ad6ef8627ab47c425465b81d"
     sha256 cellar: :any_skip_relocation, big_sur:        "6c06ca3033c1a2d174368b4ca2194f732411c24911945cbad73b47a50ed1393b"
-    sha256 cellar: :any_skip_relocation, catalina:       "8a561d7a4dfadf25fd39bd5b19d6a8161a2f0d1be2c459cbe691be17aef85bc0"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "0ab2654a2088ac3ce8203f064d695612f9233dbbf2de6dbf892e589a1f1168e1"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "9cf554c9bf9c98356aef52dc0d2eeeb514020d2505ed41764458f937e662b95e"
   end

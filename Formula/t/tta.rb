@@ -21,7 +21,6 @@ class Tta < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "2dab99ae6cc3568d3b685607cbfb8b624f916d8e2bceae530fb46656509298aa"
     sha256 cellar: :any_skip_relocation, monterey:       "21fb40ccded96b6a0b51ecf1c078ddeae5b9bb116d4ce88985d4bb5b93644aae"
     sha256 cellar: :any_skip_relocation, big_sur:        "7f2b84e5f849d0903006aa3550ec718c31130b4d50271efef0ffe37c1a29e0d2"
-    sha256 cellar: :any_skip_relocation, catalina:       "af41c210ceddaa4957dc8bc4fec9dedb839157914c3d2d9fbb4bed63239cd9f1"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "30808b3d8bf5450eb396ecbf102837b9943355ea54cb6b27c052b6e2fd902adc"
   end
 

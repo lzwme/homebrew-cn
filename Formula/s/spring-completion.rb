@@ -17,7 +17,6 @@ class SpringCompletion < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "b1f3a43b9632e6fcfd30bdfa4d4287867af9370989ee297caafcd3051a6faccd"
     sha256 cellar: :any_skip_relocation, monterey:       "c7c179b4ccf46a0ab7fcd3a300f0b3c1d630e6b450ba4b367c65abd4a9b4d25b"
     sha256 cellar: :any_skip_relocation, big_sur:        "1110b2611a3d8dc08fe1731e46692b9d77234e60aba14602f0ad1f9380933eeb"
-    sha256 cellar: :any_skip_relocation, catalina:       "1110b2611a3d8dc08fe1731e46692b9d77234e60aba14602f0ad1f9380933eeb"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "83ca996727d9416ccf051913ab7a8861cc2c6b23b3d738e1445461aaa36a08dc"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "cff62b143ba4126ebde03eca3822b4e1b3af6977a3a26b798d94286fd423cf47"
   end

@@ -21,7 +21,6 @@ class Rzip < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "2fb5e7883c1aaf26f31da1deba72b7067dbc7e2c55da34b7803f9c33c5b1e327"
     sha256 cellar: :any_skip_relocation, monterey:       "b705bc4228ad82a8eca44fcbe8d0b7d30cb562b32de113de647ee33f30df9470"
     sha256 cellar: :any_skip_relocation, big_sur:        "544443eda6593899f3358c6e7f5bce878ff590f357151b587b3c83785745492e"
-    sha256 cellar: :any_skip_relocation, catalina:       "0d08b087dcaf10a5604aba687c8b59c116d4374bb4a9ded7aec3108d3f005b1b"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "7d1d3a724cf5d7d9246b696aabea665b928fae0d01600cf63710678c207990e1"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "7b409c08d9581b3013a05dc62ebe68c3d6bab99b342e8bc1f2911e9a342b18f0"
   end

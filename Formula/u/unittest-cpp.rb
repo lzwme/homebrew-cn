@@ -25,7 +25,6 @@ class UnittestCpp < Formula
     sha256 cellar: :any,                 ventura:        "d925e9cb70b8846bdc1c8a5c7af8d0fcda5192ccb16c5b47a96bf22070f0d427"
     sha256 cellar: :any,                 monterey:       "6689794273416bc2eaaf64753f76a1c6529bb8b859d7a58291d8aae03f5a4268"
     sha256 cellar: :any,                 big_sur:        "ea9e79c44e4bc95225504ea78baf0ae87b440f3a555239725672b3b5b205ebc5"
-    sha256 cellar: :any,                 catalina:       "19a4cef9ba95b37528f2a88d280b0f4c77809d7553a8e5747cfd4e41363f2fce"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "7d3f6916cc0b8b7006d3a5c5480ad23154ed7ab4ca58d187d1412b4655c12800"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "b00aa2974e4ab2714fb6d98ada6b1dc127a20641f05170196ecf58beea63d6a7"
   end

@@ -21,7 +21,6 @@ class Mhash < Formula
     sha256 cellar: :any,                 ventura:        "751e17fd25843aebabf5c229d75476f6e854041c4a233329a7147b02e7050d87"
     sha256 cellar: :any,                 monterey:       "a8dbb4a5d3b15a10104683fdea162c85714cc0f4ef6f313c06aab7ddd0d1d42a"
     sha256 cellar: :any,                 big_sur:        "4553e5e48c17e06ad3290dd6ceabb6c9fee21be5b70194c03dd03d7bda873209"
-    sha256 cellar: :any,                 catalina:       "d7d0a96656fbae5b279223d120bfe456c775a0c751090049bcf3ffffb2231761"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "55c3040b1081fba7cad5ff2ccd248b37b8face8513a609bdeff9a47c31241713"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "32a5e81c29e8407754448e5aa7f1f8ea2328bc5ce266ab5f3b350e3174373900"
   end

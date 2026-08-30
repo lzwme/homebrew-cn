@@ -18,7 +18,6 @@ class Dex < Formula
     sha256 ventura:        "c6b949a5254e17100be03b643f2c6a48322e52d841c17c3c8755d5c0895edf82"
     sha256 monterey:       "1161d38da36fd3affca64b1b45f68a98e2b935cf1a25418f079f30ed1538eaa3"
     sha256 big_sur:        "32ae7c5467361a979d7e96249ab4f95af72b202e260064a4c0ba58455ba44034"
-    sha256 catalina:       "d59f96c9f1e021bc400a832d680039313256073d88527ef18b961e783c71879b"
     sha256 arm64_linux:    "d0e976083ba5b7bffc80bd67406135fc4dc08226ecfd3d2336f5e8bb39b634c9"
     sha256 x86_64_linux:   "53f45193c090faaeefd2c6ca8a492f51af29d6b72f7a13eacb9650b6fffd46c5"
   end

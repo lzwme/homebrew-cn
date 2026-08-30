@@ -22,7 +22,6 @@ class Mp3info < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "0f0471f80fe9004fd5c0028ffc6ab8b5b5240474a5b04533b5d53104e732d7a8"
     sha256 cellar: :any_skip_relocation, monterey:       "a6c032a31a38ab8d086b20944fd5b4e3bf074ecaca2f7d593897fd5deb19e250"
     sha256 cellar: :any_skip_relocation, big_sur:        "f5e52d02125f49b9c5afc960a565f7f5a774ced3f88fabd07d2723e741369d82"
-    sha256 cellar: :any_skip_relocation, catalina:       "4f70eb02805d1fe2a93dc169b9baf2a3d1c685ded71094241189c93599ba6662"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "9d8c26e4f4fec89140d5ec6261d115ce6d7ab076c7ce1f42fc16c6cb60f645fe"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "3cfece9c5d6614f0c1139161f6ca6ced317514cc45a7b13d06ecf0316b53656f"
   end

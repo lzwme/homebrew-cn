@@ -22,7 +22,6 @@ class Owamp < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "38c978e23ada6dd9e9441b7fb577995b830f5a01d3c548ec487991ee296899b9"
     sha256 cellar: :any_skip_relocation, monterey:       "e66ca3211d8ae8e3bd1631451f1c014f14cc933f3d1150334a3dee37db3074c9"
     sha256 cellar: :any_skip_relocation, big_sur:        "d9599177f43e538b1fea107a4395cbd466ee5991e8c1d7e8d510baf32878a32a"
-    sha256 cellar: :any_skip_relocation, catalina:       "a7bce114bb407f1663671ee68793b7751d512e0451cf9bbf35c1f36ad9b4c3f9"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "77ffadd4a4b4124cc3321d7a2a86d04beba9dc525f56f0883d9d358d70c97adf"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "7861b9b519cb1dd21940335fa2e904a72105938981e66637a4887db79988067b"
   end

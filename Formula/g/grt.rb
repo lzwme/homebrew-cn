@@ -16,7 +16,6 @@ class Grt < Formula
     sha256 cellar: :any,                 ventura:        "bc61d78a6e3788cfbd018970acdcb4d60bcf7b66da889c5dd908dcda2e701d1a"
     sha256 cellar: :any,                 monterey:       "91ca908ff9c97a1cc86b8899d97e7f4d97d1d0a0dcbf959bd8f6d2a44ed04ce3"
     sha256 cellar: :any,                 big_sur:        "1d4777cee44f7b99247cc34cda090ca59e720a14f20b9d2336d21e06bc309d4a"
-    sha256 cellar: :any,                 catalina:       "35705ad1d151228e4e8c647cf16fc5b7578b4b777c54e94ebbcc8e19d26bd1f5"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "4e0eeec38e25fa39e7e63c6e2a3a740e088522c789c77ea3361b5d6d7fd30e9f"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "c9faf092937716c46062df1823e3af440e986eba4d3de6a965fbedd619b4e43e"
   end

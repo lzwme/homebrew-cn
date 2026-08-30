@@ -24,7 +24,6 @@ class Acme < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "4de66d662e3631ae88f197b7b28045407b929d05d5d844cc7f3569696df7078a"
     sha256 cellar: :any_skip_relocation, monterey:       "057df491fd1784cad46df8397ddd2cb972c256d094b5849731899bd03163184a"
     sha256 cellar: :any_skip_relocation, big_sur:        "7890b8c1a32b202ab913553d534db373de3d61bb274a564fb9304cd4de043736"
-    sha256 cellar: :any_skip_relocation, catalina:       "54080f9a08a3f958c5a024fd536c2308c392521a4a4092afb115f368b3256fd2"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "743dda54569b1514edf7632a1d62b7f93b44324cdb91d2520a10f27edd3236e6"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "fcb14a109abee4d1af24a79bc4991a851a6b1b75fd64999e815715fc54a4c834"
   end

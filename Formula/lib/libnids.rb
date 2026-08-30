@@ -17,7 +17,6 @@ class Libnids < Formula
     sha256 cellar: :any,                 ventura:        "38b6e4dea05881c126f5abfaa13e8f4c8e5435cf6e51a135ce1c3fd10c120227"
     sha256 cellar: :any,                 monterey:       "bb00ea7f83f736bb27b63da94cd2fe4ad077c5aab62a357a4e996fa2cc98e123"
     sha256 cellar: :any,                 big_sur:        "0235b5bccac955c60852984ed13fa3213e3ccad9c0fe36ae522b5ac53f1f2a42"
-    sha256 cellar: :any,                 catalina:       "0cd6c420a38ea61eb8abe96b6b2f754bddf1ca5583b3dbccfb1b268990426764"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "ce70446aaf3217c926bd5ec5df544ce4749a5a91553b3fcb2d111d6a5597727e"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "53191548aacc1a482ec1bec888da8809da4c17b7b88e631b7c725acce36456e9"
   end

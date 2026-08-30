@@ -17,7 +17,6 @@ class Fsw < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "495901d41455a46749f54f9df6d1ee95eec0dd22937c42b946018b8909d25669"
     sha256 cellar: :any_skip_relocation, monterey:       "8fffe4aee0a5723d955c4563a03596b24d55efe1f92c7bbef19f66f1856709af"
     sha256 cellar: :any_skip_relocation, big_sur:        "5f9bbefcdf5b7c82abb30844c9680b9d99ab14aaac142372fc9b7e83d287d343"
-    sha256 cellar: :any_skip_relocation, catalina:       "749f3025e6383ae635a30302a3c61a191e57fbe88a7c74b3650749de7e9c8dad"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "8a48b6b49e24af2105a97f5dd0b8ce189c136ac33cecf354619e7380d89afd48"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "8eda4b9b2f8597f3fab6330e173bcfdfbd77e41fc406f22be2235055d4d555af"
   end

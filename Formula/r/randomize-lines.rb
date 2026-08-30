@@ -21,7 +21,6 @@ class RandomizeLines < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "489084bd61495369766199746c6a3f011fe598d5b17eb809c10e99c9cfec7526"
     sha256 cellar: :any_skip_relocation, monterey:       "7dd7d179e5ac4567f69860ca54a379be5424a0c5e6fd8f0088ce6c158a77c47f"
     sha256 cellar: :any_skip_relocation, big_sur:        "05b5f772ee8d86ef341e30e91194b0a4b0cdbe5d3e16c8e319ed5e74a901e806"
-    sha256 cellar: :any_skip_relocation, catalina:       "ff6262e5a351158ca8a2b25b577a892fc4cf2b7f9a2330e9fec595970c81674d"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "764e49f56b35776d575f1c96474373185c667956751c0c3b829680038a32e9d9"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "5d3ca6029fbd900632e5f09b68c583b1f441cf1bb711041ab00d519ee8fd323a"
   end

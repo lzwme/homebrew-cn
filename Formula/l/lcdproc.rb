@@ -14,7 +14,6 @@ class Lcdproc < Formula
     sha256 ventura:       "ff2675dfa714a9de7e8d5a9f40c214cf5547c85c402337e7376a54631f43020a"
     sha256 monterey:      "90bb0544163a3966aac4de0dffaff4a9cc59cb05e08c314a28829fcf8df8e38b"
     sha256 big_sur:       "937564e19f5e45fd49b02e83577a4e217abf89ca3884958b3f9e80b2132fa8df"
-    sha256 catalina:      "8899d5c5afebdf222f014f383e009071bda3f075a08e5f0d729a81f99c9c8086"
     sha256 arm64_linux:   "31e9cdd685bcf637f916a0f897c8bf9da80b89da8440b66a21fead876ed3f9c2"
     sha256 x86_64_linux:  "d869dec7aa2e03b2c6bc21a281ac56537d5a596e0a87442fc79fda035f000282"
   end

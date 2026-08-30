@@ -28,7 +28,6 @@ class Tmate < Formula
     sha256 cellar: :any,                 ventura:        "00d387966abc3146d0cfb59e73b31802265573c3e0f7a74eaed39d0b76f5fa68"
     sha256 cellar: :any,                 monterey:       "b914a728ce6481c4379668b5cac0db712f78d37cc922f97786369fcb8be232fb"
     sha256 cellar: :any,                 big_sur:        "215c8724caffc137265dc5fa565bed563b5bd8d046b0e54addcf1628d60a9268"
-    sha256 cellar: :any,                 catalina:       "a278bcb401068bed2434ec48bfb059a86d793a6daa4877574ac0ed7168cb1ebc"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "d32cec664457d6e17deecc2f05a9b8fae500e5621473679789e413a453f0032c"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "6b3b3d87ea67d6ee52e3775578b7f37d46cca673aae9f412484439d10e9de620"
   end

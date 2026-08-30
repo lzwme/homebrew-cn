@@ -41,11 +41,6 @@ class GhcAT94 < Formula
     depends_on maximum_macos: [:sonoma, :build]
   end
 
-  # Build uses sed -r option, which is not available in Catalina shipped sed.
-  on_catalina do
-    depends_on "gnu-sed" => :build
-  end
-
   on_linux do
     depends_on "gmp" => :build
   end
@@ -128,8 +123,6 @@ class GhcAT94 < Formula
       ENV.deparallelize { system "make", "install" }
 
       ENV.prepend_path "PATH", binary/"bin"
-      # Build uses sed -r option, which is not available in Catalina shipped sed.
-      ENV.prepend_path "PATH", Formula["gnu-sed"].libexec/"gnubin" if OS.mac? && MacOS.version == :catalina
     end
 
     resource("cabal-install").stage { (binary/"bin").install "cabal" }

@@ -16,7 +16,6 @@ class Avanor < Formula
     sha256 ventura:        "068723dfb7c9ce0a1c77337ed71fa3966a9bde3abd5af431d9fe80bbc6eebb5d"
     sha256 monterey:       "31f93f42adc5936fa370279095f656b270e0ffb3fe79f3fa163cab67d6fa3bb7"
     sha256 big_sur:        "fe8fbd3aed29fc9c50753000036d9c13b5e8732f687d71b061d954e83517d403"
-    sha256 catalina:       "ecaf9be2ed4f7fac2f5cff16be121214bbbfd44477a5f3f5287ce26da94fed3e"
     sha256 arm64_linux:    "39d71fa50daeab0033fb05cbc656d28654effd5c1d650b8e4cbb339ef96004ec"
     sha256 x86_64_linux:   "99ac78a20ffc5cccb1a0b5617c9977501a41edb8823663ee4656d177fad7ed09"
   end

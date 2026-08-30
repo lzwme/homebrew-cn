@@ -17,7 +17,6 @@ class Depqbf < Formula
     sha256 cellar: :any,                 ventura:        "209da2f6f71ffd18105f99dd6333a0547865da8725e109138fe9e3e138b8300c"
     sha256 cellar: :any,                 monterey:       "135536ee418fef5b3e8002301dca15913770d3b2d81c8b08b9bb2fef67bb56cc"
     sha256 cellar: :any,                 big_sur:        "e86513b7cd6ad6ac68c7aa8a1738d8586fe6e20a7a46237dcbc3d54d735ff6d0"
-    sha256 cellar: :any,                 catalina:       "432518e2ccee50695a9e79b4fe558142d78945ef96fcdbf7cccf090d72ec6543"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "27916b378549105a9812407772165660f12c3ac27be9af6995fd09f5bee27827"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "2e13e19078a40264180e470c713e834493e8189f3b45a263318f17d1b4830f73"
   end

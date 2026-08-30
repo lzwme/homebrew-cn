@@ -23,7 +23,6 @@ class Irrtoolset < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "11e52bef1dfd00a4986b2569907a6cd813f48805273de424006bd54d939d6b38"
     sha256 cellar: :any_skip_relocation, monterey:       "0a1e66582bd543ecde2c8429c3cfbe9254fc9e55056ffc519d56a89f7b1b22e1"
     sha256 cellar: :any_skip_relocation, big_sur:        "632c6b4036c71036b6b4038816dd20a3f791e9d06aab981f01429fc07bb4d3a3"
-    sha256 cellar: :any_skip_relocation, catalina:       "958df309df54264b13dba2185761e5d4ce1397e3c6b079dbd9396e054d02d306"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "764470b02f51abbb9c5a21cb574bb11b226213478829953fd5d115b45e6e1f46"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "b03e7fcf28c8481e33209b35b08bac6d1293240ea1f7d71714c3bce19ee98b88"
   end

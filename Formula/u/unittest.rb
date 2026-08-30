@@ -21,7 +21,6 @@ class Unittest < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "a6600c783f2a191f11bb0f4b8f236819216ee20e2d4610bcc006a4478a706ded"
     sha256 cellar: :any_skip_relocation, monterey:       "d83feaeec071b449126875572d29d4df64580c06c2f4a8fcc4fca55a5c68c7f4"
     sha256 cellar: :any_skip_relocation, big_sur:        "8f449bf2ba73aaf03dd8316d6057639bd2c3a38ef347157f3721cbabfb60212f"
-    sha256 cellar: :any_skip_relocation, catalina:       "ef8f5c6e18c32b813cb825ce467a6997592dca4762833f8e03f156629ffa74f9"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "fc7cca539bea1e17f6eb787a2061ee632cbde672e48ddb1f551a5802eab80b01"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "253282b6d8bd11e9b124dea0b9356211b422502f0e809cd2f043f791275d7459"
   end

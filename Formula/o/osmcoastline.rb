@@ -7,12 +7,12 @@ class Osmcoastline < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "d340c3d7d69f63ca3a62acdf15507e826ec2d5e0575473b2505f5a02bc9a7a8b"
-    sha256 cellar: :any,                 arm64_sequoia: "ad49f39875cf7a1a8e3b348132d85a33ad8fa2ed0be26c5272ec733b9e4c4a24"
-    sha256 cellar: :any,                 arm64_sonoma:  "95d502541be4c3defc9508992892d8ed2a58d517e16aae6483214656b51cb568"
-    sha256 cellar: :any,                 sonoma:        "2647a585db77101a817f85a97f2b3db2afc975542738948ca6de71e4339df634"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9c252b87ec062aff319915620efcb25b2eac7d0b10c5bb979502c4d112b289d6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3698d14dc6187358d69fb7f636fe5d2b48a75afd9a2fb49129faf0ec4f5b1df0"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "43029b1819d7e6a373bd2280387982a6c02c9421cc5104042477687f535249ca"
+    sha256 cellar: :any, arm64_sequoia: "01a61cb2c86972c45dde929b7cb24412a6964ec4ee1cfe8c775d7879e5e369ef"
+    sha256 cellar: :any, arm64_sonoma:  "b125a0f6c67d15d90035ac32a75dfa94a910ec057549b1da4a1c053c3f0ef2dc"
+    sha256 cellar: :any, arm64_linux:   "30a27759d711597426727f060ae0a24cf601f81ae2408c4d9fcf47e96ed941af"
+    sha256 cellar: :any, x86_64_linux:  "5e7a7447a8be61b59459b52868df6dbc3a97458e48aac84456f7cff1ae040156"
   end
 
   depends_on "cmake" => :build
@@ -24,28 +24,16 @@ class Osmcoastline < Formula
   depends_on "lz4"
 
   uses_from_macos "bzip2"
-  uses_from_macos "expat"
+  uses_from_macos "expat", since: :sequoia
   uses_from_macos "sqlite"
 
   on_linux do
     depends_on "zlib-ng-compat"
   end
 
-  # Work around superenv to avoid mixing `expat` usage in libraries across dependency tree.
-  # Brew `expat` usage in Python has low impact as it isn't loaded unless pyexpat is used.
-  # TODO: Consider adding a DSL for this or change how we handle Python's `expat` dependency
-  def remove_brew_expat
-    env_vars = %w[CMAKE_PREFIX_PATH HOMEBREW_INCLUDE_PATHS HOMEBREW_LIBRARY_PATHS PATH PKG_CONFIG_PATH]
-    ENV.remove env_vars, /(^|:)#{Regexp.escape(formula_opt_prefix("expat"))}[^:]*/
-    ENV.remove "HOMEBREW_DEPENDENCIES", "expat"
-  end
-
   def install
-    remove_brew_expat if OS.mac? && MacOS.version < :sequoia
-
-    protozero = formula_opt_include("protozero")
     args = %W[
-      -DPROTOZERO_INCLUDE_DIR=#{protozero}
+      -DPROTOZERO_INCLUDE_DIR=#{formula_opt_include("protozero")}
     ]
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"

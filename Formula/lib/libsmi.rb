@@ -23,7 +23,6 @@ class Libsmi < Formula
     sha256               ventura:        "7e3436eefafddcd7d4d8fd9de4a4cc751d61c84403bcbe5ea9c2d3b0ec741995"
     sha256               monterey:       "2ef53a0a8b4eb430786f8196c18ab14352968c9377c693d11c44c44df05f1865"
     sha256 cellar: :any, big_sur:        "5c3ea572911edc5c6beb54b78e34d840dc458d6b0b5f465298fd0fe673f117be"
-    sha256 cellar: :any, catalina:       "1a25b44883bb95940e789ec6395dfa796ec44fd4e0d9ae1ee81a4119fe70ac14"
     sha256               arm64_linux:    "f6d7e9c6409c712b8a8c414ba1ce204963a50731e659c748e8c24993fa175569"
     sha256               x86_64_linux:   "7c1d475b1062dec302c4022771cbed447f00923a404a1ea131b79796f44d07f5"
   end

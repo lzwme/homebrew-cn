@@ -22,7 +22,6 @@ class Mksh < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "410441bef1f6b4cbe36c35ec7fad198fcdbeae06a37e65c4a95471dcaa52bf26"
     sha256 cellar: :any_skip_relocation, monterey:       "df3d31ae543c8f8008eba65b86ac9090f21ca2f365df41e0c9984f93f1372df0"
     sha256 cellar: :any_skip_relocation, big_sur:        "879b0a3185d7cb75235a3204cba1b66e7353b77458b63deef3c7635e75f52ba4"
-    sha256 cellar: :any_skip_relocation, catalina:       "ab6ffddb634219464c5993a9109a051fa728f217b7c89daa95d5b85748127bf5"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "84fbeb841b6f1cdeb5b8e68daa1b4a4fd72fb689b9a6f597bf9e886e01d3d08f"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "c371844df8480e29acc7a3f4096944880b9652a4490d0036f6f845b4c6c3d8be"
   end

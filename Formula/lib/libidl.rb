@@ -17,7 +17,6 @@ class Libidl < Formula
     sha256 cellar: :any,                 ventura:        "b709339fadfbdae39d0698c331e1f92d32b077c0cf60d8ceff0ea05c906b9511"
     sha256 cellar: :any,                 monterey:       "9b0791153103e3a4629804b46bccc3829d17bfcead908916cac480ba624b3a6e"
     sha256 cellar: :any,                 big_sur:        "320ddc04b68934e51f31fc33223c11097d712869a83242ca6669d05ca112ede9"
-    sha256 cellar: :any,                 catalina:       "fc384a7b4357147c85196b681bd1a96a70e2a7e194c38b6e8afbef5bafc21efb"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "57eeee9bf85e175fcdbd07db76bafa970051cf061836efd715957e5cfcb7319a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "9ede5070565f89d3e7f24f01d9da73d50b6c008fbf12f7247d3cd04b8076d842"
   end

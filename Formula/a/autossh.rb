@@ -22,7 +22,6 @@ class Autossh < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "d1712ac93597119c8ba5cf1f945243b52ef382241e868920753e0d18b8a3944d"
     sha256 cellar: :any_skip_relocation, monterey:       "a99fb17beece2065e5e184f5dcf707011c2470a05644be7ae495bcd10c99410c"
     sha256 cellar: :any_skip_relocation, big_sur:        "f9a7e07af1ad3391c1bd209b32dd92370bc93afb47c0a65499be89990ef471fe"
-    sha256 cellar: :any_skip_relocation, catalina:       "48e2beb06564ae4715df08b98577b10d01a25750e720b188b863ea8f195278ef"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "d60fa3c4409563c4ee150db9420c1690afd67a5ddc4b275164a388543b2d6e54"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "382150d095c1ca848c38eabfd93635ecf9868291ec5cb85bdae6a16a53dc7ea9"
   end

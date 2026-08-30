@@ -23,7 +23,6 @@ class WaitOn < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "9427ad9d03fbceae7b129c5f00e7ad2fdd4e6d7630c933e1e1ef8554166cb1ed"
     sha256 cellar: :any_skip_relocation, monterey:       "abc2d21a1add07205d46997d869de4a896bd47174033c0e392e74c17813251b1"
     sha256 cellar: :any_skip_relocation, big_sur:        "b7a8f90a892e9b2cbe4455d9fd4aedfdf7b65c3534e00b8849e94652171bd4e3"
-    sha256 cellar: :any_skip_relocation, catalina:       "befef0facd28d26c22ed14197e74c1bff41c9cd2f787ae4bee59027cfb89b2c7"
   end
 
   depends_on "bmake" => :build

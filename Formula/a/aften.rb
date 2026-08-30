@@ -24,7 +24,6 @@ class Aften < Formula
     sha256 cellar: :any,                 ventura:        "0ac6b5c31292bc1fea37415cf9f76010633c6c4a2bf3cc8770c4f9cd3b79cbbb"
     sha256 cellar: :any,                 monterey:       "f4632d08d823d8bda73e319dd6bf3f27651c9df4a61a2e0bfec30a116ed8745f"
     sha256 cellar: :any,                 big_sur:        "86e6506319cdf2eb030d2084663acbabd75dc3ce5f3a6e60fbd9af27c60bad1b"
-    sha256 cellar: :any,                 catalina:       "c1f3497bae95d7cd92f28b1a22d2dcfc06c0c7342c6c2993b6f564110f6e8f99"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "30a63d92db554df38e376c97fd0052b6b01956f89f3bb0b9f81309b11df8a332"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "f9e42d32fbd1c37b67e5beb729fba09eed1378d0f44c89b0b313231d478320d7"
   end

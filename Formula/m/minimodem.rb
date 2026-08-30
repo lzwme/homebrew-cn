@@ -22,7 +22,6 @@ class Minimodem < Formula
     sha256 cellar: :any,                 ventura:        "f8cad830872535b888d97d61e4444b5dc16091afbf340f358a2c93e6d464ce86"
     sha256 cellar: :any,                 monterey:       "cc0e8ee52305c15554adcf6e50c52ea670ac814001092d82b45f7083e9399928"
     sha256 cellar: :any,                 big_sur:        "09ee4e144cb7484994278cf3698474f9d205fb38d926c1936046c422eb772a99"
-    sha256 cellar: :any,                 catalina:       "5f9cd0c17ee17754bfe88c6e275111270e0a0d0cdebb663a0045d6ad49c8b9a8"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "fcc897c306d8db37b369010254a87762845eefd5aad185938639b0728250af53"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "e160d02015fdfd48ef348ef8f73bb6040e2a66ff9047cf1bc7f720ad94c173a7"
   end

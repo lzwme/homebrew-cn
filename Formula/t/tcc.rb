@@ -10,12 +10,7 @@ class Tcc < Formula
     sha256 "de23af78fca90ce32dff2dd45b3432b2334740bb9bb7b05bf60fdbfc396ceb9c"
 
     depends_on arch: :x86_64
-
-    on_macos do
-      # Big Sur and later are not supported
-      # http://savannah.nongnu.org/bugs/?59640
-      depends_on maximum_macos: :catalina
-    end
+    depends_on :linux
   end
 
   livecheck do
@@ -24,7 +19,6 @@ class Tcc < Formula
   end
 
   bottle do
-    sha256 catalina:     "68930891a8746b34b372ecfe43a6a042d0097414713c831353a095135d7b9569"
     sha256 x86_64_linux: "053f79a5752554e18ecba168184e48481bce8a2db418a3f9b0de094f9e6d0e4d"
   end
 

@@ -17,7 +17,6 @@ class Osxutils < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "1a2be836a80538dedfc42b2c0143a284c7ecc2c6b635815b52bb9f9f91dd8a59"
     sha256 cellar: :any_skip_relocation, monterey:       "7fdfadc1766c5cc042a64798dcc7aa4093bcb8e2abe4c0b7146f6564288282aa"
     sha256 cellar: :any_skip_relocation, big_sur:        "499d88a58e5ab8ed2fc23e8ef3bd9234849a3d9df34b0c6bdae4b425be70d97b"
-    sha256 cellar: :any_skip_relocation, catalina:       "95f394fa7721dc587b75adcb0a698c32858bfabf04bb569b6bf6ab0d7f52fb03"
   end
 
   depends_on :macos

@@ -29,7 +29,6 @@ class Gor < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "e8da9dd64c5e41f1ae20fc6b5650ccfdbbf923bb55fffdee6609b0748fa1b559"
     sha256 cellar: :any_skip_relocation, monterey:       "be4aae24b0d4f5c8e55631a5314eb0f1f08a77c404b432b7db71b7e2d5186d82"
     sha256 cellar: :any_skip_relocation, big_sur:        "6ff4869f7dcd7a5b830eb005940900360f31450d82538ff4208e6093e09840ce"
-    sha256 cellar: :any_skip_relocation, catalina:       "822445285cbf26edb06857be8bdeb0c5a7f6df0c9a801316e1537fc1794becb2"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "30335e69674ba237da1cc12d9d250a222ef2f84685a2790490a4d64c4d017ab0"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "1239ddcc67670144a35dbdf90712514bc56f52ccbc755285eef6e54ed909afb1"
   end

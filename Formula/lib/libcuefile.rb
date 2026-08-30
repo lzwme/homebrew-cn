@@ -24,7 +24,6 @@ class Libcuefile < Formula
     sha256 cellar: :any,                 ventura:        "716c579255d43e25cc737a655a136a966cfed604e97497547d949e052b961db5"
     sha256 cellar: :any,                 monterey:       "06a8a88fee28e5288aa1219f8bc5eb1b6f0a3d153dcb250d453d008dd98cbeab"
     sha256 cellar: :any,                 big_sur:        "2d4ea14db508f6439073daa64338f884249c7479af688ec91e4a286a3c42591e"
-    sha256 cellar: :any,                 catalina:       "3069cf9b0261d8cedee8979348227f5c77a5c6dcb8942f9fbea20b3e3f190374"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "dd236ed5afb1c8db194b07b9c36560b0f03871415f79244c431322f8aea62cd4"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "8a8324a43e9b1e4782de409dacf6f82de5fa7b955ff871d2d10e56b2dd1324bb"
   end

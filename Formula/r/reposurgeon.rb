@@ -19,7 +19,7 @@ class Reposurgeon < Formula
   depends_on "go" => :build
   depends_on "ruby" => :build # same Ruby as asciidoctor
 
-  on_system :linux, macos: :catalina_or_older do
+  on_linux do
     depends_on "gawk" => :build
   end
 

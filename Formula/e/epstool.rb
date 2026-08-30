@@ -21,7 +21,6 @@ class Epstool < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "38188fa0418ab531bad39ffa157bdbc542385cf02ef3f5bfa75771e12b43e3ea"
     sha256 cellar: :any_skip_relocation, monterey:       "fcb5f275da1cf6dd20e206d443e6d5265ca595d3193d925189f5c9af0e631b97"
     sha256 cellar: :any_skip_relocation, big_sur:        "a743d9856f51f4f2405adc5c692784897a78ecbdaa9361390b84c5630c077021"
-    sha256 cellar: :any_skip_relocation, catalina:       "3ef026d6cc575da86e43741df6a9f5419269bea22e8db6c6296811112678c690"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "7b2d8922bd4f7430e4b83f6fd98b4ce1555b30aa5a9db62606d9c0bf358a3e95"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "7c42db9d44c6ab04a5a969520692384bfe13b3c7c8e93d0fd47fae36b8cb59eb"
   end

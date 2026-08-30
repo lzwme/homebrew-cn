@@ -31,7 +31,6 @@ class Yasm < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "2cfb5f1ab641c6537a73570eef6ec14bf9f5bbd31d8c1dcc3f8a7233b880df09"
     sha256 cellar: :any_skip_relocation, monterey:       "8348a13c38c499aa114f71e4d46f311105b68dbafbf0e92f6c19d5b492eed569"
     sha256 cellar: :any_skip_relocation, big_sur:        "ca95cb3c02508796ff4e60d54146b03016b93e80837916359912ebf737a37562"
-    sha256 cellar: :any_skip_relocation, catalina:       "9aa61930f25fe305dc5364e72f539b0a225702b5f1dc222a9dde1216e901f7ab"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "915dcddbe7d3b6c170b8055d3f1fbea22fb80fa1a6ca1f0c2876d52cabb2b4d5"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "d6d46adb6213bba936b7d62ef9564f752cc5b4268e19e91f0b67e136408ab30e"
   end

@@ -16,7 +16,6 @@ class Ired < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "b4ebac315972d619eb8034bd5b486a6e4e8c46e9bc7ca4aff78a5e7a19c62af4"
     sha256 cellar: :any_skip_relocation, monterey:       "6f988d4fafb5fc0070801f09feb033b469a8c4463a87ff3abb2e6b081b4c1a62"
     sha256 cellar: :any_skip_relocation, big_sur:        "383839a113477cfad0b9197aa5e1e5c07ca5248057da840617354552ea35e6dc"
-    sha256 cellar: :any_skip_relocation, catalina:       "e74475e811c38aa46bf3e7e69e0a264a2d30c08cfcbd801433e03c14944b8366"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "611fb6eb2d5001ab972a13ec8dffcd4c80cb10f2429989d394c4f13c7f827695"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "f3ddb4735af8b485b31fb3c9b2b8cc87c0aadfd1c3a2ae43df84bee8d5f16701"
   end

@@ -1,17 +1,16 @@
 class Re2c < Formula
   desc "Generate C-based recognizers from regular expressions"
   homepage "https://re2c.org/"
-  url "https://ghfast.top/https://github.com/skvadrik/re2c/releases/download/4.5.1/re2c-4.5.1.tar.xz"
-  sha256 "ffea067c11aa668bcb42885be6e6cd000302000b7747d2bb213299ec66b7864e"
+  url "https://ghfast.top/https://github.com/skvadrik/re2c/releases/download/4.6/re2c-4.6.tar.xz"
+  sha256 "75bf2696445e831d0d44e0d9f2909eeffc18c09757f222b2fb025f7e59fe130b"
   license :public_domain
 
   bottle do
-    sha256 arm64_tahoe:   "487a30e2e00d20a38b1aac7712f539b66622dea1023ec323457aac77b1fa546a"
-    sha256 arm64_sequoia: "ec48f3992aa27470291114b53b4642a37bdb731812019ee1ac7f74cc52810d1c"
-    sha256 arm64_sonoma:  "32ae2aebfbce16d7aee409fc41fd7fca04a0a6bface9d56a72d6b6428b9fbc09"
-    sha256 sonoma:        "71371b5a39e4f52e044f03e8fad0cd7003592e80c2e7714f83b7797a6ab74ce3"
-    sha256 arm64_linux:   "65b1998210ef8d466401539c0961839ef5e301cb4b2e6463c9d307c5c88711f6"
-    sha256 x86_64_linux:  "ab784e322c45193e3c13283466bd751d55d88f185682b993dd7c3b799b25c65c"
+    sha256 arm64_tahoe:   "11e413256b8ce9f791e8709f60eef3953154825a687e7ddc00ff69735f9b474a"
+    sha256 arm64_sequoia: "2b97c4a1267cceb5bebdcf944a8dec891754d8eb9af6839b2632e7434ff2905c"
+    sha256 arm64_sonoma:  "81b267aa538f0ad86ea8e0571acb272dc84256ea270c45c6252f359889b35013"
+    sha256 arm64_linux:   "46de8e0da8f10748a4bf37c40d8f0cb330a7f9df1ab605b86c39f1de62e2f45d"
+    sha256 x86_64_linux:  "e01d5ea8c54a70228807fefc24454a7cfc5db796b352ec796b2ab2a86d47f9fa"
   end
 
   uses_from_macos "python" => :build

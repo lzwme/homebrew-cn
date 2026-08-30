@@ -16,7 +16,6 @@ class AcesContainer < Formula
     sha256 cellar: :any,                 ventura:        "411b910c990eb426a348c74ed2e7f40a46fba871b56314f3b2ea311f8a220ee6"
     sha256 cellar: :any,                 monterey:       "86a5c8b346d870672b1e2af38be9f1c20b561e4f46f92dbd8f9e2b3d617cd0f9"
     sha256 cellar: :any,                 big_sur:        "ab9e2e475f4b03c4d2ff8ecfb31f1254d862dcadb2baf8d76d143fd4ef8c74ee"
-    sha256 cellar: :any,                 catalina:       "26cfdcca70d0fb62834376bfbda89af0acd57f0173a4a3c9bd0f77adf748c8b9"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "2db09e9407396d6028ca3f4d5753568fddf26fb066608453da5ccbc09fcf1763"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "b73f4e399a8e1e405f0f0fc0c3e514e52a22abe17b8e518868074c118cd1116a"
   end

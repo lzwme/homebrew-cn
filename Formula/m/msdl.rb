@@ -22,7 +22,6 @@ class Msdl < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "f2dceb8e2a874043888797e3ad8693aa41babf5c080afe531169ee2fff4e180a"
     sha256 cellar: :any_skip_relocation, monterey:       "f41e17e53c1b292088d9f3160bbba5241b5e467e372c4ae860277038a4daf3e6"
     sha256 cellar: :any_skip_relocation, big_sur:        "a8703e042137fa27ddbda861bc9e04cea40edb5d3d3c6b4a90f5e850ee01326a"
-    sha256 cellar: :any_skip_relocation, catalina:       "71fb71cf2c24085221ee1d24c57fbe07f1b6cc437d84385d22231a4723771207"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "e60c658707ae055375b4402d09b83e121bd25f28ed5167cdd810d50ef02342c9"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "5664cc49f99975d426fab1e8518356d8842512ab773aa4c2a3abe0fb957d1881"
   end

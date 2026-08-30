@@ -18,7 +18,6 @@ class PegMarkdown < Formula
     sha256 cellar: :any,                 ventura:        "9a7b88b03ac9871d36d6072135cddb6fce38933ffbbf6836a6a9d9265bc0aaa2"
     sha256 cellar: :any,                 monterey:       "9f10d8b70ae2e5fc012c2baf976a2235c9501be317dde74b17648052dd801388"
     sha256 cellar: :any,                 big_sur:        "efefd2a49548d4abdfc97bdc12295b1f6dac5b1832f21d9b6f147cc7a3c27176"
-    sha256 cellar: :any,                 catalina:       "08910e3fdd97183865c2839a4e14839826101e6dfa48120aebc60fbe838f0689"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "2a9e3a5818daa858757ddbac902c2d0795bfa0bb6b02ce96a6fc35469b6c96ee"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "d1b2212c3e3a3610a02a5f668e3b88785c0bf1c6383f36ed3674abe42cc941bc"
   end

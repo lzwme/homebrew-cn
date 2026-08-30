@@ -24,7 +24,6 @@ class Opendbx < Formula
     sha256 ventura:        "b362fccb77368d232684efe3895ae60b0f686869c677a3815c016a2dd46dc03c"
     sha256 monterey:       "7002fcd03b711f7dbefacd3287435d2ec4fbf96f6410dcefc1fb0d36bc3a2f25"
     sha256 big_sur:        "80d655556c77aeb341dd0fc52d70e61dfd8a3518cf689bcb68af6f0aacc04bd5"
-    sha256 catalina:       "9a95027d4121667ec569d3aac52ec540a0aacd393e584b503aae73f35808ab0d"
     sha256 arm64_linux:    "16be2c0b756f68f456251052c96ac4436e92a96be74ff9c0e2d935be95bd2e62"
     sha256 x86_64_linux:   "9ef3f4d6acb641cbe910f05f8ec191ffdc886b80c1bed89a962a27031071a940"
   end

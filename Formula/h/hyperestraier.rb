@@ -21,7 +21,6 @@ class Hyperestraier < Formula
     sha256 cellar: :any,                 ventura:        "ecc6438dbf55e4e3fde88968da4cf9c071b97436e94cb21e3daadd04f5ff4052"
     sha256 cellar: :any,                 monterey:       "e97a30177dd2112ae7ef36b2165213874faa7a4ef1e40dd6433ccfdd3eae7ac2"
     sha256 cellar: :any,                 big_sur:        "98338e8f67c7cba1df436607f09415415e39a38f695805ddd94720326eae9212"
-    sha256 cellar: :any,                 catalina:       "0304cb2db3ed4e35c12ccaac0251ea19f7fd4c0f2a5b9f3ffad0f201f7f4357c"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "82e4346da884ac2a0ef08c094839ff64c4f689a2d036dc4be0db5f7d86af69ff"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "67da1265df5336838e42f563b8b90041d83d848739bf7972950de444cef78650"
   end

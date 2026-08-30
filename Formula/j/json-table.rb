@@ -17,7 +17,6 @@ class JsonTable < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "1f355223e0eacbec654b62e3df5525aed0bf8b5fea393e7ccba4bb48d02d8453"
     sha256 cellar: :any_skip_relocation, monterey:       "91ed4ccbdeaf3571036d17d31f6a093e867fc8ec6f1c254c7f79342fcb3ab7cb"
     sha256 cellar: :any_skip_relocation, big_sur:        "56d0c75307c1bfff97077e37070ee7a0532b09614226e5716e7d6a5ad2e2b113"
-    sha256 cellar: :any_skip_relocation, catalina:       "61d89ff5426049b2f0fbb237862ec1227cd36c8f00ce81f9a382e8b7d1c2792a"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "c564b0eb11b11de703ca70ad8ab48319c67053309ccfbac1c569184098d27c2d"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "c2a8b0576a8a0be8e8bc9bcafcb70ad0fd98197a2f465d4713163fff48ba7696"
   end

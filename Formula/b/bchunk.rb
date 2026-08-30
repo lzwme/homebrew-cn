@@ -22,7 +22,6 @@ class Bchunk < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "ebb931a33718b6f6a70e94da300b4da3470664d00bd57d7b7856bf6449f61fe7"
     sha256 cellar: :any_skip_relocation, monterey:       "cbfaaf81653c53be4dbc62fe7eb6e13071ad9961b18d5f0369bd8f003cded841"
     sha256 cellar: :any_skip_relocation, big_sur:        "bf3ec0f873db02e0234790bc8b700e4f1b989877742cf1560854e7b561698f4b"
-    sha256 cellar: :any_skip_relocation, catalina:       "b9f7bc758711585d7a016b7b3ddefe3256a368c00b21c51691481c7fbfc2823a"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "cb5ff1ac028a138667c1d1dae887d33348e009b44f4a9a042d7d10c7387b5d37"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "97b11f40a695dccaf6033a9911a9377984ffa7d3ed59bc1272fce7b3a0958edf"
   end

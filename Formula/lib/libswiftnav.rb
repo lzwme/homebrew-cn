@@ -21,7 +21,6 @@ class Libswiftnav < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "b9f845cbb35711aabf115910c838fbc2c5fedef78728ae695e28e5c038425885"
     sha256 cellar: :any_skip_relocation, monterey:       "b5e458c0d632aa814f63697a4a1fdd2a96d519f3846c9a5f7e04964df7cad26d"
     sha256 cellar: :any_skip_relocation, big_sur:        "39097a000739be8211214f46f80bb94709d3cc2784f7b4930d1b74107aeb87fc"
-    sha256 cellar: :any_skip_relocation, catalina:       "48392c1a0f1d61146ec1cef2a3889b5c12355fea09360a7cbd2b9506f27259d0"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "7767ebdfd1dd030cc3ddb4bce85f6d113bb5b7c122e859950c264fc800054221"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "8c1648b6c5feaa7485011c42987bf2d6b7fbd2795130b83528d8a8960ef8f748"
   end

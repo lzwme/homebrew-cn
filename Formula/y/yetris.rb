@@ -16,7 +16,6 @@ class Yetris < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "c1d76e812f2a403dd078b3a0b075b48a21721c629b94b4be83874147b3f4b787"
     sha256 cellar: :any_skip_relocation, monterey:       "78e274470e8eb080f6d8c7d0051f4e7f0ee7f7969c88c725a114b39b7f926778"
     sha256 cellar: :any_skip_relocation, big_sur:        "d0d9c0ddd6f7f825024cb4e96978ad43919eb77a216e8788943f1c8d7bfa80bb"
-    sha256 cellar: :any_skip_relocation, catalina:       "a43b346adc20fc7d4f84ec1300e839bb4e615ab40ccf8e1a591f099092ad6078"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "2f5e4bda0d6d949df4cb5b4fa0bd5adb552ec9752e34cbf9f7c106342877f108"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "b0d2652ce4673ff9e663dba05e742ff8d0eff4366216c49a051d94df041498a2"
   end

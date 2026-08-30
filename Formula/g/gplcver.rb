@@ -23,7 +23,6 @@ class Gplcver < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "7f5a82695d115973abaf6713640fb3a64890014727c3a630e667396ba86bc900"
     sha256 cellar: :any_skip_relocation, monterey:       "47876bc00a9e225f1f48036e954f6ae60d56d44fe883447314b48f64bd6166cf"
     sha256 cellar: :any_skip_relocation, big_sur:        "43a4cecb99e48c33a4136346b110d56c8a91472634524071727c5b88afe67fba"
-    sha256 cellar: :any_skip_relocation, catalina:       "e0db2e2d2f4331ecbe4ead3c8f9d4f239c6b9427472ea959dd394544fbbf7b43"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "5bcdf3ad2379563874cbf97905caeab7f49177aba0d392917e17ad68fdbba0ea"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "c7781b1d43d27d447386d9563e2c04d7b253b467773d077f29f2171723a66829"
   end

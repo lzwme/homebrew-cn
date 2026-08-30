@@ -17,7 +17,6 @@ class Pdf2image < Formula
     sha256 ventura:        "ced2743201d3c6f3d2f449cebee65dce9d3348f0643f82ada1be3834090895df"
     sha256 monterey:       "dd02bfaa0f17e894f94ddae7848a7ed0d769a631b294b853bcab234be626c704"
     sha256 big_sur:        "51717dc099723d65d1aeedd18be5886fdb228dca2ceb190cde744a63e1b51bbf"
-    sha256 catalina:       "9550e644b89b03d2e78880145d64446d1fe07ef575c2fd4109a932ef2d5258b0"
     sha256 arm64_linux:    "7b1588d8a5fb1c0dac620c9bebada39b426bea18c9310c9bea1de7586885a381"
     sha256 x86_64_linux:   "86497b2d47fec1c951e40a9ed363e8826ded682eaf6d36403ab394f0dc09e7ff"
   end

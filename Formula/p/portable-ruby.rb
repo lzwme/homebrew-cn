@@ -6,6 +6,7 @@ class PortableRuby < PortableFormula
   url "https://cache.ruby-lang.org/pub/ruby/4.0/ruby-4.0.6.tar.gz"
   sha256 "837d299e8f7ddf2be31a229a7a7e019d354979825117989acb3b32b1a9be262a"
   license "Ruby"
+  revision 1
 
   # This regex restricts matching to versions other than X.Y.0.
   livecheck do
@@ -14,10 +15,10 @@ class PortableRuby < PortableFormula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "83a3ff85d83acf0e3dd8105de0fdb01da96b7c0eaf2dfaae2ba6500ec2ae4a64"
-    sha256 cellar: :any_skip_relocation, catalina:      "ef0bf45e34c07a111674b976e47da3f5e9d5be52eae127b714898ca6949a3c18"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8044697e618a9fa845c26df45f1529e1bd293c6d500e59594ad4002be60a0cdf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0980099dc2668dc47bd4c85b704beb76b9406b4a85f77fdda9820d8341b40f87"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "eb59022aebb56b72eafe439ff5cb122c5fcb6d0785347848be56e34b3e39ae62"
+    sha256 cellar: :any_skip_relocation, big_sur:       "ada64539c61bbe9921cbbb4ca82132b62dbfd288a04057bfb2d8850deb4cae50"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d0f04d327063be7ef72703c0e621eca33bc9bf388025d36671758ebac230364d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b192f87e0d0596dd7bb2e7ef91e7bae323ec879b405e1b778ee8d14798208e0f"
   end
 
   depends_on "pkgconf" => :build

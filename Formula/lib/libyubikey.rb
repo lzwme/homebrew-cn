@@ -21,7 +21,6 @@ class Libyubikey < Formula
     sha256 cellar: :any,                 ventura:        "4a3cef8d90a4771f8af5102c61544d8c2479333553fd2671ecf8faaf6bdb8388"
     sha256 cellar: :any,                 monterey:       "e698d9e14c769152fe36caa69cb4b0232747f76fd0b2e8cc02518dc42f758ff9"
     sha256 cellar: :any,                 big_sur:        "d8294cc5022aa96ca4d2073756da801daef11a07e3464656af749008b84cde6d"
-    sha256 cellar: :any,                 catalina:       "b6fccb68ae85837533ea4680063cc64f207f2d6926c4eafaf23e81f0b790fc55"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "ba8cb3360047820a6e9bbc5147e99a5a4538c6061c60088aee8ed9ff65970061"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "47be6e603ede5ef7fee2f40cfd4ac4338ca094d25b2a897388df4b90ca5101b7"
   end

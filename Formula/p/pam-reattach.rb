@@ -17,7 +17,6 @@ class PamReattach < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "d71f187aaad7e98ffb0c030802be6d4c73f245d399a52159701e80a424183622"
     sha256 cellar: :any_skip_relocation, monterey:       "671f461386143302144a82d67f6b1ba1073753f5c6253b8005cfe1eb1918e861"
     sha256 cellar: :any_skip_relocation, big_sur:        "0c40906d18c53054708a408e42f6a86d5579bd853bb69702507e659d0e7ea2ae"
-    sha256 cellar: :any_skip_relocation, catalina:       "1ca81cd2502742faa6d88e1345c1c42f5ab401053a1aed3c38434945ec119941"
   end
 
   depends_on "cmake" => :build

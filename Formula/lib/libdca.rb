@@ -21,7 +21,6 @@ class Libdca < Formula
     sha256 cellar: :any,                 ventura:        "09bb7d9235fe77b84f724ddeb66c7b2a54a6448a99741ad89368722b526ee972"
     sha256 cellar: :any,                 monterey:       "d3e058da247c2b2976a7c28da8102792b56cbe4abfda68cf6960f94961907ad8"
     sha256 cellar: :any,                 big_sur:        "123d7863f98b6fc1f56aaca440db706764b43c99fe1a5bd5286badf160f76d62"
-    sha256 cellar: :any,                 catalina:       "d9c4b3a350744867f5782db738d25d1212b9be89449030492083364574f914d7"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "a2f265e353b2c9fb8073ce2a4a5eafc96b615c9e30acde2045cfdeb0b754a657"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "6d7ec4a08990df38fb26a4c719e6bd669bd35e3e5e89d49d43fea007b74e3edf"
   end

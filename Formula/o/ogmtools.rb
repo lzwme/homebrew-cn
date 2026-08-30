@@ -21,7 +21,6 @@ class Ogmtools < Formula
     sha256 cellar: :any,                 ventura:        "fae0d207875e9368c96bd5c20a9daa5f9cc52f02f94819fd97c657d6a15ebf19"
     sha256 cellar: :any,                 monterey:       "0bcb100030a3bea8c804c7dd9091d423997c35e6bb5160251724f7397669f833"
     sha256 cellar: :any,                 big_sur:        "939be64a395371009f70c9c596e86df908e429ad6915dee142752c1114f2e1d3"
-    sha256 cellar: :any,                 catalina:       "6a2e3ed95e0569dca709b5d0431ea309c008400f3f88b91133d6854340babed7"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "3608e7bae8ff168511df1e0202734b707d90960e6982c85e65f912b12a5679e7"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "0bd76fd65c8b1627890beef905c7b8eb23119ace422c6618be47a9412862479c"
   end

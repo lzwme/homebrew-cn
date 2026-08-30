@@ -17,7 +17,6 @@ class Owfs < Formula
     sha256 cellar: :any,                 ventura:        "ced3c8b0ea60f52938ff78d7b9362b3d501b5c593a54014b4ef8bc3a8fa22283"
     sha256 cellar: :any,                 monterey:       "578554d18620a943b499b22046d97c9fc818ad1ebad6552484a4dec245c7ce0e"
     sha256 cellar: :any,                 big_sur:        "d1f522c35882921728f0bc27c62c0b3a9c225278729ecf3b30ea093c21a1cc4b"
-    sha256 cellar: :any,                 catalina:       "659e132d059f5b07c1f53f7ebc8676edf732da7b36f4e85065a30fe616358f50"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "f84aad3b6008729382761e7b772b106b7db195baa4515f99b87810cad4652101"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "dc7081d7fe26ec46288fa5bb16f5404e9697f1c567dde4ded5e181f0b54bbb6b"
   end

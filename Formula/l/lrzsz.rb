@@ -22,7 +22,6 @@ class Lrzsz < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "4136c5c9b7272acc2d6bc646e25b100eac45357b83ad6c12dada8307ae138a8d"
     sha256 cellar: :any_skip_relocation, monterey:       "7cdda25c0645a005a715e99bfd591c575425cb8eb4667b4c51aadaab097154dd"
     sha256 cellar: :any_skip_relocation, big_sur:        "8030d909e2c336ada4563b4bb7e052f8ab382e3ea1325599bcf52b14a35fcbd0"
-    sha256 cellar: :any_skip_relocation, catalina:       "e8d2badf80013a07d43d89b2a2e2f99c2feb3abd2b6eeb579a52f01b39a9dd49"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "93671f7f8b73b5f063b8ac4aecfa47e907635368904089aa1ed55bfa693dc7b8"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "9f5db00a0b2cdc4920a809f4aa1f352eb6962980270d15e65dd418a99ac61ab2"
   end

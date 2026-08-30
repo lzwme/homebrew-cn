@@ -21,7 +21,6 @@ class Bootloadhid < Formula
     sha256 cellar: :any,                 ventura:        "c7da175a271d8319af4c4fe923a2e1b1008be1bfc4ab99b1c0c59d3748f257c3"
     sha256 cellar: :any,                 monterey:       "aab53c65d93ea7a1274a39fc195e7e0599a20168a23764ec704b98d9b8ff082e"
     sha256 cellar: :any,                 big_sur:        "f77b7e77b043661da38b1c5d64140de538587d38a2ce50722a95c79339ceeee6"
-    sha256 cellar: :any,                 catalina:       "aa0bc95a39610d6b5951d064d781d85b898ca2ebf230acbc60aa2f4e1f51e573"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "51a4a8372175512d991362b12341aac01ac7d4b11b33af352de964815084e4cb"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "eef4ea84385608a16af8533cd12d40b164a57e30bbfecfe9a58dd462e8cf22a6"
   end

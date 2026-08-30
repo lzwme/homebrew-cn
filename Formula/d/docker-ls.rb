@@ -18,7 +18,6 @@ class DockerLs < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "6a504107a216b56ac9b5b9b3f435c791c4dbb56440ca9a39bcf94d285665c580"
     sha256 cellar: :any_skip_relocation, monterey:       "cbd941bf6005f92598ee1c00165c5eb7101fac547fe0c1d2b84a55a999d940a8"
     sha256 cellar: :any_skip_relocation, big_sur:        "69d17d15d79bfa1813ad39ae3a0250ddd919a36b4d3923412cfbc17be56316dc"
-    sha256 cellar: :any_skip_relocation, catalina:       "47231e20bcc919d92de35c537c87c54f52bbcdaa85cf2bb9b27bc03a69f25587"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "bec67bae5b9d59fc6386b0f7ef9e60cfa57cc06758befd8348b54fd2f83f7f64"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "0002977a8ff7a2a2607098a743ec898e1aec0efee43095c06b56b873fbfcda15"
   end

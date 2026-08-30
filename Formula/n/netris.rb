@@ -20,7 +20,6 @@ class Netris < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "73bf7b8515f9b4c10fd3f8dc686b6d29e614319a28fad0048b1ea3e99ea0d7c9"
     sha256 cellar: :any_skip_relocation, monterey:       "1cd2c848c2e5da61c99c8c2930c77f21e58aeb91fdf97c678392bdb34ca252ba"
     sha256 cellar: :any_skip_relocation, big_sur:        "9f7c51618024abd332dafe7c9075896fdfefbd80819a4b0c42bf493637947bd2"
-    sha256 cellar: :any_skip_relocation, catalina:       "41fc6feceffbce79c1bdac8c198d318b8a91c2e8ae099f068a8a21bf9344e038"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "10152777ead84d310f8d140c904b68a69f94c1504b03e4dc0be441dc4b3f9e84"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "7209cea9b9b79f4bc89a1aafdf2ac00af1b76aefcc9fb3f0e90f5d2dc3873232"
   end

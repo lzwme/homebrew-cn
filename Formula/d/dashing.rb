@@ -19,7 +19,6 @@ class Dashing < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "304de6dcdcc89d4f94952b0b1d547a6e77abdd355c2825ba3260057c289c26e5"
     sha256 cellar: :any_skip_relocation, monterey:       "a0c325204c959b5956248606f6b7fcb4437c6dfa2c75f739d4624fb912ecaa55"
     sha256 cellar: :any_skip_relocation, big_sur:        "7297bb9c8b50feeda73af51b59acfcac18f9d2beb57738de293146aaca7cd089"
-    sha256 cellar: :any_skip_relocation, catalina:       "43702cf1fbdeb449e9205716635cba4c62449e575f9a6ab45eeb4aeb166fdf9a"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "6ac970aad0a46e0f50606334b2218aa1b2103347300e59e01fc2cc942580e7d1"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "982d82dc58980aa81fadf686557c5c075ddb95b9ef0f8456e7b32b6ed49aa382"
   end

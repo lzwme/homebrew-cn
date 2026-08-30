@@ -20,7 +20,6 @@ class Makeicns < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "3be93d7fe187c348c6bbece447025b8774e178990c58b6b7c56ec7c130588566"
     sha256 cellar: :any_skip_relocation, monterey:       "70c4f25edb72a10186308dff6f39a721c203f7f237faa3d390b63390be1db0db"
     sha256 cellar: :any_skip_relocation, big_sur:        "25bf3bcc571e185ad08b148a3ee9ca54fc6eb32c638083280ae2f16a06e87910"
-    sha256 cellar: :any_skip_relocation, catalina:       "c2a5afff3eee709316951ad70c8244fe5c628ae98fdb2e15ea607c7638733d63"
   end
 
   depends_on :macos

@@ -22,7 +22,6 @@ class Metis < Formula
     sha256 cellar: :any,                 ventura:        "19688362378a05d974db2c6552376ef5b952b5c2b5bc27dde34c23ab27f5736b"
     sha256 cellar: :any,                 monterey:       "53ceaf6862363106724577ff6568285ba22ff97ef8849eeb7ec0a8e589ef7ff2"
     sha256 cellar: :any,                 big_sur:        "bca0197271b673ba235c37334494b47250c9732e9a0164d8ee79948fc3cd4308"
-    sha256 cellar: :any,                 catalina:       "b410b124973bf31beb58806d4050b8dda1fb3dca679fc3443514025200fd4a37"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "8703574aca9ad47530cd56fdb31ec1e24b16643390a0cda290e19271a9a47690"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "d8daac6acbeaad9583ff26d72a8ad440ac41efb8656973213902bdfe66cd61e6"
   end

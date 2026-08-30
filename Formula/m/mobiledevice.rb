@@ -17,7 +17,6 @@ class Mobiledevice < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "9289a82ea82bad8477cd20b62298ecbe738103a7c6ff1a5ecce316c3056ae85e"
     sha256 cellar: :any_skip_relocation, monterey:       "259bbbe1bdff8ebb05d6e9990a4450ba5cb3684e1903070483b22a7030546646"
     sha256 cellar: :any_skip_relocation, big_sur:        "a9b9e20ce5c2142da8ea4a1bbc34ff433da46a1e12a522942c3b7c572be9f683"
-    sha256 cellar: :any_skip_relocation, catalina:       "6912247da18b0d7f033d37115939a67629b93d036458f1369944a58953c12f69"
   end
 
   depends_on :macos

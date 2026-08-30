@@ -17,7 +17,6 @@ class Crc32c < Formula
     sha256 cellar: :any,                 ventura:        "838b9ec85a464004ec90f99348eaca5a2432de5ea2cd671d8bf454f5b4106612"
     sha256 cellar: :any,                 monterey:       "54317f1800ac7c165ada3b28a40c675e0848626901e654939e86966de36e4579"
     sha256 cellar: :any,                 big_sur:        "af7b55946ef4fb6f20e4ef31c77c0d23cc7e8e34861f8e96b367f801c611592b"
-    sha256 cellar: :any,                 catalina:       "f4301aa03c705f8ab3fddd34090b30975306f4e159d32bd4f305dcac73914544"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "7cd8632d65ac971ce60b6023b00c4f0058db967cc33dcaba57bfd8a0fb336934"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "6d1d82ebed58e6c35064358c5a04428b6bb053413be7b11b2c14e4cbcd156205"
   end

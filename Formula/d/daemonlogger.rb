@@ -17,7 +17,6 @@ class Daemonlogger < Formula
     sha256 cellar: :any,                 ventura:        "f85bf445ce68b5ab5914671739bebfe81ed91f7ee0bed9d4e92667e42edf6c5e"
     sha256 cellar: :any,                 monterey:       "1c2f08e5d06fd71339d5f2c3f730b2e15ef60ceee56c23efa98026f65ec94954"
     sha256 cellar: :any,                 big_sur:        "37a025cbb7898243913ad07bb094b2195e27587b5458d465fea790d30f13af67"
-    sha256 cellar: :any,                 catalina:       "8f2af84c9d476a7bd11e30185794bf107a92ae32f92b84f38f5a629f368ad6c2"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "f113a27d6f67fb9de34fd6b13d6736aa466df7d0d6d9eb91c21446937500b596"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "462b6ecbf94169210be2591de29de97b69a701cc810485fb956bf7892e1b57fa"
   end

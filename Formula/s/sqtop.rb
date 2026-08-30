@@ -16,7 +16,6 @@ class Sqtop < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "7ada919a0dfa2421cdb0a0234a4a16db5530b56c56869e6dde7e5a0c0ccecbb9"
     sha256 cellar: :any_skip_relocation, monterey:       "783650fd010e84cba76c1d747d7948fa1ccf0ae17032e797d76920b291ff36a0"
     sha256 cellar: :any_skip_relocation, big_sur:        "236b80d46f0cbc8aedc14b6771b4b58cff6e445eb2e8a115ae14917b307fbab2"
-    sha256 cellar: :any_skip_relocation, catalina:       "653be227eb16e647b90f0f034543a490476e3ceaa0e9c165b1963b916b4a9703"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "02d8d356631939d3201e72c24a96353e5032ddd6abfe1613cd7ac07de0720dd7"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "4f7bd15bf5407710e19ab7c3bd414c18b163b251274d14e058208a526353a7e0"
   end

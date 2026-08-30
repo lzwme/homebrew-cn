@@ -17,7 +17,6 @@ class Libb2 < Formula
     sha256 cellar: :any,                 ventura:        "cc245560dda3edceb402702f3066f6aeb5c526e93dbb2a1e06bc02139d6154c2"
     sha256 cellar: :any,                 monterey:       "f526645f4114ef85c577d611383bb7e0acdc2697719caa73cd8677260b516a25"
     sha256 cellar: :any,                 big_sur:        "7e21b980288ef9449cb44a4b2d33a0d0772b0482165c9ee5f12d42b71b357bc0"
-    sha256 cellar: :any,                 catalina:       "fb9f331b6c556a09558cf8098c3934f3f9196c3076e2511fd6ed816439fb8936"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "7f8a1caf5720effd14148816a8f1fef82f164f3122848b41fa9eb1674ebbaa02"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "4e12bfdb9ca31174e1f644bd68f89f7de0354b7661569b59cde6c8a6de2d8a24"
   end

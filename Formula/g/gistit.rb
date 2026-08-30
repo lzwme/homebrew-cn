@@ -17,7 +17,6 @@ class Gistit < Formula
     sha256 cellar: :any,                 ventura:        "d1c3d1b689d9f2493532bcde527ce8a8627a40e5a9b40235a6d4934706864ba7"
     sha256 cellar: :any,                 monterey:       "f4f4aa3d57eb29d34654abc12b9919879e34ecb532b0b77e139216dbc9b6b30e"
     sha256 cellar: :any,                 big_sur:        "090920bf2761a37d9b9877386a1c0b4466ba80a8c412e807a7a03de14239a3a0"
-    sha256 cellar: :any,                 catalina:       "844955e49de622786a9a676e91b767926ff9953c950db2affa98f6d82978899f"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "051a78fe9ae05b66074da6eb825835c44fd0cd66db0a943111d20cb1e076e54c"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "d4bf0e5e2cfdb3adf8c3e9170c7239c8d5fe95339c36b13b607adfc926978e61"
   end

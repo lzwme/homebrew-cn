@@ -16,7 +16,6 @@ class Asciitex < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "72fc542175fc6f213602a22893bdbcb784db02431dc17aba29a2509cc04fbb87"
     sha256 cellar: :any_skip_relocation, monterey:       "5e539d41ca86bb5f239671fec71d66969ffa81380fae782677f7a656f4588cb6"
     sha256 cellar: :any_skip_relocation, big_sur:        "5d62737e9f19a499f84fb442ebc5d8738c96f44a4aeea9104a71b304a9777e6f"
-    sha256 cellar: :any_skip_relocation, catalina:       "4899775d92a5f26e4b8530823593e5819b8578c44a4537c949ee4e0f6f3d5614"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "0c58b7bfb137b8905ee389497448200beeaf56f9636938f926aaf7497b9dced9"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "630265b0202b14fd9459b9f772f8f2c1518ddf1b5a5baf6f086f693c8054b470"
   end

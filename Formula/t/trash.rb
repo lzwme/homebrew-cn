@@ -18,7 +18,6 @@ class Trash < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "539093ca74c72ed8be974fd9042b14f55cde0ef2c1fadbedc7343099a394593e"
     sha256 cellar: :any_skip_relocation, monterey:       "09b8ac7ade28ca59bd578b90680ece838a507b90b35e44d06a16f4d8ab9ae6e6"
     sha256 cellar: :any_skip_relocation, big_sur:        "403ba52ce97d38535e1d127ca227afd4ea2d0e0c8b414118dbc5376c9ed8f094"
-    sha256 cellar: :any_skip_relocation, catalina:       "b452d67cdeeb52db0aaadd258bc3e214a5ea5ed37da698b45017b01457115ea6"
   end
 
   keg_only :shadowed_by_macos

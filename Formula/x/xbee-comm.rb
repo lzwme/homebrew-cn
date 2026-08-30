@@ -20,7 +20,6 @@ class XbeeComm < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "ad8ec612f36bcbac63cd1aa11f43880f7d98357246d96798e773849359638066"
     sha256 cellar: :any_skip_relocation, monterey:       "aa2839fdb06e6b425afc91ae417293ac500893f8963b88acb35153034d3e1ee4"
     sha256 cellar: :any_skip_relocation, big_sur:        "9d163cd9e888a337b0bc39bc3af871a0ed0b8efadb75933e4a4273fbccdfd90d"
-    sha256 cellar: :any_skip_relocation, catalina:       "4c4eb5e75f59ac2527ec72d41e5e11ae156243278b7c92186fdccec62435a783"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "fc58db4ba36c437b60007679bc67881898167c5f2fb490fd1c71c9707b1338c2"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "cf23d16b599dc5427dd3552004d307bacd82b77b89ac2bd0a018bf1f986fc720"
   end

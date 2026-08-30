@@ -28,7 +28,6 @@ class Musepack < Formula
     sha256 cellar: :any,                 ventura:        "772444ef289c9324ef9063d4ca8bc4626080f053589bd93b994e410183c9ff2e"
     sha256 cellar: :any,                 monterey:       "9f74dcc9567656a42082125ce4d758c3318a452dbd940b6db39b72c4981768da"
     sha256 cellar: :any,                 big_sur:        "e9221e9612e1c0134554fbf380639cd995a5970ad34702bea371633f121ffb3e"
-    sha256 cellar: :any,                 catalina:       "847cacb946b6289a5fbfbfe4e1a38f1ec5b7f1e32d6c12145aaf1044317e4ce0"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "0e70b9117f455bbd6f17bd6d2467c18f55067b51933a71b15b07b713c30687ac"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "a0d6143e42529aa943d6bd1ecebf0e1d0c85576eaab847692c9588a37a0ce1f7"
   end

@@ -16,7 +16,6 @@ class Cmuclmtk < Formula
     sha256 cellar: :any,                 ventura:        "a8e37d15ba21ee7acd391691ebf4f27b585ca9badde68492b828c1a218ef6799"
     sha256 cellar: :any,                 monterey:       "0d6891a3cb5d5be6b4071bcf68a9e3449d9a79c37b4c660f1044bbc93ecafcfa"
     sha256 cellar: :any,                 big_sur:        "e126c9d5de2e1f4e23d4fea7e8ac51c6fc2d4328a968c907879f4ea86524fbbc"
-    sha256 cellar: :any,                 catalina:       "fb552e12a3c59e2ca6a9dd89e9ec229e5b815edef28093c3902fc4ee54b52207"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "fbf62c45fadfecaf2d9cd51668c6ea132d904afe1e456f099f067427667b1284"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "708324bb6cf751c76f927c6a648416ee38012499dddfc80c4b2c50cf36431c4d"
   end

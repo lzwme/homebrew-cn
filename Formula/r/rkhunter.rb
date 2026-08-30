@@ -16,7 +16,6 @@ class Rkhunter < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "3db88c3dd06a9a6b84773472428a17fb1b8133dd7fec11781a32b185a89ad65b"
     sha256 cellar: :any_skip_relocation, monterey:       "6e7b220d8e9f61934488d2858254db636b1dddbe96512ed01a1b3a81d03f4e3f"
     sha256 cellar: :any_skip_relocation, big_sur:        "398958bdafc37011a76efa6e6d2fefc8c34964eb6ba29a0f6823fb8c1058e9c5"
-    sha256 cellar: :any_skip_relocation, catalina:       "e9bfbf9e122295e1fd4ac70dea7502856b3415e0eec187512f196d51a718ab92"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "6484f6217389b50e66ad8f992e532cb19e9fd27330510d2303060c2f7de70bbd"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "85138f7ce8fcb3790c94d0322d64315e3d683e50a6a690700b7600cd4ce1fda1"
   end

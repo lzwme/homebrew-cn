@@ -23,7 +23,6 @@ class Libelf < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "fdd2375a9f0931864f46148881455d90d4d4bb91c072d16861c3129168e27871"
     sha256 cellar: :any_skip_relocation, monterey:       "f7dd2aac1032b020ee90c997fb82f771ff686efbc481c4844c16b149d379a51a"
     sha256 cellar: :any_skip_relocation, big_sur:        "8b69f55ccec2aa1bfa85bef3fe071077fe281e2bc63dc33cc4344a1cc02e1e26"
-    sha256 cellar: :any_skip_relocation, catalina:       "b7635245b64cc7d857c92191c40877cba96871d07f4749f620bc96c63cd2635e"
   end
 
   # Commented out while this formula still has dependents.

@@ -21,7 +21,6 @@ class Redstore < Formula
     sha256 cellar: :any,                 ventura:        "840637ec24ca832cad462cfbe3fa6f8693ccf86c5e74edeeccab5e12a3573633"
     sha256 cellar: :any,                 monterey:       "1ae97b18f1cb08f3872712accb48942d7c992a76f4dddae0b7a6566d22f40ec5"
     sha256 cellar: :any,                 big_sur:        "fa44b96b71ff73060973893222eb264f18c54f8c64ebb73c903eef2e544868ee"
-    sha256 cellar: :any,                 catalina:       "f473645a1903ac48caf0bea886c13636ca093c4ca6f57f83ce9ffc4864f88ee5"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "67a498c2f25e82a164b7d5191d8824ca398c2ad7f774eb6971de1855a7712122"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "f459a58381dd6067d033bb20eb4101af9136f5260796bd2daee07cf6365c3bde"
   end

@@ -1,8 +1,8 @@
 class AwsVault < Formula
   desc "Securely store and access AWS credentials in development environments"
   homepage "https://github.com/ByteNess/aws-vault"
-  url "https://ghfast.top/https://github.com/ByteNess/aws-vault/archive/refs/tags/v7.13.5.tar.gz"
-  sha256 "8276092b6526f6244b3bf8a515ad78ad1ddb5a7ab56eeaad1ac1b7ee01d4678e"
+  url "https://ghfast.top/https://github.com/ByteNess/aws-vault/archive/refs/tags/v7.13.6.tar.gz"
+  sha256 "84d282802cd867ea37dde7824ec2628cbe19f599b3acd55e73cd3d6f6cf244de"
   license "MIT"
   head "https://github.com/ByteNess/aws-vault.git", branch: "main"
 
@@ -12,12 +12,11 @@ class AwsVault < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "248ec27fffba90716eabb04fa0573c32f430651a14300a5e155607389527f43d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f1ff38cf9b49d29bbd4721d39eb30a65fc12b8a27124f7131a77f7ae071377c9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "99a130295ff37cc03107326a0f3eb0ab7b697c9e957a54bd94e327f43e1700ae"
-    sha256 cellar: :any_skip_relocation, sonoma:        "968ab34aeafca5a09346de52280d19859289f0f81e7c3ae36e095b065701856d"
-    sha256 cellar: :any,                 arm64_linux:   "ba9c6c43a4c751ae60b2e16856dbc9e6de4dd652971388710dce692e4305a2d9"
-    sha256 cellar: :any,                 x86_64_linux:  "18813b3383773716f479fcd8a76ef13bb37e6e468963bf2ade9fc3ff4757c0f6"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b8d2bdf35d6678b4a66803948bb0a366836917ba7fbc4ef85c1fd106b5828ca9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "eac8e0448989a337be87f623891ab5d9ce8e8da5b7d31fe977c96c55e547123a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "764a3ec701dc1ac594f5714ccdb49226c56a5c704a9619f010a4e0c9fe9dbe8f"
+    sha256 cellar: :any,                 arm64_linux:   "05e66d8d53c8e3ab087e6ca81c50ff8c696e58b67f1eda3db25a2d78aacc13fc"
+    sha256 cellar: :any,                 x86_64_linux:  "60aa9423ece90b33abf3f8ee7aabb272d03af58bd8303d80eb4bd0ca452af0c8"
   end
 
   depends_on "go" => :build

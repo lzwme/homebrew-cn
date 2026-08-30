@@ -22,7 +22,6 @@ class Normalize < Formula
     sha256 cellar: :any, ventura:        "cade314811b32193662502121c6004253e965fade1dce8d30c488c86872e1a9a"
     sha256 cellar: :any, monterey:       "4b27d07f9a6b9455c555682b9c43443bee7f70fb40d44a2f50dba54100164e18"
     sha256 cellar: :any, big_sur:        "a35a01c8d74067d94fda21d31a0ab65128842e6dc1ed0629ed6cadf99f13a9b5"
-    sha256 cellar: :any, catalina:       "363ac4a56ccb75ff32f3af3ef42a6cf5d74f24b977939bb08c14fddc30ff2ef5"
     sha256               arm64_linux:    "a035755b426126bd056c7287f416cc068b3d399a100e56f8192178a6530048dc"
     sha256               x86_64_linux:   "ac6f58e169897ddfc61943009dd38044958a8fc56a025e91632d2302de3063df"
   end

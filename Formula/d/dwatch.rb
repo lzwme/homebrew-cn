@@ -22,7 +22,6 @@ class Dwatch < Formula
     sha256 ventura:        "e4be73a2e05f83a381a97642543c740ce26669977c01d1bd4eb25ccfb50440ca"
     sha256 monterey:       "4d4101090f01137e1af3a2f8c377fd5763f7132f70f5959ccdc1ee96c5679144"
     sha256 big_sur:        "b7668fa89890e3a496c345d6c28e4c9fec9e9f36a0f6d8cd21c1b0bf4916d785"
-    sha256 catalina:       "c79f51f4329569d682357a97014bd67a14ac1444e4fb983abd3a9e96339ba87a"
     sha256 arm64_linux:    "ad2ec3e48c3d41dca4e01b27147bb4dc1eefbdad07a102c3a3eebd6f34dab0ef"
     sha256 x86_64_linux:   "0b92db3bb67c09bf3305bf60f11c6042b91406d80eba7937962c26abd1cb62e8"
   end

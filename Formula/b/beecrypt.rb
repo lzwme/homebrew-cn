@@ -17,7 +17,6 @@ class Beecrypt < Formula
     sha256 cellar: :any,                 ventura:        "7657b38fa0f49bc9a8ecf87d84e6f7d6f3a2bee962632d43aea95da5207fe148"
     sha256 cellar: :any,                 monterey:       "76b490b3b3da57df7f5e13032c04ea577fddca473cc34d6274075c1100795ca4"
     sha256 cellar: :any,                 big_sur:        "6a5d3034c4818dbf4332a65bc677edb230d174b2c0f47a4c329960f97400f926"
-    sha256 cellar: :any,                 catalina:       "977150a0ff6d0a8739539ad4865bcea9fe68d603d22b86d85d6fdef794d66611"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "63bbd01ef2d5b95098af62252230803004d064aea3a4ab23bc9dd37a3915b7af"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "e5940b480e169cfe86dc568bd7a6a527c569797fc7a99155931b0d75798118c7"
   end

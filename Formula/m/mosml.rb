@@ -16,7 +16,6 @@ class Mosml < Formula
     sha256 cellar: :any,                 ventura:        "d416c4d3d7861b6b964aefd53dbb97a2778f111245dabb69b8c3e9bf2933c612"
     sha256 cellar: :any,                 monterey:       "c0cf01f015c8ea1da6bca0a1a64567fc3535f746bb2a3f07002f3a56f1371234"
     sha256                               big_sur:        "96fae7154e49e57180eee17d8d90580a0e2d024f2f0b7510cfcc83d59f0449be"
-    sha256                               catalina:       "d39293549810bf64ade65bcbcb969abf1c76d0812c2d9e8c2ffd8329d2d2a34b"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "77e5df31a7aee4060619180f6d795ff2f1e1ce1e11983e5e22a5322a41362034"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "42bf79793655431b313d4c547e7c9b6867b2f1695035005a15b8da6c0b25c416"
   end

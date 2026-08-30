@@ -21,7 +21,6 @@ class Stone < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "f6a0ba71f94f62594fe4e859a9be7b4616f8984410f7de532112f8c7f5566c97"
     sha256 cellar: :any_skip_relocation, monterey:       "dc89da0846364ce236eed2a2cfe0eb39abd9dc71f42f3b357d6a5709efb025d5"
     sha256 cellar: :any_skip_relocation, big_sur:        "f943cab7f931ae2b7c124a83b63150b9c3b75090eb63353fbe0732792b97a0bf"
-    sha256 cellar: :any_skip_relocation, catalina:       "cadf40dd1d8aa5de47b9d3d3baa5bbc22fc5a8a50abe688e77520b035369f492"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "d7847a7917f3d83398ed86e5889bc83306bb80e73734bd1157aa72856b498f9e"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "1986132ca2eabd91ea5b1193fefabc4f5af2253df1b4e720df4ddf4cddf433a0"
   end

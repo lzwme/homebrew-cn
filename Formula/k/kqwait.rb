@@ -17,7 +17,6 @@ class Kqwait < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "46fdfbeb3a8961f18b4da5e0d1b94ae232b45ea789a701d963317a496c5542a8"
     sha256 cellar: :any_skip_relocation, monterey:       "f348cb75f4cc2ebc25a690de447dee670a144707256a08a252454d27fe52a042"
     sha256 cellar: :any_skip_relocation, big_sur:        "d628f1544a08964c38352d12b7d7c8eab0317391e7eceab195d11882852b4ee3"
-    sha256 cellar: :any_skip_relocation, catalina:       "a126094dabbb2fd9a2c539b1515657c1855bb0c971492ca0d6c56aa97bfebe48"
   end
 
   depends_on :macos

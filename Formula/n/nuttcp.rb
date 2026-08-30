@@ -21,7 +21,6 @@ class Nuttcp < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "3f32f4184daaad9ca38c76c61eef16551706949199fc6ca890357547e249509c"
     sha256 cellar: :any_skip_relocation, monterey:       "23f6274a513fc5e03b2eba2ea26496beb8e1b7e21ac0824fb7abea9e3487b296"
     sha256 cellar: :any_skip_relocation, big_sur:        "9001ef97c90c4097f1ebabed20e63305f82a5f04d7ffc0f0d788c249c49d236d"
-    sha256 cellar: :any_skip_relocation, catalina:       "0f5e7a2b61f91360023ef643c0a77fa711855b34006ff07867f1283051aded5c"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "dcfba3237982e60f9c4605ff141b05308e4bad588891b72cf48df390df84fba2"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "9a45bf649ab4f28ef78699c00d3b71afa3655f26cafaeb01fb7f99fc9f133471"
   end

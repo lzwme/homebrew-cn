@@ -27,7 +27,6 @@ class Mpssh < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "3a90eeb34d282fa97d59a7084972b98bac3c94333b81e264110e9fcd6e894476"
     sha256 cellar: :any_skip_relocation, monterey:       "94d6b1821f850cb852373d0e46b9da787b799d726f4917ece31a0e0dc149b25a"
     sha256 cellar: :any_skip_relocation, big_sur:        "d6e032b03f612d0be60c38b1af6688f8786e9c097d52c2e8bd3cd507290e4482"
-    sha256 cellar: :any_skip_relocation, catalina:       "714e7b0e97a942f68885baefa599d97e143631154480d0246d04e21a49910acf"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "e8e905d29e7029da56deb5d87820165715519f27deb1675446434a51b049a70d"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "5eabc527317cd3a5091e6efabe168b926693d6eb64644fec082a251a99725669"
   end

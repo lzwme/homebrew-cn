@@ -21,7 +21,6 @@ class Dns2tcp < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "d922e172d654f0bf200d345d526ad150c57bf77376b8a022a76b98e594494100"
     sha256 cellar: :any_skip_relocation, monterey:       "02373e78d9c7f416d795a640058537f1edafb82a59b5406b019ed80b4b57c3f4"
     sha256 cellar: :any_skip_relocation, big_sur:        "09b03661d759932c928ae63c72af41a528f6378d6f23e67e0341592ecba34a47"
-    sha256 cellar: :any_skip_relocation, catalina:       "f1517166d8e8e02dbefbb654214012a6bf089ab78a1a237c9ec7d86c356da97f"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "3439b7a053baae453e709bbab25fc3ed8f389037b73234d0cd886ae492f51c13"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "44282da4806ffc130f6a3326925e708d70379c9c44ec735b251010927d5b920e"
   end

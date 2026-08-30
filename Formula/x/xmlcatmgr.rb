@@ -17,7 +17,6 @@ class Xmlcatmgr < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "a363b397c78ed54867c5982f801f9c67307fff26d96905a93f7c22aa1be81733"
     sha256 cellar: :any_skip_relocation, monterey:       "c401c527f4babe7caee6af925027fb07d300961351548e9ccfed20c6be1ed6a7"
     sha256 cellar: :any_skip_relocation, big_sur:        "cf19153b0ce232b3fe88cd0d2288a4d94056b3092a8c64483fec2634dc821605"
-    sha256 cellar: :any_skip_relocation, catalina:       "ae788970290574145fa3ca20e389469f1a8582c8b604a50e3e506b7ffcb9faa4"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "9194b26f616899f7d7edc8db1534c8e5f91fc46231d6e2aa0be1ea9374ff71d9"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "52185546f22943c4a693619db91532acbac6e555e8d747156515af72542c0c43"
   end

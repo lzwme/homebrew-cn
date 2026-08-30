@@ -16,7 +16,6 @@ class Nettoe < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "cf8359f959025e11e174d90006395597eb4caaedaa83e47f75272b34d4ff67e1"
     sha256 cellar: :any_skip_relocation, monterey:       "af7fe17e2294568f6c4140418c1e5ca0ce73daf59dc5defe5036ec611a697666"
     sha256 cellar: :any_skip_relocation, big_sur:        "2387ff01457bbf7019cff906e9503de1b7cc718f055abd3eaa9523b847d951a5"
-    sha256 cellar: :any_skip_relocation, catalina:       "59cab1291f69cb1c35a269d18343a3d07eaf55d6f0d178c9548afb282497fc50"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "2f2fb05b5054fa36e1dc3164dd500e4a3a9616ad6d2fd515791493859b9a27d4"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "f72b5ebf9338c0c725ee8df4e6843ec8f9a13fbb9935e3bd121ce8302c3ecbbc"
   end

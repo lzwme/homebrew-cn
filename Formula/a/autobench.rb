@@ -17,7 +17,6 @@ class Autobench < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "ebf91a63de293b20f1f7228ea1053543ab09bb63cf381d05caf0af8dfac2a794"
     sha256 cellar: :any_skip_relocation, monterey:       "2cd26e697396773123b3d800a9a19e10f225b58797849a7ecbe1250969baf77c"
     sha256 cellar: :any_skip_relocation, big_sur:        "dde390cbcb35b87f2cf565a59e11ae4997400a37170abd9b276696460f81dbc4"
-    sha256 cellar: :any_skip_relocation, catalina:       "02476e73b18bf8ed02b18fa66b1c90133e21ad28223f528532a427060860dbe9"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "480b1dd43d675961961fe91a4d1f6fd39ba7a4187127d51fa177a694856f0b7e"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "f33306a0edae89cab46f98344c30feeab7a3d9d03e1d6c21e578720c8cac794f"
   end

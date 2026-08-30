@@ -16,7 +16,6 @@ class Aoeui < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "2e51be697ebb292fbca7958f8f64129d7925929d627911d300fd7e899d0b8feb"
     sha256 cellar: :any_skip_relocation, monterey:       "929a533158d7b0113cefcdfefd36b982eb68da53268a15a37733f737bef2ef79"
     sha256 cellar: :any_skip_relocation, big_sur:        "80411e75607878170abd4516b4ff368d8b4a8d1da0855c540d069d5b4cb88464"
-    sha256 cellar: :any_skip_relocation, catalina:       "79a6d037053bc2b3fcd21870ccc274ad02f8e47bde5c9755b8665c25609ddd3a"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "bc5fc0e63ce3c46a6384f860fb44a6ebb0761f9fa4ffdcbe18eb27c27d72180a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "b130912a9d91e2462433ad80f02827461c3c6aa8fef646b84cfa0249b9929815"
   end

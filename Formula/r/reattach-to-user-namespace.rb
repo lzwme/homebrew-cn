@@ -17,7 +17,6 @@ class ReattachToUserNamespace < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "c84b1082f8e2b8b6b5d43b1fff674f6c32add385b7267a01b80fc74f154ed9bc"
     sha256 cellar: :any_skip_relocation, monterey:       "5ef00eb2cd133afffbb67caef646fe99e8a8fb53ede9b8ddb6de1f20206760c6"
     sha256 cellar: :any_skip_relocation, big_sur:        "8b715171e1c8ce8f86cddc241340a7a6f4f263e770d912894cf580790f8d8aa4"
-    sha256 cellar: :any_skip_relocation, catalina:       "8ab11a5fa7512f5d7ef8fe62a5275325f3721e13fde2b0831d1f615e8820c341"
   end
 
   depends_on :macos

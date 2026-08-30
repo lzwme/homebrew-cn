@@ -18,7 +18,6 @@ class Zsxd < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "f79284e528dd5c8c412dfd90f96fc8d3d6c54ca839a8dd71fd7fb689c8ae7951"
     sha256 cellar: :any_skip_relocation, monterey:       "5641638453928b8d7dc434051961417e5c3e768c06fc35f9879737640027ece3"
     sha256 cellar: :any_skip_relocation, big_sur:        "ccae47d22a42e29f9d5d37fdd0be7cfa8f451d3b0f42d2db2b933f6a7ae1d129"
-    sha256 cellar: :any_skip_relocation, catalina:       "aabcc393aae8f00a45ffa24d959ff57a6023caace90a815f8107c579e113b87e"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "81e1d2d168374d4baedd1ce60c4349439b049bc1d3f20dc3fa6ab2a0bc554297"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "6b29f50a29f5874e4197504acbc4bd1f0162df77d8e30152a10c4bf82befc446"
   end

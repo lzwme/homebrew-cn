@@ -16,7 +16,6 @@ class Naga < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "b1a38c76c5088aab68b817aea8d249a40f2aec9101606494d42182826528561b"
     sha256 cellar: :any_skip_relocation, monterey:       "6b013d2185f67b684ab4f49db162fdb32bba2dc6914d9855c6f7fbb4bd5603f9"
     sha256 cellar: :any_skip_relocation, big_sur:        "58d4a48fe33e676993449a2cdf332f74b6858681bc5519374d6e7a8842df9434"
-    sha256 cellar: :any_skip_relocation, catalina:       "4a397ca0cf60725415818826e47fbf20c4b9cad2bc754128ece0d50279b715fd"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "ff3c81dd29c36428f64d815f798bdb6c9a57aa7f73961c4eff5d5b08bd70cf07"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "e8ea8f618dc69a283560a3a51335c476824cee8bf5da7233620021e3c95f6fa7"
   end

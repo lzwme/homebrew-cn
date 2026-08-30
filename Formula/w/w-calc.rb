@@ -17,7 +17,6 @@ class WCalc < Formula
     sha256 cellar: :any,                 ventura:        "5b810eb4cf6254d48f1d6c6c5c582db14cec2b7cd432ba052746b99c2434b0c7"
     sha256 cellar: :any,                 monterey:       "efd668bc2f63e75a53063b66b9efca1cffea5eb1ea345ad7f72f6e1fcc805dd0"
     sha256 cellar: :any,                 big_sur:        "27705bfedd11e7181437ecfa3518ed5ca3a10cf9bbb81c6dd7f331080a476b9a"
-    sha256 cellar: :any,                 catalina:       "dfde02c6213c6eeeecaeae55d7ecaa7620ab5c86f346f9242c82899802901b8b"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "77cd92e140bbedd38f7dcfa8827d03b0d829fc97c6188314ce7d647ed969cbcf"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "739d3b28f0cfb194a6965fd522a335859e9f5611faf0f6bafbd8577f5fb823de"
   end

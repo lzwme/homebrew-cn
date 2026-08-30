@@ -16,7 +16,6 @@ class Libcmph < Formula
     sha256 cellar: :any,                 ventura:        "c839119e4df7eb3ac96d33dd388c25000bece07e3b74ce9caa4ff3867ec54b07"
     sha256 cellar: :any,                 monterey:       "248ea1c47707f4baf30f540f50803e1f3678ebaf5c80215ed4871f96cf77b314"
     sha256 cellar: :any,                 big_sur:        "f1cc2211ac56a2702405246535a55613855c3879885ca73aa65d76890c2aa0e5"
-    sha256 cellar: :any,                 catalina:       "c38019c153c728a28acbfe340cc86764285ec24edbdba5234b0593f83d355c22"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "09b7ae4a3fe814126fff575f57ba2cfac5599eb86cded4d810ae777d2e4c229e"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "6b4a556fa47365d3ebf9312acddf3fc64921094161bd6d6e1bcda3df92be70cd"
   end

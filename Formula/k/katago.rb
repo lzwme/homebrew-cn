@@ -3,8 +3,8 @@ class Katago < Formula
   homepage "https://katagotraining.org/"
   # Occasionally check upstream docs in case recommended model/network is changed.
   # Ref: https://github.com/lightvector/KataGo?tab=readme-ov-file#other-questions
-  url "https://ghfast.top/https://github.com/lightvector/KataGo/archive/refs/tags/v1.18.1.tar.gz"
-  sha256 "011a205c60c22f83008ba92d31f91196640f620edbfc2f09af79ef3f3311750c"
+  url "https://ghfast.top/https://github.com/lightvector/KataGo/archive/refs/tags/v1.18.2.tar.gz"
+  sha256 "fefd554bfaf0daa00d97ac3a767c7aef8d303545b135b0fbf8bd6837772f8bf9"
   license all_of: [
     "MIT",
     "CC0-1.0", # g170 resources
@@ -16,12 +16,11 @@ class Katago < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "650da5fa5faa80adf6b67232202e989e1a1c1b4e8babd13d8b05b581c0c011ff"
-    sha256 cellar: :any, arm64_sequoia: "e5a2034b437f8aeabc4f887b71553bb81334d174ea07371f47ba0d3e25d8e440"
-    sha256 cellar: :any, arm64_sonoma:  "879bf418f72256c80b1bd8fdd16342ba73eb707027aa3142b91d8f50736102a3"
-    sha256 cellar: :any, sonoma:        "e0572e9a20f07c060943bc843cc3163663b10e665eeffb762a5b60c856dc2482"
-    sha256 cellar: :any, arm64_linux:   "6c8f22022095d76bef65b0811969b1b9716f9f60a0998b508b60db579ae16e71"
-    sha256 cellar: :any, x86_64_linux:  "0b109bd42e1956050b78864a0a987339509d3b62579595dc2fd6c992e56e3552"
+    sha256 cellar: :any, arm64_tahoe:   "451503d5af8796220bc04d9a894e6a866792ca919daeec79906e0a4a53518737"
+    sha256 cellar: :any, arm64_sequoia: "d6db1b58c5dc5fadaf203d95086fe8eb08a902858275d70af1da6ca2d0dbc281"
+    sha256 cellar: :any, arm64_sonoma:  "5f6201f0b6633aa8bef97384c3b0de1e510d0961ea2770bce92399c11baf83d6"
+    sha256 cellar: :any, arm64_linux:   "da5029800c86a6a7248722cfa4ab9095e6a84bafc18366c42ac8f7bf6895af9d"
+    sha256 cellar: :any, x86_64_linux:  "927c7285e5a001e368199f786a4dc66c0651489baaa82ad58eff7b84df79e05e"
   end
 
   depends_on "cmake" => :build

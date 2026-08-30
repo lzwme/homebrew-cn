@@ -22,7 +22,6 @@ class Nload < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "0924f27e44c24642832a73d9f2f1f1d2f4880f38b23fe2e46ecbe3422125af7f"
     sha256 cellar: :any_skip_relocation, monterey:       "fa676ad48d38191b0cfc2a7a5277ec26cbae48ba7a40c06b10bc1760692fdbf1"
     sha256 cellar: :any_skip_relocation, big_sur:        "497154bd3de08b44994d05c69467266bb5ea54e6ddb7c9353bbf63bc77463447"
-    sha256 cellar: :any_skip_relocation, catalina:       "2e566035d80abd97c43955ac5fa05ba347b67dbbd10d0543faef3cf5cc7b0bfb"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "a2366f0c72199e2ae1729e247e5c6fc0bfdb5c02cae34cc4f6859832fd0649ae"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "4b1d3e77437ea1f37ab063237a2b71318370b23248b8be6d6d10d07f786bed89"
   end

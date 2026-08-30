@@ -17,7 +17,6 @@ class Dungeon < Formula
     sha256 cellar: :any,                 ventura:        "f1197055b9b31daea8f6e6cb9c28488a91c01c6a145604a18f6c077ef5e7c17d"
     sha256 cellar: :any,                 monterey:       "299d381405bcf4fe73087e2737812d12ad97dbc996e2015d3f666c0296660b23"
     sha256 cellar: :any,                 big_sur:        "c81b8009fb2183b96f6f0c45c4906a0048b535fb2d6abe7a82628e3c164a7375"
-    sha256 cellar: :any,                 catalina:       "ddbf1a9789d9f3bfe42c91044f0296f3e67b87c272a8d7e435b2405da72c4219"
     sha256                               arm64_linux:    "641cccd8b42a81e9e30af8849bcde552d59b00c75fb45f88fb4842612be02b6f"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "d67e7796b6a55b602bfd0112450b4fffee2c640599fc380dedbf4108d090877d"
   end

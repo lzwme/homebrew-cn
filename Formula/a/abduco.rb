@@ -17,7 +17,6 @@ class Abduco < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "cec640c52bce7b9d63223b949ad4e30a96cb1acc58c8f95ab5017104cd41aac6"
     sha256 cellar: :any_skip_relocation, monterey:       "8c9d9c494114dfcb8c231d5823afa980bd0b7a1d055c30ea7b60a9e4d7a92878"
     sha256 cellar: :any_skip_relocation, big_sur:        "a010ab98531eaafdb9d35a7f2ca6a0583b6566be603f95b721f41e1037eafacb"
-    sha256 cellar: :any_skip_relocation, catalina:       "6d78f6c36e0933f3c55bc96d4ca5c0e4e24030598702423ed752130721e7b8dc"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "4e84ed7e82b55ae643f46c6b81488e55535269cb37a95e7eec87a06b60f66427"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "2129c6039968a818f71997e800575b581128b56f8783eeb32c990f8a5e8b81ad"
   end

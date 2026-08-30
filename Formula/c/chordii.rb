@@ -21,7 +21,6 @@ class Chordii < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "533776ba55d08f2e8f35a1efe53ba52e97e1d360029f97dfb10dedc5c7920857"
     sha256 cellar: :any_skip_relocation, monterey:       "2b6187af85a480a5e77c8b39a539b6ecd2e2be2f66314088a97a83024f8bb584"
     sha256 cellar: :any_skip_relocation, big_sur:        "d7c6ea34e2f65484ebc2d74c2f658f09ef78e2893bb6ee7f7674f1c72f8d8f98"
-    sha256 cellar: :any_skip_relocation, catalina:       "ed1f635a737973af4b9f4f784757cdf0ddbb3f946cb285917c171392a9b59d4a"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "03f604ff4981449be5916104ec86dc67e1c1df565f0f064b9689149f82b9b58d"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "8dc33f2a8fd3dda76dc87a7a919c7e590a4853a0736bc92c20d25e0d8382db6d"
   end

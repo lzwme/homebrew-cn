@@ -22,7 +22,6 @@ class Numdiff < Formula
     sha256 cellar: :any,                 ventura:        "5d48008fe3126fac107bc91308d83fffd39ef5c5e99a4150d52a95febfe573a7"
     sha256 cellar: :any,                 monterey:       "58e6c6f067c9a0ff39143bea741d68c5b50f06ddf7d66f5fbc35f4d691fcfd33"
     sha256 cellar: :any,                 big_sur:        "5acb0364a5f94b40b9f4d79c998910426855da30ea7f7b00241c135ffabdcb8e"
-    sha256 cellar: :any,                 catalina:       "bb6458bc44ff4086cf74590c540dfce76014aaafdffd140b0a032b4ddbf17df6"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "ebf440325cddaad6e20bce018736dc65e4ea1895de1ce590f21c267b3ab304ad"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "c9334ab2846721f6a4b643e061dc1ef76f693a8a07f99f05dda3dfdc190165a9"
   end

@@ -18,7 +18,6 @@ class Thrulay < Formula
     sha256 cellar: :any,                 ventura:        "77520bf722d669ecc5db10c8d245b1db3969935242d791df066f4cfa0be689bf"
     sha256 cellar: :any,                 monterey:       "130e94a8ba3c605f200d818f1d3cac45223d8f53837f39d1a5f03d48177bad35"
     sha256 cellar: :any,                 big_sur:        "ad146242acc5078690b249d86fa2336adbc93a47543138c9e9c383a1b4a18460"
-    sha256 cellar: :any,                 catalina:       "fa6da453412e97cf222c12f7c2aaa7ef3e2db5d58dc98538c364b377ece63c62"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "cbfc443848749b0d2cee05c74f2c27a8d734cad7c274c86b0d97b3081ddf8a61"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "66cdfd861122990076cd447dea49124c4cf5a1629c3ca1a3540b98a12c19fb87"
   end

@@ -17,7 +17,6 @@ class Digitemp < Formula
     sha256 cellar: :any,                 ventura:        "0c886d16a9413d8639d8c970ac6d875b1a63ae5585a44e67086262d2f310331a"
     sha256 cellar: :any,                 monterey:       "b184352eb21cbca65269b7b0ae3da2213791b53530f515c91a0edc44a37d0534"
     sha256 cellar: :any,                 big_sur:        "dfcce60792d55b3d715c7cadb3179193ce943edb291913423c34456b53a1ac37"
-    sha256 cellar: :any,                 catalina:       "6d79bfded73a02e6c84d90c5437226567389212bf07d0b15b355465db645c6ec"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "0356ddcd980cc160525986977c05d35786c47e42bc2ed992e2cbf7432f3d1077"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "3f307cb2ce339c2b19089b46fc564e4492126b75abea1c79ca31fe6debfa5341"
   end

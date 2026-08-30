@@ -22,7 +22,6 @@ class GnuProlog < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "02ee6b13fa27046dd98fb661dfa19671ae2ee5f724a4616a6556af48e851d08c"
     sha256 cellar: :any_skip_relocation, monterey:       "5e2d325ed9824cdf9283341f009ac01655616d8d61fe9c4b08b21f190a445611"
     sha256 cellar: :any_skip_relocation, big_sur:        "d0a8099131295fb00e49b1921a544e5cf0564593f52a35cccdae8fe239785c2c"
-    sha256 cellar: :any_skip_relocation, catalina:       "7d5b67ea483e7b80e2a2d1ff30874d53afe0d5f416ef6d7e4480beaa3be6153a"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "5e968562dea6ec8f17d9d0b8f9ab48fc65179477d8e4a762371226c097c4341c"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "fdf61462c5418578e9d629fa743b527b462e6f767fbb64af23db63115a8d39c4"
   end

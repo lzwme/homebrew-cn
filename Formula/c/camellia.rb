@@ -21,7 +21,6 @@ class Camellia < Formula
     sha256 cellar: :any,                 ventura:        "60de7bb06d85c339db0c5e43ee8965bbd3b8ab6209c292018d02f635d208d9c5"
     sha256 cellar: :any,                 monterey:       "2a5a68dce9404d513ed22a4a26a2968af84cc2e4df607edf3013a2b24912205d"
     sha256 cellar: :any,                 big_sur:        "84ce9367fd905515a5532cd64be374177b369f8c1797808a2ec95b5c89799965"
-    sha256 cellar: :any,                 catalina:       "c7d2e77a15331cebfeff928b67bd32ee5b0a9325ac5cbea022b2c6ddbe585ff6"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "54fa3c308a4e301534567e1e0cf9a35c303c271ee8f213b9a4321b944d373c8e"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "3eaafd00c8c6f8addff45fa1be46912ec2b411552450c48dbe09795c1ec7e370"
   end

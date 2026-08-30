@@ -16,7 +16,6 @@ class Puf < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "34f663287a1e6eccd24478afff1260281cdca68dda5efa9a6211d1aebd6d425b"
     sha256 cellar: :any_skip_relocation, monterey:       "c1afcd4b99802518b7cee90c23225bec8d2d7104efa503c4115830ab51f582e0"
     sha256 cellar: :any_skip_relocation, big_sur:        "590e0087a563c0fa38996f69c80316f95a54a3a788f0e07390ba192db1d67c44"
-    sha256 cellar: :any_skip_relocation, catalina:       "cad4c55abee941651ac9e1f203041240aae43b990f3e9efdce7cd9e0342b727c"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "94b07bacd92695fdd33ae7adc47e52dba95c837adf0ee6d653e0c5f564b414f6"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "e0dccb5f5a95571338a440abdc6df58db883ad1ce1b4a3ddc8bae95da82be9de"
   end

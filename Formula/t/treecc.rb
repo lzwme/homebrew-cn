@@ -21,7 +21,6 @@ class Treecc < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "225da2d6061f4bb879dfc442a62111ec9e181fb3a4730b4b35b9a7c108ae0322"
     sha256 cellar: :any_skip_relocation, monterey:       "e5df47b775de8602bf18db65da4a4eea2093d19fda212ea300c455b4ff899c5e"
     sha256 cellar: :any_skip_relocation, big_sur:        "239d0728cb07d6376c1da25192595b472842acd775b7d95570786fac003ca10f"
-    sha256 cellar: :any_skip_relocation, catalina:       "3a46948ef72e0801cab4767e1f0075d01ab8b7a8eb4b07a9a7e81d021c43e2fc"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "0ce0d7869668cc4f7b2f5334f7823cbdfe4685ee548dcfad1132c36a2cca5437"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "4dbfb97ace2365eaa60578f1d0c7ae29b9d30d1a445040df285b9b9ca4fce263"
   end

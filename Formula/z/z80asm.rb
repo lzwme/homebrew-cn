@@ -21,7 +21,6 @@ class Z80asm < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "b4b724e61c1a4ac3f1d9067635de307fc16ae9a6f2ac0cc3939603a1c0b9ab21"
     sha256 cellar: :any_skip_relocation, monterey:       "bc9bd7e0dfbbdad344386a242b47e72e67c820d90925c59a600770704416a71f"
     sha256 cellar: :any_skip_relocation, big_sur:        "ca1a1ffc5104cdbb1914469122c38ecc13ebe60222bab9a3b57d926cf1c68743"
-    sha256 cellar: :any_skip_relocation, catalina:       "0e7b29aa5927fcf70d1f704cdc4d0b73477c39d2f624fff4264ab08a6675959d"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "eee5efb31003cfb93f245c5135ab4d22e8172474051397733327a942908240e5"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "17f78a08a62f5d5c322080e89ad6fb0d2887c5479b481e816c5253a5898df62d"
   end

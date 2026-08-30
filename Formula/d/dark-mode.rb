@@ -17,7 +17,6 @@ class DarkMode < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "46d4c9a2055387cd9a0abf38f563e803034e4a946313dae838f30d6025633421"
     sha256 cellar: :any_skip_relocation, monterey:       "312e08579ba705193ec21f3f10f3b52ac69b752d301788846752f3e160105abf"
     sha256 cellar: :any_skip_relocation, big_sur:        "8ec98a0dfe32ff7933e9f44a4f4933e1e0da4929076e72ed79cbc296240c17dd"
-    sha256 cellar: :any_skip_relocation, catalina:       "5533a6c879d399a84a61b0ee6d03e5baaa23c8d598ebc8c3ad1dbd0db6da8958"
   end
 
   depends_on xcode: :build

@@ -16,7 +16,6 @@ class Sampler < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "6fd6a327e70bc18043da635cb29864cd21e85edf1268a47fb577babceb336c01"
     sha256 cellar: :any_skip_relocation, monterey:       "56b5b7b0cd61ff5557cbf5c58bb25b793de0a17303292f2c28b2d73584650a5d"
     sha256 cellar: :any_skip_relocation, big_sur:        "3dd48615b2dd049e17d2635df81cd8f312e004d2e9c50a0d68d7f4f40516e61c"
-    sha256 cellar: :any_skip_relocation, catalina:       "1b4a4c841691d8a6ca9ea4649092684511bff1f60d7d80e364db13115f2e6399"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "2bb024eb1121fcbdb7591fc43d76192122a98b1e0f8805151fac95108e8ea20a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "71d294afc5ecad041132801fa2d6848f8e4fa1ca1756b2d17b440f23ccaa11ec"
   end

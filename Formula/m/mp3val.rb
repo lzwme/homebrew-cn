@@ -16,7 +16,6 @@ class Mp3val < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "2e853ffc3b232162f4efc76f4b166684f7433dbb0548ed424154527ae81b4289"
     sha256 cellar: :any_skip_relocation, monterey:       "981e3b3fbb87bd417e50d947bb994049508ce850ffd432c9d3ae0306cf3e6182"
     sha256 cellar: :any_skip_relocation, big_sur:        "671ef59185d212e89c19dda72da09ef7a37e3055f4d42d188079f29122c641dc"
-    sha256 cellar: :any_skip_relocation, catalina:       "c08b493f2f59730486c427b795112ea1c730fb9bb7dcbc0bc9158c2c28a30c51"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "83bae7eb1335d4f48f940a32c11d5e4e62fe48a4485a2d727456c6def98af8cc"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "b36cb11d26af2abdb0e0d811bb91f24d9b7e78bfdd8cd65f0aa2283c08725feb"
   end

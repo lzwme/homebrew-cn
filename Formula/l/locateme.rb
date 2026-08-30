@@ -21,7 +21,6 @@ class Locateme < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "db1688ffa07905231ed8d2c04fe43c2eabd575541ef596e16a67eec803275250"
     sha256 cellar: :any_skip_relocation, monterey:       "df78b2ec950567f3c9889e73c1b0885d6b840569f76cd2a798bdff4c190e337a"
     sha256 cellar: :any_skip_relocation, big_sur:        "e4f5de110206a157b8deebb41782e6be482cab8649dfbc5aa6eedae39a7f1374"
-    sha256 cellar: :any_skip_relocation, catalina:       "20c927c90ce8813ed161667367c75f8235705fe9fe4c8e5cc6e0b0505b19c978"
   end
 
   depends_on :macos

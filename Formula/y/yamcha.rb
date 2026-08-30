@@ -19,7 +19,6 @@ class Yamcha < Formula
     sha256 cellar: :any,                 ventura:        "f8db88401507cec60953241a6ea12bc3945dcb68db85366bc597f466664badb7"
     sha256 cellar: :any,                 monterey:       "31ace70fbbf4e2da60850ccc2cea0bd4131e6acc98560cb3230d38c334ec2d2d"
     sha256 cellar: :any,                 big_sur:        "18f032ddd520debefef3e67422089660c9222e1a8098d4c9b5128cb7a517e87a"
-    sha256 cellar: :any,                 catalina:       "703da9d88502c3e8ede9d567a816f7b7856112175f07f8b4c720bc7b0f540e64"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "5ebf9b1d45af65bd57c866ec89a3ebe280571edb16d6a1d971c55c5ed3228ae1"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "0ce0b05c30bff796b1ed14c7732670d3fd9b96a20f3b48e1f4953b3e8c9d745c"
   end

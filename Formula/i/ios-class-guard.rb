@@ -29,7 +29,6 @@ class IosClassGuard < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "4864bb18b6e3712c92bede68182d7d8345e35b98da0327b8bbffbfc07891ddee"
     sha256 cellar: :any_skip_relocation, monterey:       "c6ac0f4d85d53a86ee0de247c7119f776506830d4d7d2df26eb2ecebc1fa20f4"
     sha256 cellar: :any_skip_relocation, big_sur:        "159991d0922d6ea71dceb5f97c3024659f70c48fb91c0222186e8c108885db54"
-    sha256 cellar: :any_skip_relocation, catalina:       "807b425c949e9a25331abd13967721d6f58d3a1674fcc8175744e713e81ee5d3"
   end
 
   deprecate! date: "2026-07-17", because: :deprecated_upstream

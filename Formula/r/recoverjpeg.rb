@@ -22,7 +22,6 @@ class Recoverjpeg < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "e0a2345c5293d9afb7e754028ed2707c443f78bdea6c43f34ea1a46ca0d24a52"
     sha256 cellar: :any_skip_relocation, monterey:       "a9043bcada2749bee2dd525f6aa3919cff2f45f2290234ec6302f7985acf3399"
     sha256 cellar: :any_skip_relocation, big_sur:        "bd56d3048f05834faf5181f4372fe49a8ef3895c291fe0ca2a434a416e305495"
-    sha256 cellar: :any_skip_relocation, catalina:       "87b3d9adf8b59d91350b7e655a78b68525caaaad0a614c5b7e1b6097d29cf6d9"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "d6b4d36e75677621fc7e3f1749d0fc475aa660c5057d1cbb8c5e83eea8cda0d6"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "9a89fb65c4850f34a1885cd95da2fbd669f1af300fbbf940b5271c97551c9ce7"
   end

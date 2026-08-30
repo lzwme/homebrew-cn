@@ -30,7 +30,6 @@ class Pms < Formula
     sha256 cellar: :any,                 ventura:        "c1bad14da37f77e32560f8369ec9978d7bdf9f23027a9e6e3be067e37ab8eded"
     sha256 cellar: :any,                 monterey:       "1c75eaf6c2e4a91e9c48323faf5c1426e53856447ce511002187c90001f72cb1"
     sha256 cellar: :any,                 big_sur:        "61b7be3d89ec3436b9e14733936d31564c6989bccb05cb675e529383ba799924"
-    sha256 cellar: :any,                 catalina:       "de929bc53474adfa2a300f8954e0597489f88c22a29661e85c66d1ea8cc619ff"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "49c08001404ac52846502ef4173d8df4907aa2f3ce45bd55c48faf3c672100da"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "6c3d1cf4ac839cd2c6ae549d4c303dfeed70951bf0473b4919bcbe62a2530961"
   end

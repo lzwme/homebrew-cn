@@ -17,7 +17,6 @@ class SfPwgen < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "bb798ef11bc8e1332a175ba210829ed204521942c7269286ed2abb8ab1451f35"
     sha256 cellar: :any_skip_relocation, monterey:       "e2b26cb28d13762f2160eafa1efcec67aa058bfaffc52265b6c546987cf371dd"
     sha256 cellar: :any_skip_relocation, big_sur:        "bcf403285094f1c803d9f8884aff19225ea5d7ab45329d6efc232f468e43b4c2"
-    sha256 cellar: :any_skip_relocation, catalina:       "0fc934513e71330c48333b6e0698b39013d1b2aee57f93124c0c1bff2236475e"
   end
 
   depends_on :macos

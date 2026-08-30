@@ -16,7 +16,6 @@ class Ninvaders < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "722274c2a69c82b9498dcaaf29da198deae44e81e51a320872d4c6003340dfd7"
     sha256 cellar: :any_skip_relocation, monterey:       "7f4fce96d25e44373e785000fb3c2605b90bb8f33e8635f9031a4fd1e547a419"
     sha256 cellar: :any_skip_relocation, big_sur:        "f4b326a63fb608eee71916a19751837d8cc98167b32ffd11b4f0328fcce82a5c"
-    sha256 cellar: :any_skip_relocation, catalina:       "fc5a1eb5df34f13a6d63777b20ec5fea7a8a0351e8f9b8561e6ec95c42ced2c2"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "d829100cdd7f35e3d8276de284bdd884145728a975ed2ddb6f3985bf6a8d966f"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "c4d884e93ed10e3c362cd6a7b948aba5099efe9921dfa45a5163f0e0a2136da2"
   end

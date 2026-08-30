@@ -23,7 +23,6 @@ class Itpp < Formula
     sha256 cellar: :any,                 ventura:        "5a5486d9e73641cafadebc2a16aaff3f0309fd88a03ecc6c51ab74aa9662ffd0"
     sha256 cellar: :any,                 monterey:       "85f1d652165756860f4f4c8ecc86e583ab9b58ec803804bf278a724319790c11"
     sha256 cellar: :any,                 big_sur:        "05b2e27723a47b64d46abb221ac931cbd4f530c2bea166ff4a75c6cc6aec496f"
-    sha256 cellar: :any,                 catalina:       "e35e75d21d3414bf4586b7ca6ee2ff1f99b8fd7106bf32c7eec434b2de5135d8"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "9537b4762ac42062b61e93b08eca2bbd875fcbf1a5defe17a6a83b192ce409e7"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "804cfd8e327183c284a6018f22613896b1876aa2b5fffe99e7ecd594d6f4b006"
   end

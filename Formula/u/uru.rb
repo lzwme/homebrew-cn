@@ -16,7 +16,6 @@ class Uru < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "aeb836f9cc4bc8f40f488f21abb3ca10bc2d20364e961737a541e0856c9b38fa"
     sha256 cellar: :any_skip_relocation, monterey:       "85e032eb3924d873d80f6358a5ea0e05b60cb1f28edb22d16d34bdd7ba164ff9"
     sha256 cellar: :any_skip_relocation, big_sur:        "ac10ec7e98c10782f1b238e768a7f4b2cd7c51040a2db171d731afb9c41130c0"
-    sha256 cellar: :any_skip_relocation, catalina:       "d566fe465acd16153f2b1da700bacb19bb3fd78bfe13b055f255cd3b68688233"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "3457892313460eef01491b76a45a15a2acca89237f911a482137fb09dcfa6c82"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "36ec6869ab83065e9bc5a08b7a4ec769297c4e608bc85001886d73598919c6cb"
   end

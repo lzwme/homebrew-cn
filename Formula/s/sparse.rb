@@ -22,7 +22,6 @@ class Sparse < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "0f5139fcf069d80d6ac94c12904b9f46dd5066b24619dacef6ca3c34442730fe"
     sha256 cellar: :any_skip_relocation, monterey:       "7c86940a523d15f63966df796fdea74176c02be7adc8c4071d2f60a194bd30af"
     sha256 cellar: :any_skip_relocation, big_sur:        "c858bb88d9f4d2d00da1d7498ee130a6d134b77a07d786d9b3906b74fedc90b0"
-    sha256 cellar: :any_skip_relocation, catalina:       "a1517973190e2b8fdf21136344334ad757a0bd4fe24ab65c0846a4e5e64b26df"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "0c108dfd45b36b234fc6962ccf1b3f027185e34a904abcc162575d4e7e480b41"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "8c282a77e53c828abe22a69af0b1dd9cb124b333344f9be1b0f0f3d0a55a3fb0"
   end

@@ -16,7 +16,6 @@ class Gaul < Formula
     sha256 cellar: :any,                 ventura:        "0272c7461b39c0894221a8b21fa95601f3d0476bb6343cfbe12e76181523df3b"
     sha256 cellar: :any,                 monterey:       "4541d4d7d5d7ef43cc1acf3c57516e67fecf69e12f455f944d0a326816c400cd"
     sha256 cellar: :any,                 big_sur:        "e6a64a500ac22aec1a76616d86ea2f70449dfa30d37543faf9a135c2f98e1a07"
-    sha256 cellar: :any,                 catalina:       "f2f98c2f7d23ae7c1862702c6d17d4449bbcc2164940d9157ea12b97deadb273"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "53fc9d9d00e8829b40586ca4786c0848b543d5f42b191bde994139d284371a4c"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "86d80af0c4bdef2186dccac01b0046ca2ca2c81c484b7c5f279553b2e190b53c"
   end

@@ -17,7 +17,6 @@ class Flvstreamer < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "b80c82043109dae0ab1868a5f3fadd6897663f55cea6321b6a76364bd91ea5bb"
     sha256 cellar: :any_skip_relocation, monterey:       "ce990e2bc2f6fe933e3203b6a62e0a7f42c899a29a4b77f453ba9ee93b82f8b5"
     sha256 cellar: :any_skip_relocation, big_sur:        "b148a052d107098db010c7f1884784dacba4f2f27e7ca9d50c9e3347096a4aa3"
-    sha256 cellar: :any_skip_relocation, catalina:       "cfc6a5308ead52bccf753068f8de3a57abd47cf4bdf12d046ca540f3b38ebf8d"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "3a0a12cb4beb91c6bf0ba4f3a5c35a77fe77846ddde1aa9f38dbe1208ed18859"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "99df5a533003260eea6277d1fa2bb80d0354b666a6a99195c46813e3313c701f"
   end

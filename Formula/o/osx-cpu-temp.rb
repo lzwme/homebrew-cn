@@ -16,7 +16,6 @@ class OsxCpuTemp < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "9ee650236f7418567dc7544586870cd82902ebe42572df55c0170c5e22c38d44"
     sha256 cellar: :any_skip_relocation, monterey:       "734f1c9e1d3e8486d862fc2186ba476807d3a8da54c5cb673d6ca3c29db59b09"
     sha256 cellar: :any_skip_relocation, big_sur:        "d4bcaab258eb1c75078e767a24c615bc82274e672ce6fd15c2a766b0b0bd8a46"
-    sha256 cellar: :any_skip_relocation, catalina:       "e1df41402ed817941f591a5cc094fe4491b092de8d5177dd363eccecff811bec"
   end
 
   depends_on :macos

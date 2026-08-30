@@ -21,7 +21,6 @@ class Aview < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "093f941166a79fd776fafdf09576b47208a1a18ce02aa26f404e2b16fe74ed69"
     sha256 cellar: :any_skip_relocation, monterey:       "2d671edc613c82993fae031b0a2795aae4a88a19ca4051095ae174aed038b100"
     sha256 cellar: :any_skip_relocation, big_sur:        "7a32c517ba508c6febe9605d4c9f4d8bde9200393cd8e4dd51adeb7c6e85fb6f"
-    sha256 cellar: :any_skip_relocation, catalina:       "ad92a0e964ccbebe685edf9c595efd420475490d255caed072985cb128a8230b"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "3223307ac974a5f3c1c4720b8ae6f1a5f8560eb8e8fd03882c2ffba1fb5a76ca"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "f2a611a1c3b2b1c76816dffcef6b3aff9f4ea88f6fbd87729dc987c39bd7cc2a"
   end

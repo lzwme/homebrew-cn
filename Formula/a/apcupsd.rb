@@ -22,7 +22,6 @@ class Apcupsd < Formula
     sha256 ventura:        "bb3971d7d541206fc672a8d01410674a3a7d8abac848f8e8049589369d1b081f"
     sha256 monterey:       "e1b0cba1a14c977d8a7faad52c9d72080b745f7b3a49557a5cebe8171bcbc9a1"
     sha256 big_sur:        "1c425f1d6db43a760e4d068ae8ef193c3ca32a3157564989ba1a6aa2ce44a2c7"
-    sha256 catalina:       "7636fe8d43fde7368817c64dc8f689526f48d2a958532e3fdd3f05db3deb4c5e"
     sha256 arm64_linux:    "2e4b840420d4e7b2712118ca0e9d789e0d6c1f44f54ea6bb49eca03b5548aef5"
     sha256 x86_64_linux:   "d393e850548713a383f89d2375fdbd895eae93c063c97b7e16cd767c881d983e"
   end

@@ -27,7 +27,6 @@ class Itex2mml < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "e54abed4dd08fd6edf1b19812617d7ec4c3d94a4619c36172579b3a32f04351a"
     sha256 cellar: :any_skip_relocation, monterey:       "fa3e744eb8281aba061785ebb783c1a55d7f4a85c00787052a309411af702583"
     sha256 cellar: :any_skip_relocation, big_sur:        "3cf7d88d4e102acb646f5e23a4bc168a50c19ce8bda26011bd25c7d8208dbb86"
-    sha256 cellar: :any_skip_relocation, catalina:       "a4a3f1a4d8ff096ed6a4e1eb6ac2883d916de6504496cd8da929081484ab65c4"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "abef6379fe470feb9877993e8e9392c51bce8f9006b3d9de2e28c5c2b110cd03"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "809bf39b25611efdd6f0c297918b0376788c1a4f380a69489b1e4495bd19821e"
   end

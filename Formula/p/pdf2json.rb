@@ -16,7 +16,6 @@ class Pdf2json < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "a06ac07d12709d87065c455126794ee1f5f282c895ec03e90abcd498b0c83739"
     sha256 cellar: :any_skip_relocation, monterey:       "8af9890390ac354624c50a6cbd706d6b538ed8050bc54b1b4a5d091a249401eb"
     sha256 cellar: :any_skip_relocation, big_sur:        "20fe898333fa761b942ee5b0f2d41e47660389a250f5c8604ff1ed22788d9581"
-    sha256 cellar: :any_skip_relocation, catalina:       "035c69de85f1cad569ff743faef796a88b9f9a706be802bf111a83505858b366"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "917e8246e56311c899f8031c17eee02347d143e023b7e7f26a18a924b983a916"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "ddf26e386ef0d0916e59bb3aea14ccbaf5e08e87fbc043692d7a445ff481f9d7"
   end

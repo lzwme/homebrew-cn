@@ -21,7 +21,6 @@ class EotUtils < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "1a0d54258d1c6df0ded3e820520cf809bc1ffd0c6fb5b9c1236aead95c8f69d1"
     sha256 cellar: :any_skip_relocation, monterey:       "eb728a14df732af84e10461a75b4c56ac083ae4f84d2473219a04021abf678be"
     sha256 cellar: :any_skip_relocation, big_sur:        "146f315f88dffb59c62cd7cec217851ecf5586c42e6317a453b3a635391eab28"
-    sha256 cellar: :any_skip_relocation, catalina:       "8d2e463b47a858921b972403f2aa79c6fe80318973fbe5e3f272dc0e1b6dc5b0"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "8fb16ef58c49f4b1b9029ca5994093ed3305976d8a7f7f5077413135515b3c66"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "48cf7e721c0bd57766f90fa9cde2704d44e997016d814994b2df85d345b90f8d"
   end

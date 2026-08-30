@@ -3,19 +3,19 @@ class Barman < Formula
 
   desc "Backup and Recovery Manager for PostgreSQL"
   homepage "https://www.pgbarman.org/"
-  url "https://ghfast.top/https://github.com/EnterpriseDB/barman/releases/download/release%2F3.19.1/barman-3.19.1.tar.gz"
-  sha256 "2f71c4a1f1ba53f694cbdf838bb9906d8ba02b97d1fd3041196e8999bec7a1ee"
+  url "https://files.pythonhosted.org/packages/6a/f4/aa08320a5763e2be204379a0c384f8557a9de1d8b6a3de2d0f454f876b48/barman-3.20.0.tar.gz"
+  sha256 "02dd8936e62c1829c78597eefedfcab0aa820f5618da2871f38b5bc684891a54"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "238fae0eaf5353ff5ce5d49a915678ddcf54fe746c6bc9e2aaa35a919bdf1d16"
-    sha256 cellar: :any,                 arm64_sequoia: "bf705af8b0e6dd0d627c7a5a96a49144434d6a6909b562dbb389bb6441aa6997"
-    sha256 cellar: :any,                 arm64_sonoma:  "434ba26147d2d248c4b9af59ca05ad145911b5364b4257b0bba7c8834833087f"
-    sha256 cellar: :any,                 sonoma:        "0e3b71ce18a1c8e4f8dbed22fc824939cd9067bca186f68cba8c7b051536ea08"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "208680e61edf927fe9bb46430653b5fbfb9a7a2093c63462e08e3718b1c3a377"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0f5011eb88f1b8b29e54acd4926426939cea609a95da5c3b0b20f81736c542ed"
+    sha256 cellar: :any, arm64_tahoe:   "67aff887cf4c408e648b5956969a3d557ab52ee5efd472eccd7f18c4fc9fe018"
+    sha256 cellar: :any, arm64_sequoia: "7037114db5d16fd46256f06ae035f19e3fc0e259f9f2c5c7b5654e790fb2d23f"
+    sha256 cellar: :any, arm64_sonoma:  "caba2aa9a13c8d8bc8ea1bee54831afd7caa446ed86f96801312d258a2e1defe"
+    sha256 cellar: :any, arm64_linux:   "fbb8f2c4fb412734665d5238e4c40871b9dcc217baae3bb440535f5953c7da23"
+    sha256 cellar: :any, x86_64_linux:  "1044127050d0ee8ace9de1d208a5cb60d4beebf5cb02ccb4fd8a3123e036e59b"
   end
 
+  depends_on "rust" => :build # for uv_build > maturin
   depends_on "libpq"
   depends_on "openssl@3"
   depends_on "python@3.14"

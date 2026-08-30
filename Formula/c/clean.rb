@@ -16,7 +16,6 @@ class Clean < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "eca64055ebc6c1f717ddc8d84d352dc9f1fd4f3d3d81dcdfd41b2e65c382364c"
     sha256 cellar: :any_skip_relocation, monterey:       "50f24835f266da1bb10c707e7f1561a3f9366b11bc6e61ac4919f806ddf7e182"
     sha256 cellar: :any_skip_relocation, big_sur:        "bca0f382d8835a36dd3ac9c4157f88f543291b21febea6c68769762f9067e2e0"
-    sha256 cellar: :any_skip_relocation, catalina:       "c4846ab5fe761673db9a5575b56ec21b4ae0d4d75a974015d946d25fde0def12"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "266d2fa27082248fc098a2be833381912903c104ee4e95f2461b8d75736dfc63"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "68f82459bafc17933f5010fe2f35355f8d967809ae62d1ac91e13409f7baec88"
   end

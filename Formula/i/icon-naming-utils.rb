@@ -24,7 +24,6 @@ class IconNamingUtils < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "0d9b0891567661143495e9cb87f7811d66a7e980e26d403fdbd3485590f9bbf7"
     sha256 cellar: :any_skip_relocation, monterey:       "0d9b0891567661143495e9cb87f7811d66a7e980e26d403fdbd3485590f9bbf7"
     sha256 cellar: :any_skip_relocation, big_sur:        "f5f035a7553f25b130f64662cfea9fe25d8db0b7697f7f61e6ad52be8b8f24c5"
-    sha256 cellar: :any_skip_relocation, catalina:       "6ed447fa2e57d32cc048b551ee67339d2be52d89f124e9dfddb3322cc0882883"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "089bbe93b74c60c6520d3269999e652427cf02a30e8825a7e70261af6ba7beaf"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "2808ba5e1f6d084d4f424e084ead17462349b6b2c5d60e5162ecd633c7e3be2f"
   end

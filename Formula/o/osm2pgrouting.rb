@@ -8,12 +8,12 @@ class Osm2pgrouting < Formula
   head "https://github.com/pgRouting/osm2pgrouting.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "3fcf96514a000c9139b5361106f7f6d13a245d1c4cb941a72fb6cf177e51c319"
-    sha256 cellar: :any, arm64_sequoia: "ce21e2db984453b057c3b27c6473d51bb3bcbc3592dfc824e7e9a454b6c92c1f"
-    sha256 cellar: :any, arm64_sonoma:  "1ad753634925bf6a104e0b1049c911ba1e9b8337a07d495302d403f6e3e7e89d"
-    sha256 cellar: :any, sonoma:        "606849765be539269c54407d04507121553bda54c02394eff2b5eefaae3f0e0e"
-    sha256 cellar: :any, arm64_linux:   "7a555b3812f8e118a4bba01ab1cc3e194f0737757cbee3810750543431c4d545"
-    sha256 cellar: :any, x86_64_linux:  "25fb5e4ad5b65e7f5428453c3b8be6f970b69af1bc7b665752b5c6ec4e9e0f79"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "81afca2457eaf617b3bebeed932e4f6e1c28cc427097fc26017f5941081cd31f"
+    sha256 cellar: :any, arm64_sequoia: "8f1f0ffca4049b7768e8679c7e13d6f38c77fdad7c066e0145c5c07fd9116681"
+    sha256 cellar: :any, arm64_sonoma:  "c355361a3da50f8aabd4b3de1c350983c84c816de7532d7406e7e551a441b365"
+    sha256 cellar: :any, arm64_linux:   "3855fb9464d90faee02f1c962cf08f488209c4d5859e1da94db0149658500a86"
+    sha256 cellar: :any, x86_64_linux:  "1e21505d58d2adff2e53d2ade5f46aa1aea878d5d4e1ca62a22322693bae49e8"
   end
 
   depends_on "cmake" => :build
@@ -23,7 +23,7 @@ class Osm2pgrouting < Formula
   depends_on "pgrouting"
   depends_on "postgis"
 
-  uses_from_macos "expat"
+  uses_from_macos "expat", since: :sequoia
 
   # Support newer libpqxx
   patch do
@@ -33,18 +33,7 @@ class Osm2pgrouting < Formula
     resolves "https://github.com/pgRouting/osm2pgrouting/pull/328"
   end
 
-  # Work around superenv to avoid mixing `expat` usage in libraries across dependency tree.
-  # Brew `expat` usage in Python has low impact as it isn't loaded unless pyexpat is used.
-  # TODO: Consider adding a DSL for this or change how we handle Python's `expat` dependency
-  def remove_brew_expat
-    env_vars = %w[CMAKE_PREFIX_PATH HOMEBREW_INCLUDE_PATHS HOMEBREW_LIBRARY_PATHS PATH PKG_CONFIG_PATH]
-    ENV.remove env_vars, /(^|:)#{Regexp.escape(formula_opt_prefix("expat"))}[^:]*/
-    ENV.remove "HOMEBREW_DEPENDENCIES", "expat"
-  end
-
   def install
-    remove_brew_expat if OS.mac? && MacOS.version < :sequoia
-
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"

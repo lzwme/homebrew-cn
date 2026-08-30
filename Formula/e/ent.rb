@@ -19,7 +19,6 @@ class Ent < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "eff4c785445db5ab72694aee597e36b1a42bff98520f8a9eef4955f513da620f"
     sha256 cellar: :any_skip_relocation, monterey:       "03a87ece9769a8a63a5c88fd457a93665f6ec30e0fafb796ec65aa931e2d2a51"
     sha256 cellar: :any_skip_relocation, big_sur:        "7023711763240801b061fa09d5a721286b650edbd01188f54d41c070317e6106"
-    sha256 cellar: :any_skip_relocation, catalina:       "e51a453d227894a84db498d75bac3205f82fdd3b104b176fa691cb8ae864a14a"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "ed90a387153d2eef621120f0fdd2ca1cdd77d5013ebfbe748ff1b824a2075592"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "2473992bc5d574c4fff2dafdc65e23e72c6661fab3b939d6a853a98b45538e4e"
   end

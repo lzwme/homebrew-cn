@@ -24,7 +24,6 @@ class BibTool < Formula
     sha256                               ventura:        "6ab04c4b9cc2400c1e0239654e1ee02487b545e497597eae58d20cdef1a9448e"
     sha256                               monterey:       "552d9e005a5e6362efac8d592fd26bfa2669651776a2ec95ee0a9dd32c6854d3"
     sha256 cellar: :any_skip_relocation, big_sur:        "e2c2aafbf6a019096510776591956f8114489eff19cb46578dc33f1ea85401d5"
-    sha256 cellar: :any_skip_relocation, catalina:       "26f2121d720fa6ffc20547b0bfc6754930f6b8660b51f634c686279dae7e73ce"
     sha256                               arm64_linux:    "950aa4606e27f585b5845def489fa649687dcbfa927b7ceb79d2186c7c0e5cfc"
     sha256                               x86_64_linux:   "26d038986c5f22a7fd14898391052bd93ac18d34374c2662624efd50ff86a137"
   end

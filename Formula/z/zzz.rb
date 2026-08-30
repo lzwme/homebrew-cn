@@ -27,7 +27,6 @@ class Zzz < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "0466ce782b6410ac3fd3df809c516c53763a9e4a90d1ed81f48118090dd497d9"
     sha256 cellar: :any_skip_relocation, monterey:       "086a43f796e1d9630aa6980fcca37971031e37234f065295d55f4de1f72c8c35"
     sha256 cellar: :any_skip_relocation, big_sur:        "3609040838445e383713a328d0838510d77c3d222f8ecd6892e0e99455668ab1"
-    sha256 cellar: :any_skip_relocation, catalina:       "10b1c9f9822b1cbadaa5774d0ee28c1016fa4477cbe3442475ad9113f0b98dd4"
   end
 
   depends_on :macos

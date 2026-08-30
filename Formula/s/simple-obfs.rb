@@ -18,7 +18,6 @@ class SimpleObfs < Formula
     sha256 cellar: :any,                 ventura:        "8dd7246903c8398049305665a51c44299358f80164d8dd3264e98ff7699ee704"
     sha256 cellar: :any,                 monterey:       "83daaaeccbb621e796269d648c943871ce9ddbf85edd0d7ec66685ea71e9c286"
     sha256 cellar: :any,                 big_sur:        "6fc8b9d2aef7c813449e5298e1fcbcb7e5f1ba6da4c34b9e4b3c3a5e0005110e"
-    sha256 cellar: :any,                 catalina:       "64ac7bb71b3dd0a0d087d7f981c53516abfb294f709d84cb969b192456310c51"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "d08c2cce26db77a73b54ccf237d3b9b9fb70e5d8791835dba3ab9163b62fb45d"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "e0032166acd2a834dce65e5cc5c1ad7b9871b33acc2661fc489d1e4204cc9e6d"
   end

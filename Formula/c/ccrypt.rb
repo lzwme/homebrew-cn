@@ -16,7 +16,6 @@ class Ccrypt < Formula
     sha256 ventura:        "d4f607f5cf6620bf41ff3bb79f0343f0e6a01960e419d5fe254ecf0e007440ca"
     sha256 monterey:       "77326e57d8ebf598daed98540cde9e40b67dc5f759c5ea01a48a8defec9c2347"
     sha256 big_sur:        "f416ae1ffac238640025b992cfedb05ab6894d0ef6c60742b3ab95757bd137f0"
-    sha256 catalina:       "e09c7818b7de98e36d433080334e169ac970e1a020114ddab1fdbbd54135ddbc"
     sha256 arm64_linux:    "66d34366219e543be249e3763823d38d772d6569159611ea1b2f6efa1daef601"
     sha256 x86_64_linux:   "3e2c5e49110742fb547d82b661695d2044a2404869e7224c1de1be036dd253de"
   end

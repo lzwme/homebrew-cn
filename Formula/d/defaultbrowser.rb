@@ -16,7 +16,6 @@ class Defaultbrowser < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "6312f36faa5128d899e9410d89ecbf6425fc2e5aff3ce30398092f6c13ad8768"
     sha256 cellar: :any_skip_relocation, monterey:       "cb836a15dc466342c11bb7cdf35370b261b77723d81438664f89e84513a06f8f"
     sha256 cellar: :any_skip_relocation, big_sur:        "e796471951ee1290e11172aea1fff0b59c70cdbbfef43303bf11a3178e676a7f"
-    sha256 cellar: :any_skip_relocation, catalina:       "e03bfa37fde424b0d7e76e6d2f99a26bad458e9d2bdf912db06d83d64bfe5a17"
   end
 
   depends_on :macos

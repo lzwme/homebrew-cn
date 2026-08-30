@@ -38,7 +38,6 @@ class Airspyhf < Formula
     sha256 cellar: :any,                 ventura:        "506b301e7f411e447bd5b0bab09551eb1ace6fdd62d76a99239e42c648cb2cb4"
     sha256 cellar: :any,                 monterey:       "4d8688285b59e46abc06d20c835e82a4a5ae3271ad469e12f5c249e464419a31"
     sha256 cellar: :any,                 big_sur:        "e41261aeca3a632c9c2cb265e321fe2ff88820901ea1d3ea01e42e2a1ba0413a"
-    sha256 cellar: :any,                 catalina:       "d8b783edf8b206ba8228c96bde21a0dfb42771bc5c46e3493f3dd995a0dfe4d1"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "e84516121578b8b4e3ed09e2617fe1fe378e7267dd900d8ab08c5cea0de963ea"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "e9d30b5b22a4dc96558528d46a73cdb6102b49601f9fe04abfc3f9c812606600"
   end

@@ -20,7 +20,6 @@ class Jrtplib < Formula
     sha256 cellar: :any,                 ventura:        "86f675039a7b9e13b2da96de3f126ddc1cc0e4c6a9851bd4388663b194799d80"
     sha256 cellar: :any,                 monterey:       "f45e63073ae1de1f32605d885a92565dff5297205c875c27dfe36b270ca826b6"
     sha256 cellar: :any,                 big_sur:        "c025524ef889d74cc261768b9e12f8d3ffe57802adef254e2a01850db983e269"
-    sha256 cellar: :any,                 catalina:       "05fc5e0747f7d5f725f9dda22cf39d414e8ee751829d14e9c32fa12279834cfc"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "5b43949d28bbbce5b86915445eafbd3bf25b40f38e8439487ccb3f7b54da00b4"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "2c3a63a9f2e44c207522cb93a0bd93e429ed65937d74ea2b5d7a4110e46d9284"
   end

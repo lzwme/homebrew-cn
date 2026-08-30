@@ -21,7 +21,6 @@ class Detach < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "94bd75041180a9e7cf48d3c352d2ef788a3f9ca382a77ecc1195b221c375b99c"
     sha256 cellar: :any_skip_relocation, monterey:       "469c22339c28e7497bead225e1597d5ae4ccadd2589e355be65041bd2c2ac5c9"
     sha256 cellar: :any_skip_relocation, big_sur:        "9db6ee661710f178b17fc1096596ee74b07b257e233da7fb45cb9280cbeb24a1"
-    sha256 cellar: :any_skip_relocation, catalina:       "dbd06a1dcb4592035dff0b4df0cc3259c2dbb444acdb1553ab2a2d4edf3fff57"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "8fba912efb0e2473b0c089087b8a7239fbf21952e15fa541b41d8542f2277d96"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "38838383187537acd5cd6c52ea5d375055201ad74494107a5150ac684374028d"
   end

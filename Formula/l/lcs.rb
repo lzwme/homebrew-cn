@@ -24,7 +24,6 @@ class Lcs < Formula
     sha256 ventura:        "3ee4e2b8a059045bf17d7d0b32860c1ec4ae23a996c9babf5a58efa0871659d6"
     sha256 monterey:       "a90a57e3001f38f79b787bbaad00e38099fcac09da06780f2996ae0666d80420"
     sha256 big_sur:        "9e3c6957bab58eaf828f8420fd7e493bb352544ec552c96eb24c8d1ec8d4adc6"
-    sha256 catalina:       "65391613e5fd3ea3d8e5f7a2d5586105e3408bb09cddb77aebcfd4bcb7e3396a"
     sha256 arm64_linux:    "102e4a404dd5be9cd65c41bf4eb03c582c405037360447d381baa173d2e52f4e"
     sha256 x86_64_linux:   "ce3d505b47a5ada5e5b895876e51c224c3c716117c2f84e9853c05347ecddc4c"
   end

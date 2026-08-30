@@ -21,7 +21,6 @@ class Cuba < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "7a6e2801aa15f48ce5ef6aa1c7c2d70a0eb05d9a95d9e75ebd1982dc23345d08"
     sha256 cellar: :any_skip_relocation, monterey:       "238e6efde7346d58330b4ebbe562a5f52375d66bd21555867883c3fe2c0405e5"
     sha256 cellar: :any_skip_relocation, big_sur:        "897095ff3030916d5470e15f85ca3a0d0460416484232cc7c821dc6e98c4406d"
-    sha256 cellar: :any_skip_relocation, catalina:       "566d4ddc7e4e3a278dceb6b83abc5ce1298b9ca715ac152695bf1e5fbb8cacc4"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "a1ea99bdba4aae35094b0b0c80c4220f111209ed57d6ac254e68c20dfbaeb1d8"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "a6d0398225a7a9364431992f44347ee9fad5bb3a049f5ed628aabb23bd405ed7"
   end

@@ -16,7 +16,6 @@ class Iat < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "e01adc32b1913dab6e6907a82fcc5865c6f7d9cf1d18ea65225fb45726862fef"
     sha256 cellar: :any_skip_relocation, monterey:       "9cd2da0793bd90422e81e10cc2748b3d5c27cdb8fb2e47d167cc0bf2a94ed096"
     sha256 cellar: :any_skip_relocation, big_sur:        "a1a5029ab927dc08cf6cf89a583c52e475dd50521d461f5ed3d05056a7605dc1"
-    sha256 cellar: :any_skip_relocation, catalina:       "6400e0c863f951cf324e9630ad9de91cc099e5d3f9cfd34f3cfa4344eb747cf3"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "eedb0ed17c84f3336f603a629de7b551aac5f37d77cb79236aa3caaff3901562"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "5f6c91342941bb21b0ac060ac56c8453578655e499ef758ab2c7366ce2052d47"
   end

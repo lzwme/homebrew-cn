@@ -23,7 +23,6 @@ class T1lib < Formula
     sha256                               ventura:        "54dc8980970a69062fe9eb15c368ad93b5d589fbea5e14766d6c2d22103d3506"
     sha256                               monterey:       "3989c26968d5f2d39ee4f6677121b3bafc455f7780eeb1394250792535f2392e"
     sha256                               big_sur:        "297e202327e6968bb7bd6d6ebff52205128189fa91bfc37785d45b4df028d3b6"
-    sha256                               catalina:       "9318f5f1fcb5b4f3b0b5ce67c0925964c95bf10b7f843c70e4f6ed2b5a734360"
     sha256                               arm64_linux:    "53645a5cb98164213a964a7f5f38412e4ce9290e83d6147cb5d2cdf676354869"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "51b691773063f4f7c0e6cbfa5be259516c77ad7b1c52bb189d045b8056216bf9"
   end

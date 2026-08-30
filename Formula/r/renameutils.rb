@@ -22,7 +22,6 @@ class Renameutils < Formula
     sha256 cellar: :any, ventura:        "75072c6cbce5f3a83176da9790df986e4d4dea99c6fc7c52f4b8d942c31c1026"
     sha256 cellar: :any, monterey:       "93a4fb65fd3bba13cd797f0c374981b8dde01ee25a0b0637f6e4448b655457e4"
     sha256 cellar: :any, big_sur:        "503b84eed8791b4a924e61fdfb0ea53cb6d349fe8a55c43ab7582c1e2a0985ba"
-    sha256 cellar: :any, catalina:       "2ec48c66fea9f53acf2b2ba3b726e6f7a9ff35778a3fb574fc59e7c6d01f681a"
     sha256               arm64_linux:    "7e705d1e479f9c7c96ffe78fb84bb17f90897b130bb5e9b18699381fbd3de9f4"
     sha256               x86_64_linux:   "1a7ddae9fa3352ec89e73c91eaabedc5e941e3e752fdf5afda5b5098fb65cd7c"
   end

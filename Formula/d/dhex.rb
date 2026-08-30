@@ -21,7 +21,6 @@ class Dhex < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "7b69d79912f98bbfc1b01b2bace2f9c93f9aa33ec31054ffd8195df35c0b8529"
     sha256 cellar: :any_skip_relocation, monterey:       "da93104948edb1bfa1ceec708ab498d2b14bfee4a873ed9dff599a450698c50a"
     sha256 cellar: :any_skip_relocation, big_sur:        "f9737b2072e10b36cf34973fb1a18fbbdd570bbb4109656b89a51678220fd67e"
-    sha256 cellar: :any_skip_relocation, catalina:       "d3f77d4f4b0f9899e74079753d754eb69296dfe5e44b6c2497c8680e0e941a23"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "7bd4943c431bc7677d86bbc452a5582fa5a9d96486e089811738d52445e5b572"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "2080abdc26e68d518e2b989349107cbe479f9d10fe95f628851a0a638f43a5d4"
   end

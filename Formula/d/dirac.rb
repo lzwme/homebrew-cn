@@ -18,7 +18,6 @@ class Dirac < Formula
     sha256 cellar: :any,                 ventura:        "da8aa90563093bde9f95ce1bed46e85150f9d57afdc35a2af8544ba5f9921cb6"
     sha256 cellar: :any,                 monterey:       "0b0310b8b2213e9d86cf414331130f4effd792609be95e1015932420328fbb91"
     sha256 cellar: :any,                 big_sur:        "2d6aa7e4d9c73e1a79b9b23b86ade670324755806276d6061ec1b3e9f444548a"
-    sha256 cellar: :any,                 catalina:       "8c4a433f067fac458d219eaed956744d84cb9069334df82a3745e6f5f24aa686"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "c02ecb26cb2992df035ad54868de88e9706b0abecf9f949413bc584b9eea8a4f"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "96695c27a2cd1fbabc1281d052e798b4da85d75ba1a92c6b072808d0a59c62bb"
   end

@@ -22,7 +22,6 @@ class Sersniff < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "a6cb50955a0fa7ff6976ceccc2337d6e3c9695b9790462abab79b7870224c3f5"
     sha256 cellar: :any_skip_relocation, monterey:       "2015d27fc77825cf49802b4c72b5a217cdbecbe923f2a5dd916d305297360cac"
     sha256 cellar: :any_skip_relocation, big_sur:        "8b4c1c881a01c7bbcd7a21883723d91328ed82697d0e944e01f566c43afeafd5"
-    sha256 cellar: :any_skip_relocation, catalina:       "96f5d56b1d6c9acb8b465a1912fbd03f6837e0ffabf643200b40528ec7984358"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "a6cc2f34cc92c711ec8c23b221fa6653e049d603b5f62396cc7045b6f193046e"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "f846011946336bff588b904e16d8c0857b4b196467ca98604cd001c0c361f34c"
   end

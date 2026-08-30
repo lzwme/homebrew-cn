@@ -16,7 +16,6 @@ class Vc4asm < Formula
     sha256 cellar: :any,                 ventura:        "3962b9835cebd3238c331effab584026a12adfec4be373c174e7f7575a9e8ff7"
     sha256 cellar: :any,                 monterey:       "1a80a7ddd01b91da357ecae8507af244f0dde770275e36ee523b0da7c0f489f4"
     sha256 cellar: :any,                 big_sur:        "1eefbd03ec375b8021eb783af2fdf5e343c5548201eddbb29e6cf9b6db47e80c"
-    sha256 cellar: :any,                 catalina:       "cd4f683e1e968cb0577b7e6d9b054c503719b10f9bd37442feb8481a19d75fd7"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "f6fa60166e7cf2540a0a7f87c2b179b3b0bb2df5e9c9a764cf883c5b03baab18"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "7c0fe82118a412102288a10b2470baa741000c5448d6a1fa719fd8974daf73eb"
   end

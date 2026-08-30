@@ -1,8 +1,8 @@
 class SoxNg < Formula
   desc "Sound eXchange NG"
   homepage "https://codeberg.org/sox_ng/sox_ng"
-  url "https://codeberg.org/sox_ng/sox_ng/releases/download/sox_ng-14.8.0.1/sox_ng-14.8.0.1.tar.gz"
-  sha256 "7698a1b2699499b0b38fa95a15bb56c68928d97b144bce03b7ecb76fe9c46698"
+  url "https://codeberg.org/sox_ng/sox_ng/releases/download/sox_ng-14.8.1/sox_ng-14.8.1.tar.gz"
+  sha256 "1dedd9ad574abc576bbda06743867fb778accf98a1eacde1a42913acbf072448"
   license "GPL-2.0-only"
   head "https://codeberg.org/sox_ng/sox_ng.git", branch: "main"
 
@@ -12,12 +12,11 @@ class SoxNg < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "4a4d52ed310f5ddb396d2a235e15cefe0e5269ed00ef34c084c9bfe563d9e535"
-    sha256 cellar: :any,                 arm64_sequoia: "e5bb6fa3a3aa38caca455bc76e16a50287b2ffe5746421a53bd46966517e4159"
-    sha256 cellar: :any,                 arm64_sonoma:  "d4eaa4c4cbd2d3e47376c99c2e4b68907a4a6e0a2e9de04c8a3754859865ec13"
-    sha256 cellar: :any,                 sonoma:        "659c665a53e183f33a82d83ec1e23f3364eea2ee291033538ea77e4f3a604f4e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0ed8a2459e0acfc8f49bb6d5518bf78eeb73e8aa7cf843160a19657335bb7dba"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "775fc2fe7dcbd4f8df3494c625525f934202d800c3e94b7943a349519fd629ec"
+    sha256 cellar: :any, arm64_tahoe:   "a9481f718eb294147d57280662c9f696d8a73b560be4cd3ba6ee4de7d9114756"
+    sha256 cellar: :any, arm64_sequoia: "b974f68f8218d5d255667ad2a34be8c9d3a8558b0b01c2555956cb51dbed6806"
+    sha256 cellar: :any, arm64_sonoma:  "7ee9392ed3a945b9c5308a35a0e6d0ce306d30adbe22c5b3da9432fcdd5f2328"
+    sha256 cellar: :any, arm64_linux:   "b8b7b8e6ab3cee3be0988ac9136951e1a36791ca23c5b8a13f898a251c9ecb67"
+    sha256 cellar: :any, x86_64_linux:  "b10d761996d46680e7817a5f66101d8b90dfec39c07aa18d1637cc3ed0dc1e67"
   end
 
   depends_on "pkgconf" => :build

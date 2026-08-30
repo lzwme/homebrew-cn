@@ -16,7 +16,6 @@ class Arss < Formula
     sha256 cellar: :any,                 ventura:        "1be5f2c7ce8ee18a767065c0ed7b3783de17a36dae8eaf73f838537ece38fb71"
     sha256 cellar: :any,                 monterey:       "22747b60848d59c6989707efb0373305af7376de07a4e8958426ddff11ff6bc5"
     sha256 cellar: :any,                 big_sur:        "153a648ed0bdec6e1f0abbdbefff2815b793bf79c4967c803cf55a512228dcfa"
-    sha256 cellar: :any,                 catalina:       "d84220ffc41768520239228b13a8466493682fa30a670163041caa0b06f449a2"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "3e094f664eda5e0dabb7269b9a6129d97028bf76e10a6f0d3966479fee9cc79f"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "c5c0a1ade41f7ff063620d37b071556cd71382e9728f160c24393809f89c0f80"
   end

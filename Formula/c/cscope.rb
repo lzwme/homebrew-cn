@@ -21,7 +21,6 @@ class Cscope < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "2de1fac38c80a9b6643ebaaf7990928e7ea2764c435489d8fda616e661620d03"
     sha256 cellar: :any_skip_relocation, monterey:       "0baacd94730059e4a03e8980f1332ca38ed48f98dc70950103a71f4435347f2e"
     sha256 cellar: :any_skip_relocation, big_sur:        "41553bf0bbc2ce6e41712381fcbc2d86eca0dd4618d138ca70037df8a1bf4e01"
-    sha256 cellar: :any_skip_relocation, catalina:       "212b5f945f2a2eae2d07893bb08c490098f4f3e58ec8865499bec550882de29e"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "57d5c5b934b8aa1bca7f20239d413f6522e192b107cd8f0ecabb75d2f3b390fb"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "aed0460f7dc9a9355d4fb019760284424d56012224f12df098c8fe9912c904c2"
   end

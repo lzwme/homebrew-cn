@@ -16,7 +16,6 @@ class Entityx < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "32c94a4745f4b3458b8e3723c5c9bd26fc77266546bd9c8dd892c65115ff396f"
     sha256 cellar: :any_skip_relocation, monterey:       "72a593af59ba34b81679888bd0adb7adcfa32ea0d3078310a79f10f21a8cce1e"
     sha256 cellar: :any_skip_relocation, big_sur:        "0903e4a1357f44fa18f23b7d7223757e8047f28b8ce4d3e83f6334ea5ade720c"
-    sha256 cellar: :any_skip_relocation, catalina:       "8e0e5b8ed56eaca89dadc59a78ede051c1f6eded8b7a9996fe33393e4d14bd0e"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "d74139c6a3a5340831984319a46e10d0276b604a675d38c1cace40cd0329966a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "9ad5714ba0a1eb7c6929c02e05359f7b2f81a0389c867a1c1a98b07d1a0a14af"
   end

@@ -26,7 +26,6 @@ class Liblzf < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "0dbb4a635931edee6c07fb09133f60a9a6fda37130a066d0e9ca25cf69e91e64"
     sha256 cellar: :any_skip_relocation, monterey:       "c0a3c8f9311082eb797c848798f98da622a9ec648669298090fa7ef5cdec6b52"
     sha256 cellar: :any_skip_relocation, big_sur:        "1eb80ac962ecb5b94ba1ed3dc86d2baa8a13f231d113a77428879e0a8423ebaf"
-    sha256 cellar: :any_skip_relocation, catalina:       "9aa8a1495947fe1fd6249abe33de7245f9ae4a58dcf900276253b013f7f148e8"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "900c8c8e3d11ae06648dc7e433f341b7e9b4bfcc8489c93c20d993855495078d"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "04201793eebd3ab8a64694c1422e4d5801be13fd26d1ed257b6c31d4a231124c"
   end

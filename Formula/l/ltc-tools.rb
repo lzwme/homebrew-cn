@@ -17,7 +17,6 @@ class LtcTools < Formula
     sha256 cellar: :any,                 ventura:        "c118c95af01d6294a78e22dcbc2ea901ce5c7bf52a62912895c2ed3c344df105"
     sha256 cellar: :any,                 monterey:       "84e20bc4899a76f661ff8bde1ec354a3d32f6f53b4aa434782095868971a2cc7"
     sha256 cellar: :any,                 big_sur:        "b31fe1140d71357035fd130e73c286d8892cda1103fccd96971205bd860cd9a7"
-    sha256 cellar: :any,                 catalina:       "bcd064f64a21f101f6599646306ba65c40ce7ec44fd7b6e2d8f29b4fefeebcc9"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "5cf1b3ebc4b537434144fb06a19917cf47f63f368a6376ad0c78bcc1f42c6695"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "f067afb9aec069b45d0c8025574d673d701140d4262ba2530337a868c016bd81"
   end

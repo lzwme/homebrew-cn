@@ -20,7 +20,6 @@ class Unifdef < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "dc78ddeb1a4e7a7501b778360e664f0ddb7a66945b5ee66141a8292f072fbce5"
     sha256 cellar: :any_skip_relocation, monterey:       "a4f1210ad5c6a8b1c4673aec0339343492ac84eadec4c16a4ebf259e982604af"
     sha256 cellar: :any_skip_relocation, big_sur:        "aa7b0d6df5dfa2fbaa5886881def3b22b1bb55917f3734f7aede03816c257b28"
-    sha256 cellar: :any_skip_relocation, catalina:       "ae908aa0c1845ce059576df3922808db790fb0ea91109f89aa930c8da7a68904"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "ea9e4af82e2fb61fc1cc1ebeac02116bd1cf6a62d2d3e6fd3f4aabaac946487f"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "cb229f3727c18db662a53be7406a73ed233acd172bb161e53af606baa4de016b"
   end

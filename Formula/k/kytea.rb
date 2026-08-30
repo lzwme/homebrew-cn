@@ -48,7 +48,6 @@ class Kytea < Formula
     sha256 ventura:        "0ec4d5bde1d09dd1b51f2cd047b8e586b1aebadc0a8d418025f778ef68ce1c72"
     sha256 monterey:       "98ff434e2b5ebf881d6090accee434dd9fb6912319cd4113b34fbd59fead6e78"
     sha256 big_sur:        "2efc4bc6d1c77859c5012819331672e30b9e8c4491c696aac132e8356e08b483"
-    sha256 catalina:       "927aac3d562cc2977f84670c850ab262a05a010bfe7e7f16aa0eb7d9532eae7b"
     sha256 arm64_linux:    "17f10a2914f947e7ddb494eaae7e76d3d6e36887db809a894f9d824776a47aa3"
     sha256 x86_64_linux:   "91e9f57d0c837e62f789d7189349120d1925eca4fa05479072f89b4f617c2ffd"
   end

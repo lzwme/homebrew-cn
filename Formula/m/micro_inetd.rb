@@ -17,7 +17,6 @@ class MicroInetd < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "bae8f59efd2b2847b2b11456aef8219b50a3c60c9217b49219a6370d1bb69030"
     sha256 cellar: :any_skip_relocation, monterey:       "54355e595c1f260dae362dcea2dad1bd9a382fa37d787ccb9af801d34564f3a2"
     sha256 cellar: :any_skip_relocation, big_sur:        "61bb8fda68189596e32e2aa86e986b32779d61337498ca2145421b7dce09e40d"
-    sha256 cellar: :any_skip_relocation, catalina:       "04b4028a1fab40575b422ea45b44317dc69170f85bf4fa07b4eb7d2f8df165ee"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "db73408b4adcb3c29579c532ad06896c258f1dbbf13057279df8b2a11e78cc3b"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "5c12f725a115ea5becccc0b125b34d285af5b5fc2be361cec10ba745ba8b238c"
   end

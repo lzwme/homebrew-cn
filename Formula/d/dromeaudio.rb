@@ -18,7 +18,6 @@ class Dromeaudio < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "46904c7b701735b3e0fe766e57b7629ce71647ead11195bb73776cd1df29a80d"
     sha256 cellar: :any_skip_relocation, monterey:       "2f3eb4f1d29eb1644181305eae8444526d38f6a557c4c236407dacf7d91a9fcd"
     sha256 cellar: :any_skip_relocation, big_sur:        "ef9ce724d04545c565e1e46f06560128f54c8fd164fdc3d3abca18a4d17ad9b6"
-    sha256 cellar: :any_skip_relocation, catalina:       "5199ecfbb8454f1560685c537b1fbaf1b301b39ad8ea825a9f846cc9f3530f30"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "e5db31bd07590274f76bfd1b145f31f5578834a96d9c093448860b27ac2d0a24"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "9f070aab40ff55d1bc82cae306c222e05770d9b5cd22fdace7fbb7d04ea7aa6f"
   end

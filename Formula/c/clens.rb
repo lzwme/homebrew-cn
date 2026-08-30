@@ -24,7 +24,6 @@ class Clens < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "930fc11da5b772ab93d361d1172b0cf4c2b0abc44c2f9acdeb7f37b5f6be17f5"
     sha256 cellar: :any_skip_relocation, monterey:       "4e55d83091142894a16911836b98bd00e4188720709eb4c5fdc8203442d57097"
     sha256 cellar: :any_skip_relocation, big_sur:        "602ace92e6b121b004a43a851209b95b0769bc84d9ea0c7725f29f3d2531324f"
-    sha256 cellar: :any_skip_relocation, catalina:       "fef1ad76413e8e15683a4066276ed7f37f821edcbda4e6d648bd60e09a33a30d"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "30170cc04b93089a889764fdb8ffffe69b24b762fcfdf51dc2419e6ff51f5d27"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "4b5d5f5cba941676c726e09e2b14c9069dfebf9db9d6cb2b75fc321a2481aedf"
   end

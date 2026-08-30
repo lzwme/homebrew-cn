@@ -16,7 +16,6 @@ class Bsdsfv < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "6f7366afb6194e3d5feca85e754ab5e0b3a2d02c5c56419aa2d9d7372a85afee"
     sha256 cellar: :any_skip_relocation, monterey:       "5e790ea081550e93842400272cd2e50ef34abf7d24bd04d258bfb9f4554a3ca4"
     sha256 cellar: :any_skip_relocation, big_sur:        "3fe4cd9e74eb5d55bf3ecc10a675600ade3b4f0d56b94d2bcfd9d71e91cae302"
-    sha256 cellar: :any_skip_relocation, catalina:       "3abfd33001c44edc6b03905559f8565f923001aa1ccc3a3247ebd073d226ccaa"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "19ee5c984fc2bfc91735e2e53532b59f8acd4e8831bab55c215844b99f17beee"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "ffa21308fb20dc93bbe80e8735590e035e0810e858a088f50c8d1ce1cfee041d"
   end

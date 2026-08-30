@@ -18,7 +18,6 @@ class Jsonpp < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "113145c638ca1c14c22b8de4161f040df61b8502893b9849f4f84ec4ca54500f"
     sha256 cellar: :any_skip_relocation, monterey:       "e884870ae68df0759df35eaeaee0dddeff2f4746c709201c88efaf285dd9a45c"
     sha256 cellar: :any_skip_relocation, big_sur:        "3711ce93b4d3874fbfe7967755b587f5787534dbdc12ab6f36eea6a41b54b712"
-    sha256 cellar: :any_skip_relocation, catalina:       "2b84ea4f8d4a4177064c1fbf024876439175c4e8c6576b33f93399c72afe3a5a"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "064faa34fd4233b2a5f5cde23b7fb616c52fda23154de729e38cdd71a04bdb13"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "9ce50b5e577a2ed5e00005a6e629b68715d30bbe5a5ea86fb68bcf7702e436eb"
   end

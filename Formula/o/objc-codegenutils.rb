@@ -17,7 +17,6 @@ class ObjcCodegenutils < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "6e60602b0de8383fe7fceca41a4f13dc5bb65c27b1fdd84586e1e9c25bbffb52"
     sha256 cellar: :any_skip_relocation, monterey:       "508fba7003bf8b7e348c96b131558f19bde0a9f08a6096b79a733e1a4d906386"
     sha256 cellar: :any_skip_relocation, big_sur:        "5bd0a4e91d15de385bce1d3ab0ceefefe56d69d461f763373933e64e2d7db992"
-    sha256 cellar: :any_skip_relocation, catalina:       "24745ae53d47e15598835ee0538c3f121c48b31b21902b1fd3fab0a8c9886543"
   end
 
   depends_on xcode: :build

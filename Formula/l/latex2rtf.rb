@@ -21,7 +21,6 @@ class Latex2rtf < Formula
     sha256 ventura:        "b4a170771dcabf60d657f8f9ac69b7bfebcc9986dcbd226d4a99909fe66bf29d"
     sha256 monterey:       "fb208afd2ae6bbb1cf5b9edfc255c46224cfdce8617220a5ce0a14686f5a503b"
     sha256 big_sur:        "fedf28c8cd7113f639a32776b9b55bbbae3ccfa7aa15e142d08004d39cf56d23"
-    sha256 catalina:       "a4f536a8f9a6001fe955727e7d9473b5294daf416b422dab70b489067dad35f3"
     sha256 arm64_linux:    "8b1a51c757de5ad53a56a566565e86c7e51311927b111d16dcdf9bf15ff04e9c"
     sha256 x86_64_linux:   "4614b529d342e3e532c2c36fc3b6090dd889261c05ba3ea21847a276a063e4c5"
   end

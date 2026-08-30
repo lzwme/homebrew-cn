@@ -21,7 +21,6 @@ class Macosvpn < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "4bef08a42e37828e824db81873a433b47843e64ffeaba297fd0a190d9bbe2301"
     sha256 cellar: :any_skip_relocation, monterey:       "e0a039a15c681f44320e6cefc8d2b87f035ec25aabb5919adbc65656889d95c0"
     sha256 cellar: :any_skip_relocation, big_sur:        "8a85ae6d100ebe8ce596b3c430784083c4bfec7b833c8abb630b5838faaec8b9"
-    sha256 cellar: :any_skip_relocation, catalina:       "a23588080999163bfe86a43034b4caa6bfc09c5ab6dde3a4cf09ba6c6d5c1209"
   end
 
   depends_on xcode: ["11.1", :build]

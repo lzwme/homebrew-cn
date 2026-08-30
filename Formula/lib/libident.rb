@@ -22,7 +22,6 @@ class Libident < Formula
     sha256 cellar: :any,                 ventura:        "6bbf7d591e74f0698dba58c353bb1d5d7029ef68192487f4f53d1a4be538f899"
     sha256 cellar: :any,                 monterey:       "31ddce221ecaa52ab7d4cc10ccac2421043782f029a1a6643bcc886a7c1b922e"
     sha256 cellar: :any,                 big_sur:        "50e093a609acac219853ba89a884408bebcddd23b7ae23faad9476618649cbe7"
-    sha256 cellar: :any,                 catalina:       "4482a61d30a1ac68265e91eafb45efdc734881d0a032e4b483707545a4ce98e5"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "9696db63c01fd542845885f59973bf8b7628f34e7d654248f474e805ae91c182"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "f80a93f7750a66e987f21af7db62ba4f72c2c277036049915d3c8e6a8b044cf2"
   end

@@ -18,7 +18,6 @@ class Httpry < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "20c4af64c9155666c8c0c777c065aef44bb29e35c339e280d3e834b5759cd026"
     sha256 cellar: :any_skip_relocation, monterey:       "31a42f2ee46af90cf63b5da4cf20066a8a35cb4f977794e94e1179bd2df01169"
     sha256 cellar: :any_skip_relocation, big_sur:        "4be4a4e9939e75e8eb4854df6003265f986ada5b2d08ba96fbaf355323f184f2"
-    sha256 cellar: :any_skip_relocation, catalina:       "322f399002eec5d9116942db65d231d7eed5bb1b46e9959cdb48c6eb10f41339"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "a4bf3a6354608e592030d226229360572cd999dc311d46a2a11908736fec6cf3"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "362c2d3249eec72e7baebdde1a8c0a2e6a2b005e70b516733b96fa01e2aaf55e"
   end

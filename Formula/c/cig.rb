@@ -18,7 +18,6 @@ class Cig < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "340790bf6ab897640e1a1f350d8c106d3bc2835ad71cec69b7a717894749cc35"
     sha256 cellar: :any_skip_relocation, monterey:       "fbca3e3336ec9a9848091d2b1845a48dc915ae798da5e1d54fe6aa4ee2261da6"
     sha256 cellar: :any_skip_relocation, big_sur:        "c41c70e517158f1a31bb4b29a6fa01b12570001353b8800d55aadd4ddc99080e"
-    sha256 cellar: :any_skip_relocation, catalina:       "3ccce3238efd259041dbb0f0427d5ac06cc4dfafdfbfd336ddd0023e02e9dd7d"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "be676ae224ae098307465166f39eea0d6bcefb82ac48d6c86b76d79e87a4847b"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "3cda091fe20f715097967b89ee16f611d3f26faac9eb4d3f7861ec5d9cb91201"
   end

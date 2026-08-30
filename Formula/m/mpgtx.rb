@@ -21,7 +21,6 @@ class Mpgtx < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "50b17722b66bcdb43ba33472f34955e71625817238660626be12a2407ba0c9ae"
     sha256 cellar: :any_skip_relocation, monterey:       "d74d7e1c7a278e72e9b98afed71f019b51000784bd385450f88a4d879d1fff7d"
     sha256 cellar: :any_skip_relocation, big_sur:        "ee222d4e5a24b91c13ae86e2e66291adc636d859f4b4c9cd7ba0944ffb629278"
-    sha256 cellar: :any_skip_relocation, catalina:       "116812d4c0401a6ceeae3bd8bd0bc3f4870c0cac7f9ec166ceb97f5279c10d32"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "c9c4e3ed17bf4c1669dfd9d61a3064ebe5e956325678c9820a7b840f6a093473"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "133e123b7b8f9956959847378b68fc0c68f1e591209bb060ab7c7d024426f343"
   end

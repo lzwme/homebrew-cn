@@ -17,7 +17,6 @@ class Vaulted < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "1d176247a329b9986e3d85dc57cc01f1296268c647b7c60b70219adb25847735"
     sha256 cellar: :any_skip_relocation, monterey:       "bd52afb1a8d91c97a398e247f115fd65fdb77635a8148059bacafc2473ec6fbc"
     sha256 cellar: :any_skip_relocation, big_sur:        "6d28ce78d9de727b84a069328160ec719db14789645e6088d67eeab462085722"
-    sha256 cellar: :any_skip_relocation, catalina:       "6e28a27d6d1c24b2cd7d3ca0ff147a8309425dcd1d405861378bd40c191af5d2"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "811cae4f0e603c7c8e604481168308176c1120bf57e45ea80a1145e76558a2b0"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "3acf911a97ce6aa9aacff3d0e39c70d497e2b2b808a5ebe620301259035988c3"
   end

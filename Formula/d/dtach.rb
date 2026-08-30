@@ -16,7 +16,6 @@ class Dtach < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "8197e8606d40305873646270d38aae3973190340c46d0e47c66a38cc91bc1824"
     sha256 cellar: :any_skip_relocation, monterey:       "2a7c1c3b1d3ed2f0461ff94f0ec8574b4b2baf68e83048cf1f7b26c31ca76826"
     sha256 cellar: :any_skip_relocation, big_sur:        "2037a41545a48ffd293c55deb33a675a6d304df1f25c46e6f9b85969e0968d78"
-    sha256 cellar: :any_skip_relocation, catalina:       "67d1aed450f459a8883148d7ce9bf89cd98025232ae6ec061381297e54276e8c"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "20f84e730ed5ca882c83d0fbc52a6a75d4c42a5b31c35505d17b58a8d8b2675c"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "d7e64d6a2ccdcb1bf8c9de85f9542d228b2f12ca97807045c24d42d3fb2cf047"
   end

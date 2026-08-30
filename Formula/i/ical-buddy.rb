@@ -18,7 +18,6 @@ class IcalBuddy < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "fa2359d74a4873041ef1774db5882be7468a4c056be5aca64ad01e3eaef604ff"
     sha256 cellar: :any_skip_relocation, monterey:       "7d0a5b87da06e38709f11885b3410c463260d753093f7525c8726b110b93aef8"
     sha256 cellar: :any_skip_relocation, big_sur:        "64163480c791a44e507091e8b73175f71aa3ce544d42fb1be7cc4f21f028fa55"
-    sha256 cellar: :any_skip_relocation, catalina:       "64e1fd969d08e19aaf8a42d3fa5cb9d1a6f9eff77ef993d4e2d68eeed3e55230"
   end
 
   depends_on :macos

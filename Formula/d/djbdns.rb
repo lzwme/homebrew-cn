@@ -22,7 +22,6 @@ class Djbdns < Formula
     sha256 ventura:        "5acb70859d01c8bc6e7ca3aaecfee0ff9a2791bbd3bcebf7de1a4937c3e18878"
     sha256 monterey:       "e31e528e17b73be225ea467a43d2e1c997bfac8a9adb723d7e3c48595f13ca5c"
     sha256 big_sur:        "1231622a14007c9ec76ef137a5e1a42a30ce4192b0fbba0cf768f981090059ce"
-    sha256 catalina:       "5b473b664d7370f2e838bd496555841e20a8ef13aaeee6b312fc6501911b7fe0"
     sha256 arm64_linux:    "064d2f4f4d5fb2c18488c5dc23d4803da0bba3ca4b4be16de6dc736c8e08bf1b"
     sha256 x86_64_linux:   "02f2234288612b979b6e5947072123ee049558864042839f5c929300d0fbb96f"
   end

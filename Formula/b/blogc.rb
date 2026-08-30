@@ -17,7 +17,6 @@ class Blogc < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "947fede34167be2c54235e21108c6bc1cf4457d1fcf6416f917a2b1aec6a5860"
     sha256 cellar: :any_skip_relocation, monterey:       "cebc47838829ba79f58cf14561233d6af355ea261206969fcb63abfe24bbf266"
     sha256 cellar: :any_skip_relocation, big_sur:        "ff83c11472e9295479779c6e27d5ae59efb77bdb216ba4d4efb30ae88f847981"
-    sha256 cellar: :any_skip_relocation, catalina:       "16c4393bd90b76d031af46bcd959705ef627e49823912c543f5a76683b5b48e2"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "dbf177c5bfece6942cd368cee01aec2fa762f4ecc02178441d3f35d26974c03b"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "5188455011d94f56149adb535c9a159e925eba66e28ab4362639ebb3e72ba5ba"
   end

@@ -16,7 +16,6 @@ class SpdxSbomGenerator < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "4090620fb4c0f354d773f76323a89052c356d46fd45f311204cc6c3e15644036"
     sha256 cellar: :any_skip_relocation, monterey:       "af8c523abaa929f3616245751392b6fe9ba998e0f88e798e831d66def859fd88"
     sha256 cellar: :any_skip_relocation, big_sur:        "3f116d9eb974cd064162a5c55c0143b8b2bf2cb2534b76a27eaedfcef6031da6"
-    sha256 cellar: :any_skip_relocation, catalina:       "f733c9630d8ad36f7ded3b2f9a10267251052625fb63e21fb3acc00f7863f919"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "d00ff724f5f72911dd7c49600f95a556d18c4654588d6ae4a0a79278431ce29d"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "fd798a009fd918ecc7ebc002b181fc87aa382722f07d6ffdc5b2ab0481ea3951"
   end

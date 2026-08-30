@@ -26,7 +26,6 @@ class Iftop < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "fc562e7e272bf086b60ecc29385410ddd173d3814f500c6d880a6c4c0afa8a56"
     sha256 cellar: :any_skip_relocation, monterey:       "e68a2edd94cef76e72ce249aca7ba6b6eed43e839fae0c55efcbc90c3f88758a"
     sha256 cellar: :any_skip_relocation, big_sur:        "fd0f1539789e93b6b2149414831853597471ffcdf92759de42470704b4aaed57"
-    sha256 cellar: :any_skip_relocation, catalina:       "8f40152f928f5f63f777b7dd1780951d451defffb30517f657b1850448a2f5ab"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "74167e8ae57c728a312c3008a6039f7ef440bc59e0cd6f7a80db27a244697133"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "eef5cd5b14c8b7b2e7964b39a3833a2cbe3253d93905157f92632c78555a8190"
   end

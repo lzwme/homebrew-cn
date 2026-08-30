@@ -21,7 +21,6 @@ class Dsh < Formula
     sha256 ventura:        "54000d6f2a6da19c9a7acefd4b5d59b434deb9adf5ba957e98116032b11a06d8"
     sha256 monterey:       "2fba1c82686d6522582b09a4d7048c8685a56b10ef355c3a2895f3d7a4ba1fbf"
     sha256 big_sur:        "8179e3e553da0ac7b40a6b69c0cd47283ce7ab80f399e0f84b57210fa8b6784b"
-    sha256 catalina:       "96b9dda875dac2f33db11bd912a9fd1babac7c2baa76fc0036386442dafaabd2"
     sha256 arm64_linux:    "07d63285b278ccbbedc618fc2722652b7bde0b671c25aa98cb1e1a34cbe3506e"
     sha256 x86_64_linux:   "b0489652a4291212811da8fdc746690777acbfaafd90f0dfd050fb4699e57734"
   end

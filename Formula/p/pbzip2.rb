@@ -16,7 +16,6 @@ class Pbzip2 < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "b4a7a29f559ab1ccc53aae75504fe277aa2037887991f8b622e9db3ad313ba8e"
     sha256 cellar: :any_skip_relocation, monterey:       "740e3b3cee57142c2fe385795782f86bbfd02e96cfc6c5a8f2d63da647ffbaec"
     sha256 cellar: :any_skip_relocation, big_sur:        "ea9f81b7830949f9e449c5277807f931e3041a63071bf0b66a9c254cbff2e965"
-    sha256 cellar: :any_skip_relocation, catalina:       "57c1c1065cd29ee37187b87705adfb73b84d114fc46408d4690024f3a29ac837"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "c63518fb5d60d394bcc30e58d8af968509e373d1b658fdcc0a42b48368fd4b1d"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "33c30ab657b712607e295bb648c8d7ce7c5590ec916aef948e2f38dc25c51551"
   end

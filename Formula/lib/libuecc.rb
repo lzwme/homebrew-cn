@@ -17,7 +17,6 @@ class Libuecc < Formula
     sha256 cellar: :any,                 ventura:        "59b7963752350f8eeb7b2c57330094648df6089bc0b4dd5b9b5a4515b1cfaf5e"
     sha256 cellar: :any,                 monterey:       "d23f6c3cf34a281bc6e206b3f10c52041f51d856fab87a28071afd10a06e3915"
     sha256 cellar: :any,                 big_sur:        "844327a3e5e6bed43c2ed9a36e3b7f6c8c871803fb5968f34ee6aa667fc345b8"
-    sha256 cellar: :any,                 catalina:       "89acc7a04f910882b89d9e032a45e8c27dc98257d6d4e6b28f6c6a26c8c369ae"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "0856cd70a483837f05bc33484a8c23104e5e6bdd97b2bc04f30a837cadbe2e00"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "4f4ead35052be0dce1efbee86333ca2bfb632cc3fb1bb00c8c836199f4f7d90c"
   end
