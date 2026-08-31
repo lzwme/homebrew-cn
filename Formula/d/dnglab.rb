@@ -1,17 +1,16 @@
 class Dnglab < Formula
   desc "Camera RAW to DNG file format converter"
   homepage "https://github.com/dnglab/dnglab"
-  url "https://ghfast.top/https://github.com/dnglab/dnglab/archive/refs/tags/v0.7.2.tar.gz"
-  sha256 "c363a5ff8c058dd6d2ffe22a2ece986fa6ad146043f0211d9b77d789083901ce"
+  url "https://ghfast.top/https://github.com/dnglab/dnglab/archive/refs/tags/v0.8.0.tar.gz"
+  sha256 "432b8ac8f553289e06c0d78b37ae6f9546e80b736ef879f2ee66b66345590c4d"
   license "LGPL-2.1-only"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fe9618a52eeffbc84cecafa06705a9d3c806f99294f612a311d66d534a0cd404"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ec5bd1c32307bb2694b4f848c01e41cd50bb911498aece379a0a69fe9d1ef7c1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "723c2f8a2289e4b27e572b7500b9081535d1c15b36f94c219b53668e618c0793"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e13ffba5f8e11e9e23259e3f43331dee3e0ce42d9e8d77af348396ad4126b406"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f229a7e6fba3acacbbc9369c03942d1a8442753b3cead012824763874e12c7ef"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c5aa5198b9e98a48afaec32d4eda37a4194815bb5dd198300b55901214a92d4c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "27d958d8246856fb1a25e3dd521762bcbf1b87822f790f4a6cc238b23a3ab8dd"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8ce158b689cc93fb85322d9e0df0afa2f224e0588ffa510856bdbe4d830000b5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "13168fe0f37d3d963270e65af52567427f0db526df6c42b95929eea9b2eb01fa"
+    sha256 cellar: :any,                 arm64_linux:   "670fb5a9c5299075b1c181006e827fb6208c2a5eb7ab24c98e2e4dc73caa7e1a"
+    sha256 cellar: :any,                 x86_64_linux:  "2b0ff147fffa91adf12ba1b1e7ba9ac65c203a27837db384380546ee9ee83563"
   end
 
   depends_on "rust" => :build

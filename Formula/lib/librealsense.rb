@@ -1,8 +1,8 @@
 class Librealsense < Formula
   desc "Intel RealSense D400 series and SR300 capture"
   homepage "https://github.com/realsenseai/librealsense"
-  url "https://ghfast.top/https://github.com/realsenseai/librealsense/archive/refs/tags/v2.58.3.tar.gz"
-  sha256 "6a4c59180950bd9ced58a3dfc4ded586ed22dfc9c418684e7fc8c241b9aaac98"
+  url "https://ghfast.top/https://github.com/realsenseai/librealsense/archive/refs/tags/v2.58.4.tar.gz"
+  sha256 "3d07cafd0fc5c1b1803e1f6418cf7375a387593e873d3897015b8ec94be20e74"
   license "Apache-2.0"
   compatibility_version 1
   head "https://github.com/realsenseai/librealsense.git", branch: "master"
@@ -13,12 +13,11 @@ class Librealsense < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "250ac1ad17d86f20936fa2aee03035548c8829a319c0df2d87f45306ca8af021"
-    sha256 cellar: :any, arm64_sequoia: "376f074eb8939e4411c5a417957fca18af19e3a0269bfeb525725134b2e2a2e2"
-    sha256 cellar: :any, arm64_sonoma:  "9c9e383b31f46f34bcf61dd8e1554883ecf549a258618c084aa9e9c8a613eb7b"
-    sha256 cellar: :any, sonoma:        "49572be2ea0f9f267c3a80f68b4eba3b41e415c3b053ba3488ea86ca499f14a4"
-    sha256 cellar: :any, arm64_linux:   "437a29ad820c61db8f01661d4612343c8e480815a23f4fbe2f41ce75fed82615"
-    sha256 cellar: :any, x86_64_linux:  "0e7e4ee20a15c40669fcabe70fb5eacc1aac703f4725f96b659251cfff12f290"
+    sha256 cellar: :any, arm64_tahoe:   "4f4d32f8c1abceec20572815431c5eb47ec54609b3a1f0c20b4e82384af16155"
+    sha256 cellar: :any, arm64_sequoia: "aa3272699b5bab7785d425e6be9adabf752d694c896afa236af68fb27272e06d"
+    sha256 cellar: :any, arm64_sonoma:  "6951671a63b605bc77dbf6919caed8c54d50fc025433406f1235dd4bc0fb9917"
+    sha256 cellar: :any, arm64_linux:   "915a2f2c6778431e74394e04f67435c933b987101ffadb46fe556b7a6f95d924"
+    sha256 cellar: :any, x86_64_linux:  "4082f7bc9ad49094ece3e3fef2fd023f5b1f296ec32f7943a809ee4e8c8ba29b"
   end
 
   depends_on "cmake" => :build

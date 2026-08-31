@@ -1,20 +1,17 @@
 class Boxes < Formula
   desc "Draw boxes around text"
   homepage "https://boxes.thomasjensen.com/"
-  url "https://ghfast.top/https://github.com/ascii-boxes/boxes/archive/refs/tags/v2.3.1.tar.gz"
-  sha256 "0834e54c0d5293950412729cabf16ada3076a804eacba8f1aacc5381dfe3a96a"
+  url "https://ghfast.top/https://github.com/ascii-boxes/boxes/archive/refs/tags/v2.3.2.tar.gz"
+  sha256 "9318ef65f555ee3d893176349a4219f1f1260ce24d4100aeb667a546f61fc183"
   license "GPL-3.0-only"
   head "https://github.com/ascii-boxes/boxes.git", branch: "master"
 
   bottle do
-    sha256 arm64_tahoe:   "6ebfa16105de5a5f1a0d46b7742afb09b97c6bcbe59d98c80bdf6e7057350917"
-    sha256 arm64_sequoia: "947c884cec8f4ae8248bff97af51e7d2d3bacce6ea7cde86831e0895c67471be"
-    sha256 arm64_sonoma:  "503df5e97899ffc0a24982b46f265a82a7c4f138e656273b4eb2ed4752881b05"
-    sha256 arm64_ventura: "d83c635c1a99655fcda01132851aaa92d9ed54e7d331c9a3e2f32c072a7aa122"
-    sha256 sonoma:        "00df90a0d846b02d58d16302daba7d9949d3c8cf4db7fe9bdd10f8c32b1e5679"
-    sha256 ventura:       "a8c14372ddb54552b296380f436b49ba676ff7ef6d275513c36aadd197435aa9"
-    sha256 arm64_linux:   "3934bb6ecfb413871a8311f1884191f0524fe2c1aed1992242ba31dae70a3dd2"
-    sha256 x86_64_linux:  "dddb84f6366ff935cf5f1324d3b93d3a7f0e8fc6349d71aa4149a7241e9986c7"
+    sha256 arm64_tahoe:   "88975ffc5b34525ca171ba818b658294644753139db96d716e548edb37ed390c"
+    sha256 arm64_sequoia: "27a303dbf09830d2e13e1444dd7743b2995da3c5e76313b2277a24a03baa5181"
+    sha256 arm64_sonoma:  "d756f584338d814cab0decf5970c1ad60cc74b00fd5ba929103b2204e3795a9b"
+    sha256 arm64_linux:   "4de86a5db7e1436cc42bbc01dc04a474ff35fcad73d9eec8888e7aaa1360ccb8"
+    sha256 x86_64_linux:  "17a2a560ecf77502e226c592de2adca834894048f9c4b0d80213f2354259187d"
   end
 
   depends_on "bison" => :build

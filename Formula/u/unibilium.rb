@@ -1,19 +1,16 @@
 class Unibilium < Formula
   desc "Very basic terminfo library"
   homepage "https://github.com/neovim/unibilium"
-  url "https://ghfast.top/https://github.com/neovim/unibilium/archive/refs/tags/v2.1.2.tar.gz"
-  sha256 "370ecb07fbbc20d91d1b350c55f1c806b06bf86797e164081ccc977fc9b3af7a"
+  url "https://ghfast.top/https://github.com/neovim/unibilium/archive/refs/tags/v2.1.4.tar.gz"
+  sha256 "7360907bcf79ba49f6fc4a504767ff86e93ab9018477026fcc70d5ab77e1f2c1"
   license "LGPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "a4e4de62f7bd54a11da5b031f9c831040eef3790b9e111f40332feaea4cdd682"
-    sha256 cellar: :any,                 arm64_sequoia: "c154ef3c2f532ebb1e73372a76230d144057983813624abbad7ca85d1ce3a2b8"
-    sha256 cellar: :any,                 arm64_sonoma:  "dbd59e13386ef0e756eac19424e54c8b3d30ae65eb4c7c7f7d102a290fd409f7"
-    sha256 cellar: :any,                 arm64_ventura: "db2c6a451a395ff30ceff7e6dbfd30f7b02343bf08e850ae9d0e20d6c9da42b1"
-    sha256 cellar: :any,                 sonoma:        "19a58769977601b8bbc47959efeefb4bad5cc938d7dcde0c083c8227d8296026"
-    sha256 cellar: :any,                 ventura:       "0fc063e7d4d00b0b93b8b71c5d57921afad9d09d21ddb044e4e6cc44cecfe9ba"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "239e6447b0d84b67599683cea8cadae7f8dd273e51426f819603f635577a4dc8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "62bf69d2c9fe15ec8c9fe12e690befc1d8971c05b7f3f2fb890e2f4740e88798"
+    sha256 cellar: :any, arm64_tahoe:   "236da70149748828b1b4835aceb4800717b8ec79d8f4735d0c0991b0f2a2c996"
+    sha256 cellar: :any, arm64_sequoia: "3eb5e89e95400ba3546eda862f14d5c7b71f9aa63996eb83e23968bd111a6dc5"
+    sha256 cellar: :any, arm64_sonoma:  "d58e6facf47d969962812663c6d0efb3af56a9e468382d9686097ebc8fd8ee59"
+    sha256 cellar: :any, arm64_linux:   "2770c02f95dc68f371de67e1bde2a1f64b0887af616eabf05ca9bc1f60eba0cd"
+    sha256 cellar: :any, x86_64_linux:  "0ac1d23859dbfc477b05b2a619f02503f378df3bc00b0882c010a7078e23bf30"
   end
 
   depends_on "autoconf" => :build

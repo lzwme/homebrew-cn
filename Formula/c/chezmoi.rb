@@ -1,8 +1,8 @@
 class Chezmoi < Formula
   desc "Manage your dotfiles across multiple diverse machines, securely"
   homepage "https://chezmoi.io/"
-  url "https://ghfast.top/https://github.com/twpayne/chezmoi/releases/download/v2.72.0/chezmoi-2.72.0.tar.gz"
-  sha256 "7c7450a69638494b6ff65625a431f867b2038cdab90b3104c6a862967f3bd288"
+  url "https://ghfast.top/https://github.com/twpayne/chezmoi/releases/download/v2.72.1/chezmoi-2.72.1.tar.gz"
+  sha256 "0bfd3b1acb8417d5f6310c5fdf2b8ca9d647493586bf9c1bdb69df32cf428671"
   license "MIT"
   head "https://github.com/twpayne/chezmoi.git", branch: "master"
 
@@ -14,12 +14,11 @@ class Chezmoi < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8b28d05dd89d441681c454d4b56432563a4e28e8c2ab291864cc266f3c48f8cc"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "440b01e036be96b6d1e256f843b41671029828d52a973e81754a9819d3c189e7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c6da56d1e51421b0f7aa59dfbc4c2f7aa4cf9837f977284fac4f3619a8fe5381"
-    sha256 cellar: :any_skip_relocation, sonoma:        "72b2a07bd19fd1b1b56138bf74ea20d4946603f3063fdf99892d59737257f188"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "33fbb2f2e6f54a11285e73b7b966b940bffd6b5e96150b09cc2912b1ca62e132"
-    sha256 cellar: :any,                 x86_64_linux:  "044259c7293c4d87e2ea757c37125f3d6f3e445d4a290e7590b5ffe7c704f101"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "656cc5a24608f016f50fb0271a0c0136c3a6da30a7547a5a02a25a0edd47fa68"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6ce1b189f8e08a4d84798f125d6213ca0b3ecc90a48500cbd7bc34a804d26d0f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "41873563af6e875a86f03e65bbd3dd8383b851baa133d8274c96fb086e36a139"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "345ec2df4c2a2591fedb3679745154a615fa6394805dc541994df6972904aeec"
+    sha256 cellar: :any,                 x86_64_linux:  "33b28af47c14eb424e361bd5e201a5ce9bdb2dfb001c92d242ab12ee179fc113"
   end
 
   depends_on "go" => :build

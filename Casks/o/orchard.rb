@@ -1,6 +1,6 @@
 cask "orchard" do
-  version "2.3.0"
-  sha256 "85f12a6c5881b5755c35a5ddc212390e496d95e9b1ef8a7fe06272d611319d8a"
+  version "2.3.3"
+  sha256 "05203bda1507d5070ba7528f0b4bbb8fd771fab9cd7612a8ca2d96578d348fd3"
 
   url "https://ghfast.top/https://github.com/andrew-waters/orchard/releases/download/v#{version}/Orchard-#{version}.dmg"
   name "Orchard"
@@ -12,6 +12,7 @@ cask "orchard" do
   app "Orchard.app"
 
   zap trash: [
+    "~/Library/Application Support/Orchard",
     "~/Library/Caches/container-compose.Orchard",
     "~/Library/Preferences/container-compose.Orchard.plist",
   ]

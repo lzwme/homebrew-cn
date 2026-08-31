@@ -1,8 +1,8 @@
 class Exiv2 < Formula
   desc "EXIF and IPTC metadata manipulation library and tools"
   homepage "https://exiv2.org/"
-  url "https://ghfast.top/https://github.com/Exiv2/exiv2/archive/refs/tags/v0.28.8.tar.gz"
-  sha256 "ea51b0609f58a9afa063b60daa1539948b62247721e154f4fff0ad3aec9f9756"
+  url "https://ghfast.top/https://github.com/Exiv2/exiv2/archive/refs/tags/v0.28.9.tar.gz"
+  sha256 "700b76b97695b2fab4ef8c79619c68ae57d09e0c130724791cafbd39e0eb4aef"
   license "GPL-2.0-or-later"
   compatibility_version 1
   head "https://github.com/Exiv2/exiv2.git", branch: "main"
@@ -13,12 +13,11 @@ class Exiv2 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "cb8893ed6691191316d9a49d154225d21de757100cba6ee4a4c7085ff42b4265"
-    sha256 cellar: :any,                 arm64_sequoia: "e3203c49dce1e55609cd9d5f4d31e6cdf884b705b087082a2a0d8f76b2e4db5b"
-    sha256 cellar: :any,                 arm64_sonoma:  "10cccfbeebc55c69140eb1d6649d7011696f349006ccaa05811d51c244067a8e"
-    sha256 cellar: :any,                 sonoma:        "f14d137e2dd33f271cfa714f180451f32eb6a7d3f9391b71ae8a374e96e538af"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "189b9457b0482eff75f5896e5494649796d576b6b723707360acd328b17b8ea6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dce70243b7ae3edfb4b097810add3ec263dbec8254bcb1210445728f4af4edd2"
+    sha256 cellar: :any, arm64_tahoe:   "1bf5ecd63412646a9969cb43b8422d0e5fb2f20518f4486b7f2e96d771ef084d"
+    sha256 cellar: :any, arm64_sequoia: "7c4b3ae3eff4a717473f7d465dacea8bfce5c6c4a947da4c1755c7ccaa633515"
+    sha256 cellar: :any, arm64_sonoma:  "4d61927c3d35cceef91f1be2812537a33464323900edea98cb8b1e171d4ef6f9"
+    sha256 cellar: :any, arm64_linux:   "70ea1747fa415034e2e6e91e3afb96ab0f15746bf92a106bec81006a909793cb"
+    sha256 cellar: :any, x86_64_linux:  "17da282eab8ac3881a9ba74b359593a0e11ade982bd0f8075c852f3c9bea4b3c"
   end
 
   depends_on "cmake" => :build

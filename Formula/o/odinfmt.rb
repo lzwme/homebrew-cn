@@ -1,17 +1,16 @@
 class Odinfmt < Formula
   desc "Formatter for The Odin Programming Language"
   homepage "https://github.com/DanielGavin/ols"
-  url "https://ghfast.top/https://github.com/DanielGavin/ols/archive/refs/tags/dev-2026-06.tar.gz"
-  sha256 "f8055ff723994dc4debc02817c230d0173c43a23df4a9d6a7104fea69bfeeb79"
+  url "https://ghfast.top/https://github.com/DanielGavin/ols/archive/refs/tags/dev-2026-08.tar.gz"
+  sha256 "e8d368f35b6833efa7e840753881d01f76607f3c0872c614e536f2b7e939f800"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "70212865ff66f0eb72108f544a25a3b64d8e0a2af528b5e0a4c2c44cd037c5e3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "694aa4720fa63d283c888ad3c61d2a70d97c05c688e4b7eb3070124ec091c77b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c37a99961d1c0ab1683686d19000328c296203c49cabba8358c3ef60d7722769"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c248288c86226f43e619f824708c863a18fbc5ba8011bb675f4c5e40f884596c"
-    sha256 cellar: :any,                 arm64_linux:   "68f2b89d834ff871430a4d50c72f07dcda67adc3d869c703cb8ae769812b13cf"
-    sha256 cellar: :any,                 x86_64_linux:  "65e34abfd7ddc0e91b8af794ecc710bc289077b9aff4837b7f1cb0f24a067df3"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f26b6a496b8213bd10aad2d2d630ad8d3dd202bd62f36bf766b3b1419dfc9c5c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "16240d03be08c79ff463e78278f04e72a7b73f89b0c9990dbbc76a42bbffdd41"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "487253cf55edf35c4b603118dc4090f416c207d55f17f1233ab7e0606dda5111"
+    sha256 cellar: :any,                 arm64_linux:   "9210172c28d1f25625325be06afa3e18c2b23a1c02ebcbb375f6b8ca68bcb2c2"
+    sha256 cellar: :any,                 x86_64_linux:  "655f9706f47e3d2a6f919d95cc4cbb5c60e292713e9d2e742146de4d9d9177c7"
   end
 
   depends_on "odin" => :build

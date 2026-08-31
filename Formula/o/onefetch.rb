@@ -1,18 +1,17 @@
 class Onefetch < Formula
   desc "Command-line Git information tool"
   homepage "https://onefetch.dev/"
-  url "https://ghfast.top/https://github.com/o2sh/onefetch/archive/refs/tags/2.27.1.tar.gz"
-  sha256 "3a6f82d3da4da62b2e5406bbe307b0afc73cd8fcc4855534886d80ea0121cc03"
+  url "https://ghfast.top/https://github.com/o2sh/onefetch/archive/refs/tags/2.28.1.tar.gz"
+  sha256 "d51e7411588b3aa8c4d747199941d93b8eb7878d8cfd605463a4c3da125b6be7"
   license "MIT"
   head "https://github.com/o2sh/onefetch.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c7174811d0436635d569643460e7889adcb850d081bab4ee6aa0797352a5feb3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d9dd2f247d1ff848588741a9c42da623f6420f105268eac01d8bd02b60d83f8c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a894a3270ecc1cf41395ffd576dc96c1f49c6b9f66f8105281204b9d9128a2e0"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0d1b3c6d8e0dc7afc0e8fdf6df66ceba1267c4edf8e20bc1ace82def27e9d544"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7fc8085b10b26c6ebd78a94d5847b9acc95f5286afce0d64c2fd091a119d14cf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9d0a81bed500193cd8580c3acbc28826352f9613735efa5c4f53bc5c2ba8d18d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f370ca8df4c094544ba3c249ad5eb8b060c70d4c628549b3311976a781613de5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5f126dda4c0acf2d0ceee0b767b9081cb4c8db0b051b31d5e7b3562b995ce9ab"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9aa40a3ecf60c99558b00ae511d4dab43b44acca32215a0f52731b47b35e9bb4"
+    sha256 cellar: :any,                 arm64_linux:   "63c15416e4b401a88f09e6e336e14f0288125dbea1709c3dadd10d497f087785"
+    sha256 cellar: :any,                 x86_64_linux:  "f503f9c162da583efac9d85fe900d2cdca8455e6c04894a6a9e77f3ea4a96f92"
   end
 
   # `cmake` is used to build `zlib`.

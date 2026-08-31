@@ -1,10 +1,9 @@
 class Gost < Formula
   desc "GO Simple Tunnel - a simple tunnel written in golang"
   homepage "https://gost.run/"
-  url "https://ghfast.top/https://github.com/go-gost/gost/archive/refs/tags/v3.2.6.tar.gz"
-  sha256 "79874354530b899576dd4866d3b1400651d0b17c1e7a90ad30c44686a0642600"
+  url "https://ghfast.top/https://github.com/go-gost/gost/archive/refs/tags/v3.3.0.tar.gz"
+  sha256 "2a65e2da14fef6b6da8d4e32a8bc62e39970dbb141db42bc6f5821f90ac1e9a3"
   license "MIT"
-  revision 1
   head "https://github.com/go-gost/gost.git", branch: "master"
 
   livecheck do
@@ -13,12 +12,11 @@ class Gost < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a2b479036a3b88053d0179e28ccfb4a980ed85c4e1ebc67dd057c978a2f0f652"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a2b479036a3b88053d0179e28ccfb4a980ed85c4e1ebc67dd057c978a2f0f652"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a2b479036a3b88053d0179e28ccfb4a980ed85c4e1ebc67dd057c978a2f0f652"
-    sha256 cellar: :any_skip_relocation, sonoma:        "57e90424f843be0b5f37193136821911635ae73030e958d272461d07ad873a7f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b3ad1f20070403dc1f8ef7b85eaddce8f42c59d6c063c5c3943947a4ac2b8948"
-    sha256 cellar: :any,                 x86_64_linux:  "b37dcfc8866962bc64508f8dfb3c47f301b0eebf1d9f3c5960df0543f6a2a577"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7f7625d05dbe9b50a1f7dac7bfa17a5e9683ab3ea865c62ebdf12c4bc380e9fa"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0d4e8bf9fa72d8eb49ffb1ce702f8f01f3a230a7b292d28e18d0187430e7c230"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1238386751302b5bca7602e0ff2074a4e2b3474ae664d10b7006ce28d94d1901"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1719e4fcdab08676af111c791e8407a9a2fe899a2503c0f499eb57fcfeb2ff85"
+    sha256 cellar: :any,                 x86_64_linux:  "c7847986d95a3eeb747872885f2bce043229758187977b28a8bd459870b18df8"
   end
 
   depends_on "go" => :build

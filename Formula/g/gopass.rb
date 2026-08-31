@@ -1,18 +1,17 @@
 class Gopass < Formula
   desc "Slightly more awesome Standard Unix Password Manager for Teams"
   homepage "https://www.gopass.pw/"
-  url "https://ghfast.top/https://github.com/gopasspw/gopass/releases/download/v1.16.1/gopass-1.16.1.tar.gz"
-  sha256 "7c4a9bf398a9bdbc97a88a76890d129aa04be27604ea8079cb6f9b46033a0346"
+  url "https://ghfast.top/https://github.com/gopasspw/gopass/releases/download/v1.17.0/gopass-1.17.0.tar.gz"
+  sha256 "fd8b390c551c4e86e38ee8a7ec6fff0686c4b44228ee9a6832da3ced01f73ad2"
   license "MIT"
   head "https://github.com/gopasspw/gopass.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cb2a3e09abbd49e3f9fdd82d2ec5d2f7fa748513069166b4cab95b298b6a6487"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "85d36c653824ef7686758e1ae3da83e2016b309bfac275e34920d45818b90259"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9cd62aa8cda0a1d0f1ff64bbdd59b3e6705cf9fc9bbbca1dc5e2168c139cc1e3"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c7d3f36b624e00966837507ffbf45067b8b5749c91e2c158498b808c80f9fb98"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5c2a02afd35b2159a0621849778470bf7e1a697b8fcb52205b103c526f6cb34b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "73de39c67865423e1bc107f39f995d297405448a3f97b7cb5ac8b419c70dfebc"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b4b67d6d9ac908f6f82299c9dc5d314937ba06ac2cb9bff2aa63b91e2b50fae6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "73788feec2c0b0e30f620f4d4751b48a4951bf728f0300a744b5a431534e42aa"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7b8e82c20bb8101491009b457fce2e620cac39778c4a48358c249c1fdb07fbc8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ddff93392dc3b4e6a893e691e1e568f1b2fc04daeb7e8a88ff240194df44a5e2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d0d88155bfe5067aa189463c0822a3f5941957100f6d8b1ef06ae985a488219f"
   end
 
   depends_on "go" => :build

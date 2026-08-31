@@ -18,10 +18,24 @@ class CoreLightning < Formula
     end
   end
 
+  # Upstream releases may have an embargo period between when the release is
+  # published and the source zip is provided, so we have to check multiple
+  # releases to identify the newest one providing a source archive.
   livecheck do
     url :stable
-    regex(/^v(\d+(?:\.\d+)+)$/i)
-    strategy :github_latest
+    regex(%r{/v?(\d+(?:\.\d+)+)/clightning[._-]v?\d+(?:\.\d+)+\.zip}i)
+    strategy :github_releases do |json, regex|
+      json.map do |release|
+        next if release["draft"] || release["prerelease"]
+
+        release["assets"]&.map do |asset|
+          match = asset["browser_download_url"]&.match(regex)
+          next if match.blank?
+
+          match[1]
+        end
+      end.flatten
+    end
   end
 
   bottle do

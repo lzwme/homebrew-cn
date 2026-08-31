@@ -1,17 +1,16 @@
 class TerraformProviderLibvirt < Formula
   desc "Terraform provisioning with Linux KVM using libvirt"
   homepage "https://github.com/dmacvicar/terraform-provider-libvirt"
-  url "https://ghfast.top/https://github.com/dmacvicar/terraform-provider-libvirt/archive/refs/tags/v0.9.8.tar.gz"
-  sha256 "66aa32c45c98fdc2d20cda17ed01e82c1c7d9ee7c7849e5757391a31ae5cb5cf"
+  url "https://ghfast.top/https://github.com/dmacvicar/terraform-provider-libvirt/archive/refs/tags/v0.9.9.tar.gz"
+  sha256 "ac862a6eb4a9aeac94bf61a3f1eea6f1a3854b01bc75ad2f0be19847b9dcee7a"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "445eab723bf380802dd92fde008ea7009a9b11e154f547b7231088d24708fff0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "445eab723bf380802dd92fde008ea7009a9b11e154f547b7231088d24708fff0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "445eab723bf380802dd92fde008ea7009a9b11e154f547b7231088d24708fff0"
-    sha256 cellar: :any_skip_relocation, sonoma:        "bf3348d66abd387cedde4bb59de96f228aac6f934dd518bd0f1e2cdf4150e340"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e47a2251bdcec63f176f62afe5bf6c2074bb77e60c9b91fe0edabede3494ddde"
-    sha256 cellar: :any,                 x86_64_linux:  "23e62acea542c0c32228d79d2c53dd5e8a8ef6a7df91b1ff0f9549869d0a3522"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2b4d7d9e3a013173b18c0fdd592b1cadf2a95537d530def466b3928fd9be571a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2b4d7d9e3a013173b18c0fdd592b1cadf2a95537d530def466b3928fd9be571a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2b4d7d9e3a013173b18c0fdd592b1cadf2a95537d530def466b3928fd9be571a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7c3f8dc493d2694dc239f4a3d4041aa37392cbc7e3dbef75f486dc5d7b12656f"
+    sha256 cellar: :any,                 x86_64_linux:  "f346f7fdf0492086389b01fb749c3ba5f41ac918ba0d407db2daf95a941e1edb"
   end
 
   depends_on "go" => :build

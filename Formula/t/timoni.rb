@@ -1,18 +1,17 @@
 class Timoni < Formula
   desc "Package manager for Kubernetes, powered by CUE and inspired by Helm"
   homepage "https://timoni.sh/"
-  url "https://ghfast.top/https://github.com/stefanprodan/timoni/releases/download/v0.33.0/timoni_0.33.0_source_code.tar.gz"
-  sha256 "69ae1b4a17bc37f88e0213ac2e3342a79a175bbbc3b5a19eec31ee3a725bd7d9"
+  url "https://ghfast.top/https://github.com/stefanprodan/timoni/releases/download/v0.34.0/timoni_0.34.0_source_code.tar.gz"
+  sha256 "a82c0915dfa4026b429ad42e6042389a0e2b803c98931a50600d1a5fafcafdfe"
   license "Apache-2.0"
   head "https://github.com/stefanprodan/timoni.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8ce24f7b869c6b6f3834e139b45bd8a791beb52086545b229f2d837e7e28c43b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "58f2731b8803c01a8b17fa80cd29c73307804e4ffc75fecebebc2744abaf08ad"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c387f643fd8d84b2425c4208f55f67362ef27370ff01ab136baad87b7669e0a8"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9694abd36ff80621d67697fbd7f324846c21bb58241e44a2b052053a1cc9e0a4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d3d0c9be6c0a20a4571177ba7baa9588e618658d2e13febc2bbea4d9b42da9cf"
-    sha256 cellar: :any,                 x86_64_linux:  "04a2d1686893e9e7ed3c567b9f56cde1819805a7d497cdc84f68ef61b0b3a693"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7d9ee3d88207f20c8ad04b32e55effb9a98c1aa9ab60c303d331769eaf467816"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8c6fabd04bfeb5e4e578cc6959b77af6f28051007ac7242c60d675cefd95b16f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f5b6fd2dd8e19d7b7970d131f0e46ba3dd679953e31b3766cf0f9dc88d260613"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2c75ccc777c83b1ad9379b70df7b476e5f651ca706ccb0db29b05b8f53578e96"
+    sha256 cellar: :any,                 x86_64_linux:  "35ae7c609532e9873a329cb8a828275c8b592fe55f54d7208245f92992661dd7"
   end
 
   depends_on "go" => :build

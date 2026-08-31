@@ -1,8 +1,8 @@
 class Shimmy < Formula
   desc "Small local inference server with OpenAI-compatible GGUF endpoints"
   homepage "https://github.com/Michael-A-Kuykendall/shimmy"
-  url "https://ghfast.top/https://github.com/Michael-A-Kuykendall/shimmy/archive/refs/tags/v2.6.3.tar.gz"
-  sha256 "f5c1f75633cce19c07dbb42017e16c09cc3866f666424c52189a56ae508457a1"
+  url "https://ghfast.top/https://github.com/Michael-A-Kuykendall/shimmy/archive/refs/tags/v2.6.4.tar.gz"
+  sha256 "9d9b410898618cbcfe3bf171c4d75d5d6542ebe08fb73e20d4115ad99e3b10ab"
   license "Apache-2.0"
   head "https://github.com/Michael-A-Kuykendall/shimmy.git", branch: "main"
 
@@ -12,11 +12,11 @@ class Shimmy < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c5e6eb0a57279cb3fd15e9365d532fc1e7a92afd34549bf9f205444e0c078c4f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ca966f7a0b7baaef46537ee7f6556a383bbe93e3dc3a3c03a312873de3410d05"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1968999e5bc2e29dd957e86d429287f1c50236cc592abbc212b1904d01d7be35"
-    sha256 cellar: :any,                 arm64_linux:   "a2dee00223291e0fce164c475765a3793812ed51ee27339754d2a4ca9594ee88"
-    sha256 cellar: :any,                 x86_64_linux:  "cbb304839e1819e349e308a4f335ee2c8aa850e536a45735a07e9b71ff12860b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ef267a4024ee28e9841beddadada13cfee8a019aeb28acfcf3ef27cf231aee59"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5cea431bd6ab40a5299724f7d0fa70b603294abcb18e0575e7f38714ff58bcde"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f5c982253ba6040bc031a3d6d1be6d2a1c411fad0328386c4a061427882c903b"
+    sha256 cellar: :any,                 arm64_linux:   "63d45684d4d306a29fa226624c1b8f0ebbec34cc6f956f2b31abaf6cadb2a9db"
+    sha256 cellar: :any,                 x86_64_linux:  "3bd460d722e2518f666d53160a66809d09d39af1f9081329179d651d989948c3"
   end
 
   depends_on "cmake" => :build # for llama-cpp-sys-2

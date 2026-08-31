@@ -1,8 +1,8 @@
 class Ldc < Formula
   desc "Portable D programming language compiler"
   homepage "https://wiki.dlang.org/LDC"
-  url "https://ghfast.top/https://github.com/ldc-developers/ldc/releases/download/v1.42.0/ldc-1.42.0-src.tar.gz"
-  sha256 "9bb0f628f869f7fc7b53c381a79742d29c17552c6f1a56b0a02aa289e65a0e3b"
+  url "https://ghfast.top/https://github.com/ldc-developers/ldc/releases/download/v1.43.0/ldc-1.43.0-src.tar.gz"
+  sha256 "d655aad0daf0ce9a17b2ffffb947bb79ec6968bc7fb88bc918316dbe78c616e7"
   license "BSD-3-Clause"
   head "https://github.com/ldc-developers/ldc.git", branch: "master"
 
@@ -12,12 +12,11 @@ class Ldc < Formula
   end
 
   bottle do
-    sha256                               arm64_tahoe:   "d991984a75a3d4e16e768ac1696cc01c65893a07f226b70160900ef280e5f2ae"
-    sha256                               arm64_sequoia: "b16cde9d20ef2b46b10a7469e87ef397ce0cd6182510671ef530d692233900b9"
-    sha256                               arm64_sonoma:  "81c19ed1da2c4bc40d5b97143bbcdcb8d54dfb082ff3cd67851573cc4323035c"
-    sha256                               sonoma:        "e89dbaa17a1734c3de7d83c21c9e830db35a2a65316f19dec04f14258359d598"
-    sha256                               arm64_linux:   "fcd364ba774b8952ca6e37217a458079a381cf2f3e585eefb73c20afc59e808b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "64399cdbbf80a94468e00ab0ea0377b835776da4513307b8e2b3d9f6afaa5a7d"
+    sha256               arm64_tahoe:   "bcde46ad3da3b29561e7b04742b82bc2338dc8c636cd2618187bd06b149de5fb"
+    sha256               arm64_sequoia: "12508ae2e08b8e1096a85d5248b75294f5ad4f84402ae4b766023e97ce9e861e"
+    sha256               arm64_sonoma:  "e8b40363a3d0f4367c0d1e18ca09b95a26caa08d4212d358fc97943f8b57a305"
+    sha256               arm64_linux:   "12512ca6d507b94e41bf459b24a69b914a3fdd4d9e892bd78be6da9e0d200387"
+    sha256 cellar: :any, x86_64_linux:  "cd1253c20b0d9003cf04f9261588b6c7272089ae5a6a1aa84208cd7de2ea7587"
   end
 
   depends_on "cmake" => :build

@@ -1,18 +1,17 @@
 class Swiftformat < Formula
   desc "Formatting tool for reformatting Swift code"
   homepage "https://github.com/nicklockwood/SwiftFormat"
-  url "https://ghfast.top/https://github.com/nicklockwood/SwiftFormat/archive/refs/tags/0.62.1.tar.gz"
-  sha256 "cf078cc044b998aa4bafad731ae2d360242e820ba0acc4c6f2856b99e6052e12"
+  url "https://ghfast.top/https://github.com/nicklockwood/SwiftFormat/archive/refs/tags/0.63.0.tar.gz"
+  sha256 "9a5fc7a8716d7501b3816877e54427f179876de4a7512681f5d9fadc0f70030a"
   license "MIT"
   head "https://github.com/nicklockwood/SwiftFormat.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d66ed3272bd0aa65945b60f5a8ed670d70e73e4451ff66a517057f390d924a48"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0970555d9ea51a4cf58034c54ae05da9ddb5ced370a0396c98a5c0acff327206"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1ccba932fdaabba24326973ad119fa56cfb83524c53e661c59aa150096a7d00b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5b9e1cfdb402b73c3a2332aa035417b508ede21073ce934f4089a08509ea3e4c"
-    sha256 cellar: :any,                 arm64_linux:   "582e0e2085b3e8f0d21457f5dddb260d73afec07dc4fe4d6a98fe1cf47e471ba"
-    sha256 cellar: :any,                 x86_64_linux:  "10495777d080c3cde39c3af9d6971fd7bcacb9fa1d24b7641c31935be9e5302d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7988e8fae324d4ff237c4979e5c9e673abb7c6bf0acc841263bd690a0931830f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4bf927e2e38f399b1629d831fb4d4f04f24a34ea17eef26cb698d698495cf4a2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2cd6359a6e22d8db6a501e0d833f7641b655107e080972e24dfce0b648c6ef21"
+    sha256 cellar: :any,                 arm64_linux:   "330d3b61f6de80cf4fb297bbd2d2eef1f8beb311e50799ee067c36ecac99e994"
+    sha256 cellar: :any,                 x86_64_linux:  "12eeb23b53b221b915ab9abe56e988db2dc141d0c87ca3bb5d0f00f1342bde45"
   end
 
   uses_from_macos "swift" => :build

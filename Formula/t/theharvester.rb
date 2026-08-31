@@ -10,12 +10,12 @@ class Theharvester < Formula
   head "https://github.com/laramies/theHarvester.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "effc37c69921908f3bb2eaa12d9825964f634d4adb71d021b274b1e9d1825a85"
-    sha256 cellar: :any, arm64_sequoia: "b19b1c40eb9e4019f09a0ea5684ac3ab9278edbd52af1375c3da58107bb0e098"
-    sha256 cellar: :any, arm64_sonoma:  "25895c5c9f9d998be8342f8310cdadc4c841a1195f9b887cb9155ddb773bb86c"
-    sha256 cellar: :any, sonoma:        "f52fe47cf220e91d31d82051faab4410fd57214816c400592383451310ea0a8f"
-    sha256 cellar: :any, arm64_linux:   "3ef9cf52362d36abad4ff1ae2be750df11d0bc724535233cf65cfed5acb8ce40"
-    sha256 cellar: :any, x86_64_linux:  "cf3dc7c743db6008d9f59e30d401d3b990f3016d3ea9b551add1189d8861edfb"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "a46dd9b5c9872020b29579e576e88dcc05a234181263c4613f7bffacd016841c"
+    sha256 cellar: :any, arm64_sequoia: "322be51f1919eae0b908e7b532f8801443f007d73efed4b03a0be689aae80009"
+    sha256 cellar: :any, arm64_sonoma:  "c5f4e4246db08c58d01a4e478aa6fcd8f6e7fe27f3298cc18c6a4bc95efe5f16"
+    sha256 cellar: :any, arm64_linux:   "414505c32c037ea94030574aff824982b24452df3245bd2b9aed68ed2ea8239d"
+    sha256 cellar: :any, x86_64_linux:  "a5a97ba316d8012a021c7cba052ede6e43017d15089fcb07e217071d60cfd555"
   end
 
   depends_on "cmake" => :build
@@ -35,12 +35,11 @@ class Theharvester < Formula
   # No sdist on PyPI, so we use the GitHub tarball
   # Ref: https://github.com/microsoft/playwright-python/issues/2579
   resource "playwright" do
-    url "https://ghfast.top/https://github.com/microsoft/playwright-python/archive/refs/tags/v1.60.0.tar.gz"
-    sha256 "fbff350bef7de11b522d7e0450e4c95abce9fa20747eb3cf9fe713473dce925e"
+    url "https://ghfast.top/https://github.com/microsoft/playwright-python/archive/refs/tags/v1.62.0.tar.gz"
+    sha256 "30cc72a0c00a22c3d287539233d3d6abd579becbfe7d02aef80bd3e75c951455"
 
     livecheck do
-      url "https://ghfast.top/https://raw.githubusercontent.com/laramies/theHarvester/refs/tags/#{LATEST_VERSION}/pyproject.toml"
-      regex(/"playwright==v?(\d+(?:\.\d+)+)"/i)
+      url :url
     end
   end
 
@@ -344,6 +343,8 @@ class Theharvester < Formula
     sha256 "9ac374123c6fd7abf64d1fec93962b0bd4ee2c19751755a762a72dd96c0378f8"
   end
 
+  deny_network_access! [:test]
+
   def install
     ENV["SETUPTOOLS_SCM_PRETEND_VERSION_FOR_PLAYWRIGHT"] = resource("playwright").version
     virtualenv_install_with_resources
@@ -351,8 +352,10 @@ class Theharvester < Formula
   end
 
   test do
-    output = shell_output("#{bin}/theharvester -d brew.sh --limit 1 --source urlscan 2>&1")
-    assert_match "docs.brew.sh", output
-    assert_match "formulae.brew.sh", output
+    output = shell_output("#{bin}/theharvester -d brew.sh --source invalid 2>&1", 1)
+    assert_match "theHarvester #{version}", output
+    assert_match "The following engines are not supported", output
+
+    system libexec/"bin/python", "-c", "import theHarvester.lib.api.api"
   end
 end

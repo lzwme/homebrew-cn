@@ -4,15 +4,14 @@ class PandocCrossref < Formula
   url "https://ghfast.top/https://github.com/lierdakil/pandoc-crossref/archive/refs/tags/v0.3.25.tar.gz"
   sha256 "cb42b8319a59f258fea191e4660b62bdd9a90a9099322ae0f17203bc5986498a"
   license "GPL-2.0-or-later"
-  revision 1
+  revision 2
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "866aa0a29786db950b528e19151f6638bce273a5cd40c1df80c477feda0b1932"
-    sha256 cellar: :any, arm64_sequoia: "391544a14cd89f253ea4c968d8aa4b6fb92ec0e9c896e8f4bbb415a2874728dc"
-    sha256 cellar: :any, arm64_sonoma:  "259da75e1c909ba68d6d1c275afe75923f5b06cf46adcc117a4eead17e42759b"
-    sha256 cellar: :any, sonoma:        "bf616685c61af5d7f3f268942703b3ddf47717c74b01faee1c3e89a37385bc98"
-    sha256 cellar: :any, arm64_linux:   "12b38b236f67baca69ea4c57d4ce16bea8003fcf39927cb1289a6392a845b528"
-    sha256 cellar: :any, x86_64_linux:  "e1efed30a2df80e82222bb9fd57a5e3daa7b80ecd6a18b97c58953befaec25ac"
+    sha256 cellar: :any, arm64_tahoe:   "324f51ae57d677076f7a36986052066f846969088a6722c4ec1894250c4ba7a0"
+    sha256 cellar: :any, arm64_sequoia: "73e895f103fd03cd74aafdbcadb48cec1c1f541cb2e5074f8c7e0fca6084ad81"
+    sha256 cellar: :any, arm64_sonoma:  "6fb3ab3eaa52532b3f6fd00cb487f45736eea011765ec2825110c64ea23e1248"
+    sha256 cellar: :any, arm64_linux:   "723f2fb89900739f7bf4c63d688df0ca4ccf6f96a648812bd8321449064682c8"
+    sha256 cellar: :any, x86_64_linux:  "e205be5eac1315edb91c36335887be87be22149e6f4de4c7a6c4e160a3bfb361"
   end
 
   depends_on "cabal-install" => :build
@@ -25,6 +24,14 @@ class PandocCrossref < Formula
 
   on_linux do
     depends_on "zlib-ng-compat"
+  end
+
+  # Relax the pandoc bound so the filter is compiled against pandoc 3.11
+  patch do
+    url "https://github.com/lierdakil/pandoc-crossref/commit/2e4c199871405b657f1643e7fe6249d884263051.patch?full_index=1"
+    sha256 "ba6c6c180985c6668fe90bd4bb589a369774609ec140e8fa4916209548d22de2"
+    type :unofficial
+    resolves "https://github.com/lierdakil/pandoc-crossref/pull/513"
   end
 
   def install

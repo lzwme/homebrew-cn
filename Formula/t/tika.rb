@@ -1,21 +1,21 @@
 class Tika < Formula
   desc "Content analysis toolkit"
   homepage "https://tika.apache.org/"
-  url "https://www.apache.org/dyn/closer.lua?path=tika/3.3.2/tika-app-3.3.2.jar"
-  mirror "https://archive.apache.org/dist/tika/3.3.2/tika-app-3.3.2.jar"
-  sha256 "71ca551380e5eab1add99101f4597a8a49a6a18c6143d6874ee9599ca10ae00e"
+  url "https://www.apache.org/dyn/closer.lua?path=tika/4.0.0/tika-app-4.0.0.zip"
+  mirror "https://archive.apache.org/dist/tika/4.0.0/tika-app-4.0.0.zip"
+  sha256 "56e487cbba0794da5c025a25bf94d92fc5f76a6ba447f96d8238ca2f4687eed7"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "98a6e680a5ef5d0fac4c8b2b5b09241cee64592599f586806c01887e11fb5b15"
+    sha256 cellar: :any_skip_relocation, all: "0a0e96ecbeafb85c6b95984a5a552aac4fe358266e51d1004f83ca65736e1b97"
   end
 
   depends_on "openjdk"
 
   resource "server" do
-    url "https://www.apache.org/dyn/closer.lua?path=tika/3.3.2/tika-server-standard-3.3.2.jar"
-    mirror "https://archive.apache.org/dist/tika/3.3.2/tika-server-standard-3.3.2.jar"
-    sha256 "cdbe7fde72583dec8528f9c0ed962cacb7f6624f9900b1f733df638410f77540"
+    url "https://www.apache.org/dyn/closer.lua?path=tika/4.0.0/tika-server-standard-4.0.0.zip"
+    mirror "https://archive.apache.org/dist/tika/4.0.0/tika-server-standard-4.0.0.zip"
+    sha256 "ebacca686b4855648197414fe1b72638c417955d86659d78146851e7e57ff299"
 
     livecheck do
       formula :parent

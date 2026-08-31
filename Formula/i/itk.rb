@@ -13,12 +13,12 @@ class Itk < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "e1c1290d28c825b4b220baba9319934f5c7aed768970161fa70f04121af1d481"
-    sha256 arm64_sequoia: "30342110c1bbf0cc4f68f693a3ca6c0b5799f5dbdd9426424a9b7de1b24927cc"
-    sha256 arm64_sonoma:  "254ad3aab989b3efc5e99d9284b6c285488e03106da6d4d05f7abed1589f0103"
-    sha256 sonoma:        "c9a2b2396df06411fb99ab952fd9db690466f73f1310d25a1d7b8dc914b56a14"
-    sha256 arm64_linux:   "f18eb3a8bfc5f322e72bec710de2e2e5d21839b4a6337944a8f6fb537542eef0"
-    sha256 x86_64_linux:  "27697f6c519ea6dbb3b9b0794d0181e64a999965e1f275dae2ffe3665370b2f4"
+    rebuild 1
+    sha256 arm64_tahoe:   "44a809e493cb4aedd21711c7c9adf70016a2d3fd29e8f7be3435fa6a6155a729"
+    sha256 arm64_sequoia: "b7a74d583fc5ae57cd25120dd8ca2c8a8d0e613ac6004855cfd77b580f93952c"
+    sha256 arm64_sonoma:  "7ce1f34e9e19b9f8efe1652c7ec0581a0ad04703d6f1faa1996853af92a9f9bc"
+    sha256 arm64_linux:   "990b689e0df7bf101ae3d723322f517f9ff7ab9aadf6ae33418e8e5947fc0bb7"
+    sha256 x86_64_linux:  "1f32a7e76e02701e82cc14d72bc9c183c8c49a250a348150a97c8e2caf5963aa"
   end
 
   depends_on "cmake" => :build
@@ -32,7 +32,7 @@ class Itk < Formula
   depends_on "libtiff"
   depends_on "vtk"
 
-  uses_from_macos "expat"
+  uses_from_macos "expat", since: :sequoia
 
   on_macos do
     depends_on "freetype"
@@ -45,18 +45,7 @@ class Itk < Formula
     depends_on "zlib-ng-compat"
   end
 
-  # Work around superenv to avoid mixing `expat` usage in libraries across dependency tree.
-  # Brew `expat` usage in Python has low impact as it isn't loaded unless pyexpat is used.
-  # TODO: Consider adding a DSL for this or change how we handle Python's `expat` dependency
-  def remove_brew_expat
-    env_vars = %w[CMAKE_PREFIX_PATH HOMEBREW_INCLUDE_PATHS HOMEBREW_LIBRARY_PATHS PATH PKG_CONFIG_PATH]
-    ENV.remove env_vars, /(^|:)#{Regexp.escape(formula_opt_prefix("expat"))}[^:]*/
-    ENV.remove "HOMEBREW_DEPENDENCIES", "expat"
-  end
-
   def install
-    remove_brew_expat if OS.mac? && MacOS.version < :sequoia
-
     # Avoid CMake trying to find GoogleTest even though tests are disabled
     rm_r(buildpath/"Modules/ThirdParty/GoogleTest")
 

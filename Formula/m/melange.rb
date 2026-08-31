@@ -1,8 +1,8 @@
 class Melange < Formula
   desc "Build APKs from source code"
   homepage "https://github.com/chainguard-dev/melange"
-  url "https://ghfast.top/https://github.com/chainguard-dev/melange/archive/refs/tags/v0.59.2.tar.gz"
-  sha256 "d2a0a2a727e9196909ced0d4af22201ded7ec950288e327ae3e449fa10a40241"
+  url "https://ghfast.top/https://github.com/chainguard-dev/melange/archive/refs/tags/v0.59.3.tar.gz"
+  sha256 "e9eeeee3653bad7e3a40c134ea9ed3bade0bc1ec9a763bc51c70b071ff30a798"
   license "Apache-2.0"
   head "https://github.com/chainguard-dev/melange.git", branch: "main"
 
@@ -12,12 +12,11 @@ class Melange < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a2f9f4aa8566796a8a7d650d9225c02b6db950479348b5500f01364b36f01ce8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e8bea669faf46db815edae6045209df502fe03752eb6e40051e0ff42a3be7f0b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e5f918a8195d6365bb861296ae5aa429785544d97c5e41c643faf86046cac34f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a05a796296bd4e290547726c84706f5b0c0a6361974ac3ced427a3862db7cbc5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7ffb59b6e74ded588fb7fe8a7ae83e21c3f71d5fb3db2850404d182fef9e1bc0"
-    sha256 cellar: :any,                 x86_64_linux:  "96aec6ceec75c6dacb80fb7bdc1d168f467e07fdb724b3abf2331d0f0416a071"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "10102faf77978e870002834952a2eb92e7b839054246af611b404def91158398"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9141372cbef72732a04e46bfdf7bb73e0986c08a074fd63d9bc06004f080895d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ecdfedf9aebbf4d4d813a808acbe2b46c06558b7ca901892a088e9d82bb8fd35"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ba2204395e3781d0af02b87eb8f457defb39f32dd87cf1a6e70206977911cce7"
+    sha256 cellar: :any,                 x86_64_linux:  "d1fc6a56695c70bce1ed529426134c9473029abfbc1180c629982f3df2a0fa26"
   end
 
   depends_on "go" => :build

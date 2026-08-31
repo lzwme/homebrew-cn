@@ -1,18 +1,17 @@
 class CcSwitchCli < Formula
   desc "All-in-one assistant tool for Claude Code, Codex, Gemini, OpenCode and OpenClaw"
   homepage "https://github.com/SaladDay/cc-switch-cli"
-  url "https://ghfast.top/https://github.com/SaladDay/cc-switch-cli/archive/refs/tags/v5.10.3.tar.gz"
-  sha256 "ad1e9d0295954325d7b348cdcdd9237e494aa4dd042b8f5039ec6ffa5b652147"
+  url "https://ghfast.top/https://github.com/SaladDay/cc-switch-cli/archive/refs/tags/v5.10.4.tar.gz"
+  sha256 "cb10c2742b5552bb4de4cf58663afdf8d79e96e05ea68b5533489a6ba0583dcb"
   license "MIT"
   head "https://github.com/SaladDay/cc-switch-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d877bf4be0f457bce0646180532a1fa8144374dbb54660722ad5abef9fc8e79c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e34aa110c297cf46844137beba2eae8c868293d65427ebc188164d698231c5c4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e9201e743053ff4f2aec8582ae37640cfcf5b3cd1011c7618ffb9482a687ca4b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "51146a3d62885938796a73886a8ba0da7f130e90d856cefd22fd5423ff00210c"
-    sha256 cellar: :any,                 arm64_linux:   "e3d358533442e89dbad6a71851ead38a3e14b5ad862dbfa656d9c0764a21f3a7"
-    sha256 cellar: :any,                 x86_64_linux:  "3ab1d40bd1cfc55e58559d3ef91b5040189623820f31ac49a42f8a913b586221"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e8941824fae80b72650f540f17b1a2e68a93a59df6d9245eb4e629bac41ad5b7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b58c7953277f4af0a222ab1e7f3e62c9fd36a829836b28c59eeeec92fd497a31"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c4563cd1b0e09ddbc142bdaf23341dc7b9be3a8b96766bc6df081b7c451203e6"
+    sha256 cellar: :any,                 arm64_linux:   "f3870a7f984ff57f2db07f2ad27625be0cd3991c212b91bedfda0ef706f55d27"
+    sha256 cellar: :any,                 x86_64_linux:  "cff199d6156b81d83844cb5d67f7863d89c62529b617039e2b291e18d9cff329"
   end
 
   depends_on "rust" => :build

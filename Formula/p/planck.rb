@@ -19,16 +19,16 @@ class Planck < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "98d3b85da67804836fdaa7db623e74ef82ab3e72ccbf8c421fa7fe7d9f16528d"
-    sha256 cellar: :any,                 arm64_sequoia: "0342856b9f0638676afb22a4ba1117b942a777a17e077b808803077b7f490f7e"
-    sha256 cellar: :any,                 arm64_sonoma:  "fbf8b5b7574a2e2b4470d1e90d48b1ea0006cc52f4882b301c22635bb71274b8"
-    sha256 cellar: :any,                 sonoma:        "0b1b53725d302dabc755d9ee0ea2049ad1c95f292dac414c1b31b42d544e0aad"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4d317813fd2924a36aa989fcbd2ac729277ad0b7b0302bdfa07f4cd7c52b14bc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "52ba1633a236729c1ef9108e169c8bbf1bc4ca262a5cd05f67f7a2dc4f70ae37"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "8ae97ba5cca0b1d7393afeebb403e25821a75a1e3ab054313a6031ac9b3530e4"
+    sha256 cellar: :any, arm64_sequoia: "5ccf43cd6bcffc657596beddd703a69d6aabc4437b3e5945a20cb88f55f1999d"
+    sha256 cellar: :any, arm64_sonoma:  "c7c752a3b624660fd894e37e4bf7e37c2b4e69b399fe82849a9c68e2d8bb6fb5"
+    sha256 cellar: :any, arm64_linux:   "317b3cac73e97f287c4643983c9caa62f99dec3cdbeb535e156b1472339f1db2"
+    sha256 cellar: :any, x86_64_linux:  "7b58c81a2330e003de4ee7329a0cfe6f83811e83bdbd0dc51e9c82bbac8079cb"
   end
 
-  deprecate! date: "2026-02-21", because: :does_not_build
-  disable! date: "2027-02-21", because: :does_not_build
+  deprecate! date: "2026-02-21", because: :unmaintained
+  disable! date: "2027-02-21", because: :unmaintained
 
   depends_on "clojure" => :build
   depends_on "cmake" => :build
@@ -38,7 +38,6 @@ class Planck < Formula
 
   uses_from_macos "vim" => :build # for xxd
   uses_from_macos "curl"
-  uses_from_macos "zlib"
 
   on_macos do
     depends_on xcode: :build
@@ -46,6 +45,7 @@ class Planck < Formula
 
   on_linux do
     depends_on "webkitgtk"
+    depends_on "zlib-ng-compat"
   end
 
   # Don't mix our ICU4C headers with the system `libicucore`.
@@ -62,7 +62,7 @@ class Planck < Formula
       # We extract this from the filename programmatically and store it in javascriptcore_api_version
       # and make sure planck-c/CMakeLists.txt is updated accordingly.
       # On macOS this dependency is provided by JavaScriptCore.Framework, a component of macOS.
-      javascriptcore_pc_file = (Formula["webkitgtk"].lib/"pkgconfig").glob("javascriptcoregtk-*.pc").first
+      javascriptcore_pc_file = formula_opt_lib("webkitgtk").glob("pkgconfig/javascriptcoregtk-*.pc").first
       javascriptcore_api_version = javascriptcore_pc_file.basename(".pc").to_s.split("-").second
       inreplace "planck-c/CMakeLists.txt", "javascriptcoregtk-4.0", "javascriptcoregtk-#{javascriptcore_api_version}"
     end

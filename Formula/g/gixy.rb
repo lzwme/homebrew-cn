@@ -3,17 +3,16 @@ class Gixy < Formula
 
   desc "NGINX configuration static analyzer focused on security"
   homepage "https://gixy.getpagespeed.com/"
-  url "https://files.pythonhosted.org/packages/d0/83/cf79fd3f75709421718a530d9f1adce780791060e1d02eb2be890f77d73e/gixy_ng-0.2.51.tar.gz"
-  sha256 "55b7edf4c99cdacce07138435fa5ddb26e2fd53c8b05732d667758a27365431c"
+  url "https://files.pythonhosted.org/packages/44/9b/d16174a31be5a77742bb25bf738d8d43b1adbc8f6f6f0bf91a7797bdc58d/gixy_ng-0.2.52.tar.gz"
+  sha256 "6ff5f235d411d35eb8d4d33828389852ba4a27b77fbf0e1f49fd102e874afa78"
   license "MPL-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7ffed10e12d3730d0b703bb18c82472fb99b457b525b5e721aa2c053e4393c74"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d74ed86f27b53466577dc1570b7e68c16ba641d0c9faaf7281f891cb921ef8ae"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7b92c0cf070f5887089c9ed9e4beba6f483521df95c296828033d9838bbb7e18"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3d23f2c2bb79cb1cc7aee6ae2bbc772260d87c9ce581315da7983f6ff0e0635b"
-    sha256 cellar: :any,                 arm64_linux:   "53e68a9713dc29001b846ce600c7c35520055b12a481e193d0b725cf14debe1d"
-    sha256 cellar: :any,                 x86_64_linux:  "10d848c861f7e2212eaac0b03a61caeb9c01a078541ee48b510b7785e4777bb8"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7b964e89885dcf970a1af1832df48d97002b9f1a21cab9a7ab84b0a95e6e2748"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dfe5c238f333ed2a3702a22c4f864e97197ccfe663a4faf30833d1008a788af3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0e805a78b14d0c28acbd6afed33870e0208f3f80b23d98fa188b6bb6cf9c8daa"
+    sha256 cellar: :any,                 arm64_linux:   "f1116d1f1908d56f4af3c57a09113c02b6c1c529f17c01575b9b478162f53797"
+    sha256 cellar: :any,                 x86_64_linux:  "cc6b5814c1e2fce82ea0f3f4e96bf1041cd4f629f6eb3a88d6e702ec0b57c74b"
   end
 
   depends_on "python@3.14"

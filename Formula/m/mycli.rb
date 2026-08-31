@@ -3,17 +3,16 @@ class Mycli < Formula
 
   desc "CLI for MySQL with auto-completion and syntax highlighting"
   homepage "https://www.mycli.net/"
-  url "https://files.pythonhosted.org/packages/be/f8/d0ec4c48552eec51973698419e3fc84c1275e5e00c9512832e608cadc8f0/mycli-2.17.0.tar.gz"
-  sha256 "e86751b0d00a9640f1f88e165e4370e9191c9966c5bcc6e4a5a49093577c2e95"
+  url "https://files.pythonhosted.org/packages/a4/89/aea358929b38dd9dc1bafa0ebf2a89690aa24ee588cf048d35fae5804cbe/mycli-2.18.4.tar.gz"
+  sha256 "43dd445f9949a0ff47640794b19e93104fdb0abc6900e87cee86a2649260d181"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "5aa035ba9c38b283d003c60c69328d48a4680c00a82f4d4113b6fe2200c0b801"
-    sha256 cellar: :any, arm64_sequoia: "ddfc2bd698f03ae4d63d5cbc816846a1a597ec35727aeb673d9d190514140f85"
-    sha256 cellar: :any, arm64_sonoma:  "faa2d1046589ecb8ab847107e04565cb1d4d29a7781deff763bcc835ce7091bf"
-    sha256 cellar: :any, sonoma:        "381d6bcea5938d2e40d470cfc6d3e12174aa99345d7dcbcd14b68b96e57173c2"
-    sha256 cellar: :any, arm64_linux:   "76299fecd866df76d8223148c79b1bc1d51b11eb82c1fad7c7dda16073f960fe"
-    sha256 cellar: :any, x86_64_linux:  "cfc4a4ca35de702409f03d9128157fde85ee84eb57d30fe9b372e2f7596e91c9"
+    sha256 cellar: :any, arm64_tahoe:   "1373743cbb4a363644b031400b0c1884bdffe7bab84b7cdbc2e8027d26cb7fa8"
+    sha256 cellar: :any, arm64_sequoia: "10d7efab7333d921f8e871bebc67e909459637505e34b5e4e6eb257dd9837eb1"
+    sha256 cellar: :any, arm64_sonoma:  "d35e73f81dd92253e6298e66a5c6a0dc73c8019c507fcbcd155adcb162647b88"
+    sha256 cellar: :any, arm64_linux:   "052c0e09dfb49e42e0603f95839fe290fa85e036756553b343bd561925a114c9"
+    sha256 cellar: :any, x86_64_linux:  "8cb4f60a563924f41277a7f75d3cc69bd95b8e67d83bb6cce065f431ac78593f"
   end
 
   depends_on "rust" => :build # for jiter, polars, vl-convert
@@ -165,8 +164,8 @@ class Mycli < Formula
   end
 
   resource "openai" do
-    url "https://files.pythonhosted.org/packages/7d/9c/ba0c292b4032ede74c249ca314ad64eb1bb5a03a843f6e01facb02f80cd8/openai-3.3.1.tar.gz"
-    sha256 "6f22807de1a976c932cecda620e8172a8c3fdbaeed29c7f21564e0c2410edf56"
+    url "https://files.pythonhosted.org/packages/ac/76/913b755a1a6b54e2d9140eb8d488aa0d47c7359b1d7eac5e864cb7913bbf/openai-3.6.0.tar.gz"
+    sha256 "18fe3f6e96390ef41ee27b152fc9effefca321c33673bd9b956a572493d3ab9b"
   end
 
   resource "packaging" do
@@ -320,8 +319,8 @@ class Mycli < Formula
   end
 
   resource "wcwidth" do
-    url "https://files.pythonhosted.org/packages/34/74/c6428f875774288bec1396f5bfcbc2d925700a4dad61727fd5f2b12f249d/wcwidth-0.8.2.tar.gz"
-    sha256 "91fbef97204b96a3d4d421609b80340b760cf33e26da123ff243d76b1fda8dda"
+    url "https://files.pythonhosted.org/packages/36/57/ed58088fafdf4c55a0ad6bde846502567645424d7ebf325230b9237f4085/wcwidth-0.8.3.tar.gz"
+    sha256 "d128512515fbf4612e0ff21fd6380399210318b7b54a9af59dff8454cf9730eb"
   end
 
   resource "yaspin" do
