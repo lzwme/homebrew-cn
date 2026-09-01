@@ -1,8 +1,8 @@
 class Libnftnl < Formula
   desc "Netfilter library providing interface to the nf_tables subsystem"
   homepage "https://netfilter.org/projects/libnftnl/"
-  url "https://www.netfilter.org/pub/libnftnl/libnftnl-1.3.1.tar.xz"
-  sha256 "607da28dba66fbdeccf8ef1395dded9077e8d19f2995f9a4d45a9c2f0bcffba8"
+  url "https://www.netfilter.org/pub/libnftnl/libnftnl-1.3.2.tar.xz"
+  sha256 "c97abc3409f8fa396b4462b2bb7f147a3a47a4ddc97cfa0b2f18890c9cfde8b0"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -11,8 +11,8 @@ class Libnftnl < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_linux:  "932090d305277e1510df58cdbe16b545b9f565a6c8a6c646a5465af48288ad9e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "86af24831e02ee43a05182f3028d424ce8cb2c2a4ff34ec23652532a63986bfc"
+    sha256 cellar: :any, arm64_linux:  "8bb88e18c2ec7f3ee73a0b4dff7c70bcafb1f837486d1f97284e8e028486a3ce"
+    sha256 cellar: :any, x86_64_linux: "3b2e888c2d03cd2f07f1eac05e3e406aea7004d1499bbe96a08ce5230063366e"
   end
 
   depends_on "pkgconf" => [:build, :test]

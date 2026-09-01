@@ -1,9 +1,8 @@
 cask "dot" do
-  version "2.4.0"
-  sha256 "bb87cfb033cc68abb2629bb5f39039397877a18420fa8d474ef27e354396bdef"
+  version "2.4.1"
+  sha256 "0c856e2dcc1984262dad80efd5414b641f86b6b9bc6affc56d1278a38ce712c5"
 
-  url "https://ghfast.top/https://github.com/prateekkeshari/dot-releases/releases/download/v#{version}/Dot-#{version}.dmg",
-      verified: "github.com/prateekkeshari/dot-releases/"
+  url "https://ghfast.top/https://github.com/prateekkeshari/dot-releases/releases/download/v#{version}/Dot-#{version}.dmg"
   name "Dot"
   desc "Menu bar calendar with meeting reminders"
   homepage "https://www.trydot.app/"

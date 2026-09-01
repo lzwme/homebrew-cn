@@ -1,17 +1,17 @@
 class SingBox < Formula
   desc "Universal proxy platform"
   homepage "https://sing-box.sagernet.org"
-  url "https://ghfast.top/https://github.com/SagerNet/sing-box/archive/refs/tags/v1.13.21.tar.gz"
-  sha256 "c994018d7c2a8fc9fcf6080e4b9cc4f2f915e755342238b77e46fc0806fe96db"
+  url "https://ghfast.top/https://github.com/SagerNet/sing-box/archive/refs/tags/v1.14.0.tar.gz"
+  sha256 "87baf6852e37941cbe40bdd94bec81c957c88a56751cecd6bbf0e6108bc69398"
   license "GPL-3.0-or-later"
   head "https://github.com/SagerNet/sing-box.git", branch: "testing"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "07bae3366ea95dd3f4117104eaf608f57716f60bbb50c00301ad63f6c3dc26f4"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "586f237853b42d5e850eb98358fb4bdb21dc308e78b8a5e82a5c35e8eb017e8f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9071c8735181b873bb1cb118f933de1233a49d691535595101a32252504677fe"
-    sha256 cellar: :any,                 arm64_linux:   "f24a220ab68a3b17f1dec397c513666511d8a2b122c0ace43154fd8e0eb188c7"
-    sha256 cellar: :any,                 x86_64_linux:  "8011cc5f95c540a4cdcb3e55aea212d60e9b60059ca43e7836707f1233c22e2f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4d766c8316f9d08c42d64b9c2b14ad2ed12550c2b9890a3deb396f6d8b19128e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f0945632d7fad0e6b62f1f273e258f5b35a302384986b705d6267e3fcfb03277"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dbb09c5791d1a0930459fd28bf44895fb3d1b5676c3815e7d042b0dea9188c35"
+    sha256 cellar: :any,                 arm64_linux:   "d55ab63b3bd85eec1ef4ddd7b3c8ca91092f647281c1d79b78f636cb9bf420cd"
+    sha256 cellar: :any,                 x86_64_linux:  "11e687d8b117275b9df40c86b229f9efff937f266f0b9b1452aae7ee4ebf2999"
   end
 
   # TODO: unpin go@1.26 when sing-box supports go 1.27
@@ -32,8 +32,8 @@ class SingBox < Formula
   resource "cronet-go" do
     # Using git checkout for submodules
     url "https://github.com/sagernet/cronet-go.git",
-        revision: "ec9a39c5ba3b4a8d625ede04deaf3c9020afb916"
-    version "ec9a39c5ba3b4a8d625ede04deaf3c9020afb916"
+        revision: "45832ab074849607406baa3e3a2c4660274602ed"
+    version "45832ab074849607406baa3e3a2c4660274602ed"
 
     livecheck do
       url "https://ghfast.top/https://raw.githubusercontent.com/SagerNet/sing-box/v#{LATEST_VERSION}/.github/CRONET_GO_VERSION"
@@ -78,15 +78,6 @@ class SingBox < Formula
   def install
     resource("cronet-go").stage("cronet-go")
     resource("gn").stage("cronet-go/naiveproxy/src/gn")
-
-    # Work around Chromium build system only supporting development Clang
-    # TODO: Remove when LLVM 23 is available
-    inreplace "cronet-go/naiveproxy/src/build/config/compiler/BUILD.gn" do |s|
-      s.gsub! "cflags += [ \"-fno-lifetime-dse\" ]", ""
-      s.gsub! "cflags += [ \"-fdiagnostics-show-inlining-chain\" ]", ""
-    end
-    inreplace "cronet-go/naiveproxy/src/build/config/sanitizers/sanitizers.gni",
-              "\"-fsanitize-ignore-for-ubsan-feature=${invoker.sanitizer}\",", ""
 
     # Source build libcronet.a and replace cronet-go to use it
     arch = Hardware::CPU.intel? ? "amd64" : Hardware::CPU.arch.to_s

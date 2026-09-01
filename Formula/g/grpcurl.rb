@@ -1,20 +1,17 @@
 class Grpcurl < Formula
   desc "Like cURL, but for gRPC"
   homepage "https://www.fullstory.com/resources/content/fullstory-engineering-blog/"
-  url "https://ghfast.top/https://github.com/fullstorydev/grpcurl/archive/refs/tags/v1.9.3.tar.gz"
-  sha256 "bb555087f279af156159c86d4d3d5dd3f2991129e4cd6b09114e6851a679340d"
+  url "https://ghfast.top/https://github.com/fullstorydev/grpcurl/archive/refs/tags/v1.9.4.tar.gz"
+  sha256 "bea899ba2f483a951bf40aa05d41e069dd2f7bfe52d2a229717abfdb5620cb7c"
   license "MIT"
   head "https://github.com/fullstorydev/grpcurl.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4f0fd06ad531b223c2059d6163ad171e27b62942634eeceadd63f1092cb568bf"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0b6be18c234287de07dc328bcf18ab337dc9b89a477e20110546d7615bd31815"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0b6be18c234287de07dc328bcf18ab337dc9b89a477e20110546d7615bd31815"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "0b6be18c234287de07dc328bcf18ab337dc9b89a477e20110546d7615bd31815"
-    sha256 cellar: :any_skip_relocation, sonoma:        "73e6d2427885ab08ae862f8e43be8b3d988917a1fdc722026cdd587be1629d1e"
-    sha256 cellar: :any_skip_relocation, ventura:       "73e6d2427885ab08ae862f8e43be8b3d988917a1fdc722026cdd587be1629d1e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d37e79c73502d787668a26837157ac3cbf673ad47cc63c2c7571cd70a93ad8c4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "14e2492169d85b40c8251c3ca7891c58d35f2f12cd781b720c29582573e12c9a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d28c43ea91643dc945ea37b820f1d7677ebf1eaca75eafafbbef930281abe8af"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d28c43ea91643dc945ea37b820f1d7677ebf1eaca75eafafbbef930281abe8af"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d28c43ea91643dc945ea37b820f1d7677ebf1eaca75eafafbbef930281abe8af"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2a53d7cc70c45181bd570774db9800d7c37357b632efd48c5240042eb8f4d1dd"
+    sha256 cellar: :any,                 x86_64_linux:  "a7e35ba2c3a3c3147d5b766575def1a1c8d4edb7330c3e59762bfb382fb0aab4"
   end
 
   # TODO: unpin go@1.26 when grpcurl supports go 1.27

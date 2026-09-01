@@ -1,18 +1,17 @@
 class Dnsx < Formula
   desc "DNS query and resolution tool"
   homepage "https://github.com/projectdiscovery/dnsx"
-  url "https://ghfast.top/https://github.com/projectdiscovery/dnsx/archive/refs/tags/v1.3.0.tar.gz"
-  sha256 "b4b2d8505c2be30181060a05f126a90ef5211c489fa437236172046b38c6ce3b"
+  url "https://ghfast.top/https://github.com/projectdiscovery/dnsx/archive/refs/tags/v1.3.1.tar.gz"
+  sha256 "2c14a27b00e3215e1c0dc07afe9e5e5c3f0a3502852f1d5f497a92b5e6cb63db"
   license "MIT"
   head "https://github.com/projectdiscovery/dnsx.git", branch: "dev"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b601d480a7d6a35cad9772695fcab578dfda1d765f1cbc6a3cee623f6649e6e4"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "281751f9bda871ea1e2e34f39ee248a8714288e79773c2f213005ca35ee5f9a6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e5bd4b47ca2780f4197a6c01e41d4be788ceeef7147d0cdddae9d8e53105b034"
-    sha256 cellar: :any_skip_relocation, sonoma:        "bb715b07a840a1c7d515f553eb3152a515ac3b55081f84d768c82470202ee522"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "10616c5691c39b850b77c366ba92e18a3439f5b96e5a2776b1e756df657713e3"
-    sha256 cellar: :any,                 x86_64_linux:  "b97c34dc1e1b63ce5493b987d8878050bc0daa55617cf7e9f446af59e28f7bda"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d8f155e19077e5dd49bfeba1168e8c844a66b68999cc7bd4b0a6cd01dec288c8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2dade74df243915eb10beadaf3635eb968504979fee56a8bffe950239e6aed69"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3cd7c14111823219ed6dddc03d3885129ea65ef8580e1fa94f560c902cd752d7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fecbf61d30c674a68cd896b77534d5945a84cdef1e6d2983efb1eefe872fa443"
+    sha256 cellar: :any,                 x86_64_linux:  "85db957c48beec0b6428e6166137f2c07a39ef167e6e3346f512d814779babbf"
   end
 
   depends_on "go" => :build

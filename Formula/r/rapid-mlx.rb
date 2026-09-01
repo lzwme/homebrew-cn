@@ -3,14 +3,14 @@ class RapidMlx < Formula
 
   desc "Fast local AI engine for Apple Silicon with an OpenAI-compatible API"
   homepage "https://github.com/raullenchai/Rapid-MLX"
-  url "https://files.pythonhosted.org/packages/4e/40/e595b12fb4a2bbbfc84571f77ff5c9f2d2a117c29853715e6cbdacf17444/rapid_mlx-0.13.1.tar.gz"
-  sha256 "ec0372b5ba4756b7c61e4c1f71b0795b7c6264e5ff3b809f7f6df19d1a5cf1da"
+  url "https://files.pythonhosted.org/packages/34/cf/3b9a9ad2657716b81dc3e9abaaf5ad9beb516753db974311c6a79ae752a7/rapid_mlx-0.13.2.tar.gz"
+  sha256 "37da675f932043c21e96f7b1f9f1f4776dd22a0cccad578094b7852cab288f56"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "2fa6b009171ff1cf2773f720242ad4b6adf2f250ce20b19c90f508ec8bd87ad0"
-    sha256 cellar: :any, arm64_sequoia: "8b7a0774f4a37eec72f2135745b876484f90619546a8dad36e5b05014438da8d"
-    sha256 cellar: :any, arm64_sonoma:  "a1c3b0197f06896f41b697de32d22fdc2ddebed7bc808733700cbfaecedc31a3"
+    sha256 cellar: :any, arm64_tahoe:   "9500da56ba38bf6e5fb9f1a97e8b214facfcd0f17bdd1f7cafda5d8db63bd04d"
+    sha256 cellar: :any, arm64_sequoia: "7a8ac124a9a9aa9be3d4e8d0e1a1b2c5314e83c2966d4cf0b65baced307e02b3"
+    sha256 cellar: :any, arm64_sonoma:  "7caf38ecb644db38418e4ad92732f2a3457b66b6c6e931776680350f016d5e7e"
   end
 
   depends_on "cmake" => :build
@@ -105,8 +105,8 @@ class RapidMlx < Formula
   end
 
   resource "huggingface-hub" do
-    url "https://files.pythonhosted.org/packages/c6/ae/222a91937ebee7f62c0ca8f5ee0afd97577caf24c0abb927d1f5c7e9f6d2/huggingface_hub-1.28.0.tar.gz"
-    sha256 "46a2e950c09234de54093d587d1675382f0d08dbd600d9fb599b5932f5b2c6cb"
+    url "https://files.pythonhosted.org/packages/64/35/42316e8f6908b6d21bc8df017cc6efba94fb5edbf99b64e28dd142325e20/huggingface_hub-1.29.0.tar.gz"
+    sha256 "6ebb385a581435325cf6d5c5b233d5d4bc91175834d99fd65dae14379b36e9ad"
   end
 
   resource "idna" do
@@ -215,8 +215,8 @@ class RapidMlx < Formula
   end
 
   resource "regex" do
-    url "https://files.pythonhosted.org/packages/20/98/04b13f1ddfb63158025291c02e03eb42fbb7acb51d091d541050eb4e35e8/regex-2026.7.19.tar.gz"
-    sha256 "7e77b324909c1617cbb4c668677e2c6ae13f44d7c1de0d4f15f2e3c10f3315b5"
+    url "https://files.pythonhosted.org/packages/61/d8/9c23ec31d4973d7b41a99f45c7aa9aa65c7c4313d5c0463aafdb8fe05dd7/regex-2026.8.31.tar.gz"
+    sha256 "9350fd448a6442ae27853ab9d4b8d5a0bcb6d7774923a4fdfddd104c4458b35f"
   end
 
   resource "requests" do
@@ -275,8 +275,8 @@ class RapidMlx < Formula
   end
 
   resource "transformers" do
-    url "https://files.pythonhosted.org/packages/aa/7c/8240f612819718100a9346dc28dea6a11370c3ca9c8c6eabadd3dea4ef29/transformers-5.12.1.tar.gz"
-    sha256 "679ee731c8225347889ad4fb3b2c926a62e9da3b7d284e9d12c791da7272466b"
+    url "https://files.pythonhosted.org/packages/2a/92/c50c61da7046bbb59a4d011291aeadcfb4d7980ab36fdb31e93823a3fb93/transformers-5.15.1.tar.gz"
+    sha256 "27c996bd9075ddc82d40f8590dfdc81ea45f611bfca477e0db5d7fd257a482f7"
   end
 
   resource "truststore" do
@@ -285,8 +285,8 @@ class RapidMlx < Formula
   end
 
   resource "typer" do
-    url "https://files.pythonhosted.org/packages/ae/40/4a3db7990d1f62a53182aa96eaef57aeb2886a27f90a195bc66713565d31/typer-0.27.1.tar.gz"
-    sha256 "a79bef8469a79c45498e7b814ecf8d603cc7644e9acbd9e19cac0334240b18df"
+    url "https://files.pythonhosted.org/packages/16/f7/57713ba479fd405eb76de31404b2c744c289e336b2d999511ebf51e496f7/typer-0.27.2.tar.gz"
+    sha256 "269b7eb9d3c202ca84b4bc9618cb04ebb43d3d4d1e567e4c768607232c05f945"
   end
 
   resource "urllib3" do

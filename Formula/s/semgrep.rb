@@ -8,6 +8,7 @@ class Semgrep < Formula
       tag:      "v1.175.0",
       revision: "7963c5a2d7e784ab24d0c14e29c63c6d53751336"
   license "LGPL-2.1-only"
+  revision 1
   head "https://github.com/semgrep/semgrep.git", branch: "develop"
 
   livecheck do
@@ -16,11 +17,11 @@ class Semgrep < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "976144c952c6a3e13c76804b48c61ecae0d3b44fc8e71fa5677a11b08390e063"
-    sha256 cellar: :any, arm64_sequoia: "aa65024e7c2f52e17af196f1e6cfbb7cfb98cadf91a700ce8198fdbcfe6f4e5d"
-    sha256 cellar: :any, arm64_sonoma:  "2d24236dd16e19035f5c6d2f2f822abfd77f0717cba12a7c037c0af82d6b95f7"
-    sha256               arm64_linux:   "e94f9dee5631f81724ef657813e4314504cae071328ee843b6573a53cfd80f9b"
-    sha256               x86_64_linux:  "ccdfc7afe91615c6bc70c5ed78b2f93ed40ff985179eddb0bdd3000cd662fe12"
+    sha256 cellar: :any, arm64_tahoe:   "62ce942929df1a48fe2296364e2fb7e3f5274e50ff6f07fcf494191cd19f268b"
+    sha256 cellar: :any, arm64_sequoia: "7f65c93b1167036366a5b5576b004292f33c3f018e6c0964d7ed4e17bf2b379c"
+    sha256 cellar: :any, arm64_sonoma:  "d9a37be27492bd90b94b9ba145c4a620e07eb683af04f50bf640e0fe30d00c4c"
+    sha256               arm64_linux:   "7de2c5b08f45c60e571d0547081c71549dc24ed39bdf4877a90fc272ef51e348"
+    sha256               x86_64_linux:  "16f07fb71fdddad7171cd716920f9eaddc6dce1916d6f6bc25d5c595ddfdc98c"
   end
 
   depends_on "ocaml" => :build

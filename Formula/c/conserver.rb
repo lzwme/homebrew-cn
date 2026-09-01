@@ -11,15 +11,15 @@ class Conserver < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "18a385e584cd2d5496a7a638a2eeb78a071b5ca4fc84dd4acadfc3b1d32d773c"
-    sha256 cellar: :any,                 arm64_sequoia: "f316ec7ce2a3c077720937ae72f97c0ba14de6fa07c780153f38026275e55727"
-    sha256 cellar: :any,                 arm64_sonoma:  "d46c8edcd5f6f406c7f22544e4660936e782f20b7c23f93337b7ae71b606e2c1"
-    sha256 cellar: :any,                 sonoma:        "383529209992368495464900474448a0e19bc1afea889426ac8c43479b95aee9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5427990f7696fc5dbcb6f2d47256571c544384384011727da0b22e0771ed131e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2e62d98d49a9f17bb8be6628da6758273db6c59f53ff11e9f601d7095ed35013"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "b9639002703fb39131f766f5bf9b59fc92c223a8d561fca26888bdbe76878489"
+    sha256 cellar: :any, arm64_sequoia: "b867d5ec6b846f4ee3aab4f7f868d3dc4f2bd59cf10614821f014e4850b8fb5f"
+    sha256 cellar: :any, arm64_sonoma:  "2b2571375ab3f26724d08297c7e81a0baac22f2f6a2fe1ac6c1dde7bb8e73305"
+    sha256 cellar: :any, arm64_linux:   "52067bb40b928258fa727ee70b709e7f18a4dd76fbb36e24b80a1130f4a92d61"
+    sha256 cellar: :any, x86_64_linux:  "e5d6c2593f8aa2d43cb8b0db6288ad9445212e8eae4025264b1117e333514fbd"
   end
 
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   uses_from_macos "krb5"
   uses_from_macos "libxcrypt"

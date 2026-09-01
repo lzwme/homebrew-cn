@@ -1,18 +1,17 @@
 class Tfcmt < Formula
   desc "Notify the execution result of terraform command"
   homepage "https://suzuki-shunsuke.github.io/tfcmt/"
-  url "https://ghfast.top/https://github.com/suzuki-shunsuke/tfcmt/archive/refs/tags/v4.14.18.tar.gz"
-  sha256 "5a256fedf22b5f6e6314b6cb5c658e0a75b2853a85d0d3c8469f78a02eaa2026"
+  url "https://ghfast.top/https://github.com/suzuki-shunsuke/tfcmt/archive/refs/tags/v4.14.19.tar.gz"
+  sha256 "5c6fe5d838eb3019cad1f7ba1eb2d2ea4f74617529f0c61ed301036d4dd39fc9"
   license "MIT"
   head "https://github.com/suzuki-shunsuke/tfcmt.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "40350aade26274af1d684d45eac58a48a82da8f29d4185d6708e6391ae97c1cb"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "40350aade26274af1d684d45eac58a48a82da8f29d4185d6708e6391ae97c1cb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "40350aade26274af1d684d45eac58a48a82da8f29d4185d6708e6391ae97c1cb"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6abc38ea225826364521be3c6b6ebe63f569e7627064a145e1408f7a05511a15"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "65fa2c2282b4ddf7f1cafe208a11b3f76e8c4437667c65d03a985972dde343e0"
-    sha256 cellar: :any,                 x86_64_linux:  "288242994c794bc0d8731d253627d39a34755e1c86928640c13dc2aa78db9a55"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "90ea369ae934cbb1c8054b6034ad6dd0791cff009eff649e7b898333dc173970"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "90ea369ae934cbb1c8054b6034ad6dd0791cff009eff649e7b898333dc173970"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "90ea369ae934cbb1c8054b6034ad6dd0791cff009eff649e7b898333dc173970"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "84c01adeeab1119b5a356a0bb7a5cadf4999e7286420bd3efe678ce5c4b1a6ba"
+    sha256 cellar: :any,                 x86_64_linux:  "4ab375b6b25943e7e0d9b96b9327f5d107efb2838f13bcd31413d2c1bd6cf77c"
   end
 
   depends_on "go" => :build

@@ -3,19 +3,19 @@ class Harlequin < Formula
 
   desc "Easy, fast, and beautiful database client for the terminal"
   homepage "https://harlequin.sh"
-  url "https://files.pythonhosted.org/packages/6c/f3/a5f4bbf03aad4c97442b3cc66db53b70b4c3d74126321f867a1028ca656b/harlequin-2.11.0.tar.gz"
-  sha256 "9d7d547d673a96fa2d4320934fdd16640999b421c2e72e0287b6c5d843a469c3"
+  url "https://files.pythonhosted.org/packages/ee/b5/071ad09253d05e52adb49386f433bb87a3a9b6e0e102c9bf657feb72843e/harlequin-2.12.0.tar.gz"
+  sha256 "bcfeba515ff824bf5b12ce044dfba6774ea2b02c08d9b29f7befa53d7e47f5a7"
   license "MIT"
   head "https://github.com/tconbeer/harlequin.git", branch: "main"
 
   no_autobump! because: "has non-PyPI resources"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "99391d0d99a6f8144ff8838f31d178078204bc4d26826e35b6ac0b44315ff1b8"
-    sha256 cellar: :any, arm64_sequoia: "32897628e3c2d18bbfbdf6617dd0db79c14cb46f8566646d156f439d14ca6d45"
-    sha256 cellar: :any, arm64_sonoma:  "3949d3b079bcc9c5e5e9ec134f63fc2cc04f0b32fdf764b209ae55ffc002e3bd"
-    sha256 cellar: :any, arm64_linux:   "baa5edfabfd724366b496c59ee1e7d84c3f40fd8196aef78d43feb028e2e56c1"
-    sha256 cellar: :any, x86_64_linux:  "2f5927834a7aba39b2ac2e31ed467de12eea50b35bdac25fa17ebdc23a3f81d6"
+    sha256 cellar: :any, arm64_tahoe:   "48354993aabd5b220b0a282015ac8b390540cc57b9e2dba0fb49bb204972eac6"
+    sha256 cellar: :any, arm64_sequoia: "1c35e8783a491bbae459142101dd9aa58754d2d6bea3969d9976887dfc8ac61c"
+    sha256 cellar: :any, arm64_sonoma:  "9b185fcfda06fd1f67eb40b1b0d436345ebff997481c96bd45fa870a3634faa1"
+    sha256 cellar: :any, arm64_linux:   "df81b253bd152feb58513fff9b6eda897066624bda60fd805bd003e090f8397c"
+    sha256 cellar: :any, x86_64_linux:  "ee206e45cc6462b5be81f45970c6edbfa2ed276640f8bd90095999e42d860c20"
   end
 
   depends_on "cmake" => :build
@@ -47,8 +47,8 @@ class Harlequin < Formula
   end
 
   resource "harlequin-mysql" do
-    url "https://files.pythonhosted.org/packages/6c/5c/5cd7920799ebd0af14ffd2d85c016ffdc492786bb9b242c8e0b2a71bd60d/harlequin_mysql-1.3.1.tar.gz"
-    sha256 "ec06c030888bb6e420448a96c83d9a8f7f7c1714c197ed2b9656fd1355e76dd0"
+    url "https://files.pythonhosted.org/packages/28/86/e9fe658afd953b8580ad8399fad17f248b2dfab612fff5c2e2292d415f14/harlequin_mysql-1.4.0.tar.gz"
+    sha256 "60eb100978711c4f8a6e1b702d7fed313f298b2b0641eed259a5415673f75d25"
   end
 
   resource "harlequin-odbc" do
@@ -57,8 +57,8 @@ class Harlequin < Formula
   end
 
   resource "harlequin-postgres" do
-    url "https://files.pythonhosted.org/packages/a4/27/18e42a6a524ed28dc94aa26199fe6766f95073c246517e35f157098e5743/harlequin_postgres-1.3.1.tar.gz"
-    sha256 "25dcb73e97cdfb17c3bcfdc3146418a98ff11ce68f6a51fb1b25322eac9d5223"
+    url "https://files.pythonhosted.org/packages/b6/20/3f1863446c8788db6b0f40d33ce48698f78a6194dc0478bf8a6c9474dc6a/harlequin_postgres-1.4.0.tar.gz"
+    sha256 "1220d8e43e5c78e0479d400965d322482c483be19c45e37a1f8bbe8c861b32fe"
   end
 
   resource "jinja2" do
@@ -67,8 +67,8 @@ class Harlequin < Formula
   end
 
   resource "linkify-it-py" do
-    url "https://files.pythonhosted.org/packages/53/3e/79f35b8c31a1881893b7e62be80b2573f06e38db47c33065749293ee1b97/linkify_it_py-2.1.1.tar.gz"
-    sha256 "a78f40fee177eb912e9d2375074108378523c38d3fde5d3ee804f465b6cfbfee"
+    url "https://files.pythonhosted.org/packages/45/98/7a1a5f31fd5c7ba93e963b168e244b8e3dd705b3d2a718e3c3307583bf57/linkify_it_py-2.2.0.tar.gz"
+    sha256 "907acd2d17ac1fbb9ddb62c8957ccbd6158cac602231a15c3b0cd1e215f03cee"
   end
 
   resource "markdown-it-py" do
@@ -276,14 +276,9 @@ class Harlequin < Formula
     sha256 "dc983d19a509c94dba722ee6abd33940f7c05a89e243c47e907eb4db6f1a43e5"
   end
 
-  resource "uc-micro-py" do
-    url "https://files.pythonhosted.org/packages/78/67/9a363818028526e2d4579334460df777115bdec1bb77c08f9db88f6389f2/uc_micro_py-2.0.0.tar.gz"
-    sha256 "c53691e495c8db60e16ffc4861a35469b0ba0821fe409a8a7a0a71864d33a811"
-  end
-
   resource "wcwidth" do
-    url "https://files.pythonhosted.org/packages/34/74/c6428f875774288bec1396f5bfcbc2d925700a4dad61727fd5f2b12f249d/wcwidth-0.8.2.tar.gz"
-    sha256 "91fbef97204b96a3d4d421609b80340b760cf33e26da123ff243d76b1fda8dda"
+    url "https://files.pythonhosted.org/packages/36/57/ed58088fafdf4c55a0ad6bde846502567645424d7ebf325230b9237f4085/wcwidth-0.8.3.tar.gz"
+    sha256 "d128512515fbf4612e0ff21fd6380399210318b7b54a9af59dff8454cf9730eb"
   end
 
   def install

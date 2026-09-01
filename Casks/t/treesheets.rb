@@ -1,9 +1,8 @@
 cask "treesheets" do
-  version "3332"
-  sha256 "692d05ae481931ae541c5c1969499ed1bb77bc991c9325c8dc64f0dc4d80f3ee"
+  version "3333"
+  sha256 "4f4a05011d3d3c0256d3f97bee49a28c1bd6a4e7253cb296b6f73f392695e90e"
 
-  url "https://ghfast.top/https://github.com/aardappel/treesheets/releases/download/#{version.csv.second || version.csv.first}/TreeSheets-#{version.csv.first}-Darwin.dmg",
-      verified: "github.com/aardappel/treesheets/"
+  url "https://ghfast.top/https://github.com/aardappel/treesheets/releases/download/#{version.csv.second || version.csv.first}/TreeSheets-#{version.csv.first}-Darwin.dmg"
   name "TreeSheets"
   desc "Hierarchical spreadsheet and outline application"
   homepage "https://strlen.com/treesheets/"

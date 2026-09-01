@@ -1,17 +1,16 @@
 class Fluxcd < Formula
   desc "Open and extensible continuous delivery solution for Kubernetes"
   homepage "https://fluxcd.io"
-  url "https://ghfast.top/https://github.com/fluxcd/flux2/archive/refs/tags/v2.9.4.tar.gz"
-  sha256 "123a43ba4dc80e338064ccf39ce8ee011fae0c3f140bde4fcd90b722e557eef2"
+  url "https://ghfast.top/https://github.com/fluxcd/flux2/archive/refs/tags/v2.9.5.tar.gz"
+  sha256 "c8f59d1ad1cb3392a71286506cc8b3b0bf1ad1095c6e7c9a8d50a631f0736842"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e3d80e66dba4925ffb6a4269578dcfb7fddfc3ed42b86df810838087dd157466"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a42893b4b594fa76a77d5f0cf42f7faa46f98ff9930aeeb67b0c123a208c5605"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bfb453183d080d3d8a1d7bb16043e0f4d6186b38538603645c2d54a0403400c2"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d32db7cd930a1bd0dcf0d12cec942668d31ea0ff7093c7d1d2ac2c9bd30e4b5c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6cca3ce6b2cd347a31525d6f9c6f7db93c8b1ec00b18fe08a738bab83a4221f0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8a827f18dc48ae5665af356eaf8e65e7493bce0a06d84b209533e27394f9fd01"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4d8b3fcb09183d3a8cd1961fba73d6d41097aa7f79c12e21f5a4695d6fb641ba"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5a4c2c6be6c8d88fc94809496e117bb71ba0d6e6a8932ab52a1ba087734faed7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "01de4113d17f1fd1ea6bda5e9d7f9d53afe066ac49a7fbd64a397c6dbe1b0d5d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2a0ddf9b31a12c8c90a0f3c08a4ac1fbf23d57b531f1b8de3b878f94e1e2c219"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8b7c0b8e75546510a8d7145b4f32db900a7d95be44cb139996e2a97d37b4f1e5"
   end
 
   depends_on "go" => :build

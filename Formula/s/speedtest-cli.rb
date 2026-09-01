@@ -10,8 +10,8 @@ class SpeedtestCli < Formula
   head "https://github.com/sivel/speedtest-cli.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "93487be757c9b3763deeb1b1415ee8ad10c5a80fcc9ebaeacbb8fbac3e9b9474"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, all: "05cb29e6dbee567f527c226f4ea42e2f2abed22f0ec68558fe153db254dc774e"
   end
 
   # see issue in https://github.com/sivel/speedtest-cli/pull/796
@@ -19,6 +19,8 @@ class SpeedtestCli < Formula
   disable! date: "2027-01-18", because: :unmaintained
 
   depends_on "python@3.14"
+
+  conflicts_with "speedtest-go", because: "both install `speedtest` binaries"
 
   # Support Python 3.10, remove on next release
   patch do

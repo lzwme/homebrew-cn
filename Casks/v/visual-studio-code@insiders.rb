@@ -1,12 +1,11 @@
 cask "visual-studio-code@insiders" do
   arch arm: "-arm64"
 
-  version "1.136.0-insider,1787936893721,d5ceefbe0b296c4d8fbbf3664aff8cad73cd1b5d"
-  sha256 arm:   "ba3bc6c1b5c24b51157719fcf2f3cc9060c709f7ddfb4cf84c2166727f6def8f",
-         intel: "1ca3bd718007214636d94ec5556947c07d228df9c0714967a8238566f0625a68"
+  version "1.136.0-insider,1788164618240,5c9173276314a5688bc10275e5a25c8d0fe9f4f7"
+  sha256 arm:   "c753d79cc536d0ba615d1e5c3f44953bd1430e08a064336a73bc0e735daf8764",
+         intel: "1c798828990fb93de09da7fdeeddab42f89d8f89884cf288322b124febbf21a9"
 
-  url "https://vscode.download.prss.microsoft.com/dbazure/download/insider/#{version.csv.third}/VSCode-darwin#{arch}.zip",
-      verified: "vscode.download.prss.microsoft.com/"
+  url "https://vscode.download.prss.microsoft.com/dbazure/download/insider/#{version.csv.third}/VSCode-darwin#{arch}.zip"
   name "Microsoft Visual Studio Code Insiders"
   name "VS Code Insiders"
   desc "Open-source code editor"

@@ -1,8 +1,8 @@
 class UutilsCoreutils < Formula
   desc "Cross-platform Rust rewrite of the GNU coreutils"
   homepage "https://uutils.github.io/coreutils/"
-  url "https://ghfast.top/https://github.com/uutils/coreutils/archive/refs/tags/0.10.0.tar.gz"
-  sha256 "f8e68cd0e3629378f047544ead272161a83211c43f4985a9f52944e5db8f1a44"
+  url "https://ghfast.top/https://github.com/uutils/coreutils/archive/refs/tags/0.11.0.tar.gz"
+  sha256 "a47966117783bef18650cc724f1b1d061b717ac91a0feaabdd34910703cf70a4"
   license "MIT"
   head "https://github.com/uutils/coreutils.git", branch: "main"
 
@@ -12,12 +12,11 @@ class UutilsCoreutils < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "b179023f2b0571717c60305f800671c21f4e74fa6137d7a367bb1f389ae240a0"
-    sha256 cellar: :any, arm64_sequoia: "d97b9f9b9c47dd9c00f517b6e84395af965b76aadd55c432526ae4edb5296e7a"
-    sha256 cellar: :any, arm64_sonoma:  "8ba7bf5c12fd0dfc809639c249a563a4c1bf2f962afa145f24bfe68b3bbc65ae"
-    sha256 cellar: :any, sonoma:        "6796fb9dfa6fa236205f5968aaf75c4e98c122a2a0d7f53b1b915df34e406604"
-    sha256 cellar: :any, arm64_linux:   "7cb12e953326cd6ce08e74f6773f739c307f8727aa22c447f171018c2a93f83a"
-    sha256 cellar: :any, x86_64_linux:  "01d7e7b84828e70a70b39cd9387c516df5163fb5729565182f44c446d6b128fc"
+    sha256 cellar: :any, arm64_tahoe:   "1be42be4b24c8b26bf7fafd464671d21a14ad0a1bb452f06eb03bd1dcc94ff94"
+    sha256 cellar: :any, arm64_sequoia: "b70a34a29e55591472c59b74bb56093ba42c02504aca7488555fa2cadfa2f105"
+    sha256 cellar: :any, arm64_sonoma:  "12d799a82502002df1bf7ca9ab3e26f5a59bdf696ec024eeb1056ddce5d76380"
+    sha256 cellar: :any, arm64_linux:   "6fd365901b4b48ba97a91b3c7d19800cded910a1570b79c30445ee35a7b23675"
+    sha256 cellar: :any, x86_64_linux:  "55cb91bd524c38b57455e38c54b10b163291b59a0766f959fe6665a3dc9efa34"
   end
 
   depends_on "rust" => :build

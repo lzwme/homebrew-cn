@@ -3,8 +3,8 @@ class HermesAgent < Formula
 
   desc "Self-improving AI agent that creates skills from experience"
   homepage "https://hermes-agent.nousresearch.com"
-  url "https://ghfast.top/https://github.com/NousResearch/hermes-agent/archive/refs/tags/v2026.8.27.tar.gz"
-  sha256 "e622723b5bf3cd6c1db974d92d32242f1cb63f61c1112b6f708b34d619ef0fc7"
+  url "https://ghfast.top/https://github.com/NousResearch/hermes-agent/archive/refs/tags/v2026.8.31.tar.gz"
+  sha256 "78fb3ff707ec1d17044b875ecac8bef28aa39d44242824f6871ca40afe7bf217"
   license "MIT"
   head "https://github.com/NousResearch/hermes-agent.git", branch: "main"
 
@@ -14,11 +14,11 @@ class HermesAgent < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "afa4b75f38fcdf9554e5f1f980fc9267049e6e6b60f38de9b3ff21ba08689cde"
-    sha256 cellar: :any, arm64_sequoia: "55276fd609a61527843ca431a37d1e47ccb6f6e161341350201d814fa093229e"
-    sha256 cellar: :any, arm64_sonoma:  "5935120f0bc842707e4479cb896f5347d0bbe010bfee34f68ad53e59f398b0f4"
-    sha256 cellar: :any, arm64_linux:   "712b450e3fa50fc98d892dad62e2e0d2a3ddce0048b91207c65fa49288b5d3a6"
-    sha256 cellar: :any, x86_64_linux:  "a44846e669bc97beb319a29c6986d3bb2c68a8bd5512046b0e88745b765b3275"
+    sha256 cellar: :any, arm64_tahoe:   "6905454e188566ce2770d6e372774d87ecf5064f4e08c2880de2f813f4c31892"
+    sha256 cellar: :any, arm64_sequoia: "d41c17360154f2a9d6db0d83548a67268bd2ff50b22405ec999b3b9fcf105f27"
+    sha256 cellar: :any, arm64_sonoma:  "ffe5e1e9bc044f73888aac531ee9bd3e519aa306a1c740338ff5742732f970f0"
+    sha256 cellar: :any, arm64_linux:   "ba86a13b5fb09b439e15780aad47b16ee34dbe5ac50436323950496d969f6696"
+    sha256 cellar: :any, x86_64_linux:  "0c250a3812f94b2667cc3c85bc3692c6564bcb72f49477b0956a6c727459a661"
   end
 
   depends_on "pkgconf" => :build
@@ -74,6 +74,11 @@ class HermesAgent < Formula
   resource "fire" do
     url "https://files.pythonhosted.org/packages/c0/00/f8d10588d2019d6d6452653def1ee807353b21983db48550318424b5ff18/fire-0.7.1.tar.gz"
     sha256 "3b208f05c736de98fb343310d090dcc4d8c78b2a89ea4f32b837c586270a9cbf"
+  end
+
+  resource "firecrawl-anydoc" do
+    url "https://files.pythonhosted.org/packages/35/54/ee43b1661a954e53eaed85878a7ccc37ed73e02e6577bb26437ec5f9de94/firecrawl_anydoc-0.2.4.tar.gz"
+    sha256 "3e29460272fea81cde08fd5af11f6b0f1ff05919214ddc939867f72362c83032"
   end
 
   resource "h11" do
@@ -290,8 +295,8 @@ class HermesAgent < Formula
   end
 
   resource "wcwidth" do
-    url "https://files.pythonhosted.org/packages/34/74/c6428f875774288bec1396f5bfcbc2d925700a4dad61727fd5f2b12f249d/wcwidth-0.8.2.tar.gz"
-    sha256 "91fbef97204b96a3d4d421609b80340b760cf33e26da123ff243d76b1fda8dda"
+    url "https://files.pythonhosted.org/packages/36/57/ed58088fafdf4c55a0ad6bde846502567645424d7ebf325230b9237f4085/wcwidth-0.8.3.tar.gz"
+    sha256 "d128512515fbf4612e0ff21fd6380399210318b7b54a9af59dff8454cf9730eb"
   end
 
   resource "websockets" do

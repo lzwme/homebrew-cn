@@ -2,18 +2,17 @@ cask "brave-browser@nightly" do
   arch arm: "arm64", intel: "x64"
   folder = on_arch_conditional arm: "nightly-arm64", intel: "nightly"
 
-  sha256 arm:   "a70970aaa55d6f532a6437e0261ae3c97e03b9ae1afa1b2a62cfb3b624fad8a8",
-         intel: "604573f5abe7f7dc7e90f1fd9d61ab94d3e8f93b7f0f0c0d3b2c32a36e9cbafd"
+  sha256 arm:   "649683df728abf3bd8374c7233a291296eb1aa504c27153e2ceb8989f2656b76",
+         intel: "f3e48fcfa2deab32603fceab00e24993de32427fc15df08f4a1d35028748570e"
 
   on_arm do
-    version "1.96.27.0"
+    version "1.96.33.0"
   end
   on_intel do
-    version "1.96.27.0"
+    version "1.96.29.0"
   end
 
-  url "https://updates-cdn.bravesoftware.com/sparkle/Brave-Browser/#{folder}/#{version.major_minor_patch.sub(".", "")}/Brave-Browser-Nightly-#{arch}.dmg",
-      verified: "updates-cdn.bravesoftware.com/sparkle/Brave-Browser/"
+  url "https://updates-cdn.bravesoftware.com/sparkle/Brave-Browser/#{folder}/#{version.major_minor_patch.sub(".", "")}/Brave-Browser-Nightly-#{arch}.dmg"
   name "Brave Nightly"
   desc "Web browser focusing on privacy"
   homepage "https://brave.com/download-nightly/"

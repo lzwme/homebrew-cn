@@ -10,8 +10,7 @@ cask "jasp" do
     disable! date: "2026-09-01", because: :fails_gatekeeper_check
   end
 
-  url "https://ghfast.top/https://github.com/jasp-stats/jasp-desktop/releases/download/v#{version.csv.first.major_minor_patch}/JASP-#{version.csv.first}-macOS-#{arch}.dmg",
-      verified: "github.com/jasp-stats/jasp-desktop/"
+  url "https://ghfast.top/https://github.com/jasp-stats/jasp-desktop/releases/download/v#{version.csv.first.major_minor_patch}/JASP-#{version.csv.first}-macOS-#{arch}.dmg"
   name "JASP"
   desc "Statistical analysis application"
   homepage "https://jasp-stats.org/"

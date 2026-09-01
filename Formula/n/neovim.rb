@@ -2,6 +2,7 @@ class Neovim < Formula
   desc "Ambitious Vim-fork focused on extensibility and agility"
   homepage "https://neovim.io/"
   license "Apache-2.0"
+  revision 1
   compatibility_version 1
   head "https://github.com/neovim/neovim.git", branch: "master"
 
@@ -83,12 +84,11 @@ class Neovim < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "3677fd9ffb9fbb388e23f8239f44da1d8f8492bfb71e9c8e7711081cefae2f2b"
-    sha256 arm64_sequoia: "338205e7567ef418d6a5c32150a98c4d2b10634f87818809ef635c6bcd5e48e6"
-    sha256 arm64_sonoma:  "4c31c0b656cd55751894c3f4673f46b669a0ea7553143ced9a0f718469d08ed8"
-    sha256 sonoma:        "15e794d22519249ad9239dc5d8fe67e166d3717b85e0a37af83bc2ce9638dfd7"
-    sha256 arm64_linux:   "fcc394610c91a69d677a0d6c2d2947b9e81580f68ebc8ec09005c9936b73074c"
-    sha256 x86_64_linux:  "7f7b773ae7229ce58d1f96b4cd9ab63ebe5a225010de9e1f5d4c969e36b528cc"
+    sha256 arm64_tahoe:   "1fa5192523a6cc34b8c76cfb25b909888de98d4fd114def770921412172444a1"
+    sha256 arm64_sequoia: "a6f4b223c5ee632a04afbd490411624e01b261dfbb6285275e4726d6cc01510f"
+    sha256 arm64_sonoma:  "878760350f9fadc29a2fe7873ce452b4648d9d601ba537980fe9782dc24ef72c"
+    sha256 arm64_linux:   "e565cfb4664b511b34eb4a3d57572969abd0d291d9be7d5e1f89d2cb26279f59"
+    sha256 x86_64_linux:  "54bf8c1bb1b895e89e72421cbd9208911eb6cac31a0593963403df451699c324"
   end
 
   depends_on "cmake" => :build

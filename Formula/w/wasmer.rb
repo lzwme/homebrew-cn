@@ -2,18 +2,17 @@ class Wasmer < Formula
   desc "Universal WebAssembly Runtime"
   homepage "https://wasmer.io"
   url "https://github.com/wasmerio/wasmer.git",
-    tag:      "v7.3.0",
-    revision: "35c10644f7b0aad6fd9458624ceb8429fe7413c4"
+    tag:      "v7.4.0",
+    revision: "32b50f8b600efa8e2d5f88593c453139bf1ca222"
   license "MIT"
   head "https://github.com/wasmerio/wasmer.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3f6ddf78ba1a7dba8530ecd4b764e18a40bf2a5e4a161213f3092ee90e0402ed"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d9539309b3563b627981aa804ad392341dbedfcba316d5d07fcb4b310e071991"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e9375eeaa65345b4abb6c7ec1193f4cdcf1c43f4c0d06bdf6f5509d482e44323"
-    sha256 cellar: :any_skip_relocation, sonoma:        "594e68a3bebfe0aebb1b689f139a5578ffcf0032c0f60b824eb59430e9a18a82"
-    sha256 cellar: :any,                 arm64_linux:   "4ba39d8caa8c4370dee258fcbd82b076c9103aed0a390f4fd6b070689691dec4"
-    sha256 cellar: :any,                 x86_64_linux:  "2c16f7017ae6b2ba2af0aec193bbbdd795c58d85ed914f393ff52ba625709cfc"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "54e0da72e14f8836f604dd0ddc113e1a7191f6e81b4f6a806d5996035e1f68c4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "09744c701392df3cbeb287be5034d7a9f672905bb34ea886b3b24a7822fdfb1d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1154738be5fdaff67f0a02d0a52ebbee2f334804acad3e5bb3ffec32be645476"
+    sha256 cellar: :any,                 arm64_linux:   "e0400226323375d0938a438e05da5537b51a30368fc805fc707f9d5072c184bb"
+    sha256 cellar: :any,                 x86_64_linux:  "c8e2a12135107027dabd014d84d360ff6c803de212b702f2ff0ce0b3aa14785f"
   end
 
   depends_on "cmake" => :build

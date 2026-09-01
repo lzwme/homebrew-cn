@@ -1,18 +1,17 @@
 class Cloudflared < Formula
   desc "Cloudflare Tunnel client (formerly Argo Tunnel)"
   homepage "https://developers.cloudflare.com/cloudflare-one/networks/connectors/cloudflare-tunnel/"
-  url "https://ghfast.top/https://github.com/cloudflare/cloudflared/archive/refs/tags/2026.8.2.tar.gz"
-  sha256 "acdf125b7e872be6e1d13116e8054d27b2c4755760b0cdc3b4ee3910edd37b93"
+  url "https://ghfast.top/https://github.com/cloudflare/cloudflared/archive/refs/tags/2026.8.3.tar.gz"
+  sha256 "04cd85af52c2c012f08212c878b4c403eadf410865f2356a80f361d475d2fc92"
   license "Apache-2.0"
   head "https://github.com/cloudflare/cloudflared.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c90470f8591f3d25fcce1040dfb9cd08085af69d05cc5a012c60cc34a005f926"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0344bb7656f4ccc003ec2e99cac9462beec40ee53c03cfb07afd594b551eb9ef"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7e77be1a6f66ea82fa82740c7cb15aeecd15daf56d777d2ea9137b0746a0bab0"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ac1c4a568839aaf958ec6b6bbe6696cbb9b69a3b119978c038951d86944d2e03"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "23ea8533ef8f04b21a83f67310aa27172f96d50d3d3ce7f2f1b8d8847702b263"
-    sha256 cellar: :any,                 x86_64_linux:  "432b1aa4ea267a9a3e80c8a3528f29733862631ccfb7ff05d0e4d6d8f6b70810"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f1fd77b17a95cc14bec6a2c44725da454705a120d91654b990290e6cbcd2ca0f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4a5cd7966bf8ead25a4111f1a9acdaff451fe3edd856bc25812e9e59d6653f61"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "eaeb9f88daf2e978197831a1067531e068ff32e9366a248fcda3e9dac79bbe5d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6f369ecda8d2d4f01c6cce9ff428e1fdec99c38233a7a6a793f71d9f2fa1ab99"
+    sha256 cellar: :any,                 x86_64_linux:  "aacf25bf0e0ed4d021a9aa23f903b797ac89b4ec2d1d784e0b82036c001bd782"
   end
 
   depends_on "go" => :build

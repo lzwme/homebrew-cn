@@ -4,15 +4,15 @@ class Rizin < Formula
   url "https://ghfast.top/https://github.com/rizinorg/rizin/releases/download/v0.9.1/rizin-src-v0.9.1.tar.xz"
   sha256 "7ac1cd7daca7afdda742e15478b1f747fc1f813e496fee71839d1e109e543dca"
   license "LGPL-3.0-only"
+  revision 1
   head "https://github.com/rizinorg/rizin.git", branch: "dev"
 
   bottle do
-    sha256 arm64_tahoe:   "cd8542861b5f961739e287d139df33ea1653fb545e972bf2f1892750041420c1"
-    sha256 arm64_sequoia: "33d3a39989176e106488a91408f5c33855755dcf3b57ed2e563fed251183442b"
-    sha256 arm64_sonoma:  "6e9b10c6ead173e20a3910eecfa2dd15acff1f63c8762899dff8f11f370e6d92"
-    sha256 sonoma:        "4603e020ea1d44ddf279d09cb90751f2ce32241c95a737fa12626cf205c79d8d"
-    sha256 arm64_linux:   "0da359bd50674636efdebb5032c991297409d074ffd8886d3aa60008836ebcdd"
-    sha256 x86_64_linux:  "319ef2437f853598e9c6fbe6cd7bab7b60c8eb8a647049159e12160ed8feb8ec"
+    sha256 arm64_tahoe:   "300c7829238fcad0718decc9ca8a37d6fa48737bbcfe2fc604cfe79fe52da177"
+    sha256 arm64_sequoia: "a7fcb87c28c47ddf4c295f4063b6a2a5450076f4cfafe52ec3bd6451de1b291a"
+    sha256 arm64_sonoma:  "ba43503e7975796d6cfe415b9df863aa21bb0c826098b0519b0326f0dc50178f"
+    sha256 arm64_linux:   "de6387d5e1843b2ea960778bb289f49c64dd000d5d8302721fb032ccb52ed046"
+    sha256 x86_64_linux:  "7ccffe9f458255aa30939d0aab2ca88dd10e28b1fa64cad7a24e31e064fdb2c2"
   end
 
   depends_on "cmake" => :build

@@ -1,17 +1,17 @@
 class Ipatool < Formula
   desc "CLI tool for searching and downloading app packages from the iOS App Store"
   homepage "https://github.com/majd/ipatool"
-  url "https://ghfast.top/https://github.com/majd/ipatool/archive/refs/tags/v2.4.0.tar.gz"
-  sha256 "95bb79d983b30a90d10bd4b326fc384ce7896abaf0626989ff463a36930c9f12"
+  url "https://ghfast.top/https://github.com/majd/ipatool/archive/refs/tags/v2.5.0.tar.gz"
+  sha256 "c44b6bc36cef8364e685d7a290d10d0120f26f2bb3644ebad4cf28dafb417cd6"
   license "MIT"
   head "https://github.com/majd/ipatool.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e1769c388474064511407b2ede4ebd0f72ede3c49ae64b4ec09b788e1b360638"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "60e8813943fc8427b4f3249cdc93d240995f261c4aef59df85795ed437e7775d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "87979f77aa7097f7a70f4b6df9e452fea768b666e52c94d218583880724ee97a"
-    sha256 cellar: :any,                 arm64_linux:   "a7d877442455178be6f5b0cbe5a3176466663cbad2664d786f82a55a2ba4e350"
-    sha256 cellar: :any,                 x86_64_linux:  "205c2e185b6f8d9697f26fe3dfc0101a49cba006f013170432a19df5e3da3bb2"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7ccf25212932d2ce6c25a847ba33e6affd3447251cebc4edffd6fde067ba2cd6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2031b6efdbbe183927c195b4c52b4fd26dac375634771a74918186b50611dad9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "781976115cc9e3af856bf0994bf43663667806b6390f6394429ae5f0092b25c5"
+    sha256 cellar: :any,                 arm64_linux:   "ed6dab4f402fb7b0a55d15749ea998d569157b8d9d569bdc3156f63ba425e0d5"
+    sha256 cellar: :any,                 x86_64_linux:  "c918c09600e20786ed37ea39c145da90837780ece8f848a5a31c170dc3fa6397"
   end
 
   depends_on "go" => :build

@@ -1,8 +1,8 @@
 class Istioctl < Formula
   desc "Istio configuration command-line utility"
   homepage "https://istio.io/"
-  url "https://ghfast.top/https://github.com/istio/istio/archive/refs/tags/1.30.4.tar.gz"
-  sha256 "907e3edebbff7d99aa0ddf3bb92092c3e69f52973f5a48b1454d09834ebae8fe"
+  url "https://ghfast.top/https://github.com/istio/istio/archive/refs/tags/1.31.0.tar.gz"
+  sha256 "92c1b606ee9c7ddd644dd523978e5d22fb3d62775dc60cd5cdb613540100b1da"
   license "Apache-2.0"
   head "https://github.com/istio/istio.git", branch: "master"
 
@@ -12,11 +12,11 @@ class Istioctl < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d9d12a94f46c5d1455dd20f9c1cb725439b87958cb4dde01f692403692f27a3b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "00576598d2ffd184c1109d96f305101709100854d4f062da3243da643b2ae4e7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3bb85c9fa7a31f6d1cf9bfe290c3e0e5dd5d19d7dd26323dce54a993007828f0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "13702e752349b801c5dcc602a4b67a767facf30b35c54de76fb5aeb1b718d5e7"
-    sha256 cellar: :any,                 x86_64_linux:  "0572dfe624205c50067a5da2c42e61764ee6d48a6036962ad8710c2816d37698"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "dec8204ae67bd9bc302779ee27d17dbad789707377f9c674ff62a0d608f04df2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e4fc4941b5a953094f8072189abec56539f4d912c302dcd118a4692a40e80e88"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f8f4235edede9af825c01258effca9c3c3bb9abd559723fc7f92016d8ea69e97"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e9442c2e8dbf3155d8946513b3fe0f34649707e1ba80a82ec87ea3d3d07c9f39"
+    sha256 cellar: :any,                 x86_64_linux:  "2d1acef05250a2df7ae539e9d017f7793ff1690489b034a339cbf70bcd66234d"
   end
 
   depends_on "go" => :build

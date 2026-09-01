@@ -1,8 +1,8 @@
 class Crowdin < Formula
   desc "Command-line tool that allows to manage your resources with crowdin.com"
   homepage "https://support.crowdin.com/cli-tool/"
-  url "https://ghfast.top/https://github.com/crowdin/crowdin-cli/archive/refs/tags/5.0.0.tar.gz"
-  sha256 "e7489414d2da9fdb4b0aab6b90479c5cea672fbf515221e9fc24124feef3dedc"
+  url "https://ghfast.top/https://github.com/crowdin/crowdin-cli/archive/refs/tags/5.0.1.tar.gz"
+  sha256 "b630cce96fa1670917a7b5dc9c3a46c3f7834a420aebd9fc9de238a62f6b3b44"
   license "MIT"
 
   livecheck do
@@ -11,12 +11,11 @@ class Crowdin < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_tahoe:   "b7a4fae2d5118110a182e319e270759b93ae860a5d46405a672d81467d118652"
-    sha256 arm64_sequoia: "4f52f1c6e54310dbdf796f5d5b6cedb42516ab2e29dec31b2ed9c399fffa4ca7"
-    sha256 arm64_sonoma:  "8588d1a064fc6133ad01cd82c70cf57fa04abe82f26038a085173713decfd94c"
-    sha256 arm64_linux:   "eecd405fe13ab4e0796adecdfd778ac0fa79dbfb0af94627ef00554c73c39d00"
-    sha256 x86_64_linux:  "e571718c5554642c6e95f8fa6a8b14ff8b80e8841815dc7494ebf13bacf219bb"
+    sha256 arm64_tahoe:   "8b4aea1601d56a5e3d571d932946c390d9b2d61b645a2de3042bbe7acceb4626"
+    sha256 arm64_sequoia: "c705c27a8c6d6b04f4b394bd0d5de9fd1d17b8c400dbb0806d3feacb35ac2b0a"
+    sha256 arm64_sonoma:  "2c790a371aa188d2fbae4675deb5ca8caf5500e9b6f1c2020d9f67491c3b17f4"
+    sha256 arm64_linux:   "1896f3ee14a8647f65dd0c2a079c8131081b381fe399f85b87f0405247dde9f8"
+    sha256 x86_64_linux:  "a2f4f0c4625cfa70f3cc5ffa9a84819fb11b4f5b4b5a2a95e6be9219d2b29117"
   end
 
   depends_on "bun" => :build

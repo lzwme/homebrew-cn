@@ -1,8 +1,8 @@
 class ClosureCompiler < Formula
   desc "JavaScript optimizing compiler"
   homepage "https://developers.google.com/closure/compiler"
-  url "https://search.maven.org/remotecontent?filepath=com/google/javascript/closure-compiler/v20260826/closure-compiler-v20260826.jar"
-  sha256 "356c8f0b9cd5299e9f634a02f3e98c9c1e5eb4895748d872e12873d4abe28015"
+  url "https://search.maven.org/remotecontent?filepath=com/google/javascript/closure-compiler/v20260830/closure-compiler-v20260830.jar"
+  sha256 "6ec811743f02c24a3d354909b815dca152ea0632100611b7730c47c90d8a4fff"
   license "Apache-2.0"
 
   livecheck do
@@ -11,7 +11,7 @@ class ClosureCompiler < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "de787c0e94e63854883e16db72fc856b989b996bbe49d3e75009610dfbaf5d02"
+    sha256 cellar: :any_skip_relocation, all: "3ba2b385683516b162a5e21b6c2cf006f32b97a2f4cbceb10a771706b1212d13"
   end
 
   depends_on "openjdk"

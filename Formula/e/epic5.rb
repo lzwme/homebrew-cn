@@ -13,17 +13,15 @@ class Epic5 < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "ced31af7ab40d6fae78409d8b4a4ef407900e08c8ffd795181ff9feb0f666b21"
-    sha256 arm64_sequoia: "743e4ab0d73cc1f2bdf1e001208f591769669d571e5574d176b9fe30ee560861"
-    sha256 arm64_sonoma:  "d89d9c3332a770fbf037185fc5ca51445be55f6688026bd206b85abe193841ca"
-    sha256 arm64_ventura: "af11032c6a1f98e4d0c7c47c8047e3abd3a97c3ce2176078a1827f51b36cce9c"
-    sha256 sonoma:        "68900262656a9b8985e91cd6e52008fce99e3b673f2aeeeba66f6662b04462d2"
-    sha256 ventura:       "cb7ee4cbade3c44adffae316dde30b1787be74679337822aeadea60500da6f3e"
-    sha256 arm64_linux:   "ea6c9c4afda6a1ae077111114b3a13ba83dd2168dcad1cb148862c3bd9398d27"
-    sha256 x86_64_linux:  "6562f2e4c0c28c6127a5dce9dd311bc655c6abc6e3f14707d8837b840c8e3b56"
+    rebuild 1
+    sha256 arm64_tahoe:   "329dc5c35a410f8d424cf3467191892796138f37fc5325c1e9ca78feda89ac4e"
+    sha256 arm64_sequoia: "0837901c79d2a676d7f226850b1239f6681e0970609ef699b3c97911c325e691"
+    sha256 arm64_sonoma:  "bbc2755ded882747be62506d8ccbc35e0b9fb4b4f485bdd531350fcb860c3451"
+    sha256 arm64_linux:   "f843392acc228092c2a716b56018c2e5ae34d2db4bf675d9db443bb5eab6056f"
+    sha256 x86_64_linux:  "73761cb135d5bb9dbbce04eb52b66398c951fb44b732062d29356e8db6ae2d6c"
   end
 
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   uses_from_macos "libxcrypt"
   uses_from_macos "ncurses"
@@ -31,7 +29,7 @@ class Epic5 < Formula
   def install
     system "./configure", "--mandir=#{man}",
                           "--with-ipv6",
-                          "--with-ssl=#{formula_opt_prefix("openssl@3")}",
+                          "--with-ssl=#{formula_opt_prefix("openssl@4")}",
                           *std_configure_args
     system "make"
     system "make", "install"

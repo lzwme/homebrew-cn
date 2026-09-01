@@ -1,18 +1,17 @@
 class Karmadactl < Formula
   desc "CLI for Karmada control plane"
   homepage "https://karmada.io/"
-  url "https://ghfast.top/https://github.com/karmada-io/karmada/archive/refs/tags/v1.18.2.tar.gz"
-  sha256 "446d79d978a2b98389c98c97a6f505fb021fefec0532fa55abf0e22e72de2bc4"
+  url "https://ghfast.top/https://github.com/karmada-io/karmada/archive/refs/tags/v1.19.0.tar.gz"
+  sha256 "200fb27d97385756baa0971e630d674fe4900fb2dbefd49d3a42b3ab43eaa5dd"
   license "Apache-2.0"
   head "https://github.com/karmada-io/karmada.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "52cfa91bb9129ea44a61dc41913624659d1dd487c5d95ff59eec3a9f72105207"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "14485dcde6782a1f454a645718d6abe96fc530b63458fcd03491fffdf03773aa"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a202bb5993c6fcb48eb3a1b9332c101df085e7ff2c774f39196a7ccb4758f424"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4fafb5f913e766ac59948f57323b1a7bdfadba373324ef22d99fbbfaea80000f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f96e7857948be8c172d08288efa9760c9aa15e489316389f703919c58f3a0b65"
-    sha256 cellar: :any,                 x86_64_linux:  "01761d355360052d5e82457bc1c9aec5193a1f86046e556bba87a88709e923b4"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3c185e39d667425d828c499bb8b5475ab8172c3e4f390b8fa70c940dcf1b76c4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "885debba3b14610a78acb1c341426ff3f4f66fabcc7bf95dfe60853f4e51ba85"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7f3b26703b39fa2e545b50365b411ea6e3bf03a9705a223bc55c4cf42d3eff5c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9a814a3bad6c7286b6df9db71ee5700ec88f83bdb5063709bacd221b1175d708"
+    sha256 cellar: :any,                 x86_64_linux:  "a84e4ecb92521e4a4b452f30b1c85a42d770fe17b6b67b3c5e1138602474c2fa"
   end
 
   depends_on "go" => :build

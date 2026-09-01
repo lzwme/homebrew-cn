@@ -1,8 +1,8 @@
 class Oasdiff < Formula
   desc "OpenAPI Diff and Breaking Changes"
   homepage "https://www.oasdiff.com/"
-  url "https://ghfast.top/https://github.com/oasdiff/oasdiff/archive/refs/tags/v1.29.1.tar.gz"
-  sha256 "50cc87718af4f052cae19b9929b3a454bf60b6fb9573aa026d3c0490d894b363"
+  url "https://ghfast.top/https://github.com/oasdiff/oasdiff/archive/refs/tags/v1.30.0.tar.gz"
+  sha256 "fe603d5fecb297dca0ac872061a7fd69460ec65da9483bce05085c99405a35eb"
   license "Apache-2.0"
   head "https://github.com/oasdiff/oasdiff.git", branch: "main"
 
@@ -13,12 +13,11 @@ class Oasdiff < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3535e78437c17728161f9fa7101f93ac621a9990ff2dd4e87cc36d6e063bb8a5"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3535e78437c17728161f9fa7101f93ac621a9990ff2dd4e87cc36d6e063bb8a5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3535e78437c17728161f9fa7101f93ac621a9990ff2dd4e87cc36d6e063bb8a5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "83694a5c46ef63cea3e4746a9a33695ead44133a5f9f564db8605865203ed584"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8d8eb4d6067f8e605c296ccc00a54bf84504509f71f9ab2efd6a78e07d731adc"
-    sha256 cellar: :any,                 x86_64_linux:  "7d7080ab8da8bd6c6941079d1258b679f9142fe7812170de4f611e6971e5bbae"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3a77898c140cc7e66413cd7b11768731e5603be4b484455d8841b8c32b6c1167"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3a77898c140cc7e66413cd7b11768731e5603be4b484455d8841b8c32b6c1167"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3a77898c140cc7e66413cd7b11768731e5603be4b484455d8841b8c32b6c1167"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d45d86403fd97244cf5d3ace548327c00b2deef0eaeae93342ed1be3748cf89e"
+    sha256 cellar: :any,                 x86_64_linux:  "ca2605167eafdd1d26126d9c7ca3f8548c6896f92b140608ae8ecf7d216768aa"
   end
 
   depends_on "go" => :build
@@ -44,7 +43,7 @@ class Oasdiff < Formula
     testpath.install resource("homebrew-openapi-test1.yaml")
     testpath.install resource("homebrew-openapi-test5.yaml")
 
-    expected = "3 error, 2 warning"
+    expected = "3 error, 1 warning"
     assert_match expected, shell_output("#{bin}/oasdiff changelog openapi-test1.yaml openapi-test5.yaml")
 
     assert_match version.to_s, shell_output("#{bin}/oasdiff --version")

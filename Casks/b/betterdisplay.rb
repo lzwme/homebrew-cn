@@ -27,8 +27,7 @@ cask "betterdisplay" do
     end
   end
 
-  url "https://ghfast.top/https://github.com/waydabber/BetterDisplay/releases/download/v#{version}/BetterDisplay-v#{version}.dmg",
-      verified: "github.com/waydabber/BetterDisplay/"
+  url "https://ghfast.top/https://github.com/waydabber/BetterDisplay/releases/download/v#{version}/BetterDisplay-v#{version}.dmg"
   name "BetterDisplay"
   desc "Display management tool"
   homepage "https://betterdisplay.pro/"

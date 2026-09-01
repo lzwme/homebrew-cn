@@ -8,26 +8,19 @@ class Libmowgli < Formula
   head "https://github.com/atheme/libmowgli-2.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:    "d71137de5a2fe97748ca2d1b90c4a2de5c401e327dfca7201d3b28391063a36e"
-    sha256 cellar: :any,                 arm64_sequoia:  "00f3b1d8ae9a7210417aa4b09f041dc3e04e1a60097724fc28ebf5b1fb00ab89"
-    sha256 cellar: :any,                 arm64_sonoma:   "7a949575c3803dbfd27a4ad549c6f24c67f2159b9dfd73d83b5eb9ffd872561c"
-    sha256 cellar: :any,                 arm64_ventura:  "19a8d7aa0f5c72bf5c7e459c1d6924fc7f5ab479f878c8129de5a3693dae3b8d"
-    sha256 cellar: :any,                 arm64_monterey: "476e3d8c4864929ada3e6a5af324c768cb18719e9b2200e7ceeb7fe8711d9a2f"
-    sha256 cellar: :any,                 arm64_big_sur:  "706a51d84a1e84e3046231012cce4be4eb78288901bd8f07d274161c187a831c"
-    sha256 cellar: :any,                 sonoma:         "f8c15ed2d394847405537f8664131626ab22d738cc123658ebe7fabcd1842339"
-    sha256 cellar: :any,                 ventura:        "76457d788e5c2f85dbc452a0232bb38ff256f4136d188983ac8b9af87be78019"
-    sha256 cellar: :any,                 monterey:       "62bff6552997f1240e9568627847e46c1f55371f2b383d005a8a62975ed2a029"
-    sha256 cellar: :any,                 big_sur:        "f64462da9e3debd990315e0c16ecfcffae50fcdddf44538f125ae9dbd4c98fdc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "30beecb54f1b874ff6f34866b679a96a2aacb1e2e0d10afc51bc72a278444978"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6251f4bbfcc34a629e644b110d247a21e5ca26464ec056924f718a9ca46a5b71"
+    rebuild 2
+    sha256 cellar: :any, arm64_tahoe:   "e474d2310973130f4e8a7a027f7e0bbb6d09a6f302a8333fbf6f72957658976d"
+    sha256 cellar: :any, arm64_sequoia: "e9b11ec4c11869ec8d32a9bff60576e35bc8b3046f24222f150efc3bf21b65a2"
+    sha256 cellar: :any, arm64_sonoma:  "4783618f3b79ef69afb32934018b69da53dd39c29ac7f23b158bb5fa827adc1c"
+    sha256 cellar: :any, arm64_linux:   "1104dcc85ec062f874eeb26db299f6e41cf03f8fb61311c72c993ca43c8e1084"
+    sha256 cellar: :any, x86_64_linux:  "4239622c39f18f4866995a42fcba92052c60592e256a87a8f958948b1dd64be4"
   end
 
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   def install
     system "./configure", "--prefix=#{prefix}",
-                          "--with-openssl=#{formula_opt_prefix("openssl@3")}"
+                          "--with-openssl=#{formula_opt_prefix("openssl@4")}"
     system "make"
     system "make", "install"
   end

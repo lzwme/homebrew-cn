@@ -22,6 +22,9 @@ class TreeSitterAT025 < Formula
 
   keg_only :versioned_formula
 
+  deprecate! date: "2026-08-31", because: :deprecated_upstream
+  disable! date: "2027-08-31", because: :deprecated_upstream
+
   def install
     system "make", "install", "AMALGAMATED=1", "PREFIX=#{prefix}"
   end

@@ -1,9 +1,8 @@
 cask "ea" do
-  version "13.778.4.6293"
+  version "13.783.0.6296"
   sha256 :no_check
 
-  url "https://origin-a.akamaihd.net/EA-Desktop-Client-Download/installer-releases/EA%20app.dmg",
-      verified: "origin-a.akamaihd.net/EA-Desktop-Client-Download/"
+  url "https://origin-a.akamaihd.net/EA-Desktop-Client-Download/installer-releases/EA%20app.dmg"
   name "EA App"
   desc "Electronic Arts game launcher"
   homepage "https://www.ea.com/ea-app"

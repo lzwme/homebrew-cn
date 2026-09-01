@@ -30,8 +30,7 @@ cask "buckets" do
     app_image "Buckets-linux-latest-#{arch}-#{version}.AppImage", target: "Buckets.AppImage"
   end
 
-  url "https://ghfast.top/https://github.com/buckets/application/releases/download/v#{version}/Buckets-#{url_mid}#{arch}-#{version}.#{url_end}",
-      verified: "github.com/buckets/application/"
+  url "https://ghfast.top/https://github.com/buckets/application/releases/download/v#{version}/Buckets-#{url_mid}#{arch}-#{version}.#{url_end}"
   name "Buckets"
   desc "Budgeting tool"
   homepage "https://www.budgetwithbuckets.com/"

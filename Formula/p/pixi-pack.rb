@@ -1,18 +1,17 @@
 class PixiPack < Formula
   desc "Pack and unpack conda environments created with pixi"
   homepage "https://pixi.sh/latest/advanced/production_deployment/#pixi-pack"
-  url "https://ghfast.top/https://github.com/quantco/pixi-pack/archive/refs/tags/v0.7.10.tar.gz"
-  sha256 "21d2a807bbded302130e03483f344672fb4dba322080abb22fc621f8795f5198"
+  url "https://ghfast.top/https://github.com/quantco/pixi-pack/archive/refs/tags/v0.7.11.tar.gz"
+  sha256 "142682512cc72af8f37fcda842f1d08078809f7d16eb5b85cbbf6d67a4554642"
   license "BSD-3-Clause"
   head "https://github.com/quantco/pixi-pack.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3dc9b22732551966214666ab4ec1180570ff88e90594eadc6feccc7a49fb71d6"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "24e5ae7ba714d0b9c5c3ce8fc7ce087db498189aee93a2ce0f131f43b41e9ab9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7ba95a9dbb3724ee5f97ec5d6e6c76f732c095c5950b0e820f627faa0dca5958"
-    sha256 cellar: :any_skip_relocation, sonoma:        "83136cd70e606047403c193c39e7e36cecf643601aeb8e1db8e308cc71d245d5"
-    sha256 cellar: :any,                 arm64_linux:   "0c4d13e5abd979e2eecb1e075934b3d15611646801065a9fe066350f8b66e8ce"
-    sha256 cellar: :any,                 x86_64_linux:  "b1ea8e3484c911b20c7cff1566aa1b5e782365e4ca4b6003c65fbba8056d49f5"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fa03cbb6c6bb11aa3972ae83f01290fdd826a8d858960a1f9dbf98cfe0ac27a4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c6fbddde01dd48e3740f7e30c6f681aff9d7ced6619002091991b707f5d26211"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7f2a68010daaac3f2f180859419c7a78f84fb65a1c1cfd4e526ac099308300c0"
+    sha256 cellar: :any,                 arm64_linux:   "53d2984ef0e5da7a9db1504d55e6d14d1ccae4dce7dc286bf44f179e0e7c3a4d"
+    sha256 cellar: :any,                 x86_64_linux:  "1026d3c697ce1b73113411880e1555766a22746a0941935b3e7530565aaeb391"
   end
 
   depends_on "cmake" => :build

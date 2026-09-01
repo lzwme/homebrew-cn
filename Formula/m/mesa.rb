@@ -20,21 +20,21 @@ class Mesa < Formula
     { "GPL-1.0-or-later" => { with: "Linux-syscall-note" } }, # include/drm-uapi/sync_file.h
     { "GPL-2.0-only" => { with: "Linux-syscall-note" } }, # include/drm-uapi/{d3dkmthk.h,dma-buf.h,etnaviv_drm.h}
   ]
-  revision 1
+  revision 2
   compatibility_version 1
   head "https://gitlab.freedesktop.org/mesa/mesa.git", branch: "main"
 
   bottle do
-    sha256 arm64_tahoe:   "1cc05f6712aa0a65eb2b7f73b1c02fb916f6a8c19445e10f25d86beb05441579"
-    sha256 arm64_sequoia: "6197000b321cb396811d1b795616bd139ed4fda1fae3ef41729c6695c09e7c56"
-    sha256 arm64_sonoma:  "0b19036e1dc88ecc81d2a1fa022c5293b22f84878519f3ff8a2a6f69decd56a0"
-    sha256 sonoma:        "7f5fd58bb0e1e1aae714c465a9c6cfc546b40b7464b3370f2ad49ab5c496e44e"
-    sha256 arm64_linux:   "36d8f161df848d87964fc23ad7f91d1c8afefabfd1842f3d33d1aea9881a6312"
-    sha256 x86_64_linux:  "60899ae73a16a6a645d6953ace83cefa2dffb9d0679c9468915b7df17852a363"
+    sha256 arm64_tahoe:   "d08a50e0e02819d33b5a179d5c7e74fa37be5a8514b13444add7770a336bce98"
+    sha256 arm64_sequoia: "15fca17074ebc90dd52c5b481b5714576a9464d9095086969138638c59b03581"
+    sha256 arm64_sonoma:  "629b8cabeba3d640e7159a80440f7417cb16f05528dda6992c629cd0dc203466"
+    sha256 arm64_linux:   "95171c9aded9231f213097eacb441d5b3e4f8ec98c214eb3f530d295c6da6739"
+    sha256 x86_64_linux:  "45065f69c5c60394874dca2ae2f091d32fc62f6479fa1d2a05ce56506ff41728"
   end
 
   depends_on "bindgen" => :build
   depends_on "bison" => :build # can't use from macOS, needs '> 2.3'
+  depends_on "cmake" => :build # for mesa-libclc
   depends_on "glslang" => :build
   depends_on "libxrandr" => :build
   depends_on "libxrender" => :build
@@ -48,7 +48,6 @@ class Mesa < Formula
   depends_on "rust" => :build
   depends_on "xorgproto" => :build
 
-  depends_on "libclc" => :no_linkage # OpenCL support needs share/clc/*.bc files at runtime
   depends_on "libpng"
   depends_on "libx11"
   depends_on "libxcb"
@@ -117,26 +116,36 @@ class Mesa < Formula
     sha256 "d76623373421df22fb4cf8817020cbb7ef15c725b9d5e45f17e189bfc384190f"
   end
 
-  def python3
-    "python3.14"
+  # Mesa is not compatible with LLVM 23+ libclc as it no longer provides spirv64-mesa3d-.spv.
+  # Until Mesa updates to handle it, use mesa-libclc which Mesa applies fixes to:
+  # https://gitlab.freedesktop.org/mesa/mesa/-/commit/b8f6be5a51b0952e4b2fc2a71d42eedea884739e
+  resource "mesa-libclc" do
+    url "https://gitlab.freedesktop.org/karolherbst/mesa-libclc/-/archive/22.1.8.3/mesa-libclc-22.1.8.3.tar.bz2"
+    sha256 "ff6c01fb68c4b885e13400c50298ee6a8bfcf3ac5995cf3039565f6814095226"
+
+    livecheck do
+      url :url
+    end
   end
 
+  def python3 = "python3.14"
+
   def install
-    # Work around superenv to avoid mixing `expat` usage in libraries across dependency tree.
-    # Brew `expat` usage in Python has low impact as it isn't loaded unless pyexpat is used.
-    # TODO: Consider adding a DSL for this or change how we handle Python's `expat` dependency
-    env_vars = %w[CMAKE_PREFIX_PATH HOMEBREW_INCLUDE_PATHS HOMEBREW_LIBRARY_PATHS PATH PKG_CONFIG_PATH]
-    if OS.mac? && MacOS.version < :sequoia
-      ENV.remove env_vars, /(^|:)#{Regexp.escape(formula_opt_prefix("expat"))}[^:]*/
-      ENV.remove "HOMEBREW_DEPENDENCIES", "expat"
+    resource("mesa-libclc").stage do
+      system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+      system "cmake", "--build", "build"
+      system "cmake", "--install", "build"
+      ENV.prepend_path "PKG_CONFIG_PATH", share/"pkgconfig"
     end
+
     # TODO: Remove once bindgen issue is fixed: https://github.com/rust-lang/rust-bindgen/issues/3397
+    env_vars = %w[CMAKE_PREFIX_PATH HOMEBREW_INCLUDE_PATHS HOMEBREW_LIBRARY_PATHS PATH PKG_CONFIG_PATH]
     ENV.remove env_vars, /(^|:)#{Regexp.escape(formula_opt_prefix("llvm@22"))}[^:]*/
     ENV.remove "HOMEBREW_DEPENDENCIES", "llvm@22"
     ENV["CLANG_PATH"] = formula_opt_bin("llvm@22")/"clang"
 
     venv = virtualenv_create(buildpath/"venv", python3)
-    venv.pip_install resources.reject { |r| OS.mac? && r.name == "ply" }
+    venv.pip_install resources.reject { |r| r.name == "mesa-libclc" || (OS.mac? && r.name == "ply") }
     ENV.prepend_path "PYTHONPATH", venv.site_packages
     ENV.prepend_path "PATH", venv.root/"bin"
     ENV.append "LDFLAGS", "-Wl,-rpath,#{rpath}" if OS.mac?

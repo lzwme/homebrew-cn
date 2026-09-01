@@ -2,8 +2,7 @@ cask "font-sometype-mono" do
   version :latest
   sha256 :no_check
 
-  url "https://ghfast.top/https://github.com/dharmatype/Sometype-Mono/archive/refs/heads/master.tar.gz",
-      verified: "github.com/dharmatype/Sometype-Mono/"
+  url "https://ghfast.top/https://github.com/dharmatype/Sometype-Mono/archive/refs/heads/master.tar.gz"
   name "Sometype Mono"
   homepage "https://monospacedfont.com/"
 

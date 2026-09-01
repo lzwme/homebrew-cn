@@ -1,18 +1,17 @@
 class Secretspec < Formula
   desc "Declarative secrets management tool"
   homepage "https://secretspec.dev"
-  url "https://ghfast.top/https://github.com/cachix/secretspec/archive/refs/tags/v0.19.1.tar.gz"
-  sha256 "c831a0072af7b51d11931d3f1444a13313cb63eae515df609c1e3d72356ba497"
+  url "https://ghfast.top/https://github.com/cachix/secretspec/archive/refs/tags/v0.20.0.tar.gz"
+  sha256 "007ae4422ad59c2d2e12046db84311f098a53dc4327a51165ed26cb4db61be70"
   license "Apache-2.0"
   head "https://github.com/cachix/secretspec.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1a15850ebec29dc91b8f0c1ebff43fdae4d2f71cfbfeafc030c2f2affc314122"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fddadfeb6dfb07f2ddd51d572807f9af0aae56058837a0e11c8c142ca8a8f1b2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "94d92ed09e67f3777ca24cdcf7bb760e79c58cea8c202ba71e4dc20c665fe03f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "814ded71ad8a8a2e36269878e84ada5b97b4f9aab2e5136df9443d7654427c56"
-    sha256 cellar: :any,                 arm64_linux:   "feec51f31d09e0529db491d0e5c8557fe58048f54c2a723cd0693b929b5061f3"
-    sha256 cellar: :any,                 x86_64_linux:  "6205b7198ca377d73b5ea08625885c85039b4b37e9f59938d4a662a16bd57e85"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "af51e366858b7558268657047ad16f4efb3e61d1fdac6f2014eba3ef3427c540"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5f576b04ae1d40baef2b13a3a3b51ae3da9b9688420e38d9917dba6b5b8d2bdc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e08247f111b4410728fdb5135be34d425efbaa85aeb477ad3590dbeb3b3a3dd9"
+    sha256 cellar: :any,                 arm64_linux:   "84e12d303cd944b923d79327046d1114c299fd238bf502ed75a02cc79f457da9"
+    sha256 cellar: :any,                 x86_64_linux:  "eddd528df6af573ebc84ae6286dd6e1e8131734f3b53ae4db98ac14b3d9ed5f9"
   end
 
   depends_on "pkgconf" => :build
