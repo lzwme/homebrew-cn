@@ -8,6 +8,11 @@ class Libsixel < Formula
   version_scheme 1
   head "https://github.com/saitoha/libsixel.git", branch: "master"
 
+  livecheck do
+    url :stable
+    regex(/^v(\d+(?:\.\d+)+(:?-r\d+)?)/i)
+  end
+
   bottle do
     sha256 cellar: :any, arm64_tahoe:   "48d25cd9b90ad067a4a8dbc77811e21827c40185b86e6f978c631878e4e9c168"
     sha256 cellar: :any, arm64_sequoia: "7916ae0f4e67563b37584a7936d42fda2ce852a9c3e85ca979682ea5c525ffbf"

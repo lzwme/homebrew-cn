@@ -2123,6 +2123,7 @@ Homebrew-homebrew-core/Formula/f/ffmpeg@4.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/ffmpeg@5.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/ffmpeg@6.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/ffmpeg@7.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/f/ffmpeg@8.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/ffmpegthumbnailer.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/ffms2.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/ffsend.rb, Homebrew/homebrew-core, 1
@@ -2640,6 +2641,7 @@ Homebrew-homebrew-core/Formula/g/glasskube.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/glaze.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/glbinding.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/glbinding@2.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/g/glci.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gleam.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/glew.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/glfw.rb, Homebrew/homebrew-core, 1
@@ -4023,7 +4025,7 @@ Homebrew-homebrew-core/Formula/lib/libaacs.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libabigail.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libabw.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libadwaita.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/lib/libaec.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/lib/libaec.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libaegis.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libagg.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libaio.rb, Homebrew/homebrew-core, 0
@@ -6689,6 +6691,7 @@ Homebrew-homebrew-core/Formula/s/s4cmd.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/s5cmd.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/s6-rc.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/s6.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/s/sabiql.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sacad.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/sad.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/saf-cli.rb, Homebrew/homebrew-core, 0
@@ -15682,7 +15685,6 @@ Homebrew-homebrew-cask/Casks/t/tng-digital-mini-program-studio.rb, Homebrew/home
 Homebrew-homebrew-cask/Casks/t/to-audio-converter.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/todoist-app.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/todometer.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/t/todotxt.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/todour.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/tofu.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/toinane-colorpicker.rb, Homebrew/homebrew-cask, 1
@@ -16022,6 +16024,7 @@ Homebrew-homebrew-cask/Casks/w/wacom-tablet.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/wail.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/w/wailbrew.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/w/wakatime.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/w/waku.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/w/wallpaper-wizard.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/wallspace.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/waltr-heic-converter.rb, Homebrew/homebrew-cask, 0

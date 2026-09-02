@@ -1,8 +1,8 @@
 class Pyenv < Formula
   desc "Python version management"
   homepage "https://github.com/pyenv/pyenv"
-  url "https://ghfast.top/https://github.com/pyenv/pyenv/archive/refs/tags/v2.8.4.tar.gz"
-  sha256 "6f80750a10d20f1b74252d81d543f0543c8f49ba9ea5804de8a82afedb4e3b8c"
+  url "https://ghfast.top/https://github.com/pyenv/pyenv/archive/refs/tags/v2.8.5.tar.gz"
+  sha256 "1824f1d86ce1d722f092a2d5f9a1c916cfb76b58b8fdbb2a43be2f6d32de9a28"
   license "MIT"
   version_scheme 1
   compatibility_version 1
@@ -14,14 +14,11 @@ class Pyenv < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "be9f8cdb92b3307ca8795cb2ad9614cf37685466fa2baf7d474d1ee474bf4f45"
-    sha256 cellar: :any, arm64_sequoia: "a326b897e45f4695c3f5deef80f27e4aef8a8d625311edd1d77bcc62df953b20"
-    sha256 cellar: :any, arm64_sonoma:  "d2f8a27215735930c10ee74302a5a7ada7655d03c4b0d2b3f30d19e2f523b569"
-    sha256 cellar: :any, tahoe:         "3cc83c295e61f0e86f20e3245c8e62dcd6775b7268e9f6efc9f2582a10f2bfd4"
-    sha256 cellar: :any, sequoia:       "6110642c6260540d2227df69fac557c3e71595ade35dd65bc87fddf023db8abd"
-    sha256 cellar: :any, sonoma:        "ad06b9b01f8a49293e0a086320224b134bcda8aba5214bc31e3f47b8635a4800"
-    sha256 cellar: :any, arm64_linux:   "5e0155891870afaa367a0718b07d812f7b94001ca6bb93804424e2bf22aec2e4"
-    sha256 cellar: :any, x86_64_linux:  "9340a92f709c9969a7486ba58aa91539824a7e28ac23cbd7487128e0a193069d"
+    sha256 cellar: :any, arm64_tahoe:   "89935f70c6a94dc8aafa0bc2ed239b3eec6e7cf93b3b78e39bcc47c20660787f"
+    sha256 cellar: :any, arm64_sequoia: "413fe9d087da387a5f975be2080c19e465822a45176e84d188af0b916891c0bb"
+    sha256 cellar: :any, arm64_sonoma:  "a02b3615eda669dd3563d556d7f335ca8fb00020dab663fa03ced448aec1fd2b"
+    sha256 cellar: :any, arm64_linux:   "6b8bc54c45dad61faa1c3ece0fcb1eb67da9012c03f36baaf43bba27bb2df8d0"
+    sha256 cellar: :any, x86_64_linux:  "5d61d6122a786276d934c08adb22bf37ce64925c21a282d381a63010af7c1722"
   end
 
   depends_on "autoconf"

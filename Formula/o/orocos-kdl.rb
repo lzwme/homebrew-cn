@@ -1,20 +1,16 @@
 class OrocosKdl < Formula
   desc "Orocos Kinematics and Dynamics C++ library"
   homepage "https://orocos.org/"
-  url "https://ghfast.top/https://github.com/orocos/orocos_kinematics_dynamics/archive/refs/tags/1.5.3.tar.gz"
-  sha256 "3895eed1b51a6803c79e7ac4acd6a2243d621b887ac26a1a6b82a86a1131c3b6"
+  url "https://ghfast.top/https://github.com/orocos/orocos_kinematics_dynamics/archive/refs/tags/1.5.4.tar.gz"
+  sha256 "b47c75b03d5980a8b3a5382ab1176ae552f2f5418ad42b0e530a4178e3e1c301"
   license "LGPL-2.1-or-later"
-  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "f426120fbf55e9662b30801031021f06f97de8dceb6fa2b191767868e858f411"
-    sha256 cellar: :any,                 arm64_sequoia: "731dac44439182078ff405304de91785dd85c8c63ccdb9ace10b6c6892755b9a"
-    sha256 cellar: :any,                 arm64_sonoma:  "1e89c7a3075cb09bc42a48dac3e0615c3fb247610e47a1fed9b4ba16452523a7"
-    sha256 cellar: :any,                 tahoe:         "b3452bee349dfa41da18a7c9f3df3343561702441e13befe4f879bc4359c679e"
-    sha256 cellar: :any,                 sequoia:       "7c12c1c4509464c389d04d0a273e40d09e44da3df366ba5e889dc0051fa9823f"
-    sha256 cellar: :any,                 sonoma:        "c422791098d548a20a16a386b03514b3efddd1e4646804932559a98023ffd9f5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e0d188d3d5f65a19ecdd37d5a39d194177d341b70f755d7b8fb1459a59723fcd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0b9fe98f805b5c9c3944a6288a5a3abdc262ee58755d259fbeb11f04571e30dc"
+    sha256 cellar: :any, arm64_tahoe:   "a22662680404401c27ba5697b191b8386cc419546cdb8fd168c1b13715b04096"
+    sha256 cellar: :any, arm64_sequoia: "c51a6f4e6be872711b72a6fc6b7eb7cccb0e770c1efbb4f607ece485cbf1b03b"
+    sha256 cellar: :any, arm64_sonoma:  "d1a3490e975f2a02dda0f39a97c962bf313b11959476a61581fcf64381630b63"
+    sha256 cellar: :any, arm64_linux:   "3068dcfd1b9d2ba33dcabfa0b014cec0d24e43343d740b6ddc38b098019c5f91"
+    sha256 cellar: :any, x86_64_linux:  "b61040599cad3d979cee7d48f7b9888e2d83ddd5ab22ca221b5a4ce90e873e18"
   end
 
   depends_on "cmake" => :build

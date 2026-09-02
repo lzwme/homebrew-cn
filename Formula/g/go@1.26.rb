@@ -1,10 +1,11 @@
 class GoAT126 < Formula
   desc "Open source programming language to build simple/reliable/efficient software"
   homepage "https://go.dev/"
-  url "https://go.dev/dl/go1.26.7.src.tar.gz"
-  mirror "https://fossies.org/linux/misc/go1.26.7.src.tar.gz"
-  sha256 "0ed24eac755105085b89fe9cabc2742b91a0ad7b94b59d3ad364918ebc8956ad"
+  url "https://go.dev/dl/go1.26.8.src.tar.gz"
+  mirror "https://fossies.org/linux/misc/go1.26.8.src.tar.gz"
+  sha256 "4e39b98e42f946fa05ac8bc5b71877df97dbdb7cbb1a777b541667ad7117fd2e"
   license "BSD-3-Clause"
+  compatibility_version 1
 
   livecheck do
     url "https://go.dev/dl/?mode=json"
@@ -20,12 +21,11 @@ class GoAT126 < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "62705ebc93775066169705c0134943012c877b71416a42b712c36852171a0e44"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "62705ebc93775066169705c0134943012c877b71416a42b712c36852171a0e44"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "62705ebc93775066169705c0134943012c877b71416a42b712c36852171a0e44"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2b9f47b8d939814f371bb766863d885b027282be5648112d9218a4c9817bfc86"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4f7aad9c1f65d78de2bf225e8f50b28d4618944f68b12c815df69944c43691ba"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "09811b13e0c63d7d9ab4b8eb8baf0218b61a9eafd109fe0802a700cf9405e01f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "924e4713369484b4f8854ebd0e8cf0e45dc1739f706123b8c7bc9191e018c7b5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "924e4713369484b4f8854ebd0e8cf0e45dc1739f706123b8c7bc9191e018c7b5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "924e4713369484b4f8854ebd0e8cf0e45dc1739f706123b8c7bc9191e018c7b5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8ef68e8708dc3ae3f512ac8b6505fb4a55ad36983f216dda8f1826156443b53e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "617d58e9160b78f861d996405fdb525b12c07bd0c6c7fa51417a94b2055793db"
   end
 
   keg_only :versioned_formula

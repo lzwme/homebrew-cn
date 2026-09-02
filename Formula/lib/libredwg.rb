@@ -1,21 +1,21 @@
 class Libredwg < Formula
   desc "DWG utilities"
   homepage "https://www.gnu.org/software/libredwg/"
-  url "https://ftpmirror.gnu.org/gnu/libredwg/libredwg-0.13.3.tar.gz"
-  sha256 "6fe6c273ecbb04d4a7646e1636ede4815b51f98f974cece649dab341d24feda2"
+  url "https://ftpmirror.gnu.org/gnu/libredwg/libredwg-0.14.tar.gz"
+  sha256 "cb6ee0b078c6d9e0f09d66f1feac33ba6342df88ae544e9f9335fab475218351"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "ea51df25eb164d61d115e33461234251acbe0ced0784963fc84f55bec57b34bd"
-    sha256 cellar: :any, arm64_sequoia: "d8e11e10c4e625f92933ce9c7cf8432a7c5b45aff046f8e811b6b222da3224ac"
-    sha256 cellar: :any, arm64_sonoma:  "3e3dafb61bd8d68123bf43f769aebf263ccb43364d15f2fd5b8d0d331248841a"
-    sha256 cellar: :any, sonoma:        "fb9bd68e4b4f9c60d4cb14dadbe7073539554a1240ae8303dfd23cfe3c0818a8"
-    sha256 cellar: :any, arm64_linux:   "edc880d653416402b35f89eb5163d211b1dd190d0eb97b24754fc0a0cb89e126"
-    sha256 cellar: :any, x86_64_linux:  "a50bee6cf0823f13b87aec30d0c662dc6be4b636b68e3b47d1c91ad50893ddf7"
+    sha256 cellar: :any, arm64_tahoe:   "2e5efe7bb02a7067cd67e028da20b90a56d45fb126352d7d963de8ff8c6a2298"
+    sha256 cellar: :any, arm64_sequoia: "88669a054da909cb7af46735a28230457a623f24fe729e9ba638d49ae883850c"
+    sha256 cellar: :any, arm64_sonoma:  "74a6c08fd39ff26029d8e5b784f878a8081602f7d5f3bb77f7df95849c5c89cd"
+    sha256 cellar: :any, arm64_linux:   "278b4958a068dc54174990420d5ed0f496368f143559551e74332bb395182f65"
+    sha256 cellar: :any, x86_64_linux:  "699b040982d5ba32013f54f09f13883b026c9c9c3bed42e56a8ef0a6193991fd"
   end
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
+  depends_on "pkgconf" => :build
   depends_on "texinfo" => :build
 
   def install

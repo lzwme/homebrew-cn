@@ -1,10 +1,9 @@
 class Lutok < Formula
   desc "Lightweight C++ API for Lua"
   homepage "https://github.com/freebsd/lutok"
-  url "https://ghfast.top/https://github.com/freebsd/lutok/releases/download/lutok-0.6.2/lutok-0.6.2.tar.gz"
-  sha256 "1ef51f3741d28e27b09dfaee61ab432966cff56f50940eca1cbacffc11baa2ad"
+  url "https://ghfast.top/https://github.com/freebsd/lutok/releases/download/lutok-0.6.3/lutok-0.6.3.tar.gz"
+  sha256 "5f33fdf8be36c2d95b866947ff49aa4a90ffd6f10a6172d9ed9243f6a6b42f18"
   license "BSD-3-Clause"
-  revision 1
   head "https://github.com/freebsd/lutok.git", branch: "master"
 
   livecheck do
@@ -13,12 +12,11 @@ class Lutok < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "5375d9b2d49d55cda41f53ba11c44a47b6c9fe76e52a5b3592bf48afda9b9871"
-    sha256 cellar: :any,                 arm64_sequoia: "cf023d7cb40f5d1a0fbb65a3c937a1bca17828e2e2356960af0a119bfeca6e81"
-    sha256 cellar: :any,                 arm64_sonoma:  "02acd0a9b44150ba2297dddee6eb3ca10f244ca63a093e5a655e2cf8eec1fad6"
-    sha256 cellar: :any,                 sonoma:        "0f73bf9da21d6a0a923303f03d2ae52373a1885e39eb050ed291e35d33a1934a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6d750bc1a48d2b4b621462e267437c33c32b0305ad4acb72c51900759068f5a5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e216fa951f1f38a59d2a4962c6d58e61ec90ac9d7f27403940cbd9a79c06c4ad"
+    sha256 cellar: :any, arm64_tahoe:   "06a6f522db223ff41e67fb28cea46f0e24d8f09a457b5d8caa69944e08ecb0a8"
+    sha256 cellar: :any, arm64_sequoia: "477f60409c479d51f20b6467b202b97919db6e55809957f06ec541b7af7ac541"
+    sha256 cellar: :any, arm64_sonoma:  "12d966b62f0fafcce6a8fe964a756e10db17b607ca556890f9f982d6daff2eb5"
+    sha256 cellar: :any, arm64_linux:   "cdc4e113066fac43195aee24f430ecac72ca79074f14c6bc2c60def0b8b9188e"
+    sha256 cellar: :any, x86_64_linux:  "cc327216db439ec4987c36ddd4a72a6353d65e64ff89400fb86328a0bdbde126"
   end
 
   depends_on "autoconf" => :build

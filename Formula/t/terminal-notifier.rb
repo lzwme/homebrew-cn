@@ -1,17 +1,15 @@
 class TerminalNotifier < Formula
   desc "Send macOS User Notifications from the command-line"
   homepage "https://github.com/julienXX/terminal-notifier"
-  url "https://ghfast.top/https://github.com/julienXX/terminal-notifier/archive/refs/tags/3.0.0.tar.gz"
-  sha256 "10dea2da3a698e0a5119400c0500ff82ce14ddb140e7fea0ce68bf57719620ed"
+  url "https://ghfast.top/https://github.com/julienXX/terminal-notifier/archive/refs/tags/3.1.0.tar.gz"
+  sha256 "7dac44a563f00c10d49aa2da4cde9d1fecdb12b36ed57fe7fdff789c3578421e"
   license "MIT"
-  revision 1
   head "https://github.com/julienXX/terminal-notifier.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "733ea72832c62612ac0335503d835e0a521efe2b33aad5855452ee5335370878"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1646eb25d792898d62ff2648078802176899334154b65709c54b8cf660c176b9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dd368f12177ea05698c2184ce502d7471e0a3a51ea2632ea1b059580cec9cbca"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5e4464fdff9010c644785dcf51a1be3ce443848f0303271a653a33e9a25022ad"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "124d27b95cd3911a6d417c0f55a065ca9613a34f4ed4d53263b4bbdca2007122"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0fbb85742dd622ef9ff8b1ae2f42a7c8b1687a732379f63901ae27d9af26ff9b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "70f5c03ad1d542ae13cbbb9d7fa589c56601c2eb121f25cc726ba4a3f8442bc5"
   end
 
   depends_on xcode: :build

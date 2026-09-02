@@ -1,19 +1,19 @@
 class Libaec < Formula
   desc "Adaptive Entropy Coding implementing Golomb-Rice algorithm"
-  homepage "https://gitlab.dkrz.de/k202009/libaec"
-  url "https://gitlab.dkrz.de/k202009/libaec/-/archive/v1.1.7/libaec-v1.1.7.tar.bz2"
-  sha256 "7cf0034eca8f53449252f2fab863d855aedc0520ceb8d3f3fcd3bd601ce4c85e"
+  homepage "https://github.com/Deutsches-Klimarechenzentrum/libaec"
+  url "https://ghfast.top/https://github.com/Deutsches-Klimarechenzentrum/libaec/releases/download/v1.1.7/libaec-1.1.7.tar.gz"
+  sha256 "cc7b93be9002e25a88b45d6b8d5f6120756cb5e1000613f91d803ce0beba24d9"
   license "BSD-2-Clause"
   compatibility_version 1
-  head "https://gitlab.dkrz.de/k202009/libaec.git", branch: "main"
+  head "https://github.com/Deutsches-Klimarechenzentrum/libaec.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "8d708bade896916d6694d8e85300dff0ae549ccf6d1ad9709577e8777ad087f5"
-    sha256 cellar: :any,                 arm64_sequoia: "55cb3f883f990b21ea7cade333059e70c6ed23c7b6037456b8100ffe653b7d49"
-    sha256 cellar: :any,                 arm64_sonoma:  "209fa55868480f64a25cd1bb82208463aca0881b57550a0bb6d28de82a353365"
-    sha256 cellar: :any,                 sonoma:        "8d8f20d021e55fb5d9be046b2544bc2305e82d36779b434de5745fbbc9c9d386"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d2a9bc608cdecaec6867a3a0450d86d87243745343385c7ce3eaac328c45e6c8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "285075caa9a3c7a971379ebbcc2da942f13c9e21e2dcb258c9360d3d0d1776a5"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "9eaed9136fb79d16e9e1d12d963079a9668f56317cde95d8775deeab37097915"
+    sha256 cellar: :any, arm64_sequoia: "c3be675b8a67f7765b62b1ffb2da781bf48a32e4b6a5986338e40b0ab919f9c5"
+    sha256 cellar: :any, arm64_sonoma:  "9048d8800e5ccfc68e8832ebd7d0125f61792fefdd3ecd9c00cf0d50269e8893"
+    sha256 cellar: :any, arm64_linux:   "13cf6eba906b53649ff511821667389ce65132e051e9da1a7c31c4b2de804149"
+    sha256 cellar: :any, x86_64_linux:  "64bc329b09ee0597e68ef3521f09806c20e45eb286a2336efe4ed1603f570ec9"
   end
 
   depends_on "cmake" => [:build, :test]

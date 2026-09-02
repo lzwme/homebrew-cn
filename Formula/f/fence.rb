@@ -1,18 +1,17 @@
 class Fence < Formula
   desc "Lightweight sandbox for commands with network and filesystem restrictions"
   homepage "https://github.com/fencesandbox/fence"
-  url "https://ghfast.top/https://github.com/fencesandbox/fence/archive/refs/tags/v0.1.66.tar.gz"
-  sha256 "a6ce458254ba8d74b84f40f5e99bd2f88fd2e71c8a7ca0962e3260c0b6d6fcaf"
+  url "https://ghfast.top/https://github.com/fencesandbox/fence/archive/refs/tags/v0.1.67.tar.gz"
+  sha256 "f2e55bd108816d224f45b3115e0c8feba2cb1a92055f0ebf7839f82b87a84f35"
   license "Apache-2.0"
   head "https://github.com/fencesandbox/fence.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2a68331e8280c1584b8e872b5758c548818b7b1bd887a52a54a5a6273f9e48a7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2a68331e8280c1584b8e872b5758c548818b7b1bd887a52a54a5a6273f9e48a7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2a68331e8280c1584b8e872b5758c548818b7b1bd887a52a54a5a6273f9e48a7"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4f10a185f7df70004efef219036bf8343824e8cc9a568396df3ee09f544dcd30"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "688ac5d62d99f8a36cd9140e5556f6aaba252b0addb836fbe89d12b6c69d572a"
-    sha256 cellar: :any,                 x86_64_linux:  "d35518b98104f3e3d610433c6edcee50555c5f7865b3b8c7a143726a1229d642"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fcc5f914430baffa9c9bef9b586a833ef0792c985835bc69f0bf52614b633db9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fcc5f914430baffa9c9bef9b586a833ef0792c985835bc69f0bf52614b633db9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fcc5f914430baffa9c9bef9b586a833ef0792c985835bc69f0bf52614b633db9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "468be92c8e2f0351ce4af9ac725e0336fc168f4da8e4dd3021e24f8df3d4bd48"
+    sha256 cellar: :any,                 x86_64_linux:  "eb63ada8d821232a17d6a1b951d3bc272f7312115c1c40b8f1f7c4f8a165f73a"
   end
 
   depends_on "go" => :build

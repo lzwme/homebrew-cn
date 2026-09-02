@@ -3,18 +3,17 @@ class Fonttools < Formula
 
   desc "Library for manipulating fonts"
   homepage "https://github.com/fonttools/fonttools"
-  url "https://files.pythonhosted.org/packages/84/69/c97f2c18e0db87d2c7b15da1974dace76ae938f1cfa22e2727a648b7ed43/fonttools-4.63.0.tar.gz"
-  sha256 "caeb583deeb5168e694b65cda8b4ee62abedfa66cf88488734466f2366b9c4e0"
+  url "https://files.pythonhosted.org/packages/d4/41/0f072a712dc74496e03710e462a18a4cfd8a258ad055a4e22d28b43a7abd/fonttools-4.64.0.tar.gz"
+  sha256 "ecb2e59a7bc692fee64dda6010deb66222335693b30046f15cccf81233aa715f"
   license "MIT"
   head "https://github.com/fonttools/fonttools.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1b83eb1c97d1be6c8c6b61ef7995afd28f402fd561441b2d978151de4dbd5c72"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3c4c66583ca2e33b3b43c4a44426daec33c5a54c250df504cea554e08eba7b22"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0dd2258e97432fbd01cf9c80ff985f3956464aa6af3fd454b472041ec7eb8e5d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "bbe51c0da859125372b1773ffc2d6afd2514e2db32ccee5a98339c4232ab6112"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "803a7bd4b8bfb9f24266e52f8122df3bcd96c716e31b96f7d50c460e69b7dbb3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d248065b21d07f803743e7c46ff2399c62ef3bf7d387e2661c515c29dd4a41d7"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3b348eb7badceb48b95b8bb7de3d53a386727c96bb867544a2b65c67cb1c483b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "55b1af9eadfa990279231c520ea6123912fddac2ca4bd8c6449401f17195ff7c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cb8fd95a4bf60c71306c8e363f29a7b84de00e2e061241b52773b1a229df41ee"
+    sha256 cellar: :any,                 arm64_linux:   "dac124c83cc4ca12c21a46bca89d442a997ca20d08eee0a4c32278aab9391466"
+    sha256 cellar: :any,                 x86_64_linux:  "bbeba1b8c01e83add47f01421598954040b98a4cb836486d825063004cf3491b"
   end
 
   depends_on "python@3.14"
@@ -30,13 +29,13 @@ class Fonttools < Formula
   end
 
   resource "lxml" do
-    url "https://files.pythonhosted.org/packages/28/30/9abc9e34c657c33834eaf6cd02124c61bdf5944d802aa48e69be8da3585d/lxml-6.1.0.tar.gz"
-    sha256 "bfd57d8008c4965709a919c3e9a98f76c2c7cb319086b3d26858250620023b13"
+    url "https://files.pythonhosted.org/packages/ad/a9/970b8fa0ecc4fbf1dfaed0d89bbc1fc1421b25ec26a2038c91e872dc6c8e/lxml-6.1.2.tar.gz"
+    sha256 "1055241852f2b02068af4a625a5d32c087db193c12251928af2562ecd2239f18"
   end
 
   resource "zopfli" do
-    url "https://files.pythonhosted.org/packages/0a/4d/a8cc1768b2eda3c0c7470bf8059dcb94ef96d45dd91fc6edd29430d44072/zopfli-0.4.1.tar.gz"
-    sha256 "07a5cdc5d1aaa6c288c5d9f5a5383042ba743641abf8e2fd898dcad622d8a38e"
+    url "https://files.pythonhosted.org/packages/74/21/3b6af43a663b22b00e738bb0642931a2579e15da6852613d56c6aa535d28/zopfli-0.4.3.tar.gz"
+    sha256 "d3a50f91a13cea9bafe025de8fd87a005eb26de02a4f0c193127ddbf23ac8ebe"
   end
 
   def install

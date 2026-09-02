@@ -1,19 +1,17 @@
 class Pushpin < Formula
   desc "Reverse proxy for realtime web services"
   homepage "https://pushpin.org/"
-  url "https://ghfast.top/https://github.com/fastly/pushpin/releases/download/v1.41.0/pushpin-1.41.0.tar.bz2"
-  sha256 "1ceef0b8da5229a066906797e47795905f1fe8fb1477edc9d5799720df9943ef"
+  url "https://ghfast.top/https://github.com/fastly/pushpin/releases/download/v1.42.0/pushpin-1.42.0.tar.bz2"
+  sha256 "9ac513757b41511d26cde151b61894201903e73ec003877f667e9c2d1307184e"
   license "Apache-2.0"
   head "https://github.com/fastly/pushpin.git", branch: "main"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_tahoe:   "9cb6d39776602c4d4169a89d281ae69733646412b8fbbba9b9a99344ba7b31a4"
-    sha256 cellar: :any,                 arm64_sequoia: "10d962ce0bcb230d74ed1749762f3979abedf90c08bc54bfa26962c29eb8e6db"
-    sha256 cellar: :any,                 arm64_sonoma:  "343772a7d9955e016e3a7081bc1dabe70915a77702bf460f8f611f7452410294"
-    sha256 cellar: :any,                 sonoma:        "0be6e6bb46c5d8b38368b3d2719bff619c3c68ceca932e79b3961c3825b635a5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9fe7194d3f79941769c3b67d92ddae001ed7a5eb4bbcf50dd976729ab3c964fc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9b598f60bcaf636f79032f8e3d91544a495109746f7d02c7fde223e5befc4768"
+    sha256               arm64_tahoe:   "2b5aeb85a438bc413a92149daa304f26836526ff92256c07c70ed041251d4422"
+    sha256               arm64_sequoia: "83c631e870b574182bc1d9e4edf110f7db80888ec892d3273737e37027a473bc"
+    sha256               arm64_sonoma:  "a14bc5d6d6e34e0c8091a0fbc71c8fbe7a2c57d596775a490457194b983899d2"
+    sha256 cellar: :any, arm64_linux:   "52ee3c376104c3969775cd9abc56a95c8e71e13a289d2b88b521f76f6de738f9"
+    sha256 cellar: :any, x86_64_linux:  "6952b44e67eb4b1c62e5ef62ac6aae32cd014623fac5c99b946ab78672db2b36"
   end
 
   depends_on "boost" => :build

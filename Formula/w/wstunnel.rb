@@ -1,8 +1,8 @@
 class Wstunnel < Formula
   desc "Tunnel all your traffic over Websocket or HTTP2"
   homepage "https://github.com/erebe/wstunnel"
-  url "https://ghfast.top/https://github.com/erebe/wstunnel/archive/refs/tags/v10.7.0.tar.gz"
-  sha256 "90025bc4ee46c8b1abffebb057a59fb0b3a4668eba58822c1b3889b5badce92d"
+  url "https://ghfast.top/https://github.com/erebe/wstunnel/archive/refs/tags/v10.7.1.tar.gz"
+  sha256 "016cc051c48159cbd7a2b172024ae70ca7e3db298022828fdcc6b7324aa62d85"
   license "BSD-3-Clause"
   head "https://github.com/erebe/wstunnel.git", branch: "main"
 
@@ -15,11 +15,11 @@ class Wstunnel < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "28582c6575d5a42b871833e6a35dd95da3606be725771e5b6b87969624086a3f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2ded8fe3aa52855536b7c7b08223c88525c614e55a6ce15106cb21a204b816fb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "34c15922def12ee6e7a2054fb024a2a93ea4de580709ebc933c91172e1a0ed6e"
-    sha256 cellar: :any,                 arm64_linux:   "4c187cbb5bd153ff76e9839971cfd96807369d008cc3f27e009420fa49e5ebed"
-    sha256 cellar: :any,                 x86_64_linux:  "d02db9ecc0057dff3402133c9f9f7abaeebd6e1c3194c4122706a2a0d75c19dc"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "da6e243d21ecd91e7ed8e377ac2d71340fce9f959f2939b958333e8ef86f23fd"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "24db473b1fa6b0587a17a8a299b6e938fe2a7cea19f919f2c097016771e577f2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ec33cc4edfc72971f8c2aca7755c8dc69b58e0c24b57cf60cc431076d70cbcbe"
+    sha256 cellar: :any,                 arm64_linux:   "cf99f39da63e674d7662f24e77aee225592133f81456d64d8f0674db4e6c1dd0"
+    sha256 cellar: :any,                 x86_64_linux:  "e32bbbe4a06fc6bef324e0f6f18eb34b9073bb1775d1a66d6a111e8f4e097085"
   end
 
   depends_on "rust" => :build

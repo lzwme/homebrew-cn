@@ -1,10 +1,10 @@
 class Gping < Formula
   desc "Ping, but with a graph"
   homepage "https://github.com/orf/gping"
-  url "https://ghfast.top/https://github.com/orf/gping/archive/refs/tags/gping-v1.20.4.tar.gz"
-  sha256 "63baad8181b8161ed1f1d9091c1a0e8a7f5a63c5f680c7272d0a164596100e25"
+  url "https://ghfast.top/https://github.com/orf/gping/archive/refs/tags/gping-v1.21.0.tar.gz"
+  sha256 "350c091923f67fdc72847e12368b2f207015be200ea1d781bce422a2a884d1c6"
   license "MIT"
-  head "https://github.com/orf/gping.git", branch: "master"
+  head "https://github.com/orf/gping.git", branch: "main"
 
   # The GitHub repository has a "latest" release but it can sometimes point to
   # a release like `v1.2.3-post`, `v1.2.3-post2`, etc. We're checking the Git
@@ -18,12 +18,11 @@ class Gping < Formula
   no_autobump! because: :bumped_by_upstream
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a84a6e00d0cf56256665788cf25d37cc12aec4914dc4f2b5a454be3410986c00"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6bb597a96151bdcac0d2d4df9c58e793fa0e7b66a442bb2f99c4c25d83690f30"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d6b04d7f864ab14d631ae2443a6c9b6a18367857c614237bd1e685954b9fe181"
-    sha256 cellar: :any_skip_relocation, sonoma:        "99c430a7517e10523ca1c1f94070135ffc353452b3dacb3a6175905f91512068"
-    sha256 cellar: :any,                 arm64_linux:   "291d93da352740cc3f845f1265a0e0318622e72697b7839d81a13c59a2deca09"
-    sha256 cellar: :any,                 x86_64_linux:  "02eaf5c13a5ed3a950d686c97d2f878762c83a63dbd80cde695e88cbebff2fed"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "793bbcdfab111fbef18dc6361980e3026d7ef753ab21b94dca43caaa1670e702"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "90472e76aa23d33ae21abc5f119af31ab385cfe3412361e6cf8698fcb16c1a62"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "02c57f65adf4cfaa2f92fdfdeadbfa0b9a119b2015e25f3aac1fa805c2dbcaa7"
+    sha256 cellar: :any,                 arm64_linux:   "931440b195ea3374f82aa66b52c2e69cc5250a9554b3db136949799d72f08703"
+    sha256 cellar: :any,                 x86_64_linux:  "8e7c6d532789ecec2f3eec048fd4462997950592377b1799d5abc7a07eebe7cf"
   end
 
   depends_on "pkgconf" => :build

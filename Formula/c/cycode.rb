@@ -3,18 +3,17 @@ class Cycode < Formula
 
   desc "Boost security in your dev lifecycle via SAST, SCA, Secrets & IaC scanning"
   homepage "https://github.com/cycodehq/cycode-cli"
-  url "https://files.pythonhosted.org/packages/e9/33/ad2206ec55eac0c07bf3677eefefd5260ff8c8138ed0206e5474363ff0c4/cycode-3.21.0.tar.gz"
-  sha256 "deca5400bd3948f335bc86fb4e71de34df2aa27d60a879ed2d7f2e9f748ebeab"
+  url "https://files.pythonhosted.org/packages/ce/c8/92e819590d3c38a2ea40b893b787d05d953ffdaf84ad4e19db993f9e18b0/cycode-3.22.0.tar.gz"
+  sha256 "b61f7dc1c5cd1408598d070f854c632de1849d211d46a8c7b25c746e56808bd1"
   license "MIT"
   head "https://github.com/cycodehq/cycode-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "20d764efb359fb52eed5e27d7e270dcd010934423d304eaf72c1fd2de3234e84"
-    sha256 cellar: :any, arm64_sequoia: "9d8939292d9c1972ef6fda667c9d655be4e8e41e843cb837ccc7c672683a68cd"
-    sha256 cellar: :any, arm64_sonoma:  "4c8d70c7173270f8738643dbe8be5845c56a61f7bec87c413cf77a64eecff839"
-    sha256 cellar: :any, sonoma:        "a0cc36b87a1cb290bb4ac4cb32d1c762a89aab56499ab6e9638dd22a37f7629c"
-    sha256 cellar: :any, arm64_linux:   "1ad93125e6caa5d8af3b3887b1cbc9f8cb88e1c7b7976e1202a94a42f3433714"
-    sha256 cellar: :any, x86_64_linux:  "2b207acebeaa93c0cb3f59eb5cf750499b532d7c572083038ae2e52bd3cffd46"
+    sha256 cellar: :any, arm64_tahoe:   "779cf7f3a42735a05be8009b6191902942758eddf1574f05faa82eaab5bfcc97"
+    sha256 cellar: :any, arm64_sequoia: "535e9fe3d6d8d488c7f6d7767a791e355ea8c117e4e9dbb184fc9fdb334367ce"
+    sha256 cellar: :any, arm64_sonoma:  "71f9ab600819333e4a3f921f87461c92ba63d1a71e814b96e1bcf9bf624a82cf"
+    sha256 cellar: :any, arm64_linux:   "4c4690a3c0499c2b40e49f461781d7050ee9a088b63726a7104de9158801c3e4"
+    sha256 cellar: :any, x86_64_linux:  "82fd52fd7ba5e583834114c50eab0221e6e59e57bf010da87985d066cde33ee3"
   end
 
   depends_on "certifi" => :no_linkage
@@ -62,8 +61,8 @@ class Cycode < Formula
   end
 
   resource "gitpython" do
-    url "https://files.pythonhosted.org/packages/ca/dc/126b28e76b24a9268ba931ad3e012f71ebdadf62fd9f17758f7074bb0b20/gitpython-3.1.59.tar.gz"
-    sha256 "0a1475cfdc38a5bfba1a3e9a4a9da52a39749ecec322b772915c019f94e5b7e4"
+    url "https://files.pythonhosted.org/packages/6f/61/3285044215fb596bf093e39ccb96ece0a1076a8ca57a61e069a6a33cdb1b/gitpython-3.1.61.tar.gz"
+    sha256 "f51c24d8c0f733a195447385f5774a5dfe8767f5acfd7994a33755644c6ecc95"
   end
 
   resource "h11" do

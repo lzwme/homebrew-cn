@@ -13,12 +13,12 @@ class Zig < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "522ec6fc3cd13d1c731b4677234054a4f9207d1f7e208f0a1313fd21835bd16b"
-    sha256 cellar: :any,                 arm64_sequoia: "12b55d2efffbc6fc65f471ff989703934fee7f55e60887e400c8c18abd1b3baf"
-    sha256 cellar: :any,                 arm64_sonoma:  "90f1fb24a01715a36a48878969a16e29b341039a1c97a82fc134db09a00cd888"
-    sha256 cellar: :any,                 sonoma:        "22035d0f3aa03f82192326b77dad535ea14acd5689a04a2c18df9b077b2d53e1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6dec0d9355b49eea00ae882bd407bbceb48b27c206a6f0e823ac63635b74d5c6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9657f0322225292cb4a9c158d2305f62520524467b5b57daf545a327c492cd37"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "1e3cc31b59bdac9883f04d975ce5da65aac6141fd05e259646a566b0a83ccb25"
+    sha256 cellar: :any, arm64_sequoia: "44dd9125a5e849a2623b61a98aa48e382859cf942599d0b003fc32597b93a5f3"
+    sha256 cellar: :any, arm64_sonoma:  "25d0484f1dc6caf78fda4497eb68f0103002eca1e2ae414c62459b9a3cebe569"
+    sha256 cellar: :any, arm64_linux:   "d37d996c260f2f6602d4aa7d6d0695bb6a7da657b89f901a51d8270c799c3e0c"
+    sha256 cellar: :any, x86_64_linux:  "451386463068f96031bab7c650a3945e7f1a3e555f7f8d516e9ee558b3342146"
   end
 
   depends_on "cmake" => :build
@@ -35,6 +35,13 @@ class Zig < Formula
 
   # https://github.com/Homebrew/homebrew-core/issues/209483
   skip_clean "lib/zig/libc/darwin/libSystem.tbd"
+
+  # Backport fix for zig to fetch zip files to cache
+  patch do
+    url "https://codeberg.org/ziglang/zig/commit/cfde9303ff75322525746aa325026f0e12fb402c.diff"
+    sha256 "9e9aa27db65d5b66eb82df7eae13baff57656de2088c0ee15eccbda404e690fa"
+    type :backport
+  end
 
   # Force Zig to use the system libc++ on Darwin. Without this, the vendored
   # libc++ gives `zig` a private std::error_code category that disagrees with

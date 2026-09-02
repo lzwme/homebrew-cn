@@ -1,18 +1,16 @@
 class Gearman < Formula
   desc "Application framework to farm out work to other machines or processes"
   homepage "https://gearman.org/"
-  url "https://ghfast.top/https://github.com/gearman/gearmand/releases/download/2.0.0/gearmand-2.0.0.tar.gz"
-  sha256 "690cb9c7a58c03d6be18031dc4a1a93778f6fa713590b4ce527ceb8b43ea0688"
+  url "https://ghfast.top/https://github.com/gearman/gearmand/releases/download/2.1.0/gearmand-2.1.0.tar.gz"
+  sha256 "4d24340ab39be851b40d895687c17d6d16e730ece1fa9d9294d6b2b0a8cb1261"
   license "BSD-3-Clause"
-  revision 1
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "80e57d251960e8922de58fa5d9326743b379e7a0f55868598721d1571cc6e924"
-    sha256 cellar: :any, arm64_sequoia: "d9836d744dd0d211fdb475e80ec1f332c3344c5d255dfaaef2106aa54d90e93c"
-    sha256 cellar: :any, arm64_sonoma:  "33b8280d25a752a8be5acc0cf3eb243644b1f659e6493558db296d0830ddc89f"
-    sha256 cellar: :any, sonoma:        "6463291352d58eda0e8115138afa6603c6d800ee5659f4c10318a0b4be852eea"
-    sha256 cellar: :any, arm64_linux:   "fa91bb0b62358dd526722015e63ee80861af1205ec26f3850c644de911dd5678"
-    sha256 cellar: :any, x86_64_linux:  "c76971cf595ff460a3d4dcdc70bdc9a60e91dbcc383afa0c94e920b6c625a67a"
+    sha256 cellar: :any, arm64_tahoe:   "37777223a74886d6990baccaa7be3328158b642c456113f17885b76b91625a3e"
+    sha256 cellar: :any, arm64_sequoia: "1f86fead5d81f99d0bb1df31602cd4d08b5854f01eee1b211ad55c249e38e92c"
+    sha256 cellar: :any, arm64_sonoma:  "fe4e152aaeede12c1c2edf442510a8dae9ce07e79f7dbb5e4a5a0f5805269cb9"
+    sha256 cellar: :any, arm64_linux:   "689317e40bd208580eee3efeb6a1c50be9ecfe3d814e494ec365a2816b16e1b8"
+    sha256 cellar: :any, x86_64_linux:  "f0bfda5641a2ec601be92fecd4e6785141309e0d0bbe93866be5ddf3b3e25761"
   end
 
   depends_on "pkgconf" => :build
@@ -47,9 +45,6 @@ class Gearman < Formula
       --without-mysql
       --without-postgresql
     ]
-
-    ENV.append_to_cflags "-DHAVE_HTONLL"
-    ENV.append "CXXFLAGS", "-std=c++14"
 
     (var/"log").mkpath
     system "./configure", *args

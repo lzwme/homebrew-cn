@@ -22,6 +22,12 @@ class Zsync < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     (buildpath/"cmd").each_child(false) do |cmd|
       system "go", "build", *std_go_args(output: bin/cmd), "./cmd/#{cmd}"

@@ -23,6 +23,8 @@ class FxAgent < Formula
 
   conflicts_with "fx", because: "both install an `fx` binary"
 
+  deny_network_access!
+
   def install
     system "zig", "build", *std_zig_args
   end

@@ -3,8 +3,8 @@ class Esphome < Formula
 
   desc "Make creating custom firmwares for ESP32/ESP8266 super easy"
   homepage "https://esphome.io/"
-  url "https://files.pythonhosted.org/packages/46/7e/87496083330b2e16f2ca23f433dd48e04cf5876b2a80ae739f956d67c0fb/esphome-2026.8.1.tar.gz"
-  sha256 "e4abe58dec5f18e92df4fc80c667fdfafd583aab9d9eabe2834724660307e8b9"
+  url "https://files.pythonhosted.org/packages/43/8b/f64c0432d5f9b371f651f55f7000a042bb59137d537d5dcdd4001dbca62a/esphome-2026.8.2.tar.gz"
+  sha256 "0358bf24d1436a2f56676740317f7daefdf09792666ae0a568dd48ecf3cbef33"
   license "MIT"
   head "https://github.com/esphome/esphome.git", branch: "dev"
 
@@ -12,12 +12,11 @@ class Esphome < Formula
   no_autobump! because: "macOS resources cannot be updated on linux CI"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "553358ecd1630eda79154b6da59e14ed6b2f9e57e5dba0da6ff5445b6ff9d265"
-    sha256 cellar: :any, arm64_sequoia: "5edc4700e4ed89120ecbaae1897496d4e72799a2d37a798afbfdf2f0efc53b39"
-    sha256 cellar: :any, arm64_sonoma:  "b43c5223721d153ec8517971568f9cdd74a77d0a799db1a2173b98ffae4ac7b1"
-    sha256 cellar: :any, sonoma:        "2b54d5cfeab21af6d30602443a2302fe0784b57d1b20b71f6a2efbb955d22c46"
-    sha256 cellar: :any, arm64_linux:   "fe6924ed2f31e9fe69f3389ee973a9e8cccc9634ca7d4031397c52c7e5d3a876"
-    sha256 cellar: :any, x86_64_linux:  "d0beb6f5e1c7e24b35f959620deddef993b60e4fb9e0d6fc1279851b0f307a72"
+    sha256 cellar: :any, arm64_tahoe:   "b897aaa2c165705f170d0e2a285a8bcd14bc2f5f5d58f04ecf7f861292523fef"
+    sha256 cellar: :any, arm64_sequoia: "64db2e773e780523996b7028058f6ae69fe4511385a26f80196798476579d513"
+    sha256 cellar: :any, arm64_sonoma:  "41ceeb8260461a95efa993a710caea9eac91a441fe769b1b9ed5e4de9743fdf1"
+    sha256 cellar: :any, arm64_linux:   "5c7b9eb5ec7e5944c4966866f48e4251a52421997386f78dde8c4a1dbe91718b"
+    sha256 cellar: :any, x86_64_linux:  "e46e206ad05a5efe53bdf2dc1899679559687770102312e6ae9f51baa91b861f"
   end
 
   depends_on "rust" => :build

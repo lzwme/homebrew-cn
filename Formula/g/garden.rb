@@ -1,18 +1,17 @@
 class Garden < Formula
   desc "Grow and cultivate collections of Git trees"
   homepage "https://garden-rs.gitlab.io"
-  url "https://ghfast.top/https://github.com/garden-rs/garden/archive/refs/tags/v2.6.2.tar.gz"
-  sha256 "3c5e41cbc0106576762b6456b223bfb173ddadc8df3b81af2491883b60821b75"
+  url "https://ghfast.top/https://github.com/garden-rs/garden/archive/refs/tags/v2.7.0.tar.gz"
+  sha256 "40f7df483e784583664e258c6d27873050107d6a2a80f971ea64264baf89f0b5"
   license "MIT"
   head "https://github.com/garden-rs/garden.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fd1f509d71042bb9d37704eac5279bc527e85102c5d12ebdaffc2248a986d232"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7dbc97a78c3a3eff58eabbfd8d7f02d0daec49882350c89404fde7e1e18856ba"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "89cfe7b336f889a105a9a380d4c6f38b750ca5db99b34332f93188233ccc356d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "59bcdb5ddebc889de902a66c096c0fabfe7dec66663a1ff1bc6f38e44c259f35"
-    sha256 cellar: :any,                 arm64_linux:   "98a78e779ae374e554777c724faf2350b273aac13d153650c3cd49157277c9ea"
-    sha256 cellar: :any,                 x86_64_linux:  "52e0002ebef0bb20cd64432e37c18818265ea53d109b9a86318bfa3942b349ef"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "02ca0b134297c502d53e7a2e78cc251a9c12d0e22c690c2a2efbe382d9315c7b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6c89f4e44b6b4520c1fa7094aaabcc913d381a44a800af5f006d935498264529"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "68620c1ae9726b2d6f3ca1429326e934f843fa9fc45460b2606b3566ecb8fb2d"
+    sha256 cellar: :any,                 arm64_linux:   "30c787ab704fe617a640cd2e86beb4c03c2b214edf8b26f346ab7e4c1f90c117"
+    sha256 cellar: :any,                 x86_64_linux:  "2edfdda9ee1a547957b085e031de75a8f9205b97cad67ea13458745b08dd8ed4"
   end
 
   depends_on "rust" => :build

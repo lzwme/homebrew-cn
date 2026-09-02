@@ -3,18 +3,17 @@ class Conan < Formula
 
   desc "Distributed, open source, package manager for C/C++"
   homepage "https://conan.io"
-  url "https://files.pythonhosted.org/packages/f0/2f/f88c73d7042b87924e482cf2081645dfdc4ee4c20071f3d3b4aa08ca2f5e/conan-2.31.2.tar.gz"
-  sha256 "d820e9f5ac44eca1567874f6a7c83586c16a3df5ebca006d9c0c6933fbb375b1"
+  url "https://files.pythonhosted.org/packages/39/aa/f21a687ac0fdd8261ba4ea727dabbe5e58f178278e17786e86c4793b7e70/conan-2.32.0.tar.gz"
+  sha256 "59a033862bc46f99c4e4fd72c2741f44b8742377864ba33b28a698cd7361471e"
   license "MIT"
   head "https://github.com/conan-io/conan.git", branch: "develop2"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "1c472a422807d34bb027626e4cc17e94452dd12956e9b405552f41301a067a50"
-    sha256 cellar: :any, arm64_sequoia: "ff95446f4b646b2abfe32f0a0b64e59ac7620d103439616b6e69fbba3fb2f8c2"
-    sha256 cellar: :any, arm64_sonoma:  "787d950c2375ae54caa569db92413c68c457e0bf41159dfde8809025b9d06fb8"
-    sha256 cellar: :any, sonoma:        "6cea70528a741e5282ea216487e83e6131b7db8ac1bd328180719f54dd72d4ec"
-    sha256 cellar: :any, arm64_linux:   "9b3fbd1f72351b6fc8f18b2b8ea87d04917265e70a6cc33df5cd580cc6cacf97"
-    sha256 cellar: :any, x86_64_linux:  "f01d3988065086768750b731a5a93524ec07826bfc8bc9f5fe13e1a73689cf52"
+    sha256 cellar: :any, arm64_tahoe:   "ac6e34d1c8853cd6e25899fd115d7fe3e13a97a9cc570e8b45e9a4b024b396ca"
+    sha256 cellar: :any, arm64_sequoia: "03292eaf7443dfbe3f31c6f7d7499968282e1c8576c5610f77c8bc677e7493a3"
+    sha256 cellar: :any, arm64_sonoma:  "41c555ba795926d73a9de4163e300a30a306479fd795a7f41632c2fbe4dcd7b9"
+    sha256 cellar: :any, arm64_linux:   "46248383cb78b53e443022469f0edee71c33947710ffaf2fecea64c243a74d26"
+    sha256 cellar: :any, x86_64_linux:  "d1983b2969c98575d486bf79bd55bd23ba307cb2edf782efd3e28009104e3a16"
   end
 
   depends_on "pkgconf" => :build
@@ -27,8 +26,8 @@ class Conan < Formula
                 extra_packages:   "distro"
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/bd/2a/23f34ec9d04624958e137efdc394888716353190e75f25dd22c7a2c7a8aa/charset_normalizer-3.4.9.tar.gz"
-    sha256 "673611bbd43f0810bec0b0f028ddeaaa501190339cac411f347ac76917c3ae7b"
+    url "https://files.pythonhosted.org/packages/e5/3f/143b048436775b0f76ac3eec145c019e8173ccc2885c8f20319b996d5e83/charset_normalizer-3.5.1.tar.gz"
+    sha256 "6117b84ea48435e5356dc737f5121485c30920ba43375fa7b434fd753df0eac3"
   end
 
   resource "colorama" do
@@ -47,8 +46,8 @@ class Conan < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/cd/63/9496c57188a2ee585e0f1db071d75089a11e98aa86eb99d9d7618fc1edce/idna-3.18.tar.gz"
-    sha256 "ffb385a7e039654cef1ab9ef32c6fafe283c0c0467bba1d9029738ce4a14a848"
+    url "https://files.pythonhosted.org/packages/5f/f7/abb373e5757eaec4b922b92f97ec8d6d7e057cf06778247604fbc4e7c3f3/idna-3.19.tar.gz"
+    sha256 "5e0811a4383b21dc5838069f801c4fb62113b7447663d2530d2bd6e77b49bf15"
   end
 
   resource "jinja2" do

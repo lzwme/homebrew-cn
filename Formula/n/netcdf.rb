@@ -4,6 +4,7 @@ class Netcdf < Formula
   url "https://ghfast.top/https://github.com/Unidata/netcdf-c/archive/refs/tags/v4.10.1.tar.gz"
   sha256 "33c27231c478c3b35da7c7758fbdd02da1fe407abcb16ddfe195f69d164f930d"
   license "BSD-3-Clause"
+  revision 1
   compatibility_version 1
   head "https://github.com/Unidata/netcdf-c.git", branch: "main"
 
@@ -13,29 +14,30 @@ class Netcdf < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "272165524f912aa099b679354b2c9124254b07382ff24a91d4cb7a814b2946df"
-    sha256 cellar: :any, arm64_sequoia: "63678e98f8f593e10084bf456d6ff078a23cb3854b37286561c08ef71a30c56a"
-    sha256 cellar: :any, arm64_sonoma:  "44cbf680507e42a8075cef9aea20bb7ad67408a51f5a51e9fd08c09b729e0a8a"
-    sha256 cellar: :any, sonoma:        "8e34878912d54227043c575f477dcb0eef9fc6065766378b423bdc575600edbf"
-    sha256 cellar: :any, arm64_linux:   "13b70976978d8bbcde2532441c2cb4e542589f1799070e0244a2f9d7146b4d0d"
-    sha256 cellar: :any, x86_64_linux:  "689b1695b3a3647120d4965fb4d1c85b8e6ab86ad6c26807355a4416901030ac"
+    sha256 arm64_tahoe:   "61dd571420bf730f8bc3f24b162ba5450e1aa1eaa522aa592038bd8622ff4c10"
+    sha256 arm64_sequoia: "b0720ba605f4915d5fa1edb1a2288f276bd07749f97d4921988f2ac71e244011"
+    sha256 arm64_sonoma:  "5d65a07376386afafeb9b8c656bce0cca0d425848e7b647394a2787a468ad8ac"
+    sha256 arm64_linux:   "d982ff6c2ed8c063cd44e14c7893f15c5c7f98fd80f39a436f40d2c3cdc963f4"
+    sha256 x86_64_linux:  "ea61f420e72dcb4498adf6e647a49d8a3f36255076c925d3a0d0e7f53ea47a53"
   end
 
   depends_on "cmake" => :build
   depends_on "hdf5"
+  depends_on "libaec"
+  depends_on "zstd"
 
   uses_from_macos "m4" => :build
   uses_from_macos "bzip2"
   uses_from_macos "curl"
   uses_from_macos "libxml2"
 
-  on_macos do
-    depends_on "libaec"
-    depends_on "zstd"
+  on_linux do
+    depends_on "zlib-ng-compat"
   end
 
   def install
-    args = %w[-DNETCDF_ENABLE_TESTS=OFF -DNETCDF_ENABLE_HDF5=ON -DNETCDF_ENABLE_DOXYGEN=OFF]
+    args = %w[-DNETCDF_ENABLE_TESTS=OFF -DNETCDF_ENABLE_HDF5=ON -DNETCDF_ENABLE_DOXYGEN=OFF
+              -DNETCDF_PLUGIN_INSTALL=ON]
     # Fixes "relocation R_X86_64_PC32 against symbol `stderr@@GLIBC_2.2.5' can not be used" on Linux
     args << "-DCMAKE_POSITION_INDEPENDENT_CODE=ON" if OS.linux?
 
@@ -64,5 +66,10 @@ class Netcdf < Formula
     system ENV.cc, "test.c", "-L#{lib}", "-I#{include}", "-lnetcdf",
                    "-o", "test"
     assert_equal version.to_s, `./test`
+
+    # check to see if HDF5 filter plugins are present in bottle
+    %w[h5deflate h5fletcher32 h5shuffle h5zstd zhdf5filters zstdfilters].each do |filter|
+      assert_path_exists prefix/"hdf5/lib/plugin"/shared_library("lib__nc#{filter}")
+    end
   end
 end

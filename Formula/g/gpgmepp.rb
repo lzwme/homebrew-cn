@@ -1,8 +1,8 @@
 class Gpgmepp < Formula
   desc "C++ bindings for gpgme"
   homepage "https://www.gnupg.org/related_software/gpgme/"
-  url "https://www.gnupg.org/ftp/gcrypt/gpgmepp/gpgmepp-2.1.0.tar.xz"
-  sha256 "57f804468f0204504b172c6b139cb05124b4263be7ad514932c7c4c5062a16e2"
+  url "https://www.gnupg.org/ftp/gcrypt/gpgmepp/gpgmepp-2.2.0.tar.xz"
+  sha256 "6651c5f7f801543d5b676719df9fec8053b0a6f5aba40b98ca0d2bee11136f30"
   license "LGPL-2.1-or-later"
   compatibility_version 1
 
@@ -12,12 +12,11 @@ class Gpgmepp < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "b6f196a2bd021582ac5594962e57934662903a608aecebf4ac0e7ec98ce4e08c"
-    sha256 cellar: :any,                 arm64_sequoia: "c95bcc1741df57ec84ce79cd9afd023c8ff0277e78f1c3847e2c7d4d614c6c6b"
-    sha256 cellar: :any,                 arm64_sonoma:  "30e129696baf54d10fa6344323007c7226b541104f68121a3a2109ce0cf6252e"
-    sha256 cellar: :any,                 sonoma:        "608c33cbd3a641560314ee7f77979440f0654394672d1407e264ce628ad3d514"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "570a69d6e26e7857c93d7a8cf5f5bd912c11b0fabcca5472471422ee181782ef"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ef4ba880615a1632da127d6ef39b7ceddc2d9d665b290902cc2d21a446d707d5"
+    sha256 cellar: :any, arm64_tahoe:   "e182e7620bfe67c8ff4d39eb3061cbd7dcff08bc3ec7d51435f6575d07426897"
+    sha256 cellar: :any, arm64_sequoia: "bc1ad2a64e672863fe6501a4877e9f2f5d7cabdd4111cf4093badfa1e6928e3a"
+    sha256 cellar: :any, arm64_sonoma:  "ee685b491a5ad9bc01f2ad9922991fad349e9f9518cb6dae24bcb0fc5ce40f5d"
+    sha256 cellar: :any, arm64_linux:   "4c4ea2ca39fa1c05c89246467da34a2cf09d78f747eba8e238629f9a00987825"
+    sha256 cellar: :any, x86_64_linux:  "704771d1593f60d76a471cd903fd09b672c7c8fddad84dc8de7eed2efff0c012"
   end
 
   depends_on "cmake" => :build

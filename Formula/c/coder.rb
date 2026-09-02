@@ -1,8 +1,8 @@
 class Coder < Formula
   desc "Tool for provisioning self-hosted development environments with Terraform"
   homepage "https://coder.com"
-  url "https://ghfast.top/https://github.com/coder/coder/archive/refs/tags/v2.35.6.tar.gz"
-  sha256 "b6757b3e89c686e4b35490a0ef0080be05d8fc1d2f911c36c8516c04a3420a40"
+  url "https://ghfast.top/https://github.com/coder/coder/archive/refs/tags/v2.36.4.tar.gz"
+  sha256 "184540bdd3c6bab56acf485f52351560632444ad5e42780c4d4a779bf00c6efc"
   license "AGPL-3.0-only"
   head "https://github.com/coder/coder.git", branch: "main"
 
@@ -15,12 +15,11 @@ class Coder < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0d4302e310a7919077188154c37607b8c1c330c5b565750d19195843f278efb4"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e0aff26c13b1aef60b40bd266ea44d22b6e3520e04fb0fb1f55ee63911e5c9b8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2b21a6923d338bf54d7ce58e364cb89797026baa1d0838dc0d09025e013869c0"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f8d3e35fc284aa29a3bf1f5b69cc4f39a95af8ac558ff2d5b9b7e3cb9b833010"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "20564f6ad561b5f97f635e42f032275916aa4d95281b9a219bce02700ac0ba2b"
-    sha256 cellar: :any,                 x86_64_linux:  "cc66130c217f8ab9ed8679c9bd4c6d92e97c31562cfa5750c67901798242c5e9"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fbd3d40f8857fffaff7f7f2ac1cf2bd2b1a0cfba17ef47d1fbda2179fd5d25f3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "336303f44942432b1147d978c1ca8189ffba4d10ada4c5a21517f9b5dfc1c950"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "50a38d27fe3ef118fbf42fc886620ca88e6c16429dcf0881d3a0698208675b39"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6a1e5028640535bd33e2deeb078ab9b55dabee8fe2971f20818778e7da77c774"
+    sha256 cellar: :any,                 x86_64_linux:  "d9e3f188c86c8c7b6dc954b34b8675d1d8168888f02d07f302fde2a9409b7863"
   end
 
   # TODO: unpin go@1.26 when coder supports go 1.27

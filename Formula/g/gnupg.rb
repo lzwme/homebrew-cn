@@ -1,8 +1,8 @@
 class Gnupg < Formula
   desc "GNU Privacy Guard (OpenPGP)"
   homepage "https://gnupg.org/"
-  url "https://gnupg.org/ftp/gcrypt/gnupg/gnupg-2.5.21.tar.bz2"
-  sha256 "e3af2c8caa46a66a9329fa7c6880af260451914d819595beabc2c26597b31352"
+  url "https://gnupg.org/ftp/gcrypt/gnupg/gnupg-2.5.22.tar.bz2"
+  sha256 "96e27b020ad26510388e06f5f07f3f70a4ed8916ee995f1b72b7a024e6d9d87e"
   license "GPL-3.0-or-later"
   compatibility_version 1
 
@@ -18,12 +18,11 @@ class Gnupg < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "77a293d5ac76a99d7ca1fca4d57860bd76bb25b3c334b2504fc9b7fc145f1502"
-    sha256 arm64_sequoia: "8583235dd83654392b878f06833405b8bac255fb5f96c942259b1efd206b0ae8"
-    sha256 arm64_sonoma:  "d5148b6ad728f3f6a5660d17cc33d1a47def81f34a738dcd6667b12b520b42c1"
-    sha256 sonoma:        "b8da334b8bc5df2deecededfbcdf725b44a9dddfd344051ad7dcb8c1eb1d2046"
-    sha256 arm64_linux:   "bf5ac44775f2c6f6c67f31cd2bb10a35d780e484f386442b479a80f08257de99"
-    sha256 x86_64_linux:  "2dd827488b6c6b1927cf5be2eb70638e0e59ad34ba9db3e9aaaca866c4ed3c29"
+    sha256 arm64_tahoe:   "93e1f884f52a02bee2534197415bc6ae8f690cf426363645284f122e4d7657e1"
+    sha256 arm64_sequoia: "d9737d49051c12194278028414469280afc2981372f003767ae71d0954021846"
+    sha256 arm64_sonoma:  "6a1b533241434a607d74ce237f264808c3bd66174beb0490a38e8dcaaa1a4d23"
+    sha256 arm64_linux:   "a913f28d5411a1923181ab8254ca3cdb3044413518f094ad0a9168fff9ec0a2a"
+    sha256 x86_64_linux:  "928ffc7dd2b7ee94ca6045e6862e20c28471d67fdb1ef10caf12d66ffa6f589f"
   end
 
   depends_on "pkgconf" => :build

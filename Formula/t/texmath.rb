@@ -20,8 +20,14 @@ class Texmath < Formula
 
   uses_from_macos "libffi"
 
-  def install
+  deny_network_access!
+
+  def fetch
     system "cabal", "v2-update"
+    system "cabal", "v2-install", "--only-download", "--flags=executable", *std_cabal_v2_args
+  end
+
+  def install
     system "cabal", "v2-install", "--flags=executable", *std_cabal_v2_args
   end
 

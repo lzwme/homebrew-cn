@@ -3,17 +3,16 @@ class SnykAgentScan < Formula
 
   desc "Constrain, log and scan your MCP connections for security vulnerabilities"
   homepage "https://github.com/snyk/agent-scan"
-  url "https://files.pythonhosted.org/packages/4a/27/976c0a773bb2b2c9e0131b74db2ff14da85186d071314d231c6a753f4b4f/snyk_agent_scan-0.6.0.tar.gz"
-  sha256 "0c338366b1313f27389a2132262bb41f82775c8bb3a91af2e1e09d594693b69a"
+  url "https://files.pythonhosted.org/packages/a9/76/72b608b98798c5a94886293fe75f7f976f6aae409c7aa1512246bd0d34e3/snyk_agent_scan-0.6.1.tar.gz"
+  sha256 "7ec8fcfa5c280766c773fc6138e2a46cb0a8c3b7357033ce83121c17ea62b84d"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "d9726857469fbce59169100ebec48e3fad924130a0b2f306bc9a8c924d086df5"
-    sha256 cellar: :any, arm64_sequoia: "6683531fe5d74d645582ec8cfc49c04dbd2146e7fb25be702e0ac7e86e187601"
-    sha256 cellar: :any, arm64_sonoma:  "4ea7701a0300b0d6df709ecc445753b09e9895b98769f65d37790d06aa53bc6e"
-    sha256 cellar: :any, sonoma:        "378cc9f5236a6fda9545af6525f182da0233b6ee9fe96971f81055c50ae08b5d"
-    sha256 cellar: :any, arm64_linux:   "3ea7318b76ab58e89d9ae07ca0b81fa3cd751a67ba634429432b4acad268fdee"
-    sha256 cellar: :any, x86_64_linux:  "9e21f6815c30b0451ad49ab3682920606bcc1664c1a97e64fdc73e14b09e66b2"
+    sha256 cellar: :any, arm64_tahoe:   "6456866aa42825e74156b242c6b006fab6d9b2bdc10e20794c1e911bfdcb0674"
+    sha256 cellar: :any, arm64_sequoia: "df033d3afffaa46bf8c297e73fa2233672f22815e00fbcae481f5eb200f6dc97"
+    sha256 cellar: :any, arm64_sonoma:  "9517c2acd67d2afa9dd591ec8f5b688e436d9a4e86d6e55be0ff5d9d3ea7fd32"
+    sha256 cellar: :any, arm64_linux:   "4eb1964006077febf974191f665ea05560adf325c31e60126fb65b9cf9a4a004"
+    sha256 cellar: :any, x86_64_linux:  "36379e3e6e157c69812f7377bcfce6ebb49fdffed9eb9be8eecfa1b65da9ca7d"
   end
 
   depends_on "certifi" => :no_linkage
@@ -61,8 +60,8 @@ class SnykAgentScan < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/76/d4/81420972a676e8ffea40450d8c8c92943e7218a78fe9b64359836cc9876b/click-8.4.2.tar.gz"
-    sha256 "9a6cea6e60b17ebe0a44c5cc636d94f09bd66142c1cd7d8b4cd731c4917a15f6"
+    url "https://files.pythonhosted.org/packages/c7/0e/7fa0ef50764b67090eca4114772a2abf8b6148198475e54c660b97caeee6/click-8.5.0.tar.gz"
+    sha256 "ba0d2089de75ea0310e2dde03160e6ca10009947fb95a182f9b54021bb272e34"
   end
 
   resource "detect-secrets" do
@@ -181,8 +180,8 @@ class SnykAgentScan < Formula
   end
 
   resource "rapidfuzz" do
-    url "https://files.pythonhosted.org/packages/2c/21/ef6157213316e85790041254259907eb722e00b03480256c0545d98acd33/rapidfuzz-3.14.5.tar.gz"
-    sha256 "ba10ac57884ce82112f7ed910b67e7fb6072d8ef2c06e30dc63c0f604a112e0e"
+    url "https://files.pythonhosted.org/packages/18/97/226c43b7b5d957bc3840ed52ea99eed261f99834c4619be7a4742cbaeafa/rapidfuzz-3.14.6.tar.gz"
+    sha256 "e13a8160d017b499ec7a2fa9d0ce1ae2e7377080815785819f966fb235d4eb60"
   end
 
   resource "referencing" do
@@ -191,8 +190,8 @@ class SnykAgentScan < Formula
   end
 
   resource "regex" do
-    url "https://files.pythonhosted.org/packages/20/98/04b13f1ddfb63158025291c02e03eb42fbb7acb51d091d541050eb4e35e8/regex-2026.7.19.tar.gz"
-    sha256 "7e77b324909c1617cbb4c668677e2c6ae13f44d7c1de0d4f15f2e3c10f3315b5"
+    url "https://files.pythonhosted.org/packages/61/d8/9c23ec31d4973d7b41a99f45c7aa9aa65c7c4313d5c0463aafdb8fe05dd7/regex-2026.8.31.tar.gz"
+    sha256 "9350fd448a6442ae27853ab9d4b8d5a0bcb6d7774923a4fdfddd104c4458b35f"
   end
 
   resource "requests" do
@@ -226,8 +225,8 @@ class SnykAgentScan < Formula
   end
 
   resource "typer" do
-    url "https://files.pythonhosted.org/packages/ae/40/4a3db7990d1f62a53182aa96eaef57aeb2886a27f90a195bc66713565d31/typer-0.27.1.tar.gz"
-    sha256 "a79bef8469a79c45498e7b814ecf8d603cc7644e9acbd9e19cac0334240b18df"
+    url "https://files.pythonhosted.org/packages/16/f7/57713ba479fd405eb76de31404b2c744c289e336b2d999511ebf51e496f7/typer-0.27.2.tar.gz"
+    sha256 "269b7eb9d3c202ca84b4bc9618cb04ebb43d3d4d1e567e4c768607232c05f945"
   end
 
   resource "urllib3" do

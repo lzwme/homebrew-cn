@@ -3,11 +3,10 @@ class Openvino < Formula
 
   desc "Open Visual Inference And Optimization toolkit for AI inference"
   homepage "https://docs.openvino.ai"
-  url "https://ghfast.top/https://github.com/openvinotoolkit/openvino/archive/refs/tags/2026.3.0.tar.gz"
-  sha256 "48d97d500916e8fd57972a9ed729584c6d73c286554486745fb786e4cf5cf5df"
+  url "https://ghfast.top/https://github.com/openvinotoolkit/openvino/archive/refs/tags/2026.3.1.tar.gz"
+  sha256 "06128c315f2d81a6d9d390e4e505748eb32f58bc8e717e32143d228546668505"
   license "Apache-2.0"
-  revision 2
-  compatibility_version 5
+  compatibility_version 6
   head "https://github.com/openvinotoolkit/openvino.git", branch: "master"
 
   livecheck do
@@ -16,12 +15,11 @@ class Openvino < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "d968d1cda78dc949b9e3f86d9dcdd4c9c812e12f432565aa3e19ae8f90af3f36"
-    sha256 cellar: :any, arm64_sequoia: "503b5810721eb65d9299fc4be52461c98fe35d62c0893bf743edb51d2b3a34ec"
-    sha256 cellar: :any, arm64_sonoma:  "0712de6a3f60ae2ec5f3d4141169ded3d475e12f49f845cf3bad7197071a54da"
-    sha256 cellar: :any, sonoma:        "3a2f24ccb006e3ab416015d86be56e3e8aae735058b11b9e6b014c5f94efbb33"
-    sha256               arm64_linux:   "42846ca4d392c23cacb02e5dcb0d5883772736d93e2c659036cfefe468586250"
-    sha256               x86_64_linux:  "92b2e1836da86a5867d62213cb181aed764836572e8c6707eaa4c88c85ad4bc1"
+    sha256 cellar: :any, arm64_tahoe:   "e8fd22f6553954146ed2d505610753cb95c6bae9af4d4d30c5212607f080b2dc"
+    sha256 cellar: :any, arm64_sequoia: "6b0f4984a9c8e1c1933025549f442d8d1024216dd8b9e8cd5c0c88ee0187986f"
+    sha256 cellar: :any, arm64_sonoma:  "b4b594b6cf24ac45f9d03b0f0049a676fcbde62bfa76838e343237a4f2535c30"
+    sha256               arm64_linux:   "fd9a3a4bc196020e8ee54a9d8502f7df490478740e184aa5068eb393e59e0031"
+    sha256               x86_64_linux:  "d931f00d24452cd00fea376dc7fcaf2b55fdf60d62de83100f17d32c1480d91a"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -134,6 +132,7 @@ class Openvino < Formula
     end
 
     cmake_args = %w[
+      -DENABLE_TESTS=OFF
       -DENABLE_CPPLINT=OFF
       -DENABLE_CLANG_FORMAT=OFF
       -DENABLE_NCC_STYLE=OFF
@@ -158,9 +157,29 @@ class Openvino < Formula
       cmake_args << "-DCMAKE_OSX_DEPLOYMENT_TARGET=#{MacOS.version}.0"
       ENV["MACOSX_DEPLOYMENT_TARGET"] = "#{MacOS.version}.0"
     end
+    if OS.linux? && Hardware::CPU.arm?
+      # Issue 1: Fix linking failure of certain binaries as Scons disables superenv
 
-    # Fix linking failure of certain binaries as Scons disables superenv
-    cmake_args << "-DCMAKE_BUILD_RPATH=#{HOMEBREW_PREFIX}/lib" if OS.linux? && Hardware::CPU.arm?
+      # Issue 2:
+      # On Linux ARM64, OpenVINO's shared frontends can acquire direct NEEDED entries
+      # for Abseil libraries through Homebrew's shared Protobuf/ONNX CMake targets
+      # (e.g. protobuf::libprotobuf-lite -> absl::hash). OpenVINO's BREW packaging
+      # RPATH only points at its own libdir, so add Homebrew's libdir explicitly to
+      # let the dynamic loader resolve libabsl_*.so at runtime.
+      rpaths = [
+        lib,
+        HOMEBREW_PREFIX/"lib",
+        formula_opt_lib("abseil"),
+        formula_opt_lib("protobuf"),
+        formula_opt_lib("onnx"),
+      ].uniq.join(";")
+
+      inreplace "cmake/developer_package/packaging/common-libraries.cmake",
+                'set(CMAKE_INSTALL_RPATH "${CMAKE_INSTALL_PREFIX}/${OV_CPACK_LIBRARYDIR}")',
+                "set(CMAKE_INSTALL_RPATH \"#{rpaths}\")"
+
+      cmake_args << "-DCMAKE_BUILD_RPATH=#{rpaths}"
+    end
 
     system "cmake", "-S", ".", "-B", "build", *cmake_args, *std_cmake_args
     system "cmake", "--build", "build"

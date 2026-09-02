@@ -1,16 +1,16 @@
 class AgentBrowser < Formula
   desc "Browser automation CLI for AI agents"
   homepage "https://agent-browser.dev/"
-  url "https://ghfast.top/https://github.com/vercel-labs/agent-browser/archive/refs/tags/v0.35.2.tar.gz"
-  sha256 "e0bc920de68083ca581794d1210ea1374c7bdc5fab8bd122c81b1cade8669cff"
+  url "https://ghfast.top/https://github.com/vercel-labs/agent-browser/archive/refs/tags/v0.36.0.tar.gz"
+  sha256 "d414015852de0165c46a5adbf041592ddf32ee790d749061faef6cb43c1d3c59"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "739ac3c7f63c11f241dd55b3b877e4edc826e5568b29a535fbcfe86d52add573"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fb8519cfab53c36a6ec730e459cfc76f645505032e27d487c8210b2173931d3d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e924f4e55aa5aab0aa7a2d5e8958df939faa0524415334676f62c745662afa06"
-    sha256 cellar: :any,                 arm64_linux:   "30c64f58dd722d0c24d2f05b47c7228dff338b6e9e2a4eec89720961256dbe7d"
-    sha256 cellar: :any,                 x86_64_linux:  "ad79a20b0787e9ab106c3df84ad5008b22058a295368ae018d1c6fbb4406bc53"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f45270f59138e5fc7c6fe9bae73d3590476efdc2710d79f080d8266dec727697"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "87ffc1e5d4ddf6ceff66d08feb58bee768a59be5e993779b6b846148b9cc0776"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "309d53a0c82eae516527d0ff4e74100e8fd278db800a7067313f5355d5b1a80d"
+    sha256 cellar: :any,                 arm64_linux:   "fd94678454fdcd3c9a44a1d8ffa18f86e77288e4f319b4b6fc36f8eafd6d74ca"
+    sha256 cellar: :any,                 x86_64_linux:  "7ec02c2279a80e1bcdce620d817506fc951a9f588215f866c2e1b6324698e76b"
   end
 
   depends_on "rust" => :build

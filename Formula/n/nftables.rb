@@ -3,8 +3,8 @@ class Nftables < Formula
 
   desc "Netfilter tables userspace tools"
   homepage "https://netfilter.org/projects/nftables/"
-  url "https://www.netfilter.org/pub/nftables/nftables-1.1.6.tar.xz"
-  sha256 "372931bda8556b310636a2f9020adc710f9bab66f47efe0ce90bff800ac2530c"
+  url "https://www.netfilter.org/pub/nftables/nftables-1.1.7.tar.xz"
+  sha256 "a6fbf060d8d4fff001517a2b94f356bb4366bfbf0ba366366f9d27cc38caa58f"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -13,8 +13,8 @@ class Nftables < Formula
   end
 
   bottle do
-    sha256 arm64_linux:  "58f4138191485285a528a4c2e5648dbe07fab4d2769d545f7c2b0fe96e1ff6e4"
-    sha256 x86_64_linux: "02da0add39259afda8f58278a408984fee95b27b711f281e8cfbd6dcbffeec27"
+    sha256 arm64_linux:  "f4e88eb3601de61d4bc143f045de22842b58c7768b19cc5eedb6df38769382ad"
+    sha256 x86_64_linux: "5dd3c91e659a0215036dea0d2d3a28e46811f71980fff946a06deea11d89ae3c"
   end
 
   depends_on "pkgconf" => :build
@@ -37,6 +37,7 @@ class Nftables < Formula
   end
 
   test do
-    assert_match "Operation not permitted (you must be root)", shell_output("#{sbin}/nft list tables 2>&1", 1)
+    assert_match "Operation not permitted (perhaps you must be root?)",
+                 shell_output("#{sbin}/nft list tables 2>&1", 1)
   end
 end

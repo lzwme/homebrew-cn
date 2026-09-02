@@ -1,21 +1,18 @@
 class Rustup < Formula
   desc "Rust toolchain installer"
   homepage "https://rust-lang.github.io/rustup/"
-  url "https://ghfast.top/https://github.com/rust-lang/rustup/archive/refs/tags/1.29.0.tar.gz"
-  sha256 "de73d1a62f4d5409a2f6bdb1c523d8dc08aa6d9d63588db62493c19ca8f8bf55"
+  url "https://ghfast.top/https://github.com/rust-lang/rustup/archive/refs/tags/1.29.1.tar.gz"
+  sha256 "00f79a02275fd0252be6928d7a44f96bfba706a0cc47a0c85557aa4a875d1181"
   license any_of: ["Apache-2.0", "MIT"]
-  revision 2
   compatibility_version 1
   head "https://github.com/rust-lang/rustup.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6053ea3e9235d17c34d3ab698ac44345169e4c789270f51e6929c2c503b4644f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1a50690a9ebf8736dc495b6c16680e34802ac3d12f5653c986b87dcf5546384d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0256d6c93615b741a4b81a6c6e34c202397e079468e4917b4bf2099b0803b672"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0369ffb86c5f5a76c0128e90efe1945e070dbf2532756fc539ed89ae7b378c2a"
-    sha256 cellar: :any,                 arm64_linux:   "8ea0b765f548e4fb7e973838599f6bd6b63e54da6412abe4982d17703fccc3a8"
-    sha256 cellar: :any,                 x86_64_linux:  "f5dd4c3593e1b5d8acbd6885c10f69e4261dc945ccd903a0517a421444b14734"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "964b345d066613eb1fc70c174c101505361db44d206e0e53adc5d05a45fccd94"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "86a5e25e13d485d49880a059a436a6f295d03d1538c7a8801c61615651c23c07"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "76b66db2b3dd40b7e3f8c609e40179bfceaae90e9304b827fed61899c329a1e2"
+    sha256 cellar: :any,                 arm64_linux:   "ecbda8ac95f9a8f6588f0f215808e130c2f32dfee677c5d6b41e0585f70c6580"
+    sha256 cellar: :any,                 x86_64_linux:  "cdc068158d4d273168c914b9cf6cdba97b223718d3ee03babb8278ae7771a6fb"
   end
 
   keg_only "it conflicts with rust"

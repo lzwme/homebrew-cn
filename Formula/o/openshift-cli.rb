@@ -1,7 +1,7 @@
 class OpenshiftCli < Formula
   desc "OpenShift command-line interface tools"
   homepage "https://www.openshift.com/"
-  url "https://mirror.openshift.com/pub/openshift-v4/clients/ocp/4.22.10/openshift-client-src.tar.gz"
+  url "https://mirror.openshift.com/pub/openshift-v4/clients/ocp/4.22.11/openshift-client-src.tar.gz"
   # This project employs synchronized versioning so the sha256 may not change on version bumps
   sha256 "38e70ffd03ad17aff9202426e1f87e6da7964ed7b1134a6ee9c6ec1fc377221f"
   license "Apache-2.0"
@@ -13,12 +13,11 @@ class OpenshiftCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f39ef535f589e4fb6e377e2e245673927f3da0c357abc292eb8b5eaf2452db75"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9b385ab8208c4f713391dc3ab5d65ea0c99cea42b416e1138926cd54024c1ae6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b14c8fb978e90a58995a78ca31a23ae365db63daa38e69fa62cb588dad8245dc"
-    sha256 cellar: :any_skip_relocation, sonoma:        "72adf81a089b3bd4ceca4f21b9991f202b8309de3d6db158aa7396f0b1c66e88"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "086a9302312af9d75191417b5313f810c9b1beeeeb8b66f0f4fd047941630eb4"
-    sha256 cellar: :any,                 x86_64_linux:  "b1a07f84916a8f814eae968b86f17983881d970887a4daafdd3def6281cb9640"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f31c638ba9c16c89beb419f2c3f730eda6b64b4f7ec340d2dae5309298a2cd60"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fd34b8df66e2dd0d054c1878c0ec98a716d192353a85193a0bfc7a154b973d8a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bab228111d78f80d07e352d869288e4cb1028f40e7d2f8c4375ee6579e486a58"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8c47a3f2b824157eff304e3e04e78bf4235a08af75d4cd0247bc04cf2978fb5b"
+    sha256 cellar: :any,                 x86_64_linux:  "2aad023edcb5c9c1482b975043f49e5b0a16253cc211e052af491f0c46db6720"
   end
 
   depends_on "go" => :build

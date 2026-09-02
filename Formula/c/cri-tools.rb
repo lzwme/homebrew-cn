@@ -1,18 +1,17 @@
 class CriTools < Formula
   desc "CLI and validation tools for Kubelet Container Runtime Interface (CRI)"
   homepage "https://github.com/kubernetes-sigs/cri-tools"
-  url "https://ghfast.top/https://github.com/kubernetes-sigs/cri-tools/archive/refs/tags/v1.36.0.tar.gz"
-  sha256 "e0433207c55e08ab9e42e2fa3b3df3769ebae7695c145b600d79878be599e08f"
+  url "https://ghfast.top/https://github.com/kubernetes-sigs/cri-tools/archive/refs/tags/v1.37.0.tar.gz"
+  sha256 "ef81c240412a5b77b164ae6570857b7a0f347770031a697764ba5167389842d8"
   license "Apache-2.0"
   head "https://github.com/kubernetes-sigs/cri-tools.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "07212f7e5f0e132febab40183ec0b424d196a6dc1b9050685e2e985d8c110592"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "07212f7e5f0e132febab40183ec0b424d196a6dc1b9050685e2e985d8c110592"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "07212f7e5f0e132febab40183ec0b424d196a6dc1b9050685e2e985d8c110592"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2ccbaab4a765edcd24a6975db057ce018adbc022daccd7e2262d6e371afbbc9e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7924ad7948a0ae8fdded3048b15f171355aa11deb20cb8aa09a00cd55dfd8f50"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b66dc2365a581595fe3c238d001b57388c7a7dc18de50a3b8ba5355f2b9006eb"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0fcc2024f6276a66caba51963dc3111c7af42084e0e6b230935c9c9a9e56fcfa"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0fcc2024f6276a66caba51963dc3111c7af42084e0e6b230935c9c9a9e56fcfa"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0fcc2024f6276a66caba51963dc3111c7af42084e0e6b230935c9c9a9e56fcfa"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d645760e6cb04d2a85ace8ed56564bac2ac3f91cd275bae4bd58debbc60df421"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2db3cef644b5b43f6435cd0d5d591992995708ae0050b114a257a0c68671676d"
   end
 
   depends_on "go" => :build

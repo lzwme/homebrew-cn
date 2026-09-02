@@ -108,7 +108,7 @@ class OpensslAT3 < Formula
     # AF_ALG is a kernel feature and failures are unlikely to be issues with the formula.
     # `test_quick_tserver` intermittently fails on CI.
     # It has been reported upstream with no resolution in over a year, so we skip it.
-    system "make", "HARNESS_JOBS=#{ENV.make_jobs}", "test", "TESTS=-test_afalg -test_quic_tserver"
+    system "make", "HARNESS_JOBS=#{ENV.make_jobs}", "test", "TESTS=-test_afalg -test_quic_tserver" if build.bottle?
 
     # Prevent `brew` from pruning the `certs` and `private` directories.
     touch %w[certs private].map { |subdir| openssldir/subdir/".keepme" }

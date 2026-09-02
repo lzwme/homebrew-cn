@@ -1,8 +1,8 @@
 class Flarectl < Formula
   desc "CLI application for interacting with a Cloudflare account"
   homepage "https://github.com/cloudflare/cloudflare-go/tree/v0/cmd/flarectl"
-  url "https://ghfast.top/https://github.com/cloudflare/cloudflare-go/archive/refs/tags/v0.117.0.tar.gz"
-  sha256 "ae76bd5a05eb9f4f8971904377e9570c80a526d670b484d9a31ccd69638d256e"
+  url "https://ghfast.top/https://github.com/cloudflare/cloudflare-go/archive/refs/tags/v0.118.0.tar.gz"
+  sha256 "6aa2194c7c6efcbac373e42e9130a03db4a515fe55e3c24406f748f93808e8d9"
   license "BSD-3-Clause"
   head "https://github.com/cloudflare/cloudflare-go.git", branch: "v0"
 
@@ -13,12 +13,11 @@ class Flarectl < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "821166e5088d2090e5ef596a85c40997f0b5ef179ef26666ca47e645deaef115"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "821166e5088d2090e5ef596a85c40997f0b5ef179ef26666ca47e645deaef115"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "821166e5088d2090e5ef596a85c40997f0b5ef179ef26666ca47e645deaef115"
-    sha256 cellar: :any_skip_relocation, sonoma:        "714856fa20a429f791690d3444c3ed9ab7ec0891a935333fe6c61d5d03d54eeb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e81822bbee1f3b80b60e210b29750e07177d74d6ed2d9483160d17ec5156cbc1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bbc8c2f617275a53067d73bd0a681b10ea0f2a81e9904fcf8369b06cee6fa868"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1e75eae27a3173ecae8d931d8893dc33e2dc5266b6c2ce8a4ee796d968888df0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1e75eae27a3173ecae8d931d8893dc33e2dc5266b6c2ce8a4ee796d968888df0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1e75eae27a3173ecae8d931d8893dc33e2dc5266b6c2ce8a4ee796d968888df0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "53fe294923b1eaec575fc7b074fd945beea8b1a5375670de79acb979f3f72499"
+    sha256 cellar: :any,                 x86_64_linux:  "f0c88ca45ab7181042280bb37895e9b0798a66020ae8c8b926031f8adca1929e"
   end
 
   depends_on "go" => :build

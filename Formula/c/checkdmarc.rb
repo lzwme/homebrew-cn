@@ -3,13 +3,13 @@ class Checkdmarc < Formula
 
   desc "Command-line parser for SPF and DMARC DNS records"
   homepage "https://domainaware.github.io/checkdmarc/"
-  url "https://files.pythonhosted.org/packages/a2/12/c13a5680688c6fee6ddd19a95cb7c6acc698f9021ec3c4e9005be13b17af/checkdmarc-5.17.5.tar.gz"
-  sha256 "496ce85192673c140aee19aa3f134b6f50f579ac2a223e7b6bc054ce6643688a"
+  url "https://files.pythonhosted.org/packages/f6/8a/f56ed39cc9961614a3a80e46b015b582c140aa8bc6dc9a8dec8883b33140/checkdmarc-6.0.0.tar.gz"
+  sha256 "34499513eb0db1fba992e8d88ebb52c8798d4ffdb98af37ae977d13679f5b31a"
   license "Apache-2.0"
   head "https://github.com/domainaware/checkdmarc.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "bc8643bf512a2be1220f6036f6c0759bba0ce097e6cd4d6fecfd20ef54171656"
+    sha256 cellar: :any_skip_relocation, all: "030612220767a29b35bfc7da69143a1109426067d08523de53b7a27389016c6c"
   end
 
   depends_on "certifi" => :no_linkage
@@ -17,6 +17,11 @@ class Checkdmarc < Formula
   depends_on "python@3.14"
 
   pypi_packages exclude_packages: ["certifi", "cryptography"]
+
+  resource "anyio" do
+    url "https://files.pythonhosted.org/packages/61/cc/a381afa6efea9f496eff839d4a6a1aed3bfafc7b3ab4b0d1b243a12573dd/anyio-4.14.2.tar.gz"
+    sha256 "cfa139f3ed1a23ee8f88a145ddb5ac7605b8bbfd8592baacd7ce3d8bb4313c7f"
+  end
 
   resource "charset-normalizer" do
     url "https://files.pythonhosted.org/packages/e5/3f/143b048436775b0f76ac3eec145c019e8173ccc2885c8f20319b996d5e83/charset_normalizer-3.5.1.tar.gz"
@@ -33,9 +38,39 @@ class Checkdmarc < Formula
     sha256 "300fb92a7e98f15b05cf9a856c1415b3bc4f2e132be07daa326da6414c23ee09"
   end
 
+  resource "h11" do
+    url "https://files.pythonhosted.org/packages/01/ee/02a2c011bdab74c6fb3c75474d40b3052059d95df7e73351460c8588d963/h11-0.16.0.tar.gz"
+    sha256 "4e35b956cf45792e4caa5885e69fba00bdbc6ffafbfa020300e549b208ee5ff1"
+  end
+
+  resource "h2" do
+    url "https://files.pythonhosted.org/packages/e7/85/7c366e69d84c17bb778fe41419e1fbcce3033d5b7ce29bbffff0a98b859f/h2-4.4.1.tar.gz"
+    sha256 "4e866ffb1a869ae14dd9b5e6beb5c24a13da0495ad72b65925ded182521c1516"
+  end
+
+  resource "hpack" do
+    url "https://files.pythonhosted.org/packages/26/5b/fcabf6028144a8723726318b07a32c2f3314acdff6265743cf08a344b18e/hpack-4.2.0.tar.gz"
+    sha256 "0895cfa3b5531fc65fe439c05eb65144f123bf7a394fcaa56aa423548d8e45c0"
+  end
+
+  resource "httpcore" do
+    url "https://files.pythonhosted.org/packages/06/94/82699a10bca87a5556c9c59b5963f2d039dbd239f25bc2a63907a05a14cb/httpcore-1.0.9.tar.gz"
+    sha256 "6e34463af53fd2ab5d807f399a9b45ea31c3dfa2276f15a2c3f00afff6e176e8"
+  end
+
+  resource "httpx" do
+    url "https://files.pythonhosted.org/packages/b1/df/48c586a5fe32a0f01324ee087459e112ebb7224f646c0b5023f5e79e9956/httpx-0.28.1.tar.gz"
+    sha256 "75e98c5f16b0f35b567856f597f06ff2270a374470a5c2392242528e3e3e42fc"
+  end
+
+  resource "hyperframe" do
+    url "https://files.pythonhosted.org/packages/02/e7/94f8232d4a74cc99514c13a9f995811485a6903d48e5d952771ef6322e30/hyperframe-6.1.0.tar.gz"
+    sha256 "f630908a00854a7adeabd6382b43923a4c4cd4b821fcb527e6ab9e15382a3b08"
+  end
+
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/cd/63/9496c57188a2ee585e0f1db071d75089a11e98aa86eb99d9d7618fc1edce/idna-3.18.tar.gz"
-    sha256 "ffb385a7e039654cef1ab9ef32c6fafe283c0c0467bba1d9029738ce4a14a848"
+    url "https://files.pythonhosted.org/packages/5f/f7/abb373e5757eaec4b922b92f97ec8d6d7e057cf06778247604fbc4e7c3f3/idna-3.19.tar.gz"
+    sha256 "5e0811a4383b21dc5838069f801c4fb62113b7447663d2530d2bd6e77b49bf15"
   end
 
   resource "importlib-resources" do
@@ -49,18 +84,13 @@ class Checkdmarc < Formula
   end
 
   resource "publicsuffixlist" do
-    url "https://files.pythonhosted.org/packages/d2/bf/35bd7dc084c53cced65599969ad934eaffc31671fb4aaf36906288e4259d/publicsuffixlist-1.0.2.20260815.tar.gz"
-    sha256 "1b66ddb654990327af8c43db20a1d217e1856176214a3c9bd548fbae34d68373"
+    url "https://files.pythonhosted.org/packages/f8/7a/92625a1c708d053f02055769b27d0361dd2d346ee5f8c70f658c6133b6b0/publicsuffixlist-1.0.2.20260830.tar.gz"
+    sha256 "0b18a601f04aa5076c3083c4de2c763a15f43218c9cb77bcef732663fb228090"
   end
 
   resource "pyleri" do
     url "https://files.pythonhosted.org/packages/ff/f7/68edc8004ce2be6b60151a18528537d172991dd3737167285e1391771192/pyleri-1.5.1.tar.gz"
     sha256 "998d5b0cc453940e1753fc1acf83912568786e6dc6fe45f3c25a6f4ea72a3826"
-  end
-
-  resource "pyopenssl" do
-    url "https://files.pythonhosted.org/packages/3f/e8/7325d258199b159eb2c03fe32107533e2832e70e63f4fb88a6aa00023201/pyopenssl-26.4.0.tar.gz"
-    sha256 "28dfcce0162b9211413e26dfbfdf1d24317fbeba18fc93c12400a1856b2a0bc7"
   end
 
   resource "requests" do

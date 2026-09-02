@@ -1,8 +1,8 @@
 class Oxlint < Formula
   desc "High-performance linter for JavaScript and TypeScript written in Rust"
   homepage "https://oxc.rs/"
-  url "https://ghfast.top/https://github.com/oxc-project/oxc/archive/refs/tags/oxlint_v1.80.0.tar.gz"
-  sha256 "56f5ac5c3a8829956c82a29dcc78a00b456d703b1bf1c0a8cc7153303ce80005"
+  url "https://ghfast.top/https://github.com/oxc-project/oxc/archive/refs/tags/oxlint_v1.81.0.tar.gz"
+  sha256 "29431517f760ca4c6ba58d4416faf306bc9fceb0e11f9889a85b674b1ea34d60"
   license "MIT"
   head "https://github.com/oxc-project/oxc.git", branch: "main"
 
@@ -12,12 +12,11 @@ class Oxlint < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fda2cd05520e7a87375a9a238b2b3443a691a27bd07cca237248e9efa531f3f9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "38b8df56aba19732a8490230cdc2b69dd4c76d3b5c799961f6ab9d1e30619270"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8de5690c6466ca0230723c3f6da545f198d36c7935ce7e7fc87e40115d6ba36d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a88a7b8b86492a6ae0d78f89e0fba1a037c096dc37fdf541a5777f1566268974"
-    sha256 cellar: :any,                 arm64_linux:   "6896273c9e99285fd54446a2de2a72605ea40efe56b9112a27e2befb17268866"
-    sha256 cellar: :any,                 x86_64_linux:  "93833faa52930bb32bef84c1bec07d0ca8bad05712d587936c6d24365d83f5d6"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1189f9e559bb65bff681a1f00f51bd5d43e808c52d2836fa75610b6a23c2eff6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cebece297514770a949975d0f0b8e93a1df6f92c1650d4c0e2d9ad520da985c2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d11836e0bdb45ec5c2be97ce1c6e563f742f54799a7c649d7b3327420beb52d4"
+    sha256 cellar: :any,                 arm64_linux:   "5aeeb2f3d1534685870c6fd6c652161e394f158c187656fd43c29fa4a08a7599"
+    sha256 cellar: :any,                 x86_64_linux:  "beabb4c9da02d193e4038bb9da897c4b36429148e1c8852473d67b5a8ad1539c"
   end
 
   depends_on "rust" => :build
