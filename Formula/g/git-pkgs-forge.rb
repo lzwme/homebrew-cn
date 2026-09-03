@@ -1,18 +1,17 @@
 class GitPkgsForge < Formula
   desc "Go library and CLI for working with git forges"
   homepage "https://github.com/git-pkgs/forge"
-  url "https://ghfast.top/https://github.com/git-pkgs/forge/archive/refs/tags/v0.9.0.tar.gz"
-  sha256 "bd5515d68261101733595e2410124fbc4118763a42ff56464820d078f0ee1ba3"
+  url "https://ghfast.top/https://github.com/git-pkgs/forge/archive/refs/tags/v0.10.0.tar.gz"
+  sha256 "fb221afbe54cbd8dcfbe5a476df0b6aa93bea83e23455ac8eaca3b7b0eedd33c"
   license "MIT"
   head "https://github.com/git-pkgs/forge.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e82e6979f49f925e93c873576f97ee8482268a9054750ea7ce0e50e6107b080a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e82e6979f49f925e93c873576f97ee8482268a9054750ea7ce0e50e6107b080a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e82e6979f49f925e93c873576f97ee8482268a9054750ea7ce0e50e6107b080a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7446015d0953f26fa1ddbcc6658e1a78ab65830df5499b5c4ca57392fcdf0160"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "55a876bd457d435a399c3a5f7418a717e53f53d14e50ed4c1c297038a38a892b"
-    sha256 cellar: :any,                 x86_64_linux:  "a9dbf0825827df1248e62e62b122fcdf873ed83c1dd95c2a8358edb091434aaf"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7791a8d3f7a1cf8fa5856972d8382aa0ce2f2d1c82bf06548dff115adedf73e9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7791a8d3f7a1cf8fa5856972d8382aa0ce2f2d1c82bf06548dff115adedf73e9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7791a8d3f7a1cf8fa5856972d8382aa0ce2f2d1c82bf06548dff115adedf73e9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7c8b8fc5132c9740199fb51c5db18f135bd4093c75c278e2a2d85ef318bf74f0"
+    sha256 cellar: :any,                 x86_64_linux:  "7f5a232a6eebc2b7faa5a3f7525484446bdbef2da91e84d6bfc5eb49aacc0997"
   end
 
   depends_on "go" => :build

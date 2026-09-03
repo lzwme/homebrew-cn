@@ -1,10 +1,10 @@
 class Qtspeech < Formula
   desc "Enables access to text-to-speech engines"
   homepage "https://www.qt.io/"
-  url "https://download.qt.io/official_releases/qt/6.11/6.11.1/submodules/qtspeech-everywhere-src-6.11.1.tar.xz"
-  mirror "https://qt.mirror.constant.com/archive/qt/6.11/6.11.1/submodules/qtspeech-everywhere-src-6.11.1.tar.xz"
-  mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.11/6.11.1/submodules/qtspeech-everywhere-src-6.11.1.tar.xz"
-  sha256 "c035c318012025875a653245701a23d3807e8e46b8bf7987877842219c273f14"
+  url "https://download.qt.io/official_releases/qt/6.11/6.11.2/submodules/qtspeech-everywhere-src-6.11.2.tar.xz"
+  mirror "https://qt.mirror.constant.com/archive/qt/6.11/6.11.2/submodules/qtspeech-everywhere-src-6.11.2.tar.xz"
+  mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.11/6.11.2/submodules/qtspeech-everywhere-src-6.11.2.tar.xz"
+  sha256 "9c1d05dc9d710049f20a67680fc6b4293c9b584a90f04f4cf6cc36e758c5cb98"
   license all_of: [
     { any_of: ["LGPL-3.0-only", "GPL-2.0-only", "GPL-3.0-only"] },
     "BSD-3-Clause", # *.cmake
@@ -17,12 +17,11 @@ class Qtspeech < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "799ae8c9b034e0ecf2a433a04b9d10d00d31cb4cf7e3bedc879afd74408d482e"
-    sha256 cellar: :any,                 arm64_sequoia: "43f53ffaa22c4867460da26b293f2b31a664bda2eed5956669a9536dbacd79b0"
-    sha256 cellar: :any,                 arm64_sonoma:  "08e43dc67d41bd364cb53465ab5f5d62068f73a2fd1867a9e198143dba890e51"
-    sha256 cellar: :any,                 sonoma:        "e2be886661f4b536493cb7d8c91a40360b6464807565fb8c6fe5c23b126d36ce"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "541ce878ee7b9ddf1c9edce31e4dbff0b18348b2a495052ba8b148e526943bad"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c8bc115956e71d2d9b9d311d1c94158a199dd38b71d44d545eaeb0c646885775"
+    sha256 cellar: :any, arm64_tahoe:   "5dcf29679b0649849a9d0db03df4373314ddc53f75d79c276b7007e4cf899bec"
+    sha256 cellar: :any, arm64_sequoia: "4cdc57d5962107d7f9d9cce3c9fa3cb1d5de4aa276e3f5bcbb5c88ee6a7008c4"
+    sha256 cellar: :any, arm64_sonoma:  "36f297b0786721191d00c7a45d6bdda2c80dcc326aca43af8bda072383802887"
+    sha256 cellar: :any, arm64_linux:   "2a4f907033c49eb256623960f9e8ed133f8281df8970bf5a5ddd8bea63d17615"
+    sha256 cellar: :any, x86_64_linux:  "936a21444af9c25632215b04d1d9e8543352eaa053ac30214ba2dc4e50336a4d"
   end
 
   depends_on "cmake" => [:build, :test]

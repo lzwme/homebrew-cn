@@ -1,8 +1,8 @@
 class GnuGetopt < Formula
   desc "Command-line option parsing utility"
   homepage "https://github.com/util-linux/util-linux"
-  url "https://mirrors.edge.kernel.org/pub/linux/utils/util-linux/v2.42/util-linux-2.42.2.tar.gz"
-  sha256 "e73fe91d9b536c6e3548132c1e327843b0bac3c94be9f158ce112eb989d25fc7"
+  url "https://mirrors.edge.kernel.org/pub/linux/utils/util-linux/v2.42/util-linux-2.42.3.tar.gz"
+  sha256 "2f4c3484f67c79688a50974b9e0ae52d089fe07a63d2dbb59b20e50ed26fe89f"
   license "GPL-2.0-or-later"
   compatibility_version 1
 
@@ -39,12 +39,11 @@ class GnuGetopt < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8686e5c9467fcf792109ed51bdc112a33440a76867813493ab06ec841b6e5670"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cf63a74c9a13211492505f5e1ea63518fe3c2610ad3966560d3b0ed29d1bcfed"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ed46a7f05b0d415f1c5d64d0fd65f1fed773758437e83a5379214ad053f1592b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "dfe481ad58f986d3346be3a45dd67159d3c9fa198f3f007613b5511abd770da0"
-    sha256 cellar: :any,                 arm64_linux:   "13bf47751b729ca87dfb73c4a0c3be145c678610ab40914238e66a5f546d55d5"
-    sha256 cellar: :any,                 x86_64_linux:  "1f8d71983ef6e65de71b785fadbc1e8d6331fa0232317b279fd710541ee17c74"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5afb8fbda82ad0bcc5e2b862e8b93ee4f0985e38bf798f554c38ca82a0862bc0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "153c2ee20e8e5d531ee0d891c7a816af5493dcdd2052e41663fba85285e8e4a1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a324652160bfd1a448e42c957ebdc1bf6d8872cd11f27579e16a9a1ce1c3c477"
+    sha256 cellar: :any,                 arm64_linux:   "f4b3362e3bfb442e1155235b1be219ddcbb7a796f00c533a5505e7f22be253eb"
+    sha256 cellar: :any,                 x86_64_linux:  "8eb99ac6873a35b8eddeec966b45f7e3ac971ef05c6a7c389e2fc162729b33ac"
   end
 
   keg_only :shadowed_by_macos, "macOS provides BSD getopt"

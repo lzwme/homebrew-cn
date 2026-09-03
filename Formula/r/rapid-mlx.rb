@@ -3,14 +3,14 @@ class RapidMlx < Formula
 
   desc "Fast local AI engine for Apple Silicon with an OpenAI-compatible API"
   homepage "https://github.com/raullenchai/Rapid-MLX"
-  url "https://files.pythonhosted.org/packages/34/cf/3b9a9ad2657716b81dc3e9abaaf5ad9beb516753db974311c6a79ae752a7/rapid_mlx-0.13.2.tar.gz"
-  sha256 "37da675f932043c21e96f7b1f9f1f4776dd22a0cccad578094b7852cab288f56"
+  url "https://files.pythonhosted.org/packages/20/f7/6c6bba6a17d871f387186dd1684f0f2b73f3a0dcb8fcf113fe13d7ab0b87/rapid_mlx-0.13.3.tar.gz"
+  sha256 "99fb26613267c265f60c016197c5ad3939222454dd1250a64ab7f50565bd862e"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "9500da56ba38bf6e5fb9f1a97e8b214facfcd0f17bdd1f7cafda5d8db63bd04d"
-    sha256 cellar: :any, arm64_sequoia: "7a8ac124a9a9aa9be3d4e8d0e1a1b2c5314e83c2966d4cf0b65baced307e02b3"
-    sha256 cellar: :any, arm64_sonoma:  "7caf38ecb644db38418e4ad92732f2a3457b66b6c6e931776680350f016d5e7e"
+    sha256 cellar: :any, arm64_tahoe:   "7da6b7c4b282fc3c8c10deff2fc98422785940a5caa54a1cef1dbfd036d557b2"
+    sha256 cellar: :any, arm64_sequoia: "4827921f10942b8c4e0fe9b19abe61a1be949f9461256409e58db6bc396ed823"
+    sha256 cellar: :any, arm64_sonoma:  "d76d0ada5e596cb5c026f2d9591a6e512f5ec87d692dbbf304fbd66b3f993448"
   end
 
   depends_on "cmake" => :build
@@ -65,8 +65,8 @@ class RapidMlx < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/6d/30/03b03951873a1a0ffc7e8ca0e10c15597b59e8d0e39260704cd2ea087bc4/filelock-3.32.4.tar.gz"
-    sha256 "2bde2e4cf732e0153406d8a7bc80620ecf5e621fe0d25e41143c4e3b4733ff30"
+    url "https://files.pythonhosted.org/packages/0a/a0/50c2c0ce5e74d7721bbb1b19a26ebd339aac5878553a6e35308c2f31f935/filelock-3.32.5.tar.gz"
+    sha256 "f6a6a28f743f9b95ce19db5abe0f376f75eb56517dff21e1a4751e2657d3e83d"
   end
 
   resource "fsspec" do
@@ -180,8 +180,8 @@ class RapidMlx < Formula
   end
 
   resource "protobuf" do
-    url "https://files.pythonhosted.org/packages/a7/e7/0553e21d25ca4d9f573135775348a372c3ec34a93a71d5f297c3bac38341/protobuf-7.36.0.tar.gz"
-    sha256 "e8e09cb0d794c6687926fa558a8a6e72aa10edb997d5ca61da0765f12a3e00ea"
+    url "https://files.pythonhosted.org/packages/86/73/f66c748df06e7fe24e658eddd600d19c4b40bad836c97ce2d0ad9851fb6b/protobuf-7.36.1.tar.gz"
+    sha256 "d0f6470f0ce2b84e3feaea2d4b816378b37ba4d4aa08a274305373de93e2d524"
   end
 
   resource "psutil" do
@@ -215,8 +215,8 @@ class RapidMlx < Formula
   end
 
   resource "regex" do
-    url "https://files.pythonhosted.org/packages/61/d8/9c23ec31d4973d7b41a99f45c7aa9aa65c7c4313d5c0463aafdb8fe05dd7/regex-2026.8.31.tar.gz"
-    sha256 "9350fd448a6442ae27853ab9d4b8d5a0bcb6d7774923a4fdfddd104c4458b35f"
+    url "https://files.pythonhosted.org/packages/19/c1/6b30b775c7bcc6cf6506a4d4741c2123e8d99cd50f3fe8cbd731f5fef526/regex-2026.9.3.tar.gz"
+    sha256 "aabd43208e335f4c3f0b56de3464b066dd425983a58f6eeb5738bcd7465403db"
   end
 
   resource "requests" do

@@ -1,8 +1,8 @@
 class PvMigrate < Formula
   desc "CLI tool to migrate or backup/restore Kubernetes persistent volumes"
   homepage "https://github.com/utkuozdemir/pv-migrate"
-  url "https://ghfast.top/https://github.com/utkuozdemir/pv-migrate/archive/refs/tags/v3.6.1.tar.gz"
-  sha256 "23c6811740ccb3135151e3083bd5500f336161d0a70e76c68d8b9f87d85d071a"
+  url "https://ghfast.top/https://github.com/utkuozdemir/pv-migrate/archive/refs/tags/v3.6.2.tar.gz"
+  sha256 "42c82639f48d5d58dd34ed5b7b07072b651a9b090b5955b99afd00153afa069f"
   license "Apache-2.0"
   head "https://github.com/utkuozdemir/pv-migrate.git", branch: "main"
 
@@ -12,12 +12,11 @@ class PvMigrate < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "55c3d79c5a9509500a026881fa7831b504a76e4e86dc8d63af15357255a3b18a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7d01a496c826654a60c5f36010a6158a5f25d23044a45d0f1d13aaeb08eec6b6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cab18802024f8e1c3d712a3fbd604e36f2a163bfdff6fd471bcc0d85575f3a80"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5457806424819d2917c9184d0c8ed4d5dbb2fa9e058caa554f58fa5648e42044"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3230c226e6cc274dc8ab5454c4ee5c38eb219f7755ee29d7fd78157a6bfa9204"
-    sha256 cellar: :any,                 x86_64_linux:  "d50dbc844a427cb87406f578461376fb803ccfa1c6ffdb2512fcb073693e236d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "14a59a43fce55ce7a213b3eb3c4401b6f24ee5b5112b527e37b19496947c3ab7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2dfae13eb7166064a7392937f48be2a360cf6cc0be4afc82c67426151627b354"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "88bf2a8e6a2420488bf4c0062744865c1a943885d94717880603037fd9f73090"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b4bd3c6ef60a325361368d9ef54463ce3a1f46db33e66ece7f28004a904a339d"
+    sha256 cellar: :any,                 x86_64_linux:  "eff6014fd7b593c82cee9204535dfebf013ddf296f9a9a92051195fc085fbebf"
   end
 
   depends_on "go" => :build

@@ -1,17 +1,16 @@
 class Triton < Formula
   desc "Joyent Triton CLI"
   homepage "https://www.npmjs.com/package/triton"
-  url "https://registry.npmjs.org/triton/-/triton-7.18.0.tgz"
-  sha256 "dfbecc0a7ff8ba4ebc3fccabe0db0457e135f4a03e04e653b2e415118ce0d823"
+  url "https://registry.npmjs.org/triton/-/triton-7.18.1.tgz"
+  sha256 "36804146e9df26ac633524c7d800500f02d9c0ba6b76eb9bd4b5738ca34cbc09"
   license "MPL-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f659094baf39c772a72b10e6c14b525dca623dec1379b659ca83be1671af99dd"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d91ba4e07dc8385bfebe9d5c620c6e0dc60a5c14b839e5b8004e383441aadd19"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6eb63ee8ae2ca6644715482d976f9783884d2f7c5b01be6958f012923ef60aa4"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7b19e16266ab18e6ab90bf3aa3672a0cabb7148df781076edf3ecd68fc14fc59"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7d46ab480b6e9321c5a1fa43791895e852cf7b36a1d29ee173e23a27b0571698"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5815c9642d4141e9bafa0b1439779bc0f42da92f73146ba0348c8d799775e206"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5e2fc59e5dc11f707ca0dc2bc64c7c43f344ec0758bde9602a4201d7b2a0ae62"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5a1e1ed18033d309e6301e44fb0d013a78392c4d4b86a8b0b5236fad29a69bc8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f269aaf062966e6564f5a3fcc9ab3e97ac6d53dbe1f491865eeea0f4aa944420"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5b57fa0ad85a96042b2b2427728e54385c4bcc2f81c6fea100205570337ee228"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a2871b8d302dd27f043c8ab145331593a6caa1089ee1f2824232ab3e7796a4ab"
   end
 
   depends_on "node"

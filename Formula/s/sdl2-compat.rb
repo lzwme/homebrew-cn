@@ -1,18 +1,17 @@
 class Sdl2Compat < Formula
   desc "SDL2 compatibility layer that uses SDL3 behind the scenes"
   homepage "https://github.com/libsdl-org/sdl2-compat"
-  url "https://ghfast.top/https://github.com/libsdl-org/sdl2-compat/releases/download/release-2.32.70/sdl2-compat-2.32.70.tar.gz"
-  sha256 "998fa62557eb46ffe7e5c3e2c123bc332f7df9d9f593b3ceed88ed1158428a44"
+  url "https://ghfast.top/https://github.com/libsdl-org/sdl2-compat/releases/download/release-2.32.72/sdl2-compat-2.32.72.tar.gz"
+  sha256 "a14d2f78dad8e83ef1039b6534ace4d14f11f5b11d023af989affd70ac1bb35e"
   license "Zlib"
   head "https://github.com/libsdl-org/sdl2-compat.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "72e2c794f8408fba73fd0345a4eeb4cac49badc134e91c680c6aa7fd685d5492"
-    sha256 cellar: :any, arm64_sequoia: "b5da3b02dfd9a68368f62a317b29f845dad4f29e067fc4aa81a351ca527a82c3"
-    sha256 cellar: :any, arm64_sonoma:  "7e8e4de5079df93683ca0749d8948eb44dc7546769ce662a59955a6d0a5d65d3"
-    sha256 cellar: :any, sonoma:        "334e7c2148dce314b293ac851c4c20e40f6e67582d52e4dee9cfd27f6400ddee"
-    sha256 cellar: :any, arm64_linux:   "2b6d44478a56f2362482d9be32601e42acf10e59dc2fff1a1db6b5e641e0c177"
-    sha256 cellar: :any, x86_64_linux:  "710527b5b729316426641d49adb065f9c4c8a07f741682329955e9d3ead7a18e"
+    sha256 cellar: :any, arm64_tahoe:   "fbceadf543763868897ae643c8b04377e0971dfc0e8f3d9397bd80565016ec9c"
+    sha256 cellar: :any, arm64_sequoia: "1c2b54a84b2a24100e29fe48fb5b0d8b1f401de2e4470d375bbc2246f92ab8d2"
+    sha256 cellar: :any, arm64_sonoma:  "0be6cd6dc97e29bf12d30baf103f813f34b3fbd9c7a1027c29edb0df2d85f239"
+    sha256 cellar: :any, arm64_linux:   "f27ec0f54b565d9e7455bba97d4b6a01b516f3d686d848fc6631637bbcdd1dc1"
+    sha256 cellar: :any, x86_64_linux:  "93931c0132043cfcc7daae237a8c79a67b563e5eebe35e58eaf1fcc6f4a48acf"
   end
 
   depends_on "cmake" => :build

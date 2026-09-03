@@ -1,10 +1,10 @@
 class Qttranslations < Formula
   desc "Qt translation catalogs"
   homepage "https://www.qt.io/"
-  url "https://download.qt.io/official_releases/qt/6.11/6.11.1/submodules/qttranslations-everywhere-src-6.11.1.tar.xz"
-  mirror "https://qt.mirror.constant.com/archive/qt/6.11/6.11.1/submodules/qttranslations-everywhere-src-6.11.1.tar.xz"
-  mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.11/6.11.1/submodules/qttranslations-everywhere-src-6.11.1.tar.xz"
-  sha256 "37c02c81206594c7bb4edca85ac93e8e55a9836b70c960fde6cb0f8623ec5677"
+  url "https://download.qt.io/official_releases/qt/6.11/6.11.2/submodules/qttranslations-everywhere-src-6.11.2.tar.xz"
+  mirror "https://qt.mirror.constant.com/archive/qt/6.11/6.11.2/submodules/qttranslations-everywhere-src-6.11.2.tar.xz"
+  mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.11/6.11.2/submodules/qttranslations-everywhere-src-6.11.2.tar.xz"
+  sha256 "021684c1a7937a9fabc3b056a6698ad5978794caf9ac190fd6cc11399e67c014"
   license "BSD-3-Clause"
   compatibility_version 1
   head "https://code.qt.io/qt/qttranslations.git", branch: "dev"
@@ -14,12 +14,11 @@ class Qttranslations < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "44feb5838957db5caf22f10f49f32825640b1b373f18c0981707d0725e928674"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "700100f1cd45907a5c4bdbadd422bc39a2a6bafee810926105748f832ab67872"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3702655383dde7952d72c72e39d186857b67a0b20ea5ecf478f8892b6cdc6035"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1fe673356376d43d9e81391f815d89cfe95033fe60e26a79a21937bbe29f2482"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f9d02646e9432d15a16cd85a8bcbdffba243485e1b5d2bf0f2d9111fa5dc13e1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ac0ec7d2a9e77b875da9067e7c77608002c26e141296a989ef3c61b87f892619"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "60c52acffb352decaa1670716836ce1a2f696f2d2f703fa06267373a65a25cfa"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cf66db2b576e2895f90cdeb4fece21af78259bff883675b5f55733bd47c4ea0a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "321d87ab9eb265668c54390a2002fdee47d12adf2b56e3f4132ebbd423747e49"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a2cd2c620d4444abf98f941baf4b4965e4406d5e3123a19f9c6603b62ca42d53"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "34ca44f8e8245ce1c5ad394d5d1f86ce4eaee55549d85534dd8805876f3ac1bd"
   end
 
   depends_on "cmake" => [:build, :test]

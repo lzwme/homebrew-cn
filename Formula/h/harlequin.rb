@@ -3,19 +3,19 @@ class Harlequin < Formula
 
   desc "Easy, fast, and beautiful database client for the terminal"
   homepage "https://harlequin.sh"
-  url "https://files.pythonhosted.org/packages/ee/b5/071ad09253d05e52adb49386f433bb87a3a9b6e0e102c9bf657feb72843e/harlequin-2.12.0.tar.gz"
-  sha256 "bcfeba515ff824bf5b12ce044dfba6774ea2b02c08d9b29f7befa53d7e47f5a7"
+  url "https://files.pythonhosted.org/packages/14/5d/9e488ea8b9458a7e087209ad8bc85b5a215a576ba6b4bec21ab07b198be8/harlequin-2.12.2.tar.gz"
+  sha256 "30e82deafef4d602d5f73f0884fc0301bc8fef5e4cda0340b1cf2b7ac52cfb8a"
   license "MIT"
   head "https://github.com/tconbeer/harlequin.git", branch: "main"
 
   no_autobump! because: "has non-PyPI resources"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "48354993aabd5b220b0a282015ac8b390540cc57b9e2dba0fb49bb204972eac6"
-    sha256 cellar: :any, arm64_sequoia: "1c35e8783a491bbae459142101dd9aa58754d2d6bea3969d9976887dfc8ac61c"
-    sha256 cellar: :any, arm64_sonoma:  "9b185fcfda06fd1f67eb40b1b0d436345ebff997481c96bd45fa870a3634faa1"
-    sha256 cellar: :any, arm64_linux:   "df81b253bd152feb58513fff9b6eda897066624bda60fd805bd003e090f8397c"
-    sha256 cellar: :any, x86_64_linux:  "ee206e45cc6462b5be81f45970c6edbfa2ed276640f8bd90095999e42d860c20"
+    sha256 cellar: :any, arm64_tahoe:   "1bebd50def82749131890f3428f910d7a6cf19c551ed9c075b83de0ae752fb4f"
+    sha256 cellar: :any, arm64_sequoia: "d92c47342a6879a4fbe9027b1a288aa3825e4ead83a3465fb516dc5c7ee84204"
+    sha256 cellar: :any, arm64_sonoma:  "63bcdcecbee4612a1909edc1126ab852393c2c740a370ee7a9e67ab654d26e1f"
+    sha256 cellar: :any, arm64_linux:   "c0e7e4ab9ab8c119bec57810d84f419d21e2ad3c21b8a4b4b5f4e735892ee8c6"
+    sha256 cellar: :any, x86_64_linux:  "ebf915d9ab79902148d41dd2bdb2251b646e14630713dd96aef3f90e59025042"
   end
 
   depends_on "cmake" => :build
@@ -57,8 +57,8 @@ class Harlequin < Formula
   end
 
   resource "harlequin-postgres" do
-    url "https://files.pythonhosted.org/packages/b6/20/3f1863446c8788db6b0f40d33ce48698f78a6194dc0478bf8a6c9474dc6a/harlequin_postgres-1.4.0.tar.gz"
-    sha256 "1220d8e43e5c78e0479d400965d322482c483be19c45e37a1f8bbe8c861b32fe"
+    url "https://files.pythonhosted.org/packages/fc/9a/43b082e83eed259438af8a32271584464b8a5a71ff0e5fc88a592fdb4525/harlequin_postgres-1.4.1.tar.gz"
+    sha256 "e352c74312752f279aa33bf97284e322ef1447f18595b0b583265ad843df7bab"
   end
 
   resource "jinja2" do
@@ -102,8 +102,8 @@ class Harlequin < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/ea/06/cf1564dcc2e2261c8c8c6c05628dc8b418943bdae2a4e58640ceb2f770fa/platformdirs-4.11.5.tar.gz"
-    sha256 "e8b31f4f8bcbbedef91a6b57a706255e4f148d2a4e01648382a0a47342539173"
+    url "https://files.pythonhosted.org/packages/69/b7/802a56eca9f2fac455b8bab5375a2647b0f0e14a2cd63ef077de3c4a7658/platformdirs-4.11.7.tar.gz"
+    sha256 "4f41487eeeeeb07f3a6625e61d9bc0ae6809f92d3386dbd74392fbb76108104d"
   end
 
   resource "prompt-toolkit" do
@@ -112,13 +112,13 @@ class Harlequin < Formula
   end
 
   resource "psycopg" do
-    url "https://files.pythonhosted.org/packages/db/2f/cb91e5502ec9de1de6f1b76cfbf69531932725361168bb06963620c77e2e/psycopg-3.3.4.tar.gz"
-    sha256 "e21207764952cff81b6b8bdacad9a3939f2793367fdac2987b3aac36a651b5bc"
+    url "https://files.pythonhosted.org/packages/72/73/8fb739d0f6bba247b9b93c9840c402a4f88545be5f1d4b02b23366371c00/psycopg-3.3.5.tar.gz"
+    sha256 "d0a3d9ccf5788af054cbd745278cb02401b5c312aeaafbf2c6144460aec47da4"
   end
 
   resource "psycopg-c" do
-    url "https://files.pythonhosted.org/packages/21/7c/c08364f2eab2913e4068b3b955d963e7a3491986a85429990969525def30/psycopg_c-3.3.4.tar.gz"
-    sha256 "ed8106128b2d04359c185fc9641b4409abfce4d0b6fb1d1ff6800646e27f1a22"
+    url "https://files.pythonhosted.org/packages/21/7b/5da2274bdbfed6b02aea463e2b803b8d4406bbc9d6c6f6bfd7122492254f/psycopg_c-3.3.5.tar.gz"
+    sha256 "5e11edaa0040a64d0af351a8fd3e276a824cd92fe34abc350cd67aa07ad36c55"
   end
 
   resource "psycopg-pool" do
@@ -172,8 +172,8 @@ class Harlequin < Formula
   end
 
   resource "textual-fastdatatable" do
-    url "https://files.pythonhosted.org/packages/ad/a4/e3f2834ed4393afda3b66a4a8133e1b42e1269dd547d5f2064818d814273/textual_fastdatatable-0.19.0.tar.gz"
-    sha256 "c9ffa17978e68886be3462c980fece81d21a5d0d5957d9eef2e5c6dae649606f"
+    url "https://files.pythonhosted.org/packages/1e/7b/79a2c566bf0a7e087c2b29738fdec807d2457b3553bf44b8fa034bfa1f1e/textual_fastdatatable-0.19.1.tar.gz"
+    sha256 "c546de625c193b21431140c3e312c12d8cfdbefb61a5c9550b3dde7715c1d7a9"
   end
 
   resource "textual-textarea" do

@@ -1,18 +1,17 @@
 class Libde265 < Formula
   desc "Open h.265 video codec implementation"
   homepage "https://github.com/strukturag/libde265"
-  url "https://ghfast.top/https://github.com/strukturag/libde265/releases/download/v1.1.1/libde265-1.1.1.tar.gz"
-  sha256 "fd48a927e94ed74fc7ce8829d222b9d8599fcbfe8b6448ba66705babc56ab219"
+  url "https://ghfast.top/https://github.com/strukturag/libde265/releases/download/v1.1.2/libde265-1.1.2.tar.gz"
+  sha256 "eaacd1943ab0c452c19f6136a36ca227e6b761b39a81eaca8454d48c147e1f67"
   license "LGPL-3.0-or-later"
   compatibility_version 1
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "c5219a5acb398bdd8e7da040df9e0cdfe78bd17fea28fcbe4efa818350d24c52"
-    sha256 cellar: :any, arm64_sequoia: "205dcc543341461a96443fab87f518b9e2d62f845422b547727e90e110afa7eb"
-    sha256 cellar: :any, arm64_sonoma:  "26e1dac41a928c1faf91ad459422124ed8fde2436b3f268284a21440605ff568"
-    sha256 cellar: :any, sonoma:        "5d73539a71e8d73faa302801922053a6c29373d83a7ff4c2df5e98c8648bd70f"
-    sha256 cellar: :any, arm64_linux:   "90b5b8e42034d39095bd3a2ff2affe1aa5c514ce690b146bc7bdb2dd39a354dc"
-    sha256 cellar: :any, x86_64_linux:  "8cbb5f786788c23c300cc6704d9a426a935d938b37c562360510058ae1d1b319"
+    sha256 cellar: :any, arm64_tahoe:   "8f8d8510112ab8b4ddabd02816d262cf9bc3387d0f713348a2ed961f4250547f"
+    sha256 cellar: :any, arm64_sequoia: "5ce0fa549a0462e69b9254266fb8859a271a991416d72bdcfb80e622beba77be"
+    sha256 cellar: :any, arm64_sonoma:  "2518ecf2bd8479445010ce181f3a66565f760256411ea911f80cea4085687280"
+    sha256 cellar: :any, arm64_linux:   "b59b9b9c60c31374d8ec851e7c8960cb51694801b348af200b7bc1bef24e8257"
+    sha256 cellar: :any, x86_64_linux:  "d31f63ce2a21ac52eb377bcf39e89be3c3204f21a4d04cafb872a3b8e4d28120"
   end
 
   depends_on "cmake" => :build

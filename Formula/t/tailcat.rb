@@ -1,17 +1,17 @@
 class Tailcat < Formula
   desc "Netcat-like tool over Tailscale's data plane, without its control plane"
   homepage "https://github.com/tailscale/tailcat"
-  url "https://ghfast.top/https://github.com/tailscale/tailcat/archive/refs/tags/v0.4.0.tar.gz"
-  sha256 "f3e87753aa45f8be249a2708a4220748fd8613f9ea0d0435a48ffedf8d724247"
+  url "https://ghfast.top/https://github.com/tailscale/tailcat/archive/refs/tags/v0.5.0.tar.gz"
+  sha256 "a2177d257ac7a02d8ba0fdfcfa341113d97ea0cf7597dbb0fff851d8c341d8e9"
   license "BSD-3-Clause"
   head "https://github.com/tailscale/tailcat.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6716ae745d98ebdab4544ef6ec8a3d2cdd352ad87e8720f3b86be5ba1023d10f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "87bf63e4cc449a8413183ae6693107939d90f60aab6b50139e87ef46c117b152"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "399919aedc4d6a52ef18052a9236b467ac93a9c69ce8906ce2f40e98bb173e46"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "84f6f01a54655c4d32faa11a5e6a22dba43071888fadd9a31a628f0c655e0009"
-    sha256 cellar: :any,                 x86_64_linux:  "13c2f20c2976259b75205861117811cbeeb7d500e2f24b83bfd01a10baa11659"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2d377cd199792daab0a933b0bad37fc24d7a191849325ad30a71b69444aa370b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "344dfdb996d41ce74c5b95966cab66c57fe9824e69d37404eadb2e5d6fee5c46"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ad37cf7c1113e9943d226af6eaed84af11635abd2bc6214caa354dc329c543fe"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d16373e5ed7d8543feac20cb07a0178cb8b253db33934055553b30864b8738d1"
+    sha256 cellar: :any,                 x86_64_linux:  "1056b538360640a408a057d51ad80dfb700fc4bab3c61c5a46ad00f9a0db5cc4"
   end
 
   depends_on "go" => :build

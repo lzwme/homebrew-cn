@@ -1,10 +1,10 @@
 class Qtcanvaspainter < Formula
   desc "Accelerated 2D painting solution for Qt Quick and QRhi-based render targets"
   homepage "https://www.qt.io/"
-  url "https://download.qt.io/official_releases/qt/6.11/6.11.1/submodules/qtcanvaspainter-everywhere-src-6.11.1.tar.xz"
-  mirror "https://qt.mirror.constant.com/archive/qt/6.11/6.11.1/submodules/qtcanvaspainter-everywhere-src-6.11.1.tar.xz"
-  mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.11/6.11.1/submodules/qtcanvaspainter-everywhere-src-6.11.1.tar.xz"
-  sha256 "9e36c61b10a5eb9b4a4af058996de5816d2c0d9f02415876ca8c0f8cccfd08d0"
+  url "https://download.qt.io/official_releases/qt/6.11/6.11.2/submodules/qtcanvaspainter-everywhere-src-6.11.2.tar.xz"
+  mirror "https://qt.mirror.constant.com/archive/qt/6.11/6.11.2/submodules/qtcanvaspainter-everywhere-src-6.11.2.tar.xz"
+  mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.11/6.11.2/submodules/qtcanvaspainter-everywhere-src-6.11.2.tar.xz"
+  sha256 "8a90a27250ceef5ff659744e035ef4f5d3cd7392e027d5f953765b3f1083e760"
   license all_of: [
     "GPL-3.0-only",
     { "GPL-3.0-only" => { with: "Qt-GPL-exception-1.0" } }, # qcshadergen
@@ -18,12 +18,11 @@ class Qtcanvaspainter < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "4ad224d80791ae2b03872aaadb254eafbe5a7bd000e0eeb3346131cc28019c42"
-    sha256 cellar: :any,                 arm64_sequoia: "ca05aaaf6c56a21e48d1ef635c6688e4e2c71ec017cef63384aabb92f8395d04"
-    sha256 cellar: :any,                 arm64_sonoma:  "ab3ba6c9fda2f2aa2bba35ffd4f6cdfb2b34243841ca33ccdbebdfa16d55cbdc"
-    sha256 cellar: :any,                 sonoma:        "6d3c3330ffe79010278ead841798e411c9998ac24a9a19592e3aab32e8f164a0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0656f9481856ff11697ea6bda244170c8da32d76d28c8783a9125c2b1ce61e5f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0b5bd7751e537846c0dbc108d4c887dceb8931a211fe3998e6eceb6eb257f6bd"
+    sha256 cellar: :any, arm64_tahoe:   "a6bb00ca5067608c56e51e70ff90bdb935a5c2c9164af9c97ddf3401aa5e0570"
+    sha256 cellar: :any, arm64_sequoia: "4e0492f31e6e4b7189c9ec0e2857c8b29b97b0a382831e4a33614b5a4789b60f"
+    sha256 cellar: :any, arm64_sonoma:  "5deaa0eb21587966debfdd016e1138692ccb2efafba69156138daa5f364f796e"
+    sha256 cellar: :any, arm64_linux:   "5d81d776cc6a867857267bc5bd7cb6a637f2680e0c0aaf736fa4b85d7861ad4b"
+    sha256 cellar: :any, x86_64_linux:  "1bf9a2f33d03593cf43a1f7cfc90130966a6821a10bceb7fee5d5220a9146501"
   end
 
   depends_on "cmake" => [:build, :test]

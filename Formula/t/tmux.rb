@@ -13,12 +13,12 @@ class Tmux < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "7752f62ec95bf0e4ce2ff72b5d3a93ea0416f74011bfbd9a162e6313a9f21212"
-    sha256 cellar: :any, arm64_sequoia: "79e68da943f4c22dce73525b0f43498e67e1a58003cd8fa7280e7fa9ef7a4389"
-    sha256 cellar: :any, arm64_sonoma:  "aa65f94dccdcaeb83b9795527fcba569e74939dd032609c888418cd3d39e08dd"
-    sha256 cellar: :any, sonoma:        "73d79ea663a78fb72cfa7eafb7a692b6b00e29e2d6cabf1d1c23f880254e709b"
-    sha256 cellar: :any, arm64_linux:   "d8539cc91c249cf306b1a3accccf79b7566887475d4dd193d98c7807c512b422"
-    sha256 cellar: :any, x86_64_linux:  "f1549155ee257ad755f551c227b0160437efc77d7d89e63e723515df2d30b555"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "9d4125a2d773a037da826d46599fa8fdde23381ca72e896af582b6a63d8f031f"
+    sha256 cellar: :any, arm64_sequoia: "b912a00996bb0421af49913cdd8019a1cb07140cb83af66f70df73c3ec58bb7f"
+    sha256 cellar: :any, arm64_sonoma:  "3ce8e889304a25593f701500e063c7e75b79bb90a1a8cedfe51052da2032cf48"
+    sha256 cellar: :any, arm64_linux:   "b25b98ebd2006119ab17f42bb9333f640f2b3362eb05bbe0096fbadd018ae55a"
+    sha256 cellar: :any, x86_64_linux:  "861cca7012fab1ccf773e254837d476cc48d519f908f460bd3d2988530c993d2"
   end
 
   head do
@@ -41,6 +41,9 @@ class Tmux < Formula
     # https://github.com/tmux/tmux/issues/5385
     depends_on "jemalloc"
   end
+
+  # runs a server as a test
+  allow_network_access! :test
 
   def install
     system "sh", "autogen.sh" if build.head?

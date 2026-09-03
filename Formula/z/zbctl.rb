@@ -18,6 +18,8 @@ class Zbctl < Formula
 
   depends_on "go" => :build
 
+  allow_network_access! :test
+
   def install
     project = "github.com/camunda-community-hub/zeebe-client-go/v#{version.major}/cmd/zbctl/internal/commands"
     ldflags = "-X #{project}.Version=#{version} -X #{project}.Commit=#{tap.user}"

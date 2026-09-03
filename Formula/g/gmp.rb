@@ -15,18 +15,12 @@ class Gmp < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:    "db8075f389ca0a9f9aba54762c93760db66ef92ee989f4a32b5e13b4b987339c"
-    sha256 cellar: :any,                 arm64_sequoia:  "6683d73d6677d28e1e8d1b92d6ebfbc068c1d33e19b79114a22a648a99ba5991"
-    sha256 cellar: :any,                 arm64_sonoma:   "78e4f40cba6419cf7e2d81e9c945d1e93744511bd5230bdfac1b69ed894914b4"
-    sha256 cellar: :any,                 arm64_ventura:  "98c163edfbe7bdc0c14f88d7d34fa2764ecb9cab9f749600b861012700603260"
-    sha256 cellar: :any,                 arm64_monterey: "2115b33b8b4052f91ffb85e476c7fc0388cf4e614af1ce6453b35e6d25473911"
-    sha256 cellar: :any,                 tahoe:          "3f2654a4c29cd2b8605bea7a9473d6984ecbefa6413662b0d976f1457099f24d"
-    sha256 cellar: :any,                 sequoia:        "d1192da68b2618652f4be0dd9f56b18d2d276481440ae241ce9cc17be0450e07"
-    sha256 cellar: :any,                 sonoma:         "e8410d92339535174e9f4a5eccc403301b70c7287f2f9a87f064a9aa2e21b54b"
-    sha256 cellar: :any,                 ventura:        "83ec5443c018c02036d88ae0dc8dc4237b3b38eb76a3cdd82148e7f841ffd39f"
-    sha256 cellar: :any,                 monterey:       "b04023f65b8c79c45798a4bfd97fdbeb10f1bf9e8416e22e8eeedbd9b2a8c102"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "5f23ebfcde217dbc697dc961d103ca602445a5775c2ed19a29eaec98f4cfa3c0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3dca3544faca889c7389a5fdbd2b5b00582c34a4e14607033573ad3b06ca7882"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "fa46330de5d003bd9294ae042c8f4ae0a51bcb8c57de2c94c073ff4a7ffa10c3"
+    sha256 cellar: :any, arm64_sequoia: "b30bf31c50c294e0981d2a7cb4c149e9c43f50f3cf4f7f552c3dcf9da66b95b5"
+    sha256 cellar: :any, arm64_sonoma:  "3ea4034c547217e84019dada2669c1f2cd4a44a1cf094ad4881ff525713077c5"
+    sha256 cellar: :any, arm64_linux:   "6647e78fa0031ae48458496a4c46dee645fa8f8dda44d35f3a095627590e77b1"
+    sha256 cellar: :any, x86_64_linux:  "0cb5dc6f783367a97202b5fd53e8f61a6024c5cfa075cf81aee15c05772ee9f3"
   end
 
   depends_on "autoconf" => :build
@@ -34,6 +28,8 @@ class Gmp < Formula
   depends_on "libtool" => :build
 
   uses_from_macos "m4" => :build
+
+  deny_network_access!
 
   def install
     if build.head?
@@ -46,7 +42,7 @@ class Gmp < Formula
     end
 
     # Enable --with-pic to avoid linking issues with the static library
-    args = std_configure_args + %w[--enable-cxx --with-pic]
+    args = %w[--enable-cxx --with-pic]
 
     cpu = Hardware::CPU.arm? ? "aarch64" : Hardware.oldest_cpu
     if OS.mac?
@@ -56,7 +52,7 @@ class Gmp < Formula
       args << "ABI=32" if Hardware::CPU.is_32_bit?
     end
 
-    system "./configure", *args
+    system "./configure", *args, *std_configure_args
     system "make"
     system "make", "check"
     system "make", "install"

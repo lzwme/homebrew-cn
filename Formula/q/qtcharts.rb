@@ -1,10 +1,10 @@
 class Qtcharts < Formula
   desc "UI Components for displaying visually pleasing charts"
   homepage "https://www.qt.io/"
-  url "https://download.qt.io/official_releases/qt/6.11/6.11.1/submodules/qtcharts-everywhere-src-6.11.1.tar.xz"
-  mirror "https://qt.mirror.constant.com/archive/qt/6.11/6.11.1/submodules/qtcharts-everywhere-src-6.11.1.tar.xz"
-  mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.11/6.11.1/submodules/qtcharts-everywhere-src-6.11.1.tar.xz"
-  sha256 "3fe3ed318c2a86d1417c5c29cf7494275e8fd4b537cd37453f5599c57365515c"
+  url "https://download.qt.io/official_releases/qt/6.11/6.11.2/submodules/qtcharts-everywhere-src-6.11.2.tar.xz"
+  mirror "https://qt.mirror.constant.com/archive/qt/6.11/6.11.2/submodules/qtcharts-everywhere-src-6.11.2.tar.xz"
+  mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.11/6.11.2/submodules/qtcharts-everywhere-src-6.11.2.tar.xz"
+  sha256 "5069e53b81d125509e937c6379cba6d664c562d5a1e5ed28dd383690d4b6fb29"
   license all_of: [
     "GPL-3.0-only",
     "BSD-3-Clause", # *.cmake
@@ -17,12 +17,11 @@ class Qtcharts < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "d0c14b7f8a8086197f082f166657bf84207d065248dbc6ab824c24e0390727ec"
-    sha256 cellar: :any,                 arm64_sequoia: "55ac17ec5b4568a03f38524c11d3b5f7c6e3ca75af3c5a3c9e4291a040dc344d"
-    sha256 cellar: :any,                 arm64_sonoma:  "65f4e67e89f1d5fa512a5c3e33cb81d1233eb62e900b061476199021f5ec77f1"
-    sha256 cellar: :any,                 sonoma:        "4fe441dcef276c8c1d255f937b91587fd72ca11d350a819b1e81761ca8abdf1e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4e12e7861f73c10c2c7139c3f9b1b6792d1884e3e6e4f32417ec5fa2d4f083fd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1535f2747db6079fa896bc2fedde77acf3db859f7dc0fc7c3e4e0568cc732633"
+    sha256 cellar: :any, arm64_tahoe:   "55cd21d5aabb9054bc4b5b4c636e11673ae5b64e4c64c30c7b5d451aab896894"
+    sha256 cellar: :any, arm64_sequoia: "5b9e76246c981f27b5d95ece260b29cc564f0199b1facf350fd8548dd215c4ef"
+    sha256 cellar: :any, arm64_sonoma:  "35c7a54bbe9f1a5983e9b399d238b0279f59c5f42c910ba4a90744745a3a121e"
+    sha256 cellar: :any, arm64_linux:   "741cc18c6980e9932e7506dcd760c9291e21a58c2ffad743bf04bfdf86f53ea0"
+    sha256 cellar: :any, x86_64_linux:  "3733598b81ec52a7a804b547b95f537809fd6aa92e0fd31a46430d08e38197b8"
   end
 
   depends_on "cmake" => [:build, :test]

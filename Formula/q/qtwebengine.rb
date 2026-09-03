@@ -3,10 +3,10 @@ class Qtwebengine < Formula
 
   desc "Provides functionality for rendering regions of dynamic web content"
   homepage "https://www.qt.io/"
-  url "https://download.qt.io/official_releases/qt/6.11/6.11.1/submodules/qtwebengine-everywhere-src-6.11.1.tar.xz"
-  mirror "https://qt.mirror.constant.com/archive/qt/6.11/6.11.1/submodules/qtwebengine-everywhere-src-6.11.1.tar.xz"
-  mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.11/6.11.1/submodules/qtwebengine-everywhere-src-6.11.1.tar.xz"
-  sha256 "679c66ccc6c158fc215e9c58ef160331ecd29974232e345c05161889f8667083"
+  url "https://download.qt.io/official_releases/qt/6.11/6.11.2/submodules/qtwebengine-everywhere-src-6.11.2.tar.xz"
+  mirror "https://qt.mirror.constant.com/archive/qt/6.11/6.11.2/submodules/qtwebengine-everywhere-src-6.11.2.tar.xz"
+  mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.11/6.11.2/submodules/qtwebengine-everywhere-src-6.11.2.tar.xz"
+  sha256 "6101c1aa00ff933d1b65ee5d167f76e8d71b9ac5b378b0111277723ebda7c163"
   license all_of: [
     { any_of: ["LGPL-3.0-only", "GPL-2.0-only", "GPL-3.0-only"] },
     { "GPL-3.0-only" => { with: "Qt-GPL-exception-1.0" } }, # qwebengine_convert_dict; QtWebEngineProcess
@@ -35,13 +35,11 @@ class Qtwebengine < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "f0ee3e5e9596bd506d2110a696f29850af219710b49be91afe7684ef8328fcc3"
-    sha256 cellar: :any, arm64_sequoia: "831804a0945af32b9821b3757252f7e79ad32e3812451223ade0d7866b8353a6"
-    sha256 cellar: :any, arm64_sonoma:  "3a3a0b6c13212e567040a19f24f6c44d78597e43755086d02176fb212330a9e3"
-    sha256 cellar: :any, sonoma:        "e6ae27104a2a6656c1bc4737642e43e3c23b768d11ef49a0fdfc4a4ae5214c3d"
-    sha256 cellar: :any, arm64_linux:   "bbd601983a3c70a31d6263cecd9fc74ebfcddc8a8503f145aecc5841d4f7dab5"
-    sha256 cellar: :any, x86_64_linux:  "cd03a64b215cde528f5de4d93f5b8b8882ed505ca95f3379d01681f714abd33a"
+    sha256 cellar: :any, arm64_tahoe:   "a1c223d34f2480e338491e7ca8e9c932b70f83664774bb9536ea4a0ccb094341"
+    sha256 cellar: :any, arm64_sequoia: "a992d60f76aa9ecc949296b4aec9d212469d25ff706684d14f4766defc3c49c7"
+    sha256 cellar: :any, arm64_sonoma:  "8950792b5e49b92c1ef132ff3ed46a2b6457129736e6ad9e5e163e92295b7d80"
+    sha256 cellar: :any, arm64_linux:   "81be87b454ee3eeb8e6677f70c58788817685df189b115a88bcd142f6bcb81e0"
+    sha256 cellar: :any, x86_64_linux:  "1b1f9666f90094609bff11ca4f16655ec09f352f18c2d2566ba01b1c00f4c64a"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -145,8 +143,8 @@ class Qtwebengine < Formula
   end
 
   resource "webencodings" do
-    url "https://files.pythonhosted.org/packages/0b/02/ae6ceac1baeda530866a85075641cec12989bd8d31af6d5ab4a3e8c92f47/webencodings-0.5.1.tar.gz"
-    sha256 "b36a1c245f2d304965eb4e0a82848379241dc04b865afcc4aab16748587e1923"
+    url "https://files.pythonhosted.org/packages/d5/a0/8fd707bcb776a7be556bad06a2ea5fb9bd519df78ef8e26f70ccf0f38bff/webencodings-0.6.1.tar.gz"
+    sha256 "565f9ad031c702dae404e27a099e3e09186a3ab1b9520f06d215502b651fd910"
   end
 
   def install

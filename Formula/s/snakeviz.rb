@@ -6,22 +6,21 @@ class Snakeviz < Formula
   url "https://files.pythonhosted.org/packages/04/06/82f56563b16d33c2586ac2615a3034a83a4ff1969b84c8d79339e5d07d73/snakeviz-2.2.2.tar.gz"
   sha256 "08028c6f8e34a032ff14757a38424770abb8662fb2818985aeea0d9bc13a7d83"
   license "BSD-3-Clause"
-  revision 4
+  revision 5
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4b8e872a15582ff11b19520eb698aaf5ca1eac2d3a2f033c5de9cd9ceb60c816"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7cdb77ff8257e9df7872f7e4fcdaa03cfbd30ad54102b520fcac3c199d530089"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d25ebdfb0bb4eea6d6120825b306ba2c46d9fee10955639406d332dd12a439f6"
-    sha256 cellar: :any_skip_relocation, sonoma:        "424c0e0788fd9d8251830bcf8cfb9ce55f7aad2379ce5a020e2924d4a351d1e3"
-    sha256 cellar: :any,                 arm64_linux:   "d479a7bc600cde0dc3ac21025d4c4132621e915d28635be7a28de4a6a81c6fa3"
-    sha256 cellar: :any,                 x86_64_linux:  "ccf9b3189e1b18e2275cf4f53823c2f32e5100aa95187f85a185866d6a4ef5a2"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "542d2b03bfee2f7f621a6c31778d97644f5f322d5fc19313017bea67402c480b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "110b4e7ef8233d3c9d6b917563258191aa498c1c85892507443cd2e1d8f4ddb2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e0df43e7198a8209d43b2d96d48ba69677da9195f3e15a38422be9aee51d9c30"
+    sha256 cellar: :any,                 arm64_linux:   "3f6067205d54969dd9d708c177f39f6b291511649a483e23aed3adea36fc5581"
+    sha256 cellar: :any,                 x86_64_linux:  "f596c4650cb14ddeab65fefb4470480d767e7fc5609203b7d1274952ad0f1fc7"
   end
 
   depends_on "python@3.14"
 
   resource "tornado" do
-    url "https://files.pythonhosted.org/packages/64/24/95ec527ad67b76d59299e5465b3935d05e4294b7e0290a3924b7487df30b/tornado-6.5.7.tar.gz"
-    sha256 "66c513a76cda70d53907bc27cf1447557699c2e95aa48ba27a442ff61c3ddfc2"
+    url "https://files.pythonhosted.org/packages/10/d3/343e5bb989d6515b1646cf3d40135d73f3d5e45339bded401b56cdac24dd/tornado-6.5.8.tar.gz"
+    sha256 "9452e1b208a8bd771e2cb1f2ff564985b9b214bdebbe622793e1799e0a6bd23f"
   end
 
   def install

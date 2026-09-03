@@ -5,10 +5,9 @@ class Semgrep < Formula
   homepage "https://semgrep.dev"
   # Pull from git tag to get submodules, https://github.com/semgrep/semgrep/issues/10877
   url "https://github.com/semgrep/semgrep.git",
-      tag:      "v1.175.0",
-      revision: "7963c5a2d7e784ab24d0c14e29c63c6d53751336"
+      tag:      "v1.176.0",
+      revision: "5bdaec16e18e33c520426dc1e4417161219daf35"
   license "LGPL-2.1-only"
-  revision 1
   head "https://github.com/semgrep/semgrep.git", branch: "develop"
 
   livecheck do
@@ -17,11 +16,11 @@ class Semgrep < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "62ce942929df1a48fe2296364e2fb7e3f5274e50ff6f07fcf494191cd19f268b"
-    sha256 cellar: :any, arm64_sequoia: "7f65c93b1167036366a5b5576b004292f33c3f018e6c0964d7ed4e17bf2b379c"
-    sha256 cellar: :any, arm64_sonoma:  "d9a37be27492bd90b94b9ba145c4a620e07eb683af04f50bf640e0fe30d00c4c"
-    sha256               arm64_linux:   "7de2c5b08f45c60e571d0547081c71549dc24ed39bdf4877a90fc272ef51e348"
-    sha256               x86_64_linux:  "16f07fb71fdddad7171cd716920f9eaddc6dce1916d6f6bc25d5c595ddfdc98c"
+    sha256 cellar: :any, arm64_tahoe:   "927dacbff4ac871744860850be7aabccc488ff22094a846443dc34e24d6c9a47"
+    sha256 cellar: :any, arm64_sequoia: "6a43a17933e404d6758990915a0dcd79f2afa1834f6ee716521ad5db99d3af91"
+    sha256 cellar: :any, arm64_sonoma:  "43890071e293069b05f25711cec2074e30f0375d0075b11690113680bd4bfa9f"
+    sha256               arm64_linux:   "d418ed5aa0df6ea8f1c692168ca4ef2cd2a17bb5d914aa865c69b038ddf262ce"
+    sha256               x86_64_linux:  "90b530fc50aeed414209b2b596bb5231858e559261f5704c31cc3c5d88981a5c"
   end
 
   depends_on "ocaml" => :build
@@ -376,52 +375,49 @@ class Semgrep < Formula
     end
 
     ENV.deparallelize
-    Dir.mktmpdir("opamroot") do |opamroot|
-      ENV["OPAMROOT"] = opamroot
-      # `--no-depexts` prevents opam from attempting to automatically search for
-      # and install system dependencies using the os-native package manager.
-      # On Linux, this leads to confusing and inaccurate `Missing dependency`
-      # errors due to querying `apt`. See:
-      #   https://github.com/Homebrew/homebrew-core/pull/82693
-      #   https://github.com/Homebrew/homebrew-core/pull/176636
-      #   https://github.com/ocaml/opam/pull/4548
-      ENV["OPAMNODEPEXTS"] = ENV["OPAMYES"] = "1"
-      # Set library path so opam + lwt can find libev
-      ENV["LIBRARY_PATH"] = "#{HOMEBREW_PREFIX}/lib"
-      # Opam's solver times out when it is set to the default of 60.0
-      # See: https://github.com/Homebrew/homebrew-core/pull/191306
-      ENV["OPAMSOLVERTIMEOUT"] = "1200"
+    ENV["OPAMROOT"] = buildpath/".opam"
+    # `--no-depexts` prevents opam from attempting to automatically search for
+    # and install system dependencies using the os-native package manager.
+    # On Linux, this leads to confusing and inaccurate `Missing dependency`
+    # errors due to querying `apt`. See:
+    #   https://github.com/Homebrew/homebrew-core/pull/82693
+    #   https://github.com/Homebrew/homebrew-core/pull/176636
+    #   https://github.com/ocaml/opam/pull/4548
+    ENV["OPAMNODEPEXTS"] = ENV["OPAMYES"] = "1"
+    # Set library path so opam + lwt can find libev
+    ENV["LIBRARY_PATH"] = "#{HOMEBREW_PREFIX}/lib"
+    # Opam's solver times out when it is set to the default of 60.0
+    # See: https://github.com/Homebrew/homebrew-core/pull/191306
+    ENV["OPAMSOLVERTIMEOUT"] = "1200"
 
-      system "opam", "init", "--no-setup", "--disable-sandboxing"
-      ENV.deparallelize { system "opam", "switch", "create", "ocaml-base-compiler.5.3.0" }
+    system "opam", "init", "--no-setup", "--disable-sandboxing"
+    ENV.deparallelize { system "opam", "switch", "create", "ocaml-base-compiler.5.3.0" }
 
-      # We can't use `make install-deps-for-semgrep-core` directly because it runs
-      # `./scripts/install-tree-sitter-lib` which would conflict with Homebrew's
-      # tree-sitter dependency. Instead, we manually replicate its steps:
-      # 1. Configure tree-sitter (using homebrew's tree-sitter)
-      cd "./libs/ocaml-tree-sitter-core" do
-        system "./configure"
-      end
-
-      # 2. Proceed with installing opam dependencies (taken from the --deps-only
-      # invocation in the Semgrep Makefile's `install-opam-deps` target)
-      system "opam", "update", "-y"
-      ENV["LWT_DISCOVER_ARGUMENTS"] = "--use-libev true"
-      system "opam", "install", "--locked", "--update-invariant",
-             "--confirm-level=unsafe-yes", "-y", "--deps-only",
-             "./semgrep.opam", "./dev/required.opam"
-
-      # 3. Finally build semgrep-core using the usual Makefile targets
-      system "opam", "exec", "--", "make", "core"
-      system "opam", "exec", "--", "make", "copy-core-for-cli"
-
-      bin.install "_build/install/default/bin/semgrep-core" => "semgrep-core"
+    # We can't use `make install-deps-for-semgrep-core` directly because it runs
+    # `./scripts/install-tree-sitter-lib` which would conflict with Homebrew's
+    # tree-sitter dependency. Instead, we manually replicate its steps:
+    # 1. Configure tree-sitter (using homebrew's tree-sitter)
+    cd "./libs/ocaml-tree-sitter-core" do
+      system "./configure"
     end
+
+    # 2. Proceed with installing opam dependencies (taken from the --deps-only
+    # invocation in the Semgrep Makefile's `install-opam-deps` target)
+    system "opam", "update", "-y"
+    ENV["LWT_DISCOVER_ARGUMENTS"] = "--use-libev true"
+    system "opam", "install", "--locked", "--update-invariant",
+           "--confirm-level=unsafe-yes", "-y", "--deps-only",
+           "./semgrep.opam", "./dev/required.opam"
+
+    # 3. Finally build semgrep-core using the usual Makefile targets
+    system "opam", "exec", "--", "make", "core"
+    system "opam", "exec", "--", "make", "copy-core-for-cli"
+
+    bin.install "_build/install/default/bin/semgrep-core" => "semgrep-core"
 
     ENV["SEMGREP_SKIP_BIN"] = "1"
     venv = virtualenv_create(libexec, "python3.14")
     venv.pip_install resources.reject { |r| r.name == "pcre" }
-
     venv.pip_install_and_link buildpath/"cli"
   end
 

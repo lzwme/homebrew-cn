@@ -3,18 +3,17 @@ class Certbot < Formula
 
   desc "Tool to obtain certs from Let's Encrypt and autoenable HTTPS"
   homepage "https://certbot.eff.org/"
-  url "https://files.pythonhosted.org/packages/2d/1a/eb1d1ff8682fbfcf7089f5e0cad80c259646f44cc85ce9d3533af901b3e6/certbot-5.7.0.tar.gz"
-  sha256 "c896a0aa3fe1fa1e344002d4a24a5934889a88b8759f41a22b4dcfe5a8e27b94"
+  url "https://files.pythonhosted.org/packages/31/29/fbf5127d2b8d178d7add2b9145560436a69b437045c6197a4b6edbfcbb3c/certbot-5.8.0.tar.gz"
+  sha256 "a4a2c7b0459bb626b3791ef07b6df26bbb222d2324783ba3e60f76c0933eec87"
   license "Apache-2.0"
   head "https://github.com/certbot/certbot.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "769fbea45c60c5f1b63dd4683b2e0889d6ad9cf2b9f82b575e909151bc186b00"
-    sha256 cellar: :any, arm64_sequoia: "0f22f33392eb2ad1b287b71a782b8b3e20199e671d131cf495c7d1366c42fcf4"
-    sha256 cellar: :any, arm64_sonoma:  "a3d3c4d6d6e8a34f2528226dbd3fc1b4065ffa597d87185ba2112511ed423a04"
-    sha256 cellar: :any, sonoma:        "35af304d3b0798df7bab62c597f4a3ed3d593551f9edb0f1f0469512c1682f9a"
-    sha256 cellar: :any, arm64_linux:   "8e3ab712e407b114900f7b6b757933a36b0e7e07f9bd95becaf901993fca6cb1"
-    sha256 cellar: :any, x86_64_linux:  "b24742b8744929cefa0cd8f1754094baccacf1379469696c8888fb5a91e29b81"
+    sha256 cellar: :any, arm64_tahoe:   "9f06f6c7118e267171ef0bda4e2a5471316d9a6e0ea7fc3409bead5d2382896b"
+    sha256 cellar: :any, arm64_sequoia: "c42ce4375ccfd695c824fd0f4651c31332a14759fe84f40b6446972735aab82e"
+    sha256 cellar: :any, arm64_sonoma:  "0fe4ec53f7b808069a31e5f6e205ce1f8a02970cfa09fa67d794d8fe6406b417"
+    sha256 cellar: :any, arm64_linux:   "baa963450274984816dcad0b512efc085a66493e47bba901e43c3cf847f1429a"
+    sha256 cellar: :any, x86_64_linux:  "2fd77b059c615fefa9b2e4d5d1e35f5121deac1bde294e089613c735d23cbbae"
   end
 
   depends_on "augeas"
@@ -30,8 +29,8 @@ class Certbot < Formula
                 extra_packages:   ["certbot-apache", "certbot-nginx", "certbot-dns-cloudflare"]
 
   resource "acme" do
-    url "https://files.pythonhosted.org/packages/8d/53/2e79e7d1c5384414d4670f02729601cf23e61fe13b7b99471d02c620ddbe/acme-5.7.0.tar.gz"
-    sha256 "4be4fe6cf3809c3988d75fa1213ce8e784d9d5d8380cac63c2dca555e105653d"
+    url "https://files.pythonhosted.org/packages/3a/b8/4ca6f1b0e04472d21b248d32a6abc5e24058dac68b513a8ab7526837b100/acme-5.8.0.tar.gz"
+    sha256 "44c4edb53acdd3fa8402cb29c78a6d1bd2005d777a4d2fcd12663bbc3c147b34"
   end
 
   resource "anyio" do
@@ -40,28 +39,28 @@ class Certbot < Formula
   end
 
   resource "certbot-apache" do
-    url "https://files.pythonhosted.org/packages/3a/5d/73a472117e5d3ff608637fd22b08c2c13dfb362d760d181de75cd4cf1e61/certbot_apache-5.7.0.tar.gz"
-    sha256 "f0e9e7131e34fe5286ccd236e6e0a627438f864d6a2019da190f96719c3970cc"
+    url "https://files.pythonhosted.org/packages/30/d0/2b3179b009bfd0f79d0b853be71a4e36ff5fde9c28d4752f3a5eaa513b81/certbot_apache-5.8.0.tar.gz"
+    sha256 "c09403208a749b2bf1bb03051886d6e926572f113a93326ae39895a443d43a46"
   end
 
   resource "certbot-dns-cloudflare" do
-    url "https://files.pythonhosted.org/packages/5a/52/15c18787532d61580d1dd862ea9a219651154a6eab52bfd20a8f09808a86/certbot_dns_cloudflare-5.7.0.tar.gz"
-    sha256 "c5e0b6970390a2eaff1dc07606133ce1db7c1b4e565d0b54baf5914fe5bb9087"
+    url "https://files.pythonhosted.org/packages/21/38/ad863b378fe3f27445c8b6a31fe67710720cf1aff493e17d8c1e0483fed1/certbot_dns_cloudflare-5.8.0.tar.gz"
+    sha256 "540870f24a7aa05d9057bfa70cb684094b4106838747e15990f498ef16b7d212"
   end
 
   resource "certbot-nginx" do
-    url "https://files.pythonhosted.org/packages/02/79/b56c9b175864adacbef4d615bb76ff1b4aa3b583859703d0a0a4a582ffe5/certbot_nginx-5.7.0.tar.gz"
-    sha256 "3ef5b924a4dc68a3c61f31306249d6f99a65da317574bf56c816159629a73b3d"
+    url "https://files.pythonhosted.org/packages/77/81/62c97c77364cc9bf4722cf151f6ca863dff9488da8f2299932c13057d600/certbot_nginx-5.8.0.tar.gz"
+    sha256 "f9ae8999012829aba42a71ff40aae75360c9d262e332aa9e6957bb95cc77bcae"
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/bd/2a/23f34ec9d04624958e137efdc394888716353190e75f25dd22c7a2c7a8aa/charset_normalizer-3.4.9.tar.gz"
-    sha256 "673611bbd43f0810bec0b0f028ddeaaa501190339cac411f347ac76917c3ae7b"
+    url "https://files.pythonhosted.org/packages/e5/3f/143b048436775b0f76ac3eec145c019e8173ccc2885c8f20319b996d5e83/charset_normalizer-3.5.1.tar.gz"
+    sha256 "6117b84ea48435e5356dc737f5121485c30920ba43375fa7b434fd753df0eac3"
   end
 
   resource "cloudflare" do
-    url "https://files.pythonhosted.org/packages/0f/67/02964b461ed44f77488adf0cc0da6dcb6355d651706625179b3b928a40a1/cloudflare-5.5.0.tar.gz"
-    sha256 "a5716f06abff1721d02ecb9ce83ba15d8795c216d01c212d4e55b3bca6fa8621"
+    url "https://files.pythonhosted.org/packages/c8/4d/7b2fc58321193c562fd9a268fca060f024d8da9e730cb5ea8c96412ac041/cloudflare-5.6.0.tar.gz"
+    sha256 "b8c81586aecd0ce48f0daaa859cce554f7b975b01d312b60d1a91ad0ea4b67ff"
   end
 
   resource "configargparse" do
@@ -95,8 +94,8 @@ class Certbot < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/cd/63/9496c57188a2ee585e0f1db071d75089a11e98aa86eb99d9d7618fc1edce/idna-3.18.tar.gz"
-    sha256 "ffb385a7e039654cef1ab9ef32c6fafe283c0c0467bba1d9029738ce4a14a848"
+    url "https://files.pythonhosted.org/packages/5f/f7/abb373e5757eaec4b922b92f97ec8d6d7e057cf06778247604fbc4e7c3f3/idna-3.19.tar.gz"
+    sha256 "5e0811a4383b21dc5838069f801c4fb62113b7447663d2530d2bd6e77b49bf15"
   end
 
   resource "josepy" do
@@ -110,8 +109,8 @@ class Certbot < Formula
   end
 
   resource "pyopenssl" do
-    url "https://files.pythonhosted.org/packages/74/b7/da07bae88f5a9506b4def6f2f4903cf4c3b8831e560dba8fa18ca08f758f/pyopenssl-26.3.0.tar.gz"
-    sha256 "589de7fae1c9ea670d18422ed00fc04da787bbde8e1454aea872aa57b49ad341"
+    url "https://files.pythonhosted.org/packages/3f/e8/7325d258199b159eb2c03fe32107533e2832e70e63f4fb88a6aa00023201/pyopenssl-26.4.0.tar.gz"
+    sha256 "28dfcce0162b9211413e26dfbfdf1d24317fbeba18fc93c12400a1856b2a0bc7"
   end
 
   resource "pyparsing" do

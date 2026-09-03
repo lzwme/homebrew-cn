@@ -3,17 +3,17 @@ class Ipython < Formula
 
   desc "Interactive computing in Python"
   homepage "https://ipython.org/"
-  url "https://files.pythonhosted.org/packages/c4/bc/e05ae123712ce4e1fde4408eedca1791fc1ff832684565132ea1dc646092/ipython-9.17.0.tar.gz"
-  sha256 "1dc69e6966b270fb259f676c71a21450e63607729b14a672b942914a54e8b730"
+  url "https://files.pythonhosted.org/packages/b9/32/99451b1283ec5d92ad77073f12e1c667dc10775384d8f15c2914207149dd/ipython-9.17.1.tar.gz"
+  sha256 "8919be8c27f20a6f4423145028063f6637b42a03ce57665bb12015ee1f073529"
   license "BSD-3-Clause"
   head "https://github.com/ipython/ipython.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5f9392fc3e4097d05d4507ad92c29c636050cfaab029984d595703a1053b84b1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "53638481ffbbb4d6f4a70c88641ec70554359ea6e0b47dfb7d6162688fbb9284"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "959161b21d32ec93b62923b8c8231d1134cbb023976527ff3fb0c507b486af34"
-    sha256 cellar: :any,                 arm64_linux:   "c06a11de801ff8bff95c7d150bd08dc10613981835ba7d662a0567ad7e678939"
-    sha256 cellar: :any,                 x86_64_linux:  "3f0bb17e4d1173c6f16c7598d5f6e9a72c41b91924b833dc37ae9311e41cb6b9"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e9c5a8fa8341fd0e8366b3809b69d1c33ec448ea49c7665359e4704b6cc459ec"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ede02525b1d8a6565ec5629eb6bb368c711b829f1d59fea0c29131c787efabfe"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c1dce825656a8f617f06edcc9b7eb1e176396b854666d33463790765c62c9152"
+    sha256 cellar: :any,                 arm64_linux:   "42657843c15ee8a448c391fcdf56c760ae15089f14619b14a7b5833ae42009c5"
+    sha256 cellar: :any,                 x86_64_linux:  "9b0aa6632516554f6a45a3c09af25c934a6c527ffb5aedf1d10746923f2c878b"
   end
 
   depends_on "python@3.14"
@@ -89,8 +89,8 @@ class Ipython < Formula
   end
 
   resource "wcwidth" do
-    url "https://files.pythonhosted.org/packages/34/74/c6428f875774288bec1396f5bfcbc2d925700a4dad61727fd5f2b12f249d/wcwidth-0.8.2.tar.gz"
-    sha256 "91fbef97204b96a3d4d421609b80340b760cf33e26da123ff243d76b1fda8dda"
+    url "https://files.pythonhosted.org/packages/36/57/ed58088fafdf4c55a0ad6bde846502567645424d7ebf325230b9237f4085/wcwidth-0.8.3.tar.gz"
+    sha256 "d128512515fbf4612e0ff21fd6380399210318b7b54a9af59dff8454cf9730eb"
   end
 
   def install

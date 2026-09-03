@@ -116,7 +116,8 @@ class Ejabberd < Formula
     assert_equal "pong\n", shell_output("#{sbin}/ejabberdctl --node #{node} ping")
     refute_match(/ERROR/i, output_log.read)
   ensure
-    Process.kill "TERM", pid
+    # `ejabberdctl` execs `beam.smp`, which outlives a TERM sent to the script alone; signal the group
+    Process.kill "TERM", -pid
     Process.wait pid
   end
 end

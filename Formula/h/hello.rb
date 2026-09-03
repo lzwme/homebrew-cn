@@ -6,24 +6,23 @@ class Hello < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1d542fba541d655b431c64e07b0a2f020fa1b47cf7213bddec73d51f6b1246e4"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ce9f4dd817532429fb3b890a901da44fa66f0540e242321f40fa12231f5ffa60"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c2d2936b723280b7ea2fd38d977fbce0c20919e3a483229d0b4f4c96800e4d7c"
-    sha256 cellar: :any_skip_relocation, tahoe:         "d3c167221f723235eed887d3116ba656ecb4d2c824e4a04037bf63dca96ce227"
-    sha256 cellar: :any_skip_relocation, sequoia:       "d0ec57cc9a6a0ed8d035d8f19073d83f5dba21007c0d2815333d4908d40f98a8"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c55ce0232ee793fee24cea7dfce44f323e9b006eb49e6ff381678614e22aa3b5"
-    sha256                               arm64_linux:   "1758c42f89b579961610910892bf56d9d637614a4bd505265ebce6e09240e397"
-    sha256                               x86_64_linux:  "babafecd3b1c532d4e799de46f943f6384b5d78beffb52c9f4730e30ad374a70"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ae6237e3001bd354783f469d754cee875ee9828910461b85a5803f5990213dde"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "78566829e680af4ececbe5b3aa596c06f9bd0c7b83172a50c4347510a0d8cf0a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "90e62f2bc18a74b2ce845e6d5b6b53b96a11e3ce304b83e6278fd3ca0fbed922"
+    sha256                               arm64_linux:   "0557a40320fc342b63c4ebca125d81b8dc782576d619800506e00c4d6dffdf68"
+    sha256                               x86_64_linux:  "ab40f4006173c63e0d138bdd2b6634ee467f4685c2b130a3edaa712bfee0809a"
   end
+
+  deny_network_access!
 
   def install
     ENV.append "LDFLAGS", "-liconv" if OS.mac?
 
-    system "./configure", "--disable-dependency-tracking",
-                          "--disable-silent-rules",
-                          "--prefix=#{prefix}"
+    system "./configure", "--disable-dependency-tracking", *std_configure_args
     system "make", "install"
   end
+
   test do
     assert_equal "brew", shell_output("#{bin}/hello --greeting=brew").chomp
   end

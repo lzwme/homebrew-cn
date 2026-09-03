@@ -3,18 +3,17 @@ class TranslateToolkit < Formula
 
   desc "Toolkit for localization engineers"
   homepage "https://toolkit.translatehouse.org/"
-  url "https://files.pythonhosted.org/packages/bc/1b/2824215bc282e52bd6ee4b699e931fa7d64ea30fd8831529fdd0920f5969/translate_toolkit-3.19.18.tar.gz"
-  sha256 "ef1496e9e0d6d5f9647cd7365f91be161c3197104704e81f3a0017ccc7f4f5b9"
+  url "https://files.pythonhosted.org/packages/a3/65/72c1346001fc92f3b2f69d126918f5f7ef96c9ad439256b05a614ca7df1c/translate_toolkit-3.19.19.tar.gz"
+  sha256 "f8099801886845f46f63457ceb312284421b76711e76e9053b9c1ae50b2faf16"
   license "GPL-3.0-or-later"
   head "https://github.com/translate/translate.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "44ab7dbee6b16f4289aadc8e41b2e8d66aed0d65fe2dd3ea70ea7258651d68e1"
-    sha256 cellar: :any, arm64_sequoia: "cfc3568d9e7bf3283c2eee7c8f1046e720cbc196979595e15230f99580227e3d"
-    sha256 cellar: :any, arm64_sonoma:  "ff15ea09987393f16a57976f43e6b0412c6766705d73036a2904ff3ad5a596c1"
-    sha256 cellar: :any, sonoma:        "daf089fa3f040387b7ac1c7d9a737a3a8a41e162c23155d5ed9b04be333640ce"
-    sha256 cellar: :any, arm64_linux:   "03075cefffcb8f1cf6d54cbdeceaf1edc985e1bf584c96ac14e4824c7645221b"
-    sha256 cellar: :any, x86_64_linux:  "38f946ad4f28d17df05f4ca98a58a39f3dfc6e659b2fc9ac4131daa01d5d4a62"
+    sha256 cellar: :any, arm64_tahoe:   "0500d76142f4bc2d68c2ecf253f6bfff231d6a9274cdabb180c56e848599555d"
+    sha256 cellar: :any, arm64_sequoia: "e2950503788e6ea3495ae0459e40b03160e5b34e6210994b593158407c4b74e2"
+    sha256 cellar: :any, arm64_sonoma:  "e5735cd82a465bc5b0c8b73824f4636413fd7bfccec4b3344cea13c6c14cb573"
+    sha256 cellar: :any, arm64_linux:   "1a7034f965033650e01af5a67746f09bd1a8a4a1274aee378b8558b442e224be"
+    sha256 cellar: :any, x86_64_linux:  "e5dfb4348d89063280572877d48bf73d9231f92ca3b5741a8107c268c3e1c96a"
   end
 
   depends_on "rust" => :build # for `unicode_segmentation_py`

@@ -1,8 +1,8 @@
 class Tirith < Formula
   desc "Detect terminal injection, homograph, and pipe-to-shell attacks"
   homepage "https://tirith.sh/"
-  url "https://ghfast.top/https://github.com/sheeki03/tirith/archive/refs/tags/v0.4.0.tar.gz"
-  sha256 "365ed3f5ec5430f76ff90fa887a32d51e592bc90b4e7cedea15522650f78a75a"
+  url "https://ghfast.top/https://github.com/sheeki03/tirith/archive/refs/tags/v0.4.1.tar.gz"
+  sha256 "0074778f56ec7ab4b4b64288db24b37c78cba2411adab926827d4ceb3ced49c1"
   license "AGPL-3.0-only"
   head "https://github.com/sheeki03/tirith.git", branch: "main"
 
@@ -12,12 +12,11 @@ class Tirith < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "93e9c0c6e2169d6439da82d27f5f9bbf7c6444a48cf5fb0e5330d93bc4950b18"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7ab44118a940d58f3a95bb1b4fe0e001c32fed4b6766d0382c956d1088e624da"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5583daa0f2f500db92388d0bac4b5dfc8ce6bec36f899ceda634d42ccbfa8ce8"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ac5e07c69e018d6415227fb7fb9cd2f2b4b7ba56a16174c34aab26959a239257"
-    sha256 cellar: :any,                 arm64_linux:   "44254e0ac9b25bcc60e33abd43d0fa9b8cee704bcd00338b62e12f43449d5ecd"
-    sha256 cellar: :any,                 x86_64_linux:  "54e643d763acc4f03d10ee9d11551eb489f26376af093f57be1eb8f290be44de"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d1958801738d1c2582b98f6ed55dff6a387cdd253fae7cbbf6fade869407f0b9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9fe0169137baf4b3d1268167dc771773ecd0eec2ababb784eec5f72fcbbd8a1c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "18a0b614b3a89dd198f9641160fd1bd9762dfc71ee8594047b83f6f7a5a9272e"
+    sha256 cellar: :any,                 arm64_linux:   "4a4e9317c93e935abe71f11ead09cb35181bedc3842170d55b4f614aa7a628e6"
+    sha256 cellar: :any,                 x86_64_linux:  "c6fd856d7e6078cf50d811dd27eb179dc482e88c651456b93125c8d0b70c25bc"
   end
 
   depends_on "rust" => :build

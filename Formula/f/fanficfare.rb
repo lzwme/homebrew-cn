@@ -3,18 +3,17 @@ class Fanficfare < Formula
 
   desc "Download fanfiction and original stories as e-books"
   homepage "https://github.com/JimmXinu/FanFicFare"
-  url "https://files.pythonhosted.org/packages/f8/76/947d29633dbf681f1ad41432fb7d6c213ce84b50540b41aa7a675649bd64/fanficfare-4.60.0.tar.gz"
-  sha256 "c32a7f242a52e72926d530d2649ca1985019afae6332a1a53795a6d8085abaf5"
+  url "https://files.pythonhosted.org/packages/99/05/3c6e7cfe337f247e902c2220d4b43a1bf9f25cf0b670ce71ba2253e1d545/fanficfare-4.61.0.tar.gz"
+  sha256 "84bd204b5458972f18ca22dffd4a4b67778ed6a85330ee4e5369cc5109071b85"
   license "Apache-2.0"
   head "https://github.com/JimmXinu/FanFicFare.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "031fedd1382dfd51aefeb745807f95243a27c8849890aa227e0e5e23276a97c9"
-    sha256 cellar: :any, arm64_sequoia: "d57605b3d87c39626ad6396cb8c9a21038dabc9560ac92ab3582aa2d77a70295"
-    sha256 cellar: :any, arm64_sonoma:  "eda8c485dd7800afbc54629cee53e7f2b679ca807f32fd870673be01f7019796"
-    sha256 cellar: :any, sonoma:        "f96e06a781547c80d53e908cc601f8416a23bbdbdd703c939c5fdd10fdf84654"
-    sha256 cellar: :any, arm64_linux:   "9811858f93385316a87f997cc7458fad3f6688c463046f9af6aa29b0b498ee90"
-    sha256 cellar: :any, x86_64_linux:  "431d1afd97edd98364ce73b70aeceef70be5ae8cb31280fa7a1a92fdc4ab1bba"
+    sha256 cellar: :any, arm64_tahoe:   "3d0413052359b2659e501f0833373d80abbf0d9a6faa6a7da7e6186cf6b1bf4c"
+    sha256 cellar: :any, arm64_sequoia: "7043178c014713522ea6599ac064b2121cf5866a27d41da90b85e0353166a546"
+    sha256 cellar: :any, arm64_sonoma:  "5087315ed3619a5a66dc248efc1b640034b9c5896fa00f2cd9239e910157d28c"
+    sha256 cellar: :any, arm64_linux:   "ed52cbdc1b7851da44565bb938970e8b40b8affd252ae29e8a9aab01c12d48c2"
+    sha256 cellar: :any, x86_64_linux:  "bd3636467b1f9f69ac47695b26ba403a31a6ede71d72be14542e761fe0e2f385"
   end
 
   depends_on "pkgconf" => :build
@@ -41,13 +40,13 @@ class Fanficfare < Formula
   end
 
   resource "chardet" do
-    url "https://files.pythonhosted.org/packages/19/b6/9df434a8eeba2e6628c465a1dfa31034228ef79b26f76f46278f4ef7e49d/chardet-7.4.3.tar.gz"
-    sha256 "cc1d4eb92a4ec1c2df3b490836ffa46922e599d34ce0bb75cf41fd2bf6303d56"
+    url "https://files.pythonhosted.org/packages/b1/51/cd61c567092a6cec796144510a68aff158ebfc1df82950a45bae65f28413/chardet-7.6.0.tar.gz"
+    sha256 "93d9df6089ded42ed1fe9f57e272c0b74bd0464d45c0c7d50f09f26f31105c3c"
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/bd/2a/23f34ec9d04624958e137efdc394888716353190e75f25dd22c7a2c7a8aa/charset_normalizer-3.4.9.tar.gz"
-    sha256 "673611bbd43f0810bec0b0f028ddeaaa501190339cac411f347ac76917c3ae7b"
+    url "https://files.pythonhosted.org/packages/e5/3f/143b048436775b0f76ac3eec145c019e8173ccc2885c8f20319b996d5e83/charset_normalizer-3.5.1.tar.gz"
+    sha256 "6117b84ea48435e5356dc737f5121485c30920ba43375fa7b434fd753df0eac3"
   end
 
   resource "cloudscraper" do
@@ -82,8 +81,8 @@ class Fanficfare < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/cd/63/9496c57188a2ee585e0f1db071d75089a11e98aa86eb99d9d7618fc1edce/idna-3.18.tar.gz"
-    sha256 "ffb385a7e039654cef1ab9ef32c6fafe283c0c0467bba1d9029738ce4a14a848"
+    url "https://files.pythonhosted.org/packages/5f/f7/abb373e5757eaec4b922b92f97ec8d6d7e057cf06778247604fbc4e7c3f3/idna-3.19.tar.gz"
+    sha256 "5e0811a4383b21dc5838069f801c4fb62113b7447663d2530d2bd6e77b49bf15"
   end
 
   resource "pyparsing" do
@@ -112,8 +111,8 @@ class Fanficfare < Formula
   end
 
   resource "soupsieve" do
-    url "https://files.pythonhosted.org/packages/d9/38/e12680bbe6b4f8f3d17adcaf38d26850aa756c85cf4a80e79fc12a018fe8/soupsieve-2.9.1.tar.gz"
-    sha256 "c33e6605bbc71dd628b00c632d58ae607c22bade247e52553928f83bbb75b4ba"
+    url "https://files.pythonhosted.org/packages/69/99/a6ca3beb3ccacb41fb3321d8a60e5566f9e6467601ef8eba6a17e1b89778/soupsieve-2.9.2.tar.gz"
+    sha256 "4a55d8cf158a9c2e587fa4922f1bbb91d68ac829e2d6f25403a85747c71daf74"
   end
 
   resource "typing-extensions" do
@@ -127,8 +126,8 @@ class Fanficfare < Formula
   end
 
   resource "webencodings" do
-    url "https://files.pythonhosted.org/packages/0b/02/ae6ceac1baeda530866a85075641cec12989bd8d31af6d5ab4a3e8c92f47/webencodings-0.5.1.tar.gz"
-    sha256 "b36a1c245f2d304965eb4e0a82848379241dc04b865afcc4aab16748587e1923"
+    url "https://files.pythonhosted.org/packages/d5/a0/8fd707bcb776a7be556bad06a2ea5fb9bd519df78ef8e26f70ccf0f38bff/webencodings-0.6.1.tar.gz"
+    sha256 "565f9ad031c702dae404e27a099e3e09186a3ab1b9520f06d215502b651fd910"
   end
 
   def install

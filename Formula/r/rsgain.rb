@@ -1,19 +1,17 @@
 class Rsgain < Formula
   desc "ReplayGain 2.0 tagging utility"
   homepage "https://github.com/complexlogic/rsgain"
-  url "https://ghfast.top/https://github.com/complexlogic/rsgain/archive/refs/tags/v3.7.tar.gz"
-  sha256 "ef383af1adbc01a6e858b45b67b632168ef7c1ee8c2f8267630cbd0f9bf8498e"
+  url "https://ghfast.top/https://github.com/complexlogic/rsgain/archive/refs/tags/v3.8.tar.gz"
+  sha256 "6fb484d9af613167d54fbea60ae647ac1e7baa28b3a9ee4fdfe421601878dfea"
   license "BSD-2-Clause"
-  revision 1
   head "https://github.com/complexlogic/rsgain.git", branch: "master"
 
   bottle do
-    sha256               arm64_tahoe:   "fe6261b47e3a431ff916b511ec81f803a230f3d620e1556016af4a1da6de01c6"
-    sha256               arm64_sequoia: "3635fb6b957ec702eee3e7e8c579420f19f8efdd8d5116fbe543b23d596808e4"
-    sha256               arm64_sonoma:  "50e83fa697d8bac616dd21a279cfac5e6c7af49b5808fa9486669a73d32b6b67"
-    sha256               sonoma:        "8869992b1c9477e4483d04ecb2c4188aa6c6c076fd5b17134577a450d6f4f131"
-    sha256               arm64_linux:   "5e0d843c9b091462abb139cb7c3387244d8b3b33ee209d9ed39f03cf83773619"
-    sha256 cellar: :any, x86_64_linux:  "d1ae2279bd9319ce1859df38172a7b25c9420a787aa6be68adf535c364999e17"
+    sha256               arm64_tahoe:   "41a574f2dfab8c882de7d84a70590036aa529ca1c4c7dc48c227c715e8049589"
+    sha256               arm64_sequoia: "0470e68a04fe0bfbefdcaef840270b545f326bf4696f471dbc71cc39f3a77caa"
+    sha256               arm64_sonoma:  "74f08fa56fed157e75841a1f096e762488ccb7ed265a0a9696a20e5516b37b2d"
+    sha256               arm64_linux:   "16f4e3bcf9d5194304640023e6363b4071d41e409c08c4702ae07320f7730f40"
+    sha256 cellar: :any, x86_64_linux:  "51a4178344c7a68a466fbba2d510822de8cff13254282d50eb3a3c5b7f83ddef"
   end
 
   depends_on "cmake" => :build

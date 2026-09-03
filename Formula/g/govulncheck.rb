@@ -6,17 +6,15 @@ class Govulncheck < Formula
       tag:      "v1.7.0",
       revision: "617f44b718537dccdea1915395650e0529e3b72e"
   license "BSD-3-Clause"
-  revision 2
+  revision 3
   head "https://github.com/golang/vuln.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "21dddabe5c6625c4625a5cd00f048df0d846f8e5dfb93861f0d2d60ae9bf0245"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "21dddabe5c6625c4625a5cd00f048df0d846f8e5dfb93861f0d2d60ae9bf0245"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "21dddabe5c6625c4625a5cd00f048df0d846f8e5dfb93861f0d2d60ae9bf0245"
-    sha256 cellar: :any_skip_relocation, sonoma:        "28076311022c662df27fa88f6331099738b8a22e9fe6d4cd8b4714ab6f5bd6e6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c6008e722463665fded7470b08f91d29f3a9453e06d08e4f420e65dd0c3208ff"
-    sha256 cellar: :any,                 x86_64_linux:  "ee2fcfd70cdb46c0feddfb0b8d15bdc77ec5e36116ec6c50ef1b07e90c0aa21d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "323c0bed415a875c630b84a3f98a66c9584b4333339b8a72a18bb23a8e4a50d5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "323c0bed415a875c630b84a3f98a66c9584b4333339b8a72a18bb23a8e4a50d5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "323c0bed415a875c630b84a3f98a66c9584b4333339b8a72a18bb23a8e4a50d5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7adec523a851b911f6132e48eec81e51ff3c9012dcae721f4a48cd06418d9527"
+    sha256 cellar: :any,                 x86_64_linux:  "c2ce8a517a7869b781ab275b61f96771caf03ea1ded584675e02ba5b32cbb937"
   end
 
   depends_on "go" => [:build, :test]

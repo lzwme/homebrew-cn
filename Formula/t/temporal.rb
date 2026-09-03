@@ -1,8 +1,8 @@
 class Temporal < Formula
   desc "Command-line interface for running and interacting with Temporal Server and UI"
   homepage "https://temporal.io/"
-  url "https://ghfast.top/https://github.com/temporalio/cli/archive/refs/tags/v1.8.2.tar.gz"
-  sha256 "b54917441b43fb17634b862a1966337fc129a927290eb45a86cca85e96bea086"
+  url "https://ghfast.top/https://github.com/temporalio/cli/archive/refs/tags/v1.8.3.tar.gz"
+  sha256 "14280dbc5f157373a2b34d7d333dd0c8f1b8506fa9ff5b332edc9048527af6f8"
   license "MIT"
   head "https://github.com/temporalio/cli.git", branch: "main"
 
@@ -12,12 +12,11 @@ class Temporal < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fad2c7328d8ecc52d2a570779009b388286e7e5c0f785c6ac9506bf3361e9598"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0a267c93e585a18f88c4c96cc354aa96a7db8d51fcf96b97b714b8c325eece3b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3d7a6b1b5a1ef2181d6014ec4f34802af652f175c537ef88ae94cec64121e5a8"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a4f803b92f4299b34c9b20eaef66ae87e9aea59af35df9b92782c0bd742c3eec"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "daeb62902add2668c46ab8d94283e146dc89f778955685d176b687649d162e8d"
-    sha256 cellar: :any,                 x86_64_linux:  "2978f72e2d0833a73328055c47b99d51abbe230be82c47fdb436d0be7a79c53d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "29ea945ee33d6305113e48604e328d0a7528618a4704d92817baf157df916577"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3ae10408774c8319d5a7e6a571da083afd5ed3c2521c8532162febe87a11cb6a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "713b6bd559c89e0b2950399d7c2c0ec29f063e6ffec1c7b7a1c1c4af7490db52"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "870fb1f806477746de9ef77b4e0db55d78a6575280204b63c2fe9b0d1301ea92"
+    sha256 cellar: :any,                 x86_64_linux:  "9e9bb58ca66c323bff062b813b4c0cf6b278555693addb95d833b4d8518c421f"
   end
 
   depends_on "go" => :build

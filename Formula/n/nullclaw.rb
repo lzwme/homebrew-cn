@@ -17,6 +17,12 @@ class Nullclaw < Formula
 
   depends_on "zig" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "zig", "build", "--fetch"
+  end
+
   def install
     args = ["-Dversion=#{version}"]
     system "zig", "build", *args, *std_zig_args

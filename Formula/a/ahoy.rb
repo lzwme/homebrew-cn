@@ -1,19 +1,17 @@
 class Ahoy < Formula
   desc "Creates self documenting CLI programs from commands in YAML files"
   homepage "https://ahoy-cli.github.io/"
-  url "https://ghfast.top/https://github.com/ahoy-cli/ahoy/archive/refs/tags/v3.0.0.tar.gz"
-  sha256 "3c9758dd49f635af85530a7763248e2f4532757fec0680ae6047d44fa518a45c"
+  url "https://ghfast.top/https://github.com/ahoy-cli/ahoy/archive/refs/tags/v3.0.1.tar.gz"
+  sha256 "ed4d3b48784668dc48b81243125dbdeabecaab784b5e1c20f1608cacf83dc4ce"
   license "MIT"
   head "https://github.com/ahoy-cli/ahoy.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6e747fab44f8905986a9329709b87c5144014246f339dde96ad14de7be03cff1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6e747fab44f8905986a9329709b87c5144014246f339dde96ad14de7be03cff1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6e747fab44f8905986a9329709b87c5144014246f339dde96ad14de7be03cff1"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3255c51a166d6fe8fb632c05b371a3391d39b6b279f02b5354594d87093582f2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c9a4a1611d9d9b07436c63c097c5b0b88d9ebbafa5e28c262dcfdca0681bded5"
-    sha256 cellar: :any,                 x86_64_linux:  "5bcc3962b88cd65927a229246c93c727f7a07e7fce2d9e7f98f066916115acdd"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cfec4320a87043cb68e06c916110ae8d5da264259cf6c9f950c8afb0e1790644"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cfec4320a87043cb68e06c916110ae8d5da264259cf6c9f950c8afb0e1790644"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cfec4320a87043cb68e06c916110ae8d5da264259cf6c9f950c8afb0e1790644"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "74e509a00183d99a75a3495a7d18497bf6d8c8781d8e15c599bc33f6ec91e512"
+    sha256 cellar: :any,                 x86_64_linux:  "2be13b1292133e38d8d21ab8f29484399bb1ebcf61145ea23d17b9f5e3cad862"
   end
 
   depends_on "go" => :build

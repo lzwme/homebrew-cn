@@ -1,19 +1,16 @@
 class Openlibm < Formula
   desc "High quality, portable, open source libm implementation"
   homepage "https://openlibm.org"
-  url "https://ghfast.top/https://github.com/JuliaMath/openlibm/archive/refs/tags/v0.8.7.tar.gz"
-  sha256 "e328a1d59b94748b111e022bca6a9d2fc0481fb57d23c87d90f394b559d4f062"
+  url "https://ghfast.top/https://github.com/JuliaMath/openlibm/archive/refs/tags/v0.8.8.tar.gz"
+  sha256 "721bab18ff37160fd9e903eb211ff26fdee38c3d0041d556b07d76089c435d17"
   license all_of: ["MIT", "ISC", "BSD-2-Clause"]
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "0f69832aa3e0b5037e36303fa31570016dd59cfc981e6a84e8a130803939e45a"
-    sha256 cellar: :any,                 arm64_sequoia: "e6752fb0e310f950ac52cf3b48f1bb8bf6cfd54f232a600cab2c7193c13d21a8"
-    sha256 cellar: :any,                 arm64_sonoma:  "6e7c1eb94e6db408c98f94b058f90306d92b9d507565a0896a83b40fd533cb50"
-    sha256 cellar: :any,                 arm64_ventura: "f90c6264298e3fd95ac064d63e15723cae49d108b50b30bd1a080ad403040e6b"
-    sha256 cellar: :any,                 sonoma:        "1d6f591d67d422a6982b28e3a59902d44bb71b24cb2133c8db0fd321f57383a8"
-    sha256 cellar: :any,                 ventura:       "49ae13794c8ab5fc7de41f88ed72be8850a2cb97c1843e894c38ecebee7631e5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "dbe1119287757ad8439a93b6cfdf94930ba7cd379e77d7f3f9ccee84043c7ee5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a0c35b3584719869ecc0b55090a1edd31b5df57c52b55f110cb0be30b9849d89"
+    sha256 cellar: :any, arm64_tahoe:   "609b5d04e458eefa10f8db06a8b93c4abe876ee8165b0ed3bc4e4917be80ee9a"
+    sha256 cellar: :any, arm64_sequoia: "0af5df82bd1ba0f2aff8ab11de68706bc4c64a921625a1c5203361b332845293"
+    sha256 cellar: :any, arm64_sonoma:  "31a5803f82f0f0d07f241d39834e640dc0440bfececc0d58fe00ac45c9cd7d6c"
+    sha256 cellar: :any, arm64_linux:   "0dfb4f0544a19cbbfcf1f29fba79ee6103cd393810da14048188cf47ab075da2"
+    sha256 cellar: :any, x86_64_linux:  "4924638ac4d74c1e4717d843e6132ac4b37f3a88fcf99f9a5c2f79946b89e5b7"
   end
 
   def install

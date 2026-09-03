@@ -1,8 +1,8 @@
 class GnomeAutoar < Formula
   desc "GNOME library for archive handling"
   homepage "https://github.com/GNOME/gnome-autoar"
-  url "https://download.gnome.org/sources/gnome-autoar/0.5/gnome-autoar-0.5.0.tar.xz"
-  sha256 "70915cfbb226746a57d5c605771a01f60de317eab9bc3953f44df2712a53c836"
+  url "https://download.gnome.org/sources/gnome-autoar/0.5/gnome-autoar-0.5.2.tar.xz"
+  sha256 "6c20bd16c87aba15869e56444424481f632ac302989a203e8ce4dcc73dea33a5"
   license "LGPL-2.1-or-later"
 
   # gnome-autoar doesn't seem to follow the typical GNOME version format where
@@ -14,11 +14,11 @@ class GnomeAutoar < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "0da0169f09934c318a0f1decb03299ba64195d33181f9dfa16da820e232598d1"
-    sha256 cellar: :any, arm64_sequoia: "e99101c6a2b22390917085da11c9050e389723a12582c1023b4a0c32bb3060b3"
-    sha256 cellar: :any, arm64_sonoma:  "313157ef981277c416a1f54cea820c0fa739d5d71df0970fd1607cdba6693ae3"
-    sha256 cellar: :any, arm64_linux:   "931eff7070123ac0ef03d34e2a7c07d14b107a7eedf745648967ed1321f8950d"
-    sha256 cellar: :any, x86_64_linux:  "53f60928494fc0296cefeb6208c2b24b2ca96e3a1344f5c019f4f0d2b4e6f205"
+    sha256 cellar: :any, arm64_tahoe:   "e55340827c5750f4a79057710c350994b6e38a7aec2968ad72f2a0881ca4d931"
+    sha256 cellar: :any, arm64_sequoia: "8ce9e8b6a660655a3f91aad4c39be3659c583e8747ed5ab53e81d8dca0c2db86"
+    sha256 cellar: :any, arm64_sonoma:  "497c2c6f8b61c2cf4e2772661a83a14253b040c105542da2c763a4fd4be69192"
+    sha256 cellar: :any, arm64_linux:   "5056db5ff19505d9f941e8a3c491abe3dd1cdf0cb231011100c3316cbfe15a7a"
+    sha256 cellar: :any, x86_64_linux:  "4ca8ac8ac5837114ba173f19f1265e3e184c43849b45543a567e0575c28a4deb"
   end
 
   depends_on "meson" => :build

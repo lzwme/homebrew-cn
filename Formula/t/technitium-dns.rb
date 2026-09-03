@@ -59,11 +59,10 @@ class TechnitiumDns < Formula
 
   test do
     dotnet = Formula["dotnet"]
-    tmpdir = Pathname.new(Dir.mktmpdir)
     # Start the DNS server
     require "pty"
-    dns_cmd = "#{dotnet.opt_libexec}/dotnet #{libexec}/DnsServerApp.dll #{tmpdir}"
-    PTY.spawn({ "DNS_SERVER_LOG_FOLDER_PATH" => tmpdir }, dns_cmd) do |r, _w, pid|
+    dns_cmd = "#{dotnet.opt_libexec}/dotnet #{libexec}/DnsServerApp.dll #{testpath}"
+    PTY.spawn({ "DNS_SERVER_LOG_FOLDER_PATH" => testpath }, dns_cmd) do |r, _w, pid|
       # Give the server time to start
       sleep 2
       # Use `dig` to resolve "localhost"

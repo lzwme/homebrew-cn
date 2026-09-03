@@ -19,6 +19,9 @@ class Lfe < Formula
   depends_on "erlang"
 
   def install
+    # Each `.beam` rule re-runs `install -d ebin`, which races itself under `make -j`
+    ENV.deparallelize
+
     system "make"
     system "make", "MANINSTDIR=#{man}", "install-man"
     system "make", "emacs"

@@ -26,6 +26,24 @@ class FfmpegAT4 < Formula
 
   keg_only :versioned_formula
 
+  # On deprecation date, we had over 7 versions of FFmpeg. `ffmpeg@4` had
+  # 1,168 installs on request in 90 days.
+  # It has 3,512 installs in 90 days, but this is mostly due to the
+  # ffmepg2theora and moc formuale, that are already deprecated.
+  # Final disabled date for reverse dependecies is 2027-04-06.
+  #
+  # This means ffmpeg@4 no longer
+  # satisfies https://docs.brew.sh/Versions#acceptable-versioned-formulae
+  #
+  # > No more than five versions of a formula (including the main one)
+  # > will be supported at any given time, unless they are popular
+  # > (e.g. have over 1000 analytics 90 days installs of usage)
+  #
+  # Deprecate / disable dates for ffmpeg@4 are set in a conservative
+  # approach to ensure users have ample time to transition.
+  deprecate! date: "2027-05-01", because: :versioned_formula
+  disable! date: "2028-05-01", because: :versioned_formula
+
   depends_on "pkgconf" => :build
 
   depends_on "aom"

@@ -1,8 +1,8 @@
 class Grafana < Formula
   desc "Gorgeous metric visualizations and dashboards for timeseries databases"
   homepage "https://grafana.com"
-  url "https://ghfast.top/https://github.com/grafana/grafana/archive/refs/tags/v13.2.0.tar.gz"
-  sha256 "023b5a556607fb128cbd23ec2a7baa8182fda01f236f7df93116bd55e1ac710a"
+  url "https://ghfast.top/https://github.com/grafana/grafana/archive/refs/tags/v13.2.1.tar.gz"
+  sha256 "4b410340987a5d8090d5b39d9312095b1009f20f2e27c9a50f65da6cf74a9962"
   license "AGPL-3.0-only"
   head "https://github.com/grafana/grafana.git", branch: "main"
 
@@ -12,12 +12,11 @@ class Grafana < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "12457503e9ef43036b0e1b49d29d075e93f37bc1f1a210c4f9a08f875120e250"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "343d9a9f100ed69b361b4f5486551f0e562dd8331027b203f8d82fff22061178"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "475b1cea8727054bbd4a95d6d5ade14fd12da394b8b40f317d5031bae6b32619"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1dc6b9d88e0f6af1c2d82c20b4be1aadc448448a164d738398e3e2a6deefa3a0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "843e29a0489288e523d7db1059c95a00a523c011df3ec9482101247158a5ed13"
-    sha256 cellar: :any,                 x86_64_linux:  "34a53a37bdabc1215db780a9a440fa1219f5436c094ad87d8ead8a5e86ffb101"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b05775651d636123367546cd375327f4fe24a2149a9ede255f404af67314ec7a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0c57d40dcca3ac5bd47040dd40f707637b2c36c13fdd2d95af421984a5515a46"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "13e1d70f7b868c54e37b0329925e9085c8049fa2884d9372f4f3af7c74a8c500"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "97c6d0cee6b827c86d69ee9c3428c1de605e9ab5f069f4c6383e6b51d99bb6f7"
+    sha256 cellar: :any,                 x86_64_linux:  "0df3037a5bc92e3bdb24abfc32aca3e9e6f88f7aaf80023bfc07e92550c696e6"
   end
 
   depends_on "go" => :build

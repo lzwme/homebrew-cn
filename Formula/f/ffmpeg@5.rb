@@ -25,6 +25,16 @@ class FfmpegAT5 < Formula
 
   keg_only :versioned_formula
 
+  # On deprecation date, we had over 7 versions of FFmpeg and `ffmpeg@5` was
+  # the least popular with 464 installs in 90 days. This means it no longer
+  # satisfies https://docs.brew.sh/Versions#acceptable-versioned-formulae
+  #
+  # > No more than five versions of a formula (including the main one)
+  # > will be supported at any given time, unless they are popular
+  # > (e.g. have over 1000 analytics 90 days installs of usage)
+  deprecate! date: "2026-09-02", because: :versioned_formula
+  disable! date: "2027-09-02", because: :versioned_formula
+
   depends_on "pkgconf" => :build
   depends_on "aom"
   depends_on "aribb24"

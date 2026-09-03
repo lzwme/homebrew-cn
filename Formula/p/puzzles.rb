@@ -2,8 +2,8 @@ class Puzzles < Formula
   desc "Collection of one-player puzzle games"
   homepage "https://www.chiark.greenend.org.uk/~sgtatham/puzzles/"
   # Extract https://www.chiark.greenend.org.uk/~sgtatham/puzzles/puzzles.tar.gz to get the version number
-  url "https://www.chiark.greenend.org.uk/~sgtatham/puzzles/puzzles-20260720.3c36322.tar.gz"
-  sha256 "cf43ae303f085c4a7b4c0711e3129755a9c689ebfbf3ea55bf273d9602223806"
+  url "https://www.chiark.greenend.org.uk/~sgtatham/puzzles/puzzles-20260902.b30838a.tar.gz"
+  sha256 "9a13d7213e90238fdd7938a92c5527027e145d9a8fbd120404614501bb231638"
   license "MIT"
   head "https://git.tartarus.org/simon/puzzles.git", branch: "main"
 
@@ -17,12 +17,11 @@ class Puzzles < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a2d4543e6354b7349a9b071de15587e52690f3abc5403eece616a2962e78e254"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8de09853d6b952785f08d8c2cb1c70f21eb5744869c412ad0cd22d2bc55b6a80"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d717eaf7a6499f2e982a4213ca6a2efb9a390e6119f64cc73d8933237da8f796"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6bf7de1880220d661ec619849ae9164c42f869282af4e8c516a98fa319c1b51a"
-    sha256                               arm64_linux:   "74fab0361cfb6d506bedabb8ec1321044182c921f6d827e3b4a5a381f8cd75bb"
-    sha256                               x86_64_linux:  "7c4f27ec1b5eaa511e1d8a5873717bbc05997c0b0f4bba4b11e869b9b9f96ab1"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "272624d7a436cc37839d3380a27ab3f81dcc4b9f705811b72f56954a48f82fbd"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7c6ffefba22240fa6a5c7d2306c6492eb3ce96983a5da20fcf816fd2ca8023e1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "69bc866ad35dd57fef7d171ead7afbee858d74344136a97cb160a9bea66610ff"
+    sha256                               arm64_linux:   "eb8ece6359b4aab8a97b5a2cf2774fb048cf50629f9e465286764257c1a5ad28"
+    sha256                               x86_64_linux:  "1851e04fb6fb7f9867918d8177e149d288fd22967446ba8bf046fd5f2d86b128"
   end
 
   depends_on "cmake" => :build

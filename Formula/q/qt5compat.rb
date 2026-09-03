@@ -1,10 +1,10 @@
 class Qt5compat < Formula
   desc "Qt 5 Core APIs that were removed in Qt 6"
   homepage "https://www.qt.io/"
-  url "https://download.qt.io/official_releases/qt/6.11/6.11.1/submodules/qt5compat-everywhere-src-6.11.1.tar.xz"
-  mirror "https://qt.mirror.constant.com/archive/qt/6.11/6.11.1/submodules/qt5compat-everywhere-src-6.11.1.tar.xz"
-  mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.11/6.11.1/submodules/qt5compat-everywhere-src-6.11.1.tar.xz"
-  sha256 "cfcb9fdaa051aad54b0e61b24ac5693b4887a86e07609f665fea67328a6f161b"
+  url "https://download.qt.io/official_releases/qt/6.11/6.11.2/submodules/qt5compat-everywhere-src-6.11.2.tar.xz"
+  mirror "https://qt.mirror.constant.com/archive/qt/6.11/6.11.2/submodules/qt5compat-everywhere-src-6.11.2.tar.xz"
+  mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.11/6.11.2/submodules/qt5compat-everywhere-src-6.11.2.tar.xz"
+  sha256 "68c320fe3391096a9f2d870170edf1b67dac8af1d0e51c0c9e5343807f114287"
   license all_of: [
     { any_of: ["LGPL-3.0-only", "GPL-2.0-only", "GPL-3.0-only"] },
     "BSD-2-Clause", # src/core5/codecs
@@ -18,12 +18,11 @@ class Qt5compat < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "2376fe0465520d4d298fb7798aeec85bfdef5882034a393958d5dea0c8f85f8d"
-    sha256 cellar: :any,                 arm64_sequoia: "91bae869f111d33c184b63324cda9ae6f3c22443013a5952f47bade019c78c23"
-    sha256 cellar: :any,                 arm64_sonoma:  "83b4c9414bc753ddde75b0522a0f6f94bb6c00524a838704931d3ec641f77dae"
-    sha256 cellar: :any,                 sonoma:        "6a6f5f5431b475089162f6c3e48820318691e93f19867f1503bcea706ef97093"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "237e88f71e9e998e75b5cbcb9cd6d7706b4b17b4534c49efb2577e651601ebf9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c204ecc86a83fa54004f4d6e8e54586a233ab1f58767f8935153ac8d8665a338"
+    sha256 cellar: :any, arm64_tahoe:   "66845c7323bde40e8dd99e7c78cd542ae66c889ee11dc7a24cc95198449d8f62"
+    sha256 cellar: :any, arm64_sequoia: "484b4777ba21d6dfc2320b235636f0b90b74c9cf637cf4aa97511a4912783455"
+    sha256 cellar: :any, arm64_sonoma:  "2c2045f903a552a0868a99ef15768cd755a776dc861076f20626293ac9fa9832"
+    sha256 cellar: :any, arm64_linux:   "5f902ae3afea1b20561a9659c6980418d7a574498187902bb5689175f884beb7"
+    sha256 cellar: :any, x86_64_linux:  "aac838a45f12d91833d0d3764ad6d9946b17fd560b73b18e165330367f248c9b"
   end
 
   depends_on "cmake" => [:build, :test]

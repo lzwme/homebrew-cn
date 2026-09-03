@@ -1,10 +1,10 @@
 class Qtquick3d < Formula
   desc "Provides a high-level API for creating 3D content or UIs based on Qt Quick"
   homepage "https://www.qt.io/"
-  url "https://download.qt.io/official_releases/qt/6.11/6.11.1/submodules/qtquick3d-everywhere-src-6.11.1.tar.xz"
-  mirror "https://qt.mirror.constant.com/archive/qt/6.11/6.11.1/submodules/qtquick3d-everywhere-src-6.11.1.tar.xz"
-  mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.11/6.11.1/submodules/qtquick3d-everywhere-src-6.11.1.tar.xz"
-  sha256 "c76b85de3f8aa2a4bee64987acfef560675c1b378b92076c7c6264613e5b456f"
+  url "https://download.qt.io/official_releases/qt/6.11/6.11.2/submodules/qtquick3d-everywhere-src-6.11.2.tar.xz"
+  mirror "https://qt.mirror.constant.com/archive/qt/6.11/6.11.2/submodules/qtquick3d-everywhere-src-6.11.2.tar.xz"
+  mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.11/6.11.2/submodules/qtquick3d-everywhere-src-6.11.2.tar.xz"
+  sha256 "3ab8e1f08edb26373a37cf9d42c23e7d092c1334566b953fbb51cb1b936737b4"
   license all_of: [
     "GPL-3.0-only",
     { "GPL-3.0-only" => { with: "Qt-GPL-exception-1.0" } },
@@ -20,12 +20,11 @@ class Qtquick3d < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "1f249aa6a9a60893be5c4cb19576b2dc6a8c7c30ec479a13b2b257590c744194"
-    sha256 cellar: :any,                 arm64_sequoia: "0ab350097696b313eed8cf3ffd62af16ee2bfc46196db047a6e8b118f5ea06e7"
-    sha256 cellar: :any,                 arm64_sonoma:  "1f3f1c768e3eeab12892d85713dd98b02f38dc788a2b43fa16138dc1236fd32b"
-    sha256 cellar: :any,                 sonoma:        "9141d684fdce3b159e85e9c814afd4b9aafe5d6c439c2586270dd804df226993"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7ec342bca633378b2365581dd6c100c27ee8b757728642b202dc96ef41a48740"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "07bdc05f4421d68892a559350204b03681b22f7b0a69e2ac2cbd75ebbf1190b0"
+    sha256 cellar: :any, arm64_tahoe:   "678adda8a83967e09ff22736bfeaf6834575ae0d3538f639f2c82febc4443f39"
+    sha256 cellar: :any, arm64_sequoia: "f50664dd94c14b2280e931ab7fba622b2067398b1f9d0feac78226f7fe0fe927"
+    sha256 cellar: :any, arm64_sonoma:  "0e4b41ec93140fb7c058131731ba656a14aabb3a8f87cb63b356ecec4d64cbf4"
+    sha256 cellar: :any, arm64_linux:   "04da091eede7d8e1193fd831d73f4cef7ab138f1e1f7ff9a55bd99524be1d14b"
+    sha256 cellar: :any, x86_64_linux:  "959a603668dd30add9fb9559445beb427776c554b162ee0e3cf5c2f786559edf"
   end
 
   depends_on "cmake" => [:build, :test]

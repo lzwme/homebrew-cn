@@ -1,10 +1,9 @@
 class Sdl3Image < Formula
   desc "Library for loading images as SDL surfaces and textures"
   homepage "https://github.com/libsdl-org/SDL_image"
-  url "https://ghfast.top/https://github.com/libsdl-org/SDL_image/releases/download/release-3.4.4/SDL3_image-3.4.4.tar.gz"
-  sha256 "29751304a13d25ac513f24305fa25b06a6edd9607718c90129b8350d35fc5573"
+  url "https://ghfast.top/https://github.com/libsdl-org/SDL_image/releases/download/release-3.4.6/SDL3_image-3.4.6.tar.gz"
+  sha256 "d2e4637ae700f72e5196b8fbd749850ed2e5e1e09c5a5be8d06ff55aaccf3b01"
   license "Zlib"
-  revision 1
   head "https://github.com/libsdl-org/SDL_image.git", branch: "main"
 
   livecheck do
@@ -13,12 +12,11 @@ class Sdl3Image < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "b32d53354e38f094fc1fdd92a9f6aea1cce9de58bd984bb1f11af3fe5cf75f6e"
-    sha256 cellar: :any, arm64_sequoia: "cf1473822e8723702ab7467342a2041a4ee1972a428405860e4c376b4a14adc6"
-    sha256 cellar: :any, arm64_sonoma:  "25891eef22524eb1905e3ef05056b02659bafa062cc25213753a6bbd6a6afffb"
-    sha256 cellar: :any, sonoma:        "37636b26f17c37c603aad09462e1ba6d50111621f4e549363e69a4bc2b554ec7"
-    sha256 cellar: :any, arm64_linux:   "ee1c0fb432242364dabfc925800e3c8ecf318a32739041125eec3bc8440a90bb"
-    sha256 cellar: :any, x86_64_linux:  "d8954215ae9481088ee4736d7eead475b28479669d46f027d80c53ce2d9e5496"
+    sha256 cellar: :any, arm64_tahoe:   "6efcc3fde7c11ea176554ffd48dd3f6a98faf5639a4e193cdc77aef6752f7422"
+    sha256 cellar: :any, arm64_sequoia: "51b8ad27d2282716a7b7a3ecc20deb22f69aa2405d141caa8f17d3d5b21176d0"
+    sha256 cellar: :any, arm64_sonoma:  "aa80e4b7d4f8eff14475ce2546c82453580ae42569686e8597b2574c1e42d10a"
+    sha256 cellar: :any, arm64_linux:   "c701dcb61029cf0c5f01ddc07e4ef7387b22a81514da16c0305e20213e7befa1"
+    sha256 cellar: :any, x86_64_linux:  "039721d90e8dd34aa2540f505a96501ec5edfc2b910f3b891f93ca08f324ea57"
   end
 
   depends_on "cmake" => :build

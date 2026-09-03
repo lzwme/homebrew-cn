@@ -14,11 +14,12 @@ class Pyenv < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "89935f70c6a94dc8aafa0bc2ed239b3eec6e7cf93b3b78e39bcc47c20660787f"
-    sha256 cellar: :any, arm64_sequoia: "413fe9d087da387a5f975be2080c19e465822a45176e84d188af0b916891c0bb"
-    sha256 cellar: :any, arm64_sonoma:  "a02b3615eda669dd3563d556d7f335ca8fb00020dab663fa03ced448aec1fd2b"
-    sha256 cellar: :any, arm64_linux:   "6b8bc54c45dad61faa1c3ece0fcb1eb67da9012c03f36baaf43bba27bb2df8d0"
-    sha256 cellar: :any, x86_64_linux:  "5d61d6122a786276d934c08adb22bf37ce64925c21a282d381a63010af7c1722"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "6143a43064eac18eaf8438c134c5d9484909f2f7307b5ee3195acc5b0f03b1dc"
+    sha256 cellar: :any, arm64_sequoia: "97bccf6847045560da268a646dfc33f05d9869dfd7c8bf3bb4645b9c2ee8294c"
+    sha256 cellar: :any, arm64_sonoma:  "209f168f26bbc66cb1358d0fadaa28deae8e3c8b65687766192df72314d7ca72"
+    sha256 cellar: :any, arm64_linux:   "a715fea9daf497283b074c29990327680c49b093a5175e8656e7444da7fc4fe7"
+    sha256 cellar: :any, x86_64_linux:  "262385bcb9afe0f0453ad1be6b6a7555c427c82d51ea3b6059ee97d77367b1e9"
   end
 
   depends_on "autoconf"
@@ -35,6 +36,8 @@ class Pyenv < Formula
   on_linux do
     depends_on "zlib-ng-compat"
   end
+
+  deny_network_access!
 
   def install
     inreplace "libexec/pyenv", "/usr/local", HOMEBREW_PREFIX

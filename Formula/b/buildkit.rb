@@ -1,8 +1,8 @@
 class Buildkit < Formula
   desc "Concurrent, cache-efficient, and Dockerfile-agnostic builder toolkit"
   homepage "https://github.com/moby/buildkit"
-  url "https://ghfast.top/https://github.com/moby/buildkit/archive/refs/tags/v0.32.2.tar.gz"
-  sha256 "b19deba3f8cf3eb05407aa85c246e22839770c437439a04d880ef3d645aed0aa"
+  url "https://ghfast.top/https://github.com/moby/buildkit/archive/refs/tags/v0.33.0.tar.gz"
+  sha256 "c365476e1b10e27a2ab809e3a7a6dcd0647a60fa6e8917799b894d4127af7306"
   license "Apache-2.0"
   head "https://github.com/moby/buildkit.git", branch: "master"
 
@@ -15,12 +15,11 @@ class Buildkit < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3c1b4ef286ee0d753034292621e8f39ef778666352405c7aa69fec9a2bec1fbe"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3c1b4ef286ee0d753034292621e8f39ef778666352405c7aa69fec9a2bec1fbe"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3c1b4ef286ee0d753034292621e8f39ef778666352405c7aa69fec9a2bec1fbe"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7840db5e8c3ab7db1f47b4f97e429962634ced59744d39c8aa7ee77b3eb4ee00"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5cb519ce033db8bbeb780068a54b864887105b09915dcccf5524fe72d0e6ab12"
-    sha256 cellar: :any,                 x86_64_linux:  "4a1341a195baffd1012e6724d6ce828b37f398d7bb81ea7223a243a7871bb599"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ca2eca5d1ea6c115a1494155f842b92dfe744bdda681f4311b46f99e25a8e753"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ca2eca5d1ea6c115a1494155f842b92dfe744bdda681f4311b46f99e25a8e753"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ca2eca5d1ea6c115a1494155f842b92dfe744bdda681f4311b46f99e25a8e753"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cadc0c70cef2471e1e27eba8106c7a69853ea8d71d7ecc621609abf4dea708ad"
+    sha256 cellar: :any,                 x86_64_linux:  "3a80704b804aae9cee4426a02eafd58bb9264dd96d89e914a0ae56d47a0009a4"
   end
 
   depends_on "go" => :build

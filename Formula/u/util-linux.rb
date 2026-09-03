@@ -1,8 +1,8 @@
 class UtilLinux < Formula
   desc "Collection of Linux utilities"
   homepage "https://github.com/util-linux/util-linux"
-  url "https://mirrors.edge.kernel.org/pub/linux/utils/util-linux/v2.42/util-linux-2.42.2.tar.xz"
-  sha256 "03a05d3adf9602ef128f2da05b84b3205ce60c351e5737c0370f74000679ce8a"
+  url "https://mirrors.edge.kernel.org/pub/linux/utils/util-linux/v2.42/util-linux-2.42.3.tar.xz"
+  sha256 "66ac7c0e725278eb2b039e3104f2c91119341d941b41bac7a285c695f940bd57"
   license all_of: [
     "BSD-3-Clause",
     "BSD-4-Clause-UC",
@@ -25,12 +25,11 @@ class UtilLinux < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "3b2174542f34178348f62bccf804a06d8a1adb3dbd6767ce6b01fd618d63f9db"
-    sha256 arm64_sequoia: "190141242ffdeb5cf236a3b040342097019fce761e655a4c5a12eae18591d628"
-    sha256 arm64_sonoma:  "fbc17b9d39fd79e1da145bca8a5df65b7962d8fb823b7900db2b16f0b4dfb946"
-    sha256 sonoma:        "eeda32110a3b6d30accf88c5f5e3fbe05f180a8d10769aefcabb0df21deaf136"
-    sha256 arm64_linux:   "bc1ad29a5dc203dab6803165abece5a99a99a465e34486b792cd7ad0953bedbf"
-    sha256 x86_64_linux:  "2508e06eafa3451e885cc7bdfd6af035bf1aee5a7af090c22d5f4c6474f3fa50"
+    sha256 arm64_tahoe:   "b464010e7b47d4af2fc2f430c42b6b73ed2f950163fa215fde267ae45028932d"
+    sha256 arm64_sequoia: "60173ddb3b0b5091799e992f09f775fb7132cf248b9a1e26b7022298793e344f"
+    sha256 arm64_sonoma:  "597dadb1211920897a83dbd91bda97b2fbd8bdf9872a9a067bfa9aca5e17715d"
+    sha256 arm64_linux:   "1eb0711633b8c65f11a1f85bd56b15e2ab21f99c914a997f8206c8af1fa5a5d3"
+    sha256 x86_64_linux:  "f5481596e2b7cea2d92f1c4eed7e8984d9fbc3360bd2634110637b37f01e959e"
   end
 
   keg_only :shadowed_by_macos, "macOS provides the uuid.h header"
@@ -55,12 +54,12 @@ class UtilLinux < Formula
     conflicts_with "rename", because: "both install `rename` binaries"
   end
 
-  # Fix macOS builds
+  # libmount/src/hook_idmap.c:335:33: error: ‘RESOLVE_NO_SYMLINKS’ undeclared (first use in this function)
   patch do
-    url "https://github.com/util-linux/util-linux/commit/d22edc2f100eb8dd83d3515758565cb73b0d2eed.patch?full_index=1"
-    sha256 "2fb01154faa3fd8b0fce27eb88049ed9c8f839e706e412399c19c087f7f3b5e1"
-    type :unofficial
-    resolves "https://github.com/util-linux/util-linux/pull/4173"
+    url "https://github.com/util-linux/util-linux/commit/a323dddbcd1ed05a10e7e870b3e1a48b4ed44a43.patch?full_index=1"
+    sha256 "7c3cd540618ff46cfb1e22a5273d198012711c0b1169b70ddd731d8e581e6f64"
+    type :backport
+    resolves "https://github.com/util-linux/util-linux/issues/4597"
   end
 
   def install

@@ -1,10 +1,10 @@
 class Qtmultimedia < Formula
   desc "Provides APIs for playing back and recording audiovisual content"
   homepage "https://www.qt.io/"
-  url "https://download.qt.io/official_releases/qt/6.11/6.11.1/submodules/qtmultimedia-everywhere-src-6.11.1.tar.xz"
-  mirror "https://qt.mirror.constant.com/archive/qt/6.11/6.11.1/submodules/qtmultimedia-everywhere-src-6.11.1.tar.xz"
-  mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.11/6.11.1/submodules/qtmultimedia-everywhere-src-6.11.1.tar.xz"
-  sha256 "390f8e52ddee3aca5c4de7eead900c84c4fa61ff6d1f0ebea9c7543365c09b0a"
+  url "https://download.qt.io/official_releases/qt/6.11/6.11.2/submodules/qtmultimedia-everywhere-src-6.11.2.tar.xz"
+  mirror "https://qt.mirror.constant.com/archive/qt/6.11/6.11.2/submodules/qtmultimedia-everywhere-src-6.11.2.tar.xz"
+  mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.11/6.11.2/submodules/qtmultimedia-everywhere-src-6.11.2.tar.xz"
+  sha256 "967b5e02ec6b793cdb360622cd6e703132836af983208d678dae4b50f109cd9f"
   license all_of: [
     { any_of: ["LGPL-3.0-only", "GPL-2.0-only", "GPL-3.0-only"] },
     { all_of: ["MPL-2.0", "BSD-3-Clause"] }, # bundled eigen
@@ -13,7 +13,6 @@ class Qtmultimedia < Formula
     "GPL-3.0-only", # Qt6MultimediaTestLib
     "MIT",          # bundled signalsmith-stretch (Linux)
   ]
-  revision 2
   compatibility_version 1
   head "https://code.qt.io/qt/qtmultimedia.git", branch: "dev"
 
@@ -22,12 +21,11 @@ class Qtmultimedia < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "947e3d26408c8b66b7bd959e93f34ab0b78038abcbac0fc12b5b4e18dbf775d0"
-    sha256 cellar: :any, arm64_sequoia: "b6716189169e728d1cb0b49c1030477b9c880ef670219c797e97baf26e21dc69"
-    sha256 cellar: :any, arm64_sonoma:  "3ce64000ecb049c693b4411578a02da4eb729d77d7b55d4889b11e35d9f46167"
-    sha256 cellar: :any, sonoma:        "7bd552448a559c538272bf41ec1a5873872ff4c870e8a1516d716b9a81fda65a"
-    sha256 cellar: :any, arm64_linux:   "5a1820a127c4e61698738c6e04fced0538eae5ddea2e9c92801382422a63a668"
-    sha256 cellar: :any, x86_64_linux:  "7e47654ff71ef237b73ad23abf20e9b50dd0471923773a83279de377f389457f"
+    sha256 cellar: :any, arm64_tahoe:   "1518365e69788eec239f0265c3d4b30e5f80e7d46be7d8694a27ec2aec332668"
+    sha256 cellar: :any, arm64_sequoia: "156078210836f3ae76f2a86ef4a946d78e3261a15ec3721dbf1983bcec00a461"
+    sha256 cellar: :any, arm64_sonoma:  "baccc48e49ebcdebc1a23491a85d2cf55880e53309b53f68d9f3e7a352da9827"
+    sha256 cellar: :any, arm64_linux:   "fa48d476a7bc900e898e6280bc1af10c01e1a812cafee3128748fad21463cb45"
+    sha256 cellar: :any, x86_64_linux:  "77316cdb36209765dac3d3a585142350445a6453a6e12024a78cab3845cde902"
   end
 
   depends_on "cmake" => [:build, :test]

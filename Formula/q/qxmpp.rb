@@ -4,14 +4,14 @@ class Qxmpp < Formula
   url "https://invent.kde.org/libraries/qxmpp/-/archive/v1.16.3/qxmpp-v1.16.3.tar.bz2"
   sha256 "8a9833b8e991736584f46b2f70a7c0252366f69846a263fbc2db723628385cad"
   license "LGPL-2.1-or-later"
+  revision 1
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "832deac9e6f650ebc0669e896b898244be3e24d09e40f58ea09de546a66c0c2c"
-    sha256 cellar: :any, arm64_sequoia: "effe5b85403cfd24c7778ea64c96977bb24bdc153e5dd61140b4ca3ad521857f"
-    sha256 cellar: :any, arm64_sonoma:  "b32fb781780170ba4f432405a6c65ccd01801468f2eb6aed83a95632b6bc6499"
-    sha256 cellar: :any, sonoma:        "bf79c0f9f1d47a5efb13ccbf23c7543bc903b04c96179bc566a161be06c20a88"
-    sha256 cellar: :any, arm64_linux:   "353f8ffa08bc4b1aaa1067a0b802c74c866274c8afbaadf96e604b679790d277"
-    sha256 cellar: :any, x86_64_linux:  "982c446ead07867951052c839b093f81c679f042da3b50668323f7bae1d1b333"
+    sha256 cellar: :any, arm64_tahoe:   "2bf56db80726cde0f650024143022d1056b478db8dddc2b1c142070272e5cc75"
+    sha256 cellar: :any, arm64_sequoia: "a8d4b84e843c0ba32b2e23b9c47abcb6e8f2548a6181cf77338a487b3a759262"
+    sha256 cellar: :any, arm64_sonoma:  "dd6e6e560d2f48412bfc7e2f69b006f821a40d367d4c03deb3594f374c610a39"
+    sha256 cellar: :any, arm64_linux:   "8e6debf0d0c5ed3bc3d990fa9c9d451c570ff70cbf7ace7ea692b6cae2e1f662"
+    sha256 cellar: :any, x86_64_linux:  "05a6379521d5b41d48bf596a5067f691a5ca041a9284ea4b47af2402a78cd99c"
   end
 
   depends_on "cmake" => :build

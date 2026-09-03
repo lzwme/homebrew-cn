@@ -1,18 +1,17 @@
 class Lunarr < Formula
   desc "Self-hosted media streaming server and Plex alternative for movies and TV"
   homepage "https://github.com/lunarr-app/lunarr-go"
-  url "https://ghfast.top/https://github.com/lunarr-app/lunarr-go/archive/refs/tags/v0.9.4.tar.gz"
-  sha256 "7f954d3acce224f43c7891172953722092ecdd4aac17befb8115b8c0d0c0ffd9"
+  url "https://ghfast.top/https://github.com/lunarr-app/lunarr-go/archive/refs/tags/v0.10.0.tar.gz"
+  sha256 "b035633a2d8b98b171da2a2c59663ecf98faee2f630b78598afcedc45ec91464"
   license "Apache-2.0"
   head "https://github.com/lunarr-app/lunarr-go.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "b4cdbdbaf98950a0098bab5fcb943ce595e8d1adb2902fb24b685b0c90ff3f16"
-    sha256 cellar: :any, arm64_sequoia: "716a72b9f4ebf9ba262ebc22c27362f42eaaf2772259d7adea4d7d06ef9ccb57"
-    sha256 cellar: :any, arm64_sonoma:  "4501c736c69d7fcd073e6a2c2962d43246a3f2caa8e9a90942ff3e7ff817ecba"
-    sha256 cellar: :any, sonoma:        "5bd31307c6dfd353c2f46c4e0ffab0af4e37e303f8e76867af149e618a1b5ccb"
-    sha256 cellar: :any, arm64_linux:   "89ad8e44e7f0545c480a7b07dc2c7b3aa45b25e846e0d98503c2882092552a9f"
-    sha256 cellar: :any, x86_64_linux:  "a976bb9e5b696fa0134819dd03b35e3bd2742d0a8330eb32413c59a40509dd66"
+    sha256 cellar: :any, arm64_tahoe:   "2e2c9b2ed181a3eeb4592289aa3e39b3883aee219bf2525a238b7f3826d4eb7f"
+    sha256 cellar: :any, arm64_sequoia: "7efed3f6f965c3103848457bd0d6ab60681577a289ae33745287785900c5902a"
+    sha256 cellar: :any, arm64_sonoma:  "5a1f25d296be9c2e79e2769bf1a6fdde5fa01b24466a6533e46dd8b65ee588e3"
+    sha256 cellar: :any, arm64_linux:   "954b52651270479f8549ac96ae52338b454c1cf17b41020af0eb2eb18f0827f6"
+    sha256 cellar: :any, x86_64_linux:  "1b376e643ead7a1523906c26192e68cd59b58df8308b8e597eb46a9855831912"
   end
 
   depends_on "ffmpeg"

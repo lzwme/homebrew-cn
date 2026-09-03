@@ -21,6 +21,12 @@ class Odiff < Formula
     depends_on "nasm" => :build
   end
 
+  deny_network_access!
+
+  def fetch
+    system "zig", "build", "--fetch=all"
+  end
+
   def install
     system "zig", "build", *std_zig_args
   end

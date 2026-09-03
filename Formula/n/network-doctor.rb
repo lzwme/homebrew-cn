@@ -1,16 +1,16 @@
 class NetworkDoctor < Formula
   desc "Network troubleshooting TUI"
   homepage "https://github.com/heymaikol/network-doctor/"
-  url "https://ghfast.top/https://github.com/heymaikol/network-doctor/archive/refs/tags/v1.15.2.tar.gz"
-  sha256 "9c954c36dc83d24decbeeb7fec6a2f379aca114eed165a0193cb35d0b64c9ee5"
+  url "https://ghfast.top/https://github.com/heymaikol/network-doctor/archive/refs/tags/v1.16.1.tar.gz"
+  sha256 "7593def330e7d4dfcb24eb44c451f4e078269e8738ad89e3d84c7031945eeae8"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e70f08114438dcbfb08b7eb338443421d8aa2c48a65400145b642a33431b44c8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e70f08114438dcbfb08b7eb338443421d8aa2c48a65400145b642a33431b44c8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e70f08114438dcbfb08b7eb338443421d8aa2c48a65400145b642a33431b44c8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1122fce1982cd79086cf584052b17a804e064dc9e446460313c21488bccc5e97"
-    sha256 cellar: :any,                 x86_64_linux:  "15ceed67b7406db07bb196a1c358eaf34ea44279ba52137cf31e55c0ceb54b06"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2e774aeabe6c839386d13ad602620d475ec98167741ce55165a9d1ef5471e016"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2e774aeabe6c839386d13ad602620d475ec98167741ce55165a9d1ef5471e016"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2e774aeabe6c839386d13ad602620d475ec98167741ce55165a9d1ef5471e016"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "aaf69cf10b40ebaece9ea82bcbf8f907655181627c64000128ecb2832ec700ba"
+    sha256 cellar: :any,                 x86_64_linux:  "ba7490214ecc5be91a6277a16c4b647eb4d11509c57a897b9394cc4af14cba61"
   end
 
   depends_on "go" => :build

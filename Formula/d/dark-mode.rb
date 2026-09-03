@@ -24,15 +24,13 @@ class DarkMode < Formula
 
   def install
     # https://github.com/sindresorhus/dark-mode/blob/main/build
-    Dir.mktmpdir do |tmpdir|
-      xcodebuild "-arch", Hardware::CPU.arch,
-                 "-derivedDataPath", tmpdir,
-                 "-scheme", "dark-mode",
-                 "-configuration", "Release",
-                 "MACOSX_DEPLOYMENT_TARGET=#{MacOS.version}",
-                 "OBJROOT=.build",
-                 "SYMROOT=.build"
-    end
+    xcodebuild "-arch", Hardware::CPU.arch,
+               "-derivedDataPath", ".build",
+               "-scheme", "dark-mode",
+               "-configuration", "Release",
+               "MACOSX_DEPLOYMENT_TARGET=#{MacOS.version}",
+               "OBJROOT=.build",
+               "SYMROOT=.build"
     bin.install ".build/Release/dark-mode"
   end
 

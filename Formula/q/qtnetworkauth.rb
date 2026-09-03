@@ -1,10 +1,10 @@
 class Qtnetworkauth < Formula
   desc "Provides support for OAuth-based authorization to online services"
   homepage "https://www.qt.io/"
-  url "https://download.qt.io/official_releases/qt/6.11/6.11.1/submodules/qtnetworkauth-everywhere-src-6.11.1.tar.xz"
-  mirror "https://qt.mirror.constant.com/archive/qt/6.11/6.11.1/submodules/qtnetworkauth-everywhere-src-6.11.1.tar.xz"
-  mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.11/6.11.1/submodules/qtnetworkauth-everywhere-src-6.11.1.tar.xz"
-  sha256 "9f1d5bf22ccc033e42076186b964f9d4d4179fd0312a2c0f1aa19db42516563d"
+  url "https://download.qt.io/official_releases/qt/6.11/6.11.2/submodules/qtnetworkauth-everywhere-src-6.11.2.tar.xz"
+  mirror "https://qt.mirror.constant.com/archive/qt/6.11/6.11.2/submodules/qtnetworkauth-everywhere-src-6.11.2.tar.xz"
+  mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.11/6.11.2/submodules/qtnetworkauth-everywhere-src-6.11.2.tar.xz"
+  sha256 "0c83c23077ab7824393fa15bb0015c3c5acaf5678544aa789e3fcbb4d41fa05b"
   license all_of: [
     "GPL-3.0-only",
     "BSD-3-Clause", # *.cmake
@@ -17,12 +17,11 @@ class Qtnetworkauth < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "bd4080bac44121ac510ec81870a259a66ca1053cebe9707f4d9ac6c6e669dddf"
-    sha256 cellar: :any,                 arm64_sequoia: "52767a785edc44dfa0a8228946b519f23e3fd9dae8a64d690c69a538e717254d"
-    sha256 cellar: :any,                 arm64_sonoma:  "4cba74892fed5aaae20fbd7b9ddedc1c7eecb14abf32dde41ae8eefcb81071f6"
-    sha256 cellar: :any,                 sonoma:        "fc65e6fedbd9f338be99f6e8a23c64d029f97c18c206aab545b857b9ac57e5e7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a266c0de33868dd0e2e3a57751f5cf10d060f3fdd33b180d3c45c962f4e964ac"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4f2015c3458a08a9fb812bf94a1ec3cf77f1b0d737c9ffb3a724763db2eac04c"
+    sha256 cellar: :any, arm64_tahoe:   "a1bd785769edb011ec1fe4030a3b694a844fccb0afa80bebebc4c3a258fc5a06"
+    sha256 cellar: :any, arm64_sequoia: "51bda879d89efb0b158a1a2b2fb011095ef870c5342e98f74821d850c6b26b8b"
+    sha256 cellar: :any, arm64_sonoma:  "a21674fd159a0dc63deab64b29a354d792bc1693d2160e6cf9fd868ac4874424"
+    sha256 cellar: :any, arm64_linux:   "7e8200e2233687f6810d0d00d9492c882737fe0b4aa0420660ae6b85ce7889e5"
+    sha256 cellar: :any, x86_64_linux:  "020c6770a708e8903a47754158b096ae7415d3ec8847787cd8f749e6e79713cd"
   end
 
   depends_on "cmake" => [:build, :test]

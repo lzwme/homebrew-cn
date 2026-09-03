@@ -1,8 +1,8 @@
 class Massdriver < Formula
   desc "Manage applications and infrastructure on Massdriver Cloud"
   homepage "https://www.massdriver.cloud/"
-  url "https://ghfast.top/https://github.com/massdriver-cloud/mass/archive/refs/tags/2.2.1.tar.gz"
-  sha256 "06882bd8906ed41c1616a6a2d2705ab14e61b430caf8e064f04d5a3c8c9f9ae1"
+  url "https://ghfast.top/https://github.com/massdriver-cloud/mass/archive/refs/tags/2.3.0.tar.gz"
+  sha256 "7d8d2eea1145697256591312db5d712af198b4a1877568bff1c298bc7dc57ae5"
   license "Apache-2.0"
   head "https://github.com/massdriver-cloud/mass.git", branch: "main"
 
@@ -15,12 +15,11 @@ class Massdriver < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cf30a6626b032f62cc41a836fdd069b6c349841a4d9b9d1821b6b963c986023d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cf30a6626b032f62cc41a836fdd069b6c349841a4d9b9d1821b6b963c986023d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cf30a6626b032f62cc41a836fdd069b6c349841a4d9b9d1821b6b963c986023d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "06a72561ae742b406eed0b1631883731843a6acb4336f95aeaf9f87abddd8a53"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "26e745088e81704c552f51b24341bcf600f1cbda9d274f2e1355920763f3c965"
-    sha256 cellar: :any,                 x86_64_linux:  "b6b51ad745042bf9d7c3b4b227f5be9cdae20b0e9dbf43cb2a6481ceec9b0905"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "731294f02f6d0f57ac7e6c3dca401989bf935e12d56dc3e8ff0c3ed75b7f803a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "731294f02f6d0f57ac7e6c3dca401989bf935e12d56dc3e8ff0c3ed75b7f803a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "731294f02f6d0f57ac7e6c3dca401989bf935e12d56dc3e8ff0c3ed75b7f803a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9783b14c0641400bfa75be883a7882ed16ce8f9049a456cc615644c2150b9b76"
+    sha256 cellar: :any,                 x86_64_linux:  "267384f2b6ede9944bb995839c591056cff79f2367e458b22b809984b50a8204"
   end
 
   depends_on "go" => :build

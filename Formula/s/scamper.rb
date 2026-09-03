@@ -1,8 +1,8 @@
 class Scamper < Formula
   desc "Advanced traceroute and network measurement utility"
   homepage "https://www.caida.org/catalog/software/scamper/"
-  url "https://www.caida.org/catalog/software/scamper/code/scamper-cvs-20260713.tar.gz"
-  sha256 "9fc67d6483e240dc38f098a3db13e99fcf678ad00667c6b32a0a2bedba7be697"
+  url "https://www.caida.org/catalog/software/scamper/code/scamper-cvs-20260902.tar.gz"
+  sha256 "a2c5bc636d6351a395f57e121b4d813f46c001e7b831b538fd467b9cbc7625de"
   license "GPL-2.0-only"
 
   livecheck do
@@ -11,12 +11,11 @@ class Scamper < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "d12d6e91f7573dc1d964c5d314607576ec6ba350a75b5cbef0521ea55c39fbd4"
-    sha256 cellar: :any, arm64_sequoia: "8897010f8a313d2f2f4ee49ef82526a27ed2de17542d1cc66554a88b29e5bf18"
-    sha256 cellar: :any, arm64_sonoma:  "9cc1cb77c3caede21c043453b6b01193ce69622999afbfdfcdf398779c7fc805"
-    sha256 cellar: :any, sonoma:        "08b7245155f1abbdd811f130a29457f3cdb613abf6554e9f47a5d8c10e159950"
-    sha256 cellar: :any, arm64_linux:   "7db18337cd791295d5f6954c80e8d189969946a9deb56193377579934f9b7982"
-    sha256 cellar: :any, x86_64_linux:  "b9bdbbdd659588c8f666ef99a67fb7559d19953998697750874d5c774fd5fd8c"
+    sha256 cellar: :any, arm64_tahoe:   "e0601f8241076da65ec5e9efa8aaa28dcd524fc6faac3f6f17b4629ad617cc63"
+    sha256 cellar: :any, arm64_sequoia: "ea5acd2bd87287bf95a4906d09ea8c4912a1fb613fc0c2f73a12f8ad08c5756e"
+    sha256 cellar: :any, arm64_sonoma:  "173ceeca357f7bdbc11d8cbf02a5ad02fd3792522977da899b4a4b467351842c"
+    sha256 cellar: :any, arm64_linux:   "4c086c292231bb8f21a95be6d1591c17e66b4784323d9c497c47671223076e3b"
+    sha256 cellar: :any, x86_64_linux:  "b7dd05c9b140144840bc61672e798245b31ec43c5628363a59d38fd9ac1b6c7a"
   end
 
   depends_on "pkgconf" => :build

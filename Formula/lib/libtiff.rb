@@ -13,13 +13,12 @@ class Libtiff < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "5d1873ffd3458d6288110874c349921206349359cf6564443bf2ed92ef9e5d46"
-    sha256 cellar: :any, arm64_sequoia: "5f4a42e711c65a9b72c426ec773c4c9a1d1daf38184fdf1a1f908573cebbcdce"
-    sha256 cellar: :any, arm64_sonoma:  "3783a59d14d00405ee96a9cbf5bba49a9c764c62b67274e642e71a0f65c9fb6e"
-    sha256 cellar: :any, sonoma:        "003a1e40acdc28f5967b78e5aaa322e5f3b678e7c4f9bc46f481637637ba0aa5"
-    sha256 cellar: :any, arm64_linux:   "c2919dec1eca250774cbbe4a147e98ba15f860fce1ba9eecd85a26a0352af416"
-    sha256 cellar: :any, x86_64_linux:  "fd184f2cda1930f320423cee490c95aecc3522f4a5cfc4f92f75432e87c2b92a"
+    rebuild 2
+    sha256 cellar: :any, arm64_tahoe:   "9a0ff1ac153879e9fb324951f33fc52c797149a6de44176e4fb80f0c8adad9a8"
+    sha256 cellar: :any, arm64_sequoia: "e971adc15ce3387a9c68a10ff1cf431755faf0e86b9d3a6daf668efc2f6f31d8"
+    sha256 cellar: :any, arm64_sonoma:  "4504c9c0fd45de525e9a532da674b703bda04d377d7471f70cf611954da1fb1d"
+    sha256 cellar: :any, arm64_linux:   "076896f22523cb34a4c1f8488bd27049d57b30f6e0232c74578df432700d61f2"
+    sha256 cellar: :any, x86_64_linux:  "565e06c1da5aca67e2993315807301afddd252372c0896b76be515895b3c053a"
   end
 
   depends_on "jpeg-turbo"
@@ -30,6 +29,8 @@ class Libtiff < Formula
   on_linux do
     depends_on "zlib-ng-compat"
   end
+
+  deny_network_access!
 
   def install
     args = %W[

@@ -2,18 +2,17 @@ class Minikube < Formula
   desc "Run a Kubernetes cluster locally"
   homepage "https://minikube.sigs.k8s.io/"
   url "https://github.com/kubernetes/minikube.git",
-      tag:      "v1.38.1",
-      revision: "c93a4cb9311efc66b90d33ea03f75f2c4120e9b0"
+      tag:      "v1.39.0",
+      revision: "7a9f6a841470a207de8cf4bafcccee0969d8ba10"
   license "Apache-2.0"
   head "https://github.com/kubernetes/minikube.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5c31e8d9b87939095f0417654c408364fee92953905447c1128ee6c5d70c72a9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "80690c46408b61a2073e533325cf16cdaf4777c66eec5c2e3a87b983615d1e1b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "430e398f58a5cd08a7f65143fb05a847a8d53304cea571818ed25b0d5ce716df"
-    sha256 cellar: :any_skip_relocation, sonoma:        "97505b2bc08deed55885c7ca457f3f3b1150663818bd607a0927968eee778729"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6ad4573edd8932cd1f1cdd9f82b360f97124ff63fdf161ac9a145b0444285def"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1f82f02f15af2c9b7931dd0c240bb5ac63d40276325ed53c1bcfe5c4aff72efe"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a4313593f7dca6cb8f16cc8791ce053d84742d4a075d3c7646f794b39efd55c3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9b1dc08bbfd0b90a9ea6646d239ea3247340f32291cc7a6d5f319360afc72146"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "01a90891dc2e3c6d57740c222654d20930aeefe9030b7664873fbf74c5b1e767"
+    sha256 cellar: :any,                 arm64_linux:   "abd3172ee766e0c802f509d1db773eb1f655993071795a70c6edff1869b3f5fa"
+    sha256 cellar: :any,                 x86_64_linux:  "bdcdac9a2eacbc0f5a4a2f6ec34ec12b5c3d588f3bfb8f6dfa4ecc1bd80f57aa"
   end
 
   depends_on "go" => :build

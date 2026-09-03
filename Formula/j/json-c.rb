@@ -12,15 +12,17 @@ class JsonC < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "4095feba36f7d453ae23ddb2656038e0784e857e1c860e70fe26a7c5089c36f5"
-    sha256 cellar: :any, arm64_sequoia: "760e09935d633a49e8a25121969022ef158eed40b739bd142063aadbfed41730"
-    sha256 cellar: :any, arm64_sonoma:  "5400fe0c0a10ad922569ca98c24aad93feb3941509ba16e89658e252d4b8c7f1"
-    sha256 cellar: :any, sonoma:        "616cd6df4b887c15fbe14f1b8e15a1832d0e7790152bd5ae5c6469c896d96fae"
-    sha256 cellar: :any, arm64_linux:   "7f7efa6004df5536485af1f41d96ee65b395e6c3c55a1a4e18e41ff68df6efbe"
-    sha256 cellar: :any, x86_64_linux:  "4d85c99fb83f7bdda0f79118df9605db6bfb1a0e4bfac02ffccddc645c1991d3"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "f2da9c816501d9c3c0e5f883b60b3d2758b35a3995e20d541d4b029d8b35ef13"
+    sha256 cellar: :any, arm64_sequoia: "5624048dbb067f1a6d3784081029c3d738edeefd57188ce6724bb93d01aa53aa"
+    sha256 cellar: :any, arm64_sonoma:  "ce9c5f6c7095110cd5c9336b9277e1845cc55bb0fc98c7550576587fd28abbb1"
+    sha256 cellar: :any, arm64_linux:   "64475f64c83a75a0438e4d652bd75b0e7428f2e33e33377c88f087f4c652ed90"
+    sha256 cellar: :any, x86_64_linux:  "9745b482f9c14d66b5ec02f567a61f7ef29f9060cded74e5b37e322c139580af"
   end
 
   depends_on "cmake" => :build
+
+  deny_network_access!
 
   def install
     # We pass `BUILD_APPS=OFF` since any built apps are never installed. See:
