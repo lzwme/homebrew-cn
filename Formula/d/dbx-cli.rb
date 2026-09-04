@@ -1,8 +1,8 @@
 class DbxCli < Formula
   desc "Command-line interface for DBX database connections, schema, and safe queries"
   homepage "https://dbxio.com"
-  url "https://ghfast.top/https://github.com/t8y2/dbx/archive/refs/tags/packages-v0.4.78.tar.gz"
-  sha256 "046c8faacd3e3aa272dde7c8d40023e7943703264dfc07ebad52362058ad0f22"
+  url "https://ghfast.top/https://github.com/t8y2/dbx/archive/refs/tags/packages-v0.4.79.tar.gz"
+  sha256 "575606954ba2e31f7c362ae619d457f5af8ad0e3792ab906bb44e2e02ab020d0"
   license "Apache-2.0"
 
   livecheck do
@@ -11,11 +11,11 @@ class DbxCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "b8b5aa32066da33745403e253d30c31c19e7c8c055f0282e0c3ddfce12654ce0"
-    sha256 cellar: :any, arm64_sequoia: "074486720c2af8fa28349ed2e3811c96ddbae2e0e0fccd23c53bd94cfb87f765"
-    sha256 cellar: :any, arm64_sonoma:  "9a9f3a34be4bbc3bc4ad39bc74b3ade24fb23d71c3c14c953e9787528e7264e9"
-    sha256 cellar: :any, arm64_linux:   "b0404657ed6b27ce2c7bbe9916352ee4e43217747ba5b4fc90c1bfa964a5a66b"
-    sha256 cellar: :any, x86_64_linux:  "7c98e3952fda0ed383a25f485616a5c66b389ff46d4a870be8dcc9aaf1804b37"
+    sha256 cellar: :any, arm64_tahoe:   "766644f78acbcde92f000e576e42bc489d70339bf671038eab1349267a4520ff"
+    sha256 cellar: :any, arm64_sequoia: "448192aa117f51ecd7bb1baa329d31591b055dd13f96e47610a6f6ea25966ac9"
+    sha256 cellar: :any, arm64_sonoma:  "00a65bbe71d60013f98456a31658cd3d0658681255b5f55d8050eafed7c30b1f"
+    sha256 cellar: :any, arm64_linux:   "9338b75119883e29e1c528929525229a6496211cecdad15bd513f99a7bb9c5dd"
+    sha256 cellar: :any, x86_64_linux:  "3e27cc38d2a2c1d13abfb1f7f774bf6a5ab2a95b06a1bc15926d9d70e5ac4b77"
   end
 
   depends_on "pkgconf" => :build

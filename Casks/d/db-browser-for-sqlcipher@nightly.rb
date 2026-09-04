@@ -3,10 +3,10 @@ cask "db-browser-for-sqlcipher@nightly" do
   os macos: "universal_"
   url_end = on_system_conditional macos: ".dmg", linux: "-#{arch}.AppImage"
 
-  version "20260810"
+  version "20260904"
 
   on_macos do
-    sha256 "5cbe5e4b93ee933e2ff9db178c8970eed938e4eedac31346f15ae4c224b650ae"
+    sha256 "6c50c626b9a3e6b84db372bbe601e54e2fc9284c9d190abdd3aea6e07f7826a4"
 
     app "DB Browser for SQLCipher Nightly.app"
 
@@ -17,8 +17,8 @@ cask "db-browser-for-sqlcipher@nightly" do
     ]
   end
   on_linux do
-    sha256 arm64_linux:  "6ee90d91155038a4c5277bffd6be99059e692470a81ead6e717186968c818a10",
-           x86_64_linux: "9d571fed74dbbd570d5b6f1d2ce09217232dff2502036479eb609c7e25337a0d"
+    sha256 arm64_linux:  "f87c056a35d1391ececd5efa7c19744b1fe1bb7ce235ccdd1e317c0b4cd80d5d",
+           x86_64_linux: "0354f39b2047039711632bb591f34355bf8250e200709b6aa647ca16ffeb9bd7"
 
     app_image "DB.Browser.for.SQLCipher-#{version}-#{arch}.AppImage",
               target: "DBBrowserForSQLCipherNightly.AppImage"

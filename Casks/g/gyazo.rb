@@ -12,10 +12,10 @@ cask "gyazo" do
     strategy :sparkle
   end
 
+  auto_updates true
   depends_on macos: :big_sur
-  depends_on maximum_macos: :sequoia
 
-  pkg "Gyazo-#{version}.pkg"
+  installer manual: "Gyazo-#{version}.pkg"
 
   uninstall launchctl: "com.gyazo.menu.helper",
             quit:      "com.gyazo.menu",

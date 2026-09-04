@@ -730,6 +730,7 @@ Homebrew-homebrew-core/Formula/b/btpd.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/btrfs-progs.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/bttf.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bubblewrap.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/b/budget-tracker.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/buf.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/buffa.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/buffrs.rb, Homebrew/homebrew-core, 1
@@ -15566,6 +15567,7 @@ Homebrew-homebrew-cask/Casks/t/tencent-meeting.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/tencent-ugit.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/tentacle-sync-studio.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/terax.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/t/terminal-browser.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/terminology.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/termius.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/termius@beta.rb, Homebrew/homebrew-cask, 0
@@ -15906,6 +15908,7 @@ Homebrew-homebrew-cask/Casks/v/veepn.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/v/vellum.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/v/veracrypt-fuse-t.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/v/veracrypt.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/v/vernier-graphical-analysis.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/v/vernier-spectral-analysis.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/v/vero.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/v/versatility.rb, Homebrew/homebrew-cask, 1
