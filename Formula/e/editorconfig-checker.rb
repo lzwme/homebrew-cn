@@ -1,8 +1,8 @@
 class EditorconfigChecker < Formula
   desc "Tool to verify that your files are in harmony with your .editorconfig"
   homepage "https://editorconfig-checker.github.io/"
-  url "https://ghfast.top/https://github.com/editorconfig-checker/editorconfig-checker/archive/refs/tags/v4.0.0.tar.gz"
-  sha256 "b350ded643f122036c685c770914c54d09e7c6beccfb564b2bdcbdcc7fc90014"
+  url "https://ghfast.top/https://github.com/editorconfig-checker/editorconfig-checker/archive/refs/tags/v4.0.1.tar.gz"
+  sha256 "9a53621851423ea758647521be5f2bbc45c97dfca2197e7dfd3a814196a0b783"
   license "MIT"
   head "https://github.com/editorconfig-checker/editorconfig-checker.git", branch: "main"
 
@@ -12,11 +12,11 @@ class EditorconfigChecker < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "003e7ddd098b4d18085561551a219553da8a685b301f4fb8e910af6728768dc5"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "003e7ddd098b4d18085561551a219553da8a685b301f4fb8e910af6728768dc5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "003e7ddd098b4d18085561551a219553da8a685b301f4fb8e910af6728768dc5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a6e189d97b36ddc1c432063671e6b4049eddc1c409172875f7e741edea0b4415"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9bb348d57f39b1b39d73b4d3793b5b4580979de11eda009abe5083b477059481"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7a1d28f73dfb85a04bd4d37334cd658e65d5388311e81d2de6283929809e3388"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7a1d28f73dfb85a04bd4d37334cd658e65d5388311e81d2de6283929809e3388"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7a1d28f73dfb85a04bd4d37334cd658e65d5388311e81d2de6283929809e3388"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "31f9c41d8ae8ff72455eaa933278fc9a1180894eb34218ebf1575b58828aca8a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9a3f10415c9211b25420a08a37ae6e18c3f2a006f03c2913efcaa96a98c437d1"
   end
 
   depends_on "go" => :build

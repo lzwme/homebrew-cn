@@ -23,7 +23,7 @@ class Llmfit < Formula
   end
 
   def install
-    system "cargo", "install", "--offline", *std_cargo_args
+    system "cargo", "install", *std_cargo_args
   end
 
   test do

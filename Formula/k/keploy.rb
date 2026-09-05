@@ -1,17 +1,17 @@
 class Keploy < Formula
   desc "Testing Toolkit creates test-cases and data mocks from API calls, DB queries"
   homepage "https://keploy.io"
-  url "https://ghfast.top/https://github.com/keploy/keploy/archive/refs/tags/v3.6.42.tar.gz"
-  sha256 "993f6d8a7b20bbfe27ba210f8a521d8723d0042595baf4d78ed58ccb46a41499"
+  url "https://ghfast.top/https://github.com/keploy/keploy/archive/refs/tags/v3.6.48.tar.gz"
+  sha256 "a5560c451caa90c672985e5099f5d55e36f4854f33117bf55e3994c2136e4a09"
   license "Apache-2.0"
   head "https://github.com/keploy/keploy.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ae0d3b6f6f06f71456a72fa9a612382681ad0d006046f3ec087d193f2dbf5b76"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ae0d3b6f6f06f71456a72fa9a612382681ad0d006046f3ec087d193f2dbf5b76"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ae0d3b6f6f06f71456a72fa9a612382681ad0d006046f3ec087d193f2dbf5b76"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d03a7a1ed312cd0a0ddd789fbc3806bddfc700d610f41dfb4e4321de286c7382"
-    sha256 cellar: :any,                 x86_64_linux:  "aa1f5030e398852c2a322516555a8c3fbdcfed9008111be875e236040d43ca95"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "da1daa9c8bf47fc4d313a765dc7fcbd19f9dfd17b7b7100f05337b402dc2ac80"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "da1daa9c8bf47fc4d313a765dc7fcbd19f9dfd17b7b7100f05337b402dc2ac80"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "da1daa9c8bf47fc4d313a765dc7fcbd19f9dfd17b7b7100f05337b402dc2ac80"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5a5bfc5d913acba58949ca34ddb3e7e93300520f64b4510cbfd78d384435885d"
+    sha256 cellar: :any,                 x86_64_linux:  "4792f2ad8f1e309b5d5bf5a385cff27615ab26d34b618963f738eff8ce26745f"
   end
 
   depends_on "go" => :build

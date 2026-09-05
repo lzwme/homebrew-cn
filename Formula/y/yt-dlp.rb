@@ -9,12 +9,12 @@ class YtDlp < Formula
   compatibility_version 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6781807568f993cb31210958a3dd62bc5c94b14c75884edb7e506f50ed3d1d5d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4cc7f84c904035caf5367eab08ee6f5aad0786adaf65a07b3aa4ae0529b693d3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f529e5ca3f3b4945913dc70c403ac054a73bd308ec0e110651920ceed72d2d0a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "53a076107d9941d0ae262beeb26406610f157fb7a88369ccfb821ec0720149ec"
-    sha256 cellar: :any,                 arm64_linux:   "c652684bc0b991da48936e4e1c69628dd56ed7acdedfb290acf33700c04a5f40"
-    sha256 cellar: :any,                 x86_64_linux:  "4ee7074c392505f356513ff46b526b4fc8d35f2f8e90a7e3e8d36ecf409bd45e"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "28f8f28d57c163930f5e8db600bc349a92ff11987224aa416a9c3e782874064d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f842793c593ce1bf6391af222bf3ddb13f39ba3e28b988c31139b04d9f6c054c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "642691d0478cfc2372e1046d8c42d3ef4e139e14da6b98eedf60071e4b813c4d"
+    sha256 cellar: :any,                 arm64_linux:   "cc4f228e9f2d5af85b87420fc0ef8e35833ca1ffc6ef491d91b86b797cf3d613"
+    sha256 cellar: :any,                 x86_64_linux:  "e4fe17a6345c57e37c9a1dac0076b73686d5761ad3289a45ee5bc4b43f17591d"
   end
 
   head do
@@ -75,6 +75,8 @@ class YtDlp < Formula
     sha256 "d5fa1639f63b5c4af8d932495f60689d5370f1a095782c944f7f62a303eb104e"
   end
 
+  deny_network_access! :postinstall
+
   def install
     system "make", "lazy-extractors", "pypi-files" if build.head?
     virtualenv_install_with_resources
@@ -84,7 +86,7 @@ class YtDlp < Formula
   end
 
   test do
-    system bin/"yt-dlp", "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/brew/refs/heads/master/Library/Homebrew/test/support/fixtures/test.gif"
+    system bin/"yt-dlp", "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/brew/refs/heads/main/Library/Homebrew/test/support/fixtures/test.gif"
 
     system bin/"yt-dlp", "--simulate", "https://x.com/X/status/1922008207133671652"
   end

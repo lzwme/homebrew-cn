@@ -3,17 +3,17 @@ class Fastmcp < Formula
 
   desc "Fast, Pythonic way to build MCP servers and clients"
   homepage "https://gofastmcp.com/getting-started/welcome"
-  url "https://files.pythonhosted.org/packages/fd/d8/55fa434420f6404d4157b7a069289ad86f6519e43fccda24ab38e2c3467a/fastmcp-4.0.1.tar.gz"
-  sha256 "3e24d349c8513917db3d2c4bbbc3028370aa4e66d69b975ec0ca599979d2d0d0"
+  url "https://files.pythonhosted.org/packages/37/1c/981a1854f91a08872f4b8b9a627d5d751cafc1340d29b21b747f0b520b0a/fastmcp-4.0.2.tar.gz"
+  sha256 "60d5c5ead3b6a117bfada5c0f95fe5c1aba53d1577079ecbdf42eeff0cd9b931"
   license "Apache-2.0"
   head "https://github.com/jlowin/fastmcp.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "dc9ea4b4c7d985431479c4d332d793ffa9c7b71bd8a3aae497c94a1220ff9a54"
-    sha256 cellar: :any, arm64_sequoia: "edf65033408e40c422267c43783a86d56d6b3df831491ef5b93e33df528055bf"
-    sha256 cellar: :any, arm64_sonoma:  "37268c4e14bff7810d88385005f014cb31b81b04e992e344dd9b675128f69052"
-    sha256 cellar: :any, arm64_linux:   "9f0a3ca101017894bb9f8ac174d7c37c14a222f348044bed62d9ead2952aca9d"
-    sha256 cellar: :any, x86_64_linux:  "6e8b20d3e66645d47884531c0dce452ee1217a4130da90ff1a078387ea9e4e5c"
+    sha256 cellar: :any, arm64_tahoe:   "780757fb9ae71e63490f2c6929c8d945e20b66ee253758844d0191202fef9c64"
+    sha256 cellar: :any, arm64_sequoia: "21d68bbdf6c68b2e08b9cb18ff8e0c585797dc022b27f36e73ac32a983303e5a"
+    sha256 cellar: :any, arm64_sonoma:  "ea3bf18327fb4dfc7dcae90ab9e73f2ee7168ca9ebb8e272a7b747d9125a1891"
+    sha256 cellar: :any, arm64_linux:   "4b212a9b82fec96e0ccf58349144446d4ee5b2668c25e86aeab81094cd230c90"
+    sha256 cellar: :any, x86_64_linux:  "813e66b9d8f8ad5088fe3514af4f4bb78774d47a769eb8cc75a3255fc69b9cf8"
   end
 
   depends_on "rust" => :build # for py_key_value_aio
@@ -34,8 +34,8 @@ class Fastmcp < Formula
   end
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/61/cc/a381afa6efea9f496eff839d4a6a1aed3bfafc7b3ab4b0d1b243a12573dd/anyio-4.14.2.tar.gz"
-    sha256 "cfa139f3ed1a23ee8f88a145ddb5ac7605b8bbfd8592baacd7ce3d8bb4313c7f"
+    url "https://files.pythonhosted.org/packages/ea/9a/c15a60547004a3f3cea20296c934f827ddd7bdba225a2e7e9fcb5ec48c80/anyio-4.15.0.tar.gz"
+    sha256 "b5c620ed540725e2579c31b17bb995b3bf02c9281c9cace04c7d186380bab85e"
   end
 
   resource "attrs" do
@@ -94,8 +94,8 @@ class Fastmcp < Formula
   end
 
   resource "fastmcp-slim" do
-    url "https://files.pythonhosted.org/packages/1f/44/119fae9348a86388465cac7e2cfd3e52ddf28801ce3e56fa7b985de62b8b/fastmcp_slim-4.0.1.tar.gz"
-    sha256 "23f87109b4fe3bc78661ff36a140c05b69f59d3dda421313e2f66b09fc105c87"
+    url "https://files.pythonhosted.org/packages/9c/7d/c2597734e3a0859d62c9d8f6f35067d1e296537512e280db3af19204be64/fastmcp_slim-4.0.2.tar.gz"
+    sha256 "86b99bdcb872b52d964c79bc6d43ce79f40ed5538b589d102792b4a7cf3947f4"
   end
 
   resource "griffelib" do

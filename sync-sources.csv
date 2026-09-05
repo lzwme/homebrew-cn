@@ -6560,6 +6560,7 @@ Homebrew-homebrew-core/Formula/r/roapi.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/robin-map.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/roblox-ts.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/robodoc.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/r/robot-framework-robocop.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/robot-framework.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/robotcode.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/robotfindskitten.rb, Homebrew/homebrew-core, 0
@@ -7567,6 +7568,7 @@ Homebrew-homebrew-core/Formula/t/tfupdate.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tgenv.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tgif.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/tgpt.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/t/tgrep.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tgui.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/thanos.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/the-way.rb, Homebrew/homebrew-core, 1
@@ -13685,6 +13687,7 @@ Homebrew-homebrew-cask/Casks/m/maltego.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/malus.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/malwarebytes.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mamp.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/m/mangodisk.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/manico.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/manictime.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/manila.rb, Homebrew/homebrew-cask, 1
@@ -15456,6 +15459,7 @@ Homebrew-homebrew-cask/Casks/s/switchhosts.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/switchkey.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/switchresx.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/switchy.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/s/sxitch.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/symboliclinker.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/synalyze-it-pro.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/sync-my-l2p.rb, Homebrew/homebrew-cask, 1

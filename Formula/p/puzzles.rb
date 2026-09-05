@@ -2,8 +2,8 @@ class Puzzles < Formula
   desc "Collection of one-player puzzle games"
   homepage "https://www.chiark.greenend.org.uk/~sgtatham/puzzles/"
   # Extract https://www.chiark.greenend.org.uk/~sgtatham/puzzles/puzzles.tar.gz to get the version number
-  url "https://www.chiark.greenend.org.uk/~sgtatham/puzzles/puzzles-20260902.b30838a.tar.gz"
-  sha256 "9a13d7213e90238fdd7938a92c5527027e145d9a8fbd120404614501bb231638"
+  url "https://www.chiark.greenend.org.uk/~sgtatham/puzzles/puzzles-20260904.d385acc.tar.gz"
+  sha256 "a53b90904559054312e22a0d30573efb2c37609afc259905572d2a06782338a0"
   license "MIT"
   head "https://git.tartarus.org/simon/puzzles.git", branch: "main"
 
@@ -17,11 +17,11 @@ class Puzzles < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "272624d7a436cc37839d3380a27ab3f81dcc4b9f705811b72f56954a48f82fbd"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7c6ffefba22240fa6a5c7d2306c6492eb3ce96983a5da20fcf816fd2ca8023e1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "69bc866ad35dd57fef7d171ead7afbee858d74344136a97cb160a9bea66610ff"
-    sha256                               arm64_linux:   "eb8ece6359b4aab8a97b5a2cf2774fb048cf50629f9e465286764257c1a5ad28"
-    sha256                               x86_64_linux:  "1851e04fb6fb7f9867918d8177e149d288fd22967446ba8bf046fd5f2d86b128"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "223e2dc460219ecc7bcece6e957c6ad87e68f0164cc99d28ee015c5fc78e0b51"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "578f7bcc154b7d27445b8c158e5aaad458be5b8094c2b05c262518a02b69acea"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d9f515c6f221ce3f93230f81f44f9346cdafed92995927ac44b42ca4d60b6aaf"
+    sha256                               arm64_linux:   "fbb2c8d26ffc44430b17d15be219e6622a56a97423a14d122e496527cb0d01fe"
+    sha256                               x86_64_linux:  "c3ad6fde43b7a9f381f60e84b017d23631f02d256c2e3aaba9d29f219894ae53"
   end
 
   depends_on "cmake" => :build

@@ -1,16 +1,16 @@
 class Seam < Formula
   desc "Command-line interface (CLI) for interacting and developing with the Seam API"
   homepage "https://github.com/seamapi/cli"
-  url "https://registry.npmjs.org/@seamapi/cli/-/cli-0.37.0.tgz"
-  sha256 "b927585809c97e3d6e04c5cdf88a13ab0c4c3ea907ff63cfebe8c813e81a4132"
+  url "https://registry.npmjs.org/@seamapi/cli/-/cli-0.38.0.tgz"
+  sha256 "7f49335dc643c5f40c345b8503e0e6fccaff452025a70c737227b40c43e187f6"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b5840da91792ad47a897ba44cc283cca5a886f8644b73d07379b5d5393553c87"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "90ea9b6cd6b9f07a00cee82b2f6ed13538e59f3ee8874d4c712058a3bbddb07c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d7f0507e7a9d7aba5fe3919a3f65fbd397fe42bffa07eb9b17e73f6051239686"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2fb5042cde8388faa6eb2c1fe8bfa98cbbd41ed1fa4b45a066ed3800f4d7f4bd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "37c0594bf8fe0a59a36b4e5ee110170917c15a0a45e89269ad43b4384dbda12e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "01e4d7f4a2d87ccab48b50e929d68149bb9d17604c785110f05dcd49d932bdb8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "931515e8c01e65aad02cbfd2f6ef9cacd86a4ab414a424c59fd03059b2e98a21"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2af0904bd5684b071452f7d48c9ab7631e4c67d1b5b36410e15b8cdddd79be19"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "11532007a568fad7ce321c592f11aa9cb955f147faed81be121e17e3d1ac4cbd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5096bb17c7f83c6c897c8cfbc010d1f2ce90e1327bca2ca60ce7fac77e2e3de7"
   end
 
   depends_on "node"
@@ -20,7 +20,7 @@ class Seam < Formula
     # which uses proprietary license.
     (libexec/"seam").install buildpath.children
     cd libexec/"seam" do
-      system "npm", "install", "--omit=optional", "--omit=dev", *std_npm_args(prefix: false)
+      system "npm", "install", "--omit=optional", "--omit=dev", "--legacy-peer-deps", *std_npm_args(prefix: false)
       with_env(npm_config_prefix: libexec) do
         system "npm", "link"
       end
