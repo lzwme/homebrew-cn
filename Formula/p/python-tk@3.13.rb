@@ -25,10 +25,6 @@ class PythonTkAT313 < Formula
   depends_on "python@3.13"
   depends_on "tcl-tk"
 
-  def python3
-    "python3.13"
-  end
-
   # Backport of https://github.com/python/cpython/commit/47cbf038850852cdcbe7a404ed7c64542340d58a
   # TODO: Remove if https://github.com/python/cpython/pull/127364 is merged and released
   patch :DATA

@@ -42,10 +42,6 @@ class Global < Formula
     sha256 "6757cd03768053ff99f3039c1a36d6c0aa0b263438fcab17520b30a303a82b5f"
   end
 
-  def python3
-    "python3.14"
-  end
-
   def install
     system "sh", "reconf.sh" if build.head?
 

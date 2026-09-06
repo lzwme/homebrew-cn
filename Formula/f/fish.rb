@@ -1,8 +1,8 @@
 class Fish < Formula
   desc "User-friendly command-line shell for UNIX-like operating systems"
   homepage "https://fishshell.com"
-  url "https://ghfast.top/https://github.com/fish-shell/fish-shell/releases/download/4.9.1/fish-4.9.1.tar.xz"
-  sha256 "93400374bfdb73215cae43bdb09c724f1653f439a85dfc1fe2866639046c95f6"
+  url "https://ghfast.top/https://github.com/fish-shell/fish-shell/releases/download/4.9.2/fish-4.9.2.tar.xz"
+  sha256 "26b95769ce17a8962b220ba3f20771117dbfe9cb2c3ba6f4ed139e0cbfdf02b1"
   license "GPL-2.0-only"
   compatibility_version 1
   head "https://github.com/fish-shell/fish-shell.git", branch: "master"
@@ -15,11 +15,11 @@ class Fish < Formula
   pour_bottle? only_if: :default_prefix
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "781ad2db83ff66b3b6e5151a86bf7bf64601879f4d949b025b2af68c0efbab17"
-    sha256 cellar: :any, arm64_sequoia: "444b3b520089122e0eef85dc39f96f390be6a8729a94fc84c6342bcf1eb5fe93"
-    sha256 cellar: :any, arm64_sonoma:  "8cb010bab387290f2e05715ce5f0664c6d5c8482e154a1664014182e76d0c0f1"
-    sha256 cellar: :any, arm64_linux:   "ca3034132d32b877874cb922bd466bab8fec2b274070e4ca19eeafea2b92d9e1"
-    sha256 cellar: :any, x86_64_linux:  "a395de95d0e41b75364d8d19d87c43ea34b6a018f951ccb7d9a9f931579cadf2"
+    sha256 cellar: :any, arm64_tahoe:   "3eedf643000a60e8929585d9217a867fc4c81ab733363ced816c477eb0f25ab1"
+    sha256 cellar: :any, arm64_sequoia: "3c9d78db0b6398271529b63453c92d8109e77ea49f7660a15cbf92f6759a59f2"
+    sha256 cellar: :any, arm64_sonoma:  "0954783203b4ebbac82edd8c461a0704aab1478938d7caa691435ae17dd10429"
+    sha256 cellar: :any, arm64_linux:   "36573583fa8dbddb607d6ef8aafc250813f385a0554733ca610f0e260283bd7d"
+    sha256 cellar: :any, x86_64_linux:  "c9a152a339203f6c1a976b9a4d9183a28e154433cc8b0aad4c291ba1046fa203"
   end
 
   depends_on "cmake" => :build

@@ -76,10 +76,6 @@ class Rpm < Formula
     resolves "https://github.com/rpm-software-management/rpm/pull/4291"
   end
 
-  def python3
-    "python3.14"
-  end
-
   def install
     # Ensure that the `openssl` crate picks up the intended library.
     ENV["OPENSSL_DIR"] = formula_opt_prefix("openssl@3")

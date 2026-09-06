@@ -23,13 +23,18 @@ class Textidote < Formula
   depends_on "ant" => :build
   depends_on "openjdk"
 
-  def install
+  deny_network_access!
+
+  def fetch
     # Skip javadoc: JDK 25 doclint rejects textidote's legacy `<tt>` tags
     inreplace "build.xml", 'depends="compile,javadoc"', 'depends="compile"'
 
-    # Build the JAR
     system "ant", "download-deps"
-    system "ant", "-Dbuild.targetjdk=#{Formula["openjdk"].version.major}"
+  end
+
+  def install
+    # Avoid downloading junit as we don't run tests
+    system "ant", "-Dbuild.targetjdk=#{Formula["openjdk"].version.major}", "-Djunit.absent=false"
 
     # Install the JAR + a wrapper script
     libexec.install "textidote-#{version}.jar" => "textidote.jar"

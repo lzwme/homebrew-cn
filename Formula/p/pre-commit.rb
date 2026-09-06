@@ -65,15 +65,11 @@ class PreCommit < Formula
     sha256 "c9d960c95fa458171e58222a5ccab7465298e4b6559977865e627c4719f1e825"
   end
 
-  def python3
-    "python3.14"
-  end
-
   def install
     # Avoid Cellar path reference, which is only good for one version.
     inreplace "pre_commit/commands/install_uninstall.py",
               "f'INSTALL_PYTHON={shlex.quote(sys.executable)}\\n'",
-              "f'INSTALL_PYTHON={shlex.quote(\"#{opt_libexec}/bin/#{python3}\")}\\n'"
+              "f'INSTALL_PYTHON={shlex.quote(\"#{opt_libexec}/bin/#{python3.basename}\")}\\n'"
 
     virtualenv_install_with_resources
   end

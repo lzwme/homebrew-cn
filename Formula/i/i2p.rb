@@ -24,6 +24,8 @@ class I2p < Formula
   depends_on "java-service-wrapper"
   depends_on "openjdk"
 
+  deny_network_access!
+
   def install
     ENV["JAVA_HOME"] = formula_opt_prefix("openjdk")
     os = OS.mac? ? "osx" : OS.kernel_name.downcase

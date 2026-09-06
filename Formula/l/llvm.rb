@@ -55,10 +55,6 @@ class Llvm < Formula
     depends_on "zlib-ng-compat"
   end
 
-  def python3
-    "python3.14"
-  end
-
   def clang_config_file_dir
     etc/"clang"
   end

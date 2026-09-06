@@ -66,7 +66,8 @@ class Neovide < Formula
     return unless OS.mac?
 
     # https://github.com/burtonageo/cargo-bundle/issues/118
-    with_env(TERM: "xterm") { system "cargo", "bundle", "--release" }
+    # Skip the default `.dmg`, which needs `hdiutil`: only the `.app` is installed anyway
+    with_env(TERM: "xterm") { system "cargo", "bundle", "--release", "--format", "osx" }
     prefix.install "target/release/bundle/osx/Neovide.app"
     rm bin/"neovide" # Remove the original binary first
     bin.write_exec_script prefix/"Neovide.app/Contents/MacOS/neovide"

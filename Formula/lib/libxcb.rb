@@ -25,8 +25,6 @@ class Libxcb < Formula
   depends_on "libxdmcp"
 
   def install
-    python3 = "python3.14"
-
     args = %W[
       --sysconfdir=#{etc}
       --localstatedir=#{var}

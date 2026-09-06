@@ -148,7 +148,6 @@ class Gyb < Formula
     inreplace "gyb.py", "default=getProgPath()",
                         "default='#{pkgetc}'"
 
-    python3 = "python3.14"
     venv = virtualenv_create(libexec, python3)
     venv.pip_install resources
 

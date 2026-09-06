@@ -27,7 +27,6 @@ class Mercurial < Formula
   depends_on "python@3.14"
 
   def install
-    python3 = "python3.14"
     system python3, "-m", "pip", "install", *std_pip_args(build_isolation: true), "."
 
     # Install chg (see https://www.mercurial-scm.org/wiki/CHg)

@@ -45,10 +45,6 @@ class Suricata < Formula
     sha256 "d76623373421df22fb4cf8817020cbb7ef15c725b9d5e45f17e189bfc384190f"
   end
 
-  def python3
-    "python3.14"
-  end
-
   def install
     venv = virtualenv_create(libexec, python3)
     venv.pip_install resources

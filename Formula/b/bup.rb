@@ -29,10 +29,6 @@ class Bup < Formula
     depends_on "acl"
   end
 
-  def python3
-    which("python3.14")
-  end
-
   def install
     ENV["BUP_PYTHON_CONFIG"] = "#{python3}-config"
 

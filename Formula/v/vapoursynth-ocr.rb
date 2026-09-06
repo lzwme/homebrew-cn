@@ -24,8 +24,6 @@ class VapoursynthOcr < Formula
   depends_on "tesseract"
   depends_on "vapoursynth"
 
-  def python3 = "python3.14"
-
   def install
     # Upstream build system wants to install directly into vapoursynth's libdir and does not respect
     # prefix, but we want it in a Cellar location instead.

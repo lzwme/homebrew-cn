@@ -70,9 +70,8 @@ class Vtk < Formula
   end
 
   def install
-    python = "python3.14"
     qml_plugin_dir = lib/"qml/VTK.#{version.major_minor}"
-    vtkmodules_dir = prefix/Language::Python.site_packages(python)/"vtkmodules"
+    vtkmodules_dir = prefix/Language::Python.site_packages(python3)/"vtkmodules"
     rpaths = [rpath, rpath(source: qml_plugin_dir), rpath(source: vtkmodules_dir)]
 
     args = %W[
@@ -110,7 +109,7 @@ class Vtk < Formula
       -DVTK_MODULE_USE_EXTERNAL_VTK_tiff:BOOL=ON
       -DVTK_MODULE_USE_EXTERNAL_VTK_utf8:BOOL=ON
       -DVTK_MODULE_USE_EXTERNAL_VTK_zlib:BOOL=ON
-      -DPython3_EXECUTABLE:FILEPATH=#{which(python)}
+      -DPython3_EXECUTABLE:FILEPATH=#{which(python3)}
       -DVTK_GROUP_ENABLE_Qt:STRING=YES
       -DVTK_QT_VERSION:STRING=6
     ]

@@ -26,14 +26,10 @@ class Autodiff < Formula
   depends_on "eigen@3"
   depends_on "pybind11"
 
-  def python3
-    "python3.14"
-  end
-
   def install
     args = %W[
       -DAUTODIFF_BUILD_TESTS=OFF
-      -DPYTHON_EXECUTABLE=#{which(python3)}
+      -DPYTHON_EXECUTABLE=#{python3}
     ]
     system "cmake", "-S", ".", "-B", "_build", *args, *std_cmake_args
     system "cmake", "--build", "_build"

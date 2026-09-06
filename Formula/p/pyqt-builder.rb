@@ -30,16 +30,12 @@ class PyqtBuilder < Formula
     sha256 "bb2516983f9f716d321e5157c00d0de0c12422eba73b8f43a44610a0f6622438"
   end
 
-  def python3
-    "python3.14"
-  end
-
   def install
     venv = virtualenv_install_with_resources
 
     # Modify the path sip-install writes in scripts as we install into a
     # virtualenv but expect dependents to run with path to Python formula
-    inreplace venv.site_packages/"sipbuild/builder.py", /\bsys\.executable\b/, "\"#{which(python3)}\""
+    inreplace venv.site_packages/"sipbuild/builder.py", /\bsys\.executable\b/, "\"#{python3}\""
   end
 
   test do

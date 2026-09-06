@@ -22,8 +22,6 @@ class VapoursynthDescale < Formula
   depends_on "python@3.14"
   depends_on "vapoursynth"
 
-  def python3 = "python3.14"
-
   def install
     # Help outdated #includes paths find VapourSynth
     vapoursynth_dir = "#{Language::Python.site_packages(python3)}/vapoursynth"

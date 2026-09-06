@@ -27,10 +27,6 @@ class Liblouis < Formula
 
   uses_from_macos "m4"
 
-  def python3
-    "python3.14"
-  end
-
   def install
     system "./autogen.sh" if build.head?
     system "./configure", "--disable-silent-rules", *std_configure_args

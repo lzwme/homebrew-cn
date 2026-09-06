@@ -41,10 +41,6 @@ class Z3 < Formula
 
   deny_network_access!
 
-  def python3
-    which("python3.14")
-  end
-
   def install
     args = %W[
       -DZ3_LINK_TIME_OPTIMIZATION=ON

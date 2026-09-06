@@ -1,8 +1,8 @@
 class Bwfmetaedit < Formula
   desc "Tool for embedding, validating, and exporting BWF file metadata"
   homepage "https://mediaarea.net/BWFMetaEdit"
-  url "https://mediaarea.net/download/binary/bwfmetaedit/26.08/BWFMetaEdit_CLI_26.08_GNU_FromSource.tar.xz"
-  sha256 "de5e588d640110a8b26efbc617863664bfd64805fb8beb6520d6bde778ce3a87"
+  url "https://mediaarea.net/download/binary/bwfmetaedit/26.08.1/BWFMetaEdit_CLI_26.08.1_GNU_FromSource.tar.xz"
+  sha256 "6650b61fab0bd752b907fda5ca3bdce5bb349e12d9a6f618e8ebfc52839bbd1f"
   license "0BSD"
 
   livecheck do
@@ -11,11 +11,11 @@ class Bwfmetaedit < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f5bc4f17ec5e00dba07053e86ca687eae41f152e60bdaab77fe9c37ba187c570"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4f5a57cecc532bace521f2b2f28f238bbbd96304ee8e0d5faf75593f4d56348d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ea9834959da8bb6fc8a4ac4f375c43178dedadd0711d8de61f4603f3b4d2af33"
-    sha256 cellar: :any,                 arm64_linux:   "d6821ea708082d3b5f8087b5e380eeaa3191abb61a77c0da35b021ea98f97dce"
-    sha256 cellar: :any,                 x86_64_linux:  "3616f1e3d7797073934ac6033279606b663cec59a1ba7079f68f281bdfd69f15"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d5d5d44a097ac59d71cbf6ae1b6bc5bc20db428025227c3832ef9567931d0078"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "16bab7973bacc32d3692b2d5d17401a910dc5d4c628c571bb46200d365d5eb8e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bf4bd068a5310be947bb3139461bd04d768e69490cc7e7b1fa858ce0f00a8e24"
+    sha256 cellar: :any,                 arm64_linux:   "92a80b40aa5f790bf3688dc9b47e03cfd1e66ce01188db8509b4e57dd2a316ae"
+    sha256 cellar: :any,                 x86_64_linux:  "f541508741ae28e5b09a9de4c90d68707a4bf8f255d078b355676b932e8cf748"
   end
 
   def install

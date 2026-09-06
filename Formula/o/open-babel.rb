@@ -32,10 +32,6 @@ class OpenBabel < Formula
     depends_on "zlib-ng-compat"
   end
 
-  def python3
-    "python3.14"
-  end
-
   conflicts_with "surelog", because: "both install `roundtrip` binaries"
 
   def install
@@ -44,7 +40,7 @@ class OpenBabel < Formula
       -DOPENBABEL_USE_SYSTEM_INCHI=ON
       -DRUN_SWIG=ON
       -DPYTHON_BINDINGS=ON
-      -DPYTHON_EXECUTABLE=#{which(python3)}
+      -DPYTHON_EXECUTABLE=#{python3}
       -DPYTHON_INSTDIR=#{prefix/Language::Python.site_packages(python3)}
     ]
 

@@ -59,10 +59,6 @@ class Cryptominisat < Formula
     end
   end
 
-  def python3
-    "python3.14"
-  end
-
   def install
     # fix audit failure with `lib/libcryptominisat5.5.7.dylib`
     inreplace "src/GitSHA1.cpp.in", "@CMAKE_CXX_COMPILER@", ENV.cxx

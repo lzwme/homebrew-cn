@@ -97,10 +97,6 @@ class Awscli < Formula
     sha256 "4d478375d31bc5395a3c55c40ccdf3354688364cd61c4f6adacaa9215d0b3605"
   end
 
-  def python3
-    which("python3.14")
-  end
-
   # downloads wheels during build
   allow_network_access! :build
 

@@ -44,8 +44,6 @@ class Lldb < Formula
     cause "linking fails with undefined references"
   end
 
-  def python3 = "python3.14"
-
   def install
     # Features are set ON/OFF to avoid auto-detection impacting reproducibility.
     # See https://lldb.llvm.org/resources/build.html#optional-dependencies

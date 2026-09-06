@@ -44,10 +44,6 @@ class Plutoprint < Formula
     cause "requires GCC 10+"
   end
 
-  def python3
-    "python3.14"
-  end
-
   def install
     virtualenv_install_with_resources
   end

@@ -52,10 +52,6 @@ class Libprelude < Formula
     end
   end
 
-  def python3
-    "python3.12"
-  end
-
   def install
     # Work-around for build issue with Xcode 15.3
     ENV.append_to_cflags "-Wno-int-conversion" if DevelopmentTools.clang_build_version >= 1500

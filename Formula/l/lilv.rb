@@ -30,10 +30,6 @@ class Lilv < Formula
   depends_on "sratom"
   depends_on "zix"
 
-  def python3
-    "python3.14"
-  end
-
   def install
     # FIXME: Meson tries to install into `prefix/HOMEBREW_PREFIX/lib/pythonX.Y/site-packages`
     #        without setting `python.*libdir`.

@@ -33,8 +33,6 @@ class Virglrenderer < Formula
     sha256 "d76623373421df22fb4cf8817020cbb7ef15c725b9d5e45f17e189bfc384190f"
   end
 
-  def python3 = "python3.14"
-
   def install
     venv = virtualenv_create(buildpath/"venv", python3)
     venv.pip_install resource("pyyaml")

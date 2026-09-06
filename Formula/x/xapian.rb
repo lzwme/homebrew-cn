@@ -40,14 +40,10 @@ class Xapian < Formula
     end
   end
 
-  def python3
-    "python3.14"
-  end
-
   def install
     odie "bindings resource needs to be updated" if version != resource("bindings").version
 
-    ENV["PYTHON"] = which(python3)
+    ENV["PYTHON"] = python3
     system "./configure", *std_configure_args, "--disable-silent-rules"
     system "make", "install"
 

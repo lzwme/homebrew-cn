@@ -39,10 +39,6 @@ class Clingo < Formula
   link_overwrite "bin/lpconvert"
   link_overwrite "bin/reify"
 
-  def python3
-    which("python3.14")
-  end
-
   def install
     site_packages = Language::Python.site_packages(python3)
 

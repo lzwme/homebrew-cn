@@ -41,10 +41,6 @@ class Botan < Formula
     cause "Requires C++20"
   end
 
-  def python3
-    which("python3.14")
-  end
-
   def install
     ENV.runtime_cpu_detection
 

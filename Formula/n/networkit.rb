@@ -29,10 +29,6 @@ class Networkit < Formula
     depends_on "libomp"
   end
 
-  def python3
-    which("python3.14")
-  end
-
   def install
     site_packages = Language::Python.site_packages(python3)
 

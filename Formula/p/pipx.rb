@@ -44,18 +44,13 @@ class Pipx < Formula
     sha256 "6c52288dab069257cc831846d15d48133522455d4677ee69a9781f11dbefd815"
   end
 
-  def python3
-    deps.map(&:to_formula)
-        .find { |f| f.name.start_with?("python@") }
-  end
-
   # downloads wheels during build and test
   deny_network_access! :postinstall
 
   def install
     # Avoid Cellar path reference, which is only good for one version.
     inreplace "src/pipx/interpreter.py", "return _get_sys_executable()",
-                                         "return '#{python3.opt_libexec/"bin/python"}'"
+                                         "return '#{python3}'"
 
     venv = virtualenv_install_with_resources
 

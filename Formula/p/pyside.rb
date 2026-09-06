@@ -77,10 +77,6 @@ class Pyside < Formula
     depends_on "mesa"
   end
 
-  def python3
-    "python3.14"
-  end
-
   def install
     ENV.append_path "PYTHONPATH", buildpath/"build/sources"
 
@@ -101,7 +97,7 @@ class Pyside < Formula
 
     system "cmake", "-S", ".", "-B", "build",
                     "-DCMAKE_MODULE_LINKER_FLAGS=-Wl,-rpath,#{rpath(source: shiboken6_module)}",
-                    "-DPython_EXECUTABLE=#{which(python3)}",
+                    "-DPython_EXECUTABLE=#{python3}",
                     "-DBUILD_TESTS=OFF",
                     "-DNO_QT_TOOLS=yes",
                     # Limited API (maybe combined with keg relocation) breaks the Linux bottle

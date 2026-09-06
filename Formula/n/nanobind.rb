@@ -34,8 +34,6 @@ class Nanobind < Formula
   end
 
   test do
-    python = "python3.14"
-
     (testpath/"my_ext.cpp").write <<~CPP
       #include <nanobind/nanobind.h>
 
@@ -46,7 +44,7 @@ class Nanobind < Formula
       }
     CPP
 
-    python_version = Language::Python.major_minor_version(python)
+    python_version = Language::Python.major_minor_version(python3)
 
     cmakelists = testpath/"CMakeLists.txt"
     cmakelists.write <<~CMAKE
@@ -68,7 +66,7 @@ class Nanobind < Formula
     system "cmake", "--build", "build"
 
     cd "build" do
-      assert_equal "3", shell_output("#{python} -c 'import my_ext; print(my_ext.add(1, 2))'").chomp
+      assert_equal "3", shell_output("#{python3} -c 'import my_ext; print(my_ext.add(1, 2))'").chomp
     end
 
     ENV.delete("CMAKE_PREFIX_PATH")
@@ -91,7 +89,7 @@ class Nanobind < Formula
     system "cmake", "--build", "build-python"
 
     cd "build-python" do
-      assert_equal "3", shell_output("#{python} -c 'import my_ext; print(my_ext.add(1, 2))'").chomp
+      assert_equal "3", shell_output("#{python3} -c 'import my_ext; print(my_ext.add(1, 2))'").chomp
     end
   end
 end

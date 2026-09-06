@@ -272,10 +272,6 @@ class Molecule < Formula
     sha256 "55d95c2447789712774b198ceec72939e88b5618f1f8f0a9b605bf7740b63b96"
   end
 
-  def python3
-    "python3.14"
-  end
-
   def install
     # Workaround for https://github.com/pycontribs/enrich/issues/75
     odie "Check if setuptools workaround can be removed!" if resource("enrich").version > "1.2.7"
@@ -290,7 +286,7 @@ class Molecule < Formula
 
   test do
     ENV["ANSIBLE_REMOTE_TMP"] = testpath/"tmp"
-    ENV["ANSIBLE_PYTHON_INTERPRETER"] = which(python3)
+    ENV["ANSIBLE_PYTHON_INTERPRETER"] = python3
 
     system bin/"molecule", "init", "scenario", "acme.foo_vagrant"
     assert_path_exists testpath/"molecule/acme.foo_vagrant/molecule.yml",

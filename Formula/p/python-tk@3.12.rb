@@ -25,10 +25,6 @@ class PythonTkAT312 < Formula
   depends_on "python@3.12"
   depends_on "tcl-tk"
 
-  def python3
-    "python3.12"
-  end
-
   # Apply commit from open PR to fix TCL 9 threaded detection
   patch do
     url "https://github.com/python/cpython/commit/a2019e226e4650cef35ebfde7ecd7ce044a4a670.patch?full_index=1"

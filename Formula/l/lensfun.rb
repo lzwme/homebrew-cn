@@ -41,10 +41,6 @@ class Lensfun < Formula
     depends_on "gettext"
   end
 
-  def python3
-    "python3.14"
-  end
-
   def install
     # Workaround to build with CMake 4
     ENV["CMAKE_POLICY_VERSION_MINIMUM"] = "3.5"

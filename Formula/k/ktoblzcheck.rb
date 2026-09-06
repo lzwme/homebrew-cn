@@ -50,10 +50,6 @@ class Ktoblzcheck < Formula
     end
   end
 
-  def python3
-    "python3.14"
-  end
-
   def install
     ENV.append_path "PYTHONPATH", buildpath/Language::Python.site_packages(python3)
     resources.each do |r|

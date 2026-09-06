@@ -72,10 +72,6 @@ class PythonMatplotlib < Formula
     sha256 "ff70335d468e7eb6ec65b95b99d3a2836546063f63acc5171de367e834932a81"
   end
 
-  def python3
-    which("python3.14")
-  end
-
   def install
     venv = virtualenv_create(libexec, python3)
     venv.pip_install resources

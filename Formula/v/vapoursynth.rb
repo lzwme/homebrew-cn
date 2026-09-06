@@ -36,8 +36,6 @@ class Vapoursynth < Formula
     depends_on "patchelf" => :build
   end
 
-  def python3 = "python3.14"
-
   def install
     ENV.runtime_cpu_detection
     ENV.prepend "LDFLAGS", "-L#{formula_opt_lib("llvm")}/c++" if OS.mac? && MacOS.version <= :ventura

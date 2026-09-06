@@ -58,10 +58,6 @@ class Adios2 < Formula
 
   deny_network_access!
 
-  def python3
-    "python3.14"
-  end
-
   def install
     # CMake FortranCInterface_VERIFY fails with LTO on Linux due to different GCC and GFortran versions
     ENV.append "FFLAGS", "-fno-lto" if OS.linux?
@@ -91,7 +87,7 @@ class Adios2 < Formula
       -DCMAKE_DISABLE_FIND_PACKAGE_FLEX=TRUE
       -DCMAKE_DISABLE_FIND_PACKAGE_LibFFI=TRUE
       -DCMAKE_DISABLE_FIND_PACKAGE_NVSTREAM=TRUE
-      -DPython_EXECUTABLE=#{which(python3)}
+      -DPython_EXECUTABLE=#{python3}
       -DCMAKE_INSTALL_PYTHONDIR=#{prefix/Language::Python.site_packages(python3)}
       -DADIOS2_BUILD_TESTING=OFF
       -DADIOS2_BUILD_EXAMPLES=OFF

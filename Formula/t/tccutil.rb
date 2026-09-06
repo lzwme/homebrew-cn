@@ -22,10 +22,6 @@ class Tccutil < Formula
     sha256 "d443872c98d677bf60f6a1f2f8c1cb748e8fe762d2bf9d3148b5599295b0fc4f"
   end
 
-  def python3
-    which("python3.14")
-  end
-
   def install
     venv = virtualenv_create(libexec, python3)
     venv.pip_install resources

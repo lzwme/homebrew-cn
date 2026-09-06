@@ -35,8 +35,6 @@ class Ffms2 < Formula
     depends_on "zlib-ng-compat"
   end
 
-  def python3 = "python3.14"
-
   def install
     system "./autogen.sh", "--enable-avresample", *std_configure_args
     system "make", "install"

@@ -49,10 +49,6 @@ class Coin3d < Formula
     depends_on "mesa-glu"
   end
 
-  def python3
-    "python3.13"
-  end
-
   def install
     system "cmake", "-S", ".", "-B", "_build",
                     "-DCOIN_BUILD_MAC_FRAMEWORK=OFF",

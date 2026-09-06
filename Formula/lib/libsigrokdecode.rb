@@ -40,10 +40,7 @@ class Libsigrokdecode < Formula
   end
 
   def install
-    # While this doesn't appear much better than hardcoding `3.xy`, this allows
-    # `brew audit` to catch mismatches between this line and the dependencies.
-    python = "python3.14"
-    py_version = Language::Python.major_minor_version(python)
+    py_version = Language::Python.major_minor_version(python3)
 
     # We should be able to remove this in libsigrokdecode >0.5.3, who will
     # check for a version-independent `python3-embed` pkg-config file, and
@@ -59,7 +56,7 @@ class Libsigrokdecode < Formula
     end
 
     mkdir "build" do
-      system "../configure", *std_configure_args, "PYTHON3=#{python}"
+      system "../configure", *std_configure_args, "PYTHON3=#{python3}"
       system "make", "install"
     end
   end

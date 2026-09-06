@@ -23,10 +23,6 @@ class Mgis < Formula
   depends_on "python@3.14"
   depends_on "tbb"
 
-  def python3
-    which("python3.14")
-  end
-
   def install
     args = [
       "-Denable-portable-build=ON",

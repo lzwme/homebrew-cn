@@ -47,10 +47,6 @@ class Uhd < Formula
     sha256 "722695808f4b6457b320fdc131280796bdceb04ab50fe1795cd540799ebe1698"
   end
 
-  def python3
-    "python3.14"
-  end
-
   def install
     # Boost 1.89+ compatibility
     inreplace "host/cmake/Modules/UHDConfig.cmake.in", /\s+system\n/, ""

@@ -506,10 +506,6 @@ class Jupyterlab < Formula
     sha256 "9e813624b6eb619999a97dc7958469217c3176312b3a16a4bd1bc7e08a46ec98"
   end
 
-  def python3
-    "python3.14"
-  end
-
   def install
     ENV["JUPYTER_PATH"] = etc/"jupyter"
 
@@ -552,7 +548,7 @@ class Jupyterlab < Formula
 
   test do
     assert_match "The Jupyter terminal-based Console", shell_output("#{bin}/jupyter-console --help")
-    assert_match python3, shell_output("#{bin}/jupyter kernelspec list")
+    assert_match python3.basename.to_s, shell_output("#{bin}/jupyter kernelspec list")
     assert_match(/In \[1\]:.*exit.*Shutting down/m, pipe_output("#{bin}/jupyter-console 2>&1", "exit"))
 
     require "expect"

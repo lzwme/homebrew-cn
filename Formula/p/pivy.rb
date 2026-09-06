@@ -22,17 +22,13 @@ class Pivy < Formula
   depends_on "python@3.14"
   depends_on "qtbase"
 
-  def python3
-    "python3.14"
-  end
-
   def install
     site_packages = prefix/Language::Python.site_packages(python3)
     rpaths = [rpath(source: site_packages/"pivy"), rpath(source: site_packages/"pivy/gui")]
 
     system "cmake", "-S", ".", "-B", "build",
                     "-DCMAKE_INSTALL_RPATH=#{rpaths.join(";")}",
-                    "-DPython_EXECUTABLE=#{which(python3)}",
+                    "-DPython_EXECUTABLE=#{python3}",
                     "-DPIVY_Python_SITEARCH=#{site_packages}",
                     "-DPIVY_USE_QT6=ON",
                     *std_cmake_args(find_framework: "FIRST")

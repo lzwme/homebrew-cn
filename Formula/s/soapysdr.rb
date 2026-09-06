@@ -28,14 +28,10 @@ class Soapysdr < Formula
   depends_on "swig" => :build
   depends_on "python@3.14"
 
-  def python3
-    "python3.14"
-  end
-
   def install
     args = %W[
-      -DPYTHON_EXECUTABLE=#{which(python3)}
-      -DPYTHON3_EXECUTABLE=#{which(python3)}
+      -DPYTHON_EXECUTABLE=#{python3}
+      -DPYTHON3_EXECUTABLE=#{python3}
       -DSOAPY_SDR_ROOT=#{HOMEBREW_PREFIX}
     ]
     args << "-DSOAPY_SDR_EXTVER=release" if build.stable?

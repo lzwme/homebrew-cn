@@ -1,19 +1,17 @@
 class Bindgen < Formula
   desc "Automatically generates Rust FFI bindings to C (and some C++) libraries"
   homepage "https://rust-lang.github.io/rust-bindgen/"
-  url "https://ghfast.top/https://github.com/rust-lang/rust-bindgen/archive/refs/tags/v0.72.1.tar.gz"
-  sha256 "4ffb17061b2d71f19c5062d2e17e64107248f484f9775c0b7d30a16a8238dfd1"
+  url "https://ghfast.top/https://github.com/rust-lang/rust-bindgen/archive/refs/tags/v0.73.1.tar.gz"
+  sha256 "11d72970909c7b333eb6685054e7bbd36fd8892eab40ce3a93da06f066ed983d"
   license "BSD-3-Clause"
   head "https://github.com/rust-lang/rust-bindgen.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c2f7d3db04e1d65571db3b16e177306ac4eb49b5822285f16f3fb10efb1ef4c7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5b3a1d65a74fdc60b6baf24a69534ed17f9125be32c5d558259284422478d2cf"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "84e886c463767c888ab70a4f433110146e55a3efd8e3b81bac60a49ed9bd9f31"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ed1122e2b31766476afb2d1a56408b1b290ef935e87fc4b5a2a1b4110aadad01"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cd76fccd60a9833a65116705011cbe7357729c425e11634076c2aab36b84945e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7ea06f579a2e35648dd5127263947f8d654809ed968c26db40cf8e3884e7eb11"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f4dff32b063aee03dbeb2d7b9f0ae6b9059cdaa3064abca04836e9a76529a434"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1b250841334fbbe9dcd3a3159f4ec760ea1e9eac54428e4531603e862dccb934"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5150acf866424f3494df1bc534d5c024352d6b57d868ce718001b342797e5f98"
+    sha256 cellar: :any,                 arm64_linux:   "10bacae0457afbc83e08fe7bca8d362c531d92e3dda258748ee977d2d83bb831"
+    sha256 cellar: :any,                 x86_64_linux:  "3e0519d0941522fddea413e70178dd18f298a7460f8b45ce4f30530c34a98521"
   end
 
   depends_on "rust" => :build

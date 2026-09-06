@@ -3,18 +3,16 @@ class Terminator < Formula
 
   desc "Multiple GNOME terminals in one window"
   homepage "https://gnome-terminator.org"
-  url "https://ghfast.top/https://github.com/gnome-terminator/terminator/archive/refs/tags/v2.1.5.tar.gz"
-  sha256 "df46cb8fbf4bc80289cabbf59e22a03948a65278c637573db3bc5e7acfd1966b"
+  url "https://ghfast.top/https://github.com/gnome-terminator/terminator/archive/refs/tags/v2.1.6.tar.gz"
+  sha256 "0de6024112f56fee9f86a1606309903be30e1018c83390444971c78b1730897c"
   license "GPL-2.0-only"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cbda9e2f530787bf8fd70762ca08efb46d62c2797d85d89e496341278a96e615"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "447a6bc238316f05ae3d03ce0d958aa11ab7dc5a9afb855fd5b9e63a21cc4001"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5c394010de722af4f788075577f32fdfce3dcfbca6e1d8b4ccdd677a55491fd0"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f0a19f86cbd0e0823969bb007b6ab6898e6a41c453baecc97360afe450d2a2de"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3d283e891e6a1d4f90cb6ebf1a5c5230b4be167fa80228956654ae83c74eb07f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "05acec1e4469598de53102f0009da36200afe641e3a75d20071843a71c6373ab"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "411920983a7e149c030ff16a08b38a2b3ecaa6e3bddee4dc9d644da7d6322cc9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "487b99dd3b096cae9db5e29a6eaec08098031ec7187830e67aa5125fa05503f0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a2fb445a6ee48645d18691eb7665bdd864184ea617fd9a80b131767765a24918"
+    sha256 cellar: :any,                 arm64_linux:   "b48513bf076d0edb03f4555f326799fec466d57d8f718e3537d8a2fa4f705573"
+    sha256 cellar: :any,                 x86_64_linux:  "3178192dc2ac7b03c124d600fca7edc86e26519be589c3474b7932f1e3ec6235"
   end
 
   depends_on "pygobject3" => :no_linkage

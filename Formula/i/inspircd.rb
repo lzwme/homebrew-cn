@@ -1,8 +1,8 @@
 class Inspircd < Formula
   desc "Modular C++ Internet Relay Chat daemon"
   homepage "https://www.inspircd.org/"
-  url "https://ghfast.top/https://github.com/inspircd/inspircd/archive/refs/tags/v4.11.0.tar.gz"
-  sha256 "7f2ea0731a7e337e6ebaa1335bb22d576cba779baefaa311e15558624b5ca31a"
+  url "https://ghfast.top/https://github.com/inspircd/inspircd/archive/refs/tags/v4.12.0.tar.gz"
+  sha256 "5eefae1428d2e8b072c530cb01a1095a811927d63749d8c073c8044842e9c214"
   license "GPL-2.0-only"
 
   livecheck do
@@ -11,12 +11,11 @@ class Inspircd < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "61c72281c04ca2df8b6e4158224345bacd4d537299e3403f4d5687560ff6289c"
-    sha256 arm64_sequoia: "9e38628375bb8aa8e01022817f106f11ca3738598b3bbc18bb032f9730b6e9bd"
-    sha256 arm64_sonoma:  "f669542d5222470718d567ec98be079149b5fde12577ebb4dd3291b1d55fc253"
-    sha256 sonoma:        "20fe000574784f45ae4e63998e0057e26ddab1fc482fa8d309f1059de1ed2b41"
-    sha256 arm64_linux:   "cbb60a8e91bc975d0938ae8cb7c022bf7e0adee3434d2430ebc8bca2dcf672c8"
-    sha256 x86_64_linux:  "beb586e95f0405d54a4d55b7bffd165d207299c443988eb9c96ca824d8e34512"
+    sha256 arm64_tahoe:   "bd003904eab3958cfce9839f25d12591a981ad43552d7255c042a1fcade736dc"
+    sha256 arm64_sequoia: "ef8a67243cac1972d655f4423888afa9ec027942d5154ea6c3ef908bbcb3d62c"
+    sha256 arm64_sonoma:  "c69a73458f8d1fc23648bcc1ceab2b23c6d3b722cc0a506957caa6541e00d620"
+    sha256 arm64_linux:   "7bb0e57ca2ea4f5e6f773eb976fedc33ad1954c1a4e2781042f7778b682251b4"
+    sha256 x86_64_linux:  "e6d6a515429f01f323065c2d27023d74db036954f5ba639517fabf804fb72a6b"
   end
 
   depends_on "pkgconf" => :build
@@ -44,6 +43,6 @@ class Inspircd < Formula
   end
 
   test do
-    assert_match("ERROR: Cannot open config file", shell_output(bin/"inspircd", 1))
+    assert_match("Cannot find config file", shell_output(bin/"inspircd", 1))
   end
 end

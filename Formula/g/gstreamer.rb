@@ -142,10 +142,6 @@ class Gstreamer < Formula
     depends_on "nasm" => :build
   end
 
-  def python3
-    formula_opt_bin("python@3.14")/"python3.14"
-  end
-
   skip_clean "lib/gstreamer-1.0/libgstnice.dylib", "lib/gstreamer-1.0/libgstnice.so"
 
   # These paths used to live in various `gst-*` formulae.

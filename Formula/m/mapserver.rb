@@ -39,10 +39,6 @@ class Mapserver < Formula
 
   uses_from_macos "curl"
 
-  def python3
-    "python3.14"
-  end
-
   def install
     if OS.mac?
       mapscript_rpath = rpath(source: prefix/Language::Python.site_packages(python3)/"mapscript")
@@ -67,7 +63,7 @@ class Mapserver < Formula
                     "-DWITH_PYTHON=ON",
                     "-DWITH_SOS=ON",
                     "-DWITH_WFS=ON",
-                    "-DPython_EXECUTABLE=#{which(python3)}",
+                    "-DPython_EXECUTABLE=#{python3}",
                     "-DPHP_EXTENSION_DIR=#{lib}/php/extensions",
                     *std_cmake_args
     system "cmake", "--build", "build"

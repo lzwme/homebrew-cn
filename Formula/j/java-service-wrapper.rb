@@ -25,6 +25,8 @@ class JavaServiceWrapper < Formula
     depends_on "cunit" => :build
   end
 
+  deny_network_access!
+
   def install
     ENV["JAVA_HOME"] = Language::Java.java_home
 

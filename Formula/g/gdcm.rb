@@ -38,10 +38,6 @@ class Gdcm < Formula
     depends_on "zlib-ng-compat"
   end
 
-  def python3
-    which("python3.14")
-  end
-
   def install
     xy = Language::Python.major_minor_version python3
     python_include = if OS.mac?

@@ -17,10 +17,6 @@ class Arjun < Formula
 
   pypi_packages exclude_packages: "certifi"
 
-  def python3
-    "python3.14"
-  end
-
   resource "charset-normalizer" do
     url "https://files.pythonhosted.org/packages/e7/a1/67fe25fac3c7642725500a3f6cfe5821ad557c3abb11c9d20d12c7008d3e/charset_normalizer-3.4.7.tar.gz"
     sha256 "ae89db9e5f98a11a4bf50407d4363e7b09b31e55bc117b4f7d80aab97ba009e5"

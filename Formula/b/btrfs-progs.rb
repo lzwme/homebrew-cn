@@ -30,10 +30,6 @@ class BtrfsProgs < Formula
   depends_on "zlib-ng-compat"
   depends_on "zstd"
 
-  def python3
-    which("python3.14")
-  end
-
   # remove sphinx-rtd-theme extension for html docs
   patch :DATA
 

@@ -54,10 +54,6 @@ class Rdkit < Formula
     sha256 "1b1597f0aa5452b971a94ab13d8de3b59cce17d9c43c8081aa62f42b3376df96"
   end
 
-  def python3
-    "python3.14"
-  end
-
   def postgresqls
     deps.filter_map { |f| f.to_formula if f.name.start_with?("postgresql@") }
         .sort_by(&:version)
@@ -88,7 +84,7 @@ class Rdkit < Formula
       -DRDK_BUILD_CAIRO_SUPPORT=ON
       -DRDK_BUILD_YAEHMOP_SUPPORT=ON
       -DRDK_BUILD_FREESASA_SUPPORT=ON
-      -DPython3_EXECUTABLE=#{which(python3)}
+      -DPython3_EXECUTABLE=#{python3}
     ]
     if build.bottle? && Hardware::CPU.intel? && (!OS.mac? || !MacOS.version.requires_sse42?)
       args << "-DRDK_OPTIMIZE_POPCNT=OFF"

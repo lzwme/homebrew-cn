@@ -29,10 +29,6 @@ class Pymupdf < Formula
     resolves "https://github.com/pymupdf/PyMuPDF/pull/5072"
   end
 
-  def python3
-    "python3.14"
-  end
-
   def install
     # Makes setup skip build stage for mupdf
     # https://github.com/pymupdf/PyMuPDF/blob/1.20.0/setup.py#L447

@@ -41,10 +41,6 @@ class Aubio < Formula
     type :unofficial
   end
 
-  def python3
-    "python3.14"
-  end
-
   def install
     # Work-around for build issue with Xcode 15.3: https://github.com/aubio/aubio/issues/402
     ENV.append_to_cflags "-Wno-incompatible-function-pointer-types" if DevelopmentTools.clang_build_version >= 1500

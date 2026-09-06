@@ -51,13 +51,12 @@ class Stp < Formula
   def install
     resource("extlib-abc").stage buildpath/"lib/extlib-abc"
 
-    python = "python3.14"
-    site_packages = prefix/Language::Python.site_packages(python)
+    site_packages = prefix/Language::Python.site_packages(python3)
     site_packages.mkpath
     inreplace "lib/Util/GitSHA1.cpp.in", "@CMAKE_CXX_COMPILER@", ENV.cxx
 
     args = %W[
-      -DPYTHON_EXECUTABLE=#{which(python)}
+      -DPYTHON_EXECUTABLE=#{which(python3)}
       -DPYTHON_LIB_INSTALL_DIR=#{site_packages}
       -DSTP_ALLOCATOR=system
     ]

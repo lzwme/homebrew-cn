@@ -1,6 +1,6 @@
 cask "djv" do
-  version "3.5.0"
-  sha256 "f9d991a33e3f6dd3c6cbf54b3616d64dabef88ec6e0141f608cf5aba9a4213a1"
+  version "3.6.0"
+  sha256 "dcd355bb39325205db74d66d8223402c24101780339a3cc6563b585a20713bfe"
 
   url "https://ghfast.top/https://github.com/grizzlypeak3d/DJV/releases/download/#{version}/DJV-#{version}-macOS-arm64.dmg"
   name "DJV"
@@ -15,7 +15,7 @@ cask "djv" do
   depends_on macos: :big_sur
   depends_on arch: :arm64
 
-  app "DJV.app"
+  app "djv.app"
 
   zap trash: [
         "~/Documents/DJV/djv.log",

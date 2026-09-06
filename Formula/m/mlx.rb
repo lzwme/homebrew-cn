@@ -49,10 +49,6 @@ class Mlx < Formula
     sha256 "9e30bc1eb82cc2231150d39ce37dcdd6f844d6994fba18da83fc537a487ba86f"
   end
 
-  def python3
-    "python3.14"
-  end
-
   def install
     ENV.append_to_cflags "-I#{formula_opt_include("nlohmann-json")}/nlohmann"
     (buildpath/"gguflib").install resource("gguflib")

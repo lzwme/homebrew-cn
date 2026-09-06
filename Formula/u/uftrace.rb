@@ -23,7 +23,6 @@ class Uftrace < Formula
   depends_on "xz"
 
   def install
-    python3 = "python3.14"
     pyver = Language::Python.major_minor_version python3
     # Help pkg-config find python as we only provide `python3-embed` for aliased python formula
     inreplace Dir["check-deps/Makefile{,.check}"], "pkg-config python3", "pkg-config python-#{pyver}"

@@ -19,10 +19,6 @@ class I2cTools < Formula
   depends_on "python@3.14" => [:build, :test]
   depends_on :linux
 
-  def python3
-    "python3.14"
-  end
-
   def install
     system "make", "install", "PREFIX=#{prefix}", "EXTRA=eeprog"
     system python3, "-m", "pip", "install", *std_pip_args(build_isolation: true), "./py-smbus"

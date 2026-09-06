@@ -161,10 +161,6 @@ class Gnuradio < Formula
     sha256 "f36b47402ecde768dbfafc46e8e4207b4360c654f1f3bb84475f0a28628fb19c"
   end
 
-  def python3
-    "python3.14"
-  end
-
   def install
     ENV["XML_CATALOG_FILES"] = etc/"xml/catalog"
 

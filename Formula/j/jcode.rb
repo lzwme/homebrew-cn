@@ -26,6 +26,12 @@ class Jcode < Formula
     depends_on "openssl@3"
   end
 
+  deny_network_access! :build
+
+  def fetch
+    system "cargo", "fetch", "--locked"
+  end
+
   def install
     # Disable background auto-update by default
     inreplace "src/cli/args.rs",

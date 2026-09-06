@@ -98,7 +98,6 @@ class Vineyard < Formula
     headers = %w[args async child env environment io search_path]
     headers.each { |header| ENV.append "CXXFLAGS", "-include boost/process/v1/#{header}.hpp" }
 
-    python3 = "python3.14"
     # LLVM is keg-only.
     llvm = deps.map(&:to_formula).find { |f| f.name.match?(/^llvm(@\d+)?$/) }
     ENV.prepend_path "PYTHONPATH", llvm.opt_prefix/Language::Python.site_packages(python3)

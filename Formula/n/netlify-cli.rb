@@ -1,17 +1,16 @@
 class NetlifyCli < Formula
   desc "Netlify command-line tool"
   homepage "https://www.netlify.com/docs/cli"
-  url "https://registry.npmjs.org/netlify-cli/-/netlify-cli-27.3.0.tgz"
-  sha256 "252b9af41c6646ec7a6e730aa95a35521d2feadc4d6660c2685bf7b9f4f9a6f4"
+  url "https://registry.npmjs.org/netlify-cli/-/netlify-cli-27.5.0.tgz"
+  sha256 "ff33e2720d53419dc225ad0d52931c1308ff8a2e013f23ef4098bcc572c7de03"
   license "MIT"
 
   bottle do
-    sha256               arm64_tahoe:   "b294b944b13752e73778ca4f096c315cc5b15196a6444cb156ab45f88a659a5a"
-    sha256               arm64_sequoia: "e530f5b7af958fb8c57a69c711800ad3548b9274d44aadba97e616f3ff702778"
-    sha256               arm64_sonoma:  "d2da5141102808bde090ac13e363b7b68cd149438c3f5711b33c672267b27281"
-    sha256               sonoma:        "93190a3663165e987bd43dd2cd9e75357a8e4cfe18db7c85d112cd3b0cb4091c"
-    sha256 cellar: :any, arm64_linux:   "8ec047cb40a12fc933c09c809393a708d9f8a6a7cfc4ac1ff7fe31ad9d924047"
-    sha256 cellar: :any, x86_64_linux:  "5020cf127de80d5b7d6540cf9fc09949117437f35b321f3cb2220e1c0b983776"
+    sha256 cellar: :any, arm64_tahoe:   "0a5b23bde7f915c6c370126c8095988e2aba512b30d83384b8c0a086cabffbea"
+    sha256 cellar: :any, arm64_sequoia: "3c1a352a629b5dd650b6a45211462b7b91fc071aad233164bc8fc57b3ca0c780"
+    sha256 cellar: :any, arm64_sonoma:  "6114b70e5ef3e05b1fe4b1e56b1727e4a1885f8a7f2e2b0349c23f58a427f89d"
+    sha256 cellar: :any, arm64_linux:   "36a0ea907fa683e82a42503d6327997be67253b0fbb946b2557e294db7415462"
+    sha256 cellar: :any, x86_64_linux:  "747002f29ce0073d67dd55eb1f8a4e0a1d219c514240cce4f7018a93e34ff2ba"
   end
 
   depends_on "pkgconf" => :build
@@ -36,8 +35,8 @@ class NetlifyCli < Formula
   end
 
   resource "node-gyp" do
-    url "https://registry.npmjs.org/node-gyp/-/node-gyp-13.0.1.tgz"
-    sha256 "455327cde805c299d5a16603419e106853db5b9257dfb85e44eb7f4ec4d99de5"
+    url "https://registry.npmjs.org/node-gyp/-/node-gyp-13.0.2.tgz"
+    sha256 "1b1524d914331bd01312729e31a828192d53af84e113dacb6e36afabb6c21a6d"
   end
 
   def install

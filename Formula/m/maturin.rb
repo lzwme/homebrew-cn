@@ -47,7 +47,6 @@ class Maturin < Formula
   end
 
   test do
-    python3 = "python3.14"
     system "cargo", "init", "homebrew", "--name=brew", "--bin"
     cd "homebrew" do
       system bin/"maturin", "build", "-o", "dist", "--compatibility", "off"

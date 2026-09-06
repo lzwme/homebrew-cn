@@ -47,10 +47,6 @@ class LlvmAT20 < Formula
     resolves "https://github.com/llvm/llvm-project/pull/111397"
   end
 
-  def python3
-    "python3.14"
-  end
-
   def clang_config_file_dir
     etc/"clang"
   end

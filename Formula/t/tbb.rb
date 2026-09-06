@@ -22,10 +22,6 @@ class Tbb < Formula
   depends_on "swig" => :build
   depends_on "hwloc"
 
-  def python3
-    "python3.14"
-  end
-
   def install
     site_packages = Language::Python.site_packages(python3)
     tbb_site_packages = prefix/site_packages/"tbb"
@@ -34,7 +30,7 @@ class Tbb < Formula
     args = %W[
       -DTBB_TEST=OFF
       -DTBB4PY_BUILD=ON
-      -DPYTHON_EXECUTABLE=#{which(python3)}
+      -DPYTHON_EXECUTABLE=#{python3}
     ]
 
     system "cmake", "-S", ".", "-B", "build/shared",

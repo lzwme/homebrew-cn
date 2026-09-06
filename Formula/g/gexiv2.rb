@@ -26,10 +26,6 @@ class Gexiv2 < Formula
   depends_on "exiv2"
   depends_on "glib"
 
-  def python3
-    "python3.14"
-  end
-
   def install
     site_packages = prefix/Language::Python.site_packages(python3)
 

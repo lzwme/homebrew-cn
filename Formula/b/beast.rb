@@ -25,6 +25,8 @@ class Beast < Formula
   depends_on "beagle"
   depends_on "openjdk@25"
 
+  deny_network_access!
+
   def install
     ENV["JAVA_HOME"] = Language::Java.java_home("25")
     system "ant", "linux"

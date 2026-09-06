@@ -32,8 +32,6 @@ class VapoursynthMvtools < Formula
     depends_on "nasm" => :build
   end
 
-  def python3 = "python3.14"
-
   def install
     ENV.runtime_cpu_detection if Hardware::CPU.intel?
 

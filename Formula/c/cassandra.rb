@@ -62,7 +62,6 @@ class Cassandra < Formula
   def install
     (var/"log/cassandra").mkpath
 
-    python3 = "python3.13"
     venv = virtualenv_create(libexec/"vendor", python3)
     venv.pip_install resources
 

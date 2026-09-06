@@ -65,7 +65,6 @@ class Condure < Formula
     ipcfile = testpath/"client"
     runfile = testpath/"test.py"
 
-    python3 = "python3.14"
     ENV.append_path "PYTHONPATH", formula_opt_libexec("cython")/Language::Python.site_packages(python3)
     venv = virtualenv_create(testpath/"vendor", python3)
     venv.pip_install resources.reject { |r| r.name == "pyzmq" }

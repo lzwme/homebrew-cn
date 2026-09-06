@@ -35,10 +35,6 @@ class Halide < Formula
     depends_on "openssl@3"
   end
 
-  def python3
-    "python3.14"
-  end
-
   # Backport support for wabt 1.0.39
   patch do
     url "https://github.com/halide/Halide/commit/7d7f0b4422594296fed1d561a43dc262d163d2b8.patch?full_index=1"

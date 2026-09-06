@@ -92,7 +92,6 @@ class Sapling < Formula
       odie "Inreplace did not modify any branch usage in Cargo.toml manifests!" if no_modification
     end
 
-    python3 = "python3.13"
     ENV["LIBSSH2_SYS_USE_PKG_CONFIG"] = "1"
     ENV["OPENSSL_DIR"] = formula_opt_prefix("openssl@3")
     ENV["PYTHON_SYS_EXECUTABLE"] = ENV["PYO3_PYTHON"] = which(python3)

@@ -58,10 +58,6 @@ class Pymol < Formula
     end
   end
 
-  def python3
-    which("python3.14")
-  end
-
   def install
     resource("mmtf-cpp").stage do
       system "cmake", "-S", ".", "-B", "build", *std_cmake_args(install_prefix: buildpath/"mmtf")

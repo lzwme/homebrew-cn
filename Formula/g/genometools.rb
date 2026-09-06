@@ -39,10 +39,6 @@ class Genometools < Formula
 
   conflicts_with "gastown", "libslax", because: "both install `gt` binaries"
 
-  def python3
-    which("python3.14")
-  end
-
   def install
     # Workaround for arm64 linux from char being unsigned.
     # Same root cause as https://github.com/genometools/genometools/issues/311

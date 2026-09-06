@@ -35,17 +35,13 @@ class Gensio < Formula
     depends_on "systemd"
   end
 
-  def python3
-    "python3.14"
-  end
-
   def install
     ENV["CGO_ENABLED"] = "1" if OS.linux? && Hardware::CPU.arm?
 
     tcltk = Formula["tcl-tk"]
     args = %W[
       --disable-silent-rules
-      --with-python=#{which(python3)}
+      --with-python=#{python3}
       --with-pythoninstall=#{lib}/gensio-python
       --with-tclcflags=-I#{tcltk.opt_include}/tcl-tk
       --with-tcllibs=-ltcl#{tcltk.version.major_minor}

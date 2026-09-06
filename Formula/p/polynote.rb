@@ -53,7 +53,6 @@ class Polynote < Formula
   end
 
   def install
-    python3 = "python3.14"
     pip_install_prefix = libexec/"vendor"
     java_version = Formula["openjdk"].version.major.to_s
     ENV["JAVA_HOME"] = java_home = Language::Java.java_home(java_version)

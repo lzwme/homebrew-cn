@@ -21,10 +21,6 @@ class PythonTkAT39 < Formula
   depends_on "python@3.9"
   depends_on "tcl-tk@8"
 
-  def python3
-    "python3.9"
-  end
-
   def install
     cd "Modules" do
       tcltk = Formula["tcl-tk@8"]

@@ -1,10 +1,10 @@
 class Pkgconf < Formula
   desc "Package compiler and linker metadata toolkit"
   homepage "https://github.com/pkgconf/pkgconf"
-  url "https://distfiles.ariadne.space/pkgconf/pkgconf-3.0.6.tar.xz"
-  mirror "https://ghfast.top/https://github.com/pkgconf/pkgconf/releases/download/pkgconf-3.0.6/pkgconf-3.0.6.tar.xz"
-  mirror "http://fresh-center.net/linux/misc/pkgconf-3.0.6.tar.xz"
-  sha256 "c88a653fbabfa2a5857a30f6b6ad6c40dbacc3b7c72cc066e5c7dc4571cbddaa"
+  url "https://distfiles.ariadne.space/pkgconf/pkgconf-3.0.7.tar.xz"
+  mirror "https://ghfast.top/https://github.com/pkgconf/pkgconf/releases/download/pkgconf-3.0.7/pkgconf-3.0.7.tar.xz"
+  mirror "http://fresh-center.net/linux/misc/pkgconf-3.0.7.tar.xz"
+  sha256 "c926ff491cbd9a331a589160811bd97ab1749b4d5198a519338f2cdfabe6940a"
   license "ISC"
   compatibility_version 2
 
@@ -14,15 +14,11 @@ class Pkgconf < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_tahoe:   "fb0d6f455349a08a10b83119670d2dd5750ce5b22ad88f9b9688467b2c50ce05"
-    sha256 arm64_sequoia: "ec4fd0c30334ce21edbbc503a82e8ce73dd127532d6021d1d703c38c74ce1be6"
-    sha256 arm64_sonoma:  "5d55ff53bb261627ad63d35d9d61f04b8dc031e31f406a1d6353c06462c0e9be"
-    sha256 tahoe:         "40fb47fa0bcd78d5bcf13a879e2cab737c13b8bef11ba0d7613c839c2b8a4c35"
-    sha256 sequoia:       "d73a945d9dc05067f6b4a11f8f6cab1a6f0dcff5e8dee0ee07b4dd40d7830262"
-    sha256 sonoma:        "39cae29fa7487c6ebdd0763764543b242e76e2a0f1013e3f31dcd5a39fe00390"
-    sha256 arm64_linux:   "948113451c219c80e4ea0d6e7f8128bcba9a50b0e53f644b03a93353692970ed"
-    sha256 x86_64_linux:  "63ed34ad2cb251f599084688fb3477dd72e3e155731073cbab56927d6442f0d8"
+    sha256 arm64_tahoe:   "338c66b0d559ed78c2f77c038e141cd7b0060d6fcdf80affd1034509e8ab180c"
+    sha256 arm64_sequoia: "3394224fbc510e07acb45f3ad41d62857cfefe2394e8f71ca2e976b59864d5e6"
+    sha256 arm64_sonoma:  "e066c26946cd5f27212a6e03e1745d27feba8aa0d0d0547ce36c793abb55d8ff"
+    sha256 arm64_linux:   "801bdc18fd03a143979e2cc987730019307966420604aea19d46d6020ae7c81d"
+    sha256 x86_64_linux:  "8aacaf8f20d4c277d425163f3c8e9e5df6611f05cb0c32a8ec1069917efd5ffe"
   end
 
   head do

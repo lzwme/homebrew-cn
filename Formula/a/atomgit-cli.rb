@@ -1,18 +1,17 @@
 class AtomgitCli < Formula
   desc "Command-line interface for AtomGit"
   homepage "https://atomgit.com/hust-open-atom-club/atomgit-cli"
-  url "https://raw.atomgit.com/hust-open-atom-club/atomgit-cli/archive/refs/heads/v0.7.2.tar.gz"
-  sha256 "100a177997c7c6199f9d8633fe4cebc5ec6d974a807e1c5318d2634ba14c008b"
+  url "https://raw.atomgit.com/hust-open-atom-club/atomgit-cli/archive/refs/heads/v0.7.3.tar.gz"
+  sha256 "2ff037a7ffa50964ed8927a0d38bde1a84b77a267a015295ea5c5bbf6d42c23d"
   license "MulanPSL-2.0"
   head "https://atomgit.com/hust-open-atom-club/atomgit-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "13da2eae0487d94cb19cc868f7b5cc998ee9e5ca23863aae81bb85494d224451"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "13da2eae0487d94cb19cc868f7b5cc998ee9e5ca23863aae81bb85494d224451"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "13da2eae0487d94cb19cc868f7b5cc998ee9e5ca23863aae81bb85494d224451"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8597bf71cefdadb8bece472d08eaf62084a029c6741d8e7f8fcb880094f5edc1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "91f8e97acf9b2475efaa25f28fde5fc2566ea3184b74a58b10fd7034bf4a5f82"
-    sha256 cellar: :any,                 x86_64_linux:  "c712d0fa0b5d3f059eba66708e3dfa44ec08d4da8eb101d929473b95d2df1bef"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "838d4615d5ade161264963e3afc7b4782a8882d0b951e733cff5cbf68a6f8630"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "838d4615d5ade161264963e3afc7b4782a8882d0b951e733cff5cbf68a6f8630"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "838d4615d5ade161264963e3afc7b4782a8882d0b951e733cff5cbf68a6f8630"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d614f5336262e89c16128ac076af37b3c4372af5dc44310d5c44d50cddea6e55"
+    sha256 cellar: :any,                 x86_64_linux:  "88895a76e781dab56dd597fbcfda980a4548b6e6a9bbd09b7fb97f94fe07eecd"
   end
 
   depends_on "go" => :build
@@ -20,7 +19,6 @@ class AtomgitCli < Formula
   def install
     ldflags = %W[
       -X atomgit.com/hust-open-atom-club/atomgit-cli/internal/version.Version=#{version}
-      -X atomgit.com/hust-open-atom-club/atomgit-cli/internal/version.Source=homebrew
     ]
     system "go", "build", *std_go_args(ldflags:, output: bin/"ag"), "./cmd/ag"
   end

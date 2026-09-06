@@ -38,10 +38,6 @@ class Cahute < Formula
     sha256 "b3bda1d108d5dd99f4a20d24d9c348e91c4db7ab1b749200bded2f839ccbe68f"
   end
 
-  def python3
-    "python3.14"
-  end
-
   def install
     venv = virtualenv_create(buildpath/"venv", python3)
     venv.pip_install resources

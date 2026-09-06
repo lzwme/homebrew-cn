@@ -30,7 +30,7 @@ class Abcl < Formula
   depends_on "openjdk"
   depends_on "rlwrap"
 
-  deny_network_access! [:postinstall, :test]
+  deny_network_access!
 
   def install
     ENV["JAVA_HOME"] = Language::Java.java_home

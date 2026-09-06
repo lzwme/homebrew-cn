@@ -29,10 +29,6 @@ class Cppcheck < Formula
 
   uses_from_macos "libxml2" => :build
 
-  def python3
-    which("python3.14")
-  end
-
   def install
     ENV.deparallelize
 
@@ -106,7 +102,7 @@ class Cppcheck < Formula
 
     sample_addon_file = testpath/"sampleaddon.py"
     sample_addon_file.write <<~PYTHON
-      #!/usr/bin/env #{python3}
+      #!/usr/bin/env #{python3.basename}
       """A simple test addon for #{name}, prints function names and token count"""
       import sys
       from importlib import machinery, util

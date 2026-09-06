@@ -148,7 +148,6 @@ class Qtwebengine < Formula
   end
 
   def install
-    python3 = "python3.14"
     venv = virtualenv_create(buildpath/"venv", python3)
     venv.pip_install resources
     ENV.prepend_path "PYTHONPATH", venv.site_packages

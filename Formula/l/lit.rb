@@ -12,10 +12,6 @@ class Lit < Formula
   depends_on "llvm" => :test
   depends_on "python@3.14"
 
-  def python3
-    which("python3.14")
-  end
-
   conflicts_with "luvit", because: "both install `lit` binaries"
 
   def install

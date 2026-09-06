@@ -25,6 +25,8 @@ class Ant < Formula
     sha256 "e9d838da3fc4c20c4891de35e87f0fe0f7fd69b79053202338ee14402cd697bd"
   end
 
+  deny_network_access!
+
   def install
     rm Dir["bin/*.{bat,cmd,dll,exe}"]
 

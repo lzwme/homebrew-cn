@@ -29,10 +29,6 @@ class Zim < Formula
     sha256 "3267bb3074e934df202af2ee0868575484108581e6f3cb006af1da35395e88b4"
   end
 
-  def python3
-    "python3.14"
-  end
-
   def install
     venv = virtualenv_create(libexec, python3)
     venv.pip_install resources

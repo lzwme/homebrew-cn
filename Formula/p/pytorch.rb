@@ -3,10 +3,9 @@ class Pytorch < Formula
 
   desc "Tensors and dynamic neural networks"
   homepage "https://pytorch.org/"
-  url "https://ghfast.top/https://github.com/pytorch/pytorch/releases/download/v2.13.0/pytorch-v2.13.0.tar.gz"
-  sha256 "66614a19060f69cfd63cd0295f65a1241bd15df2fa65c60ae51066c11c2ce812"
+  url "https://ghfast.top/https://github.com/pytorch/pytorch/releases/download/v2.14.0/pytorch-v2.14.0.tar.gz"
+  sha256 "e4bc64b802db095a8a53e216e5aba168eba629b99dd397cfa44e72d9c84e7657"
   license "BSD-3-Clause"
-  revision 3
   compatibility_version 3
 
   livecheck do
@@ -15,12 +14,11 @@ class Pytorch < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "6ae3c332c2de71028640e31951afd1b1f361d50461066b91e31994129b7dccde"
-    sha256 cellar: :any, arm64_sequoia: "2d66b2d05a78a62cd6e37035fd55e47778dfd6d510f56f08416a6c13ca5a4e75"
-    sha256 cellar: :any, arm64_sonoma:  "f27d4107af65d194e10c1d0e3d38377a8511c08001653c6ed8db048f5f6f480e"
-    sha256 cellar: :any, sonoma:        "ea2ba05c86bef0c7ae117d0960d7f51c805cc7d85cb18467f2825b6915f4a6dd"
-    sha256 cellar: :any, arm64_linux:   "1f6ca1f072dacbc7781ea93a6ddb19a3d03cd8cdd0195647977b0397e4a2c668"
-    sha256 cellar: :any, x86_64_linux:  "633a9e662f23ff236cbfa7c28cf311dfec16f7685633f6fefa626941b71877fb"
+    sha256 cellar: :any, arm64_tahoe:   "56aa8be02383a8152b1c9b70f72f68eabe0622437dadb463f06071e258a5a980"
+    sha256 cellar: :any, arm64_sequoia: "a4efdc4628a9f3ba6743438ec51ecf09af073b301bf720449397668f50216191"
+    sha256 cellar: :any, arm64_sonoma:  "b3a16db49c3c4858e49a3d15e5b1244316a001dac2c01bc69310ab714f8967c7"
+    sha256 cellar: :any, arm64_linux:   "44108e188510cba615f4c52fd013957d1d4d9f98b9bee1d345da8500b9ee013b"
+    sha256 cellar: :any, x86_64_linux:  "89a2b9c38896a23b39c70baa93446df320f3954d413fd7bc75fb1fdb6440f2f1"
   end
 
   depends_on "cmake" => :build
@@ -43,17 +41,17 @@ class Pytorch < Formula
   end
 
   pypi_packages package_name:     "torch[opt-einsum]",
-                extra_packages:   %w[pyyaml packaging],
+                extra_packages:   %w[pyyaml packaging scikit-build-core six],
                 exclude_packages: %w[cuda-bindings numpy nvidia-cublas]
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/35/94/00f2059e4835eace3ae8fde680b932c496f8ec7bdc99168dfa53fb2e6b79/filelock-3.29.7.tar.gz"
-    sha256 "5b481979797ae69e72f0b389d89a80bdd585c260c5b3f1fb9c0a5ba9bb3f195d"
+    url "https://files.pythonhosted.org/packages/0a/a0/50c2c0ce5e74d7721bbb1b19a26ebd339aac5878553a6e35308c2f31f935/filelock-3.32.5.tar.gz"
+    sha256 "f6a6a28f743f9b95ce19db5abe0f376f75eb56517dff21e1a4751e2657d3e83d"
   end
 
   resource "fsspec" do
-    url "https://files.pythonhosted.org/packages/10/a1/ae4e3e5003468d6391d2c77b6fa1cd73bd5d13511d81c642d7b28ac90ed4/fsspec-2026.6.0.tar.gz"
-    sha256 "f5bac145310fe30e16e1471bd6840b2d990d609e872251d7e674241822abf01a"
+    url "https://files.pythonhosted.org/packages/00/78/f34251dadb8f3921264a1d9b8946f5e542014ee2614b285261b4e40e6775/fsspec-2026.7.0.tar.gz"
+    sha256 "c803c40f4cf860b49dea58ee3e1c33cb9c790520e233537e1340049f89b82a88"
   end
 
   resource "jinja2" do
@@ -82,8 +80,13 @@ class Pytorch < Formula
   end
 
   resource "packaging" do
-    url "https://files.pythonhosted.org/packages/d7/f1/e7a6dd94a8d4a5626c03e4e99c87f241ba9e350cd9e6d75123f992427270/packaging-26.2.tar.gz"
-    sha256 "ff452ff5a3e828ce110190feff1178bb1f2ea2281fa2075aadb987c2fb221661"
+    url "https://files.pythonhosted.org/packages/7d/fa/3944b40b07da9ce895c0e6303a5ab7d53da063554f534556b134a54d6093/packaging-26.3.tar.gz"
+    sha256 "94edc256424af38762eb31306eed28beb9f0efc50a8837492c9d6fd6004aed79"
+  end
+
+  resource "pathspec" do
+    url "https://files.pythonhosted.org/packages/5a/82/42f767fc1c1143d6fd36efb827202a2d997a375e160a71eb2888a925aac1/pathspec-1.1.1.tar.gz"
+    sha256 "17db5ecd524104a120e173814c90367a96a98d07c45b2e10c2f3919fff91bf5a"
   end
 
   resource "pyyaml" do
@@ -91,9 +94,19 @@ class Pytorch < Formula
     sha256 "d76623373421df22fb4cf8817020cbb7ef15c725b9d5e45f17e189bfc384190f"
   end
 
+  resource "scikit-build-core" do
+    url "https://files.pythonhosted.org/packages/8d/7c/0f69b0c7150ce4bcee78c199fe3b7e03a6e01578451bd5d5d1a58beb32f9/scikit_build_core-1.0.3.tar.gz"
+    sha256 "a4d7a05978ee37975c37743510c8991e2debce7ef83afb0a07c0c576fd4f16e8"
+  end
+
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/34/26/f5d29e25ffdb535afef2d35cdb55b325298f96debd670da4c325e08d70f4/setuptools-83.0.0.tar.gz"
-    sha256 "025bccbbf0fa05b6192bc64ae1e7b16e001fd6d6d4d5de03c97b1c1ade523bef"
+    url "https://files.pythonhosted.org/packages/6d/44/f5da03a8ef95d369145c5bb53050e7877c9f3d312e128605fd9504829143/setuptools-84.0.0.tar.gz"
+    sha256 "f4695c21257f0d9b537ec2692c941d02ee143b7cc1276941349a546573b2ef73"
+  end
+
+  resource "six" do
+    url "https://files.pythonhosted.org/packages/94/e7/b2c673351809dca68a0e064b6af791aa332cf192da575fd474ed7d6f16a2/six-1.17.0.tar.gz"
+    sha256 "ff70335d468e7eb6ec65b95b99d3a2836546063f63acc5171de367e834932a81"
   end
 
   resource "sympy" do
@@ -106,22 +119,20 @@ class Pytorch < Formula
     sha256 "dc983d19a509c94dba722ee6abd33940f7c05a89e243c47e907eb4db6f1a43e5"
   end
 
-  def install
-    python3 = "python3.14"
+  # A Metal 4 toolchain with an older SDK trips the MPP include, which is only version-gated
+  patch do
+    url "https://github.com/pytorch/pytorch/commit/938bf9785f38e2b2b21879713ae94625aec4787e.patch?full_index=1"
+    sha256 "a89a1f1ac61776832e31865295fe388edf19bbf93be3dbff3a9910fe70cbdec3"
+    type :unofficial
+    resolves "https://github.com/pytorch/pytorch/pull/196104"
+  end
 
+  def install
     # Avoid building AVX512 code
     inreplace "cmake/Modules/FindAVX.cmake", /^CHECK_SSE\(CXX "AVX512"/, "#\\0"
 
     # Avoid bundling libomp
     inreplace "cmake/PostBuildSteps.cmake", "if(APPLE AND BUILD_PYTHON AND USE_OPENMP AND OpenMP_FOUND)", "if(FALSE)"
-
-    # MPS `.mm` (ObjC++) sources miss the CPU feature defines that DispatchStub's ABI needs
-    # Only takes effect on Intel macOS, where the AVX defines and MPS backend coexist
-    %w[AVX512 AVX2].each do |isa|
-      inreplace "cmake/Codegen.cmake",
-                "set(CMAKE_CXX_FLAGS \"${CMAKE_CXX_FLAGS} -DHAVE_#{isa}_CPU_DEFINITION\")",
-                "\\0\n    set(CMAKE_OBJCXX_FLAGS \"${CMAKE_OBJCXX_FLAGS} -DHAVE_#{isa}_CPU_DEFINITION\")"
-    end
 
     ENV["ATEN_NO_TEST"] = "ON"
     ENV["BLAS"] = "OpenBLAS"
@@ -180,7 +191,7 @@ class Pytorch < Formula
         std::cout << tensor << std::endl;
       }
     CPP
-    system ENV.cxx, "-std=c++17", "test.cpp", "-o", "test",
+    system ENV.cxx, "-std=c++20", "test.cpp", "-o", "test",
                     "-I#{include}/torch/csrc/api/include",
                     "-L#{lib}", "-ltorch", "-ltorch_cpu", "-lc10"
     system "./test"

@@ -42,10 +42,6 @@ class Pinocchio < Formula
   # Ref: https://github.com/stack-of-tasks/pinocchio/pull/2873
   patch :DATA
 
-  def python3
-    "python3.14"
-  end
-
   def install
     if build.head?
       system "git", "submodule", "update", "--init"
@@ -53,7 +49,7 @@ class Pinocchio < Formula
     end
 
     args = %W[
-      -DPYTHON_EXECUTABLE=#{which(python3)}
+      -DPYTHON_EXECUTABLE=#{python3}
       -DBUILD_UNIT_TESTS=OFF
       -DBUILD_WITH_COLLISION_SUPPORT=ON
     ]

@@ -403,7 +403,6 @@ class AwsSamCli < Formula
   def install
     ENV["AWS_CRT_BUILD_USE_SYSTEM_LIBCRYPTO"] = "1"
 
-    python3 = "python3.14"
     venv = virtualenv_create(libexec, python3, system_site_packages: false)
     venv.pip_install resources.reject { |r| ["awscrt", "aws-lambda-rie"].include?(r.name) }
     # CPU detection is available in AWS C libraries

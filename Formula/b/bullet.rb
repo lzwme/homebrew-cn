@@ -21,10 +21,6 @@ class Bullet < Formula
   depends_on "pkgconf" => :build
   depends_on "python@3.14" => [:build, :test]
 
-  def python3
-    "python3.14"
-  end
-
   def install
     common_args = %w[
       -DBT_USE_EGL=ON
@@ -67,7 +63,7 @@ class Bullet < Formula
                     "-DCMAKE_INSTALL_RPATH=#{loader_path};#{rpath(source: prefix_site_packages)}",
                     "-DBUILD_PYBULLET=ON",
                     "-DBUILD_PYBULLET_NUMPY=ON",
-                    "-DPYTHON_EXECUTABLE=#{which(python3)}",
+                    "-DPYTHON_EXECUTABLE=#{python3}",
                     "-DPYTHON_INCLUDE_DIR=#{python_prefix}/include/python#{python_version}",
                     "-DPYTHON_LIBRARY=#{python_prefix}/lib",
                     *common_args

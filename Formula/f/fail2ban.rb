@@ -23,11 +23,6 @@ class Fail2ban < Formula
   depends_on "sphinx-doc" => :build
   depends_on "python@3.14"
 
-  def python3
-    deps.map(&:to_formula)
-        .find { |f| f.name.start_with?("python@") }
-  end
-
   def install
     Pathname.glob("config/paths-*.conf").reject do |pn|
       pn.fnmatch?("config/paths-common.conf") || pn.fnmatch?("config/paths-osx.conf")
@@ -58,9 +53,9 @@ class Fail2ban < Formula
       s.gsub! "platform_system in ('linux',", "platform_system in ('linux', 'darwin',"
     end
 
-    system python3.opt_libexec/"bin/python", "-m", "pip", "install", *std_pip_args(build_isolation: true), "."
+    system python3, "-m", "pip", "install", *std_pip_args(build_isolation: true), "."
     # Fix symlink broken by python upgrades
-    ln_sf python3.opt_libexec/"bin/python", bin/"fail2ban-python"
+    ln_sf python3, bin/"fail2ban-python"
     etc.install (prefix/"etc").children
 
     # Install docs

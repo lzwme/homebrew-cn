@@ -24,10 +24,6 @@ class Proxsuite < Formula
   depends_on "scipy" => :no_linkage
   depends_on "simde"
 
-  def python3
-    "python3.14"
-  end
-
   def install
     system "git", "submodule", "update", "--init", "--recursive" if build.head?
 
@@ -38,7 +34,7 @@ class Proxsuite < Formula
     end
 
     args = %W[
-      -DPYTHON_EXECUTABLE=#{which(python3)}
+      -DPYTHON_EXECUTABLE=#{python3}
       -DBUILD_UNIT_TESTS=OFF
       -DBUILD_PYTHON_INTERFACE=ON
       -DINSTALL_DOCUMENTATION=ON

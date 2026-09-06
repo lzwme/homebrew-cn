@@ -50,15 +50,11 @@ class Fontforge < Formula
     depends_on "zlib-ng-compat"
   end
 
-  def python3
-    "python3.14"
-  end
-
   def install
     args = %W[
       -DENABLE_GUI=OFF
       -DENABLE_FONTFORGE_EXTRAS=ON
-      -DPython3_EXECUTABLE=#{which(python3)}
+      -DPython3_EXECUTABLE=#{python3}
       -DPYHOOK_INSTALL_DIR=#{Language::Python.site_packages(python3)}
     ]
 

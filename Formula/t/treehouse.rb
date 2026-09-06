@@ -6,18 +6,23 @@ class Treehouse < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e103ca195214a5a6c4f5fee663fecb124bad136d5c498ff6194c678c45b759b0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a48a5237c8b3ff623a2ce8fd2823d7531693f215192cc27838054485f0deaab6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e7aa6f663ed8c36f98e77f3769ba992551826275d4314d8f3919abe339679ae3"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c99409e5d3e04c59ebdab7d92a59f076b0125fd162ca5e58f5e18ebcb2e7882a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a7e2867f2dc165ec2202322e84785b99ea0e5d2ea3b752566728811b13bc042a"
-    sha256 cellar: :any,                 x86_64_linux:  "90de3a03e041535ca36267eb623aae9d0b4a69a1bc9f09ba6dce6c2e3c096fab"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0402bccc6eeaae080e411eadc3e2c7811cf7bcd41c78e69b445a4182a41dec2f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "da33ee021cc6538dd6d8928e939e87de282fec6cac2762d5149a85915847ab75"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3356be9607a57db79d0165620adaf84656f1914703cf5fa5ba7a188b63822497"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fbc8368a498bd0bc0fecbdd65d0dfcaec6459fc5ebeaddde35800d9c29eae21c"
+    sha256 cellar: :any,                 x86_64_linux:  "f4f1cfdebecc68b3cd1100eee7b7bcb3d523fa23d41074afc9bce384fbbb74fc"
   end
 
   depends_on "go" => :build
 
   def install
+    # Homebrew manages upgrades, so compile out the self-update check
+    inreplace "cmd/root.go", 'os.Getenv("TREEHOUSE_NO_UPDATE_CHECK")', '"1"'
+
     system "go", "build", *std_go_args(ldflags: "-X main.version=#{version}")
+
+    generate_completions_from_executable(bin/"treehouse", shell_parameter_format: :cobra)
   end
 
   test do

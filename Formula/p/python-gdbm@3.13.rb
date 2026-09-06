@@ -26,10 +26,6 @@ class PythonGdbmAT313 < Formula
   depends_on "gdbm"
   depends_on "python@3.13"
 
-  def python3
-    "python3.13"
-  end
-
   def install
     xy = Language::Python.major_minor_version python3
     python_include = if OS.mac?

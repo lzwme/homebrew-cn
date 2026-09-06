@@ -28,10 +28,6 @@ class Ldns < Formula
 
   conflicts_with "drill", because: "both install a `drill` binary"
 
-  def python3
-    "python3.14"
-  end
-
   def install
     args = %W[
       --with-drill
@@ -47,7 +43,7 @@ class Ldns < Formula
     # Fixes: ./contrib/python/ldns_wrapper.c:2746:10: fatal error: 'ldns.h' file not found
     inreplace "contrib/python/ldns.i", "#include \"ldns.h\"", "#include <ldns/ldns.h>"
 
-    ENV["PYTHON"] = which(python3)
+    ENV["PYTHON"] = python3
 
     # Exclude unrecognized options
     args += std_configure_args.reject { |s| s["--disable-debug"] || s["--disable-dependency-tracking"] }

@@ -1,18 +1,17 @@
 class Blocky < Formula
   desc "Fast and lightweight DNS proxy as ad-blocker for local network"
   homepage "https://0xerr0r.github.io/blocky/"
-  url "https://ghfast.top/https://github.com/0xerr0r/blocky/archive/refs/tags/v0.34.0.tar.gz"
-  sha256 "6438c5d04877feac4f41ab1e0306111c93598f386eb03e79ff21627d3f1ac12a"
+  url "https://ghfast.top/https://github.com/0xerr0r/blocky/archive/refs/tags/v0.35.0.tar.gz"
+  sha256 "c5874e2790aa21def45dd0ed9bd932ef2666ad412839f307c93c6a1bd94c20f5"
   license "Apache-2.0"
   head "https://github.com/0xerr0r/blocky.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "aaca59d1ac4f155657ddd215852718d237e80ebe43e8e85251b8c6e6f91b2b2e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "86f47784a16ab752ec40fdc97d75de674d11521c9c4a5a91c19d2bcc477e2633"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "92794e98d2b6c3e2c47cf9f058ab7f00cef0ea6bc062022090f9bb30f0b0c56e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "74711118361513a0bc753faf5a9af878b2586c34f662118eb8bd1b1d7dfcc47c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b50a8d8b1b87fe4095a42843117b1ac49ee36e3c568746d9235e6761304b75b3"
-    sha256 cellar: :any,                 x86_64_linux:  "849ffe2c4ad2aa9b0052c429912bbbea2e0536078a5886862f84adfcfa925a54"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "848f5db3e8bb9b092ceb70a54c18782c9e93cf3a175ca7c22c1b69f91c6b1294"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "982bd9e09928052eff17574347e0b4de06738a582cadc72976f49b5c0feca7f9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "283c1448096f484f6ac928230f5ab25526425c9a19e27e1a32f1f8878b2c484b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2798e956392d97be889f1697594b9de95a40ce05afbb01a7e892874e328975e1"
+    sha256 cellar: :any,                 x86_64_linux:  "8de25d4b23c7bd815b7200f7587b4796ae58c8023af2555402bd56442d40faf9"
   end
 
   depends_on "go" => :build

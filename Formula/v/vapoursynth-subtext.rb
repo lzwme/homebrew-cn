@@ -23,8 +23,6 @@ class VapoursynthSubtext < Formula
   depends_on "python@3.14"
   depends_on "vapoursynth"
 
-  def python3 = "python3.14"
-
   def install
     # Work around Homebrew's python prefix patch
     args = %W[-Dpython.platlibdir=#{prefix/Language::Python.site_packages(python3)}]

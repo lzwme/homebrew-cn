@@ -86,10 +86,6 @@ class Root < Formula
 
   skip_clean "bin"
 
-  def python3
-    "python3.14"
-  end
-
   def install
     # Skip modification of CLING_OSX_SYSROOT to the unversioned SDK path
     # Related: https://github.com/Homebrew/homebrew-core/issues/135714
@@ -102,7 +98,7 @@ class Root < Formula
       -DCLING_CXX_PATH=clang++
       -DCMAKE_CXX_STANDARD=20
       -DCMAKE_INSTALL_ELISPDIR=#{elisp}
-      -DPYTHON_EXECUTABLE=#{which(python3)}
+      -DPYTHON_EXECUTABLE=#{python3}
       -DXROOTD_ROOT_DIR=#{formula_opt_prefix("xrootd")}
       -Dbuiltin_cfitsio=OFF
       -Dbuiltin_civetweb=OFF

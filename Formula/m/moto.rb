@@ -281,10 +281,6 @@ class Moto < Formula
     sha256 "6d94c9f834dd9e44514162799d344d815a3a4faec913717a9ecbfa5be1bb8e61"
   end
 
-  def python3
-    which("python3.14")
-  end
-
   def install
     virtualenv_install_with_resources
   end

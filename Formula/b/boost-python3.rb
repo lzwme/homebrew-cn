@@ -24,10 +24,6 @@ class BoostPython3 < Formula
   depends_on "boost"
   depends_on "python@3.14"
 
-  def python3
-    "python3.14"
-  end
-
   def install
     # "layout" should be synchronized with boost
     args = %W[

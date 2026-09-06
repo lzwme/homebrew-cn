@@ -28,10 +28,6 @@ class Lcm < Formula
   depends_on "openjdk"
   depends_on "python@3.14"
 
-  def python3
-    which("python3.14")
-  end
-
   def install
     # Adding RPATH in #{lib}/lua/X.Y/lcm.so and some #{bin}/*.
     lua_lib = lib/"lua"/Formula["lua"].version.major_minor

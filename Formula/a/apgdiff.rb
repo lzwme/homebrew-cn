@@ -22,6 +22,8 @@ class Apgdiff < Formula
 
   depends_on "openjdk"
 
+  deny_network_access!
+
   def install
     jar = "releases/apgdiff-#{version}.jar"
 

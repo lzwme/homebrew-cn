@@ -114,7 +114,6 @@ class Beets < Formula
 
   def install
     ENV.append_to_rustflags "-C link-arg=-Wl,-undefined,dynamic_lookup" if OS.mac?
-    python3 = "python3.14"
     ENV.append_path "PYTHONPATH", formula_opt_libexec("cython")/Language::Python.site_packages(python3)
 
     without = ["lap"]

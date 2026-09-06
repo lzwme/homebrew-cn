@@ -41,7 +41,6 @@ class Redo < Formula
   end
 
   def install
-    python3 = "python3.14"
     # Prevent system Python 2 from being detected
     inreplace "redo/whichpython.do", " python python3 python2 python2.7;", " #{python3};"
 

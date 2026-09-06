@@ -20,15 +20,17 @@ class Actionlint < Formula
   depends_on "ronn" => :build
   depends_on "shellcheck"
 
-  deny_network_access! [:postinstall, :test]
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     ldflags = %W[
       -X "github.com/rhysd/actionlint.version=#{version}"
       -X "github.com/rhysd/actionlint.installedFrom=installed from Homebrew"
     ]
-    # FIXME: we shouldn't need this, but patchelf.rb does not seem to work well with the layout of Aarch64 ELF files
-    ldflags << " -extld #{ENV.cc}" if OS.linux? && Hardware::CPU.arm?
     system "go", "build", *std_go_args(ldflags:), "./cmd/actionlint"
     system "ronn", "man/actionlint.1.ronn"
     man1.install "man/actionlint.1"

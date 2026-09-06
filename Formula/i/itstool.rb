@@ -48,10 +48,6 @@ class Itstool < Formula
     end
   end
 
-  def python3
-    "python3.14"
-  end
-
   def install
     resource("libxml2").stage do
       # We need to insert our include dir first
@@ -77,7 +73,7 @@ class Itstool < Formula
     end
 
     configure = build.head? ? "./autogen.sh" : "./configure"
-    system configure, "--prefix=#{libexec}", "PYTHON=#{which(python3)}"
+    system configure, "--prefix=#{libexec}", "PYTHON=#{python3}"
     system "make", "install"
 
     bin.install Dir[libexec/"bin/*"]

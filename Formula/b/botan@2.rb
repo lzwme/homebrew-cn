@@ -29,10 +29,6 @@ class BotanAT2 < Formula
   uses_from_macos "bzip2"
   uses_from_macos "zlib"
 
-  def python3
-    which("python3.14")
-  end
-
   def install
     ENV.cxx11
 

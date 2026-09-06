@@ -142,10 +142,6 @@ class Mapproxy < Formula
     sha256 "9bad61a4268dac112f1c5cd4630a56ede601b6ed420300677a869083d70a4c44"
   end
 
-  def python3
-    "python3.14"
-  end
-
   def install
     numpy_include = formula_opt_lib("numpy")/Language::Python.site_packages(python3)/"numpy/_core/include"
     geos_include = formula_opt_include("geos")

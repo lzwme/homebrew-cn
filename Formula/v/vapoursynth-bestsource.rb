@@ -36,8 +36,6 @@ class VapoursynthBestsource < Formula
 
   deny_network_access!
 
-  def python3 = "python3.14"
-
   def install
     ENV.runtime_cpu_detection if Hardware::CPU.intel?
 

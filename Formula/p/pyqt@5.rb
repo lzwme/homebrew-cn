@@ -60,10 +60,6 @@ class PyqtAT5 < Formula
     sha256 "304b1ea3bfb6555202751220700d9a98d1de9eab464515dfccca96f306ddf00e"
   end
 
-  def python3
-    "python3.14"
-  end
-
   def install
     sip_install = formula_opt_libexec("pyqt-builder")/"bin/sip-install"
     site_packages = prefix/Language::Python.site_packages(python3)

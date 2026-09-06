@@ -6,7 +6,7 @@ class PortableRuby < PortableFormula
   url "https://cache.ruby-lang.org/pub/ruby/4.0/ruby-4.0.6.tar.gz"
   sha256 "837d299e8f7ddf2be31a229a7a7e019d354979825117989acb3b32b1a9be262a"
   license "Ruby"
-  revision 1
+  revision 2
 
   # This regex restricts matching to versions other than X.Y.0.
   livecheck do
@@ -15,10 +15,10 @@ class PortableRuby < PortableFormula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "eb59022aebb56b72eafe439ff5cb122c5fcb6d0785347848be56e34b3e39ae62"
-    sha256 cellar: :any_skip_relocation, big_sur:       "ada64539c61bbe9921cbbb4ca82132b62dbfd288a04057bfb2d8850deb4cae50"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d0f04d327063be7ef72703c0e621eca33bc9bf388025d36671758ebac230364d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b192f87e0d0596dd7bb2e7ef91e7bae323ec879b405e1b778ee8d14798208e0f"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "1643bb83d705f0c5e34445af151bb064bdf984081eff18a9646466b8fdd104db"
+    sha256 cellar: :any_skip_relocation, big_sur:       "33e2f1e2877739c45e4b4b4f5e13d46826b5933fc2bf80966263eb43f1ad2af8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6f13756b7972c87c21917aec5319453c17400e4818a22552999429ecc48db932"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "01c1adce6394bcb5b1daa0921e5b0b5c64ec90641abd4678681ea7df7445791a"
   end
 
   depends_on "pkgconf" => :build
@@ -44,8 +44,8 @@ class PortableRuby < PortableFormula
   end
 
   resource "bootsnap" do
-    url "https://rubygems.org/downloads/bootsnap-1.25.0.gem"
-    sha256 "41059e7d0f9cb4023a33465d095f64b913fc9d1b808d6524c307da945fbcffcf"
+    url "https://rubygems.org/downloads/bootsnap-1.26.0.gem"
+    sha256 "ca96237015e6cd74a02963d5821cf00ac5ea134653b323e8cd6d702a7718bf1b"
 
     livecheck do
       url "https://rubygems.org/api/v1/versions/bootsnap.json"

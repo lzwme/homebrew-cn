@@ -21,10 +21,6 @@ class LibcapNg < Formula
   depends_on "swig" => :build
   depends_on :linux
 
-  def python3
-    "python3.14"
-  end
-
   def install
     system "./autogen.sh"
     system "./configure", "--disable-silent-rules",

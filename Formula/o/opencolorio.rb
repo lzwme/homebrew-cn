@@ -32,10 +32,6 @@ class Opencolorio < Formula
     depends_on "sse2neon" => :build
   end
 
-  def python3
-    "python3.14"
-  end
-
   def install
     args = %W[
       -DCMAKE_INSTALL_RPATH=#{rpath}
@@ -43,7 +39,7 @@ class Opencolorio < Formula
       -DOCIO_BUILD_TESTS=OFF
       -DOCIO_INSTALL_EXT_PACKAGES=NONE
       -DOCIO_PYTHON_VERSION=#{Language::Python.major_minor_version python3}
-      -DPython_EXECUTABLE=#{which(python3)}
+      -DPython_EXECUTABLE=#{python3}
     ]
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args

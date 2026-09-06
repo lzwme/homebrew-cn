@@ -1,8 +1,8 @@
 class GitAnnex < Formula
   desc "Manage files with git without checking in file contents"
   homepage "https://git-annex.branchable.com/"
-  url "https://hackage.haskell.org/package/git-annex-10.20260717/git-annex-10.20260717.tar.gz"
-  sha256 "e0802511e0c90852f52997520668b70cfa1e57fc268d996564c24a289ea6e406"
+  url "https://hackage.haskell.org/package/git-annex-10.20260901/git-annex-10.20260901.tar.gz"
+  sha256 "f7843f937103819b93d7c436410ac5cd2db0a8863d14eabeb15712f2bfd74582"
   license all_of: ["AGPL-3.0-or-later", "BSD-2-Clause", "BSD-3-Clause",
                    "GPL-2.0-only", "GPL-3.0-or-later", "MIT"]
   head "git://git-annex.branchable.com/", branch: "master"
@@ -13,13 +13,11 @@ class GitAnnex < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "cf230a4073c083f4eb72e854d59107767ef76390a9b02500fc4f536d7e36b36d"
-    sha256 cellar: :any, arm64_sequoia: "23741b3f18473205a77787f70d8f943da1813bde12e725da71ada66ca305da08"
-    sha256 cellar: :any, arm64_sonoma:  "a86117168883797e8227aa03293ae9aeafd5d38de3bc8b9f7a81c1dcfc947adf"
-    sha256 cellar: :any, sonoma:        "4750c8730326c22c4524b7d37415a874618c26c98960e992f2b24dd7fb6151ff"
-    sha256 cellar: :any, arm64_linux:   "4079bd35e9e0623080537513dbf92b69cbe9c49068d9bea3544cca94d94e15c7"
-    sha256 cellar: :any, x86_64_linux:  "9fad24db209821bcfec74e91053f9de36653d46f99cc751b06996fe7e4cbd295"
+    sha256 cellar: :any, arm64_tahoe:   "4cda8ae78638da2c565fc647da1f1ac89f68abb520667e1b576338f69d0d1668"
+    sha256 cellar: :any, arm64_sequoia: "0b746e311ac679111567b04a38a7971b146995f212403bf94f283f66dcac9318"
+    sha256 cellar: :any, arm64_sonoma:  "18334bbad00bc354db80fb38f554967525862cd8a5d8e8cb62056a2bab7af5e3"
+    sha256 cellar: :any, arm64_linux:   "f03f332529b3663beb1b563121dfcf757afbd3f553cb6fa95f634037d6bea750"
+    sha256 cellar: :any, x86_64_linux:  "dc9d64a74745c070a8095d2a1e392bc55945b63ec3d1ae258a3a801b465dbb40"
   end
 
   depends_on "cabal-install" => :build
@@ -43,6 +41,9 @@ class GitAnnex < Formula
       "--constraint=ram<0",
       # Workaround for API breaking release of magic
       "--constraint=magic<2",
+      # Workaround for QuickCheck 2.17+ providing its own `Arbitrary (NonEmpty a)`
+      # Upstream fix in commit 16cd931e9383ef295e4faf97f51c6fdfd2b9c61c, unreleased as of 10.20260901
+      "--constraint=QuickCheck<2.17",
       # Unbundle sqlite
       "--constraint=persistent-sqlite +systemlib +use-pkgconfig",
     ]

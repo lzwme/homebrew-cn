@@ -47,10 +47,6 @@ class Notmuch < Formula
     depends_on "zlib-ng-compat"
   end
 
-  def python3
-    "python3.14"
-  end
-
   def install
     ENV.append "CXXFLAGS", "-std=c++17"
     site_packages = Language::Python.site_packages(python3)

@@ -83,8 +83,6 @@ class Pyqt < Formula
     sha256 "15cf49efbbbd4c6bc87653b2c4ae80d6049f800e31620b336734ae2e37cbedae"
   end
 
-  def python3 = "python3.14"
-
   def webengine_supported?
     on_sonoma :or_newer do
       return true

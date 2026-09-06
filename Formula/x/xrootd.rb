@@ -34,10 +34,6 @@ class Xrootd < Formula
     depends_on "zlib-ng-compat"
   end
 
-  def python3
-    "python3.14"
-  end
-
   def install
     args = %W[
       -DCMAKE_INSTALL_RPATH=#{rpath}
@@ -47,7 +43,7 @@ class Xrootd < Formula
       -DENABLE_KRB5=ON
       -DENABLE_MACAROONS=OFF
       -DENABLE_PYTHON=ON
-      -DPython_EXECUTABLE=#{which(python3)}
+      -DPython_EXECUTABLE=#{python3}
       -DENABLE_READLINE=ON
       -DENABLE_SCITOKENS=OFF
       -DENABLE_TESTS=OFF

@@ -3,13 +3,13 @@ class Checkdmarc < Formula
 
   desc "Command-line parser for SPF and DMARC DNS records"
   homepage "https://domainaware.github.io/checkdmarc/"
-  url "https://files.pythonhosted.org/packages/f6/8a/f56ed39cc9961614a3a80e46b015b582c140aa8bc6dc9a8dec8883b33140/checkdmarc-6.0.0.tar.gz"
-  sha256 "34499513eb0db1fba992e8d88ebb52c8798d4ffdb98af37ae977d13679f5b31a"
+  url "https://files.pythonhosted.org/packages/8f/31/4cb91fd6efe9e70487856a6daa19ce0c20387c3cbf357b0d66fb3e1e7143/checkdmarc-6.0.1.tar.gz"
+  sha256 "b9ca2007bbc3587cd05791e09b2607213815e949b526d5f2927894eaed4f32af"
   license "Apache-2.0"
   head "https://github.com/domainaware/checkdmarc.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "030612220767a29b35bfc7da69143a1109426067d08523de53b7a27389016c6c"
+    sha256 cellar: :any_skip_relocation, all: "5dda3279e2fa7981e2812fb74942deef704e68a8ec4f1650fbfd03b8e77df5f0"
   end
 
   depends_on "certifi" => :no_linkage
@@ -19,8 +19,8 @@ class Checkdmarc < Formula
   pypi_packages exclude_packages: ["certifi", "cryptography"]
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/61/cc/a381afa6efea9f496eff839d4a6a1aed3bfafc7b3ab4b0d1b243a12573dd/anyio-4.14.2.tar.gz"
-    sha256 "cfa139f3ed1a23ee8f88a145ddb5ac7605b8bbfd8592baacd7ce3d8bb4313c7f"
+    url "https://files.pythonhosted.org/packages/ea/9a/c15a60547004a3f3cea20296c934f827ddd7bdba225a2e7e9fcb5ec48c80/anyio-4.15.0.tar.gz"
+    sha256 "b5c620ed540725e2579c31b17bb995b3bf02c9281c9cace04c7d186380bab85e"
   end
 
   resource "charset-normalizer" do
@@ -84,8 +84,8 @@ class Checkdmarc < Formula
   end
 
   resource "publicsuffixlist" do
-    url "https://files.pythonhosted.org/packages/f8/7a/92625a1c708d053f02055769b27d0361dd2d346ee5f8c70f658c6133b6b0/publicsuffixlist-1.0.2.20260830.tar.gz"
-    sha256 "0b18a601f04aa5076c3083c4de2c763a15f43218c9cb77bcef732663fb228090"
+    url "https://files.pythonhosted.org/packages/3a/dd/2dec03dc9afb59c5970c760be1953596c87dc0e9794bebb904b267b51ec9/publicsuffixlist-1.0.2.20260904.tar.gz"
+    sha256 "20ba05378dc9a0206266ea93aacb6779d8e77b6ba1be227c494bad85ce539a1d"
   end
 
   resource "pyleri" do
@@ -96,6 +96,11 @@ class Checkdmarc < Formula
   resource "requests" do
     url "https://files.pythonhosted.org/packages/ac/c3/e2a2b89f2d3e2179abd6d00ebd70bff6273f37fb3e0cc209f48b39d00cbf/requests-2.34.2.tar.gz"
     sha256 "f288924cae4e29463698d6d60bc6a4da69c89185ad1e0bcc4104f584e960b9ed"
+  end
+
+  resource "typing-extensions" do
+    url "https://files.pythonhosted.org/packages/f6/cc/6253133b5bb138fc3306cebfbda2c520f545d36b5be2c7255cc528bb45d6/typing_extensions-4.16.0.tar.gz"
+    sha256 "dc983d19a509c94dba722ee6abd33940f7c05a89e243c47e907eb4db6f1a43e5"
   end
 
   resource "urllib3" do

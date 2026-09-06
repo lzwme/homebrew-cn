@@ -70,8 +70,6 @@ class GraphTool < Formula
     sha256 "7713e1179d162cf5c7906da876ec2ccb9c3a9dcbdffef0cc7f70c3667a205f0b"
   end
 
-  def python3 = "python3.14"
-
   def install
     venv = virtualenv_create(libexec, python3)
     resource("zstandard").stage do
@@ -95,9 +93,9 @@ class GraphTool < Formula
     ENV.O3
 
     args = %W[
-      PYTHON=#{which(python3)}
+      PYTHON=#{python3}
       --with-python-module-path=#{prefix/Language::Python.site_packages(python3)}
-      --with-boost-python=boost_#{python3.delete(".")}
+      --with-boost-python=boost_#{python3.basename.to_s.delete(".")}
       --with-boost-libdir=#{formula_opt_lib("boost")}
       --with-boost-coroutine=boost_coroutine
       --disable-silent-rules

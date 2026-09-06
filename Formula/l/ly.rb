@@ -11,10 +11,6 @@ class Ly < Formula
 
   depends_on "python@3.14"
 
-  def python3
-    "python3.14"
-  end
-
   def install
     system python3, "-m", "pip", "install", *std_pip_args(build_isolation: true), "."
   end

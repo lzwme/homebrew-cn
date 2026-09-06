@@ -28,10 +28,6 @@ class Gpgmepy < Formula
   depends_on "gpgme"
   depends_on "libgpg-error"
 
-  def python3
-    "python3.14"
-  end
-
   def install
     # Use pip over executing setup.py, which installs a deprecated egg distribution
     # https://dev.gnupg.org/T6784

@@ -24,16 +24,12 @@ class Sip < Formula
     sha256 "f4695c21257f0d9b537ec2692c941d02ee143b7cc1276941349a546573b2ef73"
   end
 
-  def python3
-    "python3.14"
-  end
-
   def install
     venv = virtualenv_install_with_resources
 
     # Modify the path sip-install writes in scripts as we install into a
     # virtualenv but expect dependents to run with path to Python formula
-    inreplace venv.site_packages/"sipbuild/builder.py", /\bsys\.executable\b/, "\"#{which(python3)}\""
+    inreplace venv.site_packages/"sipbuild/builder.py", /\bsys\.executable\b/, "\"#{python3}\""
   end
 
   test do

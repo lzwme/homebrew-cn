@@ -30,10 +30,6 @@ class Qscintilla2 < Formula
   depends_on "python@3.14" => [:build, :test]
   depends_on "qtbase"
 
-  def python3
-    "python3.14"
-  end
-
   def install
     args = %w[-config release]
     if OS.mac?

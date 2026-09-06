@@ -32,8 +32,7 @@ class PySpy < Formula
       output = shell_output("#{bin}/py-spy record python3 2>&1", 1)
       assert_match "Try running again with elevated permissions by going", output
     else
-      python = "python3.14"
-      output = shell_output("#{bin}/py-spy record -- #{python} -c 'import time; time.sleep(1)' 2>&1")
+      output = shell_output("#{bin}/py-spy record -- #{python3} -c 'import time; time.sleep(1)' 2>&1")
       assert_match(/Samples: \d+ Errors: 0/, output)
     end
   end

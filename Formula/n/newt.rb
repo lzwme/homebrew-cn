@@ -28,10 +28,6 @@ class Newt < Formula
     depends_on "gettext"
   end
 
-  def python3
-    "python3.14"
-  end
-
   def install
     inreplace "Makefile.in" do |s|
       if OS.mac?
@@ -48,7 +44,7 @@ class Newt < Formula
 
       # install python modules in Cellar rather than global site-packages
       s.gsub! "`$$ver -c \"import sysconfig; print(sysconfig.get_path('platlib'))\"`",
-              "#{lib}/#{python3}/site-packages"
+              (prefix/Language::Python.site_packages(python3)).to_s
     end
 
     system "./configure", "--prefix=#{prefix}", "--without-tcl", "--with-python=#{python3}"

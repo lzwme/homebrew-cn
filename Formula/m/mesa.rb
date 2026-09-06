@@ -127,8 +127,6 @@ class Mesa < Formula
     end
   end
 
-  def python3 = "python3.14"
-
   def install
     resource("mesa-libclc").stage do
       system "cmake", "-S", ".", "-B", "build", *std_cmake_args

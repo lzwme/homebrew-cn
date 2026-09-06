@@ -18,6 +18,9 @@ class AnsibleCmdb < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "c82c4713092df1c5856967eb0d0d4072622d531083501e3995dfa27f10f2fbdb"
   end
 
+  deprecate! date: "2026-09-05", because: :repo_removed
+  disable! date: "2027-03-05", because: :repo_removed
+
   depends_on "libyaml"
   depends_on "python@3.14"
 

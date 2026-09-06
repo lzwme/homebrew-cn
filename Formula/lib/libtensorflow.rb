@@ -27,7 +27,6 @@ class Libtensorflow < Formula
   end
 
   def install
-    python3 = "python3.13"
     optflag = ENV["HOMEBREW_OPTFLAGS"].presence
     optflag ||= if Hardware::CPU.arm? && OS.mac?
       "-mcpu=apple-m1"

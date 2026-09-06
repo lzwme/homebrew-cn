@@ -119,10 +119,6 @@ class Csound < Formula
     sha256 "80b625d5892fe9959c3b316340f326e3ece4e98325eb0a81dd5b9ddae563b1d1"
   end
 
-  def python3
-    which("python3.14")
-  end
-
   def install
     ENV["JAVA_HOME"] = Language::Java.java_home
     site_packages = prefix/Language::Python.site_packages(python3)

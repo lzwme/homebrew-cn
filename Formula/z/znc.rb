@@ -36,7 +36,6 @@ class Znc < Formula
   def install
     rm_r(["third_party/cctz", "third_party/googletest"])
 
-    python3 = "python3.14"
     xy = Language::Python.major_minor_version python3
 
     # Fixes: CMake Error: Problem with archive_write_header(): Can't create 'swigpyrun.h'

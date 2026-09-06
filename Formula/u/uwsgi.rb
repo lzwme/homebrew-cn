@@ -33,10 +33,6 @@ class Uwsgi < Formula
     depends_on "linux-pam"
   end
 
-  def python3
-    "python3.14"
-  end
-
   def install
     openssl = Formula["openssl@3"]
     ENV.prepend "CFLAGS", "-I#{openssl.opt_include}"

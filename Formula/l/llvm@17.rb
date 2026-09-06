@@ -59,10 +59,6 @@ class LlvmAT17 < Formula
     end
   end
 
-  def python3
-    "python3.14"
-  end
-
   def install
     # The clang bindings need a little help finding our libclang.
     inreplace "clang/bindings/python/clang/cindex.py",

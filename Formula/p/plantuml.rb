@@ -1,8 +1,8 @@
 class Plantuml < Formula
   desc "Draw UML diagrams"
   homepage "https://plantuml.com/"
-  url "https://ghfast.top/https://github.com/plantuml/plantuml/releases/download/v1.2026.7/plantuml-1.2026.7.jar"
-  sha256 "33aa7ed0ca843e300690230d09268e1f526fdde7e86fecdfa39fb80412cafcde"
+  url "https://ghfast.top/https://github.com/plantuml/plantuml/releases/download/v1.2026.8/plantuml-1.2026.8.jar"
+  sha256 "5e1ecfa8ecd32c90b03bbf3b1eb6f020943f98ab0fcf4032be31a0002ee2c462"
   license "GPL-3.0-or-later"
   version_scheme 1
 
@@ -12,7 +12,7 @@ class Plantuml < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "d6d7320fd3a4bdf207a874d23c1a14bb481f5842cfb27d13b05dfab54258ba0b"
+    sha256 cellar: :any_skip_relocation, all: "c847f51ca480be6219f2558c44966ae4625407bf7b1d5d66a0684c6777a40f2c"
   end
 
   depends_on "graphviz"

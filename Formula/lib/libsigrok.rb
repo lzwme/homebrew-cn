@@ -97,10 +97,6 @@ class Libsigrok < Formula
   # Fix for swig 4.4 changing the return type of %init
   patch :DATA
 
-  def python3
-    "python3.14"
-  end
-
   def install
     resource("fw-fx2lafw").stage do
       system "./autogen.sh" if build.head?

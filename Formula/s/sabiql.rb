@@ -1,22 +1,28 @@
 class Sabiql < Formula
   desc "Fast, safe-by-design, driverless, Vim-first DB TUI with ER diagrams"
   homepage "https://github.com/riii111/sabiql"
-  url "https://ghfast.top/https://github.com/riii111/sabiql/archive/refs/tags/v3.0.0.tar.gz"
-  sha256 "fa1a8edf3ec0b653d56c802a155dbb4b30be0f31f42b72b26f4ea1898dfa488a"
+  url "https://ghfast.top/https://github.com/riii111/sabiql/archive/refs/tags/v3.0.1.tar.gz"
+  sha256 "745738d629b618f7f02190c176a89cebec29bfd3dd3877ebc12cda5223e8672d"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8f81bd1a25632e8a702561833d39d0cb9d5fb54d293840be5bf9e7fca02ce1a7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7644b246b0652401c9932b924d0082afab598f5f7f8fcd476701f934635b4f4e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0c63aed69ad9accb5bc652db7d203ed23e0b9559f1776e2256a3267f67a94cb7"
-    sha256 cellar: :any,                 arm64_linux:   "85b2bf5700ad27f351587ea4903e7f3e3a609388077cf8fdaab2a35a38647659"
-    sha256 cellar: :any,                 x86_64_linux:  "82137759c7da8f9a7849efac2b19d76f1856682de159c9b0bad9230d28ae770e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "81e0796b675dcd06e3468a587b2daf2ac1f33d000da3eb687be6cc16199e5d68"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9be62b9b06b79cbd510197964bac174c6398c96a4f14c443669a6a1064f0fd82"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bb8b969ae276640a7fd4162d69889097a5f3c9e8ee179deeeae74104da7675bd"
+    sha256 cellar: :any,                 arm64_linux:   "ce6016a6e24f92c123b29b080ca1cfbc3a2a7f9a7c57cb4ee5517c7e8add2ec5"
+    sha256 cellar: :any,                 x86_64_linux:  "626f8e2ee7106c3e47ccedd1af8bf062a8356654e8b511416278989d73cabd28"
   end
 
   depends_on "rust" => :build
   depends_on "graphviz"
 
   uses_from_macos "sqlite"
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", "--locked"
+  end
 
   def install
     system "cargo", "install", "--no-default-features", *std_cargo_args

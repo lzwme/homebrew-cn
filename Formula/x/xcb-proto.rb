@@ -13,10 +13,6 @@ class XcbProto < Formula
   depends_on "pkgconf" => [:build, :test]
   depends_on "python@3.14" => [:build, :test]
 
-  def python3
-    "python3.14"
-  end
-
   def install
     args = %W[
       --prefix=#{prefix}

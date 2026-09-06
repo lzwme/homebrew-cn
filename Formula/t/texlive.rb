@@ -343,7 +343,6 @@ class Texlive < Formula
   end
 
   def install
-    python3 = "python3.14"
     venv = virtualenv_create(libexec, python3)
     venv.pip_install resource("pygments")
 

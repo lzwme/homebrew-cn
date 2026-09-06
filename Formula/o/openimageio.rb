@@ -48,17 +48,13 @@ class Openimageio < Formula
     cause "Requires GCC 9.3 or later"
   end
 
-  def python3
-    "python3.14"
-  end
-
   def install
     py3ver = Language::Python.major_minor_version python3
     ENV["PYTHONPATH"] = site_packages = prefix/Language::Python.site_packages(python3)
 
     args = %W[
       -DCMAKE_INSTALL_RPATH=#{rpath};#{rpath(source: site_packages/"OpenImageIO")}
-      -DPython3_EXECUTABLE=#{which(python3)}
+      -DPython3_EXECUTABLE=#{python3}
       -DPYTHON_VERSION=#{py3ver}
       -DCCACHE_FOUND=
       -DEMBEDPLUGINS=ON

@@ -1,18 +1,17 @@
 class Splitrail < Formula
   desc "Real-time token usage tracker and cost monitor for CLI coding agents"
   homepage "https://splitrail.dev/"
-  url "https://ghfast.top/https://github.com/Piebald-AI/splitrail/archive/refs/tags/v3.7.2.tar.gz"
-  sha256 "91832298ac6af26d26d6706acb14c8d5e630d3eb80b8fb2e22f34f522275e1fb"
+  url "https://ghfast.top/https://github.com/Piebald-AI/splitrail/archive/refs/tags/v3.9.1.tar.gz"
+  sha256 "17e77d4505cad0377ed880fcbfbed9ca03d7a02dc4dddfca5477d2dbf592764b"
   license "MIT"
   head "https://github.com/Piebald-AI/splitrail.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6569bff97eec320ce5308a6e466737381ae57ebcf0a01c8584b5ca1d2a117a1a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4c9883587cc373596149ec553ed011d4a9349092a2c5e239afeb91e031f6e8a2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "09aeae3e0e61e7003e13ab799ac9e18eebf3cefafb41b64f60eb289762509f5a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a9fdf5cb676d311a70081fe939ddfe89cb65e9a2b5ea8935814deab8c5e13603"
-    sha256 cellar: :any,                 arm64_linux:   "b4237a59264067f5c65200c5c7a0f8511a42facb716a254d122d46e5b477730b"
-    sha256 cellar: :any,                 x86_64_linux:  "0f07e34a90c39850638248996067bc8e1a36bbd379ebaa2cc068ad50328eedc5"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7af28960ef62069b28c538bd6713156d2195e892e662f28e35e7e38ab8224d64"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d48365d075a9fa0a22982e4998d0cc3e616cf636e4a839257f27eb048eaf6ae2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e9d756b359ac1e41cdaa1f090e0a015dd5918b59e9f2b73f553bddda95c9d893"
+    sha256 cellar: :any,                 arm64_linux:   "37f336a869e09acb5aa9c28a7c19265c8ebc036c0128c9f540127953f0a04477"
+    sha256 cellar: :any,                 x86_64_linux:  "c8653e70915bc1490676a54390f0536739e9b0b6d505d6585c0eebe3b042a9eb"
   end
 
   depends_on "rust" => :build

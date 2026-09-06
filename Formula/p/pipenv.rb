@@ -18,10 +18,6 @@ class Pipenv < Formula
   pypi_packages package_name:     "pipenv[completion]",
                 exclude_packages: "certifi"
 
-  def python3
-    "python3.14"
-  end
-
   resource "argcomplete" do
     url "https://files.pythonhosted.org/packages/87/6f/5a73f04007ca950701765949209f068da628bd11f9c2da287278ce91e0ee/argcomplete-3.7.2.tar.gz"
     sha256 "aad8b69a0b9969edb62db0d1752354c0d50717b10e0cbb00e2a958381b9fc6b9"
@@ -74,7 +70,7 @@ class Pipenv < Formula
 
   test do
     ENV["LC_ALL"] = "en_US.UTF-8"
-    system bin/"pipenv", "--python", which(python3)
+    system bin/"pipenv", "--python", python3
     system bin/"pipenv", "install", "requests"
     system bin/"pipenv", "install", "boto3"
     assert_path_exists testpath/"Pipfile"

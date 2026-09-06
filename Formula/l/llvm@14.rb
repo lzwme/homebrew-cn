@@ -56,10 +56,6 @@ class LlvmAT14 < Formula
   # Backport of https://reviews.llvm.org/D130060
   patch :DATA
 
-  def python3
-    "python3.12"
-  end
-
   def install
     # The clang bindings need a little help finding our libclang.
     inreplace "clang/bindings/python/clang/cindex.py",
