@@ -1,8 +1,8 @@
 class Rustledger < Formula
   desc "Fast, pure Rust implementation of Beancount double-entry accounting"
   homepage "https://rustledger.github.io"
-  url "https://ghfast.top/https://github.com/rustledger/rustledger/archive/refs/tags/v0.23.0.tar.gz"
-  sha256 "901f8091683c56f41e38728a3aa1df10dd1b5608f890650efa7e66364f7a5bc3"
+  url "https://ghfast.top/https://github.com/rustledger/rustledger/archive/refs/tags/v0.24.0.tar.gz"
+  sha256 "0624377cf985722ae367747d586931e746a4c7c09bb962474cf73320d6e5d1ff"
   license "GPL-3.0-only"
   head "https://github.com/rustledger/rustledger.git", branch: "main"
 
@@ -12,11 +12,11 @@ class Rustledger < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "884630e4ea5b419cdf14f5f26f1acea66683eee5338ac8ea1b1ba1617cf22901"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9b52056bce3c6932cff7ba103269a48cae7f2f25e5ea641a4f42046bc28234aa"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8a1fc9b67c39ff0fe9a7873801e8e2826e1f4508c7b7e33762a27892cf1336d4"
-    sha256 cellar: :any,                 arm64_linux:   "46bc0906b1576682559ec63ad34ac97a80daded53ddfaf44372216fab6769546"
-    sha256 cellar: :any,                 x86_64_linux:  "b8d3b52148155e1060af884609e0dfcc80916b4418b8b974f8339fb638a2d6e7"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fbf41449d4c19c284b9ed9563b8ff15d354c845687d9014212ac55c9051805c9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e6fe3f56942efce0cbdab8eed26cc1aacffc1adabb3226bc6a9ed8115bdc0b8f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7d78c2062cbe66136dd97c8a87fca29ecc02ec7775dc33e7232da27500c760dd"
+    sha256 cellar: :any,                 arm64_linux:   "f6c94a5f90da5e657d6b29c85e9304109754e263d08a76b4703c224c2480a264"
+    sha256 cellar: :any,                 x86_64_linux:  "d28bc29f428de15419451df9b4eafe602f1729f31cef1904a885d8b16a5d3fd4"
   end
 
   depends_on "rust" => :build

@@ -54,7 +54,6 @@ class TomcatNative < Formula
 
     pid = spawn(tomcat.bin/"catalina", "start")
     sleep 10
-    sleep 10 if OS.mac? && Hardware::CPU.intel?
     begin
       system tomcat.bin/"catalina", "stop"
     ensure

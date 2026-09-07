@@ -7,7 +7,8 @@ class MysqlAT97 < Formula
   revision 1
 
   livecheck do
-    url "https://dev.mysql.com/downloads/mysql/9.7.html?tpl=files&os=src"
+    url "https://dev.mysql.com/downloads/mysql/9.7.html?tpl=files&os=src",
+        user_agent: :browser
     regex(/href=.*?mysql[._-](?:boost[._-])?v?(9\.7(?:\.\d+)+)\.t/i)
   end
 

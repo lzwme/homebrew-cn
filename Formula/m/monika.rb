@@ -78,7 +78,6 @@ class Monika < Formula
       exec bin/"monika", "-r", "1", "-c", testpath/"config.yml"
     end
     sleep 15
-    sleep 15 if OS.mac? && Hardware::CPU.intel?
 
     assert_match "Starting Monika. Probes: 1. Notifications: 1", monika_stdout.read
   end

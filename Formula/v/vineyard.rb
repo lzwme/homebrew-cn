@@ -111,7 +111,7 @@ class Vineyard < Formula
       "-DCMAKE_POLICY_VERSION_MINIMUM=3.5",
       "-DLIBGRAPELITE_INCLUDE_DIRS=#{formula_opt_include("libgrape-lite")}",
       "-DOPENSSL_ROOT_DIR=#{formula_opt_prefix("openssl@3")}",
-      "-DPYTHON_EXECUTABLE=#{which(python3)}",
+      "-DPYTHON_EXECUTABLE=#{python3}",
       "-DUSE_EXTERNAL_ETCD_LIBS=ON",
       "-DUSE_EXTERNAL_HIREDIS_LIBS=ON",
       "-DUSE_EXTERNAL_REDIS_LIBS=ON",

@@ -6,8 +6,8 @@ cask "font-fairfax-hd" do
   name "Fairfax HD"
   homepage "https://www.kreativekorp.com/software/fonts/fairfaxhd/"
 
-  font "FairfaxHaxHD.ttf"
   font "FairfaxHD.ttf"
+  font "FairfaxHaxHD.ttf"
   font "FairfaxPonaHD.ttf"
   font "FairfaxPulaHD.ttf"
   font "FairfaxSMHD.ttf"

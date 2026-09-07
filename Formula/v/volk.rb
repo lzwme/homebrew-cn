@@ -68,7 +68,7 @@ class Volk < Formula
     end
 
     system "cmake", "-S", ".", "-B", "build",
-                    "-DPYTHON_EXECUTABLE=#{which(python3)}",
+                    "-DPYTHON_EXECUTABLE=#{python3}",
                     "-DENABLE_TESTING=OFF",
                     *std_cmake_args
     system "cmake", "--build", "build"

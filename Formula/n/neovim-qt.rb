@@ -73,7 +73,6 @@ class NeovimQt < Formula
     nvimqt_pid = spawn bin/"nvim-qt", "--nofork", "--"
 
     sleep 10
-    sleep 5 if OS.mac? && Hardware::CPU.intel?
 
     system "nvim", *nvim_opts, "--remote", testfile
     system "nvim", *nvim_opts, "--remote-send", testcommand

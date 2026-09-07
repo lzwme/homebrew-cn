@@ -11,10 +11,10 @@ cask "font-inconsolata-lgc" do
     strategy :github_latest
   end
 
-  font "InconsolataLGC/Inconsolata-LGC.ttf"
   font "InconsolataLGC/Inconsolata-LGC-Bold.ttf"
-  font "InconsolataLGC/Inconsolata-LGC-Italic.ttf"
   font "InconsolataLGC/Inconsolata-LGC-BoldItalic.ttf"
+  font "InconsolataLGC/Inconsolata-LGC-Italic.ttf"
+  font "InconsolataLGC/Inconsolata-LGC.ttf"
 
   # No zap stanza required
 end

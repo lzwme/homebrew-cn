@@ -31,7 +31,6 @@ class Ghostunnel < Formula
         "--disable-authentication", "--shutdown-timeout=1s", "--connect-timeout=1s"
     end
     sleep 1
-    sleep 2 if OS.mac? && Hardware::CPU.intel?
     shell_output("curl -o /dev/null http://localhost:#{port}/", 56)
   end
 end

@@ -94,7 +94,7 @@ class Sapling < Formula
 
     ENV["LIBSSH2_SYS_USE_PKG_CONFIG"] = "1"
     ENV["OPENSSL_DIR"] = formula_opt_prefix("openssl@3")
-    ENV["PYTHON_SYS_EXECUTABLE"] = ENV["PYO3_PYTHON"] = which(python3)
+    ENV["PYTHON_SYS_EXECUTABLE"] = ENV["PYO3_PYTHON"] = python3
     ENV["SAPLING_VERSION"] = if build.stable?
       version
     else

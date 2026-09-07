@@ -42,7 +42,6 @@ class Vit < Formula
     require "pty"
     PTY.spawn(bin/"vit") do |_stdout, _stdin, pid|
       sleep 3
-      sleep 10 if OS.mac? && Hardware::CPU.intel?
       Process.kill "TERM", pid
     end
     assert_path_exists testpath/".task"

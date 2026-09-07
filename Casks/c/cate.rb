@@ -2,11 +2,11 @@ cask "cate" do
   arch arm: "-arm64"
   url_end = on_system_conditional macos: "#{arch}.dmg", linux: ".AppImage"
 
-  version "1.6.0"
+  version "1.7.0"
 
   on_macos do
-    sha256 arm:   "53717f71bca5a06138b8fd805372bb4151f6883021ef9ece49e1ced1264fa063",
-           intel: "218f0050301bfdde643e14580cc2eeff226d5006ac443497d0ec2d7ab5e1e39e"
+    sha256 arm:   "4deba2757d813a13e784b0d71e6e7fb22f418d7c06e0bec7b87f47eab7aa43ec",
+           intel: "d682affb59dd7cf5ab855cdff58b2e65ef38a2fe4fa8fae5216dec1d9d1d80d3"
 
     depends_on macos: :monterey
 
@@ -27,7 +27,7 @@ cask "cate" do
     ]
   end
   on_linux do
-    sha256 "a3d7e797595b04b1c6a69cbd0dffefc932a0de67c9277e7ab9e0da18e2ecd985"
+    sha256 "3fda53f5de14ab9a19d17bad6715b6158cb6f0b63ffde9378f4c1cf742da28aa"
 
     depends_on arch: :x86_64
 

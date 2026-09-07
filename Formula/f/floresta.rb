@@ -38,7 +38,6 @@ class Floresta < Formula
   test do
     pid = spawn bin/"florestad", "--network", "regtest", "--data-dir", testpath.to_s
     sleep 2
-    sleep 4 if OS.mac? && Hardware::CPU.intel?
 
     output = shell_output("#{bin}/floresta-cli --network regtest getblockchaininfo")
     genesis_regtest = "0f9188f13cb7b2c71f2a335e3a4fc328bf5beb436012afca590b1a11466e2206"

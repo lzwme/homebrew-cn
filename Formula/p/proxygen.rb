@@ -62,7 +62,6 @@ class Proxygen < Formula
     port = free_port
     pid = spawn(bin/"proxygen_echo", "--http_port", port.to_s)
     sleep 30
-    sleep 30 if OS.mac? && Hardware::CPU.intel?
     system "curl", "-v", "http://localhost:#{port}"
   ensure
     Process.kill "TERM", pid

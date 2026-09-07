@@ -34,7 +34,7 @@ class Libtensorflow < Formula
       "-march=native"
     end
     ENV["CC_OPT_FLAGS"] = optflag
-    ENV["PYTHON_BIN_PATH"] = which(python3)
+    ENV["PYTHON_BIN_PATH"] = python3
     ENV["USE_DEFAULT_PYTHON_LIB_PATH"] = "1"
     ENV["TF_NEED_CUDA"] = "0"
     ENV["TF_NEED_MPI"] = "0"

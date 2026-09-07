@@ -7,15 +7,15 @@ cask "font-suit" do
   name "수트"
   homepage "https://sun.fo/suit"
 
-  font "SUIT-Thin.otf"
-  font "SUIT-ExtraLight.otf"
-  font "SUIT-Light.otf"
-  font "SUIT-Regular.otf"
-  font "SUIT-Medium.otf"
-  font "SUIT-SemiBold.otf"
   font "SUIT-Bold.otf"
   font "SUIT-ExtraBold.otf"
+  font "SUIT-ExtraLight.otf"
   font "SUIT-Heavy.otf"
+  font "SUIT-Light.otf"
+  font "SUIT-Medium.otf"
+  font "SUIT-Regular.otf"
+  font "SUIT-SemiBold.otf"
+  font "SUIT-Thin.otf"
 
   # No zap stanza required
 end

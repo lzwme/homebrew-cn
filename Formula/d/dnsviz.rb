@@ -6,16 +6,14 @@ class Dnsviz < Formula
   url "https://files.pythonhosted.org/packages/59/91/aa152739fea36d4456fbcc71a26333ffef587526d722c10c281ab12a6a35/dnsviz-0.11.1.tar.gz"
   sha256 "203b1aa2e3aa09af415a96a0afc98eef4acf845ab8af57bf9f7569bd13161717"
   license "GPL-2.0-or-later"
-  revision 2
+  revision 3
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "58f6246102424efbe090d5d19a9ee66094d9b6794cc12d4c321e093171558cfc"
-    sha256 cellar: :any,                 arm64_sequoia: "4a27473e4697572460d0e073612a19627a6d5d8bb374989d9c894ff1ee144fe6"
-    sha256 cellar: :any,                 arm64_sonoma:  "66c3394a50ef771c0b3a1ffbd559a89f98b9d8d10dee5d91a9e9e68c5a0c34e7"
-    sha256 cellar: :any,                 sonoma:        "7fdd639b7c9e6c9357bac4dcc167fad445a2d57a594b0429e8937d28a97bad1f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4170e714f3e6b25e6e21016ab510bab81d34165aa4942c1db79f9e254bcd3fc4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4b30d7527b2c27dd84a700afffc2ea95bf978164453e96a48be58bd1d1e10fd9"
+    sha256 cellar: :any, arm64_tahoe:   "44692d820713f8737f341ee25fbebe30587a47ecab58ed8e2399b27bbcf2f9a9"
+    sha256 cellar: :any, arm64_sequoia: "1fa5b7a0d2e0d468c0018ca6aa5ec43e388b86b0547971e0c134b8be06d91f0d"
+    sha256 cellar: :any, arm64_sonoma:  "839cd0e0b292dc4ae1e908c0cf7f341572ccc7b507e78b37cc6a5c36ff20b6fb"
+    sha256 cellar: :any, arm64_linux:   "b276e1137530e11c518c02fce240eabdd8e312ac13dff8284dba017d5767927e"
+    sha256 cellar: :any, x86_64_linux:  "a2884ec317554524a1fa52fab1de0a72f380c0db5bb7ebadc8819a4d33b328cb"
   end
 
   depends_on "bind" => [:build, :test]

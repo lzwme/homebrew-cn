@@ -103,7 +103,6 @@ class Uwsgi < Formula
     ]
     pid = spawn("#{bin}/uwsgi", *args)
     sleep 4
-    sleep 6 if Hardware::CPU.intel?
 
     begin
       assert_match "Hello World", shell_output("curl localhost:#{port}")

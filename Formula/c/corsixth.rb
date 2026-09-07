@@ -107,7 +107,6 @@ class Corsixth < Formula
 
     PTY.spawn(bin/"CorsixTH") do |r, _w, pid|
       sleep 30
-      sleep 30 if OS.mac? && Hardware::CPU.intel?
       Process.kill "KILL", pid
 
       output = ""

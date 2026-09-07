@@ -17,18 +17,17 @@ class ForgejoCli < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "90f243937e4a0101b73ad9d50c413f416aef02374aeb2c9344ff8a9151944fc3"
-    sha256 cellar: :any, arm64_sequoia: "b476de6d721cbbdbe3d3787af230cad5763445dfdebe235a6163d74b640e9ae6"
-    sha256 cellar: :any, arm64_sonoma:  "aa0820a87a9905e33308c795156e56f7fc4ffa7801332c79aff99c41b2024727"
-    sha256 cellar: :any, sonoma:        "7b0178a4c92fd7b556843adbc2633b11294da014f2b4d38d8a0c0d709e741413"
-    sha256 cellar: :any, arm64_linux:   "5b66b0f4d1ba7b3b45c341292fbc15ea2009271f665ae3ac567e68602b5cea69"
-    sha256 cellar: :any, x86_64_linux:  "f5b403159bbead7abdc9db660d024559b4eed17799b9e5f32e5ba034c8a22ef8"
+    rebuild 2
+    sha256 cellar: :any, arm64_tahoe:   "bb4370c4503b1feefe1cdbab8600560eb5ec835f3b21558dbee10571a8a06b07"
+    sha256 cellar: :any, arm64_sequoia: "870b77f42e1e571568d9e8d4d9e0fc319fa1244b76d21ddb35e1c9a8282b38ff"
+    sha256 cellar: :any, arm64_sonoma:  "a005e1e6a4af9b758807729c633a3eadd197f0d1a30360ecdcf1cb463e776fba"
+    sha256 cellar: :any, arm64_linux:   "47e4ec22711a753fbc539a9ce817ba6b2670736254c1685255f6bc0b16e9a18d"
+    sha256 cellar: :any, x86_64_linux:  "8c30ca23f99312e2b6cb420b5308673890063e8abf61dc8981b98cfe301d4bc2"
   end
 
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   on_linux do
     depends_on "zlib-ng-compat"

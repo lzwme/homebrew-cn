@@ -75,7 +75,6 @@ class Gruyere < Formula
     output_log = testpath/"output.log"
     pid = spawn bin/"gruyere", "--details", [:out, :err] => output_log.to_s
     sleep 4
-    sleep 6 if OS.mac? && Hardware::CPU.intel?
     assert_match "Here's what's running...", output_log.read
   ensure
     Process.kill("TERM", pid)

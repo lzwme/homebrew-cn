@@ -61,7 +61,6 @@ class Electric < Formula
       (testpath/"persistent/shapes/single_stack/.meta/backups/shape_status_backups").mkpath
 
       spawn bin/"electric", "start"
-      sleep 5 if OS.mac? && Hardware::CPU.intel?
 
       tries = 0
       begin

@@ -2,7 +2,7 @@ class Gstreamer < Formula
   desc "Development framework for multimedia applications"
   homepage "https://gstreamer.freedesktop.org/"
   license all_of: ["LGPL-2.0-or-later", "LGPL-2.1-or-later", "MIT"]
-  revision 2
+  revision 3
   compatibility_version 1
 
   stable do
@@ -26,12 +26,11 @@ class Gstreamer < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "34a90fad66faf516a552e1edb8e315a259828f2ee0f47e36fa6855962eeda2f3"
-    sha256 arm64_sequoia: "d730bfdf2237a3b37520376e9c28c9ded378aad87ef9e9fc222399bc6859c4d0"
-    sha256 arm64_sonoma:  "3f685e52aa491faa49868e36b277f6cdd0106a24c439eed82cc6682a299baa15"
-    sha256 sonoma:        "6d8df9bdfeecc82979dea51d275a52bdb06277631229167c4bb217f1d98dfaf1"
-    sha256 arm64_linux:   "31e549289076f2d001571c36b3e833f2fb3a3f9c783a936a44b7dcf9692233a1"
-    sha256 x86_64_linux:  "5b6a20a258a74acf4f8a11271d7cd0d6de6b001aa0fc018c759626dbcad6aedf"
+    sha256 arm64_tahoe:   "78dbf7c40542798130413cbf21dc3b3082952d335aee6a62daa7fbb0790b2969"
+    sha256 arm64_sequoia: "768b4d1353d2b274426d1a3bb4ea8425e84fdd9dc87578cdf75099cf0ad4590c"
+    sha256 arm64_sonoma:  "d09fddf9d412b93755c11c6f157849ef57a5875b9770f68075e1fafcb267cbc3"
+    sha256 arm64_linux:   "d6e27942c6a88b5a2a5683b8f28b27333f5ea497738ebf053b4c755d98978165"
+    sha256 x86_64_linux:  "0731d3d853960f4b45d8489707bca0270f744c54b02938ee883d61337580e833"
   end
 
   head do
@@ -56,7 +55,6 @@ class Gstreamer < Formula
   depends_on "dav1d"
   depends_on "faac"
   depends_on "faad2"
-  depends_on "fdk-aac"
   depends_on "ffmpeg"
   depends_on "flac"
   depends_on "gdk-pixbuf"
@@ -204,6 +202,7 @@ class Gstreamer < Formula
       -Dgst-editing-services:pygi-overrides-dir=#{site_packages}/gi/overrides
       -Dgst-python:pygi-overrides-dir=#{site_packages}/gi/overrides
       -Dgst-python:python=#{python3}
+      -Dgst-plugins-bad:fdkaac=disabled
       -Dgst-plugins-bad:opencv=disabled
       -Dgst-plugins-bad:sctp=enabled
       -Dgst-plugins-bad:sctp-internal-usrsctp=disabled
@@ -291,7 +290,6 @@ class Gstreamer < Formula
     system bin/"ges-launch-1.0", "--ges-version"
     system bin/"gst-inspect-1.0", "libav"
     system bin/"gst-inspect-1.0", "--plugin", "dvbsuboverlay"
-    system bin/"gst-inspect-1.0", "--plugin", "fdkaac"
     system bin/"gst-inspect-1.0", "--plugin", "volume"
     system bin/"gst-inspect-1.0", "--plugin", "cairo"
     system bin/"gst-inspect-1.0", "--plugin", "dvdsub"

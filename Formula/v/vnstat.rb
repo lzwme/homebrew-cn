@@ -67,7 +67,6 @@ class Vnstat < Formula
     begin
       stat = IO.popen("#{bin}/vnstatd --nodaemon --config vnstat.conf")
       sleep 1
-      sleep 2 if OS.mac? && Hardware::CPU.intel?
     ensure
       Process.kill "SIGINT", stat.pid
       Process.wait stat.pid

@@ -36,7 +36,6 @@ class AnycableGo < Formula
     port = free_port
     pid = spawn bin/"anycable-go", "--port=#{port}"
     sleep 1
-    sleep 2 if OS.mac? && Hardware::CPU.intel?
     output = shell_output("curl -sI http://localhost:#{port}/health")
     assert_match(/200 OK/m, output)
   ensure

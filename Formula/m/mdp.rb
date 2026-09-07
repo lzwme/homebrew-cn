@@ -1,19 +1,17 @@
 class Mdp < Formula
   desc "Command-line based markdown presentation tool"
   homepage "https://github.com/visit1985/mdp"
-  url "https://ghfast.top/https://github.com/visit1985/mdp/archive/refs/tags/1.0.18.tar.gz"
-  sha256 "36861161513c508c0589014510cdafd940a6e661e517022a3bea48ecf8d5fac4"
+  url "https://ghfast.top/https://github.com/visit1985/mdp/archive/refs/tags/1.0.19.tar.gz"
+  sha256 "4043838ff3048a5234ea6e24ab42301ab78ff3f51ed6ba19c0c4711414f6a74a"
   license "GPL-3.0-or-later"
-  revision 1
   head "https://github.com/visit1985/mdp.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d5d9c1c94cdfa2dd2af19e510d4089aa35b38b0fe99e1b299e808efaaeed7d0b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "918b9fa08b1a6e2d4f5f2f01347de2816daa19198fcdef894ffb1bd283cb78b8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8000fac3c15c0a951865414a2d3d5baf2272c666c41b0db525f775292ad2e7a1"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b4789d6eb27fd30580dbc27a65b176b21d013058874ab96b075fc6f7789a4c10"
-    sha256 cellar: :any,                 arm64_linux:   "40b58e3f33661425349ee8936b6c42cfb2e34ff96fda71d7c751ef64f529635d"
-    sha256 cellar: :any,                 x86_64_linux:  "fb0d4eac1050f9b09228c425bb9181ae99a5e72af24e81231d2d28fccbd10c08"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fe14956416a82435ae9a5df4897197681db4c3ce3b9ab0a8da04e83202a84055"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d29ea67fa292b84e75c45e001fa8a13cfc96ed766cc77a913f654dbbd1cfe6e0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a09b8a3b168af749ddae205d846ed0c079cfc0d83457e9de1aa8aa39b8d8fcff"
+    sha256 cellar: :any,                 arm64_linux:   "adaba2512c59a1bc4bc461716f73cc5aec02747402c0773b02a510886fdf6f05"
+    sha256 cellar: :any,                 x86_64_linux:  "3e26cfaaeb34246c1a34408f00ec951c76d3c5356da47a029bd6e5e920b9f16c"
   end
 
   uses_from_macos "ncurses"

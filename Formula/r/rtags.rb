@@ -64,7 +64,6 @@ class Rtags < Formula
     rdm = spawn "#{bin}/rdm", "--exclude-filter=\"\"", "-L", "log", [:out, :err] => File::NULL
     begin
       sleep 5
-      sleep 10 if OS.mac? && Hardware::CPU.intel?
       pipe_output("#{bin}/rc -c", "clang -c #{testpath}/src/foo.c", 0)
       sleep 5
       assert_match "foo.c:1:6", shell_output("#{bin}/rc -f #{testpath}/src/foo.c:5:3")

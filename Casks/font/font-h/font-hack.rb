@@ -6,10 +6,10 @@ cask "font-hack" do
   name "Hack"
   homepage "https://sourcefoundry.org/hack/"
 
-  font "ttf/Hack-Regular.ttf"
-  font "ttf/Hack-Italic.ttf"
   font "ttf/Hack-Bold.ttf"
   font "ttf/Hack-BoldItalic.ttf"
+  font "ttf/Hack-Italic.ttf"
+  font "ttf/Hack-Regular.ttf"
 
   # No zap stanza required
 end

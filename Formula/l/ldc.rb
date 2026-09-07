@@ -12,37 +12,38 @@ class Ldc < Formula
   end
 
   bottle do
-    sha256               arm64_tahoe:   "bcde46ad3da3b29561e7b04742b82bc2338dc8c636cd2618187bd06b149de5fb"
-    sha256               arm64_sequoia: "12508ae2e08b8e1096a85d5248b75294f5ad4f84402ae4b766023e97ce9e861e"
-    sha256               arm64_sonoma:  "e8b40363a3d0f4367c0d1e18ca09b95a26caa08d4212d358fc97943f8b57a305"
-    sha256               arm64_linux:   "12512ca6d507b94e41bf459b24a69b914a3fdd4d9e892bd78be6da9e0d200387"
-    sha256 cellar: :any, x86_64_linux:  "cd1253c20b0d9003cf04f9261588b6c7272089ae5a6a1aa84208cd7de2ea7587"
+    rebuild 1
+    sha256               arm64_tahoe:   "6411351b3cc448579fe425e82d585065fb9110066bd2dca38403d62255ae44aa"
+    sha256               arm64_sequoia: "df52a126dd7cfa567931c844773425000f5fad054d041ba17873723ed7dde8b2"
+    sha256               arm64_sonoma:  "8b77efb73179e35cbe3f0c0cac3ec27f3d21e80e92aea40042b67fc90a0406b6"
+    sha256               arm64_linux:   "c3a37bb1b0bdb6dc779c5c76e1758ddd9b8b0d19a5dd8c950da2b249c2bcf75f"
+    sha256 cellar: :any, x86_64_linux:  "9c53afa35a0a50ccf3a47e5a502e8cf4289102dc69067cfc36425b8a7313566a"
   end
 
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
-  depends_on "lld@21" => :test
-  depends_on "llvm@21"
+  depends_on "lld" => :test
+  depends_on "llvm"
 
   resource "ldc-bootstrap" do
     on_macos do
       on_arm do
-        url "https://ghfast.top/https://github.com/ldc-developers/ldc/releases/download/v1.41.0/ldc2-1.41.0-osx-arm64.tar.xz"
-        sha256 "157267042f10b047210619314aa719b4f0bf887601e93b1c634aa1ecb3c546e4"
+        url "https://ghfast.top/https://github.com/ldc-developers/ldc/releases/download/v1.42.0/ldc2-1.42.0-osx-arm64.tar.xz"
+        sha256 "7a68e21c5305766a74f4736cc891a7942db7842a9226623209504bc85c701382"
       end
       on_intel do
-        url "https://ghfast.top/https://github.com/ldc-developers/ldc/releases/download/v1.41.0/ldc2-1.41.0-osx-x86_64.tar.xz"
-        sha256 "5bcff48b63c56a45dbaacdb0c5bddc8ea6be86d4a0c7b2c7c8318e047f721181"
+        url "https://ghfast.top/https://github.com/ldc-developers/ldc/releases/download/v1.42.0/ldc2-1.42.0-osx-x86_64.tar.xz"
+        sha256 "3d3d4283c2f0856f65aca4af3c1e14d25f12619808893ca755ea6f088508503e"
       end
     end
     on_linux do
       on_arm do
-        url "https://ghfast.top/https://github.com/ldc-developers/ldc/releases/download/v1.41.0/ldc2-1.41.0-linux-aarch64.tar.xz"
-        sha256 "1c4b950a13d53379ed4f564366c27ec56d6261e21686880d70c7486b3e8c7ba8"
+        url "https://ghfast.top/https://github.com/ldc-developers/ldc/releases/download/v1.42.0/ldc2-1.42.0-linux-aarch64.tar.xz"
+        sha256 "687707c3e20ff910528eb2d92f27a98cb0960284de3b026e6bf20284ac1c8511"
       end
       on_intel do
-        url "https://ghfast.top/https://github.com/ldc-developers/ldc/releases/download/v1.41.0/ldc2-1.41.0-linux-x86_64.tar.xz"
-        sha256 "4a439457f0fe59e69d02fd6b57549fc3c87ad0f55ad9fb9e42507b6f8e327c8f"
+        url "https://ghfast.top/https://github.com/ldc-developers/ldc/releases/download/v1.42.0/ldc2-1.42.0-linux-x86_64.tar.xz"
+        sha256 "a7bc9c956138f558cadf9c962352f59d41c80df6eb3ae3f8039f25be14a69303"
       end
     end
   end

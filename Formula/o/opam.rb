@@ -35,6 +35,8 @@ class Opam < Formula
 
   uses_from_macos "unzip"
 
+  allow_network_access! :test
+
   def install
     ENV.deparallelize
 

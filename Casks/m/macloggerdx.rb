@@ -1,6 +1,6 @@
 cask "macloggerdx" do
   version "6.62"
-  sha256 "99c2f8c912fe09d1b2ebae7b7796f06703056509ae411f5a4eb0913ddc979277"
+  sha256 :no_check # required as upstream package is often updated in-place
 
   url "https://www.dogparksoftware.com/files/MacLoggerDX#{version.no_dots}.dmg"
   name "MacLoggerDX"

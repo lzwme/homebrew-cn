@@ -7,10 +7,10 @@ cask "font-gnu-unifont" do
   homepage "https://unifoundry.com/unifont.html"
 
   font "unifont-#{version}/font/precompiled/unifont-#{version}.otf"
-  font "unifont-#{version}/font/precompiled/unifont_upper-#{version}.otf"
-  font "unifont-#{version}/font/precompiled/unifont_sample-#{version}.otf"
-  font "unifont-#{version}/font/precompiled/unifont_jp-#{version}.otf"
   font "unifont-#{version}/font/precompiled/unifont_csur-#{version}.otf"
+  font "unifont-#{version}/font/precompiled/unifont_jp-#{version}.otf"
+  font "unifont-#{version}/font/precompiled/unifont_sample-#{version}.otf"
+  font "unifont-#{version}/font/precompiled/unifont_upper-#{version}.otf"
 
   # No zap stanza required
 end

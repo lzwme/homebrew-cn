@@ -55,7 +55,6 @@ class Flagd < Formula
     pid = spawn bin/"flagd", "start", "-f", json_url, "-p", port.to_s
     begin
       sleep 3
-      sleep 5 if OS.mac? && Hardware::CPU.intel?
       assert_match(/true/, shell_output(resolve_boolean_command))
     ensure
       Process.kill("TERM", pid)

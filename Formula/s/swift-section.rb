@@ -18,7 +18,7 @@ class SwiftSection < Formula
   # The Package.swift file requires Swift 6.2 or later.
   # But it is failed to build on Sequoia with Xcode 26.3
   depends_on xcode: ["26.4", :build]
-  depends_on :macos
+  depends_on macos: :tahoe # aligned to build Xcode as cannot cross-compile
 
   uses_from_macos "swift" => :build
 

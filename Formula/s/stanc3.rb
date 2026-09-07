@@ -21,7 +21,14 @@ class Stanc3 < Formula
 
   uses_from_macos "unzip" => :build
 
-  def install
+  resource "homebrew-testfile" do
+    url "https://ghfast.top/https://raw.githubusercontent.com/stan-dev/stanc3/2e833ac746a36cdde11b7041fe3a1771dec92ba6/test/integration/good/algebra_solver_good.stan"
+    sha256 "44e66f05cc7be4d0e0a942b3de03aed1a2c2abd93dbd5607542051d9d6ae2a0b"
+  end
+
+  deny_network_access!
+
+  def fetch
     # Workaround to build with OCaml 5.5.0
     inreplace "stanc.opam" do |s|
       s.gsub! '"ocaml" {= "4.14.1"}', '"ocaml" {>= "4.14.1"}'
@@ -29,23 +36,19 @@ class Stanc3 < Formula
       s.gsub! '"ppx_deriving" {= "5.2.1"}', '"ppx_deriving" {= "6.1.1"}'
     end
 
-    ENV["OPAMROOT"] = buildpath/".opam"
-    ENV["OPAMYES"] = "1"
-    ENV["OPAMVERBOSE"] = "1"
-
     system "opam", "init", "--compiler=ocaml-system", "--disable-sandboxing", "--no-setup"
-    system "opam", "install", ".", "--deps-only", "--yes", "--no-depexts"
-    system "opam", "exec", "dune", "subst"
-    system "opam", "exec", "dune", "build", "@install"
+    system "opam", "install", ".", "--deps-only", "--download-only"
+  end
+
+  def install
+    system "opam", "install", ".", "--deps-only"
+    system "opam", "exec", "--", "dune", "subst"
+    system "opam", "exec", "--", "dune", "build", "@install"
 
     bin.install "_build/default/src/stanc/stanc.exe" => "stanc"
   end
 
   test do
-    resource "homebrew-testfile" do
-      url "https://ghfast.top/https://raw.githubusercontent.com/stan-dev/stanc3/2e833ac746a36cdde11b7041fe3a1771dec92ba6/test/integration/good/algebra_solver_good.stan"
-      sha256 "44e66f05cc7be4d0e0a942b3de03aed1a2c2abd93dbd5607542051d9d6ae2a0b"
-    end
     testpath.install resource("homebrew-testfile")
 
     system bin/"stanc", "algebra_solver_good.stan"

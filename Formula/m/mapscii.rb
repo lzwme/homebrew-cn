@@ -20,7 +20,6 @@ class Mapscii < Formula
     output_log = testpath/"output.log"
     pid = spawn bin/"mapscii", [:out, :err] => output_log.to_s
     sleep 5
-    sleep 10 if OS.mac? && Hardware::CPU.intel?
     assert_match "Failed to start MapSCII", output_log.read
   ensure
     Process.kill("TERM", pid)

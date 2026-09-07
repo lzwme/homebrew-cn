@@ -6,16 +6,17 @@ class Cpdf < Formula
   license "AGPL-3.0-only"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "d4634781fea457538c77518fe8809b7ae4b4987d738d1bd22b3c10c2199fc870"
-    sha256 cellar: :any, arm64_sequoia: "cd5a463bd9dcf7f9ddb35dd6600da2ae7a3da152188ecccb4abb738d0d7f965c"
-    sha256 cellar: :any, arm64_sonoma:  "6f6f8150f84254aabfb6f5a85fec2366eeac29c0e1d3581bbae5c1f73c07d572"
-    sha256 cellar: :any, arm64_linux:   "45346ff1bfcb7841585d9b0384299a5b7dbbefd24119a53bb3fa213946498fe9"
-    sha256 cellar: :any, x86_64_linux:  "be62ced6da951066eba70c2f678959b5fd58deff01b40f1ac312bbc8b743393f"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "194f6872ce70b4d62aeacbbc44098ebfc4c72448d99155bfcaa8a47215740c0f"
+    sha256 cellar: :any, arm64_sequoia: "364ba3d8151e7e037f807d57e2e6860e1e771e677c06075d1316c1c8a3eeb161"
+    sha256 cellar: :any, arm64_sonoma:  "69c46304b2c42e041b00fb57965b17542bb1623745ccc282be3895f94d64b2e4"
+    sha256 cellar: :any, arm64_linux:   "b2510561cae38db489bd9b38b12d4b14ec889f4c9021178f2458af27c54661da"
+    sha256 cellar: :any, x86_64_linux:  "c73545e299397b1f2c127fb969112be4762e02e6156783ad3fdebde3e752e5e0"
   end
 
+  depends_on "camlpdf" => :build
+  depends_on "ocaml" => :build
   depends_on "ocaml-findlib" => :build
-  depends_on "camlpdf"
-  depends_on "ocaml"
 
   def install
     # For OCamlmakefile

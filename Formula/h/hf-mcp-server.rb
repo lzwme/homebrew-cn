@@ -42,7 +42,6 @@ class HfMcpServer < Formula
     output_log = testpath/"output.log"
     pid = spawn bin/"hf-mcp-server", [:out, :err] => output_log.to_s
     sleep 10
-    sleep 15 if OS.mac? && Hardware::CPU.intel?
     assert_match "Failed to authenticate with Hugging Face API", output_log.read
   ensure
     Process.kill("TERM", pid)

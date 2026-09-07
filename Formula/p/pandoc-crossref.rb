@@ -1,17 +1,17 @@
 class PandocCrossref < Formula
   desc "Pandoc filter for numbering and cross-referencing"
   homepage "https://lierdakil.github.io/pandoc-crossref/"
-  url "https://ghfast.top/https://github.com/lierdakil/pandoc-crossref/archive/refs/tags/v0.3.25.tar.gz"
-  sha256 "cb42b8319a59f258fea191e4660b62bdd9a90a9099322ae0f17203bc5986498a"
+  url "https://ghfast.top/https://github.com/lierdakil/pandoc-crossref/archive/refs/tags/v0.3.25a.tar.gz"
+  version "0.3.25a"
+  sha256 "91712810bf91807869dbda35f5186cd4f39352c6201d5712c8f4ce1ac3691ab5"
   license "GPL-2.0-or-later"
-  revision 2
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "324f51ae57d677076f7a36986052066f846969088a6722c4ec1894250c4ba7a0"
-    sha256 cellar: :any, arm64_sequoia: "73e895f103fd03cd74aafdbcadb48cec1c1f541cb2e5074f8c7e0fca6084ad81"
-    sha256 cellar: :any, arm64_sonoma:  "6fb3ab3eaa52532b3f6fd00cb487f45736eea011765ec2825110c64ea23e1248"
-    sha256 cellar: :any, arm64_linux:   "723f2fb89900739f7bf4c63d688df0ca4ccf6f96a648812bd8321449064682c8"
-    sha256 cellar: :any, x86_64_linux:  "e205be5eac1315edb91c36335887be87be22149e6f4de4c7a6c4e160a3bfb361"
+    sha256 cellar: :any, arm64_tahoe:   "65567325efc7a6eb28cf5506ecaf3c44c3865d1d04b3898863c54b8e6926f920"
+    sha256 cellar: :any, arm64_sequoia: "c32ff566e178ebe701acd0e805d18c956e0347aa2b2281963ddbfaffa51a7da5"
+    sha256 cellar: :any, arm64_sonoma:  "c2df91ac73bf8668a8436d0037fb67ac959d51048bcec02b1bde1f4955c8addf"
+    sha256 cellar: :any, arm64_linux:   "994e80c28e87596b96a098c15cf66ff54ef3c4b5b31d8a40297826050d070683"
+    sha256 cellar: :any, x86_64_linux:  "ee0aeaad2a8b0f09e4df07f4ace15d7d288093c770e6a8b3198825882733b1e1"
   end
 
   depends_on "cabal-install" => :build
@@ -24,14 +24,6 @@ class PandocCrossref < Formula
 
   on_linux do
     depends_on "zlib-ng-compat"
-  end
-
-  # Relax the pandoc bound so the filter is compiled against pandoc 3.11
-  patch do
-    url "https://github.com/lierdakil/pandoc-crossref/commit/2e4c199871405b657f1643e7fe6249d884263051.patch?full_index=1"
-    sha256 "ba6c6c180985c6668fe90bd4bb589a369774609ec140e8fa4916209548d22de2"
-    type :unofficial
-    resolves "https://github.com/lierdakil/pandoc-crossref/pull/513"
   end
 
   def install

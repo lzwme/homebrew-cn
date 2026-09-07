@@ -46,7 +46,6 @@ class ShadowsocksRust < Formula
     spawn bin/"ssserver", "-c", testpath/"server.json"
     spawn bin/"sslocal", "-c", testpath/"local.json"
     sleep 3
-    sleep 3 if OS.mac? && Hardware::CPU.intel?
 
     output = shell_output "curl --socks5 127.0.0.1:#{local_port} https://example.com"
     assert_match "Example Domain", output

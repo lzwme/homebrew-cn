@@ -2,9 +2,9 @@ class Puzzles < Formula
   desc "Collection of one-player puzzle games"
   homepage "https://www.chiark.greenend.org.uk/~sgtatham/puzzles/"
   # Extract https://www.chiark.greenend.org.uk/~sgtatham/puzzles/puzzles.tar.gz to get the version number
-  url "https://www.chiark.greenend.org.uk/~sgtatham/puzzles/puzzles-20260905.43eefe8.tar.gz"
-  version "20260905.43eefe8"
-  sha256 "87ce5b8258dd0c6270b4383d6325c894a77597337f874ceb2e5163210b6266ff"
+  url "https://www.chiark.greenend.org.uk/~sgtatham/puzzles/puzzles-20260906.38e7ea3.tar.gz"
+  version "20260906.38e7ea3"
+  sha256 "87329d9782a1b206709118708d5f64200f9db4b81dc608ff733180d9d4bfa47f"
   license "MIT"
   head "https://git.tartarus.org/simon/puzzles.git", branch: "main"
 
@@ -18,11 +18,11 @@ class Puzzles < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c55e09c43c19403c8658aa48c62085847122b580a02664052b3384855dd26ad5"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1bdbd3a1f6162609da14fe74fe9e9b70a8207d4ca9fcb0a9c61b0171a2743f63"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8e6a1fc0b33e95d30a51de429d7054322fc75811fd103a218490cc160703c378"
-    sha256                               arm64_linux:   "f9e4615a320cfb9d32d8de3e19a8bfffd38e6c9af497882ddbc4c54b33390d7e"
-    sha256                               x86_64_linux:  "3b562146d7611cbf420bbf2c1a0ab3941fcb4320f4151f3ef379b6170540abbe"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a61ab138e6e38d798dd86b874c57094afb74de18c99c6eb0b37e2d2d0253c33e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7e5925e90c4af21413be0137984dd514d431286fa5ab661ea2b16122dbf3d560"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "53522b9dbc0207c9dd7f4af34cf293a2eccfe2f00737cb259022c81f2695a573"
+    sha256                               arm64_linux:   "d324e19e257b69b533f37a6fd6fa8bdbd34ff3a01875a039227b139ac6426142"
+    sha256                               x86_64_linux:  "2ac4c2a80725e1005231f4d0416724112959dfca989d6daa3bd9587a25fb4086"
   end
 
   depends_on "cmake" => :build

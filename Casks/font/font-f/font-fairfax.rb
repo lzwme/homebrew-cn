@@ -14,12 +14,12 @@ cask "font-fairfax" do
   font "FairfaxItalic.ttf"
   font "FairfaxPona.ttf"
   font "FairfaxPula.ttf"
-  font "FairfaxSerif.ttf"
-  font "FairfaxSerifHax.ttf"
-  font "FairfaxSerifSM.ttf"
   font "FairfaxSM.ttf"
   font "FairfaxSMBold.ttf"
   font "FairfaxSMItalic.ttf"
+  font "FairfaxSerif.ttf"
+  font "FairfaxSerifHax.ttf"
+  font "FairfaxSerifSM.ttf"
 
   # No zap stanza required
 end

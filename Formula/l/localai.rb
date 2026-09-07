@@ -33,7 +33,6 @@ class Localai < Formula
 
     pid = spawn bin/"local-ai", "run", "--address", addr
     sleep 5
-    sleep 20 if OS.mac? && Hardware::CPU.intel?
 
     begin
       response = shell_output("curl -s -i #{addr}/readyz")

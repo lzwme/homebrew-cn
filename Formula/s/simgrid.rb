@@ -6,7 +6,7 @@ class Simgrid < Formula
   url "https://gitlab.inria.fr/simgrid/simgrid/-/archive/v4.1/simgrid-v4.1.tar.bz2"
   sha256 "a3d02f52cfb9c2e341c380cd8e3b43da4b4885161d8e96f4b033e0d3cc8af611"
   license "LGPL-2.1-only"
-  revision 2
+  revision 3
 
   livecheck do
     url :homepage
@@ -14,12 +14,11 @@ class Simgrid < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "77b3136c87202cbbcce161d618abe84602c1b96b1e06345f889a49fd4e5ef931"
-    sha256 arm64_sequoia: "8a5e0543c8818290db5ec03196186b01233d47ffa23a88c873d7f42c0a7c6350"
-    sha256 arm64_sonoma:  "c88ea297908af97ab66431aa39cebb289f5dfac3e13dd9f958f2c125598f2b07"
-    sha256 sonoma:        "91b95272182e454700e72b3ba2a2f0250528b07d33dc07025d4182162333b0e1"
-    sha256 arm64_linux:   "17b3c64251e4e4822c11d2bc3a11f0e83a54deabf6f1a98cf978bad3ec6be414"
-    sha256 x86_64_linux:  "40f48076ff0c3af00505a23f223759d30c4448e4cc9b4415f1386f93deca9662"
+    sha256 arm64_tahoe:   "bcf91f84735c132eb5b5cf75be878af982f1b73c1a56f3699963cbf800240843"
+    sha256 arm64_sequoia: "e5b23d1ca8ab7b0967063337ebf71a8378564474f3450dc818f4dae4aa67d960"
+    sha256 arm64_sonoma:  "73ef5cfd0c535ebe25f8cc95de5524343c20783c826f9b5c3f024615b90f5b06"
+    sha256 arm64_linux:   "df8857e84e37534b8e13991d46a2ab0257333acb8473e4ededecb8ff0c86b17b"
+    sha256 x86_64_linux:  "5cb1d4a3f4863eea1fbe27fc12de1ca68ce4511c815cb3b36bd0e29a721e5c8f"
   end
 
   depends_on "cmake" => :build

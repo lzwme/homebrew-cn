@@ -36,7 +36,6 @@ class Serie < Formula
         r.winsize = [80, 130]
       end
       sleep 1
-      sleep 2 if OS.mac? && Hardware::CPU.intel?
       assert_match "Initial commit", output_log.read
     ensure
       Process.kill("TERM", pid)

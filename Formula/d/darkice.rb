@@ -4,7 +4,7 @@ class Darkice < Formula
   url "https://ghfast.top/https://github.com/rafael2k/darkice/archive/refs/tags/v1.6.tar.gz"
   sha256 "52807d887d60646776110b63543d3845ebe9ed52d3eea44bed7c4bdd95b6575e"
   license "GPL-3.0-or-later"
-  revision 1
+  revision 2
 
   livecheck do
     url :stable
@@ -12,12 +12,11 @@ class Darkice < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "5f52868071d5baea5c71e24a65b9b57990709bbc692e97890a376c0bd29b953b"
-    sha256 cellar: :any, arm64_sequoia: "b1a31b332fae851a4779fb56ef6d064fe5e0403a5833210f026d64cfd92c64f0"
-    sha256 cellar: :any, arm64_sonoma:  "feb75068c9edb1b2663243bfbbce56dc1247ff0cd3191c85bec1d19b466aa9a9"
-    sha256 cellar: :any, sonoma:        "9fe4e5b305dbb8c3c1cb3b61886a82141a9a3013628d8599866f007c4da75a4e"
-    sha256 cellar: :any, arm64_linux:   "b0313ba1686502f9d5ec82917fa6e1d1ea306ff2e4f1f0987054a7355c643ede"
-    sha256 cellar: :any, x86_64_linux:  "9b0ea67fd05850d09b45a8844d9af57855961eca30b226f72c111d4b066e218f"
+    sha256 cellar: :any, arm64_tahoe:   "2297df93e2be390ffab2b1daf0a28641b4361d6c5b7e5915f36f513c382b92d4"
+    sha256 cellar: :any, arm64_sequoia: "e5ab28d91352dd0b0edf605275dc37cc5802a86184057d0b7f81f7bcccaec18e"
+    sha256 cellar: :any, arm64_sonoma:  "fee50359c0d49db7e2a3fa588d7268d9a73420fc31c6391d5d0fb288e355c990"
+    sha256 cellar: :any, arm64_linux:   "3cdc74436042e42443128873c5bf00cfd6d1c274ffe9b9c598e0e742979d7b4a"
+    sha256 cellar: :any, x86_64_linux:  "d635e61ce10983ab361e14cd35f1452e4263d3ca65879b226251dd17c5089180"
   end
 
   depends_on "autoconf" => :build
@@ -26,7 +25,6 @@ class Darkice < Formula
   depends_on "pkgconf" => :build
 
   depends_on "faac"
-  depends_on "fdk-aac"
   depends_on "jack"
   depends_on "lame"
   depends_on "libogg"
@@ -55,7 +53,7 @@ class Darkice < Formula
       system "./configure", "--sysconfdir=#{etc}",
                             "--with-lame-prefix=#{formula_opt_prefix("lame")}",
                             "--with-faac-prefix=#{formula_opt_prefix("faac")}",
-                            "--with-fdkaac-prefix=#{formula_opt_prefix("fdk-aac")}",
+                            "--without-fdkaac",
                             "--with-twolame",
                             "--with-jack",
                             "--with-vorbis",

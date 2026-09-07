@@ -1,17 +1,17 @@
 class Shfmt < Formula
   desc "Autoformat shell script source code"
   homepage "https://github.com/mvdan/sh"
-  url "https://ghfast.top/https://github.com/mvdan/sh/archive/refs/tags/v3.14.0.tar.gz"
-  sha256 "f193c946e2882c4fa04935cd583f60e2cab60344209bd982a3a5933c4192aad8"
+  url "https://ghfast.top/https://github.com/mvdan/sh/archive/refs/tags/v3.14.1.tar.gz"
+  sha256 "ec4bdb88ab6c95686be3a4eeb4ad77d2b49d33d2ed7b0a65035cd52d2d87c443"
   license "BSD-3-Clause"
   head "https://github.com/mvdan/sh.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "283f674d188041688dcbc89adede9ed3e1008075e59c1e8452c4620f2c101ac9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "283f674d188041688dcbc89adede9ed3e1008075e59c1e8452c4620f2c101ac9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "283f674d188041688dcbc89adede9ed3e1008075e59c1e8452c4620f2c101ac9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9e30e48ee6a087081a05cea304a4eff808a636d5d7240e98e0cf0e16427dae1a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "46934914e5b8696fa22d0c5046a01d1060ab4eb50a8fbb7bf0ed1e77b96954ca"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0fc52046a6269af6f1e1a110a491b43ac3d8098e6cdf5bf920984df729d33b1f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0fc52046a6269af6f1e1a110a491b43ac3d8098e6cdf5bf920984df729d33b1f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0fc52046a6269af6f1e1a110a491b43ac3d8098e6cdf5bf920984df729d33b1f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "054e07cd5e52df175148ba192d3e14aeccf9cbb9347fc85f5f2138ce899b1a1d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a3c24265326c8e54873874c733db221fbe780f9e84b964f5f2f90768cc6c2490"
   end
 
   depends_on "go" => :build

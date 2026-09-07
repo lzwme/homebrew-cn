@@ -30,7 +30,6 @@ class Xmodmap < Formula
     spawn Formula["xorg-server"].bin/"Xvfb", ":1"
     ENV["DISPLAY"] = ":1"
     sleep 10
-    sleep 10 if OS.mac? && Hardware::CPU.intel?
     assert_match "pointer buttons defined", shell_output("#{bin}/xmodmap -pp")
   end
 end

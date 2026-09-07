@@ -13,12 +13,12 @@ class Flowgrind < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "dcd288a71292d550079710e54de9a1b51f45749548873121c5b93c876e60509e"
-    sha256 cellar: :any,                 arm64_sequoia: "be6f606a92e205f42558c6af8de0f5ced370aa3dc4b3b1a872bea87135a683f8"
-    sha256 cellar: :any,                 arm64_sonoma:  "5b6e921776fe31300df228841f92eae9051ec2d47b0f65641218de40a612896c"
-    sha256 cellar: :any,                 sonoma:        "ffccc45ede3a5189617d45f4174a4651c8268a8d79c20efd9150a593d323612f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8f3e749ef37e3609c899f5d6fc617045c2bc1c46b5f43c83d0b7c9edbf620e1e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f6c4eee0899191de5387f8210f2c3d4ba96313d50d82ee80e453546e60cfd1b7"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "4b48fbd91d33f54b410c4449281b3517bedf8a42174cbd0351209e84443751e2"
+    sha256 cellar: :any, arm64_sequoia: "ba20919ba3b0427735800935ccf724f606c00aca71c5d4d1a04b36d532702ccd"
+    sha256 cellar: :any, arm64_sonoma:  "7ad19fb73c9ccbaec00c142d276d4e142c7a6678076a7d421f556d608aadc70f"
+    sha256 cellar: :any, arm64_linux:   "f582fd23857e8add6ed2bcae767f7fe48c748af41f41f4a22b16a757f05caca8"
+    sha256 cellar: :any, x86_64_linux:  "f56a800f9c2db032bf1cb714bcdd91d15761c4c744542cc8709ad5385995f100"
   end
 
   head do
@@ -32,6 +32,10 @@ class Flowgrind < Formula
   depends_on "xmlrpc-c"
 
   uses_from_macos "libpcap"
+
+  on_linux do
+    depends_on "util-linux"
+  end
 
   def install
     system "autoreconf", "--force", "--install", "--verbose" if build.head?

@@ -75,7 +75,6 @@ class Auditbeat < Formula
     sleep 5
     touch testpath/"files/touch"
     sleep 10
-    sleep 20 if OS.mac? && Hardware::CPU.intel?
 
     assert_path_exists testpath/"data/beat.db"
 

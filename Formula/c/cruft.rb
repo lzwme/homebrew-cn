@@ -171,7 +171,6 @@ class Cruft < Formula
     Open3.popen3(bin/"cruft", "create", "--no-input", "cookiecutter-pypackage") do |stdin, _stdout|
       stdin.write "public"
       sleep 3
-      sleep 5 if OS.mac? && Hardware::CPU.intel?
       assert (testpath/"Python-Boilerplate").directory?
       assert_path_exists testpath/"Python-Boilerplate/.cruft.json"
     end

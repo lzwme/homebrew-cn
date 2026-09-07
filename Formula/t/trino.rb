@@ -137,7 +137,6 @@ class Trino < Formula
                                               "--data-dir", testpath,
                                               "--config", testpath/"config.properties"
     sleep 30
-    sleep 30 if OS.mac? && Hardware::CPU.intel?
 
     query = "SELECT state FROM system.runtime.nodes"
     output = shell_output("#{bin}/trino --debug --server localhost:#{port} --execute '#{query}'")

@@ -48,7 +48,6 @@ class Libhttpserver < Formula
 
     spawn "./hello_world"
     sleep 3
-    sleep 5 if OS.mac? && Hardware::CPU.intel?
 
     assert_match "Hello, World!", shell_output("curl http://127.0.0.1:#{port}/hello")
   end

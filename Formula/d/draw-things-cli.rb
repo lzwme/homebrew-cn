@@ -11,7 +11,7 @@ class DrawThingsCli < Formula
   end
 
   depends_on xcode: ["26.3", :build]
-  depends_on macos: :ventura # needs CoreML and other Apple frameworks
+  depends_on macos: :sequoia # aligned to build Xcode as cannot cross-compile
 
   uses_from_macos "swift" => :build
 

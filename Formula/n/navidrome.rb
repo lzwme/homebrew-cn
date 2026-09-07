@@ -46,7 +46,6 @@ class Navidrome < Formula
     port = free_port
     pid = spawn bin/"navidrome", "--port", port.to_s
     sleep 20
-    sleep 100 if OS.mac? && Hardware::CPU.intel?
     assert_equal ".", shell_output("curl http://localhost:#{port}/ping")
   ensure
     Process.kill "KILL", pid

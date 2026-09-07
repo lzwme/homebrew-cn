@@ -62,7 +62,6 @@ class Grails < Formula
       pid = spawn "./gradlew", "--no-daemon", "bootRun", "-Dgrails.server.port=#{port}"
       begin
         sleep 20
-        sleep 20 if OS.mac? && Hardware::CPU.intel?
         assert_equal "Hello Homebrew", shell_output("curl --silent http://localhost:#{port}/greeting/index")
       ensure
         Process.kill "TERM", pid

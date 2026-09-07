@@ -26,6 +26,7 @@ class Periphery < Formula
 
   on_macos do
     depends_on xcode: ["16.4", :build]
+    depends_on macos: :sequoia # aligned to build Xcode as cannot cross-compile
   end
 
   def clt_lib_directory

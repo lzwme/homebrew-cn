@@ -1,18 +1,17 @@
 class Mado < Formula
   desc "Fast Markdown linter written in Rust"
   homepage "https://github.com/akiomik/mado"
-  url "https://ghfast.top/https://github.com/akiomik/mado/archive/refs/tags/v0.3.1.tar.gz"
-  sha256 "4105c55801a160563603f22362ea787aa6db316ab7d8dcc19f11ad3242d6283f"
+  url "https://ghfast.top/https://github.com/akiomik/mado/archive/refs/tags/v0.3.2.tar.gz"
+  sha256 "6df6348a59170c19858d24512ba0a7eba9a5b5ec51f3f2bfa14e32327cc0f806"
   license "Apache-2.0"
   head "https://github.com/akiomik/mado.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "448837f4ac64e4722e37bf28b6bf3f5f333e3f68e5557765c366309cc523b546"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2b99bf4e55b934184f5f319d4616e2ef703f604e5f9307e783c1bf95481b9338"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "93236546d7581e3b7c266dfe2908fe572c1b1dbbdc0dbafec8fcb1467c3fb42b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9844e9042f98bb74cc7c304e961cceb0094c7926b4a6fff2fbb67e2364ebd996"
-    sha256 cellar: :any,                 arm64_linux:   "1288541806f7c6661fc14c2c69a3906806915976f2c6bcb733423c3f761db90a"
-    sha256 cellar: :any,                 x86_64_linux:  "78a233d748d0cf2fc848329b016def1b4eecc22721b24959cd0e0712f2c57632"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "65f0d9a8e62a8aea7fce32f3c10c2584576fc43952806ac227a88e98c74e7136"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e25f5f469af9b354dbc02c95d8562f4092fb65fcdefc3f47a3ff94e789a42dcf"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "acce475fd922bb159194a0ee548a11ccfc9c654507032006fd3fa9dd4b4e7822"
+    sha256 cellar: :any,                 arm64_linux:   "bbc4813fb317a1d3f94d0bb8004944e4c04035ce8f52df857de4ff40e67b04f8"
+    sha256 cellar: :any,                 x86_64_linux:  "5892d80be8169dbef04f505ff17bc48fa1fda3fb66e39f86464147ae5252dcd1"
   end
 
   depends_on "rust" => :build

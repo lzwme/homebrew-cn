@@ -1,13 +1,13 @@
 class Libdivide < Formula
   desc "Optimized integer division"
   homepage "https://libdivide.com"
-  url "https://ghfast.top/https://github.com/ridiculousfish/libdivide/archive/refs/tags/v5.3.0.tar.gz"
-  sha256 "de3933bf2fd21300d99fcc6460a8a4a1343ae90b965d6893f044c350bac68c6e"
+  url "https://ghfast.top/https://github.com/ridiculousfish/libdivide/archive/refs/tags/v5.4.0.tar.gz"
+  sha256 "077e8ce6c783d1b4402aa6d77f643f88f37feb80e9896c30e19a62cc0a3f5576"
   license any_of: ["Zlib", "BSL-1.0"]
   head "https://github.com/ridiculousfish/libdivide.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "73dd9a2cb0aa33ae2d15a3beeba9b8ff3a5cccca5c0c6d2a41eb77cbb993166b"
+    sha256 cellar: :any_skip_relocation, all: "cbaaeb34b8633fa12c85f274bf6a60123a25b041a1185638ddd28ea8bc21c1ab"
   end
 
   depends_on "cmake" => :build

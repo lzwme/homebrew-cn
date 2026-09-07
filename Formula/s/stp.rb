@@ -56,7 +56,7 @@ class Stp < Formula
     inreplace "lib/Util/GitSHA1.cpp.in", "@CMAKE_CXX_COMPILER@", ENV.cxx
 
     args = %W[
-      -DPYTHON_EXECUTABLE=#{which(python3)}
+      -DPYTHON_EXECUTABLE=#{python3}
       -DPYTHON_LIB_INSTALL_DIR=#{site_packages}
       -DSTP_ALLOCATOR=system
     ]
@@ -115,6 +115,6 @@ class Stp < Formula
       print(s.check())
     PYTHON
 
-    assert_equal "True\n", shell_output("python3.14 test.py")
+    assert_equal "True\n", shell_output("#{python3} test.py")
   end
 end

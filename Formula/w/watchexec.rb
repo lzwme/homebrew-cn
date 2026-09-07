@@ -1,8 +1,8 @@
 class Watchexec < Formula
   desc "Execute commands when watched files change"
   homepage "https://watchexec.github.io/"
-  url "https://ghfast.top/https://github.com/watchexec/watchexec/archive/refs/tags/v2.7.1.tar.gz"
-  sha256 "957e0a7373e02c561f49d66b0dfc7e0e7b4576d73f149eeb01c0f15643d358f0"
+  url "https://ghfast.top/https://github.com/watchexec/watchexec/archive/refs/tags/v2.7.2.tar.gz"
+  sha256 "ad87aac074e5d1b018bb50ef98240911cd31d96d68d9b8ac0f02c14879930f50"
   license "Apache-2.0"
   head "https://github.com/watchexec/watchexec.git", branch: "main"
 
@@ -12,11 +12,11 @@ class Watchexec < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b51a5f0bafe29ffb54ddfe200fe555285f181e2150519bb6f4deec43fe914c8e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cb4f339e6bc5d380c960ef491650b0ca8a6681743be93629d7f1ea878bbcb826"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fb7ff5e7a6296e17af9fcb563bf0ca40aead2c7e8936559ab5c3f1db5b1bec57"
-    sha256 cellar: :any,                 arm64_linux:   "8018adfc23809d6360682422cac106c1abe41d7aa357f234d6b27652b633888e"
-    sha256 cellar: :any,                 x86_64_linux:  "01e59243337cb57a3ae3ea33a141d0fcb3064fc2fba4d79ae2eca0d2151aeff3"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d658053d02e8576b2fed86fb60e57eeb07805630eebd8d1592a6cac2e4ecc63a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "99fe0d815cc2d98ef4585bed73928878efa2a367a3943cdadedbea3688751501"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "49f61e9032c2961e6e555e01ad50c6c658e407360d28b677dba3cd818d8e3ef8"
+    sha256 cellar: :any,                 arm64_linux:   "e6b45c9886704d864fcc3bc872d17cd9f6eb51fe7c5c81bdd0ba776f5dbf2d21"
+    sha256 cellar: :any,                 x86_64_linux:  "03dea3bb8c4ce185e30257f95e5bacef80fd8363eca6d583f92fe80c0ca166a7"
   end
 
   depends_on "rust" => :build

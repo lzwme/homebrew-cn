@@ -1,18 +1,17 @@
 class Hjson < Formula
   desc "Convert JSON to HJSON and vice versa"
   homepage "https://hjson.github.io/"
-  url "https://ghfast.top/https://github.com/hjson/hjson-go/archive/refs/tags/v4.7.0.tar.gz"
-  sha256 "800b8f511f503b75bf794db2b2709bc15e8ea9e461eecdb2408472fb363189c2"
+  url "https://ghfast.top/https://github.com/hjson/hjson-go/archive/refs/tags/v4.7.1.tar.gz"
+  sha256 "2881c114bcd194860155885e3c3586b6e41832818ea5cbf9c661a6a7990a79b6"
   license "MIT"
   head "https://github.com/hjson/hjson-go.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9cda07080ae5d7599763349a9864986a4565f6a54477bdb649914608cea306de"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9cda07080ae5d7599763349a9864986a4565f6a54477bdb649914608cea306de"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9cda07080ae5d7599763349a9864986a4565f6a54477bdb649914608cea306de"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f62a181ee3b8a43c76b3128671799342acf407183533b2468e712df55f3dd43e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b224f4ae64d1b4a840e9212c529ac9f25899124707230ffc386d7808e4d75b21"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "404aea04f3385d33a93e21cf5cd9297a704a03c0ff55d80dd1947325cd18fa5c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4a33156f50c63285d3df45038349df02997e8f177138201d44d19b313a3a2ed7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4a33156f50c63285d3df45038349df02997e8f177138201d44d19b313a3a2ed7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4a33156f50c63285d3df45038349df02997e8f177138201d44d19b313a3a2ed7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4aa5610d49cd7983041ac406238fc68c6726424ad23f9e2b762a64f8d4ce18e8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "51aa8911adf1968269810f0f25131e813490c97782536646ad3f76341481955d"
   end
 
   depends_on "go" => :build

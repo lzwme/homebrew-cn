@@ -48,7 +48,6 @@ class Cortexso < Formula
     port = free_port
     pid = fork { exec bin/"cortex", "serve", "--port", port.to_s }
     sleep 10
-    sleep 10 if OS.mac? && Hardware::CPU.intel?
     begin
       assert_match "OK", shell_output("curl -s localhost:#{port}/v1/health")
     ensure

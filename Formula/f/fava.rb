@@ -230,7 +230,6 @@ class Fava < Formula
 
     # Wait for fava to start up
     sleep 10
-    sleep 10 if OS.mac? && Hardware::CPU.intel?
 
     cmd = "curl -sIm1 -XGET http://localhost:#{port}/beancount/income_statement/"
     assert_match(/200 OK/m, shell_output(cmd))

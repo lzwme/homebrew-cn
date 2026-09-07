@@ -7,6 +7,7 @@ class OpentimestampsClient < Formula
   sha256 "083a08f59c3123682d6742cc57d3e229ed7b3397807638836efe3a949517accb"
   license "LGPL-3.0-or-later"
   revision 7
+  head "https://github.com/opentimestamps/opentimestamps-client.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "048842d698bcb718dd51f4aef325817a32411164da151a59fbb3b8f4d50d9f5b"
@@ -68,26 +69,14 @@ class OpentimestampsClient < Formula
   test do
     (testpath/"input.txt").write("homebrew test input")
 
-    system libexec/"bin/python3.14", "-c", <<~PYTHON
-      from opentimestamps.core.notary import PendingAttestation
-      from opentimestamps.core.op import OpSHA256
-      from opentimestamps.core.serialize import StreamSerializationContext
-      from opentimestamps.core.timestamp import DetachedTimestampFile
+    system bin/"ots", "stamp", "input.txt"
+    assert_path_exists testpath/"input.txt.ots"
 
-      with open("input.txt", "rb") as f:
-          detached = DetachedTimestampFile.from_fd(OpSHA256(), f)
-      detached.timestamp.attestations.add(PendingAttestation("https://calendar.example"))
-      with open("input.txt.ots", "wb") as out:
-          detached.serialize(StreamSerializationContext(out))
-    PYTHON
-
-    output = shell_output("#{bin}/ots --no-cache info input.txt.ots")
+    output = shell_output("#{bin}/ots info input.txt.ots")
     assert_match "File sha256 hash: d4de79205af8b0150c9cb0ea47d11c96bbc2236b89768a9a8d1028da8552994e", output
-    assert_match "PendingAttestation('https://calendar.example')", output
+    assert_match "PendingAttestation('https://btc.calendar.catallaxy.com')", output
 
-    expected = "Ignoring attestation from calendar https://calendar.example: Calendar not in whitelist"
-    verify_output = shell_output("#{bin}/ots --no-cache --no-default-whitelist \
-                                            verify -f input.txt input.txt.ots 2>&1", 1)
-    assert_match expected, verify_output
+    output = shell_output("#{bin}/ots --no-default-whitelist verify -f input.txt input.txt.ots 2>&1", 1)
+    assert_match "Ignoring attestation from calendar", output
   end
 end

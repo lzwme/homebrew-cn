@@ -1,8 +1,8 @@
 class Vfox < Formula
   desc "Version manager with support for Java, Node.js, Flutter, .NET & more"
   homepage "https://vfox.dev/"
-  url "https://ghfast.top/https://github.com/version-fox/vfox/archive/refs/tags/v1.0.11.tar.gz"
-  sha256 "a201d35eec1465bf571f80ea65c27c74c61e2a5ce96c97b5f0e45f2dbfa86a34"
+  url "https://ghfast.top/https://github.com/version-fox/vfox/archive/refs/tags/v1.0.12.tar.gz"
+  sha256 "9cb7449c09d30ec55760658674077ff1208c6408cfbc6aaf567a36407626a0ba"
   license "Apache-2.0"
   head "https://github.com/version-fox/vfox.git", branch: "main"
 
@@ -12,12 +12,11 @@ class Vfox < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "69890410a3bd1bf0a3713d051080834b75e9f0d7a6c8820a9050890dd65a9276"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "db62c1d48fc63366b538503c0547031b8b672c05a2572efb2d24797c7c173f22"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "45541f695d69baa81859eecbeaa6a656e6b4e59382f3bceab8093add0d232bac"
-    sha256 cellar: :any_skip_relocation, sonoma:        "50d89f00234675b47ea92536ec0435791d43f74a72361460557a0bdf0fe5281b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7124f73212f71bc4e8427914cb82c66eb30e6bad5e75116b7b43bc49957fa4ed"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fa64805f938b39440fcba1a3e564c863e10b1d2d71846cc59ce85533c24891bf"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "dab5a5bb6f495e32f96824a3663a5739b45f0ccb7d2fc79d7eff6c398a2882a9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a28134fa3df38c47c1c0a1b7ee7ef387de402d5708a8f6c9e8c1db0b2fccd7c3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1ca3561e2c189d99a64ea77c258199eb9df844fa4882b1eb697768f6c160f224"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fc11fe342adf197b825ee468c5d7827b535837a219dc392564ac257abd227a5b"
+    sha256 cellar: :any,                 x86_64_linux:  "9e204a39d262d7ea9dc6be59f42943bbe70a14b78d9dc76f36b101e7284ff056"
   end
 
   depends_on "go" => :build

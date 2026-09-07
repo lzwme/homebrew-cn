@@ -169,7 +169,6 @@ class Httpd < Formula
       pid = spawn bin/"httpd", "-X", "-f", testpath/"httpd.conf"
 
       sleep 3
-      sleep 2 if OS.mac? && Hardware::CPU.intel?
 
       assert_match expected_output, shell_output("curl -s 127.0.0.1:#{port}")
 

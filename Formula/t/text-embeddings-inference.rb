@@ -35,8 +35,6 @@ class TextEmbeddingsInference < Formula
     port = free_port
     spawn bin/"text-embeddings-router", "-p", port.to_s, "--model-id", "sentence-transformers/all-MiniLM-L6-v2"
 
-    sleep 2 if OS.mac? && Hardware::CPU.intel?
-
     data = "{\"inputs\":\"What is Deep Learning?\"}"
     header = "Content-Type: application/json"
     retries = "--retry 5 --retry-connrefused"

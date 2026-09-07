@@ -6,6 +6,10 @@ cask "font-overpass" do
   name "Overpass"
   homepage "https://overpassfont.org/"
 
+  font "Overpass-#{version}/desktop-fonts/overpass-mono/overpass-mono-bold.otf"
+  font "Overpass-#{version}/desktop-fonts/overpass-mono/overpass-mono-light.otf"
+  font "Overpass-#{version}/desktop-fonts/overpass-mono/overpass-mono-regular.otf"
+  font "Overpass-#{version}/desktop-fonts/overpass-mono/overpass-mono-semibold.otf"
   font "Overpass-#{version}/desktop-fonts/overpass/overpass-bold-italic.otf"
   font "Overpass-#{version}/desktop-fonts/overpass/overpass-bold.otf"
   font "Overpass-#{version}/desktop-fonts/overpass/overpass-extrabold-italic.otf"
@@ -22,10 +26,6 @@ cask "font-overpass" do
   font "Overpass-#{version}/desktop-fonts/overpass/overpass-semibold.otf"
   font "Overpass-#{version}/desktop-fonts/overpass/overpass-thin-italic.otf"
   font "Overpass-#{version}/desktop-fonts/overpass/overpass-thin.otf"
-  font "Overpass-#{version}/desktop-fonts/overpass-mono/overpass-mono-bold.otf"
-  font "Overpass-#{version}/desktop-fonts/overpass-mono/overpass-mono-light.otf"
-  font "Overpass-#{version}/desktop-fonts/overpass-mono/overpass-mono-regular.otf"
-  font "Overpass-#{version}/desktop-fonts/overpass-mono/overpass-mono-semibold.otf"
 
   # No zap stanza required
 end

@@ -67,7 +67,7 @@ class Fwupd < Formula
 
     args = [
       "-Dbuild=standalone", # this is used as PolicyKit is not available on macOS
-      "-Dpython=#{which(python3)}",
+      "-Dpython=#{python3}",
       "-Dsupported_build=enabled",
       "-Dplugin_modem_manager=disabled",
       "-Dplugin_uefi_capsule_splash=false",

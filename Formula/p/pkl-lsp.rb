@@ -42,7 +42,6 @@ class PklLsp < Formula
       stdin.write "Content-Length: #{json.size}\r\n\r\n#{json}"
       stdin.close
       sleep 1
-      sleep 2 if OS.mac? && Hardware::CPU.intel?
       Process.kill("TERM", w.pid)
       assert_match(/^Content-Length: \d+/i, stdout.readline)
     end

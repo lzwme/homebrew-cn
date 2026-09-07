@@ -44,7 +44,6 @@ class Cups < Formula
 
     begin
       sleep 2
-      sleep 2 if OS.mac? && Hardware::CPU.intel?
       assert_match("Homebrew Test Printer", shell_output("curl localhost:#{port}"))
     ensure
       Process.kill("TERM", pid)

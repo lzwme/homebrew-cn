@@ -83,7 +83,6 @@ class Netshow < Formula
     output_log = testpath/"output.log"
     pid = spawn bin/"netshow", [:out, :err] => output_log.to_s
     sleep 3
-    sleep 12 if OS.mac? && Hardware::CPU.intel?
     assert_match "Netshow (lsof)", output_log.read
   ensure
     Process.kill("TERM", pid)

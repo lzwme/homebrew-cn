@@ -134,7 +134,6 @@ class Cookiecutter < Formula
     Open3.popen3(bin/"cookiecutter", "--no-input", "cookiecutter-pypackage") do |stdin, _stdout|
       stdin.write "public"
       sleep 3
-      sleep 5 if OS.mac? && Hardware::CPU.intel?
       assert (testpath/"Python-Boilerplate").directory?
     end
   end

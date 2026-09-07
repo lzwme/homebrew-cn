@@ -144,7 +144,6 @@ class XorgServer < Formula
     xvfb_pid = spawn bin/"Xvfb", ":1"
     with_env(DISPLAY: ":1") do
       sleep 10
-      sleep 30 if OS.mac? && Hardware::CPU.intel?
       system "./test"
       system bin/"xvfb-run", "./test" if OS.linux?
     ensure

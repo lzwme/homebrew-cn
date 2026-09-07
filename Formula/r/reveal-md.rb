@@ -36,7 +36,6 @@ class RevealMd < Formula
     output_log = testpath/"output.log"
     pid = spawn bin/"reveal-md", testpath/"test.md", [:out, :err] => output_log.to_s
     sleep 8
-    sleep 8 if OS.mac? && Hardware::CPU.intel?
     assert_match "Serving reveal.js", output_log.read
 
     assert_match version.to_s, shell_output("#{bin}/reveal-md --version")

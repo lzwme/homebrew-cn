@@ -68,7 +68,6 @@ class BigqueryEmulator < Formula
                                          "--port=#{port}",
                                          "--grpc-port=#{grpc_port}"
     sleep 10
-    sleep 10 if OS.mac? && Hardware::CPU.intel?
 
     query = '{"query": "SELECT name FROM dataset1.table_a WHERE id = 2"}'
     query_url = "http://localhost:#{port}/bigquery/v2/projects/test/queries"

@@ -1,6 +1,6 @@
 cask "server-box" do
-  version "1.0.1553"
-  sha256 "93b1454cb9620558285fb992be3557a6a0ba88ff13333e8b6e0f1a7c1a3d322f"
+  version "1.0.1574"
+  sha256 "c79fd3130f7873d5c4efbb5083816808217df29604b43bd8dfe35c97d4ab6531"
 
   url "https://ghfast.top/https://github.com/lollipopkit/flutter_server_box/releases/download/v#{version}/ServerBox-#{version}.dmg"
   name "ServerBox"

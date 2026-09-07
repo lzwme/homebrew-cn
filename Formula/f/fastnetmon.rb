@@ -69,7 +69,6 @@ class Fastnetmon < Formula
 
     pid = spawn opt_sbin/"fastnetmon", "--configuration_file", testpath/"fastnetmon.conf", "--log_to_console"
     sleep 60
-    sleep 40 if OS.mac? && Hardware::CPU.intel?
 
     assert_path_exists testpath/"fastnetmon.dat"
     assert_path_exists testpath/"fastnetmon_ipv6.dat"

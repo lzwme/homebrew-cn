@@ -7,24 +7,24 @@ class Yozefu < Formula
   head "https://github.com/MAIF/yozefu.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "ccea35c1826b98532dd9bdb2e0fee969b168cb52b92cae85cf93604f5e7da50a"
-    sha256 cellar: :any, arm64_sequoia: "4025065f6e88b76159733b5cee242b48e523545cb8b9280292812cd21490b3a4"
-    sha256 cellar: :any, arm64_sonoma:  "652e4925e840a088e48940bf31d725c29f805d8c9b80c42eb94298ccd4452b0f"
-    sha256 cellar: :any, sonoma:        "edebde23a8538c3a486bb95f999dac813eeded3aa8fc54d03769b2bfb74aa5b6"
-    sha256 cellar: :any, arm64_linux:   "bdb7c72c626fd719deb73ddcfb891ccc86a3022ce8ead4733f3e691efc4c3081"
-    sha256 cellar: :any, x86_64_linux:  "94c1a23e26674e449974d511ec9b21e05e9faf80231f4bc093d386e1e86b3fcc"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "47f17cfa36c7555cf00f49c4005382e1a3a155dc727a2625251106cbb2b7f925"
+    sha256 cellar: :any, arm64_sequoia: "7de4db2a95f0f618fe83a4afe9589aaea038a160df701eadf8595d7df2e19437"
+    sha256 cellar: :any, arm64_sonoma:  "ec2ff63fa9f94d2f11f673d27ad8044af197063d6a730815da4e8388cdccccde"
+    sha256 cellar: :any, arm64_linux:   "0e97798f2ba843c5844bde7c2f2f60f58d51624a273ed1d77377618ab3551826"
+    sha256 cellar: :any, x86_64_linux:  "b03abe99405ec7e4d86e5dcd2b3fe06e9c9e65353d1e525c13e8375dd1191e15"
   end
 
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   uses_from_macos "llvm" => :build # for libclang
 
   def install
     # Ensure that the `openssl` crate picks up the intended library.
-    ENV["OPENSSL_DIR"] = formula_opt_prefix("openssl@3")
+    ENV["OPENSSL_DIR"] = formula_opt_prefix("openssl@4")
 
     system "cargo", "install", *std_cargo_args(path: "crates/bin")
   end
@@ -38,8 +38,8 @@ class Yozefu < Formula
     assert_match "Error: There is no 'a' property in the config file", output
 
     [
-      formula_opt_lib("openssl@3")/shared_library("libssl"),
-      formula_opt_lib("openssl@3")/shared_library("libcrypto"),
+      formula_opt_lib("openssl@4")/shared_library("libssl"),
+      formula_opt_lib("openssl@4")/shared_library("libcrypto"),
     ].each do |library|
       assert Utils.binary_linked_to_library?(bin/"yozf", library),
              "No linkage with #{library.basename}! Cargo is likely using a vendored version."

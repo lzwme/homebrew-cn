@@ -39,7 +39,6 @@ class Twm < Formula
     spawn Formula["xorg-server"].bin/"Xvfb", ":1"
     ENV["DISPLAY"] = ":1"
     sleep 10
-    sleep 10 if OS.mac? && Hardware::CPU.intel?
     twn_pid = spawn bin/"twm"
     sleep 5
     system "kill", "-0", twn_pid

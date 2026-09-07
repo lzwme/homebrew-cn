@@ -54,7 +54,6 @@ class Supervisor < Formula
     begin
       pid = spawn bin/"supervisord", "--nodaemon", "-c", "sd.ini"
       sleep 3
-      sleep 9 if OS.mac? && Hardware::CPU.intel?
       output = shell_output("#{bin}/supervisorctl -c sd.ini version")
       assert_match version.to_s, output
     ensure

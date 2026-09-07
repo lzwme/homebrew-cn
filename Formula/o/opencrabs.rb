@@ -1,18 +1,17 @@
 class Opencrabs < Formula
   desc "Autonomous, self-improving AI agent in a single Rust binary"
   homepage "https://opencrabs.com"
-  url "https://ghfast.top/https://github.com/adolfousier/opencrabs/archive/refs/tags/v0.3.83.tar.gz"
-  sha256 "8cb6bf692625ef50e2f560eb4460b033ddeacb4855192256fea933735c618776"
+  url "https://ghfast.top/https://github.com/adolfousier/opencrabs/archive/refs/tags/v0.5.0.tar.gz"
+  sha256 "cbd6e3bbe9c797b7f3f34f5c959527b5edff6a858fcd932e8aeb008d645f2aaf"
   license "MIT"
   head "https://github.com/adolfousier/opencrabs.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d53a182e8d86dfe0d8664728a89085d437a5b93af3bf47a3e2f10e5a7b225fd7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9e8f47ae857ff526d7c985156121f31885f2a773f3ff0804207383d43ce3f6fb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f0c5c8529547f2ebd2059c08573b8b4714eb3e2be5c637164b836e307081a02d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b76d2d330246cfd685d8ffbda6d77d71714487aee018af44a67000249fbb9776"
-    sha256 cellar: :any,                 arm64_linux:   "2ee3ac74f3bea635e452358c8386fe34f027168bab3c937779eeff3038c78b1c"
-    sha256 cellar: :any,                 x86_64_linux:  "f7030d069e0759b642187ff04ca0aaab82c15cd7408b09bd2a8a45b81ba2200b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ddfb5beab43de5450f24ca7b2cf7f0f82b13b105d302979f42811f9df9685c58"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e0fd6d981e44302e6430e12f2ef8a1d7c914dff5761e20fef316b9c6f0127f0a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "905ced314307c22695d1ab43134cbd71f440f6d4137261a581a1d9bcf0c21a4f"
+    sha256 cellar: :any,                 arm64_linux:   "6b0c7b143b959defcf4c9b0ee9be5bf6d63f29d72e4e140e7265401e8be82e33"
+    sha256 cellar: :any,                 x86_64_linux:  "612413c5a24e270561d3641d2566e37da35d3372b55e98401773f23db57549ad"
   end
 
   depends_on "cmake" => :build

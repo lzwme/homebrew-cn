@@ -6,8 +6,8 @@ cask "font-comic-mono" do
   name "Comic Mono"
   homepage "https://dtinth.github.io/comic-mono-font/"
 
-  font "comic-mono-font-master/ComicMono.ttf"
   font "comic-mono-font-master/ComicMono-Bold.ttf"
+  font "comic-mono-font-master/ComicMono.ttf"
 
   # No zap stanza required
 end

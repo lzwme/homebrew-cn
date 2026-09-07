@@ -49,7 +49,6 @@ class Sslsplit < Formula
   test do
     Open3.popen2e(bin/"sslsplit", "-D", "http", "0.0.0.0", free_port.to_s, "www.roe.ch", "80") do |_, stdout, w|
       sleep 5
-      sleep 10 if OS.mac? && Hardware::CPU.intel?
       assert_match "Starting main event loop", stdout.read_nonblock(4096)
     ensure
       Process.kill "TERM", w.pid

@@ -1,9 +1,9 @@
 cask "iaito" do
   arch arm: "arm64", intel: "x64"
 
-  version "6.2.0"
-  sha256 arm:   "7efd38f48e61ce20c173397e4a1ca3227ec2318bc060115849a7481820aa1b4d",
-         intel: "9cbbd8aeff74a7381ea4b458e49fa336dd60d231680e3aef66373ad06fb6d8a4"
+  version "6.2.2"
+  sha256 arm:   "dc47554a5f1da68ce53b750f1a89786aa25601eea5e208c769bdac47fbaf4f17",
+         intel: "78e06ae8923514158c4f1531c810f391e80db3a0f1d348b723f79a782e4e1273"
 
   url "https://ghfast.top/https://github.com/radareorg/iaito/releases/download/#{version}/iaito_#{version}_#{arch}.dmg"
   name "iaito"
@@ -18,6 +18,8 @@ cask "iaito" do
   depends_on macos: :ventura
 
   app "iaito.app"
+
+  uninstall quit: "org.radare.iaito"
 
   zap trash: [
     "~/Library/Application Support/radareorg/iaito",

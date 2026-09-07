@@ -34,7 +34,6 @@ class LibpostalRest < Formula
     ENV["LISTEN_PORT"] = port.to_s
     pid = spawn bin/"libpostal-rest"
     sleep 5
-    sleep 10 if OS.mac? && Hardware::CPU.intel?
 
     command = <<~SH
       curl --silent --retry 5 --retry-connrefused -X POST -d '{"query": "100 main st buffalo ny"}' http://0.0.0.0:#{port}/parser

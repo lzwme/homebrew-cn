@@ -84,7 +84,6 @@ class Nexus < Formula
     (testpath/"data/etc/nexus.properties").write "application-port=#{port}"
     pid = spawn({ "NEXUS_KARAF_DATA" => testpath/"data" }, bin/"nexus", "server")
     sleep 50
-    sleep 50 if OS.mac? && Hardware::CPU.intel?
     assert_match "<title>Sonatype Nexus Repository</title>", shell_output("curl --silent --fail http://localhost:#{port}")
   ensure
     Process.kill "TERM", pid

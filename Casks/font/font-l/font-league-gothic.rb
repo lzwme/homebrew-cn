@@ -6,10 +6,10 @@ cask "font-league-gothic" do
   name "League Gothic"
   homepage "https://www.theleagueofmoveabletype.com/league-gothic"
 
-  font "LeagueGothic-#{version}/static/OTF/LeagueGothic-Regular.otf"
-  font "LeagueGothic-#{version}/static/OTF/LeagueGothic-Italic.otf"
   font "LeagueGothic-#{version}/static/OTF/LeagueGothic-Condensed.otf"
   font "LeagueGothic-#{version}/static/OTF/LeagueGothic-CondensedItalic.otf"
+  font "LeagueGothic-#{version}/static/OTF/LeagueGothic-Italic.otf"
+  font "LeagueGothic-#{version}/static/OTF/LeagueGothic-Regular.otf"
 
   # No zap stanza required
 end

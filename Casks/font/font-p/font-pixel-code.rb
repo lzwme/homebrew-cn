@@ -6,7 +6,6 @@ cask "font-pixel-code" do
   name "Pixel Code"
   homepage "https://qwerasd205.github.io/PixelCode/"
 
-  font "otf/PixelCode.otf"
   font "otf/PixelCode-Black-Italic.otf"
   font "otf/PixelCode-Black.otf"
   font "otf/PixelCode-Bold-Italic.otf"
@@ -26,6 +25,7 @@ cask "font-pixel-code" do
   font "otf/PixelCode-Medium.otf"
   font "otf/PixelCode-Thin-Italic.otf"
   font "otf/PixelCode-Thin.otf"
+  font "otf/PixelCode.otf"
 
   # No zap stanza required
 end

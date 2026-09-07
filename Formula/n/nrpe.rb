@@ -72,7 +72,6 @@ class Nrpe < Formula
 
     pid = spawn bin/"nrpe", "-n", "-c", testpath/"nrpe.cfg", "-d"
     sleep 2
-    sleep 10 if Hardware::CPU.intel?
 
     begin
       assert port_open?("localhost", port), "nrpe did not start"

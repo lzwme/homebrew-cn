@@ -11,8 +11,6 @@ cask "freecad" do
          x86_64_linux: "3a853eb69ee595f779f2255dbf80a765926981d8ff68903cefee4dfb03a8f5ef"
 
   on_macos do
-    depends_on :macos
-
     app "FreeCAD.app"
 
     zap trash: [

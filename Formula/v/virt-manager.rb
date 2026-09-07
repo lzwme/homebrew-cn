@@ -125,7 +125,6 @@ class VirtManager < Formula
     output = testpath/"virt-manager.log"
     pids << spawn(bin/"virt-manager", "-c", "test:///default", "--debug", [:out, :err] => output.to_s)
     sleep 20
-    sleep 10 if OS.mac? && Hardware::CPU.intel?
 
     assert_match "conn=test:///default changed to state=Active", output.read
   ensure

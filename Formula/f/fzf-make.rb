@@ -41,7 +41,6 @@ class FzfMake < Formula
         r.winsize = [80, 130]
       end
       sleep 5
-      sleep 5 if OS.mac? && Hardware::CPU.intel?
       assert_match "make brew", output_log.read
     ensure
       Process.kill("TERM", pid)

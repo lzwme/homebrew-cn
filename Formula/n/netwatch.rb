@@ -29,7 +29,6 @@ class Netwatch < Formula
       # bring up help dialog
       input.puts "?"
       sleep 1
-      sleep 2 if OS.mac? && Hardware::CPU.intel?
       input.close
     ensure
       Process.kill("TERM", wait_thr.pid)

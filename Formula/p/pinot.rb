@@ -39,13 +39,11 @@ class Pinot < Formula
 
     zkpid = spawn "#{opt_bin}/pinot-admin", "StartZookeeper", "-zkPort", zkport.to_s
     sleep 10
-    sleep 30 if Hardware::CPU.intel?
 
     controller_pid = spawn "#{opt_bin}/pinot-admin", "StartController",
                            "-zkAddress", "localhost:#{zkport}",
                            "-controllerPort", controller_port.to_s
     sleep 30
-    sleep 30 if Hardware::CPU.intel?
 
     assert_match("HTTP/1.1 200 OK", shell_output("curl -i http://localhost:#{controller_port} 2>&1"))
   ensure

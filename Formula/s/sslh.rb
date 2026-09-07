@@ -38,7 +38,6 @@ class Sslh < Formula
     end
 
     sleep 1
-    sleep 5 if OS.mac? && Hardware::CPU.intel?
     assert_equal "Hello world!", shell_output("curl -s http://localhost:#{listen_port}")
   ensure
     Process.kill "TERM", pid

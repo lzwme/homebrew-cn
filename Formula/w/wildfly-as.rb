@@ -217,7 +217,6 @@ class WildflyAs < Formula
                                            "-Djboss.server.base.dir=#{testpath}/standalone"
     begin
       sleep 10
-      sleep 10 if Hardware::CPU.intel?
       system "curl", "-X", "GET", "localhost:#{port}/"
       output = shell_output("curl -s -X GET localhost:#{port}")
       assert_match "Welcome to WildFly", output

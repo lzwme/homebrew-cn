@@ -9,7 +9,8 @@ class MysqlAT84 < Formula
   revision 4
 
   livecheck do
-    url "https://dev.mysql.com/downloads/mysql/8.4.html?tpl=files&os=src&version=8.4"
+    url "https://dev.mysql.com/downloads/mysql/8.4.html?tpl=files&os=src&version=8.4",
+        user_agent: :browser
     regex(/href=.*?mysql[._-](?:boost[._-])?v?(8\.4(?:\.\d+)*)\.t/i)
   end
 

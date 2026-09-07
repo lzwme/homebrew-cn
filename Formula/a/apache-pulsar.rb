@@ -89,7 +89,6 @@ class ApachePulsar < Formula
     # The daemon takes some time to start; pulsar-client will retry until it gets a connection, but emit confusing
     # errors until that happens, so sleep to reduce log spam.
     sleep 30
-    sleep 30 if OS.mac? && Hardware::CPU.intel?
 
     output = shell_output("#{bin}/pulsar-client produce my-topic --messages 'hello-pulsar'")
     assert_match "1 messages successfully produced", output

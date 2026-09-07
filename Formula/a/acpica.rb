@@ -7,7 +7,8 @@ class Acpica < Formula
   head "https://github.com/acpica/acpica.git", branch: "master"
 
   livecheck do
-    url "https://www.intel.com/content/www/us/en/download/776303/acpi-component-architecture-downloads-unix-format-source-code-and-build-environment-with-an-intel-license.html"
+    url "https://www.intel.com/content/www/us/en/download/776303/acpi-component-architecture-downloads-unix-format-source-code-and-build-environment-with-an-intel-license.html",
+        user_agent: :browser
     regex(/href=.*?acpica-unix[._-]v?(\d+(?:\.\d+)*)\.t/i)
   end
 

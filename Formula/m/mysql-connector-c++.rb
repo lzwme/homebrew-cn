@@ -6,7 +6,8 @@ class MysqlConnectorCxx < Formula
   license "GPL-2.0-only" => { with: "Universal-FOSS-exception-1.0" }
 
   livecheck do
-    url "https://dev.mysql.com/downloads/connector/cpp/?tpl=files&os=src"
+    url "https://dev.mysql.com/downloads/connector/cpp/?tpl=files&os=src",
+        user_agent: :browser
     regex(/href=.*?mysql-connector-c%2B%2B[._-]v?(\d+(?:\.\d+)+)[._-]src\.t/i)
   end
 

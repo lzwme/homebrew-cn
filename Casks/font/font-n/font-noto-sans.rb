@@ -11,8 +11,6 @@ cask "font-noto-sans" do
     regex(/^NotoSans-v?(\d+(?:\.\d+)+)$/i)
   end
 
-  font "NotoSans/unhinted/variable-ttf/NotoSans-Italic[wdth,wght].ttf"
-  font "NotoSans/unhinted/variable-ttf/NotoSans[wdth,wght].ttf"
   font "NotoSans/unhinted/ttf/NotoSans-Black.ttf"
   font "NotoSans/unhinted/ttf/NotoSans-BlackItalic.ttf"
   font "NotoSans/unhinted/ttf/NotoSans-Bold.ttf"
@@ -85,6 +83,8 @@ cask "font-noto-sans" do
   font "NotoSans/unhinted/ttf/NotoSans-SemiCondensedThinItalic.ttf"
   font "NotoSans/unhinted/ttf/NotoSans-Thin.ttf"
   font "NotoSans/unhinted/ttf/NotoSans-ThinItalic.ttf"
+  font "NotoSans/unhinted/variable-ttf/NotoSans-Italic[wdth,wght].ttf"
+  font "NotoSans/unhinted/variable-ttf/NotoSans[wdth,wght].ttf"
 
   # No zap stanza required
 end

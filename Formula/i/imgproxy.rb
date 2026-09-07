@@ -47,7 +47,6 @@ class Imgproxy < Formula
 
     pid = spawn bin/"imgproxy"
     sleep 20
-    sleep 50 if OS.mac? && Hardware::CPU.intel?
 
     output = testpath/"test-converted.png"
     url = "http://127.0.0.1:#{port}/insecure/resize:fit:100:100:true/plain/local:///test.jpg@png"

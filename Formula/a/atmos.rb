@@ -1,8 +1,8 @@
 class Atmos < Formula
   desc "Universal Tool for DevOps and Cloud Automation"
   homepage "https://atmos.tools"
-  url "https://ghfast.top/https://github.com/cloudposse/atmos/archive/refs/tags/v1.227.0.tar.gz"
-  sha256 "11c006f82c430241c7df1aa07b10b706b6a1bf17f7909518aa83c067babf7876"
+  url "https://ghfast.top/https://github.com/cloudposse/atmos/archive/refs/tags/v1.228.0.tar.gz"
+  sha256 "a540c367618716aaac4e953a82d2ed3664ea0f7dc12dc399d5b0be50ad06ab07"
   license "Apache-2.0"
   head "https://github.com/cloudposse/atmos.git", branch: "main"
 
@@ -14,12 +14,11 @@ class Atmos < Formula
   no_autobump! because: :bumped_by_upstream
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "553118e686dff650ab3ce4d28c34a878538cbadae60d505bfbf8d34ec84331cc"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "19d15ad7fa9bd290611d3b47af66bb5143aacab44110ddf725624b5c2eb5f5cb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d0d612f651b94c0261ef71d8caa2dd8059c273ed3a850e992b914481b65512df"
-    sha256 cellar: :any_skip_relocation, sonoma:        "cb5a289006a68bc607da9b10f9ef1b8278958c468a2c774db0998f4692353d9d"
-    sha256 cellar: :any,                 arm64_linux:   "314624c895b4cde87343f8147902015bff06802fefe1d10f2521ef7138356b59"
-    sha256 cellar: :any,                 x86_64_linux:  "4059228c5e5155226d488dd54afcf305d579189653f10b2593390da2d9fae89d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6027c10bc6164d195cae5e382c7b20faa42256601564705bb278ab261aaef06d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b1f5bc74a694664f12f11d4dddd9cf817296897ebdcd7434ef5e8ce2bde6f02d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bc1897dd9fe7278e2cadc838bc00befa73ca948bd4073ae17dc7a9381104d3ea"
+    sha256 cellar: :any,                 arm64_linux:   "f0d5a9667ee7b70515c32cb9af8cf45510ea5d982bedee3fb71ffeb023097c5a"
+    sha256 cellar: :any,                 x86_64_linux:  "252254c7206550fc38e954d013c0e19c7d690f12d84344553f87402ef2a3423d"
   end
 
   depends_on "go" => :build
