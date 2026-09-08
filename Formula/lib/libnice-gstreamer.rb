@@ -1,8 +1,8 @@
 class LibniceGstreamer < Formula
   desc "GStreamer Plugin for libnice"
   homepage "https://wiki.freedesktop.org/nice/"
-  url "https://libnice.freedesktop.org/releases/libnice-0.1.23.tar.gz"
-  sha256 "618fc4e8de393b719b1641c1d8eec01826d4d39d15ade92679d221c7f5e4e70d"
+  url "https://libnice.freedesktop.org/releases/libnice-0.1.24.tar.gz"
+  sha256 "cfb5e8e778534f2f5b3c6f4958a1eb057c6b95c537c0f100817a537cf5d64fcc"
   license any_of: ["LGPL-2.1-or-later", "MPL-1.1"]
 
   livecheck do
@@ -10,12 +10,11 @@ class LibniceGstreamer < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "8c35c126361bae664d0cedd53e2df6115a1303cf2566b9a28a3486b2159731f5"
-    sha256 cellar: :any, arm64_sequoia: "0e77dffa693e48f2ba455657fa744c595799b86655b695524c41bd3b983a6c5d"
-    sha256 cellar: :any, arm64_sonoma:  "f6ab16d942ef72dccb8278e2b8da25381edd0a6e394020b87d50e1f6a6d7a0b9"
-    sha256 cellar: :any, sonoma:        "f78f64870d3d5ec10b8cf25af5ac7ae92c3106b577f1bf13d9cab0dccbe9fbb7"
-    sha256               arm64_linux:   "ed30b7a595d0bf0f5798158f4f142af5c71ae72d0e3fe9a4c815beca104df736"
-    sha256               x86_64_linux:  "2570d646e3fff87a4227109021740629384f63d27278ae1ec5060278c6169148"
+    sha256 cellar: :any, arm64_tahoe:   "4534e775b787529c00fc1f4954c4cb2cd0162e90bd0c687302580d65f5d3ece5"
+    sha256 cellar: :any, arm64_sequoia: "3244ebe9c99c296fff087230259455ca9ec34a70ccf51edf2f9300eaa5290012"
+    sha256 cellar: :any, arm64_sonoma:  "670e31e436f75b1c09fd9683adb166309cf786a868d6e5f702e85052c015fc44"
+    sha256 cellar: :any, arm64_linux:   "56099682e9761c9d01a47e32a4da76fd3cfd1a88a695e8fb6cbe6f25bb4ba7f2"
+    sha256 cellar: :any, x86_64_linux:  "7b5a4536f58eb1f357d29702c92fe935ebd4428ec0f4d41ec66f05bb8e50713f"
   end
 
   depends_on "meson" => :build
@@ -55,56 +54,53 @@ Date: Wed, 21 Feb 2024 18:15:51 +0530
 Subject: [PATCH] meson: Add an option to build only the gstreamer plugin
 
 This is one possible approach to break the circular dep between
-gstreamer and libnice.
+gstreamer and libnice. Refreshed for 0.1.24, which added `gst_net_dep`
+to the `gstnice` library dependencies.
 
 diff --git a/gst/gstnicesink.h b/gst/gstnicesink.h
-index b9e6e6c5..49c2d5ce 100644
 --- a/gst/gstnicesink.h
 +++ b/gst/gstnicesink.h
 @@ -41,7 +41,7 @@
  #include <gst/gst.h>
  #include <gst/base/gstbasesink.h>
-
+ 
 -#include <nice/nice.h>
 +#include <nice.h>
-
+ 
  G_BEGIN_DECLS
-
+ 
 diff --git a/gst/gstnicesrc.h b/gst/gstnicesrc.h
-index 9d00bfaa..8b906e6f 100644
 --- a/gst/gstnicesrc.h
 +++ b/gst/gstnicesrc.h
 @@ -41,7 +41,7 @@
  #include <gst/gst.h>
  #include <gst/base/gstpushsrc.h>
-
+ 
 -#include <nice/nice.h>
 +#include <nice.h>
-
+ 
  G_BEGIN_DECLS
-
+ 
 diff --git a/gst/meson.build b/gst/meson.build
-index 4ed4794f..31e3e5fb 100644
 --- a/gst/meson.build
 +++ b/gst/meson.build
-@@ -8,10 +8,11 @@ gst_nice_args = ['-DGST_USE_UNSTABLE_API']
-
+@@ -8,10 +8,11 @@
+ 
  gst_plugins_install_dir = join_paths(get_option('libdir'), 'gstreamer-1.0')
-
+ 
 +configure_file(output : 'config.h', configuration : cdata)
 +
  libgstnice = library('gstnice',
    gst_nice_sources,
    c_args : gst_nice_args,
 -  include_directories: nice_incs,
-   dependencies: [libnice_dep, gst_dep],
+   dependencies: [libnice_dep, gst_dep, gst_net_dep],
    install_dir: gst_plugins_install_dir,
    install: true)
 diff --git a/meson.build b/meson.build
-index 3936658..12f6601 100644
 --- a/meson.build
 +++ b/meson.build
-@@ -31,6 +31,7 @@ nice_datadir = join_paths(get_option('prefix'), get_option('datadir'))
+@@ -31,6 +31,7 @@
  
  cc = meson.get_compiler('c')
  static_build = get_option('default_library') == 'static'
@@ -112,7 +108,7 @@ index 3936658..12f6601 100644
  
  syslibs = []
  
-@@ -81,6 +82,15 @@ add_project_arguments('-D_GNU_SOURCE',
+@@ -81,6 +82,15 @@
    '-DGLIB_VERSION_MAX_ALLOWED=GLIB_VERSION_' + glib_req_minmax_str,
    language: 'c')
  
@@ -128,7 +124,7 @@ index 3936658..12f6601 100644
  # Same logic as in GLib.
  glib_debug = get_option('glib_debug')
  disable_cast_checks = glib_debug.disabled() or (
-@@ -313,11 +323,15 @@ endif
+@@ -317,11 +327,15 @@
  
  gir = find_program('g-ir-scanner', required : get_option('introspection'))
  
@@ -149,7 +145,7 @@ index 3936658..12f6601 100644
  
  if gst_dep.found()
    subdir('gst')
-@@ -333,11 +347,11 @@ else
+@@ -337,11 +351,11 @@
    endif
  endif
  
@@ -164,10 +160,9 @@ index 3936658..12f6601 100644
  endif
  
 diff --git a/meson_options.txt b/meson_options.txt
-index cd980cb5..cd7c879b 100644
 --- a/meson_options.txt
 +++ b/meson_options.txt
-@@ -2,6 +2,8 @@ option('gupnp', type: 'feature', value: 'auto',
+@@ -2,6 +2,8 @@
    description: 'Enable or disable GUPnP IGD support')
  option('gstreamer', type: 'feature', value: 'auto',
    description: 'Enable or disable build of GStreamer plugins')
@@ -176,5 +171,3 @@ index cd980cb5..cd7c879b 100644
  option('ignored-network-interface-prefix', type: 'array', value: ['docker', 'veth', 'virbr', 'vnet'],
    description: 'Ignore network interfaces whose name starts with a string from this list in the ICE connection check algorithm. For example, "virbr" to ignore virtual bridge interfaces added by virtd, which do not help in finding connectivity.')
  option('crypto-library', type: 'combo', choices : ['auto', 'gnutls', 'openssl'], value : 'auto')
---
-GitLab

@@ -1,8 +1,8 @@
 class MenderArtifact < Formula
   desc "CLI tool for managing Mender artifact files"
   homepage "https://mender.io"
-  url "https://ghfast.top/https://github.com/mendersoftware/mender-artifact/archive/refs/tags/4.4.1.tar.gz"
-  sha256 "c7002052028496f230c34ef6f0488bf5e8ca32b075b7a96555532fe928aed984"
+  url "https://ghfast.top/https://github.com/mendersoftware/mender-artifact/archive/refs/tags/4.4.2.tar.gz"
+  sha256 "d8e9e18e48a2124e5e367ffafb3313a3dcba7a8a8a8b162b1dcb8791964c6385"
   license "Apache-2.0"
 
   # exclude tags like `3.4.0b1` and `internal-v2020.02`
@@ -12,12 +12,11 @@ class MenderArtifact < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "95c53135249208f87ff8def2a9b313b72505677e932feef65c94903b6ae736b0"
-    sha256 cellar: :any, arm64_sequoia: "5211e2db7a2de9defbd0f3593370cff1eb52a8b7bbcf1474f87540940925b103"
-    sha256 cellar: :any, arm64_sonoma:  "23a62d443a68a8b97e087b331626ce425187623d7c326edb5e432fb413527326"
-    sha256 cellar: :any, sonoma:        "fe09cc1128f493aa9d7d12a4e0e2337105f385b576a0e968239636bae0b825e3"
-    sha256 cellar: :any, arm64_linux:   "f9e172d57686537a4b0e0af7184b384de95be61a2e76c8a427758fc83edff377"
-    sha256 cellar: :any, x86_64_linux:  "aa529657edc6af5ec7991b9157156e07a10ae6ea5b1ba378b39999b9423c529f"
+    sha256 cellar: :any, arm64_tahoe:   "71f4de471c92087249e9c38eb2daee56696ecd2eb26e3f4f6373777a11933a6e"
+    sha256 cellar: :any, arm64_sequoia: "4db17100096cc70d59d000e50ec020dc2db58861b4df6a1b9026e4802be611f1"
+    sha256 cellar: :any, arm64_sonoma:  "4839a66ed29d127d308c68c6ac2934c80e4c2de60556ff60639642540e702668"
+    sha256 cellar: :any, arm64_linux:   "c7756ab0e7d4f92519682d292dbb91c18de61c2d83ca6e8fe1a6e5edf3c0359e"
+    sha256 cellar: :any, x86_64_linux:  "0d991da6100285bade77edc383e40ee7fc3de273c9222c6fcdfcad1316afaaaf"
   end
 
   depends_on "go" => :build

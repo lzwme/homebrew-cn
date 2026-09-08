@@ -26,8 +26,6 @@ class Stockfish < Formula
       "apple-silicon"
     elsif Hardware::CPU.arm?
       "armv8"
-    elsif OS.mac? && MacOS.version.requires_sse41?
-      "x86-64-sse41-popcnt"
     else
       "x86-64-ssse3"
     end

@@ -197,9 +197,8 @@ class Llvm < Formula
     end
 
     # Skip the PGO build on HEAD installs, non-bottle source builds, or versioned formulae.
-    # Also skip Intel macOS which is slow and will be reduced to Tier 3 in Sept 2026.
     # TODO: Fix Linux PGO build which is currently dead code
-    pgo_build = build.stable? && build.bottle? && OS.mac? && Hardware::CPU.arm? && !versioned_formula?
+    pgo_build = build.stable? && build.bottle? && OS.mac? && !versioned_formula?
     lto_build = pgo_build && OS.mac?
 
     if ENV.cflags.present?

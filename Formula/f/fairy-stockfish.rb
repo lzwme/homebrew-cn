@@ -32,11 +32,7 @@ class FairyStockfish < Formula
         "armv8"
       end
     elsif build.bottle?
-      if OS.mac? && MacOS.version.requires_sse41?
-        "x86-64-sse41-popcnt"
-      else
-        "x86-64-ssse3"
-      end
+      "x86-64-ssse3"
     elsif Hardware::CPU.avx2?
       "x86-64-avx2"
     elsif Hardware::CPU.sse4?

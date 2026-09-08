@@ -1,9 +1,9 @@
 cask "rustrover" do
   arch arm: "-aarch64"
 
-  version "2026.2.1,262.9437.161"
-  sha256 arm:   "bf3ec363e0608cb608044e4a50227b02e66d313a6912e1e671324e393f849513",
-         intel: "89afaa7f3135fbedc7a3253d1f7da1c0dc9e706301bde04368fd0cd8824ee661"
+  version "2026.2.2,262.10315.167"
+  sha256 arm:   "61c626adb68a85d8b4360723c4df1960882015426b6622a9178ddaa21b4985ba",
+         intel: "1b3df07265e5b71f3faae739789f4cce25f4ecb8a65dde8058b339aa3e5c111e"
 
   url "https://download.jetbrains.com/rustrover/RustRover-#{version.csv.first}#{arch}.dmg"
   name "RustRover"
@@ -29,6 +29,8 @@ cask "rustrover" do
   app "RustRover.app"
   command_wrapper "rustrover",
                   executable: "#{appdir}/RustRover.app/Contents/MacOS/rustrover"
+
+  uninstall quit: "com.jetbrains.rustrover"
 
   zap trash: [
     "~/Library/Application Support/JetBrains/RustRover#{version.major_minor}",

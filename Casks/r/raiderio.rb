@@ -1,6 +1,6 @@
 cask "raiderio" do
-  version "4.11.2"
-  sha256 "4bec68d98b1d353e228acdfa92b39dc43a03bbc60d61c0d71d9505cc8fadb8a8"
+  version "5.0.5"
+  sha256 "3d22ce06ec69884ab367c8e11e8540708708b3de276e65092dfc0e6d06e1f60d"
 
   url "https://ghfast.top/https://github.com/RaiderIO/raiderio-client-builds/releases/download/v#{version}/RaiderIO_Client.dmg"
   name "Raider.io Client"
@@ -12,7 +12,7 @@ cask "raiderio" do
     strategy :github_latest
   end
 
-  depends_on macos: :big_sur
+  depends_on macos: :monterey
 
   app "RaiderIO.app"
 

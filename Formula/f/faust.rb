@@ -15,19 +15,26 @@ class Faust < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "583df2489e564948010f63e7db96c3946620b6574d9ea6f55c180cd1de0e3609"
-    sha256 cellar: :any, arm64_sequoia: "a91455ad39ceab4f8c3f9bb0f82850544b68bef53dbc8b8023f96a3424a5c25d"
-    sha256 cellar: :any, arm64_sonoma:  "31c47744240b27588a6f08f34910d8a50d1a2d06e6284905d88c311f3a09bbf5"
-    sha256               sonoma:        "45ef79ea86ca9938652bcf5f7f743c64765d1f3c8d6481538b94feb1bbd542c5"
-    sha256 cellar: :any, arm64_linux:   "88b69a7855ffced9d18c3e2b8724d55e0fa17c9a3c9a28f6ffa05b6d4fbb2180"
-    sha256 cellar: :any, x86_64_linux:  "50b0845bc291fd3fca26b1c00d5e0096cb194a8a13619081c5753a0e84a6809d"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "d26b3ff30ea27cf6551242e110731893d008c83229d8d5cec39fb15703d6e0a8"
+    sha256 cellar: :any, arm64_sequoia: "025c74da0cfc7871106353c691656a4f228004adc6c9b8731448034c07ca3a1d"
+    sha256 cellar: :any, arm64_sonoma:  "d0d132fac19ba8f7f4156d90feb46a648f9e9b8cf8c5ae89a17a29550af257f2"
+    sha256 cellar: :any, arm64_linux:   "4d9b53b8e3b3bd95412b1f4baf869f7b3ddb8193dc2de69665a743b29c523f33"
+    sha256 cellar: :any, x86_64_linux:  "9c8ebfff0c7f11c055ecffc4e02ee65490b25382d85bcec0d60b136829c3e1e5"
   end
 
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
   depends_on "libmicrohttpd"
   depends_on "libsndfile"
-  depends_on "llvm@22"
+  depends_on "llvm"
+
+  # Backport support for LLVM 23
+  patch do
+    url "https://github.com/grame-cncm/faust/commit/158e371feccc5f61a376276433b19a74d37aedce.patch?full_index=1"
+    sha256 "4f5752ac0a4df203d125700b58074b8e22bfce034f14f0e9d159669a0d786dbe"
+    type :backport
+  end
 
   def install
     # `brew linkage` doesn't like the pre-built Android libsndfile.so for faust2android.

@@ -1,18 +1,17 @@
 class Gofumpt < Formula
   desc "Stricter gofmt"
   homepage "https://github.com/mvdan/gofumpt"
-  url "https://ghfast.top/https://github.com/mvdan/gofumpt/archive/refs/tags/v0.11.0.tar.gz"
-  sha256 "9151983838fa3fbca5a83e3b302e81c68c61e393cb9d3b7e4c297df311bbf394"
+  url "https://ghfast.top/https://github.com/mvdan/gofumpt/archive/refs/tags/v0.12.0.tar.gz"
+  sha256 "b6d5d14692cad23996da4329bf24d30324af30125dd5261e6d9b0c5bc8b20b28"
   license "BSD-3-Clause"
   head "https://github.com/mvdan/gofumpt.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "dc41e101705c25fc2d8b8f0b0fad5448fd6cab901efaf75b4417fbbec0d6b293"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dc41e101705c25fc2d8b8f0b0fad5448fd6cab901efaf75b4417fbbec0d6b293"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dc41e101705c25fc2d8b8f0b0fad5448fd6cab901efaf75b4417fbbec0d6b293"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d44ef827b8ba9803a42a1a9d71ad779995443233acdc15bcc1a7164dd52be6b0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a4a1117def5675455dcdb3b4ecbff00f87a74abdf29cf147f4285fce76c24933"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cf2a5aa42679a3f729a4042bc3c0fec857d50f4ea3c0149e54a6a5761ac1c226"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c3516a75ecfb1277f3dddb84af979be8e13b702376b343be9624d8b059aa7fcc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c3516a75ecfb1277f3dddb84af979be8e13b702376b343be9624d8b059aa7fcc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c3516a75ecfb1277f3dddb84af979be8e13b702376b343be9624d8b059aa7fcc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2bd53d9631ade4ce6051e7a6bf8011b59d1fe5530f9cec0f8f1c70ca591926ae"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cf2294efce565123124ba6150fe37039fada73c2ae806c7b010faa9df12e74ab"
   end
 
   depends_on "go"

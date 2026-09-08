@@ -1,18 +1,17 @@
 class TomcatNative < Formula
   desc "Lets Tomcat use some native resources for performance"
   homepage "https://tomcat.apache.org/native-doc/"
-  url "https://www.apache.org/dyn/closer.lua?path=tomcat/tomcat-connectors/native/2.0.15/source/tomcat-native-2.0.15-src.tar.gz"
-  mirror "https://archive.apache.org/dist/tomcat/tomcat-connectors/native/2.0.15/source/tomcat-native-2.0.15-src.tar.gz"
-  sha256 "8dab09f21ad519c9e49e5287f8d8de89bb176a5e3968479f27948c31b2a3b6b4"
+  url "https://www.apache.org/dyn/closer.lua?path=tomcat/tomcat-connectors/native/2.0.16/source/tomcat-native-2.0.16-src.tar.gz"
+  mirror "https://archive.apache.org/dist/tomcat/tomcat-connectors/native/2.0.16/source/tomcat-native-2.0.16-src.tar.gz"
+  sha256 "785fdd99a202f442b085bc718d2fbeb393b85979aa4a2943302118c4acd68630"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "c2103b257bc7f7a4a91ca0c7a7eee3557730e5a93eadb6cd3f9cd625e4f94542"
-    sha256 cellar: :any, arm64_sequoia: "6f5e64731697e06298090762503396bd7049ff06bdd34d53f6878addc4c13216"
-    sha256 cellar: :any, arm64_sonoma:  "20a82bd074d89a7e20a700b7c02ecd8f06b5883f4c8e58809b4c92369bf71b09"
-    sha256 cellar: :any, sonoma:        "b0c80c77a3facb80378c59833e6c8b43934a47ac4c883f0b77e70f11297dd844"
-    sha256 cellar: :any, arm64_linux:   "5be3ad52f02ae557231d0c3f9a73ae5e312a9654e3b193319d6a86e7de4769b3"
-    sha256 cellar: :any, x86_64_linux:  "4699481877c6c81ddf9d8793304ca826ac845cf964708a2a9884973954958009"
+    sha256 cellar: :any, arm64_tahoe:   "8d04e331907d5ec97d93580b3b7652ca30b00933f9606258efac527f939879a4"
+    sha256 cellar: :any, arm64_sequoia: "dc1a1c99a7a5b302c25d131ea5c5db1f5663f9ea0f09a16dc7361d22807029e2"
+    sha256 cellar: :any, arm64_sonoma:  "aebdc5a10c167d482ec32aaeba11d8a21cb6b7eb81576254a5114a127ef9a70b"
+    sha256 cellar: :any, arm64_linux:   "122404412691dfff4d0d847c3fbba8e761e6624544a4983bcea3c3a2f9edc075"
+    sha256 cellar: :any, x86_64_linux:  "e432921e28e58ac086b67de5ee5ceb676355079d08acb51d090c51054b71191d"
   end
 
   depends_on "tomcat" => :test

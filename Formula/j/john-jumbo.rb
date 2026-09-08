@@ -86,10 +86,6 @@ class JohnJumbo < Formula
     ENV.append "CFLAGS", "-DJOHN_SYSTEMWIDE_EXEC='\"#{share}/john\"'"
     ENV.append "CFLAGS", "-DJOHN_SYSTEMWIDE_HOME='\"#{share}/john\"'"
 
-    if build.bottle? && Hardware::CPU.intel? && (!OS.mac? || !MacOS.version.requires_sse4?)
-      ENV.append "CFLAGS", "-mno-sse4.1"
-    end
-
     ENV["OPENSSL_LIBS"] = "-L#{formula_opt_lib("openssl@3")}"
     ENV["OPENSSL_CFLAGS"] = "-I#{formula_opt_include("openssl@3")}"
 

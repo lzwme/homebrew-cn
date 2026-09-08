@@ -1,9 +1,9 @@
 cask "pycharm" do
   arch arm: "-aarch64"
 
-  version "2026.2.1,262.9437.214"
-  sha256 arm:   "8d3bc9436e159811a337d46aaab9cdbbb58b172ab23d750159bfbea31064218f",
-         intel: "be03df215e0493a5e001ce762f9d37a9c451b00420b88aad480de12733c155f2"
+  version "2026.2.2,262.10315.174"
+  sha256 arm:   "33af0e3cce9b62f95f997acf997037bbc122da9b1c0bff8e1a820931689b9a66",
+         intel: "d39426b23cbca302296a0f226e2c2e259abd0aee4dddb726c31e834204a8ef21"
 
   url "https://download.jetbrains.com/python/pycharm-professional-#{version.csv.first}#{arch}.dmg"
   name "PyCharm"
@@ -30,6 +30,8 @@ cask "pycharm" do
   app "PyCharm.app"
   command_wrapper "pycharm",
                   executable: "#{appdir}/PyCharm.app/Contents/MacOS/pycharm"
+
+  uninstall quit: "com.jetbrains.pycharm"
 
   zap trash: [
     "~/Library/Application Support/JetBrains/PyCharm#{version.major_minor}",

@@ -1,8 +1,8 @@
 class Telegraf < Formula
   desc "Plugin-driven server agent for collecting & reporting metrics"
   homepage "https://www.influxdata.com/time-series-platform/telegraf/"
-  url "https://ghfast.top/https://github.com/influxdata/telegraf/archive/refs/tags/v1.39.3.tar.gz"
-  sha256 "13b4186fac9a9d29858c532b73efc41e0a1ac8ce93a615b59d5a6e589e71ab2f"
+  url "https://ghfast.top/https://github.com/influxdata/telegraf/archive/refs/tags/v1.40.0.tar.gz"
+  sha256 "edef75c677e2c2d8b32848397fe9a4736a1b81e3c170b9bedf77d952ae5fa1db"
   license "MIT"
   head "https://github.com/influxdata/telegraf.git", branch: "master"
 
@@ -12,12 +12,11 @@ class Telegraf < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "671843fb120e3426c119f621b4dc3adb261cf82071ebea36e7934c206c8fdc59"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7b4ad063600a26f0b643e5b2673e9e111ba9dc77e154ad7c4db032f46cf80f5b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "88b79a1bd4b03f986e3f6b35af0f319c657f9a580eca9df0b06342f4faeca674"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a1139a1b3a520fee1c9b41fb5777e3b28f11fe3ed8e31d05f7a6ea9f4a6d903d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a4d1ff6d2c3fa2e07afb7b4eea567d34781625ad4bccbd3db014ade2ff7950bb"
-    sha256 cellar: :any,                 x86_64_linux:  "6543a2e48d8ae74732450f55622b92dbd06a5f33151dfd0b14a25d45ff7717c7"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "516e43c57365e09fc713c2ebf43029f5958f9884ab808735cd134e8f568d0206"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9aff53a6c0e4ebbbdb331705a802f7d6052a5ec23a9f092a80421e4ae79647bd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a2e66171a2110183793433900c5a0d807526fe4ebdaa50ae21d654ff63902b77"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c7239a63f07fbc65d3fd5f812168ae796a04cbdcd479db8b8cb4c25df6de5ef8"
+    sha256 cellar: :any,                 x86_64_linux:  "b6478c621e9d8ceff700d0f78000cb81e364dd80a3ee08b1c127cac5878b9622"
   end
 
   depends_on "go" => :build

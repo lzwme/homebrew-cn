@@ -1,8 +1,8 @@
 class Libnice < Formula
   desc "GLib ICE implementation"
   homepage "https://wiki.freedesktop.org/nice/"
-  url "https://libnice.freedesktop.org/releases/libnice-0.1.23.tar.gz"
-  sha256 "618fc4e8de393b719b1641c1d8eec01826d4d39d15ade92679d221c7f5e4e70d"
+  url "https://libnice.freedesktop.org/releases/libnice-0.1.24.tar.gz"
+  sha256 "cfb5e8e778534f2f5b3c6f4958a1eb057c6b95c537c0f100817a537cf5d64fcc"
   license any_of: ["LGPL-2.1-or-later", "MPL-1.1"]
   compatibility_version 1
   head "https://gitlab.freedesktop.org/libnice/libnice.git", branch: "master"
@@ -13,12 +13,11 @@ class Libnice < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "aff56c13ea1c1b8a67106c35abd4b1e8cfb0c25a050b19a709e9b7dda05a21a6"
-    sha256 cellar: :any, arm64_sequoia: "2ce7f4b3513f8f0bc5a574657291093a61958176efa4347c096ddbfb6adae60f"
-    sha256 cellar: :any, arm64_sonoma:  "eb5403dd6e4c63f698edc26dbf454915f3b71c5a9e66e214c91aa3511dd28936"
-    sha256 cellar: :any, sonoma:        "125053ae9a07a8ab04b8bc523c97249ccd92e4ff2f48b244bb0d7a42ecd4d694"
-    sha256               arm64_linux:   "3c95ab94575eafa055c04796fc29518f6d57bc7f2db24a672c7a6a449698641b"
-    sha256               x86_64_linux:  "fa1c1187e54ab5e09063d9cb5e92575c30e8f7d8826d8c2c2ecf96357cd6ca7c"
+    sha256 cellar: :any, arm64_tahoe:   "e6ea7526c0b8a0b26fdcc03455328d79f7455a84a5187ae4ba4f7e689e5a7bd9"
+    sha256 cellar: :any, arm64_sequoia: "6d4020030f85a308f0597286c1393e36a0db1496e58e422bf4388905de82a811"
+    sha256 cellar: :any, arm64_sonoma:  "e9daffb2c2b76d908a3ce3c7e59192ab86d59cba9fa34a7135216cc05060fbd6"
+    sha256 cellar: :any, arm64_linux:   "7fe65c9279876a022d542a3f8f2454e9453904e226e767dcb70db7dd7a348a52"
+    sha256 cellar: :any, x86_64_linux:  "21aa22274a49bb3275c2a14e9ba63793e84263b604016b6374c3cd2ec6bd780b"
   end
 
   depends_on "meson" => :build

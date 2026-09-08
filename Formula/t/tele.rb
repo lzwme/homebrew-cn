@@ -22,6 +22,6 @@ class Tele < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/tele -version")
-    assert_match "config: set telegram.api_id and telegram.api_hash", shell_output("#{bin}/tele 2>&1", 1)
+    assert_match "dumped from tele-dark", shell_output("#{bin}/tele -theme-dump tele-dark")
   end
 end

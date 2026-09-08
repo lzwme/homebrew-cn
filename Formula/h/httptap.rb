@@ -2,13 +2,13 @@ class Httptap < Formula
   include Language::Python::Virtualenv
 
   desc "HTTP request visualizer with phase-by-phase timing breakdown"
-  homepage "https://httptap.dev"
-  url "https://files.pythonhosted.org/packages/f7/4a/fcdd846abde9f55268026eb7432cd762fb593cdd271431b3941f2b716583/httptap-0.6.0.tar.gz"
-  sha256 "608d1980a0d8379cbcc945bc39125ec8831bb3a77b879fa4ddf7dea452e48843"
+  homepage "https://docs.httptap.dev/"
+  url "https://files.pythonhosted.org/packages/ea/8c/50c975c1a20509c54c02843f52267bf6efec1c769514e005502c1b4f90f5/httptap-0.6.1.tar.gz"
+  sha256 "17b38b9b5a3adc6ee419809cd01e4ff4e07939fa38dd73253e00a3a639a00402"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "0094e6bc8828321597c088c8052f49a6ec8a257fac8f319a039a7de1a37849f2"
+    sha256 cellar: :any_skip_relocation, all: "a2c5e4e6098ee57ab67dbc2131e4e13b7c67a80d6fc51a7a44488420479d2cec"
   end
 
   depends_on "rust" => :build
@@ -19,8 +19,8 @@ class Httptap < Formula
                 exclude_packages: "certifi"
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/61/cc/a381afa6efea9f496eff839d4a6a1aed3bfafc7b3ab4b0d1b243a12573dd/anyio-4.14.2.tar.gz"
-    sha256 "cfa139f3ed1a23ee8f88a145ddb5ac7605b8bbfd8592baacd7ce3d8bb4313c7f"
+    url "https://files.pythonhosted.org/packages/a9/d2/f4d173e22df740bc37b1db102b386ba719b66e95b0f0d751f556b387e6d2/anyio-4.15.1.tar.gz"
+    sha256 "9f28306018cbd6d329e64a36d58256edff76dd996fe423bc957326e578b82a94"
   end
 
   resource "argcomplete" do
@@ -99,6 +99,11 @@ class Httptap < Formula
       type :backport
       resolves "https://github.com/sethmlarson/socksio/pull/61"
     end
+  end
+
+  resource "typing-extensions" do
+    url "https://files.pythonhosted.org/packages/f6/cc/6253133b5bb138fc3306cebfbda2c520f545d36b5be2c7255cc528bb45d6/typing_extensions-4.16.0.tar.gz"
+    sha256 "dc983d19a509c94dba722ee6abd33940f7c05a89e243c47e907eb4db6f1a43e5"
   end
 
   def install

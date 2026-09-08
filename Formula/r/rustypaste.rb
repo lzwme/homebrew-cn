@@ -1,18 +1,17 @@
 class Rustypaste < Formula
   desc "Minimal file upload/pastebin service"
   homepage "https://blog.orhun.dev/blazingly-fast-file-sharing"
-  url "https://ghfast.top/https://github.com/orhun/rustypaste/archive/refs/tags/v0.18.0.tar.gz"
-  sha256 "53db137b8429f44d9bf700063fc42f1047460a60713cac801a5983946facb13f"
+  url "https://ghfast.top/https://github.com/orhun/rustypaste/archive/refs/tags/v0.18.1.tar.gz"
+  sha256 "4b63be093e080d4a39e9ca03b378df96f0ae604e469a9c4d9bb437f9643524f0"
   license "MIT"
   head "https://github.com/orhun/rustypaste.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "802cb98ad814a3984f98b38a3306706b63ae590cf87d006f1253dbbb1e33faab"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7badde7285cb1b6ecf3a0677abb0a547af134f2104c0a99598f76a9a7f7cd1a5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8a65131e6263546728bd2e131e058037b5e91dad4b4de73e9b53e85623689c0f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9ad50f05f9144817f6a19eed5ea26594c957621675ee582b8c4a91c3f09bc004"
-    sha256 cellar: :any,                 arm64_linux:   "17c58ce436361c03b05ec4d85205e4de8e2919203287321ebfb015c65a9eb83a"
-    sha256 cellar: :any,                 x86_64_linux:  "a9cc542716155d55681257e8edde37e17d38101a99c5d9570a303fe19fc37038"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4ba557d7bdc3a7c10ad5978e34b704ae40e085efa8435bba2d8195550b024fbe"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "414a0d30ce3bf2ef50ac249590c3b929ac65f67aca57a97de8bcb1db9453cc68"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "628bfee10f8b8561301cb20f6e3d3402925ddadec2fff1e4482cf1c6b7d1c265"
+    sha256 cellar: :any,                 arm64_linux:   "787057329745073c39c4d8b4089cc7abbe10f8853a0fe2eaaf08fbd40b802269"
+    sha256 cellar: :any,                 x86_64_linux:  "fffec98cd61a2e5df8fba73018c18d27b3ecf3e6f9f3c87f1b675caa0bf3dab8"
   end
 
   depends_on "rust" => :build

@@ -1,17 +1,17 @@
 class Nfdump < Formula
   desc "Tools to collect and process netflow data on the command-line"
   homepage "https://github.com/phaag/nfdump"
-  url "https://ghfast.top/https://github.com/phaag/nfdump/archive/refs/tags/v1.7.9.tar.gz"
-  sha256 "cd15a3e0e0ec0b34c8dfc0c3202ce0d63a09a78341f533f3cbe8d69833927bbf"
+  url "https://ghfast.top/https://github.com/phaag/nfdump/archive/refs/tags/v1.7.10.tar.gz"
+  sha256 "9a1bc84eb484c7383eea3b48ad2abe5b9ffe7e90aab3fda7055aa3f64be0cc29"
   license "BSD-3-Clause"
   head "https://github.com/phaag/nfdump.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "05ee1bd6b2a1bd4c9b0d488cb0e8ac86a55e9640d750eb40864a9db9c0d585d0"
-    sha256 cellar: :any, arm64_sequoia: "fa42cb83546f268792643ac7e5b21991be5ea64b4554dc8ceabb5b12cc442c58"
-    sha256 cellar: :any, arm64_sonoma:  "6330d4889cae75c1d43f8dae547bdf1de16a81a0b876aa9311f6f85c7446c2cb"
-    sha256 cellar: :any, arm64_linux:   "43ac22f0f2bf15ff28c6a38411637f57e2396a0163524a3624ccd5d62c90cd53"
-    sha256 cellar: :any, x86_64_linux:  "c617f1b4ac5e747cc1f472fb5ffde80a8207e64d24c4142d1d2a92319ea39cfe"
+    sha256 cellar: :any, arm64_tahoe:   "cc753b57106fbaae04829ed5505a8833db989ea54a8190e84dae771c72e0f1d7"
+    sha256 cellar: :any, arm64_sequoia: "ff9fe8ecd2768f0c4b70bf5babf1d36c4812eca8dbf8c9d66ff14f33a0287ce0"
+    sha256 cellar: :any, arm64_sonoma:  "34ad2b266dafad50419b6e2e3f03892764622ff2382e1ebf4a3238d6481ad1e6"
+    sha256 cellar: :any, arm64_linux:   "af7cf0e4cc4fda5589ee0a36424cd4cc40c68a99a97b09c8c9f6d5b76f035bfb"
+    sha256 cellar: :any, x86_64_linux:  "8dd0feb694c0a91bffd4637072dbb79255bb8486b35fb7ead8fb6459bd9ab0a7"
   end
 
   depends_on "autoconf" => :build

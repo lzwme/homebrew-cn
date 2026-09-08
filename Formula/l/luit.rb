@@ -1,8 +1,8 @@
 class Luit < Formula
   desc "Filter run between arbitrary application and UTF-8 terminal emulator"
   homepage "https://invisible-island.net/luit/"
-  url "https://invisible-mirror.net/archives/luit/luit-20250912.tgz"
-  sha256 "46958060e66f35bcb8a51ba22da1c13d726d28a86c1cf520511bcf7914bef39e"
+  url "https://invisible-mirror.net/archives/luit/luit-20260907.tgz"
+  sha256 "97bd13da3e3aa59785d64504d37389612a327953bb7581508c5fea5182f9f561"
   license "MIT"
 
   livecheck do
@@ -11,13 +11,11 @@ class Luit < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "34fe7ef5c7484db64581c5f869a42e054a74996177ce74c93a2623dd9695d345"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8e538cd9ca308afad3716482ee10e7f623ffd90ab8f4917700c8dd102c029525"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "07c6106341ee4be787dfac58149cb8bced04babe0832f4baa86eab5ef11c57f0"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5a0508f2e99339bb372a134092c562a6f5bd83b2b5187cf303c31d77f6849c82"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "81f95c06decc5fba417ef18968914855efd095abbbb57a71e999fa9ff91d10b5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "32a25f291b796b14cd3885b2007fb54efc12d256ba1e44705986bbcae7a5708c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d7941cd87b5fdf5fb9efbcc22001b52e2a8c294157a131aaab4b3d99a461694b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6e4a8e69c07983ddefb0b6cafcaf7a94463b5c3e537797b6f640286e1ec959ff"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5c4e8169c28ded8c2a9daae40626a60981a541eef3b9859f78ca1f025f7866d0"
+    sha256 cellar: :any,                 arm64_linux:   "11de53150f0de9f72960c0edefe459553f771da9aa91ed02b1f47ac6da087749"
+    sha256 cellar: :any,                 x86_64_linux:  "d8d4269eb5f86e5b006805613dcf7aa8b52cad10f0e4adc0b547ce6d95c550b4"
   end
 
   on_linux do

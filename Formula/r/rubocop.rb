@@ -1,17 +1,17 @@
 class Rubocop < Formula
   desc "Ruby static code analyzer and formatter, based on the community Ruby style guide"
   homepage "https://docs.rubocop.org"
-  url "https://ghfast.top/https://github.com/rubocop/rubocop/archive/refs/tags/v1.89.0.tar.gz"
-  sha256 "d0dd2cc7cf9a934412a7c636d8fc1d51193eef1928f5faa36ebb2537911472f2"
+  url "https://ghfast.top/https://github.com/rubocop/rubocop/archive/refs/tags/v1.90.0.tar.gz"
+  sha256 "c1e5dba493215d78e7f4812c4329948cfd98e115b3b9ad8772d13e616abc0573"
   license "MIT"
   head "https://github.com/rubocop/rubocop.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "b8fcaac9be77085777d62c7a2268c73d4ef7560f113761c9225acb1828af20ee"
-    sha256 cellar: :any, arm64_sequoia: "96f0d5df2725ba31d01a33a8c445530fc50a7dd71f6d886e58483d518d096131"
-    sha256 cellar: :any, arm64_sonoma:  "3115a2efca2d7e96afad4f3f73dc23df217799a719a1424051b1a4e8c92d2e9c"
-    sha256 cellar: :any, arm64_linux:   "90ec3014725b161e6806256b6d01c0c0c0f1be9846a3047f3098496f2bb4d8e6"
-    sha256 cellar: :any, x86_64_linux:  "383fa2b8a780b8e85873dc0747e176c175aa0b7d1c14c4ac47fab8f78a4a1870"
+    sha256 cellar: :any, arm64_tahoe:   "058d312f02f15debd54354b95a88aa16ef9f49d7106ed3af728e813a4eb3d8ae"
+    sha256 cellar: :any, arm64_sequoia: "009d59c2b72f7665b908e79539b72a0f27cb8b90748f35aee3b63dc493be1aed"
+    sha256 cellar: :any, arm64_sonoma:  "05b67c537f1051b139d383417468f42bce73911008afed5c9a2604bd365a8d4c"
+    sha256 cellar: :any, arm64_linux:   "ca616bf1383fbe06b4e98247df5fd0e572e7f872a8c19fd81be24fc7e4115237"
+    sha256 cellar: :any, x86_64_linux:  "edfc3974db6bcd86cc0338016f5b1f602bab0fa87121e67895fca0ab4d8ab4c6"
   end
 
   depends_on "ruby"
@@ -38,8 +38,8 @@ class Rubocop < Formula
   end
 
   resource "parallel" do
-    url "https://rubygems.org/downloads/parallel-2.1.0.gem"
-    sha256 "b35258865c2e31134c5ecb708beaaf6772adf9d5efae28e93e99260877b09356"
+    url "https://rubygems.org/downloads/parallel-2.2.0.gem"
+    sha256 "e1059c5fd7b649558a0aec38a769f06a42942bdb40503d005a59c352fe011cd8"
   end
 
   resource "parser" do

@@ -46,11 +46,7 @@ class Flint < Formula
       # we cannot rely on -march options
       if build.bottle?
         # prevent avx{2,512} in case we are building on a machine that supports it
-        args << if OS.mac?
-          "--host=#{ENV.effective_arch}-apple-darwin#{OS.kernel_version}"
-        else
-          "--host=#{ENV.effective_arch}-unknown-linux-gnu"
-        end
+        args << "--host=#{ENV.effective_arch}-unknown-linux-gnu"
       elsif Hardware::CPU.avx2?
         # TODO: enable avx512 support
         args << "--enable-avx2"

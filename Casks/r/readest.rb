@@ -2,10 +2,10 @@ cask "readest" do
   arch arm: "aarch64", intel: "amd64"
   os macos: "universal.dmg", linux: "#{arch}.AppImage"
 
-  version "0.12.6"
+  version "0.12.8"
 
   on_macos do
-    sha256 "489f49c577917e2668dfd2da0a1bac8487af355475bd60d98d058cf5205c5ecb"
+    sha256 "a907e243089e6b286ab116d0780ed387209ad3b6b0e283ac2b55b229ec4d78de"
 
     auto_updates true
     depends_on macos: :monterey
@@ -22,8 +22,8 @@ cask "readest" do
     ]
   end
   on_linux do
-    sha256 arm64_linux:  "de8c3d86590277d178cc80b033823ea63229f2da5d374612bfed30edd7f778fb",
-           x86_64_linux: "d89879377f3daa5bee4d7d9e435e4abc597917dfe1d799af82d746579e18d298"
+    sha256 arm64_linux:  "c84c0323d2393f8056add9976a08288b04838004b4aa57a29b15f1460e71c66d",
+           x86_64_linux: "cce504243db5dd877fa4fc8c61f50934eff138262d3737a52198be1c5f855de7"
 
     app_image "Readest_#{version}_#{arch}.AppImage", target: "Readest.AppImage"
   end

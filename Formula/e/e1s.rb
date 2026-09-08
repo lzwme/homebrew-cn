@@ -1,8 +1,8 @@
 class E1s < Formula
   desc "TUI for managing AWS ECS, inspired by k9s"
   homepage "https://github.com/keidarcy/e1s"
-  url "https://ghfast.top/https://github.com/keidarcy/e1s/archive/refs/tags/v1.0.53.tar.gz"
-  sha256 "1f99a3fb44fb784eea7a77aceba7730efa8b0cdac4f1095eebd7be8e355afbda"
+  url "https://ghfast.top/https://github.com/keidarcy/e1s/archive/refs/tags/v2.0.0.tar.gz"
+  sha256 "d2846602a86b245ca85e0f80d3a02f5cdeb6320d12b87189894f1cfc5531ac28"
   license "MIT"
   head "https://github.com/keidarcy/e1s.git", branch: "master"
 
@@ -13,12 +13,11 @@ class E1s < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "956efa09d22006af0d594aa4074f5d56a59f59c98b921c2a11b5d178227b4deb"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "956efa09d22006af0d594aa4074f5d56a59f59c98b921c2a11b5d178227b4deb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "956efa09d22006af0d594aa4074f5d56a59f59c98b921c2a11b5d178227b4deb"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c26b95f97627bb02af628d243b2b30d9ccc88c0dfc1a6b075ddc64dbf6dc21a9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d82cfca717d176b42ae9de03ffb5552f4f553520fb4fbf81fdc28b8888dcc900"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "954696ee65202bef01a079757c4ed5d3bd8c9bab92f9054b48a5040776df453b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "079be6764c8e19e17fa3a67a97fa48619623abda1db780697d147d5481074777"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "079be6764c8e19e17fa3a67a97fa48619623abda1db780697d147d5481074777"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "079be6764c8e19e17fa3a67a97fa48619623abda1db780697d147d5481074777"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "18c98a16ddaa6b8d57d1e11022c239cad08ad4e31c9e0e91668800097faea1d2"
+    sha256 cellar: :any,                 x86_64_linux:  "ff4d2390b72eab0b4e371c7309bfe748303c1667e072a5ec0193c72f85002074"
   end
 
   depends_on "go" => :build

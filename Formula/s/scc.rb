@@ -1,8 +1,8 @@
 class Scc < Formula
   desc "Fast and accurate code counter with complexity and COCOMO estimates"
   homepage "https://github.com/boyter/scc/"
-  url "https://ghfast.top/https://github.com/boyter/scc/archive/refs/tags/v4.0.0.tar.gz"
-  sha256 "7e0418d7b6dfa881b2673e50d32da81e9abc34475a305b612b57600d85801abc"
+  url "https://ghfast.top/https://github.com/boyter/scc/archive/refs/tags/v4.1.0.tar.gz"
+  sha256 "4f3cf36010c542b10d5582afb91c668b26889160b184deee21b4319347030a7c"
   license any_of: ["MIT", "Unlicense"]
   head "https://github.com/boyter/scc.git", branch: "master"
 
@@ -12,12 +12,11 @@ class Scc < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4d0a4b693471ba2ac7cf05db3c2f18f23068a1be920867515316b566d879b878"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4d0a4b693471ba2ac7cf05db3c2f18f23068a1be920867515316b566d879b878"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4d0a4b693471ba2ac7cf05db3c2f18f23068a1be920867515316b566d879b878"
-    sha256 cellar: :any_skip_relocation, sonoma:        "22fc145899c08fb4c00b813a22be31f0651c9b7edc7c7549ff694d4b184cea23"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8aa8ffaf03c8337e7af85469a76071a529c7c5a33f32e32263c5264c728b6092"
-    sha256 cellar: :any,                 x86_64_linux:  "2d002dcbc361112b99a11c8b19c2339531ba900235e4d01b0af90277818d242b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "74e37c3265026b9cbe198cc876d592b94a59636ad22ebcc5a83935cbf6826d3c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "74e37c3265026b9cbe198cc876d592b94a59636ad22ebcc5a83935cbf6826d3c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "74e37c3265026b9cbe198cc876d592b94a59636ad22ebcc5a83935cbf6826d3c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "19a4f2048124c8b2f493e96738a9795c17f31d9d94ccf61894c768e6e52efde3"
+    sha256 cellar: :any,                 x86_64_linux:  "256fd514180a491c9d415b665dc21de9d0f026efdab2f582e56662224866997d"
   end
 
   depends_on "go" => :build

@@ -3,16 +3,16 @@ class Skillspector < Formula
 
   desc "Security scanner for AI agent skills"
   homepage "https://github.com/NVIDIA/SkillSpector"
-  url "https://ghfast.top/https://github.com/NVIDIA/SkillSpector/archive/refs/tags/v2.11.0.tar.gz"
-  sha256 "9a89a4e057bcf85bb75750b7791f4ecf262c98e1f8653e10533ec06e61772ed9"
+  url "https://ghfast.top/https://github.com/NVIDIA/SkillSpector/archive/refs/tags/v2.11.1.tar.gz"
+  sha256 "50964fcbb1c965fd0fe3c392f058a5adc93c910d76506a1e0dac96f0fec4ed7b"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "3214528824fb4ca30993d77dbd368febfcbce884ecb7dc2e2820844e70c259ef"
-    sha256 cellar: :any, arm64_sequoia: "32e9a5c9e79753a87b4d652ef7e65dc83a8999f3b49edc4570d292ba284e99ff"
-    sha256 cellar: :any, arm64_sonoma:  "63cdec420284e9b0716f94a99e8d6588cef23037a3b808eb18338353f8c4dfb5"
-    sha256 cellar: :any, arm64_linux:   "e8edb16d9ee759d059f82a79dd71dfcba13efa687f1206e3a5d100305588cb11"
-    sha256 cellar: :any, x86_64_linux:  "0d9ff0dff99a918ce0a596040eb0e592387bb8e257962e5f826dd368c6e3b5c3"
+    sha256 cellar: :any, arm64_tahoe:   "9e97af6847f7e0063130f64e98f3232ef5affec3cd9392ef41c70c3f9732e13a"
+    sha256 cellar: :any, arm64_sequoia: "759bd2f19693d61c58d5dd29669d6e80efbd107177d9dc78bb341900fc482564"
+    sha256 cellar: :any, arm64_sonoma:  "b63c43f7055d68abcb04f5b5c0f41e47e4824d40787849b33988b5c12ebd3eb0"
+    sha256 cellar: :any, arm64_linux:   "3bca6acda90282f991dee7b4a9f97eeac89269a78a6c0daa8b07f73ade3ae1db"
+    sha256 cellar: :any, x86_64_linux:  "fca711966f2bbe9c77539c27f30e96dd9e499c176e8a9d0e4e572fa56bc08efd"
   end
 
   depends_on "pkgconf" => :build
@@ -35,23 +35,23 @@ class Skillspector < Formula
   end
 
   resource "anthropic" do
-    url "https://files.pythonhosted.org/packages/95/1a/b5af41cc1fa14da277ec20ca5554dd2fcbc09b8523ac59b7a97fbb88e452/anthropic-1.2.0.tar.gz"
-    sha256 "12f8eedee7b7fb5685837b1371b7bfae1b281703f62355f4632598ec2fc53b34"
+    url "https://files.pythonhosted.org/packages/75/6d/793f5cfe2cd444c43b4eeb4cb7c3cc55ebcb38929fdfe81aa1f2fced7326/anthropic-1.4.0.tar.gz"
+    sha256 "f0d017e901e48b343520b5d458f8240c283c8d850bf6d119834c622207e0a74c"
   end
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/61/cc/a381afa6efea9f496eff839d4a6a1aed3bfafc7b3ab4b0d1b243a12573dd/anyio-4.14.2.tar.gz"
-    sha256 "cfa139f3ed1a23ee8f88a145ddb5ac7605b8bbfd8592baacd7ce3d8bb4313c7f"
+    url "https://files.pythonhosted.org/packages/a9/d2/f4d173e22df740bc37b1db102b386ba719b66e95b0f0d751f556b387e6d2/anyio-4.15.1.tar.gz"
+    sha256 "9f28306018cbd6d329e64a36d58256edff76dd996fe423bc957326e578b82a94"
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/3f/b1/5d8bc6b7335d86f15d43a34a4bbbeced202aef2b4e942c67a5846120c1ff/boto3-1.43.82.tar.gz"
-    sha256 "bc5a7824568c117110bac8fe7ccfac63f0a946f253953d42e73a8c1fb65162e0"
+    url "https://files.pythonhosted.org/packages/50/26/48b3da85526a72a02df55e564481fc348e93699c15f0f502681b12ac2c8a/boto3-1.43.89.tar.gz"
+    sha256 "c28abbe472e9b7cad08807356311aeec51bde5218c18489da827045d2267bfd9"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/ed/96/54e8d9a09689bf870bc723bf95ee8f5a4bba3b9c203baaaca3fb557d4924/botocore-1.43.82.tar.gz"
-    sha256 "347573c0bab52e29c923e28128764fcc50f469ed98dc5460220026cd3672ac0c"
+    url "https://files.pythonhosted.org/packages/53/06/f63fb1befdf77af18539fb24ea01f2da0f13965ed5de091061708ac96416/botocore-1.43.89.tar.gz"
+    sha256 "f0574942970742657b0e0716cf08c2dfe6bef8e6de5fbb7081c3424e262b4cca"
   end
 
   resource "charset-normalizer" do
@@ -125,18 +125,18 @@ class Skillspector < Formula
   end
 
   resource "langchain-anthropic" do
-    url "https://files.pythonhosted.org/packages/56/fc/52f6d1d6069bafb08626e204c89c49c8dd4a536eedbb94f0b7e78668594d/langchain_anthropic-1.7.0.tar.gz"
-    sha256 "d48e3c118ff8d3eea83f17b50234a2d2ff491a2375d565f212eb990e7e3856cb"
+    url "https://files.pythonhosted.org/packages/81/28/94fa0b41c1dc70fc177d83ea5b48917651cc24da208d236bdebbe3600b8f/langchain_anthropic-1.7.1.tar.gz"
+    sha256 "ac087159e1356ae933d5443ded2bca72912a2ed34ea171520fcfdaddfb838687"
   end
 
   resource "langchain-aws" do
-    url "https://files.pythonhosted.org/packages/25/5c/a34197f3e3cb5a6d67f60542dd40df4a3710c63a1d41239c0bf20fab6dd9/langchain_aws-1.7.4.tar.gz"
-    sha256 "93b814fb55aa8464d152b05b985cd6664ddf8fc37e1dc2717b9b0bf903ea551b"
+    url "https://files.pythonhosted.org/packages/96/da/d662353d32116112b7a480734e322ebd14e7bff79fc3a2e6e3de23c33413/langchain_aws-1.7.5.tar.gz"
+    sha256 "90f50d10c0e55ebbf0a5151304d121a39975cc3e099aad5526e0ee37ea2eeb14"
   end
 
   resource "langchain-core" do
-    url "https://files.pythonhosted.org/packages/90/12/aff76ca89c219ebe6f9dd3c5dbc4e3b1cf5450e9fc7037dccad23d45cd7a/langchain_core-1.6.1.tar.gz"
-    sha256 "1b156cb395aac4f009a8a1b38a574c7d948fe2d5f74c96e0d8a5017b4149e04f"
+    url "https://files.pythonhosted.org/packages/89/7b/406b4a8dd43dd01f69e04aafdee206809a2097134b2f944e12802eae7948/langchain_core-1.6.2.tar.gz"
+    sha256 "1ec6d3a98f7c8cdbb5bb0deff86e7ca37e16bf4f8f49f022d10723656c62352d"
   end
 
   resource "langchain-openai" do
@@ -170,8 +170,8 @@ class Skillspector < Formula
   end
 
   resource "langsmith" do
-    url "https://files.pythonhosted.org/packages/c9/0a/1acb2a3ffbccbe8f8dc358778967c9d2979e8a59b67ceba6eb54474324ab/langsmith-0.11.2.tar.gz"
-    sha256 "927694c939c9fb44187e0126cf718413c45ffce2324d480438e70eb0526e1380"
+    url "https://files.pythonhosted.org/packages/f4/b7/74d0992a461eacad8106e5dcfd7677d7640b5ff4e12ea545856467004f4f/langsmith-0.12.2.tar.gz"
+    sha256 "ff369ba4390e0969dbb109e838281404ae637e76ef73b347336bae05b4f87331"
   end
 
   resource "markdown-it-py" do
@@ -185,8 +185,8 @@ class Skillspector < Formula
   end
 
   resource "openai" do
-    url "https://files.pythonhosted.org/packages/3e/d3/50ffb9a7bce5097ffeb476905c0661f4468a3ca7bb489b152542f14fdd8e/openai-3.5.0.tar.gz"
-    sha256 "743738bb458a586d0d02d173bf398d29d7d7a80d182d167aa74f1c08814ecc78"
+    url "https://files.pythonhosted.org/packages/f2/b0/1100c93f93e1c174205ce8d15a049a446f0dc88e9262c1f1f223fe6b9493/openai-3.8.0.tar.gz"
+    sha256 "6138a5a1333a1be9e4d1edea2d160b311542787b029543f87de4961c66358d16"
   end
 
   resource "orjson" do

@@ -6,12 +6,12 @@ class Libtensorflow < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "9319cf36b5b356091ba2492f3ce24dea2835736cfa4f1e20ed3c2d234ac53249"
-    sha256 cellar: :any,                 arm64_sequoia: "17d21c10cc62a192744160319fdd47cd51909354908a7f52982a961fb07db36d"
-    sha256 cellar: :any,                 arm64_sonoma:  "fa39e67c8a94a7f3725ae61a8c26ba8873d06bdff9f7917b9cf2de1b6e173e04"
-    sha256 cellar: :any,                 sonoma:        "c611efeb7382664a25f563222347c8ce0b7d12f2653b3d008b0f58ae2e99ffd7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "17f01416301b594d5755a93ceaf14de0e2e478a4fc57a5ade0f2139fe5b2d232"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9b6f5d32a87bb01a24683dbf2d20c8c00cc3764633952cc7f11e2e86720f98eb"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "d66d44689b24f0c21419ebc854ad28dea65b843bed5d1d2eb49376f5f55a7204"
+    sha256 cellar: :any,                 arm64_sequoia: "4646a8c41b89819998e8dd6295059a05ac10aa0b673c49f5538095170690f176"
+    sha256 cellar: :any,                 arm64_sonoma:  "2d83cb061aa737094155f08a9f3d8e45b2500784782f8d44ded1e4d46da0e1c8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b761769c0db1fa6602f8598e75e8253712af2920d77233e86e713e9293484444"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c472f1625afba190f4aabdcf329a0d2db793ad7a913a3803c3b45740c8036960"
   end
 
   depends_on "bazelisk" => :build
@@ -77,6 +77,10 @@ class Libtensorflow < Formula
       --repo_env=USE_PYWRAP_RULES=
       --repo_env=ML_WHEEL_TYPE=release
     ]
+    # Bazel's Apple toolchain passes an explicit `-target` whose macOS version defaults
+    # to the SDK version, so bottles would carry the builder's SDK as their minimum OS.
+    # Pin it so LC_BUILD_VERSION matches the macOS the bottle is built for.
+    bazel_args << "--macos_minimum_os=#{MacOS.version}" if OS.mac?
     # //tensorflow/tools/lib_package:libtensorflow target was removed in 2.20.0.
     # For now, the deps used by original target still exist so use those to build.
     # https://github.com/tensorflow/tensorflow/commit/724f36e00941ad3abf3c32209adc2ee186602b70

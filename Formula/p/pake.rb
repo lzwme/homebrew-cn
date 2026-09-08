@@ -1,17 +1,16 @@
 class Pake < Formula
   desc "Turn any webpage into a desktop app with Rust with ease"
   homepage "https://github.com/tw93/Pake"
-  url "https://registry.npmjs.org/pake-cli/-/pake-cli-3.15.7.tgz"
-  sha256 "3fea5e929effcddded6ef2fb6fc7bdc49c32f560697b338013733d95b42b0e7d"
+  url "https://registry.npmjs.org/pake-cli/-/pake-cli-3.16.1.tgz"
+  sha256 "f7409f5fea3c45a8b7ba8c81eb2cfb12a89b02fb7a3d29d9e6d74f234c81b7a7"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256               arm64_tahoe:   "17918a9790b3169f6928eec4d4653334d250c3173e363796cf4264544693ada7"
-    sha256               arm64_sequoia: "a1e90cdf4b118870246492e1753174d0a39e621b25e20baf2c4bc66c5b12fb14"
-    sha256               arm64_sonoma:  "b307229a46ba9d03c0aa1413d1ad4d99a6d0cade55f72b4d5259d1421158acdb"
-    sha256               sonoma:        "c4253e57fbdcccdbc281a2f8d8d6a1186f438e4e363a823af0f914aa7fe31711"
-    sha256 cellar: :any, arm64_linux:   "5e4da0913afa6859dedbf1ef4e5997197dc86369934b9891d75c1c349f83f10f"
-    sha256 cellar: :any, x86_64_linux:  "8cd55d183712f5ff7e726ad51f16fa4c04bdb024c6f058105d19a20815aa703b"
+    sha256 cellar: :any, arm64_tahoe:   "494b0c6cf1c266436c073b14c06b9bedf991c927c0392fc8665c5b1f6b317dc7"
+    sha256 cellar: :any, arm64_sequoia: "c30f23f5587d70b0279ba8ac553619398567997f4208ffa380c0d8ef6188683b"
+    sha256 cellar: :any, arm64_sonoma:  "bf35c403a99287be70d91324af77f7093f3d04cef0a590d254baa56acd861b6b"
+    sha256 cellar: :any, arm64_linux:   "4ff3b1833111ebe78eecd90a270e1fb36c3fa02aeed282be0ac38c6047a8413d"
+    sha256 cellar: :any, x86_64_linux:  "46690ff3c3e296130f977b54d290247e4cbd2802a812d499ec25d259139529c7"
   end
 
   depends_on "pkgconf" => :build
@@ -28,13 +27,13 @@ class Pake < Formula
   # Resources needed to build sharp from source to avoid bundled vips
   # https://sharp.pixelplumbing.com/install/#building-from-source
   resource "node-addon-api" do
-    url "https://registry.npmjs.org/node-addon-api/-/node-addon-api-8.9.1.tgz"
-    sha256 "9091c2a5e57dae6ae5a0ca9c42d6127586bed4168cc1a342c95b64e61efd60af"
+    url "https://registry.npmjs.org/node-addon-api/-/node-addon-api-8.9.2.tgz"
+    sha256 "4cd65698541b19a33f798f1dc25c02c6ed1c9d7749b8824b1a1ccecdd197c8ea"
   end
 
   resource "node-gyp" do
-    url "https://registry.npmjs.org/node-gyp/-/node-gyp-13.0.1.tgz"
-    sha256 "455327cde805c299d5a16603419e106853db5b9257dfb85e44eb7f4ec4d99de5"
+    url "https://registry.npmjs.org/node-gyp/-/node-gyp-13.0.2.tgz"
+    sha256 "1b1524d914331bd01312729e31a828192d53af84e113dacb6e36afabb6c21a6d"
   end
 
   def install
@@ -64,6 +63,10 @@ class Pake < Formula
     (testpath/"index.html").write <<~HTML
       <h1>Hello, World!</h1>
     HTML
+
+    # `brew test` runs with the keg read-only, but Pake creates its build cache
+    # lock in Cargo's target directory before it does anything else.
+    ENV["CARGO_TARGET_DIR"] = testpath/"target"
 
     begin
       io = IO.popen("#{bin}/pake index.html --use-local-file --iterative-build --name test")

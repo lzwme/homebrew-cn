@@ -15,9 +15,13 @@ cask "mindwtr" do
   app "Mindwtr.app"
 
   zap trash: [
+    "~/Library/Application Scripts/5X9JC5PL7T.tech.dongdongbh.mindwtr",
+    "~/Library/Application Scripts/tech.dongdongbh.mindwtr.MindwtrWidgets",
     "~/Library/Application Support/mindwtr",
     "~/Library/Application Support/tech.dongdongbh.mindwtr",
     "~/Library/Caches/tech.dongdongbh.mindwtr",
+    "~/Library/Containers/tech.dongdongbh.mindwtr.MindwtrWidgets",
+    "~/Library/Group Containers/5X9JC5PL7T.tech.dongdongbh.mindwtr",
     "~/Library/Preferences/tech.dongdongbh.mindwtr.plist",
     "~/Library/Saved Application State/tech.dongdongbh.mindwtr.savedState",
     "~/Library/WebKit/tech.dongdongbh.mindwtr",

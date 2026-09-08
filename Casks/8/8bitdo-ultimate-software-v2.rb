@@ -19,5 +19,6 @@ cask "8bitdo-ultimate-software-v2" do
   zap trash: [
     "~/Library/Application Scripts/com.8BitDo.UltimateV2",
     "~/Library/Caches/com.8BitDo.UltimateV2",
+    "~/Library/Containers/com.8BitDo.UltimateV2",
   ]
 end

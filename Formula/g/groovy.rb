@@ -1,8 +1,8 @@
 class Groovy < Formula
   desc "Java-based scripting language"
   homepage "https://www.groovy-lang.org/"
-  url "https://groovy.jfrog.io/artifactory/dist-release-local/groovy-zips/apache-groovy-binary-5.1.1.zip"
-  sha256 "51a5a86c638abc618273f9f318ad2d906fcd4fecbdc1b9fa3c9f47c8c3cd753b"
+  url "https://groovy.jfrog.io/artifactory/dist-release-local/groovy-zips/apache-groovy-binary-5.1.2.zip"
+  sha256 "19cd28c23c34f8b52f1bb602da9186792b7464e35dd8300d84f6735b8ad3965f"
   license "Apache-2.0"
 
   livecheck do
@@ -11,7 +11,7 @@ class Groovy < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "f4ba2108f99146e62141d3f3d412442713357f3cd25b402fa4eabcefacdb7a3d"
+    sha256 cellar: :any_skip_relocation, all: "60d501e5709647554e9200ff6f7a9725cb1d796fe0905f41d09dcfa9f5705f22"
   end
 
   depends_on "openjdk"

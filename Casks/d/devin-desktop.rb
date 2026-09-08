@@ -8,7 +8,7 @@ cask "devin-desktop" do
   url "https://windsurf-stable.codeiumdata.com/darwin-#{arch}-dmg/stable/#{version.csv.second}/Devin-darwin-#{arch}-#{version.csv.first}.dmg"
   name "Devin Desktop"
   desc "Agentic IDE with AI agent command center"
-  homepage "https://devin.ai/desktop"
+  homepage "https://devin.ai/desktop", browsed: "2026-09-07"
 
   livecheck do
     url "https://windsurf-stable.codeium.com/api/update/darwin-#{arch}-dmg/stable/latest"

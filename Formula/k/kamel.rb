@@ -1,19 +1,18 @@
 class Kamel < Formula
   desc "Apache Camel K CLI"
   homepage "https://camel.apache.org/"
-  url "https://www.apache.org/dyn/closer.lua?path=camel/camel-k/2.10.1/camel-k-sources-2.10.1.tar.gz"
-  mirror "https://archive.apache.org/dist/camel/camel-k/2.10.1/camel-k-sources-2.10.1.tar.gz"
-  sha256 "936fb5c9d5c1fd48f984cf9362dac4eb466543eef0a823917820402eebd2b941"
+  url "https://www.apache.org/dyn/closer.lua?path=camel/camel-k/2.11.0/camel-k-sources-2.11.0.tar.gz"
+  mirror "https://archive.apache.org/dist/camel/camel-k/2.11.0/camel-k-sources-2.11.0.tar.gz"
+  sha256 "aace4782b7f4fcb5ff7c49f8c4ead8a5d33b1139678c6f9253c6c37e83d4e78b"
   license "Apache-2.0"
   head "https://github.com/apache/camel-k.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ad888301c2107cc211a47578379178f4553228651e78f597d760535e164df599"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "75e5a62206f5b40a367c886a0968f796f9a3d4ba2bb0cda26e978ac302f8d799"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2bc3bb8cdfa9434716722dd36f8f38487676e0dd45bde02926dac1a465f71c46"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5653c7fe121e593dd2fac37e083f64a7e8ff4ea17e3f56076a29eb323a485f3b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0e48f773ce86c6ad327b9d98308c29b82be54be22dfdc573996a8662f69bbcda"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2eff60ba334459f7eb6e568c8c816a67d298b01ded4d6b9c85626b73df2e76a5"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e239f71b40b41eed60a67c203de0a7ed67aeed95a4c5011ef5a056c0b71ca8c9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b2a2eeddcb2a72f46723e0e1d1e21acb07b78c2bc3ee07ee6405394ba470346d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "aa8a655783748da9b94b747f8d9a487b92f6b2bb1deb24eef258d8336121a6e6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0243c7919933d6ec4c64b14d75494407b2f04625fe87e3e76a7c9c7c30000690"
+    sha256 cellar: :any,                 x86_64_linux:  "8610e91f36d8417d62c746f4c2c9c5678c9e961ec4eb5426c8b28903457abc94"
   end
 
   depends_on "go" => :build

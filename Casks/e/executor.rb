@@ -25,7 +25,9 @@ cask "executor" do
   zap trash: [
     "~/.executor",
     "~/.local/share/executor",
+    "~/Library/Application Support/@executor-js",
     "~/Library/Application Support/@executor-js/desktop",
+    "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/sh.executor.desktop.sfl*",
     "~/Library/Application Support/Executor",
     "~/Library/Caches/sh.executor.desktop",
     "~/Library/Caches/sh.executor.desktop.ShipIt",

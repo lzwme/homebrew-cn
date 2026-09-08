@@ -1,8 +1,8 @@
 class Gegl < Formula
   desc "Graph based image processing framework"
   homepage "https://www.gegl.org/"
-  url "https://download.gimp.org/pub/gegl/0.4/gegl-0.4.70.tar.xz"
-  sha256 "47f50d9c3aecd375deb48c11ebfead52d162e4fc162a4b3d44618277f1faec02"
+  url "https://download.gimp.org/pub/gegl/0.4/gegl-0.4.72.tar.xz"
+  sha256 "ccbb8cdd1db56ecd4ece5dbabae0118ab2c46b5b3439c94f3cec467798ce956d"
   license all_of: ["LGPL-3.0-or-later", "GPL-3.0-or-later", "BSD-3-Clause", "MIT"]
   head "https://gitlab.gnome.org/GNOME/gegl.git", branch: "master"
 
@@ -12,13 +12,11 @@ class Gegl < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_tahoe:   "2b7db4e2336469f3fc76e64357a2fad4af290886e4fb593f6e8fc605948db2d3"
-    sha256 arm64_sequoia: "1e167377455475816941f959b78e9e98675b9d7a0977cb13ab1a38881270b47f"
-    sha256 arm64_sonoma:  "38ac50dae75b8294e2c4c52bcc95234e3c4764055afbde61d91bdcdef99b147d"
-    sha256 sonoma:        "d5e6f2633c1e1b5c0cb170cf76331c30081198d7646c284b8a1865939086b0ac"
-    sha256 arm64_linux:   "07c9a5de190d526c608329587b9ccb7fde8b1428d19d47ac46535c84b54fc1a3"
-    sha256 x86_64_linux:  "53356701f9f23303c29f2861651c50c69ae41e8a1c68db861af364389f4f8d5a"
+    sha256 arm64_tahoe:   "ec9ce003ad62cd27ee15e3a5ce94ce04484965f6e2081899ab187030307a17a7"
+    sha256 arm64_sequoia: "6c2ebf4c201aff4e8b6d0d0d75ec93eac13f36900654ac4e3238609529908f8c"
+    sha256 arm64_sonoma:  "40a57e9cb75ce703824e3513dcc51e668c319a36a3f2b7eb65b39bac624c9d5d"
+    sha256 arm64_linux:   "d7d7654da633cd03a65419971bdef487c50d8f31f694a4e0b00c5672ce67e28a"
+    sha256 x86_64_linux:  "d7871949de55d05b400b7565eb78fdd8c8424128a7484272c5c8235bdc7de987"
   end
 
   depends_on "gettext" => :build
@@ -36,6 +34,7 @@ class Gegl < Formula
   depends_on "libpng"
   depends_on "libtiff"
   depends_on "little-cms2"
+  depends_on "webp"
 
   on_macos do
     depends_on "gettext"

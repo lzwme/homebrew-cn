@@ -25,7 +25,9 @@ cask "glide-browser" do
 
   zap trash: [
         "~/Library/Application Support/Glide Browser",
+        "~/Library/Application Support/glide",
         "~/Library/Caches/Glide Browser",
+        "~/Library/Caches/glide",
         "~/Library/Caches/Mozilla/updates/Applications/Glide Browser",
         "~/Library/Caches/Mozilla/updates/Applications/Glide",
         "~/Library/Preferences/app.glide-browser.glide.plist",

@@ -1,16 +1,16 @@
 class Hawkeye < Formula
   desc "Simple license header checker and formatter, in multiple distribution forms"
   homepage "https://github.com/korandoru/hawkeye"
-  url "https://ghfast.top/https://github.com/korandoru/hawkeye/archive/refs/tags/v7.0.1.tar.gz"
-  sha256 "7a6af78223142af97da040362be4e3b26c89fab19d5aa3a5fdfe68d43a469588"
+  url "https://ghfast.top/https://github.com/korandoru/hawkeye/archive/refs/tags/v7.1.0.tar.gz"
+  sha256 "f74f5997a4d18595320a0d7aa63333268c9015000e93bfbd1aef7e74ea5769d1"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "829d78cf2732dbb894afe5e1bea3244084d7a85be257d70ddc1f2f71a9860e6e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "32673b875ac7de2aa974580fb8825ba0d8de73cf4e7c40664077e76ec7ffa9ec"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c8a3dc1e0986efe0496c66ae3366757bd64bc9f2b668f19d6abac93916937d44"
-    sha256 cellar: :any,                 arm64_linux:   "a030f53e7a328267d4d374166a73ec0aa6c572b39bde3d92376ea3f0b0487c24"
-    sha256 cellar: :any,                 x86_64_linux:  "ec03b7e063d217bcb1af54410a6706deffd400871cd3020fe9dac7d7594fbee6"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c6338f0724026d8690f50e7d84070e3224fd5b05be5a7886d67ef77c62b74cf6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "730de1514a15e65aea9cc343c9fe0e5a41e937df7ee286d2f637226afc08ab11"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "476d3e80b3ebb6a64186f6afea0e59ef07859e0a5aaf3a2e3cde965bed3d573a"
+    sha256 cellar: :any,                 arm64_linux:   "a390f5d03cc18f0ca94960eb735c1650ee3f1060b93c3e950fae96c1d14d99c4"
+    sha256 cellar: :any,                 x86_64_linux:  "050c7b84fc1f8ed5c74b0a9f858074d0058c054bb4937fcd513f9fcf84811cde"
   end
 
   depends_on "rust" => :build

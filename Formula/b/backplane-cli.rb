@@ -1,18 +1,17 @@
 class BackplaneCli < Formula
   desc "CLI for interacting with the OpenShift Backplane API"
   homepage "https://github.com/openshift/backplane-cli"
-  url "https://ghfast.top/https://github.com/openshift/backplane-cli/archive/refs/tags/v0.12.0.tar.gz"
-  sha256 "f07831763f7d0beb4f3522f5af8646a24abc61c392c7f354a5230c4a65637aec"
+  url "https://ghfast.top/https://github.com/openshift/backplane-cli/archive/refs/tags/v0.12.1.tar.gz"
+  sha256 "8c97efdbc41f99cb280c2549f1502a26b8b8183c1a7e4d93ae85b4f9e2e0a83f"
   license "Apache-2.0"
   head "https://github.com/openshift/backplane-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "34e05d3b27748a51f42b1e26cc3a3474bc97b223f6010c4d5b41cc8d8bf8a119"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a6da47b16082bcfdc77961c32186b6daa977f163d71adf9aa1d522ca35ba41ec"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1829553d8ff651a9b4c74d42be16d104d58add147e7ff41aebd111a73016fb33"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c495cc4ab998b027379a032299c5ffaea46d620636d52e7838897c6a10fda4c0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1550b8bd1e99ecf799f38cde96d4082869198763d9120276e612b963ea791916"
-    sha256 cellar: :any,                 x86_64_linux:  "911261ee8d3bd2e1d9e5815d86a45271dde161780e21757963a1dad8ffda2579"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e4ced5e58129de6064ddfda53b25e8f072f0d652848acab55dd824ee7f52d505"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "626c1533dda34c3fc15e9d49c94c76520f222335b1bcac809f17261a4fc05557"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2a0759915b56fd9dca487999ec65ea018b662b97d4987d33225e6f28a8e08f1a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "98c25bff5f5fa447f14afe58bc0dabaf3a892d20bd1f622e6c408347acc5694d"
+    sha256 cellar: :any,                 x86_64_linux:  "45b4a83837e9300ead60a8c61c5de9c2a289cf7ef5476e15b5998abf01bea591"
   end
 
   depends_on "go" => :build

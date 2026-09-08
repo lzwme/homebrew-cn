@@ -1,19 +1,16 @@
 class Bzip3 < Formula
   desc "Better and stronger spiritual successor to BZip2"
   homepage "https://github.com/iczelia/bzip3"
-  url "https://ghfast.top/https://github.com/iczelia/bzip3/releases/download/1.5.3/bzip3-1.5.3.tar.gz"
-  sha256 "c48823353084df2a5a0dba44fd5295abd078e40b49f09700d08af4d9b1e31d67"
+  url "https://ghfast.top/https://github.com/iczelia/bzip3/releases/download/1.5.4/bzip3-1.5.4.tar.gz"
+  sha256 "89a5e4bf29e4aae98b29bb1ef275addfa2d0806ba1ef60bf8a87263cdb21f581"
   license "LGPL-3.0-only"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "81921e9c4facfdfe8650998141d3a5f3269003d0bad236ec57f90707ea3a73e8"
-    sha256 cellar: :any,                 arm64_sequoia: "e15d757bd8cc8bf4184b63572e4e9e4aa2098fe23b9ec7f2cd0fd5698f0f9198"
-    sha256 cellar: :any,                 arm64_sonoma:  "6e0f80b2d8873b8ccd668c4086ab8526898cf96021e58c89872f67649d23edcb"
-    sha256 cellar: :any,                 arm64_ventura: "1bb455120d20c0c2635e1d12e5b2fb542c63324debf078a8b50b1f535c661fcf"
-    sha256 cellar: :any,                 sonoma:        "046095415fe0bd81f8234e3a9bcd5904b405c5e125b8d492f7d77c5d29a9381e"
-    sha256 cellar: :any,                 ventura:       "4f16fb9cc53ec9127302c9a03838fccbed6189f987bad93ec6a8a855fbcbc76a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "205609d980a9f5e65292fcceb69322379ccb3a7c58cf32d26669e5fb2c43cd04"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "234e3a3449f0710e43724ff50fae9e819ed354869954bd989f005951a7ac386a"
+    sha256 cellar: :any, arm64_tahoe:   "ed476ab20e78299627bae28bb0dd902bb768d3ece86b25176eac10479d984f47"
+    sha256 cellar: :any, arm64_sequoia: "948798834e5f0dc0ad6d208ff24ed9a2e636392d22159faafe3ecaab82ee526e"
+    sha256 cellar: :any, arm64_sonoma:  "6c3d602ca043ec524307b38b43d15865ad28fdefca67b159d46a65835f905171"
+    sha256 cellar: :any, arm64_linux:   "e7ae0b8e3d71d7fb83166b7c6982d0d5b52b70082e298c9448171a740103a12b"
+    sha256 cellar: :any, x86_64_linux:  "579ecd6e7477d9fa72ae9f3041b9c75f543e546780c1703132de2105dbadcd10"
   end
 
   def install

@@ -1,8 +1,8 @@
 class Meilisearch < Formula
   desc "Ultra relevant, instant and typo-tolerant full-text search API"
   homepage "https://docs.meilisearch.com/"
-  url "https://ghfast.top/https://github.com/meilisearch/meilisearch/archive/refs/tags/v1.53.1.tar.gz"
-  sha256 "b1041d18f18f70b0069689fe46cebfe1d34fe80f48db1177a79a9ca89db5ccdc"
+  url "https://ghfast.top/https://github.com/meilisearch/meilisearch/archive/refs/tags/v1.53.2.tar.gz"
+  sha256 "01ecd573e9327e12e6b6e3f40506e319d73601c380266bb9b6da0b87b9fd7a0f"
   license "MIT"
 
   # There can be a notable gap between when a version is tagged and a
@@ -14,12 +14,11 @@ class Meilisearch < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5fe0eec48314ff4382c0d9047f08800316667c3189a101140ff392ecfd5eefa2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7c1364596162dd2811c6add0d69133461f96a6571d8735157d93dfe3e0372d4e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "60820cc873b1538fd30fbfe9e553a89b16e1ce45e9c50f518d8bbaac4234def8"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d77b2d8c715567c678b6fa94039233c9885bcca239996da39767cf278d1baeb5"
-    sha256 cellar: :any,                 arm64_linux:   "937b0ce58dbb49a74d6846381f9927fb4bea90d3ffa307da490b7fb19570b401"
-    sha256 cellar: :any,                 x86_64_linux:  "f1da77a5131988526f2e217ae6899cb04d35cb045dd11134e55117664d2b2f74"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1b488010a5064ec4819e770a4d01443beaae5f732c3f9e5a3552dc3310102569"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a8637c83a3882bdafe90a02d07ebecd0fc17e49d9154c09949f42a51cc567003"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ed0fd005a659d4bdfa1489a70a110b81f26498a8bd239e831ceeada9cc277330"
+    sha256 cellar: :any,                 arm64_linux:   "282b289f03ab74e1e6982cc90b64edad3255e72b0cd3f2057e6e42ab5586bdaf"
+    sha256 cellar: :any,                 x86_64_linux:  "53a7f9d01df8be1f946794e78b7c0f7d1b0eecea70e5fea938fae224fa02abe3"
   end
 
   depends_on "rust" => :build

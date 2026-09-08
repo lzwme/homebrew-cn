@@ -1,18 +1,17 @@
 class Headson < Formula
   desc "Head/tail for structured data"
   homepage "https://docs.rs/headson/latest/headson/"
-  url "https://ghfast.top/https://github.com/kantord/headson/archive/refs/tags/headson-v0.17.0.tar.gz"
-  sha256 "9555186f0f79a8be725aec6a3d857ae6d2b58133e060b0b7eeeeb85715284dbf"
+  url "https://ghfast.top/https://github.com/kantord/headson/archive/refs/tags/headson-v0.17.1.tar.gz"
+  sha256 "7c04dbe3d94c8e828d453cfe93b68f0dbd25a72ce3735fc43d71e3e0ea2b9b32"
   license "MIT"
   head "https://github.com/kantord/headson.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1d8ce3e6d998c955d7819e17e0f091dceae9fa2e5c1f541d3e4b46ae0e1a3c1e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f21f5f403200e2269de1cf4ee2b93388656d160df8f4a6cb04e3b7f64b0e0016"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d1227919cf32dce3b14d1c881a51988bb520aa191bf2be90d4bd39cf518a4384"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2b8e98f972736400a8ac451b6f1d64e9ae8c40cf87cd4a14e7a439287dd4f1d1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e389b41d5fa7b9e5dd88ab534eb0688e42643a50ae0bbb7166a70f4094e8fff3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a2795200cf1d329878a562f93f5fb07a4c45f90b6f56d99343d143faf9a5a26c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "26b23140a92e1f355202c6155a0119cc27bc317e543d8fe836e8bb8104b99cc2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "52015f18417486bb5471f01dedeea443a4bd96f5c4a5d813b9b36fc53e02db28"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d8763155984fc5e9e264596deaa8a2becc093afb0a8ede161783ab1d2fae70b5"
+    sha256 cellar: :any,                 arm64_linux:   "a4f5b0f7dfda05b3da1e01cc1ff00b12c320d7c4e71a1c9f667137f9aae2af7b"
+    sha256 cellar: :any,                 x86_64_linux:  "9fd4f1b7f1a2c8c41c129cbbd0372c346de6f7a3e92e240df889c32f80475f67"
   end
 
   depends_on "rust" => :build

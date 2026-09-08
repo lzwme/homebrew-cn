@@ -1,8 +1,8 @@
 class Libp11 < Formula
   desc "PKCS#11 wrapper library in C"
   homepage "https://github.com/OpenSC/libp11/wiki"
-  url "https://ghfast.top/https://github.com/OpenSC/libp11/releases/download/libp11-0.4.20/libp11-0.4.20.tar.gz"
-  sha256 "a125e0310ff10c189fc1b32a9652101486ea94a6b07c677a30e90e3638d2db48"
+  url "https://ghfast.top/https://github.com/OpenSC/libp11/releases/download/libp11-0.4.21/libp11-0.4.21.tar.gz"
+  sha256 "efdb523aef8613d447e6a2d38227d4b389866f4bcf4b503130acd7f759490847"
   license "LGPL-2.1-or-later"
 
   livecheck do
@@ -11,12 +11,11 @@ class Libp11 < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "10175d4baeb75330bee16b8903ec5e88d5b991b9da43f2fbaec1be4077a0fad4"
-    sha256 cellar: :any, arm64_sequoia: "3bc52a04b32df16febc63738a8fa2e5552bf6f74afe5eec2159b6d91d419a957"
-    sha256 cellar: :any, arm64_sonoma:  "301a340e8e298abbd358ced80923695b5f1a0c8a0ab7d9148d339a51e456db07"
-    sha256 cellar: :any, sonoma:        "c0df4bc1a6103b39338862eae2b7b1dade6f949abcb4bc3716f676c1f528b0e8"
-    sha256 cellar: :any, arm64_linux:   "fcf6e88dcc5b19a454442954c1f9138d449e5584575ebd88cae705f356dfe900"
-    sha256 cellar: :any, x86_64_linux:  "d27b58ba98f3ffd7876c6a32e4003588202c389d9ec8d616e213b58b6d7ab44e"
+    sha256 cellar: :any, arm64_tahoe:   "0a4c68939012e96b0a0a90ee8ab45d8250a31034b04a88f2f9e11cf97512e283"
+    sha256 cellar: :any, arm64_sequoia: "f34dbb71ec65bf6efbbea04f315bb78dcd0fbdf415290475e293e78c1163dd9a"
+    sha256 cellar: :any, arm64_sonoma:  "3ade95480d16f681cbf20bb11b57fa1ed50def7d832c3c368916e4270c3c5b9f"
+    sha256 cellar: :any, arm64_linux:   "dc49f2a295a4a8650c7d4523eb041c81a31cd0dea9abae72a74791e3d6c3b77a"
+    sha256 cellar: :any, x86_64_linux:  "9296e49c72bfb784ae401a8b1cdc1e76616844583df03774a7c2978ce9944198"
   end
 
   head do

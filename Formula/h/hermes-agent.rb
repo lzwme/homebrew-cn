@@ -3,10 +3,9 @@ class HermesAgent < Formula
 
   desc "Self-improving AI agent that creates skills from experience"
   homepage "https://hermes-agent.nousresearch.com"
-  url "https://ghfast.top/https://github.com/NousResearch/hermes-agent/archive/refs/tags/v2026.8.31.tar.gz"
-  sha256 "78fb3ff707ec1d17044b875ecac8bef28aa39d44242824f6871ca40afe7bf217"
+  url "https://ghfast.top/https://github.com/NousResearch/hermes-agent/archive/refs/tags/v2026.9.7.tar.gz"
+  sha256 "907c2a72db1c5dd637ea8eeae97f4cb5b32cef615c17258f6b190924ec5bf688"
   license "MIT"
-  revision 1
   head "https://github.com/NousResearch/hermes-agent.git", branch: "main"
 
   livecheck do
@@ -15,12 +14,11 @@ class HermesAgent < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "f8be34c1fe3ebf776266fbdfc78095e4325196648a1bc6e7bdd4859b88d3c483"
-    sha256 cellar: :any, arm64_sequoia: "ae734cccfbc4adb6cbb06c572420890351e187384cac692a0d7ce1482d01b791"
-    sha256 cellar: :any, arm64_sonoma:  "695393e4c9468178526cbd46c0d42264247f9394427e7b8232cf01042e6ab02b"
-    sha256 cellar: :any, arm64_linux:   "cbb0e246335ba4fa1aedfb5dda57e8b68d6c793689ff42198876f0b3ab340e2e"
-    sha256 cellar: :any, x86_64_linux:  "4c253b29ba42cf9cf69122f2fcb53ab6d955ba025b3e8e764ed5b5466a2a6d65"
+    sha256 cellar: :any, arm64_tahoe:   "27d649bc8b788497123899678f3f65ae28239acf03791f94f26e622a4ee615c9"
+    sha256 cellar: :any, arm64_sequoia: "85643376f022bc9abd8abfbaf74535d17a7b5f8ebe3c4ba9a6a1e7ad63d347b5"
+    sha256 cellar: :any, arm64_sonoma:  "79cec5456a3b0830bd2711f3dcfa1372c27e41314bd17f40655588bc8d9eb5bc"
+    sha256 cellar: :any, arm64_linux:   "ba3db81c51df5182e57a9c0c342dde552caef6a8e4c6470df2999c84eeb97b70"
+    sha256 cellar: :any, x86_64_linux:  "e692bb39073b81185c32b040f299433ef6468c6642a3614cd25a18bfd9a07402"
   end
 
   depends_on "pkgconf" => :build
@@ -51,8 +49,8 @@ class HermesAgent < Formula
   end
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/61/cc/a381afa6efea9f496eff839d4a6a1aed3bfafc7b3ab4b0d1b243a12573dd/anyio-4.14.2.tar.gz"
-    sha256 "cfa139f3ed1a23ee8f88a145ddb5ac7605b8bbfd8592baacd7ce3d8bb4313c7f"
+    url "https://files.pythonhosted.org/packages/a9/d2/f4d173e22df740bc37b1db102b386ba719b66e95b0f0d751f556b387e6d2/anyio-4.15.1.tar.gz"
+    sha256 "9f28306018cbd6d329e64a36d58256edff76dd996fe423bc957326e578b82a94"
   end
 
   resource "attrs" do
@@ -181,8 +179,8 @@ class HermesAgent < Formula
   end
 
   resource "nemo-relay" do
-    url "https://files.pythonhosted.org/packages/cd/e5/a259aac8df4aa78c0b3a6f3ad0fbf6305666bfaad5c29d9adc26db0f9e27/nemo_relay-0.7.3.tar.gz"
-    sha256 "ea5a1bb52e25e001dcbf6af1830616be181845e978cc848df58562556bba5604"
+    url "https://files.pythonhosted.org/packages/b7/0f/274daf96d674f0611b058ba2cc820cc266624360db086eceaa9e99a4f491/nemo_relay-0.8.4.tar.gz"
+    sha256 "daaa980f1627e88cf1d2c6dbebc5b07bcc778150384323fc99fe52fba8713ce9"
   end
 
   resource "openai" do
@@ -314,8 +312,8 @@ class HermesAgent < Formula
   end
 
   resource "sse-starlette" do
-    url "https://files.pythonhosted.org/packages/1e/e1/8a41e88e825ea26c44333897c7ffe35fe60153a2cfc097a5bd1d209ad281/sse_starlette-3.4.10.tar.gz"
-    sha256 "c6c87280d8feb4e55a8d79633782766b9cac6a26da5c79a145d00aa404117a86"
+    url "https://files.pythonhosted.org/packages/2b/54/6767bb789b2f2fed6e0f953df949cd39dc263a384c1b65a95232598621d6/sse_starlette-3.4.11.tar.gz"
+    sha256 "1bae716c02f3e6f294be41ff333220692dae7c3cbab077c900f159676719dade"
   end
 
   resource "starlette" do

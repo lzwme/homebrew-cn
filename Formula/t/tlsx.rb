@@ -1,8 +1,8 @@
 class Tlsx < Formula
   desc "Fast and configurable TLS grabber focused on TLS based data collection"
   homepage "https://github.com/projectdiscovery/tlsx"
-  url "https://ghfast.top/https://github.com/projectdiscovery/tlsx/archive/refs/tags/v1.3.0.tar.gz"
-  sha256 "c0aeb253d83f1c8ed261a135b19403caf46cee3066882056875a13d5b1a2a75a"
+  url "https://ghfast.top/https://github.com/projectdiscovery/tlsx/archive/refs/tags/v1.4.0.tar.gz"
+  sha256 "02e29cb128415e673312b7176e95126891a223d29e54dce898d5a0277a7d35ea"
   license "MIT"
   head "https://github.com/projectdiscovery/tlsx.git", branch: "main"
 
@@ -12,12 +12,11 @@ class Tlsx < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fe8706a7a92309607bf967a15a663b5e0ed795ac084e84b3a63df10dff08192a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0d7e324c4e58a38447882f76d7dd729118ed1151e682e6722762a71dc4bad00c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ef18a0cc9d02aa869def1e1cd034c4dafd1db35dcb35bdadc0c8bf8423b5d667"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d659ca4c032cd99459f4c161abf59e8bef7962167393a919a183c0102ee358a3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "551ae1a2d4e4b5fa74cb13d7950c9e626c401ccd3c960af6c53a1ff74f6fa96e"
-    sha256 cellar: :any,                 x86_64_linux:  "b480f39235c91264abb7626f2c0d986a73718dc18918ca829e54a9a2514476db"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5607a68a665ce0f94159f70a776790748e94b9bb08a6d976e2965716766e4bec"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "26b2365a0b68eff0c409f97d1dbce232215564f5a8a6ce89b3e322348a6b67b1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2c52c4dbf8cd10141aa242a4195edbf7b3b411559cbe8418de37a6d684122810"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "457e4404fcc1b6efcb60114f93f024343056cbd0a765c7f07b1705bb2760231e"
+    sha256 cellar: :any,                 x86_64_linux:  "3265f1adf28d14fd58878e93b9385ef2bfc3554d81000afe2fdf3cecb81dddf4"
   end
 
   depends_on "go" => :build

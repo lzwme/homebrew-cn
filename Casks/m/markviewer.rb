@@ -20,6 +20,7 @@ cask "markviewer" do
   zap trash: [
     "~/Library/Application Support/com.markviewer.markviewer",
     "~/Library/Caches/com.markviewer.markviewer",
+    "~/Library/Logs/com.markviewer.markviewer",
     "~/Library/Preferences/com.markviewer.markviewer.plist",
     "~/Library/Saved Application State/com.markviewer.markviewer.savedState",
     "~/Library/WebKit/com.markviewer.markviewer",

@@ -86,9 +86,6 @@ class Rdkit < Formula
       -DRDK_BUILD_FREESASA_SUPPORT=ON
       -DPython3_EXECUTABLE=#{python3}
     ]
-    if build.bottle? && Hardware::CPU.intel? && (!OS.mac? || !MacOS.version.requires_sse42?)
-      args << "-DRDK_OPTIMIZE_POPCNT=OFF"
-    end
     system "cmake", "-S", ".", "-B", "build", "-DRDK_BUILD_PGSQL=OFF", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"

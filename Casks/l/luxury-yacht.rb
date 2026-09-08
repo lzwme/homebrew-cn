@@ -16,8 +16,10 @@ cask "luxury-yacht" do
 
   zap trash: [
     "~/Library/Application Support/luxury-yacht",
+    "~/Library/Caches/app.luxury-yacht.desktop",
     "~/Library/Caches/com.wails.luxury-yacht",
     "~/Library/Preferences/com.wails.luxury-yacht.plist",
+    "~/Library/WebKit/app.luxury-yacht.desktop",
     "~/Library/WebKit/com.wails.luxury-yacht",
   ]
 end

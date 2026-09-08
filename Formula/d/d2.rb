@@ -1,18 +1,17 @@
 class D2 < Formula
   desc "Modern diagram scripting language that turns text to diagrams"
   homepage "https://d2lang.com/"
-  url "https://ghfast.top/https://github.com/d2lang/d2/archive/refs/tags/v0.8.2.tar.gz"
-  sha256 "9d8b7276c9dd035233008f3a233054ecf5f3c133e89f658f759df6fe3faf6087"
+  url "https://ghfast.top/https://github.com/d2lang/d2/archive/refs/tags/v0.9.0.tar.gz"
+  sha256 "1256ad3907bceb4fcee7ed40d17c5726f8b602eea900e94500ba3352e96febbc"
   license "MPL-2.0"
   head "https://github.com/d2lang/d2.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bb38fd85461f60aa45abb10e08c8dc87c55ab14eb9f5fbb3526a0b53f842d85e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bb38fd85461f60aa45abb10e08c8dc87c55ab14eb9f5fbb3526a0b53f842d85e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bb38fd85461f60aa45abb10e08c8dc87c55ab14eb9f5fbb3526a0b53f842d85e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "29c5757d4a96b6680b5370054f7b414970c1bdec6b368cac50121f6cedf70a68"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "62eb05375b09bb37b72f6b511269a845eb5ace7df4885c0c829d14b8da8d3174"
-    sha256 cellar: :any,                 x86_64_linux:  "7efca8f1fa46aac1691221caf1123a40e9720bab5daec392b0f79599a6b87cd0"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fff1255d00f1dbd66353d680b440f697677dfb68c54a93fea271118fec73c83f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fff1255d00f1dbd66353d680b440f697677dfb68c54a93fea271118fec73c83f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fff1255d00f1dbd66353d680b440f697677dfb68c54a93fea271118fec73c83f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "29e91a66c47fe0e014a50843b2d09ba767e30e2caf08d51f2f18e40dc2938b99"
+    sha256 cellar: :any,                 x86_64_linux:  "f8783a842cb964680aad7dfaa26aba87095ad389d9932b08d68ee1487fc5ea3d"
   end
 
   depends_on "go" => :build

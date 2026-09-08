@@ -20,9 +20,14 @@ cask "openclaw" do
   zap trash: [
     "~/.openclaw",
     "~/Library/Application Support/OpenClaw",
+    "~/Library/Caches/ai.openclaw.mac",
+    "~/Library/HTTPStorages/ai.openclaw.mac",
     "~/Library/HTTPStorages/bot.molt.mac",
     "~/Library/Logs/DiagnosticReports/OpenClaw*",
+    "~/Library/Preferences/ai.openclaw.mac.plist",
+    "~/Library/Preferences/ai.openclaw.shared.plist",
     "~/Library/Preferences/bot.molt.mac.plist",
     "~/Library/Preferences/bot.molt.shared.plist",
+    "~/Library/WebKit/ai.openclaw.mac",
   ]
 end
