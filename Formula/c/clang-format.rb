@@ -1,8 +1,8 @@
 class ClangFormat < Formula
   desc "Formatting tools for C, C++, Obj-C, Java, JavaScript, TypeScript"
   homepage "https://clang.llvm.org/docs/ClangFormat.html"
-  url "https://ghfast.top/https://github.com/llvm/llvm-project/releases/download/llvmorg-23.1.0/llvm-project-23.1.0.src.tar.xz"
-  sha256 "ab1f0e3ec52448c33e8782eaf0422504b87c7b016b22514653ee0d8fcee479ff"
+  url "https://ghfast.top/https://github.com/llvm/llvm-project/releases/download/llvmorg-23.1.1/llvm-project-23.1.1.src.tar.xz"
+  sha256 "ebe9be46fe8756d58c5b198ffad0fa2a766257add81a4dc52179bfacc7888ee6"
   # The LLVM Project is under the Apache License v2.0 with LLVM Exceptions
   license "Apache-2.0" => { with: "LLVM-exception" }
   version_scheme 1
@@ -15,12 +15,11 @@ class ClangFormat < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5f3ee8c0073e95ecc7cb476cf0e4eb2647834696d0dd1e38985519f137a949b2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "405b6f1e49b216b494f32039ac2001da55ee1dd0676581a370b7c3b6d19f0464"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e7dbf6aed2a4146ef7e74f5c6051bbd2cfbcabc28e124b323559d5e60db3e16a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5d5474a0d2bd14c2e373dcec910417e8ff3893b685d4e1f671a3a0104c74ddbe"
-    sha256 cellar: :any,                 arm64_linux:   "fb48f8de58ca5dfd77d452f16d758eb0796ad0a5796b23805c9a0dc5cc386e3d"
-    sha256 cellar: :any,                 x86_64_linux:  "adfa85df9733e646a626c4710d03f5f38cd7330439ad5a5b235449b918baed1e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "86446d253944f92d485d82bd8a76188d2e701e362b6931939f3251c36be90794"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5e822f506e225c451b33573c3073df5b487b5ed1524c14adeca4f570a6125bc7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0a4ab72db6e96e3baae6ee81b78a1d0ecb77b5247cfb2631f75cac27cb1ec573"
+    sha256 cellar: :any,                 arm64_linux:   "6b662582e446e2f715fdc021bf0354879f6d274650e54a3094a9bfcc616f872b"
+    sha256 cellar: :any,                 x86_64_linux:  "0284aa162c4df3c5158431ee79b7d30d286fd95e52b728ea938fb1a8eee49d1c"
   end
 
   depends_on "cmake" => :build

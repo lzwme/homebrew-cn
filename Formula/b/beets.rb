@@ -3,18 +3,17 @@ class Beets < Formula
 
   desc "Music library manager and tagger"
   homepage "https://beets.io/"
-  url "https://files.pythonhosted.org/packages/9b/01/a8fe84c3df610e63569f51ee846d442ea7d89ef4dfc834378cebd46bfd5a/beets-2.13.1.tar.gz"
-  sha256 "ea11e0963299c1c0f728884b2896cc554747696c3ddd73d98a70cc6196ae845b"
+  url "https://files.pythonhosted.org/packages/b6/3b/359d68ce968214ffec8f55d9babe6de82794a846b5e02027f013456ef988/beets-2.14.0.tar.gz"
+  sha256 "f412c9072ddc0bed04d843546a4222fcd24c9fe64cf233517ddcdb40190feea8"
   license "MIT"
   head "https://github.com/beetbox/beets.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "de7a359984e40ec99f8581feeaa6e67a85fe1a685308d943638e2a816a3e6476"
-    sha256 cellar: :any, arm64_sequoia: "dd2e427255918387c191bcb91815465bdee18468cea9cff079f674731c3bd045"
-    sha256 cellar: :any, arm64_sonoma:  "d627ccea780a4262fdfaa3bf05033df7c97aecd75905230ac3afdc8d4427b3b1"
-    sha256 cellar: :any, sonoma:        "b24fa996c419cf22c58bec0416c99aafdbc1c801d8338409342d11913dd951e1"
-    sha256 cellar: :any, arm64_linux:   "781b52a1deed3dad7a80726b97cc2081de0956f7f3e14382e9dd84befa759d19"
-    sha256 cellar: :any, x86_64_linux:  "7bfc26fb7c7c3f77596b6ec6899a5cf60acd631acc3a2500519ea074bcfd5f7a"
+    sha256 cellar: :any, arm64_tahoe:   "50f03f6a0720e452fb6aad43fa407b8e2b5e4337dfee9e5cfe2833b8f3c21ddc"
+    sha256 cellar: :any, arm64_sequoia: "9eeaf54378dc36078175d800302c674f328244b1ada108a2978f05617e891e2b"
+    sha256 cellar: :any, arm64_sonoma:  "e3e31e52ffba674202e8e84cd58b3f507430550be3d18a248d7bea1b89b76c35"
+    sha256 cellar: :any, arm64_linux:   "0e61b7cd8745b16d9fda96ab4adf6ba86ed548b63b2ef1a424e175af33fded90"
+    sha256 cellar: :any, x86_64_linux:  "6454d6b02d1fb84f0ecd5f5c20127557c7a0e0f1007fa8638194426afb62e87a"
   end
 
   depends_on "cython" => :build
@@ -28,8 +27,8 @@ class Beets < Formula
   pypi_packages exclude_packages: %w[certifi numpy]
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/bd/2a/23f34ec9d04624958e137efdc394888716353190e75f25dd22c7a2c7a8aa/charset_normalizer-3.4.9.tar.gz"
-    sha256 "673611bbd43f0810bec0b0f028ddeaaa501190339cac411f347ac76917c3ae7b"
+    url "https://files.pythonhosted.org/packages/e5/3f/143b048436775b0f76ac3eec145c019e8173ccc2885c8f20319b996d5e83/charset_normalizer-3.5.1.tar.gz"
+    sha256 "6117b84ea48435e5356dc737f5121485c30920ba43375fa7b434fd753df0eac3"
   end
 
   resource "confuse" do
@@ -43,8 +42,8 @@ class Beets < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/cd/63/9496c57188a2ee585e0f1db071d75089a11e98aa86eb99d9d7618fc1edce/idna-3.18.tar.gz"
-    sha256 "ffb385a7e039654cef1ab9ef32c6fafe283c0c0467bba1d9029738ce4a14a848"
+    url "https://files.pythonhosted.org/packages/5f/f7/abb373e5757eaec4b922b92f97ec8d6d7e057cf06778247604fbc4e7c3f3/idna-3.19.tar.gz"
+    sha256 "5e0811a4383b21dc5838069f801c4fb62113b7447663d2530d2bd6e77b49bf15"
   end
 
   resource "jellyfish" do
@@ -68,18 +67,18 @@ class Beets < Formula
   end
 
   resource "packaging" do
-    url "https://files.pythonhosted.org/packages/d7/f1/e7a6dd94a8d4a5626c03e4e99c87f241ba9e350cd9e6d75123f992427270/packaging-26.2.tar.gz"
-    sha256 "ff452ff5a3e828ce110190feff1178bb1f2ea2281fa2075aadb987c2fb221661"
+    url "https://files.pythonhosted.org/packages/7d/fa/3944b40b07da9ce895c0e6303a5ab7d53da063554f534556b134a54d6093/packaging-26.3.tar.gz"
+    sha256 "94edc256424af38762eb31306eed28beb9f0efc50a8837492c9d6fd6004aed79"
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/78/9b/560e4be8e26f6fd133a03630a8df0c663b9e8d61b4ade152b72005aec83b/platformdirs-4.11.0.tar.gz"
-    sha256 "0555d18370482847566ffabcaa53ad7c6c1c29f195989ae1ed634a05f76ea1e0"
+    url "https://files.pythonhosted.org/packages/69/b7/802a56eca9f2fac455b8bab5375a2647b0f0e14a2cd63ef077de3c4a7658/platformdirs-4.11.7.tar.gz"
+    sha256 "4f41487eeeeeb07f3a6625e61d9bc0ae6809f92d3386dbd74392fbb76108104d"
   end
 
   resource "pyrate-limiter" do
-    url "https://files.pythonhosted.org/packages/19/27/e564f33ea085c63d5540f707b31aeb50a4992eac2da655dc02435a760a07/pyrate_limiter-4.4.0.tar.gz"
-    sha256 "2c0c720c4fa16c5d8199e4821bf34507fb49c007a25b786cec6fb94ffd0844aa"
+    url "https://files.pythonhosted.org/packages/62/43/48693393af06b9fffbaea6bb8fe03be3c3f17be5d1423dab347d1aad1dde/pyrate_limiter-4.5.0.tar.gz"
+    sha256 "098345fff3a52b84dee9bcf6973f184c8b3ef8d34e1f4f781ac0773e3984598b"
   end
 
   resource "pyyaml" do

@@ -1,20 +1,19 @@
 class PodmanTui < Formula
   desc "Podman Terminal User Interface"
   homepage "https://github.com/containers/podman-tui"
-  url "https://ghfast.top/https://github.com/containers/podman-tui/archive/refs/tags/v1.11.3.tar.gz"
-  sha256 "55c7dd30cf106995361bfeb55d1f74f20d8a603a7cbbd3a03a4a8cdcc35aa6da"
+  url "https://ghfast.top/https://github.com/containers/podman-tui/archive/refs/tags/v2.0.0.tar.gz"
+  sha256 "32c8ffced718cda2d5b4bcedddb71299aaa035f035de6886100ab0f6469ca3dd"
   license "Apache-2.0"
   head "https://github.com/containers/podman-tui.git", branch: "main"
 
   no_autobump! because: :bumped_by_upstream
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "71a315cbe2370fa6a7f530f5e82fca4504df13d9500240ece812bf77f7016eb9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "71a315cbe2370fa6a7f530f5e82fca4504df13d9500240ece812bf77f7016eb9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "71a315cbe2370fa6a7f530f5e82fca4504df13d9500240ece812bf77f7016eb9"
-    sha256 cellar: :any_skip_relocation, sonoma:        "320dca5f43ac58f4098bc7422106ebd4268632b152b4166b76ea8edb6e1882ca"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0349b589752e653d22d4747f2f3587eeac5c470682bcc8a8ac852634187895c9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bf5a9d76b8fc98a6985d3c8314741ce3135f7da1ca6fb5bae40f4f2c163f41bf"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d81002f5595efd25aab4539662c23117eeb9ce6cc6c34fd798184e03b8180220"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d81002f5595efd25aab4539662c23117eeb9ce6cc6c34fd798184e03b8180220"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d81002f5595efd25aab4539662c23117eeb9ce6cc6c34fd798184e03b8180220"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3fe4c655b8778e59db48e6b090ed9d5665ebf3746073ce7eec70a66b4f40be08"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bb09f18685d4f87349f9f04b9a989d70c993bc5c4314514a74f33ec75784594f"
   end
 
   depends_on "go" => :build
@@ -35,7 +34,7 @@ class PodmanTui < Formula
       begin
         output = r.read
         assert_match "Connection:", output
-        assert_match "SYSTEM CONNECTIONS[1]", output
+        assert_match "SYSTEM CONNECTIONS[0]", output
       rescue Errno::EIO
         # GNU/Linux raises EIO when read is done on closed pty
       end

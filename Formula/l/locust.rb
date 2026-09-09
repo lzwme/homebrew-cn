@@ -3,21 +3,21 @@ class Locust < Formula
 
   desc "Scalable user load testing tool written in Python"
   homepage "https://locust.io/"
-  url "https://files.pythonhosted.org/packages/77/a1/6e2e204a14048fb49fcd4ff36ef7477f9188029f791a6d9b1d0905944e6a/locust-2.46.4.tar.gz"
-  sha256 "a5a5daf041bcd807053bfd86d8062740c76530beb47a6e28a43b9701a3effab9"
+  url "https://files.pythonhosted.org/packages/bd/b5/e7a5db1723dfa60a5278e5936d3c06ef28cda03d948b3134c1a2ae622693/locust-2.46.5.tar.gz"
+  sha256 "f47cbde638f4a1d8c2d2693867fbc1bd8331dfebfca8c31e042e61199ab59ffa"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "3787cc5bb45d2d2d16eb2c7c9132f784a49bc8ad63d518ba96e819154c3558b7"
-    sha256 cellar: :any, arm64_sequoia: "4e839b81b4f478c1916ee0a9e3a8f201692b0274427eddedd6194caf4cb7c614"
-    sha256 cellar: :any, arm64_sonoma:  "9fc6f40f11174fe18082f1e97e3726ac97436b6d2311c3532e16bdeba5039704"
-    sha256 cellar: :any, sonoma:        "4d2f891c9bb96ae8b16c7f81ea05bc194532aac87ba20c9d242da4299cc02912"
-    sha256 cellar: :any, arm64_linux:   "6a1d9748e25a0830d7c17867cd372bd925c6ae3265eb838268d052bd8c3b2fb2"
-    sha256 cellar: :any, x86_64_linux:  "dd053caf82aad94cbf04164bf41e72887e62e7d58a897ec6bb3093b93cee30c8"
+    sha256 cellar: :any, arm64_tahoe:   "1c6b7739ea6f9c6b34aa5b27bdb83705ebb8e493c9d65ee88e8406bbf95b3bc2"
+    sha256 cellar: :any, arm64_sequoia: "ad3e112080ed2672ddc90e34ba57eb01d7a6fd7315f719ec93bfdf4d9eb9d851"
+    sha256 cellar: :any, arm64_sonoma:  "0b37f50164acdb372b898fab0772af6edc065841529f883fcf7ff347f4c2dd1b"
+    sha256 cellar: :any, arm64_linux:   "71a125edb7845a8e4585c340f97e0afb2b4199105fcad115ee6801903273aa5e"
+    sha256 cellar: :any, x86_64_linux:  "52edf6fec967dd4a5da24695c5bdebfb0a4b0e958e51f61b81204c19d3bd0cd7"
   end
 
   depends_on "cmake" => :build # for pyzmq
   depends_on "ninja" => :build # for pyzmq
+  depends_on "rust" => :build # for bidict
   depends_on "certifi"
   depends_on "python@3.14"
   depends_on "zeromq"
@@ -25,8 +25,8 @@ class Locust < Formula
   pypi_packages exclude_packages: "certifi"
 
   resource "bidict" do
-    url "https://files.pythonhosted.org/packages/9a/6e/026678aa5a830e07cd9498a05d3e7e650a4f56a42f267a53d22bcda1bdc9/bidict-0.23.1.tar.gz"
-    sha256 "03069d763bc387bbd20e7d49914e75fc4132a41937fa3405417e1a5a2d006d71"
+    url "https://files.pythonhosted.org/packages/a8/f2/8d2dd8276ca05e1f5157b6a0d34efb2f585f47a0fbed61e8aad04b221f0b/bidict-0.24.1.tar.gz"
+    sha256 "4dca6c17f0b01700e9f24359daa5ebabf7be022d99f4cb2a257b6af2a5076c88"
   end
 
   resource "blinker" do
@@ -45,13 +45,13 @@ class Locust < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/76/d4/81420972a676e8ffea40450d8c8c92943e7218a78fe9b64359836cc9876b/click-8.4.2.tar.gz"
-    sha256 "9a6cea6e60b17ebe0a44c5cc636d94f09bd66142c1cd7d8b4cd731c4917a15f6"
+    url "https://files.pythonhosted.org/packages/c7/0e/7fa0ef50764b67090eca4114772a2abf8b6148198475e54c660b97caeee6/click-8.5.0.tar.gz"
+    sha256 "ba0d2089de75ea0310e2dde03160e6ca10009947fb95a182f9b54021bb272e34"
   end
 
   resource "configargparse" do
-    url "https://files.pythonhosted.org/packages/3f/0b/30328302903c55218ffc5199646d0e9d28348ff26c02ba77b2ffc58d294a/configargparse-1.7.5.tar.gz"
-    sha256 "e3f9a7bb6be34d66b2e3c4a2f58e3045f8dfae47b0dc039f87bcfaa0f193fb0f"
+    url "https://files.pythonhosted.org/packages/9b/b4/7065677004d4ec8728da15a70580f431f1a4a079e0e8e8b7aa4ffee4e972/configargparse-1.7.7.tar.gz"
+    sha256 "607bea276a219912158afa1e5a716c3f8f88d542f9997dfd43bbd0b492a9f5a6"
   end
 
   resource "flask" do
@@ -115,8 +115,8 @@ class Locust < Formula
   end
 
   resource "msgpack" do
-    url "https://files.pythonhosted.org/packages/31/f9/c0a1c127f9049db9155afc316952ea571720dd01833ff5e4d7e8e6352dbb/msgpack-1.2.1.tar.gz"
-    sha256 "04c721c2c7448767e9e3f2520a475663d8ee0f09c31890f6d2bd70fd636a9647"
+    url "https://files.pythonhosted.org/packages/6d/44/ea2100ec54d30c46ee9dba10a3bfb79b655e96c6df237238a3234c75869b/msgpack-1.2.2.tar.gz"
+    sha256 "9eb0b0e602064527a045ea28c4f174ed69383587e29cebe28947e3b84106eb2a"
   end
 
   resource "packaging" do
@@ -145,8 +145,8 @@ class Locust < Formula
   end
 
   resource "python-engineio" do
-    url "https://files.pythonhosted.org/packages/df/d8/65cc479ab697a2e7fdee83a9bd8a06b61ec68bf763a58a302cf161bf38bb/python_engineio-4.13.5.tar.gz"
-    sha256 "b5764d62243e3ffbc4c76dda3d7897c329dc52294c80c27105f9faa054e76897"
+    url "https://files.pythonhosted.org/packages/fc/65/f8bae11b228647e2e2f45b63dec7448efaddb7cb51f529de1fdba69e63b5/python_engineio-4.14.0.tar.gz"
+    sha256 "eaa1e386baf9c2c7959eef7f9d9165c5ea910c5b392f5316e78d29ed073cb43d"
   end
 
   resource "python-socketio" do
@@ -175,8 +175,8 @@ class Locust < Formula
   end
 
   resource "websocket-client" do
-    url "https://files.pythonhosted.org/packages/2c/41/aa4bf9664e4cda14c3b39865b12251e8e7d239f4cd0e3cc1b6c2ccde25c1/websocket_client-1.9.0.tar.gz"
-    sha256 "9e813624b6eb619999a97dc7958469217c3176312b3a16a4bd1bc7e08a46ec98"
+    url "https://files.pythonhosted.org/packages/d8/cb/a5abcc2891249f393827c650c6296660ce40374ac22d99ab9aea41f9d2a2/websocket_client-1.9.2.tar.gz"
+    sha256 "0fcb57545848be86992e128218fd96dd87a6769ffdb1a968dff79632b85604d0"
   end
 
   resource "werkzeug" do
@@ -199,6 +199,8 @@ class Locust < Formula
     sha256 "b40ef9b4873afb5d0dec02b8d2dfde1cf18c72337b60c99cb735961e0bac05c0"
   end
 
+  deny_network_access! :test
+
   def install
     # skip frontend build
     ENV["SKIP_PRE_BUILD"] = "true"
@@ -208,18 +210,21 @@ class Locust < Formula
 
   test do
     (testpath/"locustfile.py").write <<~PYTHON
-      from locust import HttpUser, task
+      from pathlib import Path
+      from locust import User, constant, task
 
-      class HelloWorldUser(HttpUser):
+      class HelloWorldUser(User):
+          wait_time = constant(0.1)
+
           @task
           def hello_world(self):
-              self.client.get("/api/formula/gh.json")
+              Path("result.txt").write_text("Hello from Locust!")
     PYTHON
 
     ENV["LOCUST_LOCUSTFILE"] = testpath/"locustfile.py"
-    ENV["LOCUST_HOST"] = "https://formulae.brew.sh"
     ENV["LOCUST_USERS"] = "2"
 
     system bin/"locust", "--headless", "--run-time", "3s"
+    assert_equal "Hello from Locust!", (testpath/"result.txt").read
   end
 end

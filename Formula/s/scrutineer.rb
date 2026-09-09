@@ -1,18 +1,17 @@
 class Scrutineer < Formula
   desc "Security through scrutiny"
   homepage "https://github.com/alpha-omega-security/scrutineer"
-  url "https://ghfast.top/https://github.com/alpha-omega-security/scrutineer/archive/refs/tags/v2026.08.25.1.tar.gz"
-  sha256 "faefec2195d1edaace0b2f81769ace6ba68444472d06c6d2d796e56ec23cdadc"
+  url "https://ghfast.top/https://github.com/alpha-omega-security/scrutineer/archive/refs/tags/v2026.09.08.1.tar.gz"
+  sha256 "d6169140d26d2c1a08fd816bb3d911c14457616bbe1cf06ec8ade3a3a21cd157"
   license "MIT"
   head "https://github.com/alpha-omega-security/scrutineer.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e43ffb2f552d1f1d7e69d4029d3ca2113fc0adf68e7af55bf8cdfd7b44daab3d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e43ffb2f552d1f1d7e69d4029d3ca2113fc0adf68e7af55bf8cdfd7b44daab3d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e43ffb2f552d1f1d7e69d4029d3ca2113fc0adf68e7af55bf8cdfd7b44daab3d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5b6e944d359de9aa09f113ed97423ec84d593ed2dccea21daac09b54178fd774"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "597edb685ebed6061836fa3a619fc144974b065db02fd48d9f14a2472f187729"
-    sha256 cellar: :any,                 x86_64_linux:  "fa5197122f8735771c27344b60885dad26714907e0ac6c3e840e87ee3f564f66"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f4ed123e93b3c619679917c5608b20064c70b550f9b95b3c1359f1d602ddd772"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f4ed123e93b3c619679917c5608b20064c70b550f9b95b3c1359f1d602ddd772"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f4ed123e93b3c619679917c5608b20064c70b550f9b95b3c1359f1d602ddd772"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b9e486df21dd05f941fa5845f7b98bd7293434d92cd74aff5b37a34dd7e512bb"
+    sha256 cellar: :any,                 x86_64_linux:  "0da55a99140b9f1a3d73070619c0f919fe59e1c42973959ec8b6d494985be7e4"
   end
 
   depends_on "go" => :build

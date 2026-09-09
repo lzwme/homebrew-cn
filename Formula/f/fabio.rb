@@ -1,18 +1,17 @@
 class Fabio < Formula
   desc "Zero-conf load balancing HTTP(S) router"
   homepage "https://fabiolb.net"
-  url "https://ghfast.top/https://github.com/fabiolb/fabio/archive/refs/tags/v1.7.3.tar.gz"
-  sha256 "dd329eb7ef6dfca110bcc0f0510f5a6ce6286ae5f9217fc6250db4c81875eae2"
+  url "https://ghfast.top/https://github.com/fabiolb/fabio/archive/refs/tags/v1.8.0.tar.gz"
+  sha256 "2de8fc98a9b67f6a6832e25dfc739d0f6b83e7d5e5cd47464e35d431c59c5f66"
   license "MIT"
   head "https://github.com/fabiolb/fabio.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7fd8730b0fcc306818ef43c1bea53210008ecd30a686ba66fbd34cf174f71d81"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bafeceffe079baa1dd812eda4536f06874c526189b03f2f6f672420227aef847"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9371f7f607fd7fafdccd9bae173e512d168abcdc3d67119641e672640867da45"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4b596bffcfd4cd2e59f845a937d735618c1c96c8dd5375d15410195b0f81233d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3ac5dd704ebe8773269ba1aa640f5c2d9ce8ad9406c4d414a111b605a7a7eac7"
-    sha256 cellar: :any,                 x86_64_linux:  "bf9732ebc51ade4f6994db9e2d72c1de04aee150588453df433c29e6132fcd88"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "305f60df381058cb7b8290a6568a5f626e6c6859a183c0246c1f2b69c8a6ac11"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6c7c202047c451df468c9fae9232447d54e15ed786cd5ab286b4456b4952b712"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e375db48b86144d5beb802cc508de623336fdeb9a3241546c5dc537b5d9fc1e8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b315d2d497dd093ca98b5c23ca7645f766bc61e3441e9fe3fa859800429e8ce2"
+    sha256 cellar: :any,                 x86_64_linux:  "6e6e50f2e26a61136eee38547f4be6b668fa9aee6a1af890b7a083a4cccdddda"
   end
 
   depends_on "go" => :build

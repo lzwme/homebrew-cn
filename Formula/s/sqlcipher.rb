@@ -1,18 +1,17 @@
 class Sqlcipher < Formula
   desc "SQLite extension providing 256-bit AES encryption"
   homepage "https://www.zetetic.net/sqlcipher/"
-  url "https://ghfast.top/https://github.com/sqlcipher/sqlcipher/archive/refs/tags/v4.18.0.tar.gz"
-  sha256 "1df02d1b346fa27feaf2da2cb2c0d8209e788248e461ec288718aa5d3e9643e5"
+  url "https://ghfast.top/https://github.com/sqlcipher/sqlcipher/archive/refs/tags/v4.19.0.tar.gz"
+  sha256 "7075f96cbabe45b4ecfc2e6b1745a625f856f695b0827a5506ce9ed85b906aa0"
   license all_of: ["BSD-3-Clause", "blessing"]
   head "https://github.com/sqlcipher/sqlcipher.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "d2d1915e6c863d4275ab6e652ff92525d680d809fa4bc23ddc8cace90e1e8966"
-    sha256 cellar: :any, arm64_sequoia: "6dd403474a83b92f681e8846302b39a37565c2c3aef7ea8c8d482c1a568d7c2c"
-    sha256 cellar: :any, arm64_sonoma:  "8c60b8bc8026f544414618a277d729a2520de2252b72c5cffd3479aadf312334"
-    sha256 cellar: :any, sonoma:        "1acbafbf90531e442484924e9f1b617e36e5efb01424d219814299ba0962c6f6"
-    sha256 cellar: :any, arm64_linux:   "e419e1ffe04932fea5ece81820804df28c8d54fd179c00c4b321b8d482587ea5"
-    sha256 cellar: :any, x86_64_linux:  "119735044cb333401779954331c75c791636d10b4e8c7fcce19f436075f7b5be"
+    sha256 cellar: :any, arm64_tahoe:   "d4578b999a41a4d00daaef8521f240952cfe138984fe60665c419fb503f60a57"
+    sha256 cellar: :any, arm64_sequoia: "6510b5a957c96a98c6cc2be5af7a3494486218b4c5459eb6170cea594b00a88b"
+    sha256 cellar: :any, arm64_sonoma:  "56acbcd46c01d6333340ea15134c3208952a5e841b8080b81582a1dc99103b65"
+    sha256 cellar: :any, arm64_linux:   "c2d90eb34cce463f412bd52eb10a8a405ffdef54629b0012eeb7a11ca991bdba"
+    sha256 cellar: :any, x86_64_linux:  "afae4b76c9aa93b1064fce695bcfc5b1777bbeeed5a75057455d2addc688aacf"
   end
 
   depends_on "openssl@4"

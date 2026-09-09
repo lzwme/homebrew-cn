@@ -1,6 +1,6 @@
 cask "vcam" do
-  version "5.0.7"
-  sha256 "1e67b31e25a35a3446dbdefb9765d779076063f9f4ae4b918a6cb2aaa5d5e155"
+  version "5.1.0"
+  sha256 "ca74b7155a1efbb6656c5051095e91a94e4fe4235d934402e65c8e2875676524"
 
   url "https://installers.vcam.ai/VCam_#{version}.pkg"
   name "VCam"
@@ -44,6 +44,7 @@ cask "vcam" do
   zap trash: [
     "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/ai.vcam.desktop.sfl*",
     "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.splitmedialabs.camerahelper.sfl*",
+    "~/Library/Application Support/VCam",
     "~/Library/Application Support/VCam.ai",
     "~/Library/Preferences/ai.vcam.desktop.plist",
     "~/Library/Saved Application State/ai.vcam.desktop.savedState",

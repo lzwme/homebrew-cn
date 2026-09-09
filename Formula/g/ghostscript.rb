@@ -1,8 +1,8 @@
 class Ghostscript < Formula
   desc "Interpreter for PostScript and PDF"
   homepage "https://www.ghostscript.com/"
-  url "https://ghfast.top/https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10071/ghostpdl-10.07.1.tar.xz"
-  sha256 "56f6a82907c3a73bba95de1319e029adf16477e34df2dea180d390e71e7c4053"
+  url "https://ghfast.top/https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10080/ghostpdl-10.08.0.tar.xz"
+  sha256 "94943e3c4adb7115d132b3c28b913672f2e62e6a9d802f7e754e716b1634174a"
   license "AGPL-3.0-or-later"
   compatibility_version 1
 
@@ -20,12 +20,11 @@ class Ghostscript < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    sha256 arm64_tahoe:   "6a3f21338c5e00b6d99930d96bdd12c9884147d033ae03f0ba3f3ae9d3f5ed06"
-    sha256 arm64_sequoia: "9011189c67f9727d4ada8f29201d320d0b0fb478dbc56449a1cbf4d44fa1aa2c"
-    sha256 arm64_sonoma:  "bbfa666526be13321a6ad2dfb557661b318c085ac12df041f10501486179406e"
-    sha256 sonoma:        "44e942ac04a6dd9f856f989483c86b372e8b86aac831acba7fc8b754292bc3e3"
-    sha256 arm64_linux:   "7c27cf6a1db4ccbaf969f57d15af41a18b5547424b1c9e3683ea320a0d69c241"
-    sha256 x86_64_linux:  "82acdc247c1252a412cb239f5de814e6bc4b8f6cfff4050b64716b0244d55bdb"
+    sha256 arm64_tahoe:   "9fdf9326aaf65459113953809f9abbffbd48e99158ba7a3505895bd61df89e46"
+    sha256 arm64_sequoia: "e2ef1284b4e8818c789f968ffa2193b9d4f51c0879ca1d2a93be5239efc2bc95"
+    sha256 arm64_sonoma:  "be72b022398cf813a67a667dd0b5537d78b178808002af8f653365d8594d29f1"
+    sha256 arm64_linux:   "3e85f7ce71f33514c033e2018f7414a0cec27095c6fc65de7786814e758050a4"
+    sha256 x86_64_linux:  "94327e6306a4691f6967628aaa58c160a4a78f46ae793f05316e0a7a13a49f2b"
   end
 
   head do

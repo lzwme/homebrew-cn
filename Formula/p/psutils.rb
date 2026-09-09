@@ -3,14 +3,13 @@ class Psutils < Formula
 
   desc "Utilities for manipulating PostScript documents"
   homepage "https://github.com/rrthomas/psutils"
-  url "https://files.pythonhosted.org/packages/d3/d9/033d800f92c3d89aa93b5ebf35991599d91005fc2e9ed69b22b149d52432/psutils-3.3.16.tar.gz"
-  sha256 "d259da9bc95395fe9761b289333e83866ecbf2d43ee844e74a14a3f74ff2808b"
+  url "https://files.pythonhosted.org/packages/a0/6b/735ab226ab8e2ee6b99182312c7346a2e4bd3e825cfdf127f22ce75e853f/psutils-3.3.17.tar.gz"
+  sha256 "3ff76cc9f9fb535ec553d1591de56d6dbaa0d9f4df86778f6a49731ebd764cdf"
   license "GPL-3.0-or-later"
-  revision 2
   compatibility_version 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "7eb55116ab314fbfc73c84accd7876eeab4e21154f8da49789030a8cd0961e7f"
+    sha256 cellar: :any_skip_relocation, all: "d2866ff2d056dfa4db0ee2f0546f10357651552c18f5e8e10478e632247180bc"
   end
 
   depends_on "libpaper"
@@ -22,8 +21,8 @@ class Psutils < Formula
   end
 
   resource "pypdf" do
-    url "https://files.pythonhosted.org/packages/44/66/54212e75406afd9f3e933d0dda23072f6aecc55c5a273077dc2e0b028b23/pypdf-6.16.2.tar.gz"
-    sha256 "595647f6191de6f402cfde1d0c455d6cbccbd509aac32b34783009c032de5d6e"
+    url "https://files.pythonhosted.org/packages/5d/dc/34857a5e31cf708c163929f61a9ba4bd357a8850e49fc4e846ced527b51f/pypdf-6.17.0.tar.gz"
+    sha256 "097ad0d829778ec5b615aeaa5c6da4b6cac4992f8fd80b56f98a1a8c006573bb"
   end
 
   def install

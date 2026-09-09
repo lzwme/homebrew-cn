@@ -1,8 +1,8 @@
 class RattlerBuild < Formula
   desc "Universal conda package builder"
   homepage "https://rattler.build"
-  url "https://ghfast.top/https://github.com/prefix-dev/rattler-build/archive/refs/tags/v0.75.0.tar.gz"
-  sha256 "b4dd0ad6aa2439754800a0a4f4085ce8888c5cbf66fe355dfd679db3501e3a6e"
+  url "https://ghfast.top/https://github.com/prefix-dev/rattler-build/archive/refs/tags/v0.76.0.tar.gz"
+  sha256 "61f6b4971c7c14667730af6c860baebb878ebba61301d0968473edd4525a2147"
   license "BSD-3-Clause"
   head "https://github.com/prefix-dev/rattler-build.git", branch: "main"
 
@@ -15,12 +15,11 @@ class RattlerBuild < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3b260ea65dd6c3ac078e9bb51c1f8498c42ea57a56cd8f9f6697a9cb569de71d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0c3cfc04ed5e328e05ef27cfdf0611c6ddfd8028697787b0a272a9aedec4ba11"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c743fce5a1c73b467a35d4ad34e568f331e98d1b9d54d1d4a63f676829f23822"
-    sha256 cellar: :any_skip_relocation, sonoma:        "41fa346cbaa4563ed2f47fad7aab541b8343451bb2e91bb279c1dea6e9b6b3a8"
-    sha256 cellar: :any,                 arm64_linux:   "f19a3e6ac51183418a20cce7f18116aa000199cc0ce9ee5be5b00a885c49a4db"
-    sha256 cellar: :any,                 x86_64_linux:  "606bce72225db33ef1cc19f24cd28d66187c05d872e23ad6611a1b3c14f18381"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fef0cef1e2527f74090ed4604b027741689b239ee4f6c8676084edd670ac6f2f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "761703862a82f88505623c814d50ab30eb381f3dc214b73e63ba158edc110970"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c3a0aa3bc60504a345993f5d6969a7d428d5ef1bd302bf83402d9d2856205762"
+    sha256 cellar: :any,                 arm64_linux:   "73d59ec1ccbca030e156755c67d3504f3a573a3a212a2526090919e645a7a7bb"
+    sha256 cellar: :any,                 x86_64_linux:  "640c9824957d373a34a573f0a6f74c4981ceefb8b52ca57d27ee702ab05305da"
   end
 
   depends_on "pkgconf" => :build

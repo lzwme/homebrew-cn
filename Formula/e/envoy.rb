@@ -2,11 +2,12 @@ class Envoy < Formula
   desc "Cloud-native high-performance edge/middle/service proxy"
   homepage "https://www.envoyproxy.io/index.html"
   license "Apache-2.0"
-  head "https://github.com/envoyproxy/envoy.git", branch: "main"
 
   stable do
     url "https://ghfast.top/https://github.com/envoyproxy/envoy/archive/refs/tags/v1.39.1.tar.gz"
     sha256 "3fca3330b3c9b632d0039f4da1ece3e177fc12348907ebaa8be7b489a9f9287f"
+
+    depends_on "llvm@18" => :build
 
     # Allow using host-installed toolchains
     patch do
@@ -29,12 +30,18 @@ class Envoy < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "a9473b7a8c6ee091feb9dc7453d7b1b788db239ec7fdfd3542862053a16bf96e"
   end
 
+  head do
+    url "https://github.com/envoyproxy/envoy.git", branch: "main"
+
+    depends_on "lld@22" => :build
+    depends_on "llvm@22" => :build
+  end
+
   depends_on "bazel@8" => :build
   depends_on "cmake" => :build
   # TODO: unpin go@1.26 when envoy updates to rules_go >= 0.62.0
   # ref: https://github.com/bazel-contrib/rules_go/pull/4641
   depends_on "go@1.26" => :build
-  depends_on "llvm@18" => :build
   depends_on "ninja" => :build
   depends_on "pkgconf" => :build
 
@@ -56,9 +63,12 @@ class Envoy < Formula
 
     # Build with brew CMake, Go, Ninja and Python rather than Bazel downloading them
     # https://github.com/envoyproxy/envoy/blob/main/bazel/README.md#building-with-host-provided-toolchains
-    inreplace "WORKSPACE" do |s|
-      s.gsub! "envoy_dependency_imports()", "envoy_dependency_imports(use_host_tools = True)"
-      s.gsub! "envoy_dependencies_extra()", "envoy_dependencies_extra(use_host_tools = True)"
+    # TODO: look into support via bzlmod
+    if build.stable?
+      inreplace "WORKSPACE" do |s|
+        s.gsub! "envoy_dependency_imports()", "envoy_dependency_imports(use_host_tools = True)"
+        s.gsub! "envoy_dependencies_extra()", "envoy_dependencies_extra(use_host_tools = True)"
+      end
     end
 
     # Stage a local toolchain root to match official LLVM layout needed by upstream
@@ -67,7 +77,7 @@ class Envoy < Formula
     llvm = deps.map(&:to_formula).find { |f| f.name.match?(/^llvm(@\d+(\.\d+)*)?$/) }
     llvm_path.install_symlink(llvm.opt_prefix.children.select(&:directory?) - [llvm.opt_bin])
     (llvm_path/"bin").install_symlink llvm.opt_bin.children
-    # TODO: (llvm_path/"bin").install_symlink formula_opt_bin(llvm.name.sub(/^llvm/, "lld")).children
+    (llvm_path/"bin").install_symlink formula_opt_bin(llvm.name.sub(/^llvm/, "lld")).children if build.head?
     (llvm_path/"bin").install_symlink which("libtool") if OS.mac? # rules_foreign_cc expects Apple libtool for AR
 
     # Bazel cannot run in superenv. Also drop binutils as rules_foreign_cc CMake try-compile
@@ -76,8 +86,6 @@ class Envoy < Formula
 
     bazel_args = %W[--output_user_root=#{buildpath}/user_root]
     args = %W[
-      --noenable_bzlmod
-      --@envoy//bazel/foreign_cc:parallel_builds
       --compilation_mode=opt
       --curses=no
       --noincompatible_strict_action_env
@@ -85,25 +93,25 @@ class Envoy < Formula
       --action_env=CMAKE_POLICY_VERSION_MINIMUM=3.5
       --action_env=PATH=#{env_path}
       --host_action_env=PATH=#{env_path}
-      --define=wasm=wamr
       --repository_cache=#{HOMEBREW_CACHE}/envoy-repository-cache
       --jobs=#{ENV.make_jobs}
     ]
-
-    args += if OS.linux?
-      [
-        "--config=clang-local",
-        "--repo_env=BAZEL_DO_NOT_DETECT_CPP_TOOLCHAIN=1",
-        "--strategy=BootstrapGNUMake=standalone",
-        "--strategy=BootstrapPkgConfig=standalone",
-        # lld needs help finding libc++.a and libc++abi.a in a non-standard path
-        "--linkopt=-L#{llvm_path}/lib",
-        "--host_linkopt=-L#{llvm_path}/lib",
-        # TODO: Remove in next release as handled by .bazelrc
-        "--copt=-Wno-nullability-completeness",
+    if build.stable?
+      args += %w[
+        --noenable_bzlmod
+        --@envoy//bazel/foreign_cc:parallel_builds
+        --define=wasm=wamr
+        --copt=-Wno-nullability-completeness
       ]
-    else
-      ["--config=macos"]
+    end
+    if OS.linux?
+      # lld needs help finding libc++.a and libc++abi.a in a non-standard path
+      args += %W[
+        --linkopt=-L#{llvm_path}/lib
+        --host_linkopt=-L#{llvm_path}/lib
+        --config=clang-local
+        --repo_env=BAZEL_DO_NOT_DETECT_CPP_TOOLCHAIN=1
+      ]
     end
 
     # TODO: remove when unpinning go@1.26

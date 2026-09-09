@@ -1,18 +1,17 @@
 class Libmaxminddb < Formula
   desc "C library for the MaxMind DB file format"
   homepage "https://maxmind.github.io/libmaxminddb/"
-  url "https://ghfast.top/https://github.com/maxmind/libmaxminddb/releases/download/1.13.3/libmaxminddb-1.13.3.tar.gz"
-  sha256 "a66502ea76eadbe17f2cd6fd708946777253972d2ae8157dee1b23a2fb528171"
+  url "https://ghfast.top/https://github.com/maxmind/libmaxminddb/releases/download/1.14.0/libmaxminddb-1.14.0.tar.gz"
+  sha256 "65ff92382c71ef6634b8c13e278651a2efa68f1de28ef3c31fc32369fa0bb3e3"
   license "Apache-2.0"
   compatibility_version 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "5936b3b75b64cab056955f2bb8c0b756fa60c53804dcd7dbde8abad2abceed84"
-    sha256 cellar: :any,                 arm64_sequoia: "490b3efc56371925d11362dd017550824c13573c4b76edb4fa2848c549d46692"
-    sha256 cellar: :any,                 arm64_sonoma:  "dd18810ef2ff421397f0841540e9a8ed078bee4d99943e45fbed763e39ba6a70"
-    sha256 cellar: :any,                 sonoma:        "7aa6d1a05efe76995a324af5ea06acdc8dc5428f2dbd9fad2d7c098af91c1f5a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9546178cbb2f9b8d6b585c18d109f5fcc8b7bce72431e97654c5da23cbc94b9e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3fbff53ca34d511f0c71bb801ef011da1808855abb303957cf783069bd4e35f7"
+    sha256 cellar: :any, arm64_tahoe:   "e4107282fb32a5ab8f0afd041b728b1a1f745d4eeec839df4ae13705292c5ca2"
+    sha256 cellar: :any, arm64_sequoia: "35c41f989a8b2c002518651170d92cedcc25750fabece9a629eb4b0d2f486b99"
+    sha256 cellar: :any, arm64_sonoma:  "3718ffa35dc8af95c5b40b49f8cb147c4f323cd7dd7505a4d30b5c7ebcee957b"
+    sha256 cellar: :any, arm64_linux:   "2f3a969e51ce95674b1b445b190d75e05b08f125f18ea020146d025ee4c3d29f"
+    sha256 cellar: :any, x86_64_linux:  "c72a6fcee7b1132d4c17b0f530ed0613c302b3981796baf0829841a7366b64c6"
   end
 
   head do
@@ -22,6 +21,10 @@ class Libmaxminddb < Formula
     depends_on "automake" => :build
     depends_on "libtool" => :build
   end
+
+  depends_on "pkgconf" => :build
+
+  deny_network_access!
 
   def install
     system "./bootstrap" if build.head?

@@ -1,17 +1,17 @@
 class Ty < Formula
   desc "Extremely fast Python type checker, written in Rust"
   homepage "https://docs.astral.sh/ty/"
-  url "https://files.pythonhosted.org/packages/d8/c7/2ba0861384c5b5097ac354383abb98188112cb330208c21d5197e98a29e5/ty-0.0.78.tar.gz"
-  sha256 "770b45854f85fa11595208f08c0f28df80943164d10a2832d86be6ac29f135b2"
+  url "https://files.pythonhosted.org/packages/b5/d3/4fff47468a976c7a5ded9fe350734ca09b9e8460750327f2245ea3288d5d/ty-0.0.79.tar.gz"
+  sha256 "159a1aca70edebae32be08bfba2e5d543ffd8f9f380af160e0e713e85313b733"
   license "MIT"
   head "https://github.com/astral-sh/ty.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "be549311cfe38bc4a6b455c3e0aa552a503e6d3541e754a7b13df7f152a8c6c2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cc645ee6e0c717b0d1834d76d82071304781cbaf3bb6b92f2c729a53e7f2f4f0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8206b28344acc6964041c18c2946cdd1857738bebd9cc75b41214bbe6ca2841a"
-    sha256 cellar: :any,                 arm64_linux:   "b486137e3b86199896f6812e2ee5f777bfb9e88edf3035b133df7d49319f3d90"
-    sha256 cellar: :any,                 x86_64_linux:  "9c2c1f34356084aea468fc9c88067c703baba1ada571b22760146f36535db1bf"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5bda20c4e00f4b9798a9e1d1dc926ec8a701369c1e10d250800941198663966f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c2d0b0aaee922849720ee706415dd7e6573467fc795ca877d7bd607cdd496487"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "aac98f781ba15cc3eefa616e556983ebb4bc2a911bb811b89c76f229d99f1604"
+    sha256 cellar: :any,                 arm64_linux:   "5717979bc48a9e882aba2118566c144c3d392fd2abd6e3ae3ca722ee7f7f4ec6"
+    sha256 cellar: :any,                 x86_64_linux:  "d043345c7fd5b5ac78500b5441102f26e3ad56f028f1212053bcb01da4835b0e"
   end
 
   depends_on "rust" => :build

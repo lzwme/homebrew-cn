@@ -1,18 +1,17 @@
 class WoodpeckerCli < Formula
   desc "CLI client for the Woodpecker Continuous Integration server"
   homepage "https://woodpecker-ci.org/"
-  url "https://ghfast.top/https://github.com/woodpecker-ci/woodpecker/releases/download/v3.18.0/woodpecker-src.tar.gz"
-  sha256 "a32586b68e3b078b79f62ca7c8175da93d6d65c9f5d6570e05cc414bcf6622d0"
+  url "https://ghfast.top/https://github.com/woodpecker-ci/woodpecker/releases/download/v3.18.1/woodpecker-src.tar.gz"
+  sha256 "21b3566b52d8a9f516ba162e21d2f2bcb0c80f9c0d54dc34ef33187e4102557d"
   license "Apache-2.0"
   head "https://github.com/woodpecker-ci/woodpecker.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "67766ad1d6d7fc814fbc22303c28927d995af8429e70c8ff7cb8f63a1774a424"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "67766ad1d6d7fc814fbc22303c28927d995af8429e70c8ff7cb8f63a1774a424"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "67766ad1d6d7fc814fbc22303c28927d995af8429e70c8ff7cb8f63a1774a424"
-    sha256 cellar: :any_skip_relocation, sonoma:        "481aebca5ac6ac39ade423cec8511f2fc57baba1faf0df2b194be1167c80ab21"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "523ef791000d15eb4acd757742c93999ce8da69fded29116533e53eec11f2820"
-    sha256 cellar: :any,                 x86_64_linux:  "4850bdfe9fba6b79f8109daa1926bf1963041bc2327091a8e8c8763151544170"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "eeeca24e1e54f3cdf361c02cd6892ed8eb1e101379bfd5b6e2cf83b9a93d88f9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "eeeca24e1e54f3cdf361c02cd6892ed8eb1e101379bfd5b6e2cf83b9a93d88f9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "eeeca24e1e54f3cdf361c02cd6892ed8eb1e101379bfd5b6e2cf83b9a93d88f9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ddab9692c51f5a8076378c6723f1ef6dfab9325841ce6c1e3fd7a13e3e0700b5"
+    sha256 cellar: :any,                 x86_64_linux:  "3f02f87a35a5bebcf8b5ad479be589f78cd9299f9437afa411d1521cea97d761"
   end
 
   depends_on "go" => :build

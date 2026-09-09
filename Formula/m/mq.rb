@@ -1,18 +1,17 @@
 class Mq < Formula
   desc "Jq-like command-line tool for markdown processing"
   homepage "https://mqlang.org/"
-  url "https://ghfast.top/https://github.com/harehare/mq/archive/refs/tags/v0.8.4.tar.gz"
-  sha256 "df0033bffa4886f927640d93f0aae7b175bb45b5de43b60cfa69924eb83a32bc"
+  url "https://ghfast.top/https://github.com/harehare/mq/archive/refs/tags/v0.8.5.tar.gz"
+  sha256 "02e83968f7c63e0b9ae1e225dfeef43bf57bdb3932bd3286467827cebfd679ce"
   license "MIT"
   head "https://github.com/harehare/mq.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0f6bb10864d21d8684acc7d463247efffeba328b4cf674604c8d155c4532662d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e26e4d03c78887d543e9f2b55da9677d9995b381b8e414a20112caa8563cb0ee"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "546230ee6e166511d3feebcb7a0bd721163bc5adae268d55c22ce82c92c720ef"
-    sha256 cellar: :any_skip_relocation, sonoma:        "44edb9656a6badb5854a6886d9ce80e447ef96f81bfb5bc7774db1ab34aff45e"
-    sha256 cellar: :any,                 arm64_linux:   "db35d5e0fe138797a373925b7aa8b8559d28d8f333d6ad38612c4ba1c278fcfc"
-    sha256 cellar: :any,                 x86_64_linux:  "2348b6eca33f7176de6116ecf08cd59d0017bb3fa9606fa617d172379ac5c560"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a1c7de589e51d8cf0734f8dc336af082093528d8f41656fdf6dc100cfc5675fa"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "164aa3ad6f9ab373d4fd1059a2df1d86ed42443cc895c6c2b220bf18f1e810bd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "20c31e2c30818d13cbdf0352ab5190b9868f6b6fbbe880d2392fbfb674fde4bf"
+    sha256 cellar: :any,                 arm64_linux:   "d4037f53304a637f95fa438edb887a2a1b8d7003120c2f610a070a9dc1a49902"
+    sha256 cellar: :any,                 x86_64_linux:  "c8612eafc0281f2dd1b2b64edf0ec2549d6328c9ab92724522edefff891be346"
   end
 
   depends_on "rust" => :build

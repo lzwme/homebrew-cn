@@ -3,13 +3,13 @@ class Durdraw < Formula
 
   desc "Versatile ASCII and ANSI Art text editor for drawing in the terminal"
   homepage "https://durdraw.org"
-  url "https://ghfast.top/https://github.com/cmang/durdraw/archive/refs/tags/0.29.0.tar.gz"
-  sha256 "7878cc0ed97d03defe01f24935f0fbe18d11c1cfc5c3b801ee12c9116dddf0c5"
+  url "https://ghfast.top/https://github.com/cmang/durdraw/archive/refs/tags/0.30.0.tar.gz"
+  sha256 "ea91651c6c44cc0bb322d120f32c9f5a7f36536fdbe71274637df3eaf65af57a"
   license "BSD-3-Clause"
   head "https://github.com/cmang/durdraw.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "f0c308ff22b2a8446c4d611bb3566c612762264b9b9ba19ef2bf333d539b159f"
+    sha256 cellar: :any_skip_relocation, all: "6010866852f923ced1f0c00031afba6aaa8eafe6f03125ab129c52993c1070d4"
   end
 
   depends_on "ansilove" => :no_linkage

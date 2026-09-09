@@ -1,8 +1,8 @@
 class Dumpling < Formula
   desc "Creating SQL dump from a MySQL-compatible database"
   homepage "https://github.com/pingcap/tidb"
-  url "https://ghfast.top/https://github.com/pingcap/tidb/archive/refs/tags/v26.3.10.tar.gz"
-  sha256 "948cbadf6de867fd150104e8df9aba225e74075f45b5c0424d0a0d8f48d90a18"
+  url "https://ghfast.top/https://github.com/pingcap/tidb/archive/refs/tags/v26.3.12.tar.gz"
+  sha256 "9c386497a232a8433d0cd05839638abc2494d0a448eb893a64dc1098bec9672f"
   license "Apache-2.0"
   head "https://github.com/pingcap/tidb.git", branch: "master"
 
@@ -12,12 +12,11 @@ class Dumpling < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bcd230567eb8f0cb2d9b0e3f75cf3f19153df6cfe270128011dfc5f893504a55"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f416eb061e8943a0e53d5be1ca97be8c362a844c3ac158e4ca81fa3168e73818"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1a1567c34c86d465a710eade45b58a687703d36160af9705e95fff21e66e85e6"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f51ce320f8f298d75b147bf49281822190a0eac84c4f3078132d8e811ed433a3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e9462bd19878d302a827be5bd55164bed5fb8cddcc1956d735ece8f05ae82b16"
-    sha256 cellar: :any,                 x86_64_linux:  "0b8460f873d54c893405bd1fc1efbc2e6893632d06c47b73e56dfe28b7485b87"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "439883f962d036d53c19a8483a36ede42fe151f569ba42fa4c4bbf2d30f3debf"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3dc632c9a7bb623c6cbe0516024d0418f56c066ab9cb1321ed41a96383a0b7f8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5cd1859fd542e798bffadba9c90ccf6cf71961190b8a07aecdcfe0281a33b0dc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cbb0f9d7afc8110aa41c06bd985656b1b5eee2ab2a31e7e53d86a9e7499e90fa"
+    sha256 cellar: :any,                 x86_64_linux:  "255635c91cbdce110ac199000b2fdca1fb021378f97ed235323089fd74ddd926"
   end
 
   # TODO: unpin go@1.26 when dumpling supports go 1.27

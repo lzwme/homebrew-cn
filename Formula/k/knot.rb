@@ -1,9 +1,10 @@
 class Knot < Formula
   desc "High-performance authoritative-only DNS server"
   homepage "https://www.knot-dns.cz/"
-  url "https://knot-dns.nic.cz/release/knot-3.5.8.tar.xz"
-  sha256 "4197c902feccf32475b254c7ddaa1ac123700e3895f50b80103ffeb8352a2807"
+  url "https://knot-dns.nic.cz/release/knot-3.6.0.tar.xz"
+  sha256 "922894f04a2835131a24c3b3edcbf761273c1b37d3dc4e46d6923ee3856af130"
   license all_of: ["GPL-3.0-or-later", "0BSD", "BSD-3-Clause", "LGPL-2.0-or-later", "MIT"]
+  compatibility_version 1
 
   livecheck do
     url "https://www.knot-dns.cz/download/"
@@ -11,11 +12,11 @@ class Knot < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "bbdcecfc6e0ea4541dcac260c0fdfac676d16b76baae90494fe65213b71d8a56"
-    sha256 arm64_sequoia: "49f7778dd14da241092ddbf68828d6e67380c28a7dfc366d7f20eaabfc3f4901"
-    sha256 arm64_sonoma:  "5b6eede65219171966859e192f4556804fa924e03cd63a3903d4ca50467fdc33"
-    sha256 arm64_linux:   "b81c573044159eba52899ac644f7e95bc6de03b461dbe2f938e34ba0eee1021f"
-    sha256 x86_64_linux:  "e2bac05b85f72da61b65ec57744e8b33e19306839b1d433e7c8a727a0c4f0de5"
+    sha256 arm64_tahoe:   "934edd9ccd1c78167d77ea7e7a77cf8d9d37184c4bb20a121c2f1622e90da4f2"
+    sha256 arm64_sequoia: "4a7c5d66d0f09dcbb2fb4d6f70d8a08e64a850e9beacd4dc3d5a53a611ce289e"
+    sha256 arm64_sonoma:  "ac99730976e7300587bf58f815b49e7266d3abd9d1c208a017083c9af5e88976"
+    sha256 arm64_linux:   "7cbeab3acff3c761059ee2cd12339c1ef779b8bff4c2fdef1543b82f9f50165a"
+    sha256 x86_64_linux:  "3278bfe8e4ec923f261ea819448ffba25085c08e3fe2f0e1e2e2c04fb44de613"
   end
 
   head do
@@ -37,6 +38,8 @@ class Knot < Formula
   depends_on "userspace-rcu"
 
   uses_from_macos "libedit"
+
+  deny_network_access! :test
 
   def install
     system "autoreconf", "--force", "--install", "--verbose" if build.head?
@@ -88,8 +91,12 @@ class Knot < Formula
   end
 
   test do
-    system bin/"kdig", "@94.140.14.140", "www.knot-dns.cz", "+quic"
-    system bin/"khost", "brew.sh"
+    (testpath/"example.zone").write <<~EOS
+      example.test. 3600 IN SOA ns.example.test. hostmaster.example.test. 1 3600 600 86400 3600
+      example.test. 3600 IN NS ns.example.test.
+      ns.example.test. 3600 IN A 127.0.0.1
+    EOS
+    system bin/"kzonecheck", "-o", "example.test.", testpath/"example.zone"
     system sbin/"knotc", "conf-check"
   end
 end

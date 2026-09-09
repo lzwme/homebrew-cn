@@ -1,8 +1,8 @@
 class Garage < Formula
   desc "S3 object store so reliable you can run it outside datacenters"
   homepage "https://garagehq.deuxfleurs.fr/"
-  url "https://git.deuxfleurs.fr/Deuxfleurs/garage/archive/v2.4.0.tar.gz"
-  sha256 "b18ce849d46491c9d8168351ab8479a4ed0b6ce9faaeccad6e9cae0a3c9674a9"
+  url "https://git.deuxfleurs.fr/Deuxfleurs/garage/archive/v2.4.1.tar.gz"
+  sha256 "9149931f0e567a66cd96c33b6349e8f1900279ec6ae57c60bfd29d450104c553"
   license "AGPL-3.0-or-later"
   head "https://git.deuxfleurs.fr/Deuxfleurs/garage.git", branch: "main-v2"
 
@@ -12,11 +12,11 @@ class Garage < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "88b6b02f40451c9d88f85b3e3b821773bdd0ac62ac381cf891e3b5551ba14dc6"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a529ec66a1e2c6f452a1eb560e4c22e6fcf3d6c18ad2d0d8fe406f4b51d1a79d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a709c8e0b76aa56ee64318eb1edf5938f526c5ae1b5404bd35f8874c8616049d"
-    sha256 cellar: :any,                 arm64_linux:   "90135325afcd9476395e810c8596040bdce4e3c546c849dbe72782155bdb4570"
-    sha256 cellar: :any,                 x86_64_linux:  "cb816a9999dd1844d68287e423aab27c50243109e51480142927265c91229a48"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "12bf8bdb0895706e0bef7f435d28b744e88d7aa443c21d2da81a06e9008fcfbc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "97e03a93d459bd674adf22edf7e0f04d32d794e9a1b78a8b3b98d23d4037000b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "32c84f14cecc9b51640a91d598d0514b560e4f3349588fea8b690c78cced810c"
+    sha256 cellar: :any,                 arm64_linux:   "612adee4790abf1af4678890164b2a66f7416ec33579f0ecdc5ceb36d6f69a32"
+    sha256 cellar: :any,                 x86_64_linux:  "7d18525ba94590a8660a67d864e1b2520cdf6ac48adf8138c6e9331985744ffc"
   end
 
   depends_on "rust" => :build

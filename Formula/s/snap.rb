@@ -1,8 +1,8 @@
 class Snap < Formula
   desc "Tool to work with .snap files"
   homepage "https://snapcraft.io/"
-  url "https://ghfast.top/https://github.com/canonical/snapd/releases/download/2.77/snapd_2.77.vendor.tar.xz"
-  sha256 "e74fc1a761f8ac1b80f2df0e634f14f729ee5cee17b7724619d6b1c5be52d264"
+  url "https://ghfast.top/https://github.com/canonical/snapd/releases/download/2.77.1/snapd_2.77.1.vendor.tar.xz"
+  sha256 "10c824694cd9c9954ba7a826d245458d8fa1006d49937fe480dc9f36b57b1efc"
   license "GPL-3.0-only"
 
   livecheck do
@@ -11,11 +11,11 @@ class Snap < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "71fac7969d5748b5d9698be9c0b27b26cbde53a44796ace7d6cde72ce244cf6d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "71fac7969d5748b5d9698be9c0b27b26cbde53a44796ace7d6cde72ce244cf6d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "71fac7969d5748b5d9698be9c0b27b26cbde53a44796ace7d6cde72ce244cf6d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4ac3f7d654c6fac685f88445a8b41a1c014bb17c7517ff4f75f9002aca06036b"
-    sha256 cellar: :any,                 x86_64_linux:  "4f299e48a5ff0599dd8dcb7e1ad77d1363961f252dddf1f509c52d909a0ee562"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6e685cad43397b00acdcd01bace349c88b0b898d88fd0c47697c2f279c64620d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6e685cad43397b00acdcd01bace349c88b0b898d88fd0c47697c2f279c64620d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6e685cad43397b00acdcd01bace349c88b0b898d88fd0c47697c2f279c64620d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d8b67e525a563e09262d4e7d83b7acff6672779dc8203314cff8bb0350fe7166"
+    sha256 cellar: :any,                 x86_64_linux:  "ad30adf44f0d7201c9462b22869bd670403bc935120e365bd8e77492b722a725"
   end
 
   depends_on "go" => :build

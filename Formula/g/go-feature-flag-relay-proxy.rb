@@ -1,18 +1,17 @@
 class GoFeatureFlagRelayProxy < Formula
   desc "Stand alone server to run GO Feature Flag"
   homepage "https://gofeatureflag.org"
-  url "https://ghfast.top/https://github.com/thomaspoignant/go-feature-flag/archive/refs/tags/v1.55.2.tar.gz"
-  sha256 "bf5448a6110d21b673456450abfbda2f08720d016c0f0632be97200c3d0d12ab"
+  url "https://ghfast.top/https://github.com/thomaspoignant/go-feature-flag/archive/refs/tags/v1.55.3.tar.gz"
+  sha256 "c043dbd781a3dbcdbf1ad71a0784d392b811031344f4de40026f99daec1f6852"
   license "MIT"
   head "https://github.com/thomaspoignant/go-feature-flag.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3fa93b987615ed7afa460b48c229fb3eef57a4107dd43272c14fd88c7cefb373"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "169f63f2b67670f94facabe230be3536381253d96c16d98ab40708907498bbdb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1534d919536099e0bccd185598f5528f140c8d8199d11ea5fe3e913bdd652540"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d23c772fd2faff4878057680f93d0c08b34cdd8f62adbf599d3efc01933ad621"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d45b709a4bf075a97c0c3293bd8fb8e54422cf436cd075c1815f7808f1dd88fc"
-    sha256 cellar: :any,                 x86_64_linux:  "8494a9e01e073146ab0d08a74ef2aed0fcd4c9c8389678df23779c348c51810c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "29516093d21838e17e038d28cd2144a0f9479ab74ebda2b33f8041e6ff2ea60a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e06c560ef3f5c0f8676bfc7e6292fa99135c03625bd431b32ad966369e25813b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a8b7c7cd4f874156a9b22d47c18c7da0fd2fe003ede23f03352c870c01fce91c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0557accbab025d1fead09685ca58ebb010b8e1388b1cffb5731e0309eba694bd"
+    sha256 cellar: :any,                 x86_64_linux:  "d8c8f7ebb75d830d84661ac4a7e76bff45d2c0aab1586899293e133e6db53498"
   end
 
   depends_on "go" => :build

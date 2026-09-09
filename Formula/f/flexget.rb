@@ -3,16 +3,16 @@ class Flexget < Formula
 
   desc "Multipurpose automation tool for content"
   homepage "https://www.flexget.com"
-  url "https://files.pythonhosted.org/packages/23/34/a1376b3a1a61c4158c1b9a9f934b643c9e8cf414f1b08449d0e77bda3612/flexget-3.20.10.tar.gz"
-  sha256 "74bb9ed74d380efabc361f44a65b9be2e2a4f0911b34cb8f011edac37d5023e7"
+  url "https://files.pythonhosted.org/packages/98/1f/8e7717149bad916721725aec9b0a5105baeffb34eede4cd9dc2c65179dac/flexget-3.20.11.tar.gz"
+  sha256 "49df7b009e50644320f8b93057217f2e1a3e16ff29b96ce248b0d7d9bfe727d6"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "179b9df13695956f02011c261fcf703af1f86b93cbafd3508e6afc11292f8d53"
-    sha256 cellar: :any, arm64_sequoia: "c8c99facadd55c27369739e075b3a18452defd40bf70af2d1d226a3cc1655b9b"
-    sha256 cellar: :any, arm64_sonoma:  "a0f67ab73bd8da87d18c7ac3b76047a72eacedda0bb5cd35a5137c5ba8693b2b"
-    sha256 cellar: :any, arm64_linux:   "999828ef577bb186a224b1c0bf949f84fe0a3c232e904bde3e79bb1ba1a72b9a"
-    sha256 cellar: :any, x86_64_linux:  "bf6369fac3f1f6c2ecde6f4c4ca479f7ad818bc21146528de4af94512c6e7207"
+    sha256 cellar: :any, arm64_tahoe:   "29e0ba4bb3c7f3c9819c90ef83949d99ba9f2027bf22da3a1dcfa32e95795999"
+    sha256 cellar: :any, arm64_sequoia: "1d8cae2b6ebc189d82916305d3b0a3dcbb37211cb84d13294f12e991ab44fc79"
+    sha256 cellar: :any, arm64_sonoma:  "5afefeed490c43f2866c1e0d446a8b567579a9781670d8e2368f1918e4038f58"
+    sha256 cellar: :any, arm64_linux:   "ce48f705ceb904b5811936634529cf8ec5b83e87594912d33fb9209ad9e5988c"
+    sha256 cellar: :any, x86_64_linux:  "b33d9862f3531a3e55c12a0c2da1af23adc283d259650b75977f6723114db6fd"
   end
 
   depends_on "rust" => :build
@@ -87,8 +87,8 @@ class Flexget < Formula
   end
 
   resource "curl-cffi" do
-    url "https://files.pythonhosted.org/packages/d1/f6/347067dfacb19e44a4166d7bdb183e3a2629680beceb5e52f7cb2cc1a3b4/curl_cffi-0.16.2.tar.gz"
-    sha256 "2986a86cdcf514ab73632c2de62a01db3cc97f7ecf17798a1be16180f4474198"
+    url "https://files.pythonhosted.org/packages/82/e1/730125c43e3e331d98e17af3cb310ba526b3f1101b7635ca23d976ebfcf5/curl_cffi-0.16.3.tar.gz"
+    sha256 "d15d0c2a35f2d75bec430c28946c2a833f421c85773bdb0795182cc5c515665b"
   end
 
   resource "feedparser" do

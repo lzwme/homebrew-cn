@@ -6,6 +6,7 @@ class KnotResolver < Formula
   url "https://knot-resolver.nic.cz/release/knot-resolver-6.4.2.tar.xz"
   sha256 "854ad23367bab66392f7d74f142f2219e3090ae81126b635430fce7b1916f1a3"
   license all_of: ["CC0-1.0", "GPL-3.0-or-later", "LGPL-2.1-or-later", "MIT"]
+  revision 1
   head "https://gitlab.labs.nic.cz/knot/knot-resolver.git", branch: "master"
 
   livecheck do
@@ -14,12 +15,11 @@ class KnotResolver < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "eb4258758c39ab9a9dd80b3de456d40fcaab69ab0c35efdb3797765456500f01"
-    sha256 arm64_sequoia: "2bb9f8af9fba2d6edf96b9eb47d34939605c55267ca4d8cb88262e0e616ff714"
-    sha256 arm64_sonoma:  "edf07f516753a0ceec3cd7de8e0ac9485dd478bad75acbeaf44d898952c7b9d8"
-    sha256 sonoma:        "396e3fd42c9ee46c5a7e879940fc0848bd44b591195b659a189243d73fa333a6"
-    sha256 arm64_linux:   "93258de643ad10094590545393533bec986d1b0f10a9b6a0ca1b5b31651c8b6a"
-    sha256 x86_64_linux:  "db6e2a1b36f0cb6db722883bfc258f679f5f8e34c4c8bf1f1e1e011cf4f0880e"
+    sha256 arm64_tahoe:   "b7a7cdb1b43766baa89f24ce9dc60776a9f323fec5c12e5b508f5bfb15790f01"
+    sha256 arm64_sequoia: "adbbc0e9730df937be5f36ab0a3408a6947e759487e96d6e0440ca72a1547f2b"
+    sha256 arm64_sonoma:  "8ab4eac02c65aba69893834f72c76bd9cefa62abe4c4eb138d8e7dcc4368e285"
+    sha256 arm64_linux:   "7b010b273f37049e385d7f9414dae44753d24b05b4a6db7e30629def07f1f2c5"
+    sha256 x86_64_linux:  "c31cff060e1c33de5dcddc1b48983fca509b15067fe03dfb5415ac0e0328f94b"
   end
 
   depends_on "meson" => :build
@@ -126,6 +126,8 @@ class KnotResolver < Formula
     url "https://files.pythonhosted.org/packages/31/33/ebe9e3d1f86c7a0b51094c0a146392045ca1631d2664889539dec8088a33/yarl-1.24.5.tar.gz"
     sha256 "e81b83143bee16329c23db3c1b2d82b29892fcbcb849186d2f6e98a5abe9a57f"
   end
+
+  deny_network_access! :test
 
   def install
     args = %W[

@@ -3,16 +3,16 @@ class Llm < Formula
 
   desc "Access large language models from the command-line"
   homepage "https://llm.datasette.io/"
-  url "https://files.pythonhosted.org/packages/f9/8e/5ffec2a091d4cd2691cfd0e8ba3e1904aeb1931313287cfd68f9c1db8b40/llm-0.34.tar.gz"
-  sha256 "09d0b076c4c720c4daeece6ee3a0aae76620059aced552f09589e0e0d7c5f09d"
+  url "https://files.pythonhosted.org/packages/b5/68/baeda27122a280940c5e9ae7291b821fa96ea23f50a00f568e9cff0c3aac/llm-0.35.tar.gz"
+  sha256 "2ee0955b2e372408813ce966f3d03ad2c7419b85a547880c53797d31d3a3fdb6"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "3d5d81c8da923a9362ecca32cd7b7df5b2227bae2c8ea46a588c42e8fbcf9427"
-    sha256 cellar: :any, arm64_sequoia: "b414523f2ba30a023de0bceceab77e82c9b2c232ccc44c8fdc8956ca5bb4d49d"
-    sha256 cellar: :any, arm64_sonoma:  "714b33d83e176e1c5bb2e0484419f0886cd3f6e6e093cd789bb385c6fd8bfd7f"
-    sha256 cellar: :any, arm64_linux:   "4a21afe719610ab5fbaf5c300e7b01fd254dac1f48a0d931ac41f004e9fe10c5"
-    sha256 cellar: :any, x86_64_linux:  "91576105602b8174bdae40f49743d595b6a3697a6b41d9c071b2d47cb0877929"
+    sha256 cellar: :any, arm64_tahoe:   "2cf9ec137c0f5831077fb67c709872da6b6c25d9e9aca36042f6892b181e47e5"
+    sha256 cellar: :any, arm64_sequoia: "a62bed0e36ccc5ee0b6cb2c6e65fe1b9f4b9de90eb75168304e45c6d705812d0"
+    sha256 cellar: :any, arm64_sonoma:  "2bf4f7a391e2094a0b69d3293f24c71978fcfe20e0ae451eeeb909ce6fc6459a"
+    sha256 cellar: :any, arm64_linux:   "e5dae660ac4c5278d59323650c02461dbad7d7c140935ede06dab5f4b01a3509"
+    sha256 cellar: :any, x86_64_linux:  "088e7d72fbd839e1011daba78552e7312b16098f61c7ee8986bea2821e6cfc43"
   end
 
   depends_on "rust" => :build # for jiter
@@ -24,8 +24,8 @@ class Llm < Formula
   pypi_packages exclude_packages: ["certifi", "pydantic"]
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/61/cc/a381afa6efea9f496eff839d4a6a1aed3bfafc7b3ab4b0d1b243a12573dd/anyio-4.14.2.tar.gz"
-    sha256 "cfa139f3ed1a23ee8f88a145ddb5ac7605b8bbfd8592baacd7ce3d8bb4313c7f"
+    url "https://files.pythonhosted.org/packages/a9/d2/f4d173e22df740bc37b1db102b386ba719b66e95b0f0d751f556b387e6d2/anyio-4.15.1.tar.gz"
+    sha256 "9f28306018cbd6d329e64a36d58256edff76dd996fe423bc957326e578b82a94"
   end
 
   resource "click" do
@@ -69,8 +69,8 @@ class Llm < Formula
   end
 
   resource "openai" do
-    url "https://files.pythonhosted.org/packages/ad/ba/6d46da4232f80cb5842280e024242e6fed163418ab81bebc1c83f693bb0b/openai-3.7.0.tar.gz"
-    sha256 "e836eb7effee89df802cd0c7d1bad8de8c993976cf238c44d5b5b844f5aefd38"
+    url "https://files.pythonhosted.org/packages/f2/b0/1100c93f93e1c174205ce8d15a049a446f0dc88e9262c1f1f223fe6b9493/openai-3.8.0.tar.gz"
+    sha256 "6138a5a1333a1be9e4d1edea2d160b311542787b029543f87de4961c66358d16"
   end
 
   resource "pluggy" do

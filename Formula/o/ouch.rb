@@ -1,8 +1,8 @@
 class Ouch < Formula
   desc "Painless compression and decompression for your terminal"
   homepage "https://github.com/ouch-org/ouch"
-  url "https://ghfast.top/https://github.com/ouch-org/ouch/archive/refs/tags/0.8.1.tar.gz"
-  sha256 "920f73d4b162bd1814b67c57906b7322345f198d763f28d04722a406f8352246"
+  url "https://ghfast.top/https://github.com/ouch-org/ouch/archive/refs/tags/0.8.2.tar.gz"
+  sha256 "803dd9d0bcdb0b4f94336bc1e9fbb5c878bf2867e03f58f266adc679c224698d"
   license "MIT"
   head "https://github.com/ouch-org/ouch.git", branch: "main"
 
@@ -15,12 +15,11 @@ class Ouch < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2be5acb76800c11b40c33b552cec563cdcd1c80c38c37aee1b79c20a67fbedc2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6dfd1193abd79e9b7dbb5c7a5b332a6fe5963b77873b8abb8f4ddd19a08ffa30"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "94b7ea1512e70d0b35a7a7f66f9d612b2507b579f7df7d670bce3bcb1f6c2b9c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2e5dbda1a06f9a352eebeaf5d754625379a4cecedffb14d0ee2fdda306f6bffe"
-    sha256 cellar: :any,                 arm64_linux:   "9347ef7969b009a3208324110e6db6b6cdc36f2d80c956260ac8956d9b942a2a"
-    sha256 cellar: :any,                 x86_64_linux:  "1f9234fd435a7a49fc3807a55f40b8a8db0a6f319ff32c26859002a6bee50c0a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d606c466e1dcac3e5eb97d5c82789b39c2d7d7027b1a062300425e84fa2b79da"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "70ee7f504055225c9a286ee00559b61d15b6feeb11ffd00f44c8cd4bc04b51ec"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cc1e26f0d4a8fe6ae7e54df750956c2b9c017e4f6e2a27cc69b5b9b262e675f2"
+    sha256 cellar: :any,                 arm64_linux:   "bdc03aebce279f0f3f04fc48d78757b0a6111d432d4bce84235a29869c487ba8"
+    sha256 cellar: :any,                 x86_64_linux:  "3b2f3e122686f91ade6b80ac8fbee6538a031fb827fb6062659f811c7d7ed136"
   end
 
   depends_on "cmake" => :build
@@ -34,13 +33,14 @@ class Ouch < Formula
     depends_on "zlib-ng-compat"
   end
 
-  # Fix release version metadata
+  # Fix the reported version, upstream PR ref, https://github.com/ouch-org/ouch/pull/1071
   patch do
-    url "https://github.com/ouch-org/ouch/commit/f85299603f3b7ac36671e5468e247bd5a845792b.patch?full_index=1"
-    sha256 "5b697d3737bea5f0522ed8ecbbc17e928c04e1cebf9783e0fd766c3519afffce"
+    url "https://github.com/ouch-org/ouch/commit/887fb81eebb816809971f7b30b8d8e5f65b03fc0.patch?full_index=1"
+    sha256 "d1036aec38d5818f811a5fca849db7ebe5226e2304fec091676399b144f7a38b"
     type :unofficial
-    resolves "https://github.com/ouch-org/ouch/pull/1019"
   end
+
+  deny_network_access! :test
 
   def install
     # for completion and manpage generation

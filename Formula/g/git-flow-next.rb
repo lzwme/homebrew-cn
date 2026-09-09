@@ -1,18 +1,17 @@
 class GitFlowNext < Formula
   desc "Modern implementation of the Git-flow branching model"
   homepage "https://git-flow.sh/"
-  url "https://ghfast.top/https://github.com/gittower/git-flow-next/archive/refs/tags/v2.0.0.tar.gz"
-  sha256 "4f6078d5e3fb0b95d48dfb0327cbe48f04a96a9556eb5eb1e1d6b6879281af9b"
+  url "https://ghfast.top/https://github.com/gittower/git-flow-next/archive/refs/tags/v2.1.0.tar.gz"
+  sha256 "a122ddd1e772fb57271b760400e334f5820d7dcbf9f3f6e080e976e4b978cbeb"
   license "BSD-2-Clause"
   head "https://github.com/gittower/git-flow-next.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f8ef07136499869e66c0d3a607e0282f032503a41a306d5017d3331f1538951b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f8ef07136499869e66c0d3a607e0282f032503a41a306d5017d3331f1538951b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f8ef07136499869e66c0d3a607e0282f032503a41a306d5017d3331f1538951b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "211a3d4e9cfae3ac984263b39caa69bd91acf9cda9ad875b3fa5926b3a301f90"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b969d80b8a506129b2c846474352331b6d7a2dd9ff6c24f75a1cde9f3d1fad7f"
-    sha256 cellar: :any,                 x86_64_linux:  "77258f25d7bdb1844a47944b239c47eb7fda93092f25d2c2226de9711e6d08fb"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "57fecbdf2e6e180659899da60ed55c4a44e79e6ccab58baae0c9364d95dc62e8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "57fecbdf2e6e180659899da60ed55c4a44e79e6ccab58baae0c9364d95dc62e8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "57fecbdf2e6e180659899da60ed55c4a44e79e6ccab58baae0c9364d95dc62e8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6b5ce631a8784e5b108b6a61ccde07883af075f7a6668c8c8c07948cfc3c1d63"
+    sha256 cellar: :any,                 x86_64_linux:  "ad4a97c0e6b6d84f3a2cca26f4bb1a4da78a9afdcc00c4e9d879c1c8b12d1f41"
   end
 
   depends_on "go" => :build

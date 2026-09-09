@@ -10,12 +10,12 @@ class YtDlp < Formula
   compatibility_version 1
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "06605147c6afa68ab95962b35cd4405909e5e5ce33621c4b7f9fe0797a47136e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1eee0a9bb9f17280fce34a3325b7fa45fc137bdcecf92bcdcb80152deaeacd01"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b0d29c1ddc5707b45d8088d08f2c17bbf60efed23c7d5d7cb2df291539476afd"
-    sha256 cellar: :any,                 arm64_linux:   "6ffd8a116164a8bd761dba87e63cced361b212ac9ea4d080f972bfd9bb6b6438"
-    sha256 cellar: :any,                 x86_64_linux:  "aa92b9a8268633eacf6aa6bbe3034a04a6ddb1820cae90cc3723c86ff74b8bed"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "925b69a6ad3ab2dddc35a1dffcf5017f514e591403639edae1f9639ab39a0c3f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c1ba6be272ef25a111f5e6fe4a6be0ca712633d6271e944ba62df1b3ba3469c5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "09dd7e5928dedabab23a3ad63eb67484f3edbf059aa5091ea7b7c78da23d3026"
+    sha256 cellar: :any,                 arm64_linux:   "dc658cd4ca6e73d0164374a85259f7301294c13f9b79c0117f73c594ede3f04d"
+    sha256 cellar: :any,                 x86_64_linux:  "75909762213b842de32fe727cdf8e5e531d20989105f039b8cccddf3e909bd84"
   end
 
   head do
@@ -29,8 +29,6 @@ class YtDlp < Formula
   depends_on "deno"
   depends_on "pycparser"
   depends_on "python@3.14"
-
-  uses_from_macos "libffi"
 
   pypi_packages package_name:     "yt-dlp[default,curl-cffi]",
                 exclude_packages: %w[certifi cffi pycparser]

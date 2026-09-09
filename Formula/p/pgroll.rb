@@ -1,18 +1,17 @@
 class Pgroll < Formula
   desc "Postgres zero-downtime migrations made easy"
   homepage "https://pgroll.com"
-  url "https://ghfast.top/https://github.com/xataio/pgroll/archive/refs/tags/v0.16.2.tar.gz"
-  sha256 "d944b31c6a4b90eeb170db249c1a012b85663ff25f438f007068efc76e4546a7"
+  url "https://ghfast.top/https://github.com/xataio/pgroll/archive/refs/tags/v0.16.3.tar.gz"
+  sha256 "28531c0021773e82867c7d0df8859d4fc2eadfc444c6e451f39c58265c9c2a69"
   license "Apache-2.0"
   head "https://github.com/xataio/pgroll.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6cb3fa634ee1808834ddec42df102b893b6378cbee84570d00ff5107b8013fb3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8f72efb4b8a69f0d2aeb68a9c645052f4a6521cd19dff3c0728cfa319ee68c92"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a5f0cf02c11763791b45fab6e4dc3c951e16ecf9f96145e42659e3d6280b0291"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0c13903e898977f1b471745cef114762c1bbc97041e77ad2f5888aab3aa234e8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7b68f49b0cbf7ebff66ff8ff108590d2bdada0d5a8b72e125bbf6dbe7d2a1c2e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "070c426e63b951f25aa8c46136e8f5abc971f849b0800c828ef2c59a6ce5b7e3"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4119e292ff7bb8f544116391f3b4b56e974b2df840e52e790084afd98f417bc5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "258f31882d431af6aacf8c34ca71a39972c2c1ad8943e7974d12ecdf6e0086ad"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7ee13cf6d6cab105d1c4f22cb23c6d7861c79bb7b25972f818eee8a831035968"
+    sha256 cellar: :any,                 arm64_linux:   "f60dca2d7c789ceb06a6fd1aa62f52cb110e82210bdfa9627f9961f6657afb98"
+    sha256 cellar: :any,                 x86_64_linux:  "c4b8470bd3a8a490068e1569c6816e4befaf8099fe1431f92ff4781f4dd40c15"
   end
 
   depends_on "go" => :build

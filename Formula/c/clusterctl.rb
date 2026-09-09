@@ -1,8 +1,8 @@
 class Clusterctl < Formula
   desc "Home for the Cluster Management API work, a subproject of sig-cluster-lifecycle"
   homepage "https://cluster-api.sigs.k8s.io"
-  url "https://ghfast.top/https://github.com/kubernetes-sigs/cluster-api/archive/refs/tags/v1.14.1.tar.gz"
-  sha256 "3b9d5483c02b3bd00edfc55dabb662020258912daebe37e6eee37a3cb1afc6a6"
+  url "https://ghfast.top/https://github.com/kubernetes-sigs/cluster-api/archive/refs/tags/v1.14.2.tar.gz"
+  sha256 "2dd129c839871dfc74142781ffcf8eeb465c56845e41e39105491c9a94770b6c"
   license "Apache-2.0"
   head "https://github.com/kubernetes-sigs/cluster-api.git", branch: "main"
 
@@ -17,11 +17,11 @@ class Clusterctl < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f589346cdf91e22abc09e204776c4ae1cf8fa783773871074a81113e3d03efd3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9f4d73fcfe0efd67b40676f724cbc5700efa8cf68dd5b76274a7dbf876a972b8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "771e3af28d4bfdf2aa996e63f9237f2ae7085cd10924e467e21d7f7b33517525"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d7c9c92de31e854247032459825330e0bedfdd67609708776652fdf004688ba3"
-    sha256 cellar: :any,                 x86_64_linux:  "ebd3f4faed109e8ff13e870ae1c599c5fdc27b4f93470c0b631d1e6276347272"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "27f6ba0b6037612221d9e578d360b3a7f34af83338129d61a09571650f244661"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "999ecc0f49380498699a0d2916ee43a9eab060d3edb284f619d6d0f05339faec"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b64cefdcc41658bbeca7366d0be4051a1b3ab80a7102724d66baf45e7685eab4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9ce259d8bf31178a02626913aeb66497e951ef6b5a29095c66bf6404658338d2"
+    sha256 cellar: :any,                 x86_64_linux:  "3bd5048a5cee0534c8f46471c327f77916cf3f5cfc43c3d8c33fddc46a2e460b"
   end
 
   depends_on "go" => :build

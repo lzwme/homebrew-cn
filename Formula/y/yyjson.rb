@@ -1,20 +1,18 @@
 class Yyjson < Formula
   desc "High performance JSON library written in ANSI C"
   homepage "https://ibireme.github.io/yyjson/doc/doxygen/html/"
-  url "https://ghfast.top/https://github.com/ibireme/yyjson/archive/refs/tags/0.12.0.tar.gz"
-  sha256 "b16246f617b2a136c78d73e5e2647c6f1de1313e46678062985bdcf1f40bb75d"
+  url "https://ghfast.top/https://github.com/ibireme/yyjson/archive/refs/tags/0.13.0.tar.gz"
+  sha256 "34e0f62a2bc11ab20d601e8ca1cc2b2079503aa45119a19133d89d19b94a0fae"
   license "MIT"
   compatibility_version 1
   head "https://github.com/ibireme/yyjson.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "bc385fef24ac80239af24728461f03f80ce8107954a4e11149db0c5fbb64acf9"
-    sha256 cellar: :any,                 arm64_sequoia: "ac03b7af3eeaad37ff9421f18f09c04e8718e9124bb254442fb783f1e72523ca"
-    sha256 cellar: :any,                 arm64_sonoma:  "0a16ceb0708e9ca44bb42c7d7dd5190984d5b83b7c7627148ecb607089e695e4"
-    sha256 cellar: :any,                 sonoma:        "474db0266ef4054ad4cfe009ecc297a36085383f27b64099f7f98f3eca54b1be"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4b4971f272e8ca83e029e7d4ce912261c2e236fea1978732029c770b4454d8fd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "72d054b4ff70582269754e969cd1a5cf5b670eac46f1bee785855643a8ec7f8d"
+    sha256 cellar: :any, arm64_tahoe:   "653d1e1d0303e93b5471a4a7640f469653b7ca9c642e1568f44fd75bcb207845"
+    sha256 cellar: :any, arm64_sequoia: "f1b9812054f25e115b87e89f26bb43ae44c3c619278583f2e0c652bd8a2e207b"
+    sha256 cellar: :any, arm64_sonoma:  "f9b66ab2268ac524c475bf958e3241c3c56a0f7178f9e0abc9edc068dc9280f5"
+    sha256 cellar: :any, arm64_linux:   "e563523257fa61cb3d23284e60abbee5ba625e779c0943477b8fa43b023d15c7"
+    sha256 cellar: :any, x86_64_linux:  "c7281df3d474b2ec03cfeca7a7721cb14987c7f149a4b33fdd0c2a8f4d2194e4"
   end
 
   depends_on "cmake" => :build

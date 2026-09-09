@@ -1,17 +1,16 @@
 class Tele < Formula
   desc "Keyboard-first Telegram client for the terminal, written in Go"
   homepage "https://github.com/sorokin-vladimir/tele"
-  url "https://ghfast.top/https://github.com/sorokin-vladimir/tele/archive/refs/tags/v1.11.2.tar.gz"
-  sha256 "5a25407c941d5b3fa1aa1c969ef884191afa0768e7873c82bca4db678c601b8a"
+  url "https://ghfast.top/https://github.com/sorokin-vladimir/tele/archive/refs/tags/v1.11.3.tar.gz"
+  sha256 "8cdabdede276fec956316745e7bd57d9d0977534d5663948bafd869f052242d8"
   license "GPL-3.0-only"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1081507f7599f75f9438f4b5a341551063a663bfeb8dd89d3c46828bec38c0f3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5513f8ab4d082be5a3f7551fb7f910ecda6acfbb2b20059714639a6155a22d4e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8df47fba1b25cd143167b83c91b5243dd23c6c7f21fe40b4169d817279e1fae1"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6e1af9f631705f6d23f5f573547af27c378f5e869cd6ad998cf4096239161dce"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7cdeb2d78881b519c95fe370a2d4481fdabe78203251a1460d201e5d5342f462"
-    sha256 cellar: :any,                 x86_64_linux:  "fe0838a3480e5928a635e5001f79876f3e6c5f95afc382e9f1c8736dd86843cc"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "478cf236eaf49a0ffc023da3c63afcfe84921940fcff33ba2ea7f92aef4ae386"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f31b0095f154292630d0ff7be7755b710798b601c02f4c862effa68e19ea8b1e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0e91fa84793fc38fcf7db83bc8ecdaec5dcc98e5782cdad4f1db36670ed7b2fe"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9924f04614f04c970960a9f5bf06774ab97e6c0e44fb8c74f7fa08999682c256"
+    sha256 cellar: :any,                 x86_64_linux:  "eb501bfd8ad8f234353849a108fe50abae8800c28507ea4ff60e6b5bc1a2cfa9"
   end
 
   depends_on "go" => :build

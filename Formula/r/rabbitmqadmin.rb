@@ -1,17 +1,16 @@
 class Rabbitmqadmin < Formula
   desc "Command-line tool for RabbitMQ that uses the HTTP API"
   homepage "https://www.rabbitmq.com/docs/management-cli"
-  url "https://ghfast.top/https://github.com/rabbitmq/rabbitmqadmin-ng/archive/refs/tags/v2.34.0.tar.gz"
-  sha256 "f364a4306be8dc9bddaa01274fc05c44b8d0dec3f03daf2c1f30d56a20752913"
+  url "https://ghfast.top/https://github.com/rabbitmq/rabbitmqadmin-ng/archive/refs/tags/v2.35.0.tar.gz"
+  sha256 "b52d5964ef296cf6a356522626a622225a825ab1248844172ace0058e211f988"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9ad4ee2a8f9a9b023f9044bb44b3f7fffad87b5ddb44aa89bbebb216238b7af6"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "20862bc43a3ec6ca2dba3e32fb5fcc7571d684a1648b200e67d7ca7cba87d68a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d503ac0d6f8cc8328f611d830856529fc766509c064f84bfc218c04bfc71fe58"
-    sha256 cellar: :any_skip_relocation, sonoma:        "53e312005864832d995b14bae3c2a4a273a7365e3d359c532bd0892330273021"
-    sha256 cellar: :any,                 arm64_linux:   "beb0cb2b01f38b2ac05e8a02ee3428e8aa5fae22b93cbb22168e72f255b31cf1"
-    sha256 cellar: :any,                 x86_64_linux:  "04081a7adbee0eadbaa1ac1164e79a1f1211089e3e1ba5725160166746a67ef7"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "42f321988b091870c9da9a0ed505f75a4c2b77a025b7253924152b706cb2f3dc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3d621a09729b24ea5d90ac73ec765a627224379ba24dd2bf27e71707c2b98ac9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2df83e7a50f1440247bb510ed64eaf02615a68de97b8c66af991c5a8aaa090ee"
+    sha256 cellar: :any,                 arm64_linux:   "145202cd8d3ef4774bbe04c08553a4f9564b962a6c71a4ea0dd9c0c7f2c9fb48"
+    sha256 cellar: :any,                 x86_64_linux:  "b7e6baa7dd2759aabd65fb7e7c443a3cf69b791368f6c4377d2e2500930f9904"
   end
 
   depends_on "rust" => :build

@@ -1,18 +1,17 @@
 class Expert < Formula
   desc "Official Elixir Language Server Protocol implementation"
   homepage "https://expert-lsp.org"
-  url "https://ghfast.top/https://github.com/expert-lsp/expert/archive/refs/tags/v0.1.9.tar.gz"
-  sha256 "e1d8cc0479fb91b461373ca55d66a49704fa01376bfcd0e62b8523b563505dff"
+  url "https://ghfast.top/https://github.com/expert-lsp/expert/archive/refs/tags/v0.1.10.tar.gz"
+  sha256 "18fa9533a7d43d5cff52ba1ea687eee9b69adc599ae84ab9fec54d813c23e31c"
   license "Apache-2.0"
   head "https://github.com/expert-lsp/expert.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "47d4e24586a830fda03277716e0bfd2aadb6219b033c0de78fde165bb3f47f7a"
-    sha256 cellar: :any, arm64_sequoia: "313a0c1e91a815ca0f392a51ec7deed478f5023224a43b3026b581c8d585ceb0"
-    sha256 cellar: :any, arm64_sonoma:  "a54d25e7b0d0393ac975e260a25655ba3b84df1db65bb9cb57ce1279de35c7fe"
-    sha256 cellar: :any, sonoma:        "52cc401498b811626e1efe2d6562d2a6542b43bbfc8b7b22a0457e5553a94e8c"
-    sha256 cellar: :any, arm64_linux:   "fd253b026058cc5aacaa6c57ded7b3f0af27239813b6e845a3bd1e32476affba"
-    sha256 cellar: :any, x86_64_linux:  "5650b4b500d9c9681c83d6e9f2195165d3b22f98d63f24294b1eef370825f372"
+    sha256 cellar: :any, arm64_tahoe:   "e4b0c56a273e94830ffdb5be8135b86fc52e0c6f222b6519d46553f36bbbe45c"
+    sha256 cellar: :any, arm64_sequoia: "bf7d63646c502151b266025a9282829c312e73e55e47221030353878561a275c"
+    sha256 cellar: :any, arm64_sonoma:  "ffe3f335f0f987205f1989601483e454210940b26f9c5e58e1123bfa9cd2608b"
+    sha256 cellar: :any, arm64_linux:   "42dc9b27744894c5b57de513820275bca3c4d2bd0d7f8714b599702694ca7fbb"
+    sha256 cellar: :any, x86_64_linux:  "872dafd98305dc1f1e0b42db3786a7a15f783d667ef4586e90b58262a33d9dc7"
   end
 
   depends_on "elixir" => :build

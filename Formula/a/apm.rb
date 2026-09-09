@@ -3,17 +3,17 @@ class Apm < Formula
 
   desc "Dependency manager for AI agent configuration"
   homepage "https://microsoft.github.io/apm/"
-  url "https://files.pythonhosted.org/packages/20/b7/b0a29b923f3f423fb5d62ba629da1ec964c8720c1733176e4e6f9f8cf0b2/apm_cli-0.29.1.tar.gz"
-  sha256 "20c7db3a1147b103467cd19dac68d4a0f3b4fcebbc5ecf3eab3e1c86e6f51a6c"
+  url "https://files.pythonhosted.org/packages/80/63/11eb297d227893a5418efe044d99f74390985ceb8730a7d007538372dc02/apm_cli-0.30.0.tar.gz"
+  sha256 "4f412c65aac6a19864c0552904199d85e8f1a286c60de48ebd3b1422eccb760f"
   license "MIT"
   head "https://github.com/microsoft/apm.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "5e686b39bd14c4d9fad412badeb36f919ea09cf2033d1b963b4b01c8767e520a"
-    sha256 cellar: :any, arm64_sequoia: "bc174de249ba7cc727e638abc6e3f58e88baeb763df97dfd2ffe4896a617c6bd"
-    sha256 cellar: :any, arm64_sonoma:  "c12ed179194f1fe51937ddf331b1e4728b81b19b1b7ec60c3d64c2019c4b43bb"
-    sha256 cellar: :any, arm64_linux:   "ba27c41e4c7085ced94982201390d902625b15de432dadba575dc49f2c6b32a2"
-    sha256 cellar: :any, x86_64_linux:  "9212591656d5e64d663472493ed4dc88bcb41c0441103b58cf39d20518ab018f"
+    sha256 cellar: :any, arm64_tahoe:   "c6725e4933de8ce421fda6b966badf60c68f0b22688a219d122bb07415cf3299"
+    sha256 cellar: :any, arm64_sequoia: "74b52dec31a3b42f78a446fb8e6d9a92c7d581b53c4b74330502ef6d9a29aeab"
+    sha256 cellar: :any, arm64_sonoma:  "e28da78caf310c348a1b11fb9635d9425b7b1b770592ebfae8f708c0d6789b64"
+    sha256 cellar: :any, arm64_linux:   "5a83fab1331d5d67186d39a35606ea9a08d268be16495c4a5f25a11e27949739"
+    sha256 cellar: :any, x86_64_linux:  "066c3eb782a2a42e6be2083cd45961b138eb0c4621b9cf4830d14a627f085c75"
   end
 
   depends_on "rust" => :build # for jiter
@@ -100,8 +100,8 @@ class Apm < Formula
   end
 
   resource "gitpython" do
-    url "https://files.pythonhosted.org/packages/6f/61/3285044215fb596bf093e39ccb96ece0a1076a8ca57a61e069a6a33cdb1b/gitpython-3.1.61.tar.gz"
-    sha256 "f51c24d8c0f733a195447385f5774a5dfe8767f5acfd7994a33755644c6ecc95"
+    url "https://files.pythonhosted.org/packages/e0/db/3ca813cbacb23ab6fe46ff38a9b5ef8e73e970c8051f2ce903aacafe0446/gitpython-3.1.62.tar.gz"
+    sha256 "1791de66309bc0c7cfca40bf8d2e3de7ca091cbf94e6051be1ad0722c61062af"
   end
 
   resource "h11" do

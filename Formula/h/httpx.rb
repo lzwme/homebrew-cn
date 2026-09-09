@@ -1,17 +1,17 @@
 class Httpx < Formula
   desc "Fast and multi-purpose HTTP toolkit"
   homepage "https://github.com/projectdiscovery/httpx"
-  url "https://ghfast.top/https://github.com/projectdiscovery/httpx/archive/refs/tags/v1.11.0.tar.gz"
-  sha256 "ff552a4a27d8dad1b4a796c27f72680db4f1149350a255cfd4197fee2159ab11"
+  url "https://ghfast.top/https://github.com/projectdiscovery/httpx/archive/refs/tags/v1.12.0.tar.gz"
+  sha256 "b29319c085537047bff8acf72c6cd4ecf17585ede97f4afdde2304431c74e64e"
   license "MIT"
   head "https://github.com/projectdiscovery/httpx.git", branch: "dev"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8915648f5f388d443b7579ffaa7982909655848a010ff021454e8b4c3a4dd769"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "81defa511713fce29cd6512f4e2790ea9c96a9546a738f01ff5842e410e29e35"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a02b654cc9c42b601c5e037a80f85a93d3d2ce83bdfe2984a4549379d85acb60"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4fc39403b5d10044151a777a00223d49e69ccde67fca9f174b400eda07e2a1fd"
-    sha256 cellar: :any,                 x86_64_linux:  "13da0e1b578c398669d243e6711f7e479c87981ed5694e78d358e467e266d038"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5b39dabe34bac875476fb8d557b39f2fa6f8411e045159068296a7b541626ac5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "deb0167e0b09cc17ee1fc2a443fd30b2b980157a2e7c52538826f74e1b6ad54f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5fd8224c5033a1290e4eba34b0ca98ff6ad02c6dd80908a18579ba70c30efb64"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "14e5f188dad360ce8ec3335fe9a545edac0257181496d43793b79894f4b72414"
+    sha256 cellar: :any,                 x86_64_linux:  "646bb27ab03ed619244d8430e9fdc8587d4f419b65486becccf18151ac7a6471"
   end
 
   depends_on "go" => :build

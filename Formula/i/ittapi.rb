@@ -1,18 +1,17 @@
 class Ittapi < Formula
   desc "Intel Instrumentation and Tracing Technology (ITT) and Just-In-Time (JIT) API"
   homepage "https://github.com/intel/ittapi"
-  url "https://ghfast.top/https://github.com/intel/ittapi/archive/refs/tags/v3.28.2.tar.gz"
-  sha256 "04d9f7e8f7f217b732f5fa2eb5a7e7e8419525afebe5ba086430e489f8261280"
+  url "https://ghfast.top/https://github.com/intel/ittapi/archive/refs/tags/v3.28.3.tar.gz"
+  sha256 "b97bde2b1f4448675955dd93bd132c7eaae2bd98ee8392498f1780caa2d9b849"
   license "GPL-2.0-only"
   head "https://github.com/intel/ittapi.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ae68339c7a344258a3818c84f69c183efc2dab708689045c2ffa7c8e70ad231f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8fe2adc30469ad09392a7f276d48955a5109973e4e5a362ee894bf00d644f135"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c7e820d96166e43b3caebbd82a9109d50eb0ee0023a62c1df1ecba0b8e37985f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "49354bf1afdd7a6714f9dfc9c4ec6d79ab154e2f103c03a4203288b80a3ccc1a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "86863c5141a12246e9a5e4cdbfc0c7afc11969d53da6fdbddbd6bef66596dee9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f852bea0f9947fd50fc59ccd49105c5165c26193f80ea83027aff0a4ed79fafb"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1c36e4f7278fed8e1c259d6ebe7e163e606b643701abec48fda4c6a16c462c23"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e5280afa5e733663dd73ff2ef1ec522c6ff2cdc112edf6674b3c941ead052ac7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "861e299295b5ea4f3a49c63f92daa92b29747772950c00f12a4abe10cd78d037"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f168b4f77034b28d023b1d29f04d201dcd35a340480122e85e5c7821951a5b9a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4022e6678a177a053ffc4693ad92e91153d7b5e1c188f7d9d0e0236f579ae530"
   end
 
   depends_on "cmake" => :build

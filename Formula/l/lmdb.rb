@@ -1,8 +1,8 @@
 class Lmdb < Formula
   desc "Lightning memory-mapped database: key-value data store"
   homepage "https://www.symas.com/lmdb.php"
-  url "https://git.openldap.org/openldap/openldap/-/archive/LMDB_1.0.1/openldap-LMDB_1.0.1.tar.bz2"
-  sha256 "1ae17f11ebdeb0d69e53416bb6e0a7479a7d3d5b5ca443a474bff5b5f886a348"
+  url "https://git.openldap.org/openldap/openldap/-/archive/LMDB_1.0.2/openldap-LMDB_1.0.2.tar.bz2"
+  sha256 "f35a2eb3a8e51650397604bbb49a1295221cd4739ff787d324f6c442c138a3ee"
   license "OLDAP-2.8"
   version_scheme 1
   compatibility_version 1
@@ -14,12 +14,11 @@ class Lmdb < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "4e63ac4f1ee1a664b39877162ea66cba4761fccb868fad984bec7c3282218414"
-    sha256 cellar: :any, arm64_sequoia: "2e0d8aadbabf97148fe9c572a87add07e02d52c61669c848205b54feb2e6bc80"
-    sha256 cellar: :any, arm64_sonoma:  "9f5d865c6622999ad3b99dad56197ea5b4c01fb6bd80231ecd784b01355d7900"
-    sha256 cellar: :any, sonoma:        "472ac24635bef354ee174db475f0cfd6c7aed98f6aaad1692e78de4e0e2fa026"
-    sha256 cellar: :any, arm64_linux:   "8232f467c13a8c6ee225081d8f44c842f1ba2aab4dbf9ace3733d6509a44d04d"
-    sha256 cellar: :any, x86_64_linux:  "f0b73e63e3954123ffea927bd082d1c30f5caf44e289eb870f931ae4aca84ad0"
+    sha256 cellar: :any, arm64_tahoe:   "25de37350b3afc08c8ad81939a88b05ecc8810ac7f0908bd1c9c897ea351042a"
+    sha256 cellar: :any, arm64_sequoia: "bcb12afd2757b2790ba1297a8a482fc5ea8afe1205d5a4e4317e9ed2803f1639"
+    sha256 cellar: :any, arm64_sonoma:  "53d4566b101a98faa59709aa1d44444b6d384c84048b4708567076f4160c09e1"
+    sha256 cellar: :any, arm64_linux:   "cba5547a82780ede803fa0a0705dd4730b67954943ee00dbba8351596959c672"
+    sha256 cellar: :any, x86_64_linux:  "e9b064deedfc049c057f13ff56a1d2939c172fef630df22145adbbc7a1250875"
   end
 
   depends_on "pkgconf" => :test

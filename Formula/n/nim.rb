@@ -1,8 +1,8 @@
 class Nim < Formula
   desc "Statically typed compiled systems programming language"
   homepage "https://nim-lang.org/"
-  url "https://nim-lang.org/download/nim-2.2.10.tar.xz"
-  sha256 "7957b7ed004206bcf10bcc4f3b4744153878e62f2431552a9a8e9d3f40e8d5d5"
+  url "https://nim-lang.org/download/nim-2.2.12.tar.xz"
+  sha256 "2639a06a5ea7a7fcf57df1e7e1ef4d1b2bee58c7ac9bd00dbd2aa5bea1e5a56a"
   license "MIT"
   compatibility_version 1
   head "https://github.com/nim-lang/Nim.git", branch: "devel"
@@ -13,12 +13,11 @@ class Nim < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9562f3177bbc268b4cb77396ba673a463b306f3911372063c8fe36942e848f82"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2dd6d0afe58bda10dfb591a4f9e60db7f095f02cb6f9f1e0c740895b088a06f4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9d67c02cc0c3b10da447be6fc6320c4951202328864992de6e06034b14dead08"
-    sha256 cellar: :any_skip_relocation, sonoma:        "53a114ab549a17345feca2d5a3e9770a9fe1e0342278de34c13469495bfe5b8a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a953d392c026e0affc4cc1d57d79a4fbddfdaba80bba2c639a5d98b1698ab6b4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1a5fc2ecd28eb33dec002d3c0f5ebc8e2e29b80d226bba0e59ae2f837791e673"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1c9f56f6246e35c2adbe293d1c35f36687a25a6cd7b47305bba7cc71a3e300c4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0bb64964dfadb7bc00b984dc9efa5bfb190f39e010c8f519f4d4171a7df4adf9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bb43c1ee29eb5345b64c9da8c2e4f06c3a391b041fa4c3383247c0b59ebecb25"
+    sha256 cellar: :any,                 arm64_linux:   "149ca4284efc1bee86cacbad6a96bd878821163df13ce1144c6f7d653dd4e780"
+    sha256 cellar: :any,                 x86_64_linux:  "95d7ee10379cce87bab03c85494959ebacae257d59cc99699221383f12499c8d"
   end
 
   depends_on "help2man" => :build

@@ -1,18 +1,18 @@
 class Ndpi < Formula
   desc "Deep Packet Inspection (DPI) library"
   homepage "https://www.ntop.org/products/deep-packet-inspection/ndpi/"
-  url "https://ghfast.top/https://github.com/ntop/nDPI/archive/refs/tags/5.0.tar.gz"
-  sha256 "8b0d3dc0c8a6a68578e09a18c922021ef6458d4aca1c7a20ce04efc267aa9ea5"
+  url "https://ghfast.top/https://github.com/ntop/nDPI/archive/refs/tags/6.0.tar.gz"
+  sha256 "21fc40cab5505942c0b21d9bbaf73e9adf8162ddfe782e4cd072cab855a2eda9"
   license "LGPL-3.0-or-later"
+  compatibility_version 1
   head "https://github.com/ntop/nDPI.git", branch: "dev"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "e36d749ae34d4213e05001e200919c6d9c96f7efbd44cd9225408e8691eceaeb"
-    sha256 cellar: :any,                 arm64_sequoia: "e62b6b4475ecf76666c907dd2902a12ecb340cc7dd313a65cffb273a456e8ff6"
-    sha256 cellar: :any,                 arm64_sonoma:  "ab4a5be202edd011b4171201c66f5ef7df058874ca0eb579de47a5d5825d70dc"
-    sha256 cellar: :any,                 sonoma:        "89b2916adee9e543900f7089ed517776a5943411817885121ae97153e1ed7a70"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ab29c1a19ee2b0bf75071152e77ab23d0da4fd4a589a770bb7c2519710470755"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6a58d36dd8c1cef5dae9bf5edc5f395b12a9b9568c753a4f4487ade46863b9c5"
+    sha256 cellar: :any, arm64_tahoe:   "cf86686ce0f370748f00b3de4919977761898452304852d66defdb96e89d05a4"
+    sha256 cellar: :any, arm64_sequoia: "6233e5f6ef60a52cae5b40b3c7f1f759bcf51e1ca7ed9cd5796565ac44eaf357"
+    sha256 cellar: :any, arm64_sonoma:  "955dc0af7bc7fc4122aa13faa96dc1857354369b04756612571d085d16754852"
+    sha256 cellar: :any, arm64_linux:   "45abcc1c8736ac87a95421ecd1ce1336c72c1bcba6a065a515790117086130a9"
+    sha256 cellar: :any, x86_64_linux:  "c8041a6f78767ef9b790e460b007467270596a456d8119a48a9846bbf8deae5e"
   end
 
   depends_on "autoconf" => :build
