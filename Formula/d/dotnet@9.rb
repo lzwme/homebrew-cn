@@ -2,8 +2,8 @@ class DotnetAT9 < Formula
   desc ".NET Core"
   homepage "https://dotnet.microsoft.com/"
   # Source-build tag announced at https://github.com/dotnet/source-build/discussions
-  url "https://ghfast.top/https://github.com/dotnet/dotnet/archive/refs/tags/v9.0.120.tar.gz"
-  sha256 "8275eda8c700ad9faefc06ea30ae9bc01ba48871002a1f4b0e2108c0044a0443"
+  url "https://ghfast.top/https://github.com/dotnet/dotnet/archive/refs/tags/v9.0.121.tar.gz"
+  sha256 "81bb1b6e59922f49c4155fb3b4bd17eed024e8df613ef4b6cff88c027a42edc0"
   license "MIT"
   compatibility_version 1
 
@@ -13,12 +13,11 @@ class DotnetAT9 < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "8c812e21497acd707f6fd9d22fbc63f3c03a3c725f0bf7549621150af22d468d"
-    sha256 cellar: :any, arm64_sequoia: "97631ed7e45e975b7570d80d5b8d71a02a01bf2a931b771d776e408861bff9f7"
-    sha256 cellar: :any, arm64_sonoma:  "5b426feef767c5db6294a42f62b3a9f4ad7713c93da43373422e2d216a0df18b"
-    sha256 cellar: :any, sonoma:        "b1fbfd5907ee05937ba68dbfc8fe2a2bf4c591351d6806f9fa419a4678f60860"
-    sha256 cellar: :any, arm64_linux:   "f113dc7714aa22109fe2a5f1e8f3fc7244214ed317fcad39accd7e2f6d32fd39"
-    sha256               x86_64_linux:  "a6780b3e2e1aab65a0da2b6cba25730846bfdc53bf0e440f52d7b7430c7ae220"
+    sha256 cellar: :any, arm64_tahoe:   "3d85c00fe01dac80891e46d11d1334ae1d5af153469546e7748ed0f6688a797a"
+    sha256 cellar: :any, arm64_sequoia: "6631fa727eed0c24215677b3f2eba84b0f4eebb1e283e9e04995e88b118c8a20"
+    sha256 cellar: :any, arm64_sonoma:  "a394c4e465e56ec121901460a3f5d9116fe13940f285ed431a81d20398bb0719"
+    sha256 cellar: :any, arm64_linux:   "7bb05fe3a5bbb1ce1c19d845dfbd7ad59660580370ba084e1aa0e6abfc26f541"
+    sha256               x86_64_linux:  "c74ee929da237116149e39e8addc5bd690095f95552759a0007398a995f31912"
   end
 
   keg_only :versioned_formula
@@ -57,8 +56,8 @@ class DotnetAT9 < Formula
   end
 
   resource "release.json" do
-    url "https://ghfast.top/https://github.com/dotnet/dotnet/releases/download/v9.0.120/release.json"
-    sha256 "2597bef4676920737b879b1798465af3fd752747aef7d872b20c2d1707e3ce64"
+    url "https://ghfast.top/https://github.com/dotnet/dotnet/releases/download/v9.0.121/release.json"
+    sha256 "24e6a99a2f7401054ff0b9445c4a205bc32481b320a821545312eea7e83a0d22"
 
     livecheck do
       formula :parent

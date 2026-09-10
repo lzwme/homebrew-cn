@@ -1,17 +1,16 @@
 class Flyline < Formula
   desc "Supercharged Bash plugin replacement for readline"
   homepage "https://github.com/HalFrgrd/flyline"
-  url "https://ghfast.top/https://github.com/HalFrgrd/flyline/archive/refs/tags/v1.7.1.tar.gz"
-  sha256 "067b68de0d1484a43fb77124fd2544f19b3ee30691635d038e94f13868ddb27f"
+  url "https://ghfast.top/https://github.com/HalFrgrd/flyline/archive/refs/tags/v1.8.0.tar.gz"
+  sha256 "9cd8bf72365cf88a76a46ac7f3fc90c6377ec5667ae9434b442fb7b300ab2e5e"
   license any_of: ["GPL-3.0-only", "MIT"]
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "91824b0b1b3d8b8440b786c247e10b0ff01fde10f559e5bb82ca0479d933cdde"
-    sha256 cellar: :any, arm64_sequoia: "be1a1fc6f9eb4d39e6dd4423ead18d0294f9717ad400770d7179f817ee97f87a"
-    sha256 cellar: :any, arm64_sonoma:  "4688a1533e787fb91d872166a6868db4bb153fc588939991b0bc8cd6ec40f740"
-    sha256 cellar: :any, sonoma:        "f4e47f5d7fd54008c4d50e8eebef191d211c5d0ad21999903e565f711d989cfa"
-    sha256 cellar: :any, arm64_linux:   "560de5fb5cfb0e56b06ecc025d1c9fbbc8f54a4f3f214b0d741e52eb9ea34837"
-    sha256 cellar: :any, x86_64_linux:  "82c49527c52d80a8d26e303e7192eeb3d4e6cfdf1ee7c1f7caca00f1e0053fd4"
+    sha256 cellar: :any, arm64_tahoe:   "a4cbb3e7da4f542ead5e3d59cee81b9688bb1155ca59497027c456a31208bbff"
+    sha256 cellar: :any, arm64_sequoia: "4c3e5bd746f6a9b2ae1528f03653637615c5b0c3aeb67ea748bc79f582b03827"
+    sha256 cellar: :any, arm64_sonoma:  "5f4e819931f41e8b7375f83c1b7ec0f67d5cfab4cea3c84ab3469481f50c5317"
+    sha256 cellar: :any, arm64_linux:   "6961edc2e30d740913af11c388c5f60a3166d6f6bab6b00d1f73fa821961faaf"
+    sha256 cellar: :any, x86_64_linux:  "d9e9f3be418c845fb3153c790920ee34dcc5cdcc4b4818d21ddcb7e7046a2c6f"
   end
 
   depends_on "rust" => :build

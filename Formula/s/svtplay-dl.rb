@@ -3,17 +3,16 @@ class SvtplayDl < Formula
 
   desc "Download videos from https://www.svtplay.se/"
   homepage "https://svtplay-dl.se/"
-  url "https://files.pythonhosted.org/packages/f2/ef/02ce377eee317bd5c69f77bfc93a8ba732654b5ebeb5ff3790b2daaf1448/svtplay_dl-4.193.tar.gz"
-  sha256 "2e2222e3f8ffd79a8d44332d6254f66c9304adbb58122f2c0a7f3c17798da63d"
+  url "https://files.pythonhosted.org/packages/d0/4d/b0e5afb2ca53b7d3eb2bc3be5a86ebe14410b4b78465f1364ec32514be4e/svtplay_dl-4.197.tar.gz"
+  sha256 "baa0210809bcf4dba10a1900781f05c8a95b698133fff518c29030d0ce87fdb7"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "ddbb7d06ee6053787fd924b4a817acea212c610b1eff3140a705661545fef511"
-    sha256 cellar: :any, arm64_sequoia: "4b0185caebf9eb58ed3102bf778536073f520e0840fa7a01160065ce0ac09253"
-    sha256 cellar: :any, arm64_sonoma:  "fd771ae7e52e3d0bac4a9d910b9c284233835b7742c6e84539a6c4836e719772"
-    sha256 cellar: :any, sonoma:        "a2da1d651d72fb8ba4c79ebddea015aa60684a8e1a0add93e99a0b803d945f57"
-    sha256 cellar: :any, arm64_linux:   "58a5526406db6ef066272177228ae58b584ef2e06895d53e5f072d1e049b4191"
-    sha256 cellar: :any, x86_64_linux:  "a244f0c06b80ab358174b924d2974a35e1c769a305b339aafc18a958d4b18b10"
+    sha256 cellar: :any, arm64_tahoe:   "fcd20deea62fcb3502acfbdecac3d61ceac0c5da97113c8b4ce22ab6273b0e91"
+    sha256 cellar: :any, arm64_sequoia: "b1ad95f8ec6e2cdcdec0ade4784224588be496729e5f217064a6e30a1172d0a6"
+    sha256 cellar: :any, arm64_sonoma:  "c02312f3ee5e5350295aa00670ecfeaeac0734f633cc2a465fe9eb40f9aeac5f"
+    sha256 cellar: :any, arm64_linux:   "7ef2de497b0781e92c04c64b5ffc63f79477b1ef3ef420b6090264b10df73232"
+    sha256 cellar: :any, x86_64_linux:  "cfbc744b418fbcd506940d0d9ef937dea44e55fa9d52ec9451ea70c709bfba33"
   end
 
   depends_on "certifi"
@@ -24,13 +23,13 @@ class SvtplayDl < Formula
   pypi_packages exclude_packages: %w[certifi cryptography]
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/bd/2a/23f34ec9d04624958e137efdc394888716353190e75f25dd22c7a2c7a8aa/charset_normalizer-3.4.9.tar.gz"
-    sha256 "673611bbd43f0810bec0b0f028ddeaaa501190339cac411f347ac76917c3ae7b"
+    url "https://files.pythonhosted.org/packages/e5/3f/143b048436775b0f76ac3eec145c019e8173ccc2885c8f20319b996d5e83/charset_normalizer-3.5.1.tar.gz"
+    sha256 "6117b84ea48435e5356dc737f5121485c30920ba43375fa7b434fd753df0eac3"
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/cd/63/9496c57188a2ee585e0f1db071d75089a11e98aa86eb99d9d7618fc1edce/idna-3.18.tar.gz"
-    sha256 "ffb385a7e039654cef1ab9ef32c6fafe283c0c0467bba1d9029738ce4a14a848"
+    url "https://files.pythonhosted.org/packages/5f/f7/abb373e5757eaec4b922b92f97ec8d6d7e057cf06778247604fbc4e7c3f3/idna-3.19.tar.gz"
+    sha256 "5e0811a4383b21dc5838069f801c4fb62113b7447663d2530d2bd6e77b49bf15"
   end
 
   resource "pysocks" do

@@ -7,22 +7,32 @@ class River < Formula
   head "https://github.com/memorysafety/river.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:    "6aa053883945074b92163f95377836cd8dac14606d0406d83bcfef4238f6a2a5"
-    sha256 cellar: :any,                 arm64_sequoia:  "07ebac88781c5ead2935d4fcdcf750f10791ac135986c7917e5fcfcf8cad0a97"
-    sha256 cellar: :any,                 arm64_sonoma:   "d214bd3778baa4798b1842f4d4a6049d48f02cbe6862418d35e1acc8fe8d319a"
-    sha256 cellar: :any,                 arm64_ventura:  "2f254be15ed6c188188fa007bcb48e7124808c8449c95da2bc463b1539852b23"
-    sha256 cellar: :any,                 arm64_monterey: "6bb3878f623d205400f5906e4104b7545c1054169766720fc2acb8ddf403a8c1"
-    sha256 cellar: :any,                 sonoma:         "32bf41e3c0baccfccc9aa73af1e00178cda928638dab11a67651342a54a9ce67"
-    sha256 cellar: :any,                 ventura:        "92a0e801a55f3d122801ce1394b665e4d9ffeff6a6fc3f3aebb14e27ea1335ce"
-    sha256 cellar: :any,                 monterey:       "c99da45b6218bbc2254e0f9deefd84aeedb74f44cc7049babfe93e1d9dbbbd35"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "73562d84d8fb211d03d3c07c22145034298bb5bf601b3ff811b07c49569190de"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0ffd4142bf28d324a32169a8e5cd31640c89af81ae66e3f7f4b2fc548322dec0"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "65ca2b30775f9a010cd7a2fc8408581a596295de3ebc12a5060451a949f6499f"
+    sha256 cellar: :any, arm64_sequoia: "390f6ec9178f51e8b0998a05676eec457da45c894c1175c16f98fdac88c979ce"
+    sha256 cellar: :any, arm64_sonoma:  "e034913a46c445d4c1e63c34b5479ac4601e37dc4af3ac2931ffe226f597fac0"
+    sha256 cellar: :any, arm64_linux:   "1d166f0942c670c915542ce1dd7ccb17ec6fff21a61caed0825cecbc94bfaa2a"
+    sha256 cellar: :any, x86_64_linux:  "7f89656a962554f6248a9ae9850b8ebb6ae87209b20e2b5e563c268efc76d439"
   end
 
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "openssl@3"
+
+  # `pandora-web-server` moved off GitHub, so the pinned git dependency 404s
+  patch do
+    url "https://github.com/memorysafety/river/commit/d7de7566ab1cccb3a8c46c609e9ae5d511a9b0ae.patch?full_index=1"
+    sha256 "23626140f673e189fa67145eb6c25e205536ecdddd784a03836b8da3577ae718"
+    type :unofficial
+    resolves "https://github.com/memorysafety/river/pull/92"
+  end
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", "--locked", "--target", "host-tuple"
+  end
 
   def install
     # Ensure that the `openssl` crate picks up the intended library.

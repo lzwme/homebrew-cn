@@ -14,11 +14,12 @@ class Atmos < Formula
   no_autobump! because: :bumped_by_upstream
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6027c10bc6164d195cae5e382c7b20faa42256601564705bb278ab261aaef06d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b1f5bc74a694664f12f11d4dddd9cf817296897ebdcd7434ef5e8ce2bde6f02d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bc1897dd9fe7278e2cadc838bc00befa73ca948bd4073ae17dc7a9381104d3ea"
-    sha256 cellar: :any,                 arm64_linux:   "f0d5a9667ee7b70515c32cb9af8cf45510ea5d982bedee3fb71ffeb023097c5a"
-    sha256 cellar: :any,                 x86_64_linux:  "252254c7206550fc38e954d013c0e19c7d690f12d84344553f87402ef2a3423d"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2e557dc44b401fbc4b6161c36e51a644f41a5f4dec43485893ab40fa099acc71"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "630749777bc8905f19ffb33ffbd6fe3ecfcaae8e47a709d110299d62fc6ba714"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0a52925bbf1b0e62c41593d507a77cdf73a0a5c62104b2b9d1f8a18caf86b8c1"
+    sha256 cellar: :any,                 arm64_linux:   "a6038e24d779872862bcba2b94e2878f333a8af822dc75873e2ab08e3c8a50bd"
+    sha256 cellar: :any,                 x86_64_linux:  "806e37e2990137b4a8cc2094ed0c001401ac2d32a2cfa2f4335e82cdd93f29da"
   end
 
   depends_on "go" => :build
@@ -32,6 +33,7 @@ class Atmos < Formula
 
   def install
     ENV["CGO_ENABLED"] = "1" if OS.linux? && Hardware::CPU.arm?
+    ENV["GOFIPS140"] = "latest"
 
     system "go", "build", *std_go_args(ldflags: "-X 'github.com/cloudposse/atmos/pkg/version.Version=#{version}'")
 

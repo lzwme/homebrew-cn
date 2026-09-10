@@ -1,14 +1,14 @@
 class Licenseplist < Formula
   desc "License list generator of all your dependencies for iOS applications"
   homepage "https://www.slideshare.net/mono0926/licenseplist-a-license-list-generator-of-all-your-dependencies-for-ios-applications"
-  url "https://ghfast.top/https://github.com/mono0926/LicensePlist/archive/refs/tags/3.28.1.tar.gz"
-  sha256 "22d314762343cc3a93265b66bc1d39f3c6a1b6a4be2f250b5dcd2815b2db6a3b"
+  url "https://ghfast.top/https://github.com/mono0926/LicensePlist/archive/refs/tags/3.28.2.tar.gz"
+  sha256 "f687b45015a4bbc679b83ee43bfc129c0ecfc4aa6f179b091d5d9fa34dd7ec82"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4ebbf9914a8d3bbb7e26402146e8bdd40afdb06e96c4fcb5e2021aa809468819"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "484d121cf1dc55edb596f629f8c4106643ef57d44936ea6c5db31ff73214707d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a5fc39108fe8afb861e52610df295ed5328443802f9b1e6376f0987385825007"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1437b7c879cd86fb9701d431e73b60c23628fdefb79e2f9178b15111a4d0cd7d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "60ba4f5bdc33e3184a01b2a7d3a1b1ae2849b38123b37db1f8a5c0bac3b95b82"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4a516ed1e5da5de52b2a56c0425664cffe4da316ae3bc2f9dff1bc7077a9f3e8"
   end
 
   depends_on :macos

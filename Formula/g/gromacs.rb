@@ -61,8 +61,6 @@ class Gromacs < Formula
 
     gmx_simd = if Hardware::CPU.arm?
       "ARM_NEON_ASIMD"
-    elsif OS.mac? && MacOS.version.requires_sse4?
-      "SSE4.1"
     else
       "SSE2"
     end

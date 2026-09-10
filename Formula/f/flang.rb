@@ -2,16 +2,15 @@ class Flang < Formula
   desc "LLVM Fortran Frontend"
   homepage "https://flang.llvm.org/"
   license "Apache-2.0" => { with: "LLVM-exception" }
-  revision 1
   head "https://github.com/llvm/llvm-project.git", branch: "main"
 
   stable do
-    url "https://ghfast.top/https://github.com/llvm/llvm-project/releases/download/llvmorg-23.1.0/llvm-project-23.1.0.src.tar.xz"
-    sha256 "ab1f0e3ec52448c33e8782eaf0422504b87c7b016b22514653ee0d8fcee479ff"
+    url "https://ghfast.top/https://github.com/llvm/llvm-project/releases/download/llvmorg-23.1.1/llvm-project-23.1.1.src.tar.xz"
+    sha256 "ebe9be46fe8756d58c5b198ffad0fa2a766257add81a4dc52179bfacc7888ee6"
 
     resource "llvm_man_pages" do
-      url "https://ghfast.top/https://github.com/llvm/llvm-project/releases/download/llvmorg-23.1.0/llvm_man_pages-23.1.0.tar.xz"
-      sha256 "4574585793ef218dd06ceac849381c981ffce653f342deb7b6db174ac57748a0"
+      url "https://ghfast.top/https://github.com/llvm/llvm-project/releases/download/llvmorg-23.1.1/llvm_man_pages-23.1.1.tar.xz"
+      sha256 "66f368b2ee28e3540dcd6a9a1d115173c2708f37cd591508cc79b82708427349"
 
       livecheck do
         formula :parent
@@ -24,11 +23,11 @@ class Flang < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "e94eb58a4ae39cb9a76cccb22bfae61f89f60e6bd1baf982052e7b673465680d"
-    sha256 cellar: :any, arm64_sequoia: "da64ba8181236d1c713760570970258f50dc87725cffe49f291498abc6cb0b7e"
-    sha256 cellar: :any, arm64_sonoma:  "41bb0533ff4e85319266f901b1efe4e75db0f29820f7aa19cd8128a75372e1c6"
-    sha256 cellar: :any, arm64_linux:   "6e66ff100fe3a8f0ced701c72d88f760754ffbdec3905eaab6bafb0addaf5818"
-    sha256 cellar: :any, x86_64_linux:  "07c9c1c0672b41bfb5e1065772c7bb8479263f06105be2860c9414d9b7cc9ad8"
+    sha256 cellar: :any, arm64_tahoe:   "ab6836d3e3f392f664b81b2e5029e043a33fe0f52cdf59849856c0d34d94124a"
+    sha256 cellar: :any, arm64_sequoia: "7290b6f0cc42988b44043b88d8df5b606cba534ebaf414165cdcd21c16857894"
+    sha256 cellar: :any, arm64_sonoma:  "a3b7b2c36a796a5225bd0970a9cd5df6eb4ddeb413e3c890f21d6c0918c17989"
+    sha256 cellar: :any, arm64_linux:   "5d896dffb61af558584ccf358aad825eb393a7e9ba0a60772bb010c7806b6757"
+    sha256 cellar: :any, x86_64_linux:  "9d586e3b14d2c2782765daa2f9529b906a3daa2523dd7864b3dafcb5b036d80f"
   end
 
   depends_on "cmake" => :build

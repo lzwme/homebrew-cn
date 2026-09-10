@@ -6,15 +6,14 @@ class Litecli < Formula
   url "https://files.pythonhosted.org/packages/e3/d5/afec99cc3eaba96214d77e76438d7fe5e6ea54704b0e47dd97d9696ccd6c/litecli-1.17.1.tar.gz"
   sha256 "e2f7191eaba830b24dbbfc9171a495c62562df923ba1cc3b2db2652547c1bac8"
   license "BSD-3-Clause"
-  revision 3
+  revision 4
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "17258ed044d8936e3544fb740060cb0ec9168aaab59f6a083fe8898922bbd296"
-    sha256 cellar: :any, arm64_sequoia: "be446aff92430a81d3df6f4b74a906000eb2d078ac76cb92226a001870b92f89"
-    sha256 cellar: :any, arm64_sonoma:  "8fa4ba38b371e8fa35ba96331ca977294d5eea8001f3888e135507046e70c317"
-    sha256 cellar: :any, sonoma:        "634cd4844b8ae6e769b3cf534b9f5aa4cdabcec2cc8c1c94f3856b33d9f7897c"
-    sha256 cellar: :any, arm64_linux:   "04b8915295e8e5ce5a9f45ac9d13735e612dd559813fe0d77827ebc3c79116a8"
-    sha256 cellar: :any, x86_64_linux:  "acfe93b6757876dae58baf591f425c793693485353d771af7ca42bfe016c36a0"
+    sha256 cellar: :any, arm64_tahoe:   "ab64562393e8205b8317d0145b831550fedac6a154ef19f246c8b38783f254c9"
+    sha256 cellar: :any, arm64_sequoia: "042051318c6bbdca17b2d90c271ca9bcc889f81298e69d8902da4736e6f76276"
+    sha256 cellar: :any, arm64_sonoma:  "4798bf90009ed60dfdf7e4ed27c13dffff21328987bd3c16a9df05aa9318c5eb"
+    sha256 cellar: :any, arm64_linux:   "a773b2a1a2669544d97fb893c1515b4f835f45ad2c03b1a9122925f719f9ab7d"
+    sha256 cellar: :any, x86_64_linux:  "5b9fe24c509992126b0d5648157535692bca88c9271f3cf55f45664dcc4dc133"
   end
 
   depends_on "rust" => :build # for jiter
@@ -29,8 +28,8 @@ class Litecli < Formula
                 exclude_packages: %w[certifi pydantic setuptools]
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/61/cc/a381afa6efea9f496eff839d4a6a1aed3bfafc7b3ab4b0d1b243a12573dd/anyio-4.14.2.tar.gz"
-    sha256 "cfa139f3ed1a23ee8f88a145ddb5ac7605b8bbfd8592baacd7ce3d8bb4313c7f"
+    url "https://files.pythonhosted.org/packages/a9/d2/f4d173e22df740bc37b1db102b386ba719b66e95b0f0d751f556b387e6d2/anyio-4.15.1.tar.gz"
+    sha256 "9f28306018cbd6d329e64a36d58256edff76dd996fe423bc957326e578b82a94"
   end
 
   resource "cli-helpers" do
@@ -39,8 +38,8 @@ class Litecli < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/76/d4/81420972a676e8ffea40450d8c8c92943e7218a78fe9b64359836cc9876b/click-8.4.2.tar.gz"
-    sha256 "9a6cea6e60b17ebe0a44c5cc636d94f09bd66142c1cd7d8b4cd731c4917a15f6"
+    url "https://files.pythonhosted.org/packages/c7/0e/7fa0ef50764b67090eca4114772a2abf8b6148198475e54c660b97caeee6/click-8.5.0.tar.gz"
+    sha256 "ba0d2089de75ea0310e2dde03160e6ca10009947fb95a182f9b54021bb272e34"
   end
 
   resource "click-default-group" do
@@ -58,29 +57,24 @@ class Litecli < Formula
     sha256 "03c881bbf23aa07bccf1b837005975993c4ab4427ba57f959afdd9d1a2386848"
   end
 
-  resource "distro" do
-    url "https://files.pythonhosted.org/packages/fc/f8/98eea607f65de6527f8a2e8885fc8015d3e6f5775df186e443e0964a11c3/distro-1.9.0.tar.gz"
-    sha256 "2fa77c6fd8940f116ee1d6b94a2f90b13b5ea8d019b98bc8bafdcabcdd9bdbed"
-  end
-
   resource "h11" do
     url "https://files.pythonhosted.org/packages/01/ee/02a2c011bdab74c6fb3c75474d40b3052059d95df7e73351460c8588d963/h11-0.16.0.tar.gz"
     sha256 "4e35b956cf45792e4caa5885e69fba00bdbc6ffafbfa020300e549b208ee5ff1"
   end
 
   resource "httpcore2" do
-    url "https://files.pythonhosted.org/packages/a9/83/a896fc59940fc5a6e2aff3a4be1d92fa890112936803b331cae75a993c34/httpcore2-2.10.0.tar.gz"
-    sha256 "13c0cc3d1919d4f28457f60cd2c2abe04113a8af184ccf1142811beba936f9dc"
+    url "https://files.pythonhosted.org/packages/be/ad/f4f0e57345f1870f3e8cb624e058d7eca6e5a27d33bcc3311d9b618734cd/httpcore2-2.12.0.tar.gz"
+    sha256 "9293522bba0aa7c4c8e9e3f040c16575bd8868e155a77fa30c7a9085a5eae648"
   end
 
   resource "httpx2" do
-    url "https://files.pythonhosted.org/packages/bd/3d/f9a8c07a3884f3e5b26205e8436a18b3af61c5d53192c3bea235574dbbec/httpx2-2.10.0.tar.gz"
-    sha256 "8741d7329fe2c7885fc9ceb61c8217acfb87a85f75723714b89ebf7ad7196338"
+    url "https://files.pythonhosted.org/packages/7f/f8/579a8b51e42e38ee32647df9f08aa25643ae788e275cc625b199829c4671/httpx2-2.12.0.tar.gz"
+    sha256 "7631fe9887a8a2275f4a2540e053aa670fcc50742864a9ae7c66e609fdcf12cf"
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/cd/63/9496c57188a2ee585e0f1db071d75089a11e98aa86eb99d9d7618fc1edce/idna-3.18.tar.gz"
-    sha256 "ffb385a7e039654cef1ab9ef32c6fafe283c0c0467bba1d9029738ce4a14a848"
+    url "https://files.pythonhosted.org/packages/5f/f7/abb373e5757eaec4b922b92f97ec8d6d7e057cf06778247604fbc4e7c3f3/idna-3.19.tar.gz"
+    sha256 "5e0811a4383b21dc5838069f801c4fb62113b7447663d2530d2bd6e77b49bf15"
   end
 
   resource "jiter" do
@@ -89,13 +83,13 @@ class Litecli < Formula
   end
 
   resource "llm" do
-    url "https://files.pythonhosted.org/packages/b7/bd/af98f3401bab026f3153de0edba65ff56e56ac7abaf34ab568cf461cd7f9/llm-0.32.tar.gz"
-    sha256 "76adad7cceddbe65e970a96ee879fc75709ce05fdfb7ca9503b66bede5933679"
+    url "https://files.pythonhosted.org/packages/b5/68/baeda27122a280940c5e9ae7291b821fa96ea23f50a00f568e9cff0c3aac/llm-0.35.tar.gz"
+    sha256 "2ee0955b2e372408813ce966f3d03ad2c7419b85a547880c53797d31d3a3fdb6"
   end
 
   resource "openai" do
-    url "https://files.pythonhosted.org/packages/58/9b/d45911bf9abfc5a754d800d79fe56e4dcf6e7b679d6ff4b7e9689b56bc02/openai-3.1.0.tar.gz"
-    sha256 "3ae7190da63f718727f9c525740d3f713e85553d2bf1d0cc9247346bd9063a4d"
+    url "https://files.pythonhosted.org/packages/f2/b0/1100c93f93e1c174205ce8d15a049a446f0dc88e9262c1f1f223fe6b9493/openai-3.8.0.tar.gz"
+    sha256 "6138a5a1333a1be9e4d1edea2d160b311542787b029543f87de4961c66358d16"
   end
 
   resource "pluggy" do
@@ -163,19 +157,14 @@ class Litecli < Formula
     sha256 "e2cfde8f79420f6deeffdeda9aaec3b6bc5abce947655d17ac662b126e48a60d"
   end
 
-  resource "tqdm" do
-    url "https://files.pythonhosted.org/packages/21/3b/6c24bec5be5e743ffd99576daa5cc077722fc7d5bbc00bd133fa0c698dc6/tqdm-4.70.0.tar.gz"
-    sha256 "55b0b0dbd97462d06ebee91e4dac24ed4d4702be82b24f07e6c1d27e08cea220"
-  end
-
   resource "truststore" do
     url "https://files.pythonhosted.org/packages/53/a3/1585216310e344e8102c22482f6060c7a6ea0322b63e026372e6dcefcfd6/truststore-0.10.4.tar.gz"
     sha256 "9d91bd436463ad5e4ee4aba766628dd6cd7010cf3e2461756b3303710eebc301"
   end
 
   resource "wcwidth" do
-    url "https://files.pythonhosted.org/packages/34/74/c6428f875774288bec1396f5bfcbc2d925700a4dad61727fd5f2b12f249d/wcwidth-0.8.2.tar.gz"
-    sha256 "91fbef97204b96a3d4d421609b80340b760cf33e26da123ff243d76b1fda8dda"
+    url "https://files.pythonhosted.org/packages/36/57/ed58088fafdf4c55a0ad6bde846502567645424d7ebf325230b9237f4085/wcwidth-0.8.3.tar.gz"
+    sha256 "d128512515fbf4612e0ff21fd6380399210318b7b54a9af59dff8454cf9730eb"
   end
 
   def install

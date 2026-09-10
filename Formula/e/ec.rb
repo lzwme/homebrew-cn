@@ -1,18 +1,16 @@
 class Ec < Formula
   desc "TUI 3-way git mergetool"
   homepage "https://github.com/chojs23/ec"
-  url "https://ghfast.top/https://github.com/chojs23/ec/archive/refs/tags/v0.3.3.tar.gz"
-  sha256 "9598d57cd71c35c057ce92fda690380e3a138b44404ef14cbedf9f577772b71b"
+  url "https://ghfast.top/https://github.com/chojs23/ec/archive/refs/tags/v0.4.1.tar.gz"
+  sha256 "70eaf75969cde5b823d8dc4a4d2e575ceab903edab8277212afc642b757e5a10"
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a43dff355d32cd7d40cb11c1483ee1fc01ee4a88b0ea45f7a9298a313ece8548"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a43dff355d32cd7d40cb11c1483ee1fc01ee4a88b0ea45f7a9298a313ece8548"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a43dff355d32cd7d40cb11c1483ee1fc01ee4a88b0ea45f7a9298a313ece8548"
-    sha256 cellar: :any_skip_relocation, sonoma:        "de3be0619797e0575512802fa496cb3ee78dfdcf7a0706c4e9f5b035ef299b2f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "02018e408c69c3a4fa65c3f9d952e7a7e6122098ec82f9d754308583aaa6ade0"
-    sha256 cellar: :any,                 x86_64_linux:  "8072200a975fbf9ecd984f791d9bcf29630b32cdd3adca8bd05a6ad91fa09150"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "82c6e8c16a731484b911afeb24bd382fa99a884404cf95a17d01da47252e74be"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "82c6e8c16a731484b911afeb24bd382fa99a884404cf95a17d01da47252e74be"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "82c6e8c16a731484b911afeb24bd382fa99a884404cf95a17d01da47252e74be"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7c776859e6c3f7e4b0dedecf73e9fa05d5cec3e5e401fbcc143b75fe74b8efe7"
+    sha256 cellar: :any,                 x86_64_linux:  "cc89eba1f5b6c7b20ce21e01d30baa9a79013c9977000d31d1b03f53d5b04806"
   end
 
   depends_on "go" => :build

@@ -17,6 +17,9 @@ class Lazyjj < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "355ec9f7c70a53c3f9b80171821709738cfc7e9bde7f38a5498f537a9d6c6811"
   end
 
+  deprecate! date: "2026-09-09", because: :does_not_build
+  disable! date: "2026-12-09", because: :does_not_build
+
   depends_on "rust" => :build
   depends_on "jj"
 

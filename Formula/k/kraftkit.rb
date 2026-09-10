@@ -1,8 +1,8 @@
 class Kraftkit < Formula
   desc "Build and use highly customized and ultra-lightweight unikernel VMs"
   homepage "https://unikraft.org/docs/cli"
-  url "https://ghfast.top/https://github.com/unikraft/kraftkit/archive/refs/tags/v0.12.15.tar.gz"
-  sha256 "285028e9216723ba8b4ec1bf8ce2b4d121ba76f186519b6ebc2fa4b99e53c828"
+  url "https://ghfast.top/https://github.com/unikraft/kraftkit/archive/refs/tags/v0.12.16.tar.gz"
+  sha256 "a7d26ba2a73583e0aaa5e027a09bf583b080cb2e60ccaba10e7a445eafd4fa22"
   license "BSD-3-Clause"
   head "https://github.com/unikraft/kraftkit.git", branch: "staging"
 
@@ -12,12 +12,11 @@ class Kraftkit < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0a1ff6697028d85f8fcf4e22517155d523209135e395abbc7e654f4a1bf0cbf8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "eee06a268e1cd6d16e8530be4651f765a30b459218414824da25b17ada16e729"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0523ba9d72bb17c7e2783a861142d8c499c017f122c7971f921f369dbf73b9ad"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e7b20fdffb21c9b2171a74c37658f002a4550ed2f11eec2016773b3efcfaaac8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a5e8ac3e5594eb862d90ffb7db27cbe4a8deb294692292b1f7326168d04f0cf6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "92f2d1640760d6422693fedae1cdcc16a40793625d41e310cc7b65d76f324f73"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ecdddad3c09b5e367ed20710bde93aa50810a2004f838d6447c4a6b7a2593296"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1d0bc52463333ea227538b7527b310329e9c126944ec544efb9a5470151c9c32"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b3dfa213472c29f3db4612571e2ae6519e6845e48249449f39c3a5af7547b325"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1430775dc57a17488b6f8daf609587c7f8c8283559fc8b5b38c3f1323b0dae87"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "55650a35669978cfaef6ff9ee66626234ea662a853ec5e5dcb26018835287eb3"
   end
 
   depends_on "go" => :build

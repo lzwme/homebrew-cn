@@ -30,13 +30,8 @@ class Mrbayes < Formula
       args << "--disable-avx"
       # There is no argument to override AX_EXT SIMD auto-detection, which is done in
       # configure and adds -m<simd> to build flags and also defines HAVE_<simd> macros
-      if OS.mac?
-        args << "ax_cv_have_sse41_cpu_ext=no" unless MacOS.version.requires_sse41?
-        args << "ax_cv_have_sse42_cpu_ext=no" unless MacOS.version.requires_sse42?
-      else
-        args << "ax_cv_have_sse41_cpu_ext=no"
-        args << "ax_cv_have_sse42_cpu_ext=no"
-      end
+      args << "ax_cv_have_sse41_cpu_ext=no"
+      args << "ax_cv_have_sse42_cpu_ext=no"
       args << "ax_cv_have_sse4a_cpu_ext=no"
       args << "ax_cv_have_sha_cpu_ext=no"
       args << "ax_cv_have_aes_cpu_ext=no"

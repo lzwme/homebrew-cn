@@ -1,18 +1,17 @@
 class Vhs < Formula
   desc "Your CLI home video recorder"
   homepage "https://github.com/charmbracelet/vhs"
-  url "https://ghfast.top/https://github.com/charmbracelet/vhs/archive/refs/tags/v0.11.0.tar.gz"
-  sha256 "c08b8502989fe7e9626c02938f3fc512c2a4ba21f839f455d20d7eb1da7bc39f"
+  url "https://ghfast.top/https://github.com/charmbracelet/vhs/archive/refs/tags/v0.12.0.tar.gz"
+  sha256 "2e4a3b940f66ffbe1f66ded3b6253c9f3185a69567596e80d08c50cee77eaedf"
   license "MIT"
   head "https://github.com/charmbracelet/vhs.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0edf44b9c84f56fb39ae8982b9190380cc129c24a489d3fde161ab733d9219b4"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0edf44b9c84f56fb39ae8982b9190380cc129c24a489d3fde161ab733d9219b4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0edf44b9c84f56fb39ae8982b9190380cc129c24a489d3fde161ab733d9219b4"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1e57d7d0c7a2e44c65e7db0b344de2ba912362c648060b7ccd9f5de6bcec784d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cdc1dcb65b659c63f95e43f6347e2cb290744431c6f0ced771c25326d098155e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "15290cb92528067b54e83f001e151ff66e39b1b94bba44174e442bb803dccc70"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7f4b297f4bbe869b45924b4e4ac84b1c4ba7db1fd5b1560e61abec5defacd21d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7f4b297f4bbe869b45924b4e4ac84b1c4ba7db1fd5b1560e61abec5defacd21d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7f4b297f4bbe869b45924b4e4ac84b1c4ba7db1fd5b1560e61abec5defacd21d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ceed6691fb055502effb55a5581ec0e6ffc6f0f0d999b2405b6ddc5e16595710"
+    sha256 cellar: :any,                 x86_64_linux:  "8544900316bc04ea71601dbdf463363bd8f03a7ad73d2815ef56789c6e40e0e4"
   end
 
   depends_on "go" => :build

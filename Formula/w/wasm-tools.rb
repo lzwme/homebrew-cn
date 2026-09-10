@@ -3,7 +3,11 @@ class WasmTools < Formula
   homepage "https://github.com/bytecodealliance/wasm-tools"
   url "https://ghfast.top/https://github.com/bytecodealliance/wasm-tools/archive/refs/tags/v1.258.0.tar.gz"
   sha256 "14a867a7f5ae233f27c6ad93c2ce6153afa43bf93b0a60450b8ba789d65f8ce4"
-  license "Apache-2.0" => { with: "LLVM-exception" }
+  license any_of: [
+    { "Apache-2.0" => { with: "LLVM-exception" } },
+    "Apache-2.0",
+    "MIT",
+  ]
   head "https://github.com/bytecodealliance/wasm-tools.git", branch: "main"
 
   livecheck do
@@ -21,6 +25,12 @@ class WasmTools < Formula
   end
 
   depends_on "rust" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", "--locked", "--target", "host-tuple"
+  end
 
   def install
     system "cargo", "install", *std_cargo_args

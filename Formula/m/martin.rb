@@ -1,8 +1,8 @@
 class Martin < Formula
   desc "Blazing fast tile server, tile generation, and mbtiles tooling"
   homepage "https://martin.maplibre.org"
-  url "https://ghfast.top/https://github.com/maplibre/martin/archive/refs/tags/martin-v1.16.0.tar.gz"
-  sha256 "ea5618fcf95d556740e95990161b810ce4b021dc82c7ceb90f75c879b25e1c4a"
+  url "https://ghfast.top/https://github.com/maplibre/martin/archive/refs/tags/martin-v1.16.1.tar.gz"
+  sha256 "e64c4c43af3eb5940c825c70619f6c670e7af4a5853498c39237b6b7e57e42a2"
   license any_of: ["Apache-2.0", "MIT"]
 
   # There can be a notable gap between when a version is tagged and a
@@ -15,11 +15,11 @@ class Martin < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d0ba5ae9e2605ee5642f2d09482ea457edf499204608cf8bb5a326ef91f70bd9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3bbc76dbbf26df5650b9ed7e0348e668e9aa1705b33aa7d00161343f5f889a92"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "627abbd34bb7d5ff32001d29a545d43350be24dbc4474751fd5ee7c65eafdbf8"
-    sha256 cellar: :any,                 arm64_linux:   "8a1b4ea7b6d90502072f8c27cf4b054e8e9d57eda1287e1a20295bcfc3917601"
-    sha256 cellar: :any,                 x86_64_linux:  "0551444ce07084f7fd422dd6488c432ee1fbd596eb368b59fccb109867729e79"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9ce143aad121e6e79eb7906512da140b2f530951895b3a0fe54b489a3158483e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d24d27284df5223493c6e7c51b99a96ccb5c1617034abc0657f8c3df97a1dff2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7b94e1c951b46134b39189689909fe704f4c32a516b91a57c08982381ac2b405"
+    sha256 cellar: :any,                 arm64_linux:   "04c51c13e635dd83fb44a5c2dfb2bfb2637127240d63633c737e439c461d26f5"
+    sha256 cellar: :any,                 x86_64_linux:  "513211b43540ad756186a9dfa168b3a0b3a40bb19cf36079e3fe7616dde242e3"
   end
 
   depends_on "node" => :build

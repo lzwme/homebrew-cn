@@ -29,7 +29,7 @@ class Just < Formula
   end
 
   def install
-    system "cargo", "install", "--offline", *std_cargo_args
+    system "cargo", "install", *std_cargo_args
 
     generate_completions_from_executable(bin/"just", "--completions")
     (man1/"just.1").write Utils.safe_popen_read(bin/"just", "--man")

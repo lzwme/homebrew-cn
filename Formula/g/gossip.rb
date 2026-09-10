@@ -8,15 +8,12 @@ class Gossip < Formula
   head "https://github.com/mikedilger/gossip.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f92aa10431368840267d013fff2476487a70badc319682d5bd649cf00681917d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "69f4c2c908a9e8fc06bc60fc13cf8a99cdc2e53c250e55135061746f1e6f1ac7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "52c0547db044f74634ca84ebf9ced852f23a91950d8d50fbc00faf3b5f04daba"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "0659e6181bcb7a871769af31433121f5a10e0a600b1ba37bcde69aba85c894d7"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3bc84869c2e363b24b75f51e8bd0953c8b065dfadc6be87d942f4f2003ee6065"
-    sha256 cellar: :any_skip_relocation, ventura:       "5e2f6d09d8d9907e6073d4a57420df775c38c856ea80576fb5beb799b874d4a1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "aee8f60a43435d9dea1b85a1335d45ccb0d6667d9b0480e4342afe5ce89b9aba"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bfb28f95a965f5ef4ffc6be6870a87dbc90d7ed00a9bd511df04ab45bf9f56dd"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "149f794ee3f3cfef1fa14d623a2226a3e3337b89ec1f8842bbfeb32dac95f94c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2023c9f221692ab40815523335059e2a729f689127ad17807f2bb171d511b33e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a98a979bea6af255877d7dc14d459232e62c883c4cf497040bfbe06e6f7e72d9"
+    sha256 cellar: :any,                 arm64_linux:   "265480daa549850deba4a81e691f44b27692de488a0128fc5728022ed2bdeebb"
+    sha256 cellar: :any,                 x86_64_linux:  "110c089e30a00d1487de46516dd9de5a8a00e3f4359e6b7ff459fc1971fbd85d"
   end
 
   depends_on "rust" => :build
@@ -27,6 +24,21 @@ class Gossip < Formula
   end
 
   def install
+    odie "Remove `rust-lightning` source replacement!" if build.stable? && version > "0.14.0"
+    # `nostr-types` pins a `rust-lightning` fork whose repository was removed, so
+    # point the identical commit at upstream. Upstream gossip dropped the fork in
+    # https://github.com/mikedilger/gossip/commit/541c7ae0d3fd4b62af9d86a46a164a16f4b96cb2
+    (buildpath/".cargo/config.toml").append_lines <<~TOML
+      [source."git+https://github.com/mikedilger/rust-lightning?rev=7a62cb4106d449bc4d1724920b73918d501bb3a9"]
+      git = "https://github.com/mikedilger/rust-lightning"
+      rev = "7a62cb4106d449bc4d1724920b73918d501bb3a9"
+      replace-with = "rust-lightning-upstream"
+
+      [source.rust-lightning-upstream]
+      git = "https://github.com/lightningdevkit/rust-lightning"
+      rev = "7a62cb4106d449bc4d1724920b73918d501bb3a9"
+    TOML
+
     ENV.append_to_rustflags "--cfg tokio_unstable"
     system "cargo", "install", *std_cargo_args(path: "gossip-bin", features: "lang-cjk")
   end

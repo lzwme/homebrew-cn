@@ -2,18 +2,17 @@ class Pc6001vx < Formula
   desc "PC-6001 emulator"
   # http://eighttails.seesaa.net/ gives 405 error
   homepage "https://github.com/eighttails/PC6001VX"
-  url "https://eighttails.up.seesaa.net/bin/PC6001VX_4.4.0_src.tar.gz"
-  sha256 "d31716ba9d2d96de9c664ed5006391e834dae54dcda574f1cf0bf7d074866333"
+  url "https://eighttails.up.seesaa.net/bin/PC6001VX_4.5.0_src.tar.gz"
+  sha256 "ed2599b0418a5d5a13a23546812c44168fb7bc222e2dc7e02d35b46f63e64087"
   license "LGPL-2.1-or-later"
   head "https://github.com/eighttails/PC6001VX.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "5d8a5b0fe11cc49202f21b3775157241eb9e8080be0356ff6583820732a87e5a"
-    sha256 cellar: :any, arm64_sequoia: "9866b2886c96b9810cec0e760dc77cc33a75d66047b5d064c713bbd5ef9c6590"
-    sha256 cellar: :any, arm64_sonoma:  "eb922305b04df645bed37e336a35b945e8925727a08b74a27eff3735c4d8afe4"
-    sha256 cellar: :any, sonoma:        "8cb2be2cd3e2e63b55caddc5af7cec469086c4e882a9b0c04c37d51df768bc5b"
-    sha256 cellar: :any, arm64_linux:   "88f5c5c6105c6aec4f094fabd65c20a776762c9c5ef3a5a7333850d03c5d7675"
-    sha256 cellar: :any, x86_64_linux:  "65764ea2290d9a0d206bd7815f7d6d263e817932d4273eec5c03ab3293ddc7c1"
+    sha256 cellar: :any, arm64_tahoe:   "7484b1c6da6702570861a93057d07c9f54c3e1f42f1e2ea9606a07d30efca5ca"
+    sha256 cellar: :any, arm64_sequoia: "b7fe9332e751381c3f13921bd0a9519c068a3770af219bb66f4f71ba6694b6a2"
+    sha256 cellar: :any, arm64_sonoma:  "f88e1cd99e8f43b781778f784fbf76fdf5657269e844302e5b36242a17f96881"
+    sha256 cellar: :any, arm64_linux:   "c8d3fe21b698208f5ebd1a0599cb65dcfde99efb2e054af706aefd311552cd8f"
+    sha256 cellar: :any, x86_64_linux:  "86804ae656cffca115b4ae13ffdf976d2a1bdc4dfea3a7c4d798b7579b3dcf2c"
   end
 
   depends_on "cmake" => :build
@@ -21,6 +20,7 @@ class Pc6001vx < Formula
   depends_on "qttools" => :build
   depends_on "ffmpeg"
   depends_on "qtbase"
+  depends_on "qtdeclarative"
   depends_on "qtmultimedia"
   depends_on "sdl2-compat"
 

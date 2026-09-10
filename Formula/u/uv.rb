@@ -1,18 +1,18 @@
 class Uv < Formula
   desc "Extremely fast Python package installer and resolver, written in Rust"
   homepage "https://docs.astral.sh/uv/"
-  url "https://ghfast.top/https://github.com/astral-sh/uv/archive/refs/tags/0.12.11.tar.gz"
-  sha256 "9f353551174941af14a56860d4365d281fb99967236ac84229a3fe57bdd5f504"
+  url "https://ghfast.top/https://github.com/astral-sh/uv/archive/refs/tags/0.12.12.tar.gz"
+  sha256 "c4ea101a887bbbf2e882a05c70b747f275a5172fb9c3fa0bc0141b8c7cdf13b1"
   license any_of: ["Apache-2.0", "MIT"]
   compatibility_version 1
   head "https://github.com/astral-sh/uv.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e84f230868271a67610224c57c9026c16773a59d6b787d8d18cfbb91871108bd"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1e3da72b8924c5b650feb0cfb62b01ba5da2900a8ae93795aa2e8945a089fe51"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "658c16c3076abf9b61545c51408a448e89937994d88886d8905acd99de245e48"
-    sha256 cellar: :any,                 arm64_linux:   "1ead53972e2dd6b5353284c6c3f35f3f6fead4bf8dd7af744f82c9a8142f6fbe"
-    sha256 cellar: :any,                 x86_64_linux:  "4827b02531a642c938be621e3e6e58c7b6893d5c2cb1bd1b19dc8f4bfa381bcf"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c99a50974b365851d957b391e1e82828e67023b711957639f11f60555f8f7c9b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "053543cb4e3f2d4866515f13d164e5387b2249fbf794be6ff3e92fbf03d29b1e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "503f8e8db0bc263b2cfdf82cdd340b69e7cf0d9335c06fc2177b7d8fa3982709"
+    sha256 cellar: :any,                 arm64_linux:   "1c5ecc1b1c9a872924e74b66595faa82709614321683d62df8921a146c15a62b"
+    sha256 cellar: :any,                 x86_64_linux:  "7d1d81aed99ad988c11d8eb4ea77f2cc137f37793212c04f1958b2fcec4e0263"
   end
 
   depends_on "pkgconf" => :build
@@ -26,7 +26,7 @@ class Uv < Formula
   allow_network_access! :test
 
   def fetch
-    system "cargo", "fetch", "--locked"
+    system "cargo", "fetch", "--locked", "--target", "host-tuple"
   end
 
   def install

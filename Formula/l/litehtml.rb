@@ -4,15 +4,15 @@ class Litehtml < Formula
   url "https://ghfast.top/https://github.com/litehtml/litehtml/archive/refs/tags/v0.10.tar.gz"
   sha256 "7700eced92847d34ad9846b138cf195a9c974b519be70de58797880ae9da649e"
   license "BSD-3-Clause"
+  revision 1
   compatibility_version 1
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "0c80f1c5ae85acca5068625a06a74fd02185a7901ecd1312b47556b91629152e"
-    sha256 cellar: :any, arm64_sequoia: "772d7fb4f152da4df2c9f5ac0bf209811a5692e0a646642e442eaa8399a8984d"
-    sha256 cellar: :any, arm64_sonoma:  "80e01825325c8244ce63c6b0680bc64c2b1b5e6e52d72e700f3906648979080b"
-    sha256 cellar: :any, sonoma:        "5e2d7ac2a3ff0403c43a4b4a9b75b79422c923416793085b011652724063cdb0"
-    sha256 cellar: :any, arm64_linux:   "a272ca38840e02bd0faccb8a6bd0c5d757782adf3d5c3faa9ce84eedeb850877"
-    sha256 cellar: :any, x86_64_linux:  "727fa7f9bec1cdec5baad6e8771e3e6106db31bf2c4cbadbd0779e915387a285"
+    sha256 cellar: :any, arm64_tahoe:   "c04934f95374b07ad5d68df56857dd65da292f20a0a3ebb421eee96d0b2dfd8d"
+    sha256 cellar: :any, arm64_sequoia: "e378dc8a204fb6b918786c6317f83630948af24976d148ad664531e9d6a37fe8"
+    sha256 cellar: :any, arm64_sonoma:  "36cb6a5b5d456b522e3fc3d188de7bde37c9556a107372c07ca51a12d9e085d4"
+    sha256 cellar: :any, arm64_linux:   "c5e60542eb5d95723dcf2bd656c7d5f1bb0efe79547b0a9ffea069741b2da976"
+    sha256 cellar: :any, x86_64_linux:  "79e90c3d8b668391e80b25e41c4320af3355cc9ede8f7152f805ee80bb5f663b"
   end
 
   depends_on "cmake" => :build

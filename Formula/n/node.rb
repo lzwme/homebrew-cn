@@ -1,8 +1,8 @@
 class Node < Formula
   desc "Open-source, cross-platform JavaScript runtime environment"
   homepage "https://nodejs.org/"
-  url "https://registry.npmmirror.com/-/binary/node/v26.8.1/node-v26.8.1.tar.xz"
-  sha256 "d1698832a1a10f050cdda044a3e3d6a748246811e2e7bc89ba9a8bd693dc45f2"
+  url "https://registry.npmmirror.com/-/binary/node/v26.8.2/node-v26.8.2.tar.xz"
+  sha256 "36b37bf5ee4d092b9d9dff2d1a90b1444f8b453eddf6ff96cabdebb97d32f41d"
   license "MIT"
   compatibility_version 1
   head "https://github.com/nodejs/node.git", branch: "main"
@@ -13,11 +13,11 @@ class Node < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "489838f28f1131c8555ea7b61fffbb4f957c8a20a4731d2305869084fb864db4"
-    sha256 arm64_sequoia: "57b4cb8b3798e1aadec47d67c546ffd3bd90829ffda42953a1fb4ffa492a0efd"
-    sha256 arm64_sonoma:  "dd9950f4de42c441edf498dbcab731ab71dc5ab1ae5a4aed19051df404c743e4"
-    sha256 arm64_linux:   "f5616d4a4451959b8466459f8dc332dd12278e6b1d6de301515342ac833e9a15"
-    sha256 x86_64_linux:  "b675cb3382050af5150399ad247c6760ee92e3647f1d7a0942ddba9bbd6a56c1"
+    sha256 arm64_tahoe:   "5ce9391f268deed81f0a03d03e733d4b71a5b0a0f86ae1c4f1546eba529b3261"
+    sha256 arm64_sequoia: "3812d245042092595e0a2cbeb7eeda5ad7b5371d022e4ca3226af6b8293ea706"
+    sha256 arm64_sonoma:  "9de768818c0e39d68df01f1c3d7eb1af50fbb80f7cb2834fec1326b9411b55a9"
+    sha256 arm64_linux:   "4445d9c937905c0d13de05d76cf18f10004384c045b08147fe8c5734c64aeda5"
+    sha256 x86_64_linux:  "9a99580633172e34d94abe65eda03a0fb7f6c50bf5f118fc9247dcb4c935d7a0"
   end
 
   depends_on "pkgconf" => :build
@@ -69,8 +69,8 @@ class Node < Formula
   # We track major/minor from upstream Node releases.
   # We will accept *important* npm patch releases when necessary.
   resource "npm" do
-    url "https://registry.npmjs.org/npm/-/npm-11.19.0.tgz"
-    sha256 "31e9770f7dc71119a58509353b27917557aaf0ac9b5ef1a0465ee7d8ec67ae75"
+    url "https://registry.npmjs.org/npm/-/npm-11.19.1.tgz"
+    sha256 "9f58bff01604cb1b14008fef14dceb14d836a49225e45c6c2e37de3be3e707f0"
 
     livecheck do
       url "https://raw.githubusercontent.com/nodejs/node/refs/tags/v#{LATEST_VERSION}/deps/npm/package.json"

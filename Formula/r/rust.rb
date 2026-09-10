@@ -6,8 +6,8 @@ class Rust < Formula
   head "https://github.com/rust-lang/rust.git", branch: "main"
 
   stable do
-    url "https://static.rust-lang.org/dist/rustc-1.98.0-src.tar.gz"
-    sha256 "b226aef375ffbe9fbe2b85fde996b50716d59d55268e240d052396534b75e929"
+    url "https://static.rust-lang.org/dist/rustc-1.98.1-src.tar.gz"
+    sha256 "dc9f8b917b32444d6c7ac43cc1b409013d3a9a633338bb60c14cdae1d15ee65a"
 
     # From https://github.com/rust-lang/rust/blob/#{version}/src/stage0
     # HEAD does not use these as it needs a nightly rust
@@ -87,12 +87,12 @@ class Rust < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "f78b2076bec55baa8a870cdbf11344d065b9b2e47d8ad46d4b122e165ebdb3ab"
-    sha256 cellar: :any, arm64_sequoia: "a5c91891a86462225689bbfa214ba1ea282fdba15e0622ea484aee768072aaae"
-    sha256 cellar: :any, arm64_sonoma:  "24cce416fb291a7eaa442aed719ae23b5a12d1c2bf76e3542902b11d7e10c66e"
-    sha256 cellar: :any, sonoma:        "cd3db92982a19f63513a2d2d88eb9b47791cfbcf5d8b63aab244b6351b97f5b4"
-    sha256 cellar: :any, arm64_linux:   "898f075f0eb9dadbdb4666ddc8485e7b82fb4d634b8f94c5fa01dfb3e785e1c8"
-    sha256 cellar: :any, x86_64_linux:  "5093c4a4a9c390fc0e550560d7aa7683d1afc5ff64ec02dbb28fafc21f500ef7"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "409411d3aacd29a2528ca290f5fbbaca4acb2f1db8fa44c3d30480c30e79231b"
+    sha256 cellar: :any, arm64_sequoia: "4a1bbbb08569ac2f1837bed5ce931e707f6c4666118d933f6372cb9438d7794a"
+    sha256 cellar: :any, arm64_sonoma:  "5928033c1a2b6639206995f9adf81d82d1d29fa4c7364628fb3e68b031b6d61e"
+    sha256 cellar: :any, arm64_linux:   "3f53535b1c1bc548a7282e6c23beaca99def881a5786354aba04d0cb3f572166"
+    sha256 cellar: :any, x86_64_linux:  "b42a09b9ba34ccbce8b84e0e8bce44680360c1ff261a3bd952fc586e6c7bd04c"
   end
 
   depends_on "libgit2"
@@ -180,14 +180,23 @@ class Rust < Formula
       --disable-cargo-native-static
       --disable-docs
       --disable-lld
-      --set=rust.jemalloc
       --release-description=#{tap.user}
     ]
     if build.head?
       args << "--disable-rpath"
       args << "--release-channel=nightly"
+      args << "--set=build.allocator=jemalloc"
     else
       args << "--release-channel=stable"
+      args << "--set=rust.jemalloc" # TODO: use `--set=build.allocator=jemalloc` in 1.99.0 as old arg is deprecated
+    end
+    # Restrict slower optimizations to bottling
+    # https://github.com/rust-lang/rust/blob/main/src/doc/rustc-dev-guide/src/building/optimized-build.md
+    if build.bottle?
+      args += %w[
+        --set=rust.lto=thin
+        --set=rust.codegen-units=1
+      ]
     end
 
     system "./configure", *args
@@ -248,14 +257,13 @@ class Rust < Formula
       bin/"cargo" => [
         formula_opt_lib("libgit2")/shared_library("libgit2"),
         formula_opt_lib("libssh2")/shared_library("libssh2"),
-        formula_opt_lib("openssl@3")/shared_library("libcrypto"),
         formula_opt_lib("openssl@3")/shared_library("libssl"),
       ],
     }
-    unless OS.mac?
-      expected_linkage[bin/"cargo"] += [
-        formula_opt_lib("curl")/shared_library("libcurl"),
-      ]
+    expected_linkage[bin/"cargo"] << if OS.mac?
+      formula_opt_lib("openssl@3")/shared_library("libcrypto")
+    else
+      formula_opt_lib("curl")/shared_library("libcurl")
     end
     missing_linkage = []
     expected_linkage.each do |binary, dylibs|

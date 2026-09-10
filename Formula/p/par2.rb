@@ -1,8 +1,8 @@
 class Par2 < Formula
   desc "Parchive: Parity Archive Volume Set for data recovery"
   homepage "https://parchive.github.io"
-  url "https://ghfast.top/https://github.com/Parchive/par2cmdline/releases/download/v1.3.0/par2cmdline-1.3.0.tar.bz2"
-  sha256 "60fe185b7662004c658f9d17dc03e7422250ec7238329cf93189f2364cd0d560"
+  url "https://ghfast.top/https://github.com/Parchive/par2cmdline/releases/download/v1.4.0/par2cmdline-1.4.0.tar.bz2"
+  sha256 "269aff9d49c6a0c0d1c394300d35c36229764588f56faad5850eaf36c7a298dc"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -11,12 +11,11 @@ class Par2 < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "142587097b2c18881c1424b37520c788533f9802393690f3cd596abb9bf6a57e"
-    sha256 cellar: :any, arm64_sequoia: "be335113a77a729235b537b50cbc84ca48620ef1b427638dfe9ea1e9812ae7ef"
-    sha256 cellar: :any, arm64_sonoma:  "486cce935354b37b2dbd5c624cca487acea473c7cbfc05e894b58b592eb4c0d3"
-    sha256 cellar: :any, sonoma:        "5077c04a9ec756378252611c76bc93731e909a97d0e7491b87f87bc3cc5b1952"
-    sha256 cellar: :any, arm64_linux:   "1e06a4452ab190174bb5367e5fb9976702a7b0b5c63b372c1c091062b0f68eca"
-    sha256 cellar: :any, x86_64_linux:  "cb4daa17c86e1fd0158d0c7790f151531f562026f2114942f41387b9cc683e29"
+    sha256 cellar: :any, arm64_tahoe:   "5c8bc516cc357df1caf9f727322ab90ed96bfb08ad1c44c3bad1bcd2c0fae9b7"
+    sha256 cellar: :any, arm64_sequoia: "4bbc5a219438f388a9fcc9b9f19d40e8384cf0c29f3bfc080285109c5a96c08f"
+    sha256 cellar: :any, arm64_sonoma:  "c30e2e595960b1409af9033cac4b98f6dd0659dc32320bfc7d3a777336fbc945"
+    sha256 cellar: :any, arm64_linux:   "088097ba500a499f16f0647a02ed1c5e15be3c39c52a8d5d3e1513834362f72b"
+    sha256 cellar: :any, x86_64_linux:  "39d80aa414a39ad6f8ade2cf14cf2d2ea3ec6db48303ad2d54a675435bac2cd7"
   end
 
   on_macos do

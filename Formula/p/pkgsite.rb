@@ -1,8 +1,8 @@
 class Pkgsite < Formula
   desc "Documentation server for Go packages"
   homepage "https://pkg.go.dev/golang.org/x/pkgsite"
-  url "https://ghfast.top/https://github.com/golang/pkgsite/archive/refs/tags/v0.4.0.tar.gz"
-  sha256 "7cc5627428e42bf5a8f99608d704a98cd888fbff2bb2bf292f14f0af15b5692a"
+  url "https://ghfast.top/https://github.com/golang/pkgsite/archive/refs/tags/v0.5.0.tar.gz"
+  sha256 "ec88faa9940cdcd58ed15058a1a932f81b4c3a21cf37b3119bf974a3137373fd"
   license "BSD-3-Clause"
   head "https://go.googlesource.com/pkgsite.git", branch: "master"
 
@@ -12,12 +12,11 @@ class Pkgsite < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "399d070feceabd99a1da7dcaaf77a848e5e0bc5ce74c11e85c791d53a5666413"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "399d070feceabd99a1da7dcaaf77a848e5e0bc5ce74c11e85c791d53a5666413"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "399d070feceabd99a1da7dcaaf77a848e5e0bc5ce74c11e85c791d53a5666413"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1a2ddb5a4ee1a0381547289212385dd0f6b76cd17a5205ad36a91b5ba384a576"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "23e681a207a737aa7053be601aae567bcbdc3bfe558af9658d66de2f9bec94aa"
-    sha256 cellar: :any,                 x86_64_linux:  "1d5c2974829ec84b0ffe43f7c6a976e930b26484bbef1596630a97b828d929e4"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bea59e96a94b29716c223383743fa690b707e4664ff1bf386cad8b5e8d17d239"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bea59e96a94b29716c223383743fa690b707e4664ff1bf386cad8b5e8d17d239"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bea59e96a94b29716c223383743fa690b707e4664ff1bf386cad8b5e8d17d239"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "de5ea560f4f84d80072723b22dc9d804d933d06a3c39872cfd01107da76dfbfc"
+    sha256 cellar: :any,                 x86_64_linux:  "814fc969c6ba654e77f16e63cd3fc6254aa60291efc8401efa36e3c6af64359e"
   end
 
   depends_on "go" => [:build, :test]
@@ -60,10 +59,10 @@ class Pkgsite < Formula
 
     raise "pkgsite exited unexpectedly" if Process.waitpid(pid, Process::WNOHANG)
 
-    package_output = shell_output("curl -s http://127.0.0.1:#{port}/v1beta/package/example.com/testmod")
+    package_output = shell_output("curl -s http://127.0.0.1:#{port}/v1/package/example.com/testmod")
     assert_match '"modulePath":"example.com/testmod"', package_output
 
-    symbols_output = shell_output("curl -s http://127.0.0.1:#{port}/v1beta/symbols/example.com/testmod")
+    symbols_output = shell_output("curl -s http://127.0.0.1:#{port}/v1/symbols/example.com/testmod")
     assert_match '"name":"Hello"', symbols_output
     assert_match '"kind":"Function"', symbols_output
     assert_match "func Hello() string", symbols_output

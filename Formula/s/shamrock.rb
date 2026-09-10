@@ -61,6 +61,6 @@ class Shamrock < Formula
     system bin/"shamrock", "--help"
     system bin/"shamrock", "--smi"
     system "mpirun", "-n", "1", bin/"shamrock", "--smi"
-    system python, "-c", "import shamrock"
+    system python3, "-c", "import shamrock"
   end
 end

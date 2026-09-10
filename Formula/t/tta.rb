@@ -31,16 +31,9 @@ class Tta < Formula
 
   def install
     args = ["--disable-silent-rules"]
-    if Hardware::CPU.intel?
-      sse = if OS.mac? && MacOS.version.requires_sse4?
-        "sse4"
-      else
-        "sse2"
-      end
-      args << "--enable-#{sse}"
-    end
+    args << "--enable-sse2" if Hardware::CPU.intel?
 
-    system "./configure", *std_configure_args, *args
+    system "./configure", *args, *std_configure_args
     system "make", "install"
   end
 end

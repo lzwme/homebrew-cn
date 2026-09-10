@@ -1,18 +1,21 @@
 class Iqtree3 < Formula
   desc "Phylogenetics by maximum likelihood"
   homepage "http://www.iqtree.org"
-  url "https://ghfast.top/https://github.com/iqtree/iqtree3/archive/refs/tags/v3.1.2.tar.gz"
-  sha256 "df85370a2ac74289787226501401ac7db7f085f51c2110d4b829b3f210822160"
+  url "https://ghfast.top/https://github.com/iqtree/iqtree3/archive/refs/tags/v3.1.3.tar.gz"
+  sha256 "b992e4c4a5429ebebf5b37ae7134dc3d6e3ea616f04cbb021947dfb7d034fbd9"
   license "GPL-2.0-or-later"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ae6440023e30272346d61eb64544cad03cdcd28ce5534881ea57e68741d9804a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7be3601ecc0577748794a0cedc0f2bcb559c6c58f30b4b2d9d71ddf708b390fc"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1aa9e27195328385963ee3820070cd3fe336c96f53e2e3db1f89ae23de05ed05"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c87a0732f7b3d034580a7c12ca67a4adbe3e783ddf46468d229e7e800123abb4"
-    sha256 cellar: :any,                 arm64_linux:   "5c93f778819bb6cbad85f83b54597776ee4f70ced9053cb6554f6faf78f08f1b"
-    sha256 cellar: :any,                 x86_64_linux:  "aed8a1b92653deafe99be38cef420dd6fcb6388f5cc07a99cf1e637ee750ac2e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "41765e8f449e20786670b9e93f5dfacb162b5086fbb208a00652f9e753a3165f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "abba490ece6c76de88eb72d1ac933baaf87ac25c88ee63a03c55465e2af3a2be"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d9fd8c20f841891b96074a223aa156974837629d621d5141a4f34b05693ec085"
+    sha256 cellar: :any,                 arm64_linux:   "91d0dd57871331f145a0b6241871a5dff4c087b9fbde9629ccd363cb0d776505"
+    sha256 cellar: :any,                 x86_64_linux:  "0720ae356d1a6b97c8eaa708578c9d4a6d789ddef60fffe61b1163f9dd4427ba"
   end
 
   depends_on "boost" => :build
@@ -24,8 +27,16 @@ class Iqtree3 < Formula
   end
 
   resource "lsd2" do
-    url "https://github.com/tothuhien/lsd2.git",
-        revision: "c61110f3a4fa05325b45c97b2134792ff9d55d4c"
+    url "https://ghfast.top/https://github.com/tothuhien/lsd2/archive/c61110f3a4fa05325b45c97b2134792ff9d55d4c.tar.gz"
+    version "c61110f3a4fa05325b45c97b2134792ff9d55d4c"
+    sha256 "9bbeaa0f8f35783c1d8dec74df6c93a804dbca808fa04484f9123de4e7258b53"
+
+    livecheck do
+      url "https://api.github.com/repos/iqtree/iqtree3/contents/lsd2?ref=v#{LATEST_VERSION}"
+      strategy :json do |json|
+        json["sha"]
+      end
+    end
   end
 
   def install

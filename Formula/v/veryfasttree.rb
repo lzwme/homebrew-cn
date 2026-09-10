@@ -45,7 +45,6 @@ class Veryfasttree < Formula
 
     args = ["-DUSE_SHARED=ON"]
     args << "-DUSE_NATIVE=OFF" if ENV.effective_arch != :native
-    args << "-DUSE_SEE4=ON" if Hardware::CPU.intel? && OS.mac? && MacOS.version.requires_sse41?
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"

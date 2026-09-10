@@ -1,10 +1,26 @@
 class Afsctool < Formula
   desc "Utility for manipulating APFS and ZFS compressed files"
   homepage "https://brkirch.wordpress.com/afsctool/"
-  url "https://ghfast.top/https://github.com/RJVB/afsctool/archive/refs/tags/v1.7.3.tar.gz"
-  sha256 "5776ff5aaf05c513bead107536d9e98e6037019a0de8a1435cc9da89ea8d49b8"
   license all_of: ["GPL-3.0-only", "BSL-1.0"]
   head "https://github.com/RJVB/afsctool.git", branch: "master"
+
+  stable do
+    url "https://ghfast.top/https://github.com/RJVB/afsctool/archive/refs/tags/v1.7.3.tar.gz"
+    sha256 "5776ff5aaf05c513bead107536d9e98e6037019a0de8a1435cc9da89ea8d49b8"
+
+    resource "lzfse" do
+      url "https://ghfast.top/https://github.com/lzfse/lzfse/archive/e634ca58b4821d9f3d560cdc6df5dec02ffc93fd.tar.gz"
+      version "e634ca58b4821d9f3d560cdc6df5dec02ffc93fd"
+      sha256 "ca98aa6644d44500e3315858daa747ce15bd06d49e3edb12a5458e5525e8ebdb"
+
+      livecheck do
+        url "https://api.github.com/repos/RJVB/afsctool/contents/src/private/lzfse?ref=v#{LATEST_VERSION}"
+        strategy :json do |json|
+          json["sha"]
+        end
+      end
+    end
+  end
 
   bottle do
     rebuild 1
@@ -23,15 +39,10 @@ class Afsctool < Formula
   depends_on "pkgconf" => :build
   depends_on :macos
 
-  resource "lzfse" do
-    url "https://github.com/lzfse/lzfse.git",
-        revision: "e634ca58b4821d9f3d560cdc6df5dec02ffc93fd"
-  end
-
   deny_network_access!
 
   def install
-    (buildpath/"src/private/lzfse").install resource("lzfse")
+    (buildpath/"src/private/lzfse").install resource("lzfse") if build.stable?
     # Workaround to build with CMake 4
     args = %w[-DCMAKE_POLICY_VERSION_MINIMUM=3.5]
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args

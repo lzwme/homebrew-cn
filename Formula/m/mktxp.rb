@@ -3,16 +3,16 @@ class Mktxp < Formula
 
   desc "Prometheus Exporter for Mikrotik RouterOS devices"
   homepage "https://github.com/akpw/mktxp"
-  url "https://files.pythonhosted.org/packages/73/27/8c7116d6ac06994bb5c2c47c27c691bd8de9d6ba66236daea5414a78dff5/mktxp-2.0.2.tar.gz"
-  sha256 "36acee8909318d117ad4c123d0e8d183b57f1ce9b5deae0b384e1813266e2749"
+  url "https://files.pythonhosted.org/packages/f8/ac/ab2c925a43b0451e57c14183071f1ef83cb2fd2ff46f82e3fb5378b83280/mktxp-2.0.3.tar.gz"
+  sha256 "0cc0b3619152b4be10070ccbb0e3c87657cdbff1902ef9d10cbe8cab07481a67"
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "e98a9a153e67700b369bb250785bb3a995954665d29c85bed912e3f82dfa8dc9"
-    sha256 cellar: :any, arm64_sequoia: "722c9db42aae31bb08dc836ee418fe67b6628646532e136b28f18339cdb1266a"
-    sha256 cellar: :any, arm64_sonoma:  "133e0922cd422b625d09cb403aa38303e7ee0fbbc4bf74df8124d177dd9d8ca5"
-    sha256 cellar: :any, arm64_linux:   "6585afa77bcb754440c68494c9e55faf2b7ab2edc1f66c4ac7814c84480a9182"
-    sha256 cellar: :any, x86_64_linux:  "45ab01e984c107913e68b157b6ccd1d246dc06717f405e4211d047141e233446"
+    sha256 cellar: :any, arm64_tahoe:   "d8ac18477bb1350fdc8371bd1f14749a1480aa6907e50d2fc8a412fd9eb9171c"
+    sha256 cellar: :any, arm64_sequoia: "d4781caadf51ccdc46911819e1cfb7c6d4e4438ab92d8206035f99ea60f84860"
+    sha256 cellar: :any, arm64_sonoma:  "02f6845c2746cba7e480a2cd71a30a04c8b676aa98202f8ea1673356ec4edb0c"
+    sha256 cellar: :any, arm64_linux:   "51dde585fc06efa6a57ad753f6dcfd2f4d65336c165f17d9c09d7dffc0d9382e"
+    sha256 cellar: :any, x86_64_linux:  "7c67eaa2f85b9b84499fdadffa005aebc44139a9048e56a1da93f679edf21b69"
   end
 
   depends_on "libyaml"

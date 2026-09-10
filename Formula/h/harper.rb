@@ -1,8 +1,8 @@
 class Harper < Formula
   desc "Grammar Checker for Developers"
   homepage "https://writewithharper.com"
-  url "https://ghfast.top/https://github.com/Automattic/harper/archive/refs/tags/v2.9.1.tar.gz"
-  sha256 "3b8a751b93d09ab8f38f1dd47f88192334fa73b3b448a0450b1943e74b4d75e9"
+  url "https://ghfast.top/https://github.com/Automattic/harper/archive/refs/tags/v2.10.0.tar.gz"
+  sha256 "3db3c8233ea33b1ecb05cdbc96d0f3f16a22dcaab2dac0f26289f0fdce2d68ca"
   license "Apache-2.0"
   head "https://github.com/Automattic/harper.git", branch: "master"
 
@@ -12,11 +12,11 @@ class Harper < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "147f4dbb1a01b90a78e1fb49d55a19253c511d33bb38a1970bb09466ba2c8ab9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "55e60088ea2ad8a3cc9ff954c53e5490e5b1898bb545614730c5445e293c804e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b145c6355155386303e5ff0fe0d22566649584218f8d5cc2d60ef2a67e7e879e"
-    sha256 cellar: :any,                 arm64_linux:   "f5ebb305434efc620099f70a3ab416a6033f475ff8f57027b343ad000bcd1381"
-    sha256 cellar: :any,                 x86_64_linux:  "89ad45a812997d90ab73581690d1802e0dd11d3c628a513184e6c69bcb0d7909"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "37523c060e621e47816eebe01d3becc81f8095a5d7abbe44032e7607f64eb69b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "da0e54ca151feb99b267fb3aa0296fa8ae4b8baeb7e6bf88793e0caad0113bc9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "416f23a835b4999b7f4ce569d0299288a168537f4e5e39f5ae088dd72132b8f1"
+    sha256 cellar: :any,                 arm64_linux:   "750f4b02a9abeddf018721ab4db2c1ec681e72146a9d21d4d541c2c0381f5c9b"
+    sha256 cellar: :any,                 x86_64_linux:  "04d773e41e20ac33bc27e28e7a3659472ab14273fd4a47993661f377cf1ecff4"
   end
 
   depends_on "rust" => :build

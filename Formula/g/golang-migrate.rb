@@ -1,8 +1,8 @@
 class GolangMigrate < Formula
   desc "Database migrations CLI tool"
   homepage "https://github.com/golang-migrate/migrate"
-  url "https://ghfast.top/https://github.com/golang-migrate/migrate/archive/refs/tags/v4.19.1.tar.gz"
-  sha256 "677bf03c19d684dc5bef47e981ec1b4564482cbf5f9b190cb48e110183fd6d25"
+  url "https://ghfast.top/https://github.com/golang-migrate/migrate/archive/refs/tags/v4.20.1.tar.gz"
+  sha256 "365a1c5b517348301a540b04bda5d8778e61bff7e68583bcf2f278da570f4b46"
   license "MIT"
   head "https://github.com/golang-migrate/migrate.git", branch: "master"
 
@@ -15,12 +15,11 @@ class GolangMigrate < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "756f6f4046cb091c66fb0ec1e4db160d07a7fd3b552aeb1d75adbbc716401332"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5d74478b5173dafc40af24aa1f175766cfc5278cbd81a04f5d83fd03600e27b7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f6b82e2fe5e03b8130f2363908a34d77b428ce3b7f68f629f9c93c1bd941fe94"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d22e7d26b80ff378d6d1dcac7ddf4e6f745ad60703d8b93068bb5e130fa84259"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6aeda2e9ddda567c4009f53efde24d8cd80610e55ee159c3c030a41dc80cece2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c67548a520ac1995c4e55700f0eb2ae492d386690c2103c493c903791909abda"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f1d4da9645c8b04557ef1f5443b07aeb5fc945c953408a7ea991a0109e346dfc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f95f3754a2615ab06e5140b67320277bb6d3dcae3592da4f8082c6e1ef08d0d0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4202e10d5c045b6917894fe39c61b175f39219e2f567c9bd1c2bc3234061bde8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f47afe0b22a690003393397932ca3ef9d2880844e444af073fa6c7fe3dc19922"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4594b9334c436e49bf4bac371c8702203fba23265a0a4050f96a5522a6b8e672"
   end
 
   depends_on "go" => :build

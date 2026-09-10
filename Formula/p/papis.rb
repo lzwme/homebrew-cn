@@ -6,15 +6,15 @@ class Papis < Formula
   url "https://files.pythonhosted.org/packages/9e/7f/14f6f1a028be4927883edd7ecab4e27dc7f27f9ae2cb370dca08864264f8/papis-0.16.0.tar.gz"
   sha256 "a7ce419077bf50bd1db14618c0be971f325a0f331632d4729d5acf8239053c74"
   license "GPL-3.0-or-later"
+  revision 1
   head "https://github.com/papis/papis.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "2b84e564def02555008504bdb2f3f28cfbf39866278e60a39139746771b3e4c4"
-    sha256 cellar: :any, arm64_sequoia: "85e3efbdabc932876278e0593dc3d31fc48382380393d6373257d526d89cd941"
-    sha256 cellar: :any, arm64_sonoma:  "fc99ffae34223bacfe6c1bd3d59210fe9fa2eae0cb8e2bf65540018da1333ff7"
-    sha256 cellar: :any, sonoma:        "822a1589f63ed5318a5467e50d992f2d7b62fc839d1541a2b00c97cc46bcec69"
-    sha256 cellar: :any, arm64_linux:   "6318b98a992cfea6e0e639f59013393a6ed2cd53a3ace159ee7d78fd2011646e"
-    sha256 cellar: :any, x86_64_linux:  "e5e9895a715121808d480741d4d046691dee039fbd62d54fa5c785c295f1687b"
+    sha256 cellar: :any, arm64_tahoe:   "1abb5fed47d5647925fce879e4d47a6d235e6a57b511e0cb0aed6b455fe424ec"
+    sha256 cellar: :any, arm64_sequoia: "8c48924004b1378390056fdb653d6dce2d6c5eff76b1edd0b48bb478309c1b84"
+    sha256 cellar: :any, arm64_sonoma:  "084f4db6b8ae05903ba9cc13aa91548c4740ac81b4798665055cb48eb77d511f"
+    sha256 cellar: :any, arm64_linux:   "ba8ffe5f2c358be4f38171fe6e2a9077ac505f803e394efbcd932030be7197fa"
+    sha256 cellar: :any, x86_64_linux:  "d35f371449e48eb36ff247a34025893d9f614d40e2df18646351eeb3ad3e8daa"
   end
 
   depends_on "certifi" => :no_linkage
@@ -27,8 +27,8 @@ class Papis < Formula
   pypi_packages exclude_packages: "certifi"
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/61/cc/a381afa6efea9f496eff839d4a6a1aed3bfafc7b3ab4b0d1b243a12573dd/anyio-4.14.2.tar.gz"
-    sha256 "cfa139f3ed1a23ee8f88a145ddb5ac7605b8bbfd8592baacd7ce3d8bb4313c7f"
+    url "https://files.pythonhosted.org/packages/a9/d2/f4d173e22df740bc37b1db102b386ba719b66e95b0f0d751f556b387e6d2/anyio-4.15.1.tar.gz"
+    sha256 "9f28306018cbd6d329e64a36d58256edff76dd996fe423bc957326e578b82a94"
   end
 
   resource "arxiv" do
@@ -52,8 +52,8 @@ class Papis < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/76/d4/81420972a676e8ffea40450d8c8c92943e7218a78fe9b64359836cc9876b/click-8.4.2.tar.gz"
-    sha256 "9a6cea6e60b17ebe0a44c5cc636d94f09bd66142c1cd7d8b4cd731c4917a15f6"
+    url "https://files.pythonhosted.org/packages/c7/0e/7fa0ef50764b67090eca4114772a2abf8b6148198475e54c660b97caeee6/click-8.5.0.tar.gz"
+    sha256 "ba0d2089de75ea0310e2dde03160e6ca10009947fb95a182f9b54021bb272e34"
   end
 
   resource "colorama" do
@@ -82,13 +82,13 @@ class Papis < Formula
   end
 
   resource "httpcore2" do
-    url "https://files.pythonhosted.org/packages/30/7d/ee6787efd5fe675d7cfd5eb149e40ccb5bdfc7e7c9252edcf7825c38986f/httpcore2-2.11.0.tar.gz"
-    sha256 "82e6fc95d784e6ee22ebd4b2cb57df53a2efb13ad6a11260a236ecebbc5f50c7"
+    url "https://files.pythonhosted.org/packages/be/ad/f4f0e57345f1870f3e8cb624e058d7eca6e5a27d33bcc3311d9b618734cd/httpcore2-2.12.0.tar.gz"
+    sha256 "9293522bba0aa7c4c8e9e3f040c16575bd8868e155a77fa30c7a9085a5eae648"
   end
 
   resource "httpx2" do
-    url "https://files.pythonhosted.org/packages/d5/4d/b3fcae38f29bfb0f300517d085c488f41f65e5b0a73023976b2122f568cc/httpx2-2.11.0.tar.gz"
-    sha256 "ea01b2e8febfb026e2601814c77ecb1e64fff114a87bc789cb520e67f27e7809"
+    url "https://files.pythonhosted.org/packages/7f/f8/579a8b51e42e38ee32647df9f08aa25643ae788e275cc625b199829c4671/httpx2-2.12.0.tar.gz"
+    sha256 "7631fe9887a8a2275f4a2540e053aa670fcc50742864a9ae7c66e609fdcf12cf"
   end
 
   resource "idna" do
@@ -102,8 +102,8 @@ class Papis < Formula
   end
 
   resource "lxml" do
-    url "https://files.pythonhosted.org/packages/05/3b/aab6728cae887456f409b4d75e8a01856e4f04bd510de38052a47768b680/lxml-6.1.1.tar.gz"
-    sha256 "ba96ae44888e0185281e937633a743ea90d5a196c6000f82565ebb0580012d40"
+    url "https://files.pythonhosted.org/packages/23/ad/28ecd7cb894d172f3c9c80a075eeeb2017ac62e3632cee05a5f9493547eb/lxml-6.1.3.tar.gz"
+    sha256 "45222d94ddd511536f3b2f7d9deae3b2339b4ce0f075f1ca25703b07cad9dd21"
   end
 
   resource "packaging" do
@@ -112,8 +112,8 @@ class Papis < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/b8/d7/e7bfbc86e9f99ff7807e24de7703f032e9c9ba80bb355cf26e0e9bc5a75e/platformdirs-4.11.3.tar.gz"
-    sha256 "66a73d38a849810252df809a3d8bcbda8e26f6c189920e7535ad608a48dbb5ab"
+    url "https://files.pythonhosted.org/packages/69/b7/802a56eca9f2fac455b8bab5375a2647b0f0e14a2cd63ef077de3c4a7658/platformdirs-4.11.7.tar.gz"
+    sha256 "4f41487eeeeeb07f3a6625e61d9bc0ae6809f92d3386dbd74392fbb76108104d"
   end
 
   resource "prompt-toolkit" do
@@ -182,8 +182,8 @@ class Papis < Formula
   end
 
   resource "wcwidth" do
-    url "https://files.pythonhosted.org/packages/34/74/c6428f875774288bec1396f5bfcbc2d925700a4dad61727fd5f2b12f249d/wcwidth-0.8.2.tar.gz"
-    sha256 "91fbef97204b96a3d4d421609b80340b760cf33e26da123ff243d76b1fda8dda"
+    url "https://files.pythonhosted.org/packages/36/57/ed58088fafdf4c55a0ad6bde846502567645424d7ebf325230b9237f4085/wcwidth-0.8.3.tar.gz"
+    sha256 "d128512515fbf4612e0ff21fd6380399210318b7b54a9af59dff8454cf9730eb"
   end
 
   def install

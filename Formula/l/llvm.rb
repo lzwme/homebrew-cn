@@ -6,8 +6,8 @@ class Llvm < Formula
   head "https://github.com/llvm/llvm-project.git", branch: "main"
 
   stable do
-    url "https://ghfast.top/https://github.com/llvm/llvm-project/releases/download/llvmorg-23.1.0/llvm-project-23.1.0.src.tar.xz"
-    sha256 "ab1f0e3ec52448c33e8782eaf0422504b87c7b016b22514653ee0d8fcee479ff"
+    url "https://ghfast.top/https://github.com/llvm/llvm-project/releases/download/llvmorg-23.1.1/llvm-project-23.1.1.src.tar.xz"
+    sha256 "ebe9be46fe8756d58c5b198ffad0fa2a766257add81a4dc52179bfacc7888ee6"
 
     # Fix triple config loading for clang-cl
     patch do
@@ -24,12 +24,11 @@ class Llvm < Formula
   end
 
   bottle do
-    sha256               arm64_tahoe:   "a916d9bdae80f1ea47374528e43f5b1b5f864f3fc9c9ae6db02faa5cba6b3f25"
-    sha256               arm64_sequoia: "ccaf29d02d4dffa52584e5720c711accac378664f1098ef1232defa5d4eb53e0"
-    sha256               arm64_sonoma:  "93d3fc19acc5605054408ab47caed44e4d36729cc1cd5a29a524b9d8a312d5e3"
-    sha256 cellar: :any, sonoma:        "0b0168dc611a9d77aaa62d094178297f8a861d647cc59c43a5dc3f76bd6eb7b2"
-    sha256 cellar: :any, arm64_linux:   "1a2ddcf091e4d316f302ba561f5bf3741cd23e8f309ccb53df9b721c944145a3"
-    sha256 cellar: :any, x86_64_linux:  "654dd1c77fe25f5daca8e46de9c8e26da97ad30bcb6d3f13a00e74d36932b215"
+    sha256               arm64_tahoe:   "b61917f6bddaf4441ef24161f9c6d0440d9f184fb5a3cc0707c6854e16e10e65"
+    sha256               arm64_sequoia: "27cb40c1b42c772d41a887104bfee8f468639bbdd0cee67d3b94e4552e9d8b3c"
+    sha256               arm64_sonoma:  "47fe8cd50b330cd9f309faf278d7063799a48dbdbb38fd755b034519cba762ee"
+    sha256 cellar: :any, arm64_linux:   "59e0325dbb71cd6a2b177368e973f3cff40ce36eb54f31b93fd3aec3a0b13812"
+    sha256 cellar: :any, x86_64_linux:  "c55c9b33bfa8ad931ae621ae3c42091cc2528d4b09b5de7c1dc70864680bf9de"
   end
 
   keg_only :provided_by_macos

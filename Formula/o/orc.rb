@@ -1,8 +1,8 @@
 class Orc < Formula
   desc "Oil Runtime Compiler (ORC)"
   homepage "https://gstreamer.freedesktop.org/modules/orc.html"
-  url "https://gstreamer.freedesktop.org/src/orc/orc-0.4.43.tar.xz"
-  sha256 "82394e20e5c4dffe8b45ea8525c62dd4e3e8be7f253ac11c19297ba7ea5473e0"
+  url "https://gstreamer.freedesktop.org/src/orc/orc-0.4.44.tar.xz"
+  sha256 "4aeb97aea2b58224029dc2b23d7d064cfa990cb4fb8c4da440bcbe9c95bc5d2d"
   license all_of: ["BSD-2-Clause", "BSD-3-Clause"]
   compatibility_version 1
 
@@ -12,11 +12,11 @@ class Orc < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "e329172340cf223077ac19ca64c9de1151f2cd70f6fa80a5c6f3e69a108d1a7b"
-    sha256 cellar: :any, arm64_sequoia: "d6858cbca62184f1e2eb4fae6b5c8dd877b0febfe61c1c834427481805ce242f"
-    sha256 cellar: :any, arm64_sonoma:  "760744ee7c33e20b65f7673e254ffa141edaa5b02d00392e0c8b6527e136dd40"
-    sha256 cellar: :any, arm64_linux:   "da2a1a311fce9111c9af82f96348fbd8f398b6436487dfb1cfac72cfc5f9dcd5"
-    sha256 cellar: :any, x86_64_linux:  "824cf43e0ada73a3476e79fb89f6926f0d2562dd717e2aef7da37c7cbb12a0c0"
+    sha256 cellar: :any, arm64_tahoe:   "4b326411003fdddfd8bf3dea9815043d962e748b6fd550be1322e1c6d2afd38c"
+    sha256 cellar: :any, arm64_sequoia: "f491eb26689b8f223f4681cdd85da4342a7c9504da4380ee99d3f23938df3430"
+    sha256 cellar: :any, arm64_sonoma:  "5c7ffa0ab1653adb2b6ef67425df8c312a47999740c2659fcf7e7f22f10d1d76"
+    sha256 cellar: :any, arm64_linux:   "24687a69229796ddff114dffb92f800b37860622a48ba8379716363909ba3d46"
+    sha256 cellar: :any, x86_64_linux:  "6b14ed765346e7753fb5d6c5249addc0dcf27e128b279f4431ddd7f6f66eefbc"
   end
 
   depends_on "meson" => :build

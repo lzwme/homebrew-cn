@@ -1,19 +1,17 @@
 class Cryptol < Formula
   desc "Domain-specific language for specifying cryptographic algorithms"
   homepage "https://galoisinc.github.io/cryptol/master/RefMan.html"
-  url "https://hackage.haskell.org/package/cryptol-3.5.0/cryptol-3.5.0.tar.gz"
-  sha256 "7341c026ef83b18d2c784cfedb37003f74d1560605cd9c3107b5b6fc31fb2f84"
+  url "https://hackage.haskell.org/package/cryptol-3.6.0/cryptol-3.6.0.tar.gz"
+  sha256 "cc0a7ef3b20f4543386209b9077c0d9064c22e0db81f30e8ab4cc8f5dc4a8d93"
   license "BSD-3-Clause"
   head "https://github.com/GaloisInc/cryptol.git", branch: "master"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any, arm64_tahoe:   "442c223f23feefe428c40453fec095caac6b0eae8fc6e757ce927df7a48b34b5"
-    sha256 cellar: :any, arm64_sequoia: "5eedb6d9e418457f4a167256cb66e9af62e8615f6824e3727a7c7c6d3f283cdc"
-    sha256 cellar: :any, arm64_sonoma:  "883d9fa8b52331e1f3d63afcbf445a85043dfe4e32f33f15eb633fea00bd4260"
-    sha256 cellar: :any, sonoma:        "3e77ef0212f48a223ced63e75a1f40bf610607ad0b44615d1ba36a9d435dd89b"
-    sha256 cellar: :any, arm64_linux:   "772daa96008c391f444a2b33c1a6b4ab219bffdf4b1932ac8c882eb3c0729ce9"
-    sha256 cellar: :any, x86_64_linux:  "7a2376a36d364c39725f0a119a3c2ea4123fe5d4cf6b50fe15784fa1bd6021e6"
+    sha256 cellar: :any, arm64_tahoe:   "1e0748ff426bc45146700c63c6a8ea62ae1a6658a8f37edb8c1baced0d9ad864"
+    sha256 cellar: :any, arm64_sequoia: "11956f02bd241b63274e4766a199a41ca5af5dd7df1ec039ece66226cc5abb3f"
+    sha256 cellar: :any, arm64_sonoma:  "53b5ac834ca52aeb3042bb5c9c90a0e9e706e08a846f0c8e4e8a113344182110"
+    sha256 cellar: :any, arm64_linux:   "92e70eb1a9cbd848f549ff66ae0f402de72cd91f3e17580552dddedba91a1d3b"
+    sha256 cellar: :any, x86_64_linux:  "9f098fca45d638c40553d0bb166fb0a1b3c377d131758047f26b2b9501b604cb"
   end
 
   depends_on "cabal-install" => :build

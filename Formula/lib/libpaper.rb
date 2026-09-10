@@ -6,6 +6,11 @@ class Libpaper < Formula
   license "LGPL-2.1-or-later"
   compatibility_version 1
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     sha256               arm64_tahoe:   "e6500bd1b2096cc88b3289610bd7a651a2ec40e1749b549e09e8f74ca20cc125"
     sha256               arm64_sequoia: "39b2f9ec39466dbc44bec4b7dad83c5c2f83f1aa9689a23e3b2f92f119daba94"

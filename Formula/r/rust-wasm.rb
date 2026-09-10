@@ -1,8 +1,8 @@
 class RustWasm < Formula
   desc "Rust standard library and sysroot for WebAssembly targets"
   homepage "https://www.rust-lang.org/"
-  url "https://static.rust-lang.org/dist/rustc-1.98.0-src.tar.gz"
-  sha256 "b226aef375ffbe9fbe2b85fde996b50716d59d55268e240d052396534b75e929"
+  url "https://static.rust-lang.org/dist/rustc-1.98.1-src.tar.gz"
+  sha256 "dc9f8b917b32444d6c7ac43cc1b409013d3a9a633338bb60c14cdae1d15ee65a"
   license any_of: ["Apache-2.0", "MIT"]
 
   livecheck do
@@ -10,12 +10,11 @@ class RustWasm < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f49381471219e7a274f2f017174826c7a66b70b81a90653e83a28d8a3f4df11e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f49381471219e7a274f2f017174826c7a66b70b81a90653e83a28d8a3f4df11e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f49381471219e7a274f2f017174826c7a66b70b81a90653e83a28d8a3f4df11e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1a78dd2e83962a88531f0cc2a159557a0a33f802a53b8f835a1736af1e97b997"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c30fea1650f7b85768b4cc9bdea400f63bb09f730ef87e1aaf388c9c4ad189b7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "14315e2a9195e641b21c676bdc89da562c0bbcebb3e02bee7eb6839de41ee79a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8cebb29c0751f19c2929cc6f17ab2dfc58078ce851c0a760537c639662c10515"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8cebb29c0751f19c2929cc6f17ab2dfc58078ce851c0a760537c639662c10515"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8cebb29c0751f19c2929cc6f17ab2dfc58078ce851c0a760537c639662c10515"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0c590153c44a5f1b63136abf8472da02e45ee8faa9a254df605d0684a53c7afe"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ed5868d4107a332417fad2234792acafbda3651a6dc5869a379b0c2462e5be56"
   end
 
   depends_on "wasmtime" => :test

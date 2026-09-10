@@ -3,7 +3,11 @@ class WasmComponentLd < Formula
   homepage "https://wasi.dev"
   url "https://ghfast.top/https://github.com/bytecodealliance/wasm-component-ld/archive/refs/tags/v0.5.30.tar.gz"
   sha256 "d5e9b986da0807b3059c32cf56690933b93ef910226ebb08ceb434397446fd0f"
-  license "Apache-2.0"
+  license any_of: [
+    { "Apache-2.0" => { with: "LLVM-exception" } },
+    "Apache-2.0",
+    "MIT",
+  ]
   head "https://github.com/bytecodealliance/wasm-component-ld.git", branch: "main"
 
   bottle do
@@ -19,6 +23,12 @@ class WasmComponentLd < Formula
   depends_on "lld" => :test
   depends_on "llvm" => :test
   depends_on "wasmtime" => :test
+
+  allow_network_access! :test
+
+  def fetch
+    system "cargo", "fetch", "--locked", "--target", "host-tuple"
+  end
 
   def install
     system "cargo", "install", *std_cargo_args

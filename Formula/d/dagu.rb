@@ -1,17 +1,17 @@
 class Dagu < Formula
   desc "Lightweight and powerful workflow engine"
   homepage "https://dagu.sh"
-  url "https://ghfast.top/https://github.com/dagucloud/dagu/archive/refs/tags/v2.16.2.tar.gz"
-  sha256 "1e347da60b33cd93b87ea7a6fb22aaeab9644c4452a3445ab21ec192bd25c055"
+  url "https://ghfast.top/https://github.com/dagucloud/dagu/archive/refs/tags/v2.16.3.tar.gz"
+  sha256 "4305df3ea1feb5bcc64fbdfc7251480a657ce253abbaa255839fb9420ce228be"
   license "GPL-3.0-only"
   head "https://github.com/dagucloud/dagu.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "eddfa42925feec8563960ba4fae7a3132e43d63a37f05eeb8bb52f56cb700b88"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8a398b3a4e812ac5222b29167dc5966501bbe33c996ab1518849dae495690536"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "59f2b285bd0980fddfd2597c1f4746c23ecf497df2e819addf4917a0e1d0debb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5a22079eb66a68e289864e92f824a6b671a956db5db37827ebcfa0c8ab2c1595"
-    sha256 cellar: :any,                 x86_64_linux:  "6d32cac2552067f62fc1610b1f0bf6dba9f76e14c7b24852b63d77aa6e501d0e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bc7c1d7ac34f7eccd36d53de5c6edabe5a8c923b0c2baa93983b38cdd1681076"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7d716aad8db3c7424c235a367d537a58228ceb436d7ba1f048a37f238cdf20bf"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6a46b69f5d104c4d395c41edac71c3e2cbdfaf6ec05201ba63b47166f54f77f6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "eed6514abedac80db80b6c0856345df50aed7ee54c9d25c3785641d7cc46fe3f"
+    sha256 cellar: :any,                 x86_64_linux:  "e31b5322e29bfce6ba59edf72c1d20ae9a66f9782ba4471854d76b3ddadce9ba"
   end
 
   depends_on "go" => :build

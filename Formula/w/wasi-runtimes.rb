@@ -1,9 +1,8 @@
 class WasiRuntimes < Formula
   desc "Compiler-RT and libc++ runtimes for WASI"
   homepage "https://wasi.dev"
-  # TODO: update targets and other steps when wasi-sdk-34 / wasi-libc 34 is stable
-  url "https://ghfast.top/https://github.com/llvm/llvm-project/releases/download/llvmorg-23.1.0/llvm-project-23.1.0.src.tar.xz"
-  sha256 "ab1f0e3ec52448c33e8782eaf0422504b87c7b016b22514653ee0d8fcee479ff"
+  url "https://ghfast.top/https://github.com/llvm/llvm-project/releases/download/llvmorg-23.1.1/llvm-project-23.1.1.src.tar.xz"
+  sha256 "ebe9be46fe8756d58c5b198ffad0fa2a766257add81a4dc52179bfacc7888ee6"
   license "Apache-2.0" => { with: "LLVM-exception" }
   head "https://github.com/llvm/llvm-project.git", branch: "main"
 
@@ -12,18 +11,17 @@ class WasiRuntimes < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e86f9515a6fd3d035e8ce37e09d9ecf380bdfbdcf617d01477b0c57927d3be54"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0d82dbd32ff1a7082b4143a7d5e30ecb427661e64492c83d71325d75ed1ff4bb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "27208735f98abc98ea5b3b8435a2cdd30fd00d9fcf9a44fa2e769d6175315fa3"
-    sha256 cellar: :any_skip_relocation, sonoma:        "85461750319348b30e4e1ad112b859c3e4e54dd080b0f6b4dbce30e803376bfe"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1cfb6b4170bd2f3279b95b8e89e68f1cbd18320064024f0dc7ccee825e8e07bf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6c79317915bfbd4e8e83f95c1bfa6c5c2218ab655bdc2d050e51fecd3fd4faf4"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0d32b900f8c0861bdee67b3b0c3f31c4481ac1a2868819eb9884029c571620e0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0d32b900f8c0861bdee67b3b0c3f31c4481ac1a2868819eb9884029c571620e0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0d32b900f8c0861bdee67b3b0c3f31c4481ac1a2868819eb9884029c571620e0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3ba4b195b878296fac2c875a6e83e2ed81d65e927b6b0370eedef435e8c18932"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "807611a2e94ce1b99f4cd1c5cc1422afa45c484ad862105158350453c7be9a81"
   end
 
   depends_on "cmake" => :build
+  depends_on "lld" => [:build, :test]
   depends_on "wasi-libc" => [:build, :test]
-  depends_on "lld" => :test
-  depends_on "wasm-component-ld" => :test
+  depends_on "wasm-component-ld" => [:build, :test]
   depends_on "wasmtime" => :test
   depends_on "llvm"
 
@@ -36,14 +34,15 @@ class WasiRuntimes < Formula
     type :unofficial
   end
 
+  deny_network_access!
+
   def wasi_sdk_targets
     # See targets at: https://github.com/WebAssembly/wasi-sdk/blob/wasi-sdk-33/CMakeLists.txt#L14
     %w[
-      wasm32-wasi
       wasm32-wasip1
       wasm32-wasip2
+      wasm32-wasip3
       wasm32-wasip1-threads
-      wasm32-wasi-threads
     ]
   end
 
@@ -57,7 +56,7 @@ class WasiRuntimes < Formula
     wasi_sdk_cpu_cflags = "-mcpu=lime1"
 
     # Compiler flags taken from following tag, excluding unused CMAKE_MODULE_PATH
-    # https://github.com/WebAssembly/wasi-sdk/blob/wasi-sdk-33/cmake/wasi-sdk-sysroot.cmake#L56-L73
+    # https://github.com/WebAssembly/wasi-sdk/blob/wasi-sdk-34/cmake/wasi-sdk-sysroot.cmake#L58-L76
     default_cmake_args = %W[
       -DCMAKE_SYSTEM_NAME=WASI
       -DCMAKE_SYSTEM_VERSION=1
@@ -68,19 +67,17 @@ class WasiRuntimes < Formula
       -DCMAKE_CXX_COMPILER=#{llvm.opt_bin}/clang++
       -DCMAKE_C_COMPILER_WORKS=ON
       -DCMAKE_CXX_COMPILER_WORKS=ON
-      -DCMAKE_SYSROOT=#{wasi_libc.opt_share}/wasi-sysroot
       -DCMAKE_C_LINKER_DEPFILE_SUPPORTED=OFF
       -DCMAKE_CXX_LINKER_DEPFILE_SUPPORTED=OFF
+      -DCMAKE_SYSROOT=#{wasi_libc.opt_share}/wasi-sysroot
     ]
     # Add some extra Homebrew-specific flags
     default_cmake_args += %W[
-      -DCMAKE_TRY_COMPILE_TARGET_TYPE=STATIC_LIBRARY
-      -DCMAKE_FIND_FRAMEWORK=NEVER
       -DCMAKE_VERBOSE_MAKEFILE=ON
       -DCMAKE_PROJECT_TOP_LEVEL_INCLUDES=#{HOMEBREW_LIBRARY_PATH}/cmake/trap_fetchcontent_provider.cmake
     ]
     # Configuration taken from:
-    # https://github.com/WebAssembly/wasi-sdk/blob/wasi-sdk-33/cmake/wasi-sdk-sysroot.cmake#L90-L110
+    # https://github.com/WebAssembly/wasi-sdk/blob/wasi-sdk-34/cmake/wasi-sdk-sysroot.cmake#L93-L114
     compiler_rt_args = %W[
       -DLLVM_ENABLE_PER_TARGET_RUNTIME_DIR=ON
       -DCOMPILER_RT_BAREMETAL_BUILD=ON
@@ -100,26 +97,23 @@ class WasiRuntimes < Formula
       -DCMAKE_INSTALL_PREFIX=#{wasi_resource_dir}
     ]
     ENV.append_to_cflags wasi_sdk_cpu_cflags
-    ENV.append_to_cflags "-fdebug-prefix-map=#{buildpath}=wasisdk://v#{wasi_libc.version}"
+    ENV.append_to_cflags "-ffile-prefix-map=#{buildpath}=."
 
     %w[
       wasm32-wasip1
       wasm32-wasip1-threads
+      wasm32-wasip3
     ].each do |target|
       build_dir = "build-compiler-rt-#{target}"
       target_args = %W[
         -DCMAKE_C_COMPILER_TARGET=#{target}
-        -DCMAKE_CXX_COMPILER_TARGET=#{target}
-        -DCMAKE_ASM_COMPILER_TARGET=#{target}
       ]
       # Don't use `std_cmake_args`. It sets things like `CMAKE_OSX_SYSROOT`.
       system "cmake", "-S", "compiler-rt", "-B", build_dir, *default_cmake_args, *compiler_rt_args, *target_args
       system "cmake", "--build", build_dir
       system "cmake", "--install", build_dir
     end
-    (wasi_resource_dir/"lib").install_symlink "wasm32-unknown-wasip1" => "wasm32-unknown-wasi"
     (wasi_resource_dir/"lib").install_symlink "wasm32-unknown-wasip1" => "wasm32-unknown-wasip2"
-    (wasi_resource_dir/"lib").install_symlink "wasm32-unknown-wasip1-threads" => "wasm32-unknown-wasi-threads"
 
     clang_resource_dir = Utils.safe_popen_read(llvm.opt_bin/"clang", "-print-resource-dir").chomp
     clang_resource_dir.sub! llvm.prefix.realpath, llvm.opt_prefix
@@ -139,7 +133,7 @@ class WasiRuntimes < Formula
 
     wasi_sdk_targets.each do |target|
       # Configuration taken from:
-      # https://github.com/WebAssembly/wasi-sdk/blob/wasi-sdk-33/cmake/wasi-sdk-sysroot.cmake#L244-L250
+      # https://github.com/WebAssembly/wasi-sdk/blob/wasi-sdk-34/cmake/wasi-sdk-sysroot.cmake#L266-L276
       pic = target.end_with?("-threads") ? "OFF" : "ON"
       target_flags = target.end_with?("-threads") ? ["-pthread"] : []
 
@@ -151,13 +145,8 @@ class WasiRuntimes < Formula
       extra_cflags = (ENV.cflags&.split.to_a + extra_flags).join(" ")
       extra_cxxflags = (ENV.cxxflags&.split.to_a + extra_flags).join(" ")
 
-      # FIXME: Upstream sets the equivalent of
-      #   `-DLIBCXX_ENABLE_SHARED=#{pic}`
-      #   `-DLIBCXXABI_ENABLE_SHARED=#{pic}`
-      # but the build fails with linking errors.
-      #
       # Configuration taken from:
-      # https://github.com/WebAssembly/wasi-sdk/blob/wasi-sdk-33/cmake/wasi-sdk-sysroot.cmake#L302-L346
+      # https://github.com/WebAssembly/wasi-sdk/blob/wasi-sdk-34/cmake/wasi-sdk-sysroot.cmake#L346-L391
       target_cmake_args = %W[
         -DCMAKE_INSTALL_INCLUDEDIR=#{share}/wasi-sysroot/include/#{target}
         -DCMAKE_STAGING_PREFIX=#{share}/wasi-sysroot
@@ -167,7 +156,7 @@ class WasiRuntimes < Formula
         -DLIBCXX_HAS_EXTERNAL_THREAD_API:BOOL=OFF
         -DLIBCXX_HAS_WIN32_THREAD_API:BOOL=OFF
         -DLLVM_COMPILER_CHECKED=ON
-        -DLIBCXX_ENABLE_SHARED:BOOL=OFF
+        -DLIBCXX_ENABLE_SHARED:BOOL=#{pic}
         -DLIBCXX_ENABLE_EXCEPTIONS:BOOL=OFF
         -DLIBCXX_ENABLE_FILESYSTEM:BOOL=ON
         -DLIBCXX_ENABLE_ABI_LINKER_SCRIPT:BOOL=OFF
@@ -175,7 +164,7 @@ class WasiRuntimes < Formula
         -DLIBCXX_HAS_MUSL_LIBC:BOOL=OFF
         -DLIBCXX_ABI_VERSION=2
         -DLIBCXXABI_ENABLE_EXCEPTIONS:BOOL=OFF
-        -DLIBCXXABI_ENABLE_SHARED:BOOL=OFF
+        -DLIBCXXABI_ENABLE_SHARED:BOOL=#{pic}
         -DLIBCXXABI_SILENT_TERMINATE:BOOL=ON
         -DLIBCXXABI_ENABLE_THREADS:BOOL=ON
         -DLIBCXXABI_HAS_PTHREAD_API:BOOL=ON

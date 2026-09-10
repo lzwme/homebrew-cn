@@ -1,18 +1,17 @@
 class Aliae < Formula
   desc "Cross shell and platform alias management"
   homepage "https://aliae.dev"
-  url "https://ghfast.top/https://github.com/jandedobbeleer/aliae/archive/refs/tags/v1.5.0.tar.gz"
-  sha256 "3d20ffd39244e5d630b83cc6d0702276571151e94d03bfbf28b2f86e9aa25ab1"
+  url "https://ghfast.top/https://github.com/jandedobbeleer/aliae/archive/refs/tags/v1.6.0.tar.gz"
+  sha256 "f19a45be5d135474635e488cfa687163eaafc432f8cac4b2b8c566fb216d7e88"
   license "MIT"
   head "https://github.com/jandedobbeleer/aliae.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "53be7a204a008a7875692a1f60ac83a3b17e9a7dd3ccfd5ff3b3fc14804cffbf"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e6a102c2852e467e98bc3520d9eca6cd2230c85c6adff0488ff6fa616ba6ce9a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8529e51e250ae45fa0f7dd8708a15df65a0bb13360bd4ddfb9acf81ec9b34541"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e0acc2f5c56ef2f7cfb989281e045ef064a2eff9724975ee8f1cccf525fd7f1c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "216117c124f96c20fd6f370d5a00ea00fd0482df615af4b0dd994bb0424d4874"
-    sha256 cellar: :any,                 x86_64_linux:  "2ae42c515e3f67490893a4944fa2407308a25e24bba375af9d1b7a786fb80f9d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9556c1ebdf582a71d06977ef02072b6ebc7e13347518c3dc4a6f30c57d71d6d3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "321f588cbb67bff56d287d1fdbe3912a472486337e87fa6d085164d1980c7e22"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "79edb4231827bba3045a69abd4b421230bacff1b3e02badbad2a62dd896435fa"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "005430bade50ff99499a91d05f89b188b2f3df6a8af75c4fe637a119e6649064"
+    sha256 cellar: :any,                 x86_64_linux:  "0a0fca71e39d64424db47794642194964c1a3ff010c3ab917555d885da024b0c"
   end
 
   depends_on "go" => :build

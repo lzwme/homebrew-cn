@@ -1,5 +1,5 @@
 cask "google-gemini" do
-  version "1.107.3.828"
+  version "1.111.1.839"
   sha256 :no_check
 
   url "https://dl.google.com/release2/j33ro/release/Gemini.dmg"
@@ -15,8 +15,8 @@ cask "google-gemini" do
   end
 
   auto_updates true
-  depends_on macos: :sequoia
   depends_on arch: :arm64
+  depends_on macos: :sequoia
 
   app "Gemini.app"
 

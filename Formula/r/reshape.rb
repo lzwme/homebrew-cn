@@ -1,17 +1,17 @@
 class Reshape < Formula
   desc "Easy-to-use, zero-downtime schema migration tool for Postgres"
   homepage "https://github.com/fabianlindfors/reshape"
-  url "https://ghfast.top/https://github.com/fabianlindfors/reshape/archive/refs/tags/v0.10.0.tar.gz"
-  sha256 "66b825c3de2036277a9427200e61958ccefb7070158236694492afb25c83bdfa"
+  url "https://ghfast.top/https://github.com/fabianlindfors/reshape/archive/refs/tags/v0.11.2.tar.gz"
+  sha256 "9d8e73a54ac8fe5b23f938da0a1522e8e057cfdb11f8bc4af7ef0a76558984d5"
   license "MIT"
   head "https://github.com/fabianlindfors/reshape.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "755982c8fa337cf15a77a1b5723617408aafa43a22b2c0720b7c11b94a8fd07d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4bd874df3958c4a6235b88ad164df8279e5425e6399d5a2696f2126a4fb6aa70"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d1d07687b2f2061a64e6d53a8902fcd7dd9ae3d5724cafe092ad4a3f32efac3a"
-    sha256 cellar: :any,                 arm64_linux:   "97a06a67790ec9cc51a4ff895136baf5df664cc31b7362a92a92d76ed8ab9f88"
-    sha256 cellar: :any,                 x86_64_linux:  "74c05763735eb61035ebcba4245221113cfaeacf13180d5bb16ef27e2de0f622"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "afdc2c1eb053b84222f0ed8ccb0daa5e7d83f2a1ced840f455dfba9f01f1f2a6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "410283dc09dd4c3f4b0056121b65e48b6ce3714f0148d9c3def16acfe0dac061"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f43be9e08b3eb949f4c0dc466d2f440d886e0a3990aa38dda01f9b5b863fefd6"
+    sha256 cellar: :any,                 arm64_linux:   "e6e5782510700bf7245b67891fed8f5d85cae5639508ce74ece11ebfbf026701"
+    sha256 cellar: :any,                 x86_64_linux:  "cc31c5c4eb41fcfc9eebc2dcf832ad2696152c0ab8caef3ed86db9a2d41f36f8"
   end
 
   depends_on "pkgconf" => :build
