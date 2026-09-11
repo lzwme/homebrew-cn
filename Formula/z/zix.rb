@@ -7,12 +7,13 @@ class Zix < Formula
   head "https://gitlab.com/drobilla/zix.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "9b81090cc858205cb0e9df02cd9104e91ec96f5ffb5c22240e8850f7bda4b223"
-    sha256 cellar: :any, arm64_sequoia: "73ab925a8aa5e59105e03ceeff0b010eba86db3605f9fd9d8939afb755fa7561"
-    sha256 cellar: :any, arm64_sonoma:  "701f7c57b3d86135f5c93ff8b146c5c486fba0c01b9fbb38f302aac1f3876e56"
-    sha256 cellar: :any, sonoma:        "0ad2844db475641396028cbbdc412355676eddf15cada6b203b77389b32cefb4"
-    sha256 cellar: :any, arm64_linux:   "8a0603a74f3102f584c070c5d5d1ca29b1d06d440d6a567e0ea612b046bbb327"
-    sha256 cellar: :any, x86_64_linux:  "12807bb561e101cebe9d22ce4382b720b1285b2ade4dcfdfb4820fd21b48e39f"
+    sha256 cellar: :any, arm64_golden_gate: "29d7a70f7c92bf0ceedaf13ae7404b90cfd322452c45a37a0bdb95d6beec1b38"
+    sha256 cellar: :any, arm64_tahoe:       "9b81090cc858205cb0e9df02cd9104e91ec96f5ffb5c22240e8850f7bda4b223"
+    sha256 cellar: :any, arm64_sequoia:     "73ab925a8aa5e59105e03ceeff0b010eba86db3605f9fd9d8939afb755fa7561"
+    sha256 cellar: :any, arm64_sonoma:      "701f7c57b3d86135f5c93ff8b146c5c486fba0c01b9fbb38f302aac1f3876e56"
+    sha256 cellar: :any, sonoma:            "0ad2844db475641396028cbbdc412355676eddf15cada6b203b77389b32cefb4"
+    sha256 cellar: :any, arm64_linux:       "8a0603a74f3102f584c070c5d5d1ca29b1d06d440d6a567e0ea612b046bbb327"
+    sha256 cellar: :any, x86_64_linux:      "12807bb561e101cebe9d22ce4382b720b1285b2ade4dcfdfb4820fd21b48e39f"
   end
 
   depends_on "meson" => :build

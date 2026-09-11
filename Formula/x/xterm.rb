@@ -12,12 +12,13 @@ class Xterm < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "e5e7f1d9766d3d68998f905f32ea072ecc3e421d3f751e8b5154e7f7c86d6f31"
-    sha256 arm64_sequoia: "5dd565028ba9c7cd23933a19ddf73cd642062fb1bef1dfedb5b78c711682c756"
-    sha256 arm64_sonoma:  "f8cff5dcf5084a404cd1cc5af487197142b8d93fb3b09a96fbdbc9a2a5eba6dc"
-    sha256 sonoma:        "f741af446258362271c29ee027386abf89efe0b2efa4078a18b973c1bca6e9e7"
-    sha256 arm64_linux:   "fa56ca77e6349081a6ff8e5277fd62bdcc32c7a86bb39a8d01e3597bb37c8e9a"
-    sha256 x86_64_linux:  "9a7801b7a49db67ad3ccc12bf5712f366ac27b0376788c00a2277f817d3c908f"
+    sha256 arm64_golden_gate: "c44c81810f04ed3573494be29fab2ec96119b0333760b1cce6be2bbcc64d28dd"
+    sha256 arm64_tahoe:       "e5e7f1d9766d3d68998f905f32ea072ecc3e421d3f751e8b5154e7f7c86d6f31"
+    sha256 arm64_sequoia:     "5dd565028ba9c7cd23933a19ddf73cd642062fb1bef1dfedb5b78c711682c756"
+    sha256 arm64_sonoma:      "f8cff5dcf5084a404cd1cc5af487197142b8d93fb3b09a96fbdbc9a2a5eba6dc"
+    sha256 sonoma:            "f741af446258362271c29ee027386abf89efe0b2efa4078a18b973c1bca6e9e7"
+    sha256 arm64_linux:       "fa56ca77e6349081a6ff8e5277fd62bdcc32c7a86bb39a8d01e3597bb37c8e9a"
+    sha256 x86_64_linux:      "9a7801b7a49db67ad3ccc12bf5712f366ac27b0376788c00a2277f817d3c908f"
   end
 
   depends_on "pkgconf" => :build

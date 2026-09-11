@@ -11,12 +11,13 @@ class LibcdioParanoia < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "73510e98664655e2f3034b967cc480fa20651cc241e3516452ad8ec826c74484"
-    sha256 cellar: :any, arm64_sequoia: "82158889e0e871069ebf270e7f5d16492f63e2333b987d5a350ae33ff3f178b7"
-    sha256 cellar: :any, arm64_sonoma:  "59f8c2ec7d7a7ed0ded06916eb4260ffd9f19d0375f8b714a0a8cbb3094a41f3"
-    sha256 cellar: :any, sonoma:        "524b0159b361dbe6225bc405283e09b821733ed483bfd29f9ce1d9c145c8ef34"
-    sha256 cellar: :any, arm64_linux:   "b8c497f19d5b22a99bc3a3511c702a7a0aadcfdbe95f15e683e914a3879739b0"
-    sha256 cellar: :any, x86_64_linux:  "b2103860f0925b8a6dc2a0bcecb3c2367190df1814f142f4ad8f3069737be2a8"
+    sha256 cellar: :any, arm64_golden_gate: "73894e64234ec2b9b845bec9d7639b6e9ab9d187916f7a0c10f99ce669a15150"
+    sha256 cellar: :any, arm64_tahoe:       "73510e98664655e2f3034b967cc480fa20651cc241e3516452ad8ec826c74484"
+    sha256 cellar: :any, arm64_sequoia:     "82158889e0e871069ebf270e7f5d16492f63e2333b987d5a350ae33ff3f178b7"
+    sha256 cellar: :any, arm64_sonoma:      "59f8c2ec7d7a7ed0ded06916eb4260ffd9f19d0375f8b714a0a8cbb3094a41f3"
+    sha256 cellar: :any, sonoma:            "524b0159b361dbe6225bc405283e09b821733ed483bfd29f9ce1d9c145c8ef34"
+    sha256 cellar: :any, arm64_linux:       "b8c497f19d5b22a99bc3a3511c702a7a0aadcfdbe95f15e683e914a3879739b0"
+    sha256 cellar: :any, x86_64_linux:      "b2103860f0925b8a6dc2a0bcecb3c2367190df1814f142f4ad8f3069737be2a8"
   end
 
   depends_on "pkgconf" => :build

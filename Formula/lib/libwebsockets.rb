@@ -13,12 +13,13 @@ class Libwebsockets < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "40b60bda9bcf364bf97f2be5cc4aebb33ef6875b8d066901c1922edab2b2f9ad"
-    sha256 arm64_sequoia: "0dfd541e9c92c8fc34d553e716d9323172b38d7ef84013aec7e080d6d5f2c07e"
-    sha256 arm64_sonoma:  "0eb5268dabac072732b82fa7337c2a3cd16ee040e1bc6bc1bdaa896441518a00"
-    sha256 sonoma:        "fa294c0cfaee7c634c72f2b9102cd15b54ee2b6de19e7982fc8e617555c31e14"
-    sha256 arm64_linux:   "924c9a44f52a6ad16b40f376922687308c90cad4302d26e1a3ba2080736b9707"
-    sha256 x86_64_linux:  "bb3c0a4b41d41a3b89c7ca9f6b77377a810d6910e48df5a13f4d3b079353443e"
+    sha256 arm64_golden_gate: "273a9b8cc38545e395bb4bb27d94a9d50b1890f2676b5f05ee90d8e0faa25743"
+    sha256 arm64_tahoe:       "40b60bda9bcf364bf97f2be5cc4aebb33ef6875b8d066901c1922edab2b2f9ad"
+    sha256 arm64_sequoia:     "0dfd541e9c92c8fc34d553e716d9323172b38d7ef84013aec7e080d6d5f2c07e"
+    sha256 arm64_sonoma:      "0eb5268dabac072732b82fa7337c2a3cd16ee040e1bc6bc1bdaa896441518a00"
+    sha256 sonoma:            "fa294c0cfaee7c634c72f2b9102cd15b54ee2b6de19e7982fc8e617555c31e14"
+    sha256 arm64_linux:       "924c9a44f52a6ad16b40f376922687308c90cad4302d26e1a3ba2080736b9707"
+    sha256 x86_64_linux:      "bb3c0a4b41d41a3b89c7ca9f6b77377a810d6910e48df5a13f4d3b079353443e"
   end
 
   depends_on "cmake" => :build

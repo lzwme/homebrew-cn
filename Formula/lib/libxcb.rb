@@ -8,14 +8,15 @@ class Libxcb < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "059edd054b17234abb0ce8a34dcbbd927e104445d09a3f5904ea82f7c5aa7ded"
-    sha256 cellar: :any,                 arm64_sequoia: "cce8d9e12c3f0b2fdbffbb3f7ba02f7e25cf3fa495b3e759d34a6264599543b3"
-    sha256 cellar: :any,                 arm64_sonoma:  "103f2b2f44b6dfd22bc936c9eb7f325b598374c549a9f56465b8cce80a2ea829"
-    sha256 cellar: :any,                 arm64_ventura: "3de506a3b5fd61bdd3f1cd5a244b82ea34b696894c8c3124e844a37ff6afd8c7"
-    sha256 cellar: :any,                 sonoma:        "d7cbef805f6d1aab547a65a931972df59a768bb48ff845ecdcbf7b404f64cfa6"
-    sha256 cellar: :any,                 ventura:       "b0bd40b6aba450db00c38a98d4a1e3b8cf3335f4df18e4044e60e1b0ad7fb481"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8ab6cbc2dd873785c24e669f1749dc1e694740b9de496eef4289be27f389c79d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1ccb2f6e9f4feb73b3dbc56248554bc8ce30cb34771ed987eec1bd956f8563e2"
+    sha256 cellar: :any,                 arm64_golden_gate: "36791e448c61f28491e742e9150ec78c13c8ef7f734a2a51b024cf189ed08d46"
+    sha256 cellar: :any,                 arm64_tahoe:       "059edd054b17234abb0ce8a34dcbbd927e104445d09a3f5904ea82f7c5aa7ded"
+    sha256 cellar: :any,                 arm64_sequoia:     "cce8d9e12c3f0b2fdbffbb3f7ba02f7e25cf3fa495b3e759d34a6264599543b3"
+    sha256 cellar: :any,                 arm64_sonoma:      "103f2b2f44b6dfd22bc936c9eb7f325b598374c549a9f56465b8cce80a2ea829"
+    sha256 cellar: :any,                 arm64_ventura:     "3de506a3b5fd61bdd3f1cd5a244b82ea34b696894c8c3124e844a37ff6afd8c7"
+    sha256 cellar: :any,                 sonoma:            "d7cbef805f6d1aab547a65a931972df59a768bb48ff845ecdcbf7b404f64cfa6"
+    sha256 cellar: :any,                 ventura:           "b0bd40b6aba450db00c38a98d4a1e3b8cf3335f4df18e4044e60e1b0ad7fb481"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "8ab6cbc2dd873785c24e669f1749dc1e694740b9de496eef4289be27f389c79d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "1ccb2f6e9f4feb73b3dbc56248554bc8ce30cb34771ed987eec1bd956f8563e2"
   end
 
   depends_on "pkgconf" => :build

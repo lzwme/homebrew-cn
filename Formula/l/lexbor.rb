@@ -6,11 +6,12 @@ class Lexbor < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "55e32257e768086f15c2db71ec04445b3aee437f7e7a9ebdfad2ffbe27626a2d"
-    sha256 cellar: :any, arm64_sequoia: "307f9f8603edce1cddf07aa1c7021a1332e5fd3cdf26b8ef4611b49c798088f3"
-    sha256 cellar: :any, arm64_sonoma:  "d8a38e8dc86754e0c8f4fa09aa73b6989bed9f008ab1993263888a562bad3ad1"
-    sha256 cellar: :any, arm64_linux:   "b58ed24615df1c3330fc86585c41bfb5178a4bfa30916d981b459d2085d5ced3"
-    sha256 cellar: :any, x86_64_linux:  "59c8876ba51946f6120fecb8a22d6be1e06bf30f40791b38f62bfe5e476674cb"
+    sha256 cellar: :any, arm64_golden_gate: "d24c9c977e25a93f2232da550e0e0e8a93e15b69bf35480717fc9b3087929b4b"
+    sha256 cellar: :any, arm64_tahoe:       "55e32257e768086f15c2db71ec04445b3aee437f7e7a9ebdfad2ffbe27626a2d"
+    sha256 cellar: :any, arm64_sequoia:     "307f9f8603edce1cddf07aa1c7021a1332e5fd3cdf26b8ef4611b49c798088f3"
+    sha256 cellar: :any, arm64_sonoma:      "d8a38e8dc86754e0c8f4fa09aa73b6989bed9f008ab1993263888a562bad3ad1"
+    sha256 cellar: :any, arm64_linux:       "b58ed24615df1c3330fc86585c41bfb5178a4bfa30916d981b459d2085d5ced3"
+    sha256 cellar: :any, x86_64_linux:      "59c8876ba51946f6120fecb8a22d6be1e06bf30f40791b38f62bfe5e476674cb"
   end
 
   depends_on "cmake" => :build

@@ -7,12 +7,13 @@ class Nuraft < Formula
 
   bottle do
     rebuild 1
-    sha256 arm64_tahoe:   "ea3f306e6ff8caed8af6766269952ba484a9c93616bd3022536ecdf594244293"
-    sha256 arm64_sequoia: "d8c11cb1794414a156702a0dd8e2e4c2f1364b3ce70d72fe0621ec8ee38e3153"
-    sha256 arm64_sonoma:  "12ba02a1696da77e500b797871ae74e95faef90716c9926226a89eb27bccc1b9"
-    sha256 sonoma:        "6448d43767ede630932d6bdb91a5d898fa1009c2fe50ef151c39c02d9d1b6c01"
-    sha256 arm64_linux:   "fc1791ce60a81c886fe5c3484636b8ef7645eb8fa08d7d4a0f1d7ab65d40b277"
-    sha256 x86_64_linux:  "922ce348211e72adc865d2a6976cd7a2b914d1ea88c4508fb80fd7430cac185a"
+    sha256 arm64_golden_gate: "8e633d9bb67772c7e575c2c2dbaf0d77ffcf66b6585b2c24d8574d59da9bae2a"
+    sha256 arm64_tahoe:       "ea3f306e6ff8caed8af6766269952ba484a9c93616bd3022536ecdf594244293"
+    sha256 arm64_sequoia:     "d8c11cb1794414a156702a0dd8e2e4c2f1364b3ce70d72fe0621ec8ee38e3153"
+    sha256 arm64_sonoma:      "12ba02a1696da77e500b797871ae74e95faef90716c9926226a89eb27bccc1b9"
+    sha256 sonoma:            "6448d43767ede630932d6bdb91a5d898fa1009c2fe50ef151c39c02d9d1b6c01"
+    sha256 arm64_linux:       "fc1791ce60a81c886fe5c3484636b8ef7645eb8fa08d7d4a0f1d7ab65d40b277"
+    sha256 x86_64_linux:      "922ce348211e72adc865d2a6976cd7a2b914d1ea88c4508fb80fd7430cac185a"
   end
 
   depends_on "cmake" => :build

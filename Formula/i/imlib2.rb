@@ -7,11 +7,12 @@ class Imlib2 < Formula
   compatibility_version 1
 
   bottle do
-    sha256 arm64_tahoe:   "ed575055879ef307ea3d012201ee15f0b545b7cf553b38c4ad3e22ac3d9a6ab0"
-    sha256 arm64_sequoia: "9d7d7bdb608e59f0a27380be261ba283bcd53ea15d4cbc1160f18a8b5fe61aa9"
-    sha256 arm64_sonoma:  "9679cea52d1bb52d73ef8bc31a1c5a3f349cc05a13f5d3bd02b5a40b0dbee07a"
-    sha256 arm64_linux:   "7299dab1dbab2f1496910c247982e0cf526bac36c9364b4da5d1dd99492410a3"
-    sha256 x86_64_linux:  "f18fb382e996bf5c3b1501fd51ddfb15f81a0b7199d5fd5abcd46a58265d30c3"
+    sha256 arm64_golden_gate: "f8a1b2ba0d46b6a7305ae79469893b03a481abf0a0c9e377bbad240c2eaa063e"
+    sha256 arm64_tahoe:       "ed575055879ef307ea3d012201ee15f0b545b7cf553b38c4ad3e22ac3d9a6ab0"
+    sha256 arm64_sequoia:     "9d7d7bdb608e59f0a27380be261ba283bcd53ea15d4cbc1160f18a8b5fe61aa9"
+    sha256 arm64_sonoma:      "9679cea52d1bb52d73ef8bc31a1c5a3f349cc05a13f5d3bd02b5a40b0dbee07a"
+    sha256 arm64_linux:       "7299dab1dbab2f1496910c247982e0cf526bac36c9364b4da5d1dd99492410a3"
+    sha256 x86_64_linux:      "f18fb382e996bf5c3b1501fd51ddfb15f81a0b7199d5fd5abcd46a58265d30c3"
   end
 
   depends_on "pkgconf" => :build

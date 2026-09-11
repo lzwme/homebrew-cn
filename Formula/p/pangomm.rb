@@ -6,12 +6,13 @@ class Pangomm < Formula
   license "LGPL-2.1-only"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "c50be3b577c1dd5329b742b97c51182af99225e4af2c7e9ae7a30c27f3f9e4f3"
-    sha256 cellar: :any, arm64_sequoia: "66876cb88e4a97c28bfc160bbef33c2e87252a060f3b4bf21ef0c0f69290fc91"
-    sha256 cellar: :any, arm64_sonoma:  "4a9fa4ed2f7cf7619f980ebe916e6f4d7267bcc07e5fa23881e95f68ec6ef012"
-    sha256 cellar: :any, sonoma:        "2acbac325ad9deb034b28d161a3f6bdf43275e98de4fd9da11cdae42e332c9fe"
-    sha256               arm64_linux:   "d02e8869da84ce1e9ac044a46af2f6532afb03a78570da1b8533b827d2c38771"
-    sha256               x86_64_linux:  "6d53e3d4fff1001e35dc57f5ebfc19bfd5539aed55e74283d844270942c28ed9"
+    sha256 cellar: :any, arm64_golden_gate: "f8162d4ca4c3ac4e349e97704e1e35d2c823af376180fdafd5f7826d84e0203d"
+    sha256 cellar: :any, arm64_tahoe:       "c50be3b577c1dd5329b742b97c51182af99225e4af2c7e9ae7a30c27f3f9e4f3"
+    sha256 cellar: :any, arm64_sequoia:     "66876cb88e4a97c28bfc160bbef33c2e87252a060f3b4bf21ef0c0f69290fc91"
+    sha256 cellar: :any, arm64_sonoma:      "4a9fa4ed2f7cf7619f980ebe916e6f4d7267bcc07e5fa23881e95f68ec6ef012"
+    sha256 cellar: :any, sonoma:            "2acbac325ad9deb034b28d161a3f6bdf43275e98de4fd9da11cdae42e332c9fe"
+    sha256               arm64_linux:       "d02e8869da84ce1e9ac044a46af2f6532afb03a78570da1b8533b827d2c38771"
+    sha256               x86_64_linux:      "6d53e3d4fff1001e35dc57f5ebfc19bfd5539aed55e74283d844270942c28ed9"
   end
 
   depends_on "meson" => :build

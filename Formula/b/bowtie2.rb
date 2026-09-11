@@ -6,12 +6,13 @@ class Bowtie2 < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9a579b7a13533d8e7a1eb74bed904affcae752eaa0e89599e54cb6c475b1806c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "85d97a5b3966b23bab047b167357606dc73a5109d3f0b16579e5c9d9506ead46"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "efd260694be791dbf2ee3faa0b1d4ab279380d79a32d03f67c19d5cdafec78df"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6959f00c38e6a7158236ece9d7da060db011b8bf30ebe7398688696a4c9d8c2c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "315aaa40fec3ebd1ff2082647b49922f359707dcef169ac25f6d5bf5bad7c1e4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f156398c3ed61a93d970f69a818de0d4c29ab851a81501fcc7ecad6a8d547565"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "4fa4de54149a23a2c39a27d3ddb776583db862febc4678f6a0148fff43bd56cd"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "9a579b7a13533d8e7a1eb74bed904affcae752eaa0e89599e54cb6c475b1806c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "85d97a5b3966b23bab047b167357606dc73a5109d3f0b16579e5c9d9506ead46"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "efd260694be791dbf2ee3faa0b1d4ab279380d79a32d03f67c19d5cdafec78df"
+    sha256 cellar: :any_skip_relocation, sonoma:            "6959f00c38e6a7158236ece9d7da060db011b8bf30ebe7398688696a4c9d8c2c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "315aaa40fec3ebd1ff2082647b49922f359707dcef169ac25f6d5bf5bad7c1e4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "f156398c3ed61a93d970f69a818de0d4c29ab851a81501fcc7ecad6a8d547565"
   end
 
   uses_from_macos "perl"

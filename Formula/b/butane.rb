@@ -12,12 +12,13 @@ class Butane < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0549fb450694816c1f3fcecca3d00127d92253719b540042aeb11ee283135f3d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0549fb450694816c1f3fcecca3d00127d92253719b540042aeb11ee283135f3d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0549fb450694816c1f3fcecca3d00127d92253719b540042aeb11ee283135f3d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "89790f467b35bc6555229963bd47490681916a8a7e1345031c2edd30bb0957c6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f55259e0be9b61d2b2aeaea83e4a41505fffadeb111e51e3f735e65a8938011a"
-    sha256 cellar: :any,                 x86_64_linux:  "de5d57fe6a501ebb9a1f28d01d718f2bc0d5bc94c527c1e37caba3f6ca808e9b"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "be4beb4e3ee102eb70456168cdb2a89b0da4ea8e705a13348fd6eb4f60f0ad22"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "0549fb450694816c1f3fcecca3d00127d92253719b540042aeb11ee283135f3d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "0549fb450694816c1f3fcecca3d00127d92253719b540042aeb11ee283135f3d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "0549fb450694816c1f3fcecca3d00127d92253719b540042aeb11ee283135f3d"
+    sha256 cellar: :any_skip_relocation, sonoma:            "89790f467b35bc6555229963bd47490681916a8a7e1345031c2edd30bb0957c6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "f55259e0be9b61d2b2aeaea83e4a41505fffadeb111e51e3f735e65a8938011a"
+    sha256 cellar: :any,                 x86_64_linux:      "de5d57fe6a501ebb9a1f28d01d718f2bc0d5bc94c527c1e37caba3f6ca808e9b"
   end
 
   depends_on "go" => :build

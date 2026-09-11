@@ -6,12 +6,13 @@ class Clblast < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "6419de6a1707a9f92213abcdbb0c4e4488d5ff3418bcbe963baa4d5e72216f89"
-    sha256 cellar: :any,                 arm64_sequoia: "da027f3b522bee07118cc60e30053e1f00225d999662ffff5c87b4142b424c09"
-    sha256 cellar: :any,                 arm64_sonoma:  "3f7078481cccaf1a9460c703a71988f942292c45133fcff6b14209a4819c7674"
-    sha256 cellar: :any,                 sonoma:        "9a3c4d995812d34bb57bd5711a844a57da1fe8a2e10b350bd2b9ac835766443d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5350ca100c8aa37c957be25c450fbde3404feb82732b6aab364058279ce7120b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7d5aad3b2483aafef5d30926805f7add78e9438687d52aa7972e89ad28aecd2a"
+    sha256 cellar: :any,                 arm64_golden_gate: "880c47aba78e088e5547172e8964d6d30d1a8586f54af6642027e7e028b0fa03"
+    sha256 cellar: :any,                 arm64_tahoe:       "6419de6a1707a9f92213abcdbb0c4e4488d5ff3418bcbe963baa4d5e72216f89"
+    sha256 cellar: :any,                 arm64_sequoia:     "da027f3b522bee07118cc60e30053e1f00225d999662ffff5c87b4142b424c09"
+    sha256 cellar: :any,                 arm64_sonoma:      "3f7078481cccaf1a9460c703a71988f942292c45133fcff6b14209a4819c7674"
+    sha256 cellar: :any,                 sonoma:            "9a3c4d995812d34bb57bd5711a844a57da1fe8a2e10b350bd2b9ac835766443d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "5350ca100c8aa37c957be25c450fbde3404feb82732b6aab364058279ce7120b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "7d5aad3b2483aafef5d30926805f7add78e9438687d52aa7972e89ad28aecd2a"
   end
 
   depends_on "cmake" => :build

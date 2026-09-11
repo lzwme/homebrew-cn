@@ -20,12 +20,13 @@ class Objconv < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f06a2e64300c2685c083fd95df7bef59538666948122ddc86ec034da588d0f08"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7c9c93c8dc00a939a982e3f91ead2bb123398c2d51b16012e884e68940f64279"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5d273ae1e33ceead2ffd568a7fad04359b97b55c01961d537f58888b594b0a37"
-    sha256 cellar: :any_skip_relocation, sonoma:        "62afeccb878f94d41864cc49e74823fc1c9be2d95cdc04547f921cc0c1d41ecf"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0575326904e82bba08aef0be413897313d89fb7046d0dddb3a89b6a56d9fab2c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "54a33822922a82171119df29ba1f0a86ffb40e5be12ed88863482008a6f57eec"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "075cca0c06219c323a5f493076e97fd05a7396b329e8c8e5e712b1f61dd1508d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "f06a2e64300c2685c083fd95df7bef59538666948122ddc86ec034da588d0f08"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "7c9c93c8dc00a939a982e3f91ead2bb123398c2d51b16012e884e68940f64279"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "5d273ae1e33ceead2ffd568a7fad04359b97b55c01961d537f58888b594b0a37"
+    sha256 cellar: :any_skip_relocation, sonoma:            "62afeccb878f94d41864cc49e74823fc1c9be2d95cdc04547f921cc0c1d41ecf"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "0575326904e82bba08aef0be413897313d89fb7046d0dddb3a89b6a56d9fab2c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "54a33822922a82171119df29ba1f0a86ffb40e5be12ed88863482008a6f57eec"
   end
 
   uses_from_macos "unzip" => :build

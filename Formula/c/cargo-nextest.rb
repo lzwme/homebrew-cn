@@ -1,8 +1,8 @@
 class CargoNextest < Formula
   desc "Next-generation test runner for Rust"
   homepage "https://nexte.st"
-  url "https://ghfast.top/https://github.com/nextest-rs/nextest/archive/refs/tags/cargo-nextest-0.9.143.tar.gz"
-  sha256 "4ad5dbe9e266fd7303c39413c5610c4ca03f3c1b70f8d59c81266a4452e59361"
+  url "https://ghfast.top/https://github.com/nextest-rs/nextest/archive/refs/tags/cargo-nextest-0.9.144.tar.gz"
+  sha256 "ca0bbe5138a588e8ee57da135e952d865e074b91bcef56f28a8f26eefe63bde2"
   license "Apache-2.0"
 
   livecheck do
@@ -11,12 +11,11 @@ class CargoNextest < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "453a47f752c2b2d28711f5ae88a59dac93b75c451f23e2f1816608b60e011fa5"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ded3e40f343b57f4089c2145c7f6fe912c5efb85c8e0f1372ed7d3ca15d44070"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f79999882a20402ec90b58dac26ad01bdf8409a8255006ff125fd13b5a59c342"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b165d6411c93027890d10ddcfd42b31ea063fb86896d37fff536ce22077a69d4"
-    sha256 cellar: :any,                 arm64_linux:   "7c73d794d932b6bb039d671decc0b56945ae54ef692a85f44693ad9f0e88a711"
-    sha256 cellar: :any,                 x86_64_linux:  "6e362427a1793d8d58816c7ae76afb7baf0d7e93c8f1503d87afef5d034fa3e0"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "223ac1dca9f0a2a12e97456d4a5fb4387538a6f0cd01741d167d67c3a5bef0b0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e556806d99b85c374ba5a6e53295ecedb24425b78657a25a070ee7677ceb4f85"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "050b1d4923b12f0849ef77e0688e7a703454e8264f686bd32930457dbcf4f042"
+    sha256 cellar: :any,                 arm64_linux:   "72d5adcb29f68b1ab1daafd60fc0bd7f320a22b8c7fe03f99b63187841475a60"
+    sha256 cellar: :any,                 x86_64_linux:  "106e56ab12bba4f19df23e45a333830c2c790bc96649f3e9e5401d52a929e314"
   end
 
   depends_on "rust" => :build

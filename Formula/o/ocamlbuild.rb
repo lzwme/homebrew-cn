@@ -13,12 +13,13 @@ class Ocamlbuild < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "98c97d371f4dc582d8cb07b6d394ceb02342d5d5307ecc8841f079e56f3232ed"
-    sha256 arm64_sequoia: "0abe1c6af4cc7b3d0fac8f0c06c123a0e79d904fb1a68d2cc96d3d1671419b02"
-    sha256 arm64_sonoma:  "78199314624484b9fa96453aa0fdae3413407754cae5be84e4af75d9947dd099"
-    sha256 sonoma:        "721a09f2dfd087be39aef7be8b28fd9b868a40af6f1abab8fba129fea4d5fe67"
-    sha256 arm64_linux:   "3447478d3e2c3d5241200eee517fa3abbecb243425e85dbe8d98283257a2ac26"
-    sha256 x86_64_linux:  "b588357e78d2c2835cc4b2b89477e3aa0f394b9edd29f08be867cefbd212451f"
+    sha256 arm64_golden_gate: "6b7f32ac6c522f7e1862cd1e62609a102d1cd8a5a4534757e8c380487aaa66ff"
+    sha256 arm64_tahoe:       "98c97d371f4dc582d8cb07b6d394ceb02342d5d5307ecc8841f079e56f3232ed"
+    sha256 arm64_sequoia:     "0abe1c6af4cc7b3d0fac8f0c06c123a0e79d904fb1a68d2cc96d3d1671419b02"
+    sha256 arm64_sonoma:      "78199314624484b9fa96453aa0fdae3413407754cae5be84e4af75d9947dd099"
+    sha256 sonoma:            "721a09f2dfd087be39aef7be8b28fd9b868a40af6f1abab8fba129fea4d5fe67"
+    sha256 arm64_linux:       "3447478d3e2c3d5241200eee517fa3abbecb243425e85dbe8d98283257a2ac26"
+    sha256 x86_64_linux:      "b588357e78d2c2835cc4b2b89477e3aa0f394b9edd29f08be867cefbd212451f"
   end
 
   depends_on "ocaml"

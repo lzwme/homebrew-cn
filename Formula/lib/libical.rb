@@ -12,12 +12,13 @@ class Libical < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "f1de09188a68e831bdd83655483216b53ef49c5335e4450b4fac95badf587796"
-    sha256 cellar: :any, arm64_sequoia: "e29340ff7ce9cdb11c7f8f4f9c7a3e9a7412b8cdc8cdaea9e5b5faa5468cbdf4"
-    sha256 cellar: :any, arm64_sonoma:  "62aa6a36d618e228f58564b31286960b34df4241661f8d7ebdd5ad1a99cebfd8"
-    sha256 cellar: :any, sonoma:        "bd4a3ef9c7aca5b77697562c3499f9eb96da5ea4a49c302ad73085ebc6c1f804"
-    sha256 cellar: :any, arm64_linux:   "77f9a63ebfe12a913f3ff7303e91161d8fa38fdf0f29073cec6dd96e160063e3"
-    sha256 cellar: :any, x86_64_linux:  "3184327968b165956effba33099920b62ac22e68ccbaf29ffc259a8513ed24de"
+    sha256 cellar: :any, arm64_golden_gate: "1dd69ef05cb14a22c0dd603aac8fae8dd67434bdbac49df6200ea4869536125f"
+    sha256 cellar: :any, arm64_tahoe:       "f1de09188a68e831bdd83655483216b53ef49c5335e4450b4fac95badf587796"
+    sha256 cellar: :any, arm64_sequoia:     "e29340ff7ce9cdb11c7f8f4f9c7a3e9a7412b8cdc8cdaea9e5b5faa5468cbdf4"
+    sha256 cellar: :any, arm64_sonoma:      "62aa6a36d618e228f58564b31286960b34df4241661f8d7ebdd5ad1a99cebfd8"
+    sha256 cellar: :any, sonoma:            "bd4a3ef9c7aca5b77697562c3499f9eb96da5ea4a49c302ad73085ebc6c1f804"
+    sha256 cellar: :any, arm64_linux:       "77f9a63ebfe12a913f3ff7303e91161d8fa38fdf0f29073cec6dd96e160063e3"
+    sha256 cellar: :any, x86_64_linux:      "3184327968b165956effba33099920b62ac22e68ccbaf29ffc259a8513ed24de"
   end
 
   depends_on "cmake" => :build

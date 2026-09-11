@@ -7,12 +7,13 @@ class Libass < Formula
   compatibility_version 1
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "47e1f2d60c97628331593c00673e03d00e675c2462c1267f1e459ba17a41129e"
-    sha256 cellar: :any, arm64_sequoia: "3600420037feb1403141c0f6d07f135dcd79649cafa420ace2750468981664ec"
-    sha256 cellar: :any, arm64_sonoma:  "a14b9e2407d406f58b7a83c7c22d9332b69ba68dca53dd7e61d7e0afa0468ed4"
-    sha256 cellar: :any, sonoma:        "e380b555c2987bac9cfe30d47e2aaadd07112073cc263dee9d992f488297fe74"
-    sha256 cellar: :any, arm64_linux:   "5b13b14c5716ad5b9a1082e9d05f3f7cbb4aaf616bb19c03483e3f981b9b075f"
-    sha256 cellar: :any, x86_64_linux:  "c6a9a61e5e5b9f6a445a63690603bec9bc8c56513a2b69dd8ca3eab530b98ccc"
+    sha256 cellar: :any, arm64_golden_gate: "381fa93013650f873816be115168cdf35f104c165494c45ce9be030cf5b99316"
+    sha256 cellar: :any, arm64_tahoe:       "47e1f2d60c97628331593c00673e03d00e675c2462c1267f1e459ba17a41129e"
+    sha256 cellar: :any, arm64_sequoia:     "3600420037feb1403141c0f6d07f135dcd79649cafa420ace2750468981664ec"
+    sha256 cellar: :any, arm64_sonoma:      "a14b9e2407d406f58b7a83c7c22d9332b69ba68dca53dd7e61d7e0afa0468ed4"
+    sha256 cellar: :any, sonoma:            "e380b555c2987bac9cfe30d47e2aaadd07112073cc263dee9d992f488297fe74"
+    sha256 cellar: :any, arm64_linux:       "5b13b14c5716ad5b9a1082e9d05f3f7cbb4aaf616bb19c03483e3f981b9b075f"
+    sha256 cellar: :any, x86_64_linux:      "c6a9a61e5e5b9f6a445a63690603bec9bc8c56513a2b69dd8ca3eab530b98ccc"
   end
 
   head do

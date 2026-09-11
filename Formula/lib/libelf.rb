@@ -13,16 +13,17 @@ class Libelf < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "03f9c0c79cd12a3a0ab46052037033ef676960079c27be5aca7072abe80cc4a2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "4f4135950b4b898f046e748266d309126a4c87e0e86a19d476192f9619660819"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b5db356e6f8dc983b40424a17c9b73bfcbb442d08a6db8e952744b55aa53bb6e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "839fa934a24ba7bff4bd8ed5d8e3440cd70db7027fa2b79201c32469d0947877"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "3987585b99efe287bfe353b420ba423057e6bfb3a27d543f5f0bfe13f76ef42f"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "bd7a08bb9750a466bfc18473a61df2095b6d106ffb72f4ed4af706c7385b4202"
-    sha256 cellar: :any_skip_relocation, sonoma:         "d40b4bca1b19eace612dc6fd980cd55a94e6a476434ade2db012ef854778bfb7"
-    sha256 cellar: :any_skip_relocation, ventura:        "fdd2375a9f0931864f46148881455d90d4d4bb91c072d16861c3129168e27871"
-    sha256 cellar: :any_skip_relocation, monterey:       "f7dd2aac1032b020ee90c997fb82f771ff686efbc481c4844c16b149d379a51a"
-    sha256 cellar: :any_skip_relocation, big_sur:        "8b69f55ccec2aa1bfa85bef3fe071077fe281e2bc63dc33cc4344a1cc02e1e26"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "66d9403316056490b1f571d8fc507e82419f7dbeb2fcd1ce54c1f9b5f9a9c872"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "03f9c0c79cd12a3a0ab46052037033ef676960079c27be5aca7072abe80cc4a2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "4f4135950b4b898f046e748266d309126a4c87e0e86a19d476192f9619660819"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "b5db356e6f8dc983b40424a17c9b73bfcbb442d08a6db8e952744b55aa53bb6e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:     "839fa934a24ba7bff4bd8ed5d8e3440cd70db7027fa2b79201c32469d0947877"
+    sha256 cellar: :any_skip_relocation, arm64_monterey:    "3987585b99efe287bfe353b420ba423057e6bfb3a27d543f5f0bfe13f76ef42f"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:     "bd7a08bb9750a466bfc18473a61df2095b6d106ffb72f4ed4af706c7385b4202"
+    sha256 cellar: :any_skip_relocation, sonoma:            "d40b4bca1b19eace612dc6fd980cd55a94e6a476434ade2db012ef854778bfb7"
+    sha256 cellar: :any_skip_relocation, ventura:           "fdd2375a9f0931864f46148881455d90d4d4bb91c072d16861c3129168e27871"
+    sha256 cellar: :any_skip_relocation, monterey:          "f7dd2aac1032b020ee90c997fb82f771ff686efbc481c4844c16b149d379a51a"
+    sha256 cellar: :any_skip_relocation, big_sur:           "8b69f55ccec2aa1bfa85bef3fe071077fe281e2bc63dc33cc4344a1cc02e1e26"
   end
 
   # Commented out while this formula still has dependents.

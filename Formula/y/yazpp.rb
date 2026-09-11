@@ -11,12 +11,13 @@ class Yazpp < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "e8c2b70a18bbe278927fa06a069100b0340dfabfe590f10d08579736adaa2e3e"
-    sha256 cellar: :any,                 arm64_sequoia: "281fafaad2b0f09ef41c9ce57858635b84aab0e944526998680d87bf1c92f631"
-    sha256 cellar: :any,                 arm64_sonoma:  "3f20f879fb18ad2c7ce22675ab7d02e65105828865e3ecd8ff13b28bbe2f19e2"
-    sha256 cellar: :any,                 sonoma:        "ea001141255c11f6fecaa9f3944343b32fe8f258e28de326125469ddbef27854"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e657f22fabc2f1c1ab9dce23ced9fb4de0ccd9b497e8949b6a22fccf26321fd3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cd4606ca4186394c36e38a8a4c45a7e32a83eca100988492a97f50c4747e7fb2"
+    sha256 cellar: :any,                 arm64_golden_gate: "a5c91e9f7379d9ff30e147dd81e12a7f9ce3fc516781c2dcac72591ca0feab9e"
+    sha256 cellar: :any,                 arm64_tahoe:       "e8c2b70a18bbe278927fa06a069100b0340dfabfe590f10d08579736adaa2e3e"
+    sha256 cellar: :any,                 arm64_sequoia:     "281fafaad2b0f09ef41c9ce57858635b84aab0e944526998680d87bf1c92f631"
+    sha256 cellar: :any,                 arm64_sonoma:      "3f20f879fb18ad2c7ce22675ab7d02e65105828865e3ecd8ff13b28bbe2f19e2"
+    sha256 cellar: :any,                 sonoma:            "ea001141255c11f6fecaa9f3944343b32fe8f258e28de326125469ddbef27854"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "e657f22fabc2f1c1ab9dce23ced9fb4de0ccd9b497e8949b6a22fccf26321fd3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "cd4606ca4186394c36e38a8a4c45a7e32a83eca100988492a97f50c4747e7fb2"
   end
 
   depends_on "pkgconf" => :build

@@ -11,12 +11,13 @@ class Aarch64ElfGcc < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "d328f1ebcc29e8ccf5cc27c206c817f540f4da03c36c5367dbe1b23dde8aa77a"
-    sha256 arm64_sequoia: "11f06edc8310eabd919090903d432ccf50159a11fbac85240d80bd46cc285f11"
-    sha256 arm64_sonoma:  "d7ea24fd9cbd4a757e9bbff62307fe5335970807ddcea9278656a9275f08fd59"
-    sha256 sonoma:        "0c5f195de2fb24869d5cca9dcbf7355c412762701310e82eb59aa97344afd320"
-    sha256 arm64_linux:   "fd9668a559d9af5ff710456fdbef43b67f9cfa1bb1ca25f2abaa8f4df0d23471"
-    sha256 x86_64_linux:  "afcad518248d50903a96b4617466ce1085e2b3a3feb8732f93be93bffe66d6f4"
+    sha256 arm64_golden_gate: "b955115717942586694487c914cc96c0c1ae1e7f68f229d7cebbed2b635de702"
+    sha256 arm64_tahoe:       "d328f1ebcc29e8ccf5cc27c206c817f540f4da03c36c5367dbe1b23dde8aa77a"
+    sha256 arm64_sequoia:     "11f06edc8310eabd919090903d432ccf50159a11fbac85240d80bd46cc285f11"
+    sha256 arm64_sonoma:      "d7ea24fd9cbd4a757e9bbff62307fe5335970807ddcea9278656a9275f08fd59"
+    sha256 sonoma:            "0c5f195de2fb24869d5cca9dcbf7355c412762701310e82eb59aa97344afd320"
+    sha256 arm64_linux:       "fd9668a559d9af5ff710456fdbef43b67f9cfa1bb1ca25f2abaa8f4df0d23471"
+    sha256 x86_64_linux:      "afcad518248d50903a96b4617466ce1085e2b3a3feb8732f93be93bffe66d6f4"
   end
 
   depends_on "aarch64-elf-binutils"

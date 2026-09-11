@@ -3,8 +3,8 @@ class Systemd < Formula
 
   desc "System and service manager"
   homepage "https://systemd.io"
-  url "https://ghfast.top/https://github.com/systemd/systemd/archive/refs/tags/v261.2.tar.gz"
-  sha256 "ed1059ff964f5df35b6056434cc17cc83f86dc913f10489948a0b19b6081c5ec"
+  url "https://ghfast.top/https://github.com/systemd/systemd/archive/refs/tags/v261.3.tar.gz"
+  sha256 "3f8d3d3969af7214bda600930e14c6a24135eb3dce1ba7f1b980b74e6dc15b72"
   license all_of: [
     # Main license is LGPL-2.1-or-later while systemd-udevd is GPL-2.0-or-later
     "LGPL-2.1-or-later",
@@ -31,8 +31,8 @@ class Systemd < Formula
   head "https://github.com/systemd/systemd.git", branch: "main"
 
   bottle do
-    sha256 arm64_linux:  "2d19968531f892b75098fdbd3180c5464ff717c35f97fe12d1fd4d090503057d"
-    sha256 x86_64_linux: "0b69145eb07e6cea8ba539dc479952e193eb2debe281ad920adac59ae762d04c"
+    sha256 arm64_linux:  "643e4e10ae816664b625f69d85706721b8a72cd326cd34354cc9108a11c8418e"
+    sha256 x86_64_linux: "4671122c97f9e9f207876b1eefc8c569d25a3dd3d0eb8676affca716c6bc5957"
   end
 
   keg_only "it will shadow system systemd if linked"
@@ -67,8 +67,8 @@ class Systemd < Formula
   end
 
   resource "lxml" do
-    url "https://files.pythonhosted.org/packages/05/3b/aab6728cae887456f409b4d75e8a01856e4f04bd510de38052a47768b680/lxml-6.1.1.tar.gz"
-    sha256 "ba96ae44888e0185281e937633a743ea90d5a196c6000f82565ebb0580012d40"
+    url "https://files.pythonhosted.org/packages/23/ad/28ecd7cb894d172f3c9c80a075eeeb2017ac62e3632cee05a5f9493547eb/lxml-6.1.3.tar.gz"
+    sha256 "45222d94ddd511536f3b2f7d9deae3b2339b4ce0f075f1ca25703b07cad9dd21"
   end
 
   resource "markupsafe" do

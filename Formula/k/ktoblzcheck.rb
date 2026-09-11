@@ -12,12 +12,13 @@ class Ktoblzcheck < Formula
 
   bottle do
     rebuild 1
-    sha256 arm64_tahoe:   "fd3b80a2358a2209b506a196e10769ebeed04e5c1f209cd3477ab441e8df9a81"
-    sha256 arm64_sequoia: "043fa8fbe400df633dd3beacdf4ed6337ac85827283046f7bd53da22ba1295a7"
-    sha256 arm64_sonoma:  "2d85d263b39c318a8d57c14387b548e94b23d98a65632bf3f325f53bcb55e20d"
-    sha256 sonoma:        "0b845c7b179e99f6f35fc241922c77a4aefd4adeee544f429ce78c7d79704b48"
-    sha256 arm64_linux:   "0ba4ead313ea8f1e5c8d56782ab6a359147328c46ac46ce2f41ae9ccd3f07cd0"
-    sha256 x86_64_linux:  "5b7681ef9f5b3de8ccb35f9215651650adfe73ba07b69eac0642ad6ba29aa876"
+    sha256 arm64_golden_gate: "2285cea948ac4e8b7cec009363fe5fb021ba297437d79d2bd4234dd47764280e"
+    sha256 arm64_tahoe:       "fd3b80a2358a2209b506a196e10769ebeed04e5c1f209cd3477ab441e8df9a81"
+    sha256 arm64_sequoia:     "043fa8fbe400df633dd3beacdf4ed6337ac85827283046f7bd53da22ba1295a7"
+    sha256 arm64_sonoma:      "2d85d263b39c318a8d57c14387b548e94b23d98a65632bf3f325f53bcb55e20d"
+    sha256 sonoma:            "0b845c7b179e99f6f35fc241922c77a4aefd4adeee544f429ce78c7d79704b48"
+    sha256 arm64_linux:       "0ba4ead313ea8f1e5c8d56782ab6a359147328c46ac46ce2f41ae9ccd3f07cd0"
+    sha256 x86_64_linux:      "5b7681ef9f5b3de8ccb35f9215651650adfe73ba07b69eac0642ad6ba29aa876"
   end
 
   depends_on "cmake" => :build

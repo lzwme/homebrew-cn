@@ -15,12 +15,13 @@ class Libcerf < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "9a900691ec484b5b208be703da7a5f9035c89c7a075b3a4bad56fbe5ab4e96f1"
-    sha256 cellar: :any, arm64_sequoia: "b7ff62cbac27ee100bb1fc7f0eaac9d4c3d0f9ec42b61db74e6ac365888b6539"
-    sha256 cellar: :any, arm64_sonoma:  "fa67893d311bf0ab0bb33b6c9e9db123665469451745e94a7b2ac8528c30b23f"
-    sha256 cellar: :any, sonoma:        "a7f380e212f00145f031f37500d46679bd5d153d39b6d09c50a11db8af1c47dd"
-    sha256 cellar: :any, arm64_linux:   "3ac71eb77e20d7bc5884e93179ef635e9391775fcef01cf80264850c6b4338db"
-    sha256 cellar: :any, x86_64_linux:  "9456b1c6425be1138bc4546603cd569415bb4d2b09d02467920e0a4deb1646c6"
+    sha256 cellar: :any, arm64_golden_gate: "966acc4d4f8163ba8d184f29250a35d56536fb91a0b66594ad2b1139bb946b1f"
+    sha256 cellar: :any, arm64_tahoe:       "9a900691ec484b5b208be703da7a5f9035c89c7a075b3a4bad56fbe5ab4e96f1"
+    sha256 cellar: :any, arm64_sequoia:     "b7ff62cbac27ee100bb1fc7f0eaac9d4c3d0f9ec42b61db74e6ac365888b6539"
+    sha256 cellar: :any, arm64_sonoma:      "fa67893d311bf0ab0bb33b6c9e9db123665469451745e94a7b2ac8528c30b23f"
+    sha256 cellar: :any, sonoma:            "a7f380e212f00145f031f37500d46679bd5d153d39b6d09c50a11db8af1c47dd"
+    sha256 cellar: :any, arm64_linux:       "3ac71eb77e20d7bc5884e93179ef635e9391775fcef01cf80264850c6b4338db"
+    sha256 cellar: :any, x86_64_linux:      "9456b1c6425be1138bc4546603cd569415bb4d2b09d02467920e0a4deb1646c6"
   end
 
   depends_on "cmake" => :build

@@ -8,12 +8,13 @@ class Libmicrohttpd < Formula
   compatibility_version 1
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "4092f5f284ac8a4dfa7c39997599a51b69a195ad54f778dad979f21cd3ac8564"
-    sha256 cellar: :any, arm64_sequoia: "6a0394a2fc518aeb47f03be4db534c0413958334cc2602358e67d14266a2ea5f"
-    sha256 cellar: :any, arm64_sonoma:  "0786434799f38b2bf7464adc50a53841f988feefbbe7858dfea52acacc5d2aa2"
-    sha256 cellar: :any, sonoma:        "cc9f4f8b05f6988ac8e4579ca49ce166be06ac745be24ba96bceb69855f62451"
-    sha256 cellar: :any, arm64_linux:   "ac1381dd54534827a3aebeafebbab0c956a73ada7c63c8f289aa96835951a874"
-    sha256 cellar: :any, x86_64_linux:  "bf92971a8cb2ed708df379f5c35d7c4ea5fb8fd137cbcdf24c475ca816bd2db2"
+    sha256 cellar: :any, arm64_golden_gate: "91e48d30a09ac72d813afaa816379b75779078bd14d2086e8d06117eeaa2ce62"
+    sha256 cellar: :any, arm64_tahoe:       "4092f5f284ac8a4dfa7c39997599a51b69a195ad54f778dad979f21cd3ac8564"
+    sha256 cellar: :any, arm64_sequoia:     "6a0394a2fc518aeb47f03be4db534c0413958334cc2602358e67d14266a2ea5f"
+    sha256 cellar: :any, arm64_sonoma:      "0786434799f38b2bf7464adc50a53841f988feefbbe7858dfea52acacc5d2aa2"
+    sha256 cellar: :any, sonoma:            "cc9f4f8b05f6988ac8e4579ca49ce166be06ac745be24ba96bceb69855f62451"
+    sha256 cellar: :any, arm64_linux:       "ac1381dd54534827a3aebeafebbab0c956a73ada7c63c8f289aa96835951a874"
+    sha256 cellar: :any, x86_64_linux:      "bf92971a8cb2ed708df379f5c35d7c4ea5fb8fd137cbcdf24c475ca816bd2db2"
   end
 
   depends_on "pkgconf" => :build

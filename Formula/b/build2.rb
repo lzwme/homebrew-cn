@@ -12,12 +12,13 @@ class Build2 < Formula
 
   bottle do
     rebuild 2
-    sha256 arm64_tahoe:   "5285330bcb3d10f853f55dd47d0c37cc7aa13ccf118cdab916c558d7cdb757f7"
-    sha256 arm64_sequoia: "16688040662f95704dae80d2242f0fcbc9f9ce2fa8723f01afeb71e13c7f4368"
-    sha256 arm64_sonoma:  "481e0ea6a362b715cd43f21465940b295a343a094160f861abec2843aac31c47"
-    sha256 sonoma:        "890a45940a76257dff905329017e4b40649bb462208196bf3e815ea21fd59c80"
-    sha256 arm64_linux:   "c2a9bdf5aadeabcd3f52bfc1ca86d3ae84db50753c2f75b4808ed60eb5746b52"
-    sha256 x86_64_linux:  "2e3575fab6e893e8558be4890a85b2fad46ff1ffa9a26e967bf2f2553e4d24c4"
+    sha256 arm64_golden_gate: "450780f27354cd64b8337c66f8d6e04a415d5b210bc7cc5825eda8fd120d5684"
+    sha256 arm64_tahoe:       "5285330bcb3d10f853f55dd47d0c37cc7aa13ccf118cdab916c558d7cdb757f7"
+    sha256 arm64_sequoia:     "16688040662f95704dae80d2242f0fcbc9f9ce2fa8723f01afeb71e13c7f4368"
+    sha256 arm64_sonoma:      "481e0ea6a362b715cd43f21465940b295a343a094160f861abec2843aac31c47"
+    sha256 sonoma:            "890a45940a76257dff905329017e4b40649bb462208196bf3e815ea21fd59c80"
+    sha256 arm64_linux:       "c2a9bdf5aadeabcd3f52bfc1ca86d3ae84db50753c2f75b4808ed60eb5746b52"
+    sha256 x86_64_linux:      "2e3575fab6e893e8558be4890a85b2fad46ff1ffa9a26e967bf2f2553e4d24c4"
   end
 
   uses_from_macos "curl"

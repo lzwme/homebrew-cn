@@ -13,12 +13,13 @@ class OpenalSoft < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "f880824c9b92cf6e9e9d75cc0119d4a3aa2a7db0da9bae18a0a20e87cb00dd30"
-    sha256 cellar: :any,                 arm64_sequoia: "adb88d850324769a3251f90bac3429dbdaa9269bbb0841f6ac7b218a1ffdcf4d"
-    sha256 cellar: :any,                 arm64_sonoma:  "e3d8931b07469fda75b098324da091b92235ea8120a3f2d107487e6db42af113"
-    sha256 cellar: :any,                 sonoma:        "56c3ef78464993c58c095113234b398b7f9cc42a87debf09eaf53ec992cdde36"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a155e053524da0522d71df4896eb2d83594d16ae2a28e68e7240bbf41a0b0eb4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3f81edc9489d8457835d457054ae5e89ac20e33cc49d309106fae701a4609112"
+    sha256 cellar: :any,                 arm64_golden_gate: "d1383cd851b1619739063c907720b0a234aaf6963129a748fee34a12b3e217ac"
+    sha256 cellar: :any,                 arm64_tahoe:       "f880824c9b92cf6e9e9d75cc0119d4a3aa2a7db0da9bae18a0a20e87cb00dd30"
+    sha256 cellar: :any,                 arm64_sequoia:     "adb88d850324769a3251f90bac3429dbdaa9269bbb0841f6ac7b218a1ffdcf4d"
+    sha256 cellar: :any,                 arm64_sonoma:      "e3d8931b07469fda75b098324da091b92235ea8120a3f2d107487e6db42af113"
+    sha256 cellar: :any,                 sonoma:            "56c3ef78464993c58c095113234b398b7f9cc42a87debf09eaf53ec992cdde36"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "a155e053524da0522d71df4896eb2d83594d16ae2a28e68e7240bbf41a0b0eb4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "3f81edc9489d8457835d457054ae5e89ac20e33cc49d309106fae701a4609112"
   end
 
   keg_only :shadowed_by_macos, "macOS provides OpenAL.framework"

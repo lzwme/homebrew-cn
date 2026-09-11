@@ -14,12 +14,13 @@ class Squashfs < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "4457ab0b11eff5278270c2bcf8de450879d4e8d9d3b6b3c2aac3d3aef822e5db"
-    sha256 cellar: :any,                 arm64_sequoia: "279c65c00b406c9bff6a6db0ea2d2912502cabae119acb12f1ca1d0702645e28"
-    sha256 cellar: :any,                 arm64_sonoma:  "67388efdf366eb667070a2a3c89259f0bd94ddc358b89fa3da9db3b54d5acbe3"
-    sha256 cellar: :any,                 sonoma:        "d0946ffe57592ee0837e4f9930c6af5fa5944054e1cc7ad19b4375c03a7537f1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "72d51e9a40472471e870fbf47e31f77bdb2dcd58848a0575c6f46e4824045226"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "931a2bcc184485cc0b1d449de2a3e8bfbb128c655194648915d9638469f1f16c"
+    sha256 cellar: :any,                 arm64_golden_gate: "3f4e02c404ea30a85146fbbbd378c6188a8a66ae9a24938a8ab143373f1b460b"
+    sha256 cellar: :any,                 arm64_tahoe:       "4457ab0b11eff5278270c2bcf8de450879d4e8d9d3b6b3c2aac3d3aef822e5db"
+    sha256 cellar: :any,                 arm64_sequoia:     "279c65c00b406c9bff6a6db0ea2d2912502cabae119acb12f1ca1d0702645e28"
+    sha256 cellar: :any,                 arm64_sonoma:      "67388efdf366eb667070a2a3c89259f0bd94ddc358b89fa3da9db3b54d5acbe3"
+    sha256 cellar: :any,                 sonoma:            "d0946ffe57592ee0837e4f9930c6af5fa5944054e1cc7ad19b4375c03a7537f1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "72d51e9a40472471e870fbf47e31f77bdb2dcd58848a0575c6f46e4824045226"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "931a2bcc184485cc0b1d449de2a3e8bfbb128c655194648915d9638469f1f16c"
   end
 
   depends_on "gnu-sed" => :build

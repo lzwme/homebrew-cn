@@ -16,11 +16,12 @@ class Expat < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "427ed7e45ea4c3cb1bad9599b10a771bbe27f38e877cce8088283be861e01c2c"
-    sha256 cellar: :any, arm64_sequoia: "28c818bc057acef8f15389fd89a34cb8789be568a3c505e85b2fb07c206df3c4"
-    sha256 cellar: :any, arm64_sonoma:  "fff75895441597ef6fe383c581ef3cde3150646e4351a3d4e19b255f20532d37"
-    sha256 cellar: :any, arm64_linux:   "d48ea879a36ca8f7a26c0004e4d2ea1309483b206aebeb0fd606fd80fc8e046a"
-    sha256 cellar: :any, x86_64_linux:  "9874d65597cbca2af8c9ddbf3e9a3c2577ee20ad447d6b67ff2cdf05f855b58e"
+    sha256 cellar: :any, arm64_golden_gate: "a051def5acc14c729908a1f39a75a412573a68e3e7725361ba53ac4fa1704194"
+    sha256 cellar: :any, arm64_tahoe:       "427ed7e45ea4c3cb1bad9599b10a771bbe27f38e877cce8088283be861e01c2c"
+    sha256 cellar: :any, arm64_sequoia:     "28c818bc057acef8f15389fd89a34cb8789be568a3c505e85b2fb07c206df3c4"
+    sha256 cellar: :any, arm64_sonoma:      "fff75895441597ef6fe383c581ef3cde3150646e4351a3d4e19b255f20532d37"
+    sha256 cellar: :any, arm64_linux:       "d48ea879a36ca8f7a26c0004e4d2ea1309483b206aebeb0fd606fd80fc8e046a"
+    sha256 cellar: :any, x86_64_linux:      "9874d65597cbca2af8c9ddbf3e9a3c2577ee20ad447d6b67ff2cdf05f855b58e"
   end
 
   head do

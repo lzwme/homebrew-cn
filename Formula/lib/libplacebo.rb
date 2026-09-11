@@ -10,12 +10,13 @@ class Libplacebo < Formula
   head "https://code.videolan.org/videolan/libplacebo.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "6575f7e22f75c946f5c831d2ff130b89aa275a2cdd4dbe7a0204590513b87b25"
-    sha256 cellar: :any, arm64_sequoia: "1fd6531a9de50d0121d1ff4ec67163dfb1dcb8c682d96c6587b960f04be0fe34"
-    sha256 cellar: :any, arm64_sonoma:  "8b89e9ee2c276bded52d69bbfc3b645625c975e9edc3ba93873c18d661ef241c"
-    sha256 cellar: :any, sonoma:        "a6a5f1fefe34a81d3fde35cdab8481899afc47b90efff12b912b0b1675f90861"
-    sha256               arm64_linux:   "b87acf6094dc3a89d9a942259ae453fec22a770aa3fab05dba2e3c2c71702558"
-    sha256               x86_64_linux:  "145b3ac56e39a1a925671872f5ec1176c568d518c643cf689ae66f33494d43b7"
+    sha256 cellar: :any, arm64_golden_gate: "7762d0013a485ae66471ff299ec6c3d6d8413f7f42f68be40e133cf2374782a3"
+    sha256 cellar: :any, arm64_tahoe:       "6575f7e22f75c946f5c831d2ff130b89aa275a2cdd4dbe7a0204590513b87b25"
+    sha256 cellar: :any, arm64_sequoia:     "1fd6531a9de50d0121d1ff4ec67163dfb1dcb8c682d96c6587b960f04be0fe34"
+    sha256 cellar: :any, arm64_sonoma:      "8b89e9ee2c276bded52d69bbfc3b645625c975e9edc3ba93873c18d661ef241c"
+    sha256 cellar: :any, sonoma:            "a6a5f1fefe34a81d3fde35cdab8481899afc47b90efff12b912b0b1675f90861"
+    sha256               arm64_linux:       "b87acf6094dc3a89d9a942259ae453fec22a770aa3fab05dba2e3c2c71702558"
+    sha256               x86_64_linux:      "145b3ac56e39a1a925671872f5ec1176c568d518c643cf689ae66f33494d43b7"
   end
 
   depends_on "fast_float" => :build

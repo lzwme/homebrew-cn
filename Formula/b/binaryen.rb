@@ -12,12 +12,13 @@ class Binaryen < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "8fa307a56219d5020e0121442027d4d1830a140fa5b3df01871f19522bea5c61"
-    sha256 cellar: :any, arm64_sequoia: "5396f0b840a9a596a83ddfee9fe292dd8e4462f75139759b9334c6df5a55fe15"
-    sha256 cellar: :any, arm64_sonoma:  "b615593153dc386584f60cddb59f57bff8b2afd9bc50ea5dba7a9a40541d4178"
-    sha256 cellar: :any, sonoma:        "6a235ff87bd895ef5d39b82b63c84879d3a98e640f2d29e6281e6a97dfd8311e"
-    sha256 cellar: :any, arm64_linux:   "8d201c5cc262c946c237c5e326d2c3ea334c8d590ad4e4e7816524d437df7ce4"
-    sha256 cellar: :any, x86_64_linux:  "a38a54e6d7321a7af8fa4109ff59874add0efc9e0d0fcc9124eefb2f828299c2"
+    sha256 cellar: :any, arm64_golden_gate: "4aa27b7eeae9363f339593897bb1dc1ea3c36d87d83022da943c240c3de27e7e"
+    sha256 cellar: :any, arm64_tahoe:       "8fa307a56219d5020e0121442027d4d1830a140fa5b3df01871f19522bea5c61"
+    sha256 cellar: :any, arm64_sequoia:     "5396f0b840a9a596a83ddfee9fe292dd8e4462f75139759b9334c6df5a55fe15"
+    sha256 cellar: :any, arm64_sonoma:      "b615593153dc386584f60cddb59f57bff8b2afd9bc50ea5dba7a9a40541d4178"
+    sha256 cellar: :any, sonoma:            "6a235ff87bd895ef5d39b82b63c84879d3a98e640f2d29e6281e6a97dfd8311e"
+    sha256 cellar: :any, arm64_linux:       "8d201c5cc262c946c237c5e326d2c3ea334c8d590ad4e4e7816524d437df7ce4"
+    sha256 cellar: :any, x86_64_linux:      "a38a54e6d7321a7af8fa4109ff59874add0efc9e0d0fcc9124eefb2f828299c2"
   end
 
   depends_on "cmake" => :build

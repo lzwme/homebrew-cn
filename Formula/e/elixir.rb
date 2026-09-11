@@ -13,11 +13,12 @@ class Elixir < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2db0649adb38e6bcbdb1198d43851886fb1dda4585a643df3752b9ae2c6d9206"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "66789763645f9ab609a834e12bf3152cfcde2b09cdec97b5de46dbebf67798a3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3a4a493efb376e6929fc0a22f3ddb2680305f6abd0c408009d639da5fa4fe951"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c960d2ed069fc1f92c64f72b751df69c5d2fdc45f29f007e58934f969c112bef"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9ac2b69aea3ec5889429cdc0223ef2d1883c9d6621e875ce9b07bb81d261dbe2"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "4c56732b58177de6ef0b6790f8c0fcb6673adbd6b2626673be10b091b0bb1368"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "2db0649adb38e6bcbdb1198d43851886fb1dda4585a643df3752b9ae2c6d9206"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "66789763645f9ab609a834e12bf3152cfcde2b09cdec97b5de46dbebf67798a3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "3a4a493efb376e6929fc0a22f3ddb2680305f6abd0c408009d639da5fa4fe951"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "c960d2ed069fc1f92c64f72b751df69c5d2fdc45f29f007e58934f969c112bef"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "9ac2b69aea3ec5889429cdc0223ef2d1883c9d6621e875ce9b07bb81d261dbe2"
   end
 
   depends_on "erlang"

@@ -13,12 +13,13 @@ class Srtp < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "57991308e7a77e9101f56b5746b72dc84d7ec71cccb0952255e150bb61fa8b31"
-    sha256 cellar: :any,                 arm64_sequoia: "456aa17cfcc530e2e116ea4dc8dc8bac7d1f57e82e9354da9c5afdf73efb719a"
-    sha256 cellar: :any,                 arm64_sonoma:  "fe511a421b2601d56208bca5b723dcf0cedabac7820b6dbc29b2e9a9975027be"
-    sha256 cellar: :any,                 sonoma:        "1f4d6d9dd142b054f6ce5951553620d5638bcdad5b476049a8d8aef66699f3e0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d8a50543ee3639a000b4e79006e72d66b7023905bb96a7b2699fc839cf16fd0a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5efdbe2656736401da2b1b83008f1b61be3831f33c675d77f1b3446888a01813"
+    sha256 cellar: :any,                 arm64_golden_gate: "9110c79ed8d27f6f9cc1cedc48c7266903a98a71eb9ce3df358ba95a2ffd685b"
+    sha256 cellar: :any,                 arm64_tahoe:       "57991308e7a77e9101f56b5746b72dc84d7ec71cccb0952255e150bb61fa8b31"
+    sha256 cellar: :any,                 arm64_sequoia:     "456aa17cfcc530e2e116ea4dc8dc8bac7d1f57e82e9354da9c5afdf73efb719a"
+    sha256 cellar: :any,                 arm64_sonoma:      "fe511a421b2601d56208bca5b723dcf0cedabac7820b6dbc29b2e9a9975027be"
+    sha256 cellar: :any,                 sonoma:            "1f4d6d9dd142b054f6ce5951553620d5638bcdad5b476049a8d8aef66699f3e0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "d8a50543ee3639a000b4e79006e72d66b7023905bb96a7b2699fc839cf16fd0a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "5efdbe2656736401da2b1b83008f1b61be3831f33c675d77f1b3446888a01813"
   end
 
   depends_on "pkgconf" => :build

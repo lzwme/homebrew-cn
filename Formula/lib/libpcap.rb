@@ -13,11 +13,12 @@ class Libpcap < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "fd3f8727be7b45984842238e001afaaee450d2de82bfacc6d951080004d0cd5b"
-    sha256 cellar: :any, arm64_sequoia: "05e57c37d24e3cee254ae605df54a6c9d5b84a3a6174e8323134fb0fcfe6a73b"
-    sha256 cellar: :any, arm64_sonoma:  "b4054a068360b8e7bc0508ef39808aa7af9e5befd00ed160852b33c69017a3b3"
-    sha256 cellar: :any, arm64_linux:   "84b15f243f3d95766d793e7ee2e99aa6cebf4ca4a2cfe8e05593e5edd00df01c"
-    sha256 cellar: :any, x86_64_linux:  "2468a6570ba38b8ae345b3cbfa1f2f5538f4c97ef9c0413760bee6d89115c7e1"
+    sha256 cellar: :any, arm64_golden_gate: "a271451a83636e2d333bd1c33a13a227caffae2f8fd2b9e019f532a458da8d48"
+    sha256 cellar: :any, arm64_tahoe:       "fd3f8727be7b45984842238e001afaaee450d2de82bfacc6d951080004d0cd5b"
+    sha256 cellar: :any, arm64_sequoia:     "05e57c37d24e3cee254ae605df54a6c9d5b84a3a6174e8323134fb0fcfe6a73b"
+    sha256 cellar: :any, arm64_sonoma:      "b4054a068360b8e7bc0508ef39808aa7af9e5befd00ed160852b33c69017a3b3"
+    sha256 cellar: :any, arm64_linux:       "84b15f243f3d95766d793e7ee2e99aa6cebf4ca4a2cfe8e05593e5edd00df01c"
+    sha256 cellar: :any, x86_64_linux:      "2468a6570ba38b8ae345b3cbfa1f2f5538f4c97ef9c0413760bee6d89115c7e1"
   end
 
   keg_only :provided_by_macos

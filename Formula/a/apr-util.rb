@@ -7,12 +7,13 @@ class AprUtil < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 arm64_tahoe:   "2bc24b7b834b7f9e8f0ac799189687123835a389b3ce68584d94e8b02b38b178"
-    sha256 arm64_sequoia: "a5a55680dccde97bb0d565744c106f44fac7c8a1bbd25e556ed9e950ca368f9f"
-    sha256 arm64_sonoma:  "4a09d5ce3a12a19287c15427ad1bbb1d02fc9aa8e6080028bbabaf2858a65af7"
-    sha256 sonoma:        "b3c6f79539d6df8bd066f167d383b32ef82bed80ce1dc0f166d033b978ce368a"
-    sha256 arm64_linux:   "dfb776cd6ca7cad412673b96b86d0011359374f629e50388bcce1fce63f3a3bb"
-    sha256 x86_64_linux:  "2b544e6c6da545dc8e822283ae291abe55561b0e3f2ab0355cd929612fd3071a"
+    sha256 arm64_golden_gate: "1ec1aa561bc4597aa5771a7706e78de577da06a5d27e1db67075499941b127c8"
+    sha256 arm64_tahoe:       "2bc24b7b834b7f9e8f0ac799189687123835a389b3ce68584d94e8b02b38b178"
+    sha256 arm64_sequoia:     "a5a55680dccde97bb0d565744c106f44fac7c8a1bbd25e556ed9e950ca368f9f"
+    sha256 arm64_sonoma:      "4a09d5ce3a12a19287c15427ad1bbb1d02fc9aa8e6080028bbabaf2858a65af7"
+    sha256 sonoma:            "b3c6f79539d6df8bd066f167d383b32ef82bed80ce1dc0f166d033b978ce368a"
+    sha256 arm64_linux:       "dfb776cd6ca7cad412673b96b86d0011359374f629e50388bcce1fce63f3a3bb"
+    sha256 x86_64_linux:      "2b544e6c6da545dc8e822283ae291abe55561b0e3f2ab0355cd929612fd3071a"
   end
 
   keg_only :shadowed_by_macos, "Apple's CLT provides apr (but not apr-util)"

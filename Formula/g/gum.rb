@@ -8,12 +8,13 @@ class Gum < Formula
   head "https://github.com/charmbracelet/gum.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "62f953e983eeeaa57e1b7cc564064a77e1db2daa592312e953b35910c1c2086b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "62f953e983eeeaa57e1b7cc564064a77e1db2daa592312e953b35910c1c2086b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "62f953e983eeeaa57e1b7cc564064a77e1db2daa592312e953b35910c1c2086b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e4fba4ac72c88f97e16ea1791edfdd75edf7fc71128df6d1ce12c3c052e56705"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3516c6d5516bc7107b1c1c758ac0a63181362a3cda31f07f4b5dc4707e42405a"
-    sha256 cellar: :any,                 x86_64_linux:  "ef27dde74918165706959ed46799fb50fa3a03c88e02582ba584835b8a8c007a"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "7d3c0347bb14877e84a575c2c955b77bb45efbad7dd7d2bf454069040f6b38df"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "62f953e983eeeaa57e1b7cc564064a77e1db2daa592312e953b35910c1c2086b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "62f953e983eeeaa57e1b7cc564064a77e1db2daa592312e953b35910c1c2086b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "62f953e983eeeaa57e1b7cc564064a77e1db2daa592312e953b35910c1c2086b"
+    sha256 cellar: :any_skip_relocation, sonoma:            "e4fba4ac72c88f97e16ea1791edfdd75edf7fc71128df6d1ce12c3c052e56705"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "3516c6d5516bc7107b1c1c758ac0a63181362a3cda31f07f4b5dc4707e42405a"
+    sha256 cellar: :any,                 x86_64_linux:      "ef27dde74918165706959ed46799fb50fa3a03c88e02582ba584835b8a8c007a"
   end
 
   depends_on "go" => :build

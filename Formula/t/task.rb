@@ -13,12 +13,13 @@ class Task < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "9d0de9d2e6ecb3f7ecfbceb621054965298cdda682c0d5e85b4ba9a51c858a18"
-    sha256 arm64_sequoia: "ba9a2cf5c79e8f2828bccaee6eab9242418aee107c67b8e45133f1353cd902ed"
-    sha256 arm64_sonoma:  "b2e6749d6b62ce6d43d7e4dc1a6301fc44ccfc7eda19e0a096cce4f1ac829f3a"
-    sha256 sonoma:        "398a39a02ddf29d9aed6761867e62dd5d6c4b05ce5d81c4479b4850dd85dc846"
-    sha256 arm64_linux:   "aa013a48142f78958970b41aa6ceeaa6583dbf34295deef22eda7f38d388dc9b"
-    sha256 x86_64_linux:  "1a51f6c343c8cbe300b168c2748e1adf18f6705d423f73040abbfc2de5308e71"
+    sha256 arm64_golden_gate: "3edd99c11ebb6012d43a949dc983e67bc7b9d99f8e3be14b00dbab8304b63bc1"
+    sha256 arm64_tahoe:       "9d0de9d2e6ecb3f7ecfbceb621054965298cdda682c0d5e85b4ba9a51c858a18"
+    sha256 arm64_sequoia:     "ba9a2cf5c79e8f2828bccaee6eab9242418aee107c67b8e45133f1353cd902ed"
+    sha256 arm64_sonoma:      "b2e6749d6b62ce6d43d7e4dc1a6301fc44ccfc7eda19e0a096cce4f1ac829f3a"
+    sha256 sonoma:            "398a39a02ddf29d9aed6761867e62dd5d6c4b05ce5d81c4479b4850dd85dc846"
+    sha256 arm64_linux:       "aa013a48142f78958970b41aa6ceeaa6583dbf34295deef22eda7f38d388dc9b"
+    sha256 x86_64_linux:      "1a51f6c343c8cbe300b168c2748e1adf18f6705d423f73040abbfc2de5308e71"
   end
 
   depends_on "cmake" => :build

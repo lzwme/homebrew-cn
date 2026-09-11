@@ -12,12 +12,13 @@ class Freexl < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "a3eeadb863696639ca30ce87c4f27b4afda4389b705423244abfd83f3479a5e0"
-    sha256 cellar: :any, arm64_sequoia: "9fdcbb2c4a1ea545ed78a6587928e08f4805046aa01ffe56101c6efe2957be9f"
-    sha256 cellar: :any, arm64_sonoma:  "aed9e170181526ad9b827249bbcc5a862faa81d8851dcd680127e5734b27390b"
-    sha256 cellar: :any, sonoma:        "626d351bf6af78205d0dff5219d9c5f1a7c26e75b35a7f1065c348ab21478f1d"
-    sha256 cellar: :any, arm64_linux:   "5e09ca900e02e38d7402c3575de5dc70efaf841e6bee050ff1f4050301a2a971"
-    sha256 cellar: :any, x86_64_linux:  "1d0329fc0248619e9702b70d4d64ea78597aa90b471da082388560447a957778"
+    sha256 cellar: :any, arm64_golden_gate: "1a5cd8e6505e6c5f99116b3de3319a94ec1f8372b29bdc5fc7bf3d403966f1ea"
+    sha256 cellar: :any, arm64_tahoe:       "a3eeadb863696639ca30ce87c4f27b4afda4389b705423244abfd83f3479a5e0"
+    sha256 cellar: :any, arm64_sequoia:     "9fdcbb2c4a1ea545ed78a6587928e08f4805046aa01ffe56101c6efe2957be9f"
+    sha256 cellar: :any, arm64_sonoma:      "aed9e170181526ad9b827249bbcc5a862faa81d8851dcd680127e5734b27390b"
+    sha256 cellar: :any, sonoma:            "626d351bf6af78205d0dff5219d9c5f1a7c26e75b35a7f1065c348ab21478f1d"
+    sha256 cellar: :any, arm64_linux:       "5e09ca900e02e38d7402c3575de5dc70efaf841e6bee050ff1f4050301a2a971"
+    sha256 cellar: :any, x86_64_linux:      "1d0329fc0248619e9702b70d4d64ea78597aa90b471da082388560447a957778"
   end
 
   depends_on "minizip"

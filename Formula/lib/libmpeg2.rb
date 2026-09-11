@@ -14,12 +14,13 @@ class Libmpeg2 < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "d62eb9cd43b94dcf7a1d4541a2be2e97648406beb993217d36ce32e4c7982e39"
-    sha256 cellar: :any, arm64_sequoia: "c97f23520800dc78b5e7cce85248756223f4710db7668405562b6ef0b4a38cbf"
-    sha256 cellar: :any, arm64_sonoma:  "cb8c3561c4a446fe308cd04b95270872cf3068c119d1dfa6874b8b386d0385f3"
-    sha256 cellar: :any, sonoma:        "21e8bc63e7b98bbdd12231e6544560c0b5067d40f9610a635ea000dc23e2f7f8"
-    sha256 cellar: :any, arm64_linux:   "0c75d7a0837586a34d08a42d6802ab58ca456b47d0cfce47bbc33d0ac1a18b5e"
-    sha256 cellar: :any, x86_64_linux:  "91162a4ef667f5b1d34cfa72aeeedd4f14d1035117d3f0faf9cf79e753046c30"
+    sha256 cellar: :any, arm64_golden_gate: "2b24713ef6f9cb9dc903a2a5cf2cc1a6f148a91e253e71d9dabe17ef2b67e7e8"
+    sha256 cellar: :any, arm64_tahoe:       "d62eb9cd43b94dcf7a1d4541a2be2e97648406beb993217d36ce32e4c7982e39"
+    sha256 cellar: :any, arm64_sequoia:     "c97f23520800dc78b5e7cce85248756223f4710db7668405562b6ef0b4a38cbf"
+    sha256 cellar: :any, arm64_sonoma:      "cb8c3561c4a446fe308cd04b95270872cf3068c119d1dfa6874b8b386d0385f3"
+    sha256 cellar: :any, sonoma:            "21e8bc63e7b98bbdd12231e6544560c0b5067d40f9610a635ea000dc23e2f7f8"
+    sha256 cellar: :any, arm64_linux:       "0c75d7a0837586a34d08a42d6802ab58ca456b47d0cfce47bbc33d0ac1a18b5e"
+    sha256 cellar: :any, x86_64_linux:      "91162a4ef667f5b1d34cfa72aeeedd4f14d1035117d3f0faf9cf79e753046c30"
   end
 
   depends_on "autoconf" => :build

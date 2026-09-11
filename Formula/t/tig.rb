@@ -7,12 +7,13 @@ class Tig < Formula
   compatibility_version 1
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "a83c57684c8ea6b7f227bbcde3385a7fcc8187104b3ad8e21391e2dd9699f84a"
-    sha256 cellar: :any, arm64_sequoia: "0af8cce2768d41d225e143bc885894897a9976194c69c0246e89e99e5b972462"
-    sha256 cellar: :any, arm64_sonoma:  "bde1eea41c2bdbb2d40ad021c36c2ecf821206a7da64975cfa46a947e26c2b6a"
-    sha256 cellar: :any, sonoma:        "e01745b354d91ca068ac1cde11405337567381d10a7398b2e86fb1e742fc039c"
-    sha256 cellar: :any, arm64_linux:   "252d7ae196715d4cbe1e7f9f1a8089d253e4b3388f2bbfdfaec0c7cad62efbae"
-    sha256 cellar: :any, x86_64_linux:  "4c3c8760b5f00cac02fc809e82c7fcc99ade4b53c5ba7d3a3af465af7aa70e3b"
+    sha256 cellar: :any, arm64_golden_gate: "e9d6cfc916c4a230698fd99ec76bfda6b477af57cf115aa161596b87db79d46e"
+    sha256 cellar: :any, arm64_tahoe:       "a83c57684c8ea6b7f227bbcde3385a7fcc8187104b3ad8e21391e2dd9699f84a"
+    sha256 cellar: :any, arm64_sequoia:     "0af8cce2768d41d225e143bc885894897a9976194c69c0246e89e99e5b972462"
+    sha256 cellar: :any, arm64_sonoma:      "bde1eea41c2bdbb2d40ad021c36c2ecf821206a7da64975cfa46a947e26c2b6a"
+    sha256 cellar: :any, sonoma:            "e01745b354d91ca068ac1cde11405337567381d10a7398b2e86fb1e742fc039c"
+    sha256 cellar: :any, arm64_linux:       "252d7ae196715d4cbe1e7f9f1a8089d253e4b3388f2bbfdfaec0c7cad62efbae"
+    sha256 cellar: :any, x86_64_linux:      "4c3c8760b5f00cac02fc809e82c7fcc99ade4b53c5ba7d3a3af465af7aa70e3b"
   end
 
   head do

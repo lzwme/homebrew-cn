@@ -8,11 +8,12 @@ class Buildapp < Formula
   head "https://github.com/xach/buildapp.git", branch: "master"
 
   bottle do
-    sha256               arm64_tahoe:   "3d82cd94f66c4729c19620e8c226b13f575f9e9137fa54132fcc40c27f8398cb"
-    sha256               arm64_sequoia: "d56a8c04e6c3c2088fdf197400f642840815bbeace5c28ffe652d2a7ffa9ed56"
-    sha256               arm64_sonoma:  "a7fb1b444eae795648703680aa10512d68a9c64726ec2557639f8eea955847d5"
-    sha256 cellar: :any, arm64_linux:   "40293c0cbd6e99e1299a3fbdf7b70fe88f0ed9a44f019a6ee82f74e87660355e"
-    sha256 cellar: :any, x86_64_linux:  "7fd3555b69e16ff7b0d922debb3686e062dc6b50da384f384d9477ecdb72d486"
+    sha256               arm64_golden_gate: "d494dda9984b4ffa898a312898da4639e0844322ab8b716916dc556bc0711e4a"
+    sha256               arm64_tahoe:       "3d82cd94f66c4729c19620e8c226b13f575f9e9137fa54132fcc40c27f8398cb"
+    sha256               arm64_sequoia:     "d56a8c04e6c3c2088fdf197400f642840815bbeace5c28ffe652d2a7ffa9ed56"
+    sha256               arm64_sonoma:      "a7fb1b444eae795648703680aa10512d68a9c64726ec2557639f8eea955847d5"
+    sha256 cellar: :any, arm64_linux:       "40293c0cbd6e99e1299a3fbdf7b70fe88f0ed9a44f019a6ee82f74e87660355e"
+    sha256 cellar: :any, x86_64_linux:      "7fd3555b69e16ff7b0d922debb3686e062dc6b50da384f384d9477ecdb72d486"
   end
 
   depends_on "sbcl"

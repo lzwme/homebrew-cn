@@ -9,12 +9,13 @@ class Libunistring < Formula
   compatibility_version 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "bae6d6d8dffc573c039a850a96e36f1b7fd846abd9ccada8260b7e888b5a3646"
-    sha256 cellar: :any,                 arm64_sequoia: "463b68c92d30d845df10b1b137aa8e41a744f1ce2d2cab024dd26c766335b797"
-    sha256 cellar: :any,                 arm64_sonoma:  "dc4d4b4406a2c7032dd838ae362ecaeba114d8ac9d9daaa18f760d1d71ba3577"
-    sha256 cellar: :any,                 sonoma:        "fbb3a7908a19f306823dbd51b417705c73f710a9a1fb1e34ba7aa67a3c966094"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "362f8bd62dc8a3db8ca85938b2bfc7ebd09bd3d4f676ae1491183239d576b7ea"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2491acf49407cf75d5f95a6296f2a1c0294646834022fdcad7e22471c0c9a6d4"
+    sha256 cellar: :any,                 arm64_golden_gate: "d489b51a9ce0a76657f226159fdc39eab37798c86b0465c56ccfbde60c98d953"
+    sha256 cellar: :any,                 arm64_tahoe:       "bae6d6d8dffc573c039a850a96e36f1b7fd846abd9ccada8260b7e888b5a3646"
+    sha256 cellar: :any,                 arm64_sequoia:     "463b68c92d30d845df10b1b137aa8e41a744f1ce2d2cab024dd26c766335b797"
+    sha256 cellar: :any,                 arm64_sonoma:      "dc4d4b4406a2c7032dd838ae362ecaeba114d8ac9d9daaa18f760d1d71ba3577"
+    sha256 cellar: :any,                 sonoma:            "fbb3a7908a19f306823dbd51b417705c73f710a9a1fb1e34ba7aa67a3c966094"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "362f8bd62dc8a3db8ca85938b2bfc7ebd09bd3d4f676ae1491183239d576b7ea"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "2491acf49407cf75d5f95a6296f2a1c0294646834022fdcad7e22471c0c9a6d4"
   end
 
   def install

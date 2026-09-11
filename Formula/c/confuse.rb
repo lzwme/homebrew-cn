@@ -6,12 +6,13 @@ class Confuse < Formula
   license "ISC"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "9587a497f55f655fc94c7a357b9d8f6d407def51af0dbf35f18f2defe57941e9"
-    sha256 cellar: :any, arm64_sequoia: "324a29d5b8b347ba4d9fbbe1b6ef51eb73ed617ca4431f7a062f700f88844849"
-    sha256 cellar: :any, arm64_sonoma:  "16010e11c9d699f59e95ca4015d1b172ef73e2b3079b6ecf79c9906f3a518e7b"
-    sha256 cellar: :any, sonoma:        "a4c60fe46c2aaf8b9438c59d937e05b2556a192a6af8bae78837831517b86845"
-    sha256               arm64_linux:   "0711b0b1f3835647a373caecdc3fd8fd78f053762bbefe120f9c111f62eabb01"
-    sha256               x86_64_linux:  "4ab3a2a1553f0668be4ac29102476e58dcba2d1945c24bbcb1050f09bce1649e"
+    sha256 cellar: :any, arm64_golden_gate: "17c2bb81226f8236bc3000edcd76f48e430c7a44536b69badaf6f547b1ea0e47"
+    sha256 cellar: :any, arm64_tahoe:       "9587a497f55f655fc94c7a357b9d8f6d407def51af0dbf35f18f2defe57941e9"
+    sha256 cellar: :any, arm64_sequoia:     "324a29d5b8b347ba4d9fbbe1b6ef51eb73ed617ca4431f7a062f700f88844849"
+    sha256 cellar: :any, arm64_sonoma:      "16010e11c9d699f59e95ca4015d1b172ef73e2b3079b6ecf79c9906f3a518e7b"
+    sha256 cellar: :any, sonoma:            "a4c60fe46c2aaf8b9438c59d937e05b2556a192a6af8bae78837831517b86845"
+    sha256               arm64_linux:       "0711b0b1f3835647a373caecdc3fd8fd78f053762bbefe120f9c111f62eabb01"
+    sha256               x86_64_linux:      "4ab3a2a1553f0668be4ac29102476e58dcba2d1945c24bbcb1050f09bce1649e"
   end
 
   depends_on "pkgconf" => :build

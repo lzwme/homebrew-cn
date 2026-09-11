@@ -1,11 +1,10 @@
 class Onnxruntime < Formula
   desc "Cross-platform, high performance scoring engine for ML models"
   homepage "https://github.com/microsoft/onnxruntime"
-  url "https://ghfast.top/https://github.com/microsoft/onnxruntime/archive/refs/tags/v1.29.0.tar.gz"
-  sha256 "0f065cfd3816eaa4b709a057ea0e237ebc6463843af44a439e0d81af76d6620e"
+  url "https://ghfast.top/https://github.com/microsoft/onnxruntime/archive/refs/tags/v1.29.1.tar.gz"
+  sha256 "aba6ff915ffa3689af9bd6a84102a221ad35427e602f22bb18ae8323997d0f0d"
   license "MIT"
-  revision 3
-  compatibility_version 7
+  compatibility_version 8
 
   livecheck do
     url :stable
@@ -13,11 +12,12 @@ class Onnxruntime < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "9a6a961914a5835cb3bcb34f67e5679ab37190fff108b23fef369429ba4d83bd"
-    sha256 cellar: :any, arm64_sequoia: "7d58c8ed0cb9ecb316c7c963298e8a858afacba6f9f2c467f1f6377cf9358ab2"
-    sha256 cellar: :any, arm64_sonoma:  "2f8ebd4b30ca328ea95600797ba9556d7e5692192567700057534b20357f5ecc"
-    sha256 cellar: :any, arm64_linux:   "36ef25f3c4be80f5fa75ba274aa83c7dda103cf954b711a0c715192eac0a8798"
-    sha256 cellar: :any, x86_64_linux:  "bf471f4030548b891dc68db2a540b1db47897675a4306f0eeb2e2138b5f4bbc9"
+    sha256 cellar: :any, arm64_golden_gate: "1178e3a66bf7ecdbd2bb8eb83d3a0fc65145dd9298c46d4634119faa511ac02a"
+    sha256 cellar: :any, arm64_tahoe:       "94a24e406531779b65aa85a253e71531464c7ccdf588278d41df9f86828a2b77"
+    sha256 cellar: :any, arm64_sequoia:     "9f95d2f29d9441acdac63ee98c3d45275e1fd3c86f7b6fbca01a32aae0021dbf"
+    sha256 cellar: :any, arm64_sonoma:      "338350c2cd2a7a1e42a1149e42b0e317164a14ab0a2c6b22e2b3e6443e42be54"
+    sha256 cellar: :any, arm64_linux:       "c4cd2213ffbc3d50c184893524a908d3f909e26f0db5e748c1d2a04229b668c7"
+    sha256 cellar: :any, x86_64_linux:      "04d9cb7a5f6e48ef95eb72a4298f0282843f8ae84231795e9e80ea1578499a6a"
   end
 
   depends_on "boost" => :build

@@ -9,12 +9,13 @@ class Yamllint < Formula
   head "https://github.com/adrienverge/yamllint.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "da7c942af5a8d2dd8dacb439539a21251a2ee82aa965a7de7cb47713665471fa"
-    sha256 cellar: :any,                 arm64_sequoia: "8e1afec98302dd31a2e7fb3d68e9a707a39a397fe2115b2f0dd9bbbf3b14d648"
-    sha256 cellar: :any,                 arm64_sonoma:  "31fe178c470660060b420dc1f114067e4fdb763cda30d55650ab2e786fec7794"
-    sha256 cellar: :any,                 sonoma:        "aea22a0b41c5319cf84793594d92825a8d6649cc41e62c984666a1ba5de35fab"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "93fd00ec0b1ceab422f20817ddba3e50e50f8ca69e0a026750dd036ed012d767"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8775acbc37acdeafd89099399fd587cf0a73ef43cd8f552e265c10891586f3bc"
+    sha256 cellar: :any,                 arm64_golden_gate: "7942c508396449ad38f5df9edf839f00c1a94b1f977e0af7ffc330ee49e1118b"
+    sha256 cellar: :any,                 arm64_tahoe:       "da7c942af5a8d2dd8dacb439539a21251a2ee82aa965a7de7cb47713665471fa"
+    sha256 cellar: :any,                 arm64_sequoia:     "8e1afec98302dd31a2e7fb3d68e9a707a39a397fe2115b2f0dd9bbbf3b14d648"
+    sha256 cellar: :any,                 arm64_sonoma:      "31fe178c470660060b420dc1f114067e4fdb763cda30d55650ab2e786fec7794"
+    sha256 cellar: :any,                 sonoma:            "aea22a0b41c5319cf84793594d92825a8d6649cc41e62c984666a1ba5de35fab"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "93fd00ec0b1ceab422f20817ddba3e50e50f8ca69e0a026750dd036ed012d767"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "8775acbc37acdeafd89099399fd587cf0a73ef43cd8f552e265c10891586f3bc"
   end
 
   depends_on "libyaml"

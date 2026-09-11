@@ -12,12 +12,13 @@ class Dnsmasq < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "936e819cb25b03d11a4c25a62aba45a577eea309d86bde77c95a397de862d45f"
-    sha256 arm64_sequoia: "e64cf295c597ad396d43ad626758e842259df423ff4040e718a7ad2aede7f1f1"
-    sha256 arm64_sonoma:  "b122127a42f82171b2c8b6acfbcba3be39e30462a6cd26dc52d2960f4898c54f"
-    sha256 sonoma:        "44c9bc8d12db493851948ae9aa21d37d58d7c5df64515fd98f5e2ad6c4918e1e"
-    sha256 arm64_linux:   "ddc2afed0b5be200816bc2241af23d5d604ebe24731d6f5895a158a59363d582"
-    sha256 x86_64_linux:  "9531eadacd6f3e42d0c2c99a4d66e5669ec96f56d228b83d7072574daf394812"
+    sha256 arm64_golden_gate: "6c9695a4c0087c79ff03d18e7dac0f96faecf5917a5b23cb717b6257d5e0b941"
+    sha256 arm64_tahoe:       "936e819cb25b03d11a4c25a62aba45a577eea309d86bde77c95a397de862d45f"
+    sha256 arm64_sequoia:     "e64cf295c597ad396d43ad626758e842259df423ff4040e718a7ad2aede7f1f1"
+    sha256 arm64_sonoma:      "b122127a42f82171b2c8b6acfbcba3be39e30462a6cd26dc52d2960f4898c54f"
+    sha256 sonoma:            "44c9bc8d12db493851948ae9aa21d37d58d7c5df64515fd98f5e2ad6c4918e1e"
+    sha256 arm64_linux:       "ddc2afed0b5be200816bc2241af23d5d604ebe24731d6f5895a158a59363d582"
+    sha256 x86_64_linux:      "9531eadacd6f3e42d0c2c99a4d66e5669ec96f56d228b83d7072574daf394812"
   end
 
   depends_on "pkgconf" => :build

@@ -9,12 +9,13 @@ class Sleef < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "231f4874823402017c6c4d530da4880de1b75280be9efd3a3ed58f20f85355b4"
-    sha256 cellar: :any, arm64_sequoia: "43a0be3a50217071368ed54a8cf45a1c2ac07c4d512fb45a71e62a438666d077"
-    sha256 cellar: :any, arm64_sonoma:  "60a602bfb08d39afd06df530302aa477097aef6227f7b695bb929b482b36cf27"
-    sha256 cellar: :any, sonoma:        "4a7509699b9ca06f5ddcaa0590ee5676d994310485679d6f59537c1d0bf9df68"
-    sha256 cellar: :any, arm64_linux:   "55b6db57984f7952974af096e66d6ede6af5db879411e62b03d9899aa8ad6a58"
-    sha256 cellar: :any, x86_64_linux:  "08bcc0775f5e94b0fbb8044b9f406250d08111673a38e5f52ac07fb3dc0c78df"
+    sha256 cellar: :any, arm64_golden_gate: "76dad3b8d2c979892b3070c7bb357729ea389fc683c5d6a3584ae8dcc96d44c9"
+    sha256 cellar: :any, arm64_tahoe:       "231f4874823402017c6c4d530da4880de1b75280be9efd3a3ed58f20f85355b4"
+    sha256 cellar: :any, arm64_sequoia:     "43a0be3a50217071368ed54a8cf45a1c2ac07c4d512fb45a71e62a438666d077"
+    sha256 cellar: :any, arm64_sonoma:      "60a602bfb08d39afd06df530302aa477097aef6227f7b695bb929b482b36cf27"
+    sha256 cellar: :any, sonoma:            "4a7509699b9ca06f5ddcaa0590ee5676d994310485679d6f59537c1d0bf9df68"
+    sha256 cellar: :any, arm64_linux:       "55b6db57984f7952974af096e66d6ede6af5db879411e62b03d9899aa8ad6a58"
+    sha256 cellar: :any, x86_64_linux:      "08bcc0775f5e94b0fbb8044b9f406250d08111673a38e5f52ac07fb3dc0c78df"
   end
 
   depends_on "cmake" => :build

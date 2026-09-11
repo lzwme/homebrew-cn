@@ -13,12 +13,13 @@ class Nmap < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "7b44210db7bec422a6db3551c6ce37c032d549c6e4b7c1fc73dfc3fd84ffcb61"
-    sha256 arm64_sequoia: "53af60fb8bc2a54c94d48522bec7b90c8de5843e1057203e56d5ed922ee05f5e"
-    sha256 arm64_sonoma:  "7f1314efd3f78af8cebad0f254de7c4a8d0b1f4f0e881f99f64bbc42d184d9aa"
-    sha256 sonoma:        "8e0cf28019b8f08cd0c861743fce47446e11197a1c0dd4fa5e6d930ef5c0c78a"
-    sha256 arm64_linux:   "1d20106da65dabc3c10921eac6666505c2433cc4d9646fefc4cfa6a2403fb547"
-    sha256 x86_64_linux:  "d3f0b702152aaba2e73585a51352ec2143ca9f1870f1849058de81fdfed7a116"
+    sha256 arm64_golden_gate: "e9970e9c33357f46023332de6c6fdb5964cd5c7c95cb7ac664e16d5deebf92c9"
+    sha256 arm64_tahoe:       "7b44210db7bec422a6db3551c6ce37c032d549c6e4b7c1fc73dfc3fd84ffcb61"
+    sha256 arm64_sequoia:     "53af60fb8bc2a54c94d48522bec7b90c8de5843e1057203e56d5ed922ee05f5e"
+    sha256 arm64_sonoma:      "7f1314efd3f78af8cebad0f254de7c4a8d0b1f4f0e881f99f64bbc42d184d9aa"
+    sha256 sonoma:            "8e0cf28019b8f08cd0c861743fce47446e11197a1c0dd4fa5e6d930ef5c0c78a"
+    sha256 arm64_linux:       "1d20106da65dabc3c10921eac6666505c2433cc4d9646fefc4cfa6a2403fb547"
+    sha256 x86_64_linux:      "d3f0b702152aaba2e73585a51352ec2143ca9f1870f1849058de81fdfed7a116"
   end
 
   depends_on "python-setuptools" => :build

@@ -8,12 +8,13 @@ class Highway < Formula
   head "https://github.com/google/highway.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "4a17f51ff9c2f22f412db35dacc63860a7e1c722f08fbf308f05f9f4db21db0d"
-    sha256 cellar: :any,                 arm64_sequoia: "bf5268ae192ebd188db4892567d45eedfa42ed1d1d41665c8822e7934ccf9a9c"
-    sha256 cellar: :any,                 arm64_sonoma:  "a5f109bb836022f065fe820e1b326b7f2bc92792604d362474e9bb40d1509d76"
-    sha256 cellar: :any,                 sonoma:        "d953af12375d3afdfb19752f698acd9ed362245af9f1856503e676107b89495b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "385bd6949921be2da9d35a440220c7cf40a65d3a2def48f3890c9bcd7f6b0b16"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3ba94692faedb5e8fb7655dbf3175d3e224746c52444141c028edba76275c157"
+    sha256 cellar: :any,                 arm64_golden_gate: "803c7d7690dd7f8b43313965b8b2f96735667ef27fe85270cabe517a07d3e6f0"
+    sha256 cellar: :any,                 arm64_tahoe:       "4a17f51ff9c2f22f412db35dacc63860a7e1c722f08fbf308f05f9f4db21db0d"
+    sha256 cellar: :any,                 arm64_sequoia:     "bf5268ae192ebd188db4892567d45eedfa42ed1d1d41665c8822e7934ccf9a9c"
+    sha256 cellar: :any,                 arm64_sonoma:      "a5f109bb836022f065fe820e1b326b7f2bc92792604d362474e9bb40d1509d76"
+    sha256 cellar: :any,                 sonoma:            "d953af12375d3afdfb19752f698acd9ed362245af9f1856503e676107b89495b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "385bd6949921be2da9d35a440220c7cf40a65d3a2def48f3890c9bcd7f6b0b16"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "3ba94692faedb5e8fb7655dbf3175d3e224746c52444141c028edba76275c157"
   end
 
   depends_on "cmake" => :build

@@ -21,12 +21,13 @@ class Pmix < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "e92ef10e3a830c714f77e437c8c0bc95a74e4e271c11a227bec04751f9e39e1e"
-    sha256 arm64_sequoia: "84f5dc1c87771751b12ffc20d210ecdb0ffce10417adb4698046233d895a5cb9"
-    sha256 arm64_sonoma:  "4ebae743971057aedb4bcb9e0c3184dcdf928810a07ca6b9aaf8e392d1040b3b"
-    sha256 sonoma:        "ffea6a8f88516bae345bbb60d0de547a77b21188a84d4389f82df7a90eba7507"
-    sha256 arm64_linux:   "c4d370ae2ff7a7600464f51fee127331073d4aaf1c284705ec04ecb00ff2d109"
-    sha256 x86_64_linux:  "d27aea1dc4807880a160e08f03a2b0a4210e7d731d6be8e702d04501334b2b05"
+    sha256 arm64_golden_gate: "27dcebbd50c5c9a4a5eff00803cb51adf0bffbd87ce5577f3ad35de46c917c1e"
+    sha256 arm64_tahoe:       "e92ef10e3a830c714f77e437c8c0bc95a74e4e271c11a227bec04751f9e39e1e"
+    sha256 arm64_sequoia:     "84f5dc1c87771751b12ffc20d210ecdb0ffce10417adb4698046233d895a5cb9"
+    sha256 arm64_sonoma:      "4ebae743971057aedb4bcb9e0c3184dcdf928810a07ca6b9aaf8e392d1040b3b"
+    sha256 sonoma:            "ffea6a8f88516bae345bbb60d0de547a77b21188a84d4389f82df7a90eba7507"
+    sha256 arm64_linux:       "c4d370ae2ff7a7600464f51fee127331073d4aaf1c284705ec04ecb00ff2d109"
+    sha256 x86_64_linux:      "d27aea1dc4807880a160e08f03a2b0a4210e7d731d6be8e702d04501334b2b05"
   end
 
   head do

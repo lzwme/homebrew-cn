@@ -13,12 +13,13 @@ class OathToolkit < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "0e3189a79283536902ac625eae9bb2b2cf08e94efa223b9c1309f49644c3f916"
-    sha256 cellar: :any, arm64_sequoia: "5df29b142ddd79a981d26641fe1407185ec13053038e45f518ec0cf2db99b13a"
-    sha256 cellar: :any, arm64_sonoma:  "3eebb109d310fa1a06d6b3f895dc6740651bb2079fa4fb160140c7ebb07f8094"
-    sha256               sonoma:        "a3a81851ae782909c7ea9c6d2fd9634e8154d1de774da00714b6601f24102711"
-    sha256               arm64_linux:   "85e93423745de435c7646aa6b9ae12edbaa4e9196ca43c482b6fd3cb4e763f32"
-    sha256               x86_64_linux:  "6b892babe12808ff3f8470831689114f057b71c4c7e37ccbbee387920257cfbb"
+    sha256 cellar: :any, arm64_golden_gate: "99ba59d037003da05452fc3da17ee83ddde97c07a15ea581c8ae0664550225ee"
+    sha256 cellar: :any, arm64_tahoe:       "0e3189a79283536902ac625eae9bb2b2cf08e94efa223b9c1309f49644c3f916"
+    sha256 cellar: :any, arm64_sequoia:     "5df29b142ddd79a981d26641fe1407185ec13053038e45f518ec0cf2db99b13a"
+    sha256 cellar: :any, arm64_sonoma:      "3eebb109d310fa1a06d6b3f895dc6740651bb2079fa4fb160140c7ebb07f8094"
+    sha256               sonoma:            "a3a81851ae782909c7ea9c6d2fd9634e8154d1de774da00714b6601f24102711"
+    sha256               arm64_linux:       "85e93423745de435c7646aa6b9ae12edbaa4e9196ca43c482b6fd3cb4e763f32"
+    sha256               x86_64_linux:      "6b892babe12808ff3f8470831689114f057b71c4c7e37ccbbee387920257cfbb"
   end
 
   head do

@@ -26,11 +26,12 @@ class Gcc < Formula
 
   bottle do
     rebuild 1
-    sha256               arm64_tahoe:   "add0ca0614da1d0047af8a71be683be40957096851f4c98ccd89e95b0c4f4fde"
-    sha256               arm64_sequoia: "8c57a4e5c65c93b90b280e3e761833f946b5a7d186f2067d239af44b71c5a577"
-    sha256               arm64_sonoma:  "2a23accb457b670c90e18d36bfbcfb212c7d0292a300881436a45630d64ed608"
-    sha256 cellar: :any, arm64_linux:   "a816cc94416b72b6b90b87db9479b12addbb1b877603ecfc7157345621a1e2e9"
-    sha256 cellar: :any, x86_64_linux:  "6504ecae947061ffe79c9dea2f635791bf54b148d1063ec857873eac2a67d922"
+    sha256               arm64_golden_gate: "b468e0bdd7f6412f1e4746d6d2040d080bb5c9f8feb9ad30a436357ce24654e8"
+    sha256               arm64_tahoe:       "add0ca0614da1d0047af8a71be683be40957096851f4c98ccd89e95b0c4f4fde"
+    sha256               arm64_sequoia:     "8c57a4e5c65c93b90b280e3e761833f946b5a7d186f2067d239af44b71c5a577"
+    sha256               arm64_sonoma:      "2a23accb457b670c90e18d36bfbcfb212c7d0292a300881436a45630d64ed608"
+    sha256 cellar: :any, arm64_linux:       "a816cc94416b72b6b90b87db9479b12addbb1b877603ecfc7157345621a1e2e9"
+    sha256 cellar: :any, x86_64_linux:      "6504ecae947061ffe79c9dea2f635791bf54b148d1063ec857873eac2a67d922"
   end
 
   # The bottles are built on systems with the CLT installed, and do not work

@@ -9,14 +9,15 @@ class M4 < Formula
   compatibility_version 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "81e05b29593d5a7a5dc4fe5f245fc62623a84b82c67183bf26385cb86939c6d4"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "80f871ba39104ef553d5a15e2c70639c69dd4fb76568842f5dc1ef451918c6a8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "72ca35bf13692b0dc9b3880170a0272e76c96f90e499dbbc6fb8a3765df1be31"
-    sha256 cellar: :any_skip_relocation, tahoe:         "a7da5c29823df4a3c80723639e17153dc6fc71621d87cdc8f5e88f628764c816"
-    sha256 cellar: :any_skip_relocation, sequoia:       "9956d5e742750c93d61a27ac209e7dfe7a6e0de2dfbc2ea73210741eb2e51461"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0cf6a1f36ee3fba3f5a68541cbea8bce737766b02a1805e211deef5b3b3867a6"
-    sha256                               arm64_linux:   "eb1ff0c26cd770b61fffa8bc5b47bd3822ae800ef1174a4e15929648ca657a20"
-    sha256                               x86_64_linux:  "ba0b5d546365710422739b622d9a2301f9096f78bc7d6dd5b3cb4cc4a55e184f"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "14d29a577e4af26fd2fb2f70f127d0b9b641fdafd556fdbf98e945e1d4fd2657"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "81e05b29593d5a7a5dc4fe5f245fc62623a84b82c67183bf26385cb86939c6d4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "80f871ba39104ef553d5a15e2c70639c69dd4fb76568842f5dc1ef451918c6a8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "72ca35bf13692b0dc9b3880170a0272e76c96f90e499dbbc6fb8a3765df1be31"
+    sha256 cellar: :any_skip_relocation, tahoe:             "a7da5c29823df4a3c80723639e17153dc6fc71621d87cdc8f5e88f628764c816"
+    sha256 cellar: :any_skip_relocation, sequoia:           "9956d5e742750c93d61a27ac209e7dfe7a6e0de2dfbc2ea73210741eb2e51461"
+    sha256 cellar: :any_skip_relocation, sonoma:            "0cf6a1f36ee3fba3f5a68541cbea8bce737766b02a1805e211deef5b3b3867a6"
+    sha256                               arm64_linux:       "eb1ff0c26cd770b61fffa8bc5b47bd3822ae800ef1174a4e15929648ca657a20"
+    sha256                               x86_64_linux:      "ba0b5d546365710422739b622d9a2301f9096f78bc7d6dd5b3cb4cc4a55e184f"
   end
 
   keg_only :provided_by_macos

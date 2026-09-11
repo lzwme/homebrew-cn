@@ -12,12 +12,13 @@ class Libevent < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "a89bc8b73301ea34ef28dfe355d8ef6a068250184e216a66b98f60435ecfb372"
-    sha256 cellar: :any, arm64_sequoia: "fd79042d1b524a34e00ef2c04ab71069f4105c1cf3aaa2407c0d608736c4ad1a"
-    sha256 cellar: :any, arm64_sonoma:  "d9bd12ae21a16634bba8ca8c9dca13e36c9fa783f5907e789a93a95e75a91b3e"
-    sha256 cellar: :any, sonoma:        "9a84f598bdd5283e794ee467ce1e8505df47930d0c101309f7329944db743d96"
-    sha256 cellar: :any, arm64_linux:   "da39ded40a1d60992d16fa256185ce6bc84039a5cdd2ab31139262755326e94c"
-    sha256 cellar: :any, x86_64_linux:  "2d1db7d19f8ffe0791977488d3442d98cd334c9f38b91b11b0e19ab8d4170e01"
+    sha256 cellar: :any, arm64_golden_gate: "ea0abd1593f324f6d757928eb5800e50517e911e1c6216fa23c3959c8c26b010"
+    sha256 cellar: :any, arm64_tahoe:       "a89bc8b73301ea34ef28dfe355d8ef6a068250184e216a66b98f60435ecfb372"
+    sha256 cellar: :any, arm64_sequoia:     "fd79042d1b524a34e00ef2c04ab71069f4105c1cf3aaa2407c0d608736c4ad1a"
+    sha256 cellar: :any, arm64_sonoma:      "d9bd12ae21a16634bba8ca8c9dca13e36c9fa783f5907e789a93a95e75a91b3e"
+    sha256 cellar: :any, sonoma:            "9a84f598bdd5283e794ee467ce1e8505df47930d0c101309f7329944db743d96"
+    sha256 cellar: :any, arm64_linux:       "da39ded40a1d60992d16fa256185ce6bc84039a5cdd2ab31139262755326e94c"
+    sha256 cellar: :any, x86_64_linux:      "2d1db7d19f8ffe0791977488d3442d98cd334c9f38b91b11b0e19ab8d4170e01"
   end
 
   depends_on "pkgconf" => :build

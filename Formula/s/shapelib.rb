@@ -11,12 +11,13 @@ class Shapelib < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "1d270fad05338b3a2420a96a2b7e5b084a935e840e8deb0038369fffa7ef8586"
-    sha256 cellar: :any,                 arm64_sequoia: "bac4ff987b17640f93f9e9d0ad0c7d046ba6ea780e8804f59a6ea2ebb63c13a8"
-    sha256 cellar: :any,                 arm64_sonoma:  "d5ed7bbd8744d95d97f8d613fa5a4c2181477b02c087c5c104d4ea59a60f22c4"
-    sha256 cellar: :any,                 sonoma:        "8301afafe682bc0ef1ad02da6a875a9f17e349c448145de7cab3af3bd306f3c2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cbe48e25f669a84512d7dde1882fabf63c287cb001041308cd3d1c130a2a64ec"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8bf7deccc48ed28fd9a051b66dd668737cb9842bf9bcf8d48766ddbf52e14722"
+    sha256 cellar: :any,                 arm64_golden_gate: "1706298ea755f8c4301d20f273cb30c2d24e96b752ec61ef7b3bf20a59be7624"
+    sha256 cellar: :any,                 arm64_tahoe:       "1d270fad05338b3a2420a96a2b7e5b084a935e840e8deb0038369fffa7ef8586"
+    sha256 cellar: :any,                 arm64_sequoia:     "bac4ff987b17640f93f9e9d0ad0c7d046ba6ea780e8804f59a6ea2ebb63c13a8"
+    sha256 cellar: :any,                 arm64_sonoma:      "d5ed7bbd8744d95d97f8d613fa5a4c2181477b02c087c5c104d4ea59a60f22c4"
+    sha256 cellar: :any,                 sonoma:            "8301afafe682bc0ef1ad02da6a875a9f17e349c448145de7cab3af3bd306f3c2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "cbe48e25f669a84512d7dde1882fabf63c287cb001041308cd3d1c130a2a64ec"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "8bf7deccc48ed28fd9a051b66dd668737cb9842bf9bcf8d48766ddbf52e14722"
   end
 
   depends_on "cmake" => :build

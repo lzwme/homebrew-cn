@@ -8,12 +8,13 @@ class Libimobiledevice < Formula
   head "https://github.com/libimobiledevice/libimobiledevice.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "57e9ce8270a268ce61766da57305ddf8adef5310556992f97534a0c6b8dc2112"
-    sha256 cellar: :any,                 arm64_sequoia: "17e3e2fa9618cfdc21a0e87c97ae8d1ffb02de19f88ef5cc886a0663b6c1b66c"
-    sha256 cellar: :any,                 arm64_sonoma:  "ac0a39864d542e1b5d248efe7ee1bbb5dc58a2739dd248ec987dc7b794ef9fd9"
-    sha256 cellar: :any,                 sonoma:        "aa40670dbbdadabc7f035fe2ea17da68a1dab8937a4f1c0429c0a7fd58c108f5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d54c686502da56b005f514e052d5d6f24242acc99236309da37854d573fd0206"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8d22c1f4fccc06261e4e1775f3d56864ddbe37ba3980b28b5d17898d74662307"
+    sha256 cellar: :any,                 arm64_golden_gate: "0c372f1a8a7129bb2c32b09875db39c8be8b07652f9169767aa20b24581e5eaa"
+    sha256 cellar: :any,                 arm64_tahoe:       "57e9ce8270a268ce61766da57305ddf8adef5310556992f97534a0c6b8dc2112"
+    sha256 cellar: :any,                 arm64_sequoia:     "17e3e2fa9618cfdc21a0e87c97ae8d1ffb02de19f88ef5cc886a0663b6c1b66c"
+    sha256 cellar: :any,                 arm64_sonoma:      "ac0a39864d542e1b5d248efe7ee1bbb5dc58a2739dd248ec987dc7b794ef9fd9"
+    sha256 cellar: :any,                 sonoma:            "aa40670dbbdadabc7f035fe2ea17da68a1dab8937a4f1c0429c0a7fd58c108f5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "d54c686502da56b005f514e052d5d6f24242acc99236309da37854d573fd0206"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "8d22c1f4fccc06261e4e1775f3d56864ddbe37ba3980b28b5d17898d74662307"
   end
 
   depends_on "autoconf" => :build

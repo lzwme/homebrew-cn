@@ -14,12 +14,13 @@ class SaneBackends < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    sha256 arm64_tahoe:   "27298da0362d4c23dfeea65ba2e3a3d0b4852299cb80d94d806309776abb7adc"
-    sha256 arm64_sequoia: "3fe51ef811ef943b28aa0a7d02e2b1c4eea7b4697a955ef0f82c2e83645f146d"
-    sha256 arm64_sonoma:  "db367d04d3578258dce97d066bb138f7bed577a56b03245e70bc31743e636017"
-    sha256 sonoma:        "50c480c2b051b99a6f31de7ec827db4e041163d888ac622dcf72b2c4191c5403"
-    sha256 arm64_linux:   "d0d46eb5a83650c66567911610413d9623c356483ba39586f8f8cb5d7b89a676"
-    sha256 x86_64_linux:  "7ecde9d4c8c9aeafdeacc8ed886c18ea91ee747c83e5d9ca1d1ecad894876903"
+    sha256 arm64_golden_gate: "ca916fd045f81378c5b28ebed3f58f812f214da95d90e4ad45f6fbae68e67d1f"
+    sha256 arm64_tahoe:       "27298da0362d4c23dfeea65ba2e3a3d0b4852299cb80d94d806309776abb7adc"
+    sha256 arm64_sequoia:     "3fe51ef811ef943b28aa0a7d02e2b1c4eea7b4697a955ef0f82c2e83645f146d"
+    sha256 arm64_sonoma:      "db367d04d3578258dce97d066bb138f7bed577a56b03245e70bc31743e636017"
+    sha256 sonoma:            "50c480c2b051b99a6f31de7ec827db4e041163d888ac622dcf72b2c4191c5403"
+    sha256 arm64_linux:       "d0d46eb5a83650c66567911610413d9623c356483ba39586f8f8cb5d7b89a676"
+    sha256 x86_64_linux:      "7ecde9d4c8c9aeafdeacc8ed886c18ea91ee747c83e5d9ca1d1ecad894876903"
   end
 
   head do

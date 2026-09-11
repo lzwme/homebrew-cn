@@ -8,12 +8,13 @@ class Librtlsdr < Formula
   head "https://git.osmocom.org/rtl-sdr", using: :git, branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "f1ef52cd62e7fa1315e492f22da0874d3e2f9c274e70bfcdc01aa3eaa76cbf3f"
-    sha256 cellar: :any, arm64_sequoia: "0a215936e5eba74c3ef18f90d6c476d5cc2805c6f712c8860589884fd1c00acb"
-    sha256 cellar: :any, arm64_sonoma:  "994c6bb84127a275f8ee544ac82a547f851689402bfb18094b57764e658d2a9d"
-    sha256 cellar: :any, sonoma:        "362250281e27728ac74510169bf7eed09e4b1d4d76228589eeebf8dfa32430c0"
-    sha256 cellar: :any, arm64_linux:   "4b77f074acbf2e6b28ac15792883336d88edb61fae1667db8b0614c0e9af0d08"
-    sha256 cellar: :any, x86_64_linux:  "7e1499436613a42addfa1f027440ebe5c14361b972e2834718c3b9e2ceca82ce"
+    sha256 cellar: :any, arm64_golden_gate: "0dd3fac8feaefccf2158b5eaf0e1c64b0d872cb70fe230976dfc3e3e455c631b"
+    sha256 cellar: :any, arm64_tahoe:       "f1ef52cd62e7fa1315e492f22da0874d3e2f9c274e70bfcdc01aa3eaa76cbf3f"
+    sha256 cellar: :any, arm64_sequoia:     "0a215936e5eba74c3ef18f90d6c476d5cc2805c6f712c8860589884fd1c00acb"
+    sha256 cellar: :any, arm64_sonoma:      "994c6bb84127a275f8ee544ac82a547f851689402bfb18094b57764e658d2a9d"
+    sha256 cellar: :any, sonoma:            "362250281e27728ac74510169bf7eed09e4b1d4d76228589eeebf8dfa32430c0"
+    sha256 cellar: :any, arm64_linux:       "4b77f074acbf2e6b28ac15792883336d88edb61fae1667db8b0614c0e9af0d08"
+    sha256 cellar: :any, x86_64_linux:      "7e1499436613a42addfa1f027440ebe5c14361b972e2834718c3b9e2ceca82ce"
   end
 
   depends_on "cmake" => :build

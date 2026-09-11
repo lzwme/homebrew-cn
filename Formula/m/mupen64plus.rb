@@ -12,12 +12,13 @@ class Mupen64plus < Formula
 
   bottle do
     rebuild 1
-    sha256 arm64_tahoe:   "73a594a4179e8c405898e24d23a3de66e3476734fe4d6271229a65ad9d94d143"
-    sha256 arm64_sequoia: "2ac11668fdeba8ca47b221e7e35fa0a7c1388644144673ea2981dd282214bdd6"
-    sha256 arm64_sonoma:  "1ba75f761d4a6c9520ff61d79fe13e08d2d0c72b039f4f40bc8ba35bd1dbcc86"
-    sha256 sonoma:        "7af6a82beaa3bcd3f82e86abab6f473836a542f2e6a35daa1795b2ae88e791e4"
-    sha256 arm64_linux:   "0b6dc156754e78588093434bd7d0a8729704b3425d3241887ce84d59b986131c"
-    sha256 x86_64_linux:  "53ffc3a9f022ab20a782517db83e4b69cd4722e998cfe4ac41d10c49ab2a513a"
+    sha256 arm64_golden_gate: "7ab80490bca7a98d91b1b08b440048b2f5dbc63fc3b3efab84d943245354a498"
+    sha256 arm64_tahoe:       "73a594a4179e8c405898e24d23a3de66e3476734fe4d6271229a65ad9d94d143"
+    sha256 arm64_sequoia:     "2ac11668fdeba8ca47b221e7e35fa0a7c1388644144673ea2981dd282214bdd6"
+    sha256 arm64_sonoma:      "1ba75f761d4a6c9520ff61d79fe13e08d2d0c72b039f4f40bc8ba35bd1dbcc86"
+    sha256 sonoma:            "7af6a82beaa3bcd3f82e86abab6f473836a542f2e6a35daa1795b2ae88e791e4"
+    sha256 arm64_linux:       "0b6dc156754e78588093434bd7d0a8729704b3425d3241887ce84d59b986131c"
+    sha256 x86_64_linux:      "53ffc3a9f022ab20a782517db83e4b69cd4722e998cfe4ac41d10c49ab2a513a"
   end
 
   depends_on "pkgconf" => :build
@@ -61,7 +62,7 @@ class Mupen64plus < Formula
 
   test do
     # Disable test in Tahoe CI because it hangs because a display is not available.
-    return if OS.mac? && MacOS.version == :tahoe && ENV["HOMEBREW_GITHUB_ACTIONS"]
+    return if OS.mac? && MacOS.version >= :tahoe && ENV["HOMEBREW_GITHUB_ACTIONS"]
 
     resource "rom" do
       url "https://github.com/mupen64plus/mupen64plus-rom/raw/76ef14c876ed036284154444c7bdc29d19381acc/m64p_test_rom.v64"

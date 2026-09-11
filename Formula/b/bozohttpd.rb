@@ -11,12 +11,13 @@ class Bozohttpd < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "a4226ca0417b3a42426e8b9c66e35c27e5b33cde093b72b6367bd4e9af8bf3f5"
-    sha256 cellar: :any,                 arm64_sequoia: "a8bbb72a39b43114431d8fe63bb84828f3c07d1f3874642bde1d7e60ae84777d"
-    sha256 cellar: :any,                 arm64_sonoma:  "867d0c4eac9ad4783a5c137d51dbeaa069c632cf0103e6e16a108dcff3fff849"
-    sha256 cellar: :any,                 sonoma:        "798fb50a66dfd8336989103f0dfd6b238421a71d3b8741252c0c247c90d5d8e3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "89de2d92f7e7e9b270ec5df6c83802901c70ddf5db3153f653cc2a10e70a02ba"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3c755a16e29068de4b39e08aece48a14ac58d95252e205d428b794ae26fad71a"
+    sha256 cellar: :any,                 arm64_golden_gate: "6eff04e9122d9dd2fe08d154a255f5ea1f5c7ac2f05804fcdd14368a23eb5086"
+    sha256 cellar: :any,                 arm64_tahoe:       "a4226ca0417b3a42426e8b9c66e35c27e5b33cde093b72b6367bd4e9af8bf3f5"
+    sha256 cellar: :any,                 arm64_sequoia:     "a8bbb72a39b43114431d8fe63bb84828f3c07d1f3874642bde1d7e60ae84777d"
+    sha256 cellar: :any,                 arm64_sonoma:      "867d0c4eac9ad4783a5c137d51dbeaa069c632cf0103e6e16a108dcff3fff849"
+    sha256 cellar: :any,                 sonoma:            "798fb50a66dfd8336989103f0dfd6b238421a71d3b8741252c0c247c90d5d8e3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "89de2d92f7e7e9b270ec5df6c83802901c70ddf5db3153f653cc2a10e70a02ba"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "3c755a16e29068de4b39e08aece48a14ac58d95252e205d428b794ae26fad71a"
   end
 
   depends_on "openssl@4"

@@ -3093,6 +3093,7 @@ Homebrew-homebrew-core/Formula/h/himalaya.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/hindent.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/hiredis.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/hishtory.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/h/hister.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/historian.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/hive.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/h/hivemind.rb, Homebrew/homebrew-core, 1
@@ -14680,6 +14681,7 @@ Homebrew-homebrew-cask/Casks/p/psi.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/psiphon-conduit.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/psst.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/psychopy.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/p/psysonic.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/ptpwebcam.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/publii.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/publish-or-perish.rb, Homebrew/homebrew-cask, 0
@@ -14832,6 +14834,7 @@ Homebrew-homebrew-cask/Casks/r/readmoreading.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/r/readwise-ibooks.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/readyapi.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/realforce.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/r/realvnc-connect-viewer.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/realvnc-connect.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/reamp.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/reaper.rb, Homebrew/homebrew-cask, 0
@@ -15983,7 +15986,6 @@ Homebrew-homebrew-cask/Casks/v/vlcstreamer.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/v/vmlx.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/v/vmpk.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/v/vnc-server.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/v/vnc-viewer.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/v/vnote.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/v/vocaster-hub.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/v/vocevista-video-pro.rb, Homebrew/homebrew-cask, 0

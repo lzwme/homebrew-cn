@@ -7,12 +7,13 @@ class Hamlib < Formula
   head "https://github.com/hamlib/hamlib.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "5b3121253c6c02cb3e4408c34ecc4ad5d0e542df2370b4d62a945c080a68fdcc"
-    sha256 cellar: :any, arm64_sequoia: "0272727195c00b85ac9991545e3a86ea1d1c84c2da785a1573879d10d59db69f"
-    sha256 cellar: :any, arm64_sonoma:  "45a87a2b474931b39d2e8407ef931b7753681be7d992536acbf9c71b9e54bc29"
-    sha256 cellar: :any, sonoma:        "fba407c9ce0e3a36dfe739e5df61ee05c4d437d350a851a6b9b1d78fa1ff6f8a"
-    sha256 cellar: :any, arm64_linux:   "e4b13e3f8b5c3721fc3edceb8cc75310e9c247ebba62399cd6097facc482e1ce"
-    sha256 cellar: :any, x86_64_linux:  "30656fd2ae24e51a21f81b28ca3e47f1d5b9d657a8ec67b5a606f1d61fd0a2d2"
+    sha256 cellar: :any, arm64_golden_gate: "263a802c143423537fc9d94ae9aa21f4eee0067edbb1573ca70140019581166d"
+    sha256 cellar: :any, arm64_tahoe:       "5b3121253c6c02cb3e4408c34ecc4ad5d0e542df2370b4d62a945c080a68fdcc"
+    sha256 cellar: :any, arm64_sequoia:     "0272727195c00b85ac9991545e3a86ea1d1c84c2da785a1573879d10d59db69f"
+    sha256 cellar: :any, arm64_sonoma:      "45a87a2b474931b39d2e8407ef931b7753681be7d992536acbf9c71b9e54bc29"
+    sha256 cellar: :any, sonoma:            "fba407c9ce0e3a36dfe739e5df61ee05c4d437d350a851a6b9b1d78fa1ff6f8a"
+    sha256 cellar: :any, arm64_linux:       "e4b13e3f8b5c3721fc3edceb8cc75310e9c247ebba62399cd6097facc482e1ce"
+    sha256 cellar: :any, x86_64_linux:      "30656fd2ae24e51a21f81b28ca3e47f1d5b9d657a8ec67b5a606f1d61fd0a2d2"
   end
 
   depends_on "autoconf" => :build

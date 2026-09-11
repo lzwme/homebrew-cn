@@ -12,12 +12,13 @@ class Lua < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "494c75d37ed889cd4deaf7cb40613e8ba2206b53af68a5ab3d47167c22138b50"
-    sha256 cellar: :any, arm64_sequoia: "4dc6f450952c63886e1293adb7798fb8bfe9093c72400471ba160561affe6dc4"
-    sha256 cellar: :any, arm64_sonoma:  "e102957f67a1fe9dc8bfd0d6409c4c776791daacb75f28910e28f0a13d1a438b"
-    sha256 cellar: :any, sonoma:        "13ba70d9eeb49a39ed8d44b688f38cee7185bbe2ca88b400796a76a482833423"
-    sha256 cellar: :any, arm64_linux:   "352ef08beb2cb7694bf37e7aa62152ea8b9d60172a7a65ff57c00c1c91dd53e9"
-    sha256 cellar: :any, x86_64_linux:  "d221d3bf5b1ac55775e12cb147d995e6b29dc46a3e5dfc33bc3c6295fed1561e"
+    sha256 cellar: :any, arm64_golden_gate: "058cec4331d0939089cf953851a35bd4bd108d932e0356d30636ad08327d2183"
+    sha256 cellar: :any, arm64_tahoe:       "494c75d37ed889cd4deaf7cb40613e8ba2206b53af68a5ab3d47167c22138b50"
+    sha256 cellar: :any, arm64_sequoia:     "4dc6f450952c63886e1293adb7798fb8bfe9093c72400471ba160561affe6dc4"
+    sha256 cellar: :any, arm64_sonoma:      "e102957f67a1fe9dc8bfd0d6409c4c776791daacb75f28910e28f0a13d1a438b"
+    sha256 cellar: :any, sonoma:            "13ba70d9eeb49a39ed8d44b688f38cee7185bbe2ca88b400796a76a482833423"
+    sha256 cellar: :any, arm64_linux:       "352ef08beb2cb7694bf37e7aa62152ea8b9d60172a7a65ff57c00c1c91dd53e9"
+    sha256 cellar: :any, x86_64_linux:      "d221d3bf5b1ac55775e12cb147d995e6b29dc46a3e5dfc33bc3c6295fed1561e"
   end
 
   # Be sure to build a dylib, or else runtime modules will pull in another static copy of liblua = crashy

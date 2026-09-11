@@ -8,12 +8,13 @@ class Glog < Formula
   head "https://github.com/google/glog.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "15bf109a841f9381cd9086d7aecefc7d782670c90a5142bbf9f281604deff968"
-    sha256 cellar: :any,                 arm64_sequoia: "c42e96a87cd7e7342ac3bf3e9c219945f116ae344b0602e9ae3274d566aa08b2"
-    sha256 cellar: :any,                 arm64_sonoma:  "c4881acd951f5282803c8674b756391cac911262d4ea247daeb448457281f5a5"
-    sha256 cellar: :any,                 sonoma:        "9e1493169d73ac812775f431b0f227f45d21504d0eeed8f296f7f2fcb071b919"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "55330f966af37454c000fe47f329a6eba4504393bf0752d35f0c3690bd2155fc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2c624a10ebd6da940a6f6d1c3ddb4cfe5a025bc588ece4de923aeeebadfeb8a2"
+    sha256 cellar: :any,                 arm64_golden_gate: "45d6d6cda18bee5e57b24abb2594976b96f2849823d40db3dc137ab7895b1ab0"
+    sha256 cellar: :any,                 arm64_tahoe:       "15bf109a841f9381cd9086d7aecefc7d782670c90a5142bbf9f281604deff968"
+    sha256 cellar: :any,                 arm64_sequoia:     "c42e96a87cd7e7342ac3bf3e9c219945f116ae344b0602e9ae3274d566aa08b2"
+    sha256 cellar: :any,                 arm64_sonoma:      "c4881acd951f5282803c8674b756391cac911262d4ea247daeb448457281f5a5"
+    sha256 cellar: :any,                 sonoma:            "9e1493169d73ac812775f431b0f227f45d21504d0eeed8f296f7f2fcb071b919"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "55330f966af37454c000fe47f329a6eba4504393bf0752d35f0c3690bd2155fc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "2c624a10ebd6da940a6f6d1c3ddb4cfe5a025bc588ece4de923aeeebadfeb8a2"
   end
 
   # deprecate! date: "2025-12-10", because: :repo_archived, replacement_formula: "abseil"

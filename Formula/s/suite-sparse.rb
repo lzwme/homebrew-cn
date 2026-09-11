@@ -19,12 +19,13 @@ class SuiteSparse < Formula
   end
 
   bottle do
-    sha256               arm64_tahoe:   "a3b1dfaacedb759181afb0ad110c359a89b5c705f107a6d65243998e515b6cfe"
-    sha256               arm64_sequoia: "57526f091043632c65fbcb851e716f6dc9febe7d81a81e044f1c1c6d16d4bb14"
-    sha256               arm64_sonoma:  "4e1d912df4f1b2bae2c72b3f729f398b50e5593d24e10c070a3fdc5a3d08681e"
-    sha256               sonoma:        "fdce115afffbd2eb6b871a6227a243d307fc5e340526f439aae3c93a899de5c7"
-    sha256 cellar: :any, arm64_linux:   "ecafb6094f68b500f8bba9694e46432e8ef35334f2f7327df8557db3142c0ea0"
-    sha256 cellar: :any, x86_64_linux:  "ebd703e7cb6a1e7af5704a0bc40020e67059f0989c8bb094b60e733f6f75b14f"
+    sha256               arm64_golden_gate: "191048624a07641a205caf5644eb7f84c23c48fb95995a5a47929d90898b5566"
+    sha256               arm64_tahoe:       "a3b1dfaacedb759181afb0ad110c359a89b5c705f107a6d65243998e515b6cfe"
+    sha256               arm64_sequoia:     "57526f091043632c65fbcb851e716f6dc9febe7d81a81e044f1c1c6d16d4bb14"
+    sha256               arm64_sonoma:      "4e1d912df4f1b2bae2c72b3f729f398b50e5593d24e10c070a3fdc5a3d08681e"
+    sha256               sonoma:            "fdce115afffbd2eb6b871a6227a243d307fc5e340526f439aae3c93a899de5c7"
+    sha256 cellar: :any, arm64_linux:       "ecafb6094f68b500f8bba9694e46432e8ef35334f2f7327df8557db3142c0ea0"
+    sha256 cellar: :any, x86_64_linux:      "ebd703e7cb6a1e7af5704a0bc40020e67059f0989c8bb094b60e733f6f75b14f"
   end
 
   depends_on "cmake" => :build

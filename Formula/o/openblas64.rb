@@ -17,12 +17,13 @@ class Openblas64 < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "ad0701a4ae17e4d0cb2b44b353c98c277d0eff01ce172ff4382d97832e3e0ca6"
-    sha256 cellar: :any, arm64_sequoia: "cf29492c76448a831a2ffea618c20a1c494dc49dc878c586f1cc3c8c0816092a"
-    sha256 cellar: :any, arm64_sonoma:  "18b40eb1afd95de1725b6363ccd405aac39eafea29f4384986a4ec60cdc31476"
-    sha256 cellar: :any, sonoma:        "3876e6eeb58dd487117e9216d9754f2f22033ff8ca8d43c42d005f08f83e519d"
-    sha256 cellar: :any, arm64_linux:   "ed1d54ddb12f375390ca80ecfe683775b9e85a1e3c2701ae37c136a0043dde6b"
-    sha256 cellar: :any, x86_64_linux:  "7fa3bfcdc68988db2ed5a1accb4f615afcf52817432732a0c5ce578e0e73cc2d"
+    sha256 cellar: :any, arm64_golden_gate: "ce137451c1aa26661a1206cc39b1a03ee041578218eb54debf2a289aa6233493"
+    sha256 cellar: :any, arm64_tahoe:       "ad0701a4ae17e4d0cb2b44b353c98c277d0eff01ce172ff4382d97832e3e0ca6"
+    sha256 cellar: :any, arm64_sequoia:     "cf29492c76448a831a2ffea618c20a1c494dc49dc878c586f1cc3c8c0816092a"
+    sha256 cellar: :any, arm64_sonoma:      "18b40eb1afd95de1725b6363ccd405aac39eafea29f4384986a4ec60cdc31476"
+    sha256 cellar: :any, sonoma:            "3876e6eeb58dd487117e9216d9754f2f22033ff8ca8d43c42d005f08f83e519d"
+    sha256 cellar: :any, arm64_linux:       "ed1d54ddb12f375390ca80ecfe683775b9e85a1e3c2701ae37c136a0043dde6b"
+    sha256 cellar: :any, x86_64_linux:      "7fa3bfcdc68988db2ed5a1accb4f615afcf52817432732a0c5ce578e0e73cc2d"
   end
 
   keg_only "the headers conflict with `openblas`"

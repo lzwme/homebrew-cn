@@ -14,12 +14,13 @@ class Mplayer < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "1d27bc5e20a020dfc9cbda188a2d8af4cb54203b3a29bf97205ec5ba5c15038c"
-    sha256 cellar: :any,                 arm64_sequoia: "5acd5d7ebed8bc44b0aff0360bf20ec76cfb1a732349f8ece45bf84517db0b47"
-    sha256 cellar: :any,                 arm64_sonoma:  "c6dee8142133e094cff65c33b6b3aa7ca538e977dedd89e903d6a323460715d7"
-    sha256 cellar: :any,                 sonoma:        "5f089d84929885e170a96efba53a2f48adca16fcba31fccabf7efc9ed29f14f8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b4a9bf7aa318aebb060bf0ef17d93ed5f335d79f7e2a56f2d3181755216c9ff4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6fe472a2eaa853dea397a8cf67c22788a961d4edd3723f96bf3d439003ee1bc3"
+    sha256 cellar: :any,                 arm64_golden_gate: "994155c53e155e7ca4eb5d848c6940f88c1de5e3307567681dd13c427b4fd560"
+    sha256 cellar: :any,                 arm64_tahoe:       "1d27bc5e20a020dfc9cbda188a2d8af4cb54203b3a29bf97205ec5ba5c15038c"
+    sha256 cellar: :any,                 arm64_sequoia:     "5acd5d7ebed8bc44b0aff0360bf20ec76cfb1a732349f8ece45bf84517db0b47"
+    sha256 cellar: :any,                 arm64_sonoma:      "c6dee8142133e094cff65c33b6b3aa7ca538e977dedd89e903d6a323460715d7"
+    sha256 cellar: :any,                 sonoma:            "5f089d84929885e170a96efba53a2f48adca16fcba31fccabf7efc9ed29f14f8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "b4a9bf7aa318aebb060bf0ef17d93ed5f335d79f7e2a56f2d3181755216c9ff4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "6fe472a2eaa853dea397a8cf67c22788a961d4edd3723f96bf3d439003ee1bc3"
   end
 
   head do

@@ -7,12 +7,13 @@ class CamlpStreams < Formula
   revision 7
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "2cd65050a328163edca6dd9c3fb3ccc5094e4bd561c31f5ed0e6fb1ffd88f7d2"
-    sha256 cellar: :any, arm64_sequoia: "82fa83efcbf4f9397061dfabd4e57d6ada3bc26b003921e48add52fa8d3bbc38"
-    sha256 cellar: :any, arm64_sonoma:  "6c10f0fc8aca899c600015b713ed1ed0d00c46007541b67a031e4ce0c4d611f7"
-    sha256 cellar: :any, sonoma:        "c3f63dd0a75b359ef4f326290b8a1960a2adb80d7916c3cc5042509aef751a9b"
-    sha256 cellar: :any, arm64_linux:   "3539edb75c2d27ad89d8c31c5795cf602458f95e20851774fd7868f0883da6d1"
-    sha256 cellar: :any, x86_64_linux:  "c6d3b6df0e554f0b2595b4138a048c5040cab9903f6af0407caff06f58bd6cbb"
+    sha256 cellar: :any, arm64_golden_gate: "266e098b61d0e188a5838a188ab8b762cb58525ac469bb96e707c531a958fd17"
+    sha256 cellar: :any, arm64_tahoe:       "2cd65050a328163edca6dd9c3fb3ccc5094e4bd561c31f5ed0e6fb1ffd88f7d2"
+    sha256 cellar: :any, arm64_sequoia:     "82fa83efcbf4f9397061dfabd4e57d6ada3bc26b003921e48add52fa8d3bbc38"
+    sha256 cellar: :any, arm64_sonoma:      "6c10f0fc8aca899c600015b713ed1ed0d00c46007541b67a031e4ce0c4d611f7"
+    sha256 cellar: :any, sonoma:            "c3f63dd0a75b359ef4f326290b8a1960a2adb80d7916c3cc5042509aef751a9b"
+    sha256 cellar: :any, arm64_linux:       "3539edb75c2d27ad89d8c31c5795cf602458f95e20851774fd7868f0883da6d1"
+    sha256 cellar: :any, x86_64_linux:      "c6d3b6df0e554f0b2595b4138a048c5040cab9903f6af0407caff06f58bd6cbb"
   end
 
   depends_on "dune" => :build

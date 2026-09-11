@@ -12,12 +12,13 @@ class Bumblebee < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6dbfe7e8d0492c91365a14e8431707c6ddbb75dd83b465087981cd13a018958a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6dbfe7e8d0492c91365a14e8431707c6ddbb75dd83b465087981cd13a018958a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6dbfe7e8d0492c91365a14e8431707c6ddbb75dd83b465087981cd13a018958a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "70dc47858de6093e94ef9d4ca23753564c392db18da1db57c1e023e933e06952"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ebcfb6442909c462f37b22ac723e24c2c141a6463c285587194595851fa00811"
-    sha256 cellar: :any,                 x86_64_linux:  "a9e7b989b1259e38fc8601f043ccf43b35c7de756d3dfa86176220179ed47e71"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "2460a8c31a9ee8ff7ac7424b5b57303c713ed06e625e47e4b434539095d426b3"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "6dbfe7e8d0492c91365a14e8431707c6ddbb75dd83b465087981cd13a018958a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "6dbfe7e8d0492c91365a14e8431707c6ddbb75dd83b465087981cd13a018958a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "6dbfe7e8d0492c91365a14e8431707c6ddbb75dd83b465087981cd13a018958a"
+    sha256 cellar: :any_skip_relocation, sonoma:            "70dc47858de6093e94ef9d4ca23753564c392db18da1db57c1e023e933e06952"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "ebcfb6442909c462f37b22ac723e24c2c141a6463c285587194595851fa00811"
+    sha256 cellar: :any,                 x86_64_linux:      "a9e7b989b1259e38fc8601f043ccf43b35c7de756d3dfa86176220179ed47e71"
   end
 
   depends_on "go" => :build

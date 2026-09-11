@@ -20,12 +20,13 @@ class Libbsd < Formula
 
   bottle do
     rebuild 2
-    sha256 cellar: :any,                 arm64_tahoe:   "c7f96d1094ff2cc9da0513b16d0b0367baf7181648c7b95c18e038283cd76e0d"
-    sha256 cellar: :any,                 arm64_sequoia: "efbaa69a0a35faffb4aea0d753dfb2b9c0d69d2b75e082da79ff3c1217f71220"
-    sha256 cellar: :any,                 arm64_sonoma:  "f83011f7c421cbb84332def855f6ec9ed8e7983f33ca6094086f3e014620ff29"
-    sha256 cellar: :any,                 sonoma:        "75da4f4a420c5f2bf1d05a57bd1709768b135c2a9d7b464e788ee07360e58546"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9fc7e073b4e59abb66635d251ee2b38613647c439adaae8ab3e3a414cfc55107"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d82953bbd9f2e841648eb4a768da6d598d2b023d1976056e67245295dc84adf9"
+    sha256 cellar: :any,                 arm64_golden_gate: "6ff33c0353c55e3695d33688cf654851e738cc934ea8ab99ca8a1f6689161039"
+    sha256 cellar: :any,                 arm64_tahoe:       "c7f96d1094ff2cc9da0513b16d0b0367baf7181648c7b95c18e038283cd76e0d"
+    sha256 cellar: :any,                 arm64_sequoia:     "efbaa69a0a35faffb4aea0d753dfb2b9c0d69d2b75e082da79ff3c1217f71220"
+    sha256 cellar: :any,                 arm64_sonoma:      "f83011f7c421cbb84332def855f6ec9ed8e7983f33ca6094086f3e014620ff29"
+    sha256 cellar: :any,                 sonoma:            "75da4f4a420c5f2bf1d05a57bd1709768b135c2a9d7b464e788ee07360e58546"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "9fc7e073b4e59abb66635d251ee2b38613647c439adaae8ab3e3a414cfc55107"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "d82953bbd9f2e841648eb4a768da6d598d2b023d1976056e67245295dc84adf9"
   end
 
   head do

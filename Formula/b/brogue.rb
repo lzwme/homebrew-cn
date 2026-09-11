@@ -7,12 +7,13 @@ class Brogue < Formula
   head "https://github.com/tmewett/BrogueCE.git", branch: "master"
 
   bottle do
-    sha256 arm64_tahoe:   "2858206ccd294ed6b8c3ac136a96c5f5af9815835fba94b10f2378dbff0ce44f"
-    sha256 arm64_sequoia: "dcf0b0db0bc9e3e8627f87ca35244787bbd89fe093b05327424f8655f598ab6a"
-    sha256 arm64_sonoma:  "47cdc97af85e8b775cb5b62e3e8e7ef61a4059a19d3ec063b5eb36bb22384d59"
-    sha256 sonoma:        "42ecd5fdcc6935a1fe4baad309b35a45d777ab9b59d134a47980c934f5800494"
-    sha256 arm64_linux:   "996c52eb84ffc7f2e92894ab0a12f9946cc0ff78ace6aec0b0a5926329f4c3a8"
-    sha256 x86_64_linux:  "55d19558ca6df95ac0ec02fa3c43160c4e20926948dfa9bfe0b1827c7ca53957"
+    sha256 arm64_golden_gate: "1fff33b966a31b82937a34252a8442c4e9ca6d51ff602076dcdf56d1326092d9"
+    sha256 arm64_tahoe:       "2858206ccd294ed6b8c3ac136a96c5f5af9815835fba94b10f2378dbff0ce44f"
+    sha256 arm64_sequoia:     "dcf0b0db0bc9e3e8627f87ca35244787bbd89fe093b05327424f8655f598ab6a"
+    sha256 arm64_sonoma:      "47cdc97af85e8b775cb5b62e3e8e7ef61a4059a19d3ec063b5eb36bb22384d59"
+    sha256 sonoma:            "42ecd5fdcc6935a1fe4baad309b35a45d777ab9b59d134a47980c934f5800494"
+    sha256 arm64_linux:       "996c52eb84ffc7f2e92894ab0a12f9946cc0ff78ace6aec0b0a5926329f4c3a8"
+    sha256 x86_64_linux:      "55d19558ca6df95ac0ec02fa3c43160c4e20926948dfa9bfe0b1827c7ca53957"
   end
 
   depends_on "sdl2-compat"

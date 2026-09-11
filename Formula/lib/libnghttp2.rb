@@ -15,12 +15,13 @@ class Libnghttp2 < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "76cdf4d391ad60a312d8819d3ce644791756e2116b630c3cc991c46090a76919"
-    sha256 cellar: :any, arm64_sequoia: "98443603fa19454935158d4a65c2ab53460484a72aae6a515b24743d440f8194"
-    sha256 cellar: :any, arm64_sonoma:  "8fa4b5f7c6bf865ecf4b28cf0d3b228d2ae31a5e3d67c76a71362519e058c2e8"
-    sha256 cellar: :any, sonoma:        "96b8e5005b396583f75a29f32b7b0c1fdbc06934aadcf6d1137c3ce3e63787c3"
-    sha256 cellar: :any, arm64_linux:   "4b8312e4f740fd4785c1ecb9e4f1d59947bf97642e960329e19edd647a7eb69d"
-    sha256 cellar: :any, x86_64_linux:  "d61e952b59bbf3f1662e57005807fb1ad7586c97bc33ec73d883eefe06ba29d3"
+    sha256 cellar: :any, arm64_golden_gate: "062a71baf258d528bf6c6490dded49c82469278fe8f0eba9083c2182052b6e61"
+    sha256 cellar: :any, arm64_tahoe:       "76cdf4d391ad60a312d8819d3ce644791756e2116b630c3cc991c46090a76919"
+    sha256 cellar: :any, arm64_sequoia:     "98443603fa19454935158d4a65c2ab53460484a72aae6a515b24743d440f8194"
+    sha256 cellar: :any, arm64_sonoma:      "8fa4b5f7c6bf865ecf4b28cf0d3b228d2ae31a5e3d67c76a71362519e058c2e8"
+    sha256 cellar: :any, sonoma:            "96b8e5005b396583f75a29f32b7b0c1fdbc06934aadcf6d1137c3ce3e63787c3"
+    sha256 cellar: :any, arm64_linux:       "4b8312e4f740fd4785c1ecb9e4f1d59947bf97642e960329e19edd647a7eb69d"
+    sha256 cellar: :any, x86_64_linux:      "d61e952b59bbf3f1662e57005807fb1ad7586c97bc33ec73d883eefe06ba29d3"
   end
 
   head do

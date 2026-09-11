@@ -6,6 +6,11 @@ class Cloudmonkey < Formula
   license "Apache-2.0"
   head "https://github.com/apache/cloudstack-cloudmonkey.git", branch: "main"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1490cc95342f8f115d03ce856e547208156583c9360f54210c18290fc541497d"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "1490cc95342f8f115d03ce856e547208156583c9360f54210c18290fc541497d"

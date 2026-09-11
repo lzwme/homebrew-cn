@@ -12,12 +12,13 @@ class Htslib < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "5fbfbd1e6936abb951a1035f66be1b343bddd425e8ce5e330bad96827e30208d"
-    sha256 cellar: :any, arm64_sequoia: "557f5aff701fbb5d230be31d84000508e14bace991451776d7d91358f4c0121e"
-    sha256 cellar: :any, arm64_sonoma:  "f8b2b0f9f21febb627c79195f52f8dcca98aa53614f5268947e119599a34957c"
-    sha256 cellar: :any, sonoma:        "ef7eb37986f3a176eae80679018e6d2ac1b74a40f7cdf183308a6e8c0d6ee921"
-    sha256 cellar: :any, arm64_linux:   "e0eac6114c0301bd47d94fda21c2e9b95212f919987ca33a83db7f528a906755"
-    sha256 cellar: :any, x86_64_linux:  "f23d948a57a9dc4ef393ac5ef1c698897ffe49cf5f79aaf115e9353141993f47"
+    sha256 cellar: :any, arm64_golden_gate: "67bba09057c483a745d86ee1ca91ab239bfb51572d5bda136b0b3f5c69eaf311"
+    sha256 cellar: :any, arm64_tahoe:       "5fbfbd1e6936abb951a1035f66be1b343bddd425e8ce5e330bad96827e30208d"
+    sha256 cellar: :any, arm64_sequoia:     "557f5aff701fbb5d230be31d84000508e14bace991451776d7d91358f4c0121e"
+    sha256 cellar: :any, arm64_sonoma:      "f8b2b0f9f21febb627c79195f52f8dcca98aa53614f5268947e119599a34957c"
+    sha256 cellar: :any, sonoma:            "ef7eb37986f3a176eae80679018e6d2ac1b74a40f7cdf183308a6e8c0d6ee921"
+    sha256 cellar: :any, arm64_linux:       "e0eac6114c0301bd47d94fda21c2e9b95212f919987ca33a83db7f528a906755"
+    sha256 cellar: :any, x86_64_linux:      "f23d948a57a9dc4ef393ac5ef1c698897ffe49cf5f79aaf115e9353141993f47"
   end
 
   depends_on "libdeflate"

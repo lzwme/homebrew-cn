@@ -1,18 +1,17 @@
 class ConsulTemplate < Formula
   desc "Generic template rendering and notifications with Consul"
   homepage "https://github.com/hashicorp/consul-template"
-  url "https://ghfast.top/https://github.com/hashicorp/consul-template/archive/refs/tags/v0.42.1.tar.gz"
-  sha256 "def64b66c47dd38d98e37bfa1b571584ed9ab5f98be0dce09304c68b7ac966eb"
+  url "https://ghfast.top/https://github.com/hashicorp/consul-template/archive/refs/tags/v0.43.0.tar.gz"
+  sha256 "95b2f441437ceafb8dadea03aa62589d78fd03d0dc31005cf51d4042c3d6fe74"
   license "MPL-2.0"
   head "https://github.com/hashicorp/consul-template.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "02da24d920a13464b0142d8ef17df9d4e75e112afc50a611500b130e6b8bb164"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "02da24d920a13464b0142d8ef17df9d4e75e112afc50a611500b130e6b8bb164"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "02da24d920a13464b0142d8ef17df9d4e75e112afc50a611500b130e6b8bb164"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e038887669083dc2a0f7268c84d20d016ba640215a22b6f6fd5f8aaff82f6701"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "eb718561d35e494246dcf5543235b4a8aa9900d54309854b9237b66f7c905dfd"
-    sha256 cellar: :any,                 x86_64_linux:  "87e62e697cb123d62e2d81b28eb20e9bf28bd691d069660c2408567bace3a79a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e564daf656a0e04d0d13d54e936b0875a6b897628e31fad80be8ba0bcc75c5dd"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e564daf656a0e04d0d13d54e936b0875a6b897628e31fad80be8ba0bcc75c5dd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e564daf656a0e04d0d13d54e936b0875a6b897628e31fad80be8ba0bcc75c5dd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "64fe32e5524311f94fa66b75abe95fb324b31891f561c1f898a1efd8b88504e5"
+    sha256 cellar: :any,                 x86_64_linux:  "23bb9614d7b94383117f4b699fe7e13a9df101c9383213c2f624aa520ce66d7e"
   end
 
   depends_on "go" => :build

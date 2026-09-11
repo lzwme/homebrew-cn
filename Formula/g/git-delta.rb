@@ -7,12 +7,13 @@ class GitDelta < Formula
   compatibility_version 1
   head "https://github.com/dandavison/delta.git", branch: "main"
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "c35e06abe0161e57beb2d763cb43ce0beccf024613dbcfb92b31a39093b3397d"
-    sha256 cellar: :any,                 arm64_sequoia: "b45a48b049ca24a824a3f870a467412e3119dac4746f1c13443082bac9d9895f"
-    sha256 cellar: :any,                 arm64_sonoma:  "fa7ed02ac2fcbed7247f3fc58012c5e7cafdc609a849cd4295529c750a5b7df7"
-    sha256 cellar: :any,                 sonoma:        "f0aba2898cd9d587f33b330905c621c75e9230ba27f0ed249d0860fd3f641e46"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "622e704b1cfc9f303fabce8859215b32ce6871e30efbd7da80084709afa0d48c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4ef78e0c387f35781bb09dcbbadee5d2d10c7b21f00e6107962d1843fac73a5a"
+    sha256 cellar: :any,                 arm64_golden_gate: "e2852c91999ccb70a6d8ae54d354448147f16a1a3078a745a64401fa9e06358d"
+    sha256 cellar: :any,                 arm64_tahoe:       "c35e06abe0161e57beb2d763cb43ce0beccf024613dbcfb92b31a39093b3397d"
+    sha256 cellar: :any,                 arm64_sequoia:     "b45a48b049ca24a824a3f870a467412e3119dac4746f1c13443082bac9d9895f"
+    sha256 cellar: :any,                 arm64_sonoma:      "fa7ed02ac2fcbed7247f3fc58012c5e7cafdc609a849cd4295529c750a5b7df7"
+    sha256 cellar: :any,                 sonoma:            "f0aba2898cd9d587f33b330905c621c75e9230ba27f0ed249d0860fd3f641e46"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "622e704b1cfc9f303fabce8859215b32ce6871e30efbd7da80084709afa0d48c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "4ef78e0c387f35781bb09dcbbadee5d2d10c7b21f00e6107962d1843fac73a5a"
   end
 
   depends_on "pkgconf" => :build

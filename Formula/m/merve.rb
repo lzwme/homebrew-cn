@@ -7,12 +7,13 @@ class Merve < Formula
   revision 2
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "10e51d2bb647448560a8100eb9ec8d92c514fe04d5ede26cef9555c40de0a663"
-    sha256 cellar: :any, arm64_sequoia: "574ecf671b017f29897d390cfcd61d22377e24a8bbdcd24afb6a2fe9cdec859c"
-    sha256 cellar: :any, arm64_sonoma:  "75ac946ad847967ea3a50c4bdd6e406ee9e2b6f765353c6e1cb5fdc9db3bd5b6"
-    sha256 cellar: :any, sonoma:        "f9a04ff6b6000b4b343ef47697be850a772a7e6c4d6b839347cbd99ca4ff2578"
-    sha256 cellar: :any, arm64_linux:   "d0f9f279d12c8bbf40dd5274fce79be027ece0bc4dd800b6ba06d9962e45d2e9"
-    sha256 cellar: :any, x86_64_linux:  "20e38bce532a9553a8521da8f52c0de05fa336e632404438cbd05fd6a58ae07b"
+    sha256 cellar: :any, arm64_golden_gate: "e15982082ec3dbea24d9d18b6d8071f115b4f80ccdd2ed3a8639ed7c69f65b85"
+    sha256 cellar: :any, arm64_tahoe:       "10e51d2bb647448560a8100eb9ec8d92c514fe04d5ede26cef9555c40de0a663"
+    sha256 cellar: :any, arm64_sequoia:     "574ecf671b017f29897d390cfcd61d22377e24a8bbdcd24afb6a2fe9cdec859c"
+    sha256 cellar: :any, arm64_sonoma:      "75ac946ad847967ea3a50c4bdd6e406ee9e2b6f765353c6e1cb5fdc9db3bd5b6"
+    sha256 cellar: :any, sonoma:            "f9a04ff6b6000b4b343ef47697be850a772a7e6c4d6b839347cbd99ca4ff2578"
+    sha256 cellar: :any, arm64_linux:       "d0f9f279d12c8bbf40dd5274fce79be027ece0bc4dd800b6ba06d9962e45d2e9"
+    sha256 cellar: :any, x86_64_linux:      "20e38bce532a9553a8521da8f52c0de05fa336e632404438cbd05fd6a58ae07b"
   end
 
   depends_on "cmake" => :build

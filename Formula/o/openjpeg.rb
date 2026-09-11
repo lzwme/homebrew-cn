@@ -8,12 +8,13 @@ class Openjpeg < Formula
   head "https://github.com/uclouvain/openjpeg.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "e9becf9b440b08fd771dbaa75d4f5b06a49119f9ce163e6ad08f272f4f3b9c9d"
-    sha256 cellar: :any,                 arm64_sequoia: "8e3ac331458daccf876225a4236bad7d28689ea197c6bb7d2640ec47d78a510d"
-    sha256 cellar: :any,                 arm64_sonoma:  "0eff9d5aae88cd27eaaedb4a4f56804ae14c4ed9df1c856846ff81ebc3dcb4c2"
-    sha256 cellar: :any,                 sonoma:        "29b22e2c699765b32b3511f65bd87f6860d6bbf5f5f75e3b3ed5e268f6a547bb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b570231cdd2898452318819d0dc97662145a463e0ba3162a113163e0f0066e2e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ea1906cdeecd5edc87703596cc084dc305834b030af3847a8520f9eb8566eb1e"
+    sha256 cellar: :any,                 arm64_golden_gate: "5458ec149fc1a3252192e4da2caea1af63f862cfcabec35526f9b7c386436444"
+    sha256 cellar: :any,                 arm64_tahoe:       "e9becf9b440b08fd771dbaa75d4f5b06a49119f9ce163e6ad08f272f4f3b9c9d"
+    sha256 cellar: :any,                 arm64_sequoia:     "8e3ac331458daccf876225a4236bad7d28689ea197c6bb7d2640ec47d78a510d"
+    sha256 cellar: :any,                 arm64_sonoma:      "0eff9d5aae88cd27eaaedb4a4f56804ae14c4ed9df1c856846ff81ebc3dcb4c2"
+    sha256 cellar: :any,                 sonoma:            "29b22e2c699765b32b3511f65bd87f6860d6bbf5f5f75e3b3ed5e268f6a547bb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "b570231cdd2898452318819d0dc97662145a463e0ba3162a113163e0f0066e2e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "ea1906cdeecd5edc87703596cc084dc305834b030af3847a8520f9eb8566eb1e"
   end
 
   depends_on "cmake" => :build

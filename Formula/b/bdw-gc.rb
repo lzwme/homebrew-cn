@@ -16,12 +16,13 @@ class BdwGc < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "31d372ffb4bcce22e9871a81aeba2864f2233a9050b4f326deafdfbb31d21a58"
-    sha256 cellar: :any,                 arm64_sequoia: "4946f5bffaceac9224502320f941350ab5301293e876d947d57926468b880941"
-    sha256 cellar: :any,                 arm64_sonoma:  "353aac395e4812b85c6afcf7e22ae333bfa672737aff93dc68eef3a81feb4ebd"
-    sha256 cellar: :any,                 sonoma:        "0bbf5a3924c6e7ffcdca91a2d3bd2569d918ae0c97ac7cc5caaa948dc881d106"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c2db694f39b6f10d361221b3a8641152bac1a50624e120c4f4e8755efc3cdaef"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bd45675d8ded697e19ec009c1d6ad2848e6a28af0c2ff26cd41222f9627cd411"
+    sha256 cellar: :any,                 arm64_golden_gate: "6f1f7643a4ad32fe2b43522091c9cee8663d8a326fedaa5a7e86871a03de0303"
+    sha256 cellar: :any,                 arm64_tahoe:       "31d372ffb4bcce22e9871a81aeba2864f2233a9050b4f326deafdfbb31d21a58"
+    sha256 cellar: :any,                 arm64_sequoia:     "4946f5bffaceac9224502320f941350ab5301293e876d947d57926468b880941"
+    sha256 cellar: :any,                 arm64_sonoma:      "353aac395e4812b85c6afcf7e22ae333bfa672737aff93dc68eef3a81feb4ebd"
+    sha256 cellar: :any,                 sonoma:            "0bbf5a3924c6e7ffcdca91a2d3bd2569d918ae0c97ac7cc5caaa948dc881d106"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "c2db694f39b6f10d361221b3a8641152bac1a50624e120c4f4e8755efc3cdaef"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "bd45675d8ded697e19ec009c1d6ad2848e6a28af0c2ff26cd41222f9627cd411"
   end
 
   depends_on "cmake" => :build

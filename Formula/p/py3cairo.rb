@@ -7,12 +7,13 @@ class Py3cairo < Formula
   compatibility_version 1
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "bb4b42d1a1057e84108f383e0d72955f7cf5975fb6897910cc181dccc8167180"
-    sha256 cellar: :any, arm64_sequoia: "a5992328b8e630888b26f3c533e4c754f8ca33097ab46c7dce1fcb3501731d8f"
-    sha256 cellar: :any, arm64_sonoma:  "837aee600bfaf857f7131c7e1deadcccccf596182451f08a0fcc543a563aa83a"
-    sha256 cellar: :any, sonoma:        "a6752508c41efaee1a23746104268ca56be9566933fab10e66b18d7871ea29ba"
-    sha256               arm64_linux:   "a526357a59d85808fdfae0eb7b89d0bddaa9d07b994f38a695fceb122b82ed57"
-    sha256               x86_64_linux:  "2329cc38ce7645d0be9da6ce8c153039b6b960099baaa73617f93ce0b2043a61"
+    sha256 cellar: :any, arm64_golden_gate: "a14d5948203f6ed71e367657eee9d071241aa5d9bf748e3036db513197fe60a9"
+    sha256 cellar: :any, arm64_tahoe:       "bb4b42d1a1057e84108f383e0d72955f7cf5975fb6897910cc181dccc8167180"
+    sha256 cellar: :any, arm64_sequoia:     "a5992328b8e630888b26f3c533e4c754f8ca33097ab46c7dce1fcb3501731d8f"
+    sha256 cellar: :any, arm64_sonoma:      "837aee600bfaf857f7131c7e1deadcccccf596182451f08a0fcc543a563aa83a"
+    sha256 cellar: :any, sonoma:            "a6752508c41efaee1a23746104268ca56be9566933fab10e66b18d7871ea29ba"
+    sha256               arm64_linux:       "a526357a59d85808fdfae0eb7b89d0bddaa9d07b994f38a695fceb122b82ed57"
+    sha256               x86_64_linux:      "2329cc38ce7645d0be9da6ce8c153039b6b960099baaa73617f93ce0b2043a61"
   end
 
   depends_on "meson" => :build

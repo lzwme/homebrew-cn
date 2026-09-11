@@ -16,11 +16,12 @@ class Gmp < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "fa46330de5d003bd9294ae042c8f4ae0a51bcb8c57de2c94c073ff4a7ffa10c3"
-    sha256 cellar: :any, arm64_sequoia: "b30bf31c50c294e0981d2a7cb4c149e9c43f50f3cf4f7f552c3dcf9da66b95b5"
-    sha256 cellar: :any, arm64_sonoma:  "3ea4034c547217e84019dada2669c1f2cd4a44a1cf094ad4881ff525713077c5"
-    sha256 cellar: :any, arm64_linux:   "6647e78fa0031ae48458496a4c46dee645fa8f8dda44d35f3a095627590e77b1"
-    sha256 cellar: :any, x86_64_linux:  "0cb5dc6f783367a97202b5fd53e8f61a6024c5cfa075cf81aee15c05772ee9f3"
+    sha256 cellar: :any, arm64_golden_gate: "5116a8201d8e044aef7d486da7e57f1e4dd2d8554ea6b540b44e45c0804f8f6f"
+    sha256 cellar: :any, arm64_tahoe:       "fa46330de5d003bd9294ae042c8f4ae0a51bcb8c57de2c94c073ff4a7ffa10c3"
+    sha256 cellar: :any, arm64_sequoia:     "b30bf31c50c294e0981d2a7cb4c149e9c43f50f3cf4f7f552c3dcf9da66b95b5"
+    sha256 cellar: :any, arm64_sonoma:      "3ea4034c547217e84019dada2669c1f2cd4a44a1cf094ad4881ff525713077c5"
+    sha256 cellar: :any, arm64_linux:       "6647e78fa0031ae48458496a4c46dee645fa8f8dda44d35f3a095627590e77b1"
+    sha256 cellar: :any, x86_64_linux:      "0cb5dc6f783367a97202b5fd53e8f61a6024c5cfa075cf81aee15c05772ee9f3"
   end
 
   depends_on "autoconf" => :build

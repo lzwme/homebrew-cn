@@ -13,11 +13,12 @@ class Mujs < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "a74e150e1d09521e6105a443d5587ac33bf2ca3cac25390125ce6484bd4869b9"
-    sha256 cellar: :any, arm64_sequoia: "94b16a3d68483ee7257762d0ca37b30ba8c4437322047388b03840fe74dba305"
-    sha256 cellar: :any, arm64_sonoma:  "80859443a49f4fde57750b0bbfd4c143fe693ae0b4db8120f54ff320dae27baf"
-    sha256 cellar: :any, arm64_linux:   "b9acde876f72f8db40e2106fe863a8ed67dea2f789ea3707ae03f1cf0100763d"
-    sha256 cellar: :any, x86_64_linux:  "04c0e0954cc1634cfc55c73d4ee4d458a4a0a6a96ea87dfe61070dcba1f5e5f8"
+    sha256 cellar: :any, arm64_golden_gate: "f09cd6a5e4c656b9e5ec9d2545d3915ab87a2096bb1b8639af77b58681c49498"
+    sha256 cellar: :any, arm64_tahoe:       "a74e150e1d09521e6105a443d5587ac33bf2ca3cac25390125ce6484bd4869b9"
+    sha256 cellar: :any, arm64_sequoia:     "94b16a3d68483ee7257762d0ca37b30ba8c4437322047388b03840fe74dba305"
+    sha256 cellar: :any, arm64_sonoma:      "80859443a49f4fde57750b0bbfd4c143fe693ae0b4db8120f54ff320dae27baf"
+    sha256 cellar: :any, arm64_linux:       "b9acde876f72f8db40e2106fe863a8ed67dea2f789ea3707ae03f1cf0100763d"
+    sha256 cellar: :any, x86_64_linux:      "04c0e0954cc1634cfc55c73d4ee4d458a4a0a6a96ea87dfe61070dcba1f5e5f8"
   end
 
   depends_on "pkgconf" => :test

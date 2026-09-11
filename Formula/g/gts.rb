@@ -7,18 +7,12 @@ class Gts < Formula
   revision 3
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:    "1a940ea785d016728373922b4b02ed3d40f3abf4da34cc29c671446eada28d59"
-    sha256 cellar: :any,                 arm64_sequoia:  "b93bb9f091fbf2d25c99437f8ef0dc0e40f680fe445b968cf952d2d067417ebb"
-    sha256 cellar: :any,                 arm64_sonoma:   "45ce1fc7fc4da58e808c6d11bd19a17c35bed97719b63e2572b22ff6bd417aac"
-    sha256 cellar: :any,                 arm64_ventura:  "de8259a24624223ddab38d0e1482ec9f055ddfacc353fb0290d127919e509cf1"
-    sha256 cellar: :any,                 arm64_monterey: "8bedf36ac77f7998ea926904efe011d52086e67f9901c1a64cda7e8013f7bc07"
-    sha256 cellar: :any,                 arm64_big_sur:  "ed540825164e099f8f1c9719fada2d186a3f9b9ee10279ad4f2dac658bc68cb8"
-    sha256 cellar: :any,                 sonoma:         "63d06518c5c1da686ecf76d612b7717bc021d8c19a6470a21ec1f69020fe1dac"
-    sha256 cellar: :any,                 ventura:        "946d3f08c41e94c2861e555358fd152df7c069ad8a2a7f621b64b55cfb8ceffb"
-    sha256 cellar: :any,                 monterey:       "3800de79b45b9a5736b9ecd9d48b2ab2935d74cbe57e308eeed2ddb2e07a08e1"
-    sha256 cellar: :any,                 big_sur:        "486a4d3b428e12daf5573a21d60371b4cd1f9e1c7e3b14c7d2d1c0a3bea58524"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "b822bc2eb7de37c9497056021cca4397053d11bfafc980820766bcdced8daff5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4c6bb3e3859bee6f8b113a08d7d158a19ef46ec307073fac12c90c4a0113f69e"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "ea98acbd02ff7364565d0b1f73375b21ecca38648ea53341945a570437e2fca6"
+    sha256 cellar: :any, arm64_tahoe:       "ce2913388e26ca0509df2504cc4db13b6855075d734f0b4757f5b592ccfa01c1"
+    sha256 cellar: :any, arm64_sequoia:     "ec1d22e070fdbc6ddddbb3689f745218f6fd8b0c4ad25706cea9abc10381f76d"
+    sha256 cellar: :any, arm64_linux:       "b943b311e50ceb20188b9e7214b374c6d1064ab9ef31e2722e71c3d675d8fa97"
+    sha256 cellar: :any, x86_64_linux:      "49f026fbc5f1a7dfb651f350fad3f3fedfd72c04f385340b9f713753131fe597"
   end
 
   # We regenerate configure to avoid the `-flat_namespace` flag.
@@ -40,6 +34,9 @@ class Gts < Formula
   patch :DATA
 
   def install
+    # GTS uses K&R function definitions, which C23 no longer supports.
+    ENV.append "CFLAGS", "-std=gnu17"
+
     # The `configure` passes `-flat_namespace` but none of our usual patches apply.
     system "autoreconf", "--force", "--install", "--verbose"
     system "./configure", *std_configure_args

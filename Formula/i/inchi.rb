@@ -6,12 +6,13 @@ class Inchi < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "36ab60238ffc83ddc7aa58a661188e3f9b9754f07230054f1c3790edab2828d2"
-    sha256 cellar: :any,                 arm64_sequoia: "b423e478cc6264757fbed783be94a094714413c9d5f5c06362bd48a3ed0c315c"
-    sha256 cellar: :any,                 arm64_sonoma:  "f9d1fd60654c8e799a71e0b117d96e55d741a8463fc29174efba38602c5a7cb0"
-    sha256 cellar: :any,                 sonoma:        "aeca4d3b690cacc926624780cb29f169800768618eca1391bfff5c17eee538f4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5e03338ca5b5c1ec627a44ce27fd4951d7aadbc0d879f5820935a7a62ff6d5e0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "080691ff983ce9cd7d7953f6b370be348aec2ae51239ceecc16178b122e5504a"
+    sha256 cellar: :any,                 arm64_golden_gate: "980c4eaad2db4db01ab61f57e4f28500bdd6a614344d2fa3cbc4c98a843c0145"
+    sha256 cellar: :any,                 arm64_tahoe:       "36ab60238ffc83ddc7aa58a661188e3f9b9754f07230054f1c3790edab2828d2"
+    sha256 cellar: :any,                 arm64_sequoia:     "b423e478cc6264757fbed783be94a094714413c9d5f5c06362bd48a3ed0c315c"
+    sha256 cellar: :any,                 arm64_sonoma:      "f9d1fd60654c8e799a71e0b117d96e55d741a8463fc29174efba38602c5a7cb0"
+    sha256 cellar: :any,                 sonoma:            "aeca4d3b690cacc926624780cb29f169800768618eca1391bfff5c17eee538f4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "5e03338ca5b5c1ec627a44ce27fd4951d7aadbc0d879f5820935a7a62ff6d5e0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "080691ff983ce9cd7d7953f6b370be348aec2ae51239ceecc16178b122e5504a"
   end
 
   depends_on "cmake" => :build

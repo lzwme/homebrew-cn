@@ -3,19 +3,17 @@ class Standardebooks < Formula
 
   desc "Tools for producing ebook files"
   homepage "https://github.com/standardebooks/tools"
-  url "https://files.pythonhosted.org/packages/7c/ca/eae22e8de1890edd7f05ffa6141452530b68c9666be6306f0bef5e743833/standardebooks-4.0.3.tar.gz"
-  sha256 "e1e5a35b6281106406cb12ff31317a2034e3d44c3a5b53064bd83ec2fac7353b"
+  url "https://files.pythonhosted.org/packages/42/bc/3c0e51153c754f63f4db92517fced1ea34972185c6b8432443e408d161d6/standardebooks-4.1.0.tar.gz"
+  sha256 "84883e47e404e9c6fe323a3710f402c9537aa61d59850bae4f365482a5e11a7f"
   license "GPL-3.0-or-later"
   head "https://github.com/standardebooks/tools.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "948ec2483d7fe40e771295eaecc695aa009ee0c9ee10632342ac14ce30814c60"
-    sha256 cellar: :any, arm64_sequoia: "8f3fd768a7c3aaaf7d3759fbaa0ccaba1cd57235883b896a187d7b50d118f806"
-    sha256 cellar: :any, arm64_sonoma:  "a2a1a0f5b868516ffa61c4c8d62e073d881fe2d6f72df5d9f146e764cc91dc0e"
-    sha256 cellar: :any, sonoma:        "ba8127558aa15ac18731c3b7ccae14243903ccbe6b4f1cfc85e6e23bdbb00a96"
-    sha256 cellar: :any, arm64_linux:   "19ee70ca46f0d0b3ad853d6eb4fe41f7c55650141e583b6732c5c4387859cad9"
-    sha256 cellar: :any, x86_64_linux:  "e1875b05d017273beff48250bdf1f485695cae3e5b7d6e6e4f8fb300d0d0e5f9"
+    sha256 cellar: :any, arm64_tahoe:   "e26633a3a15a50783331c9632ba33716b17e17433dcb45b1d6974674f7ebe704"
+    sha256 cellar: :any, arm64_sequoia: "1cad71ecf78126a7290ebd79380f191c085e2d25ea83e1b54d7298fa06813e25"
+    sha256 cellar: :any, arm64_sonoma:  "7706bbbbcd0414fc2d62fe98f07be0e4e3e0abef82e140f863602e57a8b7063b"
+    sha256 cellar: :any, arm64_linux:   "ab9ae4dd4e736806ea75e0702762b2aae517b8814331f704a3a7e3f609f36ab4"
+    sha256 cellar: :any, x86_64_linux:  "df38e0c135778c9d63c06ea0319e0ba54c0af53cca808d439221699578b14473"
   end
 
   depends_on "rust" => :build # for selenium
@@ -57,8 +55,8 @@ class Standardebooks < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/bd/2a/23f34ec9d04624958e137efdc394888716353190e75f25dd22c7a2c7a8aa/charset_normalizer-3.4.9.tar.gz"
-    sha256 "673611bbd43f0810bec0b0f028ddeaaa501190339cac411f347ac76917c3ae7b"
+    url "https://files.pythonhosted.org/packages/e5/3f/143b048436775b0f76ac3eec145c019e8173ccc2885c8f20319b996d5e83/charset_normalizer-3.5.1.tar.gz"
+    sha256 "6117b84ea48435e5356dc737f5121485c30920ba43375fa7b434fd753df0eac3"
   end
 
   resource "cssselect" do
@@ -67,8 +65,8 @@ class Standardebooks < Formula
   end
 
   resource "cssselect2" do
-    url "https://files.pythonhosted.org/packages/e0/20/92eaa6b0aec7189fa4b75c890640e076e9e793095721db69c5c81142c2e1/cssselect2-0.9.0.tar.gz"
-    sha256 "759aa22c216326356f65e62e791d66160a0f9c91d1424e8d8adc5e74dddfc6fb"
+    url "https://files.pythonhosted.org/packages/06/00/2456b6b664c7a770989cbe3c352aac4eb962c938486f03a2e1255ae963c6/cssselect2-0.10.1.tar.gz"
+    sha256 "83b0d820ef589dabaf693289b647c2f5b410f76d285f56deba911ffa75a7b9d1"
   end
 
   resource "cssutils" do
@@ -97,8 +95,8 @@ class Standardebooks < Formula
   end
 
   resource "gitpython" do
-    url "https://files.pythonhosted.org/packages/5e/d5/3da0b92033887033f4c27f2dd109a303c4ca62813c7b3bb2511edb4777de/gitpython-3.1.54.tar.gz"
-    sha256 "53f2085e24a2cda300eed7c3fc5f1559ae289634b725e98acaf4791940247aa0"
+    url "https://files.pythonhosted.org/packages/ca/dc/126b28e76b24a9268ba931ad3e012f71ebdadf62fd9f17758f7074bb0b20/gitpython-3.1.59.tar.gz"
+    sha256 "0a1475cfdc38a5bfba1a3e9a4a9da52a39749ecec322b772915c019f94e5b7e4"
   end
 
   resource "h11" do
@@ -107,8 +105,8 @@ class Standardebooks < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/cd/63/9496c57188a2ee585e0f1db071d75089a11e98aa86eb99d9d7618fc1edce/idna-3.18.tar.gz"
-    sha256 "ffb385a7e039654cef1ab9ef32c6fafe283c0c0467bba1d9029738ce4a14a848"
+    url "https://files.pythonhosted.org/packages/5f/f7/abb373e5757eaec4b922b92f97ec8d6d7e057cf06778247604fbc4e7c3f3/idna-3.19.tar.gz"
+    sha256 "5e0811a4383b21dc5838069f801c4fb62113b7447663d2530d2bd6e77b49bf15"
   end
 
   resource "installed-browsers" do
@@ -157,8 +155,8 @@ class Standardebooks < Formula
   end
 
   resource "pygments" do
-    url "https://files.pythonhosted.org/packages/c3/b2/bc9c9196916376152d655522fdcebac55e66de6603a76a02bca1b6414f6c/pygments-2.20.0.tar.gz"
-    sha256 "6757cd03768053ff99f3039c1a36d6c0aa0b263438fcab17520b30a303a82b5f"
+    url "https://files.pythonhosted.org/packages/49/2e/ced460408999b33da6b31b0021b0f37d329e202d4169aeb164493778f25b/pygments-2.21.0.tar.gz"
+    sha256 "610ca751c9bc2492b38eb9a38a7fbc93edbbb2d7182edaf34e66ae493dee5c8c"
   end
 
   resource "pyphen" do
@@ -242,8 +240,8 @@ class Standardebooks < Formula
   end
 
   resource "trio" do
-    url "https://files.pythonhosted.org/packages/52/b6/c744031c6f89b18b3f5f4f7338603ab381d740a7f45938c4607b2302481f/trio-0.33.0.tar.gz"
-    sha256 "a29b92b73f09d4b48ed249acd91073281a7f1063f09caba5dc70465b5c7aa970"
+    url "https://files.pythonhosted.org/packages/92/dc/a2d25ed73ad49cfd79bf18d262577c3731c98e382284e28d522f49a0df35/trio-0.34.0.tar.gz"
+    sha256 "63b9485408bdfdde544fced107045a8c0086cdc4bd0ef2f797b9e0dd111b964b"
   end
 
   resource "trio-websocket" do
@@ -267,18 +265,18 @@ class Standardebooks < Formula
   end
 
   resource "wcwidth" do
-    url "https://files.pythonhosted.org/packages/34/74/c6428f875774288bec1396f5bfcbc2d925700a4dad61727fd5f2b12f249d/wcwidth-0.8.2.tar.gz"
-    sha256 "91fbef97204b96a3d4d421609b80340b760cf33e26da123ff243d76b1fda8dda"
+    url "https://files.pythonhosted.org/packages/36/57/ed58088fafdf4c55a0ad6bde846502567645424d7ebf325230b9237f4085/wcwidth-0.8.3.tar.gz"
+    sha256 "d128512515fbf4612e0ff21fd6380399210318b7b54a9af59dff8454cf9730eb"
   end
 
   resource "webencodings" do
-    url "https://files.pythonhosted.org/packages/0b/02/ae6ceac1baeda530866a85075641cec12989bd8d31af6d5ab4a3e8c92f47/webencodings-0.5.1.tar.gz"
-    sha256 "b36a1c245f2d304965eb4e0a82848379241dc04b865afcc4aab16748587e1923"
+    url "https://files.pythonhosted.org/packages/d5/a0/8fd707bcb776a7be556bad06a2ea5fb9bd519df78ef8e26f70ccf0f38bff/webencodings-0.6.1.tar.gz"
+    sha256 "565f9ad031c702dae404e27a099e3e09186a3ab1b9520f06d215502b651fd910"
   end
 
   resource "websocket-client" do
-    url "https://files.pythonhosted.org/packages/2c/41/aa4bf9664e4cda14c3b39865b12251e8e7d239f4cd0e3cc1b6c2ccde25c1/websocket_client-1.9.0.tar.gz"
-    sha256 "9e813624b6eb619999a97dc7958469217c3176312b3a16a4bd1bc7e08a46ec98"
+    url "https://files.pythonhosted.org/packages/d8/cb/a5abcc2891249f393827c650c6296660ce40374ac22d99ab9aea41f9d2a2/websocket_client-1.9.2.tar.gz"
+    sha256 "0fcb57545848be86992e128218fd96dd87a6769ffdb1a968dff79632b85604d0"
   end
 
   resource "wsproto" do

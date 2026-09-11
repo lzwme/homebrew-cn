@@ -13,12 +13,13 @@ class Argtable3 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "81744f4898904ac8875efc23088a93fe96a5a2a006e38c8c0d85c4829191a79e"
-    sha256 cellar: :any,                 arm64_sequoia: "10573b21ace23e3660cf5377e121b52359f70553e819ea2a0b0557550d01552d"
-    sha256 cellar: :any,                 arm64_sonoma:  "ac1030006031bf18e5203703e907eacade6f3dfca5090185ef3c7d09cb88c92d"
-    sha256 cellar: :any,                 sonoma:        "cf6d9f2e1097682bed94e5d18749fd68707f108c3faf8536fbcbfdd5a6479331"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1cb5824b74df9c9d01460afcb252e9812d4365e4e5135e10248d24e9dba3546d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ec7221f8528359814a9f3a6eb20b7d8b53677edb6f97fddd6ca64371b9c1dda8"
+    sha256 cellar: :any,                 arm64_golden_gate: "3508cd8229c57d59f599c6b3d7aa0a0c17db405733c529e2abace1ab97d44410"
+    sha256 cellar: :any,                 arm64_tahoe:       "81744f4898904ac8875efc23088a93fe96a5a2a006e38c8c0d85c4829191a79e"
+    sha256 cellar: :any,                 arm64_sequoia:     "10573b21ace23e3660cf5377e121b52359f70553e819ea2a0b0557550d01552d"
+    sha256 cellar: :any,                 arm64_sonoma:      "ac1030006031bf18e5203703e907eacade6f3dfca5090185ef3c7d09cb88c92d"
+    sha256 cellar: :any,                 sonoma:            "cf6d9f2e1097682bed94e5d18749fd68707f108c3faf8536fbcbfdd5a6479331"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "1cb5824b74df9c9d01460afcb252e9812d4365e4e5135e10248d24e9dba3546d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "ec7221f8528359814a9f3a6eb20b7d8b53677edb6f97fddd6ca64371b9c1dda8"
   end
 
   depends_on "cmake" => :build

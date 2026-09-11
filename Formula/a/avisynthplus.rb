@@ -12,12 +12,13 @@ class Avisynthplus < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "8a80b4e719e788150160e0585e719b89f55c92f726d0250dfbf2390455207dbe"
-    sha256 arm64_sequoia: "2c452d3b25bba973f1e8ff57d85af94489c177639f0e9eb1bc5f966622ec80d1"
-    sha256 arm64_sonoma:  "0f17831e53889ceda0a5bf4878c14c3fb8896795a97ede0d09ea38f6e36cc1cb"
-    sha256 sonoma:        "a5df0ec857a195ec9c86189880b58341b1a1a90fe1aa4401239171b4646eac84"
-    sha256 arm64_linux:   "77b0a83a30fe2e3e1c3fc115d658fc9e9776fe70362f50ca27f33182704e8857"
-    sha256 x86_64_linux:  "e8849de05a2acd980696ef8f508cbec84d0d9ca30c7499b8bf31005b827c8f0c"
+    sha256 arm64_golden_gate: "2be8629d4219f7095639493e709b199cc5440cee86d7eda30160ff23d69cc5f2"
+    sha256 arm64_tahoe:       "8a80b4e719e788150160e0585e719b89f55c92f726d0250dfbf2390455207dbe"
+    sha256 arm64_sequoia:     "2c452d3b25bba973f1e8ff57d85af94489c177639f0e9eb1bc5f966622ec80d1"
+    sha256 arm64_sonoma:      "0f17831e53889ceda0a5bf4878c14c3fb8896795a97ede0d09ea38f6e36cc1cb"
+    sha256 sonoma:            "a5df0ec857a195ec9c86189880b58341b1a1a90fe1aa4401239171b4646eac84"
+    sha256 arm64_linux:       "77b0a83a30fe2e3e1c3fc115d658fc9e9776fe70362f50ca27f33182704e8857"
+    sha256 x86_64_linux:      "e8849de05a2acd980696ef8f508cbec84d0d9ca30c7499b8bf31005b827c8f0c"
   end
 
   depends_on "cmake" => :build

@@ -10,12 +10,13 @@ class YelpTools < Formula
   revision 3
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "0a3f9404c8d97b4e5bf674a6a412a4d0ebe70264cf7d3e1f2bc7457d4ec50105"
-    sha256 cellar: :any,                 arm64_sequoia: "a9cb317bc7a4ab248246e110c4fe84a545497a03ca03e22bbd9149a5d5fcc997"
-    sha256 cellar: :any,                 arm64_sonoma:  "64dc7141411fd67c7fadf810871698084a38550d98f0434e95b4e5567f43ad8e"
-    sha256 cellar: :any,                 sonoma:        "0e0d0165ca19b4bc03d8907462d3b7204c3763eaee291bb49236dd33bf98e20b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0ade5f26615b99ea03312c681075265f29020713ad10f928205ac354d30bbd8a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8b46a9066e4361ba000c17ddc5b05e5016432dd6576c7ad3cd4e369af635f5fa"
+    sha256 cellar: :any,                 arm64_golden_gate: "cf1f178117fd252a7aa56d03e4579b315e300824ec2cfb7fcb4ddd1e106e06a7"
+    sha256 cellar: :any,                 arm64_tahoe:       "0a3f9404c8d97b4e5bf674a6a412a4d0ebe70264cf7d3e1f2bc7457d4ec50105"
+    sha256 cellar: :any,                 arm64_sequoia:     "a9cb317bc7a4ab248246e110c4fe84a545497a03ca03e22bbd9149a5d5fcc997"
+    sha256 cellar: :any,                 arm64_sonoma:      "64dc7141411fd67c7fadf810871698084a38550d98f0434e95b4e5567f43ad8e"
+    sha256 cellar: :any,                 sonoma:            "0e0d0165ca19b4bc03d8907462d3b7204c3763eaee291bb49236dd33bf98e20b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "0ade5f26615b99ea03312c681075265f29020713ad10f928205ac354d30bbd8a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "8b46a9066e4361ba000c17ddc5b05e5016432dd6576c7ad3cd4e369af635f5fa"
   end
 
   depends_on "meson" => :build

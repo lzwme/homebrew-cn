@@ -7,12 +7,13 @@ class Imath < Formula
   compatibility_version 1
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "cd0092341705d6b55ef5e9cf76ef8d5b079af1e4bb3a0d403ae0f308e9775e19"
-    sha256 cellar: :any, arm64_sequoia: "4f6c05dd778e795b70d60af8daacc72dfa4b92ecbaece682ad98c36df92be150"
-    sha256 cellar: :any, arm64_sonoma:  "565d60cf2da053d45fc30d4eb9cb3d0e5da4c8c7bb4dead8c402f3a1d518cc1b"
-    sha256 cellar: :any, sonoma:        "1004b5307a29739dacfcc9118478166ced4ff91476e573b22f9cbd1343af9ee7"
-    sha256 cellar: :any, arm64_linux:   "0a14f495df426cce6b9a7e6595937377123951ee327b0ddc0bc75fd2c489b445"
-    sha256 cellar: :any, x86_64_linux:  "3664b41b9a85c26b5735f4a3507f0970e83d4ed53cacb62c7ec2cc36a3e2c74c"
+    sha256 cellar: :any, arm64_golden_gate: "f5857586c62cd0498c95c82f9d77825b01cd8eb7dc1043ceaf311950e9b33423"
+    sha256 cellar: :any, arm64_tahoe:       "cd0092341705d6b55ef5e9cf76ef8d5b079af1e4bb3a0d403ae0f308e9775e19"
+    sha256 cellar: :any, arm64_sequoia:     "4f6c05dd778e795b70d60af8daacc72dfa4b92ecbaece682ad98c36df92be150"
+    sha256 cellar: :any, arm64_sonoma:      "565d60cf2da053d45fc30d4eb9cb3d0e5da4c8c7bb4dead8c402f3a1d518cc1b"
+    sha256 cellar: :any, sonoma:            "1004b5307a29739dacfcc9118478166ced4ff91476e573b22f9cbd1343af9ee7"
+    sha256 cellar: :any, arm64_linux:       "0a14f495df426cce6b9a7e6595937377123951ee327b0ddc0bc75fd2c489b445"
+    sha256 cellar: :any, x86_64_linux:      "3664b41b9a85c26b5735f4a3507f0970e83d4ed53cacb62c7ec2cc36a3e2c74c"
   end
 
   depends_on "cmake" => :build

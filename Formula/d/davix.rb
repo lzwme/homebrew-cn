@@ -15,12 +15,13 @@ class Davix < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "768bab554a4616b78d60f68b8b59c54ac33ae321a0446c3b2d281ea553c98a5e"
-    sha256 cellar: :any, arm64_sequoia: "7b056970935b827997ff53f981bef6c09a7b565059713522eb70cb319d05ce4a"
-    sha256 cellar: :any, arm64_sonoma:  "7c82e7763b256d8a543569b8e87afb45b03061a2ec7f8e86f7222cb192864904"
-    sha256 cellar: :any, sonoma:        "b7f07ce68e60b17481a927d85c528d5b19d53d648fad7a6ead5583f2e1417a4d"
-    sha256 cellar: :any, arm64_linux:   "607a56eadd9d0b1c877ac42198065075ce30b46a2836e3af87a96f0bcbedb094"
-    sha256 cellar: :any, x86_64_linux:  "fde5fe3e3cd84a4e04df4150b9dcf46c8464138c2e50469e03dbed3abbd36b2c"
+    sha256 cellar: :any, arm64_golden_gate: "00877d9f490a442b161b63dd2539dcf425d4829434c8fd680eab4218b4e2def1"
+    sha256 cellar: :any, arm64_tahoe:       "768bab554a4616b78d60f68b8b59c54ac33ae321a0446c3b2d281ea553c98a5e"
+    sha256 cellar: :any, arm64_sequoia:     "7b056970935b827997ff53f981bef6c09a7b565059713522eb70cb319d05ce4a"
+    sha256 cellar: :any, arm64_sonoma:      "7c82e7763b256d8a543569b8e87afb45b03061a2ec7f8e86f7222cb192864904"
+    sha256 cellar: :any, sonoma:            "b7f07ce68e60b17481a927d85c528d5b19d53d648fad7a6ead5583f2e1417a4d"
+    sha256 cellar: :any, arm64_linux:       "607a56eadd9d0b1c877ac42198065075ce30b46a2836e3af87a96f0bcbedb094"
+    sha256 cellar: :any, x86_64_linux:      "fde5fe3e3cd84a4e04df4150b9dcf46c8464138c2e50469e03dbed3abbd36b2c"
   end
 
   depends_on "cmake" => :build

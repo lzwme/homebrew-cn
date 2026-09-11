@@ -12,12 +12,13 @@ class Dlib < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "4f4d8d0c1c9c9f4d3d14efebb75b32d4cc826bc4eb78bf8325e45197b4db38cf"
-    sha256 cellar: :any,                 arm64_sequoia: "ca7da3df10bb9bddb30c9a9a8f3d127148d602bfbd95fb839b44fc45df67d153"
-    sha256 cellar: :any,                 arm64_sonoma:  "b6228c729790576a6dd785125528a547017531941c45560877bf64bddcdf9129"
-    sha256 cellar: :any,                 sonoma:        "44dc2983b9544e2ba43cece99e7cb410d3e3ff605df6946f49ae4120f3df62d8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6fad7734cdad16a072ad4134a8c5ee14c031627a89fde3d6f51e866b589f32df"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "83a6c33227e47dfa2207a9d9125e76c3ae689955f7d33e1e51b9e2bd45495fcc"
+    sha256 cellar: :any,                 arm64_golden_gate: "2c4b8ec822d69c7a2079246afcbb6ded405de46679c747571f316551fbac8ca3"
+    sha256 cellar: :any,                 arm64_tahoe:       "4f4d8d0c1c9c9f4d3d14efebb75b32d4cc826bc4eb78bf8325e45197b4db38cf"
+    sha256 cellar: :any,                 arm64_sequoia:     "ca7da3df10bb9bddb30c9a9a8f3d127148d602bfbd95fb839b44fc45df67d153"
+    sha256 cellar: :any,                 arm64_sonoma:      "b6228c729790576a6dd785125528a547017531941c45560877bf64bddcdf9129"
+    sha256 cellar: :any,                 sonoma:            "44dc2983b9544e2ba43cece99e7cb410d3e3ff605df6946f49ae4120f3df62d8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "6fad7734cdad16a072ad4134a8c5ee14c031627a89fde3d6f51e866b589f32df"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "83a6c33227e47dfa2207a9d9125e76c3ae689955f7d33e1e51b9e2bd45495fcc"
   end
 
   depends_on "cmake" => :build
@@ -35,11 +36,7 @@ class Dlib < Formula
       -DDLIB_LINK_WITH_SQLITE3=OFF
       -DBUILD_SHARED_LIBS=ON
     ]
-
-    if Hardware::CPU.intel?
-      args << "-DUSE_SSE2_INSTRUCTIONS=ON"
-      args << "-DUSE_SSE4_INSTRUCTIONS=ON" if OS.mac? && MacOS.version.requires_sse4?
-    end
+    args << "-DUSE_SSE2_INSTRUCTIONS=ON" if Hardware::CPU.intel?
 
     system "cmake", "-S", "dlib", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"

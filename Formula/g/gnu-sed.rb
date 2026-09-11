@@ -8,12 +8,13 @@ class GnuSed < Formula
   compatibility_version 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "046672d06b2dd62a59d7088c58cec29749e436366e81dbe18f1b42cbad96fbb2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2afabbecf1e1a0f324af43c3a7d76714e30afdc97a9d29f46d9d07dc80059ca4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "beafe9167ff24d0c7bec394dfd710dba520f5f6cff89d604e718834f04e3cbc6"
-    sha256 cellar: :any_skip_relocation, sonoma:        "04dad428ef00e0d35bcbb5964058d96e53b01768232679e67f8fa59b13afc576"
-    sha256                               arm64_linux:   "3dd83efc27792d0a9980bcdbd7d2601e27bf54fa9469bad29ead18d00eac4d34"
-    sha256                               x86_64_linux:  "6c02e4e02bd27c0807dbfb2ff7759b66f992cd490102a67f5d76c4fd63e59f8d"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "33192da126a68c860fefb24382243d89d1be1ff4ee857671b6318ddeafa925bd"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "046672d06b2dd62a59d7088c58cec29749e436366e81dbe18f1b42cbad96fbb2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "2afabbecf1e1a0f324af43c3a7d76714e30afdc97a9d29f46d9d07dc80059ca4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "beafe9167ff24d0c7bec394dfd710dba520f5f6cff89d604e718834f04e3cbc6"
+    sha256 cellar: :any_skip_relocation, sonoma:            "04dad428ef00e0d35bcbb5964058d96e53b01768232679e67f8fa59b13afc576"
+    sha256                               arm64_linux:       "3dd83efc27792d0a9980bcdbd7d2601e27bf54fa9469bad29ead18d00eac4d34"
+    sha256                               x86_64_linux:      "6c02e4e02bd27c0807dbfb2ff7759b66f992cd490102a67f5d76c4fd63e59f8d"
   end
 
   def install

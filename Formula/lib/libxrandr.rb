@@ -7,12 +7,13 @@ class Libxrandr < Formula
   compatibility_version 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "36b7a9f0da5208be5b9b39138d0e0eba832e843d40c0f2e69f6d09b495741ddf"
-    sha256 cellar: :any,                 arm64_sequoia: "c332c9afd47eff9b36b52ab2f318e020d140179bff663d8a224897b9782ace43"
-    sha256 cellar: :any,                 arm64_sonoma:  "d687cfb76f86ee2577db8c75fb558fd615d55445bf003d18b0e1a9fe164baa78"
-    sha256 cellar: :any,                 sonoma:        "03452b3eb7237aca7975992b9178b3c3dfeffd73693775ebf674cb95a3703392"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f2a61886e6c65894d681629c4117d61f4566fcc1955315008bc53f21a1b667b4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bed6ab672a51a09e7b6da5d5d824dba33704ce745889d4eebf4917aa009a3b02"
+    sha256 cellar: :any,                 arm64_golden_gate: "22e601cc0469ba07ed2979bdddb5db69834500c660a2b3875d53a03f27ccb478"
+    sha256 cellar: :any,                 arm64_tahoe:       "36b7a9f0da5208be5b9b39138d0e0eba832e843d40c0f2e69f6d09b495741ddf"
+    sha256 cellar: :any,                 arm64_sequoia:     "c332c9afd47eff9b36b52ab2f318e020d140179bff663d8a224897b9782ace43"
+    sha256 cellar: :any,                 arm64_sonoma:      "d687cfb76f86ee2577db8c75fb558fd615d55445bf003d18b0e1a9fe164baa78"
+    sha256 cellar: :any,                 sonoma:            "03452b3eb7237aca7975992b9178b3c3dfeffd73693775ebf674cb95a3703392"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "f2a61886e6c65894d681629c4117d61f4566fcc1955315008bc53f21a1b667b4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "bed6ab672a51a09e7b6da5d5d824dba33704ce745889d4eebf4917aa009a3b02"
   end
 
   depends_on "pkgconf" => :build

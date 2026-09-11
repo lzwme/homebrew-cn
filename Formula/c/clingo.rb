@@ -11,12 +11,13 @@ class Clingo < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "e95810838c24931f9a858562a4b54f1256fd3133109146f33002a4383a50de43"
-    sha256 cellar: :any, arm64_sequoia: "ba7d57a8181c4eea2b51b11e77464ad37b3c828fddceb726dd929dc2268a9dc4"
-    sha256 cellar: :any, arm64_sonoma:  "b26d698136874ab953848a78d9007bb9dc52f0030567ab37a42c7df771b4fb61"
-    sha256 cellar: :any, sonoma:        "f69dcbb6973c1a5a503f26b2f6315e71e9cfa5cdc86bd048fa683fd343e2deac"
-    sha256 cellar: :any, arm64_linux:   "359298c5bd3fdece07490baf1e45ed557449c4a60036204f0d1249befb17c55d"
-    sha256 cellar: :any, x86_64_linux:  "a06aebbfccc1dbe2eb145b426a0d1971fd91a207b05c84461ee29c67503ae4c4"
+    sha256 cellar: :any, arm64_golden_gate: "58b6f523cc5167abd7e644f07620fd3ceb60210b41ba9a35e2cedf214a80ae56"
+    sha256 cellar: :any, arm64_tahoe:       "e95810838c24931f9a858562a4b54f1256fd3133109146f33002a4383a50de43"
+    sha256 cellar: :any, arm64_sequoia:     "ba7d57a8181c4eea2b51b11e77464ad37b3c828fddceb726dd929dc2268a9dc4"
+    sha256 cellar: :any, arm64_sonoma:      "b26d698136874ab953848a78d9007bb9dc52f0030567ab37a42c7df771b4fb61"
+    sha256 cellar: :any, sonoma:            "f69dcbb6973c1a5a503f26b2f6315e71e9cfa5cdc86bd048fa683fd343e2deac"
+    sha256 cellar: :any, arm64_linux:       "359298c5bd3fdece07490baf1e45ed557449c4a60036204f0d1249befb17c55d"
+    sha256 cellar: :any, x86_64_linux:      "a06aebbfccc1dbe2eb145b426a0d1971fd91a207b05c84461ee29c67503ae4c4"
   end
 
   head do

@@ -13,11 +13,12 @@ class TreeSitter < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "2789c65bfe825817f535e1eb614c1a011433a7b32d3eae850668d136a02e6cbf"
-    sha256 cellar: :any, arm64_sequoia: "3d994420b9b2bcd2bb27159e95b3551944f52f124982e534dbc5e3ce7aa2b05c"
-    sha256 cellar: :any, arm64_sonoma:  "c0ad6b5d40e2b57df673674f19243f74ac66bb1308660aa278c36a9419d41c22"
-    sha256 cellar: :any, arm64_linux:   "eaa32471c1d5780536b7fc65dbcd7bc69354de839f65ef8b39874b0f7b0f05ea"
-    sha256 cellar: :any, x86_64_linux:  "9fca3679e71eb816f866ac9c2f818175f5325d031dd0bae6f6bd564bde06cfe8"
+    sha256 cellar: :any, arm64_golden_gate: "ff0098f48b925db032e847bef0144561b1b20f7ddd89cb8be29619d714a8fc5a"
+    sha256 cellar: :any, arm64_tahoe:       "2789c65bfe825817f535e1eb614c1a011433a7b32d3eae850668d136a02e6cbf"
+    sha256 cellar: :any, arm64_sequoia:     "3d994420b9b2bcd2bb27159e95b3551944f52f124982e534dbc5e3ce7aa2b05c"
+    sha256 cellar: :any, arm64_sonoma:      "c0ad6b5d40e2b57df673674f19243f74ac66bb1308660aa278c36a9419d41c22"
+    sha256 cellar: :any, arm64_linux:       "eaa32471c1d5780536b7fc65dbcd7bc69354de839f65ef8b39874b0f7b0f05ea"
+    sha256 cellar: :any, x86_64_linux:      "9fca3679e71eb816f866ac9c2f818175f5325d031dd0bae6f6bd564bde06cfe8"
   end
 
   def install

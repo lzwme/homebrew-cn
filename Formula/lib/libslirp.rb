@@ -12,12 +12,13 @@ class Libslirp < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "85933cddee6ab6b7bd3de70d4a00b22ee54482bc77c24fd6061787dc6e5e0c2a"
-    sha256 cellar: :any, arm64_sequoia: "78dc33e108213bceb8f4b8a9d0293c0ff578a806ace4dfc4199af8c9714a2ffe"
-    sha256 cellar: :any, arm64_sonoma:  "e15efc0fe9723daa55244be80ebbb3e62b7530cc8d7be1c6ac62fbd229ee740e"
-    sha256 cellar: :any, sonoma:        "9f0d539814503d22bfdf171064372fd4b2b5cc777fd5128cb81243e49f60d8c3"
-    sha256               arm64_linux:   "592da2491c816e9e97a3eab49789e8af2dcf611ba824999b63f15dfe40543652"
-    sha256               x86_64_linux:  "7767c469e12306692839f22e506127f793746b0ce5d44e37cbb8dff43c63cb58"
+    sha256 cellar: :any, arm64_golden_gate: "9f24148638d099d7c11b64a73a52fd80d8510a1352c7b0d8f3ada6d92848d503"
+    sha256 cellar: :any, arm64_tahoe:       "85933cddee6ab6b7bd3de70d4a00b22ee54482bc77c24fd6061787dc6e5e0c2a"
+    sha256 cellar: :any, arm64_sequoia:     "78dc33e108213bceb8f4b8a9d0293c0ff578a806ace4dfc4199af8c9714a2ffe"
+    sha256 cellar: :any, arm64_sonoma:      "e15efc0fe9723daa55244be80ebbb3e62b7530cc8d7be1c6ac62fbd229ee740e"
+    sha256 cellar: :any, sonoma:            "9f0d539814503d22bfdf171064372fd4b2b5cc777fd5128cb81243e49f60d8c3"
+    sha256               arm64_linux:       "592da2491c816e9e97a3eab49789e8af2dcf611ba824999b63f15dfe40543652"
+    sha256               x86_64_linux:      "7767c469e12306692839f22e506127f793746b0ce5d44e37cbb8dff43c63cb58"
   end
 
   depends_on "meson" => :build

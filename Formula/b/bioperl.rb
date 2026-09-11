@@ -17,14 +17,15 @@ class Bioperl < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d48c0bb6461e832eb2f015fe1193cc1c588536c58725af9c1b07a86783796097"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a11995e26b9cc7ff6463cf06490ccff51ff0f861761d6e04a76fbd7de6d3b4d6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "90f590defa9a11f31f5a3493b0ba55bd3a045ee1250cc21e245c19e7c200ba1a"
-    sha256 cellar: :any_skip_relocation, tahoe:         "df857d43cd4f2bcb1c3742f06f5f94afd56844c10ceb6cc73516264abb2c5713"
-    sha256 cellar: :any_skip_relocation, sequoia:       "5f237514d17707ff644d4468fdd40a4038483934e2ccd134e89728a8636a385c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3f4ed8fbf99a47db5a89672ea99f5c67c1bc7ceac9b89fb0994423fb38c0310e"
-    sha256 cellar: :any,                 arm64_linux:   "7f5d3944ddd0f37896a33b585a79e30b29ad81dcb4f4b59a9847af4d796e6bce"
-    sha256 cellar: :any,                 x86_64_linux:  "58cbd6cdf4f6a8ff4b41ed078e4d58818757268a3fcfca45d2722d54e173387c"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "52f48039952085208bb52b068d7d67427e325bd3f7a21c046163bbecaf06b5a2"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "d48c0bb6461e832eb2f015fe1193cc1c588536c58725af9c1b07a86783796097"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "a11995e26b9cc7ff6463cf06490ccff51ff0f861761d6e04a76fbd7de6d3b4d6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "90f590defa9a11f31f5a3493b0ba55bd3a045ee1250cc21e245c19e7c200ba1a"
+    sha256 cellar: :any_skip_relocation, tahoe:             "df857d43cd4f2bcb1c3742f06f5f94afd56844c10ceb6cc73516264abb2c5713"
+    sha256 cellar: :any_skip_relocation, sequoia:           "5f237514d17707ff644d4468fdd40a4038483934e2ccd134e89728a8636a385c"
+    sha256 cellar: :any_skip_relocation, sonoma:            "3f4ed8fbf99a47db5a89672ea99f5c67c1bc7ceac9b89fb0994423fb38c0310e"
+    sha256 cellar: :any,                 arm64_linux:       "7f5d3944ddd0f37896a33b585a79e30b29ad81dcb4f4b59a9847af4d796e6bce"
+    sha256 cellar: :any,                 x86_64_linux:      "58cbd6cdf4f6a8ff4b41ed078e4d58818757268a3fcfca45d2722d54e173387c"
   end
 
   depends_on "pkgconf" => :build

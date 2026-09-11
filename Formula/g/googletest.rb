@@ -7,12 +7,13 @@ class Googletest < Formula
   head "https://github.com/google/googletest.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "84c802723cf6c5bfb825a5171af335dea006f92bed799508160e4c5cfe7d00fd"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6665ea2968f21ab0c09ce9e82c53b41aec24283b239a44fa72f3574be1ab7815"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2e224ae3b03f3919b867943f12e7df93bf17621a71b0d1abee35573d8e71af4a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "bdde122b743749f4db6a7cf2424a71856ad09db51a950dadad9c8dcc7bbacb14"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c11e7502c1d8b89703cf24b8439e7c69be4a28c76d6bcc762c7b2fbbf8c8c310"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b1f9c006572fda7fd19c2c4592c0ba8dc80ec23053ee3fc7514587187f4fe1aa"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "c0020192311153ae52f04ee1da909282a27ebe9393e82ec28326ccca4691393c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "84c802723cf6c5bfb825a5171af335dea006f92bed799508160e4c5cfe7d00fd"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "6665ea2968f21ab0c09ce9e82c53b41aec24283b239a44fa72f3574be1ab7815"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "2e224ae3b03f3919b867943f12e7df93bf17621a71b0d1abee35573d8e71af4a"
+    sha256 cellar: :any_skip_relocation, sonoma:            "bdde122b743749f4db6a7cf2424a71856ad09db51a950dadad9c8dcc7bbacb14"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "c11e7502c1d8b89703cf24b8439e7c69be4a28c76d6bcc762c7b2fbbf8c8c310"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "b1f9c006572fda7fd19c2c4592c0ba8dc80ec23053ee3fc7514587187f4fe1aa"
   end
 
   depends_on "cmake" => :build

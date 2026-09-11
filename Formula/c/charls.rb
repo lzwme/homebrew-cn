@@ -7,12 +7,13 @@ class Charls < Formula
   head "https://github.com/team-charls/charls.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "d0a67e9b45f8d59b907a1cb48a1e06d54a53255ebd86d665e9bbdffef19ee108"
-    sha256 cellar: :any, arm64_sequoia: "014a6e667c1572a3ce331484fa512459093b48af7d43ec709d340d3694f19538"
-    sha256 cellar: :any, arm64_sonoma:  "31a404ff9ea71c0b6f8abc603dd8e7282a5ac81d24ae5d8f1aa7a6f7edcc6de9"
-    sha256 cellar: :any, sonoma:        "02610dee00fef9b3dea8d0e7df1a5c703959ec47a6c2a57c31ef1947759e6cea"
-    sha256 cellar: :any, arm64_linux:   "25253e5341b7507f2e12b6a4e9a80d02dbd65e3f931bfd425a5655511a388827"
-    sha256 cellar: :any, x86_64_linux:  "a8ceb4a16f10f2915c862c0f5b439bbb51567087a5b6f81acd52d26c06945d1a"
+    sha256 cellar: :any, arm64_golden_gate: "a9989f124867bdf9b147127a798d2e1aa5d056644b6f541f83fcd6dabe8ce3f6"
+    sha256 cellar: :any, arm64_tahoe:       "d0a67e9b45f8d59b907a1cb48a1e06d54a53255ebd86d665e9bbdffef19ee108"
+    sha256 cellar: :any, arm64_sequoia:     "014a6e667c1572a3ce331484fa512459093b48af7d43ec709d340d3694f19538"
+    sha256 cellar: :any, arm64_sonoma:      "31a404ff9ea71c0b6f8abc603dd8e7282a5ac81d24ae5d8f1aa7a6f7edcc6de9"
+    sha256 cellar: :any, sonoma:            "02610dee00fef9b3dea8d0e7df1a5c703959ec47a6c2a57c31ef1947759e6cea"
+    sha256 cellar: :any, arm64_linux:       "25253e5341b7507f2e12b6a4e9a80d02dbd65e3f931bfd425a5655511a388827"
+    sha256 cellar: :any, x86_64_linux:      "a8ceb4a16f10f2915c862c0f5b439bbb51567087a5b6f81acd52d26c06945d1a"
   end
 
   depends_on "cmake" => :build

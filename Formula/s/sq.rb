@@ -1,17 +1,16 @@
 class Sq < Formula
   desc "Data wrangler with jq-like query language"
   homepage "https://sq.io"
-  url "https://ghfast.top/https://github.com/neilotoole/sq/archive/refs/tags/v0.54.1.tar.gz"
-  sha256 "d56a1582f1a52ed6386718f14c3679ff32e7c3b9de644f55db4dd95220f58e27"
+  url "https://ghfast.top/https://github.com/neilotoole/sq/archive/refs/tags/v0.55.0.tar.gz"
+  sha256 "ab9f0595423269eacf43a531f1d101e296f100aabec95781dc8af6ab1c155739"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "04325812f236a0441a04834f938dcd1d0e0c27244cd5d4e04546bafe0413053d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dffdc5ddab2bb2758e9b3dccd2f2062744ca33b57cbbc266f7f5c07a770d970a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "353f72632a007a63cc8073edd621cfdf76f9cee7e93980f92f3b7881ab1ee71c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "38aac9e723039df412a7fc15448583c85cb4fb1effb523839ef6664ef4c36c55"
-    sha256 cellar: :any,                 arm64_linux:   "545c33e6284b6bdc395d1efd7eadc3a1128bfcef7b0ba47aef8aa35a31e3da69"
-    sha256 cellar: :any,                 x86_64_linux:  "50058a73ff9af9a7abb2275cfb5ecbc8c438758ddff614db446b0836c8d7a62d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3df4964678516d135b293441521b560a9c967204d7ac5d3bd7bf97f6c1cb6727"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5f1cb3a1a2a7971f7a8ac7eb5c5c4d51a0359639f461cf49357cfc621e76bea5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "421da3798ec93c5c315fc1df3489a90d4cec2e1cb45e635c43e13891e0ffd062"
+    sha256 cellar: :any,                 arm64_linux:   "bbcf1955ec20d64c0ae2bddec4ec74b35cc27f45e12127ebbf21421b4acda1f9"
+    sha256 cellar: :any,                 x86_64_linux:  "d6f3ddd1ffe2770ff97ed8f40e93b9bdca602a485cdcc6e5430437a208ea67eb"
   end
 
   depends_on "go" => :build

@@ -7,12 +7,13 @@ class Libxinerama < Formula
   compatibility_version 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "1661f76115723be21049a852556fe270ce1f53693beab0931ffa88b40b757129"
-    sha256 cellar: :any,                 arm64_sequoia: "4a9b6fb1bb70ae6b4005e94c9d5737077e98f9ac2e5fbfe011371a6e5187006d"
-    sha256 cellar: :any,                 arm64_sonoma:  "47157ee5e1d5e8083a68e1f696270dce2ea63d4efae579b2ac3a2cf4bdef2fde"
-    sha256 cellar: :any,                 sonoma:        "1a447fd892652cccfda6f323ebc191d8855532a381381e2c2b05358f1f0bbea4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "68ea21d37025e719630cfd403bfdc5f43e5458c4f0305d71c510ba17ebf3d858"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "52991cf289d5e90078916a2e43d188e4f3fcbef3eaa83ba3a6a911715b17a1fa"
+    sha256 cellar: :any,                 arm64_golden_gate: "2b5f471080e2fc9f49ef8eaa24ebdfb0f2836e89e01a7124462ddbb062b7f378"
+    sha256 cellar: :any,                 arm64_tahoe:       "1661f76115723be21049a852556fe270ce1f53693beab0931ffa88b40b757129"
+    sha256 cellar: :any,                 arm64_sequoia:     "4a9b6fb1bb70ae6b4005e94c9d5737077e98f9ac2e5fbfe011371a6e5187006d"
+    sha256 cellar: :any,                 arm64_sonoma:      "47157ee5e1d5e8083a68e1f696270dce2ea63d4efae579b2ac3a2cf4bdef2fde"
+    sha256 cellar: :any,                 sonoma:            "1a447fd892652cccfda6f323ebc191d8855532a381381e2c2b05358f1f0bbea4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "68ea21d37025e719630cfd403bfdc5f43e5458c4f0305d71c510ba17ebf3d858"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "52991cf289d5e90078916a2e43d188e4f3fcbef3eaa83ba3a6a911715b17a1fa"
   end
 
   depends_on "pkgconf" => :build

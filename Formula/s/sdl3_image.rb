@@ -12,11 +12,12 @@ class Sdl3Image < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "6efcc3fde7c11ea176554ffd48dd3f6a98faf5639a4e193cdc77aef6752f7422"
-    sha256 cellar: :any, arm64_sequoia: "51b8ad27d2282716a7b7a3ecc20deb22f69aa2405d141caa8f17d3d5b21176d0"
-    sha256 cellar: :any, arm64_sonoma:  "aa80e4b7d4f8eff14475ce2546c82453580ae42569686e8597b2574c1e42d10a"
-    sha256 cellar: :any, arm64_linux:   "c701dcb61029cf0c5f01ddc07e4ef7387b22a81514da16c0305e20213e7befa1"
-    sha256 cellar: :any, x86_64_linux:  "039721d90e8dd34aa2540f505a96501ec5edfc2b910f3b891f93ca08f324ea57"
+    sha256 cellar: :any, arm64_golden_gate: "23b752048fa22c904625e6c6108cafea7c2f1112ddfba515b440303592433747"
+    sha256 cellar: :any, arm64_tahoe:       "6efcc3fde7c11ea176554ffd48dd3f6a98faf5639a4e193cdc77aef6752f7422"
+    sha256 cellar: :any, arm64_sequoia:     "51b8ad27d2282716a7b7a3ecc20deb22f69aa2405d141caa8f17d3d5b21176d0"
+    sha256 cellar: :any, arm64_sonoma:      "aa80e4b7d4f8eff14475ce2546c82453580ae42569686e8597b2574c1e42d10a"
+    sha256 cellar: :any, arm64_linux:       "c701dcb61029cf0c5f01ddc07e4ef7387b22a81514da16c0305e20213e7befa1"
+    sha256 cellar: :any, x86_64_linux:      "039721d90e8dd34aa2540f505a96501ec5edfc2b910f3b891f93ca08f324ea57"
   end
 
   depends_on "cmake" => :build

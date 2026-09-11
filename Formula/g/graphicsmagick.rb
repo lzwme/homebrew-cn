@@ -12,12 +12,13 @@ class Graphicsmagick < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "481c9c58887488f22da63da3ac5a341bc639b38d9a0e86fdc3e7b5793c8a5f62"
-    sha256 arm64_sequoia: "679cc0b4e37cab7320a52faf405ec78a10a7ca5aeb08e2bb223f79b13fd79668"
-    sha256 arm64_sonoma:  "0bf22716d29638e4ce177d94cc8f824850046bfc43081c7944967ef357a234f3"
-    sha256 sonoma:        "88a6ab88ab5a9149ad9a2e9ab72781b0da7d26d52c0835059592c2c15e455f5a"
-    sha256 arm64_linux:   "5bc005f62219dc3149b9a3bf7a38211c279dba22aa6cc9c5b15c8caa8f761c77"
-    sha256 x86_64_linux:  "54039a39d957ec59ebf3edcb3872ef59bd76cefdfd971b0777b6e901376e613f"
+    sha256 arm64_golden_gate: "030e61a75b0a875e6382dbe221508172b6d875b5d7df80c9ccda24fc39d675d0"
+    sha256 arm64_tahoe:       "481c9c58887488f22da63da3ac5a341bc639b38d9a0e86fdc3e7b5793c8a5f62"
+    sha256 arm64_sequoia:     "679cc0b4e37cab7320a52faf405ec78a10a7ca5aeb08e2bb223f79b13fd79668"
+    sha256 arm64_sonoma:      "0bf22716d29638e4ce177d94cc8f824850046bfc43081c7944967ef357a234f3"
+    sha256 sonoma:            "88a6ab88ab5a9149ad9a2e9ab72781b0da7d26d52c0835059592c2c15e455f5a"
+    sha256 arm64_linux:       "5bc005f62219dc3149b9a3bf7a38211c279dba22aa6cc9c5b15c8caa8f761c77"
+    sha256 x86_64_linux:      "54039a39d957ec59ebf3edcb3872ef59bd76cefdfd971b0777b6e901376e613f"
   end
 
   depends_on "pkgconf" => :build

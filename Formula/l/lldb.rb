@@ -12,11 +12,12 @@ class Lldb < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "70c525daa621366e483fb0dcc6de5519c74d1e0cac10e266795fa58080d7ce76"
-    sha256 arm64_sequoia: "c973010791d2ec0f0b56fab265bd2357e4e748b68f24d18d04a924d23b1b2fd3"
-    sha256 arm64_sonoma:  "9ab6015830bcb9cdb8c3152c91f685672c14f3689b59fa9e0b562a58a63d4d38"
-    sha256 arm64_linux:   "463680b4c0eb73e8f5109a37da10d21aed9d4499cdb91597b9e60bc43c9ed2bf"
-    sha256 x86_64_linux:  "1ff9ad54dd63a7b852572b43a58546ae5386f5b69c9eefa67ad3a060c44c58f1"
+    sha256 arm64_golden_gate: "ffd6615ed01e78bb778b094ebfd112dcc21fa4f57a1d2bc229d437321a6fa0e8"
+    sha256 arm64_tahoe:       "70c525daa621366e483fb0dcc6de5519c74d1e0cac10e266795fa58080d7ce76"
+    sha256 arm64_sequoia:     "c973010791d2ec0f0b56fab265bd2357e4e748b68f24d18d04a924d23b1b2fd3"
+    sha256 arm64_sonoma:      "9ab6015830bcb9cdb8c3152c91f685672c14f3689b59fa9e0b562a58a63d4d38"
+    sha256 arm64_linux:       "463680b4c0eb73e8f5109a37da10d21aed9d4499cdb91597b9e60bc43c9ed2bf"
+    sha256 x86_64_linux:      "1ff9ad54dd63a7b852572b43a58546ae5386f5b69c9eefa67ad3a060c44c58f1"
   end
 
   keg_only :provided_by_macos

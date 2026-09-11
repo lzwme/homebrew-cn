@@ -6,12 +6,13 @@ class Gensio < Formula
   license all_of: ["LGPL-2.1-only", "GPL-2.0-only", "Apache-2.0"]
 
   bottle do
-    sha256 arm64_tahoe:   "7cf85625c9588a9d12c6ae72fb8039ca03bd5d7b46087e216f02c12ecb4193c9"
-    sha256 arm64_sequoia: "c7d02cc1451278dc1cdd9053e6b9207912d1e1e3aa9f05feca195c30b3339948"
-    sha256 arm64_sonoma:  "624e7f57297490067bae297467bc75bcc22fb851d4886d53264c29e51534421c"
-    sha256 sonoma:        "cd1b75a48babd6d3a3ed118aa612b6ba4510b5b9b9da40ace9c0248db324b37c"
-    sha256 arm64_linux:   "e587dc19dcdc948d6c80b12cd58e8847e9d507cddb685343e42d9261895cecb9"
-    sha256 x86_64_linux:  "3bd5149aa658a458e4e45b4ccf1a9f08aa50ee46203bf9a4ef664bf0c437722e"
+    sha256 arm64_golden_gate: "7ab49059ca01133be4d6548ce21c19f048f65efa85be4804754806f372a0367f"
+    sha256 arm64_tahoe:       "7cf85625c9588a9d12c6ae72fb8039ca03bd5d7b46087e216f02c12ecb4193c9"
+    sha256 arm64_sequoia:     "c7d02cc1451278dc1cdd9053e6b9207912d1e1e3aa9f05feca195c30b3339948"
+    sha256 arm64_sonoma:      "624e7f57297490067bae297467bc75bcc22fb851d4886d53264c29e51534421c"
+    sha256 sonoma:            "cd1b75a48babd6d3a3ed118aa612b6ba4510b5b9b9da40ace9c0248db324b37c"
+    sha256 arm64_linux:       "e587dc19dcdc948d6c80b12cd58e8847e9d507cddb685343e42d9261895cecb9"
+    sha256 x86_64_linux:      "3bd5149aa658a458e4e45b4ccf1a9f08aa50ee46203bf9a4ef664bf0c437722e"
   end
 
   depends_on "go" => :build

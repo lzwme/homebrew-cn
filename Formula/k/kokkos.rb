@@ -1,8 +1,8 @@
 class Kokkos < Formula
   desc "C++ Performance Portability Ecosystem for parallel execution and abstraction"
   homepage "https://kokkos.org"
-  url "https://ghfast.top/https://github.com/kokkos/kokkos/releases/download/5.2.1/kokkos-5.2.1.tar.gz"
-  sha256 "3f754c99aa6130b1dd6520d904db7b2fd44ed618cd91e0dfd921956f23f6812d"
+  url "https://ghfast.top/https://github.com/kokkos/kokkos/releases/download/5.2.2/kokkos-5.2.2.tar.gz"
+  sha256 "d6557aaef39302282a15f9c770433d1fcdf4e961dfd6d9ed726b9d0d0f546b9f"
   license "Apache-2.0"
   compatibility_version 1
   head "https://github.com/kokkos/kokkos.git", branch: "develop"
@@ -13,12 +13,12 @@ class Kokkos < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "5dcb045088638adcc72fee127b7df17c3fd109373b4838ad2c665e53898b10af"
-    sha256 cellar: :any, arm64_sequoia: "2da092ed063f1fdb11b9c5a387f3d5454d853c5e2c0f4397b0484a3e2da8bae0"
-    sha256 cellar: :any, arm64_sonoma:  "90fde3ab2c665c9996eed846741bcd91300523e1d4dcb3776de614bfd14a3c5c"
-    sha256 cellar: :any, sonoma:        "0210b6301a661415c6ad367531c2e59cd09794beda01d5ab1e91c9353312238d"
-    sha256 cellar: :any, arm64_linux:   "c31df52d82804f75715089d5f25121526bef3d9ae3fa6beed89254a0f580a11b"
-    sha256 cellar: :any, x86_64_linux:  "c0bf9d61a3f347f92dbbc472475358099bd6f8d3abed7fb2485c15a98425fded"
+    sha256 cellar: :any, arm64_golden_gate: "08f9170928aa7913ad2e22f341122e31594f7e258399000ebef60864a1f5182e"
+    sha256 cellar: :any, arm64_tahoe:       "1c5fd2edc5be97606c55a6b6f9bf6ddb7a12b6e547567289e06107c482ca7ae4"
+    sha256 cellar: :any, arm64_sequoia:     "ae61d31a20db28ee8709eba2199348abbb86e23cb698da993662df317b763519"
+    sha256 cellar: :any, arm64_sonoma:      "637d6f6578b1cbe323844507b588a8765c38003c92ba15b30dc89d70944a7bad"
+    sha256 cellar: :any, arm64_linux:       "bf1c8179fa0f5f52c37ffdbbaf5832eea684b503f5bba07148cc6063007973b6"
+    sha256 cellar: :any, x86_64_linux:      "b2cf3f3590e8ca59343546e78aa3719d9b47b1980958ec1c5a02371e8efe10e6"
   end
 
   depends_on "cmake" => :build

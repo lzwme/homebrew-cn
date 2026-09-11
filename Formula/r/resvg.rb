@@ -8,12 +8,13 @@ class Resvg < Formula
   head "https://github.com/linebender/resvg.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "449716d5a7f828b57202b65c37fb27d946bc77a2ab416a41e6fc3520c962a7e3"
-    sha256 cellar: :any, arm64_sequoia: "58c2ab3142ad4b2a3000c06c2f660579deb4b39a3bcf5a310a27d71d8623ca9b"
-    sha256 cellar: :any, arm64_sonoma:  "208e78e1f8c07a4f6772a9865ef1adcfdd39e867b5cd6974a96be57606d6ab21"
-    sha256 cellar: :any, sonoma:        "7c76b84eea40473a25dfa1402103736f2b180c95b379b0509c3fb8cff6981772"
-    sha256 cellar: :any, arm64_linux:   "dcf43aaa57996d454fb087c660a18515b90b122c49b43071d463232df975fb02"
-    sha256 cellar: :any, x86_64_linux:  "7b9945b64cabc2a23d70a6bf65f3b1c3a71adb79c6f988c4a841aad9d6f6fcae"
+    sha256 cellar: :any, arm64_golden_gate: "543d4793ba4f2756d261f0bc5a8e493e3c54d000e6a0b06dcc6ff2799050c861"
+    sha256 cellar: :any, arm64_tahoe:       "449716d5a7f828b57202b65c37fb27d946bc77a2ab416a41e6fc3520c962a7e3"
+    sha256 cellar: :any, arm64_sequoia:     "58c2ab3142ad4b2a3000c06c2f660579deb4b39a3bcf5a310a27d71d8623ca9b"
+    sha256 cellar: :any, arm64_sonoma:      "208e78e1f8c07a4f6772a9865ef1adcfdd39e867b5cd6974a96be57606d6ab21"
+    sha256 cellar: :any, sonoma:            "7c76b84eea40473a25dfa1402103736f2b180c95b379b0509c3fb8cff6981772"
+    sha256 cellar: :any, arm64_linux:       "dcf43aaa57996d454fb087c660a18515b90b122c49b43071d463232df975fb02"
+    sha256 cellar: :any, x86_64_linux:      "7b9945b64cabc2a23d70a6bf65f3b1c3a71adb79c6f988c4a841aad9d6f6fcae"
   end
 
   depends_on "cargo-c" => :build

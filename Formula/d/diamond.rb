@@ -6,11 +6,12 @@ class Diamond < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9a89de766ef1c2a2fd7415b5a8aae00648b6fd3d18968f10591ccac0199980a3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "092c6e283318d945f7d013f4a6ecb3e06b0adaa112e5c3623fc5625f9af9e751"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3fa3fcd741b2b7c60456e80445648aea04f1df88d12cd83830f1d7c71d900d8b"
-    sha256 cellar: :any,                 arm64_linux:   "5b9bbc9a0f1fa2da55e2029ca414567b502b9b02042536541ea5debc9d7543c9"
-    sha256 cellar: :any,                 x86_64_linux:  "8182397ce6b7f598d6a889b50b8774a897efa1b37c442193555593c277e020e5"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "6f8ac6402e6567201dcec88163ea2812210323d228bf62322ead84d6142aeb0a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "9a89de766ef1c2a2fd7415b5a8aae00648b6fd3d18968f10591ccac0199980a3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "092c6e283318d945f7d013f4a6ecb3e06b0adaa112e5c3623fc5625f9af9e751"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "3fa3fcd741b2b7c60456e80445648aea04f1df88d12cd83830f1d7c71d900d8b"
+    sha256 cellar: :any,                 arm64_linux:       "5b9bbc9a0f1fa2da55e2029ca414567b502b9b02042536541ea5debc9d7543c9"
+    sha256 cellar: :any,                 x86_64_linux:      "8182397ce6b7f598d6a889b50b8774a897efa1b37c442193555593c277e020e5"
   end
 
   depends_on "cmake" => :build

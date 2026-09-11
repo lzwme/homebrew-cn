@@ -15,12 +15,13 @@ class Re2 < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "6e96aaf1115b4b532ec7f59ee986372c2d0ab7b0eb27ff41d5216e1a4f3957ef"
-    sha256 cellar: :any, arm64_sequoia: "41a23f8a657a72326621e241bab27e53bc1105c34dbe1528beae97a5b2fd3b51"
-    sha256 cellar: :any, arm64_sonoma:  "6aefa9488158d9c8f096e2a802e9a755e68356e82f99a88adfe763af4769b88d"
-    sha256 cellar: :any, sonoma:        "dca2f070c420737d68abb0af8108c35fe8355796acd675bff8dbe8ab94e2756e"
-    sha256 cellar: :any, arm64_linux:   "21373cdf8b18b43c0139d1f62fe758b00b9ca11fd2c4ebb77836444eaa954dbe"
-    sha256 cellar: :any, x86_64_linux:  "b743c2a713b079e718ef7d6af0cadc118faa6dc9039bb8ad6fe72b8f60fdd6bd"
+    sha256 cellar: :any, arm64_golden_gate: "deb357f242caf2a821dee825489e526f842ee483c133521d2288fa5182d41647"
+    sha256 cellar: :any, arm64_tahoe:       "6e96aaf1115b4b532ec7f59ee986372c2d0ab7b0eb27ff41d5216e1a4f3957ef"
+    sha256 cellar: :any, arm64_sequoia:     "41a23f8a657a72326621e241bab27e53bc1105c34dbe1528beae97a5b2fd3b51"
+    sha256 cellar: :any, arm64_sonoma:      "6aefa9488158d9c8f096e2a802e9a755e68356e82f99a88adfe763af4769b88d"
+    sha256 cellar: :any, sonoma:            "dca2f070c420737d68abb0af8108c35fe8355796acd675bff8dbe8ab94e2756e"
+    sha256 cellar: :any, arm64_linux:       "21373cdf8b18b43c0139d1f62fe758b00b9ca11fd2c4ebb77836444eaa954dbe"
+    sha256 cellar: :any, x86_64_linux:      "b743c2a713b079e718ef7d6af0cadc118faa6dc9039bb8ad6fe72b8f60fdd6bd"
   end
 
   depends_on "cmake" => :build

@@ -8,12 +8,13 @@ class Braid < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "595da34cfddb9113bd28b7cc30eb1902a21fb869cb403866101d446cc89c33e2"
-    sha256 cellar: :any,                 arm64_sequoia: "b1543df0eeeb51fb4d0bbf8db358cc41066098070c70978601154ab444598efd"
-    sha256 cellar: :any,                 arm64_sonoma:  "9901ab7b30f4ddee1b980cffd069793c705bd693edc2fa7ffb69fc556dd2ea0e"
-    sha256 cellar: :any,                 sonoma:        "c895e76a6dc11de45e9c306e72ada141d5a0a18ccb143d6454acfb932f4914e1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f2ecddacae1d63c92959d5a9c0f4023eb5921f057d6579c4ec2865fa41cef16d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d32a5e8c8532b23f3609d5f8557d73bcd60db26f85c3d8bf81f50385017e6836"
+    sha256 cellar: :any,                 arm64_golden_gate: "c05c65188edbc49cbe9a91b140b58838c33eaa3f4cd05ed6cfd7d769584772fc"
+    sha256 cellar: :any,                 arm64_tahoe:       "595da34cfddb9113bd28b7cc30eb1902a21fb869cb403866101d446cc89c33e2"
+    sha256 cellar: :any,                 arm64_sequoia:     "b1543df0eeeb51fb4d0bbf8db358cc41066098070c70978601154ab444598efd"
+    sha256 cellar: :any,                 arm64_sonoma:      "9901ab7b30f4ddee1b980cffd069793c705bd693edc2fa7ffb69fc556dd2ea0e"
+    sha256 cellar: :any,                 sonoma:            "c895e76a6dc11de45e9c306e72ada141d5a0a18ccb143d6454acfb932f4914e1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "f2ecddacae1d63c92959d5a9c0f4023eb5921f057d6579c4ec2865fa41cef16d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "d32a5e8c8532b23f3609d5f8557d73bcd60db26f85c3d8bf81f50385017e6836"
   end
 
   depends_on "ruby"

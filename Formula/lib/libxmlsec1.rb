@@ -15,12 +15,13 @@ class Libxmlsec1 < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "9905f22e9a402d3f7c53a68af94fa2a8ed3b1fe208ac42f5090816ebab96065c"
-    sha256 cellar: :any, arm64_sequoia: "1ae88a9a8dc9186f5c9913cea9008ce41077a5724438f91907df7e19d4603761"
-    sha256 cellar: :any, arm64_sonoma:  "84b6624424df9ad086bfb16a004e5c184500dcdbfecea3c9ea331eecdf474783"
-    sha256 cellar: :any, sonoma:        "95612867fe1c0268610d223178ed84a611d601d3d05d4f9f7f7a206677c0da32"
-    sha256 cellar: :any, arm64_linux:   "db3dea165faaaf73250c59732b689e4f872a32015e38fbd97d2f8aaebb70d71f"
-    sha256 cellar: :any, x86_64_linux:  "183450e158f6cf276b42b8260cc078420c61460c37ac54d3449f4802c1e7be94"
+    sha256 cellar: :any, arm64_golden_gate: "dca85350bd88c1c22cc0c96230021ef7d1f90dc49be0afd9207a36c2bb90ab81"
+    sha256 cellar: :any, arm64_tahoe:       "9905f22e9a402d3f7c53a68af94fa2a8ed3b1fe208ac42f5090816ebab96065c"
+    sha256 cellar: :any, arm64_sequoia:     "1ae88a9a8dc9186f5c9913cea9008ce41077a5724438f91907df7e19d4603761"
+    sha256 cellar: :any, arm64_sonoma:      "84b6624424df9ad086bfb16a004e5c184500dcdbfecea3c9ea331eecdf474783"
+    sha256 cellar: :any, sonoma:            "95612867fe1c0268610d223178ed84a611d601d3d05d4f9f7f7a206677c0da32"
+    sha256 cellar: :any, arm64_linux:       "db3dea165faaaf73250c59732b689e4f872a32015e38fbd97d2f8aaebb70d71f"
+    sha256 cellar: :any, x86_64_linux:      "183450e158f6cf276b42b8260cc078420c61460c37ac54d3449f4802c1e7be94"
   end
 
   depends_on "pkgconf" => :build

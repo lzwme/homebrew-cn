@@ -12,12 +12,13 @@ class Libpq < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "6fadf0b2e2ba3f6008086e624cb2417823988e78bccbe07b93a5f3cefc7573c1"
-    sha256 arm64_sequoia: "f660d66a19e3960f16426f34b0350a84946672c23ce375408ff1d501e1a6d090"
-    sha256 arm64_sonoma:  "00c6d6128a75ac52740c79f65af01961fd2c0408a3ce0797b7c185408a079c59"
-    sha256 sonoma:        "509cb83e2fb3075e51c44d83a6db67d4f3dc1487a2996b101d4eeb304617b013"
-    sha256 arm64_linux:   "ee5ac4a2e3c39f7756c2781f049068a155f5d6af3e74c56d6e4c05c034bc51e3"
-    sha256 x86_64_linux:  "e4d1403cdb9c4f2c23551036ffc87f0ee3b5bc86df130caffcab9ed9cf6467e7"
+    sha256 arm64_golden_gate: "d629205c9896b8bdda4ed654dfc2069f22f34e83e8f2077b870ccf8e44c8897f"
+    sha256 arm64_tahoe:       "6fadf0b2e2ba3f6008086e624cb2417823988e78bccbe07b93a5f3cefc7573c1"
+    sha256 arm64_sequoia:     "f660d66a19e3960f16426f34b0350a84946672c23ce375408ff1d501e1a6d090"
+    sha256 arm64_sonoma:      "00c6d6128a75ac52740c79f65af01961fd2c0408a3ce0797b7c185408a079c59"
+    sha256 sonoma:            "509cb83e2fb3075e51c44d83a6db67d4f3dc1487a2996b101d4eeb304617b013"
+    sha256 arm64_linux:       "ee5ac4a2e3c39f7756c2781f049068a155f5d6af3e74c56d6e4c05c034bc51e3"
+    sha256 x86_64_linux:      "e4d1403cdb9c4f2c23551036ffc87f0ee3b5bc86df130caffcab9ed9cf6467e7"
   end
 
   keg_only "it conflicts with PostgreSQL"

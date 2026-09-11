@@ -13,11 +13,12 @@ class Solarus < Formula
   end
 
   bottle do
-    sha256               arm64_tahoe:   "1e8bd6f576c087d18c85dcd04a55423fa95d3dfa846b6d9311331b05f09d2983"
-    sha256               arm64_sequoia: "599a192269446b6ce0e392b90ff05017d8fb0a403e0fc9ce0f09075e29d25007"
-    sha256               arm64_sonoma:  "904bd50a929085bdb11ebfcd7cb805a9f43be43cfb8875107b75925989943c69"
-    sha256               arm64_linux:   "c4badd41b0328f4737f7e20fc3c74f946d58e8d663301f40956c60c57e29c89c"
-    sha256 cellar: :any, x86_64_linux:  "94e23528ca5a411cdeb47695c23b74b1db8a9b39def7c3a5b1f47b3dc3982d60"
+    sha256               arm64_golden_gate: "e12c6b7fee97bb3cf9d461cff5b8640d4ff2f5fca027730b01a78f1dbae232cc"
+    sha256               arm64_tahoe:       "1e8bd6f576c087d18c85dcd04a55423fa95d3dfa846b6d9311331b05f09d2983"
+    sha256               arm64_sequoia:     "599a192269446b6ce0e392b90ff05017d8fb0a403e0fc9ce0f09075e29d25007"
+    sha256               arm64_sonoma:      "904bd50a929085bdb11ebfcd7cb805a9f43be43cfb8875107b75925989943c69"
+    sha256               arm64_linux:       "c4badd41b0328f4737f7e20fc3c74f946d58e8d663301f40956c60c57e29c89c"
+    sha256 cellar: :any, x86_64_linux:      "94e23528ca5a411cdeb47695c23b74b1db8a9b39def7c3a5b1f47b3dc3982d60"
   end
 
   depends_on "cmake" => :build

@@ -15,12 +15,13 @@ class Ffms2 < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "fb902e7a5250bf15d0f493636c4fcec52880a72d82d37941cd80dac4a2259ec9"
-    sha256 cellar: :any, arm64_sequoia: "62a622df2d25b82b159d45dd43e3be53e100179565aabe66b9d2354833a0b1ec"
-    sha256 cellar: :any, arm64_sonoma:  "bc7b8351939b487d569e3ee5d6ade29a4a14de2623b5d1fa95e45dd943e1cb3d"
-    sha256 cellar: :any, sonoma:        "1e093ed87dee6fac05650182192784231139ead764fa7497169ad265f84523ea"
-    sha256 cellar: :any, arm64_linux:   "8c81538df4dc9528d550e10d4b31aefbc354202085d06223340613855e3317aa"
-    sha256 cellar: :any, x86_64_linux:  "5ece14fd0c674c74b7f5936c76c87523d7d82f955a9f20cf8fb9635df4abd882"
+    sha256 cellar: :any, arm64_golden_gate: "a8f05fc4ddba686e5a5bbae318dfe7faa0e9052302bf738a0965b3da59553981"
+    sha256 cellar: :any, arm64_tahoe:       "fb902e7a5250bf15d0f493636c4fcec52880a72d82d37941cd80dac4a2259ec9"
+    sha256 cellar: :any, arm64_sequoia:     "62a622df2d25b82b159d45dd43e3be53e100179565aabe66b9d2354833a0b1ec"
+    sha256 cellar: :any, arm64_sonoma:      "bc7b8351939b487d569e3ee5d6ade29a4a14de2623b5d1fa95e45dd943e1cb3d"
+    sha256 cellar: :any, sonoma:            "1e093ed87dee6fac05650182192784231139ead764fa7497169ad265f84523ea"
+    sha256 cellar: :any, arm64_linux:       "8c81538df4dc9528d550e10d4b31aefbc354202085d06223340613855e3317aa"
+    sha256 cellar: :any, x86_64_linux:      "5ece14fd0c674c74b7f5936c76c87523d7d82f955a9f20cf8fb9635df4abd882"
   end
 
   depends_on "autoconf" => :build

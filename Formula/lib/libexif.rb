@@ -12,12 +12,13 @@ class Libexif < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "124b33b57bbf93384d1155983930a81b258d1358b1eff29ec17ac5bc868b0aea"
-    sha256 arm64_sequoia: "de8d0b2637cf96b06dd2e4e5d89e75511d1b6cdf4f6b82894ec7e1219e614c69"
-    sha256 arm64_sonoma:  "3efa42a370d416f5f9ea9bceed5bfbee25b7110e2b6d299af448bf877e665401"
-    sha256 sonoma:        "020318b7bd815dfed8dddefa9e824123b61f3b19b8f574fba91dab98053ddbb1"
-    sha256 arm64_linux:   "6b89826eaeef82ae698829e319b553ef87635915f5b907267db66d239d2eb67f"
-    sha256 x86_64_linux:  "4389caca58aaf778b35bc8d7ade6e863df28735894f69b7c2473ac96c44ac971"
+    sha256 arm64_golden_gate: "1c5a051755ca689fe68115ebce4d880eb0fa7520915a7561b32589e698c62260"
+    sha256 arm64_tahoe:       "124b33b57bbf93384d1155983930a81b258d1358b1eff29ec17ac5bc868b0aea"
+    sha256 arm64_sequoia:     "de8d0b2637cf96b06dd2e4e5d89e75511d1b6cdf4f6b82894ec7e1219e614c69"
+    sha256 arm64_sonoma:      "3efa42a370d416f5f9ea9bceed5bfbee25b7110e2b6d299af448bf877e665401"
+    sha256 sonoma:            "020318b7bd815dfed8dddefa9e824123b61f3b19b8f574fba91dab98053ddbb1"
+    sha256 arm64_linux:       "6b89826eaeef82ae698829e319b553ef87635915f5b907267db66d239d2eb67f"
+    sha256 x86_64_linux:      "4389caca58aaf778b35bc8d7ade6e863df28735894f69b7c2473ac96c44ac971"
   end
 
   head do

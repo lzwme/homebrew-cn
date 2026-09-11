@@ -8,12 +8,13 @@ class Spdlog < Formula
   head "https://github.com/gabime/spdlog.git", branch: "v1.x"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "69443892af6734072aadc934bec0118cab7084e0dc71458e9a2e5942bdf24910"
-    sha256 cellar: :any,                 arm64_sequoia: "b2367992ea0242f207b0ba28339d586dbb190ac83faec6950c7706d7bbc6db8a"
-    sha256 cellar: :any,                 arm64_sonoma:  "07c90f09c9f912bc2d5b5597d8f9fb9b96dd9d5d5fa905d245d32274b03045dc"
-    sha256 cellar: :any,                 sonoma:        "26eb42de91edf67fd36f48ad416eda0da84c101b99dac85057087727fb974c0c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ea613072e73e447b4faba3f7ed8e03cda77dc0427ada1299ea429e7a4fea2604"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ff71007269f44e4b90e0e3cabc7d4969ebddac67b2f0469d39a9b403d85c05b8"
+    sha256 cellar: :any,                 arm64_golden_gate: "56b214cd351562388dbd39e9a05aca42bb4aea3d53278242154f22bbf3fca587"
+    sha256 cellar: :any,                 arm64_tahoe:       "69443892af6734072aadc934bec0118cab7084e0dc71458e9a2e5942bdf24910"
+    sha256 cellar: :any,                 arm64_sequoia:     "b2367992ea0242f207b0ba28339d586dbb190ac83faec6950c7706d7bbc6db8a"
+    sha256 cellar: :any,                 arm64_sonoma:      "07c90f09c9f912bc2d5b5597d8f9fb9b96dd9d5d5fa905d245d32274b03045dc"
+    sha256 cellar: :any,                 sonoma:            "26eb42de91edf67fd36f48ad416eda0da84c101b99dac85057087727fb974c0c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "ea613072e73e447b4faba3f7ed8e03cda77dc0427ada1299ea429e7a4fea2604"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "ff71007269f44e4b90e0e3cabc7d4969ebddac67b2f0469d39a9b403d85c05b8"
   end
 
   depends_on "cmake" => :build

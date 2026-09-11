@@ -8,12 +8,13 @@ class P11Kit < Formula
   head "https://github.com/p11-glue/p11-kit.git", branch: "master"
 
   bottle do
-    sha256 arm64_tahoe:   "0e6d34def01884f9a650e591dd8f86241c7fb90bebc827c94203c837749feed6"
-    sha256 arm64_sequoia: "9d5ad4e56eff3b53b27bb652bc19a31fa5dc1144ace4038e9d5c1dc8970c7cf9"
-    sha256 arm64_sonoma:  "7071b29af6bbb5da6eafa50afc98a25f98b88fbd567786238f017d4256211f08"
-    sha256 sonoma:        "33b926d2b5f760e24aadc8b44a8f29caffda8a9637c2497fc7abebb125650baa"
-    sha256 arm64_linux:   "7fae2c92b4b8b2467234b122f6ec532b723207dbaf4696e0456238805ea24d12"
-    sha256 x86_64_linux:  "dfaaaf005b724b7c3c96584a4c40b42372e6f37ac3f5609c4a8c00411f55ec07"
+    sha256 arm64_golden_gate: "4a29e277bb379f786b85d2de2d5a4da381e9aae159dcd359d4d9d9c4af027680"
+    sha256 arm64_tahoe:       "0e6d34def01884f9a650e591dd8f86241c7fb90bebc827c94203c837749feed6"
+    sha256 arm64_sequoia:     "9d5ad4e56eff3b53b27bb652bc19a31fa5dc1144ace4038e9d5c1dc8970c7cf9"
+    sha256 arm64_sonoma:      "7071b29af6bbb5da6eafa50afc98a25f98b88fbd567786238f017d4256211f08"
+    sha256 sonoma:            "33b926d2b5f760e24aadc8b44a8f29caffda8a9637c2497fc7abebb125650baa"
+    sha256 arm64_linux:       "7fae2c92b4b8b2467234b122f6ec532b723207dbaf4696e0456238805ea24d12"
+    sha256 x86_64_linux:      "dfaaaf005b724b7c3c96584a4c40b42372e6f37ac3f5609c4a8c00411f55ec07"
   end
 
   depends_on "meson" => :build

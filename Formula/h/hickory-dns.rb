@@ -1,17 +1,17 @@
 class HickoryDns < Formula
   desc "Rust based DNS client, server, and resolver"
   homepage "https://github.com/hickory-dns/hickory-dns"
-  url "https://ghfast.top/https://github.com/hickory-dns/hickory-dns/archive/refs/tags/v0.26.2.tar.gz"
-  sha256 "22feb683f4eae7f96901f141f88c0e06969504c238482798d1a91231f0ae13bb"
+  url "https://ghfast.top/https://github.com/hickory-dns/hickory-dns/archive/refs/tags/v0.26.3.tar.gz"
+  sha256 "4d623c78cd9e098b1d00a17b0fae3e6dbd192b886e07b2324060dd5349031a39"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/hickory-dns/hickory-dns.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a8892dffd2f7707de14ca857a1cb84714651a6dca2b41dbe7855b973c9a6fc36"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "de53afa80f9b795cde441e04e319a14f1658fec6c841d149017b30527e4eee7f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e2a45494677136cd63a73b3caa4991f0d055080629ff8445e2f0184e529c3a3e"
-    sha256 cellar: :any,                 arm64_linux:   "cdc293e43392a5ead946194f691709cf1dd5da025ebfd2d4f400495f5d127ffc"
-    sha256 cellar: :any,                 x86_64_linux:  "ed8a0889eb5be0672746eefb6097e3942a601aac6b5ca048fe5e438ea481ae17"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "421b6af839f3872e2b3f13d6d3e49c52d744099cf9bda59b4b98d0214b5c26b3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "af16e713fe41772f591af1f17c4a47e19b4e0777248f422cc35f8c9155e4bdaf"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5fa9d0779ab05a7a787d305a079fc57b882f205ac42eaf2d046da66dd62a80a1"
+    sha256 cellar: :any,                 arm64_linux:   "c58cde955439c5ea965aa523d417314c84d806c7537b9f42aa47fee6bfc48866"
+    sha256 cellar: :any,                 x86_64_linux:  "48eddfc4a2730a30ec2eb6ce2532731844c3a86db05cefa8b24fa085434f89df"
   end
 
   depends_on "rust" => :build

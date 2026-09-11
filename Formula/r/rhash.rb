@@ -7,14 +7,15 @@ class Rhash < Formula
   head "https://github.com/rhash/RHash.git", branch: "master"
 
   bottle do
-    sha256 arm64_tahoe:   "8381d2e7c93d8e50d3c1f6e70af34ee844a3bd07c6cf7a5882ed07cf073f5600"
-    sha256 arm64_sequoia: "7cfeaa013d6bc5fc89cad3d34349ebfbc38f65da844f6eda92e55f91d42144ec"
-    sha256 arm64_sonoma:  "10388639684b13fe90f7ac889e1023a7823e01087d04d4725068aca25207387e"
-    sha256 arm64_ventura: "757848383261b7e991ba04ecd5a3310bc263c8d259ee6ee98a8c82822b1f8ae3"
-    sha256 sonoma:        "d0ebe3819cd610352c788258e8b6e9d1e04941a598cc9e4e141b24e25caf6eab"
-    sha256 ventura:       "39760c4816095b7abc836fb065c2e5d7ae0e540d6dff9720e675c476a212851e"
-    sha256 arm64_linux:   "de58dca8a85542060574b3263b18556bc90adcacfb41710083ebd342a33ff5ba"
-    sha256 x86_64_linux:  "924accaa51ffbf427905f37750a5aae05bb8fd7b22190653560b90d8e3388108"
+    sha256 arm64_golden_gate: "fa6b71c1fa102d51cfb31371cdc558edc45d76f30aed3396c11e1db88ddabb5f"
+    sha256 arm64_tahoe:       "8381d2e7c93d8e50d3c1f6e70af34ee844a3bd07c6cf7a5882ed07cf073f5600"
+    sha256 arm64_sequoia:     "7cfeaa013d6bc5fc89cad3d34349ebfbc38f65da844f6eda92e55f91d42144ec"
+    sha256 arm64_sonoma:      "10388639684b13fe90f7ac889e1023a7823e01087d04d4725068aca25207387e"
+    sha256 arm64_ventura:     "757848383261b7e991ba04ecd5a3310bc263c8d259ee6ee98a8c82822b1f8ae3"
+    sha256 sonoma:            "d0ebe3819cd610352c788258e8b6e9d1e04941a598cc9e4e141b24e25caf6eab"
+    sha256 ventura:           "39760c4816095b7abc836fb065c2e5d7ae0e540d6dff9720e675c476a212851e"
+    sha256 arm64_linux:       "de58dca8a85542060574b3263b18556bc90adcacfb41710083ebd342a33ff5ba"
+    sha256 x86_64_linux:      "924accaa51ffbf427905f37750a5aae05bb8fd7b22190653560b90d8e3388108"
   end
 
   def install

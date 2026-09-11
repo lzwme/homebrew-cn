@@ -8,11 +8,12 @@ class Aom < Formula
   head "https://aomedia.googlesource.com/aom.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "fa21f5d8f33607865ebb97f3d0d00c1b66478974655429fbb380453860b49bc8"
-    sha256 cellar: :any, arm64_sequoia: "11f0ac517540167458ed0cf802122c1c2acb0e68324e4e15f68b42fbcbcb4085"
-    sha256 cellar: :any, arm64_sonoma:  "55e1d1912482f0eb4b3a1d361aa539d60a133fc7970b54fbf03a9de6b9a06979"
-    sha256 cellar: :any, arm64_linux:   "a3050f86d92eaff18666350a942860196c36beaf918dbbea42f461f7a05246bb"
-    sha256 cellar: :any, x86_64_linux:  "cab4a72d9c97b16f8e418afcb05d4660f64fe68d20668b821cb57d47296b59b8"
+    sha256 cellar: :any, arm64_golden_gate: "af36a21b43824331dd0dcc3b5e6f8ad30f0987977346b63a794fb43af6f4cdda"
+    sha256 cellar: :any, arm64_tahoe:       "fa21f5d8f33607865ebb97f3d0d00c1b66478974655429fbb380453860b49bc8"
+    sha256 cellar: :any, arm64_sequoia:     "11f0ac517540167458ed0cf802122c1c2acb0e68324e4e15f68b42fbcbcb4085"
+    sha256 cellar: :any, arm64_sonoma:      "55e1d1912482f0eb4b3a1d361aa539d60a133fc7970b54fbf03a9de6b9a06979"
+    sha256 cellar: :any, arm64_linux:       "a3050f86d92eaff18666350a942860196c36beaf918dbbea42f461f7a05246bb"
+    sha256 cellar: :any, x86_64_linux:      "cab4a72d9c97b16f8e418afcb05d4660f64fe68d20668b821cb57d47296b59b8"
   end
 
   depends_on "cmake" => :build

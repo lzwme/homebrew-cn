@@ -12,12 +12,13 @@ class Potrace < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "f60557ba39e1e0bb436b79900bec393061141e8e73aa8b20cec3f3b95db69166"
-    sha256 cellar: :any,                 arm64_sequoia: "c2ff921aca3ef95cfe62c72c080e78e5cf3628c13797391472aae7dd51e0d445"
-    sha256 cellar: :any,                 arm64_sonoma:  "a7ff4e43e5e8772b091688b83e6c8d859a78b1e491161e022f49f90fcee1af58"
-    sha256 cellar: :any,                 sonoma:        "d029f0be5c3488ee0505ab9007c421d7028da1cd92ef677c9526323594f9e7e1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a8fa204329840a3d30ac7b01a350675dfc3fb3d35b63e49fe4066c086d0aaf19"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7ae69c21ad7fef2bac8e10969569948da925bf7266e3939ed02349fd85ae7f42"
+    sha256 cellar: :any,                 arm64_golden_gate: "b9ab2c351695b7b352803fa732ca1cd8ff4b71ca76b2df6ce3ec44f1be4f3db9"
+    sha256 cellar: :any,                 arm64_tahoe:       "f60557ba39e1e0bb436b79900bec393061141e8e73aa8b20cec3f3b95db69166"
+    sha256 cellar: :any,                 arm64_sequoia:     "c2ff921aca3ef95cfe62c72c080e78e5cf3628c13797391472aae7dd51e0d445"
+    sha256 cellar: :any,                 arm64_sonoma:      "a7ff4e43e5e8772b091688b83e6c8d859a78b1e491161e022f49f90fcee1af58"
+    sha256 cellar: :any,                 sonoma:            "d029f0be5c3488ee0505ab9007c421d7028da1cd92ef677c9526323594f9e7e1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "a8fa204329840a3d30ac7b01a350675dfc3fb3d35b63e49fe4066c086d0aaf19"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "7ae69c21ad7fef2bac8e10969569948da925bf7266e3939ed02349fd85ae7f42"
   end
 
   on_linux do

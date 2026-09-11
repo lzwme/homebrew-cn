@@ -8,14 +8,15 @@ class Arpack < Formula
   head "https://github.com/opencollab/arpack-ng.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "49cef98cf7475c671e5826e23a50d8c093a34685d6a98ed55614916f2196408b"
-    sha256 cellar: :any,                 arm64_sequoia: "476f1c28808b3115fa9cf72d17bda20b989dc60d911d3abe85be50a92bd1d6a1"
-    sha256 cellar: :any,                 arm64_sonoma:  "fcc8d39b5a28e371db0331c0f2ae3de23a6c37e38e9ee5026b88e668c093ea71"
-    sha256 cellar: :any,                 arm64_ventura: "99cf4eb648f19ac5355d2572ec5536624ca39d7480fd42bf00fcc478728ac9b4"
-    sha256 cellar: :any,                 sonoma:        "f2b3e99ace1d79b1b69b986f2bbe88b43ccef0c2662b2158b70586b3c4a40e90"
-    sha256 cellar: :any,                 ventura:       "153bbc3358e289d2ee528f481a86dcb41de9fe2947713b5e3a7241bfe45cb6de"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "08a91a56289af355e7139466cff2c2d882e4361bddc76d4b509bee94524154cd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "37cccca9e03aeb558521d7f5e3022e24c99ba52aaecddfb99fd38ce08287c5bf"
+    sha256 cellar: :any,                 arm64_golden_gate: "f30e80e2aaa1acf76554444ff9ae14d5893c9d68660bde18cb431bb3310092c5"
+    sha256 cellar: :any,                 arm64_tahoe:       "49cef98cf7475c671e5826e23a50d8c093a34685d6a98ed55614916f2196408b"
+    sha256 cellar: :any,                 arm64_sequoia:     "476f1c28808b3115fa9cf72d17bda20b989dc60d911d3abe85be50a92bd1d6a1"
+    sha256 cellar: :any,                 arm64_sonoma:      "fcc8d39b5a28e371db0331c0f2ae3de23a6c37e38e9ee5026b88e668c093ea71"
+    sha256 cellar: :any,                 arm64_ventura:     "99cf4eb648f19ac5355d2572ec5536624ca39d7480fd42bf00fcc478728ac9b4"
+    sha256 cellar: :any,                 sonoma:            "f2b3e99ace1d79b1b69b986f2bbe88b43ccef0c2662b2158b70586b3c4a40e90"
+    sha256 cellar: :any,                 ventura:           "153bbc3358e289d2ee528f481a86dcb41de9fe2947713b5e3a7241bfe45cb6de"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "08a91a56289af355e7139466cff2c2d882e4361bddc76d4b509bee94524154cd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "37cccca9e03aeb558521d7f5e3022e24c99ba52aaecddfb99fd38ce08287c5bf"
   end
 
   depends_on "autoconf" => :build

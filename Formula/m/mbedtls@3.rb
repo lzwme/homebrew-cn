@@ -12,12 +12,13 @@ class MbedtlsAT3 < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "fd7f0577e006f5d4b7bae70773a1eb13d55dc00d7aac524d021ea72619b71da5"
-    sha256 cellar: :any, arm64_sequoia: "7cd64fbb7ffb94fd34123f4afcebcb312d38a3d2f1d00b14ed6500291173545a"
-    sha256 cellar: :any, arm64_sonoma:  "c68f39491b22e489486cdca7ce952f937e2ab4d8b80aea4ad4265a15a8d73b62"
-    sha256 cellar: :any, sonoma:        "ab8e98482d1b2709f0de75d57efd496b755e8e81ad07f9c86f2a0a8249de3230"
-    sha256 cellar: :any, arm64_linux:   "6464bb53f579d74a0d25f494487a6dd0f38f202a537e77ce74610b62c750f071"
-    sha256 cellar: :any, x86_64_linux:  "f86301caf03146665db16c0877b10c1423275f3ba40f18f7ee024fb3138cb83a"
+    sha256 cellar: :any, arm64_golden_gate: "1a3f3c867bcbc93122a9e6a95159a47fcd2cccc7b3eb6416daca89751e81a815"
+    sha256 cellar: :any, arm64_tahoe:       "fd7f0577e006f5d4b7bae70773a1eb13d55dc00d7aac524d021ea72619b71da5"
+    sha256 cellar: :any, arm64_sequoia:     "7cd64fbb7ffb94fd34123f4afcebcb312d38a3d2f1d00b14ed6500291173545a"
+    sha256 cellar: :any, arm64_sonoma:      "c68f39491b22e489486cdca7ce952f937e2ab4d8b80aea4ad4265a15a8d73b62"
+    sha256 cellar: :any, sonoma:            "ab8e98482d1b2709f0de75d57efd496b755e8e81ad07f9c86f2a0a8249de3230"
+    sha256 cellar: :any, arm64_linux:       "6464bb53f579d74a0d25f494487a6dd0f38f202a537e77ce74610b62c750f071"
+    sha256 cellar: :any, x86_64_linux:      "f86301caf03146665db16c0877b10c1423275f3ba40f18f7ee024fb3138cb83a"
   end
 
   keg_only :versioned_formula

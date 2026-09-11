@@ -9,12 +9,13 @@ class Borgbackup < Formula
   head "https://github.com/borgbackup/borg.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "db4ed584f44dee14a3d512e16e1549b3ca7943cad7d71fb8a4ac901ecbeb3095"
-    sha256 cellar: :any, arm64_sequoia: "1b204d77c5a63d76491a1cad9bef168bc49fba1fc9889444465eb0c6679c644f"
-    sha256 cellar: :any, arm64_sonoma:  "6f88ce584671d537b1aa3c280e7a3f40c5abab2fbe9069d650848841a95bca1f"
-    sha256 cellar: :any, sonoma:        "dbe06090133daa0bdfb7104803ab87f2553c2e4320abdd21cbd143a419414e86"
-    sha256 cellar: :any, arm64_linux:   "583ab17106323098a0525e581ffea18aae6a55e1d2bee58c78a0e5fbb06370f5"
-    sha256 cellar: :any, x86_64_linux:  "ddf280876394d997023b4b5a124e6735e48edae22e0ad01373f4812df336866f"
+    sha256 cellar: :any, arm64_golden_gate: "107c9404507722b1cf942858d1899afa136dcf0a85426cea73d59fa06f4a8ebc"
+    sha256 cellar: :any, arm64_tahoe:       "db4ed584f44dee14a3d512e16e1549b3ca7943cad7d71fb8a4ac901ecbeb3095"
+    sha256 cellar: :any, arm64_sequoia:     "1b204d77c5a63d76491a1cad9bef168bc49fba1fc9889444465eb0c6679c644f"
+    sha256 cellar: :any, arm64_sonoma:      "6f88ce584671d537b1aa3c280e7a3f40c5abab2fbe9069d650848841a95bca1f"
+    sha256 cellar: :any, sonoma:            "dbe06090133daa0bdfb7104803ab87f2553c2e4320abdd21cbd143a419414e86"
+    sha256 cellar: :any, arm64_linux:       "583ab17106323098a0525e581ffea18aae6a55e1d2bee58c78a0e5fbb06370f5"
+    sha256 cellar: :any, x86_64_linux:      "ddf280876394d997023b4b5a124e6735e48edae22e0ad01373f4812df336866f"
   end
 
   depends_on "pkgconf" => :build

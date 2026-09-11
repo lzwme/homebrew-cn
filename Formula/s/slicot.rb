@@ -6,12 +6,13 @@ class Slicot < Formula
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "fe100cde167f2c093216156513328bb28f2a4c7ea5258c266cfc10d467bf59a2"
-    sha256 cellar: :any,                 arm64_sequoia: "f6871a8005e9bf5d72a32d14443624a914027946644bcd945f3e0cc4f3f573a9"
-    sha256 cellar: :any,                 arm64_sonoma:  "66ed2195520bfa80e07b7956f0b3d8e698b62702deba9960876f6a28c1de44b5"
-    sha256 cellar: :any,                 sonoma:        "e1686e0f706660d9fed58f3e75a2c89d8ef729f0b6a0c32ba6c27df8371bf743"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9d5b8da792e3ef6cc877f3378cf09363e506a8f0343e2979d3119fb753859e04"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3ea5b7ec7913b21537a1372ee5644e9eb7fd2f70466c8b8a914a1cf82b589b41"
+    sha256 cellar: :any,                 arm64_golden_gate: "e6e06c50fc324a02a56d4c11cfc9cb8afc57ae00e418eff59971776f53e9c3e8"
+    sha256 cellar: :any,                 arm64_tahoe:       "fe100cde167f2c093216156513328bb28f2a4c7ea5258c266cfc10d467bf59a2"
+    sha256 cellar: :any,                 arm64_sequoia:     "f6871a8005e9bf5d72a32d14443624a914027946644bcd945f3e0cc4f3f573a9"
+    sha256 cellar: :any,                 arm64_sonoma:      "66ed2195520bfa80e07b7956f0b3d8e698b62702deba9960876f6a28c1de44b5"
+    sha256 cellar: :any,                 sonoma:            "e1686e0f706660d9fed58f3e75a2c89d8ef729f0b6a0c32ba6c27df8371bf743"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "9d5b8da792e3ef6cc877f3378cf09363e506a8f0343e2979d3119fb753859e04"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "3ea5b7ec7913b21537a1372ee5644e9eb7fd2f70466c8b8a914a1cf82b589b41"
   end
 
   depends_on "cmake" => :build

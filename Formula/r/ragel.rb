@@ -11,12 +11,13 @@ class Ragel < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2ec7bcd332c95e0ce22b78cb2d6cfe376c09a2b6b84adbb85ef601b717a7629b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1b47c717a0bec033d0acd6d0cbd28e237d353b91fdc0fbaee79cf78865dd58e8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cf103f38405d030952937a459b7d013f314be0aad9b598e17807208658ec12ea"
-    sha256 cellar: :any_skip_relocation, sonoma:        "eddfd8d0747348e05f495475f08f423a72b5fab660f021871234f31d29c6845e"
-    sha256 cellar: :any,                 arm64_linux:   "5398365191dac2c977a7b656df4e754aa581732750e33a622cc9ce4c48844831"
-    sha256 cellar: :any,                 x86_64_linux:  "3b891e0145e09eb372556857d77fe05733b0cc2edbcb74031238b07464a6da69"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "f54418ef6a97cb0e5373c483726199485e5d71b0b7fd737197788a74ba211596"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "2ec7bcd332c95e0ce22b78cb2d6cfe376c09a2b6b84adbb85ef601b717a7629b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "1b47c717a0bec033d0acd6d0cbd28e237d353b91fdc0fbaee79cf78865dd58e8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "cf103f38405d030952937a459b7d013f314be0aad9b598e17807208658ec12ea"
+    sha256 cellar: :any_skip_relocation, sonoma:            "eddfd8d0747348e05f495475f08f423a72b5fab660f021871234f31d29c6845e"
+    sha256 cellar: :any,                 arm64_linux:       "5398365191dac2c977a7b656df4e754aa581732750e33a622cc9ce4c48844831"
+    sha256 cellar: :any,                 x86_64_linux:      "3b891e0145e09eb372556857d77fe05733b0cc2edbcb74031238b07464a6da69"
   end
 
   resource "pdf" do

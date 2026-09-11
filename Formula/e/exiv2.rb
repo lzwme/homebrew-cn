@@ -13,11 +13,12 @@ class Exiv2 < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "1bf5ecd63412646a9969cb43b8422d0e5fb2f20518f4486b7f2e96d771ef084d"
-    sha256 cellar: :any, arm64_sequoia: "7c4b3ae3eff4a717473f7d465dacea8bfce5c6c4a947da4c1755c7ccaa633515"
-    sha256 cellar: :any, arm64_sonoma:  "4d61927c3d35cceef91f1be2812537a33464323900edea98cb8b1e171d4ef6f9"
-    sha256 cellar: :any, arm64_linux:   "70ea1747fa415034e2e6e91e3afb96ab0f15746bf92a106bec81006a909793cb"
-    sha256 cellar: :any, x86_64_linux:  "17da282eab8ac3881a9ba74b359593a0e11ade982bd0f8075c852f3c9bea4b3c"
+    sha256 cellar: :any, arm64_golden_gate: "c3297dda61a63550426afc5948420942e05888db68edb149fb37b76f32dc0648"
+    sha256 cellar: :any, arm64_tahoe:       "1bf5ecd63412646a9969cb43b8422d0e5fb2f20518f4486b7f2e96d771ef084d"
+    sha256 cellar: :any, arm64_sequoia:     "7c4b3ae3eff4a717473f7d465dacea8bfce5c6c4a947da4c1755c7ccaa633515"
+    sha256 cellar: :any, arm64_sonoma:      "4d61927c3d35cceef91f1be2812537a33464323900edea98cb8b1e171d4ef6f9"
+    sha256 cellar: :any, arm64_linux:       "70ea1747fa415034e2e6e91e3afb96ab0f15746bf92a106bec81006a909793cb"
+    sha256 cellar: :any, x86_64_linux:      "17da282eab8ac3881a9ba74b359593a0e11ade982bd0f8075c852f3c9bea4b3c"
   end
 
   depends_on "cmake" => :build

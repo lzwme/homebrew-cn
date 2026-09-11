@@ -1,8 +1,8 @@
 class Psqlodbc < Formula
   desc "Official PostgreSQL ODBC driver"
   homepage "https://odbc.postgresql.org"
-  url "https://ghfast.top/https://github.com/postgresql-interfaces/psqlodbc/archive/refs/tags/REL-18_00_0002.tar.gz"
-  sha256 "54c07372478d1085f4f7f98753d6454f8b231c155ff29c5aca4b34aa95bfc51f"
+  url "https://ghfast.top/https://github.com/postgresql-interfaces/psqlodbc/archive/refs/tags/REL-18_00_0003.tar.gz"
+  sha256 "c99b58d3ee18343bb0394c3a0d2e49d80c1a466e6e1ef999e4201a8acdb3f14d"
   license "LGPL-2.0-or-later"
   head "https://github.com/postgresql-interfaces/psqlodbc.git", branch: "main"
 
@@ -15,12 +15,11 @@ class Psqlodbc < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "2aac053918a25fbae7120aee158d59b468fed678201d5a92d7d0f66aacb25cfd"
-    sha256 cellar: :any, arm64_sequoia: "775570e12994cfedbb333cffb16ad6717e9c37681b4aef44318ddb49809834f9"
-    sha256 cellar: :any, arm64_sonoma:  "6eb23efb1c4ce46cbfc7055f777ae4e0ed4562181076218e826ca63e0c0fde14"
-    sha256 cellar: :any, sonoma:        "18c3b760f0cf3fa2ab1d4df676998b7417a284e31d7dca14ff15084ec290d1c6"
-    sha256 cellar: :any, arm64_linux:   "278530d1ef05ad8be0769c46e21da3cbcf09c22cabd5e4929a86577e7d59a17b"
-    sha256 cellar: :any, x86_64_linux:  "5cf83ae262b45476a1a8c7f15197c79a26cda0dc4612eabb6bd155f6f8328761"
+    sha256 cellar: :any, arm64_tahoe:   "3bc8fdeb796c89790022b29289ecbce07c02b5d043d3a5b1e5dd1bdf20da069d"
+    sha256 cellar: :any, arm64_sequoia: "7c92ca022fd047403add1bdf3b283cab6b86743664b5ee750e84ec4bff4c56e9"
+    sha256 cellar: :any, arm64_sonoma:  "c64a24e63cb798ffb8f1bd4900cf8f8d1bbede7c7b596214d9d3311b5c3bbdf4"
+    sha256 cellar: :any, arm64_linux:   "a19ab18b33667c9c19ae01695fffb3a7f29c459612c795e38742c68efb2d4cfe"
+    sha256 cellar: :any, x86_64_linux:  "c3ab8790e4dcdc00a4f3a517cd3684c46772fe88c62eb4c9f3699936fa1a0000"
   end
 
   depends_on "autoconf" => :build

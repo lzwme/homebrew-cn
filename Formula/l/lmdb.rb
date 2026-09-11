@@ -14,11 +14,12 @@ class Lmdb < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "25de37350b3afc08c8ad81939a88b05ecc8810ac7f0908bd1c9c897ea351042a"
-    sha256 cellar: :any, arm64_sequoia: "bcb12afd2757b2790ba1297a8a482fc5ea8afe1205d5a4e4317e9ed2803f1639"
-    sha256 cellar: :any, arm64_sonoma:  "53d4566b101a98faa59709aa1d44444b6d384c84048b4708567076f4160c09e1"
-    sha256 cellar: :any, arm64_linux:   "cba5547a82780ede803fa0a0705dd4730b67954943ee00dbba8351596959c672"
-    sha256 cellar: :any, x86_64_linux:  "e9b064deedfc049c057f13ff56a1d2939c172fef630df22145adbbc7a1250875"
+    sha256 cellar: :any, arm64_golden_gate: "73ca53399b31f5e285b3ba59d5f7b63d163304c296397c4d6062e3173e9b7759"
+    sha256 cellar: :any, arm64_tahoe:       "25de37350b3afc08c8ad81939a88b05ecc8810ac7f0908bd1c9c897ea351042a"
+    sha256 cellar: :any, arm64_sequoia:     "bcb12afd2757b2790ba1297a8a482fc5ea8afe1205d5a4e4317e9ed2803f1639"
+    sha256 cellar: :any, arm64_sonoma:      "53d4566b101a98faa59709aa1d44444b6d384c84048b4708567076f4160c09e1"
+    sha256 cellar: :any, arm64_linux:       "cba5547a82780ede803fa0a0705dd4730b67954943ee00dbba8351596959c672"
+    sha256 cellar: :any, x86_64_linux:      "e9b064deedfc049c057f13ff56a1d2939c172fef630df22145adbbc7a1250875"
   end
 
   depends_on "pkgconf" => :test

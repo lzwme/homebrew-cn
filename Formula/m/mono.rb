@@ -14,12 +14,13 @@ class Mono < Formula
 
   bottle do
     rebuild 2
-    sha256 arm64_tahoe:   "2859f9fc32324373e145969a201a90621c1443001d454d8b0c48ce349356f725"
-    sha256 arm64_sequoia: "ada6e9683f3e1c9c4f0dc372680250252cfca61ac77c1f8f6299ad3b8452cfd8"
-    sha256 arm64_sonoma:  "66ab0b66299f71ab5f37ad15ac0282b7628af0e9daf210df43120118cb4bc8e4"
-    sha256 sonoma:        "42ea1aab95e1cdb360e600e2ef1d0b868a91fa8aba7d0d1e6d437d7388b39d3d"
-    sha256 arm64_linux:   "bf35bf67b10fa9755014d6efb0bbe5b882309675846ffce33bf2c9fc824e7453"
-    sha256 x86_64_linux:  "a2671d691010f3649f86ef822be69121d1bcb7071f1c04b1959d4b05a4ad7a96"
+    sha256 arm64_golden_gate: "36e536f89ddf0eb0a03b5db14a9bf4d3c23361618f75e49142605b7ce7f81f7e"
+    sha256 arm64_tahoe:       "2859f9fc32324373e145969a201a90621c1443001d454d8b0c48ce349356f725"
+    sha256 arm64_sequoia:     "ada6e9683f3e1c9c4f0dc372680250252cfca61ac77c1f8f6299ad3b8452cfd8"
+    sha256 arm64_sonoma:      "66ab0b66299f71ab5f37ad15ac0282b7628af0e9daf210df43120118cb4bc8e4"
+    sha256 sonoma:            "42ea1aab95e1cdb360e600e2ef1d0b868a91fa8aba7d0d1e6d437d7388b39d3d"
+    sha256 arm64_linux:       "bf35bf67b10fa9755014d6efb0bbe5b882309675846ffce33bf2c9fc824e7453"
+    sha256 x86_64_linux:      "a2671d691010f3649f86ef822be69121d1bcb7071f1c04b1959d4b05a4ad7a96"
   end
 
   depends_on "autoconf" => :build

@@ -18,12 +18,13 @@ class Libagg < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "2a584e6f356275a80289a9969392fb203b5dad15796747deda4f2c8388fd7350"
-    sha256 cellar: :any, arm64_sequoia: "a3f905d901e3d9d54c9839a5239270140b6108c6c1d72b366d2bec5aef7af9af"
-    sha256 cellar: :any, arm64_sonoma:  "2342ac49f1de17c8d34d9259df4ec886f4ac514222887a8b602eb7e916b036ab"
-    sha256 cellar: :any, sonoma:        "22e814733d51edae4810e942a97e56013945f4d64942ef98e3b7d9ba823fa74e"
-    sha256 cellar: :any, arm64_linux:   "ae450d15738a6ace6569f1baa389068c2d06b102032ee3d9d57a907430bb0d98"
-    sha256 cellar: :any, x86_64_linux:  "1b894c3e5385ed4bbeca50ab77c5f84f782d428d1a150f24746bbc364036e811"
+    sha256 cellar: :any, arm64_golden_gate: "82e8aa03fbebfdbbd8ee05acc598f3e8c0f9ae4ac283dd75f53712e0bca2905a"
+    sha256 cellar: :any, arm64_tahoe:       "2a584e6f356275a80289a9969392fb203b5dad15796747deda4f2c8388fd7350"
+    sha256 cellar: :any, arm64_sequoia:     "a3f905d901e3d9d54c9839a5239270140b6108c6c1d72b366d2bec5aef7af9af"
+    sha256 cellar: :any, arm64_sonoma:      "2342ac49f1de17c8d34d9259df4ec886f4ac514222887a8b602eb7e916b036ab"
+    sha256 cellar: :any, sonoma:            "22e814733d51edae4810e942a97e56013945f4d64942ef98e3b7d9ba823fa74e"
+    sha256 cellar: :any, arm64_linux:       "ae450d15738a6ace6569f1baa389068c2d06b102032ee3d9d57a907430bb0d98"
+    sha256 cellar: :any, x86_64_linux:      "1b894c3e5385ed4bbeca50ab77c5f84f782d428d1a150f24746bbc364036e811"
   end
 
   depends_on "autoconf" => :build

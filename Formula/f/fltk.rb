@@ -12,12 +12,13 @@ class Fltk < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "486b747ce5c87b2e0292feb5f9556090388f70ca4697d2ea5165c886f765ffc6"
-    sha256 arm64_sequoia: "9e50dae565ef381c5ea41fd176c1ece2190d8666983d745f4ad4d7efb86c8d4b"
-    sha256 arm64_sonoma:  "44c9423e04fb4c95e8ab18c1bd7f6cac703147bfabc7f6c4178e58518bd6eb09"
-    sha256 sonoma:        "a0d0ca4dfee32a2dd64d3870bda0d3b328b17ff8410873f0b67c009902ca36ce"
-    sha256 arm64_linux:   "7f08bf92d754478f35e14695914c71299086a4d0af59c8faff0353bdefd2d30d"
-    sha256 x86_64_linux:  "1d3997c559d56c76ab5e82cadcf5cac020a901c33f302b1c0b2246af7dbca31a"
+    sha256 arm64_golden_gate: "3023f8abf48fa5341591cd5d022563c1f0e5650626dc65b472060567df49fb2f"
+    sha256 arm64_tahoe:       "486b747ce5c87b2e0292feb5f9556090388f70ca4697d2ea5165c886f765ffc6"
+    sha256 arm64_sequoia:     "9e50dae565ef381c5ea41fd176c1ece2190d8666983d745f4ad4d7efb86c8d4b"
+    sha256 arm64_sonoma:      "44c9423e04fb4c95e8ab18c1bd7f6cac703147bfabc7f6c4178e58518bd6eb09"
+    sha256 sonoma:            "a0d0ca4dfee32a2dd64d3870bda0d3b328b17ff8410873f0b67c009902ca36ce"
+    sha256 arm64_linux:       "7f08bf92d754478f35e14695914c71299086a4d0af59c8faff0353bdefd2d30d"
+    sha256 x86_64_linux:      "1d3997c559d56c76ab5e82cadcf5cac020a901c33f302b1c0b2246af7dbca31a"
   end
 
   head do

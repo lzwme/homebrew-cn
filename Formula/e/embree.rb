@@ -12,12 +12,13 @@ class Embree < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "fb11b4f0806271a15840fa9f2c9c4bdebd7de5d7acf31995b964aae38d03c201"
-    sha256 cellar: :any,                 arm64_sequoia: "e34162275529cba08ace54afcfb988b9297794f5aa6ce9559b37e1aeb6cd938f"
-    sha256 cellar: :any,                 arm64_sonoma:  "34dace02f56e7424677e8a037e6ff8952a35d8e5624a17e1c52fe421bb6e03d1"
-    sha256 cellar: :any,                 sonoma:        "22617ba4d4b95d85a6dda3f3d5a6970c78d1a56974a123319048484fcda2c55c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b764ddec2965dbff1e317dee360d30daac5cf76244b788fbbe4159ba6182f3d8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b8f3059841dfcb2bc51a8dc92d93edeeb7ad19dbdfa2f10aa663dd89280a6656"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "2d8e8c2a85a2603616b2acd3e5fbd6c662a57df9c330b5afc7ff2864193cdd3e"
+    sha256 cellar: :any, arm64_tahoe:       "599121dbb13ec24262aa0f1ee733d79f13dab88df48ab4179652ae0de7ef326e"
+    sha256 cellar: :any, arm64_sequoia:     "a08f58e85ee4281a712fe8e0b553e30b2a3eb1dac6a7e70955b5daee18256f20"
+    sha256 cellar: :any, arm64_sonoma:      "68776f6b9992f0315f0bc13c2bdf5c6278b8c29c78157aa1d732fa4cee1e5184"
+    sha256 cellar: :any, arm64_linux:       "33418e0762947304108496847bd0e54fb9c7f4832e2afbf0c7563c5123d4fe2f"
+    sha256 cellar: :any, x86_64_linux:      "b2d4cb849835178c2cee7847c8115c0305be7a8ed6956ca6a56f612ce77ba231"
   end
 
   depends_on "cmake" => :build
@@ -25,19 +26,15 @@ class Embree < Formula
   depends_on "tbb"
 
   def install
-    args = %w[
+    # Enable maximum ISA as it is detected at runtime
+    ENV.runtime_cpu_detection
+    max_isa = Hardware::CPU.intel? ? "AVX512" : "NEON2X"
+    args = %W[
       -DEMBREE_IGNORE_CMAKE_CXX_FLAGS=OFF
       -DEMBREE_ISPC_SUPPORT=ON
       -DEMBREE_TUTORIALS=OFF
+      -DEMBREE_MAX_ISA=#{max_isa}
     ]
-    if Hardware::CPU.intel?
-      max_isa = if OS.mac? && MacOS.version.requires_sse4?
-        "SSE4.2"
-      else
-        "SSE2"
-      end
-      args << "-DEMBREE_MAX_ISA=#{max_isa}"
-    end
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"

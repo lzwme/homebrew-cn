@@ -1,8 +1,8 @@
 class Iqtree3 < Formula
   desc "Phylogenetics by maximum likelihood"
   homepage "http://www.iqtree.org"
-  url "https://ghfast.top/https://github.com/iqtree/iqtree3/archive/refs/tags/v3.1.3.tar.gz"
-  sha256 "b992e4c4a5429ebebf5b37ae7134dc3d6e3ea616f04cbb021947dfb7d034fbd9"
+  url "https://ghfast.top/https://github.com/iqtree/iqtree3/archive/refs/tags/v3.1.4.tar.gz"
+  sha256 "8bcba50d25263fb7e5d52d308f7d2a35545dd53f96e04cf44e6a0515be0f823b"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -11,11 +11,11 @@ class Iqtree3 < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "41765e8f449e20786670b9e93f5dfacb162b5086fbb208a00652f9e753a3165f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "abba490ece6c76de88eb72d1ac933baaf87ac25c88ee63a03c55465e2af3a2be"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d9fd8c20f841891b96074a223aa156974837629d621d5141a4f34b05693ec085"
-    sha256 cellar: :any,                 arm64_linux:   "91d0dd57871331f145a0b6241871a5dff4c087b9fbde9629ccd363cb0d776505"
-    sha256 cellar: :any,                 x86_64_linux:  "0720ae356d1a6b97c8eaa708578c9d4a6d789ddef60fffe61b1163f9dd4427ba"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6e33ff1f5963b4ac45ef6a4b40ae9541ee891b4011c1ef524dc4f38595b1345d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e6ce71f60f683e1fc6b5366ee0ad54dd287010dd864c2168b350497bc629266f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e2c8a928f24a2755451debca56c2a307f35dfd284ef362433f1b4b86448ed47d"
+    sha256 cellar: :any,                 arm64_linux:   "18127abe13bc2b2f8fe7f2ff39729c9a10d4aa108cabb521c6b8a9453d83a3b5"
+    sha256 cellar: :any,                 x86_64_linux:  "fc415ad7ea4b92ef5d8b7cfadbdc021fa4c7d77f5710d81d42e6123ef7b19963"
   end
 
   depends_on "boost" => :build

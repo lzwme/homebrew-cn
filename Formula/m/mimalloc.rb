@@ -11,11 +11,12 @@ class Mimalloc < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "04061b0c7ebb7bc76c7e95d55ad2a6981ff22920f7886145c6b79588a6bc61ab"
-    sha256 cellar: :any, arm64_sequoia: "bfd557dd21291ac97a557a2d7463c88b2e530683176a6afae51e4d518fd9fb8c"
-    sha256 cellar: :any, arm64_sonoma:  "9f69376d4aa1f14ee26670227a2b7c51c1d1665d3bb5b3f99dc4a8232c0afd29"
-    sha256 cellar: :any, arm64_linux:   "22005789b957987724f84502a38b200e8a7425142d48781d58679c8563feb201"
-    sha256 cellar: :any, x86_64_linux:  "2c4f507d7d80e544f93d25ee850a0bf027f368d68aeb111d34f2406106c10cf6"
+    sha256 cellar: :any, arm64_golden_gate: "04dd7e2c2816a9a8786d025b8ea5bb83c7ff303905b38dc551a7492e4bae9938"
+    sha256 cellar: :any, arm64_tahoe:       "04061b0c7ebb7bc76c7e95d55ad2a6981ff22920f7886145c6b79588a6bc61ab"
+    sha256 cellar: :any, arm64_sequoia:     "bfd557dd21291ac97a557a2d7463c88b2e530683176a6afae51e4d518fd9fb8c"
+    sha256 cellar: :any, arm64_sonoma:      "9f69376d4aa1f14ee26670227a2b7c51c1d1665d3bb5b3f99dc4a8232c0afd29"
+    sha256 cellar: :any, arm64_linux:       "22005789b957987724f84502a38b200e8a7425142d48781d58679c8563feb201"
+    sha256 cellar: :any, x86_64_linux:      "2c4f507d7d80e544f93d25ee850a0bf027f368d68aeb111d34f2406106c10cf6"
   end
 
   depends_on "cmake" => :build

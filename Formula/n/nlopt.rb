@@ -7,12 +7,13 @@ class Nlopt < Formula
   head "https://github.com/stevengj/nlopt.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "40617e9ce8f9f757ec76fcd4db8d2340bd82cf1778d05eadfec77a350b7d010a"
-    sha256 cellar: :any, arm64_sequoia: "e7fb15da5e5f7c6c775912dd6d1f61717eb32b0f6e82a3a7767e5916e21bec96"
-    sha256 cellar: :any, arm64_sonoma:  "c71ce17adc4665fcc9704fb1a906da4211f3f25ef86af8202607c500c4bba4b9"
-    sha256 cellar: :any, sonoma:        "cf3cacdc2592ac3496535423c695dbe65e5fea88d1ce44d258667b650ad785e2"
-    sha256 cellar: :any, arm64_linux:   "455fafa25c9edb817bb3b31d64369a15f060ae05ed96dd4f0a467a1c2c24b4bf"
-    sha256 cellar: :any, x86_64_linux:  "fc367e57d589db083066b92f517e49ee760e9ee1be45082a4b937ae24ac4c6ef"
+    sha256 cellar: :any, arm64_golden_gate: "1cb50a2751d8ec763f499a2e842dbb3dd9466d2476df4bee347c5a0b2563412d"
+    sha256 cellar: :any, arm64_tahoe:       "40617e9ce8f9f757ec76fcd4db8d2340bd82cf1778d05eadfec77a350b7d010a"
+    sha256 cellar: :any, arm64_sequoia:     "e7fb15da5e5f7c6c775912dd6d1f61717eb32b0f6e82a3a7767e5916e21bec96"
+    sha256 cellar: :any, arm64_sonoma:      "c71ce17adc4665fcc9704fb1a906da4211f3f25ef86af8202607c500c4bba4b9"
+    sha256 cellar: :any, sonoma:            "cf3cacdc2592ac3496535423c695dbe65e5fea88d1ce44d258667b650ad785e2"
+    sha256 cellar: :any, arm64_linux:       "455fafa25c9edb817bb3b31d64369a15f060ae05ed96dd4f0a467a1c2c24b4bf"
+    sha256 cellar: :any, x86_64_linux:      "fc367e57d589db083066b92f517e49ee760e9ee1be45082a4b937ae24ac4c6ef"
   end
 
   depends_on "cmake" => [:build, :test]

@@ -14,11 +14,12 @@ class Netcdf < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "61dd571420bf730f8bc3f24b162ba5450e1aa1eaa522aa592038bd8622ff4c10"
-    sha256 arm64_sequoia: "b0720ba605f4915d5fa1edb1a2288f276bd07749f97d4921988f2ac71e244011"
-    sha256 arm64_sonoma:  "5d65a07376386afafeb9b8c656bce0cca0d425848e7b647394a2787a468ad8ac"
-    sha256 arm64_linux:   "d982ff6c2ed8c063cd44e14c7893f15c5c7f98fd80f39a436f40d2c3cdc963f4"
-    sha256 x86_64_linux:  "ea61f420e72dcb4498adf6e647a49d8a3f36255076c925d3a0d0e7f53ea47a53"
+    sha256 arm64_golden_gate: "e4b6a880a8a9a4e354db231c7f7bb029cc8318cd504b5dda98110bd2c089c498"
+    sha256 arm64_tahoe:       "61dd571420bf730f8bc3f24b162ba5450e1aa1eaa522aa592038bd8622ff4c10"
+    sha256 arm64_sequoia:     "b0720ba605f4915d5fa1edb1a2288f276bd07749f97d4921988f2ac71e244011"
+    sha256 arm64_sonoma:      "5d65a07376386afafeb9b8c656bce0cca0d425848e7b647394a2787a468ad8ac"
+    sha256 arm64_linux:       "d982ff6c2ed8c063cd44e14c7893f15c5c7f98fd80f39a436f40d2c3cdc963f4"
+    sha256 x86_64_linux:      "ea61f420e72dcb4498adf6e647a49d8a3f36255076c925d3a0d0e7f53ea47a53"
   end
 
   depends_on "cmake" => :build

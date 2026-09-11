@@ -6,12 +6,13 @@ class XcbUtilCursor < Formula
   license "X11"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "414ef02d902f695b6f2b21b424bbc07006e3d04f197cf2a283078732330d60f8"
-    sha256 cellar: :any,                 arm64_sequoia: "881cf0051664ca918ca4b690f53dd2d6733b2bdf2b50301be620166071f22906"
-    sha256 cellar: :any,                 arm64_sonoma:  "342c99d24d64df6dbe00766483a37823cf02e8b71044286459b673058cb4a7d2"
-    sha256 cellar: :any,                 sonoma:        "acd487cbbeb0e1c7e0bc601c273f2323a0f34e5e30102c3a96a6cf132e776d52"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9cb3947640cb3768b2b5f9d70570df4635a82fe8f596b257b884af324f5c4f9b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3998270713b2f401a73790f53a64284bc41d20ecdb8245a2ce20e615c405920c"
+    sha256 cellar: :any,                 arm64_golden_gate: "f85f37dbc9e9a02407dfab26c917ab8303cea4da12bb930c0f93e686fe07b030"
+    sha256 cellar: :any,                 arm64_tahoe:       "414ef02d902f695b6f2b21b424bbc07006e3d04f197cf2a283078732330d60f8"
+    sha256 cellar: :any,                 arm64_sequoia:     "881cf0051664ca918ca4b690f53dd2d6733b2bdf2b50301be620166071f22906"
+    sha256 cellar: :any,                 arm64_sonoma:      "342c99d24d64df6dbe00766483a37823cf02e8b71044286459b673058cb4a7d2"
+    sha256 cellar: :any,                 sonoma:            "acd487cbbeb0e1c7e0bc601c273f2323a0f34e5e30102c3a96a6cf132e776d52"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "9cb3947640cb3768b2b5f9d70570df4635a82fe8f596b257b884af324f5c4f9b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "3998270713b2f401a73790f53a64284bc41d20ecdb8245a2ce20e615c405920c"
   end
 
   head do

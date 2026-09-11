@@ -8,12 +8,13 @@ class Busted < Formula
   head "https://github.com/lunarmodules/busted.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b365b5128600da6de31d3d468d99d5008fb2c1a359362de3fbf7b206e9b307c3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cbb42897d81c69d3e00608baa5e8794c24cd5a8e7c88630d94f2c123b358b962"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "85ced43b2770a173da2f8ab203fc0014ce265728fcdad2068fdea82c29b0ef78"
-    sha256 cellar: :any_skip_relocation, sonoma:        "71b2b448322e152cb75656508cad75d28fbec3a66dcf804d87d9c8621853428c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b7031313aeb06f0e4cbc1610759e962b0494670f28707c7843248f74ece309e4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e6f66483354265a0fb9b8648ca9038154805516078072e888c56c78eb533bb3b"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "82567727e44a170453f9d3d6a43c29465ae31658631f181bdcd2a93f78278c49"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "b365b5128600da6de31d3d468d99d5008fb2c1a359362de3fbf7b206e9b307c3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "cbb42897d81c69d3e00608baa5e8794c24cd5a8e7c88630d94f2c123b358b962"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "85ced43b2770a173da2f8ab203fc0014ce265728fcdad2068fdea82c29b0ef78"
+    sha256 cellar: :any_skip_relocation, sonoma:            "71b2b448322e152cb75656508cad75d28fbec3a66dcf804d87d9c8621853428c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "b7031313aeb06f0e4cbc1610759e962b0494670f28707c7843248f74ece309e4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "e6f66483354265a0fb9b8648ca9038154805516078072e888c56c78eb533bb3b"
   end
 
   depends_on "luarocks" => :build

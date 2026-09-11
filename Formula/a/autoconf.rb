@@ -11,14 +11,15 @@ class Autoconf < Formula
   compatibility_version 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bc785e044f4bec3efa3e9875f154905dad8a249e6e57d2a3ab0250eebdc866e8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bc785e044f4bec3efa3e9875f154905dad8a249e6e57d2a3ab0250eebdc866e8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bc785e044f4bec3efa3e9875f154905dad8a249e6e57d2a3ab0250eebdc866e8"
-    sha256 cellar: :any_skip_relocation, tahoe:         "bc785e044f4bec3efa3e9875f154905dad8a249e6e57d2a3ab0250eebdc866e8"
-    sha256 cellar: :any_skip_relocation, sequoia:       "bc785e044f4bec3efa3e9875f154905dad8a249e6e57d2a3ab0250eebdc866e8"
-    sha256 cellar: :any_skip_relocation, sonoma:        "bc785e044f4bec3efa3e9875f154905dad8a249e6e57d2a3ab0250eebdc866e8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "774b52ebda38e5562f3ee18bbb1f2d48fe5c89c308f0b8b34c368f1ccd856572"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "774b52ebda38e5562f3ee18bbb1f2d48fe5c89c308f0b8b34c368f1ccd856572"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "df3200b15487ab9ea843f0e737be55df6be5071a20110cc4bc745c8448848ec6"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "bc785e044f4bec3efa3e9875f154905dad8a249e6e57d2a3ab0250eebdc866e8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "bc785e044f4bec3efa3e9875f154905dad8a249e6e57d2a3ab0250eebdc866e8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "bc785e044f4bec3efa3e9875f154905dad8a249e6e57d2a3ab0250eebdc866e8"
+    sha256 cellar: :any_skip_relocation, tahoe:             "bc785e044f4bec3efa3e9875f154905dad8a249e6e57d2a3ab0250eebdc866e8"
+    sha256 cellar: :any_skip_relocation, sequoia:           "bc785e044f4bec3efa3e9875f154905dad8a249e6e57d2a3ab0250eebdc866e8"
+    sha256 cellar: :any_skip_relocation, sonoma:            "bc785e044f4bec3efa3e9875f154905dad8a249e6e57d2a3ab0250eebdc866e8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "774b52ebda38e5562f3ee18bbb1f2d48fe5c89c308f0b8b34c368f1ccd856572"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "774b52ebda38e5562f3ee18bbb1f2d48fe5c89c308f0b8b34c368f1ccd856572"
   end
 
   depends_on "m4"

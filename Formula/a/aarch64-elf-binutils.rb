@@ -11,12 +11,13 @@ class Aarch64ElfBinutils < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "a24365324be5d8859b33565c16883284547d7672fb69c6a1c8ac92de83fe3b7a"
-    sha256 arm64_sequoia: "a3fa459b1396c8d55ef91fabe9aeed5f900256d16f3b82c9ad112e40877691cc"
-    sha256 arm64_sonoma:  "ff07bd6a91ec477ab9035dbefa970ad35e12083404cc837f613f3b2d572d692f"
-    sha256 sonoma:        "696371215f41c5b8890c8f9d665ac75319f3f34825fa98485608909d672e596c"
-    sha256 arm64_linux:   "af744ca0e81b74ffdf76ba73bf2d11da9acd96e3f370db0a20f6a6362438d1f1"
-    sha256 x86_64_linux:  "cbccecb603b3f0e296cdc5c343575b26b8a02aa72344f5293c23b678ffe2c7fb"
+    sha256 arm64_golden_gate: "6b85a7b4fb09a7538e8d2b76d51f60437a9fc5bf97311f6d1d1d7af3e28636c9"
+    sha256 arm64_tahoe:       "a24365324be5d8859b33565c16883284547d7672fb69c6a1c8ac92de83fe3b7a"
+    sha256 arm64_sequoia:     "a3fa459b1396c8d55ef91fabe9aeed5f900256d16f3b82c9ad112e40877691cc"
+    sha256 arm64_sonoma:      "ff07bd6a91ec477ab9035dbefa970ad35e12083404cc837f613f3b2d572d692f"
+    sha256 sonoma:            "696371215f41c5b8890c8f9d665ac75319f3f34825fa98485608909d672e596c"
+    sha256 arm64_linux:       "af744ca0e81b74ffdf76ba73bf2d11da9acd96e3f370db0a20f6a6362438d1f1"
+    sha256 x86_64_linux:      "cbccecb603b3f0e296cdc5c343575b26b8a02aa72344f5293c23b678ffe2c7fb"
   end
 
   depends_on "pkgconf" => :build

@@ -6,12 +6,13 @@ class Lndir < Formula
   license "MIT-open-group"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6f01cd44849addd2936024e18d9a686575cc77661c94538a0e730a2885db5906"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c14db1ae293bad13d546561df38fb953607a0a3932956b2b2404617d3b05bbb4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1ba398b941388dec3edc8cef206ace2cb974d60dbc85f3071b390f8c63fcf059"
-    sha256 cellar: :any_skip_relocation, sonoma:        "10af485c6b8824b569fef29e655f7e2096266992c334a177390413a3aba44bba"
-    sha256 cellar: :any,                 arm64_linux:   "3469420543dc492dd477f38f43b87b888239d6cd82ec76819ce15b8ab7b2eecb"
-    sha256 cellar: :any,                 x86_64_linux:  "4a30636cde435095a78ca552936657217220d9d99d6b24f13513c0f8f6bfe333"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "11877dde5969265f46b2e8eb717f104918ed50adf38d3a9d43cf938c84cdf57d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "6f01cd44849addd2936024e18d9a686575cc77661c94538a0e730a2885db5906"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "c14db1ae293bad13d546561df38fb953607a0a3932956b2b2404617d3b05bbb4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "1ba398b941388dec3edc8cef206ace2cb974d60dbc85f3071b390f8c63fcf059"
+    sha256 cellar: :any_skip_relocation, sonoma:            "10af485c6b8824b569fef29e655f7e2096266992c334a177390413a3aba44bba"
+    sha256 cellar: :any,                 arm64_linux:       "3469420543dc492dd477f38f43b87b888239d6cd82ec76819ce15b8ab7b2eecb"
+    sha256 cellar: :any,                 x86_64_linux:      "4a30636cde435095a78ca552936657217220d9d99d6b24f13513c0f8f6bfe333"
   end
 
   depends_on "pkgconf" => :build

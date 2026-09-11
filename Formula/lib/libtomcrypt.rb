@@ -7,12 +7,13 @@ class Libtomcrypt < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "d82b0b852bedb11cdfe7f28a254014746e93a0328be95bd8e766651bdf0de2ca"
-    sha256 cellar: :any, arm64_sequoia: "244b29efcfb583713abea15ac3f2e9db78db69e446590a0fde61f7f95e68312f"
-    sha256 cellar: :any, arm64_sonoma:  "1b9d391bb3218384bf0aa828237089788f117de17522aba6f1e97179b01c8090"
-    sha256 cellar: :any, sonoma:        "61fe2b3c884b8251113d9ba0ad706d18e9f0e273686b8fafdb98fe9a400be47d"
-    sha256 cellar: :any, arm64_linux:   "31a97ee8228a34c6741ceacd7d143587015cdf8ad3265efaf6ef4f76537bb393"
-    sha256 cellar: :any, x86_64_linux:  "47a647f60c5017666d2313890c33f0448ab9852adedd5eecedf3b5d2df9603b5"
+    sha256 cellar: :any, arm64_golden_gate: "d95dbad31ee81e2c711d4175d9e135b9d426110e2d5533caf764ead1c47c87f1"
+    sha256 cellar: :any, arm64_tahoe:       "d82b0b852bedb11cdfe7f28a254014746e93a0328be95bd8e766651bdf0de2ca"
+    sha256 cellar: :any, arm64_sequoia:     "244b29efcfb583713abea15ac3f2e9db78db69e446590a0fde61f7f95e68312f"
+    sha256 cellar: :any, arm64_sonoma:      "1b9d391bb3218384bf0aa828237089788f117de17522aba6f1e97179b01c8090"
+    sha256 cellar: :any, sonoma:            "61fe2b3c884b8251113d9ba0ad706d18e9f0e273686b8fafdb98fe9a400be47d"
+    sha256 cellar: :any, arm64_linux:       "31a97ee8228a34c6741ceacd7d143587015cdf8ad3265efaf6ef4f76537bb393"
+    sha256 cellar: :any, x86_64_linux:      "47a647f60c5017666d2313890c33f0448ab9852adedd5eecedf3b5d2df9603b5"
   end
 
   depends_on "libtool" => :build

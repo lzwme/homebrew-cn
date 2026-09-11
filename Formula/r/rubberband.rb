@@ -35,6 +35,9 @@ class Rubberband < Formula
   end
 
   def install
+    # `mathmisc.h` uses bare `size_t`, which newer libc++ no longer declares transitively
+    ENV.append_to_cflags "-include stddef.h"
+
     args = ["-Dresampler=libsamplerate"]
     args << "-Dfft=fftw" if OS.linux?
 

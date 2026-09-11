@@ -21,7 +21,6 @@ class Seexpr < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "doxygen" => :build
   depends_on "libpng"
 
   uses_from_macos "bison" => :build
@@ -33,20 +32,17 @@ class Seexpr < Formula
   end
 
   def install
-    sse4 = Hardware::CPU.intel? && ((OS.mac? && MacOS.version.requires_sse4?) ||
-                                    (!build.bottle? && Hardware::CPU.sse4?))
-
-    args = %W[
-      -DUSE_PYTHON=FALSE
-      -DENABLE_LLVM_BACKEND=FALSE
-      -DENABLE_QT5=FALSE
-      -DENABLE_SSE4=#{sse4 ? "ON" : "OFF"}
+    args = %w[
+      -DBUILD_DOC=OFF
+      -DENABLE_LLVM_BACKEND=OFF
+      -DENABLE_QT5=OFF
+      -DENABLE_SSE4=OFF
+      -DUSE_PYTHON=OFF
     ]
     args << "-DCMAKE_INSTALL_RPATH=#{rpath};#{rpath(source: share/"SeExpr2/utils")}" if OS.mac?
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
-    system "cmake", "--build", "build", "--target", "doc"
     system "cmake", "--install", "build"
   end
 

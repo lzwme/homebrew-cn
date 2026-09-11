@@ -11,12 +11,13 @@ class Lame < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "b0fe0cfb39c74a53b7635833fe3293a62c886b084bc5ccc8ed7cd177803182e4"
-    sha256 cellar: :any, arm64_sequoia: "552d24d56ff0d3255e9a3519a368d0ce45de86b5b2967b338209c1a22cd12969"
-    sha256 cellar: :any, arm64_sonoma:  "b0cfa1500aff96430c865fa5e3e8b5494bb9ff70dd4f4fe8f9e7684da626649a"
-    sha256 cellar: :any, sonoma:        "62e5e6acdb340cfdae39e4a4ad49e8b2efcd46bfe91897b670a2c0d5a0693c19"
-    sha256 cellar: :any, arm64_linux:   "bd3d4df9fd0722b758bea12328bd1345d2ca507842f4074b88fe5d10cae13b73"
-    sha256 cellar: :any, x86_64_linux:  "260e9309ef40e8ad7373bfae07f20d5357e036d32b14ea3ce6526fdf15181a37"
+    sha256 cellar: :any, arm64_golden_gate: "c7803cbfacfe405583edef9d81056088008b8cb1e8efca6c2ab1983e1af35de6"
+    sha256 cellar: :any, arm64_tahoe:       "b0fe0cfb39c74a53b7635833fe3293a62c886b084bc5ccc8ed7cd177803182e4"
+    sha256 cellar: :any, arm64_sequoia:     "552d24d56ff0d3255e9a3519a368d0ce45de86b5b2967b338209c1a22cd12969"
+    sha256 cellar: :any, arm64_sonoma:      "b0cfa1500aff96430c865fa5e3e8b5494bb9ff70dd4f4fe8f9e7684da626649a"
+    sha256 cellar: :any, sonoma:            "62e5e6acdb340cfdae39e4a4ad49e8b2efcd46bfe91897b670a2c0d5a0693c19"
+    sha256 cellar: :any, arm64_linux:       "bd3d4df9fd0722b758bea12328bd1345d2ca507842f4074b88fe5d10cae13b73"
+    sha256 cellar: :any, x86_64_linux:      "260e9309ef40e8ad7373bfae07f20d5357e036d32b14ea3ce6526fdf15181a37"
   end
 
   depends_on "pkgconf" => :build

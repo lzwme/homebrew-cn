@@ -8,14 +8,15 @@ class Libtool < Formula
   compatibility_version 1
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "719ae9c4597d0198ee77da6bb09dfcb6f68ae0302330f1a1e61503648e59fdd2"
-    sha256 cellar: :any, arm64_sequoia: "86f6495e08630095d0a0a4a8be76d8ba0350985a55ec13fb43a73f5473d2a410"
-    sha256 cellar: :any, arm64_sonoma:  "6d51bf4ccdbc2a0cb7c23d71edc885130c955193ce6f388ab77411f8ebd4305a"
-    sha256 cellar: :any, tahoe:         "c94ba9b047fa5744349911cd632fec5b88cd366991bb39cb06fe018d166a0a39"
-    sha256 cellar: :any, sequoia:       "205e69efbbd83ca9ff421c98a0063bd20b64690b44248d0398bd6deb941cf81b"
-    sha256 cellar: :any, sonoma:        "616479dd74d4824d290395c2551ce07c69a715b92bb3901c1438ad734e2e45d0"
-    sha256 cellar: :any, arm64_linux:   "2cd12463505a1ca40c2e3f54c2777f57acb6134b92d6cfd8631180f771d2d87a"
-    sha256 cellar: :any, x86_64_linux:  "6987dea502aa790323eeed36812983d07620595eff67992f1d6992f4de98e136"
+    sha256 cellar: :any, arm64_golden_gate: "ae7e1440a083a659046301ae4f01f1bec1ee0f0a859d4fb418cf4cfd51eecaba"
+    sha256 cellar: :any, arm64_tahoe:       "719ae9c4597d0198ee77da6bb09dfcb6f68ae0302330f1a1e61503648e59fdd2"
+    sha256 cellar: :any, arm64_sequoia:     "86f6495e08630095d0a0a4a8be76d8ba0350985a55ec13fb43a73f5473d2a410"
+    sha256 cellar: :any, arm64_sonoma:      "6d51bf4ccdbc2a0cb7c23d71edc885130c955193ce6f388ab77411f8ebd4305a"
+    sha256 cellar: :any, tahoe:             "c94ba9b047fa5744349911cd632fec5b88cd366991bb39cb06fe018d166a0a39"
+    sha256 cellar: :any, sequoia:           "205e69efbbd83ca9ff421c98a0063bd20b64690b44248d0398bd6deb941cf81b"
+    sha256 cellar: :any, sonoma:            "616479dd74d4824d290395c2551ce07c69a715b92bb3901c1438ad734e2e45d0"
+    sha256 cellar: :any, arm64_linux:       "2cd12463505a1ca40c2e3f54c2777f57acb6134b92d6cfd8631180f771d2d87a"
+    sha256 cellar: :any, x86_64_linux:      "6987dea502aa790323eeed36812983d07620595eff67992f1d6992f4de98e136"
   end
 
   depends_on "m4"

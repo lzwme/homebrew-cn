@@ -17,14 +17,15 @@ class Libassuan < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "0561b0dae24dbd1bfb2ebcc1b6ca6b4f10cab80d30a73558b8b87ab129415dc5"
-    sha256 cellar: :any,                 arm64_sequoia: "1430611fe9f337d6a7568a12321f125c567ca8d4d2bdcd7ff0717bdcd82a32dc"
-    sha256 cellar: :any,                 arm64_sonoma:  "59e577c969d60c328976822c4d5bdfa5b5b11231453573e9c1bddc308e211126"
-    sha256 cellar: :any,                 arm64_ventura: "2c97f2188ef55d1de16938e270797b3ecc59315cd09f03ca347a533c6e57efd4"
-    sha256 cellar: :any,                 sonoma:        "0ec4ad2607107d27bb8b0acb1f7fb3a81c8bea66ed17b69afbd6bec70a9a5b98"
-    sha256 cellar: :any,                 ventura:       "be83f28dfef1934dd05a2a2f1523398bf9a6927b0b80c42447f4b18583e6dc25"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c1cc44ec4ce43e405be679fbee9a434a7bdbf86f267ac946cb4a8642cdf89df7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "620108c517ecfeb00c843bd34f86b75bf84c1bd92be9b554c86424fad3b99f08"
+    sha256 cellar: :any,                 arm64_golden_gate: "a2ae98aac1cc7ffda602311d837df752d4389aeecbbf230e63b95e5f21412e98"
+    sha256 cellar: :any,                 arm64_tahoe:       "0561b0dae24dbd1bfb2ebcc1b6ca6b4f10cab80d30a73558b8b87ab129415dc5"
+    sha256 cellar: :any,                 arm64_sequoia:     "1430611fe9f337d6a7568a12321f125c567ca8d4d2bdcd7ff0717bdcd82a32dc"
+    sha256 cellar: :any,                 arm64_sonoma:      "59e577c969d60c328976822c4d5bdfa5b5b11231453573e9c1bddc308e211126"
+    sha256 cellar: :any,                 arm64_ventura:     "2c97f2188ef55d1de16938e270797b3ecc59315cd09f03ca347a533c6e57efd4"
+    sha256 cellar: :any,                 sonoma:            "0ec4ad2607107d27bb8b0acb1f7fb3a81c8bea66ed17b69afbd6bec70a9a5b98"
+    sha256 cellar: :any,                 ventura:           "be83f28dfef1934dd05a2a2f1523398bf9a6927b0b80c42447f4b18583e6dc25"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "c1cc44ec4ce43e405be679fbee9a434a7bdbf86f267ac946cb4a8642cdf89df7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "620108c517ecfeb00c843bd34f86b75bf84c1bd92be9b554c86424fad3b99f08"
   end
 
   depends_on "libgpg-error"

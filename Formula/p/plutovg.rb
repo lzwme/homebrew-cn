@@ -6,12 +6,13 @@ class Plutovg < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "ba1963811e934ee5e50b058f92c139ee4d1d9870713e5583fd12196f9bb91bb2"
-    sha256 cellar: :any,                 arm64_sequoia: "9dedd7db6202d75e290907b95cfaea5d02ebbf745633d99cc2acd303dec235af"
-    sha256 cellar: :any,                 arm64_sonoma:  "f57ae1394dfe700a3181d668940bc4738fdd0d6b6930481e86cc5a6e18ed952a"
-    sha256 cellar: :any,                 sonoma:        "5efc922a81720f185728b4b0b9ea52d6fafc348e572818514e5e7de2f93b0759"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "45be05dd480ea03848f5fef76117b18b37bb0c51c4501ac49749d97b30f74121"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "69e2adf19de3e6651133968a6d3ae558ac3c228a696da0a21ac729d97bcd594a"
+    sha256 cellar: :any,                 arm64_golden_gate: "39ec3e914d244f7507272a31e1790fb33be09cc164f53f2795cdd67757e6c041"
+    sha256 cellar: :any,                 arm64_tahoe:       "ba1963811e934ee5e50b058f92c139ee4d1d9870713e5583fd12196f9bb91bb2"
+    sha256 cellar: :any,                 arm64_sequoia:     "9dedd7db6202d75e290907b95cfaea5d02ebbf745633d99cc2acd303dec235af"
+    sha256 cellar: :any,                 arm64_sonoma:      "f57ae1394dfe700a3181d668940bc4738fdd0d6b6930481e86cc5a6e18ed952a"
+    sha256 cellar: :any,                 sonoma:            "5efc922a81720f185728b4b0b9ea52d6fafc348e572818514e5e7de2f93b0759"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "45be05dd480ea03848f5fef76117b18b37bb0c51c4501ac49749d97b30f74121"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "69e2adf19de3e6651133968a6d3ae558ac3c228a696da0a21ac729d97bcd594a"
   end
 
   depends_on "cmake" => :build

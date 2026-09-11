@@ -8,12 +8,13 @@ class Cminpack < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "740c8cacd9008730b5a0da0db01e2d4033dd8c2ff72b57419da8b441a16cbe98"
-    sha256 cellar: :any, arm64_sequoia: "4f85045c1c6faa41933ba735e53dfc624f5921b2c47cf22144313e87ba0d3b7a"
-    sha256 cellar: :any, arm64_sonoma:  "1479f4ba5bfc4d432ba2a635ad487af119b0bf2720ffb31ab2de4b108d247cf0"
-    sha256 cellar: :any, sonoma:        "a2c39c087342b36d9a1b03e5947c7c3054473eab13f7ce54b74765a33365bd56"
-    sha256 cellar: :any, arm64_linux:   "375802e4abc24ea040b7496c8f9ad473e825f5b76f2ad07e373ee25e70ef54d8"
-    sha256 cellar: :any, x86_64_linux:  "c1edb8bfddef814fe0a5846696bd72e6c0a354b3c1baee04333e52adcddb1c6f"
+    sha256 cellar: :any, arm64_golden_gate: "9b812b72b57c75bf1ee5cba7db43aab049bdef0d1280f8ed3784d6e68369a6c7"
+    sha256 cellar: :any, arm64_tahoe:       "740c8cacd9008730b5a0da0db01e2d4033dd8c2ff72b57419da8b441a16cbe98"
+    sha256 cellar: :any, arm64_sequoia:     "4f85045c1c6faa41933ba735e53dfc624f5921b2c47cf22144313e87ba0d3b7a"
+    sha256 cellar: :any, arm64_sonoma:      "1479f4ba5bfc4d432ba2a635ad487af119b0bf2720ffb31ab2de4b108d247cf0"
+    sha256 cellar: :any, sonoma:            "a2c39c087342b36d9a1b03e5947c7c3054473eab13f7ce54b74765a33365bd56"
+    sha256 cellar: :any, arm64_linux:       "375802e4abc24ea040b7496c8f9ad473e825f5b76f2ad07e373ee25e70ef54d8"
+    sha256 cellar: :any, x86_64_linux:      "c1edb8bfddef814fe0a5846696bd72e6c0a354b3c1baee04333e52adcddb1c6f"
   end
 
   depends_on "cmake" => :build

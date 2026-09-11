@@ -12,12 +12,13 @@ class AzureCoreCpp < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "278b20974bb5afc458a553213006ce0da4860309ab2df83c9390cf60bc8c9778"
-    sha256 cellar: :any, arm64_sequoia: "b508082cfb2ea85fe887b5f8f174d790d886da721c16931cd2370b4c7243f173"
-    sha256 cellar: :any, arm64_sonoma:  "7892aead1278609b42c310075f280d2d0976b302ed6a84448bf6245bf76570ac"
-    sha256 cellar: :any, sonoma:        "711c420a260ecb876ea996e3cc61b1361e0f82e743bcc094526632c50be2a551"
-    sha256 cellar: :any, arm64_linux:   "ce60d756b60210c4454068bfecd5429bdc2f7c22c816de5afc572b6e9341c37f"
-    sha256 cellar: :any, x86_64_linux:  "4b9f90561cf7322cb06a551a5a6fb9fef2190db6afbbd57c8447a4136adb3489"
+    sha256 cellar: :any, arm64_golden_gate: "881c6a3156ebd6748e74cbb03bd5197147981c8bc9cd979ec7463992fe97fc20"
+    sha256 cellar: :any, arm64_tahoe:       "278b20974bb5afc458a553213006ce0da4860309ab2df83c9390cf60bc8c9778"
+    sha256 cellar: :any, arm64_sequoia:     "b508082cfb2ea85fe887b5f8f174d790d886da721c16931cd2370b4c7243f173"
+    sha256 cellar: :any, arm64_sonoma:      "7892aead1278609b42c310075f280d2d0976b302ed6a84448bf6245bf76570ac"
+    sha256 cellar: :any, sonoma:            "711c420a260ecb876ea996e3cc61b1361e0f82e743bcc094526632c50be2a551"
+    sha256 cellar: :any, arm64_linux:       "ce60d756b60210c4454068bfecd5429bdc2f7c22c816de5afc572b6e9341c37f"
+    sha256 cellar: :any, x86_64_linux:      "4b9f90561cf7322cb06a551a5a6fb9fef2190db6afbbd57c8447a4136adb3489"
   end
 
   depends_on "cmake" => :build

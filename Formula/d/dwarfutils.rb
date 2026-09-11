@@ -13,12 +13,13 @@ class Dwarfutils < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "643aa33e3d75290e16d5331e0c9f410600e04bae54d256425dd18df584f6c190"
-    sha256 arm64_sequoia: "acdec047b3dc147910ae5077b5df5b78bf138e4d6bc4e15b5a267d5bff39822f"
-    sha256 arm64_sonoma:  "4b9ef180a6ff347e60adb8e76485f9c7b44dbfd3882ccb7737d7373798a29c35"
-    sha256 sonoma:        "502e6f5f3904e60e0e936c09231ccd6dd62559f479c84ef6166718e96dd7e539"
-    sha256 arm64_linux:   "54131c858e607b095ce19673c4053f38a64e3f99c4fce942d9478aebf197801f"
-    sha256 x86_64_linux:  "566bde5460f570bcee6f61fc20b3191ed8608353e89bda0f6ca1dd64b565ea97"
+    sha256 arm64_golden_gate: "0d7d3f7bb193b5b53eae8da984c8fe31ab853e70db4f3bfd2196c55966697d30"
+    sha256 arm64_tahoe:       "643aa33e3d75290e16d5331e0c9f410600e04bae54d256425dd18df584f6c190"
+    sha256 arm64_sequoia:     "acdec047b3dc147910ae5077b5df5b78bf138e4d6bc4e15b5a267d5bff39822f"
+    sha256 arm64_sonoma:      "4b9ef180a6ff347e60adb8e76485f9c7b44dbfd3882ccb7737d7373798a29c35"
+    sha256 sonoma:            "502e6f5f3904e60e0e936c09231ccd6dd62559f479c84ef6166718e96dd7e539"
+    sha256 arm64_linux:       "54131c858e607b095ce19673c4053f38a64e3f99c4fce942d9478aebf197801f"
+    sha256 x86_64_linux:      "566bde5460f570bcee6f61fc20b3191ed8608353e89bda0f6ca1dd64b565ea97"
   end
 
   head do

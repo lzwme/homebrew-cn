@@ -7,12 +7,13 @@ class Boringtun < Formula
   head "https://github.com/cloudflare/boringtun.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "59432e2c236ddb04d319d846997dfdeb62ca909dc397e7e012036d52070c413e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3556b91162eb1ead779e4e595374a49e8c3c9b4681d4778be04cf09c06bfc0ce"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2e8b1e9bdad4465d5736ff85a7a2e50be9cd67d71c9c32b94f29801f2e1653ed"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2d596ead2f6adc48d6ec310e0db784113f9d5db3c830b6a2a976479fa3ffe096"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5118bac42ee0b4cc447d14e80879c8ab13361cbb373b7b97cfb36b0891408da0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "392c3c6b31d97d83e954483b6b7a92af52c927023c369fe43f3430eef5add48e"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "e0f732fcf1bd325f10589f02d1234336b8166e38d0c4a2ff234355e2481b6e0a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "59432e2c236ddb04d319d846997dfdeb62ca909dc397e7e012036d52070c413e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "3556b91162eb1ead779e4e595374a49e8c3c9b4681d4778be04cf09c06bfc0ce"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "2e8b1e9bdad4465d5736ff85a7a2e50be9cd67d71c9c32b94f29801f2e1653ed"
+    sha256 cellar: :any_skip_relocation, sonoma:            "2d596ead2f6adc48d6ec310e0db784113f9d5db3c830b6a2a976479fa3ffe096"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "5118bac42ee0b4cc447d14e80879c8ab13361cbb373b7b97cfb36b0891408da0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "392c3c6b31d97d83e954483b6b7a92af52c927023c369fe43f3430eef5add48e"
   end
 
   depends_on "rust" => :build

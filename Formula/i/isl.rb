@@ -17,14 +17,15 @@ class Isl < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "9adc3d36bfaa7652e75d63fa7a61942ef9a9d1c5e857e8e38a578a78636bf4c2"
-    sha256 cellar: :any, arm64_sequoia: "a0b9da629db115bc15e5762887c455fdb13ac0a8028f20ee2639eae1f578c762"
-    sha256 cellar: :any, arm64_sonoma:  "56df07c199b66181731ee140c66d2cf368bbd4a2dc365bd0518782cea7a4494e"
-    sha256 cellar: :any, tahoe:         "2d537de6aaeab09fb237856bba6dec9cb5c24c3cac172ea322eb12a4980ef92d"
-    sha256 cellar: :any, sequoia:       "dca49213f0e9bccffe590c7477de4455a0dfbb65ab542854b1c1f52abfa10213"
-    sha256 cellar: :any, sonoma:        "c1e478f3a363ca5ea1ac4520db7c6c4083139dc77fe58d6d30609795d2c0909d"
-    sha256 cellar: :any, arm64_linux:   "9bb3cf80a3389d78be3ddeb7b6dfddf38ae5e7f036dcb532d53e36bc79bdef18"
-    sha256 cellar: :any, x86_64_linux:  "71ff58966339279d9a1012079f817a53d38f269fd6e4c86bc2ea17534a73c86e"
+    sha256 cellar: :any, arm64_golden_gate: "35c8c6f314483e70651cd9d5192defb067a95a334659e357cfdf02d3d2077d58"
+    sha256 cellar: :any, arm64_tahoe:       "9adc3d36bfaa7652e75d63fa7a61942ef9a9d1c5e857e8e38a578a78636bf4c2"
+    sha256 cellar: :any, arm64_sequoia:     "a0b9da629db115bc15e5762887c455fdb13ac0a8028f20ee2639eae1f578c762"
+    sha256 cellar: :any, arm64_sonoma:      "56df07c199b66181731ee140c66d2cf368bbd4a2dc365bd0518782cea7a4494e"
+    sha256 cellar: :any, tahoe:             "2d537de6aaeab09fb237856bba6dec9cb5c24c3cac172ea322eb12a4980ef92d"
+    sha256 cellar: :any, sequoia:           "dca49213f0e9bccffe590c7477de4455a0dfbb65ab542854b1c1f52abfa10213"
+    sha256 cellar: :any, sonoma:            "c1e478f3a363ca5ea1ac4520db7c6c4083139dc77fe58d6d30609795d2c0909d"
+    sha256 cellar: :any, arm64_linux:       "9bb3cf80a3389d78be3ddeb7b6dfddf38ae5e7f036dcb532d53e36bc79bdef18"
+    sha256 cellar: :any, x86_64_linux:      "71ff58966339279d9a1012079f817a53d38f269fd6e4c86bc2ea17534a73c86e"
   end
 
   head do

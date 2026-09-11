@@ -8,11 +8,12 @@ class Taglib < Formula
   head "https://github.com/taglib/taglib.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "d8c52b4c84c767b812813e014c4a4bf07d5906e281cc9d12c3e2a41d6de5b4a5"
-    sha256 cellar: :any, arm64_sequoia: "d0c4b888ad066f830a5725ae3cee6c96b871193214303629fb9f484e15e519f0"
-    sha256 cellar: :any, arm64_sonoma:  "ce74ab9da6700f72cd203c363e942697dfe90b53973d9b0e83b9b908108c0102"
-    sha256 cellar: :any, arm64_linux:   "63a94c6608f23e771db76356722dd56e6af83504ebc6b39542577520b39c9a63"
-    sha256 cellar: :any, x86_64_linux:  "a7d97e83d422731fb5754c56db9cc0e861df08e319c92d51f6b4875a04322062"
+    sha256 cellar: :any, arm64_golden_gate: "b1f9a63c6bce451b0355942da7792231f2b4be533d5dbc1328888259939708d3"
+    sha256 cellar: :any, arm64_tahoe:       "d8c52b4c84c767b812813e014c4a4bf07d5906e281cc9d12c3e2a41d6de5b4a5"
+    sha256 cellar: :any, arm64_sequoia:     "d0c4b888ad066f830a5725ae3cee6c96b871193214303629fb9f484e15e519f0"
+    sha256 cellar: :any, arm64_sonoma:      "ce74ab9da6700f72cd203c363e942697dfe90b53973d9b0e83b9b908108c0102"
+    sha256 cellar: :any, arm64_linux:       "63a94c6608f23e771db76356722dd56e6af83504ebc6b39542577520b39c9a63"
+    sha256 cellar: :any, x86_64_linux:      "a7d97e83d422731fb5754c56db9cc0e861df08e319c92d51f6b4875a04322062"
   end
 
   depends_on "cmake" => :build

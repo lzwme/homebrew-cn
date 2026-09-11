@@ -12,12 +12,13 @@ class LibsigcxxAT2 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "8e580d27768484f5dd755531d25ded0d2e36d49152601af692fdeec939fe0a1c"
-    sha256 cellar: :any,                 arm64_sequoia: "6ca9585abc36d3fa9699c5c0e8951f9ed0c70db8c6d1f8d14efb77beb21ae4c8"
-    sha256 cellar: :any,                 arm64_sonoma:  "7bbfc74590d6075e5855ecf9fef009dd4fcb19f107e8dd2433308721b51a8819"
-    sha256 cellar: :any,                 sonoma:        "4559e283eeeb813f3c10731c39d071aacd785071328973b6f6db51b682177ef0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b2eace468727cfef91725a8ee20431650d6cda00abc7e540812ef598adb20274"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2265b389d5c0f4452238783cf1d7c970fe647b7a2cc7182675f013f724a0ce3b"
+    sha256 cellar: :any,                 arm64_golden_gate: "d554c3dd3a07cf1058fca94da36ac4c2ec55072139626e25b7d0f62359ddae9f"
+    sha256 cellar: :any,                 arm64_tahoe:       "8e580d27768484f5dd755531d25ded0d2e36d49152601af692fdeec939fe0a1c"
+    sha256 cellar: :any,                 arm64_sequoia:     "6ca9585abc36d3fa9699c5c0e8951f9ed0c70db8c6d1f8d14efb77beb21ae4c8"
+    sha256 cellar: :any,                 arm64_sonoma:      "7bbfc74590d6075e5855ecf9fef009dd4fcb19f107e8dd2433308721b51a8819"
+    sha256 cellar: :any,                 sonoma:            "4559e283eeeb813f3c10731c39d071aacd785071328973b6f6db51b682177ef0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "b2eace468727cfef91725a8ee20431650d6cda00abc7e540812ef598adb20274"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "2265b389d5c0f4452238783cf1d7c970fe647b7a2cc7182675f013f724a0ce3b"
   end
 
   depends_on "meson" => :build

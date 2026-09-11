@@ -7,12 +7,13 @@ class Buffrs < Formula
   head "https://github.com/helsing-ai/buffrs.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d403bf5b706b0006471852fde9efaa74fe2c72eec3d457375c09f32e06463148"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "64dd534e007f88da216b6d08d54fd661fd525de63dd974742c073599c32525dd"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fb68514871d6cf03503bd24feaf423aa843c15b30367ae1569394a6cc5628de6"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5dcb034fa8af5edfb846a8c3c325626019c3a0cd886bb10e1b25c4032d89563a"
-    sha256 cellar: :any,                 arm64_linux:   "0beec294a0a72284eacb99c7c9b61196da1e2291184d05f237f917643582a098"
-    sha256 cellar: :any,                 x86_64_linux:  "5ae83cf06243b008feb43a344bb88a470358f7f7982a4f502727ca1e02d20271"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "0e6eb8bc4a3766f8a732995bd844fb11c01626c5665045d7957d56f401e061f8"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "d403bf5b706b0006471852fde9efaa74fe2c72eec3d457375c09f32e06463148"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "64dd534e007f88da216b6d08d54fd661fd525de63dd974742c073599c32525dd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "fb68514871d6cf03503bd24feaf423aa843c15b30367ae1569394a6cc5628de6"
+    sha256 cellar: :any_skip_relocation, sonoma:            "5dcb034fa8af5edfb846a8c3c325626019c3a0cd886bb10e1b25c4032d89563a"
+    sha256 cellar: :any,                 arm64_linux:       "0beec294a0a72284eacb99c7c9b61196da1e2291184d05f237f917643582a098"
+    sha256 cellar: :any,                 x86_64_linux:      "5ae83cf06243b008feb43a344bb88a470358f7f7982a4f502727ca1e02d20271"
   end
 
   depends_on "rust" => :build

@@ -11,12 +11,13 @@ class Fping < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d8e132e94c41b8dcf3149faf3356beece440bc4f5b804e723e9f7ee9cb14817d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cbe25f1d45b4b018ed308fd986f26211a00cf32c205ebc5c46ebcafdc546e352"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "251479f09a0b2ef3cf58fcd6a7144d0b33baf68f1555f2a6dcdcfea4b1e3eaef"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f126c58d92896bc945c83969b8ee25e7ec5aee3b2480eb836f6c036a550f7c54"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7df0fdc7745faf467a98549da150873dc5c944cf5a3deb49c64972d5a0eda5b7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2cc39f11322e6922333f12d26b85a755520ff205f4214b9602bb7062d79b7673"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "6601f6f1140f6c5db76fd37d5e02368e9786f2239f70f417875a01533fbef694"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "d8e132e94c41b8dcf3149faf3356beece440bc4f5b804e723e9f7ee9cb14817d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "cbe25f1d45b4b018ed308fd986f26211a00cf32c205ebc5c46ebcafdc546e352"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "251479f09a0b2ef3cf58fcd6a7144d0b33baf68f1555f2a6dcdcfea4b1e3eaef"
+    sha256 cellar: :any_skip_relocation, sonoma:            "f126c58d92896bc945c83969b8ee25e7ec5aee3b2480eb836f6c036a550f7c54"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "7df0fdc7745faf467a98549da150873dc5c944cf5a3deb49c64972d5a0eda5b7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "2cc39f11322e6922333f12d26b85a755520ff205f4214b9602bb7062d79b7673"
   end
 
   head do

@@ -7,12 +7,13 @@ class Libxext < Formula
   compatibility_version 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "7cf2c8903d82f28e0e854c8d6d3dff46ea98c5512724e5349af40f1edca88e9c"
-    sha256 cellar: :any,                 arm64_sequoia: "71225436c92940977248a28433951e8e26732d3a9eed954ce1999a770f93f98e"
-    sha256 cellar: :any,                 arm64_sonoma:  "b923d628018a401db1737f1d76eaf815f58f0a9e73a86a0de13b164760bb1921"
-    sha256 cellar: :any,                 sonoma:        "2674d35eb9596b8d9b6149519e39bf6e43d4959894109fbc22f48f9d5ed85a2f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6150f6cdb2ee2195ebf90f1e6a95f4a27d2ee4e1e3c17959807b7c8eb3075d5f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7bc771ee68f57189ea941e83f2f5ff18ac94878ae35c30aed8868a906834d148"
+    sha256 cellar: :any,                 arm64_golden_gate: "51b795365550a5be0b6cc9b7ba9b2a6e20991feef1f79d18ed1cb711e491a304"
+    sha256 cellar: :any,                 arm64_tahoe:       "7cf2c8903d82f28e0e854c8d6d3dff46ea98c5512724e5349af40f1edca88e9c"
+    sha256 cellar: :any,                 arm64_sequoia:     "71225436c92940977248a28433951e8e26732d3a9eed954ce1999a770f93f98e"
+    sha256 cellar: :any,                 arm64_sonoma:      "b923d628018a401db1737f1d76eaf815f58f0a9e73a86a0de13b164760bb1921"
+    sha256 cellar: :any,                 sonoma:            "2674d35eb9596b8d9b6149519e39bf6e43d4959894109fbc22f48f9d5ed85a2f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "6150f6cdb2ee2195ebf90f1e6a95f4a27d2ee4e1e3c17959807b7c8eb3075d5f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "7bc771ee68f57189ea941e83f2f5ff18ac94878ae35c30aed8868a906834d148"
   end
 
   depends_on "pkgconf" => :build

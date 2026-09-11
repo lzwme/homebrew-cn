@@ -13,12 +13,13 @@ class Libedit < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "5c492117cec71184a93a09376a1aee72909f40c335a81646c0f74f38803544e1"
-    sha256 cellar: :any,                 arm64_sequoia: "af552c0f546111e4333311902b33af82568abc75de0b3c93ee40e6af184c23b8"
-    sha256 cellar: :any,                 arm64_sonoma:  "5d39eeec2e2c432bf0aa2f6e7e16f8c5a6cfdb5309e7b81b4206d8bfcf310508"
-    sha256 cellar: :any,                 sonoma:        "c431de92bb4497f1e474d0141530b1a6867da633976434a6b38b63f552cd42ec"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3ee15b0b1cc6e265dd7a39326cfdeb7e2c72ad5e8943f40f328ddfcb72690e81"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4d9a605075987c2f832b9caa24b1a5b56dee88ae662cb6a4efee375fce1d8dcf"
+    sha256 cellar: :any,                 arm64_golden_gate: "9f9d69c900ef6b7fa405918c4e60751352e905a5817aa5a04145f64790130ff0"
+    sha256 cellar: :any,                 arm64_tahoe:       "5c492117cec71184a93a09376a1aee72909f40c335a81646c0f74f38803544e1"
+    sha256 cellar: :any,                 arm64_sequoia:     "af552c0f546111e4333311902b33af82568abc75de0b3c93ee40e6af184c23b8"
+    sha256 cellar: :any,                 arm64_sonoma:      "5d39eeec2e2c432bf0aa2f6e7e16f8c5a6cfdb5309e7b81b4206d8bfcf310508"
+    sha256 cellar: :any,                 sonoma:            "c431de92bb4497f1e474d0141530b1a6867da633976434a6b38b63f552cd42ec"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "3ee15b0b1cc6e265dd7a39326cfdeb7e2c72ad5e8943f40f328ddfcb72690e81"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "4d9a605075987c2f832b9caa24b1a5b56dee88ae662cb6a4efee375fce1d8dcf"
   end
 
   keg_only :provided_by_macos

@@ -11,12 +11,13 @@ class Nasm < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "23bc78cddac86f63a7b19cb0766614a868e0d356dc2091d0f789027c4809a75a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "be638eb35844e4292072b1fe70de30211aa9f189b81eb2801a78be0b253f3fc9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c9cddb141c3a766a8f3414ba26e0f126f407dccef322cc264144018fcdec965c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c5d1b6674c2e03de920175e8c0a9ad219ab710640a95e9f420bba6868fec3449"
-    sha256 cellar: :any,                 arm64_linux:   "18f8816daa6fb03f4d9d94704af5a11926852b7857c0980b23f7927ffdc0ac37"
-    sha256 cellar: :any,                 x86_64_linux:  "0627373a9962904143c0c4903187e22ddd5442c42856ae66cb6c5bb4857cfcab"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "50c13244228751bf5311401d36f7c24fa1c04a534f1dce0c0da15795f7d50e3a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "23bc78cddac86f63a7b19cb0766614a868e0d356dc2091d0f789027c4809a75a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "be638eb35844e4292072b1fe70de30211aa9f189b81eb2801a78be0b253f3fc9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "c9cddb141c3a766a8f3414ba26e0f126f407dccef322cc264144018fcdec965c"
+    sha256 cellar: :any_skip_relocation, sonoma:            "c5d1b6674c2e03de920175e8c0a9ad219ab710640a95e9f420bba6868fec3449"
+    sha256 cellar: :any,                 arm64_linux:       "18f8816daa6fb03f4d9d94704af5a11926852b7857c0980b23f7927ffdc0ac37"
+    sha256 cellar: :any,                 x86_64_linux:      "0627373a9962904143c0c4903187e22ddd5442c42856ae66cb6c5bb4857cfcab"
   end
 
   head do

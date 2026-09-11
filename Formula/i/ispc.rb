@@ -15,12 +15,13 @@ class Ispc < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "1c27e7b22b2d8bc1bdee0e0ce6e167ccecbff130b00d2c407d04bcaaaf9a75bf"
-    sha256 cellar: :any, arm64_sequoia: "ad0ac922f31c76f5ecf0232520466dbec4172c062a7acd7fc83b1c0538dfda45"
-    sha256 cellar: :any, arm64_sonoma:  "4024f80c33dd1bd300fa33c090f55866dba123585fd750f5564fbf65f73400d4"
-    sha256 cellar: :any, sonoma:        "87b33c51f994bfd8ff01557a081643505d0be68295194368ff02e52e035d421a"
-    sha256 cellar: :any, arm64_linux:   "799d33e2c0deda1c85e9761c83e05be55d187c1c4ff7ffeb1d360a53ef7ae5dd"
-    sha256 cellar: :any, x86_64_linux:  "04a0e27587dc7a90b5d6e3dc7b7d18b816fe8d9356b753476cd9cb159d31c0a3"
+    sha256 cellar: :any, arm64_golden_gate: "bbac7253257134d948a69c6328ec3a790417ca7c760b9966e8a222bbc5dc1931"
+    sha256 cellar: :any, arm64_tahoe:       "1c27e7b22b2d8bc1bdee0e0ce6e167ccecbff130b00d2c407d04bcaaaf9a75bf"
+    sha256 cellar: :any, arm64_sequoia:     "ad0ac922f31c76f5ecf0232520466dbec4172c062a7acd7fc83b1c0538dfda45"
+    sha256 cellar: :any, arm64_sonoma:      "4024f80c33dd1bd300fa33c090f55866dba123585fd750f5564fbf65f73400d4"
+    sha256 cellar: :any, sonoma:            "87b33c51f994bfd8ff01557a081643505d0be68295194368ff02e52e035d421a"
+    sha256 cellar: :any, arm64_linux:       "799d33e2c0deda1c85e9761c83e05be55d187c1c4ff7ffeb1d360a53ef7ae5dd"
+    sha256 cellar: :any, x86_64_linux:      "04a0e27587dc7a90b5d6e3dc7b7d18b816fe8d9356b753476cd9cb159d31c0a3"
   end
 
   depends_on "bison" => :build

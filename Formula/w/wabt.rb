@@ -11,12 +11,13 @@ class Wabt < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "0c69784b6323ff4755c133fd21ef1c12f5ff2b389ddd55a163b4d46b84a74383"
-    sha256 cellar: :any,                 arm64_sequoia: "c0f0934c0ddbfca8923ed441c247426c43e532f0eada6c9fd80e89777e791428"
-    sha256 cellar: :any,                 arm64_sonoma:  "334b2517199cccd2d03e032c743c6221660ef3454b2926596f5a386fbebc2bce"
-    sha256 cellar: :any,                 sonoma:        "3e1fb5039b55bf2ec19fb20ef2d47ddca69429b4af37c1fc8405b4e1385fa24a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c7b2fea8041ace07a06069f591441f64776acb549eecfe793ae75c14355866b6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e2c1427ad7640607e8c7805656f7f8ab5f2ff32c0449a9025c0b590782deb69b"
+    sha256 cellar: :any,                 arm64_golden_gate: "fff3e7f325c60d2f7accb546ba54449a0910ae87027053359d5598e59fd97ebd"
+    sha256 cellar: :any,                 arm64_tahoe:       "0c69784b6323ff4755c133fd21ef1c12f5ff2b389ddd55a163b4d46b84a74383"
+    sha256 cellar: :any,                 arm64_sequoia:     "c0f0934c0ddbfca8923ed441c247426c43e532f0eada6c9fd80e89777e791428"
+    sha256 cellar: :any,                 arm64_sonoma:      "334b2517199cccd2d03e032c743c6221660ef3454b2926596f5a386fbebc2bce"
+    sha256 cellar: :any,                 sonoma:            "3e1fb5039b55bf2ec19fb20ef2d47ddca69429b4af37c1fc8405b4e1385fa24a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "c7b2fea8041ace07a06069f591441f64776acb549eecfe793ae75c14355866b6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "e2c1427ad7640607e8c7805656f7f8ab5f2ff32c0449a9025c0b590782deb69b"
   end
 
   depends_on "cmake" => :build

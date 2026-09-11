@@ -12,12 +12,13 @@ class Libxcrypt < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "45b16874ed374eda84779a795aa32640f86759dd480f470567949b7639a8e3ee"
-    sha256 cellar: :any,                 arm64_sequoia: "04b6d0459d587d4137b8fdc9d7a711bf5df1405afae64997d4d8f6016df50e20"
-    sha256 cellar: :any,                 arm64_sonoma:  "6f459775883ffb7e1cd95dfeef36d3f490f20e3dcaa79055d318c46991d31f5f"
-    sha256 cellar: :any,                 sonoma:        "909d2e42bae6c62c05e5c52f6f45aa3da6a4c668c6a88f90a0cc6ebb6794f212"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "591376dcb066e3abf120b46895aabe9409aadf8f9577bd2672e52524f05a1952"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9319e1e70e1e3e476e421956baaeebc0d7be9c3030897844a3c348fe4dd116a5"
+    sha256 cellar: :any,                 arm64_golden_gate: "35a824fc898063ae807823d2c6d9c9709bf9215f2b65c9437e66c42f79f2afd9"
+    sha256 cellar: :any,                 arm64_tahoe:       "45b16874ed374eda84779a795aa32640f86759dd480f470567949b7639a8e3ee"
+    sha256 cellar: :any,                 arm64_sequoia:     "04b6d0459d587d4137b8fdc9d7a711bf5df1405afae64997d4d8f6016df50e20"
+    sha256 cellar: :any,                 arm64_sonoma:      "6f459775883ffb7e1cd95dfeef36d3f490f20e3dcaa79055d318c46991d31f5f"
+    sha256 cellar: :any,                 sonoma:            "909d2e42bae6c62c05e5c52f6f45aa3da6a4c668c6a88f90a0cc6ebb6794f212"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "591376dcb066e3abf120b46895aabe9409aadf8f9577bd2672e52524f05a1952"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "9319e1e70e1e3e476e421956baaeebc0d7be9c3030897844a3c348fe4dd116a5"
   end
 
   keg_only :provided_by_macos

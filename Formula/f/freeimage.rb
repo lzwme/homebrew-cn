@@ -11,18 +11,19 @@ class Freeimage < Formula
 
   bottle do
     rebuild 3
-    sha256 cellar: :any,                 arm64_tahoe:    "fa674c2ad7837eb68ddb56844a0da4ad71955c148a12311c0456463ca8e1b225"
-    sha256 cellar: :any,                 arm64_sequoia:  "0c56e5950270ba19800a0b51d0fb516689c82921c2651c30c9fc17934bfb2fdc"
-    sha256 cellar: :any,                 arm64_sonoma:   "be291ccddc2e3618d53dc2f06aced0f31eca4a0f72d19ba2f872f57a4dd748f1"
-    sha256 cellar: :any,                 arm64_ventura:  "acdcf908bcc7bf5ce7fe7acf6c7d3de9787872c47687e25951411c07d86d7146"
-    sha256 cellar: :any,                 arm64_monterey: "ec0035876daea1189f9e681ac3858c99270b6faab6c9701fe3d83333081feb9b"
-    sha256 cellar: :any,                 arm64_big_sur:  "02080c0a6c32413b1e85f6e1393559426b77f0a7e5dcfda406617bc6e46a13e0"
-    sha256 cellar: :any,                 sonoma:         "63543926a4a7321b1440319e043dd2c4cb256fb5cd9ea66d910308114f05ac3b"
-    sha256 cellar: :any,                 ventura:        "57fd52efb2fe5109a77c46f42affd2192fc94acd0211d74a9045719e2ee54c9f"
-    sha256 cellar: :any,                 monterey:       "8118801a64a4b47e2572b45935da12209fffea56393586a53186594f05071f58"
-    sha256 cellar: :any,                 big_sur:        "948feca0476789f7061b3a0502aaa7820366a309ebad1abd73ff6b7a0c242402"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "c63703fb750ad104b942bb31929c633f44050220f084b579183e23a0e07161c6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a6c63d08f4adf2395f983ad5f8a51f36ac1e749de9fe6428d056859b199ac6e6"
+    sha256 cellar: :any,                 arm64_golden_gate: "d09f372ae82efd80b339b06035d3c791c4f16fc00bc7d418f1c665f7ea17d3e5"
+    sha256 cellar: :any,                 arm64_tahoe:       "fa674c2ad7837eb68ddb56844a0da4ad71955c148a12311c0456463ca8e1b225"
+    sha256 cellar: :any,                 arm64_sequoia:     "0c56e5950270ba19800a0b51d0fb516689c82921c2651c30c9fc17934bfb2fdc"
+    sha256 cellar: :any,                 arm64_sonoma:      "be291ccddc2e3618d53dc2f06aced0f31eca4a0f72d19ba2f872f57a4dd748f1"
+    sha256 cellar: :any,                 arm64_ventura:     "acdcf908bcc7bf5ce7fe7acf6c7d3de9787872c47687e25951411c07d86d7146"
+    sha256 cellar: :any,                 arm64_monterey:    "ec0035876daea1189f9e681ac3858c99270b6faab6c9701fe3d83333081feb9b"
+    sha256 cellar: :any,                 arm64_big_sur:     "02080c0a6c32413b1e85f6e1393559426b77f0a7e5dcfda406617bc6e46a13e0"
+    sha256 cellar: :any,                 sonoma:            "63543926a4a7321b1440319e043dd2c4cb256fb5cd9ea66d910308114f05ac3b"
+    sha256 cellar: :any,                 ventura:           "57fd52efb2fe5109a77c46f42affd2192fc94acd0211d74a9045719e2ee54c9f"
+    sha256 cellar: :any,                 monterey:          "8118801a64a4b47e2572b45935da12209fffea56393586a53186594f05071f58"
+    sha256 cellar: :any,                 big_sur:           "948feca0476789f7061b3a0502aaa7820366a309ebad1abd73ff6b7a0c242402"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "c63703fb750ad104b942bb31929c633f44050220f084b579183e23a0e07161c6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "a6c63d08f4adf2395f983ad5f8a51f36ac1e749de9fe6428d056859b199ac6e6"
   end
 
   # Last release on 2018-07-31 which has 16 outstanding CVEs as of deprecation date:

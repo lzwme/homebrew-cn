@@ -7,12 +7,13 @@ class CabalInstall < Formula
   head "https://github.com/haskell/cabal.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "473d34a30b9fc3d87a04787cb6c2c8716c48f1bfa20accbead8dc857e61652c0"
-    sha256 cellar: :any, arm64_sequoia: "ebe7dcba714fdcefeec0ed65d2df2ac5cca0759674a4074873977d759a854808"
-    sha256 cellar: :any, arm64_sonoma:  "a91a0512a3f0b41d424a4ddeab0cff4318565574a1b3211529a99744ec6de289"
-    sha256 cellar: :any, sonoma:        "ed6968cd7f7cf837bdb229f79d111d0d2cfac06a8b8add2f2bfe1e9b47705065"
-    sha256 cellar: :any, arm64_linux:   "84f496193d18b2765e442c04fa4a3a4201685aa2797d8c86a75d10854d3b0e6a"
-    sha256 cellar: :any, x86_64_linux:  "1a46769f5d35b4d6e03f8185eae6342bfa7b99be1c75eaa7fd989953e601a6ee"
+    sha256 cellar: :any, arm64_golden_gate: "a9c94421a1724bb307b8f96f13174e1919c1b6289ddaacdcbf3c3be32d523c6f"
+    sha256 cellar: :any, arm64_tahoe:       "473d34a30b9fc3d87a04787cb6c2c8716c48f1bfa20accbead8dc857e61652c0"
+    sha256 cellar: :any, arm64_sequoia:     "ebe7dcba714fdcefeec0ed65d2df2ac5cca0759674a4074873977d759a854808"
+    sha256 cellar: :any, arm64_sonoma:      "a91a0512a3f0b41d424a4ddeab0cff4318565574a1b3211529a99744ec6de289"
+    sha256 cellar: :any, sonoma:            "ed6968cd7f7cf837bdb229f79d111d0d2cfac06a8b8add2f2bfe1e9b47705065"
+    sha256 cellar: :any, arm64_linux:       "84f496193d18b2765e442c04fa4a3a4201685aa2797d8c86a75d10854d3b0e6a"
+    sha256 cellar: :any, x86_64_linux:      "1a46769f5d35b4d6e03f8185eae6342bfa7b99be1c75eaa7fd989953e601a6ee"
   end
 
   depends_on "ghc" => [:build, :test]

@@ -15,12 +15,13 @@ class Wal2json < Formula
 
   bottle do
     rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6df07eb3b4c76fd3a26aabbd3d9512f2018ca40991a213805b3d97a359e6bbea"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0cd88f515f6d34e3aeb5ecbf7ef5a869639b032373512e8eb6d68b58e9b3b2af"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "79300555385707acce8e526b38f75d91445f7bf43ad8dcc4b3d51083edd29a82"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1bd372e6fe5bf4532c35eea95a8da392cca051f40fb43eb2721a6d8669375eb0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "98ff83a1fd6e9730c36c443fd57824831f83b48d426836a33e6a98e94b70647b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b73b0d8f8d95d485c6a5b8e9bc0ccf357292d8ca232ca6708cba79cb0875a7e9"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "bb6d50a77fe5c734593c38a45c1f42ae38ef50c54bf98be600bc42c0eb4f868c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "6df07eb3b4c76fd3a26aabbd3d9512f2018ca40991a213805b3d97a359e6bbea"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "0cd88f515f6d34e3aeb5ecbf7ef5a869639b032373512e8eb6d68b58e9b3b2af"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "79300555385707acce8e526b38f75d91445f7bf43ad8dcc4b3d51083edd29a82"
+    sha256 cellar: :any_skip_relocation, sonoma:            "1bd372e6fe5bf4532c35eea95a8da392cca051f40fb43eb2721a6d8669375eb0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "98ff83a1fd6e9730c36c443fd57824831f83b48d426836a33e6a98e94b70647b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "b73b0d8f8d95d485c6a5b8e9bc0ccf357292d8ca232ca6708cba79cb0875a7e9"
   end
 
   depends_on "postgresql@17" => [:build, :test]

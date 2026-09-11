@@ -7,12 +7,13 @@ class Alembic < Formula
   head "https://github.com/alembic/alembic.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "f05ae0d574d293c26b7f1d89c629caa455bc08bd0ab0370afb05fd18090b0efd"
-    sha256 cellar: :any, arm64_sequoia: "475655b088a913e34b1febc61cc910ccc272bc226350e386d9d6647ab5bb4671"
-    sha256 cellar: :any, arm64_sonoma:  "7600bde69829c734a2e00769a6991c5d8b5d07c545dc850f9e729b81bc264c7c"
-    sha256 cellar: :any, sonoma:        "4020585258e85ebfdfa504d0dda096267a905cde59542c66563d3784dda11161"
-    sha256 cellar: :any, arm64_linux:   "337be169d245808a04ecb62213a65c69bff77d30028288bbad9a7ae73b410ce5"
-    sha256 cellar: :any, x86_64_linux:  "a5ad262b2967ec1aae15475918d316d6e88825f69f8e579499ca6d2b6083e180"
+    sha256 cellar: :any, arm64_golden_gate: "1f4df70016b22459c8b58050c819b505115141faeee4a8444521bc009f92e62a"
+    sha256 cellar: :any, arm64_tahoe:       "f05ae0d574d293c26b7f1d89c629caa455bc08bd0ab0370afb05fd18090b0efd"
+    sha256 cellar: :any, arm64_sequoia:     "475655b088a913e34b1febc61cc910ccc272bc226350e386d9d6647ab5bb4671"
+    sha256 cellar: :any, arm64_sonoma:      "7600bde69829c734a2e00769a6991c5d8b5d07c545dc850f9e729b81bc264c7c"
+    sha256 cellar: :any, sonoma:            "4020585258e85ebfdfa504d0dda096267a905cde59542c66563d3784dda11161"
+    sha256 cellar: :any, arm64_linux:       "337be169d245808a04ecb62213a65c69bff77d30028288bbad9a7ae73b410ce5"
+    sha256 cellar: :any, x86_64_linux:      "a5ad262b2967ec1aae15475918d316d6e88825f69f8e579499ca6d2b6083e180"
   end
 
   depends_on "cmake" => :build

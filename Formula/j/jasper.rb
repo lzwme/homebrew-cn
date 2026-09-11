@@ -12,12 +12,13 @@ class Jasper < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "bc734fadc3ec13b979742b8be1aec388ae7ff06f514057253397af67f302ff96"
-    sha256 cellar: :any,                 arm64_sequoia: "ff2667bbb901e39492d5e814f13d435ddc04dde4344e507cac25161c8797626b"
-    sha256 cellar: :any,                 arm64_sonoma:  "2e320a3cb0f577443687d560be32f8a82a8656a639d9048a3f5a330aced98566"
-    sha256 cellar: :any,                 sonoma:        "3405ea02f8b961bc9e3ffbe4129b3d357c8040a7290f29944d5dc875ffffd6fc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "55dd397df06c897cd1809379a46a825266001fc180ed5543014c30aaa4d0564e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "42e56bdae47308719c6a31f311c8b5a0ffd11cb4d98e69e7a81309ab0245562d"
+    sha256 cellar: :any,                 arm64_golden_gate: "b2fd38a58326e4784c9336c4541627d35d993b90b6a84683ecc205d0933d4b94"
+    sha256 cellar: :any,                 arm64_tahoe:       "bc734fadc3ec13b979742b8be1aec388ae7ff06f514057253397af67f302ff96"
+    sha256 cellar: :any,                 arm64_sequoia:     "ff2667bbb901e39492d5e814f13d435ddc04dde4344e507cac25161c8797626b"
+    sha256 cellar: :any,                 arm64_sonoma:      "2e320a3cb0f577443687d560be32f8a82a8656a639d9048a3f5a330aced98566"
+    sha256 cellar: :any,                 sonoma:            "3405ea02f8b961bc9e3ffbe4129b3d357c8040a7290f29944d5dc875ffffd6fc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "55dd397df06c897cd1809379a46a825266001fc180ed5543014c30aaa4d0564e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "42e56bdae47308719c6a31f311c8b5a0ffd11cb4d98e69e7a81309ab0245562d"
   end
 
   depends_on "cmake" => :build

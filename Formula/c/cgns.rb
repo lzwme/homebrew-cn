@@ -13,12 +13,13 @@ class Cgns < Formula
   end
 
   bottle do
-    sha256                               arm64_tahoe:   "c8229b3a6b131912d7652140857ece7f0a44a190488c01ebc747d31f94e127c2"
-    sha256                               arm64_sequoia: "e1d1bdba8c38e5099a1f8e2027a5856ec8eb8ccd0cb92fcb23f09d696f6eb73b"
-    sha256                               arm64_sonoma:  "c2c6e7e1d6388b718e48607bdddb0603de381678962e5d37ac42fdc54a32d1de"
-    sha256                               sonoma:        "71fa5029c484e5d8d390250e5c57d9bd0db745bf505b3395ae5234a1766f8431"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "843d70b36039426534c8a6f123f20284849718c92014a11d3c778cea68bf008e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0cf25cd9e1e520b2fc26339c0b9c1de09df89cea53e9f8b3785fc3964be8ebe3"
+    sha256                               arm64_golden_gate: "c47b62c4cb81ad6533e0d7072ae6af4d6a555961b257acf7c6feb576e73af132"
+    sha256                               arm64_tahoe:       "c8229b3a6b131912d7652140857ece7f0a44a190488c01ebc747d31f94e127c2"
+    sha256                               arm64_sequoia:     "e1d1bdba8c38e5099a1f8e2027a5856ec8eb8ccd0cb92fcb23f09d696f6eb73b"
+    sha256                               arm64_sonoma:      "c2c6e7e1d6388b718e48607bdddb0603de381678962e5d37ac42fdc54a32d1de"
+    sha256                               sonoma:            "71fa5029c484e5d8d390250e5c57d9bd0db745bf505b3395ae5234a1766f8431"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "843d70b36039426534c8a6f123f20284849718c92014a11d3c778cea68bf008e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "0cf25cd9e1e520b2fc26339c0b9c1de09df89cea53e9f8b3785fc3964be8ebe3"
   end
 
   depends_on "cmake" => :build

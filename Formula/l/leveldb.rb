@@ -7,14 +7,15 @@ class Leveldb < Formula
   revision 2
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "3a3373ff147b1d86903e34ffbb189d010826bf7acfeae4de3481fabd01e156e4"
-    sha256 cellar: :any,                 arm64_sequoia: "9ddcdcdaef16a4ecf52daefeea18623f769da2728bff6fcffff130ec130136e8"
-    sha256 cellar: :any,                 arm64_sonoma:  "8ae60cb6aaa09c5508c3606a2f6666aaa12bafb44b56cbb262b5fdb0b7234e8d"
-    sha256 cellar: :any,                 arm64_ventura: "c0970a965d039a1f3ad15c7db01b80b9e8851c59f63fe55f0eaa8633d083530c"
-    sha256 cellar: :any,                 sonoma:        "5a757793bb447bf5a91ee7fc38864c7dd4d870f857324524a4bd016c767afdda"
-    sha256 cellar: :any,                 ventura:       "b20dad4e906b5c65f7b52e4a61293c22b8324925b24c982c0c4baad2c77e13c0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f7e65c084c1d96f275941227d504bf22bc4e8b0733d01658e7c5d6e0efc61a21"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ff14a180346c9cece9aa3ddaaab5882eb6f9fa5074cde29d874ab640b351fed2"
+    sha256 cellar: :any,                 arm64_golden_gate: "3df843b6a5fbfb949b905632a63529f7accc4f5154807e05828faa0e16dc29d3"
+    sha256 cellar: :any,                 arm64_tahoe:       "3a3373ff147b1d86903e34ffbb189d010826bf7acfeae4de3481fabd01e156e4"
+    sha256 cellar: :any,                 arm64_sequoia:     "9ddcdcdaef16a4ecf52daefeea18623f769da2728bff6fcffff130ec130136e8"
+    sha256 cellar: :any,                 arm64_sonoma:      "8ae60cb6aaa09c5508c3606a2f6666aaa12bafb44b56cbb262b5fdb0b7234e8d"
+    sha256 cellar: :any,                 arm64_ventura:     "c0970a965d039a1f3ad15c7db01b80b9e8851c59f63fe55f0eaa8633d083530c"
+    sha256 cellar: :any,                 sonoma:            "5a757793bb447bf5a91ee7fc38864c7dd4d870f857324524a4bd016c767afdda"
+    sha256 cellar: :any,                 ventura:           "b20dad4e906b5c65f7b52e4a61293c22b8324925b24c982c0c4baad2c77e13c0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "f7e65c084c1d96f275941227d504bf22bc4e8b0733d01658e7c5d6e0efc61a21"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "ff14a180346c9cece9aa3ddaaab5882eb6f9fa5074cde29d874ab640b351fed2"
   end
 
   depends_on "cmake" => :build

@@ -11,12 +11,13 @@ class Cairomm < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "78d38524e50cf3e9e3157639a00c001d718a2f19a6886ad26c2e903c67c0e1cc"
-    sha256 cellar: :any, arm64_sequoia: "517978852a99f9abf1440b4a701083935abf0d51ec0f9ddfa6f8f4ed0bc79856"
-    sha256 cellar: :any, arm64_sonoma:  "e147e4e40aa2d209d6a528ee13edc76bd675c3fe40eafde9bd83e6e8d94f1503"
-    sha256 cellar: :any, sonoma:        "8f4b4f9988a9b79405f12a33f6403b104b17304e0bc5e67e73e717623dab0b1f"
-    sha256               arm64_linux:   "4b8b129df265f232212a786cc693e2804d71ae10c0615c92c8aeac138c9014fc"
-    sha256               x86_64_linux:  "810eb790909a4bbbd7e8a84924dbb51ca86a2a514d44a60da851c16411f58149"
+    sha256 cellar: :any, arm64_golden_gate: "880a5b29d2d711fe20e2114601cf1fc815e42ba1a68e5208065a1ed04303535a"
+    sha256 cellar: :any, arm64_tahoe:       "78d38524e50cf3e9e3157639a00c001d718a2f19a6886ad26c2e903c67c0e1cc"
+    sha256 cellar: :any, arm64_sequoia:     "517978852a99f9abf1440b4a701083935abf0d51ec0f9ddfa6f8f4ed0bc79856"
+    sha256 cellar: :any, arm64_sonoma:      "e147e4e40aa2d209d6a528ee13edc76bd675c3fe40eafde9bd83e6e8d94f1503"
+    sha256 cellar: :any, sonoma:            "8f4b4f9988a9b79405f12a33f6403b104b17304e0bc5e67e73e717623dab0b1f"
+    sha256               arm64_linux:       "4b8b129df265f232212a786cc693e2804d71ae10c0615c92c8aeac138c9014fc"
+    sha256               x86_64_linux:      "810eb790909a4bbbd7e8a84924dbb51ca86a2a514d44a60da851c16411f58149"
   end
 
   depends_on "meson" => :build

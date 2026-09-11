@@ -1,18 +1,17 @@
 class Neo4jMcp < Formula
   desc "Neo4j official Model Context Protocol server for AI tools"
   homepage "https://neo4j.com/docs/mcp/current/"
-  url "https://ghfast.top/https://github.com/neo4j/mcp/archive/refs/tags/v1.5.3.tar.gz"
-  sha256 "d18cdbd894a03fa97b66927d7fac0ec4feed927b882ad31654690809fadc6a84"
+  url "https://ghfast.top/https://github.com/neo4j/mcp/archive/refs/tags/v1.6.0.tar.gz"
+  sha256 "2aec25a09e477a79d7a220e756b21f04bddc3ccc9950732bc1d727fd4f760f91"
   license "GPL-3.0-or-later"
   head "https://github.com/neo4j/mcp.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "22c7bb38f07c8913a9dc28276bbcfc61a1e3084109458ab1d1b6823d04b28e17"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "22c7bb38f07c8913a9dc28276bbcfc61a1e3084109458ab1d1b6823d04b28e17"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "22c7bb38f07c8913a9dc28276bbcfc61a1e3084109458ab1d1b6823d04b28e17"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2cf5659f82d45bb553a228b35a1e5b67a636150d122ff5daf920243eb5b9711d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "15c9253bc34a0ce891071ddc908dddc5c8f9af76e47a451f902c926e0e5aea72"
-    sha256 cellar: :any,                 x86_64_linux:  "cf60cd45d22eb566178875b2a1020d550e733b7fd5af3126131c233200038bc1"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5b9189be516d533646d660f773df219ad37a1c02ae3714864cea9e7bea5e63ce"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5b9189be516d533646d660f773df219ad37a1c02ae3714864cea9e7bea5e63ce"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5b9189be516d533646d660f773df219ad37a1c02ae3714864cea9e7bea5e63ce"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "da0bd9fe40c0e690a9ca21dabe0ac1c7abf962f664f3836f8fb14178b4c79fce"
+    sha256 cellar: :any,                 x86_64_linux:  "e1eff114fcc20868ea57cc9dc71513aa1a098c7ef109b37ff4a550f4df8fff01"
   end
 
   depends_on "go" => :build

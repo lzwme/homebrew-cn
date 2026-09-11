@@ -13,14 +13,15 @@ class VulkanLoader < Formula
   end
 
   bottle do
-    sha256               arm64_tahoe:   "fcca79db1d905b8d119ac29f172e3fa4c2a5a9928eee5865e11131492d7f1f67"
-    sha256               arm64_sequoia: "de7b6b62a8ad6853bad4d8ea7d75f08f41c21ccfc20d9cd62530a56964e8c9b0"
-    sha256               arm64_sonoma:  "92170415f9888f72039bea6842415dbd876ff9b91087100b6948c3ccac103632"
-    sha256 cellar: :any, tahoe:         "f7f978d658f318dd83dd51ddd44c144f977c7f7e51749b66031d225a8b9c9ec6"
-    sha256 cellar: :any, sequoia:       "25dd0dabe2f62b4790ec5b0f200a562bd9abef2d5a88401a7211eadf52ddee77"
-    sha256 cellar: :any, sonoma:        "10ae3553cc035a21770452181d128ff769dd3d62a6758d3e8b7ce0175ac7710e"
-    sha256               arm64_linux:   "3086b072972040208ba198d6c1fa0a9532020dc670311af1324df912b903a8c2"
-    sha256               x86_64_linux:  "28808a994dd5f3530c4ef3591350bdb6495609c7caae974e5f1e87b9db4ef4a4"
+    sha256               arm64_golden_gate: "f06b247aef97a8173f698f8de8a892051bdb2cdaacfee4a543f17d4093db812b"
+    sha256               arm64_tahoe:       "fcca79db1d905b8d119ac29f172e3fa4c2a5a9928eee5865e11131492d7f1f67"
+    sha256               arm64_sequoia:     "de7b6b62a8ad6853bad4d8ea7d75f08f41c21ccfc20d9cd62530a56964e8c9b0"
+    sha256               arm64_sonoma:      "92170415f9888f72039bea6842415dbd876ff9b91087100b6948c3ccac103632"
+    sha256 cellar: :any, tahoe:             "f7f978d658f318dd83dd51ddd44c144f977c7f7e51749b66031d225a8b9c9ec6"
+    sha256 cellar: :any, sequoia:           "25dd0dabe2f62b4790ec5b0f200a562bd9abef2d5a88401a7211eadf52ddee77"
+    sha256 cellar: :any, sonoma:            "10ae3553cc035a21770452181d128ff769dd3d62a6758d3e8b7ce0175ac7710e"
+    sha256               arm64_linux:       "3086b072972040208ba198d6c1fa0a9532020dc670311af1324df912b903a8c2"
+    sha256               x86_64_linux:      "28808a994dd5f3530c4ef3591350bdb6495609c7caae974e5f1e87b9db4ef4a4"
   end
 
   depends_on "cmake" => :build

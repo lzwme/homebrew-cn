@@ -11,12 +11,13 @@ class Libmagic < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "c8c01258938e218cf9dcff85eaf7580b299821fab53f4d6706679d41d55b476b"
-    sha256 arm64_sequoia: "c6e5827a76630cd9d8d7cb5ec0372c372cca1da5d80d4a578931020332ee3e88"
-    sha256 arm64_sonoma:  "a581bb51e86bbc6fd8b8f8791a1cb5ba8794ced3c2dd567ab1c310b43a91f529"
-    sha256 sonoma:        "5bc1a546f556add81790941a504fc0abaa83c08f2bec4a030e8528c3481152b2"
-    sha256 arm64_linux:   "139b9039a0093c9a9c8d18566b9c0932f85f85389d0dfa65cd21ddd16d65be5a"
-    sha256 x86_64_linux:  "506b8b31dfc6c4478ef078a281b3ed90d6fc9399b7f4625ba619df8a9d1e02b3"
+    sha256 arm64_golden_gate: "a8688b01c786d1b6c27d273c347e3f8f15f996a40827cf057dbe92573e13cbd6"
+    sha256 arm64_tahoe:       "c8c01258938e218cf9dcff85eaf7580b299821fab53f4d6706679d41d55b476b"
+    sha256 arm64_sequoia:     "c6e5827a76630cd9d8d7cb5ec0372c372cca1da5d80d4a578931020332ee3e88"
+    sha256 arm64_sonoma:      "a581bb51e86bbc6fd8b8f8791a1cb5ba8794ced3c2dd567ab1c310b43a91f529"
+    sha256 sonoma:            "5bc1a546f556add81790941a504fc0abaa83c08f2bec4a030e8528c3481152b2"
+    sha256 arm64_linux:       "139b9039a0093c9a9c8d18566b9c0932f85f85389d0dfa65cd21ddd16d65be5a"
+    sha256 x86_64_linux:      "506b8b31dfc6c4478ef078a281b3ed90d6fc9399b7f4625ba619df8a9d1e02b3"
   end
 
   depends_on "pkgconf" => :test

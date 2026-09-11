@@ -8,12 +8,13 @@ class Cryptography < Formula
   head "https://github.com/pyca/cryptography.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "3a3d9012288bc2de959d6caa0adb6c9d884d9831e2b993d0986b028c7e285990"
-    sha256 cellar: :any, arm64_sequoia: "2c3a8e19720bf3dc3a009599b3ba9721dbcddf595ec43cf3968bffe4911cebb9"
-    sha256 cellar: :any, arm64_sonoma:  "a2bbe4bf72908f9e0f6af66e8b7b3d9b7f1b91e73a21bbde61dd4ebdcea42bac"
-    sha256 cellar: :any, sonoma:        "588cd93e1e2ed6a7fd968cae39572984e7b72705a4d21979a6584e24ab087e79"
-    sha256 cellar: :any, arm64_linux:   "0bc1a4951e1f346ae8706537143fe9df42e82e6ed01ef35ec805b6b9867e5964"
-    sha256 cellar: :any, x86_64_linux:  "7269b6147c5d4080b3ab9358468cb208cac317c2ed4e8520a49857cfb975ef9e"
+    sha256 cellar: :any, arm64_golden_gate: "685a7fd0f220484dbca9377293b25db10ef1dc75cf6e52fbf0a68c16ef673e40"
+    sha256 cellar: :any, arm64_tahoe:       "3a3d9012288bc2de959d6caa0adb6c9d884d9831e2b993d0986b028c7e285990"
+    sha256 cellar: :any, arm64_sequoia:     "2c3a8e19720bf3dc3a009599b3ba9721dbcddf595ec43cf3968bffe4911cebb9"
+    sha256 cellar: :any, arm64_sonoma:      "a2bbe4bf72908f9e0f6af66e8b7b3d9b7f1b91e73a21bbde61dd4ebdcea42bac"
+    sha256 cellar: :any, sonoma:            "588cd93e1e2ed6a7fd968cae39572984e7b72705a4d21979a6584e24ab087e79"
+    sha256 cellar: :any, arm64_linux:       "0bc1a4951e1f346ae8706537143fe9df42e82e6ed01ef35ec805b6b9867e5964"
+    sha256 cellar: :any, x86_64_linux:      "7269b6147c5d4080b3ab9358468cb208cac317c2ed4e8520a49857cfb975ef9e"
   end
 
   depends_on "maturin" => :build

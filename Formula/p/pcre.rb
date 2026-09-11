@@ -18,12 +18,13 @@ class Pcre < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "08de2eeaca9c98e70091c9b220f8f570b073f8db982d2451dfd35b1415aab6e6"
-    sha256 cellar: :any,                 arm64_sequoia: "f04ffe5280aa77d2994ebd5ae2d9290d0b7d0471b70df18baa95ba01ae60d593"
-    sha256 cellar: :any,                 arm64_sonoma:  "80fff1bcdecb1a440b001d9d880cd8aa477285af66273752464bc9f2d13b468f"
-    sha256 cellar: :any,                 sonoma:        "df17d29f345822247b05d23c6faeddbac0d0a16805e6080fd67f7cffe2c54e32"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c0f804ff717d67d5e6ccc1457fa4378ad137dab50118f463a3a1ce24957377dc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c0ad29b4ac581f0b18367f131f43583b10d2fd4832d80a47e8b80364f939257d"
+    sha256 cellar: :any,                 arm64_golden_gate: "f90890232816daf79ef9efbf1ea32b9dc28970d6e078ecac538ab047592b3b9b"
+    sha256 cellar: :any,                 arm64_tahoe:       "08de2eeaca9c98e70091c9b220f8f570b073f8db982d2451dfd35b1415aab6e6"
+    sha256 cellar: :any,                 arm64_sequoia:     "f04ffe5280aa77d2994ebd5ae2d9290d0b7d0471b70df18baa95ba01ae60d593"
+    sha256 cellar: :any,                 arm64_sonoma:      "80fff1bcdecb1a440b001d9d880cd8aa477285af66273752464bc9f2d13b468f"
+    sha256 cellar: :any,                 sonoma:            "df17d29f345822247b05d23c6faeddbac0d0a16805e6080fd67f7cffe2c54e32"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "c0f804ff717d67d5e6ccc1457fa4378ad137dab50118f463a3a1ce24957377dc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "c0ad29b4ac581f0b18367f131f43583b10d2fd4832d80a47e8b80364f939257d"
   end
 
   # Final release on 2021-06-22. As an exception, PCRE is given an extended

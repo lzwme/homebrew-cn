@@ -7,12 +7,13 @@ class Libavif < Formula
   compatibility_version 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "584d41a9ad0fd601fac27735b928483c3f8494d4e08d6461599f7fabc915783b"
-    sha256 cellar: :any,                 arm64_sequoia: "0d1a9ce6320d9ddacb3e7ca31bb2ef3216529755ab1df24eac833fec27b25c95"
-    sha256 cellar: :any,                 arm64_sonoma:  "0c6314fd072001e7cb03d1cc065d7934dcf25edca3e8d413008ca268f1429582"
-    sha256 cellar: :any,                 sonoma:        "5ebfe4ae085f4dd3e13a6c833b104939ac11d6abc28ea7a2413f471548444e68"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "99cf708f4f061f25e916e4212cd9ba2159daa5a498689f94b25995edbe7f734f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "824125e726a4ea8c4495ef60d538ef5b769037bd9c4acc7c5a757d0cd03c4819"
+    sha256 cellar: :any,                 arm64_golden_gate: "f615b9691140a7dca60456cc6fa89f797039567d44637c5bedca28b7065a3190"
+    sha256 cellar: :any,                 arm64_tahoe:       "584d41a9ad0fd601fac27735b928483c3f8494d4e08d6461599f7fabc915783b"
+    sha256 cellar: :any,                 arm64_sequoia:     "0d1a9ce6320d9ddacb3e7ca31bb2ef3216529755ab1df24eac833fec27b25c95"
+    sha256 cellar: :any,                 arm64_sonoma:      "0c6314fd072001e7cb03d1cc065d7934dcf25edca3e8d413008ca268f1429582"
+    sha256 cellar: :any,                 sonoma:            "5ebfe4ae085f4dd3e13a6c833b104939ac11d6abc28ea7a2413f471548444e68"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "99cf708f4f061f25e916e4212cd9ba2159daa5a498689f94b25995edbe7f734f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "824125e726a4ea8c4495ef60d538ef5b769037bd9c4acc7c5a757d0cd03c4819"
   end
 
   depends_on "cmake" => :build

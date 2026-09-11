@@ -7,12 +7,13 @@ class Skalibs < Formula
   head "git://git.skarnet.org/skalibs.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "8522f1063ab766954841104b3b2dcd79fa419465647450e3e226309cc0c268b7"
-    sha256 cellar: :any, arm64_sequoia: "8aa2dbf98365714dbd8d6f4745ffec3e9fe2a05cbbcbc5aee887af5dd75624b8"
-    sha256 cellar: :any, arm64_sonoma:  "dd2429c17359fdffdbc50f339ef95cb356c012fd0e0139be55700796bf62a2e6"
-    sha256 cellar: :any, sonoma:        "4fa06b2d3f3e0b965beb41c38277b0e175217117565b7fa4e21da1c7df80e892"
-    sha256 cellar: :any, arm64_linux:   "0b3aa7c4c3deae00e8a218ffe218015cf4a1d24eb3d40a9ceca3b18bc9a63267"
-    sha256 cellar: :any, x86_64_linux:  "ff64368afe3ca42f66ff00390b60513f7fd9e3379da876fff52ad12117a9400a"
+    sha256 cellar: :any, arm64_golden_gate: "37aa7fec97bf7842792785a2bb75a86fa4fc52b001ff0cfb884a7e32b2ca8932"
+    sha256 cellar: :any, arm64_tahoe:       "8522f1063ab766954841104b3b2dcd79fa419465647450e3e226309cc0c268b7"
+    sha256 cellar: :any, arm64_sequoia:     "8aa2dbf98365714dbd8d6f4745ffec3e9fe2a05cbbcbc5aee887af5dd75624b8"
+    sha256 cellar: :any, arm64_sonoma:      "dd2429c17359fdffdbc50f339ef95cb356c012fd0e0139be55700796bf62a2e6"
+    sha256 cellar: :any, sonoma:            "4fa06b2d3f3e0b965beb41c38277b0e175217117565b7fa4e21da1c7df80e892"
+    sha256 cellar: :any, arm64_linux:       "0b3aa7c4c3deae00e8a218ffe218015cf4a1d24eb3d40a9ceca3b18bc9a63267"
+    sha256 cellar: :any, x86_64_linux:      "ff64368afe3ca42f66ff00390b60513f7fd9e3379da876fff52ad12117a9400a"
   end
 
   def install

@@ -8,11 +8,12 @@ class Litehtml < Formula
   compatibility_version 1
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "c04934f95374b07ad5d68df56857dd65da292f20a0a3ebb421eee96d0b2dfd8d"
-    sha256 cellar: :any, arm64_sequoia: "e378dc8a204fb6b918786c6317f83630948af24976d148ad664531e9d6a37fe8"
-    sha256 cellar: :any, arm64_sonoma:  "36cb6a5b5d456b522e3fc3d188de7bde37c9556a107372c07ca51a12d9e085d4"
-    sha256 cellar: :any, arm64_linux:   "c5e60542eb5d95723dcf2bd656c7d5f1bb0efe79547b0a9ffea069741b2da976"
-    sha256 cellar: :any, x86_64_linux:  "79e90c3d8b668391e80b25e41c4320af3355cc9ede8f7152f805ee80bb5f663b"
+    sha256 cellar: :any, arm64_golden_gate: "3144634607fd48ab5a17952215ea0ad7116629c649b6c3070d72c354090fc9d2"
+    sha256 cellar: :any, arm64_tahoe:       "c04934f95374b07ad5d68df56857dd65da292f20a0a3ebb421eee96d0b2dfd8d"
+    sha256 cellar: :any, arm64_sequoia:     "e378dc8a204fb6b918786c6317f83630948af24976d148ad664531e9d6a37fe8"
+    sha256 cellar: :any, arm64_sonoma:      "36cb6a5b5d456b522e3fc3d188de7bde37c9556a107372c07ca51a12d9e085d4"
+    sha256 cellar: :any, arm64_linux:       "c5e60542eb5d95723dcf2bd656c7d5f1bb0efe79547b0a9ffea069741b2da976"
+    sha256 cellar: :any, x86_64_linux:      "79e90c3d8b668391e80b25e41c4320af3355cc9ede8f7152f805ee80bb5f663b"
   end
 
   depends_on "cmake" => :build

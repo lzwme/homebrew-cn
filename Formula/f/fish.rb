@@ -15,11 +15,12 @@ class Fish < Formula
   pour_bottle? only_if: :default_prefix
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "c530bd62ac9277e7e1ae3de9ff5e0a83fdb5f49d39f456ce8f61dce6f56dd8c3"
-    sha256 cellar: :any, arm64_sequoia: "bfea5c0b0764de2965bb201d2803d51e6f898da0253c2e5934fc0db1333a0543"
-    sha256 cellar: :any, arm64_sonoma:  "9ce8b1dc8f20c724221dd3c351355c8a306edfef30d292401cb4fc9d67c0d90b"
-    sha256 cellar: :any, arm64_linux:   "101c8ae43f26503c872bfde4cabc3388ad7078304c7572e9ffb4fbd29bea5a77"
-    sha256 cellar: :any, x86_64_linux:  "0660e70e2312ebf32bf858e89842efc511a475b88f292aeadca90f4893186975"
+    sha256 cellar: :any, arm64_golden_gate: "178bdd28d5b888253d95cd9f09749ec5b0786e38ffb2b29c5e9c883d0eba5434"
+    sha256 cellar: :any, arm64_tahoe:       "c530bd62ac9277e7e1ae3de9ff5e0a83fdb5f49d39f456ce8f61dce6f56dd8c3"
+    sha256 cellar: :any, arm64_sequoia:     "bfea5c0b0764de2965bb201d2803d51e6f898da0253c2e5934fc0db1333a0543"
+    sha256 cellar: :any, arm64_sonoma:      "9ce8b1dc8f20c724221dd3c351355c8a306edfef30d292401cb4fc9d67c0d90b"
+    sha256 cellar: :any, arm64_linux:       "101c8ae43f26503c872bfde4cabc3388ad7078304c7572e9ffb4fbd29bea5a77"
+    sha256 cellar: :any, x86_64_linux:      "0660e70e2312ebf32bf858e89842efc511a475b88f292aeadca90f4893186975"
   end
 
   depends_on "cmake" => :build

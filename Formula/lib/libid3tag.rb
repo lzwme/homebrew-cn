@@ -8,12 +8,13 @@ class Libid3tag < Formula
   head "https://codeberg.org/tenacityteam/libid3tag.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "100a58c3e4e26404d62e85fcabe8d0b5ba411094db8c97c46be1d916f95524ca"
-    sha256 cellar: :any,                 arm64_sequoia: "648b4d4cd348899aca1edeb95d63f3039083fe86319ac3c502e929fafa2388ce"
-    sha256 cellar: :any,                 arm64_sonoma:  "05c43972f0fffabb9b0868391f43e23238e2041faeaf179dbd9318468468ec37"
-    sha256 cellar: :any,                 sonoma:        "b3c1ed4dfbe28dedb19408cdd3fbddab9beb38ab3268b01585418a0e694bbcdf"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "33f3757644b9124896fc61ecdc425b351cea0086a4268979925be50fca2bb5c2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b7ebccce6746bc7b0ce3cbd51794cb119ff4b1a5a3c7713ba20567744261b062"
+    sha256 cellar: :any,                 arm64_golden_gate: "547b6cb0da1127e7cb8ce77ed8f0ef2c8d9b9effae3717edbb851d3b3b2d8a1c"
+    sha256 cellar: :any,                 arm64_tahoe:       "100a58c3e4e26404d62e85fcabe8d0b5ba411094db8c97c46be1d916f95524ca"
+    sha256 cellar: :any,                 arm64_sequoia:     "648b4d4cd348899aca1edeb95d63f3039083fe86319ac3c502e929fafa2388ce"
+    sha256 cellar: :any,                 arm64_sonoma:      "05c43972f0fffabb9b0868391f43e23238e2041faeaf179dbd9318468468ec37"
+    sha256 cellar: :any,                 sonoma:            "b3c1ed4dfbe28dedb19408cdd3fbddab9beb38ab3268b01585418a0e694bbcdf"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "33f3757644b9124896fc61ecdc425b351cea0086a4268979925be50fca2bb5c2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "b7ebccce6746bc7b0ce3cbd51794cb119ff4b1a5a3c7713ba20567744261b062"
   end
 
   depends_on "cmake" => :build

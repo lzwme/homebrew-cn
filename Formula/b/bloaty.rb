@@ -17,11 +17,12 @@ class Bloaty < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "003772acfac3c4bc29f5b733d22fa8f9f7762f14e956400acbe0780ba3555be8"
-    sha256 cellar: :any, arm64_sequoia: "b0585a76a909401e65c4439a2e6ab9aa32bc718e73c3895cb418f0ae9b0d5ecd"
-    sha256 cellar: :any, arm64_sonoma:  "10b4b4824fb71472d9155d638f4278c657995297923b891f9108cbf5ac95ce81"
-    sha256               arm64_linux:   "d1b177476566f0ac288ac4d21148ed3bb436c6eecdcc252ce0c41b6b13c02d62"
-    sha256               x86_64_linux:  "53d52026c31260e51857bdeafa872dbf4cd843d8ad22a5dc8d6b6bfffb9b1f00"
+    sha256 cellar: :any, arm64_golden_gate: "abae848af5e189151bac1ac2757def77c813ceaca7383890cb069579c6250e10"
+    sha256 cellar: :any, arm64_tahoe:       "003772acfac3c4bc29f5b733d22fa8f9f7762f14e956400acbe0780ba3555be8"
+    sha256 cellar: :any, arm64_sequoia:     "b0585a76a909401e65c4439a2e6ab9aa32bc718e73c3895cb418f0ae9b0d5ecd"
+    sha256 cellar: :any, arm64_sonoma:      "10b4b4824fb71472d9155d638f4278c657995297923b891f9108cbf5ac95ce81"
+    sha256               arm64_linux:       "d1b177476566f0ac288ac4d21148ed3bb436c6eecdcc252ce0c41b6b13c02d62"
+    sha256               x86_64_linux:      "53d52026c31260e51857bdeafa872dbf4cd843d8ad22a5dc8d6b6bfffb9b1f00"
   end
 
   depends_on "cmake" => :build

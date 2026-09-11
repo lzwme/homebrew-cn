@@ -7,12 +7,13 @@ class GdkPixbuf < Formula
   compatibility_version 1
 
   bottle do
-    sha256               arm64_tahoe:   "f0ac042950d94a60fac215407e17eb883fbc9881c2943d972b947512d7b981aa"
-    sha256               arm64_sequoia: "78528797c7e12036f457417018122651f151ad84e40e5a94dab06ab4c928ab90"
-    sha256               arm64_sonoma:  "023a3064bdb11d805971bc221046448ede9aacd21f87d9a2b888ce95f83e5838"
-    sha256 cellar: :any, sonoma:        "311c6af6afa4d53a01cf0834288928254a6131eb249d6bbc1171574dade7928d"
-    sha256               arm64_linux:   "be7d9919b3b9b9df245240ec0451ab0cf5118c31f5b476ae0e2f1cdeaa901ac3"
-    sha256               x86_64_linux:  "13498f2cb02bb122c7befb4e3eaa4a79aca7d736f1c5cb68c85088fc70f37f24"
+    sha256               arm64_golden_gate: "63f967fabe4c5f6af2ce033e907938c7942b726c2cfbf4101c6d6650935ca0b3"
+    sha256               arm64_tahoe:       "f0ac042950d94a60fac215407e17eb883fbc9881c2943d972b947512d7b981aa"
+    sha256               arm64_sequoia:     "78528797c7e12036f457417018122651f151ad84e40e5a94dab06ab4c928ab90"
+    sha256               arm64_sonoma:      "023a3064bdb11d805971bc221046448ede9aacd21f87d9a2b888ce95f83e5838"
+    sha256 cellar: :any, sonoma:            "311c6af6afa4d53a01cf0834288928254a6131eb249d6bbc1171574dade7928d"
+    sha256               arm64_linux:       "be7d9919b3b9b9df245240ec0451ab0cf5118c31f5b476ae0e2f1cdeaa901ac3"
+    sha256               x86_64_linux:      "13498f2cb02bb122c7befb4e3eaa4a79aca7d736f1c5cb68c85088fc70f37f24"
   end
 
   depends_on "docutils" => :build # for rst2man

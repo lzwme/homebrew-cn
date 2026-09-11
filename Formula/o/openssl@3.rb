@@ -14,11 +14,12 @@ class OpensslAT3 < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "8c7dab98311d025fda379dba80eaf985af1ceca26c403c66318b3c7d43a028b9"
-    sha256 arm64_sequoia: "b7139450ed389be82f807daaadffa778d9c4753a3b2d8f784da1cf7383994ee2"
-    sha256 arm64_sonoma:  "01887accd1964e9940ba516509e948eed9850d58d55cc02ca52c503435750685"
-    sha256 arm64_linux:   "e0f84cb8ab776813a17750423a6ce1b75b870df3ab2c21c54df9ce02646c1e1c"
-    sha256 x86_64_linux:  "73c4159878b98d82e6f4e343ef34a79b74ca2224927d38c0956ce3ea781d6d20"
+    sha256 arm64_golden_gate: "51eb22ee51d7b6e678ef5dc2be234adb46f9f541ac1d98e5ed08c9a7535789dc"
+    sha256 arm64_tahoe:       "8c7dab98311d025fda379dba80eaf985af1ceca26c403c66318b3c7d43a028b9"
+    sha256 arm64_sequoia:     "b7139450ed389be82f807daaadffa778d9c4753a3b2d8f784da1cf7383994ee2"
+    sha256 arm64_sonoma:      "01887accd1964e9940ba516509e948eed9850d58d55cc02ca52c503435750685"
+    sha256 arm64_linux:       "e0f84cb8ab776813a17750423a6ce1b75b870df3ab2c21c54df9ce02646c1e1c"
+    sha256 x86_64_linux:      "73c4159878b98d82e6f4e343ef34a79b74ca2224927d38c0956ce3ea781d6d20"
   end
 
   depends_on "ca-certificates" => :no_linkage

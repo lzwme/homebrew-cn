@@ -7,11 +7,12 @@ class Libmaxminddb < Formula
   compatibility_version 1
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "e4107282fb32a5ab8f0afd041b728b1a1f745d4eeec839df4ae13705292c5ca2"
-    sha256 cellar: :any, arm64_sequoia: "35c41f989a8b2c002518651170d92cedcc25750fabece9a629eb4b0d2f486b99"
-    sha256 cellar: :any, arm64_sonoma:  "3718ffa35dc8af95c5b40b49f8cb147c4f323cd7dd7505a4d30b5c7ebcee957b"
-    sha256 cellar: :any, arm64_linux:   "2f3a969e51ce95674b1b445b190d75e05b08f125f18ea020146d025ee4c3d29f"
-    sha256 cellar: :any, x86_64_linux:  "c72a6fcee7b1132d4c17b0f530ed0613c302b3981796baf0829841a7366b64c6"
+    sha256 cellar: :any, arm64_golden_gate: "356cb6ae3a3752cb122c3a4e40f9a626d27653a215b306c233d759b0ad5f7179"
+    sha256 cellar: :any, arm64_tahoe:       "e4107282fb32a5ab8f0afd041b728b1a1f745d4eeec839df4ae13705292c5ca2"
+    sha256 cellar: :any, arm64_sequoia:     "35c41f989a8b2c002518651170d92cedcc25750fabece9a629eb4b0d2f486b99"
+    sha256 cellar: :any, arm64_sonoma:      "3718ffa35dc8af95c5b40b49f8cb147c4f323cd7dd7505a4d30b5c7ebcee957b"
+    sha256 cellar: :any, arm64_linux:       "2f3a969e51ce95674b1b445b190d75e05b08f125f18ea020146d025ee4c3d29f"
+    sha256 cellar: :any, x86_64_linux:      "c72a6fcee7b1132d4c17b0f530ed0613c302b3981796baf0829841a7366b64c6"
   end
 
   head do

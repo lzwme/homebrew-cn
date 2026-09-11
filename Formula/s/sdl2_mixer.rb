@@ -11,12 +11,13 @@ class Sdl2Mixer < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "b51467b14224893388dbda5a3154fcd29d63f02fb0810b2aa08844b51b77530e"
-    sha256 cellar: :any,                 arm64_sequoia: "c73b68187c3784df0ca2dfccb296db4b0e87c969dc80a32e27b13cbf79a146fb"
-    sha256 cellar: :any,                 arm64_sonoma:  "ad750989fe0eeceba6d243009c69b02ca9b9da25732d4d562da30d0859ff6a7c"
-    sha256 cellar: :any,                 sonoma:        "0991d538a75bde3e9adae424c2ffad5e75a2b486a435c54954c2a1e902f78109"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e95d2d530adf0c579f1de62a333acd261725e050d31e5f28883d7efc09d83df9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5db7991de483573122d63b0c503a1e7c660535f7e36864dc8e8ac0668b239d53"
+    sha256 cellar: :any,                 arm64_golden_gate: "81220799623bac0328e3e72ccfccdbd15bc119795260a94753c9646ac679b1db"
+    sha256 cellar: :any,                 arm64_tahoe:       "b51467b14224893388dbda5a3154fcd29d63f02fb0810b2aa08844b51b77530e"
+    sha256 cellar: :any,                 arm64_sequoia:     "c73b68187c3784df0ca2dfccb296db4b0e87c969dc80a32e27b13cbf79a146fb"
+    sha256 cellar: :any,                 arm64_sonoma:      "ad750989fe0eeceba6d243009c69b02ca9b9da25732d4d562da30d0859ff6a7c"
+    sha256 cellar: :any,                 sonoma:            "0991d538a75bde3e9adae424c2ffad5e75a2b486a435c54954c2a1e902f78109"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "e95d2d530adf0c579f1de62a333acd261725e050d31e5f28883d7efc09d83df9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "5db7991de483573122d63b0c503a1e7c660535f7e36864dc8e8ac0668b239d53"
   end
 
   head do

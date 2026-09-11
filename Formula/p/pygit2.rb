@@ -8,12 +8,13 @@ class Pygit2 < Formula
   head "https://github.com/libgit2/pygit2.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "014b443ecfadb43fea1f8be1e2d192d90ff6ac22f254c4fe70f116d48ba11370"
-    sha256 cellar: :any, arm64_sequoia: "5aae17d0cb36ba04cd2fe7ca4284c8ef9555fcc529c0de091fb2c9b9d39101d7"
-    sha256 cellar: :any, arm64_sonoma:  "cbc2582c691dc88e8f25fb42325f0d9eb86ee3166f0dcdfc96eba83941793d41"
-    sha256 cellar: :any, sonoma:        "933d7b2dc5bb69dfb6570bdb5d5eafe18a668eeb646bd27c0eb380ebde0df69a"
-    sha256 cellar: :any, arm64_linux:   "285e4f9e42ad8a76b6d2c88901c4d8b6aaa6b6256ef0f0bfbd69d9c7537f3daf"
-    sha256 cellar: :any, x86_64_linux:  "f01f8e53269c2e436a399e7b9e13d60272ebc5bdd0b86b8a74750992a533a9e5"
+    sha256 cellar: :any, arm64_golden_gate: "517cc3ebeeae379c810d8a29b4cbd0ca7ddf99a157d3f10471ba0f2fb0024799"
+    sha256 cellar: :any, arm64_tahoe:       "014b443ecfadb43fea1f8be1e2d192d90ff6ac22f254c4fe70f116d48ba11370"
+    sha256 cellar: :any, arm64_sequoia:     "5aae17d0cb36ba04cd2fe7ca4284c8ef9555fcc529c0de091fb2c9b9d39101d7"
+    sha256 cellar: :any, arm64_sonoma:      "cbc2582c691dc88e8f25fb42325f0d9eb86ee3166f0dcdfc96eba83941793d41"
+    sha256 cellar: :any, sonoma:            "933d7b2dc5bb69dfb6570bdb5d5eafe18a668eeb646bd27c0eb380ebde0df69a"
+    sha256 cellar: :any, arm64_linux:       "285e4f9e42ad8a76b6d2c88901c4d8b6aaa6b6256ef0f0bfbd69d9c7537f3daf"
+    sha256 cellar: :any, x86_64_linux:      "f01f8e53269c2e436a399e7b9e13d60272ebc5bdd0b86b8a74750992a533a9e5"
   end
 
   depends_on "python@3.13" => [:build, :test]

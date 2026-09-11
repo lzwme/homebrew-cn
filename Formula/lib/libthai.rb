@@ -12,12 +12,13 @@ class Libthai < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "683257ceaae0ebf522c07e2fd39b82863ff54d35ac8a985d9d62597bda8a05b3"
-    sha256 arm64_sequoia: "428726b804e7bb80faef7381ba27b0be1a0087e54746d0f355c0af7575220ac6"
-    sha256 arm64_sonoma:  "e969faf14de2c64bcd89e1e1abea14d12d8695eba54647782e2e841042b3209d"
-    sha256 sonoma:        "151b8c0772dce394bc4c1112d90b45999d18be1b0406abf322be74f5976cf63a"
-    sha256 arm64_linux:   "424e3a5b178a1eaf5cd0c9d56bfd3671c316cd88096e9297d407836c826d5296"
-    sha256 x86_64_linux:  "54551ab441971407573f2f97d085cd26ec3b61eda8fbf6d599ce2a41bfdb5f02"
+    sha256 arm64_golden_gate: "ee89eebb2d42b8d7384e15487fcf7d2925201a5fc8beddfc54f6cd9748206d7e"
+    sha256 arm64_tahoe:       "683257ceaae0ebf522c07e2fd39b82863ff54d35ac8a985d9d62597bda8a05b3"
+    sha256 arm64_sequoia:     "428726b804e7bb80faef7381ba27b0be1a0087e54746d0f355c0af7575220ac6"
+    sha256 arm64_sonoma:      "e969faf14de2c64bcd89e1e1abea14d12d8695eba54647782e2e841042b3209d"
+    sha256 sonoma:            "151b8c0772dce394bc4c1112d90b45999d18be1b0406abf322be74f5976cf63a"
+    sha256 arm64_linux:       "424e3a5b178a1eaf5cd0c9d56bfd3671c316cd88096e9297d407836c826d5296"
+    sha256 x86_64_linux:      "54551ab441971407573f2f97d085cd26ec3b61eda8fbf6d599ce2a41bfdb5f02"
   end
 
   depends_on "pkgconf" => [:build, :test]

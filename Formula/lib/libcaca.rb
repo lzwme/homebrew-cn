@@ -13,12 +13,13 @@ class Libcaca < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "1bf1cbd0c20bfcec98baa3baf5c7fbef225c45b96b016a7fe0c4b0aba329ba3f"
-    sha256 cellar: :any,                 arm64_sequoia: "73a575ae24fd5a0ef1868a5cbaba6c0e535f3c2b85fbe6763cf9641109a20757"
-    sha256 cellar: :any,                 arm64_sonoma:  "dcce30fad2e3096cb10d6c2d74200c51e9637bc5801bc53ae53e0b8359d6db16"
-    sha256 cellar: :any,                 sonoma:        "f2a90505005634192a9e683ee0b58072370ffd24147c528662252d511e54cd61"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3bdbc127aecafd8e35ad5559205e2c0d9ba82b5c1c864e311a881367d46cdf01"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "14c988337fcd86dc31b0db8009e934c356c795ddf62aea1d1987549bb2f53f6c"
+    sha256 cellar: :any,                 arm64_golden_gate: "22221ea7f7e2af36bc16eae966aa8713e9b68f2a4f9449a1bac82536302f6004"
+    sha256 cellar: :any,                 arm64_tahoe:       "1bf1cbd0c20bfcec98baa3baf5c7fbef225c45b96b016a7fe0c4b0aba329ba3f"
+    sha256 cellar: :any,                 arm64_sequoia:     "73a575ae24fd5a0ef1868a5cbaba6c0e535f3c2b85fbe6763cf9641109a20757"
+    sha256 cellar: :any,                 arm64_sonoma:      "dcce30fad2e3096cb10d6c2d74200c51e9637bc5801bc53ae53e0b8359d6db16"
+    sha256 cellar: :any,                 sonoma:            "f2a90505005634192a9e683ee0b58072370ffd24147c528662252d511e54cd61"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "3bdbc127aecafd8e35ad5559205e2c0d9ba82b5c1c864e311a881367d46cdf01"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "14c988337fcd86dc31b0db8009e934c356c795ddf62aea1d1987549bb2f53f6c"
   end
 
   head do

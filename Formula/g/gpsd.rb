@@ -13,12 +13,13 @@ class Gpsd < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "a5cdc0a238acdc4be1f968169fd823ee8a138bacad9eff804f893be065dc7d82"
-    sha256 cellar: :any,                 arm64_sequoia: "a0e7d0e6077b4987e4e7d6ba2e3c969fd3e7cf0c054bed1978df3968a569ee0b"
-    sha256 cellar: :any,                 arm64_sonoma:  "d55005371ee46f49596bb42f99bb043a4150b201a877795d06c643b0b20e34ba"
-    sha256 cellar: :any,                 sonoma:        "80c664a6bbd8649eb3e82e2b3c357f41552996310a7c6a6d84e6101561705692"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d0e890be6d0dad6ef97fc14eb6cfd7cfafec60ce53c61d15def98640dfb50bfe"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f1966e876bbef9de7ddc508979cd0557c66f5d0cb321fa7d333b855e43a5b6e8"
+    sha256 cellar: :any,                 arm64_golden_gate: "1ce964c1274b5f94c8596770a29b912263c9ec1bc6ceaf075e24564f47ba5307"
+    sha256 cellar: :any,                 arm64_tahoe:       "a5cdc0a238acdc4be1f968169fd823ee8a138bacad9eff804f893be065dc7d82"
+    sha256 cellar: :any,                 arm64_sequoia:     "a0e7d0e6077b4987e4e7d6ba2e3c969fd3e7cf0c054bed1978df3968a569ee0b"
+    sha256 cellar: :any,                 arm64_sonoma:      "d55005371ee46f49596bb42f99bb043a4150b201a877795d06c643b0b20e34ba"
+    sha256 cellar: :any,                 sonoma:            "80c664a6bbd8649eb3e82e2b3c357f41552996310a7c6a6d84e6101561705692"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "d0e890be6d0dad6ef97fc14eb6cfd7cfafec60ce53c61d15def98640dfb50bfe"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "f1966e876bbef9de7ddc508979cd0557c66f5d0cb321fa7d333b855e43a5b6e8"
   end
 
   depends_on "asciidoctor" => :build

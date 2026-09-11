@@ -8,12 +8,13 @@ class Sfcgal < Formula
   compatibility_version 1
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "db74c9aca42ddbe59b08e178673d939fe9f8a6ad5b6c88fa3f091fa31beeb30c"
-    sha256 cellar: :any, arm64_sequoia: "5025298f7c948a1032271d10dab015ca661a2142573c005cfe89958c8d6f8454"
-    sha256 cellar: :any, arm64_sonoma:  "a4b5d99028fbc0ce19aa4bbff6166c3472f5ec53e0e2b22747ca14b2535e9bd9"
-    sha256 cellar: :any, sonoma:        "98d28a19be0ab74b4e81f3a32be12f392cb6a9dd995418a6a9a750b62f7f29b2"
-    sha256 cellar: :any, arm64_linux:   "218dfcd3098a775a7308c5e6054ff31a1453b93bab71a82c3a151f12db53cb2a"
-    sha256 cellar: :any, x86_64_linux:  "631f71a2b0cb80fa65a9f222ddff8cde1bb9096ee0b5df4cc765131e845414be"
+    sha256 cellar: :any, arm64_golden_gate: "2074a64bbff4044ce3a5077b638fa2e850cbc6db25b19e7c46a61980dae1036a"
+    sha256 cellar: :any, arm64_tahoe:       "db74c9aca42ddbe59b08e178673d939fe9f8a6ad5b6c88fa3f091fa31beeb30c"
+    sha256 cellar: :any, arm64_sequoia:     "5025298f7c948a1032271d10dab015ca661a2142573c005cfe89958c8d6f8454"
+    sha256 cellar: :any, arm64_sonoma:      "a4b5d99028fbc0ce19aa4bbff6166c3472f5ec53e0e2b22747ca14b2535e9bd9"
+    sha256 cellar: :any, sonoma:            "98d28a19be0ab74b4e81f3a32be12f392cb6a9dd995418a6a9a750b62f7f29b2"
+    sha256 cellar: :any, arm64_linux:       "218dfcd3098a775a7308c5e6054ff31a1453b93bab71a82c3a151f12db53cb2a"
+    sha256 cellar: :any, x86_64_linux:      "631f71a2b0cb80fa65a9f222ddff8cde1bb9096ee0b5df4cc765131e845414be"
   end
 
   depends_on "cmake" => :build

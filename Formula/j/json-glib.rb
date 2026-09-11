@@ -7,12 +7,13 @@ class JsonGlib < Formula
   compatibility_version 1
 
   bottle do
-    sha256 arm64_tahoe:   "795e22cfc4a12fef555dfba6a3222af6cb6d30631cf69f176d1964169c14ba73"
-    sha256 arm64_sequoia: "d0269d6d4933ad3c35fac9503d54facf36ea662a25b255c0d0fdf005bbfa2d25"
-    sha256 arm64_sonoma:  "816c99b88faf50042ff7637cf58b674454c01ce1ea53178fb065c765b5f88930"
-    sha256 sonoma:        "ae6a5d8e3370868b8bef9efd5601cd7849798cf9c182825d22d55d89f83a6399"
-    sha256 arm64_linux:   "ee6d0e4f76dad15b66411637c444dddf8c262decee036e92a9af731c9bf537d8"
-    sha256 x86_64_linux:  "f0337f01c95836d4b64a4df3547862711e1d12575ea127d00ef934cb196d41f7"
+    sha256 arm64_golden_gate: "0623708504a6e97d0b0a07f007bc31d72db43db18b2c02e43918a2b6d49e6674"
+    sha256 arm64_tahoe:       "795e22cfc4a12fef555dfba6a3222af6cb6d30631cf69f176d1964169c14ba73"
+    sha256 arm64_sequoia:     "d0269d6d4933ad3c35fac9503d54facf36ea662a25b255c0d0fdf005bbfa2d25"
+    sha256 arm64_sonoma:      "816c99b88faf50042ff7637cf58b674454c01ce1ea53178fb065c765b5f88930"
+    sha256 sonoma:            "ae6a5d8e3370868b8bef9efd5601cd7849798cf9c182825d22d55d89f83a6399"
+    sha256 arm64_linux:       "ee6d0e4f76dad15b66411637c444dddf8c262decee036e92a9af731c9bf537d8"
+    sha256 x86_64_linux:      "f0337f01c95836d4b64a4df3547862711e1d12575ea127d00ef934cb196d41f7"
   end
 
   depends_on "docutils" => :build # for rst2man

@@ -18,18 +18,19 @@ class Musepack < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:    "545fb3f5f74e2fc5acbbbfbad61b0dfb6c261cd7dbd26f998c1931c939086bd0"
-    sha256 cellar: :any,                 arm64_sequoia:  "d84a9ad759b25d445781d6e1e5af5247431427e00e90bfb0b1014d9c2e6e4bab"
-    sha256 cellar: :any,                 arm64_sonoma:   "6b1cd3fb3a8b8beb5603ce39e237cd7fb04e71e8e46ac9d63b0904067e57e676"
-    sha256 cellar: :any,                 arm64_ventura:  "72634f1bab6447c671827b1586e2161487273e4737b0cc7e47100a8d1f33cc4e"
-    sha256 cellar: :any,                 arm64_monterey: "76db5599c7e47ab4317292c040ef16095f658ee3b524d89c0296a574380a4570"
-    sha256 cellar: :any,                 arm64_big_sur:  "ce4329e0fc5d5d1a1e518e7c1f471ef300ff96ddaea0219e70e4408924f75ff6"
-    sha256 cellar: :any,                 sonoma:         "6a7652681b271cbcffdd9ac69f7394ee9c51460bc2efaca5ed684913b1b22199"
-    sha256 cellar: :any,                 ventura:        "772444ef289c9324ef9063d4ca8bc4626080f053589bd93b994e410183c9ff2e"
-    sha256 cellar: :any,                 monterey:       "9f74dcc9567656a42082125ce4d758c3318a452dbd940b6db39b72c4981768da"
-    sha256 cellar: :any,                 big_sur:        "e9221e9612e1c0134554fbf380639cd995a5970ad34702bea371633f121ffb3e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "0e70b9117f455bbd6f17bd6d2467c18f55067b51933a71b15b07b713c30687ac"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a0d6143e42529aa943d6bd1ecebf0e1d0c85576eaab847692c9588a37a0ce1f7"
+    sha256 cellar: :any,                 arm64_golden_gate: "4fb6fe2cbe3270f9a3503d5c9980904cd3c374938cacc707db7cd4139ea0c78f"
+    sha256 cellar: :any,                 arm64_tahoe:       "545fb3f5f74e2fc5acbbbfbad61b0dfb6c261cd7dbd26f998c1931c939086bd0"
+    sha256 cellar: :any,                 arm64_sequoia:     "d84a9ad759b25d445781d6e1e5af5247431427e00e90bfb0b1014d9c2e6e4bab"
+    sha256 cellar: :any,                 arm64_sonoma:      "6b1cd3fb3a8b8beb5603ce39e237cd7fb04e71e8e46ac9d63b0904067e57e676"
+    sha256 cellar: :any,                 arm64_ventura:     "72634f1bab6447c671827b1586e2161487273e4737b0cc7e47100a8d1f33cc4e"
+    sha256 cellar: :any,                 arm64_monterey:    "76db5599c7e47ab4317292c040ef16095f658ee3b524d89c0296a574380a4570"
+    sha256 cellar: :any,                 arm64_big_sur:     "ce4329e0fc5d5d1a1e518e7c1f471ef300ff96ddaea0219e70e4408924f75ff6"
+    sha256 cellar: :any,                 sonoma:            "6a7652681b271cbcffdd9ac69f7394ee9c51460bc2efaca5ed684913b1b22199"
+    sha256 cellar: :any,                 ventura:           "772444ef289c9324ef9063d4ca8bc4626080f053589bd93b994e410183c9ff2e"
+    sha256 cellar: :any,                 monterey:          "9f74dcc9567656a42082125ce4d758c3318a452dbd940b6db39b72c4981768da"
+    sha256 cellar: :any,                 big_sur:           "e9221e9612e1c0134554fbf380639cd995a5970ad34702bea371633f121ffb3e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "0e70b9117f455bbd6f17bd6d2467c18f55067b51933a71b15b07b713c30687ac"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "a0d6143e42529aa943d6bd1ecebf0e1d0c85576eaab847692c9588a37a0ce1f7"
   end
 
   depends_on "cmake" => :build

@@ -26,12 +26,13 @@ class Pulseaudio < Formula
 
   bottle do
     rebuild 2
-    sha256 arm64_tahoe:   "73c349f7d337ebb0bdd1169325685e79f4cb4c253dd920339a7bc52c833ea4c7"
-    sha256 arm64_sequoia: "3b0c4054a598015af0838395bfb6b96b40ff9297d4d382b80e06c6df7b76b9ab"
-    sha256 arm64_sonoma:  "bf612fdd30e917faf4c6627a1324f1ffaf509f5dfa92748199ff57c6ce1efcfb"
-    sha256 sonoma:        "07c3d88ac76789dc1c94b6881a11ea02868a3e0023f3fd3e2760b95c5aef2161"
-    sha256 arm64_linux:   "2122e7fdeb6dfbd23c71b1454e5da23792857aa2b0e9a78db172ab6448891675"
-    sha256 x86_64_linux:  "3e8c61fa5d337d64747fb305559f1a4821d75cecfd15dc59323450cde1816d29"
+    sha256 arm64_golden_gate: "188739c5b88a09cb24b1ee83fe4c7c95760c977249c102045ca4251c59408503"
+    sha256 arm64_tahoe:       "73c349f7d337ebb0bdd1169325685e79f4cb4c253dd920339a7bc52c833ea4c7"
+    sha256 arm64_sequoia:     "3b0c4054a598015af0838395bfb6b96b40ff9297d4d382b80e06c6df7b76b9ab"
+    sha256 arm64_sonoma:      "bf612fdd30e917faf4c6627a1324f1ffaf509f5dfa92748199ff57c6ce1efcfb"
+    sha256 sonoma:            "07c3d88ac76789dc1c94b6881a11ea02868a3e0023f3fd3e2760b95c5aef2161"
+    sha256 arm64_linux:       "2122e7fdeb6dfbd23c71b1454e5da23792857aa2b0e9a78db172ab6448891675"
+    sha256 x86_64_linux:      "3e8c61fa5d337d64747fb305559f1a4821d75cecfd15dc59323450cde1816d29"
   end
 
   depends_on "gettext" => :build

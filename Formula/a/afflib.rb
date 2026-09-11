@@ -10,12 +10,13 @@ class Afflib < Formula
 
   bottle do
     rebuild 3
-    sha256 cellar: :any,                 arm64_tahoe:   "16a9e68d5a412285777fd4892d401d98e5cde7d82544ebc532289361ceab286b"
-    sha256 cellar: :any,                 arm64_sequoia: "6874090595c0aa86a9d1534f5842aa4e54dbf7f2ee950e9dd20d37bd2a7dd8e1"
-    sha256 cellar: :any,                 arm64_sonoma:  "d51a9f8798333e8e76aa4b16646f86fc5a56febd4d18a874dac55c32302efdba"
-    sha256 cellar: :any,                 sonoma:        "393511fd03c96d20bcd82e9cbb9280d03b741f5ffaa757cbcde4acfd51231566"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "db1e2931a3dfa168f074d44393da3a90c98c700b422af6446bdf7b9b6ced50bd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9fcf3bc9195cbafae0f9e28d2c4c80dc6700238b25f03e766e89d6867a14afe3"
+    sha256 cellar: :any,                 arm64_golden_gate: "0b67f34ab8826b37a5e5e8a83df8ca7c4cb9261b6e217a4cb19b42970e1aad42"
+    sha256 cellar: :any,                 arm64_tahoe:       "16a9e68d5a412285777fd4892d401d98e5cde7d82544ebc532289361ceab286b"
+    sha256 cellar: :any,                 arm64_sequoia:     "6874090595c0aa86a9d1534f5842aa4e54dbf7f2ee950e9dd20d37bd2a7dd8e1"
+    sha256 cellar: :any,                 arm64_sonoma:      "d51a9f8798333e8e76aa4b16646f86fc5a56febd4d18a874dac55c32302efdba"
+    sha256 cellar: :any,                 sonoma:            "393511fd03c96d20bcd82e9cbb9280d03b741f5ffaa757cbcde4acfd51231566"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "db1e2931a3dfa168f074d44393da3a90c98c700b422af6446bdf7b9b6ced50bd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "9fcf3bc9195cbafae0f9e28d2c4c80dc6700238b25f03e766e89d6867a14afe3"
   end
 
   depends_on "autoconf" => :build

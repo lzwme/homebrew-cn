@@ -8,12 +8,13 @@ class Flann < Formula
   compatibility_version 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "6635599071926575a5e3eef3bd48521d93b5fb74da6e21fbf60d99c4b6823ff1"
-    sha256 cellar: :any,                 arm64_sequoia: "ae73ea70a53e2f253d8c189d830b5607a6ec395cda17e418fcc5cca06d2ee4e4"
-    sha256 cellar: :any,                 arm64_sonoma:  "e711080a6b6135afbc04dd206b201b9fb8ac1627b760d080eed9403ac361d6dc"
-    sha256 cellar: :any,                 sonoma:        "9ac7f30cfe97912e5ea39b164fc24d1031af8db3cae79c357bcd6c3149325af4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "998d5a26830677da31aea0f6131483c3ac3922c1f2b4e7ba71641bd2902a641c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f9d5d3a9637124dff3e43fd033f0887a2520b63fe57a0605951cf888e87b7fb2"
+    sha256 cellar: :any,                 arm64_golden_gate: "4a48ee2c81154f48ed6fb4df6ab1520f2e952697c586aefa50a906aea8e1442d"
+    sha256 cellar: :any,                 arm64_tahoe:       "6635599071926575a5e3eef3bd48521d93b5fb74da6e21fbf60d99c4b6823ff1"
+    sha256 cellar: :any,                 arm64_sequoia:     "ae73ea70a53e2f253d8c189d830b5607a6ec395cda17e418fcc5cca06d2ee4e4"
+    sha256 cellar: :any,                 arm64_sonoma:      "e711080a6b6135afbc04dd206b201b9fb8ac1627b760d080eed9403ac361d6dc"
+    sha256 cellar: :any,                 sonoma:            "9ac7f30cfe97912e5ea39b164fc24d1031af8db3cae79c357bcd6c3149325af4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "998d5a26830677da31aea0f6131483c3ac3922c1f2b4e7ba71641bd2902a641c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "f9d5d3a9637124dff3e43fd033f0887a2520b63fe57a0605951cf888e87b7fb2"
   end
 
   depends_on "cmake" => :build

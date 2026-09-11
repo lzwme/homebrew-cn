@@ -16,12 +16,13 @@ class SharedMimeInfo < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "175d0d795dfbb1874181f80b2c113d07477e3adcde031bbf4d7dc4eafe9932a7"
-    sha256 cellar: :any, arm64_sequoia: "eb86118daf14319d85ea1cd9e63c240bad0f7d595154a2b2e2c68c362f02ecad"
-    sha256 cellar: :any, arm64_sonoma:  "3d6ca31a073c7dffc0a85df9caf464d5ba1be7761688dbb51bffe4a4236e44cd"
-    sha256 cellar: :any, sonoma:        "c7951cc3967666ed9197cf8c5415cfd0846844b67d9c9daa061142b06f4af668"
-    sha256               arm64_linux:   "9d05cc9cf16ef36f272d845e159d9064d8045aaad2b4dfd8d76311d008037a0b"
-    sha256               x86_64_linux:  "0c437c9eff86b2dec2f79752de0690c1f037584bbcd008a888a845507edfa09f"
+    sha256 cellar: :any, arm64_golden_gate: "0f296575eba0a479fdb7fe5ea9f6d048f57411c65aab6ab03d8a56b51c60f725"
+    sha256 cellar: :any, arm64_tahoe:       "175d0d795dfbb1874181f80b2c113d07477e3adcde031bbf4d7dc4eafe9932a7"
+    sha256 cellar: :any, arm64_sequoia:     "eb86118daf14319d85ea1cd9e63c240bad0f7d595154a2b2e2c68c362f02ecad"
+    sha256 cellar: :any, arm64_sonoma:      "3d6ca31a073c7dffc0a85df9caf464d5ba1be7761688dbb51bffe4a4236e44cd"
+    sha256 cellar: :any, sonoma:            "c7951cc3967666ed9197cf8c5415cfd0846844b67d9c9daa061142b06f4af668"
+    sha256               arm64_linux:       "9d05cc9cf16ef36f272d845e159d9064d8045aaad2b4dfd8d76311d008037a0b"
+    sha256               x86_64_linux:      "0c437c9eff86b2dec2f79752de0690c1f037584bbcd008a888a845507edfa09f"
   end
 
   depends_on "gettext" => :build

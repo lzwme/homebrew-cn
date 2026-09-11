@@ -18,11 +18,12 @@ class JpegTurbo < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "02539b0736cfacdc6c4bb6a7d274d0c5c8b6e1faf9b5bab1e155168961d288aa"
-    sha256 cellar: :any, arm64_sequoia: "6dc55edcd33c693e474299ed2bba3c472ac1331cbe300066ec8ef99b88fab17c"
-    sha256 cellar: :any, arm64_sonoma:  "3ff48858f9042df4ce6ca4bf4006bae5e46f919037cba077f0c81a1f6e0a288a"
-    sha256 cellar: :any, arm64_linux:   "17e9fc799ed71fa8453d35fae0bdec249b015d2ba61d3258c8a4ba2bd47faf86"
-    sha256 cellar: :any, x86_64_linux:  "85713cddd87d363f7e772f9ab0db5d4192d6f4ef8793393458601ffdba8a1e07"
+    sha256 cellar: :any, arm64_golden_gate: "7bc0f7c007a73c68da8c11055e836de66c2814c1b0ca0302da9a6317199fd37a"
+    sha256 cellar: :any, arm64_tahoe:       "02539b0736cfacdc6c4bb6a7d274d0c5c8b6e1faf9b5bab1e155168961d288aa"
+    sha256 cellar: :any, arm64_sequoia:     "6dc55edcd33c693e474299ed2bba3c472ac1331cbe300066ec8ef99b88fab17c"
+    sha256 cellar: :any, arm64_sonoma:      "3ff48858f9042df4ce6ca4bf4006bae5e46f919037cba077f0c81a1f6e0a288a"
+    sha256 cellar: :any, arm64_linux:       "17e9fc799ed71fa8453d35fae0bdec249b015d2ba61d3258c8a4ba2bd47faf86"
+    sha256 cellar: :any, x86_64_linux:      "85713cddd87d363f7e772f9ab0db5d4192d6f4ef8793393458601ffdba8a1e07"
   end
 
   depends_on "cmake" => :build

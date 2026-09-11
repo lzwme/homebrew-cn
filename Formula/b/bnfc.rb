@@ -8,12 +8,13 @@ class Bnfc < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "41cffb2aee5f15d22dcebd7968fd8f3e7563a68fd4ccf8bbb4635acbe4adbea8"
-    sha256 cellar: :any, arm64_sequoia: "f17851a8eca236629d4303ec1a8bd7cfc643026afc4693b2a6e4ea4573cd018a"
-    sha256 cellar: :any, arm64_sonoma:  "c2fc22b15b39397d8eb318ae5f3dfb8edec8efed2d7ae3674c19db1db6afe083"
-    sha256 cellar: :any, sonoma:        "441cd6a734fdc327d823775e99bc4f5f12c053c320022e62bad2821866f8c0ba"
-    sha256 cellar: :any, arm64_linux:   "6dc5937b968e78dba9fc4e575f2b9e6585982c1d1793f44daa6588293fb49721"
-    sha256 cellar: :any, x86_64_linux:  "b712c8728db628fccd32c4c20e6e3d6ca598fe005457444a9db33e955e4df6b7"
+    sha256 cellar: :any, arm64_golden_gate: "e7e03d73564dd85efcad767f71923de74d984b4087a0dac90e610898fe72c78f"
+    sha256 cellar: :any, arm64_tahoe:       "41cffb2aee5f15d22dcebd7968fd8f3e7563a68fd4ccf8bbb4635acbe4adbea8"
+    sha256 cellar: :any, arm64_sequoia:     "f17851a8eca236629d4303ec1a8bd7cfc643026afc4693b2a6e4ea4573cd018a"
+    sha256 cellar: :any, arm64_sonoma:      "c2fc22b15b39397d8eb318ae5f3dfb8edec8efed2d7ae3674c19db1db6afe083"
+    sha256 cellar: :any, sonoma:            "441cd6a734fdc327d823775e99bc4f5f12c053c320022e62bad2821866f8c0ba"
+    sha256 cellar: :any, arm64_linux:       "6dc5937b968e78dba9fc4e575f2b9e6585982c1d1793f44daa6588293fb49721"
+    sha256 cellar: :any, x86_64_linux:      "b712c8728db628fccd32c4c20e6e3d6ca598fe005457444a9db33e955e4df6b7"
   end
 
   depends_on "cabal-install" => [:build, :test]

@@ -6,12 +6,13 @@ class Polkit < Formula
   license "LGPL-2.0-or-later"
 
   bottle do
-    sha256 arm64_tahoe:   "cb9f1624d4c79471a0e1b01d11b8c7c1a20f974891f23877fa2a432c62e91aa9"
-    sha256 arm64_sequoia: "04c9e2681cf67eefc119d11ac7f2565cf4c53b9b7d901bfc503f21ba56ac1b00"
-    sha256 arm64_sonoma:  "68f66562efcb4514d9cd2bcbf936859a52380166f36152f7213779c86ce0bdf0"
-    sha256 sonoma:        "292f968c8038ad0cdeeded5f4ff3bf4a01396fbad93a0c0b453530a23f319046"
-    sha256 arm64_linux:   "af1a6f406501df5cbf78b25665e1430579306b5ea5cf79e1c3fb64d709c64283"
-    sha256 x86_64_linux:  "b701cf5a66a2ea0770f66a3f514820c0679674498e828007242ef412616c4859"
+    sha256 arm64_golden_gate: "3457db45692ef29f9708397bc810fd78e06c2c1090904352b5d95cf8b419a6a4"
+    sha256 arm64_tahoe:       "cb9f1624d4c79471a0e1b01d11b8c7c1a20f974891f23877fa2a432c62e91aa9"
+    sha256 arm64_sequoia:     "04c9e2681cf67eefc119d11ac7f2565cf4c53b9b7d901bfc503f21ba56ac1b00"
+    sha256 arm64_sonoma:      "68f66562efcb4514d9cd2bcbf936859a52380166f36152f7213779c86ce0bdf0"
+    sha256 sonoma:            "292f968c8038ad0cdeeded5f4ff3bf4a01396fbad93a0c0b453530a23f319046"
+    sha256 arm64_linux:       "af1a6f406501df5cbf78b25665e1430579306b5ea5cf79e1c3fb64d709c64283"
+    sha256 x86_64_linux:      "b701cf5a66a2ea0770f66a3f514820c0679674498e828007242ef412616c4859"
   end
 
   depends_on "gettext" => :build

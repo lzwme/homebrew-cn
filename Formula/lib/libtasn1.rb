@@ -8,12 +8,13 @@ class Libtasn1 < Formula
   compatibility_version 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "ae01713eec0bd922b903ed2bf514dc085ec3108636c4ead84614b23a2c33f267"
-    sha256 cellar: :any,                 arm64_sequoia: "973e0fd7d529808f53fa9ae281020bcbcc750a1dff60e5e5bc37c0da274cca5e"
-    sha256 cellar: :any,                 arm64_sonoma:  "2dceab4bf93738bd4f3efd9063a5cf60ccd96e5b0e5a3ac9fca508e42b5f3336"
-    sha256 cellar: :any,                 sonoma:        "71c5d144fdce79e4cfe7bbd5863da5171a13d892a26475c5ea183e7e3ef21d8f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c8b7973e5f6822f25876da6b60138eec386a3d3b9f0a694dff7b5a7073fcf82d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c0394c5c9c0b278c37eb9f817a282054d64654f7b27eb86100bb5b307a0d72b5"
+    sha256 cellar: :any,                 arm64_golden_gate: "68d1748171848565af7a083ca92b834ab1fe4ac7832140b1cd22fd1fcb072fd7"
+    sha256 cellar: :any,                 arm64_tahoe:       "ae01713eec0bd922b903ed2bf514dc085ec3108636c4ead84614b23a2c33f267"
+    sha256 cellar: :any,                 arm64_sequoia:     "973e0fd7d529808f53fa9ae281020bcbcc750a1dff60e5e5bc37c0da274cca5e"
+    sha256 cellar: :any,                 arm64_sonoma:      "2dceab4bf93738bd4f3efd9063a5cf60ccd96e5b0e5a3ac9fca508e42b5f3336"
+    sha256 cellar: :any,                 sonoma:            "71c5d144fdce79e4cfe7bbd5863da5171a13d892a26475c5ea183e7e3ef21d8f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "c8b7973e5f6822f25876da6b60138eec386a3d3b9f0a694dff7b5a7073fcf82d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "c0394c5c9c0b278c37eb9f817a282054d64654f7b27eb86100bb5b307a0d72b5"
   end
 
   def install

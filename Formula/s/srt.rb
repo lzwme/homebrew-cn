@@ -2,14 +2,14 @@ class Srt < Formula
   desc "Secure Reliable Transport"
   homepage "https://www.srtalliance.org/"
   url "https://ghfast.top/https://github.com/Haivision/srt/archive/refs/tags/v1.5.7.tar.gz"
-  sha256 "fee6aee6b4933f01ba8b7e18d5d9e4896ad604053fdad2ac55df4a4f1561f30a"
+  sha256 "017cd1e437ef2073a4dd10ddf7b55e86bc3d6ebac0393d13bd22f6a57055d32b"
   license "MPL-2.0"
   compatibility_version 1
   head "https://github.com/Haivision/srt.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    strategy :github_latest
   end
 
   bottle do

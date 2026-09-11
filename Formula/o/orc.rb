@@ -12,11 +12,12 @@ class Orc < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "4b326411003fdddfd8bf3dea9815043d962e748b6fd550be1322e1c6d2afd38c"
-    sha256 cellar: :any, arm64_sequoia: "f491eb26689b8f223f4681cdd85da4342a7c9504da4380ee99d3f23938df3430"
-    sha256 cellar: :any, arm64_sonoma:  "5c7ffa0ab1653adb2b6ef67425df8c312a47999740c2659fcf7e7f22f10d1d76"
-    sha256 cellar: :any, arm64_linux:   "24687a69229796ddff114dffb92f800b37860622a48ba8379716363909ba3d46"
-    sha256 cellar: :any, x86_64_linux:  "6b14ed765346e7753fb5d6c5249addc0dcf27e128b279f4431ddd7f6f66eefbc"
+    sha256 cellar: :any, arm64_golden_gate: "21bb6e15481ce8c8faf8214fe7cc2042a258fb09697e26249b733045d327b5df"
+    sha256 cellar: :any, arm64_tahoe:       "4b326411003fdddfd8bf3dea9815043d962e748b6fd550be1322e1c6d2afd38c"
+    sha256 cellar: :any, arm64_sequoia:     "f491eb26689b8f223f4681cdd85da4342a7c9504da4380ee99d3f23938df3430"
+    sha256 cellar: :any, arm64_sonoma:      "5c7ffa0ab1653adb2b6ef67425df8c312a47999740c2659fcf7e7f22f10d1d76"
+    sha256 cellar: :any, arm64_linux:       "24687a69229796ddff114dffb92f800b37860622a48ba8379716363909ba3d46"
+    sha256 cellar: :any, x86_64_linux:      "6b14ed765346e7753fb5d6c5249addc0dcf27e128b279f4431ddd7f6f66eefbc"
   end
 
   depends_on "meson" => :build

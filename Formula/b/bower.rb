@@ -7,16 +7,17 @@ class Bower < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "18bbc17742b8e6765f4aa0b104dcbea6d21c5fd28b072d10d838febef745bff0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "27cfa496a8b8d490f3dd6eeba235e0b64561da813d88bcc89fe1b03114dc091c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3e6ffe74d0b616fce08852c9b92624829b867149d990bd0bcc36f45b802e0016"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3e6ffe74d0b616fce08852c9b92624829b867149d990bd0bcc36f45b802e0016"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "3e6ffe74d0b616fce08852c9b92624829b867149d990bd0bcc36f45b802e0016"
-    sha256 cellar: :any_skip_relocation, sonoma:         "5e40c22cfa9946b9bf731953c371b9793808754b6903037276be89b7c4c479b5"
-    sha256 cellar: :any_skip_relocation, ventura:        "5e40c22cfa9946b9bf731953c371b9793808754b6903037276be89b7c4c479b5"
-    sha256 cellar: :any_skip_relocation, monterey:       "5e40c22cfa9946b9bf731953c371b9793808754b6903037276be89b7c4c479b5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "4d900e656c726f0a5afd2168de6c57ee24f7df977cec79b504d01b7f1117acae"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "771a98dc248a03e567cf7dee75bb4711dd51ff9ff36df04186642c86d8f22263"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "93773dcc48af90384ed01f18c35a98c5d422327e42a5210dfbb8e60d030b0994"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "18bbc17742b8e6765f4aa0b104dcbea6d21c5fd28b072d10d838febef745bff0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "27cfa496a8b8d490f3dd6eeba235e0b64561da813d88bcc89fe1b03114dc091c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "3e6ffe74d0b616fce08852c9b92624829b867149d990bd0bcc36f45b802e0016"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:     "3e6ffe74d0b616fce08852c9b92624829b867149d990bd0bcc36f45b802e0016"
+    sha256 cellar: :any_skip_relocation, arm64_monterey:    "3e6ffe74d0b616fce08852c9b92624829b867149d990bd0bcc36f45b802e0016"
+    sha256 cellar: :any_skip_relocation, sonoma:            "5e40c22cfa9946b9bf731953c371b9793808754b6903037276be89b7c4c479b5"
+    sha256 cellar: :any_skip_relocation, ventura:           "5e40c22cfa9946b9bf731953c371b9793808754b6903037276be89b7c4c479b5"
+    sha256 cellar: :any_skip_relocation, monterey:          "5e40c22cfa9946b9bf731953c371b9793808754b6903037276be89b7c4c479b5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "4d900e656c726f0a5afd2168de6c57ee24f7df977cec79b504d01b7f1117acae"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "771a98dc248a03e567cf7dee75bb4711dd51ff9ff36df04186642c86d8f22263"
   end
 
   depends_on "node"

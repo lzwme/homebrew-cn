@@ -3,16 +3,16 @@ class Mycli < Formula
 
   desc "CLI for MySQL with auto-completion and syntax highlighting"
   homepage "https://www.mycli.net/"
-  url "https://files.pythonhosted.org/packages/14/eb/2ca08b5cec3e00cfcde7715426420a754636ef20f40e5aa3d0b6b7dbbc70/mycli-2.21.1.tar.gz"
-  sha256 "d1a50be6395895286e10b6ecd25965653299722ddb16637cb00befd75fe39f87"
+  url "https://files.pythonhosted.org/packages/1e/67/086267b68faf5033161f487bfb9fa7f084c5d48f01ad9f144cea4fd0232b/mycli-2.23.0.tar.gz"
+  sha256 "891453488390dc3c1fd8299e74c7bd6f32647c46fae5c2b4000d94ffc59b5263"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "940f5b1ea0caf5cbd9f2cef827cc95251719844f47b09309c02fb395a489bcc8"
-    sha256 cellar: :any, arm64_sequoia: "b457e698fc3209351394b9222687886606797ef197833da3246aac238c7dd2ac"
-    sha256 cellar: :any, arm64_sonoma:  "6d2b773550eb7d05bcd3a85738df40975d5f4f25b34c7a447aa0d0886b5ea514"
-    sha256 cellar: :any, arm64_linux:   "d1e6ea0f31ff3f09c698f5044ac357a7883c0659054ea1e0fa93e8daba7ee65a"
-    sha256 cellar: :any, x86_64_linux:  "9f26f900a2230219784e2ef641342366474b1747335a2c736aaba27738370569"
+    sha256 cellar: :any, arm64_tahoe:   "4208afd5047aef177e9e1dc217ea885a4f93ca656a38979c6ec6a03f73a282c4"
+    sha256 cellar: :any, arm64_sequoia: "153e479c047f8ca5790098842cc08263d7422c561bcf21ebe460627ce81f77f0"
+    sha256 cellar: :any, arm64_sonoma:  "f3cbf2c7208baacf0effaefdc250c5ce5bdab105c8381ca6f5caede5be3de51d"
+    sha256 cellar: :any, arm64_linux:   "991d09063339bc18c22375c468182d71f4e5dbd16e7c6e23a02596b55bc31059"
+    sha256 cellar: :any, x86_64_linux:  "824cb24adbaa7c0a6a2863037e49743c2e618a9fba9258977ed09386c9e10ee7"
   end
 
   depends_on "rust" => :build # for jiter, polars, vl-convert
@@ -144,8 +144,8 @@ class Mycli < Formula
   end
 
   resource "llm" do
-    url "https://files.pythonhosted.org/packages/f9/8e/5ffec2a091d4cd2691cfd0e8ba3e1904aeb1931313287cfd68f9c1db8b40/llm-0.34.tar.gz"
-    sha256 "09d0b076c4c720c4daeece6ee3a0aae76620059aced552f09589e0e0d7c5f09d"
+    url "https://files.pythonhosted.org/packages/b5/68/baeda27122a280940c5e9ae7291b821fa96ea23f50a00f568e9cff0c3aac/llm-0.35.tar.gz"
+    sha256 "2ee0955b2e372408813ce966f3d03ad2c7419b85a547880c53797d31d3a3fdb6"
   end
 
   resource "markupsafe" do
@@ -159,13 +159,13 @@ class Mycli < Formula
   end
 
   resource "narwhals" do
-    url "https://files.pythonhosted.org/packages/6f/7b/6248dada39781db1ab3ebf08943080df0796098515a87f6f8696d14ec744/narwhals-2.25.0.tar.gz"
-    sha256 "62c036c810662bf7820b7737077176313bc59350eeeefb808510f388c743e4b2"
+    url "https://files.pythonhosted.org/packages/35/68/5351e34623d253423240ea7de3f8fc74fa8ab14b1ab3c0ec4ac8997413c9/narwhals-2.26.0.tar.gz"
+    sha256 "6b9cadca82f375c7e4cf584fdc86ca25da54827307a9c58f94547ee6104b82dd"
   end
 
   resource "openai" do
-    url "https://files.pythonhosted.org/packages/f2/b0/1100c93f93e1c174205ce8d15a049a446f0dc88e9262c1f1f223fe6b9493/openai-3.8.0.tar.gz"
-    sha256 "6138a5a1333a1be9e4d1edea2d160b311542787b029543f87de4961c66358d16"
+    url "https://files.pythonhosted.org/packages/e5/31/cacdcba6fb96dae7df9b24573b73904464561e17a77b78c5a4e330a6da89/openai-3.11.0.tar.gz"
+    sha256 "1ee0114c218bba9ffdea1927b974b4ddeee5f173000b0930aab53efc7c349989"
   end
 
   resource "packaging" do
@@ -179,13 +179,13 @@ class Mycli < Formula
   end
 
   resource "polars" do
-    url "https://files.pythonhosted.org/packages/26/73/258a1fe17bb2744a507199566ed712663144fdd0811b615b59a47dfa38d2/polars-1.44.1.tar.gz"
-    sha256 "ef3c89e9ebbbe8eb343c06873f1945683f8b6f97a1bdf001c60551c6c5e3cda1"
+    url "https://files.pythonhosted.org/packages/a4/15/e8541eefc22fbc7ca89bcb5112298a153729f73cfbc0cf6a668e509f975c/polars-1.44.2.tar.gz"
+    sha256 "86c8e26b6c2de8c8d344bb910b74dfc47b118ac3fe0f19b44909467990a0b281"
   end
 
   resource "polars-runtime-32" do
-    url "https://files.pythonhosted.org/packages/fd/b2/2a76415d047a45df05489f2334c91ff120a274cf655d4ca030c7f54a8743/polars_runtime_32-1.44.1.tar.gz"
-    sha256 "abd10a54ed1caff42228610fcba0f93251f9870bd7cffb0c78bc26f5e0718ce4"
+    url "https://files.pythonhosted.org/packages/d4/a1/a7eace6587b56f22cf2a21ab4d5e695db372dc23fd96accb68b1ec12660b/polars_runtime_32-1.44.2.tar.gz"
+    sha256 "b84842f7d621aaca7a52e165e19a24f89db45f8aa13744941430218419a14a67"
   end
 
   resource "prompt-toolkit" do
@@ -329,6 +329,9 @@ class Mycli < Formula
   end
 
   def install
+    # Work around superenv breaking aws-lc-sys `-O0` needed to build CPU Jitter RNG
+    ENV["AWS_LC_SYS_NO_JITTER_ENTROPY"] = "1"
+
     without = %w[polars-runtime-32 sqlglotc]
     without += %w[jeepney secretstorage] unless OS.linux?
     venv = virtualenv_install_with_resources(without:)

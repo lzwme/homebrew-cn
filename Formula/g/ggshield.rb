@@ -9,11 +9,12 @@ class Ggshield < Formula
   head "https://github.com/GitGuardian/ggshield.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "d9afa989f6876573c96c338ee5dd232c07aa02e9b733c39e4fbbfc8c50ed0a6e"
-    sha256 cellar: :any, arm64_sequoia: "57d1dd1b0e13f2481b056d9ae9c068a0e101a8334ddae3af4cfe36a49dcff955"
-    sha256 cellar: :any, arm64_sonoma:  "0d352f10b4e9c83d31983499590769cf0d2047a73486392eae9767b190506615"
-    sha256 cellar: :any, arm64_linux:   "9bbbf021dfeb2156d345d6a6c8265a9c222af692f987bb60caf1e725822a3cb6"
-    sha256 cellar: :any, x86_64_linux:  "cb2f0c31cfa3b00973ce5dc3c25d237e7271e4a4898fc70460feeef9d0425dd4"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "2cc0248382bc8b3be0c8732570887a9a5f0eb96264eb90256d1d56d090c68788"
+    sha256 cellar: :any, arm64_sequoia: "8e9286a1e9e7ae273d2dd94476f7a0ea5fea54d9fae346378c58fcfbd90a0787"
+    sha256 cellar: :any, arm64_sonoma:  "21d9b39f1946ee11a383e73a37eb3eb319dc27fd95a7ecf74534241cab0c75ce"
+    sha256 cellar: :any, arm64_linux:   "03def5daf3b68f678fc9f1595311067a74cbdd1a2d805285fe15b0f9b1597159"
+    sha256 cellar: :any, x86_64_linux:  "024fdca87ad2bda80147311fd25061b843368380e94f62a58c5bc99932846b40"
   end
 
   depends_on "pkgconf" => :build # for `rfc3161_client`
@@ -29,8 +30,8 @@ class Ggshield < Formula
                 extra_packages:   %w[jeepney secretstorage]
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/61/cc/a381afa6efea9f496eff839d4a6a1aed3bfafc7b3ab4b0d1b243a12573dd/anyio-4.14.2.tar.gz"
-    sha256 "cfa139f3ed1a23ee8f88a145ddb5ac7605b8bbfd8592baacd7ce3d8bb4313c7f"
+    url "https://files.pythonhosted.org/packages/a9/d2/f4d173e22df740bc37b1db102b386ba719b66e95b0f0d751f556b387e6d2/anyio-4.15.1.tar.gz"
+    sha256 "9f28306018cbd6d329e64a36d58256edff76dd996fe423bc957326e578b82a94"
   end
 
   resource "charset-normalizer" do
@@ -59,8 +60,8 @@ class Ggshield < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/6d/30/03b03951873a1a0ffc7e8ca0e10c15597b59e8d0e39260704cd2ea087bc4/filelock-3.32.4.tar.gz"
-    sha256 "2bde2e4cf732e0153406d8a7bc80620ecf5e621fe0d25e41143c4e3b4733ff30"
+    url "https://files.pythonhosted.org/packages/38/46/126b1831dca12060d4a8296bf9c4fe5c93c4f22197fa239cb0cc82042bba/filelock-3.32.6.tar.gz"
+    sha256 "a3f55a18af3652a94d8f47d6055df434f254ca1d02ef2524850c6d249ca2512c"
   end
 
   resource "h11" do
@@ -164,8 +165,8 @@ class Ggshield < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/50/bb/ebc6636e1ae41314f796ebb7215fd28febb45f9aac72f2b04cb74b5071dc/platformdirs-4.11.4.tar.gz"
-    sha256 "f3373be828247211d0febabea97e238c3dfde8a60b3c90c32756fb52cb21556d"
+    url "https://files.pythonhosted.org/packages/53/18/f3bb8ef0d3b930692343da8aa4d3cbcd6749477c053959395ac81965a6e9/platformdirs-4.11.8.tar.gz"
+    sha256 "f23abafea7dd4276d1f29104b83598d7dcc567cafd07c9c951e66665645437fc"
   end
 
   resource "pyasn1" do
@@ -229,8 +230,8 @@ class Ggshield < Formula
   end
 
   resource "securesystemslib" do
-    url "https://files.pythonhosted.org/packages/82/9c/6a7bac8eef1012d100f601beecb0ffa676efe52e5785e6f71b9842075275/securesystemslib-1.5.0.tar.gz"
-    sha256 "3701219c8149a0b1b45f4298d672efc78cd15c0d7d83d5a18bf585e1fce1320d"
+    url "https://files.pythonhosted.org/packages/81/d4/f9323507144693d869f30f13694035438ab6642153b94e3057945cf0584f/securesystemslib-1.5.1.tar.gz"
+    sha256 "4b8d00abd93707ead10b69eb2b8582376a1364de3b0a71077de534c2ef4985e0"
   end
 
   resource "setuptools" do
@@ -264,8 +265,8 @@ class Ggshield < Formula
   end
 
   resource "tuf" do
-    url "https://files.pythonhosted.org/packages/aa/40/25ceaf7f02e18b0d99150d94e200929351a542479c54abb7b92e1fd74b10/tuf-7.0.0.tar.gz"
-    sha256 "9d2e6723538e0d5a3e482b6de805fcfe64481448d5853039ba6b06ba541efd7f"
+    url "https://files.pythonhosted.org/packages/9c/dd/52e7390cbac308e6b1cfe6be9bc3a96fe26326d5893cc297a52bb72792a9/tuf-7.0.1.tar.gz"
+    sha256 "5ada1db78da3518fa851e28588f4b2249b8662a28ae528f54afa2a1de541fb31"
   end
 
   resource "typeguard" do

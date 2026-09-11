@@ -12,12 +12,13 @@ class NettleAT3 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "c72342029b69116096dc2de6b67106706c3fc0b0d85cfb1090e3e4c4b01cc147"
-    sha256 cellar: :any,                 arm64_sequoia: "4af74cceda18a0684e64e1c9681a9f5b55ddcd49c6530ee50cdc320eaa2ec0b7"
-    sha256 cellar: :any,                 arm64_sonoma:  "b588f0f1bf01b311ecbb65bfa235619e0c29b5a22192dc8215326dcb73e5af8e"
-    sha256 cellar: :any,                 sonoma:        "50b37df2b10bf62e7119a5b784e99adcb401e91d9c436beaec9ac734b5e21f5a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7fcb5a9ea8b1a45768d2852ed3675e10146fc6686733419135d8a4c65a8bfd95"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "810d4174773f0498fc797c535184f7f1c430bd0a129a7d71bf68018eb3358f95"
+    sha256 cellar: :any,                 arm64_golden_gate: "570ce0b20a8ac6c1ad34c9a219dfcbde875c763efdccc5730ff36115868966d9"
+    sha256 cellar: :any,                 arm64_tahoe:       "c72342029b69116096dc2de6b67106706c3fc0b0d85cfb1090e3e4c4b01cc147"
+    sha256 cellar: :any,                 arm64_sequoia:     "4af74cceda18a0684e64e1c9681a9f5b55ddcd49c6530ee50cdc320eaa2ec0b7"
+    sha256 cellar: :any,                 arm64_sonoma:      "b588f0f1bf01b311ecbb65bfa235619e0c29b5a22192dc8215326dcb73e5af8e"
+    sha256 cellar: :any,                 sonoma:            "50b37df2b10bf62e7119a5b784e99adcb401e91d9c436beaec9ac734b5e21f5a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "7fcb5a9ea8b1a45768d2852ed3675e10146fc6686733419135d8a4c65a8bfd95"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "810d4174773f0498fc797c535184f7f1c430bd0a129a7d71bf68018eb3358f95"
   end
 
   keg_only :versioned_formula

@@ -19,12 +19,13 @@ class Fontconfig < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "ad1c5a3054313853e9eefa9a07c32a3ff7b11c4fbcff9e73affc2a50233dbafe"
-    sha256 arm64_sequoia: "a5f5df5f8d02e8a5b2587cac464c7bd45128447da06b7ab39938a9645982ef49"
-    sha256 arm64_sonoma:  "24bd9a2d42f9bc46d4cd51aa51299cbe2c59b2c848656a7657875b0aaedc223b"
-    sha256 sonoma:        "dbc9016619292284590e7e16e6492d911e0926b976ebe6d502f6e86fe01fd64c"
-    sha256 arm64_linux:   "8e7ed20aac7298e92bfb46c5fbb34fd8784f111507e256fde4f2fb354f1c48eb"
-    sha256 x86_64_linux:  "56c35f5cc20e978189ba6693eef8ed1167de1d04ef9e5289e9a9dff8b5077049"
+    sha256 arm64_golden_gate: "0506cd2fa83e76390bb13ff8fe9c5ab7cc1a09a204893b1ce058bb96410b2adf"
+    sha256 arm64_tahoe:       "ad1c5a3054313853e9eefa9a07c32a3ff7b11c4fbcff9e73affc2a50233dbafe"
+    sha256 arm64_sequoia:     "a5f5df5f8d02e8a5b2587cac464c7bd45128447da06b7ab39938a9645982ef49"
+    sha256 arm64_sonoma:      "24bd9a2d42f9bc46d4cd51aa51299cbe2c59b2c848656a7657875b0aaedc223b"
+    sha256 sonoma:            "dbc9016619292284590e7e16e6492d911e0926b976ebe6d502f6e86fe01fd64c"
+    sha256 arm64_linux:       "8e7ed20aac7298e92bfb46c5fbb34fd8784f111507e256fde4f2fb354f1c48eb"
+    sha256 x86_64_linux:      "56c35f5cc20e978189ba6693eef8ed1167de1d04ef9e5289e9a9dff8b5077049"
   end
 
   depends_on "gettext" => :build

@@ -3,22 +3,17 @@ class Jnethack < Formula
   homepage "https://github.com/jnethack/jnethack-release"
   # We use a git checkout to avoid patching the upstream NetHack tarball.
   url "https://github.com/jnethack/jnethack-release.git",
-      tag:      "v3.6.7-0.1",
-      revision: "3b3a9c4e25df60f9bce2ad09ce368410b4360e85"
+      tag:      "v3.6.7-0.2",
+      revision: "3f3a1afbdf51473d9c7a55f78d351b435707b751"
   license "NGPL"
   head "https://github.com/jnethack/jnethack-release.git", branch: "master"
 
   bottle do
-    sha256 arm64_tahoe:    "201391d74743a2b3301e322324e49688ebb56767263f2d7d9961bf3517abe0c8"
-    sha256 arm64_sequoia:  "05dc1796a9fb75fac1d0d63a9fc31a7773f1ddd4e3a0351301899847ca6aba48"
-    sha256 arm64_sonoma:   "bae280dd42e8d357d686b2482676de03a1acd4b65b5eefcae753bba91fc42951"
-    sha256 arm64_ventura:  "44ca7f443ece59eef081c6d4a270d6aa63f6bd4d6bc173c7cfbd991dd2fb743b"
-    sha256 arm64_monterey: "3f4432dcdbf52b38e53446c0f35ec23d6d7438cc019b3b7587aaf5a28187e799"
-    sha256 sonoma:         "3b46b1e5f270af3786dcebde6c0fc008dd22ffdf0a51a3aaa6daa08fd96a0696"
-    sha256 ventura:        "84ac8940603749b3f1e3dbf11f8bdef227307c0e34bb9f0d2b227dd138223ac4"
-    sha256 monterey:       "82edd9a68cc86d599b8eb70f23b6e813c3b587af96b9986eb51679d82f6b1f83"
-    sha256 arm64_linux:    "48967c39f0adeb6f89b7adef4b086372e4faa33b27218c314b2acbc5943cb246"
-    sha256 x86_64_linux:   "b9d9a667b5f140032db12e1384be61894be2bc94340bba0fd08dfcfd5ec16031"
+    sha256 arm64_tahoe:   "962c6ae677dc1591d7e034af45093bfbd32d24151a7d88c94ea5ade9af0f29a3"
+    sha256 arm64_sequoia: "d4d2241fb4a159cfdf7a72cb9552c06dd7f6433d15b17f24c4bbd8bd9129ce79"
+    sha256 arm64_sonoma:  "bb1614805e326632624a9daa3f8d0673bf8287f462057fda44f7f97e4a9960e3"
+    sha256 arm64_linux:   "a5f0dd0fe72bb57d20eb04041eb0bda19b2f2296ba7b5ee7b3230b03d41a8759"
+    sha256 x86_64_linux:  "67e4518f0700d8c7b2248eca12b637d416fd188ca129589abd3825de1a37a23d"
   end
 
   depends_on "nkf" => :build

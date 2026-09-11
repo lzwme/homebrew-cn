@@ -12,12 +12,13 @@ class Minizip < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "16451e526b90dcd6380df6003dec30796b9ebcc7fe8e62b9778a583e5b72cb47"
-    sha256 cellar: :any,                 arm64_sequoia: "f90adff7167a19f53ef85ce23d46c5b5d016f58b9db126b02dc91c76a0fe744a"
-    sha256 cellar: :any,                 arm64_sonoma:  "3e3f68961e5480e0d314a8db8978029bbd1315e6c00b909669456fa3693b1914"
-    sha256 cellar: :any,                 sonoma:        "f6f4577f2f7c5d04fde8384f0ca43ee1cece548aa6abe0ae99b387058e79bbd3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c1d6d57105aa286c0347bc6a0dc3d80e86843e7c7b325467b8c1f76efd8a5dcf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8405db317fdfa195ffad20c51f5af22a0cc49c2076dd8f0b79f39ed5d5807222"
+    sha256 cellar: :any,                 arm64_golden_gate: "28444db1b1cba37ed16762f2c68343b8ffff4d786e4bfc94fec5b386a879f900"
+    sha256 cellar: :any,                 arm64_tahoe:       "16451e526b90dcd6380df6003dec30796b9ebcc7fe8e62b9778a583e5b72cb47"
+    sha256 cellar: :any,                 arm64_sequoia:     "f90adff7167a19f53ef85ce23d46c5b5d016f58b9db126b02dc91c76a0fe744a"
+    sha256 cellar: :any,                 arm64_sonoma:      "3e3f68961e5480e0d314a8db8978029bbd1315e6c00b909669456fa3693b1914"
+    sha256 cellar: :any,                 sonoma:            "f6f4577f2f7c5d04fde8384f0ca43ee1cece548aa6abe0ae99b387058e79bbd3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "c1d6d57105aa286c0347bc6a0dc3d80e86843e7c7b325467b8c1f76efd8a5dcf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "8405db317fdfa195ffad20c51f5af22a0cc49c2076dd8f0b79f39ed5d5807222"
   end
 
   depends_on "autoconf" => :build

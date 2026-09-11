@@ -7,12 +7,13 @@ class Canfigger < Formula
   head "https://github.com/andy5995/canfigger.git", branch: "trunk"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "13a1c0f9dc12a5ab24bb8135873296b386a9a2550adb8c70ca2baa62035b5e68"
-    sha256 cellar: :any,                 arm64_sequoia: "0f6c11ffa385f60746737a34ad1e358b05a5695244d6a7764309a5d11617a671"
-    sha256 cellar: :any,                 arm64_sonoma:  "e89a075bcb14bd0e42811ba36699c3418eae2538631fa0ee3473712c5a5cd913"
-    sha256 cellar: :any,                 sonoma:        "a25520c1a99e0d88ac2449d30daadfb00c95837466b4ec9678aaa449d38e6894"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a2aedd0fc386f76944c4d383b849e5a4f670330ecf9d13c454ae2c9a79082bde"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "961162137d888c0bc94b2fa6573d35c68429d50262a02be47a5a7d2573df7f7f"
+    sha256 cellar: :any,                 arm64_golden_gate: "2aa8d92590e9174c4254173db86792a23809358d0f781b0874351f9921b0a51c"
+    sha256 cellar: :any,                 arm64_tahoe:       "13a1c0f9dc12a5ab24bb8135873296b386a9a2550adb8c70ca2baa62035b5e68"
+    sha256 cellar: :any,                 arm64_sequoia:     "0f6c11ffa385f60746737a34ad1e358b05a5695244d6a7764309a5d11617a671"
+    sha256 cellar: :any,                 arm64_sonoma:      "e89a075bcb14bd0e42811ba36699c3418eae2538631fa0ee3473712c5a5cd913"
+    sha256 cellar: :any,                 sonoma:            "a25520c1a99e0d88ac2449d30daadfb00c95837466b4ec9678aaa449d38e6894"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "a2aedd0fc386f76944c4d383b849e5a4f670330ecf9d13c454ae2c9a79082bde"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "961162137d888c0bc94b2fa6573d35c68429d50262a02be47a5a7d2573df7f7f"
   end
 
   depends_on "meson" => :build

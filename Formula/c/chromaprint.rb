@@ -7,12 +7,13 @@ class Chromaprint < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "4bbfd1fff49b1e3f602e4c22fc57432e3235ed93c931d18f6e16c9e8f5ac61a8"
-    sha256 cellar: :any, arm64_sequoia: "2707ad3b5485c678f3f291c02ab621d30771c89509b1df446458e49610b3f197"
-    sha256 cellar: :any, arm64_sonoma:  "6ec11502595524570391b3afbd99910216272d8d1444e24214b1570d0c34936d"
-    sha256 cellar: :any, sonoma:        "454684649fd41eace479350f18b1fc2602f4e08747e74f5a0c187a7dd29fec9d"
-    sha256 cellar: :any, arm64_linux:   "1c468590de3d8df81fe2a37748cfaa56a0f972bb01ed86a6bf9a1208bd2463ec"
-    sha256 cellar: :any, x86_64_linux:  "59606ff7903edb508f2b2db6f48e8e7b76943a9010940274db833515c18a5ae9"
+    sha256 cellar: :any, arm64_golden_gate: "92612578c19f57c424c187506c40bde94a16d36d7cb9f20de2b93748a710c552"
+    sha256 cellar: :any, arm64_tahoe:       "4bbfd1fff49b1e3f602e4c22fc57432e3235ed93c931d18f6e16c9e8f5ac61a8"
+    sha256 cellar: :any, arm64_sequoia:     "2707ad3b5485c678f3f291c02ab621d30771c89509b1df446458e49610b3f197"
+    sha256 cellar: :any, arm64_sonoma:      "6ec11502595524570391b3afbd99910216272d8d1444e24214b1570d0c34936d"
+    sha256 cellar: :any, sonoma:            "454684649fd41eace479350f18b1fc2602f4e08747e74f5a0c187a7dd29fec9d"
+    sha256 cellar: :any, arm64_linux:       "1c468590de3d8df81fe2a37748cfaa56a0f972bb01ed86a6bf9a1208bd2463ec"
+    sha256 cellar: :any, x86_64_linux:      "59606ff7903edb508f2b2db6f48e8e7b76943a9010940274db833515c18a5ae9"
   end
 
   depends_on "cmake" => :build

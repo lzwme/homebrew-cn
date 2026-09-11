@@ -13,18 +13,19 @@ class Ftgl < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:    "12ddf881165473de8bdeaecb87995c36f753ca51a5be48404e5ffcf2c1571205"
-    sha256 cellar: :any,                 arm64_sequoia:  "a14fb054d0fbc1e6e11904e32c02be573d3db1c72981a6badbfc61f2f214d5cb"
-    sha256 cellar: :any,                 arm64_sonoma:   "4dbee18442898c2c431d5ea8de6c67170906763eb4e4eb6775735809c34bee86"
-    sha256 cellar: :any,                 arm64_ventura:  "9c7cd41984f3696dd61d7ecd78c32f68f35121a1f7f8f0b2d0a9ccb2825016c2"
-    sha256 cellar: :any,                 arm64_monterey: "ed10911135d6af44315967a7fe2d81e5bf1bac34347274a49545ab777bb12c86"
-    sha256 cellar: :any,                 arm64_big_sur:  "85368ec5c37bb2cffd87cd30775a78956708c71749f8da56239fd93e57cf576d"
-    sha256 cellar: :any,                 sonoma:         "8d04c4e2fedf981269b941a69634b3fe4bcc0a3f54730c58c186823b0c7c5958"
-    sha256 cellar: :any,                 ventura:        "184d35152ccbbee8771edbed5f40d34a8864704d4d90812f2c8f247ce79e5608"
-    sha256 cellar: :any,                 monterey:       "fd4e1c8a08042ce2a0f96f79e899815009fd56cafbf550f88a9eb9685ff84b7d"
-    sha256 cellar: :any,                 big_sur:        "1b39e663c0bedd0b915dd60c99c5f1acdfb3ae9717cd832134de15fd48736673"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "4b6add1f77c741b0d4cf01aba4fc3a7613b66d38d0f74ce06fcc571629270b11"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a53d8292298b4c6974e04fd8ab744860aec65b58149a704d9e2dad61aba0c4f6"
+    sha256 cellar: :any,                 arm64_golden_gate: "4c22745ef1829ac4a288dc9582fd7f8b5198eb571f0369c5fae4902e7e0fe5a9"
+    sha256 cellar: :any,                 arm64_tahoe:       "12ddf881165473de8bdeaecb87995c36f753ca51a5be48404e5ffcf2c1571205"
+    sha256 cellar: :any,                 arm64_sequoia:     "a14fb054d0fbc1e6e11904e32c02be573d3db1c72981a6badbfc61f2f214d5cb"
+    sha256 cellar: :any,                 arm64_sonoma:      "4dbee18442898c2c431d5ea8de6c67170906763eb4e4eb6775735809c34bee86"
+    sha256 cellar: :any,                 arm64_ventura:     "9c7cd41984f3696dd61d7ecd78c32f68f35121a1f7f8f0b2d0a9ccb2825016c2"
+    sha256 cellar: :any,                 arm64_monterey:    "ed10911135d6af44315967a7fe2d81e5bf1bac34347274a49545ab777bb12c86"
+    sha256 cellar: :any,                 arm64_big_sur:     "85368ec5c37bb2cffd87cd30775a78956708c71749f8da56239fd93e57cf576d"
+    sha256 cellar: :any,                 sonoma:            "8d04c4e2fedf981269b941a69634b3fe4bcc0a3f54730c58c186823b0c7c5958"
+    sha256 cellar: :any,                 ventura:           "184d35152ccbbee8771edbed5f40d34a8864704d4d90812f2c8f247ce79e5608"
+    sha256 cellar: :any,                 monterey:          "fd4e1c8a08042ce2a0f96f79e899815009fd56cafbf550f88a9eb9685ff84b7d"
+    sha256 cellar: :any,                 big_sur:           "1b39e663c0bedd0b915dd60c99c5f1acdfb3ae9717cd832134de15fd48736673"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "4b6add1f77c741b0d4cf01aba4fc3a7613b66d38d0f74ce06fcc571629270b11"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "a53d8292298b4c6974e04fd8ab744860aec65b58149a704d9e2dad61aba0c4f6"
   end
 
   depends_on "pkgconf" => :test

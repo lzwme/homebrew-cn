@@ -10,12 +10,13 @@ class Fontforge < Formula
 
   bottle do
     rebuild 1
-    sha256 arm64_tahoe:   "fe4e8adc42c7763ed1e006c2966beea83baf6c012820391715a41cb8cd5af442"
-    sha256 arm64_sequoia: "ea285c6bf59a9bcffdd24fbe0ae422c863b1eb0156015942ca1b76437291a424"
-    sha256 arm64_sonoma:  "33997a1a5250790fd7e9df618d66ae2ba515b7739908423dbffa55141b984c7f"
-    sha256 sonoma:        "b4603144bfe427dd67a0aa3a6d28d0bd77f4f7d074d95f538330b783027f7aec"
-    sha256 arm64_linux:   "423e7dc51a951f9a5fff4693b96e8ee4bf542d3d7645e099244774f76b9fa015"
-    sha256 x86_64_linux:  "8ce74cd480cd362e588066468c776c16ecbf48a967fe51fb769caa4db8837832"
+    sha256 arm64_golden_gate: "62b8732ffdaa5b2ea42db80347a51e2eef3fa881a16b67f092b396f9b784e4f5"
+    sha256 arm64_tahoe:       "fe4e8adc42c7763ed1e006c2966beea83baf6c012820391715a41cb8cd5af442"
+    sha256 arm64_sequoia:     "ea285c6bf59a9bcffdd24fbe0ae422c863b1eb0156015942ca1b76437291a424"
+    sha256 arm64_sonoma:      "33997a1a5250790fd7e9df618d66ae2ba515b7739908423dbffa55141b984c7f"
+    sha256 sonoma:            "b4603144bfe427dd67a0aa3a6d28d0bd77f4f7d074d95f538330b783027f7aec"
+    sha256 arm64_linux:       "423e7dc51a951f9a5fff4693b96e8ee4bf542d3d7645e099244774f76b9fa015"
+    sha256 x86_64_linux:      "8ce74cd480cd362e588066468c776c16ecbf48a967fe51fb769caa4db8837832"
   end
 
   depends_on "cmake" => :build

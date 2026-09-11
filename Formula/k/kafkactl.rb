@@ -7,12 +7,13 @@ class Kafkactl < Formula
   head "https://github.com/deviceinsight/kafkactl.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "25b8ab6bcc0a597dda6a232854673f84c23b1e4c7976517e4c850e04e771280e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "25b8ab6bcc0a597dda6a232854673f84c23b1e4c7976517e4c850e04e771280e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "25b8ab6bcc0a597dda6a232854673f84c23b1e4c7976517e4c850e04e771280e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d8dd1d1326a6932e6800532de8e40f286d3b69117c861d4963b0d386356ea8d5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a14a99bb692967f33c6826afd40d9196004c73731f9cfd00df16aa4de839edde"
-    sha256 cellar: :any,                 x86_64_linux:  "27d450108d63d3ad4dd4a674a30d3bd629680ea143fb2c9b21e2439a602f5bbf"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "0e90c7ef36a0f6a910d3fb2c48904b49d7420ddb4176f1fe988604ef99b920bb"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "25b8ab6bcc0a597dda6a232854673f84c23b1e4c7976517e4c850e04e771280e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "25b8ab6bcc0a597dda6a232854673f84c23b1e4c7976517e4c850e04e771280e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "25b8ab6bcc0a597dda6a232854673f84c23b1e4c7976517e4c850e04e771280e"
+    sha256 cellar: :any_skip_relocation, sonoma:            "d8dd1d1326a6932e6800532de8e40f286d3b69117c861d4963b0d386356ea8d5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "a14a99bb692967f33c6826afd40d9196004c73731f9cfd00df16aa4de839edde"
+    sha256 cellar: :any,                 x86_64_linux:      "27d450108d63d3ad4dd4a674a30d3bd629680ea143fb2c9b21e2439a602f5bbf"
   end
 
   depends_on "go" => :build

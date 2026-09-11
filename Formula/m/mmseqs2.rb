@@ -8,13 +8,12 @@ class Mmseqs2 < Formula
   head "https://github.com/soedinglab/MMseqs2.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "db5b603365d96e19fb686f87657965c7920368c9972ba4df890e015db5a62242"
-    sha256 cellar: :any,                 arm64_sequoia: "9e54025ebe34f6c6183dea51234b59d36603c6095894e8a16970b0998452556a"
-    sha256 cellar: :any,                 arm64_sonoma:  "9acef9a8874241678098c1132be15aa1df6fd2a6a709ea4f2a98e850bafda29b"
-    sha256 cellar: :any,                 sonoma:        "32b6bd0d7785c60cd96c2012eafe53ef3bae20d12487d4bb57f1b906f0a95be1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "093b602dad229d6adfc9860a347118d837c0c21e2a7489f7ae49cefe5432ae9f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b1078e3ad9bea79349ebb08e136c4581cc4edd7e095961ae8f4b6ad412d35cd5"
+    rebuild 2
+    sha256 cellar: :any, arm64_tahoe:   "cde948e5fd9bd5fc4712ca3da68732f40f07d67904b1368b388c58adf57db676"
+    sha256 cellar: :any, arm64_sequoia: "61f15901cee4c6e69ef77101ca8b4f519f603d80e5e05ffb8c647a06fc7ffd53"
+    sha256 cellar: :any, arm64_sonoma:  "35e3e29a68022cd9aba6c865a67deeeac57ef771fee8f11282a49a677258e3c1"
+    sha256 cellar: :any, arm64_linux:   "ecd13dca0300d49a7f1be7272cea1217a7f2782a2bc8e7c89c4f40ee41469f03"
+    sha256 cellar: :any, x86_64_linux:  "bcad178647ca4c1639e7714f3a776743b472446e7b9bd744c7abbe0792c6469e"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -31,11 +30,7 @@ class Mmseqs2 < Formula
     depends_on "zlib-ng-compat"
   end
 
-  # `git ls-remote https://github.com/soedinglab/MMseqs2.wiki.git HEAD`
-  resource "documentation" do
-    url "https://github.com/soedinglab/MMseqs2.wiki.git",
-        revision: "67ba9c6637b4b5121a73e5de034dd0c3414d2b81"
-  end
+  allow_network_access! :test
 
   def install
     args = %W[
@@ -47,14 +42,13 @@ class Mmseqs2 < Formula
     args << if Hardware::CPU.arm?
       "-DHAVE_ARM8=1"
     else
-      "-DHAVE_SSE4_1=1"
+      "-DHAVE_SSE2=1" # need to support Core 2
     end
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
 
-    resource("documentation").stage { doc.install Dir["*"] }
     pkgshare.install "examples"
     bash_completion.install "util/bash-completion.sh" => "mmseqs.sh"
   end

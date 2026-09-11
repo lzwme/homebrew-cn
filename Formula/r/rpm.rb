@@ -18,12 +18,13 @@ class Rpm < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "d05318fd8cd639a10d516353fa2b1f64cd5955e610b2ee13c035bb997b1357ed"
-    sha256 arm64_sequoia: "363200736332adcfa7cac84e5ff32ac1048aa3d0f6b2610f0d29bf7e3c746bfd"
-    sha256 arm64_sonoma:  "490697dfae364ebee811d76c2fa3145be7f80c81198437637de72a88e2ad8736"
-    sha256 sonoma:        "e762a6d1e18fd2cc12334bdc05eb809e05c22fd6d111a5025a12415766391c93"
-    sha256 arm64_linux:   "4fa984eb8ebf0fe293012bf18c2bb42a279211bddcffa2bc15978603d27cc935"
-    sha256 x86_64_linux:  "d58417ed3db12fd1dd1638167d7556a3b14008bf1433c421a675676f80af8fb2"
+    sha256 arm64_golden_gate: "a4edb40f386df54cafd4a51d55b51cb6d70a213427bfe56588ccb2e7c173b7ea"
+    sha256 arm64_tahoe:       "d05318fd8cd639a10d516353fa2b1f64cd5955e610b2ee13c035bb997b1357ed"
+    sha256 arm64_sequoia:     "363200736332adcfa7cac84e5ff32ac1048aa3d0f6b2610f0d29bf7e3c746bfd"
+    sha256 arm64_sonoma:      "490697dfae364ebee811d76c2fa3145be7f80c81198437637de72a88e2ad8736"
+    sha256 sonoma:            "e762a6d1e18fd2cc12334bdc05eb809e05c22fd6d111a5025a12415766391c93"
+    sha256 arm64_linux:       "4fa984eb8ebf0fe293012bf18c2bb42a279211bddcffa2bc15978603d27cc935"
+    sha256 x86_64_linux:      "d58417ed3db12fd1dd1638167d7556a3b14008bf1433c421a675676f80af8fb2"
   end
 
   depends_on "cmake" => :build

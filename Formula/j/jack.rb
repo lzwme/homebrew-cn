@@ -13,12 +13,13 @@ class Jack < Formula
 
   bottle do
     rebuild 1
-    sha256 arm64_tahoe:   "fff5cd2469005f7ce17c430b5b0702ddae63ffc10fffeee4265eaa4eff14d586"
-    sha256 arm64_sequoia: "db8845aed88dd26297e2b9e128b0a6325b57e83c977c82c9764dabab0f5eb5a2"
-    sha256 arm64_sonoma:  "1d10444db8e31dea0532e9947398366dd3f9d2ecf94f937a4a4bd994abf48b11"
-    sha256 sonoma:        "cfc72eb5ff3bd8e524f1120b06e3629b8562cf428bc0bab2e4fcb189a078a7de"
-    sha256 arm64_linux:   "41d6192aa532805d5ba0ada750c27b40bfb431d1543005716181a0cefc40011e"
-    sha256 x86_64_linux:  "638c07b7fd17581e2cb03676f5f86fa3957f1f100d9ea42eacb33c04b1336cd6"
+    sha256 arm64_golden_gate: "a66efd3c8fc11345c0e664ea6d1e89ffbfa41d89550a64850af99655cbb49d30"
+    sha256 arm64_tahoe:       "fff5cd2469005f7ce17c430b5b0702ddae63ffc10fffeee4265eaa4eff14d586"
+    sha256 arm64_sequoia:     "db8845aed88dd26297e2b9e128b0a6325b57e83c977c82c9764dabab0f5eb5a2"
+    sha256 arm64_sonoma:      "1d10444db8e31dea0532e9947398366dd3f9d2ecf94f937a4a4bd994abf48b11"
+    sha256 sonoma:            "cfc72eb5ff3bd8e524f1120b06e3629b8562cf428bc0bab2e4fcb189a078a7de"
+    sha256 arm64_linux:       "41d6192aa532805d5ba0ada750c27b40bfb431d1543005716181a0cefc40011e"
+    sha256 x86_64_linux:      "638c07b7fd17581e2cb03676f5f86fa3957f1f100d9ea42eacb33c04b1336cd6"
   end
 
   depends_on "autoconf" => :build

@@ -13,12 +13,13 @@ class TclTk < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "5f827b236bad97d36743a3abfa75f746f998ccf4d6cf46e55b4ad167cccf14d6"
-    sha256 arm64_sequoia: "337f7db2e9c5b41a61cde887db2d02fe6293f76eedf81502783014b9922bef1e"
-    sha256 arm64_sonoma:  "83ece1e2a0f3d17e5ba0ed2d01203f357d25d008fcc1e3902c99e7200d652ea3"
-    sha256 sonoma:        "7814be4fc08ee90045ad3f6f1758982ab441f31bee964ddb876f6a5c6c6c8790"
-    sha256 arm64_linux:   "410d31028279d7a1d30dc73d4f6b012d54d837ab71cb6dadd1484932b7568b3b"
-    sha256 x86_64_linux:  "bb4f5dc50224e0e6ef9da8fd743964cf26dc43edaf9702c728272f8c839ed0b1"
+    sha256 arm64_golden_gate: "391f017eddb5080e738fb02b7bcb540f25bed6b933f8189ec99ffc535ba7e90d"
+    sha256 arm64_tahoe:       "5f827b236bad97d36743a3abfa75f746f998ccf4d6cf46e55b4ad167cccf14d6"
+    sha256 arm64_sequoia:     "337f7db2e9c5b41a61cde887db2d02fe6293f76eedf81502783014b9922bef1e"
+    sha256 arm64_sonoma:      "83ece1e2a0f3d17e5ba0ed2d01203f357d25d008fcc1e3902c99e7200d652ea3"
+    sha256 sonoma:            "7814be4fc08ee90045ad3f6f1758982ab441f31bee964ddb876f6a5c6c6c8790"
+    sha256 arm64_linux:       "410d31028279d7a1d30dc73d4f6b012d54d837ab71cb6dadd1484932b7568b3b"
+    sha256 x86_64_linux:      "bb4f5dc50224e0e6ef9da8fd743964cf26dc43edaf9702c728272f8c839ed0b1"
   end
 
   depends_on "libtommath"

@@ -12,12 +12,13 @@ class Execline < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "a34cd2a4118064e562ccf4129012601a1ff827035231835e244613520f04c055"
-    sha256 cellar: :any, arm64_sequoia: "0c821be5ea7210ce575c0dd8dd4555e6f3766192b9ef41a4fb6867461340afc0"
-    sha256 cellar: :any, arm64_sonoma:  "2ff69fef93dc99840fc3a50dc662e2cb9ed039f7f839f17ab53b6367da20d20f"
-    sha256 cellar: :any, sonoma:        "eac033e7d68f6c016a461d3fb5887b2c3d65a70775626fb94cdcdc644dbe26d5"
-    sha256 cellar: :any, arm64_linux:   "de8756b61cd6846ca05ba613ac1ec33c268bf43ee21ea3be1ee5af4dc1c5ea19"
-    sha256 cellar: :any, x86_64_linux:  "6834735c20cd94e60855b47878af70c619ed11eb2b5bd274b25e64c02652a621"
+    sha256 cellar: :any, arm64_golden_gate: "e2e53558dd44c912cf46a625486936517ed94d80d21b2b0d572155e4806db326"
+    sha256 cellar: :any, arm64_tahoe:       "a34cd2a4118064e562ccf4129012601a1ff827035231835e244613520f04c055"
+    sha256 cellar: :any, arm64_sequoia:     "0c821be5ea7210ce575c0dd8dd4555e6f3766192b9ef41a4fb6867461340afc0"
+    sha256 cellar: :any, arm64_sonoma:      "2ff69fef93dc99840fc3a50dc662e2cb9ed039f7f839f17ab53b6367da20d20f"
+    sha256 cellar: :any, sonoma:            "eac033e7d68f6c016a461d3fb5887b2c3d65a70775626fb94cdcdc644dbe26d5"
+    sha256 cellar: :any, arm64_linux:       "de8756b61cd6846ca05ba613ac1ec33c268bf43ee21ea3be1ee5af4dc1c5ea19"
+    sha256 cellar: :any, x86_64_linux:      "6834735c20cd94e60855b47878af70c619ed11eb2b5bd274b25e64c02652a621"
   end
 
   depends_on "pkgconf" => :build

@@ -13,12 +13,13 @@ class Kraken2 < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "e794c89e70f0060b0e02caf5c439b3f8a2300a55cfd9f923aa3e7616d68b9e8b"
-    sha256 cellar: :any,                 arm64_sequoia: "5aff480752ccf8c12530d8cbecd3c11ef804452ff751ddc81e89c093980f6623"
-    sha256 cellar: :any,                 arm64_sonoma:  "749bdff8f9a6f7c305241e3a90015230113601e6600150e47ea1fa7d879ccc57"
-    sha256 cellar: :any,                 sonoma:        "8b216c4a508c451475740893d10f241c24f7ca5c6b23a78efb753d2f72ac05e0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a57001fc63b43ce00a3d8c4f02fd7b6d34123752e6684fdfbac73699660497a3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c369951fd44567712e4dacb34d20b6a4ad3b729669ddecea0dca256ca74d4cc8"
+    sha256 cellar: :any,                 arm64_golden_gate: "33117d3d68eb5e765c817fb88b1c7f5a567d2167c10f529088ee0f0c565f6fbd"
+    sha256 cellar: :any,                 arm64_tahoe:       "e794c89e70f0060b0e02caf5c439b3f8a2300a55cfd9f923aa3e7616d68b9e8b"
+    sha256 cellar: :any,                 arm64_sequoia:     "5aff480752ccf8c12530d8cbecd3c11ef804452ff751ddc81e89c093980f6623"
+    sha256 cellar: :any,                 arm64_sonoma:      "749bdff8f9a6f7c305241e3a90015230113601e6600150e47ea1fa7d879ccc57"
+    sha256 cellar: :any,                 sonoma:            "8b216c4a508c451475740893d10f241c24f7ca5c6b23a78efb753d2f72ac05e0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "a57001fc63b43ce00a3d8c4f02fd7b6d34123752e6684fdfbac73699660497a3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "c369951fd44567712e4dacb34d20b6a4ad3b729669ddecea0dca256ca74d4cc8"
   end
 
   depends_on "gperftools"

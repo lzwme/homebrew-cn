@@ -17,12 +17,13 @@ class Sdcc < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "300fb3c8599a5f4c00cfdec9e12750f09ccca484b7cbbcaa6bc378512a8a0cf7"
-    sha256 arm64_sequoia: "8fd0fe168465571181215aaca52df741fa770071881dac56e4409d9a668463c7"
-    sha256 arm64_sonoma:  "2635b27f7410f33954cea1a595576b658ed11e2b888a1cf828938222399cdcc8"
-    sha256 sonoma:        "9424f0ad933b46ecae302cc0062c256c9d7cb832d5c67cb7f22d710f90760d30"
-    sha256 arm64_linux:   "a04ebca614af7c5a528d9c429a74cdfbbd4706034fb446bb21a6be8810eb4187"
-    sha256 x86_64_linux:  "23029b2b9a02accdb1dd405874997d5a35b109ade0be43c3d89c0a9707bae85a"
+    sha256 arm64_golden_gate: "2845dd9faca0be76d2aa3d8476ef97b0f731931f68369a67ac8deb6fda299630"
+    sha256 arm64_tahoe:       "300fb3c8599a5f4c00cfdec9e12750f09ccca484b7cbbcaa6bc378512a8a0cf7"
+    sha256 arm64_sequoia:     "8fd0fe168465571181215aaca52df741fa770071881dac56e4409d9a668463c7"
+    sha256 arm64_sonoma:      "2635b27f7410f33954cea1a595576b658ed11e2b888a1cf828938222399cdcc8"
+    sha256 sonoma:            "9424f0ad933b46ecae302cc0062c256c9d7cb832d5c67cb7f22d710f90760d30"
+    sha256 arm64_linux:       "a04ebca614af7c5a528d9c429a74cdfbbd4706034fb446bb21a6be8810eb4187"
+    sha256 x86_64_linux:      "23029b2b9a02accdb1dd405874997d5a35b109ade0be43c3d89c0a9707bae85a"
   end
 
   depends_on "boost" => :build

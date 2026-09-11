@@ -13,12 +13,13 @@ class XmlToolingC < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "98e9218a11ab243b50f41dc092aa691ea2b67e377c8f4c3180b2534daa3e282a"
-    sha256 cellar: :any,                 arm64_sequoia: "88e0d5685d1d26583ce3cac5ae06004e09c1e644a994cbd842edf135c387eeee"
-    sha256 cellar: :any,                 arm64_sonoma:  "67698bf4e3539ca4a65b1abedf1412bebfca329752966af395fb6ad26fd01674"
-    sha256 cellar: :any,                 sonoma:        "bdccad5c69d8fc2e9b803d308e2a577e186d73126f2550e173bb6e73b5270d12"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6a2daaf7d5f7c2851c7aedbe0916231d6f05a86bcca21deb89878a69160a8044"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2e44b389fa4a9ef04945d051fd6b66e6a22b4389b968eccdcae9a1634a221886"
+    sha256 cellar: :any,                 arm64_golden_gate: "2a220c98f118556865a386e3d7d9b6fd29b8ddfd1b620945bdf76e14382afe0c"
+    sha256 cellar: :any,                 arm64_tahoe:       "98e9218a11ab243b50f41dc092aa691ea2b67e377c8f4c3180b2534daa3e282a"
+    sha256 cellar: :any,                 arm64_sequoia:     "88e0d5685d1d26583ce3cac5ae06004e09c1e644a994cbd842edf135c387eeee"
+    sha256 cellar: :any,                 arm64_sonoma:      "67698bf4e3539ca4a65b1abedf1412bebfca329752966af395fb6ad26fd01674"
+    sha256 cellar: :any,                 sonoma:            "bdccad5c69d8fc2e9b803d308e2a577e186d73126f2550e173bb6e73b5270d12"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "6a2daaf7d5f7c2851c7aedbe0916231d6f05a86bcca21deb89878a69160a8044"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "2e44b389fa4a9ef04945d051fd6b66e6a22b4389b968eccdcae9a1634a221886"
   end
 
   depends_on "pkgconf" => :build

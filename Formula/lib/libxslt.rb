@@ -15,12 +15,13 @@ class Libxslt < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "5247978b2374fcb0d2a4f9b0ce74c08fde85305c2d2816b458e8a64fc7013c7d"
-    sha256 cellar: :any,                 arm64_sequoia: "f1ba7468eded4f5db764b1a35802820af8be74455130443dce0748370b9d4e54"
-    sha256 cellar: :any,                 arm64_sonoma:  "97e95a9b6f10e601120a14bb003b6bb4ca6248123368425ea6295cc36f40f4e3"
-    sha256 cellar: :any,                 sonoma:        "75584f355ae00d06a7e5b1844e08acad55ea3a8d48db8425ef7f5066db590a5c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4a08d60e1ea50a89702e83b5ac483104831961bb42d47684ba7f6f8bd3bbed98"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4b03c065c1b506ebe8caac9d6ad14b9d46950faad527e6ca89aafcd9eec234e5"
+    sha256 cellar: :any,                 arm64_golden_gate: "3896c46d51ac6d3b8ee52ff27edf5516360d0b1bc88fdafed26c82e768479199"
+    sha256 cellar: :any,                 arm64_tahoe:       "5247978b2374fcb0d2a4f9b0ce74c08fde85305c2d2816b458e8a64fc7013c7d"
+    sha256 cellar: :any,                 arm64_sequoia:     "f1ba7468eded4f5db764b1a35802820af8be74455130443dce0748370b9d4e54"
+    sha256 cellar: :any,                 arm64_sonoma:      "97e95a9b6f10e601120a14bb003b6bb4ca6248123368425ea6295cc36f40f4e3"
+    sha256 cellar: :any,                 sonoma:            "75584f355ae00d06a7e5b1844e08acad55ea3a8d48db8425ef7f5066db590a5c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "4a08d60e1ea50a89702e83b5ac483104831961bb42d47684ba7f6f8bd3bbed98"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "4b03c065c1b506ebe8caac9d6ad14b9d46950faad527e6ca89aafcd9eec234e5"
   end
 
   head do

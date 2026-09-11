@@ -7,12 +7,13 @@ class LuaAT54 < Formula
   compatibility_version 1
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "209dbe6bdb75d426d1e92a1c7eb1c8d05c1b75a98bcc54d21a7fe9db2493ad91"
-    sha256 cellar: :any, arm64_sequoia: "14e2fe91a31d0bda4d02ec4839e56bc287f722e7e93c89f6fd8aefb5d86dd2c0"
-    sha256 cellar: :any, arm64_sonoma:  "1d4e39911fe6074ae9af23389bfc728301988895fa5f7672a78d81e67b65192e"
-    sha256 cellar: :any, sonoma:        "962190c154b83b2c965b91bb9cea35a9fee338d0a9b31781722097e3e9e6c770"
-    sha256 cellar: :any, arm64_linux:   "d6583ae636aff0d451020a2fb8c18bad3755b58327e6890b3e4832e9fdb36942"
-    sha256 cellar: :any, x86_64_linux:  "5e624addfcb1eb048c962f530561754d7d2c6715705e9a87843d315766182961"
+    sha256 cellar: :any, arm64_golden_gate: "65bf6b0278442ac7eb7d0bad9f8ba4fdc34ac76a11f4eb8531790ad800c4a5e5"
+    sha256 cellar: :any, arm64_tahoe:       "209dbe6bdb75d426d1e92a1c7eb1c8d05c1b75a98bcc54d21a7fe9db2493ad91"
+    sha256 cellar: :any, arm64_sequoia:     "14e2fe91a31d0bda4d02ec4839e56bc287f722e7e93c89f6fd8aefb5d86dd2c0"
+    sha256 cellar: :any, arm64_sonoma:      "1d4e39911fe6074ae9af23389bfc728301988895fa5f7672a78d81e67b65192e"
+    sha256 cellar: :any, sonoma:            "962190c154b83b2c965b91bb9cea35a9fee338d0a9b31781722097e3e9e6c770"
+    sha256 cellar: :any, arm64_linux:       "d6583ae636aff0d451020a2fb8c18bad3755b58327e6890b3e4832e9fdb36942"
+    sha256 cellar: :any, x86_64_linux:      "5e624addfcb1eb048c962f530561754d7d2c6715705e9a87843d315766182961"
   end
 
   keg_only :versioned_formula

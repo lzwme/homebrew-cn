@@ -13,12 +13,13 @@ class Autogen < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "11f0bdd04ae3db9ab2d6f2e12d2554db59111391ded8f941cd2bf08f79475f8a"
-    sha256 arm64_sequoia: "4d986c1d9d478a402348836169d0a35f56a6fc9f7ad7f5d14acfd1bcd101b9c9"
-    sha256 arm64_sonoma:  "58e8865aa281a5dea676f8ee73f750ef1e8f357dad557fb35c00c09a94d10566"
-    sha256 sonoma:        "7748ba11598da28c7e554768ed83c34a3fed3e5c2eea7ff9ac5811b652dd11b0"
-    sha256 arm64_linux:   "6778d7687bfc74353db0b0ae81d994322814df152f7ec42f576e5eb591fd2958"
-    sha256 x86_64_linux:  "d109eab1f0b3a0293f60e0da2360694b3027ac39b0015e3573c57d10125da77f"
+    sha256 arm64_golden_gate: "0cefdb80090b60dd4280623c745b4ee34c8ac525a999e3bd15c069701b9b9277"
+    sha256 arm64_tahoe:       "11f0bdd04ae3db9ab2d6f2e12d2554db59111391ded8f941cd2bf08f79475f8a"
+    sha256 arm64_sequoia:     "4d986c1d9d478a402348836169d0a35f56a6fc9f7ad7f5d14acfd1bcd101b9c9"
+    sha256 arm64_sonoma:      "58e8865aa281a5dea676f8ee73f750ef1e8f357dad557fb35c00c09a94d10566"
+    sha256 sonoma:            "7748ba11598da28c7e554768ed83c34a3fed3e5c2eea7ff9ac5811b652dd11b0"
+    sha256 arm64_linux:       "6778d7687bfc74353db0b0ae81d994322814df152f7ec42f576e5eb591fd2958"
+    sha256 x86_64_linux:      "d109eab1f0b3a0293f60e0da2360694b3027ac39b0015e3573c57d10125da77f"
   end
 
   depends_on "coreutils" => :build

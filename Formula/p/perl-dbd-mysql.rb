@@ -11,12 +11,13 @@ class PerlDbdMysql < Formula
   head "https://github.com/perl5-dbi/DBD-mysql.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "722a4fe1171da879885f2153bbf3a6100070663c002f0b2b0421c9d653294c06"
-    sha256 cellar: :any, arm64_sequoia: "769dca01680b8dd122820f8c4b26614c621fbf2525ff6732372bfd4a55ae9f14"
-    sha256 cellar: :any, arm64_sonoma:  "e08cef78e2659e0cb1ba664602ab5f89ed8c6ffb4cf228a901561cad028a0f92"
-    sha256 cellar: :any, sonoma:        "04048bde5e19f835d7d5db7f4d95e14f2a6290e25b71495953e3b188d2224a4c"
-    sha256 cellar: :any, arm64_linux:   "1896b31b7903fb882cb84e9a74baa978e38dff5058f1d83f60ec197df7f7ce22"
-    sha256 cellar: :any, x86_64_linux:  "32b7e598696ac82933ebc27bd98d830e12dd045e7c1daef816bc81124b8d2953"
+    sha256 cellar: :any, arm64_golden_gate: "d7244d397406741743d4c52f7614d276501244021d6509d0b98567fcdca3edc9"
+    sha256 cellar: :any, arm64_tahoe:       "722a4fe1171da879885f2153bbf3a6100070663c002f0b2b0421c9d653294c06"
+    sha256 cellar: :any, arm64_sequoia:     "769dca01680b8dd122820f8c4b26614c621fbf2525ff6732372bfd4a55ae9f14"
+    sha256 cellar: :any, arm64_sonoma:      "e08cef78e2659e0cb1ba664602ab5f89ed8c6ffb4cf228a901561cad028a0f92"
+    sha256 cellar: :any, sonoma:            "04048bde5e19f835d7d5db7f4d95e14f2a6290e25b71495953e3b188d2224a4c"
+    sha256 cellar: :any, arm64_linux:       "1896b31b7903fb882cb84e9a74baa978e38dff5058f1d83f60ec197df7f7ce22"
+    sha256 cellar: :any, x86_64_linux:      "32b7e598696ac82933ebc27bd98d830e12dd045e7c1daef816bc81124b8d2953"
   end
 
   keg_only <<~EOS

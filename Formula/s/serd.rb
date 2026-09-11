@@ -12,12 +12,13 @@ class Serd < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "d39be0f8c1498ccd0c59cd20ce515c65e21c38552407261dbd39f690224b0b43"
-    sha256 cellar: :any, arm64_sequoia: "e5ec3d695060a86f1296d2a486231c905b2946ba9778e359294da8d76f3db2b2"
-    sha256 cellar: :any, arm64_sonoma:  "652ac2982bc628fc3981b92958185da3498f8928dfab5760ca0bb7e6600ad516"
-    sha256 cellar: :any, sonoma:        "800e3c2a4fbe5caab080c8a25604526ef0d142b5410efb49b7920cfccbbb8afd"
-    sha256 cellar: :any, arm64_linux:   "56d6fbdeb73a5c41804d4f634571613de9399dda050dba1e895e5b8c0edc6823"
-    sha256 cellar: :any, x86_64_linux:  "09ad9868e32d76f4c1e6e3eea969b62d95952ab91b7faea824787b541119c58b"
+    sha256 cellar: :any, arm64_golden_gate: "e1262072c70ba4d562dfb5295475439b1e6112d623a38649b1e304e8c1eefe3c"
+    sha256 cellar: :any, arm64_tahoe:       "d39be0f8c1498ccd0c59cd20ce515c65e21c38552407261dbd39f690224b0b43"
+    sha256 cellar: :any, arm64_sequoia:     "e5ec3d695060a86f1296d2a486231c905b2946ba9778e359294da8d76f3db2b2"
+    sha256 cellar: :any, arm64_sonoma:      "652ac2982bc628fc3981b92958185da3498f8928dfab5760ca0bb7e6600ad516"
+    sha256 cellar: :any, sonoma:            "800e3c2a4fbe5caab080c8a25604526ef0d142b5410efb49b7920cfccbbb8afd"
+    sha256 cellar: :any, arm64_linux:       "56d6fbdeb73a5c41804d4f634571613de9399dda050dba1e895e5b8c0edc6823"
+    sha256 cellar: :any, x86_64_linux:      "09ad9868e32d76f4c1e6e3eea969b62d95952ab91b7faea824787b541119c58b"
   end
 
   depends_on "meson" => :build

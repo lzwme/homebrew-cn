@@ -7,12 +7,13 @@ class Pgpdump < Formula
   head "https://github.com/kazu-yamamoto/pgpdump.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7271c0c87d0ab2641ee5ba2b4a56087dc676c94c74114f35864c2b05bfd5d740"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "538a68ce61a4964200f14a933f9ef1153b3c6aeb7912e9652d5175e993bc5f01"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f7d16c551bec4f31b919c6c25373d2eb1217e97143c690ed1828be4c5376d186"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5bd623ea842793c2e06a30ec74e377ba98b6cc671c1bd3437f124af2a1b5028c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "37130fe3de7e8189c3ebdc12b5d8f83a7d91aeb6932183266b7c48ea93244b82"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cc370e7ed6cd6bf5ea931c21086f4c2c1e493f166f663212682b4d4427d50cb0"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "8f107a8fb7917f6cee982634dc50c048a487232e8c35227cf5dfa94ddce1785a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "7271c0c87d0ab2641ee5ba2b4a56087dc676c94c74114f35864c2b05bfd5d740"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "538a68ce61a4964200f14a933f9ef1153b3c6aeb7912e9652d5175e993bc5f01"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "f7d16c551bec4f31b919c6c25373d2eb1217e97143c690ed1828be4c5376d186"
+    sha256 cellar: :any_skip_relocation, sonoma:            "5bd623ea842793c2e06a30ec74e377ba98b6cc671c1bd3437f124af2a1b5028c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "37130fe3de7e8189c3ebdc12b5d8f83a7d91aeb6932183266b7c48ea93244b82"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "cc370e7ed6cd6bf5ea931c21086f4c2c1e493f166f663212682b4d4427d50cb0"
   end
 
   depends_on "autoconf" => :build

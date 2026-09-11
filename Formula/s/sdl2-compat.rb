@@ -7,11 +7,12 @@ class Sdl2Compat < Formula
   head "https://github.com/libsdl-org/sdl2-compat.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "fbceadf543763868897ae643c8b04377e0971dfc0e8f3d9397bd80565016ec9c"
-    sha256 cellar: :any, arm64_sequoia: "1c2b54a84b2a24100e29fe48fb5b0d8b1f401de2e4470d375bbc2246f92ab8d2"
-    sha256 cellar: :any, arm64_sonoma:  "0be6cd6dc97e29bf12d30baf103f813f34b3fbd9c7a1027c29edb0df2d85f239"
-    sha256 cellar: :any, arm64_linux:   "f27ec0f54b565d9e7455bba97d4b6a01b516f3d686d848fc6631637bbcdd1dc1"
-    sha256 cellar: :any, x86_64_linux:  "93931c0132043cfcc7daae237a8c79a67b563e5eebe35e58eaf1fcc6f4a48acf"
+    sha256 cellar: :any, arm64_golden_gate: "4df9883f271533e36571c11a809fc55d766ee89d3cdef4103eaa61915166b9bd"
+    sha256 cellar: :any, arm64_tahoe:       "fbceadf543763868897ae643c8b04377e0971dfc0e8f3d9397bd80565016ec9c"
+    sha256 cellar: :any, arm64_sequoia:     "1c2b54a84b2a24100e29fe48fb5b0d8b1f401de2e4470d375bbc2246f92ab8d2"
+    sha256 cellar: :any, arm64_sonoma:      "0be6cd6dc97e29bf12d30baf103f813f34b3fbd9c7a1027c29edb0df2d85f239"
+    sha256 cellar: :any, arm64_linux:       "f27ec0f54b565d9e7455bba97d4b6a01b516f3d686d848fc6631637bbcdd1dc1"
+    sha256 cellar: :any, x86_64_linux:      "93931c0132043cfcc7daae237a8c79a67b563e5eebe35e58eaf1fcc6f4a48acf"
   end
 
   depends_on "cmake" => :build

@@ -12,11 +12,12 @@ class Petsc < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "2eadc5e5cc9f673c3b92b9e9c501c721f23a35cb732c77406457228f8558ab91"
-    sha256 arm64_sequoia: "462817a9835ed8d437e4b3ea2d2c85a03f5801409c3b935cf360c3172b76b249"
-    sha256 arm64_sonoma:  "cc24d5b28967c26192170fea71b0837fdca35329488e3cb452cb86f8a93eb30e"
-    sha256 arm64_linux:   "24fd12da9daabcbe19aa821c4cd53808b82eb7a3a79e45acf274c068ba2f20c2"
-    sha256 x86_64_linux:  "b393216dd349f86ea2435c2f19fd4213df49ba3b8d15f14e457298f48b912214"
+    sha256 arm64_golden_gate: "4a2cfca740f3178d270dde8c21d65b7f38f739e89e93af21f3f7e9b6e7f18cf7"
+    sha256 arm64_tahoe:       "2eadc5e5cc9f673c3b92b9e9c501c721f23a35cb732c77406457228f8558ab91"
+    sha256 arm64_sequoia:     "462817a9835ed8d437e4b3ea2d2c85a03f5801409c3b935cf360c3172b76b249"
+    sha256 arm64_sonoma:      "cc24d5b28967c26192170fea71b0837fdca35329488e3cb452cb86f8a93eb30e"
+    sha256 arm64_linux:       "24fd12da9daabcbe19aa821c4cd53808b82eb7a3a79e45acf274c068ba2f20c2"
+    sha256 x86_64_linux:      "b393216dd349f86ea2435c2f19fd4213df49ba3b8d15f14e457298f48b912214"
   end
 
   depends_on "fftw"

@@ -11,12 +11,13 @@ class Soplex < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "683aace3a66e35fd99172eaf1608253eff103abb7fb83e2d47a630f88f8ce620"
-    sha256 cellar: :any, arm64_sequoia: "87d025017dd3ab6c7f793a27b7fa7f80e8e06c654eeb40322339add7850d9e9c"
-    sha256 cellar: :any, arm64_sonoma:  "c0fae1c0717700b652668c2aedd692ab1df6af0dc3ddfe4bd195004c16ea5c7d"
-    sha256 cellar: :any, sonoma:        "d1f5576aa2d11cc6cef6652762ba52665e682ba8e2bd4291ce9b95629ddefc18"
-    sha256 cellar: :any, arm64_linux:   "46ba78bed91f5158572392c78123c3435fe06c1036aa753e2c55f80f70577a15"
-    sha256 cellar: :any, x86_64_linux:  "f8ab7d8bb3208db083556ffa18526e110ff6a72f86a30581d077bf541669b0e5"
+    sha256 cellar: :any, arm64_golden_gate: "b63f11ac2ad17244504d1637a60644e99269bb65fbe31d22907ff57cc11d1ef3"
+    sha256 cellar: :any, arm64_tahoe:       "683aace3a66e35fd99172eaf1608253eff103abb7fb83e2d47a630f88f8ce620"
+    sha256 cellar: :any, arm64_sequoia:     "87d025017dd3ab6c7f793a27b7fa7f80e8e06c654eeb40322339add7850d9e9c"
+    sha256 cellar: :any, arm64_sonoma:      "c0fae1c0717700b652668c2aedd692ab1df6af0dc3ddfe4bd195004c16ea5c7d"
+    sha256 cellar: :any, sonoma:            "d1f5576aa2d11cc6cef6652762ba52665e682ba8e2bd4291ce9b95629ddefc18"
+    sha256 cellar: :any, arm64_linux:       "46ba78bed91f5158572392c78123c3435fe06c1036aa753e2c55f80f70577a15"
+    sha256 cellar: :any, x86_64_linux:      "f8ab7d8bb3208db083556ffa18526e110ff6a72f86a30581d077bf541669b0e5"
   end
 
   depends_on "cmake" => :build

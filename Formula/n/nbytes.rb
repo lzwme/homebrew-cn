@@ -6,12 +6,13 @@ class Nbytes < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "bc0a989ffab822c0ef0b5122cfc9f046be9b8c6b681dd09a3691c9963c44a282"
-    sha256 cellar: :any,                 arm64_sequoia: "c320de81e5ba5364dd7159fcdcbac9fe3a1475e3d8f830d2115b5390c1261a10"
-    sha256 cellar: :any,                 arm64_sonoma:  "38bf51d000e92a43262c605d5fb709eb5d9de5adcc243231adeac2bcccac4ce0"
-    sha256 cellar: :any,                 sonoma:        "ee96a893bd236484dfb80e82f772830ce0ffd7f88d6943d6a8bb98f7a79ad65e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4fd63cfc842aa392cfd48b810f40fd586c567aa82e7c4c07f59e85681cae317c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cd60fe046720705ec370907040b03d1b47c806b0b2544612374206f50e7a502a"
+    sha256 cellar: :any,                 arm64_golden_gate: "e12b964d3bb567375c1f8f0a106c474e6f31f3d47d60776f8f99123a28c9c3cd"
+    sha256 cellar: :any,                 arm64_tahoe:       "bc0a989ffab822c0ef0b5122cfc9f046be9b8c6b681dd09a3691c9963c44a282"
+    sha256 cellar: :any,                 arm64_sequoia:     "c320de81e5ba5364dd7159fcdcbac9fe3a1475e3d8f830d2115b5390c1261a10"
+    sha256 cellar: :any,                 arm64_sonoma:      "38bf51d000e92a43262c605d5fb709eb5d9de5adcc243231adeac2bcccac4ce0"
+    sha256 cellar: :any,                 sonoma:            "ee96a893bd236484dfb80e82f772830ce0ffd7f88d6943d6a8bb98f7a79ad65e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "4fd63cfc842aa392cfd48b810f40fd586c567aa82e7c4c07f59e85681cae317c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "cd60fe046720705ec370907040b03d1b47c806b0b2544612374206f50e7a502a"
   end
 
   depends_on "cmake" => :build

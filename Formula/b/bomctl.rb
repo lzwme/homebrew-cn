@@ -7,12 +7,13 @@ class Bomctl < Formula
   head "https://github.com/bomctl/bomctl.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a80f0acd6667c9b0f50c91abcf5ba91da45e46e384b3ab6f43d8aa4c4848fe27"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a80f0acd6667c9b0f50c91abcf5ba91da45e46e384b3ab6f43d8aa4c4848fe27"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a80f0acd6667c9b0f50c91abcf5ba91da45e46e384b3ab6f43d8aa4c4848fe27"
-    sha256 cellar: :any_skip_relocation, sonoma:        "cbe3c0f247c3af774ea99e69255cd79b21ab78f69692aec41700a4e45cdebd75"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ce7c85d6255bdcc402702cd830d53b3b17a6fb296e43218025aa9d6186dcd12c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dc2c4f8955a62ed561f259b1e26bc4ddf9133f0c6f3b3673a5c2b70440469c19"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "6a4a550c6385e3b87e5ebf381e4414342b5131954ea769cef130ad193b858500"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "a80f0acd6667c9b0f50c91abcf5ba91da45e46e384b3ab6f43d8aa4c4848fe27"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "a80f0acd6667c9b0f50c91abcf5ba91da45e46e384b3ab6f43d8aa4c4848fe27"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "a80f0acd6667c9b0f50c91abcf5ba91da45e46e384b3ab6f43d8aa4c4848fe27"
+    sha256 cellar: :any_skip_relocation, sonoma:            "cbe3c0f247c3af774ea99e69255cd79b21ab78f69692aec41700a4e45cdebd75"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "ce7c85d6255bdcc402702cd830d53b3b17a6fb296e43218025aa9d6186dcd12c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "dc2c4f8955a62ed561f259b1e26bc4ddf9133f0c6f3b3673a5c2b70440469c19"
   end
 
   depends_on "go" => :build

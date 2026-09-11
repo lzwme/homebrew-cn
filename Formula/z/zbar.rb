@@ -13,12 +13,13 @@ class Zbar < Formula
 
   bottle do
     rebuild 1
-    sha256 arm64_tahoe:   "b4deb14c35eead04e9aba7f9f8bf990e8adb3987efd2f721c8a600bcb8c91ba1"
-    sha256 arm64_sequoia: "1dc038ef320116fc0189292e46e6b1849df3caf33c45e53e2861a804c9a8986f"
-    sha256 arm64_sonoma:  "427a79a4f97bdf6e67de3feb529981a962e26b11003ddcc8ee7b4b0fd530d52b"
-    sha256 sonoma:        "69272a54a24e5899c18a2f1eb6d631528fcc12ffe29f0170d8d9b984aa7f6f81"
-    sha256 arm64_linux:   "0f702ac6c4a6c3fce3fc6cfaa596b7d80b7858dce5e67e7a39205c893f2bf09e"
-    sha256 x86_64_linux:  "9bd3a7733de4b5c4b15d7a1b8de0450a2176bcea9b995a0203f31cb8d5d3b722"
+    sha256 arm64_golden_gate: "3f0948f78c993d1315173d6cb2c764011a1be3d272b3bae0aa56946e68171647"
+    sha256 arm64_tahoe:       "b4deb14c35eead04e9aba7f9f8bf990e8adb3987efd2f721c8a600bcb8c91ba1"
+    sha256 arm64_sequoia:     "1dc038ef320116fc0189292e46e6b1849df3caf33c45e53e2861a804c9a8986f"
+    sha256 arm64_sonoma:      "427a79a4f97bdf6e67de3feb529981a962e26b11003ddcc8ee7b4b0fd530d52b"
+    sha256 sonoma:            "69272a54a24e5899c18a2f1eb6d631528fcc12ffe29f0170d8d9b984aa7f6f81"
+    sha256 arm64_linux:       "0f702ac6c4a6c3fce3fc6cfaa596b7d80b7858dce5e67e7a39205c893f2bf09e"
+    sha256 x86_64_linux:      "9bd3a7733de4b5c4b15d7a1b8de0450a2176bcea9b995a0203f31cb8d5d3b722"
   end
 
   head do

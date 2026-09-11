@@ -7,16 +7,17 @@ class Libapplewm < Formula
   compatibility_version 1
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:    "4b8eba3bb855a350470232642c48f34eb601408e1b7a4650bed5934bf0e6c6bc"
-    sha256 cellar: :any, arm64_sequoia:  "9aed87eee9abadbc7e94ee746f6b54588d3eacd9fb455b2d94a96c4b7a19425e"
-    sha256 cellar: :any, arm64_sonoma:   "a85cafdda17d42585277fa6d22fb7b7d71d030c9ec591d4cbcc528a32ef5410e"
-    sha256 cellar: :any, arm64_ventura:  "5292c56db7842b7784fc2d8cb11ca61ea9cfc1ec4c8293c4faeeaf9a8b8de876"
-    sha256 cellar: :any, arm64_monterey: "054032d8ea48004ed41b659815c0d934cb386280d7651ea304118395bafdc360"
-    sha256 cellar: :any, arm64_big_sur:  "0356059f0accd7c74e4082d944d1404c5b36457d8b3ecc7bee80faeb7523b16b"
-    sha256 cellar: :any, sonoma:         "beefb395695ff755d3d88c6ce1373f03954888d22a737d353059500673605d3d"
-    sha256 cellar: :any, ventura:        "dff0dd7ef1cf645b88d606c7580c60294693c9ebe8a59ccfe477c66ab1765e37"
-    sha256 cellar: :any, monterey:       "05a90d77f0c0803ee859872051157b3070f97b8ab7999d7f4c7ed02e1df57a24"
-    sha256 cellar: :any, big_sur:        "33eb76e5d25de65e9970f5cb9795c8933090ce9eb4e2c9574d589c0b222dde39"
+    sha256 cellar: :any, arm64_golden_gate: "e1c364b61cc6bd20793b935c90718d4c0966fed9f795a6e6a69d8e74d0eb0f87"
+    sha256 cellar: :any, arm64_tahoe:       "4b8eba3bb855a350470232642c48f34eb601408e1b7a4650bed5934bf0e6c6bc"
+    sha256 cellar: :any, arm64_sequoia:     "9aed87eee9abadbc7e94ee746f6b54588d3eacd9fb455b2d94a96c4b7a19425e"
+    sha256 cellar: :any, arm64_sonoma:      "a85cafdda17d42585277fa6d22fb7b7d71d030c9ec591d4cbcc528a32ef5410e"
+    sha256 cellar: :any, arm64_ventura:     "5292c56db7842b7784fc2d8cb11ca61ea9cfc1ec4c8293c4faeeaf9a8b8de876"
+    sha256 cellar: :any, arm64_monterey:    "054032d8ea48004ed41b659815c0d934cb386280d7651ea304118395bafdc360"
+    sha256 cellar: :any, arm64_big_sur:     "0356059f0accd7c74e4082d944d1404c5b36457d8b3ecc7bee80faeb7523b16b"
+    sha256 cellar: :any, sonoma:            "beefb395695ff755d3d88c6ce1373f03954888d22a737d353059500673605d3d"
+    sha256 cellar: :any, ventura:           "dff0dd7ef1cf645b88d606c7580c60294693c9ebe8a59ccfe477c66ab1765e37"
+    sha256 cellar: :any, monterey:          "05a90d77f0c0803ee859872051157b3070f97b8ab7999d7f4c7ed02e1df57a24"
+    sha256 cellar: :any, big_sur:           "33eb76e5d25de65e9970f5cb9795c8933090ce9eb4e2c9574d589c0b222dde39"
   end
 
   depends_on "pkgconf" => :build

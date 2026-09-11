@@ -1,18 +1,17 @@
 class Ocm < Formula
   desc "CLI for the Red Hat OpenShift Cluster Manager"
   homepage "https://www.openshift.com/"
-  url "https://ghfast.top/https://github.com/openshift-online/ocm-cli/archive/refs/tags/v1.0.15.tar.gz"
-  sha256 "f8fea3b5ef66825646fb3adfeb8dbf0abb76fee3cc1a27f083d37280296bd31f"
+  url "https://ghfast.top/https://github.com/openshift-online/ocm-cli/archive/refs/tags/v1.0.16.tar.gz"
+  sha256 "69c49744c3c7332d6e95f77a61915225906fb024a4e519014995632fd0bcc37e"
   license "Apache-2.0"
   head "https://github.com/openshift-online/ocm-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2a4fc99c64f3f269d5a192ccfb86ffca68dd0f4b3bd49333f6c036f8eace2736"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "72bccd73485ef9343d4aa9ae3e9bebe12f5f44e6f859b443b8284f52391693d5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "98f383e96cce429cbe762b6b007848e355b141cb04037e93d81efb3b75754d19"
-    sha256 cellar: :any_skip_relocation, sonoma:        "10d260c2c12e11a588f87bb420a69e583af2f9318cdaf26938ad84e3eba0c140"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b3310941e6ce644c3b4981a5bab1e5353ce333035dae96959229da97f914be62"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "76e29a051a81a63a7f0831f0d374e9951597f65dc0be217916d38015d703cdea"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b0db7904125e42eac94a02883c6ba9343f82e0ab279d08360d49b6ab078dbb0e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e189b1188a2646cd5b6de5be3a730e3fa58ea49f8d5ed7f1e8fda3aee6d805ff"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a1a618991da7aba41487605db4fb061e78aa24e8e1e052719456822ae0999cd1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "626097f703a7d4554e964654ff5294a0be82ce48190c8160e15e7c309f7d4db3"
+    sha256 cellar: :any,                 x86_64_linux:  "7aef5ba69986799220a9613e965d590c355a5b1b2e48ed31b29aa0542dacb094"
   end
 
   depends_on "go" => :build

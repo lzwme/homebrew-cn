@@ -7,12 +7,13 @@ class CargoBundle < Formula
   head "https://github.com/burtonageo/cargo-bundle.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d90ead8844e0d2a937132fb9f59a6d547f024efc24e2d8e1e84fe1d39db53748"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1244930efa3939e12dcbdf74e4195e0330491d3f87d504311e511d17a526e315"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2147b5460f747be986c3930c64622e744f5a21e77cf16e29a3ed75ff0aa41b71"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a25d957a67641f4bf3ed6ab61462a72aed20b13bf7c9013d98c536b23f7bf670"
-    sha256 cellar: :any,                 arm64_linux:   "c85d8f26eb34760821105d9f8b48a96ff609fd0f20e41e438501d0f0652cb7fc"
-    sha256 cellar: :any,                 x86_64_linux:  "53e8cf1605f5eadf0a26920e2c5477cca6e9411e46629e83b7c71c9dfa596232"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "5c1cc9c717e3730d748a6b2614d78aada028c7d2825cc77c8c2f4951fb79e821"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "d90ead8844e0d2a937132fb9f59a6d547f024efc24e2d8e1e84fe1d39db53748"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "1244930efa3939e12dcbdf74e4195e0330491d3f87d504311e511d17a526e315"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "2147b5460f747be986c3930c64622e744f5a21e77cf16e29a3ed75ff0aa41b71"
+    sha256 cellar: :any_skip_relocation, sonoma:            "a25d957a67641f4bf3ed6ab61462a72aed20b13bf7c9013d98c536b23f7bf670"
+    sha256 cellar: :any,                 arm64_linux:       "c85d8f26eb34760821105d9f8b48a96ff609fd0f20e41e438501d0f0652cb7fc"
+    sha256 cellar: :any,                 x86_64_linux:      "53e8cf1605f5eadf0a26920e2c5477cca6e9411e46629e83b7c71c9dfa596232"
   end
 
   depends_on "pkgconf" => :build

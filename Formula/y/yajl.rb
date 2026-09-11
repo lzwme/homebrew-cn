@@ -7,12 +7,12 @@ class Yajl < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "47d4da4cccfb876590a168cfe8933efbef1ebf20f34b6e77ccbca9fa3781ffd7"
-    sha256 cellar: :any, arm64_sequoia: "5e2fdde552817d6ad12ab167fd2abc24909be440c019ffe1de58d96d1db77789"
-    sha256 cellar: :any, arm64_sonoma:  "b732da866e20da83003aa303aacdb628d83682c716e06d9ac4d3da9cdf06a3f3"
-    sha256 cellar: :any, sonoma:        "cfc578e373be609adcc6d3e66fcc062c2210113fd0a03bfb258921d2f6f227a5"
-    sha256 cellar: :any, arm64_linux:   "43391d9a81434dab4d9d438c1154e1af27f1d13b03473898db15037bee6d0a1e"
-    sha256 cellar: :any, x86_64_linux:  "d859ff07b32164d87a7545f5b9a0a44cd4dd3ef9ad74388925061a1f5ff011f6"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "deec3842a98f0f3dddeb406eacfc8355c1822179f6a6e7af0c310ef456bdd2b0"
+    sha256 cellar: :any, arm64_tahoe:       "5d1b2c74b5de11ed9ec440b7d03090c53cafe949c59d2d5405bec9f93317cf87"
+    sha256 cellar: :any, arm64_sequoia:     "0aa351ee73c6d3c5aa03accfbe29c7b338948011bca27a16aaa0249477c83b98"
+    sha256 cellar: :any, arm64_linux:       "6cd5d794e58376d88f0e12f6b3766bd846c2756a9177fac5136546808ec26bc1"
+    sha256 cellar: :any, x86_64_linux:      "952b6eec73693e1433b9c1eff9d14645098e8c6f4f384b8bd8963bc13a116166"
   end
 
   depends_on "cmake" => :build
@@ -20,14 +20,16 @@ class Yajl < Formula
   # Upstream is unmaintained so we use Debian patches to fix CVEs and other
   # issues while formula is still used by non-deprecated dependents.
   patch do
-    url "https://deb.debian.org/debian/pool/main/y/yajl/yajl_2.1.0-6.debian.tar.xz"
-    sha256 "462fb384bef46c7252001c609dabc126624a1b71e9597cc16827d25a0226453f"
+    url "https://deb.debian.org/debian/pool/main/y/yajl/yajl_2.1.0-7.debian.tar.xz"
+    mirror "https://snapshot.debian.org/archive/debian/20260901T022952Z/pool/main/y/yajl/yajl_2.1.0-7.debian.tar.xz"
+    sha256 "9196bd56b2a806d1b9794892dc47e994e5d76feee7a8208ee11d541b7421be78"
     type :unofficial
     apply "patches/dynamically-link-tools.patch",
           "patches/CVE-2017-16516.patch",
           "patches/CVE-2022-24795.patch",
           "patches/CVE-2023-33460.patch",
-          "patches/6fe59ca50dfd65bdb3d1c87a27245b2dd1a072f9.patch" # cmake 4
+          "patches/6fe59ca50dfd65bdb3d1c87a27245b2dd1a072f9.patch", # cmake 4
+          "patches/non-gcc-visibility-check.patch"
   end
 
   def install

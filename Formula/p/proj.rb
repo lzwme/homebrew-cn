@@ -14,12 +14,13 @@ class Proj < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "c532d0adc3fdc96268bab9406be54069c26476eb5b8cecb8f748d5df4d1978da"
-    sha256 arm64_sequoia: "ec5842c5c5660dccf23487fd8f70e892f91e37107e9feb849b731b3044022cf6"
-    sha256 arm64_sonoma:  "628b330cac12775231d22bd1978606e10e47dcb8c53f570901d122e5077f3d90"
-    sha256 sonoma:        "9b66a3600a992e790a90dee9baa9e6cd18ddb35caf6460ad4f59a8e105aa0706"
-    sha256 arm64_linux:   "3774b7278555c3d2d39a73f05d08bea617fc08427f62d3a6231dd48764053f4c"
-    sha256 x86_64_linux:  "fa40fef6883cfb3b098a98a7630ffe26a131e4b6996291bb8c1b873b4393ea72"
+    sha256 arm64_golden_gate: "fe393be948092045070ac7cda6e4df21a9c97bf09869868b28e5f8555ab141d8"
+    sha256 arm64_tahoe:       "c532d0adc3fdc96268bab9406be54069c26476eb5b8cecb8f748d5df4d1978da"
+    sha256 arm64_sequoia:     "ec5842c5c5660dccf23487fd8f70e892f91e37107e9feb849b731b3044022cf6"
+    sha256 arm64_sonoma:      "628b330cac12775231d22bd1978606e10e47dcb8c53f570901d122e5077f3d90"
+    sha256 sonoma:            "9b66a3600a992e790a90dee9baa9e6cd18ddb35caf6460ad4f59a8e105aa0706"
+    sha256 arm64_linux:       "3774b7278555c3d2d39a73f05d08bea617fc08427f62d3a6231dd48764053f4c"
+    sha256 x86_64_linux:      "fa40fef6883cfb3b098a98a7630ffe26a131e4b6996291bb8c1b873b4393ea72"
   end
 
   depends_on "cmake" => :build

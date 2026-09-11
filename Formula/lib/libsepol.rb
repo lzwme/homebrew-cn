@@ -11,12 +11,13 @@ class Libsepol < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "5ac2c0ebc7c086598a60b278d4d5fee2a9a4ca777458d56bac01e70cad1a1a6d"
-    sha256 cellar: :any, arm64_sequoia: "a20b8bb3630860f9a4f767e2618197a45236e91be7dc215daee8374b55d2102d"
-    sha256 cellar: :any, arm64_sonoma:  "f8250e62eea04416711d611a79761f4fd43c6e9df90b1a6a6f8f184b824b5f1b"
-    sha256 cellar: :any, sonoma:        "3d1ba0dac3c2aaf2fbdf99de512dfdb75d775debb39f3196e4c100848b5621c1"
-    sha256 cellar: :any, arm64_linux:   "1edbd72b4c0b1494cbfc31379f05366bec73eb7100436a59c3f7aad352d25c6a"
-    sha256 cellar: :any, x86_64_linux:  "cb6027d6cc54aaf3d30a717c236836957a0439b9398783edd5c42885dabdfe0a"
+    sha256 cellar: :any, arm64_golden_gate: "cb8805be0297b49ef4aae1eaa6a31285ef171810f40f025ee639fd30dbf1363b"
+    sha256 cellar: :any, arm64_tahoe:       "5ac2c0ebc7c086598a60b278d4d5fee2a9a4ca777458d56bac01e70cad1a1a6d"
+    sha256 cellar: :any, arm64_sequoia:     "a20b8bb3630860f9a4f767e2618197a45236e91be7dc215daee8374b55d2102d"
+    sha256 cellar: :any, arm64_sonoma:      "f8250e62eea04416711d611a79761f4fd43c6e9df90b1a6a6f8f184b824b5f1b"
+    sha256 cellar: :any, sonoma:            "3d1ba0dac3c2aaf2fbdf99de512dfdb75d775debb39f3196e4c100848b5621c1"
+    sha256 cellar: :any, arm64_linux:       "1edbd72b4c0b1494cbfc31379f05366bec73eb7100436a59c3f7aad352d25c6a"
+    sha256 cellar: :any, x86_64_linux:      "cb6027d6cc54aaf3d30a717c236836957a0439b9398783edd5c42885dabdfe0a"
   end
 
   depends_on "rpm2cpio" => :test

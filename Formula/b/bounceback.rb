@@ -7,12 +7,13 @@ class Bounceback < Formula
   head "https://github.com/D00Movenok/BounceBack.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e7096c878b874f7954b658549c2498418a7bf5ca840ee6f8d0e28438269925c9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e7096c878b874f7954b658549c2498418a7bf5ca840ee6f8d0e28438269925c9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e7096c878b874f7954b658549c2498418a7bf5ca840ee6f8d0e28438269925c9"
-    sha256 cellar: :any_skip_relocation, sonoma:        "461ef1bbbee371072559282a90e6c41009f20b5f2c2411edf5cc77ec72100a19"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "73bc1080c0f6c4b689e82e5bf20ba1188d9eae00100dac6814d9f781e3652685"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "80740283f2ee9072d209356cf0d831b2ad37a4aa785a14cd93dda9891bf6e184"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "289758f82700d92dbadfda651818eac9b7a56a114712f5487655ec353554f01f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "e7096c878b874f7954b658549c2498418a7bf5ca840ee6f8d0e28438269925c9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "e7096c878b874f7954b658549c2498418a7bf5ca840ee6f8d0e28438269925c9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "e7096c878b874f7954b658549c2498418a7bf5ca840ee6f8d0e28438269925c9"
+    sha256 cellar: :any_skip_relocation, sonoma:            "461ef1bbbee371072559282a90e6c41009f20b5f2c2411edf5cc77ec72100a19"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "73bc1080c0f6c4b689e82e5bf20ba1188d9eae00100dac6814d9f781e3652685"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "80740283f2ee9072d209356cf0d831b2ad37a4aa785a14cd93dda9891bf6e184"
   end
 
   depends_on "go" => :build

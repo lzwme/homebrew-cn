@@ -12,12 +12,13 @@ class Foma < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "585a4ed242e82fa06b31fffea4747c3dcfb370d15b774ee2c099e89352494185"
-    sha256 cellar: :any,                 arm64_sequoia: "54a82aed63a09cf0195f9473699e03bb64873b524684a4bab75eba204f80a97a"
-    sha256 cellar: :any,                 arm64_sonoma:  "bc850a65c0df114711be58efc04e36402297f4f2df1a1c6ae2c303ab35bd80e4"
-    sha256 cellar: :any,                 sonoma:        "20e9102b4df0a214b23c3eb5cd1d8b5e8d485b46c77e6e6913086889ac98f0c4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2fda34fa0f539af95305f663109e71bc25f679d9fa0712298c6b2785bdf94293"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3d226105516d5b70e4981e53bb1fac0d8d7d61ba4fbae352c76c2f2223263f1f"
+    sha256 cellar: :any,                 arm64_golden_gate: "f73577263db3f8dd48e4ad7314cf1a69c28ec2a101cf6bc5c16e18c74b3f847a"
+    sha256 cellar: :any,                 arm64_tahoe:       "585a4ed242e82fa06b31fffea4747c3dcfb370d15b774ee2c099e89352494185"
+    sha256 cellar: :any,                 arm64_sequoia:     "54a82aed63a09cf0195f9473699e03bb64873b524684a4bab75eba204f80a97a"
+    sha256 cellar: :any,                 arm64_sonoma:      "bc850a65c0df114711be58efc04e36402297f4f2df1a1c6ae2c303ab35bd80e4"
+    sha256 cellar: :any,                 sonoma:            "20e9102b4df0a214b23c3eb5cd1d8b5e8d485b46c77e6e6913086889ac98f0c4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "2fda34fa0f539af95305f663109e71bc25f679d9fa0712298c6b2785bdf94293"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "3d226105516d5b70e4981e53bb1fac0d8d7d61ba4fbae352c76c2f2223263f1f"
   end
 
   depends_on "bison" => :build # requires Bison 3.0+

@@ -12,12 +12,13 @@ class Libgcrypt < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "21a6a5d04e73e33cb61a72000a1e3adf785e2fb81e0beca980b878ef3912a70c"
-    sha256 cellar: :any, arm64_sequoia: "b006f4e8e2f4e69a7997ad2f0232d582591a3050bf6c3de337a0bafe01f0a8a8"
-    sha256 cellar: :any, arm64_sonoma:  "207ab3c57910c3661b3aa2f51bc07e946c17c576173f74da2f81c1b3ee243fe9"
-    sha256 cellar: :any, sonoma:        "e34a1bac9f4df523b3c05d7410c48039fc9470100d39880183a8c6495643f0bd"
-    sha256 cellar: :any, arm64_linux:   "b9f066a6a9236f00f90c061583d0b2a3df7820fcd35f5158b1c792fefd896d4c"
-    sha256 cellar: :any, x86_64_linux:  "f854464cd5716c0a1231b1f2642fa1cb46aa5181e5c734cad3d7225cd32db4bf"
+    sha256 cellar: :any, arm64_golden_gate: "ad2dde1b633838bb7f95d1c9b97dab473fb85b53354b073b60d7064d4cf3ccfe"
+    sha256 cellar: :any, arm64_tahoe:       "21a6a5d04e73e33cb61a72000a1e3adf785e2fb81e0beca980b878ef3912a70c"
+    sha256 cellar: :any, arm64_sequoia:     "b006f4e8e2f4e69a7997ad2f0232d582591a3050bf6c3de337a0bafe01f0a8a8"
+    sha256 cellar: :any, arm64_sonoma:      "207ab3c57910c3661b3aa2f51bc07e946c17c576173f74da2f81c1b3ee243fe9"
+    sha256 cellar: :any, sonoma:            "e34a1bac9f4df523b3c05d7410c48039fc9470100d39880183a8c6495643f0bd"
+    sha256 cellar: :any, arm64_linux:       "b9f066a6a9236f00f90c061583d0b2a3df7820fcd35f5158b1c792fefd896d4c"
+    sha256 cellar: :any, x86_64_linux:      "f854464cd5716c0a1231b1f2642fa1cb46aa5181e5c734cad3d7225cd32db4bf"
   end
 
   depends_on "libgpg-error"

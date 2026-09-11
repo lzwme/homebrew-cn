@@ -7,14 +7,15 @@ class Cffi < Formula
   compatibility_version 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a9f59871dac0d694d909c4d953173dff0c3058d99c5d192368a40f07d0e6deb9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c9529601cff7bb2ee4e727b1063cbdef22d975069c7575c6906cfa7bdaa3dcc2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ca713d885bb196272e12df99ee4e0c8fc7e5e8ab45e54f281157e4afbc083850"
-    sha256 cellar: :any_skip_relocation, tahoe:         "e8d3fba9e24ffa2eda3600b080d5b81f89374f94c2b9d1e81bd3f13c1f4fdf90"
-    sha256 cellar: :any_skip_relocation, sequoia:       "12fbc1cab5b78082948c40d7ff015a910c3ff4013c243423f9b32e02f5f0b18f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "940deace958ce189db5daa6e5d7f7f3144f99cfd6c330bf7e921caebf43cb88f"
-    sha256                               arm64_linux:   "7a26e629b0c99f06aea28340fffa4870aafacbc361a0824d3dee84740a02703c"
-    sha256                               x86_64_linux:  "81811e785c1c31c464b96060339d5d173fc421f39b6cdd537bbef631dcbfabff"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "2a3a177ba39a63cad13cfc77145c076cad0908025aae134ee505b5a49ffbcc3f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "a9f59871dac0d694d909c4d953173dff0c3058d99c5d192368a40f07d0e6deb9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "c9529601cff7bb2ee4e727b1063cbdef22d975069c7575c6906cfa7bdaa3dcc2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "ca713d885bb196272e12df99ee4e0c8fc7e5e8ab45e54f281157e4afbc083850"
+    sha256 cellar: :any_skip_relocation, tahoe:             "e8d3fba9e24ffa2eda3600b080d5b81f89374f94c2b9d1e81bd3f13c1f4fdf90"
+    sha256 cellar: :any_skip_relocation, sequoia:           "12fbc1cab5b78082948c40d7ff015a910c3ff4013c243423f9b32e02f5f0b18f"
+    sha256 cellar: :any_skip_relocation, sonoma:            "940deace958ce189db5daa6e5d7f7f3144f99cfd6c330bf7e921caebf43cb88f"
+    sha256                               arm64_linux:       "7a26e629b0c99f06aea28340fffa4870aafacbc361a0824d3dee84740a02703c"
+    sha256                               x86_64_linux:      "81811e785c1c31c464b96060339d5d173fc421f39b6cdd537bbef631dcbfabff"
   end
 
   depends_on "python@3.13" => [:build, :test]

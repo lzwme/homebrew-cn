@@ -7,12 +7,13 @@ class Duckdb < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "ce2c29e9534404052072cfb6a3a01b384c00ad69484285fc0779e05acb1ff0b7"
-    sha256 cellar: :any, arm64_sequoia: "7749ce1d58110b2ac15690d2a6a0d95926e47f60206327ba92142a0dcb5d1a56"
-    sha256 cellar: :any, arm64_sonoma:  "696d9997a895034d76ce44d30a6d34df67b8c66d93857a4070f6a69ad587d46b"
-    sha256 cellar: :any, sonoma:        "685ef15e1586acbb115664c70b0203df61ef6eb31f8de9d3d66beeded7f07076"
-    sha256 cellar: :any, arm64_linux:   "7b90524dd811def9e3b26f707a2d018a2d0844720088129d8e7f2db25efb1ad2"
-    sha256 cellar: :any, x86_64_linux:  "6c046cb30353e8879f64066663a4515fb4d6975abc939bdcc9cea173a202ab3d"
+    sha256 cellar: :any, arm64_golden_gate: "e771a4e4c02340488c255b930ef0cd3ec0688ca032e71f4e89dc32c0244d4ae0"
+    sha256 cellar: :any, arm64_tahoe:       "ce2c29e9534404052072cfb6a3a01b384c00ad69484285fc0779e05acb1ff0b7"
+    sha256 cellar: :any, arm64_sequoia:     "7749ce1d58110b2ac15690d2a6a0d95926e47f60206327ba92142a0dcb5d1a56"
+    sha256 cellar: :any, arm64_sonoma:      "696d9997a895034d76ce44d30a6d34df67b8c66d93857a4070f6a69ad587d46b"
+    sha256 cellar: :any, sonoma:            "685ef15e1586acbb115664c70b0203df61ef6eb31f8de9d3d66beeded7f07076"
+    sha256 cellar: :any, arm64_linux:       "7b90524dd811def9e3b26f707a2d018a2d0844720088129d8e7f2db25efb1ad2"
+    sha256 cellar: :any, x86_64_linux:      "6c046cb30353e8879f64066663a4515fb4d6975abc939bdcc9cea173a202ab3d"
   end
 
   depends_on "cmake" => [:build, :test]

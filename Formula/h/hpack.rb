@@ -8,12 +8,13 @@ class Hpack < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "26fd2b22f65fa3a736df0f9fcc7b936f7d609bcd558c510225b5ab6bff5d5022"
-    sha256 cellar: :any, arm64_sequoia: "827399fe456b21b25a93e367d4c06339d35ea01df2052f0fa145b12fe1524656"
-    sha256 cellar: :any, arm64_sonoma:  "e6dd714a1fa74261687a61dfb0c4a7f9e28c0357fe99c62c62aded9a53034dbc"
-    sha256 cellar: :any, sonoma:        "d68cc8dd5761da1fe4d18ecca4e3c47579bb325575a837e74ac46a0deed91a02"
-    sha256 cellar: :any, arm64_linux:   "7c76e69f62a536816dcd7b1a9327509a61037b3813faa90866a4b052c9e94249"
-    sha256 cellar: :any, x86_64_linux:  "b0cafe774054ceabd1888c225082d1d8321455cbeb016b6100a5f2e45743fa14"
+    sha256 cellar: :any, arm64_golden_gate: "d4b64d88d2af6c2ac198d4664bc1f63f099f826d0c6ed6bda9983bda1a7e30b7"
+    sha256 cellar: :any, arm64_tahoe:       "26fd2b22f65fa3a736df0f9fcc7b936f7d609bcd558c510225b5ab6bff5d5022"
+    sha256 cellar: :any, arm64_sequoia:     "827399fe456b21b25a93e367d4c06339d35ea01df2052f0fa145b12fe1524656"
+    sha256 cellar: :any, arm64_sonoma:      "e6dd714a1fa74261687a61dfb0c4a7f9e28c0357fe99c62c62aded9a53034dbc"
+    sha256 cellar: :any, sonoma:            "d68cc8dd5761da1fe4d18ecca4e3c47579bb325575a837e74ac46a0deed91a02"
+    sha256 cellar: :any, arm64_linux:       "7c76e69f62a536816dcd7b1a9327509a61037b3813faa90866a4b052c9e94249"
+    sha256 cellar: :any, x86_64_linux:      "b0cafe774054ceabd1888c225082d1d8321455cbeb016b6100a5f2e45743fa14"
   end
 
   depends_on "cabal-install" => :build

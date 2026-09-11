@@ -11,12 +11,13 @@ class Pugixml < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "8de9b221f2d31147de65ccf2a91f088baf8f16198c916e704618c74f04b2d93c"
-    sha256 cellar: :any, arm64_sequoia: "1483e3c7254de95b12568d9841f76c2d2324ddad5cc3902cd44facd14c751b66"
-    sha256 cellar: :any, arm64_sonoma:  "0631c09780b23a8b5ed5fb14031680a34715319aa6efe5b9919964c8095eca54"
-    sha256 cellar: :any, sonoma:        "2e2c27fa84a1103fe342398de9b3d8c92f2b39574ddfc2d21cf7f2308a0dc27d"
-    sha256 cellar: :any, arm64_linux:   "5093fae4721a6e05f51ae71c4ffe7b88c09a942cb38834560f98e7494e247401"
-    sha256 cellar: :any, x86_64_linux:  "856f8e8c6388191cdb0afa8d126e396c40bcb8870c3645ffa5eb965ff444dc98"
+    sha256 cellar: :any, arm64_golden_gate: "d8cc90416d203bc021aaebf5913adcf7f9c8a19c55b1e0119979f5fdf403be30"
+    sha256 cellar: :any, arm64_tahoe:       "8de9b221f2d31147de65ccf2a91f088baf8f16198c916e704618c74f04b2d93c"
+    sha256 cellar: :any, arm64_sequoia:     "1483e3c7254de95b12568d9841f76c2d2324ddad5cc3902cd44facd14c751b66"
+    sha256 cellar: :any, arm64_sonoma:      "0631c09780b23a8b5ed5fb14031680a34715319aa6efe5b9919964c8095eca54"
+    sha256 cellar: :any, sonoma:            "2e2c27fa84a1103fe342398de9b3d8c92f2b39574ddfc2d21cf7f2308a0dc27d"
+    sha256 cellar: :any, arm64_linux:       "5093fae4721a6e05f51ae71c4ffe7b88c09a942cb38834560f98e7494e247401"
+    sha256 cellar: :any, x86_64_linux:      "856f8e8c6388191cdb0afa8d126e396c40bcb8870c3645ffa5eb965ff444dc98"
   end
 
   depends_on "cmake" => :build

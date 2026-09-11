@@ -7,12 +7,13 @@ class Xauth < Formula
   compatibility_version 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "c41ec4cab2cf6579ed12863a167d2c8cd5d9ee442f75e59687c616094960a6cc"
-    sha256 cellar: :any,                 arm64_sequoia: "7c1cda56269b3c051bdad31e681565c66e58c2dcbcb029381de38dfbb353353d"
-    sha256 cellar: :any,                 arm64_sonoma:  "982b0370134b594c6c98433bc73c4e3efda11525e729c1b91fd388a71b85ca7e"
-    sha256 cellar: :any,                 sonoma:        "cead5271fac2eb731921d8e90ba19568d94c7dfe90f3401619e557e5481af528"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ecad1dc56975cdab489d246cf7fe25ae04a08298e4482195dbc5ddd91783d3db"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8f2c4255c039ae81f80704d6965f1ab02ad51877e8ca0a93e5d00a9b36e925f4"
+    sha256 cellar: :any,                 arm64_golden_gate: "93961faeb6a6daa771a2f9dca3eda8ab575220f28730b9af01070c5dca2568a4"
+    sha256 cellar: :any,                 arm64_tahoe:       "c41ec4cab2cf6579ed12863a167d2c8cd5d9ee442f75e59687c616094960a6cc"
+    sha256 cellar: :any,                 arm64_sequoia:     "7c1cda56269b3c051bdad31e681565c66e58c2dcbcb029381de38dfbb353353d"
+    sha256 cellar: :any,                 arm64_sonoma:      "982b0370134b594c6c98433bc73c4e3efda11525e729c1b91fd388a71b85ca7e"
+    sha256 cellar: :any,                 sonoma:            "cead5271fac2eb731921d8e90ba19568d94c7dfe90f3401619e557e5481af528"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "ecad1dc56975cdab489d246cf7fe25ae04a08298e4482195dbc5ddd91783d3db"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "8f2c4255c039ae81f80704d6965f1ab02ad51877e8ca0a93e5d00a9b36e925f4"
   end
 
   depends_on "pkgconf" => :build

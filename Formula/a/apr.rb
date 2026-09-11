@@ -8,14 +8,15 @@ class Apr < Formula
   compatibility_version 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "a8dbcf3f996ba1148b936081612ff5228cb4ba5a08de6635a695bd9ec6963266"
-    sha256 cellar: :any,                 arm64_sequoia: "58a68eee9f289319c41100b42bddbaa265366c093e0c0f83e4295c7a535d7395"
-    sha256 cellar: :any,                 arm64_sonoma:  "d89324cbc51a250e109e00dc2e90ce77611058027060c39c83bb771118502332"
-    sha256 cellar: :any,                 arm64_ventura: "c9c536ea3504e24b30b5cf6187100f746eba704e237d3839d0c04feb98df623e"
-    sha256 cellar: :any,                 sonoma:        "fdf0f628598225db7ea43128abaf944011df61e2469811709c250607745b8570"
-    sha256 cellar: :any,                 ventura:       "327273dae10ae18781b2f347531253d968e0c06533c913a80d775a5972e65477"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ee70c4b7041ea9743a1f87c8c0c9dc14e7a3372ab5d5e073912913b83cf2bcc3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a52537b5ff653a7c477dd67be99faeb1684d3002cd9afe6c24501118083a6154"
+    sha256 cellar: :any,                 arm64_golden_gate: "38aa447e66b938737333b9858aad2386ff52daa70aba251982312f63e73f878f"
+    sha256 cellar: :any,                 arm64_tahoe:       "a8dbcf3f996ba1148b936081612ff5228cb4ba5a08de6635a695bd9ec6963266"
+    sha256 cellar: :any,                 arm64_sequoia:     "58a68eee9f289319c41100b42bddbaa265366c093e0c0f83e4295c7a535d7395"
+    sha256 cellar: :any,                 arm64_sonoma:      "d89324cbc51a250e109e00dc2e90ce77611058027060c39c83bb771118502332"
+    sha256 cellar: :any,                 arm64_ventura:     "c9c536ea3504e24b30b5cf6187100f746eba704e237d3839d0c04feb98df623e"
+    sha256 cellar: :any,                 sonoma:            "fdf0f628598225db7ea43128abaf944011df61e2469811709c250607745b8570"
+    sha256 cellar: :any,                 ventura:           "327273dae10ae18781b2f347531253d968e0c06533c913a80d775a5972e65477"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "ee70c4b7041ea9743a1f87c8c0c9dc14e7a3372ab5d5e073912913b83cf2bcc3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "a52537b5ff653a7c477dd67be99faeb1684d3002cd9afe6c24501118083a6154"
   end
 
   keg_only :provided_by_macos, "Apple's CLT provides apr"

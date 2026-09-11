@@ -9,11 +9,12 @@ class Libaec < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "9eaed9136fb79d16e9e1d12d963079a9668f56317cde95d8775deeab37097915"
-    sha256 cellar: :any, arm64_sequoia: "c3be675b8a67f7765b62b1ffb2da781bf48a32e4b6a5986338e40b0ab919f9c5"
-    sha256 cellar: :any, arm64_sonoma:  "9048d8800e5ccfc68e8832ebd7d0125f61792fefdd3ecd9c00cf0d50269e8893"
-    sha256 cellar: :any, arm64_linux:   "13cf6eba906b53649ff511821667389ce65132e051e9da1a7c31c4b2de804149"
-    sha256 cellar: :any, x86_64_linux:  "64bc329b09ee0597e68ef3521f09806c20e45eb286a2336efe4ed1603f570ec9"
+    sha256 cellar: :any, arm64_golden_gate: "83059f1fc834d36e324b9622d003d7d1347de0cc33fe114d1c20bb95d0a37e9b"
+    sha256 cellar: :any, arm64_tahoe:       "9eaed9136fb79d16e9e1d12d963079a9668f56317cde95d8775deeab37097915"
+    sha256 cellar: :any, arm64_sequoia:     "c3be675b8a67f7765b62b1ffb2da781bf48a32e4b6a5986338e40b0ab919f9c5"
+    sha256 cellar: :any, arm64_sonoma:      "9048d8800e5ccfc68e8832ebd7d0125f61792fefdd3ecd9c00cf0d50269e8893"
+    sha256 cellar: :any, arm64_linux:       "13cf6eba906b53649ff511821667389ce65132e051e9da1a7c31c4b2de804149"
+    sha256 cellar: :any, x86_64_linux:      "64bc329b09ee0597e68ef3521f09806c20e45eb286a2336efe4ed1603f570ec9"
   end
 
   depends_on "cmake" => [:build, :test]

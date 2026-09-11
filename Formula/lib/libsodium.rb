@@ -12,12 +12,13 @@ class Libsodium < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "665929906297818edf15955cf4e4faefca7d717271c9fa448291989d2511d266"
-    sha256 cellar: :any,                 arm64_sequoia: "b231db8b0f993cb764b57560b69f484efe059ec87e47887505aa2d5872cc5a01"
-    sha256 cellar: :any,                 arm64_sonoma:  "92072108ab857b6ac1318afd28e5f1a1c3b34fb3e87f7c26c39a817721e0899b"
-    sha256 cellar: :any,                 sonoma:        "366ac240d3c97376401ae84c87d8c13852f42b037b6896b402b22336af3f8e32"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e73b320fdc416cedb028595212ff6b47f473a0c6e1d7d0aec84cc679734d87bf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "985f3f49a2187467eec50c288bb7d71ecd056cdec615441c1a12d8fa77db678a"
+    sha256 cellar: :any,                 arm64_golden_gate: "392bcb752afb9cefda3485186b6c008efa9dc2367245e74cda7b9caf93443fe5"
+    sha256 cellar: :any,                 arm64_tahoe:       "665929906297818edf15955cf4e4faefca7d717271c9fa448291989d2511d266"
+    sha256 cellar: :any,                 arm64_sequoia:     "b231db8b0f993cb764b57560b69f484efe059ec87e47887505aa2d5872cc5a01"
+    sha256 cellar: :any,                 arm64_sonoma:      "92072108ab857b6ac1318afd28e5f1a1c3b34fb3e87f7c26c39a817721e0899b"
+    sha256 cellar: :any,                 sonoma:            "366ac240d3c97376401ae84c87d8c13852f42b037b6896b402b22336af3f8e32"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "e73b320fdc416cedb028595212ff6b47f473a0c6e1d7d0aec84cc679734d87bf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "985f3f49a2187467eec50c288bb7d71ecd056cdec615441c1a12d8fa77db678a"
   end
 
   head do

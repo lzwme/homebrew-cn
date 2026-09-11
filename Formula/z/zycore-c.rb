@@ -6,12 +6,13 @@ class ZycoreC < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "9bd66ff88f720bf9c47da552f6072331448fe84df5b7da0279f92c0b40987a97"
-    sha256 cellar: :any,                 arm64_sequoia: "80c639348dfe12bbcd9a604189ca4fa8efe291b8a75085a96bc93d6fbba1e74f"
-    sha256 cellar: :any,                 arm64_sonoma:  "65c26276d69063393eedac9a756af987a8a8aa7e3bd26fd8a90546382dae9278"
-    sha256 cellar: :any,                 sonoma:        "b94facc5565aa5091503172da72a453a990e22b01c096db5c5e475399390eee8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3473fe4aa08dfd152aa063dc3e9968c3e1850efe0d9b3218cc82ced2fa90e067"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3fb6c52be79607df63982e518a665f8bcaaf5d601f8d633ffe4646ce505e8787"
+    sha256 cellar: :any,                 arm64_golden_gate: "ea8eea045150a07d9b43e5f651b1a8a8bdf9b4c23527566a91e9886143a48540"
+    sha256 cellar: :any,                 arm64_tahoe:       "9bd66ff88f720bf9c47da552f6072331448fe84df5b7da0279f92c0b40987a97"
+    sha256 cellar: :any,                 arm64_sequoia:     "80c639348dfe12bbcd9a604189ca4fa8efe291b8a75085a96bc93d6fbba1e74f"
+    sha256 cellar: :any,                 arm64_sonoma:      "65c26276d69063393eedac9a756af987a8a8aa7e3bd26fd8a90546382dae9278"
+    sha256 cellar: :any,                 sonoma:            "b94facc5565aa5091503172da72a453a990e22b01c096db5c5e475399390eee8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "3473fe4aa08dfd152aa063dc3e9968c3e1850efe0d9b3218cc82ced2fa90e067"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "3fb6c52be79607df63982e518a665f8bcaaf5d601f8d633ffe4646ce505e8787"
   end
 
   depends_on "cmake" => :build

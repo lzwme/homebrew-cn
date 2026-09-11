@@ -12,12 +12,13 @@ class Talloc < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "33f78a2e466b5dd0585e61e12afb348d23c9f9c13a1b15372b0cd2580063fb10"
-    sha256 cellar: :any, arm64_sequoia: "a1fc4bfee8a04ad313398302be7f1dfbed915faa22740d574fd6a32730830c4c"
-    sha256 cellar: :any, arm64_sonoma:  "3afeb750b8c17993cb8b2bd55255b355de1174a711c75fbbf5a2cb74fa86c319"
-    sha256 cellar: :any, sonoma:        "080e37d6daa1b360ca0b64f79e8f7230d64f8874ef1af168c87a3f6014cc56c5"
-    sha256 cellar: :any, arm64_linux:   "b4cc50673735a834c31b1cc80e756d579b88c317f81efa816e85d2b3697deaeb"
-    sha256 cellar: :any, x86_64_linux:  "3490cf833175989808b2f38118a501a5e6895069f7385dd0145abe0185a5dfdd"
+    sha256 cellar: :any, arm64_golden_gate: "379b35f5db27455ab2f445b3be7ef6d41f8126db4d91f2b5aa50b0f61936a8b5"
+    sha256 cellar: :any, arm64_tahoe:       "33f78a2e466b5dd0585e61e12afb348d23c9f9c13a1b15372b0cd2580063fb10"
+    sha256 cellar: :any, arm64_sequoia:     "a1fc4bfee8a04ad313398302be7f1dfbed915faa22740d574fd6a32730830c4c"
+    sha256 cellar: :any, arm64_sonoma:      "3afeb750b8c17993cb8b2bd55255b355de1174a711c75fbbf5a2cb74fa86c319"
+    sha256 cellar: :any, sonoma:            "080e37d6daa1b360ca0b64f79e8f7230d64f8874ef1af168c87a3f6014cc56c5"
+    sha256 cellar: :any, arm64_linux:       "b4cc50673735a834c31b1cc80e756d579b88c317f81efa816e85d2b3697deaeb"
+    sha256 cellar: :any, x86_64_linux:      "3490cf833175989808b2f38118a501a5e6895069f7385dd0145abe0185a5dfdd"
   end
 
   uses_from_macos "python" => :build

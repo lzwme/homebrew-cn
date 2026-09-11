@@ -9,12 +9,13 @@ class Gdb < Formula
   head "https://sourceware.org/git/binutils-gdb.git", branch: "master"
 
   bottle do
-    sha256 arm64_tahoe:   "12341ca6f6b31162ec70586e0772257dae2fa2840a4081efd30af0c604379db7"
-    sha256 arm64_sequoia: "2feabbafc0fa519392852f4c683ac1f2ec77bfb206b8759c5d58a65aceca0a37"
-    sha256 arm64_sonoma:  "751ed85d1945ff8fd0892fda21fd0dd38a70138cb5ed8fda5c822ab90bacb6b1"
-    sha256 sonoma:        "c4ca53440086795fdb0ea5eb8609f278c412962259e4f02c0a27feb3d1151354"
-    sha256 arm64_linux:   "2c2b33885fd81a54aedf65f3783bca5b1ace11dff3824c6a738ccd2b0a5facfe"
-    sha256 x86_64_linux:  "1cd209394e560c53f14c50407459f242f1095e440fcff1bc4b456cac9aad8f8b"
+    sha256 arm64_golden_gate: "9b904cf9b393a9fdbdbfd1840b92ff45be181bde48a160243e63ceecfc8935d4"
+    sha256 arm64_tahoe:       "12341ca6f6b31162ec70586e0772257dae2fa2840a4081efd30af0c604379db7"
+    sha256 arm64_sequoia:     "2feabbafc0fa519392852f4c683ac1f2ec77bfb206b8759c5d58a65aceca0a37"
+    sha256 arm64_sonoma:      "751ed85d1945ff8fd0892fda21fd0dd38a70138cb5ed8fda5c822ab90bacb6b1"
+    sha256 sonoma:            "c4ca53440086795fdb0ea5eb8609f278c412962259e4f02c0a27feb3d1151354"
+    sha256 arm64_linux:       "2c2b33885fd81a54aedf65f3783bca5b1ace11dff3824c6a738ccd2b0a5facfe"
+    sha256 x86_64_linux:      "1cd209394e560c53f14c50407459f242f1095e440fcff1bc4b456cac9aad8f8b"
   end
 
   depends_on "pkgconf" => :build

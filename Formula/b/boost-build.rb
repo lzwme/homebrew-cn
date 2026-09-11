@@ -13,12 +13,13 @@ class BoostBuild < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2aed344e5ed6b849e9d0bdecbe42feda27c6c90752ebdf8f14893932f15a2067"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e353ad980db044f229a0c6e41e4e06a83fb7fb6e0a42e29a34a3ca0237b4a8b7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b6aa8232f8cf7b0dca31aa11ec14a395d5a8562a3bc45b44f732b1bde8b0e83b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "973e1b848621fff7c5485172620fd275d8db0097ffee67f96d019f90c380fcd0"
-    sha256 cellar: :any,                 arm64_linux:   "9d0c6352265769f19c508fa9eea9cf8cbe02f62c752cd1bc020ee89e3259f152"
-    sha256 cellar: :any,                 x86_64_linux:  "c439aa502e36515675f58085efca7998249801195bd74819fdfdebe121631277"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "56f9fc99807ad473fd5e400630e5e1d7a18963b461a6a457e308d751218e7b9c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "2aed344e5ed6b849e9d0bdecbe42feda27c6c90752ebdf8f14893932f15a2067"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "e353ad980db044f229a0c6e41e4e06a83fb7fb6e0a42e29a34a3ca0237b4a8b7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "b6aa8232f8cf7b0dca31aa11ec14a395d5a8562a3bc45b44f732b1bde8b0e83b"
+    sha256 cellar: :any_skip_relocation, sonoma:            "973e1b848621fff7c5485172620fd275d8db0097ffee67f96d019f90c380fcd0"
+    sha256 cellar: :any,                 arm64_linux:       "9d0c6352265769f19c508fa9eea9cf8cbe02f62c752cd1bc020ee89e3259f152"
+    sha256 cellar: :any,                 x86_64_linux:      "c439aa502e36515675f58085efca7998249801195bd74819fdfdebe121631277"
   end
 
   conflicts_with "b2-tools", because: "both install `b2` binaries"

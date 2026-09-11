@@ -11,12 +11,13 @@ class Minimap2 < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a0621571925138e90e219a9aaac5595a5b332a6ac9bba3357f360bcb579b89f0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c9a4c3f4ca1b3418eabfb36b56c4b51c1349df8fd1dae21155a53d988a792ee1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9e74099060a600ccc2946c0405ea2ad833d3513e75c6ce99c997fd68c0547757"
-    sha256 cellar: :any_skip_relocation, sonoma:        "61ee86a03797524d2196ab430ab57eab6a92eff05981c938c5e9787c6e953b52"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9d408197f553ea716ff31cbff5edaee823fed53bb935506df310f1a01a5c039e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e87deffaa0770d2b223a8a820238d6478790e1616a66f37bdc15f2a2d7d81a73"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "443be3ffefb9204e5c0ae6a950fd3b6f91f7de3bd8c974d8dc8aa933b8e18676"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "a0621571925138e90e219a9aaac5595a5b332a6ac9bba3357f360bcb579b89f0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "c9a4c3f4ca1b3418eabfb36b56c4b51c1349df8fd1dae21155a53d988a792ee1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "9e74099060a600ccc2946c0405ea2ad833d3513e75c6ce99c997fd68c0547757"
+    sha256 cellar: :any_skip_relocation, sonoma:            "61ee86a03797524d2196ab430ab57eab6a92eff05981c938c5e9787c6e953b52"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "9d408197f553ea716ff31cbff5edaee823fed53bb935506df310f1a01a5c039e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "e87deffaa0770d2b223a8a820238d6478790e1616a66f37bdc15f2a2d7d81a73"
   end
 
   on_linux do

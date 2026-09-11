@@ -12,12 +12,13 @@ class YaraX < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "58d0cf3df84a88ed57984999bc408868dbddaf26fb8300af377f2907632ac2c9"
-    sha256 cellar: :any, arm64_sequoia: "b551d17b465235b839eb70eb6128fbf74d48ccf1769f4285ddb30ff9a4b630b3"
-    sha256 cellar: :any, arm64_sonoma:  "b79c769472ab9691f67ffc3727a7350ba98faddf286e3ab5df675f73080da6e6"
-    sha256 cellar: :any, sonoma:        "66ccdf5de7726412aabc4a73f32d18aeccc179c5492225988bed65117c59b90c"
-    sha256 cellar: :any, arm64_linux:   "d8631c56a29be4816e0bd4ba8c173568cd3fbd973ae086137f4d38afeb77c158"
-    sha256 cellar: :any, x86_64_linux:  "9674920246c179050e49b03ff7f5e40bc8aea25b0069d5406b2ca1940f995f70"
+    sha256 cellar: :any, arm64_golden_gate: "2643f52c42b52890acde0d550aed8b18d3a7a08b8bce535bc873f4f0f2508631"
+    sha256 cellar: :any, arm64_tahoe:       "58d0cf3df84a88ed57984999bc408868dbddaf26fb8300af377f2907632ac2c9"
+    sha256 cellar: :any, arm64_sequoia:     "b551d17b465235b839eb70eb6128fbf74d48ccf1769f4285ddb30ff9a4b630b3"
+    sha256 cellar: :any, arm64_sonoma:      "b79c769472ab9691f67ffc3727a7350ba98faddf286e3ab5df675f73080da6e6"
+    sha256 cellar: :any, sonoma:            "66ccdf5de7726412aabc4a73f32d18aeccc179c5492225988bed65117c59b90c"
+    sha256 cellar: :any, arm64_linux:       "d8631c56a29be4816e0bd4ba8c173568cd3fbd973ae086137f4d38afeb77c158"
+    sha256 cellar: :any, x86_64_linux:      "9674920246c179050e49b03ff7f5e40bc8aea25b0069d5406b2ca1940f995f70"
   end
 
   depends_on "cargo-c" => :build

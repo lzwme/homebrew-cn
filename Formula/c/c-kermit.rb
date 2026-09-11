@@ -17,12 +17,13 @@ class CKermit < Formula
 
   bottle do
     rebuild 4
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8c0e72e5bb4d72caed49b3f6d972c288574cf259071e49b9f2d7cecb996dbce8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dc6dba17341e3f98196d564a5fffc6302338e58371b4eca3ebeedb82e274606e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ab2fa4f2c5baad32ef5a049ac5a386f2b8900e2a0083cd666476b66287a03e03"
-    sha256 cellar: :any_skip_relocation, sonoma:        "39dea4932cd8e64dc2f836f6614bf7e1a27547f5256c18bd96b6a52ffcc42147"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d4e5b61305d55c1c90bb0a83b2a3d60684e5e8e9104b6dbc8c84637132114054"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "694f5ef3996f1e14a0ef1c1117902226f1eaba0488a27dbc248a52af354121b1"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "2d5ddfe65ed89dc16fbbe15877b058f0734876a0491ab7eece5ce17461230ac9"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "8c0e72e5bb4d72caed49b3f6d972c288574cf259071e49b9f2d7cecb996dbce8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "dc6dba17341e3f98196d564a5fffc6302338e58371b4eca3ebeedb82e274606e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "ab2fa4f2c5baad32ef5a049ac5a386f2b8900e2a0083cd666476b66287a03e03"
+    sha256 cellar: :any_skip_relocation, sonoma:            "39dea4932cd8e64dc2f836f6614bf7e1a27547f5256c18bd96b6a52ffcc42147"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "d4e5b61305d55c1c90bb0a83b2a3d60684e5e8e9104b6dbc8c84637132114054"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "694f5ef3996f1e14a0ef1c1117902226f1eaba0488a27dbc248a52af354121b1"
   end
 
   # development on c-kermit has stopped and moved to openkermit instead

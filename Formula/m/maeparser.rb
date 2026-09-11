@@ -8,12 +8,13 @@ class Maeparser < Formula
   head "https://github.com/schrodinger/maeparser.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "9016cea0792cb1dac70619b30aa6f00ddd5e698a54e55e628d77b2395bb63457"
-    sha256 cellar: :any, arm64_sequoia: "559fa0910133740fab4e00c566397636da7c801f7dec9c49df04f93ac89ccfcc"
-    sha256 cellar: :any, arm64_sonoma:  "4c64742f5685ca7108f58144fce791b3084fea5ffda72c4daddb4c8653e2b5e7"
-    sha256 cellar: :any, sonoma:        "97f849072e73cfac704cbf41a790e2a7008602d42c016458012568ad9efe5f86"
-    sha256 cellar: :any, arm64_linux:   "bcb3ac9183f0bcc919674f10f866cd68e9a4327493ce5997a6911b92e486d4cb"
-    sha256 cellar: :any, x86_64_linux:  "0a371a7ed3253e9a11fa3b7f0037c8b432ab2809e0a127a8309f0a90ac41c622"
+    sha256 cellar: :any, arm64_golden_gate: "271e39ceac157ecc3000f4df42a594c56f50d45dd139e00d83f7d04748879acc"
+    sha256 cellar: :any, arm64_tahoe:       "9016cea0792cb1dac70619b30aa6f00ddd5e698a54e55e628d77b2395bb63457"
+    sha256 cellar: :any, arm64_sequoia:     "559fa0910133740fab4e00c566397636da7c801f7dec9c49df04f93ac89ccfcc"
+    sha256 cellar: :any, arm64_sonoma:      "4c64742f5685ca7108f58144fce791b3084fea5ffda72c4daddb4c8653e2b5e7"
+    sha256 cellar: :any, sonoma:            "97f849072e73cfac704cbf41a790e2a7008602d42c016458012568ad9efe5f86"
+    sha256 cellar: :any, arm64_linux:       "bcb3ac9183f0bcc919674f10f866cd68e9a4327493ce5997a6911b92e486d4cb"
+    sha256 cellar: :any, x86_64_linux:      "0a371a7ed3253e9a11fa3b7f0037c8b432ab2809e0a127a8309f0a90ac41c622"
   end
 
   depends_on "cmake" => :build

@@ -8,12 +8,13 @@ class Xrootd < Formula
   head "https://github.com/xrootd/xrootd.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "4c18c9f49d4d50a3f48780a0299f7d52893edb5aacfa2e6603b55e5ad332fe55"
-    sha256 cellar: :any, arm64_sequoia: "c302f00d3c6dda3167847a3ceecdc079022dccf317f38dd8a3c6094a43c43924"
-    sha256 cellar: :any, arm64_sonoma:  "02fef6e450c52e01ae7fde6b0863533d01a839d96d77894fd2c9fa7b0db697ff"
-    sha256 cellar: :any, sonoma:        "c6792bbf3910e1ba59e62728c74ed408a0bdb65026d1101ffefeafc4940f5b30"
-    sha256 cellar: :any, arm64_linux:   "646d61f06c5763ea82cd17312f9b5f0741372a2c464caa26da74d8ee11e25cfc"
-    sha256 cellar: :any, x86_64_linux:  "1a9f5267e6442f5a11cb33c6c6f3d6a4a978414ab6a46545f272c476f33c23f6"
+    sha256 cellar: :any, arm64_golden_gate: "e34b5824f9952c18bb3314d2f194b1da6798388eede3736b71b4a70916f17ee3"
+    sha256 cellar: :any, arm64_tahoe:       "4c18c9f49d4d50a3f48780a0299f7d52893edb5aacfa2e6603b55e5ad332fe55"
+    sha256 cellar: :any, arm64_sequoia:     "c302f00d3c6dda3167847a3ceecdc079022dccf317f38dd8a3c6094a43c43924"
+    sha256 cellar: :any, arm64_sonoma:      "02fef6e450c52e01ae7fde6b0863533d01a839d96d77894fd2c9fa7b0db697ff"
+    sha256 cellar: :any, sonoma:            "c6792bbf3910e1ba59e62728c74ed408a0bdb65026d1101ffefeafc4940f5b30"
+    sha256 cellar: :any, arm64_linux:       "646d61f06c5763ea82cd17312f9b5f0741372a2c464caa26da74d8ee11e25cfc"
+    sha256 cellar: :any, x86_64_linux:      "1a9f5267e6442f5a11cb33c6c6f3d6a4a978414ab6a46545f272c476f33c23f6"
   end
 
   depends_on "cmake" => :build

@@ -9,12 +9,13 @@ class Muparser < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "23a51e97ef3d4ff02c8d8d6fb5dd53b142e89899927a9204eb4dd0018d21afe5"
-    sha256 cellar: :any,                 arm64_sequoia: "533245424ca9045f9e246b1c2092466b11b26fb13545b19d82469c8fd36eb2c6"
-    sha256 cellar: :any,                 arm64_sonoma:  "6e95b519ddaac7419352a19803d374262d8edf9780e942b287046be0e2e5c9c5"
-    sha256 cellar: :any,                 sonoma:        "62577464227b08a4c38a09c93f7438e21c55cd3438fdf67f227ee6bc5c2a51ee"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d9b39ed5b616e3f67f8429a33ed9c42b3f404c74881c4718e4f12444153611ca"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9e7935fbf6a0c3698082df30fb1b5e7140e45c9b98d16377810efd80585691d5"
+    sha256 cellar: :any,                 arm64_golden_gate: "6ef453c9b12f5372297db78675a7abf71f7a3ff9486e647b054904948673c962"
+    sha256 cellar: :any,                 arm64_tahoe:       "23a51e97ef3d4ff02c8d8d6fb5dd53b142e89899927a9204eb4dd0018d21afe5"
+    sha256 cellar: :any,                 arm64_sequoia:     "533245424ca9045f9e246b1c2092466b11b26fb13545b19d82469c8fd36eb2c6"
+    sha256 cellar: :any,                 arm64_sonoma:      "6e95b519ddaac7419352a19803d374262d8edf9780e942b287046be0e2e5c9c5"
+    sha256 cellar: :any,                 sonoma:            "62577464227b08a4c38a09c93f7438e21c55cd3438fdf67f227ee6bc5c2a51ee"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "d9b39ed5b616e3f67f8429a33ed9c42b3f404c74881c4718e4f12444153611ca"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "9e7935fbf6a0c3698082df30fb1b5e7140e45c9b98d16377810efd80585691d5"
   end
 
   depends_on "cmake" => :build

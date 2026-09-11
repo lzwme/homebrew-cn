@@ -7,12 +7,13 @@ class Difftastic < Formula
   compatibility_version 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ad1ca4686d476b7b6783c03b052cd73cc3edd97f9172c14c89415a4a8a3de2dc"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f9f3d560214fb3f4277953bab812a0c8ad3ea699dc8a1aa347c8910e78af8664"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3dcfdc526d9aefd9eff45f6dd8045634ab2f0eceaa9dcd84aacb655030a87c1a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a61e10e46ce5797caf1b66f62594803d45f853a0c9a5c1dbe26c9e979b549b11"
-    sha256 cellar: :any,                 arm64_linux:   "8bbd7298a69e44335666033f15bef61fcbc7f2cef6b4d7152b1d3535475b3012"
-    sha256 cellar: :any,                 x86_64_linux:  "3b80591fc994c67efa94403f93451e13deb8737af999f636ec05f3ca52e1c5aa"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "401dff888ab199f6892814ebc354e109b237a961e9a2a53d4a6b53bde7564072"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "ad1ca4686d476b7b6783c03b052cd73cc3edd97f9172c14c89415a4a8a3de2dc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "f9f3d560214fb3f4277953bab812a0c8ad3ea699dc8a1aa347c8910e78af8664"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "3dcfdc526d9aefd9eff45f6dd8045634ab2f0eceaa9dcd84aacb655030a87c1a"
+    sha256 cellar: :any_skip_relocation, sonoma:            "a61e10e46ce5797caf1b66f62594803d45f853a0c9a5c1dbe26c9e979b549b11"
+    sha256 cellar: :any,                 arm64_linux:       "8bbd7298a69e44335666033f15bef61fcbc7f2cef6b4d7152b1d3535475b3012"
+    sha256 cellar: :any,                 x86_64_linux:      "3b80591fc994c67efa94403f93451e13deb8737af999f636ec05f3ca52e1c5aa"
   end
 
   depends_on "rust" => :build

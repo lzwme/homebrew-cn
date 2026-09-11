@@ -8,11 +8,12 @@ class Onnx < Formula
   compatibility_version 1
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "a7f62703c646599e69bbd6060325770ffd8c8d6560eb4021620c1801fb59c4e1"
-    sha256 cellar: :any, arm64_sequoia: "dc2bff2f3571b8f5a31f307e5aa01009b586eb006e86b911d13cfe43f5b4b49a"
-    sha256 cellar: :any, arm64_sonoma:  "20d8e860c551b86ca826da0d9c1e2ab4474129f609f6aca5802a7bc2b27d1241"
-    sha256 cellar: :any, arm64_linux:   "26ad61f746c593109048c77a9ed3ce7a3a8f31936f7c5a40a84c9c6b3927f0cc"
-    sha256 cellar: :any, x86_64_linux:  "68b1196df239958ad559ac0fe85647498bc7528556dcdf80267b188da3937aad"
+    sha256 cellar: :any, arm64_golden_gate: "1b5e3b1e63efebfc4652a2e499fbd9120e73160f036b7fced9f24588e7a48298"
+    sha256 cellar: :any, arm64_tahoe:       "a7f62703c646599e69bbd6060325770ffd8c8d6560eb4021620c1801fb59c4e1"
+    sha256 cellar: :any, arm64_sequoia:     "dc2bff2f3571b8f5a31f307e5aa01009b586eb006e86b911d13cfe43f5b4b49a"
+    sha256 cellar: :any, arm64_sonoma:      "20d8e860c551b86ca826da0d9c1e2ab4474129f609f6aca5802a7bc2b27d1241"
+    sha256 cellar: :any, arm64_linux:       "26ad61f746c593109048c77a9ed3ce7a3a8f31936f7c5a40a84c9c6b3927f0cc"
+    sha256 cellar: :any, x86_64_linux:      "68b1196df239958ad559ac0fe85647498bc7528556dcdf80267b188da3937aad"
   end
 
   depends_on "cmake" => [:build, :test]

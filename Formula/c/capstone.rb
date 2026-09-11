@@ -13,12 +13,13 @@ class Capstone < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "136ef83fb2c78de33a0500d8e9d3628eb1db37d4ef00496e8027e00a5918eb33"
-    sha256 cellar: :any,                 arm64_sequoia: "a6fbf1343829afa5521e8fdba9f0d05246cad3c8caf4833af6d826baaf0db795"
-    sha256 cellar: :any,                 arm64_sonoma:  "bbe5f0825fb2511229677b4cd56d88b7c85efc88b537acfc77c41266424983ae"
-    sha256 cellar: :any,                 sonoma:        "4c2563fd3750dcfc7bff7a99876034b68257f9979c336fa16da730435736832c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e62999052f399dc5c10cf74036108f585789ae2a2b28842aa1677ca99e027b08"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4c724d5267658f8e1d10a4e050e5e56ed3db99f4ef454e9340a43e0eaafe7050"
+    sha256 cellar: :any,                 arm64_golden_gate: "6b31fe379681e2c0778e30b3516cdfc2cfdff6424f666463643f1507039daf0b"
+    sha256 cellar: :any,                 arm64_tahoe:       "136ef83fb2c78de33a0500d8e9d3628eb1db37d4ef00496e8027e00a5918eb33"
+    sha256 cellar: :any,                 arm64_sequoia:     "a6fbf1343829afa5521e8fdba9f0d05246cad3c8caf4833af6d826baaf0db795"
+    sha256 cellar: :any,                 arm64_sonoma:      "bbe5f0825fb2511229677b4cd56d88b7c85efc88b537acfc77c41266424983ae"
+    sha256 cellar: :any,                 sonoma:            "4c2563fd3750dcfc7bff7a99876034b68257f9979c336fa16da730435736832c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "e62999052f399dc5c10cf74036108f585789ae2a2b28842aa1677ca99e027b08"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "4c724d5267658f8e1d10a4e050e5e56ed3db99f4ef454e9340a43e0eaafe7050"
   end
 
   on_macos do

@@ -1,8 +1,8 @@
 class DoviTool < Formula
   desc "CLI tool for Dolby Vision metadata on video streams"
   homepage "https://github.com/quietvoid/dovi_tool/"
-  url "https://ghfast.top/https://github.com/quietvoid/dovi_tool/archive/refs/tags/2.3.3.tar.gz"
-  sha256 "b4906f67b339b10f885a5c7d89364a359cbd3845f3b95115cac5d7964e13422d"
+  url "https://ghfast.top/https://github.com/quietvoid/dovi_tool/archive/refs/tags/2.3.4.tar.gz"
+  sha256 "15b5cb68b3598e51ca968316443c9fb9597b6230e9d692cb4e641d54505a97ec"
   license "MIT"
   head "https://github.com/quietvoid/dovi_tool.git", branch: "main"
 
@@ -12,12 +12,12 @@ class DoviTool < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "18c18c60d697c0b91ee94f587b63e805a5931262d2255a066948d91c13cbd8fa"
-    sha256 cellar: :any, arm64_sequoia: "4ee5260084bcee0eec15184c9dd2eea80f40a03fdd1ffeb043199260d00ee0ba"
-    sha256 cellar: :any, arm64_sonoma:  "a702f99d16cc4f2cce1ded9bfb07c4b4a558aa2ce77bd046704ae388c7240efe"
-    sha256 cellar: :any, sonoma:        "e8bb9064f9e06855a57c649541d47528f2725d3b6327a6b3b7b8f89492284837"
-    sha256 cellar: :any, arm64_linux:   "c7006f03437e3c6e8eaccb44513c53039a20badcf012c42766c24d3d811ec1d3"
-    sha256 cellar: :any, x86_64_linux:  "ed443de19096f6132e87dc1ce0f2608ea7e2f883d0967ccbec4ccea742bba250"
+    sha256 cellar: :any, arm64_golden_gate: "a2187370de11d987d11b0fbdea569f83235458327707c573c82d36d58274f0cc"
+    sha256 cellar: :any, arm64_tahoe:       "b267ed3e0c71c3238d2bc2f6ff21a8f386a1fcbddb0bbe1e57b64d2b51d8cadf"
+    sha256 cellar: :any, arm64_sequoia:     "85000a231b6b50d62f70305c66597a7a3631f3fe433848592a9a53536952ec2d"
+    sha256 cellar: :any, arm64_sonoma:      "2107ac0e245aeac9b63d5fd93109bed5754d45151a77e906b83d970e4e009a24"
+    sha256 cellar: :any, arm64_linux:       "f81cdea66cc1f8c368ae591769fbafeb4438cc36518a8b8020e426547827f0f1"
+    sha256 cellar: :any, x86_64_linux:      "3527a4301886aa03bf1ff55d0cb6fdf03869d63cd90357731c6e596b58732674"
   end
 
   depends_on "cargo-c" => :build

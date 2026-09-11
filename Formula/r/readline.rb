@@ -72,14 +72,15 @@ class Readline < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "1c6234c033c83ea742d50aa45fd60821947fa800d5cadecb0a1aa045564bb7d1"
-    sha256 cellar: :any,                 arm64_sequoia: "2e055f7b620fcbe1f809e850a23a68daa429edcf9b484b1967f9a49d89ebed8e"
-    sha256 cellar: :any,                 arm64_sonoma:  "15440b045b3e8294c8cbb819b32ba26520ce53b18bf947166a21a38e34662d84"
-    sha256 cellar: :any,                 tahoe:         "67a24889119e6429144cd15fb9b0dc8ae37cf272388605a5780bb734f8e6b093"
-    sha256 cellar: :any,                 sequoia:       "fd72a581442e1826e1386b8620e6ca5b75d858ded59d9fe60b9e0e9001675dc3"
-    sha256 cellar: :any,                 sonoma:        "614b89ff043bb59540c284dc696aedb1ffe30c4cc902d4e27b088ebaa3dc9312"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5cbd86f40534c4ef8b800e605408411bc6b047bf7c4f3911b2c020b1cfa39b89"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ea989e13a1df95ab899b8b1d35713def4330950259e7a48053fcd7967ee316b2"
+    sha256 cellar: :any,                 arm64_golden_gate: "273d65e167d4f7bf976a5d14d226c132722015a44f1025dfa2eaa6a2f3c7b8ce"
+    sha256 cellar: :any,                 arm64_tahoe:       "1c6234c033c83ea742d50aa45fd60821947fa800d5cadecb0a1aa045564bb7d1"
+    sha256 cellar: :any,                 arm64_sequoia:     "2e055f7b620fcbe1f809e850a23a68daa429edcf9b484b1967f9a49d89ebed8e"
+    sha256 cellar: :any,                 arm64_sonoma:      "15440b045b3e8294c8cbb819b32ba26520ce53b18bf947166a21a38e34662d84"
+    sha256 cellar: :any,                 tahoe:             "67a24889119e6429144cd15fb9b0dc8ae37cf272388605a5780bb734f8e6b093"
+    sha256 cellar: :any,                 sequoia:           "fd72a581442e1826e1386b8620e6ca5b75d858ded59d9fe60b9e0e9001675dc3"
+    sha256 cellar: :any,                 sonoma:            "614b89ff043bb59540c284dc696aedb1ffe30c4cc902d4e27b088ebaa3dc9312"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "5cbd86f40534c4ef8b800e605408411bc6b047bf7c4f3911b2c020b1cfa39b89"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "ea989e13a1df95ab899b8b1d35713def4330950259e7a48053fcd7967ee316b2"
   end
 
   keg_only :shadowed_by_macos, "macOS provides BSD libedit"

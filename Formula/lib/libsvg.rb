@@ -13,12 +13,13 @@ class Libsvg < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "091152c66a1d15b4dd1fb58d23f484a24bc7e4e6f3f5d93d864400e30b2a14ad"
-    sha256 cellar: :any,                 arm64_sequoia: "749dd33b051aa0a0f32dab2201dc1f34b47ca79bd40ba3c729c5a31f8ac97c59"
-    sha256 cellar: :any,                 arm64_sonoma:  "c659725aa7a0668f5995f11a2cc7b33211a88812b5d4d2d7a6f79d9d3bf4abe7"
-    sha256 cellar: :any,                 sonoma:        "aab50b6244e0d5ecc012c6e7c57eead017e45e7498beebd0ace1636ea88e7a55"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a7070d99efb5a529a8c86d31f0b00cc42f5840ee6abb6a240fa6778516b99d49"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "15d4f5e9b94291566d7a4542c8a7a58cc6fac2572825e1ecaa41edfa7d266787"
+    sha256 cellar: :any,                 arm64_golden_gate: "2dbdad7f5f5b46124ef7dfd4d85c889371139de9b22e9a927d4038b07e631cb5"
+    sha256 cellar: :any,                 arm64_tahoe:       "091152c66a1d15b4dd1fb58d23f484a24bc7e4e6f3f5d93d864400e30b2a14ad"
+    sha256 cellar: :any,                 arm64_sequoia:     "749dd33b051aa0a0f32dab2201dc1f34b47ca79bd40ba3c729c5a31f8ac97c59"
+    sha256 cellar: :any,                 arm64_sonoma:      "c659725aa7a0668f5995f11a2cc7b33211a88812b5d4d2d7a6f79d9d3bf4abe7"
+    sha256 cellar: :any,                 sonoma:            "aab50b6244e0d5ecc012c6e7c57eead017e45e7498beebd0ace1636ea88e7a55"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "a7070d99efb5a529a8c86d31f0b00cc42f5840ee6abb6a240fa6778516b99d49"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "15d4f5e9b94291566d7a4542c8a7a58cc6fac2572825e1ecaa41edfa7d266787"
   end
 
   depends_on "autoconf" => :build

@@ -8,12 +8,13 @@ class Openmotif < Formula
   compatibility_version 1
 
   bottle do
-    sha256 arm64_tahoe:   "c0bfac872caadffd55339660bae1d6f2b3c7e5453524561f7c74a8ee19c649c1"
-    sha256 arm64_sequoia: "891b9cebcba317b8a31d705ac752f285140823c8e49c2ef07723cb5c909f9c3e"
-    sha256 arm64_sonoma:  "21605264e90be187d695971f25b00ab6913b7cbe9b8a9550ae5cbe656208b5dd"
-    sha256 sonoma:        "ad3dd71f84bc42558d9d8d327fabf8a2c3e3f5bb04c9053f3422c816987b74eb"
-    sha256 arm64_linux:   "81c0e83009c1e586a0f24db70915d074fed577be6c8e90d03eb76acc2b0b6e8f"
-    sha256 x86_64_linux:  "0d5600cd872a9afd8a2af1d9dfd72ee38f227304f4b5849def52bbd697c4956d"
+    sha256 arm64_golden_gate: "3a410bd04945d9acc95dac7946cbe079e8b98ac587fe8bead56dd16441b26eea"
+    sha256 arm64_tahoe:       "c0bfac872caadffd55339660bae1d6f2b3c7e5453524561f7c74a8ee19c649c1"
+    sha256 arm64_sequoia:     "891b9cebcba317b8a31d705ac752f285140823c8e49c2ef07723cb5c909f9c3e"
+    sha256 arm64_sonoma:      "21605264e90be187d695971f25b00ab6913b7cbe9b8a9550ae5cbe656208b5dd"
+    sha256 sonoma:            "ad3dd71f84bc42558d9d8d327fabf8a2c3e3f5bb04c9053f3422c816987b74eb"
+    sha256 arm64_linux:       "81c0e83009c1e586a0f24db70915d074fed577be6c8e90d03eb76acc2b0b6e8f"
+    sha256 x86_64_linux:      "0d5600cd872a9afd8a2af1d9dfd72ee38f227304f4b5849def52bbd697c4956d"
   end
 
   depends_on "pkgconf" => :build

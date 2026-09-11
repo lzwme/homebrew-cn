@@ -12,12 +12,13 @@ class Librevenge < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "3dbdc968c050662db2bb67f93c3f2f473d69679090c1b25f703284efd2c21987"
-    sha256 cellar: :any, arm64_sequoia: "0eabe12945f58c1a8673416a79409b17b410b27e67636b99005209cb6fd6b35a"
-    sha256 cellar: :any, arm64_sonoma:  "276bd295f8b3079655366a652f886bd0fb275f6a348f1f89a9b286347e517bc5"
-    sha256 cellar: :any, sonoma:        "c089420efbf6a13e03387a35018f2237d4769b2daf45a97ad158678d1319885f"
-    sha256 cellar: :any, arm64_linux:   "4bafef5bb5011171c9e1361c422d876df40e50355f7b783176623a262ebf6ea2"
-    sha256 cellar: :any, x86_64_linux:  "340007b50b1a953ada4548c322ccd4896af6c7df749e697ac7e25e7c089f0771"
+    sha256 cellar: :any, arm64_golden_gate: "844a6ed1d1df325c30c80f82104e3de956649b481f9a06676a388dc6ebf189b8"
+    sha256 cellar: :any, arm64_tahoe:       "3dbdc968c050662db2bb67f93c3f2f473d69679090c1b25f703284efd2c21987"
+    sha256 cellar: :any, arm64_sequoia:     "0eabe12945f58c1a8673416a79409b17b410b27e67636b99005209cb6fd6b35a"
+    sha256 cellar: :any, arm64_sonoma:      "276bd295f8b3079655366a652f886bd0fb275f6a348f1f89a9b286347e517bc5"
+    sha256 cellar: :any, sonoma:            "c089420efbf6a13e03387a35018f2237d4769b2daf45a97ad158678d1319885f"
+    sha256 cellar: :any, arm64_linux:       "4bafef5bb5011171c9e1361c422d876df40e50355f7b783176623a262ebf6ea2"
+    sha256 cellar: :any, x86_64_linux:      "340007b50b1a953ada4548c322ccd4896af6c7df749e697ac7e25e7c089f0771"
   end
 
   depends_on "boost" => :build

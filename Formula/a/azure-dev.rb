@@ -1,17 +1,17 @@
 class AzureDev < Formula
   desc "Developer CLI that provides commands for working with Azure resources"
   homepage "https://aka.ms/azd"
-  url "https://ghfast.top/https://github.com/Azure/azure-dev/archive/refs/tags/azure-dev-cli_1.33.0.tar.gz"
-  sha256 "3ee85bdfbaaf7bf9646bb46ca6afc901ee2480668469a7fc11288c373b0b968d"
+  url "https://ghfast.top/https://github.com/Azure/azure-dev/archive/refs/tags/azure-dev-cli_1.34.0.tar.gz"
+  sha256 "8d53317656216cfb61444a62de75c02e031240f6ce0b749542031e75edd06447"
   license "MIT"
   head "https://github.com/Azure/azure-dev.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "46e0188400149b6f1ce176b5b1cac626101b9e786e43774b6a4d8654fdcef0ae"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "46e0188400149b6f1ce176b5b1cac626101b9e786e43774b6a4d8654fdcef0ae"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "46e0188400149b6f1ce176b5b1cac626101b9e786e43774b6a4d8654fdcef0ae"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6562258b54ff78f553ed1ff50c13b11e78975d88249c3c447f6760317b8bf167"
-    sha256 cellar: :any,                 x86_64_linux:  "0090da01067ccc88f10b4f7979cb519ad4f1558fa4bdedd8cb16d9145cf87a28"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1a5164224530a481caa91700eb841911a744f3bb7c3633a45805a9f909c8de7d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1a5164224530a481caa91700eb841911a744f3bb7c3633a45805a9f909c8de7d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1a5164224530a481caa91700eb841911a744f3bb7c3633a45805a9f909c8de7d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b37876ddcde7a65b5927a7857d477a16bee322a4b1d50580adeda3b5a63f6c1e"
+    sha256 cellar: :any,                 x86_64_linux:  "a48f5516f033caa1f27a4451399cfe944dc61355ab565a57304b60588fe4e772"
   end
 
   depends_on "go" => :build

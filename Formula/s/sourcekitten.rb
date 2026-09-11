@@ -9,12 +9,13 @@ class Sourcekitten < Formula
   head "https://github.com/jpsim/SourceKitten.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b158fba55960f880a4dde1a9824d57ca3107d33080616be3ebdc2375f2026c64"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "988ca2e154bf0baeffc8558f75b72eaf273123c45f29fed462d0215fe30f50cb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c333a8003a872a1c2283faf947908f1fdb8282d0a5ad007ff59979a8f3edc415"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3840fb11432051e881248cb0bc0186773b4f73176c279981915a21f2738866f9"
-    sha256                               arm64_linux:   "c23c6d5135a62d4cb1701813810e1e218131ab408877ce5cb20bc9217195d70b"
-    sha256                               x86_64_linux:  "c3cd592a6d2596a5f3ce0ed67ccd63498bcfd66f5ea4dace5fc163aef6a201b1"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "adf01435a2bfc708624e1feb05607b1920b6a544f45322b0bafbccd48934c06b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "b158fba55960f880a4dde1a9824d57ca3107d33080616be3ebdc2375f2026c64"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "988ca2e154bf0baeffc8558f75b72eaf273123c45f29fed462d0215fe30f50cb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "c333a8003a872a1c2283faf947908f1fdb8282d0a5ad007ff59979a8f3edc415"
+    sha256 cellar: :any_skip_relocation, sonoma:            "3840fb11432051e881248cb0bc0186773b4f73176c279981915a21f2738866f9"
+    sha256                               arm64_linux:       "c23c6d5135a62d4cb1701813810e1e218131ab408877ce5cb20bc9217195d70b"
+    sha256                               x86_64_linux:      "c3cd592a6d2596a5f3ce0ed67ccd63498bcfd66f5ea4dace5fc163aef6a201b1"
   end
 
   uses_from_macos "swift"

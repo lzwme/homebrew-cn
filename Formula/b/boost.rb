@@ -16,12 +16,13 @@ class Boost < Formula
   end
 
   bottle do
-    sha256               arm64_tahoe:   "686277661ee32946032c02d6e365b0183dd7763f2e220be6c7949595458cef57"
-    sha256               arm64_sequoia: "8a2db0c95ead0763e46c7fb7c0d54324d83f8aa03f742c01b7d7d5b93112669b"
-    sha256               arm64_sonoma:  "38f6e06f86998a21aae14d5279a50d134f325930bdc46fbf081f5d1a183cba4b"
-    sha256 cellar: :any, sonoma:        "325c74a0d2fa3f71a83e89c4d26cf7a75de061061c26480d1ed1bbadc355bd0e"
-    sha256 cellar: :any, arm64_linux:   "1ebcec8766e8505b2a58df8dc4682e1dc71766917330158b0c02109d87c70a77"
-    sha256 cellar: :any, x86_64_linux:  "d90cc7b74ac1cba91e00f675b1cb36da5a94e5092eaed846f6a2e1e2974f59d3"
+    sha256               arm64_golden_gate: "7c78303247f3c9d7debecef62c64335e69b8d03493bae224fc824c2c9cff525c"
+    sha256               arm64_tahoe:       "686277661ee32946032c02d6e365b0183dd7763f2e220be6c7949595458cef57"
+    sha256               arm64_sequoia:     "8a2db0c95ead0763e46c7fb7c0d54324d83f8aa03f742c01b7d7d5b93112669b"
+    sha256               arm64_sonoma:      "38f6e06f86998a21aae14d5279a50d134f325930bdc46fbf081f5d1a183cba4b"
+    sha256 cellar: :any, sonoma:            "325c74a0d2fa3f71a83e89c4d26cf7a75de061061c26480d1ed1bbadc355bd0e"
+    sha256 cellar: :any, arm64_linux:       "1ebcec8766e8505b2a58df8dc4682e1dc71766917330158b0c02109d87c70a77"
+    sha256 cellar: :any, x86_64_linux:      "d90cc7b74ac1cba91e00f675b1cb36da5a94e5092eaed846f6a2e1e2974f59d3"
   end
 
   depends_on "icu4c@78"

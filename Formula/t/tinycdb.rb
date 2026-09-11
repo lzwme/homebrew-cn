@@ -12,14 +12,15 @@ class Tinycdb < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "bd03805a76b700768943e3216fba150262d5fb9f121f1e46e7474c761ce647da"
-    sha256 cellar: :any,                 arm64_sequoia: "680cfcfc325b233fe7340563af3250740568b8a3689fae20f477e108ed673a8e"
-    sha256 cellar: :any,                 arm64_sonoma:  "345b0faa2f7c6d23974d5c2428eb7961fbf0934a5064e39f1d957469c6ca491c"
-    sha256 cellar: :any,                 arm64_ventura: "29a4f84b5a7f2f4eeb6301260a9dd6dc063428a9550bb646b526c3cca3d96565"
-    sha256 cellar: :any,                 sonoma:        "00517e16683f21a47b6f985fd00927be4fca3c501aa34e445008aad1f9bbf7ea"
-    sha256 cellar: :any,                 ventura:       "c803d0c447413f5d29e43172e75c6a6ac54f6b23b2c85c469e1d0a2930932b95"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7b2c198f26388658e08919e7222f77af9d609383307ba7e87dd29dc781cb7bef"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e936f20c0ba2216f0ead62448ee2793eb96181c32bb381b9f3207e34e3ce46b5"
+    sha256 cellar: :any,                 arm64_golden_gate: "e53d45e3a4001e3c640fb2bac5eadc193cc2893d0f5e133d72c405d97ad8a8b3"
+    sha256 cellar: :any,                 arm64_tahoe:       "bd03805a76b700768943e3216fba150262d5fb9f121f1e46e7474c761ce647da"
+    sha256 cellar: :any,                 arm64_sequoia:     "680cfcfc325b233fe7340563af3250740568b8a3689fae20f477e108ed673a8e"
+    sha256 cellar: :any,                 arm64_sonoma:      "345b0faa2f7c6d23974d5c2428eb7961fbf0934a5064e39f1d957469c6ca491c"
+    sha256 cellar: :any,                 arm64_ventura:     "29a4f84b5a7f2f4eeb6301260a9dd6dc063428a9550bb646b526c3cca3d96565"
+    sha256 cellar: :any,                 sonoma:            "00517e16683f21a47b6f985fd00927be4fca3c501aa34e445008aad1f9bbf7ea"
+    sha256 cellar: :any,                 ventura:           "c803d0c447413f5d29e43172e75c6a6ac54f6b23b2c85c469e1d0a2930932b95"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "7b2c198f26388658e08919e7222f77af9d609383307ba7e87dd29dc781cb7bef"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "e936f20c0ba2216f0ead62448ee2793eb96181c32bb381b9f3207e34e3ce46b5"
   end
 
   def libcdb_soversion

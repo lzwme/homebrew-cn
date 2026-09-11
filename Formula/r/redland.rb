@@ -12,18 +12,19 @@ class Redland < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:    "7c7aab000c18d388d284b94060060bdc54990d6aaa29475f702b8c85d9031ecb"
-    sha256 arm64_sequoia:  "16526f739bc4c35eb3524005689e270dd9ce0828e0934d9d57f9693338b7fcda"
-    sha256 arm64_sonoma:   "4671a0bffac8906190119990c40dd6642a6f432ec02ce96c56456c5cb48c91ab"
-    sha256 arm64_ventura:  "16c721b39acf16e65892930227303d74673ce56ddaf252ca867da9391de7bad3"
-    sha256 arm64_monterey: "25dd020d5d83642dd83c56583dd742dc549fcc32efbec67958faeebed4e1a849"
-    sha256 arm64_big_sur:  "f54c731eecd682be899b7b8b5ab3424db134a1a48fe7076f0113deedb9a7f057"
-    sha256 sonoma:         "2c0269bd53d0f3dbd166a44ffb32ccdfb39c2a4408fe68b751e9b9e28b504810"
-    sha256 ventura:        "2c9931ba94fa4e8c4cd3b1983fdf55afa01838c3e6556664126733a7743c1575"
-    sha256 monterey:       "f0b6b4b55556c730bb0eb720bcca0d4efd9ede0b13e15f39758fe2a193ce4933"
-    sha256 big_sur:        "60ddb8775dfdff43901aac1138929c688b07e744304e24e1cd3d6183000620bf"
-    sha256 arm64_linux:    "40dd4a3c37bd52eb17f97912ab8baaefd3164c84f57ec8d8be6200677af307c8"
-    sha256 x86_64_linux:   "5439aed60715d12f7bce18e9292ce3301fc93b89cdb2eae2bd072a0a59a5fc6b"
+    sha256 arm64_golden_gate: "6195b70513db20582af81a3cb9d01010384c3812cb3ce7ff03a23aaf2b1cf422"
+    sha256 arm64_tahoe:       "7c7aab000c18d388d284b94060060bdc54990d6aaa29475f702b8c85d9031ecb"
+    sha256 arm64_sequoia:     "16526f739bc4c35eb3524005689e270dd9ce0828e0934d9d57f9693338b7fcda"
+    sha256 arm64_sonoma:      "4671a0bffac8906190119990c40dd6642a6f432ec02ce96c56456c5cb48c91ab"
+    sha256 arm64_ventura:     "16c721b39acf16e65892930227303d74673ce56ddaf252ca867da9391de7bad3"
+    sha256 arm64_monterey:    "25dd020d5d83642dd83c56583dd742dc549fcc32efbec67958faeebed4e1a849"
+    sha256 arm64_big_sur:     "f54c731eecd682be899b7b8b5ab3424db134a1a48fe7076f0113deedb9a7f057"
+    sha256 sonoma:            "2c0269bd53d0f3dbd166a44ffb32ccdfb39c2a4408fe68b751e9b9e28b504810"
+    sha256 ventura:           "2c9931ba94fa4e8c4cd3b1983fdf55afa01838c3e6556664126733a7743c1575"
+    sha256 monterey:          "f0b6b4b55556c730bb0eb720bcca0d4efd9ede0b13e15f39758fe2a193ce4933"
+    sha256 big_sur:           "60ddb8775dfdff43901aac1138929c688b07e744304e24e1cd3d6183000620bf"
+    sha256 arm64_linux:       "40dd4a3c37bd52eb17f97912ab8baaefd3164c84f57ec8d8be6200677af307c8"
+    sha256 x86_64_linux:      "5439aed60715d12f7bce18e9292ce3301fc93b89cdb2eae2bd072a0a59a5fc6b"
   end
 
   depends_on "pkgconf" => :build

@@ -11,12 +11,13 @@ class Sdl2Net < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "842b8be579abc9a3de68666c5654c86781e8a2dbf7ed4ea7eb116e9019249113"
-    sha256 cellar: :any,                 arm64_sequoia: "b6d21421e3538a00c2dee025bba678231f03c99e68a354ba3ed44ffadc691aac"
-    sha256 cellar: :any,                 arm64_sonoma:  "7c01db425e662ec301c077d6ec6cafc0426aeeff7b04a3f5abe07cd46a0f57b7"
-    sha256 cellar: :any,                 sonoma:        "5e5dafd02e711e46e3f0547b003a2d6b467efabfcdcf4aaf7f7b217ba913f0cc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7551589bd6c60d0685c19fd6eb3be3a46cb75a01b3a7d10d46a16ff5d6976181"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ffd51b211a29509081c1bf2969f724607803db3237f3a861af0a071611677b9d"
+    sha256 cellar: :any,                 arm64_golden_gate: "d03d574711cb19ed1bc1fb1295b6b4cb738e0b8b3c024ce8aac8e2a093483026"
+    sha256 cellar: :any,                 arm64_tahoe:       "842b8be579abc9a3de68666c5654c86781e8a2dbf7ed4ea7eb116e9019249113"
+    sha256 cellar: :any,                 arm64_sequoia:     "b6d21421e3538a00c2dee025bba678231f03c99e68a354ba3ed44ffadc691aac"
+    sha256 cellar: :any,                 arm64_sonoma:      "7c01db425e662ec301c077d6ec6cafc0426aeeff7b04a3f5abe07cd46a0f57b7"
+    sha256 cellar: :any,                 sonoma:            "5e5dafd02e711e46e3f0547b003a2d6b467efabfcdcf4aaf7f7b217ba913f0cc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "7551589bd6c60d0685c19fd6eb3be3a46cb75a01b3a7d10d46a16ff5d6976181"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "ffd51b211a29509081c1bf2969f724607803db3237f3a861af0a071611677b9d"
   end
 
   head do

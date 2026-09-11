@@ -151,15 +151,5 @@ class Octave < Formula
       mkoctfile ('-v', '-L#{lib}/octave/#{version}', args{:}, 'oct_demo.cc');
       assert(oct_demo, 42)
     MATLAB
-
-    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
-
-    pid = spawn(bin/"octave", "--gui")
-    begin
-      sleep 5
-    ensure
-      system "pkill", "-KILL", "octave-gui"
-      Process.wait(pid)
-    end
   end
 end

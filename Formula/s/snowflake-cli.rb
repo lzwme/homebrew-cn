@@ -3,17 +3,17 @@ class SnowflakeCli < Formula
 
   desc "CLI for snowflake"
   homepage "https://docs.snowflake.com/developer-guide/snowflake-cli/index"
-  url "https://files.pythonhosted.org/packages/ce/77/c581e954d75083b303c58e48b1503f95f48c45184f22f1e4d807eaf728be/snowflake_cli-3.26.0.tar.gz"
-  sha256 "dccf197ec243a9d6c9263605774752aa99a611944d84d5d8a37f3de4db5691bc"
+  url "https://files.pythonhosted.org/packages/66/84/ba3b207c081ab06e4c872a819d58f3b2b6f2b480bf8a83770466829a0d28/snowflake_cli-3.27.0.tar.gz"
+  sha256 "06b619a8565813be78eff46e48e6b912cddf9c381e226a5545a91d91d0511f81"
   license "Apache-2.0"
   head "https://github.com/snowflakedb/snowflake-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "673c2e428fbc3aeaaa4dd68796b2808f789c66306646258e0579336976bbbeeb"
-    sha256 cellar: :any, arm64_sequoia: "56aeafb50d1637e6173c7537c269fd4cb44f861b3c9e5f8fde77741d84216ac8"
-    sha256 cellar: :any, arm64_sonoma:  "f1ed3b8fcec64d3178e9d0b977734ef23755342ff45d0dccfbcf4a1dce467c19"
-    sha256 cellar: :any, arm64_linux:   "1c4f2ade18c69a8e424848e48c7e5529e72f15eb55dbf3c6071fc2bc448f0248"
-    sha256 cellar: :any, x86_64_linux:  "56c8c517aaf8a3fd5be869c36d610d7b797839906af06039112f765a81fd3f24"
+    sha256 cellar: :any, arm64_tahoe:   "c1f8c964f0b18eff7aa7a372b00c598da72b3aa13b0f5777af185de79966f02f"
+    sha256 cellar: :any, arm64_sequoia: "cc36d0b5e1095818d6227e92fc576887e93cc26cd504e1a50b4ed837904a2e03"
+    sha256 cellar: :any, arm64_sonoma:  "a2935d7b1cb267fa5ad3199a884b1e44b281adae80fa5d8a5aa25f54ec51d300"
+    sha256 cellar: :any, arm64_linux:   "39f45893762ad2a757e0e441a72e1102e74a81fc6620e09d72816c873c29c8aa"
+    sha256 cellar: :any, x86_64_linux:  "eb8faec01ef77edce64e9526ad8621ccb78d9a58263b49e992f92afe1442a392"
   end
 
   depends_on "protobuf" => :build
@@ -34,13 +34,13 @@ class SnowflakeCli < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/ec/30/96cf7d324e75cd2c349e2911ae2334d987fb8525d551495a2ef6758c26f3/boto3-1.43.83.tar.gz"
-    sha256 "6413d6e99f716af5d333a732db140e4b3359cac005a1271b11777b6d9ca82194"
+    url "https://files.pythonhosted.org/packages/67/0b/53f833efea7331aab106a65f1156e0035beed9bacbfcb309b128204468d4/boto3-1.43.90.tar.gz"
+    sha256 "4b669742d5b45b8fd20ca50ac414a4e4cf995ebb8f280d21be28676e71c97594"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/ed/6f/cf16418004c832e6eb9abc6905fa323a3bf96a76ca7f2e97858801a4103e/botocore-1.43.83.tar.gz"
-    sha256 "d9389b3b74400c34219965a2fb858c1d48744718865ee0496fd03bd5b21b943f"
+    url "https://files.pythonhosted.org/packages/6b/3e/29872261075d878581a31e9e98c512c0b85322a36e6d6784b9f0694a918d/botocore-1.43.90.tar.gz"
+    sha256 "a139ed601e8b8fb1d730022355fe2b284b8c15cfe9ac0f100254a35d2273e1d3"
   end
 
   resource "charset-normalizer" do
@@ -67,8 +67,8 @@ class SnowflakeCli < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/6d/30/03b03951873a1a0ffc7e8ca0e10c15597b59e8d0e39260704cd2ea087bc4/filelock-3.32.4.tar.gz"
-    sha256 "2bde2e4cf732e0153406d8a7bc80620ecf5e621fe0d25e41143c4e3b4733ff30"
+    url "https://files.pythonhosted.org/packages/38/46/126b1831dca12060d4a8296bf9c4fe5c93c4f22197fa239cb0cc82042bba/filelock-3.32.6.tar.gz"
+    sha256 "a3f55a18af3652a94d8f47d6055df434f254ca1d02ef2524850c6d249ca2512c"
   end
 
   resource "gitdb" do
@@ -77,8 +77,8 @@ class SnowflakeCli < Formula
   end
 
   resource "gitpython" do
-    url "https://files.pythonhosted.org/packages/26/d6/5f358ff283325580c2003a6d953aea18cfe10ae87b46f5ebc80fa3a386dc/gitpython-3.1.58.tar.gz"
-    sha256 "621416df10ef3fd0e19fabf9172ddeed0fa704d353d04f194eec56a625a95b22"
+    url "https://files.pythonhosted.org/packages/ca/dc/126b28e76b24a9268ba931ad3e012f71ebdadf62fd9f17758f7074bb0b20/gitpython-3.1.59.tar.gz"
+    sha256 "0a1475cfdc38a5bfba1a3e9a4a9da52a39749ecec322b772915c019f94e5b7e4"
   end
 
   resource "id" do
@@ -157,8 +157,8 @@ class SnowflakeCli < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/ea/06/cf1564dcc2e2261c8c8c6c05628dc8b418943bdae2a4e58640ceb2f770fa/platformdirs-4.11.5.tar.gz"
-    sha256 "e8b31f4f8bcbbedef91a6b57a706255e4f148d2a4e01648382a0a47342539173"
+    url "https://files.pythonhosted.org/packages/53/18/f3bb8ef0d3b930692343da8aa4d3cbcd6749477c053959395ac81965a6e9/platformdirs-4.11.8.tar.gz"
+    sha256 "f23abafea7dd4276d1f29104b83598d7dcc567cafd07c9c951e66665645437fc"
   end
 
   resource "pluggy" do
@@ -257,8 +257,8 @@ class SnowflakeCli < Formula
   end
 
   resource "snowflake-connector-python" do
-    url "https://files.pythonhosted.org/packages/61/36/78aab852031f30b559d745dc9bae95bd1028c647a2c16ce5af7f98a072aa/snowflake_connector_python-4.7.1.tar.gz"
-    sha256 "fad8e1fb0c49eb1d93dad785ce738dac17473c6826f8cd36ee8d6f9675bceae1"
+    url "https://files.pythonhosted.org/packages/00/2c/bb5ecbd0af9f24b743de2d4a44497be2bdab0e4afcdcd23d96998a2f8d18/snowflake_connector_python-4.7.3.tar.gz"
+    sha256 "0f93139c3502c3d23139561b123492c09c33ab12a30956649a01e2cb04f06583"
   end
 
   resource "snowflake-core" do
@@ -277,8 +277,8 @@ class SnowflakeCli < Formula
   end
 
   resource "tomlkit" do
-    url "https://files.pythonhosted.org/packages/cc/18/0bbf3884e9eaa38819ebe46a7bd25dcd56b67434402b66a58c4b8e552575/tomlkit-0.13.3.tar.gz"
-    sha256 "430cf247ee57df2b94ee3fbe588e71d362a941ebb545dec29b53961d61add2a1"
+    url "https://files.pythonhosted.org/packages/94/96/e07752635b98536177fa1f37671c8f3cdde2e724c6bcf6034b2cfb571565/tomlkit-0.15.1.tar.gz"
+    sha256 "e25bbf38843005246210a12982776f27f99cb9be67160e14434d0c0d21ee1e97"
   end
 
   resource "typer" do
@@ -287,8 +287,8 @@ class SnowflakeCli < Formula
   end
 
   resource "types-protobuf" do
-    url "https://files.pythonhosted.org/packages/44/07/541ffc94a4baee7d92ec91d91018aa684f97ece608b74619863e3cfd9cb3/types_protobuf-7.35.1.20260827.tar.gz"
-    sha256 "5a98c18177cfd968d6a0de55ecfc4221aa829ef88bcd86104298e028516b04af"
+    url "https://files.pythonhosted.org/packages/e1/6c/e3e5b3e10bc328126a39637c138f9ebfd734bf14342b9f3540039b4ab995/types_protobuf-7.35.1.20260906.tar.gz"
+    sha256 "efd1a3862d4c967dad5512ef8d56b1530ac84f182c41735b94004756518c4998"
   end
 
   resource "tzlocal" do
@@ -307,8 +307,8 @@ class SnowflakeCli < Formula
   end
 
   resource "websocket-client" do
-    url "https://files.pythonhosted.org/packages/2e/1d/ae61bca2a99d0735311b7b11b81931279b4a45c74a45034d31b39ad565d1/websocket_client-1.9.1.tar.gz"
-    sha256 "2e0916d2e28ccc82702f2f70aa7a654588e84a5cf2f5914099638b33547f2b7c"
+    url "https://files.pythonhosted.org/packages/d8/cb/a5abcc2891249f393827c650c6296660ce40374ac22d99ab9aea41f9d2a2/websocket_client-1.9.2.tar.gz"
+    sha256 "0fcb57545848be86992e128218fd96dd87a6769ffdb1a968dff79632b85604d0"
   end
 
   resource "wheel" do

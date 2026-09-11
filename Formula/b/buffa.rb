@@ -7,11 +7,12 @@ class Buffa < Formula
   head "https://github.com/anthropics/buffa.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fe82829a739811b15b0914d5e5dcf7be41cf3ce36d1158139735a134576b0695"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b807cf70c5bd86053ebbfa1897e43aedd0e51d06cd9160ed8c5822a9081964d1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ec6ad62b0cc128a17df0a4ac48786656fc3faf9b6a8901eaa3566b6208c61ba7"
-    sha256 cellar: :any,                 arm64_linux:   "1725bf3410b18bcc15c6ea776676a10f3af230360c1380951f2372528c78a762"
-    sha256 cellar: :any,                 x86_64_linux:  "1620609ab8c7cd14477d169faf81dbe1b4b1c42f04f06591cab44c5a16e79ece"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "06137f13c1e30225215d549a7291c685ed7befaa4f51bcb27c002ca23a17a52d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "fe82829a739811b15b0914d5e5dcf7be41cf3ce36d1158139735a134576b0695"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "b807cf70c5bd86053ebbfa1897e43aedd0e51d06cd9160ed8c5822a9081964d1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "ec6ad62b0cc128a17df0a4ac48786656fc3faf9b6a8901eaa3566b6208c61ba7"
+    sha256 cellar: :any,                 arm64_linux:       "1725bf3410b18bcc15c6ea776676a10f3af230360c1380951f2372528c78a762"
+    sha256 cellar: :any,                 x86_64_linux:      "1620609ab8c7cd14477d169faf81dbe1b4b1c42f04f06591cab44c5a16e79ece"
   end
 
   depends_on "rust" => :build

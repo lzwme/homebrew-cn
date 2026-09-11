@@ -8,12 +8,13 @@ class Zookeeper < Formula
   head "https://gitbox.apache.org/repos/asf/zookeeper.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "f91fb927cb73a86eaec23244cbadc075103a0be7aae4dd8607ad8cbace61fc37"
-    sha256 cellar: :any,                 arm64_sequoia: "af56f7c9860c1cac7df366af4ef67f2468f22da0f86df6014d27a98842b77ffe"
-    sha256 cellar: :any,                 arm64_sonoma:  "f4f7470323f32eb3895d9c19a0029fe26e2721d08086c11c62b20f1e6cb67458"
-    sha256 cellar: :any,                 sonoma:        "bfa429b82f2bbe542a3d23468424fcbc71797539874436a401572a6d9d9fa23f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1782caca768915452beeee04c9432d715fdb26c74596664cd2a66ba52c2f51b1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "19589017b7367c465a31ecf568c1aeb238a6ab8d38fcba0a63a5f5bbdaa2e064"
+    sha256 cellar: :any,                 arm64_golden_gate: "8aa4d959ea70d25e87dd2d96d4130415f3b258964765f476da36cb0166879ec4"
+    sha256 cellar: :any,                 arm64_tahoe:       "f91fb927cb73a86eaec23244cbadc075103a0be7aae4dd8607ad8cbace61fc37"
+    sha256 cellar: :any,                 arm64_sequoia:     "af56f7c9860c1cac7df366af4ef67f2468f22da0f86df6014d27a98842b77ffe"
+    sha256 cellar: :any,                 arm64_sonoma:      "f4f7470323f32eb3895d9c19a0029fe26e2721d08086c11c62b20f1e6cb67458"
+    sha256 cellar: :any,                 sonoma:            "bfa429b82f2bbe542a3d23468424fcbc71797539874436a401572a6d9d9fa23f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "1782caca768915452beeee04c9432d715fdb26c74596664cd2a66ba52c2f51b1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "19589017b7367c465a31ecf568c1aeb238a6ab8d38fcba0a63a5f5bbdaa2e064"
   end
 
   depends_on "autoconf" => :build

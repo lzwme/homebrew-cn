@@ -13,12 +13,13 @@ class Librasterlite2 < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "aedae0439b69ea9c2e069dd3d4cb868db71deb9e953806354bd57ea476f4698c"
-    sha256 cellar: :any,                 arm64_sequoia: "f02cc5381292362b7128c25c0ece3cbcbba43ef9fd0e61afa994eb22044032f0"
-    sha256 cellar: :any,                 arm64_sonoma:  "3d3f1875ddad0758159259e6608f6f170064ad474ba4912aad480c117fed161e"
-    sha256 cellar: :any,                 sonoma:        "431c45dd52bc4491321fdd17e420cfcab8c70e0854873aee1104f2296177a792"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "778b21f4a0da7c8f5bce15877479198bb03cb37c81b9682af06907773178bce8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "aaacb56f12774ee2064e0993afad66d2bce90846b22d834bfd91ecff2b61bd6a"
+    sha256 cellar: :any,                 arm64_golden_gate: "83955c6a63ee605c72504937c475000571f8e10f64e6687f7b3589c3e0dc3c45"
+    sha256 cellar: :any,                 arm64_tahoe:       "aedae0439b69ea9c2e069dd3d4cb868db71deb9e953806354bd57ea476f4698c"
+    sha256 cellar: :any,                 arm64_sequoia:     "f02cc5381292362b7128c25c0ece3cbcbba43ef9fd0e61afa994eb22044032f0"
+    sha256 cellar: :any,                 arm64_sonoma:      "3d3f1875ddad0758159259e6608f6f170064ad474ba4912aad480c117fed161e"
+    sha256 cellar: :any,                 sonoma:            "431c45dd52bc4491321fdd17e420cfcab8c70e0854873aee1104f2296177a792"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "778b21f4a0da7c8f5bce15877479198bb03cb37c81b9682af06907773178bce8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "aaacb56f12774ee2064e0993afad66d2bce90846b22d834bfd91ecff2b61bd6a"
   end
 
   depends_on "pkgconf" => [:build, :test]

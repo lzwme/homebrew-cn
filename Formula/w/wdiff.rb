@@ -7,12 +7,13 @@ class Wdiff < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 arm64_tahoe:   "ce4adeb51852e112fe76a73a1c38062eda8608965e06ca78023874b9f59b79bb"
-    sha256 arm64_sequoia: "a460deb2bef54642d0647be807c43bf61d5a2b00435d7f69a6b9323ae5c6822f"
-    sha256 arm64_sonoma:  "050fc462e265dc4f4a7667da9f960572c23f11fa216aec7d56029f4c1dc28f42"
-    sha256 sonoma:        "ac86b29de6c7b00d828b0e92d6970b3dd46a55dfeda235bbf16dfc38889dd9fc"
-    sha256 arm64_linux:   "8ae98c718e5cc91349d73b53268f4b9c1b783269d26070a97b634aaf46500e26"
-    sha256 x86_64_linux:  "40606235c83e71f751aaa0ee2054e79e2891260b6fbfdd16f6c3088e79b36ec8"
+    sha256 arm64_golden_gate: "dc8240927b1f768e46971d0f8aa24d42953f615890dc0bcb75e3c99033c8b2ec"
+    sha256 arm64_tahoe:       "ce4adeb51852e112fe76a73a1c38062eda8608965e06ca78023874b9f59b79bb"
+    sha256 arm64_sequoia:     "a460deb2bef54642d0647be807c43bf61d5a2b00435d7f69a6b9323ae5c6822f"
+    sha256 arm64_sonoma:      "050fc462e265dc4f4a7667da9f960572c23f11fa216aec7d56029f4c1dc28f42"
+    sha256 sonoma:            "ac86b29de6c7b00d828b0e92d6970b3dd46a55dfeda235bbf16dfc38889dd9fc"
+    sha256 arm64_linux:       "8ae98c718e5cc91349d73b53268f4b9c1b783269d26070a97b634aaf46500e26"
+    sha256 x86_64_linux:      "40606235c83e71f751aaa0ee2054e79e2891260b6fbfdd16f6c3088e79b36ec8"
   end
 
   uses_from_macos "ncurses"

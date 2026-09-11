@@ -13,11 +13,12 @@ class Valkey < Formula
   head "https://github.com/valkey-io/valkey.git", branch: "unstable"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "a746f300d368d3ee99deb2a4fa75462a0d042c2f6fe87be4146bc0b8b7a24a93"
-    sha256 cellar: :any, arm64_sequoia: "f4c76aacd3e201ff73c11b7789f3ed9825688bd5ff13cd214b535eff648268d5"
-    sha256 cellar: :any, arm64_sonoma:  "7445bef871f00c179f49a4f674ae3a2108ee5a322a185b5f525254e5f9ce7a56"
-    sha256 cellar: :any, arm64_linux:   "ba3807aa5e6479aaa550809c0dfae7f2b1234561af9981bbdb26ae5eeac8760c"
-    sha256 cellar: :any, x86_64_linux:  "3f3fb3b5a57b1fd215dc80cfc3d9eab1f5374e833b09e51c0026c5e374857a69"
+    sha256 cellar: :any, arm64_golden_gate: "a6e719d537a9fa42f7e97f51dc1c10345a95727097ff45f0cfddc77981328279"
+    sha256 cellar: :any, arm64_tahoe:       "a746f300d368d3ee99deb2a4fa75462a0d042c2f6fe87be4146bc0b8b7a24a93"
+    sha256 cellar: :any, arm64_sequoia:     "f4c76aacd3e201ff73c11b7789f3ed9825688bd5ff13cd214b535eff648268d5"
+    sha256 cellar: :any, arm64_sonoma:      "7445bef871f00c179f49a4f674ae3a2108ee5a322a185b5f525254e5f9ce7a56"
+    sha256 cellar: :any, arm64_linux:       "ba3807aa5e6479aaa550809c0dfae7f2b1234561af9981bbdb26ae5eeac8760c"
+    sha256 cellar: :any, x86_64_linux:      "3f3fb3b5a57b1fd215dc80cfc3d9eab1f5374e833b09e51c0026c5e374857a69"
   end
 
   depends_on "openssl@3"

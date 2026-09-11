@@ -16,12 +16,13 @@ class Sfml < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "f90a54b2514303d50f3e7ce23554246b9a4bd6765db89158da55eef3b780ce98"
-    sha256 cellar: :any,                 arm64_sequoia: "ca368852e45e73f7740343b736e20ddae613f326cbc24bc3779421c3c093c026"
-    sha256 cellar: :any,                 arm64_sonoma:  "533db007d52c7b1ac24fe6699958baca1d989363f288d673b8c55b266efeedf4"
-    sha256 cellar: :any,                 sonoma:        "01fb208923654ba730e48e3fbb5ca3bf78c09838f5a9e15bd389045732e65baa"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0cd68b13bddd404db5daa8a3a8a8ae8fd9236f59896374fb50514dea41628ecf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a4c2c78c094ed8eb9b9ec3a5c2d45b0cf0975edcf165ed97d58762b371fb7fe9"
+    sha256 cellar: :any,                 arm64_golden_gate: "a29fa70cbea3e830adf7714d511580ce2f733f2e70fe352cdd566ff32bd83787"
+    sha256 cellar: :any,                 arm64_tahoe:       "f90a54b2514303d50f3e7ce23554246b9a4bd6765db89158da55eef3b780ce98"
+    sha256 cellar: :any,                 arm64_sequoia:     "ca368852e45e73f7740343b736e20ddae613f326cbc24bc3779421c3c093c026"
+    sha256 cellar: :any,                 arm64_sonoma:      "533db007d52c7b1ac24fe6699958baca1d989363f288d673b8c55b266efeedf4"
+    sha256 cellar: :any,                 sonoma:            "01fb208923654ba730e48e3fbb5ca3bf78c09838f5a9e15bd389045732e65baa"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "0cd68b13bddd404db5daa8a3a8a8ae8fd9236f59896374fb50514dea41628ecf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "a4c2c78c094ed8eb9b9ec3a5c2d45b0cf0975edcf165ed97d58762b371fb7fe9"
   end
 
   depends_on "cmake" => :build

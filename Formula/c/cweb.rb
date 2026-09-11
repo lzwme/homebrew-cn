@@ -11,14 +11,15 @@ class Cweb < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "c4403e23d80b3754ac094fd08d07b191d100d6bfdf8f3f9dbbb9ee7dbebfa984"
-    sha256 arm64_sequoia: "d3d86635f9c5d0fd3990b130c780fd9b2a91d21222ec7668dbb47db1aedd82d6"
-    sha256 arm64_sonoma:  "8446ab44aec9607410a76075d9df7c63248a47dd1b5ff4d7eb16450dc48a1e0c"
-    sha256 arm64_ventura: "54586e839f7763712907f8552ec891853658ea488122d6683927afb9c64adf97"
-    sha256 sonoma:        "1fa6f4ec70dd19e629766b8878d44fb2fc8cf31bfbcd5dd47099855902bb45c1"
-    sha256 ventura:       "7f10cc21dc5400577161bee0ba422d268045fd28217e8d6c7f53da392b47211f"
-    sha256 arm64_linux:   "be157573864df0fa318a5fd47f27989ab95b0d50ecdee9f545afa6b5b7b63989"
-    sha256 x86_64_linux:  "b62b4d08b2391b41b90db3eabd9cec94c6bc3317aefa6b3659d9bbb61f6239b6"
+    sha256 arm64_golden_gate: "e2bad7f62983d6fe9c5929f5e5f66bb01a435ab9e5efbbc980c4553ad576202f"
+    sha256 arm64_tahoe:       "c4403e23d80b3754ac094fd08d07b191d100d6bfdf8f3f9dbbb9ee7dbebfa984"
+    sha256 arm64_sequoia:     "d3d86635f9c5d0fd3990b130c780fd9b2a91d21222ec7668dbb47db1aedd82d6"
+    sha256 arm64_sonoma:      "8446ab44aec9607410a76075d9df7c63248a47dd1b5ff4d7eb16450dc48a1e0c"
+    sha256 arm64_ventura:     "54586e839f7763712907f8552ec891853658ea488122d6683927afb9c64adf97"
+    sha256 sonoma:            "1fa6f4ec70dd19e629766b8878d44fb2fc8cf31bfbcd5dd47099855902bb45c1"
+    sha256 ventura:           "7f10cc21dc5400577161bee0ba422d268045fd28217e8d6c7f53da392b47211f"
+    sha256 arm64_linux:       "be157573864df0fa318a5fd47f27989ab95b0d50ecdee9f545afa6b5b7b63989"
+    sha256 x86_64_linux:      "b62b4d08b2391b41b90db3eabd9cec94c6bc3317aefa6b3659d9bbb61f6239b6"
   end
 
   conflicts_with "texlive", because: "both install `cweb` binaries"

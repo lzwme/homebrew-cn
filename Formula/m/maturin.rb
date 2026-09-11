@@ -7,12 +7,13 @@ class Maturin < Formula
   head "https://github.com/PyO3/maturin.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "9aa56f19ab4091c46c9273e8109711fb83ff1e769f6b263a5381a2dd16bd2edb"
-    sha256 cellar: :any, arm64_sequoia: "a9488e045ca3d582951d19dd2deb6b4faa70cb6ece73c2b7edc155c2209988dd"
-    sha256 cellar: :any, arm64_sonoma:  "1a3448e5b1f40a07e387ed7d9188c1ad02bf71ab0bb096e4b5b801bb57e89721"
-    sha256 cellar: :any, sonoma:        "efd85533263473b7a4aacd5b1c79cfcfd55f5e4815be2aa1c8cd54795c1fcfb8"
-    sha256 cellar: :any, arm64_linux:   "e50c5f3cce47a28b1167be83eff27c02cf8a153eced7528b205867c20d865d5f"
-    sha256 cellar: :any, x86_64_linux:  "e9ae58b15640e93626929b6466cf04821aad37ea1eb83a603fc55c7d099a0bf8"
+    sha256 cellar: :any, arm64_golden_gate: "dfa9195ae74775728f15ff82dc3f17db98ac20f6d6b8e70527c6e6362a558c61"
+    sha256 cellar: :any, arm64_tahoe:       "9aa56f19ab4091c46c9273e8109711fb83ff1e769f6b263a5381a2dd16bd2edb"
+    sha256 cellar: :any, arm64_sequoia:     "a9488e045ca3d582951d19dd2deb6b4faa70cb6ece73c2b7edc155c2209988dd"
+    sha256 cellar: :any, arm64_sonoma:      "1a3448e5b1f40a07e387ed7d9188c1ad02bf71ab0bb096e4b5b801bb57e89721"
+    sha256 cellar: :any, sonoma:            "efd85533263473b7a4aacd5b1c79cfcfd55f5e4815be2aa1c8cd54795c1fcfb8"
+    sha256 cellar: :any, arm64_linux:       "e50c5f3cce47a28b1167be83eff27c02cf8a153eced7528b205867c20d865d5f"
+    sha256 cellar: :any, x86_64_linux:      "e9ae58b15640e93626929b6466cf04821aad37ea1eb83a603fc55c7d099a0bf8"
   end
 
   depends_on "pkgconf" => :build

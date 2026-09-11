@@ -12,12 +12,13 @@ class Cgl < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "9ea3fb77acf4c37b612b9b679d107a72816e5b649252d6e81e3257041a2d08e5"
-    sha256 cellar: :any,                 arm64_sequoia: "e33e192a6cb3365113015774ee902ddb2a720088eea8ed1a798a1a1fbaac4fa1"
-    sha256 cellar: :any,                 arm64_sonoma:  "968fb4202fc8df229fe86cdbab0b410a42df20a4435f0ed6ea2fd35d55d63ce9"
-    sha256 cellar: :any,                 sonoma:        "1a63ce22fdd51c336c7d4ba64240b29f6fa5e548bc007f28186b9f62345d8dac"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ee2ddfbd7c3f9e85937d596e6a3fc526718178c10303e4438fd292828e4211ba"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0aaa762baad6596687a1ee66a677e5c6346bb94b6b48ecc95b6f8cb8352c03c8"
+    sha256 cellar: :any,                 arm64_golden_gate: "27adb6672d03327142c37a6bd6f0ade5e14a2075b0045d5277962551e14dbe84"
+    sha256 cellar: :any,                 arm64_tahoe:       "9ea3fb77acf4c37b612b9b679d107a72816e5b649252d6e81e3257041a2d08e5"
+    sha256 cellar: :any,                 arm64_sequoia:     "e33e192a6cb3365113015774ee902ddb2a720088eea8ed1a798a1a1fbaac4fa1"
+    sha256 cellar: :any,                 arm64_sonoma:      "968fb4202fc8df229fe86cdbab0b410a42df20a4435f0ed6ea2fd35d55d63ce9"
+    sha256 cellar: :any,                 sonoma:            "1a63ce22fdd51c336c7d4ba64240b29f6fa5e548bc007f28186b9f62345d8dac"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "ee2ddfbd7c3f9e85937d596e6a3fc526718178c10303e4438fd292828e4211ba"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "0aaa762baad6596687a1ee66a677e5c6346bb94b6b48ecc95b6f8cb8352c03c8"
   end
 
   depends_on "pkgconf" => [:build, :test]

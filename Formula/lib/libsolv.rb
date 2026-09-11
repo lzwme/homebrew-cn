@@ -11,12 +11,13 @@ class Libsolv < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "7f8c754af1537c3a4bdfa36beafba00e3c0327aa8203630bbfc4659a4f3be500"
-    sha256 cellar: :any,                 arm64_sequoia: "324c5b3734665fa23a33f5298557655527140c95844ce378f0eb94f0e2197b6c"
-    sha256 cellar: :any,                 arm64_sonoma:  "efec1c124d205cc8db8ebd47f060807d0b5e6ec485b9ce1b9122a5079f0ffbfc"
-    sha256 cellar: :any,                 sonoma:        "5f48921930095ce2fe31feb579966311356d03631ab3936c9a67325e4f6e3c07"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "aa20085a60b40439b691afeb5b942edf04dbb12d1d1595532b3c1280e6a02100"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8ea07388c8559e8422e9f4efdfff6d546568d33a561401ea51e76377de72083f"
+    sha256 cellar: :any,                 arm64_golden_gate: "98d64ddf7b96c25f6435a0fa5447997e9c0d3f6ed25722199cf893092a3af3a5"
+    sha256 cellar: :any,                 arm64_tahoe:       "7f8c754af1537c3a4bdfa36beafba00e3c0327aa8203630bbfc4659a4f3be500"
+    sha256 cellar: :any,                 arm64_sequoia:     "324c5b3734665fa23a33f5298557655527140c95844ce378f0eb94f0e2197b6c"
+    sha256 cellar: :any,                 arm64_sonoma:      "efec1c124d205cc8db8ebd47f060807d0b5e6ec485b9ce1b9122a5079f0ffbfc"
+    sha256 cellar: :any,                 sonoma:            "5f48921930095ce2fe31feb579966311356d03631ab3936c9a67325e4f6e3c07"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "aa20085a60b40439b691afeb5b942edf04dbb12d1d1595532b3c1280e6a02100"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "8ea07388c8559e8422e9f4efdfff6d546568d33a561401ea51e76377de72083f"
   end
 
   depends_on "cmake" => :build

@@ -8,12 +8,13 @@ class Jadx < Formula
   head "https://github.com/skylot/jadx.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0d4e73a3db3c8954b505f87d0df7dc900f04ee3158036ebb040d3ac420c24f8b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0d4e73a3db3c8954b505f87d0df7dc900f04ee3158036ebb040d3ac420c24f8b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0d4e73a3db3c8954b505f87d0df7dc900f04ee3158036ebb040d3ac420c24f8b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0d4e73a3db3c8954b505f87d0df7dc900f04ee3158036ebb040d3ac420c24f8b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c813f91c5526d181d7571d4040efd27f8ee330a5b8ba1682e2653b549b2fb98f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c813f91c5526d181d7571d4040efd27f8ee330a5b8ba1682e2653b549b2fb98f"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "cbf00e2b2173e4bb6624448c18a59e7aeeab5a18d175917cf26542f31f5b0bff"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "0d4e73a3db3c8954b505f87d0df7dc900f04ee3158036ebb040d3ac420c24f8b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "0d4e73a3db3c8954b505f87d0df7dc900f04ee3158036ebb040d3ac420c24f8b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "0d4e73a3db3c8954b505f87d0df7dc900f04ee3158036ebb040d3ac420c24f8b"
+    sha256 cellar: :any_skip_relocation, sonoma:            "0d4e73a3db3c8954b505f87d0df7dc900f04ee3158036ebb040d3ac420c24f8b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "c813f91c5526d181d7571d4040efd27f8ee330a5b8ba1682e2653b549b2fb98f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "c813f91c5526d181d7571d4040efd27f8ee330a5b8ba1682e2653b549b2fb98f"
   end
 
   depends_on "gradle" => :build

@@ -18,12 +18,13 @@ class Icu4cAT78 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "0476be299494b97e50a48b0ba08811255300228aef664058e555480d6aee4fb5"
-    sha256 cellar: :any,                 arm64_sequoia: "d1206febbce23e5014f51b631afd7129b2a247ee18a9f97226cd5889e66c1686"
-    sha256 cellar: :any,                 arm64_sonoma:  "e15b43778ccf194d2ebef8122ff654899825df30aa339ad39578c66500eaa6d8"
-    sha256 cellar: :any,                 sonoma:        "100ba33fb4652a045e921b19e0e52a8c7aa20a3e90adcdeaae58e53d4a43d39a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "76dae2c62a79c94411f88eb7c8c702429d15ad8d5d6df17bfa855539df3497a6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b152f4b6f581af753a52bf6dc5b7a113cd9f77088dcc94deaf6c321109aa43c2"
+    sha256 cellar: :any,                 arm64_golden_gate: "237dc113cc2df7c3b0c327ae96d567c71a86bc6d89c402860603e7b233933c05"
+    sha256 cellar: :any,                 arm64_tahoe:       "0476be299494b97e50a48b0ba08811255300228aef664058e555480d6aee4fb5"
+    sha256 cellar: :any,                 arm64_sequoia:     "d1206febbce23e5014f51b631afd7129b2a247ee18a9f97226cd5889e66c1686"
+    sha256 cellar: :any,                 arm64_sonoma:      "e15b43778ccf194d2ebef8122ff654899825df30aa339ad39578c66500eaa6d8"
+    sha256 cellar: :any,                 sonoma:            "100ba33fb4652a045e921b19e0e52a8c7aa20a3e90adcdeaae58e53d4a43d39a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "76dae2c62a79c94411f88eb7c8c702429d15ad8d5d6df17bfa855539df3497a6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "b152f4b6f581af753a52bf6dc5b7a113cd9f77088dcc94deaf6c321109aa43c2"
   end
 
   keg_only :shadowed_by_macos, "macOS provides libicucore.dylib (but nothing else)"

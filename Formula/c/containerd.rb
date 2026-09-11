@@ -6,11 +6,12 @@ class Containerd < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1cddde009e8c412b480ccf455fa3652e811bcbc63b0ffb4d50f30bd8e319d1a0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "083f8564098c41152e660da9fb41e057bb66d4c54be9c3ff158e87580b0fef71"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c8633fe93ef7919b81ce9793ce58a5493db8792b684fec3f7612a0da204eb086"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b6a5611daac5239995dd2f5746ae905cc95f96e6e9a5e519c472fef1f0774542"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1831bb7f96052a1775c0d82f46b9dba5f0c0fedc83b4fb34e74f1c5add9f375b"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "d99c96ab48c0fff97cde29277dd6c9fa2e1cec1f1e4b999f62eddb7971057797"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "1cddde009e8c412b480ccf455fa3652e811bcbc63b0ffb4d50f30bd8e319d1a0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "083f8564098c41152e660da9fb41e057bb66d4c54be9c3ff158e87580b0fef71"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "c8633fe93ef7919b81ce9793ce58a5493db8792b684fec3f7612a0da204eb086"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "b6a5611daac5239995dd2f5746ae905cc95f96e6e9a5e519c472fef1f0774542"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "1831bb7f96052a1775c0d82f46b9dba5f0c0fedc83b4fb34e74f1c5add9f375b"
   end
 
   depends_on "go" => :build

@@ -8,12 +8,13 @@ class Portmidi < Formula
   compatibility_version 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "02be979b495e1a9e201b22e8e136c97a5c81930e169c1aa38b83b46dd82f73e2"
-    sha256 cellar: :any,                 arm64_sequoia: "68919e82b5dbbaf1150ab3f9c4b3d2a58a68836229ff1ae12a77319d020394fb"
-    sha256 cellar: :any,                 arm64_sonoma:  "0cd908e5699f31817715fbb60cbe8840198f615620f556c384ad21bdf38120a6"
-    sha256 cellar: :any,                 sonoma:        "8e95eab876a35c3d629c88ff159d05f0242083990586562a03f54bc9056f1be6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "598ca599a4d47c9f106818c1593e52e26d7a512478d6fcee80dd26c6693d91c2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a66e2c410e774644f259314a481921b6ea633cc5fe7c610e2e703ce9b0ca572e"
+    sha256 cellar: :any,                 arm64_golden_gate: "5ae7928664e7328a97da4b999e9170448bb4972ca81e1331449d65fb74d2c826"
+    sha256 cellar: :any,                 arm64_tahoe:       "02be979b495e1a9e201b22e8e136c97a5c81930e169c1aa38b83b46dd82f73e2"
+    sha256 cellar: :any,                 arm64_sequoia:     "68919e82b5dbbaf1150ab3f9c4b3d2a58a68836229ff1ae12a77319d020394fb"
+    sha256 cellar: :any,                 arm64_sonoma:      "0cd908e5699f31817715fbb60cbe8840198f615620f556c384ad21bdf38120a6"
+    sha256 cellar: :any,                 sonoma:            "8e95eab876a35c3d629c88ff159d05f0242083990586562a03f54bc9056f1be6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "598ca599a4d47c9f106818c1593e52e26d7a512478d6fcee80dd26c6693d91c2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "a66e2c410e774644f259314a481921b6ea633cc5fe7c610e2e703ce9b0ca572e"
   end
 
   depends_on "cmake" => :build

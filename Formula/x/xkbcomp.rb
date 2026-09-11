@@ -6,12 +6,13 @@ class Xkbcomp < Formula
   license all_of: ["HPND", "MIT-open-group"]
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "94c2d20aea0e61fc141e27bbe54fbf3ccf925c96fd9feea8f7bd6635a320cee3"
-    sha256 cellar: :any,                 arm64_sequoia: "26572a4aac52f2bfa4042a9d1437b43e458a1e6cef25c7a324bed606d814057e"
-    sha256 cellar: :any,                 arm64_sonoma:  "4fa4e7a20f893a19f9b4b9a5d8d75618690a2e62b850819e2ea00a866dd69f65"
-    sha256 cellar: :any,                 sonoma:        "279212c9fcc8a124cd34fe55a8dc18242bd31e94f3baf634f9c066906433f632"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f81ffd52c4f1e2c651340725196bbb20d7ee9546b5de721273207f64591d5a06"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "aa59cc3f15db3ac79bf395bea5937f57957e611da69a05bad79214a19560440a"
+    sha256 cellar: :any,                 arm64_golden_gate: "277acaf03dcf8c82d8a2ffe3f0bff893c18d5c0e35ec4bfc99ff27c82596e740"
+    sha256 cellar: :any,                 arm64_tahoe:       "94c2d20aea0e61fc141e27bbe54fbf3ccf925c96fd9feea8f7bd6635a320cee3"
+    sha256 cellar: :any,                 arm64_sequoia:     "26572a4aac52f2bfa4042a9d1437b43e458a1e6cef25c7a324bed606d814057e"
+    sha256 cellar: :any,                 arm64_sonoma:      "4fa4e7a20f893a19f9b4b9a5d8d75618690a2e62b850819e2ea00a866dd69f65"
+    sha256 cellar: :any,                 sonoma:            "279212c9fcc8a124cd34fe55a8dc18242bd31e94f3baf634f9c066906433f632"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "f81ffd52c4f1e2c651340725196bbb20d7ee9546b5de721273207f64591d5a06"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "aa59cc3f15db3ac79bf395bea5937f57957e611da69a05bad79214a19560440a"
   end
 
   depends_on "pkgconf" => :build

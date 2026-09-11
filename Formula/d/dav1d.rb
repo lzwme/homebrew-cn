@@ -7,12 +7,13 @@ class Dav1d < Formula
   compatibility_version 1
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "d30ff747564febd643ec4b279c5adc74f708b8d6eb8e172f914b9fcdec26c464"
-    sha256 cellar: :any, arm64_sequoia: "5f573db161c0685ba7e8d27bd3b6a494e6952e47c7c99355a0d090b253b566af"
-    sha256 cellar: :any, arm64_sonoma:  "0ac81e374a2bf69706ddef7f8ea18ca7188eb51eb31689a4198a6d257a69af2c"
-    sha256 cellar: :any, sonoma:        "c6bf6ecc82c9ede74528fbf82ddf4b9c83bf6eb7c74dcf5e5a56a25b4cb918d5"
-    sha256 cellar: :any, arm64_linux:   "f67e0d83c7f0ee6a8a68a5cf56253736b9b20d29d479da9d5446aa3cea467c3b"
-    sha256 cellar: :any, x86_64_linux:  "6c978ac8a5eb6652bd8780911ff45d73a181e6c6a9f18d60f1c7f86184d4bdb2"
+    sha256 cellar: :any, arm64_golden_gate: "7c717fd8cb95695007552885327049a18e741d3bfe3254e96a923b3c90ed4875"
+    sha256 cellar: :any, arm64_tahoe:       "d30ff747564febd643ec4b279c5adc74f708b8d6eb8e172f914b9fcdec26c464"
+    sha256 cellar: :any, arm64_sequoia:     "5f573db161c0685ba7e8d27bd3b6a494e6952e47c7c99355a0d090b253b566af"
+    sha256 cellar: :any, arm64_sonoma:      "0ac81e374a2bf69706ddef7f8ea18ca7188eb51eb31689a4198a6d257a69af2c"
+    sha256 cellar: :any, sonoma:            "c6bf6ecc82c9ede74528fbf82ddf4b9c83bf6eb7c74dcf5e5a56a25b4cb918d5"
+    sha256 cellar: :any, arm64_linux:       "f67e0d83c7f0ee6a8a68a5cf56253736b9b20d29d479da9d5446aa3cea467c3b"
+    sha256 cellar: :any, x86_64_linux:      "6c978ac8a5eb6652bd8780911ff45d73a181e6c6a9f18d60f1c7f86184d4bdb2"
   end
 
   depends_on "meson" => :build

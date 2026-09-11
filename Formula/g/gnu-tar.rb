@@ -9,11 +9,12 @@ class GnuTar < Formula
   compatibility_version 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "522c584c74e1ce6a685feed68e135353ac42262b9253d26d562fccf5b176df41"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "aa81f1c558381733e4506ec7b918d3cd39ad233ab74ed9b90bbeb6d709e47c21"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "671e143eb99267953c1e2d2062e6902ac7c03c74d2ae879c7e38d86c7694f8dc"
-    sha256 cellar: :any,                 arm64_linux:   "28bfccf86d4405037893cb37ca032b40589b0f0d2f09559baa3fbd3feedbd3c4"
-    sha256 cellar: :any,                 x86_64_linux:  "a5fc1fa62890b5e1a228bf85207a56b6cccc28913b5a7d27901450d4c18bb48c"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "98f372e8005b4f963a3c507f02ee212a9b20f9d9e4d8309c598ce331aab2e359"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "522c584c74e1ce6a685feed68e135353ac42262b9253d26d562fccf5b176df41"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "aa81f1c558381733e4506ec7b918d3cd39ad233ab74ed9b90bbeb6d709e47c21"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "671e143eb99267953c1e2d2062e6902ac7c03c74d2ae879c7e38d86c7694f8dc"
+    sha256 cellar: :any,                 arm64_linux:       "28bfccf86d4405037893cb37ca032b40589b0f0d2f09559baa3fbd3feedbd3c4"
+    sha256 cellar: :any,                 x86_64_linux:      "a5fc1fa62890b5e1a228bf85207a56b6cccc28913b5a7d27901450d4c18bb48c"
   end
 
   head do

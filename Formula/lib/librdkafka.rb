@@ -13,11 +13,12 @@ class Librdkafka < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "ed3fb41a87771c4c1c049b6247daaf5adc8660d20ae743596617401913ee4890"
-    sha256 cellar: :any, arm64_sequoia: "a7a62196cda98ceca6af3edcf735df04d103dc44e4af131ec28ee2d4ca419c33"
-    sha256 cellar: :any, arm64_sonoma:  "5600c0b03159960f3b59363f279dc4f9f0a416333c60e2a2ebf6cffcec89ced9"
-    sha256 cellar: :any, arm64_linux:   "1a510d17417be5a3e4eee56b731a579145faf12d06dd591734aa24986435a378"
-    sha256 cellar: :any, x86_64_linux:  "d6226b9e6c404280c5921da0a4ae407b05a7e971160008ae7859841f72270afa"
+    sha256 cellar: :any, arm64_golden_gate: "fee19ffd81582acf6edf60b0da2f07232549382601dbe53388da5389adc5c5d7"
+    sha256 cellar: :any, arm64_tahoe:       "ed3fb41a87771c4c1c049b6247daaf5adc8660d20ae743596617401913ee4890"
+    sha256 cellar: :any, arm64_sequoia:     "a7a62196cda98ceca6af3edcf735df04d103dc44e4af131ec28ee2d4ca419c33"
+    sha256 cellar: :any, arm64_sonoma:      "5600c0b03159960f3b59363f279dc4f9f0a416333c60e2a2ebf6cffcec89ced9"
+    sha256 cellar: :any, arm64_linux:       "1a510d17417be5a3e4eee56b731a579145faf12d06dd591734aa24986435a378"
+    sha256 cellar: :any, x86_64_linux:      "d6226b9e6c404280c5921da0a4ae407b05a7e971160008ae7859841f72270afa"
   end
 
   depends_on "pkgconf" => :build

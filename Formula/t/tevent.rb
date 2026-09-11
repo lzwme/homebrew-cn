@@ -11,12 +11,13 @@ class Tevent < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "61d735b0f3f2b5b6d4fdda58810b10dd286bd3a584f1fb3abde8285aed6b7a40"
-    sha256 cellar: :any, arm64_sequoia: "cc86cdef215a345a3d4700060d47f3568f05794797fa20829cd94fc86098d9f2"
-    sha256 cellar: :any, arm64_sonoma:  "4a345f1514eec67d12eba97e6218ff0145dc2807212ea981e9fb955f6e84ea9d"
-    sha256 cellar: :any, sonoma:        "5e165686744d782c04bd3dc6737c02da676bdf70de10b3b6456bf74fcdd0459a"
-    sha256 cellar: :any, arm64_linux:   "487933783e91c33a535b8a46f0b6c0612068a062ccd62f1c103150d23f2356f5"
-    sha256 cellar: :any, x86_64_linux:  "7d46173c3b86ada8d64d36e36616de9e246204978cd726e93515db10b22ac2be"
+    sha256 cellar: :any, arm64_golden_gate: "4192b7320efccec98790b11550e2279f4d4ca2ba723ffbd04f4bd0b592153807"
+    sha256 cellar: :any, arm64_tahoe:       "61d735b0f3f2b5b6d4fdda58810b10dd286bd3a584f1fb3abde8285aed6b7a40"
+    sha256 cellar: :any, arm64_sequoia:     "cc86cdef215a345a3d4700060d47f3568f05794797fa20829cd94fc86098d9f2"
+    sha256 cellar: :any, arm64_sonoma:      "4a345f1514eec67d12eba97e6218ff0145dc2807212ea981e9fb955f6e84ea9d"
+    sha256 cellar: :any, sonoma:            "5e165686744d782c04bd3dc6737c02da676bdf70de10b3b6456bf74fcdd0459a"
+    sha256 cellar: :any, arm64_linux:       "487933783e91c33a535b8a46f0b6c0612068a062ccd62f1c103150d23f2356f5"
+    sha256 cellar: :any, x86_64_linux:      "7d46173c3b86ada8d64d36e36616de9e246204978cd726e93515db10b22ac2be"
   end
 
   depends_on "cmocka" => :build

@@ -8,12 +8,13 @@ class Zydis < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "3d64cf57d8e2eb55ac2457d12c35d227cca34db9c480d0c7fe6e41fd207bacd2"
-    sha256 cellar: :any,                 arm64_sequoia: "be71db07f686d7a09c8db9171418d0f8b0fbe3129f02b32b4d2fb956be023a6d"
-    sha256 cellar: :any,                 arm64_sonoma:  "3f74e22ca0befe90b33a8682e243c4ad4faad8e05ed730b5a320d5fd0426b27e"
-    sha256 cellar: :any,                 sonoma:        "01ec1f6ed5fb736d90dceded3f6ce60e79a97749441b1974d74038fec675ee62"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "bfcb9abc2e3e2787212e9f9d3f2325730a33405e07567d2d0b67a4b82657b797"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "eb5cf27e4ef3db8977e70c0f33f9aa71da5ca8140769cfdd13e65925ca86c4d9"
+    sha256 cellar: :any,                 arm64_golden_gate: "12cc8b4d426c4e70a4b41d9ec51d33f9839fab719439d40f66c0d00ed582e4ac"
+    sha256 cellar: :any,                 arm64_tahoe:       "3d64cf57d8e2eb55ac2457d12c35d227cca34db9c480d0c7fe6e41fd207bacd2"
+    sha256 cellar: :any,                 arm64_sequoia:     "be71db07f686d7a09c8db9171418d0f8b0fbe3129f02b32b4d2fb956be023a6d"
+    sha256 cellar: :any,                 arm64_sonoma:      "3f74e22ca0befe90b33a8682e243c4ad4faad8e05ed730b5a320d5fd0426b27e"
+    sha256 cellar: :any,                 sonoma:            "01ec1f6ed5fb736d90dceded3f6ce60e79a97749441b1974d74038fec675ee62"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "bfcb9abc2e3e2787212e9f9d3f2325730a33405e07567d2d0b67a4b82657b797"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "eb5cf27e4ef3db8977e70c0f33f9aa71da5ca8140769cfdd13e65925ca86c4d9"
   end
 
   depends_on "cmake" => :build

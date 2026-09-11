@@ -10,12 +10,13 @@ class Healpix < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "2cd47768112373cf69d551358a450576de47148b04927854453825f6f4d7ea34"
-    sha256 cellar: :any,                 arm64_sequoia: "0497504cbe071a0de19f56a2c2091c28d796141f7aecb37e8ab3473cf7d6c401"
-    sha256 cellar: :any,                 arm64_sonoma:  "8589afbe8752f4d93b15e68173266298dccc286e15d8b131021dc6913f433790"
-    sha256 cellar: :any,                 sonoma:        "95a5b5a8fa81458c51480629f45133744ae06bedd47c89c9b6ec37b846caed2c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2192382257e157d5c43c23f0ceb74e2ceb6616e286d21f1918d914a1afa7eef1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2e564d3d9c546315968321c06b82468e6f6120b873dfb9422c4316bd13d3e238"
+    sha256 cellar: :any,                 arm64_golden_gate: "233886d55fa346f726d4996592c5071a2266d912c2a71b6c0027279af6a6e78a"
+    sha256 cellar: :any,                 arm64_tahoe:       "2cd47768112373cf69d551358a450576de47148b04927854453825f6f4d7ea34"
+    sha256 cellar: :any,                 arm64_sequoia:     "0497504cbe071a0de19f56a2c2091c28d796141f7aecb37e8ab3473cf7d6c401"
+    sha256 cellar: :any,                 arm64_sonoma:      "8589afbe8752f4d93b15e68173266298dccc286e15d8b131021dc6913f433790"
+    sha256 cellar: :any,                 sonoma:            "95a5b5a8fa81458c51480629f45133744ae06bedd47c89c9b6ec37b846caed2c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "2192382257e157d5c43c23f0ceb74e2ceb6616e286d21f1918d914a1afa7eef1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "2e564d3d9c546315968321c06b82468e6f6120b873dfb9422c4316bd13d3e238"
   end
 
   depends_on "autoconf" => :build

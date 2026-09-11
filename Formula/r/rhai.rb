@@ -1,18 +1,17 @@
 class Rhai < Formula
   desc "Embedded scripting language for Rust"
   homepage "https://rhai.rs/"
-  url "https://ghfast.top/https://github.com/rhaiscript/rhai/archive/refs/tags/v1.26.0.tar.gz"
-  sha256 "8e9837c5910af447e4d3c700491db1dec02eea562561ff3b4cb0642ef11b5b29"
+  url "https://ghfast.top/https://github.com/rhaiscript/rhai/archive/refs/tags/v1.26.1.tar.gz"
+  sha256 "29a9f479d027d39e8a26e71b8c0b168e05a9ecaa00387c82cd78806b6917aba1"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/rhaiscript/rhai.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c433b3a1c315f30e23c73c0659dc24865c225185e38aa94686599ea0b650e0db"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7102a6b6a4b2969d8e30d856187f20c29c57b5cb3c3ff7106d96b2df44f5549c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bd680fed8acb2cbf5cdd9458b57851d41dd640c059173b34636d4a2333251e42"
-    sha256 cellar: :any_skip_relocation, sonoma:        "61f662ab0de8e1c2e1a3adfac9cf85ce8dd6498132bbfd973ca2a3427dc9f65d"
-    sha256 cellar: :any,                 arm64_linux:   "324af3848b62b018b7b459c420444b4fe91e0b66fdb6039fc02c4ab08c9b2aa1"
-    sha256 cellar: :any,                 x86_64_linux:  "4be8f2ba0d40fd516be875f2ca0ed2183dfa5419894c3a7f834f7b9f3fee6286"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b16adc0b72928c0edbbb18ded468b2b5957143e947d66a862870185574fb7b19"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7cb492dc9a45b02e63a36ba1d94a386d027892da25e9a0c1b471f87f7dfe8719"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1c8dccbb74cb317ea1fafbecc11ddeba059dde9680df8b0cd86c1368289e2fc9"
+    sha256 cellar: :any,                 arm64_linux:   "d0d38bcfa90885ef5f0e85751682f87aa13bb6f5553ee747f78b81020d06d630"
+    sha256 cellar: :any,                 x86_64_linux:  "27508ca2c9d6689a28f28a0e825d7e67f82dd9c07ead6705adbe25c1d5e9af98"
   end
 
   depends_on "rust" => :build

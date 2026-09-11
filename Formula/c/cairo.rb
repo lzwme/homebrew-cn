@@ -13,12 +13,13 @@ class Cairo < Formula
 
   bottle do
     rebuild 2
-    sha256 cellar: :any, arm64_tahoe:   "3099d9356456b9aced4b35bfb6723c45014c09d7b090190bcd8d17053244dd3c"
-    sha256 cellar: :any, arm64_sequoia: "91a09ffb4c4025f8204305e25c9d16b5d9e3427c65baabe8a11c7c5e6e07e29e"
-    sha256 cellar: :any, arm64_sonoma:  "28602bd6232c6f102f2f545662a8ea5db0ef1405de2c5296bd8490c910f391af"
-    sha256 cellar: :any, sonoma:        "8eac751ce30d7e665220bb02d2bd7aa209c041951edca3439918554e9dcb0e63"
-    sha256               arm64_linux:   "8d2393d42a2e6b4abda5d72981614960f30d35599f9a213944d3948b085529d7"
-    sha256               x86_64_linux:  "3d852e0bcef8e7bf1f4e5b9defa709da64a2dc2dcef4c35d177cebdbf552e65b"
+    sha256 cellar: :any, arm64_golden_gate: "b59be4a36cedcd5b460a5adb6a88914c05a31f717466ab58e8da0030b083fb9b"
+    sha256 cellar: :any, arm64_tahoe:       "3099d9356456b9aced4b35bfb6723c45014c09d7b090190bcd8d17053244dd3c"
+    sha256 cellar: :any, arm64_sequoia:     "91a09ffb4c4025f8204305e25c9d16b5d9e3427c65baabe8a11c7c5e6e07e29e"
+    sha256 cellar: :any, arm64_sonoma:      "28602bd6232c6f102f2f545662a8ea5db0ef1405de2c5296bd8490c910f391af"
+    sha256 cellar: :any, sonoma:            "8eac751ce30d7e665220bb02d2bd7aa209c041951edca3439918554e9dcb0e63"
+    sha256               arm64_linux:       "8d2393d42a2e6b4abda5d72981614960f30d35599f9a213944d3948b085529d7"
+    sha256               x86_64_linux:      "3d852e0bcef8e7bf1f4e5b9defa709da64a2dc2dcef4c35d177cebdbf552e65b"
   end
 
   depends_on "meson" => :build

@@ -13,12 +13,13 @@ class Daemontools < Formula
 
   bottle do
     rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "da992fd278ff1a26880a1a254f7a54e2440ef886c565bef4d52335a53a0efe99"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d5272511ffc8ff84d1a6a86ff7a4b643530c9d1feab3cfca5b70cea23e7855ba"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7e6c9db0f8c6137035c15da9445fbdac2dfd0475eb3ae3bb563237affe0f6867"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9181744087c4ab10deb008bfd08bb892ba7c00dd6cfa092be93c8fb37018c659"
-    sha256 cellar: :any,                 arm64_linux:   "2b086e3eb960e1f213b829504158a83246c196cbbad30e548d0bdd396ef8292b"
-    sha256 cellar: :any,                 x86_64_linux:  "ec457300fd92eaf1f7f3fad1e5a7904b9f02665b85d78b5e4628d176bc0a4008"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "d68497c07b98344680482637a3c8bd17bbe5cbba1484a0de1d1c63a705addbda"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "da992fd278ff1a26880a1a254f7a54e2440ef886c565bef4d52335a53a0efe99"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "d5272511ffc8ff84d1a6a86ff7a4b643530c9d1feab3cfca5b70cea23e7855ba"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "7e6c9db0f8c6137035c15da9445fbdac2dfd0475eb3ae3bb563237affe0f6867"
+    sha256 cellar: :any_skip_relocation, sonoma:            "9181744087c4ab10deb008bfd08bb892ba7c00dd6cfa092be93c8fb37018c659"
+    sha256 cellar: :any,                 arm64_linux:       "2b086e3eb960e1f213b829504158a83246c196cbbad30e548d0bdd396ef8292b"
+    sha256 cellar: :any,                 x86_64_linux:      "ec457300fd92eaf1f7f3fad1e5a7904b9f02665b85d78b5e4628d176bc0a4008"
   end
 
   resource "man" do

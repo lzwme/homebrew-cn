@@ -1,8 +1,8 @@
 class Yaz < Formula
   desc "Toolkit for Z39.50/SRW/SRU clients/servers"
   homepage "https://www.indexdata.com/resources/software/yaz/"
-  url "https://ftp.indexdata.com/pub/yaz/yaz-5.37.3.tar.gz"
-  sha256 "975d7878b272cc999e5acbd02dc272a46607f95e6ee4f35ac655e8e4d333bf2b"
+  url "https://ftp.indexdata.com/pub/yaz/yaz-5.38.0.tar.gz"
+  sha256 "c35f3994d382b42c43954253c1f24d1c0f93f0cb960532b69efa399b31b39b10"
   license "BSD-3-Clause"
   compatibility_version 1
 
@@ -14,12 +14,12 @@ class Yaz < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "21374c5d02ec10857f5cc7c12f37d1035f001547f35f649d5d359eb06d10aa8a"
-    sha256 cellar: :any,                 arm64_sequoia: "7eb44015254a310103859d3172720cdd5f092f27c1a82116f1fab657f2ea8989"
-    sha256 cellar: :any,                 arm64_sonoma:  "dc2039b63dfe0fa72a26b585ba17d295e0cbaa9a964474aa8f6594f722fe9345"
-    sha256                               sonoma:        "39bb8ed0161802212d5e1476fab94e061885cd57a848c062440b4f62d43feb48"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a6dd2603434b35320caeb7dee8b3723f8bcaf2d18127d4842ae60b8e7660bc0a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cb7bd01dd86c37eafbad7ec17a36a102e5412bab432f4c5be99b98776b6b2044"
+    sha256 cellar: :any, arm64_golden_gate: "b18e859456a3ac64b99cd191c5da949abd004ae887e6a8eb5d4a64902ab70390"
+    sha256 cellar: :any, arm64_tahoe:       "e4aff3fb37f5fcdc02e6361a8d2d81c35eb8768cfdc9a555cd6a7d6b6559b86b"
+    sha256 cellar: :any, arm64_sequoia:     "13f05d1137e6cfdebaca8ea34c2685a54261e5b425b2946ab0e9c79fa94b70af"
+    sha256 cellar: :any, arm64_sonoma:      "84fb84cde0dbc90434797378ef574098ce6c4dc93038f9d7b8c36005a8e657ba"
+    sha256 cellar: :any, arm64_linux:       "37f9bbae13b78dbcd90844198e76ac7ce168dbff6e1bb71788536c92b6748b42"
+    sha256 cellar: :any, x86_64_linux:      "f8fbb749309a797414b8789dd8004480bf995629311ead2f46aa485a52ce7be6"
   end
 
   head do

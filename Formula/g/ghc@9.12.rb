@@ -15,12 +15,13 @@ class GhcAT912 < Formula
 
   bottle do
     rebuild 2
-    sha256 cellar: :any, arm64_tahoe:   "8d8a95316492696e58f27ca9e2affae271d54de91058fdde37f611a42184d54d"
-    sha256 cellar: :any, arm64_sequoia: "d06904127ecc8cea52fc8b7eeda31254506a3e099e09499b22da15f273282290"
-    sha256 cellar: :any, arm64_sonoma:  "f667a3f8c01444b7421333944e58a1f266644c31360c8128606e9a1befe063b9"
-    sha256 cellar: :any, sonoma:        "135c114ec29d2fff907e232ecbbc22f2720f849840f8408be2efcc62f3318fe1"
-    sha256               arm64_linux:   "62dd76d9d934706ac486389acfaf25064d8e523e97d1c6e4979c5a67633adf9a"
-    sha256               x86_64_linux:  "e3948c716999910cad48dc7a1cd64d974fc834c11df9e64384fb72b975e9fec5"
+    sha256 cellar: :any, arm64_golden_gate: "435b66fa5ab77cf15f0abf829f4e2df637e7a9d4f7cf77d4185bac23d14af7b8"
+    sha256 cellar: :any, arm64_tahoe:       "8d8a95316492696e58f27ca9e2affae271d54de91058fdde37f611a42184d54d"
+    sha256 cellar: :any, arm64_sequoia:     "d06904127ecc8cea52fc8b7eeda31254506a3e099e09499b22da15f273282290"
+    sha256 cellar: :any, arm64_sonoma:      "f667a3f8c01444b7421333944e58a1f266644c31360c8128606e9a1befe063b9"
+    sha256 cellar: :any, sonoma:            "135c114ec29d2fff907e232ecbbc22f2720f849840f8408be2efcc62f3318fe1"
+    sha256               arm64_linux:       "62dd76d9d934706ac486389acfaf25064d8e523e97d1c6e4979c5a67633adf9a"
+    sha256               x86_64_linux:      "e3948c716999910cad48dc7a1cd64d974fc834c11df9e64384fb72b975e9fec5"
   end
 
   keg_only :versioned_formula

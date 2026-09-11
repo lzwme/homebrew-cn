@@ -1,8 +1,8 @@
 class Clarinet < Formula
   desc "Command-line tool and runtime for the Clarity smart contract language"
   homepage "https://stackslabs.com/"
-  url "https://ghfast.top/https://github.com/stx-labs/clarinet/archive/refs/tags/v3.23.2.tar.gz"
-  sha256 "896ac6410715c9e31e3cebdea63da1705df72018e65a2dd94265e287a63b53b3"
+  url "https://ghfast.top/https://github.com/stx-labs/clarinet/archive/refs/tags/v3.24.0.tar.gz"
+  sha256 "159cb56e62abf0f1ed8c6128fdee9d05a8103e71a74debde7cd7eb59ddacc6c5"
   license "GPL-3.0-only"
   version_scheme 1
   head "https://github.com/stx-labs/clarinet.git", branch: "main"
@@ -13,12 +13,11 @@ class Clarinet < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6d29eae4060064ed236971a407c3f76f42cbc59aaf22f0b55944353ba41e640c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "42b55b6fd76778262bae61c1ea3769fc2b889753ea906379f234fa5bf67f261d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8dd85fbf573eda92b370ce6a07fd7c9eff985cc89485c72be69fc8b73071d78d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0be6aca06a304e4d21dd99418003d0ba4965369195fc4fef6d00f347f92a39df"
-    sha256 cellar: :any,                 arm64_linux:   "d963739b01e691b640a656a06a91b01e3e94866658d98f27674bd88b6881c147"
-    sha256 cellar: :any,                 x86_64_linux:  "a7b005dbce4064abaffceafcef4146415dee1c3dd7d73b2f33fd7770ff185e22"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "0996d006ff34c0d11e79267b9f0b7461601e1a2a140a3ff89d2c0f945dc77665"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "47417898fc4e9743257adaf761dce4e5ccf24b5ff58dd1c499ac71d3969e0f0a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "17ce6901d7ffaf6f77c92ea388563129d0825f6616b83101ee5c8e1eed50d3d8"
+    sha256 cellar: :any,                 arm64_linux:       "575fee874cb4a5c0654361dd73e7da8c47129edc52975913785cdc8e4fb64d2a"
+    sha256 cellar: :any,                 x86_64_linux:      "b626d576d792021b10577ed5ebb4ee1eb1b8d7d49627c070e4461715db121859"
   end
 
   depends_on "rust" => :build

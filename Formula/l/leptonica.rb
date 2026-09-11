@@ -13,12 +13,13 @@ class Leptonica < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "6932bf1645434e6c93d7bd4ca86623c55bdbd6d386833ebbdae969c581d4d303"
-    sha256 cellar: :any,                 arm64_sequoia: "305a35821bb0d618e614c791e7fcd9e58e92b08d5763b4b4e1dbdcf69619d034"
-    sha256 cellar: :any,                 arm64_sonoma:  "bc58db017510f010f5feccc1e88aaaf3ca118dc6750ad9ecef6cbb47e0358539"
-    sha256 cellar: :any,                 sonoma:        "81d9615212f99786dbd3bee606c2963c4119defd7f782177e3096d750ad1ac41"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cbf296913a82a15ba49f6ca5e11e4705bf783d278917772d5999c3a39b51601e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "46b90af8964b6c265f258a8a7ec159a4881e9ec5c2d3d0e37cd91054b5e87999"
+    sha256 cellar: :any,                 arm64_golden_gate: "724c8c7898e9483c4d9bf610b0c6f7b47b409b66be866e96ab53b98b0283f117"
+    sha256 cellar: :any,                 arm64_tahoe:       "6932bf1645434e6c93d7bd4ca86623c55bdbd6d386833ebbdae969c581d4d303"
+    sha256 cellar: :any,                 arm64_sequoia:     "305a35821bb0d618e614c791e7fcd9e58e92b08d5763b4b4e1dbdcf69619d034"
+    sha256 cellar: :any,                 arm64_sonoma:      "bc58db017510f010f5feccc1e88aaaf3ca118dc6750ad9ecef6cbb47e0358539"
+    sha256 cellar: :any,                 sonoma:            "81d9615212f99786dbd3bee606c2963c4119defd7f782177e3096d750ad1ac41"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "cbf296913a82a15ba49f6ca5e11e4705bf783d278917772d5999c3a39b51601e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "46b90af8964b6c265f258a8a7ec159a4881e9ec5c2d3d0e37cd91054b5e87999"
   end
 
   depends_on "pkgconf" => :build

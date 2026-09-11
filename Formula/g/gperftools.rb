@@ -13,12 +13,13 @@ class Gperftools < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "441be19e92f18df04aacfbe09dffe235c9bf8b070c5d5e3f8db6611c9890c23d"
-    sha256 cellar: :any,                 arm64_sequoia: "8cc759dba8cf08fe71fd36cf585b6a626bd22bd41718c26616eefa665443b383"
-    sha256 cellar: :any,                 arm64_sonoma:  "5dc611bd687d0b5b3ddadf2f200edcedad5d95b6f07d45324bb782e62d57d750"
-    sha256 cellar: :any,                 sonoma:        "96980b401d0332ec875685001597fee2a37006f40bd1e92d55bf53fa315c62bb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f6cf2911544eb57a83f4baeaf71e7b5e9b905af8c31d73461306cdf3bf5a728f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2dafaf048a2e362d06592fa527fba49a22eefa29f66c60edb14a10e9edbf0876"
+    sha256 cellar: :any,                 arm64_golden_gate: "4978b0c8744adf3c1906d1f94a97821f45bb50562400ffcc5465f1d8518755f2"
+    sha256 cellar: :any,                 arm64_tahoe:       "441be19e92f18df04aacfbe09dffe235c9bf8b070c5d5e3f8db6611c9890c23d"
+    sha256 cellar: :any,                 arm64_sequoia:     "8cc759dba8cf08fe71fd36cf585b6a626bd22bd41718c26616eefa665443b383"
+    sha256 cellar: :any,                 arm64_sonoma:      "5dc611bd687d0b5b3ddadf2f200edcedad5d95b6f07d45324bb782e62d57d750"
+    sha256 cellar: :any,                 sonoma:            "96980b401d0332ec875685001597fee2a37006f40bd1e92d55bf53fa315c62bb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "f6cf2911544eb57a83f4baeaf71e7b5e9b905af8c31d73461306cdf3bf5a728f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "2dafaf048a2e362d06592fa527fba49a22eefa29f66c60edb14a10e9edbf0876"
   end
 
   head do

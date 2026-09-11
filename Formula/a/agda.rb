@@ -64,11 +64,12 @@ class Agda < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "a9520a09c1bbbcf01fae446d238a331ff5e3ce97a8012d873e4a8f896e666ed5"
-    sha256 arm64_sequoia: "fed8ce060de5ffc95fd367d38ac89c31a7d24b19c0c0e3c4cd6ecd98811cf716"
-    sha256 arm64_sonoma:  "0df1c3066d09c6a55b9cd6d81a0d6676743e0e02b12e85a220d0eba92731848d"
-    sha256 arm64_linux:   "9d1c4e2834edecfc65f91e0cc38654e577ceaccffcee2278c98c8885d21aee07"
-    sha256 x86_64_linux:  "6ec2e535fa575c66f400d21ca4b0028ce5dd1b504e438ff4d53034391a73c001"
+    sha256 arm64_golden_gate: "8f585f3385fca401e501a0e22c673d2ff73fd9249f39f4506ecb9c23b5a0f8cd"
+    sha256 arm64_tahoe:       "a9520a09c1bbbcf01fae446d238a331ff5e3ce97a8012d873e4a8f896e666ed5"
+    sha256 arm64_sequoia:     "fed8ce060de5ffc95fd367d38ac89c31a7d24b19c0c0e3c4cd6ecd98811cf716"
+    sha256 arm64_sonoma:      "0df1c3066d09c6a55b9cd6d81a0d6676743e0e02b12e85a220d0eba92731848d"
+    sha256 arm64_linux:       "9d1c4e2834edecfc65f91e0cc38654e577ceaccffcee2278c98c8885d21aee07"
+    sha256 x86_64_linux:      "6ec2e535fa575c66f400d21ca4b0028ce5dd1b504e438ff4d53034391a73c001"
   end
 
   head do

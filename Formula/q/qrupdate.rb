@@ -6,12 +6,13 @@ class Qrupdate < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "5f3b00d4d1cdb79a375186561384a729ce693b4318dcc03fa54478abf784c752"
-    sha256 cellar: :any, arm64_sequoia: "7fb2fd0aeb930f13a44003cb94c5a3891be1f9b2c333910487e7cec152fd853b"
-    sha256 cellar: :any, arm64_sonoma:  "184388b19a09bbaf9f821e0bc8fee0be683e596cb47b7c04ed63274b55ef9ed7"
-    sha256 cellar: :any, sonoma:        "7669fd92b4f180606f4ead7616796b940cde94c2c0df702719f826a362be6e05"
-    sha256 cellar: :any, arm64_linux:   "5f5f98be5978fb903010c7d4f49db25d81f761fc538bd6b2bd5f4c661488dd30"
-    sha256 cellar: :any, x86_64_linux:  "884b9617d497624bb800650b596a2c9abfeac02c7a95f33af950d84783195232"
+    sha256 cellar: :any, arm64_golden_gate: "8082d1129721c4dd8a634c17b03209f3fbdae6096a9e46d00153594a83f6fcec"
+    sha256 cellar: :any, arm64_tahoe:       "5f3b00d4d1cdb79a375186561384a729ce693b4318dcc03fa54478abf784c752"
+    sha256 cellar: :any, arm64_sequoia:     "7fb2fd0aeb930f13a44003cb94c5a3891be1f9b2c333910487e7cec152fd853b"
+    sha256 cellar: :any, arm64_sonoma:      "184388b19a09bbaf9f821e0bc8fee0be683e596cb47b7c04ed63274b55ef9ed7"
+    sha256 cellar: :any, sonoma:            "7669fd92b4f180606f4ead7616796b940cde94c2c0df702719f826a362be6e05"
+    sha256 cellar: :any, arm64_linux:       "5f5f98be5978fb903010c7d4f49db25d81f761fc538bd6b2bd5f4c661488dd30"
+    sha256 cellar: :any, x86_64_linux:      "884b9617d497624bb800650b596a2c9abfeac02c7a95f33af950d84783195232"
   end
 
   depends_on "cmake" => :build

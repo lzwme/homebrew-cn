@@ -1,8 +1,8 @@
 class Nift < Formula
   desc "Fast dependency-aware website generator"
   homepage "https://nift.dev/"
-  url "https://ghfast.top/https://github.com/nift-dev/nift/archive/refs/tags/v4.0.11.tar.gz"
-  sha256 "d76d03a8007b01c3046318d1c3f2b1c233fb6a0b50ef55b54af5160aefea1df2"
+  url "https://ghfast.top/https://github.com/nift-dev/nift/archive/refs/tags/v4.0.12.tar.gz"
+  sha256 "04ce19498fd3e5da8c7e065082065508f3c9b4d486ad1d808dcc33671c74c6ab"
   license "MIT"
 
   livecheck do
@@ -11,11 +11,11 @@ class Nift < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6875f7382d88187b8ea754d1267618f6f91e7052b0e4b7f2f79941165fb058b3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6db0f269bdaa3af423a10b096525fe41abd6d4aab83614670166dc181f5b8ff9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9a9796b5d748b5b69f0153c8c328a3570d032c22e08916d383fa4e99eb57db73"
-    sha256 cellar: :any,                 arm64_linux:   "6ff1dedcc85043979d13e578237e49ab98c99143a05609d8cdeb5b46b1da318f"
-    sha256 cellar: :any,                 x86_64_linux:  "6a9dbac99ce9de9bd6e2392a0268e2dcaa73960f6af10f31d34a9a169590ffc6"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8144a357699454dcf55e96b6dab3429ca774d0fcacd028732bea15f5ec162fc0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d19982657045331e263e7acfcfaf558cb5b51929d523dca77c3170a092e9a418"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0277470eb634d36d78f605a4529b4e39e2c246d3e57a41d11814648d785d14f1"
+    sha256 cellar: :any,                 arm64_linux:   "625dda734ffe23a88311af70e2222049f35ad2491393d15a003afa7167f690f0"
+    sha256 cellar: :any,                 x86_64_linux:  "f4b38bf3fb2d506579079ded3ba16030dbd04dc0919ce4f1e3e762e2bfa34853"
   end
 
   def install

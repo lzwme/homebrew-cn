@@ -7,12 +7,13 @@ class Mktorrent < Formula
   revision 3
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "209bb7d1d0ace5b61f05817162660ae4cd6d7d8816b9386d9e2e29a5c0e5ab49"
-    sha256 cellar: :any,                 arm64_sequoia: "fb59ce178177ace7db7a6d983d42460f1141bffb09be008ed87c3373eb901701"
-    sha256 cellar: :any,                 arm64_sonoma:  "3eeace6b1a58aec271d4ff3dd6097427cbe22a6f4ee068fa7340a1052b245011"
-    sha256 cellar: :any,                 sonoma:        "2c724151ad0a9f666afb09a3908f8a32143a6abe9b7be39f17ed7a88c880d59b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7567016964aa6b5589e42f045d1152ef318cbfd7a8e5222aed7d15d5fa546483"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5a2a18dae20156d203366dccf0b5ddd5d0803bb7b8803a2339c971051e294484"
+    sha256 cellar: :any,                 arm64_golden_gate: "d46c44ca9365fbdca86e9116613488eaea6be1430606f45d5cdda4c29f139058"
+    sha256 cellar: :any,                 arm64_tahoe:       "209bb7d1d0ace5b61f05817162660ae4cd6d7d8816b9386d9e2e29a5c0e5ab49"
+    sha256 cellar: :any,                 arm64_sequoia:     "fb59ce178177ace7db7a6d983d42460f1141bffb09be008ed87c3373eb901701"
+    sha256 cellar: :any,                 arm64_sonoma:      "3eeace6b1a58aec271d4ff3dd6097427cbe22a6f4ee068fa7340a1052b245011"
+    sha256 cellar: :any,                 sonoma:            "2c724151ad0a9f666afb09a3908f8a32143a6abe9b7be39f17ed7a88c880d59b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "7567016964aa6b5589e42f045d1152ef318cbfd7a8e5222aed7d15d5fa546483"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "5a2a18dae20156d203366dccf0b5ddd5d0803bb7b8803a2339c971051e294484"
   end
 
   depends_on "openssl@4"

@@ -16,12 +16,13 @@ class Soapysdr < Formula
 
   bottle do
     rebuild 5
-    sha256                               arm64_tahoe:   "d10703185cc1b8b3312bdbc0621131238980f07481bab599dcc498a06e1c1106"
-    sha256                               arm64_sequoia: "a57f1047d84abdf6272e01276e21ca325a0ca8b5aa716fba5fd91f9b4bedcf44"
-    sha256                               arm64_sonoma:  "635b13fc20043aaee3de8be3c111caef4eb8213643ea04257b6ca7834ccddd49"
-    sha256 cellar: :any,                 sonoma:        "c2b21d678a8d0d0f785d8257a32c7d48a7992adef5b6a7c14e6cd4e34d79cf3b"
-    sha256                               arm64_linux:   "b92128272614278c0799f954abebd5cb9404ded017babda7f8a5767ffb60e8de"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c37220d056fd15397e731350bf2078625e70b50baf9033db994aa2a18e5f9f62"
+    sha256                               arm64_golden_gate: "f6c7550e5c1454908c669a1d1858c6a43efaea2cea6398b962a2a18af79bb5c9"
+    sha256                               arm64_tahoe:       "d10703185cc1b8b3312bdbc0621131238980f07481bab599dcc498a06e1c1106"
+    sha256                               arm64_sequoia:     "a57f1047d84abdf6272e01276e21ca325a0ca8b5aa716fba5fd91f9b4bedcf44"
+    sha256                               arm64_sonoma:      "635b13fc20043aaee3de8be3c111caef4eb8213643ea04257b6ca7834ccddd49"
+    sha256 cellar: :any,                 sonoma:            "c2b21d678a8d0d0f785d8257a32c7d48a7992adef5b6a7c14e6cd4e34d79cf3b"
+    sha256                               arm64_linux:       "b92128272614278c0799f954abebd5cb9404ded017babda7f8a5767ffb60e8de"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "c37220d056fd15397e731350bf2078625e70b50baf9033db994aa2a18e5f9f62"
   end
 
   depends_on "cmake" => :build

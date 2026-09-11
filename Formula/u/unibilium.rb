@@ -6,11 +6,12 @@ class Unibilium < Formula
   license "LGPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "236da70149748828b1b4835aceb4800717b8ec79d8f4735d0c0991b0f2a2c996"
-    sha256 cellar: :any, arm64_sequoia: "3eb5e89e95400ba3546eda862f14d5c7b71f9aa63996eb83e23968bd111a6dc5"
-    sha256 cellar: :any, arm64_sonoma:  "d58e6facf47d969962812663c6d0efb3af56a9e468382d9686097ebc8fd8ee59"
-    sha256 cellar: :any, arm64_linux:   "2770c02f95dc68f371de67e1bde2a1f64b0887af616eabf05ca9bc1f60eba0cd"
-    sha256 cellar: :any, x86_64_linux:  "0ac1d23859dbfc477b05b2a619f02503f378df3bc00b0882c010a7078e23bf30"
+    sha256 cellar: :any, arm64_golden_gate: "955d75f75ed264c4efafbbe4b4598825070db0cae8f2a87808c95d9fb44ae2ab"
+    sha256 cellar: :any, arm64_tahoe:       "236da70149748828b1b4835aceb4800717b8ec79d8f4735d0c0991b0f2a2c996"
+    sha256 cellar: :any, arm64_sequoia:     "3eb5e89e95400ba3546eda862f14d5c7b71f9aa63996eb83e23968bd111a6dc5"
+    sha256 cellar: :any, arm64_sonoma:      "d58e6facf47d969962812663c6d0efb3af56a9e468382d9686097ebc8fd8ee59"
+    sha256 cellar: :any, arm64_linux:       "2770c02f95dc68f371de67e1bde2a1f64b0887af616eabf05ca9bc1f60eba0cd"
+    sha256 cellar: :any, x86_64_linux:      "0ac1d23859dbfc477b05b2a619f02503f378df3bc00b0882c010a7078e23bf30"
   end
 
   depends_on "autoconf" => :build

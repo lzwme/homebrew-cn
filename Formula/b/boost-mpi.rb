@@ -11,12 +11,13 @@ class BoostMpi < Formula
   end
 
   bottle do
-    sha256               arm64_tahoe:   "208ac9d44a3220926166fed43f27d407cb0023a6b4f1159e5d895cb6adf825f8"
-    sha256               arm64_sequoia: "f1008f6aaf5637dfc69aff90d7844832b0bb9002eee6dfddfeb3eff0452985f9"
-    sha256               arm64_sonoma:  "8a416b4c548e567b59c5cb4edcb3abf59fda39b87918493ea6fb4ef57de726f1"
-    sha256               sonoma:        "f94cae364c7af23d40b95a5ee9caf252fe2e6c2d9c2fb8278115d7686f6abe5b"
-    sha256 cellar: :any, arm64_linux:   "49afd023cb9d1d579cda5bfc3584b3902e94e13c6bfe081d47f31dc231b236f3"
-    sha256 cellar: :any, x86_64_linux:  "b9f501a5513bbc63411482fedaaa57a0814967545ec588391e4e27dd3b987c13"
+    sha256               arm64_golden_gate: "9d9bc83db8101a23834a590c4d8a54bed51fdf3801b69b97161657cd98372031"
+    sha256               arm64_tahoe:       "208ac9d44a3220926166fed43f27d407cb0023a6b4f1159e5d895cb6adf825f8"
+    sha256               arm64_sequoia:     "f1008f6aaf5637dfc69aff90d7844832b0bb9002eee6dfddfeb3eff0452985f9"
+    sha256               arm64_sonoma:      "8a416b4c548e567b59c5cb4edcb3abf59fda39b87918493ea6fb4ef57de726f1"
+    sha256               sonoma:            "f94cae364c7af23d40b95a5ee9caf252fe2e6c2d9c2fb8278115d7686f6abe5b"
+    sha256 cellar: :any, arm64_linux:       "49afd023cb9d1d579cda5bfc3584b3902e94e13c6bfe081d47f31dc231b236f3"
+    sha256 cellar: :any, x86_64_linux:      "b9f501a5513bbc63411482fedaaa57a0814967545ec588391e4e27dd3b987c13"
   end
 
   # Test with cmake to avoid issues like:

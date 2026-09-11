@@ -8,12 +8,13 @@ class Beads < Formula
   head "https://github.com/gastownhall/beads.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "177187f3b96cbb368afeb6c6183df127366542e31b18869b3c73cf1281c29a6e"
-    sha256 cellar: :any, arm64_sequoia: "c5d25601126a203f1aad282f46b1e325b02db54bfd68989067b16d5e1449ee4f"
-    sha256 cellar: :any, arm64_sonoma:  "6dc2c1d63a641b0781b5599185895f55ba36a83bf4a7d4af637d620365a33fbb"
-    sha256 cellar: :any, sonoma:        "94ffc4b49596090b1d917693d4c83ce32673954321aa7d36ad8a7a5ef679e757"
-    sha256 cellar: :any, arm64_linux:   "24bc1bb65a8441983afc2a78427c32e02a2b23efe07241501934162308f9f7ac"
-    sha256 cellar: :any, x86_64_linux:  "69775853ae28bafa20f1b280753424146360231c4a28ff1b324036a69028777d"
+    sha256 cellar: :any, arm64_golden_gate: "a0552fd448a5feeb93a3c6e52c821332ff6caef15cd72309d19c91f49c404c47"
+    sha256 cellar: :any, arm64_tahoe:       "177187f3b96cbb368afeb6c6183df127366542e31b18869b3c73cf1281c29a6e"
+    sha256 cellar: :any, arm64_sequoia:     "c5d25601126a203f1aad282f46b1e325b02db54bfd68989067b16d5e1449ee4f"
+    sha256 cellar: :any, arm64_sonoma:      "6dc2c1d63a641b0781b5599185895f55ba36a83bf4a7d4af637d620365a33fbb"
+    sha256 cellar: :any, sonoma:            "94ffc4b49596090b1d917693d4c83ce32673954321aa7d36ad8a7a5ef679e757"
+    sha256 cellar: :any, arm64_linux:       "24bc1bb65a8441983afc2a78427c32e02a2b23efe07241501934162308f9f7ac"
+    sha256 cellar: :any, x86_64_linux:      "69775853ae28bafa20f1b280753424146360231c4a28ff1b324036a69028777d"
   end
 
   depends_on "go" => :build

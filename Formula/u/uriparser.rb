@@ -8,12 +8,13 @@ class Uriparser < Formula
   head "https://github.com/uriparser/uriparser.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "d65dd8ec22ad8983a030d28f0860ed787540977f63f54991a0c34f3af59ff54d"
-    sha256 cellar: :any,                 arm64_sequoia: "c493b8bf01407748aee749e76282fd8d28b75609d0bc190d082de21c07195213"
-    sha256 cellar: :any,                 arm64_sonoma:  "f3bbbc62b739c550d0273b4a4f8cb6e0f613b812ee1be4268089963b59dd7ee3"
-    sha256 cellar: :any,                 sonoma:        "d88ca97e3db34d38a4ac3698da4fb1ce5de61cbb46b5c754407cbb5cc56332e4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "814a3e8a6d0c3970c05b91c41776b5e6c88ce0c75ddaf97f842c14beb109c423"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "92d362009241b6bb912579151fb98480863663a59f9bd586cee65485be998f0f"
+    sha256 cellar: :any,                 arm64_golden_gate: "c44565ea2ebfd792ea744c5f320ce60c487dd6d9cfa714d4eaad25fcd02b736b"
+    sha256 cellar: :any,                 arm64_tahoe:       "d65dd8ec22ad8983a030d28f0860ed787540977f63f54991a0c34f3af59ff54d"
+    sha256 cellar: :any,                 arm64_sequoia:     "c493b8bf01407748aee749e76282fd8d28b75609d0bc190d082de21c07195213"
+    sha256 cellar: :any,                 arm64_sonoma:      "f3bbbc62b739c550d0273b4a4f8cb6e0f613b812ee1be4268089963b59dd7ee3"
+    sha256 cellar: :any,                 sonoma:            "d88ca97e3db34d38a4ac3698da4fb1ce5de61cbb46b5c754407cbb5cc56332e4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "814a3e8a6d0c3970c05b91c41776b5e6c88ce0c75ddaf97f842c14beb109c423"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "92d362009241b6bb912579151fb98480863663a59f9bd586cee65485be998f0f"
   end
 
   depends_on "cmake" => :build

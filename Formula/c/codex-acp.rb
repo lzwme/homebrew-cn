@@ -1,17 +1,17 @@
 class CodexAcp < Formula
   desc "ACP server that exposes Codex CLI functionality for ACP-compatible clients"
   homepage "https://github.com/agentclientprotocol/codex-acp"
-  url "https://registry.npmjs.org/@agentclientprotocol/codex-acp/-/codex-acp-1.10.0.tgz"
-  sha256 "9dffb525b728d0579a8b19d48322281ecad7eea7ba1640fa2f8de1199346352c"
+  url "https://registry.npmjs.org/@agentclientprotocol/codex-acp/-/codex-acp-1.11.0.tgz"
+  sha256 "b2fa065a4dfd3eb4262b87c1211b3cddaa0f0f1c49e284ad6d8182501fe4d51b"
   license "Apache-2.0"
   head "https://github.com/agentclientprotocol/codex-acp.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b3de1a43477c07a125fe13e997beba8f6922044ef8c217e7be176072aeb04b06"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b3de1a43477c07a125fe13e997beba8f6922044ef8c217e7be176072aeb04b06"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b3de1a43477c07a125fe13e997beba8f6922044ef8c217e7be176072aeb04b06"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e6de8f59214f0d47ebb389b6c520934454423bfd114a22276508d0278f8faa5a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b79c3ab28dfd6c999996208ff6b8a007c936e33ec429c3468ea5972f63a9a72d"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "650d8b5e315e4011028e5d6bae2346667c2bb660004b97648287717de2724460"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "650d8b5e315e4011028e5d6bae2346667c2bb660004b97648287717de2724460"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "650d8b5e315e4011028e5d6bae2346667c2bb660004b97648287717de2724460"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "11dbaca3e2a529109e2dabddf6499dc86ec314609c9d414ba3fb07bc734e4189"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "adb9db0c93f95a98cbffb1bb4e826f5f150bc699a35c6083e4b6674e71df2c70"
   end
 
   depends_on "node"

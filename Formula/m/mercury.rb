@@ -11,11 +11,12 @@ class Mercury < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "9a59215c8b16c6f76e8c1005c2d0899cc0984a7f483ab28a7dc68dfcbfad1041"
-    sha256 cellar: :any, arm64_sequoia: "798cf10980de0d9095a9b1de3911c18d1156d0ecce3b2610b07bd577ca2904a3"
-    sha256 cellar: :any, arm64_sonoma:  "3c6f02a50174f06cbf17561a64d19bc561eb93138e45ba5ea91682d68a331175"
-    sha256 cellar: :any, arm64_linux:   "8ee061dd2ae504a4c7d5f5edab861e44c405d8a58e0af4c9c6981327bd9884e0"
-    sha256 cellar: :any, x86_64_linux:  "b1a18dcc2405e9ad82d08dc848602a10487b4996d876471b1b71b43786eec1e9"
+    sha256 cellar: :any, arm64_golden_gate: "2698cb69ac9bf9786ba9f25a61f5de63eba242b86cba4107f3bd791b8f39aa3f"
+    sha256 cellar: :any, arm64_tahoe:       "9a59215c8b16c6f76e8c1005c2d0899cc0984a7f483ab28a7dc68dfcbfad1041"
+    sha256 cellar: :any, arm64_sequoia:     "798cf10980de0d9095a9b1de3911c18d1156d0ecce3b2610b07bd577ca2904a3"
+    sha256 cellar: :any, arm64_sonoma:      "3c6f02a50174f06cbf17561a64d19bc561eb93138e45ba5ea91682d68a331175"
+    sha256 cellar: :any, arm64_linux:       "8ee061dd2ae504a4c7d5f5edab861e44c405d8a58e0af4c9c6981327bd9884e0"
+    sha256 cellar: :any, x86_64_linux:      "b1a18dcc2405e9ad82d08dc848602a10487b4996d876471b1b71b43786eec1e9"
   end
 
   depends_on "openjdk"

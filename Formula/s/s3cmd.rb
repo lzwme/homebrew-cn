@@ -11,12 +11,13 @@ class S3cmd < Formula
 
   bottle do
     rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6aeb3a68ea12a0f0a2f8027d4f91d99e6552fa148533c440133a1d1f48c45028"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6aeb3a68ea12a0f0a2f8027d4f91d99e6552fa148533c440133a1d1f48c45028"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6aeb3a68ea12a0f0a2f8027d4f91d99e6552fa148533c440133a1d1f48c45028"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e75a71a49e2e70e1fa9028dc92bae05d58d14d808f5dbd23b7c46ed439002992"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c56660a7bd7d5cb3d0dba4eed501a788dc3931f4693e03517bf5755e9aa53a8c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c56660a7bd7d5cb3d0dba4eed501a788dc3931f4693e03517bf5755e9aa53a8c"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "f39e634f1462d42f80671af793e04b5a2f319a82f94626c3548e19bc1e01d345"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "6aeb3a68ea12a0f0a2f8027d4f91d99e6552fa148533c440133a1d1f48c45028"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "6aeb3a68ea12a0f0a2f8027d4f91d99e6552fa148533c440133a1d1f48c45028"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "6aeb3a68ea12a0f0a2f8027d4f91d99e6552fa148533c440133a1d1f48c45028"
+    sha256 cellar: :any_skip_relocation, sonoma:            "e75a71a49e2e70e1fa9028dc92bae05d58d14d808f5dbd23b7c46ed439002992"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "c56660a7bd7d5cb3d0dba4eed501a788dc3931f4693e03517bf5755e9aa53a8c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "c56660a7bd7d5cb3d0dba4eed501a788dc3931f4693e03517bf5755e9aa53a8c"
   end
 
   depends_on "libmagic" => :no_linkage # for python-magic

@@ -25,12 +25,13 @@ class MariadbConnectorC < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "45d46ce8efcd4090429cc070975f7d93a87204d9bc466caaa040dadcfb59595f"
-    sha256 arm64_sequoia: "9c081cecb6d0929f1ccd9c0d22a8ab66bbc211ecb1fe2f4193d9f4b6927979b2"
-    sha256 arm64_sonoma:  "d5d8b435dc880722432a7a1518e095233c638ff1a7a22399a08f9791d901896f"
-    sha256 sonoma:        "75ba826c6f9ae85bab7646e590071dea4cdd977a56704dd8cc90f6873648b1ab"
-    sha256 arm64_linux:   "5fe111f3b848bae6b6a3a9894d49da74bb04c1e85719b2e9f3369995c36d38a2"
-    sha256 x86_64_linux:  "d9c0927b765ea810e1ed4525154dc78a93eca791e85c3e8cd72195334225e6b0"
+    sha256 arm64_golden_gate: "b174f327eefad305ebee1c4d0a096af647e609b40f17b8ec8f61317b4337df0c"
+    sha256 arm64_tahoe:       "45d46ce8efcd4090429cc070975f7d93a87204d9bc466caaa040dadcfb59595f"
+    sha256 arm64_sequoia:     "9c081cecb6d0929f1ccd9c0d22a8ab66bbc211ecb1fe2f4193d9f4b6927979b2"
+    sha256 arm64_sonoma:      "d5d8b435dc880722432a7a1518e095233c638ff1a7a22399a08f9791d901896f"
+    sha256 sonoma:            "75ba826c6f9ae85bab7646e590071dea4cdd977a56704dd8cc90f6873648b1ab"
+    sha256 arm64_linux:       "5fe111f3b848bae6b6a3a9894d49da74bb04c1e85719b2e9f3369995c36d38a2"
+    sha256 x86_64_linux:      "d9c0927b765ea810e1ed4525154dc78a93eca791e85c3e8cd72195334225e6b0"
   end
 
   keg_only "it conflicts with mariadb"

@@ -13,12 +13,13 @@ class RancherMachine < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2545aaf76aba913bbe20dd34d1f1029de506f8d6df73b296aaf6e58b63e6b259"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2545aaf76aba913bbe20dd34d1f1029de506f8d6df73b296aaf6e58b63e6b259"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2545aaf76aba913bbe20dd34d1f1029de506f8d6df73b296aaf6e58b63e6b259"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3338ed79b62e0103e0e6aee587e52efe6a5f5e63674879019a574d2b7c5678d0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4c27da271c1d0aa6267c8e5640f09bb5d493add89a1768ce9492980aa19005d9"
-    sha256 cellar: :any,                 x86_64_linux:  "2d864571c4dadce840efce99a57fc0f98621e80d711e3a5e7f5d18643810adfe"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "e6a4ec6f738f3d664b9a8b88174869a707dab991f925b9eea95cb6ea3c414d4d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "2545aaf76aba913bbe20dd34d1f1029de506f8d6df73b296aaf6e58b63e6b259"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "2545aaf76aba913bbe20dd34d1f1029de506f8d6df73b296aaf6e58b63e6b259"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "2545aaf76aba913bbe20dd34d1f1029de506f8d6df73b296aaf6e58b63e6b259"
+    sha256 cellar: :any_skip_relocation, sonoma:            "3338ed79b62e0103e0e6aee587e52efe6a5f5e63674879019a574d2b7c5678d0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "4c27da271c1d0aa6267c8e5640f09bb5d493add89a1768ce9492980aa19005d9"
+    sha256 cellar: :any,                 x86_64_linux:      "2d864571c4dadce840efce99a57fc0f98621e80d711e3a5e7f5d18643810adfe"
   end
 
   depends_on "go" => :build

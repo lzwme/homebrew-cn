@@ -1,6 +1,6 @@
 cask "wsl-manager" do
-  version "2.0.2"
-  sha256 "1ee7ce582b731375c6946e51195240bda185268adae30a0d5005e7fb4f0661a6"
+  version "2.0.4"
+  sha256 "03b0479aff2e7acd5c0f507206bdbfca6e0af011d23e22f5b27a93b5a4d1c7f4"
 
   url "https://ghfast.top/https://github.com/bostrot/wsl2-distro-manager/releases/download/v#{version}/wsl2-distro-manager-v#{version}-macos.dmg"
   name "WSL Manager"
@@ -9,7 +9,7 @@ cask "wsl-manager" do
 
   auto_updates true
   depends_on arch: :arm64
-  depends_on macos: :big_sur
+  depends_on :macos
 
   app "WSL Manager.app"
 

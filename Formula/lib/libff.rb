@@ -9,12 +9,13 @@ class Libff < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "6d548d433ca79ddd1e4c06bd46cd8ef42f62fda7de2ccbcc801be541ee8737d1"
-    sha256 cellar: :any,                 arm64_sequoia: "98d30e843fc0146a9f665ce977f9ef8fdcd1f54900f3fbeea53a1237e95ec89b"
-    sha256 cellar: :any,                 arm64_sonoma:  "8bf88eba95bb1ddbdbbc33a4419deecdf57a08859bc92b41e9cbe0d279c8da12"
-    sha256 cellar: :any,                 sonoma:        "09d3bf03794916e8a9c62b9f2f5e1cd837e6ce0ef9e9d77bc8a55c985edef065"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6374bbb3ccd7a5bd91375bb9c648417f187ef488e99ec079ba18cf5c2a5c271e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bd5b454571c2432cf6250d265cb780c3b4c5252f4a6b668e74d092d1e544cb6e"
+    sha256 cellar: :any,                 arm64_golden_gate: "ae0ea1830966e28d6cf7bc9d79789c90521e2af006d581f9b1262c4c9a689884"
+    sha256 cellar: :any,                 arm64_tahoe:       "6d548d433ca79ddd1e4c06bd46cd8ef42f62fda7de2ccbcc801be541ee8737d1"
+    sha256 cellar: :any,                 arm64_sequoia:     "98d30e843fc0146a9f665ce977f9ef8fdcd1f54900f3fbeea53a1237e95ec89b"
+    sha256 cellar: :any,                 arm64_sonoma:      "8bf88eba95bb1ddbdbbc33a4419deecdf57a08859bc92b41e9cbe0d279c8da12"
+    sha256 cellar: :any,                 sonoma:            "09d3bf03794916e8a9c62b9f2f5e1cd837e6ce0ef9e9d77bc8a55c985edef065"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "6374bbb3ccd7a5bd91375bb9c648417f187ef488e99ec079ba18cf5c2a5c271e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "bd5b454571c2432cf6250d265cb780c3b4c5252f4a6b668e74d092d1e544cb6e"
   end
 
   depends_on "cmake" => :build

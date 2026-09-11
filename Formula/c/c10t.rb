@@ -7,12 +7,13 @@ class C10t < Formula
   revision 14
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "5ca341f82db975b0e1c4acee78df074d57c6e65d2b6be401dd57eb2afc0525fa"
-    sha256 cellar: :any, arm64_sequoia: "07ccefb123d13aa7214e2dc0cfd452fe30e50085614192e608abc4c7f8fc5002"
-    sha256 cellar: :any, arm64_sonoma:  "1bf373157b77d6b31fffe5572dcad5efe6c0c14362d6086ffffdcc30b4f454a5"
-    sha256 cellar: :any, sonoma:        "1b12e4d2a0d7f702dd0b67e71128a7ed98b59c0b1ae2f1976a6a8167e5e4d52e"
-    sha256 cellar: :any, arm64_linux:   "7b389137fda756cdeef2f8e3d8ca17694d60908681494369b97f31c2233f1021"
-    sha256 cellar: :any, x86_64_linux:  "13bbf9c09f97add49cfbf9c0baef95139d5e19d6e759ad4538899260e5206f96"
+    sha256 cellar: :any, arm64_golden_gate: "200a2abf48358245151bcd72ef04d3c634d9056c9bb98379a2f14cd5d2346f8b"
+    sha256 cellar: :any, arm64_tahoe:       "5ca341f82db975b0e1c4acee78df074d57c6e65d2b6be401dd57eb2afc0525fa"
+    sha256 cellar: :any, arm64_sequoia:     "07ccefb123d13aa7214e2dc0cfd452fe30e50085614192e608abc4c7f8fc5002"
+    sha256 cellar: :any, arm64_sonoma:      "1bf373157b77d6b31fffe5572dcad5efe6c0c14362d6086ffffdcc30b4f454a5"
+    sha256 cellar: :any, sonoma:            "1b12e4d2a0d7f702dd0b67e71128a7ed98b59c0b1ae2f1976a6a8167e5e4d52e"
+    sha256 cellar: :any, arm64_linux:       "7b389137fda756cdeef2f8e3d8ca17694d60908681494369b97f31c2233f1021"
+    sha256 cellar: :any, x86_64_linux:      "13bbf9c09f97add49cfbf9c0baef95139d5e19d6e759ad4538899260e5206f96"
   end
 
   depends_on "cmake" => :build

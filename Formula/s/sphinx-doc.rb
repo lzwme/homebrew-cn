@@ -10,12 +10,13 @@ class SphinxDoc < Formula
   head "https://github.com/sphinx-doc/sphinx.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3ff64e4a8e208fcc215ea9dee59327cfb0bec3b2ec8db9978f5931668052d547"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "56fc20d6cef80467c6ec73d0e491865b757f0f0f99b976458bc3f3371b84a472"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ee05a00687a41405bc88042ec9b109f7892cb42d7ad6f48796a3ead137dd80f5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7d92f7ff486dd5469171e2fd75e7c40a5f1a100fb6c1b949a30c7ff62e2c3bd2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f449bd710343a03f51c404864c4b96baeaf18efae326c77c2263340a89875d4c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "eb14245c968c49823c8655759367d97c7e8132e88d89285cf83d5b963a16b80f"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "70adfedba339f5c96e8772f30c119e0e587cbec352407529bc800652215a421f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "3ff64e4a8e208fcc215ea9dee59327cfb0bec3b2ec8db9978f5931668052d547"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "56fc20d6cef80467c6ec73d0e491865b757f0f0f99b976458bc3f3371b84a472"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "ee05a00687a41405bc88042ec9b109f7892cb42d7ad6f48796a3ead137dd80f5"
+    sha256 cellar: :any_skip_relocation, sonoma:            "7d92f7ff486dd5469171e2fd75e7c40a5f1a100fb6c1b949a30c7ff62e2c3bd2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "f449bd710343a03f51c404864c4b96baeaf18efae326c77c2263340a89875d4c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "eb14245c968c49823c8655759367d97c7e8132e88d89285cf83d5b963a16b80f"
   end
 
   depends_on "certifi"

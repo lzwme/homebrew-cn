@@ -14,11 +14,12 @@ class GitLfs < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fcefb0b6742a77251b31a71780e91baba1cc02d23e2d36ef577fc91d4e74d751"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fcefb0b6742a77251b31a71780e91baba1cc02d23e2d36ef577fc91d4e74d751"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fcefb0b6742a77251b31a71780e91baba1cc02d23e2d36ef577fc91d4e74d751"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "91f4dd352c1bb1963b87143524fc732e09ebc453d826a794e1e7bd15c0a55c1c"
-    sha256 cellar: :any,                 x86_64_linux:  "518268f40ab88089067c73ecde9776aa96e9cdd0c7d5e2f54561440065c5ee3d"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "bc0386b26592dae0d520035a59014db85589a5f586f57665b4fa00eea3d95351"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "fcefb0b6742a77251b31a71780e91baba1cc02d23e2d36ef577fc91d4e74d751"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "fcefb0b6742a77251b31a71780e91baba1cc02d23e2d36ef577fc91d4e74d751"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "fcefb0b6742a77251b31a71780e91baba1cc02d23e2d36ef577fc91d4e74d751"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "91f4dd352c1bb1963b87143524fc732e09ebc453d826a794e1e7bd15c0a55c1c"
+    sha256 cellar: :any,                 x86_64_linux:      "518268f40ab88089067c73ecde9776aa96e9cdd0c7d5e2f54561440065c5ee3d"
   end
 
   depends_on "asciidoctor" => :build

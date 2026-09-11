@@ -21,12 +21,13 @@ class Crystal < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "008aa5f3949504e18a1100dd2ed4d5694ff4376177f3bc9d683754d25ef07d8f"
-    sha256 cellar: :any, arm64_sequoia: "d4738ecb0c7642b9d00d91ca665e7a8d8aaa43541b1e7aa7baf992c7d01f2b37"
-    sha256 cellar: :any, arm64_sonoma:  "1df3d451f7730becd6f19ed5ae8fcb70a18bc1f0a01e8c2a2df63926069ac913"
-    sha256 cellar: :any, sonoma:        "b94a518e6d97f00349300d579f0d98899ffd05a17bdfc90184e42c2a38dce79f"
-    sha256 cellar: :any, arm64_linux:   "85b9e9996abe59d4a87e1b16f08c879ec6cd9978d89d9c7149e3c5bf129ad50a"
-    sha256 cellar: :any, x86_64_linux:  "c10c75388df09b65da27a53d82094fbe3d13052c99bfb3dcfbeeba3b66b5e91e"
+    sha256 cellar: :any, arm64_golden_gate: "470834b32825d8d4285b87dcfa49608532ed1907eba2b278b342982f90f46723"
+    sha256 cellar: :any, arm64_tahoe:       "008aa5f3949504e18a1100dd2ed4d5694ff4376177f3bc9d683754d25ef07d8f"
+    sha256 cellar: :any, arm64_sequoia:     "d4738ecb0c7642b9d00d91ca665e7a8d8aaa43541b1e7aa7baf992c7d01f2b37"
+    sha256 cellar: :any, arm64_sonoma:      "1df3d451f7730becd6f19ed5ae8fcb70a18bc1f0a01e8c2a2df63926069ac913"
+    sha256 cellar: :any, sonoma:            "b94a518e6d97f00349300d579f0d98899ffd05a17bdfc90184e42c2a38dce79f"
+    sha256 cellar: :any, arm64_linux:       "85b9e9996abe59d4a87e1b16f08c879ec6cd9978d89d9c7149e3c5bf129ad50a"
+    sha256 cellar: :any, x86_64_linux:      "c10c75388df09b65da27a53d82094fbe3d13052c99bfb3dcfbeeba3b66b5e91e"
   end
 
   head do

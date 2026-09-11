@@ -7,14 +7,15 @@ class Sdl3Ttf < Formula
   head "https://github.com/libsdl-org/SDL_ttf.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "ec74409d1b465395c8729c489d256b309154222a3e68d371077038fccb19d793"
-    sha256 cellar: :any,                 arm64_sequoia: "472dbc6423662615b135349d3a51e7e71f8bcc143b8ce53e8cfff168680bdebe"
-    sha256 cellar: :any,                 arm64_sonoma:  "761daa6864eee45de9e75ead2633c10a5087ab441b16c41b1fcf5feb7678442d"
-    sha256 cellar: :any,                 arm64_ventura: "202985317ea2e7476b167c5eca26fed1c0558ebe2ef224b83baa43660c725400"
-    sha256 cellar: :any,                 sonoma:        "20d9df460677a3f2dd6c8d64597b67f490bfff11d3adc9aa371d84ab30c4557b"
-    sha256 cellar: :any,                 ventura:       "8bdf3baad110c9378c3300dc5ca527dd8bb749bddb43176a28a657eb7ce51825"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ea76401d8c8edf3b8ca544b28566e68b6a168d42f6a313129ada522d1b0c2f65"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e3b74cf99210527d2a98f1a1c3321f9c933ca969df0b01667630deebbde43183"
+    sha256 cellar: :any,                 arm64_golden_gate: "647af38ea9163ffba231afb8efdaceaca391f583e489e683688de94f0a5b8ea0"
+    sha256 cellar: :any,                 arm64_tahoe:       "ec74409d1b465395c8729c489d256b309154222a3e68d371077038fccb19d793"
+    sha256 cellar: :any,                 arm64_sequoia:     "472dbc6423662615b135349d3a51e7e71f8bcc143b8ce53e8cfff168680bdebe"
+    sha256 cellar: :any,                 arm64_sonoma:      "761daa6864eee45de9e75ead2633c10a5087ab441b16c41b1fcf5feb7678442d"
+    sha256 cellar: :any,                 arm64_ventura:     "202985317ea2e7476b167c5eca26fed1c0558ebe2ef224b83baa43660c725400"
+    sha256 cellar: :any,                 sonoma:            "20d9df460677a3f2dd6c8d64597b67f490bfff11d3adc9aa371d84ab30c4557b"
+    sha256 cellar: :any,                 ventura:           "8bdf3baad110c9378c3300dc5ca527dd8bb749bddb43176a28a657eb7ce51825"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "ea76401d8c8edf3b8ca544b28566e68b6a168d42f6a313129ada522d1b0c2f65"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "e3b74cf99210527d2a98f1a1c3321f9c933ca969df0b01667630deebbde43183"
   end
 
   depends_on "cmake" => :build

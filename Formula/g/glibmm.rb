@@ -7,12 +7,13 @@ class Glibmm < Formula
   compatibility_version 1
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "1820b1d736061b49c2b659e70809dcc79acdc47d5229d58ec19fcf9081565d70"
-    sha256 cellar: :any, arm64_sequoia: "8123fe33bb48afcc1518f58f2d8f5d5432b34efa17bd47bcf12bc1849a00070d"
-    sha256 cellar: :any, arm64_sonoma:  "75665105fafb18f9b5b057cac75f853da291e2597d802f71fe5fc090a231a7bf"
-    sha256 cellar: :any, sonoma:        "72600139d4fec0a5a4a560cf5f677aa2d63b00e53ecc430baa9796a53d758a19"
-    sha256               arm64_linux:   "021fe24e5650a79bd327a012cccf84fd853d358e548ea135215fc1c346267f51"
-    sha256               x86_64_linux:  "1e8eee26d278df95a8a7b9a859bf2ed42319b2599c80dfc811d881fcf6f9d809"
+    sha256 cellar: :any, arm64_golden_gate: "8daba049509570bb1bb19282f76d064d6d0539749a9bf78ee6a14a98aaa89fe2"
+    sha256 cellar: :any, arm64_tahoe:       "1820b1d736061b49c2b659e70809dcc79acdc47d5229d58ec19fcf9081565d70"
+    sha256 cellar: :any, arm64_sequoia:     "8123fe33bb48afcc1518f58f2d8f5d5432b34efa17bd47bcf12bc1849a00070d"
+    sha256 cellar: :any, arm64_sonoma:      "75665105fafb18f9b5b057cac75f853da291e2597d802f71fe5fc090a231a7bf"
+    sha256 cellar: :any, sonoma:            "72600139d4fec0a5a4a560cf5f677aa2d63b00e53ecc430baa9796a53d758a19"
+    sha256               arm64_linux:       "021fe24e5650a79bd327a012cccf84fd853d358e548ea135215fc1c346267f51"
+    sha256               x86_64_linux:      "1e8eee26d278df95a8a7b9a859bf2ed42319b2599c80dfc811d881fcf6f9d809"
   end
 
   depends_on "meson" => :build

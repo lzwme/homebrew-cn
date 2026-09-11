@@ -6,12 +6,13 @@ class Ansilove < Formula
   license "BSD-2-Clause"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "3eec3245f0c8b602e2a9702a06979cc7bf60bec756d3f47884df774bee8f5175"
-    sha256 cellar: :any, arm64_sequoia: "24156f04a731bbbbbaee45cdf4aadbd56f60044c80c9330f324f8221e04e9b86"
-    sha256 cellar: :any, arm64_sonoma:  "1a6b11e09545aeedeaf11ddcdf4ffe1b27ba9408a357bc8ab909c5af23a74ebb"
-    sha256 cellar: :any, sonoma:        "87450d7c0fbef066b3ce65011a35c7ff9c62aadd6eed75bdac2bb9b845b2d312"
-    sha256 cellar: :any, arm64_linux:   "57374df00531d3d4bc1394afe9293185ec43c7a3d8e683b027fb53bbc299b49a"
-    sha256 cellar: :any, x86_64_linux:  "7d888f27956b0f9f05866e78497df6de6fcc8f2f0a55ba03cfb1503def8500b2"
+    sha256 cellar: :any, arm64_golden_gate: "b691297bcc06aec154e91e93d3fe82e2c27cefeb01864b798ff7084c4fd5cd8a"
+    sha256 cellar: :any, arm64_tahoe:       "3eec3245f0c8b602e2a9702a06979cc7bf60bec756d3f47884df774bee8f5175"
+    sha256 cellar: :any, arm64_sequoia:     "24156f04a731bbbbbaee45cdf4aadbd56f60044c80c9330f324f8221e04e9b86"
+    sha256 cellar: :any, arm64_sonoma:      "1a6b11e09545aeedeaf11ddcdf4ffe1b27ba9408a357bc8ab909c5af23a74ebb"
+    sha256 cellar: :any, sonoma:            "87450d7c0fbef066b3ce65011a35c7ff9c62aadd6eed75bdac2bb9b845b2d312"
+    sha256 cellar: :any, arm64_linux:       "57374df00531d3d4bc1394afe9293185ec43c7a3d8e683b027fb53bbc299b49a"
+    sha256 cellar: :any, x86_64_linux:      "7d888f27956b0f9f05866e78497df6de6fcc8f2f0a55ba03cfb1503def8500b2"
   end
 
   depends_on "cmake" => :build

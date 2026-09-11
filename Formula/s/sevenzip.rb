@@ -10,11 +10,12 @@ class Sevenzip < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "253b07aca4d56ccf849cd025beeaee2db98815571195c4027c84b1a91690d274"
-    sha256 cellar: :any, arm64_sequoia: "8e14d4dbe8fb93a9b08a0c4be9aae22d561b28d1eaf423f7a0ed0ddd94b5b1b2"
-    sha256 cellar: :any, arm64_sonoma:  "5833969c107401708c0ff136d79031831ae606e3d57962487ff85a71aa1bca50"
-    sha256 cellar: :any, arm64_linux:   "2b45a5c63c107874244eda5175db8b2f32053fed9f58f1ba71959308a431a70e"
-    sha256 cellar: :any, x86_64_linux:  "dbf1f812d853a75b2df4bdf2642094509d12dc05db52f3810687566866cef0ad"
+    sha256 cellar: :any, arm64_golden_gate: "0ef48bf66b26f1f3482df04772d0cd193889b98845b178499c449e0a29b2f977"
+    sha256 cellar: :any, arm64_tahoe:       "253b07aca4d56ccf849cd025beeaee2db98815571195c4027c84b1a91690d274"
+    sha256 cellar: :any, arm64_sequoia:     "8e14d4dbe8fb93a9b08a0c4be9aae22d561b28d1eaf423f7a0ed0ddd94b5b1b2"
+    sha256 cellar: :any, arm64_sonoma:      "5833969c107401708c0ff136d79031831ae606e3d57962487ff85a71aa1bca50"
+    sha256 cellar: :any, arm64_linux:       "2b45a5c63c107874244eda5175db8b2f32053fed9f58f1ba71959308a431a70e"
+    sha256 cellar: :any, x86_64_linux:      "dbf1f812d853a75b2df4bdf2642094509d12dc05db52f3810687566866cef0ad"
   end
 
   def install

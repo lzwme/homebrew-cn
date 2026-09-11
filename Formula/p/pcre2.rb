@@ -12,11 +12,12 @@ class Pcre2 < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "46681bd5769d4c0ab2aec568ff400ea00a69e9e5e05dc32b360bcf113b0af278"
-    sha256 cellar: :any, arm64_sequoia: "a24eb46d4ae083117c3ab683d631b6f510979bda74ee1e82a307e8ebe259904e"
-    sha256 cellar: :any, arm64_sonoma:  "eb8e1a4b93f9bbd228ac41336fa83085de6a1ab47593c8326d2e3544736fac88"
-    sha256 cellar: :any, arm64_linux:   "e3802b431ae9387433cf2abad3600b7fd9e4fa7688d9069f6e806b14fb03437a"
-    sha256 cellar: :any, x86_64_linux:  "73de8eb8fc25969a27d3b204c07034760da8de01524794706a6d874a62bca575"
+    sha256 cellar: :any, arm64_golden_gate: "0b27d55ce599c9f208dd0ecef2d4e081c32044cda68b53e81d3aad550a04a991"
+    sha256 cellar: :any, arm64_tahoe:       "46681bd5769d4c0ab2aec568ff400ea00a69e9e5e05dc32b360bcf113b0af278"
+    sha256 cellar: :any, arm64_sequoia:     "a24eb46d4ae083117c3ab683d631b6f510979bda74ee1e82a307e8ebe259904e"
+    sha256 cellar: :any, arm64_sonoma:      "eb8e1a4b93f9bbd228ac41336fa83085de6a1ab47593c8326d2e3544736fac88"
+    sha256 cellar: :any, arm64_linux:       "e3802b431ae9387433cf2abad3600b7fd9e4fa7688d9069f6e806b14fb03437a"
+    sha256 cellar: :any, x86_64_linux:      "73de8eb8fc25969a27d3b204c07034760da8de01524794706a6d874a62bca575"
   end
 
   head do

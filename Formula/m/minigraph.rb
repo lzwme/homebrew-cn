@@ -25,14 +25,10 @@ class Minigraph < Formula
   end
 
   def install
-    sse4 = Hardware::CPU.intel? && ((OS.mac? && MacOS.version.requires_sse4?) ||
-                                    (!build.bottle? && Hardware::CPU.sse4?))
-    unless sse4
-      inreplace "Makefile" do |s|
-        cflags = s.get_make_var("CFLAGS").split
-        cflags.delete("-msse4") { |flag| "Remove inreplace for #{flag}!" }
-        s.change_make_var! "CFLAGS", cflags.join(" ")
-      end
+    inreplace "Makefile" do |s|
+      cflags = s.get_make_var("CFLAGS").split
+      cflags.delete("-msse4") { |flag| "Remove inreplace for #{flag}!" }
+      s.change_make_var! "CFLAGS", cflags.join(" ")
     end
 
     system "make"

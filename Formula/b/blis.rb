@@ -7,12 +7,13 @@ class Blis < Formula
   head "https://github.com/flame/blis.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "eb82b90d8772853e56be25aa8c8ab53ca9378484af0bc260b0bb84792a1e6f54"
-    sha256 cellar: :any, arm64_sequoia: "b9530200988e2f17b9881324ff720797dfb759aa064d325b08e53801a45de530"
-    sha256 cellar: :any, arm64_sonoma:  "e1e423ed3af90933a6127ac8867257ad05bb9b77a7f31ee362900b15b4157719"
-    sha256 cellar: :any, sonoma:        "bbe516deb23acff84d3e05d466e331afc1d663b62716d3452af37638485437a3"
-    sha256 cellar: :any, arm64_linux:   "bf73e717b2c78f38286778783b86998b8f4ef5ad83f11a5b13f0895c045bd4ee"
-    sha256 cellar: :any, x86_64_linux:  "0463fc214ea183ee8012fae2439c75820173e2c9107bc5e7b76c99421f6f9fbf"
+    sha256 cellar: :any, arm64_golden_gate: "d8b005f1ca3549b5b5d20f82689473bc4604744f08be5e8cb2718e908f50f2ce"
+    sha256 cellar: :any, arm64_tahoe:       "eb82b90d8772853e56be25aa8c8ab53ca9378484af0bc260b0bb84792a1e6f54"
+    sha256 cellar: :any, arm64_sequoia:     "b9530200988e2f17b9881324ff720797dfb759aa064d325b08e53801a45de530"
+    sha256 cellar: :any, arm64_sonoma:      "e1e423ed3af90933a6127ac8867257ad05bb9b77a7f31ee362900b15b4157719"
+    sha256 cellar: :any, sonoma:            "bbe516deb23acff84d3e05d466e331afc1d663b62716d3452af37638485437a3"
+    sha256 cellar: :any, arm64_linux:       "bf73e717b2c78f38286778783b86998b8f4ef5ad83f11a5b13f0895c045bd4ee"
+    sha256 cellar: :any, x86_64_linux:      "0463fc214ea183ee8012fae2439c75820173e2c9107bc5e7b76c99421f6f9fbf"
   end
 
   uses_from_macos "python" => :build

@@ -7,12 +7,13 @@ class Libdatrie < Formula
   compatibility_version 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "77f8ac3d31bc58f8e000a6b065fa1eeff3c0f832e1d4e3c5fa67b464307c4e87"
-    sha256 cellar: :any,                 arm64_sequoia: "59dcf66f922dd1edaa379fb0ef30034585a7a1760ad0887c95afc0ff00ea667c"
-    sha256 cellar: :any,                 arm64_sonoma:  "b8b5fb03ad235122f83f7154cd9cfc473748cc6fe49c0d940fe280aa44a8ae12"
-    sha256 cellar: :any,                 sonoma:        "d534412d18b23018afb960d969edcfd5f09d51ccf7107b99aff0091503ebc579"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1aa88b7f1e58078eb57f8cac2920603e61e79f52c9679805a1bf4afee238e2db"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2296c37b6f7f5499b944e6e0d553e3ceac5a3666046ed133d495748045a4835f"
+    sha256 cellar: :any,                 arm64_golden_gate: "dc418fb78c371cf3907232c286347bc3e72d93529c8b38e0dc16539e65259497"
+    sha256 cellar: :any,                 arm64_tahoe:       "77f8ac3d31bc58f8e000a6b065fa1eeff3c0f832e1d4e3c5fa67b464307c4e87"
+    sha256 cellar: :any,                 arm64_sequoia:     "59dcf66f922dd1edaa379fb0ef30034585a7a1760ad0887c95afc0ff00ea667c"
+    sha256 cellar: :any,                 arm64_sonoma:      "b8b5fb03ad235122f83f7154cd9cfc473748cc6fe49c0d940fe280aa44a8ae12"
+    sha256 cellar: :any,                 sonoma:            "d534412d18b23018afb960d969edcfd5f09d51ccf7107b99aff0091503ebc579"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "1aa88b7f1e58078eb57f8cac2920603e61e79f52c9679805a1bf4afee238e2db"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "2296c37b6f7f5499b944e6e0d553e3ceac5a3666046ed133d495748045a4835f"
   end
 
   depends_on "pkgconf" => :build

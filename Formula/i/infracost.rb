@@ -1,8 +1,8 @@
 class Infracost < Formula
   desc "Cost estimates for Terraform, Terragrunt, and CloudFormation"
   homepage "https://www.infracost.io/docs/"
-  url "https://ghfast.top/https://github.com/infracost/cli/archive/refs/tags/v2.16.2.tar.gz"
-  sha256 "b147abdc4ce2f5da2ec7fe624d25c215b5084b7b006e620e146b55ab4b5b5410"
+  url "https://ghfast.top/https://github.com/infracost/cli/archive/refs/tags/v2.16.3.tar.gz"
+  sha256 "a8145d35e005ed67c8faf95ea558ec085bbed6550b1b70277e38f0d902b2f19c"
   license "Apache-2.0"
   head "https://github.com/infracost/cli.git", branch: "main"
 
@@ -12,12 +12,11 @@ class Infracost < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "134117d5ea0dc2a7f9a20f2b9206a3bc63d7425ed9281d04f5dd9e88b728f82a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "134117d5ea0dc2a7f9a20f2b9206a3bc63d7425ed9281d04f5dd9e88b728f82a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "134117d5ea0dc2a7f9a20f2b9206a3bc63d7425ed9281d04f5dd9e88b728f82a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5f543d3c42a46f190fb861cfd05f438026d49a6bec62df3ef6e84a3110bcc53b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "41d7051a5120bd7c1ad621f20671cf5137876e973afe5beb62db6670cecc25ef"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7bc3209844b134854403e9b0aeaaece1bdb9a46708bf72c57a87f54c1be3e6e5"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "df7939216309d8732a29ceddb7330e127c83dbc6511a741accf968c4b59524cb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "df7939216309d8732a29ceddb7330e127c83dbc6511a741accf968c4b59524cb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "df7939216309d8732a29ceddb7330e127c83dbc6511a741accf968c4b59524cb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "dfe08160ee2da236a485d2bc47dbd2e938348764c1e80d9724ad91aee075d996"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "67648d1538ac5f31b7c03f75b45e924c43fae8ba4213bf43505e9da0bf2122ab"
   end
 
   depends_on "go" => :build

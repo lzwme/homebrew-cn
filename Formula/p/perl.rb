@@ -14,13 +14,14 @@ class Perl < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "d0978a92bfa545e49bf6dd16ce65d864c4f1d8c79105bab702845c1b16ddf5a9"
-    sha256 arm64_sequoia: "2bd60c90c3a42cca58058a7158affc1df1bcf3ef411e0e8722320720537091f8"
-    sha256 arm64_sonoma:  "e5050ff19ceff250467139163ebfa608a46f1ddf9dde633be2ec6825e42b04c9"
-    sha256 sequoia:       "d6597a6ca568ceb53f8d8b6086f7fe746e30b6af49fbea3830a47eb572a71de7"
-    sha256 sonoma:        "785dbb6aeb21f3be8cc2ca414756f001879533b23ba91cb796f9b55be7e3f669"
-    sha256 arm64_linux:   "9c505ddbdf12eb5fb761f6ae5a9c6b0ce6659e058ae26d0beb3bdc7a968e81e5"
-    sha256 x86_64_linux:  "d497cdf66dd8e426392d85902d59e2644d46195dd3dead1c17ac6f533fa12f41"
+    sha256 arm64_golden_gate: "42bd9480eceb8d3d7e980695d98bf2cfd686958733e745cb52371d5d40beda05"
+    sha256 arm64_tahoe:       "d0978a92bfa545e49bf6dd16ce65d864c4f1d8c79105bab702845c1b16ddf5a9"
+    sha256 arm64_sequoia:     "2bd60c90c3a42cca58058a7158affc1df1bcf3ef411e0e8722320720537091f8"
+    sha256 arm64_sonoma:      "e5050ff19ceff250467139163ebfa608a46f1ddf9dde633be2ec6825e42b04c9"
+    sha256 sequoia:           "d6597a6ca568ceb53f8d8b6086f7fe746e30b6af49fbea3830a47eb572a71de7"
+    sha256 sonoma:            "785dbb6aeb21f3be8cc2ca414756f001879533b23ba91cb796f9b55be7e3f669"
+    sha256 arm64_linux:       "9c505ddbdf12eb5fb761f6ae5a9c6b0ce6659e058ae26d0beb3bdc7a968e81e5"
+    sha256 x86_64_linux:      "d497cdf66dd8e426392d85902d59e2644d46195dd3dead1c17ac6f533fa12f41"
   end
 
   depends_on "gdbm"

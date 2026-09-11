@@ -12,12 +12,13 @@ class Hackrf < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "d76b5c4bfbd77bee1f5e1f48481773c5128ffccb9188bd218801e6f9b3d6d30c"
-    sha256 cellar: :any,                 arm64_sequoia: "c3d36821448dcbf52035462d67fcf6ad31049039cb1e6e5a9c4852b887f46382"
-    sha256 cellar: :any,                 arm64_sonoma:  "5fc5f1972720b14717a98c0b7212656e47060b984e210c070a50eb2680cf63af"
-    sha256 cellar: :any,                 sonoma:        "4b65b90b39360e44ae20f9f143c1f0fe9bc6e74b27dde87c4b4b756695c4737a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "713262f12d04f9c9e42392c6082c74f6599c29de3a1e91a548fdf6fcccdc6e92"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8a9e96a3ec6c4042cabd4823c6b40d1bf1d37ad7e69573eb67733188188f55ed"
+    sha256 cellar: :any,                 arm64_golden_gate: "ed1e20e8911fbaa53cd54f8d2c393e722a52e452f974c4da06fe7ea464ef886e"
+    sha256 cellar: :any,                 arm64_tahoe:       "d76b5c4bfbd77bee1f5e1f48481773c5128ffccb9188bd218801e6f9b3d6d30c"
+    sha256 cellar: :any,                 arm64_sequoia:     "c3d36821448dcbf52035462d67fcf6ad31049039cb1e6e5a9c4852b887f46382"
+    sha256 cellar: :any,                 arm64_sonoma:      "5fc5f1972720b14717a98c0b7212656e47060b984e210c070a50eb2680cf63af"
+    sha256 cellar: :any,                 sonoma:            "4b65b90b39360e44ae20f9f143c1f0fe9bc6e74b27dde87c4b4b756695c4737a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "713262f12d04f9c9e42392c6082c74f6599c29de3a1e91a548fdf6fcccdc6e92"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "8a9e96a3ec6c4042cabd4823c6b40d1bf1d37ad7e69573eb67733188188f55ed"
   end
 
   depends_on "cmake" => :build

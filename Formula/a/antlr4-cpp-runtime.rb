@@ -12,12 +12,13 @@ class Antlr4CppRuntime < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "68f3e05f2ec65f4b039a3381102d3a470be23033a934ff1cb0a7897c5d6bd019"
-    sha256 cellar: :any,                 arm64_sequoia: "b1444f15d65fb7fbb4da3a05739b00b289535261b973cf5d9c0d0e8277aeb197"
-    sha256 cellar: :any,                 arm64_sonoma:  "e2c896d67ebf8ff81660cc3650e84c2e8084de16c4bd982c6d5165426b15d3ec"
-    sha256 cellar: :any,                 sonoma:        "9976b623aca8022951150dabf94113fe87853c7c85c4d7bf8c9d7ed46beae583"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "996e85cb2900cd345d7750aab49167b89fe9eb9a098172a99ab8ff825278e5a6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "01e069c449950cb7b6ce81e20a6e91dba6de3150f057337a12bb6a283ce96c06"
+    sha256 cellar: :any,                 arm64_golden_gate: "d57585d540e9bd85a3c4897c9504615b4e64b4f2c64f520f6ac8272488e2786a"
+    sha256 cellar: :any,                 arm64_tahoe:       "68f3e05f2ec65f4b039a3381102d3a470be23033a934ff1cb0a7897c5d6bd019"
+    sha256 cellar: :any,                 arm64_sequoia:     "b1444f15d65fb7fbb4da3a05739b00b289535261b973cf5d9c0d0e8277aeb197"
+    sha256 cellar: :any,                 arm64_sonoma:      "e2c896d67ebf8ff81660cc3650e84c2e8084de16c4bd982c6d5165426b15d3ec"
+    sha256 cellar: :any,                 sonoma:            "9976b623aca8022951150dabf94113fe87853c7c85c4d7bf8c9d7ed46beae583"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "996e85cb2900cd345d7750aab49167b89fe9eb9a098172a99ab8ff825278e5a6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "01e069c449950cb7b6ce81e20a6e91dba6de3150f057337a12bb6a283ce96c06"
   end
 
   depends_on "cmake" => :build

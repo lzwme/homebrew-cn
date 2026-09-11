@@ -13,12 +13,13 @@ class Mecab < Formula
 
   bottle do
     rebuild 6
-    sha256 arm64_tahoe:   "72298458bdf93c9012a74c60fb039ad00d77ad89839274c9857743bee97e22f0"
-    sha256 arm64_sequoia: "bf11401bae781f9ff7eb147a4c1c6b563bf2f34a8322e0ed5ed4ab5b96de7056"
-    sha256 arm64_sonoma:  "a519daec0927f8e41becdb52a94b6f907a86e61876f001be545912686fe203dd"
-    sha256 sonoma:        "152e6c5b2d2c3ce712382f25ecc88f0ebad662ed77688e8e9571827883505604"
-    sha256 arm64_linux:   "aee232893d116dc8431afa796f10d449236aaf57478e76ee3af5e74665ba12da"
-    sha256 x86_64_linux:  "61a01d5c68ef43a4e630e2ba229b5ea640e4da75569a3bee24ebfc8eb9a64abb"
+    sha256 arm64_golden_gate: "1a48f7234b72fef8f0849355590ef959b387f44b2e0117272d4a32d1d42bf198"
+    sha256 arm64_tahoe:       "72298458bdf93c9012a74c60fb039ad00d77ad89839274c9857743bee97e22f0"
+    sha256 arm64_sequoia:     "bf11401bae781f9ff7eb147a4c1c6b563bf2f34a8322e0ed5ed4ab5b96de7056"
+    sha256 arm64_sonoma:      "a519daec0927f8e41becdb52a94b6f907a86e61876f001be545912686fe203dd"
+    sha256 sonoma:            "152e6c5b2d2c3ce712382f25ecc88f0ebad662ed77688e8e9571827883505604"
+    sha256 arm64_linux:       "aee232893d116dc8431afa796f10d449236aaf57478e76ee3af5e74665ba12da"
+    sha256 x86_64_linux:      "61a01d5c68ef43a4e630e2ba229b5ea640e4da75569a3bee24ebfc8eb9a64abb"
   end
 
   conflicts_with "mecab-ko", because: "both install mecab binaries"

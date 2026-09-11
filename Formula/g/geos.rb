@@ -12,11 +12,12 @@ class Geos < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "ee2885091289736655eccd714125c4202537a81b91facf3033f9f6387b66a441"
-    sha256 cellar: :any, arm64_sequoia: "90785c1140619743ebf629f93da255b7b490f44b4a2e143bd1b6cd9b4d2d64f9"
-    sha256 cellar: :any, arm64_sonoma:  "8313b72df2431403753009907bbef383805dce12087b0852d3c04489ac686647"
-    sha256 cellar: :any, arm64_linux:   "2801e57ff42aa35f5e52e6f9f3dad19633f7125a0da010e0886c22bbfc53bfb6"
-    sha256 cellar: :any, x86_64_linux:  "ae8443b99cf965e4828c172fab22be7a7fe3424e6d8f6b3c7c99fe960f7e7664"
+    sha256 cellar: :any, arm64_golden_gate: "8f09ce56a97b7714e978c079793a9595292542b0676c742f02bff008eafcb7f6"
+    sha256 cellar: :any, arm64_tahoe:       "ee2885091289736655eccd714125c4202537a81b91facf3033f9f6387b66a441"
+    sha256 cellar: :any, arm64_sequoia:     "90785c1140619743ebf629f93da255b7b490f44b4a2e143bd1b6cd9b4d2d64f9"
+    sha256 cellar: :any, arm64_sonoma:      "8313b72df2431403753009907bbef383805dce12087b0852d3c04489ac686647"
+    sha256 cellar: :any, arm64_linux:       "2801e57ff42aa35f5e52e6f9f3dad19633f7125a0da010e0886c22bbfc53bfb6"
+    sha256 cellar: :any, x86_64_linux:      "ae8443b99cf965e4828c172fab22be7a7fe3424e6d8f6b3c7c99fe960f7e7664"
   end
 
   depends_on "cmake" => :build

@@ -11,14 +11,15 @@ class Ode < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "f85029563540277a80dfb3ed714d68d2dcb7e06d32b6bd190a07d6fa5f91847f"
-    sha256 cellar: :any,                 arm64_sequoia: "3aa96ecd0a92215d8005fb5f663c51b40df82454815f7bf5ab18f29ecef9d401"
-    sha256 cellar: :any,                 arm64_sonoma:  "18918632c616a8dcebb91fd9f717133b8921bc1fb1c383e2da6b8fee8debb26d"
-    sha256 cellar: :any,                 arm64_ventura: "c36bfd094cdf7c2cc6d877f05e7fba556fb012bd9ef5948b097e14f0b596be15"
-    sha256 cellar: :any,                 sonoma:        "3ee055bde9ea2aca43d4305de3cad0aeda9f54a3a1ff69dde4618487223f792b"
-    sha256 cellar: :any,                 ventura:       "2579b830d5c07a1c799bfee7bc1c0536614da23483a02190ad6d2f87585d84b2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cc65c81c28d4007bdfcaf7398d065c55ee477bbd4dd37abb7017810cb457fe5d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fb0f3a0439ddeada4699c0ca1004810a676e4bb07d910464d9641b3b5b4dddc1"
+    sha256 cellar: :any,                 arm64_golden_gate: "e91119058ec3e13483b635c658e58d5adf0b62293776d35f819480829f477928"
+    sha256 cellar: :any,                 arm64_tahoe:       "f85029563540277a80dfb3ed714d68d2dcb7e06d32b6bd190a07d6fa5f91847f"
+    sha256 cellar: :any,                 arm64_sequoia:     "3aa96ecd0a92215d8005fb5f663c51b40df82454815f7bf5ab18f29ecef9d401"
+    sha256 cellar: :any,                 arm64_sonoma:      "18918632c616a8dcebb91fd9f717133b8921bc1fb1c383e2da6b8fee8debb26d"
+    sha256 cellar: :any,                 arm64_ventura:     "c36bfd094cdf7c2cc6d877f05e7fba556fb012bd9ef5948b097e14f0b596be15"
+    sha256 cellar: :any,                 sonoma:            "3ee055bde9ea2aca43d4305de3cad0aeda9f54a3a1ff69dde4618487223f792b"
+    sha256 cellar: :any,                 ventura:           "2579b830d5c07a1c799bfee7bc1c0536614da23483a02190ad6d2f87585d84b2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "cc65c81c28d4007bdfcaf7398d065c55ee477bbd4dd37abb7017810cb457fe5d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "fb0f3a0439ddeada4699c0ca1004810a676e4bb07d910464d9641b3b5b4dddc1"
   end
 
   depends_on "autoconf" => :build

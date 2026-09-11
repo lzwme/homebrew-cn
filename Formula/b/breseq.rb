@@ -6,12 +6,13 @@ class Breseq < Formula
   license all_of: ["GPL-2.0-or-later", "MIT", "BSD-3-Clause"]
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "55c917e2b31851435889dab41c77d179725e315f3bc08f47e83c3db9223ebef1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "34427cfc91cb99f96eff833928e6b99ca7905a3b06cbab32045e01ee82230e7c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "463797f0a600385f50fd16a9d7c07be58976c3d72e35c635859d2231c96dc68a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2a3f85cef0ef0ceb80f32e6365fe0c84357c2c35a7598729e2d5476dfc0da3ef"
-    sha256 cellar: :any,                 arm64_linux:   "55583e338a76372cd2df9672da425894060453e187ffd07054555e3cbd23998d"
-    sha256 cellar: :any,                 x86_64_linux:  "282be82d60584b68970046a1d4547045aa2fec58bc81d557065864ad61661e21"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "499a537b7611782cec434e0f9cfe9d39cac639aad93d2c37b98160516952423a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "55c917e2b31851435889dab41c77d179725e315f3bc08f47e83c3db9223ebef1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "34427cfc91cb99f96eff833928e6b99ca7905a3b06cbab32045e01ee82230e7c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "463797f0a600385f50fd16a9d7c07be58976c3d72e35c635859d2231c96dc68a"
+    sha256 cellar: :any_skip_relocation, sonoma:            "2a3f85cef0ef0ceb80f32e6365fe0c84357c2c35a7598729e2d5476dfc0da3ef"
+    sha256 cellar: :any,                 arm64_linux:       "55583e338a76372cd2df9672da425894060453e187ffd07054555e3cbd23998d"
+    sha256 cellar: :any,                 x86_64_linux:      "282be82d60584b68970046a1d4547045aa2fec58bc81d557065864ad61661e21"
   end
 
   head do

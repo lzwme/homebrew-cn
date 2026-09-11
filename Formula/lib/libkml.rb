@@ -9,12 +9,13 @@ class Libkml < Formula
 
   bottle do
     rebuild 3
-    sha256 cellar: :any,                 arm64_tahoe:   "3ebb7ff52e177135e9778b32bced8bed361a34ac4558ad2c4f822a40c41e21ae"
-    sha256 cellar: :any,                 arm64_sequoia: "8daf78b5ae08619b23adcde8f6fd3b9c5d676bb904f912f4627a9e4b39f6752a"
-    sha256 cellar: :any,                 arm64_sonoma:  "2923f263ce5799f8432706e17c9d96df8bbda6d2672c5ed1ec606ff9c38553cc"
-    sha256 cellar: :any,                 sonoma:        "731845c227cc12dab82aca58a0ea4083c3508599ea685acc1e43509f9aaa703e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f8fdd2de12de8e4c3586fe2248b6505d6e4e7eed8e21f5d3fdf0b029fe27910e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "aec60fee5a674c026878ff2341d4cc41391b5b61633a8488792e945b897c5709"
+    sha256 cellar: :any,                 arm64_golden_gate: "36f86305a6d5dd0eb784ee6021ed46be809c7319d5b82627ffc8115cbe673ceb"
+    sha256 cellar: :any,                 arm64_tahoe:       "3ebb7ff52e177135e9778b32bced8bed361a34ac4558ad2c4f822a40c41e21ae"
+    sha256 cellar: :any,                 arm64_sequoia:     "8daf78b5ae08619b23adcde8f6fd3b9c5d676bb904f912f4627a9e4b39f6752a"
+    sha256 cellar: :any,                 arm64_sonoma:      "2923f263ce5799f8432706e17c9d96df8bbda6d2672c5ed1ec606ff9c38553cc"
+    sha256 cellar: :any,                 sonoma:            "731845c227cc12dab82aca58a0ea4083c3508599ea685acc1e43509f9aaa703e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "f8fdd2de12de8e4c3586fe2248b6505d6e4e7eed8e21f5d3fdf0b029fe27910e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "aec60fee5a674c026878ff2341d4cc41391b5b61633a8488792e945b897c5709"
   end
 
   depends_on "boost" => [:build, :test]

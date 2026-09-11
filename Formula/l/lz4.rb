@@ -15,11 +15,12 @@ class Lz4 < Formula
 
   bottle do
     rebuild 2
-    sha256 cellar: :any, arm64_tahoe:   "538e2d6b920b663fcad6b99c1eb294c1157ea9a35d7a50bf0c632df4f427bdf5"
-    sha256 cellar: :any, arm64_sequoia: "97e9c430fd82ccaaf619accc534157e9adfe2f2742ee7c47bfc481b3660b5d3f"
-    sha256 cellar: :any, arm64_sonoma:  "bad7f434a13146990b5a021a020583b19d0fa9b082d5b8e36b31f517d512572b"
-    sha256 cellar: :any, arm64_linux:   "87855c40ff71978c66a39cfcb19d407a8fa83a302d42a57eb2941728e9922009"
-    sha256 cellar: :any, x86_64_linux:  "cbfa3337697c4585b2f0cbe679af7802046c36cd9162f519af89b33c3d52b4e0"
+    sha256 cellar: :any, arm64_golden_gate: "5dcf512afe9a65da27e9ef33ab6b8069b9bd2950290da3d61a670b4bebb03e83"
+    sha256 cellar: :any, arm64_tahoe:       "538e2d6b920b663fcad6b99c1eb294c1157ea9a35d7a50bf0c632df4f427bdf5"
+    sha256 cellar: :any, arm64_sequoia:     "97e9c430fd82ccaaf619accc534157e9adfe2f2742ee7c47bfc481b3660b5d3f"
+    sha256 cellar: :any, arm64_sonoma:      "bad7f434a13146990b5a021a020583b19d0fa9b082d5b8e36b31f517d512572b"
+    sha256 cellar: :any, arm64_linux:       "87855c40ff71978c66a39cfcb19d407a8fa83a302d42a57eb2941728e9922009"
+    sha256 cellar: :any, x86_64_linux:      "cbfa3337697c4585b2f0cbe679af7802046c36cd9162f519af89b33c3d52b4e0"
   end
 
   deny_network_access!

@@ -12,12 +12,13 @@ class SLang < Formula
 
   bottle do
     rebuild 1
-    sha256 arm64_tahoe:   "4501b4277af6a136a6ac81ee096feacf8e8a9d32324482f9b9cdb60ec9b513e2"
-    sha256 arm64_sequoia: "3d8e852f17793468f76777ca0fafbc7cb43bc45ba3abc5e2a31e177918be143f"
-    sha256 arm64_sonoma:  "faef8261bcc436c422dcc8e125d851a246860356f53c80aef017048a99e21d15"
-    sha256 sonoma:        "8e18a9ad12b0db57d0b46bd3342c1aadc4c0a662ed47d5900961576f2a99e0f2"
-    sha256 arm64_linux:   "5a14d1dd14b8bd40405616172456dfc0cc8b3af2bfb873e7a8853e07c27c8f5e"
-    sha256 x86_64_linux:  "72a9f13d969bd75373501dbac11238d2b4a7fcbc934624f50b14ad6f5185c22d"
+    sha256 arm64_golden_gate: "3b20e8daad6f9657e0e04aa1cc43adbfb2699b026bdc915144e73abfd8b87ebf"
+    sha256 arm64_tahoe:       "4501b4277af6a136a6ac81ee096feacf8e8a9d32324482f9b9cdb60ec9b513e2"
+    sha256 arm64_sequoia:     "3d8e852f17793468f76777ca0fafbc7cb43bc45ba3abc5e2a31e177918be143f"
+    sha256 arm64_sonoma:      "faef8261bcc436c422dcc8e125d851a246860356f53c80aef017048a99e21d15"
+    sha256 sonoma:            "8e18a9ad12b0db57d0b46bd3342c1aadc4c0a662ed47d5900961576f2a99e0f2"
+    sha256 arm64_linux:       "5a14d1dd14b8bd40405616172456dfc0cc8b3af2bfb873e7a8853e07c27c8f5e"
+    sha256 x86_64_linux:      "72a9f13d969bd75373501dbac11238d2b4a7fcbc934624f50b14ad6f5185c22d"
   end
 
   depends_on "libpng"

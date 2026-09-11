@@ -1,17 +1,17 @@
 class Rubocop < Formula
   desc "Ruby static code analyzer and formatter, based on the community Ruby style guide"
   homepage "https://docs.rubocop.org"
-  url "https://ghfast.top/https://github.com/rubocop/rubocop/archive/refs/tags/v1.90.0.tar.gz"
-  sha256 "c1e5dba493215d78e7f4812c4329948cfd98e115b3b9ad8772d13e616abc0573"
+  url "https://ghfast.top/https://github.com/rubocop/rubocop/archive/refs/tags/v1.91.0.tar.gz"
+  sha256 "e4fbd63ea5c3a7cc937f282579b4adedcdfe37a30df3d3aa2707ca930978b409"
   license "MIT"
   head "https://github.com/rubocop/rubocop.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "058d312f02f15debd54354b95a88aa16ef9f49d7106ed3af728e813a4eb3d8ae"
-    sha256 cellar: :any, arm64_sequoia: "009d59c2b72f7665b908e79539b72a0f27cb8b90748f35aee3b63dc493be1aed"
-    sha256 cellar: :any, arm64_sonoma:  "05b67c537f1051b139d383417468f42bce73911008afed5c9a2604bd365a8d4c"
-    sha256 cellar: :any, arm64_linux:   "ca616bf1383fbe06b4e98247df5fd0e572e7f872a8c19fd81be24fc7e4115237"
-    sha256 cellar: :any, x86_64_linux:  "edfc3974db6bcd86cc0338016f5b1f602bab0fa87121e67895fca0ab4d8ab4c6"
+    sha256 cellar: :any, arm64_tahoe:   "323b817289f1909df9f13a06f3bc0b88d0ea3bcf3df8c2435b9b213ab06c17cb"
+    sha256 cellar: :any, arm64_sequoia: "7f079c9ded8345ed29265438a377100aabdfc2ea4a2241e6931f59a9873ad884"
+    sha256 cellar: :any, arm64_sonoma:  "0246e93b447502bd10f616fc9eb0ffb478cf790cdec5e47e8fc345ac8e491d38"
+    sha256 cellar: :any, arm64_linux:   "b708b5f3de6706523df3fa18a6e96385652980a7e825216fae9c9bab244d6a79"
+    sha256 cellar: :any, x86_64_linux:  "42d7ca4cdd5fde6a5c75452195d3caa2b9cf17fad5c6addc09797534bf62acf4"
   end
 
   depends_on "ruby"

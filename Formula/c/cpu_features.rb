@@ -7,12 +7,13 @@ class CpuFeatures < Formula
   head "https://github.com/google/cpu_features.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "a7ab8c99995cba65930e1ecc83f5687241a3b25b4df82b8065fa4dd1edf5cff7"
-    sha256 cellar: :any, arm64_sequoia: "1a45dbccd31a7053940f2a93560070bd13104faa0ce4eb02d464c6a433f56af4"
-    sha256 cellar: :any, arm64_sonoma:  "bf4a0cf63357f1a3dd0c284210a1a95a635f054759ef7b159df297faa4f9b4db"
-    sha256 cellar: :any, sonoma:        "0eb6810aab2db0910562d3a3ab9e365b2efd9ee06cc5bc9bdd1f5470483f5d5f"
-    sha256 cellar: :any, arm64_linux:   "1bda3921c1343fb64aaad8831d7deb95887c885be722e661fbb39f2cb994a46e"
-    sha256 cellar: :any, x86_64_linux:  "7928047db2b237c171a0f9541c721b19cae998c92483427f71eb8c0df7b553b9"
+    sha256 cellar: :any, arm64_golden_gate: "bcd3518e49afe94bde737c4934e019f388d7aed51bdd88ec0c96b32a8bf579e7"
+    sha256 cellar: :any, arm64_tahoe:       "a7ab8c99995cba65930e1ecc83f5687241a3b25b4df82b8065fa4dd1edf5cff7"
+    sha256 cellar: :any, arm64_sequoia:     "1a45dbccd31a7053940f2a93560070bd13104faa0ce4eb02d464c6a433f56af4"
+    sha256 cellar: :any, arm64_sonoma:      "bf4a0cf63357f1a3dd0c284210a1a95a635f054759ef7b159df297faa4f9b4db"
+    sha256 cellar: :any, sonoma:            "0eb6810aab2db0910562d3a3ab9e365b2efd9ee06cc5bc9bdd1f5470483f5d5f"
+    sha256 cellar: :any, arm64_linux:       "1bda3921c1343fb64aaad8831d7deb95887c885be722e661fbb39f2cb994a46e"
+    sha256 cellar: :any, x86_64_linux:      "7928047db2b237c171a0f9541c721b19cae998c92483427f71eb8c0df7b553b9"
   end
 
   depends_on "cmake" => :build

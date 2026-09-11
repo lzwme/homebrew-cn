@@ -14,11 +14,12 @@ class Tmux < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "9d4125a2d773a037da826d46599fa8fdde23381ca72e896af582b6a63d8f031f"
-    sha256 cellar: :any, arm64_sequoia: "b912a00996bb0421af49913cdd8019a1cb07140cb83af66f70df73c3ec58bb7f"
-    sha256 cellar: :any, arm64_sonoma:  "3ce8e889304a25593f701500e063c7e75b79bb90a1a8cedfe51052da2032cf48"
-    sha256 cellar: :any, arm64_linux:   "b25b98ebd2006119ab17f42bb9333f640f2b3362eb05bbe0096fbadd018ae55a"
-    sha256 cellar: :any, x86_64_linux:  "861cca7012fab1ccf773e254837d476cc48d519f908f460bd3d2988530c993d2"
+    sha256 cellar: :any, arm64_golden_gate: "d4e277920c4ad6838d167244d7f38aacb45f089b8e4486742c7c35f34842e89b"
+    sha256 cellar: :any, arm64_tahoe:       "9d4125a2d773a037da826d46599fa8fdde23381ca72e896af582b6a63d8f031f"
+    sha256 cellar: :any, arm64_sequoia:     "b912a00996bb0421af49913cdd8019a1cb07140cb83af66f70df73c3ec58bb7f"
+    sha256 cellar: :any, arm64_sonoma:      "3ce8e889304a25593f701500e063c7e75b79bb90a1a8cedfe51052da2032cf48"
+    sha256 cellar: :any, arm64_linux:       "b25b98ebd2006119ab17f42bb9333f640f2b3362eb05bbe0096fbadd018ae55a"
+    sha256 cellar: :any, x86_64_linux:      "861cca7012fab1ccf773e254837d476cc48d519f908f460bd3d2988530c993d2"
   end
 
   head do

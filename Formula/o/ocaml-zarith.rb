@@ -7,12 +7,13 @@ class OcamlZarith < Formula
   revision 5
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "4f4af8b87fdfada4fc2d5f663d2f29bbf5545d5c6fefb8c42e3a3fbc80cb1095"
-    sha256 cellar: :any, arm64_sequoia: "9842f3a1e28611bb3f3434aa496fc42819b074a75c419d6c8776670e5247bad4"
-    sha256 cellar: :any, arm64_sonoma:  "02a47b67c765cb427f471f3f37a5cc15b982a57cfb62e65161c8ad4183e0a027"
-    sha256 cellar: :any, sonoma:        "7758c035679677929605be1c7fa8519149791ec8400a9b8a3c9f52a7332c57c3"
-    sha256 cellar: :any, arm64_linux:   "6bee95138f01362fc0bb3bcf91db9437350829211bad5d07a71df1a572cbbfd1"
-    sha256 cellar: :any, x86_64_linux:  "a0bbf8d7541049b4efa4360f9fc40374ef1100159b39ba0b3a58d34cc65f8bac"
+    sha256 cellar: :any, arm64_golden_gate: "67e378386f07294046d5bddedd4a2432d89c76738abb6619ad292f569cbb72bf"
+    sha256 cellar: :any, arm64_tahoe:       "4f4af8b87fdfada4fc2d5f663d2f29bbf5545d5c6fefb8c42e3a3fbc80cb1095"
+    sha256 cellar: :any, arm64_sequoia:     "9842f3a1e28611bb3f3434aa496fc42819b074a75c419d6c8776670e5247bad4"
+    sha256 cellar: :any, arm64_sonoma:      "02a47b67c765cb427f471f3f37a5cc15b982a57cfb62e65161c8ad4183e0a027"
+    sha256 cellar: :any, sonoma:            "7758c035679677929605be1c7fa8519149791ec8400a9b8a3c9f52a7332c57c3"
+    sha256 cellar: :any, arm64_linux:       "6bee95138f01362fc0bb3bcf91db9437350829211bad5d07a71df1a572cbbfd1"
+    sha256 cellar: :any, x86_64_linux:      "a0bbf8d7541049b4efa4360f9fc40374ef1100159b39ba0b3a58d34cc65f8bac"
   end
 
   depends_on "ocaml-findlib" => :build

@@ -1,16 +1,16 @@
 class BazelDiff < Formula
   desc "Performs Bazel Target Diffing between two revisions in Git"
   homepage "https://github.com/Tinder/bazel-diff/"
-  url "https://ghfast.top/https://github.com/Tinder/bazel-diff/archive/refs/tags/v46.1.0.tar.gz"
-  sha256 "b031e8e793e06e46c94a18168d43f87937566ba657db9329da18218bcbf73df3"
+  url "https://ghfast.top/https://github.com/Tinder/bazel-diff/archive/refs/tags/v47.0.0.tar.gz"
+  sha256 "cd39da1c8e00fc10887448c63f3f5d538aac5f9b6e98ae5bde4f0bc0267b3028"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "041d7b1fdacee9d17ca168ddd002fa61c7bb8a1dcb28b40733506cf38f70fc43"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "041d7b1fdacee9d17ca168ddd002fa61c7bb8a1dcb28b40733506cf38f70fc43"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "041d7b1fdacee9d17ca168ddd002fa61c7bb8a1dcb28b40733506cf38f70fc43"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "932c8c0f1dc3350784550fb6056256ea1f1be6dd94c56e0c86d005679eaa3b38"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "932c8c0f1dc3350784550fb6056256ea1f1be6dd94c56e0c86d005679eaa3b38"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "33b96607aecc240f119e633d45b36929aceddf181af0dcbb12d2f2f7bbc903e0"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "33b96607aecc240f119e633d45b36929aceddf181af0dcbb12d2f2f7bbc903e0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "33b96607aecc240f119e633d45b36929aceddf181af0dcbb12d2f2f7bbc903e0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "9868b6fec7458999d81462fb9ba571a3198c63a440977a92b6255a98fbf55d2a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "9868b6fec7458999d81462fb9ba571a3198c63a440977a92b6255a98fbf55d2a"
   end
 
   depends_on "bazel" => [:build, :test]

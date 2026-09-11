@@ -12,12 +12,13 @@ class Libpaper < Formula
   end
 
   bottle do
-    sha256               arm64_tahoe:   "e6500bd1b2096cc88b3289610bd7a651a2ec40e1749b549e09e8f74ca20cc125"
-    sha256               arm64_sequoia: "39b2f9ec39466dbc44bec4b7dad83c5c2f83f1aa9689a23e3b2f92f119daba94"
-    sha256               arm64_sonoma:  "9cdf695868346e48cadfcf919bde607c247abc89ffa536fe4fc8b68ceeac8c45"
-    sha256 cellar: :any, sonoma:        "24d77cb51ff26f143c4f8dcafb5df6fa825ee6b12dde52a82770577475b23716"
-    sha256               arm64_linux:   "27009b7f07bd076b9b1f1f100b6753e205cb25f6e8b81dddb9449c6a4481a42d"
-    sha256               x86_64_linux:  "a4c43ea9adcaf5da52727b419385b518ef9c8d16e7a4203435eeea3bef874dea"
+    sha256               arm64_golden_gate: "e78dadbb9f11d60cf3820c0a6ad8c6a7f0a6ea5964f2117930f80d78ff6c7fb4"
+    sha256               arm64_tahoe:       "e6500bd1b2096cc88b3289610bd7a651a2ec40e1749b549e09e8f74ca20cc125"
+    sha256               arm64_sequoia:     "39b2f9ec39466dbc44bec4b7dad83c5c2f83f1aa9689a23e3b2f92f119daba94"
+    sha256               arm64_sonoma:      "9cdf695868346e48cadfcf919bde607c247abc89ffa536fe4fc8b68ceeac8c45"
+    sha256 cellar: :any, sonoma:            "24d77cb51ff26f143c4f8dcafb5df6fa825ee6b12dde52a82770577475b23716"
+    sha256               arm64_linux:       "27009b7f07bd076b9b1f1f100b6753e205cb25f6e8b81dddb9449c6a4481a42d"
+    sha256               x86_64_linux:      "a4c43ea9adcaf5da52727b419385b518ef9c8d16e7a4203435eeea3bef874dea"
   end
 
   depends_on "help2man" => :build

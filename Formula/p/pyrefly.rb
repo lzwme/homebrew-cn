@@ -1,18 +1,17 @@
 class Pyrefly < Formula
   desc "Fast type checker and IDE for Python"
   homepage "https://pyrefly.org/"
-  url "https://ghfast.top/https://github.com/facebook/pyrefly/archive/refs/tags/1.2.0.tar.gz"
-  sha256 "39c3d391da0aa85eb7d0149fc57e860495f50e431f4911547f21906a35ab33bd"
+  url "https://ghfast.top/https://github.com/facebook/pyrefly/archive/refs/tags/1.3.0.tar.gz"
+  sha256 "f26552aae8957d6924319034eadd69830f2442685fc4e696c97e777c827a4082"
   license "MIT"
   head "https://github.com/facebook/pyrefly.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bdd151c3c14cd310a23f8eb567240ab934f465ea42dbd8439dc0cacb5b102b64"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "10cf754a65ef0787a04e5416d9b5024545638b7932c382a33dfecce966453a06"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "db870658132b95e8b263ecb802832791722a6779b74a55a1b92595816fe743d7"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f8d720e97f378cba554b757727ea10bc1d71ce15d6f0c9865dbe2b1add4c4fda"
-    sha256 cellar: :any,                 arm64_linux:   "b8a4cea6234cfe5ba939bfbf8f654e8a2cf9ab37a6c8a17f9a40746b8d25eac3"
-    sha256 cellar: :any,                 x86_64_linux:  "930f2e0f89aa97e834dd4c6979f510428a199bdabeebb41dc4c6fb954b3fea64"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "b519d261eb0451ff03a5001de8c466a3bd8d281f14cf39fd22d23d27ac3cba76"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "8890ec28d2a70d60521202216b2c0524accc4403d2ca549267c5316da16f679b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "89a3f760f69212058960ace2a2c9bea1cd8bed020f58c8e8616e7eb49f521d5a"
+    sha256 cellar: :any,                 arm64_linux:       "b11f53fe1a0333ac90be417ba46d0f0f45fee714f3ec9b25872320082aa8c4fd"
+    sha256 cellar: :any,                 x86_64_linux:      "47ead3a74f42260eef8e6a89cfdedc714dbbbb2f8a8920a27791c7be5b73fc04"
   end
 
   depends_on "rust" => :build

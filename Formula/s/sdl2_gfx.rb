@@ -13,12 +13,13 @@ class Sdl2Gfx < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "656d8e9d2503d3e176165c70e240c4acd3d8fb6d8845a5da300439c9c4c92990"
-    sha256 cellar: :any, arm64_sequoia: "4495c158a58866ad66a946ba06222a9041a1b670dc255c62cae1a6251981e87c"
-    sha256 cellar: :any, arm64_sonoma:  "726280db5aa92a0ace6d293c1b6b807ee6eb34fd76665208d85b562445dff99b"
-    sha256 cellar: :any, sonoma:        "8efc5bff6b68d8598d6097bd16f62360452415d294a22c30f81132c4a0f64480"
-    sha256 cellar: :any, arm64_linux:   "d6c4321fa7c217877cad6c6815f5bc671b5fd3f390aef62061018f03dfbbbab3"
-    sha256 cellar: :any, x86_64_linux:  "63a286ac8e097c5048702a8b88c70a04f33148e0d98e1ba9aeb52a631538e53c"
+    sha256 cellar: :any, arm64_golden_gate: "702261a0dc2dc6dd34678d751be030f70fd40c171a5a38979875601685989ca7"
+    sha256 cellar: :any, arm64_tahoe:       "656d8e9d2503d3e176165c70e240c4acd3d8fb6d8845a5da300439c9c4c92990"
+    sha256 cellar: :any, arm64_sequoia:     "4495c158a58866ad66a946ba06222a9041a1b670dc255c62cae1a6251981e87c"
+    sha256 cellar: :any, arm64_sonoma:      "726280db5aa92a0ace6d293c1b6b807ee6eb34fd76665208d85b562445dff99b"
+    sha256 cellar: :any, sonoma:            "8efc5bff6b68d8598d6097bd16f62360452415d294a22c30f81132c4a0f64480"
+    sha256 cellar: :any, arm64_linux:       "d6c4321fa7c217877cad6c6815f5bc671b5fd3f390aef62061018f03dfbbbab3"
+    sha256 cellar: :any, x86_64_linux:      "63a286ac8e097c5048702a8b88c70a04f33148e0d98e1ba9aeb52a631538e53c"
   end
 
   depends_on "sdl2-compat"

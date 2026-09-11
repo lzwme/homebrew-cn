@@ -8,12 +8,13 @@ class Binutils < Formula
   compatibility_version 1
 
   bottle do
-    sha256               arm64_tahoe:   "3453a1b0d79fcf2f8cdb994352a7a0c42f075027df3c5af9cd3b59e48d925217"
-    sha256               arm64_sequoia: "d5a0fc7a1ecde47af381298523ee64c9072041531634e405e2adac034d73095d"
-    sha256               arm64_sonoma:  "8ffc2a8bcba52c6a839432faeeab5fff00beb60bd7d9c4bf26cfa057e595ebaf"
-    sha256               sonoma:        "eb444e609e4d81b3f61af7fb251fda61c3a1980cc7c0461c6e9cee1c240af2c9"
-    sha256 cellar: :any, arm64_linux:   "09c7c1414fee9ff82848c4e7711fce85d2506555dd4a62a3d69e199736cb5113"
-    sha256 cellar: :any, x86_64_linux:  "69509d3a474bc6c043fdc1e50a447b973813d8646405bcbbb764a4935696b1b7"
+    sha256               arm64_golden_gate: "ce37cd2ad2a4525011a99648d6265b2cabc0fe1464f528a52fe4dbd9db9d9929"
+    sha256               arm64_tahoe:       "3453a1b0d79fcf2f8cdb994352a7a0c42f075027df3c5af9cd3b59e48d925217"
+    sha256               arm64_sequoia:     "d5a0fc7a1ecde47af381298523ee64c9072041531634e405e2adac034d73095d"
+    sha256               arm64_sonoma:      "8ffc2a8bcba52c6a839432faeeab5fff00beb60bd7d9c4bf26cfa057e595ebaf"
+    sha256               sonoma:            "eb444e609e4d81b3f61af7fb251fda61c3a1980cc7c0461c6e9cee1c240af2c9"
+    sha256 cellar: :any, arm64_linux:       "09c7c1414fee9ff82848c4e7711fce85d2506555dd4a62a3d69e199736cb5113"
+    sha256 cellar: :any, x86_64_linux:      "69509d3a474bc6c043fdc1e50a447b973813d8646405bcbbb764a4935696b1b7"
   end
 
   keg_only :shadowed_by_macos, "Apple's CLT provides the same tools"

@@ -8,12 +8,13 @@ class Scipy < Formula
   head "https://github.com/scipy/scipy.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "771297ca2277edab9511814291d361e92a7934ad7a5350f9c093e65cc9b4d21f"
-    sha256 cellar: :any, arm64_sequoia: "ad15503e1851ec7468baf7537a620a58853c061de3c58681178cda58a8848188"
-    sha256 cellar: :any, arm64_sonoma:  "cf98a5276e80718a8aae44fb6e6ea90d6ee79ffa1a69904c5861b5116e60a00b"
-    sha256 cellar: :any, sonoma:        "c153a629c586f806f1ef6b4d20cd01fa24ee5e3c9ae92edfb579f5a163440075"
-    sha256 cellar: :any, arm64_linux:   "c227f92ab86f40a726858cad1ec08d909221efbfc938041398faf6ee4dbe68ca"
-    sha256 cellar: :any, x86_64_linux:  "875545b0526bad7d0b2c5b28c93331ea6088bd12b0ffb485dcd76d2b1a218bef"
+    sha256 cellar: :any, arm64_golden_gate: "0cbd912dd4e9c0de7d220d10dda60e3888387e01f23cab6bde0fb2fd76eacc55"
+    sha256 cellar: :any, arm64_tahoe:       "771297ca2277edab9511814291d361e92a7934ad7a5350f9c093e65cc9b4d21f"
+    sha256 cellar: :any, arm64_sequoia:     "ad15503e1851ec7468baf7537a620a58853c061de3c58681178cda58a8848188"
+    sha256 cellar: :any, arm64_sonoma:      "cf98a5276e80718a8aae44fb6e6ea90d6ee79ffa1a69904c5861b5116e60a00b"
+    sha256 cellar: :any, sonoma:            "c153a629c586f806f1ef6b4d20cd01fa24ee5e3c9ae92edfb579f5a163440075"
+    sha256 cellar: :any, arm64_linux:       "c227f92ab86f40a726858cad1ec08d909221efbfc938041398faf6ee4dbe68ca"
+    sha256 cellar: :any, x86_64_linux:      "875545b0526bad7d0b2c5b28c93331ea6088bd12b0ffb485dcd76d2b1a218bef"
   end
 
   depends_on "meson" => :build

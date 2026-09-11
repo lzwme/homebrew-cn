@@ -7,12 +7,13 @@ class Libxmu < Formula
   compatibility_version 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "f3119cf62a6b19cb301339f6611ad94df20c57f1d1f7cf508284f38baf9688bc"
-    sha256 cellar: :any,                 arm64_sequoia: "bf7fa457cb2dc12f1ecf9adfb0e96187fc41f1d9654750c89c121e840df67d02"
-    sha256 cellar: :any,                 arm64_sonoma:  "209c3e6cd9b134c9ccc2a59c27ead872c83a334c8d426fc3e845b363ab47f431"
-    sha256 cellar: :any,                 sonoma:        "ae23ca0f5401937f9d17c94c13b0b34b1f4e514da51333974fd1da20dcd59cb5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "89de2ef3c3cd5817dff3f0967e7a737fe5a1d3fc26a2bc5b77c52da24f1a4ac9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9563085140d7172e3e0365803b529a62a211a55611907b58e6fdb3ce726ae19b"
+    sha256 cellar: :any,                 arm64_golden_gate: "72ce3d1a61c583b0a160c67a85624fa343d2bfd7100fd3ad7070563a6e5c9c48"
+    sha256 cellar: :any,                 arm64_tahoe:       "f3119cf62a6b19cb301339f6611ad94df20c57f1d1f7cf508284f38baf9688bc"
+    sha256 cellar: :any,                 arm64_sequoia:     "bf7fa457cb2dc12f1ecf9adfb0e96187fc41f1d9654750c89c121e840df67d02"
+    sha256 cellar: :any,                 arm64_sonoma:      "209c3e6cd9b134c9ccc2a59c27ead872c83a334c8d426fc3e845b363ab47f431"
+    sha256 cellar: :any,                 sonoma:            "ae23ca0f5401937f9d17c94c13b0b34b1f4e514da51333974fd1da20dcd59cb5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "89de2ef3c3cd5817dff3f0967e7a737fe5a1d3fc26a2bc5b77c52da24f1a4ac9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "9563085140d7172e3e0365803b529a62a211a55611907b58e6fdb3ce726ae19b"
   end
 
   depends_on "pkgconf" => :build

@@ -8,12 +8,13 @@ class Unpaper < Formula
   head "https://github.com/unpaper/unpaper.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "fc585f781ec6ab7ec82afc6630731152c6de6f9ff74c491f01716f4355fbc22a"
-    sha256 cellar: :any, arm64_sequoia: "5c156bd4eb872947e7428e68101dc2043c8e3d08c51b4bbedb35c9e71cd2365f"
-    sha256 cellar: :any, arm64_sonoma:  "4beb67537e15ec17777b47388b04435ecd4f58b2c0bc16f4ab431cde86824001"
-    sha256 cellar: :any, sonoma:        "6748c3ed4a7a2c3af694385ce7bdf0d7e1ec1ac77a9f5f5ae3a9cf32cdc48035"
-    sha256               arm64_linux:   "27c33908935f73781dafa5fe57bdfee2e197325537df541882141e8502ced4e0"
-    sha256               x86_64_linux:  "4ab7e7baa52f728047d0f8e03a9c64ea3415b5dd36d64942f5df41df27f2dd19"
+    sha256 cellar: :any, arm64_golden_gate: "0c61d6ab1275feb5ab12931d50dad6e108285bd03ca3b888afcfa6ed6c1e7f25"
+    sha256 cellar: :any, arm64_tahoe:       "fc585f781ec6ab7ec82afc6630731152c6de6f9ff74c491f01716f4355fbc22a"
+    sha256 cellar: :any, arm64_sequoia:     "5c156bd4eb872947e7428e68101dc2043c8e3d08c51b4bbedb35c9e71cd2365f"
+    sha256 cellar: :any, arm64_sonoma:      "4beb67537e15ec17777b47388b04435ecd4f58b2c0bc16f4ab431cde86824001"
+    sha256 cellar: :any, sonoma:            "6748c3ed4a7a2c3af694385ce7bdf0d7e1ec1ac77a9f5f5ae3a9cf32cdc48035"
+    sha256               arm64_linux:       "27c33908935f73781dafa5fe57bdfee2e197325537df541882141e8502ced4e0"
+    sha256               x86_64_linux:      "4ab7e7baa52f728047d0f8e03a9c64ea3415b5dd36d64942f5df41df27f2dd19"
   end
 
   depends_on "meson" => :build

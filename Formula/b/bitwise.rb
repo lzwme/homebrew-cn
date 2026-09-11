@@ -6,11 +6,12 @@ class Bitwise < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "5b56a9177735b6e14880ec3e4377ca8575ae630c1e297b2536d11110467c9b45"
-    sha256 cellar: :any, arm64_sequoia: "6e985e1b549feafa291b5ea826b372f0a327de09ea0b987cd659c9b31b5cc768"
-    sha256 cellar: :any, arm64_sonoma:  "56b38b848995288b3833def04e767744d418768b1f760bea1886f26d83135a64"
-    sha256 cellar: :any, arm64_linux:   "fa1339df7cd2f3e36b68364bbfd8fd5ff5602511c2f990ddcab90c745efc7a65"
-    sha256 cellar: :any, x86_64_linux:  "274a2a9335e2462bd85cf3f3f4d5c1257d2bce3225535d7645b13d09f5b4f013"
+    sha256 cellar: :any, arm64_golden_gate: "87d117e28f0a2506f33cad6423e360426e83923047f14721d0fa36b1cf3b722c"
+    sha256 cellar: :any, arm64_tahoe:       "5b56a9177735b6e14880ec3e4377ca8575ae630c1e297b2536d11110467c9b45"
+    sha256 cellar: :any, arm64_sequoia:     "6e985e1b549feafa291b5ea826b372f0a327de09ea0b987cd659c9b31b5cc768"
+    sha256 cellar: :any, arm64_sonoma:      "56b38b848995288b3833def04e767744d418768b1f760bea1886f26d83135a64"
+    sha256 cellar: :any, arm64_linux:       "fa1339df7cd2f3e36b68364bbfd8fd5ff5602511c2f990ddcab90c745efc7a65"
+    sha256 cellar: :any, x86_64_linux:      "274a2a9335e2462bd85cf3f3f4d5c1257d2bce3225535d7645b13d09f5b4f013"
   end
 
   depends_on "autoconf" => :build

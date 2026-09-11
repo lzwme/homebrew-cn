@@ -7,12 +7,13 @@ class Cmocka < Formula
   head "https://git.cryptomilk.org/projects/cmocka.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "1526e9b10b209071770801428c41d08bf7f8601f23dce9b93ee03260dd419529"
-    sha256 cellar: :any,                 arm64_sequoia: "920260e22db9b96a6bfba2c54b48286b66b654680c37067099478abdce4a472d"
-    sha256 cellar: :any,                 arm64_sonoma:  "e2c2de2b3ade844e2b765b495c82e73e540fa0262fdaa5959f2104223310fd7b"
-    sha256 cellar: :any,                 sonoma:        "44075b56a67f29c890e88e9711337a48a4212b598998641c985f1d2a8e42e0be"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b436e2a03af8a0666e671ab970a16da1c40981de1bfeeb27dbb344cf39ba533c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3509a180a3d4d2dba82c53c2ff8465c07196ddede5298f316cd8a9540f70037d"
+    sha256 cellar: :any,                 arm64_golden_gate: "488edf3b99e91dba67abbf4d1d1d1e1cecb99a0be3bc036ca75f3262b4c87fb9"
+    sha256 cellar: :any,                 arm64_tahoe:       "1526e9b10b209071770801428c41d08bf7f8601f23dce9b93ee03260dd419529"
+    sha256 cellar: :any,                 arm64_sequoia:     "920260e22db9b96a6bfba2c54b48286b66b654680c37067099478abdce4a472d"
+    sha256 cellar: :any,                 arm64_sonoma:      "e2c2de2b3ade844e2b765b495c82e73e540fa0262fdaa5959f2104223310fd7b"
+    sha256 cellar: :any,                 sonoma:            "44075b56a67f29c890e88e9711337a48a4212b598998641c985f1d2a8e42e0be"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "b436e2a03af8a0666e671ab970a16da1c40981de1bfeeb27dbb344cf39ba533c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "3509a180a3d4d2dba82c53c2ff8465c07196ddede5298f316cd8a9540f70037d"
   end
 
   depends_on "cmake" => :build

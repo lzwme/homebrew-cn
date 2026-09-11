@@ -8,12 +8,13 @@ class Libfyaml < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "136a14b21e893b22e406404feccdcb478056fe48dcd9ad9449202ac1620e5294"
-    sha256 cellar: :any, arm64_sequoia: "e9dfc578d1d8a9b612a439dcae6bf01b7b8994556be9aaad47d115c777b87022"
-    sha256 cellar: :any, arm64_sonoma:  "b873d5ae917e943b1862f12d6f974e766b38e9259a922ce7fb7da2c5ad78ac87"
-    sha256 cellar: :any, sonoma:        "6ef1d63d2fba0cc36edfbd8630e590d8d4960ce5d0c3a80e0be0d367e6ea2973"
-    sha256 cellar: :any, arm64_linux:   "04cc26685b812dd7cb9ef33f4b5184866efbec2d83a9eb1df073d893bb683dd6"
-    sha256 cellar: :any, x86_64_linux:  "73fee9b57749aebf0ea4918e7a46b9abc1583e339771e1adcda6bff2a404dee6"
+    sha256 cellar: :any, arm64_golden_gate: "4b02b2f71758d2a79dba3699c9d0755a816a4ba278278ed22150bdcd007ff7d3"
+    sha256 cellar: :any, arm64_tahoe:       "136a14b21e893b22e406404feccdcb478056fe48dcd9ad9449202ac1620e5294"
+    sha256 cellar: :any, arm64_sequoia:     "e9dfc578d1d8a9b612a439dcae6bf01b7b8994556be9aaad47d115c777b87022"
+    sha256 cellar: :any, arm64_sonoma:      "b873d5ae917e943b1862f12d6f974e766b38e9259a922ce7fb7da2c5ad78ac87"
+    sha256 cellar: :any, sonoma:            "6ef1d63d2fba0cc36edfbd8630e590d8d4960ce5d0c3a80e0be0d367e6ea2973"
+    sha256 cellar: :any, arm64_linux:       "04cc26685b812dd7cb9ef33f4b5184866efbec2d83a9eb1df073d893bb683dd6"
+    sha256 cellar: :any, x86_64_linux:      "73fee9b57749aebf0ea4918e7a46b9abc1583e339771e1adcda6bff2a404dee6"
   end
 
   depends_on "cmake" => :build

@@ -37,11 +37,12 @@ class PhpAT84 < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "30b20b3a48e3df37abf6bde328c4d0d5288475d63fd49105064d506b23582f3c"
-    sha256 arm64_sequoia: "0defe3137bca2b145971e7b7076449f63e96d914ff1e21e61003131e7ce99443"
-    sha256 arm64_sonoma:  "d0a9105f6e70779e9bafd05b42a7123798660811936883592093ee4c2cfe8e7c"
-    sha256 arm64_linux:   "ba1bb6cb3c8539a085aba5aa7c45f74ca4fe5d6ee06933e39956b813e2e8204b"
-    sha256 x86_64_linux:  "3f690e642215990e64ef6013ded9029d8941db9a9a0effae1be77ed660bd79b6"
+    sha256 arm64_golden_gate: "eb29f06028856f1c0253acc53d35de156937114c5a01891b3b1aff4eec94e5a9"
+    sha256 arm64_tahoe:       "30b20b3a48e3df37abf6bde328c4d0d5288475d63fd49105064d506b23582f3c"
+    sha256 arm64_sequoia:     "0defe3137bca2b145971e7b7076449f63e96d914ff1e21e61003131e7ce99443"
+    sha256 arm64_sonoma:      "d0a9105f6e70779e9bafd05b42a7123798660811936883592093ee4c2cfe8e7c"
+    sha256 arm64_linux:       "ba1bb6cb3c8539a085aba5aa7c45f74ca4fe5d6ee06933e39956b813e2e8204b"
+    sha256 x86_64_linux:      "3f690e642215990e64ef6013ded9029d8941db9a9a0effae1be77ed660bd79b6"
   end
 
   keg_only :versioned_formula

@@ -8,12 +8,13 @@ class Thrift < Formula
   compatibility_version 3
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "de51bdd718da379a12e5cdbaab831ae379e98b233311503a12f79d22fa468914"
-    sha256 cellar: :any, arm64_sequoia: "d4d7301ccfec6227f482147ae3e7b60506f801ec240bdea2106a04e192dc4b52"
-    sha256 cellar: :any, arm64_sonoma:  "a1c4c94c0268dd8066c88e3b6410a376049a99136c229842d45cc76036a34b89"
-    sha256 cellar: :any, sonoma:        "88139860a06592e7b8d6fadf2f9595503a877f812a208c8d0d7664a268206857"
-    sha256 cellar: :any, arm64_linux:   "338f5358b943362edc879865b481fbc864c44efa233fb2b795821ad7869253db"
-    sha256 cellar: :any, x86_64_linux:  "3ccdaa58d273f59637873243322af545c11be400ebd4cd2e7ee9cb7cae700947"
+    sha256 cellar: :any, arm64_golden_gate: "9cf20e9b0fc582ac22978fdf11b22c933293d633e06646638cb28fac6846be1c"
+    sha256 cellar: :any, arm64_tahoe:       "de51bdd718da379a12e5cdbaab831ae379e98b233311503a12f79d22fa468914"
+    sha256 cellar: :any, arm64_sequoia:     "d4d7301ccfec6227f482147ae3e7b60506f801ec240bdea2106a04e192dc4b52"
+    sha256 cellar: :any, arm64_sonoma:      "a1c4c94c0268dd8066c88e3b6410a376049a99136c229842d45cc76036a34b89"
+    sha256 cellar: :any, sonoma:            "88139860a06592e7b8d6fadf2f9595503a877f812a208c8d0d7664a268206857"
+    sha256 cellar: :any, arm64_linux:       "338f5358b943362edc879865b481fbc864c44efa233fb2b795821ad7869253db"
+    sha256 cellar: :any, x86_64_linux:      "3ccdaa58d273f59637873243322af545c11be400ebd4cd2e7ee9cb7cae700947"
   end
 
   head do

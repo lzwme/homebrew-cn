@@ -6,12 +6,13 @@ class Btllib < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "c97fa830bec809a259eafea78ad8d575fdd39246e300a094db6e9e6828b20cb1"
-    sha256 cellar: :any,                 arm64_sequoia: "b199cb1787d5f6650c6ba33e3fe3d84ea4d4bbada0df36cc8f2a79c751eeb2a2"
-    sha256 cellar: :any,                 arm64_sonoma:  "b27993864f2a1b481c89020aa6b2384a4c76a2373213038d97cc1d82b29a593d"
-    sha256 cellar: :any,                 sonoma:        "f265eb6beb110c04dfdb3aa85fbf23016e7b8a8ed4943c3d96da32aebe066905"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e6242f4b4c44840b063c1a159c3afaa12ec00c8044c0a632149b2db29829987b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a40c45bac82f1fdfc8c01fa149515964b3e509a77eee0d47a1900aa738778305"
+    sha256 cellar: :any,                 arm64_golden_gate: "3635952650d09c51e89f75eb334c5fc8dd9620b9897bd3d490b84f3ef0630740"
+    sha256 cellar: :any,                 arm64_tahoe:       "c97fa830bec809a259eafea78ad8d575fdd39246e300a094db6e9e6828b20cb1"
+    sha256 cellar: :any,                 arm64_sequoia:     "b199cb1787d5f6650c6ba33e3fe3d84ea4d4bbada0df36cc8f2a79c751eeb2a2"
+    sha256 cellar: :any,                 arm64_sonoma:      "b27993864f2a1b481c89020aa6b2384a4c76a2373213038d97cc1d82b29a593d"
+    sha256 cellar: :any,                 sonoma:            "f265eb6beb110c04dfdb3aa85fbf23016e7b8a8ed4943c3d96da32aebe066905"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "e6242f4b4c44840b063c1a159c3afaa12ec00c8044c0a632149b2db29829987b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "a40c45bac82f1fdfc8c01fa149515964b3e509a77eee0d47a1900aa738778305"
   end
 
   depends_on "cmake" => :build
