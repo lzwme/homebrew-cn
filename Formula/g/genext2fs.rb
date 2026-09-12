@@ -6,12 +6,13 @@ class Genext2fs < Formula
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "19ec4b0b8fb9b9e6b9830566e37b7b0435227cef2ec768cf53548e0a354f0150"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "736e56e7b2f07cc5e22cf4c176c07881b49d6d60e0bc69bdca7e0c46d98dbe3f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fb296a5722ab03ecd56a05d609ef08e4bb7ccb047e7b66e73ef42bb112c8e2d6"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7f76028ee1aaf6e66a21b5680833f29a8dc5074691f6d3e1c3eb7df84e85b4d0"
-    sha256 cellar: :any,                 arm64_linux:   "3a56007a9ad692ab51b100f3dc02b47c7915a400d526077d625614e4aa8e6202"
-    sha256 cellar: :any,                 x86_64_linux:  "519507a41e89c153e17884befd473f386d08b782f4280407739529170e1d695b"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "7ffa223b355e771a691489e6e4c29bf0aa14ed7525152a184393705956af3710"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "19ec4b0b8fb9b9e6b9830566e37b7b0435227cef2ec768cf53548e0a354f0150"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "736e56e7b2f07cc5e22cf4c176c07881b49d6d60e0bc69bdca7e0c46d98dbe3f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "fb296a5722ab03ecd56a05d609ef08e4bb7ccb047e7b66e73ef42bb112c8e2d6"
+    sha256 cellar: :any_skip_relocation, sonoma:            "7f76028ee1aaf6e66a21b5680833f29a8dc5074691f6d3e1c3eb7df84e85b4d0"
+    sha256 cellar: :any,                 arm64_linux:       "3a56007a9ad692ab51b100f3dc02b47c7915a400d526077d625614e4aa8e6202"
+    sha256 cellar: :any,                 x86_64_linux:      "519507a41e89c153e17884befd473f386d08b782f4280407739529170e1d695b"
   end
 
   depends_on "autoconf" => :build

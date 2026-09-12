@@ -7,11 +7,12 @@ class JustLsp < Formula
   head "https://github.com/terror/just-lsp.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6827b83e195723110379ce84c197683f29bc066885dc4e23ae21a64cb1d24d39"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f98a519d1d0356dabfb6e37d3d7efbc1a9d8a2d41a62c669d17882fcce1b7cc8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "27b1e3f6c2008ac9c29d86f1177377ebfdcf24f2484ecd9e727b925f6895be04"
-    sha256 cellar: :any,                 arm64_linux:   "bc2667bac80a3f5279563893575b1ececddf768d455f826f8a7e481d3f618848"
-    sha256 cellar: :any,                 x86_64_linux:  "6d431328a4713e3a86ced56a693fd7dad63b75b12705caf2b03a9d4e3bfc424b"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "25387543e53b89ec923c224fc727c5868da5162077a90e750f078f6cb8e2b734"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "6827b83e195723110379ce84c197683f29bc066885dc4e23ae21a64cb1d24d39"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "f98a519d1d0356dabfb6e37d3d7efbc1a9d8a2d41a62c669d17882fcce1b7cc8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "27b1e3f6c2008ac9c29d86f1177377ebfdcf24f2484ecd9e727b925f6895be04"
+    sha256 cellar: :any,                 arm64_linux:       "bc2667bac80a3f5279563893575b1ececddf768d455f826f8a7e481d3f618848"
+    sha256 cellar: :any,                 x86_64_linux:      "6d431328a4713e3a86ced56a693fd7dad63b75b12705caf2b03a9d4e3bfc424b"
   end
 
   depends_on "rust" => :build

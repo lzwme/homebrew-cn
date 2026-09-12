@@ -17,13 +17,12 @@ class Cvs < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "12f7b6ba364b0131ac464c51dac10844da7be696fa3ec85b2aaa5ab0ee10fbce"
-    sha256 cellar: :any,                 arm64_sequoia: "0495f3e13e3d8eb8a04fcf144bae83551341c35d8f4cfe2d9b11427dc49f34fe"
-    sha256 cellar: :any,                 arm64_sonoma:  "f8dade380a6cf039b4a15971a46dc9201dcf5c9d9acedd694f4adfa04368495b"
-    sha256 cellar: :any,                 sonoma:        "d23f89d868c88f29bd4447915da42d8e5eb4e9efeb05d83e41adbf031f967bce"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f3f13423ddb87b2c109ef4a83bc27adb7cfb2fed004e76d1b8902f7b5c8ee856"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7eb7d12ce9a3935d6c1caad26fd473cfad09f4e22dcba970fab57ab5f8dca9c6"
+    rebuild 2
+    sha256 cellar: :any, arm64_golden_gate: "da1bbee384e68883e5534bfea38629f9f47bc312c2306b34daa62e44db98c925"
+    sha256 cellar: :any, arm64_tahoe:       "baba178520e22fa032dc3a432bb4d91aaac9051bbfc027562b7c561a695cac97"
+    sha256 cellar: :any, arm64_sequoia:     "7fe2dd380a1d94ade479bb1f6b0f4a9736bf6ff7530765be18169649e650d961"
+    sha256 cellar: :any, arm64_linux:       "b1ba2ef0cd5bad5eb18ed4cd4723594e0ba00a445f211e3ce9144f544ce7d11a"
+    sha256 cellar: :any, x86_64_linux:      "9eddf315b708d96c39b10b49a1b809d25c86d5402399226b64ef79cc7a5baa52"
   end
 
   depends_on "autoconf" => :build
@@ -94,6 +93,8 @@ class Cvs < Formula
 
     # Fix compile with newer Clang
     ENV.append_to_cflags "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1200
+    # C23 makes `()` mean `(void)`, breaking K&R-style handler calls in lib/sighandle.c
+    ENV.append_to_cflags "-std=gnu17"
 
     system "./configure", "--infodir=#{info}",
                           "--mandir=#{man}",

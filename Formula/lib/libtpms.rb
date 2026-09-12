@@ -6,12 +6,13 @@ class Libtpms < Formula
   license "BSD-2-Clause"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "66fd464e0e778e9d1c3bfff440e5f280891e5eee4d58e2c536a0d855bda23116"
-    sha256 cellar: :any,                 arm64_sequoia: "0439dcadfc4c140158d1a5d7f63c7ffeb3fdc69b4e90943c422e3d5de7664a7e"
-    sha256 cellar: :any,                 arm64_sonoma:  "112fd1f45e4a807f37a3e1cb29039e767c6d202d06209387ae484502d79775de"
-    sha256 cellar: :any,                 sonoma:        "f066899b2329dd5224682c03485d8f376538f888d443f4efa411cbb2ad5d01fd"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9647eaa61b0021650f0d1f7bf6f9d6dce81d4df1cf33cedbc2de1315e99035d3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8726633ed87a22297c0943d83329308c0e9187496cfdab7c322789f536e8a4b8"
+    sha256 cellar: :any,                 arm64_golden_gate: "5c1d8448048e3d0f0fac6a74c135e1a3a435196f3d484d4966a165a8eb106f94"
+    sha256 cellar: :any,                 arm64_tahoe:       "66fd464e0e778e9d1c3bfff440e5f280891e5eee4d58e2c536a0d855bda23116"
+    sha256 cellar: :any,                 arm64_sequoia:     "0439dcadfc4c140158d1a5d7f63c7ffeb3fdc69b4e90943c422e3d5de7664a7e"
+    sha256 cellar: :any,                 arm64_sonoma:      "112fd1f45e4a807f37a3e1cb29039e767c6d202d06209387ae484502d79775de"
+    sha256 cellar: :any,                 sonoma:            "f066899b2329dd5224682c03485d8f376538f888d443f4efa411cbb2ad5d01fd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "9647eaa61b0021650f0d1f7bf6f9d6dce81d4df1cf33cedbc2de1315e99035d3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "8726633ed87a22297c0943d83329308c0e9187496cfdab7c322789f536e8a4b8"
   end
 
   depends_on "autoconf" => :build

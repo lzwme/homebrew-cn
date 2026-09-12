@@ -12,12 +12,13 @@ class Dust < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a959a4c2fcaa73b15c1dbc33500913b46652431ff2080c6ef2b21e2fb5dfb568"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9a387723fd85c6c45ff6b2f9f6cd0f28897c11fbe5a4d087be8402fa5d70073b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "80a6ec6ad5cacbbd7b85fe48884b84bfa8765bc91d40ab5811536b7ec42ee30f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "eadeb1f952f6fdf552800939c71ae43f7e20df8e3e14d8f3c4760e8da714bb1f"
-    sha256 cellar: :any,                 arm64_linux:   "db0bdd78f8b22e1e256a695af1c0cde94b94d10ac98d2152273330a63858a095"
-    sha256 cellar: :any,                 x86_64_linux:  "f2c79cba60ce1bdefd759502d5be8f68482bbd76daaeac6b4f0abc4fd453b6df"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "810cd1a8d7b8fd7eb91f52c4a12dca935d84825bc37b351fb2a7f0b2ab38d34a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "a959a4c2fcaa73b15c1dbc33500913b46652431ff2080c6ef2b21e2fb5dfb568"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "9a387723fd85c6c45ff6b2f9f6cd0f28897c11fbe5a4d087be8402fa5d70073b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "80a6ec6ad5cacbbd7b85fe48884b84bfa8765bc91d40ab5811536b7ec42ee30f"
+    sha256 cellar: :any_skip_relocation, sonoma:            "eadeb1f952f6fdf552800939c71ae43f7e20df8e3e14d8f3c4760e8da714bb1f"
+    sha256 cellar: :any,                 arm64_linux:       "db0bdd78f8b22e1e256a695af1c0cde94b94d10ac98d2152273330a63858a095"
+    sha256 cellar: :any,                 x86_64_linux:      "f2c79cba60ce1bdefd759502d5be8f68482bbd76daaeac6b4f0abc4fd453b6df"
   end
 
   depends_on "rust" => :build

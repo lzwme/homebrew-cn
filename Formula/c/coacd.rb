@@ -8,11 +8,12 @@ class Coacd < Formula
   head "https://github.com/SarahWeiii/CoACD.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "d194038c80355410a913ceb685c0544b07ff4f77fe2251361b18bb8a8835ffdd"
-    sha256 cellar: :any, arm64_sequoia: "bffec5d5531cfe9ae7a130b058d4e115af8b65db76a55413ccb1c88e61d53706"
-    sha256 cellar: :any, arm64_sonoma:  "fb69df8c84c40f0ae41b15b2026be14609731dd4260dfe4a120f19935cb59378"
-    sha256 cellar: :any, arm64_linux:   "4a44845c7085a0dc5c2f0fa3c86cb077d3e02439276c9692b430464f7abc97da"
-    sha256 cellar: :any, x86_64_linux:  "359d7abc44d591f0ddeff10e0f8fdbc38fe4fbf629ac55808d9e39b252e51316"
+    sha256 cellar: :any, arm64_golden_gate: "dee50cf0d994ff0fc85f41ec380819e93bb40d1da34b3753589791ab788146c6"
+    sha256 cellar: :any, arm64_tahoe:       "d194038c80355410a913ceb685c0544b07ff4f77fe2251361b18bb8a8835ffdd"
+    sha256 cellar: :any, arm64_sequoia:     "bffec5d5531cfe9ae7a130b058d4e115af8b65db76a55413ccb1c88e61d53706"
+    sha256 cellar: :any, arm64_sonoma:      "fb69df8c84c40f0ae41b15b2026be14609731dd4260dfe4a120f19935cb59378"
+    sha256 cellar: :any, arm64_linux:       "4a44845c7085a0dc5c2f0fa3c86cb077d3e02439276c9692b430464f7abc97da"
+    sha256 cellar: :any, x86_64_linux:      "359d7abc44d591f0ddeff10e0f8fdbc38fe4fbf629ac55808d9e39b252e51316"
   end
 
   depends_on "cmake" => :build

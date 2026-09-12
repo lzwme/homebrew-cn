@@ -7,12 +7,13 @@ class Qthreads < Formula
   head "https://github.com/sandialabs/qthreads.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "f455a5b42d23a1151bfcff2b905895f1a0c3e3fff9bd7c6db3f3c7532edb580b"
-    sha256 cellar: :any,                 arm64_sequoia: "1e6f3e2eb3912d28d4090a64c205d6fdf25fc8e5f24d5eb9b0f0e4aef711f052"
-    sha256 cellar: :any,                 arm64_sonoma:  "ff6c0b330b2df5181cd7df2941577e840e6940891425a7eeec35ff1df7bbfbaf"
-    sha256 cellar: :any,                 sonoma:        "8fe16a4de2fb44ea1adaf8dae0786e46ba7199fdb57e4ef5584384bb76dd660e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "40ef0b72f54ac93aa7a7f0798d0d1e55ae5df9ce3a2329aa280ad76db0ecb482"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d1a54569cf1e22ecf35bceb1043fca31c97b86651c0782d00f856f1a31dc518c"
+    sha256 cellar: :any,                 arm64_golden_gate: "1cf48298df9af7bb4def33fb3a7bc10e580f742dc4c2b0e39edaf39ca8425d72"
+    sha256 cellar: :any,                 arm64_tahoe:       "f455a5b42d23a1151bfcff2b905895f1a0c3e3fff9bd7c6db3f3c7532edb580b"
+    sha256 cellar: :any,                 arm64_sequoia:     "1e6f3e2eb3912d28d4090a64c205d6fdf25fc8e5f24d5eb9b0f0e4aef711f052"
+    sha256 cellar: :any,                 arm64_sonoma:      "ff6c0b330b2df5181cd7df2941577e840e6940891425a7eeec35ff1df7bbfbaf"
+    sha256 cellar: :any,                 sonoma:            "8fe16a4de2fb44ea1adaf8dae0786e46ba7199fdb57e4ef5584384bb76dd660e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "40ef0b72f54ac93aa7a7f0798d0d1e55ae5df9ce3a2329aa280ad76db0ecb482"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "d1a54569cf1e22ecf35bceb1043fca31c97b86651c0782d00f856f1a31dc518c"
   end
 
   depends_on "cmake" => :build

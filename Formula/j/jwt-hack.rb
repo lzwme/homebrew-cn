@@ -7,12 +7,13 @@ class JwtHack < Formula
   head "https://github.com/hahwul/jwt-hack.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "ca0973e4a1c3bd80d36756df201204607dcd7506d2a4199f53dd566967cfd24d"
-    sha256 cellar: :any, arm64_sequoia: "94f3ed531198797ae18f317ac34fd24731c0442f47acbc542594e35e67fcf26f"
-    sha256 cellar: :any, arm64_sonoma:  "c4217a906f676b5a2638712385ba8f0bda3768a0ccdb69c5418106c065f15399"
-    sha256 cellar: :any, sonoma:        "be4caad94ea906ab332e6a79b536148d2048d402cb76ec726c7d809045c57c60"
-    sha256 cellar: :any, arm64_linux:   "76d5a6fe189daa21e3d22638a08c56193a89ca8cbf20567c7d33bd96a99648d1"
-    sha256 cellar: :any, x86_64_linux:  "0182c389ff7cf2420a6cebdc898f87fb1442959bf0f437d92056d539dcf96060"
+    sha256 cellar: :any, arm64_golden_gate: "88c5bccdc1287ff0d3210ad9dfab10c5fe7d0dad15929ed8ccb3d5a3594e98fa"
+    sha256 cellar: :any, arm64_tahoe:       "ca0973e4a1c3bd80d36756df201204607dcd7506d2a4199f53dd566967cfd24d"
+    sha256 cellar: :any, arm64_sequoia:     "94f3ed531198797ae18f317ac34fd24731c0442f47acbc542594e35e67fcf26f"
+    sha256 cellar: :any, arm64_sonoma:      "c4217a906f676b5a2638712385ba8f0bda3768a0ccdb69c5418106c065f15399"
+    sha256 cellar: :any, sonoma:            "be4caad94ea906ab332e6a79b536148d2048d402cb76ec726c7d809045c57c60"
+    sha256 cellar: :any, arm64_linux:       "76d5a6fe189daa21e3d22638a08c56193a89ca8cbf20567c7d33bd96a99648d1"
+    sha256 cellar: :any, x86_64_linux:      "0182c389ff7cf2420a6cebdc898f87fb1442959bf0f437d92056d539dcf96060"
   end
 
   depends_on "pkgconf" => :build

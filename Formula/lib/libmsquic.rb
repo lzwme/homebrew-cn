@@ -12,11 +12,12 @@ class Libmsquic < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "bb9557aa2f1c15030883efabb8d4fd714aa197c34d92050bb0eed3e30b059558"
-    sha256 cellar: :any, arm64_sequoia: "eb965abad227fe87e784f9e2009c960d08f398f5fecac1acbdfc90fe6034df27"
-    sha256 cellar: :any, arm64_sonoma:  "7240014c3758b61e502cf50d29d81193ffcb5527808fe77f36e2020fc8d54f02"
-    sha256 cellar: :any, arm64_linux:   "7aa5a4163ea76a9dbfd895cae12b3ed8d79735354a80e2b662840d2be9807032"
-    sha256 cellar: :any, x86_64_linux:  "c0f526d7285b0ad2dbb1b536f30a5ae69a91597598021a699501010b8d9da19d"
+    sha256 cellar: :any, arm64_golden_gate: "b0600f8562dffedd91191a33ccdb18d45578a986893ddd7fd11014602ae87c23"
+    sha256 cellar: :any, arm64_tahoe:       "bb9557aa2f1c15030883efabb8d4fd714aa197c34d92050bb0eed3e30b059558"
+    sha256 cellar: :any, arm64_sequoia:     "eb965abad227fe87e784f9e2009c960d08f398f5fecac1acbdfc90fe6034df27"
+    sha256 cellar: :any, arm64_sonoma:      "7240014c3758b61e502cf50d29d81193ffcb5527808fe77f36e2020fc8d54f02"
+    sha256 cellar: :any, arm64_linux:       "7aa5a4163ea76a9dbfd895cae12b3ed8d79735354a80e2b662840d2be9807032"
+    sha256 cellar: :any, x86_64_linux:      "c0f526d7285b0ad2dbb1b536f30a5ae69a91597598021a699501010b8d9da19d"
   end
 
   depends_on "cmake" => :build

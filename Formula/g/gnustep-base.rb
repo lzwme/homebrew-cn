@@ -19,12 +19,13 @@ class GnustepBase < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "0693816f992adcfc685d2ee8464599a92a51bfb60a8fc428b7a41f77b6657266"
-    sha256 cellar: :any,                 arm64_sequoia: "ea087ac117a4ddee94f9ab38f7bff0e307b80b2cba871be2009711a234a54d11"
-    sha256 cellar: :any,                 arm64_sonoma:  "23da697180c63dec9c9690536bb3debe66b6d78c19ef0ce507571ab2436c8bac"
-    sha256 cellar: :any,                 sonoma:        "35f3f0a775c9e8f138a46ede7e827b2017dc00f4ff60338da1e2eb433d942a58"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0ca2baa3e217b0325cb5a5d8544abda7eda57237c21b50cecf04719c68773a33"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c3d1ac8a92a0cfe7ad301988d5018efa6e8f71f2a906723304dab14ba0448a33"
+    sha256 cellar: :any,                 arm64_golden_gate: "dcb7db835a9b711b7a24ca586278b163fa154ecd41895e5ef0237d0a4186a3e8"
+    sha256 cellar: :any,                 arm64_tahoe:       "0693816f992adcfc685d2ee8464599a92a51bfb60a8fc428b7a41f77b6657266"
+    sha256 cellar: :any,                 arm64_sequoia:     "ea087ac117a4ddee94f9ab38f7bff0e307b80b2cba871be2009711a234a54d11"
+    sha256 cellar: :any,                 arm64_sonoma:      "23da697180c63dec9c9690536bb3debe66b6d78c19ef0ce507571ab2436c8bac"
+    sha256 cellar: :any,                 sonoma:            "35f3f0a775c9e8f138a46ede7e827b2017dc00f4ff60338da1e2eb433d942a58"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "0ca2baa3e217b0325cb5a5d8544abda7eda57237c21b50cecf04719c68773a33"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "c3d1ac8a92a0cfe7ad301988d5018efa6e8f71f2a906723304dab14ba0448a33"
   end
 
   depends_on "gnustep-make" => :build

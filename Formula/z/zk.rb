@@ -12,12 +12,13 @@ class Zk < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "1971a61ffabe5373bc6f702724e11637e09be825d0a2cd681b65569a685b7f77"
-    sha256 cellar: :any, arm64_sequoia: "c499482cdc173715708750ce76abdbbb237a7a8560f3f7e3cd5d28e2718cebf9"
-    sha256 cellar: :any, arm64_sonoma:  "59250e660fa7b8684e0f423689891c6e1afc204b3a7327c81f4b76ebcb6afb84"
-    sha256 cellar: :any, sonoma:        "a0c337e067e1491ebf19f3684bf6e97a02318e2618686153f14bfdece4d6ba2e"
-    sha256 cellar: :any, arm64_linux:   "8b20d3a7054bd2e0fc4cfae836f3f159b29eea5a3a4e18d58591cb68a57d840e"
-    sha256 cellar: :any, x86_64_linux:  "a581655c423fdd954a8d16cfc75b4ce2ff4c344ecb44cb9e0a33818d258039b2"
+    sha256 cellar: :any, arm64_golden_gate: "740c0d14852ae05099d50494c365f5b3362a75fdb59e38b5359b2458237ffcaf"
+    sha256 cellar: :any, arm64_tahoe:       "1971a61ffabe5373bc6f702724e11637e09be825d0a2cd681b65569a685b7f77"
+    sha256 cellar: :any, arm64_sequoia:     "c499482cdc173715708750ce76abdbbb237a7a8560f3f7e3cd5d28e2718cebf9"
+    sha256 cellar: :any, arm64_sonoma:      "59250e660fa7b8684e0f423689891c6e1afc204b3a7327c81f4b76ebcb6afb84"
+    sha256 cellar: :any, sonoma:            "a0c337e067e1491ebf19f3684bf6e97a02318e2618686153f14bfdece4d6ba2e"
+    sha256 cellar: :any, arm64_linux:       "8b20d3a7054bd2e0fc4cfae836f3f159b29eea5a3a4e18d58591cb68a57d840e"
+    sha256 cellar: :any, x86_64_linux:      "a581655c423fdd954a8d16cfc75b4ce2ff4c344ecb44cb9e0a33818d258039b2"
   end
 
   depends_on "go" => :build

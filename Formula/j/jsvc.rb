@@ -8,12 +8,13 @@ class Jsvc < Formula
   compatibility_version 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bfb95067226cb4e693882972be5e517fa75fa82eb1d5593a64ac849b2661291a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "aea93d34c2841c28e484ee9a9c12ab8ed6512c8ce1aca82f1d6436d7edb64de8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "096291cdc0d0335ed80a5b15249f975282f535d72cef0a3e8f49a16a5c6ed826"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ec4e8730bd147c2dea34d9f64774ca9fbb65ec70f1e70197e78b4f5ff9e86f0c"
-    sha256 cellar: :any,                 arm64_linux:   "215c20075db1e372de2e4a8e842f57b3688304b1dfb557ebe74d53831e7bca8b"
-    sha256 cellar: :any,                 x86_64_linux:  "8d7c506feafa56783dab019856bcf495f3ee5836791e8a6eae748ce155c33764"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "3309797c94703710f44550b3fc2c56ae915618aa0bba2c58864ea104d45c2ec1"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "bfb95067226cb4e693882972be5e517fa75fa82eb1d5593a64ac849b2661291a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "aea93d34c2841c28e484ee9a9c12ab8ed6512c8ce1aca82f1d6436d7edb64de8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "096291cdc0d0335ed80a5b15249f975282f535d72cef0a3e8f49a16a5c6ed826"
+    sha256 cellar: :any_skip_relocation, sonoma:            "ec4e8730bd147c2dea34d9f64774ca9fbb65ec70f1e70197e78b4f5ff9e86f0c"
+    sha256 cellar: :any,                 arm64_linux:       "215c20075db1e372de2e4a8e842f57b3688304b1dfb557ebe74d53831e7bca8b"
+    sha256 cellar: :any,                 x86_64_linux:      "8d7c506feafa56783dab019856bcf495f3ee5836791e8a6eae748ce155c33764"
   end
 
   depends_on "autoconf" => :build

@@ -17,12 +17,13 @@ class OcamlAT4 < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "cc9600dc6d0595e10ed18ac67c03518dce597ede42b2cb45c848fb412e6bec21"
-    sha256 arm64_sequoia: "165d3e8dd8a68b44a1a65f51201166ab0c37c9941c3a0a4087cb4da595c52118"
-    sha256 arm64_sonoma:  "702a39a41b6587f1f5ed678866c8006e7e30c0094b5281cbabc098c220f4cfef"
-    sha256 sonoma:        "a4bb1f4e38b2caddcf49e6fa16ece91e5870871bb426a6a62e0b6dd99335ac66"
-    sha256 arm64_linux:   "9b18a8a82f54d73496427a73b959829c6bcb0c26cfafccbcf4d7151a55413dbf"
-    sha256 x86_64_linux:  "8dd150854fb5d24f34deb8b7676ea76a5e2135d1447b8bffe4a4723ecc57756e"
+    sha256 arm64_golden_gate: "2fdf99fb34a33454539800cc83f5b852f7f1d08b6e8abd182f18288b5448d555"
+    sha256 arm64_tahoe:       "cc9600dc6d0595e10ed18ac67c03518dce597ede42b2cb45c848fb412e6bec21"
+    sha256 arm64_sequoia:     "165d3e8dd8a68b44a1a65f51201166ab0c37c9941c3a0a4087cb4da595c52118"
+    sha256 arm64_sonoma:      "702a39a41b6587f1f5ed678866c8006e7e30c0094b5281cbabc098c220f4cfef"
+    sha256 sonoma:            "a4bb1f4e38b2caddcf49e6fa16ece91e5870871bb426a6a62e0b6dd99335ac66"
+    sha256 arm64_linux:       "9b18a8a82f54d73496427a73b959829c6bcb0c26cfafccbcf4d7151a55413dbf"
+    sha256 x86_64_linux:      "8dd150854fb5d24f34deb8b7676ea76a5e2135d1447b8bffe4a4723ecc57756e"
   end
 
   # The ocaml compilers embed prefix information in weird ways that the default

@@ -7,12 +7,13 @@ class Julius < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "b57b4070b691f3335a89ccbe7bc8160cf89ea13740554fe7bc139a44e27225fc"
-    sha256 cellar: :any,                 arm64_sequoia: "90626fdb7e40c9ddfb802d560b463a0a986cdc78ce9f3299560981784c7234c2"
-    sha256 cellar: :any,                 arm64_sonoma:  "5489d866714d1a191332dea80d20443dc097780a68ae3983883be5505f3406a1"
-    sha256 cellar: :any,                 sonoma:        "bd47f837c69920f2fe4149028757fe97a97f5790d9f33ab33a023ffbabc6e332"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b68ee6c4454bf90a201afdeb9877d96bcd69db13177ad1b16bfe8f598e53d18f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "96922bc16267b3d31de8ff17570f1d163af94fd268168470ef560587b2059511"
+    sha256 cellar: :any,                 arm64_golden_gate: "658206c6190ae0f7aae3c08f44a8a1dae78040c81dc565cb45c7f2f2c3345307"
+    sha256 cellar: :any,                 arm64_tahoe:       "b57b4070b691f3335a89ccbe7bc8160cf89ea13740554fe7bc139a44e27225fc"
+    sha256 cellar: :any,                 arm64_sequoia:     "90626fdb7e40c9ddfb802d560b463a0a986cdc78ce9f3299560981784c7234c2"
+    sha256 cellar: :any,                 arm64_sonoma:      "5489d866714d1a191332dea80d20443dc097780a68ae3983883be5505f3406a1"
+    sha256 cellar: :any,                 sonoma:            "bd47f837c69920f2fe4149028757fe97a97f5790d9f33ab33a023ffbabc6e332"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "b68ee6c4454bf90a201afdeb9877d96bcd69db13177ad1b16bfe8f598e53d18f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "96922bc16267b3d31de8ff17570f1d163af94fd268168470ef560587b2059511"
   end
 
   depends_on "libsndfile"

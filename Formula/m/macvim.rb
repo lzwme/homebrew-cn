@@ -43,7 +43,6 @@ class Macvim < Formula
 
   conflicts_with "ex-vi", because: "both install `vi` and `view` binaries"
   conflicts_with "vim", "vim-classic", because: "both install vi* binaries"
-  conflicts_with cask: "macvim-app"
 
   def install
     # We don't want the deployment target to include the minor version on Big Sur and newer.

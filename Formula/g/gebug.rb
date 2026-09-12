@@ -8,12 +8,13 @@ class Gebug < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5e4d6f729ca5b8587e2b444e3a4f8f75f1cb6dcb8561f5b40c0f06aa2bb84513"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5e4d6f729ca5b8587e2b444e3a4f8f75f1cb6dcb8561f5b40c0f06aa2bb84513"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5e4d6f729ca5b8587e2b444e3a4f8f75f1cb6dcb8561f5b40c0f06aa2bb84513"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6bfc58de4fccfcf5fd5bd95abdf39711c8be7604a533ac96b2b979dba1631598"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d0bdb92d2b744c85b4b0dd0dc5846b0517716ce8edf62fb2503803e72acb0e07"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "db711bf46b680fb8cc9281aca1be97b803ac9ea2fe3734f1b736fec989c074c3"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "85952e1b0f43714f25ccb8071ac849748fdf9557e0bdc12f8a7b4a9de5e3740c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "5e4d6f729ca5b8587e2b444e3a4f8f75f1cb6dcb8561f5b40c0f06aa2bb84513"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "5e4d6f729ca5b8587e2b444e3a4f8f75f1cb6dcb8561f5b40c0f06aa2bb84513"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "5e4d6f729ca5b8587e2b444e3a4f8f75f1cb6dcb8561f5b40c0f06aa2bb84513"
+    sha256 cellar: :any_skip_relocation, sonoma:            "6bfc58de4fccfcf5fd5bd95abdf39711c8be7604a533ac96b2b979dba1631598"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "d0bdb92d2b744c85b4b0dd0dc5846b0517716ce8edf62fb2503803e72acb0e07"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "db711bf46b680fb8cc9281aca1be97b803ac9ea2fe3734f1b736fec989c074c3"
   end
 
   depends_on "go" => :build

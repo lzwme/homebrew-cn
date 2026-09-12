@@ -8,12 +8,13 @@ class CodebergCli < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "a1cbaf6e9a5b077d36c9a784ff4ae275fef953cfc0f05316a1a5c767788fedff"
-    sha256 cellar: :any, arm64_sequoia: "7db56fb4b4a99261b7e404233545e9313e4ecb44f47f5f18775206d972f43325"
-    sha256 cellar: :any, arm64_sonoma:  "b6659965cec7a554d216d175d167cf0ed4fd39fc1b22eadbc0513fd057c8bc10"
-    sha256 cellar: :any, sonoma:        "cde33866ca9c736d043408bc17a4c079bf2d952b53e2a599559fbc89f25b7fe1"
-    sha256 cellar: :any, arm64_linux:   "26945cdea3daba8ada3eb5c584ee78de52633f70d04c73a3b45e0a87d1a29c4d"
-    sha256 cellar: :any, x86_64_linux:  "97d2407fc68ecbe43e3613c4bbbd8fcda78f9424b08ccdeb29dfc0dd97d180d5"
+    sha256 cellar: :any, arm64_golden_gate: "77f8c01faa4ebee7f9176752b985a17e8bf7b0c9b6a8825bb10b39b6a4ff1361"
+    sha256 cellar: :any, arm64_tahoe:       "a1cbaf6e9a5b077d36c9a784ff4ae275fef953cfc0f05316a1a5c767788fedff"
+    sha256 cellar: :any, arm64_sequoia:     "7db56fb4b4a99261b7e404233545e9313e4ecb44f47f5f18775206d972f43325"
+    sha256 cellar: :any, arm64_sonoma:      "b6659965cec7a554d216d175d167cf0ed4fd39fc1b22eadbc0513fd057c8bc10"
+    sha256 cellar: :any, sonoma:            "cde33866ca9c736d043408bc17a4c079bf2d952b53e2a599559fbc89f25b7fe1"
+    sha256 cellar: :any, arm64_linux:       "26945cdea3daba8ada3eb5c584ee78de52633f70d04c73a3b45e0a87d1a29c4d"
+    sha256 cellar: :any, x86_64_linux:      "97d2407fc68ecbe43e3613c4bbbd8fcda78f9424b08ccdeb29dfc0dd97d180d5"
   end
 
   deprecate! date: "2026-05-13", because: :repo_archived, replacement_formula: "forgejo-cli"

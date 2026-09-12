@@ -8,12 +8,13 @@ class Videoalchemy < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0d1920eb31c8a15e3e2960eb5d79d232609f85085091dfcde6db588a7e82527c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0d1920eb31c8a15e3e2960eb5d79d232609f85085091dfcde6db588a7e82527c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0d1920eb31c8a15e3e2960eb5d79d232609f85085091dfcde6db588a7e82527c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "163886e323873afd56a3bf782b3e8177733ad4088779760bf710838be2188455"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ae565a7c2365bbd921dc8a7664ef1eef570865c272d002664bfcbbebfd1b6f9f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "72788fdb6f409d88c925d344d5aac48b217477cb419c3b9ebc249b517bfa412c"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "4980c5238c1d529412b6148b31723f659c9ae8835564dafbc700529747cd5039"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "0d1920eb31c8a15e3e2960eb5d79d232609f85085091dfcde6db588a7e82527c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "0d1920eb31c8a15e3e2960eb5d79d232609f85085091dfcde6db588a7e82527c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "0d1920eb31c8a15e3e2960eb5d79d232609f85085091dfcde6db588a7e82527c"
+    sha256 cellar: :any_skip_relocation, sonoma:            "163886e323873afd56a3bf782b3e8177733ad4088779760bf710838be2188455"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "ae565a7c2365bbd921dc8a7664ef1eef570865c272d002664bfcbbebfd1b6f9f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "72788fdb6f409d88c925d344d5aac48b217477cb419c3b9ebc249b517bfa412c"
   end
 
   depends_on "go" => :build

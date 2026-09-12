@@ -8,12 +8,13 @@ class Phodav < Formula
   head "https://gitlab.gnome.org/GNOME/phodav.git", branch: "master"
 
   bottle do
-    sha256 arm64_tahoe:   "f1192115b21287b4a91568fa9257b8db536bb3529471c9fcf09da51f43408206"
-    sha256 arm64_sequoia: "275e604708cdfcd2d5468532bd3ae37c7fc914f913ae2923b5c10b05d9ccab89"
-    sha256 arm64_sonoma:  "2164243dc4377c2624727447888926105498bb67bce02636811d5488bf9438dd"
-    sha256 sonoma:        "1b958681dab50441f112f3cc754f79f2f7f3a7766af6b5a85318a64d3692b5ad"
-    sha256 arm64_linux:   "5d8943c4e2ebdf97363b6d5efc2d000debf452fd8d6614efba08e6ce05a2501c"
-    sha256 x86_64_linux:  "44add3c66eabacd501c955a9ec7e41dc7c966b6abbf74df01d533bf1c25f2e69"
+    sha256 arm64_golden_gate: "1238daa5d1328e43e7dd82c2a7daee3501f0168f74dd444419e0196c348b91fa"
+    sha256 arm64_tahoe:       "f1192115b21287b4a91568fa9257b8db536bb3529471c9fcf09da51f43408206"
+    sha256 arm64_sequoia:     "275e604708cdfcd2d5468532bd3ae37c7fc914f913ae2923b5c10b05d9ccab89"
+    sha256 arm64_sonoma:      "2164243dc4377c2624727447888926105498bb67bce02636811d5488bf9438dd"
+    sha256 sonoma:            "1b958681dab50441f112f3cc754f79f2f7f3a7766af6b5a85318a64d3692b5ad"
+    sha256 arm64_linux:       "5d8943c4e2ebdf97363b6d5efc2d000debf452fd8d6614efba08e6ce05a2501c"
+    sha256 x86_64_linux:      "44add3c66eabacd501c955a9ec7e41dc7c966b6abbf74df01d533bf1c25f2e69"
   end
 
   depends_on "meson" => :build

@@ -9,12 +9,13 @@ class AdrViewer < Formula
   revision 6
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "152ad9b0751d066f89191be23d6292cdfd9dd892d64074f509697329e550757d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c8429f4d6db6d40ad61add9e0bf1033735b4d2cda769e528708a024c45e65d2e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f585a716bffc66ff9fe6e96aa692e05485fd70bcc590326cb6be40c3ac6059a7"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2ab4cf5120f5ad48331844075457672fba7acc9b49ce5f4299f1c6739967100c"
-    sha256 cellar: :any,                 arm64_linux:   "69d8faa722ff32fff16a0b2fd6d9c875bf1251535dfb6874f86e13c43c3a5537"
-    sha256 cellar: :any,                 x86_64_linux:  "5893cba966f2ba67a474d57f204bb69c484306333171f06db047641219738236"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "aaa27a3a2f773fb2c0873a5c0dcdf4a377a33b730d40b65fd4d090d79fef4771"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "152ad9b0751d066f89191be23d6292cdfd9dd892d64074f509697329e550757d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "c8429f4d6db6d40ad61add9e0bf1033735b4d2cda769e528708a024c45e65d2e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "f585a716bffc66ff9fe6e96aa692e05485fd70bcc590326cb6be40c3ac6059a7"
+    sha256 cellar: :any_skip_relocation, sonoma:            "2ab4cf5120f5ad48331844075457672fba7acc9b49ce5f4299f1c6739967100c"
+    sha256 cellar: :any,                 arm64_linux:       "69d8faa722ff32fff16a0b2fd6d9c875bf1251535dfb6874f86e13c43c3a5537"
+    sha256 cellar: :any,                 x86_64_linux:      "5893cba966f2ba67a474d57f204bb69c484306333171f06db047641219738236"
   end
 
   depends_on "python@3.14"

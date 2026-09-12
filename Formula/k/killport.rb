@@ -6,12 +6,13 @@ class Killport < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "807f206c9b4afbc6ff9330ec419784cc4ba5d650ef44972f8231febb1e952327"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4f29375dd1edb5e503d0bc301c04420771d98045206ec95c875dcc7270474fb1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "abe2333cf794807d6b75d8f08bf0e7f9dc6e7145a45ed12d37a23567cc38f420"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1cfc9dde00d56793d4a70e268117a6845a8c8433a147d5d5800c207b1d9b4031"
-    sha256 cellar: :any,                 arm64_linux:   "8741318089474d3c29d3caffea827c5e17c21c4fc4750238daec4805a6e5acc6"
-    sha256 cellar: :any,                 x86_64_linux:  "e64559d2c9dca3621b670c9856a56ab632a5507a6aef9784962d133a0faaf09b"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "8cadb05199380038de5d05216173a5a83bd67fe425df1b27e02cf9e618782c4b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "807f206c9b4afbc6ff9330ec419784cc4ba5d650ef44972f8231febb1e952327"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "4f29375dd1edb5e503d0bc301c04420771d98045206ec95c875dcc7270474fb1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "abe2333cf794807d6b75d8f08bf0e7f9dc6e7145a45ed12d37a23567cc38f420"
+    sha256 cellar: :any_skip_relocation, sonoma:            "1cfc9dde00d56793d4a70e268117a6845a8c8433a147d5d5800c207b1d9b4031"
+    sha256 cellar: :any,                 arm64_linux:       "8741318089474d3c29d3caffea827c5e17c21c4fc4750238daec4805a6e5acc6"
+    sha256 cellar: :any,                 x86_64_linux:      "e64559d2c9dca3621b670c9856a56ab632a5507a6aef9784962d133a0faaf09b"
   end
 
   depends_on "rust" => :build

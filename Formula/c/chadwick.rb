@@ -1,8 +1,8 @@
 class Chadwick < Formula
   desc "Tools for manipulating baseball data"
   homepage "https://chadwick.readthedocs.io"
-  url "https://ghfast.top/https://github.com/chadwickbureau/chadwick/releases/download/v0.10.0/chadwick-0.10.0.tar.gz"
-  sha256 "a4128934286edf5f9938923aad2000f7549dcccfb3b3f149a417534ef7eb29e9"
+  url "https://ghfast.top/https://github.com/chadwickbureau/chadwick/releases/download/v0.11.0/chadwick-0.11.0.tar.gz"
+  sha256 "c80d24dfd37707719c3e81883417a57339c4d60865e39ae73aebdbbfe2190259"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -11,14 +11,11 @@ class Chadwick < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "a25e4a468f0a8202822cbed14f6b357e9bb08d39ac2ab2b6440b76a1a5fbd468"
-    sha256 cellar: :any,                 arm64_sequoia: "7f2f912f0bd0d1e01b9c5c79756c1871ee38ca5db5867eb00a8b329a964c6e4a"
-    sha256 cellar: :any,                 arm64_sonoma:  "b4995539e3c7049d6d714ddcc248caaca634d951bac7276e5c39b3bdb6a5efa7"
-    sha256 cellar: :any,                 arm64_ventura: "47081e4a3818a66fccc361021b5f240dbd8b35dc262a0a952e4d669f8c6963a6"
-    sha256 cellar: :any,                 sonoma:        "674fb89cebb20d3c283cd3ebf3adf86349ceffcb0257aba582ad5f542505fc46"
-    sha256 cellar: :any,                 ventura:       "8065fe16594fa33d3a306ee0ce5fec37b948736f322ee9be2e8ff273db8d0feb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "98e955a622c79cad9c246dd9889bc67ea5d24175599c788b7f2b510d44aaab5f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "29fda27d9cbc2fbf9caef380fe3d1a950d4586b8826f0ceed226b71cf6fbfaa9"
+    sha256 cellar: :any, arm64_golden_gate: "ce822e855a64af561898b6cf0e0e1f2808423f6aa2152cda73234c7b2f867cc5"
+    sha256 cellar: :any, arm64_tahoe:       "f8bd05653549c37aff0d59d0d90e427d9c4a7dfeee7eee3c3a66025ab28b5f02"
+    sha256 cellar: :any, arm64_sequoia:     "867e32fe0431a8f586de718749d7200bcea71ed7b5d8864feb07cc4967bc6ca5"
+    sha256 cellar: :any, arm64_linux:       "c3496351228e24e59078cc2457b492564a566f42fe531cbf9c66de3ab9bec56c"
+    sha256 cellar: :any, x86_64_linux:      "65b1646953bf82d1577caffb08a232757a87344f69d31974bc3ab5e332db065e"
   end
 
   def install
@@ -117,7 +114,7 @@ class Chadwick < Formula
     EOS
 
     # check chadwick's standard output
-    exec_str = "#{bin}/cwbox -X -q -i #{attr[:game_id]} -y #{date_y} #{evn_file}"
+    exec_str = "#{bin}/cwbox -X -Q -i #{attr[:game_id]} -y #{date_y} #{evn_file}"
     out = shell_output(exec_str.sub("-X", ""))
     assert_match "Game of #{date_m_d_y} -- #{attr[:visitor_city]} at #{attr[:home_city]}", out
 

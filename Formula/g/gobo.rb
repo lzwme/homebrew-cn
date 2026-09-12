@@ -6,12 +6,13 @@ class Gobo < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6b606d0f39abbd2b5e79a8690e826d8b65405389b2b0043febf183cd43eb04b8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e2b58ef14ae859a1c6e2765dd3e12ce516805f12a0feb3b14b78c989bd842b9f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "071a6bfea465cc15394a6d2a88a14ea3a901a387da3620c9f4bf51b070afbda1"
-    sha256 cellar: :any_skip_relocation, sonoma:        "83a317259e2f7623575c87e321a7ec23e71b585d50cfb00736e3802c868f8eab"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ad7afb2103bd8753fc881cc77753c853a23cc1480a5e280972e9004df334e9ce"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4a008f02156bfb1992209c27cadb9427578fd75bfeb14b86dbc8714a1529e40f"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "cfd15d25872d1d5aed7cabbd54ff0e78a9eb95bf47d2a971e04d54201899c630"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "6b606d0f39abbd2b5e79a8690e826d8b65405389b2b0043febf183cd43eb04b8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "e2b58ef14ae859a1c6e2765dd3e12ce516805f12a0feb3b14b78c989bd842b9f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "071a6bfea465cc15394a6d2a88a14ea3a901a387da3620c9f4bf51b070afbda1"
+    sha256 cellar: :any_skip_relocation, sonoma:            "83a317259e2f7623575c87e321a7ec23e71b585d50cfb00736e3802c868f8eab"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "ad7afb2103bd8753fc881cc77753c853a23cc1480a5e280972e9004df334e9ce"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "4a008f02156bfb1992209c27cadb9427578fd75bfeb14b86dbc8714a1529e40f"
   end
 
   depends_on "eiffelstudio" => :test

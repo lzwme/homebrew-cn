@@ -15,12 +15,13 @@ class Hevea < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "7adec0a68d97c8aa59a28322012169104df01b8e690673cb929a05fb773623e0"
-    sha256 arm64_sequoia: "d76ea47bca0a2df7900e6ae6e6cec15f8c3faecf1debcb33b2849fccd12510a9"
-    sha256 arm64_sonoma:  "0e91ca0dd3705101d51598f6f8046eeacab49f8a117431b68583008d6ecfb8ab"
-    sha256 sonoma:        "691dd44898b2be35dd30128fd36402786b81484c78cc403f8044b786cb2d2277"
-    sha256 arm64_linux:   "d6dc20bf781879c8d9021b4dfcde5ecdc23451d6a722640ae5b90ba7dedf0d4f"
-    sha256 x86_64_linux:  "19d843f8b251e66fd43d6c4c1be42c20af8faf2cb4aaac756887064e9a22f263"
+    sha256 arm64_golden_gate: "3c9dbe02ad1ed166eeac51653d8b20f1950e301f2fbb802d31bd84c8f0c2c32c"
+    sha256 arm64_tahoe:       "7adec0a68d97c8aa59a28322012169104df01b8e690673cb929a05fb773623e0"
+    sha256 arm64_sequoia:     "d76ea47bca0a2df7900e6ae6e6cec15f8c3faecf1debcb33b2849fccd12510a9"
+    sha256 arm64_sonoma:      "0e91ca0dd3705101d51598f6f8046eeacab49f8a117431b68583008d6ecfb8ab"
+    sha256 sonoma:            "691dd44898b2be35dd30128fd36402786b81484c78cc403f8044b786cb2d2277"
+    sha256 arm64_linux:       "d6dc20bf781879c8d9021b4dfcde5ecdc23451d6a722640ae5b90ba7dedf0d4f"
+    sha256 x86_64_linux:      "19d843f8b251e66fd43d6c4c1be42c20af8faf2cb4aaac756887064e9a22f263"
   end
 
   depends_on "ocamlbuild" => :build

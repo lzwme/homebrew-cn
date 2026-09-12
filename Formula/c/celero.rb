@@ -6,12 +6,13 @@ class Celero < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "b63fcdb9e0f73ce01496f71df726bea56a88701a1d37a0fb79325d7fa8e71592"
-    sha256 cellar: :any,                 arm64_sequoia: "70f445ab1c256b1c9697ec1713d706c84db9a7cde69fe79c674a5e6bf9f256c4"
-    sha256 cellar: :any,                 arm64_sonoma:  "1b7ec357933948d2531d1426633e54ec66fbe912e7f133a11ecbb613eb74c339"
-    sha256 cellar: :any,                 sonoma:        "485ca90b69b9e2e21ed153ad95a446115644398d70747325314634b86456fc02"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b8f284e3f2349116d41cfdd37bb458b9e571ed8efb6bfbbfb688fde60e2730e6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "136a58bbef1ef017188b851cfaf5cf02ed4af629f3a35cf14f46708ddc314f84"
+    sha256 cellar: :any,                 arm64_golden_gate: "3e720489240236f979fe02282f570d58d0d7349209a8d8d6804bfa8873d3640f"
+    sha256 cellar: :any,                 arm64_tahoe:       "b63fcdb9e0f73ce01496f71df726bea56a88701a1d37a0fb79325d7fa8e71592"
+    sha256 cellar: :any,                 arm64_sequoia:     "70f445ab1c256b1c9697ec1713d706c84db9a7cde69fe79c674a5e6bf9f256c4"
+    sha256 cellar: :any,                 arm64_sonoma:      "1b7ec357933948d2531d1426633e54ec66fbe912e7f133a11ecbb613eb74c339"
+    sha256 cellar: :any,                 sonoma:            "485ca90b69b9e2e21ed153ad95a446115644398d70747325314634b86456fc02"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "b8f284e3f2349116d41cfdd37bb458b9e571ed8efb6bfbbfb688fde60e2730e6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "136a58bbef1ef017188b851cfaf5cf02ed4af629f3a35cf14f46708ddc314f84"
   end
 
   depends_on "cmake" => :build

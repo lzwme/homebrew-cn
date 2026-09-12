@@ -14,12 +14,13 @@ class ApachePulsar < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2fe67e7be69710722be40ff5f496ebb6c041f33e989addc3f8eaa58c9bfe313c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "05d0b7c1541bd2f8f3ce23d3ab6ae577b7ba6aa46923a6b9e95e8feb9bc5febb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "de1f8977e3928c3688469e753b9f43bc8db7d1c0b237e9000be55bba203f487d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3d0e404514cc6c573a37eddad0b3a6dac26b9086a7fdf6ce0c0e44dbb1a14ff1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5eb6da872a01ac40766eed9befb355eac9909c910f2ddc95e5d4e78145536bca"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "31af4a5234a6692a5f6eedfc5d5d5d4efd922294a16768de22a101009a8b170c"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "d8d82599cf6a4ca3d3d4f3c050a2ba6a2b8c4639afba51d40659279d2b22521e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "2fe67e7be69710722be40ff5f496ebb6c041f33e989addc3f8eaa58c9bfe313c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "05d0b7c1541bd2f8f3ce23d3ab6ae577b7ba6aa46923a6b9e95e8feb9bc5febb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "de1f8977e3928c3688469e753b9f43bc8db7d1c0b237e9000be55bba203f487d"
+    sha256 cellar: :any_skip_relocation, sonoma:            "3d0e404514cc6c573a37eddad0b3a6dac26b9086a7fdf6ce0c0e44dbb1a14ff1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "5eb6da872a01ac40766eed9befb355eac9909c910f2ddc95e5d4e78145536bca"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "31af4a5234a6692a5f6eedfc5d5d5d4efd922294a16768de22a101009a8b170c"
   end
 
   head do

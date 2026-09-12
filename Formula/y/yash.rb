@@ -6,12 +6,13 @@ class Yash < Formula
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 arm64_tahoe:   "46f099f162e3f4662a0175e1c63afbf9021bf504863a8fce232234dd1ffe018b"
-    sha256 arm64_sequoia: "3aeb8587ce93e7cc6f20ad085aa182c8566e8f200ddf5ffe89a4dade16b8ae66"
-    sha256 arm64_sonoma:  "92bd275d4409ac5a5008bebd24b8ad0d33a894951c33109d33bf3d12aa7bd5ee"
-    sha256 sonoma:        "285ef911cd740e054a202981e84afe4675fd23ae13bb2a67c0c21b009d38537c"
-    sha256 arm64_linux:   "5c532a1a557fcd41f9db0992442d8565c678404f14f3b1903cd45cfa48d4d55a"
-    sha256 x86_64_linux:  "7e73a8a59ca2879eee08bcd2e4a3b4262685536ed0197b6cadbc6977aef87ede"
+    sha256 arm64_golden_gate: "092d5b6db53105733c712510f51b21b5d7616ccc3b4e6014629c9b97d1db32da"
+    sha256 arm64_tahoe:       "46f099f162e3f4662a0175e1c63afbf9021bf504863a8fce232234dd1ffe018b"
+    sha256 arm64_sequoia:     "3aeb8587ce93e7cc6f20ad085aa182c8566e8f200ddf5ffe89a4dade16b8ae66"
+    sha256 arm64_sonoma:      "92bd275d4409ac5a5008bebd24b8ad0d33a894951c33109d33bf3d12aa7bd5ee"
+    sha256 sonoma:            "285ef911cd740e054a202981e84afe4675fd23ae13bb2a67c0c21b009d38537c"
+    sha256 arm64_linux:       "5c532a1a557fcd41f9db0992442d8565c678404f14f3b1903cd45cfa48d4d55a"
+    sha256 x86_64_linux:      "7e73a8a59ca2879eee08bcd2e4a3b4262685536ed0197b6cadbc6977aef87ede"
   end
 
   head do

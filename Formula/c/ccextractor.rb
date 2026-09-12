@@ -6,12 +6,13 @@ class Ccextractor < Formula
   license "GPL-2.0-only"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "12c08c826b1c250658d66d379f72561580175beefe027cc0c171dffa67eba093"
-    sha256 cellar: :any,                 arm64_sequoia: "0fcdc7c0b826a813a867b827dd893fe2cc37febbf6288f2a5d7b548044d6260a"
-    sha256 cellar: :any,                 arm64_sonoma:  "a852bf9a730bd1551c295ba37541f8f70b39c5f7544a42e292735791a25dffef"
-    sha256 cellar: :any,                 sonoma:        "123f78f64acb113f4d0115ff351399d7f4c7e370b53aed233294b8edf0647cfb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8594c9a98cd6eb8251c1c88cbcea50d1dd4ece4dfe8461664847558e4d3d3f12"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a0ef2ceeff67d6a30349edf4eeef1e452788f44f0c8d7d880c76cb58ae25a8c6"
+    sha256 cellar: :any,                 arm64_golden_gate: "dd8e181b4610cbd8f9225250d3c4fe66762851e85957bf5cf21ee8c12cb31686"
+    sha256 cellar: :any,                 arm64_tahoe:       "12c08c826b1c250658d66d379f72561580175beefe027cc0c171dffa67eba093"
+    sha256 cellar: :any,                 arm64_sequoia:     "0fcdc7c0b826a813a867b827dd893fe2cc37febbf6288f2a5d7b548044d6260a"
+    sha256 cellar: :any,                 arm64_sonoma:      "a852bf9a730bd1551c295ba37541f8f70b39c5f7544a42e292735791a25dffef"
+    sha256 cellar: :any,                 sonoma:            "123f78f64acb113f4d0115ff351399d7f4c7e370b53aed233294b8edf0647cfb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "8594c9a98cd6eb8251c1c88cbcea50d1dd4ece4dfe8461664847558e4d3d3f12"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "a0ef2ceeff67d6a30349edf4eeef1e452788f44f0c8d7d880c76cb58ae25a8c6"
   end
 
   depends_on "pkgconf" => :build

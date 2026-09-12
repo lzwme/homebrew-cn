@@ -12,11 +12,12 @@ class Lutok < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "06a6f522db223ff41e67fb28cea46f0e24d8f09a457b5d8caa69944e08ecb0a8"
-    sha256 cellar: :any, arm64_sequoia: "477f60409c479d51f20b6467b202b97919db6e55809957f06ec541b7af7ac541"
-    sha256 cellar: :any, arm64_sonoma:  "12d966b62f0fafcce6a8fe964a756e10db17b607ca556890f9f982d6daff2eb5"
-    sha256 cellar: :any, arm64_linux:   "cdc4e113066fac43195aee24f430ecac72ca79074f14c6bc2c60def0b8b9188e"
-    sha256 cellar: :any, x86_64_linux:  "cc327216db439ec4987c36ddd4a72a6353d65e64ff89400fb86328a0bdbde126"
+    sha256 cellar: :any, arm64_golden_gate: "af1205184b8736260d544a0dda5103b6cf7a01b98c2ee06ad227b6e7cd8bb249"
+    sha256 cellar: :any, arm64_tahoe:       "06a6f522db223ff41e67fb28cea46f0e24d8f09a457b5d8caa69944e08ecb0a8"
+    sha256 cellar: :any, arm64_sequoia:     "477f60409c479d51f20b6467b202b97919db6e55809957f06ec541b7af7ac541"
+    sha256 cellar: :any, arm64_sonoma:      "12d966b62f0fafcce6a8fe964a756e10db17b607ca556890f9f982d6daff2eb5"
+    sha256 cellar: :any, arm64_linux:       "cdc4e113066fac43195aee24f430ecac72ca79074f14c6bc2c60def0b8b9188e"
+    sha256 cellar: :any, x86_64_linux:      "cc327216db439ec4987c36ddd4a72a6353d65e64ff89400fb86328a0bdbde126"
   end
 
   depends_on "autoconf" => :build

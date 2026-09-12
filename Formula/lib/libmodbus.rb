@@ -6,12 +6,13 @@ class Libmodbus < Formula
   license "LGPL-2.1-or-later"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "5073559c9b2644170da1966b1a9e493475eb09a7076bb95bd00fe09055a235f7"
-    sha256 cellar: :any, arm64_sequoia: "4fbc2fde606f9b205870d1b8463a059a3f49594386b52f4a0cd5f24d0e59bcf1"
-    sha256 cellar: :any, arm64_sonoma:  "cd29b5c859733673c18dc437c8be755676b16d10d83946345aa1ef7184ee0794"
-    sha256 cellar: :any, sonoma:        "08432d0e74365d700fa2c14cf547f3071e1c2512a41355322120ab87815ad88d"
-    sha256 cellar: :any, arm64_linux:   "a69ecfd9d3c85d75c5f4a1d85c6ca0a07f28ec24d19aaff740f5e113f652d3aa"
-    sha256 cellar: :any, x86_64_linux:  "ced33328883e5198fd63e8b4206b8f0e1f52b8151b6320d05ee87e986a6080b3"
+    sha256 cellar: :any, arm64_golden_gate: "98e188647aa1c980362e85784933dfa087c2663d1bf57fa6e7cce80116620825"
+    sha256 cellar: :any, arm64_tahoe:       "5073559c9b2644170da1966b1a9e493475eb09a7076bb95bd00fe09055a235f7"
+    sha256 cellar: :any, arm64_sequoia:     "4fbc2fde606f9b205870d1b8463a059a3f49594386b52f4a0cd5f24d0e59bcf1"
+    sha256 cellar: :any, arm64_sonoma:      "cd29b5c859733673c18dc437c8be755676b16d10d83946345aa1ef7184ee0794"
+    sha256 cellar: :any, sonoma:            "08432d0e74365d700fa2c14cf547f3071e1c2512a41355322120ab87815ad88d"
+    sha256 cellar: :any, arm64_linux:       "a69ecfd9d3c85d75c5f4a1d85c6ca0a07f28ec24d19aaff740f5e113f652d3aa"
+    sha256 cellar: :any, x86_64_linux:      "ced33328883e5198fd63e8b4206b8f0e1f52b8151b6320d05ee87e986a6080b3"
   end
 
   head do

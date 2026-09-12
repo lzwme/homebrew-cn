@@ -11,12 +11,13 @@ class Meli < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "5784a603ab62624ab0f093ccc3f407c5390841ea780dedd72e3cbbcb87943259"
-    sha256 cellar: :any,                 arm64_sequoia: "217a27feab49a34548a1ba893647f7b9a899513ba0b63897475e28d212bf3b6a"
-    sha256 cellar: :any,                 arm64_sonoma:  "b66fa0a475e1b0bfb810e3d579eb1b129c1475afb9443e254f076e71342203af"
-    sha256 cellar: :any,                 sonoma:        "a1c21bf8bfe2800cd52c7f3d23dc76871b99635578defaed3db7f43064f88d4c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c6aab574892fb5e9ef1b2654b840e94c364f4981086e5c7ba84ed4b477438700"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "df9bb9511f829b1e9773a7d20f8998945daad30be756da93ebc6ae0306f0b6da"
+    sha256 cellar: :any,                 arm64_golden_gate: "06b2859929b7760ce694c1a388aa0dc267111c024263639cc859de96a00ea89b"
+    sha256 cellar: :any,                 arm64_tahoe:       "5784a603ab62624ab0f093ccc3f407c5390841ea780dedd72e3cbbcb87943259"
+    sha256 cellar: :any,                 arm64_sequoia:     "217a27feab49a34548a1ba893647f7b9a899513ba0b63897475e28d212bf3b6a"
+    sha256 cellar: :any,                 arm64_sonoma:      "b66fa0a475e1b0bfb810e3d579eb1b129c1475afb9443e254f076e71342203af"
+    sha256 cellar: :any,                 sonoma:            "a1c21bf8bfe2800cd52c7f3d23dc76871b99635578defaed3db7f43064f88d4c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "c6aab574892fb5e9ef1b2654b840e94c364f4981086e5c7ba84ed4b477438700"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "df9bb9511f829b1e9773a7d20f8998945daad30be756da93ebc6ae0306f0b6da"
   end
 
   depends_on "pkgconf" => :build

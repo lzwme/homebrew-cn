@@ -9,12 +9,13 @@ class Sourcery < Formula
   head "https://github.com/krzysztofzablocki/Sourcery.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d8338cca5f963c8d7d45267a13aca1f01ef594783da95a96d96ca0dd84ecdb8a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4a12451e3bc1920d070923c9a9472d2202dc04d41f0bace58928eb6445ae6a79"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "57c585fe096b6dff6c82cb975f5bc654d162759c0d3b4c74d56a5b2c669ee008"
-    sha256 cellar: :any_skip_relocation, sonoma:        "786e56e3881666c1ea880ead6b070fd6cf4b300634c3dbdf2a1f43e7e16bdbc2"
-    sha256                               arm64_linux:   "db8d5bc1475a737448111a97790c2a4ed72b0144048fd5b5c28ed6b533fa5616"
-    sha256                               x86_64_linux:  "017c7fc58e6665e6cd19bf0fc37af3dd77c2bc93d991d329b69814ff6b4f20f9"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "f54c213a616ff53744c24bed5c47941bac9840ae252ae7cdfa4f5e4df894805b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "d8338cca5f963c8d7d45267a13aca1f01ef594783da95a96d96ca0dd84ecdb8a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "4a12451e3bc1920d070923c9a9472d2202dc04d41f0bace58928eb6445ae6a79"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "57c585fe096b6dff6c82cb975f5bc654d162759c0d3b4c74d56a5b2c669ee008"
+    sha256 cellar: :any_skip_relocation, sonoma:            "786e56e3881666c1ea880ead6b070fd6cf4b300634c3dbdf2a1f43e7e16bdbc2"
+    sha256                               arm64_linux:       "db8d5bc1475a737448111a97790c2a4ed72b0144048fd5b5c28ed6b533fa5616"
+    sha256                               x86_64_linux:      "017c7fc58e6665e6cd19bf0fc37af3dd77c2bc93d991d329b69814ff6b4f20f9"
   end
 
   uses_from_macos "ruby" => :build

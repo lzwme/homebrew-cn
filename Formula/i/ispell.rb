@@ -12,16 +12,17 @@ class Ispell < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:    "46a439e8c57a40cc6102c1884e11c9e261286787efcd5b72fd3df42487216d17"
-    sha256 arm64_sequoia:  "fc52b0f23b84dbe44eba8d0ef80ae93927f90591678155d6579af7e04819abb0"
-    sha256 arm64_sonoma:   "f59130f4372ea62fbc0e9eb4278f334c2c0560bda769da34124eaa09be982308"
-    sha256 arm64_ventura:  "55b954a652b789b190d4ec1e6ff44dadfe98dc3136c7b1a7899a4ca98ba69dac"
-    sha256 arm64_monterey: "50ddb869e8a2cbac73c222c44c3d0fc05e53e688fea457f9f36f6bccc4eebabf"
-    sha256 sonoma:         "b694e02bc0e7ed4f22e3cb6acbc65e102ce247f7e51b56c5993f0d9e257a923f"
-    sha256 ventura:        "09c4567d275b8bc4aaf705c61b55415efc4ca531d1aac0affc77accf25f37cbb"
-    sha256 monterey:       "2823acb91a77394cb0cc476ad86713e5a40de442e3f6a3e8b50837db31ad0468"
-    sha256 arm64_linux:    "9b9d077e2087198423033e13a10e3b918d078dd7e5bd39a798ebeb92899d5249"
-    sha256 x86_64_linux:   "869cb27e3534e6aa9503dd0598a7115207ddf665f8183fd14f99dd931f61fe6c"
+    sha256 arm64_golden_gate: "3255accb33a10483fd2782320867c179fe6df79e767529e3bfac99908af4b108"
+    sha256 arm64_tahoe:       "46a439e8c57a40cc6102c1884e11c9e261286787efcd5b72fd3df42487216d17"
+    sha256 arm64_sequoia:     "fc52b0f23b84dbe44eba8d0ef80ae93927f90591678155d6579af7e04819abb0"
+    sha256 arm64_sonoma:      "f59130f4372ea62fbc0e9eb4278f334c2c0560bda769da34124eaa09be982308"
+    sha256 arm64_ventura:     "55b954a652b789b190d4ec1e6ff44dadfe98dc3136c7b1a7899a4ca98ba69dac"
+    sha256 arm64_monterey:    "50ddb869e8a2cbac73c222c44c3d0fc05e53e688fea457f9f36f6bccc4eebabf"
+    sha256 sonoma:            "b694e02bc0e7ed4f22e3cb6acbc65e102ce247f7e51b56c5993f0d9e257a923f"
+    sha256 ventura:           "09c4567d275b8bc4aaf705c61b55415efc4ca531d1aac0affc77accf25f37cbb"
+    sha256 monterey:          "2823acb91a77394cb0cc476ad86713e5a40de442e3f6a3e8b50837db31ad0468"
+    sha256 arm64_linux:       "9b9d077e2087198423033e13a10e3b918d078dd7e5bd39a798ebeb92899d5249"
+    sha256 x86_64_linux:      "869cb27e3534e6aa9503dd0598a7115207ddf665f8183fd14f99dd931f61fe6c"
   end
 
   uses_from_macos "bison" => :build

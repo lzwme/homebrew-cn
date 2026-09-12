@@ -12,12 +12,13 @@ class Abyss < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "274f0f758f4cc8852779e2a55f8900ea34ccf7dd0e784396752f03c7e6c56767"
-    sha256 cellar: :any,                 arm64_sequoia: "156d580ae0392d7045dd60c744d4a1a32206a950c86588cb25aa600dedd0e8ae"
-    sha256 cellar: :any,                 arm64_sonoma:  "61982df06da982cf2f7edca391a61f935cb3c1542d165f1ed69f60a33b4a6031"
-    sha256 cellar: :any,                 sonoma:        "cd3d743d197a92d98b4cd43a45615de53d5cc403a36ac9e41cdf6e47ce7aee44"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "57e42e8b368589c943fa3bd23e3c8f8a5af03b307530c445309dc45a72e2d2d8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e7b36e68d3d7b88d89656707fd50185e8649d31bac5359575f160dc875c1d28f"
+    sha256 cellar: :any,                 arm64_golden_gate: "82965ec4572d166579262dd20e060a2b9adc5d1cc31f5d33ff086e3d809b1814"
+    sha256 cellar: :any,                 arm64_tahoe:       "274f0f758f4cc8852779e2a55f8900ea34ccf7dd0e784396752f03c7e6c56767"
+    sha256 cellar: :any,                 arm64_sequoia:     "156d580ae0392d7045dd60c744d4a1a32206a950c86588cb25aa600dedd0e8ae"
+    sha256 cellar: :any,                 arm64_sonoma:      "61982df06da982cf2f7edca391a61f935cb3c1542d165f1ed69f60a33b4a6031"
+    sha256 cellar: :any,                 sonoma:            "cd3d743d197a92d98b4cd43a45615de53d5cc403a36ac9e41cdf6e47ce7aee44"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "57e42e8b368589c943fa3bd23e3c8f8a5af03b307530c445309dc45a72e2d2d8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "e7b36e68d3d7b88d89656707fd50185e8649d31bac5359575f160dc875c1d28f"
   end
 
   head do

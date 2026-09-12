@@ -7,12 +7,13 @@ class Jsign < Formula
   head "https://github.com/ebourg/jsign.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d31ce707ac84a804d89f70942aff0dde0616f913a313ed5c1d97c42e3164f402"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d31ce707ac84a804d89f70942aff0dde0616f913a313ed5c1d97c42e3164f402"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d31ce707ac84a804d89f70942aff0dde0616f913a313ed5c1d97c42e3164f402"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d31ce707ac84a804d89f70942aff0dde0616f913a313ed5c1d97c42e3164f402"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "bec35e77a156af2ae9399e7fe32b833b47a0f42145a20dbe657bb870f1234f70"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bec35e77a156af2ae9399e7fe32b833b47a0f42145a20dbe657bb870f1234f70"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "38840cd512a12f1c583d6f2416050dfb2fab9bbc248010ac231bdeaf8bd03e6e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "d31ce707ac84a804d89f70942aff0dde0616f913a313ed5c1d97c42e3164f402"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "d31ce707ac84a804d89f70942aff0dde0616f913a313ed5c1d97c42e3164f402"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "d31ce707ac84a804d89f70942aff0dde0616f913a313ed5c1d97c42e3164f402"
+    sha256 cellar: :any_skip_relocation, sonoma:            "d31ce707ac84a804d89f70942aff0dde0616f913a313ed5c1d97c42e3164f402"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "bec35e77a156af2ae9399e7fe32b833b47a0f42145a20dbe657bb870f1234f70"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "bec35e77a156af2ae9399e7fe32b833b47a0f42145a20dbe657bb870f1234f70"
   end
 
   depends_on "maven" => :build

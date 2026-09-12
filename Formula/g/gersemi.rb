@@ -8,12 +8,13 @@ class Gersemi < Formula
   license "MPL-2.0"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "9f6ed0fbd6e98d100079f24715f3985cdd660f976a2c472f7de8e394a21f6833"
-    sha256 cellar: :any, arm64_sequoia: "61d8d2c16fa995becf416e58abc49f05e65bf9786aa17e1a09a122d334cfe009"
-    sha256 cellar: :any, arm64_sonoma:  "5c548f75e248cd9dba5910cd3ba7b27fd5a1a027a2094d2aa1242f87b7f403b3"
-    sha256 cellar: :any, sonoma:        "4ec361fb3fc1c0d74de401307a64cbd51cdbc92acfa48da68f533a09254adf3d"
-    sha256 cellar: :any, arm64_linux:   "19de9cd79a606ddf7ed17629839f04b4ebd4594a99b77a7228e274a0aebbdccc"
-    sha256 cellar: :any, x86_64_linux:  "b4f165b6440befe7195eeab580636cc152cf4d190df9fc65839a4f808352a472"
+    sha256 cellar: :any, arm64_golden_gate: "f92094f52bfec4b8885e0e1e367ecf26a468be0afe5fef7a44f04883e5119a30"
+    sha256 cellar: :any, arm64_tahoe:       "9f6ed0fbd6e98d100079f24715f3985cdd660f976a2c472f7de8e394a21f6833"
+    sha256 cellar: :any, arm64_sequoia:     "61d8d2c16fa995becf416e58abc49f05e65bf9786aa17e1a09a122d334cfe009"
+    sha256 cellar: :any, arm64_sonoma:      "5c548f75e248cd9dba5910cd3ba7b27fd5a1a027a2094d2aa1242f87b7f403b3"
+    sha256 cellar: :any, sonoma:            "4ec361fb3fc1c0d74de401307a64cbd51cdbc92acfa48da68f533a09254adf3d"
+    sha256 cellar: :any, arm64_linux:       "19de9cd79a606ddf7ed17629839f04b4ebd4594a99b77a7228e274a0aebbdccc"
+    sha256 cellar: :any, x86_64_linux:      "b4f165b6440befe7195eeab580636cc152cf4d190df9fc65839a4f808352a472"
   end
 
   depends_on "rust" => :build

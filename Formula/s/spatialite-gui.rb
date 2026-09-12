@@ -12,12 +12,13 @@ class SpatialiteGui < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "0575abdec10abefd35c1f3a62fe8037f2dfbd0da69a1da730803d5c2ece3f14c"
-    sha256 cellar: :any,                 arm64_sequoia: "e77cf85404843dc7d2ea822f7a6713f3b8a4a987d245ef2b5e770a1cd8a7d396"
-    sha256 cellar: :any,                 arm64_sonoma:  "2255cfbb7a945b8b853d7f2a7c9a7ae35f95a46d1bb3dced7a170a885b198efa"
-    sha256 cellar: :any,                 sonoma:        "828feb23aba3c8bffebd7dfc0773f7e9fa02452b99d00abe200e63371c7e5bb4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "90c82be8576e934ad0bef353308cd730e5b485ec0c94aa73b92bf8db132e57ee"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "258ba73a7c8997fb824839620cb3a60ad045f911713bdc6eb1f482e0b69c7828"
+    sha256 cellar: :any,                 arm64_golden_gate: "073923ef0afd006253cbf3e8fd872b80ff482164d2de2c519b11e1f22cf0cfac"
+    sha256 cellar: :any,                 arm64_tahoe:       "0575abdec10abefd35c1f3a62fe8037f2dfbd0da69a1da730803d5c2ece3f14c"
+    sha256 cellar: :any,                 arm64_sequoia:     "e77cf85404843dc7d2ea822f7a6713f3b8a4a987d245ef2b5e770a1cd8a7d396"
+    sha256 cellar: :any,                 arm64_sonoma:      "2255cfbb7a945b8b853d7f2a7c9a7ae35f95a46d1bb3dced7a170a885b198efa"
+    sha256 cellar: :any,                 sonoma:            "828feb23aba3c8bffebd7dfc0773f7e9fa02452b99d00abe200e63371c7e5bb4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "90c82be8576e934ad0bef353308cd730e5b485ec0c94aa73b92bf8db132e57ee"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "258ba73a7c8997fb824839620cb3a60ad045f911713bdc6eb1f482e0b69c7828"
   end
 
   depends_on "pkgconf" => :build

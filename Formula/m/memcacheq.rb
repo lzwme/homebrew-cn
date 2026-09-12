@@ -6,14 +6,15 @@ class Memcacheq < Formula
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "657efc2a568e13bb0f9d2197f5cb084e56c1c55aa99cc62d45e51d199ffb0a93"
-    sha256 cellar: :any,                 arm64_sequoia: "2fb49de889de4fa7c037d8b01d7c75a5bc1f8e2ba57658fa6a936d108f2155fb"
-    sha256 cellar: :any,                 arm64_sonoma:  "38ef101728df7bd59257cce89d43a941e531271b1fbed3689fd5af69bb05ac97"
-    sha256 cellar: :any,                 arm64_ventura: "3248b999748438d68ac36a56bdb323f3189e4b5e08c56a5b43d47d705b9205aa"
-    sha256 cellar: :any,                 sonoma:        "4a3c9a2360a592502413719b07c297802b3d2e7b210e4409c066fb03423d4eb0"
-    sha256 cellar: :any,                 ventura:       "657bb3ec6a8a6af167b94e3d07ec5c4dd81ce3641475d7dcf853b3586f18c08a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e8f80a059505a53588ed5a7abe98135a23cb30535b444bd4bf0b28e504ae6453"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "57b2c80f352cc9e1d88b5f1e643e1c2e67436e1259a0353bac11ffca103e7af9"
+    sha256 cellar: :any,                 arm64_golden_gate: "c5177f05d852e7aa068d50459d634952ceaf82805216fb1b073d67f227038669"
+    sha256 cellar: :any,                 arm64_tahoe:       "657efc2a568e13bb0f9d2197f5cb084e56c1c55aa99cc62d45e51d199ffb0a93"
+    sha256 cellar: :any,                 arm64_sequoia:     "2fb49de889de4fa7c037d8b01d7c75a5bc1f8e2ba57658fa6a936d108f2155fb"
+    sha256 cellar: :any,                 arm64_sonoma:      "38ef101728df7bd59257cce89d43a941e531271b1fbed3689fd5af69bb05ac97"
+    sha256 cellar: :any,                 arm64_ventura:     "3248b999748438d68ac36a56bdb323f3189e4b5e08c56a5b43d47d705b9205aa"
+    sha256 cellar: :any,                 sonoma:            "4a3c9a2360a592502413719b07c297802b3d2e7b210e4409c066fb03423d4eb0"
+    sha256 cellar: :any,                 ventura:           "657bb3ec6a8a6af167b94e3d07ec5c4dd81ce3641475d7dcf853b3586f18c08a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "e8f80a059505a53588ed5a7abe98135a23cb30535b444bd4bf0b28e504ae6453"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "57b2c80f352cc9e1d88b5f1e643e1c2e67436e1259a0353bac11ffca103e7af9"
   end
 
   # Last release on 2014-12-16.

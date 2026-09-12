@@ -7,12 +7,13 @@ class Vscli < Formula
   head "https://github.com/michidk/vscli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3e8493ee28ab2430c0dabd4d09696370349d6eac2b216228fdaa3bd54c4590fd"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "953c3b3f8177f6a161f0d9d6f16c6c5d352253224c94435196f68d05b37523d1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "be4ce227301b92660cd226c09cdc627e7b635098719c6c253d1d6f49fc78cc05"
-    sha256 cellar: :any_skip_relocation, sonoma:        "acc116db5023dfb1cdc27cd43fdd9e2f429715a7a34a47dea03830a287659b3e"
-    sha256 cellar: :any,                 arm64_linux:   "f42ebac0f93e61285a342047c30d8a9fe98b02dfe882cff0964e0afa27cf9697"
-    sha256 cellar: :any,                 x86_64_linux:  "3c137d3053e9ee76a2aad1c6ed44562cb3b9c1dda3427d9fe0766930d71385e4"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "3bc43cfe4279a25bae20ae915b339cd0669452bee3a442f7ce0fb088f963e67f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "3e8493ee28ab2430c0dabd4d09696370349d6eac2b216228fdaa3bd54c4590fd"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "953c3b3f8177f6a161f0d9d6f16c6c5d352253224c94435196f68d05b37523d1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "be4ce227301b92660cd226c09cdc627e7b635098719c6c253d1d6f49fc78cc05"
+    sha256 cellar: :any_skip_relocation, sonoma:            "acc116db5023dfb1cdc27cd43fdd9e2f429715a7a34a47dea03830a287659b3e"
+    sha256 cellar: :any,                 arm64_linux:       "f42ebac0f93e61285a342047c30d8a9fe98b02dfe882cff0964e0afa27cf9697"
+    sha256 cellar: :any,                 x86_64_linux:      "3c137d3053e9ee76a2aad1c6ed44562cb3b9c1dda3427d9fe0766930d71385e4"
   end
 
   depends_on "rust" => :build

@@ -10,12 +10,12 @@ class Libblastrampoline < Formula
   ]
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "438c7cc5a4b1c5272a7daccb970d49d1e85336e12c0c04861e0ed41fd81f9628"
-    sha256 cellar: :any,                 arm64_sequoia: "16a9fc5256cb99de39f67c06400489615b3545c15c20c20618e0e35de21f544b"
-    sha256 cellar: :any,                 arm64_sonoma:  "6b26660fb5231a8e624e159ee93dce94bba7ddeacfc4393498e7cdce2b49190d"
-    sha256 cellar: :any,                 sonoma:        "ef556a70b35c24ddfbac6c3ff5bb5d7dc9ee0d655724f8747d99de4b75b1cb58"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e030ff06d4bcdc58f44883a75949da9087a9eb031bd395a0c176686a3f07efd9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5b5587f9b1d19d6bcd93cc3520ef040288b9ee5ef8558f6efae1da054aae0eb8"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "90f6de35e38c114a4423470feee4c574c1d861737a6f2e8ad1267f3130077a93"
+    sha256 cellar: :any, arm64_tahoe:       "7d8bd0dbe33b63006fbd5b14ac0a143622158ed89e56b109699c8e33899b2983"
+    sha256 cellar: :any, arm64_sequoia:     "e682c144697c7ba4524a2e93f4e0596697ba0f671125ff0b84e3c395490d80a6"
+    sha256 cellar: :any, arm64_linux:       "ca2d58d5ffd6d9e18bbfc9ae8e7d0bc2ab0b01ad7ba3779222fdef29546a9761"
+    sha256 cellar: :any, x86_64_linux:      "a8d8a6da9a5366f30696cac341e8049d7461045e47d8b526f0de668f7aef1808"
   end
 
   depends_on "openblas64" => :test
@@ -50,13 +50,9 @@ class Libblastrampoline < Formula
     system ENV.cc, "dgemm_test.c", "-I#{include}", "-L#{lib}", "-lblastrampoline", "-o", "dgemm_test"
     system ENV.cc, "api_test.c", "-I#{include}", "-L#{lib}", "-lblastrampoline", "-o", "api_test"
 
-    test_libs = [shared_library("libopenblas64_")]
-    if OS.mac?
-      test_libs << "/System/Library/Frameworks/Accelerate.framework/Accelerate"
-      ENV["DYLD_LIBRARY_PATH"] = formula_opt_lib("openblas64").to_s
-    else
-      ENV["LD_LIBRARY_PATH"] = formula_opt_lib("openblas64").to_s
-    end
+    # Full path as `shell_output` runs via SIP-protected `/bin/sh` which strips `DYLD_*`
+    test_libs = [(formula_opt_lib("openblas64")/shared_library("libopenblas64_")).to_s]
+    test_libs << "/System/Library/Frameworks/Accelerate.framework/Accelerate" if OS.mac?
 
     test_libs.each do |test_lib|
       with_env(LBT_DEFAULT_LIBS: test_lib) do

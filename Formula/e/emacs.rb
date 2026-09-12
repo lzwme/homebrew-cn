@@ -1,7 +1,7 @@
 class Emacs < Formula
   desc "GNU Emacs text editor"
   homepage "https://www.gnu.org/software/emacs/"
-  url "https://ftpmirror.gnu.org/gnu/emacs/emacs-31.1.tar.xz"
+  url "https://ftpmirror.gnu.org/emacs/emacs-31.1.tar.xz"
   mirror "https://ftp.gnu.org/gnu/emacs/emacs-31.1.tar.xz"
   sha256 "1da5790d9580c81932b5bf700633114468da7b3412d69faa767daebf974f4586"
   license "GPL-3.0-or-later"
@@ -37,10 +37,6 @@ class Emacs < Formula
     depends_on "jpeg-turbo"
     depends_on "zlib-ng-compat"
   end
-
-  conflicts_with cask: "emacs-app"
-  conflicts_with cask: "emacs-app@nightly"
-  conflicts_with cask: "emacs-app@pretest"
 
   def install
     args = %W[

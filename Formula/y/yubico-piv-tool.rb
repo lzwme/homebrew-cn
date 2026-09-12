@@ -12,12 +12,13 @@ class YubicoPivTool < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "e333d0e9ab4d352ec6e6ceab61be769ef2c75bf2c3d71727b902ff636ae62a45"
-    sha256 cellar: :any,                 arm64_sequoia: "0a2c7096892f5466c58e8c882c38c89a972aa6679ad0ab54a483669eb5d29732"
-    sha256 cellar: :any,                 arm64_sonoma:  "9e5fa0af709675cfd39ed0e696e1eea9bc31ac039999a377b86e0b9bf555946e"
-    sha256 cellar: :any,                 sonoma:        "a54fe53dd00eac5705e8bca16907ad020e7616fdc5a180a3f4a9dc1f2755afd9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5d26838f59ec2946210ed9a5116fa68ff5dbc32ad909cf9e8faf401392f9beb7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6f7c8857568353e8e6429257d68babd45390b03dc9db2b6636a36c2ddec458af"
+    sha256 cellar: :any,                 arm64_golden_gate: "4d115996aa1c21704905ed408953a2984c6f2a43f8621db35145c69c16260500"
+    sha256 cellar: :any,                 arm64_tahoe:       "e333d0e9ab4d352ec6e6ceab61be769ef2c75bf2c3d71727b902ff636ae62a45"
+    sha256 cellar: :any,                 arm64_sequoia:     "0a2c7096892f5466c58e8c882c38c89a972aa6679ad0ab54a483669eb5d29732"
+    sha256 cellar: :any,                 arm64_sonoma:      "9e5fa0af709675cfd39ed0e696e1eea9bc31ac039999a377b86e0b9bf555946e"
+    sha256 cellar: :any,                 sonoma:            "a54fe53dd00eac5705e8bca16907ad020e7616fdc5a180a3f4a9dc1f2755afd9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "5d26838f59ec2946210ed9a5116fa68ff5dbc32ad909cf9e8faf401392f9beb7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "6f7c8857568353e8e6429257d68babd45390b03dc9db2b6636a36c2ddec458af"
   end
 
   depends_on "check" => :build

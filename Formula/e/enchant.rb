@@ -7,11 +7,12 @@ class Enchant < Formula
   compatibility_version 1
 
   bottle do
-    sha256 arm64_tahoe:   "711d4da9d53879ffb4d7209d0b1fcf2cacb8bdb2188c1747418f54493b9e2261"
-    sha256 arm64_sequoia: "4143cacbcb438b7f102d5475502939acb61cd6c32dfd284f03eeee52c7b979da"
-    sha256 arm64_sonoma:  "bb0d18968e03f6c777d4d71750c4835b511d5c74814919513bcecba4a37ec6da"
-    sha256 arm64_linux:   "3605e95cb693d2ac0a1668a80f2352db7535dc2d451ff8c033bd3f9015c87664"
-    sha256 x86_64_linux:  "9c520607593d537244cc3ff84475974229ceb430de8d5ad6f6decbbfc80ece56"
+    sha256 arm64_golden_gate: "4a05ca0f4c6277b2bb848c309dfbc183c3da09fc864978d1523a0831c518e941"
+    sha256 arm64_tahoe:       "711d4da9d53879ffb4d7209d0b1fcf2cacb8bdb2188c1747418f54493b9e2261"
+    sha256 arm64_sequoia:     "4143cacbcb438b7f102d5475502939acb61cd6c32dfd284f03eeee52c7b979da"
+    sha256 arm64_sonoma:      "bb0d18968e03f6c777d4d71750c4835b511d5c74814919513bcecba4a37ec6da"
+    sha256 arm64_linux:       "3605e95cb693d2ac0a1668a80f2352db7535dc2d451ff8c033bd3f9015c87664"
+    sha256 x86_64_linux:      "9c520607593d537244cc3ff84475974229ceb430de8d5ad6f6decbbfc80ece56"
   end
 
   depends_on "pkgconf" => :build

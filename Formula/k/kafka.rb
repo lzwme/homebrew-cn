@@ -13,12 +13,13 @@ class Kafka < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "662d21cb0fe569996ba5fefb88fe9cac09a58571a2ed9de96ea0c3a0155aefa1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "662d21cb0fe569996ba5fefb88fe9cac09a58571a2ed9de96ea0c3a0155aefa1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "662d21cb0fe569996ba5fefb88fe9cac09a58571a2ed9de96ea0c3a0155aefa1"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ae6e70b0289c5b3428193e366dac966e91bbb52cce3d3b418899121a0094c6e7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "662d21cb0fe569996ba5fefb88fe9cac09a58571a2ed9de96ea0c3a0155aefa1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "662d21cb0fe569996ba5fefb88fe9cac09a58571a2ed9de96ea0c3a0155aefa1"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "9621e8b9efdfcc29d602d8aa7038be29d2a8c4760c01dde7c5edf1cf2175169a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "662d21cb0fe569996ba5fefb88fe9cac09a58571a2ed9de96ea0c3a0155aefa1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "662d21cb0fe569996ba5fefb88fe9cac09a58571a2ed9de96ea0c3a0155aefa1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "662d21cb0fe569996ba5fefb88fe9cac09a58571a2ed9de96ea0c3a0155aefa1"
+    sha256 cellar: :any_skip_relocation, sonoma:            "ae6e70b0289c5b3428193e366dac966e91bbb52cce3d3b418899121a0094c6e7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "662d21cb0fe569996ba5fefb88fe9cac09a58571a2ed9de96ea0c3a0155aefa1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "662d21cb0fe569996ba5fefb88fe9cac09a58571a2ed9de96ea0c3a0155aefa1"
   end
 
   depends_on "openjdk"

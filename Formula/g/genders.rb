@@ -17,14 +17,15 @@ class Genders < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "eba68a608683a6b5b812d8aaa3a59b4836ec5bf50af50a4115fde697a790274e"
-    sha256 cellar: :any,                 arm64_sequoia: "62f03cd7307b153442bf0354c80db74e9f17b6eb76fc0913e9f58d24d3eca939"
-    sha256 cellar: :any,                 arm64_sonoma:  "378b3b15497a18109d4083be8b58c69926f5aba003335ad6ead80187bcba23fa"
-    sha256 cellar: :any,                 arm64_ventura: "85ce393a73b4c8102f4337e4fdd14cbe801e003951b92452ae7cacd733c37b0f"
-    sha256 cellar: :any,                 sonoma:        "dc5878427ff5e64542ee04d17fe4cafe426b0aa8de57ce6772d6caefa858eb67"
-    sha256 cellar: :any,                 ventura:       "418c4f1cd65608a9b31203c3fe1351260ab9af1c5e0ed7dc7ad6df40b2f816d4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a2ae24d08bac380a175921c187843271b0248c7a9e37d5d9f2e214636f27bec3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9d4d80a5708b75bb42090098c791379194c9da4fc9cb41a1ff40193b69d0bea3"
+    sha256 cellar: :any,                 arm64_golden_gate: "550247ee2322f4f9b607bfeb3a51faa4c7ba714a6b25834806a25e6204267b14"
+    sha256 cellar: :any,                 arm64_tahoe:       "eba68a608683a6b5b812d8aaa3a59b4836ec5bf50af50a4115fde697a790274e"
+    sha256 cellar: :any,                 arm64_sequoia:     "62f03cd7307b153442bf0354c80db74e9f17b6eb76fc0913e9f58d24d3eca939"
+    sha256 cellar: :any,                 arm64_sonoma:      "378b3b15497a18109d4083be8b58c69926f5aba003335ad6ead80187bcba23fa"
+    sha256 cellar: :any,                 arm64_ventura:     "85ce393a73b4c8102f4337e4fdd14cbe801e003951b92452ae7cacd733c37b0f"
+    sha256 cellar: :any,                 sonoma:            "dc5878427ff5e64542ee04d17fe4cafe426b0aa8de57ce6772d6caefa858eb67"
+    sha256 cellar: :any,                 ventura:           "418c4f1cd65608a9b31203c3fe1351260ab9af1c5e0ed7dc7ad6df40b2f816d4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "a2ae24d08bac380a175921c187843271b0248c7a9e37d5d9f2e214636f27bec3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "9d4d80a5708b75bb42090098c791379194c9da4fc9cb41a1ff40193b69d0bea3"
   end
 
   uses_from_macos "bison" => :build

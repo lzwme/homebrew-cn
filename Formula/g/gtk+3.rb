@@ -12,12 +12,12 @@ class Gtkx3 < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "b046772c72f62ad336ae0161e00a09af17b70c8568e8769c532f6345c9fbf87e"
-    sha256 arm64_sequoia: "da2bd2c37afc75b1c7344a8b885e36bf74e71d96cdb6202347bae0c71f257f50"
-    sha256 arm64_sonoma:  "8efa1515fe193eb93755c9efe9e5a54a75dd8be418967eef4ea67064ee78bb74"
-    sha256 sonoma:        "42a24aa1fcabbcebaf230cd4a49d749c819677121b7caa03e92d4c0ce0059ef2"
-    sha256 arm64_linux:   "aa7ec780724c27b7746d2227a304918a09f19864a7f2f57d553ed8b10d569359"
-    sha256 x86_64_linux:  "1e3c5923f46e1642e1d9ead7d89b1ba08517b532738f8a19903ad0e3d94500f6"
+    rebuild 1
+    sha256 arm64_golden_gate: "846fdb9b039227c2f1a69709dad0390b3fb371f0eb29b84545214b8337e50eed"
+    sha256 arm64_tahoe:       "876a6859aa6618e476e0aa530918a686aa4a802e5fef602626ccd0ee5c545ea7"
+    sha256 arm64_sequoia:     "6ee9037312d555abef508aa0dbbb1c8dd4f3e6565245266d298c4ed1a6efa67e"
+    sha256 arm64_linux:       "0a180c47d631b683c752411f0fdaebde43dc8ecf1062c35365eaed41e05ba0fd"
+    sha256 x86_64_linux:      "5396f5547b354dd8448e30603aa177e5b9424c95425673dce4098c198a52648f"
   end
 
   depends_on "docbook" => :build
@@ -80,6 +80,9 @@ class Gtkx3 < Formula
 
     # Find our docbook catalog
     ENV["XML_CATALOG_FILES"] = "#{etc}/xml/catalog"
+
+    # Fix compile with newer Clang
+    ENV.append_to_cflags "-Wno-implicit-function-declaration"
 
     system "meson", "setup", "build", *args, *std_meson_args
     system "meson", "compile", "-C", "build", "--verbose"

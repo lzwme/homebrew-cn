@@ -8,11 +8,12 @@ class ApifyCli < Formula
   no_autobump! because: :bumped_by_upstream
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "25b7521ea1b85820ca47954e7181e442bec8e40a7719975a9e043a31543fcdeb"
-    sha256 cellar: :any, arm64_sequoia: "25b7521ea1b85820ca47954e7181e442bec8e40a7719975a9e043a31543fcdeb"
-    sha256 cellar: :any, arm64_sonoma:  "25b7521ea1b85820ca47954e7181e442bec8e40a7719975a9e043a31543fcdeb"
-    sha256 cellar: :any, arm64_linux:   "1159db3511a97e46b265c9051de8759ec4cffbd4ab61c6b0afd15f334fd6aaa1"
-    sha256 cellar: :any, x86_64_linux:  "2a2f52dc973dcd235e0e4b7f025df54ace5bb50693fe2b5a98f107d923ee4053"
+    sha256 cellar: :any, arm64_golden_gate: "a9e93c1093d8b985b364a2ef67417625bcc212777a1bbf83a807f3dd2f0a843b"
+    sha256 cellar: :any, arm64_tahoe:       "25b7521ea1b85820ca47954e7181e442bec8e40a7719975a9e043a31543fcdeb"
+    sha256 cellar: :any, arm64_sequoia:     "25b7521ea1b85820ca47954e7181e442bec8e40a7719975a9e043a31543fcdeb"
+    sha256 cellar: :any, arm64_sonoma:      "25b7521ea1b85820ca47954e7181e442bec8e40a7719975a9e043a31543fcdeb"
+    sha256 cellar: :any, arm64_linux:       "1159db3511a97e46b265c9051de8759ec4cffbd4ab61c6b0afd15f334fd6aaa1"
+    sha256 cellar: :any, x86_64_linux:      "2a2f52dc973dcd235e0e4b7f025df54ace5bb50693fe2b5a98f107d923ee4053"
   end
 
   depends_on "node"

@@ -1,18 +1,17 @@
 class Reposurgeon < Formula
   desc "Edit version-control repository history"
   homepage "http://www.catb.org/esr/reposurgeon/"
-  url "https://gitlab.com/esr/reposurgeon/-/archive/5.10/reposurgeon-5.10.tar.gz"
-  sha256 "f001d1e2b9c54797f9a3f84fb5d55ef9113a53c645d7bdb617a2ac1de3bb0ed5"
+  url "https://gitlab.com/esr/reposurgeon/-/archive/5.11/reposurgeon-5.11.tar.gz"
+  sha256 "c51bfb9e9e2af6537224b1973872761031250ceadbebf1e292534870e54bdbc0"
   license "BSD-2-Clause"
   head "https://gitlab.com/esr/reposurgeon.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cc0b75a2b5a6e6e620822b0b191e1884dff2504735ba2eb94a52066295c59a05"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6cfa8048d524af5e6cbebbfe459f5de72c47e455ff071726c776549f91e12bdb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a898d756eafc9a08d14ef94099f06b2a36390e1bd1c85b3ca4ed2af83b9103e9"
-    sha256 cellar: :any_skip_relocation, sonoma:        "614e3baba257933225f87ef25a376bfbcba068dc3dc8de532e0d299a3bada1ef"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "639a02566a91c1d3ca59a3c179cf25ac4bbdf7a6691efcbad3c0952e270ca0c3"
-    sha256 cellar: :any,                 x86_64_linux:  "b2060473d7cfcf90b9d5f81b05d09dc42c5b1f328bd015850c4abc156e96a6e2"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "e72a28d76a4ea2fff48cead6f389829c095f09f8e87f36dd50ae7697a019ab3a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "da1e17c072e4d4ad3e20eff57620f073bb50e1060c432ebc4c23584a641ea259"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "30e71b3c3011900b0d875ce70b02fedf30aa53c3640e1cacc37a4ff3c29a35ff"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "3a4f4b374ae4d599392161d01311b550d640229b55a365ebf9147600fe6f2852"
+    sha256 cellar: :any,                 x86_64_linux:      "d1c94e23a267b1e85c8c20d723ebfdc96143637053eb38957f91e4b1f710aeb6"
   end
 
   depends_on "asciidoctor" => :build

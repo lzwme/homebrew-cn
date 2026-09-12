@@ -12,13 +12,12 @@ class LlvmAT22 < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256               arm64_golden_gate: "bbe2bb4ee7a4c179aae53b365f1c32a3f1fa04568e694cdfaaceb9f4eef22039"
-    sha256               arm64_tahoe:       "db2644135f3a650f6e07025659fcaa92a233cf5490bcd26ba7ab451168514c56"
-    sha256               arm64_sequoia:     "135d45152e36a3afcb990d01bf47cec4b7cd4d38d67fe80c24962bcdeb483b39"
-    sha256               arm64_sonoma:      "2cc7f47d06f17cdc75ec0c5e07bc83c1f8fbad670373f9595ef0fe1111b3afab"
-    sha256 cellar: :any, arm64_linux:       "fe4282ee19033656553755c626674cd495b268991abf632c9d2a9cb1d57f0961"
-    sha256 cellar: :any, x86_64_linux:      "216ceff34922185995a597df35cc28cb2764a0ef1804c85432f8fea43201c575"
+    rebuild 2
+    sha256               arm64_golden_gate: "3979809f7ab4398bbb738355bd32b186911800faef497b85a1ce8ca3bd6ee1a3"
+    sha256               arm64_tahoe:       "a321c5b4ac3657f54fab8fe455146c9f15c0b4f074983c822dba955fb04e0840"
+    sha256               arm64_sequoia:     "9705fde2a45b982f91bdfe60d1023fabf12266e67d24ba7bacc963c2950174d1"
+    sha256 cellar: :any, arm64_linux:       "94785e8ca8fcf820119a423f17fed2153c49b78768f12e81062a3a3c2d47ddbf"
+    sha256 cellar: :any, x86_64_linux:      "6a24b4e413983d48cebda87e1d3e7a19287e07213d84a18825d52ab0638ab4ba"
   end
 
   keg_only :versioned_formula
@@ -58,6 +57,12 @@ class LlvmAT22 < Formula
     sha256 "8091d44d10ad585052fbb13669095b8a804bc00681b3df4ff32dc37c48784e47"
     type :backport
     resolves "https://github.com/llvm/llvm-project/pull/205044"
+  end
+  patch do
+    url "https://github.com/llvm/llvm-project/commit/b8007a8e4020b8bca2b12e941660e10bf5bf6716.patch?full_index=1"
+    sha256 "e41e300eb6f5cca9172ab344e572c3fb24f0d05885ae23dd7cb4f9c2528839f7"
+    type :backport
+    resolves "https://github.com/llvm/llvm-project/pull/222721"
   end
 
   def clang_config_file_dir

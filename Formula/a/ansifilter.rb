@@ -11,12 +11,13 @@ class Ansifilter < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "df4619471e2f831a7964c67ed54c85640697d9d482347c7619fb235a265dd674"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5530b0be66b1bcf431848fa05c96c0a1ca46a9e57053c4a5ef525e0fa1450b7e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "23c823ac7ac45f9235d468a4e4c91017f8f49705f08249f969bfbfff04dbe684"
-    sha256 cellar: :any_skip_relocation, sonoma:        "db931624878ee3e4acd1efccedb770035c90bfdf209d9cb8654f0abeb0aadf98"
-    sha256 cellar: :any,                 arm64_linux:   "01f4a5303e79fa2756a3a3f5945cf25db9b12b9a245c434dac8ff92cd32bb44d"
-    sha256 cellar: :any,                 x86_64_linux:  "393a1cdaf31a9a74d34e9e8b92dd3de3066d90b0b84afb2a0c297195b737039e"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "5a0470fdd4ed8811560e4004335b2dbe0e00c7904e9b5cc2e8393d0f361c875d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "df4619471e2f831a7964c67ed54c85640697d9d482347c7619fb235a265dd674"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "5530b0be66b1bcf431848fa05c96c0a1ca46a9e57053c4a5ef525e0fa1450b7e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "23c823ac7ac45f9235d468a4e4c91017f8f49705f08249f969bfbfff04dbe684"
+    sha256 cellar: :any_skip_relocation, sonoma:            "db931624878ee3e4acd1efccedb770035c90bfdf209d9cb8654f0abeb0aadf98"
+    sha256 cellar: :any,                 arm64_linux:       "01f4a5303e79fa2756a3a3f5945cf25db9b12b9a245c434dac8ff92cd32bb44d"
+    sha256 cellar: :any,                 x86_64_linux:      "393a1cdaf31a9a74d34e9e8b92dd3de3066d90b0b84afb2a0c297195b737039e"
   end
 
   def install

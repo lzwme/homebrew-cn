@@ -7,16 +7,17 @@ class Gtkglext < Formula
   revision 4
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:    "764e97c887571389641f45ef171ca06af71ac4bc5fcaaff56e85c9d663cad92a"
-    sha256 cellar: :any,                 arm64_sequoia:  "c7d1eb4cd50853e471d11db5256550eb6eea8d0b66424e66bf4662f54bbcfc64"
-    sha256 cellar: :any,                 arm64_sonoma:   "dbda7d73cfcf8ff56426e761be3d928b47cc25142be9e436f29634f306ceb02d"
-    sha256 cellar: :any,                 arm64_ventura:  "97c561405376a0e3f03d661edb63332c449464eca670d94d95276d7a16708ada"
-    sha256 cellar: :any,                 arm64_monterey: "4082e12c1b01e56342b49fb16241fb6e4e52b6c1f5691052b332f75b8892781f"
-    sha256 cellar: :any,                 sonoma:         "ea372181dc03023ea581b14ca996646f6da8cdb54d81911f5b999281c70ecdd7"
-    sha256 cellar: :any,                 ventura:        "986da9680b6032a4f4ae363e3c18176dce0bd276367e311c36b09494198d79d1"
-    sha256 cellar: :any,                 monterey:       "6f045d38e2a584449fa6b5fc275f13b46bce7a4bd892219bb9dbe9bae44a9835"
-    sha256                               arm64_linux:    "8111b6fa90b879f9572ff71ebec5ff279bc5b4532c19f52331286f39783c04ab"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bea86597c739ebbf55d551970dee174085bfc3d0c4d70f06f0cce969979ef2af"
+    sha256 cellar: :any,                 arm64_golden_gate: "dd7b07a12929549f8f9360b2115b695b5a140380f73de7334d332a4a01af73e8"
+    sha256 cellar: :any,                 arm64_tahoe:       "764e97c887571389641f45ef171ca06af71ac4bc5fcaaff56e85c9d663cad92a"
+    sha256 cellar: :any,                 arm64_sequoia:     "c7d1eb4cd50853e471d11db5256550eb6eea8d0b66424e66bf4662f54bbcfc64"
+    sha256 cellar: :any,                 arm64_sonoma:      "dbda7d73cfcf8ff56426e761be3d928b47cc25142be9e436f29634f306ceb02d"
+    sha256 cellar: :any,                 arm64_ventura:     "97c561405376a0e3f03d661edb63332c449464eca670d94d95276d7a16708ada"
+    sha256 cellar: :any,                 arm64_monterey:    "4082e12c1b01e56342b49fb16241fb6e4e52b6c1f5691052b332f75b8892781f"
+    sha256 cellar: :any,                 sonoma:            "ea372181dc03023ea581b14ca996646f6da8cdb54d81911f5b999281c70ecdd7"
+    sha256 cellar: :any,                 ventura:           "986da9680b6032a4f4ae363e3c18176dce0bd276367e311c36b09494198d79d1"
+    sha256 cellar: :any,                 monterey:          "6f045d38e2a584449fa6b5fc275f13b46bce7a4bd892219bb9dbe9bae44a9835"
+    sha256                               arm64_linux:       "8111b6fa90b879f9572ff71ebec5ff279bc5b4532c19f52331286f39783c04ab"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "bea86597c739ebbf55d551970dee174085bfc3d0c4d70f06f0cce969979ef2af"
   end
 
   deprecate! date: "2026-03-14", because: :repo_archived

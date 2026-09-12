@@ -7,12 +7,13 @@ class Phpbrew < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "992d2b69cb519e50c028fa60a1658e6b3d2845628263d9d82aae34d723cc71fd"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "992d2b69cb519e50c028fa60a1658e6b3d2845628263d9d82aae34d723cc71fd"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "992d2b69cb519e50c028fa60a1658e6b3d2845628263d9d82aae34d723cc71fd"
-    sha256 cellar: :any_skip_relocation, sonoma:        "39b7ba820f4d4da27b1c33ba46b957cfd3bf05f5ff525e39c495bd7b89917649"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "992d2b69cb519e50c028fa60a1658e6b3d2845628263d9d82aae34d723cc71fd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "992d2b69cb519e50c028fa60a1658e6b3d2845628263d9d82aae34d723cc71fd"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "eeac85a92b0e59a0adc48584f946e2e73b407b7b7201b584f9b72461623fdc8f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "992d2b69cb519e50c028fa60a1658e6b3d2845628263d9d82aae34d723cc71fd"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "992d2b69cb519e50c028fa60a1658e6b3d2845628263d9d82aae34d723cc71fd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "992d2b69cb519e50c028fa60a1658e6b3d2845628263d9d82aae34d723cc71fd"
+    sha256 cellar: :any_skip_relocation, sonoma:            "39b7ba820f4d4da27b1c33ba46b957cfd3bf05f5ff525e39c495bd7b89917649"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "992d2b69cb519e50c028fa60a1658e6b3d2845628263d9d82aae34d723cc71fd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "992d2b69cb519e50c028fa60a1658e6b3d2845628263d9d82aae34d723cc71fd"
   end
 
   depends_on "php@8.4"

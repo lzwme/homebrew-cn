@@ -11,12 +11,13 @@ class Cadaver < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "f2bf16931909ac6eec57117bf09175a2e0caa1082d2b6e2ae3b7a8245af29bc7"
-    sha256 arm64_sequoia: "d5bcd805b50034bd950a9a5ff34eb57460468f62e8e5790609b41efc0f643699"
-    sha256 arm64_sonoma:  "2f7c951cd0fbd473492db2e3e32ca73bd1182d835aa2fa4e16bc18bb599b0fc0"
-    sha256 sonoma:        "3149e1aad7c35c9a2d5bcde614fd25a8e53cfd8117c10044867ebcb827fe1cf9"
-    sha256 arm64_linux:   "d8a6f3859f5db0c9cd26fbf52e655392bf1a06ca6298aca1d0ddf45e85a53122"
-    sha256 x86_64_linux:  "ea95ccc4cb3825ef2732ea6df7864c87016b40915fed14dac542bdff5a0b6868"
+    sha256 arm64_golden_gate: "b980056a8c9c24d6817bcfb20df55b43263f4de8f061b71f8c8fe33781707405"
+    sha256 arm64_tahoe:       "f2bf16931909ac6eec57117bf09175a2e0caa1082d2b6e2ae3b7a8245af29bc7"
+    sha256 arm64_sequoia:     "d5bcd805b50034bd950a9a5ff34eb57460468f62e8e5790609b41efc0f643699"
+    sha256 arm64_sonoma:      "2f7c951cd0fbd473492db2e3e32ca73bd1182d835aa2fa4e16bc18bb599b0fc0"
+    sha256 sonoma:            "3149e1aad7c35c9a2d5bcde614fd25a8e53cfd8117c10044867ebcb827fe1cf9"
+    sha256 arm64_linux:       "d8a6f3859f5db0c9cd26fbf52e655392bf1a06ca6298aca1d0ddf45e85a53122"
+    sha256 x86_64_linux:      "ea95ccc4cb3825ef2732ea6df7864c87016b40915fed14dac542bdff5a0b6868"
   end
 
   head do

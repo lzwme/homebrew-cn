@@ -8,12 +8,13 @@ class Solo2Cli < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "56e93747406fb09f278a2dc2506e8006c5105744580b3af8c65d83e5df2f675a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "50ee660ad214d9fa3cf5e103ae11482ca620796956e8d8e4ddc862c60ffa8a13"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "54b51487dab6b1f46921c3a2ac5abbdd0a7c26ee3fa588c1192d329c37c481d6"
-    sha256 cellar: :any_skip_relocation, sonoma:        "dd347d17f99e031793c283d4d161eda583ce6807a2fc8a7ec9b13a0a01bf59fd"
-    sha256 cellar: :any,                 arm64_linux:   "49fa148943abb5f308b98439a3658dd23c9a0ae52531b732033c40def49d7667"
-    sha256 cellar: :any,                 x86_64_linux:  "30961888e19a8438a16527313659240b9a16bca8e60b543b80d90a9f22274c0b"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "c8fdf355677e18fb3d89593613acc85835fa20134b3bee8ad8d23ef362a365d1"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "56e93747406fb09f278a2dc2506e8006c5105744580b3af8c65d83e5df2f675a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "50ee660ad214d9fa3cf5e103ae11482ca620796956e8d8e4ddc862c60ffa8a13"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "54b51487dab6b1f46921c3a2ac5abbdd0a7c26ee3fa588c1192d329c37c481d6"
+    sha256 cellar: :any_skip_relocation, sonoma:            "dd347d17f99e031793c283d4d161eda583ce6807a2fc8a7ec9b13a0a01bf59fd"
+    sha256 cellar: :any,                 arm64_linux:       "49fa148943abb5f308b98439a3658dd23c9a0ae52531b732033c40def49d7667"
+    sha256 cellar: :any,                 x86_64_linux:      "30961888e19a8438a16527313659240b9a16bca8e60b543b80d90a9f22274c0b"
   end
 
   deprecate! date: "2026-07-24", because: :repo_archived

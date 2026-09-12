@@ -12,12 +12,12 @@ class Ivtools < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "db0d98455a5b700918da4ac97302909a9deb87c41715f36021b6f4d9e1199afe"
-    sha256 arm64_sequoia: "abf1527eccf79ff0798f72a67c17e4410883a1054264c8ba9e23c8eb667c9e5f"
-    sha256 arm64_sonoma:  "23e8da85985c1151e96f7fac3364009a3f46c93f5ad6e4a31796803ed662cfe3"
-    sha256 sonoma:        "9200ba39a84bb80ea1f3553d87922fd3b2cf77cd184b3662c30d93efb39ed1f8"
-    sha256 arm64_linux:   "4a334dbf786378fff4c7b21f29ee90ac0508e279fd73de4ceb2e0dec58712d54"
-    sha256 x86_64_linux:  "6567557ed5df4cd228f3d16934536a9cda6c72d1d9975e1151d3ab50a2ce77bd"
+    rebuild 1
+    sha256 arm64_golden_gate: "a69e428b1dbc6ba6dc7b1ba6b17f7a00c9a7666b09bf39f8afbae5861ca245c5"
+    sha256 arm64_tahoe:       "67f1a46aca2f25c032fcffedb05c2cf2e28cb0603ec00858bfb722b5f538b6cb"
+    sha256 arm64_sequoia:     "ac9a42927da7997644f40b872db459791f355dce97ce0a8ecba7c7616e0544fb"
+    sha256 arm64_linux:       "92c32cef62a1a4df074ee5609da4a5dbec3ec44de778e0cd207dc2b556e44062"
+    sha256 x86_64_linux:      "c35982cd34127344bdfa4c0f11d5e8aed2f64f2b9f8593b4827a7e9dddc99d84"
   end
 
   depends_on "ace"
@@ -28,6 +28,14 @@ class Ivtools < Formula
     on_arm do
       depends_on "automake" => :build
     end
+  end
+
+  # Drop the vendored libc++ `fstream` copy that macOS 27 SDK rejects as a redefinition of `basic_filebuf`
+  patch do
+    url "https://github.com/vectaport/ivtools/commit/df902bfd4bdf883455e65f3a251817193636e42b.patch?full_index=1"
+    sha256 "e8a3cff8f5f8630634675d9acce44e11a7687c8e99bc99e85d3016879cc0f7f2"
+    type :backport
+    resolves "https://github.com/vectaport/ivtools/commit/df902bfd4bdf883455e65f3a251817193636e42b"
   end
 
   # Fix to error: unknown type name '_LIBCPP_INLINE_VISIBILITY' and '_VSTD'

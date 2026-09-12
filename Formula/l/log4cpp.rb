@@ -11,12 +11,13 @@ class Log4cpp < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "962a73cba13a5c907b21822beffe517e8441fd98e3c6fe7ac8bdc1ba9faf4d1d"
-    sha256 cellar: :any,                 arm64_sequoia: "343d766065eb68e22076aa39441d6b3c95291e55431b29ca247cc7f08d2e28ac"
-    sha256 cellar: :any,                 arm64_sonoma:  "ed36ef6c80e0a82ca896797d05816b2bf2e9377d5fb152c213da0618bae5482b"
-    sha256 cellar: :any,                 sonoma:        "35166d43fb793e78fd14f02456dc6ef3e7e6cbab437047bb09aba4ce14c65362"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "32e5f90f73eb1fdffe63767ab7c9ba44480c05c6e0d60841ca9a6be37097d3d3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "30903c8dc26bb4b6c98b086e72a847454433df63161822a868e1fac93c033f95"
+    sha256 cellar: :any,                 arm64_golden_gate: "ce8f5198e9d9172b9e6bafffd1f39852138028ac2b1a55f10bf2717ac093684e"
+    sha256 cellar: :any,                 arm64_tahoe:       "962a73cba13a5c907b21822beffe517e8441fd98e3c6fe7ac8bdc1ba9faf4d1d"
+    sha256 cellar: :any,                 arm64_sequoia:     "343d766065eb68e22076aa39441d6b3c95291e55431b29ca247cc7f08d2e28ac"
+    sha256 cellar: :any,                 arm64_sonoma:      "ed36ef6c80e0a82ca896797d05816b2bf2e9377d5fb152c213da0618bae5482b"
+    sha256 cellar: :any,                 sonoma:            "35166d43fb793e78fd14f02456dc6ef3e7e6cbab437047bb09aba4ce14c65362"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "32e5f90f73eb1fdffe63767ab7c9ba44480c05c6e0d60841ca9a6be37097d3d3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "30903c8dc26bb4b6c98b086e72a847454433df63161822a868e1fac93c033f95"
   end
 
   depends_on "autoconf" => :build

@@ -11,12 +11,13 @@ class Otf2 < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "35278dc5769e0222e034307e2882bd070e987c191912f0d7620267ec8ed9bf2f"
-    sha256 arm64_sequoia: "f4b0509ef762a1f4e6bf003b27f3efe1071d5ae5e71675ab99c5df17b9f74348"
-    sha256 arm64_sonoma:  "d1ff3b7df78614ae970983220609c607306da8d7a6f716138750c8f93f87704b"
-    sha256 sonoma:        "e4b55ced4491b7d5079ccdb79d27996ac8d13b7aa4859c46fb3520f3dfed0aca"
-    sha256 arm64_linux:   "86af0058db787e9b87b08a1d2c261e26f1f0cfb77234ea8f68305683a0ce8b2d"
-    sha256 x86_64_linux:  "d6abbaad20c450ecc3f6a728ee246e51f7b8c79c05b9c75879aebffb7b2908a2"
+    sha256 arm64_golden_gate: "3f62f994f7e2787d068ccf6574ebe01554f8f5ae08f76fdff73c940fe9f34aee"
+    sha256 arm64_tahoe:       "35278dc5769e0222e034307e2882bd070e987c191912f0d7620267ec8ed9bf2f"
+    sha256 arm64_sequoia:     "f4b0509ef762a1f4e6bf003b27f3efe1071d5ae5e71675ab99c5df17b9f74348"
+    sha256 arm64_sonoma:      "d1ff3b7df78614ae970983220609c607306da8d7a6f716138750c8f93f87704b"
+    sha256 sonoma:            "e4b55ced4491b7d5079ccdb79d27996ac8d13b7aa4859c46fb3520f3dfed0aca"
+    sha256 arm64_linux:       "86af0058db787e9b87b08a1d2c261e26f1f0cfb77234ea8f68305683a0ce8b2d"
+    sha256 x86_64_linux:      "d6abbaad20c450ecc3f6a728ee246e51f7b8c79c05b9c75879aebffb7b2908a2"
   end
 
   depends_on "sphinx-doc" => :build

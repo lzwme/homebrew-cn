@@ -8,12 +8,13 @@ class KeepSorted < Formula
   head "https://github.com/google/keep-sorted.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e73cead4020f516df5365f487ac3fea00594e851f3ae2028d679021aaa077f92"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e73cead4020f516df5365f487ac3fea00594e851f3ae2028d679021aaa077f92"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e73cead4020f516df5365f487ac3fea00594e851f3ae2028d679021aaa077f92"
-    sha256 cellar: :any_skip_relocation, sonoma:        "07f17558b3d20115d036b6f8526686e3049bb8b4b5e312a25a3d21976b3f393f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6038d02b048fd38fbbe0000527f6ba5410f67981a8d19a4bcf3ac1ceb943d201"
-    sha256 cellar: :any,                 x86_64_linux:  "317e395968dd3dd01cf7d4dc52a13b00a9e6608fae47542de3762a2beede12dc"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "04226ed0286b7a60e4963149f009171ff351eda764bc4aa88dfeb1d2b7987f8d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "e73cead4020f516df5365f487ac3fea00594e851f3ae2028d679021aaa077f92"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "e73cead4020f516df5365f487ac3fea00594e851f3ae2028d679021aaa077f92"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "e73cead4020f516df5365f487ac3fea00594e851f3ae2028d679021aaa077f92"
+    sha256 cellar: :any_skip_relocation, sonoma:            "07f17558b3d20115d036b6f8526686e3049bb8b4b5e312a25a3d21976b3f393f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "6038d02b048fd38fbbe0000527f6ba5410f67981a8d19a4bcf3ac1ceb943d201"
+    sha256 cellar: :any,                 x86_64_linux:      "317e395968dd3dd01cf7d4dc52a13b00a9e6608fae47542de3762a2beede12dc"
   end
 
   depends_on "go" => :build

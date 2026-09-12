@@ -17,12 +17,13 @@ class IncludeWhatYouUse < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "3a0f1c08f818d98e8ce861ac7e81f3fc1b961e4306fdbd16c01eca692251ceb3"
-    sha256 cellar: :any, arm64_sequoia: "be4e111aa8c0a6a8a23204459dd102e525efaa4a6042a39e21b01cfa6ddf39c9"
-    sha256 cellar: :any, arm64_sonoma:  "df2e90279bb2af185fdb734cf1dfa9d11e37315be75fd4f4cbee24f388758192"
-    sha256 cellar: :any, sonoma:        "065ee1cb122dca1383d8523118c2b5fa0bd37d8f8ec372cbefa7e68351729b27"
-    sha256 cellar: :any, arm64_linux:   "96b8344967aa0f947e016208ebbc886bc770c8d33de38b7026465c7bd05a751f"
-    sha256 cellar: :any, x86_64_linux:  "03fb836be4a0e4e78830bb6d5f36012c5848a0312400091198935cbf6dd13ba2"
+    sha256 cellar: :any, arm64_golden_gate: "c39c475e5e351ee17a97c1a221557fd3254c69cae84ad8b14d8b15a2a6441c04"
+    sha256 cellar: :any, arm64_tahoe:       "3a0f1c08f818d98e8ce861ac7e81f3fc1b961e4306fdbd16c01eca692251ceb3"
+    sha256 cellar: :any, arm64_sequoia:     "be4e111aa8c0a6a8a23204459dd102e525efaa4a6042a39e21b01cfa6ddf39c9"
+    sha256 cellar: :any, arm64_sonoma:      "df2e90279bb2af185fdb734cf1dfa9d11e37315be75fd4f4cbee24f388758192"
+    sha256 cellar: :any, sonoma:            "065ee1cb122dca1383d8523118c2b5fa0bd37d8f8ec372cbefa7e68351729b27"
+    sha256 cellar: :any, arm64_linux:       "96b8344967aa0f947e016208ebbc886bc770c8d33de38b7026465c7bd05a751f"
+    sha256 cellar: :any, x86_64_linux:      "03fb836be4a0e4e78830bb6d5f36012c5848a0312400091198935cbf6dd13ba2"
   end
 
   depends_on "cmake" => :build

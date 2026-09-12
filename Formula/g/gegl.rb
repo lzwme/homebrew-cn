@@ -12,11 +12,12 @@ class Gegl < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "ec9ce003ad62cd27ee15e3a5ce94ce04484965f6e2081899ab187030307a17a7"
-    sha256 arm64_sequoia: "6c2ebf4c201aff4e8b6d0d0d75ec93eac13f36900654ac4e3238609529908f8c"
-    sha256 arm64_sonoma:  "40a57e9cb75ce703824e3513dcc51e668c319a36a3f2b7eb65b39bac624c9d5d"
-    sha256 arm64_linux:   "d7d7654da633cd03a65419971bdef487c50d8f31f694a4e0b00c5672ce67e28a"
-    sha256 x86_64_linux:  "d7871949de55d05b400b7565eb78fdd8c8424128a7484272c5c8235bdc7de987"
+    sha256 arm64_golden_gate: "09bde0ede75cace03ec6d2365358d7a801dcaaa53c75decc4510809b2ded3e76"
+    sha256 arm64_tahoe:       "ec9ce003ad62cd27ee15e3a5ce94ce04484965f6e2081899ab187030307a17a7"
+    sha256 arm64_sequoia:     "6c2ebf4c201aff4e8b6d0d0d75ec93eac13f36900654ac4e3238609529908f8c"
+    sha256 arm64_sonoma:      "40a57e9cb75ce703824e3513dcc51e668c319a36a3f2b7eb65b39bac624c9d5d"
+    sha256 arm64_linux:       "d7d7654da633cd03a65419971bdef487c50d8f31f694a4e0b00c5672ce67e28a"
+    sha256 x86_64_linux:      "d7871949de55d05b400b7565eb78fdd8c8424128a7484272c5c8235bdc7de987"
   end
 
   depends_on "gettext" => :build

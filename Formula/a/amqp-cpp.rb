@@ -13,12 +13,13 @@ class AmqpCpp < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "e45212f8e035ad4f6e765889bb949bcf8f60fef844b0646eb7006fad0b959605"
-    sha256 cellar: :any,                 arm64_sequoia: "2f0ec346eb00e3280870884df2cb742dab7b834a3a1135ea566d57717c65ea5f"
-    sha256 cellar: :any,                 arm64_sonoma:  "c15637ad6b4fe3af89f006ea4fb6ee9ea3a412723ce407bb10c5cb5f0de8f2f0"
-    sha256 cellar: :any,                 sonoma:        "a2675cb6a8ee1b421da6bbcb903868014aee17270a5a634fcbc39b4ac9473715"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "10f0d0088d8c57a1d507dd2c249610cbc71439276ac7dfdd6aca04c59322841c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "10421912a7018eaed19fb9701b6c2aef0af19e9bd654ddf24fb0ccfd30a60b83"
+    sha256 cellar: :any,                 arm64_golden_gate: "6613434fce13d2bf9997adab4c1482f27b9d8965bb47cb935a6e1e605317668f"
+    sha256 cellar: :any,                 arm64_tahoe:       "e45212f8e035ad4f6e765889bb949bcf8f60fef844b0646eb7006fad0b959605"
+    sha256 cellar: :any,                 arm64_sequoia:     "2f0ec346eb00e3280870884df2cb742dab7b834a3a1135ea566d57717c65ea5f"
+    sha256 cellar: :any,                 arm64_sonoma:      "c15637ad6b4fe3af89f006ea4fb6ee9ea3a412723ce407bb10c5cb5f0de8f2f0"
+    sha256 cellar: :any,                 sonoma:            "a2675cb6a8ee1b421da6bbcb903868014aee17270a5a634fcbc39b4ac9473715"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "10f0d0088d8c57a1d507dd2c249610cbc71439276ac7dfdd6aca04c59322841c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "10421912a7018eaed19fb9701b6c2aef0af19e9bd654ddf24fb0ccfd30a60b83"
   end
 
   depends_on "cmake" => :build

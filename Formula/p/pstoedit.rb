@@ -7,12 +7,13 @@ class Pstoedit < Formula
 
   bottle do
     rebuild 1
-    sha256 arm64_tahoe:   "71b16f3464e1314670842c663a4cfee626a740a6bc39f7ea6219cb7f21329fee"
-    sha256 arm64_sequoia: "fff1ed2e7e57c3852c5fe36c3908938d19ec278a852e1aa8ef48cc2a175c747c"
-    sha256 arm64_sonoma:  "2e0dd4ee1aeeb14214e8c313d0cbaceb1c2f0b89abb67ac6e56d1a23335ad9b3"
-    sha256 sonoma:        "80cd866453569577436a25984e996e66d45b8cf0b719c771bc25da182d92342d"
-    sha256 arm64_linux:   "c68b2fe60978946380b35dc59bf333c260dab5ac1fe3c6c17f75f4c6fbf52eb6"
-    sha256 x86_64_linux:  "9e40b2f416da1059d432772976a9782362d5911680ca6026c1af161ce9bc462e"
+    sha256 arm64_golden_gate: "ecddb1c076538b20cc2ff511f77dfb7b85301e473edfe30b9bd4fe1c24edff4d"
+    sha256 arm64_tahoe:       "71b16f3464e1314670842c663a4cfee626a740a6bc39f7ea6219cb7f21329fee"
+    sha256 arm64_sequoia:     "fff1ed2e7e57c3852c5fe36c3908938d19ec278a852e1aa8ef48cc2a175c747c"
+    sha256 arm64_sonoma:      "2e0dd4ee1aeeb14214e8c313d0cbaceb1c2f0b89abb67ac6e56d1a23335ad9b3"
+    sha256 sonoma:            "80cd866453569577436a25984e996e66d45b8cf0b719c771bc25da182d92342d"
+    sha256 arm64_linux:       "c68b2fe60978946380b35dc59bf333c260dab5ac1fe3c6c17f75f4c6fbf52eb6"
+    sha256 x86_64_linux:      "9e40b2f416da1059d432772976a9782362d5911680ca6026c1af161ce9bc462e"
   end
 
   depends_on "autoconf" => :build

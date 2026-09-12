@@ -18,8 +18,6 @@ class DockerCompletion < Formula
   deprecate! date: "2026-05-31", because: :deprecated_upstream, replacement_formula: "docker"
   disable! date: "2027-05-31", because: :deprecated_upstream, replacement_formula: "docker"
 
-  conflicts_with cask: "docker-desktop"
-
   # These used to also be provided by the `docker` formula.
   link_overwrite "etc/bash_completion.d/docker"
   link_overwrite "share/fish/vendor_completions.d/docker.fish"

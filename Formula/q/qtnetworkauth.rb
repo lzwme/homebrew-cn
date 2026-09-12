@@ -17,11 +17,12 @@ class Qtnetworkauth < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "a1bd785769edb011ec1fe4030a3b694a844fccb0afa80bebebc4c3a258fc5a06"
-    sha256 cellar: :any, arm64_sequoia: "51bda879d89efb0b158a1a2b2fb011095ef870c5342e98f74821d850c6b26b8b"
-    sha256 cellar: :any, arm64_sonoma:  "a21674fd159a0dc63deab64b29a354d792bc1693d2160e6cf9fd868ac4874424"
-    sha256 cellar: :any, arm64_linux:   "7e8200e2233687f6810d0d00d9492c882737fe0b4aa0420660ae6b85ce7889e5"
-    sha256 cellar: :any, x86_64_linux:  "020c6770a708e8903a47754158b096ae7415d3ec8847787cd8f749e6e79713cd"
+    sha256 cellar: :any, arm64_golden_gate: "15810a8aa2912377dc6fc688be17b63e16337fbf2e97cbb742ce35662b535fa3"
+    sha256 cellar: :any, arm64_tahoe:       "a1bd785769edb011ec1fe4030a3b694a844fccb0afa80bebebc4c3a258fc5a06"
+    sha256 cellar: :any, arm64_sequoia:     "51bda879d89efb0b158a1a2b2fb011095ef870c5342e98f74821d850c6b26b8b"
+    sha256 cellar: :any, arm64_sonoma:      "a21674fd159a0dc63deab64b29a354d792bc1693d2160e6cf9fd868ac4874424"
+    sha256 cellar: :any, arm64_linux:       "7e8200e2233687f6810d0d00d9492c882737fe0b4aa0420660ae6b85ce7889e5"
+    sha256 cellar: :any, x86_64_linux:      "020c6770a708e8903a47754158b096ae7415d3ec8847787cd8f749e6e79713cd"
   end
 
   depends_on "cmake" => [:build, :test]

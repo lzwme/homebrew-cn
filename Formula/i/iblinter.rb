@@ -8,12 +8,13 @@ class Iblinter < Formula
   head "https://github.com/IBDecodable/IBLinter.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3ccc5cf7c9e37c007329b85160d1973f853444d151f027469f87501be2ce1dfd"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d81bd417d74fbf2809e041c78801e8d83ea8b5e658519e459023197f1e1c3ffb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fba87c8a17f3b162579d58ae7bdb89bc015e7d4c7930d652c8826136767f2f0e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5df5917b52968d0e5ae274fd7ed90a2740b0cefa51b04e59d1a736d4a3de86d0"
-    sha256                               arm64_linux:   "f3d53ef7a5072cd59df9ff826df7809fac46dd2fc764f57ceefd22824640ff96"
-    sha256                               x86_64_linux:  "c3a4dcb0445ce6cc30ee0d563919b23c5f7acd012cb83316d3f9a389343ad74c"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "9ff1414d27f69bbae3a44bfcfc26d0a99defd9384bf18845659bd3002f7513dd"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "3ccc5cf7c9e37c007329b85160d1973f853444d151f027469f87501be2ce1dfd"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "d81bd417d74fbf2809e041c78801e8d83ea8b5e658519e459023197f1e1c3ffb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "fba87c8a17f3b162579d58ae7bdb89bc015e7d4c7930d652c8826136767f2f0e"
+    sha256 cellar: :any_skip_relocation, sonoma:            "5df5917b52968d0e5ae274fd7ed90a2740b0cefa51b04e59d1a736d4a3de86d0"
+    sha256                               arm64_linux:       "f3d53ef7a5072cd59df9ff826df7809fac46dd2fc764f57ceefd22824640ff96"
+    sha256                               x86_64_linux:      "c3a4dcb0445ce6cc30ee0d563919b23c5f7acd012cb83316d3f9a389343ad74c"
   end
 
   uses_from_macos "swift"

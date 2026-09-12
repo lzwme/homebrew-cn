@@ -8,12 +8,13 @@ class OtelCli < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a313a9133dd11b8af9799ab905e85d5621e0f39bf352644e507b50d917acf8f1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a313a9133dd11b8af9799ab905e85d5621e0f39bf352644e507b50d917acf8f1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a313a9133dd11b8af9799ab905e85d5621e0f39bf352644e507b50d917acf8f1"
-    sha256 cellar: :any_skip_relocation, sonoma:        "58427fbc110afd673b17749c06ab3016b1f068871e16d7a652aeae0a21231010"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "82c89926433523c86889f4308e4e39c05a68af344017b877911d269b68f66118"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ad99c92f5002dcc5dd39e9e1cb4206ee327e6ef5514842fb972b4874a8f11ae5"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "36b567a4968a325c063047376b9be9c77937f396eee6c1b367f9dcb15f87f365"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "a313a9133dd11b8af9799ab905e85d5621e0f39bf352644e507b50d917acf8f1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "a313a9133dd11b8af9799ab905e85d5621e0f39bf352644e507b50d917acf8f1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "a313a9133dd11b8af9799ab905e85d5621e0f39bf352644e507b50d917acf8f1"
+    sha256 cellar: :any_skip_relocation, sonoma:            "58427fbc110afd673b17749c06ab3016b1f068871e16d7a652aeae0a21231010"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "82c89926433523c86889f4308e4e39c05a68af344017b877911d269b68f66118"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "ad99c92f5002dcc5dd39e9e1cb4206ee327e6ef5514842fb972b4874a8f11ae5"
   end
 
   depends_on "go" => :build

@@ -7,12 +7,13 @@ class LibgeditGfls < Formula
   head "https://gitlab.gnome.org/World/gedit/libgedit-gfls.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "df6de1a8aa8c4fcf8d023439c36105ac965e9f0ced53632765aecd2275e058e5"
-    sha256 cellar: :any, arm64_sequoia: "cb1f4f2dc7c48d562f6b234b3bde9de30cbc5d53fbd0d108c9befa2a6bb084b1"
-    sha256 cellar: :any, arm64_sonoma:  "da8a5c139fbcb4e24d1f7212cecbd882e25aa0f41a803f3f58bc5f5a14bb9c50"
-    sha256 cellar: :any, sonoma:        "f4add3b16420cbc883a9996f849b35bcea24467769e883106b9a70e7bb0a37e3"
-    sha256               arm64_linux:   "ae46b257a6ac4c4edd18045d792ea884f6ef09344f1a7685043c1a79f5dc2dbc"
-    sha256               x86_64_linux:  "261ec133e0f94738629e10fa344363e90cd8eaa72c19ce39ea4c31a2a3c8c5e8"
+    sha256 cellar: :any, arm64_golden_gate: "609ec3fdf70fe97198f68c5629e3be6a2d98cbfd60337c1a7ce32a93986d4143"
+    sha256 cellar: :any, arm64_tahoe:       "df6de1a8aa8c4fcf8d023439c36105ac965e9f0ced53632765aecd2275e058e5"
+    sha256 cellar: :any, arm64_sequoia:     "cb1f4f2dc7c48d562f6b234b3bde9de30cbc5d53fbd0d108c9befa2a6bb084b1"
+    sha256 cellar: :any, arm64_sonoma:      "da8a5c139fbcb4e24d1f7212cecbd882e25aa0f41a803f3f58bc5f5a14bb9c50"
+    sha256 cellar: :any, sonoma:            "f4add3b16420cbc883a9996f849b35bcea24467769e883106b9a70e7bb0a37e3"
+    sha256               arm64_linux:       "ae46b257a6ac4c4edd18045d792ea884f6ef09344f1a7685043c1a79f5dc2dbc"
+    sha256               x86_64_linux:      "261ec133e0f94738629e10fa344363e90cd8eaa72c19ce39ea4c31a2a3c8c5e8"
   end
 
   depends_on "gobject-introspection" => :build

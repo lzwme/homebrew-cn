@@ -13,12 +13,13 @@ class Libvncserver < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "865a4376a6361437e19230eb55c8baaa89c837e693e7a352d080a91050c7c2ee"
-    sha256 cellar: :any,                 arm64_sequoia: "09c5d54a804cd66267e2f453978281e19edbcacd434b6507bef2d928da69a79d"
-    sha256 cellar: :any,                 arm64_sonoma:  "18f58d8fedea600268bb9a70a470fb279c1afe0086b09b8282e1454904bf3c0c"
-    sha256 cellar: :any,                 sonoma:        "7a127ab1078d09af7ad9d28f554a8ce44fcc32e0259db44031b2ac8ece3b41ce"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9a66daa25ce9cdb07ed0000ff45f93f3f6101621188f712f8a2d97b216891af8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3ce999949a58f1263bd09e67af8a39f1709c0f5d8a055696151b0594a1793fda"
+    sha256 cellar: :any,                 arm64_golden_gate: "915e8f1cd3abfab73e396d7d08425b2e93dfcd75bc4e4b5c2c204777678ffe71"
+    sha256 cellar: :any,                 arm64_tahoe:       "865a4376a6361437e19230eb55c8baaa89c837e693e7a352d080a91050c7c2ee"
+    sha256 cellar: :any,                 arm64_sequoia:     "09c5d54a804cd66267e2f453978281e19edbcacd434b6507bef2d928da69a79d"
+    sha256 cellar: :any,                 arm64_sonoma:      "18f58d8fedea600268bb9a70a470fb279c1afe0086b09b8282e1454904bf3c0c"
+    sha256 cellar: :any,                 sonoma:            "7a127ab1078d09af7ad9d28f554a8ce44fcc32e0259db44031b2ac8ece3b41ce"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "9a66daa25ce9cdb07ed0000ff45f93f3f6101621188f712f8a2d97b216891af8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "3ce999949a58f1263bd09e67af8a39f1709c0f5d8a055696151b0594a1793fda"
   end
 
   depends_on "cmake" => :build

@@ -7,11 +7,12 @@ class Adrs < Formula
   head "https://github.com/joshrotenberg/adrs.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ea2c0f491539b3b2af9d2dd7f13c5966566ac916f61518a4ae424eb73fcb79f0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "20aa317e45b40c32168842ef9125a3720e5432066f157a51992403c8dff8cd6a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a08a1893db70f4958c138f1d119d82daafc7d5c391b5ff7f99785f3591b07edc"
-    sha256 cellar: :any,                 arm64_linux:   "560007d9abbbe8a85c5980122d58eaa69d45be0982f0dad2a1a6796c886dd453"
-    sha256 cellar: :any,                 x86_64_linux:  "8039eb4148b671acda2e31f37302166ceba9521f725ea046476efbd31acdc94a"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "7a8cf9f72a01bc17cbdd278462aaa0e336dd129746fea7098a60d2a51179e5e2"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "ea2c0f491539b3b2af9d2dd7f13c5966566ac916f61518a4ae424eb73fcb79f0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "20aa317e45b40c32168842ef9125a3720e5432066f157a51992403c8dff8cd6a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "a08a1893db70f4958c138f1d119d82daafc7d5c391b5ff7f99785f3591b07edc"
+    sha256 cellar: :any,                 arm64_linux:       "560007d9abbbe8a85c5980122d58eaa69d45be0982f0dad2a1a6796c886dd453"
+    sha256 cellar: :any,                 x86_64_linux:      "8039eb4148b671acda2e31f37302166ceba9521f725ea046476efbd31acdc94a"
   end
 
   depends_on "rust" => :build

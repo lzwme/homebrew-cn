@@ -7,12 +7,13 @@ class Kondo < Formula
   head "https://github.com/tbillington/kondo.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "527d27a29a5f7b9bb39be35e8054c34c0c4f617a1502feea1afa4943cd815bd2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "69cb21681a558ebb79ae06bddba9548d0104060a7425711f6eda260170f0c412"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c9dab17a98c8e5da226da1d7e4a94e69d23fc4d9013b5a198d260e035ef60daa"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0b154e3bbf7f2da0097a366443e41797203d706a05fb5db257ddab1481d8fccf"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4521a5aaaa9683347a699c7a85bb89d42e448431d45b99645a9f0116fe19c40e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2d282eae511caf3bc620fbe9bd92abcf629febe09ba711fca0e0e63e8169eb9e"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "1ff94199870035aa14df4ede2f7700d76047fd8ec01119f6dd4aa41bed3f7b12"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "527d27a29a5f7b9bb39be35e8054c34c0c4f617a1502feea1afa4943cd815bd2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "69cb21681a558ebb79ae06bddba9548d0104060a7425711f6eda260170f0c412"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "c9dab17a98c8e5da226da1d7e4a94e69d23fc4d9013b5a198d260e035ef60daa"
+    sha256 cellar: :any_skip_relocation, sonoma:            "0b154e3bbf7f2da0097a366443e41797203d706a05fb5db257ddab1481d8fccf"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "4521a5aaaa9683347a699c7a85bb89d42e448431d45b99645a9f0116fe19c40e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "2d282eae511caf3bc620fbe9bd92abcf629febe09ba711fca0e0e63e8169eb9e"
   end
 
   depends_on "rust" => :build

@@ -16,12 +16,13 @@ class Irrlicht < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "a8314699b2d76022efabbfc053bc1b50eb1d0e6c18a0e1744e7e45ecccab9f0f"
-    sha256 cellar: :any,                 arm64_sequoia: "ac1612d4a8706ea6a300353422b7e14dfeeec124a1a21afa2da6e58930bc6fcc"
-    sha256 cellar: :any,                 arm64_sonoma:  "964e8ca8b0f221dfbc7b84fee7dc436d05e3db20b5f52bdce10f05dd25849c21"
-    sha256 cellar: :any,                 sonoma:        "1a45162a1578616ec8bae85d0dc0637969d7ac24fd462bd3ba0901087da8f7fc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a49171c9452f5c4af632a3dd080122c7f2de63fde6837922009041806912707d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b320467b91ab4658abdd8a6f7a356f2babd5e66be6d4eee2de4a34fe2caf1eea"
+    sha256 cellar: :any,                 arm64_golden_gate: "c7fdcded2790adc32880da0efd774cdc50f161f89b325f953284adc4d2c18716"
+    sha256 cellar: :any,                 arm64_tahoe:       "a8314699b2d76022efabbfc053bc1b50eb1d0e6c18a0e1744e7e45ecccab9f0f"
+    sha256 cellar: :any,                 arm64_sequoia:     "ac1612d4a8706ea6a300353422b7e14dfeeec124a1a21afa2da6e58930bc6fcc"
+    sha256 cellar: :any,                 arm64_sonoma:      "964e8ca8b0f221dfbc7b84fee7dc436d05e3db20b5f52bdce10f05dd25849c21"
+    sha256 cellar: :any,                 sonoma:            "1a45162a1578616ec8bae85d0dc0637969d7ac24fd462bd3ba0901087da8f7fc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "a49171c9452f5c4af632a3dd080122c7f2de63fde6837922009041806912707d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "b320467b91ab4658abdd8a6f7a356f2babd5e66be6d4eee2de4a34fe2caf1eea"
   end
 
   depends_on "jpeg-turbo"

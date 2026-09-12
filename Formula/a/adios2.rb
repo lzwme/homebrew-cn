@@ -12,12 +12,13 @@ class Adios2 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "264adbac2b0515a18279cc09c2564f506d124b4972ba4c2ece22414c9d6d3577"
-    sha256 cellar: :any,                 arm64_sequoia: "a40d806dc776c0a71daf37be4489c58d4515b6f78f6e7104f1dbbf3a9093070e"
-    sha256 cellar: :any,                 arm64_sonoma:  "970a0cf1cbf813bb8e24674b92ea06cdc9403df71d0edd97d0156067fec93d8a"
-    sha256 cellar: :any,                 sonoma:        "d39e90c524ab681ab22c2c67a832d2649d4d845874a935c8ca21d080a67bf250"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fa59f68ddc63cd454ee9187efa912e39f2c1dc749ac1fa8e103dc3e625d2166f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bbb723202b8917802c16657a1233a27c257178dbd5bbbc71b6067f498c4d7d5e"
+    sha256 cellar: :any,                 arm64_golden_gate: "15b37a093a0db8fa845d5886fbe5d2d58eb2177ad6a648edf129cd0410cc6022"
+    sha256 cellar: :any,                 arm64_tahoe:       "264adbac2b0515a18279cc09c2564f506d124b4972ba4c2ece22414c9d6d3577"
+    sha256 cellar: :any,                 arm64_sequoia:     "a40d806dc776c0a71daf37be4489c58d4515b6f78f6e7104f1dbbf3a9093070e"
+    sha256 cellar: :any,                 arm64_sonoma:      "970a0cf1cbf813bb8e24674b92ea06cdc9403df71d0edd97d0156067fec93d8a"
+    sha256 cellar: :any,                 sonoma:            "d39e90c524ab681ab22c2c67a832d2649d4d845874a935c8ca21d080a67bf250"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "fa59f68ddc63cd454ee9187efa912e39f2c1dc749ac1fa8e103dc3e625d2166f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "bbb723202b8917802c16657a1233a27c257178dbd5bbbc71b6067f498c4d7d5e"
   end
 
   depends_on "cmake" => :build

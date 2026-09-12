@@ -7,12 +7,13 @@ class Libdc1394 < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "334905f44916998f84a6b1a24bb52253e2353d7ed2dfe454b0f292cdfba535b7"
-    sha256 cellar: :any,                 arm64_sequoia: "ba66548f7e17020550447fda651d518994c0fd6603c196a5f191545d1d865356"
-    sha256 cellar: :any,                 arm64_sonoma:  "1fea647769f1bcbe75819eca994b865c7f039a28485d9675e39ad1b14ca0360a"
-    sha256 cellar: :any,                 sonoma:        "190bf71276b8710d016a1ba4d33d4d6553ff8320d7ed650c52af2dda0534f120"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2d1661d801921d5cca22436721730532f122e8e62a9bb04ad9766b55d22f3ede"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9bd27943334a6a6da194dbe3b765abe66d65622b15a420403052606f92c0a764"
+    sha256 cellar: :any,                 arm64_golden_gate: "86accc1247ac72bb515559928323a239c16f2c7183e6295891902092f31c957d"
+    sha256 cellar: :any,                 arm64_tahoe:       "334905f44916998f84a6b1a24bb52253e2353d7ed2dfe454b0f292cdfba535b7"
+    sha256 cellar: :any,                 arm64_sequoia:     "ba66548f7e17020550447fda651d518994c0fd6603c196a5f191545d1d865356"
+    sha256 cellar: :any,                 arm64_sonoma:      "1fea647769f1bcbe75819eca994b865c7f039a28485d9675e39ad1b14ca0360a"
+    sha256 cellar: :any,                 sonoma:            "190bf71276b8710d016a1ba4d33d4d6553ff8320d7ed650c52af2dda0534f120"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "2d1661d801921d5cca22436721730532f122e8e62a9bb04ad9766b55d22f3ede"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "9bd27943334a6a6da194dbe3b765abe66d65622b15a420403052606f92c0a764"
   end
 
   on_linux do

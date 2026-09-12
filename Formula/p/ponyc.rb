@@ -2,19 +2,19 @@ class Ponyc < Formula
   desc "Object-oriented, actor-model, capabilities-secure programming language"
   homepage "https://www.ponylang.io/"
   url "https://github.com/ponylang/ponyc.git",
-      tag:      "0.71.0",
-      revision: "a0a717d0a1435b077cf130b51b233a0ee49aaf13"
+      tag:      "0.72.0",
+      revision: "05dc7d084252823fdaae131624d4682ea1c3da66"
   license "BSD-2-Clause"
 
   bottle do
-    sha256               arm64_tahoe:   "30f655f0753199e19f94c6a6946475d89f49d95beff77a5ba17befd8da960f8a"
-    sha256               arm64_sequoia: "e8799c23b327a66c3a7bd229be4c28f50889b7061b13aa0634aa737036f00ef2"
-    sha256               arm64_sonoma:  "4588411f7839e9d15d444e691d67b5dcf9d919906072ad95c0accc93a637182c"
-    sha256 cellar: :any, arm64_linux:   "9defb6e761a42797f30d307572a70a1f26b244a378bd32d5e53e54ea6d94effc"
-    sha256 cellar: :any, x86_64_linux:  "07223bb7f321aec7fd8e3030454e8d215d22a170d194e564ae5064ddd065e463"
+    sha256               arm64_tahoe:   "04ee483aee5ceeeb612ad693b9cf87a4802fa81425b4ebd24a60711bbc89d07b"
+    sha256               arm64_sequoia: "7e779442dcffe3f725ddc6e6f56642b3ea4943e486731fa63c56823c1ac12d39"
+    sha256 cellar: :any, arm64_linux:   "9f804dc400f2f63166b0108da4ea72c540eb241373e588675bbfcd7c2b3b86e5"
+    sha256 cellar: :any, x86_64_linux:  "f7840af900aab621a7774edc2e107240657ee36d2c5759c15ff52840507a5fa3"
   end
 
   depends_on "cmake" => :build
+  depends_on "openssl@3"
 
   uses_from_macos "python" => :build
 

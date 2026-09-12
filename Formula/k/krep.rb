@@ -6,11 +6,12 @@ class Krep < Formula
   license "BSD-2-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5fe5ffeb093d39bda9c3cb87d2587360339d87ecb531185f20baa4ce5db3be5c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a39cf4de45c620de07034572c78f1934fe794475a01fcc4ab71f807360bf116d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4d31de5c8f147befe119c16e027ab4b193005bdf1fd53952e8aadea895e31e6a"
-    sha256 cellar: :any,                 arm64_linux:   "9b112852d7f0ae5c137f12cff68052b57e70d745f92f8b4fd24e757d8ef26156"
-    sha256 cellar: :any,                 x86_64_linux:  "cf7caa5f26f14d0d6c875193f6d8743a95ae49a5a8da886be67c5a59b81e4d19"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "ff15bb01d0343a71fc4378a3cd4fbc894bce6f27dc796aa7a2e0ceea5458148f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "5fe5ffeb093d39bda9c3cb87d2587360339d87ecb531185f20baa4ce5db3be5c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "a39cf4de45c620de07034572c78f1934fe794475a01fcc4ab71f807360bf116d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "4d31de5c8f147befe119c16e027ab4b193005bdf1fd53952e8aadea895e31e6a"
+    sha256 cellar: :any,                 arm64_linux:       "9b112852d7f0ae5c137f12cff68052b57e70d745f92f8b4fd24e757d8ef26156"
+    sha256 cellar: :any,                 x86_64_linux:      "cf7caa5f26f14d0d6c875193f6d8743a95ae49a5a8da886be67c5a59b81e4d19"
   end
 
   def install

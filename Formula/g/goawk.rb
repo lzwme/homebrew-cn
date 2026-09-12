@@ -7,12 +7,13 @@ class Goawk < Formula
   head "https://github.com/benhoyt/goawk.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7aa05da6706f6f37b6b6e39b5836857813c4076a7c58f91676d8ef4856032e4f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7aa05da6706f6f37b6b6e39b5836857813c4076a7c58f91676d8ef4856032e4f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7aa05da6706f6f37b6b6e39b5836857813c4076a7c58f91676d8ef4856032e4f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9e8db0d21391319af239e1d699968d412d98b88432f515b5a305338d5a9347aa"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "69823243b989010cec1a19abbd4ec23078b3fea8277d22e0c88308d7a97668e2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0427800ae701c9b427ac9d7c492a2fa9dde61ed17716f2395e1a72515311e6d1"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "9012f8384d316e91f19a41514049794dc77e6a64b986352567c93fc4839a9a09"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "7aa05da6706f6f37b6b6e39b5836857813c4076a7c58f91676d8ef4856032e4f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "7aa05da6706f6f37b6b6e39b5836857813c4076a7c58f91676d8ef4856032e4f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "7aa05da6706f6f37b6b6e39b5836857813c4076a7c58f91676d8ef4856032e4f"
+    sha256 cellar: :any_skip_relocation, sonoma:            "9e8db0d21391319af239e1d699968d412d98b88432f515b5a305338d5a9347aa"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "69823243b989010cec1a19abbd4ec23078b3fea8277d22e0c88308d7a97668e2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "0427800ae701c9b427ac9d7c492a2fa9dde61ed17716f2395e1a72515311e6d1"
   end
 
   depends_on "go" => :build

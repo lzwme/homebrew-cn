@@ -12,12 +12,13 @@ class Pcapplusplus < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cb27621beef3098b108098ecb75b8791145e9b7e5d7635485bf552e507ad3313"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3db414b69aba3e6fe3e8d4d46b14d50d197a0f49e7e896b7287c6761b4e0d87c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "033603f2a01e495254da5383ba6ee135be97ff00f9e2c4cc7fa2508ba9a59fdc"
-    sha256 cellar: :any_skip_relocation, sonoma:        "850241bc4492ca198453957f1361efd8c60b9e46660426ffb3526f1125b40613"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a60a638a671532ec69cbc90557a85c61c375b3ef9de3fe10311159d9e48985f7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0d6fed04ad0ab4723d54bfb039c64434703ef377fb7e19e7ae0d463ec2c39183"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "13c69c5b3055af8e36b867561ad88fd03f91d17db21504b08fc4780410b49692"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "cb27621beef3098b108098ecb75b8791145e9b7e5d7635485bf552e507ad3313"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "3db414b69aba3e6fe3e8d4d46b14d50d197a0f49e7e896b7287c6761b4e0d87c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "033603f2a01e495254da5383ba6ee135be97ff00f9e2c4cc7fa2508ba9a59fdc"
+    sha256 cellar: :any_skip_relocation, sonoma:            "850241bc4492ca198453957f1361efd8c60b9e46660426ffb3526f1125b40613"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "a60a638a671532ec69cbc90557a85c61c375b3ef9de3fe10311159d9e48985f7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "0d6fed04ad0ab4723d54bfb039c64434703ef377fb7e19e7ae0d463ec2c39183"
   end
 
   depends_on "cmake" => [:build, :test]

@@ -7,12 +7,13 @@ class Minidlna < Formula
   revision 3
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "0653da91cd10baff42e22dc28994fe4886ed4bce3c4e4f9dbe726c5ff2487522"
-    sha256 cellar: :any, arm64_sequoia: "b57474142d19a4bbb15397eb9e46c5e453c89612e3214f4d497e69070b1e423d"
-    sha256 cellar: :any, arm64_sonoma:  "78110a01d94e4c5049b9dd74db05b9481657df38a32824bc78da4c73bfa0acfd"
-    sha256 cellar: :any, sonoma:        "0f689a9ffd74e5f26e174cc600445048cb1316e6d82ccda352a603b849d9bf38"
-    sha256 cellar: :any, arm64_linux:   "dcc32d273382b08b439ca5d6836e473a3a0108c89a7160ad9b190e1198a45232"
-    sha256 cellar: :any, x86_64_linux:  "aed7febbcd7a0c0cf96cac14d1a6126c83e6a9e87360f11e96c208ae8c0a8a50"
+    sha256 cellar: :any, arm64_golden_gate: "217dc4ec7fdccb9cd0a6eae0817f2709afa5d034e093afda9cbd2ea77be128c9"
+    sha256 cellar: :any, arm64_tahoe:       "0653da91cd10baff42e22dc28994fe4886ed4bce3c4e4f9dbe726c5ff2487522"
+    sha256 cellar: :any, arm64_sequoia:     "b57474142d19a4bbb15397eb9e46c5e453c89612e3214f4d497e69070b1e423d"
+    sha256 cellar: :any, arm64_sonoma:      "78110a01d94e4c5049b9dd74db05b9481657df38a32824bc78da4c73bfa0acfd"
+    sha256 cellar: :any, sonoma:            "0f689a9ffd74e5f26e174cc600445048cb1316e6d82ccda352a603b849d9bf38"
+    sha256 cellar: :any, arm64_linux:       "dcc32d273382b08b439ca5d6836e473a3a0108c89a7160ad9b190e1198a45232"
+    sha256 cellar: :any, x86_64_linux:      "aed7febbcd7a0c0cf96cac14d1a6126c83e6a9e87360f11e96c208ae8c0a8a50"
   end
 
   head do

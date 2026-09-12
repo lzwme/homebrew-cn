@@ -1,22 +1,24 @@
 cask "plexamp" do
-  arch arm: "arm64", intel: "x64"
+  arch arm: "aarch64", intel: "x86_64"
 
-  version "4.13.2"
-  sha256 arm:   "96f0b8537797460153d7cebf8944ddcbde4161a845c34fc814ee647b986bab7c",
-         intel: "7aff81136c661a8425e0c438662c4c390b16277ed381b8227c474e7983ea57ab"
+  version "4.50.9"
+  sha256 arm:   "05d20d9cbeca118b2935dde950e775b188c17abdcb06955025a66c7d1a7c25c3",
+         intel: "c8121212121eab354254eb7bd3bac1c243bcaa802991109edc580639310b3ddf"
 
-  url "https://plexamp.plex.tv/plexamp.plex.tv/desktop/Plexamp-#{version}-#{arch}.dmg"
+  url "https://plexamp.plex.tv/desktop/Plexamp-#{version}-#{arch}.dmg"
   name "Plexamp"
   desc "Music player focusing on visuals"
   homepage "https://plexamp.com/"
 
   livecheck do
-    url "https://plexamp.plex.tv/plexamp.plex.tv/desktop/latest-mac.yml"
-    strategy :electron_builder
+    url "https://plexamp.plex.tv/desktop/tauri-update.json"
+    strategy :json do |json|
+      json["version"]
+    end
   end
 
   auto_updates true
-  depends_on macos: :monterey
+  depends_on :macos
 
   app "Plexamp.app"
 

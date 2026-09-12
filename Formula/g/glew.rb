@@ -8,12 +8,12 @@ class Glew < Formula
   head "https://github.com/nigels-com/glew.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "1ec85f5ae1b523fe8b30ccd462b1f7988693f0f7b87660b12d08ecf575a1cf01"
-    sha256 cellar: :any,                 arm64_sequoia: "7cec448d9e7413bea9130a398f7ebdec896c0148f37dc69302b95f5079c0f2f1"
-    sha256 cellar: :any,                 arm64_sonoma:  "7f3110639abd423d4fe61c34b6f33bb8b859141e22ad3c32337f36508f9865c7"
-    sha256 cellar: :any,                 sonoma:        "a6ae467e7998dfc0f8b237f01118194c9aed50bc5f769cc2c10d116d14accdde"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "72762b76d9023594c8e7c35404458a7ab43b169116d73545d46b892a83314552"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e8f24c5184a070eb8500a8def5fa6b5bf4bb8b531fc305f0aa4cd71cc3fb5af6"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "6fa553d6cf43a6eab23005df9e38bd5b2f6597534f1e1cc53b9ffe7a0398e9d4"
+    sha256 cellar: :any, arm64_tahoe:       "41a7f57c0f003d4ec7e042fde179cad2cadd504418db453a9738df775214a608"
+    sha256 cellar: :any, arm64_sequoia:     "db97decd397b3df69d9c00ebedf0442bb756fc0da6d10c029c51a8779deb2bb6"
+    sha256 cellar: :any, arm64_linux:       "6dc8bbe25f8e5eb5272225677c055ec3fa2ad525dbb616985c6b3471690b33bd"
+    sha256 cellar: :any, x86_64_linux:      "88b1451b62ed6c211dbebfa36d6e3f21e975f13e96c9351c83d637a462423457"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -70,36 +70,48 @@ class Glew < Formula
     system "cmake", "-S", ".", "-B", "build", "-Wno-author"
     system "cmake", "--build", "build"
 
-    glut = if OS.mac?
-      "GLUT"
-    else
-      "GL"
-    end
     (testpath/"test.c").write <<~C
+      #include <assert.h>
       #include <GL/glew.h>
-      #include <#{glut}/glut.h>
+      #ifdef __APPLE__
+      #include <OpenGL/OpenGL.h>
+      #else
+      #include <GL/glut.h>
+      #endif
 
       int main(int argc, char** argv) {
+        #ifdef __APPLE__
+        CGLPixelFormatAttribute attributes[] = {kCGLPFAAllowOfflineRenderers, 0};
+        CGLPixelFormatObj format;
+        CGLContextObj context;
+        GLint count;
+        assert(CGLChoosePixelFormat(attributes, &format, &count) == kCGLNoError);
+        assert(format);
+        assert(CGLCreateContext(format, NULL, &context) == kCGLNoError);
+        CGLDestroyPixelFormat(format);
+        assert(CGLSetCurrentContext(context) == kCGLNoError);
+        #else
         glutInit(&argc, argv);
         glutCreateWindow("GLEW Test");
+        #endif
         GLenum err = glewInit();
         if (GLEW_OK != err) {
           return 1;
         }
+        #ifdef __APPLE__
+        CGLSetCurrentContext(NULL);
+        CGLDestroyContext(context);
+        #endif
         return 0;
       }
     C
     flags = %W[-L#{lib} -lGLEW]
     if OS.mac?
-      flags << "-framework" << "GLUT"
+      flags << "-framework" << "OpenGL"
     else
       flags << "-lglut"
     end
     system ENV.cc, testpath/"test.c", "-o", "test", *flags
-    # Tahoe running is headless for now, maybe remove this later
-    # ("GLUT Fatal Error: redisplay needed for window 1, but no display callback")
-    return if OS.mac? && MacOS.version == :tahoe && ENV["HOMEBREW_GITHUB_ACTIONS"]
-
     if OS.linux? && ENV.exclude?("DISPLAY")
       system Formula["xorg-server"].bin/"xvfb-run", "./test"
     else

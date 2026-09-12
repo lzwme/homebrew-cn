@@ -11,18 +11,19 @@ class Zxcc < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:    "e312260a654050c8776f39d0558ab6c5e9b7d62f4f219475a13dcd8e75fbd759"
-    sha256 arm64_sequoia:  "bddad2d64c555a4a13ba9cbc9c0cb6da0f249f6ef360c2274626a8b036c473a3"
-    sha256 arm64_sonoma:   "8c8e1b35ae99069026c14d9cf0d35a14196d7be3e0a1e7bdbc9d6ec5fd6f5b13"
-    sha256 arm64_ventura:  "e2fe6fa77252015a020de63bb4973171a8b9a9c90f866f2835f1e36e4e5714de"
-    sha256 arm64_monterey: "b72dfe0dda214485bb604b56b731e04109c964d10f45eb3b6fedceffdedf61ca"
-    sha256 arm64_big_sur:  "3f7d36f3115f3dc9310aa01045a455fe7dab1732612421b5451777c140bf952a"
-    sha256 sonoma:         "771d3fa5f8e286a2b0ed1d1e4765a69e348d0352ccadae189cd658a64a5e24b3"
-    sha256 ventura:        "08b4d0233886b19e05fdbe3f3bb90d25146716a354bcf7e07d89396ef6b53397"
-    sha256 monterey:       "015f6a038fa59edef9b58d8edef90d4ad957c1275e581d2d9e645868b37dc9e1"
-    sha256 big_sur:        "55897339c53884d74e51e270e458085e4c1a3c8494b7053d40205d511ae0759a"
-    sha256 arm64_linux:    "f03ecace625722887a14453a0a0d9c8901b0eb83e5f61e2f8f774a2002f0c225"
-    sha256 x86_64_linux:   "8a5baf11b9060b7aedcf4f25afca690fbad80df406a66a70389ddd32fe2c6075"
+    sha256 arm64_golden_gate: "5f6d71c7738479dbb740c006ca4b8f45d138d29ef521eb29692dc366282d61f2"
+    sha256 arm64_tahoe:       "e312260a654050c8776f39d0558ab6c5e9b7d62f4f219475a13dcd8e75fbd759"
+    sha256 arm64_sequoia:     "bddad2d64c555a4a13ba9cbc9c0cb6da0f249f6ef360c2274626a8b036c473a3"
+    sha256 arm64_sonoma:      "8c8e1b35ae99069026c14d9cf0d35a14196d7be3e0a1e7bdbc9d6ec5fd6f5b13"
+    sha256 arm64_ventura:     "e2fe6fa77252015a020de63bb4973171a8b9a9c90f866f2835f1e36e4e5714de"
+    sha256 arm64_monterey:    "b72dfe0dda214485bb604b56b731e04109c964d10f45eb3b6fedceffdedf61ca"
+    sha256 arm64_big_sur:     "3f7d36f3115f3dc9310aa01045a455fe7dab1732612421b5451777c140bf952a"
+    sha256 sonoma:            "771d3fa5f8e286a2b0ed1d1e4765a69e348d0352ccadae189cd658a64a5e24b3"
+    sha256 ventura:           "08b4d0233886b19e05fdbe3f3bb90d25146716a354bcf7e07d89396ef6b53397"
+    sha256 monterey:          "015f6a038fa59edef9b58d8edef90d4ad957c1275e581d2d9e645868b37dc9e1"
+    sha256 big_sur:           "55897339c53884d74e51e270e458085e4c1a3c8494b7053d40205d511ae0759a"
+    sha256 arm64_linux:       "f03ecace625722887a14453a0a0d9c8901b0eb83e5f61e2f8f774a2002f0c225"
+    sha256 x86_64_linux:      "8a5baf11b9060b7aedcf4f25afca690fbad80df406a66a70389ddd32fe2c6075"
   end
 
   uses_from_macos "ncurses"

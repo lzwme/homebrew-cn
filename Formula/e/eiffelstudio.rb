@@ -17,14 +17,15 @@ class Eiffelstudio < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "f14da97c4684f2384c2d68dab556ea970b6191e8995634a31707e5a14bfb85a1"
-    sha256 cellar: :any,                 arm64_sequoia: "4030c9fa5e0a839aae6c9f9f8b04af32d7f45c2203453ee51b23388444a74d67"
-    sha256 cellar: :any,                 arm64_sonoma:  "ee29d34eabd019521717887b411c3a8edae4d29dbfd4c5d5cc20262df03dc6af"
-    sha256 cellar: :any,                 arm64_ventura: "fedc736ae91c56ad1ff16d5dd21a0950ba47ed1dc51df977e20759348aa0e924"
-    sha256 cellar: :any,                 sonoma:        "2b4450d781483aab1345f9453246ab778c820c208d910523c9918da5588aa0b7"
-    sha256 cellar: :any,                 ventura:       "c630a8e2c1aa1857bfc26e40611293c855fa568285b17a1254ba13c8dcf1b162"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "90856df61aa3521fa22d999c3298cbe52f144c705927fee102798a3e2af7f3f2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "00230c658b6733ffde14178ef47d9919dbaf4694ebae211d938423068282aefb"
+    sha256 cellar: :any,                 arm64_golden_gate: "c464b7595246b0829be362f6bb74b1e8e061584877b834bd58db3da6d124dccf"
+    sha256 cellar: :any,                 arm64_tahoe:       "f14da97c4684f2384c2d68dab556ea970b6191e8995634a31707e5a14bfb85a1"
+    sha256 cellar: :any,                 arm64_sequoia:     "4030c9fa5e0a839aae6c9f9f8b04af32d7f45c2203453ee51b23388444a74d67"
+    sha256 cellar: :any,                 arm64_sonoma:      "ee29d34eabd019521717887b411c3a8edae4d29dbfd4c5d5cc20262df03dc6af"
+    sha256 cellar: :any,                 arm64_ventura:     "fedc736ae91c56ad1ff16d5dd21a0950ba47ed1dc51df977e20759348aa0e924"
+    sha256 cellar: :any,                 sonoma:            "2b4450d781483aab1345f9453246ab778c820c208d910523c9918da5588aa0b7"
+    sha256 cellar: :any,                 ventura:           "c630a8e2c1aa1857bfc26e40611293c855fa568285b17a1254ba13c8dcf1b162"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "90856df61aa3521fa22d999c3298cbe52f144c705927fee102798a3e2af7f3f2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "00230c658b6733ffde14178ef47d9919dbaf4694ebae211d938423068282aefb"
   end
 
   depends_on "pkgconf" => :build

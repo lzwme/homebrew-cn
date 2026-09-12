@@ -17,11 +17,12 @@ class Qtwebchannel < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "76b540ed7ea0cab2e0544eedc9141443046e7ab0143c46e1bb46ad54ab45fcbc"
-    sha256 cellar: :any, arm64_sequoia: "d4c73037c6147cbe7cf9e7743b22f06f0a04a01823e69685daaeb6b94d95f983"
-    sha256 cellar: :any, arm64_sonoma:  "e2fa5a61ceee3c87db98b2408030512c74488e448da0c19b160d8319cffd66ee"
-    sha256 cellar: :any, arm64_linux:   "f2d060ed76be6b40920aa1aaed3ddf240c4c8a0060a0c15d3e6302eb1166c37c"
-    sha256 cellar: :any, x86_64_linux:  "d4153467376455377fdfd91574ba0d739d8d2346004f93bd92dd918362e661f0"
+    sha256 cellar: :any, arm64_golden_gate: "36ed504bfd6e73c7507fce087599f8fcc3e313fa8862d207e91a065948fea688"
+    sha256 cellar: :any, arm64_tahoe:       "76b540ed7ea0cab2e0544eedc9141443046e7ab0143c46e1bb46ad54ab45fcbc"
+    sha256 cellar: :any, arm64_sequoia:     "d4c73037c6147cbe7cf9e7743b22f06f0a04a01823e69685daaeb6b94d95f983"
+    sha256 cellar: :any, arm64_sonoma:      "e2fa5a61ceee3c87db98b2408030512c74488e448da0c19b160d8319cffd66ee"
+    sha256 cellar: :any, arm64_linux:       "f2d060ed76be6b40920aa1aaed3ddf240c4c8a0060a0c15d3e6302eb1166c37c"
+    sha256 cellar: :any, x86_64_linux:      "d4153467376455377fdfd91574ba0d739d8d2346004f93bd92dd918362e661f0"
   end
 
   depends_on "cmake" => [:build, :test]

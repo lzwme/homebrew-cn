@@ -10,12 +10,13 @@ class Watson < Formula
   head "https://github.com/jazzband/Watson.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "55947afc81bc8188c52bc840d869293ecf55d09f32aa6fa1d12b51d4feb9d818"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f91c964ae9a7377b5580e3ae5e840d065ed005e531610f396a8b95c8f074e49f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5714f87823b5c989aebbd597ab2ef611fa94b96eabb2539a25e39e4938b1ffa9"
-    sha256 cellar: :any_skip_relocation, sonoma:        "339b482c0433db552a1deaf941c5f6eccb5867b99fcf8d5808a4ca72a34fad9f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e02450b4d405b1790d070331a422d8c052f5e1e7b39b8be8863c2d22f16d7665"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b985ac28647b33d3f4e7f763ef17a5e4ef806e4ef34f91f59057b84f9808460b"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "d2e1d742dddcadb5bd5b8a274251525be4209ed79350380a5708b080165bdc92"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "55947afc81bc8188c52bc840d869293ecf55d09f32aa6fa1d12b51d4feb9d818"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "f91c964ae9a7377b5580e3ae5e840d065ed005e531610f396a8b95c8f074e49f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "5714f87823b5c989aebbd597ab2ef611fa94b96eabb2539a25e39e4938b1ffa9"
+    sha256 cellar: :any_skip_relocation, sonoma:            "339b482c0433db552a1deaf941c5f6eccb5867b99fcf8d5808a4ca72a34fad9f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "e02450b4d405b1790d070331a422d8c052f5e1e7b39b8be8863c2d22f16d7665"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "b985ac28647b33d3f4e7f763ef17a5e4ef806e4ef34f91f59057b84f9808460b"
   end
 
   depends_on "certifi" => :no_linkage

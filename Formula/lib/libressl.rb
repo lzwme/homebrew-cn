@@ -14,12 +14,13 @@ class Libressl < Formula
 
   bottle do
     rebuild 1
-    sha256 arm64_tahoe:   "d7f59fb77e249e6499cc8c3031e471d48b439afcb2eebbd50f99d35b48f3c991"
-    sha256 arm64_sequoia: "9e826fa4c8fc297ad979a7f5efac314c2d873a6d52ab02a32a86ce56b3432dc3"
-    sha256 arm64_sonoma:  "dc47df0307f526c64c05165b3d184ab88c1ab39a2c9fffae78cb75ac55b217e5"
-    sha256 sonoma:        "ffd12aa7317281477581314261af6708b45d2fe8e5472dae65a5a05def4332ae"
-    sha256 arm64_linux:   "2b9597ee1a7667b55c5c0ace8d7522fdae204706d0f7dcaaf6e4698518171f00"
-    sha256 x86_64_linux:  "e018a0cefa50aab8fe96a39e0fcb6911b9f1479280023dc73435950a38f5947a"
+    sha256 arm64_golden_gate: "27f1be4d28a36522912e12ecfe873a490f614cf9f5a29941f3cd16493fe1db6d"
+    sha256 arm64_tahoe:       "d7f59fb77e249e6499cc8c3031e471d48b439afcb2eebbd50f99d35b48f3c991"
+    sha256 arm64_sequoia:     "9e826fa4c8fc297ad979a7f5efac314c2d873a6d52ab02a32a86ce56b3432dc3"
+    sha256 arm64_sonoma:      "dc47df0307f526c64c05165b3d184ab88c1ab39a2c9fffae78cb75ac55b217e5"
+    sha256 sonoma:            "ffd12aa7317281477581314261af6708b45d2fe8e5472dae65a5a05def4332ae"
+    sha256 arm64_linux:       "2b9597ee1a7667b55c5c0ace8d7522fdae204706d0f7dcaaf6e4698518171f00"
+    sha256 x86_64_linux:      "e018a0cefa50aab8fe96a39e0fcb6911b9f1479280023dc73435950a38f5947a"
   end
 
   head do

@@ -7,12 +7,13 @@ class Libjodycode < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "0cf544850a13ea319614e60d0adaaf8a0569877f7f98b84d055c9c8205521fa1"
-    sha256 cellar: :any, arm64_sequoia: "1214902f70141379d7786f2abf597e4f08cf7f569cab23ef42423b413aa1fbbb"
-    sha256 cellar: :any, arm64_sonoma:  "ba8022b4f7c9d9ab4d6d77c65a2678f6566a8ccc58ffcb0247a666ce8a93457a"
-    sha256 cellar: :any, sonoma:        "9bc9879bea3b4c49a46cc4ee4e2f8476664cf66c3351e7f74045af536e6dab95"
-    sha256 cellar: :any, arm64_linux:   "ce11b85bffe45143b963210c3838a8f8e51cf49b0deb41f697bead8315c2a20b"
-    sha256 cellar: :any, x86_64_linux:  "f10e4029e4e88cd570d668edc7c4023b0062acd0690d84bbae981e1c2af0a795"
+    sha256 cellar: :any, arm64_golden_gate: "e0567eabdf5646e3b40e0cd493778df8eb5de6340f04bb5960e3c8ec97c6303b"
+    sha256 cellar: :any, arm64_tahoe:       "0cf544850a13ea319614e60d0adaaf8a0569877f7f98b84d055c9c8205521fa1"
+    sha256 cellar: :any, arm64_sequoia:     "1214902f70141379d7786f2abf597e4f08cf7f569cab23ef42423b413aa1fbbb"
+    sha256 cellar: :any, arm64_sonoma:      "ba8022b4f7c9d9ab4d6d77c65a2678f6566a8ccc58ffcb0247a666ce8a93457a"
+    sha256 cellar: :any, sonoma:            "9bc9879bea3b4c49a46cc4ee4e2f8476664cf66c3351e7f74045af536e6dab95"
+    sha256 cellar: :any, arm64_linux:       "ce11b85bffe45143b963210c3838a8f8e51cf49b0deb41f697bead8315c2a20b"
+    sha256 cellar: :any, x86_64_linux:      "f10e4029e4e88cd570d668edc7c4023b0062acd0690d84bbae981e1c2af0a795"
   end
 
   # These files used to be distributed as part of the jdupes formula

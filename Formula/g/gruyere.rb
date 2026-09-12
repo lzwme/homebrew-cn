@@ -10,12 +10,13 @@ class Gruyere < Formula
   head "https://github.com/savannahostrowski/gruyere.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "694fd038c4d1c47d5a6d0ba2c4114df3ea79999e83397599d7d921c61266e8ad"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f16d9cdb47405b6e0de3d95586d527b16d48986c39c8518510ec8c5f94641874"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2482c1d061eb2ec5e4e1214c0a609c5e9550e145d9da19dc71cc5c3469ea59c1"
-    sha256 cellar: :any_skip_relocation, sonoma:        "03a66ad8b082ab473e8965cb50d9d72af1de9f3276aa2a7e3c1121ab3e0106df"
-    sha256 cellar: :any,                 arm64_linux:   "67aabde28e84ab6afdbd34503a60947a9e07312c9059b66eb7877bea329e90d9"
-    sha256 cellar: :any,                 x86_64_linux:  "66c678beb441a73d45ea7a4eea968d3ec447bd0ef483925053a20127ec8669fa"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "e7670e469373495094e6cf391d6b21595149d411513ae6bce2b00db8c99dd866"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "694fd038c4d1c47d5a6d0ba2c4114df3ea79999e83397599d7d921c61266e8ad"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "f16d9cdb47405b6e0de3d95586d527b16d48986c39c8518510ec8c5f94641874"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "2482c1d061eb2ec5e4e1214c0a609c5e9550e145d9da19dc71cc5c3469ea59c1"
+    sha256 cellar: :any_skip_relocation, sonoma:            "03a66ad8b082ab473e8965cb50d9d72af1de9f3276aa2a7e3c1121ab3e0106df"
+    sha256 cellar: :any,                 arm64_linux:       "67aabde28e84ab6afdbd34503a60947a9e07312c9059b66eb7877bea329e90d9"
+    sha256 cellar: :any,                 x86_64_linux:      "66c678beb441a73d45ea7a4eea968d3ec447bd0ef483925053a20127ec8669fa"
   end
 
   depends_on "python@3.14"

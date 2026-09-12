@@ -6,12 +6,13 @@ class ImessageExporter < Formula
   license "GPL-3.0-only"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d73061b9f2c1e5141469e5db62f61a38ab947cf194c140981805dfc8188acf2b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8e5b42547e4fed80fb089954fcc09a40ad2120be3e135329d75f90693dc6aba8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "50bfda58d4f7e6f0f6e42a93a639b18a9379dbfdd369c45ac8005d679b2f6169"
-    sha256 cellar: :any_skip_relocation, sonoma:        "38675a4d99a31f22f8aaeb035afafbd078da6325b6272df3d8bed32f75a93e3c"
-    sha256 cellar: :any,                 arm64_linux:   "7399e3b6a6e2337eeef9d45f78719d19dba2df8e6ce913b06e55ef36d5ddf670"
-    sha256 cellar: :any,                 x86_64_linux:  "cb14d97ab80246b437302d1ea2ce9a47c9b42505d020cb367aa51d3f6e29010a"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "9fe19f5387b244b888a722d4cc2734b58cfe0b864ee36a5295fe6b567b6b194a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "d73061b9f2c1e5141469e5db62f61a38ab947cf194c140981805dfc8188acf2b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "8e5b42547e4fed80fb089954fcc09a40ad2120be3e135329d75f90693dc6aba8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "50bfda58d4f7e6f0f6e42a93a639b18a9379dbfdd369c45ac8005d679b2f6169"
+    sha256 cellar: :any_skip_relocation, sonoma:            "38675a4d99a31f22f8aaeb035afafbd078da6325b6272df3d8bed32f75a93e3c"
+    sha256 cellar: :any,                 arm64_linux:       "7399e3b6a6e2337eeef9d45f78719d19dba2df8e6ce913b06e55ef36d5ddf670"
+    sha256 cellar: :any,                 x86_64_linux:      "cb14d97ab80246b437302d1ea2ce9a47c9b42505d020cb367aa51d3f6e29010a"
   end
 
   depends_on "rust" => :build

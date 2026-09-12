@@ -18,12 +18,13 @@ class Icecast < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "5fff6c2e934272b3b0dc2075d9abfa52942d77b1dac0dd38d54ed0e76c311a52"
-    sha256 cellar: :any, arm64_sequoia: "0e6c57ce5aad591029a75887504ba8da456032bbfcf58f99ce2c643a38313d6f"
-    sha256 cellar: :any, arm64_sonoma:  "afece122c6e2f7cd6d9fa10fc048ba180766cfa869b0688160f7300e2b6d4cbe"
-    sha256 cellar: :any, sonoma:        "66f6127375f34afd6f2fcafeb5ffd95550a32718c388f1060f7934e76e213160"
-    sha256 cellar: :any, arm64_linux:   "0da5d82c397a820b701610da5a6d7963cad3a1e2f9b4c6c182bb3a4b89f93801"
-    sha256 cellar: :any, x86_64_linux:  "f86153d8d8a2238285668371f217282bfdea77bad2411db56320b3a9400787dd"
+    sha256 cellar: :any, arm64_golden_gate: "a0ac51bd8271949dff94a41d5b938cfd28f25e0fcc0943c4763e0e68be7dcbce"
+    sha256 cellar: :any, arm64_tahoe:       "5fff6c2e934272b3b0dc2075d9abfa52942d77b1dac0dd38d54ed0e76c311a52"
+    sha256 cellar: :any, arm64_sequoia:     "0e6c57ce5aad591029a75887504ba8da456032bbfcf58f99ce2c643a38313d6f"
+    sha256 cellar: :any, arm64_sonoma:      "afece122c6e2f7cd6d9fa10fc048ba180766cfa869b0688160f7300e2b6d4cbe"
+    sha256 cellar: :any, sonoma:            "66f6127375f34afd6f2fcafeb5ffd95550a32718c388f1060f7934e76e213160"
+    sha256 cellar: :any, arm64_linux:       "0da5d82c397a820b701610da5a6d7963cad3a1e2f9b4c6c182bb3a4b89f93801"
+    sha256 cellar: :any, x86_64_linux:      "f86153d8d8a2238285668371f217282bfdea77bad2411db56320b3a9400787dd"
   end
 
   depends_on "pkgconf" => :build

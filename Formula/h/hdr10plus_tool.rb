@@ -12,12 +12,13 @@ class Hdr10plusTool < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "19047e28a0a09f67a3468de226119e6ef0f9bc75fcffee81369b8a6605ecaf36"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f0d80db9a201aa675b80359047ff378ddae88e0c43e545eafd641012a891ddb9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7bc000ab8a85fcf936e2c0ca21e7f8f971a89898523b3346d07b173917b605dd"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b523b4a7ee63a7fc2a837967be1e92743cac0b5c0eee032c3d63452ff0c3424b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f938183f8ea89d2fce37120e7b4f8aa1ed9c08b72d154c899a9472f95bfc08e4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e2f8bd3ce3cb730e2e071121e9b538c8ba942e329ca3a264f1e14833884f4b7b"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "11f7b7b77cb4826569b259b1e9f7b5636f1901cc356fcf879333a57bfc85d356"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "19047e28a0a09f67a3468de226119e6ef0f9bc75fcffee81369b8a6605ecaf36"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "f0d80db9a201aa675b80359047ff378ddae88e0c43e545eafd641012a891ddb9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "7bc000ab8a85fcf936e2c0ca21e7f8f971a89898523b3346d07b173917b605dd"
+    sha256 cellar: :any_skip_relocation, sonoma:            "b523b4a7ee63a7fc2a837967be1e92743cac0b5c0eee032c3d63452ff0c3424b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "f938183f8ea89d2fce37120e7b4f8aa1ed9c08b72d154c899a9472f95bfc08e4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "e2f8bd3ce3cb730e2e071121e9b538c8ba942e329ca3a264f1e14833884f4b7b"
   end
 
   depends_on "pkgconf" => :build

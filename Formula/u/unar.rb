@@ -10,12 +10,13 @@ class Unar < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "0ef068932336d86ad68784341497223c5d17d6e56ed564a698d6686031ff97fa"
-    sha256 cellar: :any,                 arm64_sequoia: "e38bf30cf01db29aa27d0bf1b208009eb6d64547904f6923ef6994bb74e264c7"
-    sha256 cellar: :any,                 arm64_sonoma:  "5114acd866a2552989947614859b3cfd347c52cebc1d7ae4677824e9db94f56b"
-    sha256 cellar: :any,                 sonoma:        "0d686d8ad4563aab687d8a48578ccafde6bec7681939c280357ef02f14829f5d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "85565efda882c47c9abf8d29ad7da951ab88459bf5cabb179a21fecaeb46158c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "128ef931a133a2dba46f9bfacfe00d28830ec81adcea315d026159321fd1a79d"
+    sha256 cellar: :any,                 arm64_golden_gate: "9b780371f403d9d8edbfda559ceafdfa95af709ab8c7d4faa805904c7ab92849"
+    sha256 cellar: :any,                 arm64_tahoe:       "0ef068932336d86ad68784341497223c5d17d6e56ed564a698d6686031ff97fa"
+    sha256 cellar: :any,                 arm64_sequoia:     "e38bf30cf01db29aa27d0bf1b208009eb6d64547904f6923ef6994bb74e264c7"
+    sha256 cellar: :any,                 arm64_sonoma:      "5114acd866a2552989947614859b3cfd347c52cebc1d7ae4677824e9db94f56b"
+    sha256 cellar: :any,                 sonoma:            "0d686d8ad4563aab687d8a48578ccafde6bec7681939c280357ef02f14829f5d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "85565efda882c47c9abf8d29ad7da951ab88459bf5cabb179a21fecaeb46158c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "128ef931a133a2dba46f9bfacfe00d28830ec81adcea315d026159321fd1a79d"
   end
 
   uses_from_macos "llvm" => :build

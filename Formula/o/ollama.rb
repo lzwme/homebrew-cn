@@ -39,8 +39,6 @@ class Ollama < Formula
     end
   end
 
-  conflicts_with cask: "ollama-app"
-
   # Pinned dependency required by llama-server
   resource "llama.cpp" do
     url "https://github.com/ggml-org/llama.cpp.git",
@@ -138,6 +136,16 @@ class Ollama < Formula
     error_log_path var/"log/ollama.log"
     environment_variables OLLAMA_FLASH_ATTENTION: "1",
                           OLLAMA_KV_CACHE_TYPE:   "q8_0"
+  end
+
+  def caveats
+    on_linux do
+      <<~EOS
+        This formula only includes support for the CPU backend.
+        You can install Ollama with GPU backends from Homebrew Cask:
+          brew install --cask ollama-binary
+      EOS
+    end
   end
 
   test do

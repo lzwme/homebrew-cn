@@ -9,11 +9,12 @@ class Graphviz2drawio < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "a5b8da77f9ac1b15ec142d910f3284aa6960844f8f972664a5891d2ab405c79f"
-    sha256 cellar: :any, arm64_sequoia: "cd43d43baacba611bc3b5e8fccd181d5f28395dd070d7202d4d4ced9a1f0a495"
-    sha256 cellar: :any, arm64_sonoma:  "7904d6b61f941b6ff4862eed05ae4efacd6814c96b2bc9bc7a1e6b39ca7d202f"
-    sha256 cellar: :any, arm64_linux:   "b8747e50c2bcdd7ea02900158d8ff1138f4a97633e9f6ba84d5f40f97a4a8cdc"
-    sha256 cellar: :any, x86_64_linux:  "40ca185dba6800cb5c84e3c7438435ba31408916624e00878ac59309027d459a"
+    sha256 cellar: :any, arm64_golden_gate: "76ebcb2599e39b0dee75e91439ec685ab77fce79884c8f89b9be91e93f734cac"
+    sha256 cellar: :any, arm64_tahoe:       "a5b8da77f9ac1b15ec142d910f3284aa6960844f8f972664a5891d2ab405c79f"
+    sha256 cellar: :any, arm64_sequoia:     "cd43d43baacba611bc3b5e8fccd181d5f28395dd070d7202d4d4ced9a1f0a495"
+    sha256 cellar: :any, arm64_sonoma:      "7904d6b61f941b6ff4862eed05ae4efacd6814c96b2bc9bc7a1e6b39ca7d202f"
+    sha256 cellar: :any, arm64_linux:       "b8747e50c2bcdd7ea02900158d8ff1138f4a97633e9f6ba84d5f40f97a4a8cdc"
+    sha256 cellar: :any, x86_64_linux:      "40ca185dba6800cb5c84e3c7438435ba31408916624e00878ac59309027d459a"
   end
 
   depends_on "rust" => :build

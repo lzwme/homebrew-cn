@@ -6,12 +6,13 @@ class Jose < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "ebeacbca6fbc189e7b40371c0e6645a1a01403df4be6c4f12f073e79381332dd"
-    sha256 cellar: :any, arm64_sequoia: "0fccea7942cf37c3ada334a0edaaec4344182cba2cde93c741688d8d260e479f"
-    sha256 cellar: :any, arm64_sonoma:  "2f2a2ba153eaa7a4a0a27be387117bc111f385baf2618c9febcb775a7909fecf"
-    sha256 cellar: :any, sonoma:        "38f781c8547b8e2a03c958b9365ba886b697832036afa8aa921c0061dc94aa69"
-    sha256               arm64_linux:   "c58b5053903cf8aa825273689558d7d028be30cad22c18f7075ee554f0e07839"
-    sha256               x86_64_linux:  "bad3165cfa1980a89b0dcaa066bb8f68ef172462b337853665d70dbdba20d716"
+    sha256 cellar: :any, arm64_golden_gate: "9899700488045583fb638a82d6f2eb518cb2f005aa67847f0cd620d9819c0508"
+    sha256 cellar: :any, arm64_tahoe:       "ebeacbca6fbc189e7b40371c0e6645a1a01403df4be6c4f12f073e79381332dd"
+    sha256 cellar: :any, arm64_sequoia:     "0fccea7942cf37c3ada334a0edaaec4344182cba2cde93c741688d8d260e479f"
+    sha256 cellar: :any, arm64_sonoma:      "2f2a2ba153eaa7a4a0a27be387117bc111f385baf2618c9febcb775a7909fecf"
+    sha256 cellar: :any, sonoma:            "38f781c8547b8e2a03c958b9365ba886b697832036afa8aa921c0061dc94aa69"
+    sha256               arm64_linux:       "c58b5053903cf8aa825273689558d7d028be30cad22c18f7075ee554f0e07839"
+    sha256               x86_64_linux:      "bad3165cfa1980a89b0dcaa066bb8f68ef172462b337853665d70dbdba20d716"
   end
 
   depends_on "meson" => :build

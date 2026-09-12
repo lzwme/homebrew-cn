@@ -11,12 +11,13 @@ class Cadical < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "77962818debd60f5d12591b3dc589f5ceec70f7fc3fca65b69cc145ba06aa76e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ecf44191d1ed10a61bb47ce009d91e520abc637fbcf3608004cc7cf463fe2271"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5632faabd6d7090f603752a52eea7ace1cc7f101694eef8f7a4eb8de66803d35"
-    sha256 cellar: :any_skip_relocation, sonoma:        "dd05c41f479807a91b72b33fc3f120d40d25e416e8f5adbbd988ee462865a85e"
-    sha256 cellar: :any,                 arm64_linux:   "d3c1c53581a8f3f802a062318f9a4b23e503fa0bf9846040d69dac729ca421c5"
-    sha256 cellar: :any,                 x86_64_linux:  "cef0be1bad5d61be121bd000090bf1639d2ac89279892278312b647742c38625"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "b601dd2d9a2ad7f7ac6586492eae8c37c43f7048b9bae4c545f737b9dc3c7c14"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "77962818debd60f5d12591b3dc589f5ceec70f7fc3fca65b69cc145ba06aa76e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "ecf44191d1ed10a61bb47ce009d91e520abc637fbcf3608004cc7cf463fe2271"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "5632faabd6d7090f603752a52eea7ace1cc7f101694eef8f7a4eb8de66803d35"
+    sha256 cellar: :any_skip_relocation, sonoma:            "dd05c41f479807a91b72b33fc3f120d40d25e416e8f5adbbd988ee462865a85e"
+    sha256 cellar: :any,                 arm64_linux:       "d3c1c53581a8f3f802a062318f9a4b23e503fa0bf9846040d69dac729ca421c5"
+    sha256 cellar: :any,                 x86_64_linux:      "cef0be1bad5d61be121bd000090bf1639d2ac89279892278312b647742c38625"
   end
 
   def install

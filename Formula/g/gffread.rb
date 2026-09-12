@@ -6,12 +6,13 @@ class Gffread < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fc146d732fa9d7ff8575941815ef0d06f3a57330da3a7ec9f18daa3c92f56e5f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fa002f0123c04ce5f9e4b24589d6487bad99a2381b739f01edee872c4e58a2cc"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "387db5e149ae11a55955833a00abd3d7b9310633a3887c94ca4ca073cd92cc7e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3a34d37615094a8ce4869a376bc42c594824b73e32f0dc37e7fa21eaaf8b5bd6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "30c6ff37eef9a58c0d9998112c59c8d0b9df539e1d8a6e054c195cae4db0bb34"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e89307727dd3730db1edd52ac69069225ebeb70b0cfbb4b0e117cbb67e40ab99"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "53e80b38bb19a7a2a5baa441e23c5a5a1a007e810159e8274fdc6561334bb23a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "fc146d732fa9d7ff8575941815ef0d06f3a57330da3a7ec9f18daa3c92f56e5f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "fa002f0123c04ce5f9e4b24589d6487bad99a2381b739f01edee872c4e58a2cc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "387db5e149ae11a55955833a00abd3d7b9310633a3887c94ca4ca073cd92cc7e"
+    sha256 cellar: :any_skip_relocation, sonoma:            "3a34d37615094a8ce4869a376bc42c594824b73e32f0dc37e7fa21eaaf8b5bd6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "30c6ff37eef9a58c0d9998112c59c8d0b9df539e1d8a6e054c195cae4db0bb34"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "e89307727dd3730db1edd52ac69069225ebeb70b0cfbb4b0e117cbb67e40ab99"
   end
 
   def install

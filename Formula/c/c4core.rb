@@ -6,12 +6,13 @@ class C4core < Formula
   license all_of: ["MIT", "BSL-1.0"]
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "214516874ec203bbc26aefa4a3d0619deebf919cb7914ef04a5655e8ad918769"
-    sha256 cellar: :any, arm64_sequoia: "7e1ca65706f1d8e07a95ea9b897c6a93592d84407fd0333e453a8d73f056b622"
-    sha256 cellar: :any, arm64_sonoma:  "86dda2e496dc32b641864e460cbc42ea3694edcc493e0c26a1ff61b9bcb86ac4"
-    sha256 cellar: :any, sonoma:        "b9b589a2523704c42236df1d0df97400cdbc067477247d2bb7522367ea19b8f7"
-    sha256 cellar: :any, arm64_linux:   "4987d9a3cc1551650b8a3ffc4d252f582386815d87f4da38064f1836e75cdd07"
-    sha256 cellar: :any, x86_64_linux:  "5a6877c90df1d27cb401617fca6adcfaa330bb5c6c99dc53e753c9ab12e803c9"
+    sha256 cellar: :any, arm64_golden_gate: "3742f1c853e0f626fc5a3bd6fad698d1ddec47a8195b8f38e01ede4cecab9057"
+    sha256 cellar: :any, arm64_tahoe:       "214516874ec203bbc26aefa4a3d0619deebf919cb7914ef04a5655e8ad918769"
+    sha256 cellar: :any, arm64_sequoia:     "7e1ca65706f1d8e07a95ea9b897c6a93592d84407fd0333e453a8d73f056b622"
+    sha256 cellar: :any, arm64_sonoma:      "86dda2e496dc32b641864e460cbc42ea3694edcc493e0c26a1ff61b9bcb86ac4"
+    sha256 cellar: :any, sonoma:            "b9b589a2523704c42236df1d0df97400cdbc067477247d2bb7522367ea19b8f7"
+    sha256 cellar: :any, arm64_linux:       "4987d9a3cc1551650b8a3ffc4d252f582386815d87f4da38064f1836e75cdd07"
+    sha256 cellar: :any, x86_64_linux:      "5a6877c90df1d27cb401617fca6adcfaa330bb5c6c99dc53e753c9ab12e803c9"
   end
 
   depends_on "cmake" => [:build, :test]

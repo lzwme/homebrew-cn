@@ -7,12 +7,13 @@ class Zapp < Formula
   head "https://github.com/zsa/zapp.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cf12b1917c4f687265a2580e843e32c4bc7bfb3e2c29ed6346b4ab589a8dec46"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "17f180e36973b4ea681b14cef37c86876ed79a3523dc1f04b6ac8ca5d36dbf6c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2e57e4d2c586450b0de0a96738dcdc280411574b9ee55047ea64631b6886376e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c2dd6eb80036e4aecf309c38a18475ac2d2ed931c96e4d8bb457f96c85a371c1"
-    sha256 cellar: :any,                 arm64_linux:   "c95f70065216867a13ea10d6da33f4e0de4e1a12fdd9bd0acdf818258bfccddf"
-    sha256 cellar: :any,                 x86_64_linux:  "7b33fbd7deea1277ea88ed009cd7e926d83d2f1a1f3fb0d0bc39fbe4d293d65b"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "cffc768cd3cc68b0e858eca0de5c6b550cb0a7cbba15ab46689d18573b798ceb"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "cf12b1917c4f687265a2580e843e32c4bc7bfb3e2c29ed6346b4ab589a8dec46"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "17f180e36973b4ea681b14cef37c86876ed79a3523dc1f04b6ac8ca5d36dbf6c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "2e57e4d2c586450b0de0a96738dcdc280411574b9ee55047ea64631b6886376e"
+    sha256 cellar: :any_skip_relocation, sonoma:            "c2dd6eb80036e4aecf309c38a18475ac2d2ed931c96e4d8bb457f96c85a371c1"
+    sha256 cellar: :any,                 arm64_linux:       "c95f70065216867a13ea10d6da33f4e0de4e1a12fdd9bd0acdf818258bfccddf"
+    sha256 cellar: :any,                 x86_64_linux:      "7b33fbd7deea1277ea88ed009cd7e926d83d2f1a1f3fb0d0bc39fbe4d293d65b"
   end
 
   depends_on "rust" => :build

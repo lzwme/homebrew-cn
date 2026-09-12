@@ -1,8 +1,8 @@
 class Cdo < Formula
   desc "Climate Data Operators"
   homepage "https://code.mpimet.mpg.de/projects/cdo"
-  url "https://code.mpimet.mpg.de/attachments/download/30224/cdo-2.6.3.tar.gz"
-  sha256 "889ece29314b48cbf47ba14ab5f1779886f128767f6d22dfcc7fad1e62f2d017"
+  url "https://code.mpimet.mpg.de/attachments/download/30242/cdo-2.6.4.tar.gz"
+  sha256 "988d94f80d723506bd061fbdfecdce2412afab37f7b5cf01a379a458a8799234"
   license "BSD-3-Clause"
 
   livecheck do
@@ -13,12 +13,11 @@ class Cdo < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "a75356e92082bf15dd5e2a34ecdaa76ce90f685ed26cc8d4d5274b6a9afad23d"
-    sha256 cellar: :any, arm64_sequoia: "21b3817ed37b85eb083c66446513f7723339e08b756d6bf2fe6f4e22f7495f27"
-    sha256 cellar: :any, arm64_sonoma:  "aba61de8c396d53047b463da5cbb5b6b5062e81b1779962e2e128d0fa82ca21b"
-    sha256 cellar: :any, sonoma:        "7afda5a6b4cf1edb5985368a5a625e5123b3f247e3e89ce3c7622596ef962ae8"
-    sha256 cellar: :any, arm64_linux:   "052eae77c40f99aabb13d462b4587146af8cae3ad8f8544b88a61695fdb0f60c"
-    sha256 cellar: :any, x86_64_linux:  "3aa04c919529653869e71c6a8847380fd15303164af778f281110d8bff34cc88"
+    sha256 cellar: :any, arm64_golden_gate: "028dfda340b9dc975ca5d14a332086fb98ea33bafaffbce09a772877592ade93"
+    sha256 cellar: :any, arm64_tahoe:       "00530ff190de86b4f6e32b3e6a29797947867cf8e1d6b3526bb09abd298ea122"
+    sha256 cellar: :any, arm64_sequoia:     "06e524ffe61fc719101d2f8d1fa5598faf23a5fb4b084a26e49cca70b5423eb3"
+    sha256 cellar: :any, arm64_linux:       "19326f4488f7dc5132a0df4fd0b86cde33eb9f296c8f2cd3c3bea4784f7549de"
+    sha256 cellar: :any, x86_64_linux:      "5bc4c1a94be8dfe1426a777dd7ff37b89cd3a2330a7769fbd3464f0d22450321"
   end
 
   depends_on "eccodes"

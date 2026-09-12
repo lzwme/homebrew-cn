@@ -24,8 +24,6 @@ class Docker < Formula
   depends_on "go" => :build
   depends_on "go-md2man" => :build
 
-  conflicts_with cask: "docker-desktop"
-
   deny_network_access!
 
   def install

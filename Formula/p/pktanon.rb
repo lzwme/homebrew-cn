@@ -15,14 +15,15 @@ class Pktanon < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "d90ddd6a6904fe38ba56eb87fc3b31c29cf19e4f67f3251245cb8ca8aa072c8e"
-    sha256 cellar: :any,                 arm64_sequoia: "44134c55be8a09ccfa54203ccf2ce297df8c8a76e4ef3c94040a523c0bf50cda"
-    sha256 cellar: :any,                 arm64_sonoma:  "2cbb5ed4c7c0e22a3de3025fe12860026c7b8264a08374c4f662467ab91187f3"
-    sha256 cellar: :any,                 arm64_ventura: "0016600c5e396a07b502fe6060b8e83ad0659479a433e4baf7b0d1a3afba27eb"
-    sha256 cellar: :any,                 sonoma:        "202a34eac518440e7d191d05e083a66a424ba49e1df4bca38f83175ca6eafab8"
-    sha256 cellar: :any,                 ventura:       "af27c678d49a0928c17ee03cb2af56e3997ffa71c53efbb5edb9c2db3bab1491"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4977778371998ed8200618874c1897db9733812e2a7aeeafcae134353fd8e88b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a169dd1f2a8226cb31c4039f5a34e62c2077d9667da21f4f6c9a23a7198ca852"
+    sha256 cellar: :any,                 arm64_golden_gate: "74b43a4466ab6dc21de7a4fac7a6ab08922fef150af5ce6cbda592f0b9e732af"
+    sha256 cellar: :any,                 arm64_tahoe:       "d90ddd6a6904fe38ba56eb87fc3b31c29cf19e4f67f3251245cb8ca8aa072c8e"
+    sha256 cellar: :any,                 arm64_sequoia:     "44134c55be8a09ccfa54203ccf2ce297df8c8a76e4ef3c94040a523c0bf50cda"
+    sha256 cellar: :any,                 arm64_sonoma:      "2cbb5ed4c7c0e22a3de3025fe12860026c7b8264a08374c4f662467ab91187f3"
+    sha256 cellar: :any,                 arm64_ventura:     "0016600c5e396a07b502fe6060b8e83ad0659479a433e4baf7b0d1a3afba27eb"
+    sha256 cellar: :any,                 sonoma:            "202a34eac518440e7d191d05e083a66a424ba49e1df4bca38f83175ca6eafab8"
+    sha256 cellar: :any,                 ventura:           "af27c678d49a0928c17ee03cb2af56e3997ffa71c53efbb5edb9c2db3bab1491"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "4977778371998ed8200618874c1897db9733812e2a7aeeafcae134353fd8e88b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "a169dd1f2a8226cb31c4039f5a34e62c2077d9667da21f4f6c9a23a7198ca852"
   end
 
   depends_on "boost" => :build

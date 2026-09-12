@@ -7,14 +7,15 @@ class Cddlib < Formula
   version_scheme 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "d689cf16077c6e02f851c4d2a45b73539c9ad2eab766ab75cbf3ab7c21b50267"
-    sha256 cellar: :any,                 arm64_sequoia: "ac504ee11eb267b9968a1ea970356608880054457bfebd24f18820b1dc6010a1"
-    sha256 cellar: :any,                 arm64_sonoma:  "afc609fa9a3560208e7441ad073a6959aa9f474483016b8aa5be9aef8a65ab0b"
-    sha256 cellar: :any,                 arm64_ventura: "368d7e7af37feb06abebe16bebd54583353543abe5be0d57290c9f9ae96e3bbb"
-    sha256 cellar: :any,                 sonoma:        "e202144c2c75c4e40345c13eb02b22ea80fe6177b91fd5bfd04ad5546f19c351"
-    sha256 cellar: :any,                 ventura:       "24fc8bc926b2943d0ef8b447a76cc4d0facbd52a4e9691b20272b748b272484e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "30e583fcfb964d44dbad623186b1fe4e5376711d0b911bcc3ece78148878db07"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ebc67a9e27992e7053430117534a76f2fce8ec8f91aad21418bc85bbdadd8fad"
+    sha256 cellar: :any,                 arm64_golden_gate: "e822213fc63d4ae0efed53d193612b215e42c4d0bb2c7727175d07f86856df88"
+    sha256 cellar: :any,                 arm64_tahoe:       "d689cf16077c6e02f851c4d2a45b73539c9ad2eab766ab75cbf3ab7c21b50267"
+    sha256 cellar: :any,                 arm64_sequoia:     "ac504ee11eb267b9968a1ea970356608880054457bfebd24f18820b1dc6010a1"
+    sha256 cellar: :any,                 arm64_sonoma:      "afc609fa9a3560208e7441ad073a6959aa9f474483016b8aa5be9aef8a65ab0b"
+    sha256 cellar: :any,                 arm64_ventura:     "368d7e7af37feb06abebe16bebd54583353543abe5be0d57290c9f9ae96e3bbb"
+    sha256 cellar: :any,                 sonoma:            "e202144c2c75c4e40345c13eb02b22ea80fe6177b91fd5bfd04ad5546f19c351"
+    sha256 cellar: :any,                 ventura:           "24fc8bc926b2943d0ef8b447a76cc4d0facbd52a4e9691b20272b748b272484e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "30e583fcfb964d44dbad623186b1fe4e5376711d0b911bcc3ece78148878db07"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "ebc67a9e27992e7053430117534a76f2fce8ec8f91aad21418bc85bbdadd8fad"
   end
 
   # Regenerate `configure` to avoid `-flat_namespace` bug.

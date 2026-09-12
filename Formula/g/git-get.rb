@@ -7,12 +7,13 @@ class GitGet < Formula
   head "https://github.com/grdl/git-get.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "464f062000fe3f6e5525d2a5f0394b7b003a2f193a8312ffa3cdf2761223d754"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "464f062000fe3f6e5525d2a5f0394b7b003a2f193a8312ffa3cdf2761223d754"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "464f062000fe3f6e5525d2a5f0394b7b003a2f193a8312ffa3cdf2761223d754"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2c5a8f16dbdc56754b29b1d7d2f0d232726cf5edad2f50d73d9d0e300426e173"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c4c8ef23f41d2c8579c2ac1c4c8add8a7b5c8019c6fc8830ae616c8330e7ca98"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "56d77d08cf62f685e0c1084ee9f79a80b67464ebb51d2e16a6ccab0189e08fc8"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "f031c8de3addfe7bdc88c768211f2578e28d943c2d289d9515047c86b4f852c3"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "464f062000fe3f6e5525d2a5f0394b7b003a2f193a8312ffa3cdf2761223d754"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "464f062000fe3f6e5525d2a5f0394b7b003a2f193a8312ffa3cdf2761223d754"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "464f062000fe3f6e5525d2a5f0394b7b003a2f193a8312ffa3cdf2761223d754"
+    sha256 cellar: :any_skip_relocation, sonoma:            "2c5a8f16dbdc56754b29b1d7d2f0d232726cf5edad2f50d73d9d0e300426e173"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "c4c8ef23f41d2c8579c2ac1c4c8add8a7b5c8019c6fc8830ae616c8330e7ca98"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "56d77d08cf62f685e0c1084ee9f79a80b67464ebb51d2e16a6ccab0189e08fc8"
   end
 
   depends_on "go" => :build

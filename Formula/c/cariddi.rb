@@ -7,12 +7,13 @@ class Cariddi < Formula
   head "https://github.com/edoardottt/cariddi.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f556c527c702d41a7afff38b79ab305eb476c78ebdc461e70d0023b5bae2f9c8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f556c527c702d41a7afff38b79ab305eb476c78ebdc461e70d0023b5bae2f9c8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f556c527c702d41a7afff38b79ab305eb476c78ebdc461e70d0023b5bae2f9c8"
-    sha256 cellar: :any_skip_relocation, sonoma:        "40006b92d08b3aca057d49d04fb850dbdffde802eeaa24f8a12875ac1ab10079"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "04ccc2f10cd2316b1f5c391056987f1d8cd80bef0c48e6f98744017569319abc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "819cc7c9a7663628fa0b8a68fd63fe4f308b52b914ecebb5443263be13d1cf4a"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "27681c82372b67c46f629d614bae9d21b067948f9851bcef8cf414153eaefcf7"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "f556c527c702d41a7afff38b79ab305eb476c78ebdc461e70d0023b5bae2f9c8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "f556c527c702d41a7afff38b79ab305eb476c78ebdc461e70d0023b5bae2f9c8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "f556c527c702d41a7afff38b79ab305eb476c78ebdc461e70d0023b5bae2f9c8"
+    sha256 cellar: :any_skip_relocation, sonoma:            "40006b92d08b3aca057d49d04fb850dbdffde802eeaa24f8a12875ac1ab10079"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "04ccc2f10cd2316b1f5c391056987f1d8cd80bef0c48e6f98744017569319abc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "819cc7c9a7663628fa0b8a68fd63fe4f308b52b914ecebb5443263be13d1cf4a"
   end
 
   depends_on "go" => :build

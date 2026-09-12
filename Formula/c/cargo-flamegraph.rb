@@ -7,12 +7,13 @@ class CargoFlamegraph < Formula
   head "https://github.com/flamegraph-rs/flamegraph.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "83f571804c08bc5875bcea7ee3ca17180261ff3040d254d41ee2e50fb6b40578"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f2c8c1c968f4adc1c53ca33c7f2894c242721d68570c840ef92e7d95436c9c1c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "feac145cef98a133277c5c3257c6fff74ae69805e5963036fae153616dda0d74"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b59194e6c7eb2496a7c4e3d09cbc8d3e13f53d6241c1488d86ee46e7f64e8b6d"
-    sha256 cellar: :any,                 arm64_linux:   "80f233590788ec79d0c62c286d2497e6c2b64a68419b17097fa253cd2bfa56db"
-    sha256 cellar: :any,                 x86_64_linux:  "fad30f85913415c69b2a4fe88318374219b306195fc82fa98ef51faf1d18a232"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "ecb3adfc29b75d2ea6d888aa299a3b1971c1885bbccc07593b70ddc21a501f9d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "83f571804c08bc5875bcea7ee3ca17180261ff3040d254d41ee2e50fb6b40578"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "f2c8c1c968f4adc1c53ca33c7f2894c242721d68570c840ef92e7d95436c9c1c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "feac145cef98a133277c5c3257c6fff74ae69805e5963036fae153616dda0d74"
+    sha256 cellar: :any_skip_relocation, sonoma:            "b59194e6c7eb2496a7c4e3d09cbc8d3e13f53d6241c1488d86ee46e7f64e8b6d"
+    sha256 cellar: :any,                 arm64_linux:       "80f233590788ec79d0c62c286d2497e6c2b64a68419b17097fa253cd2bfa56db"
+    sha256 cellar: :any,                 x86_64_linux:      "fad30f85913415c69b2a4fe88318374219b306195fc82fa98ef51faf1d18a232"
   end
 
   depends_on "rust" => :build
@@ -27,7 +28,7 @@ class CargoFlamegraph < Formula
   test do
     # Show that we can use a different toolchain than the one provided by the `rust` formula.
     # https://github.com/Homebrew/homebrew-core/pull/134074#pullrequestreview-1484979359
-    ENV.prepend_path "PATH", Formula["rustup"].bin
+    ENV.prepend_path "PATH", formula_opt_bin("rustup")
     system "rustup", "set", "profile", "minimal"
     system "rustup", "default", "beta"
 

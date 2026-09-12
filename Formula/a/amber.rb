@@ -6,12 +6,13 @@ class Amber < Formula
   license "MIT"
 
   bottle do
-    sha256 arm64_tahoe:   "6e720185a4c012a566b4399e728cbd43553a6eb27541c48c77b8552b8e98e37b"
-    sha256 arm64_sequoia: "5ed58ee7e3f2883971712b2cf058e8717a13dcf00a40bbb5ce74a3d75f6896df"
-    sha256 arm64_sonoma:  "07294ec9c0106cf3efc94f91f0cdccdae25288cdcb05627785f4fba5d41d5720"
-    sha256 sonoma:        "03a76a11085d2a54a377f4c0980e5c94e6dedb58377a1ff63dbdab005c4876d6"
-    sha256 arm64_linux:   "65fb21b950336bf46af9f6edd3255ee2adc62448c572911fb7cb429efa80c0e6"
-    sha256 x86_64_linux:  "de9d850afa9b038d4ccfe909feb126f6e1ca950ec454232a31f052696518ccee"
+    sha256 arm64_golden_gate: "001ad470f30e4ea89ce0d85887199bbe3835faaf6bbfbb7c63c627e26d6d1600"
+    sha256 arm64_tahoe:       "6e720185a4c012a566b4399e728cbd43553a6eb27541c48c77b8552b8e98e37b"
+    sha256 arm64_sequoia:     "5ed58ee7e3f2883971712b2cf058e8717a13dcf00a40bbb5ce74a3d75f6896df"
+    sha256 arm64_sonoma:      "07294ec9c0106cf3efc94f91f0cdccdae25288cdcb05627785f4fba5d41d5720"
+    sha256 sonoma:            "03a76a11085d2a54a377f4c0980e5c94e6dedb58377a1ff63dbdab005c4876d6"
+    sha256 arm64_linux:       "65fb21b950336bf46af9f6edd3255ee2adc62448c572911fb7cb429efa80c0e6"
+    sha256 x86_64_linux:      "de9d850afa9b038d4ccfe909feb126f6e1ca950ec454232a31f052696518ccee"
   end
 
   depends_on "bdw-gc"

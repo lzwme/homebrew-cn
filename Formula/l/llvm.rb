@@ -16,6 +16,14 @@ class Llvm < Formula
       type :unofficial
       resolves "https://github.com/llvm/llvm-project/pull/111397"
     end
+
+    # Backport fix for macOS 27 SDK
+    patch do
+      url "https://github.com/llvm/llvm-project/commit/b8007a8e4020b8bca2b12e941660e10bf5bf6716.patch?full_index=1"
+      sha256 "e41e300eb6f5cca9172ab344e572c3fb24f0d05885ae23dd7cb4f9c2528839f7"
+      type :backport
+      resolves "https://github.com/llvm/llvm-project/pull/222721"
+    end
   end
 
   livecheck do
@@ -24,12 +32,12 @@ class Llvm < Formula
   end
 
   bottle do
-    sha256               arm64_golden_gate: "42fd0db82fec1ecd34738eeefc39a61457821be573bc7064ff9a221cc9af3981"
-    sha256               arm64_tahoe:       "b61917f6bddaf4441ef24161f9c6d0440d9f184fb5a3cc0707c6854e16e10e65"
-    sha256               arm64_sequoia:     "27cb40c1b42c772d41a887104bfee8f468639bbdd0cee67d3b94e4552e9d8b3c"
-    sha256               arm64_sonoma:      "47fe8cd50b330cd9f309faf278d7063799a48dbdbb38fd755b034519cba762ee"
-    sha256 cellar: :any, arm64_linux:       "59e0325dbb71cd6a2b177368e973f3cff40ce36eb54f31b93fd3aec3a0b13812"
-    sha256 cellar: :any, x86_64_linux:      "c55c9b33bfa8ad931ae621ae3c42091cc2528d4b09b5de7c1dc70864680bf9de"
+    rebuild 1
+    sha256               arm64_golden_gate: "c42a2ea5f0e065b50e2b121f112fb9f736b30d1bf09432f087f55260e6dee445"
+    sha256               arm64_tahoe:       "6542e45742b50f455290cb54dcb6a1a91098bc2234393855569860676f4035ee"
+    sha256               arm64_sequoia:     "d987cff5f1a77fb8c8f2f61f7097fef675c5ab3a26db67e3eeb1f1a0e2d83231"
+    sha256 cellar: :any, arm64_linux:       "309680eb98c68b7c3b4952b07dc3ba9705104b075dce57da3a6440c782064036"
+    sha256 cellar: :any, x86_64_linux:      "2e66ffbfb5734e6f7d29897e6d1f1a44d92fd6a518dbbf526b9890075e252c46"
   end
 
   keg_only :provided_by_macos
@@ -55,9 +63,7 @@ class Llvm < Formula
     depends_on "zlib-ng-compat"
   end
 
-  def clang_config_file_dir
-    etc/"clang"
-  end
+  def clang_config_file_dir = etc/"clang"
 
   def install
     # The clang bindings need a little help finding keg-only libclang.
@@ -228,10 +234,10 @@ class Llvm < Formula
 
       # We build the basic parts of a toolchain to profile.
       # The extra targets on macOS are part of a default Compiler-RT build.
-      extra_args = [
-        "-DLLVM_TARGETS_TO_BUILD=Native#{";AArch64;ARM;X86" if OS.mac?}",
-        "-DLLVM_ENABLE_PROJECTS=clang;lld",
-        "-DLLVM_ENABLE_RUNTIMES=compiler-rt",
+      extra_args = %W[
+        -DLLVM_TARGETS_TO_BUILD=Native#{";AArch64;ARM;X86" if OS.mac?}
+        -DLLVM_ENABLE_PROJECTS=clang;lld
+        -DLLVM_ENABLE_RUNTIMES=compiler-rt
       ]
 
       # Our stage1 compiler includes the minimum necessary to bootstrap.
@@ -377,11 +383,9 @@ class Llvm < Formula
     end
 
     # Now, we can build.
-    mkdir llvmpath/"build" do
-      system "cmake", "-G", "Ninja", "..", *(std_cmake_args + args)
-      system "cmake", "--build", "."
-      system "cmake", "--build", ".", "--target", "install"
-    end
+    system "cmake", "-S", llvmpath, "-B", "build", "-G", "Ninja", *args, *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--build", "build", "--target", "install"
 
     clang_config_file_dir.mkpath
     touch clang_config_file_dir/".keepme"

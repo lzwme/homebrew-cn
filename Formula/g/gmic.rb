@@ -12,11 +12,12 @@ class Gmic < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "ff5e0846f7e56974765a1024da244a8fb2fd69abb69e536425b18dc6f22a9ac2"
-    sha256 cellar: :any, arm64_sequoia: "3213641b846514fbd28d46eb3f3a8eff179089a29eab78d4f3bff742c100ca65"
-    sha256 cellar: :any, arm64_sonoma:  "912d93075511e67ea756e0eaf2f8cf46f40476758c0384ec9bb41fc2387f462d"
-    sha256 cellar: :any, arm64_linux:   "f530c7ddb913ee3f988a3ec83cb346740ddd072f06f9bd0825b4e752468fba30"
-    sha256 cellar: :any, x86_64_linux:  "4d295bd6a34d698e66b10d713bfbde59104907c81239083b3d6294d7daf8fb91"
+    sha256 cellar: :any, arm64_golden_gate: "886dbbc3a903994f65173e57769115603752e7b83995d3d38c1964edf54f7b6e"
+    sha256 cellar: :any, arm64_tahoe:       "ff5e0846f7e56974765a1024da244a8fb2fd69abb69e536425b18dc6f22a9ac2"
+    sha256 cellar: :any, arm64_sequoia:     "3213641b846514fbd28d46eb3f3a8eff179089a29eab78d4f3bff742c100ca65"
+    sha256 cellar: :any, arm64_sonoma:      "912d93075511e67ea756e0eaf2f8cf46f40476758c0384ec9bb41fc2387f462d"
+    sha256 cellar: :any, arm64_linux:       "f530c7ddb913ee3f988a3ec83cb346740ddd072f06f9bd0825b4e752468fba30"
+    sha256 cellar: :any, x86_64_linux:      "4d295bd6a34d698e66b10d713bfbde59104907c81239083b3d6294d7daf8fb91"
   end
 
   depends_on "cmake" => :build

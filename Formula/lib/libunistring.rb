@@ -1,7 +1,7 @@
 class Libunistring < Formula
   desc "C string library for manipulating Unicode strings"
   homepage "https://www.gnu.org/software/libunistring/"
-  url "https://ftpmirror.gnu.org/gnu/libunistring/libunistring-1.4.2.tar.gz"
+  url "https://ftpmirror.gnu.org/libunistring/libunistring-1.4.2.tar.gz"
   mirror "https://ftp.gnu.org/gnu/libunistring/libunistring-1.4.2.tar.gz"
   mirror "http://ftp.gnu.org/gnu/libunistring/libunistring-1.4.2.tar.gz"
   sha256 "e82664b170064e62331962126b259d452d53b227bb4a93ab20040d846fec01d8"

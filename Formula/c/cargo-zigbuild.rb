@@ -28,7 +28,7 @@ class CargoZigbuild < Formula
     ENV.delete "CPATH"
     ENV.delete "RUSTFLAGS"
 
-    ENV.prepend_path "PATH", Formula["rustup"].bin
+    ENV.prepend_path "PATH", formula_opt_bin("rustup")
     system "rustup", "set", "profile", "minimal"
     system "rustup", "default", "beta"
     system "rustup", "target", "add", "aarch64-unknown-linux-gnu"

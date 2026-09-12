@@ -7,12 +7,13 @@ class Zvbi < Formula
   head "https://github.com/zapping-vbi/zvbi.git", branch: "main"
 
   bottle do
-    sha256 arm64_tahoe:   "7a8505a7d69d87fba9b5ed97148c63c46fd02f9860741d82db56eb9dc8420f29"
-    sha256 arm64_sequoia: "32d17a82f7430faec2967ac3363ce754eaa78725982426e5e5d8673e3a16262a"
-    sha256 arm64_sonoma:  "66900bf5508d5ef6e2e174f32c9c3c6a90126e597efa06649bb320c695ff91c6"
-    sha256 sonoma:        "be8e1fd4322262923fa4d6b522f89885459e43744cb651f711f6dab44eae6fae"
-    sha256 arm64_linux:   "0690cf0aa3367d0a12050b956a0c70c4c58b3a28f6899590db02b97fdcc1606f"
-    sha256 x86_64_linux:  "cabf02e624c57195717629973f1dd6f25e22d5b3ca831a1a0e1a4e6a9c5c7521"
+    sha256 arm64_golden_gate: "206d7eed28649dc145848f43c4cbec67b6ad3d6847c23767378405e6fbaf2fca"
+    sha256 arm64_tahoe:       "7a8505a7d69d87fba9b5ed97148c63c46fd02f9860741d82db56eb9dc8420f29"
+    sha256 arm64_sequoia:     "32d17a82f7430faec2967ac3363ce754eaa78725982426e5e5d8673e3a16262a"
+    sha256 arm64_sonoma:      "66900bf5508d5ef6e2e174f32c9c3c6a90126e597efa06649bb320c695ff91c6"
+    sha256 sonoma:            "be8e1fd4322262923fa4d6b522f89885459e43744cb651f711f6dab44eae6fae"
+    sha256 arm64_linux:       "0690cf0aa3367d0a12050b956a0c70c4c58b3a28f6899590db02b97fdcc1606f"
+    sha256 x86_64_linux:      "cabf02e624c57195717629973f1dd6f25e22d5b3ca831a1a0e1a4e6a9c5c7521"
   end
 
   depends_on "autoconf" => :build

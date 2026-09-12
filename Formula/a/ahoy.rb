@@ -7,11 +7,12 @@ class Ahoy < Formula
   head "https://github.com/ahoy-cli/ahoy.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cfec4320a87043cb68e06c916110ae8d5da264259cf6c9f950c8afb0e1790644"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cfec4320a87043cb68e06c916110ae8d5da264259cf6c9f950c8afb0e1790644"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cfec4320a87043cb68e06c916110ae8d5da264259cf6c9f950c8afb0e1790644"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "74e509a00183d99a75a3495a7d18497bf6d8c8781d8e15c599bc33f6ec91e512"
-    sha256 cellar: :any,                 x86_64_linux:  "2be13b1292133e38d8d21ab8f29484399bb1ebcf61145ea23d17b9f5e3cad862"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "cfec4320a87043cb68e06c916110ae8d5da264259cf6c9f950c8afb0e1790644"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "cfec4320a87043cb68e06c916110ae8d5da264259cf6c9f950c8afb0e1790644"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "cfec4320a87043cb68e06c916110ae8d5da264259cf6c9f950c8afb0e1790644"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "cfec4320a87043cb68e06c916110ae8d5da264259cf6c9f950c8afb0e1790644"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "74e509a00183d99a75a3495a7d18497bf6d8c8781d8e15c599bc33f6ec91e512"
+    sha256 cellar: :any,                 x86_64_linux:      "2be13b1292133e38d8d21ab8f29484399bb1ebcf61145ea23d17b9f5e3cad862"
   end
 
   depends_on "go" => :build

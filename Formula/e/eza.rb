@@ -7,12 +7,13 @@ class Eza < Formula
   head "https://github.com/eza-community/eza.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "49b4351a61ebedbe102726fadb3638998cbfd98a81cb1a5f0e4fd0f1be30444e"
-    sha256 cellar: :any, arm64_sequoia: "94b3b640649a5e89a6f75c15fa2fa66098cf78c4faf742a6d43771fe377f31a0"
-    sha256 cellar: :any, arm64_sonoma:  "c40aba3602dda7fb2327bf8401f9c4b234e2f87a02c066fafb49f917f8cf1a6b"
-    sha256 cellar: :any, sonoma:        "63b565307886da9465e9c8744e112c1872da74cf2a3e5723c38c49f49d5701d9"
-    sha256 cellar: :any, arm64_linux:   "401228759a123919e80302eed23d749f59ced13a5ddd964343ef4c13029f9d2e"
-    sha256 cellar: :any, x86_64_linux:  "246d2197c53ed155fa308c1da349f0c948f3a803642d0e40542abe769ba81894"
+    sha256 cellar: :any, arm64_golden_gate: "acc695dd30baf5b466a5d62ec8a48aebb667e2614124ad4d2c2d9f6e431e495f"
+    sha256 cellar: :any, arm64_tahoe:       "49b4351a61ebedbe102726fadb3638998cbfd98a81cb1a5f0e4fd0f1be30444e"
+    sha256 cellar: :any, arm64_sequoia:     "94b3b640649a5e89a6f75c15fa2fa66098cf78c4faf742a6d43771fe377f31a0"
+    sha256 cellar: :any, arm64_sonoma:      "c40aba3602dda7fb2327bf8401f9c4b234e2f87a02c066fafb49f917f8cf1a6b"
+    sha256 cellar: :any, sonoma:            "63b565307886da9465e9c8744e112c1872da74cf2a3e5723c38c49f49d5701d9"
+    sha256 cellar: :any, arm64_linux:       "401228759a123919e80302eed23d749f59ced13a5ddd964343ef4c13029f9d2e"
+    sha256 cellar: :any, x86_64_linux:      "246d2197c53ed155fa308c1da349f0c948f3a803642d0e40542abe769ba81894"
   end
 
   depends_on "pandoc" => :build

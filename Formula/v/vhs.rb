@@ -7,11 +7,12 @@ class Vhs < Formula
   head "https://github.com/charmbracelet/vhs.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7f4b297f4bbe869b45924b4e4ac84b1c4ba7db1fd5b1560e61abec5defacd21d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7f4b297f4bbe869b45924b4e4ac84b1c4ba7db1fd5b1560e61abec5defacd21d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7f4b297f4bbe869b45924b4e4ac84b1c4ba7db1fd5b1560e61abec5defacd21d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ceed6691fb055502effb55a5581ec0e6ffc6f0f0d999b2405b6ddc5e16595710"
-    sha256 cellar: :any,                 x86_64_linux:  "8544900316bc04ea71601dbdf463363bd8f03a7ad73d2815ef56789c6e40e0e4"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "818615eb8c161a288a8736e4530302a8a0b3a8e330610c750225fe5ea9a62f8a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "7f4b297f4bbe869b45924b4e4ac84b1c4ba7db1fd5b1560e61abec5defacd21d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "7f4b297f4bbe869b45924b4e4ac84b1c4ba7db1fd5b1560e61abec5defacd21d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "7f4b297f4bbe869b45924b4e4ac84b1c4ba7db1fd5b1560e61abec5defacd21d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "ceed6691fb055502effb55a5581ec0e6ffc6f0f0d999b2405b6ddc5e16595710"
+    sha256 cellar: :any,                 x86_64_linux:      "8544900316bc04ea71601dbdf463363bd8f03a7ad73d2815ef56789c6e40e0e4"
   end
 
   depends_on "go" => :build

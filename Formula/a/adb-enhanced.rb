@@ -8,12 +8,13 @@ class AdbEnhanced < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6d00176927b96d547a6579739834f8925e3ab4132eb898631f996bbf8c26dcdc"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f79edf6fa8a861ec1f19192e5f1d715ac8ad36ada265e6f49c0345b660635d35"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f284de36dc8dcd26df93a18b13d231ce59f9c66a2027fd6f5927a33112d87910"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d57ab3c3312007e97c629899ba51f2ddd8bbcb9d90269943521856f6abea04df"
-    sha256 cellar: :any,                 arm64_linux:   "5af0f291acf2fd43f30390911da70e9431b2346b7ad0464a9f44dd040fea6659"
-    sha256 cellar: :any,                 x86_64_linux:  "46ef7a3f5b7ef7b11bbdcd839c6bd5e3bec82436309203abe61145890e530898"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "bd6c0429e2dfb4b73c407de5b4b73dcb1be473b9e69196b4637ca48af355fd8a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "6d00176927b96d547a6579739834f8925e3ab4132eb898631f996bbf8c26dcdc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "f79edf6fa8a861ec1f19192e5f1d715ac8ad36ada265e6f49c0345b660635d35"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "f284de36dc8dcd26df93a18b13d231ce59f9c66a2027fd6f5927a33112d87910"
+    sha256 cellar: :any_skip_relocation, sonoma:            "d57ab3c3312007e97c629899ba51f2ddd8bbcb9d90269943521856f6abea04df"
+    sha256 cellar: :any,                 arm64_linux:       "5af0f291acf2fd43f30390911da70e9431b2346b7ad0464a9f44dd040fea6659"
+    sha256 cellar: :any,                 x86_64_linux:      "46ef7a3f5b7ef7b11bbdcd839c6bd5e3bec82436309203abe61145890e530898"
   end
 
   depends_on "python@3.14"

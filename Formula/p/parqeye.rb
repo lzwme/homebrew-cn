@@ -7,12 +7,13 @@ class Parqeye < Formula
   head "https://github.com/kaushiksrini/parqeye.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a0ca576b3be6ce10c5976c13636762b613d16e5027f98572d9ea929e49666e57"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5af5b8e308ae68a7b9905b3af1bf7d696e159f94c4cbf263d87e87c06fb682e0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f910d4ab0ee3bfb6ad00fcfc7316cd8332360215531510cf011bfdab5bcb29f4"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5148fda025624a9bdc164e1f98753b7955486a6c1daffdbc29d25aa011477971"
-    sha256 cellar: :any,                 arm64_linux:   "5fcb5d393a5694a69b84139a5f584cacef1851f14ddb55a7a71a908220616127"
-    sha256 cellar: :any,                 x86_64_linux:  "212e477be3a01fa865ef57d13974ce976551e358ad88e4e899ee75ec76cab640"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "5d7db1255db0d019682757be89fe0190b16a03b5d272a8f0199526eb4137844f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "a0ca576b3be6ce10c5976c13636762b613d16e5027f98572d9ea929e49666e57"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "5af5b8e308ae68a7b9905b3af1bf7d696e159f94c4cbf263d87e87c06fb682e0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "f910d4ab0ee3bfb6ad00fcfc7316cd8332360215531510cf011bfdab5bcb29f4"
+    sha256 cellar: :any_skip_relocation, sonoma:            "5148fda025624a9bdc164e1f98753b7955486a6c1daffdbc29d25aa011477971"
+    sha256 cellar: :any,                 arm64_linux:       "5fcb5d393a5694a69b84139a5f584cacef1851f14ddb55a7a71a908220616127"
+    sha256 cellar: :any,                 x86_64_linux:      "212e477be3a01fa865ef57d13974ce976551e358ad88e4e899ee75ec76cab640"
   end
 
   depends_on "rust" => :build

@@ -12,12 +12,13 @@ class Kvazaar < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "c5c12e32e6a313ca224723c9749e8f3be3e50af939f681bced612633dcf4ca53"
-    sha256 cellar: :any,                 arm64_sequoia: "99cc3733edfa5ed0f18da54e9cd91d6f27d8db93efd0f495d93c82209a945e3c"
-    sha256 cellar: :any,                 arm64_sonoma:  "a2fd0fe069d60a1ec75b8a460fe1739fb5177adcaad6b0e9e33d68ff57456fc9"
-    sha256 cellar: :any,                 sonoma:        "9e53260ba87411d8148b346835daba4c6c5e0cf5dc75875074c5aa129f57f88b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4c2a03b189d0cf04ba65181e7bf54f654443cc0289679f56a4f10dc675080597"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e018d21e4380d6d65485dd2873dc883e939372c668ad99b1cbf8d1b5ca8e6183"
+    sha256 cellar: :any,                 arm64_golden_gate: "acb64653a451b4fb8c614c45c12b8aae70073ba0c275dded8f2289ef385d730a"
+    sha256 cellar: :any,                 arm64_tahoe:       "c5c12e32e6a313ca224723c9749e8f3be3e50af939f681bced612633dcf4ca53"
+    sha256 cellar: :any,                 arm64_sequoia:     "99cc3733edfa5ed0f18da54e9cd91d6f27d8db93efd0f495d93c82209a945e3c"
+    sha256 cellar: :any,                 arm64_sonoma:      "a2fd0fe069d60a1ec75b8a460fe1739fb5177adcaad6b0e9e33d68ff57456fc9"
+    sha256 cellar: :any,                 sonoma:            "9e53260ba87411d8148b346835daba4c6c5e0cf5dc75875074c5aa129f57f88b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "4c2a03b189d0cf04ba65181e7bf54f654443cc0289679f56a4f10dc675080597"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "e018d21e4380d6d65485dd2873dc883e939372c668ad99b1cbf8d1b5ca8e6183"
   end
 
   depends_on "autoconf" => :build

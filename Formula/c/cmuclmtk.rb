@@ -6,18 +6,19 @@ class Cmuclmtk < Formula
   license "BSD-2-Clause"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:    "e382dbebb03c49d129bb2eacd23102d828d9814296bb751f275e2bd5cd4ac8e4"
-    sha256 cellar: :any,                 arm64_sequoia:  "17749777bf2cedd02ab511ce2bab36a69389ea9c1f0b03c8a92927e3e54a5fae"
-    sha256 cellar: :any,                 arm64_sonoma:   "1fe5f5fcb73a7580ae29500204bc6efb7073a5b9359dbadf0b045bc358de7697"
-    sha256 cellar: :any,                 arm64_ventura:  "5c31b85c5a4c5696e53b70dca952b11cd009b4c2755dd8339d1fde8b61921047"
-    sha256 cellar: :any,                 arm64_monterey: "6f336006d80dbcfce530db381fb28d6207953c9ba792f71c31f041b983b85c53"
-    sha256 cellar: :any,                 arm64_big_sur:  "d3069c3fbd0f41bdb0b3435b7b388f9e6051639421658663185bde9a449185b8"
-    sha256 cellar: :any,                 sonoma:         "1585ae5f93e266d9189c985072808f6731b1ce52c75cc58d2caf4c27ec9edf4f"
-    sha256 cellar: :any,                 ventura:        "a8e37d15ba21ee7acd391691ebf4f27b585ca9badde68492b828c1a218ef6799"
-    sha256 cellar: :any,                 monterey:       "0d6891a3cb5d5be6b4071bcf68a9e3449d9a79c37b4c660f1044bbc93ecafcfa"
-    sha256 cellar: :any,                 big_sur:        "e126c9d5de2e1f4e23d4fea7e8ac51c6fc2d4328a968c907879f4ea86524fbbc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "fbf62c45fadfecaf2d9cd51668c6ea132d904afe1e456f099f067427667b1284"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "708324bb6cf751c76f927c6a648416ee38012499dddfc80c4b2c50cf36431c4d"
+    sha256 cellar: :any,                 arm64_golden_gate: "ac8ae6a25e2e07744f4918f18109e363b9d0815afe81c38ebb8a8177acf55ebc"
+    sha256 cellar: :any,                 arm64_tahoe:       "e382dbebb03c49d129bb2eacd23102d828d9814296bb751f275e2bd5cd4ac8e4"
+    sha256 cellar: :any,                 arm64_sequoia:     "17749777bf2cedd02ab511ce2bab36a69389ea9c1f0b03c8a92927e3e54a5fae"
+    sha256 cellar: :any,                 arm64_sonoma:      "1fe5f5fcb73a7580ae29500204bc6efb7073a5b9359dbadf0b045bc358de7697"
+    sha256 cellar: :any,                 arm64_ventura:     "5c31b85c5a4c5696e53b70dca952b11cd009b4c2755dd8339d1fde8b61921047"
+    sha256 cellar: :any,                 arm64_monterey:    "6f336006d80dbcfce530db381fb28d6207953c9ba792f71c31f041b983b85c53"
+    sha256 cellar: :any,                 arm64_big_sur:     "d3069c3fbd0f41bdb0b3435b7b388f9e6051639421658663185bde9a449185b8"
+    sha256 cellar: :any,                 sonoma:            "1585ae5f93e266d9189c985072808f6731b1ce52c75cc58d2caf4c27ec9edf4f"
+    sha256 cellar: :any,                 ventura:           "a8e37d15ba21ee7acd391691ebf4f27b585ca9badde68492b828c1a218ef6799"
+    sha256 cellar: :any,                 monterey:          "0d6891a3cb5d5be6b4071bcf68a9e3449d9a79c37b4c660f1044bbc93ecafcfa"
+    sha256 cellar: :any,                 big_sur:           "e126c9d5de2e1f4e23d4fea7e8ac51c6fc2d4328a968c907879f4ea86524fbbc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "fbf62c45fadfecaf2d9cd51668c6ea132d904afe1e456f099f067427667b1284"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "708324bb6cf751c76f927c6a648416ee38012499dddfc80c4b2c50cf36431c4d"
   end
 
   deprecate! date: "2026-07-18", because: :unmaintained

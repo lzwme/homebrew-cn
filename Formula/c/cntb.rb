@@ -7,12 +7,13 @@ class Cntb < Formula
   head "https://github.com/contabo/cntb.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fbf45b52bdbb2a80706caeef375bf6e6cac182fded30afa9d2185e7e4f08cb62"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fbf45b52bdbb2a80706caeef375bf6e6cac182fded30afa9d2185e7e4f08cb62"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fbf45b52bdbb2a80706caeef375bf6e6cac182fded30afa9d2185e7e4f08cb62"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1afa303aee48e7714da700ecde5db5e81b9ca1a86e5948e5c5e200143d196414"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7745c696b2588c06d07a7a54bf6dc00ab80db307fabd7dcf316cbeb4c5b5e8be"
-    sha256 cellar: :any,                 x86_64_linux:  "36c0d68cfc3085230338ee2a35408a326c5f86b5516b33947ac7eb1e25688783"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "95c96d996d93acc1a75867d3a039f4764dc191d3bc8d39989a458f65ab78b759"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "fbf45b52bdbb2a80706caeef375bf6e6cac182fded30afa9d2185e7e4f08cb62"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "fbf45b52bdbb2a80706caeef375bf6e6cac182fded30afa9d2185e7e4f08cb62"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "fbf45b52bdbb2a80706caeef375bf6e6cac182fded30afa9d2185e7e4f08cb62"
+    sha256 cellar: :any_skip_relocation, sonoma:            "1afa303aee48e7714da700ecde5db5e81b9ca1a86e5948e5c5e200143d196414"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "7745c696b2588c06d07a7a54bf6dc00ab80db307fabd7dcf316cbeb4c5b5e8be"
+    sha256 cellar: :any,                 x86_64_linux:      "36c0d68cfc3085230338ee2a35408a326c5f86b5516b33947ac7eb1e25688783"
   end
 
   depends_on "go" => :build

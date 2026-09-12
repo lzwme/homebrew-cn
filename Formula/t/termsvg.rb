@@ -7,12 +7,13 @@ class Termsvg < Formula
   head "https://github.com/MrMarble/termsvg.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c59d436351d6dcc2f4d434e36d37a97a99abe9addb85da1d9d09c976c4580283"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c59d436351d6dcc2f4d434e36d37a97a99abe9addb85da1d9d09c976c4580283"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c59d436351d6dcc2f4d434e36d37a97a99abe9addb85da1d9d09c976c4580283"
-    sha256 cellar: :any_skip_relocation, sonoma:        "422ef93631effdc5c1a7bed5357c18c6125a0990823308049eff740d1f91746f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9392082eeb10b1f4c0f49d05ec2341bc7e7abd1c81a1a5f98ca1b3c10afbfccd"
-    sha256 cellar: :any,                 x86_64_linux:  "8a4ccbee12254ae5c77b6bbbbbc266948f8ca8b4b5c34fa8e4bc359f20cb5799"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "0e49fa029a5d52f615958bd4d1ee11be1dc0482b9e785fc7e27627ad5c4ce22a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "c59d436351d6dcc2f4d434e36d37a97a99abe9addb85da1d9d09c976c4580283"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "c59d436351d6dcc2f4d434e36d37a97a99abe9addb85da1d9d09c976c4580283"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "c59d436351d6dcc2f4d434e36d37a97a99abe9addb85da1d9d09c976c4580283"
+    sha256 cellar: :any_skip_relocation, sonoma:            "422ef93631effdc5c1a7bed5357c18c6125a0990823308049eff740d1f91746f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "9392082eeb10b1f4c0f49d05ec2341bc7e7abd1c81a1a5f98ca1b3c10afbfccd"
+    sha256 cellar: :any,                 x86_64_linux:      "8a4ccbee12254ae5c77b6bbbbbc266948f8ca8b4b5c34fa8e4bc359f20cb5799"
   end
 
   depends_on "go" => :build

@@ -8,12 +8,13 @@ class Helmfile < Formula
   head "https://github.com/helmfile/helmfile.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c7edd7bdd588781ae916bf7e7819891f6337a6707f93af65fc0101e872be6c3a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d1bbabb64300c8989862ab3a2eaf89ecb19471ab0e9ec2b29894505c1c73afbb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "65fe58a1a403630c16cf270265365ffa88499ffc9cddf97f938f1d90d9ce34e1"
-    sha256 cellar: :any_skip_relocation, sonoma:        "05b1db65b3174f1803332d7c67adbef7583fa12c7a83a69c517e5599e5085f2e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "20b898306ba40cd022fb69ef500394004da373fe0f36a45517596d21554a2f4b"
-    sha256 cellar: :any,                 x86_64_linux:  "1182ba0abc6bd4bd780040127c45a540e64d8d5e72865f30d7d18482e85484f4"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "bbb29e33330edcc0f861747104307fb553dd051b4bcced8925999ed97c668aa2"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "c7edd7bdd588781ae916bf7e7819891f6337a6707f93af65fc0101e872be6c3a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "d1bbabb64300c8989862ab3a2eaf89ecb19471ab0e9ec2b29894505c1c73afbb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "65fe58a1a403630c16cf270265365ffa88499ffc9cddf97f938f1d90d9ce34e1"
+    sha256 cellar: :any_skip_relocation, sonoma:            "05b1db65b3174f1803332d7c67adbef7583fa12c7a83a69c517e5599e5085f2e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "20b898306ba40cd022fb69ef500394004da373fe0f36a45517596d21554a2f4b"
+    sha256 cellar: :any,                 x86_64_linux:      "1182ba0abc6bd4bd780040127c45a540e64d8d5e72865f30d7d18482e85484f4"
   end
 
   depends_on "go" => :build

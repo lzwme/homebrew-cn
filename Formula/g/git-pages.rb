@@ -7,12 +7,13 @@ class GitPages < Formula
 
   bottle do
     rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "47884eb988b8c1f9f67b31f70019edb23cf062464f3f24decbab3033aaee5181"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "61dc595ab2e2c4ee6c9499e4c141563ecabd4b704822c16b485617572e7cb082"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b0a5bc464ffe4131cbaef9b9114994b1932023fdef5c09ef959dadea84af3a38"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2ca54050c1ce211edaf0cdee3bdd645dae7e06dfc48e5e552bffaa26e9f447d4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4570a841130d38a14b786237304933149a547aa519d74280ac1c2c06640cda18"
-    sha256 cellar: :any,                 x86_64_linux:  "c2804e9c8cebc738376f632c73cb9f85dc58a38a1d0435f2ad6838c778cf74ff"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "575aa09574403fffff43d4d97d87e0c9c7ddf561e410209e1205ed54caa26538"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "47884eb988b8c1f9f67b31f70019edb23cf062464f3f24decbab3033aaee5181"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "61dc595ab2e2c4ee6c9499e4c141563ecabd4b704822c16b485617572e7cb082"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "b0a5bc464ffe4131cbaef9b9114994b1932023fdef5c09ef959dadea84af3a38"
+    sha256 cellar: :any_skip_relocation, sonoma:            "2ca54050c1ce211edaf0cdee3bdd645dae7e06dfc48e5e552bffaa26e9f447d4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "4570a841130d38a14b786237304933149a547aa519d74280ac1c2c06640cda18"
+    sha256 cellar: :any,                 x86_64_linux:      "c2804e9c8cebc738376f632c73cb9f85dc58a38a1d0435f2ad6838c778cf74ff"
   end
 
   depends_on "go" => :build

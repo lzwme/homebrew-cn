@@ -6,11 +6,12 @@ class IcpCli < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "a915e90f32895374774ea34a08c99d5e2bca064109190185b52f7c978ec6e916"
-    sha256 cellar: :any, arm64_sequoia: "daf897a6d8d223ff0df6d3d07eb03a9996f5ef8971058c0aaa8710eaf7ea1b2d"
-    sha256 cellar: :any, arm64_sonoma:  "56fb19618eaf0bf22e7ea27d6e60a46819123cb2042caa88c92da71a9010a149"
-    sha256 cellar: :any, arm64_linux:   "f96d106a7e305146ce23c6c2db69e6ae5955553823a054ab2b437ae9fe89da87"
-    sha256 cellar: :any, x86_64_linux:  "166bea812c67463e9d29c2174385698f03734e11c810b2707d8b884afc561291"
+    sha256 cellar: :any, arm64_golden_gate: "903d119fc57276078cfff33ef3daeb007795b6c3d304c29c0174d2708c0e44dc"
+    sha256 cellar: :any, arm64_tahoe:       "a915e90f32895374774ea34a08c99d5e2bca064109190185b52f7c978ec6e916"
+    sha256 cellar: :any, arm64_sequoia:     "daf897a6d8d223ff0df6d3d07eb03a9996f5ef8971058c0aaa8710eaf7ea1b2d"
+    sha256 cellar: :any, arm64_sonoma:      "56fb19618eaf0bf22e7ea27d6e60a46819123cb2042caa88c92da71a9010a149"
+    sha256 cellar: :any, arm64_linux:       "f96d106a7e305146ce23c6c2db69e6ae5955553823a054ab2b437ae9fe89da87"
+    sha256 cellar: :any, x86_64_linux:      "166bea812c67463e9d29c2174385698f03734e11c810b2707d8b884afc561291"
   end
 
   depends_on "lld" => :build # for `wasm-ld`

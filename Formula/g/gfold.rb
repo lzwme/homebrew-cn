@@ -1,8 +1,8 @@
 class Gfold < Formula
   desc "Help keep track of your Git repositories, written in Rust"
   homepage "https://github.com/nickgerace/gfold"
-  url "https://ghfast.top/https://github.com/nickgerace/gfold/archive/refs/tags/2026.3.0.tar.gz"
-  sha256 "e8e0667c324658c0c816c909e880879f606ca7d874b7cbf4820ef47ba517d558"
+  url "https://ghfast.top/https://github.com/nickgerace/gfold/archive/refs/tags/2026.9.0.tar.gz"
+  sha256 "d5bc582d8cd9c2f05097f6e7669f166ded64a0108373e75bbd864e3f6e63997b"
   license "Apache-2.0"
   head "https://github.com/nickgerace/gfold.git", branch: "main"
 
@@ -12,12 +12,11 @@ class Gfold < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "db41a670045dc8a7876c729a952d1fba166f287eea7024b8719588f1da51e871"
-    sha256 cellar: :any,                 arm64_sequoia: "6ef51773366e7661f85473c36fce2dfea09653ae56caa817e0d5c83aaa25dc45"
-    sha256 cellar: :any,                 arm64_sonoma:  "4ede65914fa3dd5b43f7e247f74bcd091962e101e9f72b8d9af12b4dd13cc5d0"
-    sha256 cellar: :any,                 sonoma:        "528334f580d8869521b1b1d0ee3b8cd282c191f350596d77c49acef16a31d7f4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5907c31d6a83a8ec8f14c3aae1d282bd2bcb1d279532f7503562e9e232f90276"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0fd6dcad1f035d6dd3652a9a9ced56e2212a155a4428008e7cc09b4953fde63f"
+    sha256 cellar: :any, arm64_golden_gate: "72fb93ab699ddb00c33ac819e0e36e382fafd0889994732aaf27f11d98a18ccc"
+    sha256 cellar: :any, arm64_tahoe:       "0362e3af27dd1b571e1b14d12941fb320ccebad49f8dc97f1ef43c8267e21476"
+    sha256 cellar: :any, arm64_sequoia:     "75f8f681479f82cdd5456e704049a12cff6757d13e01113b9a3586729685644c"
+    sha256 cellar: :any, arm64_linux:       "d39aa66963eefff24fb652de6baaf8c1e0753ca4523c3aaed972beb901d88e77"
+    sha256 cellar: :any, x86_64_linux:      "99bbea5976d834dbad56ffc5aa7ca56381b3048da5887d8d95251107aa24c91b"
   end
 
   depends_on "pkgconf" => :build
@@ -30,12 +29,18 @@ class Gfold < Formula
 
   conflicts_with "coreutils", because: "both install `gfold` binaries"
 
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", "--locked"
+  end
+
   def install
     rm ".cargo/config.toml" # avoid using mold linker on Linux
 
     ENV["LIBGIT2_NO_VENDOR"] = "1"
 
-    system "cargo", "install", *std_cargo_args(path: "gfold")
+    system "cargo", "install", *std_cargo_args
   end
 
   test do

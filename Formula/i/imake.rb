@@ -11,12 +11,13 @@ class Imake < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "e00d84afa586ef13b9a3839fb78191004c4bb76953057ccda30f602cc274565d"
-    sha256 arm64_sequoia: "16145a844d8aaf431a839bc9d6c8ecc3ce22738e61536a1edfca0888ac8b9c20"
-    sha256 arm64_sonoma:  "b21feb76732b8c591a4edc56c06904a411f58c7a406700f7aa1dfc42f14c7910"
-    sha256 sonoma:        "63dbde50254d19999a5a6fd43f0107eb3cb7a5e43ef148eb27a725bc32f385e9"
-    sha256 arm64_linux:   "513164454011b2cf9941f92eea4ad738a28b37265b3606838f26bd15223b2493"
-    sha256 x86_64_linux:  "a5b7ebc580e66c9f4f72b61e1b6ad51228d41f25620d66e4959334bad6b5c15f"
+    sha256 arm64_golden_gate: "8cf425edde4c242cfe143949134a5a503d062e09b39a8c3b6eafcf6fb3a98008"
+    sha256 arm64_tahoe:       "e00d84afa586ef13b9a3839fb78191004c4bb76953057ccda30f602cc274565d"
+    sha256 arm64_sequoia:     "16145a844d8aaf431a839bc9d6c8ecc3ce22738e61536a1edfca0888ac8b9c20"
+    sha256 arm64_sonoma:      "b21feb76732b8c591a4edc56c06904a411f58c7a406700f7aa1dfc42f14c7910"
+    sha256 sonoma:            "63dbde50254d19999a5a6fd43f0107eb3cb7a5e43ef148eb27a725bc32f385e9"
+    sha256 arm64_linux:       "513164454011b2cf9941f92eea4ad738a28b37265b3606838f26bd15223b2493"
+    sha256 x86_64_linux:      "a5b7ebc580e66c9f4f72b61e1b6ad51228d41f25620d66e4959334bad6b5c15f"
   end
 
   depends_on "meson" => :build

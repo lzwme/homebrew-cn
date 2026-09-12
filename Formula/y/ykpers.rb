@@ -8,12 +8,13 @@ class Ykpers < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "926db3e02f205b9e785c45dd758876a906c0892c0bb3c3d3dae64067adb3972e"
-    sha256 cellar: :any,                 arm64_sequoia: "55b5c0412c66507bcc30d4fad0b66787aa34ae962ad6ce088a4500d7c330f94c"
-    sha256 cellar: :any,                 arm64_sonoma:  "0c8854edfb7647c2a3f8cc27d38b8e6ef7ba6c61cc964341e738c3690f6092e4"
-    sha256 cellar: :any,                 sonoma:        "88d61b40ef7bcd1f6a7989af01b4ebbd8de1a15750b24a2203a1bd007e319c72"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c25183feab444d3d2850280b40eafdb86da032c75b1313c9302ab1e6bfb8e374"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "aaf5715c54695f9f87a4a0a8b9e185a4985434ae5ab08abef60c95a91b292347"
+    sha256 cellar: :any,                 arm64_golden_gate: "7c82f7160107fa48e22f417544ae6e80ef27bb8648909c8ec260f795274b06ea"
+    sha256 cellar: :any,                 arm64_tahoe:       "926db3e02f205b9e785c45dd758876a906c0892c0bb3c3d3dae64067adb3972e"
+    sha256 cellar: :any,                 arm64_sequoia:     "55b5c0412c66507bcc30d4fad0b66787aa34ae962ad6ce088a4500d7c330f94c"
+    sha256 cellar: :any,                 arm64_sonoma:      "0c8854edfb7647c2a3f8cc27d38b8e6ef7ba6c61cc964341e738c3690f6092e4"
+    sha256 cellar: :any,                 sonoma:            "88d61b40ef7bcd1f6a7989af01b4ebbd8de1a15750b24a2203a1bd007e319c72"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "c25183feab444d3d2850280b40eafdb86da032c75b1313c9302ab1e6bfb8e374"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "aaf5715c54695f9f87a4a0a8b9e185a4985434ae5ab08abef60c95a91b292347"
   end
 
   # https://www.yubico.com/support/terms-conditions/yubico-end-of-life-policy/eol-products/

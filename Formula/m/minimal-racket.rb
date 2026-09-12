@@ -15,12 +15,13 @@ class MinimalRacket < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "4244cc788426d12ef29d9d0a68d5182df539d6a26723219176786c69da7a1e27"
-    sha256 arm64_sequoia: "9646f072359dbec97b1cb86264642eda2cfbca28dc732380f58abb04561ca0e0"
-    sha256 arm64_sonoma:  "a571f7a11dab2f9e844c2b277a94e16a69cb0984cc4fa9c952256c5f640a4606"
-    sha256 sonoma:        "56912e55c16ea6c13257cc3de9cf9ba05e6e7b14fd06628a4247a8d1ed6818c9"
-    sha256 arm64_linux:   "2ecae6e83ad95f50fdea665875c701be8aeeb8def5129b0cd6bcc80a31641afa"
-    sha256 x86_64_linux:  "87c4409b73198f6915d370f09ac2b43fc984468c6bef28b0f59acfdd4b333627"
+    sha256 arm64_golden_gate: "ffd031c7c38780fd9c6716a40400699ce191ff1977fd2a5db5ff6cb9e50d80fd"
+    sha256 arm64_tahoe:       "4244cc788426d12ef29d9d0a68d5182df539d6a26723219176786c69da7a1e27"
+    sha256 arm64_sequoia:     "9646f072359dbec97b1cb86264642eda2cfbca28dc732380f58abb04561ca0e0"
+    sha256 arm64_sonoma:      "a571f7a11dab2f9e844c2b277a94e16a69cb0984cc4fa9c952256c5f640a4606"
+    sha256 sonoma:            "56912e55c16ea6c13257cc3de9cf9ba05e6e7b14fd06628a4247a8d1ed6818c9"
+    sha256 arm64_linux:       "2ecae6e83ad95f50fdea665875c701be8aeeb8def5129b0cd6bcc80a31641afa"
+    sha256 x86_64_linux:      "87c4409b73198f6915d370f09ac2b43fc984468c6bef28b0f59acfdd4b333627"
   end
 
   depends_on "openssl@3"

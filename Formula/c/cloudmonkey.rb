@@ -12,12 +12,13 @@ class Cloudmonkey < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1490cc95342f8f115d03ce856e547208156583c9360f54210c18290fc541497d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1490cc95342f8f115d03ce856e547208156583c9360f54210c18290fc541497d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1490cc95342f8f115d03ce856e547208156583c9360f54210c18290fc541497d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "29816db5756c41031db6098d2d453b4184b7d8dfdc7ca051343310a30110c057"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "bb80ac5c6075ba9f3bf0cda30ba0c94ef12d25516b9e3d7a4c77324c4cd42777"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "af20640052fa68160801c48ec53c89302f01cd73e348a8d332b5f34046b929f5"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "c7a0e72a98321960a1510c5e0e431b507b247731c461519368f15409791bffba"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "1490cc95342f8f115d03ce856e547208156583c9360f54210c18290fc541497d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "1490cc95342f8f115d03ce856e547208156583c9360f54210c18290fc541497d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "1490cc95342f8f115d03ce856e547208156583c9360f54210c18290fc541497d"
+    sha256 cellar: :any_skip_relocation, sonoma:            "29816db5756c41031db6098d2d453b4184b7d8dfdc7ca051343310a30110c057"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "bb80ac5c6075ba9f3bf0cda30ba0c94ef12d25516b9e3d7a4c77324c4cd42777"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "af20640052fa68160801c48ec53c89302f01cd73e348a8d332b5f34046b929f5"
   end
 
   depends_on "go" => :build

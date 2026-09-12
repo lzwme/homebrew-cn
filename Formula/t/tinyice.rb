@@ -1,18 +1,17 @@
 class Tinyice < Formula
   desc "Modern, all-in-one Icecast-compatible audio/video streaming server"
   homepage "https://datanoisetv.github.io/tinyice/"
-  url "https://ghfast.top/https://github.com/DatanoiseTV/tinyice/archive/refs/tags/v2.7.0.tar.gz"
-  sha256 "492d1bf7ccfa1f4b63f3a75a25878f8b008c07f17f620f7e378893b560f6aa93"
+  url "https://ghfast.top/https://github.com/DatanoiseTV/tinyice/archive/refs/tags/v2.8.2.tar.gz"
+  sha256 "2216adbfd529a2d0a80b2aa98753ef73fd7405f1706e5162a7540831e2705e39"
   license "Apache-2.0"
   head "https://github.com/DatanoiseTV/tinyice.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "37cabb175b9fed77f78d7125c438d19e293730801212b609a799963c12e54e3b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "37cabb175b9fed77f78d7125c438d19e293730801212b609a799963c12e54e3b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "37cabb175b9fed77f78d7125c438d19e293730801212b609a799963c12e54e3b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0d6cde16e46b122f09117bfec56cc56f0206bd52cf69df6194833031ab57ffc7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9202bfd8325aa2217a1b0bf590a968dc9fee8ac84c45b04f83cab99e09bc8f1f"
-    sha256 cellar: :any,                 x86_64_linux:  "2cb54685efffca053953a2b4860a57ff617502e2b6456ee2425d5566ccf8b071"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "194d28756ef3d0631c076fe8624eb0a88d416b02b24088b0567350175d88d201"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "194d28756ef3d0631c076fe8624eb0a88d416b02b24088b0567350175d88d201"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "194d28756ef3d0631c076fe8624eb0a88d416b02b24088b0567350175d88d201"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "ad0fd1a0c847bbac8dd562d72de17c52c43ee4bbe13287fb0cd142528d8183c4"
+    sha256 cellar: :any,                 x86_64_linux:      "31c10698052efcba01c6f3babe252952d2a3bf62f0dcb425b98f156fbf312a13"
   end
 
   depends_on "go" => :build

@@ -8,12 +8,13 @@ class Microplane < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6e76d1c6bcd09c9b3bc0d5e70cc0b03a14c26ec0a7514d12c1f39b721c5a6729"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6e76d1c6bcd09c9b3bc0d5e70cc0b03a14c26ec0a7514d12c1f39b721c5a6729"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6e76d1c6bcd09c9b3bc0d5e70cc0b03a14c26ec0a7514d12c1f39b721c5a6729"
-    sha256 cellar: :any_skip_relocation, sonoma:        "53e6a5c9e2b0df68456b189f4529acb4045d18e5b22415d8ca7f598d53d4c456"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "62d36f665bd9186d9a9f79b9f4f1112256d0dfb3ec0b7c9fcc6fbd27def5c1c0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9f139ba0db65eb05e492aa1b33d11e10808f335dc36058e042db411ba514d7ad"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "78f3df7131bedd52eed8153bc088d72623facccba76799246491a2dbc9c3ee27"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "6e76d1c6bcd09c9b3bc0d5e70cc0b03a14c26ec0a7514d12c1f39b721c5a6729"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "6e76d1c6bcd09c9b3bc0d5e70cc0b03a14c26ec0a7514d12c1f39b721c5a6729"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "6e76d1c6bcd09c9b3bc0d5e70cc0b03a14c26ec0a7514d12c1f39b721c5a6729"
+    sha256 cellar: :any_skip_relocation, sonoma:            "53e6a5c9e2b0df68456b189f4529acb4045d18e5b22415d8ca7f598d53d4c456"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "62d36f665bd9186d9a9f79b9f4f1112256d0dfb3ec0b7c9fcc6fbd27def5c1c0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "9f139ba0db65eb05e492aa1b33d11e10808f335dc36058e042db411ba514d7ad"
   end
 
   depends_on "go" => :build

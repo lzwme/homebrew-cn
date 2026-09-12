@@ -8,12 +8,13 @@ class Homeworlds < Formula
   version_scheme 1
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "b54d64aa4b808f8e766bd97eb686810c7aaac1a5a75e2da90df5b213459c6561"
-    sha256 cellar: :any, arm64_sequoia: "a1a1e22ec2f4e99dc67ae371a0a51dc0fb423d01bc9fd667d88e00fbb730ceb9"
-    sha256 cellar: :any, arm64_sonoma:  "8c10e66a2b4040f43af16401ab968aa9b1f7bd81082d231e2da508f0ed4db08c"
-    sha256 cellar: :any, sonoma:        "18889c9eb4c4a7af491e70ce902b02f7072e0fa7f8d92b9c8f6c5c64b70ed7a7"
-    sha256 cellar: :any, arm64_linux:   "b1f09b7e626a6703f98721fa0d0e820dc76fb701f0f38b983a37df75138191df"
-    sha256 cellar: :any, x86_64_linux:  "1abe3d5dc91d0b2444e285fac0356e6fabee7e1cb61df19eadf45056c0e9cf15"
+    sha256 cellar: :any, arm64_golden_gate: "54514e30775b09a4f65a0e6397ac241100d46b4f1101d1808d6c36e19d8e7ed8"
+    sha256 cellar: :any, arm64_tahoe:       "b54d64aa4b808f8e766bd97eb686810c7aaac1a5a75e2da90df5b213459c6561"
+    sha256 cellar: :any, arm64_sequoia:     "a1a1e22ec2f4e99dc67ae371a0a51dc0fb423d01bc9fd667d88e00fbb730ceb9"
+    sha256 cellar: :any, arm64_sonoma:      "8c10e66a2b4040f43af16401ab968aa9b1f7bd81082d231e2da508f0ed4db08c"
+    sha256 cellar: :any, sonoma:            "18889c9eb4c4a7af491e70ce902b02f7072e0fa7f8d92b9c8f6c5c64b70ed7a7"
+    sha256 cellar: :any, arm64_linux:       "b1f09b7e626a6703f98721fa0d0e820dc76fb701f0f38b983a37df75138191df"
+    sha256 cellar: :any, x86_64_linux:      "1abe3d5dc91d0b2444e285fac0356e6fabee7e1cb61df19eadf45056c0e9cf15"
   end
 
   depends_on "wxwidgets"

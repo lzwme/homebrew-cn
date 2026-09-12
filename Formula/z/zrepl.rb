@@ -8,12 +8,13 @@ class Zrepl < Formula
 
   bottle do
     rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "18a19ca879a02097dc1cb1d0dd2b72b4addc92c1405be553d80b8090580a4610"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "53cc9ad155f92938fdd6504bf130c16d043186c7fe8ff1b250bd4ede6307f3f6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5158b93a06a125e57955961a9a7ec6c230e97c1616b1eb0999a3e9cc3b2c5f28"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ccf68bab0f5328baf50cbbb7a5e6480d49c36a284d896f54b28a07b0ac7178fe"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f5bc39a2b366b2db30b75c84100fd2252798124f1854afa3123b8043b5989975"
-    sha256 cellar: :any,                 x86_64_linux:  "c196abef74589bc16a49dbbfa20909f59cf92bb9951d1848e1cac5be32d8a9b3"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "16d6ce0638baa05a692f8db179079d78c3939542337708062793ab6baf39601c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "18a19ca879a02097dc1cb1d0dd2b72b4addc92c1405be553d80b8090580a4610"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "53cc9ad155f92938fdd6504bf130c16d043186c7fe8ff1b250bd4ede6307f3f6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "5158b93a06a125e57955961a9a7ec6c230e97c1616b1eb0999a3e9cc3b2c5f28"
+    sha256 cellar: :any_skip_relocation, sonoma:            "ccf68bab0f5328baf50cbbb7a5e6480d49c36a284d896f54b28a07b0ac7178fe"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "f5bc39a2b366b2db30b75c84100fd2252798124f1854afa3123b8043b5989975"
+    sha256 cellar: :any,                 x86_64_linux:      "c196abef74589bc16a49dbbfa20909f59cf92bb9951d1848e1cac5be32d8a9b3"
   end
 
   depends_on "go" => :build

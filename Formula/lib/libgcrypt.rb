@@ -1,8 +1,8 @@
 class Libgcrypt < Formula
   desc "Cryptographic library based on the code from GnuPG"
   homepage "https://gnupg.org/related_software/libgcrypt/"
-  url "https://gnupg.org/ftp/gcrypt/libgcrypt/libgcrypt-1.12.3.tar.bz2"
-  sha256 "98d1b0b3202d2b03fa754a35aa3cbbfcf526a3260d8d2ee213748001b1043006"
+  url "https://gnupg.org/ftp/gcrypt/libgcrypt/libgcrypt-1.12.4.tar.bz2"
+  sha256 "d77f68f48879510e79a2f65977ccc68981781ea0923e5bdffac2a193ea3d660e"
   license all_of: ["LGPL-2.1-or-later", "GPL-2.0-or-later"]
   compatibility_version 1
 
@@ -12,13 +12,11 @@ class Libgcrypt < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "ad2dde1b633838bb7f95d1c9b97dab473fb85b53354b073b60d7064d4cf3ccfe"
-    sha256 cellar: :any, arm64_tahoe:       "21a6a5d04e73e33cb61a72000a1e3adf785e2fb81e0beca980b878ef3912a70c"
-    sha256 cellar: :any, arm64_sequoia:     "b006f4e8e2f4e69a7997ad2f0232d582591a3050bf6c3de337a0bafe01f0a8a8"
-    sha256 cellar: :any, arm64_sonoma:      "207ab3c57910c3661b3aa2f51bc07e946c17c576173f74da2f81c1b3ee243fe9"
-    sha256 cellar: :any, sonoma:            "e34a1bac9f4df523b3c05d7410c48039fc9470100d39880183a8c6495643f0bd"
-    sha256 cellar: :any, arm64_linux:       "b9f066a6a9236f00f90c061583d0b2a3df7820fcd35f5158b1c792fefd896d4c"
-    sha256 cellar: :any, x86_64_linux:      "f854464cd5716c0a1231b1f2642fa1cb46aa5181e5c734cad3d7225cd32db4bf"
+    sha256 cellar: :any, arm64_golden_gate: "6531ea6476a9e9c35f5c9b5420779da758edac7f486ee97a2aad8a18ee5d6fec"
+    sha256 cellar: :any, arm64_tahoe:       "18f7d112e7d1596592b3ef268bb223217cd97725659012c5c3a9041b2999f284"
+    sha256 cellar: :any, arm64_sequoia:     "c314eec8280f768dba978c7c55a569d3944505d7d709285e4721f24ae765748c"
+    sha256 cellar: :any, arm64_linux:       "969e21ed2fcdc94ddb61cb6418b3bd12b56681b8ae8e8b8c6b51ec0bd4ccb116"
+    sha256 cellar: :any, x86_64_linux:      "41109424f2982ccaccab52cad5e543d8aac6331fbb1959b2a482ceb89868ad44"
   end
 
   depends_on "libgpg-error"

@@ -8,12 +8,13 @@ class Goclone < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "427643691179069c7834cf098036b07742eb8e17ee9de1ba024f022b59791a41"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "427643691179069c7834cf098036b07742eb8e17ee9de1ba024f022b59791a41"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "427643691179069c7834cf098036b07742eb8e17ee9de1ba024f022b59791a41"
-    sha256 cellar: :any_skip_relocation, sonoma:        "63b7e1660bea0cfec0e9998e5c5d10c4d4283461ab39eeb023240eac4f2f25c0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5840964691bed030e57c2e1530696170715d3982bbce48c2fec28c7250f317db"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "181e8771f7509e520cb7c6c88d9f8edc56e8c5eb5623a8aff286b2059fbe94b1"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "ce31caf4a864a31dc0d335c339b52632ec543c08c735a8c19d386633a72b0221"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "427643691179069c7834cf098036b07742eb8e17ee9de1ba024f022b59791a41"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "427643691179069c7834cf098036b07742eb8e17ee9de1ba024f022b59791a41"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "427643691179069c7834cf098036b07742eb8e17ee9de1ba024f022b59791a41"
+    sha256 cellar: :any_skip_relocation, sonoma:            "63b7e1660bea0cfec0e9998e5c5d10c4d4283461ab39eeb023240eac4f2f25c0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "5840964691bed030e57c2e1530696170715d3982bbce48c2fec28c7250f317db"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "181e8771f7509e520cb7c6c88d9f8edc56e8c5eb5623a8aff286b2059fbe94b1"
   end
 
   depends_on "go" => :build

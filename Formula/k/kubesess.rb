@@ -7,12 +7,13 @@ class Kubesess < Formula
   head "https://github.com/Ramilito/kubesess.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "229eb30598b36318c4010ea3cc4457abf78cdc6ac4f7c32fc4438e0b959141b3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d7f4954b43873ae467b0e67f6cb4f144224522a0f862488e020cfb0fb3421176"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bcc257d9edf72d69b3babc7d4eb6e0345c8c7dd3c3adef0f96508d1e2977f8e7"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2e5b50a690fd167806e2185b97c89ac786d16fe34cb0a9fd701578358444822a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "61d5c7d1e868618f87b1dd7e942135517a49e97cca4da734c37501d9720ad44e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f9e095429f8ef728a0ee55dca2f88e2894ba2efa6f0052ad396f552c7ca06e37"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "f192c1e68faa5bfc2f5499514cea14fa206dd22c2b178d9a213c66704eba8ee0"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "229eb30598b36318c4010ea3cc4457abf78cdc6ac4f7c32fc4438e0b959141b3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "d7f4954b43873ae467b0e67f6cb4f144224522a0f862488e020cfb0fb3421176"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "bcc257d9edf72d69b3babc7d4eb6e0345c8c7dd3c3adef0f96508d1e2977f8e7"
+    sha256 cellar: :any_skip_relocation, sonoma:            "2e5b50a690fd167806e2185b97c89ac786d16fe34cb0a9fd701578358444822a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "61d5c7d1e868618f87b1dd7e942135517a49e97cca4da734c37501d9720ad44e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "f9e095429f8ef728a0ee55dca2f88e2894ba2efa6f0052ad396f552c7ca06e37"
   end
 
   depends_on "rust" => :build

@@ -54,8 +54,6 @@ class Mono < Formula
   end
 
   conflicts_with "xsd", because: "both install `xsd` binaries"
-  conflicts_with cask: "mono-mdk"
-  conflicts_with cask: "mono-mdk-for-visual-studio"
   conflicts_with "chicken", because: "both install `csc`, `csi` binaries"
   conflicts_with "pedump", because: "both install `pedump` binaries"
 

@@ -7,12 +7,13 @@ class GoogleAuthenticatorLibpam < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "a17099cc9735309f5d725c89fdbba27bf1e1e935e1c2cd82e67a109af595cd9f"
-    sha256 cellar: :any, arm64_sequoia: "98e2cf64e941d7fa153e15a3ebd7998614442951fc5e99c9745c988b7b582ba0"
-    sha256 cellar: :any, arm64_sonoma:  "91f85a6f6b124ca0c30387349a957dd915234e7469b7044c506713661813fc1b"
-    sha256 cellar: :any, sonoma:        "7f7ec765e16362f48a27fedeb996113bd7c0bba024488c360ae700da6f0c946c"
-    sha256 cellar: :any, arm64_linux:   "66333f19942f381adffcc55fc75223e741722d667064bf9cdc8aab9c9c9d758f"
-    sha256 cellar: :any, x86_64_linux:  "fd5066487cb83cb932c4a534cc8e5de72a1462ac8bc01517680c7139cb50b4c3"
+    sha256 cellar: :any, arm64_golden_gate: "e2bb341adb84e7f469fc5384e92471d246ba5515a7cf0ae9faf65ec11a67e30a"
+    sha256 cellar: :any, arm64_tahoe:       "a17099cc9735309f5d725c89fdbba27bf1e1e935e1c2cd82e67a109af595cd9f"
+    sha256 cellar: :any, arm64_sequoia:     "98e2cf64e941d7fa153e15a3ebd7998614442951fc5e99c9745c988b7b582ba0"
+    sha256 cellar: :any, arm64_sonoma:      "91f85a6f6b124ca0c30387349a957dd915234e7469b7044c506713661813fc1b"
+    sha256 cellar: :any, sonoma:            "7f7ec765e16362f48a27fedeb996113bd7c0bba024488c360ae700da6f0c946c"
+    sha256 cellar: :any, arm64_linux:       "66333f19942f381adffcc55fc75223e741722d667064bf9cdc8aab9c9c9d758f"
+    sha256 cellar: :any, x86_64_linux:      "fd5066487cb83cb932c4a534cc8e5de72a1462ac8bc01517680c7139cb50b4c3"
   end
 
   depends_on "autoconf" => :build

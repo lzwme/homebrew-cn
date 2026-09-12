@@ -6,11 +6,12 @@ class Anchor < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 arm64_tahoe:   "14df7a7e7842f5d04697a6fc03b5165a557a20c2a7a1753b3703499d7c247b4e"
-    sha256 arm64_sequoia: "c7626a179d30f39c07cce1e0d09a22d9ab9082edeaa5710a9a675f1db992ab85"
-    sha256 arm64_sonoma:  "f141564e4868163a823e092bdb1a3ef89090699a8d0b4682c1dfe13767e7c7dd"
-    sha256 arm64_linux:   "4725a7f018759fb80bb11be3eed94ab85124a04098d225f7820a6f9cd53307e9"
-    sha256 x86_64_linux:  "58cc2fdbf9da4037ba125f3a804ce7dbe892b1023b828963186f617b9b0cd911"
+    sha256 arm64_golden_gate: "34de60342a21cb1adb5dabc0a6c1ad88bd759639791ca70de3deb009f9d367b6"
+    sha256 arm64_tahoe:       "14df7a7e7842f5d04697a6fc03b5165a557a20c2a7a1753b3703499d7c247b4e"
+    sha256 arm64_sequoia:     "c7626a179d30f39c07cce1e0d09a22d9ab9082edeaa5710a9a675f1db992ab85"
+    sha256 arm64_sonoma:      "f141564e4868163a823e092bdb1a3ef89090699a8d0b4682c1dfe13767e7c7dd"
+    sha256 arm64_linux:       "4725a7f018759fb80bb11be3eed94ab85124a04098d225f7820a6f9cd53307e9"
+    sha256 x86_64_linux:      "58cc2fdbf9da4037ba125f3a804ce7dbe892b1023b828963186f617b9b0cd911"
   end
 
   depends_on "pkgconf" => :build

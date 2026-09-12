@@ -17,11 +17,12 @@ class Picat < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "96e54aaf25f40b328f5b46086782d64006789a374a3b9d20fb909e4851bc1f45"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bcf8820453e7a55a6dd0e0abed110cf3cd60e071c7e0599c7128afbf1f88ad6b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dda9e7c68bb84c5f1f25ab3e3467c1bd1e492d34423a5b69fbee7fc539b35508"
-    sha256 cellar: :any,                 arm64_linux:   "f7af4ba06b779531cc0619e23988afb47302b8f2c79fa543ae6dd58911208aab"
-    sha256 cellar: :any,                 x86_64_linux:  "d766512892f2c060ed297311fd7a0adc0f582ccaef1eb1cc9d98aa18a2200822"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "7c78f2020d268c556bf9ecf324b7ed75e230177aef48f02b4dc23abcc674a489"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "96e54aaf25f40b328f5b46086782d64006789a374a3b9d20fb909e4851bc1f45"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "bcf8820453e7a55a6dd0e0abed110cf3cd60e071c7e0599c7128afbf1f88ad6b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "dda9e7c68bb84c5f1f25ab3e3467c1bd1e492d34423a5b69fbee7fc539b35508"
+    sha256 cellar: :any,                 arm64_linux:       "f7af4ba06b779531cc0619e23988afb47302b8f2c79fa543ae6dd58911208aab"
+    sha256 cellar: :any,                 x86_64_linux:      "d766512892f2c060ed297311fd7a0adc0f582ccaef1eb1cc9d98aa18a2200822"
   end
 
   def install

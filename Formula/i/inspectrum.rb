@@ -7,12 +7,13 @@ class Inspectrum < Formula
   head "https://github.com/miek/inspectrum.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "5c21e4520df7498e5a4e54bfad5930e87379dc94f359daa059399a58a7c52546"
-    sha256 cellar: :any,                 arm64_sequoia: "2cbc4ecbe7531a6d91f495a71b0c133c729e381ee9930ec0fbaef5c39ee28c83"
-    sha256 cellar: :any,                 arm64_sonoma:  "23dced3dffb32ada03c65c0cab098173142464cba27f26139bcaf5da21a21ff2"
-    sha256 cellar: :any,                 sonoma:        "40f559efcf1c01153547a4621f5af92e555b8261aa328ed97ad0b66e34db568e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "529fdfe5ad6cef116d9d402b7b366b4158b83c490e1d6eb1083bcd7306e74c39"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bdf31450cc84970bce45314f564dd15eced52aea0d8e3278569301dfb283abc7"
+    sha256 cellar: :any,                 arm64_golden_gate: "7744c38e8df7e3cd973d448c1b12f2fa342c7a69df9027d91f13b835cfb16b5c"
+    sha256 cellar: :any,                 arm64_tahoe:       "5c21e4520df7498e5a4e54bfad5930e87379dc94f359daa059399a58a7c52546"
+    sha256 cellar: :any,                 arm64_sequoia:     "2cbc4ecbe7531a6d91f495a71b0c133c729e381ee9930ec0fbaef5c39ee28c83"
+    sha256 cellar: :any,                 arm64_sonoma:      "23dced3dffb32ada03c65c0cab098173142464cba27f26139bcaf5da21a21ff2"
+    sha256 cellar: :any,                 sonoma:            "40f559efcf1c01153547a4621f5af92e555b8261aa328ed97ad0b66e34db568e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "529fdfe5ad6cef116d9d402b7b366b4158b83c490e1d6eb1083bcd7306e74c39"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "bdf31450cc84970bce45314f564dd15eced52aea0d8e3278569301dfb283abc7"
   end
 
   depends_on "cmake" => :build

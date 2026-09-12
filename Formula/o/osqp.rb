@@ -6,14 +6,15 @@ class Osqp < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "c954c2ec86a360b05b33c2adca519d53f4b4a668ec21dd1843c0a03811239b5d"
-    sha256 cellar: :any,                 arm64_sequoia: "ccb60f0cfb872511bca80235ac7a946fa63b37a5a3dd12824225233b53da0a0c"
-    sha256 cellar: :any,                 arm64_sonoma:  "5fed88abe2497775db7e0b621beb464077d9a9d17b5d78d0e02572be8baf55dc"
-    sha256 cellar: :any,                 arm64_ventura: "108db6550c4c298e1da86ebe8577727a0bd507f1889a3e2bfdf67f7aec8d24fc"
-    sha256 cellar: :any,                 sonoma:        "4870c87ac958b12511c5eee404fe346a0e2d0372b379855f934533ab8e2b039b"
-    sha256 cellar: :any,                 ventura:       "2de9db6218208bcce319b7ab4a6f8ce9b74af95a8571168afce565f62bbc01b6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6544280d65567811ac1fa3bd1f659545a0a1e02f50ca43f946761d325818e85d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f28787efc1e418c84e3123f0364865950be5f51250246d916419ed8d53b09cd4"
+    sha256 cellar: :any,                 arm64_golden_gate: "425e6f167ccbe2ecbc152e32c7e20891bb2df068800eb36f547e45b534002953"
+    sha256 cellar: :any,                 arm64_tahoe:       "c954c2ec86a360b05b33c2adca519d53f4b4a668ec21dd1843c0a03811239b5d"
+    sha256 cellar: :any,                 arm64_sequoia:     "ccb60f0cfb872511bca80235ac7a946fa63b37a5a3dd12824225233b53da0a0c"
+    sha256 cellar: :any,                 arm64_sonoma:      "5fed88abe2497775db7e0b621beb464077d9a9d17b5d78d0e02572be8baf55dc"
+    sha256 cellar: :any,                 arm64_ventura:     "108db6550c4c298e1da86ebe8577727a0bd507f1889a3e2bfdf67f7aec8d24fc"
+    sha256 cellar: :any,                 sonoma:            "4870c87ac958b12511c5eee404fe346a0e2d0372b379855f934533ab8e2b039b"
+    sha256 cellar: :any,                 ventura:           "2de9db6218208bcce319b7ab4a6f8ce9b74af95a8571168afce565f62bbc01b6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "6544280d65567811ac1fa3bd1f659545a0a1e02f50ca43f946761d325818e85d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "f28787efc1e418c84e3123f0364865950be5f51250246d916419ed8d53b09cd4"
   end
 
   depends_on "cmake" => [:build, :test]

@@ -3,16 +3,16 @@ class CfnLint < Formula
 
   desc "Validate CloudFormation templates against the CloudFormation spec"
   homepage "https://github.com/aws-cloudformation/cfn-lint/"
-  url "https://files.pythonhosted.org/packages/cc/87/fd4c72335ff32baab3d20872511c340402772b0ef3f5b00cf8a636d8d387/cfn_lint-1.56.2.tar.gz"
-  sha256 "e2f77cfc378c1991c15bcadfb84db0d69cd8dbcd798376a08b78360179266e48"
+  url "https://files.pythonhosted.org/packages/73/da/e419b9775114b082e089e3856ba64b27ed1d16c100e9bdf09b844ca7ba08/cfn_lint-1.56.3.tar.gz"
+  sha256 "cdca8797e33aad72c2eb94b49cb4b129cd1cd4309f7376c109d4d9446605bf41"
   license "MIT-0"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "cd61a957adb203b3df686aa566dc1469094a2380cbc9c5f43663fb858941f505"
-    sha256 cellar: :any, arm64_sequoia: "0995a9d934d73048fc10ad12a36a49dc1fef36595935e8e94d7db89e7ef29f23"
-    sha256 cellar: :any, arm64_sonoma:  "b179ce66bc7820b5b1fcafcc514e26adba4f63f178a86ac451334b83ea9615d2"
-    sha256 cellar: :any, arm64_linux:   "c48efddf81127f34c0f8e1887d86eca887c43e005e629e2a3bd4e1c2ba2af924"
-    sha256 cellar: :any, x86_64_linux:  "c7053d50b5c7eff0b5fb3e3bd710fe06a19e2f34d6fe050f8904e71d942edd5f"
+    sha256 cellar: :any, arm64_golden_gate: "3682880eb599410f167adca2cd2407c5ddac3563524fcd5168f93b9916f1a467"
+    sha256 cellar: :any, arm64_tahoe:       "aeff92d165b1f4736cfcf49c944d732d4d9efd8837c2ce27852805d803f029c3"
+    sha256 cellar: :any, arm64_sequoia:     "dd2061ef1e64abfc4dbac1d26220bb85ca813afbd0907c35f17d51b6c9db4e7f"
+    sha256 cellar: :any, arm64_linux:       "d59656f26738c13c59a10cad628538a1edef72aeda30f287f5510efe307691e8"
+    sha256 cellar: :any, x86_64_linux:      "3a784ae08239870abc4604574b6b5b323b3f7715b3684bee7dfd47b4bf55379b"
   end
 
   depends_on "libyaml"
@@ -48,8 +48,8 @@ class CfnLint < Formula
   end
 
   resource "regex" do
-    url "https://files.pythonhosted.org/packages/19/c1/6b30b775c7bcc6cf6506a4d4741c2123e8d99cd50f3fe8cbd731f5fef526/regex-2026.9.3.tar.gz"
-    sha256 "aabd43208e335f4c3f0b56de3464b066dd425983a58f6eeb5738bcd7465403db"
+    url "https://files.pythonhosted.org/packages/b9/5c/f403115361de25809e8f785686ec7096e30fef73be9ae35aa51da4e80abb/regex-2026.9.10.tar.gz"
+    sha256 "1e321e2c84f0e52c457f5ea5944f796d6e8e09cb99738ea98dcc1bfe402a128d"
   end
 
   resource "sympy" do

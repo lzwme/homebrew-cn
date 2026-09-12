@@ -30,12 +30,13 @@ class Ccls < Formula
   end
 
   bottle do
-    sha256               arm64_tahoe:   "e25ee48292aa4b2b476a6c845dac5f23530c32d1397eef389ad69dcb69897ecb"
-    sha256               arm64_sequoia: "a596e973501d20652ce1bf2824b584da63ff97a9337a44c3db5e66d7a6f610da"
-    sha256               arm64_sonoma:  "432eef0d92577797cb96c44b36664a5f40cfa5189a11851a7a98f06373e2a039"
-    sha256               sonoma:        "6119e28d259e9856d6d12e00481d999fa24284f2ae8c70255c8df7a8db0e1ad9"
-    sha256               arm64_linux:   "259a3754c16aae04226157300ffd44c71e2db952ef368db4d1aca40e85aa2e1b"
-    sha256 cellar: :any, x86_64_linux:  "6f7cac8dbda0c13a28d4419df2c16c008e523c8888bd43e7de06c8968c279669"
+    sha256               arm64_golden_gate: "00c73884c75f67143adbcb31f30dc6e1219f5b9adfa887c05ad532c38cd6979e"
+    sha256               arm64_tahoe:       "e25ee48292aa4b2b476a6c845dac5f23530c32d1397eef389ad69dcb69897ecb"
+    sha256               arm64_sequoia:     "a596e973501d20652ce1bf2824b584da63ff97a9337a44c3db5e66d7a6f610da"
+    sha256               arm64_sonoma:      "432eef0d92577797cb96c44b36664a5f40cfa5189a11851a7a98f06373e2a039"
+    sha256               sonoma:            "6119e28d259e9856d6d12e00481d999fa24284f2ae8c70255c8df7a8db0e1ad9"
+    sha256               arm64_linux:       "259a3754c16aae04226157300ffd44c71e2db952ef368db4d1aca40e85aa2e1b"
+    sha256 cellar: :any, x86_64_linux:      "6f7cac8dbda0c13a28d4419df2c16c008e523c8888bd43e7de06c8968c279669"
   end
 
   depends_on "cmake" => :build

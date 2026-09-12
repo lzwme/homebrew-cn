@@ -9,10 +9,11 @@ class Killswitch < Formula
   no_autobump! because: :bumped_by_upstream
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cbefb9623a427619ae2f2e9ee419fc4d683f1ccd58ed7b9f40eff4b7f445be1b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5500a22bdfa72f6c3b4165638504feb3357918a829ff9bce8c7c22c025725d83"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "042ab6e0df1a07f397bf1715222518d891269c3f5007960c9129703065c8abb1"
-    sha256 cellar: :any_skip_relocation, sonoma:        "590dec47d367b7d1735abda9485fbe50ecf0d072b9db5402f30e87527399e5fd"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "f0d55e7e3fd81c567f0d81baa71dbb59025cbce80389153e011795b71dbcb5e1"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "cbefb9623a427619ae2f2e9ee419fc4d683f1ccd58ed7b9f40eff4b7f445be1b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "5500a22bdfa72f6c3b4165638504feb3357918a829ff9bce8c7c22c025725d83"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "042ab6e0df1a07f397bf1715222518d891269c3f5007960c9129703065c8abb1"
+    sha256 cellar: :any_skip_relocation, sonoma:            "590dec47d367b7d1735abda9485fbe50ecf0d072b9db5402f30e87527399e5fd"
   end
 
   depends_on "rust" => :build

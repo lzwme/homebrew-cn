@@ -9,12 +9,13 @@ class Keystone < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "792e2f64e52c56b737ffa463eebbc8c69912b6528c0aa6094b1547417bdafb64"
-    sha256 cellar: :any,                 arm64_sequoia: "0a34a8cc81909cd75cb20bc2573a3a5d1328f4b3ac44e8a814d3da9dff59a7d7"
-    sha256 cellar: :any,                 arm64_sonoma:  "7f16a69f3cafa919b46840c4dff01d6f7220167499c0dcc22c972738a6b3c7fb"
-    sha256 cellar: :any,                 sonoma:        "5777578985ee84ccba4730e20677576c9024ad0a86c0f49546344a232e9413ec"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f78641458d84848c32803626ba0127081539d768e284ccfa262baa48265e4cc8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e4f985a7993b44fba4ca497a76488ce22eaa4ac77de292fccf716c4d5e9acca7"
+    sha256 cellar: :any,                 arm64_golden_gate: "f1faa4fd924a6183a7a080046dc0228e8b8b34375ff7bff8c919e494bfdcd979"
+    sha256 cellar: :any,                 arm64_tahoe:       "792e2f64e52c56b737ffa463eebbc8c69912b6528c0aa6094b1547417bdafb64"
+    sha256 cellar: :any,                 arm64_sequoia:     "0a34a8cc81909cd75cb20bc2573a3a5d1328f4b3ac44e8a814d3da9dff59a7d7"
+    sha256 cellar: :any,                 arm64_sonoma:      "7f16a69f3cafa919b46840c4dff01d6f7220167499c0dcc22c972738a6b3c7fb"
+    sha256 cellar: :any,                 sonoma:            "5777578985ee84ccba4730e20677576c9024ad0a86c0f49546344a232e9413ec"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "f78641458d84848c32803626ba0127081539d768e284ccfa262baa48265e4cc8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "e4f985a7993b44fba4ca497a76488ce22eaa4ac77de292fccf716c4d5e9acca7"
   end
 
   depends_on "cmake" => :build

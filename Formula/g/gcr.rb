@@ -20,14 +20,15 @@ class Gcr < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "8a8b247f36bfc6a6343b6c4ea5de1b981d727f1a3b21c6b6185c6059baf806ff"
-    sha256 arm64_sequoia: "c6dd2aaccd60bf27c4b3edca83a5ca7f087277840eccf91dffa5e4242e177ff1"
-    sha256 arm64_sonoma:  "01875e5b7918fab6462935245afd7b2a9a5ea53da81c0d91c01a485f90aa00c8"
-    sha256 arm64_ventura: "6d9fe7fd9e40c9a54abc080bb879e2ac30d9c9eba2e5623f4e0f61a1c95c276c"
-    sha256 sonoma:        "004a771f4d6e7194c3a1650d26be0eca85adbc5b3df92876ccc74d5aefe9ea1b"
-    sha256 ventura:       "0bc1474bbbf46af21896b8f8f5beedc58978b29fe106046481cd83c775d855dc"
-    sha256 arm64_linux:   "57a4fea0430975807d6258ef58dda22db6eae2ac78b78d29876d9879dfc26977"
-    sha256 x86_64_linux:  "7ea854a5ee93e6e1ca91d593571b5881f3b387dc3a4ac5bb2e44daf3b4e99111"
+    sha256 arm64_golden_gate: "ccb73ba46fb235e6bce296b06087348835b8bc87ad99ec1ff13775532b52b3a4"
+    sha256 arm64_tahoe:       "8a8b247f36bfc6a6343b6c4ea5de1b981d727f1a3b21c6b6185c6059baf806ff"
+    sha256 arm64_sequoia:     "c6dd2aaccd60bf27c4b3edca83a5ca7f087277840eccf91dffa5e4242e177ff1"
+    sha256 arm64_sonoma:      "01875e5b7918fab6462935245afd7b2a9a5ea53da81c0d91c01a485f90aa00c8"
+    sha256 arm64_ventura:     "6d9fe7fd9e40c9a54abc080bb879e2ac30d9c9eba2e5623f4e0f61a1c95c276c"
+    sha256 sonoma:            "004a771f4d6e7194c3a1650d26be0eca85adbc5b3df92876ccc74d5aefe9ea1b"
+    sha256 ventura:           "0bc1474bbbf46af21896b8f8f5beedc58978b29fe106046481cd83c775d855dc"
+    sha256 arm64_linux:       "57a4fea0430975807d6258ef58dda22db6eae2ac78b78d29876d9879dfc26977"
+    sha256 x86_64_linux:      "7ea854a5ee93e6e1ca91d593571b5881f3b387dc3a4ac5bb2e44daf3b4e99111"
   end
 
   depends_on "gettext" => :build

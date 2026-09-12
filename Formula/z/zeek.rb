@@ -12,12 +12,13 @@ class Zeek < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "7fb16a75374d6da3411667e22f229c77ad11591a0ec1faef7da085b1cd03e6dc"
-    sha256 arm64_sequoia: "56222db303c6779bb90a04ad098057ec05760a58d5e80f3a01b20a8e64269c4e"
-    sha256 arm64_sonoma:  "2f2351d94aa134bedcd202382f823cc68911b1f8f0138513f9305458ec863171"
-    sha256 sonoma:        "dcad9d7f36ac957f9cbfbd93b47a8ebf76c842a750d1eb6841be770aab9ef92f"
-    sha256 arm64_linux:   "64a75d8e56df913863d76d29c1a78c72bb4f522ba49e54de080c99f6b8ce8de0"
-    sha256 x86_64_linux:  "2e91ac8ae93e05274108f20071df18529433a5aa0d9f165bafdd96c92d4206c0"
+    sha256 arm64_golden_gate: "4727b8295426e42bc63c278950bfa8f09c72ef5d6559e313f30ef1cd32ce23f3"
+    sha256 arm64_tahoe:       "7fb16a75374d6da3411667e22f229c77ad11591a0ec1faef7da085b1cd03e6dc"
+    sha256 arm64_sequoia:     "56222db303c6779bb90a04ad098057ec05760a58d5e80f3a01b20a8e64269c4e"
+    sha256 arm64_sonoma:      "2f2351d94aa134bedcd202382f823cc68911b1f8f0138513f9305458ec863171"
+    sha256 sonoma:            "dcad9d7f36ac957f9cbfbd93b47a8ebf76c842a750d1eb6841be770aab9ef92f"
+    sha256 arm64_linux:       "64a75d8e56df913863d76d29c1a78c72bb4f522ba49e54de080c99f6b8ce8de0"
+    sha256 x86_64_linux:      "2e91ac8ae93e05274108f20071df18529433a5aa0d9f165bafdd96c92d4206c0"
   end
 
   depends_on "bison" => :build

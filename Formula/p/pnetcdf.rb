@@ -11,12 +11,13 @@ class Pnetcdf < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "3e099c299cd39a2e9ec03b607f1e4e790ea3d57efff82a62447eeb707a1b25fc"
-    sha256 arm64_sequoia: "6930f5b42b302421a98a35eade739c28180ff1d6ec327643924a0565ea55de1b"
-    sha256 arm64_sonoma:  "4c0380dff4533ae2bd1ab9f83bcd74e9df84f5e7cf4591fd893b19862401dd2d"
-    sha256 sonoma:        "41df2dee0ffa0db39829510ce306110b1892e3caa9219f298c8161e7d714ea47"
-    sha256 arm64_linux:   "793ed327d2a4b2f1eaf269652cc7daf9e9ee71c15ed6d3790761085c1f533599"
-    sha256 x86_64_linux:  "439b71f099c530df58080a4fa6a3c0bf9fa6e0e5a286025b6ad105455b2114f4"
+    sha256 arm64_golden_gate: "324f4e6b1eec63f27f6754b6c49f29fe7c9e54ef9c217e6617ee67fd578874b5"
+    sha256 arm64_tahoe:       "3e099c299cd39a2e9ec03b607f1e4e790ea3d57efff82a62447eeb707a1b25fc"
+    sha256 arm64_sequoia:     "6930f5b42b302421a98a35eade739c28180ff1d6ec327643924a0565ea55de1b"
+    sha256 arm64_sonoma:      "4c0380dff4533ae2bd1ab9f83bcd74e9df84f5e7cf4591fd893b19862401dd2d"
+    sha256 sonoma:            "41df2dee0ffa0db39829510ce306110b1892e3caa9219f298c8161e7d714ea47"
+    sha256 arm64_linux:       "793ed327d2a4b2f1eaf269652cc7daf9e9ee71c15ed6d3790761085c1f533599"
+    sha256 x86_64_linux:      "439b71f099c530df58080a4fa6a3c0bf9fa6e0e5a286025b6ad105455b2114f4"
   end
 
   depends_on "gcc"

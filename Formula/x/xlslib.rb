@@ -6,18 +6,19 @@ class Xlslib < Formula
   license "BSD-2-Clause"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:    "0aceee9730d6524acd094d61efcf3b89387d79c7e10dc3bbbac4cf52ccb133ac"
-    sha256 cellar: :any,                 arm64_sequoia:  "67eee141556944e992f338143289b2021e22023d5f205f571e56bca3a8c2b1f3"
-    sha256 cellar: :any,                 arm64_sonoma:   "f3ac523156480b0b00cf8ef98e2687e7ca0ac2b6107186f14349a0566c57de76"
-    sha256 cellar: :any,                 arm64_ventura:  "8a846a14e97ca4104d9d56be6ba54c6159a798b334b8172d1c941848bb3581aa"
-    sha256 cellar: :any,                 arm64_monterey: "6aa0abeea10e22729ad231d42c44b194eff33d203c786f05fdbc72e6a62a590d"
-    sha256 cellar: :any,                 arm64_big_sur:  "7e4fb2b977db04da50bae5952609b346fb2fd3b2687f2226747c1ff3401f9450"
-    sha256 cellar: :any,                 sonoma:         "86148ddd46d4a6c9a4170b0d97c7abb6726e5210ccead20325350c434f3a4d4c"
-    sha256 cellar: :any,                 ventura:        "cf8a30118932104eb0e9a53bf3ca590356a6c4a8ab9b87229b9b3fc58df860ec"
-    sha256 cellar: :any,                 monterey:       "f40738098dfd10961f28deb59266aa468165ca9011658852a3d8a97f51742175"
-    sha256 cellar: :any,                 big_sur:        "a4b1d70f77f5cab84266761845d3910821315696114c3c19250660d4a9bd18a0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "40d32ca11dd587663402feb5883cddb2db289ec21b807ed6d462658fe1650cf7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5be639eb5da6af885ea1d8c549b8cf4a40aba417b550ea64b29caf6f9600bc4a"
+    sha256 cellar: :any,                 arm64_golden_gate: "6f84db461f136c7a8b30df66f7eff6ba458426d3b59ee635f1f9876bffa7b712"
+    sha256 cellar: :any,                 arm64_tahoe:       "0aceee9730d6524acd094d61efcf3b89387d79c7e10dc3bbbac4cf52ccb133ac"
+    sha256 cellar: :any,                 arm64_sequoia:     "67eee141556944e992f338143289b2021e22023d5f205f571e56bca3a8c2b1f3"
+    sha256 cellar: :any,                 arm64_sonoma:      "f3ac523156480b0b00cf8ef98e2687e7ca0ac2b6107186f14349a0566c57de76"
+    sha256 cellar: :any,                 arm64_ventura:     "8a846a14e97ca4104d9d56be6ba54c6159a798b334b8172d1c941848bb3581aa"
+    sha256 cellar: :any,                 arm64_monterey:    "6aa0abeea10e22729ad231d42c44b194eff33d203c786f05fdbc72e6a62a590d"
+    sha256 cellar: :any,                 arm64_big_sur:     "7e4fb2b977db04da50bae5952609b346fb2fd3b2687f2226747c1ff3401f9450"
+    sha256 cellar: :any,                 sonoma:            "86148ddd46d4a6c9a4170b0d97c7abb6726e5210ccead20325350c434f3a4d4c"
+    sha256 cellar: :any,                 ventura:           "cf8a30118932104eb0e9a53bf3ca590356a6c4a8ab9b87229b9b3fc58df860ec"
+    sha256 cellar: :any,                 monterey:          "f40738098dfd10961f28deb59266aa468165ca9011658852a3d8a97f51742175"
+    sha256 cellar: :any,                 big_sur:           "a4b1d70f77f5cab84266761845d3910821315696114c3c19250660d4a9bd18a0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "40d32ca11dd587663402feb5883cddb2db289ec21b807ed6d462658fe1650cf7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "5be639eb5da6af885ea1d8c549b8cf4a40aba417b550ea64b29caf6f9600bc4a"
   end
 
   depends_on "autoconf" => :build

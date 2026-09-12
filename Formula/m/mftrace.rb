@@ -13,12 +13,13 @@ class Mftrace < Formula
 
   bottle do
     rebuild 5
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2d4dbf098949319339b846a75c34f03b67e6b9288be17881dc7a958e79d76000"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "29733fe05cdd66d2cd8933ea426d6cfb64463151e1b3737e07308c77d8e3d05e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b6ad6365585dc156c13d18d72590ba208b48291d43d023cd24d9dac509c4fb3b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "bd534c47c1a7b6c0d8ede69c36d0334ea7ce6acb61b9e120cde5ce2a1ecb21e5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "99a63f01ac23f29dc26b14cd63a5f51bb0cdc489d3a902e3d376ae4c64662d87"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c2f5a4759a519ac0eb0ca66dca1ce9d57d096dcd55855b00c803fa02f9921358"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "0f0db3de25d32e6d82334f9967be48df26bf632843ac88ffb12a42f3ef9b5821"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "2d4dbf098949319339b846a75c34f03b67e6b9288be17881dc7a958e79d76000"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "29733fe05cdd66d2cd8933ea426d6cfb64463151e1b3737e07308c77d8e3d05e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "b6ad6365585dc156c13d18d72590ba208b48291d43d023cd24d9dac509c4fb3b"
+    sha256 cellar: :any_skip_relocation, sonoma:            "bd534c47c1a7b6c0d8ede69c36d0334ea7ce6acb61b9e120cde5ce2a1ecb21e5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "99a63f01ac23f29dc26b14cd63a5f51bb0cdc489d3a902e3d376ae4c64662d87"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "c2f5a4759a519ac0eb0ca66dca1ce9d57d096dcd55855b00c803fa02f9921358"
   end
 
   head do

@@ -6,14 +6,15 @@ class Libxscrnsaver < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "6097790285805d792860cbcf0bb663c76b58d51a57d505346b179e52e2f7ce7c"
-    sha256 cellar: :any,                 arm64_sequoia: "464b8c95cf2d758476e47dc6f774c6504b84b0265cd458d8fd33619f1386721c"
-    sha256 cellar: :any,                 arm64_sonoma:  "5394466712bb2b54879e310768f2fd52ab60d60322a84f80305d23d7c4991c9c"
-    sha256 cellar: :any,                 arm64_ventura: "57f870876b14e7f906853fbd220817b7cc74873e2310bc5bfca0af2ce15c3279"
-    sha256 cellar: :any,                 sonoma:        "c28763bc9642f615b6aa7864a720dc4b1c6a66875cd23d984c7df896dd515837"
-    sha256 cellar: :any,                 ventura:       "b792a3c4125f99032104d8154eaa3c47296d09bc3c973e88a9dca6288fad6d49"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0c1321270199c8288dc9a1b946e542fe379cc1ca0ee5132d956b7ce6a7c33d0a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "592204a7c4aa929e51c550213e52af404a62e1e83075d48daa93e8efb9a88e36"
+    sha256 cellar: :any,                 arm64_golden_gate: "f95fd53831c3fca39f3a8290b9fd46c4e2f166fd537b306b8201749c57f0290d"
+    sha256 cellar: :any,                 arm64_tahoe:       "6097790285805d792860cbcf0bb663c76b58d51a57d505346b179e52e2f7ce7c"
+    sha256 cellar: :any,                 arm64_sequoia:     "464b8c95cf2d758476e47dc6f774c6504b84b0265cd458d8fd33619f1386721c"
+    sha256 cellar: :any,                 arm64_sonoma:      "5394466712bb2b54879e310768f2fd52ab60d60322a84f80305d23d7c4991c9c"
+    sha256 cellar: :any,                 arm64_ventura:     "57f870876b14e7f906853fbd220817b7cc74873e2310bc5bfca0af2ce15c3279"
+    sha256 cellar: :any,                 sonoma:            "c28763bc9642f615b6aa7864a720dc4b1c6a66875cd23d984c7df896dd515837"
+    sha256 cellar: :any,                 ventura:           "b792a3c4125f99032104d8154eaa3c47296d09bc3c973e88a9dca6288fad6d49"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "0c1321270199c8288dc9a1b946e542fe379cc1ca0ee5132d956b7ce6a7c33d0a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "592204a7c4aa929e51c550213e52af404a62e1e83075d48daa93e8efb9a88e36"
   end
 
   depends_on "pkgconf" => :build

@@ -6,12 +6,13 @@ class Xlsclients < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "de8b373a41ebd5e17c797c17c87b95b5d0e0711625ffd981f4bb5b7e92e16154"
-    sha256 cellar: :any,                 arm64_sequoia: "3f190e3dce6a1e068753fccf4c63afcb74cd5264a6abda2662238ed9a502d3fc"
-    sha256 cellar: :any,                 arm64_sonoma:  "51e9d5978bbbb136a1e1bedf72ec268a81dee67cabd1baca70f8e978205665b6"
-    sha256 cellar: :any,                 sonoma:        "648f84da414aa30d72380c4c71d3c97bff3758fc1ec08c6d9ae28f82cb729f07"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c8645f20b8adf3f934f0109d493c4874a376da5d0d3d1096b3ca57a0ca55e4d8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b8f4bcee55c5591705accdd74b8eb08d0b6e373da0e0696c1eb31446bdea6156"
+    sha256 cellar: :any,                 arm64_golden_gate: "fd14f51bd76168469093dfb300f9ea530b75e4d93099ac6430081a1a2bf8b9cc"
+    sha256 cellar: :any,                 arm64_tahoe:       "de8b373a41ebd5e17c797c17c87b95b5d0e0711625ffd981f4bb5b7e92e16154"
+    sha256 cellar: :any,                 arm64_sequoia:     "3f190e3dce6a1e068753fccf4c63afcb74cd5264a6abda2662238ed9a502d3fc"
+    sha256 cellar: :any,                 arm64_sonoma:      "51e9d5978bbbb136a1e1bedf72ec268a81dee67cabd1baca70f8e978205665b6"
+    sha256 cellar: :any,                 sonoma:            "648f84da414aa30d72380c4c71d3c97bff3758fc1ec08c6d9ae28f82cb729f07"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "c8645f20b8adf3f934f0109d493c4874a376da5d0d3d1096b3ca57a0ca55e4d8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "b8f4bcee55c5591705accdd74b8eb08d0b6e373da0e0696c1eb31446bdea6156"
   end
 
   depends_on "pkgconf" => :build

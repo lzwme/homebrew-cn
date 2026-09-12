@@ -6,12 +6,13 @@ class Kickstart < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4da704a13fe097f488ef7ffff14c2449e08ce87f0863c4d3b0ec1fb4d84d817f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "98d5fc2c7dd19846e28d7d3ac0aded2ba9d05a7027a2cd9b7d5d544aa643ae50"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "63ac54acda7d230418bb0b0fd3d43a6920eda599e6aebd8e6ad654ff94f5207c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ada53abf074cf433bcc799226148790a68578c86ecde501f4c55f79f7969ade6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5be6b2132ab93b209560ebe642576a39d6e7606ff5bd90215bac6415d2d0c32a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cd13f0e62244332963acd82c481bd12d3f917c4adce0a7b62bfb4ee6a059d73b"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "cab8c93d283eef43e566222ed965157e18d2b7ee1f3db664a61f0461571037d5"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "4da704a13fe097f488ef7ffff14c2449e08ce87f0863c4d3b0ec1fb4d84d817f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "98d5fc2c7dd19846e28d7d3ac0aded2ba9d05a7027a2cd9b7d5d544aa643ae50"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "63ac54acda7d230418bb0b0fd3d43a6920eda599e6aebd8e6ad654ff94f5207c"
+    sha256 cellar: :any_skip_relocation, sonoma:            "ada53abf074cf433bcc799226148790a68578c86ecde501f4c55f79f7969ade6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "5be6b2132ab93b209560ebe642576a39d6e7606ff5bd90215bac6415d2d0c32a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "cd13f0e62244332963acd82c481bd12d3f917c4adce0a7b62bfb4ee6a059d73b"
   end
 
   depends_on "rust" => :build

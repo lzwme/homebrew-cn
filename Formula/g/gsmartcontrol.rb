@@ -6,14 +6,15 @@ class Gsmartcontrol < Formula
   license any_of: ["GPL-2.0-only", "GPL-3.0-only"]
 
   bottle do
-    sha256 arm64_tahoe:   "cfaf1237a9a274431f67a88627cb0a794662c85d083d2e7dd46083422ca821c4"
-    sha256 arm64_sequoia: "fec689ece510c21ae0589fce4d135a403f7b59904e2fd565d00079a21d3cf2e2"
-    sha256 arm64_sonoma:  "dfb1e49374740cbeb2392d5b645e12df3669389f45e575eae5114cf2bbd89f4b"
-    sha256 arm64_ventura: "06c41cd9e482c9477e5e06131536cd9b678d52bf4e547cfc48414eb645ec4fd0"
-    sha256 sonoma:        "3c772fa791354268934693ea60962ffbe839ca07219b9a69925e7bd862d0ff61"
-    sha256 ventura:       "244de0b2b1617a8a7f71210230f94fd32d3f77a87745a4e3a893e6621e1da4f2"
-    sha256 arm64_linux:   "5213f0cf402797e0e3d08a4ed283272fa701bf0ff1a876b468eedf4489464086"
-    sha256 x86_64_linux:  "6cd4fa97e19fee44f12fe02e4d7edf882c098c80d83472d036d61f8e730c7b81"
+    sha256 arm64_golden_gate: "af2352ffc4d3e9fe181b8b470638d052151c0a75714cc3f443f6c3faec401f57"
+    sha256 arm64_tahoe:       "cfaf1237a9a274431f67a88627cb0a794662c85d083d2e7dd46083422ca821c4"
+    sha256 arm64_sequoia:     "fec689ece510c21ae0589fce4d135a403f7b59904e2fd565d00079a21d3cf2e2"
+    sha256 arm64_sonoma:      "dfb1e49374740cbeb2392d5b645e12df3669389f45e575eae5114cf2bbd89f4b"
+    sha256 arm64_ventura:     "06c41cd9e482c9477e5e06131536cd9b678d52bf4e547cfc48414eb645ec4fd0"
+    sha256 sonoma:            "3c772fa791354268934693ea60962ffbe839ca07219b9a69925e7bd862d0ff61"
+    sha256 ventura:           "244de0b2b1617a8a7f71210230f94fd32d3f77a87745a4e3a893e6621e1da4f2"
+    sha256 arm64_linux:       "5213f0cf402797e0e3d08a4ed283272fa701bf0ff1a876b468eedf4489464086"
+    sha256 x86_64_linux:      "6cd4fa97e19fee44f12fe02e4d7edf882c098c80d83472d036d61f8e730c7b81"
   end
 
   depends_on "cmake" => :build

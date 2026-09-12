@@ -7,12 +7,13 @@ class Snapcast < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "ff3736ac6d060aa12bb5f20c9bdff44eddf1599e4dbfae99cb62ca5d58cbecd0"
-    sha256 cellar: :any,                 arm64_sequoia: "f029d457826ddc09f04d6a68a07ed0c7e08d2d19ec7afa1068b23ba824bc5d73"
-    sha256 cellar: :any,                 arm64_sonoma:  "206de0dd3393237be71d89125b131f11797606aea872e413ed5c1877fe6508c6"
-    sha256 cellar: :any,                 sonoma:        "5603fec33ba9ba3e83fb16d10423579f8b589f5c82290ae6e29097b70fe6e723"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ace3d2ab530a6c0312a13d815086d2b67c1230b01100119aef106102f8eb8427"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6037bb300c6c03217793eb4910b336939d3c5c27a0dbf1ee05b994308f42327c"
+    sha256 cellar: :any,                 arm64_golden_gate: "c5b86c0ba4392d3534ae4baa1d4931e0dea8bf1a977e0461a4a13de8a971b5ce"
+    sha256 cellar: :any,                 arm64_tahoe:       "ff3736ac6d060aa12bb5f20c9bdff44eddf1599e4dbfae99cb62ca5d58cbecd0"
+    sha256 cellar: :any,                 arm64_sequoia:     "f029d457826ddc09f04d6a68a07ed0c7e08d2d19ec7afa1068b23ba824bc5d73"
+    sha256 cellar: :any,                 arm64_sonoma:      "206de0dd3393237be71d89125b131f11797606aea872e413ed5c1877fe6508c6"
+    sha256 cellar: :any,                 sonoma:            "5603fec33ba9ba3e83fb16d10423579f8b589f5c82290ae6e29097b70fe6e723"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "ace3d2ab530a6c0312a13d815086d2b67c1230b01100119aef106102f8eb8427"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "6037bb300c6c03217793eb4910b336939d3c5c27a0dbf1ee05b994308f42327c"
   end
 
   depends_on "boost" => :build

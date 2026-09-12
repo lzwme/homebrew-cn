@@ -13,14 +13,15 @@ class John < Formula
 
   bottle do
     rebuild 1
-    sha256 arm64_tahoe:   "de355d8210ec0ecde0806a9934c6f14600943b18ae9e98b67571e7b1f7f215f1"
-    sha256 arm64_sequoia: "838f0767e0ffb76971a2a0c05c76edb7c0bcd457446ac25eb6b6ac003668197e"
-    sha256 arm64_sonoma:  "01e64e35c816560c4a058c4686fa08b821dee81418b56560ab8afdb42d83a567"
-    sha256 arm64_ventura: "08bdd817308d691493a5766687aef952d5f2310bed7342b0f8f9a6de10d9a73d"
-    sha256 sonoma:        "5bcb36b0fe61d6b2b432944ce913e6f04230ea487b857d931555cba2ab6d37f1"
-    sha256 ventura:       "452c5df9c3715d40aa5297a1b3b07f53eb03cff46601f4293904a9d07335d473"
-    sha256 arm64_linux:   "24e50afd7e32fae180e8cc88443bb9fbf2328f39e427e7f3999cba7a8cd8d085"
-    sha256 x86_64_linux:  "5eed6eadc7ebee51813a7909faf2d436c7c66291f20e0ef1880936faa8b03269"
+    sha256 arm64_golden_gate: "28fe4531586662faf952417180bd98dda46aab365e4688853054fab355dde0cb"
+    sha256 arm64_tahoe:       "de355d8210ec0ecde0806a9934c6f14600943b18ae9e98b67571e7b1f7f215f1"
+    sha256 arm64_sequoia:     "838f0767e0ffb76971a2a0c05c76edb7c0bcd457446ac25eb6b6ac003668197e"
+    sha256 arm64_sonoma:      "01e64e35c816560c4a058c4686fa08b821dee81418b56560ab8afdb42d83a567"
+    sha256 arm64_ventura:     "08bdd817308d691493a5766687aef952d5f2310bed7342b0f8f9a6de10d9a73d"
+    sha256 sonoma:            "5bcb36b0fe61d6b2b432944ce913e6f04230ea487b857d931555cba2ab6d37f1"
+    sha256 ventura:           "452c5df9c3715d40aa5297a1b3b07f53eb03cff46601f4293904a9d07335d473"
+    sha256 arm64_linux:       "24e50afd7e32fae180e8cc88443bb9fbf2328f39e427e7f3999cba7a8cd8d085"
+    sha256 x86_64_linux:      "5eed6eadc7ebee51813a7909faf2d436c7c66291f20e0ef1880936faa8b03269"
   end
 
   uses_from_macos "libxcrypt"

@@ -7,11 +7,12 @@ class Hjson < Formula
   head "https://github.com/hjson/hjson-go.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4a33156f50c63285d3df45038349df02997e8f177138201d44d19b313a3a2ed7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4a33156f50c63285d3df45038349df02997e8f177138201d44d19b313a3a2ed7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4a33156f50c63285d3df45038349df02997e8f177138201d44d19b313a3a2ed7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4aa5610d49cd7983041ac406238fc68c6726424ad23f9e2b762a64f8d4ce18e8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "51aa8911adf1968269810f0f25131e813490c97782536646ad3f76341481955d"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "4a33156f50c63285d3df45038349df02997e8f177138201d44d19b313a3a2ed7"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "4a33156f50c63285d3df45038349df02997e8f177138201d44d19b313a3a2ed7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "4a33156f50c63285d3df45038349df02997e8f177138201d44d19b313a3a2ed7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "4a33156f50c63285d3df45038349df02997e8f177138201d44d19b313a3a2ed7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "4aa5610d49cd7983041ac406238fc68c6726424ad23f9e2b762a64f8d4ce18e8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "51aa8911adf1968269810f0f25131e813490c97782536646ad3f76341481955d"
   end
 
   depends_on "go" => :build

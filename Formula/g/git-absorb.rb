@@ -7,12 +7,13 @@ class GitAbsorb < Formula
   head "https://github.com/tummychow/git-absorb.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "15d25d50f77a146d40e0d2d71fa977f77687bb290e1e42f680edee5c332683b9"
-    sha256 cellar: :any,                 arm64_sequoia: "3705ab0482910af6744073aa1eafd7aa0010c02d77249b2419ef356538653dcb"
-    sha256 cellar: :any,                 arm64_sonoma:  "e408a461a67c6334533ef540f82caea09c31714aca72d404c9be97325754af4f"
-    sha256 cellar: :any,                 sonoma:        "ad387b6822e19ed2cc5d0947ab764639fcf7557660383d57e4e0fc17353731fe"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0b0717a00ef65e265f27f90fbb989ce12df1449dc51854166d9be02f09f87adc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4fcd6d7cfdce2f15b53389137242a03e7cef8c6bb8927640527db2375a006b20"
+    sha256 cellar: :any,                 arm64_golden_gate: "404eecd2935fce59be5589600c3deaa0438591aa3dedea249798bdc8ffa575c5"
+    sha256 cellar: :any,                 arm64_tahoe:       "15d25d50f77a146d40e0d2d71fa977f77687bb290e1e42f680edee5c332683b9"
+    sha256 cellar: :any,                 arm64_sequoia:     "3705ab0482910af6744073aa1eafd7aa0010c02d77249b2419ef356538653dcb"
+    sha256 cellar: :any,                 arm64_sonoma:      "e408a461a67c6334533ef540f82caea09c31714aca72d404c9be97325754af4f"
+    sha256 cellar: :any,                 sonoma:            "ad387b6822e19ed2cc5d0947ab764639fcf7557660383d57e4e0fc17353731fe"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "0b0717a00ef65e265f27f90fbb989ce12df1449dc51854166d9be02f09f87adc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "4fcd6d7cfdce2f15b53389137242a03e7cef8c6bb8927640527db2375a006b20"
   end
 
   depends_on "asciidoctor" => :build

@@ -13,12 +13,13 @@ class Yaws < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f0629320e62e14c5dbfed5c834bfa166dd1077cd5d0df943ba18d5d721c0b7cb"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0cb3c87cc60dd5dacb0b6acc9cb7fe99ffd0ab073ec160fd373c91f2be09489d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "79a01410336e2eb53d37f2e1af63d0d09430ad29209a42e16e77f7615ee338ca"
-    sha256                               sonoma:        "de5689a0f5e8831bf8d79aaaaa02c7c20ef0eeed497c30d21773381235f7d071"
-    sha256 cellar: :any,                 arm64_linux:   "0047af968c92cda969bd782b0103eb07c95540cbc379d1be7ac53568294834f6"
-    sha256 cellar: :any,                 x86_64_linux:  "5cd1962303c9ed3937fa80bb578ec4cd637cdff756dde2d7235968f885080fd6"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "f3d54f22f8e3bd39b373d53db77c1fd2006a7319d5119e6e68789dc0c61a5da4"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "f0629320e62e14c5dbfed5c834bfa166dd1077cd5d0df943ba18d5d721c0b7cb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "0cb3c87cc60dd5dacb0b6acc9cb7fe99ffd0ab073ec160fd373c91f2be09489d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "79a01410336e2eb53d37f2e1af63d0d09430ad29209a42e16e77f7615ee338ca"
+    sha256                               sonoma:            "de5689a0f5e8831bf8d79aaaaa02c7c20ef0eeed497c30d21773381235f7d071"
+    sha256 cellar: :any,                 arm64_linux:       "0047af968c92cda969bd782b0103eb07c95540cbc379d1be7ac53568294834f6"
+    sha256 cellar: :any,                 x86_64_linux:      "5cd1962303c9ed3937fa80bb578ec4cd637cdff756dde2d7235968f885080fd6"
   end
 
   depends_on "autoconf" => :build

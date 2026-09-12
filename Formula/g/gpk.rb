@@ -7,12 +7,13 @@ class Gpk < Formula
   head "https://github.com/neur0map/glazepkg.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0d9d4ff24f127d913c5238e379e36f8f89e6531d9f6d340f51cd14f49fa15af5"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0d9d4ff24f127d913c5238e379e36f8f89e6531d9f6d340f51cd14f49fa15af5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0d9d4ff24f127d913c5238e379e36f8f89e6531d9f6d340f51cd14f49fa15af5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9d2977707f4969b35ba3c24923eb4da3a3357fef1babaa2ac3a601879557861a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8a5114717d365aa1f4e449479bc68bb5ae5bd1d0763d0c13a8e36567f8af45c6"
-    sha256 cellar: :any,                 x86_64_linux:  "1a4d6025f36b7cf8e2f36eac7f1d35d4cf4291720fe31d3a142edb3b3999d789"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "8105fbfa2bdbf20dee03365bf1179397a0286fd78336b49ccc098ee9501b7240"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "0d9d4ff24f127d913c5238e379e36f8f89e6531d9f6d340f51cd14f49fa15af5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "0d9d4ff24f127d913c5238e379e36f8f89e6531d9f6d340f51cd14f49fa15af5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "0d9d4ff24f127d913c5238e379e36f8f89e6531d9f6d340f51cd14f49fa15af5"
+    sha256 cellar: :any_skip_relocation, sonoma:            "9d2977707f4969b35ba3c24923eb4da3a3357fef1babaa2ac3a601879557861a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "8a5114717d365aa1f4e449479bc68bb5ae5bd1d0763d0c13a8e36567f8af45c6"
+    sha256 cellar: :any,                 x86_64_linux:      "1a4d6025f36b7cf8e2f36eac7f1d35d4cf4291720fe31d3a142edb3b3999d789"
   end
 
   depends_on "go" => :build

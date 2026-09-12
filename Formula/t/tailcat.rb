@@ -7,11 +7,12 @@ class Tailcat < Formula
   head "https://github.com/tailscale/tailcat.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9f686d22d495a8ee91bc1af7f908500af276851aaf7913a8a99c5993974d429b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3e132bd00487bca6a37dd8c500a5343b4febe7663b5063d89eaf348fffd23179"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f91c1798eb7e91de6ea3cdea482c467e4810f607393af82080d743461228a345"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7a913305bf974b4cc867189a6f6a3f33d792f5f990a4be06a6ba4a78c36b43df"
-    sha256 cellar: :any,                 x86_64_linux:  "1d2ff46c7d8d17f801c5517631a1779d85981a872ffa56db56d43282addd384e"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "d08b8febde3fea5526f1c2877d546bf522e835df5f16602f3a44065442e4ed3b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "9f686d22d495a8ee91bc1af7f908500af276851aaf7913a8a99c5993974d429b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "3e132bd00487bca6a37dd8c500a5343b4febe7663b5063d89eaf348fffd23179"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "f91c1798eb7e91de6ea3cdea482c467e4810f607393af82080d743461228a345"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "7a913305bf974b4cc867189a6f6a3f33d792f5f990a4be06a6ba4a78c36b43df"
+    sha256 cellar: :any,                 x86_64_linux:      "1d2ff46c7d8d17f801c5517631a1779d85981a872ffa56db56d43282addd384e"
   end
 
   depends_on "go" => :build

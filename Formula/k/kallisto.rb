@@ -6,12 +6,13 @@ class Kallisto < Formula
   license "BSD-2-Clause"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "3b826ca4d994122b319591e6bca6a2bcdb6afa39b8d3e9e4adb3046dded637bc"
-    sha256 cellar: :any,                 arm64_sequoia: "3af3db453b6c133763c14ff05f98e49a503f9bd8ea7250b7944cc24da74c74e3"
-    sha256 cellar: :any,                 arm64_sonoma:  "f70f4260e9dee02e41a4d01c53cf8bf88ca6884e481d4db76f55bf694e5eb735"
-    sha256 cellar: :any,                 sonoma:        "62334c7e3f262ad2d3a20054515148f8ff4d64a91940ff503860811075bb5a59"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "708134380a902ba4dbf785cd2e456892fafc11f8e05ada86db37ff5dd14da632"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bb55e7980c60d8c5fdf341a7a79f3a21978f27c09d51056b20dc1866694a6c54"
+    sha256 cellar: :any,                 arm64_golden_gate: "978e480f2fa4ded599de490ea0b7efc617bc6e3ef694a6d139711b71f3b807f4"
+    sha256 cellar: :any,                 arm64_tahoe:       "3b826ca4d994122b319591e6bca6a2bcdb6afa39b8d3e9e4adb3046dded637bc"
+    sha256 cellar: :any,                 arm64_sequoia:     "3af3db453b6c133763c14ff05f98e49a503f9bd8ea7250b7944cc24da74c74e3"
+    sha256 cellar: :any,                 arm64_sonoma:      "f70f4260e9dee02e41a4d01c53cf8bf88ca6884e481d4db76f55bf694e5eb735"
+    sha256 cellar: :any,                 sonoma:            "62334c7e3f262ad2d3a20054515148f8ff4d64a91940ff503860811075bb5a59"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "708134380a902ba4dbf785cd2e456892fafc11f8e05ada86db37ff5dd14da632"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "bb55e7980c60d8c5fdf341a7a79f3a21978f27c09d51056b20dc1866694a6c54"
   end
 
   depends_on "cmake" => :build

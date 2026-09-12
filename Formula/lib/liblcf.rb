@@ -8,12 +8,13 @@ class Liblcf < Formula
   head "https://github.com/EasyRPG/liblcf.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "c70e1c25f43bd1afb5cded83eeea2c881255af73ea1fcbc9b997d598418b455f"
-    sha256 cellar: :any,                 arm64_sequoia: "6a2722660c5d96461a555e686202a7a9b10199434a81418e87fae39b94832da3"
-    sha256 cellar: :any,                 arm64_sonoma:  "083c35e52b98fab1615961b3328d1a9a023bb074fd0337b0266f9f6fbb412ad9"
-    sha256 cellar: :any,                 sonoma:        "b5f3a2a51b789a81455b7619889327260a3b7c3a624a6d39ff72df566e6a1089"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "12c761ee5225d3f19c5b16dc98851daa031eb0f554d297866879ab9415b276a6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e17a85a805ff92cbd72063eb5a5d724f894938fcdf8a0ccbf996016c4f926715"
+    sha256 cellar: :any,                 arm64_golden_gate: "d24d96209bf9bc7747e9544efcb4217e28640137f2268e76aefacd02023b9b4b"
+    sha256 cellar: :any,                 arm64_tahoe:       "c70e1c25f43bd1afb5cded83eeea2c881255af73ea1fcbc9b997d598418b455f"
+    sha256 cellar: :any,                 arm64_sequoia:     "6a2722660c5d96461a555e686202a7a9b10199434a81418e87fae39b94832da3"
+    sha256 cellar: :any,                 arm64_sonoma:      "083c35e52b98fab1615961b3328d1a9a023bb074fd0337b0266f9f6fbb412ad9"
+    sha256 cellar: :any,                 sonoma:            "b5f3a2a51b789a81455b7619889327260a3b7c3a624a6d39ff72df566e6a1089"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "12c761ee5225d3f19c5b16dc98851daa031eb0f554d297866879ab9415b276a6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "e17a85a805ff92cbd72063eb5a5d724f894938fcdf8a0ccbf996016c4f926715"
   end
 
   depends_on "cmake" => :build

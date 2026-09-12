@@ -1,13 +1,13 @@
 class Has < Formula
   desc "Checks presence of various command-line tools and their versions on the path"
   homepage "https://github.com/kdabir/has"
-  url "https://ghfast.top/https://github.com/kdabir/has/archive/refs/tags/v1.5.2.tar.gz"
-  sha256 "965629d00b9c41fab2a9c37b551e3d860df986d86cdebd9b845178db8f1c998e"
+  url "https://ghfast.top/https://github.com/kdabir/has/archive/refs/tags/v1.6.0.tar.gz"
+  sha256 "99b4b82d8b935521bd1b44bf7a6af3421f4c850a28b8edfee39e6ee75af4d78f"
   license "MIT"
   head "https://github.com/kdabir/has.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "b408a2ce6764bf5af24c0cea31ae7cec23f953bcd686b652d4550e28d080de16"
+    sha256 cellar: :any_skip_relocation, all: "01b6b5fa1ca423996dc8648cd076389b26fc2d6e3c4c0cf6f1fd8bdf9d161f9c"
   end
 
   def install

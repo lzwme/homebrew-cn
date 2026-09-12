@@ -11,12 +11,13 @@ class Calceph < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "6eee07b5e3eb9ffe17467f1d4e002607ebcbd0e6240ff17db45d613713550e2f"
-    sha256 cellar: :any, arm64_sequoia: "bd0abe2d6c82207fee9edd8d265c05c6dc91b5694a118f487d5ad887d328cf5d"
-    sha256 cellar: :any, arm64_sonoma:  "f29c80e99a4b49893a5c78e6e7584ea2a9cf3953b67f2fedc0b406612df34d51"
-    sha256 cellar: :any, sonoma:        "c9acd7c2ef7a11e54ea48c48781315682428c5633d573a19aab81ca8d70f437b"
-    sha256 cellar: :any, arm64_linux:   "41840ebcd20d272037f2623f108ab1bf27d4001773d57865a6224e7e8f51906f"
-    sha256 cellar: :any, x86_64_linux:  "b42bb590fb5819332ddad034a2ea82d997bb08158d0fb2bf8fec1c2c4686e950"
+    sha256 cellar: :any, arm64_golden_gate: "f325852f1fb82ac4b9ec9ef0fcd1c58da9166def41eb8283b6400c31620551cb"
+    sha256 cellar: :any, arm64_tahoe:       "6eee07b5e3eb9ffe17467f1d4e002607ebcbd0e6240ff17db45d613713550e2f"
+    sha256 cellar: :any, arm64_sequoia:     "bd0abe2d6c82207fee9edd8d265c05c6dc91b5694a118f487d5ad887d328cf5d"
+    sha256 cellar: :any, arm64_sonoma:      "f29c80e99a4b49893a5c78e6e7584ea2a9cf3953b67f2fedc0b406612df34d51"
+    sha256 cellar: :any, sonoma:            "c9acd7c2ef7a11e54ea48c48781315682428c5633d573a19aab81ca8d70f437b"
+    sha256 cellar: :any, arm64_linux:       "41840ebcd20d272037f2623f108ab1bf27d4001773d57865a6224e7e8f51906f"
+    sha256 cellar: :any, x86_64_linux:      "b42bb590fb5819332ddad034a2ea82d997bb08158d0fb2bf8fec1c2c4686e950"
   end
 
   depends_on "cmake" => :build

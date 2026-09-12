@@ -7,12 +7,13 @@ class Gnuastro < Formula
 
   bottle do
     rebuild 1
-    sha256 arm64_tahoe:   "0ea7f7c21d2c2cb5bfe5e28bc5c713a054eaee0dc0a9332bbd6fd35513f786a8"
-    sha256 arm64_sequoia: "bdecce536f87dfd5990e32a7ba2fc20eae8e454bbe5d78a54636205f53317a8e"
-    sha256 arm64_sonoma:  "e8fa06180cc7280f1d8b36efcae5107e4bbbd5f3426ec3feafe6e43780b429f7"
-    sha256 sonoma:        "c259c00499eed3141ee5487b88156d000351b918ded15c5761115b8820f797f6"
-    sha256 arm64_linux:   "497105abef07079083f746d51e72b217b124df950d28369fc3b4887321d1325f"
-    sha256 x86_64_linux:  "950a234cf681d54c30ebff2c2444684bf3785a679dbceee9220f1cc860bedf6c"
+    sha256 arm64_golden_gate: "2a78487271fe0e52121f127ab3047b1551f0b04875ba3b779408bd9af11fa551"
+    sha256 arm64_tahoe:       "0ea7f7c21d2c2cb5bfe5e28bc5c713a054eaee0dc0a9332bbd6fd35513f786a8"
+    sha256 arm64_sequoia:     "bdecce536f87dfd5990e32a7ba2fc20eae8e454bbe5d78a54636205f53317a8e"
+    sha256 arm64_sonoma:      "e8fa06180cc7280f1d8b36efcae5107e4bbbd5f3426ec3feafe6e43780b429f7"
+    sha256 sonoma:            "c259c00499eed3141ee5487b88156d000351b918ded15c5761115b8820f797f6"
+    sha256 arm64_linux:       "497105abef07079083f746d51e72b217b124df950d28369fc3b4887321d1325f"
+    sha256 x86_64_linux:      "950a234cf681d54c30ebff2c2444684bf3785a679dbceee9220f1cc860bedf6c"
   end
 
   depends_on "pkgconf" => :build

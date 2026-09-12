@@ -7,12 +7,13 @@ class Wolfmqtt < Formula
   head "https://github.com/wolfSSL/wolfMQTT.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "906f1f132056faef3d98b7b8b8d78d9c7aa114f1665004ac84429a9527894e40"
-    sha256 cellar: :any, arm64_sequoia: "e34e4cc010f6b5e61eed9dfe972da3fba4bddfc2bd1e2752905977f3793e15b1"
-    sha256 cellar: :any, arm64_sonoma:  "c55b48a15c74be43f6de8656e90ef5e1803e52cbfb08087abe1d69fff4b83f69"
-    sha256 cellar: :any, sonoma:        "478f70818690688a593270998b98fd02d09150b31950a75227e8f50ca66e3db9"
-    sha256 cellar: :any, arm64_linux:   "4d2cc1b55fe3e778a1e75caf017c80586dbae70df6aee982cd70dce670f4e461"
-    sha256 cellar: :any, x86_64_linux:  "35d88b8187d6264795fcf002a072ab28ccd12b6755079d0b2fb3222d2e6dc0e2"
+    sha256 cellar: :any, arm64_golden_gate: "09fc92cbe68aabeb3d7bc7fbe965d7e706be89b64d279dbfb9dd349b0eb1b94e"
+    sha256 cellar: :any, arm64_tahoe:       "906f1f132056faef3d98b7b8b8d78d9c7aa114f1665004ac84429a9527894e40"
+    sha256 cellar: :any, arm64_sequoia:     "e34e4cc010f6b5e61eed9dfe972da3fba4bddfc2bd1e2752905977f3793e15b1"
+    sha256 cellar: :any, arm64_sonoma:      "c55b48a15c74be43f6de8656e90ef5e1803e52cbfb08087abe1d69fff4b83f69"
+    sha256 cellar: :any, sonoma:            "478f70818690688a593270998b98fd02d09150b31950a75227e8f50ca66e3db9"
+    sha256 cellar: :any, arm64_linux:       "4d2cc1b55fe3e778a1e75caf017c80586dbae70df6aee982cd70dce670f4e461"
+    sha256 cellar: :any, x86_64_linux:      "35d88b8187d6264795fcf002a072ab28ccd12b6755079d0b2fb3222d2e6dc0e2"
   end
 
   depends_on "autoconf" => :build

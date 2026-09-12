@@ -11,11 +11,12 @@ class Gerbv < Formula
 
   bottle do
     rebuild 1
-    sha256 arm64_tahoe:   "bf6c87fbaf8c1ba9224b0114f8274c5428b8dd4f5a9c9fda72609f6241466bc1"
-    sha256 arm64_sequoia: "d13b732f78eed944284e3095d8c901212ff01398e2ca3396541725080054b19d"
-    sha256 arm64_sonoma:  "fb5a4094a415b80d3c321942fbaefff760ad3bf5ccb6ed1094d0ec40be460e32"
-    sha256 arm64_linux:   "a5a419bcdedf5f24b132a6d8b5208c7c50c7be99ea4a402805bcc8b15074e589"
-    sha256 x86_64_linux:  "d8b160c89e1f26c9259b1ea83ec5ac0e09ed317b9ccae0e1715d8b4c7e3409cd"
+    sha256 arm64_golden_gate: "bd3faae6ce425d75f21c4dc96e4c4c7a30d708f24aed8fa77d0749f3f3f241b4"
+    sha256 arm64_tahoe:       "bf6c87fbaf8c1ba9224b0114f8274c5428b8dd4f5a9c9fda72609f6241466bc1"
+    sha256 arm64_sequoia:     "d13b732f78eed944284e3095d8c901212ff01398e2ca3396541725080054b19d"
+    sha256 arm64_sonoma:      "fb5a4094a415b80d3c321942fbaefff760ad3bf5ccb6ed1094d0ec40be460e32"
+    sha256 arm64_linux:       "a5a419bcdedf5f24b132a6d8b5208c7c50c7be99ea4a402805bcc8b15074e589"
+    sha256 x86_64_linux:      "d8b160c89e1f26c9259b1ea83ec5ac0e09ed317b9ccae0e1715d8b4c7e3409cd"
   end
 
   # Can be undeprecated if upstream moves to GTK 3/4: https://github.com/gerbv/gerbv/issues/71

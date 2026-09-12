@@ -13,12 +13,12 @@ class Tesseract < Formula
   end
 
   bottle do
-    sha256               arm64_tahoe:   "03dea8d2bf1d6347451c0e17cfd65d22ff6c044a17454d4c30462fb74f215338"
-    sha256               arm64_sequoia: "7d38a25067344a9b7ba957e4f81545773712402b8910dd9f0669187c32d06dd0"
-    sha256               arm64_sonoma:  "5a992bfcbb16e0dd15250c490bb0df82545eb9113713b3bfea3ca273a36fe649"
-    sha256 cellar: :any, sonoma:        "7812d545b7d2dca8faf68285b50a6194a36a514c2d4ddd481f8cf940a149a4f2"
-    sha256               arm64_linux:   "c6dba43df5ca3e27ae7651cea0a6a430e9b5d9b0e45f4546539cc169165a4f8d"
-    sha256               x86_64_linux:  "ac74070e7c7664eed6de295a4d461b3e6295c34ada2e5aa1fb75ea08325be5d1"
+    rebuild 1
+    sha256 arm64_golden_gate: "0059a0945a6d5ac2ef57b084eb2bf87666df0040d22a2ba8cf0448a3fd6b06a9"
+    sha256 arm64_tahoe:       "5dc22e82f5c9fe0c466830671388866626a076032e7569bbe6ff6d27f1271599"
+    sha256 arm64_sequoia:     "200b865fec2696d87c27a6273aaf2f870fd0796586ad695ac7b138d9db667f17"
+    sha256 arm64_linux:       "9075db5e294c636408738b0e4e7d9b848ee74736a4bec61ce7eef9257d32815c"
+    sha256 x86_64_linux:      "0aab2fc2d381eb44264e2368359fe514aa27f1e1400bec4e8d0de8de4f9641f0"
   end
 
   depends_on "autoconf" => :build
@@ -49,11 +49,6 @@ class Tesseract < Formula
     sha256 "9cf5d576fcc47564f11265841e5ca839001e7e6f38ff7f7aacf46d15a96b00ff"
   end
 
-  resource "snum" do
-    url "https://github.com/USCDataScience/counterfeit-electronics-tesseract/raw/319a6eeacff181dad5c02f3e7a3aff804eaadeca/Training%20Tesseract/snum.traineddata"
-    sha256 "36f772980ff17c66a767f584a0d80bf2302a1afa585c01a226c1863afcea1392"
-  end
-
   def install
     # explicitly state leptonica header location, as the makefile defaults to /usr/local/include,
     # which doesn't work for non-default homebrew location
@@ -71,14 +66,13 @@ class Tesseract < Formula
     # make install in the local share folder to avoid permission errors
     system "make", "install", "training-install", "datarootdir=#{share}"
 
-    resource("snum").stage { mv "snum.traineddata", share/"tessdata" }
     resource("eng").stage { mv "eng.traineddata", share/"tessdata" }
     resource("osd").stage { mv "osd.traineddata", share/"tessdata" }
   end
 
   def caveats
     <<~EOS
-      This formula contains only the "eng", "osd", and "snum" language data files.
+      This formula contains only the "eng" and "osd" language data files.
       If you need any other supported languages, run `brew install tesseract-lang`.
     EOS
   end

@@ -11,12 +11,13 @@ class CargoCrev < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "71e14ec0c42cdd3dfe446ece32f58d5f52ff6d31db25b3de1acc4a6a2dc1c5f4"
-    sha256 cellar: :any,                 arm64_sequoia: "49a298d9684d31c5a47203fa980ed2ca90f43299a5156f6af8b39eb8d04719f5"
-    sha256 cellar: :any,                 arm64_sonoma:  "698e6d52e95a6dd3efa9de309d77d6a492ca79842e74f90f85f964661b1af932"
-    sha256 cellar: :any,                 sonoma:        "3ba1e65600f43c32a417998885ddee0406696577899cb185f5f6208f6489ec0b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "194d2633b70788c541c460d7ebefff409b90a41f921ca4e3bcb68ba68efb7f88"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "75cc24c53306a0e7945e4a95488cd8bbf79d1aa1c7da85b66ca3dc2ed000f987"
+    sha256 cellar: :any,                 arm64_golden_gate: "e87afa39530f1f75eefc38058b70bb9d272207a3b11ae4cf864bf10d6867194f"
+    sha256 cellar: :any,                 arm64_tahoe:       "71e14ec0c42cdd3dfe446ece32f58d5f52ff6d31db25b3de1acc4a6a2dc1c5f4"
+    sha256 cellar: :any,                 arm64_sequoia:     "49a298d9684d31c5a47203fa980ed2ca90f43299a5156f6af8b39eb8d04719f5"
+    sha256 cellar: :any,                 arm64_sonoma:      "698e6d52e95a6dd3efa9de309d77d6a492ca79842e74f90f85f964661b1af932"
+    sha256 cellar: :any,                 sonoma:            "3ba1e65600f43c32a417998885ddee0406696577899cb185f5f6208f6489ec0b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "194d2633b70788c541c460d7ebefff409b90a41f921ca4e3bcb68ba68efb7f88"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "75cc24c53306a0e7945e4a95488cd8bbf79d1aa1c7da85b66ca3dc2ed000f987"
   end
 
   depends_on "rust" => :build
@@ -37,7 +38,7 @@ class CargoCrev < Formula
 
     # Show that we can use a different toolchain than the one provided by the `rust` formula.
     # https://github.com/Homebrew/homebrew-core/pull/134074#pullrequestreview-1484979359
-    ENV.prepend_path "PATH", Formula["rustup"].bin
+    ENV.prepend_path "PATH", formula_opt_bin("rustup")
     system "rustup", "set", "profile", "minimal"
     system "rustup", "default", "beta"
 

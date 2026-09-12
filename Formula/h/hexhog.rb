@@ -7,12 +7,13 @@ class Hexhog < Formula
   head "https://github.com/DVDTSB/hexhog.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bde40a9e189b6f6be35e4ba2898a82d45e254d1189fc9e3f73e4342d91b09d8e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "935652feeff33ebcd7ae3e5cb78b48d8090dd530d1ed2b08c2ffcbd28fcf5a6f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5b2eb1a539e108f115bf83759ca462e975cd4acf0489ae71bd6ab777ffdcc2b4"
-    sha256 cellar: :any_skip_relocation, sonoma:        "138dace07719c079ca390a4b4c88c69be559c818059582b2f08198f73f138e55"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7c6c0e9270acf11f12ba6c94e3e113de6bc1ac22a433afdf89563e7d99ecc592"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e76097f40c985fb9c842e70d9c67055f8bca05912e3211967849a897a58e3b63"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "2e172490d7e0c5a9a13e175e740a6874a7080477b33c23087b880409c21ffc1a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "bde40a9e189b6f6be35e4ba2898a82d45e254d1189fc9e3f73e4342d91b09d8e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "935652feeff33ebcd7ae3e5cb78b48d8090dd530d1ed2b08c2ffcbd28fcf5a6f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "5b2eb1a539e108f115bf83759ca462e975cd4acf0489ae71bd6ab777ffdcc2b4"
+    sha256 cellar: :any_skip_relocation, sonoma:            "138dace07719c079ca390a4b4c88c69be559c818059582b2f08198f73f138e55"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "7c6c0e9270acf11f12ba6c94e3e113de6bc1ac22a433afdf89563e7d99ecc592"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "e76097f40c985fb9c842e70d9c67055f8bca05912e3211967849a897a58e3b63"
   end
 
   depends_on "rust" => :build

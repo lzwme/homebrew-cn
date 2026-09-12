@@ -16,12 +16,13 @@ class PcscLite < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "f49d472947f78d06c3e3290396f1f92f2ce91280fb0e326a88dee53d0b424128"
-    sha256 cellar: :any, arm64_sequoia: "4d5ca00a9976d4c91ddea7040632fdddbd97b2ed0fd3ab890f123e3d281c523c"
-    sha256 cellar: :any, arm64_sonoma:  "dded6282ec1ef89650c2c0f24003da1980eceeacab7251edf11c57160386e370"
-    sha256 cellar: :any, sonoma:        "3ec7b322b383caf6cd359a47d48ac3a226e42c0e4a5e78efb88ab17f81189349"
-    sha256 cellar: :any, arm64_linux:   "673dafcfadb1364bc7d8e7db7ece21a4a9d1830739117c64df473deada17b673"
-    sha256 cellar: :any, x86_64_linux:  "2783208846a4ebf626fe77c1cec77d950d84bfe5bc1e9f6771a12a77277a6723"
+    sha256 cellar: :any, arm64_golden_gate: "2bce0504371635bb108097aeff29de974d437bc952a74e268c14d3711fba0383"
+    sha256 cellar: :any, arm64_tahoe:       "f49d472947f78d06c3e3290396f1f92f2ce91280fb0e326a88dee53d0b424128"
+    sha256 cellar: :any, arm64_sequoia:     "4d5ca00a9976d4c91ddea7040632fdddbd97b2ed0fd3ab890f123e3d281c523c"
+    sha256 cellar: :any, arm64_sonoma:      "dded6282ec1ef89650c2c0f24003da1980eceeacab7251edf11c57160386e370"
+    sha256 cellar: :any, sonoma:            "3ec7b322b383caf6cd359a47d48ac3a226e42c0e4a5e78efb88ab17f81189349"
+    sha256 cellar: :any, arm64_linux:       "673dafcfadb1364bc7d8e7db7ece21a4a9d1830739117c64df473deada17b673"
+    sha256 cellar: :any, x86_64_linux:      "2783208846a4ebf626fe77c1cec77d950d84bfe5bc1e9f6771a12a77277a6723"
   end
 
   keg_only :shadowed_by_macos, "macOS provides PCSC.framework"

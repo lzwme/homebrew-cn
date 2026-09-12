@@ -12,12 +12,13 @@ class Gnuplot < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "a153d761ec3f1cdae50e78d877fd03cb4f4ecc3116e5797649d97f9b1afab4ed"
-    sha256 arm64_sequoia: "3d8efad2b1ce4cd0c1b450e879eb5eec1f4e0faed7d49e0c966f457d70153eb1"
-    sha256 arm64_sonoma:  "96dbce83ca48877b9ba0b150e44bde0dce1f6d4e579f0c26a38c921ebd134bb5"
-    sha256 sonoma:        "9797e19149b8cbeadce635e323996a5db07b9a8449a16c5b639ce0b5b1f8ee93"
-    sha256 arm64_linux:   "b39ea1e52915400931003a9aa108d53b852bbb7edad46be7118c0f6bdc4fc5e4"
-    sha256 x86_64_linux:  "d5d06f7e58bac89c438d57c31df65248ecc23d40b4ffad276afc30c201409917"
+    sha256 arm64_golden_gate: "e08a56d2b8b630a00e858b01205502f2bdd38e9a69d39a0f18c122c4c5932025"
+    sha256 arm64_tahoe:       "a153d761ec3f1cdae50e78d877fd03cb4f4ecc3116e5797649d97f9b1afab4ed"
+    sha256 arm64_sequoia:     "3d8efad2b1ce4cd0c1b450e879eb5eec1f4e0faed7d49e0c966f457d70153eb1"
+    sha256 arm64_sonoma:      "96dbce83ca48877b9ba0b150e44bde0dce1f6d4e579f0c26a38c921ebd134bb5"
+    sha256 sonoma:            "9797e19149b8cbeadce635e323996a5db07b9a8449a16c5b639ce0b5b1f8ee93"
+    sha256 arm64_linux:       "b39ea1e52915400931003a9aa108d53b852bbb7edad46be7118c0f6bdc4fc5e4"
+    sha256 x86_64_linux:      "d5d06f7e58bac89c438d57c31df65248ecc23d40b4ffad276afc30c201409917"
   end
 
   head do

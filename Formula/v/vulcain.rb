@@ -7,12 +7,13 @@ class Vulcain < Formula
   head "https://github.com/dunglas/vulcain.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "24cfb569242dbdc29e9725ba02dde277848813a0d5529cea711080886f20d107"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ca5bd70c80597538ff622be86b533e0ad379834d9e16fa742552497cbc71c277"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7df293d1a5636fe0a03462b3bbf326781e627c4cf0da7c97a3550ab79671772b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d79bd215e71eca36de446ebdfe2d6affc63837606f5ea2492a1d9b0978db2333"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "96d01f437570a84b53f518a4743be4797c7bc6ea7bbe63cd2de4ac7a504448c0"
-    sha256 cellar: :any,                 x86_64_linux:  "9fd463d2ca38e03d26acb9a88864d19240f88741271b8f735796fa2d8eee7c20"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "7f6c327f95b34dcdcb07880d57944024329c42e234f1bde1e9a35a93a0e82560"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "24cfb569242dbdc29e9725ba02dde277848813a0d5529cea711080886f20d107"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "ca5bd70c80597538ff622be86b533e0ad379834d9e16fa742552497cbc71c277"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "7df293d1a5636fe0a03462b3bbf326781e627c4cf0da7c97a3550ab79671772b"
+    sha256 cellar: :any_skip_relocation, sonoma:            "d79bd215e71eca36de446ebdfe2d6affc63837606f5ea2492a1d9b0978db2333"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "96d01f437570a84b53f518a4743be4797c7bc6ea7bbe63cd2de4ac7a504448c0"
+    sha256 cellar: :any,                 x86_64_linux:      "9fd463d2ca38e03d26acb9a88864d19240f88741271b8f735796fa2d8eee7c20"
   end
 
   depends_on "go" => :build

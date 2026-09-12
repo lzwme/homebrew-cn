@@ -6,12 +6,13 @@ class CargoUdeps < Formula
   license any_of: ["Apache-2.0", "MIT"]
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "d80af82efdf3c7b06fe4189fe09664b955848c83077d346f1ffb4eeff7f8e9a3"
-    sha256 cellar: :any,                 arm64_sequoia: "466209aa6ba61edccb693f540fb5a7b6a3774cd172f3b6eabd894553db1bc226"
-    sha256 cellar: :any,                 arm64_sonoma:  "dd3340af06b1d5ffc42d139e49257b1ac00665a8e75b3b7245252a2e52d4383b"
-    sha256 cellar: :any,                 sonoma:        "f272485e3f56b147e1c68e07d8fd7fd91b06e343cc4250b84cb9ebaae0e63296"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2d3bcca123df90077cf852de6ef808c2c28135a13a5b643d48d930457a5e199c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8d30eb29b6cde34d57f10a502b565bd6bc9baabcb569f0341974060cc8c252f7"
+    sha256 cellar: :any,                 arm64_golden_gate: "98d8666ceaa40f4fa49fd418af34fd42b4d70e2b12561594c7dbd0c42c9f3065"
+    sha256 cellar: :any,                 arm64_tahoe:       "d80af82efdf3c7b06fe4189fe09664b955848c83077d346f1ffb4eeff7f8e9a3"
+    sha256 cellar: :any,                 arm64_sequoia:     "466209aa6ba61edccb693f540fb5a7b6a3774cd172f3b6eabd894553db1bc226"
+    sha256 cellar: :any,                 arm64_sonoma:      "dd3340af06b1d5ffc42d139e49257b1ac00665a8e75b3b7245252a2e52d4383b"
+    sha256 cellar: :any,                 sonoma:            "f272485e3f56b147e1c68e07d8fd7fd91b06e343cc4250b84cb9ebaae0e63296"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "2d3bcca123df90077cf852de6ef808c2c28135a13a5b643d48d930457a5e199c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "8d30eb29b6cde34d57f10a502b565bd6bc9baabcb569f0341974060cc8c252f7"
   end
 
   depends_on "pkgconf" => :build
@@ -38,7 +39,7 @@ class CargoUdeps < Formula
 
     # Show that we can use a different toolchain than the one provided by the `rust` formula.
     # https://github.com/Homebrew/homebrew-core/pull/134074#pullrequestreview-1484979359
-    ENV.prepend_path "PATH", Formula["rustup"].bin
+    ENV.prepend_path "PATH", formula_opt_bin("rustup")
     system "rustup", "set", "profile", "minimal"
     system "rustup", "default", "beta"
 

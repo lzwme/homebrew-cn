@@ -12,24 +12,20 @@ class Jrsonnet < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "026bf62a8f25bba0ebb74716c7167c4564c69967bf4860a64e81332ca668c187"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "84d48f262c1a5d6c4c8054bc435c7ed3c125ea6eff0ac44758c4d6d5d7a902be"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8612efbafac8310f5542bc1a928c064853db67955dfd30c7678afa8d21ef9fbc"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9d0249acf621ed487cffb828cc63c2210749a30de553f0f0cb48c9b00a15c545"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "662dbf19789e9f681e4c325d2814b1e77ef88174e6b9083d6793192bd5ac1523"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "66be41438ed1da22c922c59d3da10a1852b89491898881c2bcd25c114abd4852"
-    sha256 cellar: :any_skip_relocation, sonoma:         "b149496a8055b9dffca8be4eb576f62af266ac219c7010603924fca8ddd06f79"
-    sha256 cellar: :any_skip_relocation, ventura:        "9fc6a73c2b9c251038f317bef54054b598620d687872ccae2da6cad585ecb14d"
-    sha256 cellar: :any_skip_relocation, monterey:       "89080991d6ec832d7fa2d868a4323e08921291a01100797a7343790b3ab30088"
-    sha256 cellar: :any_skip_relocation, big_sur:        "8e96db079868f110cd8b9fc4b29a1340bd5539ab1740928d8c2a8d8a7c34b25e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "a2c0b31f422bd414ea9a03f66e47131e10513157ce995499770e364a6b944692"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3a04748fc43150da3210809034f82864313d7706869ec78265462a22cf2a4812"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "82d5b24d2553147fc34a7c36a9a0fa2de7e4a6db99bc21b9695529ddfd7c20ff"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "eb53f849aa5359474ccf9503d1c6a6ac9fb48090ac9d179dd46447d1eaa1eb0d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "94ee1130ef46c19c4de00aa49fa41b50303af407669bd8d28d179046fa995dce"
+    sha256 cellar: :any,                 arm64_linux:       "c1ce6e57cd1099221d040e7d11c322dd843986e9a168ce472a1eb25875f137b9"
+    sha256 cellar: :any,                 x86_64_linux:      "7ce96b7714531828e32377681c6400f477e70e799a22f1ba232a05added276aa"
   end
 
   depends_on "rust" => :build
 
   def install
+    # TODO: `throw!` macro trips `semicolon_in_expressions_from_macros`, deny-by-default since Rust 1.91
+    ENV.append_to_rustflags "--allow semicolon_in_expressions_from_macros"
+
     system "cargo", "install", *std_cargo_args(path: "cmds/jrsonnet")
     if build.head?
       generate_completions_from_executable(bin/"jrsonnet", "generate")

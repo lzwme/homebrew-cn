@@ -11,11 +11,12 @@ class LibvirtPython < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "9ac69f031a374ef3eaffe7e601c1b238e4bd93671a667d15160f5f6bcd168125"
-    sha256 cellar: :any, arm64_sequoia: "1b0f537518716e657ecd9d01770f20743bc76058d4d9fb3830536970ca6fe6f0"
-    sha256 cellar: :any, arm64_sonoma:  "42a99c27f3d2c4bf46412a8ec8ed4574dd6011022174f322fbe862e7ec9a049a"
-    sha256 cellar: :any, arm64_linux:   "ecdc8eca1aa97220a98ac92c0b7384ee2510e762f2f1748f602b2c9608532e77"
-    sha256 cellar: :any, x86_64_linux:  "80c4ecfddf32d56d644696a6118ca40c96e109594452ee110dde19235161d035"
+    sha256 cellar: :any, arm64_golden_gate: "d5c001e75211b2473934e6579ef7a32250050b95b9871285c2f32342475b64d4"
+    sha256 cellar: :any, arm64_tahoe:       "9ac69f031a374ef3eaffe7e601c1b238e4bd93671a667d15160f5f6bcd168125"
+    sha256 cellar: :any, arm64_sequoia:     "1b0f537518716e657ecd9d01770f20743bc76058d4d9fb3830536970ca6fe6f0"
+    sha256 cellar: :any, arm64_sonoma:      "42a99c27f3d2c4bf46412a8ec8ed4574dd6011022174f322fbe862e7ec9a049a"
+    sha256 cellar: :any, arm64_linux:       "ecdc8eca1aa97220a98ac92c0b7384ee2510e762f2f1748f602b2c9608532e77"
+    sha256 cellar: :any, x86_64_linux:      "80c4ecfddf32d56d644696a6118ca40c96e109594452ee110dde19235161d035"
   end
 
   depends_on "pkgconf" => :build

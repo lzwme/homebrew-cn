@@ -12,12 +12,13 @@ class VulkanValidationlayers < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "9a77e56359809bc73b5fc6491dd24ad4b11cecde64b64a5608cde480d0fd0f50"
-    sha256 cellar: :any, arm64_sequoia: "444cc47f5ce0cd35ebaf2e945b05d9c4ed7ce79251876fac187d8cafa48231a9"
-    sha256 cellar: :any, arm64_sonoma:  "ce01443872d6b2df90ae8cf64d3f338844cd8da14e14bbe943ef408cae77798a"
-    sha256 cellar: :any, sonoma:        "5b82f581e4de04fc7ebe066f46f264096f0c20001b6606d2e3016e36093ceafa"
-    sha256 cellar: :any, arm64_linux:   "fbffe3fb46bd3b8eed44b18604982a42a3db8030a423238f30ef8d868f5d1f59"
-    sha256 cellar: :any, x86_64_linux:  "ef66b7f42eb0f27a5f37b8a58530698d8105ee918189cfcc1a16cee527b98beb"
+    sha256 cellar: :any, arm64_golden_gate: "4f4eb5928500192712b7c78e04a5b14be015b71cdb961c2f2a6bd9b97de5f487"
+    sha256 cellar: :any, arm64_tahoe:       "9a77e56359809bc73b5fc6491dd24ad4b11cecde64b64a5608cde480d0fd0f50"
+    sha256 cellar: :any, arm64_sequoia:     "444cc47f5ce0cd35ebaf2e945b05d9c4ed7ce79251876fac187d8cafa48231a9"
+    sha256 cellar: :any, arm64_sonoma:      "ce01443872d6b2df90ae8cf64d3f338844cd8da14e14bbe943ef408cae77798a"
+    sha256 cellar: :any, sonoma:            "5b82f581e4de04fc7ebe066f46f264096f0c20001b6606d2e3016e36093ceafa"
+    sha256 cellar: :any, arm64_linux:       "fbffe3fb46bd3b8eed44b18604982a42a3db8030a423238f30ef8d868f5d1f59"
+    sha256 cellar: :any, x86_64_linux:      "ef66b7f42eb0f27a5f37b8a58530698d8105ee918189cfcc1a16cee527b98beb"
   end
 
   depends_on "cmake" => :build

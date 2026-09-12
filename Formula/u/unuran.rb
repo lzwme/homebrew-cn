@@ -13,12 +13,13 @@ class Unuran < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "7b497736d70b7cede01b2808aeed41788d41dafc6e29267c71699cb5b0a90747"
-    sha256 cellar: :any, arm64_sequoia: "14873c242df0237baa5cff64d870d2793de3c2a76eb486680a364fed9aad7f9a"
-    sha256 cellar: :any, arm64_sonoma:  "7070e774e8176086fa46446f5bc3f475a02db0f1f6896abc1562ba49b270ccd3"
-    sha256 cellar: :any, sonoma:        "4f818a00766a4284a1fe32f51e036ab24b68f7424fc155843a247151ecc7ca37"
-    sha256 cellar: :any, arm64_linux:   "8791c122c24e7fc123629855b603aee933fe457d6f42cc500fe6d84a25fb7dc6"
-    sha256 cellar: :any, x86_64_linux:  "9460190a338d36e0b1467e7c7fc5fd26e21c9bb809f1a47638c2a1f37d07ee96"
+    sha256 cellar: :any, arm64_golden_gate: "5b2c794b9849c4f66d74b8d475796c82e8ec21a3a42990ab30e4dc5e6f69c964"
+    sha256 cellar: :any, arm64_tahoe:       "7b497736d70b7cede01b2808aeed41788d41dafc6e29267c71699cb5b0a90747"
+    sha256 cellar: :any, arm64_sequoia:     "14873c242df0237baa5cff64d870d2793de3c2a76eb486680a364fed9aad7f9a"
+    sha256 cellar: :any, arm64_sonoma:      "7070e774e8176086fa46446f5bc3f475a02db0f1f6896abc1562ba49b270ccd3"
+    sha256 cellar: :any, sonoma:            "4f818a00766a4284a1fe32f51e036ab24b68f7424fc155843a247151ecc7ca37"
+    sha256 cellar: :any, arm64_linux:       "8791c122c24e7fc123629855b603aee933fe457d6f42cc500fe6d84a25fb7dc6"
+    sha256 cellar: :any, x86_64_linux:      "9460190a338d36e0b1467e7c7fc5fd26e21c9bb809f1a47638c2a1f37d07ee96"
   end
 
   depends_on "autoconf" => :build

@@ -7,11 +7,12 @@ class GitPkgsProxy < Formula
   head "https://github.com/git-pkgs/proxy.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "aa4aaa889f6efe5d370a352ecf133c9e792967a68297814fd6c1de84a4406c4a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6b486d5235c786c4da3a0dd71a561d24e9010c0669bcb7458929b3f8b5a307fe"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "57810e998e2d11cc505643fd25e98fb7b76c8a49cda2fc21188e7b7f32d44fbf"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cc15257fbe8485700261012c843b297e677659e42943c2e24a9cccf7d7e90a3b"
-    sha256 cellar: :any,                 x86_64_linux:  "b2ea13b6f85c9ec8819ed78f9e8af06a5fff6bc2487d7f8d06d6e8fb5ae54779"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "785a0a8d9a28a483c2d31e3b6fd993b5d59996526ae9cba61b564e0a1542dc87"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "aa4aaa889f6efe5d370a352ecf133c9e792967a68297814fd6c1de84a4406c4a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "6b486d5235c786c4da3a0dd71a561d24e9010c0669bcb7458929b3f8b5a307fe"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "57810e998e2d11cc505643fd25e98fb7b76c8a49cda2fc21188e7b7f32d44fbf"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "cc15257fbe8485700261012c843b297e677659e42943c2e24a9cccf7d7e90a3b"
+    sha256 cellar: :any,                 x86_64_linux:      "b2ea13b6f85c9ec8819ed78f9e8af06a5fff6bc2487d7f8d06d6e8fb5ae54779"
   end
 
   depends_on "go" => :build

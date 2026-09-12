@@ -13,11 +13,12 @@ class Blast < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "c4b40232e3ae04bad85618d2a855b75e58059878e7c0ded5a327f7ab3e070af7"
-    sha256 arm64_sequoia: "c653cb7d6f812f794a5496c9c7c4e1fdfa2fe600263294cfbf38dc6a4a6b5ade"
-    sha256 arm64_sonoma:  "fbca1a7dac99eb6600ed29ae4a5071263b4239ae5d127afc52016ccca0994023"
-    sha256 arm64_linux:   "7515cbd0a555a55262fd7021eb4001d573f39362ccecf34c5476fbb117809552"
-    sha256 x86_64_linux:  "969d1e7c127e73ba543b86cb5515cb1aee569b85a1742fdff57a3a54ba3b5a4b"
+    sha256 arm64_golden_gate: "5db429964b697b4d39c1323366522f675b780c8577087042edb62a4091aad0b3"
+    sha256 arm64_tahoe:       "c4b40232e3ae04bad85618d2a855b75e58059878e7c0ded5a327f7ab3e070af7"
+    sha256 arm64_sequoia:     "c653cb7d6f812f794a5496c9c7c4e1fdfa2fe600263294cfbf38dc6a4a6b5ade"
+    sha256 arm64_sonoma:      "fbca1a7dac99eb6600ed29ae4a5071263b4239ae5d127afc52016ccca0994023"
+    sha256 arm64_linux:       "7515cbd0a555a55262fd7021eb4001d573f39362ccecf34c5476fbb117809552"
+    sha256 x86_64_linux:      "969d1e7c127e73ba543b86cb5515cb1aee569b85a1742fdff57a3a54ba3b5a4b"
   end
 
   depends_on "lmdb"

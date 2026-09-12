@@ -44,7 +44,7 @@ class MingwW64 < Formula
   end
 
   resource "binutils" do
-    url "https://ftpmirror.gnu.org/gnu/binutils/binutils-2.47.tar.bz2"
+    url "https://ftpmirror.gnu.org/binutils/binutils-2.47.tar.bz2"
     mirror "https://ftp.gnu.org/gnu/binutils/binutils-2.47.tar.bz2"
     sha256 "3068128c75cda9f898ccb4211d360246e8e195ffcc9dfb655b23ae23a54800e8"
     livecheck do
@@ -53,7 +53,7 @@ class MingwW64 < Formula
   end
 
   resource "gcc" do
-    url "https://ftpmirror.gnu.org/gnu/gcc/gcc-16.2.0/gcc-16.2.0.tar.xz"
+    url "https://ftpmirror.gnu.org/gcc/gcc-16.2.0/gcc-16.2.0.tar.xz"
     mirror "https://ftp.gnu.org/gnu/gcc/gcc-16.2.0/gcc-16.2.0.tar.xz"
     sha256 "e6738e29597f733270731aa90600f37ffdc045079dfc27ec7e8192cc81085c3e"
   end

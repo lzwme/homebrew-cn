@@ -43,7 +43,7 @@ end
 class Glibc < Formula
   desc "GNU C Library"
   homepage "https://www.gnu.org/software/libc/"
-  url "https://ftpmirror.gnu.org/gnu/glibc/glibc-2.39.tar.gz"
+  url "https://ftpmirror.gnu.org/glibc/glibc-2.39.tar.gz"
   mirror "https://ftp.gnu.org/gnu/glibc/glibc-2.39.tar.gz"
   sha256 "97f84f3b7588cd54093a6f6389b0c1a81e70d99708d74963a2e3eab7c7dc942d"
   license all_of: ["GPL-2.0-or-later", "LGPL-2.1-or-later"]

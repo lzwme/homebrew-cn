@@ -22,12 +22,13 @@ class VpnSlice < Formula
 
   bottle do
     rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1ce45fcd3f9bed8b11fd2780ecf0ec7379c9ba89d8f79e692b0c71bb31dfde26"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dd141a705bff3a74746ba42047e6636530cd379ee7dbc3aab25977cd51a10e17"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "414c174578e03c9f89b096e4cac861119b9e29fcb9e68b44d02ebd9e1d911be9"
-    sha256 cellar: :any_skip_relocation, sonoma:        "78fbe63be8429f0ab38427d75dd2ed511a578f89f5019d5a775a7acb4cc2784a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8778f4daae86d96a51e7aed7efd2de7b556cc1dd1e41246855278da5622056d4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e11db2b6fae77e64c63f5f9c3151a64d81a79db650bf5389e99dbeb406954734"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "ed684acb05d7f69954ceb535bb6cc5e9cc1f4c4a2836bbd4a57781e87af20ecb"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "1ce45fcd3f9bed8b11fd2780ecf0ec7379c9ba89d8f79e692b0c71bb31dfde26"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "dd141a705bff3a74746ba42047e6636530cd379ee7dbc3aab25977cd51a10e17"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "414c174578e03c9f89b096e4cac861119b9e29fcb9e68b44d02ebd9e1d911be9"
+    sha256 cellar: :any_skip_relocation, sonoma:            "78fbe63be8429f0ab38427d75dd2ed511a578f89f5019d5a775a7acb4cc2784a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "8778f4daae86d96a51e7aed7efd2de7b556cc1dd1e41246855278da5622056d4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "e11db2b6fae77e64c63f5f9c3151a64d81a79db650bf5389e99dbeb406954734"
   end
 
   depends_on "python@3.14"

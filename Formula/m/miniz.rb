@@ -12,12 +12,13 @@ class Miniz < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "c3b7fcfb9025975a0bff330b1920424cfa310246f567f19774a08170f4114b80"
-    sha256 cellar: :any, arm64_sequoia: "2072f21aa15040df0a7153ecfdcf09b381e740523c3eb615f83433497984e3ea"
-    sha256 cellar: :any, arm64_sonoma:  "64ddab612c5731f162f7f8d1d575f7603c3f8b483439c4485c1810031a974a5d"
-    sha256 cellar: :any, sonoma:        "7ed348d512ebd5c8d9daa3e82583effe725cbf97d4d16de3625dc5296ccbc421"
-    sha256 cellar: :any, arm64_linux:   "4d8998700dc148e0056d2ca50d118693b106a82e59cdd33c5f99ed492025d129"
-    sha256 cellar: :any, x86_64_linux:  "33187bef944816294c3f174b66afa12a7c6a35c23760b2173b43a5700443ca34"
+    sha256 cellar: :any, arm64_golden_gate: "bf2f581d34d739acedf29071e3c5c8d9c27aa5a2a0ea34ef47273ca242ba662a"
+    sha256 cellar: :any, arm64_tahoe:       "c3b7fcfb9025975a0bff330b1920424cfa310246f567f19774a08170f4114b80"
+    sha256 cellar: :any, arm64_sequoia:     "2072f21aa15040df0a7153ecfdcf09b381e740523c3eb615f83433497984e3ea"
+    sha256 cellar: :any, arm64_sonoma:      "64ddab612c5731f162f7f8d1d575f7603c3f8b483439c4485c1810031a974a5d"
+    sha256 cellar: :any, sonoma:            "7ed348d512ebd5c8d9daa3e82583effe725cbf97d4d16de3625dc5296ccbc421"
+    sha256 cellar: :any, arm64_linux:       "4d8998700dc148e0056d2ca50d118693b106a82e59cdd33c5f99ed492025d129"
+    sha256 cellar: :any, x86_64_linux:      "33187bef944816294c3f174b66afa12a7c6a35c23760b2173b43a5700443ca34"
   end
 
   depends_on "cmake" => :build

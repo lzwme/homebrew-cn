@@ -7,12 +7,13 @@ class Libmusicbrainz < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "bedefe5a0086b73a7ccfa342df5af7238cdd9851d541d19b6069549098f507d2"
-    sha256 cellar: :any,                 arm64_sequoia: "c8db1669bb8869f5812eb0d46e9a84dce7ec3370bcb5405d9071612c5bdd4ec2"
-    sha256 cellar: :any,                 arm64_sonoma:  "eb4bb010621dd980551a251a05e00645cde63db709efa377ccb967b6c162d9db"
-    sha256 cellar: :any,                 sonoma:        "b424ac7a62a339cf9c1c1e63f60624fd5294329ae6ca3bd259f30bf53893cafc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f01561b97020929208e94416f0b01b62e5524d577429ea2a6ef1279ed81cd8a9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7d3ffdc6b8d4cd953ca8635cf70224441987b26484725fd1339da7ef3fb2c678"
+    sha256 cellar: :any,                 arm64_golden_gate: "ba24b8ffc3a73978d7fbb23d92fb05538bed4bcdbfb9e8917c176c92b7ed5896"
+    sha256 cellar: :any,                 arm64_tahoe:       "bedefe5a0086b73a7ccfa342df5af7238cdd9851d541d19b6069549098f507d2"
+    sha256 cellar: :any,                 arm64_sequoia:     "c8db1669bb8869f5812eb0d46e9a84dce7ec3370bcb5405d9071612c5bdd4ec2"
+    sha256 cellar: :any,                 arm64_sonoma:      "eb4bb010621dd980551a251a05e00645cde63db709efa377ccb967b6c162d9db"
+    sha256 cellar: :any,                 sonoma:            "b424ac7a62a339cf9c1c1e63f60624fd5294329ae6ca3bd259f30bf53893cafc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "f01561b97020929208e94416f0b01b62e5524d577429ea2a6ef1279ed81cd8a9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "7d3ffdc6b8d4cd953ca8635cf70224441987b26484725fd1339da7ef3fb2c678"
   end
 
   depends_on "cmake" => :build

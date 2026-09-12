@@ -7,12 +7,13 @@ class Partio < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1df6144f110d59a0a2702a819891b5d2431c1b2d5320c8a754c70c7afe121979"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0d85a46d17cd0d8faa344925cc6e7a735c68efb81c30f9e7e366d160ef31c91f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "33038f52f8f29283fa3a34105974fd9a816eb7afc123326c09b238f6ae51057b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "23633ba6707787461a94f4093040e6cf61a0d0e47e0bf4cc76122554952f5dcc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d26cd91d005741e2c3953bd72ec068bad724c4bfe83914ab96b18f988aeac93f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dc0eb880e0fd2c7c033434e9433dd6ffc9af4b3ec6b61f81f705877f337f3bb6"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "788541886910677633a6ae86a29a4999d3ef9e027b412204f4e182ff00746c30"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "1df6144f110d59a0a2702a819891b5d2431c1b2d5320c8a754c70c7afe121979"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "0d85a46d17cd0d8faa344925cc6e7a735c68efb81c30f9e7e366d160ef31c91f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "33038f52f8f29283fa3a34105974fd9a816eb7afc123326c09b238f6ae51057b"
+    sha256 cellar: :any_skip_relocation, sonoma:            "23633ba6707787461a94f4093040e6cf61a0d0e47e0bf4cc76122554952f5dcc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "d26cd91d005741e2c3953bd72ec068bad724c4bfe83914ab96b18f988aeac93f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "dc0eb880e0fd2c7c033434e9433dd6ffc9af4b3ec6b61f81f705877f337f3bb6"
   end
 
   depends_on "cmake" => :build

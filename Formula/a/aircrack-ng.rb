@@ -16,12 +16,13 @@ class AircrackNg < Formula
   end
 
   bottle do
-    sha256                               arm64_tahoe:   "79663b102bfc2f2c70886c84e262cb77814c6138b87e26fa722cfa3e460eeb14"
-    sha256                               arm64_sequoia: "f60653d0f5b9b9f0db0a83aa34198d89f1a33239ce025fec8a723f5c0d1dff53"
-    sha256                               arm64_sonoma:  "a69ff428aa1336b3cee2ca71431e198abb038d60a715927af3123a0e995bfbe8"
-    sha256                               sonoma:        "9b8730410869255d5872b50ae285849c706a6540b625b5adea88ee855c450961"
-    sha256                               arm64_linux:   "ed587ea52be90ca308c2a598b6f0ade096d05d070a0096b623f0465e7ad50cdf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ed0b981f61d925712e4296374229cde3f819aeb38f957d17a37c1500fea1ce8d"
+    sha256                               arm64_golden_gate: "14123cac9a0b331f6f64966025636c9fd6ab298b1a6ebbdd65f09c6aa540b169"
+    sha256                               arm64_tahoe:       "79663b102bfc2f2c70886c84e262cb77814c6138b87e26fa722cfa3e460eeb14"
+    sha256                               arm64_sequoia:     "f60653d0f5b9b9f0db0a83aa34198d89f1a33239ce025fec8a723f5c0d1dff53"
+    sha256                               arm64_sonoma:      "a69ff428aa1336b3cee2ca71431e198abb038d60a715927af3123a0e995bfbe8"
+    sha256                               sonoma:            "9b8730410869255d5872b50ae285849c706a6540b625b5adea88ee855c450961"
+    sha256                               arm64_linux:       "ed587ea52be90ca308c2a598b6f0ade096d05d070a0096b623f0465e7ad50cdf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "ed0b981f61d925712e4296374229cde3f819aeb38f957d17a37c1500fea1ce8d"
   end
 
   depends_on "autoconf" => :build

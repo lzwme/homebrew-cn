@@ -12,12 +12,13 @@ class Gloox < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "1818e6a640fd72abca657dee0f7dd846408f5f7854723c9a98d6c7c776f8a0f9"
-    sha256 cellar: :any,                 arm64_sequoia: "1d26a13f01fec261432f2dae041b41202cb9f6a89a8645620f4130594720350b"
-    sha256 cellar: :any,                 arm64_sonoma:  "4259b10f32c5131583820cc76e3d8e0f11ee1d75108d69e1198957530429ee7d"
-    sha256 cellar: :any,                 sonoma:        "a91156a42c6e11a6e4ee53e5ae6afd651a986ebca33cbfcce0b8dc447d9e265e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "99fb4b6444c8f11419eed45d4d29df4919b9d1c35e75615b787fc1de9269feaa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cc2eb3e53975d18eaebb6bf9e34fb002a68420432d36e53f709e1d94446a7d2d"
+    sha256 cellar: :any,                 arm64_golden_gate: "ef5d31f5ee178780a1d629b9321b61f5ae5d77ce9621395bc9bb36d901678036"
+    sha256 cellar: :any,                 arm64_tahoe:       "1818e6a640fd72abca657dee0f7dd846408f5f7854723c9a98d6c7c776f8a0f9"
+    sha256 cellar: :any,                 arm64_sequoia:     "1d26a13f01fec261432f2dae041b41202cb9f6a89a8645620f4130594720350b"
+    sha256 cellar: :any,                 arm64_sonoma:      "4259b10f32c5131583820cc76e3d8e0f11ee1d75108d69e1198957530429ee7d"
+    sha256 cellar: :any,                 sonoma:            "a91156a42c6e11a6e4ee53e5ae6afd651a986ebca33cbfcce0b8dc447d9e265e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "99fb4b6444c8f11419eed45d4d29df4919b9d1c35e75615b787fc1de9269feaa"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "cc2eb3e53975d18eaebb6bf9e34fb002a68420432d36e53f709e1d94446a7d2d"
   end
 
   depends_on "pkgconf" => :build

@@ -8,12 +8,13 @@ class Vnstat < Formula
 
   bottle do
     rebuild 1
-    sha256 arm64_tahoe:   "af145bbd1da554febe818a33724a04fd13316d589279f3e7c7dd44178556f1ae"
-    sha256 arm64_sequoia: "22d6d6ad688b31df0baaa7ba2fb89124c36656c59a3a1d3362fd71aea74a2d26"
-    sha256 arm64_sonoma:  "00d035664c11d7302dc5e4cf16e09539e0f598bb3ab309036452b3dca029c0be"
-    sha256 sonoma:        "edeb08c785444734a8d1c2952fb88959b058406792628f3b99e10f744f207057"
-    sha256 arm64_linux:   "c390b99feadced13f30746c1f6caa889592001edb5a001cde6a40bed344728e7"
-    sha256 x86_64_linux:  "41fb94bbbdbb6533741c6cd5b0cdf6e1713ce55b499ef80950cf31a94a25015e"
+    sha256 arm64_golden_gate: "ec63e1bba17654d6fa344b093d22c4a369fb77e8c5a11621ca6a5cadff6b74c1"
+    sha256 arm64_tahoe:       "af145bbd1da554febe818a33724a04fd13316d589279f3e7c7dd44178556f1ae"
+    sha256 arm64_sequoia:     "22d6d6ad688b31df0baaa7ba2fb89124c36656c59a3a1d3362fd71aea74a2d26"
+    sha256 arm64_sonoma:      "00d035664c11d7302dc5e4cf16e09539e0f598bb3ab309036452b3dca029c0be"
+    sha256 sonoma:            "edeb08c785444734a8d1c2952fb88959b058406792628f3b99e10f744f207057"
+    sha256 arm64_linux:       "c390b99feadced13f30746c1f6caa889592001edb5a001cde6a40bed344728e7"
+    sha256 x86_64_linux:      "41fb94bbbdbb6533741c6cd5b0cdf6e1713ce55b499ef80950cf31a94a25015e"
   end
 
   depends_on "gd"

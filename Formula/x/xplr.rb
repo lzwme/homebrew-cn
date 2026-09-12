@@ -7,12 +7,13 @@ class Xplr < Formula
   head "https://github.com/sayanarijit/xplr.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "3d1e313aef234ea5747bb149eccb2aaff676f27ef4c945455c334185103240e7"
-    sha256 cellar: :any, arm64_sequoia: "d2bdeb506ec05cd636e6ab2c9f1f01cb0b1f7bc7cd101179c0ca159766a139c3"
-    sha256 cellar: :any, arm64_sonoma:  "f1999d17311b9254f14b7bfa6baa48fffda5dc5dfc09d36a6edfc1fb2f75e5ed"
-    sha256 cellar: :any, sonoma:        "7a2306b2f0ff06a99b014da3888dbea01dda241dc3b9d3bcc7473260b8d5476f"
-    sha256 cellar: :any, arm64_linux:   "107a95f684327d775436f363e5620fb47821a439d5c448132ce56f5443db4abc"
-    sha256 cellar: :any, x86_64_linux:  "1b91f970fd1acb2e70e4f2f9cf386a2b775a820a77fa7845815ab925a9460dc1"
+    sha256 cellar: :any, arm64_golden_gate: "03e7de6e5d2c72f04dab8bf5b09bd472f431c49c830a0b9a27e423a834f99632"
+    sha256 cellar: :any, arm64_tahoe:       "3d1e313aef234ea5747bb149eccb2aaff676f27ef4c945455c334185103240e7"
+    sha256 cellar: :any, arm64_sequoia:     "d2bdeb506ec05cd636e6ab2c9f1f01cb0b1f7bc7cd101179c0ca159766a139c3"
+    sha256 cellar: :any, arm64_sonoma:      "f1999d17311b9254f14b7bfa6baa48fffda5dc5dfc09d36a6edfc1fb2f75e5ed"
+    sha256 cellar: :any, sonoma:            "7a2306b2f0ff06a99b014da3888dbea01dda241dc3b9d3bcc7473260b8d5476f"
+    sha256 cellar: :any, arm64_linux:       "107a95f684327d775436f363e5620fb47821a439d5c448132ce56f5443db4abc"
+    sha256 cellar: :any, x86_64_linux:      "1b91f970fd1acb2e70e4f2f9cf386a2b775a820a77fa7845815ab925a9460dc1"
   end
 
   depends_on "pkgconf" => :build

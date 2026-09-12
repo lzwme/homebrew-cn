@@ -8,12 +8,13 @@ class Gecode < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "c1af270f7d409a951da92ca72fd36b6ef1e9e93309436bfe4d48abdb19ca4348"
-    sha256 cellar: :any, arm64_sequoia: "9baaf5b2e7a92df403a8803df2b1f5af30167af6e05b1e2ca203237ef785c35e"
-    sha256 cellar: :any, arm64_sonoma:  "09c9a1c1cab4871e9d4579977f2d4cf223eeed16852a1df8d690c49a0784fe32"
-    sha256 cellar: :any, sonoma:        "f6f9fad598c2f3cc07dcc313fa2f35512cabd848bd32a52bfc1ee5bd7bdb229f"
-    sha256 cellar: :any, arm64_linux:   "7c006d234dfec33ffd670506904609655a71cb822be8fb05e1eb2ac917551477"
-    sha256 cellar: :any, x86_64_linux:  "177253ab8d6c6374ca31dc7d77d979784e256f9b8985f38110e120d41a2b1bee"
+    sha256 cellar: :any, arm64_golden_gate: "a99d6370a52f5db410e4e7907c3adf51f853805e618e88b134ffd103a0f466d5"
+    sha256 cellar: :any, arm64_tahoe:       "c1af270f7d409a951da92ca72fd36b6ef1e9e93309436bfe4d48abdb19ca4348"
+    sha256 cellar: :any, arm64_sequoia:     "9baaf5b2e7a92df403a8803df2b1f5af30167af6e05b1e2ca203237ef785c35e"
+    sha256 cellar: :any, arm64_sonoma:      "09c9a1c1cab4871e9d4579977f2d4cf223eeed16852a1df8d690c49a0784fe32"
+    sha256 cellar: :any, sonoma:            "f6f9fad598c2f3cc07dcc313fa2f35512cabd848bd32a52bfc1ee5bd7bdb229f"
+    sha256 cellar: :any, arm64_linux:       "7c006d234dfec33ffd670506904609655a71cb822be8fb05e1eb2ac917551477"
+    sha256 cellar: :any, x86_64_linux:      "177253ab8d6c6374ca31dc7d77d979784e256f9b8985f38110e120d41a2b1bee"
   end
 
   depends_on "cmake" => :build

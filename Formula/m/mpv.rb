@@ -20,11 +20,12 @@ class Mpv < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "136d94fc3b285de144445862e16b4a988b032dafb74e126bf5172055182b6457"
-    sha256 arm64_sequoia: "ef4f4e6295d752e686b16750e607ef1955d9df68afce1004744e0462415d1b7a"
-    sha256 arm64_sonoma:  "adeccfdd66dd3d5c1a0a6f44dd400b10d01263e876941f8eb03e33975ba6cdc8"
-    sha256 arm64_linux:   "a9847b882a10583d069c850a84e96ac241081a9876c1edc972835f2eca8e4ec4"
-    sha256 x86_64_linux:  "56173ebbe72abfcbf17681a55eadc3270a45b39937175857f7852deef2769c80"
+    sha256 arm64_golden_gate: "3be8690e865b98a3f3f7527acaa72a097b8d7f4d64d38e9242e472cdc98ccad4"
+    sha256 arm64_tahoe:       "136d94fc3b285de144445862e16b4a988b032dafb74e126bf5172055182b6457"
+    sha256 arm64_sequoia:     "ef4f4e6295d752e686b16750e607ef1955d9df68afce1004744e0462415d1b7a"
+    sha256 arm64_sonoma:      "adeccfdd66dd3d5c1a0a6f44dd400b10d01263e876941f8eb03e33975ba6cdc8"
+    sha256 arm64_linux:       "a9847b882a10583d069c850a84e96ac241081a9876c1edc972835f2eca8e4ec4"
+    sha256 x86_64_linux:      "56173ebbe72abfcbf17681a55eadc3270a45b39937175857f7852deef2769c80"
   end
 
   depends_on "docutils" => :build
@@ -70,8 +71,6 @@ class Mpv < Formula
     depends_on "wayland-protocols" => :no_linkage # needed by mpv.pc
     depends_on "zlib-ng-compat"
   end
-
-  conflicts_with cask: "stolendata-mpv", because: "both install `mpv` binaries"
 
   def install
     args = %W[

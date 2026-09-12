@@ -12,12 +12,13 @@ class GitCrypt < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "7600d5908af7e3dcc489f1e973327cd8ac41b3d259d1490b7203b37aa0aff9a0"
-    sha256 cellar: :any,                 arm64_sequoia: "7b918e96fa98416e4f4bd3eadc188667c39668e59629011740d675802d6f1cb8"
-    sha256 cellar: :any,                 arm64_sonoma:  "1a317787886fe947557c08f4450a4be7d6e5e7815b8bcb214692784b638986a7"
-    sha256 cellar: :any,                 sonoma:        "c838c13b346548c0ec41951a7461f25af63aacdff96ffc41eb71c29f15834625"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1653fb825aa95ab80e3b8e52deedcd2272a60433ad8a12dba5b0c2a667a32e72"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6062bcc3728de1a25ba30976a81cfcca09887762639fbdf91318e579c9fc0db8"
+    sha256 cellar: :any,                 arm64_golden_gate: "b38d6e3425728382917f98de832f03beed696353726d1fb3dd5a7e17929a5336"
+    sha256 cellar: :any,                 arm64_tahoe:       "7600d5908af7e3dcc489f1e973327cd8ac41b3d259d1490b7203b37aa0aff9a0"
+    sha256 cellar: :any,                 arm64_sequoia:     "7b918e96fa98416e4f4bd3eadc188667c39668e59629011740d675802d6f1cb8"
+    sha256 cellar: :any,                 arm64_sonoma:      "1a317787886fe947557c08f4450a4be7d6e5e7815b8bcb214692784b638986a7"
+    sha256 cellar: :any,                 sonoma:            "c838c13b346548c0ec41951a7461f25af63aacdff96ffc41eb71c29f15834625"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "1653fb825aa95ab80e3b8e52deedcd2272a60433ad8a12dba5b0c2a667a32e72"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "6062bcc3728de1a25ba30976a81cfcca09887762639fbdf91318e579c9fc0db8"
   end
 
   depends_on "docbook" => :build

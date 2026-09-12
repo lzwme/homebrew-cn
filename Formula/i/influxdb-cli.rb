@@ -13,12 +13,13 @@ class InfluxdbCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1ec938018c24cbb1d9359771834d0d4c2afbacd19e4ee9790f43618a07dc8856"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1ec938018c24cbb1d9359771834d0d4c2afbacd19e4ee9790f43618a07dc8856"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1ec938018c24cbb1d9359771834d0d4c2afbacd19e4ee9790f43618a07dc8856"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6e402236f6a5ce614c316fe316efd84fe554cbed4254f4a9f79a1b28f6ff6a9f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c36a18dccd15dff18dc96676b0ec93aabb3b551c4430f14706984991bdbef816"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "53092ca5914faa8045e3bc9b1dfa2f79eb8c81eb62555cd809f1dd36f2755095"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "9a8c5880762e64682a4904a73d3fd8990425fd652b8bc2cd68b485c012d6e424"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "1ec938018c24cbb1d9359771834d0d4c2afbacd19e4ee9790f43618a07dc8856"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "1ec938018c24cbb1d9359771834d0d4c2afbacd19e4ee9790f43618a07dc8856"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "1ec938018c24cbb1d9359771834d0d4c2afbacd19e4ee9790f43618a07dc8856"
+    sha256 cellar: :any_skip_relocation, sonoma:            "6e402236f6a5ce614c316fe316efd84fe554cbed4254f4a9f79a1b28f6ff6a9f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "c36a18dccd15dff18dc96676b0ec93aabb3b551c4430f14706984991bdbef816"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "53092ca5914faa8045e3bc9b1dfa2f79eb8c81eb62555cd809f1dd36f2755095"
   end
 
   depends_on "go" => :build

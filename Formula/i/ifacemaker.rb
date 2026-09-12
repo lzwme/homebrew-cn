@@ -7,12 +7,13 @@ class Ifacemaker < Formula
   head "https://github.com/vburenin/ifacemaker.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f068783b343a4c9cc6176390f2757260ae8139dba2a9b855f8303e1f1a29ec4b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f068783b343a4c9cc6176390f2757260ae8139dba2a9b855f8303e1f1a29ec4b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f068783b343a4c9cc6176390f2757260ae8139dba2a9b855f8303e1f1a29ec4b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2969a8f5413225d7f830df6a36fe0ec3d471f57d1134ee9652bf2ad9997bb93e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3ed1d0c5420da65795d9753ca60beef3d5ccd908df611146549f4fd7f54709bd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "10b0f3cdec36942d23626f4cf8f7b8eb05f47c531e965349df383ef1385cbcad"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "c2aa6c7143d0b8a9c9c98ed3eaa797564f51c117b872baad6ee31312a6441567"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "f068783b343a4c9cc6176390f2757260ae8139dba2a9b855f8303e1f1a29ec4b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "f068783b343a4c9cc6176390f2757260ae8139dba2a9b855f8303e1f1a29ec4b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "f068783b343a4c9cc6176390f2757260ae8139dba2a9b855f8303e1f1a29ec4b"
+    sha256 cellar: :any_skip_relocation, sonoma:            "2969a8f5413225d7f830df6a36fe0ec3d471f57d1134ee9652bf2ad9997bb93e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "3ed1d0c5420da65795d9753ca60beef3d5ccd908df611146549f4fd7f54709bd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "10b0f3cdec36942d23626f4cf8f7b8eb05f47c531e965349df383ef1385cbcad"
   end
 
   depends_on "go"

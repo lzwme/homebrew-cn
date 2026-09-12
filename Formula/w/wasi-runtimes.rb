@@ -11,11 +11,12 @@ class WasiRuntimes < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0d32b900f8c0861bdee67b3b0c3f31c4481ac1a2868819eb9884029c571620e0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0d32b900f8c0861bdee67b3b0c3f31c4481ac1a2868819eb9884029c571620e0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0d32b900f8c0861bdee67b3b0c3f31c4481ac1a2868819eb9884029c571620e0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3ba4b195b878296fac2c875a6e83e2ed81d65e927b6b0370eedef435e8c18932"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "807611a2e94ce1b99f4cd1c5cc1422afa45c484ad862105158350453c7be9a81"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "0d32b900f8c0861bdee67b3b0c3f31c4481ac1a2868819eb9884029c571620e0"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "0d32b900f8c0861bdee67b3b0c3f31c4481ac1a2868819eb9884029c571620e0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "0d32b900f8c0861bdee67b3b0c3f31c4481ac1a2868819eb9884029c571620e0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "0d32b900f8c0861bdee67b3b0c3f31c4481ac1a2868819eb9884029c571620e0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "3ba4b195b878296fac2c875a6e83e2ed81d65e927b6b0370eedef435e8c18932"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "807611a2e94ce1b99f4cd1c5cc1422afa45c484ad862105158350453c7be9a81"
   end
 
   depends_on "cmake" => :build

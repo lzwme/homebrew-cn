@@ -12,12 +12,13 @@ class Geographiclib < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "b6a55025ea7a55de13c663dd377c4038a09e45ffea33a3122111adc29038f148"
-    sha256 cellar: :any,                 arm64_sequoia: "00da977f47aa6032c060f0a77ac320d739ff60c347a6f400d422308259e960ba"
-    sha256 cellar: :any,                 arm64_sonoma:  "1f7b111bee4088f2566626685bb7dbcca9783a4f9770f388929e6a3e68857bf8"
-    sha256 cellar: :any,                 sonoma:        "189b852fe826d044bd8c28fa0939943e966043839fc955b301e780a4fd7264fc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2dcd5700fcfd6cd0d72aa1cc937d75e1e9d95bb7f003467892a212839fdfe8ee"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2077b4d7060f8b04a11c8cf2cc2a7d6a2391212e2528d7a72a4870b8287da3a1"
+    sha256 cellar: :any,                 arm64_golden_gate: "f47e1e134ff08f2e3c9fd59dcbc67b7f26dcd3c57be06ce4c3ac75dbfc7ede0c"
+    sha256 cellar: :any,                 arm64_tahoe:       "b6a55025ea7a55de13c663dd377c4038a09e45ffea33a3122111adc29038f148"
+    sha256 cellar: :any,                 arm64_sequoia:     "00da977f47aa6032c060f0a77ac320d739ff60c347a6f400d422308259e960ba"
+    sha256 cellar: :any,                 arm64_sonoma:      "1f7b111bee4088f2566626685bb7dbcca9783a4f9770f388929e6a3e68857bf8"
+    sha256 cellar: :any,                 sonoma:            "189b852fe826d044bd8c28fa0939943e966043839fc955b301e780a4fd7264fc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "2dcd5700fcfd6cd0d72aa1cc937d75e1e9d95bb7f003467892a212839fdfe8ee"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "2077b4d7060f8b04a11c8cf2cc2a7d6a2391212e2528d7a72a4870b8287da3a1"
   end
 
   depends_on "cmake" => :build

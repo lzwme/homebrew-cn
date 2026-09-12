@@ -15,12 +15,13 @@ class Zurl < Formula
   head "https://github.com/fanout/zurl.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "eb2c86141ca65e087181c6d802dad72bb3d0b3ecd75286663077b29ef5ee8ed6"
-    sha256 cellar: :any,                 arm64_sequoia: "6b0d185ef6601a9a7feb2712ac0b7d4242e8e35e4572cb8aca3c88109461f1fd"
-    sha256 cellar: :any,                 arm64_sonoma:  "b75dbe6b4c8eb60c671c68c1adeb4bf0fd4ec011051c34bae3342ee49bb3a1a3"
-    sha256 cellar: :any,                 sonoma:        "318fd22b894af157b9a54a874d13c805b1474d97a43cd50e0e39f15262472b40"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "591a82d1ae225eeab0cd35808e860c1b69b9cf84d13ef87962aa4f0b24c0ddfc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fd9298662889e90ecfc5078599cfeab0862621e9839b92af94a93b32b5db4430"
+    sha256 cellar: :any,                 arm64_golden_gate: "753d4e57f9d68223ef7b02b6fbf99e1114e2f57f82b34d815812da3d827bf544"
+    sha256 cellar: :any,                 arm64_tahoe:       "eb2c86141ca65e087181c6d802dad72bb3d0b3ecd75286663077b29ef5ee8ed6"
+    sha256 cellar: :any,                 arm64_sequoia:     "6b0d185ef6601a9a7feb2712ac0b7d4242e8e35e4572cb8aca3c88109461f1fd"
+    sha256 cellar: :any,                 arm64_sonoma:      "b75dbe6b4c8eb60c671c68c1adeb4bf0fd4ec011051c34bae3342ee49bb3a1a3"
+    sha256 cellar: :any,                 sonoma:            "318fd22b894af157b9a54a874d13c805b1474d97a43cd50e0e39f15262472b40"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "591a82d1ae225eeab0cd35808e860c1b69b9cf84d13ef87962aa4f0b24c0ddfc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "fd9298662889e90ecfc5078599cfeab0862621e9839b92af94a93b32b5db4430"
   end
 
   depends_on "pkgconf" => [:build, :test]

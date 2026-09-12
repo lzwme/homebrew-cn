@@ -12,12 +12,13 @@ class GoJsonnet < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "85de63336520c4bff8ac427d7669521c77497a3e67e82a49b41c82de33feb6bd"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "85de63336520c4bff8ac427d7669521c77497a3e67e82a49b41c82de33feb6bd"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "85de63336520c4bff8ac427d7669521c77497a3e67e82a49b41c82de33feb6bd"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ac32711401c962f3781e5cef03fdc233dc8a2cc983fda610329bc5adde641bb5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "408dd089b37267bdc16c7b10ce2269dca3eca7adcd71e22b1ac9219142356323"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a3b41611f2b1ea2b8cdefbc358239d10c9a7d0f6f0db19d82bb74ee11e70c968"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "ec1e44f6f1040faae87b70a28e06a1deaad22cdb32d25561c55dec3cf1956fba"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "85de63336520c4bff8ac427d7669521c77497a3e67e82a49b41c82de33feb6bd"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "85de63336520c4bff8ac427d7669521c77497a3e67e82a49b41c82de33feb6bd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "85de63336520c4bff8ac427d7669521c77497a3e67e82a49b41c82de33feb6bd"
+    sha256 cellar: :any_skip_relocation, sonoma:            "ac32711401c962f3781e5cef03fdc233dc8a2cc983fda610329bc5adde641bb5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "408dd089b37267bdc16c7b10ce2269dca3eca7adcd71e22b1ac9219142356323"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "a3b41611f2b1ea2b8cdefbc358239d10c9a7d0f6f0db19d82bb74ee11e70c968"
   end
 
   depends_on "go" => :build

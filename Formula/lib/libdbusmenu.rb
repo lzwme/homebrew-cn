@@ -7,12 +7,13 @@ class Libdbusmenu < Formula
 
   bottle do
     rebuild 1
-    sha256                               arm64_tahoe:   "39c6193c2a776a1184274c4132d659b3922929f355416846cc1e09f858fb763e"
-    sha256                               arm64_sequoia: "35dd5ba680220be9552195596fc39fc285cb4badc56ecc86174bdc959a5d3a34"
-    sha256                               arm64_sonoma:  "95ac2e098777206c685379fe6b57d4a6727f59a69f949df60b3a825cc8a90031"
-    sha256                               sonoma:        "e0527bd20da98e4b479e6e9bfa60f786382b01ad98670eadf37ce4b665db248c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "11a30a7008ce1dec8063c73449094da31626de9ce44e35ad1ca4b06d690f0874"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "972661b3c937df6ef53985b8d3c986af8478834680126dc7f8557751b01d065c"
+    sha256                               arm64_golden_gate: "d0e7faa50fb303a005e124234df19586faba60cea85ffe6c1219126acdac6ef6"
+    sha256                               arm64_tahoe:       "39c6193c2a776a1184274c4132d659b3922929f355416846cc1e09f858fb763e"
+    sha256                               arm64_sequoia:     "35dd5ba680220be9552195596fc39fc285cb4badc56ecc86174bdc959a5d3a34"
+    sha256                               arm64_sonoma:      "95ac2e098777206c685379fe6b57d4a6727f59a69f949df60b3a825cc8a90031"
+    sha256                               sonoma:            "e0527bd20da98e4b479e6e9bfa60f786382b01ad98670eadf37ce4b665db248c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "11a30a7008ce1dec8063c73449094da31626de9ce44e35ad1ca4b06d690f0874"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "972661b3c937df6ef53985b8d3c986af8478834680126dc7f8557751b01d065c"
   end
 
   depends_on "gettext" => :build

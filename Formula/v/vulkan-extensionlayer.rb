@@ -12,12 +12,13 @@ class VulkanExtensionlayer < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "81662e1a3f3bde3f419a98a6f56d0ade625b6f6567acefa57b5470f439687c26"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "60a9c1a7a983ea3bece200641ae90a50964cd3ed604741ce1816fc75685ac5f6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a72f5b02ec48d19785445aff55188b1aa445644487f5f94e36a5a84222c26883"
-    sha256 cellar: :any_skip_relocation, sonoma:        "fa5d9c30754ce82f64a1a4722e3297cdab8f7f64ca18d00a19c87dec393a4542"
-    sha256 cellar: :any,                 arm64_linux:   "b4d1edff941f6c3395fa280c1e64645f2f0ae5a16f77980da56d610bd1d85bbe"
-    sha256 cellar: :any,                 x86_64_linux:  "3185402e1e964d10e38def34299488cff4b67a73c84d1deedb96d7ff7f2407a8"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "6b4be2131cc17dbb22bbd79e894f954628fba85cc5477bc8c2a6f20d3940e911"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "81662e1a3f3bde3f419a98a6f56d0ade625b6f6567acefa57b5470f439687c26"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "60a9c1a7a983ea3bece200641ae90a50964cd3ed604741ce1816fc75685ac5f6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "a72f5b02ec48d19785445aff55188b1aa445644487f5f94e36a5a84222c26883"
+    sha256 cellar: :any_skip_relocation, sonoma:            "fa5d9c30754ce82f64a1a4722e3297cdab8f7f64ca18d00a19c87dec393a4542"
+    sha256 cellar: :any,                 arm64_linux:       "b4d1edff941f6c3395fa280c1e64645f2f0ae5a16f77980da56d610bd1d85bbe"
+    sha256 cellar: :any,                 x86_64_linux:      "3185402e1e964d10e38def34299488cff4b67a73c84d1deedb96d7ff7f2407a8"
   end
 
   depends_on "cmake" => :build

@@ -7,12 +7,13 @@ class WasmPack < Formula
   head "https://github.com/wasm-bindgen/wasm-pack.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3f5e00e2878b6720a2e6b78143c3d108f315eed4ae2e27d84ab7c06d178370c2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e25df58c63956efc5ba5b5eabe677317615f96f19944a630eea91552bc5a685f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "479a15f08423cbe8088c3050bce029b22f30b31c7222589fc8a7ebc2fecd8316"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9207047837d68825a4f1fa64962596dfbaf774c94f64da75364dafa5861a5112"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f14fd0596a8f5c3e3b798e12513254fe26bd1e315172073c518a1412fec6c830"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "740daedf0ec40401edd93b035261ca5f571203d36c7f45cf2d6ad5d94c3a45b9"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "b102138345eb0bdd259a4e8fd30d0ff26a773fb3eb3918f56ee39dc595fa951a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "3f5e00e2878b6720a2e6b78143c3d108f315eed4ae2e27d84ab7c06d178370c2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "e25df58c63956efc5ba5b5eabe677317615f96f19944a630eea91552bc5a685f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "479a15f08423cbe8088c3050bce029b22f30b31c7222589fc8a7ebc2fecd8316"
+    sha256 cellar: :any_skip_relocation, sonoma:            "9207047837d68825a4f1fa64962596dfbaf774c94f64da75364dafa5861a5112"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "f14fd0596a8f5c3e3b798e12513254fe26bd1e315172073c518a1412fec6c830"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "740daedf0ec40401edd93b035261ca5f571203d36c7f45cf2d6ad5d94c3a45b9"
   end
 
   depends_on "cmake" => :build
@@ -26,7 +27,7 @@ class WasmPack < Formula
   test do
     assert_match "wasm-pack #{version}", shell_output("#{bin}/wasm-pack --version")
 
-    ENV.prepend_path "PATH", Formula["rustup"].bin
+    ENV.prepend_path "PATH", formula_opt_bin("rustup")
     system "rustup", "set", "profile", "minimal"
     system "rustup", "default", "stable"
 

@@ -12,20 +12,27 @@ class Xqilla < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "b34e7fa213e9280c6343d21d71355f5ac4e115540d2c81b31027172af5de305f"
-    sha256 cellar: :any,                 arm64_sequoia: "83e21758a4570293176969d68d027817a4cabbda27702a1f17df9d21256ef45d"
-    sha256 cellar: :any,                 arm64_sonoma:  "d010a25cbbc379829f8782fe13daab681386d79611ba03db8f6be10d5a592a52"
-    sha256 cellar: :any,                 arm64_ventura: "f84208fd263e7d62474d60496b0476bd1b6cd11c79192353a32cfb6561fc0e90"
-    sha256 cellar: :any,                 sonoma:        "a7f37c4ddffd21e21c56b485ae2cb8be6b7e67c994299f44cf9f0ad8220ac464"
-    sha256 cellar: :any,                 ventura:       "b06f8a2ebcdddce0def3f89ab47d8c76667e79aaca0768501c0fb4f6ef43fdcb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ebb978097af7e4608586c10076f7e4431bdf19d727c4652ffbfa2fad6249e6d6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9cb7468c61618269082f2d77bb318e021fac14df13e818019fb1ea4e87cef35d"
+    sha256 cellar: :any,                 arm64_golden_gate: "8d1d04088282a46898d4eeff3b1f356158582501b761607c71927a5867253bd4"
+    sha256 cellar: :any,                 arm64_tahoe:       "b34e7fa213e9280c6343d21d71355f5ac4e115540d2c81b31027172af5de305f"
+    sha256 cellar: :any,                 arm64_sequoia:     "83e21758a4570293176969d68d027817a4cabbda27702a1f17df9d21256ef45d"
+    sha256 cellar: :any,                 arm64_sonoma:      "d010a25cbbc379829f8782fe13daab681386d79611ba03db8f6be10d5a592a52"
+    sha256 cellar: :any,                 arm64_ventura:     "f84208fd263e7d62474d60496b0476bd1b6cd11c79192353a32cfb6561fc0e90"
+    sha256 cellar: :any,                 sonoma:            "a7f37c4ddffd21e21c56b485ae2cb8be6b7e67c994299f44cf9f0ad8220ac464"
+    sha256 cellar: :any,                 ventura:           "b06f8a2ebcdddce0def3f89ab47d8c76667e79aaca0768501c0fb4f6ef43fdcb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "ebb978097af7e4608586c10076f7e4431bdf19d727c4652ffbfa2fad6249e6d6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "9cb7468c61618269082f2d77bb318e021fac14df13e818019fb1ea4e87cef35d"
   end
 
   depends_on "xerces-c"
 
   def install
     ENV.cxx11
+
+    # error: no matching function for call to object of type 'const UniqueNodesResult::uniqueLessThanCompareFn'
+    # Submitted upstream at https://sourceforge.net/p/xqilla/bugs/57/
+    inreplace "include/xqilla/ast/XQDocumentOrder.hpp",
+              "bool operator()(const Node::Ptr &first, const Node::Ptr &second)",
+              "bool operator()(const Node::Ptr &first, const Node::Ptr &second) const"
 
     args = []
     # Help old config scripts identify arm64 linux

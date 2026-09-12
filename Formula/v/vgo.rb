@@ -7,12 +7,13 @@ class Vgo < Formula
   head "https://github.com/vg006/vgo.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ff3f68e2c54740a2b3cdd2074e33ba392fc4d4398c7ab77c441f96b5294cd4dc"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ff3f68e2c54740a2b3cdd2074e33ba392fc4d4398c7ab77c441f96b5294cd4dc"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ff3f68e2c54740a2b3cdd2074e33ba392fc4d4398c7ab77c441f96b5294cd4dc"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f1f6d163d6dc4217b8501804008210bdba10fd415b31112d4d78da74e351219a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7d885ec1ff53867945a651083c1c1db6b0aa08fb5eef94f4bf05e47fa65e64b4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2ea7f580c8df4839b99a44f522001776ec0dba68b005afff0b08cc567aafbdd1"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "ebe4662e54e85b96b1f8f92f2f22beab2b4b87db4b613b9e3750a12583beaed9"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "ff3f68e2c54740a2b3cdd2074e33ba392fc4d4398c7ab77c441f96b5294cd4dc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "ff3f68e2c54740a2b3cdd2074e33ba392fc4d4398c7ab77c441f96b5294cd4dc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "ff3f68e2c54740a2b3cdd2074e33ba392fc4d4398c7ab77c441f96b5294cd4dc"
+    sha256 cellar: :any_skip_relocation, sonoma:            "f1f6d163d6dc4217b8501804008210bdba10fd415b31112d4d78da74e351219a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "7d885ec1ff53867945a651083c1c1db6b0aa08fb5eef94f4bf05e47fa65e64b4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "2ea7f580c8df4839b99a44f522001776ec0dba68b005afff0b08cc567aafbdd1"
   end
 
   depends_on "go" => :build

@@ -7,12 +7,13 @@ class Termusic < Formula
   head "https://github.com/tramhao/termusic.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "849a8e2baf136452070b25f3f41f9b1e5ca2a13d42e52c2cc4f3d4343caa236d"
-    sha256 cellar: :any,                 arm64_sequoia: "a4a71b8e4eb7daaf98313a4b773c124334c2d08662cf6ff7a9ab6576a7965482"
-    sha256 cellar: :any,                 arm64_sonoma:  "d746ca41ae4e7e5fe17ed7179922ac79c86b7485556cc9937824b7309c2d9366"
-    sha256 cellar: :any,                 sonoma:        "72a694587aab41e4482759d5da0652853d60505467125bebdfb6dbfc23cd8b46"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "294ca981f0d206a9bc8a960c4cda0206d6ec9da0de34622ed09b60f679f27a1f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9260de245136bc641b94a891a0bdb97cf41b7e1e58485fcc65c666ab1827591a"
+    sha256 cellar: :any,                 arm64_golden_gate: "3a1b580808feae16a14cc783063b91bb67b92a56304f6432577c36dc63bf4e58"
+    sha256 cellar: :any,                 arm64_tahoe:       "849a8e2baf136452070b25f3f41f9b1e5ca2a13d42e52c2cc4f3d4343caa236d"
+    sha256 cellar: :any,                 arm64_sequoia:     "a4a71b8e4eb7daaf98313a4b773c124334c2d08662cf6ff7a9ab6576a7965482"
+    sha256 cellar: :any,                 arm64_sonoma:      "d746ca41ae4e7e5fe17ed7179922ac79c86b7485556cc9937824b7309c2d9366"
+    sha256 cellar: :any,                 sonoma:            "72a694587aab41e4482759d5da0652853d60505467125bebdfb6dbfc23cd8b46"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "294ca981f0d206a9bc8a960c4cda0206d6ec9da0de34622ed09b60f679f27a1f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "9260de245136bc641b94a891a0bdb97cf41b7e1e58485fcc65c666ab1827591a"
   end
 
   depends_on "pkgconf" => :build

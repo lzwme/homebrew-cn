@@ -7,12 +7,13 @@ class Taskflow < Formula
   head "https://github.com/taskflow/taskflow.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3631e5f8b148b811fb31cbc1c17a514b430757d6002b88d8ac94b7feb3834353"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3631e5f8b148b811fb31cbc1c17a514b430757d6002b88d8ac94b7feb3834353"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3631e5f8b148b811fb31cbc1c17a514b430757d6002b88d8ac94b7feb3834353"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3631e5f8b148b811fb31cbc1c17a514b430757d6002b88d8ac94b7feb3834353"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0f0096ef03f30a8aa61b82da550af5d355af6c889bad32c910b6b45f46ca7c43"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0f0096ef03f30a8aa61b82da550af5d355af6c889bad32c910b6b45f46ca7c43"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "aaa6d3297b94d4cb5ab5b8de908a7559dd9965153d5671e763672f6769aca051"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "3631e5f8b148b811fb31cbc1c17a514b430757d6002b88d8ac94b7feb3834353"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "3631e5f8b148b811fb31cbc1c17a514b430757d6002b88d8ac94b7feb3834353"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "3631e5f8b148b811fb31cbc1c17a514b430757d6002b88d8ac94b7feb3834353"
+    sha256 cellar: :any_skip_relocation, sonoma:            "3631e5f8b148b811fb31cbc1c17a514b430757d6002b88d8ac94b7feb3834353"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "0f0096ef03f30a8aa61b82da550af5d355af6c889bad32c910b6b45f46ca7c43"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "0f0096ef03f30a8aa61b82da550af5d355af6c889bad32c910b6b45f46ca7c43"
   end
 
   depends_on "cmake" => :build

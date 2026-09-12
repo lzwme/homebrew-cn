@@ -12,12 +12,13 @@ class CdogsSdl < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "43cb95679ae4236f5f3b24a07e0419de27a93688cb610e5bfde88781e50fbc8a"
-    sha256 arm64_sequoia: "0946f291de2aa944b2ad348bacdeda34c9c17c6ecb92d886ff777ed16a6443a0"
-    sha256 arm64_sonoma:  "b3a876d3a2556e6cfb4784fc46ebbc4c4f0e1231c00d43a97668a754091092e8"
-    sha256 sonoma:        "938c7c419cf215c4d118f079840b60d30877f25852a8d4893e6436d4cb7d4617"
-    sha256 arm64_linux:   "d09d6dc4b6acda8cbef949250bf964568de9685dea0a0576296e286d20168f98"
-    sha256 x86_64_linux:  "ef5c5f617815355ce474291696af44a88e8243c0b15a099ff0a97155ba43f68e"
+    sha256 arm64_golden_gate: "90beb1a5fb71d430449a0cb9e2111a08abb51051abdd9ac3954a40ee881585cc"
+    sha256 arm64_tahoe:       "43cb95679ae4236f5f3b24a07e0419de27a93688cb610e5bfde88781e50fbc8a"
+    sha256 arm64_sequoia:     "0946f291de2aa944b2ad348bacdeda34c9c17c6ecb92d886ff777ed16a6443a0"
+    sha256 arm64_sonoma:      "b3a876d3a2556e6cfb4784fc46ebbc4c4f0e1231c00d43a97668a754091092e8"
+    sha256 sonoma:            "938c7c419cf215c4d118f079840b60d30877f25852a8d4893e6436d4cb7d4617"
+    sha256 arm64_linux:       "d09d6dc4b6acda8cbef949250bf964568de9685dea0a0576296e286d20168f98"
+    sha256 x86_64_linux:      "ef5c5f617815355ce474291696af44a88e8243c0b15a099ff0a97155ba43f68e"
   end
 
   depends_on "cmake" => :build

@@ -6,14 +6,15 @@ class Guichan < Formula
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "2468a859fd2e4f902e76f3ace98dfc55a117ec1a4ed6fe3a114c63020d5743e5"
-    sha256 cellar: :any,                 arm64_sequoia: "a0d1e15669f361e19d404bdbb8b311443da4c4a775fdcb1d8d17a4fe03034e5f"
-    sha256 cellar: :any,                 arm64_sonoma:  "b9f1f1aba6da5d653df4d082c3048724e14d221ef5fa9f3c1368413b5e703fcf"
-    sha256 cellar: :any,                 arm64_ventura: "6b923b087914799d905e9fc2676231bc115dc5dca4dbc446e72fc7cabb943f21"
-    sha256 cellar: :any,                 sonoma:        "642fc80010772295bbc9c393340137b0afaf4f51f3df6079a46103701ddde137"
-    sha256 cellar: :any,                 ventura:       "8d8a76daa74d299ef906b105b25c98b62b5fbb3f6a7efa37ba7af5bba316f916"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d7a38413bdaf4f6c00720814ae66ca072ee9b860d174bd3b5d144fe01e90a039"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "41d93c438a1966464eb85c1bc4f9d9743e9015502a06d90105e2f5b438c2df56"
+    sha256 cellar: :any,                 arm64_golden_gate: "c5e3a88c9c68f5bcccfae0ce1a744538c5fc7aa56e77fc637a270958a4580b3f"
+    sha256 cellar: :any,                 arm64_tahoe:       "2468a859fd2e4f902e76f3ace98dfc55a117ec1a4ed6fe3a114c63020d5743e5"
+    sha256 cellar: :any,                 arm64_sequoia:     "a0d1e15669f361e19d404bdbb8b311443da4c4a775fdcb1d8d17a4fe03034e5f"
+    sha256 cellar: :any,                 arm64_sonoma:      "b9f1f1aba6da5d653df4d082c3048724e14d221ef5fa9f3c1368413b5e703fcf"
+    sha256 cellar: :any,                 arm64_ventura:     "6b923b087914799d905e9fc2676231bc115dc5dca4dbc446e72fc7cabb943f21"
+    sha256 cellar: :any,                 sonoma:            "642fc80010772295bbc9c393340137b0afaf4f51f3df6079a46103701ddde137"
+    sha256 cellar: :any,                 ventura:           "8d8a76daa74d299ef906b105b25c98b62b5fbb3f6a7efa37ba7af5bba316f916"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "d7a38413bdaf4f6c00720814ae66ca072ee9b860d174bd3b5d144fe01e90a039"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "41d93c438a1966464eb85c1bc4f9d9743e9015502a06d90105e2f5b438c2df56"
   end
 
   depends_on "pkgconf" => :test

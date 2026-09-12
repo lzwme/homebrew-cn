@@ -7,12 +7,13 @@ class AyatanaIdo < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "fdd3dea9088ce3de66656684a292ac3cabe7540fe8e58df4d42421d356c2bfc5"
-    sha256 cellar: :any, arm64_sequoia: "768bbbd7532ca49a378cd7e79700b73257ae55344f0cc7c2f81817cd899e14be"
-    sha256 cellar: :any, arm64_sonoma:  "0a6a4182d499d52448b951844b5aeae9766b4306c874825bce33c79bb69e9a5b"
-    sha256 cellar: :any, sonoma:        "bcfe9b250aded01df24c30e98a9af7f59dd4977de6943dbdbfbd05790d8039ea"
-    sha256 cellar: :any, arm64_linux:   "f0b910095890cd349897387533b4f43b45c185a3d7f904c29711d35869a67e6a"
-    sha256 cellar: :any, x86_64_linux:  "8f0d6f6881280961dad410b8a81dbc5ef48b7ef76c3e34fbe8c7c3cf63531e40"
+    sha256 cellar: :any, arm64_golden_gate: "5d0af5ab2a2e00224ea5a389c67f0205e4cd2a088d5f196b40ad25d81a53e727"
+    sha256 cellar: :any, arm64_tahoe:       "fdd3dea9088ce3de66656684a292ac3cabe7540fe8e58df4d42421d356c2bfc5"
+    sha256 cellar: :any, arm64_sequoia:     "768bbbd7532ca49a378cd7e79700b73257ae55344f0cc7c2f81817cd899e14be"
+    sha256 cellar: :any, arm64_sonoma:      "0a6a4182d499d52448b951844b5aeae9766b4306c874825bce33c79bb69e9a5b"
+    sha256 cellar: :any, sonoma:            "bcfe9b250aded01df24c30e98a9af7f59dd4977de6943dbdbfbd05790d8039ea"
+    sha256 cellar: :any, arm64_linux:       "f0b910095890cd349897387533b4f43b45c185a3d7f904c29711d35869a67e6a"
+    sha256 cellar: :any, x86_64_linux:      "8f0d6f6881280961dad410b8a81dbc5ef48b7ef76c3e34fbe8c7c3cf63531e40"
   end
 
   depends_on "cmake" => :build

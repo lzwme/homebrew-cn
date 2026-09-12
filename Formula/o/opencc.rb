@@ -8,12 +8,13 @@ class Opencc < Formula
   head "https://github.com/BYVoid/OpenCC.git", branch: "master"
 
   bottle do
-    sha256 arm64_tahoe:   "bbfaf3efb79e2c3f5c28164da7fac4392e37f92d2bd6c29f90b2f56e524f4e46"
-    sha256 arm64_sequoia: "2c624b20369b7b59f090e9843f63885f83dbcbaacca1a1ad14b83dcc5913eb2e"
-    sha256 arm64_sonoma:  "25644bad6d717f0aa881606c7bc0b1d2b741980805c0fd498158f0afbcc573da"
-    sha256 sonoma:        "e727557f893d4c502e902dc857cdb64645f39544b9ff970e82ee25923804c482"
-    sha256 arm64_linux:   "f85c97dd2e6ac5119b88f00caf011d47fbf4f0b3474c5cc05138a3a4ff7ae19f"
-    sha256 x86_64_linux:  "182985a5ea53917469b04f24814c97e0cf4623291ef892c17cd194a63b6a30b2"
+    sha256 arm64_golden_gate: "0c0e78e9622155afc8fbc3cd91ba40e4c6d1292f4923775f8e5e361c041f1a85"
+    sha256 arm64_tahoe:       "bbfaf3efb79e2c3f5c28164da7fac4392e37f92d2bd6c29f90b2f56e524f4e46"
+    sha256 arm64_sequoia:     "2c624b20369b7b59f090e9843f63885f83dbcbaacca1a1ad14b83dcc5913eb2e"
+    sha256 arm64_sonoma:      "25644bad6d717f0aa881606c7bc0b1d2b741980805c0fd498158f0afbcc573da"
+    sha256 sonoma:            "e727557f893d4c502e902dc857cdb64645f39544b9ff970e82ee25923804c482"
+    sha256 arm64_linux:       "f85c97dd2e6ac5119b88f00caf011d47fbf4f0b3474c5cc05138a3a4ff7ae19f"
+    sha256 x86_64_linux:      "182985a5ea53917469b04f24814c97e0cf4623291ef892c17cd194a63b6a30b2"
   end
 
   depends_on "cmake" => :build

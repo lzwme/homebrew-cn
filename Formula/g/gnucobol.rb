@@ -1,7 +1,7 @@
 class Gnucobol < Formula
   desc "COBOL85-202x compiler supporting lots of dialect specific extensions"
   homepage "https://gnucobol.sourceforge.io/"
-  url "https://ftpmirror.gnu.org/gnu/gnucobol/gnucobol-3.2.tar.xz"
+  url "https://ftpmirror.gnu.org/gnucobol/gnucobol-3.2.tar.xz"
   mirror "https://ftp.gnu.org/gnu/gnucobol/gnucobol-3.2.tar.xz"
   sha256 "3bb48af46ced4779facf41fdc2ee60e4ccb86eaa99d010b36685315df39c2ee2"
   license "GPL-3.0-or-later"
@@ -14,12 +14,13 @@ class Gnucobol < Formula
 
   bottle do
     rebuild 1
-    sha256 arm64_tahoe:   "0da362ef857db439f16aa86c368d1bcd1fa1817c053b7ce4738df232560d4616"
-    sha256 arm64_sequoia: "db7def7151f5ab71dc6c6cbb1c1e243b80e57d078aa439803a965d7a16513ab4"
-    sha256 arm64_sonoma:  "845547cd0cc67d04c3709f2014581b22913725ee09a94cc9ac965b179261c4a5"
-    sha256 sonoma:        "54090e13a0028e18a5b2e21893f8e030ca6ac2ffdf4ea15550fd66d992dfc733"
-    sha256 arm64_linux:   "c467815b822a5f133c8a4aba9c167a0aa9090bc3b5caa543beda2d4fe6690495"
-    sha256 x86_64_linux:  "aa7e8ed2578fda5825551832c980f261810fc559ed6e985d968b51f3efbf75d4"
+    sha256 arm64_golden_gate: "776fa8cbc41d668202461df9dd98cddae9cba211c34fd7a753a854fe70a38621"
+    sha256 arm64_tahoe:       "0da362ef857db439f16aa86c368d1bcd1fa1817c053b7ce4738df232560d4616"
+    sha256 arm64_sequoia:     "db7def7151f5ab71dc6c6cbb1c1e243b80e57d078aa439803a965d7a16513ab4"
+    sha256 arm64_sonoma:      "845547cd0cc67d04c3709f2014581b22913725ee09a94cc9ac965b179261c4a5"
+    sha256 sonoma:            "54090e13a0028e18a5b2e21893f8e030ca6ac2ffdf4ea15550fd66d992dfc733"
+    sha256 arm64_linux:       "c467815b822a5f133c8a4aba9c167a0aa9090bc3b5caa543beda2d4fe6690495"
+    sha256 x86_64_linux:      "aa7e8ed2578fda5825551832c980f261810fc559ed6e985d968b51f3efbf75d4"
   end
 
   head do

@@ -6,12 +6,13 @@ class Minibwa < Formula
   license all_of: ["MIT", "Apache-2.0"]
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5e3eca6bb22984e2f53701d6a567bc0da1f483471b877c10e3f6ddd8b0cbeadd"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2da3ab5ffbdf523d8fa6db56acff2edd542557c5353e7053c3bfd6b9670cee3c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "65b011253c8c52060e8c54a92f2ea979988d9b681f26203767df6a2060fdd51d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c75d8c6707aac2f754ff8a1d217ecf4cf62948fde8e6272a9cef851abea4579e"
-    sha256 cellar: :any,                 arm64_linux:   "a8b132924d38e13b2cc7c31bab25e4a6457b8baeb0d6cfe4d414a7e7b8e73959"
-    sha256 cellar: :any,                 x86_64_linux:  "9f3800b0328330637487a5ed08ab8aeeb5f9d767c4f0d5ca73efce6abf5a1715"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "23f0965faca4eac9b6344cd7166d6a2b95c9729e0d99b3704fa3eb929a257bac"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "5e3eca6bb22984e2f53701d6a567bc0da1f483471b877c10e3f6ddd8b0cbeadd"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "2da3ab5ffbdf523d8fa6db56acff2edd542557c5353e7053c3bfd6b9670cee3c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "65b011253c8c52060e8c54a92f2ea979988d9b681f26203767df6a2060fdd51d"
+    sha256 cellar: :any_skip_relocation, sonoma:            "c75d8c6707aac2f754ff8a1d217ecf4cf62948fde8e6272a9cef851abea4579e"
+    sha256 cellar: :any,                 arm64_linux:       "a8b132924d38e13b2cc7c31bab25e4a6457b8baeb0d6cfe4d414a7e7b8e73959"
+    sha256 cellar: :any,                 x86_64_linux:      "9f3800b0328330637487a5ed08ab8aeeb5f9d767c4f0d5ca73efce6abf5a1715"
   end
 
   on_linux do

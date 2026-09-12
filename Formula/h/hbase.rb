@@ -7,12 +7,13 @@ class Hbase < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7025d1ec841d5776d393dea3395791ceec2fd6d74b31a619916d16ba8c812f3d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7025d1ec841d5776d393dea3395791ceec2fd6d74b31a619916d16ba8c812f3d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7025d1ec841d5776d393dea3395791ceec2fd6d74b31a619916d16ba8c812f3d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a97f665d0f23307fbd5ad20adfd839de0d159014502384398fd15d0109a5c51d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "694c9345a50aadc318ac75c2c32bc9a7b79f1e31f2429bad04f5cc2655ed881f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "694c9345a50aadc318ac75c2c32bc9a7b79f1e31f2429bad04f5cc2655ed881f"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "c6d118044288e0fa75281ec90e5ed5f17e36d1836314f67a1bb339afceb5a63c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "7025d1ec841d5776d393dea3395791ceec2fd6d74b31a619916d16ba8c812f3d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "7025d1ec841d5776d393dea3395791ceec2fd6d74b31a619916d16ba8c812f3d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "7025d1ec841d5776d393dea3395791ceec2fd6d74b31a619916d16ba8c812f3d"
+    sha256 cellar: :any_skip_relocation, sonoma:            "a97f665d0f23307fbd5ad20adfd839de0d159014502384398fd15d0109a5c51d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "694c9345a50aadc318ac75c2c32bc9a7b79f1e31f2429bad04f5cc2655ed881f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "694c9345a50aadc318ac75c2c32bc9a7b79f1e31f2429bad04f5cc2655ed881f"
   end
 
   depends_on "ant" => :build

@@ -1,18 +1,17 @@
 class Cyme < Formula
   desc "List system USB buses and devices"
   homepage "https://github.com/tuna-f1sh/cyme"
-  url "https://ghfast.top/https://github.com/tuna-f1sh/cyme/archive/refs/tags/v3.0.1.tar.gz"
-  sha256 "1d0f712d39f5d747f900829b6b9cccbfa943637b4c14d60e8a6a505162174c82"
+  url "https://ghfast.top/https://github.com/tuna-f1sh/cyme/archive/refs/tags/v3.0.2.tar.gz"
+  sha256 "1ac9956cc768d4482138455ce71fb5d62b816057dc34c181096a36be27735e0d"
   license "GPL-3.0-or-later"
   head "https://github.com/tuna-f1sh/cyme.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1cc05bde0b3821753aeea827c615de39751c352f95f1a8efbd6df99709936a76"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2da52e6135880f44c37c189ed96598c90d0bd85788068651091c9ba47694e181"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bc345525751acb619d78cbe4506b1e5d9d83b8da3942fabfebc8bc0a123d3e56"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7dfe0d7db63f71537976e9b2a06fbc9f740f84f2405880d9fd718b5501a4a494"
-    sha256 cellar: :any,                 arm64_linux:   "ca5e1a1f079ed227f7c376c65603d4df03326bff11b770ca33f0cd2d3ea17c47"
-    sha256 cellar: :any,                 x86_64_linux:  "9ff3f86ba6c3a73e4b51efd512a6a448b6564efe8fe3701b63af38950743fabd"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "53f3c16e9b77990d7c17fb9f8191c54975348396cd0640be6d5272dadea3764b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "c061f12466bdf6cb438e909c590dc131390f134be7d5cc74b6eaaebcdd58cd1a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "378e108762ab42d3030f112051bbabf05522a975e283d53293e801fd8ada6246"
+    sha256 cellar: :any,                 arm64_linux:       "53e6ca51f321c4b9c483b3409fe23e7d99478f9e9aa6268b81d64552bfa5a114"
+    sha256 cellar: :any,                 x86_64_linux:      "27850a485a691de15725f1151021485db5f2f2afc4ecbacd726aebf609b71520"
   end
 
   depends_on "rust" => :build

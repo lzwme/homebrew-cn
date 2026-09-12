@@ -7,12 +7,13 @@ class Amtterm < Formula
   head "https://gitlab.com/kraxel/amtterm.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "42f7db6addd888cbe1fd7d24597592424c2ee226f4681fd99ba362876165c41e"
-    sha256 cellar: :any, arm64_sequoia: "df3c4f069ff8f7d9534f2bdfeb892fcc11d549b8dce700b4f079cb439ec41123"
-    sha256 cellar: :any, arm64_sonoma:  "f95f090985c2d0ca7dfb26de8e0aa0b02b1c61173847a4e99b34f061869811b8"
-    sha256 cellar: :any, sonoma:        "105ff0233f78b177721306428db8bd052984c5a78a919b3c46c58e4a6b6ee133"
-    sha256               arm64_linux:   "0f0b74aea45b53d9b251bac798f8aa2699f42e3202527f21640d1e72a708980a"
-    sha256               x86_64_linux:  "154840975aafddd9adc085ed90130611905e52d1cad8a4aa2c3bc4785a21466e"
+    sha256 cellar: :any, arm64_golden_gate: "b94eecd4b3aba2faf033d55812dc31091e7c5003e168131dbd273e680cb02b8f"
+    sha256 cellar: :any, arm64_tahoe:       "42f7db6addd888cbe1fd7d24597592424c2ee226f4681fd99ba362876165c41e"
+    sha256 cellar: :any, arm64_sequoia:     "df3c4f069ff8f7d9534f2bdfeb892fcc11d549b8dce700b4f079cb439ec41123"
+    sha256 cellar: :any, arm64_sonoma:      "f95f090985c2d0ca7dfb26de8e0aa0b02b1c61173847a4e99b34f061869811b8"
+    sha256 cellar: :any, sonoma:            "105ff0233f78b177721306428db8bd052984c5a78a919b3c46c58e4a6b6ee133"
+    sha256               arm64_linux:       "0f0b74aea45b53d9b251bac798f8aa2699f42e3202527f21640d1e72a708980a"
+    sha256               x86_64_linux:      "154840975aafddd9adc085ed90130611905e52d1cad8a4aa2c3bc4785a21466e"
   end
 
   depends_on "glib"

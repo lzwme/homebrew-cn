@@ -12,12 +12,13 @@ class Zint < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "7e1e9e0579a80d03f3b61b0ce43125bc5cc2f3e52eee5840f66fc89b039edfc9"
-    sha256 cellar: :any,                 arm64_sequoia: "e40a7f6e07fd6c4d873d532b61f7c145399ed478dce78249e0f374b67fae9b6b"
-    sha256 cellar: :any,                 arm64_sonoma:  "84d4f6841542575a6e6d0da64a7094ade3b5261d828b28dd4fc0d9d5e7b0883b"
-    sha256 cellar: :any,                 sonoma:        "46450e362375e3f33ba2c737eafc265ad23bfd1fa49023e71ccc6622b58e1362"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cfb80afc876cc8f6106f743fb58fa182dd679729a7a3ef4744b6ee7460efac62"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3e2e7d47df4be55601f299c6ac215f96b262779bfeec32b53402a6bc8300664b"
+    sha256 cellar: :any,                 arm64_golden_gate: "3b774bee84822ab5c19e61ef236402523d3085d2dc435aaf2474ee6f27e283e2"
+    sha256 cellar: :any,                 arm64_tahoe:       "7e1e9e0579a80d03f3b61b0ce43125bc5cc2f3e52eee5840f66fc89b039edfc9"
+    sha256 cellar: :any,                 arm64_sequoia:     "e40a7f6e07fd6c4d873d532b61f7c145399ed478dce78249e0f374b67fae9b6b"
+    sha256 cellar: :any,                 arm64_sonoma:      "84d4f6841542575a6e6d0da64a7094ade3b5261d828b28dd4fc0d9d5e7b0883b"
+    sha256 cellar: :any,                 sonoma:            "46450e362375e3f33ba2c737eafc265ad23bfd1fa49023e71ccc6622b58e1362"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "cfb80afc876cc8f6106f743fb58fa182dd679729a7a3ef4744b6ee7460efac62"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "3e2e7d47df4be55601f299c6ac215f96b262779bfeec32b53402a6bc8300664b"
   end
 
   depends_on "cmake" => :build

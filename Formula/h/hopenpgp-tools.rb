@@ -7,11 +7,12 @@ class HopenpgpTools < Formula
   head "https://salsa.debian.org/clint/hOpenPGP.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "9da81157ee5ff4eedc714c233d0efcfba763f0024d7333af5e1b9f6146c767ff"
-    sha256 cellar: :any, arm64_sequoia: "7e1707730e18a9ddb15b70fc3f8e3fa1536ffd4db3ac00ab5c6e21753b5d237d"
-    sha256 cellar: :any, arm64_sonoma:  "4536b7a0cc032f269a52f54627bf098afccbfd61a07c42fc3ed2141ac9f1a47f"
-    sha256 cellar: :any, arm64_linux:   "395cb4703450a389bb5dd0ecc4a1f794a67cdff2f43da3a937663005d141aa1b"
-    sha256 cellar: :any, x86_64_linux:  "87159edcdd422034fbd5da97cc07bd800ed8829a47eaea63545cb99a9244a064"
+    sha256 cellar: :any, arm64_golden_gate: "74618cfa9ca7931b890f77da44ea949797b0a4c72e4a4cf9d7659a538bd03403"
+    sha256 cellar: :any, arm64_tahoe:       "9da81157ee5ff4eedc714c233d0efcfba763f0024d7333af5e1b9f6146c767ff"
+    sha256 cellar: :any, arm64_sequoia:     "7e1707730e18a9ddb15b70fc3f8e3fa1536ffd4db3ac00ab5c6e21753b5d237d"
+    sha256 cellar: :any, arm64_sonoma:      "4536b7a0cc032f269a52f54627bf098afccbfd61a07c42fc3ed2141ac9f1a47f"
+    sha256 cellar: :any, arm64_linux:       "395cb4703450a389bb5dd0ecc4a1f794a67cdff2f43da3a937663005d141aa1b"
+    sha256 cellar: :any, x86_64_linux:      "87159edcdd422034fbd5da97cc07bd800ed8829a47eaea63545cb99a9244a064"
   end
 
   depends_on "cabal-install" => :build

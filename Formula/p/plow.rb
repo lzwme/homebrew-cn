@@ -6,12 +6,13 @@ class Plow < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "76b61faa69be42c37f53cdb1858edd3a9041281e5d97c01b594cf9a672f2ca59"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "76b61faa69be42c37f53cdb1858edd3a9041281e5d97c01b594cf9a672f2ca59"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "76b61faa69be42c37f53cdb1858edd3a9041281e5d97c01b594cf9a672f2ca59"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3f65155edecaa6cf827a60b4c487b8de72446dd7291458b3cb21736064d5c4d3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1c77bec73d49957c37b155150ab183d637b842d1f6fdc901e2af44ddcf5ecfbb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "857ac84c99e42acfb4d6d86058e8df9691a7f0685d639003968e75192fcee167"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "a78c275a37dfd7db0bc9f121c089b5355da85deb3e7a1153ae79d5929c4044ad"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "76b61faa69be42c37f53cdb1858edd3a9041281e5d97c01b594cf9a672f2ca59"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "76b61faa69be42c37f53cdb1858edd3a9041281e5d97c01b594cf9a672f2ca59"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "76b61faa69be42c37f53cdb1858edd3a9041281e5d97c01b594cf9a672f2ca59"
+    sha256 cellar: :any_skip_relocation, sonoma:            "3f65155edecaa6cf827a60b4c487b8de72446dd7291458b3cb21736064d5c4d3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "1c77bec73d49957c37b155150ab183d637b842d1f6fdc901e2af44ddcf5ecfbb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "857ac84c99e42acfb4d6d86058e8df9691a7f0685d639003968e75192fcee167"
   end
 
   depends_on "go" => :build

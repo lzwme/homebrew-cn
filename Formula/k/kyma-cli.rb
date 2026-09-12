@@ -15,12 +15,13 @@ class KymaCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7a9440995c37bea7af73aaf46ed89947052ad619c15ac6dcd65e97f616390d7c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c53d792f4fd2bb108ca386d41ab2e18f852dd087d56f06a1c2f282d9b69cd62b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "50b31a23d9a1d0bf4b7450e411588ed91fde783c15a80df6a37eb64524d1e340"
-    sha256 cellar: :any_skip_relocation, sonoma:        "82895e01d0dec0fc9311df57b027a8694675ce0636cd1b5b3f102d004817cef3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7f550aaf588934559ce47270a7884ad668e9f96a536fcd4b3909e2d3606911ac"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "63a343698645ca8acfcc3505673eee8d799e0fbfb2e892f67f2de9e03bffbd1c"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "ca1d3772e6e109cafa67159edbc19094bcddb745533461ef87724d3ac3d92377"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "7a9440995c37bea7af73aaf46ed89947052ad619c15ac6dcd65e97f616390d7c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "c53d792f4fd2bb108ca386d41ab2e18f852dd087d56f06a1c2f282d9b69cd62b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "50b31a23d9a1d0bf4b7450e411588ed91fde783c15a80df6a37eb64524d1e340"
+    sha256 cellar: :any_skip_relocation, sonoma:            "82895e01d0dec0fc9311df57b027a8694675ce0636cd1b5b3f102d004817cef3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "7f550aaf588934559ce47270a7884ad668e9f96a536fcd4b3909e2d3606911ac"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "63a343698645ca8acfcc3505673eee8d799e0fbfb2e892f67f2de9e03bffbd1c"
   end
 
   depends_on "go" => :build

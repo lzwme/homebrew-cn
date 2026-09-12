@@ -9,11 +9,12 @@ class Kaskade < Formula
   head "https://github.com/sauljabin/kaskade.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "2b98e661adad884bcff771b1a92c9b1471104a1d55463063791e7e180e9546b2"
-    sha256 cellar: :any, arm64_sequoia: "7e87b0bf9a0792008ba21fadf23703a3bddbcd540c0e26a424dcbdce7caaf8d5"
-    sha256 cellar: :any, arm64_sonoma:  "7b653b09b3e9748db4d97558df201803ac49c9f84d0c0b4b4afe94b5fc3e3841"
-    sha256               arm64_linux:   "83a50e282a19100ae87a79ce6d868ec800d7962f2c0b5da41fc52ae16763a9b5"
-    sha256               x86_64_linux:  "55a092e8e705faec6c884c76bbd059205fecffde73f363b381194b3aaf903418"
+    sha256 cellar: :any, arm64_golden_gate: "de2cf42ef2c1e3d2af3f39b1136ba432886019103d3326d17a3b2761fc51adca"
+    sha256 cellar: :any, arm64_tahoe:       "2b98e661adad884bcff771b1a92c9b1471104a1d55463063791e7e180e9546b2"
+    sha256 cellar: :any, arm64_sequoia:     "7e87b0bf9a0792008ba21fadf23703a3bddbcd540c0e26a424dcbdce7caaf8d5"
+    sha256 cellar: :any, arm64_sonoma:      "7b653b09b3e9748db4d97558df201803ac49c9f84d0c0b4b4afe94b5fc3e3841"
+    sha256               arm64_linux:       "83a50e282a19100ae87a79ce6d868ec800d7962f2c0b5da41fc52ae16763a9b5"
+    sha256               x86_64_linux:      "55a092e8e705faec6c884c76bbd059205fecffde73f363b381194b3aaf903418"
   end
 
   depends_on "certifi" => :no_linkage

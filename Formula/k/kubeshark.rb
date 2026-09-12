@@ -15,12 +15,13 @@ class Kubeshark < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "568b47b6b22c5f03918ac03c726203807cf410b36880e5aecaa42afc0d8aff58"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b661e644aca12f69a5ede60eaf55f106a289ae5454604737a093987888891ffc"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bfdaf6152ff45d0ed935c3e96965920c2162bf8713ba255ba1c39aef00774cd3"
-    sha256 cellar: :any_skip_relocation, sonoma:        "eed570dd1d0f97c8ffea452ffc5c94190e348ea989b71b17ad23dfcd959e942f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f14ec9e9141b4fe59adce36d3ecdc107cd8860e0bb877512da72a189427e791d"
-    sha256 cellar: :any,                 x86_64_linux:  "a1a8f3dacd3a56f85ddc287c8f58ea97369e3e8c042a40f5304bf822abf8646b"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "da8b516d8ffea32e030c5020d36bb211251a8cf53894d71f9caa6c6d0565644b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "568b47b6b22c5f03918ac03c726203807cf410b36880e5aecaa42afc0d8aff58"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "b661e644aca12f69a5ede60eaf55f106a289ae5454604737a093987888891ffc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "bfdaf6152ff45d0ed935c3e96965920c2162bf8713ba255ba1c39aef00774cd3"
+    sha256 cellar: :any_skip_relocation, sonoma:            "eed570dd1d0f97c8ffea452ffc5c94190e348ea989b71b17ad23dfcd959e942f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "f14ec9e9141b4fe59adce36d3ecdc107cd8860e0bb877512da72a189427e791d"
+    sha256 cellar: :any,                 x86_64_linux:      "a1a8f3dacd3a56f85ddc287c8f58ea97369e3e8c042a40f5304bf822abf8646b"
   end
 
   depends_on "go" => :build

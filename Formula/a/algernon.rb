@@ -13,12 +13,13 @@ class Algernon < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9f8b6771094221f152c4c92fb0014cd0a07e2bc2f2ea056fbbe0dd8eea1769f3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9f8b6771094221f152c4c92fb0014cd0a07e2bc2f2ea056fbbe0dd8eea1769f3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9f8b6771094221f152c4c92fb0014cd0a07e2bc2f2ea056fbbe0dd8eea1769f3"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2dea6c1d74ce17efe284b90e76fc10529273f8e2300c28369d62ba7c4677abf2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "392ad1ed39cee16f8e9eb5645ce9fe1b532a57ce16ad4323b6587fc75189d837"
-    sha256 cellar: :any,                 x86_64_linux:  "ad30dcccb133c8c52fcfb22256f4cb3c87a0c2afa297c5bb0599c371bf825106"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "7c098164bb984fbc05e5f5b24d89eb9761c9d324d8ee7f677be502ab398b53f2"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "9f8b6771094221f152c4c92fb0014cd0a07e2bc2f2ea056fbbe0dd8eea1769f3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "9f8b6771094221f152c4c92fb0014cd0a07e2bc2f2ea056fbbe0dd8eea1769f3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "9f8b6771094221f152c4c92fb0014cd0a07e2bc2f2ea056fbbe0dd8eea1769f3"
+    sha256 cellar: :any_skip_relocation, sonoma:            "2dea6c1d74ce17efe284b90e76fc10529273f8e2300c28369d62ba7c4677abf2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "392ad1ed39cee16f8e9eb5645ce9fe1b532a57ce16ad4323b6587fc75189d837"
+    sha256 cellar: :any,                 x86_64_linux:      "ad30dcccb133c8c52fcfb22256f4cb3c87a0c2afa297c5bb0599c371bf825106"
   end
 
   depends_on "go" => :build

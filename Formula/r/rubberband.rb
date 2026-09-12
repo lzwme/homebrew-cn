@@ -12,14 +12,15 @@ class Rubberband < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "65ba1e050a7368f043369932bfc493de4f33f9dda9f6863250960559b5bdf1d8"
-    sha256 cellar: :any, arm64_sequoia: "5ac29718f68b181de61e81dd42bc85cc74cb1fc4ed5fdca541a94224bc43feaa"
-    sha256 cellar: :any, arm64_sonoma:  "d510bad14f78b8a3e7be16f5c49a78fb3638f686ec1c04c2cb28310b49e4ead7"
-    sha256 cellar: :any, arm64_ventura: "066c9310bb2eb10817aa44bc17eb1a3ce20f47b4c66e4381b097c8625caef7ff"
-    sha256 cellar: :any, sonoma:        "3bcd1310c98256b7a382f3b5bbdf1e22a060bb41989fab028122e0b5cd87e6af"
-    sha256 cellar: :any, ventura:       "d2b9fac38088ef6014be7d725f07b5d16aa92e22b1dc56046aa2390005379194"
-    sha256               arm64_linux:   "a39402bd21e74bcd13aace129f59aa365409a63b26112d4bc782bef838d11aa8"
-    sha256               x86_64_linux:  "982c2036c3528e0ae338680ba6baff4e8a0cd5ee16a2bafe4673e9cdea4d9e05"
+    sha256 cellar: :any, arm64_golden_gate: "b46420de34fcd89568fc2e70c7abf02cffcde697ff5f862e79fbfe80a32dd0ae"
+    sha256 cellar: :any, arm64_tahoe:       "65ba1e050a7368f043369932bfc493de4f33f9dda9f6863250960559b5bdf1d8"
+    sha256 cellar: :any, arm64_sequoia:     "5ac29718f68b181de61e81dd42bc85cc74cb1fc4ed5fdca541a94224bc43feaa"
+    sha256 cellar: :any, arm64_sonoma:      "d510bad14f78b8a3e7be16f5c49a78fb3638f686ec1c04c2cb28310b49e4ead7"
+    sha256 cellar: :any, arm64_ventura:     "066c9310bb2eb10817aa44bc17eb1a3ce20f47b4c66e4381b097c8625caef7ff"
+    sha256 cellar: :any, sonoma:            "3bcd1310c98256b7a382f3b5bbdf1e22a060bb41989fab028122e0b5cd87e6af"
+    sha256 cellar: :any, ventura:           "d2b9fac38088ef6014be7d725f07b5d16aa92e22b1dc56046aa2390005379194"
+    sha256               arm64_linux:       "a39402bd21e74bcd13aace129f59aa365409a63b26112d4bc782bef838d11aa8"
+    sha256               x86_64_linux:      "982c2036c3528e0ae338680ba6baff4e8a0cd5ee16a2bafe4673e9cdea4d9e05"
   end
 
   depends_on "meson" => :build

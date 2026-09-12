@@ -26,12 +26,13 @@ class Kcov < Formula
 
   bottle do
     rebuild 1
-    sha256 arm64_tahoe:   "66b47f9d61f53b74499405515b06143e082dbbb6dc2c7b5c1a5899f70a5e6627"
-    sha256 arm64_sequoia: "011a405bdcae2f4b98225fd2acaa344dc8f4e1146d11a1278b57d90fc549c8c1"
-    sha256 arm64_sonoma:  "d1f7d21d5295a410fe7f7f1eee6af7893fe25100470079e899129081cd680220"
-    sha256 sonoma:        "01edb51341252ffc753b17bdbdb63cf6c352cc2535742aa2f13c2915f07dda07"
-    sha256 arm64_linux:   "7038d1494b3b56a5fc8f4d3f0b3bf3960597cd0516bf28bc90a2adf4068689b4"
-    sha256 x86_64_linux:  "ad1cff7d8d0f3b6d044604c0ea0c6635048f01a9f2494724a91eac68646135a4"
+    sha256 arm64_golden_gate: "5865b2a3fdd1a916e6efd9355e8c55a238aeb44e0fe2a8f1f4b45a4981696a7e"
+    sha256 arm64_tahoe:       "66b47f9d61f53b74499405515b06143e082dbbb6dc2c7b5c1a5899f70a5e6627"
+    sha256 arm64_sequoia:     "011a405bdcae2f4b98225fd2acaa344dc8f4e1146d11a1278b57d90fc549c8c1"
+    sha256 arm64_sonoma:      "d1f7d21d5295a410fe7f7f1eee6af7893fe25100470079e899129081cd680220"
+    sha256 sonoma:            "01edb51341252ffc753b17bdbdb63cf6c352cc2535742aa2f13c2915f07dda07"
+    sha256 arm64_linux:       "7038d1494b3b56a5fc8f4d3f0b3bf3960597cd0516bf28bc90a2adf4068689b4"
+    sha256 x86_64_linux:      "ad1cff7d8d0f3b6d044604c0ea0c6635048f01a9f2494724a91eac68646135a4"
   end
 
   depends_on "cmake" => :build

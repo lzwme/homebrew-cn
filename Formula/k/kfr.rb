@@ -6,12 +6,13 @@ class Kfr < Formula
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "f8c0e575d71338be7f1dc85558cca4839ae8881d1c47cbc0c911ce2e099d0e10"
-    sha256 cellar: :any,                 arm64_sequoia: "edea10b7dda7aa1faa2df0a8c2e9c120619099d6ae120937a4683a2d45a6065f"
-    sha256 cellar: :any,                 arm64_sonoma:  "a0b2530179442951d697cd7dec0d9ae8de395787e275947cf0bb636f589f7eff"
-    sha256 cellar: :any,                 sonoma:        "8046d3d9c76ca7c1cd0a728aa41804ad9f90d1910fffba6ac4bac9da4c464348"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f171b125283cf0b0e8c0e091a667cb506650fee41bd9e61c8c723f0470951e6e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "846fedfb8e6c84c1a7915efe85ae15fbf788187051c8a6c76c99a4ddf8628397"
+    sha256 cellar: :any,                 arm64_golden_gate: "509c2da9eeb2c85d01aae8446baf9067208618b5ba08c1322f85f29478aef3de"
+    sha256 cellar: :any,                 arm64_tahoe:       "f8c0e575d71338be7f1dc85558cca4839ae8881d1c47cbc0c911ce2e099d0e10"
+    sha256 cellar: :any,                 arm64_sequoia:     "edea10b7dda7aa1faa2df0a8c2e9c120619099d6ae120937a4683a2d45a6065f"
+    sha256 cellar: :any,                 arm64_sonoma:      "a0b2530179442951d697cd7dec0d9ae8de395787e275947cf0bb636f589f7eff"
+    sha256 cellar: :any,                 sonoma:            "8046d3d9c76ca7c1cd0a728aa41804ad9f90d1910fffba6ac4bac9da4c464348"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "f171b125283cf0b0e8c0e091a667cb506650fee41bd9e61c8c723f0470951e6e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "846fedfb8e6c84c1a7915efe85ae15fbf788187051c8a6c76c99a4ddf8628397"
   end
 
   depends_on "boost" => :build

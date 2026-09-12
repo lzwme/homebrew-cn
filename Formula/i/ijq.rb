@@ -7,12 +7,13 @@ class Ijq < Formula
   head "https://codeberg.org/gpanders/ijq.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "13d3c521194f5cf432f787a993ca5ef9c32b02953b5bb2be514f0ac2602e9bf9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "67f3a41b5f1a6924916d0e8d216da83dbdc273c253e82929b0064a93ca36a8ae"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f978d17e05a71ed4fc7da15ae9eb6d000900b80c4fd0eefd04ce3d9ce408dee0"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1d1d6f14e2540892f375d93666ba3f4f7eec93833d49e2e22eb7448db8603f9d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ec1a6d78030c28b2dfaf94d330d61efe313ffd778fc93a219e0f0d729da57570"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8a2a01a981e0f6ee906a5b0d6e889c989f159c3a3f50b11f05665f8ffde6cdc2"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "78bd80a6492c19fd7b16abb8b3f49145183eb6a5ed50d947e4fded55c9e4d862"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "13d3c521194f5cf432f787a993ca5ef9c32b02953b5bb2be514f0ac2602e9bf9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "67f3a41b5f1a6924916d0e8d216da83dbdc273c253e82929b0064a93ca36a8ae"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "f978d17e05a71ed4fc7da15ae9eb6d000900b80c4fd0eefd04ce3d9ce408dee0"
+    sha256 cellar: :any_skip_relocation, sonoma:            "1d1d6f14e2540892f375d93666ba3f4f7eec93833d49e2e22eb7448db8603f9d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "ec1a6d78030c28b2dfaf94d330d61efe313ffd778fc93a219e0f0d729da57570"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "8a2a01a981e0f6ee906a5b0d6e889c989f159c3a3f50b11f05665f8ffde6cdc2"
   end
 
   depends_on "go" => :build

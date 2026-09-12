@@ -9,12 +9,13 @@ class Gdbgui < Formula
 
   bottle do
     rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "305daf07812dd5941548e611414a1dd7ea509a8230275b12c7981f04481abb90"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2a8f4508a00e9302ebaf63888d4505e027dde3710278601fc7229d4fe06521e3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a4ee59b13d9263ef333db195513bacde470ead12f92fb4a828ff6801f8624d3f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3a5a99218db05c8875e10ed5dae431912493f7296c8933763c163adbe0c7e7da"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e5cab7defea471b94a728c30bf2fcecb57f9b0ffcde63f704246cc02958e3a51"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "42ddd8b183bbf4134c83b15345f53480bc73d0f246ef71891de56179ee094cb0"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "3789bbdc97c4cb16ea50d7fae3273084667f0e0357678d0f7b569658f8b1d513"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "305daf07812dd5941548e611414a1dd7ea509a8230275b12c7981f04481abb90"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "2a8f4508a00e9302ebaf63888d4505e027dde3710278601fc7229d4fe06521e3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "a4ee59b13d9263ef333db195513bacde470ead12f92fb4a828ff6801f8624d3f"
+    sha256 cellar: :any_skip_relocation, sonoma:            "3a5a99218db05c8875e10ed5dae431912493f7296c8933763c163adbe0c7e7da"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "e5cab7defea471b94a728c30bf2fcecb57f9b0ffcde63f704246cc02958e3a51"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "42ddd8b183bbf4134c83b15345f53480bc73d0f246ef71891de56179ee094cb0"
   end
 
   depends_on "gdb"

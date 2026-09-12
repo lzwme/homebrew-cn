@@ -7,12 +7,13 @@ class Id3v2 < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "33aafe768f00f1a37dcc4a02ea2ebca5a06fe9548ee98fdab3b3f598ba641512"
-    sha256 cellar: :any,                 arm64_sequoia: "87cb393fcb36c2c26e7af47a89e78da61e7a75e52d528a26191449f17c8a05f9"
-    sha256 cellar: :any,                 arm64_sonoma:  "71bffeeec581154e8669d034472da305cdffc2daa2a21a01bdf5a267eae19e22"
-    sha256 cellar: :any,                 sonoma:        "052436ce24f1730dc280abc7ee4c1ddecffef5d780d641e31c5cef5d9ceade1b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "07dfc1ddaa81bbfceb227d1394828d778d01e7348c579a40a939661cc0472b82"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1efae20c92b93c07d496412dea715097678914a077a2a52823a291687c3a3a2e"
+    sha256 cellar: :any,                 arm64_golden_gate: "3b845c5466cd4813a08f61e2ebd90a9fd81088fe1143c4bbd402c0bdc0ff389f"
+    sha256 cellar: :any,                 arm64_tahoe:       "33aafe768f00f1a37dcc4a02ea2ebca5a06fe9548ee98fdab3b3f598ba641512"
+    sha256 cellar: :any,                 arm64_sequoia:     "87cb393fcb36c2c26e7af47a89e78da61e7a75e52d528a26191449f17c8a05f9"
+    sha256 cellar: :any,                 arm64_sonoma:      "71bffeeec581154e8669d034472da305cdffc2daa2a21a01bdf5a267eae19e22"
+    sha256 cellar: :any,                 sonoma:            "052436ce24f1730dc280abc7ee4c1ddecffef5d780d641e31c5cef5d9ceade1b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "07dfc1ddaa81bbfceb227d1394828d778d01e7348c579a40a939661cc0472b82"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "1efae20c92b93c07d496412dea715097678914a077a2a52823a291687c3a3a2e"
   end
 
   depends_on "id3lib"

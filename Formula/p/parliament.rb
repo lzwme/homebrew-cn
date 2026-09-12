@@ -10,12 +10,13 @@ class Parliament < Formula
   head "https://github.com/duo-labs/parliament.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "8a32fbc0d772491172bc792519e772f17254dee56a9bf10f879a8fb33374e70f"
-    sha256 cellar: :any,                 arm64_sequoia: "72f87a3f3696e9056981ae3543f257e48f37398daacd513457bd8eac025d77c2"
-    sha256 cellar: :any,                 arm64_sonoma:  "e5bb1e63e1d30c97ef683c7cb7620caa13bf8f337ddb69eea77938b56e69a447"
-    sha256 cellar: :any,                 sonoma:        "0244eeeb1d30bd936423fcc48dc3d6cfb35e4e8ab5a38570a91cd034b519f963"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3e8f093814c8483ebb6683a36cfe76e12ce125211533f96d3cd10910590c4181"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6dd3a6866499f4272d07c91b9000135d63e514e9d8b42a540c6630f3a4ed2367"
+    sha256 cellar: :any,                 arm64_golden_gate: "dce7b9279f6e7feb90e5375971b202f1507154ea3ca6aedfa29855609e718c7b"
+    sha256 cellar: :any,                 arm64_tahoe:       "8a32fbc0d772491172bc792519e772f17254dee56a9bf10f879a8fb33374e70f"
+    sha256 cellar: :any,                 arm64_sequoia:     "72f87a3f3696e9056981ae3543f257e48f37398daacd513457bd8eac025d77c2"
+    sha256 cellar: :any,                 arm64_sonoma:      "e5bb1e63e1d30c97ef683c7cb7620caa13bf8f337ddb69eea77938b56e69a447"
+    sha256 cellar: :any,                 sonoma:            "0244eeeb1d30bd936423fcc48dc3d6cfb35e4e8ab5a38570a91cd034b519f963"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "3e8f093814c8483ebb6683a36cfe76e12ce125211533f96d3cd10910590c4181"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "6dd3a6866499f4272d07c91b9000135d63e514e9d8b42a540c6630f3a4ed2367"
   end
 
   depends_on "libyaml"

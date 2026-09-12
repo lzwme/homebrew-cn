@@ -7,14 +7,15 @@ class Terraformer < Formula
   head "https://github.com/GoogleCloudPlatform/terraformer.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "77df38f3f9fb70c3e797b0383a7806f4b4eb48e6d3966a228b2ae28094f47b75"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "76897a56f9ca4e794bfda1657619693478002f030986002ae0488f375f24eaba"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d8075775bc33c531995a7ab2e7b3f064f7e0bf437481959d48a9c57a85c40c90"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "bbe623acb962e6d9b1e76120231ed2de80de73a57e0ec938f5671e692ad1d587"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b2af0e4b871f67d1c732e7cae619a59624f22e3ba6f5adb8afa45d2a6e187dee"
-    sha256 cellar: :any_skip_relocation, ventura:       "78eacf84bec4f443c67df8e8cff13534af27ed4beeb3692bc78e59c6adaf6a67"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "aa13f910e96e23576a6b03ba649e12a684bdfc1222246ea0c5acb4723b37eede"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cdfe4cd7d86eb95d6c0a08849778d3c0813ccbf2ac6b7dc2face163688ad01e4"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "ae1e2804335ebd9fc79aa23ef5f937afde5c243d9f1599fcb8d553268b28df30"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "77df38f3f9fb70c3e797b0383a7806f4b4eb48e6d3966a228b2ae28094f47b75"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "76897a56f9ca4e794bfda1657619693478002f030986002ae0488f375f24eaba"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "d8075775bc33c531995a7ab2e7b3f064f7e0bf437481959d48a9c57a85c40c90"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:     "bbe623acb962e6d9b1e76120231ed2de80de73a57e0ec938f5671e692ad1d587"
+    sha256 cellar: :any_skip_relocation, sonoma:            "b2af0e4b871f67d1c732e7cae619a59624f22e3ba6f5adb8afa45d2a6e187dee"
+    sha256 cellar: :any_skip_relocation, ventura:           "78eacf84bec4f443c67df8e8cff13534af27ed4beeb3692bc78e59c6adaf6a67"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "aa13f910e96e23576a6b03ba649e12a684bdfc1222246ea0c5acb4723b37eede"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "cdfe4cd7d86eb95d6c0a08849778d3c0813ccbf2ac6b7dc2face163688ad01e4"
   end
 
   # https://github.com/GoogleCloudPlatform/terraformer/commit/1807affdde9e392b8b8749932d8cd1daa5e4986e

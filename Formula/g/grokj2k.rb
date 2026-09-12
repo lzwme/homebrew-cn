@@ -12,11 +12,12 @@ class Grokj2k < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "d71a261c25447f5d6c5715b2cf83cecd6c44ff5993039db7238e6a57fc07ddf2"
-    sha256 cellar: :any, arm64_sequoia: "cdc671c8bb8aa53153d39f7b69ca38052e49ee90e50e440488f1be79fd4e959b"
-    sha256 cellar: :any, arm64_sonoma:  "8fa53263f537f7a14a2968aae6e9539311b6b0522a49f5a09d4e4553932ac1b5"
-    sha256 cellar: :any, arm64_linux:   "379f372589132f4c83de4e07a985c237f0a880b501f10f514c5c9ce2b2778868"
-    sha256 cellar: :any, x86_64_linux:  "bb924981802b700c69f4e89e31acdea9156740a74485081fdecc282370db0450"
+    sha256 cellar: :any, arm64_golden_gate: "7c8f2ef22b6834fb90c2fb0d6efb95fa9c921820de07e6a7cc9ea898776137ec"
+    sha256 cellar: :any, arm64_tahoe:       "d71a261c25447f5d6c5715b2cf83cecd6c44ff5993039db7238e6a57fc07ddf2"
+    sha256 cellar: :any, arm64_sequoia:     "cdc671c8bb8aa53153d39f7b69ca38052e49ee90e50e440488f1be79fd4e959b"
+    sha256 cellar: :any, arm64_sonoma:      "8fa53263f537f7a14a2968aae6e9539311b6b0522a49f5a09d4e4553932ac1b5"
+    sha256 cellar: :any, arm64_linux:       "379f372589132f4c83de4e07a985c237f0a880b501f10f514c5c9ce2b2778868"
+    sha256 cellar: :any, x86_64_linux:      "bb924981802b700c69f4e89e31acdea9156740a74485081fdecc282370db0450"
   end
 
   depends_on "cmake" => :build

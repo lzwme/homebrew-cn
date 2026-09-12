@@ -117,11 +117,6 @@ class Dotnet < Formula
     end
   end
 
-  conflicts_with cask: "dotnet-runtime"
-  conflicts_with cask: "dotnet-runtime@preview"
-  conflicts_with cask: "dotnet-sdk"
-  conflicts_with cask: "dotnet-sdk@preview"
-
   # Perform "1xx" or "2xx/3xx/4xx" Band Bootstrap. Skipping stage 2 as didn't work via documented steps
   # https://github.com/dotnet/source-build/blob/main/Documentation/feature-band-source-building.md
   def bootstrap_build(with_shared_components: nil)

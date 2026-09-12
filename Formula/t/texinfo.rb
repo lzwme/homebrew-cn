@@ -1,7 +1,7 @@
 class Texinfo < Formula
   desc "Official documentation format of the GNU project"
   homepage "https://www.gnu.org/software/texinfo/"
-  url "https://ftpmirror.gnu.org/gnu/texinfo/texinfo-7.3.tar.xz"
+  url "https://ftpmirror.gnu.org/texinfo/texinfo-7.3.tar.xz"
   mirror "https://ftp.gnu.org/gnu/texinfo/texinfo-7.3.tar.xz"
   sha256 "51f74eb0f51cfa9873b85264dfdd5d46e8957ec95b88f0fb762f63d9e164c72e"
   license "GPL-3.0-or-later"

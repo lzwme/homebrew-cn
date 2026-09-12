@@ -1,8 +1,8 @@
 class Mold < Formula
   desc "Modern Linker"
   homepage "https://github.com/rui314/mold"
-  url "https://ghfast.top/https://github.com/rui314/mold/archive/refs/tags/v2.42.0.tar.gz"
-  sha256 "6c0f3308c5b3159a369202d970922ad819bab1bfcb5a3b3c06a723d19f65373e"
+  url "https://ghfast.top/https://github.com/rui314/mold/archive/refs/tags/v2.42.1.tar.gz"
+  sha256 "0580221bfdad7148ceeafd0ad3c1c7b3ca9e66b45950405230cc3f81a205c816"
   license "MIT"
   head "https://github.com/rui314/mold.git", branch: "main"
 
@@ -15,12 +15,11 @@ class Mold < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "1bce73a0f4993f2e5a5adea86bebb4e468fbadbb5dafdb2cb843570a02c1c5f7"
-    sha256 cellar: :any, arm64_sequoia: "8bc93fb0496b59c0df4bdf52b80294148a25adf0e160ec582681e5e89bed8d93"
-    sha256 cellar: :any, arm64_sonoma:  "7b386120f413cc520d460747197fb16a5488ae608f59fa40d87436d032eb39b7"
-    sha256 cellar: :any, sonoma:        "87121cfe9730583b4515d0008faf5d2f75a45116d97f87b5790e85f324b49098"
-    sha256 cellar: :any, arm64_linux:   "3607fa1c26b9afc17971737dff4bc8e4d26b00c9cf6e6004da9b86dbc5da2571"
-    sha256 cellar: :any, x86_64_linux:  "82199850b5721e89aa433f39b44e4521480a209a209a44a95dbe32b89224d3a7"
+    sha256 cellar: :any, arm64_golden_gate: "6390617a0c79613f91c5735bc135ec0b04d5e0c2f120252b2390dbf1d101e054"
+    sha256 cellar: :any, arm64_tahoe:       "f8783cd443e4c1e4a8386fbb76350f2da37faa6c35ff82452afc625c6b04bd7e"
+    sha256 cellar: :any, arm64_sequoia:     "93ecc52ad053adcd04a72ce700063929fdb3333a9a910b0302631d200c443a67"
+    sha256 cellar: :any, arm64_linux:       "4a38f8aae2d02d9df37301e35e094df54119dbd8a906c9424a1717f5fc7026af"
+    sha256 cellar: :any, x86_64_linux:      "1a9ba98129bb0220979933261e8da4d477746091756e6cea5ee809b6a3ec523d"
   end
 
   depends_on "cmake" => :build

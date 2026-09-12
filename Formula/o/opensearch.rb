@@ -7,12 +7,13 @@ class Opensearch < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "86c43adb1d25c94bc339b0f4935ef1087417f7cc7eadcddfc9fdb8b7e3756400"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a7d56e828e1885ede7e3adb502595a47d66010395a551214781fb236ce0654c7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e908826782f1b15322ffa71fc9f900ebf8c3111a714cfa5846249e54e1962709"
-    sha256 cellar: :any_skip_relocation, sonoma:        "354105ab2e288f3ab9f9837951d2c8af259609eb815564815749e40351993b0d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c3a74d5b8dc06f7c83b2a01febcdbb1772bbef752efc8f8d7c4141461c031079"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1f97ef7a2b0aa396252da4fed36b9750ee95bc32855f38168f2b57ab135f9d4a"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "451ce6c06e05de9dfea84419886ffd8adfa856609ad1f451069bb53eda061b80"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "86c43adb1d25c94bc339b0f4935ef1087417f7cc7eadcddfc9fdb8b7e3756400"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "a7d56e828e1885ede7e3adb502595a47d66010395a551214781fb236ce0654c7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "e908826782f1b15322ffa71fc9f900ebf8c3111a714cfa5846249e54e1962709"
+    sha256 cellar: :any_skip_relocation, sonoma:            "354105ab2e288f3ab9f9837951d2c8af259609eb815564815749e40351993b0d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "c3a74d5b8dc06f7c83b2a01febcdbb1772bbef752efc8f8d7c4141461c031079"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "1f97ef7a2b0aa396252da4fed36b9750ee95bc32855f38168f2b57ab135f9d4a"
   end
 
   # TODO: Use the vendored Gradle wrapper until its minor version matches Homebrew's `gradle`.

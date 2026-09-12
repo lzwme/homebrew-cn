@@ -13,12 +13,13 @@ class Tcpdump < Formula
 
   bottle do
     rebuild 2
-    sha256 cellar: :any,                 arm64_tahoe:   "f801b7b1f7dcecc71f8cecee3147a1469abc87ccbade07f89628c99b2a4a402f"
-    sha256 cellar: :any,                 arm64_sequoia: "884b3e4ef5f4aa2853a36a960c8977aa7fde7abc7ece17c01d79264eb83ccb96"
-    sha256 cellar: :any,                 arm64_sonoma:  "0b5d241847887ac54dd98b874ef61846e4e606e6a4181d61e91a8e96dd069dbc"
-    sha256 cellar: :any,                 sonoma:        "f1d1f31399e5dbebbffcd35b70fa0e4240860828047e4ade009a85bd4e79394b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e64d475e30d608775b89020fadd69bba4c6b4fcba6f5beb01093a03218595734"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0f4c8f9ff9f7c7a60c082d95239fff8ae4df1c795d359bd5a03fc948323b9aca"
+    sha256 cellar: :any,                 arm64_golden_gate: "7520408303b0d6e1b438bf26611f3bca05cba23313e32eab81ada05f2b1e0753"
+    sha256 cellar: :any,                 arm64_tahoe:       "f801b7b1f7dcecc71f8cecee3147a1469abc87ccbade07f89628c99b2a4a402f"
+    sha256 cellar: :any,                 arm64_sequoia:     "884b3e4ef5f4aa2853a36a960c8977aa7fde7abc7ece17c01d79264eb83ccb96"
+    sha256 cellar: :any,                 arm64_sonoma:      "0b5d241847887ac54dd98b874ef61846e4e606e6a4181d61e91a8e96dd069dbc"
+    sha256 cellar: :any,                 sonoma:            "f1d1f31399e5dbebbffcd35b70fa0e4240860828047e4ade009a85bd4e79394b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "e64d475e30d608775b89020fadd69bba4c6b4fcba6f5beb01093a03218595734"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "0f4c8f9ff9f7c7a60c082d95239fff8ae4df1c795d359bd5a03fc948323b9aca"
   end
 
   depends_on "libpcap"

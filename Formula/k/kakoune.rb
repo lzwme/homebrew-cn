@@ -13,12 +13,13 @@ class Kakoune < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "af949c2fa7e4f6f6e0b31f51f70b4e72594e251f16dc4613e92242a0f93bd6da"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c0395267de4d2c982d25951d65219ba1327df38c19bcbd9c9575b71d84550ba8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "609dd30082a5dd8f0f22cf29a2077c9b23f6b18d60af2104f1e0e18b3c619fd3"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1d9858048c95de9968cde5b364ce02131993c269b8fe2e7f20535dbba6acfd60"
-    sha256 cellar: :any,                 arm64_linux:   "6ee1adf9a500941b4b72f4870dfd68880904fd7da4dcd3b95a3a319d3eb74e53"
-    sha256 cellar: :any,                 x86_64_linux:  "e278d31043e2b11dde3115cf6f0a2263db88c7cc3ced7fea0a631f2eab863d7a"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "d78143a94a544946a133c111ed69b5bc592b51b3a3799b7994c658ade4127935"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "af949c2fa7e4f6f6e0b31f51f70b4e72594e251f16dc4613e92242a0f93bd6da"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "c0395267de4d2c982d25951d65219ba1327df38c19bcbd9c9575b71d84550ba8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "609dd30082a5dd8f0f22cf29a2077c9b23f6b18d60af2104f1e0e18b3c619fd3"
+    sha256 cellar: :any_skip_relocation, sonoma:            "1d9858048c95de9968cde5b364ce02131993c269b8fe2e7f20535dbba6acfd60"
+    sha256 cellar: :any,                 arm64_linux:       "6ee1adf9a500941b4b72f4870dfd68880904fd7da4dcd3b95a3a319d3eb74e53"
+    sha256 cellar: :any,                 x86_64_linux:      "e278d31043e2b11dde3115cf6f0a2263db88c7cc3ced7fea0a631f2eab863d7a"
   end
 
   on_linux do

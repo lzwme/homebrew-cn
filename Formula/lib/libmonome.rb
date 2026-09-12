@@ -8,11 +8,12 @@ class Libmonome < Formula
   head "https://github.com/monome/libmonome.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "0547048b33e2552f2fdf6e05d789027322bd2762b0479b12268b236fcffd79bd"
-    sha256 cellar: :any, arm64_sequoia: "4ee60aad29f6c05369e4d71413616349d3da7935dc98880a1da1b46027c42d31"
-    sha256 cellar: :any, arm64_sonoma:  "cdcfd91a4b26147b2b53b17bcb3cb0e98320b3c489ae7d011efd8aa25c18a4e2"
-    sha256 cellar: :any, arm64_linux:   "0422dda2c8a90ed1ab3ffd3414ac19326803e1c3a1a84cc49cb2927291bdc6e3"
-    sha256 cellar: :any, x86_64_linux:  "cc8493ed884388b20054d0c4eb89d006bd024ab06e59050acd9b07f41211a7df"
+    sha256 cellar: :any, arm64_golden_gate: "16f656808b0ee4c3bce0b379cdbeb0f81142b51c2239f0a0841e1203d7704232"
+    sha256 cellar: :any, arm64_tahoe:       "0547048b33e2552f2fdf6e05d789027322bd2762b0479b12268b236fcffd79bd"
+    sha256 cellar: :any, arm64_sequoia:     "4ee60aad29f6c05369e4d71413616349d3da7935dc98880a1da1b46027c42d31"
+    sha256 cellar: :any, arm64_sonoma:      "cdcfd91a4b26147b2b53b17bcb3cb0e98320b3c489ae7d011efd8aa25c18a4e2"
+    sha256 cellar: :any, arm64_linux:       "0422dda2c8a90ed1ab3ffd3414ac19326803e1c3a1a84cc49cb2927291bdc6e3"
+    sha256 cellar: :any, x86_64_linux:      "cc8493ed884388b20054d0c4eb89d006bd024ab06e59050acd9b07f41211a7df"
   end
 
   depends_on "cmake" => [:build, :test]

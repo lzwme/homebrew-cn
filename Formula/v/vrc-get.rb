@@ -12,12 +12,13 @@ class VrcGet < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "43b765373df7aaf2f0262d8614c0ffa1feb30a678ea6273f322c32459f4cb79c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c12cd0836fedb083500540ecfa9c71b5977cc189cb8585ab182dcb173212afc7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7315dc588cffe1da2d1290b132a95c24a99b4e0b89e5b9a07e1f549bc53998fd"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3ee10f04f7bd12af38057340ad05ea6822c5c8f722926ba5ca0fd8e7b4dd32bc"
-    sha256 cellar: :any,                 arm64_linux:   "7549a5500553999eef195a0cfc626ca013de515502d527a488dfd248dc312e6a"
-    sha256 cellar: :any,                 x86_64_linux:  "0d789cdb004317cb64c531cfecc014ae3cb8273091f7060da565b6c9795bc98f"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "cd5006b42d207e56061604a88461da98eba3119082d07c5153de3618c18d58b2"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "43b765373df7aaf2f0262d8614c0ffa1feb30a678ea6273f322c32459f4cb79c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "c12cd0836fedb083500540ecfa9c71b5977cc189cb8585ab182dcb173212afc7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "7315dc588cffe1da2d1290b132a95c24a99b4e0b89e5b9a07e1f549bc53998fd"
+    sha256 cellar: :any_skip_relocation, sonoma:            "3ee10f04f7bd12af38057340ad05ea6822c5c8f722926ba5ca0fd8e7b4dd32bc"
+    sha256 cellar: :any,                 arm64_linux:       "7549a5500553999eef195a0cfc626ca013de515502d527a488dfd248dc312e6a"
+    sha256 cellar: :any,                 x86_64_linux:      "0d789cdb004317cb64c531cfecc014ae3cb8273091f7060da565b6c9795bc98f"
   end
 
   depends_on "rust" => :build

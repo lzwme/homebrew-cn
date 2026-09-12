@@ -7,12 +7,13 @@ class GitlabCiLinter < Formula
   head "https://gitlab.com/orobardet/gitlab-ci-linter.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cc37c298c817d2e5f157425e6a0085371d236752da86c8445bc0f95496564683"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cc37c298c817d2e5f157425e6a0085371d236752da86c8445bc0f95496564683"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cc37c298c817d2e5f157425e6a0085371d236752da86c8445bc0f95496564683"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b39c7882d3c5a83b96668ffb1fe693e956f3787e462182b9501c13d4f74f718a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "82e74dc43a4a609bbceb7ffe5898decf6c03a139fe7be6fc516be670be520eab"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7b9292be7478c52c6b9852bc2a89ca00f3439ed12557f8b0dcb5ec65af128edc"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "a5729014274b9b31be2c882de09dc09d96585eb77fe315ad103ab9b72c627737"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "cc37c298c817d2e5f157425e6a0085371d236752da86c8445bc0f95496564683"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "cc37c298c817d2e5f157425e6a0085371d236752da86c8445bc0f95496564683"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "cc37c298c817d2e5f157425e6a0085371d236752da86c8445bc0f95496564683"
+    sha256 cellar: :any_skip_relocation, sonoma:            "b39c7882d3c5a83b96668ffb1fe693e956f3787e462182b9501c13d4f74f718a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "82e74dc43a4a609bbceb7ffe5898decf6c03a139fe7be6fc516be670be520eab"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "7b9292be7478c52c6b9852bc2a89ca00f3439ed12557f8b0dcb5ec65af128edc"
   end
 
   depends_on "go" => :build

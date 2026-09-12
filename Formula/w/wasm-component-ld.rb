@@ -11,12 +11,13 @@ class WasmComponentLd < Formula
   head "https://github.com/bytecodealliance/wasm-component-ld.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "aa08b67f61302c1341db1ce19fed71aec3e23c3c8f2438449507c086733c8ef8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "df64a3ebcf842733192d4df93f03f4715ec8b2119487016a04b9e84d01f80dfd"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f1968db74abcccf0369442038fbe516afdd148ceee96e929990e08fa9c691dd3"
-    sha256 cellar: :any_skip_relocation, sonoma:        "48fcfe5bea3cc267a0fc7ac60c496a41ca67a1247a58557cfea1d423cb5186f0"
-    sha256 cellar: :any,                 arm64_linux:   "6a49cabf8f30b1411c41626e10ef4a0a78115fb0d5c7034441d36c48d3e9ea66"
-    sha256 cellar: :any,                 x86_64_linux:  "2de5fe408456450bd9bf8a16e4954c7ee8389dfdba3adb0d3327d69ca7d4442f"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "c74889cc4c4346b56a22a4a05fb7edee32e246c6023270ec27155795fef98472"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "aa08b67f61302c1341db1ce19fed71aec3e23c3c8f2438449507c086733c8ef8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "df64a3ebcf842733192d4df93f03f4715ec8b2119487016a04b9e84d01f80dfd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "f1968db74abcccf0369442038fbe516afdd148ceee96e929990e08fa9c691dd3"
+    sha256 cellar: :any_skip_relocation, sonoma:            "48fcfe5bea3cc267a0fc7ac60c496a41ca67a1247a58557cfea1d423cb5186f0"
+    sha256 cellar: :any,                 arm64_linux:       "6a49cabf8f30b1411c41626e10ef4a0a78115fb0d5c7034441d36c48d3e9ea66"
+    sha256 cellar: :any,                 x86_64_linux:      "2de5fe408456450bd9bf8a16e4954c7ee8389dfdba3adb0d3327d69ca7d4442f"
   end
 
   depends_on "rust" => :build

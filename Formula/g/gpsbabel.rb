@@ -15,12 +15,13 @@ class Gpsbabel < Formula
 
   bottle do
     rebuild 2
-    sha256 cellar: :any,                 arm64_tahoe:   "f5a6e165e7d310ead14a3f4eba01ea1d7367fe5feb7e0736cdbe1291e25cf9f1"
-    sha256 cellar: :any,                 arm64_sequoia: "ee0edd5748373bc587c31d0d97064f2b23058e2c8cd2627ed49e5e14cbe0b23a"
-    sha256 cellar: :any,                 arm64_sonoma:  "224cc493bf2f416e2f4b9da7237ec75d53a2dbdcbdb031795982747070b60ab9"
-    sha256 cellar: :any,                 sonoma:        "5ccb88102bb1902e6ab6f9ff5cd275fc966be2f2b2082b0aa94ab83419f0ef9c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3d9644f2f53d57333345dc3b75d93d05443072654d5600d92e87cc7732b3fd3a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b5008e8faffe2128519d5fdd5ebfc432f74f021a3b2937763b3a0b6cb54f68ff"
+    sha256 cellar: :any,                 arm64_golden_gate: "6060cf85038c69e4e07b4ad571b0ac4eeef88191a5758de9e60cc58bda857d99"
+    sha256 cellar: :any,                 arm64_tahoe:       "f5a6e165e7d310ead14a3f4eba01ea1d7367fe5feb7e0736cdbe1291e25cf9f1"
+    sha256 cellar: :any,                 arm64_sequoia:     "ee0edd5748373bc587c31d0d97064f2b23058e2c8cd2627ed49e5e14cbe0b23a"
+    sha256 cellar: :any,                 arm64_sonoma:      "224cc493bf2f416e2f4b9da7237ec75d53a2dbdcbdb031795982747070b60ab9"
+    sha256 cellar: :any,                 sonoma:            "5ccb88102bb1902e6ab6f9ff5cd275fc966be2f2b2082b0aa94ab83419f0ef9c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "3d9644f2f53d57333345dc3b75d93d05443072654d5600d92e87cc7732b3fd3a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "b5008e8faffe2128519d5fdd5ebfc432f74f021a3b2937763b3a0b6cb54f68ff"
   end
 
   depends_on "cmake" => :build

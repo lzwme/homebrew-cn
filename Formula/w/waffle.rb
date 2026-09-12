@@ -7,12 +7,13 @@ class Waffle < Formula
   head "https://gitlab.freedesktop.org/mesa/waffle.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "2dd69169a48a2d596930174abd4cb49de0c96f34283de5149573b9161a342d90"
-    sha256 cellar: :any, arm64_sequoia: "38ea5644a64bb6ec2ddb776b680a1e66b0c95e8aae5eee55be80bfcee34a4d98"
-    sha256 cellar: :any, arm64_sonoma:  "844f7d199beeefdee0d3c3c2a53cbc36f6aeb1ba353d989cf847cefc83fdd2a9"
-    sha256 cellar: :any, sonoma:        "fa5ab19527be69be3cee70a91c16ac9b76cfcad22060a5b145f61c62d6150702"
-    sha256               arm64_linux:   "2830fb4efe4539177bdf4446132863b66960fdf0b02176e5fae7b70a3364840c"
-    sha256               x86_64_linux:  "ba6db6caea184960fb78adb9a63ba635e739c1cbd226c033e48cadc12756aba3"
+    sha256 cellar: :any, arm64_golden_gate: "5c1fdf85e9b6135bd5ee8cd9c8f560672c7bdd832d4360b086ff4e6773b818d9"
+    sha256 cellar: :any, arm64_tahoe:       "2dd69169a48a2d596930174abd4cb49de0c96f34283de5149573b9161a342d90"
+    sha256 cellar: :any, arm64_sequoia:     "38ea5644a64bb6ec2ddb776b680a1e66b0c95e8aae5eee55be80bfcee34a4d98"
+    sha256 cellar: :any, arm64_sonoma:      "844f7d199beeefdee0d3c3c2a53cbc36f6aeb1ba353d989cf847cefc83fdd2a9"
+    sha256 cellar: :any, sonoma:            "fa5ab19527be69be3cee70a91c16ac9b76cfcad22060a5b145f61c62d6150702"
+    sha256               arm64_linux:       "2830fb4efe4539177bdf4446132863b66960fdf0b02176e5fae7b70a3364840c"
+    sha256               x86_64_linux:      "ba6db6caea184960fb78adb9a63ba635e739c1cbd226c033e48cadc12756aba3"
   end
 
   depends_on "cmake" => :build

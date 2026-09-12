@@ -13,11 +13,12 @@ class Cassandra < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "37de0df52ed2e121f2c8b8a835350ffc7b59fe6d85ad1633c5d4249acc54a29c"
-    sha256 cellar: :any, arm64_sequoia: "ee2e2beccc4ca2cb7323a1333bda7e081d1caf732503f2dc3c07a3fa35d6ae60"
-    sha256 cellar: :any, arm64_sonoma:  "ea91ba7f14db53c15154457c86c6cdd56889ce9a96eae61d572f427edecfa307"
-    sha256 cellar: :any, arm64_linux:   "c1a52caf133cae5d1f035891d2e4f9ee894e6cd5a33e1f786ab582da09069e3f"
-    sha256 cellar: :any, x86_64_linux:  "04c7e985396162fca47816da345a4fe3a7aea9fa673d3fe86563ed0c427a9c5e"
+    sha256 cellar: :any, arm64_golden_gate: "6b7840959d2d05f86d28ed4ab7599deb9acca6a39ad31d66099e55c714ec75fd"
+    sha256 cellar: :any, arm64_tahoe:       "37de0df52ed2e121f2c8b8a835350ffc7b59fe6d85ad1633c5d4249acc54a29c"
+    sha256 cellar: :any, arm64_sequoia:     "ee2e2beccc4ca2cb7323a1333bda7e081d1caf732503f2dc3c07a3fa35d6ae60"
+    sha256 cellar: :any, arm64_sonoma:      "ea91ba7f14db53c15154457c86c6cdd56889ce9a96eae61d572f427edecfa307"
+    sha256 cellar: :any, arm64_linux:       "c1a52caf133cae5d1f035891d2e4f9ee894e6cd5a33e1f786ab582da09069e3f"
+    sha256 cellar: :any, x86_64_linux:      "04c7e985396162fca47816da345a4fe3a7aea9fa673d3fe86563ed0c427a9c5e"
   end
 
   depends_on "libev"

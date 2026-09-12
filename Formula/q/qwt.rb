@@ -12,12 +12,13 @@ class Qwt < Formula
 
   bottle do
     rebuild 2
-    sha256 cellar: :any,                 arm64_tahoe:   "b9997bee5756f9c2f27627b70b4af65e8e83cf742a69fbf190bb82b745ade6f2"
-    sha256 cellar: :any,                 arm64_sequoia: "ad7400e7b47e1141ab0dc73e38ba9277e64815563ab09d098d291c279280c042"
-    sha256 cellar: :any,                 arm64_sonoma:  "7119f5e278adbd4ea156188b77c2f9a4cb50cce88d78407986c37e431c0a4195"
-    sha256 cellar: :any,                 sonoma:        "bfece3bd182b3bacc33ad714238fccbe59427aa405a4f0fe92bc3b7d9c8ac631"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "48d6ffede0996476e329902394fe8848a346f057b9a1f7113686b163a4c917c6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6f2c7c9b88d0214e3fdc7b8fcf9f412fd5f306eacc069adbc388683d1f0f9603"
+    sha256 cellar: :any,                 arm64_golden_gate: "02714827ee51ca2d9216d0c609f2b91cc5803265c49c4eb6e57e3b5e9253a7ac"
+    sha256 cellar: :any,                 arm64_tahoe:       "b9997bee5756f9c2f27627b70b4af65e8e83cf742a69fbf190bb82b745ade6f2"
+    sha256 cellar: :any,                 arm64_sequoia:     "ad7400e7b47e1141ab0dc73e38ba9277e64815563ab09d098d291c279280c042"
+    sha256 cellar: :any,                 arm64_sonoma:      "7119f5e278adbd4ea156188b77c2f9a4cb50cce88d78407986c37e431c0a4195"
+    sha256 cellar: :any,                 sonoma:            "bfece3bd182b3bacc33ad714238fccbe59427aa405a4f0fe92bc3b7d9c8ac631"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "48d6ffede0996476e329902394fe8848a346f057b9a1f7113686b163a4c917c6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "6f2c7c9b88d0214e3fdc7b8fcf9f412fd5f306eacc069adbc388683d1f0f9603"
   end
 
   depends_on "qttools" => :build

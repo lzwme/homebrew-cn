@@ -7,11 +7,12 @@ class Vala < Formula
   revision 1
 
   bottle do
-    sha256 arm64_tahoe:   "7236e77a2e6bcc1b77d1cd7c8eade63f63459fee2c0429b84348eb86cd1d81b3"
-    sha256 arm64_sequoia: "ca08db6836916f2a967cfc8a289ebd93105e793385b9e0a37076e4fb770a8b85"
-    sha256 arm64_sonoma:  "b12ea61f9b9c19b0722e6309562b498d28deb797234af0280d9b3692b8aaf8a5"
-    sha256 arm64_linux:   "b911b1f58457e8fad4111c554c423beddbb86f6dde92b246dc54fd706f1e0a43"
-    sha256 x86_64_linux:  "459104ac47129f0fe09759497678a9ce7cc2e5bcb89b050e6589ea9ae4a0480d"
+    sha256 arm64_golden_gate: "05f822310b3a2ff54b5b8a04516fdcdddccc6081cee03a12da66366e10210c38"
+    sha256 arm64_tahoe:       "7236e77a2e6bcc1b77d1cd7c8eade63f63459fee2c0429b84348eb86cd1d81b3"
+    sha256 arm64_sequoia:     "ca08db6836916f2a967cfc8a289ebd93105e793385b9e0a37076e4fb770a8b85"
+    sha256 arm64_sonoma:      "b12ea61f9b9c19b0722e6309562b498d28deb797234af0280d9b3692b8aaf8a5"
+    sha256 arm64_linux:       "b911b1f58457e8fad4111c554c423beddbb86f6dde92b246dc54fd706f1e0a43"
+    sha256 x86_64_linux:      "459104ac47129f0fe09759497678a9ce7cc2e5bcb89b050e6589ea9ae4a0480d"
   end
 
   depends_on "gobject-introspection" => :build

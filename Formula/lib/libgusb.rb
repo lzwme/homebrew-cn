@@ -21,12 +21,13 @@ class Libgusb < Formula
 
   bottle do
     rebuild 3
-    sha256 arm64_tahoe:   "b72850ea01c8cd29ea25f54a76a4bc4fc30f04fef9a8c2deb858a767f32aed60"
-    sha256 arm64_sequoia: "10c0f65e769b39908359972bacb28a546dba331e8ace790ccc1a0673fc936889"
-    sha256 arm64_sonoma:  "d5152328e9ccc7008d88d58dfaa1e9d82e18d538f999341d266e7c30c8a13e1f"
-    sha256 sonoma:        "f48eb8f462d0554baec1356735687801ab24af570a1de7d35d252147a0ebd67d"
-    sha256 arm64_linux:   "de8939012f87fd944217bd85fdbdf9edacdb7505cfe6fac9cf2e6da70e41a257"
-    sha256 x86_64_linux:  "8acc7113d4d8e45b58c64078881669fed44358d7d3d03fc9fc6852a66d5dca78"
+    sha256 arm64_golden_gate: "3ee0ce0206a60baec3f0bc50536f8adf2bf541ae051a7788775eeebc12b48f9e"
+    sha256 arm64_tahoe:       "b72850ea01c8cd29ea25f54a76a4bc4fc30f04fef9a8c2deb858a767f32aed60"
+    sha256 arm64_sequoia:     "10c0f65e769b39908359972bacb28a546dba331e8ace790ccc1a0673fc936889"
+    sha256 arm64_sonoma:      "d5152328e9ccc7008d88d58dfaa1e9d82e18d538f999341d266e7c30c8a13e1f"
+    sha256 sonoma:            "f48eb8f462d0554baec1356735687801ab24af570a1de7d35d252147a0ebd67d"
+    sha256 arm64_linux:       "de8939012f87fd944217bd85fdbdf9edacdb7505cfe6fac9cf2e6da70e41a257"
+    sha256 x86_64_linux:      "8acc7113d4d8e45b58c64078881669fed44358d7d3d03fc9fc6852a66d5dca78"
   end
 
   depends_on "gobject-introspection" => :build

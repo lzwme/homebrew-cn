@@ -6,14 +6,15 @@ class KotlinLanguageServer < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "82192bd12da883553702631b7bc43af82148f6812cee104f5cc2f1c89058da7e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8a8f715a1cb3d08aba2c7691f832a7d7f080a456b31b7ad27c319e82eaa7b276"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1bb973d9967acd621079bc932a5ad6bf2971020a9b2c75f4f4c2ba56d3d51157"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "70751b17fc9cb655dfff1b5d05c18bdc2ee8de66a41fbc5e9d4882cc0b13b3f5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1aa692e029744e16e952cf8de40b9dfd63f19416e9d5532445cc038745df83b5"
-    sha256 cellar: :any_skip_relocation, ventura:       "06b601dfae36e4909787d1c2f9c01509c4573eb5a35b617806cd36faaf6c3bfb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "68f9f6eff3f823259f8fdd3f93272ac79cdccfc4e4e7b5586e148b6302899a24"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "61b0bc6b824959b614df4e0cc31463ab4d8d3a95030c11dd9263921e2c5c5325"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "321df23b3258672d0df70c3ab7487ba73611916a2cf30089b692e53090731b51"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "82192bd12da883553702631b7bc43af82148f6812cee104f5cc2f1c89058da7e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "8a8f715a1cb3d08aba2c7691f832a7d7f080a456b31b7ad27c319e82eaa7b276"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "1bb973d9967acd621079bc932a5ad6bf2971020a9b2c75f4f4c2ba56d3d51157"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:     "70751b17fc9cb655dfff1b5d05c18bdc2ee8de66a41fbc5e9d4882cc0b13b3f5"
+    sha256 cellar: :any_skip_relocation, sonoma:            "1aa692e029744e16e952cf8de40b9dfd63f19416e9d5532445cc038745df83b5"
+    sha256 cellar: :any_skip_relocation, ventura:           "06b601dfae36e4909787d1c2f9c01509c4573eb5a35b617806cd36faaf6c3bfb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "68f9f6eff3f823259f8fdd3f93272ac79cdccfc4e4e7b5586e148b6302899a24"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "61b0bc6b824959b614df4e0cc31463ab4d8d3a95030c11dd9263921e2c5c5325"
   end
 
   depends_on "gradle" => :build

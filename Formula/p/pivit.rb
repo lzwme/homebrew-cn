@@ -6,12 +6,13 @@ class Pivit < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c7f5d747e5dfa387783b29019ed02f78ef8622d71abcb851ecf519e010a2bea0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "89f12db02ef6895b23cd60f5a6e401601c04484cca4d6be2d4a79e7541d9bd22"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9d40cae5fe5369218a74a74f5abb473a11a867d2013333de2db720aacc735ef5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "acc9b73454be913f494d087148ca8d72837da35ebf8b49d6a54d689de5eb6492"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "77ed67ed542f89456ab252694a290eaf2e9da1f8833300f048ad31a82258584d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "64fab27f7aeb2ca8f09732a8e48eb090591a0840cf51106953e9774717230f17"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "7707c4cefbb3574e90d19bf1daf1d53c79f895f609314484330e9221129ed210"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "c7f5d747e5dfa387783b29019ed02f78ef8622d71abcb851ecf519e010a2bea0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "89f12db02ef6895b23cd60f5a6e401601c04484cca4d6be2d4a79e7541d9bd22"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "9d40cae5fe5369218a74a74f5abb473a11a867d2013333de2db720aacc735ef5"
+    sha256 cellar: :any_skip_relocation, sonoma:            "acc9b73454be913f494d087148ca8d72837da35ebf8b49d6a54d689de5eb6492"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "77ed67ed542f89456ab252694a290eaf2e9da1f8833300f048ad31a82258584d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "64fab27f7aeb2ca8f09732a8e48eb090591a0840cf51106953e9774717230f17"
   end
 
   depends_on "go" => :build

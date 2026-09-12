@@ -13,12 +13,13 @@ class OsinfoDbTools < Formula
 
   bottle do
     rebuild 1
-    sha256 arm64_tahoe:   "5613764761db0551e4dd70012bf9088d11d03b38a3ab30af568d5b92cfac2b36"
-    sha256 arm64_sequoia: "4db19ac55829b9c4c19e6e8f20c1c0e9078d3c8dd25bd6335be2a275e2c7c2c6"
-    sha256 arm64_sonoma:  "02f32ab481a672e983fe9fdbff99bd4979ffbd9b178bad7f07a18bcb0c0fbd3e"
-    sha256 sonoma:        "197d84a4fa2c29c46477f2140366dff49d33050d1dfbe270c37777df1a0aaf20"
-    sha256 arm64_linux:   "298c576ca5746eb674c6c9bce5d51e6f1e4fcdcdd47367e50c74a6f7b4442e0f"
-    sha256 x86_64_linux:  "5432275a5e7c855af96a4eee2c464566ed2b46c379ad81fe86feb1f9f940fd49"
+    sha256 arm64_golden_gate: "8e2627515b3dd82164b650ee98301b21d157b282057e58cdaa1525b732cccd44"
+    sha256 arm64_tahoe:       "5613764761db0551e4dd70012bf9088d11d03b38a3ab30af568d5b92cfac2b36"
+    sha256 arm64_sequoia:     "4db19ac55829b9c4c19e6e8f20c1c0e9078d3c8dd25bd6335be2a275e2c7c2c6"
+    sha256 arm64_sonoma:      "02f32ab481a672e983fe9fdbff99bd4979ffbd9b178bad7f07a18bcb0c0fbd3e"
+    sha256 sonoma:            "197d84a4fa2c29c46477f2140366dff49d33050d1dfbe270c37777df1a0aaf20"
+    sha256 arm64_linux:       "298c576ca5746eb674c6c9bce5d51e6f1e4fcdcdd47367e50c74a6f7b4442e0f"
+    sha256 x86_64_linux:      "5432275a5e7c855af96a4eee2c464566ed2b46c379ad81fe86feb1f9f940fd49"
   end
 
   depends_on "gettext" => :build

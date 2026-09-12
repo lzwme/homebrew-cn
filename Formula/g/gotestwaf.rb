@@ -7,14 +7,15 @@ class Gotestwaf < Formula
   head "https://github.com/wallarm/gotestwaf.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fc87754a9989cda5d3ae5bc5c08b286956f457395b37b09d5523213060e84fcf"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6b2f734f1ed87f7a69a4358c38d0d0041dcd4a8cfbdbd853752cf8663269c361"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6b2f734f1ed87f7a69a4358c38d0d0041dcd4a8cfbdbd853752cf8663269c361"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "6b2f734f1ed87f7a69a4358c38d0d0041dcd4a8cfbdbd853752cf8663269c361"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d9ba660878866bb9683bc9088c8d1b4dff7e8bc6e63a244b4197a02f214dc3e6"
-    sha256 cellar: :any_skip_relocation, ventura:       "d9ba660878866bb9683bc9088c8d1b4dff7e8bc6e63a244b4197a02f214dc3e6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2d70cda56e9eb2065923ad47c7598c87b01c5d18f46e69df22b59eff89fd76c2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ea85ed53e64ccd081738ee8b3e80b311128ffdd9ad44d284b956cfd1df8ce86f"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "002c56ce1661967df08c0851e5edf6456b4e5ee53a87c8a63c827572d43b9f1e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "fc87754a9989cda5d3ae5bc5c08b286956f457395b37b09d5523213060e84fcf"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "6b2f734f1ed87f7a69a4358c38d0d0041dcd4a8cfbdbd853752cf8663269c361"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "6b2f734f1ed87f7a69a4358c38d0d0041dcd4a8cfbdbd853752cf8663269c361"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:     "6b2f734f1ed87f7a69a4358c38d0d0041dcd4a8cfbdbd853752cf8663269c361"
+    sha256 cellar: :any_skip_relocation, sonoma:            "d9ba660878866bb9683bc9088c8d1b4dff7e8bc6e63a244b4197a02f214dc3e6"
+    sha256 cellar: :any_skip_relocation, ventura:           "d9ba660878866bb9683bc9088c8d1b4dff7e8bc6e63a244b4197a02f214dc3e6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "2d70cda56e9eb2065923ad47c7598c87b01c5d18f46e69df22b59eff89fd76c2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "ea85ed53e64ccd081738ee8b3e80b311128ffdd9ad44d284b956cfd1df8ce86f"
   end
 
   depends_on "go" => :build

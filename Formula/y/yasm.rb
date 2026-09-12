@@ -21,18 +21,19 @@ class Yasm < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "356cc23650d159d2f22aef89c9f7542efba9297e424a9d2ce1c822f69b352d9f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "45b7744e4f66670c270ac4aa64836625a1806db9ac97920476620d340cbbdd96"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8201d94c49a9f010d7b7fa185eb2658484ed9d063b0334baff12659bebb22246"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b59763588b57923ad20c8090a7382aa361efc2503ad788dae648c95f24f410a4"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "6d1a844ce9a26db6d2a5c72dbced52b7fbfc8491bfde95a2f026eaa1e46433be"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "398b7f3d8a22e43b5af2335fe2d39448a3e9cc7a769ef1faf60c25fda0873d50"
-    sha256 cellar: :any_skip_relocation, sonoma:         "8a459b8a128c82d79a253c164b213a4483c81ded729a4958be000da17b64b893"
-    sha256 cellar: :any_skip_relocation, ventura:        "2cfb5f1ab641c6537a73570eef6ec14bf9f5bbd31d8c1dcc3f8a7233b880df09"
-    sha256 cellar: :any_skip_relocation, monterey:       "8348a13c38c499aa114f71e4d46f311105b68dbafbf0e92f6c19d5b492eed569"
-    sha256 cellar: :any_skip_relocation, big_sur:        "ca95cb3c02508796ff4e60d54146b03016b93e80837916359912ebf737a37562"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "915dcddbe7d3b6c170b8055d3f1fbea22fb80fa1a6ca1f0c2876d52cabb2b4d5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d6d46adb6213bba936b7d62ef9564f752cc5b4268e19e91f0b67e136408ab30e"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "5da29404532f64edf5e78131339df1d486c1ddbfb74862f7874353cbc7f2f95c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "356cc23650d159d2f22aef89c9f7542efba9297e424a9d2ce1c822f69b352d9f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "45b7744e4f66670c270ac4aa64836625a1806db9ac97920476620d340cbbdd96"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "8201d94c49a9f010d7b7fa185eb2658484ed9d063b0334baff12659bebb22246"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:     "b59763588b57923ad20c8090a7382aa361efc2503ad788dae648c95f24f410a4"
+    sha256 cellar: :any_skip_relocation, arm64_monterey:    "6d1a844ce9a26db6d2a5c72dbced52b7fbfc8491bfde95a2f026eaa1e46433be"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:     "398b7f3d8a22e43b5af2335fe2d39448a3e9cc7a769ef1faf60c25fda0873d50"
+    sha256 cellar: :any_skip_relocation, sonoma:            "8a459b8a128c82d79a253c164b213a4483c81ded729a4958be000da17b64b893"
+    sha256 cellar: :any_skip_relocation, ventura:           "2cfb5f1ab641c6537a73570eef6ec14bf9f5bbd31d8c1dcc3f8a7233b880df09"
+    sha256 cellar: :any_skip_relocation, monterey:          "8348a13c38c499aa114f71e4d46f311105b68dbafbf0e92f6c19d5b492eed569"
+    sha256 cellar: :any_skip_relocation, big_sur:           "ca95cb3c02508796ff4e60d54146b03016b93e80837916359912ebf737a37562"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "915dcddbe7d3b6c170b8055d3f1fbea22fb80fa1a6ca1f0c2876d52cabb2b4d5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "d6d46adb6213bba936b7d62ef9564f752cc5b4268e19e91f0b67e136408ab30e"
   end
 
   head do

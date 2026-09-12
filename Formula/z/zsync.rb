@@ -12,12 +12,13 @@ class Zsync < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a4acdec8c2fc88425b1389ac2839c04af8f182b5c19885ddf9dd6525074cd21e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a4acdec8c2fc88425b1389ac2839c04af8f182b5c19885ddf9dd6525074cd21e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a4acdec8c2fc88425b1389ac2839c04af8f182b5c19885ddf9dd6525074cd21e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "237ea6250c443d6e9f7fac829d9b320f1ddf5d1f0a84cf51eeca8b23e609a93e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f516760650bc9a934de177a23391b4c7c9758f6ae64c0d5881ebeb6655149241"
-    sha256 cellar: :any,                 x86_64_linux:  "bd673f47540a39f84abbf844762e25920da491c01d6c792aaad07778568c80a5"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "d3ec667f5549bab02ef2249cbdfc25431fa440bdd27b929260d46c401ea844cf"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "a4acdec8c2fc88425b1389ac2839c04af8f182b5c19885ddf9dd6525074cd21e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "a4acdec8c2fc88425b1389ac2839c04af8f182b5c19885ddf9dd6525074cd21e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "a4acdec8c2fc88425b1389ac2839c04af8f182b5c19885ddf9dd6525074cd21e"
+    sha256 cellar: :any_skip_relocation, sonoma:            "237ea6250c443d6e9f7fac829d9b320f1ddf5d1f0a84cf51eeca8b23e609a93e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "f516760650bc9a934de177a23391b4c7c9758f6ae64c0d5881ebeb6655149241"
+    sha256 cellar: :any,                 x86_64_linux:      "bd673f47540a39f84abbf844762e25920da491c01d6c792aaad07778568c80a5"
   end
 
   depends_on "go" => :build

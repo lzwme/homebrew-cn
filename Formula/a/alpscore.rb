@@ -6,12 +6,13 @@ class Alpscore < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "16b003e1fcfc63f47e2217207533f1405444f36f6b369ffb3b6a87797d2299cc"
-    sha256 cellar: :any,                 arm64_sequoia: "d508dd93dcb9b30108f016c3bde1e489a068ffd973c4ec1b8d9533a8a46404ca"
-    sha256 cellar: :any,                 arm64_sonoma:  "19cf64b22d44d1ccdfe0191d7bfb4cc3612099a6dc4dd3d097c289ddba5265c9"
-    sha256 cellar: :any,                 sonoma:        "4eebc3f7b25ef31e92e780d7f2d1ecbb9042ede6babf538a26b69605492439bc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "05f2a3395aa08f324c86a989a576c4befecee594adf30429b8b43c541002c81a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e27347e7bd388ee1d21bdde50c1d0311141caabcbd7e9900fe8cca5fa09a7ef2"
+    sha256 cellar: :any,                 arm64_golden_gate: "7742745181fbba3555d0c594df1775d01361944720ba54d554d469b250882648"
+    sha256 cellar: :any,                 arm64_tahoe:       "16b003e1fcfc63f47e2217207533f1405444f36f6b369ffb3b6a87797d2299cc"
+    sha256 cellar: :any,                 arm64_sequoia:     "d508dd93dcb9b30108f016c3bde1e489a068ffd973c4ec1b8d9533a8a46404ca"
+    sha256 cellar: :any,                 arm64_sonoma:      "19cf64b22d44d1ccdfe0191d7bfb4cc3612099a6dc4dd3d097c289ddba5265c9"
+    sha256 cellar: :any,                 sonoma:            "4eebc3f7b25ef31e92e780d7f2d1ecbb9042ede6babf538a26b69605492439bc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "05f2a3395aa08f324c86a989a576c4befecee594adf30429b8b43c541002c81a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "e27347e7bd388ee1d21bdde50c1d0311141caabcbd7e9900fe8cca5fa09a7ef2"
   end
 
   depends_on "cmake" => [:build, :test]

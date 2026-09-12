@@ -10,14 +10,15 @@ class HomeassistantCli < Formula
   head "https://github.com/home-assistant-ecosystem/home-assistant-cli.git", branch: "dev"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "03b8f9b918726ad04d1f72a7eaa474bbd1170df624a71b002b40e806bae9e1f6"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f301cb8e3bd79bd5a9efe9bb7c10202ccfd1898af10896c481595cc5b7e5e725"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a18a40147d84557a0c66e94d9add77b80e8ed949b31cdbc442d163c26adaa746"
-    sha256 cellar: :any_skip_relocation, tahoe:         "52d4ba3a9e867beef12d2dbb67de41b0610e07f8fa0bd51fbd2f8e87665e47d7"
-    sha256 cellar: :any_skip_relocation, sequoia:       "f2acd718174cec2846ed015f7e09e9fbf8f16a6ee11f101e580c0768260d482c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f5c68dc543ca54d23ed7d6a5c108220da04016ffc90ef04db66d9c3ea668787d"
-    sha256 cellar: :any,                 arm64_linux:   "a61359a9d222e02902813fae079f2f67013e7f71d200108bd7b5ab92861c4ec4"
-    sha256 cellar: :any,                 x86_64_linux:  "c208fc42f0f6afb5b04b060eaf7ae7d4429a21ca9ff5370359013a164b65d58f"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "8a5fbb12ae4000624304fe7086cc6b660e5a5968a18023f8b675bef91aca0b00"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "03b8f9b918726ad04d1f72a7eaa474bbd1170df624a71b002b40e806bae9e1f6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "f301cb8e3bd79bd5a9efe9bb7c10202ccfd1898af10896c481595cc5b7e5e725"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "a18a40147d84557a0c66e94d9add77b80e8ed949b31cdbc442d163c26adaa746"
+    sha256 cellar: :any_skip_relocation, tahoe:             "52d4ba3a9e867beef12d2dbb67de41b0610e07f8fa0bd51fbd2f8e87665e47d7"
+    sha256 cellar: :any_skip_relocation, sequoia:           "f2acd718174cec2846ed015f7e09e9fbf8f16a6ee11f101e580c0768260d482c"
+    sha256 cellar: :any_skip_relocation, sonoma:            "f5c68dc543ca54d23ed7d6a5c108220da04016ffc90ef04db66d9c3ea668787d"
+    sha256 cellar: :any,                 arm64_linux:       "a61359a9d222e02902813fae079f2f67013e7f71d200108bd7b5ab92861c4ec4"
+    sha256 cellar: :any,                 x86_64_linux:      "c208fc42f0f6afb5b04b060eaf7ae7d4429a21ca9ff5370359013a164b65d58f"
   end
 
   depends_on "certifi" => :no_linkage

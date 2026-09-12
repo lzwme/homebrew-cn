@@ -29,11 +29,12 @@ class Lammps < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "b745844bc9c4955038758b18cbda5e903b422ec3fd1c08ae75c0773d23021ea6"
-    sha256 cellar: :any, arm64_sequoia: "dbc6aed23b49cdcc12db563ac674c61b7072ed25c740a140ce4e525b4c6718b7"
-    sha256 cellar: :any, arm64_sonoma:  "cfc9f2476cf72979383895645e7683a52b13d519ca0d61273488b909feed2058"
-    sha256 cellar: :any, arm64_linux:   "f92fcfd8fb346a07bf5840f7dd572aeac6304058358278c3f38ec3917fe0fde8"
-    sha256 cellar: :any, x86_64_linux:  "d666f2c16d755705448c7bfd938d0973b553fd972a478da5469c8c24bf2f5c2e"
+    sha256 cellar: :any, arm64_golden_gate: "9dd2b2d9d2c375c4064f401f3077422109b91d6f2df9e4cfeea4a1be83a64e82"
+    sha256 cellar: :any, arm64_tahoe:       "b745844bc9c4955038758b18cbda5e903b422ec3fd1c08ae75c0773d23021ea6"
+    sha256 cellar: :any, arm64_sequoia:     "dbc6aed23b49cdcc12db563ac674c61b7072ed25c740a140ce4e525b4c6718b7"
+    sha256 cellar: :any, arm64_sonoma:      "cfc9f2476cf72979383895645e7683a52b13d519ca0d61273488b909feed2058"
+    sha256 cellar: :any, arm64_linux:       "f92fcfd8fb346a07bf5840f7dd572aeac6304058358278c3f38ec3917fe0fde8"
+    sha256 cellar: :any, x86_64_linux:      "d666f2c16d755705448c7bfd938d0973b553fd972a478da5469c8c24bf2f5c2e"
   end
 
   depends_on "cmake" => :build

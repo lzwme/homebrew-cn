@@ -18,11 +18,12 @@ class Gping < Formula
   no_autobump! because: :bumped_by_upstream
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "793bbcdfab111fbef18dc6361980e3026d7ef753ab21b94dca43caaa1670e702"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "90472e76aa23d33ae21abc5f119af31ab385cfe3412361e6cf8698fcb16c1a62"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "02c57f65adf4cfaa2f92fdfdeadbfa0b9a119b2015e25f3aac1fa805c2dbcaa7"
-    sha256 cellar: :any,                 arm64_linux:   "931440b195ea3374f82aa66b52c2e69cc5250a9554b3db136949799d72f08703"
-    sha256 cellar: :any,                 x86_64_linux:  "8e7c6d532789ecec2f3eec048fd4462997950592377b1799d5abc7a07eebe7cf"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "20fcfe6677455e589630a9de9fd1e4b8c89bb9f49baacaef6e37300ed0db26b9"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "793bbcdfab111fbef18dc6361980e3026d7ef753ab21b94dca43caaa1670e702"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "90472e76aa23d33ae21abc5f119af31ab385cfe3412361e6cf8698fcb16c1a62"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "02c57f65adf4cfaa2f92fdfdeadbfa0b9a119b2015e25f3aac1fa805c2dbcaa7"
+    sha256 cellar: :any,                 arm64_linux:       "931440b195ea3374f82aa66b52c2e69cc5250a9554b3db136949799d72f08703"
+    sha256 cellar: :any,                 x86_64_linux:      "8e7c6d532789ecec2f3eec048fd4462997950592377b1799d5abc7a07eebe7cf"
   end
 
   depends_on "pkgconf" => :build

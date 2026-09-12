@@ -6,12 +6,13 @@ class Icemon < Formula
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "dbc83718e9cf1dcd6031020258c3b7cecb6a38ff927f7109d0a4a8d7ecb12f63"
-    sha256 cellar: :any, arm64_sequoia: "13f706714d74294a8daabbde4f80b7ab9330b8bda59df22eaf46b457d305f47c"
-    sha256 cellar: :any, arm64_sonoma:  "a87f4da909e0cbcccf5fca219551e1d6a10df55f79204437900986400a2ec510"
-    sha256 cellar: :any, sonoma:        "b5af44cd4aa902669241c8d33b4170648f042b2fb61311e6674ea9ecf715ee3d"
-    sha256 cellar: :any, arm64_linux:   "c2ef677904a70ce81c68f0e171349e1946d680a60d34ef505304fa722747b259"
-    sha256 cellar: :any, x86_64_linux:  "b5d9dd76cd9972ed62fbb7bd0f83ba4d2f457229d1627de1ffc251962f06ac08"
+    sha256 cellar: :any, arm64_golden_gate: "96c68b693473b01d64230a712503ab167fe548177c4922acd411ba9ae1727e9f"
+    sha256 cellar: :any, arm64_tahoe:       "dbc83718e9cf1dcd6031020258c3b7cecb6a38ff927f7109d0a4a8d7ecb12f63"
+    sha256 cellar: :any, arm64_sequoia:     "13f706714d74294a8daabbde4f80b7ab9330b8bda59df22eaf46b457d305f47c"
+    sha256 cellar: :any, arm64_sonoma:      "a87f4da909e0cbcccf5fca219551e1d6a10df55f79204437900986400a2ec510"
+    sha256 cellar: :any, sonoma:            "b5af44cd4aa902669241c8d33b4170648f042b2fb61311e6674ea9ecf715ee3d"
+    sha256 cellar: :any, arm64_linux:       "c2ef677904a70ce81c68f0e171349e1946d680a60d34ef505304fa722747b259"
+    sha256 cellar: :any, x86_64_linux:      "b5d9dd76cd9972ed62fbb7bd0f83ba4d2f457229d1627de1ffc251962f06ac08"
   end
 
   depends_on "cmake" => :build

@@ -6,14 +6,15 @@ class Srecord < Formula
   license all_of: ["GPL-3.0-or-later", "LGPL-3.0-or-later"]
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "054d26597b7a4c444cf94c279055aeac127939f40ca58928ccc5a0295c6312d5"
-    sha256 cellar: :any,                 arm64_sequoia: "fe9526b920ca097bcc3662d2647c08cfc54a4625a87b2f3a453a4e5f8ad7d23e"
-    sha256 cellar: :any,                 arm64_sonoma:  "c84c3f38127465b4d953e34c18f4b3a5b5a54d0f7432473da85a3ca12656530b"
-    sha256 cellar: :any,                 arm64_ventura: "8f5734f732be90260ca85621e38461ceb88968f318e5c2fc82c7234c2ea2bc99"
-    sha256 cellar: :any,                 sonoma:        "9ccbe261cc839da5b1a89ab3b3bf6db279882ef890c1ad21d2b07b7e2fefafd1"
-    sha256 cellar: :any,                 ventura:       "a2bb8ac18cfe099403652f3615826e1166f4f162039f566badd4ff4f93668495"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d56e983fa5e6f74619ff7bd022480f75a8d01d01b560590a01a254fa62b1621f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "930fcefc508d48b013cb7ca445f470176eb0c88f8786a961a4218ca325c1e9ed"
+    sha256 cellar: :any,                 arm64_golden_gate: "e780bada8c7c0817f9750775c7c2c0ec4619e82ed57378de44f0fb510266406a"
+    sha256 cellar: :any,                 arm64_tahoe:       "054d26597b7a4c444cf94c279055aeac127939f40ca58928ccc5a0295c6312d5"
+    sha256 cellar: :any,                 arm64_sequoia:     "fe9526b920ca097bcc3662d2647c08cfc54a4625a87b2f3a453a4e5f8ad7d23e"
+    sha256 cellar: :any,                 arm64_sonoma:      "c84c3f38127465b4d953e34c18f4b3a5b5a54d0f7432473da85a3ca12656530b"
+    sha256 cellar: :any,                 arm64_ventura:     "8f5734f732be90260ca85621e38461ceb88968f318e5c2fc82c7234c2ea2bc99"
+    sha256 cellar: :any,                 sonoma:            "9ccbe261cc839da5b1a89ab3b3bf6db279882ef890c1ad21d2b07b7e2fefafd1"
+    sha256 cellar: :any,                 ventura:           "a2bb8ac18cfe099403652f3615826e1166f4f162039f566badd4ff4f93668495"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "d56e983fa5e6f74619ff7bd022480f75a8d01d01b560590a01a254fa62b1621f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "930fcefc508d48b013cb7ca445f470176eb0c88f8786a961a4218ca325c1e9ed"
   end
 
   depends_on "cmake" => :build

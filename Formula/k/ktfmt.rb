@@ -6,12 +6,13 @@ class Ktfmt < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cb58fc5af9f3ded98524361f7f292136f70c7f0bfbde24e3ffa86a8e4fc5a61e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cb58fc5af9f3ded98524361f7f292136f70c7f0bfbde24e3ffa86a8e4fc5a61e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cb58fc5af9f3ded98524361f7f292136f70c7f0bfbde24e3ffa86a8e4fc5a61e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "cb58fc5af9f3ded98524361f7f292136f70c7f0bfbde24e3ffa86a8e4fc5a61e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b0ce91fcefed03a6657f5e96b03acb698e7acb960e2b1ac751abafa14b962248"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b0ce91fcefed03a6657f5e96b03acb698e7acb960e2b1ac751abafa14b962248"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "02729f03ec4545d5df1832207283fd1d02f7a3b8234d67ccbd8b895496b01d05"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "cb58fc5af9f3ded98524361f7f292136f70c7f0bfbde24e3ffa86a8e4fc5a61e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "cb58fc5af9f3ded98524361f7f292136f70c7f0bfbde24e3ffa86a8e4fc5a61e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "cb58fc5af9f3ded98524361f7f292136f70c7f0bfbde24e3ffa86a8e4fc5a61e"
+    sha256 cellar: :any_skip_relocation, sonoma:            "cb58fc5af9f3ded98524361f7f292136f70c7f0bfbde24e3ffa86a8e4fc5a61e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "b0ce91fcefed03a6657f5e96b03acb698e7acb960e2b1ac751abafa14b962248"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "b0ce91fcefed03a6657f5e96b03acb698e7acb960e2b1ac751abafa14b962248"
   end
 
   depends_on "gradle" => :build

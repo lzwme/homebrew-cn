@@ -12,12 +12,13 @@ class Kics < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7c037ddf04d7564d96f53a95aaf7dced9579a2ba6a7fdb4bca8233953e7469cb"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7009fbb3be49c4cf3eb0ea545a3b27be8b8d5bcbc21f65c00ebb64980ac575f7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "33d6b60e64355a480c63cb50e73a798b97f713299de4dcb841d2660036d06477"
-    sha256 cellar: :any_skip_relocation, sonoma:        "199a2f5522dd625e83b0fba7ee7cd359e546e293bb53e8ba85e18524a92a40f2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2670a2c5e18b5ad8655a53f9adefb4a293e5c2fdbd187348b9f28a57fbe4ae33"
-    sha256 cellar: :any,                 x86_64_linux:  "d11ec44b591f2b828c9f5244f9b392ff7d3fd22be53df62aa3d3a0c9d9aef340"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "bdb9a3dde42e01d4c757183f6e8f5ceeaea8db9e37cfeee442428d0e356ebcde"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "7c037ddf04d7564d96f53a95aaf7dced9579a2ba6a7fdb4bca8233953e7469cb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "7009fbb3be49c4cf3eb0ea545a3b27be8b8d5bcbc21f65c00ebb64980ac575f7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "33d6b60e64355a480c63cb50e73a798b97f713299de4dcb841d2660036d06477"
+    sha256 cellar: :any_skip_relocation, sonoma:            "199a2f5522dd625e83b0fba7ee7cd359e546e293bb53e8ba85e18524a92a40f2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "2670a2c5e18b5ad8655a53f9adefb4a293e5c2fdbd187348b9f28a57fbe4ae33"
+    sha256 cellar: :any,                 x86_64_linux:      "d11ec44b591f2b828c9f5244f9b392ff7d3fd22be53df62aa3d3a0c9d9aef340"
   end
 
   depends_on "go" => :build

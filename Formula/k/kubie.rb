@@ -13,12 +13,13 @@ class Kubie < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0f48e54b33fb6aff7eea15eb358b54c7a0eef4f9b3ec307e36a18ec60ef0b3e7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dd80f2a8010421fa7615df7ccb06cff66f5c399ceb040710c182edf4e99a0063"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f6b4833ef4a2538ca3212c06c554f934cce97f1006850abd39dc555985594b73"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e325e06857109c334d5377bb1437605a5b7a46663a4fbf38ae164146dd4f72a8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "628af080a6d7ad60420130420a7919a592ac0ab35296651a43fe67f280bfdd57"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1052e0f82f6eaab84f2a385f03182e2c074fc012a711f9228bb0e290ac2cec6f"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "6450b618d0e253fd034db97310310b7b7968fc149c84dc5d57c2c61922bcab92"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "0f48e54b33fb6aff7eea15eb358b54c7a0eef4f9b3ec307e36a18ec60ef0b3e7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "dd80f2a8010421fa7615df7ccb06cff66f5c399ceb040710c182edf4e99a0063"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "f6b4833ef4a2538ca3212c06c554f934cce97f1006850abd39dc555985594b73"
+    sha256 cellar: :any_skip_relocation, sonoma:            "e325e06857109c334d5377bb1437605a5b7a46663a4fbf38ae164146dd4f72a8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "628af080a6d7ad60420130420a7919a592ac0ab35296651a43fe67f280bfdd57"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "1052e0f82f6eaab84f2a385f03182e2c074fc012a711f9228bb0e290ac2cec6f"
   end
 
   depends_on "rust" => :build

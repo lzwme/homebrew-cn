@@ -11,11 +11,12 @@ class Pachi < Formula
   head "https://github.com/pasky/pachi.git", branch: "master"
 
   bottle do
-    sha256 arm64_tahoe:   "734625ac6d675722426e52eaaf7e1e563b4f8d146c4b03fad7157b1a46d56a83"
-    sha256 arm64_sequoia: "e2b2f3ac17be9b585a4f23951c150d0fa38c4e852c3807acefde1e6e3da8c5cf"
-    sha256 arm64_sonoma:  "f52dd39d2b20068be6a16840ed41b2b061df4f3e42efe1857d3f9d5f2712fa94"
-    sha256 arm64_linux:   "12ca150737445d171efc9e7fdd8e1431435720af44193ff9d30fb36d92b6f95a"
-    sha256 x86_64_linux:  "f06d9c3a2fc42db7f8ea8711a09b63be9f83863d24e0976ed73c4710d3a8d65d"
+    sha256 arm64_golden_gate: "1adb2c5a9f9cc7f9602a602329a597dc9abc5312833eec81b124fe4cb93ce498"
+    sha256 arm64_tahoe:       "734625ac6d675722426e52eaaf7e1e563b4f8d146c4b03fad7157b1a46d56a83"
+    sha256 arm64_sequoia:     "e2b2f3ac17be9b585a4f23951c150d0fa38c4e852c3807acefde1e6e3da8c5cf"
+    sha256 arm64_sonoma:      "f52dd39d2b20068be6a16840ed41b2b061df4f3e42efe1857d3f9d5f2712fa94"
+    sha256 arm64_linux:       "12ca150737445d171efc9e7fdd8e1431435720af44193ff9d30fb36d92b6f95a"
+    sha256 x86_64_linux:      "f06d9c3a2fc42db7f8ea8711a09b63be9f83863d24e0976ed73c4710d3a8d65d"
   end
 
   depends_on "cmake" => :build

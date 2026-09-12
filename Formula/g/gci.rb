@@ -7,12 +7,13 @@ class Gci < Formula
   head "https://github.com/daixiang0/gci.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "004995409069782b3c3f8347ddc9cf8895a282abfcd2b6bdd16f53f0fabbc26a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "004995409069782b3c3f8347ddc9cf8895a282abfcd2b6bdd16f53f0fabbc26a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "004995409069782b3c3f8347ddc9cf8895a282abfcd2b6bdd16f53f0fabbc26a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "14cd5ae2da5a5c573cea93d2bb76d20f0a1e0359afd03b21bb2d070d955da57e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "502bc7e32fe6d7524c116a8936111c4d3f2d7cbf8ce59de8aed0cab091a33b70"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9c2514f7cddb033f9ebdb2be7136861c0bb5b7f80d5dd30b0cc058e32cb465c6"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "c7a79fec75f38fe4b49ce5ea64622b18f733536da06a130170029a80f5e35968"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "004995409069782b3c3f8347ddc9cf8895a282abfcd2b6bdd16f53f0fabbc26a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "004995409069782b3c3f8347ddc9cf8895a282abfcd2b6bdd16f53f0fabbc26a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "004995409069782b3c3f8347ddc9cf8895a282abfcd2b6bdd16f53f0fabbc26a"
+    sha256 cellar: :any_skip_relocation, sonoma:            "14cd5ae2da5a5c573cea93d2bb76d20f0a1e0359afd03b21bb2d070d955da57e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "502bc7e32fe6d7524c116a8936111c4d3f2d7cbf8ce59de8aed0cab091a33b70"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "9c2514f7cddb033f9ebdb2be7136861c0bb5b7f80d5dd30b0cc058e32cb465c6"
   end
 
   depends_on "go" => :build

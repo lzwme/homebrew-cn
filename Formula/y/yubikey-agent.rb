@@ -8,12 +8,13 @@ class YubikeyAgent < Formula
 
   bottle do
     rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "58e734ee1f173c8f04aa349617af6f29276a966ecaa6d0a9e0c0988994493f6b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9496f56ac8c4afd814f2edcadbaa15be410ea87b55b1b60876233b52bd28cdf6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "de350f79ac010b4b1e0ba8d8844fd1a44da4281076c1ab69612169b227e5f5a0"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2ba5fbcf44305440bec2b3d13c56b60003fd22bd44ed31369babf4b541de8e8e"
-    sha256 cellar: :any,                 arm64_linux:   "f575668710835537bb2d24d6860360209e786ba6a2795fdad598627541bf58dd"
-    sha256 cellar: :any,                 x86_64_linux:  "eb8a7a4740d2bdfccfd6499c5f1d935a71feea2451928c7735d7caf7d21f954b"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "620bac1e940123d988d0560ce59e1695d9fb94900987ce22540d3845df9c6a2e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "58e734ee1f173c8f04aa349617af6f29276a966ecaa6d0a9e0c0988994493f6b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "9496f56ac8c4afd814f2edcadbaa15be410ea87b55b1b60876233b52bd28cdf6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "de350f79ac010b4b1e0ba8d8844fd1a44da4281076c1ab69612169b227e5f5a0"
+    sha256 cellar: :any_skip_relocation, sonoma:            "2ba5fbcf44305440bec2b3d13c56b60003fd22bd44ed31369babf4b541de8e8e"
+    sha256 cellar: :any,                 arm64_linux:       "f575668710835537bb2d24d6860360209e786ba6a2795fdad598627541bf58dd"
+    sha256 cellar: :any,                 x86_64_linux:      "eb8a7a4740d2bdfccfd6499c5f1d935a71feea2451928c7735d7caf7d21f954b"
   end
 
   depends_on "go" => :build

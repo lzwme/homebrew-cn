@@ -7,12 +7,13 @@ class Komac < Formula
   head "https://github.com/russellbanks/Komac.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "73b35bb2d85e740a8601845dfa23958bd12d6d6d0b85831665e11e2ae8b63b9e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "35e910178255d87137e43f4f7d71396982e9b8c930b40a777ec2f382b66caf23"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "92eb2c50aad8a8a812245f5118f71ed5a8e8f28b04ead558f60439ca755f2575"
-    sha256 cellar: :any_skip_relocation, sonoma:        "70d1b06a7ecbda682281841b977f16c1b9d81d838f4280c4734374a902dc0825"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "295c4d298fedffa4ff7f6becf30607c6b5651ee5b892309e9e13f033144653f2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "362ef26a8e39f78324a3020a0bf4e446c52a60c70d22e7eb6b1191f10e83d618"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "04d74402fa9c4327e533bc05b7fdf388f1e90b8bab59d5e5303db5fea7e14085"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "73b35bb2d85e740a8601845dfa23958bd12d6d6d0b85831665e11e2ae8b63b9e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "35e910178255d87137e43f4f7d71396982e9b8c930b40a777ec2f382b66caf23"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "92eb2c50aad8a8a812245f5118f71ed5a8e8f28b04ead558f60439ca755f2575"
+    sha256 cellar: :any_skip_relocation, sonoma:            "70d1b06a7ecbda682281841b977f16c1b9d81d838f4280c4734374a902dc0825"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "295c4d298fedffa4ff7f6becf30607c6b5651ee5b892309e9e13f033144653f2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "362ef26a8e39f78324a3020a0bf4e446c52a60c70d22e7eb6b1191f10e83d618"
   end
 
   depends_on "pkgconf" => :build

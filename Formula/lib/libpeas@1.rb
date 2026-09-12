@@ -12,12 +12,13 @@ class LibpeasAT1 < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "a72b082abb085d326fc3e144815f977d7be22f56e1ea6069f973355517d7cbc4"
-    sha256 arm64_sequoia: "c1c8cf6d9c0b5d0b64894d883b0ab62ec28c8ac4d1adbd2055bf4640af7eb4e3"
-    sha256 arm64_sonoma:  "31e03f2b631adfaa428c1f387256b64386c6aaee72ac7120a08b84762b6bbdd0"
-    sha256 sonoma:        "4aab17c710c1a86ceca29536194de50abd4a44dc2757f3a5911128708ccfc0ea"
-    sha256 arm64_linux:   "02b0153cf47f4970d7d7277c3698e69cf41ced94e3f2a2d3a7202d3cf02c7425"
-    sha256 x86_64_linux:  "cba275dc7195f4c2537d9d9e7ae6e9f81009d57d29f1da5310e86ac768b3724e"
+    sha256 arm64_golden_gate: "a95e8a356f2ada1557bfa7a989c7d225b1a0426d8da902439cd78cd8685ad6bc"
+    sha256 arm64_tahoe:       "a72b082abb085d326fc3e144815f977d7be22f56e1ea6069f973355517d7cbc4"
+    sha256 arm64_sequoia:     "c1c8cf6d9c0b5d0b64894d883b0ab62ec28c8ac4d1adbd2055bf4640af7eb4e3"
+    sha256 arm64_sonoma:      "31e03f2b631adfaa428c1f387256b64386c6aaee72ac7120a08b84762b6bbdd0"
+    sha256 sonoma:            "4aab17c710c1a86ceca29536194de50abd4a44dc2757f3a5911128708ccfc0ea"
+    sha256 arm64_linux:       "02b0153cf47f4970d7d7277c3698e69cf41ced94e3f2a2d3a7202d3cf02c7425"
+    sha256 x86_64_linux:      "cba275dc7195f4c2537d9d9e7ae6e9f81009d57d29f1da5310e86ac768b3724e"
   end
 
   depends_on "meson" => :build

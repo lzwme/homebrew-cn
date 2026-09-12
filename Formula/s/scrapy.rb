@@ -3,18 +3,17 @@ class Scrapy < Formula
 
   desc "Web crawling & scraping framework"
   homepage "https://scrapy.org"
-  url "https://files.pythonhosted.org/packages/4a/ab/4c0ece9b5fed5dd2fe5f88e4eca662d1f2292a95293e074da56dd31922be/scrapy-2.18.0.tar.gz"
-  sha256 "2445f8b5bf87ba105d239cb230878646e29dbc6a6cae10037ba0550d8fe7fc73"
+  url "https://files.pythonhosted.org/packages/7a/bd/5a65f4d9319bf1533472a446915b941f393f6d2d547bf88cec23207beddf/scrapy-2.19.0.tar.gz"
+  sha256 "34130726582b64c91531162ab277c4053e558876d49ba219cb43679e71d80a87"
   license "BSD-3-Clause"
   head "https://github.com/scrapy/scrapy.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "abb02bdb8164b1f9c689b3d78dd540c3256e89374dd04c7a0bd4b273d5aad22e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "70b4424672f38e1f9a18b53fb406c5d31422b808547ca78996dfb00f2b0b0ce1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "602c131f081dcb64e06a4de6a6824863e57a1edeedbdb9e3db393b245b8284e8"
-    sha256 cellar: :any_skip_relocation, sonoma:        "19ba5fb943cd20b1ba9499d7693c05ab128619b506af3e3769e54ab87b108efa"
-    sha256 cellar: :any,                 arm64_linux:   "ea3fe0e090fd5c367288ddd14b4e03e60efe219f0688e10d4823c5957af933e4"
-    sha256 cellar: :any,                 x86_64_linux:  "5e823a49037ea64d2ae28ac3e864f4ace3ed279ae0278ac40f992a6809ee240e"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "1b39a0eca418408355057619e69ec67255ada8b01ebf69a7d3b6ca90ce5b39cb"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "ef33ea8da0d2344bdbe66f19d78036def7662879049ca311a13233c0570f233f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "4dc516620632b080b38ddafb7cf9c48f3fe802190940d3d7a3d5ea5c800b7d66"
+    sha256 cellar: :any,                 arm64_linux:       "a3dd84eff6cf61faa2a9be7f2e79f82022092ea740338ff4f78c9ce0de2cd5f5"
+    sha256 cellar: :any,                 x86_64_linux:      "53b6679b09038cfb7cdb24d30a70ab3e57deb9ed594b3c18af1c34d8ce6a0f96"
   end
 
   depends_on "certifi" => :no_linkage
@@ -25,6 +24,21 @@ class Scrapy < Formula
   uses_from_macos "libxslt"
 
   pypi_packages exclude_packages: %w[certifi cryptography]
+
+  resource "aiohappyeyeballs" do
+    url "https://files.pythonhosted.org/packages/ce/f4/eec0465c2f67b2664688d0240b3212d5196fd89e741df67ddb81f8d35658/aiohappyeyeballs-2.7.1.tar.gz"
+    sha256 "065665c041c42a5938ed220bdcd7230f22527fbec085e1853d2402c8a3615d9d"
+  end
+
+  resource "aiohttp" do
+    url "https://files.pythonhosted.org/packages/58/d9/22ce5786ac0c1653ae8b6c23bded02c1686d11f0dbb45b31ce128e0df985/aiohttp-3.14.3.tar.gz"
+    sha256 "9491196535a88924a60afd5b5f434b5b203b6cc616250878dbdb223a8f7844bc"
+  end
+
+  resource "aiosignal" do
+    url "https://files.pythonhosted.org/packages/61/62/06741b579156360248d1ec624842ad0edf697050bbaf7c3e46394e106ad1/aiosignal-1.4.0.tar.gz"
+    sha256 "f47eecd9468083c2029cc99945502cb7708b082c232f9aca65da147157b251c7"
+  end
 
   resource "attrs" do
     url "https://files.pythonhosted.org/packages/9a/8e/82a0fe20a541c03148528be8cac2408564a6c9a0cc7e9171802bc1d26985/attrs-26.1.0.tar.gz"
@@ -62,8 +76,13 @@ class Scrapy < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/7d/64/a02e6765de08964ed371eca577870593245afc9dfac16d037de7c10d18e6/filelock-3.32.3.tar.gz"
-    sha256 "0ffa185a3540854c95caa7fa76b76cb219d907415e2c5dc9af25fd970563487f"
+    url "https://files.pythonhosted.org/packages/38/46/126b1831dca12060d4a8296bf9c4fe5c93c4f22197fa239cb0cc82042bba/filelock-3.32.6.tar.gz"
+    sha256 "a3f55a18af3652a94d8f47d6055df434f254ca1d02ef2524850c6d249ca2512c"
+  end
+
+  resource "frozenlist" do
+    url "https://files.pythonhosted.org/packages/2d/f5/c831fac6cc817d26fd54c7eaccd04ef7e0288806943f7cc5bbf69f3ac1f0/frozenlist-1.8.0.tar.gz"
+    sha256 "3ede829ed8d842f6cd48fc7081d7a41001a56f1f38603f9d49bf3020d59a31ad"
   end
 
   resource "hyperlink" do
@@ -97,8 +116,13 @@ class Scrapy < Formula
   end
 
   resource "lxml" do
-    url "https://files.pythonhosted.org/packages/ad/a9/970b8fa0ecc4fbf1dfaed0d89bbc1fc1421b25ec26a2038c91e872dc6c8e/lxml-6.1.2.tar.gz"
-    sha256 "1055241852f2b02068af4a625a5d32c087db193c12251928af2562ecd2239f18"
+    url "https://files.pythonhosted.org/packages/23/ad/28ecd7cb894d172f3c9c80a075eeeb2017ac62e3632cee05a5f9493547eb/lxml-6.1.3.tar.gz"
+    sha256 "45222d94ddd511536f3b2f7d9deae3b2339b4ce0f075f1ca25703b07cad9dd21"
+  end
+
+  resource "multidict" do
+    url "https://files.pythonhosted.org/packages/14/95/989c1b5ca17b72128661530cd6e351a0a83cda9a4d6c036e9ed976c18931/multidict-6.8.0.tar.gz"
+    sha256 "5cd4637ce76312ba1e05eb9c5193fec231f64fee0944e135fa1e951242355b37"
   end
 
   resource "packaging" do
@@ -109,6 +133,16 @@ class Scrapy < Formula
   resource "parsel" do
     url "https://files.pythonhosted.org/packages/91/c8/4ace3a5c61e39ca21734a5715d0e076eea6200dd8daea2a5b99452f5a0d6/parsel-1.11.0.tar.gz"
     sha256 "5925fe087eb16fc404a7ed91e31e2c1e2a9b230da4b64f34d81358c0d0e27e88"
+  end
+
+  resource "platformdirs" do
+    url "https://files.pythonhosted.org/packages/53/18/f3bb8ef0d3b930692343da8aa4d3cbcd6749477c053959395ac81965a6e9/platformdirs-4.11.8.tar.gz"
+    sha256 "f23abafea7dd4276d1f29104b83598d7dcc567cafd07c9c951e66665645437fc"
+  end
+
+  resource "propcache" do
+    url "https://files.pythonhosted.org/packages/ec/44/c87281c333769159c50594f22610f77398a47ccbfbbf23074e744e86f87c/propcache-0.5.2.tar.gz"
+    sha256 "01c4fc7480cd0598bb4b57022df55b9ca296da7fc5a8760bd8451a7e63a7d427"
   end
 
   resource "protego" do
@@ -127,8 +161,8 @@ class Scrapy < Formula
   end
 
   resource "queuelib" do
-    url "https://files.pythonhosted.org/packages/76/f3/d80ab8c7c91b8c42d9a2aa4dd97a8be1321e7b26000c2675b75e641d958c/queuelib-1.9.0.tar.gz"
-    sha256 "b12fea79fd8c1dd23e212b1f3db58003b773949801d4f4e6f34d882467d4a192"
+    url "https://files.pythonhosted.org/packages/b3/b3/d9da691d2729b00b63cc67869aaf96fb9b612bd3ec6acba30f3af2a33d32/queuelib-1.10.0.tar.gz"
+    sha256 "063c821c32859ae8bdce2cc9e74156645c074218a464f8262e29a3b8de839737"
   end
 
   resource "requests" do
@@ -169,6 +203,11 @@ class Scrapy < Formula
   resource "w3lib" do
     url "https://files.pythonhosted.org/packages/c0/91/b2eb59c2cf243de5de1e91c963655df78c015509f51297685a8c86a27b8c/w3lib-2.4.1.tar.gz"
     sha256 "8dd69ee39ff6398d708c793abc779c334a69bac7cee1cdf71736c669ed6be864"
+  end
+
+  resource "yarl" do
+    url "https://files.pythonhosted.org/packages/31/33/ebe9e3d1f86c7a0b51094c0a146392045ca1631d2664889539dec8088a33/yarl-1.24.5.tar.gz"
+    sha256 "e81b83143bee16329c23db3c1b2d82b29892fcbcb849186d2f6e98a5abe9a57f"
   end
 
   resource "zope-interface" do

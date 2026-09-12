@@ -12,12 +12,13 @@ class LibvirtGlib < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "ba34897f21e90fc3c2e580b4b3a736ac40dde9df609b5e8bb650ed65d528bd41"
-    sha256 arm64_sequoia: "2215ee81bf32c6dfb3e1091165cfcd1fd6130d190a368221567d26ac93a2d5a0"
-    sha256 arm64_sonoma:  "6828ef86859fdc0166ae2f4265dcf3317ae70d7530b6f790f8fd2471a9991c7a"
-    sha256 sonoma:        "c742a2ce49f8827cc5008a74871489df1a814af0672eab3e5d7b16ce78f155c3"
-    sha256 arm64_linux:   "c89344493f689b1ed360b3fb32cec04f45b02fc5cd1acebee4f689a83a4a167a"
-    sha256 x86_64_linux:  "9e5c86856ddc5d3b7cd2589a96289a4d8762095010a59ee6b413e50ca2c28752"
+    sha256 arm64_golden_gate: "baec8f00928c0aab46d7c7eaa8a1317bfd1d5bc005a7d2b6669ab817b347494d"
+    sha256 arm64_tahoe:       "ba34897f21e90fc3c2e580b4b3a736ac40dde9df609b5e8bb650ed65d528bd41"
+    sha256 arm64_sequoia:     "2215ee81bf32c6dfb3e1091165cfcd1fd6130d190a368221567d26ac93a2d5a0"
+    sha256 arm64_sonoma:      "6828ef86859fdc0166ae2f4265dcf3317ae70d7530b6f790f8fd2471a9991c7a"
+    sha256 sonoma:            "c742a2ce49f8827cc5008a74871489df1a814af0672eab3e5d7b16ce78f155c3"
+    sha256 arm64_linux:       "c89344493f689b1ed360b3fb32cec04f45b02fc5cd1acebee4f689a83a4a167a"
+    sha256 x86_64_linux:      "9e5c86856ddc5d3b7cd2589a96289a4d8762095010a59ee6b413e50ca2c28752"
   end
 
   depends_on "gettext" => :build

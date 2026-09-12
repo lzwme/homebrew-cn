@@ -7,12 +7,13 @@ class Hyperfine < Formula
   head "https://github.com/sharkdp/hyperfine.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2a79829da44dc03e12ea4977b6bfa122cea8487e741c24a7fbcc7ce6a4788db3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d0c8ce81f2d2e32e5d600c474c433cd67af71c7f95c4c9de0622369557d4667b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "491753d73c724655595030aac15f675f3fe0240af8be73c673251b37a7a90017"
-    sha256 cellar: :any_skip_relocation, sonoma:        "35f05803354dc8621b9bdf918d50aef83eca450b90babc5b9899ca151177c39a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cc0b9a0eb7628a130fb45cd3a5abc08321daa6f48eb175e26f784ef44fa9a18f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a6cdec4cc985c9fdef714051f2c921b8d5158c444be11e73af825054589d0ddc"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "80cd61175626bc35b5354fee6a0bc987196b66b8aa71ef706c6f7e3f5cda1b5a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "2a79829da44dc03e12ea4977b6bfa122cea8487e741c24a7fbcc7ce6a4788db3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "d0c8ce81f2d2e32e5d600c474c433cd67af71c7f95c4c9de0622369557d4667b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "491753d73c724655595030aac15f675f3fe0240af8be73c673251b37a7a90017"
+    sha256 cellar: :any_skip_relocation, sonoma:            "35f05803354dc8621b9bdf918d50aef83eca450b90babc5b9899ca151177c39a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "cc0b9a0eb7628a130fb45cd3a5abc08321daa6f48eb175e26f784ef44fa9a18f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "a6cdec4cc985c9fdef714051f2c921b8d5158c444be11e73af825054589d0ddc"
   end
 
   depends_on "rust" => :build

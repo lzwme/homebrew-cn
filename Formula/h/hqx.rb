@@ -8,12 +8,13 @@ class Hqx < Formula
 
   bottle do
     rebuild 3
-    sha256 cellar: :any,                 arm64_tahoe:   "5ba31ed02cebc80553587975d7e1ea4085b44268a69b51d354049e245ab9b541"
-    sha256 cellar: :any,                 arm64_sequoia: "26d37d607203ed3b98a2d4c95179d450618364a40b47f1b786d62490d4089f6a"
-    sha256 cellar: :any,                 arm64_sonoma:  "096c40b5ec2a465a94ce4a00fd757898991dd427cc94be3c1e362417d75e9acb"
-    sha256 cellar: :any,                 sonoma:        "d6fbbc9e2d37a51909096d28fe0da09e1c50841e26067aae8742e6d046a063e1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "41a81a59b54a05fba307d89d73008552a4a486b09695952a22f2db0c7270c0be"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "55439a7262c1a955fb22b374b737a614b63279a535828cf4c7ad10d31ab085c9"
+    sha256 cellar: :any,                 arm64_golden_gate: "a2e740376ea5a1a1d5e6b2696fe9fc0f706ae03d14b7d9c7386424e6e11e6ae6"
+    sha256 cellar: :any,                 arm64_tahoe:       "5ba31ed02cebc80553587975d7e1ea4085b44268a69b51d354049e245ab9b541"
+    sha256 cellar: :any,                 arm64_sequoia:     "26d37d607203ed3b98a2d4c95179d450618364a40b47f1b786d62490d4089f6a"
+    sha256 cellar: :any,                 arm64_sonoma:      "096c40b5ec2a465a94ce4a00fd757898991dd427cc94be3c1e362417d75e9acb"
+    sha256 cellar: :any,                 sonoma:            "d6fbbc9e2d37a51909096d28fe0da09e1c50841e26067aae8742e6d046a063e1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "41a81a59b54a05fba307d89d73008552a4a486b09695952a22f2db0c7270c0be"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "55439a7262c1a955fb22b374b737a614b63279a535828cf4c7ad10d31ab085c9"
   end
 
   depends_on "autoconf" => :build

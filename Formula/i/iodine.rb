@@ -8,12 +8,13 @@ class Iodine < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a8e87d64fdc26c599c69d781412172b9393917733d1994e3687f4c435d32fa0c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6665baf56a99f8935d607204ce6e04bbe5cfbd3955391b83eea7841e493e7cb5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "827a52aaabfea1e49e71eedef3939dda8a6434e5c99f41ad45c3e562d0a8fb92"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ab1dad85f08ae67fef8adfff742b87f8771351448a2dc30cf0ea3c8f28ab1350"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "98b07d712bd33ca41e4f06ddd68e3976371e7cc79fd5a4ad26614bcc0cfb4bc6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ba56bb7d3d06fd6fd4fa2ca908c17dec0b5724a49247c105c456b57c6b4111f8"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "0523cb85b77346504c932450e1ce5a17c4f06fd7d3c1a2f9d05cb815771714f6"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "a8e87d64fdc26c599c69d781412172b9393917733d1994e3687f4c435d32fa0c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "6665baf56a99f8935d607204ce6e04bbe5cfbd3955391b83eea7841e493e7cb5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "827a52aaabfea1e49e71eedef3939dda8a6434e5c99f41ad45c3e562d0a8fb92"
+    sha256 cellar: :any_skip_relocation, sonoma:            "ab1dad85f08ae67fef8adfff742b87f8771351448a2dc30cf0ea3c8f28ab1350"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "98b07d712bd33ca41e4f06ddd68e3976371e7cc79fd5a4ad26614bcc0cfb4bc6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "ba56bb7d3d06fd6fd4fa2ca908c17dec0b5724a49247c105c456b57c6b4111f8"
   end
 
   depends_on "cmake" => :build

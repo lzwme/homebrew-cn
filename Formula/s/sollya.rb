@@ -12,12 +12,13 @@ class Sollya < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "c3da627c992a35dc3af1daf6c84f1e74485277155ebb5793e10a7a68dc2f12a3"
-    sha256 cellar: :any,                 arm64_sequoia: "0fc18b3fff4949b1a139a30bcc8e2ab3e08df265b45d4d9a1221fd50e0e35ec3"
-    sha256 cellar: :any,                 arm64_sonoma:  "6c5c7c03cc7fd565f55c423cbc69f1050ec019074b9823e3618ed70b94cacc7d"
-    sha256 cellar: :any,                 sonoma:        "b623d5218033d5f33a5b370b4f27ceab4177326cf7b3d71660ec2492d2818a95"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9d25abc81dc57e49af305df1244e0c9fed2e6d5dfc2ef779bc021e02aaad81b9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1f3828e3be08c6b06af99a2c95fc5aa52d2ab5554ec2c79a62b2b4e557e52e11"
+    sha256 cellar: :any,                 arm64_golden_gate: "206886aa44772b235e20669ebf105fc81f9b0a1b57dcea4de3b179c488e21af5"
+    sha256 cellar: :any,                 arm64_tahoe:       "c3da627c992a35dc3af1daf6c84f1e74485277155ebb5793e10a7a68dc2f12a3"
+    sha256 cellar: :any,                 arm64_sequoia:     "0fc18b3fff4949b1a139a30bcc8e2ab3e08df265b45d4d9a1221fd50e0e35ec3"
+    sha256 cellar: :any,                 arm64_sonoma:      "6c5c7c03cc7fd565f55c423cbc69f1050ec019074b9823e3618ed70b94cacc7d"
+    sha256 cellar: :any,                 sonoma:            "b623d5218033d5f33a5b370b4f27ceab4177326cf7b3d71660ec2492d2818a95"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "9d25abc81dc57e49af305df1244e0c9fed2e6d5dfc2ef779bc021e02aaad81b9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "1f3828e3be08c6b06af99a2c95fc5aa52d2ab5554ec2c79a62b2b4e557e52e11"
   end
 
   depends_on "automake" => :build

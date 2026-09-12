@@ -8,12 +8,13 @@ class ContainerCanary < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fcbdae7844f8bce0c68e61297e385395bf4a2d7796ad9006a339b7c981d71ac1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c0f3f8842347f850a77c1fcb74699751032dcb82f2547c6afbf9c84cf3529cc7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "377fa3b6cd3d4ec1d474592969e3597e3dc216ecd1152d6d4bcf3fcdd8c25db1"
-    sha256 cellar: :any_skip_relocation, sonoma:        "578d69b9d161431ab116310231cc67d468c2e2926a8f2b93530647a797070cea"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "efa81b38e25db9d6a96122fc20e2f92ee6e5330fea75397b72c9780b117c2a2e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5dcb359196033e637aafe4cedcdf69237e76307ba651ce1a8fe449c468ec5b40"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "69ab20c1c0210b3bbf07b5e11b7c7472624dec3b4ff8c280779fa7c099af4ec8"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "fcbdae7844f8bce0c68e61297e385395bf4a2d7796ad9006a339b7c981d71ac1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "c0f3f8842347f850a77c1fcb74699751032dcb82f2547c6afbf9c84cf3529cc7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "377fa3b6cd3d4ec1d474592969e3597e3dc216ecd1152d6d4bcf3fcdd8c25db1"
+    sha256 cellar: :any_skip_relocation, sonoma:            "578d69b9d161431ab116310231cc67d468c2e2926a8f2b93530647a797070cea"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "efa81b38e25db9d6a96122fc20e2f92ee6e5330fea75397b72c9780b117c2a2e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "5dcb359196033e637aafe4cedcdf69237e76307ba651ce1a8fe449c468ec5b40"
   end
 
   depends_on "go" => :build

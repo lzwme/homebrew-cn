@@ -9,11 +9,12 @@ class Libwmf < Formula
   ]
 
   bottle do
-    sha256 arm64_tahoe:   "653a2db07bd48c16621139eeab6243c50c382d3d858d45e16141943e23f5766f"
-    sha256 arm64_sequoia: "184187265802efbc05979f3b2c7b0161974dce12e25cdc0516db433f1b654bdc"
-    sha256 arm64_sonoma:  "aafdb93d504d371b9a8139487786e4a8c928fa89577d387e8dc8df3fcf7bc2c7"
-    sha256 arm64_linux:   "f64784896bc2a53e3edef15effd1bc423fbb97fe586dbc6fe0706fd1ac0566bb"
-    sha256 x86_64_linux:  "11217bf2e06eab471d41b9fb825c5274312da91131d7d0fb3a11585d6aa391a7"
+    sha256 arm64_golden_gate: "65ae65663cb264f1b9cf340c3947565649defb7025bfc8e7bfc1ef5b454beb12"
+    sha256 arm64_tahoe:       "653a2db07bd48c16621139eeab6243c50c382d3d858d45e16141943e23f5766f"
+    sha256 arm64_sequoia:     "184187265802efbc05979f3b2c7b0161974dce12e25cdc0516db433f1b654bdc"
+    sha256 arm64_sonoma:      "aafdb93d504d371b9a8139487786e4a8c928fa89577d387e8dc8df3fcf7bc2c7"
+    sha256 arm64_linux:       "f64784896bc2a53e3edef15effd1bc423fbb97fe586dbc6fe0706fd1ac0566bb"
+    sha256 x86_64_linux:      "11217bf2e06eab471d41b9fb825c5274312da91131d7d0fb3a11585d6aa391a7"
   end
 
   depends_on "pkgconf" => :build

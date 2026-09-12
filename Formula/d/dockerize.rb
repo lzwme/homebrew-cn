@@ -1,17 +1,17 @@
 class Dockerize < Formula
   desc "Utility to simplify running applications in docker containers"
   homepage "https://github.com/jwilder/dockerize"
-  url "https://ghfast.top/https://github.com/jwilder/dockerize/archive/refs/tags/v0.15.0.tar.gz"
-  sha256 "a3ca7a5c3ca31a24b7024ba4c78f419a18d0a183b6429251ebbf1f25edd6a973"
+  url "https://ghfast.top/https://github.com/jwilder/dockerize/archive/refs/tags/v0.15.1.tar.gz"
+  sha256 "6719249089aa1dba9815421a70559cdefab86d633647fbcdecc3aea7b5698beb"
   license "MIT"
   head "https://github.com/jwilder/dockerize.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "705873f7b0ededa090899cc237ae8e3d2b5317762a8cbc29445f8ab396d2ca8b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "705873f7b0ededa090899cc237ae8e3d2b5317762a8cbc29445f8ab396d2ca8b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "705873f7b0ededa090899cc237ae8e3d2b5317762a8cbc29445f8ab396d2ca8b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9063ebe34037a731834a6e467854e2760acbe5dda53427d673cec082366c6918"
-    sha256 cellar: :any,                 x86_64_linux:  "2c6f0d62811ed43939bb0423d0b2e3e92708c2a4afc25257b33bb49a72d8259f"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "77b1e94afb11cfe08e1d9b52fc0b53e7d5a1515b3358d0a772752e06133286d6"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "77b1e94afb11cfe08e1d9b52fc0b53e7d5a1515b3358d0a772752e06133286d6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "77b1e94afb11cfe08e1d9b52fc0b53e7d5a1515b3358d0a772752e06133286d6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "c92fafa60f7ad6206438ab535559ebcd4cb2185aa549203b340a67e1fa45ced7"
+    sha256 cellar: :any,                 x86_64_linux:      "b7f73effd96962dd87a6f9dff7db9c208108e1710333c5e6aa0b1635f98d9355"
   end
 
   depends_on "go" => :build

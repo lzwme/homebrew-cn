@@ -11,12 +11,13 @@ class ApachePolaris < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b41354d7b5fc5fda3755221cc93235bed8334dcb77f684096215aa9265eab37b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0fbeb6817dd7a3ca6f9da1b3bafa5fb17f6be3e26997aad5d9374cec3a8f4d06"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ac3905955df79d3a47de408d83bc2087f74f5949062698aa2ba4a57cdcb5791f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "279fec0e998bb1a3249194ab00a185f983f89bfa429c1aba5dea15f61a7ef6c9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "bec49597ed014ddc8ab9c25b604c10de95cde452091f4c02e245cb4baa5b8f93"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9d2ce0bcb01e2b9d0b43181ca510c86919b864c1e6824349dc62a0a111311095"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "1427aa253f2dcd6204ebd8394cfcb4a6edb7a7f6834c1a30b26a3e41a4b33412"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "b41354d7b5fc5fda3755221cc93235bed8334dcb77f684096215aa9265eab37b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "0fbeb6817dd7a3ca6f9da1b3bafa5fb17f6be3e26997aad5d9374cec3a8f4d06"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "ac3905955df79d3a47de408d83bc2087f74f5949062698aa2ba4a57cdcb5791f"
+    sha256 cellar: :any_skip_relocation, sonoma:            "279fec0e998bb1a3249194ab00a185f983f89bfa429c1aba5dea15f61a7ef6c9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "bec49597ed014ddc8ab9c25b604c10de95cde452091f4c02e245cb4baa5b8f93"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "9d2ce0bcb01e2b9d0b43181ca510c86919b864c1e6824349dc62a0a111311095"
   end
 
   depends_on "gradle" => :build

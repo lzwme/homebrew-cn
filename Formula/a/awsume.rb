@@ -24,6 +24,10 @@ class Awsume < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "35d320dcce1421dab098f6a23f083b3d740a82d67a992db3242778fa48cccf60"
   end
 
+  # https://github.com/trek10inc/awsume/blob/master/README.md
+  deprecate! date: "2026-09-11", because: :deprecated_upstream, replacement_formula: "awscli"
+  disable! date: "2027-09-11", because: :deprecated_upstream, replacement_formula: "awscli"
+
   depends_on "libyaml"
   depends_on "python@3.14"
 

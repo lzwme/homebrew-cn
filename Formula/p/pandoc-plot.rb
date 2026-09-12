@@ -7,12 +7,13 @@ class PandocPlot < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "7f29f9f8ff09401b710c2de8ef158e13777021577641638b97cb6de661a31c3d"
-    sha256 cellar: :any, arm64_sequoia: "30685a01e5310fe12e87d9aa304bbf9058fa9eef64bbb75b1bd5259ea688bc12"
-    sha256 cellar: :any, arm64_sonoma:  "a3049b5363a4f51e07569d9163074ee585f8d00b13f2b4c564fe36ef38bb1d46"
-    sha256 cellar: :any, sonoma:        "b1a384451a0819af7d1702c69282c641ccaa6367d45209d04c4302247274e4b9"
-    sha256 cellar: :any, arm64_linux:   "8474e54420b8138ff73f150679454c35c1237ab8e602e5071fb09d91c7a2005b"
-    sha256 cellar: :any, x86_64_linux:  "fafc48f1b8e2e89bfb22b86dd07cbc9934aefe1fa041ea8744a4008accf08325"
+    sha256 cellar: :any, arm64_golden_gate: "63f7a2128a43e9952ce8a54b7634ad66c0ebf3c304a8ba30b231923f2c887eb8"
+    sha256 cellar: :any, arm64_tahoe:       "7f29f9f8ff09401b710c2de8ef158e13777021577641638b97cb6de661a31c3d"
+    sha256 cellar: :any, arm64_sequoia:     "30685a01e5310fe12e87d9aa304bbf9058fa9eef64bbb75b1bd5259ea688bc12"
+    sha256 cellar: :any, arm64_sonoma:      "a3049b5363a4f51e07569d9163074ee585f8d00b13f2b4c564fe36ef38bb1d46"
+    sha256 cellar: :any, sonoma:            "b1a384451a0819af7d1702c69282c641ccaa6367d45209d04c4302247274e4b9"
+    sha256 cellar: :any, arm64_linux:       "8474e54420b8138ff73f150679454c35c1237ab8e602e5071fb09d91c7a2005b"
+    sha256 cellar: :any, x86_64_linux:      "fafc48f1b8e2e89bfb22b86dd07cbc9934aefe1fa041ea8744a4008accf08325"
   end
 
   depends_on "cabal-install" => :build

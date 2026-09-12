@@ -11,12 +11,12 @@ class Gdcm < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "bb7110e11d4e7c1d7f614c8ad7da32b4f1f90b1afbb1860ce1811221e51865fc"
-    sha256 arm64_sequoia: "74d82c7260d1f6d03e298891fe004fa5145e23451130b252a28a5473831d60ef"
-    sha256 arm64_sonoma:  "70c76b98defcc468b53080743ac9f4e8f2aa7bb36111079e9c90245641329962"
-    sha256 sonoma:        "59f56f12a04cdbcaf9826cbfa31b4105fc46d105f86b11916455fa7dc91b3868"
-    sha256 arm64_linux:   "8eb41d0fb29b597045ec4b6d960eafff25925a16940fabab977473ff45e16578"
-    sha256 x86_64_linux:  "60fb81d093a1278e132389ccf12cf83ef3eff114ac3016c2dbc92fcae792a109"
+    rebuild 1
+    sha256 arm64_golden_gate: "b878c632a6c4980a1683fab2b09bf6131f2f62ece1acd80c038f6c6933540d64"
+    sha256 arm64_tahoe:       "7a099a980c5d428737f373d55f9067fe8766eaef7c9cb15f5e40dc281ff5bab8"
+    sha256 arm64_sequoia:     "b4ff57757334bf89fc0e5dd5028108ce5fbf0fdf5fa4b02272a6b313b4ffeaf9"
+    sha256 arm64_linux:       "8639611e386bf90f5ed1fd40ee019dcbcf3836cd28bc4dd05435463c248205b5"
+    sha256 x86_64_linux:      "9f81c2fbc1ba1c68aee836cea3aaf5d2925244d1d191a6972808e9ab003ae3bc"
   end
 
   depends_on "cmake" => :build
@@ -36,6 +36,14 @@ class Gdcm < Formula
     depends_on "python@3.14"
     depends_on "util-linux" # for libuuid
     depends_on "zlib-ng-compat"
+  end
+
+  # Fix build with SWIG 4.5.0+ which removed Python 2 compatibility macros
+  patch do
+    url "https://github.com/malaterre/GDCM/commit/5ebde0b55256142fbfe1b86f010109144ed35251.patch?full_index=1"
+    sha256 "40165c0b18539f9b68956fd1cb17dd7566b4282472facf843c32c1f28fe6d792"
+    type :unofficial
+    resolves "https://github.com/malaterre/GDCM/pull/232"
   end
 
   def install

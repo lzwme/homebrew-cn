@@ -59,6 +59,8 @@ class Bitcoin < Formula
   end
 
   test do
+    ENV["TMPDIR"] = testpath
+
     system bin/"bitcoin", "test"
   end
 end

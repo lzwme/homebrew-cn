@@ -12,12 +12,13 @@ class Zerolang < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "60063d4a31c92fff77c14731b9374bc1ef0523b637da04bcebaf8d347a747916"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "867c3a8ef068fa0860d6cc658a9ece38a8ccee47d4292d5350f51575d88526fa"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "913cbe4f52c8917813b02fa1bee325d612d6086983c3fb3b13a44724a699e57e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c07375f38c2871a8ef30df5d868bc8f9178461c30747d7f83b1bc20a1fa8f440"
-    sha256 cellar: :any,                 arm64_linux:   "c66fed44abee535dbb20d4b1b45b3bd83b7104afbdb5d5c76d869939112b9281"
-    sha256 cellar: :any,                 x86_64_linux:  "9ad8d2ce3afd8b7ee43eb254431fbd455a056abcff17482376d9ad7357b24e88"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "e351352bed2ab06dcd4b96e1cae09f947c6c05f5bf44a547ddc7307b6bdb0fc2"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "60063d4a31c92fff77c14731b9374bc1ef0523b637da04bcebaf8d347a747916"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "867c3a8ef068fa0860d6cc658a9ece38a8ccee47d4292d5350f51575d88526fa"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "913cbe4f52c8917813b02fa1bee325d612d6086983c3fb3b13a44724a699e57e"
+    sha256 cellar: :any_skip_relocation, sonoma:            "c07375f38c2871a8ef30df5d868bc8f9178461c30747d7f83b1bc20a1fa8f440"
+    sha256 cellar: :any,                 arm64_linux:       "c66fed44abee535dbb20d4b1b45b3bd83b7104afbdb5d5c76d869939112b9281"
+    sha256 cellar: :any,                 x86_64_linux:      "9ad8d2ce3afd8b7ee43eb254431fbd455a056abcff17482376d9ad7357b24e88"
   end
 
   deny_network_access!

@@ -7,12 +7,13 @@ class Lazydocker < Formula
   head "https://github.com/jesseduffield/lazydocker.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8522a4229dea2b63f88c29a5772f5ba7321bd8637c6dee299e266a14c29cffe5"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8522a4229dea2b63f88c29a5772f5ba7321bd8637c6dee299e266a14c29cffe5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8522a4229dea2b63f88c29a5772f5ba7321bd8637c6dee299e266a14c29cffe5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "68b8d5ae390f69c33aed50d4089b4d7a8087e27110b172e065f8e84efea08584"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6266094262f876ff6e9209f067d25587d1845904c98de4fa478106a8e942d32f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "491c528838ce7c9209659601a4aa742785fde0b8a22b7dd4c556d6952ecbcb58"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "cb289ee4605aea3bf17f2c9f68a02c64af222f8cbbed5bbc2941a7abda6940a5"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "8522a4229dea2b63f88c29a5772f5ba7321bd8637c6dee299e266a14c29cffe5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "8522a4229dea2b63f88c29a5772f5ba7321bd8637c6dee299e266a14c29cffe5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "8522a4229dea2b63f88c29a5772f5ba7321bd8637c6dee299e266a14c29cffe5"
+    sha256 cellar: :any_skip_relocation, sonoma:            "68b8d5ae390f69c33aed50d4089b4d7a8087e27110b172e065f8e84efea08584"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "6266094262f876ff6e9209f067d25587d1845904c98de4fa478106a8e942d32f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "491c528838ce7c9209659601a4aa742785fde0b8a22b7dd4c556d6952ecbcb58"
   end
 
   depends_on "go" => :build

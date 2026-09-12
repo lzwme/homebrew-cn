@@ -7,12 +7,13 @@ class Miniaudio < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "4116dff207a7fd4b5e6f2d2da3189df46f33397d09e4a06a2c074dd48f6441b6"
-    sha256 cellar: :any,                 arm64_sequoia: "1ef0a99c6d5502c31c77b39d859c02adbb09b3d80eb441a85777dcf546c60858"
-    sha256 cellar: :any,                 arm64_sonoma:  "9e94a62aee3436dbc9d99faada5cce88bd76249c629798098306897041355ca7"
-    sha256 cellar: :any,                 sonoma:        "9a56208b00933d2bfc08b578cbbc0be50e2ac69d57103809b4e6ad48e092f084"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e3c96b371c8f6ef73cbf576dcf4a1be1c2f4e88a3f3b5354c987d3d7ef80b837"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5acba976aeb2cd0c39b26921c7788f0e4cd3ae721210bcdb6116ce8775756e2b"
+    sha256 cellar: :any,                 arm64_golden_gate: "85271689ca10a025265d4ce87bb00a250f248e3825e81eceacd6b9972d68d19b"
+    sha256 cellar: :any,                 arm64_tahoe:       "4116dff207a7fd4b5e6f2d2da3189df46f33397d09e4a06a2c074dd48f6441b6"
+    sha256 cellar: :any,                 arm64_sequoia:     "1ef0a99c6d5502c31c77b39d859c02adbb09b3d80eb441a85777dcf546c60858"
+    sha256 cellar: :any,                 arm64_sonoma:      "9e94a62aee3436dbc9d99faada5cce88bd76249c629798098306897041355ca7"
+    sha256 cellar: :any,                 sonoma:            "9a56208b00933d2bfc08b578cbbc0be50e2ac69d57103809b4e6ad48e092f084"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "e3c96b371c8f6ef73cbf576dcf4a1be1c2f4e88a3f3b5354c987d3d7ef80b837"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "5acba976aeb2cd0c39b26921c7788f0e4cd3ae721210bcdb6116ce8775756e2b"
   end
 
   depends_on "cmake" => :build

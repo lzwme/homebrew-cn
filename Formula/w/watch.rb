@@ -6,12 +6,13 @@ class Watch < Formula
   license all_of: ["GPL-2.0-or-later", "LGPL-2.1-or-later"]
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "2aa3ccedc5de11c238fcd45b82de1d48970d0e87647d8eccf7bf0d57489640e9"
-    sha256 cellar: :any, arm64_sequoia: "ecb6d8ef08094cf29623dbb0c7f05242a028a9212eb5d6137cee63ec8ed20240"
-    sha256 cellar: :any, arm64_sonoma:  "34c635e84f379450e89a0e580cb9ba8b74772cddf646ba5a98ad062f2536d492"
-    sha256 cellar: :any, sonoma:        "b091a655de353105318060067c9b8e53a374d6d55400f82ac43f6cdd6534bc4a"
-    sha256 cellar: :any, arm64_linux:   "2127c712b98cb520ddd6f18bf849beb15384bf5d006a817fc02a1245abbbb6c7"
-    sha256 cellar: :any, x86_64_linux:  "99ad82fa064d217605bac375e89df8d274df7b4defc1f821db21bf715855e1e5"
+    sha256 cellar: :any, arm64_golden_gate: "fd6431ea396b55e3845411f74823a7081c0a837d77fd6cb3a13b22e3a81fb9f1"
+    sha256 cellar: :any, arm64_tahoe:       "2aa3ccedc5de11c238fcd45b82de1d48970d0e87647d8eccf7bf0d57489640e9"
+    sha256 cellar: :any, arm64_sequoia:     "ecb6d8ef08094cf29623dbb0c7f05242a028a9212eb5d6137cee63ec8ed20240"
+    sha256 cellar: :any, arm64_sonoma:      "34c635e84f379450e89a0e580cb9ba8b74772cddf646ba5a98ad062f2536d492"
+    sha256 cellar: :any, sonoma:            "b091a655de353105318060067c9b8e53a374d6d55400f82ac43f6cdd6534bc4a"
+    sha256 cellar: :any, arm64_linux:       "2127c712b98cb520ddd6f18bf849beb15384bf5d006a817fc02a1245abbbb6c7"
+    sha256 cellar: :any, x86_64_linux:      "99ad82fa064d217605bac375e89df8d274df7b4defc1f821db21bf715855e1e5"
   end
 
   head do

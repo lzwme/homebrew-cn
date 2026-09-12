@@ -852,6 +852,7 @@ Homebrew-homebrew-core/Formula/c/cargo-llvm-cov.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/cargo-llvm-lines.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cargo-make.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cargo-msrv.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/c/cargo-mutants.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cargo-nextest.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cargo-outdated.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cargo-public-api.rb, Homebrew/homebrew-core, 1
@@ -9229,6 +9230,7 @@ Homebrew-homebrew-cask/Casks/c/capacities.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/capcut.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/caprine.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/capslocknodelay.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/c/capsomnia.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/captain.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/captainplugins.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/captains-deck.rb, Homebrew/homebrew-cask, 0
@@ -11657,6 +11659,7 @@ Homebrew-homebrew-cask/Casks/font/font-n/font-narnoor.rb, Homebrew/homebrew-cask
 Homebrew-homebrew-cask/Casks/font/font-n/font-nata-sans.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-n/font-national-park.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-n/font-nats.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/font/font-n/font-nebula-sans.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-n/font-neonderthaw.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-n/font-nerko-one.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-n/font-neucha.rb, Homebrew/homebrew-cask, 0
@@ -13092,7 +13095,6 @@ Homebrew-homebrew-cask/Casks/i/ibm-notifier.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/i/ibored.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/icab.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/icanhazshortcut.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/i/icc.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/iceberg.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/icestudio.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/i/icollections.rb, Homebrew/homebrew-cask, 0
@@ -14195,6 +14197,7 @@ Homebrew-homebrew-cask/Casks/o/okta-verify.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/old-school-runescape.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/olive.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/ollama-app.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/o/ollama-binary.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/ollamac.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/olympus.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/omegat.rb, Homebrew/homebrew-cask, 0
@@ -14404,10 +14407,6 @@ Homebrew-homebrew-cask/Casks/p/parallels-client.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/parallels-toolbox.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/parallels-virtualization-sdk.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/parallels.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/p/parallels@14.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/p/parallels@15.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/p/parallels@16.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/p/parallels@17.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/parallels@18.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/parallels@19.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/parallels@20.rb, Homebrew/homebrew-cask, 0
@@ -16150,6 +16149,8 @@ Homebrew-homebrew-cask/Casks/w/wordpresscom.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/w/wordservice.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/work-louder-input.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/w/workbench.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/w/workbuddy-ai.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/w/workbuddy-cn.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/workflowy.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/w/worksheetcrafter.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/workspace-one-intelligent-hub.rb, Homebrew/homebrew-cask, 0

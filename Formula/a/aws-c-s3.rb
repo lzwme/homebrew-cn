@@ -1,18 +1,17 @@
 class AwsCS3 < Formula
   desc "C99 library implementation for communicating with the S3 service"
   homepage "https://github.com/awslabs/aws-c-s3"
-  url "https://ghfast.top/https://github.com/awslabs/aws-c-s3/archive/refs/tags/v1.0.0.tar.gz"
-  sha256 "3b76d8ff35201a892a5e9a9c523d1f4d05381b3132d4e60728c634efae142f12"
+  url "https://ghfast.top/https://github.com/awslabs/aws-c-s3/archive/refs/tags/v1.1.0.tar.gz"
+  sha256 "a8c10d0893bf43ba71358c37fffc7e75526341ec93b2e7705af55eba438d445b"
   license "Apache-2.0"
-  compatibility_version 2
+  compatibility_version 3
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "05f5d75e57de87a8cd83df128b1687d70abd6bc09332ba278e5cffe316c5175f"
-    sha256 cellar: :any, arm64_tahoe:       "d293b861353dd625315706b3cd437409199ad0a106e9c6928065904754460b56"
-    sha256 cellar: :any, arm64_sequoia:     "c6beb67e1d4e4acc19c036d4f2503a917c3343180a47ce182e5fe92b14bc0f53"
-    sha256 cellar: :any, arm64_sonoma:      "207ebd3570e877e0de5e7125a0b5d1e05877b21b684d160740fdf12beaeb11a9"
-    sha256 cellar: :any, arm64_linux:       "928fc45639dee1fdfcf9e594215d7be4a87c47fd2e62c9219497fff2bd99b4dd"
-    sha256 cellar: :any, x86_64_linux:      "589b8873ef8d137110052ae89d01c2c92a69cbc56d5e9f035b5fb5db464a54df"
+    sha256 cellar: :any, arm64_golden_gate: "1bc609cc5f4f994b6e23ec99be50b7e9eb31ac9fee472fdd673b4950a6dfe15e"
+    sha256 cellar: :any, arm64_tahoe:       "bdc9bb2c74488287680ad1a3a961be239e0119e73e13141776b81e4d9dd5f7fb"
+    sha256 cellar: :any, arm64_sequoia:     "2e91df3e9b687d924e66b4ac5e193b9306e81adb1203016b8a4d0df150749224"
+    sha256 cellar: :any, arm64_linux:       "3d60dcb2878e66ae365890164711d63c8d8d5492e868b9c25607977e11e25fb7"
+    sha256 cellar: :any, x86_64_linux:      "e4638e25c4d93b32f405196f27266aa2cf405a4b7b321f0cacbd076eaaa54cf6"
   end
 
   depends_on "cmake" => :build

@@ -12,14 +12,15 @@ class Otf2bdf < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "5a8a13d81081f27e6115aa7096839a6db582bc96ac1aacfea9fb19607214d629"
-    sha256 cellar: :any,                 arm64_sequoia: "51d176016f0bb1ef87c844b246d9f733e594314fb7fbc19f7a2a4bbae330cf6a"
-    sha256 cellar: :any,                 arm64_sonoma:  "deb8ebe605b3723509213f415b25315efbc0fb1e72ad3866cabec7830b523894"
-    sha256 cellar: :any,                 arm64_ventura: "a68522af5768c71394633ec7f1d347191d638fc89676d0d91f72fc4c95bb13f5"
-    sha256 cellar: :any,                 sonoma:        "aa6b56b8934b71fca2d22699b41a11d6375f85afdd4325d9edf6529301796a21"
-    sha256 cellar: :any,                 ventura:       "00c0aac1e143142550d43ababffa8551fdec3c31903fc08cb8ac130875a7f5b7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d0978c8ced64cd766bbbb7bfe4fbbfd1855f3f872d17628d15c5221409b01ce8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ed108fc68b1333987e18c32c6ea67add776ce92b913b80e6c1a1af3af7be847b"
+    sha256 cellar: :any,                 arm64_golden_gate: "6ae4e298fd34bbcf4b61e3b7ff1c6eb87032e45c81448b369989f375cd1b8d41"
+    sha256 cellar: :any,                 arm64_tahoe:       "5a8a13d81081f27e6115aa7096839a6db582bc96ac1aacfea9fb19607214d629"
+    sha256 cellar: :any,                 arm64_sequoia:     "51d176016f0bb1ef87c844b246d9f733e594314fb7fbc19f7a2a4bbae330cf6a"
+    sha256 cellar: :any,                 arm64_sonoma:      "deb8ebe605b3723509213f415b25315efbc0fb1e72ad3866cabec7830b523894"
+    sha256 cellar: :any,                 arm64_ventura:     "a68522af5768c71394633ec7f1d347191d638fc89676d0d91f72fc4c95bb13f5"
+    sha256 cellar: :any,                 sonoma:            "aa6b56b8934b71fca2d22699b41a11d6375f85afdd4325d9edf6529301796a21"
+    sha256 cellar: :any,                 ventura:           "00c0aac1e143142550d43ababffa8551fdec3c31903fc08cb8ac130875a7f5b7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "d0978c8ced64cd766bbbb7bfe4fbbfd1855f3f872d17628d15c5221409b01ce8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "ed108fc68b1333987e18c32c6ea67add776ce92b913b80e6c1a1af3af7be847b"
   end
 
   depends_on "freetype"

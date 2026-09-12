@@ -8,12 +8,13 @@ class Pistache < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "8c6aceaa9caabb3aa5f359e4b774e682a1a04b8e6d8d2c3387ca2b568490761e"
-    sha256 cellar: :any, arm64_sequoia: "0b698f3e972e1febd10c62315914dd7f52fbbe97dd4a3e7da0aa3e2e95a902dd"
-    sha256 cellar: :any, arm64_sonoma:  "5ea7eca9d7b84fe69c2e4f7d3b6792b0fa844f357b7ea18963a533d30af77f34"
-    sha256 cellar: :any, sonoma:        "0251e36381a86a7e82f7ea5f905ad9abc20d68ec387876935276e63e91dde120"
-    sha256               arm64_linux:   "ab8a26e48f468b791843eb18d69460c70e51e2a0a0cba9e91a649db54bf5e21f"
-    sha256               x86_64_linux:  "a18870e8bca2a60e1fe41d00a47dd157273ae689145163b6730982ad0b550f43"
+    sha256 cellar: :any, arm64_golden_gate: "358cfde0e4b4aebd2e0bfff568f1061b4349d8094d1579445e21dc3191e0650d"
+    sha256 cellar: :any, arm64_tahoe:       "8c6aceaa9caabb3aa5f359e4b774e682a1a04b8e6d8d2c3387ca2b568490761e"
+    sha256 cellar: :any, arm64_sequoia:     "0b698f3e972e1febd10c62315914dd7f52fbbe97dd4a3e7da0aa3e2e95a902dd"
+    sha256 cellar: :any, arm64_sonoma:      "5ea7eca9d7b84fe69c2e4f7d3b6792b0fa844f357b7ea18963a533d30af77f34"
+    sha256 cellar: :any, sonoma:            "0251e36381a86a7e82f7ea5f905ad9abc20d68ec387876935276e63e91dde120"
+    sha256               arm64_linux:       "ab8a26e48f468b791843eb18d69460c70e51e2a0a0cba9e91a649db54bf5e21f"
+    sha256               x86_64_linux:      "a18870e8bca2a60e1fe41d00a47dd157273ae689145163b6730982ad0b550f43"
   end
 
   depends_on "cmake" => :build # for howard-hinnant-date

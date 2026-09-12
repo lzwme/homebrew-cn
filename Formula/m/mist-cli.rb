@@ -7,10 +7,11 @@ class MistCli < Formula
   head "https://github.com/ninxsoft/mist-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "70dcd85adb91b5d8dbf27bd478165394d1011257931c87a40fb338034cf8752d"
-    sha256 cellar: :any,                 arm64_sequoia: "be066e457d7d97b51e8c9d3371655df27f04517eb7cb941f41029e68a270f2de"
-    sha256 cellar: :any,                 arm64_sonoma:  "a639ca5784dda545f3d11bda4cdf182900f6ac3fa5f3f90e7d2f721bcf9b5304"
-    sha256 cellar: :any,                 sonoma:        "e2cd403aeb233f61195083715d32b0e7578a6b700bb9c974d6f896bccb18fa40"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "8a1358e92a53576aecc7ebd2e290f2e8650298b894bbf0f14a4270590861996b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "70dcd85adb91b5d8dbf27bd478165394d1011257931c87a40fb338034cf8752d"
+    sha256 cellar: :any,                 arm64_sequoia:     "be066e457d7d97b51e8c9d3371655df27f04517eb7cb941f41029e68a270f2de"
+    sha256 cellar: :any,                 arm64_sonoma:      "a639ca5784dda545f3d11bda4cdf182900f6ac3fa5f3f90e7d2f721bcf9b5304"
+    sha256 cellar: :any,                 sonoma:            "e2cd403aeb233f61195083715d32b0e7578a6b700bb9c974d6f896bccb18fa40"
   end
 
   depends_on :macos

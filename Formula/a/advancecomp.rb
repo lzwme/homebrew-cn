@@ -7,12 +7,13 @@ class Advancecomp < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "645f12c923d703bc3ebe073a81ae42f37f057a80f5be2e47def6e0c42455617e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c3df6813916f0d8c24a7a17b68fc3cf37eaca1d9cd239dd9614541205a1ad5fd"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b1016a9d95dd57c4ea8521b53050211875d11c5b3528bde755c532c22c210d76"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e39bf043068c5ffb9dd0452ea3d6293f9bacd291c4364c05115f8539e2703b74"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0fe07baf766ba36840dbde997efba699f819afca12354bc8ec2f5ccd2c163c1a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e1795b527eb952aaa3e1300a6e76c0af53a612421f05245f207ee8b7bedb5a7f"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "274716e34c405e16be861b08d6c81b16a2c648d22b3d52a009e1756e8cd42d16"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "645f12c923d703bc3ebe073a81ae42f37f057a80f5be2e47def6e0c42455617e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "c3df6813916f0d8c24a7a17b68fc3cf37eaca1d9cd239dd9614541205a1ad5fd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "b1016a9d95dd57c4ea8521b53050211875d11c5b3528bde755c532c22c210d76"
+    sha256 cellar: :any_skip_relocation, sonoma:            "e39bf043068c5ffb9dd0452ea3d6293f9bacd291c4364c05115f8539e2703b74"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "0fe07baf766ba36840dbde997efba699f819afca12354bc8ec2f5ccd2c163c1a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "e1795b527eb952aaa3e1300a6e76c0af53a612421f05245f207ee8b7bedb5a7f"
   end
 
   depends_on "autoconf" => :build

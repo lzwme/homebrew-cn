@@ -7,14 +7,15 @@ class GoRice < Formula
   head "https://github.com/GeertJohan/go.rice.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0d678a810a2ad8a38e94feac1e95217927c75433f74bd58460146080c6fe9fca"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d46108d4a8f53e1f8e3d4837ca941af6f3c866b247ff7c58d3bf8b65d34c43fd"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d46108d4a8f53e1f8e3d4837ca941af6f3c866b247ff7c58d3bf8b65d34c43fd"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "d46108d4a8f53e1f8e3d4837ca941af6f3c866b247ff7c58d3bf8b65d34c43fd"
-    sha256 cellar: :any_skip_relocation, sonoma:        "52269f53fda001ba801a35a19c774755f8b183f3bf9d99474d852945b915e1dd"
-    sha256 cellar: :any_skip_relocation, ventura:       "52269f53fda001ba801a35a19c774755f8b183f3bf9d99474d852945b915e1dd"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "49d002fe74359b8e0f97bc5a488b21a32d7844f4b89e02845817f9bea5b3c289"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "acfb2a6c644ea76394bae1d3cb7607ad96ba33c478a0864e844373738d36c27a"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "95c95d0eb03ae093138898a007233cfba51b79722e47b77990d473d28bfea9a9"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "0d678a810a2ad8a38e94feac1e95217927c75433f74bd58460146080c6fe9fca"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "d46108d4a8f53e1f8e3d4837ca941af6f3c866b247ff7c58d3bf8b65d34c43fd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "d46108d4a8f53e1f8e3d4837ca941af6f3c866b247ff7c58d3bf8b65d34c43fd"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:     "d46108d4a8f53e1f8e3d4837ca941af6f3c866b247ff7c58d3bf8b65d34c43fd"
+    sha256 cellar: :any_skip_relocation, sonoma:            "52269f53fda001ba801a35a19c774755f8b183f3bf9d99474d852945b915e1dd"
+    sha256 cellar: :any_skip_relocation, ventura:           "52269f53fda001ba801a35a19c774755f8b183f3bf9d99474d852945b915e1dd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "49d002fe74359b8e0f97bc5a488b21a32d7844f4b89e02845817f9bea5b3c289"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "acfb2a6c644ea76394bae1d3cb7607ad96ba33c478a0864e844373738d36c27a"
   end
 
   depends_on "go" => [:build, :test]

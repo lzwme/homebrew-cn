@@ -13,12 +13,13 @@ class Ott < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9d4039e2b9e9c87406c25c32589f9d6b2f6967849565e8710122d157778136cd"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "00cab8b9372dce0a39186602627d0755ebc64e9e2173c0b6a03859deebca7d77"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3817587945b256d5acecaf8f35a070f686fe1549068669d783b4f362dbae37cb"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a8e41fe66482af077ffffb1d5050d708915cf5eda57dfc4543f625258d3b23f5"
-    sha256 cellar: :any,                 arm64_linux:   "7ee632f8b727db0d3762688c64ff21aa3b31aa8e1c728fb9c862a249c9521073"
-    sha256 cellar: :any,                 x86_64_linux:  "0ff8bad1b988fb83648ff827508c286a016572cf1feeaca40fcf3d7f35330161"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "9622f94979de9e0cf55de4a578f0907159eb3d6d2ca378793d3f498fb8b05126"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "9d4039e2b9e9c87406c25c32589f9d6b2f6967849565e8710122d157778136cd"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "00cab8b9372dce0a39186602627d0755ebc64e9e2173c0b6a03859deebca7d77"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "3817587945b256d5acecaf8f35a070f686fe1549068669d783b4f362dbae37cb"
+    sha256 cellar: :any_skip_relocation, sonoma:            "a8e41fe66482af077ffffb1d5050d708915cf5eda57dfc4543f625258d3b23f5"
+    sha256 cellar: :any,                 arm64_linux:       "7ee632f8b727db0d3762688c64ff21aa3b31aa8e1c728fb9c862a249c9521073"
+    sha256 cellar: :any,                 x86_64_linux:      "0ff8bad1b988fb83648ff827508c286a016572cf1feeaca40fcf3d7f35330161"
   end
 
   depends_on "gmp" => :build

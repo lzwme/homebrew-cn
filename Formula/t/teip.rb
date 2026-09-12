@@ -7,12 +7,13 @@ class Teip < Formula
   head "https://github.com/greymd/teip.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "5d931a5c1f7cc0aef46988394981c63ed4bc5b88b0228661d9bda56d5979d717"
-    sha256 cellar: :any,                 arm64_sequoia: "c87be3d37f592bbf60be410eeb11b60d5b89ecc4b7b13d0c1abe4c275453d792"
-    sha256 cellar: :any,                 arm64_sonoma:  "7eb881d9f02d6b6d01109dacdee93bdee6f53b2be26fe698408f0c42fbead2bf"
-    sha256 cellar: :any,                 sonoma:        "ad5541ab506da46cc11b52c90a723f8b9a2b2320b279efdc8060b9179c87692b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "09a5c7394622b49fca8d3e015e400bf3f1880c31b3b90d2557924f10aa870278"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "29745ba43c2b686f1ae71bdee0623a5e1c371f7d1c93039ce3dc619092775c6d"
+    sha256 cellar: :any,                 arm64_golden_gate: "11f16c1a3aabecb3d0794f0bfccb5d0e39511c8b4b078aeb5867a8bbabe621f8"
+    sha256 cellar: :any,                 arm64_tahoe:       "5d931a5c1f7cc0aef46988394981c63ed4bc5b88b0228661d9bda56d5979d717"
+    sha256 cellar: :any,                 arm64_sequoia:     "c87be3d37f592bbf60be410eeb11b60d5b89ecc4b7b13d0c1abe4c275453d792"
+    sha256 cellar: :any,                 arm64_sonoma:      "7eb881d9f02d6b6d01109dacdee93bdee6f53b2be26fe698408f0c42fbead2bf"
+    sha256 cellar: :any,                 sonoma:            "ad5541ab506da46cc11b52c90a723f8b9a2b2320b279efdc8060b9179c87692b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "09a5c7394622b49fca8d3e015e400bf3f1880c31b3b90d2557924f10aa870278"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "29745ba43c2b686f1ae71bdee0623a5e1c371f7d1c93039ce3dc619092775c6d"
   end
 
   depends_on "pkgconf" => :build

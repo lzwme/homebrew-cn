@@ -6,12 +6,13 @@ class GitMediate < Formula
   license "GPL-2.0-only"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "8c13903130eae451fc26489fe0d5649eea73d90e20a179ebf981e8045d78e782"
-    sha256 cellar: :any, arm64_sequoia: "b2ac564be2115a343eead38b9f39b50ccb1327cbbade8bb6f27858cae5969883"
-    sha256 cellar: :any, arm64_sonoma:  "3469431bc834ffd3ff6debe44fade46b9bc21139d5888eb5677820fef94f74d0"
-    sha256 cellar: :any, sonoma:        "41a5cd8f4e1b89da621108410d33fb442aadb4c36af73c0f0d82530b1ff595fd"
-    sha256 cellar: :any, arm64_linux:   "c4b7dd5f856589897576c95975b0f844b3511f5d8772c2e83a9752994544c788"
-    sha256 cellar: :any, x86_64_linux:  "c227d7594c93ec201e98a6ebb8735114d81720b6926a777f5bcb5fa39d789cf3"
+    sha256 cellar: :any, arm64_golden_gate: "3aadd0d66ee789eebf8ffc6eb1eaac42823f6541f481a1f2ae935aba955af650"
+    sha256 cellar: :any, arm64_tahoe:       "8c13903130eae451fc26489fe0d5649eea73d90e20a179ebf981e8045d78e782"
+    sha256 cellar: :any, arm64_sequoia:     "b2ac564be2115a343eead38b9f39b50ccb1327cbbade8bb6f27858cae5969883"
+    sha256 cellar: :any, arm64_sonoma:      "3469431bc834ffd3ff6debe44fade46b9bc21139d5888eb5677820fef94f74d0"
+    sha256 cellar: :any, sonoma:            "41a5cd8f4e1b89da621108410d33fb442aadb4c36af73c0f0d82530b1ff595fd"
+    sha256 cellar: :any, arm64_linux:       "c4b7dd5f856589897576c95975b0f844b3511f5d8772c2e83a9752994544c788"
+    sha256 cellar: :any, x86_64_linux:      "c227d7594c93ec201e98a6ebb8735114d81720b6926a777f5bcb5fa39d789cf3"
   end
 
   depends_on "cabal-install" => :build

@@ -6,12 +6,13 @@ class IcannRdap < Formula
   license any_of: ["Apache-2.0", "MIT"]
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "14e840077257a08bc5fe4de220c1072a0e159a0ad5f645506a892b0c46062ae4"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6deb4027ee33a57426ce8b53b9eb32cde35d6f219ba003742a993b97ab0ff923"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1ac58555aebad0729ba9ed60e5c334a7404c4b1cb7b7d679e5da5a5ebad5d385"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9898be7db80ec5e57c18942432c7761516721982a72412c532302156793d62f0"
-    sha256 cellar: :any,                 arm64_linux:   "eaad9cc0f9e97b22af0b5bebdda7ef291a6159fdbc9d5057d8246d289146fed2"
-    sha256 cellar: :any,                 x86_64_linux:  "d1f4b50cd7ff5dde56133fc034ef0a50714104be3220766b41f53d850c2b7dbd"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "0d3be06ec27a5849645e648bc6f6f957b12e13e98c95f46dc8850137a39a869c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "14e840077257a08bc5fe4de220c1072a0e159a0ad5f645506a892b0c46062ae4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "6deb4027ee33a57426ce8b53b9eb32cde35d6f219ba003742a993b97ab0ff923"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "1ac58555aebad0729ba9ed60e5c334a7404c4b1cb7b7d679e5da5a5ebad5d385"
+    sha256 cellar: :any_skip_relocation, sonoma:            "9898be7db80ec5e57c18942432c7761516721982a72412c532302156793d62f0"
+    sha256 cellar: :any,                 arm64_linux:       "eaad9cc0f9e97b22af0b5bebdda7ef291a6159fdbc9d5057d8246d289146fed2"
+    sha256 cellar: :any,                 x86_64_linux:      "d1f4b50cd7ff5dde56133fc034ef0a50714104be3220766b41f53d850c2b7dbd"
   end
 
   depends_on "pkgconf" => :build

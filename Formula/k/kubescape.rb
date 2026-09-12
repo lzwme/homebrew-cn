@@ -14,11 +14,12 @@ class Kubescape < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c05ba5810a3f7d9b0e7fd37bfe1a595af14e4e2189690deec55441b59c9e17ce"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3d762b89ef65a3f92c520ba2d7cb49b27a0fbfe8bbda5afec60f87506f9854be"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "153c218f8ba0d4817b79b806b3024f379cbaf73ef9630e9ba9dd6b5bcfaf30f6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5e829641eca8e13d628d6604c4bfcb7c089846866a9089f50bb54bd3310a2d3a"
-    sha256 cellar: :any,                 x86_64_linux:  "bce706aee9c557dbd5d25a74d21ff5bf53adafbe041409750291f1826297ea34"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "2f3cf08bc15bf3796bb9fbde28bcbcb13aa67dc602664fe219676473058ee738"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "c05ba5810a3f7d9b0e7fd37bfe1a595af14e4e2189690deec55441b59c9e17ce"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "3d762b89ef65a3f92c520ba2d7cb49b27a0fbfe8bbda5afec60f87506f9854be"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "153c218f8ba0d4817b79b806b3024f379cbaf73ef9630e9ba9dd6b5bcfaf30f6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "5e829641eca8e13d628d6604c4bfcb7c089846866a9089f50bb54bd3310a2d3a"
+    sha256 cellar: :any,                 x86_64_linux:      "bce706aee9c557dbd5d25a74d21ff5bf53adafbe041409750291f1826297ea34"
   end
 
   depends_on "go" => :build

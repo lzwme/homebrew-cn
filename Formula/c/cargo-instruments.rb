@@ -16,6 +16,12 @@ class CargoInstruments < Formula
   depends_on :macos
   depends_on "openssl@4"
 
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", "--locked"
+  end
+
   def install
     ENV["OPENSSL_DIR"] = formula_opt_prefix("openssl@4")
     system "cargo", "install", *std_cargo_args

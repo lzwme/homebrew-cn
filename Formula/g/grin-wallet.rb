@@ -6,12 +6,13 @@ class GrinWallet < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7b538547f8f353523ecd0f14e8741a886b614923904e923805c08fc970752bc3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "80f41829165e9bff9b75ba0d4e9d7ca576fd072c4dae92f73abc628af80814bd"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0209739acdd0bf38a3618ab79325d4a13e017e62700f1d9c83a029134f91167a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "36a84297d88d46d57dcaf3348deeb07cfcd742168fc8a4c1596b387525787ccf"
-    sha256 cellar: :any,                 arm64_linux:   "7254284a98578b6bd886ffbb5b4969557564bfa9ca4a0c0b92f98cd24397cc80"
-    sha256 cellar: :any,                 x86_64_linux:  "f4b12c9dae570cce10873ffa6bc6091e41905fe025b0196e69f288177664e678"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "9bdb3eed541de46d7061c4f0f22a27bee31a478fb8aab6c4a8493b09ade46052"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "7b538547f8f353523ecd0f14e8741a886b614923904e923805c08fc970752bc3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "80f41829165e9bff9b75ba0d4e9d7ca576fd072c4dae92f73abc628af80814bd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "0209739acdd0bf38a3618ab79325d4a13e017e62700f1d9c83a029134f91167a"
+    sha256 cellar: :any_skip_relocation, sonoma:            "36a84297d88d46d57dcaf3348deeb07cfcd742168fc8a4c1596b387525787ccf"
+    sha256 cellar: :any,                 arm64_linux:       "7254284a98578b6bd886ffbb5b4969557564bfa9ca4a0c0b92f98cd24397cc80"
+    sha256 cellar: :any,                 x86_64_linux:      "f4b12c9dae570cce10873ffa6bc6091e41905fe025b0196e69f288177664e678"
   end
 
   depends_on "pkgconf" => :build

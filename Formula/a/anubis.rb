@@ -12,12 +12,13 @@ class Anubis < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5cd6295e24a4155cd4f0798f9b35350600511d8e1987600852e292bc4b02357d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6eacc20672b0cb83bd1a4b9fb34c390219267cd25180d1e50489463b21edcfbf"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "24f89dd774abe9a05d165249c21320643ecf1df76cd679000fe809bf718aca24"
-    sha256 cellar: :any_skip_relocation, sonoma:        "35afb4c7f9ee12a87b59b74b6f3ffcf51a8542f28d391b1021110ea7a5bcbc29"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c9f395f3b3f990756b5de7910c5e33dbffc1eb2c8fcf2b819cfbeb9bcd3e5a62"
-    sha256 cellar: :any,                 x86_64_linux:  "aef8bf549b530849bc3a795d075125b2eab7f5159824f32321a2d53eda83c613"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "a565608ce85cd6e1f10531aba1e7952640d3078c196840bde08d18d6d1dbce86"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "5cd6295e24a4155cd4f0798f9b35350600511d8e1987600852e292bc4b02357d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "6eacc20672b0cb83bd1a4b9fb34c390219267cd25180d1e50489463b21edcfbf"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "24f89dd774abe9a05d165249c21320643ecf1df76cd679000fe809bf718aca24"
+    sha256 cellar: :any_skip_relocation, sonoma:            "35afb4c7f9ee12a87b59b74b6f3ffcf51a8542f28d391b1021110ea7a5bcbc29"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "c9f395f3b3f990756b5de7910c5e33dbffc1eb2c8fcf2b819cfbeb9bcd3e5a62"
+    sha256 cellar: :any,                 x86_64_linux:      "aef8bf549b530849bc3a795d075125b2eab7f5159824f32321a2d53eda83c613"
   end
 
   depends_on "brotli" => :build

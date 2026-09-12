@@ -7,12 +7,13 @@ class Humanlog < Formula
   head "https://github.com/humanlogio/humanlog.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e202bd633ce912f0e918947e902bef0993a7fdbbe6dc53da6643c9029a2558cb"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8f9a2fb9f23340ff662d481941a9956ee19a09621eba93da80858dc0bc84bd1f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "863588c31724ab74513537910c5d27a6e926e14070e0d8c158c8f1ac616f3af3"
-    sha256 cellar: :any_skip_relocation, sonoma:        "180b1362082f79196e1fd26670086154c37190b82fcd4deac1cf9d9d1514d9ff"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e4699cfbc7390d82908f8eb83f04d509f31ed02d338af18a183fb9ba341ad3a3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f28a25ed68a154c0a8f29ff9116691c2882bc9e33ecb5feea1f3bfda1ab1d33b"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "8d48bc416a00ced52582c51a66f454e89d4ed4a57d0b66c0c7773ff3bea6624a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "e202bd633ce912f0e918947e902bef0993a7fdbbe6dc53da6643c9029a2558cb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "8f9a2fb9f23340ff662d481941a9956ee19a09621eba93da80858dc0bc84bd1f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "863588c31724ab74513537910c5d27a6e926e14070e0d8c158c8f1ac616f3af3"
+    sha256 cellar: :any_skip_relocation, sonoma:            "180b1362082f79196e1fd26670086154c37190b82fcd4deac1cf9d9d1514d9ff"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "e4699cfbc7390d82908f8eb83f04d509f31ed02d338af18a183fb9ba341ad3a3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "f28a25ed68a154c0a8f29ff9116691c2882bc9e33ecb5feea1f3bfda1ab1d33b"
   end
 
   depends_on "go" => :build

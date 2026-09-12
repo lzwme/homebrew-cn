@@ -9,18 +9,19 @@ class Mimic < Formula
   license all_of: ["MIT-Festival", "BSD-2-Clause", "BSD-3-Clause", "Spencer-86", "Apache-2.0", :cannot_represent]
 
   bottle do
-    sha256 arm64_tahoe:    "c5308faf93176da28184e555f4e6978817d59676b85b5382e6fd7fffb7611bad"
-    sha256 arm64_sequoia:  "809c72a67bc515dc1ae83a7c03bf27c9a8bf9d38422aff57d65a58ae27a0bb1e"
-    sha256 arm64_sonoma:   "27c12540e94a1f80ccfca3bd15f93a305f84e4c2233253df530dd3d7b1211140"
-    sha256 arm64_ventura:  "05a0ae1e6862667edb0311db845d536bc98085e57793620e28f82a013bf58ff9"
-    sha256 arm64_monterey: "d5e9edd6ea60a7c799c8d88e35f981dce913d950874ce44fa9805bb7c91c5e32"
-    sha256 arm64_big_sur:  "72107347e7fd6f6ca1af6808fe3ea5b428e3dee2f733743a0d44cd9b9e67d492"
-    sha256 sonoma:         "1c990348da2905a15589f09b2bb76e4229604fa9c6c8585b2ef4906dbc5620ab"
-    sha256 ventura:        "dee98adb3a5b5349d702a7ec8c781046d8ef54d143765d9c35b7e83055d3e9de"
-    sha256 monterey:       "b5b3fbdb47926a507b67c517346e66e1b3deba2622f915eb66409c601fe2718b"
-    sha256 big_sur:        "ef5067be11a74cc8cd63e266a775ece9ebcf59c9995b630f9717d7333dbdd924"
-    sha256 arm64_linux:    "26e6f55397cb24207058e26f48ce78d837269e3063f295987eb12bf7a778159d"
-    sha256 x86_64_linux:   "027d95ecca63daf3f9c20419da6630b9a6a2d00e92dbdccbbc5d1747e0aca4d4"
+    sha256 arm64_golden_gate: "d4fec84de818870da677a3270c89b3aa67df8c00c4287a87d7cfd51022aff2f7"
+    sha256 arm64_tahoe:       "c5308faf93176da28184e555f4e6978817d59676b85b5382e6fd7fffb7611bad"
+    sha256 arm64_sequoia:     "809c72a67bc515dc1ae83a7c03bf27c9a8bf9d38422aff57d65a58ae27a0bb1e"
+    sha256 arm64_sonoma:      "27c12540e94a1f80ccfca3bd15f93a305f84e4c2233253df530dd3d7b1211140"
+    sha256 arm64_ventura:     "05a0ae1e6862667edb0311db845d536bc98085e57793620e28f82a013bf58ff9"
+    sha256 arm64_monterey:    "d5e9edd6ea60a7c799c8d88e35f981dce913d950874ce44fa9805bb7c91c5e32"
+    sha256 arm64_big_sur:     "72107347e7fd6f6ca1af6808fe3ea5b428e3dee2f733743a0d44cd9b9e67d492"
+    sha256 sonoma:            "1c990348da2905a15589f09b2bb76e4229604fa9c6c8585b2ef4906dbc5620ab"
+    sha256 ventura:           "dee98adb3a5b5349d702a7ec8c781046d8ef54d143765d9c35b7e83055d3e9de"
+    sha256 monterey:          "b5b3fbdb47926a507b67c517346e66e1b3deba2622f915eb66409c601fe2718b"
+    sha256 big_sur:           "ef5067be11a74cc8cd63e266a775ece9ebcf59c9995b630f9717d7333dbdd924"
+    sha256 arm64_linux:       "26e6f55397cb24207058e26f48ce78d837269e3063f295987eb12bf7a778159d"
+    sha256 x86_64_linux:      "027d95ecca63daf3f9c20419da6630b9a6a2d00e92dbdccbbc5d1747e0aca4d4"
   end
 
   depends_on "autoconf" => :build

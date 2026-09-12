@@ -11,12 +11,13 @@ class RocqMicromegaPlugin < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "c04708a0953af29c96453358190183f87ec8f0afd7470321e70b88cce61a4db8"
-    sha256 cellar: :any, arm64_sequoia: "c3d7c9df193f7f2839292b54a610791e0696736f3efdcd3d84c53de03c1c7053"
-    sha256 cellar: :any, arm64_sonoma:  "807b853049b18c8fcfc15bce78a84eb282742e8419cfdcc7a536ff7e4ab5241b"
-    sha256 cellar: :any, sonoma:        "ec6d0db7151013988fbd768c35d314d84681364534343afa13100468f12bbdb6"
-    sha256 cellar: :any, arm64_linux:   "530462f339caa852f7186e472449869685c4b509f572299e15cb4ab5e7e3411c"
-    sha256 cellar: :any, x86_64_linux:  "97621d7474e127377d099fbc804c0c77ea86d22acc7b20b8dabd9ec6998b9b7d"
+    sha256 cellar: :any, arm64_golden_gate: "1ce63a78dd8f3acae33c2a1c476f296519a4a50fa365ff5804f0934af3f32ea0"
+    sha256 cellar: :any, arm64_tahoe:       "c04708a0953af29c96453358190183f87ec8f0afd7470321e70b88cce61a4db8"
+    sha256 cellar: :any, arm64_sequoia:     "c3d7c9df193f7f2839292b54a610791e0696736f3efdcd3d84c53de03c1c7053"
+    sha256 cellar: :any, arm64_sonoma:      "807b853049b18c8fcfc15bce78a84eb282742e8419cfdcc7a536ff7e4ab5241b"
+    sha256 cellar: :any, sonoma:            "ec6d0db7151013988fbd768c35d314d84681364534343afa13100468f12bbdb6"
+    sha256 cellar: :any, arm64_linux:       "530462f339caa852f7186e472449869685c4b509f572299e15cb4ab5e7e3411c"
+    sha256 cellar: :any, x86_64_linux:      "97621d7474e127377d099fbc804c0c77ea86d22acc7b20b8dabd9ec6998b9b7d"
   end
 
   depends_on "dune" => :build

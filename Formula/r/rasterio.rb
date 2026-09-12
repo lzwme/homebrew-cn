@@ -29,7 +29,6 @@ class Rasterio < Formula
   end
 
   conflicts_with "rio-terminal", because: "both install `rio` binaries"
-  conflicts_with cask: "rio", because: "both install `rio` binaries"
 
   pypi_packages exclude_packages: %w[certifi numpy]
 

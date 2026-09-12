@@ -1,7 +1,7 @@
 class GnuChess < Formula
   desc "Chess-playing program"
   homepage "https://www.gnu.org/software/chess/"
-  url "https://ftpmirror.gnu.org/gnu/chess/gnuchess-6.3.0.tar.gz"
+  url "https://ftpmirror.gnu.org/chess/gnuchess-6.3.0.tar.gz"
   mirror "https://ftp.gnu.org/gnu/chess/gnuchess-6.3.0.tar.gz"
   sha256 "0b37bec2098c2ad695b7443e5d7944dc6dc8284f8d01fcc30bdb94dd033ca23a"
   license "GPL-3.0-or-later"
@@ -33,11 +33,11 @@ class GnuChess < Formula
   depends_on "readline"
 
   resource "book" do
-    url "https://ftpmirror.gnu.org/gnu/chess/book_1.02.pgn.gz"
+    url "https://ftpmirror.gnu.org/chess/book_1.02.pgn.gz"
     sha256 "deac77edb061a59249a19deb03da349cae051e52527a6cb5af808d9398d32d44"
 
     livecheck do
-      url "https://ftpmirror.gnu.org/gnu/chess/"
+      url "https://ftpmirror.gnu.org/chess/"
       regex(/href=.*?book[._-]v?(\d+(?:\.\d+)+\.pgn)/i)
     end
   end

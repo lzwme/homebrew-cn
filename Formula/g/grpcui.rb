@@ -12,11 +12,12 @@ class Grpcui < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a69ee03023f21ca7577740f8d714178fba4d044bc3a6d56ba791a3dc2abf04a6"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a69ee03023f21ca7577740f8d714178fba4d044bc3a6d56ba791a3dc2abf04a6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a69ee03023f21ca7577740f8d714178fba4d044bc3a6d56ba791a3dc2abf04a6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4188f7a2e57bd56e9e477b677d5bb891dfa59f82eb66ec8ebb3e791b23e39b4a"
-    sha256 cellar: :any,                 x86_64_linux:  "1128dabc3e040828773df9678da963fe573978be05b48d7dfaec8d21f749e48b"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "a69ee03023f21ca7577740f8d714178fba4d044bc3a6d56ba791a3dc2abf04a6"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "a69ee03023f21ca7577740f8d714178fba4d044bc3a6d56ba791a3dc2abf04a6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "a69ee03023f21ca7577740f8d714178fba4d044bc3a6d56ba791a3dc2abf04a6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "a69ee03023f21ca7577740f8d714178fba4d044bc3a6d56ba791a3dc2abf04a6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "4188f7a2e57bd56e9e477b677d5bb891dfa59f82eb66ec8ebb3e791b23e39b4a"
+    sha256 cellar: :any,                 x86_64_linux:      "1128dabc3e040828773df9678da963fe573978be05b48d7dfaec8d21f749e48b"
   end
 
   depends_on "go" => :build

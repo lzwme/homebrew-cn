@@ -13,12 +13,13 @@ class Acpica < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "93063d10f57ed6b6b5803892fc39a0dc8db3b7952114bb7a5edb414c6e4b1b27"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5944c5ef47c213f2eb1dd1d7278397c2e5c3131d295c1124c744611d32ece414"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "501c4183fbe8ead59efb205280f4478e1f075b3f8da4e1642781ad8c793848cd"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6b9e1d1110bfba1109e1414a60f935f367b7dcb5123c706da37bcf5a560a963f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "518e03cb95755a74daa688af925052098664a3c302c108eee03383979b87b348"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f274a730f1b55c7f96e2d937b7cc4ad6e20a0a37a5da4e31afeba96bd705aae6"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "a7e2fb29d02e6e6414598a46cf2e72cf289b385491681bd16e43e2bae8310f6f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "93063d10f57ed6b6b5803892fc39a0dc8db3b7952114bb7a5edb414c6e4b1b27"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "5944c5ef47c213f2eb1dd1d7278397c2e5c3131d295c1124c744611d32ece414"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "501c4183fbe8ead59efb205280f4478e1f075b3f8da4e1642781ad8c793848cd"
+    sha256 cellar: :any_skip_relocation, sonoma:            "6b9e1d1110bfba1109e1414a60f935f367b7dcb5123c706da37bcf5a560a963f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "518e03cb95755a74daa688af925052098664a3c302c108eee03383979b87b348"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "f274a730f1b55c7f96e2d937b7cc4ad6e20a0a37a5da4e31afeba96bd705aae6"
   end
 
   uses_from_macos "bison" => :build

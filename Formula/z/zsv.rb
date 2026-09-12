@@ -7,12 +7,13 @@ class Zsv < Formula
   head "https://github.com/liquidaty/zsv.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "6be15b2dd78ab48e73b3e57f09cd76596101f5399abef6c195acc723133b7a54"
-    sha256 cellar: :any, arm64_sequoia: "0c0ecf8e794b0b3677f2f205e05fecbcdaf4391031c46acc39758943122daf07"
-    sha256 cellar: :any, arm64_sonoma:  "1a1adf05e6279342d927c488e87fe83bf13fe2467859f5ecabab28e8e2a2712d"
-    sha256 cellar: :any, sonoma:        "c42681fd56cbaab5e8e43b88e8dac08dfc1913470cfb2734ed24a10c7ecca354"
-    sha256 cellar: :any, arm64_linux:   "1d03459e6026abfa066b20bb90b66b9f4633211e43c7086e7ad63a7e02f07da6"
-    sha256 cellar: :any, x86_64_linux:  "2b197d1ba38c26efdd5c7d627121a5eb07ce2bb304ad14c388e0e0dd5b3521bb"
+    sha256 cellar: :any, arm64_golden_gate: "4aa485a9624f6bc08d00c6041414ec56f394790ce1351ea0cfe3c454bbb675ed"
+    sha256 cellar: :any, arm64_tahoe:       "6be15b2dd78ab48e73b3e57f09cd76596101f5399abef6c195acc723133b7a54"
+    sha256 cellar: :any, arm64_sequoia:     "0c0ecf8e794b0b3677f2f205e05fecbcdaf4391031c46acc39758943122daf07"
+    sha256 cellar: :any, arm64_sonoma:      "1a1adf05e6279342d927c488e87fe83bf13fe2467859f5ecabab28e8e2a2712d"
+    sha256 cellar: :any, sonoma:            "c42681fd56cbaab5e8e43b88e8dac08dfc1913470cfb2734ed24a10c7ecca354"
+    sha256 cellar: :any, arm64_linux:       "1d03459e6026abfa066b20bb90b66b9f4633211e43c7086e7ad63a7e02f07da6"
+    sha256 cellar: :any, x86_64_linux:      "2b197d1ba38c26efdd5c7d627121a5eb07ce2bb304ad14c388e0e0dd5b3521bb"
   end
 
   depends_on "jq"

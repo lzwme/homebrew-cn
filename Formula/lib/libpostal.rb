@@ -7,12 +7,13 @@ class Libpostal < Formula
   head "https://github.com/openvenues/libpostal.git", branch: "master"
 
   bottle do
-    sha256 arm64_tahoe:   "cf3a9637bea332e8d28cde170dc85c7c5dbb4b5731886edd9f30bed504742e5b"
-    sha256 arm64_sequoia: "954b38f9b41bb3fe6702b91e2589baa8023b459162dc3bfa3a3dd6218bf33312"
-    sha256 arm64_sonoma:  "19638446df502bd5a2fa13bf21d89eca018e70965595940a03f89ca14b213609"
-    sha256 sonoma:        "3f4ee3c0636f7fc19ddc1fc60a2273912f64a539dc314df0488d2eab8f856308"
-    sha256 arm64_linux:   "32461394f17714bbf96a4a090b4e89240a2dd2a97637006ed0997d114d0831be"
-    sha256 x86_64_linux:  "79bf7b3b79c1e80a9d61a7ad19599b9d18440390bec4babbf85a17ad5219db34"
+    sha256 arm64_golden_gate: "1c113ecef9923ffa611861aff70804be21b53c41b9df289630d3596e3152625d"
+    sha256 arm64_tahoe:       "cf3a9637bea332e8d28cde170dc85c7c5dbb4b5731886edd9f30bed504742e5b"
+    sha256 arm64_sequoia:     "954b38f9b41bb3fe6702b91e2589baa8023b459162dc3bfa3a3dd6218bf33312"
+    sha256 arm64_sonoma:      "19638446df502bd5a2fa13bf21d89eca018e70965595940a03f89ca14b213609"
+    sha256 sonoma:            "3f4ee3c0636f7fc19ddc1fc60a2273912f64a539dc314df0488d2eab8f856308"
+    sha256 arm64_linux:       "32461394f17714bbf96a4a090b4e89240a2dd2a97637006ed0997d114d0831be"
+    sha256 x86_64_linux:      "79bf7b3b79c1e80a9d61a7ad19599b9d18440390bec4babbf85a17ad5219db34"
   end
 
   depends_on "autoconf" => :build

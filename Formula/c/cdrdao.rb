@@ -14,12 +14,12 @@ class Cdrdao < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "a87345e6d975df2e81170e4f82906ba52a913ae907fbff6c3b58b5d5660de8ed"
-    sha256 arm64_sequoia: "f7a36ab54a5b3da81883df8c61d64485a1d2bd56990572a007ce1cfab9ab069d"
-    sha256 arm64_sonoma:  "9f7020d598b9f7fc1604d960b75513ee23bd41ca661faabe05835630032dbc19"
-    sha256 sonoma:        "51485a32c8e726d3096c8892994a04aedfb113e5ec239ea50a9ab0f85dd3cee4"
-    sha256 arm64_linux:   "5f432a9e6e1268b9fbd139f73a7abac83a722e231b5b63a3403758c8d4c63524"
-    sha256 x86_64_linux:  "2d5e0060a7c9e0e0efdce4393ecc9b608bd897685cb554855db8dc85f4ac8992"
+    rebuild 1
+    sha256 arm64_golden_gate: "8447e6027230d42f921ae8ca6e40e437c5c3673af33791d49c4e531b65fd2983"
+    sha256 arm64_tahoe:       "49fec427b9b1123dd7d67e0de9bd03d1a9d9b4011c1dea772db6f75477632e0c"
+    sha256 arm64_sequoia:     "1d5c5d5ed4313f9e7b97e0e820496028685d0948c8fba20907d7a691a11f19c4"
+    sha256 arm64_linux:       "1c5d7061c79ad8085cd44edd55975446796c3fd5849ee0e622c859c9c7b6828d"
+    sha256 x86_64_linux:      "f625cd3fb76a5ce44f97e257fb0c0fe03e48ab741d43a4a816fb4b58fe7107c2"
   end
 
   depends_on "autoconf" => :build
@@ -29,15 +29,6 @@ class Cdrdao < Formula
   depends_on "libao"
   depends_on "libvorbis"
   depends_on "mad"
-
-  # Fixes build on macOS prior to 12.
-  # Remove when merged and released.
-  patch do
-    url "https://github.com/cdrdao/cdrdao/commit/105d72a61f510e3c47626476f9bbc9516f824ede.patch?full_index=1"
-    sha256 "0e235c0c34abaad56edb03a2526b3792f6f7ea12a8144cee48998cf1326894eb"
-    type :unofficial
-    resolves "https://github.com/cdrdao/cdrdao/pull/19"
-  end
 
   def install
     system "./autogen.sh"

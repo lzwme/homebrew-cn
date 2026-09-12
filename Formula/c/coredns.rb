@@ -12,12 +12,13 @@ class Coredns < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "81483a5cfa264bc825e9286c6601a5109e190e83418b82db3ef318c4faaea97f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bca96b9649106b121ec88eaf4e04ba3b31bc80a266665adde29a3157d30d5f71"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "18c6144b6e468da4ae0af6d42dc8d6c089ed92798a92b72ed191f1554e20181f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "edb16c4847ce18f512c460e811c3a00808c80fc8c91cedbfbb6b487c964dfe4d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "82c7cc1ff895e96075e04733efaaf5ea12fd222b950e76d708c78d055e1d23d6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3a18ec4aeeb31c8f272e5b4852df2f66130b6b7a466df235a2be694f5bdc72e3"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "48ad66c32c25f09053b063eeb4c1717c2d84a81a2cbd3cbbdcb4513b81b64673"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "81483a5cfa264bc825e9286c6601a5109e190e83418b82db3ef318c4faaea97f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "bca96b9649106b121ec88eaf4e04ba3b31bc80a266665adde29a3157d30d5f71"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "18c6144b6e468da4ae0af6d42dc8d6c089ed92798a92b72ed191f1554e20181f"
+    sha256 cellar: :any_skip_relocation, sonoma:            "edb16c4847ce18f512c460e811c3a00808c80fc8c91cedbfbb6b487c964dfe4d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "82c7cc1ff895e96075e04733efaaf5ea12fd222b950e76d708c78d055e1d23d6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "3a18ec4aeeb31c8f272e5b4852df2f66130b6b7a466df235a2be694f5bdc72e3"
   end
 
   depends_on "go" => :build

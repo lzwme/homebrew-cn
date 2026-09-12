@@ -15,11 +15,12 @@ class Ouch < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d606c466e1dcac3e5eb97d5c82789b39c2d7d7027b1a062300425e84fa2b79da"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "70ee7f504055225c9a286ee00559b61d15b6feeb11ffd00f44c8cd4bc04b51ec"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cc1e26f0d4a8fe6ae7e54df750956c2b9c017e4f6e2a27cc69b5b9b262e675f2"
-    sha256 cellar: :any,                 arm64_linux:   "bdc03aebce279f0f3f04fc48d78757b0a6111d432d4bce84235a29869c487ba8"
-    sha256 cellar: :any,                 x86_64_linux:  "3b2f3e122686f91ade6b80ac8fbee6538a031fb827fb6062659f811c7d7ed136"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "3c85a3b5390d7c9aff92af0a957c165e4d576a8140d30b8d52cb723d29625f5c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "d606c466e1dcac3e5eb97d5c82789b39c2d7d7027b1a062300425e84fa2b79da"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "70ee7f504055225c9a286ee00559b61d15b6feeb11ffd00f44c8cd4bc04b51ec"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "cc1e26f0d4a8fe6ae7e54df750956c2b9c017e4f6e2a27cc69b5b9b262e675f2"
+    sha256 cellar: :any,                 arm64_linux:       "bdc03aebce279f0f3f04fc48d78757b0a6111d432d4bce84235a29869c487ba8"
+    sha256 cellar: :any,                 x86_64_linux:      "3b2f3e122686f91ade6b80ac8fbee6538a031fb827fb6062659f811c7d7ed136"
   end
 
   depends_on "cmake" => :build

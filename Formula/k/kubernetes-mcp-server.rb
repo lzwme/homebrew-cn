@@ -7,12 +7,13 @@ class KubernetesMcpServer < Formula
   head "https://github.com/containers/kubernetes-mcp-server.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2dece98fc5d3c69b9af13f6fbb8964ea30d7507efbd61c11c8dfbe8f4c64f40c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2d4c9d07177c24aebc6255b590fbfd95fb25e476c919a2dec672066838c12bc4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "526a39d2548a73991f7a5db91321d6cfab4def72eb2ca3e215c6f682c4eabc7e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0af94528bf6073730933dfb5fc3ac332a6cebeecfa30c9e159d8756c3879c7d1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3bf50ccf982e620ca7714328fd929f04c5084814dd93161c0b9cd502f728b3de"
-    sha256 cellar: :any,                 x86_64_linux:  "26ebd4269a1fcc21e9e519c0f390b6d65cf7c9b904bc4c625f1bfef55c853ba9"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "8e6fb9d72a5afc630223e0761d1fe6a7c299c939586e33e3c3bb4c07c2e21c9c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "2dece98fc5d3c69b9af13f6fbb8964ea30d7507efbd61c11c8dfbe8f4c64f40c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "2d4c9d07177c24aebc6255b590fbfd95fb25e476c919a2dec672066838c12bc4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "526a39d2548a73991f7a5db91321d6cfab4def72eb2ca3e215c6f682c4eabc7e"
+    sha256 cellar: :any_skip_relocation, sonoma:            "0af94528bf6073730933dfb5fc3ac332a6cebeecfa30c9e159d8756c3879c7d1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "3bf50ccf982e620ca7714328fd929f04c5084814dd93161c0b9cd502f728b3de"
+    sha256 cellar: :any,                 x86_64_linux:      "26ebd4269a1fcc21e9e519c0f390b6d65cf7c9b904bc4c625f1bfef55c853ba9"
   end
 
   depends_on "go" => :build

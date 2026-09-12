@@ -6,12 +6,13 @@ class GupnpTools < Formula
   license all_of: ["GPL-2.0-or-later", "LGPL-2.0-or-later"]
 
   bottle do
-    sha256 arm64_tahoe:   "1f8c360d4f56cd627694c21e3509cbf0d1701173209cb3edfb16ac097943b134"
-    sha256 arm64_sequoia: "ae5404b7b818841b847afe4e35efa62ea6a80dd913a883ff3a9497f917adf107"
-    sha256 arm64_sonoma:  "46316d893d7e940ce3668bd28dc2f0c36e8175912f7899e4dfb3de6e5e199057"
-    sha256 sonoma:        "fe4d6cf65324bd8a15c03b41d5effa1bc9790a8f4ea05eee71982038d2439056"
-    sha256 arm64_linux:   "c5eac35732988ece280ca3feccafc85148f3eedf81698535bc10fd5e58a7352d"
-    sha256 x86_64_linux:  "7d506830e37f84b41996947133d30d5363fcdc367403d06c7db627d70cbf6e1a"
+    sha256 arm64_golden_gate: "d067a5a0d36007b0e7af5204cfd7139affff42c3a9f7778220c33e0a39f8cfb2"
+    sha256 arm64_tahoe:       "1f8c360d4f56cd627694c21e3509cbf0d1701173209cb3edfb16ac097943b134"
+    sha256 arm64_sequoia:     "ae5404b7b818841b847afe4e35efa62ea6a80dd913a883ff3a9497f917adf107"
+    sha256 arm64_sonoma:      "46316d893d7e940ce3668bd28dc2f0c36e8175912f7899e4dfb3de6e5e199057"
+    sha256 sonoma:            "fe4d6cf65324bd8a15c03b41d5effa1bc9790a8f4ea05eee71982038d2439056"
+    sha256 arm64_linux:       "c5eac35732988ece280ca3feccafc85148f3eedf81698535bc10fd5e58a7352d"
+    sha256 x86_64_linux:      "7d506830e37f84b41996947133d30d5363fcdc367403d06c7db627d70cbf6e1a"
   end
 
   depends_on "meson" => :build

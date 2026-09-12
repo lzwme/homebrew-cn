@@ -9,11 +9,12 @@ class Jnethack < Formula
   head "https://github.com/jnethack/jnethack-release.git", branch: "master"
 
   bottle do
-    sha256 arm64_tahoe:   "962c6ae677dc1591d7e034af45093bfbd32d24151a7d88c94ea5ade9af0f29a3"
-    sha256 arm64_sequoia: "d4d2241fb4a159cfdf7a72cb9552c06dd7f6433d15b17f24c4bbd8bd9129ce79"
-    sha256 arm64_sonoma:  "bb1614805e326632624a9daa3f8d0673bf8287f462057fda44f7f97e4a9960e3"
-    sha256 arm64_linux:   "a5f0dd0fe72bb57d20eb04041eb0bda19b2f2296ba7b5ee7b3230b03d41a8759"
-    sha256 x86_64_linux:  "67e4518f0700d8c7b2248eca12b637d416fd188ca129589abd3825de1a37a23d"
+    sha256 arm64_golden_gate: "0ede3c3839f104719ae96a01c6a18c613e0488d890c3bdd9da7d7ac127740136"
+    sha256 arm64_tahoe:       "962c6ae677dc1591d7e034af45093bfbd32d24151a7d88c94ea5ade9af0f29a3"
+    sha256 arm64_sequoia:     "d4d2241fb4a159cfdf7a72cb9552c06dd7f6433d15b17f24c4bbd8bd9129ce79"
+    sha256 arm64_sonoma:      "bb1614805e326632624a9daa3f8d0673bf8287f462057fda44f7f97e4a9960e3"
+    sha256 arm64_linux:       "a5f0dd0fe72bb57d20eb04041eb0bda19b2f2296ba7b5ee7b3230b03d41a8759"
+    sha256 x86_64_linux:      "67e4518f0700d8c7b2248eca12b637d416fd188ca129589abd3825de1a37a23d"
   end
 
   depends_on "nkf" => :build

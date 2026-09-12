@@ -88,6 +88,6 @@ class Haxe < Formula
     else
       "node out.js"
     end
-    assert_equal "Hello world!", shell_output(cmd).strip
+    assert_match "Hello world!", shell_output(cmd)
   end
 end

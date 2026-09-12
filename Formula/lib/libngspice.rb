@@ -11,12 +11,13 @@ class Libngspice < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "3eab32be60e72229f3d94f6a4360ec55f2a0d7786a2b913163fb675ac7bcc7aa"
-    sha256 cellar: :any, arm64_sequoia: "d69dec3cfc225c7a5e4145d2432e9ba3bb3efa2e85ac70b18a82e16ab00ce5b2"
-    sha256 cellar: :any, arm64_sonoma:  "cec50e5ef2b8bc203c148e97306408ccf69b1c4c24c57e527e8af282f8637c86"
-    sha256 cellar: :any, sonoma:        "967d5992ed420ab0f97b06de1a0f629d9118a8fa4d815f17a8bb442caaf43b0e"
-    sha256 cellar: :any, arm64_linux:   "4c673027778ab5d6bc3ecdd5e119d9798516dae51f629655ed93419a9ac83d8d"
-    sha256 cellar: :any, x86_64_linux:  "edccbf7b471e76ee35481984fd556313e976a214891db61bba35eca41193a6bc"
+    sha256 cellar: :any, arm64_golden_gate: "90fb49d7383d7ece63a108ee82be820bb49622ca9571cd5640e16e0648bec4a5"
+    sha256 cellar: :any, arm64_tahoe:       "3eab32be60e72229f3d94f6a4360ec55f2a0d7786a2b913163fb675ac7bcc7aa"
+    sha256 cellar: :any, arm64_sequoia:     "d69dec3cfc225c7a5e4145d2432e9ba3bb3efa2e85ac70b18a82e16ab00ce5b2"
+    sha256 cellar: :any, arm64_sonoma:      "cec50e5ef2b8bc203c148e97306408ccf69b1c4c24c57e527e8af282f8637c86"
+    sha256 cellar: :any, sonoma:            "967d5992ed420ab0f97b06de1a0f629d9118a8fa4d815f17a8bb442caaf43b0e"
+    sha256 cellar: :any, arm64_linux:       "4c673027778ab5d6bc3ecdd5e119d9798516dae51f629655ed93419a9ac83d8d"
+    sha256 cellar: :any, x86_64_linux:      "edccbf7b471e76ee35481984fd556313e976a214891db61bba35eca41193a6bc"
   end
 
   uses_from_macos "bison" => :build

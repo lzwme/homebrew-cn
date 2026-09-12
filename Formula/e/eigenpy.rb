@@ -8,12 +8,13 @@ class Eigenpy < Formula
   head "https://github.com/stack-of-tasks/eigenpy.git", branch: "devel"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "f572d6cc00f87716dd9fec9d5c521b6dec79ad982965498c795f58e1ec78a169"
-    sha256 cellar: :any, arm64_sequoia: "937f1be094388c96de9f2aa808206abcc98f7df0d93fb7f138f6898337d9df41"
-    sha256 cellar: :any, arm64_sonoma:  "0e13052278ab3f0cda85a7cee031fe67c974d6f44b6892fccb37eccfada97069"
-    sha256 cellar: :any, sonoma:        "109ac55e508ecbe608b7cbc87efc0db0ad92814c154f5a70fde80b6018540a7d"
-    sha256 cellar: :any, arm64_linux:   "06a631b5f3926a6f9e9426d308549a73ebebc335e14ebdb6658bad495e04b020"
-    sha256 cellar: :any, x86_64_linux:  "7fe4434412f7b4873928616a44653bb70085f1a4b7bd217c17d869c7d5625102"
+    sha256 cellar: :any, arm64_golden_gate: "81a501d8caf605fcce8352335e4d8e2b8e1ec41743dcab27acc1ff0465accabd"
+    sha256 cellar: :any, arm64_tahoe:       "f572d6cc00f87716dd9fec9d5c521b6dec79ad982965498c795f58e1ec78a169"
+    sha256 cellar: :any, arm64_sequoia:     "937f1be094388c96de9f2aa808206abcc98f7df0d93fb7f138f6898337d9df41"
+    sha256 cellar: :any, arm64_sonoma:      "0e13052278ab3f0cda85a7cee031fe67c974d6f44b6892fccb37eccfada97069"
+    sha256 cellar: :any, sonoma:            "109ac55e508ecbe608b7cbc87efc0db0ad92814c154f5a70fde80b6018540a7d"
+    sha256 cellar: :any, arm64_linux:       "06a631b5f3926a6f9e9426d308549a73ebebc335e14ebdb6658bad495e04b020"
+    sha256 cellar: :any, x86_64_linux:      "7fe4434412f7b4873928616a44653bb70085f1a4b7bd217c17d869c7d5625102"
   end
 
   depends_on "boost" => :build

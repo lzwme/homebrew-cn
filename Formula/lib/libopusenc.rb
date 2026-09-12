@@ -12,12 +12,13 @@ class Libopusenc < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "92b42832d01a85d2be1e22d430d80fe57e02987ebf6b4e77f425891f4c1ae3e0"
-    sha256 cellar: :any,                 arm64_sequoia: "cf8745f39fc22033d57343bc4d985d7797f6733d882c4a7fc1f47d76b306180d"
-    sha256 cellar: :any,                 arm64_sonoma:  "ef3d476998cfb36e1ce4020f565fba423bf866578fded146753b03a8f224c8b6"
-    sha256 cellar: :any,                 sonoma:        "4c4fd7d3596d74477da965719a66a3684007ae2ba31dc482a8a25ec6f57feb90"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "96d744e47f001702d08a26bccbeeda29d1ddfd1b14efd323ab0c9117e6d701c1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "090f5e5a9c1ff5dc82c371154d4c1394d3e85d4dbbb27759552766734c3f1750"
+    sha256 cellar: :any,                 arm64_golden_gate: "ef1203ef1e98296f1d009721e34915438f97d53252689935794a372029a6612f"
+    sha256 cellar: :any,                 arm64_tahoe:       "92b42832d01a85d2be1e22d430d80fe57e02987ebf6b4e77f425891f4c1ae3e0"
+    sha256 cellar: :any,                 arm64_sequoia:     "cf8745f39fc22033d57343bc4d985d7797f6733d882c4a7fc1f47d76b306180d"
+    sha256 cellar: :any,                 arm64_sonoma:      "ef3d476998cfb36e1ce4020f565fba423bf866578fded146753b03a8f224c8b6"
+    sha256 cellar: :any,                 sonoma:            "4c4fd7d3596d74477da965719a66a3684007ae2ba31dc482a8a25ec6f57feb90"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "96d744e47f001702d08a26bccbeeda29d1ddfd1b14efd323ab0c9117e6d701c1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "090f5e5a9c1ff5dc82c371154d4c1394d3e85d4dbbb27759552766734c3f1750"
   end
 
   head do

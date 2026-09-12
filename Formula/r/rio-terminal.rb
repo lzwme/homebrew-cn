@@ -24,7 +24,6 @@ class RioTerminal < Formula
   depends_on :macos
 
   conflicts_with "rasterio", because: "both install `rio` binaries"
-  conflicts_with cask: "rio", because: "both install `rio` binaries"
 
   def install
     system "cargo", "install", *std_cargo_args(path: "frontends/rioterm")

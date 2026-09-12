@@ -6,12 +6,13 @@ class IcebergCli < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a59721565c616254f68c658a43ecbbcfa7c5787ae46569f8aea5f08ebf50534f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a59721565c616254f68c658a43ecbbcfa7c5787ae46569f8aea5f08ebf50534f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a59721565c616254f68c658a43ecbbcfa7c5787ae46569f8aea5f08ebf50534f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "029efcd4e4d7847001a907fb8d04a199d88b0f4cff5b74789639c55d26cbad71"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "756172247d843244dc1daa9befb4f2460bbf0793f79eae5fff41fda24fc9267d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "63e9a1974e458b473cb66aa69b36c4332d1caac6c5499219c6708ec8b26ac645"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "79f11b1d6f19d955969474bed49427dc6df85f5356007d5d5fba877f119c8d82"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "a59721565c616254f68c658a43ecbbcfa7c5787ae46569f8aea5f08ebf50534f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "a59721565c616254f68c658a43ecbbcfa7c5787ae46569f8aea5f08ebf50534f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "a59721565c616254f68c658a43ecbbcfa7c5787ae46569f8aea5f08ebf50534f"
+    sha256 cellar: :any_skip_relocation, sonoma:            "029efcd4e4d7847001a907fb8d04a199d88b0f4cff5b74789639c55d26cbad71"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "756172247d843244dc1daa9befb4f2460bbf0793f79eae5fff41fda24fc9267d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "63e9a1974e458b473cb66aa69b36c4332d1caac6c5499219c6708ec8b26ac645"
   end
 
   depends_on "go" => :build

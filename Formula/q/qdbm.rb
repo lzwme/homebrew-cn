@@ -12,12 +12,13 @@ class Qdbm < Formula
 
   bottle do
     rebuild 3
-    sha256 cellar: :any,                 arm64_tahoe:   "8758b4bbc07fe322baf1aeb4815956e31dfe20720429254f6e78a2e6c500acbe"
-    sha256 cellar: :any,                 arm64_sequoia: "9983b409d48f7443900ce5b980b08f95e0f102854608c1615f4ff4f45b961f0a"
-    sha256 cellar: :any,                 arm64_sonoma:  "445dc7761c805ee218c4a5d29b521338a9ba3d0e773fdddd0622b272b970cbf6"
-    sha256 cellar: :any,                 sonoma:        "e972c7da4e44db7be3104ae998c53c23f3834aedba2eaf6a3169933327670571"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8063229ce3fc0aac1e402f27c5f9c9ab27f7e1101006887aedc8047844b69fee"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4f532caae96d2ab1726eb1fd9196db93dd0b4511f9b407b209c545a801449877"
+    sha256 cellar: :any,                 arm64_golden_gate: "a489ef5f76d79ff7ba5eb709434ccce0df3903090a8dd1947d618f76a1999e96"
+    sha256 cellar: :any,                 arm64_tahoe:       "8758b4bbc07fe322baf1aeb4815956e31dfe20720429254f6e78a2e6c500acbe"
+    sha256 cellar: :any,                 arm64_sequoia:     "9983b409d48f7443900ce5b980b08f95e0f102854608c1615f4ff4f45b961f0a"
+    sha256 cellar: :any,                 arm64_sonoma:      "445dc7761c805ee218c4a5d29b521338a9ba3d0e773fdddd0622b272b970cbf6"
+    sha256 cellar: :any,                 sonoma:            "e972c7da4e44db7be3104ae998c53c23f3834aedba2eaf6a3169933327670571"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "8063229ce3fc0aac1e402f27c5f9c9ab27f7e1101006887aedc8047844b69fee"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "4f532caae96d2ab1726eb1fd9196db93dd0b4511f9b407b209c545a801449877"
   end
 
   # Last release on 2007-12-22. Succeeded by tokyo-cabinet -> kyoto-cabinet -> tkrzw

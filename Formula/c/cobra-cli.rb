@@ -8,12 +8,13 @@ class CobraCli < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "390cda2b8ba89e754ff53a554bd607688676c1f5e8e0c62af31921186e389a77"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "390cda2b8ba89e754ff53a554bd607688676c1f5e8e0c62af31921186e389a77"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "390cda2b8ba89e754ff53a554bd607688676c1f5e8e0c62af31921186e389a77"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d2570b9dfc87d3a357c35cbb15924f092d9d34842511e280c287e421953ba8ee"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "dd7143538bec872061451a5e5cec71ac837e62434f3417e8c2d124fb884d7291"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "433e9e258e281a31d42a841ddbcf8cbf6329c45b290b29d3ce1c345aa78b3f52"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "f5d63e54c5f6b46feab791e1fca6e27809438222bb2e96c62e33d1393891d096"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "390cda2b8ba89e754ff53a554bd607688676c1f5e8e0c62af31921186e389a77"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "390cda2b8ba89e754ff53a554bd607688676c1f5e8e0c62af31921186e389a77"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "390cda2b8ba89e754ff53a554bd607688676c1f5e8e0c62af31921186e389a77"
+    sha256 cellar: :any_skip_relocation, sonoma:            "d2570b9dfc87d3a357c35cbb15924f092d9d34842511e280c287e421953ba8ee"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "dd7143538bec872061451a5e5cec71ac837e62434f3417e8c2d124fb884d7291"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "433e9e258e281a31d42a841ddbcf8cbf6329c45b290b29d3ce1c345aa78b3f52"
   end
 
   depends_on "go"

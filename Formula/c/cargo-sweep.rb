@@ -7,12 +7,13 @@ class CargoSweep < Formula
   head "https://github.com/holmgr/cargo-sweep.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d6898879b0fbfae34dea047911dced41d23ed79879886559688c94e4049255d3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9a0c608db46539071bbb09fbb997fe699f2561ad815ad7a5eff7b5bdaa567b69"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cfe52f10affe82206b30a9f30dfe4d6aaf71bc643395f0e52e14df646c7bc0d5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "93d76c136b91c6e38561e0773b714281b5f75f2cb367d9247f0cc543fd620425"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "240f0d4bc302cacba4df9931d740029669d69b28e7b475fe69c578d1d7bfdc37"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "36c2b2a5eab5851f3217b5ea39694cf3f7e58b72be8a3fb858ecfaf65502cb2c"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "069fff9f54f921a496734828f43c33e31d86d810672c2a4d5b52241d81f070c7"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "d6898879b0fbfae34dea047911dced41d23ed79879886559688c94e4049255d3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "9a0c608db46539071bbb09fbb997fe699f2561ad815ad7a5eff7b5bdaa567b69"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "cfe52f10affe82206b30a9f30dfe4d6aaf71bc643395f0e52e14df646c7bc0d5"
+    sha256 cellar: :any_skip_relocation, sonoma:            "93d76c136b91c6e38561e0773b714281b5f75f2cb367d9247f0cc543fd620425"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "240f0d4bc302cacba4df9931d740029669d69b28e7b475fe69c578d1d7bfdc37"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "36c2b2a5eab5851f3217b5ea39694cf3f7e58b72be8a3fb858ecfaf65502cb2c"
   end
 
   deprecate! date: "2026-07-17", because: :deprecated_upstream
@@ -27,7 +28,7 @@ class CargoSweep < Formula
 
   test do
     assert_equal "cargo-sweep #{version}", shell_output("#{bin}/cargo-sweep -V").strip
-    ENV.prepend_path "PATH", Formula["rustup"].bin
+    ENV.prepend_path "PATH", formula_opt_bin("rustup")
     system "rustup", "set", "profile", "minimal"
     system "rustup", "default", "beta"
 

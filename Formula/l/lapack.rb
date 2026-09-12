@@ -14,12 +14,13 @@ class Lapack < Formula
   end
 
   bottle do
-    sha256               arm64_tahoe:   "729ae53fa161b8a20a95bea1a394f41677d37e4dfb46be596a7381adb62da939"
-    sha256               arm64_sequoia: "33d6807f82b4f585ec81e2b467317aaa467de097dcf5c2d5c960e763b09e7cc5"
-    sha256               arm64_sonoma:  "f5724a6b7c49f8436f4c5941d1eec184b8a030b3cf07fe8caf3496f5a259d78d"
-    sha256 cellar: :any, sonoma:        "ad639f9d30b26646c73bf5e1845f4a9a6cf22af4302cbb397cdbd68de8c2e72f"
-    sha256 cellar: :any, arm64_linux:   "06ae2c022ca066613c0aef608547cdc209a4f312848638ad731fcdc3b9054733"
-    sha256 cellar: :any, x86_64_linux:  "a08f8db3198cf3456e646ed75f7ac1ee66daed03857861adaf2a027c4a3c7813"
+    sha256 cellar: :any, arm64_golden_gate: "48c15c1773d45903ab52d57d5090296ceef6c4116207657fe6de02b1f44f4eba"
+    sha256               arm64_tahoe:       "729ae53fa161b8a20a95bea1a394f41677d37e4dfb46be596a7381adb62da939"
+    sha256               arm64_sequoia:     "33d6807f82b4f585ec81e2b467317aaa467de097dcf5c2d5c960e763b09e7cc5"
+    sha256               arm64_sonoma:      "f5724a6b7c49f8436f4c5941d1eec184b8a030b3cf07fe8caf3496f5a259d78d"
+    sha256 cellar: :any, sonoma:            "ad639f9d30b26646c73bf5e1845f4a9a6cf22af4302cbb397cdbd68de8c2e72f"
+    sha256 cellar: :any, arm64_linux:       "06ae2c022ca066613c0aef608547cdc209a4f312848638ad731fcdc3b9054733"
+    sha256 cellar: :any, x86_64_linux:      "a08f8db3198cf3456e646ed75f7ac1ee66daed03857861adaf2a027c4a3c7813"
   end
 
   keg_only :shadowed_by_macos, "macOS provides LAPACK in Accelerate.framework"

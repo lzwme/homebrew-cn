@@ -26,7 +26,7 @@ class FlipLink < Formula
     # Don't apply RUSTFLAGS when building firmware
     ENV.delete "RUSTFLAGS"
 
-    ENV.prepend_path "PATH", Formula["rustup"].bin
+    ENV.prepend_path "PATH", formula_opt_bin("rustup")
     system "rustup", "set", "profile", "minimal"
     system "rustup", "default", "stable"
     system "rustup", "target", "add", "thumbv7em-none-eabi"

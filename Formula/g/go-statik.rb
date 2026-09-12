@@ -7,12 +7,13 @@ class GoStatik < Formula
   head "https://github.com/rakyll/statik.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4c672e9f17026de9c38075bf52e483f3bca5ca36fa89817fd2c788d27a94c2df"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4c672e9f17026de9c38075bf52e483f3bca5ca36fa89817fd2c788d27a94c2df"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4c672e9f17026de9c38075bf52e483f3bca5ca36fa89817fd2c788d27a94c2df"
-    sha256 cellar: :any_skip_relocation, sonoma:        "238448fa19bbee4317fad64a07c5b7b9bbb787ce6f37858a26848c1417fd4a9e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e464666d4d3b1baf38cf757d722630dc72eb7ba4448b719dd1126db1cc44c1e3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f92704b1554def26ec750d099562e022e737b4515ead23d640e0bf93a43da897"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "51597f00a58628b424c45ff43136fafc0dba2dafcfaab8a8608880a09301506b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "4c672e9f17026de9c38075bf52e483f3bca5ca36fa89817fd2c788d27a94c2df"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "4c672e9f17026de9c38075bf52e483f3bca5ca36fa89817fd2c788d27a94c2df"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "4c672e9f17026de9c38075bf52e483f3bca5ca36fa89817fd2c788d27a94c2df"
+    sha256 cellar: :any_skip_relocation, sonoma:            "238448fa19bbee4317fad64a07c5b7b9bbb787ce6f37858a26848c1417fd4a9e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "e464666d4d3b1baf38cf757d722630dc72eb7ba4448b719dd1126db1cc44c1e3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "f92704b1554def26ec750d099562e022e737b4515ead23d640e0bf93a43da897"
   end
 
   depends_on "go" => :build

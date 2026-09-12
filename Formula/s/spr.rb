@@ -8,12 +8,13 @@ class Spr < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "77939b958880db3631587b135834ebd6a52733fa5800b68dc8132effe1167202"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fda7b7bd81ba976da928a79e3579874e455548bf25c954a227748041b8145254"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7d053d2d87b8b5a46d075854071795c126d3b751f5a58b4a6067952eb2c3dd9c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8859772520af8cd0c3f23cd98da54cd1196164ee4f6295cf4efe204c1e03bca6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b1a84d4a3c5e1be826286e82449f3859ca243077fa8c3ae3c74f663090b0062b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ff79ed181ff54c4d3dfe9235d356c632d7b1524cb91fdb59e08dbf4ddf73837d"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "f361c10c34278d94a2106bbbd95d7371ec51b42cf894cd698d141a67fe859ea4"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "77939b958880db3631587b135834ebd6a52733fa5800b68dc8132effe1167202"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "fda7b7bd81ba976da928a79e3579874e455548bf25c954a227748041b8145254"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "7d053d2d87b8b5a46d075854071795c126d3b751f5a58b4a6067952eb2c3dd9c"
+    sha256 cellar: :any_skip_relocation, sonoma:            "8859772520af8cd0c3f23cd98da54cd1196164ee4f6295cf4efe204c1e03bca6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "b1a84d4a3c5e1be826286e82449f3859ca243077fa8c3ae3c74f663090b0062b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "ff79ed181ff54c4d3dfe9235d356c632d7b1524cb91fdb59e08dbf4ddf73837d"
   end
 
   depends_on "pkgconf" => :build

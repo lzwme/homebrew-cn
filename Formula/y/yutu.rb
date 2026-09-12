@@ -12,12 +12,13 @@ class Yutu < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1ddb1afe46737ba670b26805c4afd8505f3600c3d6b27fd49a8e7be8aa60c396"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1ddb1afe46737ba670b26805c4afd8505f3600c3d6b27fd49a8e7be8aa60c396"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1ddb1afe46737ba670b26805c4afd8505f3600c3d6b27fd49a8e7be8aa60c396"
-    sha256 cellar: :any_skip_relocation, sonoma:        "868d1f8e98742806562bb84944388c6ac700cf34f0886ffe4ac6d87d5c7f3cd4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "894921a3f1ad13c2fc2a7bec7e629401bf7788a9181c9c35842e6fe48f9ea73a"
-    sha256 cellar: :any,                 x86_64_linux:  "ff2e4da54a3047ebc885ad732c9ca9bd6db501b6b3572f99fc4997b8d24a6876"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "3442ae05ef20055d5624bd9f94dc1d93db9df9be9d6015d4c223cfcfcdb6a40a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "1ddb1afe46737ba670b26805c4afd8505f3600c3d6b27fd49a8e7be8aa60c396"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "1ddb1afe46737ba670b26805c4afd8505f3600c3d6b27fd49a8e7be8aa60c396"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "1ddb1afe46737ba670b26805c4afd8505f3600c3d6b27fd49a8e7be8aa60c396"
+    sha256 cellar: :any_skip_relocation, sonoma:            "868d1f8e98742806562bb84944388c6ac700cf34f0886ffe4ac6d87d5c7f3cd4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "894921a3f1ad13c2fc2a7bec7e629401bf7788a9181c9c35842e6fe48f9ea73a"
+    sha256 cellar: :any,                 x86_64_linux:      "ff2e4da54a3047ebc885ad732c9ca9bd6db501b6b3572f99fc4997b8d24a6876"
   end
 
   depends_on "go" => :build

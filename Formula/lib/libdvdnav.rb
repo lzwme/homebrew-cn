@@ -12,12 +12,13 @@ class Libdvdnav < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "de06e1e44ed91415e861f0bd79e41de8136e9786fc430d4cb81b46be8bdc9643"
-    sha256 cellar: :any, arm64_sequoia: "572d32a3743e5b4aa64e8db20ebe4c524709229e167247e7563063d4d4a1fe43"
-    sha256 cellar: :any, arm64_sonoma:  "0fd026d465fda11f3b47ebe709f5c31efe1e74fd862a1869f14f51697d54ef35"
-    sha256 cellar: :any, sonoma:        "05fc8e61a4945df5d16c96014062b79477a44a271b4371398f5c9f91a526fe71"
-    sha256               arm64_linux:   "18d641647018fcea9fac4d0bc26bf04aa8a47ef5206de9bdfa91af2d23f9ebd7"
-    sha256               x86_64_linux:  "013483294308424c90b6d2cf46335160df2f5ad9d2a12935d8bb0e12669d28d7"
+    sha256 cellar: :any, arm64_golden_gate: "7008f6233374660d3b30cab484f2258afe4a78f8d9d4bcca3c3d01b42ce6470c"
+    sha256 cellar: :any, arm64_tahoe:       "de06e1e44ed91415e861f0bd79e41de8136e9786fc430d4cb81b46be8bdc9643"
+    sha256 cellar: :any, arm64_sequoia:     "572d32a3743e5b4aa64e8db20ebe4c524709229e167247e7563063d4d4a1fe43"
+    sha256 cellar: :any, arm64_sonoma:      "0fd026d465fda11f3b47ebe709f5c31efe1e74fd862a1869f14f51697d54ef35"
+    sha256 cellar: :any, sonoma:            "05fc8e61a4945df5d16c96014062b79477a44a271b4371398f5c9f91a526fe71"
+    sha256               arm64_linux:       "18d641647018fcea9fac4d0bc26bf04aa8a47ef5206de9bdfa91af2d23f9ebd7"
+    sha256               x86_64_linux:      "013483294308424c90b6d2cf46335160df2f5ad9d2a12935d8bb0e12669d28d7"
   end
 
   depends_on "meson" => :build

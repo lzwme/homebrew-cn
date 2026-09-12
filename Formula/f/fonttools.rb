@@ -3,17 +3,17 @@ class Fonttools < Formula
 
   desc "Library for manipulating fonts"
   homepage "https://github.com/fonttools/fonttools"
-  url "https://files.pythonhosted.org/packages/d4/41/0f072a712dc74496e03710e462a18a4cfd8a258ad055a4e22d28b43a7abd/fonttools-4.64.0.tar.gz"
-  sha256 "ecb2e59a7bc692fee64dda6010deb66222335693b30046f15cccf81233aa715f"
+  url "https://files.pythonhosted.org/packages/77/51/d63c7e52163ac14393a35bd14bd7c0da95f8f74be5d7cc988092f9965129/fonttools-4.65.0.tar.gz"
+  sha256 "762ba5431358d0dbd4a01982484a1d494fb267e91f974cdcf20b80eab8560f6f"
   license "MIT"
   head "https://github.com/fonttools/fonttools.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3b348eb7badceb48b95b8bb7de3d53a386727c96bb867544a2b65c67cb1c483b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "55b1af9eadfa990279231c520ea6123912fddac2ca4bd8c6449401f17195ff7c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cb8fd95a4bf60c71306c8e363f29a7b84de00e2e061241b52773b1a229df41ee"
-    sha256 cellar: :any,                 arm64_linux:   "dac124c83cc4ca12c21a46bca89d442a997ca20d08eee0a4c32278aab9391466"
-    sha256 cellar: :any,                 x86_64_linux:  "bbeba1b8c01e83add47f01421598954040b98a4cb836486d825063004cf3491b"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "627f1ac6e6e70a43d0c9b688c52ef9214b56eee207099fd3eb58bb7f9a8de3b3"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "2357c2b951ef1a5723aec78d92d2663eb767d8e3977420e4901122a1244e1128"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "615080270549d0227d56f8143ac20389478776799ea8589aad811332b0d74fd0"
+    sha256 cellar: :any,                 arm64_linux:       "d54bb118a785cc731a9b81303eeb7aafce5c7f9ec0bd793703dd5f0883bb83e7"
+    sha256 cellar: :any,                 x86_64_linux:      "c58606d1f423c3058ed22c32cd0f6ab4398eef6c66c50da984c6bbcd602bc003"
   end
 
   depends_on "python@3.14"
@@ -29,8 +29,8 @@ class Fonttools < Formula
   end
 
   resource "lxml" do
-    url "https://files.pythonhosted.org/packages/ad/a9/970b8fa0ecc4fbf1dfaed0d89bbc1fc1421b25ec26a2038c91e872dc6c8e/lxml-6.1.2.tar.gz"
-    sha256 "1055241852f2b02068af4a625a5d32c087db193c12251928af2562ecd2239f18"
+    url "https://files.pythonhosted.org/packages/23/ad/28ecd7cb894d172f3c9c80a075eeeb2017ac62e3632cee05a5f9493547eb/lxml-6.1.3.tar.gz"
+    sha256 "45222d94ddd511536f3b2f7d9deae3b2339b4ce0f075f1ca25703b07cad9dd21"
   end
 
   resource "zopfli" do

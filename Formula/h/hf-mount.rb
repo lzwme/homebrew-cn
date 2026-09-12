@@ -7,11 +7,12 @@ class HfMount < Formula
   head "https://github.com/huggingface/hf-mount.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ace84ce0d4566e7083fea5a5e4f1a9b23a73e1d93f191ca554fd73f8b667102e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "852bebed1e3027891c0993742947cd6f5c7504f238d93f868accaeb5bf7fce26"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5768d7495ac2f310671164276b5ee2cbf840c2cdd47169b18748f750d0c2dafd"
-    sha256 cellar: :any,                 arm64_linux:   "73b7e6581502a5e7a587b17c37274a9f4074dfe18151d860b0462838d6bb6d99"
-    sha256 cellar: :any,                 x86_64_linux:  "deaa6a1cad94a42ae7b0ec69b9bde0df5bf582635c6e7e8d73374a0ea92c387b"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "7f79dfd78bc065f66a9a39db39fdcd1605e9d3c2c6a269707074248632809b09"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "ace84ce0d4566e7083fea5a5e4f1a9b23a73e1d93f191ca554fd73f8b667102e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "852bebed1e3027891c0993742947cd6f5c7504f238d93f868accaeb5bf7fce26"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "5768d7495ac2f310671164276b5ee2cbf840c2cdd47169b18748f750d0c2dafd"
+    sha256 cellar: :any,                 arm64_linux:       "73b7e6581502a5e7a587b17c37274a9f4074dfe18151d860b0462838d6bb6d99"
+    sha256 cellar: :any,                 x86_64_linux:      "deaa6a1cad94a42ae7b0ec69b9bde0df5bf582635c6e7e8d73374a0ea92c387b"
   end
 
   depends_on "pkgconf" => :build

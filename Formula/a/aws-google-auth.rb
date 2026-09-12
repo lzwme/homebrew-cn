@@ -11,12 +11,13 @@ class AwsGoogleAuth < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cd2368d36300ac56924bde9751f0fa38dd32758b0a838118ff18c57e2454325c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "005e101ff08a9c3d9af87b1330902aaec9d679b3c84c5dce9add9f4de419bd32"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f8aba159f8146b62aabc15c03915c7ee7382a79c70fc9d51fc5b6ad776f90906"
-    sha256 cellar: :any_skip_relocation, sonoma:        "bf2f71295c0d77a93dd8ef4821e1bbdbde5b5b7a9f746f3d5b5ae23fc938b22d"
-    sha256 cellar: :any,                 arm64_linux:   "6f4e27de17f9c1f369cb794dc79b50073f35950a6790c147fb9daaac9556986a"
-    sha256 cellar: :any,                 x86_64_linux:  "7cf080a4bfb8184d1005c59d55dcb8142425fa44826ddff8380629abe0588b19"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "13e534b8b3db680eee0c520be63bd824e505bdd34a2f4bcffcd6cbee991b8509"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "cd2368d36300ac56924bde9751f0fa38dd32758b0a838118ff18c57e2454325c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "005e101ff08a9c3d9af87b1330902aaec9d679b3c84c5dce9add9f4de419bd32"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "f8aba159f8146b62aabc15c03915c7ee7382a79c70fc9d51fc5b6ad776f90906"
+    sha256 cellar: :any_skip_relocation, sonoma:            "bf2f71295c0d77a93dd8ef4821e1bbdbde5b5b7a9f746f3d5b5ae23fc938b22d"
+    sha256 cellar: :any,                 arm64_linux:       "6f4e27de17f9c1f369cb794dc79b50073f35950a6790c147fb9daaac9556986a"
+    sha256 cellar: :any,                 x86_64_linux:      "7cf080a4bfb8184d1005c59d55dcb8142425fa44826ddff8380629abe0588b19"
   end
 
   depends_on "certifi" => :no_linkage

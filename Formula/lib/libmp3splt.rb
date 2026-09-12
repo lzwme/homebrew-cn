@@ -16,12 +16,13 @@ class Libmp3splt < Formula
 
   bottle do
     rebuild 1
-    sha256 arm64_tahoe:   "71e27509f2f5051c193c6dde207ea520cbd24d1f3d7a90664cd67befce73adb1"
-    sha256 arm64_sequoia: "093990114c593106e24cfd2e289dab0972431ad116963e132ced44a8e89b7bd2"
-    sha256 arm64_sonoma:  "3ca9671420bb9e1e7ad7c7364afc53d20d1dc663332ad74205743dfb35b5191c"
-    sha256 sonoma:        "9bb8fa8d9d96fb01773c04fa564c8b4103c82fbd9e686198dc02944b09b2dbbc"
-    sha256 arm64_linux:   "999824bf55c08a531c0eb124f5fc53f9b9b7b66287cec4243a3ce5c2445f522a"
-    sha256 x86_64_linux:  "b2b5ae6925094b4619cc97902c8bdd27088fbbd78343f5acc4d9fe2b6153d58d"
+    sha256 arm64_golden_gate: "f16ca0e44c2a75492c44f0bbe6b9e46df955f5baf544eea83a42d44ea2fdbde1"
+    sha256 arm64_tahoe:       "71e27509f2f5051c193c6dde207ea520cbd24d1f3d7a90664cd67befce73adb1"
+    sha256 arm64_sequoia:     "093990114c593106e24cfd2e289dab0972431ad116963e132ced44a8e89b7bd2"
+    sha256 arm64_sonoma:      "3ca9671420bb9e1e7ad7c7364afc53d20d1dc663332ad74205743dfb35b5191c"
+    sha256 sonoma:            "9bb8fa8d9d96fb01773c04fa564c8b4103c82fbd9e686198dc02944b09b2dbbc"
+    sha256 arm64_linux:       "999824bf55c08a531c0eb124f5fc53f9b9b7b66287cec4243a3ce5c2445f522a"
+    sha256 x86_64_linux:      "b2b5ae6925094b4619cc97902c8bdd27088fbbd78343f5acc4d9fe2b6153d58d"
   end
 
   depends_on "pkgconf" => :build

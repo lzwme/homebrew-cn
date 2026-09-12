@@ -12,12 +12,13 @@ class GoSizeAnalyzer < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6655c1bce45f4d04f11fa3526c6b2f1ee0250aeeb2a9e0c50f0916c696b98c2d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d66109261d10ef85c3a3a0497dac40c7b5037feab6d1cfaafa751fb4fa9a2051"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "01ce94f0408ee5acc85195fc11a785ecd567423a62eb925766eb0ba8f5e55e88"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c9bd216d1dad3540c53972e6a900f880a66734bb3af68ff5371e95d437c361d5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8d0b7d15e1987e25473089abacbb12e28fc2a7c42ee58e4cb6eca7d0256310c6"
-    sha256 cellar: :any,                 x86_64_linux:  "6436688f8162299a030e4ca7501a2ad72aeb01f052823ea9eaab38221ad51f49"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "5f8ed146617feb66997845f0530212e79092fc8ea8705494cb5e7e01c05fd534"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "6655c1bce45f4d04f11fa3526c6b2f1ee0250aeeb2a9e0c50f0916c696b98c2d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "d66109261d10ef85c3a3a0497dac40c7b5037feab6d1cfaafa751fb4fa9a2051"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "01ce94f0408ee5acc85195fc11a785ecd567423a62eb925766eb0ba8f5e55e88"
+    sha256 cellar: :any_skip_relocation, sonoma:            "c9bd216d1dad3540c53972e6a900f880a66734bb3af68ff5371e95d437c361d5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "8d0b7d15e1987e25473089abacbb12e28fc2a7c42ee58e4cb6eca7d0256310c6"
+    sha256 cellar: :any,                 x86_64_linux:      "6436688f8162299a030e4ca7501a2ad72aeb01f052823ea9eaab38221ad51f49"
   end
 
   depends_on "go" => [:build, :test]

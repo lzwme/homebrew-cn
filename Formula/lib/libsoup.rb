@@ -8,12 +8,13 @@ class Libsoup < Formula
 
   bottle do
     rebuild 1
-    sha256 arm64_tahoe:   "5f72f9159dbbe2d66fe9fe9b2dedeacba280390f50d10ff337b35d2343fedf0c"
-    sha256 arm64_sequoia: "85f9669848a5936194b531c35fdbc011ad26b856b235ea0aab0386153694cadc"
-    sha256 arm64_sonoma:  "1b11895e9bc1ae1cb472689c9fdeec59e306adaa9d572bd5bc60529c0cb82d75"
-    sha256 sonoma:        "6829a788855e2989eaa02a3f3cd96f043a8902729d045c9f36f620653c7ef5fd"
-    sha256 arm64_linux:   "f90f3792a0ace929f8b719754fa5fac11cb8fa1677f1e64dd50083bc007ed7a6"
-    sha256 x86_64_linux:  "7ebfdb0452d9fb68b33bc374afe63441ce9ee387f5b666342a617f1074bbf128"
+    sha256 arm64_golden_gate: "8b35fb6221f657509787c02c3d82b05b54d4e9ca66b80a77a12b7e5649e3588d"
+    sha256 arm64_tahoe:       "5f72f9159dbbe2d66fe9fe9b2dedeacba280390f50d10ff337b35d2343fedf0c"
+    sha256 arm64_sequoia:     "85f9669848a5936194b531c35fdbc011ad26b856b235ea0aab0386153694cadc"
+    sha256 arm64_sonoma:      "1b11895e9bc1ae1cb472689c9fdeec59e306adaa9d572bd5bc60529c0cb82d75"
+    sha256 sonoma:            "6829a788855e2989eaa02a3f3cd96f043a8902729d045c9f36f620653c7ef5fd"
+    sha256 arm64_linux:       "f90f3792a0ace929f8b719754fa5fac11cb8fa1677f1e64dd50083bc007ed7a6"
+    sha256 x86_64_linux:      "7ebfdb0452d9fb68b33bc374afe63441ce9ee387f5b666342a617f1074bbf128"
   end
 
   depends_on "gobject-introspection" => :build

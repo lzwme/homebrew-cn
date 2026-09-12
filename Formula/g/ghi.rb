@@ -8,12 +8,13 @@ class Ghi < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a1aae6d56ac822129634f25eb1d4c79c36f4ca5c1995262571d32eb9011bb329"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a1aae6d56ac822129634f25eb1d4c79c36f4ca5c1995262571d32eb9011bb329"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a1aae6d56ac822129634f25eb1d4c79c36f4ca5c1995262571d32eb9011bb329"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a1aae6d56ac822129634f25eb1d4c79c36f4ca5c1995262571d32eb9011bb329"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7d0df5f7842e1c23c55436dfb9943aa7ee93679f7ce59910a2f5d370f9e29e7e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7d0df5f7842e1c23c55436dfb9943aa7ee93679f7ce59910a2f5d370f9e29e7e"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "d8aa99010f86f8871756394c36920cbd7351f292deb823a7172551f34587a9ee"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "a1aae6d56ac822129634f25eb1d4c79c36f4ca5c1995262571d32eb9011bb329"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "a1aae6d56ac822129634f25eb1d4c79c36f4ca5c1995262571d32eb9011bb329"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "a1aae6d56ac822129634f25eb1d4c79c36f4ca5c1995262571d32eb9011bb329"
+    sha256 cellar: :any_skip_relocation, sonoma:            "a1aae6d56ac822129634f25eb1d4c79c36f4ca5c1995262571d32eb9011bb329"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "7d0df5f7842e1c23c55436dfb9943aa7ee93679f7ce59910a2f5d370f9e29e7e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "7d0df5f7842e1c23c55436dfb9943aa7ee93679f7ce59910a2f5d370f9e29e7e"
   end
 
   uses_from_macos "ruby"

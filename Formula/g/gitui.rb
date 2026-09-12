@@ -9,12 +9,13 @@ class Gitui < Formula
   no_autobump! because: :bumped_by_upstream
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "8d680002eec562dc3e551b65df13870ed7c76f12137a47bd797b50bdcd2487d1"
-    sha256 cellar: :any,                 arm64_sequoia: "7cecc7faf77b0a9eb8263cf9bcbc9ac6c9066eafb065b4c6e43188572b9c3061"
-    sha256 cellar: :any,                 arm64_sonoma:  "e4370bb36e12fd616f29ccd1159abe412e3196b3e8d758fdd1b6c04069d63cdd"
-    sha256 cellar: :any,                 sonoma:        "a257d6363277574277a79ac33ec5ce1c9d97531b5137d4ef00d3fac4dd7793f9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b81e6514a38501028d2e54c7d245ac376f2f5f6039e0f1b96ca1bafd5cc9fc01"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c3776e0418c6233796021596efb33de72343bfd36f67c562c347642598d52253"
+    sha256 cellar: :any,                 arm64_golden_gate: "94363557c9932aa35e878d3fa2f8ff41d727e4bad9bf0d3df17dd22b538fa53d"
+    sha256 cellar: :any,                 arm64_tahoe:       "8d680002eec562dc3e551b65df13870ed7c76f12137a47bd797b50bdcd2487d1"
+    sha256 cellar: :any,                 arm64_sequoia:     "7cecc7faf77b0a9eb8263cf9bcbc9ac6c9066eafb065b4c6e43188572b9c3061"
+    sha256 cellar: :any,                 arm64_sonoma:      "e4370bb36e12fd616f29ccd1159abe412e3196b3e8d758fdd1b6c04069d63cdd"
+    sha256 cellar: :any,                 sonoma:            "a257d6363277574277a79ac33ec5ce1c9d97531b5137d4ef00d3fac4dd7793f9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "b81e6514a38501028d2e54c7d245ac376f2f5f6039e0f1b96ca1bafd5cc9fc01"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "c3776e0418c6233796021596efb33de72343bfd36f67c562c347642598d52253"
   end
 
   depends_on "cmake" => :build # for libz-ng-sys

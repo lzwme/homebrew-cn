@@ -19,12 +19,13 @@ class Carla < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "e262b34d4e21d5ca0d5abbd27a19ee022eb195a52c0622c814456e1cd95f1454"
-    sha256 cellar: :any,                 arm64_sequoia: "67daad4cbe5241d8c83ed16f26f4de4f4ca40c737895428da7c0924fb3bf6a6c"
-    sha256 cellar: :any,                 arm64_sonoma:  "3757c8d6ac0389d6181b9dfb7ab66d48dc426bfe310715756f4c6b2fd408f11a"
-    sha256 cellar: :any,                 sonoma:        "cd9c3cfbd45c97b0a82fc238c0dc96a4ba41f523459eddb07d8541319482c8b4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b951b632b5eed8b2600195552a1dea945cc16cc79d8a6a1059fec105f1e0742e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5ed922b11d7bb6755b0745ad5a51fb581909d653263830b41639299272ae3ff3"
+    sha256 cellar: :any,                 arm64_golden_gate: "7d6f12987270ddd4fb3a874402fb5364aee0820766414a711f447036f320f124"
+    sha256 cellar: :any,                 arm64_tahoe:       "e262b34d4e21d5ca0d5abbd27a19ee022eb195a52c0622c814456e1cd95f1454"
+    sha256 cellar: :any,                 arm64_sequoia:     "67daad4cbe5241d8c83ed16f26f4de4f4ca40c737895428da7c0924fb3bf6a6c"
+    sha256 cellar: :any,                 arm64_sonoma:      "3757c8d6ac0389d6181b9dfb7ab66d48dc426bfe310715756f4c6b2fd408f11a"
+    sha256 cellar: :any,                 sonoma:            "cd9c3cfbd45c97b0a82fc238c0dc96a4ba41f523459eddb07d8541319482c8b4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "b951b632b5eed8b2600195552a1dea945cc16cc79d8a6a1059fec105f1e0742e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "5ed922b11d7bb6755b0745ad5a51fb581909d653263830b41639299272ae3ff3"
   end
 
   head do

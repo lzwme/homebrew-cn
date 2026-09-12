@@ -7,12 +7,13 @@ class Gcli < Formula
   head "https://github.com/herrhotzenplotz/gcli.git", branch: "trunk"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "74d37ebad8e191a05263ffe032655f5a0e219308d6422b9514b704899aefd377"
-    sha256 cellar: :any, arm64_sequoia: "9d4ad7fba0f3b7acd2ddb2564b15e0ebc2129b77b6f5fc10492f7a15450ebef9"
-    sha256 cellar: :any, arm64_sonoma:  "da4fe62505adb8f7ee4de20db42a8e06f65fa780302a9b33ef905611a1d0c47d"
-    sha256 cellar: :any, sonoma:        "b18efad19821fb1a2ad7b44a28f0d1f9eee41dda49cb82e8a180752252cb13db"
-    sha256 cellar: :any, arm64_linux:   "1b4e90b7ee1c9a8ed8f3df564588ce9f8c49772e8a5d0f4d049656fb63998087"
-    sha256 cellar: :any, x86_64_linux:  "08bc9ed83025725125b2f7854d0c2989ffa62c3603f40a4a0405bd93c3a16042"
+    sha256 cellar: :any, arm64_golden_gate: "4d43124e3225679e60df4fcac311d712d44e20cb1bccbac96023dad45c0da652"
+    sha256 cellar: :any, arm64_tahoe:       "74d37ebad8e191a05263ffe032655f5a0e219308d6422b9514b704899aefd377"
+    sha256 cellar: :any, arm64_sequoia:     "9d4ad7fba0f3b7acd2ddb2564b15e0ebc2129b77b6f5fc10492f7a15450ebef9"
+    sha256 cellar: :any, arm64_sonoma:      "da4fe62505adb8f7ee4de20db42a8e06f65fa780302a9b33ef905611a1d0c47d"
+    sha256 cellar: :any, sonoma:            "b18efad19821fb1a2ad7b44a28f0d1f9eee41dda49cb82e8a180752252cb13db"
+    sha256 cellar: :any, arm64_linux:       "1b4e90b7ee1c9a8ed8f3df564588ce9f8c49772e8a5d0f4d049656fb63998087"
+    sha256 cellar: :any, x86_64_linux:      "08bc9ed83025725125b2f7854d0c2989ffa62c3603f40a4a0405bd93c3a16042"
   end
 
   depends_on "pkgconf" => :build

@@ -11,11 +11,12 @@ class Minuit2 < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "5b42eee0e3c7cbeb2d1bd99b7fad530ea979de0f5451ce5b2475ce0d8dfe281e"
-    sha256 cellar: :any, arm64_sequoia: "29ac8bb3fd9ff98a216c2eb181c8de0e454cc5fe1a3893aa9b5140b550856f39"
-    sha256 cellar: :any, arm64_sonoma:  "f14bc00bcb166adfa4431e152fe3252b5fa2d041e8d844f077410c9ea25801a3"
-    sha256 cellar: :any, arm64_linux:   "0b206ef5b8e5a7d784ddeca32b842ec91b8bf12e23e5c2dc23052e8a4c612b40"
-    sha256 cellar: :any, x86_64_linux:  "f8aea9c171d574f69115878ddf2026d5e0617bff097e4360b75feec82bfed40f"
+    sha256 cellar: :any, arm64_golden_gate: "56481a57eac7e7c84f56026b5ab780d02e170c6b95a7ce603c2e06d4eaeff4be"
+    sha256 cellar: :any, arm64_tahoe:       "5b42eee0e3c7cbeb2d1bd99b7fad530ea979de0f5451ce5b2475ce0d8dfe281e"
+    sha256 cellar: :any, arm64_sequoia:     "29ac8bb3fd9ff98a216c2eb181c8de0e454cc5fe1a3893aa9b5140b550856f39"
+    sha256 cellar: :any, arm64_sonoma:      "f14bc00bcb166adfa4431e152fe3252b5fa2d041e8d844f077410c9ea25801a3"
+    sha256 cellar: :any, arm64_linux:       "0b206ef5b8e5a7d784ddeca32b842ec91b8bf12e23e5c2dc23052e8a4c612b40"
+    sha256 cellar: :any, x86_64_linux:      "f8aea9c171d574f69115878ddf2026d5e0617bff097e4360b75feec82bfed40f"
   end
 
   depends_on "cmake" => :build

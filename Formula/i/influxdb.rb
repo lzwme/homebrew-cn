@@ -15,11 +15,12 @@ class Influxdb < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "89f6d1376dd2e83a910d01f25722b88b273ef7d94a791fa7a73accb0770efd65"
-    sha256 cellar: :any, arm64_sequoia: "fabeed37e15f862621abd55350078d9bc642745e12072e01ac0bb8febac12c94"
-    sha256 cellar: :any, arm64_sonoma:  "45c139af2bc3f3d6fdcfebfc6b699da5eec255286971283526437e795a5e4b3d"
-    sha256 cellar: :any, arm64_linux:   "618f98e9f29e60f0148be66f440dace876070765a51e17bd5c4602fd4cec153d"
-    sha256 cellar: :any, x86_64_linux:  "56dfe2bdd89ad7e92be696f8b305b498ff5c6d58b62fa47c14f9a39f3668881c"
+    sha256 cellar: :any, arm64_golden_gate: "d8e9c1f4b4d1cffa45b84f1bb1a209b4417a5b2e7bbfe1c49247bfd7a9df27ff"
+    sha256 cellar: :any, arm64_tahoe:       "89f6d1376dd2e83a910d01f25722b88b273ef7d94a791fa7a73accb0770efd65"
+    sha256 cellar: :any, arm64_sequoia:     "fabeed37e15f862621abd55350078d9bc642745e12072e01ac0bb8febac12c94"
+    sha256 cellar: :any, arm64_sonoma:      "45c139af2bc3f3d6fdcfebfc6b699da5eec255286971283526437e795a5e4b3d"
+    sha256 cellar: :any, arm64_linux:       "618f98e9f29e60f0148be66f440dace876070765a51e17bd5c4602fd4cec153d"
+    sha256 cellar: :any, x86_64_linux:      "56dfe2bdd89ad7e92be696f8b305b498ff5c6d58b62fa47c14f9a39f3668881c"
   end
 
   depends_on "pkgconf" => :build

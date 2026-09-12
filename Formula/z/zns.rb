@@ -7,12 +7,13 @@ class Zns < Formula
   head "https://github.com/znscli/zns.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8610f17339cf2a4b507db3de681f008e90d7b05931d5c80fc84e0c7564385e9d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8610f17339cf2a4b507db3de681f008e90d7b05931d5c80fc84e0c7564385e9d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8610f17339cf2a4b507db3de681f008e90d7b05931d5c80fc84e0c7564385e9d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "038b4beebadb645f7bf3b89d208fb90ae191ac34e8cae2708a1dd60107137959"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f1e0666fe60c823f0ae70e36ece6b0db4cc836679207e697634d64eb9167bd1b"
-    sha256 cellar: :any,                 x86_64_linux:  "1c2f347241913ebc20f406d114cbaab4f020186d5dee7abea4960c2cac521825"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "5cee06521d62eb7647bcfde64b003c4c39bc5b24d07e74d16e77888db082beb7"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "8610f17339cf2a4b507db3de681f008e90d7b05931d5c80fc84e0c7564385e9d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "8610f17339cf2a4b507db3de681f008e90d7b05931d5c80fc84e0c7564385e9d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "8610f17339cf2a4b507db3de681f008e90d7b05931d5c80fc84e0c7564385e9d"
+    sha256 cellar: :any_skip_relocation, sonoma:            "038b4beebadb645f7bf3b89d208fb90ae191ac34e8cae2708a1dd60107137959"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "f1e0666fe60c823f0ae70e36ece6b0db4cc836679207e697634d64eb9167bd1b"
+    sha256 cellar: :any,                 x86_64_linux:      "1c2f347241913ebc20f406d114cbaab4f020186d5dee7abea4960c2cac521825"
   end
 
   depends_on "go" => :build

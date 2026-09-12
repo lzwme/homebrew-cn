@@ -3,17 +3,17 @@ class Hf < Formula
 
   desc "Client library for huggingface.co hub"
   homepage "https://huggingface.co/docs/huggingface_hub/guides/cli"
-  url "https://files.pythonhosted.org/packages/35/97/2eb4abaa5b969ed385066a0496a3823b3ff467fc1082e2202955f1867d60/huggingface_hub-1.30.0.tar.gz"
-  sha256 "e6a6120bc8c8e2723d03648434ee247088cceb55ba7067e7d34d692cad5fdb57"
+  url "https://files.pythonhosted.org/packages/9b/f0/61159db90b5cd275d55516fe27920828e7d3be4053fdbdb27c3f70e5f1ef/huggingface_hub-1.31.0.tar.gz"
+  sha256 "f8e9e710a210613fa5d0f26bba6da05ef4aef9fba5a0f23f508f5ac4d08b6f90"
   license "Apache-2.0"
   head "https://github.com/huggingface/huggingface_hub.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "a87d83478cf1a318e13c767fdd3ec67d8a5abc90ff7ada0e825f63bf6671e091"
-    sha256 cellar: :any, arm64_sequoia: "80d02ce7c8c572a3445af0600772ac2f5275e71c4ddc1f18d06e6d4fe70b9427"
-    sha256 cellar: :any, arm64_sonoma:  "ed829ab065c9dfb6d377c5bdc0fe1b49d6a4c1b79c7b79f82334dad046afb989"
-    sha256 cellar: :any, arm64_linux:   "4e480f482443c5af7f8d5fba7e6cd04dd5a82d404ab5d56ec1322ee42acf66f3"
-    sha256 cellar: :any, x86_64_linux:  "3098dbe91b8ebb3d1b893d68880b559ccc241fbaa6502d45c88b0858991d2a0f"
+    sha256 cellar: :any, arm64_golden_gate: "2329013b372203a53abee7a2b586d9712d18b79637a589d691e808b66801065d"
+    sha256 cellar: :any, arm64_tahoe:       "88394715b65620ab9f76210b0f3df76d9fbd4c5cae990121158b4800ccfac800"
+    sha256 cellar: :any, arm64_sequoia:     "929830a712112ebfc92f7ad1c7b6611636d159bfcdc1588c58a91e2f27d68824"
+    sha256 cellar: :any, arm64_linux:       "9b6871bd56229155b60f722cba4b5b61d000cbc6c48cd797815b5c5b8314c08f"
+    sha256 cellar: :any, x86_64_linux:      "442d86bb44982b885323b1b67ed696d39007a7404290efa935345d00e427ec10"
   end
 
   depends_on "pkgconf" => :build
@@ -32,8 +32,8 @@ class Hf < Formula
                 exclude_packages: "certifi"
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/ea/9a/c15a60547004a3f3cea20296c934f827ddd7bdba225a2e7e9fcb5ec48c80/anyio-4.15.0.tar.gz"
-    sha256 "b5c620ed540725e2579c31b17bb995b3bf02c9281c9cace04c7d186380bab85e"
+    url "https://files.pythonhosted.org/packages/a9/d2/f4d173e22df740bc37b1db102b386ba719b66e95b0f0d751f556b387e6d2/anyio-4.15.1.tar.gz"
+    sha256 "9f28306018cbd6d329e64a36d58256edff76dd996fe423bc957326e578b82a94"
   end
 
   resource "click" do
@@ -42,8 +42,8 @@ class Hf < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/0a/a0/50c2c0ce5e74d7721bbb1b19a26ebd339aac5878553a6e35308c2f31f935/filelock-3.32.5.tar.gz"
-    sha256 "f6a6a28f743f9b95ce19db5abe0f376f75eb56517dff21e1a4751e2657d3e83d"
+    url "https://files.pythonhosted.org/packages/38/46/126b1831dca12060d4a8296bf9c4fe5c93c4f22197fa239cb0cc82042bba/filelock-3.32.6.tar.gz"
+    sha256 "a3f55a18af3652a94d8f47d6055df434f254ca1d02ef2524850c6d249ca2512c"
   end
 
   resource "fsspec" do

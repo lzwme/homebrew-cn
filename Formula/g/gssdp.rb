@@ -6,12 +6,13 @@ class Gssdp < Formula
   license "LGPL-2.1-or-later"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "4e0ed096a873cd3c8ccc2407bad5c975aa3b6cbb3e54e309f3457dc779efc926"
-    sha256 cellar: :any, arm64_sequoia: "f23aacffe48fc74672e44f272db8f929911725b0cd6d54b5069b665847825dc3"
-    sha256 cellar: :any, arm64_sonoma:  "f151fbe7b2f92e07dc7768691dddbe2cb5a84cbf6613f7394c571dddbb8ded23"
-    sha256 cellar: :any, sonoma:        "3ae47d87ad29f55685a8eb12eccbf29ef39c9f44b4f5d857875b2befd6bc92c0"
-    sha256               arm64_linux:   "d8f578ef049a3a68fe2a094d8cd6847903a1cd7611ad59534d908ce04374265e"
-    sha256               x86_64_linux:  "a219300565d729549e5774cc58eda097008db267c981d647fc6fbc461a0d73be"
+    sha256 cellar: :any, arm64_golden_gate: "e193e87206ffddd6b3c50aecdb66ad41dd246d9f03ecae3f23cf6a4d025e53ff"
+    sha256 cellar: :any, arm64_tahoe:       "4e0ed096a873cd3c8ccc2407bad5c975aa3b6cbb3e54e309f3457dc779efc926"
+    sha256 cellar: :any, arm64_sequoia:     "f23aacffe48fc74672e44f272db8f929911725b0cd6d54b5069b665847825dc3"
+    sha256 cellar: :any, arm64_sonoma:      "f151fbe7b2f92e07dc7768691dddbe2cb5a84cbf6613f7394c571dddbb8ded23"
+    sha256 cellar: :any, sonoma:            "3ae47d87ad29f55685a8eb12eccbf29ef39c9f44b4f5d857875b2befd6bc92c0"
+    sha256               arm64_linux:       "d8f578ef049a3a68fe2a094d8cd6847903a1cd7611ad59534d908ce04374265e"
+    sha256               x86_64_linux:      "a219300565d729549e5774cc58eda097008db267c981d647fc6fbc461a0d73be"
   end
 
   depends_on "gobject-introspection" => :build

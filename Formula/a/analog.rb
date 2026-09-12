@@ -8,12 +8,13 @@ class Analog < Formula
 
   bottle do
     rebuild 1
-    sha256 arm64_tahoe:   "f22cbd76f12ee0e8c0d4b1796634aca86f5e3201c1803314de1e3c454b5e8c16"
-    sha256 arm64_sequoia: "c00525c34d51ac0b67b85e4f9801ea066182af4d2f43fb6062275c4591a40ebb"
-    sha256 arm64_sonoma:  "0346aa1c3b80936b8bcad80a898283a7094ae5a792def8892500ab07e4a8d96e"
-    sha256 sonoma:        "6225d15ba873ae228f09bfb64ef1a1e4bdaecd6e3dd7d7825a2cc9b470ac4985"
-    sha256 arm64_linux:   "d0050e27757f0c7a60c9a44c28fc8b57b91b0e00a1cbd4abf5e458c1deda9974"
-    sha256 x86_64_linux:  "d0a8c9b27401c61853b013a89a2be2810d9b8dda0b1967270959d0838376b0e5"
+    sha256 arm64_golden_gate: "952f1300bdb7399e17aa89b4b6e02531de058464dc3feebfbba8d283da9475fc"
+    sha256 arm64_tahoe:       "f22cbd76f12ee0e8c0d4b1796634aca86f5e3201c1803314de1e3c454b5e8c16"
+    sha256 arm64_sequoia:     "c00525c34d51ac0b67b85e4f9801ea066182af4d2f43fb6062275c4591a40ebb"
+    sha256 arm64_sonoma:      "0346aa1c3b80936b8bcad80a898283a7094ae5a792def8892500ab07e4a8d96e"
+    sha256 sonoma:            "6225d15ba873ae228f09bfb64ef1a1e4bdaecd6e3dd7d7825a2cc9b470ac4985"
+    sha256 arm64_linux:       "d0050e27757f0c7a60c9a44c28fc8b57b91b0e00a1cbd4abf5e458c1deda9974"
+    sha256 x86_64_linux:      "d0a8c9b27401c61853b013a89a2be2810d9b8dda0b1967270959d0838376b0e5"
   end
 
   depends_on "gd"

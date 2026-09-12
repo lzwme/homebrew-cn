@@ -1,7 +1,7 @@
 class Wdiff < Formula
   desc "Display word differences between text files"
   homepage "https://www.gnu.org/software/wdiff/"
-  url "https://ftpmirror.gnu.org/gnu/wdiff/wdiff-1.2.3.tar.gz"
+  url "https://ftpmirror.gnu.org/wdiff/wdiff-1.2.3.tar.gz"
   mirror "https://ftp.gnu.org/gnu/wdiff/wdiff-1.2.3.tar.gz"
   sha256 "29a4457eb0ed35c902e6732d71f25e1d6c7fe7fa0eda0fb6c371ed6779b49fd6"
   license "GPL-3.0-or-later"

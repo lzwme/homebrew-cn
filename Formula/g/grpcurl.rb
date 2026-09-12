@@ -7,11 +7,12 @@ class Grpcurl < Formula
   head "https://github.com/fullstorydev/grpcurl.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d28c43ea91643dc945ea37b820f1d7677ebf1eaca75eafafbbef930281abe8af"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d28c43ea91643dc945ea37b820f1d7677ebf1eaca75eafafbbef930281abe8af"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d28c43ea91643dc945ea37b820f1d7677ebf1eaca75eafafbbef930281abe8af"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2a53d7cc70c45181bd570774db9800d7c37357b632efd48c5240042eb8f4d1dd"
-    sha256 cellar: :any,                 x86_64_linux:  "a7e35ba2c3a3c3147d5b766575def1a1c8d4edb7330c3e59762bfb382fb0aab4"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "605806917cf60295403f7a448eb73aa3f30e4ec2a77c976aeb3a02cb7ad27b94"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "d28c43ea91643dc945ea37b820f1d7677ebf1eaca75eafafbbef930281abe8af"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "d28c43ea91643dc945ea37b820f1d7677ebf1eaca75eafafbbef930281abe8af"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "d28c43ea91643dc945ea37b820f1d7677ebf1eaca75eafafbbef930281abe8af"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "2a53d7cc70c45181bd570774db9800d7c37357b632efd48c5240042eb8f4d1dd"
+    sha256 cellar: :any,                 x86_64_linux:      "a7e35ba2c3a3c3147d5b766575def1a1c8d4edb7330c3e59762bfb382fb0aab4"
   end
 
   # TODO: unpin go@1.26 when grpcurl supports go 1.27

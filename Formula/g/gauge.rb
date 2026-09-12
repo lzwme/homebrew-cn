@@ -7,12 +7,13 @@ class Gauge < Formula
   head "https://github.com/getgauge/gauge.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a0acfabb077e2b0c8340b8140bcaad9b72bf478912cce5f08509547780e70347"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "61503b7623625ce8322ebe6477a07c0638205d248c882115d85d06a61f68078d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "84ad39fbbf098a06d8e10d61610f35b0af00358e27463d6b36e8eb34480fd604"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9f113b50b439a873bf25ff7fe23b361c629c147505e34dafef39e7bf7d707bdb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b0f13ad2d7b542ccdd89287c8ceec940eb8ad10dcfa56a3cdf9040130290b314"
-    sha256 cellar: :any,                 x86_64_linux:  "48f98380b55daca3445473feae2010e6f80f958b0058cab96de79ec9ec2065fe"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "a381a0b39f35ad95e9415d4701829225b05244fbb5427a172a3999eaeb1a5e28"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "a0acfabb077e2b0c8340b8140bcaad9b72bf478912cce5f08509547780e70347"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "61503b7623625ce8322ebe6477a07c0638205d248c882115d85d06a61f68078d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "84ad39fbbf098a06d8e10d61610f35b0af00358e27463d6b36e8eb34480fd604"
+    sha256 cellar: :any_skip_relocation, sonoma:            "9f113b50b439a873bf25ff7fe23b361c629c147505e34dafef39e7bf7d707bdb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "b0f13ad2d7b542ccdd89287c8ceec940eb8ad10dcfa56a3cdf9040130290b314"
+    sha256 cellar: :any,                 x86_64_linux:      "48f98380b55daca3445473feae2010e6f80f958b0058cab96de79ec9ec2065fe"
   end
 
   depends_on "go" => :build

@@ -22,8 +22,6 @@ class DockerCredentialHelperEcr < Formula
 
   depends_on "go" => :build
 
-  conflicts_with cask: "docker-desktop"
-
   def install
     (buildpath/"GITCOMMIT_SHA").write tap.user
     system "make", "build"

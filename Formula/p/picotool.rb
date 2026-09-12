@@ -20,11 +20,12 @@ class Picotool < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "7369725188e5db055acd76b7bee8cff97ab1cde39760e3f19d7c9b3122341df0"
-    sha256 arm64_sequoia: "74d05844dc6491b153f4f05564d8f0599cfec11de293b134c34f3a3ab9a1569f"
-    sha256 arm64_sonoma:  "2e7ba3ee5af3ab9f28f7757c524a0d777661064697f3760f23c7a66a19969959"
-    sha256 arm64_linux:   "c0dc4abada1def5355cbb1d2c3d9a5e2e22871a001a1c62af7528ccfc6ccec93"
-    sha256 x86_64_linux:  "5a9c06d853733783dbb809f2efcf270a4adc69ff96a390798fa15e9f4791a36b"
+    sha256 arm64_golden_gate: "579fecdf1bd46738398a64f3ba25ce474c8d40cdd3fee0387377085907177235"
+    sha256 arm64_tahoe:       "7369725188e5db055acd76b7bee8cff97ab1cde39760e3f19d7c9b3122341df0"
+    sha256 arm64_sequoia:     "74d05844dc6491b153f4f05564d8f0599cfec11de293b134c34f3a3ab9a1569f"
+    sha256 arm64_sonoma:      "2e7ba3ee5af3ab9f28f7757c524a0d777661064697f3760f23c7a66a19969959"
+    sha256 arm64_linux:       "c0dc4abada1def5355cbb1d2c3d9a5e2e22871a001a1c62af7528ccfc6ccec93"
+    sha256 x86_64_linux:      "5a9c06d853733783dbb809f2efcf270a4adc69ff96a390798fa15e9f4791a36b"
   end
 
   head do
@@ -55,7 +56,7 @@ class Picotool < Formula
     # from https://github.com/raspberrypi/pico-examples?tab=readme-ov-file#first-examples
     resource "homebrew-blink_universal" do
       url "https://datasheets.raspberrypi.com/soft/blink_picow.uf2"
-      sha256 "c2171f11f2d6a8a0b139e551c4e729f5ae3dd33625d58f94252ad5f5bef636d1"
+      sha256 "d1e68082a74d3ffac56bc45b1e2df05810704f2cf7b32d2b0e2519b7dffcfee6"
     end
 
     resource("homebrew-blink_universal").stage do
@@ -66,7 +67,7 @@ class Picotool < Formula
          name:          blink_universal
          web site:      https://github.com/raspberrypi/pico-examples/tree/HEAD/universal/blink_universal
          binary start:  0x10000000
-         binary end:    0x10040494
+         binary end:    0x100403e4
       EOS
       assert_equal result, shell_output("#{bin}/picotool info blink_universal.uf2")
     end

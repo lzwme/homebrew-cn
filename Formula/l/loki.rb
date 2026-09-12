@@ -12,11 +12,12 @@ class Loki < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4b4f9c924c68e847164ca915d670b8b8a895c6808fa1a5b387a87ce8ca4fffad"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9adc62409322e96671b7605946c59c67df0894db1b7fb218563ed0a6c15f8e8d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "df7527e495f6a80a298895c8e4fb3d56d8e2246d71564528b12cea31d8f4ccd9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1cb779bc4c6c2b0200e9ffb35629c57dc0d505f35af46ba4fb9727aaa9404ed4"
-    sha256 cellar: :any,                 x86_64_linux:  "35e1b1374fa7b9490ff3335c35b6b80bcec3abcd83fcc1408d5f506f1f173c09"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "83c1cd5c1361ca548bcc8a3fc8b3d12f21fb4654abef146474d8a569e10a3dc3"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "4b4f9c924c68e847164ca915d670b8b8a895c6808fa1a5b387a87ce8ca4fffad"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "9adc62409322e96671b7605946c59c67df0894db1b7fb218563ed0a6c15f8e8d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "df7527e495f6a80a298895c8e4fb3d56d8e2246d71564528b12cea31d8f4ccd9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "1cb779bc4c6c2b0200e9ffb35629c57dc0d505f35af46ba4fb9727aaa9404ed4"
+    sha256 cellar: :any,                 x86_64_linux:      "35e1b1374fa7b9490ff3335c35b6b80bcec3abcd83fcc1408d5f506f1f173c09"
   end
 
   depends_on "go" => :build

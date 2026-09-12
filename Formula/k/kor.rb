@@ -7,11 +7,12 @@ class Kor < Formula
   head "https://github.com/yonahd/kor.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "dac701ca478b47ae91e0001f3fbdf7c03d6ddf924819f74c38e5c2276d12cc10"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "722638c29705dd0f21a39d0b7e933b56b35b7bf8187b70d06774fc1b76d62d08"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "85716b98a25d177c1a1714be3b14d4551e0230efa841a82d9fe8d384d52fc8b5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "49ec91bfea64cfc3dff65409d393d90caff7ec59f76879cb43cd023990ec6e6b"
-    sha256 cellar: :any,                 x86_64_linux:  "ca4949616867ffc9b820f736f6db8b79ee50bc6f5fa1128d68226d48d1ed100f"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "45f4b3fcf2e3c019f99ff0caac5f656c91907f73a4c074d425007879ff52196b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "dac701ca478b47ae91e0001f3fbdf7c03d6ddf924819f74c38e5c2276d12cc10"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "722638c29705dd0f21a39d0b7e933b56b35b7bf8187b70d06774fc1b76d62d08"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "85716b98a25d177c1a1714be3b14d4551e0230efa841a82d9fe8d384d52fc8b5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "49ec91bfea64cfc3dff65409d393d90caff7ec59f76879cb43cd023990ec6e6b"
+    sha256 cellar: :any,                 x86_64_linux:      "ca4949616867ffc9b820f736f6db8b79ee50bc6f5fa1128d68226d48d1ed100f"
   end
 
   depends_on "go" => :build

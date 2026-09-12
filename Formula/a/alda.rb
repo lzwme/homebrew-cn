@@ -6,11 +6,12 @@ class Alda < Formula
   license "EPL-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4ae0cfb1de4236c47b7048277ecc39fb24cf217baa26914196319688d75db907"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "854aa92cd1cdbca315fdc14123e6faec34444bf33942d99951dfbc417dafb0e4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "eaf5dce3d4beec22fa0fe642a7209cd88b9c3596cc71acd2efd24c5d777421b2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b9983f3345b5d06c46e2fc0fdd02e10a298a63e7fdab3a8ff1b45d93f03f0eeb"
-    sha256 cellar: :any,                 x86_64_linux:  "5d552db8448993f7773c733b3ae7c06e220d405ed713707e429dd19231c4cd5f"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "753e71232f5b05bfee189f0d5b4b59a8b0ef1283f80f4465314c21c1a4514c11"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "4ae0cfb1de4236c47b7048277ecc39fb24cf217baa26914196319688d75db907"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "854aa92cd1cdbca315fdc14123e6faec34444bf33942d99951dfbc417dafb0e4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "eaf5dce3d4beec22fa0fe642a7209cd88b9c3596cc71acd2efd24c5d777421b2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "b9983f3345b5d06c46e2fc0fdd02e10a298a63e7fdab3a8ff1b45d93f03f0eeb"
+    sha256 cellar: :any,                 x86_64_linux:      "5d552db8448993f7773c733b3ae7c06e220d405ed713707e429dd19231c4cd5f"
   end
 
   depends_on "go" => :build

@@ -7,12 +7,13 @@ class Hexyl < Formula
   head "https://github.com/sharkdp/hexyl.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a380040d842d6ced8dc8015f3d9b25d45c5b60f594f4480609d011ef22bd58d5"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6056e76bd579cd03b0658c2afc15be46381cf6329a4fd25b6ee43fc0bfb6be8c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "64c933b2a5bf71487abbfe7d056960955a4eaf30d28040d5745b661e5cddf8d3"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1ddae4d3fad1bc47f842293c728ee099aa4b6e1693a93ccc34b34776ecad6a35"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9ea9567b1f011c966988dec4e0bbfa23e7685733a9b5b938c65302bc19603e91"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b2728e436ddc3e43a3bd757a05c7e375681b8e1e057eb606f151bc9925a7b0ed"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "59feee283046b6bef9f8c644acdeda195773d5432926a2c6b48c7c57f74ea674"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "a380040d842d6ced8dc8015f3d9b25d45c5b60f594f4480609d011ef22bd58d5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "6056e76bd579cd03b0658c2afc15be46381cf6329a4fd25b6ee43fc0bfb6be8c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "64c933b2a5bf71487abbfe7d056960955a4eaf30d28040d5745b661e5cddf8d3"
+    sha256 cellar: :any_skip_relocation, sonoma:            "1ddae4d3fad1bc47f842293c728ee099aa4b6e1693a93ccc34b34776ecad6a35"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "9ea9567b1f011c966988dec4e0bbfa23e7685733a9b5b938c65302bc19603e91"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "b2728e436ddc3e43a3bd757a05c7e375681b8e1e057eb606f151bc9925a7b0ed"
   end
 
   depends_on "pandoc" => :build

@@ -6,12 +6,13 @@ class Miasma < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f0174c6e7f0b4cd6d4149e8aa94a6af7535e46af26994ed2e7a1cc45883082ae"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b7ce39755a5df1acb37f054057d3d4dbc0200737827743318d1be1f31e845af1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "398f0d677a3c7bd055cb7f5592a3c33afd07a47e4bd41ee5057ca179de15a256"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8e7152acb223d6fa6709859b9e3a55e35433f9bc72073d6baa81e67c594c3038"
-    sha256 cellar: :any,                 arm64_linux:   "2812562fcc6b20c65115221be9d5940c1e3908bb02ab2c9dd5a503be63b8182a"
-    sha256 cellar: :any,                 x86_64_linux:  "84bbd60da4749f07badcf4192723bebd2f507689a9ab9bc1015cd1da8dc94cff"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "654efb80c7a2480898374b6e640e4fc11e5ee07056fb0b41d3578b43e2e4ca0d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "f0174c6e7f0b4cd6d4149e8aa94a6af7535e46af26994ed2e7a1cc45883082ae"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "b7ce39755a5df1acb37f054057d3d4dbc0200737827743318d1be1f31e845af1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "398f0d677a3c7bd055cb7f5592a3c33afd07a47e4bd41ee5057ca179de15a256"
+    sha256 cellar: :any_skip_relocation, sonoma:            "8e7152acb223d6fa6709859b9e3a55e35433f9bc72073d6baa81e67c594c3038"
+    sha256 cellar: :any,                 arm64_linux:       "2812562fcc6b20c65115221be9d5940c1e3908bb02ab2c9dd5a503be63b8182a"
+    sha256 cellar: :any,                 x86_64_linux:      "84bbd60da4749f07badcf4192723bebd2f507689a9ab9bc1015cd1da8dc94cff"
   end
 
   depends_on "rust" => :build

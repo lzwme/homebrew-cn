@@ -19,18 +19,19 @@ class Juman < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:    "68ea21f6a0d59d8aaca739e79302615c6dee8dfc5f5f15f6e686a3df478e8372"
-    sha256 arm64_sequoia:  "8db93b953c7cb1eac967bb6b7ef3cce0479f2ebecca298de87b92aa8e5324013"
-    sha256 arm64_sonoma:   "0fe537854a305d8678893c6e15fea60516513470425844c61c33cd378892ca86"
-    sha256 arm64_ventura:  "1b844be8a1ab2d3d1a10245fb3c887c9175a7836c86275ea67b3dfdd8e3abc7e"
-    sha256 arm64_monterey: "cf0f825ad7796245c453f7993f4b7f5d069c4e4eb190ee5fcc46f86ad74f61b5"
-    sha256 arm64_big_sur:  "9b0c1166c946ef258a558961fa82660502d705bbbecf6b8735a805b093802432"
-    sha256 sonoma:         "d2a2aa1611d8028a63e9d2cd8d3eea9c9cf9b66e2e5ee05e4ff5e91b4a34ffa0"
-    sha256 ventura:        "fea60e1ecb3168344e4d5576680b79b76036e6bf19d24553c5cde0c914ec8b1d"
-    sha256 monterey:       "b8076e4c5626f942eff9a9e95ef8f06a9a2e013c344b626b2dc7c30756eb64aa"
-    sha256 big_sur:        "69ca5acb9395c257b591bd6eedde58c0707929af25b767d470dcb5fef786c054"
-    sha256 arm64_linux:    "e04f2b077fb8fbaa2064b621c875966f1c6f8424f5f9c7d6d4ab2cd162b484bd"
-    sha256 x86_64_linux:   "dc72214b5b06cb06dee3a256586b433541d36d3c1af89282952dbdc5e1f232b4"
+    sha256 arm64_golden_gate: "6510aaac5cbcf265ccdb0df6ba65397842cb0b22628b4253b2808d44a961b36e"
+    sha256 arm64_tahoe:       "68ea21f6a0d59d8aaca739e79302615c6dee8dfc5f5f15f6e686a3df478e8372"
+    sha256 arm64_sequoia:     "8db93b953c7cb1eac967bb6b7ef3cce0479f2ebecca298de87b92aa8e5324013"
+    sha256 arm64_sonoma:      "0fe537854a305d8678893c6e15fea60516513470425844c61c33cd378892ca86"
+    sha256 arm64_ventura:     "1b844be8a1ab2d3d1a10245fb3c887c9175a7836c86275ea67b3dfdd8e3abc7e"
+    sha256 arm64_monterey:    "cf0f825ad7796245c453f7993f4b7f5d069c4e4eb190ee5fcc46f86ad74f61b5"
+    sha256 arm64_big_sur:     "9b0c1166c946ef258a558961fa82660502d705bbbecf6b8735a805b093802432"
+    sha256 sonoma:            "d2a2aa1611d8028a63e9d2cd8d3eea9c9cf9b66e2e5ee05e4ff5e91b4a34ffa0"
+    sha256 ventura:           "fea60e1ecb3168344e4d5576680b79b76036e6bf19d24553c5cde0c914ec8b1d"
+    sha256 monterey:          "b8076e4c5626f942eff9a9e95ef8f06a9a2e013c344b626b2dc7c30756eb64aa"
+    sha256 big_sur:           "69ca5acb9395c257b591bd6eedde58c0707929af25b767d470dcb5fef786c054"
+    sha256 arm64_linux:       "e04f2b077fb8fbaa2064b621c875966f1c6f8424f5f9c7d6d4ab2cd162b484bd"
+    sha256 x86_64_linux:      "dc72214b5b06cb06dee3a256586b433541d36d3c1af89282952dbdc5e1f232b4"
   end
 
   head do

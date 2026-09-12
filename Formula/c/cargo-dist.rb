@@ -1,18 +1,17 @@
 class CargoDist < Formula
   desc "Tool for building final distributable artifacts and uploading them to an archive"
   homepage "https://axodotdev.github.io/cargo-dist/"
-  url "https://ghfast.top/https://github.com/axodotdev/cargo-dist/archive/refs/tags/v0.32.0.tar.gz"
-  sha256 "e248d3ab9cc6889494bf84879edbcc91cdd5783857c28c06c3f310d351f6fee5"
+  url "https://ghfast.top/https://github.com/axodotdev/cargo-dist/archive/refs/tags/v0.33.0.tar.gz"
+  sha256 "d715c088d9ad6401d7ccb45a9298469e08f44e20cd6d54f51d5a3ae756836e92"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/axodotdev/cargo-dist.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e9401724938bd5512130da6cf035d9dbc1159909e0a0c7872451cd3a9465fbca"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a091968e10e4121fb767a523e6118992e4dacff1064c42d4273025f24dd3171d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6215878416dc1bc4d857f1b99272e16fadec6e35da426b676ac12c1d85fe2b27"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4eef0b330f1333ec8396b1ace84b3ea1c9bf157c9045403fcde78409d2231d22"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a712b4f417c131c6b1f765b79dad18479f3e7b36d694ef09f2ca021cc1c4085f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e2fbd9fa55f545a1ba6f50edafd9966545c7bf04032eed8e616fdc67caeff42a"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "561e149ec75c641d0fa5d08752f51080344c2d6bde23af692bc7c62a3b59e821"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "999afe2b3f61b3cd7b4bf999f714ada1f96a3fabfb628b55862c55d887d1d859"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "064d1241abcb43af413bfb4495a8147b35411ee3924d6e6dea20582dc3fd8c0e"
+    sha256 cellar: :any,                 arm64_linux:       "f272bf14182768ada993cfddf8797b84b885251056a6190f769ecd55550bf3a3"
+    sha256 cellar: :any,                 x86_64_linux:      "225c70fec9c10c68379fdb4a8aeac2c659d1ee4259935eae720659236399a631"
   end
 
   depends_on "rust" => :build
@@ -27,7 +26,7 @@ class CargoDist < Formula
   test do
     # Show that we can use a different toolchain than the one provided by the `rust` formula.
     # https://github.com/Homebrew/homebrew-core/pull/134074#pullrequestreview-1484979359
-    ENV.prepend_path "PATH", Formula["rustup"].bin
+    ENV.prepend_path "PATH", formula_opt_bin("rustup")
     system "rustup", "set", "profile", "minimal"
     system "rustup", "default", "beta"
 

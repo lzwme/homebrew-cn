@@ -9,12 +9,13 @@ class Keyring < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "05fe88bf0d79ee6a0d4e6794ce2cfb8727b4dccc8e1d850e4fc4218f9ff34c3f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "05fe88bf0d79ee6a0d4e6794ce2cfb8727b4dccc8e1d850e4fc4218f9ff34c3f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "05fe88bf0d79ee6a0d4e6794ce2cfb8727b4dccc8e1d850e4fc4218f9ff34c3f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4bbee0818e804547f13f8da8679f56ed5152477400d22d1a54075338a83a95cc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d5aaaee3ad69593dd4d361f7b7c8cae215288c4e48dbd1d36224aaaf9b242df9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d5aaaee3ad69593dd4d361f7b7c8cae215288c4e48dbd1d36224aaaf9b242df9"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "7d3192fb09f25d565836292b0d5427a780c73058c26d43a1f510435905c080a4"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "05fe88bf0d79ee6a0d4e6794ce2cfb8727b4dccc8e1d850e4fc4218f9ff34c3f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "05fe88bf0d79ee6a0d4e6794ce2cfb8727b4dccc8e1d850e4fc4218f9ff34c3f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "05fe88bf0d79ee6a0d4e6794ce2cfb8727b4dccc8e1d850e4fc4218f9ff34c3f"
+    sha256 cellar: :any_skip_relocation, sonoma:            "4bbee0818e804547f13f8da8679f56ed5152477400d22d1a54075338a83a95cc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "d5aaaee3ad69593dd4d361f7b7c8cae215288c4e48dbd1d36224aaaf9b242df9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "d5aaaee3ad69593dd4d361f7b7c8cae215288c4e48dbd1d36224aaaf9b242df9"
   end
 
   depends_on "python@3.14"

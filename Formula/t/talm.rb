@@ -7,12 +7,13 @@ class Talm < Formula
   head "https://github.com/cozystack/talm.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "aa184a0a78a0e492ac0e31f91bd3e6b848c2ee8a13c3c03c33b5e04314df42d4"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "093605a417b9f7e2e8bef5a64de4b4fc7f1d61285d78075a8f14f236cb20f2ea"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a7836b4c613a73ba46258f3c6977a7c8ce5ae4ba1a274928031abb22debef138"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8a8fbc96a20e24797ed6d48a9ed26f832617cbc3fc9c8e001577d755b81b6a98"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4ad454982bfd720343c01764e6613fa3a1aee0af468ad70c65e895ae553b7746"
-    sha256 cellar: :any,                 x86_64_linux:  "314f67dca38af98c692290742f6f2247481485fca9ad10d7b405e9f140dcbb2e"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "803dc8d1aa79e5c5ce4feeae7569b7da09b24325d398be7675f0f9f1061be2db"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "aa184a0a78a0e492ac0e31f91bd3e6b848c2ee8a13c3c03c33b5e04314df42d4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "093605a417b9f7e2e8bef5a64de4b4fc7f1d61285d78075a8f14f236cb20f2ea"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "a7836b4c613a73ba46258f3c6977a7c8ce5ae4ba1a274928031abb22debef138"
+    sha256 cellar: :any_skip_relocation, sonoma:            "8a8fbc96a20e24797ed6d48a9ed26f832617cbc3fc9c8e001577d755b81b6a98"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "4ad454982bfd720343c01764e6613fa3a1aee0af468ad70c65e895ae553b7746"
+    sha256 cellar: :any,                 x86_64_linux:      "314f67dca38af98c692290742f6f2247481485fca9ad10d7b405e9f140dcbb2e"
   end
 
   depends_on "go" => :build

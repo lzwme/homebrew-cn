@@ -4,14 +4,14 @@ class Shaderc < Formula
   license "Apache-2.0"
 
   stable do
-    url "https://ghfast.top/https://github.com/google/shaderc/archive/refs/tags/v2026.3.tar.gz"
-    sha256 "ee493ccf1b3038b4ef2fe024664c5eb2dc4bcc1f6b05b33e3909de0e19c81024"
+    url "https://ghfast.top/https://github.com/google/shaderc/archive/refs/tags/v2026.4.tar.gz"
+    sha256 "f06ce5bcca94e5df7f34e115743597d0ad2e13c5fe9213c67dc8c76031241947"
 
     resource "glslang" do
       # https://github.com/google/shaderc/blob/DEPS
       url "https://github.com/KhronosGroup/glslang.git",
-          revision: "168d452a4f460d24b588fed08477a81c44ee27a1"
-      version "168d452a4f460d24b588fed08477a81c44ee27a1"
+          revision: "e1b562a8bed273a02f30b59b66a5d499793cede5"
+      version "e1b562a8bed273a02f30b59b66a5d499793cede5"
 
       livecheck do
         url "https://ghfast.top/https://raw.githubusercontent.com/google/shaderc/refs/tags/v#{LATEST_VERSION}/DEPS"
@@ -22,8 +22,8 @@ class Shaderc < Formula
     resource "spirv-headers" do
       # https://github.com/google/shaderc/blob/DEPS
       url "https://github.com/KhronosGroup/SPIRV-Headers.git",
-          revision: "29981f65241605e08b0ede4cfeb999fe3b723c6a"
-      version "29981f65241605e08b0ede4cfeb999fe3b723c6a"
+          revision: "04fd3caa1e8267e4d95c806cad901181728e1006"
+      version "04fd3caa1e8267e4d95c806cad901181728e1006"
 
       livecheck do
         url "https://ghfast.top/https://raw.githubusercontent.com/google/shaderc/refs/tags/v#{LATEST_VERSION}/DEPS"
@@ -34,8 +34,8 @@ class Shaderc < Formula
     resource "spirv-tools" do
       # https://github.com/google/shaderc/blob/DEPS
       url "https://github.com/KhronosGroup/SPIRV-Tools.git",
-          revision: "b707790a898e44038547df54580022fc1cf89c3d"
-      version "b707790a898e44038547df54580022fc1cf89c3d"
+          revision: "ef96ed763b43b59b33b31b362f09a02b729fa1c9"
+      version "ef96ed763b43b59b33b31b362f09a02b729fa1c9"
 
       livecheck do
         url "https://ghfast.top/https://raw.githubusercontent.com/google/shaderc/refs/tags/v#{LATEST_VERSION}/DEPS"
@@ -45,13 +45,11 @@ class Shaderc < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "cfafedc12111009efee4cb580634ce5ad886bed03007d2fbe4aec013217c78cc"
-    sha256 cellar: :any, arm64_tahoe:       "7040868fd148b36391a8be834c7d4ab8b9d3920256fd4a56c5cc78ef5276f3ee"
-    sha256 cellar: :any, arm64_sequoia:     "3219fb7fb97e2dc3802876ec60e54dca44087e67baa7b41931362836c1caf55a"
-    sha256 cellar: :any, arm64_sonoma:      "4606ca8a9125ff47f9c62737c21772a8dd6796801c9418b16e8b757ac335cf3e"
-    sha256 cellar: :any, sonoma:            "56086be512d92867582d5a72558cc524cab54f6c32a95df6606caedd007d79b0"
-    sha256 cellar: :any, arm64_linux:       "48744e766e773a7d4c82d887cea10dc8e06554bb2d0015bf708e9c9c2fd3ebd5"
-    sha256 cellar: :any, x86_64_linux:      "e50d0d6295ad438e3f122127952bc7f1f76474d68dedc259ca8a8b5e94f0e1e9"
+    sha256 cellar: :any, arm64_golden_gate: "463549d39c59ba245f05379667d89e83f223f1b035226926534fc28ede01455e"
+    sha256 cellar: :any, arm64_tahoe:       "12ba0c59a98fb8f671f9473573002b2a812f26d2e60ea4f577f0c8c750c9838a"
+    sha256 cellar: :any, arm64_sequoia:     "1313ffbae9ac1559f7160cc89657ecd5fc324895ff46e15a4bd198ec3bbebec0"
+    sha256 cellar: :any, arm64_linux:       "9ffed598e151f5e279f58a041bd3cea982d2bad8d9f04a7b47abda96f2cdaa14"
+    sha256 cellar: :any, x86_64_linux:      "65e6b619e6cf08aefe36198634c19443f3abde8e1db49ab25dc937884e9f9f80"
   end
 
   head do

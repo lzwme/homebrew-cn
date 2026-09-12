@@ -16,14 +16,15 @@ class Dbus < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "708eed3cc7031e486c760cc9debe777b7e8de93faf74320b66d3bc42e27499c3"
-    sha256 arm64_sequoia: "5a51451acabb5ae56b5682e88a82dfa43cc6a2b653ca068198546bb72324bd0c"
-    sha256 arm64_sonoma:  "1be729814991108cc593bb8472e376947898f8bf94b73271c2238c329514a3ba"
-    sha256 arm64_ventura: "29098b5b3f154677a61c30b402b17fe2912e9efe1cd7917ee6ae754209fe1f29"
-    sha256 sonoma:        "438a1da22c323246b958e0fbc63c5e7405dba77e9274809ebd73ab8c886a19d7"
-    sha256 ventura:       "2f10ec74399e7ffb843022aa22bf11b088ab6b00d34da46d623fca78900f166b"
-    sha256 arm64_linux:   "f636ed77fc07ab232ec75012b8b5a69cee10f8f239d48b1d5622baa83d9d9d7e"
-    sha256 x86_64_linux:  "42841a5373f596cbccd52b4cf3eae4f3ec6a853309b14e36e869a7030fabd21a"
+    sha256 arm64_golden_gate: "a5c1ed4bc84b205b8d161905108ce307b76376037d07d0ce9a6377e7f13d6c38"
+    sha256 arm64_tahoe:       "708eed3cc7031e486c760cc9debe777b7e8de93faf74320b66d3bc42e27499c3"
+    sha256 arm64_sequoia:     "5a51451acabb5ae56b5682e88a82dfa43cc6a2b653ca068198546bb72324bd0c"
+    sha256 arm64_sonoma:      "1be729814991108cc593bb8472e376947898f8bf94b73271c2238c329514a3ba"
+    sha256 arm64_ventura:     "29098b5b3f154677a61c30b402b17fe2912e9efe1cd7917ee6ae754209fe1f29"
+    sha256 sonoma:            "438a1da22c323246b958e0fbc63c5e7405dba77e9274809ebd73ab8c886a19d7"
+    sha256 ventura:           "2f10ec74399e7ffb843022aa22bf11b088ab6b00d34da46d623fca78900f166b"
+    sha256 arm64_linux:       "f636ed77fc07ab232ec75012b8b5a69cee10f8f239d48b1d5622baa83d9d9d7e"
+    sha256 x86_64_linux:      "42841a5373f596cbccd52b4cf3eae4f3ec6a853309b14e36e869a7030fabd21a"
   end
 
   depends_on "docbook" => :build

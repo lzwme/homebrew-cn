@@ -7,12 +7,13 @@ class ContainerUse < Formula
   head "https://github.com/dagger/container-use.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "76b8ffe481648077829aef33f240710acbbdbe6d4e7b3892dbba16289cd943f3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "76b8ffe481648077829aef33f240710acbbdbe6d4e7b3892dbba16289cd943f3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "76b8ffe481648077829aef33f240710acbbdbe6d4e7b3892dbba16289cd943f3"
-    sha256 cellar: :any_skip_relocation, sonoma:        "dabe5a2e7fb92ad5d63699636a910f7d4feb2de91ec170fc72f3321df737c790"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "345e9dc530b7d7dff06c18719845bbf55254a801487175ab319ec6c9271ee6cc"
-    sha256 cellar: :any,                 x86_64_linux:  "7f071936a8825c76f0d343aaa8990f5aab48e2f7450d0938a3c8ac4ba5dce503"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "b49bb50af1e4ca691d212a6ff22cba7b3c633279608cf15af794c5f233291586"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "76b8ffe481648077829aef33f240710acbbdbe6d4e7b3892dbba16289cd943f3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "76b8ffe481648077829aef33f240710acbbdbe6d4e7b3892dbba16289cd943f3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "76b8ffe481648077829aef33f240710acbbdbe6d4e7b3892dbba16289cd943f3"
+    sha256 cellar: :any_skip_relocation, sonoma:            "dabe5a2e7fb92ad5d63699636a910f7d4feb2de91ec170fc72f3321df737c790"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "345e9dc530b7d7dff06c18719845bbf55254a801487175ab319ec6c9271ee6cc"
+    sha256 cellar: :any,                 x86_64_linux:      "7f071936a8825c76f0d343aaa8990f5aab48e2f7450d0938a3c8ac4ba5dce503"
   end
 
   depends_on "go" => :build

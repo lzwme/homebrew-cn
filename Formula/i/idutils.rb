@@ -1,7 +1,7 @@
 class Idutils < Formula
   desc "ID database and query tools"
   homepage "https://www.gnu.org/software/idutils/"
-  url "https://ftpmirror.gnu.org/gnu/idutils/idutils-4.6.tar.xz"
+  url "https://ftpmirror.gnu.org/idutils/idutils-4.6.tar.xz"
   mirror "https://ftp.gnu.org/gnu/idutils/idutils-4.6.tar.xz"
   sha256 "8181f43a4fb62f6f0ccf3b84dbe9bec71ecabd6dfdcf49c6b5584521c888aac2"
   license "GPL-3.0-or-later"
@@ -14,18 +14,19 @@ class Idutils < Formula
 
   bottle do
     rebuild 2
-    sha256 arm64_tahoe:    "e60e746f4261098cdd11898d89c236538d8232579351a5ebad27194c7f3f3784"
-    sha256 arm64_sequoia:  "63d48bcd08d23874fff1f37a66c022c47c10c085549405f4fa8cdb4ba8d34b28"
-    sha256 arm64_sonoma:   "cfeadacc331e01cf64d880d4f9b35a54870ea30594d638b58f245f4cda394469"
-    sha256 arm64_ventura:  "c410f473b777ac344a863267348be1dc14f587c28f6c3a5845cc556ce52ba843"
-    sha256 arm64_monterey: "072b4846a5c749954544e7b747d2951d4ee43a4bd6f024e817ac74743cdeefa7"
-    sha256 arm64_big_sur:  "321fd582b7e17f7f912f76f0b5e8f57d16ebf9ea6c8721854c2567df8136fe28"
-    sha256 sonoma:         "3107240f1d74fde8a91d009fadbdbd2a3e2e0384476735365c9d87a919421d2c"
-    sha256 ventura:        "1d29ee25c018fa81e5cc297091cb8190fa0dbdb54c2ad21c8909cff989e8703c"
-    sha256 monterey:       "e3fc421fedb08ac46a82fb2dd8127f4c7c03c6103d943b53a49e8220406ed157"
-    sha256 big_sur:        "4e20dbb5fa6efb604aba5c3fab7b2fe948517c16569a3c27fa5b314e0d0730bf"
-    sha256 arm64_linux:    "a82f5ffc54658cb4994b62c8db6217395eb90e9b863b2b4de410ef267db66ce9"
-    sha256 x86_64_linux:   "54a8af17aba2695b61bd976d6ae4bf2f13c45cec787b1c14b497080d5bac9ce9"
+    sha256 arm64_golden_gate: "a617538e3559c043cfb79d914f501e19eaf8bda2bd39fb5fef2300dab84d052d"
+    sha256 arm64_tahoe:       "e60e746f4261098cdd11898d89c236538d8232579351a5ebad27194c7f3f3784"
+    sha256 arm64_sequoia:     "63d48bcd08d23874fff1f37a66c022c47c10c085549405f4fa8cdb4ba8d34b28"
+    sha256 arm64_sonoma:      "cfeadacc331e01cf64d880d4f9b35a54870ea30594d638b58f245f4cda394469"
+    sha256 arm64_ventura:     "c410f473b777ac344a863267348be1dc14f587c28f6c3a5845cc556ce52ba843"
+    sha256 arm64_monterey:    "072b4846a5c749954544e7b747d2951d4ee43a4bd6f024e817ac74743cdeefa7"
+    sha256 arm64_big_sur:     "321fd582b7e17f7f912f76f0b5e8f57d16ebf9ea6c8721854c2567df8136fe28"
+    sha256 sonoma:            "3107240f1d74fde8a91d009fadbdbd2a3e2e0384476735365c9d87a919421d2c"
+    sha256 ventura:           "1d29ee25c018fa81e5cc297091cb8190fa0dbdb54c2ad21c8909cff989e8703c"
+    sha256 monterey:          "e3fc421fedb08ac46a82fb2dd8127f4c7c03c6103d943b53a49e8220406ed157"
+    sha256 big_sur:           "4e20dbb5fa6efb604aba5c3fab7b2fe948517c16569a3c27fa5b314e0d0730bf"
+    sha256 arm64_linux:       "a82f5ffc54658cb4994b62c8db6217395eb90e9b863b2b4de410ef267db66ce9"
+    sha256 x86_64_linux:      "54a8af17aba2695b61bd976d6ae4bf2f13c45cec787b1c14b497080d5bac9ce9"
   end
 
   conflicts_with "coreutils", because: "both install `gid` and `gid.1`"

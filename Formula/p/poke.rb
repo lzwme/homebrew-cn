@@ -1,7 +1,7 @@
 class Poke < Formula
   desc "Extensible editor for structured binary data"
   homepage "https://jemarch.net/poke"
-  url "https://ftpmirror.gnu.org/gnu/poke/poke-5.0.tar.gz"
+  url "https://ftpmirror.gnu.org/poke/poke-5.0.tar.gz"
   sha256 "6873d59abe821c8111b88623ea7ad9e090892fa95c75562606dd88374e2f5b8f"
   license "GPL-3.0-or-later"
 

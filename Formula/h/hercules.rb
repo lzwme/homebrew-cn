@@ -8,12 +8,13 @@ class Hercules < Formula
 
   bottle do
     rebuild 1
-    sha256 arm64_tahoe:   "c39ccead16433acc00edfe54721fc9354225596901556828b5771ba04dfb0826"
-    sha256 arm64_sequoia: "d6bf59da64af8e0c785e00a0dd9650079d6a947889a2a6ad11f0db47c095187e"
-    sha256 arm64_sonoma:  "2cb5be7faa77bc9a7f76f183af1c091fac9a34cb062dbf17a17295ecf9c3fd2a"
-    sha256 sonoma:        "50c7c08f9bb643baed46c414771177597cdb56bffccc4c1f9530a0f04bd17092"
-    sha256 arm64_linux:   "7a503644a4ecf23cbf89b23b5fdecd14bff658578b4c86c8dfa302e7752cccdc"
-    sha256 x86_64_linux:  "4d13a5a101f408a41ea50a649a38cf8bf768050dc563f6006a26e3fa971cd8ee"
+    sha256 arm64_golden_gate: "af4fae048c7e916644bb9208eb88822e41f29469b827f0153a1a3be5935dac54"
+    sha256 arm64_tahoe:       "c39ccead16433acc00edfe54721fc9354225596901556828b5771ba04dfb0826"
+    sha256 arm64_sequoia:     "d6bf59da64af8e0c785e00a0dd9650079d6a947889a2a6ad11f0db47c095187e"
+    sha256 arm64_sonoma:      "2cb5be7faa77bc9a7f76f183af1c091fac9a34cb062dbf17a17295ecf9c3fd2a"
+    sha256 sonoma:            "50c7c08f9bb643baed46c414771177597cdb56bffccc4c1f9530a0f04bd17092"
+    sha256 arm64_linux:       "7a503644a4ecf23cbf89b23b5fdecd14bff658578b4c86c8dfa302e7752cccdc"
+    sha256 x86_64_linux:      "4d13a5a101f408a41ea50a649a38cf8bf768050dc563f6006a26e3fa971cd8ee"
   end
 
   depends_on "autoconf" => :build

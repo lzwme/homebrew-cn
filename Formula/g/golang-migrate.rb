@@ -15,11 +15,12 @@ class GolangMigrate < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f1d4da9645c8b04557ef1f5443b07aeb5fc945c953408a7ea991a0109e346dfc"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f95f3754a2615ab06e5140b67320277bb6d3dcae3592da4f8082c6e1ef08d0d0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4202e10d5c045b6917894fe39c61b175f39219e2f567c9bd1c2bc3234061bde8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f47afe0b22a690003393397932ca3ef9d2880844e444af073fa6c7fe3dc19922"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4594b9334c436e49bf4bac371c8702203fba23265a0a4050f96a5522a6b8e672"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "0bfe86f1a15bd6797cef12d9bffe2c1f5ce6ce46b8f7643847d49fb2617c4ab6"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "f1d4da9645c8b04557ef1f5443b07aeb5fc945c953408a7ea991a0109e346dfc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "f95f3754a2615ab06e5140b67320277bb6d3dcae3592da4f8082c6e1ef08d0d0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "4202e10d5c045b6917894fe39c61b175f39219e2f567c9bd1c2bc3234061bde8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "f47afe0b22a690003393397932ca3ef9d2880844e444af073fa6c7fe3dc19922"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "4594b9334c436e49bf4bac371c8702203fba23265a0a4050f96a5522a6b8e672"
   end
 
   depends_on "go" => :build

@@ -19,12 +19,13 @@ class Taplo < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "45ab756df1ba17d564eb5b5132320bd54ed6ce1c87ecd6cc4f060b7c9f464bfb"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d7f802f8658952140d83d60e0c62d3b09532db224f749bd46d4969e094661aea"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "468cd6fc7d2fd6604bf1b77b860ab1e0317807aaf799d39810d9ca346029d82f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e8e895325722a9a4e7b1c9902f7dea8f9b72091a80433d60090adabc1acae3c7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4a293f793e6cec6d14e69208ccd45c6190ba4c7e5bf5e38ea9c53d1724d7d1d3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "28b439cd3525654a6c40bcd74bf47a6f611450daa36f51172991beacb505104e"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "083349d35d830f8d6551da50beabc7d224fb06102b1b6fd87d0593ed40aed902"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "45ab756df1ba17d564eb5b5132320bd54ed6ce1c87ecd6cc4f060b7c9f464bfb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "d7f802f8658952140d83d60e0c62d3b09532db224f749bd46d4969e094661aea"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "468cd6fc7d2fd6604bf1b77b860ab1e0317807aaf799d39810d9ca346029d82f"
+    sha256 cellar: :any_skip_relocation, sonoma:            "e8e895325722a9a4e7b1c9902f7dea8f9b72091a80433d60090adabc1acae3c7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "4a293f793e6cec6d14e69208ccd45c6190ba4c7e5bf5e38ea9c53d1724d7d1d3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "28b439cd3525654a6c40bcd74bf47a6f611450daa36f51172991beacb505104e"
   end
 
   depends_on "rust" => :build

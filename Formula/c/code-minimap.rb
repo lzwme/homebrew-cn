@@ -7,14 +7,15 @@ class CodeMinimap < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "97083f16317681dbf3befcdddd9ed9810fc25c2d9296f372b7b05387d3570342"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3716b4399f2bf71a5152c87ec0c92b3c5303294219d8da389df76a13d9717276"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dd478a065e694fc8adb510435dc95b6d208687e21c8dc0a5c62fad2649ec1e9d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "85d8ed4137ca95bc5f7460e53888d5ada7def591e478d05341d0fd8cc0474a25"
-    sha256 cellar: :any_skip_relocation, sonoma:        "83ddd0a6939195e5989578e2040ea16117c4dfbbb71be9112f7e0afac7496280"
-    sha256 cellar: :any_skip_relocation, ventura:       "d8195bd613d46d3ed7941deb5a442b3db073a7a663796ad24d4cde971ece9f6f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9eff4702e7834b9189408f5427607ec63a01517e9d977e81fe66b202fe039fa2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "15fc2163649169a8c43ac0fafa401259eee14214593ec73cbf82911631d443eb"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "c51817cb8ef4b7418a45ba58506beffdb19928f2cff5988f6a071e21ecda6e0d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "97083f16317681dbf3befcdddd9ed9810fc25c2d9296f372b7b05387d3570342"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "3716b4399f2bf71a5152c87ec0c92b3c5303294219d8da389df76a13d9717276"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "dd478a065e694fc8adb510435dc95b6d208687e21c8dc0a5c62fad2649ec1e9d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:     "85d8ed4137ca95bc5f7460e53888d5ada7def591e478d05341d0fd8cc0474a25"
+    sha256 cellar: :any_skip_relocation, sonoma:            "83ddd0a6939195e5989578e2040ea16117c4dfbbb71be9112f7e0afac7496280"
+    sha256 cellar: :any_skip_relocation, ventura:           "d8195bd613d46d3ed7941deb5a442b3db073a7a663796ad24d4cde971ece9f6f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "9eff4702e7834b9189408f5427607ec63a01517e9d977e81fe66b202fe039fa2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "15fc2163649169a8c43ac0fafa401259eee14214593ec73cbf82911631d443eb"
   end
 
   depends_on "rust" => :build

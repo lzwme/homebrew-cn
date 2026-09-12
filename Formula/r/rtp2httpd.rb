@@ -1,17 +1,17 @@
 class Rtp2httpd < Formula
   desc "Multicast RTP/RTSP-to-HTTP converter with web player and status dashboard"
   homepage "https://rtp2httpd.com"
-  url "https://ghfast.top/https://github.com/stackia/rtp2httpd/archive/refs/tags/v3.17.0.tar.gz"
-  sha256 "37d1914aa6672fc43f65b3e242a6138e741345ad19cfb774ad32e6d46e77f12a"
+  url "https://ghfast.top/https://github.com/stackia/rtp2httpd/archive/refs/tags/v3.17.1.tar.gz"
+  sha256 "80a79f148f8a6fc412dcfe2d45b4b552869a4a98f21b3128eafe75933580a740"
   license "GPL-2.0-only"
   head "https://github.com/stackia/rtp2httpd.git", branch: "main"
 
   bottle do
-    sha256 arm64_tahoe:   "f3e396645bb09080ecdd1d308283ae888d5bcecc942b98dd2d05b31d825b9728"
-    sha256 arm64_sequoia: "8095d19b38a6eacd30c2ab60993ef6431c59849c6933a6c164aac308e1c5c49d"
-    sha256 arm64_sonoma:  "fa17cb3189e6973c14b8352d299b22c4566c3a363d5c284336d3ea40457c89cd"
-    sha256 arm64_linux:   "7c1814a700c4e27f1278b4e5bb758b1ccfed26832efdff646f7bc70ac866309f"
-    sha256 x86_64_linux:  "5abb3dc403b16a2248b4bbb45df2ca61a2afc5b58c2b5792b691823d6471724f"
+    sha256 arm64_golden_gate: "34477769de722d1843291111fda61fe95a0378aca47b9b6cf3d1e7b2c42458c6"
+    sha256 arm64_tahoe:       "7ef053b508c37f9e4f101a6b7bd966c3a8d564cdcdc48447ac36bb246e6b6d4e"
+    sha256 arm64_sequoia:     "6b9873dd134c820ebdccaf95a541ac9f6afb86487c7d1419e9df3e11b37353a1"
+    sha256 arm64_linux:       "b8aab95f2e86e0ea69524e10778f46f5f14c3dfad6f6bee0abaa6ed03a21bf6b"
+    sha256 x86_64_linux:      "ed2f2a334e399a1521bdcf32ec0ce025cd9b92c4edc8e5b2b6c84a5931cf7aa0"
   end
 
   depends_on "cmake" => :build

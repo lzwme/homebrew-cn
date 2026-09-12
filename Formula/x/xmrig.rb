@@ -12,12 +12,13 @@ class Xmrig < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "692f6ffb157058a5aaa59129c0d89bc74092c983c3b6b3a01af358f6727feb2f"
-    sha256 cellar: :any,                 arm64_sequoia: "42d39fb1d004624f28b37d5b4b8c83346872bbdb6e3b377b4fcead6a1392d5f3"
-    sha256 cellar: :any,                 arm64_sonoma:  "f5cd258c8fb7cba3df39ee774010fc39a6eb3942a6f57e3e42aa19da9929aeb0"
-    sha256 cellar: :any,                 sonoma:        "174150b95684a5c1028b8e357b1ee237bd6a8f05fe0449272ced4890b052661d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "739a3ddf564aa207c96c05746aeed50a8b7dd9497adf9572e044984f2d5d52b7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "eb396eb41ae6942456d4aacef16ae8d0fb7a3e3b348e6406ec36f2cdd3dc8205"
+    sha256 cellar: :any,                 arm64_golden_gate: "e23e6ab960024205e463748af2410c559c71ebf6e9f258712bd68cd34ac9eead"
+    sha256 cellar: :any,                 arm64_tahoe:       "692f6ffb157058a5aaa59129c0d89bc74092c983c3b6b3a01af358f6727feb2f"
+    sha256 cellar: :any,                 arm64_sequoia:     "42d39fb1d004624f28b37d5b4b8c83346872bbdb6e3b377b4fcead6a1392d5f3"
+    sha256 cellar: :any,                 arm64_sonoma:      "f5cd258c8fb7cba3df39ee774010fc39a6eb3942a6f57e3e42aa19da9929aeb0"
+    sha256 cellar: :any,                 sonoma:            "174150b95684a5c1028b8e357b1ee237bd6a8f05fe0449272ced4890b052661d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "739a3ddf564aa207c96c05746aeed50a8b7dd9497adf9572e044984f2d5d52b7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "eb396eb41ae6942456d4aacef16ae8d0fb7a3e3b348e6406ec36f2cdd3dc8205"
   end
 
   depends_on "cmake" => :build

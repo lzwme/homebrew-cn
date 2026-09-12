@@ -6,12 +6,13 @@ class Vsearch < Formula
   license any_of: ["BSD-2-Clause", "GPL-3.0-or-later"]
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8d8b9ab0f3fde61175c373245f0e87d9ca5d996f7c89e23123604f5e12dc59a4"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8eca6b41c114b6f5caa08784fdacbc5e5b5fc4b260d714a3500d3af913304882"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "badaa33b7f2042eb49aec8e6555752dbc04d6b4cce4580410da57f5d173f094c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9593902fc009f2dc112f7f3233cbaa4ee7420aaa0b2826c011201748a6468dcc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "331d36a94997b9dc1ad271f5457878bb198279c480e1817145ed52765413ddfc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "50091454f90a2d9abe9135c52f104b5b88effe51c34335ea7e4a0f7f1361cfd1"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "52f18998384108cf3bc9e54d42cb3fd6c0bb38bd60ac4a0e3088a5b11e32403e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "8d8b9ab0f3fde61175c373245f0e87d9ca5d996f7c89e23123604f5e12dc59a4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "8eca6b41c114b6f5caa08784fdacbc5e5b5fc4b260d714a3500d3af913304882"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "badaa33b7f2042eb49aec8e6555752dbc04d6b4cce4580410da57f5d173f094c"
+    sha256 cellar: :any_skip_relocation, sonoma:            "9593902fc009f2dc112f7f3233cbaa4ee7420aaa0b2826c011201748a6468dcc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "331d36a94997b9dc1ad271f5457878bb198279c480e1817145ed52765413ddfc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "50091454f90a2d9abe9135c52f104b5b88effe51c34335ea7e4a0f7f1361cfd1"
   end
 
   depends_on "autoconf" => :build

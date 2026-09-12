@@ -12,12 +12,13 @@ class Log4cplus < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "07ec8458d8fafe33456f89aa369d210251a628d10ed88178dc84ec8213921a87"
-    sha256 cellar: :any, arm64_sequoia: "f40b340b18178583be8c3882541d8a58ed295c44d3356933ca4733c40e5679bd"
-    sha256 cellar: :any, arm64_sonoma:  "36d985fe7364c0076b14c8101ca1ddbda683aff45db29af264186616461b3631"
-    sha256 cellar: :any, sonoma:        "1da953d64d8c3095388e513870700067167f8c49a92331aba82ffc72d92426f2"
-    sha256 cellar: :any, arm64_linux:   "32fbbc54d41fb1786f4fda79eeb9a4175509c7b7eb8fb1032a16ffae7074ea13"
-    sha256 cellar: :any, x86_64_linux:  "a55d59db05f1d3017723b0e30c7ce625952bceff65cdd7d543b31814c8c0b50f"
+    sha256 cellar: :any, arm64_golden_gate: "3cdc8d0c63dbe23f0b1d0748634564bb63e72980b09d138758a2f6e804f5d545"
+    sha256 cellar: :any, arm64_tahoe:       "07ec8458d8fafe33456f89aa369d210251a628d10ed88178dc84ec8213921a87"
+    sha256 cellar: :any, arm64_sequoia:     "f40b340b18178583be8c3882541d8a58ed295c44d3356933ca4733c40e5679bd"
+    sha256 cellar: :any, arm64_sonoma:      "36d985fe7364c0076b14c8101ca1ddbda683aff45db29af264186616461b3631"
+    sha256 cellar: :any, sonoma:            "1da953d64d8c3095388e513870700067167f8c49a92331aba82ffc72d92426f2"
+    sha256 cellar: :any, arm64_linux:       "32fbbc54d41fb1786f4fda79eeb9a4175509c7b7eb8fb1032a16ffae7074ea13"
+    sha256 cellar: :any, x86_64_linux:      "a55d59db05f1d3017723b0e30c7ce625952bceff65cdd7d543b31814c8c0b50f"
   end
 
   depends_on "pkgconf" => [:build, :test]

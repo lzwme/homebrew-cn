@@ -6,12 +6,13 @@ class OsmGpsMap < Formula
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256               arm64_tahoe:   "bdd8de2894986d597f3bd66c3a51c2cab55256b6e5cf16871e3bb1a60ef69428"
-    sha256               arm64_sequoia: "fd1c1933d296a9cc05ed9bb2a3e3349f0bcb90d493ce35849b3f86bb0051ac46"
-    sha256               arm64_sonoma:  "b4f804b3ecc408958cbd01df994c4c4af8a97e6f5337d7d8f66a23090943256e"
-    sha256               sonoma:        "e5c7bc673363392b5e3f76e4f5ab27711f1d9cd37397e6bd279b95f5176774af"
-    sha256 cellar: :any, arm64_linux:   "7bee7a5fd377ceff39f2f406ca5331d80cc389ced2febea2914b89d813b5b019"
-    sha256 cellar: :any, x86_64_linux:  "a0b65784639acb4e288c00fe6fd6422fb239a42e601f549dfd27d04302fb83dd"
+    sha256               arm64_golden_gate: "6041b650bcf21e9d19ba35e376f123cf6f5818827b067276156320b507f0ac24"
+    sha256               arm64_tahoe:       "bdd8de2894986d597f3bd66c3a51c2cab55256b6e5cf16871e3bb1a60ef69428"
+    sha256               arm64_sequoia:     "fd1c1933d296a9cc05ed9bb2a3e3349f0bcb90d493ce35849b3f86bb0051ac46"
+    sha256               arm64_sonoma:      "b4f804b3ecc408958cbd01df994c4c4af8a97e6f5337d7d8f66a23090943256e"
+    sha256               sonoma:            "e5c7bc673363392b5e3f76e4f5ab27711f1d9cd37397e6bd279b95f5176774af"
+    sha256 cellar: :any, arm64_linux:       "7bee7a5fd377ceff39f2f406ca5331d80cc389ced2febea2914b89d813b5b019"
+    sha256 cellar: :any, x86_64_linux:      "a0b65784639acb4e288c00fe6fd6422fb239a42e601f549dfd27d04302fb83dd"
   end
 
   head do

@@ -8,11 +8,12 @@ class Yozefu < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "47f17cfa36c7555cf00f49c4005382e1a3a155dc727a2625251106cbb2b7f925"
-    sha256 cellar: :any, arm64_sequoia: "7de4db2a95f0f618fe83a4afe9589aaea038a160df701eadf8595d7df2e19437"
-    sha256 cellar: :any, arm64_sonoma:  "ec2ff63fa9f94d2f11f673d27ad8044af197063d6a730815da4e8388cdccccde"
-    sha256 cellar: :any, arm64_linux:   "0e97798f2ba843c5844bde7c2f2f60f58d51624a273ed1d77377618ab3551826"
-    sha256 cellar: :any, x86_64_linux:  "b03abe99405ec7e4d86e5dcd2b3fe06e9c9e65353d1e525c13e8375dd1191e15"
+    sha256 cellar: :any, arm64_golden_gate: "bb9063e143d001351210e40c462f9d9ee30e9372e9ecafcdd8b91d96d76a0247"
+    sha256 cellar: :any, arm64_tahoe:       "47f17cfa36c7555cf00f49c4005382e1a3a155dc727a2625251106cbb2b7f925"
+    sha256 cellar: :any, arm64_sequoia:     "7de4db2a95f0f618fe83a4afe9589aaea038a160df701eadf8595d7df2e19437"
+    sha256 cellar: :any, arm64_sonoma:      "ec2ff63fa9f94d2f11f673d27ad8044af197063d6a730815da4e8388cdccccde"
+    sha256 cellar: :any, arm64_linux:       "0e97798f2ba843c5844bde7c2f2f60f58d51624a273ed1d77377618ab3551826"
+    sha256 cellar: :any, x86_64_linux:      "b03abe99405ec7e4d86e5dcd2b3fe06e9c9e65353d1e525c13e8375dd1191e15"
   end
 
   depends_on "cmake" => :build

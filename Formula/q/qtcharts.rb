@@ -17,11 +17,12 @@ class Qtcharts < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "55cd21d5aabb9054bc4b5b4c636e11673ae5b64e4c64c30c7b5d451aab896894"
-    sha256 cellar: :any, arm64_sequoia: "5b9e76246c981f27b5d95ece260b29cc564f0199b1facf350fd8548dd215c4ef"
-    sha256 cellar: :any, arm64_sonoma:  "35c7a54bbe9f1a5983e9b399d238b0279f59c5f42c910ba4a90744745a3a121e"
-    sha256 cellar: :any, arm64_linux:   "741cc18c6980e9932e7506dcd760c9291e21a58c2ffad743bf04bfdf86f53ea0"
-    sha256 cellar: :any, x86_64_linux:  "3733598b81ec52a7a804b547b95f537809fd6aa92e0fd31a46430d08e38197b8"
+    sha256 cellar: :any, arm64_golden_gate: "e99f7f19c23d9c1a1a9d9b19e022151f2aba9ad9622d1ba6c9c6b2152962ed80"
+    sha256 cellar: :any, arm64_tahoe:       "55cd21d5aabb9054bc4b5b4c636e11673ae5b64e4c64c30c7b5d451aab896894"
+    sha256 cellar: :any, arm64_sequoia:     "5b9e76246c981f27b5d95ece260b29cc564f0199b1facf350fd8548dd215c4ef"
+    sha256 cellar: :any, arm64_sonoma:      "35c7a54bbe9f1a5983e9b399d238b0279f59c5f42c910ba4a90744745a3a121e"
+    sha256 cellar: :any, arm64_linux:       "741cc18c6980e9932e7506dcd760c9291e21a58c2ffad743bf04bfdf86f53ea0"
+    sha256 cellar: :any, x86_64_linux:      "3733598b81ec52a7a804b547b95f537809fd6aa92e0fd31a46430d08e38197b8"
   end
 
   depends_on "cmake" => [:build, :test]

@@ -6,12 +6,13 @@ class Libpeas < Formula
   license "LGPL-2.1-or-later"
 
   bottle do
-    sha256 arm64_tahoe:   "25e90353ab4047dcdcd86f39a5250782ec85ce114e22ecd8e3f3ac774776c639"
-    sha256 arm64_sequoia: "eb3808c00abea9c9940066eef5e74e99e6f5eb6437dde1f77ec05349e9dc2883"
-    sha256 arm64_sonoma:  "5ede67a9e6ce599ff4ff84b6e1ea812c855e896b37c18525a3dadc9fd4b499a1"
-    sha256 sonoma:        "5f46e154e05f3c81023e0fa73e12a37fe5681dd886341889d0a67fa593d3ca8b"
-    sha256 arm64_linux:   "43c8a171cf58ee1a08460b6de1e5c62c6da8b5c9c4637358030bccbdad6db965"
-    sha256 x86_64_linux:  "0cc9daa94412c7c78a5538173c5cb2d6ae3b68bff551364e599739bef6db0c9d"
+    sha256 arm64_golden_gate: "9cf39893b9ccd59722e2a58783577a913e8e020f13279e9a07ca26a1c0f66e26"
+    sha256 arm64_tahoe:       "25e90353ab4047dcdcd86f39a5250782ec85ce114e22ecd8e3f3ac774776c639"
+    sha256 arm64_sequoia:     "eb3808c00abea9c9940066eef5e74e99e6f5eb6437dde1f77ec05349e9dc2883"
+    sha256 arm64_sonoma:      "5ede67a9e6ce599ff4ff84b6e1ea812c855e896b37c18525a3dadc9fd4b499a1"
+    sha256 sonoma:            "5f46e154e05f3c81023e0fa73e12a37fe5681dd886341889d0a67fa593d3ca8b"
+    sha256 arm64_linux:       "43c8a171cf58ee1a08460b6de1e5c62c6da8b5c9c4637358030bccbdad6db965"
+    sha256 x86_64_linux:      "0cc9daa94412c7c78a5538173c5cb2d6ae3b68bff551364e599739bef6db0c9d"
   end
 
   depends_on "meson" => :build

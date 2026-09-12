@@ -12,18 +12,19 @@ class Ipsumdump < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:    "4b887c63e1aec769b9142c42cc8e5ddbb8020ab232604111f635c06e4a61ba6d"
-    sha256 arm64_sequoia:  "df39ad78cb2e3dbca54558205978fc4c39ffee8b17f11027f51c62dab42b9da7"
-    sha256 arm64_sonoma:   "009a39b4f09dc2d72956618d85b8981ec8288b7320a4072799b670b72c863680"
-    sha256 arm64_ventura:  "e6643af43d1106c2e50a60b58d80997e52623dcfeab558f26e0045ba16a74ecc"
-    sha256 arm64_monterey: "1494705fff0bb7937d74557efd7484896a8c87133dad9a4e40ee2ee5b5da67eb"
-    sha256 arm64_big_sur:  "6348649ec33f562a3622f97fb7b253d39ed8b3f919a9aa2af8fa84b8d67d765a"
-    sha256 sonoma:         "ed6f33b6662a53b8f5fa73dbceff2a2ecafdc517dbc986ad6e091cf74201d2c9"
-    sha256 ventura:        "3b5c4c6d9645971bdb31dbaf9e2fa6feae366d34bf2c1d6720af1d8cd77a9062"
-    sha256 monterey:       "421b6575ab2ea358e7dadb1d43f2519efb2e8f8353260c3e2b83e7d4610d3841"
-    sha256 big_sur:        "f3302bce45a3eed980b7c07d05eabc9088a469cd07528c5e1f32a52474b6383a"
-    sha256 arm64_linux:    "64cca494a61a1849068d908106a059039b47fe6bae0504056995c2af2f43e2fd"
-    sha256 x86_64_linux:   "27e438253bf0b215381e8f27d3898eab9e905181266347997c5f59cfdc46175a"
+    sha256 arm64_golden_gate: "f44556d6832eb946a39ff748c18af74bab843c5adc544549137d4be4f5a407d7"
+    sha256 arm64_tahoe:       "4b887c63e1aec769b9142c42cc8e5ddbb8020ab232604111f635c06e4a61ba6d"
+    sha256 arm64_sequoia:     "df39ad78cb2e3dbca54558205978fc4c39ffee8b17f11027f51c62dab42b9da7"
+    sha256 arm64_sonoma:      "009a39b4f09dc2d72956618d85b8981ec8288b7320a4072799b670b72c863680"
+    sha256 arm64_ventura:     "e6643af43d1106c2e50a60b58d80997e52623dcfeab558f26e0045ba16a74ecc"
+    sha256 arm64_monterey:    "1494705fff0bb7937d74557efd7484896a8c87133dad9a4e40ee2ee5b5da67eb"
+    sha256 arm64_big_sur:     "6348649ec33f562a3622f97fb7b253d39ed8b3f919a9aa2af8fa84b8d67d765a"
+    sha256 sonoma:            "ed6f33b6662a53b8f5fa73dbceff2a2ecafdc517dbc986ad6e091cf74201d2c9"
+    sha256 ventura:           "3b5c4c6d9645971bdb31dbaf9e2fa6feae366d34bf2c1d6720af1d8cd77a9062"
+    sha256 monterey:          "421b6575ab2ea358e7dadb1d43f2519efb2e8f8353260c3e2b83e7d4610d3841"
+    sha256 big_sur:           "f3302bce45a3eed980b7c07d05eabc9088a469cd07528c5e1f32a52474b6383a"
+    sha256 arm64_linux:       "64cca494a61a1849068d908106a059039b47fe6bae0504056995c2af2f43e2fd"
+    sha256 x86_64_linux:      "27e438253bf0b215381e8f27d3898eab9e905181266347997c5f59cfdc46175a"
   end
 
   # add missing definition for SIOCGSTAMP to support linux arm build

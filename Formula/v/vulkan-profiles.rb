@@ -12,12 +12,13 @@ class VulkanProfiles < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "ba8531a6ca81c6feed8694247f79b20c3449dce1f9da369dab1579e958d27069"
-    sha256 cellar: :any, arm64_sequoia: "e9378f588eff60b4033b53e57432657b02eae60ab87a33b6c53fbbd892faaeee"
-    sha256 cellar: :any, arm64_sonoma:  "b8293e8fa07a8e96129c8561c7b5c696d3bcc7977d181f818eca8348852703e3"
-    sha256 cellar: :any, sonoma:        "42bc6fbc0e2ecf0bb0bb8d7cd24f4aaf588a66db3a2fcb813bd81e73ea06d52a"
-    sha256 cellar: :any, arm64_linux:   "63eb783b015a564896c9d198a0564083b42e5a4973ce6c17b05709a6b2a6a098"
-    sha256 cellar: :any, x86_64_linux:  "93a0602a6878a0b633d70659007f0cbca08e65bc85deafcee1d49bd2d7f4d6a9"
+    sha256 cellar: :any, arm64_golden_gate: "1737c76328da01ba0bf20d969103653d2a281aec0c946a3e3aea73b20a47e956"
+    sha256 cellar: :any, arm64_tahoe:       "ba8531a6ca81c6feed8694247f79b20c3449dce1f9da369dab1579e958d27069"
+    sha256 cellar: :any, arm64_sequoia:     "e9378f588eff60b4033b53e57432657b02eae60ab87a33b6c53fbbd892faaeee"
+    sha256 cellar: :any, arm64_sonoma:      "b8293e8fa07a8e96129c8561c7b5c696d3bcc7977d181f818eca8348852703e3"
+    sha256 cellar: :any, sonoma:            "42bc6fbc0e2ecf0bb0bb8d7cd24f4aaf588a66db3a2fcb813bd81e73ea06d52a"
+    sha256 cellar: :any, arm64_linux:       "63eb783b015a564896c9d198a0564083b42e5a4973ce6c17b05709a6b2a6a098"
+    sha256 cellar: :any, x86_64_linux:      "93a0602a6878a0b633d70659007f0cbca08e65bc85deafcee1d49bd2d7f4d6a9"
   end
 
   depends_on "cmake" => :build

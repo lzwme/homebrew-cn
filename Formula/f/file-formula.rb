@@ -13,12 +13,13 @@ class FileFormula < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "20a86cf7e73bf15221d571d5ccb0c27d7a4dbdbb1b0dd442cf335f3010db6735"
-    sha256 cellar: :any, arm64_sequoia: "b63a49e329af2af9c2f587b5f1ce1a2ee11306328debb50f2a06dfc7d1158668"
-    sha256 cellar: :any, arm64_sonoma:  "7721c56b96dba8e3a8c1e03bd48b8481362c46b14e9583a124882077a075846c"
-    sha256 cellar: :any, sonoma:        "c41ae633056c3a2a3994ce3c5490848966687f3018ceb86a0edec6005e55de39"
-    sha256 cellar: :any, arm64_linux:   "28737ef77e9a3aeac34605aa8babc7413ac91e8b67f6c73386caefec16e7f4c8"
-    sha256 cellar: :any, x86_64_linux:  "30457786f6ab679e297d69f774fbfd97b545bc0401d569d27274ecb3c8f90bae"
+    sha256 cellar: :any, arm64_golden_gate: "35b1e7ac74e2ecf8759d3181357de9f78ee09ef6b1db5d058113fa23b981fa45"
+    sha256 cellar: :any, arm64_tahoe:       "20a86cf7e73bf15221d571d5ccb0c27d7a4dbdbb1b0dd442cf335f3010db6735"
+    sha256 cellar: :any, arm64_sequoia:     "b63a49e329af2af9c2f587b5f1ce1a2ee11306328debb50f2a06dfc7d1158668"
+    sha256 cellar: :any, arm64_sonoma:      "7721c56b96dba8e3a8c1e03bd48b8481362c46b14e9583a124882077a075846c"
+    sha256 cellar: :any, sonoma:            "c41ae633056c3a2a3994ce3c5490848966687f3018ceb86a0edec6005e55de39"
+    sha256 cellar: :any, arm64_linux:       "28737ef77e9a3aeac34605aa8babc7413ac91e8b67f6c73386caefec16e7f4c8"
+    sha256 cellar: :any, x86_64_linux:      "30457786f6ab679e297d69f774fbfd97b545bc0401d569d27274ecb3c8f90bae"
   end
 
   keg_only :provided_by_macos

@@ -7,12 +7,13 @@ class CargoSpellcheck < Formula
   head "https://github.com/drahnr/cargo-spellcheck.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4b4b48e1616d2653f1bc5837848240d6c28fd222c517b967bf5f616f82335ac7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "22967040c3ba30ab1f6740051f181f4c819ef42c39772a557eb80a37d56da8a6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c08d656cc0a62d8a97accf476166ed038a8ee9860bf5b945554557a0c6f32528"
-    sha256 cellar: :any_skip_relocation, sonoma:        "98299dd56c020ec544f0d2b49d8c61e78b917d1a284d36cde8234f57a0913a6b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5574479c303340268ef548c032ca841ad475ff14d68b533e4c15d199700baa49"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d14fe5a50a0274db17f76e0d6486e5d21e730dd8faadc7fb446ebcef54d902a3"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "9511981aeff2ac9550864fc930440fc1325507ff7a4b763b473e5e801b82f840"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "4b4b48e1616d2653f1bc5837848240d6c28fd222c517b967bf5f616f82335ac7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "22967040c3ba30ab1f6740051f181f4c819ef42c39772a557eb80a37d56da8a6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "c08d656cc0a62d8a97accf476166ed038a8ee9860bf5b945554557a0c6f32528"
+    sha256 cellar: :any_skip_relocation, sonoma:            "98299dd56c020ec544f0d2b49d8c61e78b917d1a284d36cde8234f57a0913a6b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "5574479c303340268ef548c032ca841ad475ff14d68b533e4c15d199700baa49"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "d14fe5a50a0274db17f76e0d6486e5d21e730dd8faadc7fb446ebcef54d902a3"
   end
 
   depends_on "llvm" => :build
@@ -32,7 +33,7 @@ class CargoSpellcheck < Formula
   test do
     # Show that we can use a different toolchain than the one provided by the `rust` formula.
     # https://github.com/Homebrew/homebrew-core/pull/134074#pullrequestreview-1484979359
-    ENV.prepend_path "PATH", Formula["rustup"].bin
+    ENV.prepend_path "PATH", formula_opt_bin("rustup")
     system "rustup", "set", "profile", "minimal"
     system "rustup", "default", "beta"
 

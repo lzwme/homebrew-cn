@@ -35,8 +35,6 @@ class Cmake < Formula
     depends_on "openssl@3"
   end
 
-  conflicts_with cask: "cmake-app"
-
   deny_network_access!
 
   def install

@@ -7,7 +7,8 @@ class Yap < Formula
   head "https://github.com/finnvoor/yap.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe: "b8d6f115bdf9d2b8dbec1319cc03fd4b173408bd3014fb36be16f0ccd7194e29"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "5f252219d254b35e69d44275d71d4f2b80a40b05106fe68da1d4d1ec648ad029"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "b8d6f115bdf9d2b8dbec1319cc03fd4b173408bd3014fb36be16f0ccd7194e29"
   end
 
   depends_on macos: :tahoe

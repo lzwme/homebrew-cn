@@ -12,11 +12,12 @@ class Llgo < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "6cf45024ea1bc67b2cb1d2b47a44f1cc0852e49ad878d3b00b35469a1c170955"
-    sha256 cellar: :any, arm64_sequoia: "6231e333dd479ce76c7166ac45dcfe9d1a277c25547e8f9d043b7a0ac1479f02"
-    sha256 cellar: :any, arm64_sonoma:  "5348fed4919f7a4900674baa340e9cdf7bc9040e91f7d82e586df943b60b58ec"
-    sha256               arm64_linux:   "91df4c8c24c1ca89ac06df7f476a22c7d650077e69d5b036e64cbeae82e7dcb9"
-    sha256               x86_64_linux:  "9a0fc99879e046109000657efd5a34d143a163004e789823f6c3a879a978177d"
+    sha256 cellar: :any, arm64_golden_gate: "612ec4dd211025851862defd1af77074ba6e3160d0544fa3f6b06c0528e87201"
+    sha256 cellar: :any, arm64_tahoe:       "6cf45024ea1bc67b2cb1d2b47a44f1cc0852e49ad878d3b00b35469a1c170955"
+    sha256 cellar: :any, arm64_sequoia:     "6231e333dd479ce76c7166ac45dcfe9d1a277c25547e8f9d043b7a0ac1479f02"
+    sha256 cellar: :any, arm64_sonoma:      "5348fed4919f7a4900674baa340e9cdf7bc9040e91f7d82e586df943b60b58ec"
+    sha256               arm64_linux:       "91df4c8c24c1ca89ac06df7f476a22c7d650077e69d5b036e64cbeae82e7dcb9"
+    sha256               x86_64_linux:      "9a0fc99879e046109000657efd5a34d143a163004e789823f6c3a879a978177d"
   end
 
   depends_on "bdw-gc" => :no_linkage

@@ -7,12 +7,13 @@ class VimClassic < Formula
   revision 1
 
   bottle do
-    sha256               arm64_tahoe:   "8b12caf8f290174109cbcf4ac7f96c241db1f70436ba4afb32644074f028eaae"
-    sha256               arm64_sequoia: "7f83a8be316c2854e6e3a2ce388a69049445821e3a8835adf32e5d67fb0d3f0a"
-    sha256               arm64_sonoma:  "bafdcdd367475cc91ccd5f3ec2756ef0211966ce501a6e460ae01edfc93a9122"
-    sha256 cellar: :any, sonoma:        "4a98780a59b4fad4d357ea27959fc2586860268dcf01cb9be06c2c72419a2130"
-    sha256               arm64_linux:   "ba446864da4aefa72a614f80c5d884b9476ffb794f06b30377a40a5d524bb639"
-    sha256               x86_64_linux:  "61a37cd38bd938a35feaede87c491839bce33d67b2d5d2a8f4cf65e4dfdbdc06"
+    sha256               arm64_golden_gate: "be3edcffbb8005a642b2aea99f587294ebd525b72d26ac8ddd634d090a18f2f2"
+    sha256               arm64_tahoe:       "8b12caf8f290174109cbcf4ac7f96c241db1f70436ba4afb32644074f028eaae"
+    sha256               arm64_sequoia:     "7f83a8be316c2854e6e3a2ce388a69049445821e3a8835adf32e5d67fb0d3f0a"
+    sha256               arm64_sonoma:      "bafdcdd367475cc91ccd5f3ec2756ef0211966ce501a6e460ae01edfc93a9122"
+    sha256 cellar: :any, sonoma:            "4a98780a59b4fad4d357ea27959fc2586860268dcf01cb9be06c2c72419a2130"
+    sha256               arm64_linux:       "ba446864da4aefa72a614f80c5d884b9476ffb794f06b30377a40a5d524bb639"
+    sha256               x86_64_linux:      "61a37cd38bd938a35feaede87c491839bce33d67b2d5d2a8f4cf65e4dfdbdc06"
   end
 
   # Homebrew Ruby installs (4.x) currently cause a linker error with vim-classic,

@@ -9,12 +9,13 @@ class Teem < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "ef2e584274fd5642063c5d7bf9d7703f53dddff875dda63bec93dd02494adbae"
-    sha256 cellar: :any,                 arm64_sequoia: "13027b516f281a9ef843fdceae4605cf760d4b5d1cf214a5c876c44faaacb289"
-    sha256 cellar: :any,                 arm64_sonoma:  "d5a28a5ec0e6fef247462ce5b68578c7622567e09d5bd67039f9627f505f50af"
-    sha256 cellar: :any,                 sonoma:        "9a590e8d60b1bf8861fe929c3ef8b48d86cd09ad284ca3d18301c953535f40e1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4ba0d90b02aaee75c6524eaf32735d5490df9acabb564505dbc830f99a46822b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "50798411da1cae2c7cfec2d965db058f705791f3799cf7040baacd45518150ce"
+    sha256 cellar: :any,                 arm64_golden_gate: "5dea61f9ca6f8d6b3040a89922de9d77f7a2f6908aa284f9a9f250225d4fde0a"
+    sha256 cellar: :any,                 arm64_tahoe:       "ef2e584274fd5642063c5d7bf9d7703f53dddff875dda63bec93dd02494adbae"
+    sha256 cellar: :any,                 arm64_sequoia:     "13027b516f281a9ef843fdceae4605cf760d4b5d1cf214a5c876c44faaacb289"
+    sha256 cellar: :any,                 arm64_sonoma:      "d5a28a5ec0e6fef247462ce5b68578c7622567e09d5bd67039f9627f505f50af"
+    sha256 cellar: :any,                 sonoma:            "9a590e8d60b1bf8861fe929c3ef8b48d86cd09ad284ca3d18301c953535f40e1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "4ba0d90b02aaee75c6524eaf32735d5490df9acabb564505dbc830f99a46822b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "50798411da1cae2c7cfec2d965db058f705791f3799cf7040baacd45518150ce"
   end
 
   depends_on "cmake" => :build

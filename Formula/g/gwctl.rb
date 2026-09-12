@@ -8,12 +8,13 @@ class Gwctl < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "efbf9a8653386ffd5de1672d8a2c537b4f4068ad8c2dae1f56bfb95564ed7b1d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "68779cf2b96309d2e1c5f208ae3a1dbd73bd04880e8eabfaa662c0eccc23969d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "82a0859de3946d031f2fe58d311dc274bb017db8aa2969250ca22cf648e49b07"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f5ba3ab0c7b9434cd9f8262076fc135f33931c6cd42efd6fa6904737bfb70d7a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "943bcc5c3a2fe743b4cc4f68e9b0e97000d8f86bb8b983530a9635e2b43f5da6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6287626230449f478eca11da68ede7fb7e75b202216f6ecf59405f5f9ba1e6fa"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "fd1f2dabfe0e6697f9c9358cbdcf8b6549d5d17a8cfeb9307a8cac553d5867cc"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "efbf9a8653386ffd5de1672d8a2c537b4f4068ad8c2dae1f56bfb95564ed7b1d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "68779cf2b96309d2e1c5f208ae3a1dbd73bd04880e8eabfaa662c0eccc23969d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "82a0859de3946d031f2fe58d311dc274bb017db8aa2969250ca22cf648e49b07"
+    sha256 cellar: :any_skip_relocation, sonoma:            "f5ba3ab0c7b9434cd9f8262076fc135f33931c6cd42efd6fa6904737bfb70d7a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "943bcc5c3a2fe743b4cc4f68e9b0e97000d8f86bb8b983530a9635e2b43f5da6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "6287626230449f478eca11da68ede7fb7e75b202216f6ecf59405f5f9ba1e6fa"
   end
 
   depends_on "go" => :build

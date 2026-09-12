@@ -6,12 +6,13 @@ class Plutobook < Formula
   license "MPL-2.0"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "68e18b53ec30bad2c021728e221bab88e647c6b7c92fb9fb764482499bad9817"
-    sha256 cellar: :any, arm64_sequoia: "c2d75d81af62fa8bb5c26fa7007f81315a45319b5c6fbab63db5269225e1337a"
-    sha256 cellar: :any, arm64_sonoma:  "2c9d4a32319a534d4257d9da82a00456300c2e90ea9319bbd94786d687e8bb19"
-    sha256 cellar: :any, sonoma:        "124eda3c1f50005fe02dbe28c49b51dfdf1f14ecf4eec00f269a04dcbc047732"
-    sha256               arm64_linux:   "a33b96066e2d14ed16ddf10d228f27891b193b2c1bd753109f2c1a357b3f8e6f"
-    sha256               x86_64_linux:  "621757a68a187515024a26cd72d6d95e0c37c133d6dd2e1374b26d17e872a659"
+    sha256 cellar: :any, arm64_golden_gate: "d1ffe7561d57092f39427ef5c4dc8e903f83c3cfccb8b0345ba7952e4fa24019"
+    sha256 cellar: :any, arm64_tahoe:       "68e18b53ec30bad2c021728e221bab88e647c6b7c92fb9fb764482499bad9817"
+    sha256 cellar: :any, arm64_sequoia:     "c2d75d81af62fa8bb5c26fa7007f81315a45319b5c6fbab63db5269225e1337a"
+    sha256 cellar: :any, arm64_sonoma:      "2c9d4a32319a534d4257d9da82a00456300c2e90ea9319bbd94786d687e8bb19"
+    sha256 cellar: :any, sonoma:            "124eda3c1f50005fe02dbe28c49b51dfdf1f14ecf4eec00f269a04dcbc047732"
+    sha256               arm64_linux:       "a33b96066e2d14ed16ddf10d228f27891b193b2c1bd753109f2c1a357b3f8e6f"
+    sha256               x86_64_linux:      "621757a68a187515024a26cd72d6d95e0c37c133d6dd2e1374b26d17e872a659"
   end
 
   depends_on "meson" => :build

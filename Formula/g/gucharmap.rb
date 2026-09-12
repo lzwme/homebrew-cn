@@ -7,12 +7,13 @@ class Gucharmap < Formula
 
   bottle do
     rebuild 1
-    sha256 arm64_tahoe:   "09cb32a02e2edb50223d4f9ebe8412245e9c83891e5a3fb2a490268a7bcbb8b0"
-    sha256 arm64_sequoia: "fdcad739389029c24449e013293d83fa598de25b676ce79fb6552482a3eddada"
-    sha256 arm64_sonoma:  "61ff6905c2c143cbfc0db25c2dd130a488acae6fee1f38df06b73cc419e2bb1c"
-    sha256 sonoma:        "7bfd643c6ea7027e1ff9b0fb33f6d70535deed333b55107e3b6278c417b154ed"
-    sha256 arm64_linux:   "28d9ab835720e30da0ca28cb2ca9622f7601c64181589e5d8efb702d0b90c4e2"
-    sha256 x86_64_linux:  "daca552d1c157d3b348489af518a968aa9e3e5122d507db32db78866a1994509"
+    sha256 arm64_golden_gate: "118e6def449b2853740e1e562607fb7004760aecf225794f05382bb9c6d107eb"
+    sha256 arm64_tahoe:       "09cb32a02e2edb50223d4f9ebe8412245e9c83891e5a3fb2a490268a7bcbb8b0"
+    sha256 arm64_sequoia:     "fdcad739389029c24449e013293d83fa598de25b676ce79fb6552482a3eddada"
+    sha256 arm64_sonoma:      "61ff6905c2c143cbfc0db25c2dd130a488acae6fee1f38df06b73cc419e2bb1c"
+    sha256 sonoma:            "7bfd643c6ea7027e1ff9b0fb33f6d70535deed333b55107e3b6278c417b154ed"
+    sha256 arm64_linux:       "28d9ab835720e30da0ca28cb2ca9622f7601c64181589e5d8efb702d0b90c4e2"
+    sha256 x86_64_linux:      "daca552d1c157d3b348489af518a968aa9e3e5122d507db32db78866a1994509"
   end
 
   depends_on "desktop-file-utils" => :build

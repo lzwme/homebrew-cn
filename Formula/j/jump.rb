@@ -7,12 +7,13 @@ class Jump < Formula
   head "https://github.com/gsamokovarov/jump.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "748682eed44f56971f34905be8df1497ac2db7e407ca0a6e3f5b2b0e2aa9eff4"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "748682eed44f56971f34905be8df1497ac2db7e407ca0a6e3f5b2b0e2aa9eff4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "748682eed44f56971f34905be8df1497ac2db7e407ca0a6e3f5b2b0e2aa9eff4"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c968580a05c97faac5046d4e03aa8faf2bc89008db64ff81e83b55cefaea2029"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7d762b4bcfa955462e651c27b6781955bdc6d82f80f5975abfb0ba0421e3009a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cb2c9042ebf1cdd8b15dcfc1f541e862917588fbfed90a40f5a60b69ed726d65"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "4a2de81a815760cf80adfe9546321940f52234e6fe3ba71ba9721dcf9f1e1295"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "748682eed44f56971f34905be8df1497ac2db7e407ca0a6e3f5b2b0e2aa9eff4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "748682eed44f56971f34905be8df1497ac2db7e407ca0a6e3f5b2b0e2aa9eff4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "748682eed44f56971f34905be8df1497ac2db7e407ca0a6e3f5b2b0e2aa9eff4"
+    sha256 cellar: :any_skip_relocation, sonoma:            "c968580a05c97faac5046d4e03aa8faf2bc89008db64ff81e83b55cefaea2029"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "7d762b4bcfa955462e651c27b6781955bdc6d82f80f5975abfb0ba0421e3009a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "cb2c9042ebf1cdd8b15dcfc1f541e862917588fbfed90a40f5a60b69ed726d65"
   end
 
   depends_on "go" => :build

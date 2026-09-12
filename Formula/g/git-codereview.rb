@@ -7,11 +7,12 @@ class GitCodereview < Formula
   head "https://github.com/golang/review.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0804eb0f0eb35fe66cf5273317ec63d2a98212945990f4bd7da941fd39cde2c3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0804eb0f0eb35fe66cf5273317ec63d2a98212945990f4bd7da941fd39cde2c3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0804eb0f0eb35fe66cf5273317ec63d2a98212945990f4bd7da941fd39cde2c3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d9865779222a2ed0c911c9cd3a99f4e9569fbd70b136b239e21781e6c8af5721"
-    sha256 cellar: :any,                 x86_64_linux:  "4d5d5bd8941f90eff4c4ef3ec2cf6102a40689e2e6f3dd4b7eb67886254f3d71"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "0804eb0f0eb35fe66cf5273317ec63d2a98212945990f4bd7da941fd39cde2c3"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "0804eb0f0eb35fe66cf5273317ec63d2a98212945990f4bd7da941fd39cde2c3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "0804eb0f0eb35fe66cf5273317ec63d2a98212945990f4bd7da941fd39cde2c3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "0804eb0f0eb35fe66cf5273317ec63d2a98212945990f4bd7da941fd39cde2c3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "d9865779222a2ed0c911c9cd3a99f4e9569fbd70b136b239e21781e6c8af5721"
+    sha256 cellar: :any,                 x86_64_linux:      "4d5d5bd8941f90eff4c4ef3ec2cf6102a40689e2e6f3dd4b7eb67886254f3d71"
   end
 
   depends_on "go" => :build

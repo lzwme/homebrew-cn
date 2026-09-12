@@ -12,12 +12,13 @@ class Zabbix < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "2dbd0680694752a8417e7834690221ca2d7ab220199df798938d3b2cb6df5ce3"
-    sha256 arm64_sequoia: "776712e3fa8cbe3fb2a99431294d4114d7c3c77c2e6735a3764e756de647fad2"
-    sha256 arm64_sonoma:  "a402fd28db29580197e5c7860d05752b57978c102594fd4873b32d0e4778e0b7"
-    sha256 sonoma:        "a7b4c8d9bd37b3f4c98e69cf1d6206505f9ea9e2778b335e26eeb891d3a0e1bc"
-    sha256 arm64_linux:   "ecd0b5cad1a013eb2bc04feef23eacdf9052655a87d7d109aea7fc1bdbfcdd7b"
-    sha256 x86_64_linux:  "4dc83a49acd8e761a7b74e992b5890f6deff32ca3d8778eecd4c547b35fe797f"
+    sha256 arm64_golden_gate: "6d442bc74593b61457eebd586b756dbf22e7175c17945b1a5cd17eb5e5aa784a"
+    sha256 arm64_tahoe:       "2dbd0680694752a8417e7834690221ca2d7ab220199df798938d3b2cb6df5ce3"
+    sha256 arm64_sequoia:     "776712e3fa8cbe3fb2a99431294d4114d7c3c77c2e6735a3764e756de647fad2"
+    sha256 arm64_sonoma:      "a402fd28db29580197e5c7860d05752b57978c102594fd4873b32d0e4778e0b7"
+    sha256 sonoma:            "a7b4c8d9bd37b3f4c98e69cf1d6206505f9ea9e2778b335e26eeb891d3a0e1bc"
+    sha256 arm64_linux:       "ecd0b5cad1a013eb2bc04feef23eacdf9052655a87d7d109aea7fc1bdbfcdd7b"
+    sha256 x86_64_linux:      "4dc83a49acd8e761a7b74e992b5890f6deff32ca3d8778eecd4c547b35fe797f"
   end
 
   depends_on "pkgconf" => :build

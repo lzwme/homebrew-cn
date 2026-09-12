@@ -7,12 +7,13 @@ class Immortal < Formula
   head "https://github.com/immortal/immortal.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "26861092dde978f27339910033364f10dd3161087633aa496060bd8fa34fae36"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "26861092dde978f27339910033364f10dd3161087633aa496060bd8fa34fae36"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "26861092dde978f27339910033364f10dd3161087633aa496060bd8fa34fae36"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c9a0ba97dc777bd0c4b1183fcccc14f65385a18f266909d20392123e2930fe56"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "bceeb82570bd18ecfcb167e1ab8343c24e19fca659f9c61a21b75067b1503e4d"
-    sha256 cellar: :any,                 x86_64_linux:  "a6e52a13abf90702e0aa1f613f6235ac29eca8c3ee8688d117fc192689780632"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "5ed5a9e236b3d7baecc402801967f8167cc47a2fcda70645b9f650f46bbd5b62"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "26861092dde978f27339910033364f10dd3161087633aa496060bd8fa34fae36"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "26861092dde978f27339910033364f10dd3161087633aa496060bd8fa34fae36"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "26861092dde978f27339910033364f10dd3161087633aa496060bd8fa34fae36"
+    sha256 cellar: :any_skip_relocation, sonoma:            "c9a0ba97dc777bd0c4b1183fcccc14f65385a18f266909d20392123e2930fe56"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "bceeb82570bd18ecfcb167e1ab8343c24e19fca659f9c61a21b75067b1503e4d"
+    sha256 cellar: :any,                 x86_64_linux:      "a6e52a13abf90702e0aa1f613f6235ac29eca8c3ee8688d117fc192689780632"
   end
 
   depends_on "go" => :build

@@ -9,12 +9,13 @@ class Xxh < Formula
 
   bottle do
     rebuild 2
-    sha256 cellar: :any,                 arm64_tahoe:   "07ed49c087bd4b82099ff25d213a71627a53d0c86bce7f95938a0072cf1e05ac"
-    sha256 cellar: :any,                 arm64_sequoia: "9d00fc1786130a6714ae9b87c8d2477b4487605bc921fe37666c22d2794a73d1"
-    sha256 cellar: :any,                 arm64_sonoma:  "15847d147ad2cc7806d50a69f2df443ca95a081a99222eac211d809047e57583"
-    sha256 cellar: :any,                 sonoma:        "8a1313dff05fbd4a04345cc3c5782d2142eb07ad9ba0dfa21761d58363ac76c7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f69ba9f8e23d52efd349c6d51cdfcd2dec59c8828b76589ba2a2a94765b58301"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4fe168ea7da7ddf85fba4193337c1c4e60d52f0005fdc48c3510de8c35cef67b"
+    sha256 cellar: :any,                 arm64_golden_gate: "17b8a5fb2bcd68541d341b6a1f4534087e07ddfc2ff3355182693d78448fa5a4"
+    sha256 cellar: :any,                 arm64_tahoe:       "07ed49c087bd4b82099ff25d213a71627a53d0c86bce7f95938a0072cf1e05ac"
+    sha256 cellar: :any,                 arm64_sequoia:     "9d00fc1786130a6714ae9b87c8d2477b4487605bc921fe37666c22d2794a73d1"
+    sha256 cellar: :any,                 arm64_sonoma:      "15847d147ad2cc7806d50a69f2df443ca95a081a99222eac211d809047e57583"
+    sha256 cellar: :any,                 sonoma:            "8a1313dff05fbd4a04345cc3c5782d2142eb07ad9ba0dfa21761d58363ac76c7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "f69ba9f8e23d52efd349c6d51cdfcd2dec59c8828b76589ba2a2a94765b58301"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "4fe168ea7da7ddf85fba4193337c1c4e60d52f0005fdc48c3510de8c35cef67b"
   end
 
   depends_on "libyaml"

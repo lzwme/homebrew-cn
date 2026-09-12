@@ -12,12 +12,13 @@ class Kcgi < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "191a0d3f1d112f9585774eddd41909e942affd5338e7c8144d38803e986acc66"
-    sha256 cellar: :any, arm64_sequoia: "709e821d80864c2780293caa51f078fdb3f900bff44e515fcf938564819e4d4f"
-    sha256 cellar: :any, arm64_sonoma:  "06fef37ce17eea27851fdc51b89191eb3363c849f6f8f47b65797a22fd1aba3f"
-    sha256 cellar: :any, sonoma:        "47d68ef9bc518eae514f46b1dcb7a1b25b5445fec3b67ba9eb00e58af2a62067"
-    sha256               arm64_linux:   "d2864c56de92d3996fe29fc5f3bd28e8cae3fc36e3823aee230b57b53c57952d"
-    sha256               x86_64_linux:  "884dac750cf8338c422c6fcd249002d42e77d2c9b6e332fea44ab048fff7c421"
+    sha256 cellar: :any, arm64_golden_gate: "78d30ea55aef83859437826dbfc7a493e235fc77dc56215297a0c6889d544888"
+    sha256 cellar: :any, arm64_tahoe:       "191a0d3f1d112f9585774eddd41909e942affd5338e7c8144d38803e986acc66"
+    sha256 cellar: :any, arm64_sequoia:     "709e821d80864c2780293caa51f078fdb3f900bff44e515fcf938564819e4d4f"
+    sha256 cellar: :any, arm64_sonoma:      "06fef37ce17eea27851fdc51b89191eb3363c849f6f8f47b65797a22fd1aba3f"
+    sha256 cellar: :any, sonoma:            "47d68ef9bc518eae514f46b1dcb7a1b25b5445fec3b67ba9eb00e58af2a62067"
+    sha256               arm64_linux:       "d2864c56de92d3996fe29fc5f3bd28e8cae3fc36e3823aee230b57b53c57952d"
+    sha256               x86_64_linux:      "884dac750cf8338c422c6fcd249002d42e77d2c9b6e332fea44ab048fff7c421"
   end
 
   depends_on "bmake" => :build

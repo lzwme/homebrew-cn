@@ -38,10 +38,6 @@ class Teleport < Formula
 
   conflicts_with "etsh", because: "both install `tsh` binaries"
   conflicts_with "tctl", because: "both install `tctl` binaries"
-  conflicts_with cask: "teleport-suite"
-  conflicts_with cask: "teleport-suite@17"
-  conflicts_with cask: "teleport-suite@16"
-  conflicts_with cask: "tsh", because: "both install `tsh` binaries"
 
   resource "wasm-bindgen" do
     url "https://ghfast.top/https://github.com/wasm-bindgen/wasm-bindgen/archive/refs/tags/0.2.122.tar.gz"
@@ -65,7 +61,7 @@ class Teleport < Formula
       managePackageManagerVersions: false
     YAML
 
-    ENV.prepend_path "PATH", Formula["rustup"].bin
+    ENV.prepend_path "PATH", formula_opt_bin("rustup")
     system "rustup", "set", "profile", "minimal"
     system "rustup", "default", "stable"
 

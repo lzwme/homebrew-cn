@@ -7,12 +7,13 @@ class Hexapoda < Formula
   head "https://github.com/simonomi/hexapoda.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7f2a7f637ae2e7c192cea4055d3345a784c02f28c6a24d2d2e708841c96e867b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6e55f1e1abca45d4cc1b981ae98dca58a42b4d35706e43c6aa4013cb617f54d7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "54d03b5412376719bfceba00f689d3cb171b33d179779c338d10082e2bb1e211"
-    sha256 cellar: :any_skip_relocation, sonoma:        "40a2255cd41d92346869109ba454b5048bd151e67cdd111de4d09a6b098a9257"
-    sha256 cellar: :any,                 arm64_linux:   "933771b265105b98e8e93150b199eb1d882b628653b71fd30c15a4cbad66a595"
-    sha256 cellar: :any,                 x86_64_linux:  "4c6db392dcbd881e39485a401ed61340fb6414796fd20ad2c3a44d15fbe77f13"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "e0d90f453345898097e6633dab6f8e545e9c7a22bf70702d6838c1d82d990783"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "7f2a7f637ae2e7c192cea4055d3345a784c02f28c6a24d2d2e708841c96e867b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "6e55f1e1abca45d4cc1b981ae98dca58a42b4d35706e43c6aa4013cb617f54d7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "54d03b5412376719bfceba00f689d3cb171b33d179779c338d10082e2bb1e211"
+    sha256 cellar: :any_skip_relocation, sonoma:            "40a2255cd41d92346869109ba454b5048bd151e67cdd111de4d09a6b098a9257"
+    sha256 cellar: :any,                 arm64_linux:       "933771b265105b98e8e93150b199eb1d882b628653b71fd30c15a4cbad66a595"
+    sha256 cellar: :any,                 x86_64_linux:      "4c6db392dcbd881e39485a401ed61340fb6414796fd20ad2c3a44d15fbe77f13"
   end
 
   depends_on "rust" => :build

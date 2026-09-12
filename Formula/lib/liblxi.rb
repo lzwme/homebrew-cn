@@ -8,12 +8,13 @@ class Liblxi < Formula
   head "https://github.com/lxi-tools/liblxi.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "90b99e8ef648703285fa24caf9d05f63402da9cc0d9c64860ca2559ed3c0fa7b"
-    sha256 cellar: :any, arm64_sequoia: "18d6b33c092ccdac797c676b1805f09da03bf985530f691016fa1928adb3ca66"
-    sha256 cellar: :any, arm64_sonoma:  "20811fe73cca39574313757b888a06e8fbd8ce4d347d5cff8d43d244bc23ab93"
-    sha256 cellar: :any, sonoma:        "d16e24e3272e1036851c6ec820e9a328dadb3c79dbf35e8fc81e4fc97660344e"
-    sha256               arm64_linux:   "7c962e15081bbdd29b93a4714f8a3f3b27225fbf209ffa3d39415d6fd5c63911"
-    sha256               x86_64_linux:  "3a3ea1867af1936c3d441d4799fd7b448701e984679be728dffdee1cd24f8728"
+    sha256 cellar: :any, arm64_golden_gate: "85ef17437145721014e937fcb6fcaa6c3024faf69bf31c7936504ebd4e7c7e08"
+    sha256 cellar: :any, arm64_tahoe:       "90b99e8ef648703285fa24caf9d05f63402da9cc0d9c64860ca2559ed3c0fa7b"
+    sha256 cellar: :any, arm64_sequoia:     "18d6b33c092ccdac797c676b1805f09da03bf985530f691016fa1928adb3ca66"
+    sha256 cellar: :any, arm64_sonoma:      "20811fe73cca39574313757b888a06e8fbd8ce4d347d5cff8d43d244bc23ab93"
+    sha256 cellar: :any, sonoma:            "d16e24e3272e1036851c6ec820e9a328dadb3c79dbf35e8fc81e4fc97660344e"
+    sha256               arm64_linux:       "7c962e15081bbdd29b93a4714f8a3f3b27225fbf209ffa3d39415d6fd5c63911"
+    sha256               x86_64_linux:      "3a3ea1867af1936c3d441d4799fd7b448701e984679be728dffdee1cd24f8728"
   end
 
   depends_on "meson" => :build

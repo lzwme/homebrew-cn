@@ -7,12 +7,13 @@ class Gource < Formula
   revision 1
 
   bottle do
-    sha256 arm64_tahoe:   "cdd8bd1399f1a13c3cb16530798465f1f48b66d581fbec5ec4c88c5a69099518"
-    sha256 arm64_sequoia: "e2568b1c0414ac98c980879dfcd5b95f4ab5465f24bbee26172639c2cb7852e5"
-    sha256 arm64_sonoma:  "df09b9d501ec3fd2f0a1415a89d4371430b882d7b3ecd5c91556d92964a376bd"
-    sha256 sonoma:        "180f834d9c4d1c87428ecbb308f673c6406e9a82b695cb21d265d8282b08876a"
-    sha256 arm64_linux:   "9eee411e2d309a36a79ac43dc7e97fc67e1c739fc1bdedcc8ce3dfc494cf5451"
-    sha256 x86_64_linux:  "0b072a65436f19c1c66dad5db9222dfcbf8d807488466917104b728fa4d5859e"
+    sha256 arm64_golden_gate: "710479a5b69423ccbb4cbcbcafa0423207b9233bd808c4928eb78b98697c37b1"
+    sha256 arm64_tahoe:       "cdd8bd1399f1a13c3cb16530798465f1f48b66d581fbec5ec4c88c5a69099518"
+    sha256 arm64_sequoia:     "e2568b1c0414ac98c980879dfcd5b95f4ab5465f24bbee26172639c2cb7852e5"
+    sha256 arm64_sonoma:      "df09b9d501ec3fd2f0a1415a89d4371430b882d7b3ecd5c91556d92964a376bd"
+    sha256 sonoma:            "180f834d9c4d1c87428ecbb308f673c6406e9a82b695cb21d265d8282b08876a"
+    sha256 arm64_linux:       "9eee411e2d309a36a79ac43dc7e97fc67e1c739fc1bdedcc8ce3dfc494cf5451"
+    sha256 x86_64_linux:      "0b072a65436f19c1c66dad5db9222dfcbf8d807488466917104b728fa4d5859e"
   end
 
   head do

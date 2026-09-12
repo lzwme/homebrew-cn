@@ -15,12 +15,12 @@ class IcarusVerilog < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "9171910a21536b9bcb60e0de5b11f3d2ebc31f211cae962ad6e520ecfdba1175"
-    sha256 arm64_sequoia: "735d87e08978e857b0bd1771c7efdd91769ada308f8597400f16a560f72cbff7"
-    sha256 arm64_sonoma:  "936627d8dfbb9996d55b3f3044f6bdf45e433df0c5fe9d0f8390f1a35714978b"
-    sha256 sonoma:        "2eb03352145134b01eec88e2426a5bb066952c60f13c5d8b90067c6674ab56fe"
-    sha256 arm64_linux:   "04bdad86ad33286674ae98446235a96c1719df5bbf1fe4e85015da8031d4011b"
-    sha256 x86_64_linux:  "4aa2049753c29d8acb09a61dbcc98029dd0155111b39a8605aefbc024bd974a1"
+    rebuild 1
+    sha256 arm64_golden_gate: "de6f721fcebd0ab67e29fc79de453070923656103260720973c96151de5f2d54"
+    sha256 arm64_tahoe:       "0c26b4d54f2a1264a7b9105345192f303ffaa79e7e164cf705baa3c2df275871"
+    sha256 arm64_sequoia:     "97e471a63c9695bdca2c6eee0926806c0fd145badb541b705f38431793de8b68"
+    sha256 arm64_linux:       "150345153865a080048abedf7de640c392375cb169a694a9fda7910133816e26"
+    sha256 x86_64_linux:      "d4c34b63ee3b8f2e6286fb71e4f4ba116e5d0e5142a0fdd499250a022607de3d"
   end
 
   depends_on "autoconf" => :build
@@ -34,6 +34,14 @@ class IcarusVerilog < Formula
   on_linux do
     depends_on "readline"
     depends_on "zlib-ng-compat"
+  end
+
+  # Backport fix for missing mach-o/dyld.h include on macOS 27 SDK
+  patch do
+    url "https://github.com/steveicarus/iverilog/commit/f20865a5ea4ea7f5cdcbb6d19b0751a9390a8978.patch?full_index=1"
+    sha256 "a56837d524f2a7f6bc05435601d7951cd1bdb94fb7ce3c0d43aa774475da6d52"
+    type :backport
+    resolves "https://github.com/steveicarus/iverilog/pull/1315"
   end
 
   def install

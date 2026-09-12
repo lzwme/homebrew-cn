@@ -15,12 +15,13 @@ class Hof < Formula
 
   bottle do
     rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9646fbe9aedd3339cc3502d4dd1217c6bd8f2a207e17f2d4aee664b7e60ae281"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9646fbe9aedd3339cc3502d4dd1217c6bd8f2a207e17f2d4aee664b7e60ae281"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9646fbe9aedd3339cc3502d4dd1217c6bd8f2a207e17f2d4aee664b7e60ae281"
-    sha256 cellar: :any_skip_relocation, sonoma:        "054e65b74ca1aebf0351cf1bcf145b7738aec5470c506c62d4b649d91bbc346b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d0a4500b2b97316de21efb51fa8f5e7173576f91d80d3a04d2949398145deb12"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4397be59f7e752c110cedf109d7cb9b8442105589f54e82e3e436c0561769fcc"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "c4c4781c81be2b19a7b8d4e88b69bec47dc03db7b76bedb3b76c8cdc721ea9f6"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "9646fbe9aedd3339cc3502d4dd1217c6bd8f2a207e17f2d4aee664b7e60ae281"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "9646fbe9aedd3339cc3502d4dd1217c6bd8f2a207e17f2d4aee664b7e60ae281"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "9646fbe9aedd3339cc3502d4dd1217c6bd8f2a207e17f2d4aee664b7e60ae281"
+    sha256 cellar: :any_skip_relocation, sonoma:            "054e65b74ca1aebf0351cf1bcf145b7738aec5470c506c62d4b649d91bbc346b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "d0a4500b2b97316de21efb51fa8f5e7173576f91d80d3a04d2949398145deb12"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "4397be59f7e752c110cedf109d7cb9b8442105589f54e82e3e436c0561769fcc"
   end
 
   depends_on "go" => :build

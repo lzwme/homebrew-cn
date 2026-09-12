@@ -7,12 +7,13 @@ class Zfp < Formula
   head "https://github.com/llnl/zfp.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "dbdf86f2faa53f3b2ab4f9c66a298b1e24208f0a1a8231da5ee516f385d65d1d"
-    sha256 cellar: :any,                 arm64_sequoia: "264d7d638461625ada9fb5d1a78d0d0b61a398020025839b834caa27b6b0b00e"
-    sha256 cellar: :any,                 arm64_sonoma:  "d38ad5e6a7997eb5141c1b90c09ad7e819b1732488549ca76c9da95e50fc788f"
-    sha256 cellar: :any,                 sonoma:        "6ad6c3b458e26c614324526bd647929e17dd270308d7463ff376a6d6d147606c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d50a325063801b02fd5e5c7f07b390b77dc214265d9b7bc6c05375211be92710"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "77905d574f33142c25ecbe83d87817224bb62ff43cf9f1b6e7346af2688cf6ba"
+    sha256 cellar: :any,                 arm64_golden_gate: "7fdf4def606cbfbee06a1ceaafb9cfeb8b3c9dca075a23e460f0c4ac80c36fb7"
+    sha256 cellar: :any,                 arm64_tahoe:       "dbdf86f2faa53f3b2ab4f9c66a298b1e24208f0a1a8231da5ee516f385d65d1d"
+    sha256 cellar: :any,                 arm64_sequoia:     "264d7d638461625ada9fb5d1a78d0d0b61a398020025839b834caa27b6b0b00e"
+    sha256 cellar: :any,                 arm64_sonoma:      "d38ad5e6a7997eb5141c1b90c09ad7e819b1732488549ca76c9da95e50fc788f"
+    sha256 cellar: :any,                 sonoma:            "6ad6c3b458e26c614324526bd647929e17dd270308d7463ff376a6d6d147606c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "d50a325063801b02fd5e5c7f07b390b77dc214265d9b7bc6c05375211be92710"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "77905d574f33142c25ecbe83d87817224bb62ff43cf9f1b6e7346af2688cf6ba"
   end
 
   depends_on "cmake" => [:build, :test]

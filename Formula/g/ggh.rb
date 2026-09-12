@@ -7,12 +7,13 @@ class Ggh < Formula
   head "https://github.com/byawitz/ggh.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f19e7aab53fda165524a48499bc2426204ecbca9012a1f860c5ca6f624f29338"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f19e7aab53fda165524a48499bc2426204ecbca9012a1f860c5ca6f624f29338"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f19e7aab53fda165524a48499bc2426204ecbca9012a1f860c5ca6f624f29338"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f461df86eb13b905275e1329d1938686b363b4ad2521b643109ebd2338fcccfc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3b0cd2a8832adfb19727d4a81750fdfcd1e1268fb3ca4804b4e616d996f0add5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d17c99fe36147ed032691e97d9fdc12073ff980a93a5a932fbfe07e315babb65"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "0ecf8dc58d99405bf3b8fe85b26bc1620f0ec0452501549e9e825eea0483a738"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "f19e7aab53fda165524a48499bc2426204ecbca9012a1f860c5ca6f624f29338"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "f19e7aab53fda165524a48499bc2426204ecbca9012a1f860c5ca6f624f29338"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "f19e7aab53fda165524a48499bc2426204ecbca9012a1f860c5ca6f624f29338"
+    sha256 cellar: :any_skip_relocation, sonoma:            "f461df86eb13b905275e1329d1938686b363b4ad2521b643109ebd2338fcccfc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "3b0cd2a8832adfb19727d4a81750fdfcd1e1268fb3ca4804b4e616d996f0add5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "d17c99fe36147ed032691e97d9fdc12073ff980a93a5a932fbfe07e315babb65"
   end
 
   depends_on "go" => :build

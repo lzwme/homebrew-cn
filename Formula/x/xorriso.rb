@@ -1,7 +1,7 @@
 class Xorriso < Formula
   desc "ISO9660+RR manipulation tool"
   homepage "https://www.gnu.org/software/xorriso/"
-  url "https://ftpmirror.gnu.org/gnu/xorriso/xorriso-1.5.8.pl02.tar.gz"
+  url "https://ftpmirror.gnu.org/xorriso/xorriso-1.5.8.pl02.tar.gz"
   mirror "https://ftp.gnu.org/gnu/xorriso/xorriso-1.5.8.pl02.tar.gz"
   version "1.5.8.pl02"
   sha256 "b1455ecafbf0692ddafe1d71002a96f2ce2d77f4deae602678261ce033f97bc8"
@@ -13,12 +13,13 @@ class Xorriso < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5741d0c557d215bbed7c7cfa0e27fa783cde03b1e24d1573c307a0474eca4cef"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "42076b4f0ba09e08ca8a87dc0609b89788661b6e30577022119a934f8dd7197a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "205d1454b924725e38e8b97c3f1fd39803131d592ef337cc4636e650de394351"
-    sha256 cellar: :any_skip_relocation, sonoma:        "675972f55695288cee07bf5b5762b306febfabe68d2fcd9730352406ea668400"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3391c3b9f214da3ad9337d05288f0ceb38d6fad8f20f602776fc0b834b20ecba"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4e16f63be8205b02ac402af686ba9aef3905b01a2ae3e3f7f40e4968d273fdee"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "fb73c3f8a5774f08fa1f1b3a41800e16e98950d5fc3236cc21c3a157a252d66a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "5741d0c557d215bbed7c7cfa0e27fa783cde03b1e24d1573c307a0474eca4cef"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "42076b4f0ba09e08ca8a87dc0609b89788661b6e30577022119a934f8dd7197a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "205d1454b924725e38e8b97c3f1fd39803131d592ef337cc4636e650de394351"
+    sha256 cellar: :any_skip_relocation, sonoma:            "675972f55695288cee07bf5b5762b306febfabe68d2fcd9730352406ea668400"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "3391c3b9f214da3ad9337d05288f0ceb38d6fad8f20f602776fc0b834b20ecba"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "4e16f63be8205b02ac402af686ba9aef3905b01a2ae3e3f7f40e4968d273fdee"
   end
 
   on_linux do

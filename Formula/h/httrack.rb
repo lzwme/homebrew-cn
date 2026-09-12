@@ -1,16 +1,16 @@
 class Httrack < Formula
   desc "Website copier/offline browser"
   homepage "https://www.httrack.com/"
-  url "https://ghfast.top/https://github.com/xroche/httrack/releases/download/3.50.1/httrack-3.50.1.tar.gz"
-  sha256 "cab1ad16a975263d809e484b02bbf76c87e2212e7b5902f42d9e0c6ccf01451c"
+  url "https://ghfast.top/https://github.com/xroche/httrack/releases/download/3.50.2/httrack-3.50.2.tar.gz"
+  sha256 "bde231415a42adf793e5272ce436a5c22377dab94b0b2e395e3cee7c298343f0"
   license "GPL-3.0-or-later" => { with: "openvpn-openssl-exception" }
 
   bottle do
-    sha256 arm64_tahoe:   "e73f0b952b984a61dd27a92dd6925714181e89bd3704935877f54e961164413b"
-    sha256 arm64_sequoia: "8df78807a4e735a853d7a29765a48639d09bbb26c507b45848807d8a2d4e35bc"
-    sha256 arm64_sonoma:  "7339ff8b3ed0128ea4d468ddc83209f59553a16f7d87de4cec6db5b9509a626c"
-    sha256 arm64_linux:   "bed1b01c054f31d54c14c4ae2d8dd49061d6db7a48143b6e1532b4f892d1ce56"
-    sha256 x86_64_linux:  "53467fc1326aab6cc55f9092e14308f1aa89d1f007c30904737800d5349cdeb7"
+    sha256 arm64_golden_gate: "58dcc90893bb43a0bdcb9d82c25cec62a2514ec6f2f53f19ad1e233de53ee95d"
+    sha256 arm64_tahoe:       "8fea08c20e53a046161e8238e1b589b6462c699320167c5fd51ddedb22a8649c"
+    sha256 arm64_sequoia:     "87dcd04f345d0362be2d02be4a24f23f1bea6c5a947b3fbb9c0fb4e60231c887"
+    sha256 arm64_linux:       "fe3ce8273c5c561d75926fde367d23cfcd61c70c6a0068f0347b35418b0e4fa1"
+    sha256 x86_64_linux:      "5da51ae26f7b2ded9bf4a5e7b9b53e4e2efd498dd6047e4c619956f110fa05f5"
   end
 
   depends_on "openssl@4"

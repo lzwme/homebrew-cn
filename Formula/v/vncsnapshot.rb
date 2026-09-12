@@ -13,12 +13,13 @@ class Vncsnapshot < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "cdc55184ba7f8d8bf9c418d2f76e64a0a58e53e99d6bc9cf0e1859c671e7879d"
-    sha256 cellar: :any,                 arm64_sequoia: "09203a37167b3df2545c21b0f7b9afe38c4de502df98ed1b7fda849f03fabd03"
-    sha256 cellar: :any,                 arm64_sonoma:  "a59056be84dbc799df58848a57d128a314648b607e1a592dc1dc3d1e4ad3346e"
-    sha256 cellar: :any,                 sonoma:        "b1e90c81cca208e37ed22a280346fc29aa50af24c816ace37a2dd16bc2e4fa39"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "53c67a5e9fe1c779d602da06f27f67d1b2e4ea041aaaafad4fbb619f2f6b85e2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "459ee8dd2f28c227d911c6ca369fc93846332434f4cce220c8fb2f1adc89a582"
+    sha256 cellar: :any,                 arm64_golden_gate: "c9043d53e0848fbe9280c66b0883a3af8ac1505ed673c8872afbbe8cbd85e443"
+    sha256 cellar: :any,                 arm64_tahoe:       "cdc55184ba7f8d8bf9c418d2f76e64a0a58e53e99d6bc9cf0e1859c671e7879d"
+    sha256 cellar: :any,                 arm64_sequoia:     "09203a37167b3df2545c21b0f7b9afe38c4de502df98ed1b7fda849f03fabd03"
+    sha256 cellar: :any,                 arm64_sonoma:      "a59056be84dbc799df58848a57d128a314648b607e1a592dc1dc3d1e4ad3346e"
+    sha256 cellar: :any,                 sonoma:            "b1e90c81cca208e37ed22a280346fc29aa50af24c816ace37a2dd16bc2e4fa39"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "53c67a5e9fe1c779d602da06f27f67d1b2e4ea041aaaafad4fbb619f2f6b85e2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "459ee8dd2f28c227d911c6ca369fc93846332434f4cce220c8fb2f1adc89a582"
   end
 
   depends_on "jpeg-turbo"

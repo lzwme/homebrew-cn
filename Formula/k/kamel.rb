@@ -8,11 +8,12 @@ class Kamel < Formula
   head "https://github.com/apache/camel-k.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e239f71b40b41eed60a67c203de0a7ed67aeed95a4c5011ef5a056c0b71ca8c9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b2a2eeddcb2a72f46723e0e1d1e21acb07b78c2bc3ee07ee6405394ba470346d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "aa8a655783748da9b94b747f8d9a487b92f6b2bb1deb24eef258d8336121a6e6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0243c7919933d6ec4c64b14d75494407b2f04625fe87e3e76a7c9c7c30000690"
-    sha256 cellar: :any,                 x86_64_linux:  "8610e91f36d8417d62c746f4c2c9c5678c9e961ec4eb5426c8b28903457abc94"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "8a3fb22f87fb964777f33c80cc3fa6ecc9f626584ff4e629e0f001032f2a149f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "e239f71b40b41eed60a67c203de0a7ed67aeed95a4c5011ef5a056c0b71ca8c9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "b2a2eeddcb2a72f46723e0e1d1e21acb07b78c2bc3ee07ee6405394ba470346d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "aa8a655783748da9b94b747f8d9a487b92f6b2bb1deb24eef258d8336121a6e6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "0243c7919933d6ec4c64b14d75494407b2f04625fe87e3e76a7c9c7c30000690"
+    sha256 cellar: :any,                 x86_64_linux:      "8610e91f36d8417d62c746f4c2c9c5678c9e961ec4eb5426c8b28903457abc94"
   end
 
   depends_on "go" => :build

@@ -8,12 +8,13 @@ class Vroom < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "7744afdfd4869482feafc33eb89ec4a3879aa0834e7e42a89ad9778ca61bd769"
-    sha256 cellar: :any, arm64_sequoia: "0b0d31f32ec9ef559d948f558527632afcc5388456569801e98e3647cb82ec66"
-    sha256 cellar: :any, arm64_sonoma:  "4cf49df44fd7999cc2083a3e526ea48daa0aa2cb3662e3e8a552f94c2d655a39"
-    sha256 cellar: :any, sonoma:        "1a3b3a8de929a276843f4a331c001dbf2b05b0ed8a3ab252913917ec54c3108e"
-    sha256 cellar: :any, arm64_linux:   "a2a1d04eb068ee7dfae180aafe0dab114be21a4216e6cc23da1a7a5f3d7e4c31"
-    sha256 cellar: :any, x86_64_linux:  "ae5cf02e2d7babb46ded692739e45eff866e7bfee3900fefba3dc42a402fea40"
+    sha256 cellar: :any, arm64_golden_gate: "7f509a81c864f11f6c386a2cc51d1341889e179339bb5698f2dcd2e97fbbaf41"
+    sha256 cellar: :any, arm64_tahoe:       "7744afdfd4869482feafc33eb89ec4a3879aa0834e7e42a89ad9778ca61bd769"
+    sha256 cellar: :any, arm64_sequoia:     "0b0d31f32ec9ef559d948f558527632afcc5388456569801e98e3647cb82ec66"
+    sha256 cellar: :any, arm64_sonoma:      "4cf49df44fd7999cc2083a3e526ea48daa0aa2cb3662e3e8a552f94c2d655a39"
+    sha256 cellar: :any, sonoma:            "1a3b3a8de929a276843f4a331c001dbf2b05b0ed8a3ab252913917ec54c3108e"
+    sha256 cellar: :any, arm64_linux:       "a2a1d04eb068ee7dfae180aafe0dab114be21a4216e6cc23da1a7a5f3d7e4c31"
+    sha256 cellar: :any, x86_64_linux:      "ae5cf02e2d7babb46ded692739e45eff866e7bfee3900fefba3dc42a402fea40"
   end
 
   depends_on "asio" => :build

@@ -15,12 +15,13 @@ class WasmMicroRuntime < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e769b0d5be413880dd81899dcf39bc048297ccdbf951564f24810fda93621fbc"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "23d2706a3c3fa49a5ed00c8ee7c993686b5b90382ba74cc438bcfac132d78956"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d52781e7d6f164214c1d76c124328e9c37a0f3ed5e6b4743e74d9eb06eb29bf7"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0095403b580d0a6ea1ef91f11eeaef877061610a19069fbd4280de1bb73cd292"
-    sha256 cellar: :any,                 arm64_linux:   "2bf5118b6178edf7bbeb65a83246285d85b2281b8292dd91442d6d59aa38a522"
-    sha256 cellar: :any,                 x86_64_linux:  "e2bab9b7f8cf43b7939ff086919fe10797f267d5bf1e58a2660c094f9b68c2de"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "afb18b3cac41b6bc4068d946edbefc9cd0723c30a41c81c292126d187c698425"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "e769b0d5be413880dd81899dcf39bc048297ccdbf951564f24810fda93621fbc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "23d2706a3c3fa49a5ed00c8ee7c993686b5b90382ba74cc438bcfac132d78956"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "d52781e7d6f164214c1d76c124328e9c37a0f3ed5e6b4743e74d9eb06eb29bf7"
+    sha256 cellar: :any_skip_relocation, sonoma:            "0095403b580d0a6ea1ef91f11eeaef877061610a19069fbd4280de1bb73cd292"
+    sha256 cellar: :any,                 arm64_linux:       "2bf5118b6178edf7bbeb65a83246285d85b2281b8292dd91442d6d59aa38a522"
+    sha256 cellar: :any,                 x86_64_linux:      "e2bab9b7f8cf43b7939ff086919fe10797f267d5bf1e58a2660c094f9b68c2de"
   end
 
   depends_on "cmake" => :build

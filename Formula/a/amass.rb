@@ -7,12 +7,13 @@ class Amass < Formula
   head "https://github.com/owasp-amass/amass.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0858e9a8b7d99e76652642969d4ec85caea00169b6f55cff2793e2e0d50bd592"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0858e9a8b7d99e76652642969d4ec85caea00169b6f55cff2793e2e0d50bd592"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0858e9a8b7d99e76652642969d4ec85caea00169b6f55cff2793e2e0d50bd592"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4748b5419556f2afb8c22d9b58da675eab66a4320a5904ac0647f8161ab975c8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fd1da4421acfbfde4f85ebfc0bd338844d4b44d37db16855c2c6571a3cb5288a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d8d71769197d1f6c9f503bd52306e26ab3484c64a5528f0c147416ee5d4bcb21"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "4d10c7bab807cea15073c5358e01c1181415ec2c4882bbff499c118f220c822f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "0858e9a8b7d99e76652642969d4ec85caea00169b6f55cff2793e2e0d50bd592"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "0858e9a8b7d99e76652642969d4ec85caea00169b6f55cff2793e2e0d50bd592"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "0858e9a8b7d99e76652642969d4ec85caea00169b6f55cff2793e2e0d50bd592"
+    sha256 cellar: :any_skip_relocation, sonoma:            "4748b5419556f2afb8c22d9b58da675eab66a4320a5904ac0647f8161ab975c8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "fd1da4421acfbfde4f85ebfc0bd338844d4b44d37db16855c2c6571a3cb5288a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "d8d71769197d1f6c9f503bd52306e26ab3484c64a5528f0c147416ee5d4bcb21"
   end
 
   depends_on "go" => :build

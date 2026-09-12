@@ -7,12 +7,13 @@ class GitlabGem < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "28a634a10d64dd6205d560f27a925cf90f44a9dc65df22e4a3459f73a3f2a2a9"
-    sha256 cellar: :any,                 arm64_sequoia: "e1a7e8d12754a76599ab213a19a4b493d129a5b789f6a6f0e148c46deee4c893"
-    sha256 cellar: :any,                 arm64_sonoma:  "f9e0340a1aee2683d9f00299793417315ca61a41f022e8f0a3efc88fab1cbba6"
-    sha256 cellar: :any,                 sonoma:        "9bbddff38c9c1ba7e7c93a2a5ae77193074cd7155bac3f7ec79662656eeece6f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3e20a0f8c40e295b45801ddb73894a99f30a3bee85b0838444047f15a0aae3bb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "213d74835f53b03be09a324f70c292a457df7eb83c89d4aec419a37bf428805d"
+    sha256 cellar: :any,                 arm64_golden_gate: "a33716cc84b230aa9ccbb009ac6a48956979174bf7e60819528d37ee690ca4e6"
+    sha256 cellar: :any,                 arm64_tahoe:       "28a634a10d64dd6205d560f27a925cf90f44a9dc65df22e4a3459f73a3f2a2a9"
+    sha256 cellar: :any,                 arm64_sequoia:     "e1a7e8d12754a76599ab213a19a4b493d129a5b789f6a6f0e148c46deee4c893"
+    sha256 cellar: :any,                 arm64_sonoma:      "f9e0340a1aee2683d9f00299793417315ca61a41f022e8f0a3efc88fab1cbba6"
+    sha256 cellar: :any,                 sonoma:            "9bbddff38c9c1ba7e7c93a2a5ae77193074cd7155bac3f7ec79662656eeece6f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "3e20a0f8c40e295b45801ddb73894a99f30a3bee85b0838444047f15a0aae3bb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "213d74835f53b03be09a324f70c292a457df7eb83c89d4aec419a37bf428805d"
   end
 
   depends_on "ruby"

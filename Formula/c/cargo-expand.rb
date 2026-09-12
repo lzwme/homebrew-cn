@@ -7,12 +7,13 @@ class CargoExpand < Formula
   head "https://github.com/dtolnay/cargo-expand.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e74205d40dad6bc1cfdfefd77d6c683b569fbffee3844b03331a71cd8b162188"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ae40757085c6609594349e5cfa4ef5edddcd9365f214567bc372f94ad096eb3e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ca85d75947e125a4ca6623623638ef97277f45ea1733ab7b2bbccf1844d0bfbd"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c204112c30f3c80152a6a08c6619d3075ebb12fcb4378bdb4befb295caeed036"
-    sha256 cellar: :any,                 arm64_linux:   "5d3a7ba37d70101e32390f75afeb22216d620426d55d05d25fb4b120e146bc64"
-    sha256 cellar: :any,                 x86_64_linux:  "9763cbff28c3517bb02c37712a1a1fa7c8661292a128185a1260a73518d6ce94"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "346a8f957a3e1b5126f904da2da1abddbe9676c5849d2733fb2422e540fc7d57"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "e74205d40dad6bc1cfdfefd77d6c683b569fbffee3844b03331a71cd8b162188"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "ae40757085c6609594349e5cfa4ef5edddcd9365f214567bc372f94ad096eb3e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "ca85d75947e125a4ca6623623638ef97277f45ea1733ab7b2bbccf1844d0bfbd"
+    sha256 cellar: :any_skip_relocation, sonoma:            "c204112c30f3c80152a6a08c6619d3075ebb12fcb4378bdb4befb295caeed036"
+    sha256 cellar: :any,                 arm64_linux:       "5d3a7ba37d70101e32390f75afeb22216d620426d55d05d25fb4b120e146bc64"
+    sha256 cellar: :any,                 x86_64_linux:      "9763cbff28c3517bb02c37712a1a1fa7c8661292a128185a1260a73518d6ce94"
   end
 
   depends_on "rust" => :build
@@ -23,7 +24,7 @@ class CargoExpand < Formula
   end
 
   test do
-    ENV.prepend_path "PATH", Formula["rustup"].bin
+    ENV.prepend_path "PATH", formula_opt_bin("rustup")
     system "rustup", "set", "profile", "minimal"
     system "rustup", "default", "stable"
 

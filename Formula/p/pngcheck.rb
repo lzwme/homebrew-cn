@@ -7,12 +7,13 @@ class Pngcheck < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "06f4655ebdc1cb9a83d502e514cfcd8c5fa108984ac7e9536e117b3b6978a471"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "de3eab5fa5af3e288a31c498cb0f3778efaae124ffc636570e5bf7e4d0c09b39"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8bb15db528179e648131862326e6f02e0e777f2c38333e51e2e006858a70048c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "637dc8b986af16b9f14fadbfd3fd9baa9ad3d7cba8301c046ee28cd78ab0186e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fafce573ad3a6f08c1a64f544af99c62b605eca2d3fc65f3e9fbe955f968dde8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "13b68192c37d494a1180cb2cdd43995796b1f314075e5c045d35c653c407f65b"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "f3e52bfa833e7607b099eb67819c312eeb6ed91405b3132e72b989939b642370"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "06f4655ebdc1cb9a83d502e514cfcd8c5fa108984ac7e9536e117b3b6978a471"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "de3eab5fa5af3e288a31c498cb0f3778efaae124ffc636570e5bf7e4d0c09b39"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "8bb15db528179e648131862326e6f02e0e777f2c38333e51e2e006858a70048c"
+    sha256 cellar: :any_skip_relocation, sonoma:            "637dc8b986af16b9f14fadbfd3fd9baa9ad3d7cba8301c046ee28cd78ab0186e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "fafce573ad3a6f08c1a64f544af99c62b605eca2d3fc65f3e9fbe955f968dde8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "13b68192c37d494a1180cb2cdd43995796b1f314075e5c045d35c653c407f65b"
   end
 
   depends_on "cmake" => :build

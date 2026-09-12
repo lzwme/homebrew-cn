@@ -13,11 +13,12 @@ class Ldc < Formula
 
   bottle do
     rebuild 1
-    sha256               arm64_tahoe:   "6411351b3cc448579fe425e82d585065fb9110066bd2dca38403d62255ae44aa"
-    sha256               arm64_sequoia: "df52a126dd7cfa567931c844773425000f5fad054d041ba17873723ed7dde8b2"
-    sha256               arm64_sonoma:  "8b77efb73179e35cbe3f0c0cac3ec27f3d21e80e92aea40042b67fc90a0406b6"
-    sha256               arm64_linux:   "c3a37bb1b0bdb6dc779c5c76e1758ddd9b8b0d19a5dd8c950da2b249c2bcf75f"
-    sha256 cellar: :any, x86_64_linux:  "9c53afa35a0a50ccf3a47e5a502e8cf4289102dc69067cfc36425b8a7313566a"
+    sha256               arm64_golden_gate: "86e72c71c5005de997703e774cf06b240ed740b73d13a24cff61c35fc9f24412"
+    sha256               arm64_tahoe:       "6411351b3cc448579fe425e82d585065fb9110066bd2dca38403d62255ae44aa"
+    sha256               arm64_sequoia:     "df52a126dd7cfa567931c844773425000f5fad054d041ba17873723ed7dde8b2"
+    sha256               arm64_sonoma:      "8b77efb73179e35cbe3f0c0cac3ec27f3d21e80e92aea40042b67fc90a0406b6"
+    sha256               arm64_linux:       "c3a37bb1b0bdb6dc779c5c76e1758ddd9b8b0d19a5dd8c950da2b249c2bcf75f"
+    sha256 cellar: :any, x86_64_linux:      "9c53afa35a0a50ccf3a47e5a502e8cf4289102dc69067cfc36425b8a7313566a"
   end
 
   depends_on "cmake" => :build

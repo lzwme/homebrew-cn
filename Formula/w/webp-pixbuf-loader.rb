@@ -8,12 +8,13 @@ class WebpPixbufLoader < Formula
 
   bottle do
     rebuild 2
-    sha256 cellar: :any, arm64_tahoe:   "467ab2b45de6bd89134d996c60f43d5e31be59fe7b456aac4438ea3983724803"
-    sha256 cellar: :any, arm64_sequoia: "c51af8034aa08c422d03f920a6700592e626a1d92d0660f4b391add97552da80"
-    sha256 cellar: :any, arm64_sonoma:  "ad20d0d3de45309543dd98d128dc51d417f94c1c6fafea6af59891684645fe79"
-    sha256 cellar: :any, sonoma:        "5bbc37fdbe074399341b48e0e1a79693e732987d7afb023e7ef2fc2bb31e9cb8"
-    sha256               arm64_linux:   "70ede1ef40df1b6988edec0dd1187c30077738c8f14f09f0d2457c97af62227a"
-    sha256               x86_64_linux:  "49cab10c1cf8f1b8ffadd24002c689ce1dbaf190e66f6c6b17d75292fe2bfbe3"
+    sha256 cellar: :any, arm64_golden_gate: "665dd4028b4caa882dc587b17fb481a4af606eacdc40441cce3504ce8a0c35ef"
+    sha256 cellar: :any, arm64_tahoe:       "467ab2b45de6bd89134d996c60f43d5e31be59fe7b456aac4438ea3983724803"
+    sha256 cellar: :any, arm64_sequoia:     "c51af8034aa08c422d03f920a6700592e626a1d92d0660f4b391add97552da80"
+    sha256 cellar: :any, arm64_sonoma:      "ad20d0d3de45309543dd98d128dc51d417f94c1c6fafea6af59891684645fe79"
+    sha256 cellar: :any, sonoma:            "5bbc37fdbe074399341b48e0e1a79693e732987d7afb023e7ef2fc2bb31e9cb8"
+    sha256               arm64_linux:       "70ede1ef40df1b6988edec0dd1187c30077738c8f14f09f0d2457c97af62227a"
+    sha256               x86_64_linux:      "49cab10c1cf8f1b8ffadd24002c689ce1dbaf190e66f6c6b17d75292fe2bfbe3"
   end
 
   depends_on "meson" => :build

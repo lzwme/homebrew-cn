@@ -9,12 +9,13 @@ class Apkleaks < Formula
   revision 3
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7ef094fc6874927d49109a7c73252c69eac52fe02d3793044e3bab92ec365f9b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "733f1ecaa0a6c12911466fdab9c9c9cef1832b7321b95c6d646aa4184cc9d503"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "afa56250146ce1dd5003da93014dfd4317852ef14a699245de170d07aa3ae11c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "54119887fb5d7d6c54bf7cab9afccff751e3e1e16ad8edfef7789612126d3fec"
-    sha256 cellar: :any,                 arm64_linux:   "9838d6b1fe8a7d5b3b851150eee4b9980163470b7e636ef9ec90ecbe09f7a5ef"
-    sha256 cellar: :any,                 x86_64_linux:  "148cbd6e620031a36ca4f6c2a2c534e9b4c819ac0a5ed3f8302073704c9129fc"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "d50f6bea553bddfdddc919110734307938f9221c715d0207e89370461c92d3d7"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "7ef094fc6874927d49109a7c73252c69eac52fe02d3793044e3bab92ec365f9b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "733f1ecaa0a6c12911466fdab9c9c9cef1832b7321b95c6d646aa4184cc9d503"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "afa56250146ce1dd5003da93014dfd4317852ef14a699245de170d07aa3ae11c"
+    sha256 cellar: :any_skip_relocation, sonoma:            "54119887fb5d7d6c54bf7cab9afccff751e3e1e16ad8edfef7789612126d3fec"
+    sha256 cellar: :any,                 arm64_linux:       "9838d6b1fe8a7d5b3b851150eee4b9980163470b7e636ef9ec90ecbe09f7a5ef"
+    sha256 cellar: :any,                 x86_64_linux:      "148cbd6e620031a36ca4f6c2a2c534e9b4c819ac0a5ed3f8302073704c9129fc"
   end
 
   depends_on "jadx"

@@ -12,11 +12,12 @@ class Pkgsite < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bea59e96a94b29716c223383743fa690b707e4664ff1bf386cad8b5e8d17d239"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bea59e96a94b29716c223383743fa690b707e4664ff1bf386cad8b5e8d17d239"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bea59e96a94b29716c223383743fa690b707e4664ff1bf386cad8b5e8d17d239"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "de5ea560f4f84d80072723b22dc9d804d933d06a3c39872cfd01107da76dfbfc"
-    sha256 cellar: :any,                 x86_64_linux:  "814fc969c6ba654e77f16e63cd3fc6254aa60291efc8401efa36e3c6af64359e"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "bea59e96a94b29716c223383743fa690b707e4664ff1bf386cad8b5e8d17d239"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "bea59e96a94b29716c223383743fa690b707e4664ff1bf386cad8b5e8d17d239"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "bea59e96a94b29716c223383743fa690b707e4664ff1bf386cad8b5e8d17d239"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "bea59e96a94b29716c223383743fa690b707e4664ff1bf386cad8b5e8d17d239"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "de5ea560f4f84d80072723b22dc9d804d933d06a3c39872cfd01107da76dfbfc"
+    sha256 cellar: :any,                 x86_64_linux:      "814fc969c6ba654e77f16e63cd3fc6254aa60291efc8401efa36e3c6af64359e"
   end
 
   depends_on "go" => [:build, :test]

@@ -7,12 +7,13 @@ class Gotify < Formula
   head "https://github.com/gotify/cli.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d41413c95f0690361e42655275578fe1bfca727c2f590e1cb46d30751b3f56d5"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d41413c95f0690361e42655275578fe1bfca727c2f590e1cb46d30751b3f56d5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d41413c95f0690361e42655275578fe1bfca727c2f590e1cb46d30751b3f56d5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ebf635645387e72e4fc89c9028dbb1cb1349280b761748750aece59eb73b8640"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fbaf64b7affa2483a49f6e10fc0389a0ddda2797a2ddc57d66006270218e5680"
-    sha256 cellar: :any,                 x86_64_linux:  "a51cb1c52b5c99b2373146265e91ef7f3c5a1ae3ea711b92d760d218f1bb56fc"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "919fa25d20b47cff49e8b4b517a2794855afd011935ec2f883e0dab04f43053f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "d41413c95f0690361e42655275578fe1bfca727c2f590e1cb46d30751b3f56d5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "d41413c95f0690361e42655275578fe1bfca727c2f590e1cb46d30751b3f56d5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "d41413c95f0690361e42655275578fe1bfca727c2f590e1cb46d30751b3f56d5"
+    sha256 cellar: :any_skip_relocation, sonoma:            "ebf635645387e72e4fc89c9028dbb1cb1349280b761748750aece59eb73b8640"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "fbaf64b7affa2483a49f6e10fc0389a0ddda2797a2ddc57d66006270218e5680"
+    sha256 cellar: :any,                 x86_64_linux:      "a51cb1c52b5c99b2373146265e91ef7f3c5a1ae3ea711b92d760d218f1bb56fc"
   end
 
   depends_on "go" => :build

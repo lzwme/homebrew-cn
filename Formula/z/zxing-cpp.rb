@@ -7,12 +7,13 @@ class ZxingCpp < Formula
   head "https://github.com/zxing-cpp/zxing-cpp.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "3795a6d9898fa8ef01980dc62af5663ea9c5095bd4632030ca912740aa70ee5d"
-    sha256 cellar: :any, arm64_sequoia: "292f6fc70f5ffc2d7d92c22f211d3a0d78784760b59bd430e80f60f15ee38b7d"
-    sha256 cellar: :any, arm64_sonoma:  "7d236370587c353fc70e88d7967cb3529ee4d5c44d2ddb439d9609e69068ff34"
-    sha256 cellar: :any, sonoma:        "56c38ea9e718f8564f98baeeb3209411c5db1100608936bac2231aa03bf0d3c5"
-    sha256 cellar: :any, arm64_linux:   "528829b770cfe30f3b05704fd8f541fd36206b9dc9918451e0fe4209a1ad31fa"
-    sha256 cellar: :any, x86_64_linux:  "12434a21e3211b17cf5d7825a10e05e60d6d28d198476ecaf29dcbdb036e2f36"
+    sha256 cellar: :any, arm64_golden_gate: "4bde0564907fe5b9e63f3d389853719d0452d2381aca015eb08f57e662683e77"
+    sha256 cellar: :any, arm64_tahoe:       "3795a6d9898fa8ef01980dc62af5663ea9c5095bd4632030ca912740aa70ee5d"
+    sha256 cellar: :any, arm64_sequoia:     "292f6fc70f5ffc2d7d92c22f211d3a0d78784760b59bd430e80f60f15ee38b7d"
+    sha256 cellar: :any, arm64_sonoma:      "7d236370587c353fc70e88d7967cb3529ee4d5c44d2ddb439d9609e69068ff34"
+    sha256 cellar: :any, sonoma:            "56c38ea9e718f8564f98baeeb3209411c5db1100608936bac2231aa03bf0d3c5"
+    sha256 cellar: :any, arm64_linux:       "528829b770cfe30f3b05704fd8f541fd36206b9dc9918451e0fe4209a1ad31fa"
+    sha256 cellar: :any, x86_64_linux:      "12434a21e3211b17cf5d7825a10e05e60d6d28d198476ecaf29dcbdb036e2f36"
   end
 
   depends_on "cmake" => :build

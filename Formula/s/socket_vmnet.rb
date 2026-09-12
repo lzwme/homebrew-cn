@@ -8,10 +8,11 @@ class SocketVmnet < Formula
 
   bottle do
     rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3120039f523d59fe299b4f3595b0db5f59af486def3c7108ffe22579292227e8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8734ebe53397638b77dd5bf51c15cb6eaf4aabf297a315868bef2ef6505c31d7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fdbf14d02df41c08c6e6c54059df2138133af4864e6709b37c10ac1a94c0c279"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3248770360fa1ea37347b33fce263982e0362e7176c253d5bf7e4e41443f9c79"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "51cf2fadc5a540d5645d5f474fd94d436186b93f5332888c17304ce21778689c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "3120039f523d59fe299b4f3595b0db5f59af486def3c7108ffe22579292227e8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "8734ebe53397638b77dd5bf51c15cb6eaf4aabf297a315868bef2ef6505c31d7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "fdbf14d02df41c08c6e6c54059df2138133af4864e6709b37c10ac1a94c0c279"
+    sha256 cellar: :any_skip_relocation, sonoma:            "3248770360fa1ea37347b33fce263982e0362e7176c253d5bf7e4e41443f9c79"
   end
 
   keg_only "it should not be in Homebrew's bin directory, which is often writable by a non-admin user"

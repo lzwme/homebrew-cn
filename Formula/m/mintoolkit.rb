@@ -12,12 +12,13 @@ class Mintoolkit < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "46b2ab6b6a9737f6cdd6d71144c5761c0d81800a31dd71c97d3be9833a089940"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "29e5e2ea92bf195a054bdb7a00b94a6200a68633883588327ef58d52198f57c7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fab60cb96ec058012b9b5731408373dcbd897ec6ba173b90551e92e39289d1df"
-    sha256 cellar: :any_skip_relocation, sonoma:        "fa22f8c22cf3b4dcfe49dca2ed42b3c5c9b2c11276f1e37a5eebee5aed27ef63"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ad6e2ebb12043106ffd49dc4b23a5ca82e5517cd34acb67227a654438ceafa76"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "eb4218cf724bbe79c844c3dc8922ae4ff957aa74cdffd7232ff4d79c6ef5f3a0"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "7ee78ef0f5ed3923c3ab170c1bb3a640c57bd2b2c7ccab0eb16c84565f7f17a7"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "46b2ab6b6a9737f6cdd6d71144c5761c0d81800a31dd71c97d3be9833a089940"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "29e5e2ea92bf195a054bdb7a00b94a6200a68633883588327ef58d52198f57c7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "fab60cb96ec058012b9b5731408373dcbd897ec6ba173b90551e92e39289d1df"
+    sha256 cellar: :any_skip_relocation, sonoma:            "fa22f8c22cf3b4dcfe49dca2ed42b3c5c9b2c11276f1e37a5eebee5aed27ef63"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "ad6e2ebb12043106ffd49dc4b23a5ca82e5517cd34acb67227a654438ceafa76"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "eb4218cf724bbe79c844c3dc8922ae4ff957aa74cdffd7232ff4d79c6ef5f3a0"
   end
 
   depends_on "go" => :build

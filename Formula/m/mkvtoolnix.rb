@@ -13,12 +13,13 @@ class Mkvtoolnix < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "3ff5c3aad9f1ab57279360a434eddf3b7216ab2b06c57ee4cf3f7a6a67ad2b93"
-    sha256 cellar: :any, arm64_sequoia: "5e0a5f979ea23ce8a48a9b4b0698136989ee2a3fbc60ce71f36720b8af4609bd"
-    sha256 cellar: :any, arm64_sonoma:  "66af302b764a41ff4212bfbecc26b3aac8993ad6bb04e8504b1874543278287a"
-    sha256 cellar: :any, sonoma:        "efdb3ead6bc75d6ff701c04940b0875d1a522a20979b7c20d62353a62ba999dd"
-    sha256               arm64_linux:   "65fb959753a895dc35eb9ff584353577ed03cfdd18bcf54260bf1af3e18300e4"
-    sha256               x86_64_linux:  "0cbad7fd51fbaf008f50d6270454bda97854b7bfe96eee5dfc0c12e12742e370"
+    sha256 cellar: :any, arm64_golden_gate: "fe898a1ae9d850522fd09d51537a1a602038f595fb0ebbd67e7f8fd697c51221"
+    sha256 cellar: :any, arm64_tahoe:       "3ff5c3aad9f1ab57279360a434eddf3b7216ab2b06c57ee4cf3f7a6a67ad2b93"
+    sha256 cellar: :any, arm64_sequoia:     "5e0a5f979ea23ce8a48a9b4b0698136989ee2a3fbc60ce71f36720b8af4609bd"
+    sha256 cellar: :any, arm64_sonoma:      "66af302b764a41ff4212bfbecc26b3aac8993ad6bb04e8504b1874543278287a"
+    sha256 cellar: :any, sonoma:            "efdb3ead6bc75d6ff701c04940b0875d1a522a20979b7c20d62353a62ba999dd"
+    sha256               arm64_linux:       "65fb959753a895dc35eb9ff584353577ed03cfdd18bcf54260bf1af3e18300e4"
+    sha256               x86_64_linux:      "0cbad7fd51fbaf008f50d6270454bda97854b7bfe96eee5dfc0c12e12742e370"
   end
 
   head do
@@ -54,8 +55,6 @@ class Mkvtoolnix < Formula
   on_linux do
     depends_on "zlib-ng-compat"
   end
-
-  conflicts_with cask: "mkvtoolnix-app"
 
   def install
     # Remove bundled libraries

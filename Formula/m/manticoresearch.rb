@@ -1,8 +1,8 @@
 class Manticoresearch < Formula
   desc "Open source text search engine"
   homepage "https://manticoresearch.com"
-  url "https://ghfast.top/https://github.com/manticoresoftware/manticoresearch/archive/refs/tags/29.0.2.tar.gz"
-  sha256 "e2d0184acd2583c69ffab76a1b854146cc47f9980afb60679e171c3ebf132e5b"
+  url "https://ghfast.top/https://github.com/manticoresoftware/manticoresearch/archive/refs/tags/29.9.0.tar.gz"
+  sha256 "e1dc58dc671e74278a6ab5327c2fc666d75ae3ad6fbc59587f60376043f3cb4e"
   license all_of: [
     "GPL-3.0-or-later",
     "GPL-2.0-only", # wsrep
@@ -21,12 +21,11 @@ class Manticoresearch < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "b96d843a5023ed1c3c92d4794b2f21a37f6849549dc1843c7b1cf3c4ea4267fe"
-    sha256 arm64_sequoia: "38dfadcf951b18de50f0de234c1fda400e448037602cb3f830005c3f587fadf2"
-    sha256 arm64_sonoma:  "f699654fd343925286515b3318fb8fabf2983fe9b7031587af8cd236daa3eaec"
-    sha256 sonoma:        "b76b8e6ca791c87cafc355b0386faacea5aea670dda8fc78a80d210821d7a374"
-    sha256 arm64_linux:   "a9f86e38bcdda37fc37949eee1cc2ec7873eb12553a6694bb8f9141102ef3661"
-    sha256 x86_64_linux:  "a746694fdf5b25540b2d62e9536dc07f299c0ac9ddf862a6f580cae7d4e5ec32"
+    sha256 arm64_golden_gate: "96ab5a6c528030bf8ac8e8dabe2ff1d8daa31e7e3e7cd1d1c856c55e497f6d75"
+    sha256 arm64_tahoe:       "07b7007c3b5f8d3ccd04e300d6bcbfbee81b4c3fa6e110b4e8a57b2066e25e13"
+    sha256 arm64_sequoia:     "d9a3b7e2706300f492dacc5a8cf5f00b8fbeefe8ea156328edadd083d845739e"
+    sha256 arm64_linux:       "ba864d904bf6e26e20670647a5898bcc59e411fe168a78a3839225908dad7001"
+    sha256 x86_64_linux:      "8d25056aae06eb44bb911e605e90bd6d180403df537a2647ba3442c7f7884d5e"
   end
 
   depends_on "cmake" => :build
@@ -54,9 +53,9 @@ class Manticoresearch < Formula
   end
 
   resource "mcl" do
-    url "https://ghfast.top/https://github.com/manticoresoftware/columnar/archive/dbc40aa7a6955ddb33be3b1f777f74576f65a6a6.tar.gz"
-    version "dbc40aa7a6955ddb33be3b1f777f74576f65a6a6"
-    sha256 "8b3edb801951f1e7d1dc4ee7c0b9c3728dbc4626e927b91a745750db60791759"
+    url "https://ghfast.top/https://github.com/manticoresoftware/columnar/archive/cb282a2442d2d51349fbea67cda97c2dda37f0bd.tar.gz"
+    version "cb282a2442d2d51349fbea67cda97c2dda37f0bd"
+    sha256 "5d444222405c00ce21f3a360e5983b140247f43b18c7f01b85d4b564e87a8432"
 
     livecheck do
       url "https://api.github.com/repos/manticoresoftware/manticoresearch/contents/mcl?ref=#{LATEST_VERSION}"

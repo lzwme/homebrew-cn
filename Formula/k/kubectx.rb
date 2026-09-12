@@ -7,12 +7,13 @@ class Kubectx < Formula
   head "https://github.com/ahmetb/kubectx.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c1b987001988e309fb4f479633dc4bdb7c212556853d89f9c33e44012230fead"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c1b987001988e309fb4f479633dc4bdb7c212556853d89f9c33e44012230fead"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c1b987001988e309fb4f479633dc4bdb7c212556853d89f9c33e44012230fead"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e29bc33ab632895925f7c730ce916f2dc09e6f1a0e65f244458601d59bd8340f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fda69a48f9d16e6a5325d8bb2a86b8f053ba0224c34d9f5683babfdcc3c977ea"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bfe2732edeb88759e0283124e0ae89d8f73cad1e6c03644066074abbfd375f12"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "c4841224ac089dca72de8918a0e88dd27871ccfba395edbe9dfac08774319858"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "c1b987001988e309fb4f479633dc4bdb7c212556853d89f9c33e44012230fead"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "c1b987001988e309fb4f479633dc4bdb7c212556853d89f9c33e44012230fead"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "c1b987001988e309fb4f479633dc4bdb7c212556853d89f9c33e44012230fead"
+    sha256 cellar: :any_skip_relocation, sonoma:            "e29bc33ab632895925f7c730ce916f2dc09e6f1a0e65f244458601d59bd8340f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "fda69a48f9d16e6a5325d8bb2a86b8f053ba0224c34d9f5683babfdcc3c977ea"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "bfe2732edeb88759e0283124e0ae89d8f73cad1e6c03644066074abbfd375f12"
   end
 
   depends_on "go" => :build

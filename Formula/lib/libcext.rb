@@ -11,12 +11,13 @@ class Libcext < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "29e252f3c56b2d68da1aa5da66f4551bebd87e53d6db8449fc25059c022dddf7"
-    sha256 cellar: :any, arm64_sequoia: "f18f3718af6c5b721c033f913bb2c5692ce09c92e33479c728a59f825c902dec"
-    sha256 cellar: :any, arm64_sonoma:  "13fab2ed8c3c4c5589ec52a94ad4eae20de0c10d7365e1804f04f3790284e9ce"
-    sha256 cellar: :any, sonoma:        "9791a79885d754c78fd120a01072164ccb1d7f82d14b1a45c93449e497ace04e"
-    sha256 cellar: :any, arm64_linux:   "27dab44f698fa0473bd0a1333023942141fcadeb2b21e5b2dc4a2cadae4c0884"
-    sha256 cellar: :any, x86_64_linux:  "97189a77ae9c48a742fc50a75e3607b7a3b95f1e8c9bed299ef17a399f29c707"
+    sha256 cellar: :any, arm64_golden_gate: "6a8de16a8b5111c6fe89e1db11610ae5e64eb324a32dc9304eab7dd0181c9083"
+    sha256 cellar: :any, arm64_tahoe:       "29e252f3c56b2d68da1aa5da66f4551bebd87e53d6db8449fc25059c022dddf7"
+    sha256 cellar: :any, arm64_sequoia:     "f18f3718af6c5b721c033f913bb2c5692ce09c92e33479c728a59f825c902dec"
+    sha256 cellar: :any, arm64_sonoma:      "13fab2ed8c3c4c5589ec52a94ad4eae20de0c10d7365e1804f04f3790284e9ce"
+    sha256 cellar: :any, sonoma:            "9791a79885d754c78fd120a01072164ccb1d7f82d14b1a45c93449e497ace04e"
+    sha256 cellar: :any, arm64_linux:       "27dab44f698fa0473bd0a1333023942141fcadeb2b21e5b2dc4a2cadae4c0884"
+    sha256 cellar: :any, x86_64_linux:      "97189a77ae9c48a742fc50a75e3607b7a3b95f1e8c9bed299ef17a399f29c707"
   end
 
   def install

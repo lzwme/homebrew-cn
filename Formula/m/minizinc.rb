@@ -7,11 +7,12 @@ class Minizinc < Formula
   head "https://github.com/MiniZinc/libminizinc.git", branch: "develop"
 
   bottle do
-    sha256 arm64_tahoe:   "0e399701db20c046b319387ab97f0928136a89b83401e939934862a0585d5f97"
-    sha256 arm64_sequoia: "6decd5eebaa54328910cee5a32e580db6b0424c0b58c71d9044558f8ee77913c"
-    sha256 arm64_sonoma:  "981041ddb6bdb98f0b7d7cb52d81d291603bae2145d19aa399851584eca7f25e"
-    sha256 arm64_linux:   "33ef0af1f067f0cd1a6141aa2b5b17fc7d85a9aebe03107d6125ef3e8efbe29e"
-    sha256 x86_64_linux:  "c5c6631aab467d49232e52fee307c7bd641b0ffd6222887243abed1500c2820b"
+    sha256 arm64_golden_gate: "7ce8ae49a7159112321f619709aadca67bbc8882d1b97b6e88e317849fdcffbc"
+    sha256 arm64_tahoe:       "0e399701db20c046b319387ab97f0928136a89b83401e939934862a0585d5f97"
+    sha256 arm64_sequoia:     "6decd5eebaa54328910cee5a32e580db6b0424c0b58c71d9044558f8ee77913c"
+    sha256 arm64_sonoma:      "981041ddb6bdb98f0b7d7cb52d81d291603bae2145d19aa399851584eca7f25e"
+    sha256 arm64_linux:       "33ef0af1f067f0cd1a6141aa2b5b17fc7d85a9aebe03107d6125ef3e8efbe29e"
+    sha256 x86_64_linux:      "c5c6631aab467d49232e52fee307c7bd641b0ffd6222887243abed1500c2820b"
   end
 
   depends_on "cmake" => :build
@@ -22,8 +23,6 @@ class Minizinc < Formula
   depends_on "coinutils"
   depends_on "gecode"
   depends_on "osi"
-
-  conflicts_with cask: "minizincide", because: "both install `minizinc` binaries"
 
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args

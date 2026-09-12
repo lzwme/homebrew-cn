@@ -8,11 +8,12 @@ class Kubebuilder < Formula
   head "https://github.com/kubernetes-sigs/kubebuilder.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b9426683dc0f8201c4548f901ded21b2ec737297a30e82fafb13b20037ccb144"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b9426683dc0f8201c4548f901ded21b2ec737297a30e82fafb13b20037ccb144"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b9426683dc0f8201c4548f901ded21b2ec737297a30e82fafb13b20037ccb144"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d727955024ca9f49ae7129a31e29b314f2c8daa48aafaefa7f5c18c4e4a6c90a"
-    sha256 cellar: :any,                 x86_64_linux:  "b73825289bca4d709644ee29a04d390b26d707b94d7c9b5f9f006325565c1efb"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "b9426683dc0f8201c4548f901ded21b2ec737297a30e82fafb13b20037ccb144"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "b9426683dc0f8201c4548f901ded21b2ec737297a30e82fafb13b20037ccb144"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "b9426683dc0f8201c4548f901ded21b2ec737297a30e82fafb13b20037ccb144"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "b9426683dc0f8201c4548f901ded21b2ec737297a30e82fafb13b20037ccb144"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "d727955024ca9f49ae7129a31e29b314f2c8daa48aafaefa7f5c18c4e4a6c90a"
+    sha256 cellar: :any,                 x86_64_linux:      "b73825289bca4d709644ee29a04d390b26d707b94d7c9b5f9f006325565c1efb"
   end
 
   depends_on "go"

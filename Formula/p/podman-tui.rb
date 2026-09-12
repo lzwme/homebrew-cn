@@ -9,11 +9,12 @@ class PodmanTui < Formula
   no_autobump! because: :bumped_by_upstream
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d81002f5595efd25aab4539662c23117eeb9ce6cc6c34fd798184e03b8180220"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d81002f5595efd25aab4539662c23117eeb9ce6cc6c34fd798184e03b8180220"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d81002f5595efd25aab4539662c23117eeb9ce6cc6c34fd798184e03b8180220"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3fe4c655b8778e59db48e6b090ed9d5665ebf3746073ce7eec70a66b4f40be08"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bb09f18685d4f87349f9f04b9a989d70c993bc5c4314514a74f33ec75784594f"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "d81002f5595efd25aab4539662c23117eeb9ce6cc6c34fd798184e03b8180220"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "d81002f5595efd25aab4539662c23117eeb9ce6cc6c34fd798184e03b8180220"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "d81002f5595efd25aab4539662c23117eeb9ce6cc6c34fd798184e03b8180220"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "d81002f5595efd25aab4539662c23117eeb9ce6cc6c34fd798184e03b8180220"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "3fe4c655b8778e59db48e6b090ed9d5665ebf3746073ce7eec70a66b4f40be08"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "bb09f18685d4f87349f9f04b9a989d70c993bc5c4314514a74f33ec75784594f"
   end
 
   depends_on "go" => :build

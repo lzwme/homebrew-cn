@@ -6,12 +6,13 @@ class Commitlint < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9e95cdcb928cfc9a06e6bee1de928683283c68dc81761db9eaffdd2087d2d6fc"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9e95cdcb928cfc9a06e6bee1de928683283c68dc81761db9eaffdd2087d2d6fc"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9e95cdcb928cfc9a06e6bee1de928683283c68dc81761db9eaffdd2087d2d6fc"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1bd4a522057e2073a3a8636fc421e4d2cef243f662963e1f78fbe8fe22085593"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "18c933a311c3ab5fd8289d7f2a24b3262f4a9054dbbdde6718e4671c098de430"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ebaebe0ae168c555e310a5795a1d9aaf93d24d1d10ea926bee57434bf98e470e"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "c58a2811fa6975e011fdda2afc95af658a6c3f7d9becc5985b2b788ef30539c2"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "9e95cdcb928cfc9a06e6bee1de928683283c68dc81761db9eaffdd2087d2d6fc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "9e95cdcb928cfc9a06e6bee1de928683283c68dc81761db9eaffdd2087d2d6fc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "9e95cdcb928cfc9a06e6bee1de928683283c68dc81761db9eaffdd2087d2d6fc"
+    sha256 cellar: :any_skip_relocation, sonoma:            "1bd4a522057e2073a3a8636fc421e4d2cef243f662963e1f78fbe8fe22085593"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "18c933a311c3ab5fd8289d7f2a24b3262f4a9054dbbdde6718e4671c098de430"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "ebaebe0ae168c555e310a5795a1d9aaf93d24d1d10ea926bee57434bf98e470e"
   end
 
   depends_on "node"

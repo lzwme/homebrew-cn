@@ -7,11 +7,12 @@ class Gofumpt < Formula
   head "https://github.com/mvdan/gofumpt.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c3516a75ecfb1277f3dddb84af979be8e13b702376b343be9624d8b059aa7fcc"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c3516a75ecfb1277f3dddb84af979be8e13b702376b343be9624d8b059aa7fcc"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c3516a75ecfb1277f3dddb84af979be8e13b702376b343be9624d8b059aa7fcc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2bd53d9631ade4ce6051e7a6bf8011b59d1fe5530f9cec0f8f1c70ca591926ae"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cf2294efce565123124ba6150fe37039fada73c2ae806c7b010faa9df12e74ab"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "c3516a75ecfb1277f3dddb84af979be8e13b702376b343be9624d8b059aa7fcc"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "c3516a75ecfb1277f3dddb84af979be8e13b702376b343be9624d8b059aa7fcc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "c3516a75ecfb1277f3dddb84af979be8e13b702376b343be9624d8b059aa7fcc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "c3516a75ecfb1277f3dddb84af979be8e13b702376b343be9624d8b059aa7fcc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "2bd53d9631ade4ce6051e7a6bf8011b59d1fe5530f9cec0f8f1c70ca591926ae"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "cf2294efce565123124ba6150fe37039fada73c2ae806c7b010faa9df12e74ab"
   end
 
   depends_on "go"

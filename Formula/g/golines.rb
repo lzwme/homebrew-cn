@@ -7,12 +7,13 @@ class Golines < Formula
   head "https://github.com/golangci/golines.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1768a0b88ae03962ccbbc4ecd02dfdb64573d1e1588c9814dbf4c226067c6662"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1768a0b88ae03962ccbbc4ecd02dfdb64573d1e1588c9814dbf4c226067c6662"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1768a0b88ae03962ccbbc4ecd02dfdb64573d1e1588c9814dbf4c226067c6662"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6b246f8fc0182e890e8babcce81df93ddd30c933f225f307b436436e74fd8ada"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "245d523aa725056d03ded066dbd317349ad1507a6fac5acf08993d6b12d28c54"
-    sha256 cellar: :any,                 x86_64_linux:  "3acd39b31187c3db07ad21275a8783a2c49f9da3ac034e032d15425b7e81cb9b"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "ba455bc190d7f2f241666bb57757b9d1e65f4111e82ba02836c82b3cda11763d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "1768a0b88ae03962ccbbc4ecd02dfdb64573d1e1588c9814dbf4c226067c6662"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "1768a0b88ae03962ccbbc4ecd02dfdb64573d1e1588c9814dbf4c226067c6662"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "1768a0b88ae03962ccbbc4ecd02dfdb64573d1e1588c9814dbf4c226067c6662"
+    sha256 cellar: :any_skip_relocation, sonoma:            "6b246f8fc0182e890e8babcce81df93ddd30c933f225f307b436436e74fd8ada"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "245d523aa725056d03ded066dbd317349ad1507a6fac5acf08993d6b12d28c54"
+    sha256 cellar: :any,                 x86_64_linux:      "3acd39b31187c3db07ad21275a8783a2c49f9da3ac034e032d15425b7e81cb9b"
   end
 
   depends_on "go" => :build

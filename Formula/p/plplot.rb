@@ -11,14 +11,15 @@ class Plplot < Formula
 
   bottle do
     rebuild 1
-    sha256 arm64_tahoe:   "8299e82b21073d81694f33383bc0dd37931cfc8f468be9107b8c7b8fcd1cf501"
-    sha256 arm64_sequoia: "9305edca28268f6aed4efa7da578545c70d5feec4c2161da9f0e60aca9d3ace0"
-    sha256 arm64_sonoma:  "bdc0cc407dee50cc18fe7b6b37db420f9331acb5b63b534931337fa151bf1d95"
-    sha256 arm64_ventura: "93efe317d3c6e9e265061402aec9a37c332d15420261e47faa3a5c3f06a4aa02"
-    sha256 sonoma:        "fe49328f9a4c77b4ef5890371504401147804bb4254525186f1f85a651a740e0"
-    sha256 ventura:       "32fde8a89d5580c4e09d9fac911a5ac0c5ee2c745a967109e1c130600c30fce7"
-    sha256 arm64_linux:   "3d07131a9d21a41cc2e5ffcb258312724f3c474220e5d9a0baa8abdfea2c6013"
-    sha256 x86_64_linux:  "91ae9fc5f0d6d1ba8d8bb494bee3304655c35a7c8fa224baad1b9427a3ca3848"
+    sha256 arm64_golden_gate: "cf383dbda3de2b2c63f3062a7831cf968fb7b5208c4f535dbd591dbebc8b0052"
+    sha256 arm64_tahoe:       "8299e82b21073d81694f33383bc0dd37931cfc8f468be9107b8c7b8fcd1cf501"
+    sha256 arm64_sequoia:     "9305edca28268f6aed4efa7da578545c70d5feec4c2161da9f0e60aca9d3ace0"
+    sha256 arm64_sonoma:      "bdc0cc407dee50cc18fe7b6b37db420f9331acb5b63b534931337fa151bf1d95"
+    sha256 arm64_ventura:     "93efe317d3c6e9e265061402aec9a37c332d15420261e47faa3a5c3f06a4aa02"
+    sha256 sonoma:            "fe49328f9a4c77b4ef5890371504401147804bb4254525186f1f85a651a740e0"
+    sha256 ventura:           "32fde8a89d5580c4e09d9fac911a5ac0c5ee2c745a967109e1c130600c30fce7"
+    sha256 arm64_linux:       "3d07131a9d21a41cc2e5ffcb258312724f3c474220e5d9a0baa8abdfea2c6013"
+    sha256 x86_64_linux:      "91ae9fc5f0d6d1ba8d8bb494bee3304655c35a7c8fa224baad1b9427a3ca3848"
   end
 
   depends_on "cmake" => :build

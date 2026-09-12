@@ -13,12 +13,13 @@ class GitInteractiveRebaseTool < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "6deb4776ef5eb24799282fc8b4489e643c97c8d56303287763626f350ed79cd1"
-    sha256 cellar: :any,                 arm64_sequoia: "835c61bf47166e53349a684b49dffc494a454da85ac7f246cc86274490614219"
-    sha256 cellar: :any,                 arm64_sonoma:  "84dc9fc37498504ad7d7d1e9ddb032acbedd7402f97dfbbc02856753815b6ee1"
-    sha256 cellar: :any,                 sonoma:        "39e883fcac9342280b03218a663e61ce29ca8854e036c270a2e7dc1702d84d74"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "dc6bb58f3af6b57b89d172f05cc6c16c8c3f21d295a3912a6068013906b82afd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "60f1a23c2048c4581dfd226e3bc7bbeb83f0a54d33cff7e1c0d3847fc2e2b729"
+    sha256 cellar: :any,                 arm64_golden_gate: "0925eeb2d879f097e6d43b341f664f95d7c66881e4aadf0a3a9a87d28f2b0818"
+    sha256 cellar: :any,                 arm64_tahoe:       "6deb4776ef5eb24799282fc8b4489e643c97c8d56303287763626f350ed79cd1"
+    sha256 cellar: :any,                 arm64_sequoia:     "835c61bf47166e53349a684b49dffc494a454da85ac7f246cc86274490614219"
+    sha256 cellar: :any,                 arm64_sonoma:      "84dc9fc37498504ad7d7d1e9ddb032acbedd7402f97dfbbc02856753815b6ee1"
+    sha256 cellar: :any,                 sonoma:            "39e883fcac9342280b03218a663e61ce29ca8854e036c270a2e7dc1702d84d74"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "dc6bb58f3af6b57b89d172f05cc6c16c8c3f21d295a3912a6068013906b82afd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "60f1a23c2048c4581dfd226e3bc7bbeb83f0a54d33cff7e1c0d3847fc2e2b729"
   end
 
   depends_on "pkgconf" => :build

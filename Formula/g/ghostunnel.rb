@@ -7,12 +7,13 @@ class Ghostunnel < Formula
   head "https://github.com/ghostunnel/ghostunnel.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4d7156435b018d4c1589b0d6a88ab90c89447c99f06f2768c7ebbcc0ad9cdfc0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ad39cdca5d33ee2e750425871af0261aedc045203dda103d0c935803521035cc"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f696c4182c2db6904823945fbcbcc03cc6d417f07ebabea8c875c938c9cb0caa"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c8a35e80671eaa28915049a85644e81ef4ee2ddf11089266efdeb8248ae37a2d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "54132df9e01178cac4bf8994120a0dfc05090c51d34e290040226dc04a800d8a"
-    sha256 cellar: :any,                 x86_64_linux:  "a79ade180fa57779b58c096974559ed0618198cb06223b2d1849a4ce2830d88f"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "b61f263012a5eb37f0f23efdff893f395c6c5146b541be649c6ccf9341b6729e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "4d7156435b018d4c1589b0d6a88ab90c89447c99f06f2768c7ebbcc0ad9cdfc0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "ad39cdca5d33ee2e750425871af0261aedc045203dda103d0c935803521035cc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "f696c4182c2db6904823945fbcbcc03cc6d417f07ebabea8c875c938c9cb0caa"
+    sha256 cellar: :any_skip_relocation, sonoma:            "c8a35e80671eaa28915049a85644e81ef4ee2ddf11089266efdeb8248ae37a2d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "54132df9e01178cac4bf8994120a0dfc05090c51d34e290040226dc04a800d8a"
+    sha256 cellar: :any,                 x86_64_linux:      "a79ade180fa57779b58c096974559ed0618198cb06223b2d1849a4ce2830d88f"
   end
 
   depends_on "go" => :build

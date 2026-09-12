@@ -1,7 +1,7 @@
 class I686ElfBinutils < Formula
   desc "GNU Binutils for i686-elf cross development"
   homepage "https://www.gnu.org/software/binutils/"
-  url "https://ftpmirror.gnu.org/gnu/binutils/binutils-2.47.tar.bz2"
+  url "https://ftpmirror.gnu.org/binutils/binutils-2.47.tar.bz2"
   mirror "https://ftp.gnu.org/gnu/binutils/binutils-2.47.tar.bz2"
   sha256 "3068128c75cda9f898ccb4211d360246e8e195ffcc9dfb655b23ae23a54800e8"
   license "GPL-3.0-or-later"

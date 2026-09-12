@@ -6,12 +6,13 @@ class Virtuoso < Formula
   license "GPL-2.0-only" => { with: "x11vnc-openssl-exception" }
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "8710e5d0b65eaf9dc44253015f08bcae16225aad0f1dd4ee38cbe27d8da45428"
-    sha256 cellar: :any,                 arm64_sequoia: "34460ec8da9cdde5e97f8b6a22ffe3a012b5cbcac6b634311d334ae9dcc41028"
-    sha256 cellar: :any,                 arm64_sonoma:  "2bfd02d4134c88e5f6868edb3da655eab9b4a9b22d5497a80d2a6466cc863346"
-    sha256 cellar: :any,                 sonoma:        "6ec3a63dcfd8990dc011a9586a760a2c9edc6331e5b7866b4ddf6b932c99a860"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "885da47f3af531200f9cd16bc76fbd7c2aa5d3605bb1451478deac4f4c59b4f5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a6b4dd1d9625820b51ddb3212907de9bff810167d46fa3395bfd2b0d6fed06a3"
+    sha256 cellar: :any,                 arm64_golden_gate: "8c56a143877035c2bb3609ad34fc62decb2a72de8847bde2df58d57f59ef9d04"
+    sha256 cellar: :any,                 arm64_tahoe:       "8710e5d0b65eaf9dc44253015f08bcae16225aad0f1dd4ee38cbe27d8da45428"
+    sha256 cellar: :any,                 arm64_sequoia:     "34460ec8da9cdde5e97f8b6a22ffe3a012b5cbcac6b634311d334ae9dcc41028"
+    sha256 cellar: :any,                 arm64_sonoma:      "2bfd02d4134c88e5f6868edb3da655eab9b4a9b22d5497a80d2a6466cc863346"
+    sha256 cellar: :any,                 sonoma:            "6ec3a63dcfd8990dc011a9586a760a2c9edc6331e5b7866b4ddf6b932c99a860"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "885da47f3af531200f9cd16bc76fbd7c2aa5d3605bb1451478deac4f4c59b4f5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "a6b4dd1d9625820b51ddb3212907de9bff810167d46fa3395bfd2b0d6fed06a3"
   end
 
   head do

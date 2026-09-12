@@ -12,12 +12,13 @@ class Gtkmm3 < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "905cac7c972a40176e82731e271635fd1faafcc4680de4564c8d73b07815fdf1"
-    sha256 cellar: :any, arm64_sequoia: "45654ffc54119805e7bc6e70daa7c3738ddf662851b175efd55d7c135da5c149"
-    sha256 cellar: :any, arm64_sonoma:  "c8ef3f27e94eb1149e15ffdce35077800154473bdc725569f9f71f2ce68fdefb"
-    sha256 cellar: :any, sonoma:        "e14a40611ed115c41493ef865d609f771e675508ab6faeda9f1e980d7dfd4fd0"
-    sha256               arm64_linux:   "dac10871ec0e268aa7bce477ce0e3a83f124cc91b5c43fc9a783e9d425125fcf"
-    sha256               x86_64_linux:  "ff91fabaafca241941eaf0128b085523d6ad279e31a07bb407eb96d608c52f39"
+    sha256 cellar: :any, arm64_golden_gate: "c2fff195e1cd23f335b1f56a6904440295bf1ece82cb47799fe04632687849d1"
+    sha256 cellar: :any, arm64_tahoe:       "905cac7c972a40176e82731e271635fd1faafcc4680de4564c8d73b07815fdf1"
+    sha256 cellar: :any, arm64_sequoia:     "45654ffc54119805e7bc6e70daa7c3738ddf662851b175efd55d7c135da5c149"
+    sha256 cellar: :any, arm64_sonoma:      "c8ef3f27e94eb1149e15ffdce35077800154473bdc725569f9f71f2ce68fdefb"
+    sha256 cellar: :any, sonoma:            "e14a40611ed115c41493ef865d609f771e675508ab6faeda9f1e980d7dfd4fd0"
+    sha256               arm64_linux:       "dac10871ec0e268aa7bce477ce0e3a83f124cc91b5c43fc9a783e9d425125fcf"
+    sha256               x86_64_linux:      "ff91fabaafca241941eaf0128b085523d6ad279e31a07bb407eb96d608c52f39"
   end
 
   depends_on "meson" => :build

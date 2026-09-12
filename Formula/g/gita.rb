@@ -8,12 +8,13 @@ class Gita < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bc72413817dbb2e9686758990e6595ae4a83ce9c40e6d2fe7d89ee51062c044a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bc72413817dbb2e9686758990e6595ae4a83ce9c40e6d2fe7d89ee51062c044a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bc72413817dbb2e9686758990e6595ae4a83ce9c40e6d2fe7d89ee51062c044a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7918b6426b70f7976e28344d41797aa31d766c37aad221380d3e9dabf985f15c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7918b6426b70f7976e28344d41797aa31d766c37aad221380d3e9dabf985f15c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7918b6426b70f7976e28344d41797aa31d766c37aad221380d3e9dabf985f15c"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "5cb2ca3f66fec179e59db0bbe50feabb17094da961fdd3792fba831d52f4f3e5"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "bc72413817dbb2e9686758990e6595ae4a83ce9c40e6d2fe7d89ee51062c044a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "bc72413817dbb2e9686758990e6595ae4a83ce9c40e6d2fe7d89ee51062c044a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "bc72413817dbb2e9686758990e6595ae4a83ce9c40e6d2fe7d89ee51062c044a"
+    sha256 cellar: :any_skip_relocation, sonoma:            "7918b6426b70f7976e28344d41797aa31d766c37aad221380d3e9dabf985f15c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "7918b6426b70f7976e28344d41797aa31d766c37aad221380d3e9dabf985f15c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "7918b6426b70f7976e28344d41797aa31d766c37aad221380d3e9dabf985f15c"
   end
 
   depends_on "python@3.14"

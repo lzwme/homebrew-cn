@@ -9,12 +9,13 @@ class Allureofthestars < Formula
 
   bottle do
     rebuild 3
-    sha256 cellar: :any, arm64_tahoe:   "0cce7783d31164730863db9afeeae32c81412a5d70ce9f6d6287266191cdffc3"
-    sha256 cellar: :any, arm64_sequoia: "1473587658292222a91e20f436d7753e552294cc27d7883365fa9d1a32b31766"
-    sha256 cellar: :any, arm64_sonoma:  "b0870f99c72b0c4a6fabba57dd9812bcee98fa842abccac53596c4bfd87f8a1d"
-    sha256 cellar: :any, sonoma:        "9cd14d1633fa5dca71ca93c3a31160e42f6ad83288eed2180884890e79a69c1c"
-    sha256 cellar: :any, arm64_linux:   "8695e01b93d5c370de9d547cfe4ec8f66f75fe984b650f413ee1f49ff64fc143"
-    sha256 cellar: :any, x86_64_linux:  "2b9650506f70289e5bc2f9b2b0167a2f7cfc66365134e0c6ed088bdb9ee75d7a"
+    sha256 cellar: :any, arm64_golden_gate: "101722f507a8660102607a4ecdde9707ff1fe9334190b8e83d1d45909a2e943a"
+    sha256 cellar: :any, arm64_tahoe:       "0cce7783d31164730863db9afeeae32c81412a5d70ce9f6d6287266191cdffc3"
+    sha256 cellar: :any, arm64_sequoia:     "1473587658292222a91e20f436d7753e552294cc27d7883365fa9d1a32b31766"
+    sha256 cellar: :any, arm64_sonoma:      "b0870f99c72b0c4a6fabba57dd9812bcee98fa842abccac53596c4bfd87f8a1d"
+    sha256 cellar: :any, sonoma:            "9cd14d1633fa5dca71ca93c3a31160e42f6ad83288eed2180884890e79a69c1c"
+    sha256 cellar: :any, arm64_linux:       "8695e01b93d5c370de9d547cfe4ec8f66f75fe984b650f413ee1f49ff64fc143"
+    sha256 cellar: :any, x86_64_linux:      "2b9650506f70289e5bc2f9b2b0167a2f7cfc66365134e0c6ed088bdb9ee75d7a"
   end
 
   depends_on "cabal-install" => :build

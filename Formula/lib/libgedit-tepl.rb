@@ -8,12 +8,13 @@ class LibgeditTepl < Formula
   head "https://gitlab.gnome.org/World/gedit/libgedit-tepl.git", branch: "main"
 
   bottle do
-    sha256 arm64_tahoe:   "20148171f340884e2ea8580f1a4870d15c5a8c498b1029f6515aeb4b735f03eb"
-    sha256 arm64_sequoia: "ea7f006494423aea8a7816f2d3f331eb8116cadc3688bf7f4f052f6462a80b5f"
-    sha256 arm64_sonoma:  "25274a0255b4b8e6d9f36e72ac80eabfde8f4270659c7d4cf73d33e5e828fce2"
-    sha256 sonoma:        "f49ac4935063ff4b08e5cea8959829d7a2f37074a9c69bb6624cd3c9f4a051eb"
-    sha256 arm64_linux:   "ee8f02ca17eec111b5dac39e0ee9b4cfe56809638515f656dcee879014c4cccc"
-    sha256 x86_64_linux:  "1a8e119f8d5b3f48264f88979bae8b14041665aed64dc3aff5b0a46db32918f8"
+    sha256 arm64_golden_gate: "5c754a38c3ef66f67f000f3e35abb1d9bd571cbb89d09e5eb8b1a26eb2f4cdd0"
+    sha256 arm64_tahoe:       "20148171f340884e2ea8580f1a4870d15c5a8c498b1029f6515aeb4b735f03eb"
+    sha256 arm64_sequoia:     "ea7f006494423aea8a7816f2d3f331eb8116cadc3688bf7f4f052f6462a80b5f"
+    sha256 arm64_sonoma:      "25274a0255b4b8e6d9f36e72ac80eabfde8f4270659c7d4cf73d33e5e828fce2"
+    sha256 sonoma:            "f49ac4935063ff4b08e5cea8959829d7a2f37074a9c69bb6624cd3c9f4a051eb"
+    sha256 arm64_linux:       "ee8f02ca17eec111b5dac39e0ee9b4cfe56809638515f656dcee879014c4cccc"
+    sha256 x86_64_linux:      "1a8e119f8d5b3f48264f88979bae8b14041665aed64dc3aff5b0a46db32918f8"
   end
 
   depends_on "gettext" => :build

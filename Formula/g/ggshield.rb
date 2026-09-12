@@ -10,11 +10,12 @@ class Ggshield < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "2cc0248382bc8b3be0c8732570887a9a5f0eb96264eb90256d1d56d090c68788"
-    sha256 cellar: :any, arm64_sequoia: "8e9286a1e9e7ae273d2dd94476f7a0ea5fea54d9fae346378c58fcfbd90a0787"
-    sha256 cellar: :any, arm64_sonoma:  "21d9b39f1946ee11a383e73a37eb3eb319dc27fd95a7ecf74534241cab0c75ce"
-    sha256 cellar: :any, arm64_linux:   "03def5daf3b68f678fc9f1595311067a74cbdd1a2d805285fe15b0f9b1597159"
-    sha256 cellar: :any, x86_64_linux:  "024fdca87ad2bda80147311fd25061b843368380e94f62a58c5bc99932846b40"
+    sha256 cellar: :any, arm64_golden_gate: "e0b4a2a28453880aa0683d2eecde1e176d6b2806462d6ccc89d44ece8a11d4eb"
+    sha256 cellar: :any, arm64_tahoe:       "2cc0248382bc8b3be0c8732570887a9a5f0eb96264eb90256d1d56d090c68788"
+    sha256 cellar: :any, arm64_sequoia:     "8e9286a1e9e7ae273d2dd94476f7a0ea5fea54d9fae346378c58fcfbd90a0787"
+    sha256 cellar: :any, arm64_sonoma:      "21d9b39f1946ee11a383e73a37eb3eb319dc27fd95a7ecf74534241cab0c75ce"
+    sha256 cellar: :any, arm64_linux:       "03def5daf3b68f678fc9f1595311067a74cbdd1a2d805285fe15b0f9b1597159"
+    sha256 cellar: :any, x86_64_linux:      "024fdca87ad2bda80147311fd25061b843368380e94f62a58c5bc99932846b40"
   end
 
   depends_on "pkgconf" => :build # for `rfc3161_client`

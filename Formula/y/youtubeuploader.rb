@@ -17,14 +17,15 @@ class Youtubeuploader < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3748a5d2beaafce8110971addbdb5d62a6a59867d283a88bd6672e6a5fff6622"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a21f5ff5cd30df2a734ce17d67634b114fdf9261465f27531d1b31bd402c870e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a21f5ff5cd30df2a734ce17d67634b114fdf9261465f27531d1b31bd402c870e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "a21f5ff5cd30df2a734ce17d67634b114fdf9261465f27531d1b31bd402c870e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "94dcbcc952e28af9f60fc95201c0be744a9552f1e8ca408445801a3d8d9c7c99"
-    sha256 cellar: :any_skip_relocation, ventura:       "94dcbcc952e28af9f60fc95201c0be744a9552f1e8ca408445801a3d8d9c7c99"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8b1fafe8f133cec0e3edb03685b3f7ca8bee3544941075d46dfb333745ea8044"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "612d71e27119ecb79aaa4460ec721cb19b08c925e2e045730f0b6468c86e3265"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "ae9ed85150e4f9df4b0f132ca91d9f2a7ac116a800cecfd8f3942bfd61a32704"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "3748a5d2beaafce8110971addbdb5d62a6a59867d283a88bd6672e6a5fff6622"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "a21f5ff5cd30df2a734ce17d67634b114fdf9261465f27531d1b31bd402c870e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "a21f5ff5cd30df2a734ce17d67634b114fdf9261465f27531d1b31bd402c870e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:     "a21f5ff5cd30df2a734ce17d67634b114fdf9261465f27531d1b31bd402c870e"
+    sha256 cellar: :any_skip_relocation, sonoma:            "94dcbcc952e28af9f60fc95201c0be744a9552f1e8ca408445801a3d8d9c7c99"
+    sha256 cellar: :any_skip_relocation, ventura:           "94dcbcc952e28af9f60fc95201c0be744a9552f1e8ca408445801a3d8d9c7c99"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "8b1fafe8f133cec0e3edb03685b3f7ca8bee3544941075d46dfb333745ea8044"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "612d71e27119ecb79aaa4460ec721cb19b08c925e2e045730f0b6468c86e3265"
   end
 
   depends_on "go" => :build

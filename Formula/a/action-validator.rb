@@ -8,12 +8,13 @@ class ActionValidator < Formula
   head "https://github.com/mpalmer/action-validator.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "12edda1e1aa6916ec8afaab4e068395e3ec81d2ff319ef572fe2c4187309470d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6166f38a0e059a1a1d8c28ba7aee2656e9769182add2154703f636fee323a4cc"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "14ab16254be123c6604ed9127ec2290858c83b338779f867e073c18646e8f931"
-    sha256 cellar: :any_skip_relocation, sonoma:        "543d0e8f0e3a0fa20b7b1ded901d0112c4e2f52fb3e46400dca43b2d11e627d1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e50f6621e00aa7e515d73a7765296a05c8fb0882734224c6fcc103d72a5fb9aa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d8f9021532e74756bad01482d0d435e1ec420429521c27c5c06e243c2108e3f5"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "a9825f10a41030a0905bd426195f5bce4ce8c3d4407134712c42b42a2e1ab691"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "12edda1e1aa6916ec8afaab4e068395e3ec81d2ff319ef572fe2c4187309470d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "6166f38a0e059a1a1d8c28ba7aee2656e9769182add2154703f636fee323a4cc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "14ab16254be123c6604ed9127ec2290858c83b338779f867e073c18646e8f931"
+    sha256 cellar: :any_skip_relocation, sonoma:            "543d0e8f0e3a0fa20b7b1ded901d0112c4e2f52fb3e46400dca43b2d11e627d1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "e50f6621e00aa7e515d73a7765296a05c8fb0882734224c6fcc103d72a5fb9aa"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "d8f9021532e74756bad01482d0d435e1ec420429521c27c5c06e243c2108e3f5"
   end
 
   depends_on "rust" => :build

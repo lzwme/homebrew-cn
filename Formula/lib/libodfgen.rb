@@ -13,12 +13,13 @@ class Libodfgen < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "f322394dcaf548a6c82e55f4d39ddc2c35aced9c316a07c8ddf491f2735be66f"
-    sha256 cellar: :any,                 arm64_sequoia: "c1c268be3d7429eef8c2dee45c01e2879270b04c85380ee2c7bd7f64283ccfd2"
-    sha256 cellar: :any,                 arm64_sonoma:  "8a6f092b8f4f3dde336f3c6aa803e4992356b0b42540fe18fd8fb0f20dcea521"
-    sha256 cellar: :any,                 sonoma:        "b826aea071dcf4ede7649c6c0c0eeca0f16cac90196f66572fa7373e33fca2e0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "404a532810b4c156d28f6c297037a9cf60110bfc435101e8a9a6b2e7405e9eb6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "334e33d8a2c52579f1aafd79f4b27b57d50bc8f663b88d884e8725f69bc849e5"
+    sha256 cellar: :any,                 arm64_golden_gate: "ae06b794217eb2819b7082f468ff1014058a82f1b80f7b56446e167c0c721855"
+    sha256 cellar: :any,                 arm64_tahoe:       "f322394dcaf548a6c82e55f4d39ddc2c35aced9c316a07c8ddf491f2735be66f"
+    sha256 cellar: :any,                 arm64_sequoia:     "c1c268be3d7429eef8c2dee45c01e2879270b04c85380ee2c7bd7f64283ccfd2"
+    sha256 cellar: :any,                 arm64_sonoma:      "8a6f092b8f4f3dde336f3c6aa803e4992356b0b42540fe18fd8fb0f20dcea521"
+    sha256 cellar: :any,                 sonoma:            "b826aea071dcf4ede7649c6c0c0eeca0f16cac90196f66572fa7373e33fca2e0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "404a532810b4c156d28f6c297037a9cf60110bfc435101e8a9a6b2e7405e9eb6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "334e33d8a2c52579f1aafd79f4b27b57d50bc8f663b88d884e8725f69bc849e5"
   end
 
   depends_on "pkgconf" => :build

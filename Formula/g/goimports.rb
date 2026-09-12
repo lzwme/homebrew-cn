@@ -12,11 +12,12 @@ class Goimports < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "31425572d724f31ad831a6b38968087d0e6fa77b98baf3bf1ab7d16cd3e1a8dc"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "31425572d724f31ad831a6b38968087d0e6fa77b98baf3bf1ab7d16cd3e1a8dc"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "31425572d724f31ad831a6b38968087d0e6fa77b98baf3bf1ab7d16cd3e1a8dc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d37c612b3995b69b87d8a95295872b631c657cb88f8386d1fc62ac439419d25e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9e7bd3bc6361e6106bec622e95c57d726e330239124b14909228a58aec5a3e39"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "31425572d724f31ad831a6b38968087d0e6fa77b98baf3bf1ab7d16cd3e1a8dc"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "31425572d724f31ad831a6b38968087d0e6fa77b98baf3bf1ab7d16cd3e1a8dc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "31425572d724f31ad831a6b38968087d0e6fa77b98baf3bf1ab7d16cd3e1a8dc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "31425572d724f31ad831a6b38968087d0e6fa77b98baf3bf1ab7d16cd3e1a8dc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "d37c612b3995b69b87d8a95295872b631c657cb88f8386d1fc62ac439419d25e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "9e7bd3bc6361e6106bec622e95c57d726e330239124b14909228a58aec5a3e39"
   end
 
   depends_on "go"

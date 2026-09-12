@@ -1,7 +1,7 @@
 class Aarch64ElfGdb < Formula
   desc "GNU debugger for aarch64-elf cross development"
   homepage "https://www.gnu.org/software/gdb/"
-  url "https://ftpmirror.gnu.org/gnu/gdb/gdb-17.2.tar.xz"
+  url "https://ftpmirror.gnu.org/gdb/gdb-17.2.tar.xz"
   mirror "https://ftp.gnu.org/gnu/gdb/gdb-17.2.tar.xz"
   sha256 "1c036c0d72e4b3d1fb5c94c88632add6f9d76f4d7c4d2ea793c12a9f19a3228c"
   license "GPL-3.0-or-later"
@@ -12,12 +12,13 @@ class Aarch64ElfGdb < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "c958dd17cd4589be2776d5dc2ea42407e97e8e8fa6144ab6e557715644c700be"
-    sha256 arm64_sequoia: "ed517cad598f41182e050ebb66bcc10249b520ebb283de167b8b4ef28df9d6fb"
-    sha256 arm64_sonoma:  "b36350487f63d82dfb9f8e73d7d61b92ef10f671ebf1d03040897783a7fe5060"
-    sha256 sonoma:        "a34575014e49cba4ab7744a4318e523906ea3d99ab93b6dd850375102484989e"
-    sha256 arm64_linux:   "2b1f5ab9b9c1d88d884c5c1ede27c64995e093fc1e785608dbcee33a9f893bbb"
-    sha256 x86_64_linux:  "f5093f7b253715bb6a7df45f63f3c491774e7fcd74d79e9fc23c8cfe45aeabf8"
+    sha256 arm64_golden_gate: "1366102d31c3a3b88e971a09892ef0a6c3c01db76d1176a3adbc8f90c0ca2a5c"
+    sha256 arm64_tahoe:       "c958dd17cd4589be2776d5dc2ea42407e97e8e8fa6144ab6e557715644c700be"
+    sha256 arm64_sequoia:     "ed517cad598f41182e050ebb66bcc10249b520ebb283de167b8b4ef28df9d6fb"
+    sha256 arm64_sonoma:      "b36350487f63d82dfb9f8e73d7d61b92ef10f671ebf1d03040897783a7fe5060"
+    sha256 sonoma:            "a34575014e49cba4ab7744a4318e523906ea3d99ab93b6dd850375102484989e"
+    sha256 arm64_linux:       "2b1f5ab9b9c1d88d884c5c1ede27c64995e093fc1e785608dbcee33a9f893bbb"
+    sha256 x86_64_linux:      "f5093f7b253715bb6a7df45f63f3c491774e7fcd74d79e9fc23c8cfe45aeabf8"
   end
 
   depends_on "pkgconf" => :build

@@ -7,16 +7,17 @@ class Halp < Formula
   head "https://github.com/orhun/halp.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "e355185848abc6b530cde818d30f01f6d4aebc6340000867cf3260c4983dbd69"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "90151c6762fc2f8f021d83dcdfd7791a1ec6eeb8f21326a99045bf430f6fd04f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a5a811ad95cf4dd2fe8eaea97a1bd0878e8bd9d57317e82d0a2ebb9a01f8176d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "46621463527a0130f38fe08aabec8736830f4409440dc9b8332ef9995797cfcd"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "122153f544cae19d3b4ae5aebfc18e09deaf87e793b06b859924ddaf5b16a482"
-    sha256 cellar: :any_skip_relocation, sonoma:         "ded7efbdeb80254547423d1538af040d268252a597d326663caf9aa469ea48b6"
-    sha256 cellar: :any_skip_relocation, ventura:        "7387bc748aaba59be28c6c0e220034e115097b7b7ea453c75c128bebb0982286"
-    sha256 cellar: :any_skip_relocation, monterey:       "a604ca28c91bcc23f3ca2d30c185cca378440a5ddbc5c548285e898f0b1d863e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "bf016a89b83b085ec2dfbec7654727141a413552afee4bd0cfecee15d0895217"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "525dfbe3581d9fce47ecb99abf03269c9b36282498bb6d971844846c66e01bf3"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "33032cc69c312bfab2c8e002528317aefab5c98ef99d0f035ed9e68093567046"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "e355185848abc6b530cde818d30f01f6d4aebc6340000867cf3260c4983dbd69"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "90151c6762fc2f8f021d83dcdfd7791a1ec6eeb8f21326a99045bf430f6fd04f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "a5a811ad95cf4dd2fe8eaea97a1bd0878e8bd9d57317e82d0a2ebb9a01f8176d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:     "46621463527a0130f38fe08aabec8736830f4409440dc9b8332ef9995797cfcd"
+    sha256 cellar: :any_skip_relocation, arm64_monterey:    "122153f544cae19d3b4ae5aebfc18e09deaf87e793b06b859924ddaf5b16a482"
+    sha256 cellar: :any_skip_relocation, sonoma:            "ded7efbdeb80254547423d1538af040d268252a597d326663caf9aa469ea48b6"
+    sha256 cellar: :any_skip_relocation, ventura:           "7387bc748aaba59be28c6c0e220034e115097b7b7ea453c75c128bebb0982286"
+    sha256 cellar: :any_skip_relocation, monterey:          "a604ca28c91bcc23f3ca2d30c185cca378440a5ddbc5c548285e898f0b1d863e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "bf016a89b83b085ec2dfbec7654727141a413552afee4bd0cfecee15d0895217"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "525dfbe3581d9fce47ecb99abf03269c9b36282498bb6d971844846c66e01bf3"
   end
 
   depends_on "rust" => :build

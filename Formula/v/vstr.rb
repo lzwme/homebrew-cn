@@ -7,18 +7,19 @@ class Vstr < Formula
   license "LGPL-2.1-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:    "2725b8c09c36af9b495587022630130f5561972343fa3d91bba4de2773f7c76e"
-    sha256 cellar: :any,                 arm64_sequoia:  "578ee5248bf780a885cfc3dc8a806949ded7af743c3be7e7c839fe4d190a43cd"
-    sha256 cellar: :any,                 arm64_sonoma:   "54ad15b7c3afd4dadfe4f48c8da91b39efc16d597b9f7300dc67aab5c3f75a40"
-    sha256 cellar: :any,                 arm64_ventura:  "50f3aa1e3a2842093e6ce37468ff013c81ca97b948fb3d7b11f66c58b95f108b"
-    sha256 cellar: :any,                 arm64_monterey: "dd5f9608d327370e2be19fa4c7aaa756db7b505a192dab7ebeedf413e379f53d"
-    sha256 cellar: :any,                 arm64_big_sur:  "3c181dc7e473ded8e40136b7779a8e24859bbef80a60e627fb3a2672e43609cb"
-    sha256 cellar: :any,                 sonoma:         "e8a6083d5029f10cde668b105012a8302eafcdde1d497ea92d6af9fcbb14a33f"
-    sha256 cellar: :any,                 ventura:        "dfb9e211db08192d08eb31c1928a9664f102662bf97324dff1e8e2a1616882c3"
-    sha256 cellar: :any,                 monterey:       "029df7c0188636bd34fdb8f2a26697f61cc140660623992ee38af2e1050417c5"
-    sha256 cellar: :any,                 big_sur:        "cc1c69c834bde35ed9e0df8178e8e65d9ba5703fbf2cf896290aed6a7433c4b3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "a7507e113107828ddec905dfb3c2b373d11f676800cc342fdf080a12038df960"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8346f2277202db06584db705dcf754a00ca364c547791d911e7c3395072b1b6e"
+    sha256 cellar: :any,                 arm64_golden_gate: "6540fc6c41df5f788a39b70fe86ea2d2bbd1ca5092cb3ace53af0973c3d021e6"
+    sha256 cellar: :any,                 arm64_tahoe:       "2725b8c09c36af9b495587022630130f5561972343fa3d91bba4de2773f7c76e"
+    sha256 cellar: :any,                 arm64_sequoia:     "578ee5248bf780a885cfc3dc8a806949ded7af743c3be7e7c839fe4d190a43cd"
+    sha256 cellar: :any,                 arm64_sonoma:      "54ad15b7c3afd4dadfe4f48c8da91b39efc16d597b9f7300dc67aab5c3f75a40"
+    sha256 cellar: :any,                 arm64_ventura:     "50f3aa1e3a2842093e6ce37468ff013c81ca97b948fb3d7b11f66c58b95f108b"
+    sha256 cellar: :any,                 arm64_monterey:    "dd5f9608d327370e2be19fa4c7aaa756db7b505a192dab7ebeedf413e379f53d"
+    sha256 cellar: :any,                 arm64_big_sur:     "3c181dc7e473ded8e40136b7779a8e24859bbef80a60e627fb3a2672e43609cb"
+    sha256 cellar: :any,                 sonoma:            "e8a6083d5029f10cde668b105012a8302eafcdde1d497ea92d6af9fcbb14a33f"
+    sha256 cellar: :any,                 ventura:           "dfb9e211db08192d08eb31c1928a9664f102662bf97324dff1e8e2a1616882c3"
+    sha256 cellar: :any,                 monterey:          "029df7c0188636bd34fdb8f2a26697f61cc140660623992ee38af2e1050417c5"
+    sha256 cellar: :any,                 big_sur:           "cc1c69c834bde35ed9e0df8178e8e65d9ba5703fbf2cf896290aed6a7433c4b3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "a7507e113107828ddec905dfb3c2b373d11f676800cc342fdf080a12038df960"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "8346f2277202db06584db705dcf754a00ca364c547791d911e7c3395072b1b6e"
   end
 
   # Last release on 2006-03-06

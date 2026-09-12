@@ -11,12 +11,13 @@ class Scip < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "7a5d94c82d1e704abb4b64a0a3ae21bbea51307268bb191111d6705952a25107"
-    sha256 cellar: :any, arm64_sequoia: "df296a77a559c5263983273bc68a3b30c001ab540c27798aacd0258bbbcf5abd"
-    sha256 cellar: :any, arm64_sonoma:  "dc10945a5455bb3f2b7c9215dea89e2049aa458f3d48e23cc2fd4c6a1239cd64"
-    sha256 cellar: :any, sonoma:        "2b68f3acd9a4c0197380b7a10876550b142f65936e8d4dddae1df55ce9c01fb1"
-    sha256 cellar: :any, arm64_linux:   "7ccedb8dfa5ee651209e01c90326b4d84b1284a6970369a5103481e534d4cee3"
-    sha256 cellar: :any, x86_64_linux:  "de5eaca960c321ad20b9e798514d9a3e3f662f43a92d552df5474ac6fb815edb"
+    sha256 cellar: :any, arm64_golden_gate: "2d9a359fe1ebfbad7458841d3510e741e2192f74b19708ff3006ccaef4bcb2ef"
+    sha256 cellar: :any, arm64_tahoe:       "7a5d94c82d1e704abb4b64a0a3ae21bbea51307268bb191111d6705952a25107"
+    sha256 cellar: :any, arm64_sequoia:     "df296a77a559c5263983273bc68a3b30c001ab540c27798aacd0258bbbcf5abd"
+    sha256 cellar: :any, arm64_sonoma:      "dc10945a5455bb3f2b7c9215dea89e2049aa458f3d48e23cc2fd4c6a1239cd64"
+    sha256 cellar: :any, sonoma:            "2b68f3acd9a4c0197380b7a10876550b142f65936e8d4dddae1df55ce9c01fb1"
+    sha256 cellar: :any, arm64_linux:       "7ccedb8dfa5ee651209e01c90326b4d84b1284a6970369a5103481e534d4cee3"
+    sha256 cellar: :any, x86_64_linux:      "de5eaca960c321ad20b9e798514d9a3e3f662f43a92d552df5474ac6fb815edb"
   end
 
   depends_on "cmake" => :build

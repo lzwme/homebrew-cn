@@ -7,12 +7,13 @@ class Ip2location < Formula
   head "https://github.com/ip2location/IP2Location-C-Library.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "645d9e5100cc2503df2d30a60497a9ef9e9678ead559a8db93241d908ec903ab"
-    sha256 cellar: :any, arm64_sequoia: "081f753903b049dd40c63d0696d9e76e05b9f507d53d1e8deb0a29b17813b7bb"
-    sha256 cellar: :any, arm64_sonoma:  "ab7e1b231f2e33494b70475927dc8215c6d489241417db1e40ef8f976ba62aec"
-    sha256 cellar: :any, sonoma:        "614f3d7c6e4362d683a2ab3d55ad06394ae5a158a4be8680c5204bc0ed06ee5e"
-    sha256 cellar: :any, arm64_linux:   "811afd87cffff71e56ff314adec68dec44bd079e192ea36eebf8c9eb62610f0c"
-    sha256 cellar: :any, x86_64_linux:  "3259d8bdf5369bacb44a615063c1398f6b1bf37db97a332cd7d5adafc32ffbe8"
+    sha256 cellar: :any, arm64_golden_gate: "51f9db00beda092a6eaeaff29b9d4b44ccefe1cd59c7848045d7ece79bb913c1"
+    sha256 cellar: :any, arm64_tahoe:       "645d9e5100cc2503df2d30a60497a9ef9e9678ead559a8db93241d908ec903ab"
+    sha256 cellar: :any, arm64_sequoia:     "081f753903b049dd40c63d0696d9e76e05b9f507d53d1e8deb0a29b17813b7bb"
+    sha256 cellar: :any, arm64_sonoma:      "ab7e1b231f2e33494b70475927dc8215c6d489241417db1e40ef8f976ba62aec"
+    sha256 cellar: :any, sonoma:            "614f3d7c6e4362d683a2ab3d55ad06394ae5a158a4be8680c5204bc0ed06ee5e"
+    sha256 cellar: :any, arm64_linux:       "811afd87cffff71e56ff314adec68dec44bd079e192ea36eebf8c9eb62610f0c"
+    sha256 cellar: :any, x86_64_linux:      "3259d8bdf5369bacb44a615063c1398f6b1bf37db97a332cd7d5adafc32ffbe8"
   end
 
   depends_on "autoconf" => :build

@@ -12,11 +12,12 @@ class Grafana < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b05775651d636123367546cd375327f4fe24a2149a9ede255f404af67314ec7a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0c57d40dcca3ac5bd47040dd40f707637b2c36c13fdd2d95af421984a5515a46"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "13e1d70f7b868c54e37b0329925e9085c8049fa2884d9372f4f3af7c74a8c500"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "97c6d0cee6b827c86d69ee9c3428c1de605e9ab5f069f4c6383e6b51d99bb6f7"
-    sha256 cellar: :any,                 x86_64_linux:  "0df3037a5bc92e3bdb24abfc32aca3e9e6f88f7aaf80023bfc07e92550c696e6"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "c4033a52feaa59e4bcdf76891ab2aac48cfcd9b50100bb9391e777020ffe5a79"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "b05775651d636123367546cd375327f4fe24a2149a9ede255f404af67314ec7a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "0c57d40dcca3ac5bd47040dd40f707637b2c36c13fdd2d95af421984a5515a46"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "13e1d70f7b868c54e37b0329925e9085c8049fa2884d9372f4f3af7c74a8c500"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "97c6d0cee6b827c86d69ee9c3428c1de605e9ab5f069f4c6383e6b51d99bb6f7"
+    sha256 cellar: :any,                 x86_64_linux:      "0df3037a5bc92e3bdb24abfc32aca3e9e6f88f7aaf80023bfc07e92550c696e6"
   end
 
   depends_on "go" => :build

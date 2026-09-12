@@ -6,12 +6,13 @@ class Goffice < Formula
   license any_of: ["GPL-3.0-only", "GPL-2.0-only"]
 
   bottle do
-    sha256 arm64_tahoe:   "522418201d09ea524f368f5ab087ab7bb37760d62b4aa2780e042942ef0df461"
-    sha256 arm64_sequoia: "bb6b50141024dd9e959ca8e72155346419631de5704f4f428255b6af77224c6b"
-    sha256 arm64_sonoma:  "61c51e1998edeae4f15f3dc5302c87b400c1ce0614d45e22aec245e833e00617"
-    sha256 sonoma:        "fef69f79921e6530b9f083ff8e70a8976aeb10b0e4de6250f0bd195b7bf71edc"
-    sha256 arm64_linux:   "5294caf9332c6befcfbec1049c30a00cbe5068733fb41522d7de2d4d27034fb6"
-    sha256 x86_64_linux:  "e911e3bdf48cfb46e6dc8fcc61e10f5112d9dca1e809b8f7b997c527db731db0"
+    sha256 arm64_golden_gate: "07951bb4504b0c7d195ebe9050f0576e3e53993a930d979b6c3bf8da963f1436"
+    sha256 arm64_tahoe:       "522418201d09ea524f368f5ab087ab7bb37760d62b4aa2780e042942ef0df461"
+    sha256 arm64_sequoia:     "bb6b50141024dd9e959ca8e72155346419631de5704f4f428255b6af77224c6b"
+    sha256 arm64_sonoma:      "61c51e1998edeae4f15f3dc5302c87b400c1ce0614d45e22aec245e833e00617"
+    sha256 sonoma:            "fef69f79921e6530b9f083ff8e70a8976aeb10b0e4de6250f0bd195b7bf71edc"
+    sha256 arm64_linux:       "5294caf9332c6befcfbec1049c30a00cbe5068733fb41522d7de2d4d27034fb6"
+    sha256 x86_64_linux:      "e911e3bdf48cfb46e6dc8fcc61e10f5112d9dca1e809b8f7b997c527db731db0"
   end
 
   head do

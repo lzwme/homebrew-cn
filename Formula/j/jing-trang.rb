@@ -8,14 +8,15 @@ class JingTrang < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8615c4782772326c690705fd978dd13cd97baa9b897c3269f154405869955507"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0890bae04b71b2979b5e95bcc055476ef225a24e02db05288c514c63542606fb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4c64de5b7fc48a47a2fea2e480330ca435a177346f7ef4465ebf21312a1387f2"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "e7b9d4dea1561b777b9fe73f26774cab635683266d5da7b1c5996a11e1604aef"
-    sha256 cellar: :any_skip_relocation, sonoma:        "073e593cac616bbae9b72dd5fbd417540b5c7019259a969965d3a0f64e567978"
-    sha256 cellar: :any_skip_relocation, ventura:       "0a99746daf81cd2730cb3a5eb6a387e3f48c274cdc6b6431d37c1bc1cf1e342f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cc69a11eb46ce257e3c4e390b5f7f6e925cf6f1de2b5958016dabdd96fc57811"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1215b5eaf1160829b26fcb226de0a9050c40c6e29e291d6c339f7408faf900ab"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "b1d0c09b847e410e92c6d6ec86b3ee09768328e793f4b37923cfe7649b74beb4"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "8615c4782772326c690705fd978dd13cd97baa9b897c3269f154405869955507"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "0890bae04b71b2979b5e95bcc055476ef225a24e02db05288c514c63542606fb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "4c64de5b7fc48a47a2fea2e480330ca435a177346f7ef4465ebf21312a1387f2"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:     "e7b9d4dea1561b777b9fe73f26774cab635683266d5da7b1c5996a11e1604aef"
+    sha256 cellar: :any_skip_relocation, sonoma:            "073e593cac616bbae9b72dd5fbd417540b5c7019259a969965d3a0f64e567978"
+    sha256 cellar: :any_skip_relocation, ventura:           "0a99746daf81cd2730cb3a5eb6a387e3f48c274cdc6b6431d37c1bc1cf1e342f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "cc69a11eb46ce257e3c4e390b5f7f6e925cf6f1de2b5958016dabdd96fc57811"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "1215b5eaf1160829b26fcb226de0a9050c40c6e29e291d6c339f7408faf900ab"
   end
 
   depends_on "ant" => :build

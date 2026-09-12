@@ -13,12 +13,13 @@ class Gwenhywfar < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    sha256 arm64_tahoe:   "0064b8768502f583fd8ca6efb644af7b4951e36157f6f88951d7d8d617e98db2"
-    sha256 arm64_sequoia: "00562b743c4f8dad11ce5746934cad1ecd89d7c7794fb1b1536f8735be528210"
-    sha256 arm64_sonoma:  "f48b5464707113f0ea72a518904a46cf6967904ab82e7ceaa5f0084a03aef71a"
-    sha256 sonoma:        "d248c00aca75c6333b9edfd2d89f0e33f4d49835d53dd1f95ed723741751ff4c"
-    sha256 arm64_linux:   "6f5f7d2f098ca5b058b487c890bb4691921f0d9bed0cc86f74944ac60b02545e"
-    sha256 x86_64_linux:  "8141ecaa807eefbcc2e17f6989c4025788aae4f3111b8d83b40e04abfb19813f"
+    sha256 arm64_golden_gate: "50dcb5df3394907231bb80aca7829a0d5e063591b23ac6ec382db137d5b8c274"
+    sha256 arm64_tahoe:       "0064b8768502f583fd8ca6efb644af7b4951e36157f6f88951d7d8d617e98db2"
+    sha256 arm64_sequoia:     "00562b743c4f8dad11ce5746934cad1ecd89d7c7794fb1b1536f8735be528210"
+    sha256 arm64_sonoma:      "f48b5464707113f0ea72a518904a46cf6967904ab82e7ceaa5f0084a03aef71a"
+    sha256 sonoma:            "d248c00aca75c6333b9edfd2d89f0e33f4d49835d53dd1f95ed723741751ff4c"
+    sha256 arm64_linux:       "6f5f7d2f098ca5b058b487c890bb4691921f0d9bed0cc86f74944ac60b02545e"
+    sha256 x86_64_linux:      "8141ecaa807eefbcc2e17f6989c4025788aae4f3111b8d83b40e04abfb19813f"
   end
 
   depends_on "gettext" => :build

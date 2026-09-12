@@ -16,18 +16,19 @@ class Xlispstat < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:    "cf23b57eb4e3246a8456d4243f04d704a3a2128d763021876a9b5777010888e5"
-    sha256 cellar: :any,                 arm64_sequoia:  "455b2e247dd57ef595e2576a56d707ec8ced866ec15d808fc2cf93089aff07b6"
-    sha256 cellar: :any,                 arm64_sonoma:   "10e7f44257e5722b9d044d17e1797df027796f291010ea9ccb5a4c3999424208"
-    sha256 cellar: :any,                 arm64_ventura:  "3b11acb44e728fb2b1707b8700d5b0be9a68ff522884827fe824d44d6333ca33"
-    sha256 cellar: :any,                 arm64_monterey: "e11e76582f1aa365ed04b44c6caac0a786b63f12b612399e27ed909803c1bdcf"
-    sha256 cellar: :any,                 arm64_big_sur:  "1c7230181f7447fb264b14c84d8a6a2e3396faec78af73174ed6543f19536a8a"
-    sha256 cellar: :any,                 sonoma:         "fcfee4172bf01f3bf39432e7c7e12b8f73e67d5d36de47e74dbff16d5ece3012"
-    sha256 cellar: :any,                 ventura:        "03fc5d039c560d5d3cab884da3911ca4752b5686ca5e9399e8a3417f44da7fdf"
-    sha256 cellar: :any,                 monterey:       "9d418608c03816945f00a2ccbf93def9a54e6f8b9c00c93b7835a287cf7c2305"
-    sha256 cellar: :any,                 big_sur:        "30bde68dbe2eada5b7646e5ef4b6fc0f804be39f37ae75244955b3befe803036"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "f9ce0920180e4cab96fc3e9b55a0fe5e95bee6b4de40a7ca7121f2068daaea2b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "45f4149aaf05fa78c789492de2867074891abc4816a5b6abbf04d06433c135d6"
+    sha256 cellar: :any,                 arm64_golden_gate: "0185f2074b74da5c9612e17a37a4722935fc045c7c673d7dfced53a3da6b808b"
+    sha256 cellar: :any,                 arm64_tahoe:       "cf23b57eb4e3246a8456d4243f04d704a3a2128d763021876a9b5777010888e5"
+    sha256 cellar: :any,                 arm64_sequoia:     "455b2e247dd57ef595e2576a56d707ec8ced866ec15d808fc2cf93089aff07b6"
+    sha256 cellar: :any,                 arm64_sonoma:      "10e7f44257e5722b9d044d17e1797df027796f291010ea9ccb5a4c3999424208"
+    sha256 cellar: :any,                 arm64_ventura:     "3b11acb44e728fb2b1707b8700d5b0be9a68ff522884827fe824d44d6333ca33"
+    sha256 cellar: :any,                 arm64_monterey:    "e11e76582f1aa365ed04b44c6caac0a786b63f12b612399e27ed909803c1bdcf"
+    sha256 cellar: :any,                 arm64_big_sur:     "1c7230181f7447fb264b14c84d8a6a2e3396faec78af73174ed6543f19536a8a"
+    sha256 cellar: :any,                 sonoma:            "fcfee4172bf01f3bf39432e7c7e12b8f73e67d5d36de47e74dbff16d5ece3012"
+    sha256 cellar: :any,                 ventura:           "03fc5d039c560d5d3cab884da3911ca4752b5686ca5e9399e8a3417f44da7fdf"
+    sha256 cellar: :any,                 monterey:          "9d418608c03816945f00a2ccbf93def9a54e6f8b9c00c93b7835a287cf7c2305"
+    sha256 cellar: :any,                 big_sur:           "30bde68dbe2eada5b7646e5ef4b6fc0f804be39f37ae75244955b3befe803036"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "f9ce0920180e4cab96fc3e9b55a0fe5e95bee6b4de40a7ca7121f2068daaea2b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "45f4149aaf05fa78c789492de2867074891abc4816a5b6abbf04d06433c135d6"
   end
 
   depends_on "libx11"

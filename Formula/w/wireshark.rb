@@ -54,8 +54,6 @@ class Wireshark < Formula
     depends_on "zlib-ng-compat"
   end
 
-  conflicts_with cask: "wireshark-app"
-
   def install
     lua = Formula["lua"]
     plugindir = lib/"wireshark/plugins/#{version.major}-#{version.minor}"

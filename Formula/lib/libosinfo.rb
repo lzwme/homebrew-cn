@@ -13,12 +13,13 @@ class Libosinfo < Formula
 
   bottle do
     rebuild 1
-    sha256 arm64_tahoe:   "4112a597915e4822ba7f67beae18af91725b4ccce1771917ec0c9076201396c2"
-    sha256 arm64_sequoia: "fe7b7b7c87405e3719fbde6309318ca2ab771116debb3ec7c2ad15b1d8463ab8"
-    sha256 arm64_sonoma:  "ba5f315aa802a84fdd0bbffbb598dd15ba9e6a03e98224ebe2ee4753d18994c8"
-    sha256 sonoma:        "019a2a7fa88fb2d781f03f9d91b084646e5b84cf2a324115006d7aa1d9d0a3b5"
-    sha256 arm64_linux:   "5c3b5acf526dbbfd955c6e0e5642295fafce2b6048ba148162d71d0d419f7a1b"
-    sha256 x86_64_linux:  "6009fdb51f4d951b99750674b9d62444427d0c39b6caaed385b29bb867d779c2"
+    sha256 arm64_golden_gate: "c43baf7c2da53bfa891aba28c3babbec49993be804a91d88d291f6507253789d"
+    sha256 arm64_tahoe:       "4112a597915e4822ba7f67beae18af91725b4ccce1771917ec0c9076201396c2"
+    sha256 arm64_sequoia:     "fe7b7b7c87405e3719fbde6309318ca2ab771116debb3ec7c2ad15b1d8463ab8"
+    sha256 arm64_sonoma:      "ba5f315aa802a84fdd0bbffbb598dd15ba9e6a03e98224ebe2ee4753d18994c8"
+    sha256 sonoma:            "019a2a7fa88fb2d781f03f9d91b084646e5b84cf2a324115006d7aa1d9d0a3b5"
+    sha256 arm64_linux:       "5c3b5acf526dbbfd955c6e0e5642295fafce2b6048ba148162d71d0d419f7a1b"
+    sha256 x86_64_linux:      "6009fdb51f4d951b99750674b9d62444427d0c39b6caaed385b29bb867d779c2"
   end
 
   depends_on "gettext" => :build

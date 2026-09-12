@@ -19,12 +19,13 @@ class Coin3d < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "1df1994743016c28aa47a458e72cee88fe56fb4572ca846c73ea61f4de50af87"
-    sha256 cellar: :any, arm64_sequoia: "2e4a7cec5eea666534b2336bb2cffc67efe004d644f647562b56890a17af47f2"
-    sha256 cellar: :any, arm64_sonoma:  "5f771d531c837a014672c8b8dc64a748551de93921492f8578c4501c9a0c91c0"
-    sha256 cellar: :any, sonoma:        "d0dc3298fbc4f9ee7ab712ef0df5cf1d69aafa1bec22bca96e191081d380ddf1"
-    sha256 cellar: :any, arm64_linux:   "b369aad80e2dba01a8913bf4ffe08cbf8f8c9a58b258b83e47be96151c7f13cc"
-    sha256 cellar: :any, x86_64_linux:  "67597aab0907765b048a72969d991c6614ba285a49a56a3dc79ddd5dd9bb12dd"
+    sha256 cellar: :any, arm64_golden_gate: "7644df270bc1d7a7ed61560b4d7731003aa91cfc7e03c62f2221adbaef42b16a"
+    sha256 cellar: :any, arm64_tahoe:       "1df1994743016c28aa47a458e72cee88fe56fb4572ca846c73ea61f4de50af87"
+    sha256 cellar: :any, arm64_sequoia:     "2e4a7cec5eea666534b2336bb2cffc67efe004d644f647562b56890a17af47f2"
+    sha256 cellar: :any, arm64_sonoma:      "5f771d531c837a014672c8b8dc64a748551de93921492f8578c4501c9a0c91c0"
+    sha256 cellar: :any, sonoma:            "d0dc3298fbc4f9ee7ab712ef0df5cf1d69aafa1bec22bca96e191081d380ddf1"
+    sha256 cellar: :any, arm64_linux:       "b369aad80e2dba01a8913bf4ffe08cbf8f8c9a58b258b83e47be96151c7f13cc"
+    sha256 cellar: :any, x86_64_linux:      "67597aab0907765b048a72969d991c6614ba285a49a56a3dc79ddd5dd9bb12dd"
   end
 
   head do

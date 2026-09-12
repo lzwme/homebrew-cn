@@ -8,12 +8,13 @@ class GeocodeGlib < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "099ca3555aed8dc105d24af84e64cbf301d1a825b27e439714253f01e4b46860"
-    sha256 cellar: :any, arm64_sequoia: "768df1fedb60223b40e5ae28bae291d3a1ab29348c933914e07eec499b411493"
-    sha256 cellar: :any, arm64_sonoma:  "71da878f8fa832ff9be93eb4bd9eb273edc56fbfa0fcce78451fec9973d7b1ee"
-    sha256 cellar: :any, sonoma:        "3e85bc0052a76a49df989312c340673b51a9fc78ca30aa9884c1a4b70a82f536"
-    sha256               arm64_linux:   "b73ca42db92e01ef70a73d5d9ce30931b9499c97f250630f458ec5786053311f"
-    sha256               x86_64_linux:  "f369360a77dea34b0c9d574eef1d491a3eca20c1271d9e5a29c30fdf48ad5ccf"
+    sha256 cellar: :any, arm64_golden_gate: "413229d14328ce753508f78320d795a12354500ac310025d8b43e4fd80e6311d"
+    sha256 cellar: :any, arm64_tahoe:       "099ca3555aed8dc105d24af84e64cbf301d1a825b27e439714253f01e4b46860"
+    sha256 cellar: :any, arm64_sequoia:     "768df1fedb60223b40e5ae28bae291d3a1ab29348c933914e07eec499b411493"
+    sha256 cellar: :any, arm64_sonoma:      "71da878f8fa832ff9be93eb4bd9eb273edc56fbfa0fcce78451fec9973d7b1ee"
+    sha256 cellar: :any, sonoma:            "3e85bc0052a76a49df989312c340673b51a9fc78ca30aa9884c1a4b70a82f536"
+    sha256               arm64_linux:       "b73ca42db92e01ef70a73d5d9ce30931b9499c97f250630f458ec5786053311f"
+    sha256               x86_64_linux:      "f369360a77dea34b0c9d574eef1d491a3eca20c1271d9e5a29c30fdf48ad5ccf"
   end
 
   depends_on "gobject-introspection" => :build

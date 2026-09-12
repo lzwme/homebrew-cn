@@ -11,18 +11,19 @@ class Jumanpp < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:    "22a0785a78be8dea8fb69e016c0ca887fc2f1e236734594bb350ba86a44f0d71"
-    sha256 arm64_sequoia:  "6ea43f4832aa25047b071cc99cb91995b249db44017818191fd106b0c50f901d"
-    sha256 arm64_sonoma:   "9fa8968d1e8332287161611d534e060d383cd5e732dc56015fe681cbe38d88fd"
-    sha256 arm64_ventura:  "a4f9b268938b28a53c03143114f43e12f5a158007a2d3fca46c79811daec00f8"
-    sha256 arm64_monterey: "c4db4776b58c04151f749e3e4254a437abc02fb0f284a8a1eccfa02e50b6651f"
-    sha256 arm64_big_sur:  "e9b65ec6cbc79b48a403d5a9c30a59eedfe9cb412be6a4d6ccf65f653e96e8d4"
-    sha256 sonoma:         "05fca93313e1b88047e24f57fcd565e2e03e0f1c21944bbeba431f118c6dbc78"
-    sha256 ventura:        "6d2b11b21bafc965f703c292afee992e65b3a77089f2c05629eff5a397f83de5"
-    sha256 monterey:       "1a49398ad2c6ace6827869ff87bb0b6018e4cbdf5259b79febdb761b6019be30"
-    sha256 big_sur:        "9c97f442fdad1ae3ab776ef16de98876db768134d50235e9ea683579fa8a85b7"
-    sha256 arm64_linux:    "01ef3b82e6f1036bda9466e2ab2cf2b314eca2fc59640006870d0499960cff38"
-    sha256 x86_64_linux:   "a646201910dc5c938adcd64559fc0ce85dd8f13017ddadb1b65965f4cc2f4afe"
+    sha256 arm64_golden_gate: "47b9c4191f7d68d90a05bebc5645111acebc040f2bde6c232d5af36447343e52"
+    sha256 arm64_tahoe:       "22a0785a78be8dea8fb69e016c0ca887fc2f1e236734594bb350ba86a44f0d71"
+    sha256 arm64_sequoia:     "6ea43f4832aa25047b071cc99cb91995b249db44017818191fd106b0c50f901d"
+    sha256 arm64_sonoma:      "9fa8968d1e8332287161611d534e060d383cd5e732dc56015fe681cbe38d88fd"
+    sha256 arm64_ventura:     "a4f9b268938b28a53c03143114f43e12f5a158007a2d3fca46c79811daec00f8"
+    sha256 arm64_monterey:    "c4db4776b58c04151f749e3e4254a437abc02fb0f284a8a1eccfa02e50b6651f"
+    sha256 arm64_big_sur:     "e9b65ec6cbc79b48a403d5a9c30a59eedfe9cb412be6a4d6ccf65f653e96e8d4"
+    sha256 sonoma:            "05fca93313e1b88047e24f57fcd565e2e03e0f1c21944bbeba431f118c6dbc78"
+    sha256 ventura:           "6d2b11b21bafc965f703c292afee992e65b3a77089f2c05629eff5a397f83de5"
+    sha256 monterey:          "1a49398ad2c6ace6827869ff87bb0b6018e4cbdf5259b79febdb761b6019be30"
+    sha256 big_sur:           "9c97f442fdad1ae3ab776ef16de98876db768134d50235e9ea683579fa8a85b7"
+    sha256 arm64_linux:       "01ef3b82e6f1036bda9466e2ab2cf2b314eca2fc59640006870d0499960cff38"
+    sha256 x86_64_linux:      "a646201910dc5c938adcd64559fc0ce85dd8f13017ddadb1b65965f4cc2f4afe"
   end
 
   depends_on "boost" => :build

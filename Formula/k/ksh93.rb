@@ -7,16 +7,17 @@ class Ksh93 < Formula
   head "https://github.com/ksh93/ksh.git", branch: "dev"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:    "e4cdcf59bc35d8ac2dbca2bd189d14bee322bb306169324db049f263f58277e1"
-    sha256 cellar: :any,                 arm64_sequoia:  "5deb3b81fd3f590988dd88c80311891ca93a33af176c47156a1451bd7aabac87"
-    sha256 cellar: :any,                 arm64_sonoma:   "c19642595db560b792a462a2754cdd1c9dcf9cce1206f831e9445f364ddeee9d"
-    sha256 cellar: :any,                 arm64_ventura:  "35617322f558cb0e43a0f265eefaffbe447061bc24acd75452b2b5b084e56acd"
-    sha256 cellar: :any,                 arm64_monterey: "2f7f6d16223a34599d8f5d7a109e3c0b9bf16dbd98758b8c643d9c43ba40001d"
-    sha256                               sonoma:         "b15cd1a4a1052c29217a92cdcc890755a1af17031b0375d2c48218e37de17ed3"
-    sha256                               ventura:        "fd2c2ab5ef6b79db5b99b18775c36806ab45f06dbfde1a19dbba879c88ff02a3"
-    sha256                               monterey:       "4a18d30f5bd6874f925b389150c77864955c33d546025ab87ba95dc36e6287be"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "a533071501bda03b7663eaf76acaee427fd6ad410521db8f3d42b349a4a8938c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6e1e57baceef185a21b476c489ec150cbf00729c4b0b31243dd13d5f560376b1"
+    sha256 cellar: :any,                 arm64_golden_gate: "d9b29ba08184e1154ae5646ad2551e9afc1aa6efbd0f043e403d56095c945d23"
+    sha256 cellar: :any,                 arm64_tahoe:       "e4cdcf59bc35d8ac2dbca2bd189d14bee322bb306169324db049f263f58277e1"
+    sha256 cellar: :any,                 arm64_sequoia:     "5deb3b81fd3f590988dd88c80311891ca93a33af176c47156a1451bd7aabac87"
+    sha256 cellar: :any,                 arm64_sonoma:      "c19642595db560b792a462a2754cdd1c9dcf9cce1206f831e9445f364ddeee9d"
+    sha256 cellar: :any,                 arm64_ventura:     "35617322f558cb0e43a0f265eefaffbe447061bc24acd75452b2b5b084e56acd"
+    sha256 cellar: :any,                 arm64_monterey:    "2f7f6d16223a34599d8f5d7a109e3c0b9bf16dbd98758b8c643d9c43ba40001d"
+    sha256                               sonoma:            "b15cd1a4a1052c29217a92cdcc890755a1af17031b0375d2c48218e37de17ed3"
+    sha256                               ventura:           "fd2c2ab5ef6b79db5b99b18775c36806ab45f06dbfde1a19dbba879c88ff02a3"
+    sha256                               monterey:          "4a18d30f5bd6874f925b389150c77864955c33d546025ab87ba95dc36e6287be"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "a533071501bda03b7663eaf76acaee427fd6ad410521db8f3d42b349a4a8938c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "6e1e57baceef185a21b476c489ec150cbf00729c4b0b31243dd13d5f560376b1"
   end
 
   def install

@@ -7,11 +7,12 @@ class Libjaylink < Formula
   head "https://gitlab.zapb.de/libjaylink/libjaylink.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "8e3586f298a475f8d9991d9224d5c1182cc3fd93632f309d6350c1da189dfe22"
-    sha256 cellar: :any, arm64_sequoia: "06d29040f6a0484cda1d317d23a1f89507dc665060d41f6363a894c3601ae0e9"
-    sha256 cellar: :any, arm64_sonoma:  "91697f046621a9133a0157bec85e027b2c950ed42f488821049b086a5332f697"
-    sha256 cellar: :any, arm64_linux:   "7502574577d33de923e5295b8910537f06a09c98abadfaf2000eda61cdffda2b"
-    sha256 cellar: :any, x86_64_linux:  "c90a0fb93a281015e512488d7f88bb77bf31a85df8226e76a583ef2490a2f9d7"
+    sha256 cellar: :any, arm64_golden_gate: "a91a9b57c5081e9186378952e4955b41f7e11ad80714ca8c92fe69d6af281a92"
+    sha256 cellar: :any, arm64_tahoe:       "8e3586f298a475f8d9991d9224d5c1182cc3fd93632f309d6350c1da189dfe22"
+    sha256 cellar: :any, arm64_sequoia:     "06d29040f6a0484cda1d317d23a1f89507dc665060d41f6363a894c3601ae0e9"
+    sha256 cellar: :any, arm64_sonoma:      "91697f046621a9133a0157bec85e027b2c950ed42f488821049b086a5332f697"
+    sha256 cellar: :any, arm64_linux:       "7502574577d33de923e5295b8910537f06a09c98abadfaf2000eda61cdffda2b"
+    sha256 cellar: :any, x86_64_linux:      "c90a0fb93a281015e512488d7f88bb77bf31a85df8226e76a583ef2490a2f9d7"
   end
 
   depends_on "meson" => :build

@@ -9,12 +9,13 @@ class TelegramDownloader < Formula
   no_autobump! because: :bumped_by_upstream
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f61906ac73ffdb3984ecaba9cb54432f7fbb9d3750ced03ee72dfabbe0a555b0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4fdc82bc1b3824d652ab90c19700abbfe1f49d7d250372b3b08939d7dbc5c048"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a2ddcd983ef7b9b9bb06aeba8db61a4b11f2698a7647bb7ce3e5dde394c4767d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3901ab3b9294e8a23e745dc0db43a62829bdfd2b419561c88d5cb5a2636ca82b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a1e0de0113174cc4a55de2e7145e72eefcbf9596a8d48e945c0f533e86ba3dca"
-    sha256 cellar: :any,                 x86_64_linux:  "4b5818c14f95fb94cd78fac93d430b79cdd6e8c0be2bc9e86b9a66ef96801efb"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "2bec0bfa2f5348d28cbfbc0038797f5b049f45fad3d20537876b47a9389ce25e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "f61906ac73ffdb3984ecaba9cb54432f7fbb9d3750ced03ee72dfabbe0a555b0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "4fdc82bc1b3824d652ab90c19700abbfe1f49d7d250372b3b08939d7dbc5c048"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "a2ddcd983ef7b9b9bb06aeba8db61a4b11f2698a7647bb7ce3e5dde394c4767d"
+    sha256 cellar: :any_skip_relocation, sonoma:            "3901ab3b9294e8a23e745dc0db43a62829bdfd2b419561c88d5cb5a2636ca82b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "a1e0de0113174cc4a55de2e7145e72eefcbf9596a8d48e945c0f533e86ba3dca"
+    sha256 cellar: :any,                 x86_64_linux:      "4b5818c14f95fb94cd78fac93d430b79cdd6e8c0be2bc9e86b9a66ef96801efb"
   end
 
   depends_on "go" => :build

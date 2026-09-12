@@ -7,12 +7,13 @@ class Hotbuild < Formula
   head "https://github.com/wandercn/hotbuild.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "48765f4b63a2e545792a90d0ccb6e708f73cfbac955015b6f7306ba86f81446e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "48765f4b63a2e545792a90d0ccb6e708f73cfbac955015b6f7306ba86f81446e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "48765f4b63a2e545792a90d0ccb6e708f73cfbac955015b6f7306ba86f81446e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "72ec072fe72761ade35c29f2ca68fb14d3d6c1f9b4b72da1fd3fc5bb56fe209b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "60d8216f9117ce91e1efa69dc1365c74a1d1c079d1259d1b8accd4042f29ae2e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "854bb58ffdd0700d658589a05dd6fd5a61540f6600eca7cbf21bf02c924331ea"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "a8e4806ca0cd3315e4f51ecebcf34f22b18d96b41a9ffa743b44777f6ecac1af"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "48765f4b63a2e545792a90d0ccb6e708f73cfbac955015b6f7306ba86f81446e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "48765f4b63a2e545792a90d0ccb6e708f73cfbac955015b6f7306ba86f81446e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "48765f4b63a2e545792a90d0ccb6e708f73cfbac955015b6f7306ba86f81446e"
+    sha256 cellar: :any_skip_relocation, sonoma:            "72ec072fe72761ade35c29f2ca68fb14d3d6c1f9b4b72da1fd3fc5bb56fe209b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "60d8216f9117ce91e1efa69dc1365c74a1d1c079d1259d1b8accd4042f29ae2e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "854bb58ffdd0700d658589a05dd6fd5a61540f6600eca7cbf21bf02c924331ea"
   end
 
   depends_on "go" => :build

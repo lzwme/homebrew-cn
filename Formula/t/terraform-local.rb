@@ -9,12 +9,13 @@ class TerraformLocal < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bb8d6db692b18c316c966f34b7c80ad24de3056a43780fa6898687f441df73db"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "02778532f8ea2b1a02ed50e9db687a918732dc64c733bebccf56dc32bd63e59f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "36b6c307e8fc64aef6176fd4aae7ed774b220811995888253410dd904e24cff1"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3cb767bc121627819be3234142f60896cd6008482dcb88e148eb83a9fac319e2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1c1233b5e7fbf8a626b83af0d6cba97a6d35c01e9ca7faf8d311f958ddd39324"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e8274b97b61a86976e22b00bf1a5799e1728e117f330892d46b03a640f283953"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "203b746bcd6e1cbeccf55134cf4573745ffeace8b5d5e8d084bcdebc1741e80e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "bb8d6db692b18c316c966f34b7c80ad24de3056a43780fa6898687f441df73db"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "02778532f8ea2b1a02ed50e9db687a918732dc64c733bebccf56dc32bd63e59f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "36b6c307e8fc64aef6176fd4aae7ed774b220811995888253410dd904e24cff1"
+    sha256 cellar: :any_skip_relocation, sonoma:            "3cb767bc121627819be3234142f60896cd6008482dcb88e148eb83a9fac319e2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "1c1233b5e7fbf8a626b83af0d6cba97a6d35c01e9ca7faf8d311f958ddd39324"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "e8274b97b61a86976e22b00bf1a5799e1728e117f330892d46b03a640f283953"
   end
 
   depends_on "python@3.14"

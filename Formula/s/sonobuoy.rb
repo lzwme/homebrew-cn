@@ -6,12 +6,13 @@ class Sonobuoy < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a7c10513bb921264169aef710eb983e686dd4e767199a2b0a49cb591bcecfdf3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a7c10513bb921264169aef710eb983e686dd4e767199a2b0a49cb591bcecfdf3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a7c10513bb921264169aef710eb983e686dd4e767199a2b0a49cb591bcecfdf3"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ddd081f74c99d87f5b1294108f4bf8144ece78ec27deef750a011eb6886426c4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "22e2cf9de49490a7d3c6baaf8190981c3b0769d491b06966c4536b78a786ec40"
-    sha256 cellar: :any,                 x86_64_linux:  "c167b3d95ca93752ad0f477b746a1ece1ec799951e3dce27446374239af409a5"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "6943e364ad93445132bb07dcefbb4e089d87686f06b8e8e3748d199b716aeb26"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "a7c10513bb921264169aef710eb983e686dd4e767199a2b0a49cb591bcecfdf3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "a7c10513bb921264169aef710eb983e686dd4e767199a2b0a49cb591bcecfdf3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "a7c10513bb921264169aef710eb983e686dd4e767199a2b0a49cb591bcecfdf3"
+    sha256 cellar: :any_skip_relocation, sonoma:            "ddd081f74c99d87f5b1294108f4bf8144ece78ec27deef750a011eb6886426c4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "22e2cf9de49490a7d3c6baaf8190981c3b0769d491b06966c4536b78a786ec40"
+    sha256 cellar: :any,                 x86_64_linux:      "c167b3d95ca93752ad0f477b746a1ece1ec799951e3dce27446374239af409a5"
   end
 
   depends_on "go" => :build

@@ -8,12 +8,13 @@ class SolrAT811 < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5ce03d79a34e4a9ff3503505b1181905a4fe2296f09413b1fd785adb4f8241bc"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5ce03d79a34e4a9ff3503505b1181905a4fe2296f09413b1fd785adb4f8241bc"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5ce03d79a34e4a9ff3503505b1181905a4fe2296f09413b1fd785adb4f8241bc"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3002d0e561a683b264425cfee6a6111f8615eeb590c7d3bbd0c591e976e01868"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5ce03d79a34e4a9ff3503505b1181905a4fe2296f09413b1fd785adb4f8241bc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5ce03d79a34e4a9ff3503505b1181905a4fe2296f09413b1fd785adb4f8241bc"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "8ae60b64f557fc5afdc67cfc57cb5763e3d0411e609ae7b245d2eaaec1c72310"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "5ce03d79a34e4a9ff3503505b1181905a4fe2296f09413b1fd785adb4f8241bc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "5ce03d79a34e4a9ff3503505b1181905a4fe2296f09413b1fd785adb4f8241bc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "5ce03d79a34e4a9ff3503505b1181905a4fe2296f09413b1fd785adb4f8241bc"
+    sha256 cellar: :any_skip_relocation, sonoma:            "3002d0e561a683b264425cfee6a6111f8615eeb590c7d3bbd0c591e976e01868"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "5ce03d79a34e4a9ff3503505b1181905a4fe2296f09413b1fd785adb4f8241bc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "5ce03d79a34e4a9ff3503505b1181905a4fe2296f09413b1fd785adb4f8241bc"
   end
 
   keg_only :versioned_formula

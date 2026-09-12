@@ -18,12 +18,13 @@ class SpirvCross < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3a02d41b640b88adb966762ee8a489e4afed26c6140f58fcdbbe4068273cf991"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5bb080ac5ac116ffb7d75d1379aef679fc0924e4ed850ffe022311109fe57d93"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9ee0067b1591eec663b3a5bad92b0d92d04f52f3ba0bff7b08527906a827d306"
-    sha256 cellar: :any_skip_relocation, sonoma:        "695370bf212bffe798876c04f58629a6dd0c8d60a6dfa384fe20460616d0bbf5"
-    sha256 cellar: :any,                 arm64_linux:   "6c12b72c0a1ecf56deca50163a72c9c8b296ac229ccedec2b951c08cb2069f32"
-    sha256 cellar: :any,                 x86_64_linux:  "565faaf37aaa8e0b1d0a1fc174619eaccad187a3464dfefdd205a85f3fafa129"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "4121136056f7b7100634290965a8d1239248bc42036145fd1b884e43a3ef6337"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "3a02d41b640b88adb966762ee8a489e4afed26c6140f58fcdbbe4068273cf991"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "5bb080ac5ac116ffb7d75d1379aef679fc0924e4ed850ffe022311109fe57d93"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "9ee0067b1591eec663b3a5bad92b0d92d04f52f3ba0bff7b08527906a827d306"
+    sha256 cellar: :any_skip_relocation, sonoma:            "695370bf212bffe798876c04f58629a6dd0c8d60a6dfa384fe20460616d0bbf5"
+    sha256 cellar: :any,                 arm64_linux:       "6c12b72c0a1ecf56deca50163a72c9c8b296ac229ccedec2b951c08cb2069f32"
+    sha256 cellar: :any,                 x86_64_linux:      "565faaf37aaa8e0b1d0a1fc174619eaccad187a3464dfefdd205a85f3fafa129"
   end
 
   depends_on "cmake" => :build

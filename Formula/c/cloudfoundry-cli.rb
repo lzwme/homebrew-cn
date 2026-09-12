@@ -12,11 +12,12 @@ class CloudfoundryCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6a89bbbc6fd61c7f5c1f791eab969b24325deefe1cfcce67d53251a3527593bd"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6a89bbbc6fd61c7f5c1f791eab969b24325deefe1cfcce67d53251a3527593bd"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6a89bbbc6fd61c7f5c1f791eab969b24325deefe1cfcce67d53251a3527593bd"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7e4fd211e34340695a52e528d7444c5877b17785a84cd03ba0c766ca32f5b36e"
-    sha256 cellar: :any,                 x86_64_linux:  "5584469a2e82862f3b7dcec5f5b7f3ce282532c60a6ded55ff48e5617ca950ce"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "893d1dc7db0a05f1f62d40c36fdfdeab963d3c7dc08bcf0a7968ff6a08cbd02d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "6a89bbbc6fd61c7f5c1f791eab969b24325deefe1cfcce67d53251a3527593bd"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "6a89bbbc6fd61c7f5c1f791eab969b24325deefe1cfcce67d53251a3527593bd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "6a89bbbc6fd61c7f5c1f791eab969b24325deefe1cfcce67d53251a3527593bd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "7e4fd211e34340695a52e528d7444c5877b17785a84cd03ba0c766ca32f5b36e"
+    sha256 cellar: :any,                 x86_64_linux:      "5584469a2e82862f3b7dcec5f5b7f3ce282532c60a6ded55ff48e5617ca950ce"
   end
 
   # `SermoDigital/jose` registers `crypto.Hash(0)`, which Go 1.27 `RegisterHash` panics on

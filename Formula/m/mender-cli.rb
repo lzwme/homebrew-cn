@@ -12,12 +12,13 @@ class MenderCli < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "8f0671cfe824e3f01e2057b81f12836e55f9b0b8fbf055636189d197bcd3af41"
-    sha256 cellar: :any,                 arm64_sequoia: "5e0e61309b5cd8784776ef9edc0a2e3fd7a0c2af80e5006aa05628a1d1d512eb"
-    sha256 cellar: :any,                 arm64_sonoma:  "50ad0bf3c654112ea0c46b288cd00d4a80db67753d2dd5b854687c655e003cfa"
-    sha256 cellar: :any,                 sonoma:        "984ab3bb03029a0d1c71f7da55fdf46866e3aa2dbfacdab2bbf1f87f0311530b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ce65a9c8f2dec521cc44bd235bd32794f842f6952b17fbce95443b3d7859fca8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0b31de68de7647a35266abf1034897a691f8e097e7f36a47c3f3f6fcf02626f9"
+    sha256 cellar: :any,                 arm64_golden_gate: "634acefacfce7569712a966a8e02fcfca28c37045332abd143f60e65e7d37c23"
+    sha256 cellar: :any,                 arm64_tahoe:       "8f0671cfe824e3f01e2057b81f12836e55f9b0b8fbf055636189d197bcd3af41"
+    sha256 cellar: :any,                 arm64_sequoia:     "5e0e61309b5cd8784776ef9edc0a2e3fd7a0c2af80e5006aa05628a1d1d512eb"
+    sha256 cellar: :any,                 arm64_sonoma:      "50ad0bf3c654112ea0c46b288cd00d4a80db67753d2dd5b854687c655e003cfa"
+    sha256 cellar: :any,                 sonoma:            "984ab3bb03029a0d1c71f7da55fdf46866e3aa2dbfacdab2bbf1f87f0311530b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "ce65a9c8f2dec521cc44bd235bd32794f842f6952b17fbce95443b3d7859fca8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "0b31de68de7647a35266abf1034897a691f8e097e7f36a47c3f3f6fcf02626f9"
   end
 
   depends_on "go" => :build

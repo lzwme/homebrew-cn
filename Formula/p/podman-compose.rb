@@ -8,12 +8,13 @@ class PodmanCompose < Formula
   license "GPL-2.0-only"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "97704e9501523ee9e8a58a863fbee60ac0a28d92dafda898c144787e70272d61"
-    sha256 cellar: :any, arm64_sequoia: "cb8a6a4c0109b92c3bb4380c6b25af0d013b2dc91806a23e28ddd28ab6a3558c"
-    sha256 cellar: :any, arm64_sonoma:  "20b45f872570323c8c7adb78792911df1f440d06022b8d62c3c2760b17766240"
-    sha256 cellar: :any, sonoma:        "bd14f22447ff9ebb5fbf2837a13e7cfc65c0b1dbaa6923df7a5b0b253192453b"
-    sha256 cellar: :any, arm64_linux:   "581329e037c0965d3e573193524d879bbbf53f1b10e2d03d9bb3b46fe6231701"
-    sha256 cellar: :any, x86_64_linux:  "dc6f0c240db6ec3a0e3bf878c1d955c997b18e4b89c1ccf21edf8a8e8f12c52a"
+    sha256 cellar: :any, arm64_golden_gate: "5aa126374b56ee9ee9d231d10c13f5b879f8f88e68a9a8930d703f9c1e209f25"
+    sha256 cellar: :any, arm64_tahoe:       "97704e9501523ee9e8a58a863fbee60ac0a28d92dafda898c144787e70272d61"
+    sha256 cellar: :any, arm64_sequoia:     "cb8a6a4c0109b92c3bb4380c6b25af0d013b2dc91806a23e28ddd28ab6a3558c"
+    sha256 cellar: :any, arm64_sonoma:      "20b45f872570323c8c7adb78792911df1f440d06022b8d62c3c2760b17766240"
+    sha256 cellar: :any, sonoma:            "bd14f22447ff9ebb5fbf2837a13e7cfc65c0b1dbaa6923df7a5b0b253192453b"
+    sha256 cellar: :any, arm64_linux:       "581329e037c0965d3e573193524d879bbbf53f1b10e2d03d9bb3b46fe6231701"
+    sha256 cellar: :any, x86_64_linux:      "dc6f0c240db6ec3a0e3bf878c1d955c997b18e4b89c1ccf21edf8a8e8f12c52a"
   end
 
   depends_on "libyaml"

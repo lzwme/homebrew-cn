@@ -6,12 +6,12 @@ class Ipmiutil < Formula
   license all_of: ["BSD-2-Clause", "BSD-3-Clause", "GPL-2.0-or-later"]
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "24816a224f9fa258ad7c86b36f9ee07f2d327c0410d5e251158b763d94f5914c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "597555cd2a88d5c85e4da54dc3159c690e018ce69a28363a5a0dfe2c3825bf1a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "08735aa99f746d1f6718fcfe2e74db2840fb3d49cda8f7ff08f19bed2442dbdb"
-    sha256 cellar: :any_skip_relocation, sonoma:        "673431272778abfd4ee2d782ab4be47bb47744c820419a6216f73b962f5f9263"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2dfc5417038aac6b08f426630e297eef8e3247e0c3e501fa2dc133fdc6a3a2a4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9b026ef33532c2472981201448f1c65523dce6db4fc6fdc6bbbd5fdfbccba8e3"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "0543ef166694a3176b20726c875ff72c40d4b4cd8d39503b73adda3f8d749f90"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "950e34d0adbc6225563c0e59c379c4ca31dc420ecff1daaf86cdef8135ae1223"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "836fe8e01b7a3b9daf59ba36f19d0f05532fc23dec0b1b776cbc324ea11e90e1"
+    sha256 cellar: :any,                 arm64_linux:       "32df0f70e51973220ced2b72392c01ac59819088bcdcac57e0053bcd2d0eb9b7"
+    sha256 cellar: :any,                 x86_64_linux:      "c3feb63ed9d9e4e81dc831d01aedf1cf0245ea3320712947fd7934bfbf1a4997"
   end
 
   on_macos do
@@ -25,6 +25,8 @@ class Ipmiutil < Formula
   def install
     # Workaround for newer Clang
     ENV.append "CC", "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1403
+    # autoconf 2.73 selects C23, which rejects the implicit declarations in this codebase
+    ENV["ac_cv_prog_cc_c23"] = "no"
 
     # Darwin does not exist only on PowerPC
     if OS.mac?

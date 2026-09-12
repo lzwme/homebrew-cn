@@ -12,12 +12,13 @@ class Vmdktool < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9c80ae2a1f31f2ce299e628833d1e506ac03b5a0a27ba6ad7cae14455a62eec1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c6b696de071b46d21d0b6fd5848fd41fcad54f3ce26c2dbef9ac1373c9bda662"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "48fed94d60e7b407531edb37fe6750ed74d982524d5e5497c731eacc3c2c9fbd"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a26422ba4a199adc6522ab9493a017e13c3c08d9d7996b847fbcefddb692b11d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2eb533d8189838729771f500e530db0e691947b3bb774706b831ee3d59701184"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c0293474570a72314f6b3b336a82ed951d1df9779fbd127aa02e441932f4c31c"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "b2468216d87da7bf12b6112e11cc3388c15ca6092144f6662a040e727a936e6c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "9c80ae2a1f31f2ce299e628833d1e506ac03b5a0a27ba6ad7cae14455a62eec1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "c6b696de071b46d21d0b6fd5848fd41fcad54f3ce26c2dbef9ac1373c9bda662"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "48fed94d60e7b407531edb37fe6750ed74d982524d5e5497c731eacc3c2c9fbd"
+    sha256 cellar: :any_skip_relocation, sonoma:            "a26422ba4a199adc6522ab9493a017e13c3c08d9d7996b847fbcefddb692b11d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "2eb533d8189838729771f500e530db0e691947b3bb774706b831ee3d59701184"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "c0293474570a72314f6b3b336a82ed951d1df9779fbd127aa02e441932f4c31c"
   end
 
   depends_on "groff" => :build

@@ -7,14 +7,15 @@ class Imposm3 < Formula
   head "https://github.com/omniscale/imposm3.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "8541b92a75fb1fc113a02f87794315e3f8f6638950eb3629d1bd79ac31965576"
-    sha256 cellar: :any,                 arm64_sequoia: "ef0edd9832c108b40a6eea993c88ce7c2716f05dbac67e18f4c45085acdef838"
-    sha256 cellar: :any,                 arm64_sonoma:  "f9c1f47003a67cac4718eee990bce3a96fdce764d7003670edcc9e782da1939d"
-    sha256 cellar: :any,                 arm64_ventura: "e73b325a6bff285c9dfe4cc6736703881518972216c2ac0cd01e0b147db07632"
-    sha256 cellar: :any,                 sonoma:        "d665afcf5f6f08652ed1af431e1aa4d38eb0dd747b57ed3e7c6726d8cb75a175"
-    sha256 cellar: :any,                 ventura:       "49aacfcbcbf3e519f8257f24a8366aca51460e96c51036a5232d5d1324e60f3c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2545034b671e36df257d6adbc876eb1e0eec26c15469c0bf0d4ab20c16638285"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d5f69476d6817e049c7177e14a69cff62546d2a436aff1334c83a34ee6c07d69"
+    sha256 cellar: :any,                 arm64_golden_gate: "245f77d8a90a6b3b76d7a86583a951bf020d75bb40af30ceef0876d6b2b93e48"
+    sha256 cellar: :any,                 arm64_tahoe:       "8541b92a75fb1fc113a02f87794315e3f8f6638950eb3629d1bd79ac31965576"
+    sha256 cellar: :any,                 arm64_sequoia:     "ef0edd9832c108b40a6eea993c88ce7c2716f05dbac67e18f4c45085acdef838"
+    sha256 cellar: :any,                 arm64_sonoma:      "f9c1f47003a67cac4718eee990bce3a96fdce764d7003670edcc9e782da1939d"
+    sha256 cellar: :any,                 arm64_ventura:     "e73b325a6bff285c9dfe4cc6736703881518972216c2ac0cd01e0b147db07632"
+    sha256 cellar: :any,                 sonoma:            "d665afcf5f6f08652ed1af431e1aa4d38eb0dd747b57ed3e7c6726d8cb75a175"
+    sha256 cellar: :any,                 ventura:           "49aacfcbcbf3e519f8257f24a8366aca51460e96c51036a5232d5d1324e60f3c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "2545034b671e36df257d6adbc876eb1e0eec26c15469c0bf0d4ab20c16638285"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "d5f69476d6817e049c7177e14a69cff62546d2a436aff1334c83a34ee6c07d69"
   end
 
   depends_on "go" => :build

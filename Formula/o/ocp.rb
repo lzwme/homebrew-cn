@@ -47,7 +47,7 @@ class Ocp < Formula
   end
 
   resource "unifont" do
-    url "https://ftpmirror.gnu.org/gnu/unifont/unifont-17.0.05/unifont-17.0.05.tar.gz"
+    url "https://ftpmirror.gnu.org/unifont/unifont-17.0.05/unifont-17.0.05.tar.gz"
     sha256 "f287cffb26e22723aa36e6684869b0f3ff3bfb822c4b01008bd847911ec1b631"
 
     livecheck do

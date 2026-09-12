@@ -10,12 +10,13 @@ class Tilt < Formula
   no_autobump! because: :bumped_by_upstream
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "29d86973a163e2c6d66c4761cd507a89914637b9a2367cd4381a639e550c1629"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "aaad8c4643c5e033f5b3589b2a812b0f24f3e36c0b85fdc3363d93c2451be751"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6d968916e24f29dda891bff7c862dead951142c6e13e9bc6835c48ad5bca47f2"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4d1ed6d0508132a0c6df2e01deee7a3919660eb05e3706b1db902d9a38c8cfa6"
-    sha256 cellar: :any,                 arm64_linux:   "203c6ac8d7ddf2112d1ef6d2e188c0a06715e9b08ef561a993e73fa69b60cec1"
-    sha256 cellar: :any,                 x86_64_linux:  "5498d06066bd33ee28ca41f0e79ffcacb9dd7d7f611e5c5d2bf9ec34d4f2e8cb"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "f09e1600c6983eef5c0b4eeaaab66455542cb66a4ebcf65891133e4099d882ad"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "29d86973a163e2c6d66c4761cd507a89914637b9a2367cd4381a639e550c1629"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "aaad8c4643c5e033f5b3589b2a812b0f24f3e36c0b85fdc3363d93c2451be751"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "6d968916e24f29dda891bff7c862dead951142c6e13e9bc6835c48ad5bca47f2"
+    sha256 cellar: :any_skip_relocation, sonoma:            "4d1ed6d0508132a0c6df2e01deee7a3919660eb05e3706b1db902d9a38c8cfa6"
+    sha256 cellar: :any,                 arm64_linux:       "203c6ac8d7ddf2112d1ef6d2e188c0a06715e9b08ef561a993e73fa69b60cec1"
+    sha256 cellar: :any,                 x86_64_linux:      "5498d06066bd33ee28ca41f0e79ffcacb9dd7d7f611e5c5d2bf9ec34d4f2e8cb"
   end
 
   depends_on "corepack" => :build # for newer yarn

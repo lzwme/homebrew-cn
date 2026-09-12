@@ -7,12 +7,13 @@ class Hcledit < Formula
   head "https://github.com/minamijoyo/hcledit.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "26ef5207f2ea741c27c5a519cd59abdb614ec76ba88df2b5c952b636cfc0205b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "26ef5207f2ea741c27c5a519cd59abdb614ec76ba88df2b5c952b636cfc0205b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "26ef5207f2ea741c27c5a519cd59abdb614ec76ba88df2b5c952b636cfc0205b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3d3c45b42e09e19149b5f1eadef9d07775c0382ed0d539ff86e40dbdd5067ed2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "af426dfe5cbe58a7b8fae3280585c4d435409d69163488cd22e13f4403dcafe2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8fb5a34f86a074e3dd1fdea34d82c293e2a345a65b5f26bbbc348cb3b585964b"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "3c2802ee9394df3317760227de764f6fe4423c7705270054fd424b1ebd6c257c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "26ef5207f2ea741c27c5a519cd59abdb614ec76ba88df2b5c952b636cfc0205b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "26ef5207f2ea741c27c5a519cd59abdb614ec76ba88df2b5c952b636cfc0205b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "26ef5207f2ea741c27c5a519cd59abdb614ec76ba88df2b5c952b636cfc0205b"
+    sha256 cellar: :any_skip_relocation, sonoma:            "3d3c45b42e09e19149b5f1eadef9d07775c0382ed0d539ff86e40dbdd5067ed2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "af426dfe5cbe58a7b8fae3280585c4d435409d69163488cd22e13f4403dcafe2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "8fb5a34f86a074e3dd1fdea34d82c293e2a345a65b5f26bbbc348cb3b585964b"
   end
 
   depends_on "go" => :build

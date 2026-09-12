@@ -19,12 +19,13 @@ class OpenSceneGraph < Formula
 
   bottle do
     rebuild 2
-    sha256               arm64_tahoe:   "98b12a674ce6d9934b3242ee26c7f19019e7b6d3f853270aac328069e5154dfd"
-    sha256               arm64_sequoia: "581fe650587d4f4754ca98ef918c4d0ea5ade5511be34c59fbc4f0ac78f2d6d2"
-    sha256               arm64_sonoma:  "39d01e3a2744d0883e813155f5147c3d2527a3b9627b89d21a49af8699bbd4d8"
-    sha256               sonoma:        "6df520ae97f3f4483057f2a1700d3cad92f5bb58605e3f84af2999ae145e44ae"
-    sha256               arm64_linux:   "c2ae7b0358fe9fd5828f69a7af80d061f642a96cdbe49b6580ed568045f484ae"
-    sha256 cellar: :any, x86_64_linux:  "30c478b397a355079032f8837c093077fdafd9ad2becfd0c3e6703b25f24bf11"
+    sha256               arm64_golden_gate: "7ea6ae99fba93e91fdb9dfdef5aba7f15c291ef994493c0d7d1a62bd3d996e9f"
+    sha256               arm64_tahoe:       "98b12a674ce6d9934b3242ee26c7f19019e7b6d3f853270aac328069e5154dfd"
+    sha256               arm64_sequoia:     "581fe650587d4f4754ca98ef918c4d0ea5ade5511be34c59fbc4f0ac78f2d6d2"
+    sha256               arm64_sonoma:      "39d01e3a2744d0883e813155f5147c3d2527a3b9627b89d21a49af8699bbd4d8"
+    sha256               sonoma:            "6df520ae97f3f4483057f2a1700d3cad92f5bb58605e3f84af2999ae145e44ae"
+    sha256               arm64_linux:       "c2ae7b0358fe9fd5828f69a7af80d061f642a96cdbe49b6580ed568045f484ae"
+    sha256 cellar: :any, x86_64_linux:      "30c478b397a355079032f8837c093077fdafd9ad2becfd0c3e6703b25f24bf11"
   end
 
   depends_on "cmake" => :build

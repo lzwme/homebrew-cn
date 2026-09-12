@@ -28,11 +28,12 @@ class WasiLibc < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b5e53927e23f5981de6b3efafffc42dc6656f8b19f2c53013474a0a97edb6528"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b5e53927e23f5981de6b3efafffc42dc6656f8b19f2c53013474a0a97edb6528"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b5e53927e23f5981de6b3efafffc42dc6656f8b19f2c53013474a0a97edb6528"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8366085c21d11ba0f45a84cfce10038c733538736a259c6de5f9058d46662989"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8366085c21d11ba0f45a84cfce10038c733538736a259c6de5f9058d46662989"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "1b7d1b3f8492a5982a0d26655ba75afbed1b823abad3adc794f2873537b0911f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "b5e53927e23f5981de6b3efafffc42dc6656f8b19f2c53013474a0a97edb6528"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "b5e53927e23f5981de6b3efafffc42dc6656f8b19f2c53013474a0a97edb6528"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "b5e53927e23f5981de6b3efafffc42dc6656f8b19f2c53013474a0a97edb6528"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "8366085c21d11ba0f45a84cfce10038c733538736a259c6de5f9058d46662989"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "8366085c21d11ba0f45a84cfce10038c733538736a259c6de5f9058d46662989"
   end
 
   depends_on "cmake" => :build
@@ -59,7 +60,9 @@ class WasiLibc < Formula
     end
   end
 
-  deny_network_access!
+  # needs to download resources in the `test` block
+  # FIXME: `brew` should know to download test resources before sandboxing.
+  allow_network_access! :test
 
   def wasi_sdk_targets
     # See targets at: https://github.com/WebAssembly/wasi-sdk/blob/wasi-sdk-34/CMakeLists.txt#L14

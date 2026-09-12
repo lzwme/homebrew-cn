@@ -12,11 +12,12 @@ class Pocl < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "db8ffc6a44bff02e7f328a66ae573c5b98476ea6a1fbf3706c99d5f3f52bb7cc"
-    sha256 arm64_sequoia: "a58f0c781bcc66c136993c02254b0f9119dd98e28ebb2d53cc461eb684af7880"
-    sha256 arm64_sonoma:  "21e0d7b8e30c85b33f88e6d3a89f06207d35f6157417703579f2a0f22d82452d"
-    sha256 arm64_linux:   "517b477637c51b2580ed137acda85b1cc2f2d1cd8a1778f4b9fb15959cafd3ad"
-    sha256 x86_64_linux:  "f08cd82d6e967e73078d304701bf2d0ae0440715aaa7c0e83d203740a97984ba"
+    sha256 arm64_golden_gate: "82dba1ab99489e8af1374ca5eb49a26a89fd95295909570c715f81bfd9065691"
+    sha256 arm64_tahoe:       "db8ffc6a44bff02e7f328a66ae573c5b98476ea6a1fbf3706c99d5f3f52bb7cc"
+    sha256 arm64_sequoia:     "a58f0c781bcc66c136993c02254b0f9119dd98e28ebb2d53cc461eb684af7880"
+    sha256 arm64_sonoma:      "21e0d7b8e30c85b33f88e6d3a89f06207d35f6157417703579f2a0f22d82452d"
+    sha256 arm64_linux:       "517b477637c51b2580ed137acda85b1cc2f2d1cd8a1778f4b9fb15959cafd3ad"
+    sha256 x86_64_linux:      "f08cd82d6e967e73078d304701bf2d0ae0440715aaa7c0e83d203740a97984ba"
   end
 
   depends_on "cmake" => :build

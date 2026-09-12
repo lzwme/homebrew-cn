@@ -4,15 +4,15 @@ class AwsCrtCpp < Formula
   url "https://ghfast.top/https://github.com/awslabs/aws-crt-cpp/archive/refs/tags/v0.43.6.tar.gz"
   sha256 "a02687298bb6b0ee7cb3cac8055a4dbae505ddb6242f3e33596b2c63eb3d5ec5"
   license "Apache-2.0"
+  revision 1
   compatibility_version 1
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "be698944d0cbc13333b42cc5ca178a8ac02f2b5b6124543f3f141d5803a2596d"
-    sha256 cellar: :any, arm64_tahoe:       "9613758ce30093deba0e9b6b732991023bfce662acc4b84a39c2c5fbd087fa26"
-    sha256 cellar: :any, arm64_sequoia:     "f196c2923477cdb14aceda1c34369361ed36b1c8be267f470fc47177b021ffd2"
-    sha256 cellar: :any, arm64_sonoma:      "62cb8e174f8b342522c4d50ae454c39e882f32a01678186241f74f08cc8e6a6b"
-    sha256 cellar: :any, arm64_linux:       "cce121c33542f66dfb8f15f6145dd5e8de8fd3fcef1b630236ecba185c027cfc"
-    sha256 cellar: :any, x86_64_linux:      "9147cd9868dfb2cc9c902a28681ca3d3021fce5a3681c77e4546673af286c125"
+    sha256 cellar: :any, arm64_golden_gate: "7c005524b0a386127a90c40a2bba0e6533466c77e5c110a1ecd4bf9ff40abe42"
+    sha256 cellar: :any, arm64_tahoe:       "83fd1507f148bf5e4a3f4dd2bbf8f9b8565e4f4a394bc64d2ed95ba27abb4291"
+    sha256 cellar: :any, arm64_sequoia:     "62fac2cd5d220091885df000125cfbca94ecb61d8b87a0b763e0f4be52f6f130"
+    sha256 cellar: :any, arm64_linux:       "b537cbb1f077db443bfd88a9f09ab84c3e5533b55dbf3af37c78dc0d4fd2743a"
+    sha256 cellar: :any, x86_64_linux:      "c4f4c6a88432a1e83096759d851e27f4abd23422465db604e61b474e0fafd9f5"
   end
 
   depends_on "cmake" => :build

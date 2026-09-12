@@ -1,7 +1,7 @@
 class GccAT14 < Formula
   desc "GNU compiler collection"
   homepage "https://gcc.gnu.org/"
-  url "https://ftpmirror.gnu.org/gnu/gcc/gcc-14.4.0/gcc-14.4.0.tar.xz"
+  url "https://ftpmirror.gnu.org/gcc/gcc-14.4.0/gcc-14.4.0.tar.xz"
   mirror "https://ftp.gnu.org/gnu/gcc/gcc-14.4.0/gcc-14.4.0.tar.xz"
   sha256 "752b6f567beac83159c77a7680b1316bdd784738bff9a9d070112c09da90f6d9"
   license "GPL-3.0-or-later" => { with: "GCC-exception-3.1" }
@@ -12,14 +12,15 @@ class GccAT14 < Formula
   end
 
   bottle do
-    sha256               arm64_tahoe:   "32dbe52ac8b804ab1a908c22c0c53afa3f5fbbb8144afe5c9738690bf7434e40"
-    sha256               arm64_sequoia: "e526f5bad9ecb0b7189b7694cc4c5bf27ea194d7a6c87ce5afb7f9fd56e48ece"
-    sha256               arm64_sonoma:  "290f1725fa61cda123f659fece41051417810c97e24fa870f07efd878623614d"
-    sha256               tahoe:         "10aad2cd43edcfcf94855822d5ae2f2c687a0be472e9ff8b9f5ab6dd4e1ff3f0"
-    sha256               sequoia:       "61534065f14422d91e32d0469b8c5761ae8192f5f767568bda6fb2a23833c5f4"
-    sha256               sonoma:        "6f85c867f2c246c7621dd7f7c3d925b786a82a139c5267736ff11e1ae82d02ff"
-    sha256 cellar: :any, arm64_linux:   "f6bc7f2f70750893bfa2246c476475a085091a1640f1caeaee4c6c9889b1d9ae"
-    sha256 cellar: :any, x86_64_linux:  "08a1fc055fcd78fad1bdbe3db7060fa69d293e7c4100fb89086776fb1e843402"
+    sha256               arm64_golden_gate: "53e836ced7237644dd06534b96544654d59aa38801905da2dfedd881807a37dd"
+    sha256               arm64_tahoe:       "32dbe52ac8b804ab1a908c22c0c53afa3f5fbbb8144afe5c9738690bf7434e40"
+    sha256               arm64_sequoia:     "e526f5bad9ecb0b7189b7694cc4c5bf27ea194d7a6c87ce5afb7f9fd56e48ece"
+    sha256               arm64_sonoma:      "290f1725fa61cda123f659fece41051417810c97e24fa870f07efd878623614d"
+    sha256               tahoe:             "10aad2cd43edcfcf94855822d5ae2f2c687a0be472e9ff8b9f5ab6dd4e1ff3f0"
+    sha256               sequoia:           "61534065f14422d91e32d0469b8c5761ae8192f5f767568bda6fb2a23833c5f4"
+    sha256               sonoma:            "6f85c867f2c246c7621dd7f7c3d925b786a82a139c5267736ff11e1ae82d02ff"
+    sha256 cellar: :any, arm64_linux:       "f6bc7f2f70750893bfa2246c476475a085091a1640f1caeaee4c6c9889b1d9ae"
+    sha256 cellar: :any, x86_64_linux:      "08a1fc055fcd78fad1bdbe3db7060fa69d293e7c4100fb89086776fb1e843402"
   end
 
   # The bottles are built on systems with the CLT installed, and do not work

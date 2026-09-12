@@ -7,12 +7,13 @@ class Gffcompare < Formula
   head "https://github.com/gpertea/gffcompare.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ad288135f38fb28d89c01280587280ffa47c766c647c3ea5d29ce5cb7ec67a8c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9b52e739d06fc61c999cb98a625df36435e0dde817ec36c5aa7b07c6c6aa7f9a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "154a78616437a2cc9c2c1282127a85b965d69cf1f294cca8d54c349d4d590fc1"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9a1654be46ba1adefa662e9d9a501a671a7c85eb88c4bdf926ad4b02ef8dce7d"
-    sha256 cellar: :any,                 arm64_linux:   "a497f9a4839cfccf61aa18e1f1115edb8d71c9d9354c38daf6f9f3a26b3c4cc6"
-    sha256 cellar: :any,                 x86_64_linux:  "498e0b1488130ef96c2af016a7366c492b3d1f280c0f2c1b9dafb2ff026ba583"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "7e48ddd13711cbfe92c3265f19b02cede674e1ab746d83f59c7311799f7d9a93"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "ad288135f38fb28d89c01280587280ffa47c766c647c3ea5d29ce5cb7ec67a8c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "9b52e739d06fc61c999cb98a625df36435e0dde817ec36c5aa7b07c6c6aa7f9a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "154a78616437a2cc9c2c1282127a85b965d69cf1f294cca8d54c349d4d590fc1"
+    sha256 cellar: :any_skip_relocation, sonoma:            "9a1654be46ba1adefa662e9d9a501a671a7c85eb88c4bdf926ad4b02ef8dce7d"
+    sha256 cellar: :any,                 arm64_linux:       "a497f9a4839cfccf61aa18e1f1115edb8d71c9d9354c38daf6f9f3a26b3c4cc6"
+    sha256 cellar: :any,                 x86_64_linux:      "498e0b1488130ef96c2af016a7366c492b3d1f280c0f2c1b9dafb2ff026ba583"
   end
 
   def install

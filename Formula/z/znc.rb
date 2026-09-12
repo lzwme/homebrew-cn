@@ -12,12 +12,13 @@ class Znc < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "52596a383127e6c174e4a1ee5b8a28b2eacc7f3c90a7ec88e26bb2543fa937ff"
-    sha256 arm64_sequoia: "5ce07766fdc5057aec916ea1256c08452f6a82376cdc18926cd1d2a94db0c78e"
-    sha256 arm64_sonoma:  "5a50bdbb7bd123b07b905061ae9757e35e5cd40edf88f1aa3b010ce0f8a0d586"
-    sha256 sonoma:        "71493cc6f0ace695dd09c6cb652ec31e285a0133053c81708b92eb9211f43a32"
-    sha256 arm64_linux:   "e27bd1d958cff96750999564bf636a9fd9a700ecfd300fcd1f553d7be5271156"
-    sha256 x86_64_linux:  "367231b8d2151bd2beef09cd519629c5b6a568c8d7ffd6d10b229c5ada7dfacd"
+    sha256 arm64_golden_gate: "9ff1afe5c107f34e993f41a9a1ec030daed4b9584fc29e9f1ad684a8ce8befac"
+    sha256 arm64_tahoe:       "52596a383127e6c174e4a1ee5b8a28b2eacc7f3c90a7ec88e26bb2543fa937ff"
+    sha256 arm64_sequoia:     "5ce07766fdc5057aec916ea1256c08452f6a82376cdc18926cd1d2a94db0c78e"
+    sha256 arm64_sonoma:      "5a50bdbb7bd123b07b905061ae9757e35e5cd40edf88f1aa3b010ce0f8a0d586"
+    sha256 sonoma:            "71493cc6f0ace695dd09c6cb652ec31e285a0133053c81708b92eb9211f43a32"
+    sha256 arm64_linux:       "e27bd1d958cff96750999564bf636a9fd9a700ecfd300fcd1f553d7be5271156"
+    sha256 x86_64_linux:      "367231b8d2151bd2beef09cd519629c5b6a568c8d7ffd6d10b229c5ada7dfacd"
   end
 
   depends_on "cmake" => :build

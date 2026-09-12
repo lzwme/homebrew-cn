@@ -7,11 +7,12 @@ class Krakend < Formula
   head "https://github.com/krakend/krakend-ce.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "51c5f038247b82e19f96ad4e84fc9427c8631a6d8688cb7e40cac5a5cab956b9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "182537bc9b261724cb27bbc5bf3f9d82f8c1fa4b649e91eb789f4e169b6434b7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c95be0ed743b839f80551e188fbb0634415d9142b6f8bb4c0c4d6d1d722ec044"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f5ef98d914b192732d115163da4fdd0835785716ea79bf8c2e32749e44e8570d"
-    sha256 cellar: :any,                 x86_64_linux:  "456c35837263edc4f40ef1a98889dc0a7643e93a38928d249947cbf75f5d0aec"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "8859d9ef3dc75b81bfc431c66fc24e020aa79947a9765876b146c72e9a1f59b1"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "51c5f038247b82e19f96ad4e84fc9427c8631a6d8688cb7e40cac5a5cab956b9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "182537bc9b261724cb27bbc5bf3f9d82f8c1fa4b649e91eb789f4e169b6434b7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "c95be0ed743b839f80551e188fbb0634415d9142b6f8bb4c0c4d6d1d722ec044"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "f5ef98d914b192732d115163da4fdd0835785716ea79bf8c2e32749e44e8570d"
+    sha256 cellar: :any,                 x86_64_linux:      "456c35837263edc4f40ef1a98889dc0a7643e93a38928d249947cbf75f5d0aec"
   end
 
   depends_on "go" => :build

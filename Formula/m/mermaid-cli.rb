@@ -6,11 +6,12 @@ class MermaidCli < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "95231880e1f86550a5b54289b9f6999068cb3a5323c8ab88de0e408060dd2017"
-    sha256 cellar: :any,                 arm64_sequoia: "95231880e1f86550a5b54289b9f6999068cb3a5323c8ab88de0e408060dd2017"
-    sha256 cellar: :any,                 arm64_sonoma:  "95231880e1f86550a5b54289b9f6999068cb3a5323c8ab88de0e408060dd2017"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "628623b4f972e428b4965ab1c37ffb71755adb6ff7ffe609426dfc4250c97ff2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2a3b6a08e80f3c39f4b733c3bbfd4ce6ec5f46ff0d13ec89ddd5c844cac85d96"
+    sha256 cellar: :any,                 arm64_golden_gate: "ed41fc00a91e5b7321eac1209ca7410b1939c0d25c87f9ea281603a27df8aed5"
+    sha256 cellar: :any,                 arm64_tahoe:       "95231880e1f86550a5b54289b9f6999068cb3a5323c8ab88de0e408060dd2017"
+    sha256 cellar: :any,                 arm64_sequoia:     "95231880e1f86550a5b54289b9f6999068cb3a5323c8ab88de0e408060dd2017"
+    sha256 cellar: :any,                 arm64_sonoma:      "95231880e1f86550a5b54289b9f6999068cb3a5323c8ab88de0e408060dd2017"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "628623b4f972e428b4965ab1c37ffb71755adb6ff7ffe609426dfc4250c97ff2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "2a3b6a08e80f3c39f4b733c3bbfd4ce6ec5f46ff0d13ec89ddd5c844cac85d96"
   end
 
   depends_on "node"

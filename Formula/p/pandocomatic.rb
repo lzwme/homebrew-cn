@@ -7,12 +7,13 @@ class Pandocomatic < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "94dead39e2809e446ca5663efc490bde891f3d0e61169c092e7a9b71e1c6d04b"
-    sha256 cellar: :any,                 arm64_sequoia: "9fc14ce01a2aa580eed1b5d3ee9e640012b7c21047ee351b67e5fb9b3487da9b"
-    sha256 cellar: :any,                 arm64_sonoma:  "0ec017678ab1e2383ae6ae3ddaa9f6ce41b27a9cf524cb07e9626d6ad6a91bb3"
-    sha256 cellar: :any,                 sonoma:        "108f671c2357bb6574f6f139b0e84ba591c938d58ea2dc5da311b7f5c578bf3a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f1260ba565529a1e73f1e4ab697c498b1a6e7338de14884483cc3cbeee61262b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "476704ca09fb05e3a0bc5b75818886130c40b05f72ca4b35dbd35a502997910c"
+    sha256 cellar: :any,                 arm64_golden_gate: "87fc6695bd409dbf5402d04fd7b65ceb81f6c1477eaf299bc0e95fdfcf17069a"
+    sha256 cellar: :any,                 arm64_tahoe:       "94dead39e2809e446ca5663efc490bde891f3d0e61169c092e7a9b71e1c6d04b"
+    sha256 cellar: :any,                 arm64_sequoia:     "9fc14ce01a2aa580eed1b5d3ee9e640012b7c21047ee351b67e5fb9b3487da9b"
+    sha256 cellar: :any,                 arm64_sonoma:      "0ec017678ab1e2383ae6ae3ddaa9f6ce41b27a9cf524cb07e9626d6ad6a91bb3"
+    sha256 cellar: :any,                 sonoma:            "108f671c2357bb6574f6f139b0e84ba591c938d58ea2dc5da311b7f5c578bf3a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "f1260ba565529a1e73f1e4ab697c498b1a6e7338de14884483cc3cbeee61262b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "476704ca09fb05e3a0bc5b75818886130c40b05f72ca4b35dbd35a502997910c"
   end
 
   depends_on "libyaml"

@@ -12,18 +12,19 @@ class Pakchois < Formula
 
   bottle do
     rebuild 3
-    sha256                               arm64_tahoe:    "7f225dfdf9d1ac84b9bbd38a83157664f5b03b6951a09b9888b8b67ab586ae59"
-    sha256                               arm64_sequoia:  "9634938ed93d02adaa5e477a29ee2f128d058f63cfbbe9c460ead07b53ac23d1"
-    sha256                               arm64_sonoma:   "c5e557c4172e6800ca80178acedc0a6029c4870ceb37ed56d6a3944f32a271ee"
-    sha256                               arm64_ventura:  "d8467830fd424d6fea0a0f0ff82949262d55d4221fa2a2d630b0679d374c803f"
-    sha256                               arm64_monterey: "fb701bf9c363b4e09f285fa9c6f60aba921a93f826c37afd5fcc54b0bc5e4ed1"
-    sha256 cellar: :any,                 arm64_big_sur:  "86e77a851ff2c0de31cf5e4f2587711b7b1bcc742fb878df1ce69fde836fd864"
-    sha256                               sonoma:         "95aae319e6a66c11f7f6826ded41ac0b2b45e4768319267321866118d828289c"
-    sha256                               ventura:        "b6a9c3707dd02ec65d927974bd8534be159b2dd977f14df74907eadb0165e953"
-    sha256                               monterey:       "f53bdb6cb2f47b0ed2e1df5f2c80f9568c3b2c55463de2cfdfe742da945364c0"
-    sha256 cellar: :any,                 big_sur:        "fd91b09bb010ac37483a910b0431c6082903ee843a15f4cc767bde57ce0b7267"
-    sha256                               arm64_linux:    "f1d80aa63347835060c9d57d93c36226dc116d3c4b573e3db74128a86e4bfc1b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e9e96d8cef014042091db67065c8b02439cba4cfd381ca7651bc721ec120ad4a"
+    sha256                               arm64_golden_gate: "31258925794e12fc7b1cd5d1d36e901201573820fe34ad7e7b4d0044a6238da0"
+    sha256                               arm64_tahoe:       "7f225dfdf9d1ac84b9bbd38a83157664f5b03b6951a09b9888b8b67ab586ae59"
+    sha256                               arm64_sequoia:     "9634938ed93d02adaa5e477a29ee2f128d058f63cfbbe9c460ead07b53ac23d1"
+    sha256                               arm64_sonoma:      "c5e557c4172e6800ca80178acedc0a6029c4870ceb37ed56d6a3944f32a271ee"
+    sha256                               arm64_ventura:     "d8467830fd424d6fea0a0f0ff82949262d55d4221fa2a2d630b0679d374c803f"
+    sha256                               arm64_monterey:    "fb701bf9c363b4e09f285fa9c6f60aba921a93f826c37afd5fcc54b0bc5e4ed1"
+    sha256 cellar: :any,                 arm64_big_sur:     "86e77a851ff2c0de31cf5e4f2587711b7b1bcc742fb878df1ce69fde836fd864"
+    sha256                               sonoma:            "95aae319e6a66c11f7f6826ded41ac0b2b45e4768319267321866118d828289c"
+    sha256                               ventura:           "b6a9c3707dd02ec65d927974bd8534be159b2dd977f14df74907eadb0165e953"
+    sha256                               monterey:          "f53bdb6cb2f47b0ed2e1df5f2c80f9568c3b2c55463de2cfdfe742da945364c0"
+    sha256 cellar: :any,                 big_sur:           "fd91b09bb010ac37483a910b0431c6082903ee843a15f4cc767bde57ce0b7267"
+    sha256                               arm64_linux:       "f1d80aa63347835060c9d57d93c36226dc116d3c4b573e3db74128a86e4bfc1b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "e9e96d8cef014042091db67065c8b02439cba4cfd381ca7651bc721ec120ad4a"
   end
 
   def install

@@ -6,14 +6,15 @@ class CargoMake < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c85317163c83d67bdc08f66186d287ab4ade17702716118c30dffc60300d2416"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "19d759576565d7abaf24e1333ae5e52383f998571025a563c7f994df57dd30fe"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d51b915c4a7eb13107f048b8086be05eac529766f6b61d94238f6de7f95e183c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "03378097976272095569b5c44ec8cf5ed5220318ea3c0d03eaa3a4f1d91ce8e5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "086c607cd949bf09f50993d4a486137350c6a69df15bcc8bffcde33228aa330c"
-    sha256 cellar: :any_skip_relocation, ventura:       "4d4e6df0408ec7ee1110e0380a32c280d1d657b744a302279fdfbc9811a7e8df"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a38ee58a40f555beed4820c611cb375ae11ced7c35f294b799434407f2287075"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "476ba3af76f954ed24d8cb84e7e57eab3a32b86d51d21f7e219be831264137f5"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "d29c932c3c16d06d7e284749edaa76a89a0833314b1df2aff88de0179eea6bd1"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "c85317163c83d67bdc08f66186d287ab4ade17702716118c30dffc60300d2416"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "19d759576565d7abaf24e1333ae5e52383f998571025a563c7f994df57dd30fe"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "d51b915c4a7eb13107f048b8086be05eac529766f6b61d94238f6de7f95e183c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:     "03378097976272095569b5c44ec8cf5ed5220318ea3c0d03eaa3a4f1d91ce8e5"
+    sha256 cellar: :any_skip_relocation, sonoma:            "086c607cd949bf09f50993d4a486137350c6a69df15bcc8bffcde33228aa330c"
+    sha256 cellar: :any_skip_relocation, ventura:           "4d4e6df0408ec7ee1110e0380a32c280d1d657b744a302279fdfbc9811a7e8df"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "a38ee58a40f555beed4820c611cb375ae11ced7c35f294b799434407f2287075"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "476ba3af76f954ed24d8cb84e7e57eab3a32b86d51d21f7e219be831264137f5"
   end
 
   depends_on "rust" => :build
@@ -26,7 +27,7 @@ class CargoMake < Formula
   test do
     # Show that we can use a different toolchain than the one provided by the `rust` formula.
     # https://github.com/Homebrew/homebrew-core/pull/134074#pullrequestreview-1484979359
-    ENV.prepend_path "PATH", Formula["rustup"].bin
+    ENV.prepend_path "PATH", formula_opt_bin("rustup")
     system "rustup", "set", "profile", "minimal"
     system "rustup", "default", "beta"
 

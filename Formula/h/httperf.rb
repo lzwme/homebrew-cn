@@ -22,12 +22,13 @@ class Httperf < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "7058120f2bc830d162abe7e7f1732bd35a69a9b1467e9ba159457f91aba5eba5"
-    sha256 cellar: :any,                 arm64_sequoia: "efe2209f501fece87251e41daa112b47530b39045e957fb0e8e443e883ba465b"
-    sha256 cellar: :any,                 arm64_sonoma:  "128020ec8910a993fd4253aaaf848fdc7bed1234ef0a7a3639585c20f94cd9f9"
-    sha256 cellar: :any,                 sonoma:        "da89b4e50527278fc0af4c2aaa3290003f977c22672b7e673e2b03dcb256964a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8ecbd4326f2fd13255046d1e1b6abbb57a6d8f63422bb117c71793208990f8cc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "abd5a6cf1f8ca58e2d76742f0a9907c0110b7ebf90bc72c59a528b8eaf49b931"
+    sha256 cellar: :any,                 arm64_golden_gate: "7ee5a261544b086a5500643a6b07132145968f2fff9352aba702e9f37b8687a0"
+    sha256 cellar: :any,                 arm64_tahoe:       "7058120f2bc830d162abe7e7f1732bd35a69a9b1467e9ba159457f91aba5eba5"
+    sha256 cellar: :any,                 arm64_sequoia:     "efe2209f501fece87251e41daa112b47530b39045e957fb0e8e443e883ba465b"
+    sha256 cellar: :any,                 arm64_sonoma:      "128020ec8910a993fd4253aaaf848fdc7bed1234ef0a7a3639585c20f94cd9f9"
+    sha256 cellar: :any,                 sonoma:            "da89b4e50527278fc0af4c2aaa3290003f977c22672b7e673e2b03dcb256964a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "8ecbd4326f2fd13255046d1e1b6abbb57a6d8f63422bb117c71793208990f8cc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "abd5a6cf1f8ca58e2d76742f0a9907c0110b7ebf90bc72c59a528b8eaf49b931"
   end
 
   head do

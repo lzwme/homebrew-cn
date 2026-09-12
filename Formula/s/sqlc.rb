@@ -7,12 +7,13 @@ class Sqlc < Formula
   head "https://github.com/sqlc-dev/sqlc.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "02eec610db40876f35ccf86fc6839ef01dd3a516f862461199fd962e036dbf68"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "515840fb2acc0ff9482d3c726d7b308efc046776d3df75d46354b0c9af114f7d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e219dbb7f0baf6cb74e1a256ccb3df5477d9332792094f025c682a500c96cbfc"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8ca42e56eb0106560b866db7f92f462d4f14b0dc89dda0a6ca3f650d1850976a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2303ea67c6c1c2bae0fb6f251abee01e82f32be511b6acbad660f38c4ebea861"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b903545185bc743eff0378cae1744a133d675ad295b333997fd602948851512b"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "78f736352babde9dd5207f4519d8333ec64719458d30eb07073c4f585cf2e2c7"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "02eec610db40876f35ccf86fc6839ef01dd3a516f862461199fd962e036dbf68"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "515840fb2acc0ff9482d3c726d7b308efc046776d3df75d46354b0c9af114f7d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "e219dbb7f0baf6cb74e1a256ccb3df5477d9332792094f025c682a500c96cbfc"
+    sha256 cellar: :any_skip_relocation, sonoma:            "8ca42e56eb0106560b866db7f92f462d4f14b0dc89dda0a6ca3f650d1850976a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "2303ea67c6c1c2bae0fb6f251abee01e82f32be511b6acbad660f38c4ebea861"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "b903545185bc743eff0378cae1744a133d675ad295b333997fd602948851512b"
   end
 
   depends_on "go" => :build

@@ -12,12 +12,13 @@ class Jaguar < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "acd2a4afb712b1a837db32bd9b1d3cc07efe096f25c49cd427875756fbb68ca1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "acd2a4afb712b1a837db32bd9b1d3cc07efe096f25c49cd427875756fbb68ca1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "acd2a4afb712b1a837db32bd9b1d3cc07efe096f25c49cd427875756fbb68ca1"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7070d9bf338218ea4a99dd71f81283faa36ae3f3bae0f6c2fbe3e644fc706d78"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "eec098fb40645d567f3105d2a7ad82c60bb50aa3454df8c4c59e5263ddec1995"
-    sha256 cellar: :any,                 x86_64_linux:  "37ba96e3ede21dbc09d35ea299d351152f850900349d559929f668bb409bdd7a"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "e79ea1e27a845fa7a62a6bbb64341999e7e39ade292dcd9093858353fd39a0fc"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "acd2a4afb712b1a837db32bd9b1d3cc07efe096f25c49cd427875756fbb68ca1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "acd2a4afb712b1a837db32bd9b1d3cc07efe096f25c49cd427875756fbb68ca1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "acd2a4afb712b1a837db32bd9b1d3cc07efe096f25c49cd427875756fbb68ca1"
+    sha256 cellar: :any_skip_relocation, sonoma:            "7070d9bf338218ea4a99dd71f81283faa36ae3f3bae0f6c2fbe3e644fc706d78"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "eec098fb40645d567f3105d2a7ad82c60bb50aa3454df8c4c59e5263ddec1995"
+    sha256 cellar: :any,                 x86_64_linux:      "37ba96e3ede21dbc09d35ea299d351152f850900349d559929f668bb409bdd7a"
   end
 
   depends_on "go" => :build

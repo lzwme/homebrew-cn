@@ -13,12 +13,13 @@ class Jailkit < Formula
 
   bottle do
     rebuild 4
-    sha256 arm64_tahoe:   "3beb6a1ce60e6650160ff71cf64d77920834134018551376cad01365291f6be2"
-    sha256 arm64_sequoia: "83cd968856bbc4f8933c1372b74975169265c4162f1e9b40460037773f1be37b"
-    sha256 arm64_sonoma:  "9d33fd677c79d6066cf6734adb4526becfa36b5cc57f34769ab03de88178833d"
-    sha256 sonoma:        "692ef1ca0ffbe0e2295d789686a23accefe9cdd29a475118be97c06bdd8697bc"
-    sha256 arm64_linux:   "57de95e3030b4885a69a541fddeea9caf1b08eb25ae58549e482ccc245c565e7"
-    sha256 x86_64_linux:  "48db655b0b901abb3a6caaedbc6609a3a36fea0601676f23bf3894ddb800626c"
+    sha256 arm64_golden_gate: "8a6c7874c21ecd7f2dfb6428592cd0b56d8408ab79b710d102c999f48c6142d6"
+    sha256 arm64_tahoe:       "3beb6a1ce60e6650160ff71cf64d77920834134018551376cad01365291f6be2"
+    sha256 arm64_sequoia:     "83cd968856bbc4f8933c1372b74975169265c4162f1e9b40460037773f1be37b"
+    sha256 arm64_sonoma:      "9d33fd677c79d6066cf6734adb4526becfa36b5cc57f34769ab03de88178833d"
+    sha256 sonoma:            "692ef1ca0ffbe0e2295d789686a23accefe9cdd29a475118be97c06bdd8697bc"
+    sha256 arm64_linux:       "57de95e3030b4885a69a541fddeea9caf1b08eb25ae58549e482ccc245c565e7"
+    sha256 x86_64_linux:      "48db655b0b901abb3a6caaedbc6609a3a36fea0601676f23bf3894ddb800626c"
   end
 
   depends_on "python@3.14"

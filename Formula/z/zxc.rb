@@ -7,11 +7,12 @@ class Zxc < Formula
   head "https://github.com/hellobertrand/zxc.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "b42deb1676cf397dd6c9e7ee0beb4b1450b0e0f191ccdb559cbd316dccddfa68"
-    sha256 cellar: :any, arm64_sequoia: "b44f1e509113704c756657ba427be4133e277b614d29e55d8ae41385df4c7f15"
-    sha256 cellar: :any, arm64_sonoma:  "c164d188f57eed7532c448efe4f01b6fbc1cf80b79afa6a7cd5bc2a9f7554dd2"
-    sha256 cellar: :any, arm64_linux:   "7475d4beae09c4a0f6bd74afa1e74e0ab95431f4c9c3c53bb5ed65e86d340cfa"
-    sha256 cellar: :any, x86_64_linux:  "40765bbb28465a91093344f169997889e98e826a015bdddc1a885c6cd99a6564"
+    sha256 cellar: :any, arm64_golden_gate: "630e306f4c51c24a12245ad46ed643139ef15634aac0cf6c850d55202cc981e4"
+    sha256 cellar: :any, arm64_tahoe:       "b42deb1676cf397dd6c9e7ee0beb4b1450b0e0f191ccdb559cbd316dccddfa68"
+    sha256 cellar: :any, arm64_sequoia:     "b44f1e509113704c756657ba427be4133e277b614d29e55d8ae41385df4c7f15"
+    sha256 cellar: :any, arm64_sonoma:      "c164d188f57eed7532c448efe4f01b6fbc1cf80b79afa6a7cd5bc2a9f7554dd2"
+    sha256 cellar: :any, arm64_linux:       "7475d4beae09c4a0f6bd74afa1e74e0ab95431f4c9c3c53bb5ed65e86d340cfa"
+    sha256 cellar: :any, x86_64_linux:      "40765bbb28465a91093344f169997889e98e826a015bdddc1a885c6cd99a6564"
   end
 
   depends_on "cmake" => :build

@@ -7,12 +7,13 @@ class Granted < Formula
   head "https://github.com/fwdcloudsec/granted.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a6d59cf9cc915f91dce024168c97365a26f4d098dab2913551daad1b5b7134e4"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f1ce52b1836d3f0e1ac21956ee1ea1fff166a029919cf5c67fe44c91e04406d2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e7c449b853742d204485d403e84f0c233be8dd162ef317f56cfaee66667c1c61"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7d2149578c19e0861bd906d18e021a56b9edcab77b86e4c146e155f8517c5fb8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4b7084725cd4bb9b5dc268e329ffe306f0a78aae870534e804338ef85603379f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a953b902ae84eafa539888c363e1389a76cefddb077d80fa76f85ff857e1507e"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "abdd0b5f74fc0f12b24f77ae7942b0cdec0fe165309201330571dc1bce959f3b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "a6d59cf9cc915f91dce024168c97365a26f4d098dab2913551daad1b5b7134e4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "f1ce52b1836d3f0e1ac21956ee1ea1fff166a029919cf5c67fe44c91e04406d2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "e7c449b853742d204485d403e84f0c233be8dd162ef317f56cfaee66667c1c61"
+    sha256 cellar: :any_skip_relocation, sonoma:            "7d2149578c19e0861bd906d18e021a56b9edcab77b86e4c146e155f8517c5fb8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "4b7084725cd4bb9b5dc268e329ffe306f0a78aae870534e804338ef85603379f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "a953b902ae84eafa539888c363e1389a76cefddb077d80fa76f85ff857e1507e"
   end
 
   depends_on "go" => :build

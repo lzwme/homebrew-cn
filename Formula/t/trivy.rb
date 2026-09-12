@@ -8,12 +8,13 @@ class Trivy < Formula
   head "https://github.com/aquasecurity/trivy.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e2d5390bfd71240ba47eb2ef480d95b172d7379ff2a7d7c74024efa44ecad4b4"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dac4c732a6accc32250b680c47c84a4f5c66bed80405c0ccc30526586581d080"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e0163b35fb42cca43a4b1bd813ed0138d10e91a5942e20fa0d7d2489f2ed3c5c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "94ef7d1e238b3f48415445be41799b5e229495e57192665fdf569e09f82d38c9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7db8a5e8c1cadbc46fead3c842d3bcdcd883c4d0013c9a61febdd20239721ebd"
-    sha256 cellar: :any,                 x86_64_linux:  "3ff0409831540fa6fdb8208be7bfb2e4d5acd45cdba93849e815bfd8242d9322"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "f8b8405453fce7ce15788906c6a26415605d2f201a157eedca0ea53068d4cbce"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "e2d5390bfd71240ba47eb2ef480d95b172d7379ff2a7d7c74024efa44ecad4b4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "dac4c732a6accc32250b680c47c84a4f5c66bed80405c0ccc30526586581d080"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "e0163b35fb42cca43a4b1bd813ed0138d10e91a5942e20fa0d7d2489f2ed3c5c"
+    sha256 cellar: :any_skip_relocation, sonoma:            "94ef7d1e238b3f48415445be41799b5e229495e57192665fdf569e09f82d38c9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "7db8a5e8c1cadbc46fead3c842d3bcdcd883c4d0013c9a61febdd20239721ebd"
+    sha256 cellar: :any,                 x86_64_linux:      "3ff0409831540fa6fdb8208be7bfb2e4d5acd45cdba93849e815bfd8242d9322"
   end
 
   # TODO: unpin go@1.26 when trivy supports go 1.27

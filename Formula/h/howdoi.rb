@@ -9,12 +9,13 @@ class Howdoi < Formula
   revision 22
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "53748f98d79028d410863d43948eeffc1f6b84aec04cfe335552ff5ed7cfad0a"
-    sha256 cellar: :any, arm64_sequoia: "67cdf2d70a3c06c878ac6c26af752b7309ffaac6cda6ff580e071c7924deaf3a"
-    sha256 cellar: :any, arm64_sonoma:  "03e569713b175d90e6dbca62b16beb0e69e4f75a990548f02f67f4ff1bc5e702"
-    sha256 cellar: :any, sonoma:        "0aa3f65dee48047c146446149dac7fd232049f18ea9ad158bdd47e5631508b7b"
-    sha256 cellar: :any, arm64_linux:   "291ddfeb45b4cbcee0caa179dbc37358eb703d2e7aa4e0c46ea9d4b6ed8b7c7e"
-    sha256 cellar: :any, x86_64_linux:  "51292bc952de5669e98bd0e10b5a943c71dd64b5f13c0a4f5bdd96e8f62ce63a"
+    sha256 cellar: :any, arm64_golden_gate: "d027bdb85e02bb6567c204266d35248521d188ad9a56786b96c3f833e2bb00d9"
+    sha256 cellar: :any, arm64_tahoe:       "53748f98d79028d410863d43948eeffc1f6b84aec04cfe335552ff5ed7cfad0a"
+    sha256 cellar: :any, arm64_sequoia:     "67cdf2d70a3c06c878ac6c26af752b7309ffaac6cda6ff580e071c7924deaf3a"
+    sha256 cellar: :any, arm64_sonoma:      "03e569713b175d90e6dbca62b16beb0e69e4f75a990548f02f67f4ff1bc5e702"
+    sha256 cellar: :any, sonoma:            "0aa3f65dee48047c146446149dac7fd232049f18ea9ad158bdd47e5631508b7b"
+    sha256 cellar: :any, arm64_linux:       "291ddfeb45b4cbcee0caa179dbc37358eb703d2e7aa4e0c46ea9d4b6ed8b7c7e"
+    sha256 cellar: :any, x86_64_linux:      "51292bc952de5669e98bd0e10b5a943c71dd64b5f13c0a4f5bdd96e8f62ce63a"
   end
 
   depends_on "certifi" => :no_linkage

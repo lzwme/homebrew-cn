@@ -7,12 +7,13 @@ class Goimapnotify < Formula
   head "https://gitlab.com/shackra/goimapnotify.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ca0760f3957439af109e497f88e06a5f517867cbef43cefa59e2edcd75cec53b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ca0760f3957439af109e497f88e06a5f517867cbef43cefa59e2edcd75cec53b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ca0760f3957439af109e497f88e06a5f517867cbef43cefa59e2edcd75cec53b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "70a6bf4686f3597892f5860bdeb7c29ac27b3763ee63a89dcd162612c949a6d8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7c00d6e51d166f09fbda993e46c0746c7018c6140adb0b734e50636b0a831469"
-    sha256 cellar: :any,                 x86_64_linux:  "00cc8ca8e7dd00fb2d59781ce7888d4cada021e1258db597f34ba6eeabca9907"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "fbf741aa4f56eb31ff7cc2c766f7266b80c88179a6e0c4d00e5f778788b020ee"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "ca0760f3957439af109e497f88e06a5f517867cbef43cefa59e2edcd75cec53b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "ca0760f3957439af109e497f88e06a5f517867cbef43cefa59e2edcd75cec53b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "ca0760f3957439af109e497f88e06a5f517867cbef43cefa59e2edcd75cec53b"
+    sha256 cellar: :any_skip_relocation, sonoma:            "70a6bf4686f3597892f5860bdeb7c29ac27b3763ee63a89dcd162612c949a6d8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "7c00d6e51d166f09fbda993e46c0746c7018c6140adb0b734e50636b0a831469"
+    sha256 cellar: :any,                 x86_64_linux:      "00cc8ca8e7dd00fb2d59781ce7888d4cada021e1258db597f34ba6eeabca9907"
   end
 
   depends_on "go" => :build

@@ -7,12 +7,13 @@ class Otree < Formula
   head "https://github.com/fioncat/otree.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "527d64d1e7e3eea3a0e85a8816372d7bc055afbc67f45095cbd9007fb0e9ae8a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5085830e97e2319f506bdae3e9c488518d56a089c0a604abbb5064399117305b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f7a4ad8f2446fb585d00440f7cad7721986b8f540f7957a1e5cc7c2c8b7ccef9"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8209844ef8cbbb1536608d6f29555800d9c3d88aede0ee03d7c01b912b8043b2"
-    sha256 cellar: :any,                 arm64_linux:   "8097a611bf9b81f6b35ba0ab54ac6bc7a740552c87840e4d51c8eb1f143b5b2f"
-    sha256 cellar: :any,                 x86_64_linux:  "2d701c24628083419687853f150ffeaaa5101814465e80dd36b0b4a3c4f937ef"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "6b083b9b9b3a1cb7ca7d5cf0abf4c9e0f144dbdaf867f9d91abaea839164b359"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "527d64d1e7e3eea3a0e85a8816372d7bc055afbc67f45095cbd9007fb0e9ae8a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "5085830e97e2319f506bdae3e9c488518d56a089c0a604abbb5064399117305b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "f7a4ad8f2446fb585d00440f7cad7721986b8f540f7957a1e5cc7c2c8b7ccef9"
+    sha256 cellar: :any_skip_relocation, sonoma:            "8209844ef8cbbb1536608d6f29555800d9c3d88aede0ee03d7c01b912b8043b2"
+    sha256 cellar: :any,                 arm64_linux:       "8097a611bf9b81f6b35ba0ab54ac6bc7a740552c87840e4d51c8eb1f143b5b2f"
+    sha256 cellar: :any,                 x86_64_linux:      "2d701c24628083419687853f150ffeaaa5101814465e80dd36b0b4a3c4f937ef"
   end
 
   depends_on "rust" => :build

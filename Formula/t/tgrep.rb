@@ -1,17 +1,17 @@
 class Tgrep < Formula
   desc "Trigram-indexed grep for fast regex search in large codebases"
   homepage "https://github.com/microsoft/tgrep"
-  url "https://ghfast.top/https://github.com/microsoft/tgrep/archive/refs/tags/v1.0.6.tar.gz"
-  sha256 "5de3595b01220e9648d0d9cf8b92d233a38ff088065abf8acbd620b9f8df891b"
+  url "https://ghfast.top/https://github.com/microsoft/tgrep/archive/refs/tags/v1.0.8.tar.gz"
+  sha256 "a60a4ef0afedf996c3f2bb55faac7fdaebda710e8a2c7cbcca0d90095d4e0030"
   license "MIT"
   head "https://github.com/microsoft/tgrep.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "1ac398a8896845e737c4389987b72b8bb862f56c5a42f3e0919d330ff184b163"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "8fb3289ac6a1be9eba77fa03ab4dc521e5a2c6ae3b7aed225dae7be9c1fb5ce5"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "b97ce9a225b7fb6261454a7842704659868a25a4bb9d28e8039e8487f6e0ccc6"
-    sha256 cellar: :any,                 arm64_linux:       "595bb8710b9cbce56cde7c236e09a9aa04cb8988d97feb8aace98a8d34fc9fcc"
-    sha256 cellar: :any,                 x86_64_linux:      "c1517f2a0f54fbb20e3bdf4a642d418adbe1079ee97fcd8dd4e6ef30930227fb"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "e2355e020efe4c63de698c6d5f50cdbd74edf5e154c9652bebee00cc714dbc79"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "f6a6ee281e0c6f59ae550f1bcae7a4a48566ff6e8e948f4e61a5a2ca782e9381"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "bd7ea50923c125552f4ce8a6c8f6d24be63520bc30c3832cf975ff5ee6ac9427"
+    sha256 cellar: :any,                 arm64_linux:       "63fc3489e36db8f2eb0360af34b8a539c4e9a2b665f9582e4e47828047d4bfd2"
+    sha256 cellar: :any,                 x86_64_linux:      "b0bf527e041d44cf95a376fad50ddcecc205ad47f082106949b84490cc67ea17"
   end
 
   depends_on "rust" => :build

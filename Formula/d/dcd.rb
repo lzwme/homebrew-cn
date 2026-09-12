@@ -2,17 +2,17 @@ class Dcd < Formula
   desc "Auto-complete program for the D programming language"
   homepage "https://github.com/dlang-community/DCD"
   url "https://github.com/dlang-community/DCD.git",
-      tag:      "v0.18.2",
-      revision: "a936ce614c98dcfc21da1900459290b775cd1399"
+      tag:      "v0.18.3",
+      revision: "9da9e7bd289bce83f75252e7873c66ad0beea2f4"
   license "GPL-3.0-or-later"
   head "https://github.com/dlang-community/dcd.git", branch: "master"
 
   bottle do
-    sha256               arm64_tahoe:   "78fc97312ffc9196c5d2b741841861951f4f4cb21a7b45a854c0533585710e24"
-    sha256               arm64_sequoia: "d008a7280d994ec06e34867f9bd152dff2aebe7275d202c203835dedce0a8008"
-    sha256               arm64_sonoma:  "5b3fd6cac545338ce50bf72de4a505c7e3438e4e68027c0531fc1c54c796b7e3"
-    sha256 cellar: :any, arm64_linux:   "a751b3c5e178004a5c4865729e520d32584f96130363dfb58118ae08d5f4b741"
-    sha256 cellar: :any, x86_64_linux:  "72de846afd51f333d1223e37a4a7008226bb301ecde0676be17848fc92b1b896"
+    sha256               arm64_golden_gate: "37a1707e339174c429cb7b715517b56cc9fe3eddf788eee7978c17fa1e102318"
+    sha256               arm64_tahoe:       "82fcf8824fcd5abafec60dbb999856809798fa782c1f8294d9b66cacba91ee9b"
+    sha256               arm64_sequoia:     "bce7e9f5c10088c0771050fc2e4f58daa34ed633c45ce07dce7bce3fa6140f9b"
+    sha256 cellar: :any, arm64_linux:       "3ad2f6bf0bdd32da6e96c7811fadfd0b413c73118763fb0bbbefc4372b5dce3c"
+    sha256 cellar: :any, x86_64_linux:      "c39a3b7466f20a5b667736b6ac53a2bd5093f82f304b8c187adb2ee5c265663a"
   end
 
   depends_on "ldc" => :build

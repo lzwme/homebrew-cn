@@ -8,12 +8,13 @@ class PythonPackaging < Formula
   license any_of: ["Apache-2.0", "BSD-2-Clause"]
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f7ce5f0b6af0dd3231f10ad0715140a36c56e360011d2574390324f655c43368"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f7ce5f0b6af0dd3231f10ad0715140a36c56e360011d2574390324f655c43368"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f7ce5f0b6af0dd3231f10ad0715140a36c56e360011d2574390324f655c43368"
-    sha256 cellar: :any_skip_relocation, sonoma:        "091d97d0c398a712bf90d0f965d37027ae09e6713ba50054f571fa58ddf50512"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f7ce5f0b6af0dd3231f10ad0715140a36c56e360011d2574390324f655c43368"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f7ce5f0b6af0dd3231f10ad0715140a36c56e360011d2574390324f655c43368"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "5f43a4bfe0fc7e2d5289b16b89d6957217baaee9cd0067f2715190fd8fc3bef9"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "f7ce5f0b6af0dd3231f10ad0715140a36c56e360011d2574390324f655c43368"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "f7ce5f0b6af0dd3231f10ad0715140a36c56e360011d2574390324f655c43368"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "f7ce5f0b6af0dd3231f10ad0715140a36c56e360011d2574390324f655c43368"
+    sha256 cellar: :any_skip_relocation, sonoma:            "091d97d0c398a712bf90d0f965d37027ae09e6713ba50054f571fa58ddf50512"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "f7ce5f0b6af0dd3231f10ad0715140a36c56e360011d2574390324f655c43368"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "f7ce5f0b6af0dd3231f10ad0715140a36c56e360011d2574390324f655c43368"
   end
 
   depends_on "python@3.13" => [:build, :test]

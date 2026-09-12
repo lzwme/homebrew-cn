@@ -1,8 +1,8 @@
 class Hledger < Formula
   desc "Easy plain text accounting with command-line, terminal and web UIs"
   homepage "https://hledger.org/"
-  url "https://ghfast.top/https://github.com/simonmichael/hledger/archive/refs/tags/1.52.3.tar.gz"
-  sha256 "7cadb3b623b4c9f09809c7d0f3653f2d8236fd002da617692a6585ed76558a2c"
+  url "https://ghfast.top/https://github.com/simonmichael/hledger/archive/refs/tags/1.52.4.tar.gz"
+  sha256 "42806ef717db4dfecba6a2bfa326d97036ea946e4810dd0b7421ed4980f1d4aa"
   license "GPL-3.0-or-later"
   head "https://github.com/simonmichael/hledger.git", branch: "main"
 
@@ -15,12 +15,11 @@ class Hledger < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "b11575edc11d2b99b5183d4a7ae0eb5a7b86dd83e21027b3f77ad12120fe1f3e"
-    sha256 cellar: :any, arm64_sequoia: "63cd2d534bdacfc23c844372da58e59a8f856eaa6e539db78044d68d9c9a8152"
-    sha256 cellar: :any, arm64_sonoma:  "f785a66f4fb0066e4ebe83a8a23451f37ebd1a1b2601928f9b09fab91c797bc2"
-    sha256 cellar: :any, sonoma:        "c291e6ed41fb8e956fb2aa571818c8905a0de33307168d99731857b858a35070"
-    sha256 cellar: :any, arm64_linux:   "a032ab7c82e2def7eb352de467f5a39ec02032ffae28946bfca49ae5696fff9a"
-    sha256 cellar: :any, x86_64_linux:  "fab3a3b89826b6662ef816c157d5fcdad9db799ca45ad5a9d4536888ce6fa6ca"
+    sha256 cellar: :any, arm64_golden_gate: "a531f8ac867cfcb0d6337172cab9703774508420f92790c8ef40445dfbf8b444"
+    sha256 cellar: :any, arm64_tahoe:       "bd735db8e2f23985efb55cf5431df98fa8737a5f0a08943d13d99718187e0d46"
+    sha256 cellar: :any, arm64_sequoia:     "40b0a873327d54a350e099b49df1c0550e27ed4e8c17a110e1615bdb3be3ae56"
+    sha256 cellar: :any, arm64_linux:       "f6b72822df1830dda4416c5448eb91b8919feed0b899fbe6a832608270f5f679"
+    sha256 cellar: :any, x86_64_linux:      "f43e7b90d90bb98791f5156a5cb03b2de030a365564b3008f70b86571c695bc0"
   end
 
   depends_on "ghc" => :build

@@ -7,16 +7,17 @@ class Gtkdatabox < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:    "8f8e5772768a8b7e7530d36c8fb991ff76c361cdab7729e508a8e7e8c12dceec"
-    sha256 cellar: :any,                 arm64_sequoia:  "5754a6b703bfc85c30adfe1f78b4f5e3416a4d9f04d9531d1c43fb584e136307"
-    sha256 cellar: :any,                 arm64_sonoma:   "c4c95de47b74f0a924c88543dfbfc01999cf3491ce8bac5e77b0db2a265bb0e9"
-    sha256 cellar: :any,                 arm64_ventura:  "058fb1cf99c7c1a34a9c7b81ebbb8720863009241ad47d69b47efb2f448ff84a"
-    sha256 cellar: :any,                 arm64_monterey: "1951c01226523dbbf91a85816a64fed3377b9c4fec4180536b608b93151eafb0"
-    sha256 cellar: :any,                 sonoma:         "bfaacbe85617357013ed6368753b261bc87963366680eac5f73cf85183710f96"
-    sha256 cellar: :any,                 ventura:        "7a86f4f2915d37de33ae84232fa05588e576a2e0698321501b3a75e0aedd9ace"
-    sha256 cellar: :any,                 monterey:       "abc35085101b1fdde0163eb859927e6dcc35e2d38451d033b78206cb24814fa0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "60cc0df3c42c25bf990182f6a0e7655292bca03dfcf43821421d0e45a7b02b75"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1585023f5e6799a8eab163fae37ba597262d3352a01f2bee7763359224f94388"
+    sha256 cellar: :any,                 arm64_golden_gate: "828710ff79dc0895cedf8269d30388a3054e781cc6de6e44a6a41a675a6dab5f"
+    sha256 cellar: :any,                 arm64_tahoe:       "8f8e5772768a8b7e7530d36c8fb991ff76c361cdab7729e508a8e7e8c12dceec"
+    sha256 cellar: :any,                 arm64_sequoia:     "5754a6b703bfc85c30adfe1f78b4f5e3416a4d9f04d9531d1c43fb584e136307"
+    sha256 cellar: :any,                 arm64_sonoma:      "c4c95de47b74f0a924c88543dfbfc01999cf3491ce8bac5e77b0db2a265bb0e9"
+    sha256 cellar: :any,                 arm64_ventura:     "058fb1cf99c7c1a34a9c7b81ebbb8720863009241ad47d69b47efb2f448ff84a"
+    sha256 cellar: :any,                 arm64_monterey:    "1951c01226523dbbf91a85816a64fed3377b9c4fec4180536b608b93151eafb0"
+    sha256 cellar: :any,                 sonoma:            "bfaacbe85617357013ed6368753b261bc87963366680eac5f73cf85183710f96"
+    sha256 cellar: :any,                 ventura:           "7a86f4f2915d37de33ae84232fa05588e576a2e0698321501b3a75e0aedd9ace"
+    sha256 cellar: :any,                 monterey:          "abc35085101b1fdde0163eb859927e6dcc35e2d38451d033b78206cb24814fa0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "60cc0df3c42c25bf990182f6a0e7655292bca03dfcf43821421d0e45a7b02b75"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "1585023f5e6799a8eab163fae37ba597262d3352a01f2bee7763359224f94388"
   end
 
   depends_on "pkgconf" => [:build, :test]

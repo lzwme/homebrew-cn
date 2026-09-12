@@ -6,12 +6,13 @@ class Grin < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1f19fdcf9f187549dd49da11a12cf7dce574f6b5d89e9d3c50c35bfc8ecf5621"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "087eb7a38ce5d960588c7c0f5e417141e7ff8764208790affeb663b1fade6fe6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0665dd3c9d4846b9156a4129ece161d40611e78cac9da5a23ba17790c56dd8ed"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c396b818b315c432e5aa96af427e29c37afc090b6f36c0ced3dd56acab8bb4e1"
-    sha256 cellar: :any,                 arm64_linux:   "a1bfe1f7d0060adee98297ad8b0c621f451feefad909fb630b4a1c60968d89e0"
-    sha256 cellar: :any,                 x86_64_linux:  "0f9912baebe58e3fd17887cffcc4e7737641ad4eced6920b42ca82fc9b838969"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "c773339ceb71b6d4a9d759fa9601a2844f80e022916505abe0897168702c62bb"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "1f19fdcf9f187549dd49da11a12cf7dce574f6b5d89e9d3c50c35bfc8ecf5621"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "087eb7a38ce5d960588c7c0f5e417141e7ff8764208790affeb663b1fade6fe6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "0665dd3c9d4846b9156a4129ece161d40611e78cac9da5a23ba17790c56dd8ed"
+    sha256 cellar: :any_skip_relocation, sonoma:            "c396b818b315c432e5aa96af427e29c37afc090b6f36c0ced3dd56acab8bb4e1"
+    sha256 cellar: :any,                 arm64_linux:       "a1bfe1f7d0060adee98297ad8b0c621f451feefad909fb630b4a1c60968d89e0"
+    sha256 cellar: :any,                 x86_64_linux:      "0f9912baebe58e3fd17887cffcc4e7737641ad4eced6920b42ca82fc9b838969"
   end
 
   depends_on "rust" => :build

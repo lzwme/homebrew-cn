@@ -8,12 +8,13 @@ class Comby < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "a14c34f746c83276aab070a8b4c374fb67e3a2226a889dfaa2074f4fa25dfa7c"
-    sha256 cellar: :any, arm64_sequoia: "e9e977b807fdf51032eb7f7c28abad907dca2669ec81533e76b00ce0534eb740"
-    sha256 cellar: :any, arm64_sonoma:  "6eb60059840e52ae180b9047f35ec501c7a1018a129561470841c7a5d688cecf"
-    sha256 cellar: :any, sonoma:        "b0f4a77f35f43d41ae307751856fa7c45adfef51610814a502178d5f59b2a294"
-    sha256               arm64_linux:   "a8d1c6ed89c97eb202e20f69ac97e7ff2d66f219779af199cf2a84f1773e3587"
-    sha256               x86_64_linux:  "9712877884110dfdc5b25e2bd9ac75960ebecafb5191669894680123bd767664"
+    sha256 cellar: :any, arm64_golden_gate: "72af8c469b86f6143b792522c606ea129a150078893b27b649f900818653e505"
+    sha256 cellar: :any, arm64_tahoe:       "a14c34f746c83276aab070a8b4c374fb67e3a2226a889dfaa2074f4fa25dfa7c"
+    sha256 cellar: :any, arm64_sequoia:     "e9e977b807fdf51032eb7f7c28abad907dca2669ec81533e76b00ce0534eb740"
+    sha256 cellar: :any, arm64_sonoma:      "6eb60059840e52ae180b9047f35ec501c7a1018a129561470841c7a5d688cecf"
+    sha256 cellar: :any, sonoma:            "b0f4a77f35f43d41ae307751856fa7c45adfef51610814a502178d5f59b2a294"
+    sha256               arm64_linux:       "a8d1c6ed89c97eb202e20f69ac97e7ff2d66f219779af199cf2a84f1773e3587"
+    sha256               x86_64_linux:      "9712877884110dfdc5b25e2bd9ac75960ebecafb5191669894680123bd767664"
   end
 
   # https://github.com/comby-tools/comby/issues/358

@@ -7,12 +7,13 @@ class Stoken < Formula
   revision 2
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "13f7f789acd86bfb43e32a93a22c14e281f0182333228f649c1fdc18bbd3d53a"
-    sha256 cellar: :any,                 arm64_sequoia: "6dd71ade20837819b4d7278cff667d12707a25506af24d3c0fd63f146f21be52"
-    sha256 cellar: :any,                 arm64_sonoma:  "964feda555eeeb9f2546af0830baa11d8a2340c56ecdb6c13d078b7b0c18ff5d"
-    sha256 cellar: :any,                 sonoma:        "e42c126e6b6c3e2f721d1d0dad2066a07b60f5e9e9ddee3ef57576ad4c9499e3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0a61f32a5b5a333616b1a350b6ecf3f6f4359fff2628d56f6f5326367ca7ec9b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "38224776fd91dcdef6e5e4b0330583ed6b3800f1f6cc1b8a3153832e4afe3ffb"
+    sha256 cellar: :any,                 arm64_golden_gate: "e29db5cc3c80124d2f93bc2f7c6c907b339b533d7fdbfae3db22cf67649ab05e"
+    sha256 cellar: :any,                 arm64_tahoe:       "13f7f789acd86bfb43e32a93a22c14e281f0182333228f649c1fdc18bbd3d53a"
+    sha256 cellar: :any,                 arm64_sequoia:     "6dd71ade20837819b4d7278cff667d12707a25506af24d3c0fd63f146f21be52"
+    sha256 cellar: :any,                 arm64_sonoma:      "964feda555eeeb9f2546af0830baa11d8a2340c56ecdb6c13d078b7b0c18ff5d"
+    sha256 cellar: :any,                 sonoma:            "e42c126e6b6c3e2f721d1d0dad2066a07b60f5e9e9ddee3ef57576ad4c9499e3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "0a61f32a5b5a333616b1a350b6ecf3f6f4359fff2628d56f6f5326367ca7ec9b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "38224776fd91dcdef6e5e4b0330583ed6b3800f1f6cc1b8a3153832e4afe3ffb"
   end
 
   depends_on "autoconf" => :build

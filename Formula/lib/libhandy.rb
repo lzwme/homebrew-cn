@@ -7,16 +7,17 @@ class Libhandy < Formula
   compatibility_version 1
 
   bottle do
-    sha256 arm64_tahoe:    "620cf34883ae285873425a4f3ffa156b78e8b696872bd20b425008488ad0d232"
-    sha256 arm64_sequoia:  "df4227eb5f6062d4b9d6c36d374defe991229ee0ed9dc8e8902c97a1be026151"
-    sha256 arm64_sonoma:   "f1b399070cea7b5c44e3afad605155f867659920d5d3de17c466cf5cc3ba6a33"
-    sha256 arm64_ventura:  "46282e234e80d7e1333fd66978709232ccd69517759099868c386c6eec51ca84"
-    sha256 arm64_monterey: "2efac67c62c3b8da9bdb64fb4b37a0c66b184239009feb39d5407431b6f9b4e8"
-    sha256 sonoma:         "b7451a9bbf91864a025ac3df2473f9dc91398b22d3994f4cc9907344e9be6f1f"
-    sha256 ventura:        "ac6d97fd95891df7ecfa6caf13d15c28c153db6fea7da1dd9aee2e56c4780a59"
-    sha256 monterey:       "9b94bd79179daca2b005bdd61ba0f1fcefdcd2b19ab85a9e5732f8c2f0428315"
-    sha256 arm64_linux:    "9c76cf625f3b293b62040fd9663afb365c5606479dd08b37871304e7e913f6b8"
-    sha256 x86_64_linux:   "6b470387d368374a5834bb3a73c2d0fcc4cc16121e785a064913735356581e85"
+    sha256 arm64_golden_gate: "57ca9a992b7ce4f99ec32ab09056b703eda98fd9bfad4090953dbfe075b292f6"
+    sha256 arm64_tahoe:       "620cf34883ae285873425a4f3ffa156b78e8b696872bd20b425008488ad0d232"
+    sha256 arm64_sequoia:     "df4227eb5f6062d4b9d6c36d374defe991229ee0ed9dc8e8902c97a1be026151"
+    sha256 arm64_sonoma:      "f1b399070cea7b5c44e3afad605155f867659920d5d3de17c466cf5cc3ba6a33"
+    sha256 arm64_ventura:     "46282e234e80d7e1333fd66978709232ccd69517759099868c386c6eec51ca84"
+    sha256 arm64_monterey:    "2efac67c62c3b8da9bdb64fb4b37a0c66b184239009feb39d5407431b6f9b4e8"
+    sha256 sonoma:            "b7451a9bbf91864a025ac3df2473f9dc91398b22d3994f4cc9907344e9be6f1f"
+    sha256 ventura:           "ac6d97fd95891df7ecfa6caf13d15c28c153db6fea7da1dd9aee2e56c4780a59"
+    sha256 monterey:          "9b94bd79179daca2b005bdd61ba0f1fcefdcd2b19ab85a9e5732f8c2f0428315"
+    sha256 arm64_linux:       "9c76cf625f3b293b62040fd9663afb365c5606479dd08b37871304e7e913f6b8"
+    sha256 x86_64_linux:      "6b470387d368374a5834bb3a73c2d0fcc4cc16121e785a064913735356581e85"
   end
 
   depends_on "gettext" => :build

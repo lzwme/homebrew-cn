@@ -7,12 +7,13 @@ class Instead < Formula
 
   bottle do
     rebuild 1
-    sha256 arm64_tahoe:   "c2466f19712599960fdf617de00a5c87e31419ce1ab9e83a28fc67ea433a0956"
-    sha256 arm64_sequoia: "a30498f22007194b3d1fde6afb2b2e3ad5a5cef5a7a763f477c26cc625a44fba"
-    sha256 arm64_sonoma:  "631b5131f25ddaf10acbf42922cddf3996561d00e53ec60eafb2f782683a6834"
-    sha256 sonoma:        "055fa879171dbd50e4234937229b42b16073c1bd4e85ea0be5287735f30eb4b3"
-    sha256 arm64_linux:   "37c0dbb0fad67fe9883639294c3b63c150900e8d7af0d36277c021f10af1c8b3"
-    sha256 x86_64_linux:  "e188ffae06055d161cb807e5a814a2fe2a60604964436b2e4efd835d7e68b747"
+    sha256 arm64_golden_gate: "855236ee29d66c3e000a610e9d44cffbacd877154f7b823e8fc91af4de484e34"
+    sha256 arm64_tahoe:       "c2466f19712599960fdf617de00a5c87e31419ce1ab9e83a28fc67ea433a0956"
+    sha256 arm64_sequoia:     "a30498f22007194b3d1fde6afb2b2e3ad5a5cef5a7a763f477c26cc625a44fba"
+    sha256 arm64_sonoma:      "631b5131f25ddaf10acbf42922cddf3996561d00e53ec60eafb2f782683a6834"
+    sha256 sonoma:            "055fa879171dbd50e4234937229b42b16073c1bd4e85ea0be5287735f30eb4b3"
+    sha256 arm64_linux:       "37c0dbb0fad67fe9883639294c3b63c150900e8d7af0d36277c021f10af1c8b3"
+    sha256 x86_64_linux:      "e188ffae06055d161cb807e5a814a2fe2a60604964436b2e4efd835d7e68b747"
   end
 
   depends_on "cmake" => :build

@@ -6,12 +6,13 @@ class Youplot < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "dc94ee1841953db68429b184f1ccf38608174114f6560ecf9469f72c1e95f7bf"
-    sha256 cellar: :any,                 arm64_sequoia: "9136892172c5aa99186e6dcf0fdef334339f4b0cb0c15efa580d28b1ac72c6b3"
-    sha256 cellar: :any,                 arm64_sonoma:  "fe8890b71a8dcd5ed49f2697b4d28b5ebce4ac8af848fc89163d6d7b61275305"
-    sha256 cellar: :any,                 sonoma:        "b4881454d9f25cc985533b8ac3bb4258fd55d93e79a4d06e332bd2c02a883d73"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "27d6f5919c287738dda830625f2e474d8b3902aaf6c5b96e2f87b4288cca59cd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d52bd59e045e634d0f5f5a476235989bf766615bcf6d76912aa4f34d7e237744"
+    sha256 cellar: :any,                 arm64_golden_gate: "71d4f30f11ea7a156bb6beda0f2a52c7d0e8751996684b1f0fa821bc0c2a1b8f"
+    sha256 cellar: :any,                 arm64_tahoe:       "dc94ee1841953db68429b184f1ccf38608174114f6560ecf9469f72c1e95f7bf"
+    sha256 cellar: :any,                 arm64_sequoia:     "9136892172c5aa99186e6dcf0fdef334339f4b0cb0c15efa580d28b1ac72c6b3"
+    sha256 cellar: :any,                 arm64_sonoma:      "fe8890b71a8dcd5ed49f2697b4d28b5ebce4ac8af848fc89163d6d7b61275305"
+    sha256 cellar: :any,                 sonoma:            "b4881454d9f25cc985533b8ac3bb4258fd55d93e79a4d06e332bd2c02a883d73"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "27d6f5919c287738dda830625f2e474d8b3902aaf6c5b96e2f87b4288cca59cd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "d52bd59e045e634d0f5f5a476235989bf766615bcf6d76912aa4f34d7e237744"
   end
 
   depends_on "ruby"

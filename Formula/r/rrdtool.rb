@@ -6,12 +6,13 @@ class Rrdtool < Formula
   license "GPL-2.0-or-later" => { with: "RRDtool-FLOSS-exception-2.0" }
 
   bottle do
-    sha256 arm64_tahoe:   "5b5771f9ce22660d34ebf057b623c98f28074469d89740d325741eab55b8df39"
-    sha256 arm64_sequoia: "043da3c2de7470fe44ee49730373e7bb40c12c62ed0158500c04e7c07d64ee51"
-    sha256 arm64_sonoma:  "5f024d714cdec495210d9841181f6b8cf1dee01f30c538266c20060f9d392e28"
-    sha256 sonoma:        "eb72757c3d6e43fb1f9f47d6848fb69491e066daf797beb5982d5d8160e5705e"
-    sha256 arm64_linux:   "106515dd0c9596694f8047bfc337cef0718556f25185efe35e456ae62144feac"
-    sha256 x86_64_linux:  "39d8fea0f86a2eec9202dc3abe1d6140e1eca8c00a0fdc6d3592285a801ef6b8"
+    sha256 arm64_golden_gate: "f1532fe1f8760d04a510c1c692dbca24ab0eb216ac84f425052b1e24d73e4fae"
+    sha256 arm64_tahoe:       "5b5771f9ce22660d34ebf057b623c98f28074469d89740d325741eab55b8df39"
+    sha256 arm64_sequoia:     "043da3c2de7470fe44ee49730373e7bb40c12c62ed0158500c04e7c07d64ee51"
+    sha256 arm64_sonoma:      "5f024d714cdec495210d9841181f6b8cf1dee01f30c538266c20060f9d392e28"
+    sha256 sonoma:            "eb72757c3d6e43fb1f9f47d6848fb69491e066daf797beb5982d5d8160e5705e"
+    sha256 arm64_linux:       "106515dd0c9596694f8047bfc337cef0718556f25185efe35e456ae62144feac"
+    sha256 x86_64_linux:      "39d8fea0f86a2eec9202dc3abe1d6140e1eca8c00a0fdc6d3592285a801ef6b8"
   end
 
   head do

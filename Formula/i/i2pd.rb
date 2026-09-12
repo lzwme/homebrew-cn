@@ -7,12 +7,13 @@ class I2pd < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "bbb312e11ddd3a87d24916943a010855aa479d41a9023ff2f132e7542f1eb9e1"
-    sha256 cellar: :any, arm64_sequoia: "744b5ed726c6c370d13ef44928636f9d8f109cdbdc6a8aac2afe2aaee27aa4cc"
-    sha256 cellar: :any, arm64_sonoma:  "da60b20f5e1d5ed9daa270863bb5d6b9b852e646b70b780bbb2dbfa8026b9d51"
-    sha256 cellar: :any, sonoma:        "29c619d92c0c49286881fb81551e82c520b1d6e8056d42c32f97dd98076fc114"
-    sha256 cellar: :any, arm64_linux:   "561e64cae448454b85a96b604f00803d23f24ddfffa8e1a4f56aefc7e4e869c0"
-    sha256 cellar: :any, x86_64_linux:  "fac2896ca3f31cc74fb4ee816c05b54027fd3b871d9bce158d8e48922c54e691"
+    sha256 cellar: :any, arm64_golden_gate: "3f496a96f489be0f1dd3e46a5b63cf8ad799f3c361b38c3ea06887f76272a497"
+    sha256 cellar: :any, arm64_tahoe:       "bbb312e11ddd3a87d24916943a010855aa479d41a9023ff2f132e7542f1eb9e1"
+    sha256 cellar: :any, arm64_sequoia:     "744b5ed726c6c370d13ef44928636f9d8f109cdbdc6a8aac2afe2aaee27aa4cc"
+    sha256 cellar: :any, arm64_sonoma:      "da60b20f5e1d5ed9daa270863bb5d6b9b852e646b70b780bbb2dbfa8026b9d51"
+    sha256 cellar: :any, sonoma:            "29c619d92c0c49286881fb81551e82c520b1d6e8056d42c32f97dd98076fc114"
+    sha256 cellar: :any, arm64_linux:       "561e64cae448454b85a96b604f00803d23f24ddfffa8e1a4f56aefc7e4e869c0"
+    sha256 cellar: :any, x86_64_linux:      "fac2896ca3f31cc74fb4ee816c05b54027fd3b871d9bce158d8e48922c54e691"
   end
 
   depends_on "boost"

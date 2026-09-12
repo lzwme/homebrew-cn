@@ -24,14 +24,15 @@ class Afsctool < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "551e9f8910b53ce228f1f710e100c54266cbed7ffa3a087ecec516c71bba5dbb"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "9eab0e700160a5bf2d1f62f8e67a017280e10315030cb09134933ee782974a95"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a1596705cff076205b68f6fa301394e2feb6bdfc071543679db46aa38eec7aae"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6528c95eb0a3b0b57a72eeb847ceab4e4887cbcbaf46a019f9e47d875b6deb9b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "54700cfb61f7a32df0346997ccb3a181e1b7bef7613ad8bee751b75aaab9500d"
-    sha256 cellar: :any_skip_relocation, sonoma:         "74f60adb27bfbec7b4add84a60f73ae3d7c804632dd99a39b61c270bf8125e92"
-    sha256 cellar: :any_skip_relocation, ventura:        "3f8835bb2dac636100454adb2262b8e86dbb394519dcd60f83ecbd39e21e6f17"
-    sha256 cellar: :any_skip_relocation, monterey:       "17a9351748475089c170985080188c640209eab140e959808979260d752c254e"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "2062dc7cb1f0f2ecf20071f0ba204c58adace79e59c033146db513a454d83964"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "551e9f8910b53ce228f1f710e100c54266cbed7ffa3a087ecec516c71bba5dbb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "9eab0e700160a5bf2d1f62f8e67a017280e10315030cb09134933ee782974a95"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "a1596705cff076205b68f6fa301394e2feb6bdfc071543679db46aa38eec7aae"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:     "6528c95eb0a3b0b57a72eeb847ceab4e4887cbcbaf46a019f9e47d875b6deb9b"
+    sha256 cellar: :any_skip_relocation, arm64_monterey:    "54700cfb61f7a32df0346997ccb3a181e1b7bef7613ad8bee751b75aaab9500d"
+    sha256 cellar: :any_skip_relocation, sonoma:            "74f60adb27bfbec7b4add84a60f73ae3d7c804632dd99a39b61c270bf8125e92"
+    sha256 cellar: :any_skip_relocation, ventura:           "3f8835bb2dac636100454adb2262b8e86dbb394519dcd60f83ecbd39e21e6f17"
+    sha256 cellar: :any_skip_relocation, monterey:          "17a9351748475089c170985080188c640209eab140e959808979260d752c254e"
   end
 
   depends_on "cmake" => :build

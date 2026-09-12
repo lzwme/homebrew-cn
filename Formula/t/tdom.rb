@@ -11,12 +11,13 @@ class Tdom < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "7cfaef92f1e79bcce4c0e7ed3ba44b81b68d2a8b0f955d92fd6463f5c3e31cc0"
-    sha256 cellar: :any,                 arm64_sequoia: "132444e6d526fd8ab26c5cedbd60ea6eb070689e8551eed98eec3e3dbbb75790"
-    sha256 cellar: :any,                 arm64_sonoma:  "d553de086d764b486a032381561ff2b3618a902129e95450eff02b943dbba81d"
-    sha256 cellar: :any,                 sonoma:        "7d15afef159e03e1ce529b513d6b8420990c831549b1f9a934442d15cf186183"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "503ed2c27b2f2720616851d1c91bb4e2ba1321ca0d3fc9b4031059387f406e73"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "788c41cb463f200f82fa69ec0219b4b0694b671b556c60e2709fea7585c11a7f"
+    sha256 cellar: :any,                 arm64_golden_gate: "add55f5e88b5fa95d2ef948741c23f3765c74c1cf5182955d72cf6f360b1101e"
+    sha256 cellar: :any,                 arm64_tahoe:       "7cfaef92f1e79bcce4c0e7ed3ba44b81b68d2a8b0f955d92fd6463f5c3e31cc0"
+    sha256 cellar: :any,                 arm64_sequoia:     "132444e6d526fd8ab26c5cedbd60ea6eb070689e8551eed98eec3e3dbbb75790"
+    sha256 cellar: :any,                 arm64_sonoma:      "d553de086d764b486a032381561ff2b3618a902129e95450eff02b943dbba81d"
+    sha256 cellar: :any,                 sonoma:            "7d15afef159e03e1ce529b513d6b8420990c831549b1f9a934442d15cf186183"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "503ed2c27b2f2720616851d1c91bb4e2ba1321ca0d3fc9b4031059387f406e73"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "788c41cb463f200f82fa69ec0219b4b0694b671b556c60e2709fea7585c11a7f"
   end
 
   depends_on "tcl-tk"

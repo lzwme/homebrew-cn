@@ -1,17 +1,16 @@
 class Zola < Formula
   desc "Fast static site generator in a single binary with everything built-in"
   homepage "https://www.getzola.org/"
-  url "https://ghfast.top/https://github.com/getzola/zola/archive/refs/tags/v0.23.4.tar.gz"
-  sha256 "b8eb945dbafe1e73f1601c215ef1563b9b0a25097576ba48f646db8d75568e40"
+  url "https://ghfast.top/https://github.com/getzola/zola/archive/refs/tags/v0.23.5.tar.gz"
+  sha256 "3a41eeb41d4ad78ec67dc6636148e5c8be25d789b902439479b992f67e055c06"
   license "EUPL-1.2"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "b107633dcee407e0b88cab7b663f6abf8062448f238e4407918ddae882ba641a"
-    sha256 cellar: :any, arm64_sequoia: "e4179ad07943b7259c087fea1236045443514aae652475c54a1eba9b7a13be6f"
-    sha256 cellar: :any, arm64_sonoma:  "cf6afb21f6dfa11137322899c5017b5b579b95294be71fef816c9c37c816c123"
-    sha256 cellar: :any, sonoma:        "5fc35fbbaf45c462b2c52e5eebe830af6a1c8b498127f276825c47bdc5d6d294"
-    sha256 cellar: :any, arm64_linux:   "f05951a7defe4afe529eeb75ffe9f027907a6f43970b2000786da8a67ac5256d"
-    sha256 cellar: :any, x86_64_linux:  "eaf2128bafeeb4e3fedde18ca57f4c4c884e1b84f297583b1644a969883e40ff"
+    sha256 cellar: :any, arm64_golden_gate: "fa457c238ace132b50add8088f4cb278490302ba0c38a1e144192f4275b55e0d"
+    sha256 cellar: :any, arm64_tahoe:       "257b14d4d337b9af0eeb85ed97f81cdcdec89487b6122b3974431b08d1dfee35"
+    sha256 cellar: :any, arm64_sequoia:     "465f79555760b5147d3b699eb40c7b5f25120c8786cb0adc81b4ab56b7ad0571"
+    sha256 cellar: :any, arm64_linux:       "84c835fd6969cf6bf0df82f96c4e87f3bc4665ec81280de27ea78c10c109feec"
+    sha256 cellar: :any, x86_64_linux:      "72df4ba5ec27aa96723a8462c4b817702dd91d9482a1d510dee8403fb7c1cc52"
   end
 
   depends_on "pkgconf" => :build

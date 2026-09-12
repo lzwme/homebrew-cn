@@ -6,12 +6,13 @@ class Cocogitto < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "88ff662284f7f242372e75430dacd7eafcfc26918e61981abfd74de963c9b34e"
-    sha256 cellar: :any,                 arm64_sequoia: "69d6b4328b431c98df2b7f2f9e654c1f1ebd83d5d455eecca43d1865ef2f53a2"
-    sha256 cellar: :any,                 arm64_sonoma:  "91910dbc605d51048db6dd512e894735d4d56781ca4224c9ba428fb580f588f2"
-    sha256 cellar: :any,                 sonoma:        "e3aa13b9c500755886f8cef11eb5d4b68d01d3d60d237a3a2cd1d73978f4923a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2c28d53145ad804f7f71bc5140425a21d31b0093fbf3318a64aa378f3220e5e3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3404ea70767d5d51bd225b30da32e17fbf6c45df751731360c76610027ad7268"
+    sha256 cellar: :any,                 arm64_golden_gate: "c008f86b6724fe3e7769f6f2654cd9e79f9ef2902629f8c240fee116d0524dad"
+    sha256 cellar: :any,                 arm64_tahoe:       "88ff662284f7f242372e75430dacd7eafcfc26918e61981abfd74de963c9b34e"
+    sha256 cellar: :any,                 arm64_sequoia:     "69d6b4328b431c98df2b7f2f9e654c1f1ebd83d5d455eecca43d1865ef2f53a2"
+    sha256 cellar: :any,                 arm64_sonoma:      "91910dbc605d51048db6dd512e894735d4d56781ca4224c9ba428fb580f588f2"
+    sha256 cellar: :any,                 sonoma:            "e3aa13b9c500755886f8cef11eb5d4b68d01d3d60d237a3a2cd1d73978f4923a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "2c28d53145ad804f7f71bc5140425a21d31b0093fbf3318a64aa378f3220e5e3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "3404ea70767d5d51bd225b30da32e17fbf6c45df751731360c76610027ad7268"
   end
 
   depends_on "pkgconf" => :build

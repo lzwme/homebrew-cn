@@ -9,12 +9,13 @@ class Libjcat < Formula
   head "https://github.com/hughsie/libjcat.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "ab8083f80a517a0865a4d87a503a30487a79d64e3d26314be25d9a4a09033488"
-    sha256 cellar: :any, arm64_sequoia: "efa10218abe55bd0e6cdc4d51a47abc58cd792bce362e110def947a3db772579"
-    sha256 cellar: :any, arm64_sonoma:  "a620a0d5d2ffcb09cc63ece88ebeaad8e090ad3198a2c9e9adb2edabf8c09efb"
-    sha256 cellar: :any, sonoma:        "5f1da22c414449a004f2f501c2f846be30e88a571758920051dbd7a49b7c100d"
-    sha256               arm64_linux:   "d6424ab2564e8413d402eba7fa9250caa01008751e8b061950581f4702076d77"
-    sha256               x86_64_linux:  "dde621af7950e4dafa9a1de473158761b7855b2842a118a41457ef5362eca0b0"
+    sha256 cellar: :any, arm64_golden_gate: "1c17b41079cdb10cd38303290ab14c90cafaa4d0367924504e02d0e253f3551d"
+    sha256 cellar: :any, arm64_tahoe:       "ab8083f80a517a0865a4d87a503a30487a79d64e3d26314be25d9a4a09033488"
+    sha256 cellar: :any, arm64_sequoia:     "efa10218abe55bd0e6cdc4d51a47abc58cd792bce362e110def947a3db772579"
+    sha256 cellar: :any, arm64_sonoma:      "a620a0d5d2ffcb09cc63ece88ebeaad8e090ad3198a2c9e9adb2edabf8c09efb"
+    sha256 cellar: :any, sonoma:            "5f1da22c414449a004f2f501c2f846be30e88a571758920051dbd7a49b7c100d"
+    sha256               arm64_linux:       "d6424ab2564e8413d402eba7fa9250caa01008751e8b061950581f4702076d77"
+    sha256               x86_64_linux:      "dde621af7950e4dafa9a1de473158761b7855b2842a118a41457ef5362eca0b0"
   end
 
   depends_on "gobject-introspection" => :build

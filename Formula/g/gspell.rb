@@ -7,12 +7,13 @@ class Gspell < Formula
   compatibility_version 1
 
   bottle do
-    sha256 arm64_tahoe:   "87af8837aee8cd1adae1b5661596b5196af8eb3c08c523fc96b9f8b9c0d409db"
-    sha256 arm64_sequoia: "a6f4e7e2ed7e8f0de24b5cbc4661b21772c7de37123fe654ba6f3cab9c02bc6a"
-    sha256 arm64_sonoma:  "6f1d110f3c3104f99969b8cf31e76b2bc4bff90747d60a2dbc12cdd6dc2331f6"
-    sha256 sonoma:        "e54eaf43813a225a89b194f0ca98f799c59a3771a01b3a2b3c9d87a670f5cf05"
-    sha256 arm64_linux:   "26c7136c48c5a811762ada7f530bc16c73b0b51b8c41473588215d8e63cec930"
-    sha256 x86_64_linux:  "0e948a339951ffe3843a4449ee80abaec0e17ddd2ea5c9378ec1aa0a8660bcf1"
+    sha256 arm64_golden_gate: "3bdefd614a5c99c9aeeacc827016108050071c981f44fa31da860e2a96756beb"
+    sha256 arm64_tahoe:       "87af8837aee8cd1adae1b5661596b5196af8eb3c08c523fc96b9f8b9c0d409db"
+    sha256 arm64_sequoia:     "a6f4e7e2ed7e8f0de24b5cbc4661b21772c7de37123fe654ba6f3cab9c02bc6a"
+    sha256 arm64_sonoma:      "6f1d110f3c3104f99969b8cf31e76b2bc4bff90747d60a2dbc12cdd6dc2331f6"
+    sha256 sonoma:            "e54eaf43813a225a89b194f0ca98f799c59a3771a01b3a2b3c9d87a670f5cf05"
+    sha256 arm64_linux:       "26c7136c48c5a811762ada7f530bc16c73b0b51b8c41473588215d8e63cec930"
+    sha256 x86_64_linux:      "0e948a339951ffe3843a4449ee80abaec0e17ddd2ea5c9378ec1aa0a8660bcf1"
   end
 
   depends_on "gobject-introspection" => :build

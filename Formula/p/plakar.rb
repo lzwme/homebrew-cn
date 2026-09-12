@@ -1,8 +1,8 @@
 class Plakar < Formula
   desc "Create backups with compression, encryption and deduplication"
   homepage "https://plakar.io"
-  url "https://ghfast.top/https://github.com/PlakarKorp/plakar/archive/refs/tags/v1.1.5.tar.gz"
-  sha256 "0358c57accf22cc002273b38b77c8ef4f8e26f5bfa3027e81dee537829387ebd"
+  url "https://ghfast.top/https://github.com/PlakarKorp/plakar/archive/refs/tags/v1.1.6.tar.gz"
+  sha256 "a250bca000cda3d1e6df36f09b3606745413748b61dc48cdf1d752a255dfbabc"
   license "ISC"
 
   livecheck do
@@ -11,11 +11,11 @@ class Plakar < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2042d5af540efff3d58634fd22ce32fd021354467599efc8ff03f51f43960b2b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "eb937e52f2343015ed1d963f0166b0253f7dbcfceea5eb35eb109425128f88a8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1679978294ab55dafca05a194a0f033cdf0712c9839be18d57cf13ab7f788e11"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "355b96d1cf4594a2208943bd90894bb84bbc93bdc86670472abd4071dec9039c"
-    sha256 cellar: :any,                 x86_64_linux:  "0504f975d9dfa425189ca08941412ddc5c1ce13df4cdb3520815398b4b75bf9f"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "91abbf141751dd6850324435d782250ac91c9a50fd23558e26b416441a9b416b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "42e4e2449628600c0b606af72f745360f2d0b4b15dfdcd22ddb22d63d43ddb9e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "0a01e5bf07e039c346457c6eb0dc9ea85fbb6f1d6359bfe704af96f196da8823"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "158ad1dd0f22ef190c633fc93d326707bdda658505b2d57b31576274ae89e220"
+    sha256 cellar: :any,                 x86_64_linux:      "29b40b8d0865032f276bcf93acc1dbbba1189ae3b66368e61dfe07f6c926af6b"
   end
 
   depends_on "go" => :build

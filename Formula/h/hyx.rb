@@ -11,12 +11,13 @@ class Hyx < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "02dc7c7794bf71ba86674791229d5a5a128e3b65a29e45a277138f488ecb0b7d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c036ff1df80bd3f6775c65cc746cef1b78de719338b2cec813183e4e18a1bd83"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "331d208afd17f67c2d297451462f66394d729c8260ed95fbe3b6f8baa7ad9da0"
-    sha256 cellar: :any_skip_relocation, sonoma:        "551a6a0ff4d2e4511f8d9992905f1ba983c2b30badfba6f5be0cffa62b83240b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c0185c1cc5db86b21db59e9519419e65b7f70d118d627f363a7318aafbf2ce69"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "66f76d65ed139e22da8c4425dae64c28ed56c5ede6de83d57288d5e4dce5045f"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "c2a3e356693c245261897ee631dd7651c789a8604931c1fb1abdba2576464f79"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "02dc7c7794bf71ba86674791229d5a5a128e3b65a29e45a277138f488ecb0b7d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "c036ff1df80bd3f6775c65cc746cef1b78de719338b2cec813183e4e18a1bd83"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "331d208afd17f67c2d297451462f66394d729c8260ed95fbe3b6f8baa7ad9da0"
+    sha256 cellar: :any_skip_relocation, sonoma:            "551a6a0ff4d2e4511f8d9992905f1ba983c2b30badfba6f5be0cffa62b83240b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "c0185c1cc5db86b21db59e9519419e65b7f70d118d627f363a7318aafbf2ce69"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "66f76d65ed139e22da8c4425dae64c28ed56c5ede6de83d57288d5e4dce5045f"
   end
 
   def install

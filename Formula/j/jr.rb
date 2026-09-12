@@ -8,12 +8,13 @@ class Jr < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "399634610161df53cbbeceed8121518a1e3ed856aed4058b4d9877563f639fb8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3287aeddbe1d654e4de4c907ab86aeb2f667e026e4a6e42ff20b432d0a9623b4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b29e79883c761f778628b0328472d208bd8bb1e99ed336fa987ac6da08174f12"
-    sha256 cellar: :any_skip_relocation, sonoma:        "cb7ea019fcb7b112f592b88beba76fe7af0a1d35a5858e93bd78a695bef0003c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4a420499d2089911bdba702881348ff01703ca4f0069b771f8304e071cbe9de7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "18666a02f967744d1b8e9e83d626c3f463c88c3a2ec95eb7cfc7ea8df03b45fc"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "1ce13f489706c9d5a56beb415c5a37d7b038fed2b0f51915c5f3ebbaa2d6090e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "399634610161df53cbbeceed8121518a1e3ed856aed4058b4d9877563f639fb8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "3287aeddbe1d654e4de4c907ab86aeb2f667e026e4a6e42ff20b432d0a9623b4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "b29e79883c761f778628b0328472d208bd8bb1e99ed336fa987ac6da08174f12"
+    sha256 cellar: :any_skip_relocation, sonoma:            "cb7ea019fcb7b112f592b88beba76fe7af0a1d35a5858e93bd78a695bef0003c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "4a420499d2089911bdba702881348ff01703ca4f0069b771f8304e071cbe9de7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "18666a02f967744d1b8e9e83d626c3f463c88c3a2ec95eb7cfc7ea8df03b45fc"
   end
 
   depends_on "go" => :build

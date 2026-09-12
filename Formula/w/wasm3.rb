@@ -6,11 +6,12 @@ class Wasm3 < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "31565b2e90076356acade5526f519432b39f4b0d0e31ace4e80a233220130dad"
-    sha256 cellar: :any, arm64_sequoia: "5d3741f7e7d4b6320371e30df0fe3fba9c216d0d8f6ec575b702bffe07b4c6ce"
-    sha256 cellar: :any, arm64_sonoma:  "4950261405d38dc03439d603b806d1560503c2794c7c424004e75417fb7a3952"
-    sha256 cellar: :any, arm64_linux:   "6dfa9d9ed596a0d79a5d80fa733b31f50668f93c5e6c45878c1beafba9edbea3"
-    sha256 cellar: :any, x86_64_linux:  "153e1796dcf2d879a659bfe41d49ad07b3686f4b4f020c82981cdcfe3cb1f3f5"
+    sha256 cellar: :any, arm64_golden_gate: "83cc89988f71fa8c121cafda8b054cad13d895143853fcaefb2d578c98dbd8db"
+    sha256 cellar: :any, arm64_tahoe:       "31565b2e90076356acade5526f519432b39f4b0d0e31ace4e80a233220130dad"
+    sha256 cellar: :any, arm64_sequoia:     "5d3741f7e7d4b6320371e30df0fe3fba9c216d0d8f6ec575b702bffe07b4c6ce"
+    sha256 cellar: :any, arm64_sonoma:      "4950261405d38dc03439d603b806d1560503c2794c7c424004e75417fb7a3952"
+    sha256 cellar: :any, arm64_linux:       "6dfa9d9ed596a0d79a5d80fa733b31f50668f93c5e6c45878c1beafba9edbea3"
+    sha256 cellar: :any, x86_64_linux:      "153e1796dcf2d879a659bfe41d49ad07b3686f4b4f020c82981cdcfe3cb1f3f5"
   end
 
   depends_on "cmake" => :build

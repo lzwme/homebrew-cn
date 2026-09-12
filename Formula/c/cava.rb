@@ -7,12 +7,13 @@ class Cava < Formula
   head "https://github.com/karlstav/cava.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "209fa9f1436d056a4b2d73f2adbc35557f267e3d9fd7f0ed939b09cf97a524da"
-    sha256 cellar: :any, arm64_sequoia: "812fa702df7f0c09a1806d71d61f31c8303f29af5ce75de86cd70a18ccd3c25d"
-    sha256 cellar: :any, arm64_sonoma:  "fcd2bd495dd947c25c56470a70e2a1ee89cdebe4a72f5eceaf26acf4f3a9e5d5"
-    sha256 cellar: :any, sonoma:        "76b24034b455cf6b01180186f0446bcf96b4aba471c01b2848dd2f6c8c44fd27"
-    sha256               arm64_linux:   "74a4472bdf1c72e81ab0104df9b70f0d7506c1072fc6a2b4c302284652683cdc"
-    sha256               x86_64_linux:  "c5f1dac189a1c98e6a87173b612d9509eaf5d947351c7f8cb3e06ee02f6a64f6"
+    sha256 cellar: :any, arm64_golden_gate: "0467604e663e57c1853954f13c8272dc2942831afa0900850f67358f9d3a1e84"
+    sha256 cellar: :any, arm64_tahoe:       "209fa9f1436d056a4b2d73f2adbc35557f267e3d9fd7f0ed939b09cf97a524da"
+    sha256 cellar: :any, arm64_sequoia:     "812fa702df7f0c09a1806d71d61f31c8303f29af5ce75de86cd70a18ccd3c25d"
+    sha256 cellar: :any, arm64_sonoma:      "fcd2bd495dd947c25c56470a70e2a1ee89cdebe4a72f5eceaf26acf4f3a9e5d5"
+    sha256 cellar: :any, sonoma:            "76b24034b455cf6b01180186f0446bcf96b4aba471c01b2848dd2f6c8c44fd27"
+    sha256               arm64_linux:       "74a4472bdf1c72e81ab0104df9b70f0d7506c1072fc6a2b4c302284652683cdc"
+    sha256               x86_64_linux:      "c5f1dac189a1c98e6a87173b612d9509eaf5d947351c7f8cb3e06ee02f6a64f6"
   end
 
   depends_on "autoconf" => :build

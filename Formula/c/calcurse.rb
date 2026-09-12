@@ -11,14 +11,15 @@ class Calcurse < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "36702d8f775d240b6968de8c9920deb70f8a1c4174efb8807a65b137a17abe6d"
-    sha256 arm64_sequoia: "f120135e45863a612646065cb340a33af4dad61e43d7390ad13c04a1fb1cce97"
-    sha256 arm64_sonoma:  "d242f4958c5af9df7208d7b933af6d7a37309754962b38b3979ac639edd28937"
-    sha256 arm64_ventura: "3a330a186dc9bbd742e76b1b366f4a5c2e687ef7f7cee377e8f313cf61dd2d67"
-    sha256 sonoma:        "fc2881f5a9216f5709a37c284406ee3e648c396fd90dedeadebcbee6bd3e8fde"
-    sha256 ventura:       "0141f2a451f9d2be67f5f4e0baef21e97ae4821b4733cdc1c6af2e174ca0a0a1"
-    sha256 arm64_linux:   "3c4da058a54e0a401ac9416c0a57e27e7fd05f02d1ab00bd0f8b4caef798d287"
-    sha256 x86_64_linux:  "d3e722c7e8f3f64fec8f389fa7d46f5799d20a6bb1805a5b0b84aa491325f408"
+    sha256 arm64_golden_gate: "45dc3295dc14defb8c29b9a8fcf8c2cf23c54e86e55eaf6ed07459c70ffef805"
+    sha256 arm64_tahoe:       "36702d8f775d240b6968de8c9920deb70f8a1c4174efb8807a65b137a17abe6d"
+    sha256 arm64_sequoia:     "f120135e45863a612646065cb340a33af4dad61e43d7390ad13c04a1fb1cce97"
+    sha256 arm64_sonoma:      "d242f4958c5af9df7208d7b933af6d7a37309754962b38b3979ac639edd28937"
+    sha256 arm64_ventura:     "3a330a186dc9bbd742e76b1b366f4a5c2e687ef7f7cee377e8f313cf61dd2d67"
+    sha256 sonoma:            "fc2881f5a9216f5709a37c284406ee3e648c396fd90dedeadebcbee6bd3e8fde"
+    sha256 ventura:           "0141f2a451f9d2be67f5f4e0baef21e97ae4821b4733cdc1c6af2e174ca0a0a1"
+    sha256 arm64_linux:       "3c4da058a54e0a401ac9416c0a57e27e7fd05f02d1ab00bd0f8b4caef798d287"
+    sha256 x86_64_linux:      "d3e722c7e8f3f64fec8f389fa7d46f5799d20a6bb1805a5b0b84aa491325f408"
   end
 
   head do

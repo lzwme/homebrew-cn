@@ -22,8 +22,6 @@ class Tailscale < Formula
 
   depends_on "go" => :build
 
-  conflicts_with cask: "tailscale-app"
-
   def install
     vars = Utils.safe_popen_read("./build_dist.sh", "shellvars")
     ldflags = %W[

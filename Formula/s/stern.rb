@@ -7,12 +7,13 @@ class Stern < Formula
   head "https://github.com/stern/stern.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cf87c8b14a3f062463ba7d4608a9472a539d6d3c5812ee0a4f49d3ce28009167"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d50b7ab79b975167e19f75bf68597227ad82881ed46c3ff6a62bb90983748cdb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6cc2f6e3114eff8a51e4c27be9b561539d6e79395cabc65c3268bdc5fed52d5f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0fc9084d111eacf45d4cb9b24d4dbdf2f9f1f019215c305391f6f149062f60c9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "74c91eb1456dd62cb71a8eabd41ce94f33856dd2e3b5db0e82a479acc9275ade"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "93c97d2b2b51afe05b8ce55e30e3e415b96981d32fac68ff985a265286425582"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "ed4eb2d817ea18cbfc19c2e0e73aa5950cccb64782ba43afd6233799defe99bc"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "cf87c8b14a3f062463ba7d4608a9472a539d6d3c5812ee0a4f49d3ce28009167"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "d50b7ab79b975167e19f75bf68597227ad82881ed46c3ff6a62bb90983748cdb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "6cc2f6e3114eff8a51e4c27be9b561539d6e79395cabc65c3268bdc5fed52d5f"
+    sha256 cellar: :any_skip_relocation, sonoma:            "0fc9084d111eacf45d4cb9b24d4dbdf2f9f1f019215c305391f6f149062f60c9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "74c91eb1456dd62cb71a8eabd41ce94f33856dd2e3b5db0e82a479acc9275ade"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "93c97d2b2b51afe05b8ce55e30e3e415b96981d32fac68ff985a265286425582"
   end
 
   depends_on "go" => :build

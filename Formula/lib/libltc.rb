@@ -6,18 +6,19 @@ class Libltc < Formula
   license "LGPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:    "96c5103e95fb66b47f93433bf6f7e3a85cf6de5e8540348172062cf1b68920f7"
-    sha256 cellar: :any,                 arm64_sequoia:  "db162961bf9b4cb7fab2db612ffff0b70ab59470d382712417f1868d63500524"
-    sha256 cellar: :any,                 arm64_sonoma:   "51fbcf835713464c3adc121dfce5dc240a9364a9c1d597df408fa787c6caeaa7"
-    sha256 cellar: :any,                 arm64_ventura:  "317e8d1f146e9c5118dabea794de694186057e4c71688523946fb24859ed4de7"
-    sha256 cellar: :any,                 arm64_monterey: "8289e0f5389ee652949981fbde5d3955d78048707c2731619e2d9d046cf1f89a"
-    sha256 cellar: :any,                 arm64_big_sur:  "d003af07740326535cc95332c180cc467b29eaab2d227438e1486c8891bd5560"
-    sha256 cellar: :any,                 sonoma:         "368a0369adc7d7c720f108402577e83d18f6da8dba0dac96ae170f6bb4616c7a"
-    sha256 cellar: :any,                 ventura:        "846224f71e3bc2254b94c41e62e8f02bb125d421bc24e9559fd6fca16ee8da44"
-    sha256 cellar: :any,                 monterey:       "9a4cdb442f640d04e8886b888bbc5427b448cc9d7a160672a505fda5fa1371c8"
-    sha256 cellar: :any,                 big_sur:        "a8a22a13e7faa84038e3833a7ad379d5ca3afe26670476fad9f87afc5312338a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "9cf04675a7dd67b37fa8b4c48ab7e6903d2caa761704bebdd1e64a5a6d79f863"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c160950aa4d33232070cb6607deec9ed4fc9b070dd5dcf0c3221404199016c46"
+    sha256 cellar: :any,                 arm64_golden_gate: "2539fcf26e5c508b1232a1eb70cb084d51516c199fd5d1f43fa6bdf1b6184619"
+    sha256 cellar: :any,                 arm64_tahoe:       "96c5103e95fb66b47f93433bf6f7e3a85cf6de5e8540348172062cf1b68920f7"
+    sha256 cellar: :any,                 arm64_sequoia:     "db162961bf9b4cb7fab2db612ffff0b70ab59470d382712417f1868d63500524"
+    sha256 cellar: :any,                 arm64_sonoma:      "51fbcf835713464c3adc121dfce5dc240a9364a9c1d597df408fa787c6caeaa7"
+    sha256 cellar: :any,                 arm64_ventura:     "317e8d1f146e9c5118dabea794de694186057e4c71688523946fb24859ed4de7"
+    sha256 cellar: :any,                 arm64_monterey:    "8289e0f5389ee652949981fbde5d3955d78048707c2731619e2d9d046cf1f89a"
+    sha256 cellar: :any,                 arm64_big_sur:     "d003af07740326535cc95332c180cc467b29eaab2d227438e1486c8891bd5560"
+    sha256 cellar: :any,                 sonoma:            "368a0369adc7d7c720f108402577e83d18f6da8dba0dac96ae170f6bb4616c7a"
+    sha256 cellar: :any,                 ventura:           "846224f71e3bc2254b94c41e62e8f02bb125d421bc24e9559fd6fca16ee8da44"
+    sha256 cellar: :any,                 monterey:          "9a4cdb442f640d04e8886b888bbc5427b448cc9d7a160672a505fda5fa1371c8"
+    sha256 cellar: :any,                 big_sur:           "a8a22a13e7faa84038e3833a7ad379d5ca3afe26670476fad9f87afc5312338a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "9cf04675a7dd67b37fa8b4c48ab7e6903d2caa761704bebdd1e64a5a6d79f863"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "c160950aa4d33232070cb6607deec9ed4fc9b070dd5dcf0c3221404199016c46"
   end
 
   def install

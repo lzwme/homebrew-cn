@@ -1,18 +1,17 @@
 class Chopper < Formula
   desc "Filter and trim long-read sequencing data by quality and length"
   homepage "https://github.com/wdecoster/chopper"
-  url "https://ghfast.top/https://github.com/wdecoster/chopper/archive/refs/tags/v0.13.0.tar.gz"
-  sha256 "f5df330e68e76ceb62f33338be7f7c21bd876e2ad84baa9e50ecbcfdfbd9d232"
+  url "https://ghfast.top/https://github.com/wdecoster/chopper/archive/refs/tags/v0.14.0.tar.gz"
+  sha256 "ea85f59d91636eba2736e73161ed7c9b912f1f42cb7728f98c72a1b66478a8a6"
   license "MIT"
   head "https://github.com/wdecoster/chopper.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c835741bd35d334fbacb1e28830740c2754dba4b2c6a7001c64da088135beb1b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9e2020b75cb62b58f351fcef525925fd9bd153d4bf6243cc9a0d48a37c8266e6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6f76861d8e2f717c0b9f4d441cf6af01ad8419412f11ec263c95b2c4de73fb47"
-    sha256 cellar: :any_skip_relocation, sonoma:        "87fb3e532cbaf141839681fc9ecf74f20652b76e301f962d005cc5e4c6d1785c"
-    sha256 cellar: :any,                 arm64_linux:   "8b809d09c25541dd76bb83286a931243fab064e6cb077e628f36f1e684e692e2"
-    sha256 cellar: :any,                 x86_64_linux:  "e1ae22b6a580020f5a1b72be1e502da1de05df47668b69d417dced7876b478a9"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "54543d30921688fc6dbb88b6ace2624991a51c1d0989a7690ac57d2557cc6330"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "53d4fe43ad6ff63424d745362608fbde7f2de2fcf12fe422e0ea17d34889efa3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "a2bd48f66b5cde423ef9eba4a583df609c577e87401c09efa0f0277262791c1e"
+    sha256 cellar: :any,                 arm64_linux:       "dba4ce09be1e1cfd9d7ce297773d3d122b17674869b32781026b67d1b1572d71"
+    sha256 cellar: :any,                 x86_64_linux:      "b76c39a839f38d4cc88f1dafd29bb2a3c675ecfc8a900b97a4ac996902cdd7d3"
   end
 
   depends_on "cmake" => :build

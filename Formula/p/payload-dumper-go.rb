@@ -6,12 +6,13 @@ class PayloadDumperGo < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "1f40d23e05a8ce1e81cc64d772a521d8bff997af3cdff1d69b63993674db4f7c"
-    sha256 cellar: :any, arm64_sequoia: "7005af14505be5f4582db4b9696bea16e2461791374e9c2a5c91b0ef2cd5e7e9"
-    sha256 cellar: :any, arm64_sonoma:  "2eb565646c5fa6b9d80d254e6aebfd8136981cc05d27cdc98e84d21180cd66b7"
-    sha256 cellar: :any, sonoma:        "21692997384aa75a4a7b431593ebab71f3d62b24b847ae42cb1dda83b32dbaaf"
-    sha256 cellar: :any, arm64_linux:   "dc0003def87970fc4e904881a45f7d7cd594c4fab6f874742dd99c80338de3c7"
-    sha256 cellar: :any, x86_64_linux:  "dc00c729b29a11397ade1c6077e9bd01164e3f093d7135ee369856db51fef768"
+    sha256 cellar: :any, arm64_golden_gate: "1c40c2c970b51a0ecaa94a1bd9ac63fe74629bed83587b4ba0b1aa6b15802dd3"
+    sha256 cellar: :any, arm64_tahoe:       "1f40d23e05a8ce1e81cc64d772a521d8bff997af3cdff1d69b63993674db4f7c"
+    sha256 cellar: :any, arm64_sequoia:     "7005af14505be5f4582db4b9696bea16e2461791374e9c2a5c91b0ef2cd5e7e9"
+    sha256 cellar: :any, arm64_sonoma:      "2eb565646c5fa6b9d80d254e6aebfd8136981cc05d27cdc98e84d21180cd66b7"
+    sha256 cellar: :any, sonoma:            "21692997384aa75a4a7b431593ebab71f3d62b24b847ae42cb1dda83b32dbaaf"
+    sha256 cellar: :any, arm64_linux:       "dc0003def87970fc4e904881a45f7d7cd594c4fab6f874742dd99c80338de3c7"
+    sha256 cellar: :any, x86_64_linux:      "dc00c729b29a11397ade1c6077e9bd01164e3f093d7135ee369856db51fef768"
   end
 
   depends_on "go" => :build

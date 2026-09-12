@@ -7,12 +7,13 @@ class SoftServe < Formula
   head "https://github.com/charmbracelet/soft-serve.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "378319d05069e92b9f3822eec232409203921c5e3161088f87c14d361b165d29"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2bea0d6f41da8754e84b15e0fbb9f79542ed00bd7dd1a82b1008ef42e8a45b09"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e410ea6b4df21cab018bc948de6ed8f66a6833806dd6bca4cc5291880dce14ce"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f575e8e100a22b5b71099330220694c05f536fa41f08351f6e604c35fb3cf517"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2501cc13221c19473333335b6240eb641a27253d054331b7d7a1757aeb73bf80"
-    sha256 cellar: :any,                 x86_64_linux:  "4af75d12fe3ba8e7bdc3a479c0af0efdf55df140883a7df34feaf9e83982152a"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "45313188180549f544e1c0155746c669d5a9794f0ce6c360dece0fb342f4ab53"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "378319d05069e92b9f3822eec232409203921c5e3161088f87c14d361b165d29"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "2bea0d6f41da8754e84b15e0fbb9f79542ed00bd7dd1a82b1008ef42e8a45b09"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "e410ea6b4df21cab018bc948de6ed8f66a6833806dd6bca4cc5291880dce14ce"
+    sha256 cellar: :any_skip_relocation, sonoma:            "f575e8e100a22b5b71099330220694c05f536fa41f08351f6e604c35fb3cf517"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "2501cc13221c19473333335b6240eb641a27253d054331b7d7a1757aeb73bf80"
+    sha256 cellar: :any,                 x86_64_linux:      "4af75d12fe3ba8e7bdc3a479c0af0efdf55df140883a7df34feaf9e83982152a"
   end
 
   depends_on "go" => :build

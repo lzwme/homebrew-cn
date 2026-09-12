@@ -8,12 +8,13 @@ class Innotop < Formula
   head "https://github.com/innotop/innotop.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "dd276aa717dcc08d7d939494fac97a1a1f84e305a2a9c60e70a8b670eae35fae"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dd276aa717dcc08d7d939494fac97a1a1f84e305a2a9c60e70a8b670eae35fae"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dd276aa717dcc08d7d939494fac97a1a1f84e305a2a9c60e70a8b670eae35fae"
-    sha256 cellar: :any_skip_relocation, sonoma:        "dd276aa717dcc08d7d939494fac97a1a1f84e305a2a9c60e70a8b670eae35fae"
-    sha256 cellar: :any,                 arm64_linux:   "5d3ec8dc520eca1171bbc01271edbe16b2a16d2777071e4464c9d4a25c0caca2"
-    sha256 cellar: :any,                 x86_64_linux:  "114d95b95a6cf07f722d2c8f2446d7472d0d736ba36f4548574d7131c24d47ee"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "ab78d4fe9eaf85807ac5eaf94ce0a7d04075059c0245e3775dead1d04361eed7"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "dd276aa717dcc08d7d939494fac97a1a1f84e305a2a9c60e70a8b670eae35fae"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "dd276aa717dcc08d7d939494fac97a1a1f84e305a2a9c60e70a8b670eae35fae"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "dd276aa717dcc08d7d939494fac97a1a1f84e305a2a9c60e70a8b670eae35fae"
+    sha256 cellar: :any_skip_relocation, sonoma:            "dd276aa717dcc08d7d939494fac97a1a1f84e305a2a9c60e70a8b670eae35fae"
+    sha256 cellar: :any,                 arm64_linux:       "5d3ec8dc520eca1171bbc01271edbe16b2a16d2777071e4464c9d4a25c0caca2"
+    sha256 cellar: :any,                 x86_64_linux:      "114d95b95a6cf07f722d2c8f2446d7472d0d736ba36f4548574d7131c24d47ee"
   end
 
   depends_on "perl-dbd-mysql"

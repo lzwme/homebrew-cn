@@ -7,12 +7,13 @@ class JwtUi < Formula
   head "https://github.com/jwt-rs/jwt-ui.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f118b3747b87b291d58ff6f174f0843defe9c1d955942b980a0a8c07e4836684"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3f8984bbb5f831ec64957ea03e78cc0537e301bac7a0672cc013cc52ace5874d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "49f7cf23808fc2242360bf82951e0afe9f286049eea119048add9a744fc4d896"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5be6c791de416fa485fa427905a74cb9867ea92d6687599028f2253b1693dd7c"
-    sha256 cellar: :any,                 arm64_linux:   "08da280300dbbe187e493da98dfcbf9982dcff3494bf9ed876d7b4a0b72a623a"
-    sha256 cellar: :any,                 x86_64_linux:  "3df27285e33108b2889014d864f0f5743df6905cb2cd11950213deb8f8c360df"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "b6336d1ce2499186a5dcfbe5dfb1fc273c1e617d6232ab0cf48fc5716e41cb3e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "f118b3747b87b291d58ff6f174f0843defe9c1d955942b980a0a8c07e4836684"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "3f8984bbb5f831ec64957ea03e78cc0537e301bac7a0672cc013cc52ace5874d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "49f7cf23808fc2242360bf82951e0afe9f286049eea119048add9a744fc4d896"
+    sha256 cellar: :any_skip_relocation, sonoma:            "5be6c791de416fa485fa427905a74cb9867ea92d6687599028f2253b1693dd7c"
+    sha256 cellar: :any,                 arm64_linux:       "08da280300dbbe187e493da98dfcbf9982dcff3494bf9ed876d7b4a0b72a623a"
+    sha256 cellar: :any,                 x86_64_linux:      "3df27285e33108b2889014d864f0f5743df6905cb2cd11950213deb8f8c360df"
   end
 
   depends_on "rust" => :build

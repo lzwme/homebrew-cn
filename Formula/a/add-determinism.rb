@@ -7,12 +7,13 @@ class AddDeterminism < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a5d281e4f15e96d4606740e527799c7450430928e88ffdca11a511148fd6fa13"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "76ff0f034490afe0dcfd9ede927a82df63edc8bcb5a5ed7b8a7720d55420c8a9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "049e1501ac4a7e8f706ecc796b9e3ae99eec3f02d97b32336e4a9ce0b3858268"
-    sha256 cellar: :any_skip_relocation, sonoma:        "459744163fb5d530b3d30e1dca2186d8a90cfaf4c56a7736da8245959b81354f"
-    sha256 cellar: :any,                 arm64_linux:   "c5cfefa351739bb541a5323f575ba9f2f64ab56f350e882f5d15623a2cdf74f5"
-    sha256 cellar: :any,                 x86_64_linux:  "ff1cd4d20bc9e232344102e664a5a540ad9e53178bb23fceae4aedf9fb8ce5e0"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "11299bdf57911b2f73d5df159efbed05a8dcc5bd09453c5e01916d856e2f793b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "a5d281e4f15e96d4606740e527799c7450430928e88ffdca11a511148fd6fa13"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "76ff0f034490afe0dcfd9ede927a82df63edc8bcb5a5ed7b8a7720d55420c8a9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "049e1501ac4a7e8f706ecc796b9e3ae99eec3f02d97b32336e4a9ce0b3858268"
+    sha256 cellar: :any_skip_relocation, sonoma:            "459744163fb5d530b3d30e1dca2186d8a90cfaf4c56a7736da8245959b81354f"
+    sha256 cellar: :any,                 arm64_linux:       "c5cfefa351739bb541a5323f575ba9f2f64ab56f350e882f5d15623a2cdf74f5"
+    sha256 cellar: :any,                 x86_64_linux:      "ff1cd4d20bc9e232344102e664a5a540ad9e53178bb23fceae4aedf9fb8ce5e0"
   end
 
   depends_on "pkgconf" => :build

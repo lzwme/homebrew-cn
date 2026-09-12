@@ -40,7 +40,6 @@ class Nmap < Formula
   end
 
   conflicts_with "cern-ndiff", "ndiff", because: "both install `ndiff` binaries"
-  conflicts_with cask: "zenmap", because: "both install `nmap` binaries"
 
   def install
     # Fix to missing VERSION file

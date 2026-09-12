@@ -11,12 +11,13 @@ class Vint < Formula
 
   bottle do
     rebuild 7
-    sha256 cellar: :any,                 arm64_tahoe:   "253fc8481dee8ad20013ec07a09d1de0857b361f4ea4b9109e1d042720be995a"
-    sha256 cellar: :any,                 arm64_sequoia: "162fc8f95662794610623e833c5dc3b8a8b4061b96e051ece9df831c35b6857f"
-    sha256 cellar: :any,                 arm64_sonoma:  "03f615049167d33b5ab100cbbaff0d4461503392d550b895c98438ba5e5855e4"
-    sha256 cellar: :any,                 sonoma:        "0f54ebab62e360237f7dbb53db433dbf7270a94a57f63f6fbca5b7ce4dc06618"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "627fcee4eb35a20a7af92b2e52e4dd278ce997a1107406cfc45fb07aefa4bc21"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a203916188f247d771f950c352eb7d70c5483651a612e2366ff9804da26b00c2"
+    sha256 cellar: :any,                 arm64_golden_gate: "c3ce1a231f647ea848dd2b5b63dfb4fd61906b551584c8a0ad8a283bb43b752f"
+    sha256 cellar: :any,                 arm64_tahoe:       "253fc8481dee8ad20013ec07a09d1de0857b361f4ea4b9109e1d042720be995a"
+    sha256 cellar: :any,                 arm64_sequoia:     "162fc8f95662794610623e833c5dc3b8a8b4061b96e051ece9df831c35b6857f"
+    sha256 cellar: :any,                 arm64_sonoma:      "03f615049167d33b5ab100cbbaff0d4461503392d550b895c98438ba5e5855e4"
+    sha256 cellar: :any,                 sonoma:            "0f54ebab62e360237f7dbb53db433dbf7270a94a57f63f6fbca5b7ce4dc06618"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "627fcee4eb35a20a7af92b2e52e4dd278ce997a1107406cfc45fb07aefa4bc21"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "a203916188f247d771f950c352eb7d70c5483651a612e2366ff9804da26b00c2"
   end
 
   depends_on "libyaml"

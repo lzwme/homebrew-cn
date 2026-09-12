@@ -12,12 +12,13 @@ class Connect < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7963a8e035492268bdaa843a6d79a88728f98abca2115bd50194384b5ae4cb0a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "22a3bbe8d775409efdddb1fdaa3bc59267524ac329cd061f93212de9fd4c75e7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3d1bc5a082a99f279f21adb0f8b7028e57f78f99b366cd77a5e008dd4b246edb"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ea352ab877ca1ad7156dcb9b3f90fba25d02cb286c8254dc25dfb4b1baa25d0f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cd13498f3a1e78e2269d207290950942aebc3216e9de777e32609756870de7a4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "157c7c54b61c285ee545c97a5c74e975cc44741c6cc845c82d0ae186cbc04a3a"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "b8cf5b5910939a526233e820220e438aad097667ba0e6793ba90da8f8a6d626a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "7963a8e035492268bdaa843a6d79a88728f98abca2115bd50194384b5ae4cb0a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "22a3bbe8d775409efdddb1fdaa3bc59267524ac329cd061f93212de9fd4c75e7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "3d1bc5a082a99f279f21adb0f8b7028e57f78f99b366cd77a5e008dd4b246edb"
+    sha256 cellar: :any_skip_relocation, sonoma:            "ea352ab877ca1ad7156dcb9b3f90fba25d02cb286c8254dc25dfb4b1baa25d0f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "cd13498f3a1e78e2269d207290950942aebc3216e9de777e32609756870de7a4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "157c7c54b61c285ee545c97a5c74e975cc44741c6cc845c82d0ae186cbc04a3a"
   end
 
   def install

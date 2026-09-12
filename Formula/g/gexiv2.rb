@@ -8,12 +8,13 @@ class Gexiv2 < Formula
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "a77214ac1ef891b0c618cb7035823ee8eee2e91761620176b92bfd0733abc9e0"
-    sha256 cellar: :any, arm64_sequoia: "fc96598da3ca91ef05c004dda94b62a4b12675cff1a631d0dfb775823bcaf080"
-    sha256 cellar: :any, arm64_sonoma:  "d0ba02ae08419f39324684ac5678e2c791d308591a8d9b9af54969ed751607a3"
-    sha256 cellar: :any, sonoma:        "db9b422562e9d8041a63ea305cf93dfc3fe7f2456caa1f5313456ae012396758"
-    sha256               arm64_linux:   "23628e31be56d8d63d8cca6a3fd343e5106a43ddae8605f8dfad854a48d2e35e"
-    sha256               x86_64_linux:  "fecb00195dc793205fc06742f040dc2492efc29eaefa1a29d08143c98da57909"
+    sha256 cellar: :any, arm64_golden_gate: "9bbc292c25a8f5c641289439f6d4596253ec80ce56f4c5f4224e6cf3d4d4a55a"
+    sha256 cellar: :any, arm64_tahoe:       "a77214ac1ef891b0c618cb7035823ee8eee2e91761620176b92bfd0733abc9e0"
+    sha256 cellar: :any, arm64_sequoia:     "fc96598da3ca91ef05c004dda94b62a4b12675cff1a631d0dfb775823bcaf080"
+    sha256 cellar: :any, arm64_sonoma:      "d0ba02ae08419f39324684ac5678e2c791d308591a8d9b9af54969ed751607a3"
+    sha256 cellar: :any, sonoma:            "db9b422562e9d8041a63ea305cf93dfc3fe7f2456caa1f5313456ae012396758"
+    sha256               arm64_linux:       "23628e31be56d8d63d8cca6a3fd343e5106a43ddae8605f8dfad854a48d2e35e"
+    sha256               x86_64_linux:      "fecb00195dc793205fc06742f040dc2492efc29eaefa1a29d08143c98da57909"
   end
 
   depends_on "gobject-introspection" => :build

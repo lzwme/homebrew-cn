@@ -11,14 +11,15 @@ class Largetifftools < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "84f779bd4774fc9825d78fc4b2b485652c52bb3b06dc4147fbf70efc99c61c61"
-    sha256 cellar: :any,                 arm64_sequoia: "e7ad30862ae1b715271064e5487dacac835007e1d1465a61796192d33849ef69"
-    sha256 cellar: :any,                 arm64_sonoma:  "8e289d1b6b87e41764c8ff7831fffd5ad6b2871a97531344de0379f7a29719fa"
-    sha256 cellar: :any,                 arm64_ventura: "d6aa8ea83b7d6ed7f73c35dcbb531f3088d4a07e419a9b6945848249874cb6fb"
-    sha256 cellar: :any,                 sonoma:        "1d4d9cce695d92295f325ca875c16b7a4c2cf57223ce8e28f05beca25de519ee"
-    sha256 cellar: :any,                 ventura:       "58bde27fe7d7cf8a22ae7feac74afb4c88d54af82b1d254f5b8ffcf6a563193d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fba139ab0c3a04448191f5596e5d233824f672fb3e3bacb166c4b7e5e9363fb1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dd6458d660821a0038f8ce37977442e31e638dd8a0e0f408f2cc3512eb1ea404"
+    sha256 cellar: :any,                 arm64_golden_gate: "df2bba5bc2cf46a84778ac50ae5faf2a58712fa169c5e0e500386de0b29cd80c"
+    sha256 cellar: :any,                 arm64_tahoe:       "84f779bd4774fc9825d78fc4b2b485652c52bb3b06dc4147fbf70efc99c61c61"
+    sha256 cellar: :any,                 arm64_sequoia:     "e7ad30862ae1b715271064e5487dacac835007e1d1465a61796192d33849ef69"
+    sha256 cellar: :any,                 arm64_sonoma:      "8e289d1b6b87e41764c8ff7831fffd5ad6b2871a97531344de0379f7a29719fa"
+    sha256 cellar: :any,                 arm64_ventura:     "d6aa8ea83b7d6ed7f73c35dcbb531f3088d4a07e419a9b6945848249874cb6fb"
+    sha256 cellar: :any,                 sonoma:            "1d4d9cce695d92295f325ca875c16b7a4c2cf57223ce8e28f05beca25de519ee"
+    sha256 cellar: :any,                 ventura:           "58bde27fe7d7cf8a22ae7feac74afb4c88d54af82b1d254f5b8ffcf6a563193d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "fba139ab0c3a04448191f5596e5d233824f672fb3e3bacb166c4b7e5e9363fb1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "dd6458d660821a0038f8ce37977442e31e638dd8a0e0f408f2cc3512eb1ea404"
   end
 
   depends_on "jpeg-turbo"

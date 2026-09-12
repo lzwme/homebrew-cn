@@ -23,12 +23,13 @@ class Podofo < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "1a7b951f6e9d553a2958ed922fd18d08b13a24e429b82820d19ce13787819b7c"
-    sha256 cellar: :any, arm64_sequoia: "0ac2ef3c796d651a47ac64e0b4125b2a3fe1b7d286c1b722f8700145b3bf569b"
-    sha256 cellar: :any, arm64_sonoma:  "6e20f51323ed0c344798ef7f14333b8ec66730d93ce5a7a4d3e77b59e4a3a38f"
-    sha256 cellar: :any, sonoma:        "9c0338f3168227a7c7d5efe212c4333b72f169937e42006903f3b0c0aa8a695d"
-    sha256 cellar: :any, arm64_linux:   "87ce69276e48983f3e63b968fc2b29bca490735691c090467a5d72209a59ac63"
-    sha256 cellar: :any, x86_64_linux:  "e5eb97711f90edd3eb9a85e450010aafcdedc5259912d69f235c3fb9cbf8bd05"
+    sha256 cellar: :any, arm64_golden_gate: "2f43a4c409b9e92bf670b1765fbf197f3572280e6961064580b16c2a2244648a"
+    sha256 cellar: :any, arm64_tahoe:       "1a7b951f6e9d553a2958ed922fd18d08b13a24e429b82820d19ce13787819b7c"
+    sha256 cellar: :any, arm64_sequoia:     "0ac2ef3c796d651a47ac64e0b4125b2a3fe1b7d286c1b722f8700145b3bf569b"
+    sha256 cellar: :any, arm64_sonoma:      "6e20f51323ed0c344798ef7f14333b8ec66730d93ce5a7a4d3e77b59e4a3a38f"
+    sha256 cellar: :any, sonoma:            "9c0338f3168227a7c7d5efe212c4333b72f169937e42006903f3b0c0aa8a695d"
+    sha256 cellar: :any, arm64_linux:       "87ce69276e48983f3e63b968fc2b29bca490735691c090467a5d72209a59ac63"
+    sha256 cellar: :any, x86_64_linux:      "e5eb97711f90edd3eb9a85e450010aafcdedc5259912d69f235c3fb9cbf8bd05"
   end
 
   depends_on "cmake" => :build

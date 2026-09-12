@@ -12,12 +12,13 @@ class Snobol4 < Formula
 
   bottle do
     rebuild 1
-    sha256 arm64_tahoe:   "2a8648c2d3fb39dca2d793d359ca305ce81281721bb64a195194b81e0e2b529f"
-    sha256 arm64_sequoia: "4b368da4aa95d4554c82a8de1ceae5f1c36e2791570fd6faf57b95af6d032adb"
-    sha256 arm64_sonoma:  "e9a93dbefd1230e26373a4c546ce948666910e7325435c1742974c0a3a2d8f2c"
-    sha256 sonoma:        "31b54dd8ddf58af62e79791ca11c6d0db27967b60ccea7ae96b7bdd524bd4063"
-    sha256 arm64_linux:   "f4682158fc5b1a5df0442c76fb9611535fea445f05aded8a18584c1fd4c09ed8"
-    sha256 x86_64_linux:  "df5fda5949ffdb1480145b151e48a0bfe45f5fe1ee1bfa834b416ef15840d9b8"
+    sha256 arm64_golden_gate: "a108917ff55b0afa09d951ece7f3795ed0e3a2c103a61f5eccdb17912112d6dc"
+    sha256 arm64_tahoe:       "2a8648c2d3fb39dca2d793d359ca305ce81281721bb64a195194b81e0e2b529f"
+    sha256 arm64_sequoia:     "4b368da4aa95d4554c82a8de1ceae5f1c36e2791570fd6faf57b95af6d032adb"
+    sha256 arm64_sonoma:      "e9a93dbefd1230e26373a4c546ce948666910e7325435c1742974c0a3a2d8f2c"
+    sha256 sonoma:            "31b54dd8ddf58af62e79791ca11c6d0db27967b60ccea7ae96b7bdd524bd4063"
+    sha256 arm64_linux:       "f4682158fc5b1a5df0442c76fb9611535fea445f05aded8a18584c1fd4c09ed8"
+    sha256 x86_64_linux:      "df5fda5949ffdb1480145b151e48a0bfe45f5fe1ee1bfa834b416ef15840d9b8"
   end
 
   depends_on "openssl@4"

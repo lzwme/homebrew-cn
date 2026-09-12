@@ -12,14 +12,15 @@ class Volta < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "60e950c599630d46e928ddbd6f9cf4494dcbd5a7781e116c0890aa156de912ea"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "acfec2a99f0b9365f89152d6796918fab98839f43a7f16a3a180417e2082f5fe"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bb744499c855e7fc137088663ef45db348e20727549a20c5822ef5887b896205"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "92156fa743a1700648c3ac10594c042c94ceb2b415ff800054d1a13777d49019"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8cf25e1f75d7f3b228a79a986e81817c0690feb96f253b5d11309311166189a0"
-    sha256 cellar: :any_skip_relocation, ventura:       "1c41e466e6b4ce60d13addb1cb792785d4ecaef3c768491f062771603252d523"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7a116be251ad88fcb927346f510bff705183f8922cb287533d014acdb83031f1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c0eede98248c0b47f51645f2a7c051549913fcb207f48364f446611f542845ae"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "9005f17220b3e5789a7c6a9d153eddfc7e39ae69051da025c5a9ff0a2e441670"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "60e950c599630d46e928ddbd6f9cf4494dcbd5a7781e116c0890aa156de912ea"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "acfec2a99f0b9365f89152d6796918fab98839f43a7f16a3a180417e2082f5fe"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "bb744499c855e7fc137088663ef45db348e20727549a20c5822ef5887b896205"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:     "92156fa743a1700648c3ac10594c042c94ceb2b415ff800054d1a13777d49019"
+    sha256 cellar: :any_skip_relocation, sonoma:            "8cf25e1f75d7f3b228a79a986e81817c0690feb96f253b5d11309311166189a0"
+    sha256 cellar: :any_skip_relocation, ventura:           "1c41e466e6b4ce60d13addb1cb792785d4ecaef3c768491f062771603252d523"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "7a116be251ad88fcb927346f510bff705183f8922cb287533d014acdb83031f1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "c0eede98248c0b47f51645f2a7c051549913fcb207f48364f446611f542845ae"
   end
 
   depends_on "pkgconf" => :build

@@ -6,19 +6,18 @@ class Cocoapods < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "636940f284ddcbe62825f3452a581b3d3f66d1db75e495ffdc756ed21caa58f2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "636940f284ddcbe62825f3452a581b3d3f66d1db75e495ffdc756ed21caa58f2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "636940f284ddcbe62825f3452a581b3d3f66d1db75e495ffdc756ed21caa58f2"
-    sha256 cellar: :any_skip_relocation, sonoma:        "57824c73e16eeb4483e532fb0d5898e5182ef66c7c3e9b7290e7bf5fcd4af4a4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6fb1ed067c58472749a51f5bca84db230ddf2bdd9e3937a0a49f13d529710b4e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "52d6eedadab8ef056483f9ff51c7d5b7307fb8fed2c2dded79a42fe6d3b08897"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "a03de50ad8feab4d12456293b7546098d6af4bb2f1681a663d774f49aaa883be"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "636940f284ddcbe62825f3452a581b3d3f66d1db75e495ffdc756ed21caa58f2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "636940f284ddcbe62825f3452a581b3d3f66d1db75e495ffdc756ed21caa58f2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "636940f284ddcbe62825f3452a581b3d3f66d1db75e495ffdc756ed21caa58f2"
+    sha256 cellar: :any_skip_relocation, sonoma:            "57824c73e16eeb4483e532fb0d5898e5182ef66c7c3e9b7290e7bf5fcd4af4a4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "6fb1ed067c58472749a51f5bca84db230ddf2bdd9e3937a0a49f13d529710b4e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "52d6eedadab8ef056483f9ff51c7d5b7307fb8fed2c2dded79a42fe6d3b08897"
   end
 
   depends_on "pkgconf" => :build
   depends_on "ruby"
   uses_from_macos "libffi"
-
-  conflicts_with cask: "cocoapods-app", because: "both install `pod` binaries"
 
   def install
     ENV["GEM_HOME"] = libexec

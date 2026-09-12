@@ -6,12 +6,13 @@ class NativefiledialogExtended < Formula
   license "Zlib"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "a1183c71f2f72655aa54a7ed4031954fdb9a7b346c8ac27cc01d2d74419e481c"
-    sha256 cellar: :any,                 arm64_sequoia: "65a2aa7061b67d6e18055f3beb5269bbb80b52e201d48d7d7ac7cf504b4d2ac3"
-    sha256 cellar: :any,                 arm64_sonoma:  "ca6472d511ece4fc9e6f082f566c2cfa89032bb2b8f42442c3c8c587ed6c5394"
-    sha256 cellar: :any,                 sonoma:        "13ff4a381d5222689b00379c4953ff4de3ef00ab1a6ed107c51e2e6360c99b07"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "51dc0d5a51585b3abe21d9e45a9a913ef38b6de85f7fc89417ad7cf10434c341"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "78ba8588b6b519f5ae687b156c556c5951c7ae59cea47d70cc3021e0f9555673"
+    sha256 cellar: :any,                 arm64_golden_gate: "32bb4c05cac93d46511a6b0ad331bc97dde4dcee0146f59c75d9712899300b38"
+    sha256 cellar: :any,                 arm64_tahoe:       "a1183c71f2f72655aa54a7ed4031954fdb9a7b346c8ac27cc01d2d74419e481c"
+    sha256 cellar: :any,                 arm64_sequoia:     "65a2aa7061b67d6e18055f3beb5269bbb80b52e201d48d7d7ac7cf504b4d2ac3"
+    sha256 cellar: :any,                 arm64_sonoma:      "ca6472d511ece4fc9e6f082f566c2cfa89032bb2b8f42442c3c8c587ed6c5394"
+    sha256 cellar: :any,                 sonoma:            "13ff4a381d5222689b00379c4953ff4de3ef00ab1a6ed107c51e2e6360c99b07"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "51dc0d5a51585b3abe21d9e45a9a913ef38b6de85f7fc89417ad7cf10434c341"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "78ba8588b6b519f5ae687b156c556c5951c7ae59cea47d70cc3021e0f9555673"
   end
 
   depends_on "cmake" => :build

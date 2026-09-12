@@ -7,12 +7,13 @@ class Sqlboiler < Formula
   head "https://github.com/aarondl/sqlboiler.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9da5bc117d6334b1e04bd17a1a5fcee72fb506aa0d7fd821b2ba79a3b579f9bc"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9da5bc117d6334b1e04bd17a1a5fcee72fb506aa0d7fd821b2ba79a3b579f9bc"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9da5bc117d6334b1e04bd17a1a5fcee72fb506aa0d7fd821b2ba79a3b579f9bc"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d1c5f8a9bb11ea5a4deff6ca86985d488647dd03978382912ba8bbf340fe69c4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e7d17c535299cdad709093d4dad12bde1b6b1a84b85f4517bfb927b97c6e6115"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "02355a4d2f91c2068f54cd28f5bf09e80b164c558bf943bf1111feca994a0eb7"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "a378b5054a4eb0751736d81406c2c2767207981bb072efc89a6c8761e0d1c5ec"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "9da5bc117d6334b1e04bd17a1a5fcee72fb506aa0d7fd821b2ba79a3b579f9bc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "9da5bc117d6334b1e04bd17a1a5fcee72fb506aa0d7fd821b2ba79a3b579f9bc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "9da5bc117d6334b1e04bd17a1a5fcee72fb506aa0d7fd821b2ba79a3b579f9bc"
+    sha256 cellar: :any_skip_relocation, sonoma:            "d1c5f8a9bb11ea5a4deff6ca86985d488647dd03978382912ba8bbf340fe69c4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "e7d17c535299cdad709093d4dad12bde1b6b1a84b85f4517bfb927b97c6e6115"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "02355a4d2f91c2068f54cd28f5bf09e80b164c558bf943bf1111feca994a0eb7"
   end
 
   depends_on "go" => :build

@@ -7,12 +7,13 @@ class Yo < Formula
   head "https://github.com/yeoman/yo.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5b7987d0debf1e8b671ef5e14dbf896466c1cd55baefdb61c803f43f36ebc103"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5b7987d0debf1e8b671ef5e14dbf896466c1cd55baefdb61c803f43f36ebc103"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5b7987d0debf1e8b671ef5e14dbf896466c1cd55baefdb61c803f43f36ebc103"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5b7987d0debf1e8b671ef5e14dbf896466c1cd55baefdb61c803f43f36ebc103"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ac90a9d6b066420569c8568fc7a06372c3bba0d5d97ec019edc139eca8753599"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ac90a9d6b066420569c8568fc7a06372c3bba0d5d97ec019edc139eca8753599"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "179037665e2c984c829ce615b5068764c90ad3972d4bca9a1fa48452e76b522f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "5b7987d0debf1e8b671ef5e14dbf896466c1cd55baefdb61c803f43f36ebc103"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "5b7987d0debf1e8b671ef5e14dbf896466c1cd55baefdb61c803f43f36ebc103"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "5b7987d0debf1e8b671ef5e14dbf896466c1cd55baefdb61c803f43f36ebc103"
+    sha256 cellar: :any_skip_relocation, sonoma:            "5b7987d0debf1e8b671ef5e14dbf896466c1cd55baefdb61c803f43f36ebc103"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "ac90a9d6b066420569c8568fc7a06372c3bba0d5d97ec019edc139eca8753599"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "ac90a9d6b066420569c8568fc7a06372c3bba0d5d97ec019edc139eca8753599"
   end
 
   depends_on "node"

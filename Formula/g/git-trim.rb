@@ -8,12 +8,13 @@ class GitTrim < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "c1a667c8d8f57a5a98f74f25c31b4a42c3e1a590a828d3bf15fb12610fa6c502"
-    sha256 cellar: :any,                 arm64_sequoia: "e6da3b71f915437663871a49da0908935c8c5d8f3482a8b03fbd469e3607c7b6"
-    sha256 cellar: :any,                 arm64_sonoma:  "5b21797251a5babcb06c7dfdf3ca3e22bf5911969f2432d14f1b133dccf8af8f"
-    sha256 cellar: :any,                 sonoma:        "2f46851b510f9951089a9166b0252f9802b0e7274dc493c0a44e296014fd8cee"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "eb6ad0313b09996c5057fa9d8c14c7ffada62ac91a635cc7eb7407eee01c9d44"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "aeeea3f5e9d35984a91e402d8e8c315b1806ab1ebcd5c13832d1a10dbbcdeab1"
+    sha256 cellar: :any,                 arm64_golden_gate: "65ae181195c67fc815496c76a092f08709fe7c10f71c1955c209fb4099ad7b6f"
+    sha256 cellar: :any,                 arm64_tahoe:       "c1a667c8d8f57a5a98f74f25c31b4a42c3e1a590a828d3bf15fb12610fa6c502"
+    sha256 cellar: :any,                 arm64_sequoia:     "e6da3b71f915437663871a49da0908935c8c5d8f3482a8b03fbd469e3607c7b6"
+    sha256 cellar: :any,                 arm64_sonoma:      "5b21797251a5babcb06c7dfdf3ca3e22bf5911969f2432d14f1b133dccf8af8f"
+    sha256 cellar: :any,                 sonoma:            "2f46851b510f9951089a9166b0252f9802b0e7274dc493c0a44e296014fd8cee"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "eb6ad0313b09996c5057fa9d8c14c7ffada62ac91a635cc7eb7407eee01c9d44"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "aeeea3f5e9d35984a91e402d8e8c315b1806ab1ebcd5c13832d1a10dbbcdeab1"
   end
 
   depends_on "pkgconf" => :build

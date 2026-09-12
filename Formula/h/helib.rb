@@ -7,12 +7,13 @@ class Helib < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "803815f7a62fe41c3af529f91c0c5dec64562c76a9ed3c3af559f666e554a0a3"
-    sha256 cellar: :any,                 arm64_sequoia: "f9bbc95593524143828d00e06eaea405c7721b737811f782cd7d906b21c2fa0b"
-    sha256 cellar: :any,                 arm64_sonoma:  "71661a64a50f6f5bcc7d4cb9f779141f5cfed6fcfbeb1193a21d18c545aa37bc"
-    sha256 cellar: :any,                 sonoma:        "9da3101e6e55c978f00a9fc877a13ba5289ea18857ac5fe8fba073003ae61601"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8c6145938664a747795370be1a28c3a06f586c02faf893053bd89c8507e47242"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e2f2e649e6834f35404942593f0ad42da062d8bbadd314f05570d72a14b0dc3a"
+    sha256 cellar: :any,                 arm64_golden_gate: "29b9ddeb27b891b3bdecdd03a60223c5b120b9f8d197386dc3ebff8006e4e4e9"
+    sha256 cellar: :any,                 arm64_tahoe:       "803815f7a62fe41c3af529f91c0c5dec64562c76a9ed3c3af559f666e554a0a3"
+    sha256 cellar: :any,                 arm64_sequoia:     "f9bbc95593524143828d00e06eaea405c7721b737811f782cd7d906b21c2fa0b"
+    sha256 cellar: :any,                 arm64_sonoma:      "71661a64a50f6f5bcc7d4cb9f779141f5cfed6fcfbeb1193a21d18c545aa37bc"
+    sha256 cellar: :any,                 sonoma:            "9da3101e6e55c978f00a9fc877a13ba5289ea18857ac5fe8fba073003ae61601"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "8c6145938664a747795370be1a28c3a06f586c02faf893053bd89c8507e47242"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "e2f2e649e6834f35404942593f0ad42da062d8bbadd314f05570d72a14b0dc3a"
   end
 
   depends_on "cmake" => :build

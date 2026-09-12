@@ -7,12 +7,13 @@ class Millet < Formula
   head "https://github.com/azdavis/millet.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ecd593350008c6e56cef1227b949472011e3a373ded1f177d120fff19c83f455"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "79e6cf5cbe43cd791c0e7d7b056d84f7ad2efd17d16244e0dc46b026ad3821b3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4cde2ae38e21fb8ac20e67807b869ae61e3e046001bb5f12fcdc129d3b4ba9a6"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ead9867137f148dfde3dde8b2ea9c995b0b8ea602d47f9c42544418ec97159a8"
-    sha256 cellar: :any,                 arm64_linux:   "76c1bee8d56109eeae4011b20288dc9d04bdab4ab79bb72902851e6f4e12d37f"
-    sha256 cellar: :any,                 x86_64_linux:  "c0a7daf887dc5a0aadfba3dff6f7108970f33fe4b99269019b1e2065a7cbc202"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "225e738b49bd9ae941bb3b5cfaee1fe9dd1d1d5bddfc1fb673fdbf9d4c4d0aaa"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "ecd593350008c6e56cef1227b949472011e3a373ded1f177d120fff19c83f455"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "79e6cf5cbe43cd791c0e7d7b056d84f7ad2efd17d16244e0dc46b026ad3821b3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "4cde2ae38e21fb8ac20e67807b869ae61e3e046001bb5f12fcdc129d3b4ba9a6"
+    sha256 cellar: :any_skip_relocation, sonoma:            "ead9867137f148dfde3dde8b2ea9c995b0b8ea602d47f9c42544418ec97159a8"
+    sha256 cellar: :any,                 arm64_linux:       "76c1bee8d56109eeae4011b20288dc9d04bdab4ab79bb72902851e6f4e12d37f"
+    sha256 cellar: :any,                 x86_64_linux:      "c0a7daf887dc5a0aadfba3dff6f7108970f33fe4b99269019b1e2065a7cbc202"
   end
 
   depends_on "rust" => :build

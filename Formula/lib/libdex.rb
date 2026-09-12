@@ -15,14 +15,15 @@ class Libdex < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "d74ef293c9daa90394d446acd3fb1342b15fecb7d4485e60d0216949c03877d7"
-    sha256 cellar: :any, arm64_sequoia: "6dd4afc7846c52e350c3592125feb9fe4dfb3b1436a76dc1a467fb0702783f85"
-    sha256 cellar: :any, arm64_sonoma:  "ccc42ce047c0f21b6834a26030b3fab14a562acf829fb3d2213eccaa6537d308"
-    sha256 cellar: :any, arm64_ventura: "5e7acdc4b9ba579acc34ef3bcddd9effa7321e687de33481194e752736e3802f"
-    sha256 cellar: :any, sonoma:        "e8c5f95abe69182953f873dd4be613052a7c5b765ef010fe772e8e7aeec84671"
-    sha256 cellar: :any, ventura:       "51b465184e5cc40d83bfe964f93c3e0962061abc8cb905abc580d83a51955f16"
-    sha256               arm64_linux:   "080cb4dad9402929fbd9a6120e0fea64886ca33cbb076eb01b7af53a50634a85"
-    sha256               x86_64_linux:  "c324d8bb769ca8a7efa4543c69dd6587813b53b66719b14e49598fb5ecb6747f"
+    sha256 cellar: :any, arm64_golden_gate: "73e3210b35819619cb44f8ab3fc9e52df2214d99da8cc743d24b889dc5b2c19e"
+    sha256 cellar: :any, arm64_tahoe:       "d74ef293c9daa90394d446acd3fb1342b15fecb7d4485e60d0216949c03877d7"
+    sha256 cellar: :any, arm64_sequoia:     "6dd4afc7846c52e350c3592125feb9fe4dfb3b1436a76dc1a467fb0702783f85"
+    sha256 cellar: :any, arm64_sonoma:      "ccc42ce047c0f21b6834a26030b3fab14a562acf829fb3d2213eccaa6537d308"
+    sha256 cellar: :any, arm64_ventura:     "5e7acdc4b9ba579acc34ef3bcddd9effa7321e687de33481194e752736e3802f"
+    sha256 cellar: :any, sonoma:            "e8c5f95abe69182953f873dd4be613052a7c5b765ef010fe772e8e7aeec84671"
+    sha256 cellar: :any, ventura:           "51b465184e5cc40d83bfe964f93c3e0962061abc8cb905abc580d83a51955f16"
+    sha256               arm64_linux:       "080cb4dad9402929fbd9a6120e0fea64886ca33cbb076eb01b7af53a50634a85"
+    sha256               x86_64_linux:      "c324d8bb769ca8a7efa4543c69dd6587813b53b66719b14e49598fb5ecb6747f"
   end
 
   depends_on "gobject-introspection" => :build

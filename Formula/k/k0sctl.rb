@@ -1,18 +1,17 @@
 class K0sctl < Formula
   desc "Bootstrapping and management tool for k0s clusters"
   homepage "https://github.com/k0sproject/k0sctl"
-  url "https://ghfast.top/https://github.com/k0sproject/k0sctl/archive/refs/tags/v0.32.2.tar.gz"
-  sha256 "0df9d24cd7a04b039c31ed641983c41a8b23cd26e17288c9cda099f4f271ba54"
+  url "https://ghfast.top/https://github.com/k0sproject/k0sctl/archive/refs/tags/v0.33.0.tar.gz"
+  sha256 "7e4e04ec24e2ba7376b8d4d03c1dd5c08955204c8b05ac6748787be23f25997d"
   license "Apache-2.0"
   head "https://github.com/k0sproject/k0sctl.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "678e0a0ea9bbabdc8a06906213d3b61dae9b63a60343589e3368102cda21be9a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "678e0a0ea9bbabdc8a06906213d3b61dae9b63a60343589e3368102cda21be9a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "678e0a0ea9bbabdc8a06906213d3b61dae9b63a60343589e3368102cda21be9a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d7a7b00924d5b7323c0b6c0b6b6a32bb77b6dc923cb2f76a61313cd94fa01034"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ebd332187befd5ce1ebf664f8f1a37427d682292a09dca97b1eeedb91b78aaef"
-    sha256 cellar: :any,                 x86_64_linux:  "5a0073932947e6af0f354ccee5a9d37b67db5970a9502a863fb6397ba06a3fc5"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "b8614ce05c9ccddaac127ad2715a6caf20d5794707a3df155dfb0451fbd6ba5e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "b8614ce05c9ccddaac127ad2715a6caf20d5794707a3df155dfb0451fbd6ba5e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "b8614ce05c9ccddaac127ad2715a6caf20d5794707a3df155dfb0451fbd6ba5e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "7d3d8cdb5c44fd065a251bfbbc7028d7d50f3c38cf88ffbc76a1f6f491fb1908"
+    sha256 cellar: :any,                 x86_64_linux:      "35922373692c858a7079bae8059d373e0d8de2455b71771105efdd902cbab674"
   end
 
   depends_on "go" => :build

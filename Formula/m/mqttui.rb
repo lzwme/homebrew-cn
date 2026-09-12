@@ -6,12 +6,13 @@ class Mqttui < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "63fc5e813bc6e2d15b0a303a97c4e85564518b0544b7e316e78baf1e1358b889"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "baa83e67d90b3d6c98a3dc1adeb5d2579c2a9943d802dd17b0c36c28c07e9548"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "403cec21c8be70b0f4604b230c15d1e85536f42a38c7bfbd394dc508b2261ef5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0adbd8538578615edfec23a56ca12c06a90d3c106456ba776adec82c43f6e278"
-    sha256 cellar: :any,                 arm64_linux:   "1593112b3dc6628198ad7b7f9d9e48c49b69464a1d36e98ab42f6337a9a7ca92"
-    sha256 cellar: :any,                 x86_64_linux:  "5f8f36cb8bdeb9c4e73ac0c185850e7f785e15b1ca2f8540f52d83f83a265545"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "673cdabe5d9addcc6fe5b081512d6bca6cf2228b45a49ff09b2dd0d17d8ce577"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "63fc5e813bc6e2d15b0a303a97c4e85564518b0544b7e316e78baf1e1358b889"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "baa83e67d90b3d6c98a3dc1adeb5d2579c2a9943d802dd17b0c36c28c07e9548"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "403cec21c8be70b0f4604b230c15d1e85536f42a38c7bfbd394dc508b2261ef5"
+    sha256 cellar: :any_skip_relocation, sonoma:            "0adbd8538578615edfec23a56ca12c06a90d3c106456ba776adec82c43f6e278"
+    sha256 cellar: :any,                 arm64_linux:       "1593112b3dc6628198ad7b7f9d9e48c49b69464a1d36e98ab42f6337a9a7ca92"
+    sha256 cellar: :any,                 x86_64_linux:      "5f8f36cb8bdeb9c4e73ac0c185850e7f785e15b1ca2f8540f52d83f83a265545"
   end
 
   depends_on "rust" => :build

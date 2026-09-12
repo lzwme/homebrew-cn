@@ -11,12 +11,13 @@ class Magics < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "d97dd29284c76815166bc14455cb3cb8e632c0e0baa506715dce9a648cb1dd9e"
-    sha256 arm64_sequoia: "3a44777454a3ed970b418a318828f1617aee0b863b3e88d5b00cd85f23cd0a4d"
-    sha256 arm64_sonoma:  "20b9f86a68b2df6407de5262d460c300b44fa19e622c9f8a153e1e2b2b6bc339"
-    sha256 sonoma:        "903a82a21a78ad2fbf7189fefd109e9363a7b6689ec55f6460814964b7d4f399"
-    sha256 arm64_linux:   "eccc585bf2056c1bf6483375a1519520fde37c534ebd1678082ecec54ae7eaa2"
-    sha256 x86_64_linux:  "e8ee8092b3c51fd47df8d62ed2929caca696eaca01e9c4696ef41ab26ac9d271"
+    sha256 arm64_golden_gate: "3ba920399fb143f14adb38cff9f8c5ff2c9e92d036a33b8aada7608f7f61c903"
+    sha256 arm64_tahoe:       "d97dd29284c76815166bc14455cb3cb8e632c0e0baa506715dce9a648cb1dd9e"
+    sha256 arm64_sequoia:     "3a44777454a3ed970b418a318828f1617aee0b863b3e88d5b00cd85f23cd0a4d"
+    sha256 arm64_sonoma:      "20b9f86a68b2df6407de5262d460c300b44fa19e622c9f8a153e1e2b2b6bc339"
+    sha256 sonoma:            "903a82a21a78ad2fbf7189fefd109e9363a7b6689ec55f6460814964b7d4f399"
+    sha256 arm64_linux:       "eccc585bf2056c1bf6483375a1519520fde37c534ebd1678082ecec54ae7eaa2"
+    sha256 x86_64_linux:      "e8ee8092b3c51fd47df8d62ed2929caca696eaca01e9c4696ef41ab26ac9d271"
   end
 
   depends_on "cmake" => :build

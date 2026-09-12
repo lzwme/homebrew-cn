@@ -7,14 +7,15 @@ class Kdoctor < Formula
   head "https://github.com/Kotlin/kdoctor.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "2920f1f61486ab85236383e1ea160b405a2132ec97b54d690bedc0737459fc54"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "e41df6918eb2c57cc4b16ef1687fb7c1aac3907e93613c166921d00993432ffa"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ae7b5e68925f38cb7ba4dbe3503da29bffa7b863afb2062cc1bd08b3ed119627"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2bb2c0149a4c88f6e80b7431d5a2bb8a4552a36524127976091655a678cccdd4"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "243b8e7f3d9e352eea87a69763ae977a27fd109bbd3d092190ce8080d469f70b"
-    sha256 cellar: :any_skip_relocation, sonoma:         "1109e4a03e28acc679a4816ae81348af33609ed2304d2fed74d8b331e58b4601"
-    sha256 cellar: :any_skip_relocation, ventura:        "a83d0b999afc56ea71f884bf7d23e54cd5b96d5b8ce13e1183fd16616510a0a7"
-    sha256 cellar: :any_skip_relocation, monterey:       "e2ad6b016b9f6ca3904aa6a08c2b98f873836f7b55dfe22706b6657e2a480002"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "73c475ea5ae97ff331e90357cd278fe9f75853f07fa6af9b502b8a09cc682556"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "2920f1f61486ab85236383e1ea160b405a2132ec97b54d690bedc0737459fc54"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "e41df6918eb2c57cc4b16ef1687fb7c1aac3907e93613c166921d00993432ffa"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "ae7b5e68925f38cb7ba4dbe3503da29bffa7b863afb2062cc1bd08b3ed119627"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:     "2bb2c0149a4c88f6e80b7431d5a2bb8a4552a36524127976091655a678cccdd4"
+    sha256 cellar: :any_skip_relocation, arm64_monterey:    "243b8e7f3d9e352eea87a69763ae977a27fd109bbd3d092190ce8080d469f70b"
+    sha256 cellar: :any_skip_relocation, sonoma:            "1109e4a03e28acc679a4816ae81348af33609ed2304d2fed74d8b331e58b4601"
+    sha256 cellar: :any_skip_relocation, ventura:           "a83d0b999afc56ea71f884bf7d23e54cd5b96d5b8ce13e1183fd16616510a0a7"
+    sha256 cellar: :any_skip_relocation, monterey:          "e2ad6b016b9f6ca3904aa6a08c2b98f873836f7b55dfe22706b6657e2a480002"
   end
 
   # Issue ref: https://youtrack.jetbrains.com/issue/KMT-1702/kdoctor-build-with-gradle-v9

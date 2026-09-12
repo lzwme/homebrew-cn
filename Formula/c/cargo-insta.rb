@@ -6,12 +6,13 @@ class CargoInsta < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b48fff37f4381671d507159a9cd4122857d3ba888fa8c6dc17b925cdb5341174"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1d6a9055ddbc17aae68feece40ace6a57be0677fcbcdd6339cb0d9d55b49bd56"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4b17ad755ae64ce2ca35e18362ba9e123931668347d01fed461c94bf77e31ab9"
-    sha256 cellar: :any_skip_relocation, sonoma:        "bbc9eb83989f9f6e98744b16424d2d042162a8a303b272cfd63d8ac7f60b7fb0"
-    sha256 cellar: :any,                 arm64_linux:   "9fdaaa8b6a695e3535361b5870138c878ef5a91f20c0bd2e6aca03ec0780c272"
-    sha256 cellar: :any,                 x86_64_linux:  "3360339dadaff05b5f0d9de7df6868e952f823cc8ddfa38942d44e544746bda8"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "2b7aab9a552748a9a43ae149c6ad7b00b6795c78839d5c39eca9958e99c23f47"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "b48fff37f4381671d507159a9cd4122857d3ba888fa8c6dc17b925cdb5341174"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "1d6a9055ddbc17aae68feece40ace6a57be0677fcbcdd6339cb0d9d55b49bd56"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "4b17ad755ae64ce2ca35e18362ba9e123931668347d01fed461c94bf77e31ab9"
+    sha256 cellar: :any_skip_relocation, sonoma:            "bbc9eb83989f9f6e98744b16424d2d042162a8a303b272cfd63d8ac7f60b7fb0"
+    sha256 cellar: :any,                 arm64_linux:       "9fdaaa8b6a695e3535361b5870138c878ef5a91f20c0bd2e6aca03ec0780c272"
+    sha256 cellar: :any,                 x86_64_linux:      "3360339dadaff05b5f0d9de7df6868e952f823cc8ddfa38942d44e544746bda8"
   end
 
   depends_on "rust" => :build
@@ -26,7 +27,7 @@ class CargoInsta < Formula
 
     # Show that we can use a different toolchain than the one provided by the `rust` formula.
     # https://github.com/Homebrew/homebrew-core/pull/134074#pullrequestreview-1484979359
-    ENV.prepend_path "PATH", Formula["rustup"].bin
+    ENV.prepend_path "PATH", formula_opt_bin("rustup")
     # Switch the default toolchain to nightly
     system "rustup", "default", "nightly"
     system "rustup", "set", "profile", "minimal"

@@ -8,12 +8,13 @@ class Pngnq < Formula
 
   bottle do
     rebuild 2
-    sha256 cellar: :any,                 arm64_tahoe:   "2620068d9fc38a44ae6f531bf96c375f66ada13346305f21ca928ef23746c2c7"
-    sha256 cellar: :any,                 arm64_sequoia: "22e6dab5a0b73dc8ccb43b7e5c6fac16e697dacaf1e719ce53b3a7b74b9db9a7"
-    sha256 cellar: :any,                 arm64_sonoma:  "90211658315c738ea4db4aee3a10b2600e513ee62da4e8b94c4465dfa71d1a33"
-    sha256 cellar: :any,                 sonoma:        "a705de8c00c50759ad33d85f92bf005882b37b681d97451290ec6b4677993c55"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c249a8d67736f14b8d2e3353e9ab37df8c64a57f5f741e93964a5f4fb50e073f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c299814b5e7a395acdc6ee57591bbcbff32a0ff32a46041cbb6706832151bc78"
+    sha256 cellar: :any,                 arm64_golden_gate: "01bd0ae0344f93cd5e27dde73260a1fea3d0575fdee8b743324050cbc2475d29"
+    sha256 cellar: :any,                 arm64_tahoe:       "2620068d9fc38a44ae6f531bf96c375f66ada13346305f21ca928ef23746c2c7"
+    sha256 cellar: :any,                 arm64_sequoia:     "22e6dab5a0b73dc8ccb43b7e5c6fac16e697dacaf1e719ce53b3a7b74b9db9a7"
+    sha256 cellar: :any,                 arm64_sonoma:      "90211658315c738ea4db4aee3a10b2600e513ee62da4e8b94c4465dfa71d1a33"
+    sha256 cellar: :any,                 sonoma:            "a705de8c00c50759ad33d85f92bf005882b37b681d97451290ec6b4677993c55"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "c249a8d67736f14b8d2e3353e9ab37df8c64a57f5f741e93964a5f4fb50e073f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "c299814b5e7a395acdc6ee57591bbcbff32a0ff32a46041cbb6706832151bc78"
   end
 
   depends_on "pkgconf" => :build
