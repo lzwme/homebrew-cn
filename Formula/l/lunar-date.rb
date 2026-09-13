@@ -6,12 +6,13 @@ class LunarDate < Formula
   license "LGPL-2.1-or-later"
 
   bottle do
-    sha256 arm64_tahoe:   "005e5459270f8efeecc47feb44febaba493feb7ec70e22b612cf83e76205bac7"
-    sha256 arm64_sequoia: "1aeae6259aafeb0cc9e04a470aaa1b2a1ffba3af02298b15f671f2df01c76399"
-    sha256 arm64_sonoma:  "216d31cd16d53bb596845c8f1b163e362f9ad6f5a79415c52efe3569b76384a3"
-    sha256 sonoma:        "a9e331ff9b9f2798d5ac4d7ff2d6677a5b340c68f0283e262dffe5ade0cd5a87"
-    sha256 arm64_linux:   "4d9617dc518794123f349cf741c246d0d531429bf1e89c21cc25e568a3463462"
-    sha256 x86_64_linux:  "c1af9894bed16824ff54efccdf76e700c335e3ae1a6f949d9dce419ad7fb9028"
+    sha256 arm64_golden_gate: "9d181139553cd1994b0398c659edd6cfd193cc6fc2b322074e8ab17d12d498ce"
+    sha256 arm64_tahoe:       "005e5459270f8efeecc47feb44febaba493feb7ec70e22b612cf83e76205bac7"
+    sha256 arm64_sequoia:     "1aeae6259aafeb0cc9e04a470aaa1b2a1ffba3af02298b15f671f2df01c76399"
+    sha256 arm64_sonoma:      "216d31cd16d53bb596845c8f1b163e362f9ad6f5a79415c52efe3569b76384a3"
+    sha256 sonoma:            "a9e331ff9b9f2798d5ac4d7ff2d6677a5b340c68f0283e262dffe5ade0cd5a87"
+    sha256 arm64_linux:       "4d9617dc518794123f349cf741c246d0d531429bf1e89c21cc25e568a3463462"
+    sha256 x86_64_linux:      "c1af9894bed16824ff54efccdf76e700c335e3ae1a6f949d9dce419ad7fb9028"
   end
 
   depends_on "meson" => :build

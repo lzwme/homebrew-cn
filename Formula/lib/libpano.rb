@@ -13,12 +13,13 @@ class Libpano < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "bed5e7b25e2109ea77ea76567c3197f60752d2e866aefaf18ac4ddf2c248cce4"
-    sha256 cellar: :any,                 arm64_sequoia: "a4d99700b3f78d2d2127aa44af61277d21aa9af993af1561bf37d8709391480e"
-    sha256 cellar: :any,                 arm64_sonoma:  "a98362bc2e1df8ab509bf95808ec9b06478231620ea1643388dd50dac292206e"
-    sha256 cellar: :any,                 sonoma:        "eb39a8e4827912f36aa9693b13dd0ed1f588c98f3a37112ab85977569c9aabe4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0a42aea9bc8bd4019a965019b13c7147670db0b28780e31105dd2ddc68e9dbec"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f128fb8a847e170a59c01964478ae7f141ae3be4683a26a3f008366376ac28b6"
+    sha256 cellar: :any,                 arm64_golden_gate: "6bc994ced20ad908faf1d4e890dcd8d8d01ab4cc2126c4eec4e90771bc31bb06"
+    sha256 cellar: :any,                 arm64_tahoe:       "bed5e7b25e2109ea77ea76567c3197f60752d2e866aefaf18ac4ddf2c248cce4"
+    sha256 cellar: :any,                 arm64_sequoia:     "a4d99700b3f78d2d2127aa44af61277d21aa9af993af1561bf37d8709391480e"
+    sha256 cellar: :any,                 arm64_sonoma:      "a98362bc2e1df8ab509bf95808ec9b06478231620ea1643388dd50dac292206e"
+    sha256 cellar: :any,                 sonoma:            "eb39a8e4827912f36aa9693b13dd0ed1f588c98f3a37112ab85977569c9aabe4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "0a42aea9bc8bd4019a965019b13c7147670db0b28780e31105dd2ddc68e9dbec"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "f128fb8a847e170a59c01964478ae7f141ae3be4683a26a3f008366376ac28b6"
   end
 
   depends_on "cmake" => :build

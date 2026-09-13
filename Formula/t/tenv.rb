@@ -30,6 +30,13 @@ class Tenv < Formula
   conflicts_with "tfenv", because: "tfenv symlinks terraform binaries"
   conflicts_with "tgenv", because: "tgenv symlinks terragrunt binaries"
 
+  # `test do` block queries GitHub releases
+  deny_network_access! [:build, :postinstall]
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ENV["CGO_ENABLED"] = "0"
     ldflags = "-X main.version=#{version}"

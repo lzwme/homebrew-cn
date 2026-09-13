@@ -14,12 +14,13 @@ class Gtk4 < Formula
 
   bottle do
     rebuild 1
-    sha256 arm64_tahoe:   "a94ac6fd1d2be90bf6ec253ab513421b37a27fca1b37b167ae483eedf7298998"
-    sha256 arm64_sequoia: "3664803b3abc282ba6226df952cf07d46f5f7f0c62be302cac03a0f69d22270b"
-    sha256 arm64_sonoma:  "4f743664c8da8222805293fd4e57e9de829fd271401da04bf232ad86ebba63e1"
-    sha256 sonoma:        "feac21bdf3f9625e7ee42e7e2398ad4c07a37c0b3d976aab6365ad4c0d5aaf17"
-    sha256 arm64_linux:   "02d0eefc90a863e4bac1cf32ea5f9392597da49efcecdacac8e27faeabc78830"
-    sha256 x86_64_linux:  "f16a8f7dea7cb1e0d9f17ee1d67fefa3867f50ba72e0fc31aef5581e70baa0df"
+    sha256 arm64_golden_gate: "998dcc04ba37eab51fb1578b5892718dc3ed229b712612353f198ddae30cfd77"
+    sha256 arm64_tahoe:       "a94ac6fd1d2be90bf6ec253ab513421b37a27fca1b37b167ae483eedf7298998"
+    sha256 arm64_sequoia:     "3664803b3abc282ba6226df952cf07d46f5f7f0c62be302cac03a0f69d22270b"
+    sha256 arm64_sonoma:      "4f743664c8da8222805293fd4e57e9de829fd271401da04bf232ad86ebba63e1"
+    sha256 sonoma:            "feac21bdf3f9625e7ee42e7e2398ad4c07a37c0b3d976aab6365ad4c0d5aaf17"
+    sha256 arm64_linux:       "02d0eefc90a863e4bac1cf32ea5f9392597da49efcecdacac8e27faeabc78830"
+    sha256 x86_64_linux:      "f16a8f7dea7cb1e0d9f17ee1d67fefa3867f50ba72e0fc31aef5581e70baa0df"
   end
 
   depends_on "dart-sass" => :build

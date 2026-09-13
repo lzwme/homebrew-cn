@@ -7,14 +7,15 @@ class Rex < Formula
   revision 2
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "51ee814ebc7ac1e43048122830b94485875cb64390ba335931093839b40e29e9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "51ee814ebc7ac1e43048122830b94485875cb64390ba335931093839b40e29e9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "51ee814ebc7ac1e43048122830b94485875cb64390ba335931093839b40e29e9"
-    sha256 cellar: :any_skip_relocation, tahoe:         "b8a3b23da369a07cadde23b9727cb897d4ed467af1411664e21f709e0d4e7360"
-    sha256 cellar: :any_skip_relocation, sequoia:       "b8a3b23da369a07cadde23b9727cb897d4ed467af1411664e21f709e0d4e7360"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b8a3b23da369a07cadde23b9727cb897d4ed467af1411664e21f709e0d4e7360"
-    sha256 cellar: :any,                 arm64_linux:   "78b579fe4dc088f7484738080827d7c4789b21a09c7cc11fb579ff7acd50c103"
-    sha256 cellar: :any,                 x86_64_linux:  "2d5a8f1cf9b648238115bfecd0b56a535332f5df036b3a7c2d6b839dd5da424a"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "1a48bbb4988161adf12f284c3108c501827f7390b34e5c83f18e365f6e6cb419"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "51ee814ebc7ac1e43048122830b94485875cb64390ba335931093839b40e29e9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "51ee814ebc7ac1e43048122830b94485875cb64390ba335931093839b40e29e9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "51ee814ebc7ac1e43048122830b94485875cb64390ba335931093839b40e29e9"
+    sha256 cellar: :any_skip_relocation, tahoe:             "b8a3b23da369a07cadde23b9727cb897d4ed467af1411664e21f709e0d4e7360"
+    sha256 cellar: :any_skip_relocation, sequoia:           "b8a3b23da369a07cadde23b9727cb897d4ed467af1411664e21f709e0d4e7360"
+    sha256 cellar: :any_skip_relocation, sonoma:            "b8a3b23da369a07cadde23b9727cb897d4ed467af1411664e21f709e0d4e7360"
+    sha256 cellar: :any,                 arm64_linux:       "78b579fe4dc088f7484738080827d7c4789b21a09c7cc11fb579ff7acd50c103"
+    sha256 cellar: :any,                 x86_64_linux:      "2d5a8f1cf9b648238115bfecd0b56a535332f5df036b3a7c2d6b839dd5da424a"
   end
 
   uses_from_macos "expat"

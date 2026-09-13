@@ -7,12 +7,13 @@ class ClangFormatAT11 < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b1923e76a7a7db381a5aeec33e8b36b58dbc1894ed430bb0c0d2030b23351466"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "80badd34294c905914f5525552db99369edbeb249d6ef7ca418d9df12988acf1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1d0b218f548e745af34b0652e5032bd6a526f36ce5e087fa907ea4d14700ebce"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8cf417694a7860c8b13c14fbcb0c85734e909769a376a16af6af60c8ae85c4e7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9cd3b2638563b5d8b649bd25f641713494eaca6117557f5c02e3eadb214e425c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3c8221c67cd82366a807f2efed7dc2e1d927e4865e6f2d06d8bec74089e30efd"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "dfa7a7c3766ec1814a16f9f4a6ecc4fb134f4e1c525689f78d84d1af4572586b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "b1923e76a7a7db381a5aeec33e8b36b58dbc1894ed430bb0c0d2030b23351466"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "80badd34294c905914f5525552db99369edbeb249d6ef7ca418d9df12988acf1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "1d0b218f548e745af34b0652e5032bd6a526f36ce5e087fa907ea4d14700ebce"
+    sha256 cellar: :any_skip_relocation, sonoma:            "8cf417694a7860c8b13c14fbcb0c85734e909769a376a16af6af60c8ae85c4e7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "9cd3b2638563b5d8b649bd25f641713494eaca6117557f5c02e3eadb214e425c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "3c8221c67cd82366a807f2efed7dc2e1d927e4865e6f2d06d8bec74089e30efd"
   end
 
   deprecate! date: "2026-02-18", because: :unmaintained, replacement_formula: "clang-format"

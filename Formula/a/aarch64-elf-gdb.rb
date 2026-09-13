@@ -82,7 +82,7 @@ class Aarch64ElfGdb < Formula
 
   test do
     (testpath/"test.c").write "void _start(void) {}"
-    system "#{Formula["aarch64-elf-gcc"].bin}/aarch64-elf-gcc", "-g", "-nostdlib", "test.c"
+    system "#{formula_opt_bin("aarch64-elf-gcc")}/aarch64-elf-gcc", "-g", "-nostdlib", "test.c"
     assert_match "Symbol \"_start\" is a function at address 0x",
           shell_output("#{bin}/aarch64-elf-gdb -batch -ex 'info address _start' a.out")
   end

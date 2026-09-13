@@ -7,14 +7,22 @@ class Croc < Formula
   head "https://github.com/schollz/croc.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b871ef0aa22dad8b384332c1270cf8f8812722d49d6e5dad3293ac3b2bbbc2b2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "358403b0e500576fd6dac87aff40ad8a88f17ca19d5d43f07265f35b70a34ecb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0a64f87ee1c5e5d73c6fc9012b0f106b2e8d5b2d1e1c29a619ede8d08a6356b8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3827af789c8c7692bdd3bfafc0d85a11c2f56dbe76a0c3a56af9f7bd92083322"
-    sha256 cellar: :any,                 x86_64_linux:  "8b7de69b7e87d49e6d104b9bd73aafcec9eb6c62a1b2ad11f59e091c35445cf6"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "91da297f178fd746dce5731dc03e6cd8006e9bba4430e028a6819737eee4dd9d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "b871ef0aa22dad8b384332c1270cf8f8812722d49d6e5dad3293ac3b2bbbc2b2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "358403b0e500576fd6dac87aff40ad8a88f17ca19d5d43f07265f35b70a34ecb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "0a64f87ee1c5e5d73c6fc9012b0f106b2e8d5b2d1e1c29a619ede8d08a6356b8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "3827af789c8c7692bdd3bfafc0d85a11c2f56dbe76a0c3a56af9f7bd92083322"
+    sha256 cellar: :any,                 x86_64_linux:      "8b7de69b7e87d49e6d104b9bd73aafcec9eb6c62a1b2ad11f59e091c35445cf6"
   end
 
   depends_on "go" => :build
+
+  # `test do` block runs a local relay
+  deny_network_access! [:build, :postinstall]
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     system "go", "build", *std_go_args

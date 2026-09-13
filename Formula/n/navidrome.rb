@@ -1,18 +1,17 @@
 class Navidrome < Formula
   desc "Modern Music Server and Streamer compatible with Subsonic/Airsonic"
   homepage "https://www.navidrome.org"
-  url "https://ghfast.top/https://github.com/navidrome/navidrome/archive/refs/tags/v0.63.2.tar.gz"
-  sha256 "a2602f00b429325f37efedba5e67918269f5ad2687266629dad23b740135cd4c"
+  url "https://ghfast.top/https://github.com/navidrome/navidrome/archive/refs/tags/v0.64.0.tar.gz"
+  sha256 "0f395ee2672d32eed9da9ad6b16ec21d1a270d3ba5299fd638ddca237db5fa4c"
   license "GPL-3.0-only"
   head "https://github.com/navidrome/navidrome.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f6a5c34510a05cfc77c69946557413d9fd17a912ae629f280f51a99dba94f17e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "224fd0685025a711555dd52a7aebdff54d0f05bb2e79879b0c41f013132caf41"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c471eb99460303cd65f5ee390738c2fea71ddd46dd93b1efd9b53426c962b6df"
-    sha256 cellar: :any_skip_relocation, sonoma:        "dc4cab18aa31487a00f147808d4b41f45d17a46c004b7c8936d2ee89a9501e0a"
-    sha256 cellar: :any,                 arm64_linux:   "de010186ef07469d275ddcd9668731b4627b88363c3db39b69ac3a626935e0d0"
-    sha256 cellar: :any,                 x86_64_linux:  "f41af6129a9f714e99b7e17c852ca17f7e23c050b7401a0e920a62deb965c162"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "07fa928a0933be79b8252668eb94735f40c7da169130f8c3856f619d6bab679c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "0ac8fa8b4ccdfcfbc35f8b6a78bc75665804a13d1ab377038f354d1315dce51c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "d916c58b6878bf3fdd34dd83033ffabc9e3b3190def468fa6cd80c9fb560cf92"
+    sha256 cellar: :any,                 arm64_linux:       "d00f536ff47bbc9f8c69728758e22992fedd1943082add4108e0b06aa91f4410"
+    sha256 cellar: :any,                 x86_64_linux:      "b585894984028fe847896b525e595c1b6bd891696828aae8b8850254a1d7f99c"
   end
 
   depends_on "go" => :build

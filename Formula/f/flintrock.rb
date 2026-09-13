@@ -9,12 +9,13 @@ class Flintrock < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "1561728f5ee680f1cf1f42eef3667cdddba8800903c8b9a68c1d8f341d2a8c0f"
-    sha256 cellar: :any,                 arm64_sequoia: "3189349906f04737772d0b1acb6f4a523b5430b65271626778f07e1d8d9c94f6"
-    sha256 cellar: :any,                 arm64_sonoma:  "148986f12dd15e824c46d2251521e19b6a5e19d9ee0eadf027ab692fb3f5183b"
-    sha256 cellar: :any,                 sonoma:        "e5d6aff8a0895ff834f6e74bbb1ef9166120566d264166fa339a1d6ef2d11f90"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c57d22478c82da7ea46b9b3f7b11315a9f7decb7862e557bb24214efe141ec45"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "17ac5368bc13e842cb4b2649cf2872c3d75a7c2c47e3f29c3db2c8cd63cb7416"
+    sha256 cellar: :any,                 arm64_golden_gate: "068261fc603755260c47e3395b992593d3222fd8c1688f6b20483c493b15e2e2"
+    sha256 cellar: :any,                 arm64_tahoe:       "1561728f5ee680f1cf1f42eef3667cdddba8800903c8b9a68c1d8f341d2a8c0f"
+    sha256 cellar: :any,                 arm64_sequoia:     "3189349906f04737772d0b1acb6f4a523b5430b65271626778f07e1d8d9c94f6"
+    sha256 cellar: :any,                 arm64_sonoma:      "148986f12dd15e824c46d2251521e19b6a5e19d9ee0eadf027ab692fb3f5183b"
+    sha256 cellar: :any,                 sonoma:            "e5d6aff8a0895ff834f6e74bbb1ef9166120566d264166fa339a1d6ef2d11f90"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "c57d22478c82da7ea46b9b3f7b11315a9f7decb7862e557bb24214efe141ec45"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "17ac5368bc13e842cb4b2649cf2872c3d75a7c2c47e3f29c3db2c8cd63cb7416"
   end
 
   # `pkgconf` and `rust` are for bcrypt

@@ -7,12 +7,13 @@ class Skani < Formula
   head "https://github.com/bluenote-1577/skani.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "137e39a846e64d1a17d0a02714910e1ce05d554ec9cdfc229700271db407ec41"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3d43f0b4c13a9a4afd313c37eb93c2b89e164e2176678715e35383231d636033"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3e50a575e21c93500424351eae6562bc74a98666231c31b7763391f6220c6db5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "71e1da005539c47dc3910cced0e526cc025c8b8beb170e6822e1182109f14b52"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "638ff917ed6a9482d53e412ef5930fd687282dad76fcddf617edf5673ddb2040"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "172570f197be852d7b640de7b4cecf3250b7bc148d8042cca84a91608f4af933"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "62c06aafdf17068fabd0693f0bf17e5430b4021943f50b80ab75e57188b5d0b1"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "137e39a846e64d1a17d0a02714910e1ce05d554ec9cdfc229700271db407ec41"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "3d43f0b4c13a9a4afd313c37eb93c2b89e164e2176678715e35383231d636033"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "3e50a575e21c93500424351eae6562bc74a98666231c31b7763391f6220c6db5"
+    sha256 cellar: :any_skip_relocation, sonoma:            "71e1da005539c47dc3910cced0e526cc025c8b8beb170e6822e1182109f14b52"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "638ff917ed6a9482d53e412ef5930fd687282dad76fcddf617edf5673ddb2040"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "172570f197be852d7b640de7b4cecf3250b7bc148d8042cca84a91608f4af933"
   end
 
   depends_on "rust" => :build

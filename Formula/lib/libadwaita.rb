@@ -16,12 +16,13 @@ class Libadwaita < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "c080b1c761ef41b8e5d91bd261577de52d22c1a79b865a44172afc1ebd42816e"
-    sha256 arm64_sequoia: "534de899d272a70daf886ed375ef21946154f128cabfbff4b8b97af93834ba16"
-    sha256 arm64_sonoma:  "33dd7bc157069883664ebf2b3de6eea4918b3857d6a0d04c26a5fbcfacac584e"
-    sha256 sonoma:        "7f3c3aaa8a7b006216f11639741215c87b68dc30d01c113d60e0d18f2dcf93c8"
-    sha256 arm64_linux:   "e249b9c2b3f3671853040092dd286900cd1f7b78f3f5f5b013dad23283444c1c"
-    sha256 x86_64_linux:  "5fa5e2ba1e86b6a3ee66a9f2ef57c92331de78be310debf3c12300911c568923"
+    sha256 arm64_golden_gate: "2d8b628ca30eb80f73400191bb78774c4463cf644b7944206d3a8336f663e9d1"
+    sha256 arm64_tahoe:       "c080b1c761ef41b8e5d91bd261577de52d22c1a79b865a44172afc1ebd42816e"
+    sha256 arm64_sequoia:     "534de899d272a70daf886ed375ef21946154f128cabfbff4b8b97af93834ba16"
+    sha256 arm64_sonoma:      "33dd7bc157069883664ebf2b3de6eea4918b3857d6a0d04c26a5fbcfacac584e"
+    sha256 sonoma:            "7f3c3aaa8a7b006216f11639741215c87b68dc30d01c113d60e0d18f2dcf93c8"
+    sha256 arm64_linux:       "e249b9c2b3f3671853040092dd286900cd1f7b78f3f5f5b013dad23283444c1c"
+    sha256 x86_64_linux:      "5fa5e2ba1e86b6a3ee66a9f2ef57c92331de78be310debf3c12300911c568923"
   end
 
   depends_on "dart-sass" => :build

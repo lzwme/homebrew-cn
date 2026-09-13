@@ -44,7 +44,7 @@ class Frege < Formula
           println (greeting "World")
     EOS
     system bin/"fregec", "-d", testpath, "test.fr"
-    output = shell_output "#{Formula["openjdk"].bin}/java -Xss1m -cp #{testpath}:#{libexec}/frege#{version}.jar Hello"
+    output = shell_output "#{formula_opt_bin("openjdk")}/java -Xss1m -cp #{testpath}:#{libexec}/frege#{version}.jar Hello"
     assert_equal "Hello, World!\n", output
   end
 end

@@ -8,12 +8,13 @@ class Movgrab < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "906cf4a9106e0dbdc98f73e43412b095779cb620a8ea9b4a770b3d6c0fe71cc3"
-    sha256 cellar: :any,                 arm64_sequoia: "7759f5a72c8d8402841e25d3a35ef5f985ce7f41911767582179935d0bf40b0b"
-    sha256 cellar: :any,                 arm64_sonoma:  "e4a8f1dc0f536a8d96f842f4b285d36ec8b5dc7526617deb623598c3a43262bf"
-    sha256 cellar: :any,                 sonoma:        "9877cdc87f7efe12b097c0301614934ea999895fc2b4238564bc48730b92dc46"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5e8f4bcd11c7f2a24c9f0f4b6e8c07046643b01a516b8e11b07f3a54d653545b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3bd514f0b8349b7a15da7d9c28d64a2a8eaba6f16bdd36beb1aaa449f9b68088"
+    sha256 cellar: :any,                 arm64_golden_gate: "560772dd353ed4886d7b4254045f03fd22fc30fb3c62e9d4de747ead5a9fd2a0"
+    sha256 cellar: :any,                 arm64_tahoe:       "906cf4a9106e0dbdc98f73e43412b095779cb620a8ea9b4a770b3d6c0fe71cc3"
+    sha256 cellar: :any,                 arm64_sequoia:     "7759f5a72c8d8402841e25d3a35ef5f985ce7f41911767582179935d0bf40b0b"
+    sha256 cellar: :any,                 arm64_sonoma:      "e4a8f1dc0f536a8d96f842f4b285d36ec8b5dc7526617deb623598c3a43262bf"
+    sha256 cellar: :any,                 sonoma:            "9877cdc87f7efe12b097c0301614934ea999895fc2b4238564bc48730b92dc46"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "5e8f4bcd11c7f2a24c9f0f4b6e8c07046643b01a516b8e11b07f3a54d653545b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "3bd514f0b8349b7a15da7d9c28d64a2a8eaba6f16bdd36beb1aaa449f9b68088"
   end
 
   # Last release on 2017-07-19 and upstream consider projects abandoned:

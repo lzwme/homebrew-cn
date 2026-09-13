@@ -8,12 +8,13 @@ class Lolcat < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bf9d988ab99f1d86813542accde8feeb4e0119aacd845cb5f3332403cffa650b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bf9d988ab99f1d86813542accde8feeb4e0119aacd845cb5f3332403cffa650b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bf9d988ab99f1d86813542accde8feeb4e0119aacd845cb5f3332403cffa650b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "bf9d988ab99f1d86813542accde8feeb4e0119aacd845cb5f3332403cffa650b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d8c14b75e4a2b70937644b519acbea6e78efbff61c1eea3f43902741f160a0bd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d8c14b75e4a2b70937644b519acbea6e78efbff61c1eea3f43902741f160a0bd"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "85511054bd23c54e89bdb5dd1bffab15424cbdfc9caadfb2374138d2d447f40a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "bf9d988ab99f1d86813542accde8feeb4e0119aacd845cb5f3332403cffa650b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "bf9d988ab99f1d86813542accde8feeb4e0119aacd845cb5f3332403cffa650b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "bf9d988ab99f1d86813542accde8feeb4e0119aacd845cb5f3332403cffa650b"
+    sha256 cellar: :any_skip_relocation, sonoma:            "bf9d988ab99f1d86813542accde8feeb4e0119aacd845cb5f3332403cffa650b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "d8c14b75e4a2b70937644b519acbea6e78efbff61c1eea3f43902741f160a0bd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "d8c14b75e4a2b70937644b519acbea6e78efbff61c1eea3f43902741f160a0bd"
   end
 
   depends_on "ruby"

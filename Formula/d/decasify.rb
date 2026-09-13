@@ -6,12 +6,13 @@ class Decasify < Formula
   license "LGPL-3.0-only"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8f6984e5c6a88b14f0c82c3b726a14ab54dfa0ce824118af032bd9bf65549980"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "22ea4a70d1b78471a9bd978c3f706eacc1e2809cba9b7a42cd5d765c9efc5275"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f4713febbe2c420cd82d201d28481ca859f4edd89497338530555aa31345e355"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2991315a3c4330139406a1355a1be6131cdf94f93a21aab07351bff785cd81fe"
-    sha256 cellar: :any,                 arm64_linux:   "1b16c31fd1ff05b83b43ee2152bcd6b00e296c74ca09d13e853b803cddd854c1"
-    sha256 cellar: :any,                 x86_64_linux:  "29c14f6786b551c0e2e7839e05100bacb7a77e5b4b4542f7bbb4b63425b2291e"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "948155093299a2bc266a818fc401eb203f319f866d91217bb20ba5182b257285"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "8f6984e5c6a88b14f0c82c3b726a14ab54dfa0ce824118af032bd9bf65549980"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "22ea4a70d1b78471a9bd978c3f706eacc1e2809cba9b7a42cd5d765c9efc5275"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "f4713febbe2c420cd82d201d28481ca859f4edd89497338530555aa31345e355"
+    sha256 cellar: :any_skip_relocation, sonoma:            "2991315a3c4330139406a1355a1be6131cdf94f93a21aab07351bff785cd81fe"
+    sha256 cellar: :any,                 arm64_linux:       "1b16c31fd1ff05b83b43ee2152bcd6b00e296c74ca09d13e853b803cddd854c1"
+    sha256 cellar: :any,                 x86_64_linux:      "29c14f6786b551c0e2e7839e05100bacb7a77e5b4b4542f7bbb4b63425b2291e"
   end
 
   head do

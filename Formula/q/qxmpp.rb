@@ -7,11 +7,12 @@ class Qxmpp < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "2bf56db80726cde0f650024143022d1056b478db8dddc2b1c142070272e5cc75"
-    sha256 cellar: :any, arm64_sequoia: "a8d4b84e843c0ba32b2e23b9c47abcb6e8f2548a6181cf77338a487b3a759262"
-    sha256 cellar: :any, arm64_sonoma:  "dd6e6e560d2f48412bfc7e2f69b006f821a40d367d4c03deb3594f374c610a39"
-    sha256 cellar: :any, arm64_linux:   "8e6debf0d0c5ed3bc3d990fa9c9d451c570ff70cbf7ace7ea692b6cae2e1f662"
-    sha256 cellar: :any, x86_64_linux:  "05a6379521d5b41d48bf596a5067f691a5ca041a9284ea4b47af2402a78cd99c"
+    sha256 cellar: :any, arm64_golden_gate: "de355b907194c1a38ee2e87ac676f1b47d12d883b09f4f416fd155a48ee750d3"
+    sha256 cellar: :any, arm64_tahoe:       "2bf56db80726cde0f650024143022d1056b478db8dddc2b1c142070272e5cc75"
+    sha256 cellar: :any, arm64_sequoia:     "a8d4b84e843c0ba32b2e23b9c47abcb6e8f2548a6181cf77338a487b3a759262"
+    sha256 cellar: :any, arm64_sonoma:      "dd6e6e560d2f48412bfc7e2f69b006f821a40d367d4c03deb3594f374c610a39"
+    sha256 cellar: :any, arm64_linux:       "8e6debf0d0c5ed3bc3d990fa9c9d451c570ff70cbf7ace7ea692b6cae2e1f662"
+    sha256 cellar: :any, x86_64_linux:      "05a6379521d5b41d48bf596a5067f691a5ca041a9284ea4b47af2402a78cd99c"
   end
 
   depends_on "cmake" => :build
@@ -62,7 +63,7 @@ class Qxmpp < Formula
       }
     CPP
 
-    system Formula["qtbase"].bin/"qmake", "test.pro"
+    system formula_opt_bin("qtbase")/"qmake", "test.pro"
     system "make"
     assert_path_exists testpath/"test", "test output file does not exist!"
     system "./test"

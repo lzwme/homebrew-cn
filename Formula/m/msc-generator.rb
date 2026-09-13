@@ -18,11 +18,12 @@ class MscGenerator < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "9863a4e3cf0c45e8ff8a6978cc9dd3e63cab38ec15df9c4fc9ac6dac7a40081a"
-    sha256 arm64_sequoia: "5c8f6d9d99c3f6d845700894e19a190016a8a4a3b8e6eb34cbe3c097c2e495c7"
-    sha256 arm64_sonoma:  "9d462970ade1e232f9625e5423b1ce607d2a57a99ac54d733513d21b61a31fe1"
-    sha256 arm64_linux:   "91c5165105dd4a78f2ee7ab12dc3e29e78d75e59787ded3e1607ed538ae62d6f"
-    sha256 x86_64_linux:  "86c897515b9745f57ef86b8bfe46c9296d708c7ca97cfbcff31f0d4f1d250443"
+    sha256 arm64_golden_gate: "791cf09e9ae47908933dddc7a4fd781362f6c3aed18dcae8456a933e787de271"
+    sha256 arm64_tahoe:       "9863a4e3cf0c45e8ff8a6978cc9dd3e63cab38ec15df9c4fc9ac6dac7a40081a"
+    sha256 arm64_sequoia:     "5c8f6d9d99c3f6d845700894e19a190016a8a4a3b8e6eb34cbe3c097c2e495c7"
+    sha256 arm64_sonoma:      "9d462970ade1e232f9625e5423b1ce607d2a57a99ac54d733513d21b61a31fe1"
+    sha256 arm64_linux:       "91c5165105dd4a78f2ee7ab12dc3e29e78d75e59787ded3e1607ed538ae62d6f"
+    sha256 x86_64_linux:      "86c897515b9745f57ef86b8bfe46c9296d708c7ca97cfbcff31f0d4f1d250443"
   end
 
   depends_on "autoconf" => :build

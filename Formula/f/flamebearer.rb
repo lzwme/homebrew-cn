@@ -22,7 +22,7 @@ class Flamebearer < Formula
       for (let i = 0; i < 5e6; i++) x += Math.sqrt(i);
       console.log(x);
     JS
-    system Formula["node"].bin/"node", "--cpu-prof", "--cpu-prof-dir=#{testpath}", testpath/"app.js"
+    system formula_opt_bin("node")/"node", "--cpu-prof", "--cpu-prof-dir=#{testpath}", testpath/"app.js"
     profile = testpath.glob("*.cpuprofile").first
 
     assert_match(/samples:\s+\d+/, shell_output("#{bin}/flamebearer #{profile}"))

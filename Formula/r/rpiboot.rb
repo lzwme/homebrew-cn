@@ -13,12 +13,13 @@ class Rpiboot < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "31cb9beee0a7ec2286049723c054e8db04f54adbad073b51566ec967bda97149"
-    sha256 arm64_sequoia: "f7a90ea74346f3e711f948d047edf2e2cd824f85e8ca0b4c7a7097d863942779"
-    sha256 arm64_sonoma:  "c66e0d7c224d8a185dbec4b96b2a54971d9c4d3acc5ccfce9d7e057bae0463c0"
-    sha256 sonoma:        "beca79fd2907f5c3a5a220d19d729d501c8ebaf3e61d4ad3939ebe903399d481"
-    sha256 arm64_linux:   "d46d84f2dca76f09f8a12511e76625f8c8a20e27301300b0432b7c1dd90b68d2"
-    sha256 x86_64_linux:  "2523c3dbff24ee0d324180c581a9b57ba8d718da4cbcc385fe536d898bc06a86"
+    sha256 arm64_golden_gate: "c94708eb4dd3df12e6ca39a9bdf85fc2fed0eea629065a92974944ac937b49e3"
+    sha256 arm64_tahoe:       "31cb9beee0a7ec2286049723c054e8db04f54adbad073b51566ec967bda97149"
+    sha256 arm64_sequoia:     "f7a90ea74346f3e711f948d047edf2e2cd824f85e8ca0b4c7a7097d863942779"
+    sha256 arm64_sonoma:      "c66e0d7c224d8a185dbec4b96b2a54971d9c4d3acc5ccfce9d7e057bae0463c0"
+    sha256 sonoma:            "beca79fd2907f5c3a5a220d19d729d501c8ebaf3e61d4ad3939ebe903399d481"
+    sha256 arm64_linux:       "d46d84f2dca76f09f8a12511e76625f8c8a20e27301300b0432b7c1dd90b68d2"
+    sha256 x86_64_linux:      "2523c3dbff24ee0d324180c581a9b57ba8d718da4cbcc385fe536d898bc06a86"
   end
 
   depends_on "pkgconf" => :build

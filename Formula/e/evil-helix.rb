@@ -1,18 +1,29 @@
 class EvilHelix < Formula
   desc "Soft fork of the helix editor"
   homepage "https://evil-helix.github.io"
-  url "https://ghfast.top/https://github.com/usagi-flow/evil-helix/archive/refs/tags/release-20250915.tar.gz"
-  sha256 "1a5dc826890eede336b2f2cabbb1bb19b3e25ebbc0c42ac09eb7d9348bbf27cc"
   license "MPL-2.0"
   head "https://github.com/usagi-flow/evil-helix.git", branch: "main"
 
+  stable do
+    url "https://ghfast.top/https://github.com/usagi-flow/evil-helix/archive/refs/tags/release-20250915.tar.gz"
+    sha256 "1a5dc826890eede336b2f2cabbb1bb19b3e25ebbc0c42ac09eb7d9348bbf27cc"
+
+    # Backport the gotmpl grammar switch, its previous repository was deleted
+    patch do
+      url "https://github.com/usagi-flow/evil-helix/commit/7ea891969ae2592403ce1ee2c84fa119133c5cea.patch?full_index=1"
+      sha256 "d9c4eb16ca38063c9bd4d40ec77dc3ee334d16ba6af14f38273c3a319594219e"
+      type :backport
+      resolves "https://github.com/helix-editor/helix/pull/14746"
+    end
+  end
+
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "088ce87991fec98ca0f5d28f7a781841cbe12259b24fb938f3082999e9b6ba83"
-    sha256 cellar: :any,                 arm64_sequoia: "aa1c077d84f8167f6603695b83b2818138e65e91a42ef39791eaac40d4a6815e"
-    sha256 cellar: :any,                 arm64_sonoma:  "28f7341d9919b9f9ac2ca92626620ee991239c6cf5790cffe08f77423e241e67"
-    sha256 cellar: :any,                 sonoma:        "3827312aed2b160a604b9afa49ba2180af52f64782fd30317ef93b8c85ea0797"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b1b10ec389c6c35d93edb3068ddb9b903745a0c57de1c672ae384c4b16fca17d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c13f92143ffc80c200cf99fab67afd167cb9c0dcf64b559c48db9b27734d3b1a"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "fa2eb1968aeba1afd29b1ca4d2dbb2e3405e9cf4232cfb896ac8f46e8a69cb36"
+    sha256 cellar: :any, arm64_tahoe:       "6af5528b5378995f37aa0f49096968400036469e0d0b8281d891e7fb4279a058"
+    sha256 cellar: :any, arm64_sequoia:     "828a3f90d5df9d7b1c23ddff5e90332a17f6643bf41f45150e7346b75865368d"
+    sha256 cellar: :any, arm64_linux:       "91bbd88e027943f803083aa8b4b48bd05b63514344da902075e12f80f216a0ab"
+    sha256 cellar: :any, x86_64_linux:      "3b22695460477c272a7d50996cfdae9c9a580bdd57c8dd038594c97705354d94"
   end
 
   depends_on "rust" => :build

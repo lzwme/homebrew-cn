@@ -20,6 +20,13 @@ class Helmfile < Formula
   depends_on "go" => :build
   depends_on "helm"
 
+  # `test do` block adds a helm chart repository
+  deny_network_access! [:build, :postinstall]
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ldflags = %W[
       -X go.szostok.io/version.version=v#{version}

@@ -7,12 +7,13 @@ class Faircamp < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "66169557403a27f0ba6f4e2ad043108b69dbbd813ae9b523e5bdd70bd4198ed8"
-    sha256 cellar: :any, arm64_sequoia: "8b4ba92f1a565e98368cda5f60b3c47b778197bbe497913bdd7e90b342cb321a"
-    sha256 cellar: :any, arm64_sonoma:  "c47ae0184f72f2a2a3fc2a99b2ab0a3c3a0759608e6909d190deebdd32b5737e"
-    sha256 cellar: :any, sonoma:        "b62e91623bd651cf0f6a3fe9cc3bd923ade96c471fb7d4de00407ed273ca3446"
-    sha256 cellar: :any, arm64_linux:   "0a8d16c9c10d85bbd9d1eb169236c3e2b59966f23e02da9fd1cf1dd09676ac8f"
-    sha256 cellar: :any, x86_64_linux:  "f7dfe751e1b76008a6af1545cf2ad181bc48c72f26de4242e687e2af90634f32"
+    sha256 cellar: :any, arm64_golden_gate: "43bc34990dd2c6f0d7f83c038fa84e1b4edf37b62d537f3a4a6a3c2d6f3be674"
+    sha256 cellar: :any, arm64_tahoe:       "66169557403a27f0ba6f4e2ad043108b69dbbd813ae9b523e5bdd70bd4198ed8"
+    sha256 cellar: :any, arm64_sequoia:     "8b4ba92f1a565e98368cda5f60b3c47b778197bbe497913bdd7e90b342cb321a"
+    sha256 cellar: :any, arm64_sonoma:      "c47ae0184f72f2a2a3fc2a99b2ab0a3c3a0759608e6909d190deebdd32b5737e"
+    sha256 cellar: :any, sonoma:            "b62e91623bd651cf0f6a3fe9cc3bd923ade96c471fb7d4de00407ed273ca3446"
+    sha256 cellar: :any, arm64_linux:       "0a8d16c9c10d85bbd9d1eb169236c3e2b59966f23e02da9fd1cf1dd09676ac8f"
+    sha256 cellar: :any, x86_64_linux:      "f7dfe751e1b76008a6af1545cf2ad181bc48c72f26de4242e687e2af90634f32"
   end
 
   depends_on "pkgconf" => :build

@@ -13,11 +13,12 @@ class ForgejoRunner < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c9ef417a682da199d5d02b48162493df45ac7c6519137be2797316cbe7a7eb05"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c9ef417a682da199d5d02b48162493df45ac7c6519137be2797316cbe7a7eb05"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c9ef417a682da199d5d02b48162493df45ac7c6519137be2797316cbe7a7eb05"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9a4e16724efb1b7658a483b2b9ad0d6c673af4f64757ae62a92e9ae8cbb6caf7"
-    sha256 cellar: :any,                 x86_64_linux:  "31e774ea791448d03684211d1b9d9d3e5f09f8f959c8ae9059d8957b08b6c3c2"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "c9ef417a682da199d5d02b48162493df45ac7c6519137be2797316cbe7a7eb05"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "c9ef417a682da199d5d02b48162493df45ac7c6519137be2797316cbe7a7eb05"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "c9ef417a682da199d5d02b48162493df45ac7c6519137be2797316cbe7a7eb05"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "c9ef417a682da199d5d02b48162493df45ac7c6519137be2797316cbe7a7eb05"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "9a4e16724efb1b7658a483b2b9ad0d6c673af4f64757ae62a92e9ae8cbb6caf7"
+    sha256 cellar: :any,                 x86_64_linux:      "31e774ea791448d03684211d1b9d9d3e5f09f8f959c8ae9059d8957b08b6c3c2"
   end
 
   depends_on "go" => :build

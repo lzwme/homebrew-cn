@@ -11,18 +11,12 @@ class Unac < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:    "5e3436d86661dae0bcfda2b5064f3978fb4d5a2573ce656dc146c762e42161e8"
-    sha256 cellar: :any,                 arm64_sequoia:  "648dfb172e5d6311dc6659235d05b5c22b814f48adab26a9a64288382f0a90d7"
-    sha256 cellar: :any,                 arm64_sonoma:   "27170110668e4f920abf561c75cc4b8f0f9bed1ba84ab5b52426663f2fb68546"
-    sha256 cellar: :any,                 arm64_ventura:  "9ef0e09918bdf4928f18a5ef4759da9877635890cae18a739b149d25933034f8"
-    sha256 cellar: :any,                 arm64_monterey: "4a72fdcbb521166b6e9e470cbbdd8027d52d883e849a3428583f5b00b16353fd"
-    sha256 cellar: :any,                 arm64_big_sur:  "5d58477a342637a20d39e60b0164846f14e8f2aac2d1fc01e162e8eefef63af7"
-    sha256 cellar: :any,                 sonoma:         "98f6c4c1cdaef704abb8111989b7ab0bc8cf215164a6c8f175c1e6ef5b3ccda4"
-    sha256 cellar: :any,                 ventura:        "46fa079329a7e44ea6f5d48cc8466d73cff663a9ceb2753159e0045babaff7f7"
-    sha256 cellar: :any,                 monterey:       "9c0f897a477038083f9531c3a258f85df3dad6d5fbdcd0e00df8070ee4675c26"
-    sha256 cellar: :any,                 big_sur:        "434a30fa5bd969126e166925e6509885bb45e12977f4690c08b2b4fbcfb20dd4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "7bcb9bedf0de026241c6f1de1bcffe69c67c1cfdfd5c8e590ffb7a5d09ce8c40"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ee6f3909a8a3f44657dc39813bee9cd551475eb835973cb34be6cbd23fe7eb0f"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "3d813ab578128d39b99540ccc152aa832af4db05a2c3dddf7c6a99c0f4dd64f4"
+    sha256 cellar: :any, arm64_tahoe:       "119c6d2e4b2ef998eaeb2968afe277c1ad01249667338109e2052712170a559f"
+    sha256 cellar: :any, arm64_sequoia:     "4690b5b24adbf855a28c21ce20dbf4fcb9b5aef86eee030c997f8c4e0dd29202"
+    sha256 cellar: :any, arm64_linux:       "23474813dbd1ad4b1b4239831cc67e77cd9e3ec6608b61f3f7cf6849e713df66"
+    sha256 cellar: :any, x86_64_linux:      "529f92fa0e71615ea2e6ed3eafffc60720b14f6ee0df2c12b5d5476effb6cc79"
   end
 
   depends_on "autoconf" => :build
@@ -50,6 +44,8 @@ class Unac < Formula
   end
 
   def install
+    # C23 makes `()` mean `(void)`, so the bundled getopt.h conflicts with unistd.h
+    ENV.append_to_cflags "-std=gnu17"
     ENV.append_path "ACLOCAL_PATH", Formula["gettext"].pkgshare/"m4"
 
     touch "config.rpath"

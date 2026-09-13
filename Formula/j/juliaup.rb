@@ -12,12 +12,12 @@ class Juliaup < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "8852032d09038ded8725df103f491bbc3cdedf78b87e8af986b9f451259f85d0"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "660455eea953c53291adb1c5b3886cf94721e82f6ebb8d45f1131c9ad1a0b558"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "072cb1540138c7c2e6f95ab2d4fdaf62baf7d04eecb73a0682b9b4bb1d7c7f16"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "15eb9a5f851ab770002f05ca3d9a8591afa2ca170b005d8c7987209146b568a5"
-    sha256 cellar: :any,                 arm64_linux:       "9a0845fbe62014edd5627fc8ad05e5b9739d8072afe4877d13ce0d7d2a08fe62"
-    sha256 cellar: :any,                 x86_64_linux:      "5132e0f4ac6990ab33ffd995585681e681f78840056b8ecaaaceebe93c58f55d"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "9938c749ea726fc8f706f400be831025d40a3835fa69ce77dc5bd724e1b8983a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "97c846abdb00e70dc327266fb8f74ff844b7e519e3b5e6a52d035dd4b2119df3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "18055e7ec73efcb4098cbad61d43e117d75cf1627378ab67655b87337a3e1052"
+    sha256 cellar: :any,                 arm64_linux:       "3192d8cd920d36274d59938601e87770a5f71416e4ffc1f82b161e0cfdf24580"
+    sha256 cellar: :any,                 x86_64_linux:      "90fab19126ce1d040f3ebb1ed4b7f1bcbec2c2ce6385d106807eeda256daee0a"
   end
 
   depends_on "rust" => :build
@@ -27,6 +27,7 @@ class Juliaup < Formula
   def install
     system "cargo", "install", "--bin", "juliaup", *std_cargo_args
     system "cargo", "install", "--bin", "julialauncher", *std_cargo_args(features: "binjulialauncher")
+    system "cargo", "install", *std_cargo_args(path: "juliaupgui")
 
     bin.install_symlink "julialauncher" => "julia"
 
@@ -36,5 +37,6 @@ class Juliaup < Formula
   test do
     expected = "Default  Channel  Version  Update"
     assert_equal expected, shell_output("#{bin}/juliaup status").lines.first.strip
+    assert_path_exists bin/"juliaupgui"
   end
 end

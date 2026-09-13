@@ -11,11 +11,12 @@ class Scamper < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "e0601f8241076da65ec5e9efa8aaa28dcd524fc6faac3f6f17b4629ad617cc63"
-    sha256 cellar: :any, arm64_sequoia: "ea5acd2bd87287bf95a4906d09ea8c4912a1fb613fc0c2f73a12f8ad08c5756e"
-    sha256 cellar: :any, arm64_sonoma:  "173ceeca357f7bdbc11d8cbf02a5ad02fd3792522977da899b4a4b467351842c"
-    sha256 cellar: :any, arm64_linux:   "4c086c292231bb8f21a95be6d1591c17e66b4784323d9c497c47671223076e3b"
-    sha256 cellar: :any, x86_64_linux:  "b7dd05c9b140144840bc61672e798245b31ec43c5628363a59d38fd9ac1b6c7a"
+    sha256 cellar: :any, arm64_golden_gate: "9736ca20f7ca0ca1f1b6f1aaa807d2c57d2e99359343ecf54eb5bd3b549130cc"
+    sha256 cellar: :any, arm64_tahoe:       "e0601f8241076da65ec5e9efa8aaa28dcd524fc6faac3f6f17b4629ad617cc63"
+    sha256 cellar: :any, arm64_sequoia:     "ea5acd2bd87287bf95a4906d09ea8c4912a1fb613fc0c2f73a12f8ad08c5756e"
+    sha256 cellar: :any, arm64_sonoma:      "173ceeca357f7bdbc11d8cbf02a5ad02fd3792522977da899b4a4b467351842c"
+    sha256 cellar: :any, arm64_linux:       "4c086c292231bb8f21a95be6d1591c17e66b4784323d9c497c47671223076e3b"
+    sha256 cellar: :any, x86_64_linux:      "b7dd05c9b140144840bc61672e798245b31ec43c5628363a59d38fd9ac1b6c7a"
   end
 
   depends_on "pkgconf" => :build

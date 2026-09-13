@@ -16,18 +16,19 @@ class Dnstracer < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "bf4002b2b3c7b6e94bfbd23130cae602e9e7c7d9e3145b7210cbc4fc574b5004"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "154b03978527a24ea93fa486de2f90f51bba19a873cd8fc7760027b7cf9e965d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d9f0cef649625b90f8b813401e0cee3b0d26abb2ad5eabdb8b80bea6d93106d1"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c90d0674735e546310ec3e6052242171258f29faf127138282ea4e396946d737"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "07ec9123818d074dcbd378fc46fcf0bf17557f1f4ceccb631aef4669af57373d"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "dc60fdb473c11615a27f62abb5aba5ae0a270c4b3d33001c07668266254c7486"
-    sha256 cellar: :any_skip_relocation, sonoma:         "d0bda5093f4ee8d73bca5c7609769fb9b5a85509b8ffb3f981b5cadd299b838f"
-    sha256 cellar: :any_skip_relocation, ventura:        "1e163d7856ec1f1d8a420f080ad6d1593c8c0977c1f3d1c22b9c19728abe4094"
-    sha256 cellar: :any_skip_relocation, monterey:       "3d7210cdf69f4ebae90e2a1b65729dce288b4dab03a921d64d521ac9e137dfd1"
-    sha256 cellar: :any_skip_relocation, big_sur:        "c6e0d89127fbc47d2b30cd7d2918279f858a79d87b2e32e63cccfcc4f92f3495"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "396697504e1ed5de305ae93a03540549bde4be87839036df19439584a39dcdfc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f5a8f70b7d7d09e10e995f908c4b581a9d3f2ea201719e768e7e65c022f8eb7d"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "af6d7997dfd636031af0adf72b32e170381bff0bd31049ebb1cd3713c887da02"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "bf4002b2b3c7b6e94bfbd23130cae602e9e7c7d9e3145b7210cbc4fc574b5004"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "154b03978527a24ea93fa486de2f90f51bba19a873cd8fc7760027b7cf9e965d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "d9f0cef649625b90f8b813401e0cee3b0d26abb2ad5eabdb8b80bea6d93106d1"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:     "c90d0674735e546310ec3e6052242171258f29faf127138282ea4e396946d737"
+    sha256 cellar: :any_skip_relocation, arm64_monterey:    "07ec9123818d074dcbd378fc46fcf0bf17557f1f4ceccb631aef4669af57373d"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:     "dc60fdb473c11615a27f62abb5aba5ae0a270c4b3d33001c07668266254c7486"
+    sha256 cellar: :any_skip_relocation, sonoma:            "d0bda5093f4ee8d73bca5c7609769fb9b5a85509b8ffb3f981b5cadd299b838f"
+    sha256 cellar: :any_skip_relocation, ventura:           "1e163d7856ec1f1d8a420f080ad6d1593c8c0977c1f3d1c22b9c19728abe4094"
+    sha256 cellar: :any_skip_relocation, monterey:          "3d7210cdf69f4ebae90e2a1b65729dce288b4dab03a921d64d521ac9e137dfd1"
+    sha256 cellar: :any_skip_relocation, big_sur:           "c6e0d89127fbc47d2b30cd7d2918279f858a79d87b2e32e63cccfcc4f92f3495"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "396697504e1ed5de305ae93a03540549bde4be87839036df19439584a39dcdfc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "f5a8f70b7d7d09e10e995f908c4b581a9d3f2ea201719e768e7e65c022f8eb7d"
   end
 
   # Fix to error: conflicting types for 'res_9_getlong', 'res_9_getshort'

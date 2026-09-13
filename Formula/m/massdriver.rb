@@ -15,11 +15,12 @@ class Massdriver < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "731294f02f6d0f57ac7e6c3dca401989bf935e12d56dc3e8ff0c3ed75b7f803a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "731294f02f6d0f57ac7e6c3dca401989bf935e12d56dc3e8ff0c3ed75b7f803a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "731294f02f6d0f57ac7e6c3dca401989bf935e12d56dc3e8ff0c3ed75b7f803a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9783b14c0641400bfa75be883a7882ed16ce8f9049a456cc615644c2150b9b76"
-    sha256 cellar: :any,                 x86_64_linux:  "267384f2b6ede9944bb995839c591056cff79f2367e458b22b809984b50a8204"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "d5ba3d61f3b6b259791c2993ae7a51892ef15a978db043ad646faf693720ce4b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "731294f02f6d0f57ac7e6c3dca401989bf935e12d56dc3e8ff0c3ed75b7f803a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "731294f02f6d0f57ac7e6c3dca401989bf935e12d56dc3e8ff0c3ed75b7f803a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "731294f02f6d0f57ac7e6c3dca401989bf935e12d56dc3e8ff0c3ed75b7f803a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "9783b14c0641400bfa75be883a7882ed16ce8f9049a456cc615644c2150b9b76"
+    sha256 cellar: :any,                 x86_64_linux:      "267384f2b6ede9944bb995839c591056cff79f2367e458b22b809984b50a8204"
   end
 
   depends_on "go" => :build

@@ -11,11 +11,12 @@ class Theharvester < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "a46dd9b5c9872020b29579e576e88dcc05a234181263c4613f7bffacd016841c"
-    sha256 cellar: :any, arm64_sequoia: "322be51f1919eae0b908e7b532f8801443f007d73efed4b03a0be689aae80009"
-    sha256 cellar: :any, arm64_sonoma:  "c5f4e4246db08c58d01a4e478aa6fcd8f6e7fe27f3298cc18c6a4bc95efe5f16"
-    sha256 cellar: :any, arm64_linux:   "414505c32c037ea94030574aff824982b24452df3245bd2b9aed68ed2ea8239d"
-    sha256 cellar: :any, x86_64_linux:  "a5a97ba316d8012a021c7cba052ede6e43017d15089fcb07e217071d60cfd555"
+    sha256 cellar: :any, arm64_golden_gate: "8e8464b73e498990f58eb3a741cbb28abdba3e0a87cc40695843a1aab98842d5"
+    sha256 cellar: :any, arm64_tahoe:       "a46dd9b5c9872020b29579e576e88dcc05a234181263c4613f7bffacd016841c"
+    sha256 cellar: :any, arm64_sequoia:     "322be51f1919eae0b908e7b532f8801443f007d73efed4b03a0be689aae80009"
+    sha256 cellar: :any, arm64_sonoma:      "c5f4e4246db08c58d01a4e478aa6fcd8f6e7fe27f3298cc18c6a4bc95efe5f16"
+    sha256 cellar: :any, arm64_linux:       "414505c32c037ea94030574aff824982b24452df3245bd2b9aed68ed2ea8239d"
+    sha256 cellar: :any, x86_64_linux:      "a5a97ba316d8012a021c7cba052ede6e43017d15089fcb07e217071d60cfd555"
   end
 
   depends_on "cmake" => :build

@@ -7,12 +7,13 @@ class Libbcg729 < Formula
   head "https://github.com/BelledonneCommunications/bcg729.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ddc2ddadac500369e8a7f3e61609b9928ba55e7f331cd47e359ea265408b02b0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "692d7e0f01f4c24c44c1f8e0abee485df6777c78e4e19b09a885447b986878f2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "74bc5d840c2207667e2f6a73398c8d377a0b5deb3126f6c1012efd7fd3a37cff"
-    sha256 cellar: :any_skip_relocation, sonoma:        "73fb05779fc89654981e73a919a057779690b9fbf567803ae1a216d222eaa2da"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "48eb659adf2b64c11983606655e60b965b50ac36f0a500eed040e48def1ec9b0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a7e58d6856037731fe82237dda35e40e1d002188f1d1add8083bdf6943c42722"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "7ddf981fa768947303f4f03bea3d666d1d11413a5ede27987edb2780bce34c1c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "ddc2ddadac500369e8a7f3e61609b9928ba55e7f331cd47e359ea265408b02b0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "692d7e0f01f4c24c44c1f8e0abee485df6777c78e4e19b09a885447b986878f2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "74bc5d840c2207667e2f6a73398c8d377a0b5deb3126f6c1012efd7fd3a37cff"
+    sha256 cellar: :any_skip_relocation, sonoma:            "73fb05779fc89654981e73a919a057779690b9fbf567803ae1a216d222eaa2da"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "48eb659adf2b64c11983606655e60b965b50ac36f0a500eed040e48def1ec9b0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "a7e58d6856037731fe82237dda35e40e1d002188f1d1add8083bdf6943c42722"
   end
 
   depends_on "cmake" => :build

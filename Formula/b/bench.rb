@@ -24,12 +24,13 @@ class Bench < Formula
 
   bottle do
     rebuild 2
-    sha256 cellar: :any, arm64_tahoe:   "d4fa6fb606a05e02d9252adce611cb82c889d9f3043c0f4f5500c688b21cba39"
-    sha256 cellar: :any, arm64_sequoia: "23f691588520f5c15826d3d4551fdbb14a71ffea81bf74dc99b50e4c590e7657"
-    sha256 cellar: :any, arm64_sonoma:  "2a505e7f027719b2c93c474f7b1180a7562ae41d1063198a00938c1b960a7863"
-    sha256 cellar: :any, sonoma:        "9f89aa87f249b9c791f5750a32a038c2849fb6b057035c1bbe8108faf773ecb1"
-    sha256 cellar: :any, arm64_linux:   "448885e9f5ff3beccee2f381143cebd6fd251715fd3fbc66c25ad2e0e9f46ff7"
-    sha256 cellar: :any, x86_64_linux:  "6964f570f1114a71f8758052e0065989e415f3751b9b846f336490f30953f4cd"
+    sha256 cellar: :any, arm64_golden_gate: "7f49f116eb28fc230018ece96b33a235a90782a893c794fef98fcdc0171e7933"
+    sha256 cellar: :any, arm64_tahoe:       "d4fa6fb606a05e02d9252adce611cb82c889d9f3043c0f4f5500c688b21cba39"
+    sha256 cellar: :any, arm64_sequoia:     "23f691588520f5c15826d3d4551fdbb14a71ffea81bf74dc99b50e4c590e7657"
+    sha256 cellar: :any, arm64_sonoma:      "2a505e7f027719b2c93c474f7b1180a7562ae41d1063198a00938c1b960a7863"
+    sha256 cellar: :any, sonoma:            "9f89aa87f249b9c791f5750a32a038c2849fb6b057035c1bbe8108faf773ecb1"
+    sha256 cellar: :any, arm64_linux:       "448885e9f5ff3beccee2f381143cebd6fd251715fd3fbc66c25ad2e0e9f46ff7"
+    sha256 cellar: :any, x86_64_linux:      "6964f570f1114a71f8758052e0065989e415f3751b9b846f336490f30953f4cd"
   end
 
   depends_on "cabal-install" => :build

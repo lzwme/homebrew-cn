@@ -15,12 +15,13 @@ class Libcouchbase < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "aa5683c71e58254cdbd095d75b6f32191e4d47371120e5fadbf4c92464a01e20"
-    sha256 arm64_sequoia: "8f5765d344f5847bc3884713118e73179aece9e142eef76ba4cb3e4a6104be4b"
-    sha256 arm64_sonoma:  "704b64c48f9b0f924ac80d2faef28b8625a615a78303495f3f0f3b247a003cb2"
-    sha256 sonoma:        "dd346acc949123aa8cad59fc687eba803b85e4493e007c57d417caa5bf906a48"
-    sha256 arm64_linux:   "3308bd6c4615bded33865677fad97d56993a2c3f90071181102c36b7b03c4a0c"
-    sha256 x86_64_linux:  "704c2c4fa5d26dbc839c5b7ec1e9d6e947822ee4e97352abcd937bcd3b3cd19c"
+    sha256 arm64_golden_gate: "d51c93a43056ee552c730e5fe1ceafc3a390cb8deba7c14a276dbfea14526d8a"
+    sha256 arm64_tahoe:       "aa5683c71e58254cdbd095d75b6f32191e4d47371120e5fadbf4c92464a01e20"
+    sha256 arm64_sequoia:     "8f5765d344f5847bc3884713118e73179aece9e142eef76ba4cb3e4a6104be4b"
+    sha256 arm64_sonoma:      "704b64c48f9b0f924ac80d2faef28b8625a615a78303495f3f0f3b247a003cb2"
+    sha256 sonoma:            "dd346acc949123aa8cad59fc687eba803b85e4493e007c57d417caa5bf906a48"
+    sha256 arm64_linux:       "3308bd6c4615bded33865677fad97d56993a2c3f90071181102c36b7b03c4a0c"
+    sha256 x86_64_linux:      "704c2c4fa5d26dbc839c5b7ec1e9d6e947822ee4e97352abcd937bcd3b3cd19c"
   end
 
   depends_on "cmake" => :build

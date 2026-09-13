@@ -13,12 +13,13 @@ class Ezstream < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "985d55fee7a55d60c0d2cfa98a71f35e87b1e03272c9ecece67e267e14f53eae"
-    sha256 cellar: :any,                 arm64_sequoia: "6d75b37759ae3b6c4345e1ed4a137e860919c432e918b68e706937f99c049b90"
-    sha256 cellar: :any,                 arm64_sonoma:  "886d97ef61a1b7cf365634c4c1ffe893cc50242f1cc228e6d22a92f418bb4735"
-    sha256 cellar: :any,                 sonoma:        "9d21015b77c920498b613d65a7467749cb595e76a48358ddd7461cf8c3eb1d13"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "953f775b15e5a138f324c0a65ac9147202c683d4ca3395e3d7718c3c30045772"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ff747b5e7626436d26008c0c4f328e9817e6bf61b78ec187e2dab279cea25029"
+    sha256 cellar: :any,                 arm64_golden_gate: "5b7bcdc6284937ef3f65169fe75ad58c520b83ddd1db3594ed0b8f29eb2e9948"
+    sha256 cellar: :any,                 arm64_tahoe:       "985d55fee7a55d60c0d2cfa98a71f35e87b1e03272c9ecece67e267e14f53eae"
+    sha256 cellar: :any,                 arm64_sequoia:     "6d75b37759ae3b6c4345e1ed4a137e860919c432e918b68e706937f99c049b90"
+    sha256 cellar: :any,                 arm64_sonoma:      "886d97ef61a1b7cf365634c4c1ffe893cc50242f1cc228e6d22a92f418bb4735"
+    sha256 cellar: :any,                 sonoma:            "9d21015b77c920498b613d65a7467749cb595e76a48358ddd7461cf8c3eb1d13"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "953f775b15e5a138f324c0a65ac9147202c683d4ca3395e3d7718c3c30045772"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "ff747b5e7626436d26008c0c4f328e9817e6bf61b78ec187e2dab279cea25029"
   end
 
   head do

@@ -7,12 +7,13 @@ class Mufetch < Formula
   head "https://github.com/ashish0kumar/mufetch.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "81a98a5e506fa81b66474770b31ba74505f78611bc9654c5277c568d64a8f036"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "81a98a5e506fa81b66474770b31ba74505f78611bc9654c5277c568d64a8f036"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "81a98a5e506fa81b66474770b31ba74505f78611bc9654c5277c568d64a8f036"
-    sha256 cellar: :any_skip_relocation, sonoma:        "35737a128c3e4e30935175c5199426fec5487a398059d70007259fdaf74cdc8b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cb55fc1e510c72b555c0d91e865a0dc9a09ffabcb477f80495ce83fb7a08ba6b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d1beb7a21f99fa30abe3e641ddffc38e98b752de63c83eae740652491302f2aa"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "a6f35de2653a4836e93423b3ce3e282fdce7c752da537060f522ba4aaab3dc7b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "81a98a5e506fa81b66474770b31ba74505f78611bc9654c5277c568d64a8f036"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "81a98a5e506fa81b66474770b31ba74505f78611bc9654c5277c568d64a8f036"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "81a98a5e506fa81b66474770b31ba74505f78611bc9654c5277c568d64a8f036"
+    sha256 cellar: :any_skip_relocation, sonoma:            "35737a128c3e4e30935175c5199426fec5487a398059d70007259fdaf74cdc8b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "cb55fc1e510c72b555c0d91e865a0dc9a09ffabcb477f80495ce83fb7a08ba6b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "d1beb7a21f99fa30abe3e641ddffc38e98b752de63c83eae740652491302f2aa"
   end
 
   depends_on "go" => :build

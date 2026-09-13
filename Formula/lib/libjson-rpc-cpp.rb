@@ -8,12 +8,13 @@ class LibjsonRpcCpp < Formula
   head "https://github.com/cinemast/libjson-rpc-cpp.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "b7f8ed2efd15cc6f35428761c6354a684116c137850e5d878ce61e768d117ecb"
-    sha256 cellar: :any, arm64_sequoia: "5585f289461a653af4910f3a7b4284ab4be73b9459dde38a7598ea522d8e0f43"
-    sha256 cellar: :any, arm64_sonoma:  "57c8d3cc9e4d815700357b788435bc97a2ccdebea864b45a0a9ee0bd41d3ebc2"
-    sha256 cellar: :any, sonoma:        "8cdec171f1ebcbcdf81a5b16e3c6455bd0139c6d4c7c74cd1559b40f2971d6ca"
-    sha256 cellar: :any, arm64_linux:   "0ad30aa84d8e1c1c3a3ffec2fca43221accc269f6f41f3d0fd626b2f13d5fae2"
-    sha256 cellar: :any, x86_64_linux:  "3bf887396ca51c1a8258ede205ef9141f1477337c44c3e2d381f9f2203e6ca93"
+    sha256 cellar: :any, arm64_golden_gate: "1ee8989eb8ec92dd3680280520be998a89f4c5752b24738bb30a1c1d827396d6"
+    sha256 cellar: :any, arm64_tahoe:       "b7f8ed2efd15cc6f35428761c6354a684116c137850e5d878ce61e768d117ecb"
+    sha256 cellar: :any, arm64_sequoia:     "5585f289461a653af4910f3a7b4284ab4be73b9459dde38a7598ea522d8e0f43"
+    sha256 cellar: :any, arm64_sonoma:      "57c8d3cc9e4d815700357b788435bc97a2ccdebea864b45a0a9ee0bd41d3ebc2"
+    sha256 cellar: :any, sonoma:            "8cdec171f1ebcbcdf81a5b16e3c6455bd0139c6d4c7c74cd1559b40f2971d6ca"
+    sha256 cellar: :any, arm64_linux:       "0ad30aa84d8e1c1c3a3ffec2fca43221accc269f6f41f3d0fd626b2f13d5fae2"
+    sha256 cellar: :any, x86_64_linux:      "3bf887396ca51c1a8258ede205ef9141f1477337c44c3e2d381f9f2203e6ca93"
   end
 
   depends_on "cmake" => :build

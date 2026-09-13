@@ -3,8 +3,8 @@ class Bun < Formula
   homepage "https://bun.com/"
   # Need git checkout to build. Alternatively could set GIT_SHA if we extract the commit.
   url "https://github.com/oven-sh/bun.git",
-      tag:      "bun-v1.4.0",
-      revision: "34cbb9a40b4bd1bd767d134a7065e66c2432a676"
+      tag:      "bun-v1.4.2",
+      revision: "744846f844374847c902b5e7fd59b4342a51ef99"
   license all_of: [
     "MIT",
     "LGPL-2.0-or-later", # JavaScriptCore
@@ -26,12 +26,11 @@ class Bun < Formula
   end
 
   bottle do
-    sha256                               arm64_tahoe:   "e3b0580902ec45450316af3115ebeb532ad7d13a0762d0c1d2ac8c2c138665f5"
-    sha256                               arm64_sequoia: "bba32ee189892fac6a4a87754f97ed2151bd29ec6921f29a7e5f66d57400e155"
-    sha256                               arm64_sonoma:  "4c9a4fbc278636c9a9124593f52205bd951410415ca945437b3e650f08d188e2"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7a4c17c9fb7da44ad94825d7a3bf060f9b1a3596611236cd908a43a9da61a232"
-    sha256                               arm64_linux:   "3d8fbeb5b40a8a3b885d3ef8c0f2c7de65ae353206004ffe21266715cf5fd2c7"
-    sha256                               x86_64_linux:  "a0909fe4fba19d4a6b9abe2b613ea61cab901bd6a320e550284a853ec0a92782"
+    sha256 arm64_golden_gate: "1e749a65e17ad90e1fdad40a19481915366771a53d2548a0de1802d0e7c29c16"
+    sha256 arm64_tahoe:       "0c138912583eb9fa6ed12a1cf84e6d78ee51c65bd3291fb9a758bf220469b52d"
+    sha256 arm64_sequoia:     "a547f6f128597ded6bfe3f467ce46606bae741b8b9ef32d0736650a07584cf51"
+    sha256 arm64_linux:       "d110a88f1f69a128605c07064d8c3d3484ce650f52304d18a4fa51c49a52b8dd"
+    sha256 x86_64_linux:      "823f9cfe182892e3df144e6406a6677e3c83eb299e1468ec70352b1d5f8ac97f"
   end
 
   depends_on "cmake" => :build
@@ -85,8 +84,8 @@ class Bun < Formula
     end
   end
 
-  # Work around superenv only supporting unversioned LLVM which results in enabling
-  # unsupported SVE code. Based on LLVM 22 PR https://github.com/oven-sh/bun/pull/34299
+  # Build patches for clang 23 and the macOS 27 SDK,
+  # https://github.com/oven-sh/bun/issues/41141
   patch :DATA
 
   # Performing a manual shallow git clone since a full clone of WebKit repo is ~18GB in size
@@ -121,9 +120,18 @@ class Bun < Formula
     # as part of compilation occurs outside of our superenv.
     if Hardware::CPU.intel?
       inreplace "scripts/build/flags.ts", "-march=nehalem", ENV["HOMEBREW_OPTFLAGS"].to_s
+      # 1.4.1 raised libspng's x64 SIMD floor from SSE2 to SSE4.1 to match the
+      # nehalem target replaced above. Our baseline has no SSE4.1, and the
+      # defilter paths are `always_inline`, so drop back to the 1.4.0 level.
+      inreplace "scripts/build/deps/libspng.ts", "{ SPNG_SSE: 4 }", "{ SPNG_SSE: 1 }"
     elsif OS.linux? && Hardware::CPU.arm64?
       inreplace "scripts/build/flags.ts", "-march=armv8-a+crc", ENV["HOMEBREW_OPTFLAGS"].to_s
     end
+
+    # Nested dep builds run `cmake --build` without `--parallel`, four at a time
+    # (the `dep` ninja pool), so each one spawns its own core-count worth of
+    # compilers on top of the outer build and Homebrew's job limit is ignored.
+    ENV["CMAKE_BUILD_PARALLEL_LEVEL"] = ENV.make_jobs.to_s
 
     fetch_webkit
     resource("bootstrap").stage("bootstrap")
@@ -131,6 +139,9 @@ class Bun < Formula
 
     args = ["--canary=off"]
     args << "--baseline=on" if Hardware::CPU.intel?
+    # Unless it detects CI, bun takes the deployment target from the SDK's major
+    # version, so Xcode 27 on macOS 26 would build everything `minos 27.0`.
+    args << "--osx-deployment-target=#{MacOS.version}" if OS.mac?
 
     system "bun", "run", "build:release:local", *args
     bin.install "build/release-local/bun"
@@ -169,54 +180,114 @@ class Bun < Formula
 end
 
 __END__
-diff --git a/src/jsc/bindings/highway_json.cpp b/src/jsc/bindings/highway_json.cpp
-index d3fba90f25a1..e6e1180cd2ce 100644
---- a/src/jsc/bindings/highway_json.cpp
-+++ b/src/jsc/bindings/highway_json.cpp
-@@ -1,6 +1,12 @@
- // SIMD structural indexer for JSON (simdjson-style "stage 1"), runtime-dispatched via Google
- // Highway. Plain JSON only: a `/` or `'` outside a string sets BUN_JSON_IDX_ODDITY and returns.
+diff --git a/src/jsc/bindings/JSCommonJSModule.cpp b/src/jsc/bindings/JSCommonJSModule.cpp
+index 484a719..7d43b31 100644
+--- a/src/jsc/bindings/JSCommonJSModule.cpp
++++ b/src/jsc/bindings/JSCommonJSModule.cpp
+@@ -1568,7 +1568,7 @@ static JSC::SourceCode commonJSModuleSyntheticSourceCode(const SourceOrigin& sou
  
-+// BitsFromMask needs a fixed-width vector; Highway only provides it for the
-+// fixed-size SVE_256/SVE2_128 variants, not scalable SVE/SVE2. clang >= 22
-+// stops marking scalable SVE as HWY_BROKEN, so disable it here explicitly.
-+#undef HWY_DISABLED_TARGETS
-+#define HWY_DISABLED_TARGETS (HWY_SVE | HWY_SVE2)
-+
- #undef HWY_TARGET_INCLUDE
- #define HWY_TARGET_INCLUDE "highway_json.cpp"
- #include <hwy/foreach_target.h>
-diff --git a/src/jsc/bindings/highway_sourcemap.cpp b/src/jsc/bindings/highway_sourcemap.cpp
-index 653cdb5ee8cf..46e0a27de005 100644
---- a/src/jsc/bindings/highway_sourcemap.cpp
-+++ b/src/jsc/bindings/highway_sourcemap.cpp
-@@ -34,6 +34,12 @@
- //   Muła, "SIMD base64 decoding"  http://0x80.pl/notesen/2016-01-17-sse-base64-decoding.html
- //   Lemire & Boytsov, "Masked VByte"  https://arxiv.org/abs/1503.07387
+                 JSValue keyValue = identifierToJSValue(vm, moduleKey);
+                 JSValue entry = globalObject->requireMap()->get(globalObject, keyValue);
+-                RETURN_IF_EXCEPTION(scope, {});
++                RETURN_IF_EXCEPTION(scope, void());
  
-+// BitsFromMask needs a fixed-width vector; Highway only provides it for the
-+// fixed-size SVE_256/SVE2_128 variants, not scalable SVE/SVE2. clang >= 22
-+// stops marking scalable SVE as HWY_BROKEN, so disable it here explicitly.
-+#undef HWY_DISABLED_TARGETS
-+#define HWY_DISABLED_TARGETS (HWY_SVE | HWY_SVE2)
-+
- #undef HWY_TARGET_INCLUDE
- #define HWY_TARGET_INCLUDE "highway_sourcemap.cpp"
- #include <hwy/foreach_target.h> // Must come before highway.h
-diff --git a/src/jsc/bindings/highway_xml.cpp b/src/jsc/bindings/highway_xml.cpp
-index c7b206412e..6553e3a57e 100644
---- a/src/jsc/bindings/highway_xml.cpp
-+++ b/src/jsc/bindings/highway_xml.cpp
-@@ -4,6 +4,12 @@
- // U+FFFE / U+FFFF, EF BF BE|BF; units: 0xFFFE / 0xFFFF), and, between a `<` and the next `>`, of
- // every `\t`, `\n`, `"`, `'` and `=` as well.
+                 if (entry) {
+                     if (auto* moduleObject = dynamicDowncast<JSCommonJSModule>(entry)) {
+@@ -1587,7 +1587,7 @@ static JSC::SourceCode commonJSModuleSyntheticSourceCode(const SourceOrigin& sou
+                                 // On error, remove the module from the require map
+                                 // so that it can be re-evaluated on the next require.
+                                 globalObject->requireMap()->remove(globalObject, moduleObject->filename());
+-                                RETURN_IF_EXCEPTION(scope, {});
++                                RETURN_IF_EXCEPTION(scope, void());
  
-+// BitsFromMask needs a fixed-width vector; Highway only provides it for the
-+// fixed-size SVE_256/SVE2_128 variants, not scalable SVE/SVE2. clang >= 22
-+// stops marking scalable SVE as HWY_BROKEN, so disable it here explicitly.
-+#undef HWY_DISABLED_TARGETS
-+#define HWY_DISABLED_TARGETS (HWY_SVE | HWY_SVE2)
+                                 scope.throwException(globalObject, exception);
+                                 return;
+@@ -1595,7 +1595,7 @@ static JSC::SourceCode commonJSModuleSyntheticSourceCode(const SourceOrigin& sou
+                         }
+ 
+                         moduleObject->toSyntheticSource(globalObject, moduleKey, exportNames, exportValues);
+-                        RETURN_IF_EXCEPTION(scope, {});
++                        RETURN_IF_EXCEPTION(scope, void());
+                     }
+                 } else {
+                     // require map was cleared of the entry
+diff --git a/src/jsc/bindings/JSMockFunction.cpp b/src/jsc/bindings/JSMockFunction.cpp
+index bc8f149..dfe5e15 100644
+--- a/src/jsc/bindings/JSMockFunction.cpp
++++ b/src/jsc/bindings/JSMockFunction.cpp
+@@ -897,7 +897,7 @@ JSC_DEFINE_HOST_FUNCTION(jsMockFunctionCall, (JSGlobalObject * lexicalGlobalObje
+     auto setReturnValue = [&](JSC::JSValue value) -> void {
+         if (auto* returnValuesArray = fn->returnValues.get()) {
+             returnValuesArray->push(globalObject, value);
+-            RETURN_IF_EXCEPTION(scope, {});
++            RETURN_IF_EXCEPTION(scope, void());
+             returnValueIndex = returnValuesArray->length() - 1;
+         } else {
+             JSC::ObjectInitializationScope object(vm);
+diff --git a/src/jsc/bindings/JSNodePerformanceHooksHistogram.cpp b/src/jsc/bindings/JSNodePerformanceHooksHistogram.cpp
+index 0f72fd6..7ab0c64 100644
+--- a/src/jsc/bindings/JSNodePerformanceHooksHistogram.cpp
++++ b/src/jsc/bindings/JSNodePerformanceHooksHistogram.cpp
+@@ -172,13 +172,13 @@ int64_t JSNodePerformanceHooksHistogram::getMax() const
+ 
+ double JSNodePerformanceHooksHistogram::getMean() const
+ {
+-    if (!m_histogramData.histogram) return NAN;
++    if (!m_histogramData.histogram) return std::numeric_limits<double>::quiet_NaN();
+     return hdr_mean(m_histogramData.histogram);
+ }
+ 
+ double JSNodePerformanceHooksHistogram::getStddev() const
+ {
+-    if (!m_histogramData.histogram) return NAN;
++    if (!m_histogramData.histogram) return std::numeric_limits<double>::quiet_NaN();
+     return hdr_stddev(m_histogramData.histogram);
+ }
+ 
+diff --git a/src/jsc/bindings/c-bindings.cpp b/src/jsc/bindings/c-bindings.cpp
+index 481ccdd..1ff80f1 100644
+--- a/src/jsc/bindings/c-bindings.cpp
++++ b/src/jsc/bindings/c-bindings.cpp
+@@ -1143,6 +1143,11 @@ extern "C" const char* BUN_DEFAULT_PATH_FOR_SPAWN = "/usr/bin:/bin";
+ #include <os/signpost.h>
+ #include "generated_perf_trace_events.h"
+ 
++// The SDK applies an Apple-clang-only attribute here, unguarded.
++// https://github.com/oven-sh/bun/issues/41141
++#pragma clang diagnostic push
++#pragma clang diagnostic ignored "-Wunknown-attributes"
 +
- #undef HWY_TARGET_INCLUDE
- #define HWY_TARGET_INCLUDE "highway_xml.cpp"
- #include <hwy/foreach_target.h>
+ // The event names have to be compile-time constants.
+ // So we trick the compiler into thinking they are by using a macro.
+ extern "C" void Bun__signpost_emit(os_log_t log, os_signpost_type_t type, os_signpost_id_t spid, int trace_event_id)
+@@ -1160,6 +1165,8 @@ extern "C" void Bun__signpost_emit(os_log_t log, os_signpost_type_t type, os_sig
+     }
+ }
+ 
++#pragma clang diagnostic pop
++
+ #undef EMIT_SIGNPOST
+ #undef FOR_EACH_TRACE_EVENT
+ 
+diff --git a/src/jsc/modules/ObjectModule.cpp b/src/jsc/modules/ObjectModule.cpp
+index 5505408..4311d5b 100644
+--- a/src/jsc/modules/ObjectModule.cpp
++++ b/src/jsc/modules/ObjectModule.cpp
+@@ -47,7 +47,7 @@ generateObjectModuleSourceCodeForJSON(JSC::JSGlobalObject* globalObject,
+         PropertyNameArrayBuilder properties(vm, PropertyNameMode::Strings,
+             PrivateSymbolMode::Exclude);
+         object->getPropertyNames(globalObject, properties, DontEnumPropertiesMode::Exclude);
+-        RETURN_IF_EXCEPTION(scope, {});
++        RETURN_IF_EXCEPTION(scope, void());
+         gcUnprotectNullTolerant(object);
+ 
+         exportNames.append(vm.propertyNames->defaultKeyword);
+@@ -61,7 +61,7 @@ generateObjectModuleSourceCodeForJSON(JSC::JSGlobalObject* globalObject,
+             exportNames.append(entry);
+ 
+             JSValue value = object->get(globalObject, entry);
+-            RETURN_IF_EXCEPTION(scope, {});
++            RETURN_IF_EXCEPTION(scope, void());
+             exportValues.append(value);
+         }
+     };

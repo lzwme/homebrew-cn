@@ -6,18 +6,19 @@ class B2sum < Formula
   license any_of: ["CC0-1.0", "OpenSSL", "Apache-2.0"]
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "2c13b1572d5c05d0c824ffa7cc06a385d7a99c7e03ab695701a4a95964677abd"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "78ff50b93a895f7bb3344a5469d54dbbd55066e27903a0411be5c8406d9bf896"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f950ffbb7054c14bc13c5308966a2eb461557103b96f43d446781b9353887a78"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a9fb48197fac700a466ea1628a59ed6a5b6a9690977659bb31c9fe31bf5fce63"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "64c2c7d38639bafcf1ae62c5c1b4d6226dc57fcf7cff654c676d97be597b3d40"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d7c75a1aaf69f5bdec9706848244f7baaa4c17066d99e791ad9d007a483d1671"
-    sha256 cellar: :any_skip_relocation, sonoma:         "a7e35223790e6b251dbad52a84e5cd3c1bbfe774039afdfcbc6d40a7537126df"
-    sha256 cellar: :any_skip_relocation, ventura:        "b68e4c748c44e8087d61da723e3402dd9e6506b038695e6bbd447333bb69503f"
-    sha256 cellar: :any_skip_relocation, monterey:       "70a311dd99f685268a3bcef834c4373d8506fafcd17de9a15fbe9fb68f2fcaed"
-    sha256 cellar: :any_skip_relocation, big_sur:        "fd4870a8a8ea954c5f8b45addfd4ee6ccac3f69f058a54be623ea271b3b4be78"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "045bcf83cd9918310902dcf419763b59bfa86c1cce653d2469a760e3cff05219"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3de701be2858013ed380a477ce9b911db189812984990cd420b9f6d5df7a82bd"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "c5484a588d978ba6636082d79bffab1f6e4fae080bfccff4355878a1b4088dc1"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "2c13b1572d5c05d0c824ffa7cc06a385d7a99c7e03ab695701a4a95964677abd"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "78ff50b93a895f7bb3344a5469d54dbbd55066e27903a0411be5c8406d9bf896"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "f950ffbb7054c14bc13c5308966a2eb461557103b96f43d446781b9353887a78"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:     "a9fb48197fac700a466ea1628a59ed6a5b6a9690977659bb31c9fe31bf5fce63"
+    sha256 cellar: :any_skip_relocation, arm64_monterey:    "64c2c7d38639bafcf1ae62c5c1b4d6226dc57fcf7cff654c676d97be597b3d40"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:     "d7c75a1aaf69f5bdec9706848244f7baaa4c17066d99e791ad9d007a483d1671"
+    sha256 cellar: :any_skip_relocation, sonoma:            "a7e35223790e6b251dbad52a84e5cd3c1bbfe774039afdfcbc6d40a7537126df"
+    sha256 cellar: :any_skip_relocation, ventura:           "b68e4c748c44e8087d61da723e3402dd9e6506b038695e6bbd447333bb69503f"
+    sha256 cellar: :any_skip_relocation, monterey:          "70a311dd99f685268a3bcef834c4373d8506fafcd17de9a15fbe9fb68f2fcaed"
+    sha256 cellar: :any_skip_relocation, big_sur:           "fd4870a8a8ea954c5f8b45addfd4ee6ccac3f69f058a54be623ea271b3b4be78"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "045bcf83cd9918310902dcf419763b59bfa86c1cce653d2469a760e3cff05219"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "3de701be2858013ed380a477ce9b911db189812984990cd420b9f6d5df7a82bd"
   end
 
   conflicts_with "coreutils", because: "both install `b2sum` binaries"

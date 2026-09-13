@@ -6,12 +6,13 @@ class Sylph < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "65a5db917f22490e7ccfe1c708fbea9ef4e12d58e9e204f1be4cba864dfa5a9d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "90e6499a3be2395901efaecb8b29f8afed13d73f43c15d2f85206975d971c98c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a96d1d8693721ee1e787c42758e4e50c30a8d63d3104e8a50709edf1ecc22ed5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6558b4a6efc0fffea34185b1efd5930b6465b0020467815e923f436d5813b9cb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "49a547053071374c6de1152c674611eaacf7ba5ca3b51eba8e0e286d20d207a1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2d5ab406da26adf6e3b73144a1bdce61fba7aeb84082691510fdb3254782d0d2"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "6667ec47bbebceed264e3143db4b73fb021e579cef49749683383946d9c9e3d9"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "65a5db917f22490e7ccfe1c708fbea9ef4e12d58e9e204f1be4cba864dfa5a9d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "90e6499a3be2395901efaecb8b29f8afed13d73f43c15d2f85206975d971c98c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "a96d1d8693721ee1e787c42758e4e50c30a8d63d3104e8a50709edf1ecc22ed5"
+    sha256 cellar: :any_skip_relocation, sonoma:            "6558b4a6efc0fffea34185b1efd5930b6465b0020467815e923f436d5813b9cb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "49a547053071374c6de1152c674611eaacf7ba5ca3b51eba8e0e286d20d207a1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "2d5ab406da26adf6e3b73144a1bdce61fba7aeb84082691510fdb3254782d0d2"
   end
 
   depends_on "cmake" => :build

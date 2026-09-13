@@ -8,12 +8,13 @@ class LeetcodeCli < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3181907993e5b87ccaa625d9432561dc02c844ba1df3eec71a8ee1ead47b0cb7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5f2c4b7e80ba8bc455fc2fc4355081cfe5d8f8576e76d383d3c92d24708e3a44"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "813ce29f2e10fb14eafc63afc0fa73eef63911b091bbe2becad1ee9aca7d2725"
-    sha256 cellar: :any_skip_relocation, sonoma:        "03158a6ea9c503825788c6c236c35f2f24fe3a54db8d4b2ea53c8c29e9e4a94e"
-    sha256 cellar: :any,                 arm64_linux:   "b7537396bc808fe67a01bdbb467e7be56c09b8a7af03aa8b3760a5e96d23dbf2"
-    sha256 cellar: :any,                 x86_64_linux:  "6d81ad3d3200763b069fcfc2b452792eed482bb33669e046fabf58f5227ecc0a"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "999f2ba2df65348c2cdd045a12a13c2269884a0bcd8be92d7e911aefcb102714"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "3181907993e5b87ccaa625d9432561dc02c844ba1df3eec71a8ee1ead47b0cb7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "5f2c4b7e80ba8bc455fc2fc4355081cfe5d8f8576e76d383d3c92d24708e3a44"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "813ce29f2e10fb14eafc63afc0fa73eef63911b091bbe2becad1ee9aca7d2725"
+    sha256 cellar: :any_skip_relocation, sonoma:            "03158a6ea9c503825788c6c236c35f2f24fe3a54db8d4b2ea53c8c29e9e4a94e"
+    sha256 cellar: :any,                 arm64_linux:       "b7537396bc808fe67a01bdbb467e7be56c09b8a7af03aa8b3760a5e96d23dbf2"
+    sha256 cellar: :any,                 x86_64_linux:      "6d81ad3d3200763b069fcfc2b452792eed482bb33669e046fabf58f5227ecc0a"
   end
 
   depends_on "pkgconf" => :build

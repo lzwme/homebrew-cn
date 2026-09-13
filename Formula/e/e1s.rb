@@ -13,11 +13,12 @@ class E1s < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "079be6764c8e19e17fa3a67a97fa48619623abda1db780697d147d5481074777"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "079be6764c8e19e17fa3a67a97fa48619623abda1db780697d147d5481074777"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "079be6764c8e19e17fa3a67a97fa48619623abda1db780697d147d5481074777"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "18c98a16ddaa6b8d57d1e11022c239cad08ad4e31c9e0e91668800097faea1d2"
-    sha256 cellar: :any,                 x86_64_linux:  "ff4d2390b72eab0b4e371c7309bfe748303c1667e072a5ec0193c72f85002074"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "079be6764c8e19e17fa3a67a97fa48619623abda1db780697d147d5481074777"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "079be6764c8e19e17fa3a67a97fa48619623abda1db780697d147d5481074777"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "079be6764c8e19e17fa3a67a97fa48619623abda1db780697d147d5481074777"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "079be6764c8e19e17fa3a67a97fa48619623abda1db780697d147d5481074777"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "18c98a16ddaa6b8d57d1e11022c239cad08ad4e31c9e0e91668800097faea1d2"
+    sha256 cellar: :any,                 x86_64_linux:      "ff4d2390b72eab0b4e371c7309bfe748303c1667e072a5ec0193c72f85002074"
   end
 
   depends_on "go" => :build

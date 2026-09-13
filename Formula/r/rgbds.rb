@@ -12,12 +12,13 @@ class Rgbds < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "93f31d34c69552e6d490335e18de854608534d0c0eb63e267a33f35eb3017015"
-    sha256 cellar: :any, arm64_sequoia: "006fb511cf3db6207326617600434daafcf0b090bba5d38b77696135c8991b33"
-    sha256 cellar: :any, arm64_sonoma:  "1db73630c13c6f99ac6ddeadecec65a95ec05b30a4d98694ff7723819ff0f62e"
-    sha256 cellar: :any, sonoma:        "8b4ea62968b4e34822e2bacbf6043b9bcbb23fcf6a3739e5868b913ab2e7c34b"
-    sha256 cellar: :any, arm64_linux:   "5a2e8a0bd0ea76f9766a079103f10d9b36f47766750a14b64690df67883f4f11"
-    sha256 cellar: :any, x86_64_linux:  "5487484080210eb64058c40f4747bc9a3e0b09034e8a4dd04b48062e45e5c0b8"
+    sha256 cellar: :any, arm64_golden_gate: "f2dd33efe2b43282104f84a3111ce0815e441c3463b940b4d7b108e95c314d39"
+    sha256 cellar: :any, arm64_tahoe:       "93f31d34c69552e6d490335e18de854608534d0c0eb63e267a33f35eb3017015"
+    sha256 cellar: :any, arm64_sequoia:     "006fb511cf3db6207326617600434daafcf0b090bba5d38b77696135c8991b33"
+    sha256 cellar: :any, arm64_sonoma:      "1db73630c13c6f99ac6ddeadecec65a95ec05b30a4d98694ff7723819ff0f62e"
+    sha256 cellar: :any, sonoma:            "8b4ea62968b4e34822e2bacbf6043b9bcbb23fcf6a3739e5868b913ab2e7c34b"
+    sha256 cellar: :any, arm64_linux:       "5a2e8a0bd0ea76f9766a079103f10d9b36f47766750a14b64690df67883f4f11"
+    sha256 cellar: :any, x86_64_linux:      "5487484080210eb64058c40f4747bc9a3e0b09034e8a4dd04b48062e45e5c0b8"
   end
 
   depends_on "bison" => :build

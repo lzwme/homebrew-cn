@@ -7,12 +7,13 @@ class TftpNow < Formula
   head "https://github.com/puhitaku/tftp-now.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7ce9f2e42db06397ce68aece55bf85848ea8a08f253aafd0c0c2429435dc75e5"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7ce9f2e42db06397ce68aece55bf85848ea8a08f253aafd0c0c2429435dc75e5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7ce9f2e42db06397ce68aece55bf85848ea8a08f253aafd0c0c2429435dc75e5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "947f3f23f70ba7d0d6d60b0c3202c3d5c2126c210fdd55e352d1b7ce04b09aa9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c2a31bc87475ead93fbc73ea37eb25898209a46d51a1caf345698154b5420b7e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ec7f9c6bb08da996dd10a5cbb1a098eff0b0d1e7d3987083fd3e6e8a77ceefd0"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "afb13e4fd73d939bf9be500b3e7aa60402335b1ab9e475a115034edb09d7b0a6"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "7ce9f2e42db06397ce68aece55bf85848ea8a08f253aafd0c0c2429435dc75e5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "7ce9f2e42db06397ce68aece55bf85848ea8a08f253aafd0c0c2429435dc75e5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "7ce9f2e42db06397ce68aece55bf85848ea8a08f253aafd0c0c2429435dc75e5"
+    sha256 cellar: :any_skip_relocation, sonoma:            "947f3f23f70ba7d0d6d60b0c3202c3d5c2126c210fdd55e352d1b7ce04b09aa9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "c2a31bc87475ead93fbc73ea37eb25898209a46d51a1caf345698154b5420b7e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "ec7f9c6bb08da996dd10a5cbb1a098eff0b0d1e7d3987083fd3e6e8a77ceefd0"
   end
 
   depends_on "go" => :build

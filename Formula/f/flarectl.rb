@@ -13,11 +13,12 @@ class Flarectl < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1e75eae27a3173ecae8d931d8893dc33e2dc5266b6c2ce8a4ee796d968888df0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1e75eae27a3173ecae8d931d8893dc33e2dc5266b6c2ce8a4ee796d968888df0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1e75eae27a3173ecae8d931d8893dc33e2dc5266b6c2ce8a4ee796d968888df0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "53fe294923b1eaec575fc7b074fd945beea8b1a5375670de79acb979f3f72499"
-    sha256 cellar: :any,                 x86_64_linux:  "f0c88ca45ab7181042280bb37895e9b0798a66020ae8c8b926031f8adca1929e"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "0a99d7df99dd1b4f1f5703372815fa36e3a46ea4f68886eb3f887bedd6a1b26f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "1e75eae27a3173ecae8d931d8893dc33e2dc5266b6c2ce8a4ee796d968888df0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "1e75eae27a3173ecae8d931d8893dc33e2dc5266b6c2ce8a4ee796d968888df0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "1e75eae27a3173ecae8d931d8893dc33e2dc5266b6c2ce8a4ee796d968888df0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "53fe294923b1eaec575fc7b074fd945beea8b1a5375670de79acb979f3f72499"
+    sha256 cellar: :any,                 x86_64_linux:      "f0c88ca45ab7181042280bb37895e9b0798a66020ae8c8b926031f8adca1929e"
   end
 
   depends_on "go" => :build

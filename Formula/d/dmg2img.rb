@@ -17,12 +17,13 @@ class Dmg2img < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "97e3ed053a2252ee6050c04f82331806b860b598b78da1d16df9230ab3c6d072"
-    sha256 cellar: :any,                 arm64_sequoia: "84d01aa11f77179290362b3a5a2125982e0f1361cf3b6c3b978d2e759072bdaf"
-    sha256 cellar: :any,                 arm64_sonoma:  "d11c36cba3bd4f9148c08bb5e091f9c2ab021a45c89f022b0b758579997ea465"
-    sha256 cellar: :any,                 sonoma:        "15dbf70092404f86b2a856fba1a6843fa85654ccb61f4076155229f99193c9c7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "69544e104e4f38a76e4e51a2ed351dc181524ec9db35b33b4346d49fcc532d57"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5dfb7f53e802e62022eef747edca601c5c05af8f3e926bca3af659c6e78842fb"
+    sha256 cellar: :any,                 arm64_golden_gate: "1a71b81f4cbee9f3d202b6f67eea28ed0908c78614ddac70feb95058a7af64fc"
+    sha256 cellar: :any,                 arm64_tahoe:       "97e3ed053a2252ee6050c04f82331806b860b598b78da1d16df9230ab3c6d072"
+    sha256 cellar: :any,                 arm64_sequoia:     "84d01aa11f77179290362b3a5a2125982e0f1361cf3b6c3b978d2e759072bdaf"
+    sha256 cellar: :any,                 arm64_sonoma:      "d11c36cba3bd4f9148c08bb5e091f9c2ab021a45c89f022b0b758579997ea465"
+    sha256 cellar: :any,                 sonoma:            "15dbf70092404f86b2a856fba1a6843fa85654ccb61f4076155229f99193c9c7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "69544e104e4f38a76e4e51a2ed351dc181524ec9db35b33b4346d49fcc532d57"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "5dfb7f53e802e62022eef747edca601c5c05af8f3e926bca3af659c6e78842fb"
   end
 
   depends_on "openssl@4"

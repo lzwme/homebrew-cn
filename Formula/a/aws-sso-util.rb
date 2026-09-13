@@ -10,12 +10,13 @@ class AwsSsoUtil < Formula
   head "https://github.com/61418/aws-sso-util.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "c0ec5f26e1f32323f3f33c5f298496d7167f21b252655b62f2d70d1edf3f5b34"
-    sha256 cellar: :any,                 arm64_sequoia: "d158c7b623dcf94108697dfcda6429cba74d2d592d5d57a6df6714a704e6ee37"
-    sha256 cellar: :any,                 arm64_sonoma:  "161a7194a29609451272e4577c676bca89da36c2e9947d9c0ff66e084ccbd4dd"
-    sha256 cellar: :any,                 sonoma:        "02d461b17d7a418b10016373079fc67872cc34a6d663a7d799888560fb65c359"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3adca0b98302f367292636fd1aaf02a8d472a800cf7ffbac0853164fc561f228"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e61b456aef42c03eebda09682565c57e189911e0a26a76e4c43997e341fa3264"
+    sha256 cellar: :any,                 arm64_golden_gate: "aac90bb5632e24540d3556577046c0e7ccc58e1d0fc657847acacc003a024be8"
+    sha256 cellar: :any,                 arm64_tahoe:       "c0ec5f26e1f32323f3f33c5f298496d7167f21b252655b62f2d70d1edf3f5b34"
+    sha256 cellar: :any,                 arm64_sequoia:     "d158c7b623dcf94108697dfcda6429cba74d2d592d5d57a6df6714a704e6ee37"
+    sha256 cellar: :any,                 arm64_sonoma:      "161a7194a29609451272e4577c676bca89da36c2e9947d9c0ff66e084ccbd4dd"
+    sha256 cellar: :any,                 sonoma:            "02d461b17d7a418b10016373079fc67872cc34a6d663a7d799888560fb65c359"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "3adca0b98302f367292636fd1aaf02a8d472a800cf7ffbac0853164fc561f228"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "e61b456aef42c03eebda09682565c57e189911e0a26a76e4c43997e341fa3264"
   end
 
   depends_on "certifi" => :no_linkage

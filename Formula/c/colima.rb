@@ -13,16 +13,23 @@ class Colima < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a9dfd1fa0a4aee62fef75974f39f174e4da774f7ba495c43dd0bcc23633381b8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "56ea218ab2b408e940c4d690a547c082b5be3cd3cf581ddbfe0f3a0166434ae1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c9ad2203b00fde63c5060b236277fcb8e041b8e78f325efc433b701a55a881c3"
-    sha256 cellar: :any_skip_relocation, sonoma:        "47bdc2c0e4c973fd07e0855800aca386d77db7d22063069210e32a5169e76209"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "49146e4d5b549033572324cc922404cd783951c11d725a31c8cdea1d38bd1aa0"
-    sha256 cellar: :any,                 x86_64_linux:  "e97b386468c0b511c53253c31a5f34cbfdf7bb976a5db656bcf31ebe90edbe63"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "ca04c8325d83d475dad786b1e946b1aa7f2c9e19d81e1121ef29ffa431e65d87"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "a9dfd1fa0a4aee62fef75974f39f174e4da774f7ba495c43dd0bcc23633381b8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "56ea218ab2b408e940c4d690a547c082b5be3cd3cf581ddbfe0f3a0166434ae1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "c9ad2203b00fde63c5060b236277fcb8e041b8e78f325efc433b701a55a881c3"
+    sha256 cellar: :any_skip_relocation, sonoma:            "47bdc2c0e4c973fd07e0855800aca386d77db7d22063069210e32a5169e76209"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "49146e4d5b549033572324cc922404cd783951c11d725a31c8cdea1d38bd1aa0"
+    sha256 cellar: :any,                 x86_64_linux:      "e97b386468c0b511c53253c31a5f34cbfdf7bb976a5db656bcf31ebe90edbe63"
   end
 
   depends_on "go" => :build
   depends_on "lima"
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     project = "github.com/abiosoft/colima"

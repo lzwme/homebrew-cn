@@ -12,12 +12,13 @@ class Asciiquarium < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "ebc54810e56523c2123684e5545afe93c8cdd6f723b53142c7e9fac508ae71e7"
-    sha256 cellar: :any, arm64_sequoia: "dc7d7818866d54974751f18f9718751a34aa2d6101f2f15780ab26f874d0d409"
-    sha256 cellar: :any, arm64_sonoma:  "98559ef65c4e2af4e14ea1d2ef7e0b4f0d1fea65ead318562ed61601873bf9be"
-    sha256 cellar: :any, sonoma:        "b7d8dd2e459fbc17a9377e6314e63dc7ae33a321cfec0135dd834aa6665a4ae4"
-    sha256 cellar: :any, arm64_linux:   "462fde5700c9aabe1b3d4d12e51dd4b31fda33019dd057bbb135584ffdb95cd3"
-    sha256 cellar: :any, x86_64_linux:  "c12b30a0628118b53ea655f55b1067ec530be5f748177f5ef07469fca8cf0f5c"
+    sha256 cellar: :any, arm64_golden_gate: "87cd5f6d40aeddab0aedaa98883a35967c9fad8c062795dc3c5e685b7e9b5999"
+    sha256 cellar: :any, arm64_tahoe:       "ebc54810e56523c2123684e5545afe93c8cdd6f723b53142c7e9fac508ae71e7"
+    sha256 cellar: :any, arm64_sequoia:     "dc7d7818866d54974751f18f9718751a34aa2d6101f2f15780ab26f874d0d409"
+    sha256 cellar: :any, arm64_sonoma:      "98559ef65c4e2af4e14ea1d2ef7e0b4f0d1fea65ead318562ed61601873bf9be"
+    sha256 cellar: :any, sonoma:            "b7d8dd2e459fbc17a9377e6314e63dc7ae33a321cfec0135dd834aa6665a4ae4"
+    sha256 cellar: :any, arm64_linux:       "462fde5700c9aabe1b3d4d12e51dd4b31fda33019dd057bbb135584ffdb95cd3"
+    sha256 cellar: :any, x86_64_linux:      "c12b30a0628118b53ea655f55b1067ec530be5f748177f5ef07469fca8cf0f5c"
   end
 
   depends_on "ncurses"

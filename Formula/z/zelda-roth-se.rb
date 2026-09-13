@@ -44,7 +44,7 @@ class ZeldaRothSe < Formula
   end
 
   test do
-    system Formula["solarus"].bin/"solarus-run", "-help"
+    system formula_opt_bin("solarus")/"solarus-run", "-help"
     system "unzip", share/"zelda_roth_se/data.solarus"
   end
 end

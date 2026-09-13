@@ -7,14 +7,15 @@ class Diagram < Formula
   head "https://github.com/esimov/diagram.git", branch: "master"
 
   bottle do
-    sha256 arm64_tahoe:   "3a77e7b6637b987d6391891b8810a495e7043b8311b2308acba17be9fb1763e5"
-    sha256 arm64_sequoia: "7a4c9251da9103d6c7bf749ae76e30500e2298751c6743ff0ddb27fdb2203e08"
-    sha256 arm64_sonoma:  "0d6928b6450255451e2120814add95222db5add55282cc2f9477766b6cd4607f"
-    sha256 arm64_ventura: "aea4fe2d174931f81ca241d51510b1d5dfbf4034e1cc77d9eb86646859450e05"
-    sha256 sonoma:        "9fdea25d43a0954d98c691c9b34bde4a0ab10a18e5b5b6d5fdfc1d1286c29e8c"
-    sha256 ventura:       "bfdfb5a4c9c981dceedc86608888e1e1a6100e0f98f2fe397d411485a3762ce4"
-    sha256 arm64_linux:   "8d40ae4f041e7e48859c91c4875605960d20ffa8de18b35953e9a783031d524f"
-    sha256 x86_64_linux:  "8ba93efdc8407ebd4f76c6f3a78aaf392e8a177035d48d740d4c9e3412bc8746"
+    sha256 arm64_golden_gate: "2a1972762a47b88c9f142e67a2dc36de8584acdd8a76f0291e93e3b5583c4fd0"
+    sha256 arm64_tahoe:       "3a77e7b6637b987d6391891b8810a495e7043b8311b2308acba17be9fb1763e5"
+    sha256 arm64_sequoia:     "7a4c9251da9103d6c7bf749ae76e30500e2298751c6743ff0ddb27fdb2203e08"
+    sha256 arm64_sonoma:      "0d6928b6450255451e2120814add95222db5add55282cc2f9477766b6cd4607f"
+    sha256 arm64_ventura:     "aea4fe2d174931f81ca241d51510b1d5dfbf4034e1cc77d9eb86646859450e05"
+    sha256 sonoma:            "9fdea25d43a0954d98c691c9b34bde4a0ab10a18e5b5b6d5fdfc1d1286c29e8c"
+    sha256 ventura:           "bfdfb5a4c9c981dceedc86608888e1e1a6100e0f98f2fe397d411485a3762ce4"
+    sha256 arm64_linux:       "8d40ae4f041e7e48859c91c4875605960d20ffa8de18b35953e9a783031d524f"
+    sha256 x86_64_linux:      "8ba93efdc8407ebd4f76c6f3a78aaf392e8a177035d48d740d4c9e3412bc8746"
   end
 
   depends_on "go" => :build

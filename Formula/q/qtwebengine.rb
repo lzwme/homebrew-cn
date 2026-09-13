@@ -35,11 +35,12 @@ class Qtwebengine < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "a1c223d34f2480e338491e7ca8e9c932b70f83664774bb9536ea4a0ccb094341"
-    sha256 cellar: :any, arm64_sequoia: "a992d60f76aa9ecc949296b4aec9d212469d25ff706684d14f4766defc3c49c7"
-    sha256 cellar: :any, arm64_sonoma:  "8950792b5e49b92c1ef132ff3ed46a2b6457129736e6ad9e5e163e92295b7d80"
-    sha256 cellar: :any, arm64_linux:   "81be87b454ee3eeb8e6677f70c58788817685df189b115a88bcd142f6bcb81e0"
-    sha256 cellar: :any, x86_64_linux:  "1b1f9666f90094609bff11ca4f16655ec09f352f18c2d2566ba01b1c00f4c64a"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "74d960d3b747aefd749377f9e00379e78a3cbdaef87a359308376e4e1b655573"
+    sha256 cellar: :any, arm64_tahoe:       "31bd84bb70e3c56c10f6a6bd21b6ff1d67a26d19da7b64fedfd4b792ae0eb7af"
+    sha256 cellar: :any, arm64_sequoia:     "8a8d83d82bfc59e54d93ace64dccf7001cad67919043bd593113d0bacdca8fde"
+    sha256 cellar: :any, arm64_linux:       "850e31426a870599e4092f6975f460e28ebaae3fba38ee9b649ac7025a267f14"
+    sha256 cellar: :any, x86_64_linux:      "b1da138e3f32273bbce7d1c9872b1014921beb16fab49e3c9bdd269f71db0a3f"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -147,6 +148,18 @@ class Qtwebengine < Formula
     sha256 "565f9ad031c702dae404e27a099e3e09186a3ab1b9520f06d215502b651fd910"
   end
 
+  # Fix build with the macOS 27 SDK until Qt updates its bundled Chromium.
+  # https://qt-project.atlassian.net/browse/QTBUG-150276
+  patch do
+    on_macos do
+      url "https://github.com/chromium/chromium/commit/6c0a651f9cf91d07c87be8feba854a38a311aba6.patch?full_index=1"
+      sha256 "5ed76e8bf00380d5baac097391f43c5c6f6fe438ab04efc647a8aa5511a19ce7"
+      directory "src/3rdparty/chromium"
+      type :backport
+      resolves "https://qt-project.atlassian.net/browse/QTBUG-150276"
+    end
+  end
+
   def install
     venv = virtualenv_create(buildpath/"venv", python3)
     venv.pip_install resources
@@ -252,7 +265,7 @@ class Qtwebengine < Formula
     CPP
 
     ENV["LC_ALL"] = "en_US.UTF-8"
-    ENV["QT_QPA_PLATFORM"] = "minimal" if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
+    ENV["QT_QPA_PLATFORM"] = "minimal"
     ENV.delete "CPATH" if OS.mac?
 
     system "cmake", "-S", ".", "-B", "cmake"
@@ -260,7 +273,7 @@ class Qtwebengine < Formula
     system "./cmake/test"
 
     mkdir "qmake" do
-      system Formula["qtbase"].bin/"qmake", testpath/"test.pro"
+      system formula_opt_bin("qtbase")/"qmake", testpath/"test.pro"
       system "make"
       system "./test"
     end

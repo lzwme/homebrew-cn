@@ -7,12 +7,13 @@ class FortranStdlib < Formula
   head "https://github.com/fortran-lang/stdlib.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "019e3842f56d2193a7db71556efd8e93bdafe4defceea47da9ced6230444546e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ab2688d5cd5a9b0c2fd3e2cbfc6cd0a6d717f8d247823433140d661f3aec0f6c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9a7973a27887a0347b6d82cd570bfbfd3e2fca833df30def20003ec665dec3cf"
-    sha256 cellar: :any_skip_relocation, sonoma:        "50ec9b4f641125459e9193afc056d479655502d8704267dd6bcf41a745690ff9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c25d5ce02e32da1a0e8a30c2bfcefb846244ffb5454c2f727394a0522336df5e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "00fa8e5b2da7e2e4e4f35962f605f4692d30e0dd964e82f43c3f2436d9486b20"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "c8d0512d9ed42c56d7a3e545a0d9b05dc4ec7dfcd5860d211531c97fcf6ebbde"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "019e3842f56d2193a7db71556efd8e93bdafe4defceea47da9ced6230444546e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "ab2688d5cd5a9b0c2fd3e2cbfc6cd0a6d717f8d247823433140d661f3aec0f6c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "9a7973a27887a0347b6d82cd570bfbfd3e2fca833df30def20003ec665dec3cf"
+    sha256 cellar: :any_skip_relocation, sonoma:            "50ec9b4f641125459e9193afc056d479655502d8704267dd6bcf41a745690ff9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "c25d5ce02e32da1a0e8a30c2bfcefb846244ffb5454c2f727394a0522336df5e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "00fa8e5b2da7e2e4e4f35962f605f4692d30e0dd964e82f43c3f2436d9486b20"
   end
 
   depends_on "cmake" => [:build, :test]

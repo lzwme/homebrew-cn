@@ -25,7 +25,7 @@ class GitQuickStats < Formula
   test do
     ENV["TERM"] = "xterm"
 
-    ENV.prepend_path "PATH", Formula["coreutils"].libexec/"gnubin" if OS.mac?
+    ENV.prepend_path "PATH", formula_opt_libexec("coreutils")/"gnubin" if OS.mac?
 
     system "git", "init", "--initial-branch=main"
     system "git", "commit", "--allow-empty", "-m", "initial commit", "--quiet"

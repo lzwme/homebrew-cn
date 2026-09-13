@@ -8,12 +8,13 @@ class TracyGenomics < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "10879f7048d1bccb685f1568b5a0d26f889910cafba8cf2b9685260bb33ae311"
-    sha256 cellar: :any, arm64_sequoia: "8afe0caa96c67c7436c2b2cfc9330a14940cb3f3ed040d942ff2c098879ae36f"
-    sha256 cellar: :any, arm64_sonoma:  "112acdea080d28492287493fae0875c886eeee1a9ad661352c52db03f740ec85"
-    sha256 cellar: :any, sonoma:        "fdb996e8eefcf1ed0f8ed139f599c6fb201e55712b426a51efb663b6b460888f"
-    sha256 cellar: :any, arm64_linux:   "bbe01d4d2320574f9c369d6c2767da469532ee7fc51ec32267125556c1f3706c"
-    sha256 cellar: :any, x86_64_linux:  "810c0fc55893f416aca8df62bbe37de39a122551c9225dbda9c8ae3524cc6f6f"
+    sha256 cellar: :any, arm64_golden_gate: "9fd9d4e6c7b203c4c21df49ab362bbc182b3986f21ccf0d30818d5e67760a7e3"
+    sha256 cellar: :any, arm64_tahoe:       "10879f7048d1bccb685f1568b5a0d26f889910cafba8cf2b9685260bb33ae311"
+    sha256 cellar: :any, arm64_sequoia:     "8afe0caa96c67c7436c2b2cfc9330a14940cb3f3ed040d942ff2c098879ae36f"
+    sha256 cellar: :any, arm64_sonoma:      "112acdea080d28492287493fae0875c886eeee1a9ad661352c52db03f740ec85"
+    sha256 cellar: :any, sonoma:            "fdb996e8eefcf1ed0f8ed139f599c6fb201e55712b426a51efb663b6b460888f"
+    sha256 cellar: :any, arm64_linux:       "bbe01d4d2320574f9c369d6c2767da469532ee7fc51ec32267125556c1f3706c"
+    sha256 cellar: :any, x86_64_linux:      "810c0fc55893f416aca8df62bbe37de39a122551c9225dbda9c8ae3524cc6f6f"
   end
 
   depends_on "boost"

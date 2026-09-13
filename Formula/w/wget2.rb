@@ -12,12 +12,13 @@ class Wget2 < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "3b785836084f972fba43ca8b82ac44ca5447a3c236572d67713e26c2209ee256"
-    sha256 arm64_sequoia: "b394a3b18b61da6bab9eac8ccfe2640cc19e8b38ed99cf48d0505ef0cd290def"
-    sha256 arm64_sonoma:  "bde42c49861a7e2447ae1aecba381f89691216546f4170d7c2e2a84d307db887"
-    sha256 sonoma:        "0bfa0d93f335be723eadeb95e1c9a2c363d0f72091c35b54ed91addb4486fd1b"
-    sha256 arm64_linux:   "0590c522205ec4d00168634fb328cd6abd04d67fad862b9ca1b5d76024f41cbb"
-    sha256 x86_64_linux:  "b70d0eee960f3393dc3f6e91012bfec0e244d18aab3e21841c7c8d4a8e7f9f19"
+    sha256 arm64_golden_gate: "7a198593e72317dd69a0099c236bbf850c0cd42aa3c648493bf9dba29870cce2"
+    sha256 arm64_tahoe:       "3b785836084f972fba43ca8b82ac44ca5447a3c236572d67713e26c2209ee256"
+    sha256 arm64_sequoia:     "b394a3b18b61da6bab9eac8ccfe2640cc19e8b38ed99cf48d0505ef0cd290def"
+    sha256 arm64_sonoma:      "bde42c49861a7e2447ae1aecba381f89691216546f4170d7c2e2a84d307db887"
+    sha256 sonoma:            "0bfa0d93f335be723eadeb95e1c9a2c363d0f72091c35b54ed91addb4486fd1b"
+    sha256 arm64_linux:       "0590c522205ec4d00168634fb328cd6abd04d67fad862b9ca1b5d76024f41cbb"
+    sha256 x86_64_linux:      "b70d0eee960f3393dc3f6e91012bfec0e244d18aab3e21841c7c8d4a8e7f9f19"
   end
 
   depends_on "doxygen" => :build
@@ -50,7 +51,7 @@ class Wget2 < Formula
 
   def install
     # The pattern used in 'docs/wget2_md2man.sh.in' doesn't work with system sed
-    ENV.prepend_path "PATH", Formula["gnu-sed"].libexec/"gnubin" if OS.mac?
+    ENV.prepend_path "PATH", formula_opt_libexec("gnu-sed")/"gnubin" if OS.mac?
 
     lzlib = Formula["lzlib"]
     ENV.append "LZIP_CFLAGS", "-I#{lzlib.include}"

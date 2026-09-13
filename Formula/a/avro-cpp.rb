@@ -10,12 +10,13 @@ class AvroCpp < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "d3f9da71b7a04552306ec72c454aab24080d3be40b0d207f1ca1dabd1d98b830"
-    sha256 cellar: :any, arm64_sequoia: "fb3bcc0a37022f4aaf52dbf6293a07b637e2e336c9d3302c202b9638be97e132"
-    sha256 cellar: :any, arm64_sonoma:  "98df183ed33d28bcea389729ab3c98db6373870b3226f77e6500551060b322e1"
-    sha256 cellar: :any, sonoma:        "a91303d45f45aa816eee305e8a93dc24098eb98e97cdc03ff6e148d6bf6d575c"
-    sha256 cellar: :any, arm64_linux:   "9efb3fe4f8fd6ce010daf86042f45c191d8aa1040f4011df89fa9620fcb37d77"
-    sha256 cellar: :any, x86_64_linux:  "b7528636985c4d1c8ec42f4f7c75d8082dd173d5e89eb407674f5d2b9e1802ca"
+    sha256 cellar: :any, arm64_golden_gate: "21142b405460be24f275d5e3f2eaebb501b5dcaf1b7d70dc8665e1d3e8fa5c3b"
+    sha256 cellar: :any, arm64_tahoe:       "d3f9da71b7a04552306ec72c454aab24080d3be40b0d207f1ca1dabd1d98b830"
+    sha256 cellar: :any, arm64_sequoia:     "fb3bcc0a37022f4aaf52dbf6293a07b637e2e336c9d3302c202b9638be97e132"
+    sha256 cellar: :any, arm64_sonoma:      "98df183ed33d28bcea389729ab3c98db6373870b3226f77e6500551060b322e1"
+    sha256 cellar: :any, sonoma:            "a91303d45f45aa816eee305e8a93dc24098eb98e97cdc03ff6e148d6bf6d575c"
+    sha256 cellar: :any, arm64_linux:       "9efb3fe4f8fd6ce010daf86042f45c191d8aa1040f4011df89fa9620fcb37d77"
+    sha256 cellar: :any, x86_64_linux:      "b7528636985c4d1c8ec42f4f7c75d8082dd173d5e89eb407674f5d2b9e1802ca"
   end
 
   depends_on "cmake" => :build

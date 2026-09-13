@@ -16,11 +16,12 @@ class CvsFastExport < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b2f1a13e0bc9a410c2132761d488cd7ba8eae911eb8fa7587d0a793d32aaf997"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b2f1a13e0bc9a410c2132761d488cd7ba8eae911eb8fa7587d0a793d32aaf997"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b2f1a13e0bc9a410c2132761d488cd7ba8eae911eb8fa7587d0a793d32aaf997"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "620a36c2bda5127ee882da70a6c121a9890abadf2924cf5ddb5e7d3b80de8d02"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "913712064b367153a2a85b3fb56d508f15fb592aaadb89780cf869541b1be067"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "b2f1a13e0bc9a410c2132761d488cd7ba8eae911eb8fa7587d0a793d32aaf997"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "b2f1a13e0bc9a410c2132761d488cd7ba8eae911eb8fa7587d0a793d32aaf997"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "b2f1a13e0bc9a410c2132761d488cd7ba8eae911eb8fa7587d0a793d32aaf997"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "b2f1a13e0bc9a410c2132761d488cd7ba8eae911eb8fa7587d0a793d32aaf997"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "620a36c2bda5127ee882da70a6c121a9890abadf2924cf5ddb5e7d3b80de8d02"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "913712064b367153a2a85b3fb56d508f15fb592aaadb89780cf869541b1be067"
   end
 
   depends_on "asciidoctor" => :build

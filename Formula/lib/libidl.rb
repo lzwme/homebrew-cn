@@ -7,18 +7,19 @@ class Libidl < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:    "a0e91391470fe336c418566901c022fbd51387a87581ac820e72592c561001d7"
-    sha256 cellar: :any,                 arm64_sequoia:  "dc9090a7f3672741f6edaa0564cc8c5cb28cb24e4bc43108d8953e05f3fb1eaf"
-    sha256 cellar: :any,                 arm64_sonoma:   "555fa331e45efaead26f0b6ff68fd41f1a75223a68e5469fa041f4bb95676ad0"
-    sha256 cellar: :any,                 arm64_ventura:  "c0d6a80577aeb880b24d8ec60c11a5f4e49e48ee5109e6a4dbbcfca24b2a05f3"
-    sha256 cellar: :any,                 arm64_monterey: "84968b36ff2cb712d57470b45200c7b421e2e86f60a018829534a971856f3a9c"
-    sha256 cellar: :any,                 arm64_big_sur:  "8b4d33f25fe4a01c6924b42d64072cbf42ca133552e67d47c46412ca2e848867"
-    sha256 cellar: :any,                 sonoma:         "6ae268a8434298d17350ca586154a01082dfa7a7b1dc0028c8da599ca453132b"
-    sha256 cellar: :any,                 ventura:        "b709339fadfbdae39d0698c331e1f92d32b077c0cf60d8ceff0ea05c906b9511"
-    sha256 cellar: :any,                 monterey:       "9b0791153103e3a4629804b46bccc3829d17bfcead908916cac480ba624b3a6e"
-    sha256 cellar: :any,                 big_sur:        "320ddc04b68934e51f31fc33223c11097d712869a83242ca6669d05ca112ede9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "57eeee9bf85e175fcdbd07db76bafa970051cf061836efd715957e5cfcb7319a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9ede5070565f89d3e7f24f01d9da73d50b6c008fbf12f7247d3cd04b8076d842"
+    sha256 cellar: :any,                 arm64_golden_gate: "a6d3733db277d7b88157c0119017434baf2e94a93d22716ce307ec6c1e454caa"
+    sha256 cellar: :any,                 arm64_tahoe:       "a0e91391470fe336c418566901c022fbd51387a87581ac820e72592c561001d7"
+    sha256 cellar: :any,                 arm64_sequoia:     "dc9090a7f3672741f6edaa0564cc8c5cb28cb24e4bc43108d8953e05f3fb1eaf"
+    sha256 cellar: :any,                 arm64_sonoma:      "555fa331e45efaead26f0b6ff68fd41f1a75223a68e5469fa041f4bb95676ad0"
+    sha256 cellar: :any,                 arm64_ventura:     "c0d6a80577aeb880b24d8ec60c11a5f4e49e48ee5109e6a4dbbcfca24b2a05f3"
+    sha256 cellar: :any,                 arm64_monterey:    "84968b36ff2cb712d57470b45200c7b421e2e86f60a018829534a971856f3a9c"
+    sha256 cellar: :any,                 arm64_big_sur:     "8b4d33f25fe4a01c6924b42d64072cbf42ca133552e67d47c46412ca2e848867"
+    sha256 cellar: :any,                 sonoma:            "6ae268a8434298d17350ca586154a01082dfa7a7b1dc0028c8da599ca453132b"
+    sha256 cellar: :any,                 ventura:           "b709339fadfbdae39d0698c331e1f92d32b077c0cf60d8ceff0ea05c906b9511"
+    sha256 cellar: :any,                 monterey:          "9b0791153103e3a4629804b46bccc3829d17bfcead908916cac480ba624b3a6e"
+    sha256 cellar: :any,                 big_sur:           "320ddc04b68934e51f31fc33223c11097d712869a83242ca6669d05ca112ede9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "57eeee9bf85e175fcdbd07db76bafa970051cf061836efd715957e5cfcb7319a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "9ede5070565f89d3e7f24f01d9da73d50b6c008fbf12f7247d3cd04b8076d842"
   end
 
   depends_on "gettext" => :build

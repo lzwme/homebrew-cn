@@ -8,12 +8,13 @@ class ArgocdVaultPlugin < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c5d4dd6c1a4f16a3c0fd46c1721e996d152df50986c46a1fa43698f6e31ac095"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c5d4dd6c1a4f16a3c0fd46c1721e996d152df50986c46a1fa43698f6e31ac095"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c5d4dd6c1a4f16a3c0fd46c1721e996d152df50986c46a1fa43698f6e31ac095"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1fc47e2adeb0af27bb1ad84156319b7196a8fabd70ea2712e4c673d55e85f867"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "69abd86b96dfd35560cff8ca258da75d78e26fbeb2f2a7139e03cf4749f53c2f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4cd74305d5e1cac49e5621a88abbfcdd897c07e81ebe27ddc30eeeba1cf40260"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "970654a4b8bef5d591523361516f75776feef6ac7493623407ace0d879b03f83"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "c5d4dd6c1a4f16a3c0fd46c1721e996d152df50986c46a1fa43698f6e31ac095"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "c5d4dd6c1a4f16a3c0fd46c1721e996d152df50986c46a1fa43698f6e31ac095"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "c5d4dd6c1a4f16a3c0fd46c1721e996d152df50986c46a1fa43698f6e31ac095"
+    sha256 cellar: :any_skip_relocation, sonoma:            "1fc47e2adeb0af27bb1ad84156319b7196a8fabd70ea2712e4c673d55e85f867"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "69abd86b96dfd35560cff8ca258da75d78e26fbeb2f2a7139e03cf4749f53c2f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "4cd74305d5e1cac49e5621a88abbfcdd897c07e81ebe27ddc30eeeba1cf40260"
   end
 
   depends_on "go" => :build

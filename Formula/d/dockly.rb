@@ -6,14 +6,15 @@ class Dockly < Formula
   license "MIT"
 
   bottle do
-    sha256                               arm64_tahoe:   "e276939bcb8b5909e0c6ab1d39a740b724de614668235b8c3606d57e67d41e64"
-    sha256                               arm64_sequoia: "6765be9e2eb88427da832627e84bfc14e832546ec895c4f3a80e618521a29bbb"
-    sha256                               arm64_sonoma:  "21d9206c6dd01067b8ab10a86bbce37c1c1b33c1fa8f06aaed4ab4b3e2d11f79"
-    sha256                               arm64_ventura: "edba097b50de91a673b9504054ec42ed435cbd6766985af57a90b4de005900c8"
-    sha256                               sonoma:        "b6075b00e725da80c041f56a98977e4c74059eaec6486d26d628e5288157301a"
-    sha256                               ventura:       "fa994bb066eb8c0190c2c7cfa674255fe9de6491a4a182d75697f2eed99dd435"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "961cd52469f0445138bda46c29f8466f7d7f2e0587af77d2f0981a9d30e253a0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f10763b5b89d92dd010032e24ac0e060df6bb12f44118dec3ee2e0c28938d55a"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "c76f19a16beaf35eb5e907ea98a188f47b4dc63c7dd7375e8cf5b0426b83f50d"
+    sha256                               arm64_tahoe:       "e276939bcb8b5909e0c6ab1d39a740b724de614668235b8c3606d57e67d41e64"
+    sha256                               arm64_sequoia:     "6765be9e2eb88427da832627e84bfc14e832546ec895c4f3a80e618521a29bbb"
+    sha256                               arm64_sonoma:      "21d9206c6dd01067b8ab10a86bbce37c1c1b33c1fa8f06aaed4ab4b3e2d11f79"
+    sha256                               arm64_ventura:     "edba097b50de91a673b9504054ec42ed435cbd6766985af57a90b4de005900c8"
+    sha256                               sonoma:            "b6075b00e725da80c041f56a98977e4c74059eaec6486d26d628e5288157301a"
+    sha256                               ventura:           "fa994bb066eb8c0190c2c7cfa674255fe9de6491a4a182d75697f2eed99dd435"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "961cd52469f0445138bda46c29f8466f7d7f2e0587af77d2f0981a9d30e253a0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "f10763b5b89d92dd010032e24ac0e060df6bb12f44118dec3ee2e0c28938d55a"
   end
 
   depends_on "node"

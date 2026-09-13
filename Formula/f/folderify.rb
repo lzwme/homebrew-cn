@@ -7,10 +7,10 @@ class Folderify < Formula
   head "https://github.com/lgarron/folderify.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bb1bc0263bc8da3aa0bd69a2665c5aabb9b423b333f52a1249597e0911e96eb8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "714a45038bc2eea879d55859ce88e300076ad684eda9638893fbac1a3d2e3e3d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "de5899d2af9dd54842d8b682299ee00c30ad4c9f0e0ce85540323956f83c99cb"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d6df8796639c101a2eda752ebc75c50a5fffbd6bf42b416a9966fc58dc856f5d"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "8e94c8c76a451c60a585e7d10f6fa289414a5ec6602be00ca487518c4088b0a9"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "d5f005c6bae4577bef91af480ebf13e9affb7d8de0729c126fb709d43a1cb906"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "550adbb3866da306194a7a90b8fdecfe612263ab4dd909e9941d1f0de2c256d5"
   end
 
   depends_on "rust" => :build
@@ -31,9 +31,8 @@ class Folderify < Formula
       </svg>
     EOS
 
-    # folderify applies the test icon to a folder
-    system bin/"folderify", "test.svg", testpath.to_s
-    # Tests for the presence of the file icon
-    assert_path_exists testpath/"Icon\r"
+    # Stop at the iconset: `iconutil` needs LaunchServices, which the sandbox denies
+    system bin/"folderify", "test.svg", "--output-iconset", testpath/"test.iconset", "--no-progress"
+    assert_predicate testpath/"test.iconset/icon_512x512.png", :size?
   end
 end

@@ -12,16 +12,17 @@ class Click < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "96815f530661c69c118a128df96453746171c7f504e63d55d9ddf03baf1c6dbf"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "e987eede7eef110c096c8093ccfbf321f3835378f8a65619627eabe348e0d985"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "aece6aa76034deb2d8e1437d85f4e4c94195de67eb7948d19b2fc2423824808c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a828f3d797aa3aca5596984e8b8f51afdbe123c3f8e7fa4fa6e760f66a4e57e4"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "902ecbe1a647d12fe9fa8fc5de1e6c0336e8f4d1b979c24c71da8ee0c446ee14"
-    sha256 cellar: :any_skip_relocation, sonoma:         "14315013a9e3ecd0882de00d7d5d25588e0d3ed6d098d23f61a1714e93effa39"
-    sha256 cellar: :any_skip_relocation, ventura:        "b3e56cb51e4c684096a2f9c2fbc736423e2d0b38a96f6f423d0d269a149fb66b"
-    sha256 cellar: :any_skip_relocation, monterey:       "db3b2aed30f0a4b6cf38f1834d3710ba051a8cce3d3e6bb2ee895b2493e4b30c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "4b49f975c698d3f29c6055c055b11661315b87e270fe773604fe24902cee603d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4b30c2c15da3c503a541a5f751928abf68496261df9374a23c6d5dce58b9d2b8"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "32468f2e9cdc743bae80f734e8e5b8ad83aab0e3a89cefe65a51f03a4fefecea"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "96815f530661c69c118a128df96453746171c7f504e63d55d9ddf03baf1c6dbf"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "e987eede7eef110c096c8093ccfbf321f3835378f8a65619627eabe348e0d985"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "aece6aa76034deb2d8e1437d85f4e4c94195de67eb7948d19b2fc2423824808c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:     "a828f3d797aa3aca5596984e8b8f51afdbe123c3f8e7fa4fa6e760f66a4e57e4"
+    sha256 cellar: :any_skip_relocation, arm64_monterey:    "902ecbe1a647d12fe9fa8fc5de1e6c0336e8f4d1b979c24c71da8ee0c446ee14"
+    sha256 cellar: :any_skip_relocation, sonoma:            "14315013a9e3ecd0882de00d7d5d25588e0d3ed6d098d23f61a1714e93effa39"
+    sha256 cellar: :any_skip_relocation, ventura:           "b3e56cb51e4c684096a2f9c2fbc736423e2d0b38a96f6f423d0d269a149fb66b"
+    sha256 cellar: :any_skip_relocation, monterey:          "db3b2aed30f0a4b6cf38f1834d3710ba051a8cce3d3e6bb2ee895b2493e4b30c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "4b49f975c698d3f29c6055c055b11661315b87e270fe773604fe24902cee603d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "4b30c2c15da3c503a541a5f751928abf68496261df9374a23c6d5dce58b9d2b8"
   end
 
   depends_on "pkgconf" => :build

@@ -8,12 +8,13 @@ class Badread < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "042371e9220506883e1d344f62ab2c7a2beca38c5d4359219893ba9a517e1a20"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "87c8e760d6d86ae2238545fe656ac46d5f1ebae4529f6d0eda0a110a0b513d37"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e7ca617c2e12300fba81a3b52bd31805766c17fbd9de2ec40a948353092b3b4a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e88eedc375f0f23edb10028f857b875ff32a69e558ee8c5bfd05b6c2e27366df"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e2b062e71fcedb714e622bdf5305cb2fdb8c8ad63e78f774255d0f0694e5bf9e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f2d717a9b91d6b2dd37f3bcdb945a7446a0bdc5726725dc0fbe589e19e5b410d"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "5603002c2bb46cf71ac9c03e0950ddcacbd329dbcde6bc2b91466ad29f5872e3"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "042371e9220506883e1d344f62ab2c7a2beca38c5d4359219893ba9a517e1a20"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "87c8e760d6d86ae2238545fe656ac46d5f1ebae4529f6d0eda0a110a0b513d37"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "e7ca617c2e12300fba81a3b52bd31805766c17fbd9de2ec40a948353092b3b4a"
+    sha256 cellar: :any_skip_relocation, sonoma:            "e88eedc375f0f23edb10028f857b875ff32a69e558ee8c5bfd05b6c2e27366df"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "e2b062e71fcedb714e622bdf5305cb2fdb8c8ad63e78f774255d0f0694e5bf9e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "f2d717a9b91d6b2dd37f3bcdb945a7446a0bdc5726725dc0fbe589e19e5b410d"
   end
 
   depends_on "numpy"

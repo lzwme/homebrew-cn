@@ -9,14 +9,21 @@ class Lefthook < Formula
   no_autobump! because: :bumped_by_upstream
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4e0f57fb52b00ecd9f660b537e964fd45a1e588480e41bf8a5b5874a8ac75f8f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4e0f57fb52b00ecd9f660b537e964fd45a1e588480e41bf8a5b5874a8ac75f8f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4e0f57fb52b00ecd9f660b537e964fd45a1e588480e41bf8a5b5874a8ac75f8f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f1efee6c6c3150997e3ecb9a8dc12b73acc3dcbfdae77a658dafea1177be4588"
-    sha256 cellar: :any,                 x86_64_linux:  "4f7d23938a325f7e615468daaa25b34fa7d64ab769f9df17ff8ec4ee0683074f"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "6c797de1a8613d8723791caa86f43c706c4c18cbb295b17bea285c9943bdeced"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "4e0f57fb52b00ecd9f660b537e964fd45a1e588480e41bf8a5b5874a8ac75f8f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "4e0f57fb52b00ecd9f660b537e964fd45a1e588480e41bf8a5b5874a8ac75f8f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "4e0f57fb52b00ecd9f660b537e964fd45a1e588480e41bf8a5b5874a8ac75f8f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "f1efee6c6c3150997e3ecb9a8dc12b73acc3dcbfdae77a658dafea1177be4588"
+    sha256 cellar: :any,                 x86_64_linux:      "4f7d23938a325f7e615468daaa25b34fa7d64ab769f9df17ff8ec4ee0683074f"
   end
 
   depends_on "go" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     system "go", "build", *std_go_args(tags: "no_self_update")

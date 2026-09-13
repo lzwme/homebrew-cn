@@ -14,12 +14,13 @@ class LlvmAT20 < Formula
 
   bottle do
     rebuild 2
-    sha256 cellar: :any,                 arm64_tahoe:   "b95ac9e58b54a35797d89b3ac9ec2d56411b47d3942851567a6eb169e5dc9c09"
-    sha256 cellar: :any,                 arm64_sequoia: "f58e2963c383af35064c7aa47790799a0ca0974a471727c7b5f0b278fd4e1247"
-    sha256 cellar: :any,                 arm64_sonoma:  "1fefd983fc606f81c1715af4dbecfa8fbe2967196e06bcac6d63baad878c511d"
-    sha256 cellar: :any,                 sonoma:        "62c1cbffed8c724ef4201147e6bc80830e25456f465b09ec904731256741be09"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "73197c8ca4e845ec81c221c8f4138fd12b2b0b307e2b75448a75553cb85e1af1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e163127510058e535bb522054238cdf928f676b7c83aa1c4a224726e2225a50c"
+    sha256 cellar: :any,                 arm64_golden_gate: "e0e1b62f176f069b0fa03f7bd987a54258924b3160b27f2412ee5f803a0e9781"
+    sha256 cellar: :any,                 arm64_tahoe:       "b95ac9e58b54a35797d89b3ac9ec2d56411b47d3942851567a6eb169e5dc9c09"
+    sha256 cellar: :any,                 arm64_sequoia:     "f58e2963c383af35064c7aa47790799a0ca0974a471727c7b5f0b278fd4e1247"
+    sha256 cellar: :any,                 arm64_sonoma:      "1fefd983fc606f81c1715af4dbecfa8fbe2967196e06bcac6d63baad878c511d"
+    sha256 cellar: :any,                 sonoma:            "62c1cbffed8c724ef4201147e6bc80830e25456f465b09ec904731256741be09"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "73197c8ca4e845ec81c221c8f4138fd12b2b0b307e2b75448a75553cb85e1af1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "e163127510058e535bb522054238cdf928f676b7c83aa1c4a224726e2225a50c"
   end
 
   keg_only :versioned_formula

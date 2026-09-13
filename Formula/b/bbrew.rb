@@ -7,12 +7,13 @@ class Bbrew < Formula
   head "https://github.com/Valkyrie00/bold-brew.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "aa4c3f513dc30dd1375dd3c65f6489143ced0a16a524fdd4eeaa976bcf3dce50"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "aa4c3f513dc30dd1375dd3c65f6489143ced0a16a524fdd4eeaa976bcf3dce50"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "aa4c3f513dc30dd1375dd3c65f6489143ced0a16a524fdd4eeaa976bcf3dce50"
-    sha256 cellar: :any_skip_relocation, sonoma:        "96abe299c275d4e5876a1d9b91c58dd5fabcd9f2fe9d77e5e832ad4fc5a25a31"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d2af56528689c162a158b7c403510a2565d632192a540e75da2c1887a6c847cc"
-    sha256 cellar: :any,                 x86_64_linux:  "65aa8bcd1bf0dc292311ff01e305599adfb137fd238e8a4629f5603056250bc4"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "1b2ebddf7ada30cca7d7a45bcbb1f7b7897e6268185fdfa8d77fb73d49ff975d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "aa4c3f513dc30dd1375dd3c65f6489143ced0a16a524fdd4eeaa976bcf3dce50"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "aa4c3f513dc30dd1375dd3c65f6489143ced0a16a524fdd4eeaa976bcf3dce50"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "aa4c3f513dc30dd1375dd3c65f6489143ced0a16a524fdd4eeaa976bcf3dce50"
+    sha256 cellar: :any_skip_relocation, sonoma:            "96abe299c275d4e5876a1d9b91c58dd5fabcd9f2fe9d77e5e832ad4fc5a25a31"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "d2af56528689c162a158b7c403510a2565d632192a540e75da2c1887a6c847cc"
+    sha256 cellar: :any,                 x86_64_linux:      "65aa8bcd1bf0dc292311ff01e305599adfb137fd238e8a4629f5603056250bc4"
   end
 
   depends_on "go" => :build

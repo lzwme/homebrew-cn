@@ -7,12 +7,13 @@ class BazelRemote < Formula
   head "https://github.com/buchgr/bazel-remote.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f354e4941f9f99ab37dd95fa8578da65b0498f1f53128a12b8ba7c03e1da9cb7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "18f1a604a9dd0eb29d54bcfd56ffcb27a921ff3677d17b32748f31f13bf39f81"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bc74694c87cff83c41ea21d8ad045cf83c51c81895d62e23ecf112c3a4ec8b12"
-    sha256 cellar: :any_skip_relocation, sonoma:        "dfa80430581fc37829e9295ee9cda247c74f9ae8efeb710c3ed6eb18f47a76db"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "38369493b4d39f8694081a064e3536304d1a78b172ff8687cc37849250c176b6"
-    sha256 cellar: :any,                 x86_64_linux:  "ac2cd1e7f51773a63005d282db150a0463268c2700de758a9eb7b7ce841b699e"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "a0e29cee0fe91b31e0e5e5df1d0ab09928b65ca6a7dcb725139304f435714698"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "f354e4941f9f99ab37dd95fa8578da65b0498f1f53128a12b8ba7c03e1da9cb7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "18f1a604a9dd0eb29d54bcfd56ffcb27a921ff3677d17b32748f31f13bf39f81"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "bc74694c87cff83c41ea21d8ad045cf83c51c81895d62e23ecf112c3a4ec8b12"
+    sha256 cellar: :any_skip_relocation, sonoma:            "dfa80430581fc37829e9295ee9cda247c74f9ae8efeb710c3ed6eb18f47a76db"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "38369493b4d39f8694081a064e3536304d1a78b172ff8687cc37849250c176b6"
+    sha256 cellar: :any,                 x86_64_linux:      "ac2cd1e7f51773a63005d282db150a0463268c2700de758a9eb7b7ce841b699e"
   end
 
   depends_on "go" => :build

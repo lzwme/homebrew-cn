@@ -49,7 +49,7 @@ class Pike < Formula
     # Use GNU sed on macOS to avoid this build failure:
     # sed: RE error: illegal byte sequence
     # Reported upstream here: https://git.lysator.liu.se/pikelang/pike/-/issues/10082.
-    ENV.prepend_path "PATH", Formula["gnu-sed"].libexec/"gnubin" if OS.mac?
+    ENV.prepend_path "PATH", formula_opt_libexec("gnu-sed")/"gnubin" if OS.mac?
 
     # clang: error: unsupported option '-mrdrnd' for target 'arm64-apple-darwin25.0.0'
     ENV["pike_cv_option_opt_rdrnd"] = "no" if Hardware::CPU.arm?

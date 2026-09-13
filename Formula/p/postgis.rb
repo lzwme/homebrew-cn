@@ -163,10 +163,11 @@ class Postgis < Formula
 
         shared_preload_libraries = 'postgis-3'
         port = #{port}
+        unix_socket_directories = '#{testpath}'
       CONF
       system pg_ctl, "start", "-D", datadir, "-l", testpath/"log-#{postgresql.name}"
       begin
-        system psql, "-p", port.to_s, "-c", "CREATE EXTENSION \"postgis\";", "postgres"
+        system psql, "-h", testpath, "-p", port.to_s, "-c", "CREATE EXTENSION \"postgis\";", "postgres"
       ensure
         system pg_ctl, "stop", "-D", datadir
       end

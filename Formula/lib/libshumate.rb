@@ -14,10 +14,11 @@ class Libshumate < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "aab34b59b7eccee480f399111674e63e4c77eb21c1a3e3153bdc0ed37e545f7f"
-    sha256 cellar: :any, arm64_sequoia: "361266d4178c44c89823bbfe2025c6979b1c338118f711eb3c9882c56bf4d5d3"
-    sha256 cellar: :any, arm64_linux:   "8b40200264b2fa503d1c1a43dbeee5489d6e15ac89e1e0ce1ababa6ca404e4bb"
-    sha256 cellar: :any, x86_64_linux:  "5622d14bc8f441363cba65e30b23fe3e309829e9a01f5528efdf3ad0fdbeca0f"
+    sha256 cellar: :any, arm64_golden_gate: "375b70315e0880e3d8070c4c117121165d29e5cff6cabf6d922edd878912dd2a"
+    sha256 cellar: :any, arm64_tahoe:       "aab34b59b7eccee480f399111674e63e4c77eb21c1a3e3153bdc0ed37e545f7f"
+    sha256 cellar: :any, arm64_sequoia:     "361266d4178c44c89823bbfe2025c6979b1c338118f711eb3c9882c56bf4d5d3"
+    sha256 cellar: :any, arm64_linux:       "8b40200264b2fa503d1c1a43dbeee5489d6e15ac89e1e0ce1ababa6ca404e4bb"
+    sha256 cellar: :any, x86_64_linux:      "5622d14bc8f441363cba65e30b23fe3e309829e9a01f5528efdf3ad0fdbeca0f"
   end
 
   depends_on "gettext" => :build

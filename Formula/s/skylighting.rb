@@ -7,12 +7,13 @@ class Skylighting < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "1bbb4046dcfe86e9cbcc19b6a207971ce2761c76733ee1263f3c3dd01c21436f"
-    sha256 cellar: :any, arm64_sequoia: "730ee7c866b559c734d4689c93259fdd9bdfe67fe5751c6389433456de3ec8ec"
-    sha256 cellar: :any, arm64_sonoma:  "5821b83e41fb31bc686e464b4497e6e14d90fad0c89998454c476545adc9803c"
-    sha256 cellar: :any, sonoma:        "07b1958368cac8aa092bb0bbd9c90de1c45b68df4cb4e602e90776e9b21859e6"
-    sha256 cellar: :any, arm64_linux:   "0e25564beb472c975d8e95f936019aff80708b9e261b9eb53b7197623af0ac82"
-    sha256 cellar: :any, x86_64_linux:  "84ba245e9a1f3df0cf208202f68e84710112620125255fc2ba37a6381c8c784d"
+    sha256 cellar: :any, arm64_golden_gate: "3ed6681a5796e628cadae5c4fd9f168bb5d59f849d0395816025b9a154c30390"
+    sha256 cellar: :any, arm64_tahoe:       "1bbb4046dcfe86e9cbcc19b6a207971ce2761c76733ee1263f3c3dd01c21436f"
+    sha256 cellar: :any, arm64_sequoia:     "730ee7c866b559c734d4689c93259fdd9bdfe67fe5751c6389433456de3ec8ec"
+    sha256 cellar: :any, arm64_sonoma:      "5821b83e41fb31bc686e464b4497e6e14d90fad0c89998454c476545adc9803c"
+    sha256 cellar: :any, sonoma:            "07b1958368cac8aa092bb0bbd9c90de1c45b68df4cb4e602e90776e9b21859e6"
+    sha256 cellar: :any, arm64_linux:       "0e25564beb472c975d8e95f936019aff80708b9e261b9eb53b7197623af0ac82"
+    sha256 cellar: :any, x86_64_linux:      "84ba245e9a1f3df0cf208202f68e84710112620125255fc2ba37a6381c8c784d"
   end
 
   depends_on "cabal-install" => :build

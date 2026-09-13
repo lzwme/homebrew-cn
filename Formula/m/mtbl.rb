@@ -7,12 +7,13 @@ class Mtbl < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "7546780a577d53570daaea86bd9306fad67197ab4fb869090c43d17bbff88474"
-    sha256 cellar: :any,                 arm64_sequoia: "481216ae78025ad4b0e03fe33108dd9a21a82dee2ecb47e301144588bda284fe"
-    sha256 cellar: :any,                 arm64_sonoma:  "3983fe83804275dbc3ec23807027c88a1971c7d7eb39b917679985be51213250"
-    sha256 cellar: :any,                 sonoma:        "313e1023e84adcb21d608ecc2869e277b52b93a2bc5160a9ce3f9c711d291956"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b47a8e9c5014ccbcc1cba631fc6b6f6a41bb881b53d6345123dcff7730731100"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e6088b5d34bc9970ae90f0ca4885e17e4556a678ca44f540cd1ed34b24ed0279"
+    sha256 cellar: :any,                 arm64_golden_gate: "916ef8b0648679e32ee4b5bb2a96e9b7b662f97eb7a8f13a894cffa9a6b5b63e"
+    sha256 cellar: :any,                 arm64_tahoe:       "7546780a577d53570daaea86bd9306fad67197ab4fb869090c43d17bbff88474"
+    sha256 cellar: :any,                 arm64_sequoia:     "481216ae78025ad4b0e03fe33108dd9a21a82dee2ecb47e301144588bda284fe"
+    sha256 cellar: :any,                 arm64_sonoma:      "3983fe83804275dbc3ec23807027c88a1971c7d7eb39b917679985be51213250"
+    sha256 cellar: :any,                 sonoma:            "313e1023e84adcb21d608ecc2869e277b52b93a2bc5160a9ce3f9c711d291956"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "b47a8e9c5014ccbcc1cba631fc6b6f6a41bb881b53d6345123dcff7730731100"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "e6088b5d34bc9970ae90f0ca4885e17e4556a678ca44f540cd1ed34b24ed0279"
   end
 
   head do

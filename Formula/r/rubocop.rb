@@ -7,11 +7,12 @@ class Rubocop < Formula
   head "https://github.com/rubocop/rubocop.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "323b817289f1909df9f13a06f3bc0b88d0ea3bcf3df8c2435b9b213ab06c17cb"
-    sha256 cellar: :any, arm64_sequoia: "7f079c9ded8345ed29265438a377100aabdfc2ea4a2241e6931f59a9873ad884"
-    sha256 cellar: :any, arm64_sonoma:  "0246e93b447502bd10f616fc9eb0ffb478cf790cdec5e47e8fc345ac8e491d38"
-    sha256 cellar: :any, arm64_linux:   "b708b5f3de6706523df3fa18a6e96385652980a7e825216fae9c9bab244d6a79"
-    sha256 cellar: :any, x86_64_linux:  "42d7ca4cdd5fde6a5c75452195d3caa2b9cf17fad5c6addc09797534bf62acf4"
+    sha256 cellar: :any, arm64_golden_gate: "b8677e1bc5b29c9717b9f0ee3df357e4ee4aed208f08458692d361af287bc2e8"
+    sha256 cellar: :any, arm64_tahoe:       "323b817289f1909df9f13a06f3bc0b88d0ea3bcf3df8c2435b9b213ab06c17cb"
+    sha256 cellar: :any, arm64_sequoia:     "7f079c9ded8345ed29265438a377100aabdfc2ea4a2241e6931f59a9873ad884"
+    sha256 cellar: :any, arm64_sonoma:      "0246e93b447502bd10f616fc9eb0ffb478cf790cdec5e47e8fc345ac8e491d38"
+    sha256 cellar: :any, arm64_linux:       "b708b5f3de6706523df3fa18a6e96385652980a7e825216fae9c9bab244d6a79"
+    sha256 cellar: :any, x86_64_linux:      "42d7ca4cdd5fde6a5c75452195d3caa2b9cf17fad5c6addc09797534bf62acf4"
   end
 
   depends_on "ruby"

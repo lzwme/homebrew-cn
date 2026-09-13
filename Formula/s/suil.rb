@@ -12,12 +12,13 @@ class Suil < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "adce2989ab987d21cf92671496284df3396f22dd113495c8ba44e2bbe90c22fb"
-    sha256 arm64_sequoia: "3465540e13410f3444375c0588c26c58d947aa1c5781801252f43f89406f8eff"
-    sha256 arm64_sonoma:  "4e500b8273217d5c1f0eccf6f3d8d34e8ff1845342c001c3ea95a104a206007a"
-    sha256 sonoma:        "6a071ed376235a2f02b4a7a085b8eba6af48835aeccec1f4d3a44dd874a0e543"
-    sha256 arm64_linux:   "f33735b4417b37962f04cc8f6d4f199037af19d6ff15d2273e5784fa98efbfd3"
-    sha256 x86_64_linux:  "96d50ae9d442fbc64791d9e12ea1fe44fb1aa0f3082bb37bcbff908e355c5e3f"
+    sha256 arm64_golden_gate: "b5e9e72782fea0513708a148403678da5da41a00fa7556c7d86648e2c6eb70a0"
+    sha256 arm64_tahoe:       "adce2989ab987d21cf92671496284df3396f22dd113495c8ba44e2bbe90c22fb"
+    sha256 arm64_sequoia:     "3465540e13410f3444375c0588c26c58d947aa1c5781801252f43f89406f8eff"
+    sha256 arm64_sonoma:      "4e500b8273217d5c1f0eccf6f3d8d34e8ff1845342c001c3ea95a104a206007a"
+    sha256 sonoma:            "6a071ed376235a2f02b4a7a085b8eba6af48835aeccec1f4d3a44dd874a0e543"
+    sha256 arm64_linux:       "f33735b4417b37962f04cc8f6d4f199037af19d6ff15d2273e5784fa98efbfd3"
+    sha256 x86_64_linux:      "96d50ae9d442fbc64791d9e12ea1fe44fb1aa0f3082bb37bcbff908e355c5e3f"
   end
 
   depends_on "meson" => :build

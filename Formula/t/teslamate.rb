@@ -6,12 +6,13 @@ class Teslamate < Formula
   license "AGPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "41cffdfed0efd57429b6f1d85b02f116083db51cabcd2cf2f9395c148527cab1"
-    sha256 cellar: :any, arm64_sequoia: "85cf442c05824866a7f6ba68da517f097d7e32ab65009ca663b1dd5b53273dc2"
-    sha256 cellar: :any, arm64_sonoma:  "5e80b78e00f9d0df21d40602f0717bb838a984ef13421ce8ba5de2dfd8794fac"
-    sha256 cellar: :any, sonoma:        "6463005c633cc797fb02dd95a994449f0822c3b561bb763c94b091715dae9bd9"
-    sha256 cellar: :any, arm64_linux:   "7d22150814d89449e3e239a3fc1c4feecfa19f982af0966863fdab7b47998197"
-    sha256 cellar: :any, x86_64_linux:  "6b94a2abdae7b276d1c04c9f547687632f5feaf846b2be9e39b24c7cd9a5fd9c"
+    sha256 cellar: :any, arm64_golden_gate: "d961bf67e7aeff33223fab4c61c4e60dbbc0174410d48aa0a34dfe03d8ccf404"
+    sha256 cellar: :any, arm64_tahoe:       "41cffdfed0efd57429b6f1d85b02f116083db51cabcd2cf2f9395c148527cab1"
+    sha256 cellar: :any, arm64_sequoia:     "85cf442c05824866a7f6ba68da517f097d7e32ab65009ca663b1dd5b53273dc2"
+    sha256 cellar: :any, arm64_sonoma:      "5e80b78e00f9d0df21d40602f0717bb838a984ef13421ce8ba5de2dfd8794fac"
+    sha256 cellar: :any, sonoma:            "6463005c633cc797fb02dd95a994449f0822c3b561bb763c94b091715dae9bd9"
+    sha256 cellar: :any, arm64_linux:       "7d22150814d89449e3e239a3fc1c4feecfa19f982af0966863fdab7b47998197"
+    sha256 cellar: :any, x86_64_linux:      "6b94a2abdae7b276d1c04c9f547687632f5feaf846b2be9e39b24c7cd9a5fd9c"
   end
 
   depends_on "elixir" => :build

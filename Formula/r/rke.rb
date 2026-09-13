@@ -16,12 +16,13 @@ class Rke < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3e1d37ff45d3fcfdaa6d689f00dd2ea1ec0b582421554e49fbe9330ea3f54f51"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c0a47f83f745fa6fb941d1e4d158abc5cecbd94eda5877bf31062719c52f3327"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "57df4a20f5bffff930d80f52a3493df741111667e53e95ba9ea9c19bd08b3662"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a9b0f5d6f64b8af447d75e01daaaf9c31ccec5921405af6f219150b76784b941"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "bf9eeed2b407307206c224b526b0849a44b0d0fe53026e610e727c1a625abc49"
-    sha256 cellar: :any,                 x86_64_linux:  "07fe86aecc48fb728a7211c139c8233ec8fc3d4ad9da692fd2f098629e74f6ac"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "ec1bb1a6f730cab9f55804c7531d82a72baafb1e16b5f3ff72c020227c8e40b0"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "3e1d37ff45d3fcfdaa6d689f00dd2ea1ec0b582421554e49fbe9330ea3f54f51"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "c0a47f83f745fa6fb941d1e4d158abc5cecbd94eda5877bf31062719c52f3327"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "57df4a20f5bffff930d80f52a3493df741111667e53e95ba9ea9c19bd08b3662"
+    sha256 cellar: :any_skip_relocation, sonoma:            "a9b0f5d6f64b8af447d75e01daaaf9c31ccec5921405af6f219150b76784b941"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "bf9eeed2b407307206c224b526b0849a44b0d0fe53026e610e727c1a625abc49"
+    sha256 cellar: :any,                 x86_64_linux:      "07fe86aecc48fb728a7211c139c8233ec8fc3d4ad9da692fd2f098629e74f6ac"
   end
 
   deprecate! date: "2026-07-31", because: :deprecated_upstream

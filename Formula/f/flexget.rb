@@ -3,16 +3,16 @@ class Flexget < Formula
 
   desc "Multipurpose automation tool for content"
   homepage "https://www.flexget.com"
-  url "https://files.pythonhosted.org/packages/98/1f/8e7717149bad916721725aec9b0a5105baeffb34eede4cd9dc2c65179dac/flexget-3.20.11.tar.gz"
-  sha256 "49df7b009e50644320f8b93057217f2e1a3e16ff29b96ce248b0d7d9bfe727d6"
+  url "https://files.pythonhosted.org/packages/28/4c/263e357998b7a962a484c8f623bd0a6e9bd78453c70371ece3203baefeef/flexget-3.20.13.tar.gz"
+  sha256 "577fa15cd583e2fa9a84e6fddfa8f88f1969389ebf2d05b99d8ceea8459dfe87"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "29e0ba4bb3c7f3c9819c90ef83949d99ba9f2027bf22da3a1dcfa32e95795999"
-    sha256 cellar: :any, arm64_sequoia: "1d8cae2b6ebc189d82916305d3b0a3dcbb37211cb84d13294f12e991ab44fc79"
-    sha256 cellar: :any, arm64_sonoma:  "5afefeed490c43f2866c1e0d446a8b567579a9781670d8e2368f1918e4038f58"
-    sha256 cellar: :any, arm64_linux:   "ce48f705ceb904b5811936634529cf8ec5b83e87594912d33fb9209ad9e5988c"
-    sha256 cellar: :any, x86_64_linux:  "b33d9862f3531a3e55c12a0c2da1af23adc283d259650b75977f6723114db6fd"
+    sha256 cellar: :any, arm64_golden_gate: "67b924cb1171bfc7dac23793d9f8b7d0cc92a3c5e989a41760e540c58791dd89"
+    sha256 cellar: :any, arm64_tahoe:       "09afe1e35a522fe79c50cd5f480554b40b105f044e63067913f26201f1aebd87"
+    sha256 cellar: :any, arm64_sequoia:     "2b7211259c287000bc85041f2cca83a5d99272e3ef172c814fb922afd9779981"
+    sha256 cellar: :any, arm64_linux:       "e50994557facd7960ce995240e2e950d1f1d2144d5adee0e14932ed98fdaf840"
+    sha256 cellar: :any, x86_64_linux:      "9698c9de9652d0759cf3e3b7b6544a2deb92e24ccb43957479cfc1926e3d1d47"
   end
 
   depends_on "rust" => :build
@@ -275,11 +275,6 @@ class Flexget < Formula
   resource "pyrss2gen" do
     url "https://files.pythonhosted.org/packages/6d/01/fd610d5fc86f7dbdbefc4baa8f7fe15a2e5484244c41dcf363ca7e89f60c/PyRSS2Gen-1.1.tar.gz"
     sha256 "7960aed7e998d2482bf58716c316509786f596426f879b05f8d84e98b82c6ee7"
-  end
-
-  resource "pyscrypt" do
-    url "https://files.pythonhosted.org/packages/c6/56/51603b5714d221b784e4cbc2790b1215b3fb108e4d308a0bd52e4c3ce532/pyscrypt-1.6.2.tar.gz"
-    sha256 "bafdd195f10f7c7395f0133bad09746a68e0e6b66da202c9bdb6b1eb4abba5e9"
   end
 
   resource "python-dateutil" do

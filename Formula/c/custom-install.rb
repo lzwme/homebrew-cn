@@ -8,12 +8,13 @@ class CustomInstall < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "61a022ea5b0f415929d32b8cb527f0772b065da9084df4feb3ea606bee39db83"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1dcfb60764dc38a009ee05ea94148df24426e920a89a432d96c3da69bfeb1b3a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "52459657c539c5094957b985437531219f6e19282ed8c4c693040609a7bc4a5f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "74ce576ef08e7769e5f95e2062b928ecdc07b87550426eeb50645738d091105b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0877be59f541572b6a19f107bbbbf8490cff0ce865e54715cbe22c782ddc1e1d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a37d6e1c136e15b4627953afc2c8baa93736bb7f170df4a6ba56255e9b9f8eeb"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "2c73496e2df7054c7b0017dc80cb57a55fdf2ae2baab23af626dfe754fd88800"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "61a022ea5b0f415929d32b8cb527f0772b065da9084df4feb3ea606bee39db83"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "1dcfb60764dc38a009ee05ea94148df24426e920a89a432d96c3da69bfeb1b3a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "52459657c539c5094957b985437531219f6e19282ed8c4c693040609a7bc4a5f"
+    sha256 cellar: :any_skip_relocation, sonoma:            "74ce576ef08e7769e5f95e2062b928ecdc07b87550426eeb50645738d091105b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "0877be59f541572b6a19f107bbbbf8490cff0ce865e54715cbe22c782ddc1e1d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "a37d6e1c136e15b4627953afc2c8baa93736bb7f170df4a6ba56255e9b9f8eeb"
   end
 
   depends_on "python@3.14"

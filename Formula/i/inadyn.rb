@@ -7,12 +7,13 @@ class Inadyn < Formula
 
   bottle do
     rebuild 1
-    sha256               arm64_tahoe:   "c040b6d60834b73295049a0124ebf15ce755a386899c84c21cfc57aa54bff950"
-    sha256               arm64_sequoia: "bc4129b27abce3362303430d69264aef4466b39b5e63529a535e6a2eccd3c09a"
-    sha256               arm64_sonoma:  "00a282efc5c3f7878ab7dc2c7446feb60eaffd0bf0131d21ea7fbcc216f1b9dd"
-    sha256 cellar: :any, sonoma:        "a8919f0ca46b3d3d9c4bb8aa28675ae842a251ba8f35d69930514d359e84d544"
-    sha256               arm64_linux:   "42f252f8f4b39a3c3715931d8609525eae85fc9e6d3c78da08be98cb92e54388"
-    sha256               x86_64_linux:  "ff6dfa66150cd7aa8a6f4f4c2c6fc543d39def05762f77b93680238d9b5cc80e"
+    sha256               arm64_golden_gate: "10ea4282e661e70d7f384eedfe03e3d3fcd4c06b159ced85817a13c7884b03a8"
+    sha256               arm64_tahoe:       "c040b6d60834b73295049a0124ebf15ce755a386899c84c21cfc57aa54bff950"
+    sha256               arm64_sequoia:     "bc4129b27abce3362303430d69264aef4466b39b5e63529a535e6a2eccd3c09a"
+    sha256               arm64_sonoma:      "00a282efc5c3f7878ab7dc2c7446feb60eaffd0bf0131d21ea7fbcc216f1b9dd"
+    sha256 cellar: :any, sonoma:            "a8919f0ca46b3d3d9c4bb8aa28675ae842a251ba8f35d69930514d359e84d544"
+    sha256               arm64_linux:       "42f252f8f4b39a3c3715931d8609525eae85fc9e6d3c78da08be98cb92e54388"
+    sha256               x86_64_linux:      "ff6dfa66150cd7aa8a6f4f4c2c6fc543d39def05762f77b93680238d9b5cc80e"
   end
 
   head do

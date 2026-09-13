@@ -7,12 +7,13 @@ class Jsonfmt < Formula
   head "https://github.com/caarlos0/jsonfmt.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b1caa20819c76600db0ef8666a3e5cc1fc6097cf9e3303b7af167d12c2fc051c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b1caa20819c76600db0ef8666a3e5cc1fc6097cf9e3303b7af167d12c2fc051c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b1caa20819c76600db0ef8666a3e5cc1fc6097cf9e3303b7af167d12c2fc051c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f48c511281dfb806c106af5602434393b9c11335828330c95b657a900487a5ce"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1c7eb81b56d9a026667d9168a0671d516966b644197c8ab0ca609c322752effe"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a344c9a3d2b01667b7d8c9627f5e74bbaf367db98725d96ab5e449464b539475"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "e4bb144af065d20741a93fea99ee79fe60ea271f1f08e83957b8bb9b8db7c2fe"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "b1caa20819c76600db0ef8666a3e5cc1fc6097cf9e3303b7af167d12c2fc051c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "b1caa20819c76600db0ef8666a3e5cc1fc6097cf9e3303b7af167d12c2fc051c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "b1caa20819c76600db0ef8666a3e5cc1fc6097cf9e3303b7af167d12c2fc051c"
+    sha256 cellar: :any_skip_relocation, sonoma:            "f48c511281dfb806c106af5602434393b9c11335828330c95b657a900487a5ce"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "1c7eb81b56d9a026667d9168a0671d516966b644197c8ab0ca609c322752effe"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "a344c9a3d2b01667b7d8c9627f5e74bbaf367db98725d96ab5e449464b539475"
   end
 
   deprecate! date: "2026-07-17", because: :repo_archived

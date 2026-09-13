@@ -11,14 +11,15 @@ class Libgit2AT18 < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "10b9b8c3b0bd97cb012e4b09d0c1dac22c8236e5560c322464f6ad23d6d0f8fd"
-    sha256 cellar: :any, arm64_sequoia: "45367241a76e1c75dc8f3fc86fa3177bcecb82f0627d8f57b6a9f2af49a8dac8"
-    sha256 cellar: :any, arm64_sonoma:  "9ae96e903ab3174f17610069bea61e36a9614df539c26b6904115399e95a4abb"
-    sha256 cellar: :any, tahoe:         "da7612d6702a0522e9097b68b5ec9a6a03c1b66ee1d01c311eb7594949ca294d"
-    sha256 cellar: :any, sequoia:       "5604a6498178ee244b9495c0e076b6990df7b970eb69f200a2d8e10d37f9d3b9"
-    sha256 cellar: :any, sonoma:        "52fef04de666b87d2de175c51ceb86eb574d5a7bda1ca02ba5209a22d8e64c3d"
-    sha256 cellar: :any, arm64_linux:   "756286facc17cf443fce8508ff29a275daf7d18c9c43c096615ea64f449095f0"
-    sha256 cellar: :any, x86_64_linux:  "45be31330c5bc5ba85a3a2a5c98481bfe1e0d6fdcf600fff0a3150b86b5232ea"
+    sha256 cellar: :any, arm64_golden_gate: "0c3171c6cd5c4d2cb1aa76469722294de7908348de59b8bcbc626a7feb858686"
+    sha256 cellar: :any, arm64_tahoe:       "10b9b8c3b0bd97cb012e4b09d0c1dac22c8236e5560c322464f6ad23d6d0f8fd"
+    sha256 cellar: :any, arm64_sequoia:     "45367241a76e1c75dc8f3fc86fa3177bcecb82f0627d8f57b6a9f2af49a8dac8"
+    sha256 cellar: :any, arm64_sonoma:      "9ae96e903ab3174f17610069bea61e36a9614df539c26b6904115399e95a4abb"
+    sha256 cellar: :any, tahoe:             "da7612d6702a0522e9097b68b5ec9a6a03c1b66ee1d01c311eb7594949ca294d"
+    sha256 cellar: :any, sequoia:           "5604a6498178ee244b9495c0e076b6990df7b970eb69f200a2d8e10d37f9d3b9"
+    sha256 cellar: :any, sonoma:            "52fef04de666b87d2de175c51ceb86eb574d5a7bda1ca02ba5209a22d8e64c3d"
+    sha256 cellar: :any, arm64_linux:       "756286facc17cf443fce8508ff29a275daf7d18c9c43c096615ea64f449095f0"
+    sha256 cellar: :any, x86_64_linux:      "45be31330c5bc5ba85a3a2a5c98481bfe1e0d6fdcf600fff0a3150b86b5232ea"
   end
 
   keg_only :versioned_formula

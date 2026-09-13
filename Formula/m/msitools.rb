@@ -14,12 +14,13 @@ class Msitools < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "9184769d09209b3400d048bd93277ce6cdd0402cba3dfea7737522387162080a"
-    sha256 arm64_sequoia: "6c3299c0e9abfac5e3dc049380e2affab3504bbe00f397009165ceab06e96be5"
-    sha256 arm64_sonoma:  "82abccc8bfde0251209cb2aaa6f9de5d00a36d53a00ca49367408b306320d71e"
-    sha256 sonoma:        "26e11c16e3bc190016c67cd0f92e28e6602ee7ae4b27b1f50521a151220aff68"
-    sha256 arm64_linux:   "197a202f269b1c6afbefc10e748e3ef6ae8f33c85831d7baf0b2350ae3b808b8"
-    sha256 x86_64_linux:  "20b6f97f44977fe47f6f56d2a58bb7fb1575fdce52855c03e0dfdfa41575e500"
+    sha256 arm64_golden_gate: "266d6ea0cdccccb591c1cd3ffd2c5db2e0ed01a072a842828f5b045c1111f6c8"
+    sha256 arm64_tahoe:       "9184769d09209b3400d048bd93277ce6cdd0402cba3dfea7737522387162080a"
+    sha256 arm64_sequoia:     "6c3299c0e9abfac5e3dc049380e2affab3504bbe00f397009165ceab06e96be5"
+    sha256 arm64_sonoma:      "82abccc8bfde0251209cb2aaa6f9de5d00a36d53a00ca49367408b306320d71e"
+    sha256 sonoma:            "26e11c16e3bc190016c67cd0f92e28e6602ee7ae4b27b1f50521a151220aff68"
+    sha256 arm64_linux:       "197a202f269b1c6afbefc10e748e3ef6ae8f33c85831d7baf0b2350ae3b808b8"
+    sha256 x86_64_linux:      "20b6f97f44977fe47f6f56d2a58bb7fb1575fdce52855c03e0dfdfa41575e500"
   end
 
   depends_on "bison" => :build

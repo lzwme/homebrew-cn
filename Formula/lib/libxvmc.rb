@@ -6,12 +6,13 @@ class Libxvmc < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "267771872f4f7a19028eb02f3feb518481be7959de54eae92e41bd755537c039"
-    sha256 cellar: :any,                 arm64_sequoia: "7a30942d073d11202a0f74fd445689aea720b70dc87edac83f401f38d48e6048"
-    sha256 cellar: :any,                 arm64_sonoma:  "62e52f8a2d29e4bf06aad9f310204eae310c2ae3c8aed442f9ba37b2e627ca65"
-    sha256 cellar: :any,                 sonoma:        "f0b4c4ae0c87bb7d3aa4b1056d494077677b405a08fc4084762f8e21fc76a929"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "03ffa01a63ab72806a91a7008895493bcde262573772680d87797b54a2a28907"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "49257f4df10257414f75749016d97d2f2fa7e9a7c124265c041458c9c567b10a"
+    sha256 cellar: :any,                 arm64_golden_gate: "6ffbb775a2f4ddbb483e27c203c0ea1e7ac2c56160444b4d474a07eb3ba7b130"
+    sha256 cellar: :any,                 arm64_tahoe:       "267771872f4f7a19028eb02f3feb518481be7959de54eae92e41bd755537c039"
+    sha256 cellar: :any,                 arm64_sequoia:     "7a30942d073d11202a0f74fd445689aea720b70dc87edac83f401f38d48e6048"
+    sha256 cellar: :any,                 arm64_sonoma:      "62e52f8a2d29e4bf06aad9f310204eae310c2ae3c8aed442f9ba37b2e627ca65"
+    sha256 cellar: :any,                 sonoma:            "f0b4c4ae0c87bb7d3aa4b1056d494077677b405a08fc4084762f8e21fc76a929"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "03ffa01a63ab72806a91a7008895493bcde262573772680d87797b54a2a28907"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "49257f4df10257414f75749016d97d2f2fa7e9a7c124265c041458c9c567b10a"
   end
 
   depends_on "pkgconf" => :build

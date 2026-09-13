@@ -7,14 +7,15 @@ class Binocle < Formula
   head "https://github.com/sharkdp/binocle.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0424cbc18de1317d37bd6716b7923f617c800b2bf4afaca3284cdd37dab4e795"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ed724155e7422f1dbdb1336e55beb128771c94d7508824dd3218a2aa4f833b05"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "20c6213d9ae44a09f4221194c23db04c0b549ae1c5ec688fc1f7b951ddbeab53"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "6890ababd81453d26246f912140a9018174c7819a9c2b597a9663c9cdfb6d255"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d55ffda75e2ed88f3230d2769438cc207fdb099a96abb635d9748415fa275396"
-    sha256 cellar: :any_skip_relocation, ventura:       "a9ee501f778c26b5f3f27c9aefbc63d2d82e019dd3d81f0339f63060a9947d4c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2a19bfb4cba506bee5c78b864bb52473611d58d1356e51371573c2235180c839"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5b316af1ebdf59111913cbb1bbe8836075316c7ebff977ebe12467815dfcf1ac"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "e7762c3a2d152b646c2da0ad3157b9a1cd76fde68d2fd27ca1e111686424c57e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "0424cbc18de1317d37bd6716b7923f617c800b2bf4afaca3284cdd37dab4e795"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "ed724155e7422f1dbdb1336e55beb128771c94d7508824dd3218a2aa4f833b05"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "20c6213d9ae44a09f4221194c23db04c0b549ae1c5ec688fc1f7b951ddbeab53"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:     "6890ababd81453d26246f912140a9018174c7819a9c2b597a9663c9cdfb6d255"
+    sha256 cellar: :any_skip_relocation, sonoma:            "d55ffda75e2ed88f3230d2769438cc207fdb099a96abb635d9748415fa275396"
+    sha256 cellar: :any_skip_relocation, ventura:           "a9ee501f778c26b5f3f27c9aefbc63d2d82e019dd3d81f0339f63060a9947d4c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "2a19bfb4cba506bee5c78b864bb52473611d58d1356e51371573c2235180c839"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "5b316af1ebdf59111913cbb1bbe8836075316c7ebff977ebe12467815dfcf1ac"
   end
 
   depends_on "rust" => :build

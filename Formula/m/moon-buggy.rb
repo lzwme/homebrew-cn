@@ -14,12 +14,13 @@ class MoonBuggy < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "53f6259b504aa18f7ee6f00e8609de83f5dcaf145f271223c1b84097d03ee187"
-    sha256 arm64_sequoia: "b3e325dda761378e3fb26ff514d1cdf7e2e93b3348d965320de0c73e2726ecc2"
-    sha256 arm64_sonoma:  "59629a2750ee206aa53f63466b1abe0b883bfcb5c1311bae15ed503bc205f52a"
-    sha256 sonoma:        "6355ad12387367fa817191a32b60cee9f661fdec974867a3b5e5bab49f8ed0c1"
-    sha256 arm64_linux:   "2b394bb0da80a733c673889c281ae7f552ed854bf7658a980abd322ae58cdd57"
-    sha256 x86_64_linux:  "5e8416167cc5705334a07ee176fc2dd5db90eb64aeb3d25304669d36a72779cb"
+    sha256 arm64_golden_gate: "d668822240a844b25cba6b7ca0586bcdf667cf9125c88c0842c69fd5e9ce8ed8"
+    sha256 arm64_tahoe:       "53f6259b504aa18f7ee6f00e8609de83f5dcaf145f271223c1b84097d03ee187"
+    sha256 arm64_sequoia:     "b3e325dda761378e3fb26ff514d1cdf7e2e93b3348d965320de0c73e2726ecc2"
+    sha256 arm64_sonoma:      "59629a2750ee206aa53f63466b1abe0b883bfcb5c1311bae15ed503bc205f52a"
+    sha256 sonoma:            "6355ad12387367fa817191a32b60cee9f661fdec974867a3b5e5bab49f8ed0c1"
+    sha256 arm64_linux:       "2b394bb0da80a733c673889c281ae7f552ed854bf7658a980abd322ae58cdd57"
+    sha256 x86_64_linux:      "5e8416167cc5705334a07ee176fc2dd5db90eb64aeb3d25304669d36a72779cb"
   end
 
   head do

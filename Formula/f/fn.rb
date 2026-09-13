@@ -7,11 +7,12 @@ class Fn < Formula
   head "https://github.com/fnproject/cli.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "264e101de29c9b14f601b091109bc865a7f40f93e0f7c23ffa85924a9c584775"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "264e101de29c9b14f601b091109bc865a7f40f93e0f7c23ffa85924a9c584775"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "264e101de29c9b14f601b091109bc865a7f40f93e0f7c23ffa85924a9c584775"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5d5f6e84e4516d1e2ad7f0a364a5cc24a3bca9dc32ceb2719d63c9917b6e416a"
-    sha256 cellar: :any,                 x86_64_linux:  "b0429b8e74ee4f4467f606d8679c0d136591758ff7308951031a11ba52e0cfe8"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "264e101de29c9b14f601b091109bc865a7f40f93e0f7c23ffa85924a9c584775"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "264e101de29c9b14f601b091109bc865a7f40f93e0f7c23ffa85924a9c584775"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "264e101de29c9b14f601b091109bc865a7f40f93e0f7c23ffa85924a9c584775"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "264e101de29c9b14f601b091109bc865a7f40f93e0f7c23ffa85924a9c584775"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "5d5f6e84e4516d1e2ad7f0a364a5cc24a3bca9dc32ceb2719d63c9917b6e416a"
+    sha256 cellar: :any,                 x86_64_linux:      "b0429b8e74ee4f4467f606d8679c0d136591758ff7308951031a11ba52e0cfe8"
   end
 
   depends_on "go" => :build

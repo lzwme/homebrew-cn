@@ -13,12 +13,13 @@ class Hishtory < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "99dec873524b0cd5ac384478afd990b0ed9ed606c9bc6c94e8c3e7c0622747bc"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "99dec873524b0cd5ac384478afd990b0ed9ed606c9bc6c94e8c3e7c0622747bc"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "99dec873524b0cd5ac384478afd990b0ed9ed606c9bc6c94e8c3e7c0622747bc"
-    sha256 cellar: :any_skip_relocation, sonoma:        "efc3d5ab95c59a45cc6ca7c5caf7e367f419c3dfc25755875882a1fe33f91558"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "dffdda94fe7ba567cdb165781632e0e3cfc24553b638cb6b45eee1de5684e493"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "13d274f6feb130825393ffa5e24e6fe5e8bf1aca290214fda7c1f17fbe6c4270"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "52e70f9673a5f43315ef2b995105e3da1588fc740ef708551695cca97dbdbc26"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "99dec873524b0cd5ac384478afd990b0ed9ed606c9bc6c94e8c3e7c0622747bc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "99dec873524b0cd5ac384478afd990b0ed9ed606c9bc6c94e8c3e7c0622747bc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "99dec873524b0cd5ac384478afd990b0ed9ed606c9bc6c94e8c3e7c0622747bc"
+    sha256 cellar: :any_skip_relocation, sonoma:            "efc3d5ab95c59a45cc6ca7c5caf7e367f419c3dfc25755875882a1fe33f91558"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "dffdda94fe7ba567cdb165781632e0e3cfc24553b638cb6b45eee1de5684e493"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "13d274f6feb130825393ffa5e24e6fe5e8bf1aca290214fda7c1f17fbe6c4270"
   end
 
   depends_on "go" => :build

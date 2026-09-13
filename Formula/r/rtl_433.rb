@@ -7,12 +7,13 @@ class Rtl433 < Formula
   head "https://github.com/merbanan/rtl_433.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "22b43f0eb2c9899189e3c33d8bf75164d21b7165a7f31abad2067553df8a7a0f"
-    sha256 cellar: :any,                 arm64_sequoia: "c7d29dd8afb14227875759650c7ec1166462b452d9aa3f9749a354c050267d71"
-    sha256 cellar: :any,                 arm64_sonoma:  "b426f76e5b9664a781f6e80fa2fbfbb2178226343f10a635b1f78381759d1069"
-    sha256 cellar: :any,                 sonoma:        "922beeb4abc104f5e5b653ff83fca1412006b1debbab210a3013454f1e70fcbc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "dba0bb785442b49492e69176003117025384dbea6e71e782c0138fdcde6abcfe"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e4871e6bb7ec1b56935a8f99accef274a29bc2f90c9b2e7f54d06de9f1197073"
+    sha256 cellar: :any,                 arm64_golden_gate: "d250fa25da6f2b4b207010ec05742c22a01461ae41bcaff6bd25989166bb1714"
+    sha256 cellar: :any,                 arm64_tahoe:       "22b43f0eb2c9899189e3c33d8bf75164d21b7165a7f31abad2067553df8a7a0f"
+    sha256 cellar: :any,                 arm64_sequoia:     "c7d29dd8afb14227875759650c7ec1166462b452d9aa3f9749a354c050267d71"
+    sha256 cellar: :any,                 arm64_sonoma:      "b426f76e5b9664a781f6e80fa2fbfbb2178226343f10a635b1f78381759d1069"
+    sha256 cellar: :any,                 sonoma:            "922beeb4abc104f5e5b653ff83fca1412006b1debbab210a3013454f1e70fcbc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "dba0bb785442b49492e69176003117025384dbea6e71e782c0138fdcde6abcfe"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "e4871e6bb7ec1b56935a8f99accef274a29bc2f90c9b2e7f54d06de9f1197073"
   end
 
   depends_on "cmake" => :build

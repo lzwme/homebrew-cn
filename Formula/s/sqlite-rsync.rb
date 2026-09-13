@@ -13,14 +13,15 @@ class SqliteRsync < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    sha256               arm64_tahoe:   "95475d80fb7d218d8995abd79429da23f23dc600aa9ebc786ac5bac9227e70c3"
-    sha256               arm64_sequoia: "78950e233fea93ac6e65ff746c1120b9c04fce37e9281b384de119730c0a3106"
-    sha256               arm64_sonoma:  "659f6354636097d9bb37ef82cf7405c631be8859b515297b10607986b47eed31"
-    sha256 cellar: :any, tahoe:         "5b2fce83520582446cf3849ef7a787f2ca31548f6f378669409cc8a415992380"
-    sha256 cellar: :any, sequoia:       "671503f6d3a880ce309529d9034bf3c3b7794a494b316e16cea2d4ccdc607dae"
-    sha256 cellar: :any, sonoma:        "082b25dd8e471805552afff546963899a2e21404d3c5a097dada080be18328f4"
-    sha256 cellar: :any, arm64_linux:   "06f16a1c2e37ee64a51e799bc1481f1d23b7cd94ca21ae5833e8e631c4ccfc7c"
-    sha256 cellar: :any, x86_64_linux:  "3bb40f3474ceaff3f59ba497b3e16f8badf9b3a2ca03c561b4f4d431274d1add"
+    sha256               arm64_golden_gate: "598142d5fe1d69982460e2cb6f8d32d0550f40c65e3647b76fca4b707c4cf8f0"
+    sha256               arm64_tahoe:       "95475d80fb7d218d8995abd79429da23f23dc600aa9ebc786ac5bac9227e70c3"
+    sha256               arm64_sequoia:     "78950e233fea93ac6e65ff746c1120b9c04fce37e9281b384de119730c0a3106"
+    sha256               arm64_sonoma:      "659f6354636097d9bb37ef82cf7405c631be8859b515297b10607986b47eed31"
+    sha256 cellar: :any, tahoe:             "5b2fce83520582446cf3849ef7a787f2ca31548f6f378669409cc8a415992380"
+    sha256 cellar: :any, sequoia:           "671503f6d3a880ce309529d9034bf3c3b7794a494b316e16cea2d4ccdc607dae"
+    sha256 cellar: :any, sonoma:            "082b25dd8e471805552afff546963899a2e21404d3c5a097dada080be18328f4"
+    sha256 cellar: :any, arm64_linux:       "06f16a1c2e37ee64a51e799bc1481f1d23b7cd94ca21ae5833e8e631c4ccfc7c"
+    sha256 cellar: :any, x86_64_linux:      "3bb40f3474ceaff3f59ba497b3e16f8badf9b3a2ca03c561b4f4d431274d1add"
   end
 
   uses_from_macos "tcl-tk" => :build

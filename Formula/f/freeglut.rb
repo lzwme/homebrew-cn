@@ -7,12 +7,13 @@ class Freeglut < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "0f211e5010be3c1e5d5b9eb61f574558fba876456385cc822db183cf67c8c3c6"
-    sha256 cellar: :any, arm64_sequoia: "b83d33f198634143226f771055570cf99ca9893eade73ff1ec798bd953c55a60"
-    sha256 cellar: :any, arm64_sonoma:  "8200a7568a87e1720ebb1ef191c01480ecf69e1d1a43b339d1818473a42f527e"
-    sha256 cellar: :any, sonoma:        "c1f7f6578f454da32643c188b0dfc5bae7bdab0c18cf8de2fd1ab4ffb581b442"
-    sha256 cellar: :any, arm64_linux:   "3bde6f2895079e01081744ae5ba7df996a7e3718f16a8d7dfcb75324e802b938"
-    sha256 cellar: :any, x86_64_linux:  "902ba4a099c5e9cbaf5c36ce2e5112f97603390dd02b8d05eff72e5f0b75ffe2"
+    sha256 cellar: :any, arm64_golden_gate: "df76f97416453a3a908bd1344e54f6ed98edb12c70d2eaa5953f52cf31d2602d"
+    sha256 cellar: :any, arm64_tahoe:       "0f211e5010be3c1e5d5b9eb61f574558fba876456385cc822db183cf67c8c3c6"
+    sha256 cellar: :any, arm64_sequoia:     "b83d33f198634143226f771055570cf99ca9893eade73ff1ec798bd953c55a60"
+    sha256 cellar: :any, arm64_sonoma:      "8200a7568a87e1720ebb1ef191c01480ecf69e1d1a43b339d1818473a42f527e"
+    sha256 cellar: :any, sonoma:            "c1f7f6578f454da32643c188b0dfc5bae7bdab0c18cf8de2fd1ab4ffb581b442"
+    sha256 cellar: :any, arm64_linux:       "3bde6f2895079e01081744ae5ba7df996a7e3718f16a8d7dfcb75324e802b938"
+    sha256 cellar: :any, x86_64_linux:      "902ba4a099c5e9cbaf5c36ce2e5112f97603390dd02b8d05eff72e5f0b75ffe2"
   end
 
   depends_on "cmake" => :build

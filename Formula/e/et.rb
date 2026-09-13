@@ -7,11 +7,12 @@ class Et < Formula
   revision 4
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "c28c26b015d0b77d02bac6bae81d1299dba2e64e13ee023dfac43e171b7eae38"
-    sha256 cellar: :any, arm64_sequoia: "52fe4ba015f8de290ead5490592adc1011c203107cb5f1c58945cdb08d2379b0"
-    sha256 cellar: :any, arm64_sonoma:  "db84a5f9fa63b6137a05941dad5763ec4b48d5ef7d8b54ba0db957246e61a014"
-    sha256 cellar: :any, arm64_linux:   "13efc4e454b6b210d59a999485383344cf81042b047665f3f47b800bb6454144"
-    sha256 cellar: :any, x86_64_linux:  "288543ab52e1bd23bd5986f9f617ba611ff2ddb21bf88a2e7b98ced6cf4305b9"
+    sha256 cellar: :any, arm64_golden_gate: "eddc21662f8595ebdb71eecd455b1c9ba50ed187851892b2732803bd1b733582"
+    sha256 cellar: :any, arm64_tahoe:       "c28c26b015d0b77d02bac6bae81d1299dba2e64e13ee023dfac43e171b7eae38"
+    sha256 cellar: :any, arm64_sequoia:     "52fe4ba015f8de290ead5490592adc1011c203107cb5f1c58945cdb08d2379b0"
+    sha256 cellar: :any, arm64_sonoma:      "db84a5f9fa63b6137a05941dad5763ec4b48d5ef7d8b54ba0db957246e61a014"
+    sha256 cellar: :any, arm64_linux:       "13efc4e454b6b210d59a999485383344cf81042b047665f3f47b800bb6454144"
+    sha256 cellar: :any, x86_64_linux:      "288543ab52e1bd23bd5986f9f617ba611ff2ddb21bf88a2e7b98ced6cf4305b9"
   end
 
   depends_on "cmake" => :build

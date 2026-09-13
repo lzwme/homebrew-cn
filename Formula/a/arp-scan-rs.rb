@@ -17,12 +17,13 @@ class ArpScanRs < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "14bd6fa1bb860ec13b1dc36252df0b426b542579156b511498cb5db789cc3f5a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "807c0ba92359a131432f619bad0e1b6013e50f269c4bc79c3d5e47f8dd123089"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9844bb9f7c626b59e0e9ee4fc02a030fd8a10941193e110ee37c21f40d4afb31"
-    sha256 cellar: :any_skip_relocation, sonoma:        "564410dd322d19205f29167bb1681dd7b9efe81f1bd8ab5d5bb38e537c6a312b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3a28a6dea691d50c0e4084c5f4fd9842a814bede065bc9174a41cebd08871c40"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6750fe3231d3d634a0b9a3d0384479fdb3f658d869443689aa67ad8b6380a1d5"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "c56dfded512377156f19c2260b144fc163d4c7de38d7248e8c6191ef6eca24f0"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "14bd6fa1bb860ec13b1dc36252df0b426b542579156b511498cb5db789cc3f5a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "807c0ba92359a131432f619bad0e1b6013e50f269c4bc79c3d5e47f8dd123089"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "9844bb9f7c626b59e0e9ee4fc02a030fd8a10941193e110ee37c21f40d4afb31"
+    sha256 cellar: :any_skip_relocation, sonoma:            "564410dd322d19205f29167bb1681dd7b9efe81f1bd8ab5d5bb38e537c6a312b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "3a28a6dea691d50c0e4084c5f4fd9842a814bede065bc9174a41cebd08871c40"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "6750fe3231d3d634a0b9a3d0384479fdb3f658d869443689aa67ad8b6380a1d5"
   end
 
   depends_on "rust" => :build

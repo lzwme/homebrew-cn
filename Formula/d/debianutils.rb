@@ -11,11 +11,12 @@ class Debianutils < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bfb469effa35c07c7e0f45d63dfa6ac0829cf2c50c1e043dc9443dcd0f08f993"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "65e5a7a6ddd283487b870de85d0923236cf73a859cb9d6eef4a7cefd23ff5d9f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "01995d50a7cdf817d4c385cb46f81b23e341db6c221ac3ed8a7c0ba618f458e9"
-    sha256 cellar: :any,                 arm64_linux:   "c8477c286845207791beae9fbdd4c3bba1a784d90eebba6760a23c61776cda4e"
-    sha256 cellar: :any,                 x86_64_linux:  "eecd6810a9b410c133cb88b65f6855fd46c9073f2ae410a5daf784815d44cddf"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "c74754e405c7195416a6eee7185c7fc6cc5667911d3c15eff4a299616f0ae4c2"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "bfb469effa35c07c7e0f45d63dfa6ac0829cf2c50c1e043dc9443dcd0f08f993"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "65e5a7a6ddd283487b870de85d0923236cf73a859cb9d6eef4a7cefd23ff5d9f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "01995d50a7cdf817d4c385cb46f81b23e341db6c221ac3ed8a7c0ba618f458e9"
+    sha256 cellar: :any,                 arm64_linux:       "c8477c286845207791beae9fbdd4c3bba1a784d90eebba6760a23c61776cda4e"
+    sha256 cellar: :any,                 x86_64_linux:      "eecd6810a9b410c133cb88b65f6855fd46c9073f2ae410a5daf784815d44cddf"
   end
 
   depends_on "autoconf" => :build

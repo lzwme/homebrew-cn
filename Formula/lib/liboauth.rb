@@ -9,12 +9,13 @@ class Liboauth < Formula
   revision 4
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "6470f165d97ff5cf41531245eb4fdd67945698303e07a574974856045845abb0"
-    sha256 cellar: :any,                 arm64_sequoia: "b27df2abe1adb83de25315b4c816e960d1e1f97a9aed6a74f7d9809c069c1226"
-    sha256 cellar: :any,                 arm64_sonoma:  "a3eca48a1fdd8d432880b84983cabeff3014294335a2ea7ef7e9bd25a742a6fd"
-    sha256 cellar: :any,                 sonoma:        "197c5dc93bd36291e3bff2ec90953a65acf867848c96aa44deb8126cb293569f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "47b23d8759b2430b614d3b78f07521d360c07b5f93a6362d999afec49d889d7f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4c90bf4fc3799352c6d67b1db57bc29d4cd35f13afec7eac48df218ba959ae4d"
+    sha256 cellar: :any,                 arm64_golden_gate: "0a35185bf79a17c6bb4fd57bdaf67eacde9095bd393c7a9ebee80e0dc5969fac"
+    sha256 cellar: :any,                 arm64_tahoe:       "6470f165d97ff5cf41531245eb4fdd67945698303e07a574974856045845abb0"
+    sha256 cellar: :any,                 arm64_sequoia:     "b27df2abe1adb83de25315b4c816e960d1e1f97a9aed6a74f7d9809c069c1226"
+    sha256 cellar: :any,                 arm64_sonoma:      "a3eca48a1fdd8d432880b84983cabeff3014294335a2ea7ef7e9bd25a742a6fd"
+    sha256 cellar: :any,                 sonoma:            "197c5dc93bd36291e3bff2ec90953a65acf867848c96aa44deb8126cb293569f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "47b23d8759b2430b614d3b78f07521d360c07b5f93a6362d999afec49d889d7f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "4c90bf4fc3799352c6d67b1db57bc29d4cd35f13afec7eac48df218ba959ae4d"
   end
 
   depends_on "openssl@4"

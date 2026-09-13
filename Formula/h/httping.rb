@@ -16,12 +16,13 @@ class Httping < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "7c3aa6d130bc657c32526f90b94cac8847c38d58e0bee1de4efa0e61926afe88"
-    sha256 arm64_sequoia: "097832cdd90f95bd5223ae4f8d0be9e358dc9426f9c19a50da8ab9961e9b2687"
-    sha256 arm64_sonoma:  "f48b8ef6384fbfb22e1b280d7b58752c460c7c64957d5c1d6bc812d732bf3993"
-    sha256 sonoma:        "61a7c0088454490720268cf9899bc187fb60e7efef09c2df902e332f001d6eff"
-    sha256 arm64_linux:   "c95e3c70266f25435d4c4a57c42667da305bb123b2fdbcd62662f830cb88e34b"
-    sha256 x86_64_linux:  "9bf1087b86efa6a82d2d625782eec4c6b8d0baa81075d0afd1e9dd9c08a575fa"
+    sha256 arm64_golden_gate: "908cb84f0962fdeea8ec60c08beea174b739d461a59ee388ee06996c489f1e41"
+    sha256 arm64_tahoe:       "7c3aa6d130bc657c32526f90b94cac8847c38d58e0bee1de4efa0e61926afe88"
+    sha256 arm64_sequoia:     "097832cdd90f95bd5223ae4f8d0be9e358dc9426f9c19a50da8ab9961e9b2687"
+    sha256 arm64_sonoma:      "f48b8ef6384fbfb22e1b280d7b58752c460c7c64957d5c1d6bc812d732bf3993"
+    sha256 sonoma:            "61a7c0088454490720268cf9899bc187fb60e7efef09c2df902e332f001d6eff"
+    sha256 arm64_linux:       "c95e3c70266f25435d4c4a57c42667da305bb123b2fdbcd62662f830cb88e34b"
+    sha256 x86_64_linux:      "9bf1087b86efa6a82d2d625782eec4c6b8d0baa81075d0afd1e9dd9c08a575fa"
   end
 
   depends_on "cmake" => :build

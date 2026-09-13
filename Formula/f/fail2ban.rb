@@ -12,12 +12,13 @@ class Fail2ban < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2b38fcc8c71bc28a4560fac81f04904b1ea7643aeb82242a826d6a54ee063226"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2b38fcc8c71bc28a4560fac81f04904b1ea7643aeb82242a826d6a54ee063226"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2b38fcc8c71bc28a4560fac81f04904b1ea7643aeb82242a826d6a54ee063226"
-    sha256 cellar: :any_skip_relocation, sonoma:        "00b19fd0adc0bb5c54b7707bac07940bccd91142465953b94d5993828321dc0e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "13d6912fb1c999bf37ab43d3c326b3b2deb132a01bdd93ec7a760b76252ee9cd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "13d6912fb1c999bf37ab43d3c326b3b2deb132a01bdd93ec7a760b76252ee9cd"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "ae9fce49882889937d4cb8ca68ba21a69f6c880f16157315c50d24d2d039666b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "2b38fcc8c71bc28a4560fac81f04904b1ea7643aeb82242a826d6a54ee063226"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "2b38fcc8c71bc28a4560fac81f04904b1ea7643aeb82242a826d6a54ee063226"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "2b38fcc8c71bc28a4560fac81f04904b1ea7643aeb82242a826d6a54ee063226"
+    sha256 cellar: :any_skip_relocation, sonoma:            "00b19fd0adc0bb5c54b7707bac07940bccd91142465953b94d5993828321dc0e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "13d6912fb1c999bf37ab43d3c326b3b2deb132a01bdd93ec7a760b76252ee9cd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "13d6912fb1c999bf37ab43d3c326b3b2deb132a01bdd93ec7a760b76252ee9cd"
   end
 
   depends_on "sphinx-doc" => :build

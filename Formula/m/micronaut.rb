@@ -1,8 +1,8 @@
 class Micronaut < Formula
   desc "Modern JVM-based framework for building modular microservices"
   homepage "https://micronaut.io/"
-  url "https://ghfast.top/https://github.com/micronaut-projects/micronaut-starter/archive/refs/tags/v5.1.3.tar.gz"
-  sha256 "badc9e138949c36176df0ea29e68519dcfc33e85b71946a822ec958deb0f3742"
+  url "https://ghfast.top/https://github.com/micronaut-projects/micronaut-starter/archive/refs/tags/v5.1.5.tar.gz"
+  sha256 "d6fd459e43f41bad94188357fc21c84f20b7a2e92d290a203ae77c6f62507d8c"
   license "Apache-2.0"
 
   livecheck do
@@ -11,12 +11,11 @@ class Micronaut < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "c40bd46f5f8d31a67255b1bb329c2baca89344a7f4e9ff4a2c14e9230064e944"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "de499718cdb99c4b1da4f5c071cde4cb55139701393dd0498a22cf478c2b7450"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "97f28236843bf4748cea59d384888ade211afba3418eba89aacd5b6af9afdafd"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "6c9a3a587b38e9e19d7671399df1c879e60fa956d25198ea07b5921769b16eda"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "3c679c5df0a119ba28915685c0dd31c1620bdcd24aac1627d62fe18fda7db262"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "2983386003a495f7c3a135ef3b95e02fa0bc758990b928cd1afad5579a57c633"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "2e3ce92e04dab27b6eb0e66f3877008b385f4defd288d0d825aa6441263d7748"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "867582449a237a1d09abd1f97b5da6d1d962d156a21c1d0e32764f154f583d1c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "2220c528e7dac1701a15e1b72ba08739b5563b25938dfcd7369697ea7c37f774"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "ffc62b0363b9fea735e262771aa57b2a909e8152604b7f09793da3897642f0ec"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "850b295ad3f6947f623da124222d25f60f163a835dfda47967e85666f0a5073f"
   end
 
   depends_on "gradle" => :build

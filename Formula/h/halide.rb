@@ -1,11 +1,30 @@
 class Halide < Formula
   desc "Language for fast, portable data-parallel computation"
   homepage "https://halide-lang.org"
-  url "https://ghfast.top/https://github.com/halide/Halide/archive/refs/tags/v21.0.0.tar.gz"
-  sha256 "aa6b6f5e89709ca6bc754ce72b8b13b2abce0d6b001cb2516b1c6f518f910141"
   license "MIT"
   revision 1
   head "https://github.com/halide/Halide.git", branch: "main"
+
+  stable do
+    url "https://ghfast.top/https://github.com/halide/Halide/archive/refs/tags/v21.0.0.tar.gz"
+    sha256 "aa6b6f5e89709ca6bc754ce72b8b13b2abce0d6b001cb2516b1c6f518f910141"
+
+    # Backport support for wabt 1.0.39
+    patch do
+      url "https://github.com/halide/Halide/commit/7d7f0b4422594296fed1d561a43dc262d163d2b8.patch?full_index=1"
+      sha256 "6b861e585ce4d71aec53b225562e078086ee310e8c6e7a052bf3fd53f03322ab"
+      type :backport
+      resolves "https://github.com/halide/Halide/pull/8923"
+    end
+
+    # Backport dropping the exact wabt version to build with wabt 1.0.41
+    patch do
+      url "https://github.com/halide/Halide/commit/6a7ed977f0e03dc812b8ae4ef43654178d651c46.patch?full_index=1"
+      sha256 "63232c844394cbaff3137f2a9e144579d4ad0af150ed1cf0e784edcc3d07b503"
+      type :backport
+      resolves "https://github.com/halide/Halide/pull/9016"
+    end
+  end
 
   livecheck do
     url :stable
@@ -13,12 +32,12 @@ class Halide < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "2971971113569192c7c113fc28e6e403037b5678aa1e18a4fdadbf198da94cd1"
-    sha256 cellar: :any,                 arm64_sequoia: "40779827ae67ed29c0cf27f0837e6a6d158d1352d3eee19f81d80cc24f2c6256"
-    sha256 cellar: :any,                 arm64_sonoma:  "cbc3e5f59f48c7360f53a841c14f9c90b364760be44eada0da13851053f0946f"
-    sha256 cellar: :any,                 sonoma:        "3d797396c4285b0123b7498d8fa794984c135b9e1b7985e7706ed927ec1fd4a3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5c69185c4c47845f19b7abc2be16eda2dfeba014a8ffcc357afce2ba44960339"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6731e04b241447c0e900d54b50d3d69429250d46b2384fd3a9601a520555a33e"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "1de3b79eb30e6687c17b62174ea9e17bdf0d5f7a2dcb021144cdc584f58753be"
+    sha256 cellar: :any, arm64_tahoe:       "4037cdf06844aa825899743cf9580881f6e6bf90cc45c90720577f6a520053e6"
+    sha256 cellar: :any, arm64_sequoia:     "99e3feaaaf8a7d5494771880d9fbf987c7e9f3d67c803f65eac753e0a7e86eed"
+    sha256 cellar: :any, arm64_linux:       "a13a8eb7536c3198136093eabd8791d13ae098c6d496e141ac392691b8b6ab97"
+    sha256 cellar: :any, x86_64_linux:      "ccca9e28c9adaa58a204284f0322b138e8afbf5e4cbced80f98fe319ca118cb3"
   end
 
   depends_on "cmake" => :build
@@ -33,14 +52,6 @@ class Halide < Formula
 
   on_macos do
     depends_on "openssl@3"
-  end
-
-  # Backport support for wabt 1.0.39
-  patch do
-    url "https://github.com/halide/Halide/commit/7d7f0b4422594296fed1d561a43dc262d163d2b8.patch?full_index=1"
-    sha256 "6b861e585ce4d71aec53b225562e078086ee310e8c6e7a052bf3fd53f03322ab"
-    type :backport
-    resolves "https://github.com/halide/Halide/pull/8923"
   end
 
   def install

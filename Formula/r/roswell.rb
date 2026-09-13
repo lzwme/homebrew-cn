@@ -7,12 +7,13 @@ class Roswell < Formula
   head "https://github.com/roswell/roswell.git", branch: "master"
 
   bottle do
-    sha256 arm64_tahoe:   "a2dd66e40a708c94ba62a6e58bb4f284d991105988ab296148115d063feacc28"
-    sha256 arm64_sequoia: "83f487ad84514a7298eaec541972da65ca72dc834de6357ee35f986096a77346"
-    sha256 arm64_sonoma:  "82039a4f889030eccfacd55ec69ee9b83dd0c04981b41129839f9b2c7400c801"
-    sha256 sonoma:        "8ecfdc665c4faef705304c09f9ed1a0089a8e1054b633c39b81bc9a10e898221"
-    sha256 arm64_linux:   "5bd3a28804d8c0b377d3fad621702d625c78417c1ec11e94d42cda1aaf74d0a8"
-    sha256 x86_64_linux:  "5f3be9a1d104a2861823c5879273c94dbe04ee24a0e15830f602c27f89d83100"
+    sha256 arm64_golden_gate: "c633490fa38ec2efc726d145f480b3d9ed336d465a83a5af757f8f9112e634b3"
+    sha256 arm64_tahoe:       "a2dd66e40a708c94ba62a6e58bb4f284d991105988ab296148115d063feacc28"
+    sha256 arm64_sequoia:     "83f487ad84514a7298eaec541972da65ca72dc834de6357ee35f986096a77346"
+    sha256 arm64_sonoma:      "82039a4f889030eccfacd55ec69ee9b83dd0c04981b41129839f9b2c7400c801"
+    sha256 sonoma:            "8ecfdc665c4faef705304c09f9ed1a0089a8e1054b633c39b81bc9a10e898221"
+    sha256 arm64_linux:       "5bd3a28804d8c0b377d3fad621702d625c78417c1ec11e94d42cda1aaf74d0a8"
+    sha256 x86_64_linux:      "5f3be9a1d104a2861823c5879273c94dbe04ee24a0e15830f602c27f89d83100"
   end
 
   depends_on "autoconf" => :build

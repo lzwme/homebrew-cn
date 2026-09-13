@@ -6,12 +6,13 @@ class GpgTui < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "94e1ca211a1dbd8fe30446a69bfeb8a47d927c5085bf49a597a3ac4cf8c02147"
-    sha256 cellar: :any,                 arm64_sequoia: "004f11be603db86cb34c5adfbcc867fee9614e62815954f334d60d4fdebdfb99"
-    sha256 cellar: :any,                 arm64_sonoma:  "b1535956bc250a00702761aff88d4a4c36ca3fb87dfd53dfa49c1e1acb0263a2"
-    sha256 cellar: :any,                 sonoma:        "e282e1cf9ad5e3982fe3bb378e08bbc587fa154f118580cd34d55135152fe5ad"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a7d236c7c210cebc61aae6c46fafcad1fe4db43b1bee5ec4f50534d54fe7501a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "38d10147ccb1179dc6968a51fd20c95c108ade11a5fb36259bd5e315faa06639"
+    sha256 cellar: :any,                 arm64_golden_gate: "8b157e8aedefbafb700eda85661a8b92e195d666e8a2b5493a4961de136ed1ee"
+    sha256 cellar: :any,                 arm64_tahoe:       "94e1ca211a1dbd8fe30446a69bfeb8a47d927c5085bf49a597a3ac4cf8c02147"
+    sha256 cellar: :any,                 arm64_sequoia:     "004f11be603db86cb34c5adfbcc867fee9614e62815954f334d60d4fdebdfb99"
+    sha256 cellar: :any,                 arm64_sonoma:      "b1535956bc250a00702761aff88d4a4c36ca3fb87dfd53dfa49c1e1acb0263a2"
+    sha256 cellar: :any,                 sonoma:            "e282e1cf9ad5e3982fe3bb378e08bbc587fa154f118580cd34d55135152fe5ad"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "a7d236c7c210cebc61aae6c46fafcad1fe4db43b1bee5ec4f50534d54fe7501a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "38d10147ccb1179dc6968a51fd20c95c108ade11a5fb36259bd5e315faa06639"
   end
 
   depends_on "pkgconf" => :build

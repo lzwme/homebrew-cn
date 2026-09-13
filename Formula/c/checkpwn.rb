@@ -7,11 +7,12 @@ class Checkpwn < Formula
   head "https://github.com/brycx/checkpwn.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "52a6b3eaa8d91838f553b3c2bf62de861bc598682fdb8a2e555184250d0f1608"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "eb40324086a06beec2f0a09343193141ede8d54c065d2a63ca505ae6e19281dc"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fe0612a01cb7399ec573706fba582c89cad825d012c7829db1aca0f2fc1114a0"
-    sha256 cellar: :any,                 arm64_linux:   "1e8426c2c2bfc07fdc43a1059da103205733f36e36efa8a54cffafead7e09585"
-    sha256 cellar: :any,                 x86_64_linux:  "217bdc353245d2fd5adfe8f4f46e0ecb40a33077418c340f8a36ac96c416d14e"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "565c76f080b2ab16453606892e2884aff4da7187f4d45538bf69210874211276"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "52a6b3eaa8d91838f553b3c2bf62de861bc598682fdb8a2e555184250d0f1608"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "eb40324086a06beec2f0a09343193141ede8d54c065d2a63ca505ae6e19281dc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "fe0612a01cb7399ec573706fba582c89cad825d012c7829db1aca0f2fc1114a0"
+    sha256 cellar: :any,                 arm64_linux:       "1e8426c2c2bfc07fdc43a1059da103205733f36e36efa8a54cffafead7e09585"
+    sha256 cellar: :any,                 x86_64_linux:      "217bdc353245d2fd5adfe8f4f46e0ecb40a33077418c340f8a36ac96c416d14e"
   end
 
   depends_on "rust" => :build

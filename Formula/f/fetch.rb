@@ -7,12 +7,13 @@ class Fetch < Formula
   head "https://github.com/gruntwork-io/fetch.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "16084f167de5082df4b3ce7198fcf44672bd2039929c2e61e2a1118710e3debc"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "16084f167de5082df4b3ce7198fcf44672bd2039929c2e61e2a1118710e3debc"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "16084f167de5082df4b3ce7198fcf44672bd2039929c2e61e2a1118710e3debc"
-    sha256 cellar: :any_skip_relocation, sonoma:        "06a16319c84b85d5e26f0586a344f9f95572ff3afff275ff494846e98794ed5b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "930d8ca1b12f0cc94cce20a1b637ffb956499bc0f515882fb4780c5e3892bf88"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "10b5de8d86085f6b4b75c5dc54e38301f452adfc9de38b49d0cb907acb8929bb"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "ebdde898098614e6ba578944180b53e77b59250cab6aa5e4ae9771b8493c4959"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "16084f167de5082df4b3ce7198fcf44672bd2039929c2e61e2a1118710e3debc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "16084f167de5082df4b3ce7198fcf44672bd2039929c2e61e2a1118710e3debc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "16084f167de5082df4b3ce7198fcf44672bd2039929c2e61e2a1118710e3debc"
+    sha256 cellar: :any_skip_relocation, sonoma:            "06a16319c84b85d5e26f0586a344f9f95572ff3afff275ff494846e98794ed5b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "930d8ca1b12f0cc94cce20a1b637ffb956499bc0f515882fb4780c5e3892bf88"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "10b5de8d86085f6b4b75c5dc54e38301f452adfc9de38b49d0cb907acb8929bb"
   end
 
   depends_on "go" => :build

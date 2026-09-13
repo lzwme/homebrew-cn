@@ -9,12 +9,13 @@ class Libgda < Formula
   revision 5
 
   bottle do
-    sha256 arm64_tahoe:   "3b88a622a31068287a6ffb6cbc65f564087bf4075f9b7d12e1558a271dfa4098"
-    sha256 arm64_sequoia: "8f4076b1d7e3f9d4638d740248e2b2e2533e078c559701115c5a75fcea611a91"
-    sha256 arm64_sonoma:  "a5f1c8797863b56478b0a90eafff8fa01118e5e5f65f5d6312366e27cf62f1ab"
-    sha256 sonoma:        "dde0d4d9216afd054308c32af549d5da2f4ef1132560de75fb45294e22c62eab"
-    sha256 arm64_linux:   "432428c494240cbb76d0399b1ffcacd120214b14259a8c69b9ddeb8b85404be8"
-    sha256 x86_64_linux:  "94e7dcaf6d1c37b5acd8ba1657acbd9a06ab82064a1709ad97050458cb41f174"
+    sha256 arm64_golden_gate: "74688b662aef4c430029029c72c2425225d821e70eafc04f6f521c19591dae15"
+    sha256 arm64_tahoe:       "3b88a622a31068287a6ffb6cbc65f564087bf4075f9b7d12e1558a271dfa4098"
+    sha256 arm64_sequoia:     "8f4076b1d7e3f9d4638d740248e2b2e2533e078c559701115c5a75fcea611a91"
+    sha256 arm64_sonoma:      "a5f1c8797863b56478b0a90eafff8fa01118e5e5f65f5d6312366e27cf62f1ab"
+    sha256 sonoma:            "dde0d4d9216afd054308c32af549d5da2f4ef1132560de75fb45294e22c62eab"
+    sha256 arm64_linux:       "432428c494240cbb76d0399b1ffcacd120214b14259a8c69b9ddeb8b85404be8"
+    sha256 x86_64_linux:      "94e7dcaf6d1c37b5acd8ba1657acbd9a06ab82064a1709ad97050458cb41f174"
   end
 
   depends_on "gettext" => :build

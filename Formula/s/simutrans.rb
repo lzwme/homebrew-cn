@@ -17,12 +17,13 @@ class Simutrans < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "9416e74ce4f562883c0ff06baaded29fd451a1287d1547823581f55cc1626742"
-    sha256 cellar: :any, arm64_sequoia: "a6cd38e5e313c1cce8d93316f2fdd573752df936ee0587e272d80578156e2271"
-    sha256 cellar: :any, arm64_sonoma:  "d0208918d7fb9691c3d04ecd169e3ae54e017b1455c84dca9f45ea07ec919729"
-    sha256 cellar: :any, sonoma:        "a023cf4bbea6b5ca1eb15ba383c35ea3ab06d610edaea99e52ad74a0199482ac"
-    sha256 cellar: :any, arm64_linux:   "2c73684b77cc59a82487de4e1b03f5a7c2696f483065b395cfcc33a961411ba1"
-    sha256 cellar: :any, x86_64_linux:  "407b04e50236fb72b705df2ef9583618155c0d8dc452e7825ec43d4087674d9f"
+    sha256 cellar: :any, arm64_golden_gate: "74a4791a5071295d42519fe3351ba9f198091d7b7739647974ab38a2940b7f50"
+    sha256 cellar: :any, arm64_tahoe:       "9416e74ce4f562883c0ff06baaded29fd451a1287d1547823581f55cc1626742"
+    sha256 cellar: :any, arm64_sequoia:     "a6cd38e5e313c1cce8d93316f2fdd573752df936ee0587e272d80578156e2271"
+    sha256 cellar: :any, arm64_sonoma:      "d0208918d7fb9691c3d04ecd169e3ae54e017b1455c84dca9f45ea07ec919729"
+    sha256 cellar: :any, sonoma:            "a023cf4bbea6b5ca1eb15ba383c35ea3ab06d610edaea99e52ad74a0199482ac"
+    sha256 cellar: :any, arm64_linux:       "2c73684b77cc59a82487de4e1b03f5a7c2696f483065b395cfcc33a961411ba1"
+    sha256 cellar: :any, x86_64_linux:      "407b04e50236fb72b705df2ef9583618155c0d8dc452e7825ec43d4087674d9f"
   end
 
   depends_on "cmake" => :build

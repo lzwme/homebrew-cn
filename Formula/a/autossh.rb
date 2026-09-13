@@ -12,18 +12,19 @@ class Autossh < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "33e051fb258b827ab535ba5909806f87dc63a82f3d3fe9117be1f3c0aa7f4045"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "66600f6f9ea804ec6342ea35c6bd26c068802f31dce3eb09ec161eb67fde8415"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d6adeb0a9a13c4e256e4f585524fcb8c7ec49878d876f3d66ecbc9ec62474d16"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c292dd6b6f1393dbccbdc296b881f30844787c909605577ee7367b0b77c0a793"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d14799b6ca48526b2cf94de0ec192da8689fcec70dff538a554cce942c9a1520"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c96653d1f3146ed3d7a2fea7127bae950f5b0766885385983e1ac086eda5dd43"
-    sha256 cellar: :any_skip_relocation, sonoma:         "15ac495d0360f64bbd48a11967af2aab8f12b17b7250579653fd1e085e33feb7"
-    sha256 cellar: :any_skip_relocation, ventura:        "d1712ac93597119c8ba5cf1f945243b52ef382241e868920753e0d18b8a3944d"
-    sha256 cellar: :any_skip_relocation, monterey:       "a99fb17beece2065e5e184f5dcf707011c2470a05644be7ae495bcd10c99410c"
-    sha256 cellar: :any_skip_relocation, big_sur:        "f9a7e07af1ad3391c1bd209b32dd92370bc93afb47c0a65499be89990ef471fe"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "d60fa3c4409563c4ee150db9420c1690afd67a5ddc4b275164a388543b2d6e54"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "382150d095c1ca848c38eabfd93635ecf9868291ec5cb85bdae6a16a53dc7ea9"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "b23212c6cac25e973c0d1384d776a60a1eca96e336ef342a83d8e599a24e4c1a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "33e051fb258b827ab535ba5909806f87dc63a82f3d3fe9117be1f3c0aa7f4045"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "66600f6f9ea804ec6342ea35c6bd26c068802f31dce3eb09ec161eb67fde8415"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "d6adeb0a9a13c4e256e4f585524fcb8c7ec49878d876f3d66ecbc9ec62474d16"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:     "c292dd6b6f1393dbccbdc296b881f30844787c909605577ee7367b0b77c0a793"
+    sha256 cellar: :any_skip_relocation, arm64_monterey:    "d14799b6ca48526b2cf94de0ec192da8689fcec70dff538a554cce942c9a1520"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:     "c96653d1f3146ed3d7a2fea7127bae950f5b0766885385983e1ac086eda5dd43"
+    sha256 cellar: :any_skip_relocation, sonoma:            "15ac495d0360f64bbd48a11967af2aab8f12b17b7250579653fd1e085e33feb7"
+    sha256 cellar: :any_skip_relocation, ventura:           "d1712ac93597119c8ba5cf1f945243b52ef382241e868920753e0d18b8a3944d"
+    sha256 cellar: :any_skip_relocation, monterey:          "a99fb17beece2065e5e184f5dcf707011c2470a05644be7ae495bcd10c99410c"
+    sha256 cellar: :any_skip_relocation, big_sur:           "f9a7e07af1ad3391c1bd209b32dd92370bc93afb47c0a65499be89990ef471fe"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "d60fa3c4409563c4ee150db9420c1690afd67a5ddc4b275164a388543b2d6e54"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "382150d095c1ca848c38eabfd93635ecf9868291ec5cb85bdae6a16a53dc7ea9"
   end
 
   patch :DATA

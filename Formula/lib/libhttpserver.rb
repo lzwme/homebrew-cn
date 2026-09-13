@@ -6,12 +6,13 @@ class Libhttpserver < Formula
   license "LGPL-2.1-or-later"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "ce049b8ca9b898ddc3b94df124cbe4aa099863451754673635bcf53dbba11806"
-    sha256 cellar: :any, arm64_sequoia: "5ac30712b5e68e4dafd1786ddd01d3982cdbc3b90b1cf125a0c2b5d5f54c7388"
-    sha256 cellar: :any, arm64_sonoma:  "d5f2ea59d891549b8cc484ab7b4d62e9266800c8127864a7acddcee9f2b4bb9c"
-    sha256 cellar: :any, sonoma:        "86b5fca83e830ba48d4daf685ddea314a088c80b52d6a01851f4b5db2fd6db68"
-    sha256 cellar: :any, arm64_linux:   "9f1b216381844bd86f626b1b9b3a01b5b9875f036219c16d34ccbb1e272b03c9"
-    sha256 cellar: :any, x86_64_linux:  "6908ced57ead5ffd6c8075e06b7acb90c54417aa459c89f9ba6286a41aecec71"
+    sha256 cellar: :any, arm64_golden_gate: "b4003af0a1df309da708ef0af6ddbc9aec830aa0e5ca30e1978f8eaa6817dc7c"
+    sha256 cellar: :any, arm64_tahoe:       "ce049b8ca9b898ddc3b94df124cbe4aa099863451754673635bcf53dbba11806"
+    sha256 cellar: :any, arm64_sequoia:     "5ac30712b5e68e4dafd1786ddd01d3982cdbc3b90b1cf125a0c2b5d5f54c7388"
+    sha256 cellar: :any, arm64_sonoma:      "d5f2ea59d891549b8cc484ab7b4d62e9266800c8127864a7acddcee9f2b4bb9c"
+    sha256 cellar: :any, sonoma:            "86b5fca83e830ba48d4daf685ddea314a088c80b52d6a01851f4b5db2fd6db68"
+    sha256 cellar: :any, arm64_linux:       "9f1b216381844bd86f626b1b9b3a01b5b9875f036219c16d34ccbb1e272b03c9"
+    sha256 cellar: :any, x86_64_linux:      "6908ced57ead5ffd6c8075e06b7acb90c54417aa459c89f9ba6286a41aecec71"
   end
 
   head do

@@ -12,12 +12,12 @@ class Librespot < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9f29922e551c58ca9314a8866308fbc55681b5917d2ec6e9a329a9b7efe79647"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f5c09746c4526ff5846d9a0560ee3cc1d021573937f34e898376b5d724cc6b55"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0c138bad37d6e3807668aad515b08b3f4cc45f2c7a720df700c80bd5599bbf38"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a837315473b98774a6a1411853646c5c819d836f21153cf4d5eabd327ab3f6c2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3333c791b5881eced0fb758e2a8d4e861d55aaa7c9c91e09df0183bc7aa68737"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fadc5ec56dc24bac05ceacc76486ab8326d4c3f6a5f4513a791bc80fa6bdbd0a"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "abd9e87ba45e5ae2e4a3798ca2042d068c2c6bc880d450e3f6e36259342061e7"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "da5d471665712fb34f147bd605b4f8f960c0e0fc8d9a5e47ca7b70ca0e9132f1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "a71699856a1c4ad908b3a1e5c9304a455d9cde1003a912da2d1298b0f9df73e0"
+    sha256 cellar: :any,                 arm64_linux:       "b46f177d84157d8790d26bdb5ac8326e29e8e7586aaf9b156e3709e91a45e71d"
+    sha256 cellar: :any,                 x86_64_linux:      "b026c712356b9cc4c6ae01b3a9f8e190b1fd3f31bd45ebc87caf279fd75d6e00"
   end
 
   depends_on "pkgconf" => :build
@@ -25,14 +25,19 @@ class Librespot < Formula
 
   on_linux do
     depends_on "alsa-lib"
-    depends_on "avahi"
+    depends_on "openssl@3" # https://github.com/librespot-org/librespot/pull/1707
   end
 
   def install
-    ENV["COREAUDIO_SDK_PATH"] = MacOS.sdk_path.to_s if OS.mac?
+    if OS.mac?
+      ENV["COREAUDIO_SDK_PATH"] = MacOS.sdk_path.to_s
+      args = %w[--no-default-features]
+      # We use `with-dns-sd` on macOS since system Bonjour can be used.
+      # Linux requires Avahi which isn't well maintained so better to use libmdns.
+      features = %w[native-tls rodio-backend with-dns-sd]
+    end
 
-    features = %w[rodio-backend with-dns-sd rustls-tls-native-roots]
-    system "cargo", "install", "--no-default-features", *std_cargo_args(features:)
+    system "cargo", "install", *args, *std_cargo_args(features:)
   end
 
   test do

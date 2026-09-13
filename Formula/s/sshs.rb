@@ -6,11 +6,12 @@ class Sshs < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9c429cc8e63236a75a9d0d104f0f879e6c56e6b428aa80d6060cb052963c1152"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8171fefab314751a39c9842356e19c2343ca9087cfd1470407202180c25bf376"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b56acf1f6716d456066569b188f5ddbaeaa4f031c082cc2e60ddab855de4c95a"
-    sha256 cellar: :any,                 arm64_linux:   "5f808f0334b206944aea0d118ff5c4db9507b9e0519f47c309e25c0f4476408d"
-    sha256 cellar: :any,                 x86_64_linux:  "5c40d26dc113d2eb2afef2b515c02c1cfd9447f71c88b1737fcc6ff7ea2313af"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "161a028555565b70788a31e082a965b5e507b001a568655622ebda55d34b4ed1"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "9c429cc8e63236a75a9d0d104f0f879e6c56e6b428aa80d6060cb052963c1152"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "8171fefab314751a39c9842356e19c2343ca9087cfd1470407202180c25bf376"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "b56acf1f6716d456066569b188f5ddbaeaa4f031c082cc2e60ddab855de4c95a"
+    sha256 cellar: :any,                 arm64_linux:       "5f808f0334b206944aea0d118ff5c4db9507b9e0519f47c309e25c0f4476408d"
+    sha256 cellar: :any,                 x86_64_linux:      "5c40d26dc113d2eb2afef2b515c02c1cfd9447f71c88b1737fcc6ff7ea2313af"
   end
 
   depends_on "rust" => :build

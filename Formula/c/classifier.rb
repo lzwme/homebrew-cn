@@ -7,12 +7,13 @@ class Classifier < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "ba0432ac209fb148332377e1498b1e49bd711358e563011214302d9318405357"
-    sha256 cellar: :any, arm64_sequoia: "872a0c9dd40f86f84a8de9c558f937ae482731ab2e0bdb95c0a26f35e32f7b28"
-    sha256 cellar: :any, arm64_sonoma:  "cac7241f79adae3ec89c452270d31e2a1bda06dcb4d1b2af6bb7ccde040099cf"
-    sha256 cellar: :any, sonoma:        "cdf1690ab9b7b7ed6fba8d98cd1d7b9d9607e8e42b346d99ff432806a7d73d45"
-    sha256 cellar: :any, arm64_linux:   "47832ef61940bb4896389ade3d5615d744fe51c0f75b2f2534cc75f913be9e9a"
-    sha256 cellar: :any, x86_64_linux:  "b293072ae4316ab3e797b5d1d622a1381af5475c61f8fc5d14a9c60ad38a13ae"
+    sha256 cellar: :any, arm64_golden_gate: "227d4a46a66a0506c573c54536df448a017b1afb7534d6075c770cc9c318b4bd"
+    sha256 cellar: :any, arm64_tahoe:       "ba0432ac209fb148332377e1498b1e49bd711358e563011214302d9318405357"
+    sha256 cellar: :any, arm64_sequoia:     "872a0c9dd40f86f84a8de9c558f937ae482731ab2e0bdb95c0a26f35e32f7b28"
+    sha256 cellar: :any, arm64_sonoma:      "cac7241f79adae3ec89c452270d31e2a1bda06dcb4d1b2af6bb7ccde040099cf"
+    sha256 cellar: :any, sonoma:            "cdf1690ab9b7b7ed6fba8d98cd1d7b9d9607e8e42b346d99ff432806a7d73d45"
+    sha256 cellar: :any, arm64_linux:       "47832ef61940bb4896389ade3d5615d744fe51c0f75b2f2534cc75f913be9e9a"
+    sha256 cellar: :any, x86_64_linux:      "b293072ae4316ab3e797b5d1d622a1381af5475c61f8fc5d14a9c60ad38a13ae"
   end
 
   depends_on "ruby"

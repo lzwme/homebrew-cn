@@ -17,12 +17,13 @@ class BbftpClient < Formula
 
   bottle do
     rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "18d463140dea6d3abd1361442b054a2cd01020e40c55ca2e6046c5760944d689"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "58ae6876eec6565daf49ef57c1cc4663b2302ffb65d0acab11d8963ccbc0a42e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0ab14cc4e4e91fc506ca0b125d8d7ad3f5e84cc9019e2168a490f4da172ff481"
-    sha256 cellar: :any_skip_relocation, sonoma:        "449c785073c769955666ce4833bb442984a2714629facd2a7b33dc218e429f20"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "23e60edad50fab29170e6333b357a7e422bfe7798d190f2d0b21c8b72fbe4d1a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b43e533d6799fb7e77c30bd1c8e6707925647d7220edd00edda2e30177298c47"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "1af7986ff7c622d850f0fcf8c38cefbd5770896c5988b12e2944c30223dabdb9"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "18d463140dea6d3abd1361442b054a2cd01020e40c55ca2e6046c5760944d689"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "58ae6876eec6565daf49ef57c1cc4663b2302ffb65d0acab11d8963ccbc0a42e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "0ab14cc4e4e91fc506ca0b125d8d7ad3f5e84cc9019e2168a490f4da172ff481"
+    sha256 cellar: :any_skip_relocation, sonoma:            "449c785073c769955666ce4833bb442984a2714629facd2a7b33dc218e429f20"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "23e60edad50fab29170e6333b357a7e422bfe7798d190f2d0b21c8b72fbe4d1a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "b43e533d6799fb7e77c30bd1c8e6707925647d7220edd00edda2e30177298c47"
   end
 
   on_linux do

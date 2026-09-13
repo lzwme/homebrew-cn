@@ -13,12 +13,12 @@ class Botan < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "772694ed0fa9b6b0b7485e1ee6772cc3605fcad2605f6c312ea6768056846d8b"
-    sha256 arm64_sequoia: "624d3920b982a37290cd5111230ae0da8ddfc0693e9c47392ceb454973140435"
-    sha256 arm64_sonoma:  "dcc157679f64f323e9070ce9f34026d5ace2319a713cae3594307cda5a0b89a5"
-    sha256 sonoma:        "b1c30c3273b0b1663045b350c9d6420e643e40f4db74106e0c5abb9cfa12ea4f"
-    sha256 arm64_linux:   "249a35ff5fd21acad1a9c5470c89d77eb384fce407757e8518592b6585e1b8e5"
-    sha256 x86_64_linux:  "1ec44df72694f1fbc8b6f3bfa65a9ac5f1f237e9ef5cf81158326383232b8984"
+    rebuild 1
+    sha256 arm64_golden_gate: "22553306185fc848e81c7e88c5df5954e0dcf22e1841f089e911cfeaaaa309a7"
+    sha256 arm64_tahoe:       "172d81cf6d6958ee819bb5576f15e39a55ad4a832f653c71fa9f09ee408a2e44"
+    sha256 arm64_sequoia:     "8900beebc0493371a6fde3b7b78d4941ae839f732c0c681be02d52debdd38507"
+    sha256 arm64_linux:       "392fb0efdde799208c755a4506e4482289457531858489657cce41e32d73ed4a"
+    sha256 x86_64_linux:      "07f24225875cf8133295f25db4a514cca408aa2dbcbacf7d6e443ee487d000f6"
   end
 
   depends_on "pkgconf" => :build
@@ -52,7 +52,11 @@ class Botan < Formula
       --with-sqlite3
       --system-cert-bundle=#{Formula["ca-certificates"].pkgetc}/cert.pem
     ]
-    args << "--with-commoncrypto" if OS.mac?
+    if OS.mac?
+      args << "--with-commoncrypto"
+      # The CLI's `sandbox_init` profile constants were removed from the macOS 27 SDK
+      args << "--without-os-features=sandbox_proc"
+    end
 
     if OS.mac? && DevelopmentTools.clang_build_version <= 1400
       ldflags = %W[-L#{formula_opt_lib("llvm")}/c++ -L#{formula_opt_lib("llvm")}/unwind -lunwind]

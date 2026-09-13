@@ -18,6 +18,13 @@ class Kubeconform < Formula
 
   depends_on "go" => :build
 
+  # `test do` block downloads Kubernetes JSON schemas
+  deny_network_access! [:build, :postinstall]
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     system "go", "build", *std_go_args(ldflags: "-X main.version=v#{version}"), "./cmd/kubeconform"
 

@@ -25,6 +25,12 @@ class DockerCompose < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ENV["CGO_ENABLED"] = OS.mac? ? "1" : "0"
     ldflags = %W[-X github.com/docker/compose/v#{version.major}/internal.Version=#{version}]

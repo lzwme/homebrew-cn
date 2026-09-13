@@ -7,12 +7,13 @@ class Envio < Formula
   head "https://github.com/humblepenguinn/envio.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "df7e57535ad3830ff003f53e1124ebe879a74867bf5688d89432d52a9173250c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f2e43b713ed2cf6335250f0eb8a9a024a8410d7a98e9c1324c9cb07761b41824"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f4b1c50ae8611c34eabc1627e7b4d786811d6e07e1f76981a7e1ea0e0812c899"
-    sha256 cellar: :any_skip_relocation, sonoma:        "be708a55a04644168c64fa5f7a73ba3daa5dd728a03fa5ee8a5e4012eec3f173"
-    sha256 cellar: :any,                 arm64_linux:   "54de753f51ef02b66f1bc23cadc8f069150024f4edd26c33bba010353f712d85"
-    sha256 cellar: :any,                 x86_64_linux:  "4bdd1a9db951f83f81124c3681c2e291cf5cf37653b344452b9ce5499da88427"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "cc4a036e588c4bf02b8b5d0224950c168f52d3c972d6d47be584271618dcc339"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "df7e57535ad3830ff003f53e1124ebe879a74867bf5688d89432d52a9173250c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "f2e43b713ed2cf6335250f0eb8a9a024a8410d7a98e9c1324c9cb07761b41824"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "f4b1c50ae8611c34eabc1627e7b4d786811d6e07e1f76981a7e1ea0e0812c899"
+    sha256 cellar: :any_skip_relocation, sonoma:            "be708a55a04644168c64fa5f7a73ba3daa5dd728a03fa5ee8a5e4012eec3f173"
+    sha256 cellar: :any,                 arm64_linux:       "54de753f51ef02b66f1bc23cadc8f069150024f4edd26c33bba010353f712d85"
+    sha256 cellar: :any,                 x86_64_linux:      "4bdd1a9db951f83f81124c3681c2e291cf5cf37653b344452b9ce5499da88427"
   end
 
   depends_on "pkgconf" => :build

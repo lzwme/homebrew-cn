@@ -12,11 +12,12 @@ class Flashrom < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "abef39cb494d1475064b425daa8a0d12562bab5e608860178ddceb74a3d4ae02"
-    sha256 cellar: :any, arm64_sequoia: "c9c225aa76b4dbdcfa75a7f8b2ab3f2bfb1db0bcf8980e837ea332dfa6e8dd40"
-    sha256 cellar: :any, arm64_sonoma:  "0e5d1e2587bcfbff9e208486f066f95fad7bc8e3768bbe8f4cedbba35c84b6f8"
-    sha256 cellar: :any, arm64_linux:   "62429c2654e7a723b1eba6f402f24a6862cb93e7e2e32e9f5453a33468942e26"
-    sha256 cellar: :any, x86_64_linux:  "d94065e9ad3a5c19cc2a5ae33f03eaef78694c1c3b179e2ab064f58b866ca4f0"
+    sha256 cellar: :any, arm64_golden_gate: "05fc622d67c4e9e8217ec1b6678bd6c031a1919678909bf96d7347e2a8321171"
+    sha256 cellar: :any, arm64_tahoe:       "abef39cb494d1475064b425daa8a0d12562bab5e608860178ddceb74a3d4ae02"
+    sha256 cellar: :any, arm64_sequoia:     "c9c225aa76b4dbdcfa75a7f8b2ab3f2bfb1db0bcf8980e837ea332dfa6e8dd40"
+    sha256 cellar: :any, arm64_sonoma:      "0e5d1e2587bcfbff9e208486f066f95fad7bc8e3768bbe8f4cedbba35c84b6f8"
+    sha256 cellar: :any, arm64_linux:       "62429c2654e7a723b1eba6f402f24a6862cb93e7e2e32e9f5453a33468942e26"
+    sha256 cellar: :any, x86_64_linux:      "d94065e9ad3a5c19cc2a5ae33f03eaef78694c1c3b179e2ab064f58b866ca4f0"
   end
 
   depends_on "meson" => :build

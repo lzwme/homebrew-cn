@@ -24,6 +24,9 @@ class Algernon < Formula
 
   depends_on "go" => :build
 
+  # `test do` block runs a local HTTP server
+  deny_network_access! [:build, :postinstall]
+
   def install
     system "go", "build", *std_go_args, "-mod=vendor"
 

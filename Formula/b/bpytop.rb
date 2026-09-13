@@ -11,12 +11,13 @@ class Bpytop < Formula
 
   bottle do
     rebuild 6
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b19bca99c4b0dadd6f0acaab677713cb36e69066d938e40975bb6ec5e1e5e0a5"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f5de2cc3e6a468f7de3afc1a4c0e89b6fdc5b015c9948a069163a4cd8f5e883f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a68fda2ed5723d9a9dbd8314b432256fea597aed76249e118f5d84f9ad7f3435"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f47e3022d6b8328e32736b7193ac9d3c6678567697ad808252db830ce3b634db"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7c67cef4be215e9374aebee5f4541a7f87b4d3a87dde27c738ce4f9d349ad90c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f8429d3cbe14ef4215355724446eb5720130c89d596441d7184166f3b4c1f8dd"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "012bc1b554fd27ca4960cc81c1423fe6b5e56f00c14894558abf00bcab6de259"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "b19bca99c4b0dadd6f0acaab677713cb36e69066d938e40975bb6ec5e1e5e0a5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "f5de2cc3e6a468f7de3afc1a4c0e89b6fdc5b015c9948a069163a4cd8f5e883f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "a68fda2ed5723d9a9dbd8314b432256fea597aed76249e118f5d84f9ad7f3435"
+    sha256 cellar: :any_skip_relocation, sonoma:            "f47e3022d6b8328e32736b7193ac9d3c6678567697ad808252db830ce3b634db"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "7c67cef4be215e9374aebee5f4541a7f87b4d3a87dde27c738ce4f9d349ad90c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "f8429d3cbe14ef4215355724446eb5720130c89d596441d7184166f3b4c1f8dd"
   end
 
   depends_on "python@3.14"

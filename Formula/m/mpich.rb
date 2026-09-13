@@ -13,12 +13,13 @@ class Mpich < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "6a2f959bc2b8dd695c32ae58e089a9af89f650b1c526d03c70fc3a27df5f0b5d"
-    sha256 cellar: :any, arm64_sequoia: "aee2fba617b861e8da95cf0d910505ec2a57f1bb07331d6ec1ea2f4fa77700aa"
-    sha256 cellar: :any, arm64_sonoma:  "d6057eecea78e99013d7a8b97e9c0a22686806c6c937250af029428313f97879"
-    sha256 cellar: :any, sonoma:        "378a784581c8b6ed5068e15f2195e05794129a2355bb8a8b8fc7be2e72a30e55"
-    sha256 cellar: :any, arm64_linux:   "8a71c6ff9137cf5ce6d64d93eeda5e1091c1c3c983496429546a473806cfa728"
-    sha256 cellar: :any, x86_64_linux:  "3c4e74676db58666f9de2cc4b14cdb90ea6bf79b9208647519e8e1a45f429f12"
+    sha256 cellar: :any, arm64_golden_gate: "102e5681968b7531b59a8a23cb9b75abb8a18d7d9a3fd054a7ae01f1ebc8517f"
+    sha256 cellar: :any, arm64_tahoe:       "6a2f959bc2b8dd695c32ae58e089a9af89f650b1c526d03c70fc3a27df5f0b5d"
+    sha256 cellar: :any, arm64_sequoia:     "aee2fba617b861e8da95cf0d910505ec2a57f1bb07331d6ec1ea2f4fa77700aa"
+    sha256 cellar: :any, arm64_sonoma:      "d6057eecea78e99013d7a8b97e9c0a22686806c6c937250af029428313f97879"
+    sha256 cellar: :any, sonoma:            "378a784581c8b6ed5068e15f2195e05794129a2355bb8a8b8fc7be2e72a30e55"
+    sha256 cellar: :any, arm64_linux:       "8a71c6ff9137cf5ce6d64d93eeda5e1091c1c3c983496429546a473806cfa728"
+    sha256 cellar: :any, x86_64_linux:      "3c4e74676db58666f9de2cc4b14cdb90ea6bf79b9208647519e8e1a45f429f12"
   end
 
   head do

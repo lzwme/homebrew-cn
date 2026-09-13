@@ -8,12 +8,13 @@ class Dissent < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "dd1e49a1cba57126c5863d4a2b677b02fd03fdbaf8a1ce6f81474007b9394661"
-    sha256 cellar: :any,                 arm64_sequoia: "b45fd55dfd1e9cd6191fb59cc7cac06c310e90414a44033c916c84fb572da839"
-    sha256 cellar: :any,                 arm64_sonoma:  "9604a42062cae3551df4c41f8c47a79f7d743fd8fe42c870655240652d79c074"
-    sha256 cellar: :any,                 sonoma:        "ea9319c548bdd84c5a00e110f352299d4c3f586fc9a176005e71dd5fdd18ad07"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "09d43aa6bfef20752ac31e2b33ad1737a2e40ee0d57bf3ee214833302e2ad81a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b7cb6a3cebf7c5fcebeed8c7ee8180e59dc465c4e9c4c1595b40de885392caaa"
+    sha256 cellar: :any,                 arm64_golden_gate: "87101722475ad131ffd48bc7f618cc7b5a542222a0ed597c61bfd79221a44469"
+    sha256 cellar: :any,                 arm64_tahoe:       "dd1e49a1cba57126c5863d4a2b677b02fd03fdbaf8a1ce6f81474007b9394661"
+    sha256 cellar: :any,                 arm64_sequoia:     "b45fd55dfd1e9cd6191fb59cc7cac06c310e90414a44033c916c84fb572da839"
+    sha256 cellar: :any,                 arm64_sonoma:      "9604a42062cae3551df4c41f8c47a79f7d743fd8fe42c870655240652d79c074"
+    sha256 cellar: :any,                 sonoma:            "ea9319c548bdd84c5a00e110f352299d4c3f586fc9a176005e71dd5fdd18ad07"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "09d43aa6bfef20752ac31e2b33ad1737a2e40ee0d57bf3ee214833302e2ad81a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "b7cb6a3cebf7c5fcebeed8c7ee8180e59dc465c4e9c4c1595b40de885392caaa"
   end
 
   depends_on "go" => :build

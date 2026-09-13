@@ -10,14 +10,15 @@ class Dragonbox < Formula
   head "https://github.com/jk-jeon/dragonbox.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e8d3d051a973de698e054f0cbd6635457ec76d3a290232b6637531587c06fc2f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "88e4534f61830511e3688998ce11edb471262826c3d201f38bf6e11115c3c44f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "529598b9212cd7ccc573f58334df5ef26f7925f3cdc41e319b7e3d3d562d6132"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "6d8da388b5e481bc6bb2cbb17686782e029d76ac71b3ac1d3ae9bab6f5669a4b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ea4c36f3d7b48b0d949a443ac9527b638d12bc67e7f75e15eddfc267bc8fb3d8"
-    sha256 cellar: :any_skip_relocation, ventura:       "129ef3cab84bf26377f8e8925123d655dd19f033f971ea2a8f01dc0d9ea06316"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ab2a40a63f7e8ded666c88854f9f2ca6543db95ac304d965d5c4f87be3fa0d7f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bd3fe3c6c5efe142c195fc07706f632c654635a48b44d09dbda7a845db8add48"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "1f31bdafc74bc9b10fa0fb17aff183bd397a52a31840241b6b518e03fc47f16f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "e8d3d051a973de698e054f0cbd6635457ec76d3a290232b6637531587c06fc2f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "88e4534f61830511e3688998ce11edb471262826c3d201f38bf6e11115c3c44f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "529598b9212cd7ccc573f58334df5ef26f7925f3cdc41e319b7e3d3d562d6132"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:     "6d8da388b5e481bc6bb2cbb17686782e029d76ac71b3ac1d3ae9bab6f5669a4b"
+    sha256 cellar: :any_skip_relocation, sonoma:            "ea4c36f3d7b48b0d949a443ac9527b638d12bc67e7f75e15eddfc267bc8fb3d8"
+    sha256 cellar: :any_skip_relocation, ventura:           "129ef3cab84bf26377f8e8925123d655dd19f033f971ea2a8f01dc0d9ea06316"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "ab2a40a63f7e8ded666c88854f9f2ca6543db95ac304d965d5c4f87be3fa0d7f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "bd3fe3c6c5efe142c195fc07706f632c654635a48b44d09dbda7a845db8add48"
   end
 
   depends_on "cmake" => [:build, :test]

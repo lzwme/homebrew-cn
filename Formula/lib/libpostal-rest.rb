@@ -7,14 +7,15 @@ class LibpostalRest < Formula
   head "https://github.com/johnlonganecker/libpostal-rest.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "905fe876b881844842cf56c6e4f5098bc59b23d0b9eee15e70ec7d07953f25df"
-    sha256 cellar: :any,                 arm64_sequoia: "fd5d9cfcd9ea16dd5b1990b18ec200eef3de42b32dbcfc71e74d60dc1e77d5ec"
-    sha256 cellar: :any,                 arm64_sonoma:  "35f195463499d406f38fd34722108ec532d1a5faa59bae40266efac277d204a7"
-    sha256 cellar: :any,                 arm64_ventura: "20db7d2a602976a14915f4f8246950a17aab06fcd2743e0d4dd0cf867df3eb99"
-    sha256 cellar: :any,                 sonoma:        "5364b98a31cf0dd48e851bb94be7cccc60f52568d4952b959b9e6a067dd1fd61"
-    sha256 cellar: :any,                 ventura:       "bc55976fe713ac4b6eb92c00f7452410c68c6bde7800fef401e077944d8b7453"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2c6c6f1cb64e46da29ede7308c2f9efcdc140f171f23d41cb0d55586f5c8c2b4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "945be628085aa46d50c62af4014749288db83af578bdd175b648032661adad25"
+    sha256 cellar: :any,                 arm64_golden_gate: "ffbcbf2d958921fdc59b3a47eca9347fc54026e4900b1470180fd3a8afca8721"
+    sha256 cellar: :any,                 arm64_tahoe:       "905fe876b881844842cf56c6e4f5098bc59b23d0b9eee15e70ec7d07953f25df"
+    sha256 cellar: :any,                 arm64_sequoia:     "fd5d9cfcd9ea16dd5b1990b18ec200eef3de42b32dbcfc71e74d60dc1e77d5ec"
+    sha256 cellar: :any,                 arm64_sonoma:      "35f195463499d406f38fd34722108ec532d1a5faa59bae40266efac277d204a7"
+    sha256 cellar: :any,                 arm64_ventura:     "20db7d2a602976a14915f4f8246950a17aab06fcd2743e0d4dd0cf867df3eb99"
+    sha256 cellar: :any,                 sonoma:            "5364b98a31cf0dd48e851bb94be7cccc60f52568d4952b959b9e6a067dd1fd61"
+    sha256 cellar: :any,                 ventura:           "bc55976fe713ac4b6eb92c00f7452410c68c6bde7800fef401e077944d8b7453"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "2c6c6f1cb64e46da29ede7308c2f9efcdc140f171f23d41cb0d55586f5c8c2b4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "945be628085aa46d50c62af4014749288db83af578bdd175b648032661adad25"
   end
 
   depends_on "go" => :build

@@ -8,12 +8,13 @@ class Rslint < Formula
 
   bottle do
     rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a889ed0f08b3102adb969159e71ba2d28aa7c40b1809c5fa10d7d57350e9731f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "063ceea1423e7a6c428f7d9c517c64a773eb5a0ffac97c55a45558081aa93d9b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f5bba58ac05e2c259b3d2e135e5ec12afbea7d67b0b48a892d48554883c65e66"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a5c91e6d84fd85d4d8914caea6d4d261a514ce5c4bfa722d423f2bb78615c402"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "464a3bdc1181ddc042da940b4ed478ab546c5f62975a767f4494bea2b80407c5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e037bb0d096c7f58a2f36fa404af706c0a0d5814eb6cf659b30690604b15e9b8"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "52aa80f624082e70072a4f158db8217b06fa12289522d023d5b8789012404150"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "a889ed0f08b3102adb969159e71ba2d28aa7c40b1809c5fa10d7d57350e9731f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "063ceea1423e7a6c428f7d9c517c64a773eb5a0ffac97c55a45558081aa93d9b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "f5bba58ac05e2c259b3d2e135e5ec12afbea7d67b0b48a892d48554883c65e66"
+    sha256 cellar: :any_skip_relocation, sonoma:            "a5c91e6d84fd85d4d8914caea6d4d261a514ce5c4bfa722d423f2bb78615c402"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "464a3bdc1181ddc042da940b4ed478ab546c5f62975a767f4494bea2b80407c5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "e037bb0d096c7f58a2f36fa404af706c0a0d5814eb6cf659b30690604b15e9b8"
   end
 
   depends_on "rust" => :build

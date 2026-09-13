@@ -8,14 +8,15 @@ class Latino < Formula
   head "https://github.com/lenguaje-latino/latino.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "6cf212c61bd3713e4a553669d53d6e8f151e2c7e4e87bc438a49d112219c8426"
-    sha256 cellar: :any,                 arm64_sequoia: "844abdcfdef8d27337343bf5545836b23adf30738de6b146a35090f23de90c90"
-    sha256 cellar: :any,                 arm64_sonoma:  "3f71439866df37de2cbe8fb5c711b770d70186e57a2e3a586dfddd95264aa3df"
-    sha256 cellar: :any,                 arm64_ventura: "dbe2fc1ead1951d6c44a9b96638e3ae889322eb7ebb634a826618bed50b16e06"
-    sha256 cellar: :any,                 sonoma:        "63944aac895d9ec94344a647f9adeab4f4fb9a8d2bb548999d39aa7eb874af0b"
-    sha256 cellar: :any,                 ventura:       "5a940fde4f7577543fefc1c54ddd0b56b9b09078b9b77acc70b957b8cbc14631"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "76af2f42cfac533a45afa82f95b24ee0b58a233ad7d96396d3c170f300fcdcc4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8732dbdcbb9723660ff9261f790d3f48f929a6e4d95842471d2a3076fe6618c9"
+    sha256 cellar: :any,                 arm64_golden_gate: "5ae6f0bd126866374c5925344ed390f981efc0fb74687dd73be71e7bbf3d6138"
+    sha256 cellar: :any,                 arm64_tahoe:       "6cf212c61bd3713e4a553669d53d6e8f151e2c7e4e87bc438a49d112219c8426"
+    sha256 cellar: :any,                 arm64_sequoia:     "844abdcfdef8d27337343bf5545836b23adf30738de6b146a35090f23de90c90"
+    sha256 cellar: :any,                 arm64_sonoma:      "3f71439866df37de2cbe8fb5c711b770d70186e57a2e3a586dfddd95264aa3df"
+    sha256 cellar: :any,                 arm64_ventura:     "dbe2fc1ead1951d6c44a9b96638e3ae889322eb7ebb634a826618bed50b16e06"
+    sha256 cellar: :any,                 sonoma:            "63944aac895d9ec94344a647f9adeab4f4fb9a8d2bb548999d39aa7eb874af0b"
+    sha256 cellar: :any,                 ventura:           "5a940fde4f7577543fefc1c54ddd0b56b9b09078b9b77acc70b957b8cbc14631"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "76af2f42cfac533a45afa82f95b24ee0b58a233ad7d96396d3c170f300fcdcc4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "8732dbdcbb9723660ff9261f790d3f48f929a6e4d95842471d2a3076fe6618c9"
   end
 
   depends_on "cmake" => :build

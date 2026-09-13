@@ -7,12 +7,13 @@ class Decompose < Formula
   head "https://github.com/s0rg/decompose.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d71ca6bc293b1e9a262748b1cd755519c86d18df10e03f0b535e85aa089f9eb5"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d71ca6bc293b1e9a262748b1cd755519c86d18df10e03f0b535e85aa089f9eb5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d71ca6bc293b1e9a262748b1cd755519c86d18df10e03f0b535e85aa089f9eb5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "fd73eb4e7e3e628dea303d47eccd83844c41e17a265de442cc95c901ea5528c9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "62738aee22fbe289af889ba818ed0d152bac1ab2f8cc73b68394658b05ba0b62"
-    sha256 cellar: :any,                 x86_64_linux:  "60ca2687a4003079b52654f7b044efc0f7afa690203e91b6dd76e814b03a54bd"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "3732592e595956ee6f4ce6e73ddf208c47e54dbc68803c20dd5c837644d5cbda"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "d71ca6bc293b1e9a262748b1cd755519c86d18df10e03f0b535e85aa089f9eb5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "d71ca6bc293b1e9a262748b1cd755519c86d18df10e03f0b535e85aa089f9eb5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "d71ca6bc293b1e9a262748b1cd755519c86d18df10e03f0b535e85aa089f9eb5"
+    sha256 cellar: :any_skip_relocation, sonoma:            "fd73eb4e7e3e628dea303d47eccd83844c41e17a265de442cc95c901ea5528c9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "62738aee22fbe289af889ba818ed0d152bac1ab2f8cc73b68394658b05ba0b62"
+    sha256 cellar: :any,                 x86_64_linux:      "60ca2687a4003079b52654f7b044efc0f7afa690203e91b6dd76e814b03a54bd"
   end
 
   depends_on "go" => :build

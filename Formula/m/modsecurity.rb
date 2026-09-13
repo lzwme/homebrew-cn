@@ -6,12 +6,13 @@ class Modsecurity < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "c5da00e5e5acf53ce53798e9e0bfcd768d6b46f4063ca021d589165d00a7cd84"
-    sha256 cellar: :any, arm64_sequoia: "ed15406a6e8b0194ba73746044697c4b89941c1aeffe7cb470f5510fc2a96366"
-    sha256 cellar: :any, arm64_sonoma:  "2defe052614124fa7e20e16358c4d18429009a78028d9bb1bb0eff5d04f19878"
-    sha256 cellar: :any, sonoma:        "48b159b5e26675c53e6fe6d0f54d8d77cfe3b9f5b5b3a29859a6d61f97b71a68"
-    sha256 cellar: :any, arm64_linux:   "00cb4763e7114913214907f09f3064aa5d31c1b01468ddef6dd27f9591b4f81c"
-    sha256 cellar: :any, x86_64_linux:  "44b13d984cff8b0f4b75ac029cc6bf69f55990dea11efd4e2902753113350a2f"
+    sha256 cellar: :any, arm64_golden_gate: "8b28e28def7ef47c4854a0d1851735e4504d5b64078cd93691d428ac2840f8df"
+    sha256 cellar: :any, arm64_tahoe:       "c5da00e5e5acf53ce53798e9e0bfcd768d6b46f4063ca021d589165d00a7cd84"
+    sha256 cellar: :any, arm64_sequoia:     "ed15406a6e8b0194ba73746044697c4b89941c1aeffe7cb470f5510fc2a96366"
+    sha256 cellar: :any, arm64_sonoma:      "2defe052614124fa7e20e16358c4d18429009a78028d9bb1bb0eff5d04f19878"
+    sha256 cellar: :any, sonoma:            "48b159b5e26675c53e6fe6d0f54d8d77cfe3b9f5b5b3a29859a6d61f97b71a68"
+    sha256 cellar: :any, arm64_linux:       "00cb4763e7114913214907f09f3064aa5d31c1b01468ddef6dd27f9591b4f81c"
+    sha256 cellar: :any, x86_64_linux:      "44b13d984cff8b0f4b75ac029cc6bf69f55990dea11efd4e2902753113350a2f"
   end
 
   depends_on "autoconf" => :build

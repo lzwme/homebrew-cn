@@ -6,12 +6,13 @@ class Libucl < Formula
   license "BSD-2-Clause"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "d558ba4973cfffdba49a2728ca9945ae938c9f8b18cb1170919e51fad82338d6"
-    sha256 cellar: :any,                 arm64_sequoia: "91ed40ce3f7472550719d08c48b0cc9d54a34f971ce628b79ae73f2e23f766e8"
-    sha256 cellar: :any,                 arm64_sonoma:  "8764b8b400a7110ad55bac3f8e27ad987d1f2f64fd0de17e511200b1d77e94ff"
-    sha256 cellar: :any,                 sonoma:        "e5c65c529626b4433ad606574b842312534f05e049df186251955e55c66af882"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "00fd13ad0b9d87427f303f93466f006e14e9f5d2bc14b64aa87487c9d3f0320d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ba43e46b697f805c3908c81591fd5163703a51e8deebcf372fd01510041a02a8"
+    sha256 cellar: :any,                 arm64_golden_gate: "11ca11de7ebafd5ca56abf79cb68f74780639e164744c9ab8d0fd2dad492d9e8"
+    sha256 cellar: :any,                 arm64_tahoe:       "d558ba4973cfffdba49a2728ca9945ae938c9f8b18cb1170919e51fad82338d6"
+    sha256 cellar: :any,                 arm64_sequoia:     "91ed40ce3f7472550719d08c48b0cc9d54a34f971ce628b79ae73f2e23f766e8"
+    sha256 cellar: :any,                 arm64_sonoma:      "8764b8b400a7110ad55bac3f8e27ad987d1f2f64fd0de17e511200b1d77e94ff"
+    sha256 cellar: :any,                 sonoma:            "e5c65c529626b4433ad606574b842312534f05e049df186251955e55c66af882"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "00fd13ad0b9d87427f303f93466f006e14e9f5d2bc14b64aa87487c9d3f0320d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "ba43e46b697f805c3908c81591fd5163703a51e8deebcf372fd01510041a02a8"
   end
 
   depends_on "autoconf" => :build

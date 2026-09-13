@@ -8,12 +8,13 @@ class H2o < Formula
 
   bottle do
     rebuild 1
-    sha256 arm64_tahoe:   "7052d31aee99253193fa7e7bdbdff7c1c1d838783c5f3bf01eb60303cadfcccb"
-    sha256 arm64_sequoia: "7a1fc642567278a8aa2a7d35860b34a5243b5632be0b710601222a70404525bd"
-    sha256 arm64_sonoma:  "216fc94308b217f17545983c554f361aa2269a60a32274bc19e3ecb307e00dff"
-    sha256 sonoma:        "73890630b88d90aade5f50e9b398dabd7d32721d04048d5be9ad4a5c086a5251"
-    sha256 arm64_linux:   "a8f570c2dc1dec9d24cd097b6b2b0c1ebb6d5186e6d7e8937248713a2250531a"
-    sha256 x86_64_linux:  "3610f00d45e27f430806f37e64f1038864d821c7cf622b572492f046398b3bc0"
+    sha256 arm64_golden_gate: "711a0ca2299d2427ddeabe53869bb24e286df00b4607dea44ac26d33f1b175f9"
+    sha256 arm64_tahoe:       "7052d31aee99253193fa7e7bdbdff7c1c1d838783c5f3bf01eb60303cadfcccb"
+    sha256 arm64_sequoia:     "7a1fc642567278a8aa2a7d35860b34a5243b5632be0b710601222a70404525bd"
+    sha256 arm64_sonoma:      "216fc94308b217f17545983c554f361aa2269a60a32274bc19e3ecb307e00dff"
+    sha256 sonoma:            "73890630b88d90aade5f50e9b398dabd7d32721d04048d5be9ad4a5c086a5251"
+    sha256 arm64_linux:       "a8f570c2dc1dec9d24cd097b6b2b0c1ebb6d5186e6d7e8937248713a2250531a"
+    sha256 x86_64_linux:      "3610f00d45e27f430806f37e64f1038864d821c7cf622b572492f046398b3bc0"
   end
 
   # See https://github.com/h2o/h2o/releases/tag/tag-no-more-releases

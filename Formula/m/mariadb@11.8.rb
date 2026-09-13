@@ -18,12 +18,13 @@ class MariadbAT118 < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "2a49278226d6874408af5601c4f2467d8430f99e18aa1b92fab0ee2ceb0f1e84"
-    sha256 arm64_sequoia: "db65880fbeb05cfb471b3a30374a32062467a8cc8796c90eea78e3051cdc39a6"
-    sha256 arm64_sonoma:  "6db6e268d87c4c4cde4ff00acfc5221975ffc700e8ddb5007dc70ca956e15c4e"
-    sha256 sonoma:        "46014bf3e2cc82ce7dda243e93c73e7bd05e71aa791afe8400fce603802d2eee"
-    sha256 arm64_linux:   "edf09d7be69c12f892328b32d969b7532c4ca88446643f813bc3e12f0f988b06"
-    sha256 x86_64_linux:  "c3c099c542f891e6ab473728cb141aa1fc488be501ae45e314596f15ad4cf020"
+    sha256 arm64_golden_gate: "44d07dc95debb39b1f79fc719e5a42cb8dd2c4cbbf85cd86efca0cc30351b088"
+    sha256 arm64_tahoe:       "2a49278226d6874408af5601c4f2467d8430f99e18aa1b92fab0ee2ceb0f1e84"
+    sha256 arm64_sequoia:     "db65880fbeb05cfb471b3a30374a32062467a8cc8796c90eea78e3051cdc39a6"
+    sha256 arm64_sonoma:      "6db6e268d87c4c4cde4ff00acfc5221975ffc700e8ddb5007dc70ca956e15c4e"
+    sha256 sonoma:            "46014bf3e2cc82ce7dda243e93c73e7bd05e71aa791afe8400fce603802d2eee"
+    sha256 arm64_linux:       "edf09d7be69c12f892328b32d969b7532c4ca88446643f813bc3e12f0f988b06"
+    sha256 x86_64_linux:      "c3c099c542f891e6ab473728cb141aa1fc488be501ae45e314596f15ad4cf020"
   end
 
   keg_only :versioned_formula

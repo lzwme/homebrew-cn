@@ -27,12 +27,13 @@ class Polynote < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "97bcad9e3bec9679599e61a6132a9e2894f545a63467ed6d60654c42ec6dff70"
-    sha256 cellar: :any, arm64_sequoia: "f7842ab01a975c0d4f66512aa6fedccaf00f92778bcaeaa4a575a7d1a97193d1"
-    sha256 cellar: :any, arm64_sonoma:  "f2fccd1682fed553f175e6edd248b347195ff4630649eb8c802bad07ab6b0194"
-    sha256 cellar: :any, sonoma:        "bb24853b7bb693c98096fc7d1b37507b40c72f02c288f432ce0aca99c7016b54"
-    sha256               arm64_linux:   "42c1f47c931413bc7f8281ce103b83df555c0b11cd1510f78a765ec62b11f6a6"
-    sha256               x86_64_linux:  "f43b22ef1081a4e8be7f6d6e101b20713d85282f53a190c98073a569662543df"
+    sha256 cellar: :any, arm64_golden_gate: "a7d9b2f900edff1c647240472a6892ce300e61f185a423a42b8e578e88cc1b53"
+    sha256 cellar: :any, arm64_tahoe:       "97bcad9e3bec9679599e61a6132a9e2894f545a63467ed6d60654c42ec6dff70"
+    sha256 cellar: :any, arm64_sequoia:     "f7842ab01a975c0d4f66512aa6fedccaf00f92778bcaeaa4a575a7d1a97193d1"
+    sha256 cellar: :any, arm64_sonoma:      "f2fccd1682fed553f175e6edd248b347195ff4630649eb8c802bad07ab6b0194"
+    sha256 cellar: :any, sonoma:            "bb24853b7bb693c98096fc7d1b37507b40c72f02c288f432ce0aca99c7016b54"
+    sha256               arm64_linux:       "42c1f47c931413bc7f8281ce103b83df555c0b11cd1510f78a765ec62b11f6a6"
+    sha256               x86_64_linux:      "f43b22ef1081a4e8be7f6d6e101b20713d85282f53a190c98073a569662543df"
   end
 
   depends_on "python-setuptools" => :build # to detect numpy (and avoid building numpy when we use jep >= 4.3)

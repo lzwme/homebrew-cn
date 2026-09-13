@@ -7,12 +7,13 @@ class Leetsolv < Formula
   head "https://github.com/eannchen/leetsolv.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5cd16d7e328e6be2865e869e531fbad280aaf9d565cbd77d60ca153d9515e741"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5cd16d7e328e6be2865e869e531fbad280aaf9d565cbd77d60ca153d9515e741"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5cd16d7e328e6be2865e869e531fbad280aaf9d565cbd77d60ca153d9515e741"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ba4f532844e8f23dca6e5fb901d6c927f02af3a486140d84b097eac0e7e30fd6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "35f24022b721e61cf39758a0e5105530892b3cf047c992c0d3bc1752306560b6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0b083ba517ea479d21a851ffe66daceeb97cc86a1b1759716c4d737495eca783"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "213e5a3b470687ece87a9bae5894a787fd7e32a95c1ed94d0bbd6dc1b8196243"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "5cd16d7e328e6be2865e869e531fbad280aaf9d565cbd77d60ca153d9515e741"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "5cd16d7e328e6be2865e869e531fbad280aaf9d565cbd77d60ca153d9515e741"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "5cd16d7e328e6be2865e869e531fbad280aaf9d565cbd77d60ca153d9515e741"
+    sha256 cellar: :any_skip_relocation, sonoma:            "ba4f532844e8f23dca6e5fb901d6c927f02af3a486140d84b097eac0e7e30fd6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "35f24022b721e61cf39758a0e5105530892b3cf047c992c0d3bc1752306560b6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "0b083ba517ea479d21a851ffe66daceeb97cc86a1b1759716c4d737495eca783"
   end
 
   depends_on "go" => :build

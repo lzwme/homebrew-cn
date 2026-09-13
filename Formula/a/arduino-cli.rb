@@ -12,15 +12,22 @@ class ArduinoCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "50f9660eee50b5fa13e9a3015372efbe037aa7f5a7cf6dc2e8cb40a04539f9d4"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4219fd4074b79195edf327b20702be7c7f45bf93d7bec8d4971b791c6d7ddd06"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "48f62e85e11bb3aad52c27a76d664cfb4c6f370f6e0c0acdaa316d6d700cd9c0"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8a2a89caa7ff64f8cbe348d4a4448ae590128970ed9b8d1d9e83324819add1c4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "53a45f5e2afb48dec9dcc11f606a68a2f23a1df6e5a6b4e12c8a5e896ef396fe"
-    sha256 cellar: :any,                 x86_64_linux:  "2f60d49fba0ef0aa348bcfc7ba1e050cc5777da0df2cc5ba169cd9341844344c"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "73f9ac3a217106f72597c2d2ecf900958e5806fde396add4b188209c1650f39c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "50f9660eee50b5fa13e9a3015372efbe037aa7f5a7cf6dc2e8cb40a04539f9d4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "4219fd4074b79195edf327b20702be7c7f45bf93d7bec8d4971b791c6d7ddd06"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "48f62e85e11bb3aad52c27a76d664cfb4c6f370f6e0c0acdaa316d6d700cd9c0"
+    sha256 cellar: :any_skip_relocation, sonoma:            "8a2a89caa7ff64f8cbe348d4a4448ae590128970ed9b8d1d9e83324819add1c4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "53a45f5e2afb48dec9dcc11f606a68a2f23a1df6e5a6b4e12c8a5e896ef396fe"
+    sha256 cellar: :any,                 x86_64_linux:      "2f60d49fba0ef0aa348bcfc7ba1e050cc5777da0df2cc5ba169cd9341844344c"
   end
 
   depends_on "go" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     ldflags = %W[

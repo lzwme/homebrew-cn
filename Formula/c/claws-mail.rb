@@ -12,12 +12,13 @@ class ClawsMail < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "802a84e17c8e82c3b7794785d56f92e862c335c184525aa8437448e507e68ab0"
-    sha256 arm64_sequoia: "5c4648384fea31d7c9ebe5116656e119b752ee0eddd86b3ad305fa4827d4c51d"
-    sha256 arm64_sonoma:  "037137457f0cad56a06a0ac87bc003dd9a9f8120ec4585ce3093ce1e79e12d0c"
-    sha256 sonoma:        "444debd26e80fa85dac3b1a5019ce26c2a22ee933be8a810c6454dd6d5c728d4"
-    sha256 arm64_linux:   "117612a79662d6f2241bf6e14a5aa149af5d2b055e632643cdf7bdc399bac776"
-    sha256 x86_64_linux:  "9cfb9bccb094e86849d6add6c7e6af8e6b621354963a9fda130cbcc6090547d6"
+    sha256 arm64_golden_gate: "a43d337303c59ec8e7dde1dee88108936c81756c460e3ab6e5bc5f8b4c747dfc"
+    sha256 arm64_tahoe:       "802a84e17c8e82c3b7794785d56f92e862c335c184525aa8437448e507e68ab0"
+    sha256 arm64_sequoia:     "5c4648384fea31d7c9ebe5116656e119b752ee0eddd86b3ad305fa4827d4c51d"
+    sha256 arm64_sonoma:      "037137457f0cad56a06a0ac87bc003dd9a9f8120ec4585ce3093ce1e79e12d0c"
+    sha256 sonoma:            "444debd26e80fa85dac3b1a5019ce26c2a22ee933be8a810c6454dd6d5c728d4"
+    sha256 arm64_linux:       "117612a79662d6f2241bf6e14a5aa149af5d2b055e632643cdf7bdc399bac776"
+    sha256 x86_64_linux:      "9cfb9bccb094e86849d6add6c7e6af8e6b621354963a9fda130cbcc6090547d6"
   end
 
   depends_on "pkgconf" => :build

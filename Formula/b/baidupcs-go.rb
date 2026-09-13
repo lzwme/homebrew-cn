@@ -12,12 +12,13 @@ class BaidupcsGo < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "64f9017b324cdbf7a9d368bf9f13d90fcb2c2056e9098d4e2b107e96eb4fbe6b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "64f9017b324cdbf7a9d368bf9f13d90fcb2c2056e9098d4e2b107e96eb4fbe6b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "64f9017b324cdbf7a9d368bf9f13d90fcb2c2056e9098d4e2b107e96eb4fbe6b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2bbad39dbd0118744efd70d72f72e410a9e1429a214d425411464cac92cde99b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2aa3595b2563ee35651eee593e29507d7e6c4958e5aed2ea8cd0af25296977f5"
-    sha256 cellar: :any,                 x86_64_linux:  "1e69dc1a0b80715c987b867529e9689108d88ae0170f16f2e4d7d336f8fe6e02"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "024ca2bbe5b36b194a31418715b4bc80ebd092342ac8e504a1c80fdec1a50ba7"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "64f9017b324cdbf7a9d368bf9f13d90fcb2c2056e9098d4e2b107e96eb4fbe6b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "64f9017b324cdbf7a9d368bf9f13d90fcb2c2056e9098d4e2b107e96eb4fbe6b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "64f9017b324cdbf7a9d368bf9f13d90fcb2c2056e9098d4e2b107e96eb4fbe6b"
+    sha256 cellar: :any_skip_relocation, sonoma:            "2bbad39dbd0118744efd70d72f72e410a9e1429a214d425411464cac92cde99b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "2aa3595b2563ee35651eee593e29507d7e6c4958e5aed2ea8cd0af25296977f5"
+    sha256 cellar: :any,                 x86_64_linux:      "1e69dc1a0b80715c987b867529e9689108d88ae0170f16f2e4d7d336f8fe6e02"
   end
 
   depends_on "go" => :build

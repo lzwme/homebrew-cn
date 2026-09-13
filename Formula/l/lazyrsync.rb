@@ -7,12 +7,13 @@ class Lazyrsync < Formula
   head "https://github.com/westpoint-io/lazyrsync.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "30d7de71f22280a95c6284f90772ac0903803d17e6a13f12c8c20db9db0e13bc"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6b2ae1b54853ff86369ae4a5d9e2951857874b54dce8c46dd91d551734964a6b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "55fc0b696bc3ff39761a405ce0260c2e026f16bbd3ee527b9ad64b323867976b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d308c5b510760ca7b2a8591026e8676f53dc0a118e8aa11f4cc5efb8d7b54986"
-    sha256 cellar: :any,                 arm64_linux:   "97600aae368c08e8aa9fdcbd962ad9d7cc7c1b99d5c5246f0309bb10886ead58"
-    sha256 cellar: :any,                 x86_64_linux:  "081d7766296d581960467eccfedd7b5e0c0234d2f8b3aeccb4f9b7d27083e379"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "b60ecabe63c5e4e4bf0675d09ce0ed98510d9372e6201afb5334210b198bf71a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "30d7de71f22280a95c6284f90772ac0903803d17e6a13f12c8c20db9db0e13bc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "6b2ae1b54853ff86369ae4a5d9e2951857874b54dce8c46dd91d551734964a6b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "55fc0b696bc3ff39761a405ce0260c2e026f16bbd3ee527b9ad64b323867976b"
+    sha256 cellar: :any_skip_relocation, sonoma:            "d308c5b510760ca7b2a8591026e8676f53dc0a118e8aa11f4cc5efb8d7b54986"
+    sha256 cellar: :any,                 arm64_linux:       "97600aae368c08e8aa9fdcbd962ad9d7cc7c1b99d5c5246f0309bb10886ead58"
+    sha256 cellar: :any,                 x86_64_linux:      "081d7766296d581960467eccfedd7b5e0c0234d2f8b3aeccb4f9b7d27083e379"
   end
 
   depends_on "rust" => :build

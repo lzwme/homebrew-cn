@@ -7,23 +7,25 @@ class Charm < Formula
   head "https://github.com/juju/charmstore-client.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "23c05ff713871756c9636e01d7de20645150e6180d9426f8fe33a3f4ff0e6885"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e2ddeaf1bab0b233267484c6bdac331a9113af93d5819e6f48ef7642b4696dc1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e2ddeaf1bab0b233267484c6bdac331a9113af93d5819e6f48ef7642b4696dc1"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "e2ddeaf1bab0b233267484c6bdac331a9113af93d5819e6f48ef7642b4696dc1"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4a50613b56ac6dbd9bd7c8def6f03899188f3a4a0992098e75e6d49493b4cd19"
-    sha256 cellar: :any_skip_relocation, ventura:       "4a50613b56ac6dbd9bd7c8def6f03899188f3a4a0992098e75e6d49493b4cd19"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "60e259f6541281a54f94e6b9dea178bacc9d348330e7b781441995f35e97eb73"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "393502f468997806b663a548026487a0cc7bdceec9bfce3bfa6cccba45551d59"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "b9a5df58877af8e3ad37c3385f8d2e8135cd35f080a446fe279678999a7b1927"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "b9a5df58877af8e3ad37c3385f8d2e8135cd35f080a446fe279678999a7b1927"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "b9a5df58877af8e3ad37c3385f8d2e8135cd35f080a446fe279678999a7b1927"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "4137ad2f14ddf96d8bb87dafbcda64549f130b491c07b749f1a8751261578a0e"
+    sha256 cellar: :any,                 x86_64_linux:      "cf2a6ab1ae2fe665374bdf5f22f2a0e16071f6862cce316370a8293f4ff79c4a"
   end
 
   depends_on "breezy" => :build
-  depends_on "go" => :build
+  # Go 1.27 dropped bzr support: https://github.com/golang/go/issues/78090
+  depends_on "go@1.26" => :build
 
-  def install
+  def fetch
     # Charm requires bzr (bazaar vcs) for fetching launchpad.net/lpad Go module.
     ENV["GOVCS"] = "launchpad.net:bzr"
+    system "go", "mod", "download"
+  end
+
+  def install
     system "go", "build", *std_go_args, "./cmd/charm"
   end
 

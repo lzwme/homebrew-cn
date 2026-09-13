@@ -10,11 +10,12 @@ class Cyan < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "3e5c57e0f56551ead62e908c0fbf91e31dccec524fa4403e1c38b8fc06ade7b3"
-    sha256 cellar: :any,                 arm64_sequoia: "3e5c57e0f56551ead62e908c0fbf91e31dccec524fa4403e1c38b8fc06ade7b3"
-    sha256 cellar: :any,                 arm64_sonoma:  "3e5c57e0f56551ead62e908c0fbf91e31dccec524fa4403e1c38b8fc06ade7b3"
-    sha256 cellar: :any,                 sonoma:        "5384185dc20d570688aba0840637a715c3e5a97d2f8cc8686ec4442b6bddaa01"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ec4d32880cba6eb8e91bdbdfcb0c8c05ab8ab937d85c68fbe3d482960d6bd792"
+    sha256 cellar: :any,                 arm64_golden_gate: "c995d74dbbc3f69b2ef4a5fd7a28ee4cae4630d2d43f233eba10e8c4b94a79b1"
+    sha256 cellar: :any,                 arm64_tahoe:       "3e5c57e0f56551ead62e908c0fbf91e31dccec524fa4403e1c38b8fc06ade7b3"
+    sha256 cellar: :any,                 arm64_sequoia:     "3e5c57e0f56551ead62e908c0fbf91e31dccec524fa4403e1c38b8fc06ade7b3"
+    sha256 cellar: :any,                 arm64_sonoma:      "3e5c57e0f56551ead62e908c0fbf91e31dccec524fa4403e1c38b8fc06ade7b3"
+    sha256 cellar: :any,                 sonoma:            "5384185dc20d570688aba0840637a715c3e5a97d2f8cc8686ec4442b6bddaa01"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "ec4d32880cba6eb8e91bdbdfcb0c8c05ab8ab937d85c68fbe3d482960d6bd792"
   end
 
   depends_on "ldid-procursus"

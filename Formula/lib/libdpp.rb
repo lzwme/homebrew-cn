@@ -6,12 +6,13 @@ class Libdpp < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "b6a0ebb56a7a7276c70fe9294f077a123cb4e2a2a28290a399b009e14e4faaef"
-    sha256 cellar: :any, arm64_sequoia: "702ad39019c981065b091db3558cb7c47edf886343d1a48eece0b51fcb253f5e"
-    sha256 cellar: :any, arm64_sonoma:  "3ae7f67d8b918d3a6f2cbc13547bf867a4d20e926a7dbcb08df4ea6098c08822"
-    sha256 cellar: :any, sonoma:        "c843cd7aa4bcc045bbf373bd50911ed673cb087c932606542169a8706d0c2d72"
-    sha256 cellar: :any, arm64_linux:   "57ab5940f7370efd01b8d7215ddc995ed586ba938a102fd1ea0b8142a4a2afcc"
-    sha256 cellar: :any, x86_64_linux:  "87925835649a9a7e3001ea32b9c25d84da0b4f537d045b3fab2bbf247fa37663"
+    sha256 cellar: :any, arm64_golden_gate: "a75f98400f65bb5dee5b898d3ff418ea2f8e6558ec1863d042a615bdc0862d6f"
+    sha256 cellar: :any, arm64_tahoe:       "b6a0ebb56a7a7276c70fe9294f077a123cb4e2a2a28290a399b009e14e4faaef"
+    sha256 cellar: :any, arm64_sequoia:     "702ad39019c981065b091db3558cb7c47edf886343d1a48eece0b51fcb253f5e"
+    sha256 cellar: :any, arm64_sonoma:      "3ae7f67d8b918d3a6f2cbc13547bf867a4d20e926a7dbcb08df4ea6098c08822"
+    sha256 cellar: :any, sonoma:            "c843cd7aa4bcc045bbf373bd50911ed673cb087c932606542169a8706d0c2d72"
+    sha256 cellar: :any, arm64_linux:       "57ab5940f7370efd01b8d7215ddc995ed586ba938a102fd1ea0b8142a4a2afcc"
+    sha256 cellar: :any, x86_64_linux:      "87925835649a9a7e3001ea32b9c25d84da0b4f537d045b3fab2bbf247fa37663"
   end
 
   depends_on "cmake" => :build

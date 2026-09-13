@@ -7,12 +7,13 @@ class Smartdns < Formula
   head "https://github.com/mokeyish/smartdns-rs.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "42234518894d332d2b6fc507d559d76245387dd11d06fb73bafda30409688872"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5ed79bcd9e295ea141006c22359a2b85e45f6b15567c349acbd5cee3ff2b4031"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3cfa49a349b573ca8d99adcace0d8d5ea1dd7088c58e0051ffa32813ae354933"
-    sha256 cellar: :any_skip_relocation, sonoma:        "895d6856c5080a5d82b3c93fa1ba944df473c6922fcbf36752bee43507c82d7d"
-    sha256 cellar: :any,                 arm64_linux:   "aee9ca8d68cf9f448fb320820fa8d1481d04fdd35eafdff0bd0286194a07be20"
-    sha256 cellar: :any,                 x86_64_linux:  "806929455bc5a9206443ebffef0975f03187711660075cab348248910d805555"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "8afbdcd26135380e82834b78bebd5718b77dc141edb5f2ef1b08ccdaa3be0356"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "42234518894d332d2b6fc507d559d76245387dd11d06fb73bafda30409688872"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "5ed79bcd9e295ea141006c22359a2b85e45f6b15567c349acbd5cee3ff2b4031"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "3cfa49a349b573ca8d99adcace0d8d5ea1dd7088c58e0051ffa32813ae354933"
+    sha256 cellar: :any_skip_relocation, sonoma:            "895d6856c5080a5d82b3c93fa1ba944df473c6922fcbf36752bee43507c82d7d"
+    sha256 cellar: :any,                 arm64_linux:       "aee9ca8d68cf9f448fb320820fa8d1481d04fdd35eafdff0bd0286194a07be20"
+    sha256 cellar: :any,                 x86_64_linux:      "806929455bc5a9206443ebffef0975f03187711660075cab348248910d805555"
   end
 
   depends_on "rust" => :build

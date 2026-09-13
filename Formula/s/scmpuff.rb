@@ -7,12 +7,13 @@ class Scmpuff < Formula
   head "https://github.com/mroth/scmpuff.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "905a460527378b663c6e4c81422eb0842a3b495e03990ac38466d14ae35387d5"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "905a460527378b663c6e4c81422eb0842a3b495e03990ac38466d14ae35387d5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "905a460527378b663c6e4c81422eb0842a3b495e03990ac38466d14ae35387d5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a40113c4008e4411538f39e74c7098885f48db23def72f42523bc26a8313e86a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f2c0f354dd043dda61d68a3794d73f85f32154bb3a5ac505d0f725d9b9db8876"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3ae88dd75983370f296d6b715556d13dc39b937ec2e7beb653071aaf5883b7c5"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "6564abf864ce4e82b78b27a7fe467070f235cf7bf77b824ea6af69c998554914"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "905a460527378b663c6e4c81422eb0842a3b495e03990ac38466d14ae35387d5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "905a460527378b663c6e4c81422eb0842a3b495e03990ac38466d14ae35387d5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "905a460527378b663c6e4c81422eb0842a3b495e03990ac38466d14ae35387d5"
+    sha256 cellar: :any_skip_relocation, sonoma:            "a40113c4008e4411538f39e74c7098885f48db23def72f42523bc26a8313e86a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "f2c0f354dd043dda61d68a3794d73f85f32154bb3a5ac505d0f725d9b9db8876"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "3ae88dd75983370f296d6b715556d13dc39b937ec2e7beb653071aaf5883b7c5"
   end
 
   depends_on "go" => :build

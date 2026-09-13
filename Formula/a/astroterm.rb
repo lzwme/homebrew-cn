@@ -7,12 +7,13 @@ class Astroterm < Formula
   head "https://github.com/da-luce/astroterm.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "366ef8ecc45c6c188f134156cc8562a4e3ce17934e4406c236969482281cace6"
-    sha256 cellar: :any,                 arm64_sequoia: "e5b2c209d0b5739bad1537dca88864d25d57002942479efe45dea9ea8cd583a0"
-    sha256 cellar: :any,                 arm64_sonoma:  "42d0e0707dd6b913caae181ef0e222aef47ab0611b4fa545bdc6bc0bc54b89bd"
-    sha256 cellar: :any,                 sonoma:        "074aa01bc5d23274961b4888bcc190bb78ca79c832a9878781bda9352c7a79d6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a68071e5791586bac8984694f2420d4661ca5deea2629d2a18d8a40b5f8b0879"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6d68d0ddf78f5fa237ff63291c797fddc3b87f5fd1aba16392fc5e52e5a8ff9c"
+    sha256 cellar: :any,                 arm64_golden_gate: "52489c11882d44c2b4c42fbba0ada5a7045cab22cf7b25a8850832f2c3c071a9"
+    sha256 cellar: :any,                 arm64_tahoe:       "366ef8ecc45c6c188f134156cc8562a4e3ce17934e4406c236969482281cace6"
+    sha256 cellar: :any,                 arm64_sequoia:     "e5b2c209d0b5739bad1537dca88864d25d57002942479efe45dea9ea8cd583a0"
+    sha256 cellar: :any,                 arm64_sonoma:      "42d0e0707dd6b913caae181ef0e222aef47ab0611b4fa545bdc6bc0bc54b89bd"
+    sha256 cellar: :any,                 sonoma:            "074aa01bc5d23274961b4888bcc190bb78ca79c832a9878781bda9352c7a79d6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "a68071e5791586bac8984694f2420d4661ca5deea2629d2a18d8a40b5f8b0879"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "6d68d0ddf78f5fa237ff63291c797fddc3b87f5fd1aba16392fc5e52e5a8ff9c"
   end
 
   depends_on "meson" => :build

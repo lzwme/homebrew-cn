@@ -13,12 +13,13 @@ class Autotrace < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "ab9f30deffcfe2b3eadbb7a1483f29f5ab1fff7bf4518d0ecf9062fa2839d39b"
-    sha256 arm64_sequoia: "b36ba642259814567ac88161df1330c8e1e1160d0022eb0ff8556992a9ff6c0c"
-    sha256 arm64_sonoma:  "b9725af1513a0da94e283765802022e0e9ae80b0d785a0d5c78da4981a16496e"
-    sha256 sonoma:        "e4d9f47afb4b508a32cbcb02bcb2266c70bc15103337a502c1a5b0b064a1ff8a"
-    sha256 arm64_linux:   "55965727c03a1092493b6e0affc35fcebd8a86e2a4d74b928c9b931ca03ede47"
-    sha256 x86_64_linux:  "b8b573bdd4ece3b522e921a559424bea53474d39b7d0b6484a0719a9c6653f53"
+    sha256 arm64_golden_gate: "4f84ad4b3ca847f0b107f9d38303b5ccc6e66093634e920bb57db32ab874bf3d"
+    sha256 arm64_tahoe:       "ab9f30deffcfe2b3eadbb7a1483f29f5ab1fff7bf4518d0ecf9062fa2839d39b"
+    sha256 arm64_sequoia:     "b36ba642259814567ac88161df1330c8e1e1160d0022eb0ff8556992a9ff6c0c"
+    sha256 arm64_sonoma:      "b9725af1513a0da94e283765802022e0e9ae80b0d785a0d5c78da4981a16496e"
+    sha256 sonoma:            "e4d9f47afb4b508a32cbcb02bcb2266c70bc15103337a502c1a5b0b064a1ff8a"
+    sha256 arm64_linux:       "55965727c03a1092493b6e0affc35fcebd8a86e2a4d74b928c9b931ca03ede47"
+    sha256 x86_64_linux:      "b8b573bdd4ece3b522e921a559424bea53474d39b7d0b6484a0719a9c6653f53"
   end
 
   depends_on "autoconf" => :build

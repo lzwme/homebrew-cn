@@ -6,12 +6,13 @@ class Cwalk < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "c6a86a42f343e1569e219befcd09e4e44eba308b2bb6afda312e0f0a14268492"
-    sha256 cellar: :any,                 arm64_sequoia: "29c42c807b28bdddedc2e516d849158e1c8ead44add19f2ce91f45b9fc10e9af"
-    sha256 cellar: :any,                 arm64_sonoma:  "d443cc393f71b65972a6fdbb471ebd0308a5988a8bc69bd6b65186540ef0c085"
-    sha256 cellar: :any,                 sonoma:        "fcfad95bf683b8a14600cfbb41fde45ad5417af61a5517b760595b3057549698"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cf8786364f7e8624b19576af4ce93bfd412d184bdb2ea22acb3b82df7f935e31"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "24d89dff54dc58a1f6f5a78a5a31d071d074138134ea765d7e185b6bb28ddea8"
+    sha256 cellar: :any,                 arm64_golden_gate: "c92b12dfcbd11594863916124ecd335bc7d6e391e5bcdf7374635c480ef5e0a0"
+    sha256 cellar: :any,                 arm64_tahoe:       "c6a86a42f343e1569e219befcd09e4e44eba308b2bb6afda312e0f0a14268492"
+    sha256 cellar: :any,                 arm64_sequoia:     "29c42c807b28bdddedc2e516d849158e1c8ead44add19f2ce91f45b9fc10e9af"
+    sha256 cellar: :any,                 arm64_sonoma:      "d443cc393f71b65972a6fdbb471ebd0308a5988a8bc69bd6b65186540ef0c085"
+    sha256 cellar: :any,                 sonoma:            "fcfad95bf683b8a14600cfbb41fde45ad5417af61a5517b760595b3057549698"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "cf8786364f7e8624b19576af4ce93bfd412d184bdb2ea22acb3b82df7f935e31"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "24d89dff54dc58a1f6f5a78a5a31d071d074138134ea765d7e185b6bb28ddea8"
   end
 
   depends_on "cmake" => :build

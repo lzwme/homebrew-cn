@@ -7,12 +7,13 @@ class Hevi < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0cba222f5ed2e7041cbf1db8d47708a8586214fd6d7d653f6e7cc61d10f67b34"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "84edf1a33b439f87ce715488d40ff9fbcd7cfa22dbf7ac98ba1cc6c95445021e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "05b8bac7ec8d5ab7d6ae6a42b9460e8d278ebdd97e9e19d1a5894060d345f758"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4a8d2a512dd0a08aeeabf0e459c183badbc1f898dfcdc9970294d23e79c6428c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fb5b143153711f3be4d0a06b69711b7eb4f28e7832f63ccc8f9f0dcea8c950c1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "44f56d8a4c69ea5f713988ee35347ea3c4bf6501d8fae4976bdc4ab6a602ddd1"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "de8bb248c08b11f7c35fb074a1960a89193665e9edfe22e82dd8fab4c5c9680a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "0cba222f5ed2e7041cbf1db8d47708a8586214fd6d7d653f6e7cc61d10f67b34"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "84edf1a33b439f87ce715488d40ff9fbcd7cfa22dbf7ac98ba1cc6c95445021e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "05b8bac7ec8d5ab7d6ae6a42b9460e8d278ebdd97e9e19d1a5894060d345f758"
+    sha256 cellar: :any_skip_relocation, sonoma:            "4a8d2a512dd0a08aeeabf0e459c183badbc1f898dfcdc9970294d23e79c6428c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "fb5b143153711f3be4d0a06b69711b7eb4f28e7832f63ccc8f9f0dcea8c950c1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "44f56d8a4c69ea5f713988ee35347ea3c4bf6501d8fae4976bdc4ab6a602ddd1"
   end
 
   depends_on "zig@0.15" => :build

@@ -13,12 +13,13 @@ class SqliteAnalyzer < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "e0001cafaca5b5ab9d4e209d81e103ef7a872e4f66912d6d13a094a7737ac5d8"
-    sha256 cellar: :any, arm64_sequoia: "74f7f55896ccdcca311ff43ab4198131384e3d71bd2dca155fba2287663194f4"
-    sha256 cellar: :any, arm64_sonoma:  "87b92e63a163c3ce7840c01c0f6e73bc36eb4a5a606b5a9e418f7c716f6d0af6"
-    sha256 cellar: :any, sonoma:        "397866508a17acfe31147353629863b7ada1107d5e264f4d8a22b6b0c78b7690"
-    sha256 cellar: :any, arm64_linux:   "5bc48810c7bcdef96f13fdd79663191b192ae50deb9ce8659404c3638684904f"
-    sha256 cellar: :any, x86_64_linux:  "a145efe6aa3120502d1214e36ba98b4307d0ef49a28f37310d47529d02f0921c"
+    sha256 cellar: :any, arm64_golden_gate: "d08ef7db29d153795c41fe46ff2bccb88b63d8aff71b5771bc4cc098757ea2f7"
+    sha256 cellar: :any, arm64_tahoe:       "e0001cafaca5b5ab9d4e209d81e103ef7a872e4f66912d6d13a094a7737ac5d8"
+    sha256 cellar: :any, arm64_sequoia:     "74f7f55896ccdcca311ff43ab4198131384e3d71bd2dca155fba2287663194f4"
+    sha256 cellar: :any, arm64_sonoma:      "87b92e63a163c3ce7840c01c0f6e73bc36eb4a5a606b5a9e418f7c716f6d0af6"
+    sha256 cellar: :any, sonoma:            "397866508a17acfe31147353629863b7ada1107d5e264f4d8a22b6b0c78b7690"
+    sha256 cellar: :any, arm64_linux:       "5bc48810c7bcdef96f13fdd79663191b192ae50deb9ce8659404c3638684904f"
+    sha256 cellar: :any, x86_64_linux:      "a145efe6aa3120502d1214e36ba98b4307d0ef49a28f37310d47529d02f0921c"
   end
 
   depends_on "tcl-tk"

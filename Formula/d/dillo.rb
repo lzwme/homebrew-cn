@@ -7,12 +7,13 @@ class Dillo < Formula
   revision 1
 
   bottle do
-    sha256 arm64_tahoe:   "da77692abb96f86d4d0427308f403fbcf16d065976fa32f5fb98a60ac93c159a"
-    sha256 arm64_sequoia: "dfa302f5f967a9b01d66755ab4b1e37fcfb8095ce68c2cadfeb66c43f11f031f"
-    sha256 arm64_sonoma:  "85d85b5e3c449de29a6d2ad5f607ab17545fff90f3a21f88a4b741c5e76089c1"
-    sha256 sonoma:        "115efce250911169652cabaf6917acecd236e80b648dd7dd3a27cd8df5f28181"
-    sha256 arm64_linux:   "8702a43940327df2fc982348866612cd9f0085c341032a5688d08edf1aac011b"
-    sha256 x86_64_linux:  "638583a861928687adc34e6b7293d7a27dc5b94f02bf2b94845a68a7f85bdf00"
+    sha256 arm64_golden_gate: "9cbfe8545733a29135da340712c0ec0ea3b5d25413e479296cda15794c307e69"
+    sha256 arm64_tahoe:       "da77692abb96f86d4d0427308f403fbcf16d065976fa32f5fb98a60ac93c159a"
+    sha256 arm64_sequoia:     "dfa302f5f967a9b01d66755ab4b1e37fcfb8095ce68c2cadfeb66c43f11f031f"
+    sha256 arm64_sonoma:      "85d85b5e3c449de29a6d2ad5f607ab17545fff90f3a21f88a4b741c5e76089c1"
+    sha256 sonoma:            "115efce250911169652cabaf6917acecd236e80b648dd7dd3a27cd8df5f28181"
+    sha256 arm64_linux:       "8702a43940327df2fc982348866612cd9f0085c341032a5688d08edf1aac011b"
+    sha256 x86_64_linux:      "638583a861928687adc34e6b7293d7a27dc5b94f02bf2b94845a68a7f85bdf00"
   end
 
   head do

@@ -9,14 +9,15 @@ class Dpp < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "86cb5490c0ddbbe4e7a242cafd4e776a243873dd649ec1e077b23e91e6cab1bb"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e5f0fc9c62c460aba1532c7389e42c9bb85da0bcfa38607b76a361cb66c0d396"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "49bf533852469130afaf24027a2d88f6825d35cd90515e041bdddccff3620640"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "443e5a65e5f70dc1c1af23f374c94cb1c6ff26836a4b23c9c6e4597502dbd060"
-    sha256 cellar: :any_skip_relocation, sonoma:        "aebc8ca08df57de8624e9fb1a324872bb5883b207bb2a650a59125efc54e823b"
-    sha256 cellar: :any_skip_relocation, ventura:       "8acb22136bec153dd078adc4ad53441ce33e65a1ad96c25161a13cc19ca9e1e0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5115fc9b696c79b4acaa885bf0476915c91993d8a0ecfe393fd85cbd2b5af56d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2831967224ea98d7b494448db999203aead8f24183bb33319315f5af8d271185"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "b833fa8c13d96cfd0ae6dd2dac37755f7879fe1b938b38ec3cc43ed05789e164"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "86cb5490c0ddbbe4e7a242cafd4e776a243873dd649ec1e077b23e91e6cab1bb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "e5f0fc9c62c460aba1532c7389e42c9bb85da0bcfa38607b76a361cb66c0d396"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "49bf533852469130afaf24027a2d88f6825d35cd90515e041bdddccff3620640"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:     "443e5a65e5f70dc1c1af23f374c94cb1c6ff26836a4b23c9c6e4597502dbd060"
+    sha256 cellar: :any_skip_relocation, sonoma:            "aebc8ca08df57de8624e9fb1a324872bb5883b207bb2a650a59125efc54e823b"
+    sha256 cellar: :any_skip_relocation, ventura:           "8acb22136bec153dd078adc4ad53441ce33e65a1ad96c25161a13cc19ca9e1e0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "5115fc9b696c79b4acaa885bf0476915c91993d8a0ecfe393fd85cbd2b5af56d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "2831967224ea98d7b494448db999203aead8f24183bb33319315f5af8d271185"
   end
 
   depends_on "dtools" => :build

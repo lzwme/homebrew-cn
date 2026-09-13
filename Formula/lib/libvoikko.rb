@@ -11,14 +11,15 @@ class Libvoikko < Formula
   end
 
   bottle do
-    sha256               arm64_tahoe:   "5e7950f8b97300217f3ff6e9d8fa7a39f778f91fbb094e6a1106c155012ffe35"
-    sha256               arm64_sequoia: "5618bf21692759e6d99d69328f3f0e7035e6efc7a4c11d859b5773f1ee198cb3"
-    sha256               arm64_sonoma:  "319abe25e1227db8601a1ba59193e486341c5bfb056a44da5852ffa325ac93dc"
-    sha256               arm64_ventura: "696e90c6f8e41b0a6fef11d7866014f9788bcae267e7d06022a8a61b71cab86c"
-    sha256 cellar: :any, sonoma:        "1e6b95aadf093c5f52b77ffcf352fbfd64b462038b416354cda56f4b96403e94"
-    sha256 cellar: :any, ventura:       "ec5e2e1976c7dfd2fc89331f972d032f1026db0e3ef668f987616794e3165a34"
-    sha256               arm64_linux:   "4dcadd2f02546ee0864e8381f043f7f6369447b9239a8337d71d6728f731cd5d"
-    sha256               x86_64_linux:  "3e8b94f4739855622459da189323479bcb0fa44a715c6fdf7decf46a67e49553"
+    sha256               arm64_golden_gate: "189c823fbe86f324501840fcb3a634fe2e05cee2f1a3ccb945e08e6f4865c186"
+    sha256               arm64_tahoe:       "5e7950f8b97300217f3ff6e9d8fa7a39f778f91fbb094e6a1106c155012ffe35"
+    sha256               arm64_sequoia:     "5618bf21692759e6d99d69328f3f0e7035e6efc7a4c11d859b5773f1ee198cb3"
+    sha256               arm64_sonoma:      "319abe25e1227db8601a1ba59193e486341c5bfb056a44da5852ffa325ac93dc"
+    sha256               arm64_ventura:     "696e90c6f8e41b0a6fef11d7866014f9788bcae267e7d06022a8a61b71cab86c"
+    sha256 cellar: :any, sonoma:            "1e6b95aadf093c5f52b77ffcf352fbfd64b462038b416354cda56f4b96403e94"
+    sha256 cellar: :any, ventura:           "ec5e2e1976c7dfd2fc89331f972d032f1026db0e3ef668f987616794e3165a34"
+    sha256               arm64_linux:       "4dcadd2f02546ee0864e8381f043f7f6369447b9239a8337d71d6728f731cd5d"
+    sha256               x86_64_linux:      "3e8b94f4739855622459da189323479bcb0fa44a715c6fdf7decf46a67e49553"
   end
 
   depends_on "foma" => :build

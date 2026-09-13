@@ -7,14 +7,15 @@ class Noseyparker < Formula
   head "https://github.com/praetorian-inc/noseyparker.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bbce92800f87da1efec15e48fadc645677ac1c690ee9d7d460d824bc088b5a18"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b3d50cf968e60eff8c5e51bf937bfd8528a7d7cb89d5df6ad8467b50b6cc7893"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "17369ef3f870c5a18489e7baed30d33fb571fadcade62ec1091f6d54f00abe86"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "6ab5f7973f25bc569e1a79c7d978739a9428ce3954b4775efa76e20718e8e0d4"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2aa6a8b34c8484d0fc36febad3e465ac48f53b71ff4f596490dfee97688ee008"
-    sha256 cellar: :any_skip_relocation, ventura:       "7be747e4d857c18ec1b1f4345d5f4745c65c54c782b2efc50bda45f1aa268d6d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d86b9a2d4377d12ec9783e9855bc8bbd8ba06270860ff85521c0adf507fd0448"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "99c219b6991576f9ee16f57cb2f08f5d2081dacb1f5ce8c61136ae8c7ffbf470"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "a0b645dfe10f3727b90720627c4fa65748ac140427d96605cf6b87d33b9a5d52"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "bbce92800f87da1efec15e48fadc645677ac1c690ee9d7d460d824bc088b5a18"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "b3d50cf968e60eff8c5e51bf937bfd8528a7d7cb89d5df6ad8467b50b6cc7893"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "17369ef3f870c5a18489e7baed30d33fb571fadcade62ec1091f6d54f00abe86"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:     "6ab5f7973f25bc569e1a79c7d978739a9428ce3954b4775efa76e20718e8e0d4"
+    sha256 cellar: :any_skip_relocation, sonoma:            "2aa6a8b34c8484d0fc36febad3e465ac48f53b71ff4f596490dfee97688ee008"
+    sha256 cellar: :any_skip_relocation, ventura:           "7be747e4d857c18ec1b1f4345d5f4745c65c54c782b2efc50bda45f1aa268d6d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "d86b9a2d4377d12ec9783e9855bc8bbd8ba06270860ff85521c0adf507fd0448"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "99c219b6991576f9ee16f57cb2f08f5d2081dacb1f5ce8c61136ae8c7ffbf470"
   end
 
   deprecate! date: "2026-07-17", because: :repo_archived

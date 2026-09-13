@@ -7,12 +7,13 @@ class StaticWebServer < Formula
   head "https://github.com/static-web-server/static-web-server.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fe1e725691b03bee387343f29ca89900415b76d50202d15a64be60620593b522"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ca67f96e1d3abee9fce506a54af66c79f735116b95b41e81c325a38c80da32b8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "43c62bc5c92b0d8a872ba7a19bb565234af4f1086a057b8f0637c5d77797e2ab"
-    sha256 cellar: :any_skip_relocation, sonoma:        "77b7059a22f198f3353ea3cb2fb08bbaf6442be04ebdeac6e94d53fe807ba3d2"
-    sha256 cellar: :any,                 arm64_linux:   "5cb2ed53cd8a8a79568baabcb271823aed51271af7ddda267d5ba4992a25f8af"
-    sha256 cellar: :any,                 x86_64_linux:  "60c1ed165bd93fad4500cf85523e7e0a1415537c78009986ff1e3bb3887bc6e7"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "9406fc8411f24b14a53f91ee5447a5fc17c00cd76686c050a10c13dd05f636da"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "fe1e725691b03bee387343f29ca89900415b76d50202d15a64be60620593b522"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "ca67f96e1d3abee9fce506a54af66c79f735116b95b41e81c325a38c80da32b8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "43c62bc5c92b0d8a872ba7a19bb565234af4f1086a057b8f0637c5d77797e2ab"
+    sha256 cellar: :any_skip_relocation, sonoma:            "77b7059a22f198f3353ea3cb2fb08bbaf6442be04ebdeac6e94d53fe807ba3d2"
+    sha256 cellar: :any,                 arm64_linux:       "5cb2ed53cd8a8a79568baabcb271823aed51271af7ddda267d5ba4992a25f8af"
+    sha256 cellar: :any,                 x86_64_linux:      "60c1ed165bd93fad4500cf85523e7e0a1415537c78009986ff1e3bb3887bc6e7"
   end
 
   depends_on "rust" => :build

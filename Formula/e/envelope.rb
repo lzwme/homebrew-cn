@@ -7,12 +7,13 @@ class Envelope < Formula
   head "https://github.com/mattrighetti/envelope.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bcdff4f8b41c5331ebcf92739ad6cbd4a8396bf9011eb6eda656250f63d856f2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1928de9d9986e8e0b581aafd54a23844ab321c547920e8d3b3666f77f58a5935"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3753573197ac9a5c0122aaa5af8772021f648199b357115aceab19abf3072323"
-    sha256 cellar: :any_skip_relocation, sonoma:        "67c421edb9fb9bdd71f6354f65759c43f8fb03718195f38d74432f3ade866116"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "043d0e5269960c9ff5a9203d12270b2d486deeaacfe229c8c0172b1ae198890a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dbe3e856e81effd71b73c369dfd150e76b1cff882f1b39e6c7214b9df98872a8"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "ec7e3ee705a3bc9bb98a69e3124d5b89e2766010b2db47f58965b780a7594169"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "bcdff4f8b41c5331ebcf92739ad6cbd4a8396bf9011eb6eda656250f63d856f2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "1928de9d9986e8e0b581aafd54a23844ab321c547920e8d3b3666f77f58a5935"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "3753573197ac9a5c0122aaa5af8772021f648199b357115aceab19abf3072323"
+    sha256 cellar: :any_skip_relocation, sonoma:            "67c421edb9fb9bdd71f6354f65759c43f8fb03718195f38d74432f3ade866116"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "043d0e5269960c9ff5a9203d12270b2d486deeaacfe229c8c0172b1ae198890a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "dbe3e856e81effd71b73c369dfd150e76b1cff882f1b39e6c7214b9df98872a8"
   end
 
   depends_on "pandoc" => :build

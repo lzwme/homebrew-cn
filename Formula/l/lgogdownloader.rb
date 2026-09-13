@@ -13,12 +13,13 @@ class Lgogdownloader < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "33cbe0ecd9eb99bb077d9ed1f1da5cb0ddf9d001136f86588deb5b1fc126da4a"
-    sha256 cellar: :any, arm64_sequoia: "614ecc245aa7b7981ede76536576e1d37f2a42865f06880f2908cdcefc533a18"
-    sha256 cellar: :any, arm64_sonoma:  "449eb4a69d20405fef5d304abf212928a07236fc8a4f23b76858ff4ff8232df5"
-    sha256 cellar: :any, sonoma:        "0897dbade424f4c690312d768f07b77af4a94cb97abf47c8ec13968b8c91dd0b"
-    sha256 cellar: :any, arm64_linux:   "280d394ace8a794562a9725c9b2fe8675661c307ce78efe7f61c2a202dfa5ce5"
-    sha256 cellar: :any, x86_64_linux:  "ab18a0bc52bc3d62e3a53bad413e53296d1faeba2119832681e35d224e583359"
+    sha256 cellar: :any, arm64_golden_gate: "630d07d48c24a25a12b256ef65ab5d5732496af63f1eb9eeafc4d06bc5b6c0b8"
+    sha256 cellar: :any, arm64_tahoe:       "33cbe0ecd9eb99bb077d9ed1f1da5cb0ddf9d001136f86588deb5b1fc126da4a"
+    sha256 cellar: :any, arm64_sequoia:     "614ecc245aa7b7981ede76536576e1d37f2a42865f06880f2908cdcefc533a18"
+    sha256 cellar: :any, arm64_sonoma:      "449eb4a69d20405fef5d304abf212928a07236fc8a4f23b76858ff4ff8232df5"
+    sha256 cellar: :any, sonoma:            "0897dbade424f4c690312d768f07b77af4a94cb97abf47c8ec13968b8c91dd0b"
+    sha256 cellar: :any, arm64_linux:       "280d394ace8a794562a9725c9b2fe8675661c307ce78efe7f61c2a202dfa5ce5"
+    sha256 cellar: :any, x86_64_linux:      "ab18a0bc52bc3d62e3a53bad413e53296d1faeba2119832681e35d224e583359"
   end
 
   depends_on "cmake" => :build

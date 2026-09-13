@@ -13,12 +13,13 @@ class Espeak < Formula
 
   bottle do
     rebuild 2
-    sha256 arm64_tahoe:   "79fcbb8b62d46c59ae01252339039e5370c4b9c267a4239466c14cf351521685"
-    sha256 arm64_sequoia: "ac1da3a5f93deb24bce3a169193104a8d57b6e7d25ba5b757d381b7bdcdae8b0"
-    sha256 arm64_sonoma:  "8b43605a396132f440a9f40b776d909a3b0371bc33efb59c054df4a5e2345c8a"
-    sha256 sonoma:        "e1db33fd0da749daa8c099e6cec84781fceb7815306813386c5d4b92c6acf4a8"
-    sha256 arm64_linux:   "8dc1f69d9bdb22493f5aaf487d58126ddcda76ad701c05572ae1a58a61445c82"
-    sha256 x86_64_linux:  "3f19dd3507512ae024acb0f24ccf18a704ff9c3426d2f114f456f658fd44bd56"
+    sha256 arm64_golden_gate: "7a8b1664a93dc03f4f34d491d44e6a90cefc4f66d201231640fd5aae24a83a25"
+    sha256 arm64_tahoe:       "79fcbb8b62d46c59ae01252339039e5370c4b9c267a4239466c14cf351521685"
+    sha256 arm64_sequoia:     "ac1da3a5f93deb24bce3a169193104a8d57b6e7d25ba5b757d381b7bdcdae8b0"
+    sha256 arm64_sonoma:      "8b43605a396132f440a9f40b776d909a3b0371bc33efb59c054df4a5e2345c8a"
+    sha256 sonoma:            "e1db33fd0da749daa8c099e6cec84781fceb7815306813386c5d4b92c6acf4a8"
+    sha256 arm64_linux:       "8dc1f69d9bdb22493f5aaf487d58126ddcda76ad701c05572ae1a58a61445c82"
+    sha256 x86_64_linux:      "3f19dd3507512ae024acb0f24ccf18a704ff9c3426d2f114f456f658fd44bd56"
   end
 
   # SourceForge page (https://sourceforge.net/projects/espeak/) says:

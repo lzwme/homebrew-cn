@@ -15,12 +15,11 @@ class FfmpegFull < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "4e281c5770f8fb5d8354ac82eec967155b95f70a49de85f2c6f63ff8b934ac7d"
-    sha256 arm64_sequoia: "84785c5d016434fdc036a7dea309e0cfef872de4bd7e86e428aa36b3cb280a72"
-    sha256 arm64_sonoma:  "a12d53f94b4e386a94b444ac5116671aed70f9fc732c779368fe1e98311beb42"
-    sha256 sonoma:        "62800379836fe9eaf3c4575bd3182ddcd9b6d5680840ddb4274994c2208d303b"
-    sha256 arm64_linux:   "7983d99392057dfa17f1fb143a3c6a672e0d663b99bc19ab7912a58f5aad3217"
-    sha256 x86_64_linux:  "b9f307fa6fde35433ae7915aea050e0a18c21117c995a447bc2519458055822d"
+    rebuild 1
+    sha256 arm64_tahoe:   "98498d5769b784377d222b14bc356d75f2453c9a12e39ed8631f45f02db7db8c"
+    sha256 arm64_sequoia: "317d40a043505506ba84b50a7cf04ddd1faf00ee42f0ffe03587a780b14edacc"
+    sha256 arm64_linux:   "8e4e4239c91f143f2782e4c322ae3f17b0d38d42a7d1acc54c75f1ddf4ceadff"
+    sha256 x86_64_linux:  "d8f4e17e6324ff387ff7bb01c5e23541d2fa6951d9d669b1b179ac422ff56260"
   end
 
   keg_only :versioned_formula
@@ -63,7 +62,7 @@ class FfmpegFull < Formula
   depends_on "tesseract"
   depends_on "theora"
   depends_on "webp"
-  depends_on "whisper-cpp"
+  depends_on "whisper.cpp"
   depends_on "x264"
   depends_on "x265"
   depends_on "xvid"

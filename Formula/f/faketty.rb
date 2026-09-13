@@ -7,12 +7,13 @@ class Faketty < Formula
   head "https://github.com/dtolnay/faketty.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a86caecd28c8fad74d1454ea7843974a03fc16341564bef4320aad1d865693c0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "52f36ccefed5e98d700837c7d72add3b35ebd96118730875c5e919441758eb9c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2bbb88d91f41f836daf40ab26ae264fb4fec30371c40a0a094be0748af26185c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "65f0f924b5db899f619d126b38ee38cd47aa1e04b425fdac44b5a3b41caf535a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3c1416b7cdfb26821b8602c1a71cc5cd0e2ca31966d2cb4255832b578fb3d598"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e7ad352b95eb94a89baf8441410dcecbad6c33fbe4b77e8d55253f3c662e0307"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "591cbb51d95b0b04851a9835999968e3d4df21bc7c0f3bee4de39baafb2f9785"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "a86caecd28c8fad74d1454ea7843974a03fc16341564bef4320aad1d865693c0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "52f36ccefed5e98d700837c7d72add3b35ebd96118730875c5e919441758eb9c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "2bbb88d91f41f836daf40ab26ae264fb4fec30371c40a0a094be0748af26185c"
+    sha256 cellar: :any_skip_relocation, sonoma:            "65f0f924b5db899f619d126b38ee38cd47aa1e04b425fdac44b5a3b41caf535a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "3c1416b7cdfb26821b8602c1a71cc5cd0e2ca31966d2cb4255832b578fb3d598"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "e7ad352b95eb94a89baf8441410dcecbad6c33fbe4b77e8d55253f3c662e0307"
   end
 
   depends_on "rust" => :build

@@ -7,12 +7,13 @@ class Mapcidr < Formula
   head "https://github.com/projectdiscovery/mapcidr.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e2fbd51525ce47066752a4a499b95442d17370d7ff076e4a2ffeda7c2540b186"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dd735d61f4137e30937837e4a2b02a00b0e8fe8d40934c2fdaae2d783402f94a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7d2f113e0be78302f03fbf79977db346db3ad52b83fb3a13922a5cee9b4a8171"
-    sha256 cellar: :any_skip_relocation, sonoma:        "70368a9a5728d87dea84e7615219e8c87a79d7ea0ea6bf1f7bdeba953bb665f8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9e3f3ea9e816fa885ba16b0a0ee36b72f3847827499356a0b755b743bbb32737"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f4dab6dfedff6afb92ac22bf46ea32ee7d791bd4010c84644a4a71f24df35ca4"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "2bccc252044fe682b6ed70eb8fc7bef21b9d86c8c6b740775f15953e93165c59"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "e2fbd51525ce47066752a4a499b95442d17370d7ff076e4a2ffeda7c2540b186"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "dd735d61f4137e30937837e4a2b02a00b0e8fe8d40934c2fdaae2d783402f94a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "7d2f113e0be78302f03fbf79977db346db3ad52b83fb3a13922a5cee9b4a8171"
+    sha256 cellar: :any_skip_relocation, sonoma:            "70368a9a5728d87dea84e7615219e8c87a79d7ea0ea6bf1f7bdeba953bb665f8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "9e3f3ea9e816fa885ba16b0a0ee36b72f3847827499356a0b755b743bbb32737"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "f4dab6dfedff6afb92ac22bf46ea32ee7d791bd4010c84644a4a71f24df35ca4"
   end
 
   depends_on "go" => :build

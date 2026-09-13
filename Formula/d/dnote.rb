@@ -12,12 +12,13 @@ class Dnote < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9f637f4ab476f78b3958461227122f698b0f11f7ea63b24db9e58c3c766b075e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "883b47fc6eb59dc29cf6bdda3fd5733da9268dd3b5bef0d8a3dd39b3a6fe2be2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "46f67f0f6bed3576a601c8de799a14c46a239b43971ddac113fab02fc3f05b88"
-    sha256 cellar: :any_skip_relocation, sonoma:        "55ef785d358763e6266ad5d5d806cd7bd115b25841b5d161537881babc60f91b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9f11ba266b712e74a4a06caccd74592e975eba3e8157e88ed64bd0e228ade1e3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f51a5368322863db842812dde4cd9ddc1db22feecf5fc7c937012c40155c28dd"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "5b5e59f8dd3ca47bec8b24be3f4758ad7c302c9572eccae7de1fb776fa9434fb"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "9f637f4ab476f78b3958461227122f698b0f11f7ea63b24db9e58c3c766b075e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "883b47fc6eb59dc29cf6bdda3fd5733da9268dd3b5bef0d8a3dd39b3a6fe2be2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "46f67f0f6bed3576a601c8de799a14c46a239b43971ddac113fab02fc3f05b88"
+    sha256 cellar: :any_skip_relocation, sonoma:            "55ef785d358763e6266ad5d5d806cd7bd115b25841b5d161537881babc60f91b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "9f11ba266b712e74a4a06caccd74592e975eba3e8157e88ed64bd0e228ade1e3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "f51a5368322863db842812dde4cd9ddc1db22feecf5fc7c937012c40155c28dd"
   end
 
   depends_on "go" => :build

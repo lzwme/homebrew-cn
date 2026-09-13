@@ -11,19 +11,12 @@ class Libident < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:    "79ba04c7084f4d774e85a799733bf4e79676f6ef0d5fc7c9036db9fd2e2b97e5"
-    sha256 cellar: :any,                 arm64_sequoia:  "2446047586d94ec64540aae081f818a68642475be91609bb360772af74d8236f"
-    sha256 cellar: :any,                 arm64_sonoma:   "ec5e66033f45c75ae856163de64dec8196438c77f2d7183595361d1cc2992a5b"
-    sha256 cellar: :any,                 arm64_ventura:  "b3aacfbacdc98c637bc19401da959466566c13914d88be0a500a4ccd8c0e35fa"
-    sha256 cellar: :any,                 arm64_monterey: "005fdffe6633e849bc26051b739a0fc10d72ecb25335bb04aea9286b19dbd196"
-    sha256 cellar: :any,                 arm64_big_sur:  "3e1eeb778ba25f9b32ca28ea6b4b9a83a625c6a9e91784ad0e846e5a143da513"
-    sha256 cellar: :any,                 sonoma:         "bb6e01e06cece16e7ec873b2b4060585ea3248a930e5bdf018c65de9b6901c78"
-    sha256 cellar: :any,                 ventura:        "6bbf7d591e74f0698dba58c353bb1d5d7029ef68192487f4f53d1a4be538f899"
-    sha256 cellar: :any,                 monterey:       "31ddce221ecaa52ab7d4cc10ccac2421043782f029a1a6643bcc886a7c1b922e"
-    sha256 cellar: :any,                 big_sur:        "50e093a609acac219853ba89a884408bebcddd23b7ae23faad9476618649cbe7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "9696db63c01fd542845885f59973bf8b7628f34e7d654248f474e805ae91c182"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f80a93f7750a66e987f21af7db62ba4f72c2c277036049915d3c8e6a8b044cf2"
+    rebuild 2
+    sha256 cellar: :any, arm64_golden_gate: "6b861ec0af132f3c2d86d08ddae33e192040da20d28a518f5158d4742705bdd3"
+    sha256 cellar: :any, arm64_tahoe:       "5bf318f1e22090881f6f7ee6f7d27bea66e0738da64488e8a2c23b358b00fe05"
+    sha256 cellar: :any, arm64_sequoia:     "ebf7a988b65d7a6c90e56d121775a417a245e07d7332a6425725044b87182994"
+    sha256 cellar: :any, arm64_linux:       "7b8b5f724c158bb5c33c807ae42da3f5c23175492a8eb76d4ba2fca2d2a588c6"
+    sha256 cellar: :any, x86_64_linux:      "99c32352a9e686bb57eec6f756c68cce76e4fa727a67309dc3c64b4d70cd1642"
   end
 
   depends_on "autoconf" => :build
@@ -36,6 +29,9 @@ class Libident < Formula
     # (avoiding issues like flat namespace conflicts) and Linux (where outdated
     # config scripts may fail to detect the correct build type).
     system "autoreconf", "--force", "--install", "--verbose"
+
+    # C23 makes `()` mean `(void)`, breaking the K&R-style signal handler pointer in id_query.c
+    ENV.append_to_cflags "-std=gnu17"
 
     system "./configure", "--mandir=#{man}", *std_configure_args
     system "make", "install"

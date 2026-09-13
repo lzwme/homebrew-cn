@@ -64,7 +64,7 @@ class Libidn2 < Formula
     args << "--with-libintl-prefix=#{formula_opt_prefix("gettext")}" if OS.mac?
 
     if build.head?
-      ENV.prepend_path "PATH", Formula["coreutils"].libexec/"gnubin" if OS.mac?
+      ENV.prepend_path "PATH", formula_opt_libexec("coreutils")/"gnubin" if OS.mac?
       system "./bootstrap", "--skip-po"
     end
     system "./configure", *args, *std_configure_args

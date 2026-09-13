@@ -1,16 +1,16 @@
 class Nessie < Formula
   desc "Transactional Catalog for Data Lakes with Git-like semantics"
   homepage "https://projectnessie.org"
-  url "https://ghfast.top/https://github.com/projectnessie/nessie/archive/refs/tags/nessie-0.108.6.tar.gz"
-  sha256 "60df8246e326d6181c24778d9e42be115dbdf730bc72c5a888e722dc6875f523"
+  url "https://ghfast.top/https://github.com/projectnessie/nessie/archive/refs/tags/nessie-0.108.8.tar.gz"
+  sha256 "321c64af6afd048eee5aadb49fc99b7a0587a24edd18edd242d800e8b6fafff6"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "974ce7b4bb827133a1f995c932ddb5f55724003f848527b98aa86520fb88e00d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3f2cbfdd2c504f9ff1edf83b2f7a0064380263f884c940fec3c8bea681cd52e5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "776ffb14e98be32aa784630d5b7903e892324299af63cdb45299aae402394319"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "33d6f27ded76460473bca462e3c79714a545710b53d4c7164e2029d8720d0402"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1f287b9f169a26d5d17ddc48a017041713d4d080a1d49958a1417a8df396a9e0"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "c2185548bf84dbdeaa02b519798f131f52c9d84ffe9279ddb722f7a1da3a03bb"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "377a66896703e9cf0c0439deeeca86bc9d0282ddd581839f789ff3c75e474b07"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "f3892a89adc1cd5ec01b3fb741b24034bd91127fbde33842664ce4ac1ee580f5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "77a50617679d50543662f3d791df9bb4be181748ed1602fc9bdae7e64e624a2a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "d39181ebef1513904d9c53e6492abe376fc3f8c55a3e50184bf0a523bfd891de"
   end
 
   depends_on "gradle" => :build

@@ -20,6 +20,10 @@ class LibbitcoinConsensus < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "32b0d72b5ff1f2de8effc219182d08b8e3a4a92ec714ddea76691196ca42df61"
   end
 
+  # Upstream repository was removed from GitHub; the library was dropped from libbitcoin v4 builds in 2024.
+  deprecate! date: "2026-09-13", because: :repo_removed
+  disable! date: "2026-12-13", because: :repo_removed
+
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "boost" => :build

@@ -12,12 +12,13 @@ class Babeld < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8df1000e25e05a3dbbb5216051fab8b7dd8a340a307924faf4537c4b8e2e58f4"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e46f543ffdff4ba057e8f007200fe9973c9a3b227e8034e140c570da9f8db8e9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "aeb49eecbae6ebeb3d637a7546ac790ed6e4280903969d2d3561fcec1f90ee48"
-    sha256 cellar: :any_skip_relocation, sonoma:        "185f1c12cb07e891707585e033b1188ea31a61fd5d879581d14b74c3ff4af43a"
-    sha256 cellar: :any,                 arm64_linux:   "bfd5b5f5d460c9df85796fe9e9d521077e7a2842706a47551daadc10b13fc024"
-    sha256 cellar: :any,                 x86_64_linux:  "066c81b6f7cf20af8094d4425e090d322788a98591444d3902a802c5fda52e05"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "b3a23e4827281d38fa1669155f427fd1b80779babedb3414d22db5191c60f3aa"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "8df1000e25e05a3dbbb5216051fab8b7dd8a340a307924faf4537c4b8e2e58f4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "e46f543ffdff4ba057e8f007200fe9973c9a3b227e8034e140c570da9f8db8e9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "aeb49eecbae6ebeb3d637a7546ac790ed6e4280903969d2d3561fcec1f90ee48"
+    sha256 cellar: :any_skip_relocation, sonoma:            "185f1c12cb07e891707585e033b1188ea31a61fd5d879581d14b74c3ff4af43a"
+    sha256 cellar: :any,                 arm64_linux:       "bfd5b5f5d460c9df85796fe9e9d521077e7a2842706a47551daadc10b13fc024"
+    sha256 cellar: :any,                 x86_64_linux:      "066c81b6f7cf20af8094d4425e090d322788a98591444d3902a802c5fda52e05"
   end
 
   def install

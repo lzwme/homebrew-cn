@@ -68,8 +68,8 @@ class Xinit < Formula
 
       # /System/Library/Fonts is protected by SIP
       mkdir_p share/"system_fonts"
-      system Formula["lndir"].bin/"lndir", "/System/Library/Fonts", share/"system_fonts"
-      system Formula["mkfontscale"].bin/"mkfontdir", share/"system_fonts"
+      system formula_opt_bin("lndir")/"lndir", "/System/Library/Fonts", share/"system_fonts"
+      system formula_opt_bin("mkfontscale")/"mkfontdir", share/"system_fonts"
     end
   end
 
@@ -116,8 +116,8 @@ class Xinit < Formula
         return 0;
       }
     C
-    xcb = Formula["libxcb"]
-    system ENV.cc, "./test.c", "-o", "test", "-I#{xcb.include}", "-L#{xcb.lib}", "-lxcb"
-    exec bin/"xinit", "./test", "--", Formula["xorg-server"].bin/"Xvfb", ":1"
+    system ENV.cc, "./test.c", "-o", "test", "-I#{formula_opt_include("libxcb")}", "-L#{formula_opt_lib("libxcb")}",
+"-lxcb"
+    exec bin/"xinit", "./test", "--", formula_opt_bin("xorg-server")/"Xvfb", ":1"
   end
 end

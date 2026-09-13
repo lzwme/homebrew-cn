@@ -7,12 +7,13 @@ class Findutils < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e29d12378878cca95d2b60703f7702e2ce7c37c8a4fe1636c0fc3b2ad2f82fa5"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e35180244a00d215d59d1e53f4a3da84f8e5a046c67e72e8d27dd4ce82c958df"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1ce14cc0e2a6ca3415118b94b1c388f337538a11208b9f4ef63b3be1522099ec"
-    sha256 cellar: :any_skip_relocation, sonoma:        "327fd9cdb2d0196d87f01e852f07c571caacdef69760cbe04cec4b91f3d8fbfd"
-    sha256 cellar: :any,                 arm64_linux:   "83ac2251468e03755fa6cd602f99d652279ea1e234a8b809a6e3571199d8530b"
-    sha256 cellar: :any,                 x86_64_linux:  "8b89e4687b71a6ed5b3c3d7e64adfd50901e000c4d1060b2cedd5f7c1dfcf01b"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "c57f524a3876c2ae0f425571cd04876ac4fef7d0276c42b3953e9ffa937c2a4c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "e29d12378878cca95d2b60703f7702e2ce7c37c8a4fe1636c0fc3b2ad2f82fa5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "e35180244a00d215d59d1e53f4a3da84f8e5a046c67e72e8d27dd4ce82c958df"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "1ce14cc0e2a6ca3415118b94b1c388f337538a11208b9f4ef63b3be1522099ec"
+    sha256 cellar: :any_skip_relocation, sonoma:            "327fd9cdb2d0196d87f01e852f07c571caacdef69760cbe04cec4b91f3d8fbfd"
+    sha256 cellar: :any,                 arm64_linux:       "83ac2251468e03755fa6cd602f99d652279ea1e234a8b809a6e3571199d8530b"
+    sha256 cellar: :any,                 x86_64_linux:      "8b89e4687b71a6ed5b3c3d7e64adfd50901e000c4d1060b2cedd5f7c1dfcf01b"
   end
 
   def install

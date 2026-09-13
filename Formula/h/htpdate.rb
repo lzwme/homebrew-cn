@@ -6,12 +6,13 @@ class Htpdate < Formula
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "057a11555cba28d5467be47618b77200d9cc31d647418dcf7694596f9667c24e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "66b2ec8f126efef94c917d220cf5eb8c74970a7e04b2c0ed35f2248dacc20d3a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "79f948f71b2c94302832be6196a143c9b629a9ab5a0414813b798dd75b09eb3f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "61699fbc43e93d19b8982e48f909673c18ea6d1c6a7b9aa5f06836ab7443a40c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "97a122f3b6f5126971271bbcf905ec4f817cf8c778e055dc703574fbab471cc6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "518af19c1c56c703bee6ca15e239fcf35fc70546a19b467075c279b5b5bae967"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "4bd8e7808b33a590a1258ce5b54fd6ce41412a982c6dda24d5f0de67590d3b6f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "057a11555cba28d5467be47618b77200d9cc31d647418dcf7694596f9667c24e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "66b2ec8f126efef94c917d220cf5eb8c74970a7e04b2c0ed35f2248dacc20d3a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "79f948f71b2c94302832be6196a143c9b629a9ab5a0414813b798dd75b09eb3f"
+    sha256 cellar: :any_skip_relocation, sonoma:            "61699fbc43e93d19b8982e48f909673c18ea6d1c6a7b9aa5f06836ab7443a40c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "97a122f3b6f5126971271bbcf905ec4f817cf8c778e055dc703574fbab471cc6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "518af19c1c56c703bee6ca15e239fcf35fc70546a19b467075c279b5b5bae967"
   end
 
   def install

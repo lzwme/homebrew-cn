@@ -13,12 +13,13 @@ class Nushell < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7f678dfd862086ff6128b88dc81408627182bea32af9760922c901f33801507f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8ee47a2bf7b7cf524b3d1efb16f98218aee0e7202db44971a799b0580c8af1dd"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fba8d351459ae7d1087fbac9e60d76ce8dee32ca1c1dea55c500e80df5c83416"
-    sha256 cellar: :any_skip_relocation, sonoma:        "619eeee5c683cb390c7f7341544c1689de6b99d5fea3fb352e7fdadea996842b"
-    sha256 cellar: :any,                 arm64_linux:   "b51ec5cf71f930dd3ac9cb0a75039a240cc79310ba65e77948c4005523fd9cd1"
-    sha256 cellar: :any,                 x86_64_linux:  "5d781a13a8866c7ee34fb9277da469154b0dfd2977ada6024e7431a5417827fa"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "26083e23245ced613c7cd224426d77775276f15c48a8463a0866d876fd09057a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "7f678dfd862086ff6128b88dc81408627182bea32af9760922c901f33801507f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "8ee47a2bf7b7cf524b3d1efb16f98218aee0e7202db44971a799b0580c8af1dd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "fba8d351459ae7d1087fbac9e60d76ce8dee32ca1c1dea55c500e80df5c83416"
+    sha256 cellar: :any_skip_relocation, sonoma:            "619eeee5c683cb390c7f7341544c1689de6b99d5fea3fb352e7fdadea996842b"
+    sha256 cellar: :any,                 arm64_linux:       "b51ec5cf71f930dd3ac9cb0a75039a240cc79310ba65e77948c4005523fd9cd1"
+    sha256 cellar: :any,                 x86_64_linux:      "5d781a13a8866c7ee34fb9277da469154b0dfd2977ada6024e7431a5417827fa"
   end
 
   depends_on "pkgconf" => :build

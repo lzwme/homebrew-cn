@@ -12,12 +12,13 @@ class Cvsync < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "3c2601073ec5771e6ab2104ec21df0e1f5e8f4cd5a6a5cfcd28095b97dc76b01"
-    sha256 cellar: :any,                 arm64_sequoia: "97e69645f32fa5a2da98aacd8d6faf2097199f3286646a80ea8ff7d4a3a8e9c6"
-    sha256 cellar: :any,                 arm64_sonoma:  "aab979cd1f10bcc4c3d9c7d66d22e994a66828b9db91ac347a27d95b6f5fa59d"
-    sha256 cellar: :any,                 sonoma:        "78f157d2bf12df8c597c79bab3e219c60b066f160df5573fc15ffce1532dca73"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "58f5f85beca9a525eb6c1bf14a704f787cb5df82e663f44c6d5ef355694c3d87"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "85f8e458723da82ca2a67ada72485c5c6e58b6e7790ea707dc527ae3f996a560"
+    sha256 cellar: :any,                 arm64_golden_gate: "fd8e978c2a554474385ed1ef7acc558b8fffc038ed9b2757a83df911d57fa040"
+    sha256 cellar: :any,                 arm64_tahoe:       "3c2601073ec5771e6ab2104ec21df0e1f5e8f4cd5a6a5cfcd28095b97dc76b01"
+    sha256 cellar: :any,                 arm64_sequoia:     "97e69645f32fa5a2da98aacd8d6faf2097199f3286646a80ea8ff7d4a3a8e9c6"
+    sha256 cellar: :any,                 arm64_sonoma:      "aab979cd1f10bcc4c3d9c7d66d22e994a66828b9db91ac347a27d95b6f5fa59d"
+    sha256 cellar: :any,                 sonoma:            "78f157d2bf12df8c597c79bab3e219c60b066f160df5573fc15ffce1532dca73"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "58f5f85beca9a525eb6c1bf14a704f787cb5df82e663f44c6d5ef355694c3d87"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "85f8e458723da82ca2a67ada72485c5c6e58b6e7790ea707dc527ae3f996a560"
   end
 
   depends_on "openssl@4"

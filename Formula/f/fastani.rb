@@ -7,12 +7,13 @@ class Fastani < Formula
   head "https://github.com/ParBLiSS/FastANI.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "8cc460f3dec2f9607eeb148cb206153f9b70f9ff1781e274c555ae9829c08fe0"
-    sha256 cellar: :any, arm64_sequoia: "dcd4709d2759c833baadc72446b5843b3bee5ef16347273450fedc04668687d4"
-    sha256 cellar: :any, arm64_sonoma:  "18162b38178b97a1e0e126853ae1e6b48439fe2a66a3944e809a5fe54a1fbff4"
-    sha256 cellar: :any, sonoma:        "3ab6a3079128f607bdce90b49333eab896427ac1ba9f28efdd2793466bfcbb1e"
-    sha256 cellar: :any, arm64_linux:   "67bd94487290369e72806cc1329343722832c64a08f57e2ddce254fe7935809e"
-    sha256 cellar: :any, x86_64_linux:  "dde7bee1eb292480f3698e015f5a9ce24083575ca01471800303e324a0d73aab"
+    sha256 cellar: :any, arm64_golden_gate: "acb8422de23482e9d97284948ef533e18d707855a87aaaa3890c1627610504b1"
+    sha256 cellar: :any, arm64_tahoe:       "8cc460f3dec2f9607eeb148cb206153f9b70f9ff1781e274c555ae9829c08fe0"
+    sha256 cellar: :any, arm64_sequoia:     "dcd4709d2759c833baadc72446b5843b3bee5ef16347273450fedc04668687d4"
+    sha256 cellar: :any, arm64_sonoma:      "18162b38178b97a1e0e126853ae1e6b48439fe2a66a3944e809a5fe54a1fbff4"
+    sha256 cellar: :any, sonoma:            "3ab6a3079128f607bdce90b49333eab896427ac1ba9f28efdd2793466bfcbb1e"
+    sha256 cellar: :any, arm64_linux:       "67bd94487290369e72806cc1329343722832c64a08f57e2ddce254fe7935809e"
+    sha256 cellar: :any, x86_64_linux:      "dde7bee1eb292480f3698e015f5a9ce24083575ca01471800303e324a0d73aab"
   end
 
   depends_on "cmake" => :build

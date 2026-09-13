@@ -15,12 +15,13 @@ class Monetdb < Formula
   no_autobump! because: :bumped_by_upstream
 
   bottle do
-    sha256 arm64_tahoe:   "951fa07466c28d36575e06b842ad4e310e9038140a8dc2bf02f1e5d1292c2833"
-    sha256 arm64_sequoia: "2d9851e2ade6dfef6f171b6e6c5825082a8cbc8ed65061cf02ed755b54f8ed4e"
-    sha256 arm64_sonoma:  "0a7991075d5c3252fd4202612dbf9fcb35abfa0a48fa492c05d20117f0a0a8ce"
-    sha256 sonoma:        "d67baf8654716372510526e30a6cc60262c421a80a422bd90df59f2382ccceff"
-    sha256 arm64_linux:   "8c5841e66f574394356652817e29844f7da9f04b9d93aa14dbe8794351a89f1f"
-    sha256 x86_64_linux:  "a83a81f1323f6b7c132521fd1a5f82c18d200923f8cdf88ffd5d374586a6061f"
+    sha256 arm64_golden_gate: "6a078d6120290dfba9bd5d6e788b4eee5f3fd5c0bd8fbadf0981163c0d29fbbc"
+    sha256 arm64_tahoe:       "951fa07466c28d36575e06b842ad4e310e9038140a8dc2bf02f1e5d1292c2833"
+    sha256 arm64_sequoia:     "2d9851e2ade6dfef6f171b6e6c5825082a8cbc8ed65061cf02ed755b54f8ed4e"
+    sha256 arm64_sonoma:      "0a7991075d5c3252fd4202612dbf9fcb35abfa0a48fa492c05d20117f0a0a8ce"
+    sha256 sonoma:            "d67baf8654716372510526e30a6cc60262c421a80a422bd90df59f2382ccceff"
+    sha256 arm64_linux:       "8c5841e66f574394356652817e29844f7da9f04b9d93aa14dbe8794351a89f1f"
+    sha256 x86_64_linux:      "a83a81f1323f6b7c132521fd1a5f82c18d200923f8cdf88ffd5d374586a6061f"
   end
 
   depends_on "bison" => :build # macOS bison is too old

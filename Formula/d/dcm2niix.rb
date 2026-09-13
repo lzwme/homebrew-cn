@@ -13,12 +13,13 @@ class Dcm2niix < Formula
   end
 
   bottle do
-    sha256                               arm64_tahoe:   "d3ff87c2e6393166c0536401079bfd18fdfb1436547447b13431cf2a5bcc2c07"
-    sha256                               arm64_sequoia: "ac3d792c8cbdd089dd85d36efede1090887de3cdcaf3add259d177455c2309a5"
-    sha256                               arm64_sonoma:  "6b8691bda9934782f77d92077ed07bdb1a7b49326ca9e0160463b02d79e2ee7b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "96b1091d236d5f4baf51584e3e5695d1b1aa4b0bbc9078ced2960a22dbbbfddb"
-    sha256 cellar: :any,                 arm64_linux:   "47237fc0c50250d6e27d3599e2cbd25ee3b304513cc1d05b6cf16c13a4fb2960"
-    sha256 cellar: :any,                 x86_64_linux:  "ee4ffc4a6506f8f282ecc80bcba219dfb8479c54bcdfc1bd5b97a56ef287ae9b"
+    sha256                               arm64_golden_gate: "518120ebd0821c93599f526ae435eaf7d1501fdf62a3d9d3a789a2ae0366f09a"
+    sha256                               arm64_tahoe:       "d3ff87c2e6393166c0536401079bfd18fdfb1436547447b13431cf2a5bcc2c07"
+    sha256                               arm64_sequoia:     "ac3d792c8cbdd089dd85d36efede1090887de3cdcaf3add259d177455c2309a5"
+    sha256                               arm64_sonoma:      "6b8691bda9934782f77d92077ed07bdb1a7b49326ca9e0160463b02d79e2ee7b"
+    sha256 cellar: :any_skip_relocation, sonoma:            "96b1091d236d5f4baf51584e3e5695d1b1aa4b0bbc9078ced2960a22dbbbfddb"
+    sha256 cellar: :any,                 arm64_linux:       "47237fc0c50250d6e27d3599e2cbd25ee3b304513cc1d05b6cf16c13a4fb2960"
+    sha256 cellar: :any,                 x86_64_linux:      "ee4ffc4a6506f8f282ecc80bcba219dfb8479c54bcdfc1bd5b97a56ef287ae9b"
   end
 
   depends_on "cmake" => :build

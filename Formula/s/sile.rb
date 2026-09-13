@@ -8,12 +8,13 @@ class Sile < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "84311a8e0777cad0808ef2e936df25589c908410fdf80f8e59a336c07530eb0d"
-    sha256 cellar: :any,                 arm64_sequoia: "758458193f72b63e0404eb5475aeb44bdd6819942918e758e97dcb32bdc05090"
-    sha256 cellar: :any,                 arm64_sonoma:  "ad308a0c985244934ca559aab8ba718e217e72e4ad805504e6c8dc8c1037e458"
-    sha256 cellar: :any,                 sonoma:        "1fbd167ab091deeb57811129b2c31446acef25597accf72de9a1bf9efe8c55e6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4f05214a3fe6b2a84909859ab5484935dcba0045e3aff5bc5104e2a39f56eb4a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6074cb5bbd1485cbcda34b290269ed29990895d800d9458e7d8c814904b8ad11"
+    sha256 cellar: :any,                 arm64_golden_gate: "8b28c7de2675b2c573eea222c022628c8eb49eaad3fd9498ec1fb6720dfa05c1"
+    sha256 cellar: :any,                 arm64_tahoe:       "84311a8e0777cad0808ef2e936df25589c908410fdf80f8e59a336c07530eb0d"
+    sha256 cellar: :any,                 arm64_sequoia:     "758458193f72b63e0404eb5475aeb44bdd6819942918e758e97dcb32bdc05090"
+    sha256 cellar: :any,                 arm64_sonoma:      "ad308a0c985244934ca559aab8ba718e217e72e4ad805504e6c8dc8c1037e458"
+    sha256 cellar: :any,                 sonoma:            "1fbd167ab091deeb57811129b2c31446acef25597accf72de9a1bf9efe8c55e6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "4f05214a3fe6b2a84909859ab5484935dcba0045e3aff5bc5104e2a39f56eb4a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "6074cb5bbd1485cbcda34b290269ed29990895d800d9458e7d8c814904b8ad11"
   end
 
   head do

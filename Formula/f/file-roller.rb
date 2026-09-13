@@ -7,12 +7,13 @@ class FileRoller < Formula
 
   bottle do
     rebuild 1
-    sha256 arm64_tahoe:   "9a76432dbf3de2b5f978893f3bfab338e71b100b81ef0cef68a0d51e509851f5"
-    sha256 arm64_sequoia: "7531ab1b2228e2df76eec7f3de2ae197772801a52c1df9daf66102e246f6a521"
-    sha256 arm64_sonoma:  "45933a7e7fb0a10406e8229d3457caa327d3373c3750bbac0e5ede094f91584d"
-    sha256 sonoma:        "607c23912d7aef061787efc23d8358c6affbdc5c72265d2c1045530d778e8435"
-    sha256 arm64_linux:   "3eadf2c56bffc406f031216e18a65eff6fc20d3a34c2c03aefa42e8a4c1bfcaa"
-    sha256 x86_64_linux:  "62ae864f882eee7f9ddafd770ad20762db0d5638982747e67722a341504be546"
+    sha256 arm64_golden_gate: "578cee84b0e357a54f9987b9674ae4ab5bb7a84beebac540c9f0a485e6256718"
+    sha256 arm64_tahoe:       "9a76432dbf3de2b5f978893f3bfab338e71b100b81ef0cef68a0d51e509851f5"
+    sha256 arm64_sequoia:     "7531ab1b2228e2df76eec7f3de2ae197772801a52c1df9daf66102e246f6a521"
+    sha256 arm64_sonoma:      "45933a7e7fb0a10406e8229d3457caa327d3373c3750bbac0e5ede094f91584d"
+    sha256 sonoma:            "607c23912d7aef061787efc23d8358c6affbdc5c72265d2c1045530d778e8435"
+    sha256 arm64_linux:       "3eadf2c56bffc406f031216e18a65eff6fc20d3a34c2c03aefa42e8a4c1bfcaa"
+    sha256 x86_64_linux:      "62ae864f882eee7f9ddafd770ad20762db0d5638982747e67722a341504be546"
   end
 
   depends_on "gettext" => :build
@@ -56,7 +57,7 @@ class FileRoller < Formula
     pids = []
     if OS.linux?
       IO.pipe do |read_io, write_io|
-        pids << spawn(Formula["xorg-server"].bin/"Xvfb", "-displayfd", write_io.fileno.to_s, write_io => write_io)
+        pids << spawn(formula_opt_bin("xorg-server")/"Xvfb", "-displayfd", write_io.fileno.to_s, write_io => write_io)
         write_io.close
         ENV["DISPLAY"] = ":#{read_io.read.strip}"
       end

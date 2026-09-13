@@ -7,11 +7,12 @@ class Flow < Formula
   head "https://github.com/facebook/flow.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "789b53ad85ae4fef88cc63da11b066a2a721e23c12103677b07aff0e49832f35"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cd04299f4e6e629bd080b9ad36f0b18a5674e19b21ecf2bb32b13d7a2a510153"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cf0cebd4cc8d5a7ff5bfb1a14f8bd0e9d9f102132ba4aa17a0825503596a75b4"
-    sha256 cellar: :any,                 arm64_linux:   "7d9fc970925807e80942bfc64adb7cde1508d0e274f3534dbe03470e34824fdd"
-    sha256 cellar: :any,                 x86_64_linux:  "4b3ff9cf188fa4b387ea4fc8f117fae1a19a1f3334be843ac79f509997f09b0e"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "8e5a6689c3405c2fe13205243b956ccc2d349e13e6c76273fd9e87be5d353346"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "789b53ad85ae4fef88cc63da11b066a2a721e23c12103677b07aff0e49832f35"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "cd04299f4e6e629bd080b9ad36f0b18a5674e19b21ecf2bb32b13d7a2a510153"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "cf0cebd4cc8d5a7ff5bfb1a14f8bd0e9d9f102132ba4aa17a0825503596a75b4"
+    sha256 cellar: :any,                 arm64_linux:       "7d9fc970925807e80942bfc64adb7cde1508d0e274f3534dbe03470e34824fdd"
+    sha256 cellar: :any,                 x86_64_linux:      "4b3ff9cf188fa4b387ea4fc8f117fae1a19a1f3334be843ac79f509997f09b0e"
   end
 
   depends_on "rust" => :build

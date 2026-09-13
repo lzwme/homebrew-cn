@@ -6,12 +6,13 @@ class Libmwaw < Formula
   license any_of: ["LGPL-2.1-or-later", "MPL-2.0"]
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "f8d25c7c58f0171849af7f60db0d87f2086ff27075a126f55c8524a765353caf"
-    sha256 cellar: :any, arm64_sequoia: "876db022c48d3d9bdfc7974d80b9410bf29b5df4e6be016b84b914819f5abfeb"
-    sha256 cellar: :any, arm64_sonoma:  "53960c2cdef6d3c978bf5f32e3bfba68bd7b889cf1dce3e476f2654503bd8011"
-    sha256 cellar: :any, sonoma:        "7387a6e3c8b1a816bbf6be7de71bb2acaca6c5286f67b9a20967338bc80a1ce5"
-    sha256 cellar: :any, arm64_linux:   "0ab494479d8cff29f5334448530a761c69f4a1a9294a001ec7553210fd5c38f6"
-    sha256 cellar: :any, x86_64_linux:  "ad976802e1baea7704a6e8968821f4471a69a934b395f7e6977be5e067b6e2e9"
+    sha256 cellar: :any, arm64_golden_gate: "6f372934ae8275146efffb1601416fcfb1bcbace27b1808d84f0075ad90b780b"
+    sha256 cellar: :any, arm64_tahoe:       "f8d25c7c58f0171849af7f60db0d87f2086ff27075a126f55c8524a765353caf"
+    sha256 cellar: :any, arm64_sequoia:     "876db022c48d3d9bdfc7974d80b9410bf29b5df4e6be016b84b914819f5abfeb"
+    sha256 cellar: :any, arm64_sonoma:      "53960c2cdef6d3c978bf5f32e3bfba68bd7b889cf1dce3e476f2654503bd8011"
+    sha256 cellar: :any, sonoma:            "7387a6e3c8b1a816bbf6be7de71bb2acaca6c5286f67b9a20967338bc80a1ce5"
+    sha256 cellar: :any, arm64_linux:       "0ab494479d8cff29f5334448530a761c69f4a1a9294a001ec7553210fd5c38f6"
+    sha256 cellar: :any, x86_64_linux:      "ad976802e1baea7704a6e8968821f4471a69a934b395f7e6977be5e067b6e2e9"
   end
 
   depends_on "pkgconf" => :build

@@ -12,12 +12,13 @@ class Sword < Formula
 
   bottle do
     rebuild 2
-    sha256 arm64_tahoe:   "152cbcfdc848a2a2b963b31b8dfb29c11c93178dbb234aa5e7d6469ec802e12e"
-    sha256 arm64_sequoia: "ae84e96561ad0d9a0a773cf2c453f49e300f49b645f096100dcc422ae6b23628"
-    sha256 arm64_sonoma:  "d284e7b1d3c842338b6a8e3e2ef148ddc380fbbb9012f43433d7fb4b7b5ed9a2"
-    sha256 sonoma:        "44fb9a8b06c4b81a975091db3a26ca102674f05e1e8c832ae9466269ac66c988"
-    sha256 arm64_linux:   "4ff7bdd89ef62a9863acd1657e7bec7876682719e38b6586b5433a01a1b39ba0"
-    sha256 x86_64_linux:  "fd4cfbf6785e0639306e71e8caaa0c7b9c04f97d4aee32bd855ab06eca13aa7b"
+    sha256 arm64_golden_gate: "423d25166aced2700fdc5315605a2818242e99a8f6d3168bc54f0a76d2c27a46"
+    sha256 arm64_tahoe:       "152cbcfdc848a2a2b963b31b8dfb29c11c93178dbb234aa5e7d6469ec802e12e"
+    sha256 arm64_sequoia:     "ae84e96561ad0d9a0a773cf2c453f49e300f49b645f096100dcc422ae6b23628"
+    sha256 arm64_sonoma:      "d284e7b1d3c842338b6a8e3e2ef148ddc380fbbb9012f43433d7fb4b7b5ed9a2"
+    sha256 sonoma:            "44fb9a8b06c4b81a975091db3a26ca102674f05e1e8c832ae9466269ac66c988"
+    sha256 arm64_linux:       "4ff7bdd89ef62a9863acd1657e7bec7876682719e38b6586b5433a01a1b39ba0"
+    sha256 x86_64_linux:      "fd4cfbf6785e0639306e71e8caaa0c7b9c04f97d4aee32bd855ab06eca13aa7b"
   end
 
   on_linux do

@@ -2,20 +2,17 @@ class Solod < Formula
   desc "Strict subset of Go with transpiler that translates to regular C"
   homepage "https://solod.dev/"
   url "https://github.com/solod-dev/solod.git",
-    tag:      "v0.3.0",
-    revision: "b4a71c0a7ec37a1657938f262ad8fa9bf55b46d4"
+    tag:      "v0.4.0",
+    revision: "e84cd34481f735ed30d03ef69eedd5c371c21532"
   license "BSD-3-Clause"
-  revision 1
   head "https://github.com/solod-dev/solod.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "7bffb89f53de311307a890bf3a4fa6c021713ddcdb7d45952c02a0830fedf065"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "7b32720c772895a003e2b73ea04f47bc67f0753c44b2beafb4408b7681867e7f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "7b32720c772895a003e2b73ea04f47bc67f0753c44b2beafb4408b7681867e7f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "7b32720c772895a003e2b73ea04f47bc67f0753c44b2beafb4408b7681867e7f"
-    sha256 cellar: :any_skip_relocation, sonoma:            "5d42c324b3a249d2d742752d378bc5bdffcd37c9f296031d7a23589baf46ea6a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "08b18daec1bce0168125c420665bd5ae025fd611dcaa6178e1e9308d2572dd4f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "8ae6aba1fa8a2b55d392f1ffddec68fb632dc57becb0d18278fb006fa95bd4ae"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "52e0ce878d48b04c96385c2fc407ddd90589861dddb427b742e2096fef94bd62"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "52e0ce878d48b04c96385c2fc407ddd90589861dddb427b742e2096fef94bd62"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "52e0ce878d48b04c96385c2fc407ddd90589861dddb427b742e2096fef94bd62"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "d920c0c42343a4e7d30e7c05e58b26055e7e544717c38df5f1dbc65b29049edf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "f23aa087960d006d27ac03224d95af7efab59966228707a32a8fb551e8e6c0d9"
   end
 
   depends_on "go" => [:build, :test]

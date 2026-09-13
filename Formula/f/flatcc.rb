@@ -8,12 +8,13 @@ class Flatcc < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "04812aec2e32f6231fe8ab2d364fd6d5ba278f589f75fd81dba66d28f05ae012"
-    sha256 cellar: :any, arm64_sequoia: "9f012f3973ad5b0c9ea006dd16e36346073b8a2fdc9129100806533f706e10d3"
-    sha256 cellar: :any, arm64_sonoma:  "6ae664eb8de821447bb69f380d0614fc67d13fd90f6ab852280900bac0df1ebd"
-    sha256 cellar: :any, sonoma:        "dd197eb907f67c941f6651adeffd333bba7185b72f6efe257463c746436840c2"
-    sha256 cellar: :any, arm64_linux:   "09c8f2c18b012718bf8df6fa2137405aadc7c8d325eb55b6ac073f3276cdfdf2"
-    sha256 cellar: :any, x86_64_linux:  "a07bc9305668ce062ae98478c41b3ec31cb4e2558ec118fe2ef34c228e545c3b"
+    sha256 cellar: :any, arm64_golden_gate: "8f0034f1d3b9363ce05cc55df434ebf6a10e222eb7ede4fd7113803c0a7a0cd4"
+    sha256 cellar: :any, arm64_tahoe:       "04812aec2e32f6231fe8ab2d364fd6d5ba278f589f75fd81dba66d28f05ae012"
+    sha256 cellar: :any, arm64_sequoia:     "9f012f3973ad5b0c9ea006dd16e36346073b8a2fdc9129100806533f706e10d3"
+    sha256 cellar: :any, arm64_sonoma:      "6ae664eb8de821447bb69f380d0614fc67d13fd90f6ab852280900bac0df1ebd"
+    sha256 cellar: :any, sonoma:            "dd197eb907f67c941f6651adeffd333bba7185b72f6efe257463c746436840c2"
+    sha256 cellar: :any, arm64_linux:       "09c8f2c18b012718bf8df6fa2137405aadc7c8d325eb55b6ac073f3276cdfdf2"
+    sha256 cellar: :any, x86_64_linux:      "a07bc9305668ce062ae98478c41b3ec31cb4e2558ec118fe2ef34c228e545c3b"
   end
 
   depends_on "cmake" => :build

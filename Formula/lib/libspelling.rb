@@ -7,12 +7,13 @@ class Libspelling < Formula
   compatibility_version 1
 
   bottle do
-    sha256 arm64_tahoe:   "11153634aad81e3844d252f6d844a3959243360ff7a825594109d096512f6f97"
-    sha256 arm64_sequoia: "dd99e06b697f6c662c7146fd88bf1901db26abeb029390609b3a65cb0e53831d"
-    sha256 arm64_sonoma:  "f9cb94f36b4721f4ef8bd475783569a24140b41c2c96197bd68ba5bd145d4533"
-    sha256 sonoma:        "b2f39ab29923d2773c74bc2065abf8cfbb517a7c5eb4f52057e21f141f194882"
-    sha256 arm64_linux:   "6f9877ad8aa58cce8bfeb6c6cd4c7e7d0753afefcf3d428bd2a8d019f9c5180e"
-    sha256 x86_64_linux:  "547925f26bc3a232e3774dd75c229b3b155691982c3db5a3e9082dc88791ed74"
+    sha256 arm64_golden_gate: "ad1eea6bf0c7678590cef502d9493e014f70de103b0fc0d7ab4386d955b43311"
+    sha256 arm64_tahoe:       "11153634aad81e3844d252f6d844a3959243360ff7a825594109d096512f6f97"
+    sha256 arm64_sequoia:     "dd99e06b697f6c662c7146fd88bf1901db26abeb029390609b3a65cb0e53831d"
+    sha256 arm64_sonoma:      "f9cb94f36b4721f4ef8bd475783569a24140b41c2c96197bd68ba5bd145d4533"
+    sha256 sonoma:            "b2f39ab29923d2773c74bc2065abf8cfbb517a7c5eb4f52057e21f141f194882"
+    sha256 arm64_linux:       "6f9877ad8aa58cce8bfeb6c6cd4c7e7d0753afefcf3d428bd2a8d019f9c5180e"
+    sha256 x86_64_linux:      "547925f26bc3a232e3774dd75c229b3b155691982c3db5a3e9082dc88791ed74"
   end
 
   depends_on "gobject-introspection" => :build

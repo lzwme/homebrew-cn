@@ -8,12 +8,13 @@ class Flif < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "9f31d2fdf99e6e6a7bc79e1cb303d246a023edae4a4cbab9010c991a42b3f15d"
-    sha256 cellar: :any,                 arm64_sequoia: "947265f79e930463ef0e44212cb95aef425b064a9d50abdee3b308c4dc03ab25"
-    sha256 cellar: :any,                 arm64_sonoma:  "bdb1164b2c7592791b612169d1ccef5520183da9b9325e8eb9428ede90349f67"
-    sha256 cellar: :any,                 sonoma:        "23d44bc668159febffba7d69a39050438097b9abdccd979e604f19463338dc07"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d6d277b41d4575ffc47d7a6db35c7a8ef7eb4a124ac3fc1fed3abeebbfcfb71a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7fe8d950811505c384945d0dd7901010b548cd1f06a59bd6438f2f8417cc01b3"
+    sha256 cellar: :any,                 arm64_golden_gate: "1c5f23cbe01ecab2a67fbdb9cf7f25b7efdb5712ba96f368c6babcd3a02edd9f"
+    sha256 cellar: :any,                 arm64_tahoe:       "9f31d2fdf99e6e6a7bc79e1cb303d246a023edae4a4cbab9010c991a42b3f15d"
+    sha256 cellar: :any,                 arm64_sequoia:     "947265f79e930463ef0e44212cb95aef425b064a9d50abdee3b308c4dc03ab25"
+    sha256 cellar: :any,                 arm64_sonoma:      "bdb1164b2c7592791b612169d1ccef5520183da9b9325e8eb9428ede90349f67"
+    sha256 cellar: :any,                 sonoma:            "23d44bc668159febffba7d69a39050438097b9abdccd979e604f19463338dc07"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "d6d277b41d4575ffc47d7a6db35c7a8ef7eb4a124ac3fc1fed3abeebbfcfb71a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "7fe8d950811505c384945d0dd7901010b548cd1f06a59bd6438f2f8417cc01b3"
   end
 
   deprecate! date: "2026-07-17", because: :deprecated_upstream, replacement_formula: "jpeg-xl"

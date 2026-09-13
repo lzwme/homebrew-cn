@@ -15,14 +15,15 @@ class Reuse < Formula
   head "https://github.com/fsfe/reuse-tool.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "29b5a4a0b0a1653a66ed796b83feb91a897c7c41021b285fdda1245f81ab03e6"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4e9b5851cfa04c03c7a11f3009e26f94054d551f5df8a0120e9fb0f2d6242ffa"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8d34df3cbeae074a10be39a7f029014ef986ad50c101755b11c033567db9dca2"
-    sha256 cellar: :any_skip_relocation, tahoe:         "72b31b45aafda3d423be79c05a57beb96e2ab1250c18b55ca6beb00c4e324815"
-    sha256 cellar: :any_skip_relocation, sequoia:       "e48a685a780dc86619acc7a1fe1ba5e2ca5bf24f14fb693f6459b86a79c907ad"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3a32ef4ccd0d9f96a68e9325431fe373225943e2b96483bca4dd8c426885dffd"
-    sha256 cellar: :any,                 arm64_linux:   "ed6f740db4bc656327c84b28991ca6828494c8569072d39a9364286c750c1710"
-    sha256 cellar: :any,                 x86_64_linux:  "a110a70a3fd514a7e93fcd094355d2332ec450777ad27caf405c24040cd8cb97"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "3ab037fad52a3dd27cb1fd2a93e658cd48a664daff021882adb0bf43e8e0a1d0"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "29b5a4a0b0a1653a66ed796b83feb91a897c7c41021b285fdda1245f81ab03e6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "4e9b5851cfa04c03c7a11f3009e26f94054d551f5df8a0120e9fb0f2d6242ffa"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "8d34df3cbeae074a10be39a7f029014ef986ad50c101755b11c033567db9dca2"
+    sha256 cellar: :any_skip_relocation, tahoe:             "72b31b45aafda3d423be79c05a57beb96e2ab1250c18b55ca6beb00c4e324815"
+    sha256 cellar: :any_skip_relocation, sequoia:           "e48a685a780dc86619acc7a1fe1ba5e2ca5bf24f14fb693f6459b86a79c907ad"
+    sha256 cellar: :any_skip_relocation, sonoma:            "3a32ef4ccd0d9f96a68e9325431fe373225943e2b96483bca4dd8c426885dffd"
+    sha256 cellar: :any,                 arm64_linux:       "ed6f740db4bc656327c84b28991ca6828494c8569072d39a9364286c750c1710"
+    sha256 cellar: :any,                 x86_64_linux:      "a110a70a3fd514a7e93fcd094355d2332ec450777ad27caf405c24040cd8cb97"
   end
 
   depends_on "python@3.14"

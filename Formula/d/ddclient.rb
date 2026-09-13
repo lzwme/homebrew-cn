@@ -12,12 +12,13 @@ class Ddclient < Formula
 
   bottle do
     rebuild 3
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d963690c63fb5f28fe5729c3a98d43dc3822508658b4f5e9a335bd19b6956903"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d963690c63fb5f28fe5729c3a98d43dc3822508658b4f5e9a335bd19b6956903"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d963690c63fb5f28fe5729c3a98d43dc3822508658b4f5e9a335bd19b6956903"
-    sha256 cellar: :any_skip_relocation, sonoma:        "fd6b4f96c529a8bd8540e0963f1e349bff91348e9f74bd52e78d1ec6f188ff1b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d963690c63fb5f28fe5729c3a98d43dc3822508658b4f5e9a335bd19b6956903"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d963690c63fb5f28fe5729c3a98d43dc3822508658b4f5e9a335bd19b6956903"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "f452dee0510455eded074cfe4cc37598ae00d73f1c5bffe11fde686a7776540c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "d963690c63fb5f28fe5729c3a98d43dc3822508658b4f5e9a335bd19b6956903"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "d963690c63fb5f28fe5729c3a98d43dc3822508658b4f5e9a335bd19b6956903"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "d963690c63fb5f28fe5729c3a98d43dc3822508658b4f5e9a335bd19b6956903"
+    sha256 cellar: :any_skip_relocation, sonoma:            "fd6b4f96c529a8bd8540e0963f1e349bff91348e9f74bd52e78d1ec6f188ff1b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "d963690c63fb5f28fe5729c3a98d43dc3822508658b4f5e9a335bd19b6956903"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "d963690c63fb5f28fe5729c3a98d43dc3822508658b4f5e9a335bd19b6956903"
   end
 
   head do

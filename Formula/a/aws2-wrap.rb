@@ -9,12 +9,13 @@ class Aws2Wrap < Formula
 
   bottle do
     rebuild 3
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3268822bfc1e7e701d18bdc33ab3e1da2dbade82654349196575813f596fa2ef"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4273b2ffc121cdec548f58a6fe95ee8b48ec81302d2aeaffc7988d480c74b487"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "162278b196ec4ea96fa0c358d6375ee2728591d89dd577aa619097fe897bf9c9"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b2ea3565616d3ae6d2242997f570c236bd9b0f2bc9df70c5a4963ff78f0ba027"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "bce412d5705b5db7d2bd526f20e9da030b4c4c0404bab9a9d7c3de6608ebbbb6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cadb8097812a3729fb1ae6d91eec08399280c4096cc4d4d79423ce3924b445b5"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "efded003129ace4660ae9ca1597872a08003e574d449e8665a0a540311d807ac"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "3268822bfc1e7e701d18bdc33ab3e1da2dbade82654349196575813f596fa2ef"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "4273b2ffc121cdec548f58a6fe95ee8b48ec81302d2aeaffc7988d480c74b487"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "162278b196ec4ea96fa0c358d6375ee2728591d89dd577aa619097fe897bf9c9"
+    sha256 cellar: :any_skip_relocation, sonoma:            "b2ea3565616d3ae6d2242997f570c236bd9b0f2bc9df70c5a4963ff78f0ba027"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "bce412d5705b5db7d2bd526f20e9da030b4c4c0404bab9a9d7c3de6608ebbbb6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "cadb8097812a3729fb1ae6d91eec08399280c4096cc4d4d79423ce3924b445b5"
   end
 
   deprecate! date: "2025-10-02", because: :repo_archived

@@ -12,12 +12,13 @@ class ErofsUtils < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "2e9e4f282caf94e14e3fb09f4ddcf9a7efd637bb60ff777b0ce1c675769e45ee"
-    sha256 cellar: :any, arm64_sequoia: "87e9ef8002a87275c018cffd127f7eb11de4553cc53edd7b20b81a8e407580c4"
-    sha256 cellar: :any, arm64_sonoma:  "90b65cd37db371ea91983ed8ca90b04d4325408368bfded618375f401ef5f3d0"
-    sha256 cellar: :any, sonoma:        "477efe0142e48843a22a67f19434952502f032e5ed9cf0a4a078249a10a423fc"
-    sha256 cellar: :any, arm64_linux:   "41c13dbf80ce34a685bca834c6e54b0547ca7cf6b84bd1f18b5f8c866b61052c"
-    sha256 cellar: :any, x86_64_linux:  "8c0c99d07dc9b93cf8df32716ee1b50cb51acf70478e463d0019b6d75d493991"
+    sha256 cellar: :any, arm64_golden_gate: "52f5839126989be9551bfd9c74c9b1ca3ad3fae118a63b627d38111403fd83c0"
+    sha256 cellar: :any, arm64_tahoe:       "2e9e4f282caf94e14e3fb09f4ddcf9a7efd637bb60ff777b0ce1c675769e45ee"
+    sha256 cellar: :any, arm64_sequoia:     "87e9ef8002a87275c018cffd127f7eb11de4553cc53edd7b20b81a8e407580c4"
+    sha256 cellar: :any, arm64_sonoma:      "90b65cd37db371ea91983ed8ca90b04d4325408368bfded618375f401ef5f3d0"
+    sha256 cellar: :any, sonoma:            "477efe0142e48843a22a67f19434952502f032e5ed9cf0a4a078249a10a423fc"
+    sha256 cellar: :any, arm64_linux:       "41c13dbf80ce34a685bca834c6e54b0547ca7cf6b84bd1f18b5f8c866b61052c"
+    sha256 cellar: :any, x86_64_linux:      "8c0c99d07dc9b93cf8df32716ee1b50cb51acf70478e463d0019b6d75d493991"
   end
 
   depends_on "autoconf" => :build

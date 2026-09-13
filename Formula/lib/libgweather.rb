@@ -17,12 +17,13 @@ class Libgweather < Formula
 
   bottle do
     rebuild 1
-    sha256 arm64_tahoe:   "9fd00f76cad9cad7c3458915abfd3c74822a820d0f742bd06136590ec3eb6f37"
-    sha256 arm64_sequoia: "d782557928860afcaede44976c28aaa2cbd1395cd309a1b9d277f7e1477f8991"
-    sha256 arm64_sonoma:  "35aa98175b736e757aae5d496c4ab55c987fb59fe318e35b9717b2d2fe26ca77"
-    sha256 sonoma:        "39143bc46d845f310f70ec476c76282f8f242cf41aa7625fc4ba8d043e89fbc8"
-    sha256 arm64_linux:   "d519c7073bef541b39bc8c07db8e5880621b7beb770859f5a68ba4d9a6ac9e33"
-    sha256 x86_64_linux:  "4c4db1d9ff76e7ec17e4c8d5b6694da60ee7d4634aecf1e175036e5f76585f4e"
+    sha256 arm64_golden_gate: "b2c105c7e3054a6fda863e2173788dd8fe275f59567b8d692607a219c128a646"
+    sha256 arm64_tahoe:       "9fd00f76cad9cad7c3458915abfd3c74822a820d0f742bd06136590ec3eb6f37"
+    sha256 arm64_sequoia:     "d782557928860afcaede44976c28aaa2cbd1395cd309a1b9d277f7e1477f8991"
+    sha256 arm64_sonoma:      "35aa98175b736e757aae5d496c4ab55c987fb59fe318e35b9717b2d2fe26ca77"
+    sha256 sonoma:            "39143bc46d845f310f70ec476c76282f8f242cf41aa7625fc4ba8d043e89fbc8"
+    sha256 arm64_linux:       "d519c7073bef541b39bc8c07db8e5880621b7beb770859f5a68ba4d9a6ac9e33"
+    sha256 x86_64_linux:      "4c4db1d9ff76e7ec17e4c8d5b6694da60ee7d4634aecf1e175036e5f76585f4e"
   end
 
   depends_on "gettext" => :build

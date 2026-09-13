@@ -11,11 +11,12 @@ class Strongswan < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "2a9cce27fed8db4b83dd8181c1284e42c583788888c9aaeef9ec1a25b605c850"
-    sha256 arm64_sequoia: "8d1832026b25483bfd5735d7b262c7f9a69974fea9edc3628f6aecfafabe7dac"
-    sha256 arm64_sonoma:  "ba11d900d659d376e9306aa9e1e81047a3b94c44f290d6a1f8d1be40bbf673e8"
-    sha256 arm64_linux:   "0c80d564d7f0db7cae6bb6c588170a9b477fc1b7d03170c8b2cfb6efc29eff91"
-    sha256 x86_64_linux:  "a56826d23e05553a4f7841f76efb1d0e30bbba3a0d11a026a4c9b328cc4e06a5"
+    sha256 arm64_golden_gate: "3b1348d860baf46237f97e24726e8107350f3f0c5cbae68e36b6839502af6629"
+    sha256 arm64_tahoe:       "2a9cce27fed8db4b83dd8181c1284e42c583788888c9aaeef9ec1a25b605c850"
+    sha256 arm64_sequoia:     "8d1832026b25483bfd5735d7b262c7f9a69974fea9edc3628f6aecfafabe7dac"
+    sha256 arm64_sonoma:      "ba11d900d659d376e9306aa9e1e81047a3b94c44f290d6a1f8d1be40bbf673e8"
+    sha256 arm64_linux:       "0c80d564d7f0db7cae6bb6c588170a9b477fc1b7d03170c8b2cfb6efc29eff91"
+    sha256 x86_64_linux:      "a56826d23e05553a4f7841f76efb1d0e30bbba3a0d11a026a4c9b328cc4e06a5"
   end
 
   head do

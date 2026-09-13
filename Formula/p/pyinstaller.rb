@@ -9,14 +9,15 @@ class Pyinstaller < Formula
   head "https://github.com/pyinstaller/pyinstaller.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "305ab3f270881769096ec82fa71d1d80bc80ef8c7894f1e958852f7c4bbe1238"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5b86a3cf26e8a1c9cd37aa206a96d9a419021ef76de3fa3ee8045d7fd5050286"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "54f3b1afacf067554db230ce01ede693275db1365f3c86f8b13df5452386ae82"
-    sha256 cellar: :any_skip_relocation, tahoe:         "8a418fb9d32e8e5a04409087c928c434f802b69cc4a5d2e2aa6a65de8840ac4b"
-    sha256 cellar: :any_skip_relocation, sequoia:       "f006f5b002bd964e595927074134db9ab5a69336884187f3b78c4831367b5384"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7e26b9fdfbd92b66d88eaf1d35e6fec6606c1a364838699a734f6975c2e9b044"
-    sha256 cellar: :any,                 arm64_linux:   "84231b49c33542e16f0fc650e7e56e0101f92b65d97e2e7527bb944e4815b64b"
-    sha256 cellar: :any,                 x86_64_linux:  "b72336867aa0cda5311b29bba3b1263283d58e27f72402690431bb1893da451b"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "18be4cb3920761863a00333822eec07e39515e35b9cb1aebd3a0472e559652c1"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "305ab3f270881769096ec82fa71d1d80bc80ef8c7894f1e958852f7c4bbe1238"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "5b86a3cf26e8a1c9cd37aa206a96d9a419021ef76de3fa3ee8045d7fd5050286"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "54f3b1afacf067554db230ce01ede693275db1365f3c86f8b13df5452386ae82"
+    sha256 cellar: :any_skip_relocation, tahoe:             "8a418fb9d32e8e5a04409087c928c434f802b69cc4a5d2e2aa6a65de8840ac4b"
+    sha256 cellar: :any_skip_relocation, sequoia:           "f006f5b002bd964e595927074134db9ab5a69336884187f3b78c4831367b5384"
+    sha256 cellar: :any_skip_relocation, sonoma:            "7e26b9fdfbd92b66d88eaf1d35e6fec6606c1a364838699a734f6975c2e9b044"
+    sha256 cellar: :any,                 arm64_linux:       "84231b49c33542e16f0fc650e7e56e0101f92b65d97e2e7527bb944e4815b64b"
+    sha256 cellar: :any,                 x86_64_linux:      "b72336867aa0cda5311b29bba3b1263283d58e27f72402690431bb1893da451b"
   end
 
   depends_on "python@3.14"

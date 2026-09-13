@@ -7,12 +7,13 @@ class Laszip < Formula
   head "https://github.com/LASzip/LASzip.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "004ad026fd5502a6cc495b0dc8e82e288e4aaa90c02476f960a2154a9b492c99"
-    sha256 cellar: :any,                 arm64_sequoia: "92eb7a021b71cb63ed0d1516b4d5c5a04d4ae7e817a053ff8f6a71c4cd19ab58"
-    sha256 cellar: :any,                 arm64_sonoma:  "12e26b05aaf259c99dced2f37e8c2fef3bc3d294a9a9f4d1a6cbd78098eb2eb9"
-    sha256 cellar: :any,                 sonoma:        "716ccb155ad20714c434c4c30001134bc112b21daec0589e5846a4bdfb1fe859"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4da05f65c3a2b04d89bdd483d154c97a4fd89a95830d60900061e8376b3b67e2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "af201f8e8d02b21611bf7a35d0ca1ccc1cdfbdb86bfff9840cce5fb890894f5e"
+    sha256 cellar: :any,                 arm64_golden_gate: "97652d75c89d3790c3a893e6c0866c82bfe4d86d85379ab6a3481621b53427c5"
+    sha256 cellar: :any,                 arm64_tahoe:       "004ad026fd5502a6cc495b0dc8e82e288e4aaa90c02476f960a2154a9b492c99"
+    sha256 cellar: :any,                 arm64_sequoia:     "92eb7a021b71cb63ed0d1516b4d5c5a04d4ae7e817a053ff8f6a71c4cd19ab58"
+    sha256 cellar: :any,                 arm64_sonoma:      "12e26b05aaf259c99dced2f37e8c2fef3bc3d294a9a9f4d1a6cbd78098eb2eb9"
+    sha256 cellar: :any,                 sonoma:            "716ccb155ad20714c434c4c30001134bc112b21daec0589e5846a4bdfb1fe859"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "4da05f65c3a2b04d89bdd483d154c97a4fd89a95830d60900061e8376b3b67e2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "af201f8e8d02b21611bf7a35d0ca1ccc1cdfbdb86bfff9840cce5fb890894f5e"
   end
 
   depends_on "cmake" => :build

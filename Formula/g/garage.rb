@@ -12,11 +12,12 @@ class Garage < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "12bf8bdb0895706e0bef7f435d28b744e88d7aa443c21d2da81a06e9008fcfbc"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "97e03a93d459bd674adf22edf7e0f04d32d794e9a1b78a8b3b98d23d4037000b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "32c84f14cecc9b51640a91d598d0514b560e4f3349588fea8b690c78cced810c"
-    sha256 cellar: :any,                 arm64_linux:   "612adee4790abf1af4678890164b2a66f7416ec33579f0ecdc5ceb36d6f69a32"
-    sha256 cellar: :any,                 x86_64_linux:  "7d18525ba94590a8660a67d864e1b2520cdf6ac48adf8138c6e9331985744ffc"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "a960407c0cc8fbb58cd23f32a225b282d80620c5799c001450a7a1ad718437f3"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "12bf8bdb0895706e0bef7f435d28b744e88d7aa443c21d2da81a06e9008fcfbc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "97e03a93d459bd674adf22edf7e0f04d32d794e9a1b78a8b3b98d23d4037000b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "32c84f14cecc9b51640a91d598d0514b560e4f3349588fea8b690c78cced810c"
+    sha256 cellar: :any,                 arm64_linux:       "612adee4790abf1af4678890164b2a66f7416ec33579f0ecdc5ceb36d6f69a32"
+    sha256 cellar: :any,                 x86_64_linux:      "7d18525ba94590a8660a67d864e1b2520cdf6ac48adf8138c6e9331985744ffc"
   end
 
   depends_on "rust" => :build

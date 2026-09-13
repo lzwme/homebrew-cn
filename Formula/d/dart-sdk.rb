@@ -7,11 +7,12 @@ class DartSdk < Formula
   compatibility_version 3
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "cafb1a7eeeae149a6fa35b3de850cc405a6843ca98af8bc9bb8dad60b02b0b73"
-    sha256 cellar: :any, arm64_sequoia: "0893d6e1f0688a9805bb52320accd9cbb5ca2135c7d7a4e60bd6b0ce94270de5"
-    sha256 cellar: :any, arm64_sonoma:  "7dce6ffdbdb39155447e23a5877ead983cb8ee461767c76275b5975ef7744d91"
-    sha256 cellar: :any, arm64_linux:   "7aa5b9bb6d40089dabda6fabcfc37b1d483526a366ed67865b1324cc007673b2"
-    sha256 cellar: :any, x86_64_linux:  "1f5611ff0953d96aed50344fcbcb9b0a9bdd0e5fc59add5234330f04faa5bf1d"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "2365c809941d6109515a57e159bb04e87731b2cfa66f8df63e9be8ab89d97fcb"
+    sha256 cellar: :any, arm64_tahoe:       "7cd76ba93860224ab2123ce4a9dfae1f3a3316200b13b7dc7ce632ecd3a76a76"
+    sha256 cellar: :any, arm64_sequoia:     "eb5e1ca53d61f6658686481ceac5ff268188412e7aeb9e689bc7e3a980c6f1f8"
+    sha256 cellar: :any, arm64_linux:       "ba5908e47e7df690fc51b9060e01974b3a3493498b9833a29ff7d54512c2a398"
+    sha256 cellar: :any, x86_64_linux:      "fbcb4ca31cd1bbcbd65b816becb4bcee41bdd8d5ecc4c58e28ed1653a33630d0"
   end
 
   depends_on "ninja" => :build
@@ -39,10 +40,18 @@ class DartSdk < Formula
     ENV["DEPOT_TOOLS_UPDATE"] = "0"
     ENV.append_path "PATH", "#{buildpath}/depot-tools"
 
-    system "gclient", "config", "--name", "sdk", "https://dart.googlesource.com/sdk.git@#{version}"
+    # Roll clang to include lld support for arm64e.x1 targets in the macOS 27 SDK (llvm/llvm-project#222721)
+    # TODO: Remove when upstream rolls clang past that commit, see https://github.com/dart-lang/sdk/issues/64264
+    system "gclient", "config", "--name", "sdk",
+           "--custom-var", 'clang_version="git_revision:07d67299a15ce03b053736e2d31a668ee0576987"',
+           "https://dart.googlesource.com/sdk.git@#{version}"
     system "gclient", "sync", "--no-history"
 
     chdir "sdk" do
+      # The newer clang flags an unused variable in binaryen, which is built with -Werror
+      inreplace "third_party/binaryen/BUILD.gn", '"-Wno-unused-private-field",',
+                                                   "\\0\n        \"-Wno-unused-variable\","
+
       arch = Hardware::CPU.arm? ? "arm64" : "x64"
       system "./tools/build.py", "--mode=release", "--arch=#{arch}", "create_sdk"
       out = OS.linux? ? "out" : "xcodebuild"

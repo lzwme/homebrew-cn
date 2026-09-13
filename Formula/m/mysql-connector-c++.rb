@@ -12,12 +12,13 @@ class MysqlConnectorCxx < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "629d29b77b00791626e1e962d2086d6870b4c513b8a455d63524e3587564eac8"
-    sha256 cellar: :any, arm64_sequoia: "c3e1202ff7f3781c250a710c2b089715ae611cc618e35a9ef8c891612dcad498"
-    sha256 cellar: :any, arm64_sonoma:  "f1ea4c69d8b8256e208ba38020780d3da82e34e3f1a3b77422fc1ddb9bee76b7"
-    sha256 cellar: :any, sonoma:        "42766f509ce4a339b53f71f867ce9f234d06048443572bd86811e6998ad45b53"
-    sha256 cellar: :any, arm64_linux:   "a6ca7ff0f18824da9673cfd440679f7e5a3704b7c74b427069eff69e269b405f"
-    sha256 cellar: :any, x86_64_linux:  "1551e59b6282a42e5fb0f9abebb3e4293700cf351ba9a4a8976ff7ca41316d9f"
+    sha256 cellar: :any, arm64_golden_gate: "c3c44802b03e697b4237dbf3ad2f94b4597df401f06d5dc8d130679d1a10076e"
+    sha256 cellar: :any, arm64_tahoe:       "629d29b77b00791626e1e962d2086d6870b4c513b8a455d63524e3587564eac8"
+    sha256 cellar: :any, arm64_sequoia:     "c3e1202ff7f3781c250a710c2b089715ae611cc618e35a9ef8c891612dcad498"
+    sha256 cellar: :any, arm64_sonoma:      "f1ea4c69d8b8256e208ba38020780d3da82e34e3f1a3b77422fc1ddb9bee76b7"
+    sha256 cellar: :any, sonoma:            "42766f509ce4a339b53f71f867ce9f234d06048443572bd86811e6998ad45b53"
+    sha256 cellar: :any, arm64_linux:       "a6ca7ff0f18824da9673cfd440679f7e5a3704b7c74b427069eff69e269b405f"
+    sha256 cellar: :any, x86_64_linux:      "1551e59b6282a42e5fb0f9abebb3e4293700cf351ba9a4a8976ff7ca41316d9f"
   end
 
   depends_on "cmake" => :build

@@ -7,12 +7,13 @@ class Binsider < Formula
   head "https://github.com/orhun/binsider.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fb174c262fef03b7bdb8764bdba5aa421b00f888843296e1c6950e2e96d43c14"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "71939a232ef4e8f7e6791060b0fc12085b33e48ae7e28e78ba9336185d2fb017"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9b264bb2603ad5dfc863a45f841dceaf74d8ed018915b6574f30caae0eb8438d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8dd432e82e9de9c566f17eff18f24cd896ee33110a420dc4625d24594f0e389c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6d554a2e39ef7d49cbca53cac30b77d156f91eb0e67ffea8c8469464b4fefc05"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "eb237cba89a8c27b6b02cc27839349b37b393c420bcd2f6f1d88589e00751f25"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "2f3242b11dd70beb059c953304c131e5f00ca83bdd2ee7bca61b2e3eaac68490"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "fb174c262fef03b7bdb8764bdba5aa421b00f888843296e1c6950e2e96d43c14"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "71939a232ef4e8f7e6791060b0fc12085b33e48ae7e28e78ba9336185d2fb017"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "9b264bb2603ad5dfc863a45f841dceaf74d8ed018915b6574f30caae0eb8438d"
+    sha256 cellar: :any_skip_relocation, sonoma:            "8dd432e82e9de9c566f17eff18f24cd896ee33110a420dc4625d24594f0e389c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "6d554a2e39ef7d49cbca53cac30b77d156f91eb0e67ffea8c8469464b4fefc05"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "eb237cba89a8c27b6b02cc27839349b37b393c420bcd2f6f1d88589e00751f25"
   end
 
   depends_on "rust" => :build

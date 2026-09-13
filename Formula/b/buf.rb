@@ -24,6 +24,12 @@ class Buf < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     %w[buf protoc-gen-buf-breaking protoc-gen-buf-lint].each do |name|
       system "go", "build", *std_go_args(output: bin/name), "./cmd/#{name}"

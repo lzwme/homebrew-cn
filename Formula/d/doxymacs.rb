@@ -7,12 +7,13 @@ class Doxymacs < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fe13bd89660f57f1c74c95e0b0ae7def510c8a80d6a9ec1bb05799153d546496"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e22393964e0e2f3f1b841be5fcadcf4cacc9d6ac8597e4ba77cdd2a883e0417a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b772c42b30f9e256e9ff43da7d3a5e184cc2c5d535431f78f92282774889205e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "fe9b383131419cf3949ee0f039b501a8d518e6ab92368123d537800d85bc7333"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "35833ff40dab157ebfaed94448b822bbc044a87ab1e57d09aba41d13c200c1b5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "87d7b48342fe0049e9c50a632c74a0d4fb8abca3928e2875871e69487cd8d387"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "f7fd4301403ced54c1e389db976bcc2845682cf7c4c7245a91cc54ae560f65d6"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "fe13bd89660f57f1c74c95e0b0ae7def510c8a80d6a9ec1bb05799153d546496"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "e22393964e0e2f3f1b841be5fcadcf4cacc9d6ac8597e4ba77cdd2a883e0417a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "b772c42b30f9e256e9ff43da7d3a5e184cc2c5d535431f78f92282774889205e"
+    sha256 cellar: :any_skip_relocation, sonoma:            "fe9b383131419cf3949ee0f039b501a8d518e6ab92368123d537800d85bc7333"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "35833ff40dab157ebfaed94448b822bbc044a87ab1e57d09aba41d13c200c1b5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "87d7b48342fe0049e9c50a632c74a0d4fb8abca3928e2875871e69487cd8d387"
   end
 
   head do

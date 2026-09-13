@@ -8,12 +8,13 @@ class Diffnav < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "58bbfaff75476c6d3120db5779af70725ce16cbc3f6e85af7badf4453c3f9918"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "58bbfaff75476c6d3120db5779af70725ce16cbc3f6e85af7badf4453c3f9918"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "58bbfaff75476c6d3120db5779af70725ce16cbc3f6e85af7badf4453c3f9918"
-    sha256 cellar: :any_skip_relocation, sonoma:        "dff717f85ffb16062b12f930aaf0aedcd3ce03751046fe7912df4d5f5f8291bb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e5c4938d58853070c9ba2ab2f56de6830837e744db8e9eea0f32abee8b872bc6"
-    sha256 cellar: :any,                 x86_64_linux:  "be2694976e33fa9159994e003bea1eaaf594030d08f667d107efe3be808ef5cb"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "67161b08f90467ce77ebed0e44a00d08edfbdf2d664206bbb18d742adc21237e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "58bbfaff75476c6d3120db5779af70725ce16cbc3f6e85af7badf4453c3f9918"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "58bbfaff75476c6d3120db5779af70725ce16cbc3f6e85af7badf4453c3f9918"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "58bbfaff75476c6d3120db5779af70725ce16cbc3f6e85af7badf4453c3f9918"
+    sha256 cellar: :any_skip_relocation, sonoma:            "dff717f85ffb16062b12f930aaf0aedcd3ce03751046fe7912df4d5f5f8291bb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "e5c4938d58853070c9ba2ab2f56de6830837e744db8e9eea0f32abee8b872bc6"
+    sha256 cellar: :any,                 x86_64_linux:      "be2694976e33fa9159994e003bea1eaaf594030d08f667d107efe3be808ef5cb"
   end
 
   depends_on "go" => :build

@@ -6,12 +6,13 @@ class Skopeo < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256               arm64_tahoe:   "c74b2682dac252629ff09804a4f4e0ed6f553b1b27125c1e31b9366acb98626b"
-    sha256               arm64_sequoia: "dcaecd12aeddc4df66766d0076edb3c699d6e84dc512653aede47ae62b9f8352"
-    sha256               arm64_sonoma:  "4f9d7e60258db1d6c4225519704c569c268c5c296e8f0f8a9be5fcfed0abcb78"
-    sha256 cellar: :any, sonoma:        "39f5447da03e88d5e53a4751f786067ee83f152d379b22065f7c87f6d808163c"
-    sha256               arm64_linux:   "6b909e109ed9289ea283977d6a39540812eca422c1677ce8701c7692867611db"
-    sha256               x86_64_linux:  "bf78f2d80e89cfc8073aa38f412f7ae72d8dbdde0d15dbc7aa800788d67c81fa"
+    sha256               arm64_golden_gate: "260ed8eed3a5d62a88e1927fd380fa243f2826f4427c9183d1d6330a7c3a62ad"
+    sha256               arm64_tahoe:       "c74b2682dac252629ff09804a4f4e0ed6f553b1b27125c1e31b9366acb98626b"
+    sha256               arm64_sequoia:     "dcaecd12aeddc4df66766d0076edb3c699d6e84dc512653aede47ae62b9f8352"
+    sha256               arm64_sonoma:      "4f9d7e60258db1d6c4225519704c569c268c5c296e8f0f8a9be5fcfed0abcb78"
+    sha256 cellar: :any, sonoma:            "39f5447da03e88d5e53a4751f786067ee83f152d379b22065f7c87f6d808163c"
+    sha256               arm64_linux:       "6b909e109ed9289ea283977d6a39540812eca422c1677ce8701c7692867611db"
+    sha256               x86_64_linux:      "bf78f2d80e89cfc8073aa38f412f7ae72d8dbdde0d15dbc7aa800788d67c81fa"
   end
 
   depends_on "go" => :build

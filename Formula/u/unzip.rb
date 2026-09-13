@@ -108,7 +108,7 @@ class Unzip < Formula
     if OS.mac?
       system "/usr/bin/zip", "test.zip", "test1", "test2", "test3"
     else
-      system Formula["zip"].bin/"zip", "test.zip", "test1", "test2", "test3"
+      system formula_opt_bin("zip")/"zip", "test.zip", "test1", "test2", "test3"
     end
     %w[test1 test2 test3].each do |f|
       rm f

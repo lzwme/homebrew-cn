@@ -7,12 +7,13 @@ class Stu < Formula
   head "https://github.com/lusingander/stu.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d065022392c7e2d23fb3077bb0f333dd6c3e8ab26bb9c752d8feb491e0ea8581"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b5409f487177a6e42b1759571eb091ee416a91f5800413dc4b8f1799b116e01a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "34fbfa7497c3f3d900ad72ab42ab7011a6238da60d92e2409ad3fcdf5ff81f3e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d3b3ec43700cd54dd558f539fe1ccd73bc73bb5d567c12f56367bbc442137a3c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "77e3cce2235ded9200c581494f98c6e339c9bf3ebf04e8ac3a3b948786d9a714"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6ec9ab241de817515a51fe4f92d51b0c36fd92c1f3b67e1db08970a45973c9c3"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "39f39214d3428989363f53cd101148800dffcaa7db1f54cb3c475b015c51d698"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "d065022392c7e2d23fb3077bb0f333dd6c3e8ab26bb9c752d8feb491e0ea8581"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "b5409f487177a6e42b1759571eb091ee416a91f5800413dc4b8f1799b116e01a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "34fbfa7497c3f3d900ad72ab42ab7011a6238da60d92e2409ad3fcdf5ff81f3e"
+    sha256 cellar: :any_skip_relocation, sonoma:            "d3b3ec43700cd54dd558f539fe1ccd73bc73bb5d567c12f56367bbc442137a3c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "77e3cce2235ded9200c581494f98c6e339c9bf3ebf04e8ac3a3b948786d9a714"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "6ec9ab241de817515a51fe4f92d51b0c36fd92c1f3b67e1db08970a45973c9c3"
   end
 
   depends_on "rust" => :build

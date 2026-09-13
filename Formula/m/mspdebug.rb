@@ -7,12 +7,13 @@ class Mspdebug < Formula
   head "https://github.com/dlbeer/mspdebug.git", branch: "master"
 
   bottle do
-    sha256                               arm64_tahoe:   "951ce1dd56ff8622c0ea45cdeb334e1e1cf4bcb592684e4c2a571621b91a763c"
-    sha256                               arm64_sequoia: "59160aae0981c9f56eba3a0cf4645dfc2cb806f6826d4f9c1dca33bfaf033104"
-    sha256                               arm64_sonoma:  "ba9363ad723663a76d36ea12cf2ff84d221d98d27bf0fc9a0cd3f963e29344eb"
-    sha256                               sonoma:        "249e03dfe230e9285a7f01f10998f9a9de49318ec5d34e6fe6084301bac623af"
-    sha256                               arm64_linux:   "37d7c174a32eef149e2fb86b166beacecae8aedd98c10c652a2ac39764db9bc2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b5d9d737369d456925430120592413c6e75c1318775bdbb0b0cc94d8be79f533"
+    sha256                               arm64_golden_gate: "d37f75d829c15bf1a0297eb0852d8c8e30026d40fb807e794811f888d4d748c5"
+    sha256                               arm64_tahoe:       "951ce1dd56ff8622c0ea45cdeb334e1e1cf4bcb592684e4c2a571621b91a763c"
+    sha256                               arm64_sequoia:     "59160aae0981c9f56eba3a0cf4645dfc2cb806f6826d4f9c1dca33bfaf033104"
+    sha256                               arm64_sonoma:      "ba9363ad723663a76d36ea12cf2ff84d221d98d27bf0fc9a0cd3f963e29344eb"
+    sha256                               sonoma:            "249e03dfe230e9285a7f01f10998f9a9de49318ec5d34e6fe6084301bac623af"
+    sha256                               arm64_linux:       "37d7c174a32eef149e2fb86b166beacecae8aedd98c10c652a2ac39764db9bc2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "b5d9d737369d456925430120592413c6e75c1318775bdbb0b0cc94d8be79f533"
   end
 
   depends_on "hidapi"

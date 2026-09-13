@@ -14,12 +14,13 @@ class Swftools < Formula
 
   bottle do
     rebuild 2
-    sha256 arm64_tahoe:   "31fb92ff926fc96545a474c61befc91c622e4cfc4651bfc73b05f2872e12a869"
-    sha256 arm64_sequoia: "42b6962749fa8b8cb8b7a7ddf8c4eb9fe6d184df6dd91e0935f4e64af47972cc"
-    sha256 arm64_sonoma:  "61eb8ad9f33f851da8b00500c356cb8187fba24bee4398e29e4e8b4292cf9d47"
-    sha256 sonoma:        "989fe21084bfc9b4e3e59e5d3ee792fd86fe00a79f32a91c741949e3f5ec9a14"
-    sha256 arm64_linux:   "01447110bbf520cc802aa349191b5cd017adfc47dfbcafd496de91919ac9097e"
-    sha256 x86_64_linux:  "d6d1fac5d61f11e3b4498b14483518f34e225689c287c1e1f9825ba7ea9ed23b"
+    sha256 arm64_golden_gate: "aceb6f343c98fb43784c5b183dd3a1645390b576a4173c71ce9dc740d9d6efcf"
+    sha256 arm64_tahoe:       "31fb92ff926fc96545a474c61befc91c622e4cfc4651bfc73b05f2872e12a869"
+    sha256 arm64_sequoia:     "42b6962749fa8b8cb8b7a7ddf8c4eb9fe6d184df6dd91e0935f4e64af47972cc"
+    sha256 arm64_sonoma:      "61eb8ad9f33f851da8b00500c356cb8187fba24bee4398e29e4e8b4292cf9d47"
+    sha256 sonoma:            "989fe21084bfc9b4e3e59e5d3ee792fd86fe00a79f32a91c741949e3f5ec9a14"
+    sha256 arm64_linux:       "01447110bbf520cc802aa349191b5cd017adfc47dfbcafd496de91919ac9097e"
+    sha256 x86_64_linux:      "d6d1fac5d61f11e3b4498b14483518f34e225689c287c1e1f9825ba7ea9ed23b"
   end
 
   on_linux do

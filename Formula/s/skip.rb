@@ -7,11 +7,12 @@ class Skip < Formula
   head "https://github.com/skiptools/skipstone.git", branch: "main"
 
   bottle do
-    sha256 arm64_tahoe:   "d63b9b76ebbf37adf9eeb0397440ab405291b73376e8118f238c36ddcff96691"
-    sha256 arm64_sequoia: "b7ec6595f98a2f891676aa9a0b46b3330edd87687dc3a9fe5f720d1a97d5c2e9"
-    sha256 arm64_sonoma:  "7519d0652345209433032d0b3f0185dda9c056f390e0ace2a4821814298ec015"
-    sha256 arm64_linux:   "27e94675a5c6978eaf0c745ef9211d767cbdf9c67a8f2cba63cf15552a53b2c0"
-    sha256 x86_64_linux:  "8fe164e607f9ef8fb26589b7199757e631a34ed3a3afadcf6d72cbd3617c05ad"
+    sha256 arm64_golden_gate: "f55ccbff387247ab3967abb242df9032838978aa50ac625ca4a456db9fedc971"
+    sha256 arm64_tahoe:       "d63b9b76ebbf37adf9eeb0397440ab405291b73376e8118f238c36ddcff96691"
+    sha256 arm64_sequoia:     "b7ec6595f98a2f891676aa9a0b46b3330edd87687dc3a9fe5f720d1a97d5c2e9"
+    sha256 arm64_sonoma:      "7519d0652345209433032d0b3f0185dda9c056f390e0ace2a4821814298ec015"
+    sha256 arm64_linux:       "27e94675a5c6978eaf0c745ef9211d767cbdf9c67a8f2cba63cf15552a53b2c0"
+    sha256 x86_64_linux:      "8fe164e607f9ef8fb26589b7199757e631a34ed3a3afadcf6d72cbd3617c05ad"
   end
 
   depends_on "gradle"

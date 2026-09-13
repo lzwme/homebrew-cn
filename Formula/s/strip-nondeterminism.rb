@@ -12,12 +12,13 @@ class StripNondeterminism < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e5617490e121fbfcfe36da186cf360283e68c32a79f84f2b968b8201665bd0c1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e5617490e121fbfcfe36da186cf360283e68c32a79f84f2b968b8201665bd0c1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e5617490e121fbfcfe36da186cf360283e68c32a79f84f2b968b8201665bd0c1"
-    sha256 cellar: :any_skip_relocation, sonoma:        "72f86521bfa1a5a6ef717e931233fbb05be094b7ec7422022c29c85b315af68a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "da0f43e5ea970635fadb6bbefc82f2d9cdc6d467eddd83ad385fba5f785846bc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a75128c656e8c8b5a75ec7c0a2947b32d75ff31c737588dc78ecd3a2ff6afaad"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "0aa3cc58db708b147873f552feadb2ec9b8eeaf4db55ddeac8e9f6eb8282ec2d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "e5617490e121fbfcfe36da186cf360283e68c32a79f84f2b968b8201665bd0c1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "e5617490e121fbfcfe36da186cf360283e68c32a79f84f2b968b8201665bd0c1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "e5617490e121fbfcfe36da186cf360283e68c32a79f84f2b968b8201665bd0c1"
+    sha256 cellar: :any_skip_relocation, sonoma:            "72f86521bfa1a5a6ef717e931233fbb05be094b7ec7422022c29c85b315af68a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "da0f43e5ea970635fadb6bbefc82f2d9cdc6d467eddd83ad385fba5f785846bc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "a75128c656e8c8b5a75ec7c0a2947b32d75ff31c737588dc78ecd3a2ff6afaad"
   end
 
   uses_from_macos "file-formula" => :test

@@ -11,12 +11,13 @@ class Lbdb < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b2120f8513be26847edc720538c984096ce0db0e578e72861da8bfe24e901193"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5fdebcd4e348d44fa5db0210b5cfeb7f8ccd991f20366f8cd6159ec3379889a1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c87f48b3bcc0a881dd88b442fe41ba82ca074b16e5fb3b2ecea2f8e84c33d46a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "95f58929f611fb23c2760e602fa24bd697ee4143806cf288997d15af850645fa"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a6e4f84e4507fc2466f448de00796e0b094fdebd9e1293186d44ce99427b680c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "141c0b2ca83409c152474550675f2e8da9ff5989855141abcba1a782c1fd0d7e"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "8f9625eb5fe3a9caa6f9363031413c14fbb2eedb9678466b69f44b4266988be4"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "b2120f8513be26847edc720538c984096ce0db0e578e72861da8bfe24e901193"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "5fdebcd4e348d44fa5db0210b5cfeb7f8ccd991f20366f8cd6159ec3379889a1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "c87f48b3bcc0a881dd88b442fe41ba82ca074b16e5fb3b2ecea2f8e84c33d46a"
+    sha256 cellar: :any_skip_relocation, sonoma:            "95f58929f611fb23c2760e602fa24bd697ee4143806cf288997d15af850645fa"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "a6e4f84e4507fc2466f448de00796e0b094fdebd9e1293186d44ce99427b680c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "141c0b2ca83409c152474550675f2e8da9ff5989855141abcba1a782c1fd0d7e"
   end
 
   depends_on "abook"

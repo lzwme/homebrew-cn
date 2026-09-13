@@ -7,12 +7,13 @@ class F3 < Formula
   head "https://github.com/AltraMayor/f3.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2a1fa8a2cbf80773e1709d368f4a2f245af846d30bb0b974d3bd4f491b9bc07c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "aadb9f85ba049cc4c33b3b6cbc8d11d075ef9d0f0c4e029d1344fb9f3c5609ab"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6ab3f249a7a4ec1e534f299595b305a54171a40d38ff2480b23447c17abd1647"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e6405ef2a75819cb1cf8833bd720a427f701dcf1c0efe9b5f2de36ac8f9a1daf"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a712312a15838a0c835f4602c7fc82217361fe660b5ff173eb7de202b92a89e1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6dfd032994b66f14f2df374fdd7eac61c68302e9359517de1e3423ed7f52a3c1"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "c0725ca7077ced38a59dc7b81bc0123aa427596afd76216fd6009470ecda26e5"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "2a1fa8a2cbf80773e1709d368f4a2f245af846d30bb0b974d3bd4f491b9bc07c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "aadb9f85ba049cc4c33b3b6cbc8d11d075ef9d0f0c4e029d1344fb9f3c5609ab"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "6ab3f249a7a4ec1e534f299595b305a54171a40d38ff2480b23447c17abd1647"
+    sha256 cellar: :any_skip_relocation, sonoma:            "e6405ef2a75819cb1cf8833bd720a427f701dcf1c0efe9b5f2de36ac8f9a1daf"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "a712312a15838a0c835f4602c7fc82217361fe660b5ff173eb7de202b92a89e1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "6dfd032994b66f14f2df374fdd7eac61c68302e9359517de1e3423ed7f52a3c1"
   end
 
   on_macos do

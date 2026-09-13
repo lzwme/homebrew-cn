@@ -39,8 +39,8 @@ class I686ElfGcc < Formula
                              "--disable-nls",
                              "--without-isl",
                              "--without-headers",
-                             "--with-as=#{Formula["i686-elf-binutils"].bin}/i686-elf-as",
-                             "--with-ld=#{Formula["i686-elf-binutils"].bin}/i686-elf-ld",
+                             "--with-as=#{formula_opt_bin("i686-elf-binutils")}/i686-elf-as",
+                             "--with-ld=#{formula_opt_bin("i686-elf-binutils")}/i686-elf-ld",
                              "--with-system-zlib",
                              "--enable-languages=c,c++"
       system "make", "all-gcc"
@@ -64,7 +64,7 @@ class I686ElfGcc < Formula
     C
 
     system bin/"i686-elf-gcc", "-c", "-o", "test-c.o", "test-c.c"
-    output = shell_output("#{Formula["i686-elf-binutils"].bin}/i686-elf-objdump -a test-c.o")
+    output = shell_output("#{formula_opt_bin("i686-elf-binutils")}/i686-elf-objdump -a test-c.o")
     assert_match "file format elf32-i386", output
   end
 end

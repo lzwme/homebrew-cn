@@ -8,12 +8,13 @@ class Lsyncd < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "18d2ce09504c0dd1d8ab201be9ef3196f4906a2926223d2b51efd3d666448fd3"
-    sha256 cellar: :any,                 arm64_sequoia: "eaffafdb4386a2998a8c76be07c21fa2a8ab16ed67a775ccd5f7098d6b9e7daa"
-    sha256 cellar: :any,                 arm64_sonoma:  "7471d4a519c409f40759205f6058e4bcf0fad3289dd0d3fd13e86fd6cc276243"
-    sha256 cellar: :any,                 sonoma:        "f078bb07533155c1ca980c3c1f1545790b1d49bc3208723776b3bc19e068e83d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d843b5de6cc97ad77fa3df196655fc4643fedf88c16bcdddd61c8dca2d134ebe"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0f469a4e9caafafadd1392475cf64b02bf2e84aa2dcdec1b1ddd7926249f07c6"
+    sha256 cellar: :any,                 arm64_golden_gate: "3c554abaebc3d6dcc0ab06a2189d8d4a893e48012b5e2236769e8c10864bf49b"
+    sha256 cellar: :any,                 arm64_tahoe:       "18d2ce09504c0dd1d8ab201be9ef3196f4906a2926223d2b51efd3d666448fd3"
+    sha256 cellar: :any,                 arm64_sequoia:     "eaffafdb4386a2998a8c76be07c21fa2a8ab16ed67a775ccd5f7098d6b9e7daa"
+    sha256 cellar: :any,                 arm64_sonoma:      "7471d4a519c409f40759205f6058e4bcf0fad3289dd0d3fd13e86fd6cc276243"
+    sha256 cellar: :any,                 sonoma:            "f078bb07533155c1ca980c3c1f1545790b1d49bc3208723776b3bc19e068e83d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "d843b5de6cc97ad77fa3df196655fc4643fedf88c16bcdddd61c8dca2d134ebe"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "0f469a4e9caafafadd1392475cf64b02bf2e84aa2dcdec1b1ddd7926249f07c6"
   end
 
   # https://github.com/lsyncd/lsyncd/issues/739

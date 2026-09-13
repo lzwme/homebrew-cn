@@ -13,12 +13,13 @@ class Clipboard < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "6747d2a87bd1aa59e30171c55e8c07dcd9d6a153c90c51e33e325a7e5361b5bd"
-    sha256 cellar: :any,                 arm64_sequoia: "21b61029176463f416d7d0c4e181c87c7ec0e6d52d1f1f6f3c7eeba61ce26d1b"
-    sha256 cellar: :any,                 arm64_sonoma:  "fad69c52a99d680964ba009eacf120896c87b262e708e30ded132894e33a6900"
-    sha256 cellar: :any,                 sonoma:        "197516a0ca09d8f459caf3d4ec519d26553a57525a49ae769fe0c56102c08c6e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "afd9f3678d529ba857fa5be81cc6e6b19949325f6e0c680417a57dcd4d9fe498"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bbafe6e2061bd73bb093e73edb1b5c1527fffc75c59b8384e14874d82ae109ee"
+    sha256 cellar: :any,                 arm64_golden_gate: "c41d59e3cf100f6fb6c26a1c725ab24c8db44d4859c8b542e8ac9e95595bf7ff"
+    sha256 cellar: :any,                 arm64_tahoe:       "6747d2a87bd1aa59e30171c55e8c07dcd9d6a153c90c51e33e325a7e5361b5bd"
+    sha256 cellar: :any,                 arm64_sequoia:     "21b61029176463f416d7d0c4e181c87c7ec0e6d52d1f1f6f3c7eeba61ce26d1b"
+    sha256 cellar: :any,                 arm64_sonoma:      "fad69c52a99d680964ba009eacf120896c87b262e708e30ded132894e33a6900"
+    sha256 cellar: :any,                 sonoma:            "197516a0ca09d8f459caf3d4ec519d26553a57525a49ae769fe0c56102c08c6e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "afd9f3678d529ba857fa5be81cc6e6b19949325f6e0c680417a57dcd4d9fe498"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "bbafe6e2061bd73bb093e73edb1b5c1527fffc75c59b8384e14874d82ae109ee"
   end
 
   depends_on "cmake" => :build

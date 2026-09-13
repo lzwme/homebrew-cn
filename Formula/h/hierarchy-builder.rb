@@ -25,7 +25,7 @@ class HierarchyBuilder < Formula
   depends_on "rocq-elpi"
 
   def install
-    ENV["OCAMLFIND_CONF"] = Formula["rocq-elpi"].libexec/"lib/findlib.conf"
+    ENV["OCAMLFIND_CONF"] = formula_opt_libexec("rocq-elpi")/"lib/findlib.conf"
     system "make", "build"
     system "make", "install", "COQLIB=#{lib}/ocaml/coq"
   end
@@ -51,8 +51,8 @@ class HierarchyBuilder < Formula
       Check forall (M : AddComoid.type) (x : M), x + x = 0.
     ROCQ
 
-    ENV["OCAMLFIND_CONF"] = Formula["rocq-elpi"].libexec/"lib/findlib.conf"
-    assert_equal <<~ROCQ, shell_output("#{Formula["rocq"].bin}/rocq compile test.v")
+    ENV["OCAMLFIND_CONF"] = formula_opt_libexec("rocq-elpi")/"lib/findlib.conf"
+    assert_equal <<~ROCQ, shell_output("#{formula_opt_bin("rocq")}/rocq compile test.v")
       forall (M : AddComoid.type) (x : M), x + x = 0
            : Prop
     ROCQ

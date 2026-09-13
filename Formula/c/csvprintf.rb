@@ -6,12 +6,13 @@ class Csvprintf < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e8093f20f2513417d1d07554b202666f40b039f639b7cc74de4410562ea112ac"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "81610eb3bb319cf45dcd4919a56bf75a12a88563fc0dbc81bf9a2fd91969914c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ea94b60237e1b83e202e309b85b90a9b6e373ac456a21876bc29cfe548c05b4e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "75cb3f9c5ad5c7ec334b55b5532912bb9330a67a84eff81ff14910c6ce9d2465"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "076afc7ab3bbc4c90947eb6abe349d61823f5f7be53c1a4fde016a3a2fd159b5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "03999433d566187074903db24761528aa1e32100ff1b7fbc5fc1701f8fd6c5f4"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "f3e619db2d62aee03bd0a09d7ea39223fa5d636c51b83ba09648d2138c2ab0bc"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "e8093f20f2513417d1d07554b202666f40b039f639b7cc74de4410562ea112ac"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "81610eb3bb319cf45dcd4919a56bf75a12a88563fc0dbc81bf9a2fd91969914c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "ea94b60237e1b83e202e309b85b90a9b6e373ac456a21876bc29cfe548c05b4e"
+    sha256 cellar: :any_skip_relocation, sonoma:            "75cb3f9c5ad5c7ec334b55b5532912bb9330a67a84eff81ff14910c6ce9d2465"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "076afc7ab3bbc4c90947eb6abe349d61823f5f7be53c1a4fde016a3a2fd159b5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "03999433d566187074903db24761528aa1e32100ff1b7fbc5fc1701f8fd6c5f4"
   end
 
   depends_on "autoconf" => :build

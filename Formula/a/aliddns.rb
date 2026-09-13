@@ -23,6 +23,8 @@ class Aliddns < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
   def install
     system "go", "build", "-mod=vendor", *std_go_args(ldflags: :goreleaser)
     pkgetc.install "aliddns.yaml"

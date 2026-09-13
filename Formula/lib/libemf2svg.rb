@@ -6,12 +6,13 @@ class Libemf2svg < Formula
   license "GPL-2.0-only"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "b097e6912f5088e54da1fd430b2dc6c990267cf5adeaef50027b6731d8850849"
-    sha256 cellar: :any,                 arm64_sequoia: "0e6713d4805a1b5de0ddbfc4bf67168cf81d8ed6ab93292e74f33cb39eeec34f"
-    sha256 cellar: :any,                 arm64_sonoma:  "3b929447d8efd14e896683ef6efaa7e9a90fbcc105353f2adb6e2f0c5b2ff0aa"
-    sha256 cellar: :any,                 sonoma:        "43ca789862051ce4d6f4efad49c7ad5a376c71db49c1af363d64848dd5ab652d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d5e0714ac651f7c10cf98b5d40c08996a731eb3c127d9f18738ce6096378f35d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "63881c05d28fbb48bb25d3aa7272d12524357cb69b4657862b24a17b36c13835"
+    sha256 cellar: :any,                 arm64_golden_gate: "0808cee809bc7f49632a2baa8f1cbcf5c008cbe44be1460c7e997987ed11d6a3"
+    sha256 cellar: :any,                 arm64_tahoe:       "b097e6912f5088e54da1fd430b2dc6c990267cf5adeaef50027b6731d8850849"
+    sha256 cellar: :any,                 arm64_sequoia:     "0e6713d4805a1b5de0ddbfc4bf67168cf81d8ed6ab93292e74f33cb39eeec34f"
+    sha256 cellar: :any,                 arm64_sonoma:      "3b929447d8efd14e896683ef6efaa7e9a90fbcc105353f2adb6e2f0c5b2ff0aa"
+    sha256 cellar: :any,                 sonoma:            "43ca789862051ce4d6f4efad49c7ad5a376c71db49c1af363d64848dd5ab652d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "d5e0714ac651f7c10cf98b5d40c08996a731eb3c127d9f18738ce6096378f35d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "63881c05d28fbb48bb25d3aa7272d12524357cb69b4657862b24a17b36c13835"
   end
 
   depends_on "cmake" => :build

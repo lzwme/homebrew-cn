@@ -6,12 +6,13 @@ class GatsbyCli < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5ec0da04fcc872c2f86669578e894eecaaa36f6d06dbf842fdae0459ac09ef77"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5ec0da04fcc872c2f86669578e894eecaaa36f6d06dbf842fdae0459ac09ef77"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5ec0da04fcc872c2f86669578e894eecaaa36f6d06dbf842fdae0459ac09ef77"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4282280166a175ed9b5df0c29549a697307c85e294a7a33f5cb4b74dd613c33e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6422a57c8317368134d02e4388b39783f9f3ceed917bae008d756d2610e06dd8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7f732a727f1571ef419773bcf65bbe98240f865746a749cf7740a6e791b10792"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "438421d6fb454040155f54ee16939badaa219285354ad4d5f6a4536cbc4b2c20"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "5ec0da04fcc872c2f86669578e894eecaaa36f6d06dbf842fdae0459ac09ef77"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "5ec0da04fcc872c2f86669578e894eecaaa36f6d06dbf842fdae0459ac09ef77"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "5ec0da04fcc872c2f86669578e894eecaaa36f6d06dbf842fdae0459ac09ef77"
+    sha256 cellar: :any_skip_relocation, sonoma:            "4282280166a175ed9b5df0c29549a697307c85e294a7a33f5cb4b74dd613c33e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "6422a57c8317368134d02e4388b39783f9f3ceed917bae008d756d2610e06dd8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "7f732a727f1571ef419773bcf65bbe98240f865746a749cf7740a6e791b10792"
   end
 
   depends_on "node"

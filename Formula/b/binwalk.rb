@@ -24,12 +24,13 @@ class Binwalk < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "80c4dfbfe2c50dcd3f11b76d393828aca82f80c95276d614c52678c444b74457"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2e02cd149f0d1ebfb784f2643048c13ca755370ee86d0b872dcfd8acce80f3b5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2e523d08d8abf564f4c2cdd4f3af8256c7673f97dee2e1bedcfe12d47e6b3879"
-    sha256 cellar: :any_skip_relocation, sonoma:        "50dc5e36ebd07c8b390e84fed31cc21219142550274fddb9a476246443ee86de"
-    sha256 cellar: :any,                 arm64_linux:   "2b768196bb7a654e79e96961c0b1c54498e9034e6c21e9082a18008da25a6bbd"
-    sha256 cellar: :any,                 x86_64_linux:  "f88d21e81013dfbd4446479d227d52b024402ab593c47f625326a9581b7d00fe"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "2eb21b73376a12ee7750e0acec8ca38162f9cbea8292718474b53a4bf1e1d26a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "80c4dfbfe2c50dcd3f11b76d393828aca82f80c95276d614c52678c444b74457"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "2e02cd149f0d1ebfb784f2643048c13ca755370ee86d0b872dcfd8acce80f3b5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "2e523d08d8abf564f4c2cdd4f3af8256c7673f97dee2e1bedcfe12d47e6b3879"
+    sha256 cellar: :any_skip_relocation, sonoma:            "50dc5e36ebd07c8b390e84fed31cc21219142550274fddb9a476246443ee86de"
+    sha256 cellar: :any,                 arm64_linux:       "2b768196bb7a654e79e96961c0b1c54498e9034e6c21e9082a18008da25a6bbd"
+    sha256 cellar: :any,                 x86_64_linux:      "f88d21e81013dfbd4446479d227d52b024402ab593c47f625326a9581b7d00fe"
   end
 
   depends_on "pkgconf" => :build

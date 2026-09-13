@@ -7,11 +7,12 @@ class AtomgitCli < Formula
   head "https://atomgit.com/hust-open-atom-club/atomgit-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "838d4615d5ade161264963e3afc7b4782a8882d0b951e733cff5cbf68a6f8630"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "838d4615d5ade161264963e3afc7b4782a8882d0b951e733cff5cbf68a6f8630"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "838d4615d5ade161264963e3afc7b4782a8882d0b951e733cff5cbf68a6f8630"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d614f5336262e89c16128ac076af37b3c4372af5dc44310d5c44d50cddea6e55"
-    sha256 cellar: :any,                 x86_64_linux:  "88895a76e781dab56dd597fbcfda980a4548b6e6a9bbd09b7fb97f94fe07eecd"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "1d4745eacc2426cba613628ff2f8116a710dd53abe4f64488732953f69b687bd"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "838d4615d5ade161264963e3afc7b4782a8882d0b951e733cff5cbf68a6f8630"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "838d4615d5ade161264963e3afc7b4782a8882d0b951e733cff5cbf68a6f8630"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "838d4615d5ade161264963e3afc7b4782a8882d0b951e733cff5cbf68a6f8630"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "d614f5336262e89c16128ac076af37b3c4372af5dc44310d5c44d50cddea6e55"
+    sha256 cellar: :any,                 x86_64_linux:      "88895a76e781dab56dd597fbcfda980a4548b6e6a9bbd09b7fb97f94fe07eecd"
   end
 
   depends_on "go" => :build

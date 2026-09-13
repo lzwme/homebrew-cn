@@ -9,12 +9,13 @@ class Sail < Formula
   revision 2
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "2383f54fd4b8de14976127547fefe0c7d975e69c95ef2a9b2ecd05467af2a58c"
-    sha256 cellar: :any,                 arm64_sequoia: "e6a1087021cac0648bb885adf3ae9198578ff75a1836cfd1d2df6fe801323ec3"
-    sha256 cellar: :any,                 arm64_sonoma:  "ee75bc60cc2c423f8fd62886dc9b996947b04b69cb53ec49e94849bc86333ff3"
-    sha256 cellar: :any,                 sonoma:        "6e94b89478f2ce9b73a5916d921bfe5e026b84dfcc22b310da9fcd9bf7b984b2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f667f9c3882a0b31f02298a71d658ddbab4334436bba68822c868c0b0c71c4c7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0949b302bcdcc51a96ec2f2882cd0bd2ce63634414dc9cf3f77e3369e37346f5"
+    sha256 cellar: :any,                 arm64_golden_gate: "1cb07fa6b8c7f71dfa02e9db5a7e964f2f573ff0d99a314983bfb223eea52cbc"
+    sha256 cellar: :any,                 arm64_tahoe:       "2383f54fd4b8de14976127547fefe0c7d975e69c95ef2a9b2ecd05467af2a58c"
+    sha256 cellar: :any,                 arm64_sequoia:     "e6a1087021cac0648bb885adf3ae9198578ff75a1836cfd1d2df6fe801323ec3"
+    sha256 cellar: :any,                 arm64_sonoma:      "ee75bc60cc2c423f8fd62886dc9b996947b04b69cb53ec49e94849bc86333ff3"
+    sha256 cellar: :any,                 sonoma:            "6e94b89478f2ce9b73a5916d921bfe5e026b84dfcc22b310da9fcd9bf7b984b2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "f667f9c3882a0b31f02298a71d658ddbab4334436bba68822c868c0b0c71c4c7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "0949b302bcdcc51a96ec2f2882cd0bd2ce63634414dc9cf3f77e3369e37346f5"
   end
 
   # `pkgconf` and `rust` are for bcrypt

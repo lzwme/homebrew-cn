@@ -6,11 +6,12 @@ class Fluxcd < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4d8b3fcb09183d3a8cd1961fba73d6d41097aa7f79c12e21f5a4695d6fb641ba"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5a4c2c6be6c8d88fc94809496e117bb71ba0d6e6a8932ab52a1ba087734faed7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "01de4113d17f1fd1ea6bda5e9d7f9d53afe066ac49a7fbd64a397c6dbe1b0d5d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2a0ddf9b31a12c8c90a0f3c08a4ac1fbf23d57b531f1b8de3b878f94e1e2c219"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8b7c0b8e75546510a8d7145b4f32db900a7d95be44cb139996e2a97d37b4f1e5"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "a8f7506b34b179ce2a1fc0e0d3dd41b199bdfa50051ac305cd6e9fafdb9b98d0"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "4d8b3fcb09183d3a8cd1961fba73d6d41097aa7f79c12e21f5a4695d6fb641ba"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "5a4c2c6be6c8d88fc94809496e117bb71ba0d6e6a8932ab52a1ba087734faed7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "01de4113d17f1fd1ea6bda5e9d7f9d53afe066ac49a7fbd64a397c6dbe1b0d5d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "2a0ddf9b31a12c8c90a0f3c08a4ac1fbf23d57b531f1b8de3b878f94e1e2c219"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "8b7c0b8e75546510a8d7145b4f32db900a7d95be44cb139996e2a97d37b4f1e5"
   end
 
   depends_on "go" => :build

@@ -7,12 +7,13 @@ class Clhep < Formula
   head "https://gitlab.cern.ch/CLHEP/CLHEP.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "cf183afa1e10e5cf5a22b0c8e56acd6dc3ee832cb38abc08c4f65ccc6d61be32"
-    sha256 cellar: :any,                 arm64_sequoia: "4d6bda58d173b42913d91dded7b7ad721b358260a8382934fafdb464cafbc786"
-    sha256 cellar: :any,                 arm64_sonoma:  "3645180de75c594150af1353381b28d732b2d75944a6110d67d4d9ae408de220"
-    sha256 cellar: :any,                 sonoma:        "820fbd323a9a40b44053ae03d2c0598df6d8d5b58fcefe07ff4dd1fdb4704d52"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cf31c521a79cc3bff39ab122f7ae26bbea6b4e5d5304df4420378a90ad7388ec"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "08488a8b36a245edbb41e6f91f84e8a264d6f4cf35fc1e0b89041bd37f3c44fd"
+    sha256 cellar: :any,                 arm64_golden_gate: "651ec44a2cdc6afd711df121ccb7d68181212aee0ec4c095b58c2f00bfa269e4"
+    sha256 cellar: :any,                 arm64_tahoe:       "cf183afa1e10e5cf5a22b0c8e56acd6dc3ee832cb38abc08c4f65ccc6d61be32"
+    sha256 cellar: :any,                 arm64_sequoia:     "4d6bda58d173b42913d91dded7b7ad721b358260a8382934fafdb464cafbc786"
+    sha256 cellar: :any,                 arm64_sonoma:      "3645180de75c594150af1353381b28d732b2d75944a6110d67d4d9ae408de220"
+    sha256 cellar: :any,                 sonoma:            "820fbd323a9a40b44053ae03d2c0598df6d8d5b58fcefe07ff4dd1fdb4704d52"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "cf31c521a79cc3bff39ab122f7ae26bbea6b4e5d5304df4420378a90ad7388ec"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "08488a8b36a245edbb41e6f91f84e8a264d6f4cf35fc1e0b89041bd37f3c44fd"
   end
 
   depends_on "cmake" => :build

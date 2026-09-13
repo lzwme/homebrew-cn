@@ -6,8 +6,9 @@ class Asccli < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "08761b55f86167151ff1207a0dda39546fe5ad6639c4fe7da33f5e1194aa0460"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6d729af4e0d4a679e29bfc89b3ad2f0e533a17ebb2eb3afe44e566f89329a643"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "2cb6f4f384d9ba0b6d976978f8ddfd9d0aa5d9aec15167500f56c03d9c3e404e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "08761b55f86167151ff1207a0dda39546fe5ad6639c4fe7da33f5e1194aa0460"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "6d729af4e0d4a679e29bfc89b3ad2f0e533a17ebb2eb3afe44e566f89329a643"
   end
 
   depends_on xcode: ["26.0", :build]

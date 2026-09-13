@@ -7,12 +7,13 @@ class Mapcrafter < Formula
   revision 17
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "dd44dccfe0adeed4db160301b2a776afeb3589ad30c39713e3d82c72b5cdeba5"
-    sha256 cellar: :any, arm64_sequoia: "ef540323a00f9c74a70826a6935af233177dbdbd3b91fd20553f7c8a4a1acd7f"
-    sha256 cellar: :any, arm64_sonoma:  "e5115bd315fd5a1dfd40c99430301b6b3d22df8f97c6e5de1e004a46ff655038"
-    sha256 cellar: :any, sonoma:        "92892602ca2e7adee1b1316e2ff91cf72f8ecc09eed5eed29a70c38f0488cc38"
-    sha256 cellar: :any, arm64_linux:   "b5d1108aeb9573c164dbf25ae5634d3d923562f80ef9cf5d53faa16e9f95bcbb"
-    sha256 cellar: :any, x86_64_linux:  "70f5bad7f52160393cf446487d7afd8046b7d6eaa0854c707c22bb6ce08b1100"
+    sha256 cellar: :any, arm64_golden_gate: "0b3a07ad1bd95bea54ff02c6409b39ba96d4af32d347483ecdcee6326cdb8ee4"
+    sha256 cellar: :any, arm64_tahoe:       "dd44dccfe0adeed4db160301b2a776afeb3589ad30c39713e3d82c72b5cdeba5"
+    sha256 cellar: :any, arm64_sequoia:     "ef540323a00f9c74a70826a6935af233177dbdbd3b91fd20553f7c8a4a1acd7f"
+    sha256 cellar: :any, arm64_sonoma:      "e5115bd315fd5a1dfd40c99430301b6b3d22df8f97c6e5de1e004a46ff655038"
+    sha256 cellar: :any, sonoma:            "92892602ca2e7adee1b1316e2ff91cf72f8ecc09eed5eed29a70c38f0488cc38"
+    sha256 cellar: :any, arm64_linux:       "b5d1108aeb9573c164dbf25ae5634d3d923562f80ef9cf5d53faa16e9f95bcbb"
+    sha256 cellar: :any, x86_64_linux:      "70f5bad7f52160393cf446487d7afd8046b7d6eaa0854c707c22bb6ce08b1100"
   end
 
   depends_on "cmake" => :build

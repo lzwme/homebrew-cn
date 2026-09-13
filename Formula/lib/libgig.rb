@@ -12,12 +12,13 @@ class Libgig < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "f94efc2b8cdb9cf3beb0a8337c7c078296d716b11539370ffe46976c8f535bea"
-    sha256 cellar: :any, arm64_sequoia: "f4ab7ec5a877be2262893bb08816621eb377e4f6269383dd5925ba2dcf797e91"
-    sha256 cellar: :any, arm64_sonoma:  "94b350a053af0f1be12bc095358d77672b17157dfe42683ade462c43a1c4ecbe"
-    sha256 cellar: :any, sonoma:        "cb37547e50b8b19db5092fb27129cb3ed1b4cff400a01b528d1e3f6f86833a1d"
-    sha256 cellar: :any, arm64_linux:   "caf93915776096983670a26eb38068b76ca31947376029a5b0aedff6833cd749"
-    sha256 cellar: :any, x86_64_linux:  "a4195ffd000dd6d3e1f86df6c1fafe809f8b9e9aeed1cc24c47761e339163608"
+    sha256 cellar: :any, arm64_golden_gate: "e6ec1e8f4811ea9a1519aef96fba86586b5303767ed0ff3ce186a877c553f373"
+    sha256 cellar: :any, arm64_tahoe:       "f94efc2b8cdb9cf3beb0a8337c7c078296d716b11539370ffe46976c8f535bea"
+    sha256 cellar: :any, arm64_sequoia:     "f4ab7ec5a877be2262893bb08816621eb377e4f6269383dd5925ba2dcf797e91"
+    sha256 cellar: :any, arm64_sonoma:      "94b350a053af0f1be12bc095358d77672b17157dfe42683ade462c43a1c4ecbe"
+    sha256 cellar: :any, sonoma:            "cb37547e50b8b19db5092fb27129cb3ed1b4cff400a01b528d1e3f6f86833a1d"
+    sha256 cellar: :any, arm64_linux:       "caf93915776096983670a26eb38068b76ca31947376029a5b0aedff6833cd749"
+    sha256 cellar: :any, x86_64_linux:      "a4195ffd000dd6d3e1f86df6c1fafe809f8b9e9aeed1cc24c47761e339163608"
   end
 
   depends_on "pkgconf" => :build

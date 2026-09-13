@@ -15,12 +15,13 @@ class Rubyfmt < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c196e389362aa426bac9f7b0c6edf06969eef6ffdc3a477b7671e24a05b98ef9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bed4c85a6140b97fbb79e66e7cbc45361e6588b33ee3f3f943ad229a0d1a115f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b409976d32163aae6e6154aa68b36c60ed32c89196c1258bca268382cfc965bd"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b886bb251833b6833016d78d916565c4e30684fd5713e828dd555099192f9693"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "59b08255cd21a49004288761f58550f6f75986af8938ea9af2b838eb1b97fec4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "46d538b0853be653e8c0f789d768a667b58a627fec9809ee4010de3cd71d15ff"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "900a9e8c743d0c1bccf9f369d1eb1904e76caefd319df4a1596232e365060ec6"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "c196e389362aa426bac9f7b0c6edf06969eef6ffdc3a477b7671e24a05b98ef9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "bed4c85a6140b97fbb79e66e7cbc45361e6588b33ee3f3f943ad229a0d1a115f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "b409976d32163aae6e6154aa68b36c60ed32c89196c1258bca268382cfc965bd"
+    sha256 cellar: :any_skip_relocation, sonoma:            "b886bb251833b6833016d78d916565c4e30684fd5713e828dd555099192f9693"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "59b08255cd21a49004288761f58550f6f75986af8938ea9af2b838eb1b97fec4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "46d538b0853be653e8c0f789d768a667b58a627fec9809ee4010de3cd71d15ff"
   end
 
   depends_on "rust" => :build

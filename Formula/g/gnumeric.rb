@@ -7,12 +7,13 @@ class Gnumeric < Formula
   revision 1
 
   bottle do
-    sha256               arm64_tahoe:   "185a10ff6b71eddff3a7ef066fa3839888313baff6c52fb42c24a1fa3b3715a1"
-    sha256               arm64_sequoia: "e1eba1be100c19271bd98cfd5db380b7505ede9e3342eac2fe0aba2474837cac"
-    sha256               arm64_sonoma:  "a3fec678565a90976b37a461ae3d23cef37440c779d1ef3f1483739e625b1ea8"
-    sha256               sonoma:        "dd54c441ba904ababfb55f439a5aee6847cd3e439441f2baa5649d83908cc725"
-    sha256               arm64_linux:   "9611234aeac06085b44c798ebe41887e3bb348981bc8b25ea68e680680b31ac2"
-    sha256 cellar: :any, x86_64_linux:  "2cd14049194a54b15501d4ef96c54e87fff5306df243f01074fc84068e3931cd"
+    sha256               arm64_golden_gate: "7d296e414b70f998377e9d4418e2553b53277062ba304e2fb203a1358136ab75"
+    sha256               arm64_tahoe:       "185a10ff6b71eddff3a7ef066fa3839888313baff6c52fb42c24a1fa3b3715a1"
+    sha256               arm64_sequoia:     "e1eba1be100c19271bd98cfd5db380b7505ede9e3342eac2fe0aba2474837cac"
+    sha256               arm64_sonoma:      "a3fec678565a90976b37a461ae3d23cef37440c779d1ef3f1483739e625b1ea8"
+    sha256               sonoma:            "dd54c441ba904ababfb55f439a5aee6847cd3e439441f2baa5649d83908cc725"
+    sha256               arm64_linux:       "9611234aeac06085b44c798ebe41887e3bb348981bc8b25ea68e680680b31ac2"
+    sha256 cellar: :any, x86_64_linux:      "2cd14049194a54b15501d4ef96c54e87fff5306df243f01074fc84068e3931cd"
   end
 
   depends_on "gettext" => :build

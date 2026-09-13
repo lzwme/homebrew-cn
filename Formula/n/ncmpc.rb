@@ -11,12 +11,13 @@ class Ncmpc < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "01f27e1ff0a2f605890c0173ad0b85a898c8d6a51596d5be1dd2e89fc485d9c3"
-    sha256 arm64_sequoia: "945ee2a8f5973177f18a5b99802874d267edb9babc287b2b5620d3d24fc6efb0"
-    sha256 arm64_sonoma:  "98abc7f9c86e2b88b2f0bc3b31acfe469819d2239206630084fa2baebba5f522"
-    sha256 sonoma:        "b29421ee05719bc3ff95bee08d23a9536a05287d2beef8dcdadb75cfdfe90b28"
-    sha256 arm64_linux:   "190d8bd3e1cf22bf5b4dcb3f652aadc20f0f69a010a784a3f30a2adc5ca3974f"
-    sha256 x86_64_linux:  "b206451d9cd88eb6487f0483c8bee838331619bc2c5e6eec8b41222ce6132337"
+    sha256 arm64_golden_gate: "1948835f8c2a1833c7acd1ce84bd2b33a63254b9481c271311c93d53eefdc9a2"
+    sha256 arm64_tahoe:       "01f27e1ff0a2f605890c0173ad0b85a898c8d6a51596d5be1dd2e89fc485d9c3"
+    sha256 arm64_sequoia:     "945ee2a8f5973177f18a5b99802874d267edb9babc287b2b5620d3d24fc6efb0"
+    sha256 arm64_sonoma:      "98abc7f9c86e2b88b2f0bc3b31acfe469819d2239206630084fa2baebba5f522"
+    sha256 sonoma:            "b29421ee05719bc3ff95bee08d23a9536a05287d2beef8dcdadb75cfdfe90b28"
+    sha256 arm64_linux:       "190d8bd3e1cf22bf5b4dcb3f652aadc20f0f69a010a784a3f30a2adc5ca3974f"
+    sha256 x86_64_linux:      "b206451d9cd88eb6487f0483c8bee838331619bc2c5e6eec8b41222ce6132337"
   end
 
   depends_on "boost" => :build

@@ -7,12 +7,13 @@ class DockerCredentialHelper < Formula
   head "https://github.com/docker/docker-credential-helpers.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e1f2b9df2f877b82cc94eb108e0c571fb5c15d25634d87a5f41f55c565ecdc49"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1eb6df2deb246569aa8da54330d1f539411f8264f11221237716c243ef2f3c0b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8a3c8d4e28230bff49b7eac0d8a846237eeb4114a5a17071ed07cbc2d9c356fe"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ca94062370907762a924ed68326fae59904e487127e717c12911234fcac9fd9c"
-    sha256 cellar: :any,                 arm64_linux:   "ad283b7ad070c990dc53302d0bb647efabce85e83b6172dfd13f3934ea9d0977"
-    sha256 cellar: :any,                 x86_64_linux:  "981759826b7020ab3638bd4d945bf85c7d3c65dd1e30da1e650bc540239700f9"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "c4fcb0c6ef7cf83a04eccaf2a0bfe33937e5b1ba498d07a4f2c9103b961a5473"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "e1f2b9df2f877b82cc94eb108e0c571fb5c15d25634d87a5f41f55c565ecdc49"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "1eb6df2deb246569aa8da54330d1f539411f8264f11221237716c243ef2f3c0b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "8a3c8d4e28230bff49b7eac0d8a846237eeb4114a5a17071ed07cbc2d9c356fe"
+    sha256 cellar: :any_skip_relocation, sonoma:            "ca94062370907762a924ed68326fae59904e487127e717c12911234fcac9fd9c"
+    sha256 cellar: :any,                 arm64_linux:       "ad283b7ad070c990dc53302d0bb647efabce85e83b6172dfd13f3934ea9d0977"
+    sha256 cellar: :any,                 x86_64_linux:      "981759826b7020ab3638bd4d945bf85c7d3c65dd1e30da1e650bc540239700f9"
   end
 
   depends_on "go" => :build

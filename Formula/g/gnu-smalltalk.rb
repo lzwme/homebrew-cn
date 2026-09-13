@@ -5,7 +5,7 @@ class GnuSmalltalk < Formula
   revision 10
 
   stable do
-    url "https://ftpmirror.gnu.org/gnu/smalltalk/smalltalk-3.2.5.tar.xz"
+    url "https://ftpmirror.gnu.org/smalltalk/smalltalk-3.2.5.tar.xz"
     mirror "https://ftp.gnu.org/gnu/smalltalk/smalltalk-3.2.5.tar.xz"
     sha256 "819a15f7ba8a1b55f5f60b9c9a58badd6f6153b3f987b70e7b167e7755d65acc"
 
@@ -18,13 +18,12 @@ class GnuSmalltalk < Formula
   end
 
   bottle do
-    rebuild 3
-    sha256 arm64_tahoe:   "0b4242a4f666b10130804e15b8ac1cb06db8ca8c2dce4b3ff22809b27e3bed03"
-    sha256 arm64_sequoia: "baa1b37e3cc684dae9fa2bec7372228339adfc3c775a95ce93553f72249d9516"
-    sha256 arm64_sonoma:  "29864f96663e3b39da8d1b27e896ccf7d76921dea8a950a155b8a931f49a1ef3"
-    sha256 sonoma:        "8153d28cbf7150c2c8f5067f37f8ff9a0fe6c2dcfda627d3838fd02130ca0b3c"
-    sha256 arm64_linux:   "0c98372d450e874686423037537b0be9f07793cb285b8e63b7d5ab5318354b02"
-    sha256 x86_64_linux:  "e4cbaebdce96bc94f1fe18569515079f6c6e370146805bb04a6e4bbc7e19a331"
+    rebuild 4
+    sha256 arm64_golden_gate: "946911395ee208cc47695bd6451fe03afcd4619657b15ee3154f4c72fe55fc35"
+    sha256 arm64_tahoe:       "1935af530752ba55c1e8bf8f78fb342ef198ef1b5341c1513b7455965a471f1b"
+    sha256 arm64_sequoia:     "06e05353ca26a07e110fcebac0fb9276ce3ba2a5db94460e427b4faa4bbdff24"
+    sha256 arm64_linux:       "63970f55e4a310e87ef69229c1697d9d86e36eef66ee206de490ab36e436e648"
+    sha256 x86_64_linux:      "b368bc7382d041b256856c7cdb6335f640f20931c925386cf672563e308cdb6b"
   end
 
   head do
@@ -70,6 +69,8 @@ class GnuSmalltalk < Formula
       --without-x
     ]
 
+    # K&R function definitions in the bundled getopt are invalid in the C23 default that autoconf 2.73 picks
+    ENV["ac_cv_prog_cc_c23"] = "no"
     system "autoreconf", "--force", "--install", "--verbose"
     system "./configure", *args, *std_configure_args
     ENV.deparallelize if build.head?

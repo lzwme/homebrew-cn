@@ -7,12 +7,13 @@ class Direvent < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2e8fb05e4952c404bca7747763e5b89306e2d5798c34ebc0d529839b8d8c84f8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4bd9c561ab944e4e65c9038a8633e10fb565c7142a4eda3b2ffbf80f2e428ae1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2cbf030c671bac1317b108fd1f1f2c129f2d4f14e45a1617f863c1961ff40d8e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7e852aae83bb1ea9c260a98780c04e5b3374b953de7a3ac43c397f8b34458b1d"
-    sha256                               arm64_linux:   "f655eb398b490fe9a373fecbbebec19b828093af0436b4d815ec820ce4e6d15c"
-    sha256                               x86_64_linux:  "8a840cfc3743fa20d287a10da4b552b5c445f5d52152972c3a32a600dbc53378"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "d21c442d44f1873ad4a40440f9175f3a82e231512106496e2df970c358d78ebc"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "2e8fb05e4952c404bca7747763e5b89306e2d5798c34ebc0d529839b8d8c84f8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "4bd9c561ab944e4e65c9038a8633e10fb565c7142a4eda3b2ffbf80f2e428ae1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "2cbf030c671bac1317b108fd1f1f2c129f2d4f14e45a1617f863c1961ff40d8e"
+    sha256 cellar: :any_skip_relocation, sonoma:            "7e852aae83bb1ea9c260a98780c04e5b3374b953de7a3ac43c397f8b34458b1d"
+    sha256                               arm64_linux:       "f655eb398b490fe9a373fecbbebec19b828093af0436b4d815ec820ce4e6d15c"
+    sha256                               x86_64_linux:      "8a840cfc3743fa20d287a10da4b552b5c445f5d52152972c3a32a600dbc53378"
   end
 
   # Fix macOS build: clock_nanosleep/TIMER_ABSTIME are unavailable.

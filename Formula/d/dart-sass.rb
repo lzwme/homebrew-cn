@@ -12,10 +12,11 @@ class DartSass < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "1bbfd1c2c8b57e50fea82aed6b304c253591c3179833082a9bb1ef7b516757db"
-    sha256 cellar: :any,                 arm64_sequoia: "05f014133523ace00850f24fe96d99425bf9e7a9bae2a20258759900039eea21"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "80e78f21336ddeebab779a94a176e8a4d6bab139e8a7019ecd8dfebffb05d23d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4a7bf93fde78dc342c748980d269806d17b3d974d2255d72e81fe95883507a21"
+    sha256 cellar: :any,                 arm64_golden_gate: "da04f2e9110a3fb3638ce8f92625f9a927f88e684f4ded4f344e13f387f6581f"
+    sha256 cellar: :any,                 arm64_tahoe:       "1bbfd1c2c8b57e50fea82aed6b304c253591c3179833082a9bb1ef7b516757db"
+    sha256 cellar: :any,                 arm64_sequoia:     "05f014133523ace00850f24fe96d99425bf9e7a9bae2a20258759900039eea21"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "80e78f21336ddeebab779a94a176e8a4d6bab139e8a7019ecd8dfebffb05d23d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "4a7bf93fde78dc342c748980d269806d17b3d974d2255d72e81fe95883507a21"
   end
 
   depends_on "buf" => :build

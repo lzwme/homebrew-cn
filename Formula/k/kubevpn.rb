@@ -18,8 +18,8 @@ class Kubevpn < Formula
   depends_on "go" => :build
 
   def install
-    goos = Utils.safe_popen_read("#{Formula["go"].bin}/go", "env", "GOOS").chomp
-    goarch = Utils.safe_popen_read("#{Formula["go"].bin}/go", "env", "GOARCH").chomp
+    goos = Utils.safe_popen_read("#{formula_opt_bin("go")}/go", "env", "GOOS").chomp
+    goarch = Utils.safe_popen_read("#{formula_opt_bin("go")}/go", "env", "GOARCH").chomp
     project = "github.com/wencaiwulue/kubevpn/v2"
     ldflags = %W[
       -X #{project}/pkg/config.Image=ghcr.io/kubenetworks/kubevpn:v#{version}

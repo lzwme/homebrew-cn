@@ -12,12 +12,13 @@ class KubernetesCliAT135 < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d0ff2018ac224d639a5313f448c9d6101209bea3f0ca6fa4281e4cedbd1b6624"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0bec2f8f84038e996263b3f51fc56e45cb5b4ecfefa4dd406e95b0b04f9709b6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "54f9fa2302ef2ee2c723960f06b790edd8e4a594ba6443f6115ae48ce50bfeda"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7b8507c5a268f797eedc38e585121aacd72cc9e2344db26b6141c243c30a9979"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "930814bb286f87940bf7c957aff0404410f712876753d2618ccc329f4bc64a4e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a0f76fb2d12fac891521adde8981cdb11e4e3acb46e130b2d0536b5baccb2002"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "e66a72913d79fb3a2b8acc6f9bb85dbdeca9d069ad4d382e5a17703ea00c3731"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "d0ff2018ac224d639a5313f448c9d6101209bea3f0ca6fa4281e4cedbd1b6624"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "0bec2f8f84038e996263b3f51fc56e45cb5b4ecfefa4dd406e95b0b04f9709b6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "54f9fa2302ef2ee2c723960f06b790edd8e4a594ba6443f6115ae48ce50bfeda"
+    sha256 cellar: :any_skip_relocation, sonoma:            "7b8507c5a268f797eedc38e585121aacd72cc9e2344db26b6141c243c30a9979"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "930814bb286f87940bf7c957aff0404410f712876753d2618ccc329f4bc64a4e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "a0f76fb2d12fac891521adde8981cdb11e4e3acb46e130b2d0536b5baccb2002"
   end
 
   keg_only :versioned_formula
@@ -33,7 +34,7 @@ class KubernetesCliAT135 < Formula
   end
 
   def install
-    ENV.prepend_path "PATH", Formula["coreutils"].libexec/"gnubin" if OS.mac? # needs GNU date
+    ENV.prepend_path "PATH", formula_opt_libexec("coreutils")/"gnubin" if OS.mac? # needs GNU date
     ENV["FORCE_HOST_GO"] = "1"
     system "make", "WHAT=cmd/kubectl"
     bin.install "_output/bin/kubectl"

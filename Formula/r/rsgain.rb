@@ -7,11 +7,12 @@ class Rsgain < Formula
   head "https://github.com/complexlogic/rsgain.git", branch: "master"
 
   bottle do
-    sha256               arm64_tahoe:   "41a574f2dfab8c882de7d84a70590036aa529ca1c4c7dc48c227c715e8049589"
-    sha256               arm64_sequoia: "0470e68a04fe0bfbefdcaef840270b545f326bf4696f471dbc71cc39f3a77caa"
-    sha256               arm64_sonoma:  "74f08fa56fed157e75841a1f096e762488ccb7ed265a0a9696a20e5516b37b2d"
-    sha256               arm64_linux:   "16f4e3bcf9d5194304640023e6363b4071d41e409c08c4702ae07320f7730f40"
-    sha256 cellar: :any, x86_64_linux:  "51a4178344c7a68a466fbba2d510822de8cff13254282d50eb3a3c5b7f83ddef"
+    sha256               arm64_golden_gate: "f045e22f8ccd6a14e0009433317dcdd86c4e84d07ed6007c07cde5cc21716eea"
+    sha256               arm64_tahoe:       "41a574f2dfab8c882de7d84a70590036aa529ca1c4c7dc48c227c715e8049589"
+    sha256               arm64_sequoia:     "0470e68a04fe0bfbefdcaef840270b545f326bf4696f471dbc71cc39f3a77caa"
+    sha256               arm64_sonoma:      "74f08fa56fed157e75841a1f096e762488ccb7ed265a0a9696a20e5516b37b2d"
+    sha256               arm64_linux:       "16f4e3bcf9d5194304640023e6363b4071d41e409c08c4702ae07320f7730f40"
+    sha256 cellar: :any, x86_64_linux:      "51a4178344c7a68a466fbba2d510822de8cff13254282d50eb3a3c5b7f83ddef"
   end
 
   depends_on "cmake" => :build

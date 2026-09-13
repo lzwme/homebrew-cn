@@ -7,14 +7,15 @@ class LsLint < Formula
   head "https://github.com/loeffel-io/ls-lint.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "06365825df0600e2300aa56c33ab9f3631554110210f5bf4f38e6b28543de96a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "172e96e228cb48828fb773cdf48c36ecbf194ef62334733deddb4ec6bdb7ef4a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "172e96e228cb48828fb773cdf48c36ecbf194ef62334733deddb4ec6bdb7ef4a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "172e96e228cb48828fb773cdf48c36ecbf194ef62334733deddb4ec6bdb7ef4a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4621cde237fbfb8c5dbcab5049a667d6f096e805672641c3951e7ab560e6036f"
-    sha256 cellar: :any_skip_relocation, ventura:       "4621cde237fbfb8c5dbcab5049a667d6f096e805672641c3951e7ab560e6036f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7e03ffa79c655f478d360cb192f0290677f4372b5e323f712a13687c87582aea"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "166d12ed28cae04a36a99d4cb75b71092e0aa7e6d7bd109a17556379381412e4"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "2cae830c9f2921180c609ea0d40315d307fd48af434578de1aeb53977c3dcaac"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "06365825df0600e2300aa56c33ab9f3631554110210f5bf4f38e6b28543de96a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "172e96e228cb48828fb773cdf48c36ecbf194ef62334733deddb4ec6bdb7ef4a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "172e96e228cb48828fb773cdf48c36ecbf194ef62334733deddb4ec6bdb7ef4a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:     "172e96e228cb48828fb773cdf48c36ecbf194ef62334733deddb4ec6bdb7ef4a"
+    sha256 cellar: :any_skip_relocation, sonoma:            "4621cde237fbfb8c5dbcab5049a667d6f096e805672641c3951e7ab560e6036f"
+    sha256 cellar: :any_skip_relocation, ventura:           "4621cde237fbfb8c5dbcab5049a667d6f096e805672641c3951e7ab560e6036f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "7e03ffa79c655f478d360cb192f0290677f4372b5e323f712a13687c87582aea"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "166d12ed28cae04a36a99d4cb75b71092e0aa7e6d7bd109a17556379381412e4"
   end
 
   depends_on "go" => :build

@@ -7,12 +7,13 @@ class Rqbit < Formula
   head "https://github.com/ikatson/rqbit.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4dca7d2cd2f280e9faf40def0976b4af3376ccf0fa55a97542825fbb92b22d14"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5e2f6c877977e8cf35fe3d594b2765f1c32e74574b5e93df44f59519cc787427"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5140af1afa446f83e16b442e21b4c8e7c2719978ab93d277594e0fffef3c030f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a6ddf1439b0d0d2c817e05e56783995efc31b2a82eab0cfe3eb20e5d2996fec6"
-    sha256 cellar: :any,                 arm64_linux:   "68a70796b2f168200ea6f0f819a83c00978304ccc6c435453bb26582df07b1e9"
-    sha256 cellar: :any,                 x86_64_linux:  "19cf681f97b552aff7540b3c156264c59329182dbbb3d4fa0d3f74c168608188"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "2926fe475c67856d43161fce3569ed56d888742a6a5b711f9bf03c77e8fb6d86"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "4dca7d2cd2f280e9faf40def0976b4af3376ccf0fa55a97542825fbb92b22d14"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "5e2f6c877977e8cf35fe3d594b2765f1c32e74574b5e93df44f59519cc787427"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "5140af1afa446f83e16b442e21b4c8e7c2719978ab93d277594e0fffef3c030f"
+    sha256 cellar: :any_skip_relocation, sonoma:            "a6ddf1439b0d0d2c817e05e56783995efc31b2a82eab0cfe3eb20e5d2996fec6"
+    sha256 cellar: :any,                 arm64_linux:       "68a70796b2f168200ea6f0f819a83c00978304ccc6c435453bb26582df07b1e9"
+    sha256 cellar: :any,                 x86_64_linux:      "19cf681f97b552aff7540b3c156264c59329182dbbb3d4fa0d3f74c168608188"
   end
 
   depends_on "node" => :build

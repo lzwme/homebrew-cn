@@ -23,6 +23,8 @@ class Haxe < Formula
     sha256               x86_64_linux:  "eee285b19a15c09532b6eec072ac2d501e7c6ccdea0e1df8e3ecf3e1758769ec"
   end
 
+  deprecate! date: "2027-03-31", because: "needs EOL `mbedtls@3`"
+
   depends_on "ocaml" => :build
   depends_on "opam" => :build
   depends_on "pkgconf" => :build

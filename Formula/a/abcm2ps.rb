@@ -30,8 +30,8 @@ class Abcm2ps < Formula
 
   def install
     if OS.mac?
-      ENV.prepend_path "PATH", Formula["gnu-sed"].libexec/"gnubin"
-      ENV.prepend_path "PATH", Formula["coreutils"].libexec/"gnubin"
+      ENV.prepend_path "PATH", formula_opt_libexec("gnu-sed")/"gnubin"
+      ENV.prepend_path "PATH", formula_opt_libexec("coreutils")/"gnubin"
     end
 
     system "./configure", "--prefix=#{prefix}"

@@ -82,12 +82,13 @@ class Creduce < Formula
 
   bottle do
     rebuild 2
-    sha256 cellar: :any, arm64_tahoe:   "76e18543f131c54b6c861c2cca96cf026c5633bdf6bc00dbe44332ff01d3d917"
-    sha256 cellar: :any, arm64_sequoia: "26320842d4a1e06aae66d7d760b0cf236539e96f4b01e776779555939967c3e6"
-    sha256 cellar: :any, arm64_sonoma:  "1a83910ebfb3ecd7f1f7b077a64f2970443a66e27f859be80fd49e0834f7c17b"
-    sha256 cellar: :any, sonoma:        "36a01943ed75d695d0ccdd0ba356ed459063f3f3034ef4adf304f366d70d5eab"
-    sha256 cellar: :any, arm64_linux:   "769faeb55d286c19d9cc1147d7498a4dc9452f75e4afa7fd69da2a2569114f7f"
-    sha256 cellar: :any, x86_64_linux:  "b737eaec95ad2dcdfcd9c6a42bbe2234f3168136335f6aedde1f0deef1254af7"
+    sha256 cellar: :any, arm64_golden_gate: "096bef3ceffea0fa2cbcd931d047d69bed6871c1498e301d343adbd700238300"
+    sha256 cellar: :any, arm64_tahoe:       "76e18543f131c54b6c861c2cca96cf026c5633bdf6bc00dbe44332ff01d3d917"
+    sha256 cellar: :any, arm64_sequoia:     "26320842d4a1e06aae66d7d760b0cf236539e96f4b01e776779555939967c3e6"
+    sha256 cellar: :any, arm64_sonoma:      "1a83910ebfb3ecd7f1f7b077a64f2970443a66e27f859be80fd49e0834f7c17b"
+    sha256 cellar: :any, sonoma:            "36a01943ed75d695d0ccdd0ba356ed459063f3f3034ef4adf304f366d70d5eab"
+    sha256 cellar: :any, arm64_linux:       "769faeb55d286c19d9cc1147d7498a4dc9452f75e4afa7fd69da2a2569114f7f"
+    sha256 cellar: :any, x86_64_linux:      "b737eaec95ad2dcdfcd9c6a42bbe2234f3168136335f6aedde1f0deef1254af7"
   end
 
   # Last release on 2019-05-13 with only LLVM 14 support.

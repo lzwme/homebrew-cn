@@ -12,12 +12,13 @@ class Testdisk < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e329a6e62f3a3a45d211f502f2d9286e1f33740bae6b63777166f18b2051138c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "eab017ff1b655d0013b12559928b9fd7ed92605a448c8a460e5432ebc3cef380"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1a3bc8238eebd4b4937d900bb715224978923a54918f2dc04346ba90acc71895"
-    sha256 cellar: :any_skip_relocation, sonoma:        "381c8a908f2ed4becfa397a6115690108a5e830a331c2def84b7e2f774bf25f1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "46e93192d84e0d2321b54d436b1cae92a578b30a062a117ee19184ca1fdf8942"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "89f05af94ead3d6dacecac6bab3ecbf64fcb3b3147504a1018a620134d211e53"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "97270a347d3cb25912efdb87b122790f6ce0863983655f43697057bb416edf12"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "e329a6e62f3a3a45d211f502f2d9286e1f33740bae6b63777166f18b2051138c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "eab017ff1b655d0013b12559928b9fd7ed92605a448c8a460e5432ebc3cef380"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "1a3bc8238eebd4b4937d900bb715224978923a54918f2dc04346ba90acc71895"
+    sha256 cellar: :any_skip_relocation, sonoma:            "381c8a908f2ed4becfa397a6115690108a5e830a331c2def84b7e2f774bf25f1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "46e93192d84e0d2321b54d436b1cae92a578b30a062a117ee19184ca1fdf8942"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "89f05af94ead3d6dacecac6bab3ecbf64fcb3b3147504a1018a620134d211e53"
   end
 
   uses_from_macos "ncurses"

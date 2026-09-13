@@ -11,12 +11,13 @@ class Libtickit < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "f22fdb55d11dfa484d90767cf3f07c18f5ccdcff5daa6fab016f057954b6d2d5"
-    sha256 cellar: :any,                 arm64_sequoia: "50d992c4b4e54c4396fe26f3b103d48266caca33b703d26be6c98b8aa7c34b82"
-    sha256 cellar: :any,                 arm64_sonoma:  "0a29fb103a60635fd92d5b61aeb3880771391543a248bf739db0f2eabb96129a"
-    sha256 cellar: :any,                 sonoma:        "eb3af7695420dac55df6c001b7ad33499becbb371a36771fd593bffb70142235"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c22c2e1fd63e4adc972310f520678704db6518963f9b44dd36dcbbb3bf8351fb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "827aef929dfb62b502d153fb1bc6b94459cecc4c760eb6607a244d46bed32d66"
+    sha256 cellar: :any,                 arm64_golden_gate: "0c57be2aa924604d99ad81a73f3b5c259d3f841f5011c2c081aade0be1bf7165"
+    sha256 cellar: :any,                 arm64_tahoe:       "f22fdb55d11dfa484d90767cf3f07c18f5ccdcff5daa6fab016f057954b6d2d5"
+    sha256 cellar: :any,                 arm64_sequoia:     "50d992c4b4e54c4396fe26f3b103d48266caca33b703d26be6c98b8aa7c34b82"
+    sha256 cellar: :any,                 arm64_sonoma:      "0a29fb103a60635fd92d5b61aeb3880771391543a248bf739db0f2eabb96129a"
+    sha256 cellar: :any,                 sonoma:            "eb3af7695420dac55df6c001b7ad33499becbb371a36771fd593bffb70142235"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "c22c2e1fd63e4adc972310f520678704db6518963f9b44dd36dcbbb3bf8351fb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "827aef929dfb62b502d153fb1bc6b94459cecc4c760eb6607a244d46bed32d66"
   end
 
   depends_on "libtool" => :build

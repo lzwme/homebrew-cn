@@ -7,11 +7,12 @@ class Slowhttptest < Formula
   head "https://github.com/shekyan/slowhttptest.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "1c19b284bf057656fd5c6c6743493b1d06571ca5badcfb83229ca57de7d12324"
-    sha256 cellar: :any, arm64_sequoia: "1ab4364c0107dcc24d4dcbd0198b1c6da3a4e8acdadae31b829cf0660d1733d7"
-    sha256 cellar: :any, arm64_sonoma:  "13547730d4662201ed4169a552f67f82587de2ce2a1ff5baf01f9afedca01bda"
-    sha256 cellar: :any, arm64_linux:   "27ecf68b6805caf1b8630d77c60b8ef1715770cf391c70526cab364e616b5d63"
-    sha256 cellar: :any, x86_64_linux:  "bfbe8efd92510eb7d3a57eb3a9e3ef55ffe3e14995537c7a1afe5c291fa074ce"
+    sha256 cellar: :any, arm64_golden_gate: "a1badc963312bc7914fba98612947774cbdcaa3e74690d7c9c2db5c56cc09176"
+    sha256 cellar: :any, arm64_tahoe:       "1c19b284bf057656fd5c6c6743493b1d06571ca5badcfb83229ca57de7d12324"
+    sha256 cellar: :any, arm64_sequoia:     "1ab4364c0107dcc24d4dcbd0198b1c6da3a4e8acdadae31b829cf0660d1733d7"
+    sha256 cellar: :any, arm64_sonoma:      "13547730d4662201ed4169a552f67f82587de2ce2a1ff5baf01f9afedca01bda"
+    sha256 cellar: :any, arm64_linux:       "27ecf68b6805caf1b8630d77c60b8ef1715770cf391c70526cab364e616b5d63"
+    sha256 cellar: :any, x86_64_linux:      "bfbe8efd92510eb7d3a57eb3a9e3ef55ffe3e14995537c7a1afe5c291fa074ce"
   end
 
   depends_on "openssl@4"

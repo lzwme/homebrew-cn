@@ -11,12 +11,13 @@ class Diffstat < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "17326937151e5a26ce3d23cc4d0fcd180a5e76b097dc77c877ea326ef5ac2d16"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0052fe73ac867e0e81faf6c93e30acf3e2bb5fe54ad6f37218619fe9883bcac6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e8e5b155acdba8f38f3ec50d9d2c39330c20f52b48ae54e99b52ddf19cb067e5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6d270a8bab983ec01d0130412f39b9a40a6d18a55e5fed703c8561501c7df078"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4c7baa62a2b3c178c170f9681a8d48e50f345ce8ead5765024b6da291b0005d1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "87b0292cacd262fa0c5d9d55394c97665322d44c0e01227cc9215a924e6ac868"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "e69c9e2cb992b6449b4cec456286f21723f229fd3f231281cdf59c7c6b5f1a6e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "17326937151e5a26ce3d23cc4d0fcd180a5e76b097dc77c877ea326ef5ac2d16"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "0052fe73ac867e0e81faf6c93e30acf3e2bb5fe54ad6f37218619fe9883bcac6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "e8e5b155acdba8f38f3ec50d9d2c39330c20f52b48ae54e99b52ddf19cb067e5"
+    sha256 cellar: :any_skip_relocation, sonoma:            "6d270a8bab983ec01d0130412f39b9a40a6d18a55e5fed703c8561501c7df078"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "4c7baa62a2b3c178c170f9681a8d48e50f345ce8ead5765024b6da291b0005d1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "87b0292cacd262fa0c5d9d55394c97665322d44c0e01227cc9215a924e6ac868"
   end
 
   def install

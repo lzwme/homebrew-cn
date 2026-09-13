@@ -11,12 +11,13 @@ class Libgsm < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "e637baca84f26ef74730d06d4eed5cf3ea69730afb45a598f1b7a50a2aa91136"
-    sha256 cellar: :any,                 arm64_sequoia: "40de9bf0cb4821fca993112eadbdd1eaf40c9e71d48fc66dbb1f67ab9987ead7"
-    sha256 cellar: :any,                 arm64_sonoma:  "abbc1deea6a1453dd8bf458874fab528f6f1d672ef77dafe6fde9ae43651fc4f"
-    sha256 cellar: :any,                 sonoma:        "816cc99acd5699c74b201af8ae8df58090bcb71ffa3b07a37d36aae031c250c8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "70194c209b3f6b130ab8b04450ee8ffb0f4f5463395191023ac19eb16007920c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ea4c6fb171d2c66eeaad24385c753a5bac62732a15700090b311248b6509d029"
+    sha256 cellar: :any,                 arm64_golden_gate: "72af565e3954c2cc4a901c16e415c875d8ea0b16dc9ba51beb4c8903b6b0b6d8"
+    sha256 cellar: :any,                 arm64_tahoe:       "e637baca84f26ef74730d06d4eed5cf3ea69730afb45a598f1b7a50a2aa91136"
+    sha256 cellar: :any,                 arm64_sequoia:     "40de9bf0cb4821fca993112eadbdd1eaf40c9e71d48fc66dbb1f67ab9987ead7"
+    sha256 cellar: :any,                 arm64_sonoma:      "abbc1deea6a1453dd8bf458874fab528f6f1d672ef77dafe6fde9ae43651fc4f"
+    sha256 cellar: :any,                 sonoma:            "816cc99acd5699c74b201af8ae8df58090bcb71ffa3b07a37d36aae031c250c8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "70194c209b3f6b130ab8b04450ee8ffb0f4f5463395191023ac19eb16007920c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "ea4c6fb171d2c66eeaad24385c753a5bac62732a15700090b311248b6509d029"
   end
 
   conflicts_with "toast", because: "both install `toast` binaries"

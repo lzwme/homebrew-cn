@@ -7,12 +7,13 @@ class Atasm < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "729fb2476730654734f87152e0925af39a747afeda5a1d1719d74c0fb1b77b94"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "95d431fd1b13e5e3736ed4309f4ff2f8e8206cee0ace352d5353013429f0c0ff"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1b61dcd891f38286d01f400a00b258eec3b684e7a2ea8d7c6fa1265a57acdeea"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2465fe4a6ff41737c651a8d9ea59bdfa1fe00842ec23373e43c6bb80371fee78"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c55e4b9e3127a958e9925d8a7ec67ec21c410df64a6e1d9a1c15b1a048a20a68"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9c9938e74e5a9bdd32cd294b8fa073eb27a13312fa6dec6027c346a5a2a42699"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "1dd8f36b0167b2eac847c0a1ab61632ba01651e38584cae2d9df720ae7425bf2"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "729fb2476730654734f87152e0925af39a747afeda5a1d1719d74c0fb1b77b94"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "95d431fd1b13e5e3736ed4309f4ff2f8e8206cee0ace352d5353013429f0c0ff"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "1b61dcd891f38286d01f400a00b258eec3b684e7a2ea8d7c6fa1265a57acdeea"
+    sha256 cellar: :any_skip_relocation, sonoma:            "2465fe4a6ff41737c651a8d9ea59bdfa1fe00842ec23373e43c6bb80371fee78"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "c55e4b9e3127a958e9925d8a7ec67ec21c410df64a6e1d9a1c15b1a048a20a68"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "9c9938e74e5a9bdd32cd294b8fa073eb27a13312fa6dec6027c346a5a2a42699"
   end
 
   on_linux do

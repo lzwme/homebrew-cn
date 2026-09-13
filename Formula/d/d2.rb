@@ -7,14 +7,21 @@ class D2 < Formula
   head "https://github.com/d2lang/d2.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fff1255d00f1dbd66353d680b440f697677dfb68c54a93fea271118fec73c83f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fff1255d00f1dbd66353d680b440f697677dfb68c54a93fea271118fec73c83f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fff1255d00f1dbd66353d680b440f697677dfb68c54a93fea271118fec73c83f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "29e91a66c47fe0e014a50843b2d09ba767e30e2caf08d51f2f18e40dc2938b99"
-    sha256 cellar: :any,                 x86_64_linux:  "f8783a842cb964680aad7dfaa26aba87095ad389d9932b08d68ee1487fc5ea3d"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "fff1255d00f1dbd66353d680b440f697677dfb68c54a93fea271118fec73c83f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "fff1255d00f1dbd66353d680b440f697677dfb68c54a93fea271118fec73c83f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "fff1255d00f1dbd66353d680b440f697677dfb68c54a93fea271118fec73c83f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "fff1255d00f1dbd66353d680b440f697677dfb68c54a93fea271118fec73c83f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "29e91a66c47fe0e014a50843b2d09ba767e30e2caf08d51f2f18e40dc2938b99"
+    sha256 cellar: :any,                 x86_64_linux:      "f8783a842cb964680aad7dfaa26aba87095ad389d9932b08d68ee1487fc5ea3d"
   end
 
   depends_on "go" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     ldflags = "-X github.com/d2lang/d2/lib/version.Version=v#{version}"

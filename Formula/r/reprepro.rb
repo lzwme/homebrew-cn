@@ -11,12 +11,13 @@ class Reprepro < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "d105743acb1ed3af2639fa57bc63d091887aafc27590b566010c3862f91f0831"
-    sha256 cellar: :any, arm64_sequoia: "b706bf94071d033c83360f93fce6f18480a89585d5f151426de28c2cb6e3f4ba"
-    sha256 cellar: :any, arm64_sonoma:  "ae0d23de7abe6d702f9b6ab2d5dd888ba98467bc79a8f020cd6b774aac07ef0a"
-    sha256 cellar: :any, sonoma:        "4564c95512ce1c51464cc4c14cd99ddad4bbd9f8625f0d26865f08fe2479cbfd"
-    sha256 cellar: :any, arm64_linux:   "af7b76a524ba1b8221feac874361bde901a90b908bb1c610b7ac83f7938bf992"
-    sha256 cellar: :any, x86_64_linux:  "36e245d92ea74618d932d3780e092d01e56fe6b69e456075eb32a80a7921f7de"
+    sha256 cellar: :any, arm64_golden_gate: "9ea3148c5e3db6b48cf84812f13f9b94b47e1960c50a68b8f6059f812f31dbf5"
+    sha256 cellar: :any, arm64_tahoe:       "d105743acb1ed3af2639fa57bc63d091887aafc27590b566010c3862f91f0831"
+    sha256 cellar: :any, arm64_sequoia:     "b706bf94071d033c83360f93fce6f18480a89585d5f151426de28c2cb6e3f4ba"
+    sha256 cellar: :any, arm64_sonoma:      "ae0d23de7abe6d702f9b6ab2d5dd888ba98467bc79a8f020cd6b774aac07ef0a"
+    sha256 cellar: :any, sonoma:            "4564c95512ce1c51464cc4c14cd99ddad4bbd9f8625f0d26865f08fe2479cbfd"
+    sha256 cellar: :any, arm64_linux:       "af7b76a524ba1b8221feac874361bde901a90b908bb1c610b7ac83f7938bf992"
+    sha256 cellar: :any, x86_64_linux:      "36e245d92ea74618d932d3780e092d01e56fe6b69e456075eb32a80a7921f7de"
   end
 
   depends_on "autoconf" => :build

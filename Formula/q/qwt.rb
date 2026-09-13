@@ -78,7 +78,7 @@ class Qwt < Formula
     ENV.delete "CPATH"
     ENV["LC_ALL"] = "en_US.UTF-8"
 
-    system Formula["qtbase"].bin/"qmake", "test.pro"
+    system formula_opt_bin("qtbase")/"qmake", "test.pro"
     system "make"
     system "./test"
   end

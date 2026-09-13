@@ -8,12 +8,13 @@ class Vte3 < Formula
   compatibility_version 1
 
   bottle do
-    sha256 arm64_tahoe:   "248d1049a6a3575a169de7a8dec106879bd17469ad23c7d36fd0ba23eeced75f"
-    sha256 arm64_sequoia: "e9b68c5c927bf676bcb49eff5a0c7df93928cd5239d56e2199f294727d61cd66"
-    sha256 arm64_sonoma:  "68ba7eb19399dc7e938bbbdde11e3033fc3f1cfa499456619c2feab968324421"
-    sha256 sonoma:        "d446f562a18f69ba755b4b57d95b79cb959263e7ef0a56799c92232fdb8ffa82"
-    sha256 arm64_linux:   "b64df1c672df535241644922208d379b3cd31cf29eadaca6e74080fb5989c24b"
-    sha256 x86_64_linux:  "24f5df0e9ad79cdebc13a80f8bf1605552e4a3cd2b8976024b5b2d6e92e882a2"
+    sha256 arm64_golden_gate: "d9b1f3433f56aa11b0ed4cbe42383551f0d85536fd6efe3257539e6a92b67187"
+    sha256 arm64_tahoe:       "248d1049a6a3575a169de7a8dec106879bd17469ad23c7d36fd0ba23eeced75f"
+    sha256 arm64_sequoia:     "e9b68c5c927bf676bcb49eff5a0c7df93928cd5239d56e2199f294727d61cd66"
+    sha256 arm64_sonoma:      "68ba7eb19399dc7e938bbbdde11e3033fc3f1cfa499456619c2feab968324421"
+    sha256 sonoma:            "d446f562a18f69ba755b4b57d95b79cb959263e7ef0a56799c92232fdb8ffa82"
+    sha256 arm64_linux:       "b64df1c672df535241644922208d379b3cd31cf29eadaca6e74080fb5989c24b"
+    sha256 x86_64_linux:      "24f5df0e9ad79cdebc13a80f8bf1605552e4a3cd2b8976024b5b2d6e92e882a2"
   end
 
   depends_on "fast_float" => :build

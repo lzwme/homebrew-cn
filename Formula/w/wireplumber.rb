@@ -37,9 +37,9 @@ class Wireplumber < Formula
     ENV["XDG_DATA_DIRS"] = testpath # avoid loading system dbus services
     ENV["XDG_RUNTIME_DIR"] = testpath
     ENV["DBUS_SESSION_BUS_ADDRESS"] = address = "unix:path=#{testpath}/bus"
-    dbus_pid = spawn(Formula["dbus"].bin/"dbus-daemon", "--session", "--nofork", "--address=#{address}")
+    dbus_pid = spawn(formula_opt_bin("dbus")/"dbus-daemon", "--session", "--nofork", "--address=#{address}")
     sleep 5
-    pipewire_pid = spawn(Formula["pipewire"].bin/"pipewire")
+    pipewire_pid = spawn(formula_opt_bin("pipewire")/"pipewire")
     sleep 5
     assert_match "PipeWire 'pipewire-0'", shell_output("#{bin}/wpctl status")
   ensure

@@ -8,12 +8,13 @@ class Delly < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "1457782beb0aae5db020fd5878adfc05199df2314ac8f32bbc5a7fb68a5eac72"
-    sha256 cellar: :any, arm64_sequoia: "4b6b3d698129a34927700e21527c47cb68ba76edb1fe7229be8b2e207fe6e9ae"
-    sha256 cellar: :any, arm64_sonoma:  "b0253b4ea8c4cfe16fbad2a66a06aa5642851a5e666dc650fcb3181c51530304"
-    sha256 cellar: :any, sonoma:        "ef84a6f6df952de40b6ae9f9d94c5ebebead55c9c4e6d503022526f64ac503df"
-    sha256 cellar: :any, arm64_linux:   "e3c60b96864c43f9a363566d7c26d0492257def838e202bd90f08ea0f21bae2f"
-    sha256 cellar: :any, x86_64_linux:  "6a5039f306ff0635f8e475ef6e44f5f35d336462c976a13eeea98729683ef081"
+    sha256 cellar: :any, arm64_golden_gate: "1e6954462001456bae2691dbf7554c0d9d2cd6aeb82faa72a2fe52278d07a514"
+    sha256 cellar: :any, arm64_tahoe:       "1457782beb0aae5db020fd5878adfc05199df2314ac8f32bbc5a7fb68a5eac72"
+    sha256 cellar: :any, arm64_sequoia:     "4b6b3d698129a34927700e21527c47cb68ba76edb1fe7229be8b2e207fe6e9ae"
+    sha256 cellar: :any, arm64_sonoma:      "b0253b4ea8c4cfe16fbad2a66a06aa5642851a5e666dc650fcb3181c51530304"
+    sha256 cellar: :any, sonoma:            "ef84a6f6df952de40b6ae9f9d94c5ebebead55c9c4e6d503022526f64ac503df"
+    sha256 cellar: :any, arm64_linux:       "e3c60b96864c43f9a363566d7c26d0492257def838e202bd90f08ea0f21bae2f"
+    sha256 cellar: :any, x86_64_linux:      "6a5039f306ff0635f8e475ef6e44f5f35d336462c976a13eeea98729683ef081"
   end
 
   depends_on "boost"

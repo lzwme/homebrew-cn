@@ -6,12 +6,13 @@ class Bashly < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "939215e83055f04488e26f04118009f7e987c713d0efb4b3c28ef08a7daebf7f"
-    sha256 cellar: :any, arm64_sequoia: "d05b41e9d9c6261bbc103dede5676f2307cc928611f34eabb23c816019f9113a"
-    sha256 cellar: :any, arm64_sonoma:  "f9f48536821c672e83216ffe4120bbc3e3e7cf185b82c734f1c128d0f0602e40"
-    sha256 cellar: :any, sonoma:        "325ef6878696a48049fdfdafb980a143c0a0c0cbe611a5fddfb6c39af5a0b21e"
-    sha256 cellar: :any, arm64_linux:   "866181a1f95d216b256715846b908f99e01cf22605421f41ab7d93371b11b79d"
-    sha256 cellar: :any, x86_64_linux:  "073b17519d2e687299b01b89b7cf8b8243cc4293afc28ba6f70eb9781d63e7d2"
+    sha256 cellar: :any, arm64_golden_gate: "43644e8a820b31179bcf059cc25e8e6bbc8d752513380671477bc08bf9225902"
+    sha256 cellar: :any, arm64_tahoe:       "939215e83055f04488e26f04118009f7e987c713d0efb4b3c28ef08a7daebf7f"
+    sha256 cellar: :any, arm64_sequoia:     "d05b41e9d9c6261bbc103dede5676f2307cc928611f34eabb23c816019f9113a"
+    sha256 cellar: :any, arm64_sonoma:      "f9f48536821c672e83216ffe4120bbc3e3e7cf185b82c734f1c128d0f0602e40"
+    sha256 cellar: :any, sonoma:            "325ef6878696a48049fdfdafb980a143c0a0c0cbe611a5fddfb6c39af5a0b21e"
+    sha256 cellar: :any, arm64_linux:       "866181a1f95d216b256715846b908f99e01cf22605421f41ab7d93371b11b79d"
+    sha256 cellar: :any, x86_64_linux:      "073b17519d2e687299b01b89b7cf8b8243cc4293afc28ba6f70eb9781d63e7d2"
   end
 
   depends_on "ruby"

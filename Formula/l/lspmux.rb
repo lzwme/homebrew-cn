@@ -8,12 +8,13 @@ class Lspmux < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f6b268e66689a372808bdd6f377c76ca5ab66b7fea7952d9769babf50e96fe0d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1a5820e425d62ac80fdca33bafec1d9dfabb210534d23be782a51032d129e84e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6179b5dce04784dbf17453fa430b689a2a0847d824b0bda507d86db199205239"
-    sha256 cellar: :any_skip_relocation, sonoma:        "24990bb9a334b6327a23db0292983ba8d58a535c54df0d35a098ec519cff5551"
-    sha256 cellar: :any,                 arm64_linux:   "58afbc06899b1680222ee6ca9cf286f38c3005897d63a392c1b40645bdf6a5ed"
-    sha256 cellar: :any,                 x86_64_linux:  "7ea6fe0e8e7e4e0bb918ea9dcdf20a14844df4299a63ab437ecb20bfc5391c51"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "279fe596c19fcd82a323008a0a2b35618bf7011331749281e3288d3eff0de54e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "f6b268e66689a372808bdd6f377c76ca5ab66b7fea7952d9769babf50e96fe0d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "1a5820e425d62ac80fdca33bafec1d9dfabb210534d23be782a51032d129e84e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "6179b5dce04784dbf17453fa430b689a2a0847d824b0bda507d86db199205239"
+    sha256 cellar: :any_skip_relocation, sonoma:            "24990bb9a334b6327a23db0292983ba8d58a535c54df0d35a098ec519cff5551"
+    sha256 cellar: :any,                 arm64_linux:       "58afbc06899b1680222ee6ca9cf286f38c3005897d63a392c1b40645bdf6a5ed"
+    sha256 cellar: :any,                 x86_64_linux:      "7ea6fe0e8e7e4e0bb918ea9dcdf20a14844df4299a63ab437ecb20bfc5391c51"
   end
 
   depends_on "rust" => :build

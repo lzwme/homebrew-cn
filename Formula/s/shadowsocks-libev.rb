@@ -16,6 +16,8 @@ class ShadowsocksLibev < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "e622c9cb22667b5b5b27358b753e6d6a987df4620f56ca811ee54c6505e8a573"
   end
 
+  deprecate! date: "2027-03-31", because: "needs EOL `mbedtls@3`"
+
   depends_on "asciidoc" => :build
   depends_on "cmake" => :build
   depends_on "xmlto" => :build

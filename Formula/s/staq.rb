@@ -7,12 +7,13 @@ class Staq < Formula
 
   bottle do
     rebuild 2
-    sha256 cellar: :any,                 arm64_tahoe:   "1518fdd5369e20863afefa4158c78b87fc4f01cf09967623a2b1af8225499790"
-    sha256 cellar: :any,                 arm64_sequoia: "8081f841203e64e3423fb6305558c1a538b86fdcbbd2e13d02944ea36dfa9ae9"
-    sha256 cellar: :any,                 arm64_sonoma:  "716a1214491fac80364ace9c88950c123f669912fd76dd950504c60780ddeac5"
-    sha256 cellar: :any,                 sonoma:        "6b589aefacd45146637ecf6f4b39d69fd1e32aec9f2f60c0da80776cac60dc28"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7c0ea0b4548a55c3c72c3f33761cc9bf58e460b84db244b951eb586b0c2b77d2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c16a8a25583b15bc7384c346ea277598642e637f19b36ebbab73dcd48e3dfb1b"
+    sha256 cellar: :any,                 arm64_golden_gate: "4dfba32ce4385c38317340816f40dcafadf42eafdc2a2872c66e86bf8e9d37dc"
+    sha256 cellar: :any,                 arm64_tahoe:       "1518fdd5369e20863afefa4158c78b87fc4f01cf09967623a2b1af8225499790"
+    sha256 cellar: :any,                 arm64_sequoia:     "8081f841203e64e3423fb6305558c1a538b86fdcbbd2e13d02944ea36dfa9ae9"
+    sha256 cellar: :any,                 arm64_sonoma:      "716a1214491fac80364ace9c88950c123f669912fd76dd950504c60780ddeac5"
+    sha256 cellar: :any,                 sonoma:            "6b589aefacd45146637ecf6f4b39d69fd1e32aec9f2f60c0da80776cac60dc28"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "7c0ea0b4548a55c3c72c3f33761cc9bf58e460b84db244b951eb586b0c2b77d2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "c16a8a25583b15bc7384c346ea277598642e637f19b36ebbab73dcd48e3dfb1b"
   end
 
   depends_on "cmake" => :build

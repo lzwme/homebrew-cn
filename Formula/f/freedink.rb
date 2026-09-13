@@ -8,12 +8,13 @@ class Freedink < Formula
 
   bottle do
     rebuild 2
-    sha256 arm64_tahoe:   "68cd1561bc7d6a477d2d3457a0c1867bf19cec00fd84c46f0fe74fd18d961cf1"
-    sha256 arm64_sequoia: "445ea09cf443c8f5b9bb1f67fc5de82f0735312169e3b009166e1d4ec0cf971b"
-    sha256 arm64_sonoma:  "ded6f2f34c6a7dd4e724b04a5fa6e315507f8154908609d81eb5d00d01f0f708"
-    sha256 sonoma:        "364f029de96f0aa207090ed4b64d8e4904138435724e4503545868b29e6cc3eb"
-    sha256 arm64_linux:   "435f2a3bc5473084034dd5052eda8f0e363674ea9bc59eae57b566274ca1f924"
-    sha256 x86_64_linux:  "1cf508674933d7217495e690ffa65a37280aab02d731b415a1613aecffaea5e6"
+    sha256 arm64_golden_gate: "df6e1ae1fd6b53bb8a09d7d1203e767c3c5ac3dbe39f1b832271178b29b796d5"
+    sha256 arm64_tahoe:       "68cd1561bc7d6a477d2d3457a0c1867bf19cec00fd84c46f0fe74fd18d961cf1"
+    sha256 arm64_sequoia:     "445ea09cf443c8f5b9bb1f67fc5de82f0735312169e3b009166e1d4ec0cf971b"
+    sha256 arm64_sonoma:      "ded6f2f34c6a7dd4e724b04a5fa6e315507f8154908609d81eb5d00d01f0f708"
+    sha256 sonoma:            "364f029de96f0aa207090ed4b64d8e4904138435724e4503545868b29e6cc3eb"
+    sha256 arm64_linux:       "435f2a3bc5473084034dd5052eda8f0e363674ea9bc59eae57b566274ca1f924"
+    sha256 x86_64_linux:      "1cf508674933d7217495e690ffa65a37280aab02d731b415a1613aecffaea5e6"
   end
 
   depends_on "glm" => :build

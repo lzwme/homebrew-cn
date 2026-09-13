@@ -8,12 +8,13 @@ class GnomeRecipes < Formula
 
   bottle do
     rebuild 2
-    sha256 arm64_tahoe:   "c3d2fe01ea97827e715cb29583797418cb4d71b00e6ee97d9f8dfaeb96bcf4e2"
-    sha256 arm64_sequoia: "48061c558c7b2a4ac42a5a0fee09187c92323a1a3a261133edcbd765e07f16fe"
-    sha256 arm64_sonoma:  "e474b3f42f2ae09b5282d78c7a18e88661c5b0d15d4e275f8cd0ed5fd323236c"
-    sha256 sonoma:        "3aa31f8c5cd39076cd93675d43f487488832ed0a91036b01093a9f111c436ec2"
-    sha256 arm64_linux:   "44594058f4bcf5667642ff19ac9976d4dd5e065953e157325221368cf769525d"
-    sha256 x86_64_linux:  "dedbae7279b37281b9abf9707483ffde9f28ad37866541a883afe5207847b5fd"
+    sha256 arm64_golden_gate: "1a29a889e9b0fdabda43e42b771f4928d8c4dd17e1899a2db971ed3d66f983cd"
+    sha256 arm64_tahoe:       "c3d2fe01ea97827e715cb29583797418cb4d71b00e6ee97d9f8dfaeb96bcf4e2"
+    sha256 arm64_sequoia:     "48061c558c7b2a4ac42a5a0fee09187c92323a1a3a261133edcbd765e07f16fe"
+    sha256 arm64_sonoma:      "e474b3f42f2ae09b5282d78c7a18e88661c5b0d15d4e275f8cd0ed5fd323236c"
+    sha256 sonoma:            "3aa31f8c5cd39076cd93675d43f487488832ed0a91036b01093a9f111c436ec2"
+    sha256 arm64_linux:       "44594058f4bcf5667642ff19ac9976d4dd5e065953e157325221368cf769525d"
+    sha256 x86_64_linux:      "dedbae7279b37281b9abf9707483ffde9f28ad37866541a883afe5207847b5fd"
   end
 
   depends_on "gettext" => :build

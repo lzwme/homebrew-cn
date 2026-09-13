@@ -7,12 +7,13 @@ class Foreman < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c78c793e9a91e349838d6e2d36be7f599d8a0778b5c4ce8d4d3d6fb88c6c485f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c78c793e9a91e349838d6e2d36be7f599d8a0778b5c4ce8d4d3d6fb88c6c485f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c78c793e9a91e349838d6e2d36be7f599d8a0778b5c4ce8d4d3d6fb88c6c485f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c78c793e9a91e349838d6e2d36be7f599d8a0778b5c4ce8d4d3d6fb88c6c485f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "10202c8dbc359d723a3568da5b08773c19c49439999efe557a386ce96355ad3a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "10202c8dbc359d723a3568da5b08773c19c49439999efe557a386ce96355ad3a"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "560acebcdd9c15d565ccf811ee405dfef192c79d1db373a037bddc9dce011eca"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "c78c793e9a91e349838d6e2d36be7f599d8a0778b5c4ce8d4d3d6fb88c6c485f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "c78c793e9a91e349838d6e2d36be7f599d8a0778b5c4ce8d4d3d6fb88c6c485f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "c78c793e9a91e349838d6e2d36be7f599d8a0778b5c4ce8d4d3d6fb88c6c485f"
+    sha256 cellar: :any_skip_relocation, sonoma:            "c78c793e9a91e349838d6e2d36be7f599d8a0778b5c4ce8d4d3d6fb88c6c485f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "10202c8dbc359d723a3568da5b08773c19c49439999efe557a386ce96355ad3a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "10202c8dbc359d723a3568da5b08773c19c49439999efe557a386ce96355ad3a"
   end
 
   depends_on "ruby"

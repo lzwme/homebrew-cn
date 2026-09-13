@@ -7,12 +7,13 @@ class Ddrescue < Formula
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fc0e5a061cda75c11f3bfeacdfb4283ed7c71c6f79a93923cd136bfc5fd3145f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "47034be3aabaec1811ca62c8893dd7f9db1dfdbe77f934e9bb98f9aaaa9f2838"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f56c40fa3614f382c9ea4b2dccbce5b82eb3e4ecc3555aa05d181e55f3178852"
-    sha256 cellar: :any_skip_relocation, sonoma:        "15b4e4107e9c90de349c137f81159b745e1f982b5f18a6fb58c6ee74f0ecf16d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3989dc866dfac473c310d48663f6031ad43d29e4e2c5e668b2e07dd3dfb72fd3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7a3f54e1611eb72a3326d5dafd360801a32dd4b397801f491b142afbb7be253c"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "a26eed540b14436b8b166c309612f9eaf8034ed72498b82b275061af89c36f50"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "fc0e5a061cda75c11f3bfeacdfb4283ed7c71c6f79a93923cd136bfc5fd3145f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "47034be3aabaec1811ca62c8893dd7f9db1dfdbe77f934e9bb98f9aaaa9f2838"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "f56c40fa3614f382c9ea4b2dccbce5b82eb3e4ecc3555aa05d181e55f3178852"
+    sha256 cellar: :any_skip_relocation, sonoma:            "15b4e4107e9c90de349c137f81159b745e1f982b5f18a6fb58c6ee74f0ecf16d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "3989dc866dfac473c310d48663f6031ad43d29e4e2c5e668b2e07dd3dfb72fd3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "7a3f54e1611eb72a3326d5dafd360801a32dd4b397801f491b142afbb7be253c"
   end
 
   def install

@@ -64,10 +64,11 @@ class Pgrouting < Formula
 
         shared_preload_libraries = 'libpgrouting-#{version.major_minor}'
         port = #{port}
+        unix_socket_directories = '#{testpath}'
       EOS
       system pg_ctl, "start", "-D", datadir, "-l", testpath/"log-#{postgresql.name}"
       begin
-        system psql, "-p", port.to_s, "-c", "CREATE EXTENSION \"pgrouting\" CASCADE;", "postgres"
+        system psql, "-h", testpath, "-p", port.to_s, "-c", "CREATE EXTENSION \"pgrouting\" CASCADE;", "postgres"
       ensure
         system pg_ctl, "stop", "-D", datadir
       end

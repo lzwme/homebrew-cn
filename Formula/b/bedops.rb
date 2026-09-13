@@ -7,12 +7,13 @@ class Bedops < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "02db95f7031e865972ba9811475cebf53b0bcd748ae61b0fb067187a5940de88"
-    sha256 cellar: :any,                 arm64_sequoia: "163148476ed1d1b00d3a4b281bfb32db9830928844d81d25e7d6a6d5f6b1ecb8"
-    sha256 cellar: :any,                 arm64_sonoma:  "ccac5a7e4985f27095efd08464c9c51b158dee343f2d5a017d3d69e6065076a7"
-    sha256 cellar: :any,                 sonoma:        "6f996efefbe566889602342fb2d270816c30121dfa1798125010bd59c70c7071"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4e60fd9252b86986cef3dd7adb62756695775f3747f120e44813607532881468"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8ffc6cb770da1fc79d627c28daa4cf7a6444f3203e1c17f9c78860f70521738f"
+    sha256 cellar: :any,                 arm64_golden_gate: "f3dc18a86616045c11d87900a982324e095d102dca5f7f3a1a8285d008d3a2f2"
+    sha256 cellar: :any,                 arm64_tahoe:       "02db95f7031e865972ba9811475cebf53b0bcd748ae61b0fb067187a5940de88"
+    sha256 cellar: :any,                 arm64_sequoia:     "163148476ed1d1b00d3a4b281bfb32db9830928844d81d25e7d6a6d5f6b1ecb8"
+    sha256 cellar: :any,                 arm64_sonoma:      "ccac5a7e4985f27095efd08464c9c51b158dee343f2d5a017d3d69e6065076a7"
+    sha256 cellar: :any,                 sonoma:            "6f996efefbe566889602342fb2d270816c30121dfa1798125010bd59c70c7071"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "4e60fd9252b86986cef3dd7adb62756695775f3747f120e44813607532881468"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "8ffc6cb770da1fc79d627c28daa4cf7a6444f3203e1c17f9c78860f70521738f"
   end
 
   depends_on "jansson"

@@ -16,12 +16,13 @@ class Flexiblas < Formula
   end
 
   bottle do
-    sha256               arm64_tahoe:   "05bba3927380ff8a265da10c84f569fff2cd132e187afded0faeb69059f04fd3"
-    sha256               arm64_sequoia: "8cb09438e43dfd0ee600bcd458e5355bd9de97deb9a5d21682c840b6d35acce3"
-    sha256               arm64_sonoma:  "f3160f603ca0154101be20031c70edff5f7ec323330dd2f955bb73894cda1002"
-    sha256 cellar: :any, sonoma:        "9c533f075296f83a0206f08691730068aea716c7c7eadce83b8b620c5889be04"
-    sha256               arm64_linux:   "8cc351182c7d5553aedb9b2f7f2863cab2a063af8a76fbc4f1f0a1c5cd29e5db"
-    sha256               x86_64_linux:  "b1d9f77c9b2c2a2bff3c464d43eadae6e156e435edb14bfda308b13df042ecdf"
+    sha256               arm64_golden_gate: "bdfe66d20a8f68de1b57905c5ace3e695928c2ec84fd51d9f48a325ca7dcee12"
+    sha256               arm64_tahoe:       "05bba3927380ff8a265da10c84f569fff2cd132e187afded0faeb69059f04fd3"
+    sha256               arm64_sequoia:     "8cb09438e43dfd0ee600bcd458e5355bd9de97deb9a5d21682c840b6d35acce3"
+    sha256               arm64_sonoma:      "f3160f603ca0154101be20031c70edff5f7ec323330dd2f955bb73894cda1002"
+    sha256 cellar: :any, sonoma:            "9c533f075296f83a0206f08691730068aea716c7c7eadce83b8b620c5889be04"
+    sha256               arm64_linux:       "8cc351182c7d5553aedb9b2f7f2863cab2a063af8a76fbc4f1f0a1c5cd29e5db"
+    sha256               x86_64_linux:      "b1d9f77c9b2c2a2bff3c464d43eadae6e156e435edb14bfda308b13df042ecdf"
   end
 
   depends_on "cmake" => :build

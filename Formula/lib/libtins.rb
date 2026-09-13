@@ -7,12 +7,13 @@ class Libtins < Formula
   head "https://github.com/mfontanini/libtins.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "5f9dd0ceecbbd2b48bcff2ece82a88d8133b5634b832eb5cf85944b24c634417"
-    sha256 cellar: :any, arm64_sequoia: "e7ea99156bc05bfd80c3ebbb119d773c5ea73204e176598ebfc9b514777b1009"
-    sha256 cellar: :any, arm64_sonoma:  "1c06733acb014da750f46daaa0466b0ae466a942b25ac833983f5f896afafc39"
-    sha256 cellar: :any, sonoma:        "68c16bbce3fd5e2ff19d5ed279a64d8ca9610f62369215cb7e9339f386991b12"
-    sha256 cellar: :any, arm64_linux:   "67d8adb52d21249c3b5cb7fb4444a061aa5cf85bcdda828362dd99192967a1d8"
-    sha256 cellar: :any, x86_64_linux:  "8ec6113b595cd5354418cc5243bed822f3be14340b7ce57074ec518af8f052c1"
+    sha256 cellar: :any, arm64_golden_gate: "94d340bd79d618fd533589f17ef24b4ebac6bf65d0e7b1bacfd72e27ffe281c8"
+    sha256 cellar: :any, arm64_tahoe:       "5f9dd0ceecbbd2b48bcff2ece82a88d8133b5634b832eb5cf85944b24c634417"
+    sha256 cellar: :any, arm64_sequoia:     "e7ea99156bc05bfd80c3ebbb119d773c5ea73204e176598ebfc9b514777b1009"
+    sha256 cellar: :any, arm64_sonoma:      "1c06733acb014da750f46daaa0466b0ae466a942b25ac833983f5f896afafc39"
+    sha256 cellar: :any, sonoma:            "68c16bbce3fd5e2ff19d5ed279a64d8ca9610f62369215cb7e9339f386991b12"
+    sha256 cellar: :any, arm64_linux:       "67d8adb52d21249c3b5cb7fb4444a061aa5cf85bcdda828362dd99192967a1d8"
+    sha256 cellar: :any, x86_64_linux:      "8ec6113b595cd5354418cc5243bed822f3be14340b7ce57074ec518af8f052c1"
   end
 
   depends_on "cmake" => :build

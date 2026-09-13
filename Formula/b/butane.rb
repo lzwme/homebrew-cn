@@ -23,6 +23,8 @@ class Butane < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
   def install
     system "go", "build", "-mod=vendor",
       *std_go_args(ldflags: "-w -X github.com/coreos/butane/internal/version.Raw=#{version}"), "internal/main.go"

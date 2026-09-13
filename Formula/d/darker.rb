@@ -9,12 +9,13 @@ class Darker < Formula
   revision 2
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "02e21a974bae70f67a3b52d764da980696a89f4fac7987dcb6c0cfa99bbe0d66"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7e9c5f797cba8fba4758d297996ea31bfd531201c810bb6137728367dd8fde8d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "280862988a1ba81641ca5117e462b01c5ee11e4322e80a89edef75070d909c15"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b88539f673dfc1ded1a55407ac5e11ed5c297ed4f50a8fed70cfbcd5b58f0fb2"
-    sha256 cellar: :any,                 arm64_linux:   "3b5fb4a1a33e4e423fe454d3c4d1c9de2870f8c6db55e3a420466301d298013b"
-    sha256 cellar: :any,                 x86_64_linux:  "ff6352bdb61f25b4edefccab2bb73f07b47fd163143508c86dc3c4c88d596383"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "855e44d663650e9b4baad1f529f53b36615a5224ad1066f0476bdc980e9002c5"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "02e21a974bae70f67a3b52d764da980696a89f4fac7987dcb6c0cfa99bbe0d66"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "7e9c5f797cba8fba4758d297996ea31bfd531201c810bb6137728367dd8fde8d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "280862988a1ba81641ca5117e462b01c5ee11e4322e80a89edef75070d909c15"
+    sha256 cellar: :any_skip_relocation, sonoma:            "b88539f673dfc1ded1a55407ac5e11ed5c297ed4f50a8fed70cfbcd5b58f0fb2"
+    sha256 cellar: :any,                 arm64_linux:       "3b5fb4a1a33e4e423fe454d3c4d1c9de2870f8c6db55e3a420466301d298013b"
+    sha256 cellar: :any,                 x86_64_linux:      "ff6352bdb61f25b4edefccab2bb73f07b47fd163143508c86dc3c4c88d596383"
   end
 
   depends_on "rust" => :build

@@ -8,12 +8,13 @@ class EmmyluaLs < Formula
   head "https://github.com/EmmyLuaLs/emmylua-analyzer-rust.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5644ab45dddfb543abc3b8674fcb3698c4acafbc391bd16f75f5d018931bccf8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5bdbd76e8f73485dec66e84ea33fd23f6fbbc01766c9d1650dfcdd066bc0af50"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3270802ff4a19a20363a4eb9d94b5c135b5f4a5ca4cb280feaa800a9f3103339"
-    sha256 cellar: :any_skip_relocation, sonoma:        "20c36c76db4a87871473b8c179d47f4468d71f16f9e4db6803779b4dd2339e44"
-    sha256 cellar: :any,                 arm64_linux:   "d63354721bdfcd17b5273a8129263a824f7235ab9365ef06c5ca3a5a48c8bd54"
-    sha256 cellar: :any,                 x86_64_linux:  "70f23cb127adfc6eb42f73553c06d04e7a03b18350fa2850916f7ab5e05e3cdd"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "0fc730bc77244e20ffac420439f2ac48e954bc3576f12a8b75eb6e591d7465d7"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "5644ab45dddfb543abc3b8674fcb3698c4acafbc391bd16f75f5d018931bccf8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "5bdbd76e8f73485dec66e84ea33fd23f6fbbc01766c9d1650dfcdd066bc0af50"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "3270802ff4a19a20363a4eb9d94b5c135b5f4a5ca4cb280feaa800a9f3103339"
+    sha256 cellar: :any_skip_relocation, sonoma:            "20c36c76db4a87871473b8c179d47f4468d71f16f9e4db6803779b4dd2339e44"
+    sha256 cellar: :any,                 arm64_linux:       "d63354721bdfcd17b5273a8129263a824f7235ab9365ef06c5ca3a5a48c8bd54"
+    sha256 cellar: :any,                 x86_64_linux:      "70f23cb127adfc6eb42f73553c06d04e7a03b18350fa2850916f7ab5e05e3cdd"
   end
 
   depends_on "pkgconf" => :build

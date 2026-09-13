@@ -10,12 +10,13 @@ class Dooit < Formula
   head "https://github.com/dooit-org/dooit.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "d247ba3bb8f771b8d8a2ceb0baa907ab5e8ee3f31a9853447e542065205d8f7b"
-    sha256 cellar: :any, arm64_sequoia: "af495f2d3db73124bf066f1fabdbecc659f7af6eacbec547d996f8e9032b9e7c"
-    sha256 cellar: :any, arm64_sonoma:  "b90e3f99ef99db482932a54336a4d789d31046fdf3ea04bf5bc17e43f9c06d5e"
-    sha256 cellar: :any, sonoma:        "c4dbaa5908be7583000504f7210615bb9bffc0e3eab7c5612b2a116ec83afa01"
-    sha256 cellar: :any, arm64_linux:   "dc27b26889d6a2c309cdc7101c46996019ab6849ad684586316974e6ba50d223"
-    sha256 cellar: :any, x86_64_linux:  "d6c11ac9ddad2081f209ec96ce2460ad922857f151e7a10ea82744e978166f68"
+    sha256 cellar: :any, arm64_golden_gate: "5ed87e1fa67d0c099fa5ab1bcedd9a7d653c39a2eb781f744d6c03c550d5dbec"
+    sha256 cellar: :any, arm64_tahoe:       "d247ba3bb8f771b8d8a2ceb0baa907ab5e8ee3f31a9853447e542065205d8f7b"
+    sha256 cellar: :any, arm64_sequoia:     "af495f2d3db73124bf066f1fabdbecc659f7af6eacbec547d996f8e9032b9e7c"
+    sha256 cellar: :any, arm64_sonoma:      "b90e3f99ef99db482932a54336a4d789d31046fdf3ea04bf5bc17e43f9c06d5e"
+    sha256 cellar: :any, sonoma:            "c4dbaa5908be7583000504f7210615bb9bffc0e3eab7c5612b2a116ec83afa01"
+    sha256 cellar: :any, arm64_linux:       "dc27b26889d6a2c309cdc7101c46996019ab6849ad684586316974e6ba50d223"
+    sha256 cellar: :any, x86_64_linux:      "d6c11ac9ddad2081f209ec96ce2460ad922857f151e7a10ea82744e978166f68"
   end
 
   depends_on "cmake" => :build

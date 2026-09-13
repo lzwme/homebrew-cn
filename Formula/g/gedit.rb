@@ -9,12 +9,13 @@ class Gedit < Formula
 
   bottle do
     rebuild 1
-    sha256 arm64_tahoe:   "9d05e61bc6f082489bd0c183cc7eb20067b415a43a7dc49778990e6db91ed9ce"
-    sha256 arm64_sequoia: "a42bdc40d34a9f665aa0d266720a698b28a115f7e527e5776f2f14142a55c799"
-    sha256 arm64_sonoma:  "651816294d7db144a7c9ae5189ed52d7b030c28a4d755a59965e4934d4a30b9c"
-    sha256 sonoma:        "a29b74a068bab86876bcbf911c27c9e8b329c2793de4e88360bb2411807d8618"
-    sha256 arm64_linux:   "16b04de90044b42cd9a893b119ddf9f5e8c1b039228cc72ebdaedc4052dfeb0d"
-    sha256 x86_64_linux:  "8a4627de62983183afbd42bac7368ab75436e7d1288376d5e15b887b3f8ace43"
+    sha256 arm64_golden_gate: "3b474a952c6c280bc86e6f85f377c141ed1ee850a88f6f4349cd765d86bf2636"
+    sha256 arm64_tahoe:       "9d05e61bc6f082489bd0c183cc7eb20067b415a43a7dc49778990e6db91ed9ce"
+    sha256 arm64_sequoia:     "a42bdc40d34a9f665aa0d266720a698b28a115f7e527e5776f2f14142a55c799"
+    sha256 arm64_sonoma:      "651816294d7db144a7c9ae5189ed52d7b030c28a4d755a59965e4934d4a30b9c"
+    sha256 sonoma:            "a29b74a068bab86876bcbf911c27c9e8b329c2793de4e88360bb2411807d8618"
+    sha256 arm64_linux:       "16b04de90044b42cd9a893b119ddf9f5e8c1b039228cc72ebdaedc4052dfeb0d"
+    sha256 x86_64_linux:      "8a4627de62983183afbd42bac7368ab75436e7d1288376d5e15b887b3f8ace43"
   end
 
   depends_on "desktop-file-utils" => :build # for update-desktop-database

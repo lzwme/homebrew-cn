@@ -11,12 +11,13 @@ class Robotfindskitten < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "79b4d620100949927587e4ec4e3b90399210003b38f4282ddf185fe5d30aa0eb"
-    sha256 arm64_sequoia: "bcb3b99eb6b681c89972d4d241983e0b6a6ae8501df0e8991d139976ab678e1f"
-    sha256 arm64_sonoma:  "c8f844bda83b6c7e6c0758ce4d040e525597f07ebe1a9c34bdf96e91a49a80b1"
-    sha256 sonoma:        "ce2c44cf328b5c5255de4ea6d383c89292974a2867e06bcd49981c57d3a255cd"
-    sha256 arm64_linux:   "51011e955535d4fad71b6e80b8cc7f91ffc14a987ad8a29f25f2b7a94aef36b9"
-    sha256 x86_64_linux:  "077cb457d00d5086ee14731d29fb7ca3c6c8c88259b23e8d2a18306a11be25b9"
+    sha256 arm64_golden_gate: "744b8b9d46d07331c724c46e7194b13601cabf0d221493cca0b0bdb4b9b980fa"
+    sha256 arm64_tahoe:       "79b4d620100949927587e4ec4e3b90399210003b38f4282ddf185fe5d30aa0eb"
+    sha256 arm64_sequoia:     "bcb3b99eb6b681c89972d4d241983e0b6a6ae8501df0e8991d139976ab678e1f"
+    sha256 arm64_sonoma:      "c8f844bda83b6c7e6c0758ce4d040e525597f07ebe1a9c34bdf96e91a49a80b1"
+    sha256 sonoma:            "ce2c44cf328b5c5255de4ea6d383c89292974a2867e06bcd49981c57d3a255cd"
+    sha256 arm64_linux:       "51011e955535d4fad71b6e80b8cc7f91ffc14a987ad8a29f25f2b7a94aef36b9"
+    sha256 x86_64_linux:      "077cb457d00d5086ee14731d29fb7ca3c6c8c88259b23e8d2a18306a11be25b9"
   end
 
   head do

@@ -57,7 +57,7 @@ class Quazip < Formula
       }
     CPP
 
-    system Formula["qtbase"].bin/"qmake", "test.pro"
+    system formula_opt_bin("qtbase")/"qmake", "test.pro"
     system "make"
     assert_path_exists testpath/"test", "test output file does not exist!"
     system "./test"

@@ -21,6 +21,8 @@ class Neko < Formula
     sha256 x86_64_linux:      "452562632f23c92792771f4df762168e34f51f1143ff7dc467e755c34594982c"
   end
 
+  deprecate! date: "2027-03-31", because: "needs EOL `mbedtls@3`"
+
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
   depends_on "bdw-gc"

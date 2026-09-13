@@ -11,12 +11,13 @@ class Dpic < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "069e4b119b56fd45367c629fe3805950cc3b6cfeadee73e3cb7026dcb3de5406"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e0bee67d515b1fc726a346a9fa48942b41c85c473ac759ca5d7aee0e850e889e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e51eb9b759ac15a295bdc87b54f3d8374b46b9d51145fbd35aef8ee189459fd4"
-    sha256 cellar: :any_skip_relocation, sonoma:        "fd6b43df0b91288003dff57d40408349cef599d179f862bd8371b7f6412006e0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9471b7decb3914a6418112410f2345fbf298dda741dd3d5a0c9254b8d9694909"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cee392ae39ad1e121ea9f5a96b5fabbb157db774051e2fdd6c99eb2a5a9a3416"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "0a2109a1df66c36517bfa41d37fa59f6679c9d968f2bd4743dfa627b74217e7d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "069e4b119b56fd45367c629fe3805950cc3b6cfeadee73e3cb7026dcb3de5406"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "e0bee67d515b1fc726a346a9fa48942b41c85c473ac759ca5d7aee0e850e889e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "e51eb9b759ac15a295bdc87b54f3d8374b46b9d51145fbd35aef8ee189459fd4"
+    sha256 cellar: :any_skip_relocation, sonoma:            "fd6b43df0b91288003dff57d40408349cef599d179f862bd8371b7f6412006e0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "9471b7decb3914a6418112410f2345fbf298dda741dd3d5a0c9254b8d9694909"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "cee392ae39ad1e121ea9f5a96b5fabbb157db774051e2fdd6c99eb2a5a9a3416"
   end
 
   def install

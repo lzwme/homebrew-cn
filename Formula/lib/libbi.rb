@@ -8,12 +8,13 @@ class Libbi < Formula
   head "https://github.com/lawmurray/LibBi.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e3f610a205375cf9c5655c96d7372187faaed42eeef648a510f3d9b2126aaeac"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "95233195d8bfdde4999c2d2c6776406b4810e4f1be7da204e94ecc7e04978edb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f2b2beb1601b8891bf48d8dbf83de8d749fc84a49105c8ee97c5e47482146343"
-    sha256 cellar: :any_skip_relocation, sonoma:        "74145974d8c3a196e866c14567e43dd890d180621d04ca3465a3d6d2dc26e7dc"
-    sha256 cellar: :any,                 arm64_linux:   "e92af287db6563c537037ec7096904097288b4e1d461afc0d1a191931ec43f0d"
-    sha256 cellar: :any,                 x86_64_linux:  "e5493553074c94f9ac1269af3e5fc941b99395a74a9d34ed2c974f78e3d5c385"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "fe8a4192ab5aa72ea54f7575ab63a4175ad5dbe38522f667041603277ea658a9"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "e3f610a205375cf9c5655c96d7372187faaed42eeef648a510f3d9b2126aaeac"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "95233195d8bfdde4999c2d2c6776406b4810e4f1be7da204e94ecc7e04978edb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "f2b2beb1601b8891bf48d8dbf83de8d749fc84a49105c8ee97c5e47482146343"
+    sha256 cellar: :any_skip_relocation, sonoma:            "74145974d8c3a196e866c14567e43dd890d180621d04ca3465a3d6d2dc26e7dc"
+    sha256 cellar: :any,                 arm64_linux:       "e92af287db6563c537037ec7096904097288b4e1d461afc0d1a191931ec43f0d"
+    sha256 cellar: :any,                 x86_64_linux:      "e5493553074c94f9ac1269af3e5fc941b99395a74a9d34ed2c974f78e3d5c385"
   end
 
   depends_on "autoconf"

@@ -7,12 +7,13 @@ class Axel < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "f2e4f284dc20b918521e8493a25f90dc1ec4f70e1475e548a1b04ccfa967a130"
-    sha256 cellar: :any, arm64_sequoia: "95c51635ca58e485bd24471f4586bb1588a83abeefd50061bfb24494086696d7"
-    sha256 cellar: :any, arm64_sonoma:  "33ccc3f5be77891efca3ce004f122cc494db614255e445fd721a6bdc9433a30d"
-    sha256 cellar: :any, sonoma:        "8926c7626c602becabb002607665fb5680aaeb113469a2be0d307ef2a84fb902"
-    sha256               arm64_linux:   "66b10f06213d7853d329bbe6550cac344cb5c0ef2e80b9288d5104b4204df8c7"
-    sha256               x86_64_linux:  "5e36485c13d0c6d2d3ec965dae2d9d2e87cb8f4929d7b8a9c1cc4115eda26012"
+    sha256 cellar: :any, arm64_golden_gate: "a619e49c1bd49cbe599adecc5fad05208c41befee47f819ed9e7803c63181d58"
+    sha256 cellar: :any, arm64_tahoe:       "f2e4f284dc20b918521e8493a25f90dc1ec4f70e1475e548a1b04ccfa967a130"
+    sha256 cellar: :any, arm64_sequoia:     "95c51635ca58e485bd24471f4586bb1588a83abeefd50061bfb24494086696d7"
+    sha256 cellar: :any, arm64_sonoma:      "33ccc3f5be77891efca3ce004f122cc494db614255e445fd721a6bdc9433a30d"
+    sha256 cellar: :any, sonoma:            "8926c7626c602becabb002607665fb5680aaeb113469a2be0d307ef2a84fb902"
+    sha256               arm64_linux:       "66b10f06213d7853d329bbe6550cac344cb5c0ef2e80b9288d5104b4204df8c7"
+    sha256               x86_64_linux:      "5e36485c13d0c6d2d3ec965dae2d9d2e87cb8f4929d7b8a9c1cc4115eda26012"
   end
 
   head do

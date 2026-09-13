@@ -11,12 +11,13 @@ class Mpop < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "e6c27bfca49caf2fd741cec067bed4f15b3fcc5974b0a84ea608d89a3b7f32bb"
-    sha256 cellar: :any, arm64_sequoia: "7e068e36b842bd8fb000b54bf191d1b407fe66749a07bf9f92b8a7aa7cc3a7dd"
-    sha256 cellar: :any, arm64_sonoma:  "7440c5d35141cae1d92e437bf8bf9a60f05fbd9b9361eb92d5d8c7679a952b0b"
-    sha256 cellar: :any, sonoma:        "5e79be4e95de101a56ca22a345bfa86abfa60bc2f2e04d6dbf01d45b6bd6f4c2"
-    sha256               arm64_linux:   "43f048d0e7db1270d90445c58e8965da8f25dfff487678bc631709f619e55a13"
-    sha256               x86_64_linux:  "d4eb464313aaa8621da76138c97d8fcba126045be9fcf35929d608f85ad81113"
+    sha256 cellar: :any, arm64_golden_gate: "86ffbd3695a0319ac849da015a5aa4bc7b309abbdace830123c76a6bdace507d"
+    sha256 cellar: :any, arm64_tahoe:       "e6c27bfca49caf2fd741cec067bed4f15b3fcc5974b0a84ea608d89a3b7f32bb"
+    sha256 cellar: :any, arm64_sequoia:     "7e068e36b842bd8fb000b54bf191d1b407fe66749a07bf9f92b8a7aa7cc3a7dd"
+    sha256 cellar: :any, arm64_sonoma:      "7440c5d35141cae1d92e437bf8bf9a60f05fbd9b9361eb92d5d8c7679a952b0b"
+    sha256 cellar: :any, sonoma:            "5e79be4e95de101a56ca22a345bfa86abfa60bc2f2e04d6dbf01d45b6bd6f4c2"
+    sha256               arm64_linux:       "43f048d0e7db1270d90445c58e8965da8f25dfff487678bc631709f619e55a13"
+    sha256               x86_64_linux:      "d4eb464313aaa8621da76138c97d8fcba126045be9fcf35929d608f85ad81113"
   end
 
   depends_on "pkgconf" => :build

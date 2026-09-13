@@ -13,12 +13,13 @@ class Bitlbee < Formula
 
   bottle do
     rebuild 2
-    sha256 arm64_tahoe:   "31ddec7ca433f3bcf5dc5f86206c99464e9586065bf0fbb54b327051ff751dff"
-    sha256 arm64_sequoia: "6a753f8b6013608e71d728f3a7143a3d53656c90c09b52177a0322739f952525"
-    sha256 arm64_sonoma:  "71c5c8da85fb73d4e4bc66f83283c2e3b30e640ce769a92eb781b1867cc720f4"
-    sha256 sonoma:        "6676fbaaf43d2568ba44b99fffe99daf672f15e61838e3a993843f7782209d01"
-    sha256 arm64_linux:   "1277ebd34ba641c76ca3aa2cc366d8a88ac80abf9bd60bea1c71519cd4426a27"
-    sha256 x86_64_linux:  "c7a641730d68f5399b8b322761e21cef1cacce0e532fd7f5ded9202c39599ad9"
+    sha256 arm64_golden_gate: "e30cabc99cc8497cf9189732dbdb80bc90e6989aa18f915688043f58af9f39c7"
+    sha256 arm64_tahoe:       "31ddec7ca433f3bcf5dc5f86206c99464e9586065bf0fbb54b327051ff751dff"
+    sha256 arm64_sequoia:     "6a753f8b6013608e71d728f3a7143a3d53656c90c09b52177a0322739f952525"
+    sha256 arm64_sonoma:      "71c5c8da85fb73d4e4bc66f83283c2e3b30e640ce769a92eb781b1867cc720f4"
+    sha256 sonoma:            "6676fbaaf43d2568ba44b99fffe99daf672f15e61838e3a993843f7782209d01"
+    sha256 arm64_linux:       "1277ebd34ba641c76ca3aa2cc366d8a88ac80abf9bd60bea1c71519cd4426a27"
+    sha256 x86_64_linux:      "c7a641730d68f5399b8b322761e21cef1cacce0e532fd7f5ded9202c39599ad9"
   end
 
   depends_on "pkgconf" => :build

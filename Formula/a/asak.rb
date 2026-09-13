@@ -7,12 +7,13 @@ class Asak < Formula
   head "https://github.com/chaosprint/asak.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ece34a9219e864c87ba8cb21d120dc79100df2bde873715f5fa45401b7af0548"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1aeb82e44bd338080df9218164db8ce26330b5f4c89269d45a8f16147757602f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "12c898a0f70d04045e16592e024ecfecaf95cdccab6955dbfcef95682db3402f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "07a5c1fe0e9ffa353f3240484eabf614f041b8bd53884b9f7e6df15dd535d451"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "46d875061b821be6723665dd5774716325b901e54853b27c77683236581f456b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "366d64c0c14529791b97ae92dc89b3c5a2343c167874586aecb69054eadf184d"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "f4105837149ad3736a13468fc6ed5d97c1586f0c44758cae8d61455c8ea45301"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "ece34a9219e864c87ba8cb21d120dc79100df2bde873715f5fa45401b7af0548"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "1aeb82e44bd338080df9218164db8ce26330b5f4c89269d45a8f16147757602f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "12c898a0f70d04045e16592e024ecfecaf95cdccab6955dbfcef95682db3402f"
+    sha256 cellar: :any_skip_relocation, sonoma:            "07a5c1fe0e9ffa353f3240484eabf614f041b8bd53884b9f7e6df15dd535d451"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "46d875061b821be6723665dd5774716325b901e54853b27c77683236581f456b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "366d64c0c14529791b97ae92dc89b3c5a2343c167874586aecb69054eadf184d"
   end
 
   depends_on "pkgconf" => :build

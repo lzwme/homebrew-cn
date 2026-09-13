@@ -13,12 +13,12 @@ class Gom < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "511ed8f353a51336ea55364d8cd3fd626ecb5f6d04f91d7cfc0c23be3b0fb04b"
-    sha256 cellar: :any, arm64_sequoia: "4c93590b5956c317a7d2bc6a38aede4e0c047c9925e967ebc7884a6f4b77dbbc"
-    sha256 cellar: :any, arm64_sonoma:  "ea9dc8fd99c38aff11dd81cb0eebae01044ad73b6a6cffc4f117726edbf50ba0"
-    sha256 cellar: :any, sonoma:        "d560aa062fcbb20f4a5085682fa3f862b6dca8c30eb21b562418e7e83965634c"
-    sha256               arm64_linux:   "c1131eafb65f0da08a9e3d1d63ff1b00e9caaf801bbd1ed5ce94f6d3b840c79d"
-    sha256               x86_64_linux:  "028268f8e15073088bd20359757d2436a43e0b018d07f44b9ff3d25c6a6eeacc"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "ecb897fa8aaac867d2e94bde956f9ecaf66dd82a235e90bfc8df4cbc4b311193"
+    sha256 cellar: :any, arm64_tahoe:       "b1a06c108f5d6825a633479cbfafaeb84b782489daf60a6e82e255a1b8870672"
+    sha256 cellar: :any, arm64_sequoia:     "5545021b60c1d4c427fa27a311d7b4800eed86b3c328534cd7ef7c6f354ea83b"
+    sha256 cellar: :any, arm64_linux:       "ec9e7993c9b8320781af9435430cce0ed594dd55d23e7e5ed5f90532f86011ba"
+    sha256 cellar: :any, x86_64_linux:      "3d6903358a8e8471eb52e99c18f20ea4c2a2792e449270e0769450970c6e7274"
   end
 
   depends_on "gdk-pixbuf" => :build # https://gitlab.gnome.org/GNOME/gom/-/issues/18
@@ -34,8 +34,9 @@ class Gom < Formula
   def gdk_pixbuf_add_pkgconfig_paths!
     deps_set = Set.new
     Formula["gdk-pixbuf"].recursive_dependencies do |_, dep|
-      Dependency.prune if !dep.required? || deps_set.include?(dep)
+      next Dependable::PRUNE if !dep.required? || deps_set.include?(dep)
 
+      deps_set << dep
       dep_f = dep.to_formula
       ENV.append_path "PKG_CONFIG_PATH", dep_f.opt_lib/"pkgconfig" if (dep_f.opt_lib/"pkgconfig").exist?
       ENV.append_path "PKG_CONFIG_PATH", dep_f.opt_share/"pkgconfig" if (dep_f.opt_share/"pkgconfig").exist?

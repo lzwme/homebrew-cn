@@ -19,12 +19,13 @@ class Hindent < Formula
 
   bottle do
     rebuild 2
-    sha256 cellar: :any, arm64_tahoe:   "e8ab81d0caf17d6c2834d90e76481868c73f0d8a1cd636ed02c33e2362d7b669"
-    sha256 cellar: :any, arm64_sequoia: "db776bdb9ae061d14d2863d2dc1baac79033855793f36f7ca7eeb0576624f26c"
-    sha256 cellar: :any, arm64_sonoma:  "336147fde1d403757ede257d316008b5ef457eb3603b790c7a8907f08edd245f"
-    sha256 cellar: :any, sonoma:        "333600903abc0b0b0dfb649e3afb7cf4e794bdb66d78f4112ddbce461460c72b"
-    sha256 cellar: :any, arm64_linux:   "da224e795271d01684762d7ad21b7e3f9e74fa61bf136a773d38e107b33d0141"
-    sha256 cellar: :any, x86_64_linux:  "e8f838f6c8f27a13b50575b8cd9f3ee25278acffca98f47b12fddcdb9d6e6120"
+    sha256 cellar: :any, arm64_golden_gate: "515d9616cce5dc7e95dd0e147f6f47bc7ce73c432ccc9692a3dc0e67e5e8e1d9"
+    sha256 cellar: :any, arm64_tahoe:       "e8ab81d0caf17d6c2834d90e76481868c73f0d8a1cd636ed02c33e2362d7b669"
+    sha256 cellar: :any, arm64_sequoia:     "db776bdb9ae061d14d2863d2dc1baac79033855793f36f7ca7eeb0576624f26c"
+    sha256 cellar: :any, arm64_sonoma:      "336147fde1d403757ede257d316008b5ef457eb3603b790c7a8907f08edd245f"
+    sha256 cellar: :any, sonoma:            "333600903abc0b0b0dfb649e3afb7cf4e794bdb66d78f4112ddbce461460c72b"
+    sha256 cellar: :any, arm64_linux:       "da224e795271d01684762d7ad21b7e3f9e74fa61bf136a773d38e107b33d0141"
+    sha256 cellar: :any, x86_64_linux:      "e8f838f6c8f27a13b50575b8cd9f3ee25278acffca98f47b12fddcdb9d6e6120"
   end
 
   depends_on "cabal-install" => :build

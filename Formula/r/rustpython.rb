@@ -26,8 +26,9 @@ class Rustpython < Formula
 
   def install
     # Avoid references to Homebrew shims
-    inreplace "crates/vm/build.rs", "std::env::vars_os()",
-                                    'std::env::vars_os().filter(|(k, _)| k != "PATH" && k != "RUSTC_WRAPPER")'
+    inreplace "crates/vm/build.rs",
+              "std::env::vars_os()",
+              %Q(std::env::vars_os().filter(|(_, v)| !v.to_string_lossy().contains("#{HOMEBREW_SHIMS_PATH}")))
 
     system "cargo", "install", "--features=freeze-stdlib", *std_cargo_args
   end

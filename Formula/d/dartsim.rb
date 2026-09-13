@@ -11,12 +11,13 @@ class Dartsim < Formula
   end
 
   bottle do
-    sha256               arm64_tahoe:   "f63057be0ef688c2d1eb482a39aa4f1a4e05cb1709c0d167ef8ecaa3f97c2293"
-    sha256               arm64_sequoia: "776e505b28c9bac1ae279cd6098e99a6c5a802eb5ec2c84b6b459840d6dc07d1"
-    sha256               arm64_sonoma:  "5bb7f57da268c37c6051d3a870b2bd2d0c439ba0c5aa8c553d4b588bcc585445"
-    sha256               sonoma:        "15ef52ed76a01bdb93383be08334b329484af03a709820ef54a27a99daaa9ce5"
-    sha256               arm64_linux:   "ac94c358317cd1172ab84b97b48247a1a2833a676308a6a195c9680edc6da6d6"
-    sha256 cellar: :any, x86_64_linux:  "772da48e17dfcb714fbe921a120e6493b4b61766d5e24d8f20e977c63e0989b4"
+    sha256               arm64_golden_gate: "bb85a1238c4fb94601e7377530ec6b132ef623f153015104fa625e085d3b8969"
+    sha256               arm64_tahoe:       "f63057be0ef688c2d1eb482a39aa4f1a4e05cb1709c0d167ef8ecaa3f97c2293"
+    sha256               arm64_sequoia:     "776e505b28c9bac1ae279cd6098e99a6c5a802eb5ec2c84b6b459840d6dc07d1"
+    sha256               arm64_sonoma:      "5bb7f57da268c37c6051d3a870b2bd2d0c439ba0c5aa8c553d4b588bcc585445"
+    sha256               sonoma:            "15ef52ed76a01bdb93383be08334b329484af03a709820ef54a27a99daaa9ce5"
+    sha256               arm64_linux:       "ac94c358317cd1172ab84b97b48247a1a2833a676308a6a195c9680edc6da6d6"
+    sha256 cellar: :any, x86_64_linux:      "772da48e17dfcb714fbe921a120e6493b4b61766d5e24d8f20e977c63e0989b4"
   end
 
   depends_on "cmake" => [:build, :test]

@@ -8,11 +8,12 @@ class River < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "65ca2b30775f9a010cd7a2fc8408581a596295de3ebc12a5060451a949f6499f"
-    sha256 cellar: :any, arm64_sequoia: "390f6ec9178f51e8b0998a05676eec457da45c894c1175c16f98fdac88c979ce"
-    sha256 cellar: :any, arm64_sonoma:  "e034913a46c445d4c1e63c34b5479ac4601e37dc4af3ac2931ffe226f597fac0"
-    sha256 cellar: :any, arm64_linux:   "1d166f0942c670c915542ce1dd7ccb17ec6fff21a61caed0825cecbc94bfaa2a"
-    sha256 cellar: :any, x86_64_linux:  "7f89656a962554f6248a9ae9850b8ebb6ae87209b20e2b5e563c268efc76d439"
+    sha256 cellar: :any, arm64_golden_gate: "b896b62e95e6f88c62316934c0da8103750b83c555292d183356ecbc660db4c4"
+    sha256 cellar: :any, arm64_tahoe:       "65ca2b30775f9a010cd7a2fc8408581a596295de3ebc12a5060451a949f6499f"
+    sha256 cellar: :any, arm64_sequoia:     "390f6ec9178f51e8b0998a05676eec457da45c894c1175c16f98fdac88c979ce"
+    sha256 cellar: :any, arm64_sonoma:      "e034913a46c445d4c1e63c34b5479ac4601e37dc4af3ac2931ffe226f597fac0"
+    sha256 cellar: :any, arm64_linux:       "1d166f0942c670c915542ce1dd7ccb17ec6fff21a61caed0825cecbc94bfaa2a"
+    sha256 cellar: :any, x86_64_linux:      "7f89656a962554f6248a9ae9850b8ebb6ae87209b20e2b5e563c268efc76d439"
   end
 
   depends_on "cmake" => :build

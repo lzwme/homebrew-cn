@@ -6,11 +6,19 @@ class RangeV3 < Formula
   license "BSL-1.0"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, all: "2fdd480cc63593645c0cc98d62a3607bd22600df59de39e7425bd3f89bd69c82"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, all: "6e8ed329dcadb543381b45e5fac6994216dd9240da78df421272e3a9672c5182"
   end
 
   depends_on "cmake" => :build
+
+  # Drop the std forward declarations that clash with libc++ 22 (macOS 27 SDK)
+  patch do
+    url "https://github.com/ericniebler/range-v3/commit/54fca7092f21bb5f06bf25bc0d99a8f58142a14b.patch?full_index=1"
+    sha256 "9fa907eaea528c547afd4643fa6e15131a6c827281b18628878794e9cc929414"
+    type :unofficial
+    resolves "https://github.com/ericniebler/range-v3/pull/1863"
+  end
 
   def install
     args = %w[

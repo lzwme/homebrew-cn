@@ -13,12 +13,13 @@ class Lrzip < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "1336ea32214e5a828317a17e16f4b98ffe1d23f972f423a69211f10c8ea4fada"
-    sha256 cellar: :any, arm64_sequoia: "66d0f33698a2cd55962dea6d0ae07f99b8de094022bad88a8d19696e05bd54ed"
-    sha256 cellar: :any, arm64_sonoma:  "49e4756d544aaa1a35d61de30b92980a021328d32c1bc730ff2040f4faf340b2"
-    sha256 cellar: :any, sonoma:        "24c58b9098ba037f001207d583e6c46111c2af83eff7910d3b1d88d37ebca5f2"
-    sha256 cellar: :any, arm64_linux:   "8594e4c49f76c7c77fd45fbdcc317d097eb5a15a1e4a0f92cc1207c82162ffc5"
-    sha256 cellar: :any, x86_64_linux:  "b2bb00a3676f64e2807dbe90210e58ed47d2c32f7592d2e3349f64e993d531b9"
+    sha256 cellar: :any, arm64_golden_gate: "1bdbe6d7fb411a81954c535ce6d4736c62ac90d44960ed3371b75c18e7eca2af"
+    sha256 cellar: :any, arm64_tahoe:       "1336ea32214e5a828317a17e16f4b98ffe1d23f972f423a69211f10c8ea4fada"
+    sha256 cellar: :any, arm64_sequoia:     "66d0f33698a2cd55962dea6d0ae07f99b8de094022bad88a8d19696e05bd54ed"
+    sha256 cellar: :any, arm64_sonoma:      "49e4756d544aaa1a35d61de30b92980a021328d32c1bc730ff2040f4faf340b2"
+    sha256 cellar: :any, sonoma:            "24c58b9098ba037f001207d583e6c46111c2af83eff7910d3b1d88d37ebca5f2"
+    sha256 cellar: :any, arm64_linux:       "8594e4c49f76c7c77fd45fbdcc317d097eb5a15a1e4a0f92cc1207c82162ffc5"
+    sha256 cellar: :any, x86_64_linux:      "b2bb00a3676f64e2807dbe90210e58ed47d2c32f7592d2e3349f64e993d531b9"
   end
 
   depends_on "lz4"

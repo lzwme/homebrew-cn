@@ -9,12 +9,13 @@ class EnterTex < Formula
 
   bottle do
     rebuild 1
-    sha256 arm64_tahoe:   "642a39bd8896727469dc8e18dee0fb1a78670445b9260c8448735d2ff5224d05"
-    sha256 arm64_sequoia: "91eef2c5d6cb6f7c390598ec473597f8483becb0d8a5412bc4f9e2e6cc8eec04"
-    sha256 arm64_sonoma:  "1523b7a53310d9e1720e7c651339823cde5aaab43eac1a68174fd5447c5bf47c"
-    sha256 sonoma:        "f34d9cb07ef686285a7668f6ed66ff9551ee34462597f13064a4359038f87879"
-    sha256 arm64_linux:   "631738d30fa2e7bb50cce137cfa5232d9961c631e0d9777fced217229bed1e95"
-    sha256 x86_64_linux:  "24376a6463bd801fccafadafa5b1e6a7e76f8021fcd50ea7f57ee9bb5b135132"
+    sha256 arm64_golden_gate: "7e645147096f4a46a4e9a5c7a5bab78f23ec5bddd0fc66d476c9b8821d7c9fbb"
+    sha256 arm64_tahoe:       "642a39bd8896727469dc8e18dee0fb1a78670445b9260c8448735d2ff5224d05"
+    sha256 arm64_sequoia:     "91eef2c5d6cb6f7c390598ec473597f8483becb0d8a5412bc4f9e2e6cc8eec04"
+    sha256 arm64_sonoma:      "1523b7a53310d9e1720e7c651339823cde5aaab43eac1a68174fd5447c5bf47c"
+    sha256 sonoma:            "f34d9cb07ef686285a7668f6ed66ff9551ee34462597f13064a4359038f87879"
+    sha256 arm64_linux:       "631738d30fa2e7bb50cce137cfa5232d9961c631e0d9777fced217229bed1e95"
+    sha256 x86_64_linux:      "24376a6463bd801fccafadafa5b1e6a7e76f8021fcd50ea7f57ee9bb5b135132"
   end
 
   depends_on "desktop-file-utils" => :build # for update-desktop-database

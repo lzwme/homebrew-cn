@@ -7,12 +7,13 @@ class LibgrapeLite < Formula
   revision 2
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "627453323fe0db452b85a864ca0173ee52fe9dbd8a5a34741c02afd885caf611"
-    sha256 cellar: :any,                 arm64_sequoia: "917d4cb3fd061144c28cd909922f6da05fdde433eba392b1686f4eb31b4d9b06"
-    sha256 cellar: :any,                 arm64_sonoma:  "48cf053978bdf705c4ea11eeaf8935a250ff53d46d04f67af71594de8e150a07"
-    sha256 cellar: :any,                 sonoma:        "6f2280e3c1b484230d53a631b45c2085379f5e1519e89a937b4b22041421f5bd"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6f3c3bf46a28ebda8692ad43bde5af326cd2a93c28ad5e5ebf71bc8b24b1e0fe"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "958b7eb7dc114040a3275bc9be6c668c5529a31705810d330cfcab8f46ee3f18"
+    sha256 cellar: :any,                 arm64_golden_gate: "13b8b639b989ae3806b550d9646ead847a7b0ba79fcd07fe45f991d473f13b38"
+    sha256 cellar: :any,                 arm64_tahoe:       "627453323fe0db452b85a864ca0173ee52fe9dbd8a5a34741c02afd885caf611"
+    sha256 cellar: :any,                 arm64_sequoia:     "917d4cb3fd061144c28cd909922f6da05fdde433eba392b1686f4eb31b4d9b06"
+    sha256 cellar: :any,                 arm64_sonoma:      "48cf053978bdf705c4ea11eeaf8935a250ff53d46d04f67af71594de8e150a07"
+    sha256 cellar: :any,                 sonoma:            "6f2280e3c1b484230d53a631b45c2085379f5e1519e89a937b4b22041421f5bd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "6f3c3bf46a28ebda8692ad43bde5af326cd2a93c28ad5e5ebf71bc8b24b1e0fe"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "958b7eb7dc114040a3275bc9be6c668c5529a31705810d330cfcab8f46ee3f18"
   end
 
   depends_on "cmake" => [:build, :test]

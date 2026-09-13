@@ -16,12 +16,13 @@ class Fuego < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    sha256               arm64_tahoe:   "b4f73b3cf1d971fb3d7d59dc767e93f0edd04f849e9587f79eb67d7c2332e6d7"
-    sha256               arm64_sequoia: "db06e5eee19bf7459b5573c9739c64b45bb6232efb8367ab140ce1afce29ac78"
-    sha256               arm64_sonoma:  "210784b0b6b3333aaff2b05aa3f8fdacd2882034970f6ef18ae4327b774ff944"
-    sha256               sonoma:        "ce658e6cba50c132720e14dad2e6622449ab7368d3ad7aef85ced966362a9e68"
-    sha256               arm64_linux:   "ce2c4cc6da7ea605087ebd5ad79260ea76cd9f5ca57f3e6af7eac8458f3276fe"
-    sha256 cellar: :any, x86_64_linux:  "80308e9cf1b751c2a0956b81070ceb7f412456481c2404b5bf572887d9195b7f"
+    sha256               arm64_golden_gate: "a0ec3c120cd6f4ec0f7b35b23cf79f176f3b13bdd5c26edfeec14eb068945acf"
+    sha256               arm64_tahoe:       "b4f73b3cf1d971fb3d7d59dc767e93f0edd04f849e9587f79eb67d7c2332e6d7"
+    sha256               arm64_sequoia:     "db06e5eee19bf7459b5573c9739c64b45bb6232efb8367ab140ce1afce29ac78"
+    sha256               arm64_sonoma:      "210784b0b6b3333aaff2b05aa3f8fdacd2882034970f6ef18ae4327b774ff944"
+    sha256               sonoma:            "ce658e6cba50c132720e14dad2e6622449ab7368d3ad7aef85ced966362a9e68"
+    sha256               arm64_linux:       "ce2c4cc6da7ea605087ebd5ad79260ea76cd9f5ca57f3e6af7eac8458f3276fe"
+    sha256 cellar: :any, x86_64_linux:      "80308e9cf1b751c2a0956b81070ceb7f412456481c2404b5bf572887d9195b7f"
   end
 
   depends_on "autoconf" => :build

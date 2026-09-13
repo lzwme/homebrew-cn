@@ -14,12 +14,13 @@ class Aptos < Formula
   no_autobump! because: :bumped_by_upstream
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "17b35e1ac627921fbf8be39799b807ed5e2f33e1c1aa3633dfcaf6ffe7cdb0ef"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b5544019d04c35797fcfb8b2d87b8842f950bcdf0b59161b78d319d639876fdf"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2f943918d7d229a5098cd87196b21e76965585539a2de7bc61ce72281a6beabd"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8c11cb840fc37e7e55d1f8797ddab0dcc8410ef2f23d3ef8c0541330410285b0"
-    sha256 cellar: :any,                 arm64_linux:   "96ca4ebf962464d4e273f24dc639f09f3555947858c41014b07201db0b7f2345"
-    sha256 cellar: :any,                 x86_64_linux:  "e95a8478cd61aa956e761ef2bb3cdbdb0146d0329ab1c3d8ff702d3da85ce330"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "a60d6600a881ca3dbb4e9542c96aa66a89908b7c3cf1144af208855f32681550"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "17b35e1ac627921fbf8be39799b807ed5e2f33e1c1aa3633dfcaf6ffe7cdb0ef"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "b5544019d04c35797fcfb8b2d87b8842f950bcdf0b59161b78d319d639876fdf"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "2f943918d7d229a5098cd87196b21e76965585539a2de7bc61ce72281a6beabd"
+    sha256 cellar: :any_skip_relocation, sonoma:            "8c11cb840fc37e7e55d1f8797ddab0dcc8410ef2f23d3ef8c0541330410285b0"
+    sha256 cellar: :any,                 arm64_linux:       "96ca4ebf962464d4e273f24dc639f09f3555947858c41014b07201db0b7f2345"
+    sha256 cellar: :any,                 x86_64_linux:      "e95a8478cd61aa956e761ef2bb3cdbdb0146d0329ab1c3d8ff702d3da85ce330"
   end
 
   depends_on "cmake" => :build

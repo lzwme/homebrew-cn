@@ -30,12 +30,13 @@ class ClickhouseOdbc < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "63e1c88b00b07f2246410fbdd714ecceffe14123260df9d1f3652c0866a5c2fd"
-    sha256 cellar: :any, arm64_sequoia: "94295a6ed8d980b887cd9391a52aff15dd222369709aa690fcb4e89a5d39ee05"
-    sha256 cellar: :any, arm64_sonoma:  "20c929846d6e893a18493c06f3ac75cba57fda453f4bf2ff7b4aacc72baf9323"
-    sha256 cellar: :any, sonoma:        "8d48eb5063f3597c55dab9b50c2032cc5cd5422a9654c294ef73a269f1930cd8"
-    sha256 cellar: :any, arm64_linux:   "e9a20acc01e69a51de6060abe203c55ac5578c6b4bb454986150ca7ef9b2b0c2"
-    sha256 cellar: :any, x86_64_linux:  "319b107dbc1efb1ac89af1b4a9572ab9f844f0ca8cedfd9443aca7eb85a53373"
+    sha256 cellar: :any, arm64_golden_gate: "ba8b3cfb2682bd05e15f340e38aa906b7cc25f7ba90ef07b3306ebb8f473ecc8"
+    sha256 cellar: :any, arm64_tahoe:       "63e1c88b00b07f2246410fbdd714ecceffe14123260df9d1f3652c0866a5c2fd"
+    sha256 cellar: :any, arm64_sequoia:     "94295a6ed8d980b887cd9391a52aff15dd222369709aa690fcb4e89a5d39ee05"
+    sha256 cellar: :any, arm64_sonoma:      "20c929846d6e893a18493c06f3ac75cba57fda453f4bf2ff7b4aacc72baf9323"
+    sha256 cellar: :any, sonoma:            "8d48eb5063f3597c55dab9b50c2032cc5cd5422a9654c294ef73a269f1930cd8"
+    sha256 cellar: :any, arm64_linux:       "e9a20acc01e69a51de6060abe203c55ac5578c6b4bb454986150ca7ef9b2b0c2"
+    sha256 cellar: :any, x86_64_linux:      "319b107dbc1efb1ac89af1b4a9572ab9f844f0ca8cedfd9443aca7eb85a53373"
   end
 
   depends_on "cmake" => :build
@@ -124,9 +125,9 @@ class ClickhouseOdbc < Formula
     ENV["ODBCINI"] = "#{ENV["ODBCSYSINI"]}/my.odbc.ini"
 
     assert_match "Connected!",
-      pipe_output("#{Formula["unixodbc"].bin}/isql 'ClickHouse ODBC Test DSN A'", "quit\n")
+      pipe_output("#{formula_opt_bin("unixodbc")}/isql 'ClickHouse ODBC Test DSN A'", "quit\n")
 
     assert_match "Connected!",
-      pipe_output("#{Formula["unixodbc"].bin}/iusql 'ClickHouse ODBC Test DSN W'", "quit\n")
+      pipe_output("#{formula_opt_bin("unixodbc")}/iusql 'ClickHouse ODBC Test DSN W'", "quit\n")
   end
 end

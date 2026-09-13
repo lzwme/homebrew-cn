@@ -83,7 +83,7 @@ class X8664ElfGrub < Formula
         ".long -(0x1BADB002 + 0x0)\\n"
       );
     C
-    system Formula["#{target}-gcc"].bin/"#{target}-gcc", "-c", "-o", "boot", "boot.c"
+    system formula_opt_bin("#{target}-gcc")/"#{target}-gcc", "-c", "-o", "boot", "boot.c"
     system bin/"#{target}-grub-file", "--is-x86-multiboot", "boot"
   end
 end

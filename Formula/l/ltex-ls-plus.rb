@@ -8,12 +8,13 @@ class LtexLsPlus < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c8932d4554f943f91770427f83ffc0a82cf22160f025db9b4380dc63a1b9e102"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c8932d4554f943f91770427f83ffc0a82cf22160f025db9b4380dc63a1b9e102"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c8932d4554f943f91770427f83ffc0a82cf22160f025db9b4380dc63a1b9e102"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c8932d4554f943f91770427f83ffc0a82cf22160f025db9b4380dc63a1b9e102"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1f6e0cc5c8fdbe2e3ad62603939883135b3356548a30269854552e79e2aa3f92"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1f6e0cc5c8fdbe2e3ad62603939883135b3356548a30269854552e79e2aa3f92"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "bf1dbaae2cc643d3753f06c4b27270691272f7589a7e163d157021966cf43026"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "c8932d4554f943f91770427f83ffc0a82cf22160f025db9b4380dc63a1b9e102"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "c8932d4554f943f91770427f83ffc0a82cf22160f025db9b4380dc63a1b9e102"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "c8932d4554f943f91770427f83ffc0a82cf22160f025db9b4380dc63a1b9e102"
+    sha256 cellar: :any_skip_relocation, sonoma:            "c8932d4554f943f91770427f83ffc0a82cf22160f025db9b4380dc63a1b9e102"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "1f6e0cc5c8fdbe2e3ad62603939883135b3356548a30269854552e79e2aa3f92"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "1f6e0cc5c8fdbe2e3ad62603939883135b3356548a30269854552e79e2aa3f92"
   end
 
   depends_on "maven" => :build

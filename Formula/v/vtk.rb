@@ -14,11 +14,12 @@ class Vtk < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "80194316cbfc7986913ea6a69a46529322ba1dc0543e5d4ac3f39773b50f6e67"
-    sha256 cellar: :any, arm64_sequoia: "397b7a541ec513f3cb2f41474320b06a8ec3fac8121b349cf5a729c8de858e58"
-    sha256 cellar: :any, arm64_sonoma:  "67ba7684409eb1d2f77d15dc819a44e9edbc92c267cee308f461c6f0a6fe8a04"
-    sha256 cellar: :any, arm64_linux:   "e5974d3038b7cf18929f9701eb4b88aaa8765b62b6758f5a164408a62ccf2ba6"
-    sha256 cellar: :any, x86_64_linux:  "e202fef116ae131d60ed5afad83feec343c4315ef22bd019af8f1033f47dead4"
+    sha256 cellar: :any, arm64_golden_gate: "7f0e6857cefc0571e3fe4b8388c0ee7601c7b44d509e018ad38a52a94f65bf6c"
+    sha256 cellar: :any, arm64_tahoe:       "80194316cbfc7986913ea6a69a46529322ba1dc0543e5d4ac3f39773b50f6e67"
+    sha256 cellar: :any, arm64_sequoia:     "397b7a541ec513f3cb2f41474320b06a8ec3fac8121b349cf5a729c8de858e58"
+    sha256 cellar: :any, arm64_sonoma:      "67ba7684409eb1d2f77d15dc819a44e9edbc92c267cee308f461c6f0a6fe8a04"
+    sha256 cellar: :any, arm64_linux:       "e5974d3038b7cf18929f9701eb4b88aaa8765b62b6758f5a164408a62ccf2ba6"
+    sha256 cellar: :any, x86_64_linux:      "e202fef116ae131d60ed5afad83feec343c4315ef22bd019af8f1033f47dead4"
   end
 
   depends_on "cmake" => [:build, :test]

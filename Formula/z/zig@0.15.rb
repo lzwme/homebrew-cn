@@ -11,12 +11,13 @@ class ZigAT015 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "3376720c6c088ddce7219a4dca4f50d790bcc97087c9a44f66a427d6a6718515"
-    sha256 cellar: :any,                 arm64_sequoia: "6984547a314038f1c7123bb3be4a127e82dd0200c12101e7f388adb8ebad03ed"
-    sha256 cellar: :any,                 arm64_sonoma:  "50e79a382a4310c562a5afbdc15435018a5e4d9ff9149729261670e6eaced4b6"
-    sha256 cellar: :any,                 sonoma:        "fbf88162ef3557bbf834f9d2ca329e12ca3d0d383f52e073f48a61a63b650961"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "df1dbd800df23e6abbe082fb4dd6ab3decb6a428c7b8919f25f815ff204fa2bf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2a63a3ccb03202319d56571238da8f5bb23dbbd2446217c3724b8b934c24e832"
+    sha256 cellar: :any,                 arm64_golden_gate: "e21d96f969e06dfd3bf62cba5e6c74d4457337bfe4d442b8d3889c5cebaad858"
+    sha256 cellar: :any,                 arm64_tahoe:       "3376720c6c088ddce7219a4dca4f50d790bcc97087c9a44f66a427d6a6718515"
+    sha256 cellar: :any,                 arm64_sequoia:     "6984547a314038f1c7123bb3be4a127e82dd0200c12101e7f388adb8ebad03ed"
+    sha256 cellar: :any,                 arm64_sonoma:      "50e79a382a4310c562a5afbdc15435018a5e4d9ff9149729261670e6eaced4b6"
+    sha256 cellar: :any,                 sonoma:            "fbf88162ef3557bbf834f9d2ca329e12ca3d0d383f52e073f48a61a63b650961"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "df1dbd800df23e6abbe082fb4dd6ab3decb6a428c7b8919f25f815ff204fa2bf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "2a63a3ccb03202319d56571238da8f5bb23dbbd2446217c3724b8b934c24e832"
   end
 
   keg_only :versioned_formula

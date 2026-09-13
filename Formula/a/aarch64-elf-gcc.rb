@@ -41,8 +41,8 @@ class Aarch64ElfGcc < Formula
                              "--infodir=#{info}/#{target}",
                              "--disable-nls",
                              "--without-headers",
-                             "--with-as=#{Formula["aarch64-elf-binutils"].bin}/aarch64-elf-as",
-                             "--with-ld=#{Formula["aarch64-elf-binutils"].bin}/aarch64-elf-ld",
+                             "--with-as=#{formula_opt_bin("aarch64-elf-binutils")}/aarch64-elf-as",
+                             "--with-ld=#{formula_opt_bin("aarch64-elf-binutils")}/aarch64-elf-ld",
                              "--enable-languages=c,c++,objc,lto",
                              "--enable-lto",
                              "--with-system-zlib",
@@ -69,6 +69,6 @@ class Aarch64ElfGcc < Formula
     C
     system bin/"aarch64-elf-gcc", "-c", "-o", "test-c.o", "test-c.c"
     assert_match "file format elf64-littleaarch64",
-                 shell_output("#{Formula["aarch64-elf-binutils"].bin}/aarch64-elf-objdump -a test-c.o")
+                 shell_output("#{formula_opt_bin("aarch64-elf-binutils")}/aarch64-elf-objdump -a test-c.o")
   end
 end

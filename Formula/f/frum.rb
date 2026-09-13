@@ -13,12 +13,13 @@ class Frum < Formula
 
   bottle do
     rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6d4203a88fd187af4d84738999e3317c6d57ec0cde8cbd16f39704810d937727"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8ce32dc8ccdd4bfe73e4720b6dfb3c7e919d2fcc363afb034718b0dc1319a025"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6cae08b662a22d00190aeec2c62253b249ee576762d6b05f88c24f492adff767"
-    sha256 cellar: :any_skip_relocation, sonoma:        "bb3d9f9b3216b960d432c39f5fa753e4eb5f9743cdb701fa0c31782b97b306dc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ff8846cf4f783572ea245f1a4754632dd00b15624e54eab740fb4d9479f185c0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "38b0f40fe2f458c5f9a441b7b401a5a13f5998ea11ebb1cc42249d662a77bea1"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "20e0cdcd194eb45bdc62bce0ba0388576a5cfa9f68e2fe0e2d1941f5959bb5e4"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "6d4203a88fd187af4d84738999e3317c6d57ec0cde8cbd16f39704810d937727"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "8ce32dc8ccdd4bfe73e4720b6dfb3c7e919d2fcc363afb034718b0dc1319a025"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "6cae08b662a22d00190aeec2c62253b249ee576762d6b05f88c24f492adff767"
+    sha256 cellar: :any_skip_relocation, sonoma:            "bb3d9f9b3216b960d432c39f5fa753e4eb5f9743cdb701fa0c31782b97b306dc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "ff8846cf4f783572ea245f1a4754632dd00b15624e54eab740fb4d9479f185c0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "38b0f40fe2f458c5f9a441b7b401a5a13f5998ea11ebb1cc42249d662a77bea1"
   end
 
   depends_on "rust" => :build

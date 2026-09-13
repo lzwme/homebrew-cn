@@ -7,16 +7,17 @@ class Libmrss < Formula
   head "https://github.com/bakulf/libmrss.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:    "ff549d15087ee2c00bcf2645bb8626106f785b8a351590211b3e95e9e10b5907"
-    sha256 cellar: :any,                 arm64_sequoia:  "183934eb440639c9d4506bcc74cc7c86da915e1bc65d041d79ebbc6eff5f6f1b"
-    sha256 cellar: :any,                 arm64_sonoma:   "b28e679db851fa12e08db6e3c5061cd7dc8daa31b8d39686ae4fc40f6e5164a7"
-    sha256 cellar: :any,                 arm64_ventura:  "52dbc8575b256260ae711ff08c2a8fbd2bed6151c26fb65c872d7e4e97cfd0f6"
-    sha256 cellar: :any,                 arm64_monterey: "fa6977b426f1dd8c129134839639658642a90927e2cc1094989dff78c0d05d9e"
-    sha256 cellar: :any,                 sonoma:         "a3aeb6af0ab68d39a8e9dfb4d3b22501c4e84077d7ebf65cf8403f65db270f26"
-    sha256 cellar: :any,                 ventura:        "1df7a24f602409e59cc256c621e83d69d50cd985d8ffe33398853676a1cbaa82"
-    sha256 cellar: :any,                 monterey:       "f4b7cf45e3d2fcdafd282770ef575cbee21d8d9d5da4eadc34058adfb3c74ac6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "3ae2132725abace2b6a09d82e011f722daf45abe1ec5bcda7fdc4f602a3ae099"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "60d84960b66d364c0d2e8221bade1462f73eef410a6107e00a736235e1f2ec5b"
+    sha256 cellar: :any,                 arm64_golden_gate: "bdb615250f1cb515071d2b2dcd12bd2c9d4a16d924d4f864d7c7b11aeb58631e"
+    sha256 cellar: :any,                 arm64_tahoe:       "ff549d15087ee2c00bcf2645bb8626106f785b8a351590211b3e95e9e10b5907"
+    sha256 cellar: :any,                 arm64_sequoia:     "183934eb440639c9d4506bcc74cc7c86da915e1bc65d041d79ebbc6eff5f6f1b"
+    sha256 cellar: :any,                 arm64_sonoma:      "b28e679db851fa12e08db6e3c5061cd7dc8daa31b8d39686ae4fc40f6e5164a7"
+    sha256 cellar: :any,                 arm64_ventura:     "52dbc8575b256260ae711ff08c2a8fbd2bed6151c26fb65c872d7e4e97cfd0f6"
+    sha256 cellar: :any,                 arm64_monterey:    "fa6977b426f1dd8c129134839639658642a90927e2cc1094989dff78c0d05d9e"
+    sha256 cellar: :any,                 sonoma:            "a3aeb6af0ab68d39a8e9dfb4d3b22501c4e84077d7ebf65cf8403f65db270f26"
+    sha256 cellar: :any,                 ventura:           "1df7a24f602409e59cc256c621e83d69d50cd985d8ffe33398853676a1cbaa82"
+    sha256 cellar: :any,                 monterey:          "f4b7cf45e3d2fcdafd282770ef575cbee21d8d9d5da4eadc34058adfb3c74ac6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "3ae2132725abace2b6a09d82e011f722daf45abe1ec5bcda7fdc4f602a3ae099"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "60d84960b66d364c0d2e8221bade1462f73eef410a6107e00a736235e1f2ec5b"
   end
 
   depends_on "autoconf" => :build

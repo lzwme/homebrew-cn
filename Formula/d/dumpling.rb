@@ -12,11 +12,12 @@ class Dumpling < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e154dd44df6dd45bb79db8d6ae345790b1d3e8015ab6c4b592ca2b8f1045a6ce"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5ade04a4cc5353858cdc481bb567a13c87c310a51e5895c139486f294f57ccdb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0c403563036f87fc908af09f365a1aa6d33c177e1691e77ded701df2300b6544"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2b12ac239be2cc07cc8ae91e5ca9779ad2d81511f068eb61395f3bf24d11a30e"
-    sha256 cellar: :any,                 x86_64_linux:  "02463d96fc0cb0550fcc5b599a42e180fd73faec26d7f39b0c163dd9dd620dcc"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "d2304b2eee5e81079484f49e9f4ffac20773a370a1d2b0aa4cdc34bcaaa3d198"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "e154dd44df6dd45bb79db8d6ae345790b1d3e8015ab6c4b592ca2b8f1045a6ce"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "5ade04a4cc5353858cdc481bb567a13c87c310a51e5895c139486f294f57ccdb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "0c403563036f87fc908af09f365a1aa6d33c177e1691e77ded701df2300b6544"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "2b12ac239be2cc07cc8ae91e5ca9779ad2d81511f068eb61395f3bf24d11a30e"
+    sha256 cellar: :any,                 x86_64_linux:      "02463d96fc0cb0550fcc5b599a42e180fd73faec26d7f39b0c163dd9dd620dcc"
   end
 
   # TODO: unpin go@1.26 when dumpling supports go 1.27

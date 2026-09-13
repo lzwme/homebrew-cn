@@ -12,12 +12,13 @@ class BaculaFd < Formula
 
   bottle do
     rebuild 2
-    sha256                               arm64_tahoe:   "d8e6479890fe58003ea82668949e353c887a5142551e12fa482ab94291a41567"
-    sha256                               arm64_sequoia: "1b45de630f6e4739ae934b5d00ae94500d70f6671bba548b08a0be0d980ed295"
-    sha256                               arm64_sonoma:  "fbe7144f73805ae418979f1585cbdeb44fd567d029123887790b45e066471839"
-    sha256                               sonoma:        "25564b366864ae82e37c6c6daebf04d060c416c47bd62981cfa984bacbe58dc8"
-    sha256                               arm64_linux:   "00e58d0749aa2b73b7c7f41074e77f62c072cd02c47a0d9e0bcf781775bc415f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3f29b7a47f97ba906ad99a6ca74735719764540697d700495e4545bbf66c1038"
+    sha256                               arm64_golden_gate: "f545bf12620fa7220fe06a81c651cb18be244f392b62f8743791003cd0f5f83d"
+    sha256                               arm64_tahoe:       "d8e6479890fe58003ea82668949e353c887a5142551e12fa482ab94291a41567"
+    sha256                               arm64_sequoia:     "1b45de630f6e4739ae934b5d00ae94500d70f6671bba548b08a0be0d980ed295"
+    sha256                               arm64_sonoma:      "fbe7144f73805ae418979f1585cbdeb44fd567d029123887790b45e066471839"
+    sha256                               sonoma:            "25564b366864ae82e37c6c6daebf04d060c416c47bd62981cfa984bacbe58dc8"
+    sha256                               arm64_linux:       "00e58d0749aa2b73b7c7f41074e77f62c072cd02c47a0d9e0bcf781775bc415f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "3f29b7a47f97ba906ad99a6ca74735719764540697d700495e4545bbf66c1038"
   end
 
   depends_on "openssl@3"

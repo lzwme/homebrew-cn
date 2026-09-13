@@ -26,8 +26,8 @@ class Bwidget < Formula
   end
 
   test do
-    cmd = Formula["tcl-tk"].bin/"tclsh"
-    cmd = "#{Formula["xorg-server"].bin}/xvfb-run #{cmd}" if OS.linux? && ENV.exclude?("DISPLAY")
+    cmd = formula_opt_bin("tcl-tk")/"tclsh"
+    cmd = "#{formula_opt_bin("xorg-server")}/xvfb-run #{cmd}" if OS.linux? && ENV.exclude?("DISPLAY")
 
     test_bwidget = <<~TCL
       puts [package require BWidget]

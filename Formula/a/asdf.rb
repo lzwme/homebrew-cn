@@ -12,15 +12,22 @@ class Asdf < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "02a5111019f00e7f2bb4ebc8caedcf2385892e9df1814676574cea32bd61bd47"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "02a5111019f00e7f2bb4ebc8caedcf2385892e9df1814676574cea32bd61bd47"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "02a5111019f00e7f2bb4ebc8caedcf2385892e9df1814676574cea32bd61bd47"
-    sha256 cellar: :any_skip_relocation, sonoma:        "38941222b8c7f94ab50dd4830f3564cfa6685de31b7b2462f809214c977ccf93"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e0ba1c5cbbfe833aa3dd08b2f6aa651534a3e0f90ff063a8cd1f11bc78a9a565"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ea6e7c59d07c598e7b70c0f5ddf29f0a1fe4f9d4f34c28c16d7ddd79ba44e172"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "6ab4eb1d071c697787aa35c16908ba434b04690e074ae3bd775e9ff0b55dccfb"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "02a5111019f00e7f2bb4ebc8caedcf2385892e9df1814676574cea32bd61bd47"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "02a5111019f00e7f2bb4ebc8caedcf2385892e9df1814676574cea32bd61bd47"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "02a5111019f00e7f2bb4ebc8caedcf2385892e9df1814676574cea32bd61bd47"
+    sha256 cellar: :any_skip_relocation, sonoma:            "38941222b8c7f94ab50dd4830f3564cfa6685de31b7b2462f809214c977ccf93"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "e0ba1c5cbbfe833aa3dd08b2f6aa651534a3e0f90ff063a8cd1f11bc78a9a565"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "ea6e7c59d07c598e7b70c0f5ddf29f0a1fe4f9d4f34c28c16d7ddd79ba44e172"
   end
 
   depends_on "go" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     # fix https://github.com/asdf-vm/asdf/issues/1992

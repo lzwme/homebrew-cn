@@ -7,12 +7,13 @@ class Hydra < Formula
   head "https://github.com/vanhauser-thc/thc-hydra.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "a12d39fc54c39d3ce32ed87e5628c318cb35598e53b9452f31d946d31bb51566"
-    sha256 cellar: :any, arm64_sequoia: "39027bba058948d1f26a768b5aa462bd9e72ea329e7b8722aac7e3365ed1e723"
-    sha256 cellar: :any, arm64_sonoma:  "370b0703a0221729a6da9bea96f1fc8c31b39365359e193f03177f32d974aac4"
-    sha256 cellar: :any, sonoma:        "4adc5e6a609e89cdec94e302c956b4e3eb5f05ae8b23654083342e34ca771e1f"
-    sha256 cellar: :any, arm64_linux:   "6d030ea28a0c59bf8453b3084f5c3f641f0798b50cae2e24a8dc425aa73299e1"
-    sha256 cellar: :any, x86_64_linux:  "081e245a7a3a7d46acbcbff41c7f4df66f1ab85f503b7136db5d6e49864ffc19"
+    sha256 cellar: :any, arm64_golden_gate: "435e245a56587d2bddbc7ffb7a42b933f70087e5a860e1a0dc317d15b7cd2fa1"
+    sha256 cellar: :any, arm64_tahoe:       "a12d39fc54c39d3ce32ed87e5628c318cb35598e53b9452f31d946d31bb51566"
+    sha256 cellar: :any, arm64_sequoia:     "39027bba058948d1f26a768b5aa462bd9e72ea329e7b8722aac7e3365ed1e723"
+    sha256 cellar: :any, arm64_sonoma:      "370b0703a0221729a6da9bea96f1fc8c31b39365359e193f03177f32d974aac4"
+    sha256 cellar: :any, sonoma:            "4adc5e6a609e89cdec94e302c956b4e3eb5f05ae8b23654083342e34ca771e1f"
+    sha256 cellar: :any, arm64_linux:       "6d030ea28a0c59bf8453b3084f5c3f641f0798b50cae2e24a8dc425aa73299e1"
+    sha256 cellar: :any, x86_64_linux:      "081e245a7a3a7d46acbcbff41c7f4df66f1ab85f503b7136db5d6e49864ffc19"
   end
 
   depends_on "pkgconf" => :build

@@ -12,19 +12,12 @@ class Itpp < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:    "81d0b47a818e674b72ddec4f61ab65989c8ed629d9804d58afb01a1d615a8c09"
-    sha256 cellar: :any,                 arm64_sequoia:  "58f42ea3453634e3160598380eedb74e3917eec37fe55c5e57b09db4f4ca2314"
-    sha256 cellar: :any,                 arm64_sonoma:   "ea1d6f7812b08ab488e3029479f886c293bec4ace34c3f6fa69dbce73823161e"
-    sha256 cellar: :any,                 arm64_ventura:  "0a42ca8d1cb49fb7b8af53e5c62b6ebb327dee7d81555d58e3b47518ab2105af"
-    sha256 cellar: :any,                 arm64_monterey: "23dde1c42eafdbba4fb7f2d5f26ae5115706fca6104de839903d1394e48a525d"
-    sha256 cellar: :any,                 arm64_big_sur:  "6108f6abf3ec7cd2e4a3b1d3d36dce2cc59327b01d7168705cc1e6b6976c3976"
-    sha256 cellar: :any,                 sonoma:         "72a33b48a02269658ea8ac820b621d6c4c3a6e3192a739ab816cac68dfd5d746"
-    sha256 cellar: :any,                 ventura:        "5a5486d9e73641cafadebc2a16aaff3f0309fd88a03ecc6c51ab74aa9662ffd0"
-    sha256 cellar: :any,                 monterey:       "85f1d652165756860f4f4c8ecc86e583ab9b58ec803804bf278a724319790c11"
-    sha256 cellar: :any,                 big_sur:        "05b2e27723a47b64d46abb221ac931cbd4f530c2bea166ff4a75c6cc6aec496f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "9537b4762ac42062b61e93b08eca2bbd875fcbf1a5defe17a6a83b192ce409e7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "804cfd8e327183c284a6018f22613896b1876aa2b5fffe99e7ecd594d6f4b006"
+    rebuild 2
+    sha256 cellar: :any, arm64_golden_gate: "8c2ae9262836d4f5553998487dbbe29d17c8b0acfd4483336d027f5d9a0af6b5"
+    sha256 cellar: :any, arm64_tahoe:       "060e7669b609986f0434b24e911a35fe23e6faecacee5e0de9bf56a53f742a6d"
+    sha256 cellar: :any, arm64_sequoia:     "c899fd1589b28b54bb25bf0897374dcb094a36c966cf0c716e3326c3a7c13492"
+    sha256 cellar: :any, arm64_linux:       "1bfcb53e3c421c99e71991b3f2209ad07a52416983cc41795ba90acfbb7dd5cb"
+    sha256 cellar: :any, x86_64_linux:      "d6fb24604f7e7cd3ced740c5b23a0a582856ec4baac4f040d8d9f2ebcde23cec"
   end
 
   depends_on "cmake" => :build
@@ -35,7 +28,11 @@ class Itpp < Formula
     # Reported upstream at: https://sourceforge.net/p/itpp/bugs/262/
     mv "VERSION", "VERSION.txt"
 
-    system "cmake", "-S", ".", "-B", "build", "-DCMAKE_POLICY_VERSION_MINIMUM=3.5", *std_cmake_args
+    args = %w[-DCMAKE_POLICY_VERSION_MINIMUM=3.5]
+    # Upstream only adds the OpenMP compile flags, so with `libomp` (via `fftw`) found the link fails on macOS
+    args << "-DCMAKE_DISABLE_FIND_PACKAGE_OpenMP=ON" if OS.mac?
+
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end

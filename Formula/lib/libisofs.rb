@@ -20,12 +20,13 @@ class Libisofs < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "4caf29734bf7eb3a310526591fac0928f2acf0dfc5ebbbefa52538e86eb4cb47"
-    sha256 cellar: :any,                 arm64_sequoia: "23a869971b25f3aa47b71e513a8dcd254c9454d18854e00c253eae764c7173af"
-    sha256 cellar: :any,                 arm64_sonoma:  "87396de437ed3ac87b2032ea5ec5ea44a549120f17fe79b2249f42eb8455ac5e"
-    sha256 cellar: :any,                 sonoma:        "03c40a2bdd94a05d62fff7347badefdff3219fd46317900bb4ba177a9e9406ef"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "41ce7c37d05ce2943118be30d4fbb8a6f88359eaa519b42479748fe23595d61a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0281b9ef58dea6c3529d3614d3aa8e8078ba4368c4d41b61ce7af6f70ea81259"
+    sha256 cellar: :any,                 arm64_golden_gate: "bf46780c17dcbdea3a3bc2971920726c9a97fdac5851a01a1435fe0c0b834e4f"
+    sha256 cellar: :any,                 arm64_tahoe:       "4caf29734bf7eb3a310526591fac0928f2acf0dfc5ebbbefa52538e86eb4cb47"
+    sha256 cellar: :any,                 arm64_sequoia:     "23a869971b25f3aa47b71e513a8dcd254c9454d18854e00c253eae764c7173af"
+    sha256 cellar: :any,                 arm64_sonoma:      "87396de437ed3ac87b2032ea5ec5ea44a549120f17fe79b2249f42eb8455ac5e"
+    sha256 cellar: :any,                 sonoma:            "03c40a2bdd94a05d62fff7347badefdff3219fd46317900bb4ba177a9e9406ef"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "41ce7c37d05ce2943118be30d4fbb8a6f88359eaa519b42479748fe23595d61a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "0281b9ef58dea6c3529d3614d3aa8e8078ba4368c4d41b61ce7af6f70ea81259"
   end
 
   head do

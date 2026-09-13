@@ -25,6 +25,8 @@ class Buildkit < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
   def install
     revision = build.head? ? Utils.git_short_head : tap.user
     ldflags = %W[

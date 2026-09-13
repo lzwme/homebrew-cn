@@ -39,8 +39,8 @@ class Riscv64ElfGcc < Formula
                              "--disable-nls",
                              "--without-isl",
                              "--without-headers",
-                             "--with-as=#{Formula["riscv64-elf-binutils"].bin}/riscv64-elf-as",
-                             "--with-ld=#{Formula["riscv64-elf-binutils"].bin}/riscv64-elf-ld",
+                             "--with-as=#{formula_opt_bin("riscv64-elf-binutils")}/riscv64-elf-as",
+                             "--with-ld=#{formula_opt_bin("riscv64-elf-binutils")}/riscv64-elf-ld",
                              "--with-system-zlib",
                              "--enable-languages=c,c++"
       system "make", "all-gcc"
@@ -64,6 +64,6 @@ class Riscv64ElfGcc < Formula
     C
     system bin/"riscv64-elf-gcc", "-c", "-o", "test-c.o", "test-c.c"
     assert_match "file format elf64-littleriscv",
-                 shell_output("#{Formula["riscv64-elf-binutils"].bin}/riscv64-elf-objdump -a test-c.o")
+                 shell_output("#{formula_opt_bin("riscv64-elf-binutils")}/riscv64-elf-objdump -a test-c.o")
   end
 end

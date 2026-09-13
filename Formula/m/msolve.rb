@@ -7,12 +7,13 @@ class Msolve < Formula
   head "https://github.com/algebraic-solving/msolve.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "79d6b85a8ca28320a093311fe1130a64f97d3c1f76d9a3a468233cd7896b4057"
-    sha256 cellar: :any, arm64_sequoia: "316c2a38885642417f8bad4e1a73d00682c6f03526ee534caa2ec7ba8755a2c3"
-    sha256 cellar: :any, arm64_sonoma:  "01a30a9ba289f138e5c2a372ab4e085f4e3355bc2d283c89fe5aaceeef70a26c"
-    sha256 cellar: :any, sonoma:        "47fa3b47a0c23b6b95a7b27489e75d7ad76d3e6a9681df1193e2e8bc131baa4e"
-    sha256 cellar: :any, arm64_linux:   "4a0545412f2d460027ae1dedfb04a8695a949aa73feb611c17fc7446149f8731"
-    sha256 cellar: :any, x86_64_linux:  "cafb3f44b92c861a4ddf2eaddd3ace04de7902a9bf2f6127e40fd015e27678a1"
+    sha256 cellar: :any, arm64_golden_gate: "c931274c53adabcc132e25a7f01083eaeefb207fb96070e44e9ca5136c0602d2"
+    sha256 cellar: :any, arm64_tahoe:       "79d6b85a8ca28320a093311fe1130a64f97d3c1f76d9a3a468233cd7896b4057"
+    sha256 cellar: :any, arm64_sequoia:     "316c2a38885642417f8bad4e1a73d00682c6f03526ee534caa2ec7ba8755a2c3"
+    sha256 cellar: :any, arm64_sonoma:      "01a30a9ba289f138e5c2a372ab4e085f4e3355bc2d283c89fe5aaceeef70a26c"
+    sha256 cellar: :any, sonoma:            "47fa3b47a0c23b6b95a7b27489e75d7ad76d3e6a9681df1193e2e8bc131baa4e"
+    sha256 cellar: :any, arm64_linux:       "4a0545412f2d460027ae1dedfb04a8695a949aa73feb611c17fc7446149f8731"
+    sha256 cellar: :any, x86_64_linux:      "cafb3f44b92c861a4ddf2eaddd3ace04de7902a9bf2f6127e40fd015e27678a1"
   end
 
   depends_on "autoconf" => :build

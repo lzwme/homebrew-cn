@@ -13,12 +13,13 @@ class Aubio < Formula
 
   bottle do
     rebuild 2
-    sha256 arm64_tahoe:   "54adb27d46e507c9fa6dd57b9da19b11fc435dc706d1a79a2835e83137813a05"
-    sha256 arm64_sequoia: "c428580f0615808cafca003cc2596a913162586af33f5fd1235b274b413c3ed4"
-    sha256 arm64_sonoma:  "979cea612bed708e02710af48d438df7f48a28ed502fb714d023182c24caf43c"
-    sha256 sonoma:        "9200348f9f11f4149f91d7163e79f141f9bb7d2271a6af5398dc38ceadfd6ebd"
-    sha256 arm64_linux:   "d98aea68e9a3677405a41ff89820d6ee76b5fb6fa7f02d964846c7b674756d06"
-    sha256 x86_64_linux:  "be4fcc0b0a52320a3787a70cf2ba81bb1ba0e374921c7be49a96e0dc92d07feb"
+    sha256 arm64_golden_gate: "5ff6c0237b5435341b150ad20331964a173102e9d70d4f29614267b5648b151f"
+    sha256 arm64_tahoe:       "54adb27d46e507c9fa6dd57b9da19b11fc435dc706d1a79a2835e83137813a05"
+    sha256 arm64_sequoia:     "c428580f0615808cafca003cc2596a913162586af33f5fd1235b274b413c3ed4"
+    sha256 arm64_sonoma:      "979cea612bed708e02710af48d438df7f48a28ed502fb714d023182c24caf43c"
+    sha256 sonoma:            "9200348f9f11f4149f91d7163e79f141f9bb7d2271a6af5398dc38ceadfd6ebd"
+    sha256 arm64_linux:       "d98aea68e9a3677405a41ff89820d6ee76b5fb6fa7f02d964846c7b674756d06"
+    sha256 x86_64_linux:      "be4fcc0b0a52320a3787a70cf2ba81bb1ba0e374921c7be49a96e0dc92d07feb"
   end
 
   depends_on "libtool" => :build

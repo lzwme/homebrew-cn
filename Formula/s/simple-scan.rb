@@ -7,12 +7,13 @@ class SimpleScan < Formula
 
   bottle do
     rebuild 1
-    sha256 arm64_tahoe:   "30596e583545482e3ed302507f1bf848eb62758e673acd3b9f2512244319c780"
-    sha256 arm64_sequoia: "cc55f2d2bd85105945f2d5c9fa45d11d7e3ef0135b8a4981e7ab535df97c8848"
-    sha256 arm64_sonoma:  "cee480b30875f61de0f962abaab0c8e8ee881405786af4fcc112885d23c5c85c"
-    sha256 sonoma:        "0a33f961743392ae645d5488f16cda857bf93c4d4156f89c6d1f0fb067e40d35"
-    sha256 arm64_linux:   "29b8609af62a6d93ce0d13e23f57871281f1fd03e06d330d532ef64c316beb72"
-    sha256 x86_64_linux:  "9e044bd94171164c7e90ff3c0ae2765316c250c5ddebe15c0bbb37ec1fae6c2b"
+    sha256 arm64_golden_gate: "684d488a73efaf90a49126292de6cd47c7e05f15ccd5072c8f67166f37dadf69"
+    sha256 arm64_tahoe:       "30596e583545482e3ed302507f1bf848eb62758e673acd3b9f2512244319c780"
+    sha256 arm64_sequoia:     "cc55f2d2bd85105945f2d5c9fa45d11d7e3ef0135b8a4981e7ab535df97c8848"
+    sha256 arm64_sonoma:      "cee480b30875f61de0f962abaab0c8e8ee881405786af4fcc112885d23c5c85c"
+    sha256 sonoma:            "0a33f961743392ae645d5488f16cda857bf93c4d4156f89c6d1f0fb067e40d35"
+    sha256 arm64_linux:       "29b8609af62a6d93ce0d13e23f57871281f1fd03e06d330d532ef64c316beb72"
+    sha256 x86_64_linux:      "9e044bd94171164c7e90ff3c0ae2765316c250c5ddebe15c0bbb37ec1fae6c2b"
   end
 
   depends_on "gettext" => :build # for msgfmt

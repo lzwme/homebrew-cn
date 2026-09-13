@@ -14,11 +14,12 @@ class Flowgrind < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "4b48fbd91d33f54b410c4449281b3517bedf8a42174cbd0351209e84443751e2"
-    sha256 cellar: :any, arm64_sequoia: "ba20919ba3b0427735800935ccf724f606c00aca71c5d4d1a04b36d532702ccd"
-    sha256 cellar: :any, arm64_sonoma:  "7ad19fb73c9ccbaec00c142d276d4e142c7a6678076a7d421f556d608aadc70f"
-    sha256 cellar: :any, arm64_linux:   "f582fd23857e8add6ed2bcae767f7fe48c748af41f41f4a22b16a757f05caca8"
-    sha256 cellar: :any, x86_64_linux:  "f56a800f9c2db032bf1cb714bcdd91d15761c4c744542cc8709ad5385995f100"
+    sha256 cellar: :any, arm64_golden_gate: "048fca783fbf50d8a1bb73d9724edb37f83ecc82cae12dbb952d1b12c6f52d39"
+    sha256 cellar: :any, arm64_tahoe:       "4b48fbd91d33f54b410c4449281b3517bedf8a42174cbd0351209e84443751e2"
+    sha256 cellar: :any, arm64_sequoia:     "ba20919ba3b0427735800935ccf724f606c00aca71c5d4d1a04b36d532702ccd"
+    sha256 cellar: :any, arm64_sonoma:      "7ad19fb73c9ccbaec00c142d276d4e142c7a6678076a7d421f556d608aadc70f"
+    sha256 cellar: :any, arm64_linux:       "f582fd23857e8add6ed2bcae767f7fe48c748af41f41f4a22b16a757f05caca8"
+    sha256 cellar: :any, x86_64_linux:      "f56a800f9c2db032bf1cb714bcdd91d15761c4c744542cc8709ad5385995f100"
   end
 
   head do

@@ -11,11 +11,12 @@ class EcflowUi < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "755a920f95db686597539293c9dc223563626d4bb4986020f8e9bafd6a24ad4b"
-    sha256 arm64_sequoia: "6d6c45a7a67faa6c7ff5e02e8ef1d83134367dffb3ab2ed21dade1bdc4266605"
-    sha256 arm64_sonoma:  "96b2f62d5460bd9aa2bd7177036d4de29464e5843e098b5518f3fbaf845f35b7"
-    sha256 arm64_linux:   "00cee13332701a2f29b4ff345f98309d46edf3404caabec513e3eb06b4f2be9d"
-    sha256 x86_64_linux:  "6cd8373e8c0f4b53751b9ae0fe7bec5feb980bd3c52588483e96b34463d18920"
+    sha256 arm64_golden_gate: "0534e739ad752b3f17300a54eafa133b7e7e2da78ba0132928cb13d10450115a"
+    sha256 arm64_tahoe:       "755a920f95db686597539293c9dc223563626d4bb4986020f8e9bafd6a24ad4b"
+    sha256 arm64_sequoia:     "6d6c45a7a67faa6c7ff5e02e8ef1d83134367dffb3ab2ed21dade1bdc4266605"
+    sha256 arm64_sonoma:      "96b2f62d5460bd9aa2bd7177036d4de29464e5843e098b5518f3fbaf845f35b7"
+    sha256 arm64_linux:       "00cee13332701a2f29b4ff345f98309d46edf3404caabec513e3eb06b4f2be9d"
+    sha256 x86_64_linux:      "6cd8373e8c0f4b53751b9ae0fe7bec5feb980bd3c52588483e96b34463d18920"
   end
 
   depends_on "boost" => :build

@@ -6,12 +6,13 @@ class ClaudeCodeTemplates < Formula
   license "MIT"
 
   bottle do
-    sha256               arm64_tahoe:   "21fa832624394d5cca6f0bc83714bd840bc2d21384ac821a7dafc563e9adc04d"
-    sha256               arm64_sequoia: "006a68414ae23a7b1c19e2912fadd9e545461d689083f632fb894b1f968d3890"
-    sha256               arm64_sonoma:  "331500782df4e9d52c247203e3116b827b168b6a9f0fa6e6a261d944dea83d4b"
-    sha256               sonoma:        "92131234fc34d90755e05b30e7dcb719a8a68bf191687dd3467987369664b54a"
-    sha256 cellar: :any, arm64_linux:   "172dfe26ca2325001fdaa7790b108c162a716973ecf92e2ab211969fe462782f"
-    sha256 cellar: :any, x86_64_linux:  "b192b9f4f21b1e60d0ee6a086123df873125c6eaf968b7cb9d5e68e238f84d45"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "984294f2ebb694e98543955e52817a79b0628c3e7de0758cc96a7a64a7173641"
+    sha256                               arm64_tahoe:       "21fa832624394d5cca6f0bc83714bd840bc2d21384ac821a7dafc563e9adc04d"
+    sha256                               arm64_sequoia:     "006a68414ae23a7b1c19e2912fadd9e545461d689083f632fb894b1f968d3890"
+    sha256                               arm64_sonoma:      "331500782df4e9d52c247203e3116b827b168b6a9f0fa6e6a261d944dea83d4b"
+    sha256                               sonoma:            "92131234fc34d90755e05b30e7dcb719a8a68bf191687dd3467987369664b54a"
+    sha256 cellar: :any,                 arm64_linux:       "172dfe26ca2325001fdaa7790b108c162a716973ecf92e2ab211969fe462782f"
+    sha256 cellar: :any,                 x86_64_linux:      "b192b9f4f21b1e60d0ee6a086123df873125c6eaf968b7cb9d5e68e238f84d45"
   end
 
   depends_on "node"

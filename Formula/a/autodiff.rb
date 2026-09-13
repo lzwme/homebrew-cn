@@ -8,12 +8,13 @@ class Autodiff < Formula
   head "https://github.com/autodiff/autodiff.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e710233eea192e5eb1cafc35744e0c112c2015b1c953b04951f80a8441c19861"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9884600e74258251a3b98f12dfe91649864da02aa4eb20bec25183d365e9270f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6bd150a2d334136661c09b9b39cfde2ac583be0c01f3e3337dab5ce991d7e128"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a5ab6b8e788bb486b1149856f048184b0e9925c9613892a8a556aea6481a157f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "08b090f52b399f776b1d4b1a7601f2a81d75793b0617c942dc235d70cfea41f5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2ed20441a603fa36b2ca44607e1511a644aa5e6255f51cf7e07630da0ef86518"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "50c7115051df961f6baecdbd6905005718cc67afc5805540fd4c8a59220950aa"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "e710233eea192e5eb1cafc35744e0c112c2015b1c953b04951f80a8441c19861"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "9884600e74258251a3b98f12dfe91649864da02aa4eb20bec25183d365e9270f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "6bd150a2d334136661c09b9b39cfde2ac583be0c01f3e3337dab5ce991d7e128"
+    sha256 cellar: :any_skip_relocation, sonoma:            "a5ab6b8e788bb486b1149856f048184b0e9925c9613892a8a556aea6481a157f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "08b090f52b399f776b1d4b1a7601f2a81d75793b0617c942dc235d70cfea41f5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "2ed20441a603fa36b2ca44607e1511a644aa5e6255f51cf7e07630da0ef86518"
   end
 
   # Last release on 2024-04-08 and does not work with latest Eigen

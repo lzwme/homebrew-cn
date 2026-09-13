@@ -7,12 +7,13 @@ class Ecoji < Formula
   head "https://github.com/keith-turner/ecoji.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8b8e9af1bfa4c147c763dac9dab83e1e2c0cc60a0323dc8e64dd52bb4ca8fcb5"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8b8e9af1bfa4c147c763dac9dab83e1e2c0cc60a0323dc8e64dd52bb4ca8fcb5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8b8e9af1bfa4c147c763dac9dab83e1e2c0cc60a0323dc8e64dd52bb4ca8fcb5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ed4661683e62fe770b6e6187c957cd4d6cd78ccee5695dfa51378d3a677d2f3e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "063fbca010a729a6d83b71100ed50e7a9da28bf91a1c5bfad0956a8b63aca023"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "319db5e1d71bdc821fc64e4eb6a5f40784963eb32a49e6a3e685bf4c1c482bd0"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "e6bf603720032904909ea5fc301fd77b22d816bd058f0f3a8d87fa8476334bad"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "8b8e9af1bfa4c147c763dac9dab83e1e2c0cc60a0323dc8e64dd52bb4ca8fcb5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "8b8e9af1bfa4c147c763dac9dab83e1e2c0cc60a0323dc8e64dd52bb4ca8fcb5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "8b8e9af1bfa4c147c763dac9dab83e1e2c0cc60a0323dc8e64dd52bb4ca8fcb5"
+    sha256 cellar: :any_skip_relocation, sonoma:            "ed4661683e62fe770b6e6187c957cd4d6cd78ccee5695dfa51378d3a677d2f3e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "063fbca010a729a6d83b71100ed50e7a9da28bf91a1c5bfad0956a8b63aca023"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "319db5e1d71bdc821fc64e4eb6a5f40784963eb32a49e6a3e685bf4c1c482bd0"
   end
 
   depends_on "go" => :build

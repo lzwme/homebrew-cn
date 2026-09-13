@@ -12,12 +12,13 @@ class Hivex < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "513f520b5576ba24f182a2de912bfa318f37f7f792976b5bef917af066113820"
-    sha256 cellar: :any, arm64_sequoia: "8af38ad8bd4300148430887052eb5f84fdbe094a2bf1e9a049b6e5d5f344d96a"
-    sha256 cellar: :any, arm64_sonoma:  "103d76ee907491f3082f1225740be40d1de8c6b8f39d3f55d417a10ea41c2522"
-    sha256 cellar: :any, sonoma:        "8b0a01c675005731b25f5c38719cc69e9f3eb77bcb92c2883b88adeb90daf5c6"
-    sha256               arm64_linux:   "2e399093f65da88d153957e646969f331e252eff7863a5af3e4055dbf342ed88"
-    sha256               x86_64_linux:  "ffdf125155e8818f0a520df7b9da7da779737af046214192e16bf25be5774c07"
+    sha256 cellar: :any, arm64_golden_gate: "27c46156f3dead89206d55b10b629133a5b93cd6ef9b61a4e74729f930949575"
+    sha256 cellar: :any, arm64_tahoe:       "513f520b5576ba24f182a2de912bfa318f37f7f792976b5bef917af066113820"
+    sha256 cellar: :any, arm64_sequoia:     "8af38ad8bd4300148430887052eb5f84fdbe094a2bf1e9a049b6e5d5f344d96a"
+    sha256 cellar: :any, arm64_sonoma:      "103d76ee907491f3082f1225740be40d1de8c6b8f39d3f55d417a10ea41c2522"
+    sha256 cellar: :any, sonoma:            "8b0a01c675005731b25f5c38719cc69e9f3eb77bcb92c2883b88adeb90daf5c6"
+    sha256               arm64_linux:       "2e399093f65da88d153957e646969f331e252eff7863a5af3e4055dbf342ed88"
+    sha256               x86_64_linux:      "ffdf125155e8818f0a520df7b9da7da779737af046214192e16bf25be5774c07"
   end
 
   depends_on "pkgconf" => :build

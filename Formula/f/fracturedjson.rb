@@ -11,11 +11,12 @@ class Fracturedjson < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "abb2da14912a49e0c78f00d589e486d7fb6f5a3c024833bf957fdcb78b795a87"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "24ec04771ada599b928f6fc4fedd45ee5e16e670b03959d9781fb1650526507e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4f118eca5e7ed9c0ee83255cccd608469d1dc31b3ee1f5b0c49952d831d7a76d"
-    sha256 cellar: :any,                 arm64_linux:   "1e5d27d48dba85088a5f9a667946137acd1b5fbace83cc5ed71c95b37d881d83"
-    sha256 cellar: :any,                 x86_64_linux:  "a010c974d6327aa06d0a2a31ea18b84da90db6d9e7f54d863eb496f7c78b6353"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "fb1459aab4722e0c94ff97bbfb8e1e94d47ff8c4a54956b86ae0b35d830ab252"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "abb2da14912a49e0c78f00d589e486d7fb6f5a3c024833bf957fdcb78b795a87"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "24ec04771ada599b928f6fc4fedd45ee5e16e670b03959d9781fb1650526507e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "4f118eca5e7ed9c0ee83255cccd608469d1dc31b3ee1f5b0c49952d831d7a76d"
+    sha256 cellar: :any,                 arm64_linux:       "1e5d27d48dba85088a5f9a667946137acd1b5fbace83cc5ed71c95b37d881d83"
+    sha256 cellar: :any,                 x86_64_linux:      "a010c974d6327aa06d0a2a31ea18b84da90db6d9e7f54d863eb496f7c78b6353"
   end
 
   depends_on "dotnet" => :build

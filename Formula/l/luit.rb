@@ -11,11 +11,12 @@ class Luit < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d7941cd87b5fdf5fb9efbcc22001b52e2a8c294157a131aaab4b3d99a461694b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6e4a8e69c07983ddefb0b6cafcaf7a94463b5c3e537797b6f640286e1ec959ff"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5c4e8169c28ded8c2a9daae40626a60981a541eef3b9859f78ca1f025f7866d0"
-    sha256 cellar: :any,                 arm64_linux:   "11de53150f0de9f72960c0edefe459553f771da9aa91ed02b1f47ac6da087749"
-    sha256 cellar: :any,                 x86_64_linux:  "d8d4269eb5f86e5b006805613dcf7aa8b52cad10f0e4adc0b547ce6d95c550b4"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "f5b123ce7d5469c83a46381fcaee6ccc283e413b81a584c02f8c099c7e85d64e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "d7941cd87b5fdf5fb9efbcc22001b52e2a8c294157a131aaab4b3d99a461694b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "6e4a8e69c07983ddefb0b6cafcaf7a94463b5c3e537797b6f640286e1ec959ff"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "5c4e8169c28ded8c2a9daae40626a60981a541eef3b9859f78ca1f025f7866d0"
+    sha256 cellar: :any,                 arm64_linux:       "11de53150f0de9f72960c0edefe459553f771da9aa91ed02b1f47ac6da087749"
+    sha256 cellar: :any,                 x86_64_linux:      "d8d4269eb5f86e5b006805613dcf7aa8b52cad10f0e4adc0b547ce6d95c550b4"
   end
 
   on_linux do

@@ -6,14 +6,15 @@ class LpSolve < Formula
   license "LGPL-2.1-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "9b381a714eaa25ce7d9a31b7150e6198580f8dec50e2959447303ba44513f86d"
-    sha256 cellar: :any,                 arm64_sequoia: "c691e3169ffcf1b21b222b4b753515d0b9f6db5b52fee6be1e33c9f503cc8a7e"
-    sha256 cellar: :any,                 arm64_sonoma:  "db3b377573fdbe36eb96425b13543af4a78680e4f5c78458248a7c30267d67a9"
-    sha256 cellar: :any,                 arm64_ventura: "29a989c9e582ee823f481626da3c6034292747c4460305bf6f652a7c83c53001"
-    sha256 cellar: :any,                 sonoma:        "e90df62cda38675941ee970bf8d8b097dd6f7bd9db7cdb121d3e8043729f2267"
-    sha256 cellar: :any,                 ventura:       "25709d6fd6b005147261b08da92b465e72c947ced634acc4243b96529779ec9f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e3c72e665dc3028438b1c3edacd247a7697471283a38c239219fcecf59d9d7c6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "118aa8d10143b14d6bbb0479a21702c256a9d891d22e0d937430eaee09478b65"
+    sha256 cellar: :any,                 arm64_golden_gate: "e5889935dc42771b84f8f5d4597e974b45155de2721f203844de733a1b43c2e4"
+    sha256 cellar: :any,                 arm64_tahoe:       "9b381a714eaa25ce7d9a31b7150e6198580f8dec50e2959447303ba44513f86d"
+    sha256 cellar: :any,                 arm64_sequoia:     "c691e3169ffcf1b21b222b4b753515d0b9f6db5b52fee6be1e33c9f503cc8a7e"
+    sha256 cellar: :any,                 arm64_sonoma:      "db3b377573fdbe36eb96425b13543af4a78680e4f5c78458248a7c30267d67a9"
+    sha256 cellar: :any,                 arm64_ventura:     "29a989c9e582ee823f481626da3c6034292747c4460305bf6f652a7c83c53001"
+    sha256 cellar: :any,                 sonoma:            "e90df62cda38675941ee970bf8d8b097dd6f7bd9db7cdb121d3e8043729f2267"
+    sha256 cellar: :any,                 ventura:           "25709d6fd6b005147261b08da92b465e72c947ced634acc4243b96529779ec9f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "e3c72e665dc3028438b1c3edacd247a7697471283a38c239219fcecf59d9d7c6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "118aa8d10143b14d6bbb0479a21702c256a9d891d22e0d937430eaee09478b65"
   end
 
   def install

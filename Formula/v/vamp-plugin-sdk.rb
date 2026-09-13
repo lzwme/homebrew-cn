@@ -21,14 +21,15 @@ class VampPluginSdk < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "9bb7224a25dadc8224c09bee6594dcd2003a0d8a9f43f3bc392d889923ffb539"
-    sha256 cellar: :any,                 arm64_sequoia: "0fd18a6d81ea391818744555984ec3b2f8052f801a097be6511dc4589d9810fc"
-    sha256 cellar: :any,                 arm64_sonoma:  "1ba7dd45b17c25c2eecfa787ee7ca90509534e91492351c5237acd33be37b3b7"
-    sha256 cellar: :any,                 arm64_ventura: "000ee83ec09f5d546c480315b154076d94e56006892509f8bf31796d9361331d"
-    sha256 cellar: :any,                 sonoma:        "046ceaa07d234cb1e8bb83998f35a0a9d8188e0a650c5f56b89556ca2926cc95"
-    sha256 cellar: :any,                 ventura:       "db668adf1c325b7714a5212f2c8aaf55f6eed7cf9486e58a4573334a13555812"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f9db23c618723a54ba3fdf8481efeb39a46aed83c59c699eebb5e78e888f4aa0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a9cb9dabefa0df5e50224c77c88a1b892f59fecbad8f987ac2cc94a87fd09a55"
+    sha256 cellar: :any,                 arm64_golden_gate: "4202b4f4a665762e183d74074627e9ef48e9493cea397a81b1ede9608e4675fc"
+    sha256 cellar: :any,                 arm64_tahoe:       "9bb7224a25dadc8224c09bee6594dcd2003a0d8a9f43f3bc392d889923ffb539"
+    sha256 cellar: :any,                 arm64_sequoia:     "0fd18a6d81ea391818744555984ec3b2f8052f801a097be6511dc4589d9810fc"
+    sha256 cellar: :any,                 arm64_sonoma:      "1ba7dd45b17c25c2eecfa787ee7ca90509534e91492351c5237acd33be37b3b7"
+    sha256 cellar: :any,                 arm64_ventura:     "000ee83ec09f5d546c480315b154076d94e56006892509f8bf31796d9361331d"
+    sha256 cellar: :any,                 sonoma:            "046ceaa07d234cb1e8bb83998f35a0a9d8188e0a650c5f56b89556ca2926cc95"
+    sha256 cellar: :any,                 ventura:           "db668adf1c325b7714a5212f2c8aaf55f6eed7cf9486e58a4573334a13555812"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "f9db23c618723a54ba3fdf8481efeb39a46aed83c59c699eebb5e78e888f4aa0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "a9cb9dabefa0df5e50224c77c88a1b892f59fecbad8f987ac2cc94a87fd09a55"
   end
 
   depends_on "automake" => :build

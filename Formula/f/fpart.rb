@@ -6,12 +6,13 @@ class Fpart < Formula
   license "BSD-2-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3a7b6bfbc2279332153d51d52841192833f3ed34ef8c596d27af275231a5b072"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "35796778e1a61ef685e0bc42255ee66de6118206dffd63e2a81c1834e37acabb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "288b3d14e8e04b83a5be53ddbe77c5702412bd6a6e6bb449c1443883ed323f9f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0f801675689144e579ccca49232458b1e242b8719fab4120deea0b99311ceaa9"
-    sha256 cellar: :any,                 arm64_linux:   "96302cefa0fcbeea32aaa400cf7109a7040cac8ddc15f2eaf9f84407eff063cb"
-    sha256 cellar: :any,                 x86_64_linux:  "f8ddc70935f0c39319d88eac68e6c577cae2d74b2beee43e0bf6606dabc2b7e4"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "bdd1ee8c47d459642bfb489b51bf09ae405fb0120a4494de5a2dff96649ae583"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "3a7b6bfbc2279332153d51d52841192833f3ed34ef8c596d27af275231a5b072"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "35796778e1a61ef685e0bc42255ee66de6118206dffd63e2a81c1834e37acabb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "288b3d14e8e04b83a5be53ddbe77c5702412bd6a6e6bb449c1443883ed323f9f"
+    sha256 cellar: :any_skip_relocation, sonoma:            "0f801675689144e579ccca49232458b1e242b8719fab4120deea0b99311ceaa9"
+    sha256 cellar: :any,                 arm64_linux:       "96302cefa0fcbeea32aaa400cf7109a7040cac8ddc15f2eaf9f84407eff063cb"
+    sha256 cellar: :any,                 x86_64_linux:      "f8ddc70935f0c39319d88eac68e6c577cae2d74b2beee43e0bf6606dabc2b7e4"
   end
 
   depends_on "autoconf" => :build

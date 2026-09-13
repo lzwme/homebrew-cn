@@ -13,12 +13,13 @@ class Morse < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "63cd5a3269b81c69ab39a3be47d3a76dc0ef9a44f0d41f8bf7e94a109d5108a0"
-    sha256 cellar: :any,                 arm64_sequoia: "d459f6db21be6d02be6458429ced954f31c15ce16ea89cea5f533a3a73fe3cab"
-    sha256 cellar: :any,                 arm64_sonoma:  "21e0fd265edc7277e0254d951755bc47e020bf9f8e184d9500d63fcb5b7b8818"
-    sha256 cellar: :any,                 sonoma:        "519ca305bca624f04b0e42771e335b5d245a21049829de5b1d5677f66d9b6318"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4089a0dba0e309fc44a067114a1b6f8dd520ad29ba4052f2c10e21b01be9f1ae"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "328a69c6c05be20cf38718ee30eab62aa3dc8a7404c92068bf23f1412e4851ad"
+    sha256 cellar: :any,                 arm64_golden_gate: "c756fb65c9b69006ab5b7f680b827819c32a2388468ee13ab765b5503122808c"
+    sha256 cellar: :any,                 arm64_tahoe:       "63cd5a3269b81c69ab39a3be47d3a76dc0ef9a44f0d41f8bf7e94a109d5108a0"
+    sha256 cellar: :any,                 arm64_sequoia:     "d459f6db21be6d02be6458429ced954f31c15ce16ea89cea5f533a3a73fe3cab"
+    sha256 cellar: :any,                 arm64_sonoma:      "21e0fd265edc7277e0254d951755bc47e020bf9f8e184d9500d63fcb5b7b8818"
+    sha256 cellar: :any,                 sonoma:            "519ca305bca624f04b0e42771e335b5d245a21049829de5b1d5677f66d9b6318"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "4089a0dba0e309fc44a067114a1b6f8dd520ad29ba4052f2c10e21b01be9f1ae"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "328a69c6c05be20cf38718ee30eab62aa3dc8a7404c92068bf23f1412e4851ad"
   end
 
   depends_on "pkgconf" => :build

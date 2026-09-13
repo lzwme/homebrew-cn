@@ -12,12 +12,13 @@ class Gpa < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "3a82b91a089610dccf3f303827932bc3392cd4024d0ff62efec8392f5930aeab"
-    sha256 arm64_sequoia: "2a4266a3cbad43f2f54cadb15eb3ddb790b2d2db2780604df6b42b94bf9b1afa"
-    sha256 arm64_sonoma:  "8af83db187a7f1f5e3754451774d829fa3d6e42ccc7c2e5e5a81f3188dd9fab1"
-    sha256 sonoma:        "47b09b31877384921bc68ed46e530ab9ac5bab39be5ede50f74094033bd0ecb1"
-    sha256 arm64_linux:   "2c38b595e2e3aa802f989d8b45feb610d783c0009433f8bdc28855fd3ed4765f"
-    sha256 x86_64_linux:  "d92aa141bfd3900387f1862202f6f7e7bc8d958001b5db3c68251033a572140a"
+    sha256 arm64_golden_gate: "9dd912eabff5559b7b24debe4133e8f62d65ecea4b47bb7153af91368f1b357a"
+    sha256 arm64_tahoe:       "3a82b91a089610dccf3f303827932bc3392cd4024d0ff62efec8392f5930aeab"
+    sha256 arm64_sequoia:     "2a4266a3cbad43f2f54cadb15eb3ddb790b2d2db2780604df6b42b94bf9b1afa"
+    sha256 arm64_sonoma:      "8af83db187a7f1f5e3754451774d829fa3d6e42ccc7c2e5e5a81f3188dd9fab1"
+    sha256 sonoma:            "47b09b31877384921bc68ed46e530ab9ac5bab39be5ede50f74094033bd0ecb1"
+    sha256 arm64_linux:       "2c38b595e2e3aa802f989d8b45feb610d783c0009433f8bdc28855fd3ed4765f"
+    sha256 x86_64_linux:      "d92aa141bfd3900387f1862202f6f7e7bc8d958001b5db3c68251033a572140a"
   end
 
   head do

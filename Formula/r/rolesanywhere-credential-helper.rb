@@ -7,12 +7,13 @@ class RolesanywhereCredentialHelper < Formula
   head "https://github.com/aws/rolesanywhere-credential-helper.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "008bb81b25cc0cf4323be5b608e75dad5c75cdd24b4492d59f4508761f1fb06f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "12fbf5a5447f67ccb2b31d3ffc90ab38104111d6e4c95893480e2000d02c1f54"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1f7f5089a3100c0967438ea9f2cf93cb95abe39b3c6a2eee25d054e94b2ce2d7"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2676e59785989ca3eb5380b4e526b9ed99e6c1a4f27621f78aded611778f3c85"
-    sha256 cellar: :any,                 arm64_linux:   "211db6f18b00932c75f8bec0282f53c7e2c8a1b6ec8fdbd4bc658ef5165b4d43"
-    sha256 cellar: :any,                 x86_64_linux:  "3dc2cf95f51d8b3c199f7312420846b23a8e23b33e6cfdfd78b51a2a243e2619"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "6222beadeaf0bbbd0af26f2f1f57cc74f02bc35145c0c477b6b8b049a4db2594"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "008bb81b25cc0cf4323be5b608e75dad5c75cdd24b4492d59f4508761f1fb06f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "12fbf5a5447f67ccb2b31d3ffc90ab38104111d6e4c95893480e2000d02c1f54"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "1f7f5089a3100c0967438ea9f2cf93cb95abe39b3c6a2eee25d054e94b2ce2d7"
+    sha256 cellar: :any_skip_relocation, sonoma:            "2676e59785989ca3eb5380b4e526b9ed99e6c1a4f27621f78aded611778f3c85"
+    sha256 cellar: :any,                 arm64_linux:       "211db6f18b00932c75f8bec0282f53c7e2c8a1b6ec8fdbd4bc658ef5165b4d43"
+    sha256 cellar: :any,                 x86_64_linux:      "3dc2cf95f51d8b3c199f7312420846b23a8e23b33e6cfdfd78b51a2a243e2619"
   end
 
   depends_on "go" => :build

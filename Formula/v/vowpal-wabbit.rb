@@ -1,18 +1,29 @@
 class VowpalWabbit < Formula
   desc "Online learning algorithm"
   homepage "https://vowpalwabbit.org"
-  url "https://ghfast.top/https://github.com/VowpalWabbit/vowpal_wabbit/archive/refs/tags/9.11.2.tar.gz"
-  sha256 "21352230bf0e4c01fb4da1959a7338e21a3150ca5641eb2328abfc749fd32e77"
   license "BSD-3-Clause"
+  revision 1
   head "https://github.com/VowpalWabbit/vowpal_wabbit.git", branch: "master"
 
+  stable do
+    url "https://ghfast.top/https://github.com/VowpalWabbit/vowpal_wabbit/archive/refs/tags/9.11.2.tar.gz"
+    sha256 "21352230bf0e4c01fb4da1959a7338e21a3150ca5641eb2328abfc749fd32e77"
+
+    # fmt 12.2 removed fmt::format from <fmt/core.h>.
+    patch do
+      url "https://github.com/VowpalWabbit/vowpal_wabbit/commit/5f3aecba8f6caf252d3b1f5765ef470460638d19.patch?full_index=1"
+      sha256 "56313024992c4a4cd8ebdca09ecd50298bce48eb43aefd8cfe60003b1da4a34d"
+      type :backport
+      resolves "https://github.com/VowpalWabbit/vowpal_wabbit/pull/4922"
+    end
+  end
+
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "b0aa875aad744729cb35b5d07e6d4f114fdfa56d547a671ca89b37f83f2aa2bc"
-    sha256 cellar: :any,                 arm64_sequoia: "b2481c1fc9bff8698b47cd14f04758fd3d692bb910fbf5d04bca98edc1ff3663"
-    sha256 cellar: :any,                 arm64_sonoma:  "8e4910e79afc071a151ae018453987b45aa19ca4b45df8bf68417d010043ab48"
-    sha256 cellar: :any,                 sonoma:        "1860be73a277dd90ac3761230de3c903df37bbcc37e19fc7f4391c56a31dec21"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0059589a36a2a7bec959346f8ce478586c06a5d8bf6303fa845d87498cf069ef"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b464231f8052b9d51d4b3da74de076e5a93981dc60298c13cb2cac0c00ab1fd1"
+    sha256 cellar: :any, arm64_golden_gate: "5044866ccd2a37958ae1dcf7e92fd28c8e80a995ebdc4ac220dd0421e4fc0f45"
+    sha256 cellar: :any, arm64_tahoe:       "06c6aa41afc3beb526bdc2e424c69ce5c4a143d158885d87dc366dea6279d079"
+    sha256 cellar: :any, arm64_sequoia:     "ccece3ff0e46959b4735c4f309f6f89dc30305f7665fd5e44c1ee4f6c47b779e"
+    sha256 cellar: :any, arm64_linux:       "a7035c3e87f8e27bc86f474a71133245f974e0196c46fb12e3db877c57b43747"
+    sha256 cellar: :any, x86_64_linux:      "53e5278d9a14ab90b7f838baa74c6de0f965601df4757736ead9c70d5a47d1ac"
   end
 
   depends_on "boost" => :build

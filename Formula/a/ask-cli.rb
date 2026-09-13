@@ -6,16 +6,12 @@ class AskCli < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "6ec89ac010d0a2464553452e947e5ce7944a71a658e470a756118e9d3565282e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "a883f88d9896627c807417adb1d23d9884dbbd65f7fbc1060b80315fc1093150"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "26fa2cfd5a670de545967dc8aecf123ac3e0e71b9f92735a82dd81e8e2219458"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0fee36de070aab95a6baf2f7e6a8310a5d109e543f5edeeebca4a8fb75eff82e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "2a726d74c5e74806f900274563d143f998b4d9222ab310ac43ed0345e39d2b07"
-    sha256 cellar: :any_skip_relocation, sonoma:         "50dcfa2070028a255e11a25a05a264a9fc5daa156cb9517914fd3a560e116ace"
-    sha256 cellar: :any_skip_relocation, ventura:        "eed5bf23802e3c9e24250a75088dfd170936908b1630c4ca6528ec08de93bcde"
-    sha256 cellar: :any_skip_relocation, monterey:       "08fefe63b075593ac0cb4c75d42f6c2ab48bb62d9c630b4b59eefbe69de6d955"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "5075ee29be0cae332a709af27e7ac67c1040dba2bdd1e9b99af77ab595155ba1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a076d74bb089649513e80702d85a273a67c3f453ad1ef4ca962f55f175d83c81"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "ab899bbb64905b1630d5542bc9e8dbf7d1c8fbb9191b2982c22aae447520327c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "ab899bbb64905b1630d5542bc9e8dbf7d1c8fbb9191b2982c22aae447520327c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "ab899bbb64905b1630d5542bc9e8dbf7d1c8fbb9191b2982c22aae447520327c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "276f13320ff6fa486d1ae63083e75c5e92ef62113ef8bb7421e7984d8a4b3239"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "276f13320ff6fa486d1ae63083e75c5e92ef62113ef8bb7421e7984d8a4b3239"
   end
 
   depends_on "node"
@@ -23,6 +19,9 @@ class AskCli < Formula
   def install
     system "npm", "install", *std_npm_args
     bin.write_exec_script libexec/"bin/ask"
+
+    node_modules = libexec/"lib/node_modules/ask-cli/node_modules"
+    deuniversalize_machos node_modules/"fsevents/fsevents.node" if OS.mac?
   end
 
   test do

@@ -8,12 +8,13 @@ class Mods < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cabb69b0f13a40d880de4f499d8858967b59f9eb53dead33c2791991cbaeb533"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cabb69b0f13a40d880de4f499d8858967b59f9eb53dead33c2791991cbaeb533"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cabb69b0f13a40d880de4f499d8858967b59f9eb53dead33c2791991cbaeb533"
-    sha256 cellar: :any_skip_relocation, sonoma:        "13855735a91fc4ec39118e17e99c3fe874153c1733629a012987709030927045"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4d5d54b0ff3b4722747d5bdc33ff27c985e3c836c31028d0763048a5908a401f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "89100e59be7a746933965396dfbebcab35529ae7559329ac77c5df814d594d53"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "e8c91c4930d4c160e342ec698d70350b29eecea4e699c36a46d8cb7d61fbdb1a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "cabb69b0f13a40d880de4f499d8858967b59f9eb53dead33c2791991cbaeb533"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "cabb69b0f13a40d880de4f499d8858967b59f9eb53dead33c2791991cbaeb533"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "cabb69b0f13a40d880de4f499d8858967b59f9eb53dead33c2791991cbaeb533"
+    sha256 cellar: :any_skip_relocation, sonoma:            "13855735a91fc4ec39118e17e99c3fe874153c1733629a012987709030927045"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "4d5d54b0ff3b4722747d5bdc33ff27c985e3c836c31028d0763048a5908a401f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "89100e59be7a746933965396dfbebcab35529ae7559329ac77c5df814d594d53"
   end
 
   deprecate! date: "2026-07-17", because: :repo_archived

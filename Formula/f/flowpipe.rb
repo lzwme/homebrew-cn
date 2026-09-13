@@ -15,12 +15,13 @@ class Flowpipe < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9d5b657b21b15c940acec6238e0cd89e895036eb450256ea6752dd2c19da3376"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "01e80c290be97bbf46151c1d42045794513ee105154ff7334386703c490009f3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "caa879f469cb72d16e8b273294d389b8dcbe62f1507d88d6cc9213dd8d5dec17"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ea0c62140f48a01c8a04c169db845bd0c43899effad6120dc5d3275c5c9074de"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6af786a07fd488e106a0af054a1aa2fee1284660c716936765dfe784decb0919"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c71bf954a39d61804ee4d312b4a8bc052f588921f2569f6cd6f9ad9c1e98b136"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "867459624767da36e963951efb3f830cc51f846ed88ed49a13108c12ea07f437"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "9d5b657b21b15c940acec6238e0cd89e895036eb450256ea6752dd2c19da3376"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "01e80c290be97bbf46151c1d42045794513ee105154ff7334386703c490009f3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "caa879f469cb72d16e8b273294d389b8dcbe62f1507d88d6cc9213dd8d5dec17"
+    sha256 cellar: :any_skip_relocation, sonoma:            "ea0c62140f48a01c8a04c169db845bd0c43899effad6120dc5d3275c5c9074de"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "6af786a07fd488e106a0af054a1aa2fee1284660c716936765dfe784decb0919"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "c71bf954a39d61804ee4d312b4a8bc052f588921f2569f6cd6f9ad9c1e98b136"
   end
 
   depends_on "corepack" => :build

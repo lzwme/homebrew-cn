@@ -6,12 +6,13 @@ class TreeSitterRuby < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "394475b85b7a20b4a98422f2c7a39c7b76a0f0b2bfb185419a4dd18601f33d97"
-    sha256 cellar: :any,                 arm64_sequoia: "c330f405d59e440333f38cc2a838112eb942ca80f3221ec91f85ec34495d7667"
-    sha256 cellar: :any,                 arm64_sonoma:  "82616501a4eccafd7b20608afb98870e7f8e19eadd168adfc9853050cf9afda7"
-    sha256 cellar: :any,                 sonoma:        "e13afc01e9224d48f0f8a7782a90a75b06c468032020a7c18af3247e6fb48495"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3f10a6194456b2b4dbd140b6953b656e7eadc49c8d37cc3a031bb56106809bee"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "be1edebb84a8f3a3fc6d609e49ae2f4c0125b3837ed9243376cd96b879478483"
+    sha256 cellar: :any,                 arm64_golden_gate: "48a000a87d99799cacc2bfee648fc5705997c1a5b085cd08f387b2d804f4dde5"
+    sha256 cellar: :any,                 arm64_tahoe:       "394475b85b7a20b4a98422f2c7a39c7b76a0f0b2bfb185419a4dd18601f33d97"
+    sha256 cellar: :any,                 arm64_sequoia:     "c330f405d59e440333f38cc2a838112eb942ca80f3221ec91f85ec34495d7667"
+    sha256 cellar: :any,                 arm64_sonoma:      "82616501a4eccafd7b20608afb98870e7f8e19eadd168adfc9853050cf9afda7"
+    sha256 cellar: :any,                 sonoma:            "e13afc01e9224d48f0f8a7782a90a75b06c468032020a7c18af3247e6fb48495"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "3f10a6194456b2b4dbd140b6953b656e7eadc49c8d37cc3a031bb56106809bee"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "be1edebb84a8f3a3fc6d609e49ae2f4c0125b3837ed9243376cd96b879478483"
   end
 
   depends_on "tree-sitter" => :test

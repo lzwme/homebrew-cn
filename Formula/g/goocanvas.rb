@@ -7,16 +7,17 @@ class Goocanvas < Formula
   revision 1
 
   bottle do
-    sha256                               arm64_tahoe:    "fb3b0618b234fb12e646ae2494b14e83ca2d5ee50c4d7891d4a2914b7a88763f"
-    sha256                               arm64_sequoia:  "8bd21a150d98f2abed5d68ac690487f1d2311e509bc54087d8b577a294bd6711"
-    sha256                               arm64_sonoma:   "e700e5fb6f0f6454c9cc42975dae876c53f62ec1e6f5db3acadfea35232b72c5"
-    sha256                               arm64_ventura:  "337609cd9eec8d0ca6502b73524cb5f86bc07ce6527438266a61ed253de5dcea"
-    sha256                               arm64_monterey: "c5e356f708724c16f6594833df9ecca148f0e24862edbd3e8cb7632780cef5ea"
-    sha256                               sonoma:         "6994404c6b91d235eda6a3a10b5a3a1a6b268d1fbbcdbc81ea3d538b19c71db0"
-    sha256                               ventura:        "555e4e209cfcb7476df00bba6e4c23e99c3dddf938bdee7389f454cfc3dc7aba"
-    sha256                               monterey:       "142e227274383dbc2c9e492f4cd84b9d12299fbb1a59813ce0d67eba5455e305"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "6c3bb638ce2932282d43879c06235c8f16d0548f2be355ee19b480266b253792"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "33355d4dbdef036db01c5948d764d8202047838d08a68c1de6d323e5f18bc6ef"
+    sha256                               arm64_golden_gate: "97f7f61750722ed2be7b8d113ed2f201dc163702b12247b91261005422c8d3c6"
+    sha256                               arm64_tahoe:       "fb3b0618b234fb12e646ae2494b14e83ca2d5ee50c4d7891d4a2914b7a88763f"
+    sha256                               arm64_sequoia:     "8bd21a150d98f2abed5d68ac690487f1d2311e509bc54087d8b577a294bd6711"
+    sha256                               arm64_sonoma:      "e700e5fb6f0f6454c9cc42975dae876c53f62ec1e6f5db3acadfea35232b72c5"
+    sha256                               arm64_ventura:     "337609cd9eec8d0ca6502b73524cb5f86bc07ce6527438266a61ed253de5dcea"
+    sha256                               arm64_monterey:    "c5e356f708724c16f6594833df9ecca148f0e24862edbd3e8cb7632780cef5ea"
+    sha256                               sonoma:            "6994404c6b91d235eda6a3a10b5a3a1a6b268d1fbbcdbc81ea3d538b19c71db0"
+    sha256                               ventura:           "555e4e209cfcb7476df00bba6e4c23e99c3dddf938bdee7389f454cfc3dc7aba"
+    sha256                               monterey:          "142e227274383dbc2c9e492f4cd84b9d12299fbb1a59813ce0d67eba5455e305"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "6c3bb638ce2932282d43879c06235c8f16d0548f2be355ee19b480266b253792"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "33355d4dbdef036db01c5948d764d8202047838d08a68c1de6d323e5f18bc6ef"
   end
 
   # https://gitlab.gnome.org/Archive/goocanvas

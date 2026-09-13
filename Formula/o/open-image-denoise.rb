@@ -6,12 +6,13 @@ class OpenImageDenoise < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "8c909235a75a9384114d3fcf0883d00329058f838883a7c1d6f413464aeca4b6"
-    sha256 cellar: :any, arm64_sequoia: "661d9d70bc1f3b1d730ae6baf972718c86524c2da5b9a761a03a4fe018047c9c"
-    sha256 cellar: :any, arm64_sonoma:  "08037a870edca1e5564d66376cb1ffcdc1d1d97b080b6c74b4514f8f15f5b936"
-    sha256 cellar: :any, sonoma:        "471a7b02b669a37c0e928b7b38cc171f71778312632cdc1f060bb352d57f3ebb"
-    sha256 cellar: :any, arm64_linux:   "45384cb87381b3e120bdfa8e7875197bc090671156f483aafad9e1792c9957e2"
-    sha256 cellar: :any, x86_64_linux:  "c37c018d7c6b6eb0a04f03732de5b14938b02458a9f15ab0ab0b6a7c8207dfc3"
+    sha256 cellar: :any, arm64_golden_gate: "6a9c2c4aef72a407bb62b6b2cce4ff8b296f6319fd5387c4441a71cbb99677ec"
+    sha256 cellar: :any, arm64_tahoe:       "8c909235a75a9384114d3fcf0883d00329058f838883a7c1d6f413464aeca4b6"
+    sha256 cellar: :any, arm64_sequoia:     "661d9d70bc1f3b1d730ae6baf972718c86524c2da5b9a761a03a4fe018047c9c"
+    sha256 cellar: :any, arm64_sonoma:      "08037a870edca1e5564d66376cb1ffcdc1d1d97b080b6c74b4514f8f15f5b936"
+    sha256 cellar: :any, sonoma:            "471a7b02b669a37c0e928b7b38cc171f71778312632cdc1f060bb352d57f3ebb"
+    sha256 cellar: :any, arm64_linux:       "45384cb87381b3e120bdfa8e7875197bc090671156f483aafad9e1792c9957e2"
+    sha256 cellar: :any, x86_64_linux:      "c37c018d7c6b6eb0a04f03732de5b14938b02458a9f15ab0ab0b6a7c8207dfc3"
   end
 
   depends_on "cmake" => :build

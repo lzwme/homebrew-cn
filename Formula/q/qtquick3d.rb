@@ -20,11 +20,12 @@ class Qtquick3d < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "678adda8a83967e09ff22736bfeaf6834575ae0d3538f639f2c82febc4443f39"
-    sha256 cellar: :any, arm64_sequoia: "f50664dd94c14b2280e931ab7fba622b2067398b1f9d0feac78226f7fe0fe927"
-    sha256 cellar: :any, arm64_sonoma:  "0e4b41ec93140fb7c058131731ba656a14aabb3a8f87cb63b356ecec4d64cbf4"
-    sha256 cellar: :any, arm64_linux:   "04da091eede7d8e1193fd831d73f4cef7ab138f1e1f7ff9a55bd99524be1d14b"
-    sha256 cellar: :any, x86_64_linux:  "959a603668dd30add9fb9559445beb427776c554b162ee0e3cf5c2f786559edf"
+    sha256 cellar: :any, arm64_golden_gate: "d0d2ac00795c37512e87ef0931310877b000d8a4e506ced4d0b07ae6931aae2c"
+    sha256 cellar: :any, arm64_tahoe:       "678adda8a83967e09ff22736bfeaf6834575ae0d3538f639f2c82febc4443f39"
+    sha256 cellar: :any, arm64_sequoia:     "f50664dd94c14b2280e931ab7fba622b2067398b1f9d0feac78226f7fe0fe927"
+    sha256 cellar: :any, arm64_sonoma:      "0e4b41ec93140fb7c058131731ba656a14aabb3a8f87cb63b356ecec4d64cbf4"
+    sha256 cellar: :any, arm64_linux:       "04da091eede7d8e1193fd831d73f4cef7ab138f1e1f7ff9a55bd99524be1d14b"
+    sha256 cellar: :any, x86_64_linux:      "959a603668dd30add9fb9559445beb427776c554b162ee0e3cf5c2f786559edf"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -103,7 +104,7 @@ class Qtquick3d < Formula
 
     ENV.delete "CPATH" if OS.mac?
     mkdir "qmake" do
-      system Formula["qtbase"].bin/"qmake", testpath/"test.pro"
+      system formula_opt_bin("qtbase")/"qmake", testpath/"test.pro"
       system "make"
       system "./test"
     end

@@ -13,12 +13,13 @@ class Gmt < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "8426d92d217b614cb0fd5066c486fc93191fb2cf675bd038e001c040a9284f54"
-    sha256 arm64_sequoia: "3e935e5a493a00f309aecbea1fd3f3221350b29dfb254be5f96d76c87838bae6"
-    sha256 arm64_sonoma:  "3e3e036dd4c5240ae42368fd3e7f9cc6dd15ddbd2224e4be586558185636e5e0"
-    sha256 sonoma:        "28fab84c6fab03639ae90774f12b054daa953570d3422dd929853238c5bcbade"
-    sha256 arm64_linux:   "5584f987ee3454a4579c697642e7246bb8c1a2e529f2b62dab59f22c1a493311"
-    sha256 x86_64_linux:  "52d1c66b978f82152ebf68fc61d692f50ef7d16dd7779f0d0eb6d2f92f5044dc"
+    sha256 arm64_golden_gate: "2a47ba19f278c325a6415608196ed0962ff20c48667df9f690e087c109f3ccdd"
+    sha256 arm64_tahoe:       "8426d92d217b614cb0fd5066c486fc93191fb2cf675bd038e001c040a9284f54"
+    sha256 arm64_sequoia:     "3e935e5a493a00f309aecbea1fd3f3221350b29dfb254be5f96d76c87838bae6"
+    sha256 arm64_sonoma:      "3e3e036dd4c5240ae42368fd3e7f9cc6dd15ddbd2224e4be586558185636e5e0"
+    sha256 sonoma:            "28fab84c6fab03639ae90774f12b054daa953570d3422dd929853238c5bcbade"
+    sha256 arm64_linux:       "5584f987ee3454a4579c697642e7246bb8c1a2e529f2b62dab59f22c1a493311"
+    sha256 x86_64_linux:      "52d1c66b978f82152ebf68fc61d692f50ef7d16dd7779f0d0eb6d2f92f5044dc"
   end
 
   depends_on "cmake" => :build

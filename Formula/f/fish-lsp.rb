@@ -6,12 +6,13 @@ class FishLsp < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fcbef4048454b6950e049149de392a7fe255299b02f42a6d9836597ad7be4907"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f470b1874386527238b5ed0748d5f7adb1bbb1f32d0e71d355f930bc1c09b749"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3d200592220693ec2fcbfa5fc0e824fe950ac4c62d4a8d4ce6702e8e0fa414fd"
-    sha256 cellar: :any_skip_relocation, sonoma:        "dc8c154948af7b3465829bf3615dba777c1b36efb13d9d36b8c8e7e4d503e8bc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ec93370a9d330ad22a741a82541967ec5dbe792d7849d7629b5baf1330be4c15"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7e9b96d6996eda61eadab4a30c14cc1f8fd9901a5d3565cba8ee9592f575afbd"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "81c7f6786a95f95818cb2cb400aca6ed7c7d9909522a21b1478b7bd33606f233"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "fcbef4048454b6950e049149de392a7fe255299b02f42a6d9836597ad7be4907"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "f470b1874386527238b5ed0748d5f7adb1bbb1f32d0e71d355f930bc1c09b749"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "3d200592220693ec2fcbfa5fc0e824fe950ac4c62d4a8d4ce6702e8e0fa414fd"
+    sha256 cellar: :any_skip_relocation, sonoma:            "dc8c154948af7b3465829bf3615dba777c1b36efb13d9d36b8c8e7e4d503e8bc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "ec93370a9d330ad22a741a82541967ec5dbe792d7849d7629b5baf1330be4c15"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "7e9b96d6996eda61eadab4a30c14cc1f8fd9901a5d3565cba8ee9592f575afbd"
   end
 
   depends_on "fish" => [:build, :test]

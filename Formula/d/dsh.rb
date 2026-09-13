@@ -35,7 +35,7 @@ class Dsh < Formula
     # Use GNU sed on macOS to avoid this build failure:
     # sed: RE error: illegal byte sequence
     # Reported to the upstream developer by email as a bug tracker does not exist.
-    ENV.prepend_path "PATH", Formula["gnu-sed"].libexec/"gnubin" if OS.mac?
+    ENV.prepend_path "PATH", formula_opt_bin("gnu-sed")/"gnubin" if OS.mac?
 
     args = []
     # Help old config scripts identify arm64 linux

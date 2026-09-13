@@ -7,14 +7,15 @@ class Mummer < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "ea0c12fffc202ecffba587be17af6930099814e91deed4a211e8a61b0bba6813"
-    sha256 cellar: :any,                 arm64_sequoia: "4ef96b830de6516a971c825d97a1de9b020f6fd2e6fd8a61fc3ed3529ac03ea9"
-    sha256 cellar: :any,                 arm64_sonoma:  "0850acd96974b0be3972f4869f021f275bb13c745febb4c3dca281b4aaf34042"
-    sha256 cellar: :any,                 arm64_ventura: "34d55037263abf3c69c4c78620f5e8a43edae45192938be22744bc5b81326b60"
-    sha256 cellar: :any,                 sonoma:        "b3d22a6054a15ec85880b9f3880f1404d6d49a945d6a98fd62ba2e47dd33d2ab"
-    sha256 cellar: :any,                 ventura:       "717f648282b990e25757252a3acc3be4ba1dcaf1f8600913f6fcae8ed92af3b7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a813872082d1721022174b82f6d53e954779f204cb15a706dc9698b1b8b41324"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d131ccce92a6642ca9ede2ddf4097dd88a48b96748a9a64724fdc9e509b049bc"
+    sha256 cellar: :any,                 arm64_golden_gate: "cd8b6c9f741ad5219f92574f023afef7687545646291ec99823fa971e771eee9"
+    sha256 cellar: :any,                 arm64_tahoe:       "ea0c12fffc202ecffba587be17af6930099814e91deed4a211e8a61b0bba6813"
+    sha256 cellar: :any,                 arm64_sequoia:     "4ef96b830de6516a971c825d97a1de9b020f6fd2e6fd8a61fc3ed3529ac03ea9"
+    sha256 cellar: :any,                 arm64_sonoma:      "0850acd96974b0be3972f4869f021f275bb13c745febb4c3dca281b4aaf34042"
+    sha256 cellar: :any,                 arm64_ventura:     "34d55037263abf3c69c4c78620f5e8a43edae45192938be22744bc5b81326b60"
+    sha256 cellar: :any,                 sonoma:            "b3d22a6054a15ec85880b9f3880f1404d6d49a945d6a98fd62ba2e47dd33d2ab"
+    sha256 cellar: :any,                 ventura:           "717f648282b990e25757252a3acc3be4ba1dcaf1f8600913f6fcae8ed92af3b7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "a813872082d1721022174b82f6d53e954779f204cb15a706dc9698b1b8b41324"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "d131ccce92a6642ca9ede2ddf4097dd88a48b96748a9a64724fdc9e509b049bc"
   end
 
   on_macos do

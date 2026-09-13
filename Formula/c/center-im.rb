@@ -11,16 +11,17 @@ class CenterIm < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:    "0144e5a04086b115b6c21b4c9dd9448ec8a43f965737aaa7ca21213d5d78a1dd"
-    sha256 arm64_sequoia:  "70d910d088f565556129872ef5a54c802a0ff2e938e05d2f9315efcd4794fe4f"
-    sha256 arm64_sonoma:   "65761f72dce3b59dfa0b058aa2eff754ffb132b9c61e9cf36d595f9ad12b3054"
-    sha256 arm64_ventura:  "aeaea7b73d4df68699def112fc0b0108d22af0680a9f8bc1d323b9c605044091"
-    sha256 arm64_monterey: "5234f05e2c0871d7df29fa263734ee54feb09de3ee6fbd327ec0d8e3655530ab"
-    sha256 sonoma:         "02f27aa633b15c66529bd3d7c9d11f382b4998816fad2f048b1efd11be44cc2b"
-    sha256 ventura:        "c39b856a9f8a148f92c600bafb203b135e95ccb34e6a28fa891602c3b6d81858"
-    sha256 monterey:       "a8442a0d0e8ba9888577ddfd2d8c76699cb0eb20a1e96c0b0b143186ad27e63c"
-    sha256 arm64_linux:    "2a1f98a1195968b86f0fd44b1c115daeb2a54d38161b85339641223ab121fd37"
-    sha256 x86_64_linux:   "7148aa25f016c25825f9ed5fb6526d14737ba38208779727937801f2c7dbc42f"
+    sha256 arm64_golden_gate: "9d99fbd63e95e86d5d4bea35b574713e65c458670fcad2bfb98b571c03f84bec"
+    sha256 arm64_tahoe:       "0144e5a04086b115b6c21b4c9dd9448ec8a43f965737aaa7ca21213d5d78a1dd"
+    sha256 arm64_sequoia:     "70d910d088f565556129872ef5a54c802a0ff2e938e05d2f9315efcd4794fe4f"
+    sha256 arm64_sonoma:      "65761f72dce3b59dfa0b058aa2eff754ffb132b9c61e9cf36d595f9ad12b3054"
+    sha256 arm64_ventura:     "aeaea7b73d4df68699def112fc0b0108d22af0680a9f8bc1d323b9c605044091"
+    sha256 arm64_monterey:    "5234f05e2c0871d7df29fa263734ee54feb09de3ee6fbd327ec0d8e3655530ab"
+    sha256 sonoma:            "02f27aa633b15c66529bd3d7c9d11f382b4998816fad2f048b1efd11be44cc2b"
+    sha256 ventura:           "c39b856a9f8a148f92c600bafb203b135e95ccb34e6a28fa891602c3b6d81858"
+    sha256 monterey:          "a8442a0d0e8ba9888577ddfd2d8c76699cb0eb20a1e96c0b0b143186ad27e63c"
+    sha256 arm64_linux:       "2a1f98a1195968b86f0fd44b1c115daeb2a54d38161b85339641223ab121fd37"
+    sha256 x86_64_linux:      "7148aa25f016c25825f9ed5fb6526d14737ba38208779727937801f2c7dbc42f"
   end
 
   deprecate! date: "2026-08-28", because: :unmaintained

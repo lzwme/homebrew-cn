@@ -7,12 +7,13 @@ class LolHtml < Formula
   head "https://github.com/cloudflare/lol-html.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "ff453eb0f46dba632afa582e8ce611b790f85a4c4d28b65573735e6cb6fa6ba2"
-    sha256 cellar: :any, arm64_sequoia: "ac1c72f921e0acec3c69177533e61a2228b2e7c984bfd19fac09ac88aa791594"
-    sha256 cellar: :any, arm64_sonoma:  "b67aa6eb0266db37b7d9bd3ed21dc83134289c99b74d25819e8ea7f35ef6cff3"
-    sha256 cellar: :any, sonoma:        "8510e92a4b70ccf1ef8c0cbe0edba138378e01ec6c646e32d6199b49caf90ab8"
-    sha256 cellar: :any, arm64_linux:   "5f86df27a8b35afad2aebe25c7ef4b6248ec40523a7a4a2ee783b5ab356da532"
-    sha256 cellar: :any, x86_64_linux:  "97ea3cf673dc69a9b570ab00f7e65caf4b8724f819241cad83284c9cc2b1c9e9"
+    sha256 cellar: :any, arm64_golden_gate: "d1242a69ae275f310dfbafd95c65c611c12a1b0e345cfec7effd9b3b6c506103"
+    sha256 cellar: :any, arm64_tahoe:       "ff453eb0f46dba632afa582e8ce611b790f85a4c4d28b65573735e6cb6fa6ba2"
+    sha256 cellar: :any, arm64_sequoia:     "ac1c72f921e0acec3c69177533e61a2228b2e7c984bfd19fac09ac88aa791594"
+    sha256 cellar: :any, arm64_sonoma:      "b67aa6eb0266db37b7d9bd3ed21dc83134289c99b74d25819e8ea7f35ef6cff3"
+    sha256 cellar: :any, sonoma:            "8510e92a4b70ccf1ef8c0cbe0edba138378e01ec6c646e32d6199b49caf90ab8"
+    sha256 cellar: :any, arm64_linux:       "5f86df27a8b35afad2aebe25c7ef4b6248ec40523a7a4a2ee783b5ab356da532"
+    sha256 cellar: :any, x86_64_linux:      "97ea3cf673dc69a9b570ab00f7e65caf4b8724f819241cad83284c9cc2b1c9e9"
   end
 
   depends_on "cargo-c" => :build

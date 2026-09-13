@@ -12,12 +12,13 @@ class NodeExporter < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4940755a005ca7e51e11f28709882b3aa036e8bea5d07e4ef902a76875b66a57"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bb74943f82def0f2e07826688c81fd41842eb4c04c829eed2283018dba2896e1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "49702b39916ec9566f96af09e314ed665d7b8775e1c88b4ff3b355644d5b7747"
-    sha256 cellar: :any_skip_relocation, sonoma:        "102f85b6b16a7c8db65a1a48a09a950b09032f6ca3814b0429b9107164406b87"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6e11b10c9859df2b2fc18648e22b6805997fe7b57cee6ec27e2e6a8dfddcf48c"
-    sha256 cellar: :any,                 x86_64_linux:  "e7868f24e2c501f07cfca37d27f881174460ec00574a9378167f6cdb95de710a"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "beaed124a90cca58e5247e6fa6d9b684474113572975ebe32eca208a5b1a740e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "4940755a005ca7e51e11f28709882b3aa036e8bea5d07e4ef902a76875b66a57"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "bb74943f82def0f2e07826688c81fd41842eb4c04c829eed2283018dba2896e1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "49702b39916ec9566f96af09e314ed665d7b8775e1c88b4ff3b355644d5b7747"
+    sha256 cellar: :any_skip_relocation, sonoma:            "102f85b6b16a7c8db65a1a48a09a950b09032f6ca3814b0429b9107164406b87"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "6e11b10c9859df2b2fc18648e22b6805997fe7b57cee6ec27e2e6a8dfddcf48c"
+    sha256 cellar: :any,                 x86_64_linux:      "e7868f24e2c501f07cfca37d27f881174460ec00574a9378167f6cdb95de710a"
   end
 
   depends_on "go" => :build

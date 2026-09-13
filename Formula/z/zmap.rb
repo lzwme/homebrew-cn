@@ -12,12 +12,12 @@ class Zmap < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "a6cfcbd2423f57bffb1699a0c540e1d56104e515badf2c5e57db18b281b18bcf"
-    sha256 arm64_sequoia: "aef2c085a16b8ff137a8b4a9686a3f84f5d0ceff85e26c15c6123b477e605550"
-    sha256 arm64_sonoma:  "c1a2bc3e2e68b40a000b190d3717878c7d47d7d6498bb55a9414ae2e053b8659"
-    sha256 sonoma:        "0825eeed6ad930f164a7706e2dcdd83a9d61b7368b2d16577a3d7b10cc214dc0"
-    sha256 arm64_linux:   "fd9772f29689341c0e65fbb720dbb8b019379f4db80d2596eeedfa1490879d07"
-    sha256 x86_64_linux:  "44aae53bcb568d3bfe6926c09768e9fa9a03b5aed700e8279d3ac95f59354469"
+    rebuild 1
+    sha256 arm64_golden_gate: "0395a8921d0d23d1022233a1cf2a8b7fbdd2d83da35611ce26c199d4fd4578dd"
+    sha256 arm64_tahoe:       "a78dfb358782c21ebc754ce63d0d54b80d274b7f73b2f5f3fe9c8fcd04972c3d"
+    sha256 arm64_sequoia:     "06ed1558ae552a5e77602d41086a4e25d3d6eaa03615a7e850db885d817f29e4"
+    sha256 arm64_linux:       "73720cfee6360c4a420f4cf12e9a8b3fee89faf598e47de1cb7a68fa548360b6"
+    sha256 x86_64_linux:      "b7a2feb5a7e0ace72f678517b0dae749f9f02fdb4b4f7ca2ecacc9f376096119"
   end
 
   depends_on "byacc" => :build
@@ -45,7 +45,8 @@ class Zmap < Formula
   end
 
   test do
-    output = shell_output("#{sbin}/zmap -p 80 -N 1 8.8.8.8 2>&1", 1)
+    # Pass a gateway MAC so the test does not depend on the host's ARP table
+    output = shell_output("#{sbin}/zmap -p 80 -N 1 -G 00:11:22:33:44:55 8.8.8.8 2>&1", 1)
     assert_match "[INFO] zmap: By default, ZMap will output the unique IP addresses " \
                  "of hosts that respond successfully (e.g., SYN-ACK packet)", output
     # need sudo permission

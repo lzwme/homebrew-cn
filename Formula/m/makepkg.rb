@@ -8,12 +8,13 @@ class Makepkg < Formula
   head "https://gitlab.archlinux.org/pacman/pacman.git", branch: "master"
 
   bottle do
-    sha256               arm64_tahoe:   "437af5d09741dd52b5c010e56ad27ce2f44b9f04d6dad061d45086a5c99602d8"
-    sha256               arm64_sequoia: "62fd3d7eec4486efe93fd2a8bdf99615efeaf778bb74e42682fb0b27115d348c"
-    sha256               arm64_sonoma:  "a28ff22bdfcddb04c3d986464c29e69322faa7cb87f97838ec99eb71c8b9da7d"
-    sha256 cellar: :any, sonoma:        "0b4e76c60d7475c0a11de8bc5aab08be1c88fcc234f5191d0cc159c76b954e15"
-    sha256               arm64_linux:   "0efea1e4d153388446b13bcb72b22bbb54eea0edecba47e55884e3d452d4e716"
-    sha256               x86_64_linux:  "997a27e40a380fa9cdc29efabc88cdf021b18c51b81ffe4fcfa4889ba8fea785"
+    sha256               arm64_golden_gate: "d9d058191b3ae8da9fcc3808ac479a1b9b54f301ceea5f8976b88c3426a94955"
+    sha256               arm64_tahoe:       "437af5d09741dd52b5c010e56ad27ce2f44b9f04d6dad061d45086a5c99602d8"
+    sha256               arm64_sequoia:     "62fd3d7eec4486efe93fd2a8bdf99615efeaf778bb74e42682fb0b27115d348c"
+    sha256               arm64_sonoma:      "a28ff22bdfcddb04c3d986464c29e69322faa7cb87f97838ec99eb71c8b9da7d"
+    sha256 cellar: :any, sonoma:            "0b4e76c60d7475c0a11de8bc5aab08be1c88fcc234f5191d0cc159c76b954e15"
+    sha256               arm64_linux:       "0efea1e4d153388446b13bcb72b22bbb54eea0edecba47e55884e3d452d4e716"
+    sha256               x86_64_linux:      "997a27e40a380fa9cdc29efabc88cdf021b18c51b81ffe4fcfa4889ba8fea785"
   end
 
   depends_on "meson" => :build

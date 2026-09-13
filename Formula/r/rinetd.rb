@@ -16,12 +16,13 @@ class Rinetd < Formula
 
   bottle do
     rebuild 1
-    sha256 arm64_tahoe:   "ac09912351ca2587bbea4572cbc2d5101d93b14a1ccf925cff8cfa83aedf5128"
-    sha256 arm64_sequoia: "1bbfcadccec37315d56385b18334084654fa2176c6b8c6f11c4a059be3541acd"
-    sha256 arm64_sonoma:  "1ca5c0b84ac7749459a50478734f32ccc256f092aec9322400963f87d2a1dbdf"
-    sha256 sonoma:        "e6c5ecca7be62f96837669443c191fdfebeb2872f936750814eda3bda0082a51"
-    sha256 arm64_linux:   "385446c42d6820a00d85ca5793a341ebeb20e32390bba72876ea6156056142ba"
-    sha256 x86_64_linux:  "b261f72637835eb98ed1773e236c664160528346a77e65fabef294766809def5"
+    sha256 arm64_golden_gate: "ebdcc93b3c10aa8630f79d8bf987cdb112f4312eaeafe898150a840fcad8c80a"
+    sha256 arm64_tahoe:       "ac09912351ca2587bbea4572cbc2d5101d93b14a1ccf925cff8cfa83aedf5128"
+    sha256 arm64_sequoia:     "1bbfcadccec37315d56385b18334084654fa2176c6b8c6f11c4a059be3541acd"
+    sha256 arm64_sonoma:      "1ca5c0b84ac7749459a50478734f32ccc256f092aec9322400963f87d2a1dbdf"
+    sha256 sonoma:            "e6c5ecca7be62f96837669443c191fdfebeb2872f936750814eda3bda0082a51"
+    sha256 arm64_linux:       "385446c42d6820a00d85ca5793a341ebeb20e32390bba72876ea6156056142ba"
+    sha256 x86_64_linux:      "b261f72637835eb98ed1773e236c664160528346a77e65fabef294766809def5"
   end
 
   def install

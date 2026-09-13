@@ -6,14 +6,15 @@ class Libformfactor < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "d6ed20ea820a3bbfc39bfa54acf1dc0ae6c3be6f4fae05e6ffc9ad40e2b5706e"
-    sha256 cellar: :any, arm64_sequoia: "f78124b91494b63720a9e1715660480d9c7b60a48eae20d26df180408bbeac62"
-    sha256 cellar: :any, arm64_sonoma:  "ce60d6a12b38bfa806e2ea23aa02a319947402d4a697b8df5f749c8545263f90"
-    sha256 cellar: :any, tahoe:         "97512da00fd1cd73585b59921d6b35ed23d3c7d515a2e2cc2a925a6539bef0b8"
-    sha256 cellar: :any, sequoia:       "e373f8ae492d35dbadb058860a0e88f1a01a2a8a83c860e89ee3a5c715029d31"
-    sha256 cellar: :any, sonoma:        "474ddad22287c63bd0e222d94d7fa552194301044f20fcb9845297446a946955"
-    sha256 cellar: :any, arm64_linux:   "50eaad281e372b31a35fa5aa5c25f3ea9b39d0923487faa1af3333af3cefecfc"
-    sha256 cellar: :any, x86_64_linux:  "ff1747fba1d74e5b92ab1661fb4a2cfe9688ecd1012cf2f199493fa9ba993a34"
+    sha256 cellar: :any, arm64_golden_gate: "5460f42a8a8a2b30749604a094662d82eb97c237c733aee85bb3e8231002fe3b"
+    sha256 cellar: :any, arm64_tahoe:       "d6ed20ea820a3bbfc39bfa54acf1dc0ae6c3be6f4fae05e6ffc9ad40e2b5706e"
+    sha256 cellar: :any, arm64_sequoia:     "f78124b91494b63720a9e1715660480d9c7b60a48eae20d26df180408bbeac62"
+    sha256 cellar: :any, arm64_sonoma:      "ce60d6a12b38bfa806e2ea23aa02a319947402d4a697b8df5f749c8545263f90"
+    sha256 cellar: :any, tahoe:             "97512da00fd1cd73585b59921d6b35ed23d3c7d515a2e2cc2a925a6539bef0b8"
+    sha256 cellar: :any, sequoia:           "e373f8ae492d35dbadb058860a0e88f1a01a2a8a83c860e89ee3a5c715029d31"
+    sha256 cellar: :any, sonoma:            "474ddad22287c63bd0e222d94d7fa552194301044f20fcb9845297446a946955"
+    sha256 cellar: :any, arm64_linux:       "50eaad281e372b31a35fa5aa5c25f3ea9b39d0923487faa1af3333af3cefecfc"
+    sha256 cellar: :any, x86_64_linux:      "ff1747fba1d74e5b92ab1661fb4a2cfe9688ecd1012cf2f199493fa9ba993a34"
   end
 
   depends_on "cmake" => :build

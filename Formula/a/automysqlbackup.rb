@@ -15,14 +15,15 @@ class Automysqlbackup < Formula
 
   bottle do
     rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "47848e3272f89cc4d30787693b27799507fe8d7593d51b2586431e88eb92c6dc"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "eae5fa097a6796bd0aeb27e2a4026257d8b8a868263f292a693723c32404a0d3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "eae5fa097a6796bd0aeb27e2a4026257d8b8a868263f292a693723c32404a0d3"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "eae5fa097a6796bd0aeb27e2a4026257d8b8a868263f292a693723c32404a0d3"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c34d3e9363096874a38e300b7ca801587d5e3076de4fd0b9504229b3544cfb50"
-    sha256 cellar: :any_skip_relocation, ventura:       "c34d3e9363096874a38e300b7ca801587d5e3076de4fd0b9504229b3544cfb50"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "eae5fa097a6796bd0aeb27e2a4026257d8b8a868263f292a693723c32404a0d3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "eae5fa097a6796bd0aeb27e2a4026257d8b8a868263f292a693723c32404a0d3"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "32f6db191f4dd6487d85ff330623ccf37b3a0205658eaae877afd6265c314c7f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "47848e3272f89cc4d30787693b27799507fe8d7593d51b2586431e88eb92c6dc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "eae5fa097a6796bd0aeb27e2a4026257d8b8a868263f292a693723c32404a0d3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "eae5fa097a6796bd0aeb27e2a4026257d8b8a868263f292a693723c32404a0d3"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:     "eae5fa097a6796bd0aeb27e2a4026257d8b8a868263f292a693723c32404a0d3"
+    sha256 cellar: :any_skip_relocation, sonoma:            "c34d3e9363096874a38e300b7ca801587d5e3076de4fd0b9504229b3544cfb50"
+    sha256 cellar: :any_skip_relocation, ventura:           "c34d3e9363096874a38e300b7ca801587d5e3076de4fd0b9504229b3544cfb50"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "eae5fa097a6796bd0aeb27e2a4026257d8b8a868263f292a693723c32404a0d3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "eae5fa097a6796bd0aeb27e2a4026257d8b8a868263f292a693723c32404a0d3"
   end
 
   def install

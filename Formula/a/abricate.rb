@@ -17,6 +17,8 @@ class Abricate < Formula
     sha256 cellar: :any,                 x86_64_linux:      "b4ef819c120ab370abff0153d18f5c4d8e8a2f6d9df63d5e69dd2ac0000161db"
   end
 
+  deprecate! date: "2027-03-31", because: "needs deprecated `blast` which needs EOL `mbedtls@3`"
+
   depends_on "any2fasta"
   depends_on "bioperl"
   depends_on "blast"

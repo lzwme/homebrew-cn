@@ -7,12 +7,13 @@ class Gammu < Formula
   head "https://github.com/gammu/gammu.git", branch: "master"
 
   bottle do
-    sha256 arm64_tahoe:   "6ba632ae130339512b36d44aa4edd45f07644a6f96e2c17680cb1afb4338ab75"
-    sha256 arm64_sequoia: "fcfc3cd0d52f54de9006b306c77a1b482585781f9fd8856f5f42401c2b59b0a8"
-    sha256 arm64_sonoma:  "25e598940d6a204c28f1b4a6467baef9d43573cd04cfd9184b8114deecc7c816"
-    sha256 sonoma:        "15f0d17e675bf02aed63e8903ef168b7944cc4d0faa7aa2d89d90bcb4b3a0cb9"
-    sha256 arm64_linux:   "7dbd3a9ec24fec4a4aac3589de5db0590688084f36492674cd49ca878cd074e3"
-    sha256 x86_64_linux:  "8b663a772f2d96bc76548e0347a6b6f9c2aa197fc995734edf00b2ced27a3fb1"
+    sha256 arm64_golden_gate: "d858d0c3ce21b4044313ec0ef27324dcb744168fd0f1ac536181547f401b250a"
+    sha256 arm64_tahoe:       "6ba632ae130339512b36d44aa4edd45f07644a6f96e2c17680cb1afb4338ab75"
+    sha256 arm64_sequoia:     "fcfc3cd0d52f54de9006b306c77a1b482585781f9fd8856f5f42401c2b59b0a8"
+    sha256 arm64_sonoma:      "25e598940d6a204c28f1b4a6467baef9d43573cd04cfd9184b8114deecc7c816"
+    sha256 sonoma:            "15f0d17e675bf02aed63e8903ef168b7944cc4d0faa7aa2d89d90bcb4b3a0cb9"
+    sha256 arm64_linux:       "7dbd3a9ec24fec4a4aac3589de5db0590688084f36492674cd49ca878cd074e3"
+    sha256 x86_64_linux:      "8b663a772f2d96bc76548e0347a6b6f9c2aa197fc995734edf00b2ced27a3fb1"
   end
 
   depends_on "cmake" => :build

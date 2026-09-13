@@ -7,14 +7,15 @@ class Sheldon < Formula
   head "https://github.com/rossmacarthur/sheldon.git", branch: "trunk"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "4c847c1f57dab67c08f0b2bc28b2682ec8e82944693c08c9456a61faee416790"
-    sha256 cellar: :any,                 arm64_sequoia: "f414fb4134ef81cfa8b07da7a4071cd74cedfd6201f6c9ca39cefb77bba18c73"
-    sha256 cellar: :any,                 arm64_sonoma:  "7a2039f892bde698a45c4b4ddd4e4b01a68a800a78a25b6d264473114fb93953"
-    sha256 cellar: :any,                 arm64_ventura: "db70e3bf9291543f442ef03f071c5e7f3a321022f74315a7ae2947f1d474239c"
-    sha256 cellar: :any,                 sonoma:        "28e543aab665bd00bb249abdcc40b062f96a8305046136720772ec2d22afc55d"
-    sha256 cellar: :any,                 ventura:       "e90fbe293693000084e563baf7af705d5fe82398340d90a7cf5079cc2d5a3f66"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2bb36c6d20e44524167470f658d6bf79dff452c6f2ca3470900d56c545f86724"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7f589b7843646d3253cfc607b0169a416a0017125e5b602b5daa82dab7fc8796"
+    sha256 cellar: :any,                 arm64_golden_gate: "fe720316a0d5c9dccd7f2fcf1febf176ced1af6c8f048ae08c710fd3cba2c1a9"
+    sha256 cellar: :any,                 arm64_tahoe:       "4c847c1f57dab67c08f0b2bc28b2682ec8e82944693c08c9456a61faee416790"
+    sha256 cellar: :any,                 arm64_sequoia:     "f414fb4134ef81cfa8b07da7a4071cd74cedfd6201f6c9ca39cefb77bba18c73"
+    sha256 cellar: :any,                 arm64_sonoma:      "7a2039f892bde698a45c4b4ddd4e4b01a68a800a78a25b6d264473114fb93953"
+    sha256 cellar: :any,                 arm64_ventura:     "db70e3bf9291543f442ef03f071c5e7f3a321022f74315a7ae2947f1d474239c"
+    sha256 cellar: :any,                 sonoma:            "28e543aab665bd00bb249abdcc40b062f96a8305046136720772ec2d22afc55d"
+    sha256 cellar: :any,                 ventura:           "e90fbe293693000084e563baf7af705d5fe82398340d90a7cf5079cc2d5a3f66"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "2bb36c6d20e44524167470f658d6bf79dff452c6f2ca3470900d56c545f86724"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "7f589b7843646d3253cfc607b0169a416a0017125e5b602b5daa82dab7fc8796"
   end
 
   depends_on "pkgconf" => :build

@@ -1,8 +1,8 @@
 class Tsduck < Formula
   desc "MPEG Transport Stream Toolkit"
   homepage "https://tsduck.io/"
-  url "https://ghfast.top/https://github.com/tsduck/tsduck/archive/refs/tags/v3.44-4676.tar.gz"
-  sha256 "22a6be2fdaa1714200c5ce0640dba551a9be9e2b2b8fb53067224ebf80c7c30e"
+  url "https://ghfast.top/https://github.com/tsduck/tsduck/archive/refs/tags/v3.45-4798.tar.gz"
+  sha256 "a35845430fff1385cf1cda9645bbfd0ec887ed440137fc6c26863c624c24eb63"
   license "BSD-2-Clause"
   head "https://github.com/tsduck/tsduck.git", branch: "master"
 
@@ -16,12 +16,11 @@ class Tsduck < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "e6f329d4df878e99a4d5bdfa13adc4f795796dd5249487863f0d9face40ee5cb"
-    sha256 cellar: :any,                 arm64_sequoia: "d38e29c129e02108e06fc9382e1fd973b044e534de0cbc25e8097303c49cbcce"
-    sha256 cellar: :any,                 arm64_sonoma:  "e18ff93ca5bf400b6e5eaa8860d157f3f4ab2ac627dfa4c7e378ec89ec35b002"
-    sha256 cellar: :any,                 sonoma:        "4e60e02dd989b0bab97de96497b96fdb901e7e4145fc94e88742460e80530ae3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "07084f5e111e21e9af0747f45826adf34a3fcf53a6d2fae6ce2b35de377dc441"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b3cdb8420391994de64f82e088abc900cce361418a70d44a4e84311351d99b81"
+    sha256 cellar: :any, arm64_golden_gate: "c938b5f8195505dcd8ad78dc3956d5927a44d6119dbf118f2140d834e2e88de3"
+    sha256 cellar: :any, arm64_tahoe:       "d145541c72fc01e95d001cca4b81387df0dc79dac884e6a07cbc78873b413300"
+    sha256 cellar: :any, arm64_sequoia:     "e52ee946ecfcce14bc3e98aaad40baf4d30a59ec14128f8cfe2499e5856226f0"
+    sha256 cellar: :any, arm64_linux:       "66bf97928952b7c2f3b7585c9f61c5e52efa7cb72dd4c788aea856c3238825d1"
+    sha256 cellar: :any, x86_64_linux:      "42a344adbaa5ce21fa8ade216c2ab0573c119c6403b5e91abb84cb72cb623a20"
   end
 
   depends_on "asciidoctor" => :build

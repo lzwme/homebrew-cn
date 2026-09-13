@@ -7,12 +7,13 @@ class Nanoq < Formula
   head "https://github.com/esteinig/nanoq.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4f97e13a405da805711730cc25d984c95cf40736b4af80b5797545738eb9e602"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f6dbcbc1413f42a698bbe0c7d4c2580f2a69f86e57afc33ab621e7a86b7cbd9f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1d2910d13487782376995a77cfb1e784f3236bf9728eaface01237795161170c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "74ee7a9efa26ebf011db446b04ba380514c6253df543bb9dda6a9604d0840ca1"
-    sha256 cellar: :any,                 arm64_linux:   "dd89f62bd4def3fff1b79329544cd2134051ecff88feb5437c2f05bd29209142"
-    sha256 cellar: :any,                 x86_64_linux:  "474d85796391810c1f784401e31fcdeaf5b459b179feeb5e5adaeec25bddc524"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "24e2a805842459a87294e748967b302feb959fd733d424178026c601050bf2bc"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "4f97e13a405da805711730cc25d984c95cf40736b4af80b5797545738eb9e602"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "f6dbcbc1413f42a698bbe0c7d4c2580f2a69f86e57afc33ab621e7a86b7cbd9f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "1d2910d13487782376995a77cfb1e784f3236bf9728eaface01237795161170c"
+    sha256 cellar: :any_skip_relocation, sonoma:            "74ee7a9efa26ebf011db446b04ba380514c6253df543bb9dda6a9604d0840ca1"
+    sha256 cellar: :any,                 arm64_linux:       "dd89f62bd4def3fff1b79329544cd2134051ecff88feb5437c2f05bd29209142"
+    sha256 cellar: :any,                 x86_64_linux:      "474d85796391810c1f784401e31fcdeaf5b459b179feeb5e5adaeec25bddc524"
   end
 
   depends_on "rust" => :build

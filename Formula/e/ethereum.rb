@@ -12,12 +12,13 @@ class Ethereum < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "12d2b11da1c0b6619e13d3cc86ad83459410b85a9eb48b5d0a27028fc48c4cb4"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ec5e60a5b948adf930f7cf08b0bef630e979a86cb842a519ae1a0a4fa30037dd"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5fb56f12ee1745b9ee0863cdc5c95e0d78968bd6c0c75f39f63defb1f8400725"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f9f745105329c47aa874d0dbc5af508a89887029489093e824e2557ad183e117"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5c85fe88f7e63c5c9737ee9d6b06748531a9ed94b0782cfdd42d060a81ba37a3"
-    sha256 cellar: :any,                 x86_64_linux:  "99e3debd89b376ab8edeca2ec575fa210f0fb4a07bcbec51ba109a2c5fa40934"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "cede3b04789ef95cad33fbe554869d4f334fb9843b5465685411f55c4dd4621d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "12d2b11da1c0b6619e13d3cc86ad83459410b85a9eb48b5d0a27028fc48c4cb4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "ec5e60a5b948adf930f7cf08b0bef630e979a86cb842a519ae1a0a4fa30037dd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "5fb56f12ee1745b9ee0863cdc5c95e0d78968bd6c0c75f39f63defb1f8400725"
+    sha256 cellar: :any_skip_relocation, sonoma:            "f9f745105329c47aa874d0dbc5af508a89887029489093e824e2557ad183e117"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "5c85fe88f7e63c5c9737ee9d6b06748531a9ed94b0782cfdd42d060a81ba37a3"
+    sha256 cellar: :any,                 x86_64_linux:      "99e3debd89b376ab8edeca2ec575fa210f0fb4a07bcbec51ba109a2c5fa40934"
   end
 
   # TODO: unpin go@1.26 when ethereum supports go 1.27

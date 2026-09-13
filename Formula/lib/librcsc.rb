@@ -6,12 +6,13 @@ class Librcsc < Formula
   license "LGPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "22e97da85a53bb46ae2e25a3b8a26e067c9d67ad48ec5e3733e4d8f2cf6c279a"
-    sha256 cellar: :any, arm64_sequoia: "ae48b5d96ab1d195aa015a6ba7f7b5e9248c3280c0e985b6805432289c11b406"
-    sha256 cellar: :any, arm64_sonoma:  "b4caa311ede10c91c77ae087097b639442acbb38342dbf8c5683e2181f009c37"
-    sha256 cellar: :any, sonoma:        "312f196b314dca9fe928353821cb17c5928a10c98b26884c9c8630eedc72b83d"
-    sha256 cellar: :any, arm64_linux:   "e7589456904f712bfdb879416b96017c03587a6698bd785807b3a57e9b0c30ba"
-    sha256 cellar: :any, x86_64_linux:  "516e9f063d5110fbd7c9551f30ff732a1e6e9d05137a5f7ae3d885586b4c1ba0"
+    sha256 cellar: :any, arm64_golden_gate: "3db7cb883a5095da17e5b5a823584a8a283a0323c417d25080200463e39cf864"
+    sha256 cellar: :any, arm64_tahoe:       "22e97da85a53bb46ae2e25a3b8a26e067c9d67ad48ec5e3733e4d8f2cf6c279a"
+    sha256 cellar: :any, arm64_sequoia:     "ae48b5d96ab1d195aa015a6ba7f7b5e9248c3280c0e985b6805432289c11b406"
+    sha256 cellar: :any, arm64_sonoma:      "b4caa311ede10c91c77ae087097b639442acbb38342dbf8c5683e2181f009c37"
+    sha256 cellar: :any, sonoma:            "312f196b314dca9fe928353821cb17c5928a10c98b26884c9c8630eedc72b83d"
+    sha256 cellar: :any, arm64_linux:       "e7589456904f712bfdb879416b96017c03587a6698bd785807b3a57e9b0c30ba"
+    sha256 cellar: :any, x86_64_linux:      "516e9f063d5110fbd7c9551f30ff732a1e6e9d05137a5f7ae3d885586b4c1ba0"
   end
 
   depends_on "autoconf" => :build

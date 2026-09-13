@@ -7,12 +7,13 @@ class Flawz < Formula
   head "https://github.com/orhun/flawz.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c93092557f6fb166c0b746bb3e64abc4c15394d1fc90726219b814a4469b14b1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "96d0de83f22314aad4ab7c0800ff3ccb2ee25640ae821c94c281960f201c7b1b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d0bddc1c8e9c928e93d485d194148c9e6d996beadf9c50b303b057acc6d9986d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "65bdc4361aa4173feaa4351dfb68ae2315c35dd83103d398c902df5815ace1f0"
-    sha256 cellar: :any,                 arm64_linux:   "2c6c3e1564895ebdd2071af7b20936afaf36c94c0548ec5346e79588832d8b71"
-    sha256 cellar: :any,                 x86_64_linux:  "8d4caff11b22a623428797da9903d523353151292db51e18531fd8edadcf2b76"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "d52e22d9292f63c218d596a9e2958a9d1a0da7c10f3caa706eeee34e776b4513"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "c93092557f6fb166c0b746bb3e64abc4c15394d1fc90726219b814a4469b14b1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "96d0de83f22314aad4ab7c0800ff3ccb2ee25640ae821c94c281960f201c7b1b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "d0bddc1c8e9c928e93d485d194148c9e6d996beadf9c50b303b057acc6d9986d"
+    sha256 cellar: :any_skip_relocation, sonoma:            "65bdc4361aa4173feaa4351dfb68ae2315c35dd83103d398c902df5815ace1f0"
+    sha256 cellar: :any,                 arm64_linux:       "2c6c3e1564895ebdd2071af7b20936afaf36c94c0548ec5346e79588832d8b71"
+    sha256 cellar: :any,                 x86_64_linux:      "8d4caff11b22a623428797da9903d523353151292db51e18531fd8edadcf2b76"
   end
 
   depends_on "pkgconf" => :build

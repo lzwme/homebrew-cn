@@ -7,11 +7,12 @@ class Freerdp < Formula
   head "https://github.com/FreeRDP/FreeRDP.git", branch: "master"
 
   bottle do
-    sha256 arm64_tahoe:   "82be9db1eb6e4dc3f7d7c5e7dd36ab62884f3539de5fbb77c71210be47d03086"
-    sha256 arm64_sequoia: "941126064f3c53142e6b75dd3d2aec022cf8d893eb3361dade1e0cfb3ca05021"
-    sha256 arm64_sonoma:  "e31b3b6eaae2eebedc07d2699869f7b04250ac354662ecdaf11dcd4871ac055f"
-    sha256 arm64_linux:   "7a1ee1f28ace353aa145fb77e735bc614e8ac9cf92a6c79853b74075d415939c"
-    sha256 x86_64_linux:  "279fa76e241811fc431ae4a6957623e032e4e24c19469b0912b82be72c3fdaa5"
+    sha256 arm64_golden_gate: "0ee4c4469f792816d7b8667cf0fed55c2bb349f28f5ac0963178363ea0569480"
+    sha256 arm64_tahoe:       "82be9db1eb6e4dc3f7d7c5e7dd36ab62884f3539de5fbb77c71210be47d03086"
+    sha256 arm64_sequoia:     "941126064f3c53142e6b75dd3d2aec022cf8d893eb3361dade1e0cfb3ca05021"
+    sha256 arm64_sonoma:      "e31b3b6eaae2eebedc07d2699869f7b04250ac354662ecdaf11dcd4871ac055f"
+    sha256 arm64_linux:       "7a1ee1f28ace353aa145fb77e735bc614e8ac9cf92a6c79853b74075d415939c"
+    sha256 x86_64_linux:      "279fa76e241811fc431ae4a6957623e032e4e24c19469b0912b82be72c3fdaa5"
   end
 
   depends_on "cmake" => :build

@@ -7,11 +7,12 @@ class Cpdf < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "194f6872ce70b4d62aeacbbc44098ebfc4c72448d99155bfcaa8a47215740c0f"
-    sha256 cellar: :any, arm64_sequoia: "364ba3d8151e7e037f807d57e2e6860e1e771e677c06075d1316c1c8a3eeb161"
-    sha256 cellar: :any, arm64_sonoma:  "69c46304b2c42e041b00fb57965b17542bb1623745ccc282be3895f94d64b2e4"
-    sha256 cellar: :any, arm64_linux:   "b2510561cae38db489bd9b38b12d4b14ec889f4c9021178f2458af27c54661da"
-    sha256 cellar: :any, x86_64_linux:  "c73545e299397b1f2c127fb969112be4762e02e6156783ad3fdebde3e752e5e0"
+    sha256 cellar: :any, arm64_golden_gate: "ad3a2f7ade6055b21d2ce9c7835fae8fde88e0e72d028cb089d48c1eb455acdb"
+    sha256 cellar: :any, arm64_tahoe:       "194f6872ce70b4d62aeacbbc44098ebfc4c72448d99155bfcaa8a47215740c0f"
+    sha256 cellar: :any, arm64_sequoia:     "364ba3d8151e7e037f807d57e2e6860e1e771e677c06075d1316c1c8a3eeb161"
+    sha256 cellar: :any, arm64_sonoma:      "69c46304b2c42e041b00fb57965b17542bb1623745ccc282be3895f94d64b2e4"
+    sha256 cellar: :any, arm64_linux:       "b2510561cae38db489bd9b38b12d4b14ec889f4c9021178f2458af27c54661da"
+    sha256 cellar: :any, x86_64_linux:      "c73545e299397b1f2c127fb969112be4762e02e6156783ad3fdebde3e752e5e0"
   end
 
   depends_on "camlpdf" => :build

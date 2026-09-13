@@ -13,12 +13,13 @@ class Beast < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b107a5edd728816ef7165865357969675e088181f19e83c6a9a2b5ce2e116312"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4d872467d67eaf343cf3f19f857dcadf1801081fde1b0def66a5c5e6c1de0e12"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e172d94ce8e6d5e1f4e71d96e3badd35a781f7de4a35ec9f3547ebecfb1ea821"
-    sha256 cellar: :any_skip_relocation, sonoma:        "271c25efad35403b8c49c6caa31c6a21a2f486624ea0f5203174691a6dfaa613"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "63b7d3b4fe5dc9a4468424a86832701ea99c690481040dc444d832528b6680f8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7ac4f0df6c90dd7dddd0b19757f1c1ad14462b253743d09cafb94f6b20367b65"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "8e2ee4722cf200a65deacbcbb3e6606175faff5dc5034fd10cd1faf86d6651ad"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "b107a5edd728816ef7165865357969675e088181f19e83c6a9a2b5ce2e116312"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "4d872467d67eaf343cf3f19f857dcadf1801081fde1b0def66a5c5e6c1de0e12"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "e172d94ce8e6d5e1f4e71d96e3badd35a781f7de4a35ec9f3547ebecfb1ea821"
+    sha256 cellar: :any_skip_relocation, sonoma:            "271c25efad35403b8c49c6caa31c6a21a2f486624ea0f5203174691a6dfaa613"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "63b7d3b4fe5dc9a4468424a86832701ea99c690481040dc444d832528b6680f8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "7ac4f0df6c90dd7dddd0b19757f1c1ad14462b253743d09cafb94f6b20367b65"
   end
 
   depends_on "ant" => :build

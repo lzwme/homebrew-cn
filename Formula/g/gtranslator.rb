@@ -7,12 +7,13 @@ class Gtranslator < Formula
 
   bottle do
     rebuild 1
-    sha256 arm64_tahoe:   "1dcfec8e7d915866f4e76862ad7b03be26f72d246b03772291ba38b62d96b7eb"
-    sha256 arm64_sequoia: "d5d806c4e21889f9beefe7ab79b8e4960c127aa883dd836742590cb12b8265d1"
-    sha256 arm64_sonoma:  "cc32c2d59b825697c8d8e2a30facf7fef6a39574dda8bf1e8e273a4b8d4b5058"
-    sha256 sonoma:        "47c3ff14f787a675a203bebab85aced943d2ab7402bb8c6a6afc7dac17b1d7f9"
-    sha256 arm64_linux:   "61547a20cc62e78d3c1b770d885b9d1338638dfed2306282043d77533092f43f"
-    sha256 x86_64_linux:  "d7b43a77a44f936920ed8f99a81118d3f5b2435308f502ae4bb06fc9ed5a8bdb"
+    sha256 arm64_golden_gate: "b7ca45b043d21e4ec2d818ceb7851723ec64d651fd9ab2ec8f19effe484a98e5"
+    sha256 arm64_tahoe:       "1dcfec8e7d915866f4e76862ad7b03be26f72d246b03772291ba38b62d96b7eb"
+    sha256 arm64_sequoia:     "d5d806c4e21889f9beefe7ab79b8e4960c127aa883dd836742590cb12b8265d1"
+    sha256 arm64_sonoma:      "cc32c2d59b825697c8d8e2a30facf7fef6a39574dda8bf1e8e273a4b8d4b5058"
+    sha256 sonoma:            "47c3ff14f787a675a203bebab85aced943d2ab7402bb8c6a6afc7dac17b1d7f9"
+    sha256 arm64_linux:       "61547a20cc62e78d3c1b770d885b9d1338638dfed2306282043d77533092f43f"
+    sha256 x86_64_linux:      "d7b43a77a44f936920ed8f99a81118d3f5b2435308f502ae4bb06fc9ed5a8bdb"
   end
 
   depends_on "desktop-file-utils" => :build # for update-desktop-database

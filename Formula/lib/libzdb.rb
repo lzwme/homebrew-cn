@@ -11,12 +11,13 @@ class Libzdb < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "36f4d61a052239e79be5c8cd4fe47260f53ed4af341005a688bfccdc410d2bab"
-    sha256 cellar: :any, arm64_sequoia: "ea1724d1e20b27aed580f4c7fd0c915163c304784eab095757d42216f3445ca4"
-    sha256 cellar: :any, arm64_sonoma:  "a588127bd71efb9acb8a2b232da1c13d73c2a35b9c281fc6a366c69596246145"
-    sha256 cellar: :any, sonoma:        "c113099f7a0a87e6446879d6661996b863ffe1ab12714e8c762b64795259f123"
-    sha256 cellar: :any, arm64_linux:   "9cbc806998c7e91ec7faa3178fd9340a947fdcc9ddf7c1cb6adacc6faa70fdb0"
-    sha256 cellar: :any, x86_64_linux:  "79110486938ecc49c0854443fc4497e0a666101f613ddc5acecae8b0ba55e0f6"
+    sha256 cellar: :any, arm64_golden_gate: "c2412f8e311a5baca1260a066680ed1124a46858974e5dfdeaa76f8906d05406"
+    sha256 cellar: :any, arm64_tahoe:       "36f4d61a052239e79be5c8cd4fe47260f53ed4af341005a688bfccdc410d2bab"
+    sha256 cellar: :any, arm64_sequoia:     "ea1724d1e20b27aed580f4c7fd0c915163c304784eab095757d42216f3445ca4"
+    sha256 cellar: :any, arm64_sonoma:      "a588127bd71efb9acb8a2b232da1c13d73c2a35b9c281fc6a366c69596246145"
+    sha256 cellar: :any, sonoma:            "c113099f7a0a87e6446879d6661996b863ffe1ab12714e8c762b64795259f123"
+    sha256 cellar: :any, arm64_linux:       "9cbc806998c7e91ec7faa3178fd9340a947fdcc9ddf7c1cb6adacc6faa70fdb0"
+    sha256 cellar: :any, x86_64_linux:      "79110486938ecc49c0854443fc4497e0a666101f613ddc5acecae8b0ba55e0f6"
   end
 
   depends_on "libpq"

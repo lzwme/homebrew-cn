@@ -6,12 +6,13 @@ class Libesedb < Formula
   license "LGPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "e63439975c686ac79d7d641ea4c1e8784908e41034ff79bcc79e5bbde7b83d88"
-    sha256 cellar: :any, arm64_sequoia: "6a7b88c41fe74eb4d9be40809121a31bd33eb137dc33ac50b15c1067e09b15b8"
-    sha256 cellar: :any, arm64_sonoma:  "36ebfc0cb8c8352a72e164aa90b0cc202d38a3cc929714cea56901b3c8ed2d08"
-    sha256 cellar: :any, sonoma:        "32cc0adcd218995ae9a7d899d271979575169f4019483a3da77dc943477a45a9"
-    sha256 cellar: :any, arm64_linux:   "bdbb98771f0ab027a4604406da6bc8f78180b85beb72b1ca0348bf69e1b12e2f"
-    sha256 cellar: :any, x86_64_linux:  "6e32f9d839bab70585e87cca6a6a6382697a4da6400a95dcd55779d9f586a1ce"
+    sha256 cellar: :any, arm64_golden_gate: "8b6b68fed03192f214a575f8cd0e713061dd4ab2919983cba2c548229b385977"
+    sha256 cellar: :any, arm64_tahoe:       "e63439975c686ac79d7d641ea4c1e8784908e41034ff79bcc79e5bbde7b83d88"
+    sha256 cellar: :any, arm64_sequoia:     "6a7b88c41fe74eb4d9be40809121a31bd33eb137dc33ac50b15c1067e09b15b8"
+    sha256 cellar: :any, arm64_sonoma:      "36ebfc0cb8c8352a72e164aa90b0cc202d38a3cc929714cea56901b3c8ed2d08"
+    sha256 cellar: :any, sonoma:            "32cc0adcd218995ae9a7d899d271979575169f4019483a3da77dc943477a45a9"
+    sha256 cellar: :any, arm64_linux:       "bdbb98771f0ab027a4604406da6bc8f78180b85beb72b1ca0348bf69e1b12e2f"
+    sha256 cellar: :any, x86_64_linux:      "6e32f9d839bab70585e87cca6a6a6382697a4da6400a95dcd55779d9f586a1ce"
   end
 
   depends_on "pkgconf" => [:build, :test]

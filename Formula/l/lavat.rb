@@ -7,12 +7,13 @@ class Lavat < Formula
   head "https://github.com/AngelJumbo/lavat.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f31fad68503809cf54692f4d288ce719cf7ed40072dbf82c4890122ad1b87674"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f6755e230f40d6f712d4a1a73304058c8002e776b39a67c87042a3578d604d1d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f96335eb525ed1fcd952a2e52c64191c3f7f81edf74d3d28afeb26db1bbcc487"
-    sha256 cellar: :any_skip_relocation, sonoma:        "06cc6bb29764628d5cd862260b4e53f3adc807fc9ed508c0381bc69943567a6a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a1a3d35b4b53a479c21db06577fd62f3febcd9533ffa492de6607e4b564314d9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3be6f15d6675cca37066f21f6e9b5e61528f90d18ad29173e1b3019dd7937338"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "041063444e277e8d4c11fb51e3e9f9b1aa47fea6e9378a826bc2f4a58defc0d0"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "f31fad68503809cf54692f4d288ce719cf7ed40072dbf82c4890122ad1b87674"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "f6755e230f40d6f712d4a1a73304058c8002e776b39a67c87042a3578d604d1d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "f96335eb525ed1fcd952a2e52c64191c3f7f81edf74d3d28afeb26db1bbcc487"
+    sha256 cellar: :any_skip_relocation, sonoma:            "06cc6bb29764628d5cd862260b4e53f3adc807fc9ed508c0381bc69943567a6a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "a1a3d35b4b53a479c21db06577fd62f3febcd9533ffa492de6607e4b564314d9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "3be6f15d6675cca37066f21f6e9b5e61528f90d18ad29173e1b3019dd7937338"
   end
 
   def install

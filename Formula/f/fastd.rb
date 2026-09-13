@@ -8,12 +8,13 @@ class Fastd < Formula
   head "https://github.com/neocturne/fastd.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "07d1fa9fdd6b0e6c1003db1de59d2e2f67336898787d755348a899215509f9cc"
-    sha256 cellar: :any, arm64_sequoia: "8f4a44d8de63f43b4cf7af18de73f28a2a6505d6606b256ea0e79710019a06d0"
-    sha256 cellar: :any, arm64_sonoma:  "e4af46b0285b50120e61b6c2442f3394fcba09b2e45eb66150680be05ab5819d"
-    sha256 cellar: :any, sonoma:        "4db0e4671c04a3cb535c8a9063311ac6588c662f970c78d0cfbb00375efdb6a6"
-    sha256               arm64_linux:   "f0bcd2483d044918fcb66f214b12efc99790b1e1f032d3fd47f7f49682ffcf3b"
-    sha256               x86_64_linux:  "2ee7f0381a3b9007a0adb9f9083e145adc568dd47eb70dde9543e27189264f29"
+    sha256 cellar: :any, arm64_golden_gate: "a30e24296be1730e9d54fc943a37d93469c56c8624509fdc62f53ba2d724b78e"
+    sha256 cellar: :any, arm64_tahoe:       "07d1fa9fdd6b0e6c1003db1de59d2e2f67336898787d755348a899215509f9cc"
+    sha256 cellar: :any, arm64_sequoia:     "8f4a44d8de63f43b4cf7af18de73f28a2a6505d6606b256ea0e79710019a06d0"
+    sha256 cellar: :any, arm64_sonoma:      "e4af46b0285b50120e61b6c2442f3394fcba09b2e45eb66150680be05ab5819d"
+    sha256 cellar: :any, sonoma:            "4db0e4671c04a3cb535c8a9063311ac6588c662f970c78d0cfbb00375efdb6a6"
+    sha256               arm64_linux:       "f0bcd2483d044918fcb66f214b12efc99790b1e1f032d3fd47f7f49682ffcf3b"
+    sha256               x86_64_linux:      "2ee7f0381a3b9007a0adb9f9083e145adc568dd47eb70dde9543e27189264f29"
   end
 
   depends_on "bison" => :build

@@ -7,12 +7,13 @@ class Fourmolu < Formula
   head "https://github.com/fourmolu/fourmolu.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "acc98406429fac5fa1ed83c9f36df396a4f802987aa164518380077cf9c290ec"
-    sha256 cellar: :any, arm64_sequoia: "05b8da7c1aee0cdfa5994ac1eae2731ef2a890ad5e978d28fe864148eb646726"
-    sha256 cellar: :any, arm64_sonoma:  "21a8f3a16680ef22d8f4d31a57216062ec1173c80181f6cae4b4d7039526bf7c"
-    sha256 cellar: :any, sonoma:        "fb5f5bed2efa7f8ac9494ec6a3b0cebfc36f028f8028c1ffddd49bcffbf3f21d"
-    sha256 cellar: :any, arm64_linux:   "ba2e99eb466748ec13d75dbdf00423e9cf9cc0c6808bc47f39536571979c9e44"
-    sha256 cellar: :any, x86_64_linux:  "252f46576468737725049ac2f14e1e3f2506b3a1c6ef3a153d06a8c7e1369619"
+    sha256 cellar: :any, arm64_golden_gate: "46bcdbf552c2edb072bd5f6da1ae2836ce2d2f0cf2f633c4865ca2b67379fa49"
+    sha256 cellar: :any, arm64_tahoe:       "acc98406429fac5fa1ed83c9f36df396a4f802987aa164518380077cf9c290ec"
+    sha256 cellar: :any, arm64_sequoia:     "05b8da7c1aee0cdfa5994ac1eae2731ef2a890ad5e978d28fe864148eb646726"
+    sha256 cellar: :any, arm64_sonoma:      "21a8f3a16680ef22d8f4d31a57216062ec1173c80181f6cae4b4d7039526bf7c"
+    sha256 cellar: :any, sonoma:            "fb5f5bed2efa7f8ac9494ec6a3b0cebfc36f028f8028c1ffddd49bcffbf3f21d"
+    sha256 cellar: :any, arm64_linux:       "ba2e99eb466748ec13d75dbdf00423e9cf9cc0c6808bc47f39536571979c9e44"
+    sha256 cellar: :any, x86_64_linux:      "252f46576468737725049ac2f14e1e3f2506b3a1c6ef3a153d06a8c7e1369619"
   end
 
   depends_on "cabal-install" => :build

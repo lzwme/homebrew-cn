@@ -11,12 +11,13 @@ class Libmspub < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "b2bbfd06fb757e6407bab304e89c6e13e1b526d4f160a9d7813bffe32bc04a45"
-    sha256 cellar: :any,                 arm64_sequoia: "6cb1feb1b8ba293ced5dade8a157a6a83c777bc3c478cdcb0d791d4220fc73d5"
-    sha256 cellar: :any,                 arm64_sonoma:  "902118dbfa7cd5bc1a348834c5096448a763c8887c2087abd89de69b7eeeeea4"
-    sha256 cellar: :any,                 sonoma:        "115271b70aae5fa2378379fc8c3871718dc7ef7b8d777ba93b5956fd162fec14"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "524663ef471409834261d0d5920f46edc61de1411845bf46087e36db82bd8e19"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "461d9554b4892d5180ea97c0709f74b9ba196b702016db58084a6d3e7ec769b1"
+    sha256 cellar: :any,                 arm64_golden_gate: "b52daff1db5aea8316708afcae3f3fd746f4c9ff2d467ef5f30adde323afc52f"
+    sha256 cellar: :any,                 arm64_tahoe:       "b2bbfd06fb757e6407bab304e89c6e13e1b526d4f160a9d7813bffe32bc04a45"
+    sha256 cellar: :any,                 arm64_sequoia:     "6cb1feb1b8ba293ced5dade8a157a6a83c777bc3c478cdcb0d791d4220fc73d5"
+    sha256 cellar: :any,                 arm64_sonoma:      "902118dbfa7cd5bc1a348834c5096448a763c8887c2087abd89de69b7eeeeea4"
+    sha256 cellar: :any,                 sonoma:            "115271b70aae5fa2378379fc8c3871718dc7ef7b8d777ba93b5956fd162fec14"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "524663ef471409834261d0d5920f46edc61de1411845bf46087e36db82bd8e19"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "461d9554b4892d5180ea97c0709f74b9ba196b702016db58084a6d3e7ec769b1"
   end
 
   depends_on "boost" => :build

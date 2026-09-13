@@ -62,7 +62,7 @@ class Beagle < Formula
         public static void main(String[] args) {}
       }
     JAVA
-    system Formula["openjdk"].bin/"javac", "T.java"
-    system Formula["openjdk"].bin/"java", "-Djava.library.path=#{lib}", "T"
+    system formula_opt_bin("openjdk")/"javac", "T.java"
+    system formula_opt_bin("openjdk")/"java", "-Djava.library.path=#{lib}", "T"
   end
 end

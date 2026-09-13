@@ -12,12 +12,13 @@ class Dynomite < Formula
 
   bottle do
     rebuild 1
-    sha256 arm64_tahoe:   "b80a0fafcbefc40ecbe2c372a3ef9159512a4b85e0838ac65d26f5225ceaa546"
-    sha256 arm64_sequoia: "d2417262050f0f0272c2c76db3e1f4a859b6b424a03c77e2091d903279b0ce62"
-    sha256 arm64_sonoma:  "f36565e700a533a4282f783fe05d70c88e9e306c91b020e3298beddb6989cdc5"
-    sha256 sonoma:        "10b55d281b83fd69944c86ba6cbbb3a89aa3cbf978e41e9effa6190f3d07d222"
-    sha256 arm64_linux:   "5b7a2482637638c1369760bdfa130dff0bf9df35aa3ff5c9370e9d434315a5bc"
-    sha256 x86_64_linux:  "c29a22ea448af26e89c11b28101e4d73a510d23d1b18aea9c177b70745c969ea"
+    sha256 arm64_golden_gate: "3863b621135c1b94ac85848d84d8b39ffe60da1c203a4aeff3af312d08e079ff"
+    sha256 arm64_tahoe:       "b80a0fafcbefc40ecbe2c372a3ef9159512a4b85e0838ac65d26f5225ceaa546"
+    sha256 arm64_sequoia:     "d2417262050f0f0272c2c76db3e1f4a859b6b424a03c77e2091d903279b0ce62"
+    sha256 arm64_sonoma:      "f36565e700a533a4282f783fe05d70c88e9e306c91b020e3298beddb6989cdc5"
+    sha256 sonoma:            "10b55d281b83fd69944c86ba6cbbb3a89aa3cbf978e41e9effa6190f3d07d222"
+    sha256 arm64_linux:       "5b7a2482637638c1369760bdfa130dff0bf9df35aa3ff5c9370e9d434315a5bc"
+    sha256 x86_64_linux:      "c29a22ea448af26e89c11b28101e4d73a510d23d1b18aea9c177b70745c969ea"
   end
 
   depends_on "autoconf" => :build

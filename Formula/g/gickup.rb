@@ -1,19 +1,17 @@
 class Gickup < Formula
   desc "Backup all your repositories with Ease"
   homepage "https://cooperspencer.github.io/gickup-documentation/"
-  url "https://ghfast.top/https://github.com/cooperspencer/gickup/archive/refs/tags/v0.10.45.tar.gz"
-  sha256 "61cb2fef81f719bdf4bce8061aae2a0280985e13e194121455ffbfb4d2cfce24"
+  url "https://ghfast.top/https://github.com/cooperspencer/gickup/archive/refs/tags/v0.10.46.tar.gz"
+  sha256 "5e1c1c87b23bbd8aafd103bcfc693d1a69a0c3d7d7356d039259918ed7333363"
   license "Apache-2.0"
   head "https://github.com/cooperspencer/gickup.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "1cadf024a1afafce4cd9e1094128a81133e309d8d7c2b00a9e33990ac8a57134"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "e1586abdf7bfa7dd0af34f71a5a8945fb6597027c1e1627adbd029b0533a577f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "632e67a9e877fd61a56cb2e9d0113c796836ba09dfa05f4d5be74e773f1e8a3b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "3402fd4096eec4fca03a862f631d44e7eaf353951aaefe07c1f71b30a6e9654f"
-    sha256 cellar: :any_skip_relocation, sonoma:            "a0f5feae3a42c79d6e5435308bd7df0c45d4f49312f93db7bfc09d8d474f366e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "5003dae48a7adf9411e7fa24783626babc08e5b68897decb17314eaccf26da8d"
-    sha256 cellar: :any,                 x86_64_linux:      "187f44f4270b28979bcaa3a8ce7b91715e3c218d68f46c77785a96561b6a29ff"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "d8eb8ce97c50b7ee7898f35234b5dfea5042529ae711425dfb92dc459eb2ff54"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "efefe64e404230efef24cae1af7501c5b67d5dc246c4a231cf520f2a1475cf7f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "be54f5ec6a3ce32f0cb386138b45914485f980a9d60ce1b43052d9185f8b5798"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "0ec047a302cbce63f015890663d50dec008e5253cf9f70b38c836137e2ef1b30"
+    sha256 cellar: :any,                 x86_64_linux:      "9cd348c47e72cbec234977bbb0b21e3683ddb0cf214c56b9f76d8177ba959ddc"
   end
 
   depends_on "go" => :build

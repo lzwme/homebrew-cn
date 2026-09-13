@@ -12,12 +12,13 @@ class Ehco < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ce103e44cecc91df6afb8fbc1de0832857851f393613b802cb966db8429851e0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8bf2af4784fbb7d9d852ac928e11393068452d3dd6667340f3cd2e1155e224bc"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "214a9fd3b94ec63e70ab9b3866b42e41a4dc70b5d64eea8145910512b4446424"
-    sha256 cellar: :any_skip_relocation, sonoma:        "60bedc9271b9192659103f62dcea107ff83244baff75d8b593b165e236b3dc4f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "eaf25741f4d61ba3f1b5ce1ba2fbffbbbf7c4ada95949d58549baf11b9a5d562"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d506b0b7b1914beb056d7d81c91704812e51d1673d490203f4c0802650cc58f2"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "15100ed38ca2ee5f93b3ce423b059ba85ce5ad9101369f53a6055eed68cc45c4"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "ce103e44cecc91df6afb8fbc1de0832857851f393613b802cb966db8429851e0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "8bf2af4784fbb7d9d852ac928e11393068452d3dd6667340f3cd2e1155e224bc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "214a9fd3b94ec63e70ab9b3866b42e41a4dc70b5d64eea8145910512b4446424"
+    sha256 cellar: :any_skip_relocation, sonoma:            "60bedc9271b9192659103f62dcea107ff83244baff75d8b593b165e236b3dc4f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "eaf25741f4d61ba3f1b5ce1ba2fbffbbbf7c4ada95949d58549baf11b9a5d562"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "d506b0b7b1914beb056d7d81c91704812e51d1673d490203f4c0802650cc58f2"
   end
 
   depends_on "go" => :build

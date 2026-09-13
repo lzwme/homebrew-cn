@@ -8,12 +8,13 @@ class GnomeOnlineAccounts < Formula
 
   bottle do
     rebuild 1
-    sha256 arm64_tahoe:   "04cf13423a86157fcdea4e74c97705f0450c53afc44794a71d5833760db100af"
-    sha256 arm64_sequoia: "569c6f34e4ea94f239a0658f77ab1d10a77d02fc70bc2ad61de233cf48f49778"
-    sha256 arm64_sonoma:  "f2eeca5d607caa40105168e758381e55e59f38de52f8e88ad05c70ca425520cc"
-    sha256 sonoma:        "5cd23d2d6387c197c34111949750f2d894f61db35400b41d9a776537febf96c5"
-    sha256 arm64_linux:   "21b0d3091f9e7ac60d62bbdf7751f41b6b1384395f7da8585ee75c6e7fca04ec"
-    sha256 x86_64_linux:  "b470a5116c0d3a9164ad846b92925e57c40a78bab53c35a9a61b6fb79dc858f8"
+    sha256 arm64_golden_gate: "85333c894a54fd1ba5d003abf61b5436ff9ec52d6239b5ca14a7ceeafb347fcf"
+    sha256 arm64_tahoe:       "04cf13423a86157fcdea4e74c97705f0450c53afc44794a71d5833760db100af"
+    sha256 arm64_sequoia:     "569c6f34e4ea94f239a0658f77ab1d10a77d02fc70bc2ad61de233cf48f49778"
+    sha256 arm64_sonoma:      "f2eeca5d607caa40105168e758381e55e59f38de52f8e88ad05c70ca425520cc"
+    sha256 sonoma:            "5cd23d2d6387c197c34111949750f2d894f61db35400b41d9a776537febf96c5"
+    sha256 arm64_linux:       "21b0d3091f9e7ac60d62bbdf7751f41b6b1384395f7da8585ee75c6e7fca04ec"
+    sha256 x86_64_linux:      "b470a5116c0d3a9164ad846b92925e57c40a78bab53c35a9a61b6fb79dc858f8"
   end
 
   depends_on "dbus" => :build

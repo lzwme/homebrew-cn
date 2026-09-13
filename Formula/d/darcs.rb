@@ -7,12 +7,13 @@ class Darcs < Formula
 
   bottle do
     rebuild 3
-    sha256 cellar: :any, arm64_tahoe:   "15d6477c7276b36495d448682824d46e22025f40fbc2c06db2b6555b3474e41c"
-    sha256 cellar: :any, arm64_sequoia: "f6e5bd3f5eeab927c43ca8b9c4a5ec1823f27ba058aaa31d66b355a365a16b19"
-    sha256 cellar: :any, arm64_sonoma:  "fde15e80ef3f49467e062af834e7d9af58b67f5fe7bd0bb6bc808da699aeb947"
-    sha256 cellar: :any, sonoma:        "e3c905d43578cb3e607548eaae2ad32879138bcab5be52bf91a20b1413796a55"
-    sha256 cellar: :any, arm64_linux:   "1c21d68b8e4f654c0567ba5b256aaec16bbd69c6d485b11ca2c031213b909675"
-    sha256 cellar: :any, x86_64_linux:  "f8b364ca09894409de33e8c24f85546676a0cdec52f05c8ee76f90399ea305f4"
+    sha256 cellar: :any, arm64_golden_gate: "d20671a904d62e1da5f4e79ead1652d06ee82afb92c955bfdda9ab609d2fe7f8"
+    sha256 cellar: :any, arm64_tahoe:       "15d6477c7276b36495d448682824d46e22025f40fbc2c06db2b6555b3474e41c"
+    sha256 cellar: :any, arm64_sequoia:     "f6e5bd3f5eeab927c43ca8b9c4a5ec1823f27ba058aaa31d66b355a365a16b19"
+    sha256 cellar: :any, arm64_sonoma:      "fde15e80ef3f49467e062af834e7d9af58b67f5fe7bd0bb6bc808da699aeb947"
+    sha256 cellar: :any, sonoma:            "e3c905d43578cb3e607548eaae2ad32879138bcab5be52bf91a20b1413796a55"
+    sha256 cellar: :any, arm64_linux:       "1c21d68b8e4f654c0567ba5b256aaec16bbd69c6d485b11ca2c031213b909675"
+    sha256 cellar: :any, x86_64_linux:      "f8b364ca09894409de33e8c24f85546676a0cdec52f05c8ee76f90399ea305f4"
   end
 
   depends_on "cabal-install" => :build

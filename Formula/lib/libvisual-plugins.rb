@@ -61,16 +61,12 @@ class LibvisualPlugins < Formula
     assert_match " (#{audio})", plugin_help_output
 
     # Tests that lv-tool starts up without crashing
-    xvfb_pid = fork do
-      exec Formula["xorg-server"].bin/"Xvfb", ":1"
-    end
+    xvfb_pid = spawn formula_opt_bin("xorg-server")/"Xvfb", ":1"
     ENV["DISPLAY"] = ":1"
 
-    lv_tool_pid = fork do
-      # NOTE: The two lines "assertion `video != NULL' failed" in the output
-      #       are to be expected and can be ignored.
-      exec lv_tool, "--input", "debug"
-    end
+    # NOTE: The two lines "assertion `video != NULL' failed" in the output
+    #       are to be expected and can be ignored.
+    lv_tool_pid = spawn lv_tool, "--input", "debug"
 
     sleep 5
   ensure

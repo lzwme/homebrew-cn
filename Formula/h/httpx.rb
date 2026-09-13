@@ -7,11 +7,12 @@ class Httpx < Formula
   head "https://github.com/projectdiscovery/httpx.git", branch: "dev"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5b39dabe34bac875476fb8d557b39f2fa6f8411e045159068296a7b541626ac5"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "deb0167e0b09cc17ee1fc2a443fd30b2b980157a2e7c52538826f74e1b6ad54f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5fd8224c5033a1290e4eba34b0ca98ff6ad02c6dd80908a18579ba70c30efb64"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "14e5f188dad360ce8ec3335fe9a545edac0257181496d43793b79894f4b72414"
-    sha256 cellar: :any,                 x86_64_linux:  "646bb27ab03ed619244d8430e9fdc8587d4f419b65486becccf18151ac7a6471"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "5773193f7ccc8e16c627067b10a831461e61627ce6ad3b9ce82f387f8c86eca2"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "5b39dabe34bac875476fb8d557b39f2fa6f8411e045159068296a7b541626ac5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "deb0167e0b09cc17ee1fc2a443fd30b2b980157a2e7c52538826f74e1b6ad54f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "5fd8224c5033a1290e4eba34b0ca98ff6ad02c6dd80908a18579ba70c30efb64"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "14e5f188dad360ce8ec3335fe9a545edac0257181496d43793b79894f4b72414"
+    sha256 cellar: :any,                 x86_64_linux:      "646bb27ab03ed619244d8430e9fdc8587d4f419b65486becccf18151ac7a6471"
   end
 
   depends_on "go" => :build

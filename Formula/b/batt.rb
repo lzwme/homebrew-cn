@@ -13,9 +13,10 @@ class Batt < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c707d1a745bd58203718e50e4e587a7196529ab9c9f1203129f9c930c63a8d55"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8377932f77ea50bdf6b2637664b48006f1f2bc04464332c7b35f1133503ef22c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ad2aa81da082815acdd36d570f831947489e244086198e0893bb1b5ed8189c52"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "db1b7191408476b63d290a70dc0139e657a0ebfa56bc1b0b0d4e9c15d804dd3f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "c707d1a745bd58203718e50e4e587a7196529ab9c9f1203129f9c930c63a8d55"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "8377932f77ea50bdf6b2637664b48006f1f2bc04464332c7b35f1133503ef22c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "ad2aa81da082815acdd36d570f831947489e244086198e0893bb1b5ed8189c52"
   end
 
   depends_on "go" => :build

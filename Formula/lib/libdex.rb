@@ -1,8 +1,8 @@
 class Libdex < Formula
   desc "Future-based programming for GLib-based applications"
   homepage "https://gitlab.gnome.org/GNOME/libdex"
-  url "https://gitlab.gnome.org/GNOME/libdex/-/archive/1.0.0/libdex-1.0.0.tar.gz"
-  sha256 "b36185e2a51f7b605b67dbea889ee5a487009b10c4ffe4ee57f740e3b746e39c"
+  url "https://gitlab.gnome.org/GNOME/libdex/-/archive/1.2.0/libdex-1.2.0.tar.gz"
+  sha256 "0feb7f0f76938500800c28e32e5a655ab95bf042263639c5cc0f79446f15401d"
   license "LGPL-2.1-or-later"
   head "https://gitlab.gnome.org/GNOME/libdex.git", branch: "main"
 
@@ -15,15 +15,11 @@ class Libdex < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "73e3210b35819619cb44f8ab3fc9e52df2214d99da8cc743d24b889dc5b2c19e"
-    sha256 cellar: :any, arm64_tahoe:       "d74ef293c9daa90394d446acd3fb1342b15fecb7d4485e60d0216949c03877d7"
-    sha256 cellar: :any, arm64_sequoia:     "6dd4afc7846c52e350c3592125feb9fe4dfb3b1436a76dc1a467fb0702783f85"
-    sha256 cellar: :any, arm64_sonoma:      "ccc42ce047c0f21b6834a26030b3fab14a562acf829fb3d2213eccaa6537d308"
-    sha256 cellar: :any, arm64_ventura:     "5e7acdc4b9ba579acc34ef3bcddd9effa7321e687de33481194e752736e3802f"
-    sha256 cellar: :any, sonoma:            "e8c5f95abe69182953f873dd4be613052a7c5b765ef010fe772e8e7aeec84671"
-    sha256 cellar: :any, ventura:           "51b465184e5cc40d83bfe964f93c3e0962061abc8cb905abc580d83a51955f16"
-    sha256               arm64_linux:       "080cb4dad9402929fbd9a6120e0fea64886ca33cbb076eb01b7af53a50634a85"
-    sha256               x86_64_linux:      "c324d8bb769ca8a7efa4543c69dd6587813b53b66719b14e49598fb5ecb6747f"
+    sha256 cellar: :any, arm64_golden_gate: "6d403716b8ff08c22e9d74d1e99258ce473f212f26d34d2ca75732e5682a0659"
+    sha256 cellar: :any, arm64_tahoe:       "7dd82413f48fe4c16e7d254d00910ef2c83cb712694c06242645f46494f8b286"
+    sha256 cellar: :any, arm64_sequoia:     "95db5c7aff4f53550fe217d7bc07cc3a44cce1eb2af010223cf76fd9c65b79a7"
+    sha256 cellar: :any, arm64_linux:       "ad86635a8d864f19314b3a51058e95dc49fd0e5b9b3bc7feee3ee25758d50a70"
+    sha256 cellar: :any, x86_64_linux:      "dd3ca608b122329b64aa406a33d14cd52009764472f0bf787f51f84fd13160ef"
   end
 
   depends_on "gobject-introspection" => :build

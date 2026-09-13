@@ -53,7 +53,7 @@ class Qtquickeffectmaker < Formula
   end
 
   test do
-    ENV["QT_QPA_PLATFORM"] = "minimal" if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
+    ENV["QT_QPA_PLATFORM"] = "minimal"
     assert_match "Qt Quick Effect Maker", shell_output("#{bin}/qqem --help")
   end
 end

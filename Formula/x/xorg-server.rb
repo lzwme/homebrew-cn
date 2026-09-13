@@ -141,13 +141,15 @@ class XorgServer < Formula
     xcb = Formula["libxcb"]
     system ENV.cc, "./test.c", "-o", "test", "-I#{xcb.include}", "-L#{xcb.lib}", "-lxcb"
 
-    xvfb_pid = spawn bin/"Xvfb", ":1"
-    with_env(DISPLAY: ":1") do
+    display = free_port - 6000
+    xvfb_pid = spawn bin/"Xvfb", ":#{display}", "-nolisten", "unix", "-listen", "tcp"
+    with_env(DISPLAY: "127.0.0.1:#{display}") do
       sleep 10
       system "./test"
       system bin/"xvfb-run", "./test" if OS.linux?
     ensure
       Process.kill("TERM", xvfb_pid)
+      Process.wait(xvfb_pid)
     end
   end
 end

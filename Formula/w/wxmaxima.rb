@@ -80,7 +80,7 @@ class Wxmaxima < Formula
 
   test do
     wxmaxima = "#{bin}/wxmaxima"
-    wxmaxima = "#{Formula["xorg-server"].bin}/xvfb-run #{wxmaxima}" if OS.linux? && ENV.exclude?("DISPLAY")
+    wxmaxima = "#{formula_opt_bin("xorg-server")}/xvfb-run #{wxmaxima}" if OS.linux? && ENV.exclude?("DISPLAY")
     assert_match "wxMaxima #{version}", shell_output("#{wxmaxima} --version 2>&1").chomp
     assert_match "extra Maxima arguments", shell_output("#{wxmaxima} --help 2>&1", 1)
   end

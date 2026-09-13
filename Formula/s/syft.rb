@@ -7,14 +7,22 @@ class Syft < Formula
   head "https://github.com/anchore/syft.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "953c3f99e76db3f63362fd035cf428ff75173ea858e86e321dd5eefacb210e57"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bbb1efdf4e878ae660528329c1c7b280d77ffb172a728b628b3dcb5658b442d1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ea350664ee8dc144de92ac4fdb07df0aa6c0bc97b18bac7bb738bf0be6d74316"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "dc10911dd732fde0c952dd1d32b9abfdb451021fbe023427991f51dca430be63"
-    sha256 cellar: :any,                 x86_64_linux:  "d234ac2d2401ddf8fff2befb4d2e36651cf630bd8f5f0c56b23f030a6bed1546"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "6e890386f407ceb408dac2b3bb19442e626ffd44e4745af48a33332b230e13c0"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "953c3f99e76db3f63362fd035cf428ff75173ea858e86e321dd5eefacb210e57"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "bbb1efdf4e878ae660528329c1c7b280d77ffb172a728b628b3dcb5658b442d1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "ea350664ee8dc144de92ac4fdb07df0aa6c0bc97b18bac7bb738bf0be6d74316"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "dc10911dd732fde0c952dd1d32b9abfdb451021fbe023427991f51dca430be63"
+    sha256 cellar: :any,                 x86_64_linux:      "d234ac2d2401ddf8fff2befb4d2e36651cf630bd8f5f0c56b23f030a6bed1546"
   end
 
   depends_on "go" => :build
+
+  # `test do` block downloads a test fixture resource
+  deny_network_access! [:build, :postinstall]
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     ldflags = %W[
@@ -35,7 +43,8 @@ class Syft < Formula
     end
 
     testpath.install resource("homebrew-micronaut.cdx.json")
-    output = shell_output("#{bin}/syft convert #{testpath}/micronaut.json")
+    # Redirect stderr so the progress UI does not engage on the sandbox PTY and hang
+    output = shell_output("#{bin}/syft convert #{testpath}/micronaut.json 2>/dev/null")
     assert_match "netty-codec-http2  4.1.73.Final  UnknownPackage", output
 
     assert_match version.to_s, shell_output("#{bin}/syft --version")

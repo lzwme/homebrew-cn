@@ -40,7 +40,7 @@ class AptDater < Formula
   end
 
   def install
-    ENV.prepend_path "PATH", Formula["coreutils"].libexec/"gnubin" if OS.mac?
+    ENV.prepend_path "PATH", formula_opt_libexec("coreutils")/"gnubin" if OS.mac?
     system "autoreconf", "--force", "--install", "--verbose"
     system "./configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"

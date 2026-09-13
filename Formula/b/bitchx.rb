@@ -24,12 +24,13 @@ class Bitchx < Formula
 
   bottle do
     rebuild 2
-    sha256 arm64_tahoe:   "7e65b3f85145e10a3622f5b6d3302292f53a6cf4e895cc497595c70d3fb5f04e"
-    sha256 arm64_sequoia: "f46880225ae77a603ea81fb7dda6762e4f25954b1b35753b51c0dd8707b5317b"
-    sha256 arm64_sonoma:  "b472d9378d5349dfe5a705a3bdca6f5a7acbf5aeb418d2f2a04fd3719df746c9"
-    sha256 sonoma:        "dda418692213cb2577d76916cd29cab33a721fd77b3e5017de637b133399b7de"
-    sha256 arm64_linux:   "a45103a072852383c3e5afad9f786dadd82205b5e487dbd892b4af38fbfe48fe"
-    sha256 x86_64_linux:  "7454146fddf939532a4832c5276107ae6a64448a40ce95a39c370813d899d228"
+    sha256 arm64_golden_gate: "a9724e79fc5e24bd9d6fdb777f0e856c0658fc92b70cb9a7eec23a7ec516110d"
+    sha256 arm64_tahoe:       "7e65b3f85145e10a3622f5b6d3302292f53a6cf4e895cc497595c70d3fb5f04e"
+    sha256 arm64_sequoia:     "f46880225ae77a603ea81fb7dda6762e4f25954b1b35753b51c0dd8707b5317b"
+    sha256 arm64_sonoma:      "b472d9378d5349dfe5a705a3bdca6f5a7acbf5aeb418d2f2a04fd3719df746c9"
+    sha256 sonoma:            "dda418692213cb2577d76916cd29cab33a721fd77b3e5017de637b133399b7de"
+    sha256 arm64_linux:       "a45103a072852383c3e5afad9f786dadd82205b5e487dbd892b4af38fbfe48fe"
+    sha256 x86_64_linux:      "7454146fddf939532a4832c5276107ae6a64448a40ce95a39c370813d899d228"
   end
 
   depends_on "openssl@4"

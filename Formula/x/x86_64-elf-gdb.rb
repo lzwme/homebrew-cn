@@ -79,7 +79,7 @@ class X8664ElfGdb < Formula
 
   test do
     (testpath/"test.c").write "void _start(void) {}"
-    system Formula["x86_64-elf-gcc"].bin/"x86_64-elf-gcc", "-g", "-nostdlib", "test.c"
+    system formula_opt_bin("x86_64-elf-gcc")/"x86_64-elf-gcc", "-g", "-nostdlib", "test.c"
 
     output = shell_output("#{bin}/x86_64-elf-gdb -batch -ex 'info address _start' a.out")
     assert_match "Symbol \"_start\" is a function at address 0x", output

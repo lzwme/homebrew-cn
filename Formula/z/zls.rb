@@ -7,12 +7,13 @@ class Zls < Formula
   head "https://github.com/zigtools/zls.git", branch: "master"
 
   bottle do
-    sha256 arm64_tahoe:   "cf9e3dbfb7419d15afd803c01b382559bc0e831b104b31531ca97d4dd2f384a0"
-    sha256 arm64_sequoia: "ce22366300bd0295a20c0acbfdbc9608215d754f9e93f011ce10bd25784c42c9"
-    sha256 arm64_sonoma:  "e1310f07fa055942ab21a8840e87839285e9e7920bd52b1394fa7ca377328a64"
-    sha256 sonoma:        "bc2060d2718fce996369259c37f10d2098056c2ad259ab1254d4705afaf0cee2"
-    sha256 arm64_linux:   "04ccd93662797e910e75c055d8f07b80ce5ce9539a53e6d89a7daa1cba7f20a7"
-    sha256 x86_64_linux:  "fb7b67209a45f5160964cfad2cc7999dece484155908bdce620a3f554641ca36"
+    sha256 arm64_golden_gate: "fda7c9d23512cd938bb93e340239bec8cdeccaf99d7a47845a3047a451807e51"
+    sha256 arm64_tahoe:       "cf9e3dbfb7419d15afd803c01b382559bc0e831b104b31531ca97d4dd2f384a0"
+    sha256 arm64_sequoia:     "ce22366300bd0295a20c0acbfdbc9608215d754f9e93f011ce10bd25784c42c9"
+    sha256 arm64_sonoma:      "e1310f07fa055942ab21a8840e87839285e9e7920bd52b1394fa7ca377328a64"
+    sha256 sonoma:            "bc2060d2718fce996369259c37f10d2098056c2ad259ab1254d4705afaf0cee2"
+    sha256 arm64_linux:       "04ccd93662797e910e75c055d8f07b80ce5ce9539a53e6d89a7daa1cba7f20a7"
+    sha256 x86_64_linux:      "fb7b67209a45f5160964cfad2cc7999dece484155908bdce620a3f554641ca36"
   end
 
   depends_on "zig"

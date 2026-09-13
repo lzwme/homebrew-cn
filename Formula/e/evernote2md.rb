@@ -7,12 +7,13 @@ class Evernote2md < Formula
   head "https://github.com/wormi4ok/evernote2md.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "41b6f23858526f56b54c0504266bf3d95b1b428e60a52a3793645136a63fbe86"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "41b6f23858526f56b54c0504266bf3d95b1b428e60a52a3793645136a63fbe86"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "41b6f23858526f56b54c0504266bf3d95b1b428e60a52a3793645136a63fbe86"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e25d78dc8786889fd660da270298f18da738c5301d95851e688bd1069a2c9ed8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "edc36cd6c05566fab8f84060221cb8b62dea6c94630d25a14c0f57476934c6fc"
-    sha256 cellar: :any,                 x86_64_linux:  "d066314c91b289b86e398a10c440779e780139cc07f7f64d12185805a1209c6f"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "46886262cfd61830bee1800181955a916c0fa5edc14c8f5580cc0e224da5c9da"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "41b6f23858526f56b54c0504266bf3d95b1b428e60a52a3793645136a63fbe86"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "41b6f23858526f56b54c0504266bf3d95b1b428e60a52a3793645136a63fbe86"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "41b6f23858526f56b54c0504266bf3d95b1b428e60a52a3793645136a63fbe86"
+    sha256 cellar: :any_skip_relocation, sonoma:            "e25d78dc8786889fd660da270298f18da738c5301d95851e688bd1069a2c9ed8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "edc36cd6c05566fab8f84060221cb8b62dea6c94630d25a14c0f57476934c6fc"
+    sha256 cellar: :any,                 x86_64_linux:      "d066314c91b289b86e398a10c440779e780139cc07f7f64d12185805a1209c6f"
   end
 
   depends_on "go" => :build

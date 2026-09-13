@@ -13,18 +13,12 @@ class Jupp < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:    "851ad092f5d0183d4c1d09bba60a6f8a00cc4056ecc37bd44b70a8c29e27d7ae"
-    sha256 arm64_sequoia:  "69af220c327528966dd893daab6d625a5b5241b9273f7b53decb37c5f1e33efe"
-    sha256 arm64_sonoma:   "501d87f4b79bf8ae4a8a67b811fbca484e6bc68f6b1e04d9abfb0b1948430880"
-    sha256 arm64_ventura:  "821daf3c2f840c5a9942de15a4b0c226928e35808079db3f0d48e686a474f08d"
-    sha256 arm64_monterey: "b5732141fc6bfe41e312ee4492c2680a3dcfba4a3951c8f6ab590b2e6c887a01"
-    sha256 arm64_big_sur:  "f50e0562ad9f204659b90c6fe30d96708bcb59100e049770ca1da0c8668ebf0a"
-    sha256 sonoma:         "67aeb4c92738d070ab3401d6282d122a95a257a0c6d5572a6da184764a2018ab"
-    sha256 ventura:        "df22aefb2425b9730ca87ff48af85ef2a6660e8b2e6e6d8c68be5a20690553e7"
-    sha256 monterey:       "d4a1370a276e3e6dbe6194ec7d99a488cf79e9a03e7bdef06a347c9210c4f365"
-    sha256 big_sur:        "c2666e8966b8fc4322e70d4b5ccfe363b30ebb0166fc619cc354214bad9718f1"
-    sha256 arm64_linux:    "51d77066bd02369aac33dda74c4ed5c2dc66873e11ae1f64f329fb4872a7c5b5"
-    sha256 x86_64_linux:   "903a19653cafcf340fce69eff4be1d4a5574dde54d87c5934aa269cb25050311"
+    rebuild 1
+    sha256 arm64_golden_gate: "a657f7b97ce2a81ca28fa85e4d66f779b9d5c36eeef6a7f21916cadc1ca2fd12"
+    sha256 arm64_tahoe:       "9ce260439f94128f52d4dbe25f3e996487635255d9ce292bed9f51b4eefebb06"
+    sha256 arm64_sequoia:     "4e6f9df5e42351cb3f393b9d33b52a65a7c2eac52ef34cfc95a90e2e03acdc98"
+    sha256 arm64_linux:       "8e1c949763b9ed44586ab9ceba53dc5fc85a8bc48d591fe26e64f073478c0680"
+    sha256 x86_64_linux:      "7360bc99630b6f39cf3d3f11ce570df13786326720aaea1cb0f3709388cfb1c4"
   end
 
   depends_on "autoconf" => :build
@@ -40,6 +34,8 @@ class Jupp < Formula
   conflicts_with "joe", because: "both install the same binaries"
 
   def install
+    # C23 makes `()` mean `(void)`, breaking the K&R-style `jpoly_int` callback typedef
+    ENV.append_to_cflags "-std=gnu17"
     ENV.prepend_path "PATH", formula_opt_libexec("gnu-sed")/"gnubin" if OS.mac?
     system "autoreconf", "--force", "--install", "--verbose"
     system "./configure", "--enable-sysconfjoesubdir=/jupp", *std_configure_args

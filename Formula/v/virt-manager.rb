@@ -117,7 +117,7 @@ class VirtManager < Formula
     pids = [spawn(Formula["libvirt"].opt_sbin/"libvirtd", "-f", Formula["libvirt"].etc/"libvirt/libvirtd.conf")]
 
     if OS.linux? && ENV.exclude?("DISPLAY")
-      pids << spawn(Formula["xorg-server"].bin/"Xvfb", ":1")
+      pids << spawn(formula_opt_bin("xorg-server")/"Xvfb", ":1")
       ENV["DISPLAY"] = ":1"
       sleep 10
     end

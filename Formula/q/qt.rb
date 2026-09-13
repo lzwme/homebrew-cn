@@ -201,7 +201,7 @@ class Qt < Formula
     CPP
 
     ENV["LC_ALL"] = "en_US.UTF-8"
-    ENV["QT_QPA_PLATFORM"] = "minimal" if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
+    ENV["QT_QPA_PLATFORM"] = "minimal"
 
     system "cmake", "-S", ".", "-B", "cmake"
     system "cmake", "--build", "cmake"

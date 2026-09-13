@@ -12,12 +12,13 @@ class Dvdauthor < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "ed44deb629315e130b499c9e41a1cdfd789d62ed26e410c10d480a27ea93abec"
-    sha256 cellar: :any,                 arm64_sequoia: "17b2f6a33354311992ca16d0f2455671df0f23b65cdb83088ff383b0fd78daff"
-    sha256 cellar: :any,                 arm64_sonoma:  "4c5905690b4f281fb0351cb5581bc42775c09a10d1ce9567fba4e0b5159edde3"
-    sha256 cellar: :any,                 sonoma:        "dcecfc37b18314b6ac3fcd27b1a11785eeedf6d20e0d78d81e0888181250a4b7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "eb55a46434f9c854c8aae0422b4f964c2fedc9ccc3fa01183e93dda87f196f47"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "eb347b5f1afad654bd82dbf2158c3e1565b2ebfcf45b0e12828de5c5d3e46439"
+    sha256 cellar: :any,                 arm64_golden_gate: "f1512e93c5687a1ec120dbfdfe16822cbb1877fa9bc1a8c178aa0df6a52601f5"
+    sha256 cellar: :any,                 arm64_tahoe:       "ed44deb629315e130b499c9e41a1cdfd789d62ed26e410c10d480a27ea93abec"
+    sha256 cellar: :any,                 arm64_sequoia:     "17b2f6a33354311992ca16d0f2455671df0f23b65cdb83088ff383b0fd78daff"
+    sha256 cellar: :any,                 arm64_sonoma:      "4c5905690b4f281fb0351cb5581bc42775c09a10d1ce9567fba4e0b5159edde3"
+    sha256 cellar: :any,                 sonoma:            "dcecfc37b18314b6ac3fcd27b1a11785eeedf6d20e0d78d81e0888181250a4b7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "eb55a46434f9c854c8aae0422b4f964c2fedc9ccc3fa01183e93dda87f196f47"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "eb347b5f1afad654bd82dbf2158c3e1565b2ebfcf45b0e12828de5c5d3e46439"
   end
 
   # Dvdauthor will optionally detect ImageMagick or GraphicsMagick, too.

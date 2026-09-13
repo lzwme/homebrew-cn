@@ -7,12 +7,13 @@ class StarlarkRust < Formula
   head "https://github.com/facebook/starlark-rust.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "825e07ddc6c08fa50a71d051b66a59fd8cd38e4ca53b38acc968dc11bfe0bdfe"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ae98c072625fe0df9231a0543b6028af938b9a6f1f395969517f9d029a62f1c3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4024a552892c5ab4011f796df1c34e14082f19f339ca0c831111d7f8d1de92d7"
-    sha256 cellar: :any_skip_relocation, sonoma:        "eef8634a3026531eb4377653efb039870a4441d4c4ab744c051d2e7f82a9167b"
-    sha256 cellar: :any,                 arm64_linux:   "d269181238dc68785e98d63bf661e3a556ac39e68f280f3129dfebd87e82a3a9"
-    sha256 cellar: :any,                 x86_64_linux:  "11eb8954790dd2831b2eac2c8b48b7133319f33dd09abf70010c8a601b7a4069"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "2565540bd3443574bae0dceb2c863f4d7196907a1fe381f535ca5370a5925158"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "825e07ddc6c08fa50a71d051b66a59fd8cd38e4ca53b38acc968dc11bfe0bdfe"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "ae98c072625fe0df9231a0543b6028af938b9a6f1f395969517f9d029a62f1c3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "4024a552892c5ab4011f796df1c34e14082f19f339ca0c831111d7f8d1de92d7"
+    sha256 cellar: :any_skip_relocation, sonoma:            "eef8634a3026531eb4377653efb039870a4441d4c4ab744c051d2e7f82a9167b"
+    sha256 cellar: :any,                 arm64_linux:       "d269181238dc68785e98d63bf661e3a556ac39e68f280f3129dfebd87e82a3a9"
+    sha256 cellar: :any,                 x86_64_linux:      "11eb8954790dd2831b2eac2c8b48b7133319f33dd09abf70010c8a601b7a4069"
   end
 
   depends_on "rust" => :build

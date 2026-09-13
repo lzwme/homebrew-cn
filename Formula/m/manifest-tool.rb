@@ -7,12 +7,13 @@ class ManifestTool < Formula
   head "https://github.com/estesp/manifest-tool.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ff6ca925edd27743d5951fa56f113293fedc984e85a981acb47469e831ecd8be"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f8397acb5e94f556bd7bd1912f490cd78179c68a34d0aeb19a436191463f3686"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "caa96b91d56f4bfd7134538576efbd412a71272bceeb7485225a59b06de33d1e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "301afe0b73ddd03fd4bcef72f57e7511133a0068252b8accafd77f8381b7cb55"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9820c2efb7987a017570f456dc8fa1050f8b70bfb3fe1494d4f8baa9910e5fbe"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "da6975815c6a6ca38ef57adff084060f96b886d66fa7be87b50c3ab655943cb2"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "dbe4e8911430840ded614e4c48b72ce7f10ae44b59e03c6825837a3f0ebe025c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "ff6ca925edd27743d5951fa56f113293fedc984e85a981acb47469e831ecd8be"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "f8397acb5e94f556bd7bd1912f490cd78179c68a34d0aeb19a436191463f3686"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "caa96b91d56f4bfd7134538576efbd412a71272bceeb7485225a59b06de33d1e"
+    sha256 cellar: :any_skip_relocation, sonoma:            "301afe0b73ddd03fd4bcef72f57e7511133a0068252b8accafd77f8381b7cb55"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "9820c2efb7987a017570f456dc8fa1050f8b70bfb3fe1494d4f8baa9910e5fbe"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "da6975815c6a6ca38ef57adff084060f96b886d66fa7be87b50c3ab655943cb2"
   end
 
   depends_on "go" => :build

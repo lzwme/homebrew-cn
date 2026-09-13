@@ -13,12 +13,13 @@ class Clamav < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "f3d487c09435064df158bc3cac331c43543a9de9a71fb65add0cb7d65d71a0e4"
-    sha256 arm64_sequoia: "526101fb67470ea38594bc7ac384ebda619e2a6a6b31de9d45068f8583f20bc3"
-    sha256 arm64_sonoma:  "a95e3bd5dfe9a620c661e1a7bb14a7d0f2fd38ce7cb5050f3c6a37011c0083de"
-    sha256 sonoma:        "89d4e47cf33d494249dbac96cf2ebd04af4ed186e9075d37eb336c22a62fb264"
-    sha256 arm64_linux:   "7c5d9387f73105976d5dad78d6daa0b425da1b22d4b69c5ef2971af8e89a6edf"
-    sha256 x86_64_linux:  "400ed20330f6cc5eb512e92475a7d204774ef48de9b7fef45af3187fd4d021a7"
+    sha256 arm64_golden_gate: "842b8386a78d5df3de528efd19fcae0d807622d5c187ac60d386cfb50d03c73d"
+    sha256 arm64_tahoe:       "f3d487c09435064df158bc3cac331c43543a9de9a71fb65add0cb7d65d71a0e4"
+    sha256 arm64_sequoia:     "526101fb67470ea38594bc7ac384ebda619e2a6a6b31de9d45068f8583f20bc3"
+    sha256 arm64_sonoma:      "a95e3bd5dfe9a620c661e1a7bb14a7d0f2fd38ce7cb5050f3c6a37011c0083de"
+    sha256 sonoma:            "89d4e47cf33d494249dbac96cf2ebd04af4ed186e9075d37eb336c22a62fb264"
+    sha256 arm64_linux:       "7c5d9387f73105976d5dad78d6daa0b425da1b22d4b69c5ef2971af8e89a6edf"
+    sha256 x86_64_linux:      "400ed20330f6cc5eb512e92475a7d204774ef48de9b7fef45af3187fd4d021a7"
   end
 
   depends_on "cmake" => :build

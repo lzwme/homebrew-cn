@@ -13,12 +13,13 @@ class Legitify < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2ad85e946db932a1562a409f65349e4bbea50e7775e5c053cad0e214362fe9be"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2ad85e946db932a1562a409f65349e4bbea50e7775e5c053cad0e214362fe9be"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2ad85e946db932a1562a409f65349e4bbea50e7775e5c053cad0e214362fe9be"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0fe85676589c8defc67ba6c2f7ddb83c7386b7c5d86147ca170238e5fd18707c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "dd5c133ed0e35b7d07656bc9f290ed83149c1c45077f3aa20275890916bb1f9c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "467b678a47f512a636ab25c2d14106c7371b2917670c0fa01fb7f51d6796b006"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "fed46f8cf3320d641c5b4f41abb59bffe0c1a1c676fe3cb48d095803d558d9e1"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "2ad85e946db932a1562a409f65349e4bbea50e7775e5c053cad0e214362fe9be"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "2ad85e946db932a1562a409f65349e4bbea50e7775e5c053cad0e214362fe9be"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "2ad85e946db932a1562a409f65349e4bbea50e7775e5c053cad0e214362fe9be"
+    sha256 cellar: :any_skip_relocation, sonoma:            "0fe85676589c8defc67ba6c2f7ddb83c7386b7c5d86147ca170238e5fd18707c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "dd5c133ed0e35b7d07656bc9f290ed83149c1c45077f3aa20275890916bb1f9c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "467b678a47f512a636ab25c2d14106c7371b2917670c0fa01fb7f51d6796b006"
   end
 
   # no release since 2024-07-09, fails with go 1.25+ https://github.com/Legit-Labs/legitify/pull/350

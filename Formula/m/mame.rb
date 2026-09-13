@@ -21,12 +21,13 @@ class Mame < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "8b15aa506cb2926763edbdb69833e7b308e3ba4904afa0ca32cd966cc8860ba4"
-    sha256 cellar: :any, arm64_sequoia: "d16d30d95cba83260dd91600f6b7b37d708d36f182a338e9d4994e273f222bc7"
-    sha256 cellar: :any, arm64_sonoma:  "38df7c25402a221fda81c09d53ce5a96110ec67830db14f8749c90e567b51f4f"
-    sha256 cellar: :any, sonoma:        "4afdae543ae6fdccb34f47dbcadf8b4ca758d299e941efb8c07b5f5719aa8ae0"
-    sha256 cellar: :any, arm64_linux:   "757ba5c64d0fc470d272f9a197444ff8c26626660b0795e5b038699635f48869"
-    sha256 cellar: :any, x86_64_linux:  "2be8a7b5e3dac0090541c7f110caea8135dbf65d19dd25969987704868a2a683"
+    sha256 cellar: :any, arm64_golden_gate: "5838d6ec08fd4a0194946d99b553783a0cfbd294a8fd64ea5af269987ca3db43"
+    sha256 cellar: :any, arm64_tahoe:       "8b15aa506cb2926763edbdb69833e7b308e3ba4904afa0ca32cd966cc8860ba4"
+    sha256 cellar: :any, arm64_sequoia:     "d16d30d95cba83260dd91600f6b7b37d708d36f182a338e9d4994e273f222bc7"
+    sha256 cellar: :any, arm64_sonoma:      "38df7c25402a221fda81c09d53ce5a96110ec67830db14f8749c90e567b51f4f"
+    sha256 cellar: :any, sonoma:            "4afdae543ae6fdccb34f47dbcadf8b4ca758d299e941efb8c07b5f5719aa8ae0"
+    sha256 cellar: :any, arm64_linux:       "757ba5c64d0fc470d272f9a197444ff8c26626660b0795e5b038699635f48869"
+    sha256 cellar: :any, x86_64_linux:      "2be8a7b5e3dac0090541c7f110caea8135dbf65d19dd25969987704868a2a683"
   end
 
   # `asio`` v1.30.1 is bundled and it is not compatible with the `asio` formula

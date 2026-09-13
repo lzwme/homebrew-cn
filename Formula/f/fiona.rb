@@ -9,12 +9,13 @@ class Fiona < Formula
   revision 3
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "e185ec84243f3876b9155f6a808fc37185ebf4f43d070d484893043b0b4b8962"
-    sha256 cellar: :any,                 arm64_sequoia: "eb67ec1899e4bd093194fecfe412d4075b4549b92d7c67bbdef61ec57958ab60"
-    sha256 cellar: :any,                 arm64_sonoma:  "545745b1ed597d12e44e9c998e552490c4af4ed79421f1912e1c14e0bf516c93"
-    sha256 cellar: :any,                 sonoma:        "f8d1d462b80b2a6d3fd6fcad56bb567726c26f9057685e629c6692951e373c70"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "81b758f1abc2fff5f32496f62aa1646d6c0a3aa6f6fccb016c014de8a02e37ff"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8c680dd74cf3eaa431bf51c7bfd8ca70a61c93e9d236bb3bcb9fbca1fab06c1c"
+    sha256 cellar: :any,                 arm64_golden_gate: "23a84d38e6defeea62a338edeeb59447425ef983e952fef89ec3cb5a3feed522"
+    sha256 cellar: :any,                 arm64_tahoe:       "e185ec84243f3876b9155f6a808fc37185ebf4f43d070d484893043b0b4b8962"
+    sha256 cellar: :any,                 arm64_sequoia:     "eb67ec1899e4bd093194fecfe412d4075b4549b92d7c67bbdef61ec57958ab60"
+    sha256 cellar: :any,                 arm64_sonoma:      "545745b1ed597d12e44e9c998e552490c4af4ed79421f1912e1c14e0bf516c93"
+    sha256 cellar: :any,                 sonoma:            "f8d1d462b80b2a6d3fd6fcad56bb567726c26f9057685e629c6692951e373c70"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "81b758f1abc2fff5f32496f62aa1646d6c0a3aa6f6fccb016c014de8a02e37ff"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "8c680dd74cf3eaa431bf51c7bfd8ca70a61c93e9d236bb3bcb9fbca1fab06c1c"
   end
 
   depends_on "certifi" => :no_linkage

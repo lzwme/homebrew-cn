@@ -13,12 +13,13 @@ class DashShell < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b16ec78b4230ba8826c6991666acacb8489621c4faad001c775526f3709899e8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0e104457d0d188129596ee04e4f88ab6039baf9a03e183820caf0aa333d581d0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d0d1db055b541d6fe8bb74ea606c3d231e73d2ab8585fd69f1698d111c1db8a4"
-    sha256 cellar: :any_skip_relocation, sonoma:        "67a77615d9fc06d64aaf8bc8674c0064db8e2eb86b11387340115099e9d60291"
-    sha256 cellar: :any,                 arm64_linux:   "75c41698c960677b3f093033378b3360cdf63298929b8c9e8faf2f3281a1f836"
-    sha256 cellar: :any,                 x86_64_linux:  "48677dd2cc480fe1f2dc977a7c8c7284cb4a35e1ac2c005f81d22426a9396b54"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "60f067fd978346305a6b4e9de3c636cec7b1499e71df4d940d3ceff6339d5337"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "b16ec78b4230ba8826c6991666acacb8489621c4faad001c775526f3709899e8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "0e104457d0d188129596ee04e4f88ab6039baf9a03e183820caf0aa333d581d0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "d0d1db055b541d6fe8bb74ea606c3d231e73d2ab8585fd69f1698d111c1db8a4"
+    sha256 cellar: :any_skip_relocation, sonoma:            "67a77615d9fc06d64aaf8bc8674c0064db8e2eb86b11387340115099e9d60291"
+    sha256 cellar: :any,                 arm64_linux:       "75c41698c960677b3f093033378b3360cdf63298929b8c9e8faf2f3281a1f836"
+    sha256 cellar: :any,                 x86_64_linux:      "48677dd2cc480fe1f2dc977a7c8c7284cb4a35e1ac2c005f81d22426a9396b54"
   end
 
   depends_on "autoconf" => :build

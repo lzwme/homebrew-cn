@@ -12,12 +12,13 @@ class Bgpq4 < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e5e745990029980ccf23bea3b07c88a650c2cec39997890c3e8fb9a3777caa10"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "38a03fd0d53b7b6a94732f1f0e41cff6212af6508ecb118cfe8b77eeaee1c07d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3e6f9b0820084e8c9559a1f26a4052bd216243014844ca761ebf884ae430ce26"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a9f929e5bb0f2b14e82cb4b67e8078d642f73454397a065a709f8d9db56f6fe8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5c6b3f5d3144ff448bba5c199dcf9e1eb2f46d1ebae9aad3cf85b15a99a4cb8a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "59e573f78602c2f9dcaf2418602fd0cbd570341d51f545179c1a49fa4b8044b4"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "06f7514aec90f7aa483f0ef531a13ff9afbae97ce3b2edd4b97aed55cac904d8"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "e5e745990029980ccf23bea3b07c88a650c2cec39997890c3e8fb9a3777caa10"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "38a03fd0d53b7b6a94732f1f0e41cff6212af6508ecb118cfe8b77eeaee1c07d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "3e6f9b0820084e8c9559a1f26a4052bd216243014844ca761ebf884ae430ce26"
+    sha256 cellar: :any_skip_relocation, sonoma:            "a9f929e5bb0f2b14e82cb4b67e8078d642f73454397a065a709f8d9db56f6fe8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "5c6b3f5d3144ff448bba5c199dcf9e1eb2f46d1ebae9aad3cf85b15a99a4cb8a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "59e573f78602c2f9dcaf2418602fd0cbd570341d51f545179c1a49fa4b8044b4"
   end
 
   depends_on "autoconf" => :build

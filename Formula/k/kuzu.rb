@@ -7,12 +7,13 @@ class Kuzu < Formula
   head "https://github.com/kuzudb/kuzu.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "243bde67ad2135a10f649a5914d9f10e0838b3daf60f974af3812bdd095c9f48"
-    sha256 cellar: :any,                 arm64_sequoia: "10f12c53e501bd51cab6f7fa22633409bcea799022497b47ba2886412eb8b2c9"
-    sha256 cellar: :any,                 arm64_sonoma:  "dbe0a9c52d265082dba31f9bca611c79055be996e76e7fa684d4e00fef89b20b"
-    sha256 cellar: :any,                 sonoma:        "d5103b415b4966f878cbcb4240341d5edd89cb594313b552d7ed463beb4a2769"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b4b9e39e891e947f5b71f407baf93e3fc3ae2c0633f0f21b12adf52ec8f84c30"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c7efd5a1507ec1b80705e133a206aaac497bdfdf6ae4d3d32309525c5ce5ef8e"
+    sha256 cellar: :any,                 arm64_golden_gate: "f1c8f5bc9f4a2eb56ca6f3534f52b3e57f55b8724ba628ee2e496b2eb5ac42b1"
+    sha256 cellar: :any,                 arm64_tahoe:       "243bde67ad2135a10f649a5914d9f10e0838b3daf60f974af3812bdd095c9f48"
+    sha256 cellar: :any,                 arm64_sequoia:     "10f12c53e501bd51cab6f7fa22633409bcea799022497b47ba2886412eb8b2c9"
+    sha256 cellar: :any,                 arm64_sonoma:      "dbe0a9c52d265082dba31f9bca611c79055be996e76e7fa684d4e00fef89b20b"
+    sha256 cellar: :any,                 sonoma:            "d5103b415b4966f878cbcb4240341d5edd89cb594313b552d7ed463beb4a2769"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "b4b9e39e891e947f5b71f407baf93e3fc3ae2c0633f0f21b12adf52ec8f84c30"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "c7efd5a1507ec1b80705e133a206aaac497bdfdf6ae4d3d32309525c5ce5ef8e"
   end
 
   deprecate! date: "2026-01-20", because: :repo_archived

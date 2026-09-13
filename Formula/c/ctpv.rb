@@ -7,12 +7,13 @@ class Ctpv < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "4255d6a7a1a4b093609a9b614adaaacf563011c758916c1c3aa804defbe89e93"
-    sha256 cellar: :any,                 arm64_sequoia: "7dd57d5d3080b7ed19c8cd9b27bd26673ad2ce6df9ae1543a449f62820284cdc"
-    sha256 cellar: :any,                 arm64_sonoma:  "3afc3e19e6d42a56723344456a005cb43f0ea91a30b6fd7b8123a42fe40ee8cd"
-    sha256 cellar: :any,                 sonoma:        "c2d0711117c2451fd739091152c5098e2cfb07881f2b25f791475c28819a3cfc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ee9c91478a3c912d51de6a67e22ca99f97b549e933ceddf535b0582f85b20a58"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "899ad1cf4f12ee2219a694446219373d81b5c9274087c7e1797a4cca2f5a5bc7"
+    sha256 cellar: :any,                 arm64_golden_gate: "734cc8b4ad5bc616b30f2535fb20078cf8208f631754016d42c4e6b6ae742712"
+    sha256 cellar: :any,                 arm64_tahoe:       "4255d6a7a1a4b093609a9b614adaaacf563011c758916c1c3aa804defbe89e93"
+    sha256 cellar: :any,                 arm64_sequoia:     "7dd57d5d3080b7ed19c8cd9b27bd26673ad2ce6df9ae1543a449f62820284cdc"
+    sha256 cellar: :any,                 arm64_sonoma:      "3afc3e19e6d42a56723344456a005cb43f0ea91a30b6fd7b8123a42fe40ee8cd"
+    sha256 cellar: :any,                 sonoma:            "c2d0711117c2451fd739091152c5098e2cfb07881f2b25f791475c28819a3cfc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "ee9c91478a3c912d51de6a67e22ca99f97b549e933ceddf535b0582f85b20a58"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "899ad1cf4f12ee2219a694446219373d81b5c9274087c7e1797a4cca2f5a5bc7"
   end
 
   depends_on "libmagic"

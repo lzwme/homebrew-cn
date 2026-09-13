@@ -12,11 +12,12 @@ class Astro < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "62e96d794bec8a890993b6d777fc3d559c991f4a87b43219bc9d0c6960d3be69"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d4d242faf0ba3887625815339c4465e1eaca61330e876fe155f8534d9aca1618"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1eaeb9caba33cc650223238eaab2ea24b735aea9d825114402e7665eaa1205ae"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "854eea480a48f56e271682f95a12c0a847904fdcdfa3b0ad9b53528b258cb26f"
-    sha256 cellar: :any,                 x86_64_linux:  "171fc9c06c224f635e1bcc764e93b1b6e4ce988ef2ec9b4134ceb028640921e2"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "3aeb8be3fce3d370ac8fabf5461e7f7844395de9e34c4b5fe8959811f1b7ce06"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "62e96d794bec8a890993b6d777fc3d559c991f4a87b43219bc9d0c6960d3be69"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "d4d242faf0ba3887625815339c4465e1eaca61330e876fe155f8534d9aca1618"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "1eaeb9caba33cc650223238eaab2ea24b735aea9d825114402e7665eaa1205ae"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "854eea480a48f56e271682f95a12c0a847904fdcdfa3b0ad9b53528b258cb26f"
+    sha256 cellar: :any,                 x86_64_linux:      "171fc9c06c224f635e1bcc764e93b1b6e4ce988ef2ec9b4134ceb028640921e2"
   end
 
   depends_on "go" => :build

@@ -40,7 +40,7 @@ class Cyme < Formula
       end
       resource("usbkbd.umockdev").stage(testpath)
 
-      umockdev_run = "#{Formula["umockdev"].bin}/umockdev-run --device usbkbd.umockdev"
+      umockdev_run = "#{formula_opt_bin("umockdev")}/umockdev-run --device usbkbd.umockdev"
       assert_equal <<~EOS, shell_output("#{umockdev_run} -- #{bin}/cyme --no-padding --tree")
         ● 1-0 EHCI Host Controller Linux 3.10.0-2-generic ehci_hcd -
         └──⊛    1   2 0x8087 0x0020 Integrated Rate Matching Hub - usb

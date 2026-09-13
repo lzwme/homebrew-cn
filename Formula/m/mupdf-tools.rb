@@ -11,12 +11,13 @@ class MupdfTools < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0c83f81e058928fae31807319f2a28580ea43eccfb303bf0aa2b4caf836da37f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a585805bbd33563c3b95886e4beccb817e45a554ff353d5ae721ca93c74d69b6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "42d1dd33c832b15a56f414ddc508b4821f93a8111b73f0c8e1ea4b9c1821013d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "cfc51e17e4d46ef79369c43d6a30b99322b61e7a8bad07d8b932dd5830e860c0"
-    sha256 cellar: :any,                 arm64_linux:   "9dcaa51f5aeb5e41d6e045fd16c9b47a725820eff6eb06cfc4c91330b4c079fd"
-    sha256 cellar: :any,                 x86_64_linux:  "6324c4a03108274a79d97d88a2bb0f103adc51f1dddd0648250472f225d6df15"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "a157428119f159af4c00d6d6cd9aac79771206d997c2cfa78d325a71723f5829"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "0c83f81e058928fae31807319f2a28580ea43eccfb303bf0aa2b4caf836da37f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "a585805bbd33563c3b95886e4beccb817e45a554ff353d5ae721ca93c74d69b6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "42d1dd33c832b15a56f414ddc508b4821f93a8111b73f0c8e1ea4b9c1821013d"
+    sha256 cellar: :any_skip_relocation, sonoma:            "cfc51e17e4d46ef79369c43d6a30b99322b61e7a8bad07d8b932dd5830e860c0"
+    sha256 cellar: :any,                 arm64_linux:       "9dcaa51f5aeb5e41d6e045fd16c9b47a725820eff6eb06cfc4c91330b4c079fd"
+    sha256 cellar: :any,                 x86_64_linux:      "6324c4a03108274a79d97d88a2bb0f103adc51f1dddd0648250472f225d6df15"
   end
 
   conflicts_with "mupdf", because: "mupdf and mupdf-tools install the same binaries"

@@ -7,12 +7,13 @@ class Mosdepth < Formula
   head "https://github.com/brentp/mosdepth.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "ab01db3acd22d1cb686cdb38ff9cc5a432c86d843c04af34a5c08a75f5c0030b"
-    sha256 cellar: :any, arm64_sequoia: "cffc3d89b425592fda027bf10f79ca40419d1c8a037ea215f9ba44d465c445c4"
-    sha256 cellar: :any, arm64_sonoma:  "aea014b3b89a1d585eed3624c034b6017fbbd52e255c64262a87c9b348de1dc4"
-    sha256 cellar: :any, sonoma:        "3cfae40cc1b231281f7742897a8aab277efe32d41c8ae8d4a9bc62795104158c"
-    sha256 cellar: :any, arm64_linux:   "efb4b8a4114263f90c64e5169327da64957e3e2df160475beb13194c21ef4945"
-    sha256 cellar: :any, x86_64_linux:  "7b2f09e1fab11ee2e00ba6f2c5df342cd6c3095f8f92197ffbe12bb1b04fa7ac"
+    sha256 cellar: :any, arm64_golden_gate: "203470a7eaccc10122f081e3fc9916d7ce0541fd71c27ea426de5a0b5780bc96"
+    sha256 cellar: :any, arm64_tahoe:       "ab01db3acd22d1cb686cdb38ff9cc5a432c86d843c04af34a5c08a75f5c0030b"
+    sha256 cellar: :any, arm64_sequoia:     "cffc3d89b425592fda027bf10f79ca40419d1c8a037ea215f9ba44d465c445c4"
+    sha256 cellar: :any, arm64_sonoma:      "aea014b3b89a1d585eed3624c034b6017fbbd52e255c64262a87c9b348de1dc4"
+    sha256 cellar: :any, sonoma:            "3cfae40cc1b231281f7742897a8aab277efe32d41c8ae8d4a9bc62795104158c"
+    sha256 cellar: :any, arm64_linux:       "efb4b8a4114263f90c64e5169327da64957e3e2df160475beb13194c21ef4945"
+    sha256 cellar: :any, x86_64_linux:      "7b2f09e1fab11ee2e00ba6f2c5df342cd6c3095f8f92197ffbe12bb1b04fa7ac"
   end
 
   depends_on "nim" => :build

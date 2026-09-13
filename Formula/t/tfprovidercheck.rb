@@ -7,12 +7,13 @@ class Tfprovidercheck < Formula
   head "https://github.com/suzuki-shunsuke/tfprovidercheck.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "427a2a1015f2145bd56bfab2f7e55da6e9dd51d269f52865b74332595bc17d1e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "427a2a1015f2145bd56bfab2f7e55da6e9dd51d269f52865b74332595bc17d1e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "427a2a1015f2145bd56bfab2f7e55da6e9dd51d269f52865b74332595bc17d1e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4cbaf50f5a3e8dc17c9a1afe95c18337234b75e478723f2511ff6152617723f6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8b8f7a9fb706c0b91832695220d4afb0db43549beaae7707ceeebfc53050886e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "31a2633383d7a927d45d1591203d5781cc6e0e5681e6a3d5155a48a1837368fa"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "3c1a9d5e5970c9214f910003aa22cb24aa80d2152308ec48338cd083b3af0745"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "427a2a1015f2145bd56bfab2f7e55da6e9dd51d269f52865b74332595bc17d1e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "427a2a1015f2145bd56bfab2f7e55da6e9dd51d269f52865b74332595bc17d1e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "427a2a1015f2145bd56bfab2f7e55da6e9dd51d269f52865b74332595bc17d1e"
+    sha256 cellar: :any_skip_relocation, sonoma:            "4cbaf50f5a3e8dc17c9a1afe95c18337234b75e478723f2511ff6152617723f6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "8b8f7a9fb706c0b91832695220d4afb0db43549beaae7707ceeebfc53050886e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "31a2633383d7a927d45d1591203d5781cc6e0e5681e6a3d5155a48a1837368fa"
   end
 
   depends_on "go" => :build

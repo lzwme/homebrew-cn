@@ -23,12 +23,13 @@ class Sratoolkit < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "ea15253c72d8bfbac1caaefac0cf90bc48d6a215af38d5d0b8af0cae50be524d"
-    sha256 cellar: :any,                 arm64_sequoia: "2eb1898cc5afb9fb2e81c1f56a25cdea78385d8a1236721723f36a2223a59c66"
-    sha256 cellar: :any,                 arm64_sonoma:  "a00bdef100d52e2bc4729002a8d2c30d343459fd07890218e207f62e170b47f0"
-    sha256 cellar: :any,                 sonoma:        "df6fe9a10e35c77e8b86c2c27a84e9e05c671b3b3b6e55860c3c65724960715c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7dc648d79584227003885181424d9b4abd21ffdbce665db892be297b1ef56b4e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4c32d0758c0d31c4e0af88ec49ef06be34745391f6ad804325c1fd40967e6c7a"
+    sha256 cellar: :any,                 arm64_golden_gate: "c3ce8ec61a97cdaafaf0347df1e8496dc51c7acdfb32eb0f5cae316210b65ca6"
+    sha256 cellar: :any,                 arm64_tahoe:       "ea15253c72d8bfbac1caaefac0cf90bc48d6a215af38d5d0b8af0cae50be524d"
+    sha256 cellar: :any,                 arm64_sequoia:     "2eb1898cc5afb9fb2e81c1f56a25cdea78385d8a1236721723f36a2223a59c66"
+    sha256 cellar: :any,                 arm64_sonoma:      "a00bdef100d52e2bc4729002a8d2c30d343459fd07890218e207f62e170b47f0"
+    sha256 cellar: :any,                 sonoma:            "df6fe9a10e35c77e8b86c2c27a84e9e05c671b3b3b6e55860c3c65724960715c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "7dc648d79584227003885181424d9b4abd21ffdbce665db892be297b1ef56b4e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "4c32d0758c0d31c4e0af88ec49ef06be34745391f6ad804325c1fd40967e6c7a"
   end
 
   head do

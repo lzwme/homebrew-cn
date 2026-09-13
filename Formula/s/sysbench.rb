@@ -8,14 +8,12 @@ class Sysbench < Formula
   head "https://github.com/akopytov/sysbench.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "aa75335616225f72f89bf9b8f75175f5eafaa320ec768c1a7fddcb0fc1fd8bff"
-    sha256 cellar: :any,                 arm64_sequoia: "58353cd8988e133b4dfa59be80204cf6968ab6a733f9da7b3a53f561b74c4a20"
-    sha256 cellar: :any,                 arm64_sonoma:  "88b6daa8909f7deca820c79d70651675e73bab3bf25e431ba72967ae78a932bb"
-    sha256 cellar: :any,                 arm64_ventura: "ae000c8446a05ac27b143521afa5c0cb27d6f2fd85985a6b829f2d4c5983c8ef"
-    sha256 cellar: :any,                 sonoma:        "6dc4d175800e0e93778a1d90ef77640a6678f6724f0aa3760aed0fb101c80ba3"
-    sha256 cellar: :any,                 ventura:       "276837830f7c80059028dc02664bed943a465041127d6c9c09faaa3a00c1f837"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3a803836fb5e79e81b0b9dbd6d5104773e0b888f7e45986e03e586b2c6e4eb79"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6b1d4498974cb5820ef3e1d532ae7ba041a7d201583c363d98674771caeacc7f"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "18b8617b1b751de9708096f2d5fc4dbffc2b17ecb19a270101156f6ab287eca2"
+    sha256 cellar: :any, arm64_tahoe:       "15552662a25c619ba6c94c583c6dde95889f0c77265657d09b4e01bb824085f9"
+    sha256 cellar: :any, arm64_sequoia:     "010ae049456b9bafd3eb3ce43553e7186e3e680616ea27ee0964cef0e4f40e2f"
+    sha256 cellar: :any, arm64_linux:       "69591d450616f00645bae4f68515312fbfbad4f36df3d534d8490fff181b0b65"
+    sha256 cellar: :any, x86_64_linux:      "e60860ff76b07b74318cf63a78064d6715cb94ea7e0b805b0401b0f8b3103d89"
   end
 
   depends_on "autoconf" => :build
@@ -29,6 +27,8 @@ class Sysbench < Formula
   uses_from_macos "vim" # needed for xxd
 
   def install
+    # C23 rejects the K&R-style function definitions in the bundled crc32.c
+    ENV.append_to_cflags "-std=gnu17"
     system "./autogen.sh"
     system "./configure", "--with-mysql", "--with-pgsql", "--with-system-luajit", *std_configure_args
     system "make", "install"

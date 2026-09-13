@@ -12,12 +12,13 @@ class Djview4 < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "97d3a20862eef89b5dff5f2792ee3f5b08adcbb5c4edfc50d350030a9c326c67"
-    sha256 cellar: :any,                 arm64_sequoia: "b4e2f07c9690a2303f9b85c67ab95d6f5c2d6daa2da3bb8f64d69d36d3f003e8"
-    sha256 cellar: :any,                 arm64_sonoma:  "c4a5109035da18e8d56d78b553bc9d5bccd348e588d5eb887e026db3860911d3"
-    sha256 cellar: :any,                 sonoma:        "08d73ed6f8eab15a7ca0be2af8c9c5dd5464daef04ee28edea7167c9a84ba86a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "734c12e6abeba64b1a42dd2b7933be542c0b76c02cb9cdbb4dcbf7734f8a34af"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "aeb2ec0e8ceecffd35a1dde7d7b4a48a64dd762bab3225c711b8bc8cc3de3376"
+    sha256 cellar: :any,                 arm64_golden_gate: "031cf89ed6f0eb9083e327e2aba6066a1adab55b961c54ba3054c1a6d20ac4c2"
+    sha256 cellar: :any,                 arm64_tahoe:       "97d3a20862eef89b5dff5f2792ee3f5b08adcbb5c4edfc50d350030a9c326c67"
+    sha256 cellar: :any,                 arm64_sequoia:     "b4e2f07c9690a2303f9b85c67ab95d6f5c2d6daa2da3bb8f64d69d36d3f003e8"
+    sha256 cellar: :any,                 arm64_sonoma:      "c4a5109035da18e8d56d78b553bc9d5bccd348e588d5eb887e026db3860911d3"
+    sha256 cellar: :any,                 sonoma:            "08d73ed6f8eab15a7ca0be2af8c9c5dd5464daef04ee28edea7167c9a84ba86a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "734c12e6abeba64b1a42dd2b7933be542c0b76c02cb9cdbb4dcbf7734f8a34af"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "aeb2ec0e8ceecffd35a1dde7d7b4a48a64dd762bab3225c711b8bc8cc3de3376"
   end
 
   depends_on "autoconf" => :build

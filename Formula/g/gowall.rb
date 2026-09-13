@@ -8,12 +8,13 @@ class Gowall < Formula
   head "https://github.com/Achno/gowall.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "3d73d189fb610bf5e83d35e9d051ad71b21b7e529794fbc1a187868590fcf970"
-    sha256 cellar: :any, arm64_sequoia: "6530f9b977fed481217da0d99fe19b2a935050cc1eaf5221f29c707ddac124c7"
-    sha256 cellar: :any, arm64_sonoma:  "2e97d4dba6c2f0fe1de673d7af45943d6e6a93fa20271796d75f5eb94bf6b955"
-    sha256 cellar: :any, sonoma:        "585556bca09dfcf68913831a4b72119b31e1037280d10bfe83901347984e8e37"
-    sha256 cellar: :any, arm64_linux:   "8cb7ef0fffbb79053742bd46c602c6f98c656a7f49f3c37d525b3b4dfb4a6132"
-    sha256 cellar: :any, x86_64_linux:  "f88a655038809d219b842f383c868f29ebeb8fe34cdf872d12894a19fbefda68"
+    sha256 cellar: :any, arm64_golden_gate: "69fb243e5cae7987e9028c5e524d0b7f9e6000592b7db0acec642a83c619587b"
+    sha256 cellar: :any, arm64_tahoe:       "3d73d189fb610bf5e83d35e9d051ad71b21b7e529794fbc1a187868590fcf970"
+    sha256 cellar: :any, arm64_sequoia:     "6530f9b977fed481217da0d99fe19b2a935050cc1eaf5221f29c707ddac124c7"
+    sha256 cellar: :any, arm64_sonoma:      "2e97d4dba6c2f0fe1de673d7af45943d6e6a93fa20271796d75f5eb94bf6b955"
+    sha256 cellar: :any, sonoma:            "585556bca09dfcf68913831a4b72119b31e1037280d10bfe83901347984e8e37"
+    sha256 cellar: :any, arm64_linux:       "8cb7ef0fffbb79053742bd46c602c6f98c656a7f49f3c37d525b3b4dfb4a6132"
+    sha256 cellar: :any, x86_64_linux:      "f88a655038809d219b842f383c868f29ebeb8fe34cdf872d12894a19fbefda68"
   end
 
   depends_on "go" => :build

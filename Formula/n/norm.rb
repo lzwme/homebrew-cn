@@ -7,18 +7,19 @@ class Norm < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:    "a8b6f0061522bcf29d931c09c1b59ccaa2d80ae14567f7c5dd26daab0c4931bf"
-    sha256 cellar: :any,                 arm64_sequoia:  "42f6765ea93269821c415353a75e0439c050430e10d633d259667834b9d00da2"
-    sha256 cellar: :any,                 arm64_sonoma:   "f249073b0e73e8f75fb755ea727165947c1c6ebc36f306ea93651a0d16abc066"
-    sha256 cellar: :any,                 arm64_ventura:  "429a634be03412ac1b594de81d880673e719228b75ceddb6040d530b641ea4c1"
-    sha256 cellar: :any,                 arm64_monterey: "3576daa38873bc40a81217a11164103c894f8266703024105fa1d4855f4d77f2"
-    sha256 cellar: :any,                 arm64_big_sur:  "4cee74c6a548d3ccc9905f2e48e66502f423a8e6d98501d31d1c5f0d621b2eb7"
-    sha256 cellar: :any,                 sonoma:         "380a1a18e78e03b446d64a1dcf2d22c86bdf53fa0709a70fec0bd63c30d5f4a2"
-    sha256 cellar: :any,                 ventura:        "58c3cff32396773d100d991713d86c88567d112bad44bf65cf2f499abbf7dace"
-    sha256 cellar: :any,                 monterey:       "4461cfa3ac911780e417455ccd5ea1d040dfee539529a54b1d3a3e1a001fc73e"
-    sha256 cellar: :any,                 big_sur:        "a4fe786c06af5a57a962e1e12aea4ed1c5b747d1f98b060c11df8377c2cdb63b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "cc5db1902343405319417d14dd804b7c2662dbe6c6d488f643dd8ae45561a418"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0749ed0f0382f434ebec2f77953464af8d80db63e8a36760013a32dffea3c501"
+    sha256 cellar: :any,                 arm64_golden_gate: "02ad2bf5b58ec821cd29374826cb54910091fe90c4f7524d516d6c02d80a4c62"
+    sha256 cellar: :any,                 arm64_tahoe:       "a8b6f0061522bcf29d931c09c1b59ccaa2d80ae14567f7c5dd26daab0c4931bf"
+    sha256 cellar: :any,                 arm64_sequoia:     "42f6765ea93269821c415353a75e0439c050430e10d633d259667834b9d00da2"
+    sha256 cellar: :any,                 arm64_sonoma:      "f249073b0e73e8f75fb755ea727165947c1c6ebc36f306ea93651a0d16abc066"
+    sha256 cellar: :any,                 arm64_ventura:     "429a634be03412ac1b594de81d880673e719228b75ceddb6040d530b641ea4c1"
+    sha256 cellar: :any,                 arm64_monterey:    "3576daa38873bc40a81217a11164103c894f8266703024105fa1d4855f4d77f2"
+    sha256 cellar: :any,                 arm64_big_sur:     "4cee74c6a548d3ccc9905f2e48e66502f423a8e6d98501d31d1c5f0d621b2eb7"
+    sha256 cellar: :any,                 sonoma:            "380a1a18e78e03b446d64a1dcf2d22c86bdf53fa0709a70fec0bd63c30d5f4a2"
+    sha256 cellar: :any,                 ventura:           "58c3cff32396773d100d991713d86c88567d112bad44bf65cf2f499abbf7dace"
+    sha256 cellar: :any,                 monterey:          "4461cfa3ac911780e417455ccd5ea1d040dfee539529a54b1d3a3e1a001fc73e"
+    sha256 cellar: :any,                 big_sur:           "a4fe786c06af5a57a962e1e12aea4ed1c5b747d1f98b060c11df8377c2cdb63b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "cc5db1902343405319417d14dd804b7c2662dbe6c6d488f643dd8ae45561a418"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "0749ed0f0382f434ebec2f77953464af8d80db63e8a36760013a32dffea3c501"
   end
 
   uses_from_macos "python" => :build

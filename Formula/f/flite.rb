@@ -10,12 +10,13 @@ class Flite < Formula
   head "https://github.com/festvox/flite.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b1efab899bba7f6bec83d5f8db07dcbe12cb6af0f48d84dca73240ac3b483091"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d3804878f6959a164a1632be059ddd81724d27ab50d7b161e39a90586b205c30"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3f7b38be2ec732d9403ab2c36a8b63a61c6b6cf483e34893d7128091918fb0db"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c406840db471902ddcb42c550902780eac81fd556ef9de558665285a7c74523f"
-    sha256 cellar: :any,                 arm64_linux:   "30dd78b1e766610db27b9b5d06b5b44ec7ea7adf87d612f12484eaeecb40a064"
-    sha256 cellar: :any,                 x86_64_linux:  "ef004c41ee3f0dca395db755b249d669d12b7f49164617254521a21abdeb95d2"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "d821a5fbe8b1f543c653f467c27a6b820442c07732dd54c90c65ab86d1769245"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "b1efab899bba7f6bec83d5f8db07dcbe12cb6af0f48d84dca73240ac3b483091"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "d3804878f6959a164a1632be059ddd81724d27ab50d7b161e39a90586b205c30"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "3f7b38be2ec732d9403ab2c36a8b63a61c6b6cf483e34893d7128091918fb0db"
+    sha256 cellar: :any_skip_relocation, sonoma:            "c406840db471902ddcb42c550902780eac81fd556ef9de558665285a7c74523f"
+    sha256 cellar: :any,                 arm64_linux:       "30dd78b1e766610db27b9b5d06b5b44ec7ea7adf87d612f12484eaeecb40a064"
+    sha256 cellar: :any,                 x86_64_linux:      "ef004c41ee3f0dca395db755b249d669d12b7f49164617254521a21abdeb95d2"
   end
 
   depends_on "autoconf" => :build
@@ -32,7 +33,7 @@ class Flite < Formula
   end
 
   def install
-    ENV.prepend_path "PATH", Formula["coreutils"].libexec/"gnubin" if OS.mac?
+    ENV.prepend_path "PATH", formula_opt_libexec("coreutils")/"gnubin" if OS.mac?
 
     system "./configure", "--disable-silent-rules",
                         "--with-lex",

@@ -11,12 +11,13 @@ class Silk < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "d579be46db7c40df084b647dc2b47dd8fb0b1cab1a07ffb632cbf667f98ccf8f"
-    sha256 arm64_sequoia: "f85ea2f1292dc167f9b79d9323dbfbed4140a4b2424bfc29b039ed19cb45c3f2"
-    sha256 arm64_sonoma:  "c003a5816ec84797681c01ac9352a73c298c4f9923d6ae7d1420a4f72a233576"
-    sha256 sonoma:        "0b62ef17187839d631a23b836d774adb3b0cfcb4868640ff9226764a4fd2da0c"
-    sha256 arm64_linux:   "d224302cdc2af30ae28639ad7913f44c87a67af266ba64a908f397956f9597c1"
-    sha256 x86_64_linux:  "365c8f00b406b40ca57c250f269bdcd7f02e808d6a8f6c74de342f4a085868a6"
+    sha256 arm64_golden_gate: "19ca4409f9f6cb8f54c80f5d3240efcf3dae4d463616728a1d6a6a391384193f"
+    sha256 arm64_tahoe:       "d579be46db7c40df084b647dc2b47dd8fb0b1cab1a07ffb632cbf667f98ccf8f"
+    sha256 arm64_sequoia:     "f85ea2f1292dc167f9b79d9323dbfbed4140a4b2424bfc29b039ed19cb45c3f2"
+    sha256 arm64_sonoma:      "c003a5816ec84797681c01ac9352a73c298c4f9923d6ae7d1420a4f72a233576"
+    sha256 sonoma:            "0b62ef17187839d631a23b836d774adb3b0cfcb4868640ff9226764a4fd2da0c"
+    sha256 arm64_linux:       "d224302cdc2af30ae28639ad7913f44c87a67af266ba64a908f397956f9597c1"
+    sha256 x86_64_linux:      "365c8f00b406b40ca57c250f269bdcd7f02e808d6a8f6c74de342f4a085868a6"
   end
 
   depends_on "pkgconf" => :build

@@ -8,10 +8,11 @@ class LaunchSocketServer < Formula
 
   bottle do
     rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cd7f62d360a2d0e3ccbc0d127e6c93cf7b04341547a0cc47712e9cc30bfada44"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7f9379e42b9f24b9f1d7c8e4f899901ad90999fe69c526c081c883e813cd36ea"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b39407abb6a275dc2f8d7cee19b56126213e46ed61e6ef0d9e0eff631112c3e9"
-    sha256 cellar: :any_skip_relocation, sonoma:        "bffce7fd244160abb5333fed263f40e868bd09c2da174a51d7be6b255101992f"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "ba9853c835fbee57b623c79a5d0aed8c97b2fc4dd94080d86889a2842d2a5e38"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "cd7f62d360a2d0e3ccbc0d127e6c93cf7b04341547a0cc47712e9cc30bfada44"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "7f9379e42b9f24b9f1d7c8e4f899901ad90999fe69c526c081c883e813cd36ea"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "b39407abb6a275dc2f8d7cee19b56126213e46ed61e6ef0d9e0eff631112c3e9"
+    sha256 cellar: :any_skip_relocation, sonoma:            "bffce7fd244160abb5333fed263f40e868bd09c2da174a51d7be6b255101992f"
   end
 
   depends_on "go" => :build

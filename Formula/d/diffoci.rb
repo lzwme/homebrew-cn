@@ -7,12 +7,13 @@ class Diffoci < Formula
   head "https://github.com/reproducible-containers/diffoci.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8a82a319d9dd41da78de7ebf39679728d6bf717464633090e8b40a40b41424fd"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8a82a319d9dd41da78de7ebf39679728d6bf717464633090e8b40a40b41424fd"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8a82a319d9dd41da78de7ebf39679728d6bf717464633090e8b40a40b41424fd"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ba83691299b16adcf8e966b390a19a3d1bae6725076975ff3cec4625a096aa26"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5bf9d32792a3fbd7f79727910c36b5ee35f7a79ae404e174fdfbaa67faae6c5e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "56ccb44913fb72336ba70b383eb58dadb313688ad7e4b92a3384a830cd5c4121"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "a8e1f2c794f75ec313fd99aa53427d74eea0b80a27fbffd86d5c4278d2bd802f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "8a82a319d9dd41da78de7ebf39679728d6bf717464633090e8b40a40b41424fd"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "8a82a319d9dd41da78de7ebf39679728d6bf717464633090e8b40a40b41424fd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "8a82a319d9dd41da78de7ebf39679728d6bf717464633090e8b40a40b41424fd"
+    sha256 cellar: :any_skip_relocation, sonoma:            "ba83691299b16adcf8e966b390a19a3d1bae6725076975ff3cec4625a096aa26"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "5bf9d32792a3fbd7f79727910c36b5ee35f7a79ae404e174fdfbaa67faae6c5e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "56ccb44913fb72336ba70b383eb58dadb313688ad7e4b92a3384a830cd5c4121"
   end
 
   depends_on "go" => :build

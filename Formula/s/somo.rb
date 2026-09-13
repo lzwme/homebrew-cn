@@ -1,18 +1,16 @@
 class Somo < Formula
   desc "Human-friendly alternative to netstat for socket and port monitoring"
   homepage "https://github.com/theopfr/somo"
-  url "https://ghfast.top/https://github.com/theopfr/somo/archive/refs/tags/v1.3.4.tar.gz"
-  sha256 "3181a1bdc990bd26d7efe3e546d411cc9464203ca85b683e0b3647ba893cf7ab"
+  url "https://ghfast.top/https://github.com/theopfr/somo/archive/refs/tags/v1.4.0.tar.gz"
+  sha256 "b084d1617055f39f17e3ae08fe1fdba023b43f8f928c8edf53af0f8ce8a2b14a"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "22c3a070fa65e2300d5f7bbbe3cccce225ae327de69a172eb23b29911ea25b10"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "795a20eb59a3862bd6c23d29352d13c17f2c4f76391ae9dd12e098626f9823e3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "d003d8a50846d0ada9c59ac6cd07c7678cd1b8200ef39667dc4a45485219cc39"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "a3e025f45fe5b3c4b3befa6a64330df40615f0a3e7e9d140c117dad546eae89f"
-    sha256 cellar: :any_skip_relocation, sonoma:            "8800e43f677e5ff0c1ed0130b00b42340dc21c0bd1dbddde2d390503bb05c784"
-    sha256 cellar: :any,                 arm64_linux:       "3f50f849cd0eb7175a17e8aa5949e3b3e92259e2dc816ab1014069bb54d9593c"
-    sha256 cellar: :any,                 x86_64_linux:      "1e2edeb09000c90f3b1e45f25a5b8b42f7abb3754bda23247da9e715b47a9fde"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "8826ef546d774f92e50abe497ebb76c2e43540523e3f01d4174fd9f6789bd353"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "146bafc46a5f5f0a5bb07d27125b058d791b704bb60a53ab124b01e820b2e84c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "68702415cd111e77cfec890ff7d5b43a9d31f8cde891780f7976337f3d574013"
+    sha256 cellar: :any,                 arm64_linux:       "dfdd0700a294c6a63d425abb579f9fb7c7d905f39276cdda938cb3bf809eac37"
+    sha256 cellar: :any,                 x86_64_linux:      "4b27bdc8f7a688a694eb3b736ac0a27da9dda1d48288ea12ee862516e72620cc"
   end
 
   depends_on "rust" => :build

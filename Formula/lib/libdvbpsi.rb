@@ -13,18 +13,19 @@ class Libdvbpsi < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:    "8ca5d9293581da05648c293b9d1e0b67b1f33263c3fc57023f76822c5e2c2d59"
-    sha256 cellar: :any,                 arm64_sequoia:  "cdb91a9f85c8f2f255cc0269d01bff6ccd1952f4895a6d26c6cb26e7e5bcb2f7"
-    sha256 cellar: :any,                 arm64_sonoma:   "bdd947f3cb943b06739cc4fa888739f746b859fc2036dbbec873eca70f093014"
-    sha256 cellar: :any,                 arm64_ventura:  "1c472e474f03c56fc1e29442555abd1786e3f8310d12d1fbc64442f166e8541b"
-    sha256 cellar: :any,                 arm64_monterey: "1bf8f2771e32e8799e111cf03d52d765d29e38b3494856f65c004166accaa1cf"
-    sha256 cellar: :any,                 arm64_big_sur:  "d235fec5478322cf04a4ed079073b18ac289548ebd0b31b2aaca8b84fe9987a3"
-    sha256 cellar: :any,                 sonoma:         "124e4d0858fbb2df20ef1040309365f1f33e62a8f482054353ac2b8c3ebdac8c"
-    sha256 cellar: :any,                 ventura:        "94c15b82989c45ea689079e7dfe8655953d192cc8ed09dcfe3400f04bc561434"
-    sha256 cellar: :any,                 monterey:       "c1af0d643851a02a2ed1db53f959abf421321e32ea7f5f74e97edc0ca48db6b6"
-    sha256 cellar: :any,                 big_sur:        "6897247fd9cfdd4bc5cfd4db8991b7bb5d1647a6f929bab5642c8e673fe1f317"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "e86a18402d7540269883632b6c94336146664323efc4eead6f15f3e12d013f13"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8aff79b57483d77c1d376a230726c33df0e1f322d40b9ab7bba314ae28cfc359"
+    sha256 cellar: :any,                 arm64_golden_gate: "47ba2bb0a032bc49356a7b2844a87f15bb80b7f7d2263fef1af5cb18a7831495"
+    sha256 cellar: :any,                 arm64_tahoe:       "8ca5d9293581da05648c293b9d1e0b67b1f33263c3fc57023f76822c5e2c2d59"
+    sha256 cellar: :any,                 arm64_sequoia:     "cdb91a9f85c8f2f255cc0269d01bff6ccd1952f4895a6d26c6cb26e7e5bcb2f7"
+    sha256 cellar: :any,                 arm64_sonoma:      "bdd947f3cb943b06739cc4fa888739f746b859fc2036dbbec873eca70f093014"
+    sha256 cellar: :any,                 arm64_ventura:     "1c472e474f03c56fc1e29442555abd1786e3f8310d12d1fbc64442f166e8541b"
+    sha256 cellar: :any,                 arm64_monterey:    "1bf8f2771e32e8799e111cf03d52d765d29e38b3494856f65c004166accaa1cf"
+    sha256 cellar: :any,                 arm64_big_sur:     "d235fec5478322cf04a4ed079073b18ac289548ebd0b31b2aaca8b84fe9987a3"
+    sha256 cellar: :any,                 sonoma:            "124e4d0858fbb2df20ef1040309365f1f33e62a8f482054353ac2b8c3ebdac8c"
+    sha256 cellar: :any,                 ventura:           "94c15b82989c45ea689079e7dfe8655953d192cc8ed09dcfe3400f04bc561434"
+    sha256 cellar: :any,                 monterey:          "c1af0d643851a02a2ed1db53f959abf421321e32ea7f5f74e97edc0ca48db6b6"
+    sha256 cellar: :any,                 big_sur:           "6897247fd9cfdd4bc5cfd4db8991b7bb5d1647a6f929bab5642c8e673fe1f317"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "e86a18402d7540269883632b6c94336146664323efc4eead6f15f3e12d013f13"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "8aff79b57483d77c1d376a230726c33df0e1f322d40b9ab7bba314ae28cfc359"
   end
 
   head do

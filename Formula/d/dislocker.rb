@@ -7,16 +7,16 @@ class Dislocker < Formula
   revision 1
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_linux:  "0c9f36fe94169843d624f2cff98960d9dcf91a70948061a7c192dc44273e5a8a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "20635c3bd30ada8a1bb95f87460ce8fb7c1e7b42691c7cb56fbaa2e74d407f00"
+    rebuild 2
+    sha256 cellar: :any, arm64_linux:  "6fc800d70967d83257c8716d1a802960c44a892f7a3594db882737cceebeb5c3"
+    sha256 cellar: :any, x86_64_linux: "5656ee57b450b544d660941fa9682cc999dcde547cd4b3911f5f5660c82a4b71"
   end
 
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
   depends_on "libfuse"
   depends_on :linux # on macOS, requires closed-source macFUSE
-  depends_on "mbedtls@3"
+  depends_on "openssl@4"
 
   # Backport support for mbedtls 3.x
   patch do
@@ -49,9 +49,35 @@ class Dislocker < Formula
     type :backport
   end
 
+  # Backport support for disabling Ruby
+  patch do
+    url "https://github.com/Aorimn/dislocker/commit/05cd96b1890d3bd4c6ea472edcc2e7b329e4e2e4.patch?full_index=1"
+    sha256 "92876b8af81d4f63627936b85d31ba83388798bf91f329e39376d2deb5df41f4"
+    type :backport
+  end
+
+  # Backport support for OpenSSL
+  patch :DATA # https://github.com/Aorimn/dislocker/commit/e749eade55f242d03fb9d10c05ff4b11c66dcbbe
+  patch do
+    url "https://github.com/Aorimn/dislocker/commit/44cc1ded330f8202358e97ddc14a90ffe363a8e7.patch?full_index=1"
+    sha256 "65413003475eb682748ebce478468414b82e892785d904dae2254915a3f0e119"
+    type :backport
+  end
+  patch do
+    url "https://github.com/Aorimn/dislocker/commit/9bfd16724f3109e6e964f407391200c63c8dc9f9.patch?full_index=1"
+    sha256 "af8d4dcd8b7a6b4a1d74310ce6c1b179ecc5df4c944f1183dcf0c0ba9b6b6033"
+    type :backport
+  end
+  patch do
+    url "https://github.com/Aorimn/dislocker/commit/49ecf37cdb702d8366c24b10fb58ba2764315348.patch?full_index=1"
+    sha256 "e99ccbe3495aa00890ed25a15035c26f6780d6cda8bbabaf92bc7fdddfa07bd2"
+    type :backport
+  end
+
   def install
     args = %w[
-      -DCMAKE_DISABLE_FIND_PACKAGE_Ruby=TRUE
+      -DCRYPTO_BACKEND=openssl
+      -DWITH_RUBY=OFF
     ]
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
@@ -63,3 +89,29 @@ class Dislocker < Formula
     system bin/"dislocker", "-h"
   end
 end
+
+__END__
+diff --git a/include/dislocker/ssl_bindings.h.in b/include/dislocker/ssl_bindings.h
+rename from include/dislocker/ssl_bindings.h.in
+rename to include/dislocker/ssl_bindings.h
+diff --git a/src/CMakeLists.txt b/src/CMakeLists.txt
+index c578e35..7337db6 100644
+--- a/src/CMakeLists.txt
++++ b/src/CMakeLists.txt
+@@ -116,14 +116,8 @@ endif()
+ # Libraries
+ set (CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake)
+ 
+-find_package (PolarSSL REQUIRED)
+-if(POLARSSL_FOUND  AND  POLARSSL_INCLUDE_DIRS  AND  POLARSSL_LIBRARIES)
+-	include_directories (${POLARSSL_INCLUDE_DIRS})
+-	set (LIB ${LIB} ${POLARSSL_LIBRARIES})
+-	configure_file (${PROJECT_SOURCE_DIR}/include/dislocker/ssl_bindings.h.in ${PROJECT_SOURCE_DIR}/include/dislocker/ssl_bindings.h ESCAPE_QUOTES @ONLY)
+-else()
+-	return ()
+-endif()
++find_package (MbedTLS 3 REQUIRED)
++set (LIB ${LIB} MbedTLS::mbedcrypto)
+ 
+ # Ruby bindings
+ set(WITH_RUBY "AUTO" CACHE STRING "Enable Ruby bindings. Valid values are ON, OFF, or AUTO")

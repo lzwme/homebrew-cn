@@ -21,11 +21,12 @@ class Pyside < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "b7dcb58efb3226e80b4dad6f9a476660b65ddbbd6e69a01fa798a84640b71dba"
-    sha256 cellar: :any, arm64_sequoia: "05226fca68c99f43432c745a116e6a827c026604552623e7f0d4f6afbc4baf3f"
-    sha256 cellar: :any, arm64_sonoma:  "80a8f86deca23c5a2a1e79e42046f02d0e7e17cf47594446e95be2631063aaa3"
-    sha256 cellar: :any, arm64_linux:   "d57644558b0c8a9af2be24f66117568fb1c4ec1c7c86eca7ca7fd052d8b69626"
-    sha256 cellar: :any, x86_64_linux:  "4741e75b22fb2e9d4837653baabb73914003f8a1b2bd375501f9881c7f46341d"
+    sha256 cellar: :any, arm64_golden_gate: "ee480640f99968ceb6084c705df5d2d2a5f791ba0bfb6c3fa1f15a05a91aefee"
+    sha256 cellar: :any, arm64_tahoe:       "b7dcb58efb3226e80b4dad6f9a476660b65ddbbd6e69a01fa798a84640b71dba"
+    sha256 cellar: :any, arm64_sequoia:     "05226fca68c99f43432c745a116e6a827c026604552623e7f0d4f6afbc4baf3f"
+    sha256 cellar: :any, arm64_sonoma:      "80a8f86deca23c5a2a1e79e42046f02d0e7e17cf47594446e95be2631063aaa3"
+    sha256 cellar: :any, arm64_linux:       "d57644558b0c8a9af2be24f66117568fb1c4ec1c7c86eca7ca7fd052d8b69626"
+    sha256 cellar: :any, x86_64_linux:      "4741e75b22fb2e9d4837653baabb73914003f8a1b2bd375501f9881c7f46341d"
   end
 
   depends_on "cmake" => :build

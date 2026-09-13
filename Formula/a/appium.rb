@@ -7,12 +7,13 @@ class Appium < Formula
   head "https://github.com/appium/appium.git", branch: "master"
 
   bottle do
-    sha256               arm64_tahoe:   "6b7ce93a65aa46817aa047a3ffaf655e1b3c7b2dad74181943d8fc9d3fcfe075"
-    sha256               arm64_sequoia: "955a6808b9d1be5dfeeda02cbb11ecf1a97634ed820dceb50bb7e0fe37b1bdeb"
-    sha256               arm64_sonoma:  "cb186ec4f1d332088c5b0b47aa2c499e75041c772348a816154cd68472ff5efb"
-    sha256               sonoma:        "355bbff3a063c3d2c1dac9a08d59c3e7f7fcb8163d110639777ac33e26bf21aa"
-    sha256 cellar: :any, arm64_linux:   "32ca99cb37380a31b536ae0df2bf34da1b4c94f30d3dd7a844e43f8530136d4d"
-    sha256 cellar: :any, x86_64_linux:  "75af3b1ac2c7b69fcc111d62986115189aad8da477c3a9219bd20dc657acef6a"
+    sha256 cellar: :any, arm64_golden_gate: "8d554acdda6e379a72a2180f21742b2feb13fbfbd1817f3f1d32c665c891ca13"
+    sha256               arm64_tahoe:       "6b7ce93a65aa46817aa047a3ffaf655e1b3c7b2dad74181943d8fc9d3fcfe075"
+    sha256               arm64_sequoia:     "955a6808b9d1be5dfeeda02cbb11ecf1a97634ed820dceb50bb7e0fe37b1bdeb"
+    sha256               arm64_sonoma:      "cb186ec4f1d332088c5b0b47aa2c499e75041c772348a816154cd68472ff5efb"
+    sha256               sonoma:            "355bbff3a063c3d2c1dac9a08d59c3e7f7fcb8163d110639777ac33e26bf21aa"
+    sha256 cellar: :any, arm64_linux:       "32ca99cb37380a31b536ae0df2bf34da1b4c94f30d3dd7a844e43f8530136d4d"
+    sha256 cellar: :any, x86_64_linux:      "75af3b1ac2c7b69fcc111d62986115189aad8da477c3a9219bd20dc657acef6a"
   end
 
   depends_on "pkgconf" => :build

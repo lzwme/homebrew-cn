@@ -8,12 +8,13 @@ class DockerDebug < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f0faba1df5f1cadcedabd4487f30a0db88072ee50cd92d095f7366b410fb6c42"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f0faba1df5f1cadcedabd4487f30a0db88072ee50cd92d095f7366b410fb6c42"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f0faba1df5f1cadcedabd4487f30a0db88072ee50cd92d095f7366b410fb6c42"
-    sha256 cellar: :any_skip_relocation, sonoma:        "978911584a039d17fbc927934d0d9c9eb3477eba58b6ea1df5a461a6f3d4e92b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ec74e9da2a07744c7608e482b1573a9178746022cc19ddac7b4c0e7a1f7fc82a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cacde51f354d073566e5f6452a545a0df24ae0ace59d8c2a60adb4954519cdf4"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "075d304ec4c7b4ef9cca8b325c53b2303590c41b7abfd20808b1e3de92d0b0b7"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "f0faba1df5f1cadcedabd4487f30a0db88072ee50cd92d095f7366b410fb6c42"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "f0faba1df5f1cadcedabd4487f30a0db88072ee50cd92d095f7366b410fb6c42"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "f0faba1df5f1cadcedabd4487f30a0db88072ee50cd92d095f7366b410fb6c42"
+    sha256 cellar: :any_skip_relocation, sonoma:            "978911584a039d17fbc927934d0d9c9eb3477eba58b6ea1df5a461a6f3d4e92b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "ec74e9da2a07744c7608e482b1573a9178746022cc19ddac7b4c0e7a1f7fc82a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "cacde51f354d073566e5f6452a545a0df24ae0ace59d8c2a60adb4954519cdf4"
   end
 
   depends_on "go" => :build

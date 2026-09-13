@@ -8,15 +8,22 @@ class Cosign < Formula
   head "https://github.com/sigstore/cosign.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0a945ba6dbde67cfc2a079b21e74875e2cbd3dcd46b190a64878fb7c08a84431"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0a945ba6dbde67cfc2a079b21e74875e2cbd3dcd46b190a64878fb7c08a84431"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0a945ba6dbde67cfc2a079b21e74875e2cbd3dcd46b190a64878fb7c08a84431"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0ad7d41284b44486c19adc12f96201c36638f5edcd73d07b5fa2385b38774d18"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1729b9ae1608e63f92786b59332ad0d2a58ee3eb719af943b354cf04381944eb"
-    sha256 cellar: :any,                 x86_64_linux:  "ec952c936a5a3c70afabbc9cd9be14385bca6b57063c1e195a359ed95945757a"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "bb25a90bd0a0e7debdc4764e604bfbbc4c05312f61c07cd426d36f21fa6b8bcb"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "0a945ba6dbde67cfc2a079b21e74875e2cbd3dcd46b190a64878fb7c08a84431"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "0a945ba6dbde67cfc2a079b21e74875e2cbd3dcd46b190a64878fb7c08a84431"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "0a945ba6dbde67cfc2a079b21e74875e2cbd3dcd46b190a64878fb7c08a84431"
+    sha256 cellar: :any_skip_relocation, sonoma:            "0ad7d41284b44486c19adc12f96201c36638f5edcd73d07b5fa2385b38774d18"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "1729b9ae1608e63f92786b59332ad0d2a58ee3eb719af943b354cf04381944eb"
+    sha256 cellar: :any,                 x86_64_linux:      "ec952c936a5a3c70afabbc9cd9be14385bca6b57063c1e195a359ed95945757a"
   end
 
   depends_on "go" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     pkg = "sigs.k8s.io/release-utils/version"

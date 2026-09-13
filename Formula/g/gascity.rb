@@ -7,12 +7,13 @@ class Gascity < Formula
   head "https://github.com/gastownhall/gascity.git", branch: "main"
 
   bottle do
-    sha256                               arm64_tahoe:   "5cae02492a44f9445375783cf4b464dfe9be4b879dfafc9ddaf2e4081d17f58e"
-    sha256                               arm64_sequoia: "2c9502118c6fc2f02a1d99313e498a2fd9f4b1be2becf4e314e2c669b197db7d"
-    sha256                               arm64_sonoma:  "e4ad1852ae48555613a3adfd9c244546c165713fa5dc92bef00a6daf81c1bf7c"
-    sha256 cellar: :any,                 sonoma:        "3db59f1eda3fc6a4afdad0d57dfad9e4fe1350a0af12546733e8af985ea25d4f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "93022130a0451a6b15898e0d567d2cf109926b579fa31bf0095ab68fe5d26289"
-    sha256 cellar: :any,                 x86_64_linux:  "c9746af0a20800cba8632d3438c2f4a1a3f1b37c5cee54ed361f260543e3ee25"
+    sha256                               arm64_golden_gate: "6b28a165ef697df4adef141188934703609127dbe92bd0f9a146a49358efe683"
+    sha256                               arm64_tahoe:       "5cae02492a44f9445375783cf4b464dfe9be4b879dfafc9ddaf2e4081d17f58e"
+    sha256                               arm64_sequoia:     "2c9502118c6fc2f02a1d99313e498a2fd9f4b1be2becf4e314e2c669b197db7d"
+    sha256                               arm64_sonoma:      "e4ad1852ae48555613a3adfd9c244546c165713fa5dc92bef00a6daf81c1bf7c"
+    sha256 cellar: :any,                 sonoma:            "3db59f1eda3fc6a4afdad0d57dfad9e4fe1350a0af12546733e8af985ea25d4f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "93022130a0451a6b15898e0d567d2cf109926b579fa31bf0095ab68fe5d26289"
+    sha256 cellar: :any,                 x86_64_linux:      "c9746af0a20800cba8632d3438c2f4a1a3f1b37c5cee54ed361f260543e3ee25"
   end
 
   depends_on "go" => :build
@@ -26,8 +27,16 @@ class Gascity < Formula
     depends_on "flock"
   end
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
-    system "go", "build", *std_go_args(ldflags: "-X main.version=#{version}", output: bin/"gc"), "./cmd/gc"
+    # TODO: Remove http2legacy tag when Gascity works without it in Go 1.27 (in release > 1.4.1?)
+    # ref: https://github.com/gastownhall/gascity/pull/5030
+    system "go", "build", *std_go_args(ldflags: "-X main.version=#{version}", tags: "http2legacy", output: bin/"gc"), "./cmd/gc"
   end
 
   test do

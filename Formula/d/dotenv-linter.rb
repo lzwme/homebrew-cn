@@ -7,12 +7,13 @@ class DotenvLinter < Formula
   head "https://github.com/dotenv-linter/dotenv-linter.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "23826a36202a165deaa312c7b0029d0c02eef0d21b49c56d20f2deb23cf38de0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c18328c0319bad89891c989253a6ee818fe235f9d439bea847a52b936f50521a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e9001d81807e8c5e9f7f0284a7ff516d3d72f6f182adf4a5c7a8b82e6f35d89f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4f47ec451241a91ccdccb741cd61576f403962637841fcd8b49b8f292ce9e301"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a630789bddee63f8c975359e0b77394b6cca50e95abc9ccc3d4988984bdf9030"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cd0da61986447dbdadec3a8634cf19d5eb12d1ce4bb1c61acf53f67c0187b126"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "d1d1f32ac6c15e0c9178508ddfc4051545c1c3228ebf377d7b0f6439b00e93cc"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "23826a36202a165deaa312c7b0029d0c02eef0d21b49c56d20f2deb23cf38de0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "c18328c0319bad89891c989253a6ee818fe235f9d439bea847a52b936f50521a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "e9001d81807e8c5e9f7f0284a7ff516d3d72f6f182adf4a5c7a8b82e6f35d89f"
+    sha256 cellar: :any_skip_relocation, sonoma:            "4f47ec451241a91ccdccb741cd61576f403962637841fcd8b49b8f292ce9e301"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "a630789bddee63f8c975359e0b77394b6cca50e95abc9ccc3d4988984bdf9030"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "cd0da61986447dbdadec3a8634cf19d5eb12d1ce4bb1c61acf53f67c0187b126"
   end
 
   depends_on "rust" => :build

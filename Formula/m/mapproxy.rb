@@ -8,12 +8,13 @@ class Mapproxy < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "558488e5c488614a77140ca07c1bda683ca1465d9e4817b913e6f7e2e25b909e"
-    sha256 cellar: :any, arm64_sequoia: "c148f0d03e022f289302fd292cc025dafa62135a044a3e9b4d07689f42f8ece5"
-    sha256 cellar: :any, arm64_sonoma:  "edb6fbdc52eca1fa9b064146ff0fd517f5b1a893298175db342d6b959868b06d"
-    sha256 cellar: :any, sonoma:        "808b3ff90bd2a904525fa9f95f02f1798ed09e982ac829aefb26db77d1fda243"
-    sha256 cellar: :any, arm64_linux:   "b061b482c59553beb5b5fc64c2c9c8a867e9913d874b2b691adc584b79885b9c"
-    sha256 cellar: :any, x86_64_linux:  "66a8857e1c8a7d2d8f72025a6fae6f2293eea6b13fe8aa0e7a2245dee8798021"
+    sha256 cellar: :any, arm64_golden_gate: "1f8888481a67e8efb5609fa66343f82e6c07752a7f29f4e18da14fb3004d0f34"
+    sha256 cellar: :any, arm64_tahoe:       "558488e5c488614a77140ca07c1bda683ca1465d9e4817b913e6f7e2e25b909e"
+    sha256 cellar: :any, arm64_sequoia:     "c148f0d03e022f289302fd292cc025dafa62135a044a3e9b4d07689f42f8ece5"
+    sha256 cellar: :any, arm64_sonoma:      "edb6fbdc52eca1fa9b064146ff0fd517f5b1a893298175db342d6b959868b06d"
+    sha256 cellar: :any, sonoma:            "808b3ff90bd2a904525fa9f95f02f1798ed09e982ac829aefb26db77d1fda243"
+    sha256 cellar: :any, arm64_linux:       "b061b482c59553beb5b5fc64c2c9c8a867e9913d874b2b691adc584b79885b9c"
+    sha256 cellar: :any, x86_64_linux:      "66a8857e1c8a7d2d8f72025a6fae6f2293eea6b13fe8aa0e7a2245dee8798021"
   end
 
   depends_on "pkgconf" => :build

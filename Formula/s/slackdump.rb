@@ -7,12 +7,13 @@ class Slackdump < Formula
   head "https://github.com/rusq/slackdump.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "94f002a462afadfcec856d768d7139d27f364ef9d58231bb369bba3fbfd9e4fa"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "94f002a462afadfcec856d768d7139d27f364ef9d58231bb369bba3fbfd9e4fa"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "94f002a462afadfcec856d768d7139d27f364ef9d58231bb369bba3fbfd9e4fa"
-    sha256 cellar: :any_skip_relocation, sonoma:        "df3317b260b170051692aec61658c9bca140f4f6ff32a3f675d00088849388ec"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "af8013415385e8a9600b1212b0a3d04a414041cc749129a541cec2d8ba332ff9"
-    sha256 cellar: :any,                 x86_64_linux:  "4542a5de1084a536541ba71ba3555ebcd3020620ab389ba39f51110b0cb08109"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "2c2ba7da02ca397f4d0484233334bf41fd3fd09b86f02494ea2241e4dfd004c9"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "94f002a462afadfcec856d768d7139d27f364ef9d58231bb369bba3fbfd9e4fa"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "94f002a462afadfcec856d768d7139d27f364ef9d58231bb369bba3fbfd9e4fa"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "94f002a462afadfcec856d768d7139d27f364ef9d58231bb369bba3fbfd9e4fa"
+    sha256 cellar: :any_skip_relocation, sonoma:            "df3317b260b170051692aec61658c9bca140f4f6ff32a3f675d00088849388ec"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "af8013415385e8a9600b1212b0a3d04a414041cc749129a541cec2d8ba332ff9"
+    sha256 cellar: :any,                 x86_64_linux:      "4542a5de1084a536541ba71ba3555ebcd3020620ab389ba39f51110b0cb08109"
   end
 
   depends_on "go" => :build

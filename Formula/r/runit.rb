@@ -11,12 +11,13 @@ class Runit < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9df648ce12c6d653303f224386961cda0ac9f8b0745fcc41821f671538a28c08"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e82c5e0878d603839613a0046ccaa773ba88f67acd54290afd77bc01716e0fb6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fe4f3826fdd17af52828597c22754a6a1e0952a0f2a66179cf572e3858fb82b8"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e35ad2f49f4b0cf4a0dd60d08c3d071e96a26b87ce4a8bf872e43488794eb4ca"
-    sha256                               arm64_linux:   "b54ca8cbb080d15c9eafc949d595dd23d456595a6bfc4f9ef1231f662ea79c74"
-    sha256                               x86_64_linux:  "291aed06b55caca42f5af93eec0143d85d2e96db8556a53eb4f9e62b6a84045c"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "b50c6a0e5c1704bb4f6b4877940364229f0e55cdb5432cc1f97b874ce90a42ae"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "9df648ce12c6d653303f224386961cda0ac9f8b0745fcc41821f671538a28c08"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "e82c5e0878d603839613a0046ccaa773ba88f67acd54290afd77bc01716e0fb6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "fe4f3826fdd17af52828597c22754a6a1e0952a0f2a66179cf572e3858fb82b8"
+    sha256 cellar: :any_skip_relocation, sonoma:            "e35ad2f49f4b0cf4a0dd60d08c3d071e96a26b87ce4a8bf872e43488794eb4ca"
+    sha256                               arm64_linux:       "b54ca8cbb080d15c9eafc949d595dd23d456595a6bfc4f9ef1231f662ea79c74"
+    sha256                               x86_64_linux:      "291aed06b55caca42f5af93eec0143d85d2e96db8556a53eb4f9e62b6a84045c"
   end
 
   conflicts_with "sandvault", because: "both install `sv` binaries"

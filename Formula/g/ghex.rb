@@ -6,10 +6,11 @@ class Ghex < Formula
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 arm64_tahoe:   "e2037a9096186b0478c1b8b7f1456dd314be795510fb0114d5b0ce69cf9d0789"
-    sha256 arm64_sequoia: "8f0fbe39e84ff1151871607a4a73864e4ec49b18eabb0a6b53d7c936fd16405c"
-    sha256 arm64_linux:   "5061a2df72bf3dd8ae4cc16f0df9b14118f1eb035d72a85ff0955a5ebbe75067"
-    sha256 x86_64_linux:  "17d5f4a247780b3dc91a5c483293cd267cea5263e0f67495cc2c06315879df53"
+    sha256 arm64_golden_gate: "344b6ea9969d228233571963347ddee13d8ecb5b8d3ae14441ff6429cd7a5470"
+    sha256 arm64_tahoe:       "e2037a9096186b0478c1b8b7f1456dd314be795510fb0114d5b0ce69cf9d0789"
+    sha256 arm64_sequoia:     "8f0fbe39e84ff1151871607a4a73864e4ec49b18eabb0a6b53d7c936fd16405c"
+    sha256 arm64_linux:       "5061a2df72bf3dd8ae4cc16f0df9b14118f1eb035d72a85ff0955a5ebbe75067"
+    sha256 x86_64_linux:      "17d5f4a247780b3dc91a5c483293cd267cea5263e0f67495cc2c06315879df53"
   end
 
   depends_on "desktop-file-utils" => :build

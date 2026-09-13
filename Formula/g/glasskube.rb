@@ -8,12 +8,13 @@ class Glasskube < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3babde1be2c32139d55c3d9d357e0dc0647acf1c51a7969c32fb219e01bf7671"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3babde1be2c32139d55c3d9d357e0dc0647acf1c51a7969c32fb219e01bf7671"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3babde1be2c32139d55c3d9d357e0dc0647acf1c51a7969c32fb219e01bf7671"
-    sha256 cellar: :any_skip_relocation, sonoma:        "12cdfcca0e5bbcc188c778493e12fc1f0062e737d6a59f4942192bf8cab55810"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f060357190000ffc79417336afd8b6b0abcfec355015e4a9502ffca4ba7bdd3c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f74d440bd5ff5936c0ee805fa757c79f0891b65d4ba3c232da4caa69901264c4"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "0ec205b5fa89cc52183ceae3606c8635f9b2d69860d1b120c4bcdbba6c909f9e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "3babde1be2c32139d55c3d9d357e0dc0647acf1c51a7969c32fb219e01bf7671"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "3babde1be2c32139d55c3d9d357e0dc0647acf1c51a7969c32fb219e01bf7671"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "3babde1be2c32139d55c3d9d357e0dc0647acf1c51a7969c32fb219e01bf7671"
+    sha256 cellar: :any_skip_relocation, sonoma:            "12cdfcca0e5bbcc188c778493e12fc1f0062e737d6a59f4942192bf8cab55810"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "f060357190000ffc79417336afd8b6b0abcfec355015e4a9502ffca4ba7bdd3c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "f74d440bd5ff5936c0ee805fa757c79f0891b65d4ba3c232da4caa69901264c4"
   end
 
   deprecate! date: "2026-07-17", because: :repo_archived

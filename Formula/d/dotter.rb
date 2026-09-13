@@ -6,12 +6,13 @@ class Dotter < Formula
   license "Unlicense"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7a45f8c1a341d497c4126516dda224b6e2b15818b562ac84ef6153c24b96c698"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e582e214c167ed2dc87ade2e6d2cb82629af397b71f6acec378cae2b7e486372"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "761bdc741243924ba7fa4899f9af12f25c0f2f58a8b59c883bd309ca36891d84"
-    sha256 cellar: :any_skip_relocation, sonoma:        "faa1387f0a900b7e80f1994cf8a1d4202afc27b6489d9fd6eb9cd49b0589e9e8"
-    sha256 cellar: :any,                 arm64_linux:   "f0992d1d5ca6d4f5d9a949b37e88c4bf5cd602883d3729abf1cec5fea32fc56e"
-    sha256 cellar: :any,                 x86_64_linux:  "35f43c9c9de0378c57fbb86a10e83954a7fe8f1cba51436eeff66e204aca0a08"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "12926d26c5e6674a931e4418aa587234518da765bd13d3e36132d2ccb88a90f1"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "7a45f8c1a341d497c4126516dda224b6e2b15818b562ac84ef6153c24b96c698"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "e582e214c167ed2dc87ade2e6d2cb82629af397b71f6acec378cae2b7e486372"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "761bdc741243924ba7fa4899f9af12f25c0f2f58a8b59c883bd309ca36891d84"
+    sha256 cellar: :any_skip_relocation, sonoma:            "faa1387f0a900b7e80f1994cf8a1d4202afc27b6489d9fd6eb9cd49b0589e9e8"
+    sha256 cellar: :any,                 arm64_linux:       "f0992d1d5ca6d4f5d9a949b37e88c4bf5cd602883d3729abf1cec5fea32fc56e"
+    sha256 cellar: :any,                 x86_64_linux:      "35f43c9c9de0378c57fbb86a10e83954a7fe8f1cba51436eeff66e204aca0a08"
   end
 
   depends_on "rust" => :build

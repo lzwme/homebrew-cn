@@ -17,12 +17,13 @@ class Driftctl < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1e1e9c8ecb8968ad121f735bb0caeaa299f0c672aee5ff126f75c5e995c60019"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1e1e9c8ecb8968ad121f735bb0caeaa299f0c672aee5ff126f75c5e995c60019"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1e1e9c8ecb8968ad121f735bb0caeaa299f0c672aee5ff126f75c5e995c60019"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f7d1581a548ade3dcb12fd89bcbf8ed88aa5da3ea34d6a6b3d70aa1889328e0b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ebdba827ebd29a059d3ac3f976e2a7f9ad2615e19c7e91ad69a4423bb489441d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ce678543cb2a70b2450370e87969af8c857f2fa3218fc0436f2c36aa7fb86855"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "b79e5a410380d4859d5e2a8e8b119af1322fced27177a11ca3e91f503ebc9c55"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "1e1e9c8ecb8968ad121f735bb0caeaa299f0c672aee5ff126f75c5e995c60019"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "1e1e9c8ecb8968ad121f735bb0caeaa299f0c672aee5ff126f75c5e995c60019"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "1e1e9c8ecb8968ad121f735bb0caeaa299f0c672aee5ff126f75c5e995c60019"
+    sha256 cellar: :any_skip_relocation, sonoma:            "f7d1581a548ade3dcb12fd89bcbf8ed88aa5da3ea34d6a6b3d70aa1889328e0b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "ebdba827ebd29a059d3ac3f976e2a7f9ad2615e19c7e91ad69a4423bb489441d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "ce678543cb2a70b2450370e87969af8c857f2fa3218fc0436f2c36aa7fb86855"
   end
 
   depends_on "go" => :build

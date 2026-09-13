@@ -8,12 +8,13 @@ class Stanc3 < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "801baa07706b72c4d489abdff6ed987b71be14c85caa878fe4ba196c42ab3f21"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8b1807dcba8574e4eadd96d6e25e894560125921a103ef3a09c534dac80593a2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e3e42a84e539e4a08369f282f2ddb9fca1bec5ea1cb89c705f70eaf6e327bd42"
-    sha256 cellar: :any_skip_relocation, sonoma:        "77703df7b945ecbe94f40cd97d5ef4b0fa491110a16f4c7db2457d3bf56ee19e"
-    sha256                               arm64_linux:   "f896cb1a403c1ead0df52f40637511b7dd6ea94dad519af28029a68aa5a8762e"
-    sha256                               x86_64_linux:  "5d1a3c2fa48e2069cd36174d384fe74b92c5acc79bb7f1eb583e89723bf618d6"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "f9f27c34095f1f1e91215f4c6b7b56ce26f09e9ddbe0ec23f62851c068f9fd93"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "801baa07706b72c4d489abdff6ed987b71be14c85caa878fe4ba196c42ab3f21"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "8b1807dcba8574e4eadd96d6e25e894560125921a103ef3a09c534dac80593a2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "e3e42a84e539e4a08369f282f2ddb9fca1bec5ea1cb89c705f70eaf6e327bd42"
+    sha256 cellar: :any_skip_relocation, sonoma:            "77703df7b945ecbe94f40cd97d5ef4b0fa491110a16f4c7db2457d3bf56ee19e"
+    sha256                               arm64_linux:       "f896cb1a403c1ead0df52f40637511b7dd6ea94dad519af28029a68aa5a8762e"
+    sha256                               x86_64_linux:      "5d1a3c2fa48e2069cd36174d384fe74b92c5acc79bb7f1eb583e89723bf618d6"
   end
 
   depends_on "ocaml" => :build

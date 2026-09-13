@@ -28,12 +28,13 @@ class Fceux < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "09ce9e2a81d5d7600c1921921d3e402f50c809855b411669c91613b0a8978bef"
-    sha256 cellar: :any, arm64_sequoia: "4741d14865c94f98a5f461304b7e73c725c36aae675c6345b8b36636f12100e8"
-    sha256 cellar: :any, arm64_sonoma:  "b8fae46121fd239d11c29ede067bd8747b2df42c832561d1e71b766c70cd58e2"
-    sha256               sonoma:        "8fe999ab9e68257e6cfb9c49bd98063f712361c4d15df40e2f907dfe1c045b21"
-    sha256 cellar: :any, arm64_linux:   "975c645737c4eab968780d8a9f499ade39d8080dcb4c461c55df98f46f5005b8"
-    sha256 cellar: :any, x86_64_linux:  "fc93c9a70f6d5e50ca69fa68d7513a156360eb2b6e4990c96bcc48115c525647"
+    sha256 cellar: :any, arm64_golden_gate: "aba31d5f2283baa9df7785d9ef47e63898ee8c0d4be96c46877c631bac43b5af"
+    sha256 cellar: :any, arm64_tahoe:       "09ce9e2a81d5d7600c1921921d3e402f50c809855b411669c91613b0a8978bef"
+    sha256 cellar: :any, arm64_sequoia:     "4741d14865c94f98a5f461304b7e73c725c36aae675c6345b8b36636f12100e8"
+    sha256 cellar: :any, arm64_sonoma:      "b8fae46121fd239d11c29ede067bd8747b2df42c832561d1e71b766c70cd58e2"
+    sha256               sonoma:            "8fe999ab9e68257e6cfb9c49bd98063f712361c4d15df40e2f907dfe1c045b21"
+    sha256 cellar: :any, arm64_linux:       "975c645737c4eab968780d8a9f499ade39d8080dcb4c461c55df98f46f5005b8"
+    sha256 cellar: :any, x86_64_linux:      "fc93c9a70f6d5e50ca69fa68d7513a156360eb2b6e4990c96bcc48115c525647"
   end
 
   depends_on "cmake" => :build

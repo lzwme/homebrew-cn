@@ -7,10 +7,11 @@ class Lazycut < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c471cf67d2950ab0f4b533935e509521086e581339a55def5c746a7dd69b0ea8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c471cf67d2950ab0f4b533935e509521086e581339a55def5c746a7dd69b0ea8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c471cf67d2950ab0f4b533935e509521086e581339a55def5c746a7dd69b0ea8"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b05635d8c0f9ab4fdd58f1018a6575e150eb805f3c3d139b2edbde3893419550"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "0c3ce53d8b085ff353cd3bc28efc65bca9510c7c92bb584c18954de8f8c70d3f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "c471cf67d2950ab0f4b533935e509521086e581339a55def5c746a7dd69b0ea8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "c471cf67d2950ab0f4b533935e509521086e581339a55def5c746a7dd69b0ea8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "c471cf67d2950ab0f4b533935e509521086e581339a55def5c746a7dd69b0ea8"
+    sha256 cellar: :any_skip_relocation, sonoma:            "b05635d8c0f9ab4fdd58f1018a6575e150eb805f3c3d139b2edbde3893419550"
   end
 
   depends_on "go" => :build

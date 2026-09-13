@@ -29,7 +29,7 @@ class CfrDecompiler < Formula
   def install
     ENV["JAVA_HOME"] = formula_opt_prefix("openjdk@21")
     # changing the compiler because 6 is used by upstream and openjdk no longer supports it
-    system Formula["maven"].bin/"mvn", "package", "-Dmaven.compiler.source=8", "-Dmaven.compiler.target=8"
+    system formula_opt_bin("maven")/"mvn", "package", "-Dmaven.compiler.source=8", "-Dmaven.compiler.target=8"
 
     cd "target" do
       if build.head?
@@ -51,7 +51,7 @@ class CfrDecompiler < Formula
       doc.install doc_jar
       mkdir doc/"javadoc"
       cd doc/"javadoc" do
-        system Formula["openjdk@21"].bin/"jar", "-xf", doc/doc_jar
+        system formula_opt_bin("openjdk@21")/"jar", "-xf", doc/doc_jar
         rm_r("META-INF")
       end
     end
@@ -72,7 +72,7 @@ class CfrDecompiler < Formula
       }
     JAVA
     (testpath/"T.java").write fixture
-    system Formula["openjdk@21"].bin/"javac", "T.java"
+    system formula_opt_bin("openjdk@21")/"javac", "T.java"
     output = pipe_output("#{bin}/cfr-decompiler --comments false T.class")
     assert_match fixture, output
   end

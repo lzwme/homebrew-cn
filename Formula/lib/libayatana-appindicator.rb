@@ -7,12 +7,13 @@ class LibayatanaAppindicator < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "366cecbce20e7f083e67f236b47cd0e5b92dbb395bc9340ad71a593a4a34e597"
-    sha256 cellar: :any, arm64_sequoia: "b2bceade01f2056f4e9ebaec1388c1fbd7d5570365a23b4170d39f88be35204d"
-    sha256 cellar: :any, arm64_sonoma:  "5a8120020dd5d6d83fd335c62d1c95c2bcf7a3d70030c7c72dfa168f4023e43f"
-    sha256 cellar: :any, sonoma:        "05ebbb9d01f6914521e972dbc92da891281751861f628b9e8938a29a29301689"
-    sha256 cellar: :any, arm64_linux:   "c2c991f9220114279f09fd40669993f94d4982453d5b74210e106d908ea46c97"
-    sha256 cellar: :any, x86_64_linux:  "bb93763e7e4070129ce61722c2c3bda9e41959ed776a76ff6b82530384a15e07"
+    sha256 cellar: :any, arm64_golden_gate: "f10f9c76cadeafe03baf323e351d245e0e8bf033290eb5cf64dba1715b37b53c"
+    sha256 cellar: :any, arm64_tahoe:       "366cecbce20e7f083e67f236b47cd0e5b92dbb395bc9340ad71a593a4a34e597"
+    sha256 cellar: :any, arm64_sequoia:     "b2bceade01f2056f4e9ebaec1388c1fbd7d5570365a23b4170d39f88be35204d"
+    sha256 cellar: :any, arm64_sonoma:      "5a8120020dd5d6d83fd335c62d1c95c2bcf7a3d70030c7c72dfa168f4023e43f"
+    sha256 cellar: :any, sonoma:            "05ebbb9d01f6914521e972dbc92da891281751861f628b9e8938a29a29301689"
+    sha256 cellar: :any, arm64_linux:       "c2c991f9220114279f09fd40669993f94d4982453d5b74210e106d908ea46c97"
+    sha256 cellar: :any, x86_64_linux:      "bb93763e7e4070129ce61722c2c3bda9e41959ed776a76ff6b82530384a15e07"
   end
 
   depends_on "cmake" => :build

@@ -7,12 +7,13 @@ class Csvlens < Formula
   head "https://github.com/YS-L/csvlens.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c11aa18b416fc38eb25df2ec3963fb2c5c300f8979aeba2642ec780865858d34"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dcb4d3a424d61a67bafa876bfc9125dc5a9e582a4fe1acb6c6e51f9112a99247"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f73c7eb50cf7f250e95690a36a1d233a748aaea69e26f3da87526672ee3cffcb"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e8f401dec9ed33c0b345b96f5b4c2e454d48dd8c8f84357f7feaecb97754f96c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d8e442634b87705728a3064b56ceffe3100c2b2938ad654ba964c742b351350f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3149de80a4f3bce2c31ddfc8f3db96a8066460a7e4b113f8d3f0a40b4e2a2e42"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "f8211d37d8f579ea0a6cc6ca3d80d6d3b8cdf3fb3a88ce4fd856793f6cef6222"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "c11aa18b416fc38eb25df2ec3963fb2c5c300f8979aeba2642ec780865858d34"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "dcb4d3a424d61a67bafa876bfc9125dc5a9e582a4fe1acb6c6e51f9112a99247"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "f73c7eb50cf7f250e95690a36a1d233a748aaea69e26f3da87526672ee3cffcb"
+    sha256 cellar: :any_skip_relocation, sonoma:            "e8f401dec9ed33c0b345b96f5b4c2e454d48dd8c8f84357f7feaecb97754f96c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "d8e442634b87705728a3064b56ceffe3100c2b2938ad654ba964c742b351350f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "3149de80a4f3bce2c31ddfc8f3db96a8066460a7e4b113f8d3f0a40b4e2a2e42"
   end
 
   depends_on "rust" => :build

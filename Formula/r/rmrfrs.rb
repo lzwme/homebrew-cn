@@ -7,12 +7,13 @@ class Rmrfrs < Formula
   head "https://github.com/trinhminhtriet/rmrfrs.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "767161879f6a4b4c0aa585e7fad656b07c9cea7e4c8136463fa80e6ecdc604d4"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "30e7469e0a2a38c0fbfce1fee1ff46b684eb549e4507d728f90236fc53d4afdf"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1abae95be3672118b8d43150bdd5c9a0682f52f4c5d667bf8b58d63783ecc2dd"
-    sha256 cellar: :any_skip_relocation, sonoma:        "adc828072f5c3393d4890903cce6cdb30d9246c51b5e9a5c480582cf274bbd8f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4898d3ac82f3bb77f6a9bca82cc0629c25d627ab1f59e96ed45a2d403c376ff2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0587d1e0f3b6be8ccbb3dda1e687c61369d6ccb268ae3d2d8ca36a61ed24bac7"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "af3720dbef342d257551adf00ace88063a385191d48a92e2e6f06e879f734883"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "767161879f6a4b4c0aa585e7fad656b07c9cea7e4c8136463fa80e6ecdc604d4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "30e7469e0a2a38c0fbfce1fee1ff46b684eb549e4507d728f90236fc53d4afdf"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "1abae95be3672118b8d43150bdd5c9a0682f52f4c5d667bf8b58d63783ecc2dd"
+    sha256 cellar: :any_skip_relocation, sonoma:            "adc828072f5c3393d4890903cce6cdb30d9246c51b5e9a5c480582cf274bbd8f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "4898d3ac82f3bb77f6a9bca82cc0629c25d627ab1f59e96ed45a2d403c376ff2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "0587d1e0f3b6be8ccbb3dda1e687c61369d6ccb268ae3d2d8ca36a61ed24bac7"
   end
 
   depends_on "rust" => :build

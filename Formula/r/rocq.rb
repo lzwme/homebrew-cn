@@ -114,7 +114,7 @@ class Rocq < Formula
     ROCQ
     system bin/"rocq", "compile", testpath/"testing.v"
     # test ability to find plugin files
-    output = shell_output("#{Formula["ocaml-findlib"].bin}/ocamlfind query rocq-runtime.plugins.ltac")
+    output = shell_output("#{formula_opt_bin("ocaml-findlib")}/ocamlfind query rocq-runtime.plugins.ltac")
     assert_equal "#{HOMEBREW_PREFIX}/lib/ocaml/rocq-runtime/plugins/ltac", output.chomp
   end
 end

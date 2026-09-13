@@ -11,12 +11,13 @@ class Libabw < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "bfcad8f4a2996c41ca06abc385ebd8e66b095c21d68201b318e21100893cb8d8"
-    sha256 cellar: :any,                 arm64_sequoia: "7a0bcfd97859385bb0715aac6a71ddb2d34e646e876deea0d6dd88da6241f708"
-    sha256 cellar: :any,                 arm64_sonoma:  "6fd5c335fb18734ac2e029f63769e0ea0b732b2992f4c96968df3ed117d591a8"
-    sha256 cellar: :any,                 sonoma:        "4fe56f440a8dd385fe68167f7a936e4dbece09fe30917ff8e0885a8e9436a17b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7ce1c97e8ac4279b10a84206b7215885aafb0f916b5fc1e7a9ac99dc438ba972"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c1782f975551cec71df80485f6c6ca2f5c4cefb0bda2dac9fdb5c81ad7f44c8a"
+    sha256 cellar: :any,                 arm64_golden_gate: "9ed9553645353afc7c0eb5d953ef0054a9286ab21c8875e3ad54cc2ff5e6af4b"
+    sha256 cellar: :any,                 arm64_tahoe:       "bfcad8f4a2996c41ca06abc385ebd8e66b095c21d68201b318e21100893cb8d8"
+    sha256 cellar: :any,                 arm64_sequoia:     "7a0bcfd97859385bb0715aac6a71ddb2d34e646e876deea0d6dd88da6241f708"
+    sha256 cellar: :any,                 arm64_sonoma:      "6fd5c335fb18734ac2e029f63769e0ea0b732b2992f4c96968df3ed117d591a8"
+    sha256 cellar: :any,                 sonoma:            "4fe56f440a8dd385fe68167f7a936e4dbece09fe30917ff8e0885a8e9436a17b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "7ce1c97e8ac4279b10a84206b7215885aafb0f916b5fc1e7a9ac99dc438ba972"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "c1782f975551cec71df80485f6c6ca2f5c4cefb0bda2dac9fdb5c81ad7f44c8a"
   end
 
   depends_on "boost" => :build

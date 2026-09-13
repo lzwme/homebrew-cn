@@ -6,14 +6,12 @@ class RevealMd < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "dc9effab791d9a047feab7dd5dbb0a788b4353f649863623e550f12778af400e"
-    sha256 cellar: :any,                 arm64_sequoia: "e45cc89fa82e2c457d6882e2a8c960c23733207a6af5cf19cd5dd9adb22f3f70"
-    sha256 cellar: :any,                 arm64_sonoma:  "e45cc89fa82e2c457d6882e2a8c960c23733207a6af5cf19cd5dd9adb22f3f70"
-    sha256 cellar: :any,                 arm64_ventura: "e45cc89fa82e2c457d6882e2a8c960c23733207a6af5cf19cd5dd9adb22f3f70"
-    sha256 cellar: :any,                 sonoma:        "f986662f9ae9064474e4725339175621ec6cee8b57a45d65e1c05c75cfdd1dae"
-    sha256 cellar: :any,                 ventura:       "f986662f9ae9064474e4725339175621ec6cee8b57a45d65e1c05c75cfdd1dae"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cd807b2193a54a49e0a09ef3dcb2edbe68734bd2aaa9f4e9bcbc22f7daded733"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "615e2c3e56083005d3c26f52b444f663a75e9222f92c59df41266506b0d65d2d"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "9894ad668b98aac5215a89bdd31e39be7d73962f1d8101690c6022154e9c6f1a"
+    sha256 cellar: :any, arm64_tahoe:       "9894ad668b98aac5215a89bdd31e39be7d73962f1d8101690c6022154e9c6f1a"
+    sha256 cellar: :any, arm64_sequoia:     "9894ad668b98aac5215a89bdd31e39be7d73962f1d8101690c6022154e9c6f1a"
+    sha256 cellar: :any, arm64_linux:       "dbde45bb72ba1e3d9fb548473ff026e1d4379abac971885236b1c365252c499c"
+    sha256 cellar: :any, x86_64_linux:      "45100cb1686b30fdddbfc5cc0b516346dcf8c6170eac86edfbbcb52cbad2da4d"
   end
 
   depends_on "node"
@@ -26,8 +24,10 @@ class RevealMd < Formula
     os = OS.kernel_name.downcase
     arch = Hardware::CPU.intel? ? "x64" : Hardware::CPU.arch.to_s
     node_modules = libexec/"lib/node_modules/reveal-md/node_modules"
-    node_modules.glob("{bare-fs,bare-os,bare-url}/prebuilds/*")
+    node_modules.glob("{bare-fs,bare-os,bare-path,bare-url}/prebuilds/*")
                 .each { |dir| rm_r(dir) if dir.basename.to_s != "#{os}-#{arch}" }
+
+    deuniversalize_machos node_modules/"fsevents/fsevents.node" if OS.mac?
   end
 
   test do

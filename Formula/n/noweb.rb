@@ -14,18 +14,19 @@ class Noweb < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "5b0ebc62d33b6e1452815e9257c313a3b886caa203124fdbc785001aa8f5e0d4"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "f18c4be4fa20125e8adc57369970446c02ceed59304f52ef1e595967db4842dc"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f4a47b231de7c9f6e04f77ecf8ea59edb7658da0fae7b10d9d3d6d7b80577aeb"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7a2984bbf74de88caf1026e1d940c45bd2288361b1f48458e04758b585e1d07a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "be96a5565ef49b6639fefad120cc677a9235fe665196f6b9d1ac353627a6abfe"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ef7e6d0cd7c63e47d4c82b1417e26cf8fb0be1fec0c27fd99e67af7d5dcd4813"
-    sha256 cellar: :any_skip_relocation, sonoma:         "3f44a86284253361d5994fb42060b4f051569a98e4e6e0593dc9ed02fee1af63"
-    sha256 cellar: :any_skip_relocation, ventura:        "ad26424a2647f8feb82d8735c6792b755bd56d7c720ffa64101fbd3061d4d94c"
-    sha256 cellar: :any_skip_relocation, monterey:       "ab0cabc785cdc9c5d34cb9e41e518eac9411dc3c6fe249ba4ac82dcd830ba851"
-    sha256 cellar: :any_skip_relocation, big_sur:        "1c9575804e168b4ec6c8f28f6fd1748d509726a35704ee1ca7469257380617c5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "c2fb0ea050c3968ff76ff68f19043aeab5898c7c47d2310b779044ce2f6c709d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7b0483e38e12bf0bcc968685af551d17a421ff7d27cf0433082fc08bd5135a0d"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "21e9a7abc1655dc3002a5978868f6a6a44ca72ec3871edab0463e2c1cf818ef9"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "5b0ebc62d33b6e1452815e9257c313a3b886caa203124fdbc785001aa8f5e0d4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "f18c4be4fa20125e8adc57369970446c02ceed59304f52ef1e595967db4842dc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "f4a47b231de7c9f6e04f77ecf8ea59edb7658da0fae7b10d9d3d6d7b80577aeb"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:     "7a2984bbf74de88caf1026e1d940c45bd2288361b1f48458e04758b585e1d07a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey:    "be96a5565ef49b6639fefad120cc677a9235fe665196f6b9d1ac353627a6abfe"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:     "ef7e6d0cd7c63e47d4c82b1417e26cf8fb0be1fec0c27fd99e67af7d5dcd4813"
+    sha256 cellar: :any_skip_relocation, sonoma:            "3f44a86284253361d5994fb42060b4f051569a98e4e6e0593dc9ed02fee1af63"
+    sha256 cellar: :any_skip_relocation, ventura:           "ad26424a2647f8feb82d8735c6792b755bd56d7c720ffa64101fbd3061d4d94c"
+    sha256 cellar: :any_skip_relocation, monterey:          "ab0cabc785cdc9c5d34cb9e41e518eac9411dc3c6fe249ba4ac82dcd830ba851"
+    sha256 cellar: :any_skip_relocation, big_sur:           "1c9575804e168b4ec6c8f28f6fd1748d509726a35704ee1ca7469257380617c5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "c2fb0ea050c3968ff76ff68f19043aeab5898c7c47d2310b779044ce2f6c709d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "7b0483e38e12bf0bcc968685af551d17a421ff7d27cf0433082fc08bd5135a0d"
   end
 
   depends_on "gnu-sed" => :build
@@ -40,7 +41,7 @@ class Noweb < Formula
 
   def install
     # use gnu-sed on macOS for fixing `illegal byte sequence` error
-    ENV.prepend_path "PATH", Formula["gnu-sed"].libexec/"gnubin" if OS.mac?
+    ENV.prepend_path "PATH", formula_opt_libexec("gnu-sed")/"gnubin" if OS.mac?
 
     cd "src" do
       system "bash", "awkname", "awk"

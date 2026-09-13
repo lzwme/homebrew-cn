@@ -12,12 +12,13 @@ class Classads < Formula
 
   bottle do
     rebuild 3
-    sha256 cellar: :any,                 arm64_tahoe:   "ed590f0506873b6a0335e92654469e50424ca16a916afc92b9f5180906060bfc"
-    sha256 cellar: :any,                 arm64_sequoia: "bf778bd185e235b5e755771e29b123cb64da53d8daeabf8b6950c205706b92e2"
-    sha256 cellar: :any,                 arm64_sonoma:  "5302ef3e7141dcd4cd694d6321c782c8707a90ac36af8be04c137548dd36752e"
-    sha256 cellar: :any,                 sonoma:        "f1e93502256b06a0fca5214a1df36c5f35b211b14d376f718d2a86088465dfe5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8f93a457d340d975d207f60f2b88049fab2ac1fc59f957421bb5e6d71a1817b9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0f04a28af4368948ee8ce693f3ab6e30d9d6294d726e2a04ad7ca44e84ffcf07"
+    sha256 cellar: :any,                 arm64_golden_gate: "5af27d5984c279b0ca7dabbe011ecfa7bdb28bcf71f8472431490dd271fbd794"
+    sha256 cellar: :any,                 arm64_tahoe:       "ed590f0506873b6a0335e92654469e50424ca16a916afc92b9f5180906060bfc"
+    sha256 cellar: :any,                 arm64_sequoia:     "bf778bd185e235b5e755771e29b123cb64da53d8daeabf8b6950c205706b92e2"
+    sha256 cellar: :any,                 arm64_sonoma:      "5302ef3e7141dcd4cd694d6321c782c8707a90ac36af8be04c137548dd36752e"
+    sha256 cellar: :any,                 sonoma:            "f1e93502256b06a0fca5214a1df36c5f35b211b14d376f718d2a86088465dfe5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "8f93a457d340d975d207f60f2b88049fab2ac1fc59f957421bb5e6d71a1817b9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "0f04a28af4368948ee8ce693f3ab6e30d9d6294d726e2a04ad7ca44e84ffcf07"
   end
 
   on_macos do

@@ -6,12 +6,13 @@ class Freesasa < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "e99b8ac2d7a1662531a39c4aaa741ee30209d386aa985c1aa007aa1f81f08753"
-    sha256 cellar: :any,                 arm64_sequoia: "d1111081344ac1f897843cbf71d1f61143948097c70de7b2bb815264c99e923b"
-    sha256 cellar: :any,                 arm64_sonoma:  "b7d36d3748640472fcd7fc357e50839df9305242384f8b197ded7f254ef0e199"
-    sha256 cellar: :any,                 sonoma:        "a272197b6d73c572b70c94a79d02e085561e94f22839ee474340cd0bd9b9fa0e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "433e178d16d2d4612ebb7279379a7d5bda63351c2953ebcb3445e6a42786c3f5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0c1c32cf2ad2cd5b37eaf71a5fd45b7775a76e42b4e9954a4a6252c07ecc68a9"
+    sha256 cellar: :any,                 arm64_golden_gate: "d555b22baec5d1ba594ce83b168839047c4be5ebb8b79ba34bbf97f2a593071e"
+    sha256 cellar: :any,                 arm64_tahoe:       "e99b8ac2d7a1662531a39c4aaa741ee30209d386aa985c1aa007aa1f81f08753"
+    sha256 cellar: :any,                 arm64_sequoia:     "d1111081344ac1f897843cbf71d1f61143948097c70de7b2bb815264c99e923b"
+    sha256 cellar: :any,                 arm64_sonoma:      "b7d36d3748640472fcd7fc357e50839df9305242384f8b197ded7f254ef0e199"
+    sha256 cellar: :any,                 sonoma:            "a272197b6d73c572b70c94a79d02e085561e94f22839ee474340cd0bd9b9fa0e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "433e178d16d2d4612ebb7279379a7d5bda63351c2953ebcb3445e6a42786c3f5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "0c1c32cf2ad2cd5b37eaf71a5fd45b7775a76e42b4e9954a4a6252c07ecc68a9"
   end
 
   depends_on "autoconf" => :build

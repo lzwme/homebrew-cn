@@ -70,7 +70,7 @@ class Libgosu < Formula
     if OS.linux? && ENV.exclude?("DISPLAY")
       # SDL3 (via sdl2-compat) fails if no video driver is available and "dummy"
       # workaround doesn't work as libgosu needs OpenGL support in video driver
-      system Formula["xorg-server"].bin/"xvfb-run", "./test"
+      system formula_opt_bin("xorg-server")/"xvfb-run", "./test"
     else
       system "./test"
     end

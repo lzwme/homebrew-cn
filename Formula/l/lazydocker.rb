@@ -18,6 +18,8 @@ class Lazydocker < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
   def install
     ENV["CGO_ENABLED"] = OS.mac? ? "1" : "0"
     ldflags = "-X main.version=#{version} -X main.date=#{time.iso8601} -X main.buildSource=#{tap.user}"

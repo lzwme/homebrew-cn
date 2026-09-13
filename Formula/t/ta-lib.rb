@@ -1,18 +1,16 @@
 class TaLib < Formula
   desc "Tools for market analysis"
   homepage "https://ta-lib.org/"
-  url "https://ghfast.top/https://github.com/ta-lib/ta-lib/releases/download/v0.7.1/ta-lib-0.7.1-src.tar.gz"
-  sha256 "508981a5b85edab42ecee0b2d9c7dcd2c4ae9831e859e1aa4e549232734c27e1"
+  url "https://ghfast.top/https://github.com/ta-lib/ta-lib/releases/download/v0.8.1/ta-lib-0.8.1-src.tar.gz"
+  sha256 "ec59ccd88c0c77f618587d858787c8f9d06c40460a09d66751926f6fd670f985"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "fcc207f95adda01fa5611a37d0d017358da178a158496448c2322ff4b81fe417"
-    sha256 cellar: :any, arm64_tahoe:       "615037c0200f975c14d6f0001028f3426acd8cc0a045c00291a255fc7095da17"
-    sha256 cellar: :any, arm64_sequoia:     "0534ee3f9f69847a53671a4812a33e8772f5b5a930cb1c6f5a5dde68623669a0"
-    sha256 cellar: :any, arm64_sonoma:      "4cdab731fd05fab25a8f36aa22e9ec4379bf84aa12d9aad5f594389f288d899d"
-    sha256 cellar: :any, sonoma:            "0e3ab108a472af579c786be012b0863d9e60e84bb325f7ca68fe728d7061450b"
-    sha256 cellar: :any, arm64_linux:       "e05ea2875d1deb8277e32304fc89e628e46bdbe8835707cc839de89ecca8f8eb"
-    sha256 cellar: :any, x86_64_linux:      "0eebdb7a3a2692591b9ffe32e85fb9ac2f9a8db194277b8c16a784420612df8a"
+    sha256 cellar: :any, arm64_golden_gate: "537ead5f8cd09b4cc0f3ed3a66a3736cc925e1a234064a1f563b3c5c6a0350dc"
+    sha256 cellar: :any, arm64_tahoe:       "e6de6d178938c85fdcc0f2717376cd484dc176c5f24db4c64b4260e83318c9e0"
+    sha256 cellar: :any, arm64_sequoia:     "b6f40477c526a50e488e3148bf9c1e291a2f4c38dd61722c0222c060b9ce0be3"
+    sha256 cellar: :any, arm64_linux:       "308662968647f28aae04f83313dc7dd6fadfe5dfca8051b46946c4ba9601b9a0"
+    sha256 cellar: :any, x86_64_linux:      "cabd2109c3726727400f5182715def1b8def16c351aa4429fcfc06dd965c34d5"
   end
 
   on_macos do

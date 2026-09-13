@@ -12,12 +12,13 @@ class Highlight < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "0cfe7cdba40aaf8804ec9fe92470c40b7c9b881857bcbc53fb671fd54b12ca85"
-    sha256 arm64_sequoia: "a1278c2a0ec425a01a805f56b6b1b139eb54325ca7984360788a80f17bf4b431"
-    sha256 arm64_sonoma:  "36bf8fbb525031efa58611cd030f984320c13839b755cdb38deea83b6f3060fb"
-    sha256 sonoma:        "38a3159370697a8ba9537258daecb2be8ad849354650352bfda76fb367bc750b"
-    sha256 arm64_linux:   "2aed8aeaf9c91c1d29aadd0df427f924afb59bc04f723de3093e364dc86baa9d"
-    sha256 x86_64_linux:  "540c5f14c1369f466bd5d29ee178bae88a1a47025ea567de01154ba902ea0567"
+    sha256 arm64_golden_gate: "e58bf089a5fe073f2e329136d06564b2e8f26d768333f0f6afcb0ff82e49f70f"
+    sha256 arm64_tahoe:       "0cfe7cdba40aaf8804ec9fe92470c40b7c9b881857bcbc53fb671fd54b12ca85"
+    sha256 arm64_sequoia:     "a1278c2a0ec425a01a805f56b6b1b139eb54325ca7984360788a80f17bf4b431"
+    sha256 arm64_sonoma:      "36bf8fbb525031efa58611cd030f984320c13839b755cdb38deea83b6f3060fb"
+    sha256 sonoma:            "38a3159370697a8ba9537258daecb2be8ad849354650352bfda76fb367bc750b"
+    sha256 arm64_linux:       "2aed8aeaf9c91c1d29aadd0df427f924afb59bc04f723de3093e364dc86baa9d"
+    sha256 x86_64_linux:      "540c5f14c1369f466bd5d29ee178bae88a1a47025ea567de01154ba902ea0567"
   end
 
   depends_on "boost" => :build

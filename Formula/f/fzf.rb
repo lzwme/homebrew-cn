@@ -1,29 +1,29 @@
 class Fzf < Formula
   desc "Command-line fuzzy finder written in Go"
   homepage "https://junegunn.github.io/fzf/"
-  url "https://ghfast.top/https://github.com/junegunn/fzf/archive/refs/tags/v0.74.3.tar.gz"
-  sha256 "5b142217c3068647a7d8faa9c678cffada100b5f11a48609aa79c94ce04b28ef"
+  url "https://ghfast.top/https://github.com/junegunn/fzf/archive/refs/tags/v0.74.4.tar.gz"
+  sha256 "1046857c337f5bd05f6fa482446b5a42a011615105743efbe4efee0970b24bb7"
   license "MIT"
   compatibility_version 1
   head "https://github.com/junegunn/fzf.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "2c0ce67bbb29cbf53de965faacfc6fac142ffa050e81136a1684dccc9f8009b2"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "2ad5eca71970a9a7fdd5e6003d68f5dc2e2ef10e22215fb22e60ee1e14ec5877"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "2ad5eca71970a9a7fdd5e6003d68f5dc2e2ef10e22215fb22e60ee1e14ec5877"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "2ad5eca71970a9a7fdd5e6003d68f5dc2e2ef10e22215fb22e60ee1e14ec5877"
-    sha256 cellar: :any_skip_relocation, sonoma:            "3a9d2260cdbe7895a49f6d7abe9d0833e0fb3867c3d439b79adf91d463fdce32"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "a691456ecd9919d51d781ea93d7635106e30419a12efa3b5dda0eb46e6371bb3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "b414418e73f90f291f356c7539953cd90653756996c733f94c0963b498cbd68f"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "1094281c70e4304dd4e52bb5799dd0a15c8a229c1674ec1000de6238cc75e9fe"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "1094281c70e4304dd4e52bb5799dd0a15c8a229c1674ec1000de6238cc75e9fe"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "1094281c70e4304dd4e52bb5799dd0a15c8a229c1674ec1000de6238cc75e9fe"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "7104102c94beaf32c253a7f31dbdb961fd1c773ca81c3aac8455d81b97a09ded"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "93912e54112d0acbf7790250e3cbef36a7bbe30526a45379505249d652288121"
   end
 
   depends_on "go" => :build
 
   uses_from_macos "ncurses"
 
-  # install downloads go modules
-  allow_network_access! :build
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     ENV["CGO_ENABLED"] = OS.mac? ? "1" : "0"

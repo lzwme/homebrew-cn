@@ -12,12 +12,13 @@ class Cubelib < Formula
 
   bottle do
     rebuild 1
-    sha256 arm64_tahoe:   "af8563eab21f130a1c32ffebcbc1808975d166316d8ec5576a83dc2ebbc437c9"
-    sha256 arm64_sequoia: "1ccf40f98502d79ffbd32bcff4ae6212b8b96aa525e60db0665848183139da9f"
-    sha256 arm64_sonoma:  "09ebd4777ba76e31a2f4c41ee65144b9a797ee0d556278da43962164048fcfc9"
-    sha256 sonoma:        "d4013dbc7bb8da8188a0d17d09c52ebc14f36db09df5516150fe2a39ee2599bd"
-    sha256 arm64_linux:   "d9915686606c3dfa397292fdf87fec0a16af4407344ccacdadd10792a2542e45"
-    sha256 x86_64_linux:  "09faef23e866883d28efac0afb0d96a72cb574c558ff16ffe1b047b842b50fa5"
+    sha256 arm64_golden_gate: "a5bab6bb187d68fe7884172de91c63afecb57179eeccdfdd91ee81b10150e25f"
+    sha256 arm64_tahoe:       "af8563eab21f130a1c32ffebcbc1808975d166316d8ec5576a83dc2ebbc437c9"
+    sha256 arm64_sequoia:     "1ccf40f98502d79ffbd32bcff4ae6212b8b96aa525e60db0665848183139da9f"
+    sha256 arm64_sonoma:      "09ebd4777ba76e31a2f4c41ee65144b9a797ee0d556278da43962164048fcfc9"
+    sha256 sonoma:            "d4013dbc7bb8da8188a0d17d09c52ebc14f36db09df5516150fe2a39ee2599bd"
+    sha256 arm64_linux:       "d9915686606c3dfa397292fdf87fec0a16af4407344ccacdadd10792a2542e45"
+    sha256 x86_64_linux:      "09faef23e866883d28efac0afb0d96a72cb574c558ff16ffe1b047b842b50fa5"
   end
 
   depends_on "pkgconf" => :build

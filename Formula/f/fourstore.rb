@@ -7,12 +7,13 @@ class Fourstore < Formula
 
   bottle do
     rebuild 2
-    sha256 arm64_tahoe:   "b5bfc32e285c9053a23c919b79ac99292f2a32f398b0df4f5170958980c51c74"
-    sha256 arm64_sequoia: "c92babcce0a867b6e4f2de75872cde122080806cb9c3e25617bbdf1e315949db"
-    sha256 arm64_sonoma:  "75dd61e3fd948f8333871e6d754cbcbf165cbe1cf3de532c468249e90173431b"
-    sha256 sonoma:        "e545cbc9634a29e02332ae7cb504d78cbb484f0d15570a419a768a134f523b33"
-    sha256 arm64_linux:   "b59ab5aab501077629783f0222cbfcfb0a5ae19b67305b65a698a072b60b3af1"
-    sha256 x86_64_linux:  "a62ef47eb3830f72cb11136f3806c4aaa712564825bd91bf31e2f02362e8b05e"
+    sha256 arm64_golden_gate: "d996ce164477edbadcb7c106ded0ad77bd030ee31ffbf4d89c7d67e1a7b02ced"
+    sha256 arm64_tahoe:       "b5bfc32e285c9053a23c919b79ac99292f2a32f398b0df4f5170958980c51c74"
+    sha256 arm64_sequoia:     "c92babcce0a867b6e4f2de75872cde122080806cb9c3e25617bbdf1e315949db"
+    sha256 arm64_sonoma:      "75dd61e3fd948f8333871e6d754cbcbf165cbe1cf3de532c468249e90173431b"
+    sha256 sonoma:            "e545cbc9634a29e02332ae7cb504d78cbb484f0d15570a419a768a134f523b33"
+    sha256 arm64_linux:       "b59ab5aab501077629783f0222cbfcfb0a5ae19b67305b65a698a072b60b3af1"
+    sha256 x86_64_linux:      "a62ef47eb3830f72cb11136f3806c4aaa712564825bd91bf31e2f02362e8b05e"
   end
 
   # Last release on 2024-05-10 and needs EOL `pcre`

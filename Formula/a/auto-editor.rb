@@ -7,18 +7,18 @@ class AutoEditor < Formula
   head "https://github.com/WyattBlue/auto-editor.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "72a307562d842c78857394430c6464734a87a98e65526d2d2f69aaf3f1201a1a"
-    sha256 cellar: :any, arm64_sequoia: "39d927f1da75a75b2ec6b21168db38a28d15bc8692d02fc5a971b96cd0fd458f"
-    sha256 cellar: :any, arm64_sonoma:  "045a47e4290b5c9598006ee8ead965f9f6b3dca716192afb26a275c5058197dc"
-    sha256 cellar: :any, arm64_linux:   "534c56571ab73fd91e1865512fa9c4bb02fbd88cd0425f1c8114e5d6fbcca9ce"
-    sha256 cellar: :any, x86_64_linux:  "d9b6e2d78c389c73bb7b6d4b863c6529962d5929866efbecad44ccd645be9e4b"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "cc12aeb050ebce237c8631520ec0ea7da3d6f98fde7e7a9497bef194100d5695"
+    sha256 cellar: :any, arm64_sequoia: "c41fc98f750291eb3fc649a43a1b30f9f44f22073d6b8df86c3dab9e469ada69"
+    sha256 cellar: :any, arm64_linux:   "332e6c7accdaab5210b6b7f43954ab31a5874229f0fd4c1308265e1b119958e2"
+    sha256 cellar: :any, x86_64_linux:  "3eef83b9cb6ed93dda604be1ee9920dd1a552e693a9100045767ad423f52c35b"
   end
 
   depends_on "nim" => :build
   depends_on "pkgconf" => :build
   depends_on "ffmpeg"
   depends_on "ggml"
-  depends_on "whisper-cpp"
+  depends_on "whisper.cpp"
 
   def install
     system "nimble", "brewmake"
@@ -33,7 +33,7 @@ class AutoEditor < Formula
     system bin/"auto-editor", mp4in, "--edit", "none"
     assert_match(/Duration: 00:00:05\.00,.*Video: h264/m, shell_output("ffprobe -hide_banner #{mp4out} 2>&1"))
 
-    whisper = Formula["whisper-cpp"]
+    whisper = Formula["whisper.cpp"]
     system bin/"auto-editor", "whisper", whisper.pkgshare/"jfk.wav",
       whisper.pkgshare/"for-tests-ggml-tiny.bin"
   end

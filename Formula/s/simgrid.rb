@@ -14,11 +14,12 @@ class Simgrid < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "bcf91f84735c132eb5b5cf75be878af982f1b73c1a56f3699963cbf800240843"
-    sha256 arm64_sequoia: "e5b23d1ca8ab7b0967063337ebf71a8378564474f3450dc818f4dae4aa67d960"
-    sha256 arm64_sonoma:  "73ef5cfd0c535ebe25f8cc95de5524343c20783c826f9b5c3f024615b90f5b06"
-    sha256 arm64_linux:   "df8857e84e37534b8e13991d46a2ab0257333acb8473e4ededecb8ff0c86b17b"
-    sha256 x86_64_linux:  "5cb1d4a3f4863eea1fbe27fc12de1ca68ce4511c815cb3b36bd0e29a721e5c8f"
+    sha256 arm64_golden_gate: "44fe3117ec46b9c25d779eb7989bdfe0821d6ce9e8e47ed34802bded67aac15f"
+    sha256 arm64_tahoe:       "bcf91f84735c132eb5b5cf75be878af982f1b73c1a56f3699963cbf800240843"
+    sha256 arm64_sequoia:     "e5b23d1ca8ab7b0967063337ebf71a8378564474f3450dc818f4dae4aa67d960"
+    sha256 arm64_sonoma:      "73ef5cfd0c535ebe25f8cc95de5524343c20783c826f9b5c3f024615b90f5b06"
+    sha256 arm64_linux:       "df8857e84e37534b8e13991d46a2ab0257333acb8473e4ededecb8ff0c86b17b"
+    sha256 x86_64_linux:      "5cb1d4a3f4863eea1fbe27fc12de1ca68ce4511c815cb3b36bd0e29a721e5c8f"
   end
 
   depends_on "cmake" => :build

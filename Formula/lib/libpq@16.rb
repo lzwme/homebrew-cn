@@ -11,12 +11,13 @@ class LibpqAT16 < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "40aef818b1edf5183e57430f991e351a4fc7144daf80a4ea4158ea1cb72ec732"
-    sha256 arm64_sequoia: "293a98bbe2a3e7e0cbad9b8697527a8f2a3b6405bf22965a72252c76b3f62e60"
-    sha256 arm64_sonoma:  "8cfef349fef864b677d5766d79a5790184ca8d6f482977e4c3ce3d4f1b687d41"
-    sha256 sonoma:        "2a0796c5eea99b04eb190cd17fb1d9749f1dbcb2b3a2f4433396d65f8b85c77f"
-    sha256 arm64_linux:   "a02949aa19aad9e8bfa44a338ffc93b038cbf72b2fbe3040bf76e5683ecbb2a6"
-    sha256 x86_64_linux:  "b029d8467f74dfaab7f72d8f76a3f72038e43afd807c8ec366fe587312392902"
+    sha256 arm64_golden_gate: "79fb152b232633549c3c2871863addeca06869cc1be72a6e82a273c9910c7ab2"
+    sha256 arm64_tahoe:       "40aef818b1edf5183e57430f991e351a4fc7144daf80a4ea4158ea1cb72ec732"
+    sha256 arm64_sequoia:     "293a98bbe2a3e7e0cbad9b8697527a8f2a3b6405bf22965a72252c76b3f62e60"
+    sha256 arm64_sonoma:      "8cfef349fef864b677d5766d79a5790184ca8d6f482977e4c3ce3d4f1b687d41"
+    sha256 sonoma:            "2a0796c5eea99b04eb190cd17fb1d9749f1dbcb2b3a2f4433396d65f8b85c77f"
+    sha256 arm64_linux:       "a02949aa19aad9e8bfa44a338ffc93b038cbf72b2fbe3040bf76e5683ecbb2a6"
+    sha256 x86_64_linux:      "b029d8467f74dfaab7f72d8f76a3f72038e43afd807c8ec366fe587312392902"
   end
 
   keg_only :versioned_formula

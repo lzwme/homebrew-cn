@@ -7,14 +7,15 @@ class Marcli < Formula
   head "https://github.com/hectorcorrea/marcli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f76947a31b32725929e5172ca3456da7061128f7c9acd0c2de54c3b344bf7fb4"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2152b85bd6b2a00ebe84d354e0b09066a463a4442d3478529513021b63769216"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2152b85bd6b2a00ebe84d354e0b09066a463a4442d3478529513021b63769216"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "2152b85bd6b2a00ebe84d354e0b09066a463a4442d3478529513021b63769216"
-    sha256 cellar: :any_skip_relocation, sonoma:        "fba05203356da269bfb3f6b89e0fda85562698c63860bfb036f7e1335c0e0dd2"
-    sha256 cellar: :any_skip_relocation, ventura:       "fba05203356da269bfb3f6b89e0fda85562698c63860bfb036f7e1335c0e0dd2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "43204fe80171a0721bddc9ddd40d75d2936fa9accd5e0f3eed1f3d1b2e2c989c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f8569415a2de99dcf9476b4bf9b9d8e0d5c738b17c386e017a74f4b53887f2a1"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "17c4847574c607af9e46cc15274a61b25a4ada8c145b59ba38b3047e2eaa1796"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "f76947a31b32725929e5172ca3456da7061128f7c9acd0c2de54c3b344bf7fb4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "2152b85bd6b2a00ebe84d354e0b09066a463a4442d3478529513021b63769216"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "2152b85bd6b2a00ebe84d354e0b09066a463a4442d3478529513021b63769216"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:     "2152b85bd6b2a00ebe84d354e0b09066a463a4442d3478529513021b63769216"
+    sha256 cellar: :any_skip_relocation, sonoma:            "fba05203356da269bfb3f6b89e0fda85562698c63860bfb036f7e1335c0e0dd2"
+    sha256 cellar: :any_skip_relocation, ventura:           "fba05203356da269bfb3f6b89e0fda85562698c63860bfb036f7e1335c0e0dd2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "43204fe80171a0721bddc9ddd40d75d2936fa9accd5e0f3eed1f3d1b2e2c989c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "f8569415a2de99dcf9476b4bf9b9d8e0d5c738b17c386e017a74f4b53887f2a1"
   end
 
   depends_on "go" => :build

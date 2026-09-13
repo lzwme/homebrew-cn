@@ -21,6 +21,8 @@ class Blast < Formula
     sha256 x86_64_linux:      "969d1e7c127e73ba543b86cb5515cb1aee569b85a1742fdff57a3a54ba3b5a4b"
   end
 
+  deprecate! date: "2027-03-31", because: "needs EOL `mbedtls@3`"
+
   depends_on "lmdb"
   depends_on "mbedtls@3"
   depends_on "pcre2"

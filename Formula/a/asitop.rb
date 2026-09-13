@@ -9,9 +9,10 @@ class Asitop < Formula
 
   bottle do
     rebuild 4
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "de255de46d14df3c89b457ed3e18d402a63a6a24b47da228084646a20e6b9db0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a40878e9b51a199368c3647e227773c8a8fa2413f64167630cb05e92fe3b4bb7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "73ede524bcc50e849a3568afe14f6a2469e5a439f79dd284b21cc0a4b1f41ab5"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "97758bc6f17e81cb9d702f6b60ae3e7f734555ffbf9f432d9ef8afddf4ca4676"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "de255de46d14df3c89b457ed3e18d402a63a6a24b47da228084646a20e6b9db0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "a40878e9b51a199368c3647e227773c8a8fa2413f64167630cb05e92fe3b4bb7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "73ede524bcc50e849a3568afe14f6a2469e5a439f79dd284b21cc0a4b1f41ab5"
   end
 
   depends_on arch: :arm64

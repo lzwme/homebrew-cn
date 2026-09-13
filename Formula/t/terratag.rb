@@ -7,11 +7,12 @@ class Terratag < Formula
   head "https://github.com/env0/terratag.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1181a719c233429f71a4c9cbd316ba2e50ec0c8c85f677e61849285a29dfe408"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1181a719c233429f71a4c9cbd316ba2e50ec0c8c85f677e61849285a29dfe408"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1181a719c233429f71a4c9cbd316ba2e50ec0c8c85f677e61849285a29dfe408"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8a1322f0aabb0507f5f8737812ebd038e8631b2ea4fa8a43b14cf16d20878094"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "231afb499d1e63a02c585638597f98395a14a68f9cb3252d6d2416695e12215f"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "1181a719c233429f71a4c9cbd316ba2e50ec0c8c85f677e61849285a29dfe408"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "1181a719c233429f71a4c9cbd316ba2e50ec0c8c85f677e61849285a29dfe408"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "1181a719c233429f71a4c9cbd316ba2e50ec0c8c85f677e61849285a29dfe408"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "1181a719c233429f71a4c9cbd316ba2e50ec0c8c85f677e61849285a29dfe408"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "8a1322f0aabb0507f5f8737812ebd038e8631b2ea4fa8a43b14cf16d20878094"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "231afb499d1e63a02c585638597f98395a14a68f9cb3252d6d2416695e12215f"
   end
 
   depends_on "go" => :build

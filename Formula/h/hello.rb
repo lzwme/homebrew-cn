@@ -7,11 +7,12 @@ class Hello < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ae6237e3001bd354783f469d754cee875ee9828910461b85a5803f5990213dde"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "78566829e680af4ececbe5b3aa596c06f9bd0c7b83172a50c4347510a0d8cf0a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "90e62f2bc18a74b2ce845e6d5b6b53b96a11e3ce304b83e6278fd3ca0fbed922"
-    sha256                               arm64_linux:   "0557a40320fc342b63c4ebca125d81b8dc782576d619800506e00c4d6dffdf68"
-    sha256                               x86_64_linux:  "ab40f4006173c63e0d138bdd2b6634ee467f4685c2b130a3edaa712bfee0809a"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "4dd2596c2e897c81eae2dbf5030da37b43e797d217f0f0892d39343d0b8c2ca7"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "ae6237e3001bd354783f469d754cee875ee9828910461b85a5803f5990213dde"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "78566829e680af4ececbe5b3aa596c06f9bd0c7b83172a50c4347510a0d8cf0a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "90e62f2bc18a74b2ce845e6d5b6b53b96a11e3ce304b83e6278fd3ca0fbed922"
+    sha256                               arm64_linux:       "0557a40320fc342b63c4ebca125d81b8dc782576d619800506e00c4d6dffdf68"
+    sha256                               x86_64_linux:      "ab40f4006173c63e0d138bdd2b6634ee467f4685c2b130a3edaa712bfee0809a"
   end
 
   deny_network_access!

@@ -16,11 +16,12 @@ class Foundry < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "9acb882e4d603375b01d15efc86dfb5e9e5d344534ee29caa96acb0b1ae7979d"
-    sha256 cellar: :any, arm64_sequoia: "7fa4bd804bfc661f485d03d9649030a2704ddcc10621161fbdf592d210c3f1e7"
-    sha256 cellar: :any, arm64_sonoma:  "96e4a7296c13d9ce0f1c4c0a80ddf82cdd934fcc362f3c5ba66729d66c7a06b6"
-    sha256 cellar: :any, arm64_linux:   "5f5dd31240f6320adce2b0a77a42346e6578aae57c08a4f8aff72efab6f5c1ea"
-    sha256 cellar: :any, x86_64_linux:  "17c890376be9c85d8d806d244fceefe1021a0501b7336723c0e8567406eb4f8e"
+    sha256 cellar: :any, arm64_golden_gate: "4ccfccf8eb42342ec23984cf1a6dbab5b80762cba789b71cf993204208ecf9cc"
+    sha256 cellar: :any, arm64_tahoe:       "9acb882e4d603375b01d15efc86dfb5e9e5d344534ee29caa96acb0b1ae7979d"
+    sha256 cellar: :any, arm64_sequoia:     "7fa4bd804bfc661f485d03d9649030a2704ddcc10621161fbdf592d210c3f1e7"
+    sha256 cellar: :any, arm64_sonoma:      "96e4a7296c13d9ce0f1c4c0a80ddf82cdd934fcc362f3c5ba66729d66c7a06b6"
+    sha256 cellar: :any, arm64_linux:       "5f5dd31240f6320adce2b0a77a42346e6578aae57c08a4f8aff72efab6f5c1ea"
+    sha256 cellar: :any, x86_64_linux:      "17c890376be9c85d8d806d244fceefe1021a0501b7336723c0e8567406eb4f8e"
   end
 
   depends_on "help2man" => :build

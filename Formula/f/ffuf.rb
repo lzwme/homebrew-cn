@@ -29,7 +29,7 @@ class Ffuf < Formula
       ape
     EOS
 
-    output = shell_output("#{bin}/ffuf -u https://example.org/FUZZ -w words.txt 2>&1")
+    output = shell_output("#{bin}/ffuf -noninteractive -u https://example.org/FUZZ -w words.txt 2>&1")
     assert_match %r{:: Progress: \[5/5\].*Errors: 0 ::$}, output
   end
 end

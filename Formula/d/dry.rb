@@ -7,12 +7,13 @@ class Dry < Formula
   head "https://github.com/moncho/dry.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3ad59335cbcad844568a7115a7f12f1b298fba6658cb1eadde84cc4a1edd5493"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3ad59335cbcad844568a7115a7f12f1b298fba6658cb1eadde84cc4a1edd5493"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3ad59335cbcad844568a7115a7f12f1b298fba6658cb1eadde84cc4a1edd5493"
-    sha256 cellar: :any_skip_relocation, sonoma:        "526cd8d533f8bc402361b0232210f6c55e6958908ebdbfc55eaefc46df8b6954"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "11651faa99235c2f62844b03297422567a16b424b4cc0cefc05a65c53abaf0c3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d3ab2319477e1cf89cee244f6add99a3f5054399ac4681cf25a5a21eca43b103"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "4a2d193f8e7c1732db5602878411ceb79ccf94d5197436c1eafcf15242a13b6e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "3ad59335cbcad844568a7115a7f12f1b298fba6658cb1eadde84cc4a1edd5493"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "3ad59335cbcad844568a7115a7f12f1b298fba6658cb1eadde84cc4a1edd5493"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "3ad59335cbcad844568a7115a7f12f1b298fba6658cb1eadde84cc4a1edd5493"
+    sha256 cellar: :any_skip_relocation, sonoma:            "526cd8d533f8bc402361b0232210f6c55e6958908ebdbfc55eaefc46df8b6954"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "11651faa99235c2f62844b03297422567a16b424b4cc0cefc05a65c53abaf0c3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "d3ab2319477e1cf89cee244f6add99a3f5054399ac4681cf25a5a21eca43b103"
   end
 
   depends_on "go" => :build

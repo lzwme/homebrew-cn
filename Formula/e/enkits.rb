@@ -6,12 +6,13 @@ class Enkits < Formula
   license "Zlib"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "401d2242276475ba7176da65f6de0e70f767a59a1ec50239a14f9d41901e20d0"
-    sha256 cellar: :any, arm64_sequoia: "df82b8c8ce8d5c0ceb55ab5e572b6f61617ba2009469e9586d6adc2b8a6a64f4"
-    sha256 cellar: :any, arm64_sonoma:  "41a74d2427e5a8366243a5e9efb888da9cd5abacef5f2655236c1740f3103369"
-    sha256 cellar: :any, sonoma:        "013b6c4ec41f9a2c7d3523a8d6a9db43ac743db4dd0d4b311437cb60b1fb30ed"
-    sha256 cellar: :any, arm64_linux:   "c2a296ec45bee2c2794aa11ff67f3f42d06c44bb27c0a0524667f7dec957519d"
-    sha256 cellar: :any, x86_64_linux:  "3f68e3934e96a041e79efc854aec8d7e41ec7ca368963008c399bded2af261ac"
+    sha256 cellar: :any, arm64_golden_gate: "1eb3d23be5b64aec1effd546247b553f28839e0b384442bdb2704a838d2b3944"
+    sha256 cellar: :any, arm64_tahoe:       "401d2242276475ba7176da65f6de0e70f767a59a1ec50239a14f9d41901e20d0"
+    sha256 cellar: :any, arm64_sequoia:     "df82b8c8ce8d5c0ceb55ab5e572b6f61617ba2009469e9586d6adc2b8a6a64f4"
+    sha256 cellar: :any, arm64_sonoma:      "41a74d2427e5a8366243a5e9efb888da9cd5abacef5f2655236c1740f3103369"
+    sha256 cellar: :any, sonoma:            "013b6c4ec41f9a2c7d3523a8d6a9db43ac743db4dd0d4b311437cb60b1fb30ed"
+    sha256 cellar: :any, arm64_linux:       "c2a296ec45bee2c2794aa11ff67f3f42d06c44bb27c0a0524667f7dec957519d"
+    sha256 cellar: :any, x86_64_linux:      "3f68e3934e96a041e79efc854aec8d7e41ec7ca368963008c399bded2af261ac"
   end
 
   depends_on "cmake" => :build

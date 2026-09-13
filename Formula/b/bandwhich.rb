@@ -7,12 +7,13 @@ class Bandwhich < Formula
 
   bottle do
     rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3010007ba0d5879cfc388d3b85da78b20705ded1b6fef52aab5ba40b6d4264a1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "68844daddd6f6888ac773f51bb44194c6609f27c1da223abca7690bd3e945673"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b729baafeac965993e3aa7093d3c1af635fcf94fa3fceee6ad261eb16ed3c105"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e8ba6a626e25e7dc40eba76784b871db53461c8031b1e6a2426afab9d7de319a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1a9be322f6125f0cf6deea31fa59fc019a7861b3f80dd5abc297abf4602503d6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8fb5abdfed0d43ec8a0e82b82eb0581f4f760ebbb56a2ac574e9cea5e0128455"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "a8c9f9e2ce61c5637df54d5692a5fbb7a4228420f8a38d867bad172c5d54aef8"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "3010007ba0d5879cfc388d3b85da78b20705ded1b6fef52aab5ba40b6d4264a1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "68844daddd6f6888ac773f51bb44194c6609f27c1da223abca7690bd3e945673"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "b729baafeac965993e3aa7093d3c1af635fcf94fa3fceee6ad261eb16ed3c105"
+    sha256 cellar: :any_skip_relocation, sonoma:            "e8ba6a626e25e7dc40eba76784b871db53461c8031b1e6a2426afab9d7de319a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "1a9be322f6125f0cf6deea31fa59fc019a7861b3f80dd5abc297abf4602503d6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "8fb5abdfed0d43ec8a0e82b82eb0581f4f760ebbb56a2ac574e9cea5e0128455"
   end
 
   depends_on "rust" => :build

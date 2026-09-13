@@ -12,11 +12,12 @@ class Dartaotruntime < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b0e21ad57e0491e917f117354c1bff8e0345c376c9a779a096dfea2971e5de08"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "42565d6f9921a9e73696604a5b647844ede0bf70ab5671a68a96a03e5edcd304"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c1178046abb5d237a996a46b9d5b6c8a8c7f664ef47c8b2a00d154743f6e5098"
-    sha256 cellar: :any,                 arm64_linux:   "ba53af411766a662ff11ac741c120244171aae0ec99d5f27af0c9093f2de33d7"
-    sha256 cellar: :any,                 x86_64_linux:  "03cf434734cae78167eb787fe4c94f8673692f998c990d17d7c41ac06c60cf5c"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "84cd16acf230ae245e9e8ceeba1db15964a8f0cdd65b4ab76ad23eb3f0d1d461"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "874eebf42fd268371e55411baa47b420e57e6722e8ad98a7f598db8ae5f78a92"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "57265a76550b5a1dd6e8cc5003410d4d533eb0a01aa71812f06fd4ec1663da4d"
+    sha256 cellar: :any,                 arm64_linux:       "9b0ca40301c174d20635d33f3a7e319cc38a24ffbbc749602afe3ce435f1a5c1"
+    sha256 cellar: :any,                 x86_64_linux:      "371cc589cc8fbd3689cfef83bb4971d1d1547f35a8d4d4ece255ab4f91aa2681"
   end
 
   depends_on "ninja" => :build
@@ -47,7 +48,11 @@ class Dartaotruntime < Formula
     ENV["DEPOT_TOOLS_UPDATE"] = "0"
     ENV.append_path "PATH", buildpath/"depot-tools"
 
-    system "gclient", "config", "--name", "sdk", "https://dart.googlesource.com/sdk.git@#{version}"
+    # Roll clang to include lld support for arm64e.x1 targets in the macOS 27 SDK (llvm/llvm-project#222721)
+    # TODO: Remove when upstream rolls clang past that commit, see https://github.com/dart-lang/sdk/issues/64264
+    system "gclient", "config", "--name", "sdk",
+           "--custom-var", 'clang_version="git_revision:07d67299a15ce03b053736e2d31a668ee0576987"',
+           "https://dart.googlesource.com/sdk.git@#{version}"
     system "gclient", "sync", "--no-history"
 
     cd "sdk" do

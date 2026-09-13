@@ -8,12 +8,13 @@ class Libgetdata < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "bea9f976c185d2e9e5377cf772635f6e72a40380bda01cb5cbdb65e22a2a30bc"
-    sha256 cellar: :any,                 arm64_sequoia: "c6dfdb5b0c484f44ba193dd52bed2f63d141d30930340fab2bbfc7a95256e4e9"
-    sha256 cellar: :any,                 arm64_sonoma:  "ee816cb9530d8ea7c20cb12cb23fa9a1a39f9568532c8b7489452d9db84c803b"
-    sha256 cellar: :any,                 sonoma:        "df59283bc4c705adf5fe040cd33a4a82f6e724a38f46907817a9f6f6f1064ef7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c7e8f70f87715450ab87a39327ea8dbef1dcf0e83c3e962dc59a4ee8e3a7ea2f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "71be7913ffccb6f8ba8a1cd425b2855046706c0ea14cd0607c1a3c0f295e01de"
+    sha256 cellar: :any,                 arm64_golden_gate: "e1c48caed27954e16d927afa25fcea90a7a19b582c53b88df4386c5c5b19a854"
+    sha256 cellar: :any,                 arm64_tahoe:       "bea9f976c185d2e9e5377cf772635f6e72a40380bda01cb5cbdb65e22a2a30bc"
+    sha256 cellar: :any,                 arm64_sequoia:     "c6dfdb5b0c484f44ba193dd52bed2f63d141d30930340fab2bbfc7a95256e4e9"
+    sha256 cellar: :any,                 arm64_sonoma:      "ee816cb9530d8ea7c20cb12cb23fa9a1a39f9568532c8b7489452d9db84c803b"
+    sha256 cellar: :any,                 sonoma:            "df59283bc4c705adf5fe040cd33a4a82f6e724a38f46907817a9f6f6f1064ef7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "c7e8f70f87715450ab87a39327ea8dbef1dcf0e83c3e962dc59a4ee8e3a7ea2f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "71be7913ffccb6f8ba8a1cd425b2855046706c0ea14cd0607c1a3c0f295e01de"
   end
 
   depends_on "libtool"

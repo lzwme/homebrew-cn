@@ -16,12 +16,13 @@ class Exult < Formula
 
   bottle do
     rebuild 1
-    sha256                               arm64_tahoe:   "a0dbfdb8bd78a5d0aad9492f99ce27f606410f32fb26d5d88b984b1f70d3d2a3"
-    sha256                               arm64_sequoia: "0eeb4d2fa5348ffff683b054760640c65aab531ac602fd842fa2ccfe642405d8"
-    sha256                               arm64_sonoma:  "52f8b804c1b411144b80b0f75c9b423cb82e929689fcf066b1c250f9078360ef"
-    sha256                               sonoma:        "8072faddf279e29551ca3c3c70991a257f6987e03debc6d4d214d4b0bd87ef9c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3fb86582c8e206293be0d6cca39b27a1d248912b5e50537a3f69c8368e60e209"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "11fa142c33631b28b7d65fa2adc30b3e795cf98a845ff7a2475acc4d0f3ee1e1"
+    sha256                               arm64_golden_gate: "e495b300f512f65c3667d2b212fffeb8aec0cc3e40dcbaa3016a7a452350fedf"
+    sha256                               arm64_tahoe:       "a0dbfdb8bd78a5d0aad9492f99ce27f606410f32fb26d5d88b984b1f70d3d2a3"
+    sha256                               arm64_sequoia:     "0eeb4d2fa5348ffff683b054760640c65aab531ac602fd842fa2ccfe642405d8"
+    sha256                               arm64_sonoma:      "52f8b804c1b411144b80b0f75c9b423cb82e929689fcf066b1c250f9078360ef"
+    sha256                               sonoma:            "8072faddf279e29551ca3c3c70991a257f6987e03debc6d4d214d4b0bd87ef9c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "3fb86582c8e206293be0d6cca39b27a1d248912b5e50537a3f69c8368e60e209"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "11fa142c33631b28b7d65fa2adc30b3e795cf98a845ff7a2475acc4d0f3ee1e1"
   end
 
   head do

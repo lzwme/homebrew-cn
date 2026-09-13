@@ -14,12 +14,13 @@ class Clip < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "db658e6fcb0e356d9c460e6a9d68a284b7cfc259410427072fe0a3e980a79c3b"
-    sha256 cellar: :any,                 arm64_sequoia: "39474a5890b2367e6ef4e94946bfd9298d939b124cca416f7c497a9594c767b0"
-    sha256 cellar: :any,                 arm64_sonoma:  "23bb3a919a00675c27a554bb7a23452d619cd19cd7cdb8259f73549500cce43d"
-    sha256 cellar: :any,                 sonoma:        "abf0e00a25e56c1791a9c02c00ce5aa0daacb4fb905e67710b6542d165a56e3d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b8681f1d1300b0344c10090065c88c6bd20a3131963d9253084bc9178428c25f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "11bab1e5129fadb9ee981a3fce1a5d5398e5ca11b7dee3a10dc325b8db8b80bf"
+    sha256 cellar: :any,                 arm64_golden_gate: "6f4f5b0fdfe5ac5664ae3bd01c4fd24ef4aebf8cfd398690e2ddde2bca6ecdbe"
+    sha256 cellar: :any,                 arm64_tahoe:       "db658e6fcb0e356d9c460e6a9d68a284b7cfc259410427072fe0a3e980a79c3b"
+    sha256 cellar: :any,                 arm64_sequoia:     "39474a5890b2367e6ef4e94946bfd9298d939b124cca416f7c497a9594c767b0"
+    sha256 cellar: :any,                 arm64_sonoma:      "23bb3a919a00675c27a554bb7a23452d619cd19cd7cdb8259f73549500cce43d"
+    sha256 cellar: :any,                 sonoma:            "abf0e00a25e56c1791a9c02c00ce5aa0daacb4fb905e67710b6542d165a56e3d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "b8681f1d1300b0344c10090065c88c6bd20a3131963d9253084bc9178428c25f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "11bab1e5129fadb9ee981a3fce1a5d5398e5ca11b7dee3a10dc325b8db8b80bf"
   end
 
   depends_on "cmake" => :build

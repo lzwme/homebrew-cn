@@ -12,11 +12,12 @@ class Syncthing < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4d48134c7f47a5de9b7a07b98be10e42780c77c852d2301b26021e288d5bb709"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fa382557928d53bbc02e65bebbcff20e5fe5406bfdf57a17c7cdb44ffe1b93c7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "359a7fa0adc0f3c7e1b7219e06a18c7f6b3da69bce8d25c8b6236441afeb402c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "52c09f3b97eef64765400e06e1d4d81adf3276867a19c1f21c39a1ba5478b73d"
-    sha256 cellar: :any,                 x86_64_linux:  "286db36bd9eb9e40a00b69825f0e45ee937994ce5a275ea74b65e2c43cbdd684"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "653687fdfe4b0ef441240ad5669997a2f000201a5b365b99d4712daa91b5120f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "4d48134c7f47a5de9b7a07b98be10e42780c77c852d2301b26021e288d5bb709"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "fa382557928d53bbc02e65bebbcff20e5fe5406bfdf57a17c7cdb44ffe1b93c7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "359a7fa0adc0f3c7e1b7219e06a18c7f6b3da69bce8d25c8b6236441afeb402c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "52c09f3b97eef64765400e06e1d4d81adf3276867a19c1f21c39a1ba5478b73d"
+    sha256 cellar: :any,                 x86_64_linux:      "286db36bd9eb9e40a00b69825f0e45ee937994ce5a275ea74b65e2c43cbdd684"
   end
 
   depends_on "go" => :build

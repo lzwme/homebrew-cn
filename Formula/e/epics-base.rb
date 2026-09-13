@@ -8,12 +8,13 @@ class EpicsBase < Formula
 
   bottle do
     rebuild 1
-    sha256 arm64_tahoe:   "b20b14d64026eabd3e617aec7dce5fb7724b83bff4de941802f9c27b4cf64055"
-    sha256 arm64_sequoia: "175210994ae785846d9d0659b91ec166ea26eecfa8347fa0a2209c189294adf4"
-    sha256 arm64_sonoma:  "c4039118d444500c3cccb0efb38a39b0ecee7da21ac1aeb2af2ee784ef5dcae1"
-    sha256 sonoma:        "e47190cedf616e26da12813b64d50ed53fe667c9585a32e70d4a86766a4a833c"
-    sha256 arm64_linux:   "e3339438b5410ad2d7e37c8c03670f770f41af5f6623ee70e417e9ae21b38c5c"
-    sha256 x86_64_linux:  "96ff661a4f2c20e926d3561608358e9854b26dce71c80be58f9b407a63200e72"
+    sha256 arm64_golden_gate: "a3e7864791cee6d3246e371edd21ee023bb672ae3951615a1e5de2f3ea938f51"
+    sha256 arm64_tahoe:       "b20b14d64026eabd3e617aec7dce5fb7724b83bff4de941802f9c27b4cf64055"
+    sha256 arm64_sequoia:     "175210994ae785846d9d0659b91ec166ea26eecfa8347fa0a2209c189294adf4"
+    sha256 arm64_sonoma:      "c4039118d444500c3cccb0efb38a39b0ecee7da21ac1aeb2af2ee784ef5dcae1"
+    sha256 sonoma:            "e47190cedf616e26da12813b64d50ed53fe667c9585a32e70d4a86766a4a833c"
+    sha256 arm64_linux:       "e3339438b5410ad2d7e37c8c03670f770f41af5f6623ee70e417e9ae21b38c5c"
+    sha256 x86_64_linux:      "96ff661a4f2c20e926d3561608358e9854b26dce71c80be58f9b407a63200e72"
   end
 
   depends_on "pkgconf" => :build

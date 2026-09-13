@@ -8,12 +8,13 @@ class Rttr < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "7fea9cfe909f2c178adda52aa0ad4d6bcabd86fc59143a6bf529f3012dce1661"
-    sha256 cellar: :any, arm64_sequoia: "e0ccf9ad193022b31554136cd5b6000bea3de91a2773bd252921a6b9d1c829c0"
-    sha256 cellar: :any, arm64_sonoma:  "fa9c86b1ab2b643f7ee8c827e369ded119d210fff3a14fa9e5bdeb7dc22e0357"
-    sha256 cellar: :any, sonoma:        "5649dfbcc6bc5fed517f407f32bf7e013afd3204ba476be021e629f1d4827997"
-    sha256 cellar: :any, arm64_linux:   "fe4dafc0187aa65ff41620af4852f3f221f78a8de85679736f779154631dc7c5"
-    sha256 cellar: :any, x86_64_linux:  "b61af2cbe570a6bbed52ce7a740737237243eeaa1347e4dfc9aa571d472474cd"
+    sha256 cellar: :any, arm64_golden_gate: "b808c2fca7ba7145d47af3196407471607d087ca8bdbfb8db82b4d0413951c5c"
+    sha256 cellar: :any, arm64_tahoe:       "7fea9cfe909f2c178adda52aa0ad4d6bcabd86fc59143a6bf529f3012dce1661"
+    sha256 cellar: :any, arm64_sequoia:     "e0ccf9ad193022b31554136cd5b6000bea3de91a2773bd252921a6b9d1c829c0"
+    sha256 cellar: :any, arm64_sonoma:      "fa9c86b1ab2b643f7ee8c827e369ded119d210fff3a14fa9e5bdeb7dc22e0357"
+    sha256 cellar: :any, sonoma:            "5649dfbcc6bc5fed517f407f32bf7e013afd3204ba476be021e629f1d4827997"
+    sha256 cellar: :any, arm64_linux:       "fe4dafc0187aa65ff41620af4852f3f221f78a8de85679736f779154631dc7c5"
+    sha256 cellar: :any, x86_64_linux:      "b61af2cbe570a6bbed52ce7a740737237243eeaa1347e4dfc9aa571d472474cd"
   end
 
   depends_on "cmake" => :build

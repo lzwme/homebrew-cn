@@ -65,7 +65,7 @@ class Olsrd < Formula
   end
 
   def install
-    ENV.prepend_path "PATH", Formula["coreutils"].libexec/"gnubin"
+    ENV.prepend_path "PATH", formula_opt_libexec("coreutils")/"gnubin"
     lib.mkpath
     args = %W[
       DESTDIR=#{prefix}

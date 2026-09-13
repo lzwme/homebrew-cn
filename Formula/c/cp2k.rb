@@ -11,12 +11,13 @@ class Cp2k < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "1f620938be50bc0d11008196f8bf5753c898403e8fcada96a90f7834e238ed58"
-    sha256 arm64_sequoia: "5162daa2c7b513221e36306165fc9b6a706e3252c92c463a45a792cafd4d0573"
-    sha256 arm64_sonoma:  "2f6867d95c43533e39d60db7459f4483f0dc82e3d5c3f417689d33fb1ebe2132"
-    sha256 sonoma:        "5303b0a4f6d783ab6d074536d54ea52f2738f596ff43d8a1bc399b4ca6b545f9"
-    sha256 arm64_linux:   "2be5d917d067209333974a1e7efb377b639709a71a3b317b9988920844942579"
-    sha256 x86_64_linux:  "9190e9449a9cf4f3a519b1b34e7f0da5335f4b93d28a8b07fd229d2e36dadc9f"
+    sha256 arm64_golden_gate: "75a631faa05b4ae4d4f36a199d14a0027719fda35bbf41979b18df7168e55170"
+    sha256 arm64_tahoe:       "1f620938be50bc0d11008196f8bf5753c898403e8fcada96a90f7834e238ed58"
+    sha256 arm64_sequoia:     "5162daa2c7b513221e36306165fc9b6a706e3252c92c463a45a792cafd4d0573"
+    sha256 arm64_sonoma:      "2f6867d95c43533e39d60db7459f4483f0dc82e3d5c3f417689d33fb1ebe2132"
+    sha256 sonoma:            "5303b0a4f6d783ab6d074536d54ea52f2738f596ff43d8a1bc399b4ca6b545f9"
+    sha256 arm64_linux:       "2be5d917d067209333974a1e7efb377b639709a71a3b317b9988920844942579"
+    sha256 x86_64_linux:      "9190e9449a9cf4f3a519b1b34e7f0da5335f4b93d28a8b07fd229d2e36dadc9f"
   end
 
   depends_on "cmake" => :build
@@ -77,6 +78,6 @@ class Cp2k < Formula
       refute Utils.binary_linked_to_library?(lib/"libcp2k.dylib", libgomp), "Unwanted linkage to libgomp!"
     end
 
-    system Formula["open-mpi"].bin/"mpirun", bin/"cp2k.psmp", pkgshare/"tests/water.inp"
+    system formula_opt_bin("open-mpi")/"mpirun", bin/"cp2k.psmp", pkgshare/"tests/water.inp"
   end
 end

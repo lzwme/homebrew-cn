@@ -18,6 +18,13 @@ class Kubelogin < Formula
   depends_on "go" => :build
   depends_on "kubernetes-cli" => :test
 
+  # `test do` block performs OIDC discovery against samples.auth0.com
+  deny_network_access! [:build, :postinstall]
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ENV["CGO_ENABLED"] = OS.mac? ? "1" : "0"
     ldflags = "-X main.version=#{version}"

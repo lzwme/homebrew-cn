@@ -25,6 +25,13 @@ class Bazelisk < Formula
     sha256 "4094dc84add2f23823bc341186adf6b8487fbd5d4164bd52d98891c41511eba4"
   end
 
+  # `test do` block downloads a Bazel release
+  deny_network_access! [:build, :postinstall]
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ENV["CGO_ENABLED"] = OS.mac? ? "1" : "0"
     system "go", "build", *std_go_args(ldflags: "-X github.com/bazelbuild/bazelisk/core.BazeliskVersion=#{version}")

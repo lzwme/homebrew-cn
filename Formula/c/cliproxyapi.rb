@@ -13,14 +13,22 @@ class Cliproxyapi < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "2f7e28983a1010aa5631213acf0ec64e1d6e1f51b76450d14ae8946aa86d04cb"
-    sha256 arm64_sequoia: "996159710458fcf1a3c000036f818982da3f6ea6db1a9de77fe257c8fd2566b8"
-    sha256 arm64_sonoma:  "cc32e92a14502c0560c1de2c1366f0fa0f593cca1d674f8feb49f0b8c777b066"
-    sha256 arm64_linux:   "0065ddb14e431d454d12253e318226b9fbf06deceb08e510d0c14ea88352880d"
-    sha256 x86_64_linux:  "79175cdbd99122c318841e9448d15c574672a489aba87c717c650b8516534775"
+    sha256 arm64_golden_gate: "7fd9ca5d423b61aa47fc2146413326d30012238e7942193734caade4f7f99332"
+    sha256 arm64_tahoe:       "2f7e28983a1010aa5631213acf0ec64e1d6e1f51b76450d14ae8946aa86d04cb"
+    sha256 arm64_sequoia:     "996159710458fcf1a3c000036f818982da3f6ea6db1a9de77fe257c8fd2566b8"
+    sha256 arm64_sonoma:      "cc32e92a14502c0560c1de2c1366f0fa0f593cca1d674f8feb49f0b8c777b066"
+    sha256 arm64_linux:       "0065ddb14e431d454d12253e318226b9fbf06deceb08e510d0c14ea88352880d"
+    sha256 x86_64_linux:      "79175cdbd99122c318841e9448d15c574672a489aba87c717c650b8516534775"
   end
 
   depends_on "go" => :build
+
+  # `test do` block needs local sockets for the login flow
+  deny_network_access! [:build, :postinstall]
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     ldflags = %W[

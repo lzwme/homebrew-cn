@@ -49,8 +49,8 @@ class Spotbugs < Formula
         }
       }
     JAVA
-    system Formula["openjdk"].bin/"javac", "HelloWorld.java"
-    system Formula["openjdk"].bin/"jar", "cvfe", "HelloWorld.jar", "HelloWorld", "HelloWorld.class"
+    system formula_opt_bin("openjdk")/"javac", "HelloWorld.java"
+    system formula_opt_bin("openjdk")/"jar", "cvfe", "HelloWorld.jar", "HelloWorld", "HelloWorld.class"
     output = shell_output("#{bin}/spotbugs -textui HelloWorld.jar")
     assert_match(/M V EI.*\nM C UwF.*\n/, output)
   end

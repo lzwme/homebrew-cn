@@ -7,12 +7,13 @@ class Bagel < Formula
   head "https://github.com/boostsecurityio/bagel.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0cf715981bf87fdb4aef2cdd6eb4af837f3338607aa1ffacc0676caa59fc27bf"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0cf715981bf87fdb4aef2cdd6eb4af837f3338607aa1ffacc0676caa59fc27bf"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0cf715981bf87fdb4aef2cdd6eb4af837f3338607aa1ffacc0676caa59fc27bf"
-    sha256 cellar: :any_skip_relocation, sonoma:        "51f18c4663f5db81ae945b5c3fa8a656de8ddaf77007965d1052a37a8583b361"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1e37d48d76657f3789b37ca3d3d996680f6efd53e55856bbd7d36a880f895b9e"
-    sha256 cellar: :any,                 x86_64_linux:  "b6ee520ff010322d113ad92fb6dd41bab9cdb0aa683864732f04895495322490"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "eea8bb259b650509513bc8b3c8334b6de77861dff642c4c8f6f2e7dc89cc616a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "0cf715981bf87fdb4aef2cdd6eb4af837f3338607aa1ffacc0676caa59fc27bf"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "0cf715981bf87fdb4aef2cdd6eb4af837f3338607aa1ffacc0676caa59fc27bf"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "0cf715981bf87fdb4aef2cdd6eb4af837f3338607aa1ffacc0676caa59fc27bf"
+    sha256 cellar: :any_skip_relocation, sonoma:            "51f18c4663f5db81ae945b5c3fa8a656de8ddaf77007965d1052a37a8583b361"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "1e37d48d76657f3789b37ca3d3d996680f6efd53e55856bbd7d36a880f895b9e"
+    sha256 cellar: :any,                 x86_64_linux:      "b6ee520ff010322d113ad92fb6dd41bab9cdb0aa683864732f04895495322490"
   end
 
   depends_on "go" => :build

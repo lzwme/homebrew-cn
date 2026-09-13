@@ -12,12 +12,13 @@ class Libsvm < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "9dc419641847bea4ed0dd9bd75efbcee7ce92258b76d54a71183a8a87822753b"
-    sha256 cellar: :any,                 arm64_sequoia: "dcca828a3fd8e13db027d142d5416fa00c637d00a4baadb188721959baa54eb1"
-    sha256 cellar: :any,                 arm64_sonoma:  "230982cb0d8fdc93e919379e6cd82f3a758293c2adc59863550f585a618d2055"
-    sha256 cellar: :any,                 sonoma:        "8340e3967715a32035f0c88c4645bae3592efc1d7c11280dfb58bd9580e75cda"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a27b8ad220f9d4062b409f1a7f370fd56bacc1205cbcc1a30fdee8208d81f5d7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f86e224fd89d5916216306486326df059340edf248a09e03d9a118add4db35ea"
+    sha256 cellar: :any,                 arm64_golden_gate: "b285bacd4daa0bd9b1337dbea171df78ecfc2008be6932781a804a5730f0a4b7"
+    sha256 cellar: :any,                 arm64_tahoe:       "9dc419641847bea4ed0dd9bd75efbcee7ce92258b76d54a71183a8a87822753b"
+    sha256 cellar: :any,                 arm64_sequoia:     "dcca828a3fd8e13db027d142d5416fa00c637d00a4baadb188721959baa54eb1"
+    sha256 cellar: :any,                 arm64_sonoma:      "230982cb0d8fdc93e919379e6cd82f3a758293c2adc59863550f585a618d2055"
+    sha256 cellar: :any,                 sonoma:            "8340e3967715a32035f0c88c4645bae3592efc1d7c11280dfb58bd9580e75cda"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "a27b8ad220f9d4062b409f1a7f370fd56bacc1205cbcc1a30fdee8208d81f5d7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "f86e224fd89d5916216306486326df059340edf248a09e03d9a118add4db35ea"
   end
 
   def install

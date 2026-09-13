@@ -3,13 +3,13 @@ class RapidMlx < Formula
 
   desc "Fast local AI engine for Apple Silicon with an OpenAI-compatible API"
   homepage "https://github.com/raullenchai/Rapid-MLX"
-  url "https://files.pythonhosted.org/packages/be/18/363c6e6eabc6992bec263ebbe6b8860b3b8173c6093e5c5168911ef406e2/rapid_mlx-0.14.0.tar.gz"
-  sha256 "2c009bc0e29d21556c4dc26099e3941b06cb73d3d730cfd81d95c29dcda08bac"
+  url "https://files.pythonhosted.org/packages/99/20/83bef369fa0dacbd873e63355f23054d59f5bcf9ba6ad9b615b643296161/rapid_mlx-0.14.1.tar.gz"
+  sha256 "d476e16dde0e796b7b6f56e061ca1c1908cd38fae8807733e426a476345e2782"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "66ef0b6512425ed1aa34013d894f764728c73f36743bba20c075636c36ae8ae9"
-    sha256 cellar: :any, arm64_sequoia: "31fe6bcce33e82ebd666c1b57dc76cd26092dec121ce1905fd710d301029da3c"
+    sha256 cellar: :any, arm64_tahoe:   "123a01a32fb75e9fb8fa7463e8a8d4ac3ca31e5e956acb68bf633b58b0720d55"
+    sha256 cellar: :any, arm64_sequoia: "eacf9d0ffb5d3b6f2111d3a99274cf5a9c54b53b0b5023a5ae561be603e54997"
   end
 
   depends_on "cmake" => :build
@@ -104,8 +104,8 @@ class RapidMlx < Formula
   end
 
   resource "huggingface-hub" do
-    url "https://files.pythonhosted.org/packages/35/97/2eb4abaa5b969ed385066a0496a3823b3ff467fc1082e2202955f1867d60/huggingface_hub-1.30.0.tar.gz"
-    sha256 "e6a6120bc8c8e2723d03648434ee247088cceb55ba7067e7d34d692cad5fdb57"
+    url "https://files.pythonhosted.org/packages/9b/f0/61159db90b5cd275d55516fe27920828e7d3be4053fdbdb27c3f70e5f1ef/huggingface_hub-1.31.0.tar.gz"
+    sha256 "f8e9e710a210613fa5d0f26bba6da05ef4aef9fba5a0f23f508f5ac4d08b6f90"
   end
 
   resource "idna" do

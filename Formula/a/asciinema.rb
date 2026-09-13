@@ -7,12 +7,13 @@ class Asciinema < Formula
   head "https://github.com/asciinema/asciinema.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e0b8a518a74f9d270c61c7e892c5e837d1ce997bdf67b7f60c0b6d9572e4c009"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "50c12d3a07d15ef99b30627d32d4b57dc1aca7bd566a58647abe7ef43b0afba7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d7992bbfdf364fd63af72f443628ff06e4d33d2594f338fc23a94dc6eebbcd3e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7317032afdd51cee5f9da0a4578e71a138c26c80271e9a44a53e7e01cb5c0a13"
-    sha256 cellar: :any,                 arm64_linux:   "5cc7b73553b6a49eb9a7073cc51d54eb97ac20eeae2bc7462505c79aa024cde2"
-    sha256 cellar: :any,                 x86_64_linux:  "6c01022b87c51d17090647349980ea61a0cb0543affdb3d8ecdd1e26af2214d4"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "8cf5d8edbdc6c201be82029c5b16678993c7392caedf466378926ee869c8fc78"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "e0b8a518a74f9d270c61c7e892c5e837d1ce997bdf67b7f60c0b6d9572e4c009"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "50c12d3a07d15ef99b30627d32d4b57dc1aca7bd566a58647abe7ef43b0afba7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "d7992bbfdf364fd63af72f443628ff06e4d33d2594f338fc23a94dc6eebbcd3e"
+    sha256 cellar: :any_skip_relocation, sonoma:            "7317032afdd51cee5f9da0a4578e71a138c26c80271e9a44a53e7e01cb5c0a13"
+    sha256 cellar: :any,                 arm64_linux:       "5cc7b73553b6a49eb9a7073cc51d54eb97ac20eeae2bc7462505c79aa024cde2"
+    sha256 cellar: :any,                 x86_64_linux:      "6c01022b87c51d17090647349980ea61a0cb0543affdb3d8ecdd1e26af2214d4"
   end
 
   depends_on "rust" => :build

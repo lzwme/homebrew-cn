@@ -15,12 +15,13 @@ class AssimpAT5 < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "e3b5aa965098a82cc09f46f5bd129b9028a104298fb546485489554376bc6a2e"
-    sha256 cellar: :any,                 arm64_sequoia: "be0c878a7f9ffd255736ce7234aa372530b87fdf607cc82e7a2ff9a8e6abf812"
-    sha256 cellar: :any,                 arm64_sonoma:  "ef66cf43c97023ca761eaf432f7ad1ae99faddc5bc18c9674e287ba832f890e9"
-    sha256 cellar: :any,                 sonoma:        "fa0f212de3c4f8f760ea005f81a13b2ddca9695d0033a5dc64c4253275ba409a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "27d037b74bbbd744295ed2479032ba5e0be1b3afe67d44c45bc1de570e126ee1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f40879bbecd152b067b98d81b1842174091a0c738825689f95565803c165bc73"
+    sha256 cellar: :any,                 arm64_golden_gate: "78c9695457e0e3fd2fdeaea8c03c7e29501afeafe042f99272bbec39a9d9dc70"
+    sha256 cellar: :any,                 arm64_tahoe:       "e3b5aa965098a82cc09f46f5bd129b9028a104298fb546485489554376bc6a2e"
+    sha256 cellar: :any,                 arm64_sequoia:     "be0c878a7f9ffd255736ce7234aa372530b87fdf607cc82e7a2ff9a8e6abf812"
+    sha256 cellar: :any,                 arm64_sonoma:      "ef66cf43c97023ca761eaf432f7ad1ae99faddc5bc18c9674e287ba832f890e9"
+    sha256 cellar: :any,                 sonoma:            "fa0f212de3c4f8f760ea005f81a13b2ddca9695d0033a5dc64c4253275ba409a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "27d037b74bbbd744295ed2479032ba5e0be1b3afe67d44c45bc1de570e126ee1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "f40879bbecd152b067b98d81b1842174091a0c738825689f95565803c165bc73"
   end
 
   keg_only :versioned_formula

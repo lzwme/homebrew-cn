@@ -7,11 +7,12 @@ class Atac < Formula
   head "https://github.com/Julien-cpsn/ATAC.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "54cd6d2a327960ffc2a522b881a40f77470d66a2bd36b673083692c2ef2ebdff"
-    sha256 cellar: :any, arm64_sequoia: "da57838ae9fd6b63987a5890235df6e98edcf399f0703fc959089b09cded5d61"
-    sha256 cellar: :any, arm64_sonoma:  "6e5c38d01a67f50fa345dbd9bc0de70eb5a72094d303bac2d06976889c5920a5"
-    sha256 cellar: :any, arm64_linux:   "542025beacdb2fa6e91d2d61627fca95a7d413f806b556e773661c649aa5a7de"
-    sha256 cellar: :any, x86_64_linux:  "c33c50907289ffbcca9d58c7eea967dfdadb187bf00c087824047d8d56d096de"
+    sha256 cellar: :any, arm64_golden_gate: "bcf660020eb78ba4f18f7988ec33a123edc327dcf41cdeee137a25e700ff9942"
+    sha256 cellar: :any, arm64_tahoe:       "54cd6d2a327960ffc2a522b881a40f77470d66a2bd36b673083692c2ef2ebdff"
+    sha256 cellar: :any, arm64_sequoia:     "da57838ae9fd6b63987a5890235df6e98edcf399f0703fc959089b09cded5d61"
+    sha256 cellar: :any, arm64_sonoma:      "6e5c38d01a67f50fa345dbd9bc0de70eb5a72094d303bac2d06976889c5920a5"
+    sha256 cellar: :any, arm64_linux:       "542025beacdb2fa6e91d2d61627fca95a7d413f806b556e773661c649aa5a7de"
+    sha256 cellar: :any, x86_64_linux:      "c33c50907289ffbcca9d58c7eea967dfdadb187bf00c087824047d8d56d096de"
   end
 
   depends_on "pkgconf" => :build

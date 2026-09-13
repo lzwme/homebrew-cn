@@ -7,14 +7,22 @@ class Crane < Formula
   head "https://github.com/google/go-containerregistry.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "52b52a75d91903ce0526e221a68b366f26ade0bf6cd6cedcc5907bcb2ad0c31e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "52b52a75d91903ce0526e221a68b366f26ade0bf6cd6cedcc5907bcb2ad0c31e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "52b52a75d91903ce0526e221a68b366f26ade0bf6cd6cedcc5907bcb2ad0c31e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3e07ecca62971afe18487ee4baf56f355c4ce260ad5b7af7bdccdb789c534987"
-    sha256 cellar: :any,                 x86_64_linux:  "d7a4c5af9ce9a22c91eb826e7de63caf79e3fd646119f396dea1cdac4599718d"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "52b52a75d91903ce0526e221a68b366f26ade0bf6cd6cedcc5907bcb2ad0c31e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "52b52a75d91903ce0526e221a68b366f26ade0bf6cd6cedcc5907bcb2ad0c31e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "52b52a75d91903ce0526e221a68b366f26ade0bf6cd6cedcc5907bcb2ad0c31e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "52b52a75d91903ce0526e221a68b366f26ade0bf6cd6cedcc5907bcb2ad0c31e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "3e07ecca62971afe18487ee4baf56f355c4ce260ad5b7af7bdccdb789c534987"
+    sha256 cellar: :any,                 x86_64_linux:      "d7a4c5af9ce9a22c91eb826e7de63caf79e3fd646119f396dea1cdac4599718d"
   end
 
   depends_on "go" => :build
+
+  # `test do` block fetches a manifest from gcr.io
+  deny_network_access! [:build, :postinstall]
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     ldflags = %W[-X github.com/google/go-containerregistry/cmd/crane/cmd.Version=#{version}]

@@ -7,11 +7,12 @@ class Fabio < Formula
   head "https://github.com/fabiolb/fabio.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "305f60df381058cb7b8290a6568a5f626e6c6859a183c0246c1f2b69c8a6ac11"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6c7c202047c451df468c9fae9232447d54e15ed786cd5ab286b4456b4952b712"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e375db48b86144d5beb802cc508de623336fdeb9a3241546c5dc537b5d9fc1e8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b315d2d497dd093ca98b5c23ca7645f766bc61e3441e9fe3fa859800429e8ce2"
-    sha256 cellar: :any,                 x86_64_linux:  "6e6e50f2e26a61136eee38547f4be6b668fa9aee6a1af890b7a083a4cccdddda"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "75a5f708981a966b190d40f1ab801ec9323d23b3a768396294644d2b04636036"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "305f60df381058cb7b8290a6568a5f626e6c6859a183c0246c1f2b69c8a6ac11"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "6c7c202047c451df468c9fae9232447d54e15ed786cd5ab286b4456b4952b712"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "e375db48b86144d5beb802cc508de623336fdeb9a3241546c5dc537b5d9fc1e8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "b315d2d497dd093ca98b5c23ca7645f766bc61e3441e9fe3fa859800429e8ce2"
+    sha256 cellar: :any,                 x86_64_linux:      "6e6e50f2e26a61136eee38547f4be6b668fa9aee6a1af890b7a083a4cccdddda"
   end
 
   depends_on "go" => :build

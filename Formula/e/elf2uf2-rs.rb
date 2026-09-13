@@ -6,12 +6,13 @@ class Elf2uf2Rs < Formula
   license "0BSD"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1b6d36f51c622f0baf332930c8ae232cdf04395cfdae78fae45b8560ec51ab54"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8b7ddb264f138b166b3f291dd3f98cb3beba2bff0a7823d36f45c2f4e98b80d6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e0a747e75dfe8250d1722d3781f57bdde73d5b7855150e3d4b344d94099d14a0"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b88fb516410369897f97f16030f48eb276955bb32c9dbf446d532eca2add68a2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e95dda0368015306a494e58f3bbd22717e23b592391b8b0dd0fcd30a0cd617c1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4f360ea5ae0f17d0a57012f80aa69c18a887d964211475e33414e32442d17616"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "b1497d5e07206eaa4d818ccf4ac7d83c64c944dc7b22a47419e776a27ac5facf"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "1b6d36f51c622f0baf332930c8ae232cdf04395cfdae78fae45b8560ec51ab54"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "8b7ddb264f138b166b3f291dd3f98cb3beba2bff0a7823d36f45c2f4e98b80d6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "e0a747e75dfe8250d1722d3781f57bdde73d5b7855150e3d4b344d94099d14a0"
+    sha256 cellar: :any_skip_relocation, sonoma:            "b88fb516410369897f97f16030f48eb276955bb32c9dbf446d532eca2add68a2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "e95dda0368015306a494e58f3bbd22717e23b592391b8b0dd0fcd30a0cd617c1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "4f360ea5ae0f17d0a57012f80aa69c18a887d964211475e33414e32442d17616"
   end
 
   depends_on "rust" => :build

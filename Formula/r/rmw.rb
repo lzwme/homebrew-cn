@@ -12,12 +12,13 @@ class Rmw < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "582a1e00f4cfa06abc1d1c928db5e6e9ddf37e6b510b6be414991ee75b9b6b0b"
-    sha256 arm64_sequoia: "6ac0b6ae8b0fdb7c34048cbe2b65a32e8e1c18a75b25cc6ec5486cf487e05882"
-    sha256 arm64_sonoma:  "c3149b07cca673b4ed9e4c880cd72e9bc72123fc17e922482f43355907fd5e05"
-    sha256 sonoma:        "139d63a0fb57843bd1ebaea407547b0f94cae4e107def758f12f1fef5115bb29"
-    sha256 arm64_linux:   "628897b6cd4cad5395e8590af75f9e19dab5211eb19bdf19a25a637ffdd2496c"
-    sha256 x86_64_linux:  "39fc9e9f2eee1cb58a285d47708967c49ede620db7f40cafc62c9612a585f3e3"
+    sha256 arm64_golden_gate: "aa08f6549af1bbe06dfe4596d1d5ebd27f63f24be0deba4451247afd7426cd15"
+    sha256 arm64_tahoe:       "582a1e00f4cfa06abc1d1c928db5e6e9ddf37e6b510b6be414991ee75b9b6b0b"
+    sha256 arm64_sequoia:     "6ac0b6ae8b0fdb7c34048cbe2b65a32e8e1c18a75b25cc6ec5486cf487e05882"
+    sha256 arm64_sonoma:      "c3149b07cca673b4ed9e4c880cd72e9bc72123fc17e922482f43355907fd5e05"
+    sha256 sonoma:            "139d63a0fb57843bd1ebaea407547b0f94cae4e107def758f12f1fef5115bb29"
+    sha256 arm64_linux:       "628897b6cd4cad5395e8590af75f9e19dab5211eb19bdf19a25a637ffdd2496c"
+    sha256 x86_64_linux:      "39fc9e9f2eee1cb58a285d47708967c49ede620db7f40cafc62c9612a585f3e3"
   end
 
   depends_on "gettext" => :build

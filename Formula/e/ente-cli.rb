@@ -12,12 +12,13 @@ class EnteCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2e90b3d7b814ad43fb45d6c89b9bc1b83c5d686018f7bc26ec33d1dae188c054"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2e90b3d7b814ad43fb45d6c89b9bc1b83c5d686018f7bc26ec33d1dae188c054"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2e90b3d7b814ad43fb45d6c89b9bc1b83c5d686018f7bc26ec33d1dae188c054"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0d9a6a8a180f866e6f98d36647ac1b0c0cb429a9fbf8e87cbb27afea110b3ed0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "20f4389aa51580b8f1455b247e7bc6d7472e9ee5121a1ca2e7692ceffb517e92"
-    sha256 cellar: :any,                 x86_64_linux:  "f8305eb32e5efc46b81c1993fdb5103802e9ef52352e16bb0d05dbe9f4204f38"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "9c515886570e0de9ef642d90fb2f22adc96084d4f02952fa3e42e2afd4878669"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "2e90b3d7b814ad43fb45d6c89b9bc1b83c5d686018f7bc26ec33d1dae188c054"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "2e90b3d7b814ad43fb45d6c89b9bc1b83c5d686018f7bc26ec33d1dae188c054"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "2e90b3d7b814ad43fb45d6c89b9bc1b83c5d686018f7bc26ec33d1dae188c054"
+    sha256 cellar: :any_skip_relocation, sonoma:            "0d9a6a8a180f866e6f98d36647ac1b0c0cb429a9fbf8e87cbb27afea110b3ed0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "20f4389aa51580b8f1455b247e7bc6d7472e9ee5121a1ca2e7692ceffb517e92"
+    sha256 cellar: :any,                 x86_64_linux:      "f8305eb32e5efc46b81c1993fdb5103802e9ef52352e16bb0d05dbe9f4204f38"
   end
 
   depends_on "go" => :build

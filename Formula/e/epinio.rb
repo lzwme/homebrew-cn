@@ -14,11 +14,12 @@ class Epinio < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ceb152d9aa81324871bcb61dd2ca1f477df6a51e31fb2759b86aad056ef796dc"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1c990f700fbdb28f7552a1ef8b15a5912170cc200814c182bc286320d89073c3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "aff93a4f02dd324bd1917959d0bb0a4724af94430d9c5a22df2c67dce1439c45"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d7a514c0d9ad6c271f7e774ce05c63d67fe64b81522956d65f5d387a5fd7ebb2"
-    sha256 cellar: :any,                 x86_64_linux:  "19074c63ac75ff8aee25d418636c674ab194d990e7b03d57882df5e277938062"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "09e49b44b9671640de0f406c48787a1c36b6eea8cdc7ae25ccb822b5924f9232"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "ceb152d9aa81324871bcb61dd2ca1f477df6a51e31fb2759b86aad056ef796dc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "1c990f700fbdb28f7552a1ef8b15a5912170cc200814c182bc286320d89073c3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "aff93a4f02dd324bd1917959d0bb0a4724af94430d9c5a22df2c67dce1439c45"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "d7a514c0d9ad6c271f7e774ce05c63d67fe64b81522956d65f5d387a5fd7ebb2"
+    sha256 cellar: :any,                 x86_64_linux:      "19074c63ac75ff8aee25d418636c674ab194d990e7b03d57882df5e277938062"
   end
 
   depends_on "go" => :build

@@ -7,12 +7,13 @@ class Mani < Formula
   head "https://github.com/alajmo/mani.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e336167638d0959a709f181cc49df2291513cb39c3695eae0fafec647ec796ba"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e336167638d0959a709f181cc49df2291513cb39c3695eae0fafec647ec796ba"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e336167638d0959a709f181cc49df2291513cb39c3695eae0fafec647ec796ba"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2d0acfa8235e756111d56b4458d8c6e3464679c86bc1f404cc819b18bf11f6c3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1666c0236bda8ecbe6488698b97c7208b02bfc50223f6c24fbfde5b270c7c7bc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "03277410ed2ad6bcd485125b3a8bbbc43cbe9b3a60c5d392f837d2b4c3b7a0ec"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "a25d80d8e58444288e18d3439b71d016f79bf643013f936dbb3d2e84f0078969"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "e336167638d0959a709f181cc49df2291513cb39c3695eae0fafec647ec796ba"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "e336167638d0959a709f181cc49df2291513cb39c3695eae0fafec647ec796ba"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "e336167638d0959a709f181cc49df2291513cb39c3695eae0fafec647ec796ba"
+    sha256 cellar: :any_skip_relocation, sonoma:            "2d0acfa8235e756111d56b4458d8c6e3464679c86bc1f404cc819b18bf11f6c3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "1666c0236bda8ecbe6488698b97c7208b02bfc50223f6c24fbfde5b270c7c7bc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "03277410ed2ad6bcd485125b3a8bbbc43cbe9b3a60c5d392f837d2b4c3b7a0ec"
   end
 
   depends_on "go" => :build

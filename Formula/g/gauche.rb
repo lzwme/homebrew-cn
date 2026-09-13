@@ -25,6 +25,8 @@ class Gauche < Formula
     sha256 x86_64_linux:      "ad6815598d031b43b878c75511c43cee7e1d18bafc3cb1e59781c0fcdd5c560d"
   end
 
+  deprecate! date: "2027-03-31", because: "needs EOL `mbedtls@3`"
+
   depends_on "ca-certificates"
   depends_on "mbedtls@3" # https://github.com/shirok/Gauche/issues/1181, https://github.com/shirok/Gauche/issues/1206
 

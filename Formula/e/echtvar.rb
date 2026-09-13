@@ -6,12 +6,12 @@ class Echtvar < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "967774e36783e194a74363623e9a0b9cdfd45aabfc65f733d2c96d9b9b6fda47"
-    sha256 cellar: :any,                 arm64_sequoia: "4070e9a38ac9d8f75cfa5cbb740b248998b6d3f42033de8597f8b8fba3624e9f"
-    sha256 cellar: :any,                 arm64_sonoma:  "7ab19da28e45af8d314ccd2bf7ad7adc61a875ea633673f8354925bc10dc327d"
-    sha256 cellar: :any,                 sonoma:        "cab470a71b38c30e926f6fd91cf7ffee9607434936abd12f230f922f8aa7a387"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9fccf79a988ad5faa9d5d81178597dcda3793373f30bdafa4554d702a5f85477"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "911a3b77a4afd48105d6a398fd58da0709880cb409d712d68a0e552286ec137b"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "b99733c8387d80230aa973fbc0db97f885d7a792aad7b6699855fdb94846effc"
+    sha256 cellar: :any, arm64_tahoe:       "cccb0f49754be42e90f922933a99419073082567bf5526ebb80b131e3846a12f"
+    sha256 cellar: :any, arm64_sequoia:     "38e002a6813dcdaf69846500bd6bfe924565d9ea8c96eb5c7a2d16453bcd4e29"
+    sha256 cellar: :any, arm64_linux:       "bd21001a526b2ddded21f1e35baf7ad15f7df90a2f4898e314fd5f2a6883b0ed"
+    sha256 cellar: :any, x86_64_linux:      "1c29e8ec6a808d0251e1318d1fbd3cb3f7ca23c59b1101faf7c0c7b8c3057ef0"
   end
 
   depends_on "cmake" => :build
@@ -20,12 +20,22 @@ class Echtvar < Formula
   depends_on "python@3.14" => :test
   depends_on "openssl@3"
 
+  uses_from_macos "llvm" => :build # for `libclang`, used by `hts-sys` bindgen
   uses_from_macos "bzip2"
+
+  # Fix build with hts-sys 2.2.1 bindings (no lockfile upstream)
+  patch do
+    url "https://github.com/brentp/echtvar/commit/5d3b3600d0f3a9243b19ed5617076b46276c62fb.patch?full_index=1"
+    sha256 "4ef184305ca098f3b8466b1c08e27354c346aa01653312af99cff657a7c2459b"
+    type :unofficial
+    resolves "https://github.com/brentp/echtvar/pull/59"
+  end
 
   def install
     # portable_simd feature requires nightly.
     # Use a stable-Rust stub to keep the CLI buildable without nightly.
     ENV["RUSTC_BOOTSTRAP"] = "1"
+    ENV["LIBCLANG_PATH"] = formula_opt_lib("llvm") if OS.linux?
 
     system "cargo", "install", *std_cargo_args
     pkgshare.install "tests"

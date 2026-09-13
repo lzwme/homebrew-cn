@@ -6,12 +6,13 @@ class MsdfAtlasGen < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "bc864ee7ffd2ae89c88dd047c727e44fa6b108cb170e4b6d1d81940f1b1b593d"
-    sha256 cellar: :any, arm64_sequoia: "dc4c4069761d4f47b105f0ce5cc0305a09b0a98fa12e42860a584842f58e68d3"
-    sha256 cellar: :any, arm64_sonoma:  "1b1a74c98eeb008f927c1ac0f9a6bbc52e8496776c432036f3d4151b7c97399a"
-    sha256 cellar: :any, sonoma:        "624c0c4f6b14110e9f471c9c4819514a42990aa11e463b0082507e22ebdf1da1"
-    sha256 cellar: :any, arm64_linux:   "4bdcb5e2803790c8feb98a3637b1d4bdfb4f894c9fb32bde1d2e71b6fb65799a"
-    sha256 cellar: :any, x86_64_linux:  "0743b1556ee469a4e9acb87c339c8d1dd74f1d7fb4e53b7b0c9e7550b16dedf2"
+    sha256 cellar: :any, arm64_golden_gate: "d1f84bc5e2d5551433b39c2e4ee165d77c8fdc989e62f428ee99eae1b743e581"
+    sha256 cellar: :any, arm64_tahoe:       "bc864ee7ffd2ae89c88dd047c727e44fa6b108cb170e4b6d1d81940f1b1b593d"
+    sha256 cellar: :any, arm64_sequoia:     "dc4c4069761d4f47b105f0ce5cc0305a09b0a98fa12e42860a584842f58e68d3"
+    sha256 cellar: :any, arm64_sonoma:      "1b1a74c98eeb008f927c1ac0f9a6bbc52e8496776c432036f3d4151b7c97399a"
+    sha256 cellar: :any, sonoma:            "624c0c4f6b14110e9f471c9c4819514a42990aa11e463b0082507e22ebdf1da1"
+    sha256 cellar: :any, arm64_linux:       "4bdcb5e2803790c8feb98a3637b1d4bdfb4f894c9fb32bde1d2e71b6fb65799a"
+    sha256 cellar: :any, x86_64_linux:      "0743b1556ee469a4e9acb87c339c8d1dd74f1d7fb4e53b7b0c9e7550b16dedf2"
   end
 
   depends_on "cmake" => :build

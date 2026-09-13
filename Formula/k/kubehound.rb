@@ -25,8 +25,8 @@ class Kubehound < Formula
   depends_on "go" => [:build, :test]
 
   def install
-    goos = Utils.safe_popen_read("#{Formula["go"].bin}/go", "env", "GOOS").chomp
-    goarch = Utils.safe_popen_read("#{Formula["go"].bin}/go", "env", "GOARCH").chomp
+    goos = Utils.safe_popen_read("#{formula_opt_bin("go")}/go", "env", "GOOS").chomp
+    goarch = Utils.safe_popen_read("#{formula_opt_bin("go")}/go", "env", "GOARCH").chomp
 
     ldflags = %W[
       -X github.com/DataDog/KubeHound/pkg/config.BuildVersion=v#{version}

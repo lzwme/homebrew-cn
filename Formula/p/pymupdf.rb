@@ -7,12 +7,13 @@ class Pymupdf < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "5260262e08cfd6d674ace486ae8cbe1fe5db97077ac74f50dbfdb6c6153f72ff"
-    sha256 cellar: :any, arm64_sequoia: "ec6262a6e9aa0e00fb1eb5cab005b89fb6798e44a2820cb099dee93bed1b559f"
-    sha256 cellar: :any, arm64_sonoma:  "766d93639ef0d2781a12c4fa8e2918d5eb6127edf8ddeeb066b3f55b635f8793"
-    sha256 cellar: :any, sonoma:        "201f138705f8095a2b5566b842fcdefa7df3f8619f8c34b46a165d1979439682"
-    sha256 cellar: :any, arm64_linux:   "68793c9b05f9c765769a0300d28a81eb4b76f68bcc5d86971899e2c9157425b8"
-    sha256 cellar: :any, x86_64_linux:  "3221af08dfd35f3b6e697aa0eefa404349c289494095350875e8e85b2edd732d"
+    sha256 cellar: :any, arm64_golden_gate: "be7ecac6ede392ac893409df19c0a15fe9b8525e15fefa7e5ef27cc884ee50d8"
+    sha256 cellar: :any, arm64_tahoe:       "5260262e08cfd6d674ace486ae8cbe1fe5db97077ac74f50dbfdb6c6153f72ff"
+    sha256 cellar: :any, arm64_sequoia:     "ec6262a6e9aa0e00fb1eb5cab005b89fb6798e44a2820cb099dee93bed1b559f"
+    sha256 cellar: :any, arm64_sonoma:      "766d93639ef0d2781a12c4fa8e2918d5eb6127edf8ddeeb066b3f55b635f8793"
+    sha256 cellar: :any, sonoma:            "201f138705f8095a2b5566b842fcdefa7df3f8619f8c34b46a165d1979439682"
+    sha256 cellar: :any, arm64_linux:       "68793c9b05f9c765769a0300d28a81eb4b76f68bcc5d86971899e2c9157425b8"
+    sha256 cellar: :any, x86_64_linux:      "3221af08dfd35f3b6e697aa0eefa404349c289494095350875e8e85b2edd732d"
   end
 
   depends_on "freetype" => :build

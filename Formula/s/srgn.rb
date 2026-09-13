@@ -7,12 +7,13 @@ class Srgn < Formula
   head "https://github.com/alexpovel/srgn.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3f5107accdec90fde7867d0221c94e00f7fca9fa241dcd2a81dcfcd7524a4e57"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "193685484025a92debef55ac8d25d9d39733fe15ca3d83a50de43961dd9c220b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f2ee1a107c6cc81d82a822bad3e25ae902fe5e162e84ad97d1e6297695609450"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d683f84a05fad0c898297cf994169d84597a1008198e6123467a43e6e65fceae"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "bd17abab9141b6d7e6c616f8391794bce236dafda6c61dfbaf3d19ae831ed737"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "97ee55a9233b7d6fac1e1c5ad81d17d3d311ed86f9da3fc93967b1ae02c81e68"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "765a092919e2454c269d52f9b43a62afefb5de109284e9257f7d76d2d0b91dc3"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "3f5107accdec90fde7867d0221c94e00f7fca9fa241dcd2a81dcfcd7524a4e57"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "193685484025a92debef55ac8d25d9d39733fe15ca3d83a50de43961dd9c220b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "f2ee1a107c6cc81d82a822bad3e25ae902fe5e162e84ad97d1e6297695609450"
+    sha256 cellar: :any_skip_relocation, sonoma:            "d683f84a05fad0c898297cf994169d84597a1008198e6123467a43e6e65fceae"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "bd17abab9141b6d7e6c616f8391794bce236dafda6c61dfbaf3d19ae831ed737"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "97ee55a9233b7d6fac1e1c5ad81d17d3d311ed86f9da3fc93967b1ae02c81e68"
   end
 
   depends_on "rust" => :build

@@ -12,12 +12,13 @@ class Riscv64ElfGdb < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "98f9468a8bacea1212198309f81ba81508c22d803777f939148b59762064c872"
-    sha256 arm64_sequoia: "cef0ae45546e228104a8192934114429c9b5408752b871862c9aa4f0b1eb0540"
-    sha256 arm64_sonoma:  "575b8599a0757a89ab1550f1e027590b7e5227ba80675668989d41fc627aa3ed"
-    sha256 sonoma:        "8b84def4486d86fd1295c7f6bbf3bc5b13827c1b510f1a208c6341b92d0c9c97"
-    sha256 arm64_linux:   "514f04c7e2ad3b3e44120a33d03e0e5c789d057a5f4d424d715fb161929050be"
-    sha256 x86_64_linux:  "41e91e7cf8ede779edb53061fd9f9a7259125cee2c01fbcb5df85ee2f3650b70"
+    sha256 arm64_golden_gate: "836cd6b54e5dd4f8d64f774469b0b94802657a8c20f57693cb3de99ce8973559"
+    sha256 arm64_tahoe:       "98f9468a8bacea1212198309f81ba81508c22d803777f939148b59762064c872"
+    sha256 arm64_sequoia:     "cef0ae45546e228104a8192934114429c9b5408752b871862c9aa4f0b1eb0540"
+    sha256 arm64_sonoma:      "575b8599a0757a89ab1550f1e027590b7e5227ba80675668989d41fc627aa3ed"
+    sha256 sonoma:            "8b84def4486d86fd1295c7f6bbf3bc5b13827c1b510f1a208c6341b92d0c9c97"
+    sha256 arm64_linux:       "514f04c7e2ad3b3e44120a33d03e0e5c789d057a5f4d424d715fb161929050be"
+    sha256 x86_64_linux:      "41e91e7cf8ede779edb53061fd9f9a7259125cee2c01fbcb5df85ee2f3650b70"
   end
 
   depends_on "pkgconf" => :build
@@ -79,7 +80,7 @@ class Riscv64ElfGdb < Formula
 
   test do
     (testpath/"test.c").write "void _start(void) {}"
-    system Formula["riscv64-elf-gcc"].bin/"riscv64-elf-gcc", "-g", "-nostdlib", "test.c"
+    system formula_opt_bin("riscv64-elf-gcc")/"riscv64-elf-gcc", "-g", "-nostdlib", "test.c"
     assert_match "Symbol \"_start\" is a function at address 0x",
           shell_output("#{bin}/riscv64-elf-gdb -batch -ex 'info address _start' a.out")
   end

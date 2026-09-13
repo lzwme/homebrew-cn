@@ -7,11 +7,12 @@ class CriTools < Formula
   head "https://github.com/kubernetes-sigs/cri-tools.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0fcc2024f6276a66caba51963dc3111c7af42084e0e6b230935c9c9a9e56fcfa"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0fcc2024f6276a66caba51963dc3111c7af42084e0e6b230935c9c9a9e56fcfa"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0fcc2024f6276a66caba51963dc3111c7af42084e0e6b230935c9c9a9e56fcfa"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d645760e6cb04d2a85ace8ed56564bac2ac3f91cd275bae4bd58debbc60df421"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2db3cef644b5b43f6435cd0d5d591992995708ae0050b114a257a0c68671676d"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "847fb78804de38d4a692d41942f7c2c8900e26d9e6829ce022c5ee3df64d1946"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "0fcc2024f6276a66caba51963dc3111c7af42084e0e6b230935c9c9a9e56fcfa"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "0fcc2024f6276a66caba51963dc3111c7af42084e0e6b230935c9c9a9e56fcfa"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "0fcc2024f6276a66caba51963dc3111c7af42084e0e6b230935c9c9a9e56fcfa"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "d645760e6cb04d2a85ace8ed56564bac2ac3f91cd275bae4bd58debbc60df421"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "2db3cef644b5b43f6435cd0d5d591992995708ae0050b114a257a0c68671676d"
   end
 
   depends_on "go" => :build

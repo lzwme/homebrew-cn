@@ -66,6 +66,6 @@ class RocqMicromegaPlugin < Formula
       From micromega_plugin Require Import PosDef NatDef formula witness.
     ROCQ
     ENV.prepend_path "OCAMLPATH", opt_lib/"ocaml"
-    system Formula["rocq"].bin/"rocq", "compile", testpath/"test.v"
+    system formula_opt_bin("rocq")/"rocq", "compile", testpath/"test.v"
   end
 end

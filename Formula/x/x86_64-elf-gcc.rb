@@ -39,8 +39,8 @@ class X8664ElfGcc < Formula
                              "--disable-nls",
                              "--without-isl",
                              "--without-headers",
-                             "--with-as=#{Formula["x86_64-elf-binutils"].bin}/x86_64-elf-as",
-                             "--with-ld=#{Formula["x86_64-elf-binutils"].bin}/x86_64-elf-ld",
+                             "--with-as=#{formula_opt_bin("x86_64-elf-binutils")}/x86_64-elf-as",
+                             "--with-ld=#{formula_opt_bin("x86_64-elf-binutils")}/x86_64-elf-ld",
                              "--with-system-zlib",
                              "--enable-languages=c,c++"
       system "make", "all-gcc"
@@ -64,7 +64,7 @@ class X8664ElfGcc < Formula
     C
 
     system bin/"x86_64-elf-gcc", "-c", "-o", "test-c.o", "test-c.c"
-    output = shell_output("#{Formula["x86_64-elf-binutils"].bin}/x86_64-elf-objdump -a test-c.o")
+    output = shell_output("#{formula_opt_bin("x86_64-elf-binutils")}/x86_64-elf-objdump -a test-c.o")
     assert_match "file format elf64-x86-64", output
   end
 end

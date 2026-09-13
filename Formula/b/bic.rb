@@ -49,12 +49,13 @@ class Bic < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "95d273611ee6c62e77dbcf51696f2d1af33b20e76586a35d2e93975b92257cbe"
-    sha256 cellar: :any,                 arm64_sequoia: "4d9fe97eade0c6ce2c65f69f49950a1f523351b31fb8f5c7d759617cf1aa0e9e"
-    sha256 cellar: :any,                 arm64_sonoma:  "8394ce75075c03309cd99ebf48367e2bbc2f883a5e99be5256432547489802b5"
-    sha256 cellar: :any,                 sonoma:        "4a93afe6568b694f333695ec33727a9545af2f981c546eb560205099afee3c68"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5d43b0b4a77554c2f5d43f0956994c5008368bd40d9246a364708457c8833932"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "18e8e74a600a6fd58a87eb2592dbc38c079bf9fd08b2e672c0e9a73ea66c0cce"
+    sha256 cellar: :any,                 arm64_golden_gate: "92ec3a62024035924497e3b93de06392a378a8f3cdd98b7354a5e6c5d93d5be3"
+    sha256 cellar: :any,                 arm64_tahoe:       "95d273611ee6c62e77dbcf51696f2d1af33b20e76586a35d2e93975b92257cbe"
+    sha256 cellar: :any,                 arm64_sequoia:     "4d9fe97eade0c6ce2c65f69f49950a1f523351b31fb8f5c7d759617cf1aa0e9e"
+    sha256 cellar: :any,                 arm64_sonoma:      "8394ce75075c03309cd99ebf48367e2bbc2f883a5e99be5256432547489802b5"
+    sha256 cellar: :any,                 sonoma:            "4a93afe6568b694f333695ec33727a9545af2f981c546eb560205099afee3c68"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "5d43b0b4a77554c2f5d43f0956994c5008368bd40d9246a364708457c8833932"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "18e8e74a600a6fd58a87eb2592dbc38c079bf9fd08b2e672c0e9a73ea66c0cce"
   end
 
   head do

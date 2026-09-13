@@ -14,12 +14,13 @@ class Sqlsmith < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "292e6cfdf04ed8f5230af4fe96a82070bdd3d5556944f704ecf9040f7bcc7097"
-    sha256 cellar: :any, arm64_sequoia: "c1ea6cb97d77862f8fb57d9bf930c271fc3b7ab31f94ff44a95dbf6a1721dbb0"
-    sha256 cellar: :any, arm64_sonoma:  "e1ad91268c06dd1ed90e9ce1d3d6a0c406d4b3906c5a35382f55738c20dfe75d"
-    sha256 cellar: :any, sonoma:        "553c79f094d5dac3a281f8453c459d83a23bd56bee125a29eb136e5be88bd89c"
-    sha256 cellar: :any, arm64_linux:   "f7640ea2c2d47008487595723c9b6380cf936a439ff8a25960e26f60e3e35dff"
-    sha256 cellar: :any, x86_64_linux:  "e391dbb5aad821b71e981cfa40d6a9fcdcecc8e022fe5fa45be01fecb6452dc4"
+    sha256 cellar: :any, arm64_golden_gate: "201ecf965ac6739d67d41d07643281dac46e90978ca1417f11e689392d4e32f2"
+    sha256 cellar: :any, arm64_tahoe:       "292e6cfdf04ed8f5230af4fe96a82070bdd3d5556944f704ecf9040f7bcc7097"
+    sha256 cellar: :any, arm64_sequoia:     "c1ea6cb97d77862f8fb57d9bf930c271fc3b7ab31f94ff44a95dbf6a1721dbb0"
+    sha256 cellar: :any, arm64_sonoma:      "e1ad91268c06dd1ed90e9ce1d3d6a0c406d4b3906c5a35382f55738c20dfe75d"
+    sha256 cellar: :any, sonoma:            "553c79f094d5dac3a281f8453c459d83a23bd56bee125a29eb136e5be88bd89c"
+    sha256 cellar: :any, arm64_linux:       "f7640ea2c2d47008487595723c9b6380cf936a439ff8a25960e26f60e3e35dff"
+    sha256 cellar: :any, x86_64_linux:      "e391dbb5aad821b71e981cfa40d6a9fcdcecc8e022fe5fa45be01fecb6452dc4"
   end
 
   depends_on "autoconf" => :build

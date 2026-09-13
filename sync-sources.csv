@@ -3225,7 +3225,6 @@ Homebrew-homebrew-core/Formula/i/icu4c@76.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/icu4c@77.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/icu4c@78.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/id3lib.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/i/id3tool.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/i/id3v2.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/i/identme.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/ideviceinstaller.rb, Homebrew/homebrew-core, 1
@@ -3652,6 +3651,7 @@ Homebrew-homebrew-core/Formula/k/kotlin-language-server.rb, Homebrew/homebrew-co
 Homebrew-homebrew-core/Formula/k/kotlin.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kotofetch.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kpcli.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/k/kpt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kqwait.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kraftkit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kraken2.rb, Homebrew/homebrew-core, 1
@@ -7354,7 +7354,7 @@ Homebrew-homebrew-core/Formula/s/swctl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/swfmill.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/swftools.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/swgp-go.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/s/swi-prolog.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/s/swi-prolog.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/swift-format.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/swift-outdated.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/swift-protobuf.rb, Homebrew/homebrew-core, 0
@@ -7858,7 +7858,6 @@ Homebrew-homebrew-core/Formula/u/ufbt.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/u/uffizzi.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/u/uftp.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/u/uftrace.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/u/uggconv.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/u/ugit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/u/ugrep.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/u/uhd.rb, Homebrew/homebrew-core, 1
@@ -8123,7 +8122,6 @@ Homebrew-homebrew-core/Formula/w/w-calc.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/w/w3m.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/w/wabt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/waffle.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/w/wagyu.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/wails.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/wait4x.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/wait_on.rb, Homebrew/homebrew-core, 0
@@ -8209,7 +8207,7 @@ Homebrew-homebrew-core/Formula/w/wgsl-analyzer.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/whalebrew.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/whatmp3.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/when.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/w/whisper-cpp.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/w/whisper.cpp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/whisperkit-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/whistle.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/w/whodb-cli.rb, Homebrew/homebrew-core, 1
@@ -10983,6 +10981,7 @@ Homebrew-homebrew-cask/Casks/font/font-g/font-goldman.rb, Homebrew/homebrew-cask
 Homebrew-homebrew-cask/Casks/font/font-g/font-golos-text.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-g/font-golos-ui.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-g/font-google-sans-code.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/font/font-g/font-google-sans-flex.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-g/font-googlesanscode-nerd-font.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-g/font-goorm-sans-code.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-g/font-goorm-sans.rb, Homebrew/homebrew-cask, 0
@@ -12604,6 +12603,7 @@ Homebrew-homebrew-cask/Casks/font/font-t/font-times-newer-roman.rb, Homebrew/hom
 Homebrew-homebrew-cask/Casks/font/font-t/font-timmana.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-t/font-tinos-nerd-font.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-t/font-tinos.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/font/font-t/font-tiny5-duo.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-t/font-tiny5.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-t/font-tiro-bangla.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-t/font-tiro-devanagari-hindi.rb, Homebrew/homebrew-cask, 0

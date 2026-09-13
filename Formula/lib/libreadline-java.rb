@@ -11,14 +11,15 @@ class LibreadlineJava < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "c0be01dc30e16481895ced158022bde0abd47698532406fe694974695f028e17"
-    sha256 cellar: :any,                 arm64_sequoia: "52f86fbe9c1b82c3514d13d7a9c4e60cee6f3bf387290ae7ce0ebba3bc98a106"
-    sha256 cellar: :any,                 arm64_sonoma:  "d39da0a4d0597ea0994146549145565b00a23277a2d080fc94391afd0a98d502"
-    sha256 cellar: :any,                 arm64_ventura: "94452a56ce5ffe31e34c87c1778f4e761cbe498ab566344072578d699c8e46b5"
-    sha256 cellar: :any,                 sonoma:        "214bbffd99c95123e7b2fbb4758ae0d911a39d3ca0fc03d9c5fab6429109edc2"
-    sha256 cellar: :any,                 ventura:       "e8b5eef43662b6594f6bf0e4d0fb222da1ed6526eb5c11a0e4d1d97d54f9f184"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6bbf05f7d0a1176b8daf2dd9d01da8bf1708abe03c3c34506ce9b78f327cc341"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a8ae93ee446d1a424cb6d17d8103d0a86fc0d964b0247852cc710872897349b8"
+    sha256 cellar: :any,                 arm64_golden_gate: "f76a5c55722abe8e76ffc6b97bbd242225bf35e74f1a49243d02edc7efe69c17"
+    sha256 cellar: :any,                 arm64_tahoe:       "c0be01dc30e16481895ced158022bde0abd47698532406fe694974695f028e17"
+    sha256 cellar: :any,                 arm64_sequoia:     "52f86fbe9c1b82c3514d13d7a9c4e60cee6f3bf387290ae7ce0ebba3bc98a106"
+    sha256 cellar: :any,                 arm64_sonoma:      "d39da0a4d0597ea0994146549145565b00a23277a2d080fc94391afd0a98d502"
+    sha256 cellar: :any,                 arm64_ventura:     "94452a56ce5ffe31e34c87c1778f4e761cbe498ab566344072578d699c8e46b5"
+    sha256 cellar: :any,                 sonoma:            "214bbffd99c95123e7b2fbb4758ae0d911a39d3ca0fc03d9c5fab6429109edc2"
+    sha256 cellar: :any,                 ventura:           "e8b5eef43662b6594f6bf0e4d0fb222da1ed6526eb5c11a0e4d1d97d54f9f184"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "6bbf05f7d0a1176b8daf2dd9d01da8bf1708abe03c3c34506ce9b78f327cc341"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "a8ae93ee446d1a424cb6d17d8103d0a86fc0d964b0247852cc710872897349b8"
   end
 
   depends_on "openjdk"

@@ -1,16 +1,16 @@
 class OhMyAgent < Formula
   desc "Portable multi-agent harness for .agents-based skills and workflows"
   homepage "https://firstfluke.com/oh-my-agent/"
-  url "https://registry.npmjs.org/oh-my-agent/-/oh-my-agent-13.2.1.tgz"
-  sha256 "67c075b75efad850d5776ac3477d58be90145d01f7ca69ea97fe3c66cb1c3f4d"
+  url "https://registry.npmjs.org/oh-my-agent/-/oh-my-agent-14.7.10.tgz"
+  sha256 "5f948f96611a46f5efbf57ab8dcf1044ea21ccaf06032e4a94b47b1e9e8fbec1"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "183b4bc5540748d1445691f775a209b3f791f8549903e6ad23178780ebaab17d"
-    sha256 cellar: :any, arm64_sequoia: "8fa089e3c04d0d1a935b14baf6e4fc35bc715efbbdfb39e9b1bf60b4032c3704"
-    sha256 cellar: :any, arm64_sonoma:  "ed9ddd435c90ba4028610a90d76077143374bb9a2c9fd19ef069dae3b38af499"
-    sha256 cellar: :any, arm64_linux:   "81974e2bd7d9663acd7e6b0fa2075a4d98d73960efa78b955c72d2ab7ea54e2b"
-    sha256 cellar: :any, x86_64_linux:  "3eabf1f060671adc5bbb561fa7d4f3fd85b83e1a7ad85d845e641b254c3a35ea"
+    sha256 cellar: :any, arm64_golden_gate: "398c8807dd9ab4e59ef7a27d65d0bd293722f767bd6b19eef22018ecc25c635b"
+    sha256 cellar: :any, arm64_tahoe:       "ae7b0de0167d763d18d41106f2104a9a740f435566a520772c470ebf48642fe2"
+    sha256 cellar: :any, arm64_sequoia:     "3582ca9e90d4d436c39bae0c545dc875a7c3a6c218c95cae8ab2de71c3a4f1fb"
+    sha256 cellar: :any, arm64_linux:       "e6aed4c431705ea047805482fab715b002d8b7daddb803964361bf3b08fbdbd6"
+    sha256 cellar: :any, x86_64_linux:      "fe811f2ea857023b04f5ffbe206b1f49781a47060cfc835e42e42ae8df9a2559"
   end
 
   depends_on "node"
@@ -34,7 +34,7 @@ class OhMyAgent < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/oh-my-agent --version")
 
-    output = JSON.parse(shell_output("#{bin}/oh-my-agent memory:init --json"))
+    output = JSON.parse(shell_output("#{bin}/oh-my-agent memory init --json"))
     assert_empty output["updated"]
     assert_path_exists testpath/".agents/state/memories/orchestrator-session.md"
     assert_path_exists testpath/".agents/state/memories/task-board.md"

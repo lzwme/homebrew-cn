@@ -13,12 +13,13 @@ class Flux < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "ae45dfd6ac38b80d0a51f54238e8f30fd083c8788dbef6af6982581e25adf3ce"
-    sha256 cellar: :any,                 arm64_sequoia: "46437c7561cdcf643a25338ac1868336806a0a47b6660187609cb930e1ee2ac4"
-    sha256 cellar: :any,                 arm64_sonoma:  "f1e1c93f2ef4ec60b670eac5f059c7d5aaf634d16be1f5e71402c2a8d348d063"
-    sha256 cellar: :any,                 sonoma:        "52d9852ab4ceb510ab4b73d0cfbdf3989d8cc90a19ef1881abf7eb3da4984287"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ea06fb7ce18ad159293ee47f766b863f67484380ef109de4fdadcc680891f114"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "14c58ee6001c00ef501130b2ce2f65b61b96f93d62b143ae4f58de3485f88792"
+    sha256 cellar: :any,                 arm64_golden_gate: "0443e4bf0189bf8434dbdb907b831a1552d997e27f0ef9f70aa8cbba66d0ec82"
+    sha256 cellar: :any,                 arm64_tahoe:       "ae45dfd6ac38b80d0a51f54238e8f30fd083c8788dbef6af6982581e25adf3ce"
+    sha256 cellar: :any,                 arm64_sequoia:     "46437c7561cdcf643a25338ac1868336806a0a47b6660187609cb930e1ee2ac4"
+    sha256 cellar: :any,                 arm64_sonoma:      "f1e1c93f2ef4ec60b670eac5f059c7d5aaf634d16be1f5e71402c2a8d348d063"
+    sha256 cellar: :any,                 sonoma:            "52d9852ab4ceb510ab4b73d0cfbdf3989d8cc90a19ef1881abf7eb3da4984287"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "ea06fb7ce18ad159293ee47f766b863f67484380ef109de4fdadcc680891f114"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "14c58ee6001c00ef501130b2ce2f65b61b96f93d62b143ae4f58de3485f88792"
   end
 
   depends_on "go" => :build

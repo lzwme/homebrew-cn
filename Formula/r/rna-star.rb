@@ -8,12 +8,13 @@ class RnaStar < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3cc36219b20aabc038935df3d795f5ab8046d67f88ad40bf1e90b74f10746621"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ab4489cd7b4f3d2272e70a64f88240cfa7f9502d96b483459c97900ff61f9f6c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ac0c9e88bb13017f4343db7543406c58c1d3da4f836b21b14a80733dd7aa6f84"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8d1554593695865e8b97479da30e9e85969a09e3bfed7b85cd76a5fc0f92267c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2a0d46c0e0cef0f5dd6eae84587faad3262e7d47bee63308663ec248b8295d2f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "892ea43a227bf609b9d4f82f2c25b5a7a2ced59672133d48fbee2dd29095705f"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "f80ba008d841d0161b05ed5807c919cb78c8140ddd0d2e6ad17d91151478029b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "3cc36219b20aabc038935df3d795f5ab8046d67f88ad40bf1e90b74f10746621"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "ab4489cd7b4f3d2272e70a64f88240cfa7f9502d96b483459c97900ff61f9f6c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "ac0c9e88bb13017f4343db7543406c58c1d3da4f836b21b14a80733dd7aa6f84"
+    sha256 cellar: :any_skip_relocation, sonoma:            "8d1554593695865e8b97479da30e9e85969a09e3bfed7b85cd76a5fc0f92267c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "2a0d46c0e0cef0f5dd6eae84587faad3262e7d47bee63308663ec248b8295d2f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "892ea43a227bf609b9d4f82f2c25b5a7a2ced59672133d48fbee2dd29095705f"
   end
 
   uses_from_macos "vim" => :build # needed for xxd

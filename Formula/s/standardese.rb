@@ -38,12 +38,13 @@ class Standardese < Formula
   end
 
   bottle do
-    sha256               arm64_tahoe:   "02650f5f4cf05d0ceb43b84e961212f94f0c3f8688aa4a59822de3ba7dbb9e88"
-    sha256               arm64_sequoia: "6fcd27cbbf062db43f605889d470370afcbefd2e9c280ab1e1480e2c1a6ad7be"
-    sha256               arm64_sonoma:  "964f027d8dba659ae6b5cf4cb77d42580b2c161c89fbc2697329a735d9953f0e"
-    sha256               sonoma:        "4cd4a037661c297fcbe04c97d0607fb5e092f166a49c318a1b95a75b465e9719"
-    sha256               arm64_linux:   "a3e9bef78629337245d0abd0b7fdec775f345bd5c7c7405804a5213eba7bdb8b"
-    sha256 cellar: :any, x86_64_linux:  "11c3636d297e1abf4e4380db2cd5918a5039ba5b1a69ce3bdefc6f366add499e"
+    sha256               arm64_golden_gate: "55cc26c966ea780990de7bf03d784b91fbccedc3284dc9c1e15a6f3cd6cf4a3c"
+    sha256               arm64_tahoe:       "02650f5f4cf05d0ceb43b84e961212f94f0c3f8688aa4a59822de3ba7dbb9e88"
+    sha256               arm64_sequoia:     "6fcd27cbbf062db43f605889d470370afcbefd2e9c280ab1e1480e2c1a6ad7be"
+    sha256               arm64_sonoma:      "964f027d8dba659ae6b5cf4cb77d42580b2c161c89fbc2697329a735d9953f0e"
+    sha256               sonoma:            "4cd4a037661c297fcbe04c97d0607fb5e092f166a49c318a1b95a75b465e9719"
+    sha256               arm64_linux:       "a3e9bef78629337245d0abd0b7fdec775f345bd5c7c7405804a5213eba7bdb8b"
+    sha256 cellar: :any, x86_64_linux:      "11c3636d297e1abf4e4380db2cd5918a5039ba5b1a69ce3bdefc6f366add499e"
   end
 
   depends_on "cmake" => :build

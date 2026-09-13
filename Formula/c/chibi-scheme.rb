@@ -12,12 +12,13 @@ class ChibiScheme < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "be30e47d3ca1602e832427792d73ca8b9d7253ee2e0d26ad08bdbf36747decfa"
-    sha256 arm64_sequoia: "43d38de30e0c948fc0e3f8fed01cdc4cd0f310e324b8ca74a9c4fffe12235674"
-    sha256 arm64_sonoma:  "5ef6a966e70ef198ea715addd85201027e28f2830f8a836c9ca5f5e1eac05d83"
-    sha256 sonoma:        "971ba79197b82688d88d010a786789cbcd7924aab1bc7a8e57e1e1f3efb2d64d"
-    sha256 arm64_linux:   "b5bd70532e6e7e9d56dd36ac48537bdce0e212021336edb1ac16ac4a5fd8bd07"
-    sha256 x86_64_linux:  "dca1976f433bd1fa6f0d3125e0ec9a5a9b70f390834a1d6fbc1d66eaa91c4680"
+    sha256 arm64_golden_gate: "1fdb758c72a0ed6dc9b45ae64aff781c60b01089ef73d7ac0464ec0e912a031b"
+    sha256 arm64_tahoe:       "be30e47d3ca1602e832427792d73ca8b9d7253ee2e0d26ad08bdbf36747decfa"
+    sha256 arm64_sequoia:     "43d38de30e0c948fc0e3f8fed01cdc4cd0f310e324b8ca74a9c4fffe12235674"
+    sha256 arm64_sonoma:      "5ef6a966e70ef198ea715addd85201027e28f2830f8a836c9ca5f5e1eac05d83"
+    sha256 sonoma:            "971ba79197b82688d88d010a786789cbcd7924aab1bc7a8e57e1e1f3efb2d64d"
+    sha256 arm64_linux:       "b5bd70532e6e7e9d56dd36ac48537bdce0e212021336edb1ac16ac4a5fd8bd07"
+    sha256 x86_64_linux:      "dca1976f433bd1fa6f0d3125e0ec9a5a9b70f390834a1d6fbc1d66eaa91c4680"
   end
 
   def install

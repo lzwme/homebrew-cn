@@ -12,12 +12,13 @@ class Systemc < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "00716d64cbf73b299bc4196805922c068bad1b23a802eba56272e18bfcdfce65"
-    sha256 cellar: :any, arm64_sequoia: "28d7da347948cd78f7193fbb099b257d8d3f946d07bc21742c7b7e690fbf5fe5"
-    sha256 cellar: :any, arm64_sonoma:  "053cf8d14692e94ce4b21efad3d9ec03e881589e58906d0696aadbf41bce7c1e"
-    sha256 cellar: :any, sonoma:        "20aa078e51eb304521647411756566b1bac49d85303c1bf47ce9c5c944298563"
-    sha256 cellar: :any, arm64_linux:   "c206aedbe2c0bd668aa28cef896418cc1ecf2997a7ec303eb1d1aa3edeef25dc"
-    sha256 cellar: :any, x86_64_linux:  "0eb26842c8208705f29dd7906859f3323de39cd358a6133ebee013837d892fdc"
+    sha256 cellar: :any, arm64_golden_gate: "95b2b074c59bc3d261b55138b181cbea15fbb3dc1769916e77e4ce730f8693f1"
+    sha256 cellar: :any, arm64_tahoe:       "00716d64cbf73b299bc4196805922c068bad1b23a802eba56272e18bfcdfce65"
+    sha256 cellar: :any, arm64_sequoia:     "28d7da347948cd78f7193fbb099b257d8d3f946d07bc21742c7b7e690fbf5fe5"
+    sha256 cellar: :any, arm64_sonoma:      "053cf8d14692e94ce4b21efad3d9ec03e881589e58906d0696aadbf41bce7c1e"
+    sha256 cellar: :any, sonoma:            "20aa078e51eb304521647411756566b1bac49d85303c1bf47ce9c5c944298563"
+    sha256 cellar: :any, arm64_linux:       "c206aedbe2c0bd668aa28cef896418cc1ecf2997a7ec303eb1d1aa3edeef25dc"
+    sha256 cellar: :any, x86_64_linux:      "0eb26842c8208705f29dd7906859f3323de39cd358a6133ebee013837d892fdc"
   end
 
   depends_on "cmake" => :build

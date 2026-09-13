@@ -9,12 +9,13 @@ class LeelaZero < Formula
   revision 13
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "ebcec12f4bf9ac5f08ca649e1f5c747ac6ed9fd566191a6f923a2a508008eab7"
-    sha256 cellar: :any, arm64_sequoia: "85999bd9485c5c3618a012f08e3158a9d47b26d51feeb771bfb97f101c250d9f"
-    sha256 cellar: :any, arm64_sonoma:  "a70f5e723931265b9e002844bbed6c5ffd59c6899a64c2500a2433eefd700219"
-    sha256 cellar: :any, sonoma:        "751ba35825b65bcfac431f9ecd3436a721839c4036049c5933107f7dda4974a0"
-    sha256 cellar: :any, arm64_linux:   "3ae95483113aeee4955c35c7caa73d751ca9187aee9415f9c4f1d0a074de779b"
-    sha256 cellar: :any, x86_64_linux:  "d77992e2eb3982eb5026ca9987202627af13e2ceb3b490d1aece28cd8d6409ff"
+    sha256 cellar: :any, arm64_golden_gate: "882441564f2223a249724c627e5de3baa8c49fb949e056e83fe5c64925899575"
+    sha256 cellar: :any, arm64_tahoe:       "ebcec12f4bf9ac5f08ca649e1f5c747ac6ed9fd566191a6f923a2a508008eab7"
+    sha256 cellar: :any, arm64_sequoia:     "85999bd9485c5c3618a012f08e3158a9d47b26d51feeb771bfb97f101c250d9f"
+    sha256 cellar: :any, arm64_sonoma:      "a70f5e723931265b9e002844bbed6c5ffd59c6899a64c2500a2433eefd700219"
+    sha256 cellar: :any, sonoma:            "751ba35825b65bcfac431f9ecd3436a721839c4036049c5933107f7dda4974a0"
+    sha256 cellar: :any, arm64_linux:       "3ae95483113aeee4955c35c7caa73d751ca9187aee9415f9c4f1d0a074de779b"
+    sha256 cellar: :any, x86_64_linux:      "d77992e2eb3982eb5026ca9987202627af13e2ceb3b490d1aece28cd8d6409ff"
   end
 
   depends_on "cmake" => :build

@@ -7,12 +7,13 @@ class Crabz < Formula
   head "https://github.com/sstadick/crabz.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a77bd30e73d8f12c1b496023c63ff4fb2bec06d4e7e4318115446ea48de5c9bb"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f9a4a7963fbb54987363665afd1d43b254a5745629637dcec5fd822221e9e70c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "eba5da5c085d520b409b5ef4a367d05809772534f33e2471fb19565b763da104"
-    sha256 cellar: :any_skip_relocation, sonoma:        "81bc9ff6313da8ed52c653b8c5dd50b32a82db22b5c844d89b2fa975fd113539"
-    sha256 cellar: :any,                 arm64_linux:   "fbe2d80b14af454b5f9bfc6a2e3ea8880b5525f125f4eaab4d4245e53974fe4c"
-    sha256 cellar: :any,                 x86_64_linux:  "17f76a2fa38bd96fd1cb79f113d51759edad95abe9173f67e857d74e5463d52f"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "9e7b6ae9b4895335f60034a78497f1a4a1e0124f62df1703b9dee0bc7a1b61c1"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "a77bd30e73d8f12c1b496023c63ff4fb2bec06d4e7e4318115446ea48de5c9bb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "f9a4a7963fbb54987363665afd1d43b254a5745629637dcec5fd822221e9e70c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "eba5da5c085d520b409b5ef4a367d05809772534f33e2471fb19565b763da104"
+    sha256 cellar: :any_skip_relocation, sonoma:            "81bc9ff6313da8ed52c653b8c5dd50b32a82db22b5c844d89b2fa975fd113539"
+    sha256 cellar: :any,                 arm64_linux:       "fbe2d80b14af454b5f9bfc6a2e3ea8880b5525f125f4eaab4d4245e53974fe4c"
+    sha256 cellar: :any,                 x86_64_linux:      "17f76a2fa38bd96fd1cb79f113d51759edad95abe9173f67e857d74e5463d52f"
   end
 
   depends_on "cmake" => :build

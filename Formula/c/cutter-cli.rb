@@ -7,12 +7,13 @@ class CutterCli < Formula
   head "https://github.com/clear-code/cutter.git", branch: "main"
 
   bottle do
-    sha256 arm64_tahoe:   "2fdeb139a7a097e21c0b3af2d95875b73e8377865422a960b87dc4a632a09122"
-    sha256 arm64_sequoia: "4269bdfaa7adb093818d5bf76cb5ae1a87759872845b0d8b95e6dcee2c779c8f"
-    sha256 arm64_sonoma:  "315fa8bf0c67e9fa5bd8843219545f6d8fcf17acab28dc78d1b4451e55730295"
-    sha256 sonoma:        "26430181959f637d2eff67e251bca6e8514d9f3c23c888ca04cd65ead28b1092"
-    sha256 arm64_linux:   "80317a429c5daf9d5160e61074aadf4f89a2f853067c3883ae46fcefd368d82e"
-    sha256 x86_64_linux:  "25bb198a72fcaa22ec6b5240ed0e0c3da587e0cfae7c1663e2b464a5de2af13f"
+    sha256 arm64_golden_gate: "49567c856d7192cd354bce46293d1717455fb1e5bd8a4dff84c68c20fbec6699"
+    sha256 arm64_tahoe:       "2fdeb139a7a097e21c0b3af2d95875b73e8377865422a960b87dc4a632a09122"
+    sha256 arm64_sequoia:     "4269bdfaa7adb093818d5bf76cb5ae1a87759872845b0d8b95e6dcee2c779c8f"
+    sha256 arm64_sonoma:      "315fa8bf0c67e9fa5bd8843219545f6d8fcf17acab28dc78d1b4451e55730295"
+    sha256 sonoma:            "26430181959f637d2eff67e251bca6e8514d9f3c23c888ca04cd65ead28b1092"
+    sha256 arm64_linux:       "80317a429c5daf9d5160e61074aadf4f89a2f853067c3883ae46fcefd368d82e"
+    sha256 x86_64_linux:      "25bb198a72fcaa22ec6b5240ed0e0c3da587e0cfae7c1663e2b464a5de2af13f"
   end
 
   depends_on "autoconf" => :build

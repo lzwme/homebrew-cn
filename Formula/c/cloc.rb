@@ -7,12 +7,13 @@ class Cloc < Formula
   head "https://github.com/AlDanial/cloc.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4ebeea424f284c38dee5dee3a3a3616a91d12c256e6b15ee7f5b38e459bd93ac"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4ebeea424f284c38dee5dee3a3a3616a91d12c256e6b15ee7f5b38e459bd93ac"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4ebeea424f284c38dee5dee3a3a3616a91d12c256e6b15ee7f5b38e459bd93ac"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e6e69dc850dc0753eecd820ae8f8e546a8ba58157ea56b42583f33406c5cf189"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "788294e319ab096390573ba49942bd61625ef741b3fb5510f343447a0b041964"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3b910e0c4b436a259954e56325baf43988867891164b4e4664ee7e87a0ef2256"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "cc69067e0237bc3fd250165927e15943d58f99de3bf1b5201d7a0d4b1b90a19a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "4ebeea424f284c38dee5dee3a3a3616a91d12c256e6b15ee7f5b38e459bd93ac"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "4ebeea424f284c38dee5dee3a3a3616a91d12c256e6b15ee7f5b38e459bd93ac"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "4ebeea424f284c38dee5dee3a3a3616a91d12c256e6b15ee7f5b38e459bd93ac"
+    sha256 cellar: :any_skip_relocation, sonoma:            "e6e69dc850dc0753eecd820ae8f8e546a8ba58157ea56b42583f33406c5cf189"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "788294e319ab096390573ba49942bd61625ef741b3fb5510f343447a0b041964"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "3b910e0c4b436a259954e56325baf43988867891164b4e4664ee7e87a0ef2256"
   end
 
   uses_from_macos "perl"

@@ -6,12 +6,13 @@ class FennelLs < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b9934b9c9d2df6da8693af31de78af5146777a2ba90bf6f6e57d9ba33d274a09"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b9934b9c9d2df6da8693af31de78af5146777a2ba90bf6f6e57d9ba33d274a09"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b9934b9c9d2df6da8693af31de78af5146777a2ba90bf6f6e57d9ba33d274a09"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b9934b9c9d2df6da8693af31de78af5146777a2ba90bf6f6e57d9ba33d274a09"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b9934b9c9d2df6da8693af31de78af5146777a2ba90bf6f6e57d9ba33d274a09"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2d21888a8352b783653791b7acd6f72be608c6389bc76054456b5796924707a8"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "96b6c43c6a8f866866846a5663b54fb0841f7e33423a2f926bbe03347facbcd4"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "b9934b9c9d2df6da8693af31de78af5146777a2ba90bf6f6e57d9ba33d274a09"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "b9934b9c9d2df6da8693af31de78af5146777a2ba90bf6f6e57d9ba33d274a09"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "b9934b9c9d2df6da8693af31de78af5146777a2ba90bf6f6e57d9ba33d274a09"
+    sha256 cellar: :any_skip_relocation, sonoma:            "b9934b9c9d2df6da8693af31de78af5146777a2ba90bf6f6e57d9ba33d274a09"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "b9934b9c9d2df6da8693af31de78af5146777a2ba90bf6f6e57d9ba33d274a09"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "2d21888a8352b783653791b7acd6f72be608c6389bc76054456b5796924707a8"
   end
 
   depends_on "pandoc" => :build

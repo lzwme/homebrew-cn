@@ -9,12 +9,13 @@ class Bracken < Formula
   head "https://github.com/jenniferlu717/Bracken.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "5ae5954dd0e858cefc0f1820c818b9b800a143de367b02826e9fce331b27d770"
-    sha256 cellar: :any, arm64_sequoia: "e03480ebf6f9900631b05da3586cb6b477c78a6fae77895200212fa986b970ab"
-    sha256 cellar: :any, arm64_sonoma:  "36637a9ac82a43ca8fd0cfbd1f9e3f925641ca2da1f2df4de7d34e552af80346"
-    sha256 cellar: :any, sonoma:        "0e4b2578ec0a82fa034bfbf36020ad6528385f5fef2a9808fdc52971206f12b6"
-    sha256 cellar: :any, arm64_linux:   "3a4ac369c1faf0e3b4b7fcb6332b47b091f588abbbce5cf90a1289def5a11c5e"
-    sha256 cellar: :any, x86_64_linux:  "d54476bbc6a1525ba9e65b23169b508efe1487476ee69418a1b024d2c5448b8b"
+    sha256 cellar: :any, arm64_golden_gate: "ed42a18d1def480dd0a16d005f3b38540de7b0c5b093b58901f88bccd20205dd"
+    sha256 cellar: :any, arm64_tahoe:       "5ae5954dd0e858cefc0f1820c818b9b800a143de367b02826e9fce331b27d770"
+    sha256 cellar: :any, arm64_sequoia:     "e03480ebf6f9900631b05da3586cb6b477c78a6fae77895200212fa986b970ab"
+    sha256 cellar: :any, arm64_sonoma:      "36637a9ac82a43ca8fd0cfbd1f9e3f925641ca2da1f2df4de7d34e552af80346"
+    sha256 cellar: :any, sonoma:            "0e4b2578ec0a82fa034bfbf36020ad6528385f5fef2a9808fdc52971206f12b6"
+    sha256 cellar: :any, arm64_linux:       "3a4ac369c1faf0e3b4b7fcb6332b47b091f588abbbce5cf90a1289def5a11c5e"
+    sha256 cellar: :any, x86_64_linux:      "d54476bbc6a1525ba9e65b23169b508efe1487476ee69418a1b024d2c5448b8b"
   end
 
   depends_on "kraken2"

@@ -12,12 +12,13 @@ class Ldapvi < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "ad2aec84c8f148541274a0c4ba6842d394422a3fd2a2b4fda522f85d2de04609"
-    sha256 cellar: :any,                 arm64_sequoia: "0249209d0b49735a766a5748e276e1cf771a1ac7247ee3a3c3dc440721e28a32"
-    sha256 cellar: :any,                 arm64_sonoma:  "7f21a70ed40abb81148808896b2263cb6c1fe53afc44e60093af4c179a4f59ff"
-    sha256 cellar: :any,                 sonoma:        "a6d7ee2c1782381ee26aafc8ad37d2d6cb6f36867e0148d2fb6b69c28b41812d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4dc2d9dc55afa63a8fd1a6a538a28eae84c9251c4f032916e6e0aeeaf941a849"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3dad790aaa830697230bbfc4e37d8a8ee245d4b066a09679736eed27ab821b43"
+    sha256 cellar: :any,                 arm64_golden_gate: "1d8e08a878da7d96927ed275caa0fdab816b2cb0203a5f7e24f788814a387373"
+    sha256 cellar: :any,                 arm64_tahoe:       "ad2aec84c8f148541274a0c4ba6842d394422a3fd2a2b4fda522f85d2de04609"
+    sha256 cellar: :any,                 arm64_sequoia:     "0249209d0b49735a766a5748e276e1cf771a1ac7247ee3a3c3dc440721e28a32"
+    sha256 cellar: :any,                 arm64_sonoma:      "7f21a70ed40abb81148808896b2263cb6c1fe53afc44e60093af4c179a4f59ff"
+    sha256 cellar: :any,                 sonoma:            "a6d7ee2c1782381ee26aafc8ad37d2d6cb6f36867e0148d2fb6b69c28b41812d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "4dc2d9dc55afa63a8fd1a6a538a28eae84c9251c4f032916e6e0aeeaf941a849"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "3dad790aaa830697230bbfc4e37d8a8ee245d4b066a09679736eed27ab821b43"
   end
 
   depends_on "pkgconf" => :build

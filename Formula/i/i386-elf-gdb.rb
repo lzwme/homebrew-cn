@@ -80,7 +80,7 @@ class I386ElfGdb < Formula
 
   test do
     (testpath/"test.c").write "void _start(void) {}"
-    system Formula["i686-elf-gcc"].bin/"i686-elf-gcc", "-g", "-nostdlib", "test.c"
+    system formula_opt_bin("i686-elf-gcc")/"i686-elf-gcc", "-g", "-nostdlib", "test.c"
 
     output = shell_output("#{bin}/i386-elf-gdb -batch -ex 'info address _start' a.out")
     assert_match "Symbol \"_start\" is a function at address 0x", output

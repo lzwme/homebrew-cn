@@ -23,6 +23,13 @@ class Overmind < Formula
   depends_on "go" => :build
   depends_on "tmux"
 
+  # `test do` block runs tmux, which needs local sockets
+  deny_network_access! [:build, :postinstall]
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     system "go", "build", *std_go_args
   end

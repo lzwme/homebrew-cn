@@ -11,12 +11,13 @@ class MonitoringPlugins < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "4bd874b71c116d54622cbabf83b7be686d41d8550bfeabf2f983e26702785df4"
-    sha256 arm64_sequoia: "570398ffd401bf7caa32f38aa68407f105bfab162fd0a9bbfa0a286d6ed12ab7"
-    sha256 arm64_sonoma:  "a4e0f31d8f66d0a4a22c763c18c3f1136839f3e20c72c05b8a651d7687d75b95"
-    sha256 sonoma:        "2ddd12ad429e24c84c7d12ae0e3eca51f67692711f4e524fb783614c4f7831ae"
-    sha256 arm64_linux:   "a60f35ee14cd47a3f50f6fcc302399ad7399373f5011ff998b16a5809484e8cf"
-    sha256 x86_64_linux:  "8a96a06ff66e4f6630c79df64aa7c7c1f91e56fba79d75555665c1c03fc196b1"
+    sha256 arm64_golden_gate: "c48e6282f589e21627cda28f6be3d77d84299e36936502f5977ebcbc75166e49"
+    sha256 arm64_tahoe:       "4bd874b71c116d54622cbabf83b7be686d41d8550bfeabf2f983e26702785df4"
+    sha256 arm64_sequoia:     "570398ffd401bf7caa32f38aa68407f105bfab162fd0a9bbfa0a286d6ed12ab7"
+    sha256 arm64_sonoma:      "a4e0f31d8f66d0a4a22c763c18c3f1136839f3e20c72c05b8a651d7687d75b95"
+    sha256 sonoma:            "2ddd12ad429e24c84c7d12ae0e3eca51f67692711f4e524fb783614c4f7831ae"
+    sha256 arm64_linux:       "a60f35ee14cd47a3f50f6fcc302399ad7399373f5011ff998b16a5809484e8cf"
+    sha256 x86_64_linux:      "8a96a06ff66e4f6630c79df64aa7c7c1f91e56fba79d75555665c1c03fc196b1"
   end
 
   depends_on "net-snmp"

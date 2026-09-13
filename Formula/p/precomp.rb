@@ -7,18 +7,19 @@ class Precomp < Formula
   head "https://github.com/schnaader/precomp-cpp.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "37a2fbc9d8ef7f210168e5c4f2a3ce13944482c26207fb06ed6cec0138464395"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "e17e36888fa003ff01ce0af6dd634576f21c2f303cea989f507730c95af6f827"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ac582dec76b87c1affdf3a0065385f587b7fb47a3c7bdecd391a0e067fbcbf1c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "33c0801e82dd120a4300a93190e59d99da46d28acb0cef6f6946ec9a75cad1e0"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "5567c2d4a2a3e18046d75f916742f0d112c81c2c744e63aabfaa0f75bb3ab0a8"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "527a77954282f384fd4bd01ec67750d73ee5fc0d989cee4be22ba688a461a90f"
-    sha256 cellar: :any_skip_relocation, sonoma:         "be2cd21d5897846900b73dd4e6677cbf0f5e58d488d41115dd74548866f6401e"
-    sha256 cellar: :any_skip_relocation, ventura:        "77b3e5aedbb4e12c3ded5f546045d04e8cecadcc2c5a4700299ffad6be3912b2"
-    sha256 cellar: :any_skip_relocation, monterey:       "d7b2be3194f675f7db87d9952635a1f0bcb36b2b4cffdc63078d1adf8683bc63"
-    sha256 cellar: :any_skip_relocation, big_sur:        "98d1f2f0987f9317b372895c3af39358585a461023e286baf2ebc67d118cf3be"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "94d7a49395b7ea41b35d5ba993dc244fa2dd0795f300bc27b2f94821047daba3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7affc5c732e89618e28cbdc3a5b93adfd8588fe0af291dde9c940b0667ea8c06"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "6ca4ffb4e211be9dbc8ef05ecc76e3f743ab0f2a43087faf3f79efb07a686814"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "37a2fbc9d8ef7f210168e5c4f2a3ce13944482c26207fb06ed6cec0138464395"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "e17e36888fa003ff01ce0af6dd634576f21c2f303cea989f507730c95af6f827"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "ac582dec76b87c1affdf3a0065385f587b7fb47a3c7bdecd391a0e067fbcbf1c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:     "33c0801e82dd120a4300a93190e59d99da46d28acb0cef6f6946ec9a75cad1e0"
+    sha256 cellar: :any_skip_relocation, arm64_monterey:    "5567c2d4a2a3e18046d75f916742f0d112c81c2c744e63aabfaa0f75bb3ab0a8"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:     "527a77954282f384fd4bd01ec67750d73ee5fc0d989cee4be22ba688a461a90f"
+    sha256 cellar: :any_skip_relocation, sonoma:            "be2cd21d5897846900b73dd4e6677cbf0f5e58d488d41115dd74548866f6401e"
+    sha256 cellar: :any_skip_relocation, ventura:           "77b3e5aedbb4e12c3ded5f546045d04e8cecadcc2c5a4700299ffad6be3912b2"
+    sha256 cellar: :any_skip_relocation, monterey:          "d7b2be3194f675f7db87d9952635a1f0bcb36b2b4cffdc63078d1adf8683bc63"
+    sha256 cellar: :any_skip_relocation, big_sur:           "98d1f2f0987f9317b372895c3af39358585a461023e286baf2ebc67d118cf3be"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "94d7a49395b7ea41b35d5ba993dc244fa2dd0795f300bc27b2f94821047daba3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "7affc5c732e89618e28cbdc3a5b93adfd8588fe0af291dde9c940b0667ea8c06"
   end
 
   depends_on "cmake" => :build

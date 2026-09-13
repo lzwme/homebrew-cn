@@ -19,8 +19,8 @@ class Kubebuilder < Formula
   depends_on "go"
 
   def install
-    goos = Utils.safe_popen_read("#{Formula["go"].bin}/go", "env", "GOOS").chomp
-    goarch = Utils.safe_popen_read("#{Formula["go"].bin}/go", "env", "GOARCH").chomp
+    goos = Utils.safe_popen_read("#{formula_opt_bin("go")}/go", "env", "GOOS").chomp
+    goarch = Utils.safe_popen_read("#{formula_opt_bin("go")}/go", "env", "GOARCH").chomp
 
     ldflags = %W[
       -X sigs.k8s.io/kubebuilder/v4/cmd.kubeBuilderVersion=#{version}

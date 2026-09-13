@@ -12,12 +12,13 @@ class Zssh < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bf52245597c50c4d6d826e9be5a239ba19ac959c304ef69d75f9240092453128"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7f263234cd88fe188d247aaaf24e7d64e8cf990bbf671c0e98b96801710a3c2c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "762936295a2235c95c7a274daaf3e8b86c6154a2c17f272d852c3a951557f4de"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0e88312f111f00dc479f90c1a317f7ceaa0aff00a6d6b7b24114a1952ceca529"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "da32e62bd2610001f40c5e4e4ea30571f772a5198abebb78df5adbb8378218bd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d0550b13ce3b5a29c94c0124f03ac8dffbe76455395172d9b35b00f4c8328068"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "87d6a673ed9a88ee64e84d450685ea197e4894f0a820d773e322b22dfc38225a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "bf52245597c50c4d6d826e9be5a239ba19ac959c304ef69d75f9240092453128"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "7f263234cd88fe188d247aaaf24e7d64e8cf990bbf671c0e98b96801710a3c2c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "762936295a2235c95c7a274daaf3e8b86c6154a2c17f272d852c3a951557f4de"
+    sha256 cellar: :any_skip_relocation, sonoma:            "0e88312f111f00dc479f90c1a317f7ceaa0aff00a6d6b7b24114a1952ceca529"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "da32e62bd2610001f40c5e4e4ea30571f772a5198abebb78df5adbb8378218bd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "d0550b13ce3b5a29c94c0124f03ac8dffbe76455395172d9b35b00f4c8328068"
   end
 
   depends_on "autoconf" => :build
@@ -28,6 +29,9 @@ class Zssh < Formula
   def install
     # Workaround for Xcode 15
     ENV.append_to_cflags "-Wno-incompatible-function-pointer-types" if DevelopmentTools.clang_build_version >= 1500
+
+    # C23 breaks K&R-style function definitions
+    ENV.append_to_cflags "-std=gnu17" if DevelopmentTools.clang_build_version >= 1700
 
     rm_r "lrzsz-0.12.20"
 

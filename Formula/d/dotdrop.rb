@@ -10,11 +10,12 @@ class Dotdrop < Formula
   head "https://github.com/deadc0de6/dotdrop.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ec499a7309db5115a19d2ca70a4cad3a4090a0db2fb0d31c9c363f35fdede723"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d99833bd369f86b4dfe6263408515bd1237611c999c2468a76189e0865c8f126"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d8728b3d4e9d3ef7eea5b8960ef6645caa6512766c56fd8d7e0a8a990a2b8325"
-    sha256 cellar: :any,                 arm64_linux:   "927a05764a648bf582735882c056485f44092e3e6b513d8430cebf92943d7bf4"
-    sha256 cellar: :any,                 x86_64_linux:  "c114fd1b339546eebf3e6f9a67c19e3286316810be99eb9051a7cd5b30da91fe"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "bf2818bd58c0d61fe54f01774fb1abd85462d876675d24138577a84fb00fce30"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "ec499a7309db5115a19d2ca70a4cad3a4090a0db2fb0d31c9c363f35fdede723"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "d99833bd369f86b4dfe6263408515bd1237611c999c2468a76189e0865c8f126"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "d8728b3d4e9d3ef7eea5b8960ef6645caa6512766c56fd8d7e0a8a990a2b8325"
+    sha256 cellar: :any,                 arm64_linux:       "927a05764a648bf582735882c056485f44092e3e6b513d8430cebf92943d7bf4"
+    sha256 cellar: :any,                 x86_64_linux:      "c114fd1b339546eebf3e6f9a67c19e3286316810be99eb9051a7cd5b30da91fe"
   end
 
   depends_on "certifi" => :no_linkage

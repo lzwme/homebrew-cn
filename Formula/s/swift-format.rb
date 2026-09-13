@@ -14,12 +14,13 @@ class SwiftFormat < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c97743f7ae8b7b6284d13b4266f352f8a15c2a6c3783d1ae635d6782a8d1ad69"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a32eef7ab3a18682cc5865060d25801dd948936704ff82f50cc0afeec1416ca9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "18229678d294ef981b9ecff8b943987a8088c484403915ba4c3c219fbc50dc43"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a1dc85faacb255a5f82013217a49f2fce1a1b1dcbb6ee1d23b8ee148a37a4257"
-    sha256 cellar: :any,                 arm64_linux:   "38877c0e9a2c0a0572367c0ab80fbdf3504df8938bfeceb631f21ce7e26aaf46"
-    sha256 cellar: :any,                 x86_64_linux:  "5d7a36152babd3b75ff6ae23a08c361b553b6bf7bdec53f54b67d5ffa4ca8f22"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "deb754710add6ec99b69a2ec22b729419c10b8e8b5af4eb91d28af91cca8cf82"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "c97743f7ae8b7b6284d13b4266f352f8a15c2a6c3783d1ae635d6782a8d1ad69"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "a32eef7ab3a18682cc5865060d25801dd948936704ff82f50cc0afeec1416ca9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "18229678d294ef981b9ecff8b943987a8088c484403915ba4c3c219fbc50dc43"
+    sha256 cellar: :any_skip_relocation, sonoma:            "a1dc85faacb255a5f82013217a49f2fce1a1b1dcbb6ee1d23b8ee148a37a4257"
+    sha256 cellar: :any,                 arm64_linux:       "38877c0e9a2c0a0572367c0ab80fbdf3504df8938bfeceb631f21ce7e26aaf46"
+    sha256 cellar: :any,                 x86_64_linux:      "5d7a36152babd3b75ff6ae23a08c361b553b6bf7bdec53f54b67d5ffa4ca8f22"
   end
 
   # The bottles are built on systems with the CLT installed, and do not work

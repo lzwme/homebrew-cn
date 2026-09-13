@@ -7,12 +7,13 @@ class Envd < Formula
   head "https://github.com/tensorchord/envd.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0bd17b4161896988fb657c4aac8cbfbd22c6a433f247c990e37f9cbb91c15f1f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "97d9a1637a5a10278e57b542145916ea6beb3c1368276a956e11413e9266e412"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "62d41efe36e7d6a169b930033a29cc1851a8520f996f41c04a2d12a8cb322df5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "89257f0e9a759ceed909a4558fa51a5b0986402864c47c0b056cb332f26b004e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ba5bb665dd0d932c6e64a51360a738eb585461d1860f5538b8245f58af2dbc6f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4bbb273c523824f838223846ae143eddfbdba5ca5cbc4d08c4eb0af37fb5afc1"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "2b9b19c6026ebed74785b51c3c22317f5515313a97a5bc3b36c2975f50406ad2"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "0bd17b4161896988fb657c4aac8cbfbd22c6a433f247c990e37f9cbb91c15f1f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "97d9a1637a5a10278e57b542145916ea6beb3c1368276a956e11413e9266e412"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "62d41efe36e7d6a169b930033a29cc1851a8520f996f41c04a2d12a8cb322df5"
+    sha256 cellar: :any_skip_relocation, sonoma:            "89257f0e9a759ceed909a4558fa51a5b0986402864c47c0b056cb332f26b004e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "ba5bb665dd0d932c6e64a51360a738eb585461d1860f5538b8245f58af2dbc6f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "4bbb273c523824f838223846ae143eddfbdba5ca5cbc4d08c4eb0af37fb5afc1"
   end
 
   depends_on "go" => :build

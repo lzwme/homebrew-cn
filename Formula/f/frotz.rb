@@ -8,12 +8,13 @@ class Frotz < Formula
 
   bottle do
     rebuild 1
-    sha256               arm64_tahoe:   "13e6781a5e0e185bb4bb73634f55d01ae38a55127b20f0f6eb0e88ff13bef27a"
-    sha256               arm64_sequoia: "c6318bbdd29d11d3e152f706fb323f0d21a1e2c4c5e34e018b9471a69fcbdc84"
-    sha256               arm64_sonoma:  "5e33bf2af7642a97850c3c2c721e57b7c7ab5fa1f41af67252bba0ddd9f1b9a5"
-    sha256 cellar: :any, sonoma:        "7a026e6bed92668413cc87b1f258bcae2b5148eb0047870213888297321a4c9c"
-    sha256               arm64_linux:   "aa9a5806184fe47d3fefec645caf64db935ff3f85bb4254e2b8ed9ebfb9c4c4a"
-    sha256               x86_64_linux:  "40aecc84a29e2a331e298a2d1a1640c6b5efc63a56960799b04c75ddcf7c169a"
+    sha256               arm64_golden_gate: "2a0d53bfb0390609651f8e621df171de2c560852fd999f1a099e726321c0b9c7"
+    sha256               arm64_tahoe:       "13e6781a5e0e185bb4bb73634f55d01ae38a55127b20f0f6eb0e88ff13bef27a"
+    sha256               arm64_sequoia:     "c6318bbdd29d11d3e152f706fb323f0d21a1e2c4c5e34e018b9471a69fcbdc84"
+    sha256               arm64_sonoma:      "5e33bf2af7642a97850c3c2c721e57b7c7ab5fa1f41af67252bba0ddd9f1b9a5"
+    sha256 cellar: :any, sonoma:            "7a026e6bed92668413cc87b1f258bcae2b5148eb0047870213888297321a4c9c"
+    sha256               arm64_linux:       "aa9a5806184fe47d3fefec645caf64db935ff3f85bb4254e2b8ed9ebfb9c4c4a"
+    sha256               x86_64_linux:      "40aecc84a29e2a331e298a2d1a1640c6b5efc63a56960799b04c75ddcf7c169a"
   end
 
   depends_on "pkgconf" => :build

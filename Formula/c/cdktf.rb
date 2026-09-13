@@ -8,12 +8,13 @@ class Cdktf < Formula
 
   bottle do
     rebuild 1
-    sha256                               arm64_tahoe:   "0e40207364977f0eb648b11eae2b766f395a8b6dbaf680eecd2cb801b84ef05e"
-    sha256                               arm64_sequoia: "d2628c7283e20253e054eaeb7fafda0ccfdea6ccebe1f669ba298c856df85e7a"
-    sha256                               arm64_sonoma:  "949a4c44c8a74fc2a603272681a0c28e74215b7a7a231f7872b62155c5992bd2"
-    sha256                               sonoma:        "bfb78f5f4bc567f55479f27a3311345e03e6243e2d4e28b5e534d9835e1de15e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3f49385492136b6ebfb77a1b6997404bdacfa0e51f19a88bd594728b7c98e556"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "76169751063d6f5b6a692119e83dcc4038d92456e9870877947dd3981277d3f6"
+    sha256 cellar: :any,                 arm64_golden_gate: "70678d7b7907c4f843befe2cc2d96aa59bb2a416a48fd1b2541aecef7379119c"
+    sha256                               arm64_tahoe:       "0e40207364977f0eb648b11eae2b766f395a8b6dbaf680eecd2cb801b84ef05e"
+    sha256                               arm64_sequoia:     "d2628c7283e20253e054eaeb7fafda0ccfdea6ccebe1f669ba298c856df85e7a"
+    sha256                               arm64_sonoma:      "949a4c44c8a74fc2a603272681a0c28e74215b7a7a231f7872b62155c5992bd2"
+    sha256                               sonoma:            "bfb78f5f4bc567f55479f27a3311345e03e6243e2d4e28b5e534d9835e1de15e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "3f49385492136b6ebfb77a1b6997404bdacfa0e51f19a88bd594728b7c98e556"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "76169751063d6f5b6a692119e83dcc4038d92456e9870877947dd3981277d3f6"
   end
 
   # Upstream sunset notice: CDKTF is deprecated and the repo was archived on 2025-12-10.

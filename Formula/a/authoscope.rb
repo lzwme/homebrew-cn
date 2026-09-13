@@ -7,12 +7,13 @@ class Authoscope < Formula
 
   bottle do
     rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c6eaad5b4287b9e44492653bd7d5996f61c1b29d996e6ca4a045c6eb5019a10e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0a49139a43ce427a0b371ff1a5e2ab5859c0e79f3738acbe4b74c17dd4cb8024"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ffc1b377f452c89e3e436f00298de7bfe6bef317b3787cb0b76e3aec5d320338"
-    sha256 cellar: :any_skip_relocation, sonoma:        "50c9f02093d86f2a5c7d957e28204eb5bd6f42f97cbe8b81d4186231d9ff9cdb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0c385626205475728c35fe60f4089c8167f54c4472dabed081391cc6c3801147"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6a73ecf5bcb046d8f4083230f5f425cbe918b7a792f8474c3921f7d2f1075268"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "74412d84ad37a9306a8c611dd6838c760861128b92575c8ddc67ab3e20ff700c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "c6eaad5b4287b9e44492653bd7d5996f61c1b29d996e6ca4a045c6eb5019a10e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "0a49139a43ce427a0b371ff1a5e2ab5859c0e79f3738acbe4b74c17dd4cb8024"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "ffc1b377f452c89e3e436f00298de7bfe6bef317b3787cb0b76e3aec5d320338"
+    sha256 cellar: :any_skip_relocation, sonoma:            "50c9f02093d86f2a5c7d957e28204eb5bd6f42f97cbe8b81d4186231d9ff9cdb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "0c385626205475728c35fe60f4089c8167f54c4472dabed081391cc6c3801147"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "6a73ecf5bcb046d8f4083230f5f425cbe918b7a792f8474c3921f7d2f1075268"
   end
 
   depends_on "pkgconf" => :build

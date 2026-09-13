@@ -10,11 +10,12 @@ class LibheifPlugins < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "9cd1b18c4425d5e0e3b443d4ce55275a8ff669b6004deef6272d4ebc317379fb"
-    sha256 cellar: :any, arm64_sequoia: "e97a838b80bee6f36eceeadf2e1e14a0866284929025d0daca9d4780490290e2"
-    sha256 cellar: :any, arm64_sonoma:  "2b4c4ecbb485d54f375d9ea33f865f2f2f9be1498ca5a500ecaea14315168dca"
-    sha256 cellar: :any, arm64_linux:   "9f851327fd6ba3af76802d167c82b36ffc3d8e240d42c7e4961f73a48cf5727b"
-    sha256 cellar: :any, x86_64_linux:  "6b93ce92fbcc185f1d17ecf8533532fcc06d900c40127f3f5a047c7203571f74"
+    sha256 cellar: :any, arm64_golden_gate: "7096690d937138bcd1d38263f897bf720d838ee5a10d94d9f2fa041cd3f437d5"
+    sha256 cellar: :any, arm64_tahoe:       "9cd1b18c4425d5e0e3b443d4ce55275a8ff669b6004deef6272d4ebc317379fb"
+    sha256 cellar: :any, arm64_sequoia:     "e97a838b80bee6f36eceeadf2e1e14a0866284929025d0daca9d4780490290e2"
+    sha256 cellar: :any, arm64_sonoma:      "2b4c4ecbb485d54f375d9ea33f865f2f2f9be1498ca5a500ecaea14315168dca"
+    sha256 cellar: :any, arm64_linux:       "9f851327fd6ba3af76802d167c82b36ffc3d8e240d42c7e4961f73a48cf5727b"
+    sha256 cellar: :any, x86_64_linux:      "6b93ce92fbcc185f1d17ecf8533532fcc06d900c40127f3f5a047c7203571f74"
   end
 
   depends_on "cmake" => :build
@@ -64,7 +65,7 @@ class LibheifPlugins < Formula
   end
 
   test do
-    libheif_bin = Formula["libheif"].bin
+    libheif_bin = formula_opt_bin("libheif")
     decoders = shell_output("#{libheif_bin}/heif-dec --list-decoders")
     encoders = shell_output("#{libheif_bin}/heif-enc --list-encoders")
 

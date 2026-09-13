@@ -10,12 +10,13 @@ class Fades < Formula
   head "https://github.com/PyAr/fades.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c3618b1ea45886be2e09faa71f9753837fde758195462b94d4626684db4f8d95"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c3618b1ea45886be2e09faa71f9753837fde758195462b94d4626684db4f8d95"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c3618b1ea45886be2e09faa71f9753837fde758195462b94d4626684db4f8d95"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6f9767b1596c8a0a2fe8601caad7ff860a0b2e81ea3a509592c9cfdb5abbd25f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0a3cc7a74768b843fcf23ad64ce59ab1bea584e2525b571fc1a8954c0705c735"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0a3cc7a74768b843fcf23ad64ce59ab1bea584e2525b571fc1a8954c0705c735"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "3b4037f8531acb84d8f51f7abff752cb70dd8664784de560474bb99e85940017"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "c3618b1ea45886be2e09faa71f9753837fde758195462b94d4626684db4f8d95"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "c3618b1ea45886be2e09faa71f9753837fde758195462b94d4626684db4f8d95"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "c3618b1ea45886be2e09faa71f9753837fde758195462b94d4626684db4f8d95"
+    sha256 cellar: :any_skip_relocation, sonoma:            "6f9767b1596c8a0a2fe8601caad7ff860a0b2e81ea3a509592c9cfdb5abbd25f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "0a3cc7a74768b843fcf23ad64ce59ab1bea584e2525b571fc1a8954c0705c735"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "0a3cc7a74768b843fcf23ad64ce59ab1bea584e2525b571fc1a8954c0705c735"
   end
 
   depends_on "python@3.14"

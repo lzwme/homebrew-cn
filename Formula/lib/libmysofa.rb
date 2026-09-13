@@ -7,11 +7,12 @@ class Libmysofa < Formula
   head "https://github.com/hoene/libmysofa.git", branch: "main"
 
   bottle do
-    sha256 arm64_tahoe:   "156aa6e7929414beec0649e6884e86d8d736ded3ed3b354e1ec49955a2a5e715"
-    sha256 arm64_sequoia: "0dee5e7c17334fb428c02360a2a79c04ef8d1ae69309bda97db4349a1c7729ff"
-    sha256 arm64_sonoma:  "cb2ed6152996738ae4776dde28a0471bf0196da65548ec07f6a0a04145ecf085"
-    sha256 arm64_linux:   "15f3f4b330440fe4620dde5c4ce4ec60da6680457ec52e1df170509a1e33b9c6"
-    sha256 x86_64_linux:  "419354e0b321624754fa2701ce8ef4bfdb0972fe2c2a84daaa78bd61450e878c"
+    sha256 arm64_golden_gate: "ad9251af48791d4cf8e1de51fb593ec2815ecbf511389efe3a4ce13329817eaf"
+    sha256 arm64_tahoe:       "156aa6e7929414beec0649e6884e86d8d736ded3ed3b354e1ec49955a2a5e715"
+    sha256 arm64_sequoia:     "0dee5e7c17334fb428c02360a2a79c04ef8d1ae69309bda97db4349a1c7729ff"
+    sha256 arm64_sonoma:      "cb2ed6152996738ae4776dde28a0471bf0196da65548ec07f6a0a04145ecf085"
+    sha256 arm64_linux:       "15f3f4b330440fe4620dde5c4ce4ec60da6680457ec52e1df170509a1e33b9c6"
+    sha256 x86_64_linux:      "419354e0b321624754fa2701ce8ef4bfdb0972fe2c2a84daaa78bd61450e878c"
   end
 
   depends_on "cmake" => :build

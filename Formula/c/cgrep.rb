@@ -8,12 +8,13 @@ class Cgrep < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "01fdd42f0f899829a1d424775f007c97038081b10d8c415b57060e9899fd5c4d"
-    sha256 cellar: :any, arm64_sequoia: "f942a582bb2c973b99a9c72c4884d4976d9256d7a1b2382167e37f868dceb1a2"
-    sha256 cellar: :any, arm64_sonoma:  "9ba33d511c7e54ab3214f6b214b5a4ac2cce87b484624b8217de9882b293f0b5"
-    sha256 cellar: :any, sonoma:        "99684e8c50a0abc2423afbfa7cc48c320b8bc76f6aff279784a364166d1cf544"
-    sha256 cellar: :any, arm64_linux:   "19bf36369385f53e73b8e9c5f17d0c00ac11cf18e520066bf112f9f579a1a5cf"
-    sha256 cellar: :any, x86_64_linux:  "2301142f2d5801d53ab94ecb5a32fe18a6e4d302fd17a0f65f655fb2dbca5e71"
+    sha256 cellar: :any, arm64_golden_gate: "6f6ff12d966729cbd0e01729655baf600a221a9a5089045105545fc4d364a2bb"
+    sha256 cellar: :any, arm64_tahoe:       "01fdd42f0f899829a1d424775f007c97038081b10d8c415b57060e9899fd5c4d"
+    sha256 cellar: :any, arm64_sequoia:     "f942a582bb2c973b99a9c72c4884d4976d9256d7a1b2382167e37f868dceb1a2"
+    sha256 cellar: :any, arm64_sonoma:      "9ba33d511c7e54ab3214f6b214b5a4ac2cce87b484624b8217de9882b293f0b5"
+    sha256 cellar: :any, sonoma:            "99684e8c50a0abc2423afbfa7cc48c320b8bc76f6aff279784a364166d1cf544"
+    sha256 cellar: :any, arm64_linux:       "19bf36369385f53e73b8e9c5f17d0c00ac11cf18e520066bf112f9f579a1a5cf"
+    sha256 cellar: :any, x86_64_linux:      "2301142f2d5801d53ab94ecb5a32fe18a6e4d302fd17a0f65f655fb2dbca5e71"
   end
 
   depends_on "cabal-install" => :build

@@ -7,12 +7,13 @@ class Leetgo < Formula
   head "https://github.com/j178/leetgo.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2a99853980ea02580a158f8168f0470bc3481e8a4250ee7feb048130827cc908"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f7fc64ed28c8c787d9cfc2974a59959a5152501a11e41c63ad1ed018c9f272a3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c45c4b06f6d6265eb9ecd6a4c6ef46de6e7467f3e33120a2818cc7732f7ac29e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5e729850bdf691f56999ba588dfce6cc0742c035b2749701db7581a936fc675e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "43ecd167ba7342b5041e8b5be52b35a6b01ee0b182016c0677781fcec00b9afb"
-    sha256 cellar: :any,                 x86_64_linux:  "0093263f77bc9f1890e826bf31748e5751ecb575f58eefb14f8cc5d21c5fa23b"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "8cfd5fcb1622585f8a9bff7f179b5bb67fac4ffa3104af5cbdc9f620edf90f52"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "2a99853980ea02580a158f8168f0470bc3481e8a4250ee7feb048130827cc908"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "f7fc64ed28c8c787d9cfc2974a59959a5152501a11e41c63ad1ed018c9f272a3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "c45c4b06f6d6265eb9ecd6a4c6ef46de6e7467f3e33120a2818cc7732f7ac29e"
+    sha256 cellar: :any_skip_relocation, sonoma:            "5e729850bdf691f56999ba588dfce6cc0742c035b2749701db7581a936fc675e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "43ecd167ba7342b5041e8b5be52b35a6b01ee0b182016c0677781fcec00b9afb"
+    sha256 cellar: :any,                 x86_64_linux:      "0093263f77bc9f1890e826bf31748e5751ecb575f58eefb14f8cc5d21c5fa23b"
   end
 
   depends_on "go" => :build

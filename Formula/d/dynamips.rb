@@ -1,8 +1,8 @@
 class Dynamips < Formula
   desc "Cisco 7200/3600/3725/3745/2600/1700 Router Emulator"
   homepage "https://github.com/GNS3/dynamips"
-  url "https://ghfast.top/https://github.com/GNS3/dynamips/archive/refs/tags/v0.2.24.tar.gz"
-  sha256 "3956501eb49cb45770226a9a1de3a2f922eec5f47cc1b5fb83097f073456e4a8"
+  url "https://ghfast.top/https://github.com/GNS3/dynamips/archive/refs/tags/v0.2.25.tar.gz"
+  sha256 "af8e5c24906382b041e0f86f8e4290cff78e8ab4f3aa6097f9f7d666d53368bf"
   license "GPL-2.0-only"
 
   livecheck do
@@ -11,12 +11,11 @@ class Dynamips < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f975f78a853c091e7a5240a0a3af2bffcb10f6da5d846d65ef6e3e20c2095641"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "46e1e7197e057e23b506ba0c2af895a59cf85a4c80d597e2921be2d186cdbde2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "75a7b329b142c4301ab39598cba086eeb4eca70e0a0b2ad59f070ac666982098"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7fb56ae3f88704519bf9763700ba331b4c02a28dc83a8dae3ccf5188c2079624"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0b747fd92dad493dbd8eb7d63781845ba7e3583479616ef6d67bc7c927bc4f0b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a7a29bef644cc5a300e9c577145504166815f21ff8d585f8ba99101c277ded8c"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "cc06802900d1ad0a059249764ca05d5031e76379007d64b5a62cd30bf1a927ff"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "162d5d7fd38e318d1298a6a5f19bd246aeef23c9107a8b6211a45285a8481c8c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "0c8519babac9fbc49fc9b55242c1943c89adc2d380b32dd46f655292f132b50e"
+    sha256 cellar: :any,                 arm64_linux:       "9133fad684a0052da2b89a87c12ac0148cd16d8c7a8a505c01bdbddaf3e9f832"
+    sha256 cellar: :any,                 x86_64_linux:      "2ac58a80ac5965ab0cc7b89beac0ab825c7453994428147a65c4a5f2dd0859c0"
   end
 
   depends_on "cmake" => :build

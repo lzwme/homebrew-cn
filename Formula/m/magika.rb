@@ -13,12 +13,13 @@ class Magika < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1e6ee660187e00222ac8f275a6dcc58fe871223bc94f452297cff6d476687810"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d87dee8374e75497ba0a08bff854158560f55d4875939654e5512b3a6c80b706"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4e62da9eb3b91e53f1e38a2128344e6edf75bafdd4c857678ebeb82cfb0406b9"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9de81c192a555a3354d7d84c644e6bcff977eef3b64efd95e81b014a2c629971"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "236bb3ef4c60314dbadb3ec928f32056372f1c27d49a8c3974f60aef1248f6ac"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "18f9da459f002f582bf144208f7c3edb44a58025b7da24283797980216849cdf"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "fc1b0b1f000c9a99c1ea0e3950d872a9264cdbe6d46b0205bc7aeaee0b09f977"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "1e6ee660187e00222ac8f275a6dcc58fe871223bc94f452297cff6d476687810"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "d87dee8374e75497ba0a08bff854158560f55d4875939654e5512b3a6c80b706"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "4e62da9eb3b91e53f1e38a2128344e6edf75bafdd4c857678ebeb82cfb0406b9"
+    sha256 cellar: :any_skip_relocation, sonoma:            "9de81c192a555a3354d7d84c644e6bcff977eef3b64efd95e81b014a2c629971"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "236bb3ef4c60314dbadb3ec928f32056372f1c27d49a8c3974f60aef1248f6ac"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "18f9da459f002f582bf144208f7c3edb44a58025b7da24283797980216849cdf"
   end
 
   depends_on "pkgconf" => :build

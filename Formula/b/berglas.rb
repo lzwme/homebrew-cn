@@ -7,11 +7,12 @@ class Berglas < Formula
   head "https://github.com/GoogleCloudPlatform/berglas.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4ebd8f428d86e1cec1ad5d2813a923a8ff3d403f38879ded45cbcba790139295"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4ebd8f428d86e1cec1ad5d2813a923a8ff3d403f38879ded45cbcba790139295"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4ebd8f428d86e1cec1ad5d2813a923a8ff3d403f38879ded45cbcba790139295"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e306be8ef9b46ca6eb000b6e26b5832d250e441fe36e4f8a4e0be12cfdf61b2c"
-    sha256 cellar: :any,                 x86_64_linux:  "4b306c05c322373c23b8b2a80cb7b6b48b3b6ce3c10341203d3143835c73f177"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "4ebd8f428d86e1cec1ad5d2813a923a8ff3d403f38879ded45cbcba790139295"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "4ebd8f428d86e1cec1ad5d2813a923a8ff3d403f38879ded45cbcba790139295"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "4ebd8f428d86e1cec1ad5d2813a923a8ff3d403f38879ded45cbcba790139295"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "4ebd8f428d86e1cec1ad5d2813a923a8ff3d403f38879ded45cbcba790139295"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "e306be8ef9b46ca6eb000b6e26b5832d250e441fe36e4f8a4e0be12cfdf61b2c"
+    sha256 cellar: :any,                 x86_64_linux:      "4b306c05c322373c23b8b2a80cb7b6b48b3b6ce3c10341203d3143835c73f177"
   end
 
   depends_on "go" => :build

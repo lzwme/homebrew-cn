@@ -7,12 +7,13 @@ class Libspng < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "b7021367db7d381734cae9e0f63d0306a59ebb9cf2483550882e1c944ffd28ba"
-    sha256 cellar: :any, arm64_sequoia: "30ec0f19c1307c939d1be6320da640bce932768da9cc01adb079de69c2e64871"
-    sha256 cellar: :any, arm64_sonoma:  "1760a7efb11ab271254958b8c112c1017066f5dc8054354a99e0fdae26989a0e"
-    sha256 cellar: :any, sonoma:        "9ebab1a353c99351786e0df0921ddd3fc9ace5394853223a7ce1e8e2efd333c0"
-    sha256               arm64_linux:   "beb537b513a5934a9d7a7b45dd73f3a46e4e79ab690b30276fa6e94fea1b0d73"
-    sha256               x86_64_linux:  "1cf4918ffa2127b4ce1a8be69c8710902489fdfed0418acf8b02210a549bba3e"
+    sha256 cellar: :any, arm64_golden_gate: "2bc694add745642f5b9a9365b3a4cdee1fcf9735efb2b2dd38240081226e8c04"
+    sha256 cellar: :any, arm64_tahoe:       "b7021367db7d381734cae9e0f63d0306a59ebb9cf2483550882e1c944ffd28ba"
+    sha256 cellar: :any, arm64_sequoia:     "30ec0f19c1307c939d1be6320da640bce932768da9cc01adb079de69c2e64871"
+    sha256 cellar: :any, arm64_sonoma:      "1760a7efb11ab271254958b8c112c1017066f5dc8054354a99e0fdae26989a0e"
+    sha256 cellar: :any, sonoma:            "9ebab1a353c99351786e0df0921ddd3fc9ace5394853223a7ce1e8e2efd333c0"
+    sha256               arm64_linux:       "beb537b513a5934a9d7a7b45dd73f3a46e4e79ab690b30276fa6e94fea1b0d73"
+    sha256               x86_64_linux:      "1cf4918ffa2127b4ce1a8be69c8710902489fdfed0418acf8b02210a549bba3e"
   end
 
   depends_on "meson" => :build

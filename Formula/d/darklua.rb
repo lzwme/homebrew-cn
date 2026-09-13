@@ -7,12 +7,13 @@ class Darklua < Formula
   head "https://github.com/seaofvoices/darklua.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "907bcc4d12da0c96577cfed0a4ddcaa11976458542911e43231ec5404a074b7e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "468089a06881e0183d019ae9b652c01b0f1ee8f8f6af8cf00a42f0735db70066"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3180d2f2e21e7d37ce66581ae90a1cb8477889221455a0f30296f8fd7856c74e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "42075c3d2cea8d47433efe6352d7a5ccac9774b2d4140671203c0bd496cf47b8"
-    sha256 cellar: :any,                 arm64_linux:   "8ad8ed90fb4521262b66dab8a26667db6114fe5784382023cf7169437917db1b"
-    sha256 cellar: :any,                 x86_64_linux:  "94c09f96d8cc06821efe035d6e634840d9d6b3a662e31dfa76413d10c9cdd50c"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "9d3cbdbe6c0a83cb397f15825c4bba61ea162cd2662b73a3eeeea2a2167ab038"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "907bcc4d12da0c96577cfed0a4ddcaa11976458542911e43231ec5404a074b7e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "468089a06881e0183d019ae9b652c01b0f1ee8f8f6af8cf00a42f0735db70066"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "3180d2f2e21e7d37ce66581ae90a1cb8477889221455a0f30296f8fd7856c74e"
+    sha256 cellar: :any_skip_relocation, sonoma:            "42075c3d2cea8d47433efe6352d7a5ccac9774b2d4140671203c0bd496cf47b8"
+    sha256 cellar: :any,                 arm64_linux:       "8ad8ed90fb4521262b66dab8a26667db6114fe5784382023cf7169437917db1b"
+    sha256 cellar: :any,                 x86_64_linux:      "94c09f96d8cc06821efe035d6e634840d9d6b3a662e31dfa76413d10c9cdd50c"
   end
 
   depends_on "rust" => :build

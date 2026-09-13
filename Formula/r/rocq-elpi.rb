@@ -101,7 +101,7 @@ class RocqElpi < Formula
     ENV["OCAMLFIND_CONF"] = libexec/"lib/findlib.conf"
     cp pkgshare/"example_data_base.v", testpath
     space = " "
-    assert_equal <<~TEXT, shell_output("#{Formula["rocq"].bin}/rocq compile example_data_base.v")
+    assert_equal <<~TEXT, shell_output("#{formula_opt_bin("rocq")}/rocq compile example_data_base.v")
       The Db contains [phone_prefix USA 1]
       Phone prefix for USA is 1
       The Db contains#{space}

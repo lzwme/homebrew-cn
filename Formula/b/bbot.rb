@@ -9,12 +9,13 @@ class Bbot < Formula
   head "https://github.com/blacklanternsecurity/bbot.git", branch: "stable"
 
   bottle do
-    sha256 arm64_tahoe:   "1cd92800f3861beada9c2886db9beb1184ad0358aa08ef5e4f38b4ace9e5c24a"
-    sha256 arm64_sequoia: "d03840669734c0615507e33493022c0d8cc9526eb649e2a6b074992d97e08d69"
-    sha256 arm64_sonoma:  "dd1625a122406073bbce9851082056158885115d1122b01c0532ce6e875cc90d"
-    sha256 sonoma:        "02d5272fdb4d90b4fb0267046ab4e292da6139002e7bec92ce7f30aa6cd22bdd"
-    sha256 arm64_linux:   "8e1b073ec5461d6a45242afdf1d1cbd19618b3f7326f77011c77139baa1fc956"
-    sha256 x86_64_linux:  "781e92807577f3b6fc85cc0cb0c6ea350034627ee65b14a925a83815babc6f45"
+    sha256 arm64_golden_gate: "28d257347f03bf416739083814d9934747c4e4df0b3af388346269a8972634b4"
+    sha256 arm64_tahoe:       "1cd92800f3861beada9c2886db9beb1184ad0358aa08ef5e4f38b4ace9e5c24a"
+    sha256 arm64_sequoia:     "d03840669734c0615507e33493022c0d8cc9526eb649e2a6b074992d97e08d69"
+    sha256 arm64_sonoma:      "dd1625a122406073bbce9851082056158885115d1122b01c0532ce6e875cc90d"
+    sha256 sonoma:            "02d5272fdb4d90b4fb0267046ab4e292da6139002e7bec92ce7f30aa6cd22bdd"
+    sha256 arm64_linux:       "8e1b073ec5461d6a45242afdf1d1cbd19618b3f7326f77011c77139baa1fc956"
+    sha256 x86_64_linux:      "781e92807577f3b6fc85cc0cb0c6ea350034627ee65b14a925a83815babc6f45"
   end
 
   depends_on "cmake" => :build

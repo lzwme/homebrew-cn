@@ -6,12 +6,13 @@ class Libyang < Formula
   license "BSD-3-Clause"
 
   bottle do
-    sha256 arm64_tahoe:   "df2603408387362fe94e1ac5edeafbac46321f9f9f755cab342c7c342db58249"
-    sha256 arm64_sequoia: "0492d0014e209506ee5226ba0845ecec581310a60077e91f2427c2f727a7e9f3"
-    sha256 arm64_sonoma:  "a9faede86d3f06e93214b1b34ae4b0f9babcad694ee135876999334b8a1ad9de"
-    sha256 sonoma:        "715fd9ad19079c748720f743be056834261b817e1a261b4cad3e1747b749772e"
-    sha256 arm64_linux:   "c44b9fd6eb56a1fcbdaeccadef17c4446be642b96c1da0c1b53f53ef5d395ea2"
-    sha256 x86_64_linux:  "29a4c2815e999c23334bf39ef9a46cb15994ce563ef164dfa9c1138173df48a3"
+    sha256 arm64_golden_gate: "70ebbe73f92a25d3f087d98ec393c7f062e433bdb0adc5ab1905d519e2dc4f6d"
+    sha256 arm64_tahoe:       "df2603408387362fe94e1ac5edeafbac46321f9f9f755cab342c7c342db58249"
+    sha256 arm64_sequoia:     "0492d0014e209506ee5226ba0845ecec581310a60077e91f2427c2f727a7e9f3"
+    sha256 arm64_sonoma:      "a9faede86d3f06e93214b1b34ae4b0f9babcad694ee135876999334b8a1ad9de"
+    sha256 sonoma:            "715fd9ad19079c748720f743be056834261b817e1a261b4cad3e1747b749772e"
+    sha256 arm64_linux:       "c44b9fd6eb56a1fcbdaeccadef17c4446be642b96c1da0c1b53f53ef5d395ea2"
+    sha256 x86_64_linux:      "29a4c2815e999c23334bf39ef9a46cb15994ce563ef164dfa9c1138173df48a3"
   end
 
   depends_on "cmake" => :build

@@ -25,6 +25,12 @@ class JfrogCli < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     system "go", "build", *std_go_args(output: bin/"jf")
     bin.install_symlink "jf" => "jfrog"

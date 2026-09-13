@@ -14,11 +14,12 @@ class HaskellLanguageServer < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "4f850e4cce2515edb1efaa7af4f0d9bbbfa40ba1baee33dfcdf77d318a1d6dea"
-    sha256 cellar: :any, arm64_sequoia: "812c706399dfe479985d83d0d76f0b70508325a68c7a0d62b4c736e807121241"
-    sha256 cellar: :any, arm64_sonoma:  "80b4f4068eb9b8c7e449b24f463b95f3ea3d8a1f249367a105ff46aab735fe85"
-    sha256 cellar: :any, arm64_linux:   "483c934e6136e6de6ed62e5f4a233276523a6c6b38f86c83590f824871f2a97d"
-    sha256 cellar: :any, x86_64_linux:  "d1e8069630b25eb9a25d2f03e1a1f9c349c038f7b5c85234062675783770a94d"
+    sha256 cellar: :any, arm64_golden_gate: "41c1cfa58a5033708f1e73dcd67c0f2fbf953a56109143d60785bb77633ba954"
+    sha256 cellar: :any, arm64_tahoe:       "4f850e4cce2515edb1efaa7af4f0d9bbbfa40ba1baee33dfcdf77d318a1d6dea"
+    sha256 cellar: :any, arm64_sequoia:     "812c706399dfe479985d83d0d76f0b70508325a68c7a0d62b4c736e807121241"
+    sha256 cellar: :any, arm64_sonoma:      "80b4f4068eb9b8c7e449b24f463b95f3ea3d8a1f249367a105ff46aab735fe85"
+    sha256 cellar: :any, arm64_linux:       "483c934e6136e6de6ed62e5f4a233276523a6c6b38f86c83590f824871f2a97d"
+    sha256 cellar: :any, x86_64_linux:      "d1e8069630b25eb9a25d2f03e1a1f9c349c038f7b5c85234062675783770a94d"
   end
 
   depends_on "cabal-install" => [:build, :test]

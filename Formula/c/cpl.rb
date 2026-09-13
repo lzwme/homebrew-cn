@@ -11,12 +11,13 @@ class Cpl < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "662a3df38c271a2f52a278f4a2c33be05c988143ec4372c939fad7b613c496a4"
-    sha256 cellar: :any, arm64_sequoia: "6be5591ba836b44df499c525a07ae1b921b173b04ddfa1fe1f21f831a4cc7318"
-    sha256 cellar: :any, arm64_sonoma:  "a8a14966b0f071696bd98f8adc878982f40e4e855491a2c57b42a2fa7dedc3ce"
-    sha256 cellar: :any, sonoma:        "c1558be21fc2294bf314d57fac10925f52e1f97c85de8352aeabab9a5be193e1"
-    sha256 cellar: :any, arm64_linux:   "bd69c8afedad60bc4e91aee09ac0961c7f627011c5d4141ef65917cef0f435ee"
-    sha256 cellar: :any, x86_64_linux:  "1751a96a8ee0576374dce19027f4e18e2a259fb752b322736964cf9d7af009b1"
+    sha256 cellar: :any, arm64_golden_gate: "31e3d3a843b5486352bade309778b1241555b37a0a2fee05e04af4c686bd2e3a"
+    sha256 cellar: :any, arm64_tahoe:       "662a3df38c271a2f52a278f4a2c33be05c988143ec4372c939fad7b613c496a4"
+    sha256 cellar: :any, arm64_sequoia:     "6be5591ba836b44df499c525a07ae1b921b173b04ddfa1fe1f21f831a4cc7318"
+    sha256 cellar: :any, arm64_sonoma:      "a8a14966b0f071696bd98f8adc878982f40e4e855491a2c57b42a2fa7dedc3ce"
+    sha256 cellar: :any, sonoma:            "c1558be21fc2294bf314d57fac10925f52e1f97c85de8352aeabab9a5be193e1"
+    sha256 cellar: :any, arm64_linux:       "bd69c8afedad60bc4e91aee09ac0961c7f627011c5d4141ef65917cef0f435ee"
+    sha256 cellar: :any, x86_64_linux:      "1751a96a8ee0576374dce19027f4e18e2a259fb752b322736964cf9d7af009b1"
   end
 
   depends_on "cfitsio"

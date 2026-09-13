@@ -7,12 +7,13 @@ class Skeema < Formula
   head "https://github.com/skeema/skeema.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "51ca8e90dd79f58b6d91205fc7119eb6fa602a6b40ec776a4acd66a464e85b4e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "51ca8e90dd79f58b6d91205fc7119eb6fa602a6b40ec776a4acd66a464e85b4e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "51ca8e90dd79f58b6d91205fc7119eb6fa602a6b40ec776a4acd66a464e85b4e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d24e03a3c4c65d119f543dcea28cb1e747a7efe5f044a3c18b80d74d65bc6ea4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "19e977df5ef110a1b97291f74cc5202ba89e025fb514f4ce8bbf829cb1a23d1a"
-    sha256 cellar: :any,                 x86_64_linux:  "2fd47fedb6618da28d12b45a419fcd514a203361553e566084190c9b04d8fae4"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "a8724a598b5070d9e68030cf203b62e972ffa5d0550d7b3e146757e5f58bedf5"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "51ca8e90dd79f58b6d91205fc7119eb6fa602a6b40ec776a4acd66a464e85b4e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "51ca8e90dd79f58b6d91205fc7119eb6fa602a6b40ec776a4acd66a464e85b4e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "51ca8e90dd79f58b6d91205fc7119eb6fa602a6b40ec776a4acd66a464e85b4e"
+    sha256 cellar: :any_skip_relocation, sonoma:            "d24e03a3c4c65d119f543dcea28cb1e747a7efe5f044a3c18b80d74d65bc6ea4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "19e977df5ef110a1b97291f74cc5202ba89e025fb514f4ce8bbf829cb1a23d1a"
+    sha256 cellar: :any,                 x86_64_linux:      "2fd47fedb6618da28d12b45a419fcd514a203361553e566084190c9b04d8fae4"
   end
 
   depends_on "go" => :build

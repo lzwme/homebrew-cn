@@ -7,11 +7,12 @@ class Forgejo < Formula
   head "https://codeberg.org/forgejo/forgejo.git", branch: "forgejo"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c52721d0059a0228bfb2e519faef4831c0e71f348766b7da722673f560dee492"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5b4140b88f14f32f4eec705f1d773f88a68c8cb26fd7aa10141e857dd156fefb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "09c0affe2d857a1263b58a04e68fcdc4d1c8d99d151dab5587d6778733bc02f0"
-    sha256 cellar: :any,                 arm64_linux:   "d4c123d2b49a4feedd8a5f6d3116f9920912f8a776158e2352c7a87175c79c2b"
-    sha256 cellar: :any,                 x86_64_linux:  "2746c3f8659cbc80b544ecd722c172eb9ddc5644ca995c90c66ec6b8d4118f9a"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "1ad60108657cac87765d0566c63115403a39940ae5f83d4bb18b5350dddf01aa"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "c52721d0059a0228bfb2e519faef4831c0e71f348766b7da722673f560dee492"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "5b4140b88f14f32f4eec705f1d773f88a68c8cb26fd7aa10141e857dd156fefb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "09c0affe2d857a1263b58a04e68fcdc4d1c8d99d151dab5587d6778733bc02f0"
+    sha256 cellar: :any,                 arm64_linux:       "d4c123d2b49a4feedd8a5f6d3116f9920912f8a776158e2352c7a87175c79c2b"
+    sha256 cellar: :any,                 x86_64_linux:      "2746c3f8659cbc80b544ecd722c172eb9ddc5644ca995c90c66ec6b8d4118f9a"
   end
 
   depends_on "go" => :build

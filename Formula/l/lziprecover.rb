@@ -12,12 +12,13 @@ class Lziprecover < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "343f6706d13abac08b7b069f83c3cda00a7b3c7ebd15be78e9a476786665463f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9a8b035e1cef46df76a525692bd88f3dad688650f4bf63e4acec4c43ffd2a75a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "775876ff0175a9cf9246ba86b165db3e116f6537adeb7105f1e8e2eff76276f1"
-    sha256 cellar: :any_skip_relocation, sonoma:        "09759201cdfab6f46d9e97f15cd893d4f10b0c1efe1fc650356e472062af2cd5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d454115600543232b210e45c247bf103dde666cdf725509139da843899ab6ec7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "66cbf0d8af517659c8df84822d8a6d763c09cbd21c52882c1957073ce594a37f"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "4872de445f53a97c3a6c8e61a0b57d5e1fd8d3b193c9892f8dcd4425df6c711f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "343f6706d13abac08b7b069f83c3cda00a7b3c7ebd15be78e9a476786665463f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "9a8b035e1cef46df76a525692bd88f3dad688650f4bf63e4acec4c43ffd2a75a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "775876ff0175a9cf9246ba86b165db3e116f6537adeb7105f1e8e2eff76276f1"
+    sha256 cellar: :any_skip_relocation, sonoma:            "09759201cdfab6f46d9e97f15cd893d4f10b0c1efe1fc650356e472062af2cd5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "d454115600543232b210e45c247bf103dde666cdf725509139da843899ab6ec7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "66cbf0d8af517659c8df84822d8a6d763c09cbd21c52882c1957073ce594a37f"
   end
 
   depends_on "lzip" => :test

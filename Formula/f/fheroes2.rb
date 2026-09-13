@@ -12,12 +12,13 @@ class Fheroes2 < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "878cfa8eb85196e83fd74b55f83c5d97c36e0edc93984fadd876104cf2b61f7f"
-    sha256 cellar: :any, arm64_sequoia: "69fd136cb1953c8411b8177bb0d9585d410deed4fc59c46a2bd2cdcf7f9d7817"
-    sha256 cellar: :any, arm64_sonoma:  "e7a134f5a1d7a129fbde3d23ac64a12154c7d5615c2ddf82a5f5b1fc18b12ff4"
-    sha256 cellar: :any, sonoma:        "805c8fe3209c3956dc3cd20c114b768335a94fdaa5b0b5f2e81751d1441d0ada"
-    sha256               arm64_linux:   "5a90b5be8f3d31374d1958624cce9d94a168baae2997f82d5b0e89894d88f39b"
-    sha256               x86_64_linux:  "5709d2a7e0caf309bc449450e7986f949eee70dc2e886d2cbf920e5796beea47"
+    sha256 cellar: :any, arm64_golden_gate: "5fdb5350078b777e6f221c7e45a515fd42923ef677e7d1ef2e4bf7e0ccb5a361"
+    sha256 cellar: :any, arm64_tahoe:       "878cfa8eb85196e83fd74b55f83c5d97c36e0edc93984fadd876104cf2b61f7f"
+    sha256 cellar: :any, arm64_sequoia:     "69fd136cb1953c8411b8177bb0d9585d410deed4fc59c46a2bd2cdcf7f9d7817"
+    sha256 cellar: :any, arm64_sonoma:      "e7a134f5a1d7a129fbde3d23ac64a12154c7d5615c2ddf82a5f5b1fc18b12ff4"
+    sha256 cellar: :any, sonoma:            "805c8fe3209c3956dc3cd20c114b768335a94fdaa5b0b5f2e81751d1441d0ada"
+    sha256               arm64_linux:       "5a90b5be8f3d31374d1958624cce9d94a168baae2997f82d5b0e89894d88f39b"
+    sha256               x86_64_linux:      "5709d2a7e0caf309bc449450e7986f949eee70dc2e886d2cbf920e5796beea47"
   end
 
   depends_on "cmake" => :build

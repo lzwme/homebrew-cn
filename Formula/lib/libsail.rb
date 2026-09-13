@@ -6,11 +6,12 @@ class Libsail < Formula
   license "MIT"
 
   bottle do
-    sha256 arm64_tahoe:   "20018ea206df90952f10fe6f7c1dfe74d511f72c96f7c121a48cc8f6f09afeda"
-    sha256 arm64_sequoia: "2f0c53bba24210b6538c230cc56cf3d572deaa7f6f1cb9ba56dfef8f9429cf9c"
-    sha256 arm64_sonoma:  "bfcdd061d1396eee46c6af77f01d16ac34df92b300c286cb2940b4b0291b76e6"
-    sha256 arm64_linux:   "cebe786a2b86dc33f1f59c613f5a93704d54c4fab76a1942411440a4a80e96a4"
-    sha256 x86_64_linux:  "31485079381c2cf8f584f5b7bd5c4ab48aeecf20bbafb9e3452df38193074b3d"
+    sha256 arm64_golden_gate: "cc8931d55d0d34eb3f00e9e271d0e9c6982e0416ea6b99be560a978190a7e71c"
+    sha256 arm64_tahoe:       "20018ea206df90952f10fe6f7c1dfe74d511f72c96f7c121a48cc8f6f09afeda"
+    sha256 arm64_sequoia:     "2f0c53bba24210b6538c230cc56cf3d572deaa7f6f1cb9ba56dfef8f9429cf9c"
+    sha256 arm64_sonoma:      "bfcdd061d1396eee46c6af77f01d16ac34df92b300c286cb2940b4b0291b76e6"
+    sha256 arm64_linux:       "cebe786a2b86dc33f1f59c613f5a93704d54c4fab76a1942411440a4a80e96a4"
+    sha256 x86_64_linux:      "31485079381c2cf8f584f5b7bd5c4ab48aeecf20bbafb9e3452df38193074b3d"
   end
 
   depends_on "cmake" => :build

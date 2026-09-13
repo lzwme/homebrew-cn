@@ -22,13 +22,12 @@ class Redis < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "3ae6e90b0680cd33396e97fa6cb0f091598431e8e653bba954adad71101ad790"
-    sha256 cellar: :any, arm64_sequoia: "8dd77c3726f4a9c67cd63c5af0f5c173caf9fdd49238c4ce6ac9729f5cd9c3f4"
-    sha256 cellar: :any, arm64_sonoma:  "0b2737628ab2971b87e8ac4ede74ff33149d1d238023983380355f6181bb2963"
-    sha256 cellar: :any, sonoma:        "5f4f29b6cc2b83a55ced83d6aa7c5e2df9f117631b0a4cb01da93564881eb416"
-    sha256 cellar: :any, arm64_linux:   "e3109d2c1a9b5bc952186c15fd8b7ce4300fcae522df83b182871317c724f2ab"
-    sha256 cellar: :any, x86_64_linux:  "d41ecce1293d0902928f6c77bca5a1a5899febbd4efbfb697b48713678317c96"
+    rebuild 2
+    sha256 cellar: :any, arm64_golden_gate: "b8605b39f8fc0ee614d59e2e24b3943823adb4efb9a884b5c854d30f9bae184d"
+    sha256 cellar: :any, arm64_tahoe:       "cc958259d62cfa7b13f9609eca12ec8c24f5e033e7356b5e68a9b4aaa855cc5c"
+    sha256 cellar: :any, arm64_sequoia:     "e516dbc5d61583511914c9a301b8d2ce5b2d69e069dadf1b44151a984a8b05b7"
+    sha256 cellar: :any, arm64_linux:       "dcbbabc443b0a19a31a184eee89b69b682b05ac834df0789d3c0c5e92305ba43"
+    sha256 cellar: :any, x86_64_linux:      "93dd800bc10884a868d69cfe92d988f817f83d62f16bc9388809fa3d0e793d1b"
   end
 
   depends_on "autoconf" => :build
@@ -54,6 +53,8 @@ class Redis < Formula
     ENV.append "CXXFLAGS", "-std=gnu++20"
     # VectorSimilarity selects its SIMD kernels at runtime via cpu_features.
     ENV.runtime_cpu_detection
+    # FIXME: redisbloom's vendored readies has no `OSX_MIN_SDK_VER` past tahoe, leaving `-mmacosx-version-min=` empty
+    ENV["OSX_MIN_SDK_VER"] = MacOS.version.to_s if OS.mac?
     system "gmake", "deploy", "PREFIX=#{prefix}", "CC=#{ENV.cc}", "BUILD_TLS=yes",
            "REDISEARCH_GENERATE_HEADERS=0", "IGNORE_MISSING_DEPS=1", "LTO=0"
 

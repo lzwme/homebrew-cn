@@ -46,11 +46,17 @@ class Sdl12Compat < Formula
     assert_path_exists lib/"libSDLmain.a"
     assert_equal version.to_s, shell_output("#{bin}/sdl-config --version").strip
 
+    ENV["SDL_VIDEODRIVER"] = "dummy"
+
     (testpath/"test.c").write <<~C
       #include <SDL.h>
 
+      // Avoid SDLmain's Cocoa startup in headless CI.
+      #undef main
+
       int main(int argc, char* argv[]) {
-        SDL_Init(SDL_INIT_EVERYTHING);
+        if (SDL_Init(SDL_INIT_VIDEO) < 0)
+          return 1;
         SDL_Quit();
         return 0;
       }

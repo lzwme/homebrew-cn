@@ -35,7 +35,7 @@ class Bnfc < Formula
       system "cabal", "v2-update"
       system "cabal", "v2-install", *std_cabal_v2_args
     end
-    system "make", "-C", "docs", "text", "man", "SPHINXBUILD=#{Formula["sphinx-doc"].bin}/sphinx-build"
+    system "make", "-C", "docs", "text", "man", "SPHINXBUILD=#{formula_opt_bin("sphinx-doc")}/sphinx-build"
 
     man1.install "docs/_build/man/bnfc.1"
     doc.install "docs/_build/text" => "manual"
@@ -103,7 +103,7 @@ class Bnfc < Formula
       14 * (3 + 2 / 5 - 8)
     EOS
 
-    flex_bison_args = ["FLEX=#{Formula["flex"].bin}/flex", "BISON=#{Formula["bison"].bin}/bison"]
+    flex_bison_args = ["FLEX=#{formula_opt_bin("flex")}/flex", "BISON=#{formula_opt_bin("bison")}/bison"]
 
     mkdir "c-test" do
       system bin/"bnfc", "-m", "-o.", "--c", testpath/"calc.cf"
@@ -127,8 +127,8 @@ class Bnfc < Formula
 
     ENV.deparallelize do # only the Java test needs this
       mkdir "java-test" do
-        jdk_dir = Formula["openjdk"].bin
-        antlr_bin = Formula["antlr"].bin/"antlr"
+        jdk_dir = formula_opt_bin("openjdk")
+        antlr_bin = formula_opt_bin("antlr")/"antlr"
         antlr_jar = Formula["antlr"].prefix.glob("antlr-*-complete.jar").first
         ENV["CLASSPATH"] = ".:#{antlr_jar}"
         system bin/"bnfc", "-m", "-o.", "--java", "--antlr4", testpath/"calc.cf"

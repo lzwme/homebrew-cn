@@ -12,12 +12,13 @@ class Monkeysphere < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "270aaca29d4132b3fe6334cfdb4fb76c3fc1719af706ebbc2efdab1ecfaf2bb2"
-    sha256 cellar: :any,                 arm64_sequoia: "a2a32750ec3795bc95626c88255eff29170a8aa91d4f39cf6bb24dce87f8dd99"
-    sha256 cellar: :any,                 arm64_sonoma:  "15eb16e6f47470cec82e402aae7b64ff696fe6bd7c7ddfb8d3d3eb2e884a5c22"
-    sha256 cellar: :any,                 sonoma:        "2e7ba58c484a094f7ff4bfd954997e66bd97adf3f41014a2d62541c92df46f3e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e7e31987425d7b97ebc7ed8413f9ae776b4a031851094f2074e062d1d68d9d28"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1914ebe00f06674a892da92c25d236f87e05dfe185728a961fa19373ba9d0c42"
+    sha256 cellar: :any,                 arm64_golden_gate: "9abb55ea662e82abace3d634b579749cbaa3267450ff8bf827a41e704ad86fc4"
+    sha256 cellar: :any,                 arm64_tahoe:       "270aaca29d4132b3fe6334cfdb4fb76c3fc1719af706ebbc2efdab1ecfaf2bb2"
+    sha256 cellar: :any,                 arm64_sequoia:     "a2a32750ec3795bc95626c88255eff29170a8aa91d4f39cf6bb24dce87f8dd99"
+    sha256 cellar: :any,                 arm64_sonoma:      "15eb16e6f47470cec82e402aae7b64ff696fe6bd7c7ddfb8d3d3eb2e884a5c22"
+    sha256 cellar: :any,                 sonoma:            "2e7ba58c484a094f7ff4bfd954997e66bd97adf3f41014a2d62541c92df46f3e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "e7e31987425d7b97ebc7ed8413f9ae776b4a031851094f2074e062d1d68d9d28"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "1914ebe00f06674a892da92c25d236f87e05dfe185728a961fa19373ba9d0c42"
   end
 
   # Original site is gone. We currently use Debian URLs but Debian removed package
@@ -53,7 +54,7 @@ class Monkeysphere < Formula
   end
 
   def install
-    ENV.prepend_path "PATH", Formula["gnu-sed"].libexec/"gnubin"
+    ENV.prepend_path "PATH", formula_opt_libexec("gnu-sed")/"gnubin"
     ENV.prepend_create_path "PERL5LIB", libexec/"lib/perl5"
 
     resources.each do |r|

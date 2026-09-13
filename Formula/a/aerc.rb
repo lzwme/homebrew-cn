@@ -7,12 +7,13 @@ class Aerc < Formula
   head "https://git.sr.ht/~rjarry/aerc", branch: "master"
 
   bottle do
-    sha256 arm64_tahoe:   "3f921ff034dee5fc44c1d74e9917e26c12e1059d39dd8f960aa2507236126174"
-    sha256 arm64_sequoia: "c5ea3ee16396f88f9ae4b3e8329004fcece61ade3b7f05b2acbfd19fa4cb2eec"
-    sha256 arm64_sonoma:  "f7580e08063ddbe38615b13b791a08a88bcc43c40b0ead8a195f2fa853e64828"
-    sha256 sonoma:        "0b40acf275466e94b9269185b969d5a4d165c3358f12f2f8fb6b0b2235cabc2e"
-    sha256 arm64_linux:   "7561a5e920b8956729f1ae4923351dc44d7837c5029f93e3cd168041ff9b7640"
-    sha256 x86_64_linux:  "e01cd254230d1a37e95c8ed6bf12500d69901f787d248a47e1e197b51a10bfb8"
+    sha256 arm64_golden_gate: "14bf732705b560051ece48346d243764597203ad1c143870e605a5a542c44fa0"
+    sha256 arm64_tahoe:       "3f921ff034dee5fc44c1d74e9917e26c12e1059d39dd8f960aa2507236126174"
+    sha256 arm64_sequoia:     "c5ea3ee16396f88f9ae4b3e8329004fcece61ade3b7f05b2acbfd19fa4cb2eec"
+    sha256 arm64_sonoma:      "f7580e08063ddbe38615b13b791a08a88bcc43c40b0ead8a195f2fa853e64828"
+    sha256 sonoma:            "0b40acf275466e94b9269185b969d5a4d165c3358f12f2f8fb6b0b2235cabc2e"
+    sha256 arm64_linux:       "7561a5e920b8956729f1ae4923351dc44d7837c5029f93e3cd168041ff9b7640"
+    sha256 x86_64_linux:      "e01cd254230d1a37e95c8ed6bf12500d69901f787d248a47e1e197b51a10bfb8"
   end
 
   depends_on "go" => :build

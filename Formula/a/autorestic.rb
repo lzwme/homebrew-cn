@@ -8,12 +8,13 @@ class Autorestic < Formula
 
   bottle do
     rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f21af72312fc4c5b3e77d2d70f4c19a814bc7e8de42f5a3d368db39b4c60abcc"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f21af72312fc4c5b3e77d2d70f4c19a814bc7e8de42f5a3d368db39b4c60abcc"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f21af72312fc4c5b3e77d2d70f4c19a814bc7e8de42f5a3d368db39b4c60abcc"
-    sha256 cellar: :any_skip_relocation, sonoma:        "23cd822d5a4f674a0bc9e60974e6cf37e98ddc5077a6f938f5dffc397ccaddb3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b7a0741f2db1dcd936737919762484bfb1b39dbf91dc01516677248d402a5fec"
-    sha256 cellar: :any,                 x86_64_linux:  "92320648e3ee73f5550712054f97cf54345d5da8d0106ee3c7d8de3c583ae73e"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "56da39e13fe9b8b35c30cb50b42368a325049e54fd570bac1aa37568f5c41ce5"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "f21af72312fc4c5b3e77d2d70f4c19a814bc7e8de42f5a3d368db39b4c60abcc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "f21af72312fc4c5b3e77d2d70f4c19a814bc7e8de42f5a3d368db39b4c60abcc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "f21af72312fc4c5b3e77d2d70f4c19a814bc7e8de42f5a3d368db39b4c60abcc"
+    sha256 cellar: :any_skip_relocation, sonoma:            "23cd822d5a4f674a0bc9e60974e6cf37e98ddc5077a6f938f5dffc397ccaddb3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "b7a0741f2db1dcd936737919762484bfb1b39dbf91dc01516677248d402a5fec"
+    sha256 cellar: :any,                 x86_64_linux:      "92320648e3ee73f5550712054f97cf54345d5da8d0106ee3c7d8de3c583ae73e"
   end
 
   depends_on "go" => :build

@@ -11,12 +11,13 @@ class StressNg < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "81f244de48718d0e5bc01319b3a94399274ea5ddddedd30a9bf937a4b9e55f84"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fc690f438cc5cf091d487e5fcc874da8a5526f589b5a5bd6242a81463da76224"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "facbc73b640bec0d6de6722657fcceb0b9ce32f8642bfbc806c3b2bc8b9088c2"
-    sha256 cellar: :any_skip_relocation, sonoma:        "21cd99c4bd6949156e6431fbd9dfff167d9912fabf2ca480e446f08073573a35"
-    sha256 cellar: :any,                 arm64_linux:   "588df8735d01237e72fcc7496d19c8cb699bdda0c0f47550623353943c986da5"
-    sha256 cellar: :any,                 x86_64_linux:  "ae058f8bac85f72c65de765a106a836ad5e5fe3e73f8c720f34eba23370e7a20"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "936546cdcd95e3fafb4447ca438798e35275ad0ef647b3d43adb82a8bfddc94b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "81f244de48718d0e5bc01319b3a94399274ea5ddddedd30a9bf937a4b9e55f84"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "fc690f438cc5cf091d487e5fcc874da8a5526f589b5a5bd6242a81463da76224"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "facbc73b640bec0d6de6722657fcceb0b9ce32f8642bfbc806c3b2bc8b9088c2"
+    sha256 cellar: :any_skip_relocation, sonoma:            "21cd99c4bd6949156e6431fbd9dfff167d9912fabf2ca480e446f08073573a35"
+    sha256 cellar: :any,                 arm64_linux:       "588df8735d01237e72fcc7496d19c8cb699bdda0c0f47550623353943c986da5"
+    sha256 cellar: :any,                 x86_64_linux:      "ae058f8bac85f72c65de765a106a836ad5e5fe3e73f8c720f34eba23370e7a20"
   end
 
   uses_from_macos "libxcrypt"

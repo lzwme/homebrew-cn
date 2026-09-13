@@ -1,16 +1,16 @@
 class Dskditto < Formula
   desc "Ultra-fast duplicate file finder TUI/GUI"
   homepage "https://github.com/jdefrancesco/dskDitto"
-  url "https://ghfast.top/https://github.com/jdefrancesco/dskDitto/archive/refs/tags/v0.6.3.tar.gz"
-  sha256 "9cd4a3a3fae12ef85f0b76c0f42c7778995647cf6cc53f8f12369c74aba43b4f"
+  url "https://ghfast.top/https://github.com/jdefrancesco/dskDitto/archive/refs/tags/v0.7.0.tar.gz"
+  sha256 "5202c2f0482b0496e272ced4ccd820ff47bbac73ed2237acad501091a79ec259"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "43b9a3a6af9afc9a8f5f58bf0ec275ba8a0817a916b6ee37ae93260e342f7947"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3930974b0722594b81ddcae9123e824b2dbfef1ecbf568710adc14bf6e07ad81"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "29d2e4e4b8f19abe90c554a92723adc0fc6efc391f3b3893ac7445edf6ae4287"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "aaf1f512c57c3ae604a924da96333d30f5aba2879f2d0dc05f6110af7485ff42"
-    sha256 cellar: :any,                 x86_64_linux:  "cbbdac950133b491e8a7af9a8e19fea81bd6c07bbcfe692790b89db45dc93cbf"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "e9c483de09e5f0896dbdca6df1a9ca32f2d47e2b89aaed1247733216a3cec523"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "1ca4a2304114d2f4332d329adab2ec5fec8f9f0ab9b191b01cd4d52a784b932b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "5a16e68e55ffca5b18232cc30709c44f4d3ca2f4f5142e9b0c5c4ca835a8c4e0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "af033c1d6ad53bb4e469746c09e1d7820453f920149eccd7281be8ddf6e92661"
+    sha256 cellar: :any,                 x86_64_linux:      "7c7f22d12b8fb9e04ca86a2cd9294cb331d94d722f1fb362379674d1a831891d"
   end
 
   depends_on "go" => :build

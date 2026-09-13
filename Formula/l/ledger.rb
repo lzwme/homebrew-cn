@@ -13,12 +13,13 @@ class Ledger < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "aea0cf04c15d978a7cac17f8536febd31b720b6e01b0a890325a85b56f157738"
-    sha256 cellar: :any, arm64_sequoia: "56ead85deaf625e42cbfe6653113235207b7ea948cf90a7562113c73d7553838"
-    sha256 cellar: :any, arm64_sonoma:  "2a7e53b0ee3eeeba9b0e89a5200c3ce135fe1b004c181f4c40b2a5fa5da888ae"
-    sha256 cellar: :any, sonoma:        "5b5cb3a934fcf0cd479766523380a0d5bea6ff7544fe7bbec4f1bda3f0d54a69"
-    sha256 cellar: :any, arm64_linux:   "ef553d06835dcd445da99e14af1c8503739c30a0252fd259c5bc3ded341f2f0f"
-    sha256 cellar: :any, x86_64_linux:  "3850091948830b9296f8095d86a47cb4dbe5633b25fa2b1cd03e944d30085a73"
+    sha256 cellar: :any, arm64_golden_gate: "d885e21cae4f20976c36e6549a15915d45113d2b6e62a4087c897c7be8dec1de"
+    sha256 cellar: :any, arm64_tahoe:       "aea0cf04c15d978a7cac17f8536febd31b720b6e01b0a890325a85b56f157738"
+    sha256 cellar: :any, arm64_sequoia:     "56ead85deaf625e42cbfe6653113235207b7ea948cf90a7562113c73d7553838"
+    sha256 cellar: :any, arm64_sonoma:      "2a7e53b0ee3eeeba9b0e89a5200c3ce135fe1b004c181f4c40b2a5fa5da888ae"
+    sha256 cellar: :any, sonoma:            "5b5cb3a934fcf0cd479766523380a0d5bea6ff7544fe7bbec4f1bda3f0d54a69"
+    sha256 cellar: :any, arm64_linux:       "ef553d06835dcd445da99e14af1c8503739c30a0252fd259c5bc3ded341f2f0f"
+    sha256 cellar: :any, x86_64_linux:      "3850091948830b9296f8095d86a47cb4dbe5633b25fa2b1cd03e944d30085a73"
   end
 
   depends_on "cmake" => :build

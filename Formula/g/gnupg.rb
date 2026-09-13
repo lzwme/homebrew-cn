@@ -53,6 +53,9 @@ class Gnupg < Formula
     libusb = Formula["libusb"]
     ENV.append "CPPFLAGS", "-I#{libusb.opt_include}/libusb-#{libusb.version.major_minor}"
 
+    # gpgscm otherwise hard-codes /tmp on Unix.
+    inreplace "tests/gpgscm/tests.scm", "(get-temp-path)", '(getenv "TMPDIR")'
+
     mkdir "build" do
       system "../configure", "--disable-silent-rules",
                              "--enable-all-tests",
@@ -61,8 +64,7 @@ class Gnupg < Formula
                              "--with-readline=#{formula_opt_prefix("readline")}",
                              *std_configure_args
       system "make"
-      # Disable (temporarily?) because it fails with sandbox
-      # system "make", "check"
+      system "make", "check"
       system "make", "install"
     end
 

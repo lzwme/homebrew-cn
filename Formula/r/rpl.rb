@@ -6,12 +6,13 @@ class Rpl < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "8ecf751ed038cfcb047990b67f499b2ad4463cc0140f320a8237d44a8c69fcc6"
-    sha256 cellar: :any, arm64_sequoia: "d1657696a2ff7db8d5ed76327473de914cb1eff1f6b3732bd3097f831c675444"
-    sha256 cellar: :any, arm64_sonoma:  "2416e1bfd3cfd0ad7e53db57f746d97e6ec07018e3706425f177133e87857a89"
-    sha256 cellar: :any, sonoma:        "0d06113c84c876308821d1d82d9f59242754b7418b41234ba77dff703d583aa8"
-    sha256 cellar: :any, arm64_linux:   "596a3d6a1cce526af5265bd320d9ed9912dd7418035603ffceba0afae6fea253"
-    sha256 cellar: :any, x86_64_linux:  "e5e77b94d63e31657b7f82df99ac37727018f3a53f83b6b5daed66897e7b87f0"
+    sha256 cellar: :any, arm64_golden_gate: "47ffca276ea2482c5883e30ca89322e048b295a55565602440cefae30a08e83e"
+    sha256 cellar: :any, arm64_tahoe:       "8ecf751ed038cfcb047990b67f499b2ad4463cc0140f320a8237d44a8c69fcc6"
+    sha256 cellar: :any, arm64_sequoia:     "d1657696a2ff7db8d5ed76327473de914cb1eff1f6b3732bd3097f831c675444"
+    sha256 cellar: :any, arm64_sonoma:      "2416e1bfd3cfd0ad7e53db57f746d97e6ec07018e3706425f177133e87857a89"
+    sha256 cellar: :any, sonoma:            "0d06113c84c876308821d1d82d9f59242754b7418b41234ba77dff703d583aa8"
+    sha256 cellar: :any, arm64_linux:       "596a3d6a1cce526af5265bd320d9ed9912dd7418035603ffceba0afae6fea253"
+    sha256 cellar: :any, x86_64_linux:      "e5e77b94d63e31657b7f82df99ac37727018f3a53f83b6b5daed66897e7b87f0"
   end
 
   depends_on "help2man" => :build

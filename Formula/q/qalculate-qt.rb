@@ -27,7 +27,7 @@ class QalculateQt < Formula
   end
 
   def install
-    system Formula["qtbase"].bin/"qmake", "qalculate-qt.pro"
+    system formula_opt_bin("qtbase")/"qmake", "qalculate-qt.pro"
     system "make"
     if OS.mac?
       prefix.install "qalculate-qt.app"

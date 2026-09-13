@@ -7,12 +7,13 @@ class DockerLanguageServer < Formula
   head "https://github.com/docker/docker-language-server.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f35fa22edae4c8555d7604dcce4846ad24cd2a6400938fd9ff396042fc9ab748"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f35fa22edae4c8555d7604dcce4846ad24cd2a6400938fd9ff396042fc9ab748"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f35fa22edae4c8555d7604dcce4846ad24cd2a6400938fd9ff396042fc9ab748"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d7a008395ecac3b130dc18c332b53acddcfc6ef0375cebe9e9ff8170c0f61f0a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7f2eac8a43c55f2a94541d50cca86e38b469e8715faf61e5747f37470b6e1fca"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "72b4ae8d0d220708c044e47d66d819d99cef0b2ed82743827643320fb9ac400b"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "ef288c83395438d72462ef68e9801e158876c7231557327ffa517b18a2f31755"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "f35fa22edae4c8555d7604dcce4846ad24cd2a6400938fd9ff396042fc9ab748"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "f35fa22edae4c8555d7604dcce4846ad24cd2a6400938fd9ff396042fc9ab748"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "f35fa22edae4c8555d7604dcce4846ad24cd2a6400938fd9ff396042fc9ab748"
+    sha256 cellar: :any_skip_relocation, sonoma:            "d7a008395ecac3b130dc18c332b53acddcfc6ef0375cebe9e9ff8170c0f61f0a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "7f2eac8a43c55f2a94541d50cca86e38b469e8715faf61e5747f37470b6e1fca"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "72b4ae8d0d220708c044e47d66d819d99cef0b2ed82743827643320fb9ac400b"
   end
 
   depends_on "go" => :build

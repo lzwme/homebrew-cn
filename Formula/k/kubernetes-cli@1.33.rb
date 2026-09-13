@@ -30,7 +30,7 @@ class KubernetesCliAT133 < Formula
   end
 
   def install
-    ENV.prepend_path "PATH", Formula["coreutils"].libexec/"gnubin" if OS.mac? # needs GNU date
+    ENV.prepend_path "PATH", formula_opt_libexec("coreutils")/"gnubin" if OS.mac? # needs GNU date
     ENV["FORCE_HOST_GO"] = "1"
     system "make", "WHAT=cmd/kubectl"
     bin.install "_output/bin/kubectl"

@@ -7,12 +7,13 @@ class Evince < Formula
 
   bottle do
     rebuild 1
-    sha256 arm64_tahoe:   "50fd46e30a5ad1bd12b39a183b2dfa2b1a7a33720caeb507582277a42b088a30"
-    sha256 arm64_sequoia: "744afff8b2653517ecbd8d92ce03ed8da0723dd6bb3b5d72f9f697f09e4b68fc"
-    sha256 arm64_sonoma:  "e2ac1a99c1a4a34a2e35567608a23c18389b803d8fe6ba316cc0144b459b1091"
-    sha256 sonoma:        "6acf1c1c2f9f8ba50197ec410154c7e2f5e65cbbe30f4d822d3f2c4f86500f6d"
-    sha256 arm64_linux:   "c653ea149c80a57e11499d1d71906d38d22f4dc77eab85c70f71eeb2f781aee2"
-    sha256 x86_64_linux:  "25c5975817e4c02e346b2f75c3eaeb27bbba00216d0f77c9d2ebeeeb91272906"
+    sha256 arm64_golden_gate: "4b48ae6093e7fcde2c29de526dacc577e3e857bdb43d7049402cfaf85d526923"
+    sha256 arm64_tahoe:       "50fd46e30a5ad1bd12b39a183b2dfa2b1a7a33720caeb507582277a42b088a30"
+    sha256 arm64_sequoia:     "744afff8b2653517ecbd8d92ce03ed8da0723dd6bb3b5d72f9f697f09e4b68fc"
+    sha256 arm64_sonoma:      "e2ac1a99c1a4a34a2e35567608a23c18389b803d8fe6ba316cc0144b459b1091"
+    sha256 sonoma:            "6acf1c1c2f9f8ba50197ec410154c7e2f5e65cbbe30f4d822d3f2c4f86500f6d"
+    sha256 arm64_linux:       "c653ea149c80a57e11499d1d71906d38d22f4dc77eab85c70f71eeb2f781aee2"
+    sha256 x86_64_linux:      "25c5975817e4c02e346b2f75c3eaeb27bbba00216d0f77c9d2ebeeeb91272906"
   end
 
   depends_on "desktop-file-utils" => :build # for update-desktop-database

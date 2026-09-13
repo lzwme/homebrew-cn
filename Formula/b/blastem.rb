@@ -1,32 +1,10 @@
 class Blastem < Formula
   desc "Fast and accurate Genesis emulator"
   homepage "https://www.retrodev.com/blastem/"
+  url "https://www.retrodev.com/repos/blastem/archive/v1.0.0.tar.gz"
+  sha256 "ad35793e3e6d8f3a23914aecc2b28fe3aeb13ab9416d7d9ecbeba2781a755ceb"
   license "GPL-3.0-or-later"
-  revision 3
   head "https://www.retrodev.com/repos/blastem", using: :hg
-
-  stable do
-    url "https://www.retrodev.com/repos/blastem/archive/v0.6.2.tar.gz"
-    sha256 "d460632eff7e2753a0048f6bd18e97b9d7c415580c358365ff35ac64af30a452"
-
-    depends_on arch: :x86_64
-
-    # Convert Python 2 script to Python 3. Remove with next release.
-    patch do
-      url "https://www.retrodev.com/repos/blastem/raw-rev/dbbf0100f249"
-      sha256 "e332764bfa08e08e0f9cbbebefe73b88adb99a1e96a77a16a0aeeae827ac72ff"
-      type :backport
-    end
-
-    # Fix build with -fno-common which is default in GCC 10+. Remove with next release.
-    patch do
-      on_linux do
-        url "https://www.retrodev.com/repos/blastem/raw-rev/e45a317802bd"
-        sha256 "8f869909df6eb66375eea09dde806422aa007aee073d557b774666f51c2e40dd"
-        type :backport
-      end
-    end
-  end
 
   livecheck do
     url "https://www.retrodev.com/repos/blastem/json-tags"
@@ -42,9 +20,11 @@ class Blastem < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 sonoma:       "06f0bb0d5d0e04267ab21bfa35f2146be7cf7c6acf85d8bd1a9141679c3741a1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "482c2321fde2beccb9a1d3ba301b9f4070a57306991c7eaa486137e646c1a9dc"
+    sha256 cellar: :any, arm64_golden_gate: "1d3be837a182c9c3794f99f8d05a56d9b664dff177a46012b43ae59210f3abac"
+    sha256 cellar: :any, arm64_tahoe:       "3ada7ac311478d5f37fbccd77cd14c9c9eda18276e700b81592f81e09f43a72b"
+    sha256 cellar: :any, arm64_sequoia:     "7fa084989f2845f425d2a29ae96ffb2e583a2b4bf7f971826af914312eeff0d8"
+    sha256 cellar: :any, arm64_linux:       "501d1b152dee4f26e7bd3a7139dcbc553a1ea5af6bddde4562340351dd014597"
+    sha256 cellar: :any, x86_64_linux:      "cbbb133a9566d6c825815d1cd85ae45c33b8bb16121ab303d72553536f2293a8"
   end
 
   depends_on "imagemagick" => :build
@@ -54,20 +34,16 @@ class Blastem < Formula
   depends_on "glew"
   depends_on "sdl2-compat"
 
-  on_macos do
-    # Can be undeprecated if upstream decides to support arm64 macOS
-    deprecate! date: "2025-09-28", because: "is unsupported, https://docs.brew.sh/Support-Tiers#future-macos-support"
-    disable! date: "2026-09-28", because: "is unsupported, https://docs.brew.sh/Support-Tiers#future-macos-support"
-  end
-
   on_linux do
     depends_on "mesa"
     depends_on "zlib-ng-compat"
   end
 
   resource "vasm" do
-    url "http://phoenix.owl.de/tags/vasm1_8i.tar.gz"
-    sha256 "9ae0b37bca11cae5cf00e4d47e7225737bdaec4028e4db2a501b4eca7df8639d"
+    # phoenix.owl.de is the official upstream but no https url exist currently
+    url "https://slackware.uk/sbosrcarch/by-name/development/vasm/vasm2_0f.tar.gz"
+    mirror "http://phoenix.owl.de/tags/vasm2_0f.tar.gz"
+    sha256 "c84b2de1cbb87831795fe64a85c5d9a7002a766e3a7c30b0a2d7d5e99d878f49"
   end
 
   def install
@@ -77,12 +53,8 @@ class Blastem < Formula
     end
     ENV.prepend_path "PATH", buildpath/"tool"
 
-    # Use imagemagick to convert XCF files instead of xcftools, which is unmaintained and broken.
-    # Fix was sent to upstream developer.
-    inreplace "Makefile", "xcf2png $< > $@", "convert $< $@" if build.stable?
-
-    system "make", "all", "menu.bin", "HOST_ZLIB=1"
-    libexec.install %w[blastem default.cfg menu.bin rom.db shaders]
+    system "make", "all", "menu.bin", "tmss.md", "HOST_ZLIB=1"
+    libexec.install %w[blastem default.cfg gamecontrollerdb.txt images menu.bin rom.db shaders systems.cfg tmss.md]
     bin.write_exec_script libexec/"blastem"
   end
 

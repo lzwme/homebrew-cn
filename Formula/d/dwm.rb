@@ -12,12 +12,13 @@ class Dwm < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "c050c0dbe42f70660c8c8a839c1add0e2191813b34bd252edd46d5ee66382196"
-    sha256 cellar: :any,                 arm64_sequoia: "26e6e97d8d3b35c23475c724fd821b9f39fc15bc304ee1b77026cc354fb30686"
-    sha256 cellar: :any,                 arm64_sonoma:  "06b39839497a3a9e38eda2a515b53890736e0bb1e9c99d4b3db8b7db0efe840f"
-    sha256 cellar: :any,                 sonoma:        "55f6b2bb74c496486752529209f6a08376368277f1882e76a8d6706eb78b092d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0ed6c19d7305ea1a748d5274cc7569268b6668cb01df68a9fb03a14329958ad6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f1f5ff55153d68b2c4ff9318e9a17bb973d1277cd87cf3019a43233d23890ef7"
+    sha256 cellar: :any,                 arm64_golden_gate: "e5d936819dca0b26fc9d71f1de30931e90e6bcd0daed5adbc74546d51066dfb8"
+    sha256 cellar: :any,                 arm64_tahoe:       "c050c0dbe42f70660c8c8a839c1add0e2191813b34bd252edd46d5ee66382196"
+    sha256 cellar: :any,                 arm64_sequoia:     "26e6e97d8d3b35c23475c724fd821b9f39fc15bc304ee1b77026cc354fb30686"
+    sha256 cellar: :any,                 arm64_sonoma:      "06b39839497a3a9e38eda2a515b53890736e0bb1e9c99d4b3db8b7db0efe840f"
+    sha256 cellar: :any,                 sonoma:            "55f6b2bb74c496486752529209f6a08376368277f1882e76a8d6706eb78b092d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "0ed6c19d7305ea1a748d5274cc7569268b6668cb01df68a9fb03a14329958ad6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "f1f5ff55153d68b2c4ff9318e9a17bb973d1277cd87cf3019a43233d23890ef7"
   end
 
   depends_on "dmenu"

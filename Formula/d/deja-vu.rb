@@ -1,17 +1,17 @@
 class DejaVu < Formula
   desc "Local searchable memory over the session histories of coding agents"
   homepage "https://github.com/vshulcz/deja-vu"
-  url "https://ghfast.top/https://github.com/vshulcz/deja-vu/archive/refs/tags/v0.19.5.tar.gz"
-  sha256 "ace9aa94343f5abdc65d276c831f97c15a419e536baa4faaa8cb48ef6b8477fe"
+  url "https://ghfast.top/https://github.com/vshulcz/deja-vu/archive/refs/tags/v0.20.0.tar.gz"
+  sha256 "1151d2fd8b14621cb4a5d594bd51e92eae65091bbf6955541cc6f88e7c7f29ff"
   license "MIT"
   head "https://github.com/vshulcz/deja-vu.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c45b7e0619c644bfbd60576da258091f0a0c4cc507d2ed60812038c50ccb2a0a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c45b7e0619c644bfbd60576da258091f0a0c4cc507d2ed60812038c50ccb2a0a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c45b7e0619c644bfbd60576da258091f0a0c4cc507d2ed60812038c50ccb2a0a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f08509a435acdab0ed7ccec7f7d124824e211ec3dbc684f7ea0aee93a09beda7"
-    sha256 cellar: :any,                 x86_64_linux:  "ded44f3d77adc75d07efcf8c23204aeddbbb91ee88267d34e28ffe35c9fc4509"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "8b3cd46afe413dc95b9a88ef192baa37fdb82e30448380b14e6162f1cfa67c3a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "8b3cd46afe413dc95b9a88ef192baa37fdb82e30448380b14e6162f1cfa67c3a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "8b3cd46afe413dc95b9a88ef192baa37fdb82e30448380b14e6162f1cfa67c3a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "404d014a36ceed905a278c95e24fc07c6a79cdbb92d689c2cdd8e6322b9fe076"
+    sha256 cellar: :any,                 x86_64_linux:      "8f1afafb0e32079dd8e9e5b72130ee6c429fec31f89be798bff6f92f1e26d9d8"
   end
 
   depends_on "go" => :build

@@ -8,7 +8,7 @@ class Temporal < Formula
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    strategy :github_latest
   end
 
   bottle do
@@ -21,6 +21,12 @@ class Temporal < Formula
   end
 
   depends_on "go" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     v = build.head? ? "0.0.0-HEAD+#{Utils.git_short_head}" : version.to_s

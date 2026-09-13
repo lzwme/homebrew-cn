@@ -1,8 +1,8 @@
 class Prog8 < Formula
   desc "Compiled programming language targeting the 8-bit 6502 CPU family"
   homepage "https://prog8.readthedocs.io"
-  url "https://ghfast.top/https://github.com/irmen/prog8/archive/refs/tags/v12.3.3.tar.gz"
-  sha256 "6cee4a7faa2596e3e83230e9219eb7ad195557dab66106dfe94fa7cf8c72c55c"
+  url "https://ghfast.top/https://github.com/irmen/prog8/archive/refs/tags/v12.3.4.tar.gz"
+  sha256 "8e1489ce11ff0ec4d2d7b9377f5cfcd648d798e8c0da8471a18df71dec4e4398"
   license "GPL-3.0-only"
 
   livecheck do
@@ -11,11 +11,11 @@ class Prog8 < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "213f26095829e7f18f09f23a1ef31a41431dc461552550b8a47b90111daf218c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6182497ec9bf077d01fc04f7134d0a1b9ccb4253a769652d7c33d212968657bf"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b286c86e51dfaf56447c7c6f98fd0eae2d3b617db3df7606d0d3f9307b8f705f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c9f60bae2d3764e88a4e1ea47577a18d6cbd943df58950b1c169613a4b3dbf71"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4efb496a982ed9931f2344aaf74f855e97efee430ab4dbd9dc0aeb53700cdb05"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "67c81defcc225fff63ab88641a6954a05b37feefd01a6bcb9122c891b99c398f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "4d21faa9712c45c2b8d5abc6691ef4c09f3d6ce9126feeb34338c6a80b5a3f3a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "f99189dd1148dec129ba7ce0d82682d1086788e2404d56cc8ba21cbab281eeba"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "b163dc73aa9959549159681f0d6585bf48e5fcf8a3c1d87e3d1b925c85e02e37"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "c8fde557cd2452a11eee3733b238edefd75fefc9c6e0c540a5be46038cd780dd"
   end
 
   depends_on "gradle" => :build

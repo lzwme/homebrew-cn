@@ -13,14 +13,15 @@ class Lemon < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d3b362f10c4d35707009d136e57159a5321a189c26f6efe9b90a7d5e049b1590"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c71a685d8a98cd313cec9a0257ad0ae2b467e1ca5cba6aa5dea8dc24140e30de"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a43947c5ef1e8b7998ed161f5e5a1cc7566022d6d89bd27ce59bcae3f6b6f5ad"
-    sha256 cellar: :any_skip_relocation, tahoe:         "6ebe196fb9a42e18f1d0b7aa9a71aa30e3382dcaadc927c25af05af5880369b0"
-    sha256 cellar: :any_skip_relocation, sequoia:       "fa1f795de49048902299fbd80e9fe7e8e673530eb8eea3ec2a298d324cbb68ac"
-    sha256 cellar: :any_skip_relocation, sonoma:        "eddc5cc605cd97bace0cc4980013969793fdec6a848da53bb3f8628364ef3837"
-    sha256 cellar: :any,                 arm64_linux:   "8fce46228b69100ec76ac4ae01ad28172a48e4ec5ccb755e0c56d964f618d080"
-    sha256 cellar: :any,                 x86_64_linux:  "bc31dfb45d1575979e985b639e172413e3a0953906d5003b5aff76cc5a535d5b"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "7441f9f6b8199d219644f30727b85f410cbf000dddb136034ac1262f8bb20ca9"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "d3b362f10c4d35707009d136e57159a5321a189c26f6efe9b90a7d5e049b1590"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "c71a685d8a98cd313cec9a0257ad0ae2b467e1ca5cba6aa5dea8dc24140e30de"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "a43947c5ef1e8b7998ed161f5e5a1cc7566022d6d89bd27ce59bcae3f6b6f5ad"
+    sha256 cellar: :any_skip_relocation, tahoe:             "6ebe196fb9a42e18f1d0b7aa9a71aa30e3382dcaadc927c25af05af5880369b0"
+    sha256 cellar: :any_skip_relocation, sequoia:           "fa1f795de49048902299fbd80e9fe7e8e673530eb8eea3ec2a298d324cbb68ac"
+    sha256 cellar: :any_skip_relocation, sonoma:            "eddc5cc605cd97bace0cc4980013969793fdec6a848da53bb3f8628364ef3837"
+    sha256 cellar: :any,                 arm64_linux:       "8fce46228b69100ec76ac4ae01ad28172a48e4ec5ccb755e0c56d964f618d080"
+    sha256 cellar: :any,                 x86_64_linux:      "bc31dfb45d1575979e985b639e172413e3a0953906d5003b5aff76cc5a535d5b"
   end
 
   # Submitted the patch via email to the upstream

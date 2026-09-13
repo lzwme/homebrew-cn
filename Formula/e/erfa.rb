@@ -7,12 +7,13 @@ class Erfa < Formula
   head "https://github.com/liberfa/erfa.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "1ddfe8f2240132e262a4bf6c0ce8aaced1eff640123b43c27355093910bf0482"
-    sha256 cellar: :any,                 arm64_sequoia: "ae0cd3901d1bbb3fb7b002b6e141ac41044566dfb35270e82726ce6aad7a6832"
-    sha256 cellar: :any,                 arm64_sonoma:  "c80d1ca1747d562c186b39a15f8b0e86483d80ebaf5b94a28445bae4596a54b8"
-    sha256 cellar: :any,                 sonoma:        "ae5d54e5f2a440bf188c3c37c26bce3689a5e7f9374686759b182d62860b6695"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ee7b6f9abbca3a1da91236d6d9385846b6101862df8f072cd5ff65bfbe396e8c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "acfd3e927c52ecefe72e13b0ae7fbe322ac9e2d7dd03678afd77aac77ad649c0"
+    sha256 cellar: :any,                 arm64_golden_gate: "ddbe22cbdc12071d03d321354c630fe726c12bcb022d101fb41f6c7b62378eb4"
+    sha256 cellar: :any,                 arm64_tahoe:       "1ddfe8f2240132e262a4bf6c0ce8aaced1eff640123b43c27355093910bf0482"
+    sha256 cellar: :any,                 arm64_sequoia:     "ae0cd3901d1bbb3fb7b002b6e141ac41044566dfb35270e82726ce6aad7a6832"
+    sha256 cellar: :any,                 arm64_sonoma:      "c80d1ca1747d562c186b39a15f8b0e86483d80ebaf5b94a28445bae4596a54b8"
+    sha256 cellar: :any,                 sonoma:            "ae5d54e5f2a440bf188c3c37c26bce3689a5e7f9374686759b182d62860b6695"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "ee7b6f9abbca3a1da91236d6d9385846b6101862df8f072cd5ff65bfbe396e8c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "acfd3e927c52ecefe72e13b0ae7fbe322ac9e2d7dd03678afd77aac77ad649c0"
   end
 
   depends_on "meson" => :build

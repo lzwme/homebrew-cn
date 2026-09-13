@@ -7,13 +7,14 @@ class Hashlink < Formula
   head "https://github.com/HaxeFoundation/hashlink.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "a7f1b7bd2d084befd08ccc1a7b5f05fb982497e37c2b58f0ab4375a114f36fe8"
-    sha256 cellar: :any, arm64_sequoia: "eda46e0a3237e12be3e314a0740236802febe02b5ea0211f2d04c1b570473f5e"
-    sha256 cellar: :any, arm64_sonoma:  "bb29479f1a69924cbeeef56223aba8308f62a1777c7daa1161fe4c147c86badb"
-    sha256 cellar: :any, sonoma:        "dd0624dab469e02d214f598339b9881c9ad0dad59a11140d7bb9210f33363f35"
-    sha256 cellar: :any, arm64_linux:   "e8af66f5bf10c4186694e2d12f059d4f4e946313953705022896e679bf2bf2e3"
-    sha256 cellar: :any, x86_64_linux:  "d4983f2cbe53b940c32c193ed345d1f07d226746a0f43db3ea4cd719769d7763"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "1fea142f31dba20b19f08a1356ad960560071acfde00211a5f14105087c354ec"
+    sha256 cellar: :any, arm64_sequoia: "6992c2e2183662a7fba3df186a2c996d21561cd45cb418d4a23b1135bd526240"
+    sha256 cellar: :any, arm64_linux:   "2e2c30a5a813cace3208c460d4f76715f73806c7094319ca8d1ea9765c5f5ec9"
+    sha256 cellar: :any, x86_64_linux:  "62190ca7bad1f1feb11e38b998dc5f35901fc96dcb6143205547aac7c5cf491b"
   end
+
+  deprecate! date: "2027-03-31", because: "needs deprecated `haxe` which needs EOL `mbedtls@3`"
 
   depends_on "pkgconf" => :build
   depends_on "haxe" => :test
@@ -22,7 +23,7 @@ class Hashlink < Formula
   depends_on "libpng"
   depends_on "libuv"
   depends_on "libvorbis"
-  depends_on "mbedtls@3"
+  depends_on "mbedtls"
   depends_on "openal-soft"
   depends_on "sdl3"
 

@@ -7,12 +7,13 @@ class Tfmigrate < Formula
   head "https://github.com/minamijoyo/tfmigrate.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "527a0a2f6adf35b6c7af46b767adb0606bd8fcf22c2e3bdeab9eb9974e87bcea"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "527a0a2f6adf35b6c7af46b767adb0606bd8fcf22c2e3bdeab9eb9974e87bcea"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "527a0a2f6adf35b6c7af46b767adb0606bd8fcf22c2e3bdeab9eb9974e87bcea"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1c9c2184db05b3284d109c0012e0147bae72b55e13bec559331fc229a29e0c56"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "430636bf6fc4ec275637decd04b44abee2df45d46f978ceb9456e6e5e8ed3f34"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "11ece0b32824bd5a6b518816eed3b236921014d8a3e535aea7b9998289abf057"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "6a5a1cbcef49a1e142b5c936812f069db52e47b0a2313bc442384db6a2f1e3fb"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "527a0a2f6adf35b6c7af46b767adb0606bd8fcf22c2e3bdeab9eb9974e87bcea"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "527a0a2f6adf35b6c7af46b767adb0606bd8fcf22c2e3bdeab9eb9974e87bcea"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "527a0a2f6adf35b6c7af46b767adb0606bd8fcf22c2e3bdeab9eb9974e87bcea"
+    sha256 cellar: :any_skip_relocation, sonoma:            "1c9c2184db05b3284d109c0012e0147bae72b55e13bec559331fc229a29e0c56"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "430636bf6fc4ec275637decd04b44abee2df45d46f978ceb9456e6e5e8ed3f34"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "11ece0b32824bd5a6b518816eed3b236921014d8a3e535aea7b9998289abf057"
   end
 
   depends_on "go" => :build

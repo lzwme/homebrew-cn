@@ -7,12 +7,13 @@ class DmtxUtils < Formula
   revision 10
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "a9bbe445f01e034c3ce5118fc6b337ee25ee255486a561c2efca07bcdc7451e6"
-    sha256 cellar: :any, arm64_sequoia: "6555934ddec5067a3cebe730f2f3203673070196d857a84f8c21bff336d1d2c9"
-    sha256 cellar: :any, arm64_sonoma:  "223fe6ac211eee3b64ff751a0a2949290eb63ca9e9c7d2692dae0ad5aec4216a"
-    sha256 cellar: :any, sonoma:        "e6299701b5b82b6dccaa37959a2aab32a959ff6e89dc6612f29ebb7406df48b0"
-    sha256 cellar: :any, arm64_linux:   "d5e376af9a846cb08a1e259ca7893abcbddb85f61a56664fddfb81002171cc41"
-    sha256 cellar: :any, x86_64_linux:  "2dfad16186f55c88d6ffb5bd335c4756f8a657556c47ea728bc8990c0c5374bf"
+    sha256 cellar: :any, arm64_golden_gate: "8433706a01a1807aed78ef65b6c6dd2b11210164fcf10ead795924ea163720fd"
+    sha256 cellar: :any, arm64_tahoe:       "a9bbe445f01e034c3ce5118fc6b337ee25ee255486a561c2efca07bcdc7451e6"
+    sha256 cellar: :any, arm64_sequoia:     "6555934ddec5067a3cebe730f2f3203673070196d857a84f8c21bff336d1d2c9"
+    sha256 cellar: :any, arm64_sonoma:      "223fe6ac211eee3b64ff751a0a2949290eb63ca9e9c7d2692dae0ad5aec4216a"
+    sha256 cellar: :any, sonoma:            "e6299701b5b82b6dccaa37959a2aab32a959ff6e89dc6612f29ebb7406df48b0"
+    sha256 cellar: :any, arm64_linux:       "d5e376af9a846cb08a1e259ca7893abcbddb85f61a56664fddfb81002171cc41"
+    sha256 cellar: :any, x86_64_linux:      "2dfad16186f55c88d6ffb5bd335c4756f8a657556c47ea728bc8990c0c5374bf"
   end
 
   depends_on "autoconf" => :build

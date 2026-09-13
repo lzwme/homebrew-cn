@@ -10,12 +10,13 @@ class Bilix < Formula
   head "https://github.com/HFrost0/bilix.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "13dfb17e3990f3c5e841370ec47aaf74be23446f66bd5eb21b565f226eab7618"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c151f910425fc08cc320b349d41d846f319d6c47029134817f9a3a47cab4a146"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e7d2d0a4d3cb7bf76f50beab040ca7b00a5152c851bb94091225be9c457307e0"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6337f668d29f1c7c9f0d18af9d278a88c47f866fbbf63f78c99d088883a8f50e"
-    sha256 cellar: :any,                 arm64_linux:   "14dcf87de61b17290742e146456b15d135825a90a49ee3257750014a6589f75b"
-    sha256 cellar: :any,                 x86_64_linux:  "346e2b6e3cc9a1833131f93c7d8d5bcac6e1646fe25a6bd8e3bbda5389755a66"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "5e6b2c59ac4d53b50836adbaa3b142547beec0e6ecfb1ad63c3b8f3764211117"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "13dfb17e3990f3c5e841370ec47aaf74be23446f66bd5eb21b565f226eab7618"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "c151f910425fc08cc320b349d41d846f319d6c47029134817f9a3a47cab4a146"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "e7d2d0a4d3cb7bf76f50beab040ca7b00a5152c851bb94091225be9c457307e0"
+    sha256 cellar: :any_skip_relocation, sonoma:            "6337f668d29f1c7c9f0d18af9d278a88c47f866fbbf63f78c99d088883a8f50e"
+    sha256 cellar: :any,                 arm64_linux:       "14dcf87de61b17290742e146456b15d135825a90a49ee3257750014a6589f75b"
+    sha256 cellar: :any,                 x86_64_linux:      "346e2b6e3cc9a1833131f93c7d8d5bcac6e1646fe25a6bd8e3bbda5389755a66"
   end
 
   depends_on "cmake" => :build # for danmakuc

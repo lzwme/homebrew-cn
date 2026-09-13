@@ -7,12 +7,13 @@ class Bastet < Formula
   revision 14
 
   bottle do
-    sha256               arm64_tahoe:   "73941341ccf91830b8dd0cd64bcb8c2aab15cd1ef32082e28434088a0d300d21"
-    sha256               arm64_sequoia: "904d583b0e0e6441912a33af22a41e57ca88200d29eac2f7a9006210cc8b6c4c"
-    sha256               arm64_sonoma:  "94e82566f4497c546592c4afef16fbfacd51e150376307158b19d5a40039c258"
-    sha256 cellar: :any, sonoma:        "374aa3798365f71800439427f00124d0751ae02df4d6e193885485fd0c05815d"
-    sha256               arm64_linux:   "1fe8c247c28b51fbcff914df7f6260303ed3f1cf642e49c9399171fd3f3c9d3b"
-    sha256               x86_64_linux:  "25f3108f2e4a33beef995c0e5ce2ff06c82a48b801cb71b6f238215a1b146b5e"
+    sha256               arm64_golden_gate: "277d52ce5cb7de406bfb4c613f2548abcdaa3e953be551414c845a6e4a4ab3b3"
+    sha256               arm64_tahoe:       "73941341ccf91830b8dd0cd64bcb8c2aab15cd1ef32082e28434088a0d300d21"
+    sha256               arm64_sequoia:     "904d583b0e0e6441912a33af22a41e57ca88200d29eac2f7a9006210cc8b6c4c"
+    sha256               arm64_sonoma:      "94e82566f4497c546592c4afef16fbfacd51e150376307158b19d5a40039c258"
+    sha256 cellar: :any, sonoma:            "374aa3798365f71800439427f00124d0751ae02df4d6e193885485fd0c05815d"
+    sha256               arm64_linux:       "1fe8c247c28b51fbcff914df7f6260303ed3f1cf642e49c9399171fd3f3c9d3b"
+    sha256               x86_64_linux:      "25f3108f2e4a33beef995c0e5ce2ff06c82a48b801cb71b6f238215a1b146b5e"
   end
 
   depends_on "boost"

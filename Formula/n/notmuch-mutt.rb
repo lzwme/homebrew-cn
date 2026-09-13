@@ -12,12 +12,13 @@ class NotmuchMutt < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "78ee0b60d9ae205c4101089e2037db0e604359a079459205d5f313fed1178c32"
-    sha256 cellar: :any, arm64_sequoia: "bb39b12da4d6f81cf26304730d7cb973cbd2fda2df4eb2b65a29543cdf2902e5"
-    sha256 cellar: :any, arm64_sonoma:  "1fa77a7291f27bcec6ae02300e58beed3bbb6a3583277eb30a97134b1522b6e9"
-    sha256 cellar: :any, sonoma:        "a3a502ef167f223d968dd662bb858854f02cbdaf241d46cfced83a55e4216b3c"
-    sha256 cellar: :any, arm64_linux:   "7ac3cbba7428d47d611b159ebbbfec9322088d855c302f096555550adfa92a8f"
-    sha256 cellar: :any, x86_64_linux:  "e4201bdf44b9947a7a28b5dd0bef3059fbed201b2a216db7dbccf438a3780d2b"
+    sha256 cellar: :any, arm64_golden_gate: "747e2fcddad47b774a76759f415052fa4f92834f72a5ac2a238468601f919f47"
+    sha256 cellar: :any, arm64_tahoe:       "78ee0b60d9ae205c4101089e2037db0e604359a079459205d5f313fed1178c32"
+    sha256 cellar: :any, arm64_sequoia:     "bb39b12da4d6f81cf26304730d7cb973cbd2fda2df4eb2b65a29543cdf2902e5"
+    sha256 cellar: :any, arm64_sonoma:      "1fa77a7291f27bcec6ae02300e58beed3bbb6a3583277eb30a97134b1522b6e9"
+    sha256 cellar: :any, sonoma:            "a3a502ef167f223d968dd662bb858854f02cbdaf241d46cfced83a55e4216b3c"
+    sha256 cellar: :any, arm64_linux:       "7ac3cbba7428d47d611b159ebbbfec9322088d855c302f096555550adfa92a8f"
+    sha256 cellar: :any, x86_64_linux:      "e4201bdf44b9947a7a28b5dd0bef3059fbed201b2a216db7dbccf438a3780d2b"
   end
 
   depends_on "notmuch"

@@ -113,7 +113,7 @@ class Glew < Formula
     end
     system ENV.cc, testpath/"test.c", "-o", "test", *flags
     if OS.linux? && ENV.exclude?("DISPLAY")
-      system Formula["xorg-server"].bin/"xvfb-run", "./test"
+      system formula_opt_bin("xorg-server")/"xvfb-run", "./test"
     else
       system "./test"
     end

@@ -7,15 +7,16 @@ class Lcdproc < Formula
   revision 2
 
   bottle do
-    sha256 arm64_tahoe:   "c2685b2448e1356097e6eac9c25749bb2ff46414f72c2724c23c40cc346ba1f9"
-    sha256 arm64_sequoia: "3eca8d7c437762dd23e0781803c8c4c9c8b96372254c260f94c2b1c16b0f569a"
-    sha256 arm64_sonoma:  "8e4bac85060f2e07bf2a15c082b185b5a7d0ac69231602082691ee48142f09df"
-    sha256 sonoma:        "16efc1c9a35bf0563aa2c66a8f653c56e1ef4694956533c31acc722af6834f86"
-    sha256 ventura:       "ff2675dfa714a9de7e8d5a9f40c214cf5547c85c402337e7376a54631f43020a"
-    sha256 monterey:      "90bb0544163a3966aac4de0dffaff4a9cc59cb05e08c314a28829fcf8df8e38b"
-    sha256 big_sur:       "937564e19f5e45fd49b02e83577a4e217abf89ca3884958b3f9e80b2132fa8df"
-    sha256 arm64_linux:   "31e9cdd685bcf637f916a0f897c8bf9da80b89da8440b66a21fead876ed3f9c2"
-    sha256 x86_64_linux:  "d869dec7aa2e03b2c6bc21a281ac56537d5a596e0a87442fc79fda035f000282"
+    sha256 arm64_golden_gate: "d956ddd86fe3f32d7b1c30fcba6342c7f8d300cb6155843de706c6f5605ce743"
+    sha256 arm64_tahoe:       "c2685b2448e1356097e6eac9c25749bb2ff46414f72c2724c23c40cc346ba1f9"
+    sha256 arm64_sequoia:     "3eca8d7c437762dd23e0781803c8c4c9c8b96372254c260f94c2b1c16b0f569a"
+    sha256 arm64_sonoma:      "8e4bac85060f2e07bf2a15c082b185b5a7d0ac69231602082691ee48142f09df"
+    sha256 sonoma:            "16efc1c9a35bf0563aa2c66a8f653c56e1ef4694956533c31acc722af6834f86"
+    sha256 ventura:           "ff2675dfa714a9de7e8d5a9f40c214cf5547c85c402337e7376a54631f43020a"
+    sha256 monterey:          "90bb0544163a3966aac4de0dffaff4a9cc59cb05e08c314a28829fcf8df8e38b"
+    sha256 big_sur:           "937564e19f5e45fd49b02e83577a4e217abf89ca3884958b3f9e80b2132fa8df"
+    sha256 arm64_linux:       "31e9cdd685bcf637f916a0f897c8bf9da80b89da8440b66a21fead876ed3f9c2"
+    sha256 x86_64_linux:      "d869dec7aa2e03b2c6bc21a281ac56537d5a596e0a87442fc79fda035f000282"
   end
 
   depends_on "pkgconf" => :build

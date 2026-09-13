@@ -8,12 +8,13 @@ class StylishHaskell < Formula
 
   bottle do
     rebuild 4
-    sha256 cellar: :any, arm64_tahoe:   "a4f78bcd8ce59aec4e06a0cfc88954a75684ebb8305ac5e0c58e45e79a21c66c"
-    sha256 cellar: :any, arm64_sequoia: "b1e5697193a7f1cf3b72032cd8979406c074fba9f016eeeb189bc64b1ff807f7"
-    sha256 cellar: :any, arm64_sonoma:  "437113d6529d3f00612edff31bb8b89b4c149754c47884b3b5a66026b434c698"
-    sha256 cellar: :any, sonoma:        "0c9c411096f25025890fc55cb4825ff6c6e502e831322ebcac7682bfba7453a2"
-    sha256 cellar: :any, arm64_linux:   "56ff3634ea64b1be1fc7c5fb0eaef1ed7dc0571502c1b15386f7ab2bec84fc6b"
-    sha256 cellar: :any, x86_64_linux:  "413b44a4bc58973d5568bfdaf4d18092707c83802879d30cdcfb3917f3c16083"
+    sha256 cellar: :any, arm64_golden_gate: "d3b368a3dd5aa530f5331ddb7123200018ef151033ea8a24388f8727c31ebdde"
+    sha256 cellar: :any, arm64_tahoe:       "a4f78bcd8ce59aec4e06a0cfc88954a75684ebb8305ac5e0c58e45e79a21c66c"
+    sha256 cellar: :any, arm64_sequoia:     "b1e5697193a7f1cf3b72032cd8979406c074fba9f016eeeb189bc64b1ff807f7"
+    sha256 cellar: :any, arm64_sonoma:      "437113d6529d3f00612edff31bb8b89b4c149754c47884b3b5a66026b434c698"
+    sha256 cellar: :any, sonoma:            "0c9c411096f25025890fc55cb4825ff6c6e502e831322ebcac7682bfba7453a2"
+    sha256 cellar: :any, arm64_linux:       "56ff3634ea64b1be1fc7c5fb0eaef1ed7dc0571502c1b15386f7ab2bec84fc6b"
+    sha256 cellar: :any, x86_64_linux:      "413b44a4bc58973d5568bfdaf4d18092707c83802879d30cdcfb3917f3c16083"
   end
 
   depends_on "cabal-install" => :build

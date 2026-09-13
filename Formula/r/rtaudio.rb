@@ -8,12 +8,13 @@ class Rtaudio < Formula
 
   bottle do
     rebuild 2
-    sha256 cellar: :any,                 arm64_tahoe:   "636ce2d8b737d54f783dc197c20333d6476aa1c3f6a4999c43667d8b34caf7d3"
-    sha256 cellar: :any,                 arm64_sequoia: "b68191b6cb2a95518f1287e8edc1a0a8891797be09d9bded1505e867e42c5864"
-    sha256 cellar: :any,                 arm64_sonoma:  "09c7f13747d8cea17f268baf52de92bf1663a177dd891f86ea9641100903fef2"
-    sha256 cellar: :any,                 sonoma:        "86d1af2e2535c239c7f101e9e6f9b7eb6e0843fca2564a37a63c3165800da785"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "490c370e0ad9885447cc173c281ddc593c0d3be86536fcc293fd874758f61382"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "04dbca1518d5695c5c3f0123b05362787ab22f090c2a5fde271f52906fec5c4e"
+    sha256 cellar: :any,                 arm64_golden_gate: "9671bee62f1a03fa47400604d355a310e95fdb4967df8b2c4989ad86fb8f52cc"
+    sha256 cellar: :any,                 arm64_tahoe:       "636ce2d8b737d54f783dc197c20333d6476aa1c3f6a4999c43667d8b34caf7d3"
+    sha256 cellar: :any,                 arm64_sequoia:     "b68191b6cb2a95518f1287e8edc1a0a8891797be09d9bded1505e867e42c5864"
+    sha256 cellar: :any,                 arm64_sonoma:      "09c7f13747d8cea17f268baf52de92bf1663a177dd891f86ea9641100903fef2"
+    sha256 cellar: :any,                 sonoma:            "86d1af2e2535c239c7f101e9e6f9b7eb6e0843fca2564a37a63c3165800da785"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "490c370e0ad9885447cc173c281ddc593c0d3be86536fcc293fd874758f61382"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "04dbca1518d5695c5c3f0123b05362787ab22f090c2a5fde271f52906fec5c4e"
   end
 
   depends_on "autoconf" => :build

@@ -7,18 +7,19 @@ class Libdv < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:    "c14359502e9d8c606b0424966181a93c26fec27eb9ca41f2313af62888716c4d"
-    sha256 cellar: :any,                 arm64_sequoia:  "d9ec199c7cbb78a2e15ba681e90f94cb34e7c4e4d4856ebe85553661847a4f3b"
-    sha256 cellar: :any,                 arm64_sonoma:   "b3e7be7a0887586ce1373382cdd83d7537b273fc622cf606ea3e1d425461b594"
-    sha256 cellar: :any,                 arm64_ventura:  "e7c73ec9982ec05267073663395ff00a2a5eb7927a0df172441890d402e11077"
-    sha256 cellar: :any,                 arm64_monterey: "58a4f24c622c38ba33f3c2972dff249e77b891d68e06553a99a71dc42801f08e"
-    sha256 cellar: :any,                 arm64_big_sur:  "a72d9919c11d6950fcd115e6fa0e6cbac86ec6f06d8ade46b642006f652bf53f"
-    sha256 cellar: :any,                 sonoma:         "d67945be1d2aba728715b9f67f68bd91fab88599bb351a179bfa89829bb5ac19"
-    sha256 cellar: :any,                 ventura:        "e9109a663d65ae5085c53d011421cc9cb09821fd42b8002c0d2d241db7ebc180"
-    sha256 cellar: :any,                 monterey:       "95529c6172e3054e8cf7057d6a0da13d20a8f368a4828a4103f5b1f37136b340"
-    sha256 cellar: :any,                 big_sur:        "81db616fc05c65d944af1a500e9d647764e361419040b0007d9efc85ebfe3d31"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "a7be333d02ace53395d0dcaad23163a9bf3a159aa05cc71a7202ee8eb917adf3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b4e579189286f35409557243fe450e7509536f831777f37ae2f7519913bddcf8"
+    sha256 cellar: :any,                 arm64_golden_gate: "af2c39188fab70571a2456c1a00723b135d4b84ff7592b56f8bf7e50b3e00de9"
+    sha256 cellar: :any,                 arm64_tahoe:       "c14359502e9d8c606b0424966181a93c26fec27eb9ca41f2313af62888716c4d"
+    sha256 cellar: :any,                 arm64_sequoia:     "d9ec199c7cbb78a2e15ba681e90f94cb34e7c4e4d4856ebe85553661847a4f3b"
+    sha256 cellar: :any,                 arm64_sonoma:      "b3e7be7a0887586ce1373382cdd83d7537b273fc622cf606ea3e1d425461b594"
+    sha256 cellar: :any,                 arm64_ventura:     "e7c73ec9982ec05267073663395ff00a2a5eb7927a0df172441890d402e11077"
+    sha256 cellar: :any,                 arm64_monterey:    "58a4f24c622c38ba33f3c2972dff249e77b891d68e06553a99a71dc42801f08e"
+    sha256 cellar: :any,                 arm64_big_sur:     "a72d9919c11d6950fcd115e6fa0e6cbac86ec6f06d8ade46b642006f652bf53f"
+    sha256 cellar: :any,                 sonoma:            "d67945be1d2aba728715b9f67f68bd91fab88599bb351a179bfa89829bb5ac19"
+    sha256 cellar: :any,                 ventura:           "e9109a663d65ae5085c53d011421cc9cb09821fd42b8002c0d2d241db7ebc180"
+    sha256 cellar: :any,                 monterey:          "95529c6172e3054e8cf7057d6a0da13d20a8f368a4828a4103f5b1f37136b340"
+    sha256 cellar: :any,                 big_sur:           "81db616fc05c65d944af1a500e9d647764e361419040b0007d9efc85ebfe3d31"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "a7be333d02ace53395d0dcaad23163a9bf3a159aa05cc71a7202ee8eb917adf3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "b4e579189286f35409557243fe450e7509536f831777f37ae2f7519913bddcf8"
   end
 
   depends_on "autoconf" => :build
@@ -27,17 +28,18 @@ class Libdv < Formula
   depends_on "pkgconf" => :build
   depends_on "popt"
 
+  # On macOS, _SC_PRIORITY_SCHEDULING is defined but sched_setscheduler is unavailable
+  # https://sourceforge.net/p/libdv/patches/43/
+  patch :p0 do
+    url "https://sourceforge.net/p/libdv/patches/_discuss/thread/7c774d02/1f37/attachment/libdv-1.0.0-darwin.patch"
+    sha256 "6c9632b4ff6a6580b00f294b5db5b27e058fc04b87f4cf2134e056da13f0a305"
+    type :unofficial
+  end
+
   # remove SDL1 dependency by force
   patch :DATA
 
   def install
-    # This fixes an undefined symbol error on compile.
-    # See the port file for libdv:
-    #   https://trac.macports.org/browser/trunk/dports/multimedia/libdv/Portfile
-    # This flag is the preferred method over what macports uses.
-    # See the apple docs: https://cl.ly/2HeF bottom of the "Finding Imported Symbols" section
-    ENV.append "LDFLAGS", "-undefined dynamic_lookup" if OS.mac?
-
     system "autoreconf", "--force", "--install", "--verbose"
 
     # Fix compile with newer Clang

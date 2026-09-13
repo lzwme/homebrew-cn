@@ -7,12 +7,13 @@ class Svlang < Formula
   head "https://github.com/MikePopoloski/slang.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "a5182e41983044275fc167af043d81ea8d202821017f8417d094a9c94f910600"
-    sha256 cellar: :any, arm64_sequoia: "87aa125dca574a01827c92420c92b15a081597e4c03c1b2e09cb788919c91d79"
-    sha256 cellar: :any, arm64_sonoma:  "dc82f99aa17fdd9b112627b0c20134a3406efe2fb607ef16b58519f777f6f7af"
-    sha256 cellar: :any, sonoma:        "8841904fbbe822758474f70428b8c3978448b9b1b0a3e96c1dcbe2883bc5336d"
-    sha256 cellar: :any, arm64_linux:   "5c4e0748b60d9749502143b043f1d0e639f98aa476ed654b46ffe620387bb6e3"
-    sha256 cellar: :any, x86_64_linux:  "b960c02e941ea96322f3540dd07c271537edaf6c05f44db4f62e276b7db304ee"
+    sha256 cellar: :any, arm64_golden_gate: "126c27560e423ee920d6b214a5a7337f65c058f39b357c78749ffa3e3f87f285"
+    sha256 cellar: :any, arm64_tahoe:       "a5182e41983044275fc167af043d81ea8d202821017f8417d094a9c94f910600"
+    sha256 cellar: :any, arm64_sequoia:     "87aa125dca574a01827c92420c92b15a081597e4c03c1b2e09cb788919c91d79"
+    sha256 cellar: :any, arm64_sonoma:      "dc82f99aa17fdd9b112627b0c20134a3406efe2fb607ef16b58519f777f6f7af"
+    sha256 cellar: :any, sonoma:            "8841904fbbe822758474f70428b8c3978448b9b1b0a3e96c1dcbe2883bc5336d"
+    sha256 cellar: :any, arm64_linux:       "5c4e0748b60d9749502143b043f1d0e639f98aa476ed654b46ffe620387bb6e3"
+    sha256 cellar: :any, x86_64_linux:      "b960c02e941ea96322f3540dd07c271537edaf6c05f44db4f62e276b7db304ee"
   end
 
   depends_on "cmake" => :build

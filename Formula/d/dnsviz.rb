@@ -9,11 +9,12 @@ class Dnsviz < Formula
   revision 3
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "44692d820713f8737f341ee25fbebe30587a47ecab58ed8e2399b27bbcf2f9a9"
-    sha256 cellar: :any, arm64_sequoia: "1fa5b7a0d2e0d468c0018ca6aa5ec43e388b86b0547971e0c134b8be06d91f0d"
-    sha256 cellar: :any, arm64_sonoma:  "839cd0e0b292dc4ae1e908c0cf7f341572ccc7b507e78b37cc6a5c36ff20b6fb"
-    sha256 cellar: :any, arm64_linux:   "b276e1137530e11c518c02fce240eabdd8e312ac13dff8284dba017d5767927e"
-    sha256 cellar: :any, x86_64_linux:  "a2884ec317554524a1fa52fab1de0a72f380c0db5bb7ebadc8819a4d33b328cb"
+    sha256 cellar: :any, arm64_golden_gate: "e57a56ddf9f4b9ea391a9a756be73f6325a4a3832560d4213ea12ebfb0b35cfe"
+    sha256 cellar: :any, arm64_tahoe:       "44692d820713f8737f341ee25fbebe30587a47ecab58ed8e2399b27bbcf2f9a9"
+    sha256 cellar: :any, arm64_sequoia:     "1fa5b7a0d2e0d468c0018ca6aa5ec43e388b86b0547971e0c134b8be06d91f0d"
+    sha256 cellar: :any, arm64_sonoma:      "839cd0e0b292dc4ae1e908c0cf7f341572ccc7b507e78b37cc6a5c36ff20b6fb"
+    sha256 cellar: :any, arm64_linux:       "b276e1137530e11c518c02fce240eabdd8e312ac13dff8284dba017d5767927e"
+    sha256 cellar: :any, x86_64_linux:      "a2884ec317554524a1fa52fab1de0a72f380c0db5bb7ebadc8819a4d33b328cb"
   end
 
   depends_on "bind" => [:build, :test]

@@ -12,12 +12,13 @@ class CrosstoolNg < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "60b6e1d5801ced496f0af8471dbc6bd753483d2a019ffbb48386b4d7497acc36"
-    sha256 cellar: :any, arm64_sequoia: "3f7d002bf6b642bc5cbb7aeed1f9e653165d12cfa18e1bdb6485d766be4881a3"
-    sha256 cellar: :any, arm64_sonoma:  "235a6fba5185928ed681261c55879b4842430e3a0fff1d13af33d4b947e5ece1"
-    sha256 cellar: :any, sonoma:        "7851eaded2360e433afddcb138ae6f5f4326fbe4b8eea998d545160fc0353238"
-    sha256 cellar: :any, arm64_linux:   "479436440edb6c2fa91cb3744ae3896c4aea6a0d7df5a6368bda162ac03e85f3"
-    sha256 cellar: :any, x86_64_linux:  "607ecdd7d841f9269741316b0dc452c67e738600743241e63af5ad830a678200"
+    sha256 cellar: :any, arm64_golden_gate: "c79135326c0ed60b8051a57aab0a59ae428dd8aaa02fc92552ac4bdf28e50b6c"
+    sha256 cellar: :any, arm64_tahoe:       "60b6e1d5801ced496f0af8471dbc6bd753483d2a019ffbb48386b4d7497acc36"
+    sha256 cellar: :any, arm64_sequoia:     "3f7d002bf6b642bc5cbb7aeed1f9e653165d12cfa18e1bdb6485d766be4881a3"
+    sha256 cellar: :any, arm64_sonoma:      "235a6fba5185928ed681261c55879b4842430e3a0fff1d13af33d4b947e5ece1"
+    sha256 cellar: :any, sonoma:            "7851eaded2360e433afddcb138ae6f5f4326fbe4b8eea998d545160fc0353238"
+    sha256 cellar: :any, arm64_linux:       "479436440edb6c2fa91cb3744ae3896c4aea6a0d7df5a6368bda162ac03e85f3"
+    sha256 cellar: :any, x86_64_linux:      "607ecdd7d841f9269741316b0dc452c67e738600743241e63af5ad830a678200"
   end
 
   depends_on "help2man" => :build

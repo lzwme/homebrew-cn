@@ -16,12 +16,13 @@ class ChainBench < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cd785591312edf03b12e224b5459291c5b5e1bcdaf42cf0851f3b15eaa970fb1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cd785591312edf03b12e224b5459291c5b5e1bcdaf42cf0851f3b15eaa970fb1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cd785591312edf03b12e224b5459291c5b5e1bcdaf42cf0851f3b15eaa970fb1"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9d95ef4ad254825949c945ee60e1090e2ef105c6ff82576bce77dffe3c9c8f60"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2c872a4288022250f8eda7a5c93025c2c5071866485754d7d097099746adf810"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1b5b9003c38b13b95a45d30da1d996afe373ec223928a9b5db1b9925b9d45b7d"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "26449bd577d54f0e0d706d56e44df87048e8d269e4742e8a844140df0bf3dab5"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "cd785591312edf03b12e224b5459291c5b5e1bcdaf42cf0851f3b15eaa970fb1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "cd785591312edf03b12e224b5459291c5b5e1bcdaf42cf0851f3b15eaa970fb1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "cd785591312edf03b12e224b5459291c5b5e1bcdaf42cf0851f3b15eaa970fb1"
+    sha256 cellar: :any_skip_relocation, sonoma:            "9d95ef4ad254825949c945ee60e1090e2ef105c6ff82576bce77dffe3c9c8f60"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "2c872a4288022250f8eda7a5c93025c2c5071866485754d7d097099746adf810"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "1b5b9003c38b13b95a45d30da1d996afe373ec223928a9b5db1b9925b9d45b7d"
   end
 
   depends_on "go" => :build

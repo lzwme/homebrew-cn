@@ -6,14 +6,15 @@ class Libxpresent < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "e80e27e85c020a9a1391bb318b8a3e4b03fcce7be8dd604a2eb85c6ee1e56d01"
-    sha256 cellar: :any,                 arm64_sequoia: "44593e71ec9078d0ac8b918fec8991bd2415c7daebb067e7e4b6e881e0f8fd7a"
-    sha256 cellar: :any,                 arm64_sonoma:  "87448d6b9c94a14eb8e087602dd2696dcd9b29dde23ba359f14e491502ce6d69"
-    sha256 cellar: :any,                 arm64_ventura: "3942db3a8d6bd9d70c26030daba6b2751c2ab33608f278129bca020f2acdce2d"
-    sha256 cellar: :any,                 sonoma:        "0e2b2206c01d044ac97976f685773bc44aa68322afe982f71564d48172c0c052"
-    sha256 cellar: :any,                 ventura:       "22bc417dfff907b31eb49975f899777c277d2dd3fe944f24bcde1c1f8dec5a0b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "539cbabee52ea3998d89e147b884d3b4c6743b3c14f18e15a145958e3d8eddef"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9410dc0e6850979043f5454de952ba1c1360cd4e7f1a011b8faf4b3475553ad9"
+    sha256 cellar: :any,                 arm64_golden_gate: "17764bb9c2cb7dbe35882dedb12236cb18d9412a059eec1a60a4aa5abbfb0499"
+    sha256 cellar: :any,                 arm64_tahoe:       "e80e27e85c020a9a1391bb318b8a3e4b03fcce7be8dd604a2eb85c6ee1e56d01"
+    sha256 cellar: :any,                 arm64_sequoia:     "44593e71ec9078d0ac8b918fec8991bd2415c7daebb067e7e4b6e881e0f8fd7a"
+    sha256 cellar: :any,                 arm64_sonoma:      "87448d6b9c94a14eb8e087602dd2696dcd9b29dde23ba359f14e491502ce6d69"
+    sha256 cellar: :any,                 arm64_ventura:     "3942db3a8d6bd9d70c26030daba6b2751c2ab33608f278129bca020f2acdce2d"
+    sha256 cellar: :any,                 sonoma:            "0e2b2206c01d044ac97976f685773bc44aa68322afe982f71564d48172c0c052"
+    sha256 cellar: :any,                 ventura:           "22bc417dfff907b31eb49975f899777c277d2dd3fe944f24bcde1c1f8dec5a0b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "539cbabee52ea3998d89e147b884d3b4c6743b3c14f18e15a145958e3d8eddef"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "9410dc0e6850979043f5454de952ba1c1360cd4e7f1a011b8faf4b3475553ad9"
   end
 
   head do

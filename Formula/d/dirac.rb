@@ -8,18 +8,19 @@ class Dirac < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:    "67319e9ad9710a1d9bb80f78716b453430f164ed95a0b45ad62bad1bccbd879b"
-    sha256 cellar: :any,                 arm64_sequoia:  "53157665a3a8ba4676115ebedef7b7428ea51424674d1af294383cc94c9572ff"
-    sha256 cellar: :any,                 arm64_sonoma:   "f2cb5520feb1c9b6ee2803f926c5e5499042ee0813d366a4dd67d425f30f365e"
-    sha256 cellar: :any,                 arm64_ventura:  "7bc947bb9a57486227216595ad5e62ece0deba0a467b1e62e0f1e549f3dbea64"
-    sha256 cellar: :any,                 arm64_monterey: "694f2245011fc14041cbac4d527cd1ca5feca5220ae7aec7dd2f407d3a72bd83"
-    sha256 cellar: :any,                 arm64_big_sur:  "fd13d2ad2ae2be488a3667d58a9ae207a12afe17826e6d8fdebf454bba4a543f"
-    sha256 cellar: :any,                 sonoma:         "bf547d33dffd0442908ab57c0aa4bfcb59c5943112f260b31e6e0aa2fe6c0469"
-    sha256 cellar: :any,                 ventura:        "da8aa90563093bde9f95ce1bed46e85150f9d57afdc35a2af8544ba5f9921cb6"
-    sha256 cellar: :any,                 monterey:       "0b0310b8b2213e9d86cf414331130f4effd792609be95e1015932420328fbb91"
-    sha256 cellar: :any,                 big_sur:        "2d6aa7e4d9c73e1a79b9b23b86ade670324755806276d6061ec1b3e9f444548a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "c02ecb26cb2992df035ad54868de88e9706b0abecf9f949413bc584b9eea8a4f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "96695c27a2cd1fbabc1281d052e798b4da85d75ba1a92c6b072808d0a59c62bb"
+    sha256 cellar: :any,                 arm64_golden_gate: "3ec72cf7b31b40756d225cef86654e59d892939fc02c931478e7c125e1186c7d"
+    sha256 cellar: :any,                 arm64_tahoe:       "67319e9ad9710a1d9bb80f78716b453430f164ed95a0b45ad62bad1bccbd879b"
+    sha256 cellar: :any,                 arm64_sequoia:     "53157665a3a8ba4676115ebedef7b7428ea51424674d1af294383cc94c9572ff"
+    sha256 cellar: :any,                 arm64_sonoma:      "f2cb5520feb1c9b6ee2803f926c5e5499042ee0813d366a4dd67d425f30f365e"
+    sha256 cellar: :any,                 arm64_ventura:     "7bc947bb9a57486227216595ad5e62ece0deba0a467b1e62e0f1e549f3dbea64"
+    sha256 cellar: :any,                 arm64_monterey:    "694f2245011fc14041cbac4d527cd1ca5feca5220ae7aec7dd2f407d3a72bd83"
+    sha256 cellar: :any,                 arm64_big_sur:     "fd13d2ad2ae2be488a3667d58a9ae207a12afe17826e6d8fdebf454bba4a543f"
+    sha256 cellar: :any,                 sonoma:            "bf547d33dffd0442908ab57c0aa4bfcb59c5943112f260b31e6e0aa2fe6c0469"
+    sha256 cellar: :any,                 ventura:           "da8aa90563093bde9f95ce1bed46e85150f9d57afdc35a2af8544ba5f9921cb6"
+    sha256 cellar: :any,                 monterey:          "0b0310b8b2213e9d86cf414331130f4effd792609be95e1015932420328fbb91"
+    sha256 cellar: :any,                 big_sur:           "2d6aa7e4d9c73e1a79b9b23b86ade670324755806276d6061ec1b3e9f444548a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "c02ecb26cb2992df035ad54868de88e9706b0abecf9f949413bc584b9eea8a4f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "96695c27a2cd1fbabc1281d052e798b4da85d75ba1a92c6b072808d0a59c62bb"
   end
 
   # First two patches: the only two commits in the upstream repo not in 1.0.2

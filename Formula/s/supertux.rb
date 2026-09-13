@@ -17,12 +17,13 @@ class Supertux < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "90e8bb806543bea14b1ff9a90c12b18d1366a92b172f5d48186f245ef82729be"
-    sha256 cellar: :any,                 arm64_sequoia: "11bb1bad9aafae4445904c65eb9b4e18812bcedc1714699bc1f79f234e0209ef"
-    sha256 cellar: :any,                 arm64_sonoma:  "caa57067cd1dfa66e3d39669e7d89ca92c158b54f9b1fc85b88acd626ba2587d"
-    sha256 cellar: :any,                 sonoma:        "25124eaad411fdc607c923d4a79afe0b5e29e19a3a58b61ef58481b6844d0ffb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "dd46b29b85232c359dd1d6cb4964190d01a3be01d51579b58299313a699e8c1e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0c8498d5a9d604d055d87358da12507286ba6954153b1f202f5c552b3e89ecde"
+    sha256 cellar: :any,                 arm64_golden_gate: "a293a606c03a5aa921036e7e9e530dbda5116352bbf39e729c527dfc9337b82e"
+    sha256 cellar: :any,                 arm64_tahoe:       "90e8bb806543bea14b1ff9a90c12b18d1366a92b172f5d48186f245ef82729be"
+    sha256 cellar: :any,                 arm64_sequoia:     "11bb1bad9aafae4445904c65eb9b4e18812bcedc1714699bc1f79f234e0209ef"
+    sha256 cellar: :any,                 arm64_sonoma:      "caa57067cd1dfa66e3d39669e7d89ca92c158b54f9b1fc85b88acd626ba2587d"
+    sha256 cellar: :any,                 sonoma:            "25124eaad411fdc607c923d4a79afe0b5e29e19a3a58b61ef58481b6844d0ffb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "dd46b29b85232c359dd1d6cb4964190d01a3be01d51579b58299313a699e8c1e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "0c8498d5a9d604d055d87358da12507286ba6954153b1f202f5c552b3e89ecde"
   end
 
   head do

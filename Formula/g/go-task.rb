@@ -20,6 +20,12 @@ class GoTask < Formula
 
   conflicts_with "task", because: "both install `task` binaries"
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ldflags = %W[
       -X github.com/go-task/task/v3/internal/version.version=#{version}

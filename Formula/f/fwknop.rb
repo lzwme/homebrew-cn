@@ -14,14 +14,15 @@ class Fwknop < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "7963f9f9f757720644a3df1cfaeb3307b43dfc3148ece268a48fca4ca47bf83b"
-    sha256 arm64_sequoia: "227c8c6bcd86942a72b26ab69e096cefd01941331e82ef5bf8c3942070081edf"
-    sha256 arm64_sonoma:  "bc2f4972f2b2b07f2958590c47149d83ba0b82dc568d8da044b83c5b31312caa"
-    sha256 arm64_ventura: "591c24145cf5caff0f7a02c20ef482bbd720df8f0224cbb3908a49f912edc0c8"
-    sha256 sonoma:        "dadbd89d12097cafb572e66e31295745cb7420ff940fd985932946a23859fb6d"
-    sha256 ventura:       "659d69cb42503ccb2d8fe7334985b3e20e50dcaa025c72005b7e08e548bc8994"
-    sha256 arm64_linux:   "403b551d5a2cf7b34feae53ac83a788de7af8d7d32982262d1bba500529ac6cc"
-    sha256 x86_64_linux:  "dc5ed49f5029429d1e0db9e575844e6517dd3339924d55c986df9a48485bfd95"
+    sha256 arm64_golden_gate: "0765cf34da75b128a671f2596f750276a7b5b0d19659234f7618891ca4632609"
+    sha256 arm64_tahoe:       "7963f9f9f757720644a3df1cfaeb3307b43dfc3148ece268a48fca4ca47bf83b"
+    sha256 arm64_sequoia:     "227c8c6bcd86942a72b26ab69e096cefd01941331e82ef5bf8c3942070081edf"
+    sha256 arm64_sonoma:      "bc2f4972f2b2b07f2958590c47149d83ba0b82dc568d8da044b83c5b31312caa"
+    sha256 arm64_ventura:     "591c24145cf5caff0f7a02c20ef482bbd720df8f0224cbb3908a49f912edc0c8"
+    sha256 sonoma:            "dadbd89d12097cafb572e66e31295745cb7420ff940fd985932946a23859fb6d"
+    sha256 ventura:           "659d69cb42503ccb2d8fe7334985b3e20e50dcaa025c72005b7e08e548bc8994"
+    sha256 arm64_linux:       "403b551d5a2cf7b34feae53ac83a788de7af8d7d32982262d1bba500529ac6cc"
+    sha256 x86_64_linux:      "dc5ed49f5029429d1e0db9e575844e6517dd3339924d55c986df9a48485bfd95"
   end
 
   depends_on "gpgme"

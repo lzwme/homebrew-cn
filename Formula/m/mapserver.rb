@@ -11,11 +11,12 @@ class Mapserver < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "cfa3f2bca5cdf532a8ce65f9281d38336ba105c70a352bdd5972a6eaa8736db3"
-    sha256 cellar: :any, arm64_sequoia: "80545335296608f2291dad55f1963a3b5d4dd1793156feb4fd045caf361c9a45"
-    sha256 cellar: :any, arm64_sonoma:  "6096618b999a648f6fe3c2b480818854729016a3e83497251fa4ede7079721a4"
-    sha256 cellar: :any, arm64_linux:   "092a6c679dfdc3a4c025d9ea13316f9c891cd3a53495556467634a24b8eb9ac3"
-    sha256 cellar: :any, x86_64_linux:  "05279e34eb9514ba580fb2375e954dd975fe9ba962dc273b88649e80b24c603a"
+    sha256 cellar: :any, arm64_golden_gate: "852837fcb088138dd062db80b1a77d6a62e60b74e94c249fde8c508626720046"
+    sha256 cellar: :any, arm64_tahoe:       "cfa3f2bca5cdf532a8ce65f9281d38336ba105c70a352bdd5972a6eaa8736db3"
+    sha256 cellar: :any, arm64_sequoia:     "80545335296608f2291dad55f1963a3b5d4dd1793156feb4fd045caf361c9a45"
+    sha256 cellar: :any, arm64_sonoma:      "6096618b999a648f6fe3c2b480818854729016a3e83497251fa4ede7079721a4"
+    sha256 cellar: :any, arm64_linux:       "092a6c679dfdc3a4c025d9ea13316f9c891cd3a53495556467634a24b8eb9ac3"
+    sha256 cellar: :any, x86_64_linux:      "05279e34eb9514ba580fb2375e954dd975fe9ba962dc273b88649e80b24c603a"
   end
 
   depends_on "cmake" => :build

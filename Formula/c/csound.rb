@@ -40,12 +40,13 @@ class Csound < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "d44f2db6527e1af5da2549dfb92493ca2f7f9dcf31e6456c3181f76cdc3b99f4"
-    sha256 arm64_sequoia: "e23be31b0570c7957fca7ba4b59deab8a109d9d88d0ee7c8a6d4778eca76163d"
-    sha256 arm64_sonoma:  "56da23211bcb3e4c8fb043cae6cbd6873eba850f9b41db5feb2958123fa20467"
-    sha256 sonoma:        "c281aa61a78df24dc750fbd137cd8dda70d95593756bd52383ed5c2cb2a46dd3"
-    sha256 arm64_linux:   "79183578c13b4dc34a6f7764051d9bbf6c5528a9a191615d60f6b47aff1916a6"
-    sha256 x86_64_linux:  "67636d65fcd79d7562f6a06f1143603a5728b97895b9583c290be25bb30880d7"
+    sha256 arm64_golden_gate: "ecc55c115f56d10ef4ad746c8c28ac0658e2811f903f276f74cf0648dbab67ac"
+    sha256 arm64_tahoe:       "d44f2db6527e1af5da2549dfb92493ca2f7f9dcf31e6456c3181f76cdc3b99f4"
+    sha256 arm64_sequoia:     "e23be31b0570c7957fca7ba4b59deab8a109d9d88d0ee7c8a6d4778eca76163d"
+    sha256 arm64_sonoma:      "56da23211bcb3e4c8fb043cae6cbd6873eba850f9b41db5feb2958123fa20467"
+    sha256 sonoma:            "c281aa61a78df24dc750fbd137cd8dda70d95593756bd52383ed5c2cb2a46dd3"
+    sha256 arm64_linux:       "79183578c13b4dc34a6f7764051d9bbf6c5528a9a191615d60f6b47aff1916a6"
+    sha256 x86_64_linux:      "67636d65fcd79d7562f6a06f1143603a5728b97895b9583c290be25bb30880d7"
   end
 
   depends_on "asio" => :build
@@ -290,8 +291,8 @@ class Csound < Formula
           }
       }
     JAVA
-    system Formula["openjdk"].bin/"javac", "-classpath", "#{libexec}/csnd6.jar", "test.java"
-    system Formula["openjdk"].bin/"java", "-classpath", "#{libexec}/csnd6.jar:.",
+    system formula_opt_bin("openjdk")/"javac", "-classpath", "#{libexec}/csnd6.jar", "test.java"
+    system formula_opt_bin("openjdk")/"java", "-classpath", "#{libexec}/csnd6.jar:.",
                                           "-Djava.library.path=#{libexec}", "test"
   end
 end

@@ -6,12 +6,13 @@ class Bfs < Formula
   license "0BSD"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "28046c8bba51b65c2d7697ff06960470dd3319bd10feb1b844bda95aaa73c15d"
-    sha256 cellar: :any, arm64_sequoia: "6ad4f55e8af45014f38bef001286fe9235e4cdb22842d6b8acc0c4031f2c98fe"
-    sha256 cellar: :any, arm64_sonoma:  "77033feadcdd2026a9248ed47fc9178771b410d879148380d6e7481fc6ce3506"
-    sha256 cellar: :any, sonoma:        "5eedd8fc518769e48054a5045996d66094b404a90192c8c30b2cb31a13878c55"
-    sha256 cellar: :any, arm64_linux:   "cba8e01b15629a1ac2d85f5ef9a684eb0235db4c8e3ce02718a800132a565b8f"
-    sha256 cellar: :any, x86_64_linux:  "3fde513eca75277a3cd613614254f67314303c4b438fc2b8c41044e6d159556d"
+    sha256 cellar: :any, arm64_golden_gate: "bc771a035e66de8520b5a99637615b75db2b6b82ddc79effda10ac793dddca04"
+    sha256 cellar: :any, arm64_tahoe:       "28046c8bba51b65c2d7697ff06960470dd3319bd10feb1b844bda95aaa73c15d"
+    sha256 cellar: :any, arm64_sequoia:     "6ad4f55e8af45014f38bef001286fe9235e4cdb22842d6b8acc0c4031f2c98fe"
+    sha256 cellar: :any, arm64_sonoma:      "77033feadcdd2026a9248ed47fc9178771b410d879148380d6e7481fc6ce3506"
+    sha256 cellar: :any, sonoma:            "5eedd8fc518769e48054a5045996d66094b404a90192c8c30b2cb31a13878c55"
+    sha256 cellar: :any, arm64_linux:       "cba8e01b15629a1ac2d85f5ef9a684eb0235db4c8e3ce02718a800132a565b8f"
+    sha256 cellar: :any, x86_64_linux:      "3fde513eca75277a3cd613614254f67314303c4b438fc2b8c41044e6d159556d"
   end
 
   depends_on "pkgconf" => :build

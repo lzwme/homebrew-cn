@@ -11,12 +11,13 @@ class ArmLinuxGnueabihfBinutils < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "114e1c97a10416e088ecfaf59a7e6095208dca721aebdda8848177a1eabe9b74"
-    sha256 arm64_sequoia: "d34613b52d6b8bc65f76c09be800faebf796a6556ee1e246760b05fcc6873e16"
-    sha256 arm64_sonoma:  "d2c43c3f06581bfea4dbc6c16bb2303bbc9fa2f2a4b534e6ccd2fb1509849d29"
-    sha256 sonoma:        "383da8b87381b3540d0dcf4aa373ba1afe403ee1dfe4eab8dc38d626a3aaddb9"
-    sha256 arm64_linux:   "c985f45b7b788c587a9f275626c5d3fe75ca53bd2f4b4368dec88ef1b78147a2"
-    sha256 x86_64_linux:  "69aa4791d3fb0b900de1f0e7cfccd0427b2cb3e3b7ddba27bacf67937bd28dba"
+    sha256 arm64_golden_gate: "59c53820f1b11299f177c3ce831bc0e37c47c019f2ff645863e7a3e55e01be48"
+    sha256 arm64_tahoe:       "114e1c97a10416e088ecfaf59a7e6095208dca721aebdda8848177a1eabe9b74"
+    sha256 arm64_sequoia:     "d34613b52d6b8bc65f76c09be800faebf796a6556ee1e246760b05fcc6873e16"
+    sha256 arm64_sonoma:      "d2c43c3f06581bfea4dbc6c16bb2303bbc9fa2f2a4b534e6ccd2fb1509849d29"
+    sha256 sonoma:            "383da8b87381b3540d0dcf4aa373ba1afe403ee1dfe4eab8dc38d626a3aaddb9"
+    sha256 arm64_linux:       "c985f45b7b788c587a9f275626c5d3fe75ca53bd2f4b4368dec88ef1b78147a2"
+    sha256 x86_64_linux:      "69aa4791d3fb0b900de1f0e7cfccd0427b2cb3e3b7ddba27bacf67937bd28dba"
   end
 
   depends_on "pkgconf" => :build

@@ -11,11 +11,12 @@ class Modules < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "bf7016ad8edff7c651260461d986457389c16abbec7a1693dcac9c3c98583458"
-    sha256 cellar: :any, arm64_sequoia: "730a2b05a9579e0134d84c4f245af1edab652e78dee2197d57727693d71a1c8a"
-    sha256 cellar: :any, arm64_sonoma:  "b64587cd90ae1683647a229ccd885b6196d1179c998bace1acc6300c2e350792"
-    sha256 cellar: :any, arm64_linux:   "fd50dbe5b15ffbfa7f5121d6d00b8335c870dd26c16a63e69dafa522251e7a72"
-    sha256 cellar: :any, x86_64_linux:  "c0c200e124beea902fd55d799aa2be6c329842e3e2944b4cd6c5e5f41f1a9714"
+    sha256 cellar: :any, arm64_golden_gate: "d2dca6e16ad0ea1355127b2c5b9cb761b14145bd990538c7ff5c20faede439d3"
+    sha256 cellar: :any, arm64_tahoe:       "bf7016ad8edff7c651260461d986457389c16abbec7a1693dcac9c3c98583458"
+    sha256 cellar: :any, arm64_sequoia:     "730a2b05a9579e0134d84c4f245af1edab652e78dee2197d57727693d71a1c8a"
+    sha256 cellar: :any, arm64_sonoma:      "b64587cd90ae1683647a229ccd885b6196d1179c998bace1acc6300c2e350792"
+    sha256 cellar: :any, arm64_linux:       "fd50dbe5b15ffbfa7f5121d6d00b8335c870dd26c16a63e69dafa522251e7a72"
+    sha256 cellar: :any, x86_64_linux:      "c0c200e124beea902fd55d799aa2be6c329842e3e2944b4cd6c5e5f41f1a9714"
   end
 
   depends_on "tcl-tk"

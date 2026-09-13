@@ -40,6 +40,6 @@ class Jasmin < Formula
       .end method
     EOS
     system bin/"jasmin", testpath/"test.j"
-    assert_equal "Hello Homebrew\n", shell_output("#{Formula["openjdk"].bin}/java HomebrewTest")
+    assert_equal "Hello Homebrew\n", shell_output("#{formula_opt_bin("openjdk")}/java HomebrewTest")
   end
 end

@@ -11,12 +11,13 @@ class Monit < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "4ca2ec2602bad5c37d7b07954d966e8834124cd97600637dc7cdfdd82a850ef0"
-    sha256 cellar: :any, arm64_sequoia: "7c43581cc73b89a8de2e4b91a708e03dc843e2c873e6ebcf3d2214b04f34d6de"
-    sha256 cellar: :any, arm64_sonoma:  "1d0f9ab36c0c7f938a2ce25115d3922fca0297dda200da36ab3f5f3f84c2db87"
-    sha256 cellar: :any, sonoma:        "0badbc8e5be8a3069c5e31ad24f49c85c94bc36d381b68d6c632cb188432406a"
-    sha256 cellar: :any, arm64_linux:   "60e2478b3b8c7cabfaf2f00142e6c13d50ce31afb292db7166fe66a2460d936d"
-    sha256 cellar: :any, x86_64_linux:  "e8077e05324760fa6f9992c2917945b71cbf301452a7f553addd08b1163347c9"
+    sha256 cellar: :any, arm64_golden_gate: "c09972f21bd7a3a18437fb063ffc18bf01d0562d1a8919dfa60c14e4666af46c"
+    sha256 cellar: :any, arm64_tahoe:       "4ca2ec2602bad5c37d7b07954d966e8834124cd97600637dc7cdfdd82a850ef0"
+    sha256 cellar: :any, arm64_sequoia:     "7c43581cc73b89a8de2e4b91a708e03dc843e2c873e6ebcf3d2214b04f34d6de"
+    sha256 cellar: :any, arm64_sonoma:      "1d0f9ab36c0c7f938a2ce25115d3922fca0297dda200da36ab3f5f3f84c2db87"
+    sha256 cellar: :any, sonoma:            "0badbc8e5be8a3069c5e31ad24f49c85c94bc36d381b68d6c632cb188432406a"
+    sha256 cellar: :any, arm64_linux:       "60e2478b3b8c7cabfaf2f00142e6c13d50ce31afb292db7166fe66a2460d936d"
+    sha256 cellar: :any, x86_64_linux:      "e8077e05324760fa6f9992c2917945b71cbf301452a7f553addd08b1163347c9"
   end
 
   depends_on "openssl@3"

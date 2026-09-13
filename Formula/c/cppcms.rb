@@ -9,12 +9,13 @@ class Cppcms < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "78fd3c8d81ce0b0feb720b7da8db1ebfdf00670dd7d4c133bfe22a2cfa2049a1"
-    sha256 cellar: :any,                 arm64_sequoia: "1ca0e2347ea05bdd0d8d91e38d2e5e48e0452ec14ff25751ae2665c36859b491"
-    sha256 cellar: :any,                 arm64_sonoma:  "5407fbfe3aaccbc61545b918f41d98529d51e5666de00146d4e73e01cd68cb2e"
-    sha256 cellar: :any,                 sonoma:        "509c45a58217091401a6afc4ab929fe65f6ece4e2db7268f0252842016cf1998"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c93be15dcdb0cbf3ae83438c373f8fb407545a6622de1827d5fa4da934eac5b9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "086440ca1c958fb8a70d99ab91e81b56809e836f831b6959a0d24eac7a92d66b"
+    sha256 cellar: :any,                 arm64_golden_gate: "0d8efacd2c36827724ee0d6814dff7532310050b42c2e52f445109f115168891"
+    sha256 cellar: :any,                 arm64_tahoe:       "78fd3c8d81ce0b0feb720b7da8db1ebfdf00670dd7d4c133bfe22a2cfa2049a1"
+    sha256 cellar: :any,                 arm64_sequoia:     "1ca0e2347ea05bdd0d8d91e38d2e5e48e0452ec14ff25751ae2665c36859b491"
+    sha256 cellar: :any,                 arm64_sonoma:      "5407fbfe3aaccbc61545b918f41d98529d51e5666de00146d4e73e01cd68cb2e"
+    sha256 cellar: :any,                 sonoma:            "509c45a58217091401a6afc4ab929fe65f6ece4e2db7268f0252842016cf1998"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "c93be15dcdb0cbf3ae83438c373f8fb407545a6622de1827d5fa4da934eac5b9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "086440ca1c958fb8a70d99ab91e81b56809e836f831b6959a0d24eac7a92d66b"
   end
 
   depends_on "cmake" => :build

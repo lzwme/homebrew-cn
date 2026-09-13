@@ -8,12 +8,13 @@ class EasyTag < Formula
 
   bottle do
     rebuild 2
-    sha256 arm64_tahoe:   "fc83e82e1bf16cb52d433688b8c8b89374c2d09027a453745e57ca27ee5b3b4d"
-    sha256 arm64_sequoia: "f79b0ed3c4026cb1c8019b60bd0ecb5bf466b14e758a70cb4e35bb6642e45c98"
-    sha256 arm64_sonoma:  "86ea6ba733c44dd73aca5ca7e079f66abb42fe26d24371ecdbfdf033097a1867"
-    sha256 sonoma:        "7fd6763ed03295537a80d52a0615315a153deba9adc12c8941209e5bcb5f0f68"
-    sha256 arm64_linux:   "6c65815c229b68fce8e0868f31f09e8f787138b0764dd8b6df6ca04d6bfbdfbd"
-    sha256 x86_64_linux:  "81e667327978a857d545aae15b4e03ad2f4a0e06cc73e224b1cc8bf561bb5e10"
+    sha256 arm64_golden_gate: "0691714914efb06d5d02bf4a841d91742f03b89c431e603e496ba7d56f643e08"
+    sha256 arm64_tahoe:       "fc83e82e1bf16cb52d433688b8c8b89374c2d09027a453745e57ca27ee5b3b4d"
+    sha256 arm64_sequoia:     "f79b0ed3c4026cb1c8019b60bd0ecb5bf466b14e758a70cb4e35bb6642e45c98"
+    sha256 arm64_sonoma:      "86ea6ba733c44dd73aca5ca7e079f66abb42fe26d24371ecdbfdf033097a1867"
+    sha256 sonoma:            "7fd6763ed03295537a80d52a0615315a153deba9adc12c8941209e5bcb5f0f68"
+    sha256 arm64_linux:       "6c65815c229b68fce8e0868f31f09e8f787138b0764dd8b6df6ca04d6bfbdfbd"
+    sha256 x86_64_linux:      "81e667327978a857d545aae15b4e03ad2f4a0e06cc73e224b1cc8bf561bb5e10"
   end
 
   depends_on "appstream-glib" => :build

@@ -1,8 +1,8 @@
 class Wassette < Formula
   desc "Security-oriented runtime that runs WebAssembly Components via MCP"
   homepage "https://microsoft.github.io/wassette/"
-  url "https://ghfast.top/https://github.com/microsoft/wassette/archive/refs/tags/v0.7.0.tar.gz"
-  sha256 "2b806f53a251bf038bc768f22af20a50e5c92d630c3b4c4d115c13f2cc381266"
+  url "https://ghfast.top/https://github.com/microsoft/wassette/archive/refs/tags/v0.7.1.tar.gz"
+  sha256 "805dc0e3201694e6589a73dc6705b5b3cada01ef4c0ac7b532e140dda7bff77e"
   license "MIT"
   head "https://github.com/microsoft/wassette.git", branch: "main"
 
@@ -12,12 +12,11 @@ class Wassette < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "27abb58a3bea3387de864dcaff9334e8013ad1bc0c9a721e6ccb437c50fa80d7"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "874e1e02934b06938d5a58d63111fb3bffd3ddbf3c3227211deb92ef9a75ac22"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "7321b646c81597bac0b728cf6191a86030217a171f9480fa8c0c3b944a86412e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "c26f159a91cc7ada77122b6d9136be782da2be3f86e877d0ca56c48752ceda5f"
-    sha256 cellar: :any,                 arm64_linux:       "b96a77ad983a2f1c19c6112b8b18298efc8071b8fa9f43913e49daf1a8f795dc"
-    sha256 cellar: :any,                 x86_64_linux:      "6dea58b56b76a0f3f08279e231ce864bd0f1bf6b5223ff7da293dc619aa428b8"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "23c36fafdd59ef7816dec82df30f800120af35904d4b8d284c731180065987ee"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "7f9e9095445555f612a10d213c04647370aaed2873f4e29f8bcfc1843802e8f7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "7da421696a75e178ca17737d93454c0bbd6d35435d7c7915c377aedd050781bf"
+    sha256 cellar: :any,                 arm64_linux:       "48edd88d6ac2f9b716636038eb7e6e926b73c1cb0812fc11cf4c98b975fce9c0"
+    sha256 cellar: :any,                 x86_64_linux:      "46d176d31bbfe369816eb2d598002205af629028ed57104accda3006e1172ff8"
   end
 
   depends_on "pkgconf" => :build

@@ -12,12 +12,13 @@ class Firefly < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "23c8e358bda21f179ff5b0211f8bb73012c83d5816b021e2790ce46b9dc291c3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "23c8e358bda21f179ff5b0211f8bb73012c83d5816b021e2790ce46b9dc291c3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "23c8e358bda21f179ff5b0211f8bb73012c83d5816b021e2790ce46b9dc291c3"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b98f995fef6046fcc4ed494b3f65f9b08f7b865403dd96b7d6959fe8e71ffb86"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2d1ca0dd7e52c722e28ae10497c666f041da2146f2af4874cd878ab03aaf6840"
-    sha256 cellar: :any,                 x86_64_linux:  "21ba828d9e926050090303fd2aff9d3a503d1f7775e7020b896ae73537b7bb03"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "4f27ea667d989b8c7423a1a3168867399b98fdbd34a0f3522633f1f44afc6371"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "23c8e358bda21f179ff5b0211f8bb73012c83d5816b021e2790ce46b9dc291c3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "23c8e358bda21f179ff5b0211f8bb73012c83d5816b021e2790ce46b9dc291c3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "23c8e358bda21f179ff5b0211f8bb73012c83d5816b021e2790ce46b9dc291c3"
+    sha256 cellar: :any_skip_relocation, sonoma:            "b98f995fef6046fcc4ed494b3f65f9b08f7b865403dd96b7d6959fe8e71ffb86"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "2d1ca0dd7e52c722e28ae10497c666f041da2146f2af4874cd878ab03aaf6840"
+    sha256 cellar: :any,                 x86_64_linux:      "21ba828d9e926050090303fd2aff9d3a503d1f7775e7020b896ae73537b7bb03"
   end
 
   depends_on "go" => :build

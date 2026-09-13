@@ -12,14 +12,15 @@ class Clipsafe < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c81602f2769e1cecfaeb10e5b3d215e6835158be752ebc3aecc817e947d09bdd"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9379f8959156b91c966640b53a91f95dcca6ddf3f75512e513aecfe41d6ba0cd"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "95ce1b6a9954ff9899dbc98e64113b7081c75d68035e61619b71a6ac6ed2ee40"
-    sha256 cellar: :any_skip_relocation, tahoe:         "5f4dc1f2bdbe1d3db787c9139a09a2d5b71065bd29f2e25fa2b86da8e576ae2a"
-    sha256 cellar: :any_skip_relocation, sequoia:       "4cba385379c44050a16e5201a5adc509802df7f6338d9bed84ab969ec3fa475e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c6fa6f2e9648522dca691258adbaefce5a99559faa050567dac8969a0e65f35d"
-    sha256 cellar: :any,                 arm64_linux:   "9469f3e2f1f8bb369417f98274a7dcd8b509c98af7f8b030db28d24a6a171102"
-    sha256 cellar: :any,                 x86_64_linux:  "104e76f3a89fd353d6ab855c29d1321edfc909e3a44e3342d30f22957fc75bbf"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "e8fc4eda8ef14b5443c5deb8464686595b0a28a0efdcb24a92bb6cd231798b1c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "c81602f2769e1cecfaeb10e5b3d215e6835158be752ebc3aecc817e947d09bdd"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "9379f8959156b91c966640b53a91f95dcca6ddf3f75512e513aecfe41d6ba0cd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "95ce1b6a9954ff9899dbc98e64113b7081c75d68035e61619b71a6ac6ed2ee40"
+    sha256 cellar: :any_skip_relocation, tahoe:             "5f4dc1f2bdbe1d3db787c9139a09a2d5b71065bd29f2e25fa2b86da8e576ae2a"
+    sha256 cellar: :any_skip_relocation, sequoia:           "4cba385379c44050a16e5201a5adc509802df7f6338d9bed84ab969ec3fa475e"
+    sha256 cellar: :any_skip_relocation, sonoma:            "c6fa6f2e9648522dca691258adbaefce5a99559faa050567dac8969a0e65f35d"
+    sha256 cellar: :any,                 arm64_linux:       "9469f3e2f1f8bb369417f98274a7dcd8b509c98af7f8b030db28d24a6a171102"
+    sha256 cellar: :any,                 x86_64_linux:      "104e76f3a89fd353d6ab855c29d1321edfc909e3a44e3342d30f22957fc75bbf"
   end
 
   uses_from_macos "perl"

@@ -6,12 +6,12 @@ class AwsAmplify < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "e6967a50fc0cacd18f887d8b8d2404280eeb48c82bfb19a120fdbb7d0fdf0bab"
-    sha256 cellar: :any, arm64_sequoia: "8a21d262463ddfbeb76e39a84a34d196867a94b7731a450d14c05e01af8ed83c"
-    sha256 cellar: :any, arm64_sonoma:  "8a21d262463ddfbeb76e39a84a34d196867a94b7731a450d14c05e01af8ed83c"
-    sha256 cellar: :any, sonoma:        "9d450340eb2ffbe8f04d25fee2b58ffff82de23f1e9ed64e71477d4a2cdd13e7"
-    sha256 cellar: :any, arm64_linux:   "4a14458c4857ad03d948488b3fdfaad12a58198a3ca388c3c7643890428aea8c"
-    sha256 cellar: :any, x86_64_linux:  "f4988ff45b85a930071f9fdb3805b75d4c56e3580f68315f208b275df9b76a7b"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "bc5bcecf4c47bcbe4a7cf2745a39c79c2c260aea2943688bf11f7fe2c2cee864"
+    sha256 cellar: :any, arm64_tahoe:       "bc5bcecf4c47bcbe4a7cf2745a39c79c2c260aea2943688bf11f7fe2c2cee864"
+    sha256 cellar: :any, arm64_sequoia:     "bc5bcecf4c47bcbe4a7cf2745a39c79c2c260aea2943688bf11f7fe2c2cee864"
+    sha256 cellar: :any, arm64_linux:       "aada36c4fe0c42400e0b888b6c6a3c39b42877156320afed4a4c7499bc7c253e"
+    sha256 cellar: :any, x86_64_linux:      "0d6bfcd36d2e6f0407530539fc76e127e223ffe9481a2cc88ee95613f69c5cab"
   end
 
   depends_on "node"
@@ -30,7 +30,7 @@ class AwsAmplify < Formula
     # Remove incompatible pre-built `bare-fs`/`bare-os`/`bare-url` binaries
     os = OS.kernel_name.downcase
     arch = Hardware::CPU.intel? ? "x64" : Hardware::CPU.arch.to_s
-    node_modules.glob("{bare-fs,bare-os,bare-url}/prebuilds/*")
+    node_modules.glob("{bare-fs,bare-os,bare-path,bare-url}/prebuilds/*")
                 .each { |dir| rm_r(dir) if dir.basename.to_s != "#{os}-#{arch}" }
 
     # Remove non-native libsqlite4java files

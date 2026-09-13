@@ -7,12 +7,13 @@ class Rsyncy < Formula
   head "https://github.com/laktak/rsyncy.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5d8b127e5b3edd289cb7946ae036f00bd7b4d55c01288ce62bb5e3d2ed0bd810"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5d8b127e5b3edd289cb7946ae036f00bd7b4d55c01288ce62bb5e3d2ed0bd810"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5d8b127e5b3edd289cb7946ae036f00bd7b4d55c01288ce62bb5e3d2ed0bd810"
-    sha256 cellar: :any_skip_relocation, sonoma:        "16d9d4d2d28545158b946ed85af0cb8aaeae397b8656c6dc50075e057fbccb6b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f732892925d5b98a6cfa223c7c0a2c86c48529b6cd78919004a43dfe25e9914c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f340cdf67cf15d3a9f18ba1acf9b3194f71576bbfe7bcbc3d2da7950a9101e76"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "52227e065ba345b433f620321cf08eac712fe87e219f31efc8f43b7d87fb2d9b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "5d8b127e5b3edd289cb7946ae036f00bd7b4d55c01288ce62bb5e3d2ed0bd810"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "5d8b127e5b3edd289cb7946ae036f00bd7b4d55c01288ce62bb5e3d2ed0bd810"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "5d8b127e5b3edd289cb7946ae036f00bd7b4d55c01288ce62bb5e3d2ed0bd810"
+    sha256 cellar: :any_skip_relocation, sonoma:            "16d9d4d2d28545158b946ed85af0cb8aaeae397b8656c6dc50075e057fbccb6b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "f732892925d5b98a6cfa223c7c0a2c86c48529b6cd78919004a43dfe25e9914c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "f340cdf67cf15d3a9f18ba1acf9b3194f71576bbfe7bcbc3d2da7950a9101e76"
   end
 
   depends_on "go" => :build

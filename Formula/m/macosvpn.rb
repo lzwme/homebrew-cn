@@ -11,16 +11,17 @@ class Macosvpn < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "b5eb27f50fea31e5fba9f320ee8a43ce8a1a393507a9a892864712fd37f73f5e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "7ac4947917a99f3fd96ac3a81a6dbe18be590d25df2bfef024dd0c3e564e9b1b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "35c57637ae70f1265c5cc8df4f370e89eb5fcc441bda03ce4c6b3c294d498899"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ba041bd58d4f5a2c58e25ba148a1e9381e0c1f9144661f3f0c0e039f0140c993"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "05556552fac0910a7f96aa82a60d84fb81269399183eb1c44262536eb898fd9f"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ca5acfb04df29355633ded3a1c63b35e6c8f2cf63f0f76b065b35e3cad76e319"
-    sha256 cellar: :any_skip_relocation, sonoma:         "c921fa16adaf91069156266afc6930ebc2dbd580e3653b099336e0154e7a2e3f"
-    sha256 cellar: :any_skip_relocation, ventura:        "4bef08a42e37828e824db81873a433b47843e64ffeaba297fd0a190d9bbe2301"
-    sha256 cellar: :any_skip_relocation, monterey:       "e0a039a15c681f44320e6cefc8d2b87f035ec25aabb5919adbc65656889d95c0"
-    sha256 cellar: :any_skip_relocation, big_sur:        "8a85ae6d100ebe8ce596b3c430784083c4bfec7b833c8abb630b5838faaec8b9"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "4dd88a4d3668899ae943e71d9bad5f7eebf78100574b05c3a2b3c4406475420e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "b5eb27f50fea31e5fba9f320ee8a43ce8a1a393507a9a892864712fd37f73f5e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "7ac4947917a99f3fd96ac3a81a6dbe18be590d25df2bfef024dd0c3e564e9b1b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "35c57637ae70f1265c5cc8df4f370e89eb5fcc441bda03ce4c6b3c294d498899"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:     "ba041bd58d4f5a2c58e25ba148a1e9381e0c1f9144661f3f0c0e039f0140c993"
+    sha256 cellar: :any_skip_relocation, arm64_monterey:    "05556552fac0910a7f96aa82a60d84fb81269399183eb1c44262536eb898fd9f"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:     "ca5acfb04df29355633ded3a1c63b35e6c8f2cf63f0f76b065b35e3cad76e319"
+    sha256 cellar: :any_skip_relocation, sonoma:            "c921fa16adaf91069156266afc6930ebc2dbd580e3653b099336e0154e7a2e3f"
+    sha256 cellar: :any_skip_relocation, ventura:           "4bef08a42e37828e824db81873a433b47843e64ffeaba297fd0a190d9bbe2301"
+    sha256 cellar: :any_skip_relocation, monterey:          "e0a039a15c681f44320e6cefc8d2b87f035ec25aabb5919adbc65656889d95c0"
+    sha256 cellar: :any_skip_relocation, big_sur:           "8a85ae6d100ebe8ce596b3c430784083c4bfec7b833c8abb630b5838faaec8b9"
   end
 
   depends_on xcode: ["11.1", :build]

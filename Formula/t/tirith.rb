@@ -1,8 +1,8 @@
 class Tirith < Formula
   desc "Detect terminal injection, homograph, and pipe-to-shell attacks"
   homepage "https://tirith.sh/"
-  url "https://ghfast.top/https://github.com/sheeki03/tirith/archive/refs/tags/v0.4.1.tar.gz"
-  sha256 "0074778f56ec7ab4b4b64288db24b37c78cba2411adab926827d4ceb3ced49c1"
+  url "https://ghfast.top/https://github.com/sheeki03/tirith/archive/refs/tags/v0.4.2.tar.gz"
+  sha256 "84e1fdc35e60d684ab932e73c342b71e27d575bc70defcec4989c36957153b0a"
   license "AGPL-3.0-only"
   head "https://github.com/sheeki03/tirith.git", branch: "main"
 
@@ -12,12 +12,11 @@ class Tirith < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "b63741160837e72f9463984ff8f02fdfe476d1c1b356a556c1c6433993a48cff"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "d1958801738d1c2582b98f6ed55dff6a387cdd253fae7cbbf6fade869407f0b9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "9fe0169137baf4b3d1268167dc771773ecd0eec2ababb784eec5f72fcbbd8a1c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "18a0b614b3a89dd198f9641160fd1bd9762dfc71ee8594047b83f6f7a5a9272e"
-    sha256 cellar: :any,                 arm64_linux:       "4a4e9317c93e935abe71f11ead09cb35181bedc3842170d55b4f614aa7a628e6"
-    sha256 cellar: :any,                 x86_64_linux:      "c6fd856d7e6078cf50d811dd27eb179dc482e88c651456b93125c8d0b70c25bc"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "69e9943a7773c5d61031eece257baf2477f7c69a311244c031396db9b70d3a09"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "62e747e0292d0d06ab3ec42b5696e6d95591371913d7e5079ce7840aaaff9404"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "5203a938e7bb3cd0ef7e73d19680631304e11df74f0ed94f010e2b0f2c64e491"
+    sha256 cellar: :any,                 arm64_linux:       "ada6a3e4caa24f66462107fa1d1ce763926f6d3133f3aea3a071ea9729dd8c92"
+    sha256 cellar: :any,                 x86_64_linux:      "3ea8e4d2ea975fd6058bd290f6b91c5ec0da0fdf6cd81ef4a5a14eb75e1bfd6a"
   end
 
   depends_on "rust" => :build

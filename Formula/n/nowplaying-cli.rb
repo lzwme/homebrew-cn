@@ -6,10 +6,11 @@ class NowplayingCli < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "600fb00263c9e681254f24f85b53ce6115685b277dad95388eaedcd72d23e015"
-    sha256 cellar: :any, arm64_sequoia: "79caf948bf5f319c89aa58297b6e9af714e08ec7abf621c262cf141f287eb518"
-    sha256 cellar: :any, arm64_sonoma:  "4af22862856403429542dde32839d07e74aa046e2cdb340253c1959da0d620ad"
-    sha256 cellar: :any, sonoma:        "3ac15d66faea03a58864b93aacf850ebcdbf49196157dfd789fc81bacf73e02c"
+    sha256 cellar: :any, arm64_golden_gate: "1e5cc8e3840e09a7e558aa65acd3b39cbae7662824d7140cf22acb3966b24bc2"
+    sha256 cellar: :any, arm64_tahoe:       "600fb00263c9e681254f24f85b53ce6115685b277dad95388eaedcd72d23e015"
+    sha256 cellar: :any, arm64_sequoia:     "79caf948bf5f319c89aa58297b6e9af714e08ec7abf621c262cf141f287eb518"
+    sha256 cellar: :any, arm64_sonoma:      "4af22862856403429542dde32839d07e74aa046e2cdb340253c1959da0d620ad"
+    sha256 cellar: :any, sonoma:            "3ac15d66faea03a58864b93aacf850ebcdbf49196157dfd789fc81bacf73e02c"
   end
 
   depends_on :macos

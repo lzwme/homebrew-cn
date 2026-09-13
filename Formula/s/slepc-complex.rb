@@ -10,12 +10,13 @@ class SlepcComplex < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "de1a0d597d6d9867024781f8d5990bd82ebc34dbf1c394a95d3fd2c0996c5d97"
-    sha256 arm64_sequoia: "25381b6aa0fcfec55713f8e4771add1dd72b853196ee18e9f823ac55d744eb88"
-    sha256 arm64_sonoma:  "05063a6b83b50453c48b1b8a30ea09d9bd31732214ffa891ca047dec78fe9b17"
-    sha256 sonoma:        "7f6ca31f531c31fccf186442e012cc88f4820dc3b8d82fb0edfa0a7d73c21981"
-    sha256 arm64_linux:   "f4c3ebfa585a1e29ccf238625a69088eafd40397c8cdb8aa2a4b6b69bad83c6c"
-    sha256 x86_64_linux:  "ccf9450ca0c24fcae2259b1a20284a277730eeb95ec8fa7bae670eb95464cf31"
+    sha256 arm64_golden_gate: "45a5917a9b6cb7c0260ff14cf696278aa060d2afd9d100a11deb5f16ffc1b74c"
+    sha256 arm64_tahoe:       "de1a0d597d6d9867024781f8d5990bd82ebc34dbf1c394a95d3fd2c0996c5d97"
+    sha256 arm64_sequoia:     "25381b6aa0fcfec55713f8e4771add1dd72b853196ee18e9f823ac55d744eb88"
+    sha256 arm64_sonoma:      "05063a6b83b50453c48b1b8a30ea09d9bd31732214ffa891ca047dec78fe9b17"
+    sha256 sonoma:            "7f6ca31f531c31fccf186442e012cc88f4820dc3b8d82fb0edfa0a7d73c21981"
+    sha256 arm64_linux:       "f4c3ebfa585a1e29ccf238625a69088eafd40397c8cdb8aa2a4b6b69bad83c6c"
+    sha256 x86_64_linux:      "ccf9450ca0c24fcae2259b1a20284a277730eeb95ec8fa7bae670eb95464cf31"
   end
 
   depends_on "open-mpi"

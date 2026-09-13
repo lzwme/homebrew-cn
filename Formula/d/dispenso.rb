@@ -6,12 +6,13 @@ class Dispenso < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "1683251bb66439c05113af8b801ec85da7cafaea986a322dc03f0cab906e174d"
-    sha256 cellar: :any, arm64_sequoia: "fad3b39753c1ccf1437783ab5bcde5d416d3980669fd8133d2f080b8041bf23f"
-    sha256 cellar: :any, arm64_sonoma:  "4193ee973260262457af019855da0170697bdbc66ae2cbc9ade2a44494f97857"
-    sha256 cellar: :any, sonoma:        "c1648469d0d8b1ade806d0230eaafb2d04bd16b45dec6bd2d8bfcf3bbea09626"
-    sha256 cellar: :any, arm64_linux:   "2151910393738f931e6e5b87727c9e8f96dda2a86c0fc8e202bf8cbc440c3cb6"
-    sha256 cellar: :any, x86_64_linux:  "ca370ab686b76575790531ed190070a358146ee849fce6c43635d4140a165f01"
+    sha256 cellar: :any, arm64_golden_gate: "895ed79851badf3b801474edf6d501e2f50c254b0e01e3d950ee8d8f47e6a53b"
+    sha256 cellar: :any, arm64_tahoe:       "1683251bb66439c05113af8b801ec85da7cafaea986a322dc03f0cab906e174d"
+    sha256 cellar: :any, arm64_sequoia:     "fad3b39753c1ccf1437783ab5bcde5d416d3980669fd8133d2f080b8041bf23f"
+    sha256 cellar: :any, arm64_sonoma:      "4193ee973260262457af019855da0170697bdbc66ae2cbc9ade2a44494f97857"
+    sha256 cellar: :any, sonoma:            "c1648469d0d8b1ade806d0230eaafb2d04bd16b45dec6bd2d8bfcf3bbea09626"
+    sha256 cellar: :any, arm64_linux:       "2151910393738f931e6e5b87727c9e8f96dda2a86c0fc8e202bf8cbc440c3cb6"
+    sha256 cellar: :any, x86_64_linux:      "ca370ab686b76575790531ed190070a358146ee849fce6c43635d4140a165f01"
   end
 
   depends_on "cmake" => [:build, :test]

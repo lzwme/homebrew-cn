@@ -7,12 +7,13 @@ class Libkiwix < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "1a163b339857896a25e7ca137ea5b89b9e694b373504ff96e4c0ce54571cb415"
-    sha256 cellar: :any, arm64_sequoia: "39923d9fa6b7814243a0f16bde23b4748f8a22d6700b1b3e60a522e603bd2a53"
-    sha256 cellar: :any, arm64_sonoma:  "f1459f38b2a666ee732745d1b3f721387effe6eabac795d9032787268f29255a"
-    sha256 cellar: :any, sonoma:        "36b65cfdc8f4a14eec5306166e155ad619ae44daa3fe82d55294978fd7e0b221"
-    sha256               arm64_linux:   "7136c54709fc11a9c35aa4ad5ca1935eb99decbb4cbc534ab09ce9a9d0935378"
-    sha256               x86_64_linux:  "6757a377743d2dd7fc5a7a51872dad662f04e2448d5ad313a2e46bf883f44024"
+    sha256 cellar: :any, arm64_golden_gate: "f4a2d35728c0e2afae87f76563ca97ba244cf901c753c8a4dc2eb0c765f15b3b"
+    sha256 cellar: :any, arm64_tahoe:       "1a163b339857896a25e7ca137ea5b89b9e694b373504ff96e4c0ce54571cb415"
+    sha256 cellar: :any, arm64_sequoia:     "39923d9fa6b7814243a0f16bde23b4748f8a22d6700b1b3e60a522e603bd2a53"
+    sha256 cellar: :any, arm64_sonoma:      "f1459f38b2a666ee732745d1b3f721387effe6eabac795d9032787268f29255a"
+    sha256 cellar: :any, sonoma:            "36b65cfdc8f4a14eec5306166e155ad619ae44daa3fe82d55294978fd7e0b221"
+    sha256               arm64_linux:       "7136c54709fc11a9c35aa4ad5ca1935eb99decbb4cbc534ab09ce9a9d0935378"
+    sha256               x86_64_linux:      "6757a377743d2dd7fc5a7a51872dad662f04e2448d5ad313a2e46bf883f44024"
   end
 
   depends_on "meson" => :build

@@ -8,11 +8,12 @@ class Skillspector < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "d19d132190e73b769197df8e08bc1f5d7ae25a4805e662258921247f0dc9cabd"
-    sha256 cellar: :any, arm64_sequoia: "d9a0e818ffc7e3ccd11e3d6663130f94d8eab0fd14caa77453a3e4ec3639774f"
-    sha256 cellar: :any, arm64_sonoma:  "e0014e478fe9a2b046012b1758ead09ae95133b6bfc8dcf424222d42251ca8d6"
-    sha256 cellar: :any, arm64_linux:   "f6043b9156a323cc3ef97f98a27141037a94a8d01c9540273a59a92238073421"
-    sha256 cellar: :any, x86_64_linux:  "4c5177ec8312fb3482139773534f82c825e5921994ccf07d9856373c885ebc27"
+    sha256 cellar: :any, arm64_golden_gate: "89bcaaaf84cc5081f62212f59743e8659cf9c3b52b04287fe4ec8b8492f1bd00"
+    sha256 cellar: :any, arm64_tahoe:       "d19d132190e73b769197df8e08bc1f5d7ae25a4805e662258921247f0dc9cabd"
+    sha256 cellar: :any, arm64_sequoia:     "d9a0e818ffc7e3ccd11e3d6663130f94d8eab0fd14caa77453a3e4ec3639774f"
+    sha256 cellar: :any, arm64_sonoma:      "e0014e478fe9a2b046012b1758ead09ae95133b6bfc8dcf424222d42251ca8d6"
+    sha256 cellar: :any, arm64_linux:       "f6043b9156a323cc3ef97f98a27141037a94a8d01c9540273a59a92238073421"
+    sha256 cellar: :any, x86_64_linux:      "4c5177ec8312fb3482139773534f82c825e5921994ccf07d9856373c885ebc27"
   end
 
   depends_on "pkgconf" => :build

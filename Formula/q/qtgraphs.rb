@@ -17,11 +17,12 @@ class Qtgraphs < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "98877e8fe08f65b35f488e049bdb2863622769fc8a89e45303c285948f8f9797"
-    sha256 cellar: :any, arm64_sequoia: "d56cd4a21031a39b63ea01374f1a7132d43c6178204e42b7159450d4b9076da6"
-    sha256 cellar: :any, arm64_sonoma:  "5dee7bf14428f5d5e302942429faedd8a4ef36c28d7e74f5ab71b69f132a53d8"
-    sha256 cellar: :any, arm64_linux:   "d8ab3f79da36ca6783e0ccfdbcfa4f720e55cb34663288f9e1f075535261e0bd"
-    sha256 cellar: :any, x86_64_linux:  "ea3ecc2d45cd6b715acddfba9c60eaca27c6e5fcf2aa3c4e109a9631cc6bcdac"
+    sha256 cellar: :any, arm64_golden_gate: "ede2dcff537c9aac1efa4190496be2658c1bb7ffe2c3a0ad48caaddf3fa02cbc"
+    sha256 cellar: :any, arm64_tahoe:       "98877e8fe08f65b35f488e049bdb2863622769fc8a89e45303c285948f8f9797"
+    sha256 cellar: :any, arm64_sequoia:     "d56cd4a21031a39b63ea01374f1a7132d43c6178204e42b7159450d4b9076da6"
+    sha256 cellar: :any, arm64_sonoma:      "5dee7bf14428f5d5e302942429faedd8a4ef36c28d7e74f5ab71b69f132a53d8"
+    sha256 cellar: :any, arm64_linux:       "d8ab3f79da36ca6783e0ccfdbcfa4f720e55cb34663288f9e1f075535261e0bd"
+    sha256 cellar: :any, x86_64_linux:      "ea3ecc2d45cd6b715acddfba9c60eaca27c6e5fcf2aa3c4e109a9631cc6bcdac"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -89,7 +90,7 @@ class Qtgraphs < Formula
 
     ENV.delete "CPATH" if OS.mac?
     mkdir "qmake" do
-      system Formula["qtbase"].bin/"qmake", testpath/"test.pro"
+      system formula_opt_bin("qtbase")/"qmake", testpath/"test.pro"
       system "make"
       system "./test"
     end

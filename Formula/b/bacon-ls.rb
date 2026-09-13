@@ -7,12 +7,13 @@ class BaconLs < Formula
   head "https://github.com/crisidev/bacon-ls.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6d2ff68a095584ce52b660d2ca1e8e6605a35b44f5d44380058debf2f817f38d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c66b7399f6768b959e2cda53d317a492750041c29a88832013deb8989602fe83"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "75b27c9eab7ac917b571792bbfc3952dd24faefaa4143386a43a58be0af95989"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d3ec5a595e441a76ae2cd6c037e4be927000045b38502fed2a4976d6484ab5ca"
-    sha256 cellar: :any,                 arm64_linux:   "8acdb035237769e7b410365448f68e6c8a608e777da1c2df25198c05f90d2e3d"
-    sha256 cellar: :any,                 x86_64_linux:  "121d62a251faddd84605ffb92129f39d6b59b8bd5c31b232fda90a9c3658bbd4"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "ca3c3ca5c7699fa099d64100e6ebc8edf950e29a4d78b77929fadd578cf80d57"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "6d2ff68a095584ce52b660d2ca1e8e6605a35b44f5d44380058debf2f817f38d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "c66b7399f6768b959e2cda53d317a492750041c29a88832013deb8989602fe83"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "75b27c9eab7ac917b571792bbfc3952dd24faefaa4143386a43a58be0af95989"
+    sha256 cellar: :any_skip_relocation, sonoma:            "d3ec5a595e441a76ae2cd6c037e4be927000045b38502fed2a4976d6484ab5ca"
+    sha256 cellar: :any,                 arm64_linux:       "8acdb035237769e7b410365448f68e6c8a608e777da1c2df25198c05f90d2e3d"
+    sha256 cellar: :any,                 x86_64_linux:      "121d62a251faddd84605ffb92129f39d6b59b8bd5c31b232fda90a9c3658bbd4"
   end
 
   depends_on "rust" => :build

@@ -7,11 +7,12 @@ class Mosh < Formula
   revision 42
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "44c97cce5f0eac560ba89239b6007efd62139d8860a2f1fff3997ffb21f80ef2"
-    sha256 cellar: :any, arm64_sequoia: "aae1d79721207a4d4018087b3fa3d8f8a9a865bf135138132314fe7b88d0d0e5"
-    sha256 cellar: :any, arm64_sonoma:  "0ed8bd15d11e3249977c35bd65309449344d527ad2eace83f60963b6defabd89"
-    sha256 cellar: :any, arm64_linux:   "62c9bf351e85e79f321a1b67562e12c853a0b2164cfd196743ef443c1ad2b985"
-    sha256 cellar: :any, x86_64_linux:  "660addff94e7d1bc09268819199d1a8fbda0081df33b2c57a46aa63f34bb7b98"
+    sha256 cellar: :any, arm64_golden_gate: "f4e4ac18808a78f68323e66d39d550128cb1ff6db807010652bef6d533b130b2"
+    sha256 cellar: :any, arm64_tahoe:       "44c97cce5f0eac560ba89239b6007efd62139d8860a2f1fff3997ffb21f80ef2"
+    sha256 cellar: :any, arm64_sequoia:     "aae1d79721207a4d4018087b3fa3d8f8a9a865bf135138132314fe7b88d0d0e5"
+    sha256 cellar: :any, arm64_sonoma:      "0ed8bd15d11e3249977c35bd65309449344d527ad2eace83f60963b6defabd89"
+    sha256 cellar: :any, arm64_linux:       "62c9bf351e85e79f321a1b67562e12c853a0b2164cfd196743ef443c1ad2b985"
+    sha256 cellar: :any, x86_64_linux:      "660addff94e7d1bc09268819199d1a8fbda0081df33b2c57a46aa63f34bb7b98"
   end
 
   head do

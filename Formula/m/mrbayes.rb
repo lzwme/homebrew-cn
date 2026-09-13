@@ -12,12 +12,13 @@ class Mrbayes < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "7e0813e7f10eb1abadd4172e54fc18d7fac02f2a2521d3034217ea8ee99ffa04"
-    sha256 cellar: :any,                 arm64_sequoia: "098da5cbc7c3371cbc845399356634f3373723ab9a10813af39420706adc495b"
-    sha256 cellar: :any,                 arm64_sonoma:  "3297974985b7c483dad355decca53663b6dd88f9aff0571200997b491a44d582"
-    sha256 cellar: :any,                 sonoma:        "4e22bb908f3d2fabacebe0f1896de5cc05f74b5a1bcd224fb2fa85585db5074c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4b2aaf7489371e64e11bc0dde781218fd8b4a85a41cd7db039f2a8c377f726c1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5b7379add8dcffcc268785b68f80f88fb0478f10c76ef139b43b0c6983e30675"
+    sha256 cellar: :any,                 arm64_golden_gate: "711f6adc0df538fc80a9abf9d1d71d8cb582db8e8a9eb4adf5c192aacfd1be3b"
+    sha256 cellar: :any,                 arm64_tahoe:       "7e0813e7f10eb1abadd4172e54fc18d7fac02f2a2521d3034217ea8ee99ffa04"
+    sha256 cellar: :any,                 arm64_sequoia:     "098da5cbc7c3371cbc845399356634f3373723ab9a10813af39420706adc495b"
+    sha256 cellar: :any,                 arm64_sonoma:      "3297974985b7c483dad355decca53663b6dd88f9aff0571200997b491a44d582"
+    sha256 cellar: :any,                 sonoma:            "4e22bb908f3d2fabacebe0f1896de5cc05f74b5a1bcd224fb2fa85585db5074c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "4b2aaf7489371e64e11bc0dde781218fd8b4a85a41cd7db039f2a8c377f726c1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "5b7379add8dcffcc268785b68f80f88fb0478f10c76ef139b43b0c6983e30675"
   end
 
   depends_on "pkgconf" => :build

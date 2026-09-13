@@ -22,12 +22,13 @@ class Cwb3 < Formula
 
   bottle do
     rebuild 2
-    sha256 cellar: :any, arm64_tahoe:   "83bb0c489a53d017c4ed20aac40dc6b02eef4315211bc391fa0be982ca7e0575"
-    sha256 cellar: :any, arm64_sequoia: "1f2794123aaf9ba47ae274a2e1f15c8d026cf36c73b6db8a9f38cdd20278fdb7"
-    sha256 cellar: :any, arm64_sonoma:  "f166a6610937476512354e391fdbb5b1ad3c80f18e39a7c4a9de11a6878afe2f"
-    sha256 cellar: :any, sonoma:        "243e7983c86e88d74881ba0200982892d2736757ea9a7e834f03cbaf7ac55ae8"
-    sha256 cellar: :any, arm64_linux:   "80833ab422207dc1b15be8575bb32b17eba9af9bf5fd2d6087e5302fcac7ab54"
-    sha256 cellar: :any, x86_64_linux:  "1fe243d8ba65dff4a36a8064c9a97b98ba17fe0215a1245d311ef7bbc45c5f39"
+    sha256 cellar: :any, arm64_golden_gate: "3cfe5338c6cd97224f66aa5cb5f3f0808f8728cfad8c9e45d0cc8101a54011cd"
+    sha256 cellar: :any, arm64_tahoe:       "83bb0c489a53d017c4ed20aac40dc6b02eef4315211bc391fa0be982ca7e0575"
+    sha256 cellar: :any, arm64_sequoia:     "1f2794123aaf9ba47ae274a2e1f15c8d026cf36c73b6db8a9f38cdd20278fdb7"
+    sha256 cellar: :any, arm64_sonoma:      "f166a6610937476512354e391fdbb5b1ad3c80f18e39a7c4a9de11a6878afe2f"
+    sha256 cellar: :any, sonoma:            "243e7983c86e88d74881ba0200982892d2736757ea9a7e834f03cbaf7ac55ae8"
+    sha256 cellar: :any, arm64_linux:       "80833ab422207dc1b15be8575bb32b17eba9af9bf5fd2d6087e5302fcac7ab54"
+    sha256 cellar: :any, x86_64_linux:      "1fe243d8ba65dff4a36a8064c9a97b98ba17fe0215a1245d311ef7bbc45c5f39"
   end
 
   depends_on "pkgconf" => :build

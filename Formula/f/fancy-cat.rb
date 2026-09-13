@@ -7,12 +7,13 @@ class FancyCat < Formula
   revision 4
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "77b537044f61970578b95e3273362dd3d260fd3e0cd6b5376cf4f1bb2e43fa69"
-    sha256 cellar: :any, arm64_sequoia: "d7112461923c62ab6a8152b60d47010ce8635877cf7302f78b9ab69381090b6c"
-    sha256 cellar: :any, arm64_sonoma:  "d7a5d7781bf8574737bab299600ff15f9320df7280296f49d6c96d38dfa97466"
-    sha256 cellar: :any, sonoma:        "95eaf786faef157771e1077ed61ae14badd1e83699e95f83bb5850bc94999e8b"
-    sha256 cellar: :any, arm64_linux:   "9e6ab36a719950e83685b4d9faaf4d47f8babc9875192238a5618d9c8231207c"
-    sha256 cellar: :any, x86_64_linux:  "bafbb3b5d2f10ff0274848a3c1c9e9264906ae11d6189be283954a9e412190d9"
+    sha256 cellar: :any, arm64_golden_gate: "0dea307db35aef7604516282912fc6f41761c5db10ba85362c9a6109fe8d3fec"
+    sha256 cellar: :any, arm64_tahoe:       "77b537044f61970578b95e3273362dd3d260fd3e0cd6b5376cf4f1bb2e43fa69"
+    sha256 cellar: :any, arm64_sequoia:     "d7112461923c62ab6a8152b60d47010ce8635877cf7302f78b9ab69381090b6c"
+    sha256 cellar: :any, arm64_sonoma:      "d7a5d7781bf8574737bab299600ff15f9320df7280296f49d6c96d38dfa97466"
+    sha256 cellar: :any, sonoma:            "95eaf786faef157771e1077ed61ae14badd1e83699e95f83bb5850bc94999e8b"
+    sha256 cellar: :any, arm64_linux:       "9e6ab36a719950e83685b4d9faaf4d47f8babc9875192238a5618d9c8231207c"
+    sha256 cellar: :any, x86_64_linux:      "bafbb3b5d2f10ff0274848a3c1c9e9264906ae11d6189be283954a9e412190d9"
   end
 
   depends_on "zig@0.15" => :build

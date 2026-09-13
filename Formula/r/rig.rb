@@ -7,12 +7,13 @@ class Rig < Formula
 
   bottle do
     rebuild 1
-    sha256 arm64_tahoe:   "dad2501e03504d0b5bbb423d2c9ef324aadf56f790f696c0a46ae04c6dab206f"
-    sha256 arm64_sequoia: "2a9e7e9827a5a060ef485b046834ce2c9c8d592079c84c2385e5a68a533b367f"
-    sha256 arm64_sonoma:  "bb02988845e379f76e2e403ff006185b67a490fcf399654a904adab3ea8a4c13"
-    sha256 sonoma:        "23fd05abeb97e297ba941e14570cfcbe0a2c06a4b41b1413d1845fa44215123e"
-    sha256 arm64_linux:   "55d7f3414a507b5c8d884ccb5c5d515bf9741d1190ebc88aba59f1c1ea57c45c"
-    sha256 x86_64_linux:  "562461182b7a6e85a39b6128addfe1cf719486b27504f9b7e61d466cfec400bd"
+    sha256 arm64_golden_gate: "b53fd09c9e16b24a8487b3c707290a80a5137e403b25731ce3ba5a3d71d6baa8"
+    sha256 arm64_tahoe:       "dad2501e03504d0b5bbb423d2c9ef324aadf56f790f696c0a46ae04c6dab206f"
+    sha256 arm64_sequoia:     "2a9e7e9827a5a060ef485b046834ce2c9c8d592079c84c2385e5a68a533b367f"
+    sha256 arm64_sonoma:      "bb02988845e379f76e2e403ff006185b67a490fcf399654a904adab3ea8a4c13"
+    sha256 sonoma:            "23fd05abeb97e297ba941e14570cfcbe0a2c06a4b41b1413d1845fa44215123e"
+    sha256 arm64_linux:       "55d7f3414a507b5c8d884ccb5c5d515bf9741d1190ebc88aba59f1c1ea57c45c"
+    sha256 x86_64_linux:      "562461182b7a6e85a39b6128addfe1cf719486b27504f9b7e61d466cfec400bd"
   end
 
   conflicts_with "r-rig", because: "both install `rig` binary"

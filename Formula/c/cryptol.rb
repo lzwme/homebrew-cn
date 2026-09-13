@@ -7,11 +7,12 @@ class Cryptol < Formula
   head "https://github.com/GaloisInc/cryptol.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "1e0748ff426bc45146700c63c6a8ea62ae1a6658a8f37edb8c1baced0d9ad864"
-    sha256 cellar: :any, arm64_sequoia: "11956f02bd241b63274e4766a199a41ca5af5dd7df1ec039ece66226cc5abb3f"
-    sha256 cellar: :any, arm64_sonoma:  "53b5ac834ca52aeb3042bb5c9c90a0e9e706e08a846f0c8e4e8a113344182110"
-    sha256 cellar: :any, arm64_linux:   "92e70eb1a9cbd848f549ff66ae0f402de72cd91f3e17580552dddedba91a1d3b"
-    sha256 cellar: :any, x86_64_linux:  "9f098fca45d638c40553d0bb166fb0a1b3c377d131758047f26b2b9501b604cb"
+    sha256 cellar: :any, arm64_golden_gate: "303f6348e97a04a95a8ead0a78a9d7bdbaab60d377083b0a66cc3e382113fba2"
+    sha256 cellar: :any, arm64_tahoe:       "1e0748ff426bc45146700c63c6a8ea62ae1a6658a8f37edb8c1baced0d9ad864"
+    sha256 cellar: :any, arm64_sequoia:     "11956f02bd241b63274e4766a199a41ca5af5dd7df1ec039ece66226cc5abb3f"
+    sha256 cellar: :any, arm64_sonoma:      "53b5ac834ca52aeb3042bb5c9c90a0e9e706e08a846f0c8e4e8a113344182110"
+    sha256 cellar: :any, arm64_linux:       "92e70eb1a9cbd848f549ff66ae0f402de72cd91f3e17580552dddedba91a1d3b"
+    sha256 cellar: :any, x86_64_linux:      "9f098fca45d638c40553d0bb166fb0a1b3c377d131758047f26b2b9501b604cb"
   end
 
   depends_on "cabal-install" => :build

@@ -12,12 +12,13 @@ class Fizmo < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "84b3dabce41fa7fd0883ff4cc412d65b73d42da0b9f5968db0570df314ba20d7"
-    sha256 arm64_sequoia: "25c9f7c41969ef25f4487be678d26f761384e6f13aed58856138c6c5cea6a3f1"
-    sha256 arm64_sonoma:  "62635a4d8f0c4ac90a551e1fd1e6a8ca823c436654f3c467c2a58436457e4102"
-    sha256 sonoma:        "28a1e73cd22c90f530ff66da225fc5d2a0b83cd851cce66ff2a4e39397930ad9"
-    sha256 arm64_linux:   "6a6002114ad34ebc2792bab4d6d230e1f7bb206a88dd4e86d2764fead910d111"
-    sha256 x86_64_linux:  "c21432000515a2c9e3d51d38f66d0bc3203baedc971da06ab80f4b650e4f8c08"
+    sha256 arm64_golden_gate: "242f001faf8eb64c684d96ea2c3dbc8dc5113d65aef3c9cc88f645dba8b03f80"
+    sha256 arm64_tahoe:       "84b3dabce41fa7fd0883ff4cc412d65b73d42da0b9f5968db0570df314ba20d7"
+    sha256 arm64_sequoia:     "25c9f7c41969ef25f4487be678d26f761384e6f13aed58856138c6c5cea6a3f1"
+    sha256 arm64_sonoma:      "62635a4d8f0c4ac90a551e1fd1e6a8ca823c436654f3c467c2a58436457e4102"
+    sha256 sonoma:            "28a1e73cd22c90f530ff66da225fc5d2a0b83cd851cce66ff2a4e39397930ad9"
+    sha256 arm64_linux:       "6a6002114ad34ebc2792bab4d6d230e1f7bb206a88dd4e86d2764fead910d111"
+    sha256 x86_64_linux:      "c21432000515a2c9e3d51d38f66d0bc3203baedc971da06ab80f4b650e4f8c08"
   end
 
   depends_on "pkgconf" => :build

@@ -11,12 +11,13 @@ class Dump1090Fa < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "573beeff957511395d526e3723a40b1e234c89ab146e19e6382905f56f7fa4ba"
-    sha256 cellar: :any, arm64_sequoia: "d526e8f838272ec56798dd124ce3f0227f97eae5de2ef00f3cb9a8eede93e457"
-    sha256 cellar: :any, arm64_sonoma:  "adce2671da170c9126f719b4488bb66671bf01a44f3c4ee56aca7595b88569cf"
-    sha256 cellar: :any, sonoma:        "075fe86e6c28a56419749e58021055b1636adf1db636100ff1485cea391e4972"
-    sha256 cellar: :any, arm64_linux:   "5396ce30eb393a6a61675d59fcac3495acc2625cbbfb77132f1677a11ad330bf"
-    sha256 cellar: :any, x86_64_linux:  "b254ffb96130d68bf9b18855ed613ebff72278606442ac6a9397c5d85ffeb9e7"
+    sha256 cellar: :any, arm64_golden_gate: "cd83e16ac3ec96a9ad640e72266a7939960082c68f460d7b47383c16149419b0"
+    sha256 cellar: :any, arm64_tahoe:       "573beeff957511395d526e3723a40b1e234c89ab146e19e6382905f56f7fa4ba"
+    sha256 cellar: :any, arm64_sequoia:     "d526e8f838272ec56798dd124ce3f0227f97eae5de2ef00f3cb9a8eede93e457"
+    sha256 cellar: :any, arm64_sonoma:      "adce2671da170c9126f719b4488bb66671bf01a44f3c4ee56aca7595b88569cf"
+    sha256 cellar: :any, sonoma:            "075fe86e6c28a56419749e58021055b1636adf1db636100ff1485cea391e4972"
+    sha256 cellar: :any, arm64_linux:       "5396ce30eb393a6a61675d59fcac3495acc2625cbbfb77132f1677a11ad330bf"
+    sha256 cellar: :any, x86_64_linux:      "b254ffb96130d68bf9b18855ed613ebff72278606442ac6a9397c5d85ffeb9e7"
   end
 
   depends_on "pkgconf" => :build

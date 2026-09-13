@@ -36,7 +36,7 @@ class Aflxx < Formula
   deny_network_access!
 
   def install
-    ENV.prepend_path "PATH", Formula["coreutils"].libexec/"gnubin"
+    ENV.prepend_path "PATH", formula_opt_libexec("coreutils")/"gnubin"
 
     if OS.mac?
       # Disable the in-build test runs as they require modifying system settings as root.

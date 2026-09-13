@@ -8,19 +8,19 @@ class Glfw < Formula
   head "https://github.com/glfw/glfw.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "bf700c2e1cb05182b6b401ddd589546a93668bd901d2edfd6e8248dbae62444d"
-    sha256 cellar: :any, arm64_sequoia: "2d107dd9ea7fdd5c9bf4735a52f0946a2e6cdfaf0bcd848bf1472381eb67345d"
-    sha256 cellar: :any, arm64_sonoma:  "65cc605791bd069b89564f6b73a36fd3d30484eb1cf5d6f954a52fb739b8b33c"
-    sha256 cellar: :any, sonoma:        "3306cc0376bd16767d497691ab2a2f8a8943ae1d924e8212c871a5d9e8524b2d"
-    sha256 cellar: :any, arm64_linux:   "3878e2f4e581f18dae91675f3dcb7bfc7bb417ee71deb2c3c6fe8b5d81291cbf"
-    sha256 cellar: :any, x86_64_linux:  "ae2a8267fa04a8fc917f993da6f5ea0c7b323ba92634c75f2f155529d856fb15"
+    sha256 cellar: :any, arm64_golden_gate: "a7422b8082e3ffb17561ae60869a0798f23a9bc3ac63853220190152e71f1545"
+    sha256 cellar: :any, arm64_tahoe:       "bf700c2e1cb05182b6b401ddd589546a93668bd901d2edfd6e8248dbae62444d"
+    sha256 cellar: :any, arm64_sequoia:     "2d107dd9ea7fdd5c9bf4735a52f0946a2e6cdfaf0bcd848bf1472381eb67345d"
+    sha256 cellar: :any, arm64_sonoma:      "65cc605791bd069b89564f6b73a36fd3d30484eb1cf5d6f954a52fb739b8b33c"
+    sha256 cellar: :any, sonoma:            "3306cc0376bd16767d497691ab2a2f8a8943ae1d924e8212c871a5d9e8524b2d"
+    sha256 cellar: :any, arm64_linux:       "3878e2f4e581f18dae91675f3dcb7bfc7bb417ee71deb2c3c6fe8b5d81291cbf"
+    sha256 cellar: :any, x86_64_linux:      "ae2a8267fa04a8fc917f993da6f5ea0c7b323ba92634c75f2f155529d856fb15"
   end
 
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
 
   on_linux do
-    depends_on "xorg-server" => :test
     depends_on "freeglut"
     depends_on "libxcursor"
     depends_on "libxext"
@@ -44,21 +44,29 @@ class Glfw < Formula
     (testpath/"test.c").write <<~C
       #define GLFW_INCLUDE_GLU
       #include <GLFW/glfw3.h>
+      #include <assert.h>
       #include <stdlib.h>
       int main()
       {
+        // Avoid requiring a window server in headless CI.
+        glfwInitHint(GLFW_PLATFORM, GLFW_PLATFORM_NULL);
         if (!glfwInit())
           exit(EXIT_FAILURE);
+
+        glfwWindowHint(GLFW_CLIENT_API, GLFW_NO_API);
+        GLFWwindow *window = glfwCreateWindow(640, 480, "Homebrew", NULL, NULL);
+        assert(window != NULL);
+        int width, height;
+        glfwGetWindowSize(window, &width, &height);
+        assert(width == 640 && height == 480);
+        glfwDestroyWindow(window);
+
         glfwTerminate();
         return 0;
       }
     C
 
     system ENV.cc, "test.c", "-o", "test", "-I#{include}", "-L#{lib}", "-lglfw"
-    if OS.linux? && ENV.exclude?("DISPLAY")
-      system Formula["xorg-server"].bin/"xvfb-run", "./test"
-    else
-      system "./test"
-    end
+    system "./test"
   end
 end

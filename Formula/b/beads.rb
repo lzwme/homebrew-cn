@@ -21,6 +21,12 @@ class Beads < Formula
   depends_on "dolt"
   depends_on "icu4c@78"
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     if OS.linux? && Hardware::CPU.arm64?
       ENV["CGO_ENABLED"] = "1"

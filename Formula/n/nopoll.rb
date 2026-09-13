@@ -13,11 +13,12 @@ class Nopoll < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "f12009f63116bf0ce0e3ddfe4dc6024902b03f9b49b4e15805d3909c88bb8c09"
-    sha256 cellar: :any, arm64_sequoia: "2dc5037a4374c03cbfd126965368102ce346c3cf8d723c50f634453d3edcfa0a"
-    sha256 cellar: :any, arm64_sonoma:  "50d5f7eac1524e1221f6973dfcbd9b28ccd00b80cb1ee9f3ffc42fe5e1139401"
-    sha256 cellar: :any, arm64_linux:   "93dba60bafcb4726fab15cc1fd4e005cf638df8debfc0efe38399b0563656a94"
-    sha256 cellar: :any, x86_64_linux:  "bd4cb5546b853b9b9b800f83089c29dbbe3eb28fbfa60c0e4469f9dc43f3cef7"
+    sha256 cellar: :any, arm64_golden_gate: "a28e9e44fdb915f72599a5a4325b58c1bf2603ff2892333c48bf7ab486a43218"
+    sha256 cellar: :any, arm64_tahoe:       "f12009f63116bf0ce0e3ddfe4dc6024902b03f9b49b4e15805d3909c88bb8c09"
+    sha256 cellar: :any, arm64_sequoia:     "2dc5037a4374c03cbfd126965368102ce346c3cf8d723c50f634453d3edcfa0a"
+    sha256 cellar: :any, arm64_sonoma:      "50d5f7eac1524e1221f6973dfcbd9b28ccd00b80cb1ee9f3ffc42fe5e1139401"
+    sha256 cellar: :any, arm64_linux:       "93dba60bafcb4726fab15cc1fd4e005cf638df8debfc0efe38399b0563656a94"
+    sha256 cellar: :any, x86_64_linux:      "bd4cb5546b853b9b9b800f83089c29dbbe3eb28fbfa60c0e4469f9dc43f3cef7"
   end
 
   depends_on "openssl@4"

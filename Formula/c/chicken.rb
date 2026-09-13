@@ -12,12 +12,13 @@ class Chicken < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "222f71803ccab1a36dd1db93e11a63e5ff54917098c6a2826dfe46efb21196f7"
-    sha256 arm64_sequoia: "9302cc0087855d5915caec5ec30d7975a5b0e3c43ff9048d0efcca1414aa3e0e"
-    sha256 arm64_sonoma:  "3afeb2650c8f0108ce3a60bc5e4b1f6f4c1ea9f95a819b991e39edee5573ee40"
-    sha256 sonoma:        "3c33a164c6540c353475e0629771be3be03dc22415623aec54b8c401a3a3c8a3"
-    sha256 arm64_linux:   "09de34b0f11dbae0225d1f8a0c624bd04684f736137cc9dd6cc12ea34fbb378a"
-    sha256 x86_64_linux:  "4f34e4c4e7ac9860dbf93bab04c722cef7a6d6b6983a647babe89b45e1faa9db"
+    sha256 arm64_golden_gate: "c6f374a55e1084c5bb451d684b81c7ba8d0d2bb3e63ff05d7bf998647e98d30d"
+    sha256 arm64_tahoe:       "222f71803ccab1a36dd1db93e11a63e5ff54917098c6a2826dfe46efb21196f7"
+    sha256 arm64_sequoia:     "9302cc0087855d5915caec5ec30d7975a5b0e3c43ff9048d0efcca1414aa3e0e"
+    sha256 arm64_sonoma:      "3afeb2650c8f0108ce3a60bc5e4b1f6f4c1ea9f95a819b991e39edee5573ee40"
+    sha256 sonoma:            "3c33a164c6540c353475e0629771be3be03dc22415623aec54b8c401a3a3c8a3"
+    sha256 arm64_linux:       "09de34b0f11dbae0225d1f8a0c624bd04684f736137cc9dd6cc12ea34fbb378a"
+    sha256 x86_64_linux:      "4f34e4c4e7ac9860dbf93bab04c722cef7a6d6b6983a647babe89b45e1faa9db"
   end
 
   conflicts_with "mono", because: "both install `csc`, `csi` binaries"

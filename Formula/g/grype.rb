@@ -17,6 +17,13 @@ class Grype < Formula
 
   depends_on "go" => :build
 
+  # `test do` block downloads the vulnerability database
+  deny_network_access! [:build, :postinstall]
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ldflags = "-X main.version=#{version} -X main.gitCommit=#{tap.user} -X main.buildDate=#{time.iso8601}"
     system "go", "build", *std_go_args(ldflags:), "./cmd/grype"

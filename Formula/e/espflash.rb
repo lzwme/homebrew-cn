@@ -6,11 +6,12 @@ class Espflash < Formula
   license any_of: ["MIT", "Apache-2.0"]
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "19f6cf57497f07dff52a61dbc31aec618ea6e946b70f1bbbafd73f00bc8380eb"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "daec5d703b1ce85de1005bf3e5e700ed2d75c68eb0807ab39ef116c13b02e063"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ef2f86c72c70059749bcd396a86910222d7ae2db071d5ae1e8fc51c7c838f4a1"
-    sha256 cellar: :any,                 arm64_linux:   "d947eea930a202bb3b5db2ad6673bed2dc00f60d9e48dfe27038b34f46f4bb7e"
-    sha256 cellar: :any,                 x86_64_linux:  "c42646ec9fd642369f1fb92d1dc35994de22f9d6502859512d2c7c0736824bcf"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "e8425192ff7e3a6210e59ccc49ee1bb0021c9046678d4b82fc35fa763aa675f4"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "19f6cf57497f07dff52a61dbc31aec618ea6e946b70f1bbbafd73f00bc8380eb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "daec5d703b1ce85de1005bf3e5e700ed2d75c68eb0807ab39ef116c13b02e063"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "ef2f86c72c70059749bcd396a86910222d7ae2db071d5ae1e8fc51c7c838f4a1"
+    sha256 cellar: :any,                 arm64_linux:       "d947eea930a202bb3b5db2ad6673bed2dc00f60d9e48dfe27038b34f46f4bb7e"
+    sha256 cellar: :any,                 x86_64_linux:      "c42646ec9fd642369f1fb92d1dc35994de22f9d6502859512d2c7c0736824bcf"
   end
 
   depends_on "pkgconf" => :build

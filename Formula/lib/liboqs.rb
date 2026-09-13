@@ -11,12 +11,13 @@ class Liboqs < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9ab14bee159d7d6ebaa31b25db60880d8f2d5c9f8fa259ed93482dcec27d5e94"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "96a37748eef828d887209d70d0634e84c5f956d32d869a659e70e33a576cc245"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "689c0523b4592ebd73310bb72b8fc6211e907c9857457cb201de3d5d17781527"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3cc873a9338bacafd8b4219b9aa08dd73a47a08194877918f8b327324c284195"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d80a9952b57de6a68b429478926a6651992a3e24e0647f56775ee6337b0f06a9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b38e74277f956f35a965a7eaef455c331a08ed0f299006861375c5b8a7b398dc"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "10bb5e8e91511bdb8f0021fd05ff66272c3a15b99591b154efc9319faa94e957"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "9ab14bee159d7d6ebaa31b25db60880d8f2d5c9f8fa259ed93482dcec27d5e94"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "96a37748eef828d887209d70d0634e84c5f956d32d869a659e70e33a576cc245"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "689c0523b4592ebd73310bb72b8fc6211e907c9857457cb201de3d5d17781527"
+    sha256 cellar: :any_skip_relocation, sonoma:            "3cc873a9338bacafd8b4219b9aa08dd73a47a08194877918f8b327324c284195"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "d80a9952b57de6a68b429478926a6651992a3e24e0647f56775ee6337b0f06a9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "b38e74277f956f35a965a7eaef455c331a08ed0f299006861375c5b8a7b398dc"
   end
 
   depends_on "cmake" => :build

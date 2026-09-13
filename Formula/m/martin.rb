@@ -15,11 +15,12 @@ class Martin < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9ce143aad121e6e79eb7906512da140b2f530951895b3a0fe54b489a3158483e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d24d27284df5223493c6e7c51b99a96ccb5c1617034abc0657f8c3df97a1dff2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7b94e1c951b46134b39189689909fe704f4c32a516b91a57c08982381ac2b405"
-    sha256 cellar: :any,                 arm64_linux:   "04c51c13e635dd83fb44a5c2dfb2bfb2637127240d63633c737e439c461d26f5"
-    sha256 cellar: :any,                 x86_64_linux:  "513211b43540ad756186a9dfa168b3a0b3a40bb19cf36079e3fe7616dde242e3"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "1799b5a32a4bc064cf36ad982d1804d02cc17db89773a07b706aee6b458c5283"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "9ce143aad121e6e79eb7906512da140b2f530951895b3a0fe54b489a3158483e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "d24d27284df5223493c6e7c51b99a96ccb5c1617034abc0657f8c3df97a1dff2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "7b94e1c951b46134b39189689909fe704f4c32a516b91a57c08982381ac2b405"
+    sha256 cellar: :any,                 arm64_linux:       "04c51c13e635dd83fb44a5c2dfb2bfb2637127240d63633c737e439c461d26f5"
+    sha256 cellar: :any,                 x86_64_linux:      "513211b43540ad756186a9dfa168b3a0b3a40bb19cf36079e3fe7616dde242e3"
   end
 
   depends_on "node" => :build

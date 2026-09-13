@@ -8,12 +8,13 @@ class Librime < Formula
   revision 2
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "d4324c941332adfbddafc4e74f9f7646a56e2af93b1cda3092166de2cd334ad4"
-    sha256 cellar: :any, arm64_sequoia: "0552191feac3d9b981bd9b46fda577d2ce67bcf13a11113127a287a55b29c34f"
-    sha256 cellar: :any, arm64_sonoma:  "93ead5f657d87599c29b33f6057ca5e4a2b8de7fbf4358040c8fe120d7a4b953"
-    sha256 cellar: :any, sonoma:        "0d10f6dcf9f2f7a501981d4d1ee2f92a19496995bb8f86a9789a86e15888d0dc"
-    sha256 cellar: :any, arm64_linux:   "6ada8b1343be7c24aa578f49e98e2573b06cd802cfd16dd866a51ed17b131368"
-    sha256 cellar: :any, x86_64_linux:  "b9de1ea3a99016ca959931344b9357a5c62b0a9d163bf033474cc88cf06e553e"
+    sha256 cellar: :any, arm64_golden_gate: "3a5408ce969148117486efe82d7487cbf83c1f6fe6b75f5a447d990f4094441f"
+    sha256 cellar: :any, arm64_tahoe:       "d4324c941332adfbddafc4e74f9f7646a56e2af93b1cda3092166de2cd334ad4"
+    sha256 cellar: :any, arm64_sequoia:     "0552191feac3d9b981bd9b46fda577d2ce67bcf13a11113127a287a55b29c34f"
+    sha256 cellar: :any, arm64_sonoma:      "93ead5f657d87599c29b33f6057ca5e4a2b8de7fbf4358040c8fe120d7a4b953"
+    sha256 cellar: :any, sonoma:            "0d10f6dcf9f2f7a501981d4d1ee2f92a19496995bb8f86a9789a86e15888d0dc"
+    sha256 cellar: :any, arm64_linux:       "6ada8b1343be7c24aa578f49e98e2573b06cd802cfd16dd866a51ed17b131368"
+    sha256 cellar: :any, x86_64_linux:      "b9de1ea3a99016ca959931344b9357a5c62b0a9d163bf033474cc88cf06e553e"
   end
 
   depends_on "boost" => :build

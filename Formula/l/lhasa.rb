@@ -6,12 +6,13 @@ class Lhasa < Formula
   license "ISC"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "fd1ffebee313b2d3aa6c6290799c925366393b65d8f45964c2a96b8617d135b0"
-    sha256 cellar: :any, arm64_sequoia: "354461e9807d52d9fc075852b346a442b3d51083e4c6f07a9b21e5116aae696b"
-    sha256 cellar: :any, arm64_sonoma:  "8a483eba2d6c1f8d8c1270c14bf353e1bc8821f19f365c22f27a28e365337dbf"
-    sha256 cellar: :any, sonoma:        "315001623b16e7fc445f30c7ccc0385868f3c1069fc3b896508e70f398472bd4"
-    sha256 cellar: :any, arm64_linux:   "b332860a7e3cd46ce891f033ffa13c36f69750b6a5b268ae72ae752838944fda"
-    sha256 cellar: :any, x86_64_linux:  "0c129f9050e1f622e7cb01f5a4929c2344e5d8e8916b2bba4d5be5e41261d982"
+    sha256 cellar: :any, arm64_golden_gate: "ecff9f243ff801f54e2036a6ae6c1bc9f943be2369b4ecab9c9f49e71a224879"
+    sha256 cellar: :any, arm64_tahoe:       "fd1ffebee313b2d3aa6c6290799c925366393b65d8f45964c2a96b8617d135b0"
+    sha256 cellar: :any, arm64_sequoia:     "354461e9807d52d9fc075852b346a442b3d51083e4c6f07a9b21e5116aae696b"
+    sha256 cellar: :any, arm64_sonoma:      "8a483eba2d6c1f8d8c1270c14bf353e1bc8821f19f365c22f27a28e365337dbf"
+    sha256 cellar: :any, sonoma:            "315001623b16e7fc445f30c7ccc0385868f3c1069fc3b896508e70f398472bd4"
+    sha256 cellar: :any, arm64_linux:       "b332860a7e3cd46ce891f033ffa13c36f69750b6a5b268ae72ae752838944fda"
+    sha256 cellar: :any, x86_64_linux:      "0c129f9050e1f622e7cb01f5a4929c2344e5d8e8916b2bba4d5be5e41261d982"
   end
 
   head do

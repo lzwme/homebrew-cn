@@ -25,12 +25,13 @@ class DhallLspServer < Formula
 
   bottle do
     rebuild 3
-    sha256 cellar: :any, arm64_tahoe:   "a6daaa49d5c98125647b3cde6f70c733acbf19d244a67d3a3b8b664ec17e57c3"
-    sha256 cellar: :any, arm64_sequoia: "aab22a2fee405b6ec9218b9d82c303fa382456fc4e40c057f7ae10568f246492"
-    sha256 cellar: :any, arm64_sonoma:  "1057143024d6abf1c4ee0200824502cb01ccfad21fcf3d82c5eb80ca515f958a"
-    sha256 cellar: :any, sonoma:        "91d18c95a5784d68c1e142260dfd3567a1d265e7a630d5fd38dc2e7bc13fa596"
-    sha256 cellar: :any, arm64_linux:   "2850717581a83df04f78fd41249a77cdc12cb3df735ebdebaca53d0ab3bb72ef"
-    sha256 cellar: :any, x86_64_linux:  "4f3ae9995258d100e40afd58c269aa5779f6b38a13ba3646f4129a5a873854b7"
+    sha256 cellar: :any, arm64_golden_gate: "d4065c5d504c76de3ccd8b0cc70eec8ddf824c36d0d4d39a26a7f8fe4c179cc4"
+    sha256 cellar: :any, arm64_tahoe:       "a6daaa49d5c98125647b3cde6f70c733acbf19d244a67d3a3b8b664ec17e57c3"
+    sha256 cellar: :any, arm64_sequoia:     "aab22a2fee405b6ec9218b9d82c303fa382456fc4e40c057f7ae10568f246492"
+    sha256 cellar: :any, arm64_sonoma:      "1057143024d6abf1c4ee0200824502cb01ccfad21fcf3d82c5eb80ca515f958a"
+    sha256 cellar: :any, sonoma:            "91d18c95a5784d68c1e142260dfd3567a1d265e7a630d5fd38dc2e7bc13fa596"
+    sha256 cellar: :any, arm64_linux:       "2850717581a83df04f78fd41249a77cdc12cb3df735ebdebaca53d0ab3bb72ef"
+    sha256 cellar: :any, x86_64_linux:      "4f3ae9995258d100e40afd58c269aa5779f6b38a13ba3646f4129a5a873854b7"
   end
 
   depends_on "cabal-install" => :build

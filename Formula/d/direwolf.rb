@@ -12,12 +12,13 @@ class Direwolf < Formula
   head "https://github.com/wb2osz/direwolf.git", branch: "master"
 
   bottle do
-    sha256                               arm64_tahoe:   "63d881db26ffbc81c6e5cc7d3d6dfcf8c0ee22471315b629a87369e86a6a8ebc"
-    sha256                               arm64_sequoia: "3d153fb2f4257bba35a2bdfce4fbbff1f95bb0ae4acc07c9196e32e85e8f40b5"
-    sha256                               arm64_sonoma:  "369e5f8c733457ed38ec2efd545dcc3ebe205c3c847a70dd97cab2f827356eee"
-    sha256                               sonoma:        "7098d87113aedd2175eae8784c592553d190b4d01fd5c9fb056abad24a706ce3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "29d05c5606f17ab0aa22d6819b187a7dccbb9c017d2438116b5fc3670e855ecc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "de9468972aaafbd3f665c3ef710c1bb03a336bba0f6485ab652bf1154fbda2f8"
+    sha256                               arm64_golden_gate: "40e38cfd2d2c6aa99e85776ccebf8d79c988a960760c455eaca306e87e18e35d"
+    sha256                               arm64_tahoe:       "63d881db26ffbc81c6e5cc7d3d6dfcf8c0ee22471315b629a87369e86a6a8ebc"
+    sha256                               arm64_sequoia:     "3d153fb2f4257bba35a2bdfce4fbbff1f95bb0ae4acc07c9196e32e85e8f40b5"
+    sha256                               arm64_sonoma:      "369e5f8c733457ed38ec2efd545dcc3ebe205c3c847a70dd97cab2f827356eee"
+    sha256                               sonoma:            "7098d87113aedd2175eae8784c592553d190b4d01fd5c9fb056abad24a706ce3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "29d05c5606f17ab0aa22d6819b187a7dccbb9c017d2438116b5fc3670e855ecc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "de9468972aaafbd3f665c3ef710c1bb03a336bba0f6485ab652bf1154fbda2f8"
   end
 
   depends_on "cmake" => :build

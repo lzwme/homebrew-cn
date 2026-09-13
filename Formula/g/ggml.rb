@@ -8,11 +8,12 @@ class Ggml < Formula
   head "https://github.com/ggml-org/ggml.git", branch: "master"
 
   bottle do
-    sha256 arm64_tahoe:   "d7e8b0617c0722d9b2e5f81d3597df2bcae2a866ce63a3d22e4b5b7d8a8d9f7a"
-    sha256 arm64_sequoia: "e9db3752c2cb508d9f1535f57bf388281db25b323570cfaf494bb4ec3f8c85ab"
-    sha256 arm64_sonoma:  "efcf1777bd679f6bb0b90a7d6d48041d4bdae725bcaeebb0cd781e09d80bfa36"
-    sha256 arm64_linux:   "69c278705bc836969a6309b5611c49f8bec2fa3b74df67f8f28debebd0db5ce7"
-    sha256 x86_64_linux:  "d368d1cac4bcc908782bf68456c41a1fd9781d55d545c2eec7e546b64ecad7cb"
+    sha256 arm64_golden_gate: "427b8c052b4be3f7fa5e13771e4e9c27af8f18d0f5d1e1f063fb69d9018612f8"
+    sha256 arm64_tahoe:       "d7e8b0617c0722d9b2e5f81d3597df2bcae2a866ce63a3d22e4b5b7d8a8d9f7a"
+    sha256 arm64_sequoia:     "e9db3752c2cb508d9f1535f57bf388281db25b323570cfaf494bb4ec3f8c85ab"
+    sha256 arm64_sonoma:      "efcf1777bd679f6bb0b90a7d6d48041d4bdae725bcaeebb0cd781e09d80bfa36"
+    sha256 arm64_linux:       "69c278705bc836969a6309b5611c49f8bec2fa3b74df67f8f28debebd0db5ce7"
+    sha256 x86_64_linux:      "d368d1cac4bcc908782bf68456c41a1fd9781d55d545c2eec7e546b64ecad7cb"
   end
 
   depends_on "cmake" => [:build, :test]

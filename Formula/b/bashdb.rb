@@ -18,14 +18,15 @@ class Bashdb < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2aedb1af38194b056e6f3a31ff73c2995782f41d714955991a5d749abe53eb14"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2aedb1af38194b056e6f3a31ff73c2995782f41d714955991a5d749abe53eb14"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2aedb1af38194b056e6f3a31ff73c2995782f41d714955991a5d749abe53eb14"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "2aedb1af38194b056e6f3a31ff73c2995782f41d714955991a5d749abe53eb14"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ce33c2ad50ddabd3cbff0c1a2b6e0f9ebaf8ff28609df48fafd6d7e8e1c8962d"
-    sha256 cellar: :any_skip_relocation, ventura:       "ce33c2ad50ddabd3cbff0c1a2b6e0f9ebaf8ff28609df48fafd6d7e8e1c8962d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2aedb1af38194b056e6f3a31ff73c2995782f41d714955991a5d749abe53eb14"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2aedb1af38194b056e6f3a31ff73c2995782f41d714955991a5d749abe53eb14"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "70c7d02ad0c3957640f26b2ba455f696c0aa1248db43c27cca1f56701e86310c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "2aedb1af38194b056e6f3a31ff73c2995782f41d714955991a5d749abe53eb14"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "2aedb1af38194b056e6f3a31ff73c2995782f41d714955991a5d749abe53eb14"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "2aedb1af38194b056e6f3a31ff73c2995782f41d714955991a5d749abe53eb14"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:     "2aedb1af38194b056e6f3a31ff73c2995782f41d714955991a5d749abe53eb14"
+    sha256 cellar: :any_skip_relocation, sonoma:            "ce33c2ad50ddabd3cbff0c1a2b6e0f9ebaf8ff28609df48fafd6d7e8e1c8962d"
+    sha256 cellar: :any_skip_relocation, ventura:           "ce33c2ad50ddabd3cbff0c1a2b6e0f9ebaf8ff28609df48fafd6d7e8e1c8962d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "2aedb1af38194b056e6f3a31ff73c2995782f41d714955991a5d749abe53eb14"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "2aedb1af38194b056e6f3a31ff73c2995782f41d714955991a5d749abe53eb14"
   end
 
   depends_on "bash"

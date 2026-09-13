@@ -11,12 +11,13 @@ class Fatsort < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0a364630ad4617dfd97e5af2275f62c91d1371b1452a2cdc5a9cae4c9724b058"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "145bea2b1961c492f9adc4d52df66a1c4e74465388470f320f30378418e81742"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "aaacef942c280d2dee9d1e2fb1a5f1e4dc90ee452d34f1162e52d8b074fb1f54"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2c0bbb896f82db81e5213de928f8d02742d0e8e02506f5746260dcd229d7c8e4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "03406b3c7d87b1bfa493be10a02b0ba72898ee5d2277749ff02f39e4bcd5c59b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2e8c2792669cf23c3a31e553e513cc6de53ea82dba27bc079074da74101c3fd0"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "82b4cd97d7dc1aaa71cac12eae3717078144a896f342c043cbf18f1e33f31f78"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "0a364630ad4617dfd97e5af2275f62c91d1371b1452a2cdc5a9cae4c9724b058"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "145bea2b1961c492f9adc4d52df66a1c4e74465388470f320f30378418e81742"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "aaacef942c280d2dee9d1e2fb1a5f1e4dc90ee452d34f1162e52d8b074fb1f54"
+    sha256 cellar: :any_skip_relocation, sonoma:            "2c0bbb896f82db81e5213de928f8d02742d0e8e02506f5746260dcd229d7c8e4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "03406b3c7d87b1bfa493be10a02b0ba72898ee5d2277749ff02f39e4bcd5c59b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "2e8c2792669cf23c3a31e553e513cc6de53ea82dba27bc079074da74101c3fd0"
   end
 
   depends_on "help2man"

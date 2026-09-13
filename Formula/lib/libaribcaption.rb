@@ -7,12 +7,13 @@ class Libaribcaption < Formula
   head "https://github.com/xqq/libaribcaption.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "dfbd01f66719cce8fe72f86c9c8ef7930157749a8da659b6bcfd27f906aa2ba9"
-    sha256 cellar: :any, arm64_sequoia: "e7d83828ac59fcff10aff4435be198fd6c6d9b812c982ba28359bb708f40bade"
-    sha256 cellar: :any, arm64_sonoma:  "66eb6eff4f7469d951dad362a68375178a48794c0a230e10525e2552bc4726b3"
-    sha256 cellar: :any, sonoma:        "3eacfcff63e0080dc1430c1f3b69c62ec571a7ce4ccf72b5ab8f66ed403d4f63"
-    sha256 cellar: :any, arm64_linux:   "b395f8fb41ffac3fd8fb40c19555a23eeafbbc85ce645e5d0f7118a7de8d4a82"
-    sha256 cellar: :any, x86_64_linux:  "14d9ef888a91d5c3c63d6fbe2be4fcaebf9f5e553674ac0a5c07250aaa35e9b5"
+    sha256 cellar: :any, arm64_golden_gate: "7e8aa6e7e00f10ea83e59f84619cfca396eff28f961ce6cf3786d6ee35742e7b"
+    sha256 cellar: :any, arm64_tahoe:       "dfbd01f66719cce8fe72f86c9c8ef7930157749a8da659b6bcfd27f906aa2ba9"
+    sha256 cellar: :any, arm64_sequoia:     "e7d83828ac59fcff10aff4435be198fd6c6d9b812c982ba28359bb708f40bade"
+    sha256 cellar: :any, arm64_sonoma:      "66eb6eff4f7469d951dad362a68375178a48794c0a230e10525e2552bc4726b3"
+    sha256 cellar: :any, sonoma:            "3eacfcff63e0080dc1430c1f3b69c62ec571a7ce4ccf72b5ab8f66ed403d4f63"
+    sha256 cellar: :any, arm64_linux:       "b395f8fb41ffac3fd8fb40c19555a23eeafbbc85ce645e5d0f7118a7de8d4a82"
+    sha256 cellar: :any, x86_64_linux:      "14d9ef888a91d5c3c63d6fbe2be4fcaebf9f5e553674ac0a5c07250aaa35e9b5"
   end
 
   depends_on "cmake" => :build

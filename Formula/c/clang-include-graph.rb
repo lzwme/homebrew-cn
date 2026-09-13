@@ -8,12 +8,13 @@ class ClangIncludeGraph < Formula
   head "https://github.com/bkryza/clang-include-graph.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "c423cbe1c07f46fec7da9366441926e5432b1397cf4089c73eb5f0c8b02b3c35"
-    sha256 cellar: :any, arm64_sequoia: "6d72273c3217f8a0bb4a2ed452022f589e0f04f9b916012441e481e28df609ab"
-    sha256 cellar: :any, arm64_sonoma:  "9bf1beab39649328eb15ce500637316d62e4a0490c3106b451154b7428efff1f"
-    sha256 cellar: :any, sonoma:        "e9c4fb65b8be86416e8d654754423612f82a7842eb1f7d31b4c9433b8bc1bccf"
-    sha256 cellar: :any, arm64_linux:   "50dfe4ed236421e9cb31a1c918af2c3ca1d6f8e9b84ed5422e0f9ff35295833c"
-    sha256 cellar: :any, x86_64_linux:  "7e8b46b1abc48211e97c88b05a752e5971b01f1ac01d21ff1272133df5c6329e"
+    sha256 cellar: :any, arm64_golden_gate: "cade024359640ca79eb2ab000aa00ba8c5fd6a21c928fbeab39ea8bed24932ec"
+    sha256 cellar: :any, arm64_tahoe:       "c423cbe1c07f46fec7da9366441926e5432b1397cf4089c73eb5f0c8b02b3c35"
+    sha256 cellar: :any, arm64_sequoia:     "6d72273c3217f8a0bb4a2ed452022f589e0f04f9b916012441e481e28df609ab"
+    sha256 cellar: :any, arm64_sonoma:      "9bf1beab39649328eb15ce500637316d62e4a0490c3106b451154b7428efff1f"
+    sha256 cellar: :any, sonoma:            "e9c4fb65b8be86416e8d654754423612f82a7842eb1f7d31b4c9433b8bc1bccf"
+    sha256 cellar: :any, arm64_linux:       "50dfe4ed236421e9cb31a1c918af2c3ca1d6f8e9b84ed5422e0f9ff35295833c"
+    sha256 cellar: :any, x86_64_linux:      "7e8b46b1abc48211e97c88b05a752e5971b01f1ac01d21ff1272133df5c6329e"
   end
 
   depends_on "cmake" => [:build, :test]

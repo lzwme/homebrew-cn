@@ -12,12 +12,13 @@ class Dwdiff < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "72db22b7bee1b3fbb618afb253f77a38a89d8f48dce43a05e4e43f00c33f49a1"
-    sha256 arm64_sequoia: "a0c989ceab85b65e504e45d4ce9168d2536a523a0aeb32c5ce252227e9b9fa73"
-    sha256 arm64_sonoma:  "562e9ff208d115ed67a234cefba424155674d4f8266f9eaf6c600fab69867a36"
-    sha256 sonoma:        "430674eaa122cd86c378f0e894868125b0608cac9c2b7e384e09f2334560c36f"
-    sha256 arm64_linux:   "9c01d60e8341d578e959b78c1c65d40a21770e70bbadd696b0ea9253446ea584"
-    sha256 x86_64_linux:  "c8bdedde5a536590f5ad26a0912ea0ae15f3f0c0bd605c5356193a3e5ef4eace"
+    sha256 arm64_golden_gate: "d4ae1cedf2738598cba8c9693fc4c82e311d5812f52db4b2271125c960de6126"
+    sha256 arm64_tahoe:       "72db22b7bee1b3fbb618afb253f77a38a89d8f48dce43a05e4e43f00c33f49a1"
+    sha256 arm64_sequoia:     "a0c989ceab85b65e504e45d4ce9168d2536a523a0aeb32c5ce252227e9b9fa73"
+    sha256 arm64_sonoma:      "562e9ff208d115ed67a234cefba424155674d4f8266f9eaf6c600fab69867a36"
+    sha256 sonoma:            "430674eaa122cd86c378f0e894868125b0608cac9c2b7e384e09f2334560c36f"
+    sha256 arm64_linux:       "9c01d60e8341d578e959b78c1c65d40a21770e70bbadd696b0ea9253446ea584"
+    sha256 x86_64_linux:      "c8bdedde5a536590f5ad26a0912ea0ae15f3f0c0bd605c5356193a3e5ef4eace"
   end
 
   depends_on "gettext" => :build

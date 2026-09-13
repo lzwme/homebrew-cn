@@ -25,7 +25,7 @@ class TesseractLang < Formula
 
   test do
     resource("testfile").stage do
-      system "#{Formula["tesseract"].bin}/tesseract", "./eurotext.tif", "./output", "-l", "eng+deu"
+      system "#{formula_opt_bin("tesseract")}/tesseract", "./eurotext.tif", "./output", "-l", "eng+deu"
       assert_match "über den faulen Hund. Le renard brun\n", File.read("output.txt")
     end
   end

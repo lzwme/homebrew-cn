@@ -13,14 +13,15 @@ class Dpcmd < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "4f5102a2acb2ba277359e059eb1bfc1c18b9608625c56b67b8a37c3bcc0208d7"
-    sha256 cellar: :any,                 arm64_sequoia: "46dc23e75280d9ee1b6d06945dbbe02c5df6548a593a463dabf7c8f08a2cb805"
-    sha256 cellar: :any,                 arm64_sonoma:  "6305d2c0681a4e0d1a1c759e4d9368a3e479d3cb47e4ad56c1510bde6eac526e"
-    sha256 cellar: :any,                 arm64_ventura: "1999933a7cfd48060c8add8b68b1381f4ef3eb81bc60effd9e5693aed2e9fe00"
-    sha256 cellar: :any,                 sonoma:        "dc2fb2e33afad5b3aefec987d0f8e39de09fea5f8b2ea4face4e043c0f3e624d"
-    sha256 cellar: :any,                 ventura:       "56e693f599c54b059039fd369cf77eee88fd39a9b2e9490e74021e5fdcd1081f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3808a79c440d4d319da04ad1623e85901363c5cfe7a07d5a48c245547e4aa2a7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dd4bb5c62758c86baf6c6a8211260e41c9311d3660d46d7f94f4b89bf2dd7b41"
+    sha256 cellar: :any,                 arm64_golden_gate: "976d5c8ec1a532293265691ee699a4d1f5cb8923ed97fc634bd485d0935bdff5"
+    sha256 cellar: :any,                 arm64_tahoe:       "4f5102a2acb2ba277359e059eb1bfc1c18b9608625c56b67b8a37c3bcc0208d7"
+    sha256 cellar: :any,                 arm64_sequoia:     "46dc23e75280d9ee1b6d06945dbbe02c5df6548a593a463dabf7c8f08a2cb805"
+    sha256 cellar: :any,                 arm64_sonoma:      "6305d2c0681a4e0d1a1c759e4d9368a3e479d3cb47e4ad56c1510bde6eac526e"
+    sha256 cellar: :any,                 arm64_ventura:     "1999933a7cfd48060c8add8b68b1381f4ef3eb81bc60effd9e5693aed2e9fe00"
+    sha256 cellar: :any,                 sonoma:            "dc2fb2e33afad5b3aefec987d0f8e39de09fea5f8b2ea4face4e043c0f3e624d"
+    sha256 cellar: :any,                 ventura:           "56e693f599c54b059039fd369cf77eee88fd39a9b2e9490e74021e5fdcd1081f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "3808a79c440d4d319da04ad1623e85901363c5cfe7a07d5a48c245547e4aa2a7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "dd4bb5c62758c86baf6c6a8211260e41c9311d3660d46d7f94f4b89bf2dd7b41"
   end
 
   depends_on "pkgconf" => :build
