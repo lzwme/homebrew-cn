@@ -1,20 +1,18 @@
 class Pygit2 < Formula
   desc "Bindings to the libgit2 shared library"
   homepage "https://www.pygit2.org/"
-  url "https://files.pythonhosted.org/packages/f1/54/9273c78efd3d570091af585bdeb68a46089e80602dafe11989cca40c6d0f/pygit2-1.20.0.tar.gz"
-  sha256 "7253735629c22fff412a72c48c204b19c206fda9fcb01e51113d9689194cb1cf"
+  url "https://files.pythonhosted.org/packages/9c/11/592cc7854795830a7257ab6025a1fc803b58b0e7bf7d31f619bc7288ed4d/pygit2-1.20.1.tar.gz"
+  sha256 "36dff84d237f2b8f18b0b146d6e7c3f99a7bce2da98cc4103a14387f53319f95"
   license "GPL-2.0-only" => { with: "GCC-exception-2.0" }
   compatibility_version 1
   head "https://github.com/libgit2/pygit2.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "517cc3ebeeae379c810d8a29b4cbd0ca7ddf99a157d3f10471ba0f2fb0024799"
-    sha256 cellar: :any, arm64_tahoe:       "014b443ecfadb43fea1f8be1e2d192d90ff6ac22f254c4fe70f116d48ba11370"
-    sha256 cellar: :any, arm64_sequoia:     "5aae17d0cb36ba04cd2fe7ca4284c8ef9555fcc529c0de091fb2c9b9d39101d7"
-    sha256 cellar: :any, arm64_sonoma:      "cbc2582c691dc88e8f25fb42325f0d9eb86ee3166f0dcdfc96eba83941793d41"
-    sha256 cellar: :any, sonoma:            "933d7b2dc5bb69dfb6570bdb5d5eafe18a668eeb646bd27c0eb380ebde0df69a"
-    sha256 cellar: :any, arm64_linux:       "285e4f9e42ad8a76b6d2c88901c4d8b6aaa6b6256ef0f0bfbd69d9c7537f3daf"
-    sha256 cellar: :any, x86_64_linux:      "f01f8e53269c2e436a399e7b9e13d60272ebc5bdd0b86b8a74750992a533a9e5"
+    sha256 cellar: :any, arm64_golden_gate: "e2abda1fe37ef063c31a915d17cbdd21306ad1290f5ff7baa8462be740acc093"
+    sha256 cellar: :any, arm64_tahoe:       "b75937a6e4604325f7197e3a3b3fab48c2c67da3b38e6a4acd5eee4f134b0ba4"
+    sha256 cellar: :any, arm64_sequoia:     "7a2a7fa73b46aa24fe72d1182b208ffcd6755d9c8b2ac264dbb9260d0f3df472"
+    sha256 cellar: :any, arm64_linux:       "78e34cc4ada6ed12cda9fa6161f5f9cb6c4c56a4b2e60ff88807eb57afbf3af5"
+    sha256 cellar: :any, x86_64_linux:      "dedef89ae1f9d119a1d0fce35f78205ecfe4efcb3430ea4e0efcbdc66b46d831"
   end
 
   depends_on "python@3.13" => [:build, :test]

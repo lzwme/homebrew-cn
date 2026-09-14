@@ -1,39 +1,22 @@
 class Picocom < Formula
   desc "Minimal dumb-terminal emulation program"
-  homepage "https://github.com/npat-efault/picocom"
-  url "https://ghfast.top/https://github.com/npat-efault/picocom/archive/refs/tags/3.1.tar.gz"
-  sha256 "e6761ca932ffc6d09bd6b11ff018bdaf70b287ce518b3282d29e0270e88420bb"
+  homepage "https://gitlab.com/wsakernel/picocom"
+  url "https://gitlab.com/wsakernel/picocom/-/archive/2024-07/picocom-2024-07.tar.gz"
+  sha256 "4379de2ec591a5848123f37ccdbc7fbeee6dd3520ef1ce4119d84202fc268a17"
   license "GPL-2.0-or-later"
-  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "a0abd50d8e84a919f7b024ddd32311d77a9a2830ee1f481b87e5db4758cf651f"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "01b35b20e38a3e06f20de103d7d5b371386fce19b8bab8d6869886c5eb09f329"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "87020c916b8770f7458f4ab8323909d2ed5e1d48706507a2a262289f741ab627"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "3a7594ede879b71828a7e5b36cdcccb7e208001d4514c4c8e8367146d561c7ff"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:     "10704a0718469ac5d0d1b0774341b0c24d9ddeb1a5e6d2d12deb916d27bc3506"
-    sha256 cellar: :any_skip_relocation, arm64_monterey:    "f286430d43b8e36f2abefdf1765e960f76e2bf2c3e04f3e6fa500fa0b8dafeb2"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:     "ea502c2c427d1e389d7dd0822e6f01d6ac7b7eed6f856ee9f9e60fbd598ee845"
-    sha256 cellar: :any_skip_relocation, sonoma:            "3359c21097ce36c5ca591b893388abe1b326002e32fa282d9e9b11905936b370"
-    sha256 cellar: :any_skip_relocation, ventura:           "7e0e2b6e676423624e67f67a7f509332b6aa118e860c92f32308f9399405d87c"
-    sha256 cellar: :any_skip_relocation, monterey:          "0b964f92ff9ba91ad3107dc9c435de2198bf8f37f72414ec71d6f269293144a3"
-    sha256 cellar: :any_skip_relocation, big_sur:           "bcf999f8a55184741845fe1dbab36597c3be6723f4fa4f603ee453558bfd6170"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "98708de364229e523e74c4d15f335fe1bf758bd26c12f78fc145fc464ff3130b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "c765edf56732a7dd0631c12068fd17ba7800c98ceb24f98fa65990e7fa13dadc"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "f0b57bd8a770c0e6f67d847470a806c3cd61d11559c3144d58305ab021a7a0b2"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "286ea19a5c354df6945f1e2ac963c6de413004013d342ec27b0b5a2b6ac37c7d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "eeaa2ad46eb0932dec9c49251dfe3454c59d1584a868a85ae639eedc8f6587c1"
+    sha256 cellar: :any,                 arm64_linux:       "5e6ce40c6d0ae12246931299ac5d5f0b2390e09674787f2c1e29088e6e18c7aa"
+    sha256 cellar: :any,                 x86_64_linux:      "bab4c83759c1ad5b0c69bf3ae7894c8bf6eeb14bde86c691376c5650aeed62ed"
   end
 
-  # Upstream picocom supports arbitrary baud-rate settings on macOS out of the
-  # box, but only applies that to i386 and x86_64 systems. With the advent of
-  # arm64 macs, it is now necessary to expand that support.
-  patch do
-    url "https://github.com/npat-efault/picocom/commit/f806bf28266cccdb75ba89d754de8d8fa64c6127.patch?full_index=1"
-    sha256 "b1a29265d5b5e0e7e7f8f3194b818802de8c7d18e80525bc43cbb896a6def590"
-    type :unofficial
-    resolves "https://github.com/npat-efault/picocom/pull/129"
-  end
+  depends_on "go-md2man" => :build
 
   def install
-    system "make"
+    system "make", "all", "doc"
     bin.install "picocom"
     man1.install "picocom.1"
   end

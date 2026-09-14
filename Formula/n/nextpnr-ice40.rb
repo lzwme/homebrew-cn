@@ -8,12 +8,13 @@ class NextpnrIce40 < Formula
   head "https://github.com/YosysHQ/nextpnr.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "06da19337d5526520681227e15b7a67a60add9a4deef6c96b7a12e8248fdff4b"
-    sha256 cellar: :any, arm64_sequoia: "21172ef4af4a7b965b33a811b7399d0ece75a9a6bd5cbbdc731e35e7e17f9fde"
-    sha256 cellar: :any, arm64_sonoma:  "6a3bf25630d719bcbe77000d92ea2ce177c091739af3e1ab46620480d82b8d45"
-    sha256 cellar: :any, sonoma:        "5475075b5e67b7edce0671caec59b011787a7c2003cfb4f77b5687e71835e887"
-    sha256 cellar: :any, arm64_linux:   "af1abce4aa122decb55f37a2835a1c9bb1aa2596b482e42ee05646ce499c2eeb"
-    sha256 cellar: :any, x86_64_linux:  "44d5867bdfd66a47ecc5afa81343a1daf0394b88f1367e53d2d05711589885c4"
+    sha256 cellar: :any, arm64_golden_gate: "b5f4d26fa48f55ccd4f908db6bc878d062e03abccef8ef0f025f51e435af1a76"
+    sha256 cellar: :any, arm64_tahoe:       "06da19337d5526520681227e15b7a67a60add9a4deef6c96b7a12e8248fdff4b"
+    sha256 cellar: :any, arm64_sequoia:     "21172ef4af4a7b965b33a811b7399d0ece75a9a6bd5cbbdc731e35e7e17f9fde"
+    sha256 cellar: :any, arm64_sonoma:      "6a3bf25630d719bcbe77000d92ea2ce177c091739af3e1ab46620480d82b8d45"
+    sha256 cellar: :any, sonoma:            "5475075b5e67b7edce0671caec59b011787a7c2003cfb4f77b5687e71835e887"
+    sha256 cellar: :any, arm64_linux:       "af1abce4aa122decb55f37a2835a1c9bb1aa2596b482e42ee05646ce499c2eeb"
+    sha256 cellar: :any, x86_64_linux:      "44d5867bdfd66a47ecc5afa81343a1daf0394b88f1367e53d2d05711589885c4"
   end
 
   depends_on "cmake" => :build

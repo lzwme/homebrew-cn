@@ -12,11 +12,12 @@ class PvMigrate < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "14a59a43fce55ce7a213b3eb3c4401b6f24ee5b5112b527e37b19496947c3ab7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2dfae13eb7166064a7392937f48be2a360cf6cc0be4afc82c67426151627b354"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "88bf2a8e6a2420488bf4c0062744865c1a943885d94717880603037fd9f73090"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b4bd3c6ef60a325361368d9ef54463ce3a1f46db33e66ece7f28004a904a339d"
-    sha256 cellar: :any,                 x86_64_linux:  "eff6014fd7b593c82cee9204535dfebf013ddf296f9a9a92051195fc085fbebf"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "43b6b32f9c00c925c404dea8851dd656168d3a98845e14ed50ea7f0c026a18ab"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "14a59a43fce55ce7a213b3eb3c4401b6f24ee5b5112b527e37b19496947c3ab7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "2dfae13eb7166064a7392937f48be2a360cf6cc0be4afc82c67426151627b354"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "88bf2a8e6a2420488bf4c0062744865c1a943885d94717880603037fd9f73090"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "b4bd3c6ef60a325361368d9ef54463ce3a1f46db33e66ece7f28004a904a339d"
+    sha256 cellar: :any,                 x86_64_linux:      "eff6014fd7b593c82cee9204535dfebf013ddf296f9a9a92051195fc085fbebf"
   end
 
   depends_on "go" => :build

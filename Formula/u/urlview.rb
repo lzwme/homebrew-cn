@@ -20,14 +20,15 @@ class Urlview < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b6e3087bd014b40df019a8836f5f478181677742d8b45636acba03c5a7c956fa"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b2a05f008302affc74e6cab2a4fc76d212678746d4d167252e21d0a7f50d49e0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ceb55a63116f409bce3870150eda3310cc48f57813c79e6cb6d8a082e9be2eb0"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "cef111adfd85ccdf8ae30eda094940acc688c8454679b3432c2c8b39e54c32ea"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3197e439d22f3e5dcbfa8b38f2e73c40f52e89252b3279c3c5d236b6605165be"
-    sha256 cellar: :any_skip_relocation, ventura:       "b39f7e2238dbb7ec1e87a121aa48a88bac18b1e269e3a9b84b601ca410260eea"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7e27f5f34535a7b50e88660b1bcf3fb56bb430b76fa8f39f07231d7d3a1e95d2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "eb73442a4c8cac047d120ec566f4bbc59ce23b6eece8fdedd67db4bb9832c2dd"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "58516b6a73a615392bad56f92e421d70f45d4cb8043265c8733f416a0bcdaff0"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "b6e3087bd014b40df019a8836f5f478181677742d8b45636acba03c5a7c956fa"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "b2a05f008302affc74e6cab2a4fc76d212678746d4d167252e21d0a7f50d49e0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "ceb55a63116f409bce3870150eda3310cc48f57813c79e6cb6d8a082e9be2eb0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:     "cef111adfd85ccdf8ae30eda094940acc688c8454679b3432c2c8b39e54c32ea"
+    sha256 cellar: :any_skip_relocation, sonoma:            "3197e439d22f3e5dcbfa8b38f2e73c40f52e89252b3279c3c5d236b6605165be"
+    sha256 cellar: :any_skip_relocation, ventura:           "b39f7e2238dbb7ec1e87a121aa48a88bac18b1e269e3a9b84b601ca410260eea"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "7e27f5f34535a7b50e88660b1bcf3fb56bb430b76fa8f39f07231d7d3a1e95d2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "eb73442a4c8cac047d120ec566f4bbc59ce23b6eece8fdedd67db4bb9832c2dd"
   end
 
   uses_from_macos "ncurses"

@@ -13,11 +13,12 @@ class Xevd < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "a3607cd47a4dc5a7a4bdae2b0e0075f5fabf9346ba96a9704360bf117d577d26"
-    sha256 cellar: :any, arm64_sequoia: "2dc88ec5b07caa74e143a60ea4c44d5e67877f4ed4acf9fab5960f7af12cb30c"
-    sha256 cellar: :any, arm64_sonoma:  "dc5e935ded0b6ca5b65fcf1377a775e0c383998e18ce6d649afced42443dbd6a"
-    sha256 cellar: :any, arm64_linux:   "f77217acbb30118293715f9ddbcc00d7ccce1839913ae9b3832244ffd39654b5"
-    sha256 cellar: :any, x86_64_linux:  "e064fdacc27a21be48844c58260d19cab2af47d35ef6b394df29c54077cdaff9"
+    sha256 cellar: :any, arm64_golden_gate: "9fd292d6fcda23a7f610aadb4cacabfc9fc3a3db85855da346dc3f55c2f5e76c"
+    sha256 cellar: :any, arm64_tahoe:       "a3607cd47a4dc5a7a4bdae2b0e0075f5fabf9346ba96a9704360bf117d577d26"
+    sha256 cellar: :any, arm64_sequoia:     "2dc88ec5b07caa74e143a60ea4c44d5e67877f4ed4acf9fab5960f7af12cb30c"
+    sha256 cellar: :any, arm64_sonoma:      "dc5e935ded0b6ca5b65fcf1377a775e0c383998e18ce6d649afced42443dbd6a"
+    sha256 cellar: :any, arm64_linux:       "f77217acbb30118293715f9ddbcc00d7ccce1839913ae9b3832244ffd39654b5"
+    sha256 cellar: :any, x86_64_linux:      "e064fdacc27a21be48844c58260d19cab2af47d35ef6b394df29c54077cdaff9"
   end
 
   depends_on "cmake" => :build

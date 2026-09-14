@@ -24,6 +24,13 @@ class OpenshiftCli < Formula
   depends_on "go" => :build
   uses_from_macos "krb5"
 
+  # `test do` block connects to api.openshift.com
+  deny_network_access! [:build, :postinstall]
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     arch = Hardware::CPU.intel? ? "amd64" : Hardware::CPU.arch.to_s
     os = OS.kernel_name.downcase

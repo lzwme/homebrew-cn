@@ -6,12 +6,13 @@ class TomlTest < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7af4042ad74ce2aea27d3ca24b0dba2519f2a74ace4549addf0bd502afec023c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7af4042ad74ce2aea27d3ca24b0dba2519f2a74ace4549addf0bd502afec023c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7af4042ad74ce2aea27d3ca24b0dba2519f2a74ace4549addf0bd502afec023c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "99d22c7090692bb2f4995dd2a64fdbe5118a8a9ddfd18cb3cc3c6e8a8947d4e9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "65cc6f41d6a823a30cf3b6c9712a69d5703b127775d92b766f0d0b388edb2adf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2e496138f50bc24d70d70ae3f5acca3bf36fb7604f27296d9b3e293aac529470"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "e885ae2dae1472f42df6363f9dbdc584261d18c3e2327127df958651ebfd548a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "7af4042ad74ce2aea27d3ca24b0dba2519f2a74ace4549addf0bd502afec023c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "7af4042ad74ce2aea27d3ca24b0dba2519f2a74ace4549addf0bd502afec023c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "7af4042ad74ce2aea27d3ca24b0dba2519f2a74ace4549addf0bd502afec023c"
+    sha256 cellar: :any_skip_relocation, sonoma:            "99d22c7090692bb2f4995dd2a64fdbe5118a8a9ddfd18cb3cc3c6e8a8947d4e9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "65cc6f41d6a823a30cf3b6c9712a69d5703b127775d92b766f0d0b388edb2adf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "2e496138f50bc24d70d70ae3f5acca3bf36fb7604f27296d9b3e293aac529470"
   end
 
   depends_on "go" => :build

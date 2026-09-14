@@ -9,12 +9,13 @@ class TrojanGo < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e5ff7287bf3913b64c7f3a691df6229bd4a2dbb5f44d46e73ce1b36b968bfdc2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e5ff7287bf3913b64c7f3a691df6229bd4a2dbb5f44d46e73ce1b36b968bfdc2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e5ff7287bf3913b64c7f3a691df6229bd4a2dbb5f44d46e73ce1b36b968bfdc2"
-    sha256 cellar: :any_skip_relocation, sonoma:        "aef59484731100b7a80263353a251ad5c33281f0f3ce0fe4c3c427f42aaa3867"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3546d218a396d0ce42976b0593c71f4cd48f0edd81b0e2ba1dde4d3cd15e4004"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5d15ceba20c4d223f29bcb8daa59d4e045a089cfdd49c10a9a98dd770565d6fc"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "8d31ef130c4ec5f23bc52886417a6875dcff0758c90d7654d30d34c82d755288"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "e5ff7287bf3913b64c7f3a691df6229bd4a2dbb5f44d46e73ce1b36b968bfdc2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "e5ff7287bf3913b64c7f3a691df6229bd4a2dbb5f44d46e73ce1b36b968bfdc2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "e5ff7287bf3913b64c7f3a691df6229bd4a2dbb5f44d46e73ce1b36b968bfdc2"
+    sha256 cellar: :any_skip_relocation, sonoma:            "aef59484731100b7a80263353a251ad5c33281f0f3ce0fe4c3c427f42aaa3867"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "3546d218a396d0ce42976b0593c71f4cd48f0edd81b0e2ba1dde4d3cd15e4004"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "5d15ceba20c4d223f29bcb8daa59d4e045a089cfdd49c10a9a98dd770565d6fc"
   end
 
   depends_on "go" => :build

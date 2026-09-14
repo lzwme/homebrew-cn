@@ -7,12 +7,13 @@ class QbittorrentCli < Formula
   head "https://github.com/ludviglundgren/qbittorrent-cli.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "aab3e728969af409b2cb3b3a0659302deebbfc4cc88d9038f80fcc64f933cfdf"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "aab3e728969af409b2cb3b3a0659302deebbfc4cc88d9038f80fcc64f933cfdf"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "aab3e728969af409b2cb3b3a0659302deebbfc4cc88d9038f80fcc64f933cfdf"
-    sha256 cellar: :any_skip_relocation, sonoma:        "241c5c4aedbb49b5f9e56ff34e92d527cce19ecadb4df9dd232d03d6f928484b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "60155a85b2bfdcbdfe2030703ee2da280fdd45d9fc35613145d5a6ba28544891"
-    sha256 cellar: :any,                 x86_64_linux:  "233efa4ca5c2e5ff3b7c9067ed2fe515e1f76848337eb366e46b346d639782e2"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "c4b5c0a37d66820bb373f5ddb6bea6d6bf66284afb3457aaedc0cfb1092fa9d4"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "aab3e728969af409b2cb3b3a0659302deebbfc4cc88d9038f80fcc64f933cfdf"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "aab3e728969af409b2cb3b3a0659302deebbfc4cc88d9038f80fcc64f933cfdf"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "aab3e728969af409b2cb3b3a0659302deebbfc4cc88d9038f80fcc64f933cfdf"
+    sha256 cellar: :any_skip_relocation, sonoma:            "241c5c4aedbb49b5f9e56ff34e92d527cce19ecadb4df9dd232d03d6f928484b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "60155a85b2bfdcbdfe2030703ee2da280fdd45d9fc35613145d5a6ba28544891"
+    sha256 cellar: :any,                 x86_64_linux:      "233efa4ca5c2e5ff3b7c9067ed2fe515e1f76848337eb366e46b346d639782e2"
   end
 
   depends_on "go" => :build

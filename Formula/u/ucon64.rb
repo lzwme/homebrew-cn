@@ -13,12 +13,13 @@ class Ucon64 < Formula
 
   bottle do
     rebuild 1
-    sha256 arm64_tahoe:   "5f3fb969676e2ae50d11401a3b4da71df0a5e99adc037ba0f04fca6c9def11d7"
-    sha256 arm64_sequoia: "6c441a8fc88d68888010de08d4c309e113f51d7678e61708b6210fa08fdaf851"
-    sha256 arm64_sonoma:  "bbab173eda2b5b91ca4ecce4e02fe84f17f4cbefb6e6c89282ec9e9934132aea"
-    sha256 sonoma:        "9ca84df8b500fbee8ca081cfd47baf5b3f3f90cdf30fa3e208ec265b093b02c9"
-    sha256 arm64_linux:   "68ab6314679f0e61da877eebbeb975f14395a331897ae1c5422e8b28b1ad8682"
-    sha256 x86_64_linux:  "469604929938639dcb7d0f9e5e246c4a817cbaecdbd18ae797bd6ea32394b4f6"
+    sha256 arm64_golden_gate: "11d07bc643dc75ae9b97d4434c9d24696c3761625c2e5ec416a88657ee19f5be"
+    sha256 arm64_tahoe:       "5f3fb969676e2ae50d11401a3b4da71df0a5e99adc037ba0f04fca6c9def11d7"
+    sha256 arm64_sequoia:     "6c441a8fc88d68888010de08d4c309e113f51d7678e61708b6210fa08fdaf851"
+    sha256 arm64_sonoma:      "bbab173eda2b5b91ca4ecce4e02fe84f17f4cbefb6e6c89282ec9e9934132aea"
+    sha256 sonoma:            "9ca84df8b500fbee8ca081cfd47baf5b3f3f90cdf30fa3e208ec265b093b02c9"
+    sha256 arm64_linux:       "68ab6314679f0e61da877eebbeb975f14395a331897ae1c5422e8b28b1ad8682"
+    sha256 x86_64_linux:      "469604929938639dcb7d0f9e5e246c4a817cbaecdbd18ae797bd6ea32394b4f6"
   end
 
   uses_from_macos "unzip" => [:build, :test]

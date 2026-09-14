@@ -6,12 +6,13 @@ class Tinyproxy < Formula
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 arm64_tahoe:   "ac4cbc5308a528478d5972dbc951c2420abc1049d7061823735b648f9d864fd7"
-    sha256 arm64_sequoia: "e0c3141a074ebc5b4f27ab91d20b6b447133a55fcca98d3cdd95dbcec14e1b58"
-    sha256 arm64_sonoma:  "470a9ac084a05572a106d0d2a439f1e55ee430e4c64d18b733fa602c1e75da2f"
-    sha256 sonoma:        "6173900c0a425c4ed48996d324e1b6ee832e3ef0d5155efc59dd652ffa8907f6"
-    sha256 arm64_linux:   "b1f3a4f99b21d044c93a0101dfbf11cd1a1c6ce86f3a0189c95337b95778a38d"
-    sha256 x86_64_linux:  "cf643817026c5ef4e5a55611b4e097b258c15899ba1bf62d5a58461bdc9ef60d"
+    sha256 arm64_golden_gate: "06dcc9796f26e46d9fa8a55fafecd63b61b9c979b4c80e3768603341d1ab10fe"
+    sha256 arm64_tahoe:       "ac4cbc5308a528478d5972dbc951c2420abc1049d7061823735b648f9d864fd7"
+    sha256 arm64_sequoia:     "e0c3141a074ebc5b4f27ab91d20b6b447133a55fcca98d3cdd95dbcec14e1b58"
+    sha256 arm64_sonoma:      "470a9ac084a05572a106d0d2a439f1e55ee430e4c64d18b733fa602c1e75da2f"
+    sha256 sonoma:            "6173900c0a425c4ed48996d324e1b6ee832e3ef0d5155efc59dd652ffa8907f6"
+    sha256 arm64_linux:       "b1f3a4f99b21d044c93a0101dfbf11cd1a1c6ce86f3a0189c95337b95778a38d"
+    sha256 x86_64_linux:      "cf643817026c5ef4e5a55611b4e097b258c15899ba1bf62d5a58461bdc9ef60d"
   end
 
   depends_on "asciidoc" => :build

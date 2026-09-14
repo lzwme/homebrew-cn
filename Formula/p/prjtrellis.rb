@@ -7,12 +7,13 @@ class Prjtrellis < Formula
   revision 9
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "b5704b0c94159ae307faa175a626884f5c0c5b93be34ab3f6fff1cd7c6420485"
-    sha256 cellar: :any, arm64_sequoia: "5799ecac5726e00270a710bc20b274523c3cfb25f7c2a5dac778f8d1746b29f9"
-    sha256 cellar: :any, arm64_sonoma:  "add7029f8281e3069b852b98230a8e557a8e455c0ce90448b7e52697175ab2ba"
-    sha256 cellar: :any, sonoma:        "499f952b070fdd2235958873a574e48421521fdaeaf9055fd7fd0b9d3be5c38f"
-    sha256 cellar: :any, arm64_linux:   "8e409cbd38a73add5003dea5bca10f086ef24a721fc0a7e0c8cdeb36d9051828"
-    sha256 cellar: :any, x86_64_linux:  "cb8ca6b45e91e48bc1a09e4e496392fe2102c47eb9f119aa326b917302116ab8"
+    sha256 cellar: :any, arm64_golden_gate: "6318d66c0f8df7b7e0eeef98c5871864cd15108536add68805ffeba8b81b8be4"
+    sha256 cellar: :any, arm64_tahoe:       "b5704b0c94159ae307faa175a626884f5c0c5b93be34ab3f6fff1cd7c6420485"
+    sha256 cellar: :any, arm64_sequoia:     "5799ecac5726e00270a710bc20b274523c3cfb25f7c2a5dac778f8d1746b29f9"
+    sha256 cellar: :any, arm64_sonoma:      "add7029f8281e3069b852b98230a8e557a8e455c0ce90448b7e52697175ab2ba"
+    sha256 cellar: :any, sonoma:            "499f952b070fdd2235958873a574e48421521fdaeaf9055fd7fd0b9d3be5c38f"
+    sha256 cellar: :any, arm64_linux:       "8e409cbd38a73add5003dea5bca10f086ef24a721fc0a7e0c8cdeb36d9051828"
+    sha256 cellar: :any, x86_64_linux:      "cb8ca6b45e91e48bc1a09e4e496392fe2102c47eb9f119aa326b917302116ab8"
   end
 
   depends_on "cmake" => :build

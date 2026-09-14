@@ -21,6 +21,12 @@ class JiraCli < Formula
 
   conflicts_with "go-jira", because: "both install `jira` binaries"
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ldflags = %W[
       -X github.com/ankitpokhrel/jira-cli/internal/version.Version=#{version}

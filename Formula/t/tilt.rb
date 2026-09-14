@@ -23,13 +23,17 @@ class Tilt < Formula
   depends_on "go" => :build
   depends_on "node" => :build
 
-  def install
+  deny_network_access!
+
+  def fetch
     ENV["COREPACK_ENABLE_DOWNLOAD_PROMPT"] = "0"
 
-    # bundling the frontend assets first will allow them to be embedded into
-    # the final build
+    # Go dependencies are vendored, so only the frontend assets need
+    # downloading; bundling them downloads yarn and npm packages.
     system "make", "build-js"
+  end
 
+  def install
     ENV["CGO_ENABLED"] = "1"
     ldflags = %W[
       -X main.version=#{version}

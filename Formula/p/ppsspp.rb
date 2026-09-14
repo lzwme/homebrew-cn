@@ -8,12 +8,13 @@ class Ppsspp < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "822fe417a8375d4e2c0e5198051f96ca6f26f1f76860eacf3b0646d7fe3b7d31"
-    sha256 cellar: :any, arm64_sequoia: "50582846511f08c2de05611b5ccb9d3c1bb150eadfa995045edf6263df1ffc87"
-    sha256 cellar: :any, arm64_sonoma:  "e066b15fbd67a5e0f5bb5bd963303dc43330e0ee9664765e1c848485e8af9846"
-    sha256 cellar: :any, sonoma:        "5587c7e40e5fec600c02ca548623abe932dc17ba8efa8ae8468a4558b8278234"
-    sha256               arm64_linux:   "f11a8d5c8bffecf29232b54df2ef0673950535742ca3de334563e6d2c3655986"
-    sha256               x86_64_linux:  "2b2a7269d65268764f50754131d9d74cd080d417e57fc4efa70d2e5f5eafc7dd"
+    sha256 cellar: :any, arm64_golden_gate: "d57e2b00b58fe3b87e3ca67239c1667b3acfb6c55fe7ba67204ba278b98e064b"
+    sha256 cellar: :any, arm64_tahoe:       "822fe417a8375d4e2c0e5198051f96ca6f26f1f76860eacf3b0646d7fe3b7d31"
+    sha256 cellar: :any, arm64_sequoia:     "50582846511f08c2de05611b5ccb9d3c1bb150eadfa995045edf6263df1ffc87"
+    sha256 cellar: :any, arm64_sonoma:      "e066b15fbd67a5e0f5bb5bd963303dc43330e0ee9664765e1c848485e8af9846"
+    sha256 cellar: :any, sonoma:            "5587c7e40e5fec600c02ca548623abe932dc17ba8efa8ae8468a4558b8278234"
+    sha256               arm64_linux:       "f11a8d5c8bffecf29232b54df2ef0673950535742ca3de334563e6d2c3655986"
+    sha256               x86_64_linux:      "2b2a7269d65268764f50754131d9d74cd080d417e57fc4efa70d2e5f5eafc7dd"
   end
 
   depends_on "cmake" => :build

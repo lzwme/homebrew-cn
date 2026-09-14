@@ -1,8 +1,8 @@
 class Flix < Formula
   desc "Statically typed functional, imperative, and logic programming language"
   homepage "https://flix.dev/"
-  url "https://ghfast.top/https://github.com/flix/flix/archive/refs/tags/v0.75.3.tar.gz"
-  sha256 "453d5d7a1c183ed68b51988dfad7ec2eb68b3a1f3a62f2009ef9f5634bb3600f"
+  url "https://ghfast.top/https://github.com/flix/flix/archive/refs/tags/v0.76.0.tar.gz"
+  sha256 "5f5c9f63b95211870ea5edd29510be26196313d017bf8ed31796ece4633b9b0e"
   license "Apache-2.0"
   head "https://github.com/flix/flix.git", branch: "master"
 
@@ -12,13 +12,11 @@ class Flix < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "8370098a65452bea51ec2f2675985b3c3bc65dca8cfca5da113b54b31b5a68c1"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "4bd414a8b6eb64cbc74e0245ccc1ea5abadd1b97bd074363b496c356934c1b2f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "d51c947530650dd3f95cc3f903c36b0a20e8bb9592985770b755511664771c78"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "fda39dab991839aca38eb222e6ccd9ffaf1e94864ef4da58ba6dc53dd3024530"
-    sha256 cellar: :any_skip_relocation, sonoma:            "daba37ea8474679f25ba86dd6f553743f3c70164dc3173e2fc7a556991747952"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "209f9a9f269b58789dcd3bca784decd9de26e30ba124edf979e63807da28c0e7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "18e839a50eb1134270f0c52a0ede56004e8fe29dceab679912a1bb8d0439bbea"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "3c4f5707d197263f63eb72ba425ca4cb5be067ddd9af4f302ae3fa6ffb43a50c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "69febd94b9e4eb1f1a6c1966864a0aeb13f248471b15ea7a55dd64abd393a4dd"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "4965b112fc2d60ea01a00f8d644baa408ef96f261cbe4868b27d58f786dcba63"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "f75c7f772f4e0ea5ae822e3a89729267a9c27bd94b13f14006cc06697f88f3c0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "e90de9a0bc957d54e8e802eeb9e9e45cac6be1695648f8babdd00f0b26c6f453"
   end
 
   depends_on "mill" => :build

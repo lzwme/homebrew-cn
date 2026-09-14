@@ -7,12 +7,13 @@ class TodoistCliGo < Formula
   head "https://github.com/sachaos/todoist.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "705fc9c1566919b2194cd3181d28bbd54b8e2adc244007ed6817df8990fdfcda"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "705fc9c1566919b2194cd3181d28bbd54b8e2adc244007ed6817df8990fdfcda"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "705fc9c1566919b2194cd3181d28bbd54b8e2adc244007ed6817df8990fdfcda"
-    sha256 cellar: :any_skip_relocation, sonoma:        "01abdd671c2f6e2419edc45945480b49e8ee2f6f6be4b7b88b8acecd275dd844"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "061e8e55f6db1d06adbf2aebd788bdcd783d0b835a9257db6a9595dc1bf0c27b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4a90b3ad25e91084e4630a2d801670cc6b361f04b81ac30f74695072b165f5b2"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "2473cd7f428baa34f3bd3867776c109f45d62c33636ac7bb715b1c55c1d93feb"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "705fc9c1566919b2194cd3181d28bbd54b8e2adc244007ed6817df8990fdfcda"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "705fc9c1566919b2194cd3181d28bbd54b8e2adc244007ed6817df8990fdfcda"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "705fc9c1566919b2194cd3181d28bbd54b8e2adc244007ed6817df8990fdfcda"
+    sha256 cellar: :any_skip_relocation, sonoma:            "01abdd671c2f6e2419edc45945480b49e8ee2f6f6be4b7b88b8acecd275dd844"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "061e8e55f6db1d06adbf2aebd788bdcd783d0b835a9257db6a9595dc1bf0c27b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "4a90b3ad25e91084e4630a2d801670cc6b361f04b81ac30f74695072b165f5b2"
   end
 
   depends_on "go" => :build

@@ -7,12 +7,13 @@ class Mockolo < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "672c6c24b9e5bcbec341e30c2904709ad6451cbe5bf0616048bef4fd88eb75cb"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4a85b865dfc03617199bf14d7b392af1aab23401df70c330c7744ba08126f0c9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9ca61d8280ecc64958225c7860b556bc132d521c055847d476275d5bbc117f89"
-    sha256 cellar: :any_skip_relocation, sonoma:        "209dcf4e21d99e40e206708505a0e902c576cfa8b3f78fd3a93a71f95177eb68"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0e1cef95840e26a78cd28cd2b515033025bd1af26beb7459fbb7a28e8ada8f0d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a7939818512b30239cbda264db9d01481066ff9c76b0f4fb1836591edb7bd9d1"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "ab967e5b484322749b4b4079f6e65f0804df87080533cdaf276b24561eaec8f4"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "672c6c24b9e5bcbec341e30c2904709ad6451cbe5bf0616048bef4fd88eb75cb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "4a85b865dfc03617199bf14d7b392af1aab23401df70c330c7744ba08126f0c9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "9ca61d8280ecc64958225c7860b556bc132d521c055847d476275d5bbc117f89"
+    sha256 cellar: :any_skip_relocation, sonoma:            "209dcf4e21d99e40e206708505a0e902c576cfa8b3f78fd3a93a71f95177eb68"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "0e1cef95840e26a78cd28cd2b515033025bd1af26beb7459fbb7a28e8ada8f0d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "a7939818512b30239cbda264db9d01481066ff9c76b0f4fb1836591edb7bd9d1"
   end
 
   uses_from_macos "swift" => :build

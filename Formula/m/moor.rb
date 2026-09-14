@@ -21,6 +21,12 @@ class Moor < Formula
 
   conflicts_with "moarvm", "rakudo-star", because: "both install `moar` binaries"
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ldflags = "-X main.versionString=v#{version}"
     system "go", "build", *std_go_args(ldflags:), "./cmd/moor"

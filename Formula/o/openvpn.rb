@@ -12,11 +12,12 @@ class Openvpn < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "c1bae7c0655b006def4c74078bc9a810024771e2d51be47315a58fe13500e885"
-    sha256 arm64_sequoia: "2f10357d212ac3f726b12a396bc9c86db6fe49b12fbee49e536dd2c0f62bdbf6"
-    sha256 arm64_sonoma:  "60ed11ee38371bef178f5f0149e091faa49a2d26f46b5b0d6be540d8ecda63b0"
-    sha256 arm64_linux:   "e4a2533e6b352b2bb1898e75654d63e81ac79f3c9e7bd0970e1ee87003904cd5"
-    sha256 x86_64_linux:  "f1174cddd97eb11078ebb4195a361c9bfc8fc7f27dd71fc116eb9358c087e9a8"
+    sha256 arm64_golden_gate: "735acded2c58e484ed705a1a49aa5d4964c5154a1f6f860f2155dd62009ff264"
+    sha256 arm64_tahoe:       "c1bae7c0655b006def4c74078bc9a810024771e2d51be47315a58fe13500e885"
+    sha256 arm64_sequoia:     "2f10357d212ac3f726b12a396bc9c86db6fe49b12fbee49e536dd2c0f62bdbf6"
+    sha256 arm64_sonoma:      "60ed11ee38371bef178f5f0149e091faa49a2d26f46b5b0d6be540d8ecda63b0"
+    sha256 arm64_linux:       "e4a2533e6b352b2bb1898e75654d63e81ac79f3c9e7bd0970e1ee87003904cd5"
+    sha256 x86_64_linux:      "f1174cddd97eb11078ebb4195a361c9bfc8fc7f27dd71fc116eb9358c087e9a8"
   end
 
   depends_on "pkgconf" => :build

@@ -7,12 +7,13 @@ class S6Rc < Formula
   head "git://git.skarnet.org/s6-rc.git", branch: "main"
 
   bottle do
-    sha256 arm64_tahoe:   "5bce3c4ba5c3c59242327cab64197f850d15232b6c4366fc33e015c0feafcf69"
-    sha256 arm64_sequoia: "553fc882211d7f9e463c5f639821ceebf03a2e3ae8d12432259316cbcd4b6f7c"
-    sha256 arm64_sonoma:  "e5c98782feffbfdd64b09af1979a545b4fe06a4fa8876a13fe11f6e0ed35da14"
-    sha256 sonoma:        "c3efb17b4f104b8ed5f503a12b91e52ff97e0403f09850285b095c480ce8f5eb"
-    sha256 arm64_linux:   "198ff684a3b37c0511e25879d50bf673a8ff9dd12f874abe297607c8292f5e52"
-    sha256 x86_64_linux:  "b47a98a8a88dfd777d98a67201a023d92602b333cf6992db87629b7e32a7cc26"
+    sha256 arm64_golden_gate: "997cd8eccf85dffc463f41b85f09722de41052202a55cdb08fe2ea2babccec22"
+    sha256 arm64_tahoe:       "5bce3c4ba5c3c59242327cab64197f850d15232b6c4366fc33e015c0feafcf69"
+    sha256 arm64_sequoia:     "553fc882211d7f9e463c5f639821ceebf03a2e3ae8d12432259316cbcd4b6f7c"
+    sha256 arm64_sonoma:      "e5c98782feffbfdd64b09af1979a545b4fe06a4fa8876a13fe11f6e0ed35da14"
+    sha256 sonoma:            "c3efb17b4f104b8ed5f503a12b91e52ff97e0403f09850285b095c480ce8f5eb"
+    sha256 arm64_linux:       "198ff684a3b37c0511e25879d50bf673a8ff9dd12f874abe297607c8292f5e52"
+    sha256 x86_64_linux:      "b47a98a8a88dfd777d98a67201a023d92602b333cf6992db87629b7e32a7cc26"
   end
 
   depends_on "pkgconf" => :build

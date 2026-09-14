@@ -8,12 +8,13 @@ class Ohcount < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "9615278e57b6c482ce61401b0fedef9bdb322b7a7adb23f86c3322d1bfd18123"
-    sha256 cellar: :any, arm64_sequoia: "665dfce8bf062ae58c855c9c310d4f981b85a25c44c185b524c1ecfc2783673b"
-    sha256 cellar: :any, arm64_sonoma:  "baca64f4438b650363e55d0a697040696a5ad6f34ce7120ed952f0877bf52d80"
-    sha256 cellar: :any, sonoma:        "a152e81df3a3a299919fddce7809d4313b3ea1fc518274dcb460cce85055ded3"
-    sha256               arm64_linux:   "40730cf6a816e974616ac45b32abe5fb17b21a06b1d542274f02c44fdf3a834a"
-    sha256               x86_64_linux:  "bf23b772fbaf08da94df72051a63eb74562310b9b328c56a60f47b16d2414565"
+    sha256 cellar: :any, arm64_golden_gate: "e90b503d2a061957234b4882187a89ba648ec69cf67da51bec881eff2860a6e6"
+    sha256 cellar: :any, arm64_tahoe:       "9615278e57b6c482ce61401b0fedef9bdb322b7a7adb23f86c3322d1bfd18123"
+    sha256 cellar: :any, arm64_sequoia:     "665dfce8bf062ae58c855c9c310d4f981b85a25c44c185b524c1ecfc2783673b"
+    sha256 cellar: :any, arm64_sonoma:      "baca64f4438b650363e55d0a697040696a5ad6f34ce7120ed952f0877bf52d80"
+    sha256 cellar: :any, sonoma:            "a152e81df3a3a299919fddce7809d4313b3ea1fc518274dcb460cce85055ded3"
+    sha256               arm64_linux:       "40730cf6a816e974616ac45b32abe5fb17b21a06b1d542274f02c44fdf3a834a"
+    sha256               x86_64_linux:      "bf23b772fbaf08da94df72051a63eb74562310b9b328c56a60f47b16d2414565"
   end
 
   depends_on "gperf" => :build

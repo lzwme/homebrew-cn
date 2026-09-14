@@ -56,10 +56,11 @@ class TemporalTables < Formula
 
         shared_preload_libraries = 'temporal_tables'
         port = #{port}
+        unix_socket_directories = '#{testpath}'
       EOS
       system pg_ctl, "start", "-D", datadir, "-l", testpath/"log-#{postgresql.name}"
       begin
-        system psql, "-p", port.to_s, "-c", "CREATE EXTENSION \"temporal_tables\";", "postgres"
+        system psql, "-h", testpath, "-p", port.to_s, "-c", "CREATE EXTENSION \"temporal_tables\";", "postgres"
       ensure
         system pg_ctl, "stop", "-D", datadir
       end

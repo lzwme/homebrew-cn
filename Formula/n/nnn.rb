@@ -7,12 +7,13 @@ class Nnn < Formula
   head "https://github.com/jarun/nnn.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "1dd1b5e2beda0057209c3d761c8e7bae2b85c8303017640e1a31cf8a797e5477"
-    sha256 cellar: :any, arm64_sequoia: "61debb9cf8ceb2589b02888804e7769fb2b861b2879b7a1cbff2a9483af0c485"
-    sha256 cellar: :any, arm64_sonoma:  "2893698847a21b95a50d3ba0d084c20942cf2a717cd6844f48e174e3c211da87"
-    sha256 cellar: :any, sonoma:        "6aad5d47550a6708d6d3f1fcaff17f8899c89637e49f6e9e035229bf58210e6f"
-    sha256 cellar: :any, arm64_linux:   "f5a99600b98fa42c6052f2f22d4796dda2ae0dfebd353ebec157fcddaf98e60e"
-    sha256 cellar: :any, x86_64_linux:  "219b9de054400d02c3d1d7b837f5a5c6ecda421c1e7c840e302a53495922e63c"
+    sha256 cellar: :any, arm64_golden_gate: "bdac4c46e50992f6b128f4445b16c03d6c54c62ef103d0494d1356a68b22e1b0"
+    sha256 cellar: :any, arm64_tahoe:       "1dd1b5e2beda0057209c3d761c8e7bae2b85c8303017640e1a31cf8a797e5477"
+    sha256 cellar: :any, arm64_sequoia:     "61debb9cf8ceb2589b02888804e7769fb2b861b2879b7a1cbff2a9483af0c485"
+    sha256 cellar: :any, arm64_sonoma:      "2893698847a21b95a50d3ba0d084c20942cf2a717cd6844f48e174e3c211da87"
+    sha256 cellar: :any, sonoma:            "6aad5d47550a6708d6d3f1fcaff17f8899c89637e49f6e9e035229bf58210e6f"
+    sha256 cellar: :any, arm64_linux:       "f5a99600b98fa42c6052f2f22d4796dda2ae0dfebd353ebec157fcddaf98e60e"
+    sha256 cellar: :any, x86_64_linux:      "219b9de054400d02c3d1d7b837f5a5c6ecda421c1e7c840e302a53495922e63c"
   end
 
   depends_on "gnu-sed"

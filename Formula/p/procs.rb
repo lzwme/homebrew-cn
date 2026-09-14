@@ -6,12 +6,13 @@ class Procs < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "23592dd3bdaa57279f198e356c8f02c8457ba81342413337aab402c48c1374e8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "46cfcda6903e01432bbe6d15ad82f315564f786c1831653d66705a0d122ad1fd"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "97aadd82193fc5f196e65eb03e57555b859a672c4ac405a39b3a882043789452"
-    sha256 cellar: :any_skip_relocation, sonoma:        "14a94612ac4a63282ff7e0066ae091a222207f6750244c5dff2afbbfc18c9ea5"
-    sha256 cellar: :any,                 arm64_linux:   "8b66b076d2012cae0720c060b2d2b6e116665c9f70aaeb260977781c43e5466e"
-    sha256 cellar: :any,                 x86_64_linux:  "25cc294174fe13bdf72332f74e71bc844a4369d16f9066207bc1b1f8122dfd31"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "94005b27e8ae00fac9a54cc43b62b4a715642ccb3ce5076f85ebe3c0a67a6873"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "23592dd3bdaa57279f198e356c8f02c8457ba81342413337aab402c48c1374e8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "46cfcda6903e01432bbe6d15ad82f315564f786c1831653d66705a0d122ad1fd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "97aadd82193fc5f196e65eb03e57555b859a672c4ac405a39b3a882043789452"
+    sha256 cellar: :any_skip_relocation, sonoma:            "14a94612ac4a63282ff7e0066ae091a222207f6750244c5dff2afbbfc18c9ea5"
+    sha256 cellar: :any,                 arm64_linux:       "8b66b076d2012cae0720c060b2d2b6e116665c9f70aaeb260977781c43e5466e"
+    sha256 cellar: :any,                 x86_64_linux:      "25cc294174fe13bdf72332f74e71bc844a4369d16f9066207bc1b1f8122dfd31"
   end
 
   depends_on "rust" => :build

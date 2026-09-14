@@ -24,18 +24,19 @@ class Projectm < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:    "7f0815b03bcecd38afe7c9a8750a0822d9a17646c7e92f420e0fedb096c2709c"
-    sha256 arm64_sequoia:  "a579de759ddbc2ca8b39a3dfc1cd7d2b936369790efaeda1c59efdbd63db5b2f"
-    sha256 arm64_sonoma:   "a854f24612ce8bd9456d71f42d0e02bdca89fe39e4d8a4009f56f06536255f72"
-    sha256 arm64_ventura:  "f3f6b5e3b0d40bcc55658e7f06f16ae49eb4cdc449772b5dc526a84e40c965e0"
-    sha256 arm64_monterey: "a8dae00eb95d2123fda97a19085933944cc35cc1bb2eceaad0b2bb8555e4f961"
-    sha256 arm64_big_sur:  "4124ed10310e00ab4d706dcf40814adf0497af26cc95733aec708b82f4aaeced"
-    sha256 sonoma:         "22a8e128f8a99fa09e7b99ad12cdb6da037e9417beb4f6ae4a712ed096d7f214"
-    sha256 ventura:        "68f9b93a6f6abef42c42bbcc8a70be06fb9845bf1caa5b68cd7e14beba13ca5f"
-    sha256 monterey:       "473cd386b1daec76f796cffff2c29b6b6cc57f749a517f91cc5466a7ccc2fd81"
-    sha256 big_sur:        "c8ece4df06966643cf9aaae5f31610b98eaacddbfb7b0e56b21531d5e2f8f1a5"
-    sha256 arm64_linux:    "c3813a64b58332351ad6fe801cd1ede4ac96bdc17d6eaae7937571e149f6a253"
-    sha256 x86_64_linux:   "05caf42b3d5a023b4c22e2f51e7699645cc5077fbd37c7c27f1f8260025d608b"
+    sha256 arm64_golden_gate: "34f9f39ee0b018df19e8599da0894dbc591281d1d227732b0798e7bb5bad927e"
+    sha256 arm64_tahoe:       "7f0815b03bcecd38afe7c9a8750a0822d9a17646c7e92f420e0fedb096c2709c"
+    sha256 arm64_sequoia:     "a579de759ddbc2ca8b39a3dfc1cd7d2b936369790efaeda1c59efdbd63db5b2f"
+    sha256 arm64_sonoma:      "a854f24612ce8bd9456d71f42d0e02bdca89fe39e4d8a4009f56f06536255f72"
+    sha256 arm64_ventura:     "f3f6b5e3b0d40bcc55658e7f06f16ae49eb4cdc449772b5dc526a84e40c965e0"
+    sha256 arm64_monterey:    "a8dae00eb95d2123fda97a19085933944cc35cc1bb2eceaad0b2bb8555e4f961"
+    sha256 arm64_big_sur:     "4124ed10310e00ab4d706dcf40814adf0497af26cc95733aec708b82f4aaeced"
+    sha256 sonoma:            "22a8e128f8a99fa09e7b99ad12cdb6da037e9417beb4f6ae4a712ed096d7f214"
+    sha256 ventura:           "68f9b93a6f6abef42c42bbcc8a70be06fb9845bf1caa5b68cd7e14beba13ca5f"
+    sha256 monterey:          "473cd386b1daec76f796cffff2c29b6b6cc57f749a517f91cc5466a7ccc2fd81"
+    sha256 big_sur:           "c8ece4df06966643cf9aaae5f31610b98eaacddbfb7b0e56b21531d5e2f8f1a5"
+    sha256 arm64_linux:       "c3813a64b58332351ad6fe801cd1ede4ac96bdc17d6eaae7937571e149f6a253"
+    sha256 x86_64_linux:      "05caf42b3d5a023b4c22e2f51e7699645cc5077fbd37c7c27f1f8260025d608b"
   end
 
   head do
@@ -50,7 +51,6 @@ class Projectm < Formula
   depends_on "sdl2-compat"
 
   on_linux do
-    depends_on "xorg-server" => :test
     depends_on "mesa"
   end
 
@@ -65,48 +65,54 @@ class Projectm < Formula
 
     (testpath/"test.cpp").write <<~CPP
       #include <libprojectM/projectM.hpp>
-      #include <SDL2/SDL.h>
-      #include <stdlib.h>
       #include <stdio.h>
+      #ifdef __APPLE__
+      #include <OpenGL/OpenGL.h>
+      #else
+      #include <EGL/egl.h>
+      #include <EGL/eglext.h>
+      #endif
+
+      // an offscreen GL context needs no display, so the test works in headless CI
+      static bool createGLContext()
+      {
+      #ifdef __APPLE__
+        CGLPixelFormatAttribute attrs[] = { kCGLPFAAllowOfflineRenderers, (CGLPixelFormatAttribute)0 };
+        CGLPixelFormatObj pix;
+        GLint npix;
+        CGLContextObj ctx;
+        return CGLChoosePixelFormat(attrs, &pix, &npix) == kCGLNoError && npix > 0 &&
+               CGLCreateContext(pix, NULL, &ctx) == kCGLNoError && CGLSetCurrentContext(ctx) == kCGLNoError;
+      #else
+        PFNEGLGETPLATFORMDISPLAYEXTPROC getPlatformDisplay =
+            (PFNEGLGETPLATFORMDISPLAYEXTPROC)eglGetProcAddress("eglGetPlatformDisplayEXT");
+        EGLDisplay dpy = getPlatformDisplay(EGL_PLATFORM_SURFACELESS_MESA, EGL_DEFAULT_DISPLAY, NULL);
+        if (dpy == EGL_NO_DISPLAY || !eglInitialize(dpy, NULL, NULL) || !eglBindAPI(EGL_OPENGL_API))
+          return false;
+        EGLContext ctx = eglCreateContext(dpy, EGL_NO_CONFIG_KHR, EGL_NO_CONTEXT, NULL);
+        return ctx != EGL_NO_CONTEXT && eglMakeCurrent(dpy, EGL_NO_SURFACE, EGL_NO_SURFACE, ctx);
+      #endif
+      }
 
       int main()
       {
-        // initialize SDL video + openGL
-        if (SDL_Init(SDL_INIT_VIDEO) < 0)
+        if (!createGLContext())
         {
-          fprintf(stderr, "Video init failed: %s", SDL_GetError());
+          fprintf(stderr, "GL context init failed");
           return 1;
         }
-        atexit(SDL_Quit);
-
-        SDL_Window *win = SDL_CreateWindow("projectM Test", 0, 0, 320, 240,
-                                          SDL_WINDOW_OPENGL | SDL_WINDOW_ALLOW_HIGHDPI);
-        SDL_GLContext glCtx = SDL_GL_CreateContext(win);
 
         auto *settings = new projectM::Settings();
         auto *pm = new projectM(*settings, projectM::FLAG_DISABLE_PLAYLIST_LOAD);
+        pm->renderFrame();
 
         // if we get this far without crashing we're in good shape
         return 0;
       }
     CPP
-    flags = shell_output("pkgconf libprojectM sdl2 --cflags --libs").split
+    flags = shell_output("pkgconf libprojectM #{"egl" if OS.linux?} --cflags --libs").split
+    flags += %w[-framework OpenGL -Wno-deprecated-declarations] if OS.mac?
     system ENV.cxx, "-std=c++11", "test.cpp", "-o", "test", *flags
-    pid = nil
-    if OS.linux?
-      # SDL3 (via sdl2-compat) fails if no video driver is available and "dummy" workaround doesn't work
-      IO.pipe do |read_io, write_io|
-        pid = spawn(Formula["xorg-server"].bin/"Xvfb", "-displayfd", write_io.fileno.to_s, write_io => write_io)
-        write_io.close
-        ENV["DISPLAY"] = ":#{read_io.read.strip}"
-      end
-    end
-
     system "./test"
-  ensure
-    if pid
-      Process.kill "TERM", pid
-      Process.wait pid
-    end
   end
 end

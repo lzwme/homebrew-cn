@@ -11,12 +11,13 @@ class Mawk < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cf4ed75710af2d4e5d6a50d1563303510e789498875b7724367805f6db524361"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "803a6960151403d036b163aeb09c13248f78d63314ecc97816ad03188c39334a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2fa506e3280172fc8bb7bc33ce3eebdf8eabc8c9a952f3132340e0b8c3bdebe2"
-    sha256 cellar: :any_skip_relocation, sonoma:        "788bb3c387eb0df4dfbf2f1a960198fffe2eb8016516fd38cf59b6eda544cb1d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "76e535fca1e876b60ab619aada6e439830832e267846a8a64482e6c01b1bd27c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bb785fa963052b93f5b6a5e730baee05d3ce373b9898db1f547014208a6301fa"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "af8bbda002827d6e349138bd99cbff2d7c0e237233ef7e4f191b7a45a561f60b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "cf4ed75710af2d4e5d6a50d1563303510e789498875b7724367805f6db524361"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "803a6960151403d036b163aeb09c13248f78d63314ecc97816ad03188c39334a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "2fa506e3280172fc8bb7bc33ce3eebdf8eabc8c9a952f3132340e0b8c3bdebe2"
+    sha256 cellar: :any_skip_relocation, sonoma:            "788bb3c387eb0df4dfbf2f1a960198fffe2eb8016516fd38cf59b6eda544cb1d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "76e535fca1e876b60ab619aada6e439830832e267846a8a64482e6c01b1bd27c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "bb785fa963052b93f5b6a5e730baee05d3ce373b9898db1f547014208a6301fa"
   end
 
   def install

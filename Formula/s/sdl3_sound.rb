@@ -10,12 +10,13 @@ class Sdl3Sound < Formula
   head "https://github.com/icculus/SDL_sound.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "934528f51b4c39df59a8c22dc4ad42d418893b0e3cb6594112381f4f8885b930"
-    sha256 cellar: :any, arm64_sequoia: "256cf0518afa8b156a212bff1960e97bed6c3ac9a14313d5aaa3532f74664161"
-    sha256 cellar: :any, arm64_sonoma:  "2fb7aa95d48487074ca612b0549cc879a45c9aafefdf762e97e28a72b59e531d"
-    sha256 cellar: :any, sonoma:        "98ceb2fefb3d4bd2c33ea0ce78939abd5386ec1c1334fea3dbbf94e0dd49cbf4"
-    sha256 cellar: :any, arm64_linux:   "5e4e423530f7ab6bbf6d3b4e8aa8e49ecfab7c6513969ab8f912b25a0a2ed2c1"
-    sha256 cellar: :any, x86_64_linux:  "c9c8513b93d96cfe8c3126178b5e34a74edf494a6ff79c4319fccd20519627ac"
+    sha256 cellar: :any, arm64_golden_gate: "06917fdc9131b1f0fb79f554dd7927ceceddfef0304f5a6d6d919f9ca115deba"
+    sha256 cellar: :any, arm64_tahoe:       "934528f51b4c39df59a8c22dc4ad42d418893b0e3cb6594112381f4f8885b930"
+    sha256 cellar: :any, arm64_sequoia:     "256cf0518afa8b156a212bff1960e97bed6c3ac9a14313d5aaa3532f74664161"
+    sha256 cellar: :any, arm64_sonoma:      "2fb7aa95d48487074ca612b0549cc879a45c9aafefdf762e97e28a72b59e531d"
+    sha256 cellar: :any, sonoma:            "98ceb2fefb3d4bd2c33ea0ce78939abd5386ec1c1334fea3dbbf94e0dd49cbf4"
+    sha256 cellar: :any, arm64_linux:       "5e4e423530f7ab6bbf6d3b4e8aa8e49ecfab7c6513969ab8f912b25a0a2ed2c1"
+    sha256 cellar: :any, x86_64_linux:      "c9c8513b93d96cfe8c3126178b5e34a74edf494a6ff79c4319fccd20519627ac"
   end
 
   depends_on "cmake" => :build

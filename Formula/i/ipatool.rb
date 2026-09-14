@@ -1,18 +1,17 @@
 class Ipatool < Formula
   desc "CLI tool for searching and downloading app packages from the iOS App Store"
   homepage "https://github.com/majd/ipatool"
-  url "https://ghfast.top/https://github.com/majd/ipatool/archive/refs/tags/v2.5.0.tar.gz"
-  sha256 "c44b6bc36cef8364e685d7a290d10d0120f26f2bb3644ebad4cf28dafb417cd6"
+  url "https://ghfast.top/https://github.com/majd/ipatool/archive/refs/tags/v2.6.0.tar.gz"
+  sha256 "6bffee11fabd26f930fe90d9841a9639151956ee3e8f8d0bb8e20bca05f9686c"
   license "MIT"
   head "https://github.com/majd/ipatool.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "174061efc2fe51857c3e72f9feb6981d21a25260055e23a6a221f4cd37c35d78"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "7ccf25212932d2ce6c25a847ba33e6affd3447251cebc4edffd6fde067ba2cd6"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "2031b6efdbbe183927c195b4c52b4fd26dac375634771a74918186b50611dad9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "781976115cc9e3af856bf0994bf43663667806b6390f6394429ae5f0092b25c5"
-    sha256 cellar: :any,                 arm64_linux:       "ed6dab4f402fb7b0a55d15749ea998d569157b8d9d569bdc3156f63ba425e0d5"
-    sha256 cellar: :any,                 x86_64_linux:      "c918c09600e20786ed37ea39c145da90837780ece8f848a5a31c170dc3fa6397"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "b37077afc6ca201ea18cc8aa7be15c8eca35c302f3bb1d80940f7d41e047479b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "a18a128291f425b1788c7f5b23d53c54d2a0af063403978e2014ed34bb7175e1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "96fb896de0072556dcc27d747a64d5e5f49f8b8ce324d492d7ec73099f2069cf"
+    sha256 cellar: :any,                 arm64_linux:       "63ebb0879ca00c1fc4538a4b15fa61b89b892018d8f2dab5faf9379b9c743c60"
+    sha256 cellar: :any,                 x86_64_linux:      "37a32f1d8b49d571e14dad25dd92167aa0b5d13ee3cd9a704bffd5dd0d26b052"
   end
 
   depends_on "go" => :build

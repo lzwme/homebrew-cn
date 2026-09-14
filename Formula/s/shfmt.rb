@@ -18,6 +18,12 @@ class Shfmt < Formula
   depends_on "go" => :build
   depends_on "scdoc" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ENV["CGO_ENABLED"] = "0"
     inreplace "cmd/shfmt/main.go", "version = mod.Version", "version = \"#{version}\""

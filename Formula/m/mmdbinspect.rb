@@ -7,12 +7,13 @@ class Mmdbinspect < Formula
   head "https://github.com/maxmind/mmdbinspect.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "32ea559ea3db8ed663b41e20b5d3db3c3982fd92acfcec7235de26b3be73bb9e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "32ea559ea3db8ed663b41e20b5d3db3c3982fd92acfcec7235de26b3be73bb9e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "32ea559ea3db8ed663b41e20b5d3db3c3982fd92acfcec7235de26b3be73bb9e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e5d866271963d5a0a7152f47a41e8b1da2046e2f7e395287d65c3f1cb2cf78f4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "657f79c53a27815dbbc4ef247beae40307111f4d814d9751e1f3e02aec247bfb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "807a8b443eb151b0c5e9fa87b7cff7af1df3f8255d5b3ab8d067ac7e422f50df"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "eb56e7c12d39f8915c46eb099f8d96bede50d5e4e6ad812e603b521fa16b4357"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "32ea559ea3db8ed663b41e20b5d3db3c3982fd92acfcec7235de26b3be73bb9e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "32ea559ea3db8ed663b41e20b5d3db3c3982fd92acfcec7235de26b3be73bb9e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "32ea559ea3db8ed663b41e20b5d3db3c3982fd92acfcec7235de26b3be73bb9e"
+    sha256 cellar: :any_skip_relocation, sonoma:            "e5d866271963d5a0a7152f47a41e8b1da2046e2f7e395287d65c3f1cb2cf78f4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "657f79c53a27815dbbc4ef247beae40307111f4d814d9751e1f3e02aec247bfb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "807a8b443eb151b0c5e9fa87b7cff7af1df3f8255d5b3ab8d067ac7e422f50df"
   end
 
   depends_on "go" => :build

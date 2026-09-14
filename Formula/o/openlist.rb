@@ -11,11 +11,12 @@ class Openlist < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "558f9a9115717cd973d26151ab983af4cf05dda0c1f02ff1e324b02c29d8742b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f0126b6d42c84eb2dea7d05cdae57a917fe73ab5eff8ec9a5bf7aa42e29f1d04"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "44edcb3af9b3a8ecb0bc8c9eaa46d2f13d32710c5c49275c99712501f9c4b4e5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1c346e22a062a88c903ed18d82041604c2a2f4c064db06c2b37ffaf1e138e7de"
-    sha256 cellar: :any,                 x86_64_linux:  "037afac81ed773cb2f5cca80adf079336a6e645c748ab079bb3a4af5a68ba9d7"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "89f320d6b05217c82cb9da9e3b1219a30cb67d81cbbea8c6a8d1a153335162f4"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "558f9a9115717cd973d26151ab983af4cf05dda0c1f02ff1e324b02c29d8742b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "f0126b6d42c84eb2dea7d05cdae57a917fe73ab5eff8ec9a5bf7aa42e29f1d04"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "44edcb3af9b3a8ecb0bc8c9eaa46d2f13d32710c5c49275c99712501f9c4b4e5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "1c346e22a062a88c903ed18d82041604c2a2f4c064db06c2b37ffaf1e138e7de"
+    sha256 cellar: :any,                 x86_64_linux:      "037afac81ed773cb2f5cca80adf079336a6e645c748ab079bb3a4af5a68ba9d7"
   end
 
   depends_on "go" => :build

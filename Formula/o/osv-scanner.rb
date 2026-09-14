@@ -1,19 +1,17 @@
 class OsvScanner < Formula
   desc "Vulnerability scanner which uses the OSV database"
   homepage "https://google.github.io/osv-scanner/"
-  url "https://ghfast.top/https://github.com/google/osv-scanner/archive/refs/tags/v2.5.1.tar.gz"
-  sha256 "9a81d802aa0c0f667f8a80a045d4bab058fb9d9a6fb21f5cf2f1ea2007f73eef"
+  url "https://ghfast.top/https://github.com/google/osv-scanner/archive/refs/tags/v2.6.0.tar.gz"
+  sha256 "848ead2e06aa6e6150cecc2d82b867da7636d241e50b88f0922511acdac00a00"
   license "Apache-2.0"
   head "https://github.com/google/osv-scanner.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "61de294db297aba27ce76864abb5573d98131af3eb226d5534095de261679a92"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "b38c086e61a754e96a622895d606b532c4b88dacf08553c4397a36b241412203"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "8c48d63bc1288511250d84248dc1c409f16f3fa6568f0c345289ecbffb8d2132"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "ef1d7724dd85cf6a8fa94a79f5af8d5e732d5a77245bd042c0b8ab7b5f73873b"
-    sha256 cellar: :any_skip_relocation, sonoma:            "7ea2b74c31474db07378f4d30d841645f8f7548fde9f8bccea63036f57ffa982"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "667c29723932c0f2c0c34a280f9623b5ca366aa84d1cf4acd041418bd90e70d7"
-    sha256 cellar: :any,                 x86_64_linux:      "6c33873116d524514d81be26ab404601dbbbc8b658fa773ee86378fa9d2d8630"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "759a306f2dbdffeb47c04e0273514119a177a6c7c2e17656d1bcb85e427aadf1"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "b3369784d508f294a21f676c3781ff2a3f5c1995631f228b0f6d42a9d67b45dc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "fbe8eb58582abbee791288988ce77f7fa29ed4c07a0eb3f64cdf23f8a8142c5a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "755727d0b0c29fa50001d05fd56645928b534b4e3b735d14c847ddc3d8088c2a"
+    sha256 cellar: :any,                 x86_64_linux:      "eec7e684ca81f5c2ca009b341649f1cdff7f6d9a49ca704d97a979bae4416ad9"
   end
 
   depends_on "go" => [:build, :test]

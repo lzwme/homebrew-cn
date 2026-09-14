@@ -1,8 +1,8 @@
 class Mole < Formula
   desc "Deep clean and optimize your Mac"
   homepage "https://mole.fit"
-  url "https://ghfast.top/https://github.com/tw93/Mole/archive/refs/tags/V1.53.0.tar.gz"
-  sha256 "35c812d5298a08c672062ac4e1d5a523876144ff0708f9c5c77385d52faccc77"
+  url "https://ghfast.top/https://github.com/tw93/Mole/archive/refs/tags/V1.54.0.tar.gz"
+  sha256 "d1353803f4b32ca4296de6aaa21d1c17a1e9926f787f541765c357b79fbcdd6c"
   license "GPL-3.0-or-later"
   head "https://github.com/tw93/Mole.git", branch: "main"
 
@@ -15,11 +15,9 @@ class Mole < Formula
   no_autobump! because: :bumped_by_upstream
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "747bdaa331462eef34fee9ae1287ca35897f0d5607c75d0767443970cde84588"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "42767ebd1781b9af3126bd6bba242ffee19e36c8b7fcc1653869f49b0ca276f1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "bd29730c66609303ed45cbcf3a492f6562439f3af0d68ac0235fe402725726f9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "f98a4a31efc3583a92cb3754418515c4ae12fb949340994e38aa8718ce6b987f"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "5522266ca2f6016f84d93cdcc9afba76f9dfa85ee721378ac50510a4e8c0c53a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "25bbe7982cd69d281755a5c4e6476a13929397a1e6bb2670424457a41014d667"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "ac6fe3b3ff01a02133ca321a3fcf5939217a9b6f4b38f313008d287fbe0c380f"
   end
 
   depends_on "go" => :build
@@ -49,6 +47,8 @@ class Mole < Formula
   end
 
   test do
+    # Point simctl at the CLT so the sandboxed Xcode simulator probes are skipped
+    ENV["DEVELOPER_DIR"] = "/Library/Developer/CommandLineTools"
     assert_match version.to_s, shell_output("#{bin}/mole --version")
     output = shell_output("#{bin}/mole clean --dry-run 2>&1")
     assert_match "Dry run complete - no changes made", output

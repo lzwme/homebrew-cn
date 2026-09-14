@@ -11,11 +11,12 @@ class Nng < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "c5b75bce95f0f448b9d0cb503736d6265983fc23b6c68379cd949afcd76fcb2f"
-    sha256 cellar: :any, arm64_sequoia: "a85a9ba8882f04b2e5951928deacf2f493bee9252fb7df8ca1fdc370fdc6546d"
-    sha256 cellar: :any, arm64_sonoma:  "4b22094d50b900f9253d584a03f49ee09b324e4c056dba55832555e8270e491c"
-    sha256 cellar: :any, arm64_linux:   "2459736812533272a852f37676bca391f515872c929d97face0dc9131f533610"
-    sha256 cellar: :any, x86_64_linux:  "95aa940b8e3b141d142641592bc92daaf52aa173443e131489fc382a321f0bf3"
+    sha256 cellar: :any, arm64_golden_gate: "232b67f462d9b24423f7eb82b6ab844fe342a257696e66dfb43e67c490300726"
+    sha256 cellar: :any, arm64_tahoe:       "c5b75bce95f0f448b9d0cb503736d6265983fc23b6c68379cd949afcd76fcb2f"
+    sha256 cellar: :any, arm64_sequoia:     "a85a9ba8882f04b2e5951928deacf2f493bee9252fb7df8ca1fdc370fdc6546d"
+    sha256 cellar: :any, arm64_sonoma:      "4b22094d50b900f9253d584a03f49ee09b324e4c056dba55832555e8270e491c"
+    sha256 cellar: :any, arm64_linux:       "2459736812533272a852f37676bca391f515872c929d97face0dc9131f533610"
+    sha256 cellar: :any, x86_64_linux:      "95aa940b8e3b141d142641592bc92daaf52aa173443e131489fc382a321f0bf3"
   end
 
   depends_on "asciidoctor" => :build

@@ -23,11 +23,12 @@ class WoofDoom < Formula
   head "https://github.com/fabiangreffrath/woof.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "3dbe3946b6b53823bed162bd0f7bba3f67bbcdd6f72b5ca1d3647f260e236ca7"
-    sha256 cellar: :any, arm64_sequoia: "24a707a898c4a12bf36e07cc647c7dfde7b079c464c72f9195cdeabd6dec03b6"
-    sha256 cellar: :any, arm64_sonoma:  "d0b1d36695982146b48f1463b73de437486b16dd9a149c30e09e1c94b8d1df95"
-    sha256 cellar: :any, arm64_linux:   "f5bd090faba4bceb743971b7e807149b9cd9a3e2cf4f7578d61ffcf4adc59656"
-    sha256 cellar: :any, x86_64_linux:  "0aa309e0053ff89354b86e299fccb2a215c054da5acd6a70e5aca3c30acebac3"
+    sha256 cellar: :any, arm64_golden_gate: "e8969e252e1c0d09162c4b251de699b592cfbf3849880e3b7da3717d49dc0102"
+    sha256 cellar: :any, arm64_tahoe:       "3dbe3946b6b53823bed162bd0f7bba3f67bbcdd6f72b5ca1d3647f260e236ca7"
+    sha256 cellar: :any, arm64_sequoia:     "24a707a898c4a12bf36e07cc647c7dfde7b079c464c72f9195cdeabd6dec03b6"
+    sha256 cellar: :any, arm64_sonoma:      "d0b1d36695982146b48f1463b73de437486b16dd9a149c30e09e1c94b8d1df95"
+    sha256 cellar: :any, arm64_linux:       "f5bd090faba4bceb743971b7e807149b9cd9a3e2cf4f7578d61ffcf4adc59656"
+    sha256 cellar: :any, x86_64_linux:      "0aa309e0053ff89354b86e299fccb2a215c054da5acd6a70e5aca3c30acebac3"
   end
 
   depends_on "cmake" => :build

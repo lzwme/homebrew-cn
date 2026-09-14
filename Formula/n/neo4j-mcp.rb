@@ -7,11 +7,12 @@ class Neo4jMcp < Formula
   head "https://github.com/neo4j/mcp.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5b9189be516d533646d660f773df219ad37a1c02ae3714864cea9e7bea5e63ce"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5b9189be516d533646d660f773df219ad37a1c02ae3714864cea9e7bea5e63ce"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5b9189be516d533646d660f773df219ad37a1c02ae3714864cea9e7bea5e63ce"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "da0bd9fe40c0e690a9ca21dabe0ac1c7abf962f664f3836f8fb14178b4c79fce"
-    sha256 cellar: :any,                 x86_64_linux:  "e1eff114fcc20868ea57cc9dc71513aa1a098c7ef109b37ff4a550f4df8fff01"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "5b9189be516d533646d660f773df219ad37a1c02ae3714864cea9e7bea5e63ce"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "5b9189be516d533646d660f773df219ad37a1c02ae3714864cea9e7bea5e63ce"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "5b9189be516d533646d660f773df219ad37a1c02ae3714864cea9e7bea5e63ce"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "5b9189be516d533646d660f773df219ad37a1c02ae3714864cea9e7bea5e63ce"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "da0bd9fe40c0e690a9ca21dabe0ac1c7abf962f664f3836f8fb14178b4c79fce"
+    sha256 cellar: :any,                 x86_64_linux:      "e1eff114fcc20868ea57cc9dc71513aa1a098c7ef109b37ff4a550f4df8fff01"
   end
 
   depends_on "go" => :build

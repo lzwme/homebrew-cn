@@ -11,11 +11,12 @@ class Ptex < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "7f6b18525e8aa4d1ab9e6298af2f8936b1e5218d52042767cbe6020d128e7a8f"
-    sha256 cellar: :any, arm64_sequoia: "5e969c5567da054b3733a34e49c319350b444dd39c2d4e4b6ad32509b3be6e77"
-    sha256 cellar: :any, arm64_sonoma:  "3a3a385bdc675b1813564046f2e76d9d8e866997eec6540e2722119952a4efa9"
-    sha256 cellar: :any, arm64_linux:   "2bf692748c47808b22456a48df78bfe84678b645d1d7975561fc074ea133dd33"
-    sha256 cellar: :any, x86_64_linux:  "539d9d46089ceb88ce4c0a4db1e9704063e479bc8785667dc7167f8e4d9bcd6d"
+    sha256 cellar: :any, arm64_golden_gate: "c40363d9554fe7af96c15ec6341ec8093b63913370b45caab8b69c19c629f142"
+    sha256 cellar: :any, arm64_tahoe:       "7f6b18525e8aa4d1ab9e6298af2f8936b1e5218d52042767cbe6020d128e7a8f"
+    sha256 cellar: :any, arm64_sequoia:     "5e969c5567da054b3733a34e49c319350b444dd39c2d4e4b6ad32509b3be6e77"
+    sha256 cellar: :any, arm64_sonoma:      "3a3a385bdc675b1813564046f2e76d9d8e866997eec6540e2722119952a4efa9"
+    sha256 cellar: :any, arm64_linux:       "2bf692748c47808b22456a48df78bfe84678b645d1d7975561fc074ea133dd33"
+    sha256 cellar: :any, x86_64_linux:      "539d9d46089ceb88ce4c0a4db1e9704063e479bc8785667dc7167f8e4d9bcd6d"
   end
 
   depends_on "cmake" => :build

@@ -29,7 +29,7 @@ class Yaml2json < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/yaml2json --version 2>&1", 1)
 
-    (testpath/"test.yaml").write <<~YAML
+    yaml = <<~YAML
       firstname: John
       lastname: Doe
       age: 25
@@ -42,7 +42,7 @@ class Yaml2json < Formula
           color: brown
     YAML
 
-    (testpath/"expected.json").write <<~JSON
+    json = <<~JSON
       {
         "age": 25,
         "firstname": "John",
@@ -60,7 +60,6 @@ class Yaml2json < Formula
       }
     JSON
 
-    assert_equal JSON.parse((testpath/"expected.json").read),
-      JSON.parse(shell_output("#{bin}/yaml2json < #{testpath}/test.yaml"))
+    assert_equal JSON.parse(json), JSON.parse(pipe_output(bin/"yaml2json", yaml, 0))
   end
 end

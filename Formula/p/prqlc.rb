@@ -7,12 +7,13 @@ class Prqlc < Formula
   head "https://github.com/prql/prql.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b5992b5af2fa82c7f0bb8b5a0f43ca403d0c8b3a6162e818fd20d1b7deb0c770"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "aab1b6b25ed90584c6e9bb73b1a4db1cc2d281c7ca641d9380036d4e252046db"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "82d0c23d86ec71eb6e6dbd6bebad90ecafdfeca61146157d9444874cac9a8a0b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "19407f91b3c49c3ad91b630fc4017ff9ec5b5589a15548711d6c420188793605"
-    sha256 cellar: :any,                 arm64_linux:   "3fc7eb43aeb5875a52bf6a9fc6620dd2e8392b2e427e688c71f390f9feff9b8e"
-    sha256 cellar: :any,                 x86_64_linux:  "dd89025764e7bbabd024a4f92cad5d4908661f546020059645ba7fe47b876b46"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "058fac9920020b34ee8d9b5531e818159bb5ea9b75768ff1725470dbf7a2c204"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "b5992b5af2fa82c7f0bb8b5a0f43ca403d0c8b3a6162e818fd20d1b7deb0c770"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "aab1b6b25ed90584c6e9bb73b1a4db1cc2d281c7ca641d9380036d4e252046db"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "82d0c23d86ec71eb6e6dbd6bebad90ecafdfeca61146157d9444874cac9a8a0b"
+    sha256 cellar: :any_skip_relocation, sonoma:            "19407f91b3c49c3ad91b630fc4017ff9ec5b5589a15548711d6c420188793605"
+    sha256 cellar: :any,                 arm64_linux:       "3fc7eb43aeb5875a52bf6a9fc6620dd2e8392b2e427e688c71f390f9feff9b8e"
+    sha256 cellar: :any,                 x86_64_linux:      "dd89025764e7bbabd024a4f92cad5d4908661f546020059645ba7fe47b876b46"
   end
 
   depends_on "rust" => :build

@@ -8,12 +8,13 @@ class Portal < Formula
 
   bottle do
     rebuild 4
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8a0fececdc0986916ca99288467480b34e73c7340a73dbf2a6686aa15f2c1e09"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8a0fececdc0986916ca99288467480b34e73c7340a73dbf2a6686aa15f2c1e09"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8a0fececdc0986916ca99288467480b34e73c7340a73dbf2a6686aa15f2c1e09"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6be6e1884a5456ed3f4b00af608eb1f7fe3ae61c24955e849be533e160f8f2d4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "618c8281bf6be5da1a11265d37c59366cf95968f5be4cb83cc1a04bbcb06c038"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c25fecd8c524f41b67e339aeca037e7782f157384c99ec550ccfe3d627f012ef"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "6f7a9e4f419229e79da920d70f69908ca9320d268a449a1b168ebec9484d6ec6"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "8a0fececdc0986916ca99288467480b34e73c7340a73dbf2a6686aa15f2c1e09"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "8a0fececdc0986916ca99288467480b34e73c7340a73dbf2a6686aa15f2c1e09"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "8a0fececdc0986916ca99288467480b34e73c7340a73dbf2a6686aa15f2c1e09"
+    sha256 cellar: :any_skip_relocation, sonoma:            "6be6e1884a5456ed3f4b00af608eb1f7fe3ae61c24955e849be533e160f8f2d4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "618c8281bf6be5da1a11265d37c59366cf95968f5be4cb83cc1a04bbcb06c038"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "c25fecd8c524f41b67e339aeca037e7782f157384c99ec550ccfe3d627f012ef"
   end
 
   depends_on "go" => :build

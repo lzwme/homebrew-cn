@@ -6,14 +6,15 @@ class Mmv < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b9393ab6a8fa37ce23cc3ad7b991a01d6d3a81bb84a3cf5f4ae6e8aee4d4ee67"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2b250b77db698b27f905bb70f9a51d543eebcb46473ef3e45cf1633ac5a1e218"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6dffb0decf330e154afb5051a9120c158daa722d8526c1262b5983fd80378bda"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "223ee17e0352fb0555d0de4f10a3f41ccc32557ea1b4391f5179772adaf86fa9"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7124ecddb8f17257dd6014e7b24b450237f01626dda1cf5e7523e67004f61418"
-    sha256 cellar: :any_skip_relocation, ventura:       "5db972a05a287b8d0f50be04ef2ebf6dcfef37e5553b56a4d29d4b84292e8197"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0dcde0c3b0f9468bb0768250c4ceb47a63bc8ff2b9ffefc27a01cf01a947bbb3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "eb72ba0164ea3fb58177cc5a9ee2470c1614913a78e86ed91fa3026e36f861c3"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "1b397e4d3fa42cfb7bfd48254a8e16ea1043848df5bf973ce3b23878ce7f61f3"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "b9393ab6a8fa37ce23cc3ad7b991a01d6d3a81bb84a3cf5f4ae6e8aee4d4ee67"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "2b250b77db698b27f905bb70f9a51d543eebcb46473ef3e45cf1633ac5a1e218"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "6dffb0decf330e154afb5051a9120c158daa722d8526c1262b5983fd80378bda"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:     "223ee17e0352fb0555d0de4f10a3f41ccc32557ea1b4391f5179772adaf86fa9"
+    sha256 cellar: :any_skip_relocation, sonoma:            "7124ecddb8f17257dd6014e7b24b450237f01626dda1cf5e7523e67004f61418"
+    sha256 cellar: :any_skip_relocation, ventura:           "5db972a05a287b8d0f50be04ef2ebf6dcfef37e5553b56a4d29d4b84292e8197"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "0dcde0c3b0f9468bb0768250c4ceb47a63bc8ff2b9ffefc27a01cf01a947bbb3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "eb72ba0164ea3fb58177cc5a9ee2470c1614913a78e86ed91fa3026e36f861c3"
   end
 
   depends_on "help2man" => :build # for patch

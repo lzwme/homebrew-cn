@@ -6,11 +6,12 @@ class Rabbitmqadmin < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "42f321988b091870c9da9a0ed505f75a4c2b77a025b7253924152b706cb2f3dc"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3d621a09729b24ea5d90ac73ec765a627224379ba24dd2bf27e71707c2b98ac9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2df83e7a50f1440247bb510ed64eaf02615a68de97b8c66af991c5a8aaa090ee"
-    sha256 cellar: :any,                 arm64_linux:   "145202cd8d3ef4774bbe04c08553a4f9564b962a6c71a4ea0dd9c0c7f2c9fb48"
-    sha256 cellar: :any,                 x86_64_linux:  "b7e6baa7dd2759aabd65fb7e7c443a3cf69b791368f6c4377d2e2500930f9904"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "0db28ef58afe590f9ad48c68386563384ae663ba096f8357cb40b45fec28efda"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "42f321988b091870c9da9a0ed505f75a4c2b77a025b7253924152b706cb2f3dc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "3d621a09729b24ea5d90ac73ec765a627224379ba24dd2bf27e71707c2b98ac9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "2df83e7a50f1440247bb510ed64eaf02615a68de97b8c66af991c5a8aaa090ee"
+    sha256 cellar: :any,                 arm64_linux:       "145202cd8d3ef4774bbe04c08553a4f9564b962a6c71a4ea0dd9c0c7f2c9fb48"
+    sha256 cellar: :any,                 x86_64_linux:      "b7e6baa7dd2759aabd65fb7e7c443a3cf69b791368f6c4377d2e2500930f9904"
   end
 
   depends_on "rust" => :build

@@ -1,8 +1,8 @@
 class Yorkie < Formula
   desc "Document store for collaborative applications"
   homepage "https://yorkie.dev/"
-  url "https://ghfast.top/https://github.com/yorkie-team/yorkie/archive/refs/tags/v0.7.20.tar.gz"
-  sha256 "66aab86f3c10c93fdad6a936efb2ce76db8dc20936c0cb7070da7b3b3a029f12"
+  url "https://ghfast.top/https://github.com/yorkie-team/yorkie/archive/refs/tags/v0.7.21.tar.gz"
+  sha256 "22c1aa4a079723b7eac29928bc0884774088f34a2127dcf5e5cf5aa7752cfe40"
   license "Apache-2.0"
   head "https://github.com/yorkie-team/yorkie.git", branch: "main"
 
@@ -12,12 +12,11 @@ class Yorkie < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "1b64bcb1ae90c5e74b011b40c848ce5b2c211be301db6f79c56fe8c355003ca2"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "d3830b25dbe191812ed89ecc68ae14eb7835d25db41b53756ec763a3d3424ff9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "f0f081b380a206ae902ba1fc6daa06bbd48899a1e150c4d399e440d3c5c441fb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "6dd3e47c1071e5524f9386abf8a404bb8ce1d9db4d7286892edcbae142f29736"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "d893378ef592beed8929b7a8954081c073402c3d6650b6f738f6907345878ff1"
-    sha256 cellar: :any,                 x86_64_linux:      "5f6f5ae320239cb15608853cd1e00a514cab4c90b11723f1ce55331c5dc4971d"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "6fe8ad706bd09b3bc984d6a3c870d31c2e695d954558bb2c72649c14b657580b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "b352d0f91117ef77e7d9c7f85cde4aba7ed2c59014d6b2c295ccd842fc91d1e8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "2920dbec50a48518f4fe11d54b3d7ee0041c4925679bba4935d0daeec3cddf95"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "c1903fabc35072b241826aff7bb0f2446ad1d1e30d67f231d6cdd4b02f6e82a5"
+    sha256 cellar: :any,                 x86_64_linux:      "37a00b97aa57b44229ed0b0f797bf8fafdc21997f3a58e6760003e97e1b1ff7d"
   end
 
   depends_on "go" => :build

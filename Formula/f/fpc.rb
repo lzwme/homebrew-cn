@@ -15,18 +15,16 @@ class Fpc < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:    "2a9bc7750dd16814a483d10f1dfd4827c6f89569ccc1b46a6b0b0d60f1c1b792"
-    sha256 cellar: :any,                 arm64_sequoia:  "075f0b14b19da5236d2bb421450d1b86fb816bc62a9bb0adaf97404662f9ab02"
-    sha256 cellar: :any,                 arm64_sonoma:   "e480e9fed8fc823d817fd3178b9eea9c3ca5da5b1d6c6c55d69622cf5ecca411"
-    sha256 cellar: :any,                 arm64_ventura:  "4b97cd1a7cb634a76fdf735018cb18304fb185628a99dfd58ea72b137df7b14e"
-    sha256 cellar: :any,                 arm64_monterey: "86f02cead2ca01e961c47442b79a5b9d4703194d3f436b91fefc56fefe859081"
-    sha256 cellar: :any,                 arm64_big_sur:  "b4efbb9f568afadfb27aab8ca80895b7f306f58c7ff8a0623f2bd8418338b745"
-    sha256 cellar: :any,                 sonoma:         "c5fb604a561ff84c67c6a93f2be94adf6f74b7ddbeb9cdfc1def6929ed2a8e59"
-    sha256 cellar: :any,                 ventura:        "fbc1ab1898d436b128697c853bdd6807b05fdbcff4636a61733a711ceef56039"
-    sha256 cellar: :any,                 monterey:       "42f981be67bc5f3a433117e3ae4b014001aa786acb4a24d09579fc154beedb4d"
-    sha256 cellar: :any,                 big_sur:        "4c3a012398b6136776358206b0cac52ec1096484c27a08c142e7f51afc713956"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "949b7b3e1e1d5f5109fa157c197acffdd7ed79378bed86f91f42623417bf5139"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3491933cdf5782d3c4b9b1188757cb3846b5d823a6db75c8fb56f13b23bc6747"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "580f3bdbf3f5578d13113ed8f65827f3d8136f7fb5793a9e80110074966961f1"
+    sha256 cellar: :any, arm64_tahoe:       "83461758109bbaece09f36f9083f5e95f9be24c2d189de5f5551c0a0b36c1b5c"
+    sha256 cellar: :any, arm64_sequoia:     "4f9b1d19a5fd90777cfffdb6b792054d408308735d4861e02795059accfd30c8"
+    sha256 cellar: :any, arm64_linux:       "535ae21dc27a96e9160ae96766280db184f95ac515af3e634537b02d011e124d"
+    sha256 cellar: :any, x86_64_linux:      "55961a517076fa7ab67805974379d6b82eddb3c4b9576650ec24bcbdccfba25e"
+  end
+
+  on_macos do
+    depends_on "sevenzip" => :build # to extract the bootstrap dmg without `hdiutil`
   end
 
   # mesa is needed to test GL unit
@@ -38,7 +36,7 @@ class Fpc < Formula
 
   resource "bootstrap" do
     on_macos do
-      url "https://downloads.sourceforge.net/project/freepascal/Mac%20OS%20X/3.2.2/fpc-3.2.2.intelarm64-macosx.dmg"
+      url "https://downloads.sourceforge.net/project/freepascal/Mac%20OS%20X/3.2.2/fpc-3.2.2.intelarm64-macosx.dmg", using: :nounzip
       sha256 "05d4510c8c887e3c68de20272abf62171aa5b2ef1eba6bce25e4c0bc41ba8b7d"
     end
     on_linux do
@@ -67,7 +65,10 @@ class Fpc < Formula
 
     resource("bootstrap").stage do
       if OS.mac?
-        pkg_path = "fpc-3.2.2-intelarm64-macosx.mpkg/Contents/Packages/fpc-3.2.2-intelarm64-macosx.pkg"
+        # Extract the dmg with 7zz as the sandbox does not allow `hdiutil attach`
+        system "7zz", "x", "-y", Dir["*.dmg"].first
+        pkg_path = "fpc-3.2.2.intelarm64-macosx/fpc-3.2.2-intelarm64-macosx.mpkg/Contents/Packages/" \
+                   "fpc-3.2.2-intelarm64-macosx.pkg"
         system "pkgutil", "--expand-full", pkg_path, "contents"
         fpc_bootstrap.install Dir["contents/Payload/usr/local/*"]
       else

@@ -8,12 +8,13 @@ class Saldl < Formula
 
   bottle do
     rebuild 2
-    sha256 cellar: :any,                 arm64_tahoe:   "a941046f8ba35fc1e8eeb99f31488c55dfd0774d9d9b08143069995c3650ccbc"
-    sha256 cellar: :any,                 arm64_sequoia: "b3957d4e8208f02cbbc5b63d24773bf412a1c6eaa25d40972670cf97fa7e996d"
-    sha256 cellar: :any,                 arm64_sonoma:  "b1b8d88d136a6ac6f4612d53e6c96f3056d50a1701e6ab66d0a757d8242de828"
-    sha256 cellar: :any,                 sonoma:        "6bc5294d547489d4eda5ddaa1f51153c2b3b36be366a5f4609c6a76f1f5d5428"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "68a6ee008808e8ba34de2e6367ba7a70f675abd592f2bd59e9ae04224185e15f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9fac01178e92d8772a63590e63904d14a95375b3aab7bf108c1f71fb3abe671b"
+    sha256 cellar: :any,                 arm64_golden_gate: "e96829169ef3f16e9d5d422ca8f7a7dcc4337fbb8e410f0d79dc6289c9daf2b0"
+    sha256 cellar: :any,                 arm64_tahoe:       "a941046f8ba35fc1e8eeb99f31488c55dfd0774d9d9b08143069995c3650ccbc"
+    sha256 cellar: :any,                 arm64_sequoia:     "b3957d4e8208f02cbbc5b63d24773bf412a1c6eaa25d40972670cf97fa7e996d"
+    sha256 cellar: :any,                 arm64_sonoma:      "b1b8d88d136a6ac6f4612d53e6c96f3056d50a1701e6ab66d0a757d8242de828"
+    sha256 cellar: :any,                 sonoma:            "6bc5294d547489d4eda5ddaa1f51153c2b3b36be366a5f4609c6a76f1f5d5428"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "68a6ee008808e8ba34de2e6367ba7a70f675abd592f2bd59e9ae04224185e15f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "9fac01178e92d8772a63590e63904d14a95375b3aab7bf108c1f71fb3abe671b"
   end
 
   depends_on "asciidoc" => :build

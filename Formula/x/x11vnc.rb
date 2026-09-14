@@ -8,12 +8,13 @@ class X11vnc < Formula
   head "https://github.com/LibVNC/x11vnc.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "102cee00c05c862c030ae03b910f7c8ec47f48248bcc770776887d1d9e132b01"
-    sha256 cellar: :any,                 arm64_sequoia: "7ebcb43dc4ccf3d7ac18cf408a2d5d21cc362ff3e7098c9026fb569e532ced4d"
-    sha256 cellar: :any,                 arm64_sonoma:  "3e370889f63e85701db1dd0edd825a150618e98fa4f398ace038d20b11c53b9b"
-    sha256 cellar: :any,                 sonoma:        "49441c4a528e64ebbee615cb01c827e3de19405439c434f5097727bd981bd59b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f754c6e86c60c7926e3ef94f8b5ca5df4e6970d49ca3e2192b65f36dd90117d6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f53a15699255263ebc83de67d31010a0f4c84245a2b3305d82d64b3e5cd5154f"
+    sha256 cellar: :any,                 arm64_golden_gate: "8b75b5e1c131b21cb749704f020af7a6c0424a61c804bab37ca81ad87becb425"
+    sha256 cellar: :any,                 arm64_tahoe:       "102cee00c05c862c030ae03b910f7c8ec47f48248bcc770776887d1d9e132b01"
+    sha256 cellar: :any,                 arm64_sequoia:     "7ebcb43dc4ccf3d7ac18cf408a2d5d21cc362ff3e7098c9026fb569e532ced4d"
+    sha256 cellar: :any,                 arm64_sonoma:      "3e370889f63e85701db1dd0edd825a150618e98fa4f398ace038d20b11c53b9b"
+    sha256 cellar: :any,                 sonoma:            "49441c4a528e64ebbee615cb01c827e3de19405439c434f5097727bd981bd59b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "f754c6e86c60c7926e3ef94f8b5ca5df4e6970d49ca3e2192b65f36dd90117d6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "f53a15699255263ebc83de67d31010a0f4c84245a2b3305d82d64b3e5cd5154f"
   end
 
   depends_on "autoconf" => :build

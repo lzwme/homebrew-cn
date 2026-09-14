@@ -1,10 +1,10 @@
 class Onnxruntime < Formula
   desc "Cross-platform, high performance scoring engine for ML models"
   homepage "https://github.com/microsoft/onnxruntime"
-  url "https://ghfast.top/https://github.com/microsoft/onnxruntime/archive/refs/tags/v1.29.1.tar.gz"
-  sha256 "aba6ff915ffa3689af9bd6a84102a221ad35427e602f22bb18ae8323997d0f0d"
+  url "https://ghfast.top/https://github.com/microsoft/onnxruntime/archive/refs/tags/v1.30.0.tar.gz"
+  sha256 "f6681ecbddf53898adf0cc9e8e9e84657485b84d2eca3c8aa353de6d7dd417ef"
   license "MIT"
-  compatibility_version 8
+  compatibility_version 9
 
   livecheck do
     url :stable
@@ -12,12 +12,11 @@ class Onnxruntime < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "1178e3a66bf7ecdbd2bb8eb83d3a0fc65145dd9298c46d4634119faa511ac02a"
-    sha256 cellar: :any, arm64_tahoe:       "94a24e406531779b65aa85a253e71531464c7ccdf588278d41df9f86828a2b77"
-    sha256 cellar: :any, arm64_sequoia:     "9f95d2f29d9441acdac63ee98c3d45275e1fd3c86f7b6fbca01a32aae0021dbf"
-    sha256 cellar: :any, arm64_sonoma:      "338350c2cd2a7a1e42a1149e42b0e317164a14ab0a2c6b22e2b3e6443e42be54"
-    sha256 cellar: :any, arm64_linux:       "c4cd2213ffbc3d50c184893524a908d3f909e26f0db5e748c1d2a04229b668c7"
-    sha256 cellar: :any, x86_64_linux:      "04d9cb7a5f6e48ef95eb72a4298f0282843f8ae84231795e9e80ea1578499a6a"
+    sha256 cellar: :any, arm64_golden_gate: "800cb64e5bd26cb0fe2df27dd14342b4f6e033f1c20312e17c4069720c3d458d"
+    sha256 cellar: :any, arm64_tahoe:       "dcb82e256574ef422e023204ea9614c9e278073e6a1d1fca25d77822bb23e66e"
+    sha256 cellar: :any, arm64_sequoia:     "0724121a0429656f297e1b0e9b1fe599d957827dc7d22714acbaca94e33f8cb0"
+    sha256 cellar: :any, arm64_linux:       "efa4cee9bffe849bf131d8336ea855dd55ce7d30d06a4d7ebb8e4e4e10ff85bf"
+    sha256 cellar: :any, x86_64_linux:      "469261b277c54c903b657fa6735f461824b2e932db45082f64a65d8f0a182dc5"
   end
 
   depends_on "boost" => :build
@@ -46,9 +45,9 @@ class Onnxruntime < Formula
   end
 
   resource "pytorch_cpuinfo" do
-    url "https://ghfast.top/https://github.com/pytorch/cpuinfo/archive/4628dc060ce4e82345dc166bbac875609db4ff69.tar.gz"
-    version "4628dc060ce4e82345dc166bbac875609db4ff69"
-    sha256 "a550205e891f9f1982044a306cb54556347645cba129af34cd907160f83bd0f1"
+    url "https://ghfast.top/https://github.com/pytorch/cpuinfo/archive/66ee79c038d70dad9f08705b2c9b3e58f6d8f512.tar.gz"
+    version "66ee79c038d70dad9f08705b2c9b3e58f6d8f512"
+    sha256 "e3d09aa27ec50da6310da45d1ec6b2e903c367a1455d8ee350bda12b9dedf556"
 
     livecheck do
       url "https://ghfast.top/https://raw.githubusercontent.com/microsoft/onnxruntime/refs/tags/v#{LATEST_VERSION}/cmake/deps.txt"
@@ -87,15 +86,6 @@ class Onnxruntime < Formula
       regex(%r{^psimd;.*/(\h+)\.zip}i)
     end
   end
-
-  # Apply Fedora's workaround[^1] to allow `onnxruntime` to use `onnx` built without
-  # ONNX_DISABLE_STATIC_REGISTRATION[^2]. We can't use this option as it will
-  # break functionality for any dependents/users expecting the default behavior.
-  # The main alternative is to build a bundled copy of `onnx`.
-  #
-  # [^1]: https://src.fedoraproject.org/rpms/onnxruntime/blob/rawhide/f/0013-onnx-onnxruntime-fix.patch
-  # [^2]: https://github.com/microsoft/onnxruntime/issues/8556#issuecomment-1006091632
-  patch :DATA
 
   def install
     ENV.runtime_cpu_detection
@@ -208,31 +198,3 @@ class Onnxruntime < Formula
     assert_equal version.to_s, output_lines.join
   end
 end
-
-__END__
-diff --git a/onnxruntime/core/session/onnxruntime_c_api.cc b/onnxruntime/core/session/onnxruntime_c_api.cc
-index b60d97e38f..6951642edb 100644
---- a/onnxruntime/core/session/onnxruntime_c_api.cc
-+++ b/onnxruntime/core/session/onnxruntime_c_api.cc
-@@ -45,6 +45,8 @@
- #include "core/session/ort_env.h"
- #include "core/session/utils.h"
- 
-+#include "onnx/onnxruntime_fix.h"
-+
- #if defined(USE_CUDA) || defined(USE_CUDA_PROVIDER_INTERFACE)
- #include "core/providers/cuda/cuda_provider_factory.h"
- #include "core/providers/cuda/cuda_execution_provider_info.h"
-@@ -3094,6 +3096,13 @@ ORT_API(const char*, OrtApis::GetBuildInfoString) {
- }
- 
- const OrtApiBase* ORT_API_CALL OrtGetApiBase(void) NO_EXCEPTION {
-+  class RunONNXRuntimeFix {
-+   public:
-+    RunONNXRuntimeFix() {
-+      onnx::ONNXRuntimeFix::disableStaticRegistration();
-+    }
-+  };
-+  static RunONNXRuntimeFix runONNXRuntimeFix;
-   return &ort_api_base;
- }

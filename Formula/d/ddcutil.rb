@@ -1,8 +1,8 @@
 class Ddcutil < Formula
   desc "Control monitor settings using DDC/CI and USB"
   homepage "https://www.ddcutil.com"
-  url "https://www.ddcutil.com/tarballs/ddcutil-2.2.7.tar.gz"
-  sha256 "19ac6604cf1177ba56666f8a682581e71e8973bd06c7c8dcf033674e4aaaa648"
+  url "https://www.ddcutil.com/tarballs/ddcutil-3.0.1.tar.gz"
+  sha256 "1c862dc263aa295f23da8d9a6693487d4cd8c97a91bdeaa4711cab28a33cdd6e"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -11,8 +11,8 @@ class Ddcutil < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_linux:  "604c2801d09419e20c2457f7aec8d605abd86b846d537ffbefd18665aa626012"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "d7e228a9ada1605b7958660a90ce03cd5710e464a767b2a39c02a24f4e17c9fe"
+    sha256 cellar: :any, arm64_linux:  "2843102c185aff788228191b726a58f740af677e2770eb365592e60b277b2165"
+    sha256 cellar: :any, x86_64_linux: "48639152a987609897a84ad36d4e6f9821957eeaf1b71950aa115817f68f3691"
   end
 
   depends_on "pkgconf" => :build

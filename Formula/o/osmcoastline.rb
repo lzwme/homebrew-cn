@@ -8,11 +8,12 @@ class Osmcoastline < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "43029b1819d7e6a373bd2280387982a6c02c9421cc5104042477687f535249ca"
-    sha256 cellar: :any, arm64_sequoia: "01a61cb2c86972c45dde929b7cb24412a6964ec4ee1cfe8c775d7879e5e369ef"
-    sha256 cellar: :any, arm64_sonoma:  "b125a0f6c67d15d90035ac32a75dfa94a910ec057549b1da4a1c053c3f0ef2dc"
-    sha256 cellar: :any, arm64_linux:   "30a27759d711597426727f060ae0a24cf601f81ae2408c4d9fcf47e96ed941af"
-    sha256 cellar: :any, x86_64_linux:  "5e7a7447a8be61b59459b52868df6dbc3a97458e48aac84456f7cff1ae040156"
+    sha256 cellar: :any, arm64_golden_gate: "4cd52230b1216d6acef0934bca869eb23747a44209cc2da04191c97356bf5ba6"
+    sha256 cellar: :any, arm64_tahoe:       "43029b1819d7e6a373bd2280387982a6c02c9421cc5104042477687f535249ca"
+    sha256 cellar: :any, arm64_sequoia:     "01a61cb2c86972c45dde929b7cb24412a6964ec4ee1cfe8c775d7879e5e369ef"
+    sha256 cellar: :any, arm64_sonoma:      "b125a0f6c67d15d90035ac32a75dfa94a910ec057549b1da4a1c053c3f0ef2dc"
+    sha256 cellar: :any, arm64_linux:       "30a27759d711597426727f060ae0a24cf601f81ae2408c4d9fcf47e96ed941af"
+    sha256 cellar: :any, x86_64_linux:      "5e7a7447a8be61b59459b52868df6dbc3a97458e48aac84456f7cff1ae040156"
   end
 
   depends_on "cmake" => :build

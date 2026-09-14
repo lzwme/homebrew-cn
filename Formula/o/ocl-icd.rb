@@ -7,12 +7,13 @@ class OclIcd < Formula
   head "https://github.com/OCL-dev/ocl-icd.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "a7516791a7b101b8b28008e91152a41d4bccef8e432ec57f5176d058ce316425"
-    sha256 cellar: :any, arm64_sequoia: "850088b50e703f2ac49f1aba5174e9b2d02120407c3091c5bd0098e172cfdc50"
-    sha256 cellar: :any, arm64_sonoma:  "78f5a4c7128cf8823f22c211de7496af79a8b07c141ffd082aa3c175b314e53d"
-    sha256 cellar: :any, sonoma:        "13f114294b4cb291958abecbc83cc3b44661dd24e8392944ae90c732c06204d1"
-    sha256 cellar: :any, arm64_linux:   "b17b8aab84f730877784d6defa8bc9086457d0bde5bc635feafdca61d2ee02b8"
-    sha256 cellar: :any, x86_64_linux:  "86b5bd9b0f6d3d7bca91b916bda8ade6349c47a227392f559d93177cc41b39e2"
+    sha256 cellar: :any, arm64_golden_gate: "c01dafbec261ebde8b68cfb3a2156e0124975e572449a31c1d76cab1b96c67f4"
+    sha256 cellar: :any, arm64_tahoe:       "a7516791a7b101b8b28008e91152a41d4bccef8e432ec57f5176d058ce316425"
+    sha256 cellar: :any, arm64_sequoia:     "850088b50e703f2ac49f1aba5174e9b2d02120407c3091c5bd0098e172cfdc50"
+    sha256 cellar: :any, arm64_sonoma:      "78f5a4c7128cf8823f22c211de7496af79a8b07c141ffd082aa3c175b314e53d"
+    sha256 cellar: :any, sonoma:            "13f114294b4cb291958abecbc83cc3b44661dd24e8392944ae90c732c06204d1"
+    sha256 cellar: :any, arm64_linux:       "b17b8aab84f730877784d6defa8bc9086457d0bde5bc635feafdca61d2ee02b8"
+    sha256 cellar: :any, x86_64_linux:      "86b5bd9b0f6d3d7bca91b916bda8ade6349c47a227392f559d93177cc41b39e2"
   end
 
   keg_only :shadowed_by_macos, "macOS provides OpenCL.framework"

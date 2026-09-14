@@ -31,13 +31,25 @@ class Argocd < Formula
   depends_on "go" => :build
   depends_on "node" => :build
 
+  deny_network_access!
+
+  def fetch
+    ENV["COREPACK_ENABLE_DOWNLOAD_PROMPT"] = "0"
+
+    system "go", "mod", "download"
+    cd "ui" do
+      system "pnpm", "install", "--frozen-lockfile"
+    end
+  end
+
   def install
-    system "make", "dep-ui-local"
     with_env(
       NODE_ENV:        "production",
       NODE_ONLINE_ENV: "online",
     ) do
-      system "yarn", "--cwd", "ui", "build"
+      cd "ui" do
+        system "pnpm", "run", "build"
+      end
     end
     system "make", "cli-local", "GIT_TAG=v#{version}"
     bin.install "dist/argocd"

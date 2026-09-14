@@ -11,12 +11,12 @@ class Aider < Formula
   head "https://github.com/Aider-AI/aider.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "7a247897eb06b35bdc2cc6f3a225a9c32f8c1448e9654192c0d30f2c6b56c00b"
-    sha256 cellar: :any,                 arm64_sequoia: "72acfa80c059d3e96dc59087eb68c07450b5b745d1b7f8e3e665044e7d1a9b18"
-    sha256 cellar: :any,                 arm64_sonoma:  "f96a32e15fc8adcfefce10018669dd612999f64f0626d721d71ddda25d880e0f"
-    sha256 cellar: :any,                 sonoma:        "9c30c34a1fb1918b5e0c03ee818c9b3e9740fdd1ed4a2c53f4147507a9b6cca2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "63b7eb2133d906cf3360f1afde95ab784323f92049f879f494ceaf94f0b7955c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ccaf4e2995bd7295ff7c10d27a929e240f0edbeb2d3376a1ced69047a4359a7e"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "e284718dced73d2319aecb53260bc218eb349d264db2acc159f3cb89f8ac2374"
+    sha256 cellar: :any, arm64_tahoe:       "6fd6864b922fddaae2904a5e1813f4db9bdb51bce7fd5727807bf602c6a15546"
+    sha256 cellar: :any, arm64_sequoia:     "6676e8cd88b1c1256d341dec6ad86e40961ad4b311b53bbf6860ee0b291e39a8"
+    sha256 cellar: :any, arm64_linux:       "eae4b1cecf77e5a3a9527678574ebace58eb91c3a00c667ffa0dd2feaf788220"
+    sha256 cellar: :any, x86_64_linux:      "c726f6bfe60983c376e23269bc726edd6253869ff9411aa962b7d047c27dde5d"
   end
 
   depends_on "ninja" => :build
@@ -576,6 +576,9 @@ class Aider < Formula
   end
 
   def install
+    # `tokenizers` and `hf-xet` build PyO3 extensions through maturin.
+    ENV.append_to_rustflags "-C link-arg=-Wl,-undefined,dynamic_lookup"
+
     venv = virtualenv_install_with_resources(without: ["hf-xet", "numpy"])
 
     resource("hf-xet").stage do

@@ -14,14 +14,15 @@ class Unzip < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "be1cb055cbcf3e1420ea25a48ab6da010c2e70efff5ffe7e4e91dac7231c4ae2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fe1f7ac37950ec13dde20b2ab1eb86eb45f066a305df1fa6c8349d6de0e14dec"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e7bb9045e4d39a6409b1eaa113ccd21337374726d74a9b4b2344ea6a87f13543"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "28765484286482079acb25eebf967819544b1a86daf3b92f6c19d282296e3915"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ecb59929e280df14e71d9f163de7aa1613f005fb4d44dd40fc1a811ea5d61132"
-    sha256 cellar: :any_skip_relocation, ventura:       "76363f884cbb100c668adea01a3d72a8efadc23e5bee125182ad030d6fd3685f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8c82849237d428857a01410f203b89819f02e7ab28651400d6ebefe46f3feca4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0e3fe87c9f438d2012de977edf649608574a8c3265797fb693923bdca9227a7d"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "525f5587e23a595a3e3e1d11a574c29c5a475585fd19b0c7f675895ef41c9608"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "be1cb055cbcf3e1420ea25a48ab6da010c2e70efff5ffe7e4e91dac7231c4ae2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "fe1f7ac37950ec13dde20b2ab1eb86eb45f066a305df1fa6c8349d6de0e14dec"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "e7bb9045e4d39a6409b1eaa113ccd21337374726d74a9b4b2344ea6a87f13543"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:     "28765484286482079acb25eebf967819544b1a86daf3b92f6c19d282296e3915"
+    sha256 cellar: :any_skip_relocation, sonoma:            "ecb59929e280df14e71d9f163de7aa1613f005fb4d44dd40fc1a811ea5d61132"
+    sha256 cellar: :any_skip_relocation, ventura:           "76363f884cbb100c668adea01a3d72a8efadc23e5bee125182ad030d6fd3685f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "8c82849237d428857a01410f203b89819f02e7ab28651400d6ebefe46f3feca4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "0e3fe87c9f438d2012de977edf649608574a8c3265797fb693923bdca9227a7d"
   end
 
   keg_only :provided_by_macos

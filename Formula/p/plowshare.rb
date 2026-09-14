@@ -8,12 +8,13 @@ class Plowshare < Formula
 
   bottle do
     rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "66557c80ff43f15110e291740e2316392dc18ba4fb54dae5a15af57f5979e7db"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ff9bf36ebaba8ea4c9caf8bb17ab50cf057ece008d833c9c223425a093694fd7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dc648c0c02b3bf102a02fcb9e08919a361d401017fb4d2867679d29a3f8187f1"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c209d74e947383bee551fb90c709fc46563ef924b69715b1dc5babdc5c033a51"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5fd6c57b4f4ca70158ec4b3b7849f0097fc57a83e70020f3dbf23dcd74ef9ab4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5fd6c57b4f4ca70158ec4b3b7849f0097fc57a83e70020f3dbf23dcd74ef9ab4"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "0d56bde789de222c59703aa2e66671196e4fb7f658018d4ed0b1bcbdb7401b04"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "66557c80ff43f15110e291740e2316392dc18ba4fb54dae5a15af57f5979e7db"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "ff9bf36ebaba8ea4c9caf8bb17ab50cf057ece008d833c9c223425a093694fd7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "dc648c0c02b3bf102a02fcb9e08919a361d401017fb4d2867679d29a3f8187f1"
+    sha256 cellar: :any_skip_relocation, sonoma:            "c209d74e947383bee551fb90c709fc46563ef924b69715b1dc5babdc5c033a51"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "5fd6c57b4f4ca70158ec4b3b7849f0097fc57a83e70020f3dbf23dcd74ef9ab4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "5fd6c57b4f4ca70158ec4b3b7849f0097fc57a83e70020f3dbf23dcd74ef9ab4"
   end
 
   depends_on "feh"

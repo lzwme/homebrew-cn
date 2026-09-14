@@ -7,12 +7,13 @@ class Xdotool < Formula
   head "https://github.com/jordansissel/xdotool.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "4dc22c5d97fd9b01c11953a9a784f41f4849c4e52e54fa9c816661cf9cb16ae5"
-    sha256 cellar: :any,                 arm64_sequoia: "4b72c6fa194946413cfac5a743f148ba85c0be73709e9d41be584c682f27a9dd"
-    sha256 cellar: :any,                 arm64_sonoma:  "0b27cc0c712adf4358f349aa4c0a5bca63e0bc11a967858cf7270d62bbf1c9b1"
-    sha256 cellar: :any,                 sonoma:        "8526ca0cc8cf13ac5bfe8123e67b1123a4501d7f0c934a636aa1abfd8acd9a4c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fb904245e32922033e2c12cb49aed5b602e373ba684f5dfb44bc2b70f9f66814"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a3748e18cd55cf9d22483f03567a37b37b1ae94c7c98d326fe4fbfb738c274f2"
+    sha256 cellar: :any,                 arm64_golden_gate: "c718e12d45b3c8e6dbd46debb6c1b2d31f9353ffc84443274977508ac192131f"
+    sha256 cellar: :any,                 arm64_tahoe:       "4dc22c5d97fd9b01c11953a9a784f41f4849c4e52e54fa9c816661cf9cb16ae5"
+    sha256 cellar: :any,                 arm64_sequoia:     "4b72c6fa194946413cfac5a743f148ba85c0be73709e9d41be584c682f27a9dd"
+    sha256 cellar: :any,                 arm64_sonoma:      "0b27cc0c712adf4358f349aa4c0a5bca63e0bc11a967858cf7270d62bbf1c9b1"
+    sha256 cellar: :any,                 sonoma:            "8526ca0cc8cf13ac5bfe8123e67b1123a4501d7f0c934a636aa1abfd8acd9a4c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "fb904245e32922033e2c12cb49aed5b602e373ba684f5dfb44bc2b70f9f66814"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "a3748e18cd55cf9d22483f03567a37b37b1ae94c7c98d326fe4fbfb738c274f2"
   end
 
   depends_on "pkgconf" => :build

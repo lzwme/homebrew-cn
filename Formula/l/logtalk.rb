@@ -1,9 +1,9 @@
 class Logtalk < Formula
   desc "Declarative object-oriented logic programming language"
   homepage "https://logtalk.org/"
-  url "https://ghfast.top/https://github.com/LogtalkDotOrg/logtalk3/archive/refs/tags/lgt31010stable.tar.gz"
-  version "3.101.0"
-  sha256 "72a2bf4c9950751c6b9708e551962db593b46ad29dec53ab27b6871e917fd47b"
+  url "https://ghfast.top/https://github.com/LogtalkDotOrg/logtalk3/archive/refs/tags/lgt31020stable.tar.gz"
+  version "3.102.0"
+  sha256 "269ce4b1b5aa5ca59940a7a65e0caf10a589a44dd2ec1cc3711f8c48e4712c91"
   license "Apache-2.0"
   head "https://github.com/LogtalkDotOrg/logtalk3.git", branch: "master"
 
@@ -15,13 +15,11 @@ class Logtalk < Formula
   no_autobump! because: :bumped_by_upstream
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "8c1526e2eecb66bb3581565501e8463c1a4d8fc0dfba2b9f5b6f55cea068f80c"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "8cefd9ad94e7416ed55da199b957f1a0acc3a0f1bef70cd76214c2d2acb50c77"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "901044885db93980f69ee7a841eac73badfd9b5bd6c73acba05a3a37b6daa5ad"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "fb91d31aa8cab4025422b16d0d3a8db111ac101feb05826eaa9a2f4f619e7803"
-    sha256 cellar: :any_skip_relocation, sonoma:            "0396056130077b95bb92816a72bc413171444ef1de977da362602b6d3be8e27a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "c3a4f312d28404bfaf3c8c7bb3535db381c975079105297b2aa4c224cf68cf44"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "b6dc04ceaa7c698cc9c8b8a9ea27f3197aecebdafecfe87990b4600b5855079a"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "3e90229713060045c5c902b09bad9c4ad0e97afe279f6548ae2167ca14673049"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "9f781729c034f5a8111d9a0749cf978ec6532a38f9d2adc60efd50192684197e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "06c9cc894ff10b8b67c074f2e0115f96f678d807452f222294fb3c2cfc61efbc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "15c683cf73004349e07196b2e87b27ec39d02d203ef53d046dcf3b60da0711c3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "549a7c3564e98e0e9dabd1136975742d931a79fa18a943ad06b2d7234e4e5deb"
   end
 
   depends_on "gnu-prolog"

@@ -7,12 +7,13 @@ class Poutine < Formula
   head "https://github.com/boostsecurityio/poutine.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "db72a5ae20e78380b764f78254d9d123495c27e84d96422850dbb1ecbba6a201"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "db72a5ae20e78380b764f78254d9d123495c27e84d96422850dbb1ecbba6a201"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "db72a5ae20e78380b764f78254d9d123495c27e84d96422850dbb1ecbba6a201"
-    sha256 cellar: :any_skip_relocation, sonoma:        "da4b821e142c04c0b4beb8d44bb21370663a692ecc8fa11f28dfc3c9f06d1030"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "79872fbde4e7da5ce9c2776f45a0e343859d71042818a6c7c672fd8798677430"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "773da1601ff91ff8187ea8eab5f0bcb23e40d13371e51d6149c531605a4fc647"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "3f0b11c41e5bf79b4896db145fb89da8728806a638580e3eb6da1f68066c579a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "db72a5ae20e78380b764f78254d9d123495c27e84d96422850dbb1ecbba6a201"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "db72a5ae20e78380b764f78254d9d123495c27e84d96422850dbb1ecbba6a201"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "db72a5ae20e78380b764f78254d9d123495c27e84d96422850dbb1ecbba6a201"
+    sha256 cellar: :any_skip_relocation, sonoma:            "da4b821e142c04c0b4beb8d44bb21370663a692ecc8fa11f28dfc3c9f06d1030"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "79872fbde4e7da5ce9c2776f45a0e343859d71042818a6c7c672fd8798677430"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "773da1601ff91ff8187ea8eab5f0bcb23e40d13371e51d6149c531605a4fc647"
   end
 
   depends_on "go" => :build

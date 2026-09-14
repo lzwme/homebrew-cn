@@ -7,12 +7,13 @@ class PgSchemaDiff < Formula
   head "https://github.com/stripe/pg-schema-diff.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b19fb80ab55dba821ac2bb1e298b124a5606f91eb5648feebfc2c6d1738c3314"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b19fb80ab55dba821ac2bb1e298b124a5606f91eb5648feebfc2c6d1738c3314"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b19fb80ab55dba821ac2bb1e298b124a5606f91eb5648feebfc2c6d1738c3314"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ee0ceb6ccc7c40ab1e9a66f6673e8a2407b461577996daa85244366b2b6381df"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7ac834d57afeaf10601960c32e9f9030dc042d31126c601ad68de372aa73299e"
-    sha256 cellar: :any,                 x86_64_linux:  "e9b30f5a5aa37d6a88e6b868e266a16c1486db33e24041a645c914af8ed42ef6"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "a7b4aa92f4fa97eabd92c128418e0bcc248698c5ee72d03f819291af91f385de"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "b19fb80ab55dba821ac2bb1e298b124a5606f91eb5648feebfc2c6d1738c3314"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "b19fb80ab55dba821ac2bb1e298b124a5606f91eb5648feebfc2c6d1738c3314"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "b19fb80ab55dba821ac2bb1e298b124a5606f91eb5648feebfc2c6d1738c3314"
+    sha256 cellar: :any_skip_relocation, sonoma:            "ee0ceb6ccc7c40ab1e9a66f6673e8a2407b461577996daa85244366b2b6381df"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "7ac834d57afeaf10601960c32e9f9030dc042d31126c601ad68de372aa73299e"
+    sha256 cellar: :any,                 x86_64_linux:      "e9b30f5a5aa37d6a88e6b868e266a16c1486db33e24041a645c914af8ed42ef6"
   end
 
   depends_on "go" => :build

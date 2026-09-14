@@ -12,14 +12,15 @@ class GccAT12 < Formula
   end
 
   bottle do
-    sha256                               arm64_tahoe:   "d8adb7354a111d55e61c661379749d99cb6d0cbaac40b2552e471071cb38c1a6"
-    sha256                               arm64_sequoia: "ec2e956a9ceb21a8d27260db9b50c09e310aa5a061230ed52426d7e54f426ba3"
-    sha256                               arm64_sonoma:  "ca7a9e949ae62998f413a0068cd3eba834297669f92043da35548766246ef6cf"
-    sha256                               tahoe:         "45b46f68b0f409889443043fdb529e484c858c2a9abfa165d97c6ec118089bfc"
-    sha256                               sequoia:       "93386ba3329d06cb4288e10f7fef54e606103bf940bf5be87dc099119364f22c"
-    sha256                               sonoma:        "60e80d01ab1801326bf3e3919f7c883109daa056a5d52d496707d2ce75280ab7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2b65fe2eb9ddd411fbaa0eae6d8470aca65d60d956843df26921b3e3619f6c89"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9c1bcaa7819147a8539e81064d9f34d4cc9746d70e14b0ece9a80d81818ebec8"
+    sha256                               arm64_golden_gate: "02859879761ea8e1e4d039e43938e860b539c047c8348c5f0191898f67aed21d"
+    sha256                               arm64_tahoe:       "d8adb7354a111d55e61c661379749d99cb6d0cbaac40b2552e471071cb38c1a6"
+    sha256                               arm64_sequoia:     "ec2e956a9ceb21a8d27260db9b50c09e310aa5a061230ed52426d7e54f426ba3"
+    sha256                               arm64_sonoma:      "ca7a9e949ae62998f413a0068cd3eba834297669f92043da35548766246ef6cf"
+    sha256                               tahoe:             "45b46f68b0f409889443043fdb529e484c858c2a9abfa165d97c6ec118089bfc"
+    sha256                               sequoia:           "93386ba3329d06cb4288e10f7fef54e606103bf940bf5be87dc099119364f22c"
+    sha256                               sonoma:            "60e80d01ab1801326bf3e3919f7c883109daa056a5d52d496707d2ce75280ab7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "2b65fe2eb9ddd411fbaa0eae6d8470aca65d60d956843df26921b3e3619f6c89"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "9c1bcaa7819147a8539e81064d9f34d4cc9746d70e14b0ece9a80d81818ebec8"
   end
 
   # The bottles are built on systems with the CLT installed, and do not work
@@ -55,6 +56,14 @@ class GccAT12 < Formula
     on_macos do
       url "https://github.com/iains/gcc-12-branch/compare/f0f9d56ffca2da2cab9af21c0c378ffe4d9cf908...99533d94172ed7a24c0e54c4ea97e6ae2260409e.patch"
       sha256 "7aa45104e32a4fd288a8f3b931848dc5c306d0b295ca28c8bf60a048edd8d2a5"
+      type :unofficial
+    end
+  end
+  # Backport the Darwin version mapping from the GCC 16 branch.
+  # https://github.com/iains/gcc-16-branch/commit/45cfd989e0f3915b631bbb76372097cbcc9a055f
+  patch do
+    on_macos do
+      file "Patches/gcc/gcc-12-13-darwin-version-mapping.diff"
       type :unofficial
     end
   end

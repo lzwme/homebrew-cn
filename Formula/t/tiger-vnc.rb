@@ -12,12 +12,13 @@ class TigerVnc < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "8d12a23c7b45cb2e6e0378d10e8eb6204e53e122c12c242c8980e942ac4f0281"
-    sha256 cellar: :any, arm64_sequoia: "e7f98cddf036ea8f48b3201b7cdd2865e5c31650ce2b42e350d54005cf255e7f"
-    sha256 cellar: :any, arm64_sonoma:  "a939e8096df31cc5bb02489ca4ad161d69f1cc5557dbbef82a9fb43cc173cdcb"
-    sha256 cellar: :any, sonoma:        "62bb1dc72ab89cd10ae5b6b54c36cfb888b7e4a2fbc28cc2930edc276c294e09"
-    sha256               arm64_linux:   "3986dbe4aa17163342747900c597a676b2b30a63cda679cf0b9d519c3d1dd636"
-    sha256               x86_64_linux:  "c17bcd2d90aa9083be69775a866a6be8f68f66548cd181399f1a37fc4d2cf49f"
+    sha256 cellar: :any, arm64_golden_gate: "2e43c674a37c37a68ecf5f645e1e75c757f8c4d20da383f02f1ec91306a583c3"
+    sha256 cellar: :any, arm64_tahoe:       "8d12a23c7b45cb2e6e0378d10e8eb6204e53e122c12c242c8980e942ac4f0281"
+    sha256 cellar: :any, arm64_sequoia:     "e7f98cddf036ea8f48b3201b7cdd2865e5c31650ce2b42e350d54005cf255e7f"
+    sha256 cellar: :any, arm64_sonoma:      "a939e8096df31cc5bb02489ca4ad161d69f1cc5557dbbef82a9fb43cc173cdcb"
+    sha256 cellar: :any, sonoma:            "62bb1dc72ab89cd10ae5b6b54c36cfb888b7e4a2fbc28cc2930edc276c294e09"
+    sha256               arm64_linux:       "3986dbe4aa17163342747900c597a676b2b30a63cda679cf0b9d519c3d1dd636"
+    sha256               x86_64_linux:      "c17bcd2d90aa9083be69775a866a6be8f68f66548cd181399f1a37fc4d2cf49f"
   end
 
   depends_on "cmake" => :build

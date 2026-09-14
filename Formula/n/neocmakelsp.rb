@@ -7,11 +7,12 @@ class Neocmakelsp < Formula
   head "https://github.com/neocmakelsp/neocmakelsp.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "26082f8db6c2aa8c8b8e7dd4d71de78945c55624c49163e3653713dd2e697d0d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "03e6ed6d04a6b918825ffac87f835302c89a75e9bde4253aba91f017cc242d47"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "678c9b882dcf3c29b716c3a8b0234931f606dead0d2c5844880cfd013fa75d6c"
-    sha256 cellar: :any,                 arm64_linux:   "8f1b7c9693b939dd126870e112e95a6e024656b651f0546e4c5dc44932a87c74"
-    sha256 cellar: :any,                 x86_64_linux:  "b5dd8d9587bfca55a781fbca08245e683ea39d827e1d8a7281cba79dbefc7424"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "d450320b7f8854301101f5a10adfe7a19ef1c8cb7d0ee1b004f6e141b4faa71c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "26082f8db6c2aa8c8b8e7dd4d71de78945c55624c49163e3653713dd2e697d0d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "03e6ed6d04a6b918825ffac87f835302c89a75e9bde4253aba91f017cc242d47"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "678c9b882dcf3c29b716c3a8b0234931f606dead0d2c5844880cfd013fa75d6c"
+    sha256 cellar: :any,                 arm64_linux:       "8f1b7c9693b939dd126870e112e95a6e024656b651f0546e4c5dc44932a87c74"
+    sha256 cellar: :any,                 x86_64_linux:      "b5dd8d9587bfca55a781fbca08245e683ea39d827e1d8a7281cba79dbefc7424"
   end
 
   depends_on "rust" => :build

@@ -19,6 +19,12 @@ class Kubecolor < Formula
   depends_on "go" => :build
   depends_on "kubernetes-cli" => :test
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ldflags = "-X main.Version=v#{version}"
 

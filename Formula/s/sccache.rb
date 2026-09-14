@@ -12,12 +12,13 @@ class Sccache < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7748b72b00ded7c5a67ec90f096e267efd3405f92d78c529366aaf08304d07a3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "19686ad7ae3ff94088c8c2cec75a1a4bbcf817b5748d667e47162feef330024b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "82bf259c4494b02de912b29598bb9c33679c8b229d383922e9e9723aff891e35"
-    sha256 cellar: :any_skip_relocation, sonoma:        "54578793f6d2da4ab0c4ad9609933ae8ecda45650cb688084a47f30eb291867c"
-    sha256 cellar: :any,                 arm64_linux:   "53b23e0182080c692ea2cd495a555fde4e5edff0dc9a49a9bdba02414e447f65"
-    sha256 cellar: :any,                 x86_64_linux:  "ed0e69f0d6427c6b5610e7a0e0c5dcb3f08b16cc379bfb5aa73a82a42bb0c12f"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "6f5a4f8e7ba79b15a4e1c8a7a36d79aa77b0c9dbbbaaa67d57e072ed505f3070"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "7748b72b00ded7c5a67ec90f096e267efd3405f92d78c529366aaf08304d07a3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "19686ad7ae3ff94088c8c2cec75a1a4bbcf817b5748d667e47162feef330024b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "82bf259c4494b02de912b29598bb9c33679c8b229d383922e9e9723aff891e35"
+    sha256 cellar: :any_skip_relocation, sonoma:            "54578793f6d2da4ab0c4ad9609933ae8ecda45650cb688084a47f30eb291867c"
+    sha256 cellar: :any,                 arm64_linux:       "53b23e0182080c692ea2cd495a555fde4e5edff0dc9a49a9bdba02414e447f65"
+    sha256 cellar: :any,                 x86_64_linux:      "ed0e69f0d6427c6b5610e7a0e0c5dcb3f08b16cc379bfb5aa73a82a42bb0c12f"
   end
 
   depends_on "pkgconf" => :build

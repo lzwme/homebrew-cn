@@ -7,13 +7,12 @@ class Checkmake < Formula
   head "https://github.com/checkmake/checkmake.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "830ad356f8143c6cf17c178be7e6b244982354975ffa8a4b2fa1b5150907b58d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f4cc9b6deb720d7ef53cad7f243810dc3e1217307035256d7b56865eda287382"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "128dd99341f31a790f9ae61549bb735909989086659b192cecff3f0aeba556f5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "62d2f5dcd3fd0fd6f1162bd67d58812aa5e59f78af2dc193c98c20b04eaa07fa"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ac2838e91b6e12598749426385f3f02470cc749d78bb5783020a00fd65f82139"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "73f82defd4eb6ae7267171725d0c0c672583ec1184463858b90d79b1dccf884c"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "039e9eca37bf85e2f4b86bf6297b7e28821087cc0c18730ad4638ff66402705b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "3e44429a9d3605e6d61d1fc886e01e6f25b2eeeb70350b6e3340214d858f6c5a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "64d7b1cdeb8abbb4d9dbe1d56490b391b9233c9f3fb12f3e3ff07523d7c29186"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "6dcdc8193870c49f52b7c684ae251ccfbed991a3d0d4830b582c5e563a720007"
+    sha256 cellar: :any,                 x86_64_linux:      "cc596704a788d87ef48ac1e1303ba308c6949707644b5bd7c1f1e4e4b122a173"
   end
 
   depends_on "go" => :build
@@ -23,8 +22,8 @@ class Checkmake < Formula
     ENV["BUILDER_NAME"] = "Homebrew"
     ENV["BUILDER_EMAIL"] = "homebrew@brew.sh"
     ENV["PREFIX"] = prefix
-    system "make", "VERSION=#{version}"
-    system "make", "install"
+    # The default target runs an unpinned `golangci-lint@latest`, whose new checks fail on the test files
+    system "make", "install", "VERSION=#{version}"
   end
 
   test do

@@ -7,12 +7,13 @@ class Travis < Formula
   revision 2
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "7b1d54790aeac9a064ea9447f0a40c26ee6035a2985ec9e75f0f6d77f364a932"
-    sha256 cellar: :any,                 arm64_sequoia: "0f9bb3574e12920aba886efc69c9ff09612387722a52143c489aa6474536881e"
-    sha256 cellar: :any,                 arm64_sonoma:  "e9f1bca4991c3d06290fe852be8436e8191fa3508d4821f952d7ef2e5d4d1c7b"
-    sha256 cellar: :any,                 sonoma:        "88529185b3d99b3a0b296842b3acf81020285bad203e3df14bd7630b70f980bd"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b44c7c0f02ffa3aa586c66676fab5079f0a3efa6513a5ddac16bc25f708e4301"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d5ae5f903cdc8a392312e2c41301e5a0ad166f815040f8e90fd0dd94ea9d22f7"
+    sha256 cellar: :any,                 arm64_golden_gate: "25ba3b0a9bb2c25adb6d697865e5067d7d29ac823f09e43e1242c7b871dcf201"
+    sha256 cellar: :any,                 arm64_tahoe:       "7b1d54790aeac9a064ea9447f0a40c26ee6035a2985ec9e75f0f6d77f364a932"
+    sha256 cellar: :any,                 arm64_sequoia:     "0f9bb3574e12920aba886efc69c9ff09612387722a52143c489aa6474536881e"
+    sha256 cellar: :any,                 arm64_sonoma:      "e9f1bca4991c3d06290fe852be8436e8191fa3508d4821f952d7ef2e5d4d1c7b"
+    sha256 cellar: :any,                 sonoma:            "88529185b3d99b3a0b296842b3acf81020285bad203e3df14bd7630b70f980bd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "b44c7c0f02ffa3aa586c66676fab5079f0a3efa6513a5ddac16bc25f708e4301"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "d5ae5f903cdc8a392312e2c41301e5a0ad166f815040f8e90fd0dd94ea9d22f7"
   end
 
   depends_on "pkgconf" => :build

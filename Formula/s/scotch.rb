@@ -12,11 +12,12 @@ class Scotch < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "95a1f42afa3066e0f3e6e3856d2e0cf7855d7aab30afbc37bbc318fadc0149ce"
-    sha256 cellar: :any, arm64_sequoia: "ef405b1ca0a45993c340818385ba00bb7450472fca30475398a5a7d147f81465"
-    sha256 cellar: :any, arm64_sonoma:  "ebfa4387cc17f8c9ad7b5f4382b8b35ccb17c34acb1e5df4824591e8972ff53f"
-    sha256 cellar: :any, arm64_linux:   "52ed03c485c1dd74285b53ba048c8fa76f297a2e977b25cd3fb2384bd2060ced"
-    sha256 cellar: :any, x86_64_linux:  "4320164c00884551429d3ce254bf962f5928d297772fe4ca8e97181c041b2f3b"
+    sha256 cellar: :any, arm64_golden_gate: "fe1a17fd2a33983c5ff834122d5aa1013da34419309993716c2b47ba7714c42e"
+    sha256 cellar: :any, arm64_tahoe:       "95a1f42afa3066e0f3e6e3856d2e0cf7855d7aab30afbc37bbc318fadc0149ce"
+    sha256 cellar: :any, arm64_sequoia:     "ef405b1ca0a45993c340818385ba00bb7450472fca30475398a5a7d147f81465"
+    sha256 cellar: :any, arm64_sonoma:      "ebfa4387cc17f8c9ad7b5f4382b8b35ccb17c34acb1e5df4824591e8972ff53f"
+    sha256 cellar: :any, arm64_linux:       "52ed03c485c1dd74285b53ba048c8fa76f297a2e977b25cd3fb2384bd2060ced"
+    sha256 cellar: :any, x86_64_linux:      "4320164c00884551429d3ce254bf962f5928d297772fe4ca8e97181c041b2f3b"
   end
 
   depends_on "bison" => :build

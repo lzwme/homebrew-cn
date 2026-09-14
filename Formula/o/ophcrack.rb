@@ -9,12 +9,13 @@ class Ophcrack < Formula
 
   bottle do
     rebuild 2
-    sha256 cellar: :any,                 arm64_tahoe:   "9bbddef8954e48336a179c36c62eef0a235511bdecb8c341c623a462e7511951"
-    sha256 cellar: :any,                 arm64_sequoia: "8c86de3d503ed9186c88fc7beec9e69f4530ab19c35bc7a981ef7fd0be1b14ff"
-    sha256 cellar: :any,                 arm64_sonoma:  "16b08335d1e88acaef2b74387a312fef64fc4bbeb947ffd36ebcff4c69b23419"
-    sha256 cellar: :any,                 sonoma:        "25e508ee96b66c1258dae94b2067e222f13926da239965a757291bf5ffb76e88"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "df28087f7aeb845c3f81b353c1bbcc04aeba7609147443c4c100ce1366234076"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "94dae3f25b89faf64f1c609072dc6b4a0b45b0cd81e7174afce201cdfd9c15a1"
+    sha256 cellar: :any,                 arm64_golden_gate: "885bf96aa8afb706d266e340d1c0444f1a29679eba7d110404c7148455d5a81b"
+    sha256 cellar: :any,                 arm64_tahoe:       "9bbddef8954e48336a179c36c62eef0a235511bdecb8c341c623a462e7511951"
+    sha256 cellar: :any,                 arm64_sequoia:     "8c86de3d503ed9186c88fc7beec9e69f4530ab19c35bc7a981ef7fd0be1b14ff"
+    sha256 cellar: :any,                 arm64_sonoma:      "16b08335d1e88acaef2b74387a312fef64fc4bbeb947ffd36ebcff4c69b23419"
+    sha256 cellar: :any,                 sonoma:            "25e508ee96b66c1258dae94b2067e222f13926da239965a757291bf5ffb76e88"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "df28087f7aeb845c3f81b353c1bbcc04aeba7609147443c4c100ce1366234076"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "94dae3f25b89faf64f1c609072dc6b4a0b45b0cd81e7174afce201cdfd9c15a1"
   end
 
   depends_on "openssl@4"

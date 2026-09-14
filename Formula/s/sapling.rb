@@ -15,12 +15,13 @@ class Sapling < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    sha256 arm64_tahoe:   "be95ffb437fc3a142b6dea912b7ef36e6cd02d55af963741acfa5717dade0552"
-    sha256 arm64_sequoia: "0fbf197d7028aa47e8130d2faa7d76eac762dffee2a4d6646dfe96116479f7f1"
-    sha256 arm64_sonoma:  "cd329c11db2197f30e3a7071363439dccb95edcef18e35297b7f506cc6889dbb"
-    sha256 sonoma:        "1e74dcea49f06cbe517f50a667e0fd1fdeaaa6c886487a348bf9e6eabbd1e316"
-    sha256 arm64_linux:   "7f59eb4713ed6ef2495103f9680c753bec5308bf6ec348f3970da472f8476412"
-    sha256 x86_64_linux:  "2307350bd965975748a44d3de2e5b0095e05d39cb94b55b7f53bac87165b69d3"
+    sha256 arm64_golden_gate: "a3f52ba91872c4207d88635a734b15711e948a5c206513a6307eeeed86e22f1f"
+    sha256 arm64_tahoe:       "be95ffb437fc3a142b6dea912b7ef36e6cd02d55af963741acfa5717dade0552"
+    sha256 arm64_sequoia:     "0fbf197d7028aa47e8130d2faa7d76eac762dffee2a4d6646dfe96116479f7f1"
+    sha256 arm64_sonoma:      "cd329c11db2197f30e3a7071363439dccb95edcef18e35297b7f506cc6889dbb"
+    sha256 sonoma:            "1e74dcea49f06cbe517f50a667e0fd1fdeaaa6c886487a348bf9e6eabbd1e316"
+    sha256 arm64_linux:       "7f59eb4713ed6ef2495103f9680c753bec5308bf6ec348f3970da472f8476412"
+    sha256 x86_64_linux:      "2307350bd965975748a44d3de2e5b0095e05d39cb94b55b7f53bac87165b69d3"
   end
 
   depends_on "cmake" => :build

@@ -3,8 +3,6 @@ class Mlx < Formula
 
   desc "Array framework for Apple silicon"
   homepage "https://ml-explore.github.io/mlx/build/html/index.html"
-  url "https://ghfast.top/https://github.com/ml-explore/mlx/archive/refs/tags/v0.32.1.tar.gz"
-  sha256 "34fe1ec0e6baf886eee16c9a1d4c7bd26bbe74fe051225f0eb88a982fc9d2494"
   license all_of: [
     "MIT", # main license
     "Apache-2.0", # metal-cpp resource
@@ -12,15 +10,24 @@ class Mlx < Formula
   compatibility_version 5
   head "https://github.com/ml-explore/mlx.git", branch: "main"
 
+  stable do
+    url "https://ghfast.top/https://github.com/ml-explore/mlx/archive/refs/tags/v0.32.1.tar.gz"
+    sha256 "34fe1ec0e6baf886eee16c9a1d4c7bd26bbe74fe051225f0eb88a982fc9d2494"
+
+    # Backport nanobind 3 compatibility: https://github.com/ml-explore/mlx/pull/4417
+    patch :DATA
+  end
+
   livecheck do
     url :stable
     strategy :github_latest
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "5077bbcacc880777a11e7c1288e8ba4f1a392b559b57ed4effb5add2b67877f1"
-    sha256 cellar: :any, arm64_sequoia: "5eb3cc2571ebca454931f6048202a8cda40eec62f2a89e69b1c6cdb6956c9af8"
-    sha256 cellar: :any, arm64_sonoma:  "1de4af659278713837dea58652d15845b7da04750e54c73c70500ac6ad2ed592"
+    sha256 cellar: :any, arm64_golden_gate: "fc51e539904f1bf599340e531c6fe12d8d0aec1f3ce1b3d2901aa4d4de62b594"
+    sha256 cellar: :any, arm64_tahoe:       "5077bbcacc880777a11e7c1288e8ba4f1a392b559b57ed4effb5add2b67877f1"
+    sha256 cellar: :any, arm64_sequoia:     "5eb3cc2571ebca454931f6048202a8cda40eec62f2a89e69b1c6cdb6956c9af8"
+    sha256 cellar: :any, arm64_sonoma:      "1de4af659278713837dea58652d15845b7da04750e54c73c70500ac6ad2ed592"
   end
 
   depends_on "cmake" => :build
@@ -114,3 +121,73 @@ class Mlx < Formula
     system python3, "test.py"
   end
 end
+
+__END__
+diff --git a/python/src/convert.h b/python/src/convert.h
+index 133f443ed7..7c767a5944 100644
+--- a/python/src/convert.h
++++ b/python/src/convert.h
+@@ -14,24 +14,6 @@ namespace nb = nanobind;
+
+ namespace nanobind {
+
+-template <>
+-struct ndarray_traits<mx::float16_t> {
+-  static constexpr bool is_complex = false;
+-  static constexpr bool is_float = true;
+-  static constexpr bool is_bool = false;
+-  static constexpr bool is_int = false;
+-  static constexpr bool is_signed = true;
+-};
+-
+-template <>
+-struct ndarray_traits<mx::bfloat16_t> {
+-  static constexpr bool is_complex = false;
+-  static constexpr bool is_float = true;
+-  static constexpr bool is_bool = false;
+-  static constexpr bool is_int = false;
+-  static constexpr bool is_signed = true;
+-};
+-
+ namespace detail {
+
+ template <>
+diff --git a/python/src/small_vector.h b/python/src/small_vector.h
+index 0b2e6bb2ee..1a07abe1b2 100644
+--- a/python/src/small_vector.h
++++ b/python/src/small_vector.h
+@@ -31,7 +31,7 @@ struct type_caster<::mlx::core::SmallVector<Type, Size, Alloc>> {
+
+   // Not noexcept: on overflow of a narrow integer element we raise
+   // OverflowError so nanobind surfaces a clean error to the user.
+-  bool from_python(handle src, uint8_t flags, cleanup_list* cleanup) {
++  bool from_python(handle src, uint32_t flags, cleanup_list* cleanup) {
+     size_t size;
+     PyObject* temp;
+
+diff --git a/python/src/transforms.cpp b/python/src/transforms.cpp
+index e6a778eca0..e33cde9bce 100644
+--- a/python/src/transforms.cpp
++++ b/python/src/transforms.cpp
+@@ -814,8 +814,8 @@ class PyCustomFunction {
+       }
+       int array_index = 0;
+       int tangent_index = 0;
+-      auto new_tangents =
+-          nb::cast<nb::tuple>(tree_map(args, [&](nb::handle element) {
++      auto new_tangents = nb::cast<nb::tuple>(
++          tree_map(args, [&](nb::handle element) -> nb::object {
+             if (nb::isinstance<mx::array>(element) &&
+                 have_tangents[array_index++]) {
+               return nb::cast(tangents[tangent_index++]);
+@@ -861,8 +861,8 @@ class PyCustomFunction {
+       }
+
+       int arr_index = 0;
+-      auto new_axes =
+-          nb::cast<nb::tuple>(tree_map(args, [&](nb::handle element) {
++      auto new_axes = nb::cast<nb::tuple>(
++          tree_map(args, [&](nb::handle element) -> nb::object {
+             int axis = axes[arr_index++];
+             if (nb::isinstance<mx::array>(element) && axis >= 0) {
+               return nb::cast(axis);

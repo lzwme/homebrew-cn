@@ -7,12 +7,13 @@ class Sambamba < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "995c464037926a0520fba05804aa852d59632359ca69fc5790f01a408c6ca23e"
-    sha256 cellar: :any,                 arm64_sequoia: "44b20d7fcc0b1828d02be2a4806ebce8186a037de50bb00b81ae78d41b7e9897"
-    sha256 cellar: :any,                 arm64_sonoma:  "6ee13b99ad2f3efbfa9ce7432afcddfdab1b6e9c650264fdef26ed7013e02ba0"
-    sha256 cellar: :any,                 sonoma:        "7fac5a9ba6145a7b151b1930b490705bfa420f7b2ca73d0a2eea06c93e815426"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b7d72d27c226414501cbc4c4d96dbc5df33e071e8aa3b343851ed77648d292be"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ca216432fad1f1c7c38d6805f8f819c81cf1f85522fcfb7046e89941ccd94d70"
+    sha256 cellar: :any,                 arm64_golden_gate: "a0340db2d03612997ebcad2f05ef5250fb6e901decf692ed22cf242836d3a8d6"
+    sha256 cellar: :any,                 arm64_tahoe:       "995c464037926a0520fba05804aa852d59632359ca69fc5790f01a408c6ca23e"
+    sha256 cellar: :any,                 arm64_sequoia:     "44b20d7fcc0b1828d02be2a4806ebce8186a037de50bb00b81ae78d41b7e9897"
+    sha256 cellar: :any,                 arm64_sonoma:      "6ee13b99ad2f3efbfa9ce7432afcddfdab1b6e9c650264fdef26ed7013e02ba0"
+    sha256 cellar: :any,                 sonoma:            "7fac5a9ba6145a7b151b1930b490705bfa420f7b2ca73d0a2eea06c93e815426"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "b7d72d27c226414501cbc4c4d96dbc5df33e071e8aa3b343851ed77648d292be"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "ca216432fad1f1c7c38d6805f8f819c81cf1f85522fcfb7046e89941ccd94d70"
   end
 
   depends_on "ldc" => :build

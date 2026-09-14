@@ -30,12 +30,13 @@ class Ncrack < Formula
 
   bottle do
     rebuild 1
-    sha256 arm64_tahoe:   "f73a2674042b2e7cf64f321316d88dd2a9f92fa116b6a77d73f2d2f348c6e742"
-    sha256 arm64_sequoia: "b21c1901137325fd1923931265abf68349d6d977943b9138ca9572aa507b5cd0"
-    sha256 arm64_sonoma:  "159b54f1da255b7c861fb23320c8e15012612f75cdbe8ee9123c6384b408d043"
-    sha256 sonoma:        "52d3c2ce600c1124c6b23231bd23ad9342f20481cb94f3ae8b94856c4dabc427"
-    sha256 arm64_linux:   "6fd8f73ef2ee53e70fb6e58641425eb6b4e692fd1b891bf6c53d279539e37eaa"
-    sha256 x86_64_linux:  "9e0c60c65ad23af0cfa59dfa65d970850ae9fab8d270c105ffc1b0672af75d60"
+    sha256 arm64_golden_gate: "8ac66b223617ff6eb6868b111f6aa775cdd8c7646cfb6d8f5178951bd6b6e4e0"
+    sha256 arm64_tahoe:       "f73a2674042b2e7cf64f321316d88dd2a9f92fa116b6a77d73f2d2f348c6e742"
+    sha256 arm64_sequoia:     "b21c1901137325fd1923931265abf68349d6d977943b9138ca9572aa507b5cd0"
+    sha256 arm64_sonoma:      "159b54f1da255b7c861fb23320c8e15012612f75cdbe8ee9123c6384b408d043"
+    sha256 sonoma:            "52d3c2ce600c1124c6b23231bd23ad9342f20481cb94f3ae8b94856c4dabc427"
+    sha256 arm64_linux:       "6fd8f73ef2ee53e70fb6e58641425eb6b4e692fd1b891bf6c53d279539e37eaa"
+    sha256 x86_64_linux:      "9e0c60c65ad23af0cfa59dfa65d970850ae9fab8d270c105ffc1b0672af75d60"
   end
 
   depends_on "openssl@3"

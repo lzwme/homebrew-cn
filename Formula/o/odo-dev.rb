@@ -16,16 +16,17 @@ class OdoDev < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "a3ffbddd7bb9552e07d227bfcf52579bb41b809ca2edb7f5072e6c2a64a80d11"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "32ed81abf7115b46fcaf8f41f9b50aa1e4bc907945e575c1ebb26a9f6d30e60c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f0fe7015bd9afd3f18cd9c156ce2f6b21a9dd36c3b410dd759390562e3cf7722"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e6e8bb684ac9d7ec17bfbdda63d976a60316d2c48771d8267f713291142d09bb"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "954ce19cd59112f50bd8c4cd6b29a9fe2906f914995dd05ccdcaed6a96e29424"
-    sha256 cellar: :any_skip_relocation, sonoma:         "70206faecd21320ed843d7dcd0b21db2f94961b2a38c32828d6061bf993c2c4c"
-    sha256 cellar: :any_skip_relocation, ventura:        "295deb9fa449f8987e06ea32e480e6c2a253e617db227ea1db03563d515edf66"
-    sha256 cellar: :any_skip_relocation, monterey:       "3002c28c9f11304b7e42efd58e26e72b972c94c7fadfd55f0bf7d776fd929a42"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "a0ad1eacca24048e6260470cc6d1addc370681d26cb2b82137c84e02f932e226"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b9480c0fa8376a3f2b839965f2d7095fd712dd306a975032479e45419f482679"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "91015804b9e03c8422b9772ac5a367c45c1c319e1bb882abffc6ca42990ea17e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "a3ffbddd7bb9552e07d227bfcf52579bb41b809ca2edb7f5072e6c2a64a80d11"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "32ed81abf7115b46fcaf8f41f9b50aa1e4bc907945e575c1ebb26a9f6d30e60c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "f0fe7015bd9afd3f18cd9c156ce2f6b21a9dd36c3b410dd759390562e3cf7722"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:     "e6e8bb684ac9d7ec17bfbdda63d976a60316d2c48771d8267f713291142d09bb"
+    sha256 cellar: :any_skip_relocation, arm64_monterey:    "954ce19cd59112f50bd8c4cd6b29a9fe2906f914995dd05ccdcaed6a96e29424"
+    sha256 cellar: :any_skip_relocation, sonoma:            "70206faecd21320ed843d7dcd0b21db2f94961b2a38c32828d6061bf993c2c4c"
+    sha256 cellar: :any_skip_relocation, ventura:           "295deb9fa449f8987e06ea32e480e6c2a253e617db227ea1db03563d515edf66"
+    sha256 cellar: :any_skip_relocation, monterey:          "3002c28c9f11304b7e42efd58e26e72b972c94c7fadfd55f0bf7d776fd929a42"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "a0ad1eacca24048e6260470cc6d1addc370681d26cb2b82137c84e02f932e226"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "b9480c0fa8376a3f2b839965f2d7095fd712dd306a975032479e45419f482679"
   end
 
   deprecate! date: "2026-07-17", because: :repo_archived

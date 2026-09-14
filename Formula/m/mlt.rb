@@ -9,12 +9,13 @@ class Mlt < Formula
 
   bottle do
     rebuild 1
-    sha256 arm64_tahoe:   "da7b97a9f64c6d6106cbd82ae611ba51bdc5ee072031f19dac6dfe8fb16d6f74"
-    sha256 arm64_sequoia: "35b0784f25599dac56ec438093aa3876617104c3bdbdd44c3e55aadbf84a18c4"
-    sha256 arm64_sonoma:  "2fb1066b94087ba9369d64710c1c014bf8f0bf38b345dfa109c27d3a0fb3b6a7"
-    sha256 sonoma:        "b40e167e1035ef9157794e90a7ffbf54aabf4e16d047bc6ff94724e859ffac22"
-    sha256 arm64_linux:   "1a3f61c4bd14c1af14057de48edd773ad7becb055da316d0bafecc0991e0602d"
-    sha256 x86_64_linux:  "8aaa1d6afd45f7259db3a639870c0b7eaade242227f96e418d55f0c65de69ebb"
+    sha256 arm64_golden_gate: "e43eb12da915a5817d8572f70c8c6e2d61636478967fcbd5f25f6059c74ecea6"
+    sha256 arm64_tahoe:       "da7b97a9f64c6d6106cbd82ae611ba51bdc5ee072031f19dac6dfe8fb16d6f74"
+    sha256 arm64_sequoia:     "35b0784f25599dac56ec438093aa3876617104c3bdbdd44c3e55aadbf84a18c4"
+    sha256 arm64_sonoma:      "2fb1066b94087ba9369d64710c1c014bf8f0bf38b345dfa109c27d3a0fb3b6a7"
+    sha256 sonoma:            "b40e167e1035ef9157794e90a7ffbf54aabf4e16d047bc6ff94724e859ffac22"
+    sha256 arm64_linux:       "1a3f61c4bd14c1af14057de48edd773ad7becb055da316d0bafecc0991e0602d"
+    sha256 x86_64_linux:      "8aaa1d6afd45f7259db3a639870c0b7eaade242227f96e418d55f0c65de69ebb"
   end
 
   depends_on "cmake" => :build

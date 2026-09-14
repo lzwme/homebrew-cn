@@ -7,12 +7,13 @@ class Trimal < Formula
   head "https://github.com/inab/trimal.git", branch: "trimAl"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1fe61c76b43717d3473edb88ac31f0fe55bf01d25b0aa1dc707eb65eb2cd6cc4"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d28a79bf9a963f31e2da9300c02cd2014c8faa575540bd6516818ec3b27ac5a7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "559d64eafda467297422c13c3086d2d9fe25fb975bc6ab1ea9df513c905e4435"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2be9d1d1dccd3dcb6fb0993819c342136ffce1a8bc2c39cd665d669df5361f51"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8a141a6f76311ad740ed1e6b83d62b031d9c8cc957b803bd8cfc82553d92a7a0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c30eb8f10dbe34b3966809eed08575df37d44030305ef9ce5926b5aa00c838e5"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "5b0c2e66d1f8646c9b32314b248b41953587cd64b8015a2c5449f4ce02fe917c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "1fe61c76b43717d3473edb88ac31f0fe55bf01d25b0aa1dc707eb65eb2cd6cc4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "d28a79bf9a963f31e2da9300c02cd2014c8faa575540bd6516818ec3b27ac5a7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "559d64eafda467297422c13c3086d2d9fe25fb975bc6ab1ea9df513c905e4435"
+    sha256 cellar: :any_skip_relocation, sonoma:            "2be9d1d1dccd3dcb6fb0993819c342136ffce1a8bc2c39cd665d669df5361f51"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "8a141a6f76311ad740ed1e6b83d62b031d9c8cc957b803bd8cfc82553d92a7a0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "c30eb8f10dbe34b3966809eed08575df37d44030305ef9ce5926b5aa00c838e5"
   end
 
   def install

@@ -12,11 +12,12 @@ class Qca < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "1b02c8d91c73e0e3897966b6076078c3aa7cfbd18218020a39f8ecdc10609e30"
-    sha256 cellar: :any, arm64_sequoia: "c188a4063c87cfe175389fa942c472fdb26540b9e67307cada5b3ba3cb86cbbf"
-    sha256 cellar: :any, arm64_sonoma:  "a3a3b1ff0512ededc0b90b684ee4b97f74edf40bd1c4d950bdd430125fca71f9"
-    sha256 cellar: :any, arm64_linux:   "b58863a6431640cab90f23464ef35558366ef02ff00e7063d8b8776c6298dd8a"
-    sha256 cellar: :any, x86_64_linux:  "b9e7fc7481bbc7dae395e1ddf16069539c98666c28fa25745750a7f6bacd1360"
+    sha256 cellar: :any, arm64_golden_gate: "2a7190fb8d7250e45abb6b9a927e6d33927a4e8736ec040b62209a60a3222226"
+    sha256 cellar: :any, arm64_tahoe:       "1b02c8d91c73e0e3897966b6076078c3aa7cfbd18218020a39f8ecdc10609e30"
+    sha256 cellar: :any, arm64_sequoia:     "c188a4063c87cfe175389fa942c472fdb26540b9e67307cada5b3ba3cb86cbbf"
+    sha256 cellar: :any, arm64_sonoma:      "a3a3b1ff0512ededc0b90b684ee4b97f74edf40bd1c4d950bdd430125fca71f9"
+    sha256 cellar: :any, arm64_linux:       "b58863a6431640cab90f23464ef35558366ef02ff00e7063d8b8776c6298dd8a"
+    sha256 cellar: :any, x86_64_linux:      "b9e7fc7481bbc7dae395e1ddf16069539c98666c28fa25745750a7f6bacd1360"
   end
 
   depends_on "cmake" => :build

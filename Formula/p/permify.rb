@@ -7,11 +7,12 @@ class Permify < Formula
   head "https://github.com/Permify/permify.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2a253f7218069e554fd20d68bca1ca7c2a20b8133d50ffbfb070a418ba3a8e7b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2da104d768535feb0b10a58da2cd2a3ee2bae55e02c816e64b2900b1eefa138c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e3c55b1447657b41a12077c3bd2df35dc22ea31b36318a9ae4457f77d7c87e7a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6e3fbc1c551ba56dae750777c9945fc7f805567dd7bb1515f846d46ef0fc6350"
-    sha256 cellar: :any,                 x86_64_linux:  "04c410b53e51607dcf794f24b30cb8ffae0f92bddeebf6301481ebdcfe9df755"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "079060d5d6f3f4572aba67e78c1fc83b13b1164a669a93ca517e6f51ae22a0a3"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "2a253f7218069e554fd20d68bca1ca7c2a20b8133d50ffbfb070a418ba3a8e7b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "2da104d768535feb0b10a58da2cd2a3ee2bae55e02c816e64b2900b1eefa138c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "e3c55b1447657b41a12077c3bd2df35dc22ea31b36318a9ae4457f77d7c87e7a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "6e3fbc1c551ba56dae750777c9945fc7f805567dd7bb1515f846d46ef0fc6350"
+    sha256 cellar: :any,                 x86_64_linux:      "04c410b53e51607dcf794f24b30cb8ffae0f92bddeebf6301481ebdcfe9df755"
   end
 
   depends_on "go" => :build

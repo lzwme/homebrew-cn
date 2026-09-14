@@ -6,12 +6,13 @@ class Qcoro6 < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "e9ed424fd8ae02a63a497b56cc2572a003ce650d53431b0860581c77c223322b"
-    sha256 cellar: :any,                 arm64_sequoia: "7bddcf4fa5cb6f63f5135dbb6a0da3c71d864fe4875dcbf307c932d62cc1a027"
-    sha256 cellar: :any,                 arm64_sonoma:  "ae33df4621078549adf4b96608d5c0ec2688254fce0726bee3022ccd5915337f"
-    sha256 cellar: :any,                 sonoma:        "54f735fe156db62ac5b1d8520bda73007e41c87987f872be613f29422339e7a5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8ff965a3235d3c787027d3efb251f8c0ec492ecaa24f8533321ef1c5851dc727"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ce84877e4962f78f2beead7ca678a0fe4a5f0a0e0ab99de5328c9099a8445585"
+    sha256 cellar: :any,                 arm64_golden_gate: "7d7784ebeb08734dbc0d99c0966427d3784809be9e31c53c5b02a5618bcefea0"
+    sha256 cellar: :any,                 arm64_tahoe:       "e9ed424fd8ae02a63a497b56cc2572a003ce650d53431b0860581c77c223322b"
+    sha256 cellar: :any,                 arm64_sequoia:     "7bddcf4fa5cb6f63f5135dbb6a0da3c71d864fe4875dcbf307c932d62cc1a027"
+    sha256 cellar: :any,                 arm64_sonoma:      "ae33df4621078549adf4b96608d5c0ec2688254fce0726bee3022ccd5915337f"
+    sha256 cellar: :any,                 sonoma:            "54f735fe156db62ac5b1d8520bda73007e41c87987f872be613f29422339e7a5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "8ff965a3235d3c787027d3efb251f8c0ec492ecaa24f8533321ef1c5851dc727"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "ce84877e4962f78f2beead7ca678a0fe4a5f0a0e0ab99de5328c9099a8445585"
   end
 
   depends_on "cmake" => [:build, :test]

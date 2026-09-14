@@ -16,12 +16,13 @@ class Scorecard < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "67d18c35608006abd0c078f9c98da51256ba6b159ed3fea77155bcd69b71ef8e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "20a23690754ffdc36a7420865bedb257e5329ba0b628c87958823b66f7b1a994"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4c540379921b421b86c879fcd8167eefaae143063ba3898a5abaedb80d7b0cf5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "eedcab40b54e6de161675bd1f981715d8934400e2b206a5ee8783e410cad53fc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a2ce3626e278f23f9c521eba6389cacd79f81b03fc39364fea07b92d6db608dd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3279aec0409aff3b2868d943fc8e9a88c201f328c29aa69b0f4d20673359155e"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "398675b188a2d55be6ae2038bd3cb3f6e7070013574f5b378e23ecbe8d242422"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "67d18c35608006abd0c078f9c98da51256ba6b159ed3fea77155bcd69b71ef8e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "20a23690754ffdc36a7420865bedb257e5329ba0b628c87958823b66f7b1a994"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "4c540379921b421b86c879fcd8167eefaae143063ba3898a5abaedb80d7b0cf5"
+    sha256 cellar: :any_skip_relocation, sonoma:            "eedcab40b54e6de161675bd1f981715d8934400e2b206a5ee8783e410cad53fc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "a2ce3626e278f23f9c521eba6389cacd79f81b03fc39364fea07b92d6db608dd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "3279aec0409aff3b2868d943fc8e9a88c201f328c29aa69b0f4d20673359155e"
   end
 
   depends_on "go" => :build

@@ -8,12 +8,13 @@ class Typioca < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "31591811d9bcd2c334d1c82cd42b775dcda3fc16434fd1281bf3ec26f96c91b0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "31591811d9bcd2c334d1c82cd42b775dcda3fc16434fd1281bf3ec26f96c91b0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "31591811d9bcd2c334d1c82cd42b775dcda3fc16434fd1281bf3ec26f96c91b0"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7a37ade2bea15ebd66b6dd3115606e1cd073a236e7591dbd3d4e70f382861f1b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2674e97e8860983277f7d6aa91543e5f809ec1790236640f6f64f472ed3dbafb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f8ea7d501020dd958c5a99eb9d82f4f9d9f46158483655eb67439c2a00b2db4a"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "5670d0ba037b3f8c41b6f0a59dbe3b07bdfbbe99941d3681208f67909a22238f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "31591811d9bcd2c334d1c82cd42b775dcda3fc16434fd1281bf3ec26f96c91b0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "31591811d9bcd2c334d1c82cd42b775dcda3fc16434fd1281bf3ec26f96c91b0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "31591811d9bcd2c334d1c82cd42b775dcda3fc16434fd1281bf3ec26f96c91b0"
+    sha256 cellar: :any_skip_relocation, sonoma:            "7a37ade2bea15ebd66b6dd3115606e1cd073a236e7591dbd3d4e70f382861f1b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "2674e97e8860983277f7d6aa91543e5f809ec1790236640f6f64f472ed3dbafb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "f8ea7d501020dd958c5a99eb9d82f4f9d9f46158483655eb67439c2a00b2db4a"
   end
 
   depends_on "go" => :build

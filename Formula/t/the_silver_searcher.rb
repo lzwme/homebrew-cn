@@ -8,12 +8,13 @@ class TheSilverSearcher < Formula
 
   bottle do
     rebuild 2
-    sha256 cellar: :any,                 arm64_tahoe:   "9e15a76d577686e2f6157918b498668861690527fb40186768b91ed2a6e423e5"
-    sha256 cellar: :any,                 arm64_sequoia: "ce0f3d875b0d467b70050499f70e718e299bea7757798828bfa724c33de78cf3"
-    sha256 cellar: :any,                 arm64_sonoma:  "14860b37f0568a9b254a20823c6a72bfcde847440a6c0d5243459aaa5afab980"
-    sha256 cellar: :any,                 sonoma:        "1dd806566cbca47602b78add31578b9a9aa79b175d9a210a5d260e210e44529d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c6bd4a0bc3759bf49f2fc549dc9143c8488632199d7c193cfe0e5bf4d67f62fe"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6905dec85c2cbb898f1d77a46524da036ac3935e5c192d2331dae88403604b9e"
+    sha256 cellar: :any,                 arm64_golden_gate: "f9e7332efd1236d215a74b0e36542a33ec1f1c3b12cc2cf86a0497f62822cfb8"
+    sha256 cellar: :any,                 arm64_tahoe:       "9e15a76d577686e2f6157918b498668861690527fb40186768b91ed2a6e423e5"
+    sha256 cellar: :any,                 arm64_sequoia:     "ce0f3d875b0d467b70050499f70e718e299bea7757798828bfa724c33de78cf3"
+    sha256 cellar: :any,                 arm64_sonoma:      "14860b37f0568a9b254a20823c6a72bfcde847440a6c0d5243459aaa5afab980"
+    sha256 cellar: :any,                 sonoma:            "1dd806566cbca47602b78add31578b9a9aa79b175d9a210a5d260e210e44529d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "c6bd4a0bc3759bf49f2fc549dc9143c8488632199d7c193cfe0e5bf4d67f62fe"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "6905dec85c2cbb898f1d77a46524da036ac3935e5c192d2331dae88403604b9e"
   end
 
   depends_on "autoconf" => :build

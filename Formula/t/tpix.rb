@@ -7,12 +7,13 @@ class Tpix < Formula
   head "https://github.com/jesvedberg/tpix.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3d87b224ced00e835b796c34ed8a01440b0874174f6c3bc872e77f01c31d848f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0a652e7455804c8862979ae45580498901bfcf07d08fa63b9899183efd50b9ca"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "23b065fcf26d392475c389f55d51e4291b9b31875c9dd008c82e903868c4d633"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ed51a1847548c67c760ed0afec619a32ff7c51756cf5fc10717def6dd56e90fd"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b3ea9eff7220055aa15a36c5c9848b235a447f6e4374b9c91febe6f45f358549"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b797cc1be957d9b85f439bf5ce1e5f26a689f34025513019378f117006cfdfec"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "0692ba2be84eddbb9d48da014a4436b16e348ba629b1d22058789c43cb6d6840"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "3d87b224ced00e835b796c34ed8a01440b0874174f6c3bc872e77f01c31d848f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "0a652e7455804c8862979ae45580498901bfcf07d08fa63b9899183efd50b9ca"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "23b065fcf26d392475c389f55d51e4291b9b31875c9dd008c82e903868c4d633"
+    sha256 cellar: :any_skip_relocation, sonoma:            "ed51a1847548c67c760ed0afec619a32ff7c51756cf5fc10717def6dd56e90fd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "b3ea9eff7220055aa15a36c5c9848b235a447f6e4374b9c91febe6f45f358549"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "b797cc1be957d9b85f439bf5ce1e5f26a689f34025513019378f117006cfdfec"
   end
 
   depends_on "nim" => :build

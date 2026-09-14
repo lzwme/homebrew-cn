@@ -8,14 +8,15 @@ class Glui < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "291a1781d586b21b5ff3260f10e82cf9604a364ff5396b5eba33a28e6fce90cb"
-    sha256 cellar: :any,                 arm64_sequoia: "8571bc2053756921d417d2ffbd49259fcc18f9068f3647cbfeaf4c310cf1f23d"
-    sha256 cellar: :any,                 arm64_sonoma:  "b3127c49849ab12bb7ef689a8bf6191012175b219249166fef57f9dc540ef3e3"
-    sha256 cellar: :any,                 arm64_ventura: "61a624ac60981cb7dbbbf7c4049bb3d0b19285c732d9178219932641c9fa0799"
-    sha256 cellar: :any,                 sonoma:        "723eecbda46e12ba8d1c0c65c4d582bc86b8240e893656695d1392ac4dc10e40"
-    sha256 cellar: :any,                 ventura:       "dd8fd33cb3acc7d02eb0506368fde6bab453eed79ea0d5e8de13ad23dd0874c1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c229cda6f60b66c2f598d50dbf71a9dda1099d731c16f5d70ac7704c0c19f112"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b399324e278b5f0ec7d1dece5994eb01384929dfbb85893743b97c929467a743"
+    sha256 cellar: :any,                 arm64_golden_gate: "ef22111c3cef9fa7240cbf9a794b87b7a04d8f0b34382766a6fdce83e5b0ebdd"
+    sha256 cellar: :any,                 arm64_tahoe:       "291a1781d586b21b5ff3260f10e82cf9604a364ff5396b5eba33a28e6fce90cb"
+    sha256 cellar: :any,                 arm64_sequoia:     "8571bc2053756921d417d2ffbd49259fcc18f9068f3647cbfeaf4c310cf1f23d"
+    sha256 cellar: :any,                 arm64_sonoma:      "b3127c49849ab12bb7ef689a8bf6191012175b219249166fef57f9dc540ef3e3"
+    sha256 cellar: :any,                 arm64_ventura:     "61a624ac60981cb7dbbbf7c4049bb3d0b19285c732d9178219932641c9fa0799"
+    sha256 cellar: :any,                 sonoma:            "723eecbda46e12ba8d1c0c65c4d582bc86b8240e893656695d1392ac4dc10e40"
+    sha256 cellar: :any,                 ventura:           "dd8fd33cb3acc7d02eb0506368fde6bab453eed79ea0d5e8de13ad23dd0874c1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "c229cda6f60b66c2f598d50dbf71a9dda1099d731c16f5d70ac7704c0c19f112"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "b399324e278b5f0ec7d1dece5994eb01384929dfbb85893743b97c929467a743"
   end
 
   depends_on "cmake" => :build
@@ -74,11 +75,8 @@ class Glui < Formula
       system ENV.cxx, "-framework", "GLUT", "-framework", "OpenGL", "-I#{include}",
         "-L#{lib}", "-lglui", "-std=c++11", "test.cpp"
 
-      # Tahoe running is headless for now, maybe remove this later
-      # ("GLUT Fatal Error: redisplay needed for window 1, but no display callback")
-      return if MacOS.version == :tahoe && ENV["HOMEBREW_GITHUB_ACTIONS"]
-
-      system "./a.out"
+      # GLUT needs a WindowServer connection, which the test sandbox denies
+      return
     else
       (testpath/"test.cpp").write <<~CPP
         #include <cassert>

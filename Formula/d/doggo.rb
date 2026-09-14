@@ -17,6 +17,13 @@ class Doggo < Formula
 
   depends_on "go" => :build
 
+  # `test do` block performs DNS lookups
+  deny_network_access! [:build, :postinstall]
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ldflags = "-X main.buildVersion=#{version} -X main.buildDate=#{time.iso8601}"
     system "go", "build", *std_go_args(ldflags:), "./cmd/doggo"

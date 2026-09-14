@@ -8,12 +8,13 @@ class Wishlist < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fd6459f6fa4774495cadc75ab3fb08547c72126193931309609eb2e9eb872061"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fd6459f6fa4774495cadc75ab3fb08547c72126193931309609eb2e9eb872061"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fd6459f6fa4774495cadc75ab3fb08547c72126193931309609eb2e9eb872061"
-    sha256 cellar: :any_skip_relocation, sonoma:        "730832deb846f179d320f14d2e1c52c19103d4c8a3cd3285b914a87036bcd021"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "190c7e8db9f1d08cf2440ceab664fbcaeec77bba32e425ca8fdcadb1f17c67e0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "273cf16e89e4b739b246f4c949c4ee4c626256900cfb3ea83ecb68af13dec649"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "ca7d9b0b7dbcb4e0f69e816bf8d29584ebb758d424ab2a3ae2563ba2b4cf666e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "fd6459f6fa4774495cadc75ab3fb08547c72126193931309609eb2e9eb872061"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "fd6459f6fa4774495cadc75ab3fb08547c72126193931309609eb2e9eb872061"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "fd6459f6fa4774495cadc75ab3fb08547c72126193931309609eb2e9eb872061"
+    sha256 cellar: :any_skip_relocation, sonoma:            "730832deb846f179d320f14d2e1c52c19103d4c8a3cd3285b914a87036bcd021"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "190c7e8db9f1d08cf2440ceab664fbcaeec77bba32e425ca8fdcadb1f17c67e0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "273cf16e89e4b739b246f4c949c4ee4c626256900cfb3ea83ecb68af13dec649"
   end
 
   depends_on "go" => :build

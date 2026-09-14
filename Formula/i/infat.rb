@@ -25,14 +25,9 @@ class Infat < Formula
   end
 
   test do
-    if OS.mac? && MacOS.version >= :tahoe
-      # From 26.4, `--ext` seems no longer work.
-      # Issue ref: https://github.com/philocalyst/infat/issues/42
-      output = shell_output("#{bin}/infat set TextEdit --type public.plain-text")
-      assert_match "Set type public.plain-text", output
-    else
-      output = shell_output("#{bin}/infat set TextEdit --ext txt")
-      assert_match "Set .txt", output
-    end
+    # `set` needs Launch Services write access, which the sandbox denies, and would change the default opener
+    output = shell_output("#{bin}/infat info --app TextEdit")
+    assert_match "com.apple.TextEdit", output
+    assert_match "public.rtf", output
   end
 end

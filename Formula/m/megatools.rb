@@ -11,14 +11,15 @@ class Megatools < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "7217cae7f353389333d5f34a1dfbf0d5327372d0a869641a6f38a305a0e2fa42"
-    sha256 cellar: :any, arm64_sequoia: "cbdaf47635fdec1fc36736de8b84d3a96d9eb83da463f0db512d138464009e2f"
-    sha256 cellar: :any, arm64_sonoma:  "b6f04ece0c4f9db9b77383d8bbf83497f83108f64c94db171a7841c7311c7cf0"
-    sha256 cellar: :any, arm64_ventura: "ece0dd5f77f6c087e65c8ea1a78a770a1d1fbeb4fda0f0271cc89b107fce63f7"
-    sha256 cellar: :any, sonoma:        "c95b1c27bf14bccfb31ea2ea00540910a81b00861176b2facc32ae1d392628ca"
-    sha256 cellar: :any, ventura:       "134758d6274b2aba59587c780f34b60b7ad7efa36e54c9ddb5a558f3e8ad43a7"
-    sha256               arm64_linux:   "3cf9bf34c4d780c22dcd0aed0d34d5d9f3ee3f1df79fd96c2db62f07f2054147"
-    sha256               x86_64_linux:  "bb702e9c4d883d99115f1003bac6dc09f0717ee64c9b52ca50b5e91a36d4cbe0"
+    sha256 cellar: :any, arm64_golden_gate: "3e1862bb353ca9b71c7bddec7faaece7d475de6f2d60631fd16e203ce1c72e23"
+    sha256 cellar: :any, arm64_tahoe:       "7217cae7f353389333d5f34a1dfbf0d5327372d0a869641a6f38a305a0e2fa42"
+    sha256 cellar: :any, arm64_sequoia:     "cbdaf47635fdec1fc36736de8b84d3a96d9eb83da463f0db512d138464009e2f"
+    sha256 cellar: :any, arm64_sonoma:      "b6f04ece0c4f9db9b77383d8bbf83497f83108f64c94db171a7841c7311c7cf0"
+    sha256 cellar: :any, arm64_ventura:     "ece0dd5f77f6c087e65c8ea1a78a770a1d1fbeb4fda0f0271cc89b107fce63f7"
+    sha256 cellar: :any, sonoma:            "c95b1c27bf14bccfb31ea2ea00540910a81b00861176b2facc32ae1d392628ca"
+    sha256 cellar: :any, ventura:           "134758d6274b2aba59587c780f34b60b7ad7efa36e54c9ddb5a558f3e8ad43a7"
+    sha256               arm64_linux:       "3cf9bf34c4d780c22dcd0aed0d34d5d9f3ee3f1df79fd96c2db62f07f2054147"
+    sha256               x86_64_linux:      "bb702e9c4d883d99115f1003bac6dc09f0717ee64c9b52ca50b5e91a36d4cbe0"
   end
 
   depends_on "meson" => :build

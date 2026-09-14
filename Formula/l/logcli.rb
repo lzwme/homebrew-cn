@@ -11,15 +11,23 @@ class Logcli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4b684ea41575dfcd24408d5e31def521be4aef604ceae8120aba7f482c7c2d60"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dbe3979cb8530c6c914c7d892a2530faaeab8523d8d60f0faf2deae3796a2e04"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3450cba9e453a6978d86fe44dc4b973f427384477f7a1b284b1fd014223b55b8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "162ee00d38cd7b3cc161488b66cea64e53dd8845d422a25799824d3ca316eece"
-    sha256 cellar: :any,                 x86_64_linux:  "1d55b28c1f9207d3cac3afbb8282891612c4c538e07db16b184dd294e01c6203"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "742d68ae76b41e2924268532bd1d54860dad77392f7f5a2d35b7b81ff56da230"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "4b684ea41575dfcd24408d5e31def521be4aef604ceae8120aba7f482c7c2d60"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "dbe3979cb8530c6c914c7d892a2530faaeab8523d8d60f0faf2deae3796a2e04"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "3450cba9e453a6978d86fe44dc4b973f427384477f7a1b284b1fd014223b55b8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "162ee00d38cd7b3cc161488b66cea64e53dd8845d422a25799824d3ca316eece"
+    sha256 cellar: :any,                 x86_64_linux:      "1d55b28c1f9207d3cac3afbb8282891612c4c538e07db16b184dd294e01c6203"
   end
 
   depends_on "go" => :build
   depends_on "loki" => :test
+
+  # `test do` block runs a local loki server
+  deny_network_access! [:build, :postinstall]
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     ldflags = %W[

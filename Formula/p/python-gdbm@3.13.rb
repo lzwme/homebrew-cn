@@ -10,13 +10,14 @@ class PythonGdbmAT313 < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "08c8957a439aa18148e25bf288c9ae6fcc21164572bbd88e1bd2e0b1d1dae9b3"
-    sha256 cellar: :any, arm64_sequoia: "43e9f099e64269efafa573690b2632c6a8a6feb1d9ebef660a5e690cf7c2863e"
-    sha256 cellar: :any, arm64_sonoma:  "2505cbe2f5320745f16171e3f6af40b7fa3e599ad4bd1476a94e3e094db5b939"
-    sha256 cellar: :any, sequoia:       "d7b284c6d15333f1ba1dfd0783100abebf0d34eaafab1e859d356266a334ec8e"
-    sha256 cellar: :any, sonoma:        "880b031eaf1b2b4f6a0ec3aaab9d649a10f2394cd5af95d91dda4c8cfb6beb7d"
-    sha256               arm64_linux:   "4e2d38ae9d6810db6f032b16bde104426e37ef55f16d131d47fa5ff15e1cc8b5"
-    sha256               x86_64_linux:  "c73f432fcbd694ad00e6f3a24ca89487e35cc4559d19e03eea8e980bf078f350"
+    sha256 cellar: :any, arm64_golden_gate: "2aa7d9673b47e4fbe379096358f1f1ce9444e7c735118c9e09a16870614d6d34"
+    sha256 cellar: :any, arm64_tahoe:       "08c8957a439aa18148e25bf288c9ae6fcc21164572bbd88e1bd2e0b1d1dae9b3"
+    sha256 cellar: :any, arm64_sequoia:     "43e9f099e64269efafa573690b2632c6a8a6feb1d9ebef660a5e690cf7c2863e"
+    sha256 cellar: :any, arm64_sonoma:      "2505cbe2f5320745f16171e3f6af40b7fa3e599ad4bd1476a94e3e094db5b939"
+    sha256 cellar: :any, sequoia:           "d7b284c6d15333f1ba1dfd0783100abebf0d34eaafab1e859d356266a334ec8e"
+    sha256 cellar: :any, sonoma:            "880b031eaf1b2b4f6a0ec3aaab9d649a10f2394cd5af95d91dda4c8cfb6beb7d"
+    sha256               arm64_linux:       "4e2d38ae9d6810db6f032b16bde104426e37ef55f16d131d47fa5ff15e1cc8b5"
+    sha256               x86_64_linux:      "c73f432fcbd694ad00e6f3a24ca89487e35cc4559d19e03eea8e980bf078f350"
   end
 
   # https://devguide.python.org/versions/#versions

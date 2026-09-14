@@ -6,12 +6,13 @@ class Vexctl < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0bc558faeddb53ca3757ebd389f6375fd7496715ad291a55175a4105011a022b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0bc558faeddb53ca3757ebd389f6375fd7496715ad291a55175a4105011a022b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0bc558faeddb53ca3757ebd389f6375fd7496715ad291a55175a4105011a022b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "49098be7d124647c73f0c51129f3670eba16f80e67f48f00d3d2f9a2c0579d49"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "123462400d6d82312c643e4b8b298df0f1aa96e8086cb2aa9db5b1537184e71c"
-    sha256 cellar: :any,                 x86_64_linux:  "e1c377bef98b3a2663c260aac54ef44127c04aedf036153c08e0d2a0c42367ae"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "c89a300ad937726a7a06e582220e57532fa4d1db5636e969d6171af6898c36ce"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "0bc558faeddb53ca3757ebd389f6375fd7496715ad291a55175a4105011a022b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "0bc558faeddb53ca3757ebd389f6375fd7496715ad291a55175a4105011a022b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "0bc558faeddb53ca3757ebd389f6375fd7496715ad291a55175a4105011a022b"
+    sha256 cellar: :any_skip_relocation, sonoma:            "49098be7d124647c73f0c51129f3670eba16f80e67f48f00d3d2f9a2c0579d49"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "123462400d6d82312c643e4b8b298df0f1aa96e8086cb2aa9db5b1537184e71c"
+    sha256 cellar: :any,                 x86_64_linux:      "e1c377bef98b3a2663c260aac54ef44127c04aedf036153c08e0d2a0c42367ae"
   end
 
   depends_on "go" => :build

@@ -12,12 +12,13 @@ class S2geometry < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "0426b4c5e9017fbe4afa6fbfbfb65293f2d80555ddac3b3ceaeb00313d32d240"
-    sha256 cellar: :any, arm64_sequoia: "32a5490b6ae786d73a902b611d33301bbfc94e9a12d06f3b40622fd175f11b8c"
-    sha256 cellar: :any, arm64_sonoma:  "096a3c6fad687de052197824dcb43020e6646d626717a2da9f6823aebc84d8f3"
-    sha256 cellar: :any, sonoma:        "af115ca24f307db843213dc2881cb875fece946bc69e6de0eada2ea7e57bbb52"
-    sha256 cellar: :any, arm64_linux:   "78f0e76dc592932a9ea5a3da064a8608c97a212adbd9023280ce0870ef0cc20e"
-    sha256 cellar: :any, x86_64_linux:  "293de6f03f83cf9db424ae74d343ab44cb3a5f72f67990a34d3064bd384f81db"
+    sha256 cellar: :any, arm64_golden_gate: "4ecbc4df7b6abc8521ce16d71bfc571a39617a09279410fdea70eff18abdbc85"
+    sha256 cellar: :any, arm64_tahoe:       "0426b4c5e9017fbe4afa6fbfbfb65293f2d80555ddac3b3ceaeb00313d32d240"
+    sha256 cellar: :any, arm64_sequoia:     "32a5490b6ae786d73a902b611d33301bbfc94e9a12d06f3b40622fd175f11b8c"
+    sha256 cellar: :any, arm64_sonoma:      "096a3c6fad687de052197824dcb43020e6646d626717a2da9f6823aebc84d8f3"
+    sha256 cellar: :any, sonoma:            "af115ca24f307db843213dc2881cb875fece946bc69e6de0eada2ea7e57bbb52"
+    sha256 cellar: :any, arm64_linux:       "78f0e76dc592932a9ea5a3da064a8608c97a212adbd9023280ce0870ef0cc20e"
+    sha256 cellar: :any, x86_64_linux:      "293de6f03f83cf9db424ae74d343ab44cb3a5f72f67990a34d3064bd384f81db"
   end
 
   depends_on "cmake" => [:build, :test]

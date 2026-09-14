@@ -7,12 +7,13 @@ class Oauth2l < Formula
   head "https://github.com/google/oauth2l.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "08a93e75b1713bf15e5d15d65e8cbfbc963937ddd1976ed30c58d182a41ac088"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "08a93e75b1713bf15e5d15d65e8cbfbc963937ddd1976ed30c58d182a41ac088"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "08a93e75b1713bf15e5d15d65e8cbfbc963937ddd1976ed30c58d182a41ac088"
-    sha256 cellar: :any_skip_relocation, sonoma:        "33b25b3413746e6c589445aab327bd2f290f2a000fee365c2b9ab378c8c724b2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5a52db67d26cc00ed40f0e958412aabd5cc77553b37309af67cab03dbaa09bdb"
-    sha256 cellar: :any,                 x86_64_linux:  "c5af25bea788fa75e06325500cef1c3a9c2b5cd92f02914a0b8eb672da55ed6c"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "5562b5328f7797eee976a1e2c08fdc6d28492e20a4b05a084244659ca47c83fc"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "08a93e75b1713bf15e5d15d65e8cbfbc963937ddd1976ed30c58d182a41ac088"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "08a93e75b1713bf15e5d15d65e8cbfbc963937ddd1976ed30c58d182a41ac088"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "08a93e75b1713bf15e5d15d65e8cbfbc963937ddd1976ed30c58d182a41ac088"
+    sha256 cellar: :any_skip_relocation, sonoma:            "33b25b3413746e6c589445aab327bd2f290f2a000fee365c2b9ab378c8c724b2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "5a52db67d26cc00ed40f0e958412aabd5cc77553b37309af67cab03dbaa09bdb"
+    sha256 cellar: :any,                 x86_64_linux:      "c5af25bea788fa75e06325500cef1c3a9c2b5cd92f02914a0b8eb672da55ed6c"
   end
 
   depends_on "go" => :build

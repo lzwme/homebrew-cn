@@ -54,10 +54,11 @@ class PgPartman < Formula
 
         shared_preload_libraries = 'pg_partman_bgw'
         port = #{port}
+        unix_socket_directories = '#{testpath}'
       EOS
       system pg_ctl, "start", "-D", datadir, "-l", testpath/"log-#{postgresql.name}"
       begin
-        system psql, "-p", port.to_s, "-c", "CREATE EXTENSION \"pg_partman\";", "postgres"
+        system psql, "-h", testpath, "-p", port.to_s, "-c", "CREATE EXTENSION \"pg_partman\";", "postgres"
       ensure
         system pg_ctl, "stop", "-D", datadir
       end

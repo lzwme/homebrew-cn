@@ -16,6 +16,12 @@ class Conftest < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ldflags = "-X github.com/open-policy-agent/conftest/internal/commands.version=#{version}"
     system "go", "build", *std_go_args(ldflags:)

@@ -13,12 +13,13 @@ class Wv < Formula
 
   bottle do
     rebuild 1
-    sha256 arm64_tahoe:   "0b1a7b66a5369c2e739d1b1b39315a0813672e1e3a314e9656d4e3be6bf4dece"
-    sha256 arm64_sequoia: "c0ae3245bfab0575b61cd15afeb41080e5e8de9c0c032855b882e2186faec7ac"
-    sha256 arm64_sonoma:  "e1a3352d9798bbd49a719cf55050f1f68982b6e57b361bc380dd7ef1545079ec"
-    sha256 sonoma:        "708f70cc17691035a34e92db0885c6e868f44ce29a6f224f5630ca10cad1b42a"
-    sha256 arm64_linux:   "ff673a4f8e3c22e69aa7c4692145d0a5a48bc60a32eced373d875dcde0a045c1"
-    sha256 x86_64_linux:  "6f66b42660930fafb95f88fde932773f48f9742b8dfb94c2a5a96e78a89fe7a8"
+    sha256 arm64_golden_gate: "7ae681c7ef375b89a1855ea10e7b6fcb3ef5e2af8d1fecbf05811b7bb9b96b6e"
+    sha256 arm64_tahoe:       "0b1a7b66a5369c2e739d1b1b39315a0813672e1e3a314e9656d4e3be6bf4dece"
+    sha256 arm64_sequoia:     "c0ae3245bfab0575b61cd15afeb41080e5e8de9c0c032855b882e2186faec7ac"
+    sha256 arm64_sonoma:      "e1a3352d9798bbd49a719cf55050f1f68982b6e57b361bc380dd7ef1545079ec"
+    sha256 sonoma:            "708f70cc17691035a34e92db0885c6e868f44ce29a6f224f5630ca10cad1b42a"
+    sha256 arm64_linux:       "ff673a4f8e3c22e69aa7c4692145d0a5a48bc60a32eced373d875dcde0a045c1"
+    sha256 x86_64_linux:      "6f66b42660930fafb95f88fde932773f48f9742b8dfb94c2a5a96e78a89fe7a8"
   end
 
   depends_on "pkgconf" => :build

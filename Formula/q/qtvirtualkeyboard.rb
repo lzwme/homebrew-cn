@@ -18,11 +18,12 @@ class Qtvirtualkeyboard < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "6a1c7226cd8627a948a74fbc426c77393a28a09ccc0a6d77e64aa3519664450b"
-    sha256 cellar: :any, arm64_sequoia: "42b86e563d8dbb33512955d80209e043157192aba8521b3c19a505a027317078"
-    sha256 cellar: :any, arm64_sonoma:  "6e7b1c1e1f7a079410a84f37a0851773ad083858926d95e26d7de21b831cc7d1"
-    sha256 cellar: :any, arm64_linux:   "6e44d6fd36b40c7c5404827fb6bc1a83bf0f0af7ae9f96229242e256b7d34104"
-    sha256 cellar: :any, x86_64_linux:  "d69f259e9a8430cdf0c83b36b5b7c4a3223718946e9aed5562a38607e862396c"
+    sha256 cellar: :any, arm64_golden_gate: "19da0f705c6585de549792b0bcde52024075c266bfcf735c7ba8310ec91fd8e9"
+    sha256 cellar: :any, arm64_tahoe:       "6a1c7226cd8627a948a74fbc426c77393a28a09ccc0a6d77e64aa3519664450b"
+    sha256 cellar: :any, arm64_sequoia:     "42b86e563d8dbb33512955d80209e043157192aba8521b3c19a505a027317078"
+    sha256 cellar: :any, arm64_sonoma:      "6e7b1c1e1f7a079410a84f37a0851773ad083858926d95e26d7de21b831cc7d1"
+    sha256 cellar: :any, arm64_linux:       "6e44d6fd36b40c7c5404827fb6bc1a83bf0f0af7ae9f96229242e256b7d34104"
+    sha256 cellar: :any, x86_64_linux:      "d69f259e9a8430cdf0c83b36b5b7c4a3223718946e9aed5562a38607e862396c"
   end
 
   depends_on "cmake" => :build

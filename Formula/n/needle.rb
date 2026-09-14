@@ -15,12 +15,13 @@ class Needle < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "2cef1302f96a215e8126af9e3ed2c714f7763bbe73b64eb47c68954869cdf350"
-    sha256 cellar: :any, arm64_sequoia: "cbcf9f7c69f032ab6ff3a83bad525a86ab607985680870ea905f9fd8d413734b"
-    sha256 cellar: :any, arm64_sonoma:  "11b37daadfe93a3be6fe5605b760afbe130d6944100e62f0ceb2b75fce67110d"
-    sha256 cellar: :any, arm64_ventura: "dba912fe6c6eb664a0b43092a27e8bb9b9ffab66cea81e559f01bec356eb8265"
-    sha256 cellar: :any, sonoma:        "2297f9b535ac16dc443f30f5894772c85c70ec3bb4502b4520d3d93c4ad3ed09"
-    sha256 cellar: :any, ventura:       "9a4f63352a659ff766fdd61e5f8dbe71940c024a25f879ff07f75089fe3a19be"
+    sha256 cellar: :any, arm64_golden_gate: "a6d4dda423b53f2d12d70878df0e62015d58f81efa506e4c4c17f72641e15864"
+    sha256 cellar: :any, arm64_tahoe:       "2cef1302f96a215e8126af9e3ed2c714f7763bbe73b64eb47c68954869cdf350"
+    sha256 cellar: :any, arm64_sequoia:     "cbcf9f7c69f032ab6ff3a83bad525a86ab607985680870ea905f9fd8d413734b"
+    sha256 cellar: :any, arm64_sonoma:      "11b37daadfe93a3be6fe5605b760afbe130d6944100e62f0ceb2b75fce67110d"
+    sha256 cellar: :any, arm64_ventura:     "dba912fe6c6eb664a0b43092a27e8bb9b9ffab66cea81e559f01bec356eb8265"
+    sha256 cellar: :any, sonoma:            "2297f9b535ac16dc443f30f5894772c85c70ec3bb4502b4520d3d93c4ad3ed09"
+    sha256 cellar: :any, ventura:           "9a4f63352a659ff766fdd61e5f8dbe71940c024a25f879ff07f75089fe3a19be"
   end
 
   depends_on :macos

@@ -11,12 +11,13 @@ class Shyaml < Formula
 
   bottle do
     rebuild 6
-    sha256 cellar: :any,                 arm64_tahoe:   "84f85648e8f7a9e3b6d23bc774b4035e68987ec320afa9a26681a34984f54606"
-    sha256 cellar: :any,                 arm64_sequoia: "12253411fc0733aeb8580e76eb8c498e968d5fbf26fc2c9ee0a969ed3d81f896"
-    sha256 cellar: :any,                 arm64_sonoma:  "8bc9980e56a28c35bb9e73b018296a99a2d327d00886079362e13074516bcf6c"
-    sha256 cellar: :any,                 sonoma:        "53720f2b4c3d835c02119ee91e3108b5aa9adda2ec3fda2964d672a8c42f11ac"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "06fdc63c06d8747e6865af44a5e5b93a6c69688b03957c5d2e5f8bd77f98d52d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "94fa46b2c7b21233b659a07743538eca11873d6787515cf74b98b8632e014abf"
+    sha256 cellar: :any,                 arm64_golden_gate: "1a7cdce91580867298e736350ba55b6795bd9ef1199dc64da7ace490676c2c34"
+    sha256 cellar: :any,                 arm64_tahoe:       "84f85648e8f7a9e3b6d23bc774b4035e68987ec320afa9a26681a34984f54606"
+    sha256 cellar: :any,                 arm64_sequoia:     "12253411fc0733aeb8580e76eb8c498e968d5fbf26fc2c9ee0a969ed3d81f896"
+    sha256 cellar: :any,                 arm64_sonoma:      "8bc9980e56a28c35bb9e73b018296a99a2d327d00886079362e13074516bcf6c"
+    sha256 cellar: :any,                 sonoma:            "53720f2b4c3d835c02119ee91e3108b5aa9adda2ec3fda2964d672a8c42f11ac"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "06fdc63c06d8747e6865af44a5e5b93a6c69688b03957c5d2e5f8bd77f98d52d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "94fa46b2c7b21233b659a07743538eca11873d6787515cf74b98b8632e014abf"
   end
 
   # Last release in 2020, needs patch to build with modern setuptools

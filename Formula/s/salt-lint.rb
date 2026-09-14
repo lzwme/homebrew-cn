@@ -9,12 +9,13 @@ class SaltLint < Formula
 
   bottle do
     rebuild 5
-    sha256 cellar: :any,                 arm64_tahoe:   "b606364c1a88093ebede5792fbd635b2341e88be4445bcdd3df4e5a86311bf72"
-    sha256 cellar: :any,                 arm64_sequoia: "66e97e657e2f63d010ae22eca72be97f2852ff05c766875d979bed46d6c3a97a"
-    sha256 cellar: :any,                 arm64_sonoma:  "8a714043bf26e236545a4c7b14a80618eb192757176b632678e8c3077040798f"
-    sha256 cellar: :any,                 sonoma:        "c9f93105dae3ecb41c3536a5e462027915159283114ee79ce154e52eb6e491bd"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cce0ed5262eb581bff74a9aadd2c4bb5f83f172d4c1a68d2c9685893aca0785e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3406be26bba9f19eeda9236f526a0eba97654495365e78dc2226ce5910f8bcb3"
+    sha256 cellar: :any,                 arm64_golden_gate: "995daa36194dad5bb981e23c87476e51f42b99e007490ac05da3b8a4a753d95b"
+    sha256 cellar: :any,                 arm64_tahoe:       "b606364c1a88093ebede5792fbd635b2341e88be4445bcdd3df4e5a86311bf72"
+    sha256 cellar: :any,                 arm64_sequoia:     "66e97e657e2f63d010ae22eca72be97f2852ff05c766875d979bed46d6c3a97a"
+    sha256 cellar: :any,                 arm64_sonoma:      "8a714043bf26e236545a4c7b14a80618eb192757176b632678e8c3077040798f"
+    sha256 cellar: :any,                 sonoma:            "c9f93105dae3ecb41c3536a5e462027915159283114ee79ce154e52eb6e491bd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "cce0ed5262eb581bff74a9aadd2c4bb5f83f172d4c1a68d2c9685893aca0785e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "3406be26bba9f19eeda9236f526a0eba97654495365e78dc2226ce5910f8bcb3"
   end
 
   depends_on "libyaml"

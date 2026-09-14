@@ -12,12 +12,13 @@ class Vipsdisp < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "000ac72682a0ac53e15254b17c0cfba939758d7e9075341f0523ae9fc79ece99"
-    sha256 cellar: :any, arm64_sequoia: "dbd0e4346f4add8e69ddfe174111ad6b8fd1f87696f656ccaf325ea3645effc2"
-    sha256 cellar: :any, arm64_sonoma:  "957ba726222950ff0b02816425e9933dd1a57932c11fbe5ff40d7539e5d9d2d9"
-    sha256 cellar: :any, sonoma:        "c358b78133a3f11a36847a490e295bc001658efb99847736f527f18dfde1b901"
-    sha256               arm64_linux:   "26da77028b3a3462c27990d45c2ae7441e9d62efea90a463358b80c0616f29ba"
-    sha256               x86_64_linux:  "f3fa6ae007208167234b4aae420b86c7b22aa9603ffd2f483aa6f8d970aabcde"
+    sha256 cellar: :any, arm64_golden_gate: "14865619d69cb5dbe2c2c31f98cb9d5e2864c490bff7261cfe7ffad462e7a3a9"
+    sha256 cellar: :any, arm64_tahoe:       "000ac72682a0ac53e15254b17c0cfba939758d7e9075341f0523ae9fc79ece99"
+    sha256 cellar: :any, arm64_sequoia:     "dbd0e4346f4add8e69ddfe174111ad6b8fd1f87696f656ccaf325ea3645effc2"
+    sha256 cellar: :any, arm64_sonoma:      "957ba726222950ff0b02816425e9933dd1a57932c11fbe5ff40d7539e5d9d2d9"
+    sha256 cellar: :any, sonoma:            "c358b78133a3f11a36847a490e295bc001658efb99847736f527f18dfde1b901"
+    sha256               arm64_linux:       "26da77028b3a3462c27990d45c2ae7441e9d62efea90a463358b80c0616f29ba"
+    sha256               x86_64_linux:      "f3fa6ae007208167234b4aae420b86c7b22aa9603ffd2f483aa6f8d970aabcde"
   end
 
   depends_on "meson" => :build

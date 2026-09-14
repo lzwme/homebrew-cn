@@ -10,12 +10,13 @@ class Peru < Formula
   head "https://github.com/buildinspace/peru.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "5a7e7669fb8cdf7e4bf5175f9d01be1d0a9d75aa693c6161c2b27145a8c62059"
-    sha256 cellar: :any,                 arm64_sequoia: "1b2840d24355227568032ad13df06a4ab9d0ae8c61bf2477d0f837fe7bb7b4a2"
-    sha256 cellar: :any,                 arm64_sonoma:  "d4b0ba0f201b97d60292fd8f2539cdfa0e71b24ccccc963f40dbcd5ab03e8565"
-    sha256 cellar: :any,                 sonoma:        "1d7ba45fd3db6b8154eee9d11ddc65859dc8be21ed882e9907c856d2d496c975"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d90e59b8f68ff875b46e7edea66ca293733abcdc5b071153ce347d3ca3ee484e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "65b950ac4d3bb7af7bdd3221cad598590f02663010bb27d6176501dea43bd61c"
+    sha256 cellar: :any,                 arm64_golden_gate: "374bdb0049a5907aea055b5c1a3ee66b2e2aa85c4da278c23febca8b5c228a0d"
+    sha256 cellar: :any,                 arm64_tahoe:       "5a7e7669fb8cdf7e4bf5175f9d01be1d0a9d75aa693c6161c2b27145a8c62059"
+    sha256 cellar: :any,                 arm64_sequoia:     "1b2840d24355227568032ad13df06a4ab9d0ae8c61bf2477d0f837fe7bb7b4a2"
+    sha256 cellar: :any,                 arm64_sonoma:      "d4b0ba0f201b97d60292fd8f2539cdfa0e71b24ccccc963f40dbcd5ab03e8565"
+    sha256 cellar: :any,                 sonoma:            "1d7ba45fd3db6b8154eee9d11ddc65859dc8be21ed882e9907c856d2d496c975"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "d90e59b8f68ff875b46e7edea66ca293733abcdc5b071153ce347d3ca3ee484e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "65b950ac4d3bb7af7bdd3221cad598590f02663010bb27d6176501dea43bd61c"
   end
 
   depends_on "libyaml"

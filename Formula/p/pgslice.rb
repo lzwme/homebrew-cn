@@ -6,12 +6,13 @@ class Pgslice < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "11819b8c5a090be57c1d7122e5fc3462159fb7190e1ca5610f7e7eb637f7bebe"
-    sha256 cellar: :any,                 arm64_sequoia: "8f8dba8973d4a01f2fe35dec6df26d676f87078d7ca8ea3d709a3c2166eedcf2"
-    sha256 cellar: :any,                 arm64_sonoma:  "35e77ea0148bd8ffd8f0d5116af8fb842dd20a2178f95e45ca01e0b2c7724217"
-    sha256 cellar: :any,                 sonoma:        "9fb2970a1336b2488378de8c6e291a5c63d7468b7c4635895ba96d89e8a6e6be"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "78b9262b02cb4a3124062fa362d07bbadfb86110c4c00a7b081a20d43a2f070d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8416b778ccc3f5aa00631ddfc2f76957efd54b39fc22273edadf9c461a9892c5"
+    sha256 cellar: :any,                 arm64_golden_gate: "94d04e1bf056a172dd0386bdc0cd13d2abce8079fbc7b01a56aa5dec0f5c6796"
+    sha256 cellar: :any,                 arm64_tahoe:       "11819b8c5a090be57c1d7122e5fc3462159fb7190e1ca5610f7e7eb637f7bebe"
+    sha256 cellar: :any,                 arm64_sequoia:     "8f8dba8973d4a01f2fe35dec6df26d676f87078d7ca8ea3d709a3c2166eedcf2"
+    sha256 cellar: :any,                 arm64_sonoma:      "35e77ea0148bd8ffd8f0d5116af8fb842dd20a2178f95e45ca01e0b2c7724217"
+    sha256 cellar: :any,                 sonoma:            "9fb2970a1336b2488378de8c6e291a5c63d7468b7c4635895ba96d89e8a6e6be"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "78b9262b02cb4a3124062fa362d07bbadfb86110c4c00a7b081a20d43a2f070d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "8416b778ccc3f5aa00631ddfc2f76957efd54b39fc22273edadf9c461a9892c5"
   end
 
   depends_on "postgresql@18" => :test

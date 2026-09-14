@@ -12,12 +12,13 @@ class Scummvm < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "b455f8d4383d4962b3cef55e01b6464b2feef15987a3d5c8ea09c6311d2c6687"
-    sha256 arm64_sequoia: "21d1b303998c59f302391eab6083b4e01e53c7a5cfab7e651eb72ce83ddb6094"
-    sha256 arm64_sonoma:  "49e4cf8f74f697c2de6d9db8901067b4d7e60d6a683969298a67d22de4d60656"
-    sha256 sonoma:        "36433b21489495597600cb0c4e9cd309a89c8f833081d08da4416983e8caac3f"
-    sha256 arm64_linux:   "718dde37a4bbe56b9cf7ab3164c920417dd5162fd2596f2f1fa50abbb9492e70"
-    sha256 x86_64_linux:  "7a160b1d12ca0fbddffd74a070d955fc8a4e1444853f3401cb880de797ac33fc"
+    sha256 arm64_golden_gate: "0cd68efda13eea1bddbe585c71aa69bc79b95875b879779124ca8a17d6c5d619"
+    sha256 arm64_tahoe:       "b455f8d4383d4962b3cef55e01b6464b2feef15987a3d5c8ea09c6311d2c6687"
+    sha256 arm64_sequoia:     "21d1b303998c59f302391eab6083b4e01e53c7a5cfab7e651eb72ce83ddb6094"
+    sha256 arm64_sonoma:      "49e4cf8f74f697c2de6d9db8901067b4d7e60d6a683969298a67d22de4d60656"
+    sha256 sonoma:            "36433b21489495597600cb0c4e9cd309a89c8f833081d08da4416983e8caac3f"
+    sha256 arm64_linux:       "718dde37a4bbe56b9cf7ab3164c920417dd5162fd2596f2f1fa50abbb9492e70"
+    sha256 x86_64_linux:      "7a160b1d12ca0fbddffd74a070d955fc8a4e1444853f3401cb880de797ac33fc"
   end
 
   depends_on "pkgconf" => :build

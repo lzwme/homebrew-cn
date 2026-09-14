@@ -12,12 +12,13 @@ class Allegro < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "e3e3538d2dd7ac9ab3c79343acec0f77a2746a50a6435371dfc35a75715aba9b"
-    sha256 cellar: :any,                 arm64_sequoia: "8c04e595d03638289223bedd1696bacd8df8530f1a55721b3682af08c198a603"
-    sha256 cellar: :any,                 arm64_sonoma:  "5da777e9838c3f86978a15ea5359b928123e70d32ca7ac43670631f17e85458b"
-    sha256 cellar: :any,                 sonoma:        "1e0c9fe820bf392ee0707eff299fe523ebbd6e21d1327714f5c3ac36a53f3df7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "70dbfd0353c0655b5a6bfe5520fabe067e17e423a209465b435cc067b1eec6bc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5ae31e6b786d07b263625a5c9d6ac16e77749a438492d9a8cf69a00e9be4b5ac"
+    sha256 cellar: :any,                 arm64_golden_gate: "2fae56573b8727ac36c46c789d18b4e5cead608ed7e496cfb867b9514ed9baa6"
+    sha256 cellar: :any,                 arm64_tahoe:       "e3e3538d2dd7ac9ab3c79343acec0f77a2746a50a6435371dfc35a75715aba9b"
+    sha256 cellar: :any,                 arm64_sequoia:     "8c04e595d03638289223bedd1696bacd8df8530f1a55721b3682af08c198a603"
+    sha256 cellar: :any,                 arm64_sonoma:      "5da777e9838c3f86978a15ea5359b928123e70d32ca7ac43670631f17e85458b"
+    sha256 cellar: :any,                 sonoma:            "1e0c9fe820bf392ee0707eff299fe523ebbd6e21d1327714f5c3ac36a53f3df7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "70dbfd0353c0655b5a6bfe5520fabe067e17e423a209465b435cc067b1eec6bc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "5ae31e6b786d07b263625a5c9d6ac16e77749a438492d9a8cf69a00e9be4b5ac"
   end
 
   depends_on "cmake" => :build
@@ -74,8 +75,9 @@ class Allegro < Formula
       }
     CPP
 
-    system ENV.cxx, "allegro_test.cpp", "-I#{include}", "-L#{lib}",
-                    "-lallegro", "-lallegro_main", "-o", "allegro_test"
+    # `allegro_main` runs the program from an NSApplication that never finishes launching without a window server
+    system ENV.cxx, "allegro_test.cpp", "-DALLEGRO_NO_MAGIC_MAIN", "-I#{include}", "-L#{lib}",
+                    "-lallegro", "-o", "allegro_test"
     system "./allegro_test"
   end
 end

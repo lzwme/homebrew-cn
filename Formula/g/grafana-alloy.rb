@@ -30,6 +30,16 @@ class GrafanaAlloy < Formula
 
   conflicts_with "alloy-analyzer", because: "both install `alloy` binaries"
 
+  # `test do` block runs a local server
+  deny_network_access! [:build, :postinstall]
+
+  def fetch
+    system "go", "mod", "download", "-C", "collector"
+    cd "internal/web/ui" do
+      system "npm", "install", *std_npm_args(prefix: false)
+    end
+  end
+
   def install
     # Workaround to avoid patchelf corruption when cgo is required (for godror)
     if OS.linux? && Hardware::CPU.arch == :arm64
@@ -50,8 +60,7 @@ class GrafanaAlloy < Formula
     tags << "promtail_journal_enabled" if OS.linux?
 
     cd "internal/web/ui" do
-      system "npm", "install", *std_npm_args(prefix: false)
-      system "npm", "run", "build"
+      system "npm", "--offline", "run", "build"
     end
 
     system "go", "build", "-C", "collector", *std_go_args(ldflags:, tags:, output: bin/"alloy")

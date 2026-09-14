@@ -13,12 +13,13 @@ class ScummvmTools < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "50d8ffe794a9964152bdea3d644cdb767ce3079188e19f0de9a3b1c24421c6e4"
-    sha256 cellar: :any, arm64_sequoia: "e853d26598617e90007df486edca6e605807d7f6907521824e4511ed12a6c9e4"
-    sha256 cellar: :any, arm64_sonoma:  "4a639a517509d37e91bda0648e602e1d84a5b3fd0a617d1a1779cf419ac96866"
-    sha256 cellar: :any, sonoma:        "b798c2ab29611357294932f855b796752fdaa35e38e1a6022e302ab55e0c994b"
-    sha256 cellar: :any, arm64_linux:   "b91848b334c016d83a1448a91222a77771684eaa41aa6c085739009d3b8f1ad7"
-    sha256 cellar: :any, x86_64_linux:  "1c1103f04abccbaad16ae1b72bb2460fa4594ca5fc1400d123026ff3959d35b5"
+    sha256 cellar: :any, arm64_golden_gate: "d63de7de04eb0ff96af312ead561629282e761f93e181af652d5b10bbc73178d"
+    sha256 cellar: :any, arm64_tahoe:       "50d8ffe794a9964152bdea3d644cdb767ce3079188e19f0de9a3b1c24421c6e4"
+    sha256 cellar: :any, arm64_sequoia:     "e853d26598617e90007df486edca6e605807d7f6907521824e4511ed12a6c9e4"
+    sha256 cellar: :any, arm64_sonoma:      "4a639a517509d37e91bda0648e602e1d84a5b3fd0a617d1a1779cf419ac96866"
+    sha256 cellar: :any, sonoma:            "b798c2ab29611357294932f855b796752fdaa35e38e1a6022e302ab55e0c994b"
+    sha256 cellar: :any, arm64_linux:       "b91848b334c016d83a1448a91222a77771684eaa41aa6c085739009d3b8f1ad7"
+    sha256 cellar: :any, x86_64_linux:      "1c1103f04abccbaad16ae1b72bb2460fa4594ca5fc1400d123026ff3959d35b5"
   end
 
   depends_on "boost"

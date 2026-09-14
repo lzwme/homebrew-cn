@@ -6,11 +6,12 @@ class Obscura < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "de09e12f136a9eece2b09300911fd25ee6f55018f8cf35b7a7057acc255f2c47"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6382f83ddc46f029ffbb59ea7c27a213bcde889b9c5f6478073e915ffc872c81"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "be1ebad87f794cd7e740c36c40eff268ad4cfb7f9a70997c6182029d454e0f8a"
-    sha256 cellar: :any,                 arm64_linux:   "6ee910b91138a51972496f2162a93af339416f265831f0ffae252554238f3e14"
-    sha256 cellar: :any,                 x86_64_linux:  "89cd1848508294bc17653e777eb0693d08f1367a036a519c37719a3a41bb8f0c"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "557fe7fe09c8c42fe7a0920f0e8b0c7b2c3833e97b88604698970b98517b8456"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "de09e12f136a9eece2b09300911fd25ee6f55018f8cf35b7a7057acc255f2c47"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "6382f83ddc46f029ffbb59ea7c27a213bcde889b9c5f6478073e915ffc872c81"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "be1ebad87f794cd7e740c36c40eff268ad4cfb7f9a70997c6182029d454e0f8a"
+    sha256 cellar: :any,                 arm64_linux:       "6ee910b91138a51972496f2162a93af339416f265831f0ffae252554238f3e14"
+    sha256 cellar: :any,                 x86_64_linux:      "89cd1848508294bc17653e777eb0693d08f1367a036a519c37719a3a41bb8f0c"
   end
 
   depends_on "rust" => :build

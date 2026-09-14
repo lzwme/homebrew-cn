@@ -8,12 +8,13 @@ class WgpuNative < Formula
   head "https://github.com/gfx-rs/wgpu-native.git", branch: "trunk"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "b204aa50abf15cbacfaed382c0d2c6f9d0d0d49b71e06a8d26c2b66ce98dc082"
-    sha256 cellar: :any, arm64_sequoia: "b24aac8b8d17043e288ad92be12feade652e9de73d49c72800ef9ae7e7f95552"
-    sha256 cellar: :any, arm64_sonoma:  "84c5693fb760cb9ab8d8c4feaed584c24152b172216f0777dfc4b8ccb2191ef8"
-    sha256 cellar: :any, sonoma:        "8ba08dab0972a14828b88e853559af3d9a479f6b69ba54085bfe41946dddd655"
-    sha256 cellar: :any, arm64_linux:   "a34b2309bb9a4f42720d932ff1c394d68e0dc0ec517e8d1eeec314c983dae062"
-    sha256 cellar: :any, x86_64_linux:  "e5d2ad6914baf11090337d3e302f6304f849887de8c8b8177b9c81aec55541ce"
+    sha256 cellar: :any, arm64_golden_gate: "4a57eb324844a8a3ed9af23d647133ab535798691af6b97804f1ecf3a1c96aec"
+    sha256 cellar: :any, arm64_tahoe:       "b204aa50abf15cbacfaed382c0d2c6f9d0d0d49b71e06a8d26c2b66ce98dc082"
+    sha256 cellar: :any, arm64_sequoia:     "b24aac8b8d17043e288ad92be12feade652e9de73d49c72800ef9ae7e7f95552"
+    sha256 cellar: :any, arm64_sonoma:      "84c5693fb760cb9ab8d8c4feaed584c24152b172216f0777dfc4b8ccb2191ef8"
+    sha256 cellar: :any, sonoma:            "8ba08dab0972a14828b88e853559af3d9a479f6b69ba54085bfe41946dddd655"
+    sha256 cellar: :any, arm64_linux:       "a34b2309bb9a4f42720d932ff1c394d68e0dc0ec517e8d1eeec314c983dae062"
+    sha256 cellar: :any, x86_64_linux:      "e5d2ad6914baf11090337d3e302f6304f849887de8c8b8177b9c81aec55541ce"
   end
 
   depends_on "rust" => :build

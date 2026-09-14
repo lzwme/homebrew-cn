@@ -12,12 +12,13 @@ class Tracebox < Formula
   head "https://github.com/tracebox/tracebox.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "432ecef65439685b42ec4ca64303631cf4aec005e044ef86d18cfc290df88a29"
-    sha256 cellar: :any,                 arm64_sequoia: "a236c267cffde3f5e896d9796858a36440deb2c762ac165c4eb69fa7abcf5053"
-    sha256 cellar: :any,                 arm64_sonoma:  "aa9c714b367961f84405b6937591d908e87224208c3e84331fa6719a0c2eacde"
-    sha256 cellar: :any,                 sonoma:        "a08d814aa4b20912086878f89d5e34351be100e036b20bb23600d2525fc4c61f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8a3523e55afbfb45e6019257f54cf8147ab00f3c07e4402629d85ea0059be568"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cb818d5e3f42f32603ef218fe02c60ece85c29b0aab05b2cae0959f91f6f1a58"
+    sha256 cellar: :any,                 arm64_golden_gate: "6fbffd6bca3b2a0a826ae4ce5a66e4e81e777de14d0040c809974e2657ba941e"
+    sha256 cellar: :any,                 arm64_tahoe:       "432ecef65439685b42ec4ca64303631cf4aec005e044ef86d18cfc290df88a29"
+    sha256 cellar: :any,                 arm64_sequoia:     "a236c267cffde3f5e896d9796858a36440deb2c762ac165c4eb69fa7abcf5053"
+    sha256 cellar: :any,                 arm64_sonoma:      "aa9c714b367961f84405b6937591d908e87224208c3e84331fa6719a0c2eacde"
+    sha256 cellar: :any,                 sonoma:            "a08d814aa4b20912086878f89d5e34351be100e036b20bb23600d2525fc4c61f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "8a3523e55afbfb45e6019257f54cf8147ab00f3c07e4402629d85ea0059be568"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "cb818d5e3f42f32603ef218fe02c60ece85c29b0aab05b2cae0959f91f6f1a58"
   end
 
   depends_on "autoconf" => :build

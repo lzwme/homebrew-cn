@@ -15,12 +15,13 @@ class Ghcup < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "41ac1d7c50f5cc48c7f797cfa10ac7c3ba815b86ade6fb317f2bea1f1e00ce6d"
-    sha256 cellar: :any, arm64_sequoia: "98ad00690c1f8d6ea6e7e8f859fb4f6d997b25eed1391f18d74a6ac36f456311"
-    sha256 cellar: :any, arm64_sonoma:  "5bb1fe22532e7731ab40a00e98a5558df4f96ede37e6f6a7d26db8a0383fafd8"
-    sha256 cellar: :any, sonoma:        "cdf9bbd2fc71898a50b17e1e92bcc83eda6ecdfb1958da55a0895140afbfb038"
-    sha256 cellar: :any, arm64_linux:   "089fec38ff35dfc54fac87c44bfc3f1b4a863bca6dd1245ad67a8a0b567ac637"
-    sha256 cellar: :any, x86_64_linux:  "df6f982eac74479a58ec6a3ed66b6d01232692b99655688b60d4f20df4854223"
+    sha256 cellar: :any, arm64_golden_gate: "2cb2653fed0088758c6e56acab37b6eef661609e1dde1f6af2d787a9f421a6ac"
+    sha256 cellar: :any, arm64_tahoe:       "41ac1d7c50f5cc48c7f797cfa10ac7c3ba815b86ade6fb317f2bea1f1e00ce6d"
+    sha256 cellar: :any, arm64_sequoia:     "98ad00690c1f8d6ea6e7e8f859fb4f6d997b25eed1391f18d74a6ac36f456311"
+    sha256 cellar: :any, arm64_sonoma:      "5bb1fe22532e7731ab40a00e98a5558df4f96ede37e6f6a7d26db8a0383fafd8"
+    sha256 cellar: :any, sonoma:            "cdf9bbd2fc71898a50b17e1e92bcc83eda6ecdfb1958da55a0895140afbfb038"
+    sha256 cellar: :any, arm64_linux:       "089fec38ff35dfc54fac87c44bfc3f1b4a863bca6dd1245ad67a8a0b567ac637"
+    sha256 cellar: :any, x86_64_linux:      "df6f982eac74479a58ec6a3ed66b6d01232692b99655688b60d4f20df4854223"
   end
 
   depends_on "cabal-install" => :build

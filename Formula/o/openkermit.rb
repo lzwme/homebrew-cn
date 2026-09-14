@@ -11,12 +11,13 @@ class Openkermit < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "664063edb5f7590c9de44b548d61896e551f775bfae2d4bb808dc2a7548bcfad"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fe3463c097de830c9f0782a95c70ceddbbbcff8d2bc45071cac64692ff528406"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "88c22b6cb44241014f4c2420444884a6369c5322c468b5071442c6bc0211db10"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c4d64c74de7fcb26c74b636fc590685a7e365d6f11a9ef2ebb32f3e1df833af7"
-    sha256 cellar: :any,                 arm64_linux:   "5e79bcf4c51eeff886789a939bf817881e7db4be5976891fac3dc6a36a3ae8dc"
-    sha256 cellar: :any,                 x86_64_linux:  "39423bf1bb25c8ab3a2b506dee36a4263133424a0175ec0f33662bccb79786f8"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "838760d2aa6b6bbc8ccffe5526f30dade3f3abc5dc75f58c0261bf0dc89c3ffb"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "664063edb5f7590c9de44b548d61896e551f775bfae2d4bb808dc2a7548bcfad"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "fe3463c097de830c9f0782a95c70ceddbbbcff8d2bc45071cac64692ff528406"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "88c22b6cb44241014f4c2420444884a6369c5322c468b5071442c6bc0211db10"
+    sha256 cellar: :any_skip_relocation, sonoma:            "c4d64c74de7fcb26c74b636fc590685a7e365d6f11a9ef2ebb32f3e1df833af7"
+    sha256 cellar: :any,                 arm64_linux:       "5e79bcf4c51eeff886789a939bf817881e7db4be5976891fac3dc6a36a3ae8dc"
+    sha256 cellar: :any,                 x86_64_linux:      "39423bf1bb25c8ab3a2b506dee36a4263133424a0175ec0f33662bccb79786f8"
   end
 
   uses_from_macos "libxcrypt"

@@ -7,14 +7,15 @@ class Tfsort < Formula
   head "https://github.com/AlexNabokikh/tfsort.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a909ead38b4e912cdb01422b2de69df0c1e4ec6dca044df587e54ecda98bdfe4"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3fb6cc984f31e20e1d481f5170ba5d0afa80a5eb42c070e3e1e58a0b3c427726"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3fb6cc984f31e20e1d481f5170ba5d0afa80a5eb42c070e3e1e58a0b3c427726"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "3fb6cc984f31e20e1d481f5170ba5d0afa80a5eb42c070e3e1e58a0b3c427726"
-    sha256 cellar: :any_skip_relocation, sonoma:        "997f3dbd8f733cb8ac4885f5c1e847167aab98aa2026e2bff412538b5feea54d"
-    sha256 cellar: :any_skip_relocation, ventura:       "997f3dbd8f733cb8ac4885f5c1e847167aab98aa2026e2bff412538b5feea54d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "87487fc1f259042ccd78e6cf15983308a5f9dd856193fcb59a73f838e9e768ea"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3424821cc7dd576fa0a9814cf0da0b292b5f754ef8e63485af5f85b7e15233f2"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "0202b5857db352e8c2ebfad1e909c2963493528e2b8b734b514b4d2323a7a96f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "a909ead38b4e912cdb01422b2de69df0c1e4ec6dca044df587e54ecda98bdfe4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "3fb6cc984f31e20e1d481f5170ba5d0afa80a5eb42c070e3e1e58a0b3c427726"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "3fb6cc984f31e20e1d481f5170ba5d0afa80a5eb42c070e3e1e58a0b3c427726"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:     "3fb6cc984f31e20e1d481f5170ba5d0afa80a5eb42c070e3e1e58a0b3c427726"
+    sha256 cellar: :any_skip_relocation, sonoma:            "997f3dbd8f733cb8ac4885f5c1e847167aab98aa2026e2bff412538b5feea54d"
+    sha256 cellar: :any_skip_relocation, ventura:           "997f3dbd8f733cb8ac4885f5c1e847167aab98aa2026e2bff412538b5feea54d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "87487fc1f259042ccd78e6cf15983308a5f9dd856193fcb59a73f838e9e768ea"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "3424821cc7dd576fa0a9814cf0da0b292b5f754ef8e63485af5f85b7e15233f2"
   end
 
   depends_on "go" => :build

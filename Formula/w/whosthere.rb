@@ -11,12 +11,13 @@ class Whosthere < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "09d336e99331e1199db69cff3f257cb1b5dc1b92eb0f4de9fca7adca70456cdb"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "09d336e99331e1199db69cff3f257cb1b5dc1b92eb0f4de9fca7adca70456cdb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "09d336e99331e1199db69cff3f257cb1b5dc1b92eb0f4de9fca7adca70456cdb"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ffc45c503d5bbd30976f0fe4a22bdcb4880e44fcaafdf044ae56ca815a7d4469"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3173ae505abccc1c3804d481b5f1958a128ebc971a3869f85240c408669f67fe"
-    sha256 cellar: :any,                 x86_64_linux:  "1942a982f507d5fe27ac6db6ee0185537a1193b0c860f8c97e08a9f55149bfa6"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "612520a4652f9723accb7efaaf0444074268fa0ae1d4d1533b893e2014ed2b10"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "09d336e99331e1199db69cff3f257cb1b5dc1b92eb0f4de9fca7adca70456cdb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "09d336e99331e1199db69cff3f257cb1b5dc1b92eb0f4de9fca7adca70456cdb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "09d336e99331e1199db69cff3f257cb1b5dc1b92eb0f4de9fca7adca70456cdb"
+    sha256 cellar: :any_skip_relocation, sonoma:            "ffc45c503d5bbd30976f0fe4a22bdcb4880e44fcaafdf044ae56ca815a7d4469"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "3173ae505abccc1c3804d481b5f1958a128ebc971a3869f85240c408669f67fe"
+    sha256 cellar: :any,                 x86_64_linux:      "1942a982f507d5fe27ac6db6ee0185537a1193b0c860f8c97e08a9f55149bfa6"
   end
 
   depends_on "go" => :build

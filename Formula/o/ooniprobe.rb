@@ -12,12 +12,13 @@ class Ooniprobe < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a1d6c03e7ba0affc399243f340b20c0555dbbfe8d35e542460a7c41107012d0e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "55d44d5ac9bd171ad7bce1d4c6f4bd95ddf99983785021d9f9f5935457b6ca40"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "85b4f3c189b5fd9260caf7453dda0a665f0f2f02baf96655aefcaa9ad2102965"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d47276550ae910ef4e4f793b7bbd54299735022ee9d45035c4a2975454daa044"
-    sha256 cellar: :any,                 arm64_linux:   "bbd61c6d9c457821126a7f66af165b8d8ea6301fb5e82a9ab27f3761382425dd"
-    sha256 cellar: :any,                 x86_64_linux:  "a41dbe1e8452e136482caf9f1597369120ae09c01e08fa35e5644257ac022663"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "b3b060c756dbbb69c785234fd7673e5a8d3707127229efe5470c8d3d4b480bd6"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "a1d6c03e7ba0affc399243f340b20c0555dbbfe8d35e542460a7c41107012d0e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "55d44d5ac9bd171ad7bce1d4c6f4bd95ddf99983785021d9f9f5935457b6ca40"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "85b4f3c189b5fd9260caf7453dda0a665f0f2f02baf96655aefcaa9ad2102965"
+    sha256 cellar: :any_skip_relocation, sonoma:            "d47276550ae910ef4e4f793b7bbd54299735022ee9d45035c4a2975454daa044"
+    sha256 cellar: :any,                 arm64_linux:       "bbd61c6d9c457821126a7f66af165b8d8ea6301fb5e82a9ab27f3761382425dd"
+    sha256 cellar: :any,                 x86_64_linux:      "a41dbe1e8452e136482caf9f1597369120ae09c01e08fa35e5644257ac022663"
   end
 
   depends_on "go" => :build

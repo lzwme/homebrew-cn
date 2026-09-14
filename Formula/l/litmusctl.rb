@@ -7,12 +7,13 @@ class Litmusctl < Formula
   head "https://github.com/litmuschaos/litmusctl.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "650ef3bea5e3fa502eb0aab865a1198f1d553874b0fd2b8e40fc863f2d10ba34"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "650ef3bea5e3fa502eb0aab865a1198f1d553874b0fd2b8e40fc863f2d10ba34"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "650ef3bea5e3fa502eb0aab865a1198f1d553874b0fd2b8e40fc863f2d10ba34"
-    sha256 cellar: :any_skip_relocation, sonoma:        "873478861b77c1bffa4f86b10e5816480dda1247556977f3eebdbe54fb4421c6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4e80e8a9c4a9201bcdedd769c95fc373049d9b781cdaf36998cbcefa5857efe0"
-    sha256 cellar: :any,                 x86_64_linux:  "5e1754ad4c8d3bf8a1e43291caa025180c17112b51d4ea9f1a514d3ab255d9c7"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "3774ab1b786df138b4be7cb50d1c5e133740f1c93995cb5fbdae29b08e8a2327"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "650ef3bea5e3fa502eb0aab865a1198f1d553874b0fd2b8e40fc863f2d10ba34"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "650ef3bea5e3fa502eb0aab865a1198f1d553874b0fd2b8e40fc863f2d10ba34"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "650ef3bea5e3fa502eb0aab865a1198f1d553874b0fd2b8e40fc863f2d10ba34"
+    sha256 cellar: :any_skip_relocation, sonoma:            "873478861b77c1bffa4f86b10e5816480dda1247556977f3eebdbe54fb4421c6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "4e80e8a9c4a9201bcdedd769c95fc373049d9b781cdaf36998cbcefa5857efe0"
+    sha256 cellar: :any,                 x86_64_linux:      "5e1754ad4c8d3bf8a1e43291caa025180c17112b51d4ea9f1a514d3ab255d9c7"
   end
 
   depends_on "go" => :build

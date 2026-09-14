@@ -8,12 +8,13 @@ class Screen < Formula
   head "https://git.savannah.gnu.org/git/screen.git", branch: "master"
 
   bottle do
-    sha256 arm64_tahoe:   "483ed088b80d3dfeedc0ab9c805f2ef7be4ea06488b64684dbda1b5c1af085f5"
-    sha256 arm64_sequoia: "66938dde45a2e0a72eb173935163c7c13d0ac96259acb22feda8b8a8f09caac0"
-    sha256 arm64_sonoma:  "05ab2690b011d104de3996b26cbef6ca3fee0e50e72fc532c296b5089d1fe9f8"
-    sha256 sonoma:        "9779a73c79dc89c65d9b3c7fcf499362bf7e95773d0b04016726e2cd28f21689"
-    sha256 arm64_linux:   "1c2fa985e9ecd3ff54324061a74974d01de3f4346dedd4673c6fef9da8ecb343"
-    sha256 x86_64_linux:  "fb7bc859f277b060eefed76eaf63894a524c30215eb35ef286b0ccfc40d57be3"
+    sha256 arm64_golden_gate: "b3618da110e1bddf4fe8c2395b2f2187f13495bb5e966b2e51b2f420596934c1"
+    sha256 arm64_tahoe:       "483ed088b80d3dfeedc0ab9c805f2ef7be4ea06488b64684dbda1b5c1af085f5"
+    sha256 arm64_sequoia:     "66938dde45a2e0a72eb173935163c7c13d0ac96259acb22feda8b8a8f09caac0"
+    sha256 arm64_sonoma:      "05ab2690b011d104de3996b26cbef6ca3fee0e50e72fc532c296b5089d1fe9f8"
+    sha256 sonoma:            "9779a73c79dc89c65d9b3c7fcf499362bf7e95773d0b04016726e2cd28f21689"
+    sha256 arm64_linux:       "1c2fa985e9ecd3ff54324061a74974d01de3f4346dedd4673c6fef9da8ecb343"
+    sha256 x86_64_linux:      "fb7bc859f277b060eefed76eaf63894a524c30215eb35ef286b0ccfc40d57be3"
   end
 
   depends_on "autoconf" => :build

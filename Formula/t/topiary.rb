@@ -6,12 +6,13 @@ class Topiary < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ba4ae09ed74f4e82ca182ca68a7254b08dbcd460b9b5f355558f64cc85d982e0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "adeacb55b4f3a3546e6ae0787c0afd97fde6ab4abfaed328706dc7fe8bb76179"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7d88328e54021399709400a560e8507dfd9e6b29114253d4131efc47000a47ce"
-    sha256 cellar: :any_skip_relocation, sonoma:        "afe506d454dcb769fc8cb2e0b7680d5338f1d69099a7dcc14e84fdd6b27fb04e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "478b22e372afa4592362c5ccba76f089850efa6e533795ff6b616baa6990daed"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d8cd290ce47d704c275ebd7270f1de192cb9628564fc0eea502a00db687a51b4"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "c149fe37f4348f404dfd466b33b1c1efac851215782b09473017f7b41a895a0d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "ba4ae09ed74f4e82ca182ca68a7254b08dbcd460b9b5f355558f64cc85d982e0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "adeacb55b4f3a3546e6ae0787c0afd97fde6ab4abfaed328706dc7fe8bb76179"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "7d88328e54021399709400a560e8507dfd9e6b29114253d4131efc47000a47ce"
+    sha256 cellar: :any_skip_relocation, sonoma:            "afe506d454dcb769fc8cb2e0b7680d5338f1d69099a7dcc14e84fdd6b27fb04e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "478b22e372afa4592362c5ccba76f089850efa6e533795ff6b616baa6990daed"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "d8cd290ce47d704c275ebd7270f1de192cb9628564fc0eea502a00db687a51b4"
   end
 
   depends_on "rust" => :build

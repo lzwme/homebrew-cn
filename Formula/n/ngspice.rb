@@ -12,12 +12,13 @@ class Ngspice < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "0da9798c61ce91057391c0e954ac1bcfbf1104ce037a07cae8f76e00fdbe4798"
-    sha256 arm64_sequoia: "d929329a10079a6291b36549b1ace8a0dfb2956d7569135e7dad1795239e2959"
-    sha256 arm64_sonoma:  "30cdfc20c90c7fa794a865edb4d0d8d1008e5763b6212d9abedcb9b4b600b065"
-    sha256 sonoma:        "1d3026868f4e7209112668f4de3cdc38b78bab717ecabf8befd7fd4d9c185d01"
-    sha256 arm64_linux:   "cf2463e038ebbe2215edc013c906dd24b1fc1c15c01afe7fea220a67c249efd4"
-    sha256 x86_64_linux:  "319a6cbbffdf71453d8593bc713c335d1690d5db6fc03d6b40326425001ff91c"
+    sha256 arm64_golden_gate: "2cde49d7335722f1f2773396f4c4c24d0cbd73e9cf37d7ec6020ab8a1fce46b1"
+    sha256 arm64_tahoe:       "0da9798c61ce91057391c0e954ac1bcfbf1104ce037a07cae8f76e00fdbe4798"
+    sha256 arm64_sequoia:     "d929329a10079a6291b36549b1ace8a0dfb2956d7569135e7dad1795239e2959"
+    sha256 arm64_sonoma:      "30cdfc20c90c7fa794a865edb4d0d8d1008e5763b6212d9abedcb9b4b600b065"
+    sha256 sonoma:            "1d3026868f4e7209112668f4de3cdc38b78bab717ecabf8befd7fd4d9c185d01"
+    sha256 arm64_linux:       "cf2463e038ebbe2215edc013c906dd24b1fc1c15c01afe7fea220a67c249efd4"
+    sha256 x86_64_linux:      "319a6cbbffdf71453d8593bc713c335d1690d5db6fc03d6b40326425001ff91c"
   end
 
   depends_on "fftw"

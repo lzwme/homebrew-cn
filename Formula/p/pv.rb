@@ -11,12 +11,13 @@ class Pv < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "9e8ab3661bc5ebd768e0836f670fd78d90baf7e1795a16d834bdc9ad0944a49a"
-    sha256 arm64_sequoia: "9e8eecddf45c70be9f069d6bd808506809f97abe96508aaba6ec6032dc96a9d6"
-    sha256 arm64_sonoma:  "5d0ea229f2ed2abedd5b8ae1057ba4125f7ec77dc276a89a0e93066d19276747"
-    sha256 sonoma:        "6773edfb4d294ba98f68712251f4b515be9a6ed7c064de7f5c6cefe1cf06ee32"
-    sha256 arm64_linux:   "6f5a85e40a48e8ee3c6ce0e38a8b272e6c5f8fc3aa1327066563ba2ef8f628ab"
-    sha256 x86_64_linux:  "5e62f57591230be3f63bed28bdbbc45f3fa83d69e0f5db23f0283e2a0c1ddf01"
+    sha256 arm64_golden_gate: "3aa4089995ac92445f59957440e8228113bdf96d3ef434c8083e7aa5b02e8b19"
+    sha256 arm64_tahoe:       "9e8ab3661bc5ebd768e0836f670fd78d90baf7e1795a16d834bdc9ad0944a49a"
+    sha256 arm64_sequoia:     "9e8eecddf45c70be9f069d6bd808506809f97abe96508aaba6ec6032dc96a9d6"
+    sha256 arm64_sonoma:      "5d0ea229f2ed2abedd5b8ae1057ba4125f7ec77dc276a89a0e93066d19276747"
+    sha256 sonoma:            "6773edfb4d294ba98f68712251f4b515be9a6ed7c064de7f5c6cefe1cf06ee32"
+    sha256 arm64_linux:       "6f5a85e40a48e8ee3c6ce0e38a8b272e6c5f8fc3aa1327066563ba2ef8f628ab"
+    sha256 x86_64_linux:      "5e62f57591230be3f63bed28bdbbc45f3fa83d69e0f5db23f0283e2a0c1ddf01"
   end
 
   uses_from_macos "ncurses"

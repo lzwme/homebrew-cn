@@ -8,12 +8,13 @@ class Whalebrew < Formula
 
   bottle do
     rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c1f6830e7d52fc290dc2436ff9c6284990599dcb4c0425ea5f88e7010e0e6e40"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c1f6830e7d52fc290dc2436ff9c6284990599dcb4c0425ea5f88e7010e0e6e40"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c1f6830e7d52fc290dc2436ff9c6284990599dcb4c0425ea5f88e7010e0e6e40"
-    sha256 cellar: :any_skip_relocation, sonoma:        "37d1cce1732c129b95ecb9802c4e59cf6d404407835d545f0d5019387e0ef37d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d87aaaf730a6451d6442f3caa38545e5bb3ed6779926d712ea111823d26f3058"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0143e7491195c0620ed7a492aab85c01fbe901849955acc5278a23d224b01550"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "39725362ba75cd91939db0e03343ea48d56c61236724bd1fd36a73e261247852"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "c1f6830e7d52fc290dc2436ff9c6284990599dcb4c0425ea5f88e7010e0e6e40"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "c1f6830e7d52fc290dc2436ff9c6284990599dcb4c0425ea5f88e7010e0e6e40"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "c1f6830e7d52fc290dc2436ff9c6284990599dcb4c0425ea5f88e7010e0e6e40"
+    sha256 cellar: :any_skip_relocation, sonoma:            "37d1cce1732c129b95ecb9802c4e59cf6d404407835d545f0d5019387e0ef37d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "d87aaaf730a6451d6442f3caa38545e5bb3ed6779926d712ea111823d26f3058"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "0143e7491195c0620ed7a492aab85c01fbe901849955acc5278a23d224b01550"
   end
 
   depends_on "go" => :build

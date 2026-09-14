@@ -7,11 +7,12 @@ class Rdap < Formula
   head "https://github.com/openrdap/rdap.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7b05cd27d41d07fad35309ea77f9968beff9872ab9e9ce51b062576a86b6dbef"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7b05cd27d41d07fad35309ea77f9968beff9872ab9e9ce51b062576a86b6dbef"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7b05cd27d41d07fad35309ea77f9968beff9872ab9e9ce51b062576a86b6dbef"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f7976c13f79ddec0bca17b6ebb9e9d81cb6fb97f56c34df8b46856cb78a4131a"
-    sha256 cellar: :any,                 x86_64_linux:  "1bb9c61f13ddc3b56a677241c7307edc3b1aa317f6f8e74a9d6e58afd21f5dcf"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "7b05cd27d41d07fad35309ea77f9968beff9872ab9e9ce51b062576a86b6dbef"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "7b05cd27d41d07fad35309ea77f9968beff9872ab9e9ce51b062576a86b6dbef"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "7b05cd27d41d07fad35309ea77f9968beff9872ab9e9ce51b062576a86b6dbef"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "7b05cd27d41d07fad35309ea77f9968beff9872ab9e9ce51b062576a86b6dbef"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "f7976c13f79ddec0bca17b6ebb9e9d81cb6fb97f56c34df8b46856cb78a4131a"
+    sha256 cellar: :any,                 x86_64_linux:      "1bb9c61f13ddc3b56a677241c7307edc3b1aa317f6f8e74a9d6e58afd21f5dcf"
   end
 
   depends_on "go" => :build

@@ -9,12 +9,13 @@ class Opal < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "40b8c2cfd5220e86a52258ba5bead37074662a0858fe98befcf418493216a525"
-    sha256 cellar: :any, arm64_sequoia: "6d4ad65707a9a88d762b97d2cdf1da579993e75eb9cfd6e45776ff47042ad695"
-    sha256 cellar: :any, arm64_sonoma:  "8a882605b9340565a631f3f18a9ceea850881ac2a114f3ea97c2a3b3f1ca9d56"
-    sha256 cellar: :any, sonoma:        "d6a1fdb07b465f696848972ddbc9b33e1b902d8a0029730bd70610011381341c"
-    sha256 cellar: :any, arm64_linux:   "dbd7bac3537bbf25849dcb9136d8b94982a94521a6a1a584a152e15a0aeed012"
-    sha256 cellar: :any, x86_64_linux:  "0420aaf659871f8472cd3c44cbde5d7a449c247cda5a2b33064b684c46960ed2"
+    sha256 cellar: :any, arm64_golden_gate: "ac84229ba7fab6a0571c4ac9ebffad7c16002eda42b60f41328df311752c4179"
+    sha256 cellar: :any, arm64_tahoe:       "40b8c2cfd5220e86a52258ba5bead37074662a0858fe98befcf418493216a525"
+    sha256 cellar: :any, arm64_sequoia:     "6d4ad65707a9a88d762b97d2cdf1da579993e75eb9cfd6e45776ff47042ad695"
+    sha256 cellar: :any, arm64_sonoma:      "8a882605b9340565a631f3f18a9ceea850881ac2a114f3ea97c2a3b3f1ca9d56"
+    sha256 cellar: :any, sonoma:            "d6a1fdb07b465f696848972ddbc9b33e1b902d8a0029730bd70610011381341c"
+    sha256 cellar: :any, arm64_linux:       "dbd7bac3537bbf25849dcb9136d8b94982a94521a6a1a584a152e15a0aeed012"
+    sha256 cellar: :any, x86_64_linux:      "0420aaf659871f8472cd3c44cbde5d7a449c247cda5a2b33064b684c46960ed2"
   end
 
   depends_on "quickjs" => :test

@@ -1,23 +1,18 @@
 class Automake < Formula
   desc "Tool for generating GNU Standards-compliant Makefiles"
   homepage "https://www.gnu.org/software/automake/"
-  url "https://ftpmirror.gnu.org/automake/automake-1.18.1.tar.xz"
-  mirror "https://ftp.gnu.org/gnu/automake/automake-1.18.1.tar.xz"
-  sha256 "168aa363278351b89af56684448f525a5bce5079d0b6842bd910fdd3f1646887"
+  url "https://ftpmirror.gnu.org/automake/automake-1.19.tar.xz"
+  mirror "https://ftp.gnu.org/gnu/automake/automake-1.19.tar.xz"
+  sha256 "e3e2c2e3abf37898138db5b6c1d1dc35c9160c5978be7947d2c741705251d445"
   license "GPL-2.0-or-later"
-  revision 1
   compatibility_version 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "b5ee4815e054c35bae080eff1d3fc80c8866575e9626abeb7619d37dce919b5a"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "a1c4b30862df532469570dc672c7d1e9b0644d54641c2b384d9f9466f13cd792"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "a1c4b30862df532469570dc672c7d1e9b0644d54641c2b384d9f9466f13cd792"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "a1c4b30862df532469570dc672c7d1e9b0644d54641c2b384d9f9466f13cd792"
-    sha256 cellar: :any_skip_relocation, tahoe:             "b903bd0af0e9b92893627e57a9f2ba912741665bd66585fd5439325f6e333927"
-    sha256 cellar: :any_skip_relocation, sequoia:           "b903bd0af0e9b92893627e57a9f2ba912741665bd66585fd5439325f6e333927"
-    sha256 cellar: :any_skip_relocation, sonoma:            "b903bd0af0e9b92893627e57a9f2ba912741665bd66585fd5439325f6e333927"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "82e16310fa008f762e8b82fba625f8eb57852b97da5cf372fceb8a500f7c6bfd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "82e16310fa008f762e8b82fba625f8eb57852b97da5cf372fceb8a500f7c6bfd"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "23c091faee8dac047b0670d8c10da030bf104610fc064b904407de1a1ff8f437"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "23c091faee8dac047b0670d8c10da030bf104610fc064b904407de1a1ff8f437"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "23c091faee8dac047b0670d8c10da030bf104610fc064b904407de1a1ff8f437"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "a2b499128c61273de05a0d19251baca23de0c29abd15a74c8f495de2aeec3b40"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "a2b499128c61273de05a0d19251baca23de0c29abd15a74c8f495de2aeec3b40"
   end
 
   depends_on "autoconf"

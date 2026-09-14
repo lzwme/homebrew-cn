@@ -38,7 +38,11 @@ class Clipper < Formula
   test do
     test_data = "a simple string! to test clipper, with söme spéciål characters!! 🐎\n".freeze
 
-    cmd = [opt_bin/"clipper", "-a", testpath/"clipper.sock", "-l", testpath/"clipper.log"].freeze
+    clipboard = testpath/"clipboard.txt"
+
+    # Write to a file instead of `pbcopy` as the sandbox has no pasteboard access
+    cmd = [opt_bin/"clipper", "-a", testpath/"clipper.sock", "-l", testpath/"clipper.log",
+           "-e", "tee", "-f", clipboard].freeze
     ohai cmd.join " "
 
     require "open3"
@@ -49,7 +53,7 @@ class Clipper < Formula
         assert_equal test_data.bytesize, sock.sendmsg(test_data)
         sock.close
         sleep 0.5
-        assert_equal test_data, `LANG=en_US.UTF-8 pbpaste`
+        assert_equal test_data, clipboard.read
       ensure
         Process.kill "TERM", clipper.pid
       end

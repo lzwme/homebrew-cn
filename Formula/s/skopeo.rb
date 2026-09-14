@@ -24,6 +24,13 @@ class Skopeo < Formula
     depends_on "device-mapper"
   end
 
+  # `test do` block inspects an image on Docker Hub
+  deny_network_access! [:build, :postinstall]
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ENV["CGO_ENABLED"] = "1"
     ENV.append "CGO_FLAGS", ENV.cppflags

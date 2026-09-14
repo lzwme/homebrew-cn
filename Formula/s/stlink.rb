@@ -25,12 +25,13 @@ class Stlink < Formula
 
   bottle do
     rebuild 1
-    sha256 arm64_tahoe:   "a1318d007d2ebd3a5efac196e4c2be465b0bb7a4f6b7b937211d17ad447d983e"
-    sha256 arm64_sequoia: "74429f7151b0a5f5ec7e8f150dadcaad6fc89c8c100edbada6360195e257322c"
-    sha256 arm64_sonoma:  "f446d762cfa087474e6c4110af9cfd1764501715b1f6e6c67e73f66950a4ab08"
-    sha256 sonoma:        "535d44df1d077f72e893542b763d70fd8cb527dd23801e9bea188146f2f4b7e8"
-    sha256 arm64_linux:   "3acecdba1528f1b3be80a7323eee6810539ef12e53943db52ee2806354e9d4a8"
-    sha256 x86_64_linux:  "08e0054f6e1ecf8c7298ca5938e79b3d9533d2ddbcc90585adf1303bf2ef0423"
+    sha256 arm64_golden_gate: "9770b0567094b4aa250b45f7c3ccc7066db3a0a985b97ed595fa8aed6838ea4a"
+    sha256 arm64_tahoe:       "a1318d007d2ebd3a5efac196e4c2be465b0bb7a4f6b7b937211d17ad447d983e"
+    sha256 arm64_sequoia:     "74429f7151b0a5f5ec7e8f150dadcaad6fc89c8c100edbada6360195e257322c"
+    sha256 arm64_sonoma:      "f446d762cfa087474e6c4110af9cfd1764501715b1f6e6c67e73f66950a4ab08"
+    sha256 sonoma:            "535d44df1d077f72e893542b763d70fd8cb527dd23801e9bea188146f2f4b7e8"
+    sha256 arm64_linux:       "3acecdba1528f1b3be80a7323eee6810539ef12e53943db52ee2806354e9d4a8"
+    sha256 x86_64_linux:      "08e0054f6e1ecf8c7298ca5938e79b3d9533d2ddbcc90585adf1303bf2ef0423"
   end
 
   depends_on "cmake" => :build

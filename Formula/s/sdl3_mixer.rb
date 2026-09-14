@@ -13,11 +13,12 @@ class Sdl3Mixer < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "d8bbaa3d8355b9e72f369795d4b7a6b3f695db320f7c94711be608b08ea5e38d"
-    sha256 cellar: :any, arm64_sequoia: "56f0a34fbcc4589982050b06868a9687a40941e40ceb14d6cc80464f1c20d496"
-    sha256 cellar: :any, arm64_sonoma:  "0b009e0ddca72e010d8eafdc7d34e3e8dc4a655c1b789771883b5242a7f0f65d"
-    sha256 cellar: :any, arm64_linux:   "3d97780e90f45f53b9060a5d7368d19d87c129ba4c671be4a139348e243d2b4f"
-    sha256 cellar: :any, x86_64_linux:  "1ae54a07d87e9e8ec4c1dccb5333c86b5b8d6cf17dd0f823a9d9c830c4661b67"
+    sha256 cellar: :any, arm64_golden_gate: "3769c5f01c3c1833e075fb8718600bbb74d379028e4a7de294c3b6d4ccbce9d0"
+    sha256 cellar: :any, arm64_tahoe:       "d8bbaa3d8355b9e72f369795d4b7a6b3f695db320f7c94711be608b08ea5e38d"
+    sha256 cellar: :any, arm64_sequoia:     "56f0a34fbcc4589982050b06868a9687a40941e40ceb14d6cc80464f1c20d496"
+    sha256 cellar: :any, arm64_sonoma:      "0b009e0ddca72e010d8eafdc7d34e3e8dc4a655c1b789771883b5242a7f0f65d"
+    sha256 cellar: :any, arm64_linux:       "3d97780e90f45f53b9060a5d7368d19d87c129ba4c671be4a139348e243d2b4f"
+    sha256 cellar: :any, x86_64_linux:      "1ae54a07d87e9e8ec4c1dccb5333c86b5b8d6cf17dd0f823a9d9c830c4661b67"
   end
 
   depends_on "cmake" => :build

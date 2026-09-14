@@ -16,12 +16,13 @@ class Tnftp < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4e6465644d4137221c858dda232f99f049e01a413a014426d9ca6c5c00a73134"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6fa0e1a41b2b9a2005237d072de38763cc96372ff7321938c0399bb9e7288489"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f9dec17258f2179ede83e7ac1d6000c7c0798a6a590e1055b88a3eceec065315"
-    sha256 cellar: :any_skip_relocation, sonoma:        "dd334d6226939c4f040a017dbfb4b2ddc2aead1069a4f2a8ba58d81cac60f7e5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a0075ea6e8fb9822064a7ae05522c002c01036f0c45a94b9fc62f7c8f02bfd49"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e91159c7e5d49cee3fe378c3c971cffe559d28528936751c6f07bb1ea970f5e6"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "178bb45a5843197d9b40b397f3c8a97e3d0370ef3dff83e3ce9664f4822cc751"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "4e6465644d4137221c858dda232f99f049e01a413a014426d9ca6c5c00a73134"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "6fa0e1a41b2b9a2005237d072de38763cc96372ff7321938c0399bb9e7288489"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "f9dec17258f2179ede83e7ac1d6000c7c0798a6a590e1055b88a3eceec065315"
+    sha256 cellar: :any_skip_relocation, sonoma:            "dd334d6226939c4f040a017dbfb4b2ddc2aead1069a4f2a8ba58d81cac60f7e5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "a0075ea6e8fb9822064a7ae05522c002c01036f0c45a94b9fc62f7c8f02bfd49"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "e91159c7e5d49cee3fe378c3c971cffe559d28528936751c6f07bb1ea970f5e6"
   end
 
   uses_from_macos "bison" => :build

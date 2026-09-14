@@ -8,12 +8,13 @@ class TwitchCli < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "10450a73259cfeb284d60cb524a173937a614973f7317663fb600062981db89a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "56204390fab301db7683d5189880567af4b6daa19722ae071055dfc2efded16d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "875005fb73ea06710dcb3e18ce78e1f893f8b7831468ec7c7f7e7bb13b9091ec"
-    sha256 cellar: :any_skip_relocation, sonoma:        "cff4c98ba9d9ce9c64ae96d3d342c54702137ffcae207b9614fbd518cb7a138e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "45680e27634d86f2cd668a66e1521383aee6fc8dbfa771ee6387bd7baf18d32b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c7051314655660caeb40a7edfd372aa812c3599067861fef27cb5d0c52a8315d"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "408fc0db9b0ba2bffe6b17835447d5b37e8d6d9a0803411e485ca28d57a93f1d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "10450a73259cfeb284d60cb524a173937a614973f7317663fb600062981db89a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "56204390fab301db7683d5189880567af4b6daa19722ae071055dfc2efded16d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "875005fb73ea06710dcb3e18ce78e1f893f8b7831468ec7c7f7e7bb13b9091ec"
+    sha256 cellar: :any_skip_relocation, sonoma:            "cff4c98ba9d9ce9c64ae96d3d342c54702137ffcae207b9614fbd518cb7a138e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "45680e27634d86f2cd668a66e1521383aee6fc8dbfa771ee6387bd7baf18d32b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "c7051314655660caeb40a7edfd372aa812c3599067861fef27cb5d0c52a8315d"
   end
 
   depends_on "go" => :build

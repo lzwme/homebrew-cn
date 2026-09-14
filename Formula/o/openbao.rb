@@ -28,14 +28,24 @@ class Openbao < Formula
 
   conflicts_with "bao", because: "both install `bao` binaries"
 
-  def install
-    # Build ui assets
+  # `test do` block runs a local server
+  deny_network_access! [:build, :postinstall]
+
+  def fetch
+    system "go", "mod", "download"
     cd "ui" do
       ENV.prepend_path "PATH", formula_opt_libexec("node@22")/"bin" # for pnpm
       # Prevent pnpm from downloading another copy due to `packageManager` field
       (buildpath/"ui/pnpm-workspace.yaml").append_lines "managePackageManagerVersions: false"
       system "pnpm", "install", "--frozen-lockfile"
-      system "pnpm", "build"
+    end
+  end
+
+  def install
+    # Build ui assets
+    cd "ui" do
+      ENV.prepend_path "PATH", formula_opt_libexec("node@22")/"bin" # for pnpm
+      system "pnpm", "--offline", "build"
     end
 
     ldflags = %W[

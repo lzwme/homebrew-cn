@@ -12,14 +12,15 @@ class Quilt < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "93979fd118d49801525b0d28a8572a055893d3e3169ee9eff1bca64e69d9ccc2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "93979fd118d49801525b0d28a8572a055893d3e3169ee9eff1bca64e69d9ccc2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "93979fd118d49801525b0d28a8572a055893d3e3169ee9eff1bca64e69d9ccc2"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "93979fd118d49801525b0d28a8572a055893d3e3169ee9eff1bca64e69d9ccc2"
-    sha256 cellar: :any_skip_relocation, sonoma:        "93979fd118d49801525b0d28a8572a055893d3e3169ee9eff1bca64e69d9ccc2"
-    sha256 cellar: :any_skip_relocation, ventura:       "93979fd118d49801525b0d28a8572a055893d3e3169ee9eff1bca64e69d9ccc2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f0aadd65237093e1356cf63eef91a5ab80f8cba26bc8e034d05de7c3095dd64c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f0aadd65237093e1356cf63eef91a5ab80f8cba26bc8e034d05de7c3095dd64c"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "a5d6b400299dcedcbee4201e1edff44004d592afd35eaaeecb5d77fe36d8b8ea"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "93979fd118d49801525b0d28a8572a055893d3e3169ee9eff1bca64e69d9ccc2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "93979fd118d49801525b0d28a8572a055893d3e3169ee9eff1bca64e69d9ccc2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "93979fd118d49801525b0d28a8572a055893d3e3169ee9eff1bca64e69d9ccc2"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:     "93979fd118d49801525b0d28a8572a055893d3e3169ee9eff1bca64e69d9ccc2"
+    sha256 cellar: :any_skip_relocation, sonoma:            "93979fd118d49801525b0d28a8572a055893d3e3169ee9eff1bca64e69d9ccc2"
+    sha256 cellar: :any_skip_relocation, ventura:           "93979fd118d49801525b0d28a8572a055893d3e3169ee9eff1bca64e69d9ccc2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "f0aadd65237093e1356cf63eef91a5ab80f8cba26bc8e034d05de7c3095dd64c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "f0aadd65237093e1356cf63eef91a5ab80f8cba26bc8e034d05de7c3095dd64c"
   end
 
   depends_on "coreutils"

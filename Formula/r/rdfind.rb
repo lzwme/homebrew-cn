@@ -12,12 +12,13 @@ class Rdfind < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "63db8993c5a89ab61c517545b2eb85d4a5a6334c8b735c7c60c37ac043ba8b71"
-    sha256 cellar: :any,                 arm64_sequoia: "80b66c742f116218d2044f1375328cfd758580e3ccca3d158b72d3832ed8b106"
-    sha256 cellar: :any,                 arm64_sonoma:  "30d86306c8a3aab465037a111b0e3154e81e269376bc349a91a5a3af7be34f14"
-    sha256 cellar: :any,                 sonoma:        "463efa01de978dc751b6f4e53f31c69b9508e4f676e7b58432b96a43dae2eb9c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b477ba9491cb671cd48d2fbaa90898bded997d92a38909b93faef8ef92d1bf8b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "de313de0fe1ab06c00b90a9c7a58c8b2d4b227b4322478cbbffc10e5c5a7dece"
+    sha256 cellar: :any,                 arm64_golden_gate: "4b2d20500e68d9a525c1499bf0a21026fb1b55a5f5b43acc1641f8a893186dcc"
+    sha256 cellar: :any,                 arm64_tahoe:       "63db8993c5a89ab61c517545b2eb85d4a5a6334c8b735c7c60c37ac043ba8b71"
+    sha256 cellar: :any,                 arm64_sequoia:     "80b66c742f116218d2044f1375328cfd758580e3ccca3d158b72d3832ed8b106"
+    sha256 cellar: :any,                 arm64_sonoma:      "30d86306c8a3aab465037a111b0e3154e81e269376bc349a91a5a3af7be34f14"
+    sha256 cellar: :any,                 sonoma:            "463efa01de978dc751b6f4e53f31c69b9508e4f676e7b58432b96a43dae2eb9c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "b477ba9491cb671cd48d2fbaa90898bded997d92a38909b93faef8ef92d1bf8b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "de313de0fe1ab06c00b90a9c7a58c8b2d4b227b4322478cbbffc10e5c5a7dece"
   end
 
   depends_on "nettle"

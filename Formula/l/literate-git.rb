@@ -8,12 +8,13 @@ class LiterateGit < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3ccf9acc84587e2bf36b4039edb339affb921841e5f85823e8683f06107e2907"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "54872f5dbc3809592e771741536cc33adf0bc0285bef0fed22981a4cdbd8404f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6d128a916ca18cc7cc0d9e6a45cd170a93af0ca3911aa8a1075d8f0463ac56cb"
-    sha256 cellar: :any_skip_relocation, sonoma:        "90f60838a472927a1b16a2520b5783a91496426f2aab5d1f6c7d12478e34c1bb"
-    sha256 cellar: :any,                 arm64_linux:   "8b4d21fc4f174e6876c0752e6d59a7ead8c6b99522b88f80b2ba46dfbeac18dd"
-    sha256 cellar: :any,                 x86_64_linux:  "18480486d0c76df598d8f41a90ead8d82403c5da96ba65f1685b61e6d5b2d2d9"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "2e353198a0d991a12c9cc2925c04cad95dcb9f4e127edb67cc1fd23de301ec7e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "3ccf9acc84587e2bf36b4039edb339affb921841e5f85823e8683f06107e2907"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "54872f5dbc3809592e771741536cc33adf0bc0285bef0fed22981a4cdbd8404f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "6d128a916ca18cc7cc0d9e6a45cd170a93af0ca3911aa8a1075d8f0463ac56cb"
+    sha256 cellar: :any_skip_relocation, sonoma:            "90f60838a472927a1b16a2520b5783a91496426f2aab5d1f6c7d12478e34c1bb"
+    sha256 cellar: :any,                 arm64_linux:       "8b4d21fc4f174e6876c0752e6d59a7ead8c6b99522b88f80b2ba46dfbeac18dd"
+    sha256 cellar: :any,                 x86_64_linux:      "18480486d0c76df598d8f41a90ead8d82403c5da96ba65f1685b61e6d5b2d2d9"
   end
 
   depends_on "pkgconf" => :build

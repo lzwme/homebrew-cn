@@ -17,12 +17,13 @@ class Octave < Formula
 
   bottle do
     rebuild 1
-    sha256 arm64_tahoe:   "dd3e934bb9760b775520968d4427efd88af85f1e30ac179b9ee274e69a8b6d65"
-    sha256 arm64_sequoia: "9b3c413e48d96a1ab083b21aaa46a445ce66f383a317a403c5e6c96123b2a36c"
-    sha256 arm64_sonoma:  "f180b9a2804c0ea11642650743cadffa7eac78395f7f27e7faa4a32fd121114b"
-    sha256 sonoma:        "4f8f068612a8799a6565fa081eb2a6e8fc1f3dd7c64920fc19057ab8b2bc00f7"
-    sha256 arm64_linux:   "37a808b18b16d29308da0bf4837aa6c65e2b5e76bef081f68fa3feb6f63c766d"
-    sha256 x86_64_linux:  "b2ca79f1d0ec0d7f0a11a9c7a844519b801f3704f1b7a8d6d47fa3d8f3759e9d"
+    sha256 arm64_golden_gate: "b4f50de10c1539deed7f97649dae152cd23536648796abd2cf936cfbf9dbb2c2"
+    sha256 arm64_tahoe:       "dd3e934bb9760b775520968d4427efd88af85f1e30ac179b9ee274e69a8b6d65"
+    sha256 arm64_sequoia:     "9b3c413e48d96a1ab083b21aaa46a445ce66f383a317a403c5e6c96123b2a36c"
+    sha256 arm64_sonoma:      "f180b9a2804c0ea11642650743cadffa7eac78395f7f27e7faa4a32fd121114b"
+    sha256 sonoma:            "4f8f068612a8799a6565fa081eb2a6e8fc1f3dd7c64920fc19057ab8b2bc00f7"
+    sha256 arm64_linux:       "37a808b18b16d29308da0bf4837aa6c65e2b5e76bef081f68fa3feb6f63c766d"
+    sha256 x86_64_linux:      "b2ca79f1d0ec0d7f0a11a9c7a844519b801f3704f1b7a8d6d47fa3d8f3759e9d"
   end
 
   head do

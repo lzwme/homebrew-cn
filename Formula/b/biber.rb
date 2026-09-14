@@ -2,18 +2,16 @@ class Biber < Formula
   desc "Backend processor for BibLaTeX"
   homepage "https://sourceforge.net/projects/biblatex-biber/"
   url "https://ghfast.top/https://github.com/plk/biber/archive/refs/tags/v2.22.tar.gz"
-  sha256 "5ad1e915b52cda173b8ce398ab2f3d97c7429cac11420cc383889beb5e1fa6ce"
+  sha256 "82adcff9e71b4fc02ad6132f9ccd79137ad390e4d3392c7f681a85246c0cdc01"
   license "Artistic-2.0"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "c50e5c82fb0882e1dbce46ff79b681e2c0a88d758807714898b5b0f0f736e54f"
-    sha256 cellar: :any, arm64_sequoia: "4b33912caf6c058a9d9dd0b0fd60c47a0eb3f94c68799ade15e96092f85d2913"
-    sha256 cellar: :any, arm64_sonoma:  "85fd5cb1ca121a2c537128842bf74b774dba29b1ca5b0c395d7f98731466fd97"
-    sha256 cellar: :any, tahoe:         "660173bb1db6efd84437d3774144707796494385c63014c0af3604c1b2779c23"
-    sha256 cellar: :any, sequoia:       "e81c801fe261c6b4ab915a54489467f23c849559e13c438ee8a79694ddb8b148"
-    sha256 cellar: :any, sonoma:        "eb78e128ff7dbdeeb208bcc0a09931d35954c0ecaaa03e5bb750a5fdffd9b3c2"
-    sha256 cellar: :any, arm64_linux:   "4947288dc30e67c6d70b339f9497617a41714a41a3de7f39cdc047abc7e1c2b6"
-    sha256 cellar: :any, x86_64_linux:  "83db55cc7ced0b887682f693fd6544ca3f8ebdc19c84960da79f51b09fa02f89"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "3ac812c44d3c8b0a8a1a38347b5728a329dd3fb0bd35e95447b94cecac03161c"
+    sha256 cellar: :any, arm64_tahoe:       "ff71789356a3285f6854b6cb5dd75beb85fff1997dab2282517d0701ee06b7e0"
+    sha256 cellar: :any, arm64_sequoia:     "607af65f5f2a5f697a9f2d1a92150ade4630aaf0139f7b152732d366275de8f2"
+    sha256 cellar: :any, arm64_linux:       "0468c4ebd19b8bf432b94bc104093fae6610b88b6a3740a16ef74b7fec4c84e4"
+    sha256 cellar: :any, x86_64_linux:      "c25d46fc70146117cb8bee0030103076cd34079b509f4db211f292a5750f156d"
   end
 
   depends_on "pkgconf" => :build

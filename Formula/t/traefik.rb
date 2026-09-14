@@ -12,11 +12,12 @@ class Traefik < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0a915275b672dd65fcb32892f783d9ceacbb87ee31a233fc13df3daf99929f03"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5c9ed9d3906c1b315b75abfed6b2324b8e016c3bd1db8451fc90f4c918f2548e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "726b9f73a1c44d76a9b6f6398b047581d75892430bd50d6f6b74ae13e131297a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3284fac7d0d44bc17bb46bdbc3210bacbca4a8070a244fa28f2daa00dec4b922"
-    sha256 cellar: :any,                 x86_64_linux:  "5025b8600045c541f5a4f29e680adb06b66c67455f7437a1a2fdb4d461ff77f8"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "2c09aa1d954c90a267afb66bad488ec5bf992f75577178adb54b11d978d1e227"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "0a915275b672dd65fcb32892f783d9ceacbb87ee31a233fc13df3daf99929f03"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "5c9ed9d3906c1b315b75abfed6b2324b8e016c3bd1db8451fc90f4c918f2548e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "726b9f73a1c44d76a9b6f6398b047581d75892430bd50d6f6b74ae13e131297a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "3284fac7d0d44bc17bb46bdbc3210bacbca4a8070a244fa28f2daa00dec4b922"
+    sha256 cellar: :any,                 x86_64_linux:      "5025b8600045c541f5a4f29e680adb06b66c67455f7437a1a2fdb4d461ff77f8"
   end
 
   depends_on "corepack" => :build

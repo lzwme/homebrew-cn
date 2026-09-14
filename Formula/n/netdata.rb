@@ -13,11 +13,12 @@ class Netdata < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "c7dd33b89b8563bc96f144d9f18cef85928a8c1663709d60c585c106d4e93fa8"
-    sha256 arm64_sequoia: "65b0fa9a5f553037cfc8733865d1317f723848e3abf5426d4eb04dc5d0086f0e"
-    sha256 arm64_sonoma:  "76b7d36b3bb8533a31788aa50e1c7321119ca899aa5c0b3f1ee73dc085689ad4"
-    sha256 arm64_linux:   "70cd7279a7759e848fee17535dc14e8e610d27ba37f321306a7c8a1bd5820ad3"
-    sha256 x86_64_linux:  "b0fa1b61484c6c2703062d6bb9cea5e86f6fab57f67a869da86c4790011bef78"
+    sha256 arm64_golden_gate: "559dfcad3c70096573706e392af68f6081f317d878f8dfe6a904ee176bb0c697"
+    sha256 arm64_tahoe:       "c7dd33b89b8563bc96f144d9f18cef85928a8c1663709d60c585c106d4e93fa8"
+    sha256 arm64_sequoia:     "65b0fa9a5f553037cfc8733865d1317f723848e3abf5426d4eb04dc5d0086f0e"
+    sha256 arm64_sonoma:      "76b7d36b3bb8533a31788aa50e1c7321119ca899aa5c0b3f1ee73dc085689ad4"
+    sha256 arm64_linux:       "70cd7279a7759e848fee17535dc14e8e610d27ba37f321306a7c8a1bd5820ad3"
+    sha256 x86_64_linux:      "b0fa1b61484c6c2703062d6bb9cea5e86f6fab57f67a869da86c4790011bef78"
   end
 
   depends_on "cmake" => :build

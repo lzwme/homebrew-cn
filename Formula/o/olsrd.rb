@@ -12,12 +12,13 @@ class Olsrd < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d1b1dd66b69be130d7b2114b401afac090a19e908169401ae0ec784c17690569"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d3180890960307db6dc8d4cc7244f2da2772ec65bcba356698b3d6223feb6d6f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a3aab48c75a5a1b850c781b5baac23b0b2a5b576b10da49b87734746051d3083"
-    sha256 cellar: :any_skip_relocation, sonoma:        "939cab603b98b8a89d3fc778b9c5dc7c4bebec64f731221a182442225ec6bf71"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "331929ce9da8857820aca9705abadb8681a883346e59031e2f43721d8dac0e70"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d2a2c0d6260662fcf37251ef13bb25010103ebf8c4fd57f2268ca2640f850313"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "157d6ab2956da30ad3fd55b452ba0014368e59842b0719ef813c814926b28d1b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "d1b1dd66b69be130d7b2114b401afac090a19e908169401ae0ec784c17690569"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "d3180890960307db6dc8d4cc7244f2da2772ec65bcba356698b3d6223feb6d6f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "a3aab48c75a5a1b850c781b5baac23b0b2a5b576b10da49b87734746051d3083"
+    sha256 cellar: :any_skip_relocation, sonoma:            "939cab603b98b8a89d3fc778b9c5dc7c4bebec64f731221a182442225ec6bf71"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "331929ce9da8857820aca9705abadb8681a883346e59031e2f43721d8dac0e70"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "d2a2c0d6260662fcf37251ef13bb25010103ebf8c4fd57f2268ca2640f850313"
   end
 
   uses_from_macos "bison" => :build

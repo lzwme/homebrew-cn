@@ -8,12 +8,13 @@ class Unxip < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3b6c919fc617737fbffc245d013c8e7512c6d7db1c33df373b2afa79d82db96b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8b878c072c1a77f52d4e7cf49875b9237d32227aa4fec26c39a88de74081b42c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2707cf947f3c5a15b59a74fd8822efb1ac92d002df0164a70f53ef7c7e96871f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "21d28010c3c9aac3ce826ff7a0f3ecb87d258786848b0b879e982b850388b707"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cc43a268cc4b16019d4f8b2379117f91e34f3ebab4eb25d516fc94a290baeec7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f980d6217df53dc0c7e7c976a4a8bca29e7c38028876ce17184917df790253f9"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "5da2aa766052144c13652ee26fdfa154b96d611c3d9ff446aea7cefb60633b7c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "3b6c919fc617737fbffc245d013c8e7512c6d7db1c33df373b2afa79d82db96b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "8b878c072c1a77f52d4e7cf49875b9237d32227aa4fec26c39a88de74081b42c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "2707cf947f3c5a15b59a74fd8822efb1ac92d002df0164a70f53ef7c7e96871f"
+    sha256 cellar: :any_skip_relocation, sonoma:            "21d28010c3c9aac3ce826ff7a0f3ecb87d258786848b0b879e982b850388b707"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "cc43a268cc4b16019d4f8b2379117f91e34f3ebab4eb25d516fc94a290baeec7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "f980d6217df53dc0c7e7c976a4a8bca29e7c38028876ce17184917df790253f9"
   end
 
   uses_from_macos "swift" => :build

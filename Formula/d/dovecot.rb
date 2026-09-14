@@ -24,11 +24,12 @@ class Dovecot < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "f08cdbd8a8a08cc5cfe4cb88e7778e3bdc2fde397d7f5fd49419df431e832e8c"
-    sha256 arm64_sequoia: "07c117e94751ec30e84929a325769d4336766768f0d50b5512040635268fa14b"
-    sha256 arm64_sonoma:  "e622eceaf9503f90fe3885e0cae85b4e24ef77fd7758791bb8f7ea32d6da0939"
-    sha256 arm64_linux:   "2eaa5b099192d8ba403e1ee17c96e83d8cde47e3fbea6ba33e9ee1afb9780c6b"
-    sha256 x86_64_linux:  "42cb242c1bcb23e6a3aae74041417f7537255661c9cdcb48a80337df89902157"
+    rebuild 1
+    sha256 arm64_golden_gate: "08fa97309c333f866d990ff425c83942ee3b1ae8492f6921358475cd9448a5c3"
+    sha256 arm64_tahoe:       "463fa86f7154a7306623d716203e9bd126a30108069800c3aa59fd44cf3b4b38"
+    sha256 arm64_sequoia:     "d1b3cc112059eec79e20c376cb835a40109bd0ff105e5463b124ec556e9ad021"
+    sha256 arm64_linux:       "0f62414a5f6c0cca8f694780c894049e861d9cddff84093316bdb69d58a91251"
+    sha256 x86_64_linux:      "9f4cea03363d421749f158033d7f7648dd9544d0d216292c4e3b3c485218c683"
   end
 
   depends_on "pkgconf" => :build
@@ -53,7 +54,7 @@ class Dovecot < Formula
 
   resource "pigeonhole" do
     url "https://pigeonhole.dovecot.org/releases/2.4/dovecot-pigeonhole-2.4.5.tar.gz"
-    sha256 "06259be224aed23e2448fba5f620c2accca1f35694d31ba8ce9b30b2414f71ec"
+    sha256 "ad7c478cb3aaa76c5f81f86727a3e6843645b0a1253f5684fb8a0beec0d22925"
 
     livecheck do
       formula :parent

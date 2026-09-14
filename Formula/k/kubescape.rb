@@ -24,6 +24,13 @@ class Kubescape < Formula
 
   depends_on "go" => :build
 
+  # `test do` block downloads framework artifacts and scans a remote URL
+  deny_network_access! [:build, :postinstall]
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     system "go", "build", *std_go_args(ldflags: :goreleaser)
 

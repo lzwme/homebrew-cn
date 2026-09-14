@@ -8,12 +8,13 @@ class Pqiv < Formula
   head "https://github.com/phillipberndt/pqiv.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "2c1df3a4623ad1f39c302e97ff22d88a3c4ee4c98641e25d59ec3a1e3c97f858"
-    sha256 cellar: :any, arm64_sequoia: "500fd3c313b7e428f7bcb1c9424dd3edb688dc9e633fe3943c381b792b156233"
-    sha256 cellar: :any, arm64_sonoma:  "ff9762e35b101bdbd42ccbe6fe24f6c5da0bcaba7455d9c7cdfb8818b5c7a892"
-    sha256 cellar: :any, sonoma:        "6f22417b27286564c9137a0179045c255ce6cd6dc44ffb976e0b2a81818e5757"
-    sha256 cellar: :any, arm64_linux:   "cd70a0a3739c88cc4dae3f745ee45e665713b5204082559908d829652306fb19"
-    sha256 cellar: :any, x86_64_linux:  "b7b23f76cd4f8dc2b07feccfb7441831e28089d143153e8ddae28a064cbd6d8e"
+    sha256 cellar: :any, arm64_golden_gate: "05c8ec7195332973ba87574c0ad160b66366a0013fc56294821e96e344521dfb"
+    sha256 cellar: :any, arm64_tahoe:       "2c1df3a4623ad1f39c302e97ff22d88a3c4ee4c98641e25d59ec3a1e3c97f858"
+    sha256 cellar: :any, arm64_sequoia:     "500fd3c313b7e428f7bcb1c9424dd3edb688dc9e633fe3943c381b792b156233"
+    sha256 cellar: :any, arm64_sonoma:      "ff9762e35b101bdbd42ccbe6fe24f6c5da0bcaba7455d9c7cdfb8818b5c7a892"
+    sha256 cellar: :any, sonoma:            "6f22417b27286564c9137a0179045c255ce6cd6dc44ffb976e0b2a81818e5757"
+    sha256 cellar: :any, arm64_linux:       "cd70a0a3739c88cc4dae3f745ee45e665713b5204082559908d829652306fb19"
+    sha256 cellar: :any, x86_64_linux:      "b7b23f76cd4f8dc2b07feccfb7441831e28089d143153e8ddae28a064cbd6d8e"
   end
 
   depends_on "pkgconf" => :build

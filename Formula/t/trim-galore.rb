@@ -12,12 +12,13 @@ class TrimGalore < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "21715e4c80f487a2e3e4ad673e12cdfa872bde5685597b6790e062be97a275ed"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4be9dd3a0cba6a7671eb0e3cbc426e30e621c3754831bcdbf25dfcafed47e9df"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "981fa7a134a77f9ed8af9e91eaf7dfe6e37536a2bea3eb1baab6345fa55b331f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c2475710430a340a61d03036f9b626226e3e2cd7f9a6544fc2ddbfe404488f19"
-    sha256 cellar: :any,                 arm64_linux:   "95e72c2c77cb70c6348c5f5b4ff4053fb9a455ad61ac3ed42e5ea42789cfebdd"
-    sha256 cellar: :any,                 x86_64_linux:  "5b67d87bfc3fd3e780117d9c7aa98485a02f0c39d99f3c0ce1df3df2957efa05"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "1e02d0c3d7cde50a819432af2e169f332867c59f48b0505e6ff4dc2ce2c9361f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "21715e4c80f487a2e3e4ad673e12cdfa872bde5685597b6790e062be97a275ed"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "4be9dd3a0cba6a7671eb0e3cbc426e30e621c3754831bcdbf25dfcafed47e9df"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "981fa7a134a77f9ed8af9e91eaf7dfe6e37536a2bea3eb1baab6345fa55b331f"
+    sha256 cellar: :any_skip_relocation, sonoma:            "c2475710430a340a61d03036f9b626226e3e2cd7f9a6544fc2ddbfe404488f19"
+    sha256 cellar: :any,                 arm64_linux:       "95e72c2c77cb70c6348c5f5b4ff4053fb9a455ad61ac3ed42e5ea42789cfebdd"
+    sha256 cellar: :any,                 x86_64_linux:      "5b67d87bfc3fd3e780117d9c7aa98485a02f0c39d99f3c0ce1df3df2957efa05"
   end
 
   depends_on "rust" => :build

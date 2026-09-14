@@ -12,14 +12,15 @@ class Lizard < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "027cd559caf4e36ee689c1430cbd1d6719ef7859daf9f3b62fcbabeb52bf65c9"
-    sha256 cellar: :any,                 arm64_sequoia: "a9de7741a01031727be56d4e8114c07ca8b108607393e7fc81de10a3ef38ac2c"
-    sha256 cellar: :any,                 arm64_sonoma:  "f0096c7097d15b80a8b1380e9875f01dc9c774f9c4486037079e87614179b32f"
-    sha256 cellar: :any,                 arm64_ventura: "6e41f950c3122da4196d7f1f9501e9c32f095465587090615bba4be931543f07"
-    sha256 cellar: :any,                 sonoma:        "9bd2c13adb64d92944260e290b9416218f4eeb424487ea49ae83bb015ffd9f81"
-    sha256 cellar: :any,                 ventura:       "39b3961d0fc7b870dcc7d375782ccd5c51ac716e4a3ef8bb6ffa16431409ae37"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6212d114544ae8160922823d29a649f51b2bb89fe30a114e93b6b063e9ebac0f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "baf6aa7976a0ebf3f70dca4b20b19dac4cebcf104d40806af223fa0be2b0607f"
+    sha256 cellar: :any,                 arm64_golden_gate: "d839d07b96985a9e23f60ab997e95e33adc53ef4368d7fcc7d76bc10edbb6ac6"
+    sha256 cellar: :any,                 arm64_tahoe:       "027cd559caf4e36ee689c1430cbd1d6719ef7859daf9f3b62fcbabeb52bf65c9"
+    sha256 cellar: :any,                 arm64_sequoia:     "a9de7741a01031727be56d4e8114c07ca8b108607393e7fc81de10a3ef38ac2c"
+    sha256 cellar: :any,                 arm64_sonoma:      "f0096c7097d15b80a8b1380e9875f01dc9c774f9c4486037079e87614179b32f"
+    sha256 cellar: :any,                 arm64_ventura:     "6e41f950c3122da4196d7f1f9501e9c32f095465587090615bba4be931543f07"
+    sha256 cellar: :any,                 sonoma:            "9bd2c13adb64d92944260e290b9416218f4eeb424487ea49ae83bb015ffd9f81"
+    sha256 cellar: :any,                 ventura:           "39b3961d0fc7b870dcc7d375782ccd5c51ac716e4a3ef8bb6ffa16431409ae37"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "6212d114544ae8160922823d29a649f51b2bb89fe30a114e93b6b063e9ebac0f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "baf6aa7976a0ebf3f70dca4b20b19dac4cebcf104d40806af223fa0be2b0607f"
   end
 
   conflicts_with "lizard-analyzer", because: "both install `lizard` binaries"

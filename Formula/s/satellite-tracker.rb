@@ -6,12 +6,13 @@ class SatelliteTracker < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0e3f1176e48ce806909cd6e32aeaea679fea6353a0bad61f97880c55bfc21f33"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "402effae1dd52f4ee6c28d921c55e17c5f3be92063146a49fbd08beaca7e3e81"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5708af5d305862da059606d4d33f00946351d617c2e0a683725e4422aac3dd32"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e02ec3ff9cf189291eae233f7b183b1812c52a38eb264d35da0880cbaf25b37c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7dd5cacb400a734ffa52b7bb8a747ffcdbeaeedc7ce76666b9920ac462f27b19"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "48b732f5167d97ee80f570a12bf2e4fd618532c0599f93f94ee784ae50e58e55"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "95e1ff7455de3e623d2c8098aee235d498ca002c14a95f09ca2f2d81850b84cf"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "0e3f1176e48ce806909cd6e32aeaea679fea6353a0bad61f97880c55bfc21f33"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "402effae1dd52f4ee6c28d921c55e17c5f3be92063146a49fbd08beaca7e3e81"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "5708af5d305862da059606d4d33f00946351d617c2e0a683725e4422aac3dd32"
+    sha256 cellar: :any_skip_relocation, sonoma:            "e02ec3ff9cf189291eae233f7b183b1812c52a38eb264d35da0880cbaf25b37c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "7dd5cacb400a734ffa52b7bb8a747ffcdbeaeedc7ce76666b9920ac462f27b19"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "48b732f5167d97ee80f570a12bf2e4fd618532c0599f93f94ee784ae50e58e55"
   end
 
   depends_on "pkgconf" => :build

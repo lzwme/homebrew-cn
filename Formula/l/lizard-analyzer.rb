@@ -8,12 +8,13 @@ class LizardAnalyzer < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d0d16eb179c7271c49067edfb92719159a03f9cd1916a66c74ba5bc6c44033b6"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e0e50984849f360c0026ba30871cfd1b68dc815b1917037451ebd63e7f7ad2be"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d9c8d4c6fbe4c80e261c50db54bffa90fac0244bd088940722b265937b06e966"
-    sha256 cellar: :any_skip_relocation, sonoma:        "983a3304998df6a3b63e609202c36b93ef29d03b46dbf1e33bc124d69ae36118"
-    sha256 cellar: :any,                 arm64_linux:   "da5e93b83d95f8f08a03414eafa42bf977a77b56d894cee880c7c54478382676"
-    sha256 cellar: :any,                 x86_64_linux:  "04bfaa0ea9aeabe01f45165350789c14653b59727191dbcad41a4f4edf89ffa0"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "ccc2422e19b7818a85d9747bdffd5b45a8d1264606d31f2154c0494a19750875"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "d0d16eb179c7271c49067edfb92719159a03f9cd1916a66c74ba5bc6c44033b6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "e0e50984849f360c0026ba30871cfd1b68dc815b1917037451ebd63e7f7ad2be"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "d9c8d4c6fbe4c80e261c50db54bffa90fac0244bd088940722b265937b06e966"
+    sha256 cellar: :any_skip_relocation, sonoma:            "983a3304998df6a3b63e609202c36b93ef29d03b46dbf1e33bc124d69ae36118"
+    sha256 cellar: :any,                 arm64_linux:       "da5e93b83d95f8f08a03414eafa42bf977a77b56d894cee880c7c54478382676"
+    sha256 cellar: :any,                 x86_64_linux:      "04bfaa0ea9aeabe01f45165350789c14653b59727191dbcad41a4f4edf89ffa0"
   end
 
   depends_on "python@3.14"

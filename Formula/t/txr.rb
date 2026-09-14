@@ -12,12 +12,13 @@ class Txr < Formula
 
   bottle do
     rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5a3e2696544766b198f2d6be38cee732e7757bc465a85951d3cc69c589a74490"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "080e9b53e0bf6f5fdf978e4498dce5138f32750ceaeeda57a4343a9fc3d9ca79"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b7c6793df7533f54d70fb81522f014fa532c20ddb4386557d40554146b0aa53b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0db191f5177f88c2347a3374bd99847bc65034f200bd83ed891de7cb69d56823"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ef7c5786a174ca30e31d3d87afa2aeb796cab3c72a837f01397af9011cfe9885"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "28c0d4e14ed8bf41888293d49df188ed82b731ef0dd5fe30fe279c69f4a17b1f"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "773bc545ece9faefd2b81503a159bc67ee80c05ab9caa3fe2f076a468e04ccfc"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "5a3e2696544766b198f2d6be38cee732e7757bc465a85951d3cc69c589a74490"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "080e9b53e0bf6f5fdf978e4498dce5138f32750ceaeeda57a4343a9fc3d9ca79"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "b7c6793df7533f54d70fb81522f014fa532c20ddb4386557d40554146b0aa53b"
+    sha256 cellar: :any_skip_relocation, sonoma:            "0db191f5177f88c2347a3374bd99847bc65034f200bd83ed891de7cb69d56823"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "ef7c5786a174ca30e31d3d87afa2aeb796cab3c72a837f01397af9011cfe9885"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "28c0d4e14ed8bf41888293d49df188ed82b731ef0dd5fe30fe279c69f4a17b1f"
   end
 
   depends_on "pkgconf" => :build

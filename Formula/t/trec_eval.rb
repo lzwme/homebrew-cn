@@ -6,12 +6,13 @@ class TrecEval < Formula
   license :public_domain
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e7c621fd9585129cdbb8342e2580dcf9cd5149da3f7ebaf9051e923952a42a5b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "17a87e5ec7a9f6e1f74c1c8db2cd5468fa6d42721675e02d98cfc4cc88dca4bd"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e3da26bba3c7ec988880f90dee04987ff7b205f3eebeba1bdcd3788a6ab6cca6"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3a4ee875e866ae6a31d0d3caae897074d96504711a71fd819d2b4c387d5729d7"
-    sha256 cellar: :any,                 arm64_linux:   "9bb819d5d35a754579f7430886be13aee36370ec5aadac1ab7efc89801ab7c03"
-    sha256 cellar: :any,                 x86_64_linux:  "821322cd215d94abd1ff88f25839f2c941d8f151191626549320e1ec5d651d5f"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "0aaf9c29d3a09caf094b1fa74d49a0db0fc02543de83614c01c47d3d2650d459"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "e7c621fd9585129cdbb8342e2580dcf9cd5149da3f7ebaf9051e923952a42a5b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "17a87e5ec7a9f6e1f74c1c8db2cd5468fa6d42721675e02d98cfc4cc88dca4bd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "e3da26bba3c7ec988880f90dee04987ff7b205f3eebeba1bdcd3788a6ab6cca6"
+    sha256 cellar: :any_skip_relocation, sonoma:            "3a4ee875e866ae6a31d0d3caae897074d96504711a71fd819d2b4c387d5729d7"
+    sha256 cellar: :any,                 arm64_linux:       "9bb819d5d35a754579f7430886be13aee36370ec5aadac1ab7efc89801ab7c03"
+    sha256 cellar: :any,                 x86_64_linux:      "821322cd215d94abd1ff88f25839f2c941d8f151191626549320e1ec5d651d5f"
   end
 
   def install

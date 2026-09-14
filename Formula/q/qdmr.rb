@@ -6,12 +6,13 @@ class Qdmr < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "32df27547416b1d925fcf0e6aa83a7da815c3c5713bf8fd79192bbe3f118738b"
-    sha256 cellar: :any, arm64_sequoia: "8dd895f0e54072b336dd3b75f1ded5fc93f3eae9bf949f886ba0207401ff5b5b"
-    sha256 cellar: :any, arm64_sonoma:  "eb4a9ab5a671ea55d2713029f137d68f01da1b50bd894e3a6cb1dd90f6c8aa8d"
-    sha256 cellar: :any, sonoma:        "32c6dc8731628a6ae0ec2236ff161ff9d40f5b5f9b5797cc2a7e90cee9c5c467"
-    sha256 cellar: :any, arm64_linux:   "4bd128e2d61093bb78b400942e8387320584af8f110133475e8e2d364f63ac11"
-    sha256 cellar: :any, x86_64_linux:  "2a3643b0eead3cddc4a90c89f1cfa343254ffd8574696702b3d260280dbf1684"
+    sha256 cellar: :any, arm64_golden_gate: "86b6c44ac7cf70ef260f6d682f887eda0caaf51cf54e012ed8063fb2cf13de06"
+    sha256 cellar: :any, arm64_tahoe:       "32df27547416b1d925fcf0e6aa83a7da815c3c5713bf8fd79192bbe3f118738b"
+    sha256 cellar: :any, arm64_sequoia:     "8dd895f0e54072b336dd3b75f1ded5fc93f3eae9bf949f886ba0207401ff5b5b"
+    sha256 cellar: :any, arm64_sonoma:      "eb4a9ab5a671ea55d2713029f137d68f01da1b50bd894e3a6cb1dd90f6c8aa8d"
+    sha256 cellar: :any, sonoma:            "32c6dc8731628a6ae0ec2236ff161ff9d40f5b5f9b5797cc2a7e90cee9c5c467"
+    sha256 cellar: :any, arm64_linux:       "4bd128e2d61093bb78b400942e8387320584af8f110133475e8e2d364f63ac11"
+    sha256 cellar: :any, x86_64_linux:      "2a3643b0eead3cddc4a90c89f1cfa343254ffd8574696702b3d260280dbf1684"
   end
 
   depends_on "cmake" => :build

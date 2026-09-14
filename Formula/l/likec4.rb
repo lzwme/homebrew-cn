@@ -6,11 +6,12 @@ class Likec4 < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "6598b2c46264e941477e604499080ff1f38a594ab25709b4837025a6fccc4fd0"
-    sha256 cellar: :any,                 arm64_sequoia: "6598b2c46264e941477e604499080ff1f38a594ab25709b4837025a6fccc4fd0"
-    sha256 cellar: :any,                 arm64_sonoma:  "6598b2c46264e941477e604499080ff1f38a594ab25709b4837025a6fccc4fd0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f523f22b41632f3679f5b0c5bea970ab09b569db5215559ad3bfe1a0846d607c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "654873dcc4a30ef897973823328a03c8c313d543b486a25a8ba9fc8a42225032"
+    sha256 cellar: :any,                 arm64_golden_gate: "369df66c7497e6529dd34e670f3078f50855a9aacf2004034613cb1a2073292f"
+    sha256 cellar: :any,                 arm64_tahoe:       "6598b2c46264e941477e604499080ff1f38a594ab25709b4837025a6fccc4fd0"
+    sha256 cellar: :any,                 arm64_sequoia:     "6598b2c46264e941477e604499080ff1f38a594ab25709b4837025a6fccc4fd0"
+    sha256 cellar: :any,                 arm64_sonoma:      "6598b2c46264e941477e604499080ff1f38a594ab25709b4837025a6fccc4fd0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "f523f22b41632f3679f5b0c5bea970ab09b569db5215559ad3bfe1a0846d607c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "654873dcc4a30ef897973823328a03c8c313d543b486a25a8ba9fc8a42225032"
   end
 
   depends_on "graphviz"

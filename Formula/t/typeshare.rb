@@ -12,12 +12,13 @@ class Typeshare < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7d8a99434dafc99d2d1bf95260f67e6f081794cf4617108ce5548909ab93879d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "617e96248ce3c4093b2b1822f52ef349253c967737d40e6338f914c7f12b30b4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0c6c4c8d75a8f765f81494cb3d7b9835801d8ce3de1bfb6fca5d9be617241fea"
-    sha256 cellar: :any_skip_relocation, sonoma:        "333a99ff0ce9d2c86037777214605a9de1b95ca6a4b70e3a68d8dad1470cbc97"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b19487d84e9a5273fa77f0c637c5e27ea8f29ff1c903b743ceae37404956789a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "06d19e281d8d0fae7f7c11dff97efaacb3865a6f98a59c4d7f7ba057b011ff9d"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "29f48a14e2b728bcbd10f04bdf7ed45c9a5467275276f14a172cbd81f06e6e61"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "7d8a99434dafc99d2d1bf95260f67e6f081794cf4617108ce5548909ab93879d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "617e96248ce3c4093b2b1822f52ef349253c967737d40e6338f914c7f12b30b4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "0c6c4c8d75a8f765f81494cb3d7b9835801d8ce3de1bfb6fca5d9be617241fea"
+    sha256 cellar: :any_skip_relocation, sonoma:            "333a99ff0ce9d2c86037777214605a9de1b95ca6a4b70e3a68d8dad1470cbc97"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "b19487d84e9a5273fa77f0c637c5e27ea8f29ff1c903b743ceae37404956789a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "06d19e281d8d0fae7f7c11dff97efaacb3865a6f98a59c4d7f7ba057b011ff9d"
   end
 
   depends_on "rust" => :build

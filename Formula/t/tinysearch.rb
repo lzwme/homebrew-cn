@@ -7,12 +7,13 @@ class Tinysearch < Formula
   head "https://github.com/tinysearch/tinysearch.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7aefd105de246475466e2380976a4733d98ae205c3921ec5b8599c1b1eebbf0a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "15a44c8146f71015c80e88f23013adc7278950d1b7507c9cae256005592b1f46"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5a6b9d6fcc69307077a6fb98dc8d76668a8b060f94446631358cd0b6b2ccd5ac"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0ac427e1f459091938feb40fffd8a6d8c496a0d185eb61e5f5c7fba317b3c96f"
-    sha256 cellar: :any,                 arm64_linux:   "3d1fe77c281a926ae96bde81080bd20e9a845d77bcc8e70b9e179dd6d999345f"
-    sha256 cellar: :any,                 x86_64_linux:  "20ef0ab80ef985feba30185c98adeea28542803fe3ff81bc9239a848e4b65f01"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "c839d561d1ccc226543d64d3e22af8eecfc0a31ac8a9280d4366ccd143b3148a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "7aefd105de246475466e2380976a4733d98ae205c3921ec5b8599c1b1eebbf0a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "15a44c8146f71015c80e88f23013adc7278950d1b7507c9cae256005592b1f46"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "5a6b9d6fcc69307077a6fb98dc8d76668a8b060f94446631358cd0b6b2ccd5ac"
+    sha256 cellar: :any_skip_relocation, sonoma:            "0ac427e1f459091938feb40fffd8a6d8c496a0d185eb61e5f5c7fba317b3c96f"
+    sha256 cellar: :any,                 arm64_linux:       "3d1fe77c281a926ae96bde81080bd20e9a845d77bcc8e70b9e179dd6d999345f"
+    sha256 cellar: :any,                 x86_64_linux:      "20ef0ab80ef985feba30185c98adeea28542803fe3ff81bc9239a848e4b65f01"
   end
 
   depends_on "rust" => :build

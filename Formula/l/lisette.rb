@@ -12,11 +12,12 @@ class Lisette < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "64cee605ae9669e7f8aff99c2bd1a1d9195677b53f57f779ec1dc8497af29719"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1ac39aa31118988ead04117ba965a771d45352496b389c2d1adfb16203b4a914"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e1397dc7de5cfc95be9857c6b6b8bd7c0858556d50b3c53bd32965bd8bae998e"
-    sha256 cellar: :any,                 arm64_linux:   "af8e9ca1c860523c1d78d967caac0fddd67ce84bf3295fbc207813b64519e12c"
-    sha256 cellar: :any,                 x86_64_linux:  "40a9d9055261e1e8c0ce93de4dc796104d2be88d34e6d5edc0ea3e4e476b46f8"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "6079bad77fcf455c523d32cbfcbefb389950a7c61d0e5c89e85a67fad52e1a76"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "64cee605ae9669e7f8aff99c2bd1a1d9195677b53f57f779ec1dc8497af29719"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "1ac39aa31118988ead04117ba965a771d45352496b389c2d1adfb16203b4a914"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "e1397dc7de5cfc95be9857c6b6b8bd7c0858556d50b3c53bd32965bd8bae998e"
+    sha256 cellar: :any,                 arm64_linux:       "af8e9ca1c860523c1d78d967caac0fddd67ce84bf3295fbc207813b64519e12c"
+    sha256 cellar: :any,                 x86_64_linux:      "40a9d9055261e1e8c0ce93de4dc796104d2be88d34e6d5edc0ea3e4e476b46f8"
   end
 
   depends_on "rust" => :build

@@ -11,12 +11,13 @@ class Tin < Formula
   end
 
   bottle do
-    sha256               arm64_tahoe:   "1e53cebb5c99bc1f13b9b9590fc9ccfd7e33b8bbcd46ab6c807fc36295d84a77"
-    sha256               arm64_sequoia: "d8d5a7b775fecfaeb97fdece2f059f409b7480f0a91112c49aeb772cdd8430d1"
-    sha256               arm64_sonoma:  "5790b69677cb75e61db5042acab9155528e7d2f01e4c34fae15edd55d3b89532"
-    sha256               sonoma:        "cfce01383930442ad7b49ee9a876cb4057c2f10bab8bfddac4a83d7cb040651c"
-    sha256 cellar: :any, arm64_linux:   "be34926c521936f41c8f19c92390e35a1a638ce7c17d4377b3790c6773785d8a"
-    sha256 cellar: :any, x86_64_linux:  "d293199a9b2094581c28b0660be1e60c4b9342c578484668cf060a70ac7431c9"
+    sha256               arm64_golden_gate: "0147d629fbba5edc645df0a3f912282a0f7be121b0c5a6a081890c110fa04a74"
+    sha256               arm64_tahoe:       "1e53cebb5c99bc1f13b9b9590fc9ccfd7e33b8bbcd46ab6c807fc36295d84a77"
+    sha256               arm64_sequoia:     "d8d5a7b775fecfaeb97fdece2f059f409b7480f0a91112c49aeb772cdd8430d1"
+    sha256               arm64_sonoma:      "5790b69677cb75e61db5042acab9155528e7d2f01e4c34fae15edd55d3b89532"
+    sha256               sonoma:            "cfce01383930442ad7b49ee9a876cb4057c2f10bab8bfddac4a83d7cb040651c"
+    sha256 cellar: :any, arm64_linux:       "be34926c521936f41c8f19c92390e35a1a638ce7c17d4377b3790c6773785d8a"
+    sha256 cellar: :any, x86_64_linux:      "d293199a9b2094581c28b0660be1e60c4b9342c578484668cf060a70ac7431c9"
   end
 
   depends_on "pcre2"

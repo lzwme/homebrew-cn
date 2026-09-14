@@ -12,12 +12,13 @@ class Tkrzw < Formula
 
   bottle do
     rebuild 2
-    sha256 arm64_tahoe:   "2a93d5a38b3e08c37d54d667daec5725390de6704e0ded01dae185d6fece38fa"
-    sha256 arm64_sequoia: "c0d04a3456293bd15f82e6a73841e89afa3667c703090ef5bbf8cc83f65a7ed3"
-    sha256 arm64_sonoma:  "4cdac837ea7a7725dfd53dd144ecf10bdd943ad16afb69a78fb157898902c159"
-    sha256 sonoma:        "f0a9dfb7aa1d28dc848b8ae5a67093fe8ba7d73576fbb49f6eaf31804a46f63c"
-    sha256 arm64_linux:   "2b2d2a3bc55190b7b8d86704fc5ca5920280277a238d55b20ae15c8ec00f1496"
-    sha256 x86_64_linux:  "b4afc2a954abf29f144c953048526c89d242af29652ac59d9ee05cd5d715ecd0"
+    sha256 arm64_golden_gate: "37bc73c0c44c517ecd9d81fe32cc4758db3e3e4860614b9f64ea1fca13c90c6a"
+    sha256 arm64_tahoe:       "2a93d5a38b3e08c37d54d667daec5725390de6704e0ded01dae185d6fece38fa"
+    sha256 arm64_sequoia:     "c0d04a3456293bd15f82e6a73841e89afa3667c703090ef5bbf8cc83f65a7ed3"
+    sha256 arm64_sonoma:      "4cdac837ea7a7725dfd53dd144ecf10bdd943ad16afb69a78fb157898902c159"
+    sha256 sonoma:            "f0a9dfb7aa1d28dc848b8ae5a67093fe8ba7d73576fbb49f6eaf31804a46f63c"
+    sha256 arm64_linux:       "2b2d2a3bc55190b7b8d86704fc5ca5920280277a238d55b20ae15c8ec00f1496"
+    sha256 x86_64_linux:      "b4afc2a954abf29f144c953048526c89d242af29652ac59d9ee05cd5d715ecd0"
   end
 
   depends_on "lz4"

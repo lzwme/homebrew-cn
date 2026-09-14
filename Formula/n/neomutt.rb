@@ -8,12 +8,13 @@ class Neomutt < Formula
   head "https://github.com/neomutt/neomutt.git", branch: "main"
 
   bottle do
-    sha256 arm64_tahoe:   "163c2785303fc2a896fef0bb83596edd6fdf8768a12bdbf706cdd46de6cec220"
-    sha256 arm64_sequoia: "43bf302ac98c978dfe6e52c269ff09067049c80641e8299267811fe5c82e9398"
-    sha256 arm64_sonoma:  "b2fdc688fc1c2fe562fc92a0787adae69d5a979059a0476adb80a5e7c8ef2634"
-    sha256 sonoma:        "281846228aa1eaa569b944c0b707d01951a4acd13447e196bf903ad98c911376"
-    sha256 arm64_linux:   "5e69c159556cd7684c82f5cbe4e204318dba65abb911751af02f46e38aa05c21"
-    sha256 x86_64_linux:  "e3e21c0fdadc345d64fa70f0067eaa2c1ee5b0920aaf686e6045a98c339d1954"
+    sha256 arm64_golden_gate: "9bd21615b7262ebc7322c04930234ead8c77c28d8baa63c5ba2a80f0c19a7796"
+    sha256 arm64_tahoe:       "163c2785303fc2a896fef0bb83596edd6fdf8768a12bdbf706cdd46de6cec220"
+    sha256 arm64_sequoia:     "43bf302ac98c978dfe6e52c269ff09067049c80641e8299267811fe5c82e9398"
+    sha256 arm64_sonoma:      "b2fdc688fc1c2fe562fc92a0787adae69d5a979059a0476adb80a5e7c8ef2634"
+    sha256 sonoma:            "281846228aa1eaa569b944c0b707d01951a4acd13447e196bf903ad98c911376"
+    sha256 arm64_linux:       "5e69c159556cd7684c82f5cbe4e204318dba65abb911751af02f46e38aa05c21"
+    sha256 x86_64_linux:      "e3e21c0fdadc345d64fa70f0067eaa2c1ee5b0920aaf686e6045a98c339d1954"
   end
 
   depends_on "docbook-xsl" => :build

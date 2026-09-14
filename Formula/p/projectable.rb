@@ -8,12 +8,13 @@ class Projectable < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "ccd276c023c85a06dde2ee0d327f924e546178c408f67e83a955660c9175758d"
-    sha256 cellar: :any,                 arm64_sequoia: "807150e84939dc9e77f01e5d8e9c2b826456399a3c456b76292d99324c1ed7f7"
-    sha256 cellar: :any,                 arm64_sonoma:  "56b10743eed8508024a1dee415c63095e932e45d78724186bce24cddb492f8d9"
-    sha256 cellar: :any,                 sonoma:        "afd84a1fa7930a0e039333cc60402708cbb7a67156c2c90744c265e1e2583d99"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1120e3794cc5c73c58aaa6ce78f16ba76c7df6982f94de5eac0cbb616cfe2bd8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e5b7bbc33a02a2c7ba457562a08d857db94c73b60f7045e8306b487f7d9514d4"
+    sha256 cellar: :any,                 arm64_golden_gate: "fe1c045bec3b443a01dd8347d82a6dd953cc60246e65417493a2dcfd08952593"
+    sha256 cellar: :any,                 arm64_tahoe:       "ccd276c023c85a06dde2ee0d327f924e546178c408f67e83a955660c9175758d"
+    sha256 cellar: :any,                 arm64_sequoia:     "807150e84939dc9e77f01e5d8e9c2b826456399a3c456b76292d99324c1ed7f7"
+    sha256 cellar: :any,                 arm64_sonoma:      "56b10743eed8508024a1dee415c63095e932e45d78724186bce24cddb492f8d9"
+    sha256 cellar: :any,                 sonoma:            "afd84a1fa7930a0e039333cc60402708cbb7a67156c2c90744c265e1e2583d99"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "1120e3794cc5c73c58aaa6ce78f16ba76c7df6982f94de5eac0cbb616cfe2bd8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "e5b7bbc33a02a2c7ba457562a08d857db94c73b60f7045e8306b487f7d9514d4"
   end
 
   depends_on "pkgconf" => :build

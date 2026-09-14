@@ -12,12 +12,13 @@ class Thorvg < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "a6b99e05374ae594d991ff58ac0fece37071ca94d2a7fc27669bd17166e45ebe"
-    sha256 cellar: :any, arm64_sequoia: "959ea744652c8b1d669335571c44d8044a762bf2043328ccf79b3a8f9a256fae"
-    sha256 cellar: :any, arm64_sonoma:  "d41abf1592bf80c5bacd79e33a58807b5d8d6d8fd4ff64b89d3a496c74a31c8c"
-    sha256 cellar: :any, sonoma:        "b0b42ce8626676f93c9e0d34e4011aa1c56d7a0f2b082278f465b3c0e980de28"
-    sha256 cellar: :any, arm64_linux:   "a7033878752aad30ed72728772f77817d2e6cee09f8ed999b2cde72161a1118a"
-    sha256 cellar: :any, x86_64_linux:  "0a990b6f7349af6bdf4b0acb423fcdbcb80afe9d80cc4835f79ad615e3188575"
+    sha256 cellar: :any, arm64_golden_gate: "516e3fdb11ca31134f1d2a832138f138205c1c39c1b45e0e7c3aecda9515ddcb"
+    sha256 cellar: :any, arm64_tahoe:       "a6b99e05374ae594d991ff58ac0fece37071ca94d2a7fc27669bd17166e45ebe"
+    sha256 cellar: :any, arm64_sequoia:     "959ea744652c8b1d669335571c44d8044a762bf2043328ccf79b3a8f9a256fae"
+    sha256 cellar: :any, arm64_sonoma:      "d41abf1592bf80c5bacd79e33a58807b5d8d6d8fd4ff64b89d3a496c74a31c8c"
+    sha256 cellar: :any, sonoma:            "b0b42ce8626676f93c9e0d34e4011aa1c56d7a0f2b082278f465b3c0e980de28"
+    sha256 cellar: :any, arm64_linux:       "a7033878752aad30ed72728772f77817d2e6cee09f8ed999b2cde72161a1118a"
+    sha256 cellar: :any, x86_64_linux:      "0a990b6f7349af6bdf4b0acb423fcdbcb80afe9d80cc4835f79ad615e3188575"
   end
 
   depends_on "meson" => :build

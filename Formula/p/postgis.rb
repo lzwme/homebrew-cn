@@ -12,12 +12,13 @@ class Postgis < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "637de6faada08ae27145297d3d94d630e171d90bb8d67620713e58bfb593589e"
-    sha256 cellar: :any, arm64_sequoia: "bf6dd20ac38e4d74c8375a5201918ee3ef4e63e0d855a76f82bebae731b78424"
-    sha256 cellar: :any, arm64_sonoma:  "787dc636eb2c94e894b13149e8b3f44104abdea3f7c7df84ddc1888871465e29"
-    sha256 cellar: :any, sonoma:        "4521f98cd466216438b9c75d4ff227cbc487ea9b302b19f06824d7747378d2f4"
-    sha256 cellar: :any, arm64_linux:   "036c0694f6d771035e2bcd2429d94f8e3017fef7b9e69faf80643c29fe66003d"
-    sha256 cellar: :any, x86_64_linux:  "97abab90cc0c00d566d74927e13d47987831972a91864f285d20c95586419f76"
+    sha256 cellar: :any, arm64_golden_gate: "60968e8f80eda7a1b866533ada9a934648e73efb8ed0aaa1a375b21cd590ac2b"
+    sha256 cellar: :any, arm64_tahoe:       "637de6faada08ae27145297d3d94d630e171d90bb8d67620713e58bfb593589e"
+    sha256 cellar: :any, arm64_sequoia:     "bf6dd20ac38e4d74c8375a5201918ee3ef4e63e0d855a76f82bebae731b78424"
+    sha256 cellar: :any, arm64_sonoma:      "787dc636eb2c94e894b13149e8b3f44104abdea3f7c7df84ddc1888871465e29"
+    sha256 cellar: :any, sonoma:            "4521f98cd466216438b9c75d4ff227cbc487ea9b302b19f06824d7747378d2f4"
+    sha256 cellar: :any, arm64_linux:       "036c0694f6d771035e2bcd2429d94f8e3017fef7b9e69faf80643c29fe66003d"
+    sha256 cellar: :any, x86_64_linux:      "97abab90cc0c00d566d74927e13d47987831972a91864f285d20c95586419f76"
   end
 
   head do

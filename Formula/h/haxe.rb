@@ -15,12 +15,13 @@ class Haxe < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "e3e44a1008fad87b7dacd36c12af42b2e47effdf570f41f5545a1fc5b98cf692"
-    sha256 cellar: :any, arm64_sequoia: "ead9a4b59aa64ed4672abe196cb614f42631bdee3e17db26123b6585220cfd97"
-    sha256 cellar: :any, arm64_sonoma:  "30cf377cb3bdd57d83dceda64f11706e310c5ef9305f4a9e43fde00a9d52be59"
-    sha256 cellar: :any, sonoma:        "b8aae356d6eddbbc15e8f503c1ad09cf535ac8b83d599f9f9735cb3a60e7d9a5"
-    sha256               arm64_linux:   "0db5ab6a769a2ce06028522bc826b5e76d76b07768d400203cac487e6c635556"
-    sha256               x86_64_linux:  "eee285b19a15c09532b6eec072ac2d501e7c6ccdea0e1df8e3ecf3e1758769ec"
+    sha256 cellar: :any, arm64_golden_gate: "d7f7fc04c41690749214482096dd1d65c92e58ac0f803db6cab4c784d466f400"
+    sha256 cellar: :any, arm64_tahoe:       "e3e44a1008fad87b7dacd36c12af42b2e47effdf570f41f5545a1fc5b98cf692"
+    sha256 cellar: :any, arm64_sequoia:     "ead9a4b59aa64ed4672abe196cb614f42631bdee3e17db26123b6585220cfd97"
+    sha256 cellar: :any, arm64_sonoma:      "30cf377cb3bdd57d83dceda64f11706e310c5ef9305f4a9e43fde00a9d52be59"
+    sha256 cellar: :any, sonoma:            "b8aae356d6eddbbc15e8f503c1ad09cf535ac8b83d599f9f9735cb3a60e7d9a5"
+    sha256               arm64_linux:       "0db5ab6a769a2ce06028522bc826b5e76d76b07768d400203cac487e6c635556"
+    sha256               x86_64_linux:      "eee285b19a15c09532b6eec072ac2d501e7c6ccdea0e1df8e3ecf3e1758769ec"
   end
 
   deprecate! date: "2027-03-31", because: "needs EOL `mbedtls@3`"

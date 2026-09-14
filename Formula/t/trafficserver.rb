@@ -8,12 +8,13 @@ class Trafficserver < Formula
   head "https://github.com/apache/trafficserver.git", branch: "master"
 
   bottle do
-    sha256 arm64_tahoe:   "222cef46458d0e878da6222aafe39c7a4881dd00809bc942b54f3953ae43591b"
-    sha256 arm64_sequoia: "9d413646a83fccdaec1430ca3dcc5e16e38c3a4c0eba847a6c67660bc9a3250b"
-    sha256 arm64_sonoma:  "b7a45470f429ff9e5f3db378ace87015f5e52bbedc58aaf80ec254898735a4b5"
-    sha256 sonoma:        "71ea596e4bf516b17c5973924946a90036aacabf44aba60eda48400ccf784d1e"
-    sha256 arm64_linux:   "79362c1a8db814b1abc10b05dbcb64bb2c4601a68f99a028eadc1699f269a65c"
-    sha256 x86_64_linux:  "970571f59da125b11c8f0d3cb694e5f8140faa1fb666ecd1112d5341168f8d34"
+    sha256 arm64_golden_gate: "3b6778630a61d68bb7297e75d80b5b83332c0cde12ce724c5777d30ea83f6b26"
+    sha256 arm64_tahoe:       "222cef46458d0e878da6222aafe39c7a4881dd00809bc942b54f3953ae43591b"
+    sha256 arm64_sequoia:     "9d413646a83fccdaec1430ca3dcc5e16e38c3a4c0eba847a6c67660bc9a3250b"
+    sha256 arm64_sonoma:      "b7a45470f429ff9e5f3db378ace87015f5e52bbedc58aaf80ec254898735a4b5"
+    sha256 sonoma:            "71ea596e4bf516b17c5973924946a90036aacabf44aba60eda48400ccf784d1e"
+    sha256 arm64_linux:       "79362c1a8db814b1abc10b05dbcb64bb2c4601a68f99a028eadc1699f269a65c"
+    sha256 x86_64_linux:      "970571f59da125b11c8f0d3cb694e5f8140faa1fb666ecd1112d5341168f8d34"
   end
 
   depends_on "cmake" => :build

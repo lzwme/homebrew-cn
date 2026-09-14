@@ -17,9 +17,16 @@ class Mailpit < Formula
   depends_on "go" => :build
   depends_on "node" => :build
 
-  def install
+  # `mailpit version` in the `test do` block checks GitHub for updates
+  deny_network_access! [:build, :postinstall]
+
+  def fetch
+    system "go", "mod", "download"
     system "npm", "install", *std_npm_args(prefix: false)
-    system "npm", "run", "build"
+  end
+
+  def install
+    system "npm", "--offline", "run", "build"
 
     ldflags = "-X github.com/axllent/mailpit/config.Version=v#{version}"
     system "go", "build", *std_go_args(ldflags:)

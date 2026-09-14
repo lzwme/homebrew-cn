@@ -8,12 +8,13 @@ class TfProfile < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2f2be0e109cfe0075937bd1654d7a35776f509cdbbc76099cb18ff546ffed9c2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2f2be0e109cfe0075937bd1654d7a35776f509cdbbc76099cb18ff546ffed9c2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2f2be0e109cfe0075937bd1654d7a35776f509cdbbc76099cb18ff546ffed9c2"
-    sha256 cellar: :any_skip_relocation, sonoma:        "cb5f59260a96d66609a1ecbfc9e7b10c5b607c9ae64a52b3ea9737244445eabf"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "bb717e3db18cfe1755b6f74c713a4dcc9a1884aaab3dc5183f3bc9b14af154f5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b114c3deb9e37d74136eb0d45ffb77650b029fd20a738315deb1c0cc3605714c"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "c3dea637ad6300491568c2a8421d1b128ea7395aca18600bed82d50c831797e5"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "2f2be0e109cfe0075937bd1654d7a35776f509cdbbc76099cb18ff546ffed9c2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "2f2be0e109cfe0075937bd1654d7a35776f509cdbbc76099cb18ff546ffed9c2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "2f2be0e109cfe0075937bd1654d7a35776f509cdbbc76099cb18ff546ffed9c2"
+    sha256 cellar: :any_skip_relocation, sonoma:            "cb5f59260a96d66609a1ecbfc9e7b10c5b607c9ae64a52b3ea9737244445eabf"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "bb717e3db18cfe1755b6f74c713a4dcc9a1884aaab3dc5183f3bc9b14af154f5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "b114c3deb9e37d74136eb0d45ffb77650b029fd20a738315deb1c0cc3605714c"
   end
 
   depends_on "go" => :build

@@ -1,10 +1,9 @@
 class Lgogdownloader < Formula
   desc "Unofficial downloader for GOG.com games"
   homepage "https://sites.google.com/site/gogdownloader/"
-  url "https://ghfast.top/https://github.com/Sude-/lgogdownloader/releases/download/v3.18/lgogdownloader-3.18.tar.gz"
-  sha256 "1974f09cb0e0cdfed536937335488548addd92e5c654f4229ac22594a22f8ae0"
+  url "https://ghfast.top/https://github.com/Sude-/lgogdownloader/releases/download/v3.19/lgogdownloader-3.19.tar.gz"
+  sha256 "0fd3622f1cee4627048aafbbebd17dc38fd3ddb220c979e4a118eeab2cc665d4"
   license "WTFPL"
-  revision 3
   head "https://github.com/Sude-/lgogdownloader.git", branch: "master"
 
   livecheck do
@@ -13,13 +12,11 @@ class Lgogdownloader < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "630d07d48c24a25a12b256ef65ab5d5732496af63f1eb9eeafc4d06bc5b6c0b8"
-    sha256 cellar: :any, arm64_tahoe:       "33cbe0ecd9eb99bb077d9ed1f1da5cb0ddf9d001136f86588deb5b1fc126da4a"
-    sha256 cellar: :any, arm64_sequoia:     "614ecc245aa7b7981ede76536576e1d37f2a42865f06880f2908cdcefc533a18"
-    sha256 cellar: :any, arm64_sonoma:      "449eb4a69d20405fef5d304abf212928a07236fc8a4f23b76858ff4ff8232df5"
-    sha256 cellar: :any, sonoma:            "0897dbade424f4c690312d768f07b77af4a94cb97abf47c8ec13968b8c91dd0b"
-    sha256 cellar: :any, arm64_linux:       "280d394ace8a794562a9725c9b2fe8675661c307ce78efe7f61c2a202dfa5ce5"
-    sha256 cellar: :any, x86_64_linux:      "ab18a0bc52bc3d62e3a53bad413e53296d1faeba2119832681e35d224e583359"
+    sha256 cellar: :any, arm64_golden_gate: "47028108297724eb3289612cc4a51b1e435fa1dd85053a5f7a20fbd47bfac21b"
+    sha256 cellar: :any, arm64_tahoe:       "d51953f9f373e941a492932d0cc107f9714bd234335ae5dd8384ed177e4b96fa"
+    sha256 cellar: :any, arm64_sequoia:     "2049eaa34dbbabeb299453b901f8675b1ea3261e29d20d6a8a60977de7e678a7"
+    sha256 cellar: :any, arm64_linux:       "018aacdff45c62d39da2c28cefed81145ecae59ed1a1eff25f0b1ec92be2e1d4"
+    sha256 cellar: :any, x86_64_linux:      "f5e45b068e0b6d73c87c02afa51ab8c06df0e802eec9e26fdfef9060e70766df"
   end
 
   depends_on "cmake" => :build

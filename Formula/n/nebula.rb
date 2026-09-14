@@ -7,12 +7,13 @@ class Nebula < Formula
   head "https://github.com/slackhq/nebula.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e8f5c8366bfb83134b0433889dd3c10a0dc77c3227221098c8bb2141dc14c4d9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e8f5c8366bfb83134b0433889dd3c10a0dc77c3227221098c8bb2141dc14c4d9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e8f5c8366bfb83134b0433889dd3c10a0dc77c3227221098c8bb2141dc14c4d9"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6b295ad0fe6efee4dca3025e89a3da5fb85700f305ed91640d37c8cc880f2160"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "722fc2a2bfc7d06342a0cb5effb8535996133cee99bfc852f96347c3270c7053"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0edb45ca078f56bda3021bbbc75dab173e97c73b4aa6440c8280519cf9e0b751"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "1ba421723c0eb6873aaf932c57b3dbebfd09dc0edd1a0f0df75086a5361a9b42"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "e8f5c8366bfb83134b0433889dd3c10a0dc77c3227221098c8bb2141dc14c4d9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "e8f5c8366bfb83134b0433889dd3c10a0dc77c3227221098c8bb2141dc14c4d9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "e8f5c8366bfb83134b0433889dd3c10a0dc77c3227221098c8bb2141dc14c4d9"
+    sha256 cellar: :any_skip_relocation, sonoma:            "6b295ad0fe6efee4dca3025e89a3da5fb85700f305ed91640d37c8cc880f2160"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "722fc2a2bfc7d06342a0cb5effb8535996133cee99bfc852f96347c3270c7053"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "0edb45ca078f56bda3021bbbc75dab173e97c73b4aa6440c8280519cf9e0b751"
   end
 
   depends_on "go" => :build

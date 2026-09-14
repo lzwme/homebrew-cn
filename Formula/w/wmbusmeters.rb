@@ -7,12 +7,13 @@ class Wmbusmeters < Formula
   head "https://github.com/wmbusmeters/wmbusmeters.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "6fe2c42deaddacdd876bc496e814ee84c2821ee9d38f2cc86b760b7538bb42c5"
-    sha256 cellar: :any, arm64_sequoia: "c31c6432c57e2a1bcb220fbed474f5ec6a0b0c57bebb2d1cce2a355e4fa5673c"
-    sha256 cellar: :any, arm64_sonoma:  "9ffbd595ef709f53a2181a134d6f1d88230ecfcbbd10bb708a6779fc2994b831"
-    sha256 cellar: :any, sonoma:        "b925711df363a619dabd00d46f780d4a72e612be4cabb0554b444847a6a10d6b"
-    sha256 cellar: :any, arm64_linux:   "d012dacb1ad806412121128c76ed5c62dde3480efbaf2f14b2a94e411f559c32"
-    sha256 cellar: :any, x86_64_linux:  "29171c7a663c1f19b054d22c8f9f51153a614f3d88c7748bd6531565be40b603"
+    sha256 cellar: :any, arm64_golden_gate: "98397f6773e8c6f25d61f28883ef497e717358592e00e54633b6f09090caead1"
+    sha256 cellar: :any, arm64_tahoe:       "6fe2c42deaddacdd876bc496e814ee84c2821ee9d38f2cc86b760b7538bb42c5"
+    sha256 cellar: :any, arm64_sequoia:     "c31c6432c57e2a1bcb220fbed474f5ec6a0b0c57bebb2d1cce2a355e4fa5673c"
+    sha256 cellar: :any, arm64_sonoma:      "9ffbd595ef709f53a2181a134d6f1d88230ecfcbbd10bb708a6779fc2994b831"
+    sha256 cellar: :any, sonoma:            "b925711df363a619dabd00d46f780d4a72e612be4cabb0554b444847a6a10d6b"
+    sha256 cellar: :any, arm64_linux:       "d012dacb1ad806412121128c76ed5c62dde3480efbaf2f14b2a94e411f559c32"
+    sha256 cellar: :any, x86_64_linux:      "29171c7a663c1f19b054d22c8f9f51153a614f3d88c7748bd6531565be40b603"
   end
 
   depends_on "pkgconf" => :build

@@ -7,12 +7,13 @@ class Dynet < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "c9b3ca5eca8723487de3b6a864ade40fd1f9fb041a4c8cd45bd39356da50c576"
-    sha256 cellar: :any,                 arm64_sequoia: "5ee2e5895fb8f27869a3f6449e4ab88b63f4b8c9b716e4e4cf5aa3fec9a6e5c1"
-    sha256 cellar: :any,                 arm64_sonoma:  "575b4161502613978a741cbb612833a9071f31a2a159095e74620686505ad72c"
-    sha256 cellar: :any,                 sonoma:        "743082c372e91418ca92666f7e8185e041f76d014f32cdd97c4b2caf2882f08c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "34f4abdf14637d8a9fdc3b85c37061a38001bfff9ab87714b21cc1c5845dc4fa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e49f33563dedf584dbf05c93b537775ddc36bdd62bb0d9d7c7325e4a2c73a4d6"
+    sha256 cellar: :any,                 arm64_golden_gate: "8bbc07e10f1292e937431cf384bed478b0b2e7792fdd057f8f1da5fec0b22505"
+    sha256 cellar: :any,                 arm64_tahoe:       "c9b3ca5eca8723487de3b6a864ade40fd1f9fb041a4c8cd45bd39356da50c576"
+    sha256 cellar: :any,                 arm64_sequoia:     "5ee2e5895fb8f27869a3f6449e4ab88b63f4b8c9b716e4e4cf5aa3fec9a6e5c1"
+    sha256 cellar: :any,                 arm64_sonoma:      "575b4161502613978a741cbb612833a9071f31a2a159095e74620686505ad72c"
+    sha256 cellar: :any,                 sonoma:            "743082c372e91418ca92666f7e8185e041f76d014f32cdd97c4b2caf2882f08c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "34f4abdf14637d8a9fdc3b85c37061a38001bfff9ab87714b21cc1c5845dc4fa"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "e49f33563dedf584dbf05c93b537775ddc36bdd62bb0d9d7c7325e4a2c73a4d6"
   end
 
   # Last release on 2020-10-21 and does not work with latest Eigen

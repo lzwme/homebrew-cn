@@ -12,11 +12,12 @@ class UutilsCoreutils < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "1be42be4b24c8b26bf7fafd464671d21a14ad0a1bb452f06eb03bd1dcc94ff94"
-    sha256 cellar: :any, arm64_sequoia: "b70a34a29e55591472c59b74bb56093ba42c02504aca7488555fa2cadfa2f105"
-    sha256 cellar: :any, arm64_sonoma:  "12d799a82502002df1bf7ca9ab3e26f5a59bdf696ec024eeb1056ddce5d76380"
-    sha256 cellar: :any, arm64_linux:   "6fd365901b4b48ba97a91b3c7d19800cded910a1570b79c30445ee35a7b23675"
-    sha256 cellar: :any, x86_64_linux:  "55cb91bd524c38b57455e38c54b10b163291b59a0766f959fe6665a3dc9efa34"
+    sha256 cellar: :any, arm64_golden_gate: "2e3b1797d058c55565817682b4a8513f2ea54e1ef0f454316b0337a9cad0701a"
+    sha256 cellar: :any, arm64_tahoe:       "1be42be4b24c8b26bf7fafd464671d21a14ad0a1bb452f06eb03bd1dcc94ff94"
+    sha256 cellar: :any, arm64_sequoia:     "b70a34a29e55591472c59b74bb56093ba42c02504aca7488555fa2cadfa2f105"
+    sha256 cellar: :any, arm64_sonoma:      "12d799a82502002df1bf7ca9ab3e26f5a59bdf696ec024eeb1056ddce5d76380"
+    sha256 cellar: :any, arm64_linux:       "6fd365901b4b48ba97a91b3c7d19800cded910a1570b79c30445ee35a7b23675"
+    sha256 cellar: :any, x86_64_linux:      "55cb91bd524c38b57455e38c54b10b163291b59a0766f959fe6665a3dc9efa34"
   end
 
   depends_on "rust" => :build

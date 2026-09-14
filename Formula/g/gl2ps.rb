@@ -12,12 +12,13 @@ class Gl2ps < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "cfd40bfcb06fceef93e5b04ff17a59a5df05742997959ecd4be2c9f3badc2c70"
-    sha256 cellar: :any,                 arm64_sequoia: "d45044992b502ffb0a34647b504eff67e034635c0d6c06fb580b504b3cdf9c80"
-    sha256 cellar: :any,                 arm64_sonoma:  "86df24cf3d5f86fd5d4d0a279126e8f0bfad2560637017b30ce3b8cee638fa4e"
-    sha256 cellar: :any,                 sonoma:        "17b1449046f6a3a523608a8b71277a442927ead68405f4a4881ac2686da8cea1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "852d33552ed074a82702007c52ac923cac04188db2c237fcffd2b4cacfc50342"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "892849e15a461c6ca9b2c24178518a6769d78807ef6c0c99a0b6997321c9be4b"
+    sha256 cellar: :any,                 arm64_golden_gate: "68f8fabc929b0c03103f339d418b6d84a25548dc9e4fa1e08018603d76de928f"
+    sha256 cellar: :any,                 arm64_tahoe:       "cfd40bfcb06fceef93e5b04ff17a59a5df05742997959ecd4be2c9f3badc2c70"
+    sha256 cellar: :any,                 arm64_sequoia:     "d45044992b502ffb0a34647b504eff67e034635c0d6c06fb580b504b3cdf9c80"
+    sha256 cellar: :any,                 arm64_sonoma:      "86df24cf3d5f86fd5d4d0a279126e8f0bfad2560637017b30ce3b8cee638fa4e"
+    sha256 cellar: :any,                 sonoma:            "17b1449046f6a3a523608a8b71277a442927ead68405f4a4881ac2686da8cea1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "852d33552ed074a82702007c52ac923cac04188db2c237fcffd2b4cacfc50342"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "892849e15a461c6ca9b2c24178518a6769d78807ef6c0c99a0b6997321c9be4b"
   end
 
   depends_on "cmake" => :build
@@ -76,9 +77,8 @@ class Gl2ps < Formula
       system ENV.cc, "-L#{lib}", "-lgl2ps", "-framework", "OpenGL", "-framework", "GLUT",
                      "-framework", "Cocoa", "test.c", "-o", "test"
 
-      # Tahoe running is headless for now, maybe remove this later
-      # ("GLUT Fatal Error: redisplay needed for window 1, but no display callback")
-      return if MacOS.version == :tahoe && ENV["HOMEBREW_GITHUB_ACTIONS"]
+      # GLUT needs a WindowServer connection, which the test sandbox denies
+      return
     else
       system ENV.cc, "test.c", "-o", "test", "-L#{lib}", "-lgl2ps", "-lglut", "-lGL"
     end

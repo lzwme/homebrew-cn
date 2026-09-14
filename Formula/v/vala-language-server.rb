@@ -6,18 +6,19 @@ class ValaLanguageServer < Formula
   license "LGPL-2.1-only"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:    "6de961a16d8c01a87334d3e5f8952bccde9d82e321719c8b7606a173b6a4f79b"
-    sha256 cellar: :any, arm64_sequoia:  "7b298f02d9378880231ad35d238897b5fa76e7a0c92efc802676f114fe20ab9f"
-    sha256 cellar: :any, arm64_sonoma:   "ac975caa3ddb69b060ade26f3fd96eb26d1ea002cb52742c0418a4edc23058ff"
-    sha256 cellar: :any, arm64_ventura:  "8bceda4daa8845f577ab8133fff13b22ff342e9d9bc567a3b0e9c97eb6de8ab8"
-    sha256 cellar: :any, arm64_monterey: "51eb75d062bfb8901eaeff0ca491584cfbc62bb266861ab760d9fd1c34aada5d"
-    sha256 cellar: :any, arm64_big_sur:  "865dc144b42045cf9243ef56f7153dc341d6cb160b957c11f900844c27e4a2c5"
-    sha256 cellar: :any, sonoma:         "2142ed177e269f7b29398f13dab2e234cd788becf8a4220c1a1c7f0b9b24925d"
-    sha256 cellar: :any, ventura:        "5c3225a7fd5a42ae0b78713fe57ed1840ec4b090393e8e1cf53c1d250a392641"
-    sha256 cellar: :any, monterey:       "0b7304461e6e427f1ed2ebad4dcb6d66589c0bb5f77c6cf921207359461e5e46"
-    sha256 cellar: :any, big_sur:        "237b5e936501fb0d96ca3304947f4224113d39bb4a218a1b25d0702959a1fe81"
-    sha256               arm64_linux:    "f7bde32833468a8a783f9992ed2aad1dda845285a650bb7f1c69e8ad2fc24b8e"
-    sha256               x86_64_linux:   "063a6451f6da46ce3112e2de698c723b69867fb4890a97b5ae78b16dc85ef23d"
+    sha256 cellar: :any, arm64_golden_gate: "fa0a932f4a1c376e16424cac44d8492ff9c2f960699dfde085f08e9c8e3f3d36"
+    sha256 cellar: :any, arm64_tahoe:       "6de961a16d8c01a87334d3e5f8952bccde9d82e321719c8b7606a173b6a4f79b"
+    sha256 cellar: :any, arm64_sequoia:     "7b298f02d9378880231ad35d238897b5fa76e7a0c92efc802676f114fe20ab9f"
+    sha256 cellar: :any, arm64_sonoma:      "ac975caa3ddb69b060ade26f3fd96eb26d1ea002cb52742c0418a4edc23058ff"
+    sha256 cellar: :any, arm64_ventura:     "8bceda4daa8845f577ab8133fff13b22ff342e9d9bc567a3b0e9c97eb6de8ab8"
+    sha256 cellar: :any, arm64_monterey:    "51eb75d062bfb8901eaeff0ca491584cfbc62bb266861ab760d9fd1c34aada5d"
+    sha256 cellar: :any, arm64_big_sur:     "865dc144b42045cf9243ef56f7153dc341d6cb160b957c11f900844c27e4a2c5"
+    sha256 cellar: :any, sonoma:            "2142ed177e269f7b29398f13dab2e234cd788becf8a4220c1a1c7f0b9b24925d"
+    sha256 cellar: :any, ventura:           "5c3225a7fd5a42ae0b78713fe57ed1840ec4b090393e8e1cf53c1d250a392641"
+    sha256 cellar: :any, monterey:          "0b7304461e6e427f1ed2ebad4dcb6d66589c0bb5f77c6cf921207359461e5e46"
+    sha256 cellar: :any, big_sur:           "237b5e936501fb0d96ca3304947f4224113d39bb4a218a1b25d0702959a1fe81"
+    sha256               arm64_linux:       "f7bde32833468a8a783f9992ed2aad1dda845285a650bb7f1c69e8ad2fc24b8e"
+    sha256               x86_64_linux:      "063a6451f6da46ce3112e2de698c723b69867fb4890a97b5ae78b16dc85ef23d"
   end
 
   depends_on "meson" => :build

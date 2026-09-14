@@ -8,12 +8,13 @@ class Profanity < Formula
   head "https://github.com/profanity-im/profanity.git", branch: "master"
 
   bottle do
-    sha256 arm64_tahoe:   "30b0296eed40de1140470010da6fe562574a802c6f41ff1848e519e897b7971f"
-    sha256 arm64_sequoia: "047d3d9b82750ac907046107803d465738dec5692b6180cc931f8b234cbe0940"
-    sha256 arm64_sonoma:  "509d59ceaab4bdf334f58e24af6391bc9b2151345b40ac95038299fd8399a36e"
-    sha256 sonoma:        "107b58f0db1b558f20f76e59633ebe6f628ebd7dd1a44406d62fee8c85e5551b"
-    sha256 arm64_linux:   "c1862ab73b74923268ae57e7ebc966cc5804bff0ae4b6eaf5023f28c74b07e86"
-    sha256 x86_64_linux:  "f3512d92fd693b0e65dcd9912c7166652f04d2cc9829d22fa76d5df04ae970d5"
+    sha256 arm64_golden_gate: "ebff65148285402f25739e6780b4d83bc3a6a89f52a6b7179614428afe1493e2"
+    sha256 arm64_tahoe:       "30b0296eed40de1140470010da6fe562574a802c6f41ff1848e519e897b7971f"
+    sha256 arm64_sequoia:     "047d3d9b82750ac907046107803d465738dec5692b6180cc931f8b234cbe0940"
+    sha256 arm64_sonoma:      "509d59ceaab4bdf334f58e24af6391bc9b2151345b40ac95038299fd8399a36e"
+    sha256 sonoma:            "107b58f0db1b558f20f76e59633ebe6f628ebd7dd1a44406d62fee8c85e5551b"
+    sha256 arm64_linux:       "c1862ab73b74923268ae57e7ebc966cc5804bff0ae4b6eaf5023f28c74b07e86"
+    sha256 x86_64_linux:      "f3512d92fd693b0e65dcd9912c7166652f04d2cc9829d22fa76d5df04ae970d5"
   end
 
   depends_on "meson" => :build

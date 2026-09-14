@@ -11,12 +11,13 @@ class Lighthouse < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8b2647bb0c98201ee467e5908cbb70c9fcf7274a2fabe9f4650e777c4ed8a27f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a267a85d21783618b287962ed520c5ee8c095a7d6dbbce350115938fcce7f09e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ec9db22729d6dcb6f6460077afae159b5653b6ab2410755d30dec3ed73f2bc39"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ec8d6a540168f52fdaf8bc557cd5e8b3308f9681823e85a0ff410f5405a3ed90"
-    sha256 cellar: :any,                 arm64_linux:   "644cfaab1283328169841955c493d01daae1bb1a2bc2c06900f956711b0b92b9"
-    sha256 cellar: :any,                 x86_64_linux:  "99a1348b937b0e1499ee70a9317bfb733fd56120672247de78245756ad174d82"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "f34b147a37f09f6ff72e02aca32f7901c878fc2679b930d67cf09bbcfa1ede37"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "8b2647bb0c98201ee467e5908cbb70c9fcf7274a2fabe9f4650e777c4ed8a27f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "a267a85d21783618b287962ed520c5ee8c095a7d6dbbce350115938fcce7f09e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "ec9db22729d6dcb6f6460077afae159b5653b6ab2410755d30dec3ed73f2bc39"
+    sha256 cellar: :any_skip_relocation, sonoma:            "ec8d6a540168f52fdaf8bc557cd5e8b3308f9681823e85a0ff410f5405a3ed90"
+    sha256 cellar: :any,                 arm64_linux:       "644cfaab1283328169841955c493d01daae1bb1a2bc2c06900f956711b0b92b9"
+    sha256 cellar: :any,                 x86_64_linux:      "99a1348b937b0e1499ee70a9317bfb733fd56120672247de78245756ad174d82"
   end
 
   depends_on "cmake" => :build

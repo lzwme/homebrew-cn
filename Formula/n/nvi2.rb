@@ -6,10 +6,11 @@ class Nvi2 < Formula
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "04389c7abf1b4ea96dbcaaebf60ec662d96a4673c8a2a177a733ee4304577845"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6b857d74bb76858bb49560e80f070049dcf93b90ee04e1bbbd2b20859b2b11e9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1c2fd58a30a46cb71ca8938882793a1b569a5ce75ea582798ec91cd19d1f08d2"
-    sha256 cellar: :any_skip_relocation, sonoma:        "75165cb105f32ca879af45654cc77965f4eb85084a0acaf39dcf9ee9fa0b87bc"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "4c5e4773b2d6d46c07138f224f59186ce2695f7d409e5a7be91ddc4f2d0c8dc3"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "04389c7abf1b4ea96dbcaaebf60ec662d96a4673c8a2a177a733ee4304577845"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "6b857d74bb76858bb49560e80f070049dcf93b90ee04e1bbbd2b20859b2b11e9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "1c2fd58a30a46cb71ca8938882793a1b569a5ce75ea582798ec91cd19d1f08d2"
+    sha256 cellar: :any_skip_relocation, sonoma:            "75165cb105f32ca879af45654cc77965f4eb85084a0acaf39dcf9ee9fa0b87bc"
   end
 
   depends_on "cmake" => :build

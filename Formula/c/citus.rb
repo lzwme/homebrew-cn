@@ -72,10 +72,12 @@ class Citus < Formula
       psql = postgresql.opt_bin/"psql"
       port = free_port
 
-      system pg_ctl, "initdb", "--options=-c port=#{port} -c shared_preload_libraries=citus"
+      # Keep the server socket inside testpath, the only place the test sandbox allows unix sockets
+      system pg_ctl, "initdb", "--options=-c port=#{port} -c shared_preload_libraries=citus " \
+                               "-c unix_socket_directories=#{testpath}"
       system pg_ctl, "start", "-l", testpath/"log"
       begin
-        system psql, "-p", port.to_s, "-c", "CREATE EXTENSION \"citus\";", "postgres"
+        system psql, "-h", testpath, "-p", port.to_s, "-c", "CREATE EXTENSION \"citus\";", "postgres"
       ensure
         system pg_ctl, "stop"
       end

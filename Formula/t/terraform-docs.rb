@@ -17,6 +17,12 @@ class TerraformDocs < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     system "make", "build"
     cpu = Hardware::CPU.intel? ? "amd64" : Hardware::CPU.arch.to_s

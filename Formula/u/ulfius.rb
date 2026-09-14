@@ -7,12 +7,13 @@ class Ulfius < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "bb83f403a0e3afaaa29a55a287d41397502b098108788889be264e68fa406f93"
-    sha256 cellar: :any,                 arm64_sequoia: "caf3377e92811c768853a8751e55284e0f5ff6e490cfc43a1943255d41018e57"
-    sha256 cellar: :any,                 arm64_sonoma:  "98e664b0cee9d34cdfd0830c01a3694fb59a0156d5e98ac280c54f29a4cd86e6"
-    sha256 cellar: :any,                 sonoma:        "4707acefa7e44fd8b0be6be3640a4a04653f408b47012eb1876d8406dac60a7e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "aa30b970d73f41cc23d168a1da27b10d119051f4c20723a14729f6abfb59c8d9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "aa9e86ea46c664fe30c62b97cab094df477efab25d300e1c5e6cf9bfecc1afad"
+    sha256 cellar: :any,                 arm64_golden_gate: "a682d30e92f973c77322a6aa993b8602c05d8787af4f7d8471ef29e801bef3da"
+    sha256 cellar: :any,                 arm64_tahoe:       "bb83f403a0e3afaaa29a55a287d41397502b098108788889be264e68fa406f93"
+    sha256 cellar: :any,                 arm64_sequoia:     "caf3377e92811c768853a8751e55284e0f5ff6e490cfc43a1943255d41018e57"
+    sha256 cellar: :any,                 arm64_sonoma:      "98e664b0cee9d34cdfd0830c01a3694fb59a0156d5e98ac280c54f29a4cd86e6"
+    sha256 cellar: :any,                 sonoma:            "4707acefa7e44fd8b0be6be3640a4a04653f408b47012eb1876d8406dac60a7e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "aa30b970d73f41cc23d168a1da27b10d119051f4c20723a14729f6abfb59c8d9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "aa9e86ea46c664fe30c62b97cab094df477efab25d300e1c5e6cf9bfecc1afad"
   end
 
   depends_on "cmake" => :build

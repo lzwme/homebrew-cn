@@ -12,14 +12,15 @@ class Rancid < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f5978661df2baf3b746206d0b2498d27ca0adfcc840b296abe9eabfd9e9a587a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fc4630246c5362304dd3550870b72f634cac5b614bb06c3a78e5b023e34397c7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "71bb9a547c9a465e7debae0023ea19c86247c364d4f2ac740e4ef55839f5488a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "250fd72c6d55b0cd2d34922fa16de7fc240dfdb4654679e09add571c274c269a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "df7cec970be7ccbed73e5b3a0a117707d1da7b884d0ce400b01cd7415acf59fd"
-    sha256 cellar: :any_skip_relocation, ventura:       "972e80a0776fb3ae603f16eee01bca52199b5426737b846c5192c8529dd93168"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "59d2743a72a538248c97c3112a9509b55296143b1142715f90c66a0360404ddd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5b4b6267a47aef7344f8e3502be5b50d7ee70010b2a452062cd976daea23c61c"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "e198da266edaf3e768da68364132e6c6fd5a9ffab890064eace4baf921815c64"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "f5978661df2baf3b746206d0b2498d27ca0adfcc840b296abe9eabfd9e9a587a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "fc4630246c5362304dd3550870b72f634cac5b614bb06c3a78e5b023e34397c7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "71bb9a547c9a465e7debae0023ea19c86247c364d4f2ac740e4ef55839f5488a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:     "250fd72c6d55b0cd2d34922fa16de7fc240dfdb4654679e09add571c274c269a"
+    sha256 cellar: :any_skip_relocation, sonoma:            "df7cec970be7ccbed73e5b3a0a117707d1da7b884d0ce400b01cd7415acf59fd"
+    sha256 cellar: :any_skip_relocation, ventura:           "972e80a0776fb3ae603f16eee01bca52199b5426737b846c5192c8529dd93168"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "59d2743a72a538248c97c3112a9509b55296143b1142715f90c66a0360404ddd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "5b4b6267a47aef7344f8e3502be5b50d7ee70010b2a452062cd976daea23c61c"
   end
 
   uses_from_macos "expect"

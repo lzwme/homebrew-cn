@@ -8,18 +8,19 @@ class Truecrack < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "fa006f2b40a1844949c625ee3ded3b0626420c1969b7595b5081ba471a8ce234"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "f14ab900548cbe7d0b0f713604d6d63a7c41874e9d73d36f9aa0ff36ab58af33"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c14111bcb0920f73fa1af5ed3daed97cb19152ea38aa9583a75c5c9a05b47d81"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "dec2443fbc84baf2fddd59c65666390b490b3156354fe092eaa4440e3732c078"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "255979daec38fcb5b7af34d55a34bf54f71c9ad5935117eb5b5dc2685022aa71"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d16243315d1cff0bc8f1341cfdc31d9385d0c411fba462cdfa00b81326245b79"
-    sha256 cellar: :any_skip_relocation, sonoma:         "1cf756cf417d9ae2be44f0d27e56b2ed785524df77cdbae2ff8f05e50805bdab"
-    sha256 cellar: :any_skip_relocation, ventura:        "7ec74e37f62c3e23612137ed389121530914e6b3d5ac38d62738e3dcbfa0ac09"
-    sha256 cellar: :any_skip_relocation, monterey:       "b776b06cdbe28835e7899c72a5cc5a54438d052b7b147163edc6adc710c80022"
-    sha256 cellar: :any_skip_relocation, big_sur:        "101def9295ec59ebe5391aefe7384944aecc52e6cc610edddbb4cb0fcaad489d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "fd2c903e910b747ac43ee9604851ea08131dbda84ed405b43f51110b3c29037a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "13ed8fdfc8e7a6289dd469d0dbc4bac91f00d8917d3609e5b2ac44d1d641fb86"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "e27d92969ac49b03d1465776c81ed863ab92dc8985f9b545dc26ac3b61109c2e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "fa006f2b40a1844949c625ee3ded3b0626420c1969b7595b5081ba471a8ce234"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "f14ab900548cbe7d0b0f713604d6d63a7c41874e9d73d36f9aa0ff36ab58af33"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "c14111bcb0920f73fa1af5ed3daed97cb19152ea38aa9583a75c5c9a05b47d81"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:     "dec2443fbc84baf2fddd59c65666390b490b3156354fe092eaa4440e3732c078"
+    sha256 cellar: :any_skip_relocation, arm64_monterey:    "255979daec38fcb5b7af34d55a34bf54f71c9ad5935117eb5b5dc2685022aa71"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:     "d16243315d1cff0bc8f1341cfdc31d9385d0c411fba462cdfa00b81326245b79"
+    sha256 cellar: :any_skip_relocation, sonoma:            "1cf756cf417d9ae2be44f0d27e56b2ed785524df77cdbae2ff8f05e50805bdab"
+    sha256 cellar: :any_skip_relocation, ventura:           "7ec74e37f62c3e23612137ed389121530914e6b3d5ac38d62738e3dcbfa0ac09"
+    sha256 cellar: :any_skip_relocation, monterey:          "b776b06cdbe28835e7899c72a5cc5a54438d052b7b147163edc6adc710c80022"
+    sha256 cellar: :any_skip_relocation, big_sur:           "101def9295ec59ebe5391aefe7384944aecc52e6cc610edddbb4cb0fcaad489d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "fd2c903e910b747ac43ee9604851ea08131dbda84ed405b43f51110b3c29037a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "13ed8fdfc8e7a6289dd469d0dbc4bac91f00d8917d3609e5b2ac44d1d641fb86"
   end
 
   # Fix missing return value compilation issue

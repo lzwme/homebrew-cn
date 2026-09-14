@@ -7,11 +7,12 @@ class Pgroll < Formula
   head "https://github.com/xataio/pgroll.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4119e292ff7bb8f544116391f3b4b56e974b2df840e52e790084afd98f417bc5"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "258f31882d431af6aacf8c34ca71a39972c2c1ad8943e7974d12ecdf6e0086ad"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7ee13cf6d6cab105d1c4f22cb23c6d7861c79bb7b25972f818eee8a831035968"
-    sha256 cellar: :any,                 arm64_linux:   "f60dca2d7c789ceb06a6fd1aa62f52cb110e82210bdfa9627f9961f6657afb98"
-    sha256 cellar: :any,                 x86_64_linux:  "c4b8470bd3a8a490068e1569c6816e4befaf8099fe1431f92ff4781f4dd40c15"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "e416b3be5b7a6b97fe695570b6d368f8fb3f14a472d770e7d13bccefdd766366"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "4119e292ff7bb8f544116391f3b4b56e974b2df840e52e790084afd98f417bc5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "258f31882d431af6aacf8c34ca71a39972c2c1ad8943e7974d12ecdf6e0086ad"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "7ee13cf6d6cab105d1c4f22cb23c6d7861c79bb7b25972f818eee8a831035968"
+    sha256 cellar: :any,                 arm64_linux:       "f60dca2d7c789ceb06a6fd1aa62f52cb110e82210bdfa9627f9961f6657afb98"
+    sha256 cellar: :any,                 x86_64_linux:      "c4b8470bd3a8a490068e1569c6816e4befaf8099fe1431f92ff4781f4dd40c15"
   end
 
   depends_on "go" => :build

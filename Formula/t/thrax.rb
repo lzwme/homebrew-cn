@@ -13,10 +13,11 @@ class Thrax < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "d21f145cc76bc57df426ef5693cc37018225c6756254a40f78a1e65a3de1f3f8"
-    sha256 cellar: :any, arm64_sequoia: "1d006e65d56ae1d4828fec2513300a9c6593a39930fd787a922c67e6f361ac0a"
-    sha256 cellar: :any, arm64_sonoma:  "da461f0ee541bae3f2801f9db92cb334227fb8f8ff3d1db35f572e0d43493733"
-    sha256 cellar: :any, sonoma:        "856ef28235ec1772a3b695f448fae21b7b9f65077b947555cd5e6c0ab006c174"
+    sha256 cellar: :any, arm64_golden_gate: "67fb338929a5f7bacf6a31fdc62fff7024c29448d4da116ec44d868d7dea44bb"
+    sha256 cellar: :any, arm64_tahoe:       "d21f145cc76bc57df426ef5693cc37018225c6756254a40f78a1e65a3de1f3f8"
+    sha256 cellar: :any, arm64_sequoia:     "1d006e65d56ae1d4828fec2513300a9c6593a39930fd787a922c67e6f361ac0a"
+    sha256 cellar: :any, arm64_sonoma:      "da461f0ee541bae3f2801f9db92cb334227fb8f8ff3d1db35f572e0d43493733"
+    sha256 cellar: :any, sonoma:            "856ef28235ec1772a3b695f448fae21b7b9f65077b947555cd5e6c0ab006c174"
   end
 
   depends_on :macos # Linux runners are unable to download tarball

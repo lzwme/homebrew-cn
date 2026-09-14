@@ -7,12 +7,13 @@ class Qrkey < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "000b8efd1105c3c7ada0fcd77de138f093678fa63e05d0d34a7a7edaa31336aa"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "000b8efd1105c3c7ada0fcd77de138f093678fa63e05d0d34a7a7edaa31336aa"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "000b8efd1105c3c7ada0fcd77de138f093678fa63e05d0d34a7a7edaa31336aa"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5e5f34e26dc4ce6f5d5550da929450890bfd239c7901ee84841b48c9e5c6bc7b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "462db6ae6587e670d20a97470164005097e561aab011c95d0664ae62dbc81179"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0f6ebcb2f32c7a3b58c487d805fcfdee662261822452ce937e78752a2d599f6b"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "3e5c1197ba23a791af65d3768ead429011119e1aefc124a1ff7d224e3263ea4b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "000b8efd1105c3c7ada0fcd77de138f093678fa63e05d0d34a7a7edaa31336aa"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "000b8efd1105c3c7ada0fcd77de138f093678fa63e05d0d34a7a7edaa31336aa"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "000b8efd1105c3c7ada0fcd77de138f093678fa63e05d0d34a7a7edaa31336aa"
+    sha256 cellar: :any_skip_relocation, sonoma:            "5e5f34e26dc4ce6f5d5550da929450890bfd239c7901ee84841b48c9e5c6bc7b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "462db6ae6587e670d20a97470164005097e561aab011c95d0664ae62dbc81179"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "0f6ebcb2f32c7a3b58c487d805fcfdee662261822452ce937e78752a2d599f6b"
   end
 
   depends_on "go" => :build

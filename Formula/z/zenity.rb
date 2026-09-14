@@ -7,12 +7,13 @@ class Zenity < Formula
 
   bottle do
     rebuild 1
-    sha256 arm64_tahoe:   "b422f8fbb0db0178eaaa88fb933b6aa56596fb2b5e4d97fdc44b3902b7b3238f"
-    sha256 arm64_sequoia: "f675d793af98c544a41763e2529a3295acf5f6bd8a8927af64d500c1446f232d"
-    sha256 arm64_sonoma:  "27fcad4be82fc8df064bb7c8fce661f5b67a076abd0ae5982e9674d58f862bfc"
-    sha256 sonoma:        "1c136a28e692837d869415cdee79486aa311e9e41e0f31b50791b3c00b27f0e8"
-    sha256 arm64_linux:   "4eb09a52b20d1bd2628c94d98bf14875e6289a8c36c478a9f94ef0bf8693d84c"
-    sha256 x86_64_linux:  "af058999ac5669aa10f134317a390c83a017a0a515efe2892279cc7144b0ee9e"
+    sha256 arm64_golden_gate: "3d70bb36451af724c23e4b022ee533fd34a29d2ed91af47bfd0521b3df09969c"
+    sha256 arm64_tahoe:       "b422f8fbb0db0178eaaa88fb933b6aa56596fb2b5e4d97fdc44b3902b7b3238f"
+    sha256 arm64_sequoia:     "f675d793af98c544a41763e2529a3295acf5f6bd8a8927af64d500c1446f232d"
+    sha256 arm64_sonoma:      "27fcad4be82fc8df064bb7c8fce661f5b67a076abd0ae5982e9674d58f862bfc"
+    sha256 sonoma:            "1c136a28e692837d869415cdee79486aa311e9e41e0f31b50791b3c00b27f0e8"
+    sha256 arm64_linux:       "4eb09a52b20d1bd2628c94d98bf14875e6289a8c36c478a9f94ef0bf8693d84c"
+    sha256 x86_64_linux:      "af058999ac5669aa10f134317a390c83a017a0a515efe2892279cc7144b0ee9e"
   end
 
   depends_on "gettext" => :build

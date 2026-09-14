@@ -26,6 +26,13 @@ class Astro < Formula
     depends_on "podman"
   end
 
+  # `test do` block queries updates.astronomer.io
+  deny_network_access! [:build, :postinstall]
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     system "go", "build", *std_go_args(ldflags: "-X github.com/astronomer/astro-cli/version.CurrVersion=#{version}")
 

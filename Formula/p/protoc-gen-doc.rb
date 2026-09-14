@@ -8,12 +8,13 @@ class ProtocGenDoc < Formula
   head "https://github.com/pseudomuto/protoc-gen-doc.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1a25a72f55c678f4b410f42071ad746acae3648efd5a75f2a00a297d3fe4100f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1a25a72f55c678f4b410f42071ad746acae3648efd5a75f2a00a297d3fe4100f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1a25a72f55c678f4b410f42071ad746acae3648efd5a75f2a00a297d3fe4100f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "cfe51844f9ac4474fff2dc94b75350df856e2253f97dd4b463d195d6d849ac84"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c249c91041de867871ec10f534418d65fd5904785762ed9da92f636817d20c47"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b27ef3c389ef7756cc9a8399f8f49c527b03b3abe972e58e38f719787fe789e6"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "fe5999ff4234640eca8c882931657bd3398ed388a4bcaa34c5a461efce681735"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "1a25a72f55c678f4b410f42071ad746acae3648efd5a75f2a00a297d3fe4100f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "1a25a72f55c678f4b410f42071ad746acae3648efd5a75f2a00a297d3fe4100f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "1a25a72f55c678f4b410f42071ad746acae3648efd5a75f2a00a297d3fe4100f"
+    sha256 cellar: :any_skip_relocation, sonoma:            "cfe51844f9ac4474fff2dc94b75350df856e2253f97dd4b463d195d6d849ac84"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "c249c91041de867871ec10f534418d65fd5904785762ed9da92f636817d20c47"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "b27ef3c389ef7756cc9a8399f8f49c527b03b3abe972e58e38f719787fe789e6"
   end
 
   depends_on "go" => :build

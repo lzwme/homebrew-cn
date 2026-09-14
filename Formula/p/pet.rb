@@ -7,12 +7,13 @@ class Pet < Formula
   head "https://github.com/knqyf263/pet.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b2abe7b3a10517de5dbd8061c61f2feefab8008c28230024563b305e63a48c15"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b2abe7b3a10517de5dbd8061c61f2feefab8008c28230024563b305e63a48c15"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b2abe7b3a10517de5dbd8061c61f2feefab8008c28230024563b305e63a48c15"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d4621b4411e7fe453c60a25323f66915c0ea96b6f1ca85ea786ac67681ffbba9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2797febd8ce009dafed282f6d831ba6de4e2b37ddc758b4fababb83a55b105b7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6f6270812ba6ab77cee2ba10db908a5583c92dbdc8be084620cf6225feccbb6e"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "49a71b282caa0c6a2b29e5e30794da165cfe6116d6771a378737cd0c94181e1e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "b2abe7b3a10517de5dbd8061c61f2feefab8008c28230024563b305e63a48c15"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "b2abe7b3a10517de5dbd8061c61f2feefab8008c28230024563b305e63a48c15"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "b2abe7b3a10517de5dbd8061c61f2feefab8008c28230024563b305e63a48c15"
+    sha256 cellar: :any_skip_relocation, sonoma:            "d4621b4411e7fe453c60a25323f66915c0ea96b6f1ca85ea786ac67681ffbba9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "2797febd8ce009dafed282f6d831ba6de4e2b37ddc758b4fababb83a55b105b7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "6f6270812ba6ab77cee2ba10db908a5583c92dbdc8be084620cf6225feccbb6e"
   end
 
   depends_on "go" => :build

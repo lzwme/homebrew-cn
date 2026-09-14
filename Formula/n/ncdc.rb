@@ -12,12 +12,13 @@ class Ncdc < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "63721a456161299dcfacead5df5422fa0f6d45029024f3f1fba5d3d237035fdb"
-    sha256 cellar: :any,                 arm64_sequoia: "276d92cc9c94019497087d4a45b42523bd85363cf7c7d2963f23279151c29915"
-    sha256 cellar: :any,                 arm64_sonoma:  "e9d454ad3206ac918f5384ad18427f63310ad8b20d74876ac9ce2f9addff463f"
-    sha256 cellar: :any,                 sonoma:        "cf9a24752fe13d74322c81911ad76a056308e9f5ae265fe5f2ffa6c62669316b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "024989a066148e269c9de57a247aeacaa3d653df8906ad4c501442e544070721"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "906546b6c289d880cec610ced06c0527e5b4f49d4595dcd2cf1b6984f08b42ce"
+    sha256 cellar: :any,                 arm64_golden_gate: "36e4073a1fc76c724840b1dc10996cbd7a2eb192391cb88d152c292ba64439d7"
+    sha256 cellar: :any,                 arm64_tahoe:       "63721a456161299dcfacead5df5422fa0f6d45029024f3f1fba5d3d237035fdb"
+    sha256 cellar: :any,                 arm64_sequoia:     "276d92cc9c94019497087d4a45b42523bd85363cf7c7d2963f23279151c29915"
+    sha256 cellar: :any,                 arm64_sonoma:      "e9d454ad3206ac918f5384ad18427f63310ad8b20d74876ac9ce2f9addff463f"
+    sha256 cellar: :any,                 sonoma:            "cf9a24752fe13d74322c81911ad76a056308e9f5ae265fe5f2ffa6c62669316b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "024989a066148e269c9de57a247aeacaa3d653df8906ad4c501442e544070721"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "906546b6c289d880cec610ced06c0527e5b4f49d4595dcd2cf1b6984f08b42ce"
   end
 
   head do

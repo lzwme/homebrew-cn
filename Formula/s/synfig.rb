@@ -14,12 +14,13 @@ class Synfig < Formula
   end
 
   bottle do
-    sha256               arm64_tahoe:   "56262007c9628dcd690ae70aa289dc4b8477dfc01619cb793d6b3eb956f83c38"
-    sha256               arm64_sequoia: "fe1fd898b8234fb8584ac6eaf3372e34b276d411e1313623ebb0d50052039f43"
-    sha256               arm64_sonoma:  "570dad6af3a79433cc0fe59b06ce98a0ba6183b2472749cafad6c657b1fc8689"
-    sha256               sonoma:        "4c7bed5a5e0be48560355477f2f710fab0b0a3d9fdf6499b562b8311524c4a78"
-    sha256               arm64_linux:   "d2789b688ed8a45e45623113b8aa9d17644873c5b6c9b65d16663b7df3018c09"
-    sha256 cellar: :any, x86_64_linux:  "92da725ae700b13a6282c7d757dc1d6ce45f5c1ec7c6be0e6bc4760252dfc39b"
+    sha256               arm64_golden_gate: "761864da328ce02c126774735799d59808a1e27292da02c68ad95d7af91a0abb"
+    sha256               arm64_tahoe:       "56262007c9628dcd690ae70aa289dc4b8477dfc01619cb793d6b3eb956f83c38"
+    sha256               arm64_sequoia:     "fe1fd898b8234fb8584ac6eaf3372e34b276d411e1313623ebb0d50052039f43"
+    sha256               arm64_sonoma:      "570dad6af3a79433cc0fe59b06ce98a0ba6183b2472749cafad6c657b1fc8689"
+    sha256               sonoma:            "4c7bed5a5e0be48560355477f2f710fab0b0a3d9fdf6499b562b8311524c4a78"
+    sha256               arm64_linux:       "d2789b688ed8a45e45623113b8aa9d17644873c5b6c9b65d16663b7df3018c09"
+    sha256 cellar: :any, x86_64_linux:      "92da725ae700b13a6282c7d757dc1d6ce45f5c1ec7c6be0e6bc4760252dfc39b"
   end
 
   depends_on "autoconf" => :build

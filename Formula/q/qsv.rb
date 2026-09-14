@@ -1,8 +1,8 @@
 class Qsv < Formula
   desc "Ultra-fast CSV data-wrangling toolkit"
   homepage "https://qsv.dathere.com/"
-  url "https://ghfast.top/https://github.com/dathere/qsv/archive/refs/tags/22.0.1.tar.gz"
-  sha256 "b4c40736b74375ac10340d8ddef0bd715418b9b22b8bdff395b59f07a7126b09"
+  url "https://ghfast.top/https://github.com/dathere/qsv/archive/refs/tags/23.0.1.tar.gz"
+  sha256 "90dcf4853a91184411c8f92cbe8e438769965cafa7b445f6b1de933a3e845b04"
   license any_of: ["MIT", "Unlicense"]
   head "https://github.com/dathere/qsv.git", branch: "master"
 
@@ -15,12 +15,11 @@ class Qsv < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "be7051632decc060935756bc0ce2284d4fdfa9dd3de4967bce1fb0732c315f63"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ec664433eb9a02264d8262569434ef5ecaca7efec4f6a8ffc9f26d213c6baf89"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "61d85341dcfcfd48d720a7abfb23c4c8ad8390eab33077ce6c9459280b696aee"
-    sha256 cellar: :any_skip_relocation, sonoma:        "63cf2c82751f9317ade5ca3079ac4f2ace1b43761ded00654afdd8298bdc6cc8"
-    sha256 cellar: :any,                 arm64_linux:   "340f99693ce4cb26ae2487dccd7a47d361b3a9d4e9cb3c868271d6a4b5d13ae2"
-    sha256 cellar: :any,                 x86_64_linux:  "3581e88eb24ddfbb71abeee11d0d89e2ad860bc1d6b01b705c9c78abe427257f"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "05bcf7069f16a800989d143f8a8f3eb3ad83e5049c4599576479d4c20d827e0d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "3c2a63b307f32696bdc5fb92c9d1c04d8397fcfaaee10a0d74921a6c6c16215b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "8b1b0a433454d39d58bbcec8f592788068ea3411ebed4032793d584e823e6906"
+    sha256 cellar: :any,                 arm64_linux:       "ed75e50cc8c9b3adaa49275f7e9edf04c154dac72aab75c9d1dd8c5f112a28f0"
+    sha256 cellar: :any,                 x86_64_linux:      "cc8933065efdb9e63a359cc4513d564ab5db69c38b5df83363af51da981f007d"
   end
 
   depends_on "cmake" => :build # for libz-ng-sys

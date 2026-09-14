@@ -10,12 +10,13 @@ class RdiffBackup < Formula
 
   bottle do
     rebuild 3
-    sha256 cellar: :any,                 arm64_tahoe:   "ebea57ecc6915c0b154d732cc9694f360c77815e98d8b81948e6e52b3bb881b9"
-    sha256 cellar: :any,                 arm64_sequoia: "2f5ac3490d900871fae7157a93425498112962b41824c0b725dc3a0acd466673"
-    sha256 cellar: :any,                 arm64_sonoma:  "bccc1b81a71c6c37e91412f2083c8922045b07f5a5cf1c11a37924a480f58871"
-    sha256 cellar: :any,                 sonoma:        "9136e68895a67828a273cd4930fcbc2dbf8dbf4598c5ba938d4c2825d1f25c2f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "baba91a650c1813d89435bfe1bcc41463e9fa64ff81d79592c70a7219147216b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "384758ed7f5ab60a60993d6c73f2a835a878c00cd6066ede4e054334aafc7731"
+    sha256 cellar: :any,                 arm64_golden_gate: "61fa22fb959099022ebd7ccce0158dad48587d0d8185fa17997aaa6748fa7854"
+    sha256 cellar: :any,                 arm64_tahoe:       "ebea57ecc6915c0b154d732cc9694f360c77815e98d8b81948e6e52b3bb881b9"
+    sha256 cellar: :any,                 arm64_sequoia:     "2f5ac3490d900871fae7157a93425498112962b41824c0b725dc3a0acd466673"
+    sha256 cellar: :any,                 arm64_sonoma:      "bccc1b81a71c6c37e91412f2083c8922045b07f5a5cf1c11a37924a480f58871"
+    sha256 cellar: :any,                 sonoma:            "9136e68895a67828a273cd4930fcbc2dbf8dbf4598c5ba938d4c2825d1f25c2f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "baba91a650c1813d89435bfe1bcc41463e9fa64ff81d79592c70a7219147216b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "384758ed7f5ab60a60993d6c73f2a835a878c00cd6066ede4e054334aafc7731"
   end
 
   depends_on "librsync"

@@ -8,12 +8,13 @@ class Logstalgia < Formula
   head "https://github.com/acaudwell/Logstalgia.git", branch: "master"
 
   bottle do
-    sha256 arm64_tahoe:   "968fb21de628f1134ff9658143f311a4308d50a70640c56e4cafaaabaa50d6dd"
-    sha256 arm64_sequoia: "ad39fc4b76c2fa15e0dd1c96a7d68138854eac7c140ed672286921e230de1d16"
-    sha256 arm64_sonoma:  "d1451ec4b1fc58006c7913ef852c0301d869f3e42d54e8b290f4fc14ec7a6b28"
-    sha256 sonoma:        "e2e882edcc92ff5dfad8c032afe244879bae0fd7eddab3fbe1ef5e610c9e9ce9"
-    sha256 arm64_linux:   "f77e6de85bf093f3ff77be706f0af9d58d5d44e0dead8dc21b81d27dab3b6aaa"
-    sha256 x86_64_linux:  "8cf25fc1623b2e4e9757a8e63dbd70f13a4f255c66f27849631d6a0b806809f7"
+    sha256 arm64_golden_gate: "e9c9657db153094eda271fd6fd691b403c3ab28c277d563a7759fedc1b2f59e6"
+    sha256 arm64_tahoe:       "968fb21de628f1134ff9658143f311a4308d50a70640c56e4cafaaabaa50d6dd"
+    sha256 arm64_sequoia:     "ad39fc4b76c2fa15e0dd1c96a7d68138854eac7c140ed672286921e230de1d16"
+    sha256 arm64_sonoma:      "d1451ec4b1fc58006c7913ef852c0301d869f3e42d54e8b290f4fc14ec7a6b28"
+    sha256 sonoma:            "e2e882edcc92ff5dfad8c032afe244879bae0fd7eddab3fbe1ef5e610c9e9ce9"
+    sha256 arm64_linux:       "f77e6de85bf093f3ff77be706f0af9d58d5d44e0dead8dc21b81d27dab3b6aaa"
+    sha256 x86_64_linux:      "8cf25fc1623b2e4e9757a8e63dbd70f13a4f255c66f27849631d6a0b806809f7"
   end
 
   depends_on "autoconf" => :build

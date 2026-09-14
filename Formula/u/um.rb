@@ -7,12 +7,13 @@ class Um < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "957d4984160680529f05dbe36a2363b541a29f288dde10c65cc3eefa05934cc6"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "957d4984160680529f05dbe36a2363b541a29f288dde10c65cc3eefa05934cc6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "957d4984160680529f05dbe36a2363b541a29f288dde10c65cc3eefa05934cc6"
-    sha256 cellar: :any_skip_relocation, sonoma:        "957d4984160680529f05dbe36a2363b541a29f288dde10c65cc3eefa05934cc6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ad8f483714ddf9b1cad6fc9229e2eff9028e07d0737c1ec2572a3d66b46be2cc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ad8f483714ddf9b1cad6fc9229e2eff9028e07d0737c1ec2572a3d66b46be2cc"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "911bfea4cf78ace2bc79cc1997540415d7fdf4437bca0c9180fb5639daf38c86"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "957d4984160680529f05dbe36a2363b541a29f288dde10c65cc3eefa05934cc6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "957d4984160680529f05dbe36a2363b541a29f288dde10c65cc3eefa05934cc6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "957d4984160680529f05dbe36a2363b541a29f288dde10c65cc3eefa05934cc6"
+    sha256 cellar: :any_skip_relocation, sonoma:            "957d4984160680529f05dbe36a2363b541a29f288dde10c65cc3eefa05934cc6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "ad8f483714ddf9b1cad6fc9229e2eff9028e07d0737c1ec2572a3d66b46be2cc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "ad8f483714ddf9b1cad6fc9229e2eff9028e07d0737c1ec2572a3d66b46be2cc"
   end
 
   depends_on "ruby"

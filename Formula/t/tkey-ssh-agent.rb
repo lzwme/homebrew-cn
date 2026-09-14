@@ -12,12 +12,13 @@ class TkeySshAgent < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "edb893d7da405b29310a28fa7cbb7116243741146d95045e84adfc84fd8aefd8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d208c163295411b0f2960d7874601f9ebcb20981a46ce13af48c7562aeb90225"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "080190575410f16394819365b25c8771fce80fe6903ac8385b0a9cc56d5f668a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0af3495f4d19250e7e8d148d644c69424a46b54b8c0e79c1d438f92827699743"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6d884e14bcc18eb6f6c43d09c7bb9717ed09e43bc0af7e628453c835de8500ff"
-    sha256 cellar: :any,                 x86_64_linux:  "666f849c40edfdad37adb16b00e1e3de3d9af5f23a301c17a8d9d152fa411942"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "a93701638b4410604695ab4fb117dff199e02cb1444a36975a27ea8dffb524d0"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "edb893d7da405b29310a28fa7cbb7116243741146d95045e84adfc84fd8aefd8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "d208c163295411b0f2960d7874601f9ebcb20981a46ce13af48c7562aeb90225"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "080190575410f16394819365b25c8771fce80fe6903ac8385b0a9cc56d5f668a"
+    sha256 cellar: :any_skip_relocation, sonoma:            "0af3495f4d19250e7e8d148d644c69424a46b54b8c0e79c1d438f92827699743"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "6d884e14bcc18eb6f6c43d09c7bb9717ed09e43bc0af7e628453c835de8500ff"
+    sha256 cellar: :any,                 x86_64_linux:      "666f849c40edfdad37adb16b00e1e3de3d9af5f23a301c17a8d9d152fa411942"
   end
 
   depends_on "go" => :build

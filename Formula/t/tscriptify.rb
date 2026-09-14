@@ -7,12 +7,13 @@ class Tscriptify < Formula
   head "https://github.com/tkrajina/typescriptify-golang-structs.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7c7b915dd7c57bc5de916250093b2b5220065189ee0584c13e4e5bae75b88bdd"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7c7b915dd7c57bc5de916250093b2b5220065189ee0584c13e4e5bae75b88bdd"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7c7b915dd7c57bc5de916250093b2b5220065189ee0584c13e4e5bae75b88bdd"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8118e282ad8abb5ef7daaeac81d04b999788e413862fd08bdd75eac84a1800b0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ee18dcd364ef21d18a9ce81d8b05078e19ef7901342d841f1d61046a30596cd5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d1c76e5da60912ab5f9e7b3b4bff42d5fc0e0ab103ac49143412bbf8217e32b1"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "9829e4f8b1f5130967a584194b6feda8f5b71c0879d08549d26662851ccda13d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "7c7b915dd7c57bc5de916250093b2b5220065189ee0584c13e4e5bae75b88bdd"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "7c7b915dd7c57bc5de916250093b2b5220065189ee0584c13e4e5bae75b88bdd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "7c7b915dd7c57bc5de916250093b2b5220065189ee0584c13e4e5bae75b88bdd"
+    sha256 cellar: :any_skip_relocation, sonoma:            "8118e282ad8abb5ef7daaeac81d04b999788e413862fd08bdd75eac84a1800b0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "ee18dcd364ef21d18a9ce81d8b05078e19ef7901342d841f1d61046a30596cd5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "d1c76e5da60912ab5f9e7b3b4bff42d5fc0e0ab103ac49143412bbf8217e32b1"
   end
 
   depends_on "go" => [:build, :test]

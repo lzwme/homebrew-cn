@@ -3,17 +3,16 @@ class Mycli < Formula
 
   desc "CLI for MySQL with auto-completion and syntax highlighting"
   homepage "https://www.mycli.net/"
-  url "https://files.pythonhosted.org/packages/1e/67/086267b68faf5033161f487bfb9fa7f084c5d48f01ad9f144cea4fd0232b/mycli-2.23.0.tar.gz"
-  sha256 "891453488390dc3c1fd8299e74c7bd6f32647c46fae5c2b4000d94ffc59b5263"
+  url "https://files.pythonhosted.org/packages/d2/a5/08e82432567bb30affe6b9161d586a508a9a839e93dc14e16c4934f5c8ce/mycli-2.24.4.tar.gz"
+  sha256 "3b9a308ea268895248ef6d9edeef64ba56cc634b5f6de8f3ce5339ec12a16eb0"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "ba4566311cc2a92bee5198c10403f27535afb013a051fbc789c11063dbed9dc5"
-    sha256 cellar: :any, arm64_tahoe:       "4208afd5047aef177e9e1dc217ea885a4f93ca656a38979c6ec6a03f73a282c4"
-    sha256 cellar: :any, arm64_sequoia:     "153e479c047f8ca5790098842cc08263d7422c561bcf21ebe460627ce81f77f0"
-    sha256 cellar: :any, arm64_sonoma:      "f3cbf2c7208baacf0effaefdc250c5ce5bdab105c8381ca6f5caede5be3de51d"
-    sha256 cellar: :any, arm64_linux:       "991d09063339bc18c22375c468182d71f4e5dbd16e7c6e23a02596b55bc31059"
-    sha256 cellar: :any, x86_64_linux:      "824cb24adbaa7c0a6a2863037e49743c2e618a9fba9258977ed09386c9e10ee7"
+    sha256 cellar: :any, arm64_golden_gate: "c6b0b4e2ed29085c844952fd31082e02aa06ae47d2c90e72680aea3231bd4b6f"
+    sha256 cellar: :any, arm64_tahoe:       "68cafc483b2d31607a249bde06570c7a3f3445b5c4b527ed85dd9ba0355c2ea4"
+    sha256 cellar: :any, arm64_sequoia:     "53714d67d83e41f500e79ce98cab511472587854beb285c4bef8b637ad3da5ed"
+    sha256 cellar: :any, arm64_linux:       "f9eab89edaaf8317eb51699bda83b9b29918cbfe1a7cda7f29ac8a9a5ec42069"
+    sha256 cellar: :any, x86_64_linux:      "951a070e2c43a46d896e445af8f685896191f3438e32203ad9ce95a4059932a9"
   end
 
   depends_on "rust" => :build # for jiter, polars, vl-convert
@@ -125,8 +124,8 @@ class Mycli < Formula
   end
 
   resource "jiter" do
-    url "https://files.pythonhosted.org/packages/1d/1f/10936e16d8860c70698a1aa939a46aa0224813b782bce4e000e637da0b2d/jiter-0.16.0.tar.gz"
-    sha256 "7b24c3492c5f4f84a37946ad9cf504910cf6a782d6a4e0689b6673c5894b4a1c"
+    url "https://files.pythonhosted.org/packages/9c/1f/8176d92e001f86505424b41664032ae26a882bc9ca41a32c803f373f9195/jiter-0.17.0.tar.gz"
+    sha256 "03e432f226a453851079fb84cd17c6da9991eab723e28d716f14ae3d906e0c12"
   end
 
   resource "jsonschema" do
@@ -165,8 +164,8 @@ class Mycli < Formula
   end
 
   resource "openai" do
-    url "https://files.pythonhosted.org/packages/e5/31/cacdcba6fb96dae7df9b24573b73904464561e17a77b78c5a4e330a6da89/openai-3.11.0.tar.gz"
-    sha256 "1ee0114c218bba9ffdea1927b974b4ddeee5f173000b0930aab53efc7c349989"
+    url "https://files.pythonhosted.org/packages/40/f1/4874c4f7db30121885e6a763e2670b2fe1d76c79ed4732f8acbb51c8d96e/openai-3.13.0.tar.gz"
+    sha256 "a8f87a9b3b9c08eb446d68bd0a80e8ec907c4c35fdea63f4265c7b34b2de3a60"
   end
 
   resource "packaging" do

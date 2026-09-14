@@ -6,12 +6,13 @@ class Quazip < Formula
   license "LGPL-2.1-only"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "949ca6bbf73c080cbaced4a9611eb02b94876055ed843a2dc1b0fa12463d9ef8"
-    sha256 cellar: :any, arm64_sequoia: "b7c21a9875e6cba5caf39d35749de86f8ce77e35b780e4634f08911299a046e2"
-    sha256 cellar: :any, arm64_sonoma:  "c1052ef03a5ea6e99f1aea0ddbe60257ee51e588f8a1b08be74cf352e42a6c1a"
-    sha256 cellar: :any, sonoma:        "5b3d73973a0b00325fba4110ecc35a66c771cbe3444385b71d3e14f4e85286dc"
-    sha256 cellar: :any, arm64_linux:   "d65b50c2f074355df91b0e8ed9602d614c154aa8b71bf61ccdd4dc0e091999f7"
-    sha256 cellar: :any, x86_64_linux:  "8b5c387b4c62463a67c23f4ebf8959aff6d4b89f459489f69419bd64bb8d6b86"
+    sha256 cellar: :any, arm64_golden_gate: "20ba08c520e415717bbd43d11462fc3b578c3bcbec320547eb6898a8626f57d8"
+    sha256 cellar: :any, arm64_tahoe:       "949ca6bbf73c080cbaced4a9611eb02b94876055ed843a2dc1b0fa12463d9ef8"
+    sha256 cellar: :any, arm64_sequoia:     "b7c21a9875e6cba5caf39d35749de86f8ce77e35b780e4634f08911299a046e2"
+    sha256 cellar: :any, arm64_sonoma:      "c1052ef03a5ea6e99f1aea0ddbe60257ee51e588f8a1b08be74cf352e42a6c1a"
+    sha256 cellar: :any, sonoma:            "5b3d73973a0b00325fba4110ecc35a66c771cbe3444385b71d3e14f4e85286dc"
+    sha256 cellar: :any, arm64_linux:       "d65b50c2f074355df91b0e8ed9602d614c154aa8b71bf61ccdd4dc0e091999f7"
+    sha256 cellar: :any, x86_64_linux:      "8b5c387b4c62463a67c23f4ebf8959aff6d4b89f459489f69419bd64bb8d6b86"
   end
 
   depends_on "cmake" => :build

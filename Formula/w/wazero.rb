@@ -11,12 +11,13 @@ class Wazero < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2b48c99c3b9ee63f59d9ed32d7f5ae4c40551248686bd4cd2434044d16c59b03"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2b48c99c3b9ee63f59d9ed32d7f5ae4c40551248686bd4cd2434044d16c59b03"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2b48c99c3b9ee63f59d9ed32d7f5ae4c40551248686bd4cd2434044d16c59b03"
-    sha256 cellar: :any_skip_relocation, sonoma:        "820d56ab8fdc93c8305eb50378f794c2aff267ce59efc008cace240fd0674332"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "112def4207427435ec33263a919ba870e0e75332ae0e8113a92bfb1ca6f9f70f"
-    sha256 cellar: :any,                 x86_64_linux:  "3100242d33d61d5d21e3c19b9962e392cc5c4a5077725005a12f3d20bc9ca553"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "1de75b1f0502b133cb1c35197e1d7b68aed802fed59b226327418a576e9593a0"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "2b48c99c3b9ee63f59d9ed32d7f5ae4c40551248686bd4cd2434044d16c59b03"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "2b48c99c3b9ee63f59d9ed32d7f5ae4c40551248686bd4cd2434044d16c59b03"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "2b48c99c3b9ee63f59d9ed32d7f5ae4c40551248686bd4cd2434044d16c59b03"
+    sha256 cellar: :any_skip_relocation, sonoma:            "820d56ab8fdc93c8305eb50378f794c2aff267ce59efc008cace240fd0674332"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "112def4207427435ec33263a919ba870e0e75332ae0e8113a92bfb1ca6f9f70f"
+    sha256 cellar: :any,                 x86_64_linux:      "3100242d33d61d5d21e3c19b9962e392cc5c4a5077725005a12f3d20bc9ca553"
   end
 
   depends_on "go" => :build

@@ -14,14 +14,15 @@ class Ssed < Formula
 
   bottle do
     rebuild 3
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7f320800bb3b956cc9b1c04587ac2c93bf44dfea273107a9930a767bfa970f44"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "92006e68fb2c4e57950c340c9ccef34132c2577f7341b79c168ca906bd400018"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c90bd4517877eb2e72ed8ddfd9ebd830d781d10f3e1e21f81013ea76fc75816d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "145cb1b805276d6a61df5d706fac9e96cd1dd98f0e1e4f2a9bafe1af52fcef47"
-    sha256 cellar: :any_skip_relocation, sonoma:        "fd6689f0fb272be1bf808fc7989f2c8d1223d684a76882e6f889f84f20642303"
-    sha256 cellar: :any_skip_relocation, ventura:       "5bbc6dfa3c280d9cc26fe8d0516d0ce558cf1e81bdd546dc3ce897eb66f3c4f7"
-    sha256                               arm64_linux:   "c8fc6e6bc3c579dfafeeaf205989db9d1048b345c30db3ef691593503ebcce17"
-    sha256                               x86_64_linux:  "3c4df17253d6bc34e6b2d0df8fc7bc9034185a67701b9bf29bf4d5dafd3fe266"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "ac0344a899cb6d01665d2fa1316c7274e512fcedb528abd9eb1c505bcdc6102c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "7f320800bb3b956cc9b1c04587ac2c93bf44dfea273107a9930a767bfa970f44"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "92006e68fb2c4e57950c340c9ccef34132c2577f7341b79c168ca906bd400018"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "c90bd4517877eb2e72ed8ddfd9ebd830d781d10f3e1e21f81013ea76fc75816d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:     "145cb1b805276d6a61df5d706fac9e96cd1dd98f0e1e4f2a9bafe1af52fcef47"
+    sha256 cellar: :any_skip_relocation, sonoma:            "fd6689f0fb272be1bf808fc7989f2c8d1223d684a76882e6f889f84f20642303"
+    sha256 cellar: :any_skip_relocation, ventura:           "5bbc6dfa3c280d9cc26fe8d0516d0ce558cf1e81bdd546dc3ce897eb66f3c4f7"
+    sha256                               arm64_linux:       "c8fc6e6bc3c579dfafeeaf205989db9d1048b345c30db3ef691593503ebcce17"
+    sha256                               x86_64_linux:      "3c4df17253d6bc34e6b2d0df8fc7bc9034185a67701b9bf29bf4d5dafd3fe266"
   end
 
   def install

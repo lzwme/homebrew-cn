@@ -4,7 +4,7 @@ class Kpcli < Formula
   url "https://downloads.sourceforge.net/project/kpcli/kpcli-4.1.3.pl"
   sha256 "c91363e4e07f3521a867f68db602c95b53dc167e4366ee7ff254252b4176c62f"
   license any_of: ["Artistic-1.0-Perl", "GPL-1.0-or-later"]
-  revision 2
+  revision 3
 
   livecheck do
     url :stable
@@ -12,14 +12,11 @@ class Kpcli < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "e0ae609c2cc96fea3b5b840b1c2129403405cfcaa5b3e8c9441a0df7e1f9aa9e"
-    sha256 cellar: :any, arm64_sequoia: "328a45daca1f2b366cc9e39c030e570a50b909e17c5eb3f40f23a3cf53dc9d33"
-    sha256 cellar: :any, arm64_sonoma:  "9ea88ccdc07297312b83d197992faa1804720ba6efd472b9a220ab6afb850db3"
-    sha256 cellar: :any, tahoe:         "cc33849f2206d6680bd40bc6c61547e4b4d886bea263c64cdd52257c2417c46f"
-    sha256 cellar: :any, sequoia:       "80e6cc121a3cfc33d4105323af5994dc4f3a2ff71af50e19db15af27d1ea1fa8"
-    sha256 cellar: :any, sonoma:        "3cd8bd72986cfb8920bbcc097fd126f547e5577c45736f84d3572a75eada9776"
-    sha256 cellar: :any, arm64_linux:   "829278e4ef6d3057e1f77bae898626b662ccb8d7a6752a979f14e087b7161028"
-    sha256 cellar: :any, x86_64_linux:  "cef290dfb2cd7da018353cd78e129e1972e5411ca73c4e0ae92a0d7035271071"
+    sha256 cellar: :any, arm64_golden_gate: "e1c9015e6bae196f284393624e2cbab15f1dde99bd052f290ab30042ed7e8954"
+    sha256 cellar: :any, arm64_tahoe:       "ef1bdb8f3ce84f2ad240d1f35b01078f10335681bb997a29723cbbc62248a3f4"
+    sha256 cellar: :any, arm64_sequoia:     "d97d19bdd97f231d2fe2843fab67760583fb97a39bfc8c3d4530ace29eecaf34"
+    sha256 cellar: :any, arm64_linux:       "a0e600b5481b43071d2e156898ed6840f1776268ae63cd12f3404ca3f99025f0"
+    sha256 cellar: :any, x86_64_linux:      "85c7bfb89f3a3f9e61025cd117f6bdeefd9d952b6fa1e0316b689514e8764f08"
   end
 
   depends_on "readline"
@@ -93,6 +90,10 @@ class Kpcli < Formula
     sha256 "ca6e8d7ce7471c2be54e1009f64c367d7ee233a2894cacf52ebe6f53b04e81e5"
   end
 
+  # Catch the macOS clipboard driver dying at import (no pasteboard server) in the optional-module loader
+  # TODO: report upstream at https://sourceforge.net/p/kpcli/patches/ and add `resolves`
+  patch :DATA
+
   def install
     ENV.prepend_create_path "PERL5LIB", libexec/"lib/perl5"
     ENV.prepend_path "PERL5LIB", libexec/"lib"
@@ -130,3 +131,17 @@ class Kpcli < Formula
     system bin/"kpcli", "--help"
   end
 end
+
+__END__
+--- a/kpcli-4.1.3.pl
++++ b/kpcli-4.1.3.pl
+@@ -8853,7 +8853,8 @@
+   my $eval_result = eval("require $module; 1;");
+   if (! defined($eval_result)) { $eval_result = 0; }
+   if ($eval_result == 1 && is_loaded($module)) {
+-    my $import_result = $module->import(@{$rImportList});
++    my $import_result = eval { $module->import(@{$rImportList}); 1 }
++      or do { warn $@; $rOPTIONAL_PM->{$module}->{loaded} = 0; return 0 };
+     $rOPTIONAL_PM->{$module}->{loaded} = 1;
+     return 1;
+   } else {

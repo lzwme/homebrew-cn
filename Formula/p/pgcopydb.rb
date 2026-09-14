@@ -7,12 +7,13 @@ class Pgcopydb < Formula
   head "https://github.com/dimitri/pgcopydb.git", branch: "main"
 
   bottle do
-    sha256 arm64_tahoe:   "0abe2100b8618872b68755752dc2d39a1ad730eb34e2732d6121724a2e7a844c"
-    sha256 arm64_sequoia: "2434673cf48fbbab5e75f2cb7f03fb1f5b32a14c06182a5f5666ba9b1bf50234"
-    sha256 arm64_sonoma:  "f7403924e8340bfa32ebf98a9862cef1f6ab7275d8c633ea847241d48a2b4e10"
-    sha256 sonoma:        "e8916d9e86be6c9fc1a25e80ea8f2fc8aa309fbce5b211960c116fbb6631e3c1"
-    sha256 arm64_linux:   "9827cba77982afb1555e51cdf3a5a5518b16bd84faaa3c0c88c7779ad582ee77"
-    sha256 x86_64_linux:  "85445fc9a40b676e3ad961d36aeb68eecaacd74ac9e90fcd5a88078294c31de4"
+    sha256 arm64_golden_gate: "989d4b1790ee122c25b5f052050ddd4ff044ab5ab36835fbb12e9ba775dea763"
+    sha256 arm64_tahoe:       "0abe2100b8618872b68755752dc2d39a1ad730eb34e2732d6121724a2e7a844c"
+    sha256 arm64_sequoia:     "2434673cf48fbbab5e75f2cb7f03fb1f5b32a14c06182a5f5666ba9b1bf50234"
+    sha256 arm64_sonoma:      "f7403924e8340bfa32ebf98a9862cef1f6ab7275d8c633ea847241d48a2b4e10"
+    sha256 sonoma:            "e8916d9e86be6c9fc1a25e80ea8f2fc8aa309fbce5b211960c116fbb6631e3c1"
+    sha256 arm64_linux:       "9827cba77982afb1555e51cdf3a5a5518b16bd84faaa3c0c88c7779ad582ee77"
+    sha256 x86_64_linux:      "85445fc9a40b676e3ad961d36aeb68eecaacd74ac9e90fcd5a88078294c31de4"
   end
 
   depends_on "sphinx-doc" => :build

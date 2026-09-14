@@ -24,6 +24,12 @@ class Gopls < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download", "-C", "gopls"
+  end
+
   def install
     cd "gopls" do
       system "go", "build", *std_go_args(ldflags: "-X main.version=v#{version}")

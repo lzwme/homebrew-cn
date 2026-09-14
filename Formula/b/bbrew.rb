@@ -18,6 +18,13 @@ class Bbrew < Formula
 
   depends_on "go" => :build
 
+  # `test do` block fetches data from formulae.brew.sh
+  deny_network_access! [:build, :postinstall]
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ldflags = "-X bbrew/internal/services.AppVersion=#{version}"
     system "go", "build", *std_go_args(ldflags:), "./cmd/bbrew"

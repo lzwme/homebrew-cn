@@ -7,12 +7,13 @@ class SSearch < Formula
   head "https://github.com/zquestz/s.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "21d524309004a7a9d7089d8c1aa37a1b61960e5a83f76238d3e8a3c1c5fc5583"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "21d524309004a7a9d7089d8c1aa37a1b61960e5a83f76238d3e8a3c1c5fc5583"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "21d524309004a7a9d7089d8c1aa37a1b61960e5a83f76238d3e8a3c1c5fc5583"
-    sha256 cellar: :any_skip_relocation, sonoma:        "93be088867f990931ec0843f461bee7fc3869c837fb1da600be6e56d36bc2e69"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "154883366e875db93c8101d19b19716b30cfd1930fc00e09c0900eabc799d420"
-    sha256 cellar: :any,                 x86_64_linux:  "7e64c6426a2309018eea5aafa4a62259271c66d971326a3fd02ed7eb1a640c7e"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "59c47164d3930d596543af3b3ad1aec61cccdf95c475bdb2bc1c6c992550ec65"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "21d524309004a7a9d7089d8c1aa37a1b61960e5a83f76238d3e8a3c1c5fc5583"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "21d524309004a7a9d7089d8c1aa37a1b61960e5a83f76238d3e8a3c1c5fc5583"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "21d524309004a7a9d7089d8c1aa37a1b61960e5a83f76238d3e8a3c1c5fc5583"
+    sha256 cellar: :any_skip_relocation, sonoma:            "93be088867f990931ec0843f461bee7fc3869c837fb1da600be6e56d36bc2e69"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "154883366e875db93c8101d19b19716b30cfd1930fc00e09c0900eabc799d420"
+    sha256 cellar: :any,                 x86_64_linux:      "7e64c6426a2309018eea5aafa4a62259271c66d971326a3fd02ed7eb1a640c7e"
   end
 
   depends_on "go" => :build

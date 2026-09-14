@@ -7,12 +7,13 @@ class Popeye < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "de4eb07bc059e0cfa41014bce3619f91f6d4cf60cdff0eea2b697dff007fa473"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ceaf3bd7cb2f1566cda40e6cc3531fc1da09a98f9c7799fed9a54fb09529cb24"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2b5116921f6593e7d94c2ad27ba0ff959958181a13b9890eeef1ca6c6e1998f7"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5b641ed59b339dc31cf366849c8c95c1be2e94df248620b29d4e0e4bf0c1e985"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5991ede9c93a0b1036008a8f38df0693a054aac640f08629d0c7f9da44e3b2eb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8f7675cf16525330166d626f6ab5e83f38cf48026d9baaf9b0333de52055cf37"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "8d5182b94ef65114c5980d6b6366a1ea948296a670e219bcddc3405751f51e97"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "de4eb07bc059e0cfa41014bce3619f91f6d4cf60cdff0eea2b697dff007fa473"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "ceaf3bd7cb2f1566cda40e6cc3531fc1da09a98f9c7799fed9a54fb09529cb24"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "2b5116921f6593e7d94c2ad27ba0ff959958181a13b9890eeef1ca6c6e1998f7"
+    sha256 cellar: :any_skip_relocation, sonoma:            "5b641ed59b339dc31cf366849c8c95c1be2e94df248620b29d4e0e4bf0c1e985"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "5991ede9c93a0b1036008a8f38df0693a054aac640f08629d0c7f9da44e3b2eb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "8f7675cf16525330166d626f6ab5e83f38cf48026d9baaf9b0333de52055cf37"
   end
 
   depends_on "go" => :build

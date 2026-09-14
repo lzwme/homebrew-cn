@@ -16,12 +16,13 @@ class Nauty < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "ad142c57ac892999d006142e11eb4f6ff089c97b3093dde91d57d0b0f04a5ba6"
-    sha256 cellar: :any,                 arm64_sequoia: "dd405c462075aeaf8ee1afe353616bd346d7e59d6916f84d2008b6ccd98c9349"
-    sha256 cellar: :any,                 arm64_sonoma:  "60cd32812952e323278cf9330c6935cd0719f36c82f04cb184099551408ba06f"
-    sha256 cellar: :any,                 sonoma:        "9a5b07f1a182ef5a3b8c96c92b0746d7f6e4bb349f55751106beffadc28d0f34"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "29996296ce332f791ac6e789d2f1339bfc45fdd7161e5144f39c4dd0303468d4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b693b963faee39b702b4d157a7b412ce5d727acfec39f429eaa7fc932cdb0e09"
+    sha256 cellar: :any,                 arm64_golden_gate: "ee4cfe83a843e42a88249192ac1b0356ac620fec079a53ac3e4ef1a9e21d84a9"
+    sha256 cellar: :any,                 arm64_tahoe:       "ad142c57ac892999d006142e11eb4f6ff089c97b3093dde91d57d0b0f04a5ba6"
+    sha256 cellar: :any,                 arm64_sequoia:     "dd405c462075aeaf8ee1afe353616bd346d7e59d6916f84d2008b6ccd98c9349"
+    sha256 cellar: :any,                 arm64_sonoma:      "60cd32812952e323278cf9330c6935cd0719f36c82f04cb184099551408ba06f"
+    sha256 cellar: :any,                 sonoma:            "9a5b07f1a182ef5a3b8c96c92b0746d7f6e4bb349f55751106beffadc28d0f34"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "29996296ce332f791ac6e789d2f1339bfc45fdd7161e5144f39c4dd0303468d4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "b693b963faee39b702b4d157a7b412ce5d727acfec39f429eaa7fc932cdb0e09"
   end
 
   def install

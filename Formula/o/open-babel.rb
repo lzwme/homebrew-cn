@@ -8,12 +8,13 @@ class OpenBabel < Formula
   head "https://github.com/openbabel/openbabel.git", branch: "master"
 
   bottle do
-    sha256 arm64_tahoe:   "d667891c9d9c49a9d60e67cc328614b77424c2d8d5bfcaa5c6566355596961b0"
-    sha256 arm64_sequoia: "5e3c5353ffcd0dc7ca0ecf6dd675d237c572ef05fc53fd88b2d3fa80af739ba1"
-    sha256 arm64_sonoma:  "2324ac199cb685f82b502680dafe7f6be0bbcfcc7d8ee9cd68f70c1bcc101a94"
-    sha256 sonoma:        "6a8e5be4171c9c7ab552226d3a0f8f9a5873f12c8ab83581679f90d969493ae5"
-    sha256 arm64_linux:   "a224c4ad98f57e8492688c854a70982d9955e545f0ae88b0960b6d29e05d1188"
-    sha256 x86_64_linux:  "741ab890bea667e2129f3ca9d4d218ed5cd59a33af0f8d4fdb9b617539fa53ca"
+    sha256 arm64_golden_gate: "4adf49b9ceafa263efcfc36cb338dae5fbdc6e6fafcafb82e12405f28cc1003c"
+    sha256 arm64_tahoe:       "d667891c9d9c49a9d60e67cc328614b77424c2d8d5bfcaa5c6566355596961b0"
+    sha256 arm64_sequoia:     "5e3c5353ffcd0dc7ca0ecf6dd675d237c572ef05fc53fd88b2d3fa80af739ba1"
+    sha256 arm64_sonoma:      "2324ac199cb685f82b502680dafe7f6be0bbcfcc7d8ee9cd68f70c1bcc101a94"
+    sha256 sonoma:            "6a8e5be4171c9c7ab552226d3a0f8f9a5873f12c8ab83581679f90d969493ae5"
+    sha256 arm64_linux:       "a224c4ad98f57e8492688c854a70982d9955e545f0ae88b0960b6d29e05d1188"
+    sha256 x86_64_linux:      "741ab890bea667e2129f3ca9d4d218ed5cd59a33af0f8d4fdb9b617539fa53ca"
   end
 
   depends_on "cmake" => :build

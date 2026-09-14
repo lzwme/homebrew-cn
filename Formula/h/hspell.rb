@@ -12,13 +12,12 @@ class Hspell < Formula
   end
 
   bottle do
-    rebuild 2
-    sha256 arm64_tahoe:   "c2f0ea64af6987d36f42b5f53aa51e781ff98cee49ea71b3f19d4137a8c4191b"
-    sha256 arm64_sequoia: "35618c16a7d232caafdbd3727ac9a7a0c4150fe8dd342f5661cec2b11e59a75d"
-    sha256 arm64_sonoma:  "4eb8d8495ab3c2b68c9ff12e6e5db38321ea050b49089162efbd2d9c15400daa"
-    sha256 sonoma:        "d99dbc4d7a19a85cfcd36c2aa7623fe5e01b2172ee8251be627927b067167ea9"
-    sha256 arm64_linux:   "9e22e4326c832b9a1e407c6f72a57a6a359395cff667db921c0d7080ef411cc0"
-    sha256 x86_64_linux:  "52c6c0928b22dd5d7e72e08a48ae96ba44615336e24fe4ec677057a2d07fef36"
+    rebuild 3
+    sha256 arm64_golden_gate: "37ba0b5de423be1dd2880eee9178d8f6f5dcb67080c3bf8b8a13639c47c13960"
+    sha256 arm64_tahoe:       "ced3dddd83e4e604b53384cc4cecbeb45fd53d35867d8ff244abf4e8b3082b5c"
+    sha256 arm64_sequoia:     "b2efb812718a75549385d7d46080ea9f365388fc69a1ee2b3432f9eb5e10f060"
+    sha256 arm64_linux:       "d6f589171adb2c7cb2cc71dd6a3161ed259b5577e65b9c72d90484e0bc019599"
+    sha256 x86_64_linux:      "8d328151358a39176cc2c5535297a2da376516401865c4593e7183886d9067a6"
   end
 
   depends_on "autoconf" => :build
@@ -40,6 +39,9 @@ class Hspell < Formula
 
     # The build scripts rely on "." being in @INC which was disabled by default in perl 5.26
     ENV["PERL_USE_UNSAFE_INC"] = "1"
+
+    # C23 rejects the K&R-style function definitions in the bundled tclHash.c
+    ENV.append_to_cflags "-std=gnu17"
 
     # autoconf needs to pick up on the patched configure.in and create a new ./configure
     # script

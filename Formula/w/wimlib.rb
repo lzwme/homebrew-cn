@@ -12,12 +12,13 @@ class Wimlib < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "77c03b228096892b70699b1eaf11ef1ce85d5803667331b29df0eb6f57d2421a"
-    sha256 cellar: :any, arm64_sequoia: "b3f5eab7475ed4a0aecec1197c0843c7e9c83ee77f7e7d6adc19c2c538d047e4"
-    sha256 cellar: :any, arm64_sonoma:  "82219b7fee13ddda4b299b30d64b3db2e9d0a67f9aec84c6ba6364b7f8cb9f33"
-    sha256 cellar: :any, sonoma:        "284d78f65dabe067d5aae734fa3eb27a2e0c527e07ef4c972650e1b8b36c3541"
-    sha256 cellar: :any, arm64_linux:   "edcf4ca1d66dfff2a979a9aa1019cead51fc86eba1327659fb80a374543910c2"
-    sha256 cellar: :any, x86_64_linux:  "182cacc7e7f132b7df8b7b894068b2d215f391a255de9fdbb5266c313b4c4ea7"
+    sha256 cellar: :any, arm64_golden_gate: "b120394b4dd57597741f5f5e3e07a9aec6e59b16626de95b4abd1b565cf69020"
+    sha256 cellar: :any, arm64_tahoe:       "77c03b228096892b70699b1eaf11ef1ce85d5803667331b29df0eb6f57d2421a"
+    sha256 cellar: :any, arm64_sequoia:     "b3f5eab7475ed4a0aecec1197c0843c7e9c83ee77f7e7d6adc19c2c538d047e4"
+    sha256 cellar: :any, arm64_sonoma:      "82219b7fee13ddda4b299b30d64b3db2e9d0a67f9aec84c6ba6364b7f8cb9f33"
+    sha256 cellar: :any, sonoma:            "284d78f65dabe067d5aae734fa3eb27a2e0c527e07ef4c972650e1b8b36c3541"
+    sha256 cellar: :any, arm64_linux:       "edcf4ca1d66dfff2a979a9aa1019cead51fc86eba1327659fb80a374543910c2"
+    sha256 cellar: :any, x86_64_linux:      "182cacc7e7f132b7df8b7b894068b2d215f391a255de9fdbb5266c313b4c4ea7"
   end
 
   depends_on "pkgconf" => :build

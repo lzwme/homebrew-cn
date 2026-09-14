@@ -6,11 +6,12 @@ class OrocosKdl < Formula
   license "LGPL-2.1-or-later"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "a22662680404401c27ba5697b191b8386cc419546cdb8fd168c1b13715b04096"
-    sha256 cellar: :any, arm64_sequoia: "c51a6f4e6be872711b72a6fc6b7eb7cccb0e770c1efbb4f607ece485cbf1b03b"
-    sha256 cellar: :any, arm64_sonoma:  "d1a3490e975f2a02dda0f39a97c962bf313b11959476a61581fcf64381630b63"
-    sha256 cellar: :any, arm64_linux:   "3068dcfd1b9d2ba33dcabfa0b014cec0d24e43343d740b6ddc38b098019c5f91"
-    sha256 cellar: :any, x86_64_linux:  "b61040599cad3d979cee7d48f7b9888e2d83ddd5ab22ca221b5a4ce90e873e18"
+    sha256 cellar: :any, arm64_golden_gate: "4cc482ded62e2126f68ce6f520aed5addb36d93ffc88691aed96b2a5d61268ce"
+    sha256 cellar: :any, arm64_tahoe:       "a22662680404401c27ba5697b191b8386cc419546cdb8fd168c1b13715b04096"
+    sha256 cellar: :any, arm64_sequoia:     "c51a6f4e6be872711b72a6fc6b7eb7cccb0e770c1efbb4f607ece485cbf1b03b"
+    sha256 cellar: :any, arm64_sonoma:      "d1a3490e975f2a02dda0f39a97c962bf313b11959476a61581fcf64381630b63"
+    sha256 cellar: :any, arm64_linux:       "3068dcfd1b9d2ba33dcabfa0b014cec0d24e43343d740b6ddc38b098019c5f91"
+    sha256 cellar: :any, x86_64_linux:      "b61040599cad3d979cee7d48f7b9888e2d83ddd5ab22ca221b5a4ce90e873e18"
   end
 
   depends_on "cmake" => :build

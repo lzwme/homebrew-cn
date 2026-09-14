@@ -6,12 +6,13 @@ class Superhtml < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6ecdeda20aba3c932e654ce1a7ad91174f5084cc83633c5d9cd6f1390daee912"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8012a4daf05ee0ddbb51d09172fadeb4fe23b21cadeed03a42c1663964bd52dc"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bae9719b4bb4567edaf1678911be594bfdc8d537996bb723f300c3fb0f2aad93"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f41742a7a7b61ce1e6bf019e897ae0b3f0076215353a8af4b7f53750533593f6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b468973d40b401cf79782c7b85cf42696046c5064797af71a24de169e5b33d58"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8874ee426039b691bb1faffd504ba20c22be4501f249d0bf8f84f2f46c636f5f"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "c453ef5eeebdb2eef2a2d6669543858f48830db8db9bb41059dd6451b4f14053"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "6ecdeda20aba3c932e654ce1a7ad91174f5084cc83633c5d9cd6f1390daee912"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "8012a4daf05ee0ddbb51d09172fadeb4fe23b21cadeed03a42c1663964bd52dc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "bae9719b4bb4567edaf1678911be594bfdc8d537996bb723f300c3fb0f2aad93"
+    sha256 cellar: :any_skip_relocation, sonoma:            "f41742a7a7b61ce1e6bf019e897ae0b3f0076215353a8af4b7f53750533593f6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "b468973d40b401cf79782c7b85cf42696046c5064797af71a24de169e5b33d58"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "8874ee426039b691bb1faffd504ba20c22be4501f249d0bf8f84f2f46c636f5f"
   end
 
   depends_on "zig@0.15" => :build # Blocked until Zig 0.17 is available which 0.7.0+ uses

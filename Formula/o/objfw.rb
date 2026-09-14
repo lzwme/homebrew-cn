@@ -12,12 +12,13 @@ class Objfw < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "d26124e8f5b8ed93dee88c5701bbcfb2c2899352115bcfc062587eae738f8a07"
-    sha256 arm64_sequoia: "f4d373bd9d4e274baf4b663d3d774042e62e919d18c5a61394c6e99f346a86ea"
-    sha256 arm64_sonoma:  "b5c85d7a7a69ffa812c49319e4dbe7a92071ae494cbefad0bdf08b83abb49a9e"
-    sha256 sonoma:        "c7be82ff8bd5d4f7fdb65a55ccd2ab97bded01cb1d777455991227807a4c6bd4"
-    sha256 arm64_linux:   "e207568c4a5d27b20232df54b6e78f076c30f9e3bbfb73d06b7844381f4851b9"
-    sha256 x86_64_linux:  "e5f54a7a545408a3ecfc109ee65e4a037f4d21ffdacfa4ad4fd2a3cc42000cc2"
+    sha256 arm64_golden_gate: "374319fc520d70f4e0acd0b1e3bf7caad4073f4f7a5543161f793679ed8f709f"
+    sha256 arm64_tahoe:       "d26124e8f5b8ed93dee88c5701bbcfb2c2899352115bcfc062587eae738f8a07"
+    sha256 arm64_sequoia:     "f4d373bd9d4e274baf4b663d3d774042e62e919d18c5a61394c6e99f346a86ea"
+    sha256 arm64_sonoma:      "b5c85d7a7a69ffa812c49319e4dbe7a92071ae494cbefad0bdf08b83abb49a9e"
+    sha256 sonoma:            "c7be82ff8bd5d4f7fdb65a55ccd2ab97bded01cb1d777455991227807a4c6bd4"
+    sha256 arm64_linux:       "e207568c4a5d27b20232df54b6e78f076c30f9e3bbfb73d06b7844381f4851b9"
+    sha256 x86_64_linux:      "e5f54a7a545408a3ecfc109ee65e4a037f4d21ffdacfa4ad4fd2a3cc42000cc2"
   end
 
   depends_on "autoconf" => :build

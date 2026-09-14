@@ -7,12 +7,13 @@ class Sheets < Formula
   head "https://github.com/maaslalani/sheets.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "15ae8d60a16d08c389fa2c33698848b1f17d865c1627be3a6a254ca71dfa3e33"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "15ae8d60a16d08c389fa2c33698848b1f17d865c1627be3a6a254ca71dfa3e33"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "15ae8d60a16d08c389fa2c33698848b1f17d865c1627be3a6a254ca71dfa3e33"
-    sha256 cellar: :any_skip_relocation, sonoma:        "59d347c63ceb2a43890ca4862b476bbec5e19512c8eff2146f16addee79631d1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "27b105d00a0fc10b20c8a57e4fd27d1b96face42d7e25c1168f26796677ebd26"
-    sha256 cellar: :any,                 x86_64_linux:  "c49e18d4858247288bedc2da9e2d283e677f7579022f48f2bf1c93f97903ffd2"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "673bea1814e20e5f8dd94fd5dc4aa557c9ab1ea741c027bf33e0991e849ec562"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "15ae8d60a16d08c389fa2c33698848b1f17d865c1627be3a6a254ca71dfa3e33"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "15ae8d60a16d08c389fa2c33698848b1f17d865c1627be3a6a254ca71dfa3e33"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "15ae8d60a16d08c389fa2c33698848b1f17d865c1627be3a6a254ca71dfa3e33"
+    sha256 cellar: :any_skip_relocation, sonoma:            "59d347c63ceb2a43890ca4862b476bbec5e19512c8eff2146f16addee79631d1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "27b105d00a0fc10b20c8a57e4fd27d1b96face42d7e25c1168f26796677ebd26"
+    sha256 cellar: :any,                 x86_64_linux:      "c49e18d4858247288bedc2da9e2d283e677f7579022f48f2bf1c93f97903ffd2"
   end
 
   depends_on "go" => :build

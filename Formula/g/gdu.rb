@@ -18,6 +18,12 @@ class Gdu < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     user = Utils.safe_popen_read("id", "-u", "-n")
     major = version.major

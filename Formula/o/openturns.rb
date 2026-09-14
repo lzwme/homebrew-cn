@@ -8,12 +8,13 @@ class Openturns < Formula
 
   bottle do
     rebuild 1
-    sha256 arm64_tahoe:   "2f150a1b12c631f1d86abf83327222c98410292d937f35d4f38404be16cd0c0e"
-    sha256 arm64_sequoia: "ba3391c01827910522fca5736530d941911dacde3d870178e9cb2b7e144e6802"
-    sha256 arm64_sonoma:  "a284e8de20f151f73c7ca8e0e2a94bc6bcaf211b1a8e13dba02415383ebed5fa"
-    sha256 sonoma:        "62828cc8463fa2a7409bcfa9ca5deac8b927bb8c51124df23ce0ed1b4fd62435"
-    sha256 arm64_linux:   "510dd85645562892344ab26d036cabf02e5d4bf7e95c6affc7ac606ea49804dc"
-    sha256 x86_64_linux:  "a5c2832548ef87987705919b55382328f649b5b3332c66da834edf75d125a132"
+    sha256 arm64_golden_gate: "24b4ba9f64ebe4b051bbf5a86ead5817ca1a44508e05e3c8ed1fff44f3569d1d"
+    sha256 arm64_tahoe:       "2f150a1b12c631f1d86abf83327222c98410292d937f35d4f38404be16cd0c0e"
+    sha256 arm64_sequoia:     "ba3391c01827910522fca5736530d941911dacde3d870178e9cb2b7e144e6802"
+    sha256 arm64_sonoma:      "a284e8de20f151f73c7ca8e0e2a94bc6bcaf211b1a8e13dba02415383ebed5fa"
+    sha256 sonoma:            "62828cc8463fa2a7409bcfa9ca5deac8b927bb8c51124df23ce0ed1b4fd62435"
+    sha256 arm64_linux:       "510dd85645562892344ab26d036cabf02e5d4bf7e95c6affc7ac606ea49804dc"
+    sha256 x86_64_linux:      "a5c2832548ef87987705919b55382328f649b5b3332c66da834edf75d125a132"
   end
 
   depends_on "boost" => :build

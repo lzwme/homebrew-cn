@@ -16,8 +16,6 @@ class LibvisualProjectm < Formula
 
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
-  depends_on "libvisual-plugins" => :test
-  depends_on "xorg-server" => :test
 
   depends_on "libvisual"
   depends_on "projectm"
@@ -38,32 +36,22 @@ class LibvisualProjectm < Formula
   end
 
   test do
-    libvisual = Formula["libvisual"]
-    lv_tool = libvisual.bin/"lv-tool-#{libvisual.version.major_minor}"
+    # `lv-tool` starts through SDL 1.2's Cocoa `SDLmain`, which never finishes launching in the test sandbox
+    (testpath/"test.c").write <<~C
+      #include <stdio.h>
+      #include <libvisual/libvisual.h>
 
-    # Test that locating used plugins works properly
-    plugin_help_output = shell_output("#{lv_tool} --plugin-help 2>&1")
-    assert_match " (debug)", plugin_help_output
-    assert_match " (projectM)", plugin_help_output
-
-    # Tests that lv-tool starts up projectM without crashing
-    xvfb_pid = fork do
-      exec Formula["xorg-server"].bin/"Xvfb", ":1"
-    end
-    ENV["DISPLAY"] = ":1"
-
-    lv_tool_pid = fork do
-      # NOTE: The two lines "assertion `video != NULL' failed" in the output
-      #       are to be expected and can be ignored.
-      exec lv_tool, "--input", "debug", "--actor", "projectM"
-    end
-
-    sleep 5
-  ensure
-    Process.kill("SIGINT", lv_tool_pid)
-    Process.wait(lv_tool_pid)
-
-    Process.kill("SIGINT", xvfb_pid)
-    Process.wait(xvfb_pid)
+      int main(int argc, char **argv) {
+        visual_init(&argc, &argv);
+        if (!visual_actor_valid_by_name("projectM")) return 1;
+        VisActor *actor = visual_actor_new("projectM");
+        if (actor == NULL) return 2;
+        puts(visual_actor_get_plugin(actor)->info->plugname);
+        return 0;
+      }
+    C
+    system ENV.cc, "test.c", "-o", "test", "-I#{formula_opt_include("libvisual")}/libvisual-0.4",
+                   "-L#{formula_opt_lib("libvisual")}", "-lvisual-0.4"
+    assert_equal "projectM", shell_output("./test").strip
   end
 end

@@ -10,12 +10,13 @@ class Openjazz < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "6bfc89162e63bb17558bc08624c060105ff815e076fbb396d145b5e635ca2ea6"
-    sha256 arm64_sequoia: "74de474ee4ceb88b075a6c6a512e3248a25c74f6009002f89dd0b156812be670"
-    sha256 arm64_sonoma:  "6dd6527671c8191ea8b206a3808f10108cd56c3ce4e4cae4ecb6f3ad79304164"
-    sha256 sonoma:        "12c74f58ca66e40d408c048acf972ce3ab9da5dabfc49ecfa3ea490e46e98ef3"
-    sha256 arm64_linux:   "07bf3d6746df890feac5085f6172c230e4f00b316730068de499795786ff2aeb"
-    sha256 x86_64_linux:  "f616f9102db1c8e95a380643842bee98afda25af124666c3b4734437070d47c6"
+    sha256 arm64_golden_gate: "b9aaba757f9a2b7b4f30f42f616e6fbb6afdb41fa9f04fecdd399729cfc0b02c"
+    sha256 arm64_tahoe:       "6bfc89162e63bb17558bc08624c060105ff815e076fbb396d145b5e635ca2ea6"
+    sha256 arm64_sequoia:     "74de474ee4ceb88b075a6c6a512e3248a25c74f6009002f89dd0b156812be670"
+    sha256 arm64_sonoma:      "6dd6527671c8191ea8b206a3808f10108cd56c3ce4e4cae4ecb6f3ad79304164"
+    sha256 sonoma:            "12c74f58ca66e40d408c048acf972ce3ab9da5dabfc49ecfa3ea490e46e98ef3"
+    sha256 arm64_linux:       "07bf3d6746df890feac5085f6172c230e4f00b316730068de499795786ff2aeb"
+    sha256 x86_64_linux:      "f616f9102db1c8e95a380643842bee98afda25af124666c3b4734437070d47c6"
   end
 
   head do

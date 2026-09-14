@@ -20,11 +20,12 @@ class Planck < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "8ae97ba5cca0b1d7393afeebb403e25821a75a1e3ab054313a6031ac9b3530e4"
-    sha256 cellar: :any, arm64_sequoia: "5ccf43cd6bcffc657596beddd703a69d6aabc4437b3e5945a20cb88f55f1999d"
-    sha256 cellar: :any, arm64_sonoma:  "c7c752a3b624660fd894e37e4bf7e37c2b4e69b399fe82849a9c68e2d8bb6fb5"
-    sha256 cellar: :any, arm64_linux:   "317b3cac73e97f287c4643983c9caa62f99dec3cdbeb535e156b1472339f1db2"
-    sha256 cellar: :any, x86_64_linux:  "7b58c81a2330e003de4ee7329a0cfe6f83811e83bdbd0dc51e9c82bbac8079cb"
+    sha256 cellar: :any, arm64_golden_gate: "15312160f296c470e753ce95989e3d1497adc4d33b4a3392fb0fbb7bc7ae423b"
+    sha256 cellar: :any, arm64_tahoe:       "8ae97ba5cca0b1d7393afeebb403e25821a75a1e3ab054313a6031ac9b3530e4"
+    sha256 cellar: :any, arm64_sequoia:     "5ccf43cd6bcffc657596beddd703a69d6aabc4437b3e5945a20cb88f55f1999d"
+    sha256 cellar: :any, arm64_sonoma:      "c7c752a3b624660fd894e37e4bf7e37c2b4e69b399fe82849a9c68e2d8bb6fb5"
+    sha256 cellar: :any, arm64_linux:       "317b3cac73e97f287c4643983c9caa62f99dec3cdbeb535e156b1472339f1db2"
+    sha256 cellar: :any, x86_64_linux:      "7b58c81a2330e003de4ee7329a0cfe6f83811e83bdbd0dc51e9c82bbac8079cb"
   end
 
   deprecate! date: "2026-02-21", because: :unmaintained

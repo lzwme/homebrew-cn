@@ -22,12 +22,13 @@ class Pymol < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "79544fccc4d17bd20141025aae92f35b17f88a5c1758ab78c89fcccf5615c14e"
-    sha256 cellar: :any,                 arm64_sequoia: "665acb4efa21c515d5e6509db8fbaacc7e40ce859503a05035fe75a4f3f14000"
-    sha256 cellar: :any,                 arm64_sonoma:  "a9abfeb724074d4d4f0db7ad04209ab03003b585c139d857a7bf13424c9b26c8"
-    sha256 cellar: :any,                 sonoma:        "3c6324e63327d59aab594c97b560404d65808239706184dc5e06acdd703f82d4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a338973b21416583937072cd7061b4aa3b6e08e68fe779dd8a3b4c9a598384a7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c886c77fa66a6563c17e0f049af5528e269df4315b794b4b8951f6350135a525"
+    sha256 cellar: :any,                 arm64_golden_gate: "dff3c3fe6b2dfc7a5217ca1e572244666b4626b0d02a95a1a627412195e6ae7a"
+    sha256 cellar: :any,                 arm64_tahoe:       "79544fccc4d17bd20141025aae92f35b17f88a5c1758ab78c89fcccf5615c14e"
+    sha256 cellar: :any,                 arm64_sequoia:     "665acb4efa21c515d5e6509db8fbaacc7e40ce859503a05035fe75a4f3f14000"
+    sha256 cellar: :any,                 arm64_sonoma:      "a9abfeb724074d4d4f0db7ad04209ab03003b585c139d857a7bf13424c9b26c8"
+    sha256 cellar: :any,                 sonoma:            "3c6324e63327d59aab594c97b560404d65808239706184dc5e06acdd703f82d4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "a338973b21416583937072cd7061b4aa3b6e08e68fe779dd8a3b4c9a598384a7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "c886c77fa66a6563c17e0f049af5528e269df4315b794b4b8951f6350135a525"
   end
 
   depends_on "cmake" => :build

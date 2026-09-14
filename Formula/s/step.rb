@@ -23,6 +23,16 @@ class Step < Formula
     sha256 "944b205d5ba89f393cbdc09d68ab7ce485f5b44f44c28025d30508af956c1cba"
   end
 
+  # `test do` block runs a local step-ca server
+  deny_network_access! [:build, :postinstall]
+
+  def fetch
+    system "go", "mod", "download"
+    resource("certificates").stage do
+      system "go", "mod", "download"
+    end
+  end
+
   def install
     ENV["CGO_ENABLED"] = "0" if OS.linux?
     ldflags = %W[-X main.Version=#{version} -X main.BuildTime=#{time.iso8601}]

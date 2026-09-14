@@ -7,14 +7,12 @@ class Lc0 < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9af0c3404413f7d61bdabebed5b36f18cd46d38d67435add1737ea07c0c09849"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d26534ed3db2d70eeb6b02f404defdfa04bc3a402437d2fc334bdac71baff11e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4210f76c40249e7e81c682f80edb881bbba6e6e9508d484e4fb4649ac45b42df"
-    sha256 cellar: :any_skip_relocation, tahoe:         "0864f484b7eec673ec082e6979c258db9e33243def5d23b9d003ff3d7877a42c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "685a0fcf141311b503520396025e4296f9f3656582d030e854667ac07d5d4bd4"
-    sha256                               arm64_linux:   "01f90bf4ae497e1a3c8de9db65a7a85f3d3366e056eff269d2f6b0497fcda731"
-    sha256                               x86_64_linux:  "a37761e31c707318e6c92cb6b7c11567e3e1e925146270f86ec344fa0b038419"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "75551935a94b7a1148803a65e879cd7df224f26742aea24e9a8644b29452010e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "7a1d1d13de8396fbf2c8b91fedb5e6e880f43c8b7a4a195351f78904da1dd6f3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "f8f7930982cfc4dd3b8f4e90166787a7b12be3bec318ef5527757de2d572bcf9"
+    sha256 cellar: :any,                 arm64_linux:       "8eb6f6694688e38cbfa126ab9e55dc918a9e0c9dd6938f41669c7a50655f8ff1"
+    sha256 cellar: :any,                 x86_64_linux:      "23eb4f71a6ff74cf4bfb7e3c2b080e392ec900d2a0b5053fc3af1a7966d0588b"
   end
 
   depends_on "cmake" => :build
@@ -33,7 +31,7 @@ class Lc0 < Formula
   # We use "753723" network with 15 blocks x 192 filters (from release notes)
   # Downloaded from https://training.lczero.org/networks/?show_all=0
   resource "network" do
-    url "https://training.lczero.org/get_network?sha=3e3444370b9fe413244fdc79671a490e19b93d3cca1669710ffeac890493d198", using: :nounzip
+    url "https://storage.lczero.org/files/networks/3e3444370b9fe413244fdc79671a490e19b93d3cca1669710ffeac890493d198", using: :nounzip
     sha256 "ca9a751e614cc753cb38aee247972558cf4dc9d82c5d9e13f2f1f464e350ec23"
   end
 

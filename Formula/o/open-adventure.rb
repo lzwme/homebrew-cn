@@ -16,12 +16,13 @@ class OpenAdventure < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5a85e36b9ca1263f3c649ab8901c626948771987728870c9e06a1f5e739be23b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "84e3ba5f82737e3f2d69144e443a0cbb042cec9ed646c2e3648890d72d73085c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "22e0a54e27022d53946bf903de98e046ae26c63dde49dedd47ec50ca3d8bb284"
-    sha256 cellar: :any_skip_relocation, sonoma:        "dbd2aced4cdfcfcad1156dbb413876df209b802d8a57cf15380c003627f82dd4"
-    sha256 cellar: :any,                 arm64_linux:   "1709022ce11a1790a14725e4c764d941c14583e768ddeb957e7ad3b9b41282cc"
-    sha256 cellar: :any,                 x86_64_linux:  "5d5af052ec2e2dcb1fd4075320717f84863bffd2d8a276daeea972419aee93b1"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "e48978f06f304f9e3c27df6f76d556cbfa3d519fbac827c6fb25768d8fc57b82"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "5a85e36b9ca1263f3c649ab8901c626948771987728870c9e06a1f5e739be23b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "84e3ba5f82737e3f2d69144e443a0cbb042cec9ed646c2e3648890d72d73085c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "22e0a54e27022d53946bf903de98e046ae26c63dde49dedd47ec50ca3d8bb284"
+    sha256 cellar: :any_skip_relocation, sonoma:            "dbd2aced4cdfcfcad1156dbb413876df209b802d8a57cf15380c003627f82dd4"
+    sha256 cellar: :any,                 arm64_linux:       "1709022ce11a1790a14725e4c764d941c14583e768ddeb957e7ad3b9b41282cc"
+    sha256 cellar: :any,                 x86_64_linux:      "5d5af052ec2e2dcb1fd4075320717f84863bffd2d8a276daeea972419aee93b1"
   end
 
   depends_on "asciidoctor" => :build

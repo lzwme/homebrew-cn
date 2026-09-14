@@ -7,12 +7,13 @@ class XCli < Formula
   head "https://github.com/sferik/x-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "56f1bc8609a45e0aa452a222e42fd75477401c7755fb7afb13b31cc8c879ad94"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "56122478d0233793ee93dc4c8bf813320bda3c4fb281af52bf32e94a82f9f8a3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "02cdb7be7f6f6088afd1ed39a175162941628df746f35910d77812eea820ef32"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7597be285be23fa533a0aba4312dd578947ceebea1bf3b0420030da0b1aa3d4d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "130027094f9f3cc804d9c67750641d76016cb2f5ffca3cff890610df6d7827c4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f17521c54fe762cf8863f1af94842cce12ecb382e7496fafb82e07805f8e6143"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "ac59b760cd81ae7487f7597f9266bee3da271a0ff2e08bfb6129409e72ac9ef4"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "56f1bc8609a45e0aa452a222e42fd75477401c7755fb7afb13b31cc8c879ad94"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "56122478d0233793ee93dc4c8bf813320bda3c4fb281af52bf32e94a82f9f8a3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "02cdb7be7f6f6088afd1ed39a175162941628df746f35910d77812eea820ef32"
+    sha256 cellar: :any_skip_relocation, sonoma:            "7597be285be23fa533a0aba4312dd578947ceebea1bf3b0420030da0b1aa3d4d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "130027094f9f3cc804d9c67750641d76016cb2f5ffca3cff890610df6d7827c4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "f17521c54fe762cf8863f1af94842cce12ecb382e7496fafb82e07805f8e6143"
   end
 
   depends_on "pkgconf" => :build

@@ -14,11 +14,12 @@ class Qcachegrind < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "8291f1efcbeec725591a9214a12345546f6f55fcc38873f351abfcf63e6798a4"
-    sha256 cellar: :any, arm64_sequoia: "8e5fb657490f2b5f5fc8987b48b8f3e1b0a96fb6054861990fbb5e1470080aa6"
-    sha256 cellar: :any, arm64_sonoma:  "5735ffa018361b4952aee0b4807479cf6fa4c6a688e93d567e674524905cc214"
-    sha256 cellar: :any, arm64_linux:   "d6c00090bd76281b42b460336e51dc3f95e7fea171b139dd13bf962c5e496fa4"
-    sha256 cellar: :any, x86_64_linux:  "4e05b11c21aff64522f5cbb8de18a140397d07ff99b37099b20d615b390837db"
+    sha256 cellar: :any, arm64_golden_gate: "8291f1efcbeec725591a9214a12345546f6f55fcc38873f351abfcf63e6798a4"
+    sha256 cellar: :any, arm64_tahoe:       "8291f1efcbeec725591a9214a12345546f6f55fcc38873f351abfcf63e6798a4"
+    sha256 cellar: :any, arm64_sequoia:     "8e5fb657490f2b5f5fc8987b48b8f3e1b0a96fb6054861990fbb5e1470080aa6"
+    sha256 cellar: :any, arm64_sonoma:      "5735ffa018361b4952aee0b4807479cf6fa4c6a688e93d567e674524905cc214"
+    sha256 cellar: :any, arm64_linux:       "d6c00090bd76281b42b460336e51dc3f95e7fea171b139dd13bf962c5e496fa4"
+    sha256 cellar: :any, x86_64_linux:      "4e05b11c21aff64522f5cbb8de18a140397d07ff99b37099b20d615b390837db"
   end
 
   depends_on "graphviz"

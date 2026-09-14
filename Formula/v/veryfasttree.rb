@@ -12,12 +12,13 @@ class Veryfasttree < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "614e6b99cd1f19ab66d559dd984fbc057bb7dc9db8611529d297e3e7ef2104ca"
-    sha256 cellar: :any,                 arm64_sequoia: "4f01aa7d1c95b9588f6b72b9e351cc25cf643d9cb5b1e27fda88d7ccf6282986"
-    sha256 cellar: :any,                 arm64_sonoma:  "2c0d038450d846a1bb142baac032a3faa10ea81d059487b4ed3e89c419de4998"
-    sha256 cellar: :any,                 sonoma:        "15976d53506ce1ae580ca361618aad7f5899dadb47140e063e43a9b796678299"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "eeedf67e0395b1b17e2db2f873ff8237e046ff71170a68bd8cafc30c10358416"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4a43dbe45af62348f2332c78fc858942e51c0a102a5e024e9d9e432f95326f82"
+    sha256 cellar: :any,                 arm64_golden_gate: "d09e1ed55dc4a0d4f71838d5ea4fd0ecc788a55244c3c521033e0ea1a7861c92"
+    sha256 cellar: :any,                 arm64_tahoe:       "614e6b99cd1f19ab66d559dd984fbc057bb7dc9db8611529d297e3e7ef2104ca"
+    sha256 cellar: :any,                 arm64_sequoia:     "4f01aa7d1c95b9588f6b72b9e351cc25cf643d9cb5b1e27fda88d7ccf6282986"
+    sha256 cellar: :any,                 arm64_sonoma:      "2c0d038450d846a1bb142baac032a3faa10ea81d059487b4ed3e89c419de4998"
+    sha256 cellar: :any,                 sonoma:            "15976d53506ce1ae580ca361618aad7f5899dadb47140e063e43a9b796678299"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "eeedf67e0395b1b17e2db2f873ff8237e046ff71170a68bd8cafc30c10358416"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "4a43dbe45af62348f2332c78fc858942e51c0a102a5e024e9d9e432f95326f82"
   end
 
   depends_on "boost" => :build

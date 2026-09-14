@@ -9,12 +9,13 @@ class Qcli < Formula
 
   bottle do
     rebuild 2
-    sha256 cellar: :any,                 arm64_tahoe:   "e05bc0c79aae6f0fe1a9d888e36e9d046550df0885eb4f16a0f3e9d39b6db1fc"
-    sha256 cellar: :any,                 arm64_sequoia: "589146936f71fffb6c0ef28b9f7a5e49041f2b6aa66a31029974ebf601876a2d"
-    sha256 cellar: :any,                 arm64_sonoma:  "1d9eb1a313c8d47a08709838a13d3d376ee484e65bb5835982d857ec232aca86"
-    sha256 cellar: :any,                 sonoma:        "51ec32892dfaf29f0ba4870f9fb1871f7f9053d6226002b79d76bdc9d0276097"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "266ba78a5f9da200e9ce2a3f1d857f6267e3cecbca8c5dc34b72a26b89128484"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "470749fbaafaa552f2398c6937d878609142c5c701ba1b3fa37bde12f98b8432"
+    sha256 cellar: :any,                 arm64_golden_gate: "2a4811a42bd4ec42ab6a0f21ba863646c326bb5e3d7ae9260f4c7141827ce73f"
+    sha256 cellar: :any,                 arm64_tahoe:       "e05bc0c79aae6f0fe1a9d888e36e9d046550df0885eb4f16a0f3e9d39b6db1fc"
+    sha256 cellar: :any,                 arm64_sequoia:     "589146936f71fffb6c0ef28b9f7a5e49041f2b6aa66a31029974ebf601876a2d"
+    sha256 cellar: :any,                 arm64_sonoma:      "1d9eb1a313c8d47a08709838a13d3d376ee484e65bb5835982d857ec232aca86"
+    sha256 cellar: :any,                 sonoma:            "51ec32892dfaf29f0ba4870f9fb1871f7f9053d6226002b79d76bdc9d0276097"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "266ba78a5f9da200e9ce2a3f1d857f6267e3cecbca8c5dc34b72a26b89128484"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "470749fbaafaa552f2398c6937d878609142c5c701ba1b3fa37bde12f98b8432"
   end
 
   depends_on "pkgconf" => :build

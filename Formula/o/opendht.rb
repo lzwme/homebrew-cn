@@ -14,11 +14,12 @@ class Opendht < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "3f74a08c7151a27bbe96d93dece8c909aaccb047e950b7d7038ffe330691091c"
-    sha256 cellar: :any, arm64_sequoia: "ac58f4c0c4ffacff87ee4f3c93b4e50ff7f897c734f05076c31dfcb764dd5ce5"
-    sha256 cellar: :any, arm64_sonoma:  "0989b9e4696885eecc975fdeef548d55a798b058edf1a38cf0d1ab3a7c10c434"
-    sha256 cellar: :any, arm64_linux:   "7d7e90d569d14db9edf04fec75438db2f678e1d7e10e55100d3a8f6e2224f41a"
-    sha256 cellar: :any, x86_64_linux:  "4f591682f73adcb384f5bde72184a4e66ef5fcd6e26734aa1402ab1c03d00f1b"
+    sha256 cellar: :any, arm64_golden_gate: "f34c3f5903ffe6f7008de68cdfc6dbd41ce9350bace437ae5b6ee66fe5911d5c"
+    sha256 cellar: :any, arm64_tahoe:       "3f74a08c7151a27bbe96d93dece8c909aaccb047e950b7d7038ffe330691091c"
+    sha256 cellar: :any, arm64_sequoia:     "ac58f4c0c4ffacff87ee4f3c93b4e50ff7f897c734f05076c31dfcb764dd5ce5"
+    sha256 cellar: :any, arm64_sonoma:      "0989b9e4696885eecc975fdeef548d55a798b058edf1a38cf0d1ab3a7c10c434"
+    sha256 cellar: :any, arm64_linux:       "7d7e90d569d14db9edf04fec75438db2f678e1d7e10e55100d3a8f6e2224f41a"
+    sha256 cellar: :any, x86_64_linux:      "4f591682f73adcb384f5bde72184a4e66ef5fcd6e26734aa1402ab1c03d00f1b"
   end
 
   depends_on "cmake" => :build

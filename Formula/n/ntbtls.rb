@@ -12,12 +12,13 @@ class Ntbtls < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "242c4613a71bbc1bae7b6ce91cd219bb73f24bb7ca50a01515854870a793b159"
-    sha256 cellar: :any,                 arm64_sequoia: "5d96fef86e0e6421ac37c69453a98248c96635b2b6d8fe5b67faac129a8da5c8"
-    sha256 cellar: :any,                 arm64_sonoma:  "2f3513ae1ada0a0bf25e67dd8b9d15fc4eca6a77b290ac0d5882ffae79e58098"
-    sha256 cellar: :any,                 sonoma:        "cd6a5117a9c9d119a99cf6a3154b33e8f01b41228215b69d923d5165e7bbe0f9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "294a59c47fbee91fcd03e080118abf40f291da8b38f1ff4e0ed30ee4bf6cc184"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e34595f0b0cc8e2920c65565226c459f16c103cf1ac7e687067bce67762fba66"
+    sha256 cellar: :any,                 arm64_golden_gate: "89cd95ae3de21ef5d177de876ec11738043bea6ab97a6e512b91660ec72d610f"
+    sha256 cellar: :any,                 arm64_tahoe:       "242c4613a71bbc1bae7b6ce91cd219bb73f24bb7ca50a01515854870a793b159"
+    sha256 cellar: :any,                 arm64_sequoia:     "5d96fef86e0e6421ac37c69453a98248c96635b2b6d8fe5b67faac129a8da5c8"
+    sha256 cellar: :any,                 arm64_sonoma:      "2f3513ae1ada0a0bf25e67dd8b9d15fc4eca6a77b290ac0d5882ffae79e58098"
+    sha256 cellar: :any,                 sonoma:            "cd6a5117a9c9d119a99cf6a3154b33e8f01b41228215b69d923d5165e7bbe0f9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "294a59c47fbee91fcd03e080118abf40f291da8b38f1ff4e0ed30ee4bf6cc184"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "e34595f0b0cc8e2920c65565226c459f16c103cf1ac7e687067bce67762fba66"
   end
 
   depends_on "libgcrypt"

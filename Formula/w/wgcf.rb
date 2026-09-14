@@ -7,12 +7,13 @@ class Wgcf < Formula
   head "https://github.com/ViRb3/wgcf.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "009a7a98a684353ba4a0b7e19dfc05bcd562701bdc4a5a3113b067ab7a6a8a7d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "009a7a98a684353ba4a0b7e19dfc05bcd562701bdc4a5a3113b067ab7a6a8a7d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "009a7a98a684353ba4a0b7e19dfc05bcd562701bdc4a5a3113b067ab7a6a8a7d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4d5e34482785067fa2f0239daafe8adfb318f574f62296a72d9604ac441c056a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "afe95380cb462b280de1546e9d46cb4cc3d942a7601a7a39ae88a6d1cccbcf73"
-    sha256 cellar: :any,                 x86_64_linux:  "23dcf3ce534408c0d9db48c41732a96ac4704eb7f72e9f8a75ecda2b44171c4e"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "79d09583a6ce28f8c9b074c1c78313c99ebbe69b0844477096eb4beb07c2fb4e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "009a7a98a684353ba4a0b7e19dfc05bcd562701bdc4a5a3113b067ab7a6a8a7d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "009a7a98a684353ba4a0b7e19dfc05bcd562701bdc4a5a3113b067ab7a6a8a7d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "009a7a98a684353ba4a0b7e19dfc05bcd562701bdc4a5a3113b067ab7a6a8a7d"
+    sha256 cellar: :any_skip_relocation, sonoma:            "4d5e34482785067fa2f0239daafe8adfb318f574f62296a72d9604ac441c056a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "afe95380cb462b280de1546e9d46cb4cc3d942a7601a7a39ae88a6d1cccbcf73"
+    sha256 cellar: :any,                 x86_64_linux:      "23dcf3ce534408c0d9db48c41732a96ac4704eb7f72e9f8a75ecda2b44171c4e"
   end
 
   depends_on "go" => :build

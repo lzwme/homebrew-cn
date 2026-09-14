@@ -7,12 +7,13 @@ class Powerman < Formula
 
   bottle do
     rebuild 1
-    sha256 arm64_tahoe:   "88063926073d1f61aab9db6b965e65cc8d126d7521d0b563ae4232e88fb9392e"
-    sha256 arm64_sequoia: "179d0cd8df9b000290df35c0b7d061cab03ff41db3bc68ec40128c7baac54a8f"
-    sha256 arm64_sonoma:  "eea753232b6b35fd530d928e32947bbddf17db61492bf64ab15e197c92e899df"
-    sha256 sonoma:        "adcf3f23bf67cfff2c9dad9f871c6ac4aea835e2bcc1fbd6b9efcdf8a24db431"
-    sha256 arm64_linux:   "b848eb9847153385438f8c7bed8f72ad8a265a9204e5b1e3e07e515bbc094aa1"
-    sha256 x86_64_linux:  "312e00a08663449257f384d818b56cfd4fb147951280764dae0bc039792366ec"
+    sha256 arm64_golden_gate: "7aab3a7a88e8361fdf0aaba3da9ff50e711d2e6af08a9368440007f006ec92f6"
+    sha256 arm64_tahoe:       "88063926073d1f61aab9db6b965e65cc8d126d7521d0b563ae4232e88fb9392e"
+    sha256 arm64_sequoia:     "179d0cd8df9b000290df35c0b7d061cab03ff41db3bc68ec40128c7baac54a8f"
+    sha256 arm64_sonoma:      "eea753232b6b35fd530d928e32947bbddf17db61492bf64ab15e197c92e899df"
+    sha256 sonoma:            "adcf3f23bf67cfff2c9dad9f871c6ac4aea835e2bcc1fbd6b9efcdf8a24db431"
+    sha256 arm64_linux:       "b848eb9847153385438f8c7bed8f72ad8a265a9204e5b1e3e07e515bbc094aa1"
+    sha256 x86_64_linux:      "312e00a08663449257f384d818b56cfd4fb147951280764dae0bc039792366ec"
   end
 
   head do

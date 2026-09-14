@@ -12,12 +12,13 @@ class Tun2proxy < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "88a7b02fdcad942ec020a69437de5396c9126b5802a039a1588010e8769f5ac8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "217702aa9fd4453ad8bd4afc8448cc3b2ecef521e653951cf32e53802dbad536"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c898e71a6c30bbf87fe8f8bab83fefa1c6bf5f22163475721c1da40140181867"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0340f0dc87d7df18b383dd463ec89958729ea28859d17feb3972aad542dac82c"
-    sha256 cellar: :any,                 arm64_linux:   "5226255438f3dfd9a2ac515e2c6de8701a2bea5319daba1a5284095a085696a5"
-    sha256 cellar: :any,                 x86_64_linux:  "09ecf80444c84ee33f2032657e05ae53a41809d9732ee3c9547de496204f1ba9"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "b2eef64f42430704552945b3836b5bc744a48941fd6e8d5798afd87c2cb1f890"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "88a7b02fdcad942ec020a69437de5396c9126b5802a039a1588010e8769f5ac8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "217702aa9fd4453ad8bd4afc8448cc3b2ecef521e653951cf32e53802dbad536"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "c898e71a6c30bbf87fe8f8bab83fefa1c6bf5f22163475721c1da40140181867"
+    sha256 cellar: :any_skip_relocation, sonoma:            "0340f0dc87d7df18b383dd463ec89958729ea28859d17feb3972aad542dac82c"
+    sha256 cellar: :any,                 arm64_linux:       "5226255438f3dfd9a2ac515e2c6de8701a2bea5319daba1a5284095a085696a5"
+    sha256 cellar: :any,                 x86_64_linux:      "09ecf80444c84ee33f2032657e05ae53a41809d9732ee3c9547de496204f1ba9"
   end
 
   depends_on "rust" => :build

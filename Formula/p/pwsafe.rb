@@ -15,12 +15,13 @@ class Pwsafe < Formula
 
   bottle do
     rebuild 2
-    sha256 cellar: :any,                 arm64_tahoe:   "57e90fcf7be8f03f512d7627c4fe7ffb07704c39aa4fe07aa09d5267c1825f2d"
-    sha256 cellar: :any,                 arm64_sequoia: "5714557f1ea1dc35e1a78aef4e0efaa6c30c5d67069e2d6c9f4cf7a2da28b601"
-    sha256 cellar: :any,                 arm64_sonoma:  "e3bdbd75495def70a77297b99349106e48232ce697413b0b839b76fa2cfc2cdf"
-    sha256 cellar: :any,                 sonoma:        "e3d41ccf4c00917f6733e930c764e63aef0922cc570c6de6e525bf0d1e4249d5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c9114700674d9a1857083f77d8224ffdca50d599863674dc3e283674dd730aa5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "805ba18c4f74ca0f4d1f3e0e5aca07ec73bf0d915a42cb64588a0964da2ac269"
+    sha256 cellar: :any,                 arm64_golden_gate: "6c718ba50413f0f805cc559980d8f7a29a168dd7009c44be63222f9e40ad6983"
+    sha256 cellar: :any,                 arm64_tahoe:       "57e90fcf7be8f03f512d7627c4fe7ffb07704c39aa4fe07aa09d5267c1825f2d"
+    sha256 cellar: :any,                 arm64_sequoia:     "5714557f1ea1dc35e1a78aef4e0efaa6c30c5d67069e2d6c9f4cf7a2da28b601"
+    sha256 cellar: :any,                 arm64_sonoma:      "e3bdbd75495def70a77297b99349106e48232ce697413b0b839b76fa2cfc2cdf"
+    sha256 cellar: :any,                 sonoma:            "e3d41ccf4c00917f6733e930c764e63aef0922cc570c6de6e525bf0d1e4249d5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "c9114700674d9a1857083f77d8224ffdca50d599863674dc3e283674dd730aa5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "805ba18c4f74ca0f4d1f3e0e5aca07ec73bf0d915a42cb64588a0964da2ac269"
   end
 
   head do

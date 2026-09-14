@@ -13,12 +13,13 @@ class OpenSimh < Formula
 
   bottle do
     rebuild 2
-    sha256 cellar: :any,                 arm64_tahoe:   "14ca95542e0080680f5a68363b5a3cf88faebd66d2a85e0820048e4019a5b38c"
-    sha256 cellar: :any,                 arm64_sequoia: "25571e5341da2b41ee773893e974a462101e920cc7d92b27bd789ccd2f027989"
-    sha256 cellar: :any,                 arm64_sonoma:  "0d4672a79f07348b1727f6ced8a944a6bfe0ebdb5f3128c221738568c39077c3"
-    sha256 cellar: :any,                 sonoma:        "647307fe3b6a161e7764656a93f21c70888d85cb9ad4cbb262aba4913f839247"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "304120ac24e399c353405da304d1fcd76751342f2cfbf262f5d1f558bec6b96c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "de06ffb145c4dc46c4b3535be6a5b99ac8ddec04cd7cd914ca1f8b0ccf595104"
+    sha256 cellar: :any,                 arm64_golden_gate: "12a8e52d2c7206ac4a49300539c77233a6daf12c759287a94765d61337c9dfa7"
+    sha256 cellar: :any,                 arm64_tahoe:       "14ca95542e0080680f5a68363b5a3cf88faebd66d2a85e0820048e4019a5b38c"
+    sha256 cellar: :any,                 arm64_sequoia:     "25571e5341da2b41ee773893e974a462101e920cc7d92b27bd789ccd2f027989"
+    sha256 cellar: :any,                 arm64_sonoma:      "0d4672a79f07348b1727f6ced8a944a6bfe0ebdb5f3128c221738568c39077c3"
+    sha256 cellar: :any,                 sonoma:            "647307fe3b6a161e7764656a93f21c70888d85cb9ad4cbb262aba4913f839247"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "304120ac24e399c353405da304d1fcd76751342f2cfbf262f5d1f558bec6b96c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "de06ffb145c4dc46c4b3535be6a5b99ac8ddec04cd7cd914ca1f8b0ccf595104"
   end
 
   depends_on "libpng"

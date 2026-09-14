@@ -6,10 +6,11 @@ class Lispkit < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9da874f7996de48dc953b8c469ebd1673833a46144b07ba204f6658e7b98f14e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f6212d81b74a4f41d3411c9efc408b048ee599604b2994f564d16ddd45a01944"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "42831c30cd850e3991e0af6858c0aa04345d7e4eed7bf437b81eb36650b77863"
-    sha256 cellar: :any_skip_relocation, sonoma:        "63fe455719a326aec886d5eb256448adece2dcd00b96bb72d55d2b02001eabbb"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "e8a2ebfb168a9af948955a7d39f6bc3824fb225f0401c699c38758f540207e63"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "9da874f7996de48dc953b8c469ebd1673833a46144b07ba204f6658e7b98f14e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "f6212d81b74a4f41d3411c9efc408b048ee599604b2994f564d16ddd45a01944"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "42831c30cd850e3991e0af6858c0aa04345d7e4eed7bf437b81eb36650b77863"
+    sha256 cellar: :any_skip_relocation, sonoma:            "63fe455719a326aec886d5eb256448adece2dcd00b96bb72d55d2b02001eabbb"
   end
 
   depends_on xcode: ["14.0", :build]

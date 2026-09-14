@@ -6,11 +6,12 @@ class JoplinCli < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "603a6389e61af84a635f36b39563e33832f3e4ff04e6fdf336544cef573b3aee"
-    sha256 cellar: :any, arm64_sequoia: "557862a881e2557577d9e3a83d77f3a220b06e3717fe7d0ca0c8eab5805e90bb"
-    sha256 cellar: :any, arm64_sonoma:  "c6e69de4c392fbab9aa4ecb9aa76865e93a2d8c6c725b944d8e358b2bf13dc4b"
-    sha256 cellar: :any, arm64_linux:   "614e68953a8a7cc2972b3083cee965e6b5c5918e9d74a9d211eeac55d009e145"
-    sha256 cellar: :any, x86_64_linux:  "cc58c74c29f59f35e7259c1a0bab4d5742cc5bf8019c490f712b35074fd8efa5"
+    sha256 cellar: :any, arm64_golden_gate: "1f01e130ff52d36091c70ed66f7e9a295903334aa9e94d3ec43dbf315b70d28e"
+    sha256 cellar: :any, arm64_tahoe:       "603a6389e61af84a635f36b39563e33832f3e4ff04e6fdf336544cef573b3aee"
+    sha256 cellar: :any, arm64_sequoia:     "557862a881e2557577d9e3a83d77f3a220b06e3717fe7d0ca0c8eab5805e90bb"
+    sha256 cellar: :any, arm64_sonoma:      "c6e69de4c392fbab9aa4ecb9aa76865e93a2d8c6c725b944d8e358b2bf13dc4b"
+    sha256 cellar: :any, arm64_linux:       "614e68953a8a7cc2972b3083cee965e6b5c5918e9d74a9d211eeac55d009e145"
+    sha256 cellar: :any, x86_64_linux:      "cc58c74c29f59f35e7259c1a0bab4d5742cc5bf8019c490f712b35074fd8efa5"
   end
 
   depends_on "pkgconf" => :build

@@ -6,12 +6,13 @@ class Ucloud < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "24962ad64d5634087f18a8283c90b84a07594c403720da75149512f96702f84f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "24962ad64d5634087f18a8283c90b84a07594c403720da75149512f96702f84f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "24962ad64d5634087f18a8283c90b84a07594c403720da75149512f96702f84f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1a124802d5862c328432f3bcb442151f574542aeb1042187be23bb938ee4326b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "19ce8dcefee20966629e65d9c896d33cf48aa2b69d8726969623215fa6059e1a"
-    sha256 cellar: :any,                 x86_64_linux:  "2b767064b1953cc677dff0797c3ed24c8ace56a179ecb290a7039af07bfcc3e2"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "ebaf74c356aa746b1e05d4a00bf5453cd58a6dbd0c577fb290ef53e43742ab8a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "24962ad64d5634087f18a8283c90b84a07594c403720da75149512f96702f84f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "24962ad64d5634087f18a8283c90b84a07594c403720da75149512f96702f84f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "24962ad64d5634087f18a8283c90b84a07594c403720da75149512f96702f84f"
+    sha256 cellar: :any_skip_relocation, sonoma:            "1a124802d5862c328432f3bcb442151f574542aeb1042187be23bb938ee4326b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "19ce8dcefee20966629e65d9c896d33cf48aa2b69d8726969623215fa6059e1a"
+    sha256 cellar: :any,                 x86_64_linux:      "2b767064b1953cc677dff0797c3ed24c8ace56a179ecb290a7039af07bfcc3e2"
   end
 
   depends_on "go" => :build

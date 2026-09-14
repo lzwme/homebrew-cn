@@ -37,6 +37,10 @@ class LlvmAT17 < Formula
   uses_from_macos "libffi"
   uses_from_macos "ncurses"
 
+  on_macos do
+    depends_on maximum_macos: [:tahoe, :build]
+  end
+
   on_linux do
     depends_on "binutils" => :build # needed for LLVMgold plugin
     depends_on "pkgconf" => :build

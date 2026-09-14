@@ -25,6 +25,12 @@ class GitLfs < Formula
   depends_on "asciidoctor" => :build
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ENV["GIT_LFS_SHA"] = ""
     ENV["VERSION"] = version

@@ -12,12 +12,13 @@ class NeovimQt < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "c33aadb50706b177c168aae918f1666a907380123e143e2f0770e3ac01dea200"
-    sha256 cellar: :any, arm64_sequoia: "abc8c56b111ad50a172845722e45e1088f0778653ff7f2daf36478b02e477ccf"
-    sha256 cellar: :any, arm64_sonoma:  "0d2fe229e8fa9ea76b9582deba982bd48a1d45d358f931cba1f836d0f1dc10c2"
-    sha256 cellar: :any, sonoma:        "2a888d51558faf05c462de8e51b776891d8747e2396f101033d4858528d02f3f"
-    sha256 cellar: :any, arm64_linux:   "d728079186d56ebf9fd78d2e37467af515b0cd22c097e87bc75077fba5a7c630"
-    sha256 cellar: :any, x86_64_linux:  "3cc883935a7370b9ea1323bb0d5b4672255257de9f6aa29bf585b1ff0ec807ed"
+    sha256 cellar: :any, arm64_golden_gate: "b731a1253ac3839bd01b56e3232633b331c445735daa10a712cc408eab12aa4c"
+    sha256 cellar: :any, arm64_tahoe:       "c33aadb50706b177c168aae918f1666a907380123e143e2f0770e3ac01dea200"
+    sha256 cellar: :any, arm64_sequoia:     "abc8c56b111ad50a172845722e45e1088f0778653ff7f2daf36478b02e477ccf"
+    sha256 cellar: :any, arm64_sonoma:      "0d2fe229e8fa9ea76b9582deba982bd48a1d45d358f931cba1f836d0f1dc10c2"
+    sha256 cellar: :any, sonoma:            "2a888d51558faf05c462de8e51b776891d8747e2396f101033d4858528d02f3f"
+    sha256 cellar: :any, arm64_linux:       "d728079186d56ebf9fd78d2e37467af515b0cd22c097e87bc75077fba5a7c630"
+    sha256 cellar: :any, x86_64_linux:      "3cc883935a7370b9ea1323bb0d5b4672255257de9f6aa29bf585b1ff0ec807ed"
   end
 
   depends_on "cmake" => :build

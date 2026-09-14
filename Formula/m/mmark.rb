@@ -7,12 +7,13 @@ class Mmark < Formula
   head "https://github.com/mmarkdown/mmark.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5c128c58341499027ae9a6c557bc1deced75dc22784e3e66beb7721c9fc4b620"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5c128c58341499027ae9a6c557bc1deced75dc22784e3e66beb7721c9fc4b620"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5c128c58341499027ae9a6c557bc1deced75dc22784e3e66beb7721c9fc4b620"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f0e8cc63b303aac12c3fc03b18ee44370ea84d973c7bd6e6d1b00cf6c4529590"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "616c522bcc753ef42009639c7c9b7a0b90ef200aa7589abfc6b29aa7b755e4c5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "16175f09d52d0e483ed0afc7d10be5859d2977cd261df2393d6830fa37511a62"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "e17d2cd7671c1fc3b10b80fd76223bc0eb7a468bf2d31e5b902b3fbfb7ecece0"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "5c128c58341499027ae9a6c557bc1deced75dc22784e3e66beb7721c9fc4b620"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "5c128c58341499027ae9a6c557bc1deced75dc22784e3e66beb7721c9fc4b620"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "5c128c58341499027ae9a6c557bc1deced75dc22784e3e66beb7721c9fc4b620"
+    sha256 cellar: :any_skip_relocation, sonoma:            "f0e8cc63b303aac12c3fc03b18ee44370ea84d973c7bd6e6d1b00cf6c4529590"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "616c522bcc753ef42009639c7c9b7a0b90ef200aa7589abfc6b29aa7b755e4c5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "16175f09d52d0e483ed0afc7d10be5859d2977cd261df2393d6830fa37511a62"
   end
 
   depends_on "go" => :build

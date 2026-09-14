@@ -7,14 +7,15 @@ class Tfocus < Formula
   head "https://github.com/nwiizo/tfocus.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "258361e1ca78414d867f992032a024b6391dfc49737fbf25e184a3b6b6274cc3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b5dbfaf820e34ef9e6bb04d45a1d277fea9a27cda78fed88ae90f3686efa0006"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c72c12d7d0620fe84de30e04a49bdd1c98961891ec81267b95957c3dbc5dfbeb"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "ae42614fc40aafade49f9d100c5062396a5ae898c69967234a0762103fa550bf"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0b997ef677047ba1e07f50d7bef51846e68c022fc7dfb73fcf1a6abc1f674654"
-    sha256 cellar: :any_skip_relocation, ventura:       "fedfc7f38e939c9774d87f0a0323dbc998a4ff996d9bf871ac59c9c00e52050b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "773b63ffe352855a4c69c081dfa3286c894f02c352108f66bb2a7635fbc62542"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8fac1961de78a056730c0b3a0695287a27eb52bed318bd05bb5606b105a0ac1c"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "5ce7f86b9d665b48d9439924e0c37a11d6feaf7b5ed04539f6a9af3e4c5ef4b8"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "258361e1ca78414d867f992032a024b6391dfc49737fbf25e184a3b6b6274cc3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "b5dbfaf820e34ef9e6bb04d45a1d277fea9a27cda78fed88ae90f3686efa0006"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "c72c12d7d0620fe84de30e04a49bdd1c98961891ec81267b95957c3dbc5dfbeb"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:     "ae42614fc40aafade49f9d100c5062396a5ae898c69967234a0762103fa550bf"
+    sha256 cellar: :any_skip_relocation, sonoma:            "0b997ef677047ba1e07f50d7bef51846e68c022fc7dfb73fcf1a6abc1f674654"
+    sha256 cellar: :any_skip_relocation, ventura:           "fedfc7f38e939c9774d87f0a0323dbc998a4ff996d9bf871ac59c9c00e52050b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "773b63ffe352855a4c69c081dfa3286c894f02c352108f66bb2a7635fbc62542"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "8fac1961de78a056730c0b3a0695287a27eb52bed318bd05bb5606b105a0ac1c"
   end
 
   depends_on "rust" => :build

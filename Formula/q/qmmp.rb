@@ -10,11 +10,12 @@ class Qmmp < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "f0d96a09ba5278b73e81b573f319499a7305df9be480787a0a5a2cacc6dcd05c"
-    sha256 cellar: :any, arm64_sequoia: "75cc69d67b5465416bd6cbb02fb2c79fc599861b0c9ac5f2f3573f2e2436311e"
-    sha256 cellar: :any, arm64_sonoma:  "eac053ff1a3d57ce2e2567131075dbb7771e8f184ebfe88c12c09d1131d18c9c"
-    sha256 cellar: :any, arm64_linux:   "31fc14d853f140da9b585e651a514cc150d5d58a4433d34f61502f7594a9cdfc"
-    sha256 cellar: :any, x86_64_linux:  "8ee7983a03ac34d005e7b8972938a2246ed68a9fa6910b84782d55947a16c759"
+    sha256 cellar: :any, arm64_golden_gate: "a262ba3189bedc3048bad4d9c8a09c5e5580d2293a2d245dec59798c0b8a1996"
+    sha256 cellar: :any, arm64_tahoe:       "f0d96a09ba5278b73e81b573f319499a7305df9be480787a0a5a2cacc6dcd05c"
+    sha256 cellar: :any, arm64_sequoia:     "75cc69d67b5465416bd6cbb02fb2c79fc599861b0c9ac5f2f3573f2e2436311e"
+    sha256 cellar: :any, arm64_sonoma:      "eac053ff1a3d57ce2e2567131075dbb7771e8f184ebfe88c12c09d1131d18c9c"
+    sha256 cellar: :any, arm64_linux:       "31fc14d853f140da9b585e651a514cc150d5d58a4433d34f61502f7594a9cdfc"
+    sha256 cellar: :any, x86_64_linux:      "8ee7983a03ac34d005e7b8972938a2246ed68a9fa6910b84782d55947a16c759"
   end
 
   depends_on "cmake" => :build

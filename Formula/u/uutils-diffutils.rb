@@ -7,12 +7,13 @@ class UutilsDiffutils < Formula
   head "https://github.com/uutils/diffutils.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3335444221ff7d6756894ed48088e1a5b1c702699bb903f6631b8141ca384618"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "16b1308ebadbc4934d36a3b2a1a4394abc1534aefa2d7255a18d85d9e6bd7cdd"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0a9e4412033cc45d68bd1757e7349199c58c91b585c272386321a475ea5fc0d1"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4d75c01d3d68f9fca442a8586c12d20928d5c7f04996ac3f1d1f23206a746d62"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c96ae075a0ecf59313598b7c69f22cc41c3dbfd66b43d76c0813c35eb0a01d1b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2d1e9f3d5321efbd029288b90b287d8321ffc29e8dde1dbb203ae8a67db56bbf"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "9bd533d95769ebd2087968acf32cd3277cba8caf992cec6d9721503a45cf608b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "3335444221ff7d6756894ed48088e1a5b1c702699bb903f6631b8141ca384618"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "16b1308ebadbc4934d36a3b2a1a4394abc1534aefa2d7255a18d85d9e6bd7cdd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "0a9e4412033cc45d68bd1757e7349199c58c91b585c272386321a475ea5fc0d1"
+    sha256 cellar: :any_skip_relocation, sonoma:            "4d75c01d3d68f9fca442a8586c12d20928d5c7f04996ac3f1d1f23206a746d62"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "c96ae075a0ecf59313598b7c69f22cc41c3dbfd66b43d76c0813c35eb0a01d1b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "2d1e9f3d5321efbd029288b90b287d8321ffc29e8dde1dbb203ae8a67db56bbf"
   end
 
   depends_on "rust" => :build

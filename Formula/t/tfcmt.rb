@@ -7,11 +7,12 @@ class Tfcmt < Formula
   head "https://github.com/suzuki-shunsuke/tfcmt.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "90ea369ae934cbb1c8054b6034ad6dd0791cff009eff649e7b898333dc173970"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "90ea369ae934cbb1c8054b6034ad6dd0791cff009eff649e7b898333dc173970"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "90ea369ae934cbb1c8054b6034ad6dd0791cff009eff649e7b898333dc173970"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "84c01adeeab1119b5a356a0bb7a5cadf4999e7286420bd3efe678ce5c4b1a6ba"
-    sha256 cellar: :any,                 x86_64_linux:  "4ab375b6b25943e7e0d9b96b9327f5d107efb2838f13bcd31413d2c1bd6cf77c"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "9f1e15694f309f8e4f765bd2992889f650101b75aa5a491c0448923ea29d5e58"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "90ea369ae934cbb1c8054b6034ad6dd0791cff009eff649e7b898333dc173970"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "90ea369ae934cbb1c8054b6034ad6dd0791cff009eff649e7b898333dc173970"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "90ea369ae934cbb1c8054b6034ad6dd0791cff009eff649e7b898333dc173970"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "84c01adeeab1119b5a356a0bb7a5cadf4999e7286420bd3efe678ce5c4b1a6ba"
+    sha256 cellar: :any,                 x86_64_linux:      "4ab375b6b25943e7e0d9b96b9327f5d107efb2838f13bcd31413d2c1bd6cf77c"
   end
 
   depends_on "go" => :build

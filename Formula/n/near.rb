@@ -6,11 +6,12 @@ class Near < Formula
   license any_of: ["MIT", "Apache-2.0"]
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "332a038e6b64dc6dc0ccbd7c7b66963efa438586d6992bb89c490c71ec887cbd"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ab6f16759a48ccc1fdd7d64cf24ddfa4d3141dfe8d4ceaa330ef61e0380526e9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fa781dd0b819eb09697223139d428292efb99689e01b57cf23fc2a00aaf29c3f"
-    sha256 cellar: :any,                 arm64_linux:   "fb8d9ea745c1e2785dc4fdb59a3f171c2fc97cf24b4c6e1574c04143d714d86a"
-    sha256 cellar: :any,                 x86_64_linux:  "333aaab37b92dbd710cdef9ce7f8a86a3d50841d1b2f32710f3b29042ba92224"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "a125af9c0dce89e54ac234428db5244faf8f600cab30bdda9c3761ab2d96de9b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "332a038e6b64dc6dc0ccbd7c7b66963efa438586d6992bb89c490c71ec887cbd"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "ab6f16759a48ccc1fdd7d64cf24ddfa4d3141dfe8d4ceaa330ef61e0380526e9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "fa781dd0b819eb09697223139d428292efb99689e01b57cf23fc2a00aaf29c3f"
+    sha256 cellar: :any,                 arm64_linux:       "fb8d9ea745c1e2785dc4fdb59a3f171c2fc97cf24b4c6e1574c04143d714d86a"
+    sha256 cellar: :any,                 x86_64_linux:      "333aaab37b92dbd710cdef9ce7f8a86a3d50841d1b2f32710f3b29042ba92224"
   end
 
   depends_on "cmake" => :build

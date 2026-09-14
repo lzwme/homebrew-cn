@@ -7,11 +7,12 @@ class Wxpython < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "66ac33f5a89ba70e1a6cb03ae0422b8786890f8a8787370cd18292f8478fe22a"
-    sha256 cellar: :any, arm64_sequoia: "dfb56521e5517fcba91c12998ad51bd1813593ebad26c99e777a2e1a7b9583c3"
-    sha256 cellar: :any, arm64_sonoma:  "8b1c9858421864fcf9769acc215e7593fe00446f923bc92a1fde856301f9d7c1"
-    sha256               arm64_linux:   "a60df642704715f5ee81b2c3f6a58fe559c3e7c7ebe472284a84a1be81090a54"
-    sha256               x86_64_linux:  "5c6fdfff151ebdcc651b1005f956d3c6231a38261033c42ce44e2da37244295b"
+    sha256 cellar: :any, arm64_golden_gate: "42cf8d7e22cec85f55b84174ee2723cc65e7956b02b08bb8a4a598eb097fc55c"
+    sha256 cellar: :any, arm64_tahoe:       "66ac33f5a89ba70e1a6cb03ae0422b8786890f8a8787370cd18292f8478fe22a"
+    sha256 cellar: :any, arm64_sequoia:     "dfb56521e5517fcba91c12998ad51bd1813593ebad26c99e777a2e1a7b9583c3"
+    sha256 cellar: :any, arm64_sonoma:      "8b1c9858421864fcf9769acc215e7593fe00446f923bc92a1fde856301f9d7c1"
+    sha256               arm64_linux:       "a60df642704715f5ee81b2c3f6a58fe559c3e7c7ebe472284a84a1be81090a54"
+    sha256               x86_64_linux:      "5c6fdfff151ebdcc651b1005f956d3c6231a38261033c42ce44e2da37244295b"
   end
 
   depends_on "cython" => :build

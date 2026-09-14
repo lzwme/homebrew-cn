@@ -12,12 +12,13 @@ class WlaDx < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "14835aed5364771805901495fdeca30f6f7c9f56835dbadea59173639a949abd"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dda35cea50a7e7f1149d1ef1e38ea8a5b97992bb06a6dff615e47c0440366373"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5fe78c5b54142ff1711ec529839332910b15036262b5602b4190afec9e785aa2"
-    sha256 cellar: :any_skip_relocation, sonoma:        "fc58862171d224ff6f482a2e966c9ca83d7d71ee58c14babbdaaca8aa0867642"
-    sha256 cellar: :any,                 arm64_linux:   "9e90004ff3e66541a4bf3545900877008cb582bf7a9df7707bdf31e810cca33b"
-    sha256 cellar: :any,                 x86_64_linux:  "61f7c89346e1f7b70980388e89fea7babf8c53aa78af5012e876090d2ce193f4"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "863dff752bcd97df729b36118e45a756c504e6ebb9e453cc4c173e5572575447"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "14835aed5364771805901495fdeca30f6f7c9f56835dbadea59173639a949abd"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "dda35cea50a7e7f1149d1ef1e38ea8a5b97992bb06a6dff615e47c0440366373"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "5fe78c5b54142ff1711ec529839332910b15036262b5602b4190afec9e785aa2"
+    sha256 cellar: :any_skip_relocation, sonoma:            "fc58862171d224ff6f482a2e966c9ca83d7d71ee58c14babbdaaca8aa0867642"
+    sha256 cellar: :any,                 arm64_linux:       "9e90004ff3e66541a4bf3545900877008cb582bf7a9df7707bdf31e810cca33b"
+    sha256 cellar: :any,                 x86_64_linux:      "61f7c89346e1f7b70980388e89fea7babf8c53aa78af5012e876090d2ce193f4"
   end
 
   depends_on "cmake" => :build

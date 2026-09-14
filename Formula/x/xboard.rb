@@ -8,16 +8,17 @@ class Xboard < Formula
   revision 4
 
   bottle do
-    sha256 arm64_tahoe:    "49fb2045c979c8788ec25bbba4416f8f5a38729d9018d610ea1dd41f2595263b"
-    sha256 arm64_sequoia:  "a3b2d95bd28d0e7034e8c740bb5daf60ebd131dec5586eda4c8caa491b96f99b"
-    sha256 arm64_sonoma:   "286ed707d8d03708c836b4ac6a00777425e5984b6fe5be083ae571cfcfccb877"
-    sha256 arm64_ventura:  "50cd0e9fe8b8c1e1cafca11ab050238c046b037db55561204c25bd238438cdd4"
-    sha256 arm64_monterey: "90dd23652bb03fee8b0ff31fba73ad979861fcefc17602a19d9197d0eee77170"
-    sha256 sonoma:         "e03a15e4427bb343a6f1bdfbae67eb899542e0b9b78bb9bd70c8b3fe8efa1bee"
-    sha256 ventura:        "144abeb78c31d18571fe410dbb0759657566bb9162013102bdb5c59fb95e1aae"
-    sha256 monterey:       "983ceebe82b7abeb9c0126c06e9d8954302431c2de2f47e3a05b40423633be98"
-    sha256 arm64_linux:    "a3c183cb0e434de3eec05adddb804c87f92d93c892d908cfcbd47d25a92ecfea"
-    sha256 x86_64_linux:   "fa58bc09398cf9c5fcfe470ee69366d7d2e07b8e369475f54ca6d0c7426281fb"
+    sha256 arm64_golden_gate: "b48773d5c1749c861ead3ba9db3ba72c5584bdae841e59b8442b103e145b0f07"
+    sha256 arm64_tahoe:       "49fb2045c979c8788ec25bbba4416f8f5a38729d9018d610ea1dd41f2595263b"
+    sha256 arm64_sequoia:     "a3b2d95bd28d0e7034e8c740bb5daf60ebd131dec5586eda4c8caa491b96f99b"
+    sha256 arm64_sonoma:      "286ed707d8d03708c836b4ac6a00777425e5984b6fe5be083ae571cfcfccb877"
+    sha256 arm64_ventura:     "50cd0e9fe8b8c1e1cafca11ab050238c046b037db55561204c25bd238438cdd4"
+    sha256 arm64_monterey:    "90dd23652bb03fee8b0ff31fba73ad979861fcefc17602a19d9197d0eee77170"
+    sha256 sonoma:            "e03a15e4427bb343a6f1bdfbae67eb899542e0b9b78bb9bd70c8b3fe8efa1bee"
+    sha256 ventura:           "144abeb78c31d18571fe410dbb0759657566bb9162013102bdb5c59fb95e1aae"
+    sha256 monterey:          "983ceebe82b7abeb9c0126c06e9d8954302431c2de2f47e3a05b40423633be98"
+    sha256 arm64_linux:       "a3c183cb0e434de3eec05adddb804c87f92d93c892d908cfcbd47d25a92ecfea"
+    sha256 x86_64_linux:      "fa58bc09398cf9c5fcfe470ee69366d7d2e07b8e369475f54ca6d0c7426281fb"
   end
 
   head do

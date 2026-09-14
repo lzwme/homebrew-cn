@@ -7,12 +7,13 @@ class Navi < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b3ff7e21fcfa5d67d3f1a241c072dae09d25e53db64b17b08f32ea31af16ac5b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d1e8788887b0af9311ae2ec08e2e8b79f2c8eb956fe83c6a626428bd8f31ca52"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fe900be26fc0611571f6f0234a051cea807be33f790ca5bfad20fee7f216111f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7c7f7bc05db098687b6f96f31999913ef40940ddf1261e01be3f42ab0dfb4bad"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7a4116fe87ca4f2a1854f6f0a00d693f3a6a4269b4d6e534d9e4a4f9d71d7f50"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e26d0fbed48d505f515974efeeeee05b93e073d8b3b6241068432720fb3b6e59"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "8e0387fe0c21784460d44be2d15304911472af9deb1fe72de0ee280601d5081f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "b3ff7e21fcfa5d67d3f1a241c072dae09d25e53db64b17b08f32ea31af16ac5b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "d1e8788887b0af9311ae2ec08e2e8b79f2c8eb956fe83c6a626428bd8f31ca52"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "fe900be26fc0611571f6f0234a051cea807be33f790ca5bfad20fee7f216111f"
+    sha256 cellar: :any_skip_relocation, sonoma:            "7c7f7bc05db098687b6f96f31999913ef40940ddf1261e01be3f42ab0dfb4bad"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "7a4116fe87ca4f2a1854f6f0a00d693f3a6a4269b4d6e534d9e4a4f9d71d7f50"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "e26d0fbed48d505f515974efeeeee05b93e073d8b3b6241068432720fb3b6e59"
   end
 
   depends_on "rust" => :build

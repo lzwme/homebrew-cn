@@ -7,18 +7,19 @@ class When < Formula
   head "https://bitbucket.org/ben-crowell/when.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "fb5fab0bd5a3c23aaac7bc49bed557d69c6e71e9691d9f855c6a30386dbe7002"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "f0731698fde0d9766deb700635985822f9a76e1fe3f2a18ba74f4d8badafc785"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "fe1d8aaf972d667b218d7698246ae443830139cb7bed81719a5c8a0bba8ed799"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "932e4d3a5887293dc38afaf08f11ffb073784eeaaab09828608278c0e3dd5a3a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "932e4d3a5887293dc38afaf08f11ffb073784eeaaab09828608278c0e3dd5a3a"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "932e4d3a5887293dc38afaf08f11ffb073784eeaaab09828608278c0e3dd5a3a"
-    sha256 cellar: :any_skip_relocation, sonoma:         "fe1d8aaf972d667b218d7698246ae443830139cb7bed81719a5c8a0bba8ed799"
-    sha256 cellar: :any_skip_relocation, ventura:        "932e4d3a5887293dc38afaf08f11ffb073784eeaaab09828608278c0e3dd5a3a"
-    sha256 cellar: :any_skip_relocation, monterey:       "932e4d3a5887293dc38afaf08f11ffb073784eeaaab09828608278c0e3dd5a3a"
-    sha256 cellar: :any_skip_relocation, big_sur:        "932e4d3a5887293dc38afaf08f11ffb073784eeaaab09828608278c0e3dd5a3a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "9c2be1a18694aca6968ccdba5d11fb8f6923a66c91f208ccec902b4bf51219c6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d49cbde109823dc26ff8f009d3ea47ec366f0fe459e3e36373797c486fc5ab08"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "7a3da61c2683830fa9fb2c6b3a2ea01ca5a715b7d3cc930ff02a6e23db1e133b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "fb5fab0bd5a3c23aaac7bc49bed557d69c6e71e9691d9f855c6a30386dbe7002"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "f0731698fde0d9766deb700635985822f9a76e1fe3f2a18ba74f4d8badafc785"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "fe1d8aaf972d667b218d7698246ae443830139cb7bed81719a5c8a0bba8ed799"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:     "932e4d3a5887293dc38afaf08f11ffb073784eeaaab09828608278c0e3dd5a3a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey:    "932e4d3a5887293dc38afaf08f11ffb073784eeaaab09828608278c0e3dd5a3a"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:     "932e4d3a5887293dc38afaf08f11ffb073784eeaaab09828608278c0e3dd5a3a"
+    sha256 cellar: :any_skip_relocation, sonoma:            "fe1d8aaf972d667b218d7698246ae443830139cb7bed81719a5c8a0bba8ed799"
+    sha256 cellar: :any_skip_relocation, ventura:           "932e4d3a5887293dc38afaf08f11ffb073784eeaaab09828608278c0e3dd5a3a"
+    sha256 cellar: :any_skip_relocation, monterey:          "932e4d3a5887293dc38afaf08f11ffb073784eeaaab09828608278c0e3dd5a3a"
+    sha256 cellar: :any_skip_relocation, big_sur:           "932e4d3a5887293dc38afaf08f11ffb073784eeaaab09828608278c0e3dd5a3a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "9c2be1a18694aca6968ccdba5d11fb8f6923a66c91f208ccec902b4bf51219c6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "d49cbde109823dc26ff8f009d3ea47ec366f0fe459e3e36373797c486fc5ab08"
   end
 
   def install

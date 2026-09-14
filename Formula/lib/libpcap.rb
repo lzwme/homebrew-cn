@@ -1,8 +1,8 @@
 class Libpcap < Formula
   desc "Portable library for network traffic capture"
   homepage "https://www.tcpdump.org/"
-  url "https://www.tcpdump.org/release/libpcap-1.10.7.tar.gz"
-  sha256 "0b394ac90dbc0a9838ff97468e05c9c9a3e873dec2514cd58db65d859d296e31"
+  url "https://www.tcpdump.org/release/libpcap-1.11.0.tar.gz"
+  sha256 "596389bc8560ea027dff9db8aaf6c173d992366d9aef4baf5d7c6d180b4d49ad"
   license "BSD-3-Clause"
   compatibility_version 1
   head "https://github.com/the-tcpdump-group/libpcap.git", branch: "master"
@@ -13,12 +13,11 @@ class Libpcap < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "a271451a83636e2d333bd1c33a13a227caffae2f8fd2b9e019f532a458da8d48"
-    sha256 cellar: :any, arm64_tahoe:       "fd3f8727be7b45984842238e001afaaee450d2de82bfacc6d951080004d0cd5b"
-    sha256 cellar: :any, arm64_sequoia:     "05e57c37d24e3cee254ae605df54a6c9d5b84a3a6174e8323134fb0fcfe6a73b"
-    sha256 cellar: :any, arm64_sonoma:      "b4054a068360b8e7bc0508ef39808aa7af9e5befd00ed160852b33c69017a3b3"
-    sha256 cellar: :any, arm64_linux:       "84b15f243f3d95766d793e7ee2e99aa6cebf4ca4a2cfe8e05593e5edd00df01c"
-    sha256 cellar: :any, x86_64_linux:      "2468a6570ba38b8ae345b3cbfa1f2f5538f4c97ef9c0413760bee6d89115c7e1"
+    sha256 cellar: :any, arm64_golden_gate: "f1f2643e54877c5ce19c7f1ceb7803c41ad707bc06a5bc9a1ca1e584722e307d"
+    sha256 cellar: :any, arm64_tahoe:       "2dda8bce797e75485e684cb14f79bef7cb6ebcb3c2227f97a027537ccca91fbc"
+    sha256 cellar: :any, arm64_sequoia:     "8c4b73f9af512cb09adcd8971d3cd584487b34adedc9cfc2e0615a2636b6efe9"
+    sha256 cellar: :any, arm64_linux:       "90ba6adb657c90c9cbca41c2bd4ed8b46ebf693408d3162c938029408df11030"
+    sha256 cellar: :any, x86_64_linux:      "884fa710f9c26a5fbd6567ae051221317da1ea1edb8cb9ab87d7da3e79acd329"
   end
 
   keg_only :provided_by_macos

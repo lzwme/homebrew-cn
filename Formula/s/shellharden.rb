@@ -6,12 +6,13 @@ class Shellharden < Formula
   license "MPL-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e028240c7ac48f9a5ab7268cc05bfae54ec567ed3465059e93fa4e34cde8e2eb"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fb3e88e6b7cf033d76c8b7a71cf9345cbbc4429e29d52b072245d033bd4dcc45"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8b89022667a934d02d215fad579e1be8275df7cdf9024ca26dfc2990b61e3483"
-    sha256 cellar: :any_skip_relocation, sonoma:        "35d8e433a98297b98e00fd10513c9d02bd4f66415ddc86cea7cb2403d926c5f3"
-    sha256 cellar: :any,                 arm64_linux:   "3fdb379f0882fb7546d142b34a4bc929eaafd9de79dec00e4852b5efbcffae99"
-    sha256 cellar: :any,                 x86_64_linux:  "a750c0742d30f56b8f8c5826b865c86e9f3df35148a97b3cbdcfd022e50e79be"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "6bde99ac87f866f5bc8704c09344be4e6f9f455a99f9518c4abf1140217416c7"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "e028240c7ac48f9a5ab7268cc05bfae54ec567ed3465059e93fa4e34cde8e2eb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "fb3e88e6b7cf033d76c8b7a71cf9345cbbc4429e29d52b072245d033bd4dcc45"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "8b89022667a934d02d215fad579e1be8275df7cdf9024ca26dfc2990b61e3483"
+    sha256 cellar: :any_skip_relocation, sonoma:            "35d8e433a98297b98e00fd10513c9d02bd4f66415ddc86cea7cb2403d926c5f3"
+    sha256 cellar: :any,                 arm64_linux:       "3fdb379f0882fb7546d142b34a4bc929eaafd9de79dec00e4852b5efbcffae99"
+    sha256 cellar: :any,                 x86_64_linux:      "a750c0742d30f56b8f8c5826b865c86e9f3df35148a97b3cbdcfd022e50e79be"
   end
 
   depends_on "rust" => :build

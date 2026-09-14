@@ -19,11 +19,17 @@ class SpicetifyCli < Formula
   depends_on "node" => :build
   depends_on "pnpm" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+    system "pnpm", "with", "current", "install", "--frozen-lockfile"
+  end
+
   def install
     system "go", "build", *std_go_args(ldflags: "-X main.version=#{version}", output: libexec/"spicetify")
 
-    system "pnpm", "with", "current", "install", "--frozen-lockfile"
-    system "pnpm", "with", "current", "run", "build:wrapper"
+    system "pnpm", "--offline", "with", "current", "run", "build:wrapper"
 
     libexec.install [
       "css-map.json",

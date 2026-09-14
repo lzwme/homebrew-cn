@@ -7,12 +7,13 @@ class Nats < Formula
   head "https://github.com/nats-io/natscli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ed76909dd6173fb6080410ac2b0c600d5a380e01ae1c86d0508186a97a71e008"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bcc3c11493c0c6ab49a7274d8e5c4a817bfe2ef083a57966982afbc7321ac37c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b449507a6e72777e9ff0134c433c399e588e9606e06a674ee070240b48bb5297"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0854f3a3ffded7e6faae8ee778596d34df27f487fc55974c7bc836318843634d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "95d566e14d2676997b9779b2158589832c248969ce8921c63012fb2c79d74f8d"
-    sha256 cellar: :any,                 x86_64_linux:  "db2b2a103154f64077c04de5971255647898afa12907d71a7e7672bb619859d2"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "5079447215285805eeafa0f3448b6972c45babfacc76c040ed0e332d47a7833b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "ed76909dd6173fb6080410ac2b0c600d5a380e01ae1c86d0508186a97a71e008"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "bcc3c11493c0c6ab49a7274d8e5c4a817bfe2ef083a57966982afbc7321ac37c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "b449507a6e72777e9ff0134c433c399e588e9606e06a674ee070240b48bb5297"
+    sha256 cellar: :any_skip_relocation, sonoma:            "0854f3a3ffded7e6faae8ee778596d34df27f487fc55974c7bc836318843634d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "95d566e14d2676997b9779b2158589832c248969ce8921c63012fb2c79d74f8d"
+    sha256 cellar: :any,                 x86_64_linux:      "db2b2a103154f64077c04de5971255647898afa12907d71a7e7672bb619859d2"
   end
 
   depends_on "go" => :build

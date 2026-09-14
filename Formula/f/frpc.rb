@@ -19,10 +19,18 @@ class Frpc < Formula
   depends_on "go" => :build
   depends_on "node" => :build
 
-  def install
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
     cd "web/frpc" do
       system "npm", "install", *std_npm_args(prefix: false)
-      system "npm", "run", "build-only"
+    end
+  end
+
+  def install
+    cd "web/frpc" do
+      system "npm", "--offline", "run", "build-only"
     end
 
     ENV["CGO_ENABLED"] = "0"

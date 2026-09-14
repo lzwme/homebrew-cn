@@ -7,12 +7,13 @@ class Rammap < Formula
   head "https://github.com/jwanglab/rammap.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3c230660b760455357ef639a9d5ed521cafca8f0d427b916b8c0420ab9f1a49c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "93df8805e393847485dedc6de1f8a0c0aa9bce162c486723e6dee92bb75e84e2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c004cc6781f948985fdda36982f013f9f9a7eb627c9151d08eb26715a6389482"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b1453cd0dbb877a0756061e58e84d6a07be60fd3ded457efb6e7ad33c9235287"
-    sha256 cellar: :any,                 arm64_linux:   "ca1ad43da63c59688c85dc0dface39ae63a40eec96a58c88cbb6c6ee997d1de6"
-    sha256 cellar: :any,                 x86_64_linux:  "2f08907e5d89e9a4b604d567606738528222893b05b51b6ff5a1bc58f03542a9"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "f862d409ca86dcd3af613c1c19bac1ea6905b6d946006273d06a647043520633"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "3c230660b760455357ef639a9d5ed521cafca8f0d427b916b8c0420ab9f1a49c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "93df8805e393847485dedc6de1f8a0c0aa9bce162c486723e6dee92bb75e84e2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "c004cc6781f948985fdda36982f013f9f9a7eb627c9151d08eb26715a6389482"
+    sha256 cellar: :any_skip_relocation, sonoma:            "b1453cd0dbb877a0756061e58e84d6a07be60fd3ded457efb6e7ad33c9235287"
+    sha256 cellar: :any,                 arm64_linux:       "ca1ad43da63c59688c85dc0dface39ae63a40eec96a58c88cbb6c6ee997d1de6"
+    sha256 cellar: :any,                 x86_64_linux:      "2f08907e5d89e9a4b604d567606738528222893b05b51b6ff5a1bc58f03542a9"
   end
 
   depends_on "rust" => :build

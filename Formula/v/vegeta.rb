@@ -7,12 +7,13 @@ class Vegeta < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9e4af909ecd68850af6c7bb8718c06f9e4dc48fbf2a7021cec0ef576d97ed1d5"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9e4af909ecd68850af6c7bb8718c06f9e4dc48fbf2a7021cec0ef576d97ed1d5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9e4af909ecd68850af6c7bb8718c06f9e4dc48fbf2a7021cec0ef576d97ed1d5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "56a755a49808c3f74dd663f44a2351bcacfc4d3b136018a919306ab2220814f3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "10970097c0ed9c5510b90456da34ab992b56ae7a5ce92cd1bf253d872e25461e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7cfe4f159486a5ad26348f9c70b190d33252d91ae315e2a98e486c60aae8602d"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "731943174e7fd1c208cf68e17d960db11d9cfb3c5059b9a84d56e4d88ccac5af"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "9e4af909ecd68850af6c7bb8718c06f9e4dc48fbf2a7021cec0ef576d97ed1d5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "9e4af909ecd68850af6c7bb8718c06f9e4dc48fbf2a7021cec0ef576d97ed1d5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "9e4af909ecd68850af6c7bb8718c06f9e4dc48fbf2a7021cec0ef576d97ed1d5"
+    sha256 cellar: :any_skip_relocation, sonoma:            "56a755a49808c3f74dd663f44a2351bcacfc4d3b136018a919306ab2220814f3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "10970097c0ed9c5510b90456da34ab992b56ae7a5ce92cd1bf253d872e25461e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "7cfe4f159486a5ad26348f9c70b190d33252d91ae315e2a98e486c60aae8602d"
   end
 
   depends_on "go" => :build

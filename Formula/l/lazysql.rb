@@ -22,6 +22,12 @@ class Lazysql < Formula
   depends_on "go" => :build
   uses_from_macos "sqlite" => :test
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ENV["CGO_ENABLED"] = OS.mac? ? "1" : "0"
     system "go", "build", *std_go_args(ldflags: "-X main.version=#{version}")

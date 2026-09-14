@@ -23,6 +23,12 @@ class Lima < Formula
     depends_on "qemu"
   end
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     # make (default):              build everything
     # make native:                 build core + native guest agent

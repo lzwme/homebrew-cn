@@ -7,14 +7,15 @@ class TsnetServe < Formula
   head "https://github.com/shayne/tsnet-serve.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8870b627f377c37f5bca645d1eaaead4fdedd84239dcfaf60d643d99668b4a74"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e79d05ede181726fe1493fc6861d94f5fd5ecf115d63b43bfda78e75cea62928"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4858338aa9aa119ec3ffb6b6bcd8289b14c425643dc5cabb325d1f8569708c60"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "a782710bea95a2736499ab7b1e1f371932956515f301d0a2ec80d4c43224c33e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "561db8d5942c4ece35f09fa0ad788448a816e2b0d5b9a3a0e05f91a40cbf5a5d"
-    sha256 cellar: :any_skip_relocation, ventura:       "2caaa5230c882cdf6bca6ed21c5a92d17d2ce3380f7749685e324504f93efeb3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "113ba6f73a541c717d6a026d6e24f598907ac49e0236e53029c2bdd62bd7b116"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "040a566fb79644a0870e5f6b877e616555a92a148fbaff66cb327be3b62d8a1e"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "9769d0a56589a75da1569c7ca9e445bcb6f8e72961799500ca8f595328b9c7bd"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "8870b627f377c37f5bca645d1eaaead4fdedd84239dcfaf60d643d99668b4a74"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "e79d05ede181726fe1493fc6861d94f5fd5ecf115d63b43bfda78e75cea62928"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "4858338aa9aa119ec3ffb6b6bcd8289b14c425643dc5cabb325d1f8569708c60"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:     "a782710bea95a2736499ab7b1e1f371932956515f301d0a2ec80d4c43224c33e"
+    sha256 cellar: :any_skip_relocation, sonoma:            "561db8d5942c4ece35f09fa0ad788448a816e2b0d5b9a3a0e05f91a40cbf5a5d"
+    sha256 cellar: :any_skip_relocation, ventura:           "2caaa5230c882cdf6bca6ed21c5a92d17d2ce3380f7749685e324504f93efeb3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "113ba6f73a541c717d6a026d6e24f598907ac49e0236e53029c2bdd62bd7b116"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "040a566fb79644a0870e5f6b877e616555a92a148fbaff66cb327be3b62d8a1e"
   end
 
   deprecate! date: "2026-07-17", because: :repo_archived

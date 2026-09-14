@@ -18,12 +18,13 @@ class Pythia < Formula
 
   bottle do
     rebuild 1
-    sha256 arm64_tahoe:   "2941fbfcc53f567e97c62bf8154af156977892accdd8ea954b61596d7bbce87a"
-    sha256 arm64_sequoia: "330a6e6a8f92479a137bfefaea5a6b996cce777a3f957a121abf6faa9b1ab33a"
-    sha256 arm64_sonoma:  "5a40b3af7cd7afab37bd87c58c77a7c6eee0c980bbffc5f5459f20654f3bd2bb"
-    sha256 sonoma:        "d7bd8c5bd64b0c6ce006e245c9f2b59cdaf70bd4676da0571cb0e1acc735debc"
-    sha256 arm64_linux:   "5803ca24ee29b5727453f35aa6bf722d9ac7e0fc6e143934f24095e9c4dd8d99"
-    sha256 x86_64_linux:  "c8d064a5b974c230b8da926afa06b4426918168bfae7870205285b0aee64c4fe"
+    sha256 arm64_golden_gate: "acb732d1eb04fc76372174c7881190afd95b2582a75639659e74c0e675cfa401"
+    sha256 arm64_tahoe:       "2941fbfcc53f567e97c62bf8154af156977892accdd8ea954b61596d7bbce87a"
+    sha256 arm64_sequoia:     "330a6e6a8f92479a137bfefaea5a6b996cce777a3f957a121abf6faa9b1ab33a"
+    sha256 arm64_sonoma:      "5a40b3af7cd7afab37bd87c58c77a7c6eee0c980bbffc5f5459f20654f3bd2bb"
+    sha256 sonoma:            "d7bd8c5bd64b0c6ce006e245c9f2b59cdaf70bd4676da0571cb0e1acc735debc"
+    sha256 arm64_linux:       "5803ca24ee29b5727453f35aa6bf722d9ac7e0fc6e143934f24095e9c4dd8d99"
+    sha256 x86_64_linux:      "c8d064a5b974c230b8da926afa06b4426918168bfae7870205285b0aee64c4fe"
   end
 
   uses_from_macos "rsync" => :build

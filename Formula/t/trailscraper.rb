@@ -10,14 +10,15 @@ class Trailscraper < Formula
   head "https://github.com/flosell/trailscraper.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c4590ee12fb56b39ca4ab0a1c8794d44c3e169ef982ff336f783e67906bdafb8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0511b14386c89f606f2068ee0999712f16c30c395e2cc60eaec209d8da1e6dc0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2ea45e87f3f69ad712391990a724736804a931558ed65be19b9cb7f37cf01718"
-    sha256 cellar: :any_skip_relocation, tahoe:         "09d7e2aa57417f3dce773c2fb46c7272c0d0b54a4e95bdaab74e1bfc324ddf06"
-    sha256 cellar: :any_skip_relocation, sequoia:       "e5d420b15578b0a7caf69a8bed841478b0e071ffaf2b2496577e7522509aa989"
-    sha256 cellar: :any_skip_relocation, sonoma:        "145f1e931b976f9ee9ef99e1baceb1f39f850b29b1faffbc6f0d67c1848a4687"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "581e4b2502e3d53f251a436530c58ce6edf78f475efe8a34de8de9f908006d3b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "537e15e89e07216eb4b76e52a14010b3cb8b58d951fb5f242014ce871eec6851"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "5c058ff282c1a24f8e349c66b34c8e65d20bedc9e212521728bbf27ae1d3a8af"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "c4590ee12fb56b39ca4ab0a1c8794d44c3e169ef982ff336f783e67906bdafb8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "0511b14386c89f606f2068ee0999712f16c30c395e2cc60eaec209d8da1e6dc0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "2ea45e87f3f69ad712391990a724736804a931558ed65be19b9cb7f37cf01718"
+    sha256 cellar: :any_skip_relocation, tahoe:             "09d7e2aa57417f3dce773c2fb46c7272c0d0b54a4e95bdaab74e1bfc324ddf06"
+    sha256 cellar: :any_skip_relocation, sequoia:           "e5d420b15578b0a7caf69a8bed841478b0e071ffaf2b2496577e7522509aa989"
+    sha256 cellar: :any_skip_relocation, sonoma:            "145f1e931b976f9ee9ef99e1baceb1f39f850b29b1faffbc6f0d67c1848a4687"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "581e4b2502e3d53f251a436530c58ce6edf78f475efe8a34de8de9f908006d3b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "537e15e89e07216eb4b76e52a14010b3cb8b58d951fb5f242014ce871eec6851"
   end
 
   depends_on "python@3.14"

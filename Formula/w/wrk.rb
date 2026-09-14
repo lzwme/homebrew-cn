@@ -15,12 +15,13 @@ class Wrk < Formula
   head "https://github.com/wg/wrk.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "06fe612a3956378aa2a053a68e4193eacd2a9b4920629dce86c3c2d93f21ca63"
-    sha256 cellar: :any,                 arm64_sequoia: "169ac7e696799e9560768a27efbebd3353da1fc29be58a1b706291a3123f2600"
-    sha256 cellar: :any,                 arm64_sonoma:  "cd3c60462408a5d2a7da99ad8f6a1729e56bf740a0477a43f47e6b498d14f2d3"
-    sha256 cellar: :any,                 sonoma:        "db507aacb7511160b02eb7461dc3b2e1edcc0e17dbcb63104e76650ab68c0b1f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0b621c87065df5a55e9b7ade043906a8fd81df8e524091df3a00f830f7ee2eea"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "196ad088bc4aa989e6b94a26183d89197d071894b6c3bdf56ebfdba940c3826e"
+    sha256 cellar: :any,                 arm64_golden_gate: "dd6b5c01dc85786b193e5c135c74aa1fd0c1f6eb43645e152cce4a69fe778e96"
+    sha256 cellar: :any,                 arm64_tahoe:       "06fe612a3956378aa2a053a68e4193eacd2a9b4920629dce86c3c2d93f21ca63"
+    sha256 cellar: :any,                 arm64_sequoia:     "169ac7e696799e9560768a27efbebd3353da1fc29be58a1b706291a3123f2600"
+    sha256 cellar: :any,                 arm64_sonoma:      "cd3c60462408a5d2a7da99ad8f6a1729e56bf740a0477a43f47e6b498d14f2d3"
+    sha256 cellar: :any,                 sonoma:            "db507aacb7511160b02eb7461dc3b2e1edcc0e17dbcb63104e76650ab68c0b1f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "0b621c87065df5a55e9b7ade043906a8fd81df8e524091df3a00f830f7ee2eea"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "196ad088bc4aa989e6b94a26183d89197d071894b6c3bdf56ebfdba940c3826e"
   end
 
   depends_on "luajit"

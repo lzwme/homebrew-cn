@@ -16,12 +16,13 @@ class Usbutils < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "26e37532e86411091b25054bfc3967d825fd533557c8a59296867caab2fb9c95"
-    sha256 cellar: :any, arm64_sequoia: "3fd964e13e53ac02a5ab1e3aad9507622a2ca4b950f53a39fc644492c7e0bb25"
-    sha256 cellar: :any, arm64_sonoma:  "625af4354b888ad7fd99c48bd952b0f90191ca0f5212a77a4e5878d8c3336f05"
-    sha256 cellar: :any, sonoma:        "235c82fe47c5faec50df91713b449941b4a89d8895b87c6b5950e78d2e099cb6"
-    sha256               arm64_linux:   "9dd93abd2b124a8d0beb4c155fcd417ec99b837d38db7a7b4f8b82745761d51a"
-    sha256               x86_64_linux:  "7d95c8f655bf97ceb6e232dbdbb27e9ce977dd6590311bff52077f652d0512b0"
+    sha256 cellar: :any, arm64_golden_gate: "23ed1225015d14d138b5701fa6aa4b3794b48c89f25d4242cdc150ba818a7723"
+    sha256 cellar: :any, arm64_tahoe:       "26e37532e86411091b25054bfc3967d825fd533557c8a59296867caab2fb9c95"
+    sha256 cellar: :any, arm64_sequoia:     "3fd964e13e53ac02a5ab1e3aad9507622a2ca4b950f53a39fc644492c7e0bb25"
+    sha256 cellar: :any, arm64_sonoma:      "625af4354b888ad7fd99c48bd952b0f90191ca0f5212a77a4e5878d8c3336f05"
+    sha256 cellar: :any, sonoma:            "235c82fe47c5faec50df91713b449941b4a89d8895b87c6b5950e78d2e099cb6"
+    sha256               arm64_linux:       "9dd93abd2b124a8d0beb4c155fcd417ec99b837d38db7a7b4f8b82745761d51a"
+    sha256               x86_64_linux:      "7d95c8f655bf97ceb6e232dbdbb27e9ce977dd6590311bff52077f652d0512b0"
   end
 
   depends_on "meson" => :build

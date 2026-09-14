@@ -6,11 +6,12 @@ class Vale < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "22cec5351c9ba2c0905d8e51e7b88942f8e7811be52a16d1dd2fe76d8734ae27"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0acde66835806cf348060d78bc68f9360ca71df139cef44ea3d37d94507fb524"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6934fb9abced1a386083160d7dbb03608d74c980adefa896d531e4a566e4e78b"
-    sha256 cellar: :any,                 arm64_linux:   "6e82085826b2172dcce34b27643212919f77ec5d112e5cf0429ec7ec0587725c"
-    sha256 cellar: :any,                 x86_64_linux:  "378e2d017e933b0fbb382d8a2c7904d3eaf948e8f54e13966f4acc7f5824c2db"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "040774f34895e7b33b36b72785eef7b8db37d17a7ed7ada4babea7a994b5e959"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "22cec5351c9ba2c0905d8e51e7b88942f8e7811be52a16d1dd2fe76d8734ae27"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "0acde66835806cf348060d78bc68f9360ca71df139cef44ea3d37d94507fb524"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "6934fb9abced1a386083160d7dbb03608d74c980adefa896d531e4a566e4e78b"
+    sha256 cellar: :any,                 arm64_linux:       "6e82085826b2172dcce34b27643212919f77ec5d112e5cf0429ec7ec0587725c"
+    sha256 cellar: :any,                 x86_64_linux:      "378e2d017e933b0fbb382d8a2c7904d3eaf948e8f54e13966f4acc7f5824c2db"
   end
 
   depends_on "go" => :build

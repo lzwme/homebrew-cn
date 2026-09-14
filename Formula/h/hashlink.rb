@@ -8,10 +8,11 @@ class Hashlink < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "1fea142f31dba20b19f08a1356ad960560071acfde00211a5f14105087c354ec"
-    sha256 cellar: :any, arm64_sequoia: "6992c2e2183662a7fba3df186a2c996d21561cd45cb418d4a23b1135bd526240"
-    sha256 cellar: :any, arm64_linux:   "2e2c30a5a813cace3208c460d4f76715f73806c7094319ca8d1ea9765c5f5ec9"
-    sha256 cellar: :any, x86_64_linux:  "62190ca7bad1f1feb11e38b998dc5f35901fc96dcb6143205547aac7c5cf491b"
+    sha256 cellar: :any, arm64_golden_gate: "ccb57d0a18737a1a13d72719b6d458d1cac451030d3e9038a098a89907c7a6d2"
+    sha256 cellar: :any, arm64_tahoe:       "1fea142f31dba20b19f08a1356ad960560071acfde00211a5f14105087c354ec"
+    sha256 cellar: :any, arm64_sequoia:     "6992c2e2183662a7fba3df186a2c996d21561cd45cb418d4a23b1135bd526240"
+    sha256 cellar: :any, arm64_linux:       "2e2c30a5a813cace3208c460d4f76715f73806c7094319ca8d1ea9765c5f5ec9"
+    sha256 cellar: :any, x86_64_linux:      "62190ca7bad1f1feb11e38b998dc5f35901fc96dcb6143205547aac7c5cf491b"
   end
 
   deprecate! date: "2027-03-31", because: "needs deprecated `haxe` which needs EOL `mbedtls@3`"

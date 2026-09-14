@@ -50,10 +50,11 @@ class Hypopg < Formula
       system pg_ctl, "initdb", "-D", datadir
       (datadir/"postgresql.conf").write <<~EOS, mode: "a+"
         port = #{port}
+        unix_socket_directories = '#{testpath}'
       EOS
       system pg_ctl, "start", "-D", datadir, "-l", testpath/"log-#{postgresql.name}"
       begin
-        system psql, "-p", port.to_s, "-c", "CREATE EXTENSION hypopg;", "postgres"
+        system psql, "-h", testpath, "-p", port.to_s, "-c", "CREATE EXTENSION hypopg;", "postgres"
       ensure
         system pg_ctl, "stop", "-D", datadir
       end

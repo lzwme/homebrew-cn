@@ -13,14 +13,15 @@ class GccAT13 < Formula
 
   bottle do
     rebuild 4
-    sha256               arm64_tahoe:   "402152114119703760e346441b301650f318be096587ed007f05bad1cd97e6f7"
-    sha256               arm64_sequoia: "7dc130fd669a72bd44b59891bbcce8996a3f69a0968ac0c1f47ff86a00c14121"
-    sha256               arm64_sonoma:  "f2db2c23a0aacfde2469ff19581157974a3c4dbacf9ebe4120589b50b3c7f29b"
-    sha256               tahoe:         "d95d4101bdb54579c9ef3c590998b47d8be23eed719df775903b86e206a5390f"
-    sha256               sequoia:       "56fdf71dec178abd306adedcd6267a95e6d758d46638f2420eb5dd2f92a57cb4"
-    sha256               sonoma:        "dabebee8c2aa218cc4be212bee1bd1b9e79809a89d03d6a61dd43551fa10ce48"
-    sha256 cellar: :any, arm64_linux:   "5ddf8de6855f7f06d31b09f40d9d038a8925e7878fc83294a3547bbd2d855878"
-    sha256 cellar: :any, x86_64_linux:  "ab2aa9152313c440c728ab34ca40ffd676fce580753ecd938c6396cffe1f7e9a"
+    sha256               arm64_golden_gate: "1f6a28f791ce8986fc13548d4955deccb5d8889e81c76cdad7bc955495c6f605"
+    sha256               arm64_tahoe:       "402152114119703760e346441b301650f318be096587ed007f05bad1cd97e6f7"
+    sha256               arm64_sequoia:     "7dc130fd669a72bd44b59891bbcce8996a3f69a0968ac0c1f47ff86a00c14121"
+    sha256               arm64_sonoma:      "f2db2c23a0aacfde2469ff19581157974a3c4dbacf9ebe4120589b50b3c7f29b"
+    sha256               tahoe:             "d95d4101bdb54579c9ef3c590998b47d8be23eed719df775903b86e206a5390f"
+    sha256               sequoia:           "56fdf71dec178abd306adedcd6267a95e6d758d46638f2420eb5dd2f92a57cb4"
+    sha256               sonoma:            "dabebee8c2aa218cc4be212bee1bd1b9e79809a89d03d6a61dd43551fa10ce48"
+    sha256 cellar: :any, arm64_linux:       "5ddf8de6855f7f06d31b09f40d9d038a8925e7878fc83294a3547bbd2d855878"
+    sha256 cellar: :any, x86_64_linux:      "ab2aa9152313c440c728ab34ca40ffd676fce580753ecd938c6396cffe1f7e9a"
   end
 
   # The bottles are built on systems with the CLT installed, and do not work
@@ -42,6 +43,14 @@ class GccAT13 < Formula
   # Apple Silicon support, located at https://github.com/iains/gcc-13-branch
   patch do
     file "Patches/gcc/gcc-13.4.0.diff"
+  end
+  # Backport the Darwin version mapping from the GCC 16 branch.
+  # https://github.com/iains/gcc-16-branch/commit/45cfd989e0f3915b631bbb76372097cbcc9a055f
+  patch do
+    on_macos do
+      file "Patches/gcc/gcc-12-13-darwin-version-mapping.diff"
+      type :unofficial
+    end
   end
 
   def install

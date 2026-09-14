@@ -7,12 +7,13 @@ class Oauth2c < Formula
   head "https://github.com/SecureAuthCorp/oauth2c.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "496f8d7bdd55e8d793c97349fdce2d60be8cdc9dafcea75b78be79f3c1ed7d16"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "496f8d7bdd55e8d793c97349fdce2d60be8cdc9dafcea75b78be79f3c1ed7d16"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "496f8d7bdd55e8d793c97349fdce2d60be8cdc9dafcea75b78be79f3c1ed7d16"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0df25bbe0206dbf3750f5f2761b4d83b4a028333dfe1647c5758e2b0d11c4ea6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "068bc90b3bc0b2386a5ae098c0a2550feb64625fca7ecfd8c871da14bf655dd8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6e7d1c31e096d50643c1b14ba5d83c1ae457e1870c67abf374e9ff8193fd710e"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "b110e7f466c0b9e52293d10652da38bcfd4d13764e228d982476f2db036a7d23"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "496f8d7bdd55e8d793c97349fdce2d60be8cdc9dafcea75b78be79f3c1ed7d16"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "496f8d7bdd55e8d793c97349fdce2d60be8cdc9dafcea75b78be79f3c1ed7d16"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "496f8d7bdd55e8d793c97349fdce2d60be8cdc9dafcea75b78be79f3c1ed7d16"
+    sha256 cellar: :any_skip_relocation, sonoma:            "0df25bbe0206dbf3750f5f2761b4d83b4a028333dfe1647c5758e2b0d11c4ea6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "068bc90b3bc0b2386a5ae098c0a2550feb64625fca7ecfd8c871da14bf655dd8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "6e7d1c31e096d50643c1b14ba5d83c1ae457e1870c67abf374e9ff8193fd710e"
   end
 
   depends_on "go" => :build

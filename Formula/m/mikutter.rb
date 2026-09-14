@@ -7,12 +7,13 @@ class Mikutter < Formula
   head "git://mikutter.hachune.net/mikutter.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "7490c04f633cb2be02befd113c2808f4157c64d8e4916d84c2c8db1f531a4c2e"
-    sha256 cellar: :any,                 arm64_sequoia: "6d80163010cc21ea16cac7c096b33a687c2616e6fbe6bba46b00aed1ff5b0819"
-    sha256 cellar: :any,                 arm64_sonoma:  "06fc511c670b0568aee83aae0cf53fcb6be315352eaf2812a4583db75a99747b"
-    sha256 cellar: :any,                 sonoma:        "64d58bcd68598dac0653ba362eb283ac2379cc07ccf4c460971788e679085ecc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5ff0a19b16293983110f8b9af06464a1aecf6322c185981a72a168e6184cd5fa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4bdc4b967cf1ae1fc24f59b9407a11b36b1cc9c53768015fad2f6625c4a686ed"
+    sha256 cellar: :any,                 arm64_golden_gate: "6a499ea9a2fe473f16789cf449aa8de5368627e14df997e6a8675a542d1a57af"
+    sha256 cellar: :any,                 arm64_tahoe:       "7490c04f633cb2be02befd113c2808f4157c64d8e4916d84c2c8db1f531a4c2e"
+    sha256 cellar: :any,                 arm64_sequoia:     "6d80163010cc21ea16cac7c096b33a687c2616e6fbe6bba46b00aed1ff5b0819"
+    sha256 cellar: :any,                 arm64_sonoma:      "06fc511c670b0568aee83aae0cf53fcb6be315352eaf2812a4583db75a99747b"
+    sha256 cellar: :any,                 sonoma:            "64d58bcd68598dac0653ba362eb283ac2379cc07ccf4c460971788e679085ecc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "5ff0a19b16293983110f8b9af06464a1aecf6322c185981a72a168e6184cd5fa"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "4bdc4b967cf1ae1fc24f59b9407a11b36b1cc9c53768015fad2f6625c4a686ed"
   end
 
   depends_on "at-spi2-core"

@@ -24,6 +24,12 @@ class Dolt < Formula
   depends_on "go" => :build
   depends_on "icu4c@78"
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download", "-C", "go"
+  end
+
   def install
     ENV["CGO_ENABLED"] = "1"
 

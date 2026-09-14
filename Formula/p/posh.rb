@@ -11,12 +11,13 @@ class Posh < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "25e477c241dd48c3274ed2f3aa95b1dcb31c67bb12591e51891f795b81b797c9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a6f9a7f522bb7a7f20ab08a73186ab06924a4b9a914c9b2f8099fe207368ee52"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "90dfb7c66a30a95e102c4bff6c8cbc79f84e7352c4a7564d2c121caae1c484a7"
-    sha256 cellar: :any_skip_relocation, sonoma:        "73e677823d659ff2be2cccf797979b20e916ca536cc68a9ba3d09506a3d2fe0e"
-    sha256 cellar: :any,                 arm64_linux:   "eaeb2e313aabd039f3a4779474dda6a50e541abd81500d3655ab609637172ac7"
-    sha256 cellar: :any,                 x86_64_linux:  "601f3fc2b09b2101924abd4fd51b482e2aa9ad98a47e72e7526374f03c26a9ca"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "3ccc5037d5101492e1c1a6aa07e1d1d8c82f1dd383c3fa8906abab84e1f0528b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "25e477c241dd48c3274ed2f3aa95b1dcb31c67bb12591e51891f795b81b797c9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "a6f9a7f522bb7a7f20ab08a73186ab06924a4b9a914c9b2f8099fe207368ee52"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "90dfb7c66a30a95e102c4bff6c8cbc79f84e7352c4a7564d2c121caae1c484a7"
+    sha256 cellar: :any_skip_relocation, sonoma:            "73e677823d659ff2be2cccf797979b20e916ca536cc68a9ba3d09506a3d2fe0e"
+    sha256 cellar: :any,                 arm64_linux:       "eaeb2e313aabd039f3a4779474dda6a50e541abd81500d3655ab609637172ac7"
+    sha256 cellar: :any,                 x86_64_linux:      "601f3fc2b09b2101924abd4fd51b482e2aa9ad98a47e72e7526374f03c26a9ca"
   end
 
   depends_on "autoconf" => :build

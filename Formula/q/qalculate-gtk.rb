@@ -6,12 +6,13 @@ class QalculateGtk < Formula
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 arm64_tahoe:   "c48c6662d07632c2cbd020b90dbdb5cae6a608f67799f068683682eaa0d653a6"
-    sha256 arm64_sequoia: "49a98853802de0f50f5c672e1400f1240746ca87903077142d9f3d7c48fce50b"
-    sha256 arm64_sonoma:  "55f145a9c07fb07ed82bcaa04051392d14995e2ed571799b41954ca410db15b4"
-    sha256 sonoma:        "39a1d194d288a573e09748b0134c40e23597036301d5a2e9c407c6485cf445ed"
-    sha256 arm64_linux:   "506bd30291b9e1ae7fa9b0fd0e8a19f2e8528debb61a62f649db09fa23ceb5bc"
-    sha256 x86_64_linux:  "fb844ad9e727795a5dac7f004a79ea5c68fbd4e00631c628c156d49aecebde2e"
+    sha256 arm64_golden_gate: "710e1cb3a49e9b28d6e17be994e7f9c21223cbe5e475b4f1b1053657fe70795f"
+    sha256 arm64_tahoe:       "c48c6662d07632c2cbd020b90dbdb5cae6a608f67799f068683682eaa0d653a6"
+    sha256 arm64_sequoia:     "49a98853802de0f50f5c672e1400f1240746ca87903077142d9f3d7c48fce50b"
+    sha256 arm64_sonoma:      "55f145a9c07fb07ed82bcaa04051392d14995e2ed571799b41954ca410db15b4"
+    sha256 sonoma:            "39a1d194d288a573e09748b0134c40e23597036301d5a2e9c407c6485cf445ed"
+    sha256 arm64_linux:       "506bd30291b9e1ae7fa9b0fd0e8a19f2e8528debb61a62f649db09fa23ceb5bc"
+    sha256 x86_64_linux:      "fb844ad9e727795a5dac7f004a79ea5c68fbd4e00631c628c156d49aecebde2e"
   end
 
   depends_on "gettext" => :build

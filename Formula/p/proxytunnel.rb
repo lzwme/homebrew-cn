@@ -6,12 +6,13 @@ class Proxytunnel < Formula
   license "GPL-2.0-or-later" => { with: "x11vnc-openssl-exception" }
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "5eeebf767f77ae0008d4dd0f6e9537d11d4dc4df5e799e1fb86b5fe428383cbd"
-    sha256 cellar: :any, arm64_sequoia: "4d3d58b0f4961547187ad3aa9ebd2ab3cff42cbfcf9305b6da4dfc164f7deb6d"
-    sha256 cellar: :any, arm64_sonoma:  "3b0c5fff82ba280f682abc7a871bf0dd1ff221ac623c256f56a59be2d430bb30"
-    sha256 cellar: :any, sonoma:        "17855bc805686e63ed5fa8801c9f25080a76283913a98676a4172308486587b8"
-    sha256 cellar: :any, arm64_linux:   "48c5fe0955edcf6c838dd768ca836fa09f45357c681f001b0ab884933935c0af"
-    sha256 cellar: :any, x86_64_linux:  "22a1905c09b257f1d5992116b14fe7edfe3a26205f6d5b4bc5c12bbb325d67f5"
+    sha256 cellar: :any, arm64_golden_gate: "bd41c46857ca4994f6058891446285442e6ea0acd3b3a3c648c73091c602a792"
+    sha256 cellar: :any, arm64_tahoe:       "5eeebf767f77ae0008d4dd0f6e9537d11d4dc4df5e799e1fb86b5fe428383cbd"
+    sha256 cellar: :any, arm64_sequoia:     "4d3d58b0f4961547187ad3aa9ebd2ab3cff42cbfcf9305b6da4dfc164f7deb6d"
+    sha256 cellar: :any, arm64_sonoma:      "3b0c5fff82ba280f682abc7a871bf0dd1ff221ac623c256f56a59be2d430bb30"
+    sha256 cellar: :any, sonoma:            "17855bc805686e63ed5fa8801c9f25080a76283913a98676a4172308486587b8"
+    sha256 cellar: :any, arm64_linux:       "48c5fe0955edcf6c838dd768ca836fa09f45357c681f001b0ab884933935c0af"
+    sha256 cellar: :any, x86_64_linux:      "22a1905c09b257f1d5992116b14fe7edfe3a26205f6d5b4bc5c12bbb325d67f5"
   end
 
   depends_on "asciidoc" => :build

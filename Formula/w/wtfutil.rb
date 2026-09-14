@@ -7,12 +7,13 @@ class Wtfutil < Formula
   head "https://github.com/wtfutil/wtf.git", branch: "trunk"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4ea6938225069f6512debc79090300e93255eccb23c808e6b735399bdf770156"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dcb07cc6d7a924e00969fc1bf6b6b77c478588ae7e0bfd613e4c7fb287c86fb0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5435bdf1477ed48580cb7f3c35f6b6341364160cb70d645dc3bc415c6ce9652d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "22ccab71cb51acea3500ad7ab7936cb85a494e4b391c836f9510780cf553e065"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "eb863500bb7249c9baa2607b7c0cf3a47035ed62904bbebc3f446a17ca33bfb0"
-    sha256 cellar: :any,                 x86_64_linux:  "6fd1868752f7e160cff65cb962484c0f7a577f1226f5d2c81b81f239999e29f4"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "de41d9773de992aa71ac1cac78a015b53d2e746bdd4522f75caa836ebf0d4109"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "4ea6938225069f6512debc79090300e93255eccb23c808e6b735399bdf770156"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "dcb07cc6d7a924e00969fc1bf6b6b77c478588ae7e0bfd613e4c7fb287c86fb0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "5435bdf1477ed48580cb7f3c35f6b6341364160cb70d645dc3bc415c6ce9652d"
+    sha256 cellar: :any_skip_relocation, sonoma:            "22ccab71cb51acea3500ad7ab7936cb85a494e4b391c836f9510780cf553e065"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "eb863500bb7249c9baa2607b7c0cf3a47035ed62904bbebc3f446a17ca33bfb0"
+    sha256 cellar: :any,                 x86_64_linux:      "6fd1868752f7e160cff65cb962484c0f7a577f1226f5d2c81b81f239999e29f4"
   end
 
   depends_on "go" => :build

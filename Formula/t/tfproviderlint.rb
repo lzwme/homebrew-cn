@@ -9,12 +9,13 @@ class Tfproviderlint < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "41e55bedd7227335e6654821fcd14e582d8c48514d8df62a9136a8ef15028d90"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "41e55bedd7227335e6654821fcd14e582d8c48514d8df62a9136a8ef15028d90"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "41e55bedd7227335e6654821fcd14e582d8c48514d8df62a9136a8ef15028d90"
-    sha256 cellar: :any_skip_relocation, sonoma:        "dfb3b76521fab5b8f81c927e117b1029e48d830268433ac124dabf2df75a6cab"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "51b3c2e54371787e3a07785b27add80eddd91c96cdb7d1c96b7d46b294b7f319"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ecd9538961f5f67ce00b6249b89fc0e73c132300b0ca9a19e3eb62d10d727fdd"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "c79c8faa554cdc638e79f60d5b567318d5ddfaa8c4272ec420b991a40e1768af"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "41e55bedd7227335e6654821fcd14e582d8c48514d8df62a9136a8ef15028d90"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "41e55bedd7227335e6654821fcd14e582d8c48514d8df62a9136a8ef15028d90"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "41e55bedd7227335e6654821fcd14e582d8c48514d8df62a9136a8ef15028d90"
+    sha256 cellar: :any_skip_relocation, sonoma:            "dfb3b76521fab5b8f81c927e117b1029e48d830268433ac124dabf2df75a6cab"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "51b3c2e54371787e3a07785b27add80eddd91c96cdb7d1c96b7d46b294b7f319"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "ecd9538961f5f67ce00b6249b89fc0e73c132300b0ca9a19e3eb62d10d727fdd"
   end
 
   # TODO: unpin go@1.26 when tfproviderlint supports go 1.27

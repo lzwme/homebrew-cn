@@ -7,12 +7,13 @@ class Nmail < Formula
   head "https://github.com/d99kris/nmail.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "d03f95813a44d8d10823aa7658a3a317dafa3090c72265823b9222a7e55ab0e2"
-    sha256 cellar: :any, arm64_sequoia: "743f40ad3da2dabbeb12cf886b5d421a40777c31d4fd9c0b997bef713d21c472"
-    sha256 cellar: :any, arm64_sonoma:  "63a7aac49b893b99575e345a09092f24c3e3b86c40314323b96b2c89bde25cbd"
-    sha256 cellar: :any, sonoma:        "430855416092be503b0c30718d3c23dd2545986a8cc489d72611d8cd3badcf0e"
-    sha256 cellar: :any, arm64_linux:   "ebc0469ab79db456e1ef77c67a5a5c742a1b36cfa4b90ff8f2eab28b1c5d6967"
-    sha256 cellar: :any, x86_64_linux:  "b46e3c70199307c937a6c0723a42bc98def0096a8acbea769652247870f5545f"
+    sha256 cellar: :any, arm64_golden_gate: "b028b1d924be4e5781563e16f197a07f51920acb6fbd02115e8e6e5dece55513"
+    sha256 cellar: :any, arm64_tahoe:       "d03f95813a44d8d10823aa7658a3a317dafa3090c72265823b9222a7e55ab0e2"
+    sha256 cellar: :any, arm64_sequoia:     "743f40ad3da2dabbeb12cf886b5d421a40777c31d4fd9c0b997bef713d21c472"
+    sha256 cellar: :any, arm64_sonoma:      "63a7aac49b893b99575e345a09092f24c3e3b86c40314323b96b2c89bde25cbd"
+    sha256 cellar: :any, sonoma:            "430855416092be503b0c30718d3c23dd2545986a8cc489d72611d8cd3badcf0e"
+    sha256 cellar: :any, arm64_linux:       "ebc0469ab79db456e1ef77c67a5a5c742a1b36cfa4b90ff8f2eab28b1c5d6967"
+    sha256 cellar: :any, x86_64_linux:      "b46e3c70199307c937a6c0723a42bc98def0096a8acbea769652247870f5545f"
   end
 
   depends_on "cmake" => :build

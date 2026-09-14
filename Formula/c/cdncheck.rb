@@ -1,8 +1,8 @@
 class Cdncheck < Formula
   desc "Utility to detect various technology for a given IP address"
   homepage "https://projectdiscovery.io"
-  url "https://ghfast.top/https://github.com/projectdiscovery/cdncheck/archive/refs/tags/v1.3.0.tar.gz"
-  sha256 "43d730ac5c64f67cc00b3f1d85efe841e4efcdab1391550c15ef95fed552eaa3"
+  url "https://ghfast.top/https://github.com/projectdiscovery/cdncheck/archive/refs/tags/v1.3.1.tar.gz"
+  sha256 "ba68bddf7a7ed3b5daa8ace46cb4f57d977c62973a245e02aa8a792a97a80295"
   license "MIT"
   head "https://github.com/projectdiscovery/cdncheck.git", branch: "main"
 
@@ -12,22 +12,14 @@ class Cdncheck < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "b273dd159b62c5d1234a3413c3aa20ed2c506280adb8a2643314631189159952"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "401ce0f15718d36b907c1b0c38feb39818c451c01424c70e4d0535b7465bc266"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "749603a7fb98d3ab86b350c6d3035369e8b4c79f84f87baa6301c9f1ed08b270"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "c36c18238830008bf947ceb5300c70c123245de355e2d34d684a83dfb9d8fda0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "738d0df408296d7611675bea94fe51147f3ede35682a51dda822db7bb3a82030"
-    sha256 cellar: :any,                 x86_64_linux:      "bdc60d632911d418254bcc4eb89a51036944526663a38eed51da8801e69c2a65"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "32a10ae8c6629ae3d27d678d9d78cca8822f78df12d4a74f78252c79576e5e07"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "bf51a20c2b047552c90f2bc4de6699ec5dc7713c1e1d7a4eca46f5d5147ee335"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "d42f910985f6f956d1b5444fe278523b21b37ae0e349cfaa04aeaffb45caa75e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "5af02e0fc875d168c006812b48ea82ff5abf2b7c7a18b990c1a362a33f231926"
+    sha256 cellar: :any,                 x86_64_linux:      "e67937b7c44192b449cf46ba482dcee98d2144b2485d09a86fdb751b9ac7a1fa"
   end
 
   depends_on "go" => :build
-
-  # Fix the reported version, upstream PR ref, https://github.com/projectdiscovery/cdncheck/pull/518
-  patch do
-    url "https://github.com/projectdiscovery/cdncheck/commit/3b1edd544d27c4a34ed214b43a688103c60a3cff.patch?full_index=1"
-    sha256 "af129ce7230e302c0b2379742bb05c133f2670430301b83adc14a6f56866e193"
-    type :unofficial
-  end
 
   def install
     system "go", "build", *std_go_args, "./cmd/cdncheck"

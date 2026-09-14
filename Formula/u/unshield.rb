@@ -8,12 +8,13 @@ class Unshield < Formula
 
   bottle do
     rebuild 2
-    sha256 cellar: :any,                 arm64_tahoe:   "514e1303fb016b6d992a623aba29ae24ee49afcb23a1ce920b3019be881cc257"
-    sha256 cellar: :any,                 arm64_sequoia: "a73e18ad8dc26a08d17407ff380f8ea0916bc82defb10642e2d0c5d762ee2d38"
-    sha256 cellar: :any,                 arm64_sonoma:  "c09b334a22d22b168419ce8d4baa9ae20ce43f894ab218e0343c8341b63234e0"
-    sha256 cellar: :any,                 sonoma:        "d6cea6a06ee0aaa549a7fd124733839eaeb078df6b5bbf18be9222550aa77a11"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "88d0b260f43f9d5d0749fb0625244ccf78443f02549cf4c23aab3b9f458639e3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1689300dc52442fcba8de2ed3c07c8eeecc2430bf6f95861354e14c5f01ab23c"
+    sha256 cellar: :any,                 arm64_golden_gate: "9ef07e6994a41893d935b2397f138d8de450c622b1194ec87f2856fb41547a47"
+    sha256 cellar: :any,                 arm64_tahoe:       "514e1303fb016b6d992a623aba29ae24ee49afcb23a1ce920b3019be881cc257"
+    sha256 cellar: :any,                 arm64_sequoia:     "a73e18ad8dc26a08d17407ff380f8ea0916bc82defb10642e2d0c5d762ee2d38"
+    sha256 cellar: :any,                 arm64_sonoma:      "c09b334a22d22b168419ce8d4baa9ae20ce43f894ab218e0343c8341b63234e0"
+    sha256 cellar: :any,                 sonoma:            "d6cea6a06ee0aaa549a7fd124733839eaeb078df6b5bbf18be9222550aa77a11"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "88d0b260f43f9d5d0749fb0625244ccf78443f02549cf4c23aab3b9f458639e3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "1689300dc52442fcba8de2ed3c07c8eeecc2430bf6f95861354e14c5f01ab23c"
   end
 
   depends_on "cmake" => :build

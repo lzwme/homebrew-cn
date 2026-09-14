@@ -9,12 +9,13 @@ class Proselint < Formula
   head "https://github.com/amperser/proselint.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "70add61cf2da1bde43078ae2bbc702350bb795783ab4bc021a38ede477e51521"
-    sha256 cellar: :any,                 arm64_sequoia: "a8661e7ef69d0e8af504df9eb2228a23d7c0383033438c109d9f5d4a83fb8a4f"
-    sha256 cellar: :any,                 arm64_sonoma:  "8e819d7c870eb0f5f0b0393e7bf563b8141de5e96b48a7cb88e3e42c0dacc314"
-    sha256 cellar: :any,                 sonoma:        "5e7b5f1a467e8181896b1dfafa12250c01611b74476cd06374bca1ef1098f468"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4fe140e4c71afe17846fff6bd68be0bfbd1dcbce43c4517a0e5fc4c58690b856"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d2c95d910b7eabf8d86dfb836a295c7d260a497da9ac3568362da22d553c6d52"
+    sha256 cellar: :any,                 arm64_golden_gate: "0ba60b20f401b66ee054e0cf3f3b9be3330eb4b583987e8104e0ac2e7400d3a5"
+    sha256 cellar: :any,                 arm64_tahoe:       "70add61cf2da1bde43078ae2bbc702350bb795783ab4bc021a38ede477e51521"
+    sha256 cellar: :any,                 arm64_sequoia:     "a8661e7ef69d0e8af504df9eb2228a23d7c0383033438c109d9f5d4a83fb8a4f"
+    sha256 cellar: :any,                 arm64_sonoma:      "8e819d7c870eb0f5f0b0393e7bf563b8141de5e96b48a7cb88e3e42c0dacc314"
+    sha256 cellar: :any,                 sonoma:            "5e7b5f1a467e8181896b1dfafa12250c01611b74476cd06374bca1ef1098f468"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "4fe140e4c71afe17846fff6bd68be0bfbd1dcbce43c4517a0e5fc4c58690b856"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "d2c95d910b7eabf8d86dfb836a295c7d260a497da9ac3568362da22d553c6d52"
   end
 
   depends_on "pybind11" => :build # for `google-re2`

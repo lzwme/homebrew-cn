@@ -11,14 +11,15 @@ class WpCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "55c3a86b500e2a5c96b7ab4a7c67c6099c379a4b3e8c8ac4ca908cb33a65cf45"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "087f15d5afa17ba4483aec086b2945d0dcd477a55987775862fcabe5902ce8ab"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "087f15d5afa17ba4483aec086b2945d0dcd477a55987775862fcabe5902ce8ab"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "087f15d5afa17ba4483aec086b2945d0dcd477a55987775862fcabe5902ce8ab"
-    sha256 cellar: :any_skip_relocation, sonoma:        "fe158bfc51b92aeac10cb0d009dd3c44a1e8c1cb0ae60ea9cf9a1b67869e7fa8"
-    sha256 cellar: :any_skip_relocation, ventura:       "fe158bfc51b92aeac10cb0d009dd3c44a1e8c1cb0ae60ea9cf9a1b67869e7fa8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0e1e3cfab199c3600caad543c0f2ea97c676536b37aa0eba544ab34434755f7d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0e1e3cfab199c3600caad543c0f2ea97c676536b37aa0eba544ab34434755f7d"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "2b934329bbdd89b69cceec59255b9cffcd9dd2d3a75b810ed9dc547fe47e9078"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "55c3a86b500e2a5c96b7ab4a7c67c6099c379a4b3e8c8ac4ca908cb33a65cf45"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "087f15d5afa17ba4483aec086b2945d0dcd477a55987775862fcabe5902ce8ab"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "087f15d5afa17ba4483aec086b2945d0dcd477a55987775862fcabe5902ce8ab"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:     "087f15d5afa17ba4483aec086b2945d0dcd477a55987775862fcabe5902ce8ab"
+    sha256 cellar: :any_skip_relocation, sonoma:            "fe158bfc51b92aeac10cb0d009dd3c44a1e8c1cb0ae60ea9cf9a1b67869e7fa8"
+    sha256 cellar: :any_skip_relocation, ventura:           "fe158bfc51b92aeac10cb0d009dd3c44a1e8c1cb0ae60ea9cf9a1b67869e7fa8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "0e1e3cfab199c3600caad543c0f2ea97c676536b37aa0eba544ab34434755f7d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "0e1e3cfab199c3600caad543c0f2ea97c676536b37aa0eba544ab34434755f7d"
   end
 
   depends_on "php"

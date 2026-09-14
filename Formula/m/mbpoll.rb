@@ -7,12 +7,13 @@ class Mbpoll < Formula
   head "https://github.com/epsilonrt/mbpoll.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "10b1218b9b816f0931d893ce7cc81f3e1af5a0cd16933c7bb299122281a409ca"
-    sha256 cellar: :any,                 arm64_sequoia: "475ec1a589ff0454a78f47daa221cde466f658eb94b0317a9b136f990fd17f1e"
-    sha256 cellar: :any,                 arm64_sonoma:  "e9013365ba0618e900fd66bc89b9a44f0ada967d149edd8a5286ac2d8bc75b6d"
-    sha256 cellar: :any,                 sonoma:        "be89f71b83662d272b2fe11a1cda6a2d666839014aea1f0cd97b09e006b72f37"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "325eeaf4fd666c7208fc4eb2c0094c9842331144663ef03200ebd8d8f783511c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bdca044ed55118e25a83d39bc6e463f614fffc7f2aff84d484855eaa8714b36b"
+    sha256 cellar: :any,                 arm64_golden_gate: "c6d8d1d6d2b87d6b529e058d147c0f1fb1cc3b2f0193fb147326a43da687d8a0"
+    sha256 cellar: :any,                 arm64_tahoe:       "10b1218b9b816f0931d893ce7cc81f3e1af5a0cd16933c7bb299122281a409ca"
+    sha256 cellar: :any,                 arm64_sequoia:     "475ec1a589ff0454a78f47daa221cde466f658eb94b0317a9b136f990fd17f1e"
+    sha256 cellar: :any,                 arm64_sonoma:      "e9013365ba0618e900fd66bc89b9a44f0ada967d149edd8a5286ac2d8bc75b6d"
+    sha256 cellar: :any,                 sonoma:            "be89f71b83662d272b2fe11a1cda6a2d666839014aea1f0cd97b09e006b72f37"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "325eeaf4fd666c7208fc4eb2c0094c9842331144663ef03200ebd8d8f783511c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "bdca044ed55118e25a83d39bc6e463f614fffc7f2aff84d484855eaa8714b36b"
   end
 
   depends_on "cmake" => :build

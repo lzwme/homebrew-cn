@@ -9,18 +9,19 @@ class Ttyrec < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "2b44b170e50cd4a45a34866f55c074aa7178b26a733350d471dff58709831cf0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "1bc483dbae460cdc63985077a07ab767d1f3b3b2d614ef276a038a07bbaa479c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d151676ce6f3761eb16f59d01ebfc1504d63477695f5b5c8d178a0d5c095139a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8da60792e0827bc948f8f1f0ce1f4c2e223e987c62943e8d854887d2b3557de4"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "3ae3690abbab9b59cd40c4a0004f21c5277c5642484fed77c180115030fa637e"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "5538f4c65b9395dd35a7d9f975a7da59a9e9b1bc4cf09725b86d61c48755306a"
-    sha256 cellar: :any_skip_relocation, sonoma:         "0e9bd8f7c2282ae05b62d8e632eca528d483830ecaadd072d8fa9de280720585"
-    sha256 cellar: :any_skip_relocation, ventura:        "e9de3489dab176b7c6335e02bf2e58dbc83a31687a714af08ec3a4c4d5cd4be1"
-    sha256 cellar: :any_skip_relocation, monterey:       "2e9366729fa85940745e55645c77c6f22c2ba47ad356159e5fc5564988e88e0b"
-    sha256 cellar: :any_skip_relocation, big_sur:        "dc7756b323c5faf2006093ac2873d7805f5ddfc06df6bf5bcbcdd4fa70b2c328"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "ea3a96ddfe71319d95009cd84257f98d42a335e692aea071b9d9a718e2d58a89"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2dd1acdb4519d34c1b28fced057623dcd6457c60def91150fd042ed6be04e481"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "7bccb91351464d139b2079395a92dde828f15532b761a9a801ae21cd684ba1e6"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "2b44b170e50cd4a45a34866f55c074aa7178b26a733350d471dff58709831cf0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "1bc483dbae460cdc63985077a07ab767d1f3b3b2d614ef276a038a07bbaa479c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "d151676ce6f3761eb16f59d01ebfc1504d63477695f5b5c8d178a0d5c095139a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:     "8da60792e0827bc948f8f1f0ce1f4c2e223e987c62943e8d854887d2b3557de4"
+    sha256 cellar: :any_skip_relocation, arm64_monterey:    "3ae3690abbab9b59cd40c4a0004f21c5277c5642484fed77c180115030fa637e"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:     "5538f4c65b9395dd35a7d9f975a7da59a9e9b1bc4cf09725b86d61c48755306a"
+    sha256 cellar: :any_skip_relocation, sonoma:            "0e9bd8f7c2282ae05b62d8e632eca528d483830ecaadd072d8fa9de280720585"
+    sha256 cellar: :any_skip_relocation, ventura:           "e9de3489dab176b7c6335e02bf2e58dbc83a31687a714af08ec3a4c4d5cd4be1"
+    sha256 cellar: :any_skip_relocation, monterey:          "2e9366729fa85940745e55645c77c6f22c2ba47ad356159e5fc5564988e88e0b"
+    sha256 cellar: :any_skip_relocation, big_sur:           "dc7756b323c5faf2006093ac2873d7805f5ddfc06df6bf5bcbcdd4fa70b2c328"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "ea3a96ddfe71319d95009cd84257f98d42a335e692aea071b9d9a718e2d58a89"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "2dd1acdb4519d34c1b28fced057623dcd6457c60def91150fd042ed6be04e481"
   end
 
   # Last release on 2006-06-11

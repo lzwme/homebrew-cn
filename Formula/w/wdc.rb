@@ -7,12 +7,13 @@ class Wdc < Formula
   revision 2
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "7936af69dde22084ed7f8e49514403a1c9b9aa82938548ea110cb466aace40ce"
-    sha256 cellar: :any,                 arm64_sequoia: "f5f2eb2d863e95dfe16936400d38d639503fdca5d2b5130012e14237b0801a6b"
-    sha256 cellar: :any,                 arm64_sonoma:  "47ef26615ac4537bd7adc342a54ec5f44ac088dcdff80cc56a592b1a3dbd573e"
-    sha256 cellar: :any,                 sonoma:        "4731f9ad6c7028ef56322152f5806e2371a048cdd8cafb6d9e5fee41dcff3337"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ddbcb3d0568595c508fdfc4d351459bcaa751ad816407a671d88a6d5ddf8fa2b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8e37799dd0aaf7639a3871401f48ab30e287255eb6cf295e1fabba3331425fae"
+    sha256 cellar: :any,                 arm64_golden_gate: "2a216a67acc4a7c0d2509d09a6e637abf9e6f52c26bfbc35b7e472ba1bf7266b"
+    sha256 cellar: :any,                 arm64_tahoe:       "7936af69dde22084ed7f8e49514403a1c9b9aa82938548ea110cb466aace40ce"
+    sha256 cellar: :any,                 arm64_sequoia:     "f5f2eb2d863e95dfe16936400d38d639503fdca5d2b5130012e14237b0801a6b"
+    sha256 cellar: :any,                 arm64_sonoma:      "47ef26615ac4537bd7adc342a54ec5f44ac088dcdff80cc56a592b1a3dbd573e"
+    sha256 cellar: :any,                 sonoma:            "4731f9ad6c7028ef56322152f5806e2371a048cdd8cafb6d9e5fee41dcff3337"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "ddbcb3d0568595c508fdfc4d351459bcaa751ad816407a671d88a6d5ddf8fa2b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "8e37799dd0aaf7639a3871401f48ab30e287255eb6cf295e1fabba3331425fae"
   end
 
   depends_on "boost" => :build

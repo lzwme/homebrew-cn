@@ -7,12 +7,13 @@ class Openapi < Formula
   head "https://github.com/speakeasy-api/openapi.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "91837ee2e43c8a13dda8b9fc480caa4bbea8fac0db6901297af7702428573939"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "91837ee2e43c8a13dda8b9fc480caa4bbea8fac0db6901297af7702428573939"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "91837ee2e43c8a13dda8b9fc480caa4bbea8fac0db6901297af7702428573939"
-    sha256 cellar: :any_skip_relocation, sonoma:        "03a38268210808559e6a6438b270ac6cc3bee37ab768e269b5d303e71c526eb9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "42b5434052f4f1eb8f114e6b716f3422da443cca1cc888e944fbecf5edd0f1a0"
-    sha256 cellar: :any,                 x86_64_linux:  "3a968c2b66351619c4a7bb7f294b9a1582fddce41ac165bd4bcd8625d84e420e"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "cc7fb93ae1f331357c87e3cea78cf3a4f1eb6d65d46081ca868ee71b2cdb3474"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "91837ee2e43c8a13dda8b9fc480caa4bbea8fac0db6901297af7702428573939"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "91837ee2e43c8a13dda8b9fc480caa4bbea8fac0db6901297af7702428573939"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "91837ee2e43c8a13dda8b9fc480caa4bbea8fac0db6901297af7702428573939"
+    sha256 cellar: :any_skip_relocation, sonoma:            "03a38268210808559e6a6438b270ac6cc3bee37ab768e269b5d303e71c526eb9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "42b5434052f4f1eb8f114e6b716f3422da443cca1cc888e944fbecf5edd0f1a0"
+    sha256 cellar: :any,                 x86_64_linux:      "3a968c2b66351619c4a7bb7f294b9a1582fddce41ac165bd4bcd8625d84e420e"
   end
 
   depends_on "go" => :build

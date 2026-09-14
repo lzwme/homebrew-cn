@@ -7,12 +7,13 @@ class Tuisky < Formula
   head "https://github.com/sugyan/tuisky.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a8b87016d190d22809fa5ad344ba07bb51ab1415daa6c7a5383a975418758f3f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "34cadf2a53e4ad9b8c7057064126b390dfe8ae0a9814b99535cbba1b2864ad94"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "01d1a226400db44d379a0b0788652f6f6d7cd7f2a0e99d0e0d685c0ddbf74dad"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2df26c17c036d72fd1eb39fc6d05b2b9a3735671e7a803a6c6b973d58dd17afd"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9d923309cc7912539965ab0a69fb053de1d62f8f151db39467eb5188468e177d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "55cf2a6eb4e49aeca71cd2b534c71159278a4c0c254075b58eb8cb7e7347f03b"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "eca6fa71d48fdea0ab4bc8ef2d554bdbb5a236378e194d4bf4586fa7ac3b8495"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "a8b87016d190d22809fa5ad344ba07bb51ab1415daa6c7a5383a975418758f3f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "34cadf2a53e4ad9b8c7057064126b390dfe8ae0a9814b99535cbba1b2864ad94"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "01d1a226400db44d379a0b0788652f6f6d7cd7f2a0e99d0e0d685c0ddbf74dad"
+    sha256 cellar: :any_skip_relocation, sonoma:            "2df26c17c036d72fd1eb39fc6d05b2b9a3735671e7a803a6c6b973d58dd17afd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "9d923309cc7912539965ab0a69fb053de1d62f8f151db39467eb5188468e177d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "55cf2a6eb4e49aeca71cd2b534c71159278a4c0c254075b58eb8cb7e7347f03b"
   end
 
   depends_on "pkgconf" => :build

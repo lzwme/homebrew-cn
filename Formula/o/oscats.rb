@@ -7,16 +7,17 @@ class Oscats < Formula
   revision 7
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:    "35dc1e697fe94c6ceab3be777ef3aa53ec83df8451739125105a4fa5e24e5fd7"
-    sha256 cellar: :any,                 arm64_sequoia:  "14bdf254ea5eb224c087cc3bdc7ba53b46d52b77e2c440f738871e747ad7e33a"
-    sha256 cellar: :any,                 arm64_sonoma:   "ee65d5fb7e853cf11866ad5d82e42443a2c899089538f7563a3d63268af2855e"
-    sha256 cellar: :any,                 arm64_ventura:  "dae032204b3f3d0d874482bec11e6ba4cc34cdf088929e5e432e75960800ddd2"
-    sha256 cellar: :any,                 arm64_monterey: "f348f164c17601c6fe88cbf6c0e403615f6466c286fdc6b7b5a809e0c4af0347"
-    sha256 cellar: :any,                 sonoma:         "13bd95cd190928092251cd826497867f03f36d6a3f4f1deee6e00577c2bb4c23"
-    sha256 cellar: :any,                 ventura:        "cafcdb6c91e58beebb50ab5fdf28a7f9246df0256be3285a49f70e6b79f6323c"
-    sha256 cellar: :any,                 monterey:       "d86233a0472773367baa7cded028f338d8ee4121b742bfa8a0aa9fd275ac95fe"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "5455564ddd14e3caddfc1af6a1f7440daf719e7446c51a0f3beefab3088ce053"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cea14d82ea0d9f7fea63cbd5364ccd2a85d0d8b8e02a498904b3f1bec140712c"
+    sha256 cellar: :any,                 arm64_golden_gate: "8b50666dc11884f7353179262ea5de181930aae0f066e4ea22fde6a5ca4effe8"
+    sha256 cellar: :any,                 arm64_tahoe:       "35dc1e697fe94c6ceab3be777ef3aa53ec83df8451739125105a4fa5e24e5fd7"
+    sha256 cellar: :any,                 arm64_sequoia:     "14bdf254ea5eb224c087cc3bdc7ba53b46d52b77e2c440f738871e747ad7e33a"
+    sha256 cellar: :any,                 arm64_sonoma:      "ee65d5fb7e853cf11866ad5d82e42443a2c899089538f7563a3d63268af2855e"
+    sha256 cellar: :any,                 arm64_ventura:     "dae032204b3f3d0d874482bec11e6ba4cc34cdf088929e5e432e75960800ddd2"
+    sha256 cellar: :any,                 arm64_monterey:    "f348f164c17601c6fe88cbf6c0e403615f6466c286fdc6b7b5a809e0c4af0347"
+    sha256 cellar: :any,                 sonoma:            "13bd95cd190928092251cd826497867f03f36d6a3f4f1deee6e00577c2bb4c23"
+    sha256 cellar: :any,                 ventura:           "cafcdb6c91e58beebb50ab5fdf28a7f9246df0256be3285a49f70e6b79f6323c"
+    sha256 cellar: :any,                 monterey:          "d86233a0472773367baa7cded028f338d8ee4121b742bfa8a0aa9fd275ac95fe"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "5455564ddd14e3caddfc1af6a1f7440daf719e7446c51a0f3beefab3088ce053"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "cea14d82ea0d9f7fea63cbd5364ccd2a85d0d8b8e02a498904b3f1bec140712c"
   end
 
   depends_on "pkgconf" => [:build, :test]

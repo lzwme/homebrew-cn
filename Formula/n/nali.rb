@@ -8,12 +8,13 @@ class Nali < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "15cbc69776a3b3868d0ec51b308fbeaece9d47ab8e70b782e4eae9bd545fc8df"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "15cbc69776a3b3868d0ec51b308fbeaece9d47ab8e70b782e4eae9bd545fc8df"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "15cbc69776a3b3868d0ec51b308fbeaece9d47ab8e70b782e4eae9bd545fc8df"
-    sha256 cellar: :any_skip_relocation, sonoma:        "91eef6fba03ebf843e79d34efce36156c5516b472639951049405735b87e6bb1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "421138218ebc31e11b1302c7d0dbf6e2ac4daab394c620606ada5531980cbbb1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a93f1725e116d789e17cd905157e3f0466d41cd3ef105aba1b8f843a74a7a2bf"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "88d41959fff2296346b793938ba4a00ffb6d5a8ec2837970923cfaae8ea0030c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "15cbc69776a3b3868d0ec51b308fbeaece9d47ab8e70b782e4eae9bd545fc8df"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "15cbc69776a3b3868d0ec51b308fbeaece9d47ab8e70b782e4eae9bd545fc8df"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "15cbc69776a3b3868d0ec51b308fbeaece9d47ab8e70b782e4eae9bd545fc8df"
+    sha256 cellar: :any_skip_relocation, sonoma:            "91eef6fba03ebf843e79d34efce36156c5516b472639951049405735b87e6bb1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "421138218ebc31e11b1302c7d0dbf6e2ac4daab394c620606ada5531980cbbb1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "a93f1725e116d789e17cd905157e3f0466d41cd3ef105aba1b8f843a74a7a2bf"
   end
 
   depends_on "go" => :build

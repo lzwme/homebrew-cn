@@ -7,12 +7,13 @@ class Rdb < Formula
   head "https://github.com/HDT3213/rdb.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "59096f5bd0c5a0ce3c0e0bbea0c07957f7444e93f831d8f32bfe66cb59dbc2d1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "59096f5bd0c5a0ce3c0e0bbea0c07957f7444e93f831d8f32bfe66cb59dbc2d1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "59096f5bd0c5a0ce3c0e0bbea0c07957f7444e93f831d8f32bfe66cb59dbc2d1"
-    sha256 cellar: :any_skip_relocation, sonoma:        "feb924b719636d6ca54ce25c2a0014ade0509251ac995ebad2706121e4f8f205"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e8f755db491c2468b7d6a377b9d9e909bd6f5b6568ac065196ff5e7d226b018f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ef0137f5abd23ff0fbd7aa7d306b42216b32fa98e9385d48c9ee14612b0132fe"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "bce159d0c84fa960b01cff5afb6113c4ce3951e098d0859b89b7016856b5b547"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "59096f5bd0c5a0ce3c0e0bbea0c07957f7444e93f831d8f32bfe66cb59dbc2d1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "59096f5bd0c5a0ce3c0e0bbea0c07957f7444e93f831d8f32bfe66cb59dbc2d1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "59096f5bd0c5a0ce3c0e0bbea0c07957f7444e93f831d8f32bfe66cb59dbc2d1"
+    sha256 cellar: :any_skip_relocation, sonoma:            "feb924b719636d6ca54ce25c2a0014ade0509251ac995ebad2706121e4f8f205"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "e8f755db491c2468b7d6a377b9d9e909bd6f5b6568ac065196ff5e7d226b018f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "ef0137f5abd23ff0fbd7aa7d306b42216b32fa98e9385d48c9ee14612b0132fe"
   end
 
   depends_on "go" => :build

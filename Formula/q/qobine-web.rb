@@ -8,16 +8,18 @@ class QobineWeb < Formula
 
   livecheck do
     url :stable
+    regex(/^v?(\d+(?:[._-]\d+)+)$/i)
     strategy :github_latest
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1512fa5e84b9fd39cb8d8da7a5da0faa489ce0565a9614ca5e8082ef6abcfa3c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "57bdb2a3c3e980237f3ee32eb6dd244caf0f4eeb29f7191b18ded6068a90a4fd"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9596276f804a901851204f6ff83b729c21f92ef147d98f8bd59ab6c482e1a914"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ad4721477988dc75a72913507245ad278bf879126ab3fdfda8e6a36a5517dbfe"
-    sha256 cellar: :any,                 arm64_linux:   "d9f945f42f08b69986c05392e2795bd51512b027f1b64fa7318c39081d0ec87f"
-    sha256 cellar: :any,                 x86_64_linux:  "5a6e98a656aaffd158393c11b2acabda6e394fbfdd7445dfd59c3ff5d6d0cea4"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "29cd700de259dd6e5889f724038077c8e7e9505f8985a01717fa220cd8a22405"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "1512fa5e84b9fd39cb8d8da7a5da0faa489ce0565a9614ca5e8082ef6abcfa3c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "57bdb2a3c3e980237f3ee32eb6dd244caf0f4eeb29f7191b18ded6068a90a4fd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "9596276f804a901851204f6ff83b729c21f92ef147d98f8bd59ab6c482e1a914"
+    sha256 cellar: :any_skip_relocation, sonoma:            "ad4721477988dc75a72913507245ad278bf879126ab3fdfda8e6a36a5517dbfe"
+    sha256 cellar: :any,                 arm64_linux:       "d9f945f42f08b69986c05392e2795bd51512b027f1b64fa7318c39081d0ec87f"
+    sha256 cellar: :any,                 x86_64_linux:      "5a6e98a656aaffd158393c11b2acabda6e394fbfdd7445dfd59c3ff5d6d0cea4"
   end
 
   depends_on "pkgconf" => :build

@@ -8,12 +8,13 @@ class TrezorBridge < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2292705ad88081147e09d6245be6c0582f14204d88b28adcde3eee6e7f04332b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4402cab315a593f21dc76e910c36b4cc69725185897b78a74e944858bec9a1c6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "103625e34a098ffc03095dc8d8a6e9d7535e00127e7da2785458c4d204798968"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f6a92454ebbb7d44747bbcc621adbf60a78ed2a4c8f2b32f600e92114fede2a4"
-    sha256 cellar: :any,                 arm64_linux:   "3d76a7d87646567b04507282e6a1de848e4bb06cf07c89d89b2bec7a79ac962a"
-    sha256 cellar: :any,                 x86_64_linux:  "20f99f81632453e3136a8ce7a1a087a61c97941ef3985eb558310cf1a02ab1ec"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "073cb7b51c72e127ab95a01830d7bbe79407273a6b6cce699dfe9bda81ef4ddc"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "2292705ad88081147e09d6245be6c0582f14204d88b28adcde3eee6e7f04332b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "4402cab315a593f21dc76e910c36b4cc69725185897b78a74e944858bec9a1c6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "103625e34a098ffc03095dc8d8a6e9d7535e00127e7da2785458c4d204798968"
+    sha256 cellar: :any_skip_relocation, sonoma:            "f6a92454ebbb7d44747bbcc621adbf60a78ed2a4c8f2b32f600e92114fede2a4"
+    sha256 cellar: :any,                 arm64_linux:       "3d76a7d87646567b04507282e6a1de848e4bb06cf07c89d89b2bec7a79ac962a"
+    sha256 cellar: :any,                 x86_64_linux:      "20f99f81632453e3136a8ce7a1a087a61c97941ef3985eb558310cf1a02ab1ec"
   end
 
   depends_on "go" => :build

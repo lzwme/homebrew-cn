@@ -18,11 +18,12 @@ class Qtquick3dphysics < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "ecdcbb982fe5180db74283664265cf1d65a2b98539040706c0c986b9c9c0aa14"
-    sha256 cellar: :any, arm64_sequoia: "4933f561e7a1f58bad969d7689db9b382621d19c53676375c0598fca66e3fc90"
-    sha256 cellar: :any, arm64_sonoma:  "7d0a86ef645420cc313c2b7ab7db0adcc0fbfb97b519ca219ed5b3d68cd54c49"
-    sha256 cellar: :any, arm64_linux:   "ba1506d0e4106d82f769713e667dd5766c56c0433857d24a6dbe06245ea928e9"
-    sha256 cellar: :any, x86_64_linux:  "81ef67966dba6c4418c533e9dec5451320c31d6f354888c6c6b53aa9aee880b3"
+    sha256 cellar: :any, arm64_golden_gate: "519b6b2509ef93c2b71fdf41a4d3621dab3fff66824ebf6ad6ed462405579712"
+    sha256 cellar: :any, arm64_tahoe:       "ecdcbb982fe5180db74283664265cf1d65a2b98539040706c0c986b9c9c0aa14"
+    sha256 cellar: :any, arm64_sequoia:     "4933f561e7a1f58bad969d7689db9b382621d19c53676375c0598fca66e3fc90"
+    sha256 cellar: :any, arm64_sonoma:      "7d0a86ef645420cc313c2b7ab7db0adcc0fbfb97b519ca219ed5b3d68cd54c49"
+    sha256 cellar: :any, arm64_linux:       "ba1506d0e4106d82f769713e667dd5766c56c0433857d24a6dbe06245ea928e9"
+    sha256 cellar: :any, x86_64_linux:      "81ef67966dba6c4418c533e9dec5451320c31d6f354888c6c6b53aa9aee880b3"
   end
 
   depends_on "cmake" => :build

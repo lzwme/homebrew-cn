@@ -12,12 +12,13 @@ class Ocp < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "7f029bd8a9ea98c6a85482757e87978c7abdca9ac088ceda8b3b46d328815381"
-    sha256 arm64_sequoia: "6500942cdd655aedbde7a7d187215bb8e5e0969a3073fe17c277ca6a92d4d0d6"
-    sha256 arm64_sonoma:  "5f3bd8bfdec82a2914ee872553fec8f45c705990b8b8d689553ef3f63b1af8d2"
-    sha256 sonoma:        "48f7c62aa7f0b6120c1171cd645766ba9180e439f21a88bbf8ecfa7997ed19d2"
-    sha256 arm64_linux:   "df9e75706cb63e6c3f0164bc70d671e399d2a3dcc5a0c13093961f230d1a10ba"
-    sha256 x86_64_linux:  "bc4e8d0a25baabe06d61d3c16cf3af0ea861341a5181536376648cc17d23abc1"
+    sha256 arm64_golden_gate: "105092c94082b21c1afe42ce61818d95f2241cdd142ce7d8b6bd815d2a8d77b7"
+    sha256 arm64_tahoe:       "7f029bd8a9ea98c6a85482757e87978c7abdca9ac088ceda8b3b46d328815381"
+    sha256 arm64_sequoia:     "6500942cdd655aedbde7a7d187215bb8e5e0969a3073fe17c277ca6a92d4d0d6"
+    sha256 arm64_sonoma:      "5f3bd8bfdec82a2914ee872553fec8f45c705990b8b8d689553ef3f63b1af8d2"
+    sha256 sonoma:            "48f7c62aa7f0b6120c1171cd645766ba9180e439f21a88bbf8ecfa7997ed19d2"
+    sha256 arm64_linux:       "df9e75706cb63e6c3f0164bc70d671e399d2a3dcc5a0c13093961f230d1a10ba"
+    sha256 x86_64_linux:      "bc4e8d0a25baabe06d61d3c16cf3af0ea861341a5181536376648cc17d23abc1"
   end
 
   depends_on "pkgconf" => :build

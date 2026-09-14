@@ -11,12 +11,13 @@ class Pgbouncer < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "c4d3afb213297e0fe071af4635a3225f45f27ab3a449c53663b34bc7efe9f644"
-    sha256 cellar: :any,                 arm64_sequoia: "1b328b87cabcc6161a51e61071e02f244a309335f75fb4f4441b1848651379b9"
-    sha256 cellar: :any,                 arm64_sonoma:  "e4369885ecf75d2d7dd9682a0b031dcf25d7edb569d6f93d8f3258bd87cd313e"
-    sha256 cellar: :any,                 sonoma:        "a95d4cae40c8395f9208bb5a780cd733536c82f1a44f30ca368e62da5877c78b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7353981ba4bafe80874718e0019b76f406afb220e8429ad4f27ddcd01990b2c0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9f93d001a0478a33b1660a611a60155824f8f69a978f1d974e020e7cee42a3ee"
+    sha256 cellar: :any,                 arm64_golden_gate: "3574150f6dba77cb8f62dfa97d38659067a63cb80661c26947f677a826199a3f"
+    sha256 cellar: :any,                 arm64_tahoe:       "c4d3afb213297e0fe071af4635a3225f45f27ab3a449c53663b34bc7efe9f644"
+    sha256 cellar: :any,                 arm64_sequoia:     "1b328b87cabcc6161a51e61071e02f244a309335f75fb4f4441b1848651379b9"
+    sha256 cellar: :any,                 arm64_sonoma:      "e4369885ecf75d2d7dd9682a0b031dcf25d7edb569d6f93d8f3258bd87cd313e"
+    sha256 cellar: :any,                 sonoma:            "a95d4cae40c8395f9208bb5a780cd733536c82f1a44f30ca368e62da5877c78b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "7353981ba4bafe80874718e0019b76f406afb220e8429ad4f27ddcd01990b2c0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "9f93d001a0478a33b1660a611a60155824f8f69a978f1d974e020e7cee42a3ee"
   end
 
   head do

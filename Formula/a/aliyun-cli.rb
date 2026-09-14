@@ -35,6 +35,12 @@ class AliyunCli < Formula
     end
   end
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     (buildpath/"aliyun-openapi-meta").install resource("aliyun-openapi-meta")
     system "go", "generate", "./bundledmeta"

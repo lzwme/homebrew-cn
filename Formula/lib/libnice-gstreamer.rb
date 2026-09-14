@@ -10,11 +10,12 @@ class LibniceGstreamer < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "4534e775b787529c00fc1f4954c4cb2cd0162e90bd0c687302580d65f5d3ece5"
-    sha256 cellar: :any, arm64_sequoia: "3244ebe9c99c296fff087230259455ca9ec34a70ccf51edf2f9300eaa5290012"
-    sha256 cellar: :any, arm64_sonoma:  "670e31e436f75b1c09fd9683adb166309cf786a868d6e5f702e85052c015fc44"
-    sha256 cellar: :any, arm64_linux:   "56099682e9761c9d01a47e32a4da76fd3cfd1a88a695e8fb6cbe6f25bb4ba7f2"
-    sha256 cellar: :any, x86_64_linux:  "7b5a4536f58eb1f357d29702c92fe935ebd4428ec0f4d41ec66f05bb8e50713f"
+    sha256 cellar: :any, arm64_golden_gate: "eafc930427dddbb9a543d13e039c53779bc93f93cdff7a4fc7f41d518cb190a5"
+    sha256 cellar: :any, arm64_tahoe:       "4534e775b787529c00fc1f4954c4cb2cd0162e90bd0c687302580d65f5d3ece5"
+    sha256 cellar: :any, arm64_sequoia:     "3244ebe9c99c296fff087230259455ca9ec34a70ccf51edf2f9300eaa5290012"
+    sha256 cellar: :any, arm64_sonoma:      "670e31e436f75b1c09fd9683adb166309cf786a868d6e5f702e85052c015fc44"
+    sha256 cellar: :any, arm64_linux:       "56099682e9761c9d01a47e32a4da76fd3cfd1a88a695e8fb6cbe6f25bb4ba7f2"
+    sha256 cellar: :any, x86_64_linux:      "7b5a4536f58eb1f357d29702c92fe935ebd4428ec0f4d41ec66f05bb8e50713f"
   end
 
   depends_on "meson" => :build
@@ -43,7 +44,23 @@ class LibniceGstreamer < Formula
   end
 
   test do
-    system "gst-inspect-1.0", "--exists", "nicesrc"
+    (testpath/"test.c").write <<~C
+      #include <gst/gst.h>
+
+      int main(int argc, char **argv) {
+        gst_init(&argc, &argv);
+        GstElementFactory *factory = gst_element_factory_find("nicesrc");
+        g_assert_nonnull(factory);
+        gst_object_unref(factory);
+        gst_deinit();
+        return 0;
+      }
+    C
+    # Use the library API as `gst-inspect-1.0` starts NSApplication, which hangs without a window server
+    ENV["GST_PLUGIN_SYSTEM_PATH"] = opt_libexec/"gstreamer-1.0"
+    flags = shell_output("pkg-config --cflags --libs gstreamer-1.0").chomp.split
+    system ENV.cc, "test.c", *flags, "-o", "test"
+    system "./test"
   end
 end
 

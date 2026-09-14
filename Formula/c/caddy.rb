@@ -23,7 +23,27 @@ class Caddy < Formula
     sha256 "53c6a9e29965aaf19210ac6470935537040e782101057a199098feb33c2674f8"
   end
 
+  # `test do` block runs a local server
+  deny_network_access! [:build, :postinstall]
+
+  def fetch
+    # caddy's own modules, for the `go run cmd/caddy/main.go` completions step
+    # and as the dependencies of the tagged caddy module xcaddy builds
+    system "go", "mod", "download", "all"
+    # the tagged caddy module itself, resolved by xcaddy at build time
+    system "go", "mod", "download", "github.com/caddyserver/caddy/v2@v#{version}" unless build.head?
+    # xcaddy's own modules
+    resource("xcaddy").stage do
+      system "go", "mod", "download"
+    end
+  end
+
   def install
+    # modules were downloaded and sumdb-verified in `fetch`; the temp module
+    # xcaddy creates has no go.sum, so serve it from the local cache only
+    ENV["GOPROXY"] = "off"
+    ENV["GOSUMDB"] = "off"
+
     revision = build.head? ? version.commit : "v#{version}"
 
     resource("xcaddy").stage do

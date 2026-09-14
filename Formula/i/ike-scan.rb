@@ -39,6 +39,8 @@ class IkeScan < Formula
   depends_on "openssl@3"
 
   def install
+    # The bundled `getopt.h` declares `getopt()` without a prototype, which C23 reads as taking no arguments
+    ENV["ac_cv_prog_cc_c23"] = "no"
     system "autoreconf", "--force", "--install", "--verbose"
     system "./configure", "--mandir=#{man}",
                           "--with-openssl=#{formula_opt_prefix("openssl@3")}",

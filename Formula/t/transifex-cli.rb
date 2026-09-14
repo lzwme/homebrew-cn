@@ -7,12 +7,13 @@ class TransifexCli < Formula
   head "https://github.com/transifex/cli.git", branch: "devel"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6ed869c364c5d0c78fc99f6d243968d9106496cdfe6f2988d8b5896d84ef7844"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6ed869c364c5d0c78fc99f6d243968d9106496cdfe6f2988d8b5896d84ef7844"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6ed869c364c5d0c78fc99f6d243968d9106496cdfe6f2988d8b5896d84ef7844"
-    sha256 cellar: :any_skip_relocation, sonoma:        "88495caac47931836b2734fa283c70c9e626928e457c713d2e32c49ba82d3765"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5dedde2fcec03377ae340910d75567b9cc7605060b69ef4b7a64fd4dcd05b42a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3c1f1bf58470b3681c9b6252c8062cd8200a832d701c81f65132f5b9548470eb"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "fb275bda52e79361d51e3c841dd7b71b58e02c15ef2b8843dafaa2213df88710"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "6ed869c364c5d0c78fc99f6d243968d9106496cdfe6f2988d8b5896d84ef7844"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "6ed869c364c5d0c78fc99f6d243968d9106496cdfe6f2988d8b5896d84ef7844"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "6ed869c364c5d0c78fc99f6d243968d9106496cdfe6f2988d8b5896d84ef7844"
+    sha256 cellar: :any_skip_relocation, sonoma:            "88495caac47931836b2734fa283c70c9e626928e457c713d2e32c49ba82d3765"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "5dedde2fcec03377ae340910d75567b9cc7605060b69ef4b7a64fd4dcd05b42a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "3c1f1bf58470b3681c9b6252c8062cd8200a832d701c81f65132f5b9548470eb"
   end
 
   depends_on "go" => :build

@@ -7,14 +7,15 @@ class OpenapiTui < Formula
   head "https://github.com/zaghaghi/openapi-tui.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "729ecb681e443c4997743c99d139df413b01406076440c6911ce1514c678257d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f7b112fae0439ef77af1a9e09c8a410f01e8c1252b844bc2f7d6b60ab9d07d75"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d599c38c9300b99b49333535053f1b6fc53818c44ee849ff1757a40f58d236d6"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "63b3e891441decfa79e4b67e540c621bd5612ffba84afa88f39331a51288a571"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d97601e0e2591e9f91575a45b4aafd1df30bb1a8e70c45c33a0bba5dfc991c66"
-    sha256 cellar: :any_skip_relocation, ventura:       "4b3b7fbf36c415d947e3036563cf82f868a041599cb4b9a1f527df18f21a6fee"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ef65bdde2ae8c1e3d8ff7732650b2e7191e3521976ceec10438a1e5151f7601c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c1dcf51adfd672b44a54ee82e3e9ba21a8f0021252e50ac40eba70a7ce4e8d5c"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "7966a0576da1b8cc74a54b5195ec69f1661dbf39dfe3adb5983d3366a14fe718"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "729ecb681e443c4997743c99d139df413b01406076440c6911ce1514c678257d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "f7b112fae0439ef77af1a9e09c8a410f01e8c1252b844bc2f7d6b60ab9d07d75"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "d599c38c9300b99b49333535053f1b6fc53818c44ee849ff1757a40f58d236d6"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:     "63b3e891441decfa79e4b67e540c621bd5612ffba84afa88f39331a51288a571"
+    sha256 cellar: :any_skip_relocation, sonoma:            "d97601e0e2591e9f91575a45b4aafd1df30bb1a8e70c45c33a0bba5dfc991c66"
+    sha256 cellar: :any_skip_relocation, ventura:           "4b3b7fbf36c415d947e3036563cf82f868a041599cb4b9a1f527df18f21a6fee"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "ef65bdde2ae8c1e3d8ff7732650b2e7191e3521976ceec10438a1e5151f7601c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "c1dcf51adfd672b44a54ee82e3e9ba21a8f0021252e50ac40eba70a7ce4e8d5c"
   end
 
   depends_on "pkgconf" => :build

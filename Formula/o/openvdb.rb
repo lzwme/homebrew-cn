@@ -18,12 +18,13 @@ class Openvdb < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "3da40ae49c875c33fe3082427990449d36b58efe4e4a521027ed4dd05df3282d"
-    sha256 cellar: :any, arm64_sequoia: "fd013a66ba8876299b4fc74fc300ce40185ba276710da32bd99abaa8200a9f48"
-    sha256 cellar: :any, arm64_sonoma:  "0b54747afa466e2ebbddf6292f48d93ba28de98814f780658ee526eb01a7a769"
-    sha256 cellar: :any, sonoma:        "862bb3dc701dc6d140dc464b8815c3a295df83120f6b9326f8adaba650dd6c9e"
-    sha256 cellar: :any, arm64_linux:   "84438cadcad65e8897d0437884d8050d9a4cac9373cd9fea0e473f8f6cfb1049"
-    sha256 cellar: :any, x86_64_linux:  "5d076c1bf8fe67afe9d695d05bd0d5acb9a5c9ea02e2efa5e1170fce3d6d8956"
+    sha256 cellar: :any, arm64_golden_gate: "4eddefe64505b0ef9ee70e66599f3f5a7aa2637bcb695b193810477f8e3826f1"
+    sha256 cellar: :any, arm64_tahoe:       "3da40ae49c875c33fe3082427990449d36b58efe4e4a521027ed4dd05df3282d"
+    sha256 cellar: :any, arm64_sequoia:     "fd013a66ba8876299b4fc74fc300ce40185ba276710da32bd99abaa8200a9f48"
+    sha256 cellar: :any, arm64_sonoma:      "0b54747afa466e2ebbddf6292f48d93ba28de98814f780658ee526eb01a7a769"
+    sha256 cellar: :any, sonoma:            "862bb3dc701dc6d140dc464b8815c3a295df83120f6b9326f8adaba650dd6c9e"
+    sha256 cellar: :any, arm64_linux:       "84438cadcad65e8897d0437884d8050d9a4cac9373cd9fea0e473f8f6cfb1049"
+    sha256 cellar: :any, x86_64_linux:      "5d076c1bf8fe67afe9d695d05bd0d5acb9a5c9ea02e2efa5e1170fce3d6d8956"
   end
 
   depends_on "cmake" => :build

@@ -14,12 +14,13 @@ class Opensubdiv < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "0008ddc2f7b700de6b4be9c40e34265cd286eb82e2c8f3dbd5644765c7ba7992"
-    sha256 cellar: :any,                 arm64_sequoia: "b4330e55e4bc62714863e6d69ad3865e466fa91dd0eff7fab13bddc683c3afae"
-    sha256 cellar: :any,                 arm64_sonoma:  "34a9b873da0935fc9cc0b68c4100c95bd1b23cc60b59672bb299ba2449b6f94f"
-    sha256 cellar: :any,                 sonoma:        "1d441722962464d68ef89db0062fca468ba4e61ecfbb11192054947202aaa268"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b8a10d139e39100f49e3a599fa968a5e3914d93c9e6ac86ba365ea5fe2116ed1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "110adddf9314496f0f21654961e0a173e72bb02c3c18a50152ab7ceeef52b586"
+    sha256 cellar: :any,                 arm64_golden_gate: "3c2e4c6bbef3c10668f53bdfcb1a20772f6bad5dfb6dce6b56bac5c89f42c09a"
+    sha256 cellar: :any,                 arm64_tahoe:       "0008ddc2f7b700de6b4be9c40e34265cd286eb82e2c8f3dbd5644765c7ba7992"
+    sha256 cellar: :any,                 arm64_sequoia:     "b4330e55e4bc62714863e6d69ad3865e466fa91dd0eff7fab13bddc683c3afae"
+    sha256 cellar: :any,                 arm64_sonoma:      "34a9b873da0935fc9cc0b68c4100c95bd1b23cc60b59672bb299ba2449b6f94f"
+    sha256 cellar: :any,                 sonoma:            "1d441722962464d68ef89db0062fca468ba4e61ecfbb11192054947202aaa268"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "b8a10d139e39100f49e3a599fa968a5e3914d93c9e6ac86ba365ea5fe2116ed1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "110adddf9314496f0f21654961e0a173e72bb02c3c18a50152ab7ceeef52b586"
   end
 
   depends_on "cmake" => :build

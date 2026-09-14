@@ -8,12 +8,13 @@ class Sbtenv < Formula
 
   bottle do
     rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "16ab8bbf880ca983c16aa42dbf63b695ba03e874542ce9aa38dee1adad68a80c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a7dad9deea7c992f38474ddc585024e80e95fcc8a0b9a81e35672a2f584a11bc"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "42b78f776c9ed31932c1e2f922c925787c5d91effabee33586db265c76e9316c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "42b78f776c9ed31932c1e2f922c925787c5d91effabee33586db265c76e9316c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b399cf204ab561ad58a7474bc27bcbe850ddd26ae94fca36f394744a294d6ef1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b399cf204ab561ad58a7474bc27bcbe850ddd26ae94fca36f394744a294d6ef1"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "f24bbe3aaee6ff02dcf79886d011dac6e3bf7ddd82623ad4217bc10d74cb6984"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "16ab8bbf880ca983c16aa42dbf63b695ba03e874542ce9aa38dee1adad68a80c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "a7dad9deea7c992f38474ddc585024e80e95fcc8a0b9a81e35672a2f584a11bc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "42b78f776c9ed31932c1e2f922c925787c5d91effabee33586db265c76e9316c"
+    sha256 cellar: :any_skip_relocation, sonoma:            "42b78f776c9ed31932c1e2f922c925787c5d91effabee33586db265c76e9316c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "b399cf204ab561ad58a7474bc27bcbe850ddd26ae94fca36f394744a294d6ef1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "b399cf204ab561ad58a7474bc27bcbe850ddd26ae94fca36f394744a294d6ef1"
   end
 
   def install

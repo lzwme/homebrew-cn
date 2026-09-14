@@ -6,12 +6,13 @@ class Proxelar < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "1fad1026bd4816fbe670c06d0c0445a5783ff6b930ff8b6afbf85eddafcfdb9c"
-    sha256 cellar: :any, arm64_sequoia: "d143a2b171780859059ca9e04facc4ace2fcc3d2b1897137f10c8a5702b0e9b9"
-    sha256 cellar: :any, arm64_sonoma:  "048a3bc89f12d285d5bc51d09d29290792e0a94643345d1ce0360a6754f5c0cd"
-    sha256 cellar: :any, sonoma:        "7fa9ffd2064347deb33779a5fc904732fea36054aa6ed3e3bf1973a01baec456"
-    sha256 cellar: :any, arm64_linux:   "dde6a18c5092e9993a374c968098935a8236fc7d40a66b6599284c56e2ec0844"
-    sha256 cellar: :any, x86_64_linux:  "b9b6ceba6d4e4cb1267db375c17d43efef594db4e5ff9c33587a32a883088feb"
+    sha256 cellar: :any, arm64_golden_gate: "42faa054a4eb5d929176f346dba6ff74ff96b8db23500b1186e0eb9b73af4829"
+    sha256 cellar: :any, arm64_tahoe:       "1fad1026bd4816fbe670c06d0c0445a5783ff6b930ff8b6afbf85eddafcfdb9c"
+    sha256 cellar: :any, arm64_sequoia:     "d143a2b171780859059ca9e04facc4ace2fcc3d2b1897137f10c8a5702b0e9b9"
+    sha256 cellar: :any, arm64_sonoma:      "048a3bc89f12d285d5bc51d09d29290792e0a94643345d1ce0360a6754f5c0cd"
+    sha256 cellar: :any, sonoma:            "7fa9ffd2064347deb33779a5fc904732fea36054aa6ed3e3bf1973a01baec456"
+    sha256 cellar: :any, arm64_linux:       "dde6a18c5092e9993a374c968098935a8236fc7d40a66b6599284c56e2ec0844"
+    sha256 cellar: :any, x86_64_linux:      "b9b6ceba6d4e4cb1267db375c17d43efef594db4e5ff9c33587a32a883088feb"
   end
 
   depends_on "pkgconf" => :build

@@ -6,12 +6,13 @@ class Nghttp2 < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "2f36cb8a86910371dfcd4963b1d50ae82522c077d37041ed56198181262a3b03"
-    sha256 cellar: :any, arm64_sequoia: "32b441750d304f3621feaf0424880dfb6aa0bb6563fcc85e59bc361a895f45a2"
-    sha256 cellar: :any, arm64_sonoma:  "926f2b7a4c85a24ce41d46bfaf3fe97daa0047233377f44fcd8322967340c72e"
-    sha256 cellar: :any, sonoma:        "3dbdd0376f89bd63e9b473993ad9d5db5dacb46f38b8431d435b1642f33433c0"
-    sha256 cellar: :any, arm64_linux:   "5606a9f74f3670f803f91cab65703119cd264b088f319e79483ecf7ebe4c731a"
-    sha256 cellar: :any, x86_64_linux:  "bb8ceeb4c929cf58760de0004852e160811df4ae409993cd0373409bd851817a"
+    sha256 cellar: :any, arm64_golden_gate: "0dbedfbdaf1b6c1d6869dd86d6f8babe030bf47b6e3ebfa27c2349f57aaddf09"
+    sha256 cellar: :any, arm64_tahoe:       "2f36cb8a86910371dfcd4963b1d50ae82522c077d37041ed56198181262a3b03"
+    sha256 cellar: :any, arm64_sequoia:     "32b441750d304f3621feaf0424880dfb6aa0bb6563fcc85e59bc361a895f45a2"
+    sha256 cellar: :any, arm64_sonoma:      "926f2b7a4c85a24ce41d46bfaf3fe97daa0047233377f44fcd8322967340c72e"
+    sha256 cellar: :any, sonoma:            "3dbdd0376f89bd63e9b473993ad9d5db5dacb46f38b8431d435b1642f33433c0"
+    sha256 cellar: :any, arm64_linux:       "5606a9f74f3670f803f91cab65703119cd264b088f319e79483ecf7ebe4c731a"
+    sha256 cellar: :any, x86_64_linux:      "bb8ceeb4c929cf58760de0004852e160811df4ae409993cd0373409bd851817a"
   end
 
   head do

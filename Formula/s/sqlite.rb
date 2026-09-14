@@ -78,8 +78,7 @@ class Sqlite < Formula
   end
 
   test do
-    path = testpath/"school.sql"
-    path.write <<~SQL
+    school = <<~SQL
       create table students (name text, age integer);
       insert into students (name, age) values ('Bob', 14);
       insert into students (name, age) values ('Sue', 12);
@@ -87,7 +86,7 @@ class Sqlite < Formula
       select name from students order by age asc;
     SQL
 
-    names = shell_output("#{bin}/sqlite3 < #{path}").strip.split("\n")
+    names = pipe_output(bin/"sqlite3", school, 0).strip.split("\n")
     assert_equal %w[Sue Tim Bob], names
   end
 end

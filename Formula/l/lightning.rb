@@ -8,16 +8,17 @@ class Lightning < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:    "e7c4c0c882b4401d5ec4866e90d7f67b719af0b8bfcf62a527e4441b7c18399d"
-    sha256 cellar: :any,                 arm64_sequoia:  "d1d35078fe7268b6f043717f1e8e855ac36bc227f78bae0ee3db7dac45cfbfb0"
-    sha256 cellar: :any,                 arm64_sonoma:   "c473bf328b70cd3d6e61088ced3ecd303dbd240e86e01e3bdfa84d9f41180022"
-    sha256 cellar: :any,                 arm64_ventura:  "e9068aa64aad7d959c4b20534a8b0e2cab3bc5187b5ccf66e0f800ac0fb65cad"
-    sha256 cellar: :any,                 arm64_monterey: "315b27475a274908edb9c5a9f391efacf0888d8ddea0f5b2374a07c11d888978"
-    sha256 cellar: :any,                 sonoma:         "6bbab88edb452016502a26349f899eb4c4a5547b698c6496d78df6ed7c012fb8"
-    sha256 cellar: :any,                 ventura:        "4b560322ed7277918cc27b34064730088f37560d0aec5f8b6e7389db5c5813c2"
-    sha256 cellar: :any,                 monterey:       "149a92d3f323b5f4b52481c3eeba41aad3ba6fede45859159ac3a4de041e0a17"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "5af0fa5ffd268c4d721624a01ee21826d6a5bbcccd277be7f12a6ce1df7f32ac"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f8a31092e058742cf79549bb7d50979296326151bec52214ea580dc823748a20"
+    sha256 cellar: :any,                 arm64_golden_gate: "ec20822e2aef81b0d3e45aa57869f335888f031b5e9a590b9430230a5a4f040f"
+    sha256 cellar: :any,                 arm64_tahoe:       "e7c4c0c882b4401d5ec4866e90d7f67b719af0b8bfcf62a527e4441b7c18399d"
+    sha256 cellar: :any,                 arm64_sequoia:     "d1d35078fe7268b6f043717f1e8e855ac36bc227f78bae0ee3db7dac45cfbfb0"
+    sha256 cellar: :any,                 arm64_sonoma:      "c473bf328b70cd3d6e61088ced3ecd303dbd240e86e01e3bdfa84d9f41180022"
+    sha256 cellar: :any,                 arm64_ventura:     "e9068aa64aad7d959c4b20534a8b0e2cab3bc5187b5ccf66e0f800ac0fb65cad"
+    sha256 cellar: :any,                 arm64_monterey:    "315b27475a274908edb9c5a9f391efacf0888d8ddea0f5b2374a07c11d888978"
+    sha256 cellar: :any,                 sonoma:            "6bbab88edb452016502a26349f899eb4c4a5547b698c6496d78df6ed7c012fb8"
+    sha256 cellar: :any,                 ventura:           "4b560322ed7277918cc27b34064730088f37560d0aec5f8b6e7389db5c5813c2"
+    sha256 cellar: :any,                 monterey:          "149a92d3f323b5f4b52481c3eeba41aad3ba6fede45859159ac3a4de041e0a17"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "5af0fa5ffd268c4d721624a01ee21826d6a5bbcccd277be7f12a6ce1df7f32ac"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "f8a31092e058742cf79549bb7d50979296326151bec52214ea580dc823748a20"
   end
 
   depends_on "binutils" => :build # for libopcodes.a

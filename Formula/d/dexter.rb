@@ -68,11 +68,12 @@ class Dexter < Formula
     system pg_ctl, "initdb", "-D", testpath/"test"
     (testpath/"test/postgresql.conf").write <<~EOS, mode: "a+"
       port = #{port}
+      unix_socket_directories = '#{testpath}'
     EOS
     system pg_ctl, "start", "-D", testpath/"test", "-l", testpath/"log"
 
     begin
-      output = shell_output("#{bin}/dexter -d postgres -p #{port} -s SELECT 1 2>&1", 1)
+      output = shell_output("#{bin}/dexter -h #{testpath} -d postgres -p #{port} -s SELECT 1 2>&1", 1)
       assert_match "Install HypoPG", output
     ensure
       system pg_ctl, "stop", "-D", testpath/"test"

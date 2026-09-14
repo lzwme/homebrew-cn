@@ -7,12 +7,13 @@ class Tfel < Formula
   head "https://github.com/thelfer/tfel.git", branch: "master"
 
   bottle do
-    sha256 arm64_tahoe:   "6c176029b0f9a9a97eba1a77309303a6e21d06f9b732dd36b21a6a906c0af94e"
-    sha256 arm64_sequoia: "c6df35305057ba120a952044049c3b11ec4036453ed0bfe6034ba3ee998b0677"
-    sha256 arm64_sonoma:  "2af5946f1175cfd3ee7e78b27ecca53257c45128b71782bc08692a6c6280965e"
-    sha256 sonoma:        "24947bbb4aa4789ba475114643e7e27301d1c5848963dc79f3cf2c6f827cb2d0"
-    sha256 arm64_linux:   "b0a9c7bbfe1fde48bd5bc46a8504dd1b1337063ab86e215779b3367f9f634607"
-    sha256 x86_64_linux:  "bb7e42bbd5f89718c0be51a12c9ab0af0236dd1bdbdc4eb6a7e48a633d144949"
+    sha256 arm64_golden_gate: "f402ded5aeb71facb8a6912fa51ef1eec82cdf50a802b225cc3ac5cb1ffe2a17"
+    sha256 arm64_tahoe:       "6c176029b0f9a9a97eba1a77309303a6e21d06f9b732dd36b21a6a906c0af94e"
+    sha256 arm64_sequoia:     "c6df35305057ba120a952044049c3b11ec4036453ed0bfe6034ba3ee998b0677"
+    sha256 arm64_sonoma:      "2af5946f1175cfd3ee7e78b27ecca53257c45128b71782bc08692a6c6280965e"
+    sha256 sonoma:            "24947bbb4aa4789ba475114643e7e27301d1c5848963dc79f3cf2c6f827cb2d0"
+    sha256 arm64_linux:       "b0a9c7bbfe1fde48bd5bc46a8504dd1b1337063ab86e215779b3367f9f634607"
+    sha256 x86_64_linux:      "bb7e42bbd5f89718c0be51a12c9ab0af0236dd1bdbdc4eb6a7e48a633d144949"
   end
 
   depends_on "cmake" => :build

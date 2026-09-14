@@ -12,16 +12,17 @@ class Tnftpd < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "9d9d80e1b2f1df559934eb827edb881709d86a7197e56c47fb3fae56b01b4a0c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "b0896487aea674c344c0b0018f331767231546c8269d940de9910f2107a17b26"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d2553f19ea668a58de5f03311347e89a3522e458c9d9482ea3ae4a8825ae34eb"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "846e191bdee68e9a0123e864e7683917efce53a479ecfaa1448422bc512024af"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "011a300c9b49318f006a133c9967d2a5968862e427204d578752b692105070e2"
-    sha256 cellar: :any_skip_relocation, sonoma:         "8985fce13cecf1bc9e202f30ea4a5c9cd19c417ff4eb7afe6cd8d08dfd02a819"
-    sha256 cellar: :any_skip_relocation, ventura:        "80301322ab495d2380c7be37f703293f89b6a0956b27fe6f796ce493ca862da2"
-    sha256 cellar: :any_skip_relocation, monterey:       "1c0f3a77356aa9ea4a691f0388cf4e9ad42002c7d67a09fa18b500d0172abe0c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "59f715a746e1ae9772414c45c5739d3c10061c9a2fac68e0a2efdc0280d08a0f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ef05fc95a88ae0c7ca0fba016115eb2d840d4a218935f39d137f61a5e63144ef"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "81205d7b935f2a7b400870d3b7efeca0fe8213f31992c354c7b1f5c9c843b5b0"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "9d9d80e1b2f1df559934eb827edb881709d86a7197e56c47fb3fae56b01b4a0c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "b0896487aea674c344c0b0018f331767231546c8269d940de9910f2107a17b26"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "d2553f19ea668a58de5f03311347e89a3522e458c9d9482ea3ae4a8825ae34eb"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:     "846e191bdee68e9a0123e864e7683917efce53a479ecfaa1448422bc512024af"
+    sha256 cellar: :any_skip_relocation, arm64_monterey:    "011a300c9b49318f006a133c9967d2a5968862e427204d578752b692105070e2"
+    sha256 cellar: :any_skip_relocation, sonoma:            "8985fce13cecf1bc9e202f30ea4a5c9cd19c417ff4eb7afe6cd8d08dfd02a819"
+    sha256 cellar: :any_skip_relocation, ventura:           "80301322ab495d2380c7be37f703293f89b6a0956b27fe6f796ce493ca862da2"
+    sha256 cellar: :any_skip_relocation, monterey:          "1c0f3a77356aa9ea4a691f0388cf4e9ad42002c7d67a09fa18b500d0172abe0c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "59f715a746e1ae9772414c45c5739d3c10061c9a2fac68e0a2efdc0280d08a0f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "ef05fc95a88ae0c7ca0fba016115eb2d840d4a218935f39d137f61a5e63144ef"
   end
 
   uses_from_macos "bison" => :build

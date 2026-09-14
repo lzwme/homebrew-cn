@@ -8,9 +8,10 @@ class MlxC < Formula
   compatibility_version 1
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "856317588f1e0866678da73ee50ac191bc6aba472096b4bb021bafc582d1ee58"
-    sha256 cellar: :any, arm64_sequoia: "604afaea83fb354c7b487f975275c0fa30760da9a4e3f27cbeba93e70331ffc5"
-    sha256 cellar: :any, arm64_sonoma:  "cb36d918641b9fb2e8e26e70eb2676ffc35b3f46801b0639409d1212a90eecdd"
+    sha256 cellar: :any, arm64_golden_gate: "17af7d8b5c558041f540738c34197c2723fd70dbcfc5fea8f238e1851a21d6b4"
+    sha256 cellar: :any, arm64_tahoe:       "856317588f1e0866678da73ee50ac191bc6aba472096b4bb021bafc582d1ee58"
+    sha256 cellar: :any, arm64_sequoia:     "604afaea83fb354c7b487f975275c0fa30760da9a4e3f27cbeba93e70331ffc5"
+    sha256 cellar: :any, arm64_sonoma:      "cb36d918641b9fb2e8e26e70eb2676ffc35b3f46801b0639409d1212a90eecdd"
   end
 
   depends_on "cmake" => :build

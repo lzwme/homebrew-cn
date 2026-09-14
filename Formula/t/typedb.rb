@@ -6,11 +6,12 @@ class Typedb < Formula
   license "MPL-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "eb0c7e33117933ecf7623250b8bdba248f25ec34da75888bd71c2e62fb61cea2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "26e340b390c297c6e8e78fabb4b45570f205ebae47daecc07c9ccb8ddba4b162"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6eb698e00b9e5b0027bd3a2ce12bff750d0f797c9e0e754f479a1cbc7ead48f7"
-    sha256 cellar: :any,                 arm64_linux:   "9c5c342eaad1058539dd454ed7c602a2d786c8b0a5907b1aabeb91a4cf0413b1"
-    sha256 cellar: :any,                 x86_64_linux:  "8d5a931e92b95fddc71e2aac37d18a20f06a29f2d24dad350549fc44a2778233"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "568678f058e993f1a4d34e16a1fddc1139e3497a25a90451aa9f0ff9b27448ad"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "eb0c7e33117933ecf7623250b8bdba248f25ec34da75888bd71c2e62fb61cea2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "26e340b390c297c6e8e78fabb4b45570f205ebae47daecc07c9ccb8ddba4b162"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "6eb698e00b9e5b0027bd3a2ce12bff750d0f797c9e0e754f479a1cbc7ead48f7"
+    sha256 cellar: :any,                 arm64_linux:       "9c5c342eaad1058539dd454ed7c602a2d786c8b0a5907b1aabeb91a4cf0413b1"
+    sha256 cellar: :any,                 x86_64_linux:      "8d5a931e92b95fddc71e2aac37d18a20f06a29f2d24dad350549fc44a2778233"
   end
 
   depends_on "protobuf" => :build

@@ -11,12 +11,13 @@ class Trader < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "513d2d7550f77217676f2fd6f5514cad6662438f366345104ece54d02ddfcdb1"
-    sha256 arm64_sequoia: "614e2e693386cee1c199613821ea87403750a36f5e47074188688a25fcfa4761"
-    sha256 arm64_sonoma:  "e60620ded40e5c906306b9a9735a20889ba0b5840852eba97fc87ed9337a464c"
-    sha256 sonoma:        "34b3c53eded536df91831ae98f1d9bbdff88f39ada08fd5e65b19be1c33468c3"
-    sha256 arm64_linux:   "0a1a6eff6a87ef20356a17073e7b542a498449c4600af0085d0cda06095adc5a"
-    sha256 x86_64_linux:  "c8944fa86f8d0758ae1bd4aee2490cb00ead898c5c7afa81cee85013324268fe"
+    sha256 arm64_golden_gate: "447ce50093cf5efcde8f489790b9212dff11159e65c0312fb1060db4be0f9135"
+    sha256 arm64_tahoe:       "513d2d7550f77217676f2fd6f5514cad6662438f366345104ece54d02ddfcdb1"
+    sha256 arm64_sequoia:     "614e2e693386cee1c199613821ea87403750a36f5e47074188688a25fcfa4761"
+    sha256 arm64_sonoma:      "e60620ded40e5c906306b9a9735a20889ba0b5840852eba97fc87ed9337a464c"
+    sha256 sonoma:            "34b3c53eded536df91831ae98f1d9bbdff88f39ada08fd5e65b19be1c33468c3"
+    sha256 arm64_linux:       "0a1a6eff6a87ef20356a17073e7b542a498449c4600af0085d0cda06095adc5a"
+    sha256 x86_64_linux:      "c8944fa86f8d0758ae1bd4aee2490cb00ead898c5c7afa81cee85013324268fe"
   end
 
   depends_on "pkgconf" => :build

@@ -6,12 +6,13 @@ class Oatpp < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "1d123435c094ef3f8505f2a0123b98f5bee8686723b01e87b7eac1124319146a"
-    sha256 cellar: :any,                 arm64_sequoia: "9660efd36d9aaa939d7d03d4473cdacb0255c289105c055aa3c66e64b972790a"
-    sha256 cellar: :any,                 arm64_sonoma:  "8d8f998c2c07ed45f917b85a40cc614b6820b263b8e97254d20d1149d6a91104"
-    sha256 cellar: :any,                 sonoma:        "b1a74b30588c204615b87752817736ba6886e0c429228bd2c14164c6dc86bc6a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "81098264566979f91f1c984db6611ef67f766bfe74a4b0ff4fcc6df4a72e2080"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "12218676b146b645b2d7bebafa30e08fdc2a769bba634a161d4473a80384183b"
+    sha256 cellar: :any,                 arm64_golden_gate: "35bc37448aed088082f7f56835ee9918af13c9d97783d7d7b6bb904a87763d0a"
+    sha256 cellar: :any,                 arm64_tahoe:       "1d123435c094ef3f8505f2a0123b98f5bee8686723b01e87b7eac1124319146a"
+    sha256 cellar: :any,                 arm64_sequoia:     "9660efd36d9aaa939d7d03d4473cdacb0255c289105c055aa3c66e64b972790a"
+    sha256 cellar: :any,                 arm64_sonoma:      "8d8f998c2c07ed45f917b85a40cc614b6820b263b8e97254d20d1149d6a91104"
+    sha256 cellar: :any,                 sonoma:            "b1a74b30588c204615b87752817736ba6886e0c429228bd2c14164c6dc86bc6a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "81098264566979f91f1c984db6611ef67f766bfe74a4b0ff4fcc6df4a72e2080"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "12218676b146b645b2d7bebafa30e08fdc2a769bba634a161d4473a80384183b"
   end
 
   depends_on "cmake" => :build

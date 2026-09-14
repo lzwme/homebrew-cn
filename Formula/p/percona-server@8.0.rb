@@ -22,12 +22,13 @@ class PerconaServerAT80 < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "7dbdefce759675d7c4ba887cce8bca497e26c6c28f422a32c6d76fbf810b981a"
-    sha256 arm64_sequoia: "1da65c56489717d417a16f087764696088a91a9101f006901ac855126b3ff135"
-    sha256 arm64_sonoma:  "37e3d848c139355ad5772547ad971d25d5e1bad433a41b0aa65d0c1957e1bfbf"
-    sha256 sonoma:        "6caf0adb3b488f8d0ea2513d5dab3870fcae99e86275e8d42d47222465e84dd6"
-    sha256 arm64_linux:   "48ef9e61d5903f0dd7f780fe5b613fdc1d4bb2001ac11e5159bdbfffbc24408a"
-    sha256 x86_64_linux:  "e0e25d3f8aa9909a78833ce458d9f3745da874574341ffb398d2e07294537785"
+    sha256 arm64_golden_gate: "c4f0cc48b5cf2b574d9e8100183405631bca32c6c910fd77aeb41abf943c1df7"
+    sha256 arm64_tahoe:       "7dbdefce759675d7c4ba887cce8bca497e26c6c28f422a32c6d76fbf810b981a"
+    sha256 arm64_sequoia:     "1da65c56489717d417a16f087764696088a91a9101f006901ac855126b3ff135"
+    sha256 arm64_sonoma:      "37e3d848c139355ad5772547ad971d25d5e1bad433a41b0aa65d0c1957e1bfbf"
+    sha256 sonoma:            "6caf0adb3b488f8d0ea2513d5dab3870fcae99e86275e8d42d47222465e84dd6"
+    sha256 arm64_linux:       "48ef9e61d5903f0dd7f780fe5b613fdc1d4bb2001ac11e5159bdbfffbc24408a"
+    sha256 x86_64_linux:      "e0e25d3f8aa9909a78833ce458d9f3745da874574341ffb398d2e07294537785"
   end
 
   keg_only :versioned_formula

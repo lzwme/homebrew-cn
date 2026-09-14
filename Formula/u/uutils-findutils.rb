@@ -7,12 +7,13 @@ class UutilsFindutils < Formula
   head "https://github.com/uutils/findutils.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "f0b963f1e968acadb40faf068299ff3d95d1141bb6a92b4014183cc001957333"
-    sha256 cellar: :any, arm64_sequoia: "0ff84ee54e9adce4fac0eb5ec3c013eb6ce4e5f625a3b6d20cdb476e55ab38bf"
-    sha256 cellar: :any, arm64_sonoma:  "8f7b577688da476a71ee7f1e3e87457e73871cf38ae07aefe223ac3ed190ad47"
-    sha256 cellar: :any, sonoma:        "09f853a5fc9dae2cf13dc059d1e77126744b764a45ec94279709185442f1d47d"
-    sha256 cellar: :any, arm64_linux:   "f529b71887accd0166c7267a85bfbe978dcd420df91071026e9d2b26a1984919"
-    sha256 cellar: :any, x86_64_linux:  "ba0a289490eae870ea1ef1390d0c842cf87992e009d2616af029db57f877f717"
+    sha256 cellar: :any, arm64_golden_gate: "96d290926be7ea57e8a7a4e2ab2d6a918df021ad817dd96891f0709420579b2c"
+    sha256 cellar: :any, arm64_tahoe:       "f0b963f1e968acadb40faf068299ff3d95d1141bb6a92b4014183cc001957333"
+    sha256 cellar: :any, arm64_sequoia:     "0ff84ee54e9adce4fac0eb5ec3c013eb6ce4e5f625a3b6d20cdb476e55ab38bf"
+    sha256 cellar: :any, arm64_sonoma:      "8f7b577688da476a71ee7f1e3e87457e73871cf38ae07aefe223ac3ed190ad47"
+    sha256 cellar: :any, sonoma:            "09f853a5fc9dae2cf13dc059d1e77126744b764a45ec94279709185442f1d47d"
+    sha256 cellar: :any, arm64_linux:       "f529b71887accd0166c7267a85bfbe978dcd420df91071026e9d2b26a1984919"
+    sha256 cellar: :any, x86_64_linux:      "ba0a289490eae870ea1ef1390d0c842cf87992e009d2616af029db57f877f717"
   end
 
   depends_on "pkgconf" => :build

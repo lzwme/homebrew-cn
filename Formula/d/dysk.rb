@@ -1,19 +1,17 @@
 class Dysk < Formula
   desc "Linux utility to get information on filesystems, like df but better"
   homepage "https://dystroy.org/dysk/"
-  url "https://ghfast.top/https://github.com/Canop/dysk/archive/refs/tags/v3.6.1.tar.gz"
-  sha256 "a712ce25f8c5867a29b699e5e22fed58b8884fb7ca112f01845c7a99b111dce5"
+  url "https://ghfast.top/https://github.com/Canop/dysk/archive/refs/tags/v3.7.0.tar.gz"
+  sha256 "6c53a413f9c79855824116483ebcad7b6cd3cd6d37bbf39698d37e5013b27454"
   license "MIT"
   head "https://github.com/Canop/dysk.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "df0f85c40ec2d9c581d6ca2278266a7fcdd7bdeec31843dffcd712a7d09c1a6d"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "dea69c916d329b8aeae6e1b26c4536fb7c6bef17fd0e9ed466dd8262029a6f74"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "be84ac8a18a71fb296888e015919b4a70ddf4784b5b2f0be3cd5a68fedc89c6d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "2bd2216643ad29247b3edd7019b1e1e1b5acf30468eab7a571887e809b1f8ea3"
-    sha256 cellar: :any_skip_relocation, sonoma:            "d30d40a4f64097ea97d2616541fbe1fcc52e4e657152f56f975a5be0ef8e2166"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "c9e46b3bf8f82e687cf6a3e6b54069236f0648742d36930f606042e5d5c56988"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "d4df4f695dff0b3a457b8553ed3969ec8943d346b170bf36399ab40f2c615639"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "54a0a76468b214139cccc331b2550b72b5c828c9f81c94ce3ad6b1c9d55f7484"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "50f9308833a4a3fb0db5abaf78f0660b0ea72f5af7c7796224f02b048b51af18"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "2dda71ca37e11f36c6d633534efbbe9066db3da1a731c7cd4bd9eb10e799913b"
+    sha256 cellar: :any,                 arm64_linux:       "12f8b2cff7daf8d73da624388d8456b409c6ade50d7b52a198d862196a76cb90"
+    sha256 cellar: :any,                 x86_64_linux:      "47e4f5bf3157c0a14c6a6b3f48f849d2f931fe1925820b429e8b5a42d81de08b"
   end
 
   depends_on "rust" => :build

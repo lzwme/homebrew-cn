@@ -17,12 +17,13 @@ class Vgmstream < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "cc16494090e481166eebd827eba42172321e9d85987897aa2a2e14272215105e"
-    sha256 cellar: :any, arm64_sequoia: "280620bd9a157326fe31cce0bf7575887147a7399a78dcc9950039181b40fa4b"
-    sha256 cellar: :any, arm64_sonoma:  "276590e9e0fb52abccb2ba01d0224308a1b7eaaf06931026024d0fea6a75cec0"
-    sha256 cellar: :any, sonoma:        "48bac949ab508a2070b580a1d273579a1e8ac0f679e40c672b1ee946a12aea8b"
-    sha256 cellar: :any, arm64_linux:   "befa92702eb318b44fbcf4ed8052cbb6541676b45db9f60e47d3fc8a2152b400"
-    sha256 cellar: :any, x86_64_linux:  "cc96639cbdb0e56a3eadf2ff9c6969d52537e961de9cfc9e620c3577ad33b101"
+    sha256 cellar: :any, arm64_golden_gate: "feec60929538026bb46e98a3f86b1b489529733c501bb0e75eedafe0e8b5af6b"
+    sha256 cellar: :any, arm64_tahoe:       "cc16494090e481166eebd827eba42172321e9d85987897aa2a2e14272215105e"
+    sha256 cellar: :any, arm64_sequoia:     "280620bd9a157326fe31cce0bf7575887147a7399a78dcc9950039181b40fa4b"
+    sha256 cellar: :any, arm64_sonoma:      "276590e9e0fb52abccb2ba01d0224308a1b7eaaf06931026024d0fea6a75cec0"
+    sha256 cellar: :any, sonoma:            "48bac949ab508a2070b580a1d273579a1e8ac0f679e40c672b1ee946a12aea8b"
+    sha256 cellar: :any, arm64_linux:       "befa92702eb318b44fbcf4ed8052cbb6541676b45db9f60e47d3fc8a2152b400"
+    sha256 cellar: :any, x86_64_linux:      "cc96639cbdb0e56a3eadf2ff9c6969d52537e961de9cfc9e620c3577ad33b101"
   end
 
   depends_on "cmake" => :build

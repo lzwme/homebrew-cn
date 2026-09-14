@@ -9,12 +9,13 @@ class Archey4 < Formula
 
   bottle do
     rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8b51742b76a0d2c6fa1f889d22c4c1346ff2a1c696adff0e27936ef1b113ee84"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f89f2d74d626422931410d34c7d8b5399ea0751098945065b0225c45751df928"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "892ee32d2fee5bb6c81d0ce7f9d09856eea40d5a1cc47ef3e11d7ff9f534e6d0"
-    sha256 cellar: :any_skip_relocation, sonoma:        "72a8d23ac8b71a3d221173b763cbc0b24741585707134ba3b5a1da295014c721"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2903334f800483b711c76502cde2a16ed6a44c8d2ce4ddeae17a9299a230dad6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fcf85f57e5437fd832700cf479064e7c1d5ee3582abfe235d9b42c51ffb92f70"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "d994a3cfdbf3bc4cc61806bb1a039ad7c02fc68842769081544856a5ac7a3664"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "8b51742b76a0d2c6fa1f889d22c4c1346ff2a1c696adff0e27936ef1b113ee84"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "f89f2d74d626422931410d34c7d8b5399ea0751098945065b0225c45751df928"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "892ee32d2fee5bb6c81d0ce7f9d09856eea40d5a1cc47ef3e11d7ff9f534e6d0"
+    sha256 cellar: :any_skip_relocation, sonoma:            "72a8d23ac8b71a3d221173b763cbc0b24741585707134ba3b5a1da295014c721"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "2903334f800483b711c76502cde2a16ed6a44c8d2ce4ddeae17a9299a230dad6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "fcf85f57e5437fd832700cf479064e7c1d5ee3582abfe235d9b42c51ffb92f70"
   end
 
   depends_on "python@3.14"
@@ -35,6 +36,11 @@ class Archey4 < Formula
 
   test do
     assert_match(version.to_s, shell_output("#{bin}/archey -v"))
-    assert_match(/BSD|Linux|macOS/i, shell_output("#{bin}/archey -j"))
+
+    # Skip the Disk entry, whose `diskutil` call needs DiskArbitration access the sandbox denies
+    (testpath/"config.json").write <<~JSON
+      {"entries": [{"type": "User"}, {"type": "Distro"}, {"type": "Kernel"}, {"type": "Shell"}, {"type": "CPU"}]}
+    JSON
+    assert_match(/BSD|Linux|macOS/i, shell_output("#{bin}/archey -j -c config.json"))
   end
 end

@@ -1,14 +1,14 @@
 class Btfs < Formula
   desc "BitTorrent filesystem based on FUSE"
   homepage "https://github.com/johang/btfs"
-  url "https://ghfast.top/https://github.com/johang/btfs/archive/refs/tags/v3.2.tar.gz"
-  sha256 "f41094e7433b36708bd79e4e2a9431731cbd203c0615aa28a1ac71058126dba1"
+  url "https://ghfast.top/https://github.com/johang/btfs/archive/refs/tags/v3.3.tar.gz"
+  sha256 "9658625244a88e836bfbed53928c104907fc46bdfffb91225284ea8b6947f5a6"
   license "GPL-3.0-only"
   head "https://github.com/johang/btfs.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_linux:  "85a789ee6046d0692ca144856b6206697aabafa54a3c10446a9f62a2bd1c7dd9"
-    sha256 cellar: :any, x86_64_linux: "0fb2ee59c03d09c34c57e7aa211e9dea0fe631f6f8e19229f57bd5b7fc312d80"
+    sha256 cellar: :any, arm64_linux:  "eb948a0bf2357f0e472063f8d92dd06541c129c111420276db81c700d4045101"
+    sha256 cellar: :any, x86_64_linux: "6b2a70164a0ebbd38b1f8b5fcff95d70d1428077eccaa91c0aa040265776930c"
   end
 
   depends_on "autoconf" => :build

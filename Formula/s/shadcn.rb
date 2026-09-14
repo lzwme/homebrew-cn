@@ -6,11 +6,12 @@ class Shadcn < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a363bc7f1384ebf8a930924179035c56e1de2ba388e39d4cfa54a1303c9263d1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a363bc7f1384ebf8a930924179035c56e1de2ba388e39d4cfa54a1303c9263d1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a363bc7f1384ebf8a930924179035c56e1de2ba388e39d4cfa54a1303c9263d1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d4906d77c5e089f5fa0781a627f40c67876f4b7f1d561e97e06629e62d6f319f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d4906d77c5e089f5fa0781a627f40c67876f4b7f1d561e97e06629e62d6f319f"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "4183f081e9a37e1b6c17644f7ae1cb845cba6d730c7cb722dfcf42b04e73f376"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "a363bc7f1384ebf8a930924179035c56e1de2ba388e39d4cfa54a1303c9263d1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "a363bc7f1384ebf8a930924179035c56e1de2ba388e39d4cfa54a1303c9263d1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "a363bc7f1384ebf8a930924179035c56e1de2ba388e39d4cfa54a1303c9263d1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "d4906d77c5e089f5fa0781a627f40c67876f4b7f1d561e97e06629e62d6f319f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "d4906d77c5e089f5fa0781a627f40c67876f4b7f1d561e97e06629e62d6f319f"
   end
 
   depends_on "node"

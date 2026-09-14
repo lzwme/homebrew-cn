@@ -12,12 +12,13 @@ class Wwwoffle < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c4271aaf534eb22540919ee96421505f563d10d36ce5739e601c4dc081ce4aad"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f5a78e7a96141163fc8dd6c96eabdc4f9b6e0dec096fa2f1a1c10ea265821217"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "87d5a20edc5f38d7b798349ad1f4e91757269f302a7418c4d1e9ed4107d345ed"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e8803975add1a42df0e2f76a9383f0adf59b989b65f8160bb583d9cd0005a84e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "17aebaafaf5c692ab2df961a1a62296ffe446b6931be7594c4ab9a2eedfabeac"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f8da30132b4acc20d48d72205eff5fefb3cc1f3ecaaf5aa5a1efa4e1aadd8ea5"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "abf06f89fdfffa4fa0935333f8e4aa3c835b1c38e82c6e97975410f3783f44fb"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "c4271aaf534eb22540919ee96421505f563d10d36ce5739e601c4dc081ce4aad"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "f5a78e7a96141163fc8dd6c96eabdc4f9b6e0dec096fa2f1a1c10ea265821217"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "87d5a20edc5f38d7b798349ad1f4e91757269f302a7418c4d1e9ed4107d345ed"
+    sha256 cellar: :any_skip_relocation, sonoma:            "e8803975add1a42df0e2f76a9383f0adf59b989b65f8160bb583d9cd0005a84e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "17aebaafaf5c692ab2df961a1a62296ffe446b6931be7594c4ab9a2eedfabeac"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "f8da30132b4acc20d48d72205eff5fefb3cc1f3ecaaf5aa5a1efa4e1aadd8ea5"
   end
 
   uses_from_macos "flex" => :build

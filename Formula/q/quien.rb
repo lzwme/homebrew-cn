@@ -6,12 +6,13 @@ class Quien < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b28b9ec48f4cacf36536d308bcd2fc3fd7fbe53f90b192f1e1e87de407fe1a64"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b28b9ec48f4cacf36536d308bcd2fc3fd7fbe53f90b192f1e1e87de407fe1a64"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b28b9ec48f4cacf36536d308bcd2fc3fd7fbe53f90b192f1e1e87de407fe1a64"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7981d981302069d69296469a07f8e68bd5de60062f20c19786fa142d1d07c6c8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3c530c8d14bbaab32a9165ab691aa79b7be5bcd94262c10a77b3aee0097d215d"
-    sha256 cellar: :any,                 x86_64_linux:  "3e78d26c5655431a493d535bf81351fefe38b028790b66d74a4497916247b6f9"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "b036d1ad1027960f69d0a6e1fb2dc88f7e93de724aa48d6cca6a35975bfc27d3"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "b28b9ec48f4cacf36536d308bcd2fc3fd7fbe53f90b192f1e1e87de407fe1a64"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "b28b9ec48f4cacf36536d308bcd2fc3fd7fbe53f90b192f1e1e87de407fe1a64"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "b28b9ec48f4cacf36536d308bcd2fc3fd7fbe53f90b192f1e1e87de407fe1a64"
+    sha256 cellar: :any_skip_relocation, sonoma:            "7981d981302069d69296469a07f8e68bd5de60062f20c19786fa142d1d07c6c8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "3c530c8d14bbaab32a9165ab691aa79b7be5bcd94262c10a77b3aee0097d215d"
+    sha256 cellar: :any,                 x86_64_linux:      "3e78d26c5655431a493d535bf81351fefe38b028790b66d74a4497916247b6f9"
   end
 
   depends_on "go" => :build

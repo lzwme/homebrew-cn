@@ -6,11 +6,12 @@ class Scs < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "f6db9d51d776c83d15310e412256a9c52a53292eb7d8e77ec37d4df2461e5001"
-    sha256 cellar: :any, arm64_sequoia: "82c780f7adb1edc692c76a568269a007dd2a558db460a099d5f3e5729108a832"
-    sha256 cellar: :any, arm64_sonoma:  "f576116ddb1df674d825bed9e3b87181b2666460262dc2da58fb70ac39c40626"
-    sha256 cellar: :any, arm64_linux:   "1fa5340126d56b43eac06eadb71178cc531bee4a7ea0d9719b9f328947b6ccdf"
-    sha256 cellar: :any, x86_64_linux:  "43568cf8a4d26cdf66bf64e45304a8215f7ce52942a8b9e571d748743ca72025"
+    sha256 cellar: :any, arm64_golden_gate: "6c8bf35ba1df7366ea18fb577de9d8c0c5e7dd262777ba45b0a62c4ffef7b10d"
+    sha256 cellar: :any, arm64_tahoe:       "f6db9d51d776c83d15310e412256a9c52a53292eb7d8e77ec37d4df2461e5001"
+    sha256 cellar: :any, arm64_sequoia:     "82c780f7adb1edc692c76a568269a007dd2a558db460a099d5f3e5729108a832"
+    sha256 cellar: :any, arm64_sonoma:      "f576116ddb1df674d825bed9e3b87181b2666460262dc2da58fb70ac39c40626"
+    sha256 cellar: :any, arm64_linux:       "1fa5340126d56b43eac06eadb71178cc531bee4a7ea0d9719b9f328947b6ccdf"
+    sha256 cellar: :any, x86_64_linux:      "43568cf8a4d26cdf66bf64e45304a8215f7ce52942a8b9e571d748743ca72025"
   end
 
   on_linux do

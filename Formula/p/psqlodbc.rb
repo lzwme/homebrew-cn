@@ -15,11 +15,12 @@ class Psqlodbc < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "3bc8fdeb796c89790022b29289ecbce07c02b5d043d3a5b1e5dd1bdf20da069d"
-    sha256 cellar: :any, arm64_sequoia: "7c92ca022fd047403add1bdf3b283cab6b86743664b5ee750e84ec4bff4c56e9"
-    sha256 cellar: :any, arm64_sonoma:  "c64a24e63cb798ffb8f1bd4900cf8f8d1bbede7c7b596214d9d3311b5c3bbdf4"
-    sha256 cellar: :any, arm64_linux:   "a19ab18b33667c9c19ae01695fffb3a7f29c459612c795e38742c68efb2d4cfe"
-    sha256 cellar: :any, x86_64_linux:  "c3ab8790e4dcdc00a4f3a517cd3684c46772fe88c62eb4c9f3699936fa1a0000"
+    sha256 cellar: :any, arm64_golden_gate: "a566314eace5bdd95270f5f298b01c6a04ba7e831461471caf3020394ff9a18c"
+    sha256 cellar: :any, arm64_tahoe:       "3bc8fdeb796c89790022b29289ecbce07c02b5d043d3a5b1e5dd1bdf20da069d"
+    sha256 cellar: :any, arm64_sequoia:     "7c92ca022fd047403add1bdf3b283cab6b86743664b5ee750e84ec4bff4c56e9"
+    sha256 cellar: :any, arm64_sonoma:      "c64a24e63cb798ffb8f1bd4900cf8f8d1bbede7c7b596214d9d3311b5c3bbdf4"
+    sha256 cellar: :any, arm64_linux:       "a19ab18b33667c9c19ae01695fffb3a7f29c459612c795e38742c68efb2d4cfe"
+    sha256 cellar: :any, x86_64_linux:      "c3ab8790e4dcdc00a4f3a517cd3684c46772fe88c62eb4c9f3699936fa1a0000"
   end
 
   depends_on "autoconf" => :build

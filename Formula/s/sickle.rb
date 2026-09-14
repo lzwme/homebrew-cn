@@ -7,12 +7,13 @@ class Sickle < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d4472a3191002f70094fb8bc4356ed355a05d141439be1354b33693c8bdfafcf"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8308015c2c4e6f6dca8a7e24996a0f75cec75690b26c26b1bd0bca68abc4df58"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "969833aabfa228fbbe0914363ac07b376c317410b5bb532bcff2b712ab59c98e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "68038c77f837ba7f1beab356675cae487b9d85cf31c2b9ed949daa07a46708f1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0a94828e78e520c5217f5fda4dfc8ac427367e3fc306baad03aa34e03f7f223a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "43b822b5c393959eb2946ba1c0647f004e4197ab6e0cfe5235ec70aa9365a7bd"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "751264054bb236ca532e416ab833228a36bac7f2250d8644f28a41ca10be2051"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "d4472a3191002f70094fb8bc4356ed355a05d141439be1354b33693c8bdfafcf"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "8308015c2c4e6f6dca8a7e24996a0f75cec75690b26c26b1bd0bca68abc4df58"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "969833aabfa228fbbe0914363ac07b376c317410b5bb532bcff2b712ab59c98e"
+    sha256 cellar: :any_skip_relocation, sonoma:            "68038c77f837ba7f1beab356675cae487b9d85cf31c2b9ed949daa07a46708f1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "0a94828e78e520c5217f5fda4dfc8ac427367e3fc306baad03aa34e03f7f223a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "43b822b5c393959eb2946ba1c0647f004e4197ab6e0cfe5235ec70aa9365a7bd"
   end
 
   on_linux do

@@ -8,12 +8,13 @@ class Whois < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "b03c6f60e1696b0a4f35db508e63332de37554fe43cd114de5a85efaeef24d93"
-    sha256 cellar: :any, arm64_sequoia: "d05cb2e45d5f7022c7c3d93eef166a280b55d6a20fa8c68a81736186b9c419dc"
-    sha256 cellar: :any, arm64_sonoma:  "522d0ac940e860d4a263b93a9e7f643eb4182235006ad1ef17ca381e65c79ec7"
-    sha256 cellar: :any, sonoma:        "de547b318245853bcaed1893fefaab2e7e1ba228b2390af3531f54cb68db5f86"
-    sha256 cellar: :any, arm64_linux:   "7fe2718c85c7b8c984c420a2a919e156acfe5ff78ee1bae98df70367f05288f3"
-    sha256 cellar: :any, x86_64_linux:  "526baec1284e876ff39bb36dae17f1ff89c4ad4117eb6b50a309140f87b31004"
+    sha256 cellar: :any, arm64_golden_gate: "02d9a47393f5b1225324ce5f53e52da6dd6bb7121667a7d7364b2e628aba9145"
+    sha256 cellar: :any, arm64_tahoe:       "b03c6f60e1696b0a4f35db508e63332de37554fe43cd114de5a85efaeef24d93"
+    sha256 cellar: :any, arm64_sequoia:     "d05cb2e45d5f7022c7c3d93eef166a280b55d6a20fa8c68a81736186b9c419dc"
+    sha256 cellar: :any, arm64_sonoma:      "522d0ac940e860d4a263b93a9e7f643eb4182235006ad1ef17ca381e65c79ec7"
+    sha256 cellar: :any, sonoma:            "de547b318245853bcaed1893fefaab2e7e1ba228b2390af3531f54cb68db5f86"
+    sha256 cellar: :any, arm64_linux:       "7fe2718c85c7b8c984c420a2a919e156acfe5ff78ee1bae98df70367f05288f3"
+    sha256 cellar: :any, x86_64_linux:      "526baec1284e876ff39bb36dae17f1ff89c4ad4117eb6b50a309140f87b31004"
   end
 
   keg_only :provided_by_macos

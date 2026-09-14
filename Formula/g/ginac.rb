@@ -11,12 +11,13 @@ class Ginac < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "1dd266f5169a51f56de7328d2e8c14a4a163cbce58c1ec7f37d98c567be6f57d"
-    sha256 cellar: :any,                 arm64_sequoia: "55455f94b98d31f81c40b65369e9d5b933080d9c56ef0a52c04da797f57f6a08"
-    sha256 cellar: :any,                 arm64_sonoma:  "7e4c6e87845fdf4980d559de417705138e8569f1da6a6960efdb6db29fdd4f9a"
-    sha256 cellar: :any,                 sonoma:        "6f2cf5490d43c329faa796449f917358f62fa7b0cd2fb9ccb07a2847095fa3c9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "bf98079efbb1ede70fb28378ccc5b57f94aed5244c2359a6238e3cadc8d0ed27"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3c093bd89027bbead008692395d750aa955e16e82459bd610fb76de5ace53e48"
+    sha256 cellar: :any,                 arm64_golden_gate: "f9556f0176cdb780589c5b8f11a0a712e754cd72d3a8fd2f5186e4a06103f3da"
+    sha256 cellar: :any,                 arm64_tahoe:       "1dd266f5169a51f56de7328d2e8c14a4a163cbce58c1ec7f37d98c567be6f57d"
+    sha256 cellar: :any,                 arm64_sequoia:     "55455f94b98d31f81c40b65369e9d5b933080d9c56ef0a52c04da797f57f6a08"
+    sha256 cellar: :any,                 arm64_sonoma:      "7e4c6e87845fdf4980d559de417705138e8569f1da6a6960efdb6db29fdd4f9a"
+    sha256 cellar: :any,                 sonoma:            "6f2cf5490d43c329faa796449f917358f62fa7b0cd2fb9ccb07a2847095fa3c9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "bf98079efbb1ede70fb28378ccc5b57f94aed5244c2359a6238e3cadc8d0ed27"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "3c093bd89027bbead008692395d750aa955e16e82459bd610fb76de5ace53e48"
   end
 
   depends_on "pkgconf" => :build

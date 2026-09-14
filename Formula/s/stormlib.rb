@@ -7,12 +7,13 @@ class Stormlib < Formula
   head "https://github.com/ladislav-zezula/StormLib.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "eb01da3bc4fd5f900375f2543ee39f03fb878f109eff9f54606faaa668cfc722"
-    sha256 cellar: :any, arm64_sequoia: "fac15e52ced12af3236c07b4247f0c687fa40c6fa7ff41c94823f16c7f20e6ad"
-    sha256 cellar: :any, arm64_sonoma:  "303f4afbd38d37580129a9666aca2fc23e775deb9eaa10308be2f6d250af4b80"
-    sha256 cellar: :any, sonoma:        "c6a04b2548b29f7d188301169d653bbdbaa45df2bfbaa8636df60c73b57ce516"
-    sha256 cellar: :any, arm64_linux:   "6039a46e3b103c3356ccbc94f62204e170d9808502d956063edd3ad7fb609fba"
-    sha256 cellar: :any, x86_64_linux:  "5917da8f3728c4eb24b7da68e0f1e07ee9b70677965f1f92bc1a5aff0179f30c"
+    sha256 cellar: :any, arm64_golden_gate: "db0d82cd7ee4148a70cae54e8a04ad9473e96cb31478cce9e060f0ca051115e8"
+    sha256 cellar: :any, arm64_tahoe:       "eb01da3bc4fd5f900375f2543ee39f03fb878f109eff9f54606faaa668cfc722"
+    sha256 cellar: :any, arm64_sequoia:     "fac15e52ced12af3236c07b4247f0c687fa40c6fa7ff41c94823f16c7f20e6ad"
+    sha256 cellar: :any, arm64_sonoma:      "303f4afbd38d37580129a9666aca2fc23e775deb9eaa10308be2f6d250af4b80"
+    sha256 cellar: :any, sonoma:            "c6a04b2548b29f7d188301169d653bbdbaa45df2bfbaa8636df60c73b57ce516"
+    sha256 cellar: :any, arm64_linux:       "6039a46e3b103c3356ccbc94f62204e170d9808502d956063edd3ad7fb609fba"
+    sha256 cellar: :any, x86_64_linux:      "5917da8f3728c4eb24b7da68e0f1e07ee9b70677965f1f92bc1a5aff0179f30c"
   end
 
   depends_on "cmake" => :build

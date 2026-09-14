@@ -6,12 +6,13 @@ class Heroku < Formula
   license "ISC"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "d813b15fb5f9bb674b2b9378be2a09ab2360af39906cd58e7293564caf94f76a"
-    sha256 cellar: :any, arm64_sequoia: "d813b15fb5f9bb674b2b9378be2a09ab2360af39906cd58e7293564caf94f76a"
-    sha256 cellar: :any, arm64_sonoma:  "d813b15fb5f9bb674b2b9378be2a09ab2360af39906cd58e7293564caf94f76a"
-    sha256 cellar: :any, sonoma:        "fbff6239485dc4cddf0e903e8e21bf6c9d6d586fa7603ab3967614d9a7f757c8"
-    sha256 cellar: :any, arm64_linux:   "289a859174ac2c5efafc5b240bf80eabbc50f6e5da365ef39ab951e2291d5c0e"
-    sha256 cellar: :any, x86_64_linux:  "e3c989090696106a70048c0430ac47733a96672cd1419ae8cf3e73c89a9d404e"
+    sha256 cellar: :any, arm64_golden_gate: "5d899858b77c6598801886ee5b85989774b9f64ca94462605ae0deb14e34f990"
+    sha256 cellar: :any, arm64_tahoe:       "d813b15fb5f9bb674b2b9378be2a09ab2360af39906cd58e7293564caf94f76a"
+    sha256 cellar: :any, arm64_sequoia:     "d813b15fb5f9bb674b2b9378be2a09ab2360af39906cd58e7293564caf94f76a"
+    sha256 cellar: :any, arm64_sonoma:      "d813b15fb5f9bb674b2b9378be2a09ab2360af39906cd58e7293564caf94f76a"
+    sha256 cellar: :any, sonoma:            "fbff6239485dc4cddf0e903e8e21bf6c9d6d586fa7603ab3967614d9a7f757c8"
+    sha256 cellar: :any, arm64_linux:       "289a859174ac2c5efafc5b240bf80eabbc50f6e5da365ef39ab951e2291d5c0e"
+    sha256 cellar: :any, x86_64_linux:      "e3c989090696106a70048c0430ac47733a96672cd1419ae8cf3e73c89a9d404e"
   end
 
   depends_on "node"

@@ -11,14 +11,15 @@ class Scheme48 < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "dd9573e777e45950f016f490b3d37b0e5fd1257d3869dbde62a834ed11aed64a"
-    sha256 arm64_sequoia: "e60e8422a87777d6f55e02a4a33e510d30d86b593b2f67dade9df8836d8cdac8"
-    sha256 arm64_sonoma:  "a832d0cbc2b30a00712198511bc4ca9408e1523bf6ca93bf741780976a307047"
-    sha256 arm64_ventura: "28ed573df3796dd14ca4380097dc117173104e860b44c414c065c047cefce4a1"
-    sha256 sonoma:        "6fe0332fee2ab61f724c9494c00e2519721e4d0cf482c74b5d70d2a68caa044f"
-    sha256 ventura:       "8ba60cefaf8708f4c554e1a1e1b619d6330e28f6aabdb2b7fd623e902cc9d853"
-    sha256 arm64_linux:   "5f34e3f7fb0b982a57c1bc67fb6d5f18d608716833d1a0dc3a4617e8186fbf24"
-    sha256 x86_64_linux:  "cb14bb2342582715834a1ea6dcf22b5c70292396b42b946182c0af189ad989ff"
+    sha256 arm64_golden_gate: "4b1e3aa672b52e7605da9ffe85e9e2b8882b3468025bbbe557566f61493f5967"
+    sha256 arm64_tahoe:       "dd9573e777e45950f016f490b3d37b0e5fd1257d3869dbde62a834ed11aed64a"
+    sha256 arm64_sequoia:     "e60e8422a87777d6f55e02a4a33e510d30d86b593b2f67dade9df8836d8cdac8"
+    sha256 arm64_sonoma:      "a832d0cbc2b30a00712198511bc4ca9408e1523bf6ca93bf741780976a307047"
+    sha256 arm64_ventura:     "28ed573df3796dd14ca4380097dc117173104e860b44c414c065c047cefce4a1"
+    sha256 sonoma:            "6fe0332fee2ab61f724c9494c00e2519721e4d0cf482c74b5d70d2a68caa044f"
+    sha256 ventura:           "8ba60cefaf8708f4c554e1a1e1b619d6330e28f6aabdb2b7fd623e902cc9d853"
+    sha256 arm64_linux:       "5f34e3f7fb0b982a57c1bc67fb6d5f18d608716833d1a0dc3a4617e8186fbf24"
+    sha256 x86_64_linux:      "cb14bb2342582715834a1ea6dcf22b5c70292396b42b946182c0af189ad989ff"
   end
 
   conflicts_with "gambit-scheme", because: "both install `scheme-r5rs` binaries"

@@ -8,14 +8,15 @@ class Pulledpork < Formula
   head "https://github.com/shirkdog/pulledpork.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "291de857f6a091088c7b8d91b0a49e34401673649fdcebee214df00735faa49f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "291de857f6a091088c7b8d91b0a49e34401673649fdcebee214df00735faa49f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "291de857f6a091088c7b8d91b0a49e34401673649fdcebee214df00735faa49f"
-    sha256 cellar: :any_skip_relocation, tahoe:         "47e4de601056914f05561e121cf440a8ee83dda645c750eb3e7e64702b9f78c0"
-    sha256 cellar: :any_skip_relocation, sequoia:       "47e4de601056914f05561e121cf440a8ee83dda645c750eb3e7e64702b9f78c0"
-    sha256 cellar: :any_skip_relocation, sonoma:        "47e4de601056914f05561e121cf440a8ee83dda645c750eb3e7e64702b9f78c0"
-    sha256 cellar: :any,                 arm64_linux:   "04a7b53f00fcb33e5f1e49997284537a91bdf20664a23bdbdca6a4eed03cf6f1"
-    sha256 cellar: :any,                 x86_64_linux:  "2f4d1da872c5d273e5a637684e375304a91a8b65a53002bded83b9c10712afbb"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "ba1a9de9e974dd6a18972b171e40e437876094f345377ceb8a681ba923b172b6"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "291de857f6a091088c7b8d91b0a49e34401673649fdcebee214df00735faa49f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "291de857f6a091088c7b8d91b0a49e34401673649fdcebee214df00735faa49f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "291de857f6a091088c7b8d91b0a49e34401673649fdcebee214df00735faa49f"
+    sha256 cellar: :any_skip_relocation, tahoe:             "47e4de601056914f05561e121cf440a8ee83dda645c750eb3e7e64702b9f78c0"
+    sha256 cellar: :any_skip_relocation, sequoia:           "47e4de601056914f05561e121cf440a8ee83dda645c750eb3e7e64702b9f78c0"
+    sha256 cellar: :any_skip_relocation, sonoma:            "47e4de601056914f05561e121cf440a8ee83dda645c750eb3e7e64702b9f78c0"
+    sha256 cellar: :any,                 arm64_linux:       "04a7b53f00fcb33e5f1e49997284537a91bdf20664a23bdbdca6a4eed03cf6f1"
+    sha256 cellar: :any,                 x86_64_linux:      "2f4d1da872c5d273e5a637684e375304a91a8b65a53002bded83b9c10712afbb"
   end
 
   uses_from_macos "perl"

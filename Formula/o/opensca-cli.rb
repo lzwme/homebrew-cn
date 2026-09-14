@@ -7,12 +7,13 @@ class OpenscaCli < Formula
   head "https://github.com/XmirrorSecurity/OpenSCA-cli.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "43fd59165cf9a27004a30db23a82d7286d76a682990ce8e6ed7d5acead05c392"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "555cd679751baf31a842e2e861963346a1ed000f40f6309725743151a3cbefe2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "831eb3aec87ca87963cb635b44a11fa3dab01812a95e10dfd15bd800e63728b9"
-    sha256 cellar: :any_skip_relocation, sonoma:        "cb58aaf885bce3f95038d88d9c5fc46a80382e5d832f37cbb11654a345839c95"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "253979991c7ceda8f70377422d2ff31238fbb932018d73ad9e5bc0392c97a85c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fdf4a47dc3bbda7c13b597afe0fec8f18f137d6130b7ff602fbf10c411453639"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "e9a78eed0a02d43fe80c746ed1ee50c9ebe031277603580fd5868477a1d513d1"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "43fd59165cf9a27004a30db23a82d7286d76a682990ce8e6ed7d5acead05c392"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "555cd679751baf31a842e2e861963346a1ed000f40f6309725743151a3cbefe2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "831eb3aec87ca87963cb635b44a11fa3dab01812a95e10dfd15bd800e63728b9"
+    sha256 cellar: :any_skip_relocation, sonoma:            "cb58aaf885bce3f95038d88d9c5fc46a80382e5d832f37cbb11654a345839c95"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "253979991c7ceda8f70377422d2ff31238fbb932018d73ad9e5bc0392c97a85c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "fdf4a47dc3bbda7c13b597afe0fec8f18f137d6130b7ff602fbf10c411453639"
   end
 
   depends_on "go" => :build

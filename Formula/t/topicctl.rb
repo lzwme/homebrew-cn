@@ -7,12 +7,13 @@ class Topicctl < Formula
   head "https://github.com/segmentio/topicctl.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a0f833e3ff25e07ca3d19276f3ab81af1510ea96b000f3245904a7ba8eb48471"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a0f833e3ff25e07ca3d19276f3ab81af1510ea96b000f3245904a7ba8eb48471"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a0f833e3ff25e07ca3d19276f3ab81af1510ea96b000f3245904a7ba8eb48471"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d17132aaaf3c3cfb8e9e90b9daa34622d53af4a6545cce47a4c28a71a7bac4b0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "81ce8ff37b015a67bef328e2fa8eb62344d526a2c7b3559126025d642ed6812e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "60bef3b8fa1cf53ef4e87016c5e475649eb67430985b36657be306a6b5e4780f"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "4b38e3fad75bfd63d8bbbe876e4ffcb28aee17de682e7c815a066a36c98e954f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "a0f833e3ff25e07ca3d19276f3ab81af1510ea96b000f3245904a7ba8eb48471"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "a0f833e3ff25e07ca3d19276f3ab81af1510ea96b000f3245904a7ba8eb48471"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "a0f833e3ff25e07ca3d19276f3ab81af1510ea96b000f3245904a7ba8eb48471"
+    sha256 cellar: :any_skip_relocation, sonoma:            "d17132aaaf3c3cfb8e9e90b9daa34622d53af4a6545cce47a4c28a71a7bac4b0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "81ce8ff37b015a67bef328e2fa8eb62344d526a2c7b3559126025d642ed6812e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "60bef3b8fa1cf53ef4e87016c5e475649eb67430985b36657be306a6b5e4780f"
   end
 
   depends_on "go" => :build

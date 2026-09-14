@@ -7,12 +7,13 @@ class TfSummarize < Formula
   head "https://github.com/dineshba/tf-summarize.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2334652999366aa46838b87e1f3f5f2a07130a26268707f29898fe216e4bbef6"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2334652999366aa46838b87e1f3f5f2a07130a26268707f29898fe216e4bbef6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2334652999366aa46838b87e1f3f5f2a07130a26268707f29898fe216e4bbef6"
-    sha256 cellar: :any_skip_relocation, sonoma:        "58861206aaff1656dcf4ce76441d734c233ad6a30742edc2e4eb39b001a5fd04"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "748e71928987b8a3dc5a2bb6917de52ad01637b66eb08a748f2565f0b249721f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e06d54a3fa8a91d5a9e3e006ec589d0f2fb9c8be2236b5ca39a7c713ee20dccc"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "a52a7aff34d2d091576e7bfc6db5b28b06ffc7302436d8cc3127341d510877b3"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "2334652999366aa46838b87e1f3f5f2a07130a26268707f29898fe216e4bbef6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "2334652999366aa46838b87e1f3f5f2a07130a26268707f29898fe216e4bbef6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "2334652999366aa46838b87e1f3f5f2a07130a26268707f29898fe216e4bbef6"
+    sha256 cellar: :any_skip_relocation, sonoma:            "58861206aaff1656dcf4ce76441d734c233ad6a30742edc2e4eb39b001a5fd04"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "748e71928987b8a3dc5a2bb6917de52ad01637b66eb08a748f2565f0b249721f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "e06d54a3fa8a91d5a9e3e006ec589d0f2fb9c8be2236b5ca39a7c713ee20dccc"
   end
 
   depends_on "go" => :build

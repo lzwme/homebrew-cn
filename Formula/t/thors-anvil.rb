@@ -8,12 +8,13 @@ class ThorsAnvil < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "2544b7aa94ce443da0d0ae863a181e29ac0c6fba861c9eabca8fb341181a05c2"
-    sha256 cellar: :any, arm64_sequoia: "a5751ffc5b5c81c242e4c34f5e0f7120a5e67dcc0b66c9e54dcc50bf30d15a0d"
-    sha256 cellar: :any, arm64_sonoma:  "78b1dada91506f410ed24d7e8e3fdeda40e9a42853a033d2590faec265c1d84e"
-    sha256 cellar: :any, sonoma:        "7d8bb0fd63ab2d0f8d733c1f1166faa39fd2ed0aabe922300b5ad23e02147b6c"
-    sha256 cellar: :any, arm64_linux:   "2bb706d4679b692f40111dd490c55d99aeaf64cadd63fba352fdbea47ccdfea1"
-    sha256 cellar: :any, x86_64_linux:  "b5fcf673d47240a619240294336cf441c4aed32fb7635b6f3b0ec543b3e4465d"
+    sha256 cellar: :any, arm64_golden_gate: "0871d946f7696f334fa8d6426616e3e3e8c063ad4c4df771ad4aec7fdf6821c1"
+    sha256 cellar: :any, arm64_tahoe:       "2544b7aa94ce443da0d0ae863a181e29ac0c6fba861c9eabca8fb341181a05c2"
+    sha256 cellar: :any, arm64_sequoia:     "a5751ffc5b5c81c242e4c34f5e0f7120a5e67dcc0b66c9e54dcc50bf30d15a0d"
+    sha256 cellar: :any, arm64_sonoma:      "78b1dada91506f410ed24d7e8e3fdeda40e9a42853a033d2590faec265c1d84e"
+    sha256 cellar: :any, sonoma:            "7d8bb0fd63ab2d0f8d733c1f1166faa39fd2ed0aabe922300b5ad23e02147b6c"
+    sha256 cellar: :any, arm64_linux:       "2bb706d4679b692f40111dd490c55d99aeaf64cadd63fba352fdbea47ccdfea1"
+    sha256 cellar: :any, x86_64_linux:      "b5fcf673d47240a619240294336cf441c4aed32fb7635b6f3b0ec543b3e4465d"
   end
 
   depends_on "cmake" => :build

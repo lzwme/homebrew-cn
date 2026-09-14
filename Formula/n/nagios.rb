@@ -7,12 +7,13 @@ class Nagios < Formula
   head "https://github.com/NagiosEnterprises/nagioscore.git", branch: "master"
 
   bottle do
-    sha256 arm64_tahoe:   "ba4c8b095224835ee6c835b58b2f609110e7a5df460d42ebcb686141d5063f47"
-    sha256 arm64_sequoia: "50a64fd089e465294abcf6f70516d7fde65aa6260ea32f25eb387bc6c85bf75a"
-    sha256 arm64_sonoma:  "a196eb64fd6d0fd3f2bcaefa579538bd8664f1de9e4cbf6c76f30c01d776582f"
-    sha256 sonoma:        "b92f4b00522b8cdb201935e841aae21c81d97d0f06a2b1fbd63e68564a771a07"
-    sha256 arm64_linux:   "cacba4d0bdf32593ad267845828586f06cae71f45f49e960db5e78bef9dab1cd"
-    sha256 x86_64_linux:  "024222f9b5f370620b8064b39b6a936865e2f27071d1f1f728b245918993cdc0"
+    sha256 arm64_golden_gate: "99dc9a2ffde766966494520e6a10ceb4e3a7860d78997de82ede4982666c2b84"
+    sha256 arm64_tahoe:       "ba4c8b095224835ee6c835b58b2f609110e7a5df460d42ebcb686141d5063f47"
+    sha256 arm64_sequoia:     "50a64fd089e465294abcf6f70516d7fde65aa6260ea32f25eb387bc6c85bf75a"
+    sha256 arm64_sonoma:      "a196eb64fd6d0fd3f2bcaefa579538bd8664f1de9e4cbf6c76f30c01d776582f"
+    sha256 sonoma:            "b92f4b00522b8cdb201935e841aae21c81d97d0f06a2b1fbd63e68564a771a07"
+    sha256 arm64_linux:       "cacba4d0bdf32593ad267845828586f06cae71f45f49e960db5e78bef9dab1cd"
+    sha256 x86_64_linux:      "024222f9b5f370620b8064b39b6a936865e2f27071d1f1f728b245918993cdc0"
   end
 
   depends_on "gd"

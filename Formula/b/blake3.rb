@@ -61,12 +61,9 @@ class Blake3 < Formula
         return 0;
       }
     C
-    (testpath/"input.txt").write <<~EOS
-      content
-    EOS
 
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lblake3", "-o", "test"
-    output = shell_output("./test <input.txt")
+    output = pipe_output("./test", "content\n", 0)
     assert_equal "df0c40684c6bda3958244ee330300fdcbc5a37fb7ae06fe886b786bc474be87e", output.strip
   end
 end

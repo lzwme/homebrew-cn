@@ -10,12 +10,13 @@ class Localstack < Formula
   compatibility_version 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "033de202780606553b5c72bd3c2726f172ab08e02d3e7340eebcf682350588b0"
-    sha256 cellar: :any,                 arm64_sequoia: "374b80d0a03a480d3edf94ebf8d9a67805e04a8d4ea54acf6d4ee8ab05d441d6"
-    sha256 cellar: :any,                 arm64_sonoma:  "0f98dcffd60abd8cc0cf2ab10ba9881d283499efd227fb5ad65602881c87e1b8"
-    sha256 cellar: :any,                 sonoma:        "ba1360350a72ce74d606a56cf98d0ba451f2fe412ad3cf189a7dc08924c11bfb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9448e8cda2d0bd73af1379d6fcf3ac78803cbaa2616de85323e5284d076914dd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2070d591c53fc3564d7f25872e11332b6ed55e554488fbcf00cdee1aa1f1a3f4"
+    sha256 cellar: :any,                 arm64_golden_gate: "03c8289ebbd5e66ef6b9974ad47ebea59ada9ca355d8be827c41fcb73f313e66"
+    sha256 cellar: :any,                 arm64_tahoe:       "033de202780606553b5c72bd3c2726f172ab08e02d3e7340eebcf682350588b0"
+    sha256 cellar: :any,                 arm64_sequoia:     "374b80d0a03a480d3edf94ebf8d9a67805e04a8d4ea54acf6d4ee8ab05d441d6"
+    sha256 cellar: :any,                 arm64_sonoma:      "0f98dcffd60abd8cc0cf2ab10ba9881d283499efd227fb5ad65602881c87e1b8"
+    sha256 cellar: :any,                 sonoma:            "ba1360350a72ce74d606a56cf98d0ba451f2fe412ad3cf189a7dc08924c11bfb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "9448e8cda2d0bd73af1379d6fcf3ac78803cbaa2616de85323e5284d076914dd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "2070d591c53fc3564d7f25872e11332b6ed55e554488fbcf00cdee1aa1f1a3f4"
   end
 
   # Project got archived on 2026-03-23 per https://github.com/localstack/localstack/pull/13901

@@ -9,14 +9,15 @@ class Wordnet < Formula
   revision 2
 
   bottle do
-    sha256                               arm64_tahoe:   "c76614f1a228d94b2470a7b931ae833377ae13d1214cff36d6a93b5fb7da4ae5"
-    sha256                               arm64_sequoia: "13c3f71489c21a26e9ccab1c57d9021c705fe548ac756787e2641b90a1eadfb9"
-    sha256                               arm64_sonoma:  "3189324a36718d3838b41231d17611873cc112740c6179f1672b66a5f7f02530"
-    sha256                               arm64_ventura: "2bce686ad3f16170016ca525ec1908fb76693909f86e7393650e8a411574601a"
-    sha256                               sonoma:        "3997310820375bfe93b6cf3512aa70993d47a2a67e54df6140ccbaf736486ada"
-    sha256                               ventura:       "323f706e54cc2cb19f4bde6dd703c462337f25763ff8bf9fa52498a10c2a78c7"
-    sha256                               arm64_linux:   "3a67f8e72a2b2c2b3119386adefe9ccf353c45bb05598aef4970be2bbe64da1d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b5090e0ee1251e6d13e6c77024a0d1f18e0b6d563a4ced176d3c2cd1fffb52b7"
+    sha256                               arm64_golden_gate: "6757e4300df24c3411c394995096793fbc4e3c5603be77277dfb18f5a4da8f69"
+    sha256                               arm64_tahoe:       "c76614f1a228d94b2470a7b931ae833377ae13d1214cff36d6a93b5fb7da4ae5"
+    sha256                               arm64_sequoia:     "13c3f71489c21a26e9ccab1c57d9021c705fe548ac756787e2641b90a1eadfb9"
+    sha256                               arm64_sonoma:      "3189324a36718d3838b41231d17611873cc112740c6179f1672b66a5f7f02530"
+    sha256                               arm64_ventura:     "2bce686ad3f16170016ca525ec1908fb76693909f86e7393650e8a411574601a"
+    sha256                               sonoma:            "3997310820375bfe93b6cf3512aa70993d47a2a67e54df6140ccbaf736486ada"
+    sha256                               ventura:           "323f706e54cc2cb19f4bde6dd703c462337f25763ff8bf9fa52498a10c2a78c7"
+    sha256                               arm64_linux:       "3a67f8e72a2b2c2b3119386adefe9ccf353c45bb05598aef4970be2bbe64da1d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "b5090e0ee1251e6d13e6c77024a0d1f18e0b6d563a4ced176d3c2cd1fffb52b7"
   end
 
   # From homepage: "Princeton WordNet is no longer developed, though the

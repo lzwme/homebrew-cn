@@ -17,11 +17,12 @@ class Qtlottie < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "88f9bf69594f0321ff944c4d81e82aacc739c00f795c2a4c5aa5bea97fe4d93b"
-    sha256 cellar: :any, arm64_sequoia: "033b4168856c2af8735b16a260db67c8c61abdf84ceb92ef406de1bb8b800c52"
-    sha256 cellar: :any, arm64_sonoma:  "d63f853c991d1cce8f67e120696c3d8acce12ca861c3b64b1cb744e5d32e440e"
-    sha256 cellar: :any, arm64_linux:   "fb9fb5f95a4c3916121201f37a7a1d2abbdc1bc54dcda3679a7ad455f09fcb0c"
-    sha256 cellar: :any, x86_64_linux:  "55b7094b45bd78098fd724d49ff2ccead5e839998dee61d251f952996e782b7d"
+    sha256 cellar: :any, arm64_golden_gate: "12a16e7f8e8cdee72f0d2c6132211f7535a4026900bb8166eb1fc2983b85ff73"
+    sha256 cellar: :any, arm64_tahoe:       "88f9bf69594f0321ff944c4d81e82aacc739c00f795c2a4c5aa5bea97fe4d93b"
+    sha256 cellar: :any, arm64_sequoia:     "033b4168856c2af8735b16a260db67c8c61abdf84ceb92ef406de1bb8b800c52"
+    sha256 cellar: :any, arm64_sonoma:      "d63f853c991d1cce8f67e120696c3d8acce12ca861c3b64b1cb744e5d32e440e"
+    sha256 cellar: :any, arm64_linux:       "fb9fb5f95a4c3916121201f37a7a1d2abbdc1bc54dcda3679a7ad455f09fcb0c"
+    sha256 cellar: :any, x86_64_linux:      "55b7094b45bd78098fd724d49ff2ccead5e839998dee61d251f952996e782b7d"
   end
 
   depends_on "cmake" => [:build, :test]

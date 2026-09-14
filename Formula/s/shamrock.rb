@@ -9,12 +9,13 @@ class Shamrock < Formula
 
   bottle do
     rebuild 1
-    sha256 arm64_tahoe:   "3a4b6abe7311675747688a24a4b69fe4794439064ff1372ddb18ed1b6685e0d3"
-    sha256 arm64_sequoia: "c8e5075287712f42b20206af5e925a59a10a5c003a82b3a40a26fe5b31f48cd3"
-    sha256 arm64_sonoma:  "ad89ac895bc5a48070c2e4b549aab4e065a47da7c769b1515aa506c34ea1ac37"
-    sha256 sonoma:        "aa9ef69b838248a8a97c0324a185e5dfc90dd0499e7a6a6a788021c47ee1b5ec"
-    sha256 arm64_linux:   "6e84aedba59883745395064325e3b323878fcae2adbd82dc72f6afbd6186a9fa"
-    sha256 x86_64_linux:  "b1859d212b43118e69cd090125643b38dace8695b78edca1666d35e94191e704"
+    sha256 arm64_golden_gate: "568ca8a0f5fa9aee81cabd12f39f6febf6a08073b52b257f85dfc4007625d92f"
+    sha256 arm64_tahoe:       "3a4b6abe7311675747688a24a4b69fe4794439064ff1372ddb18ed1b6685e0d3"
+    sha256 arm64_sequoia:     "c8e5075287712f42b20206af5e925a59a10a5c003a82b3a40a26fe5b31f48cd3"
+    sha256 arm64_sonoma:      "ad89ac895bc5a48070c2e4b549aab4e065a47da7c769b1515aa506c34ea1ac37"
+    sha256 sonoma:            "aa9ef69b838248a8a97c0324a185e5dfc90dd0499e7a6a6a788021c47ee1b5ec"
+    sha256 arm64_linux:       "6e84aedba59883745395064325e3b323878fcae2adbd82dc72f6afbd6186a9fa"
+    sha256 x86_64_linux:      "b1859d212b43118e69cd090125643b38dace8695b78edca1666d35e94191e704"
   end
 
   depends_on "cmake" => :build

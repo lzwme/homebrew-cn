@@ -17,11 +17,12 @@ class Qtquickeffectmaker < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "288817f8a66f41eb5423f51289f362db89cb71853cbf7e8f0d6af1073effa57f"
-    sha256 cellar: :any, arm64_sequoia: "7489be83a2c6e8694a9047a39b34b3ca204be82eb1ba8b5f8882c5b38e00e707"
-    sha256 cellar: :any, arm64_sonoma:  "3e4270cd70792ea185f490a8836ad11e66e11047c62cc720dee7a8f0d75d24c4"
-    sha256 cellar: :any, arm64_linux:   "928b4d079f08e96bffc681305466a297884e32c46e3ea94c94f4640046b33048"
-    sha256 cellar: :any, x86_64_linux:  "0400bd1a31f0b37ebe22250b40a00da201449ed86d3da530fe500ed3d3fdd5ef"
+    sha256 cellar: :any, arm64_golden_gate: "b4a8f7b0d7f852ca54a3a58dbf105051d18d340893d9d34228d6568ae8605f89"
+    sha256 cellar: :any, arm64_tahoe:       "288817f8a66f41eb5423f51289f362db89cb71853cbf7e8f0d6af1073effa57f"
+    sha256 cellar: :any, arm64_sequoia:     "7489be83a2c6e8694a9047a39b34b3ca204be82eb1ba8b5f8882c5b38e00e707"
+    sha256 cellar: :any, arm64_sonoma:      "3e4270cd70792ea185f490a8836ad11e66e11047c62cc720dee7a8f0d75d24c4"
+    sha256 cellar: :any, arm64_linux:       "928b4d079f08e96bffc681305466a297884e32c46e3ea94c94f4640046b33048"
+    sha256 cellar: :any, x86_64_linux:      "0400bd1a31f0b37ebe22250b40a00da201449ed86d3da530fe500ed3d3fdd5ef"
   end
 
   depends_on "cmake" => :build
