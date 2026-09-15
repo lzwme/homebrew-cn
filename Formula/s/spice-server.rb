@@ -8,13 +8,12 @@ class SpiceServer < Formula
   head "https://gitlab.freedesktop.org/spice/spice.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "07095428a0e9637309224c9dc6302a91caa37e2b22f8a678bf5c2a21d250b7ee"
-    sha256 cellar: :any,                 arm64_sequoia: "0f9f963c11eb9ee7b46b8a0bbf09d6bf41c5aed8f9efee35bfd8f79876c3fc48"
-    sha256 cellar: :any,                 arm64_sonoma:  "ca403a88aa347d491f11d11a909293a90ac40253200cadc91c6ec6f62e3a628e"
-    sha256 cellar: :any,                 sonoma:        "222e8fd73393fb53e9b48f137d4d68abc5be1c7d99dfdeb54f430ac31af2c2a2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "896f8baf333c39adb63fc0e59a7169a09e2b667d992d1d0ae305cdfa1703ecb3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e5a261c1f9a99a02795a3530791493d4992ca792c5f9ba30204149b47a0701df"
+    rebuild 2
+    sha256 cellar: :any, arm64_golden_gate: "d4d8192eb6b44f8be4e3a078b632552c96e37babb68bdbd016a4030f2fbb5ef8"
+    sha256 cellar: :any, arm64_tahoe:       "369e7eee34a62e07f1453ff10ea53932cd9103d5042f2e3a5cee55dca8aef5ab"
+    sha256 cellar: :any, arm64_sequoia:     "e64d2a5ebef5e1548ce96439a4ed62d7914bec80ab3cfb6a37101989a0c89a0c"
+    sha256 cellar: :any, arm64_linux:       "0d3712e31816c6d091af1f11aac074dbb6d1cd3d283430f7d568255b2b1ae42c"
+    sha256 cellar: :any, x86_64_linux:      "ad95a65263c086fb33453cee6c9452987dc002d85f4b348913eed1f431b00316"
   end
 
   depends_on "spice-protocol" => [:build, :test]
@@ -45,6 +44,9 @@ class SpiceServer < Formula
       --sysconfdir=#{etc}
       --localstatedir=#{var}
     ]
+    # Avoid running gst-inspect-1.0 which stalls in macOS sandbox.
+    # GStreamer is still enabled when checks cannot run.
+    args << "ac_cv_path_GST_INSPECT_1_0=" if OS.mac?
 
     system "./configure", *args, *std_configure_args
     system "make"

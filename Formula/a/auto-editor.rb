@@ -8,10 +8,11 @@ class AutoEditor < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "cc12aeb050ebce237c8631520ec0ea7da3d6f98fde7e7a9497bef194100d5695"
-    sha256 cellar: :any, arm64_sequoia: "c41fc98f750291eb3fc649a43a1b30f9f44f22073d6b8df86c3dab9e469ada69"
-    sha256 cellar: :any, arm64_linux:   "332e6c7accdaab5210b6b7f43954ab31a5874229f0fd4c1308265e1b119958e2"
-    sha256 cellar: :any, x86_64_linux:  "3eef83b9cb6ed93dda604be1ee9920dd1a552e693a9100045767ad423f52c35b"
+    sha256 cellar: :any, arm64_golden_gate: "97d2aa8abbd483d697d5a32a86e1721fc01776521e17ca3da5173786b60569e9"
+    sha256 cellar: :any, arm64_tahoe:       "cc12aeb050ebce237c8631520ec0ea7da3d6f98fde7e7a9497bef194100d5695"
+    sha256 cellar: :any, arm64_sequoia:     "c41fc98f750291eb3fc649a43a1b30f9f44f22073d6b8df86c3dab9e469ada69"
+    sha256 cellar: :any, arm64_linux:       "332e6c7accdaab5210b6b7f43954ab31a5874229f0fd4c1308265e1b119958e2"
+    sha256 cellar: :any, x86_64_linux:      "3eef83b9cb6ed93dda604be1ee9920dd1a552e693a9100045767ad423f52c35b"
   end
 
   depends_on "nim" => :build

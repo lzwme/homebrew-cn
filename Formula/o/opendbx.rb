@@ -2,6 +2,7 @@ class Opendbx < Formula
   desc "Lightweight but extensible database access library in C"
   homepage "https://linuxnetworks.de/doc/index.php/OpenDBX"
   url "https://linuxnetworks.de/opendbx/download/opendbx-1.4.6.tar.gz"
+  mirror "https://deb.debian.org/debian/pool/main/libo/libopendbx/libopendbx_1.4.6.orig.tar.gz"
   sha256 "2246a03812c7d90f10194ad01c2213a7646e383000a800277c6fb8d2bf81497c"
   license "LGPL-2.0-or-later"
   revision 2
@@ -14,18 +15,19 @@ class Opendbx < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:    "8cc990504a450685d677e758cf6741b058dd5b82e1ddf2f10c1e70bac003d58a"
-    sha256 arm64_sequoia:  "b355d6e9d840dd066aa4e71bbc2b4ebcca2f13741b07153fcc91a159b0d1665c"
-    sha256 arm64_sonoma:   "f5a84ad8458393c0dea21c9e640de968ae3184ddfcf0cf3f25136d376622d564"
-    sha256 arm64_ventura:  "847f22724b3cd9e0fe820e25fdf778e5190f347b2bba2b81fda5753dacf44d67"
-    sha256 arm64_monterey: "40c22caf4823f43a2014c73f4ef86a2f6556107c2e5752975ddbf1924c9bc80c"
-    sha256 arm64_big_sur:  "a849ec13147c5cb08b03376eae868b6c82ec075a60388bf7e6742fbb9f56b467"
-    sha256 sonoma:         "4c4dff477fde71d015a7ba53c377fcdbc88e31a7e3b430597da5b15a4138d3ba"
-    sha256 ventura:        "b362fccb77368d232684efe3895ae60b0f686869c677a3815c016a2dd46dc03c"
-    sha256 monterey:       "7002fcd03b711f7dbefacd3287435d2ec4fbf96f6410dcefc1fb0d36bc3a2f25"
-    sha256 big_sur:        "80d655556c77aeb341dd0fc52d70e61dfd8a3518cf689bcb68af6f0aacc04bd5"
-    sha256 arm64_linux:    "16be2c0b756f68f456251052c96ac4436e92a96be74ff9c0e2d935be95bd2e62"
-    sha256 x86_64_linux:   "9ef3f4d6acb641cbe910f05f8ec191ffdc886b80c1bed89a962a27031071a940"
+    sha256 arm64_golden_gate: "a72455cbb1dbef444b8b4c8b0722f5b98de44742e37adde416fafd2a8bab2583"
+    sha256 arm64_tahoe:       "8cc990504a450685d677e758cf6741b058dd5b82e1ddf2f10c1e70bac003d58a"
+    sha256 arm64_sequoia:     "b355d6e9d840dd066aa4e71bbc2b4ebcca2f13741b07153fcc91a159b0d1665c"
+    sha256 arm64_sonoma:      "f5a84ad8458393c0dea21c9e640de968ae3184ddfcf0cf3f25136d376622d564"
+    sha256 arm64_ventura:     "847f22724b3cd9e0fe820e25fdf778e5190f347b2bba2b81fda5753dacf44d67"
+    sha256 arm64_monterey:    "40c22caf4823f43a2014c73f4ef86a2f6556107c2e5752975ddbf1924c9bc80c"
+    sha256 arm64_big_sur:     "a849ec13147c5cb08b03376eae868b6c82ec075a60388bf7e6742fbb9f56b467"
+    sha256 sonoma:            "4c4dff477fde71d015a7ba53c377fcdbc88e31a7e3b430597da5b15a4138d3ba"
+    sha256 ventura:           "b362fccb77368d232684efe3895ae60b0f686869c677a3815c016a2dd46dc03c"
+    sha256 monterey:          "7002fcd03b711f7dbefacd3287435d2ec4fbf96f6410dcefc1fb0d36bc3a2f25"
+    sha256 big_sur:           "80d655556c77aeb341dd0fc52d70e61dfd8a3518cf689bcb68af6f0aacc04bd5"
+    sha256 arm64_linux:       "16be2c0b756f68f456251052c96ac4436e92a96be74ff9c0e2d935be95bd2e62"
+    sha256 x86_64_linux:      "9ef3f4d6acb641cbe910f05f8ec191ffdc886b80c1bed89a962a27031071a940"
   end
 
   depends_on "readline"

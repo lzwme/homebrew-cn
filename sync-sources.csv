@@ -5917,7 +5917,6 @@ Homebrew-homebrew-core/Formula/p/playwright-cli.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/playwright-mcp.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/plenv.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/plink-ng.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/p/plod.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/plog.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/plotutils.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/plow.rb, Homebrew/homebrew-core, 1
@@ -6265,7 +6264,7 @@ Homebrew-homebrew-core/Formula/q/qrtool.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/q/qrupdate.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/q/qscintilla2.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/q/qshell.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/q/qsoas.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/q/qsoas.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/q/qstat.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/q/qsv.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/q/qt-libiodbc.rb, Homebrew/homebrew-core, 0
@@ -7826,7 +7825,7 @@ Homebrew-homebrew-core/Formula/t/ty.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/tygo.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/typedb.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/typescript-language-server.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/t/typescript.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/t/typescript.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/typeshare.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/typespeed.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/typewritten.rb, Homebrew/homebrew-core, 1

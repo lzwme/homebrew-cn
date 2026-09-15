@@ -49,11 +49,11 @@ class Physfs < Formula
   test do
     (testpath/"test.txt").write "homebrew"
     system "zip", "test.zip", "test.txt"
-    (testpath/"test").write <<~EOS
+    test = <<~EOS
       addarchive test.zip 1
       cat test.txt
     EOS
-    output = shell_output("#{bin}/test_physfs < test 2>&1")
+    output = pipe_output("#{bin}/test_physfs 2>&1", test, 0)
     expected = if OS.mac?
       "Successful.\nhomebrew"
     else

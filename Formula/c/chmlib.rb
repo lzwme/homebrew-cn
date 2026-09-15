@@ -1,14 +1,10 @@
 class Chmlib < Formula
   desc "Library for dealing with Microsoft ITSS/CHM files"
-  homepage "https://www.jedrea.com/chmlib/"
-  url "https://www.jedrea.com/chmlib/chmlib-0.40.tar.gz"
+  # Upstream site went down in 2026, so use the Wayback Machine (`id_` serves the original bytes)
+  homepage "https://web.archive.org/web/20260415074851/https://www.jedrea.com/chmlib/"
+  url "https://web.archive.org/web/20260414144043id_/https://www.jedrea.com/chmlib/chmlib-0.40.tar.gz"
   sha256 "512148ed1ca86dea051ebcf62e6debbb00edfdd9720cde28f6ed98071d3a9617"
   license "LGPL-2.1-or-later"
-
-  livecheck do
-    url :homepage
-    regex(/href=.*?chmlib[._-]v?(\d+(?:\.\d+)+)\.t/i)
-  end
 
   bottle do
     rebuild 2
@@ -25,6 +21,10 @@ class Chmlib < Formula
     sha256 cellar: :any_skip_relocation, arm64_linux:    "dc0799919a7cc91ec7505ec8e8a7290baa38342a10e4e4ca9017f417ffda95c1"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "61a085287bba377e847d027575fd848cbadc0f6b5bd8f2efc008cc54d8f32d32"
   end
+
+  # Upstream homepage is gone
+  deprecate! date: "2026-09-14", because: :repo_removed
+  disable! date: "2026-12-14", because: :repo_removed
 
   # Fix -flat_namespace being used on Big Sur and later.
   patch do

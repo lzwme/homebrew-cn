@@ -2,8 +2,7 @@ cask "font-copperplate-gothic-std" do
   version "1.0"
   sha256 :no_check
 
-  url "https://font.download/dl/font/copperplate-gothic-std.zip",
-      verified: "font.download/"
+  url "https://font.download/dl/font/copperplate-gothic-std.zip"
   name "Copperplate Gothic Std"
   desc "Copperplate Gothic Std Font Family"
   homepage "https://fontsinuse.com/typefaces/3895/copperplate-gothic"

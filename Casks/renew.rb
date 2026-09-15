@@ -11,8 +11,8 @@ cask "renew" do
     url :stable
   end
 
-  depends_on :macos
   depends_on cask: "temurin"
+  depends_on :macos
 
   app "Reference Net Workshop.app"
 end

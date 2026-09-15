@@ -1,19 +1,17 @@
 class Brook < Formula
   desc "Cross-platform strong encryption and not detectable proxy. Zero-Configuration"
   homepage "https://brook.app/"
-  url "https://ghfast.top/https://github.com/txthinking/brook/archive/refs/tags/v20260101.tar.gz"
-  sha256 "70e8310f31cef3b80e1696f364f12b2ab2aa0f1fb9fde00f25bda7620c21f096"
+  url "https://ghfast.top/https://github.com/txthinking/brook/archive/refs/tags/v20270101.tar.gz"
+  sha256 "43d8e5476918daa2d35fc63e8b0c94c0c1df8577f1d09103a3ab0f6141f29c0f"
   license "GPL-3.0-only"
   head "https://github.com/txthinking/brook.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "d0507ae355ca954e4164800b9b400c47bd88c5a146e6e4eca982381e5f63ee57"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "4fc892393fb319b3573da8caf28e1a2083c052653375c1148af3cc40b482e30e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "4fc892393fb319b3573da8caf28e1a2083c052653375c1148af3cc40b482e30e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "4fc892393fb319b3573da8caf28e1a2083c052653375c1148af3cc40b482e30e"
-    sha256 cellar: :any_skip_relocation, sonoma:            "dfeb21863c273b142f342a69ee50ed785bc6e738623dcc8a8d5ebba8edcce716"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "8a9ed2618dc37deddbd6030631cf0130859fe4c496b683377643bddd926af182"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "3d8008603eeef8439794732a85541831c398010f9794f2224fb4f8159629e9c9"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "a6c88e6f0715a4ce9eaa99e903a4798af55677be3e20b98817661ef7691d6c1d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "a6c88e6f0715a4ce9eaa99e903a4798af55677be3e20b98817661ef7691d6c1d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "a6c88e6f0715a4ce9eaa99e903a4798af55677be3e20b98817661ef7691d6c1d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "362fe24d762548d06ac4e448965040f431ab60802cc8561e0b8d5ab8bc30e201"
+    sha256 cellar: :any,                 x86_64_linux:      "6299bd5ea11349e0cf0f09dc979a529ce1b1baf193c191714a1d4a7a83f2ac34"
   end
 
   depends_on "go" => :build

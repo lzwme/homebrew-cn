@@ -6,13 +6,12 @@ class Xinit < Formula
   license all_of: ["MIT", "APSL-2.0"]
 
   bottle do
-    rebuild 1
-    sha256               arm64_tahoe:   "3ce6a5600a9a88b1d4018a6ecf88b437563538938ae559129713425112cb032f"
-    sha256               arm64_sequoia: "5727dd128f946d0e16660e2db86ee1ad79cc3d97340bdc9869d867cc077641ff"
-    sha256               arm64_sonoma:  "a992bd591fb51755561d3db0d9b6adf43c69bfc4357c8e9910958d4e89897e95"
-    sha256 cellar: :any, sonoma:        "d18f2e51c72eb9fc51c0de81a4856aeaabba640f3c8acc510ac474de427ebc2d"
-    sha256               arm64_linux:   "8b1f7924f2e2cab4fb2f3282cece3eeb75106105b3f9d84ccaa851dd9b1582a2"
-    sha256               x86_64_linux:  "bfb05c8b3ce100f8a796ebe2d4ea33bcefa72b0c226eacc710f412bc87d9a66e"
+    rebuild 2
+    sha256 arm64_golden_gate: "0c877dd24259cd1bf5a2955f66ff37e4dc28d7dcca5e0867a4a08984af7f5fd1"
+    sha256 arm64_tahoe:       "f053c34789bb75669b4afd247a5d9e735c2439a4337ce08a6901d20d99439ba7"
+    sha256 arm64_sequoia:     "679e5e4c52c1a10ad16584abaece9f95e0f39acf14692c5492b6ffe3408be5fb"
+    sha256 arm64_linux:       "8de17a1a3379f940d85c9247f9974be42c9c0f248269e99ecff73c941d96db50"
+    sha256 x86_64_linux:      "3df897ded59636d39b6713af4d3e7fc55f4769eb48a87d87a47df818e9c1bce4"
   end
 
   depends_on "pkgconf" => :build
@@ -118,6 +117,6 @@ class Xinit < Formula
     C
     system ENV.cc, "./test.c", "-o", "test", "-I#{formula_opt_include("libxcb")}", "-L#{formula_opt_lib("libxcb")}",
 "-lxcb"
-    exec bin/"xinit", "./test", "--", formula_opt_bin("xorg-server")/"Xvfb", ":1"
+    exec bin/"xinit", "./test", "--", formula_opt_bin("xorg-server")/"Xvfb", ":1", "-listen", "tcp"
   end
 end

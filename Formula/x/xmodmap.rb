@@ -6,12 +6,12 @@ class Xmodmap < Formula
   license "MIT-open-group"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "c3b0bb370a24a58f47900b7c8de2f456a06b132b2393771de3eeddb58c6feb08"
-    sha256 cellar: :any, arm64_sequoia: "0dc638f9b5e5aaf88a883bc272da101259528f3ee067fa70b17e1bcc48fed1ce"
-    sha256 cellar: :any, arm64_sonoma:  "7d11539d6e3fca0fb205dce1b20cd84bcab923eca276a225672297e784711f31"
-    sha256 cellar: :any, sonoma:        "9494ffad49af73ce07954c6810636496ef1844da9e7ff965c0ca6975f3f1862f"
-    sha256 cellar: :any, arm64_linux:   "c5741ad3aca85ff6ce27564f5a36fc8547e2a3ca859da54b5da9ef541f61b44c"
-    sha256 cellar: :any, x86_64_linux:  "866b3f94f7ac54940a1e489cd303362aedbeabf115362024fea415d6929f9311"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "bee38f85e975f72f62bc3e4045bddfd96ad344519354ad0bc43694c6801a057a"
+    sha256 cellar: :any, arm64_tahoe:       "68bb9f8b47204fe1f7e13491cd67366a224ffb333f5025d6340ad87cc49b16f2"
+    sha256 cellar: :any, arm64_sequoia:     "b2ab244fd297cb7ee7d5f41e95daf61c5b2414a662ab84d79e4898576a91dee5"
+    sha256 cellar: :any, arm64_linux:       "a36c6e0a7f622360d09c7f722c7b97c428580c98995f2238eff97c12e0030e49"
+    sha256 cellar: :any, x86_64_linux:      "80c44d49552a07d7453d6ba393777109047bce5b20c58e24ab97a644e586d1d3"
   end
 
   depends_on "pkgconf" => :build
@@ -27,9 +27,17 @@ class Xmodmap < Formula
   end
 
   test do
-    spawn formula_opt_bin("xorg-server")/"Xvfb", ":1"
-    ENV["DISPLAY"] = ":1"
-    sleep 10
-    assert_match "pointer buttons defined", shell_output("#{bin}/xmodmap -pp")
+    IO.pipe do |read_io, write_io|
+      xvfb = formula_opt_bin("xorg-server")/"Xvfb"
+      pid = spawn(xvfb, "-displayfd", write_io.fileno.to_s, "-listen", "tcp", write_io => write_io)
+      write_io.close
+      ENV["DISPLAY"] = ":#{read_io.read.strip}"
+      assert_match "pointer buttons defined", shell_output("#{bin}/xmodmap -pp")
+    ensure
+      if pid
+        Process.kill "TERM", pid
+        Process.wait pid
+      end
+    end
   end
 end

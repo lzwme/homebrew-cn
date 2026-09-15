@@ -7,12 +7,13 @@ class Dexter < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "2b592f0c8333110a04e3c57a72faf10ea3936ac4fe2595a7ca6a3389c6ae66d0"
-    sha256 cellar: :any,                 arm64_sequoia: "652ee45577f15e820fe6d52107b2a4353871261bbbf88393b6e1c81c36dea5d6"
-    sha256 cellar: :any,                 arm64_sonoma:  "c8330052136307a381187aa5cba1691d17ecbba9ee9b8349d8246147386c5b00"
-    sha256 cellar: :any,                 sonoma:        "129ab1c754862ceab9958091546556d6460dddb4c5229bf8a225222de6852874"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a5b3e2ac62a51478d848a006cb2a09560f00f576636e1bd5d384376030cf97d8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b9b849261c597104bf285a9db07d30ef8ddf757061faf429e8b374d3247136b4"
+    sha256 cellar: :any,                 arm64_golden_gate: "6bc2c747d5a6963b6faf8834ef423ea17f0ea7ac0dcb9708d283eb22d694eefa"
+    sha256 cellar: :any,                 arm64_tahoe:       "2b592f0c8333110a04e3c57a72faf10ea3936ac4fe2595a7ca6a3389c6ae66d0"
+    sha256 cellar: :any,                 arm64_sequoia:     "652ee45577f15e820fe6d52107b2a4353871261bbbf88393b6e1c81c36dea5d6"
+    sha256 cellar: :any,                 arm64_sonoma:      "c8330052136307a381187aa5cba1691d17ecbba9ee9b8349d8246147386c5b00"
+    sha256 cellar: :any,                 sonoma:            "129ab1c754862ceab9958091546556d6460dddb4c5229bf8a225222de6852874"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "a5b3e2ac62a51478d848a006cb2a09560f00f576636e1bd5d384376030cf97d8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "b9b849261c597104bf285a9db07d30ef8ddf757061faf429e8b374d3247136b4"
   end
 
   depends_on "postgresql@18" => :test

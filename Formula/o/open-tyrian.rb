@@ -1,17 +1,17 @@
 class OpenTyrian < Formula
   desc "Open-source port of Tyrian"
   homepage "https://github.com/opentyrian/opentyrian"
-  url "https://ghfast.top/https://github.com/opentyrian/opentyrian/archive/refs/tags/v2.1.20260912.tar.gz"
-  sha256 "2d4df6182a728bd769b7779db9ae8e8ad78f0f5cac49dcddd4cf63add5d34d93"
+  url "https://ghfast.top/https://github.com/opentyrian/opentyrian/archive/refs/tags/v2.1.20260913.tar.gz"
+  sha256 "dbcd96383d4fa571137242c36bd7eca054cf5a08a9bf2eec15ef230d6e60680d"
   license "GPL-2.0-or-later"
   head "https://github.com/opentyrian/opentyrian.git", branch: "master"
 
   bottle do
-    sha256 arm64_golden_gate: "cd8a4de6acd0f0bf69ef4f242816a4fc42bf358e880592304e7b7fde7e058a6d"
-    sha256 arm64_tahoe:       "77519dcbb29c59f0f228f0893f6e60df670347c014ceb1562b7087a6d043e027"
-    sha256 arm64_sequoia:     "c5af0ea2a937a564417aec2cc1cf61c86c6989af58d8865ff1f8a807436f8ab1"
-    sha256 arm64_linux:       "80893be946d65076b3021696aa923d1f8f3e79993dc8a5d07ec47b440efbbdfb"
-    sha256 x86_64_linux:      "aba2ef182229cfefe39f136ad3d21bdffe04db954df182508371c2342f6475c7"
+    sha256 arm64_golden_gate: "50321ad12a5de87cdf59e63584c9e3bdbc46242f60349b26fa21115293c27ae6"
+    sha256 arm64_tahoe:       "a367545bba9fcd03b3894a1768523704e3728903ab1e2ae5a26820c5f307e5dd"
+    sha256 arm64_sequoia:     "049fab6183403a11363acdbd0096b8209446dabb641a1c01433564a98313f959"
+    sha256 arm64_linux:       "89b9144e673d26cd2a309ffca6781402367abfd0479c436c3281a94ceb7c66b7"
+    sha256 x86_64_linux:      "c5f46eac379e10dc84aae4be8b47d158a955b1ebb9c0fbe1506da54f1b01eccf"
   end
 
   depends_on "pkgconf" => :build

@@ -1,16 +1,16 @@
 class Reliable < Formula
   desc "Simple packet acknowledgement system for UDP-based protocols"
   homepage "https://github.com/mas-bandwidth/reliable"
-  url "https://ghfast.top/https://github.com/mas-bandwidth/reliable/archive/refs/tags/v1.4.4.tar.gz"
-  sha256 "fc9f8011047cbb6ad5e2e0c64ccb5d62d112b78f434ed1add173872b32d6771f"
+  url "https://ghfast.top/https://github.com/mas-bandwidth/reliable/archive/refs/tags/v1.4.5.tar.gz"
+  sha256 "102627cd8643b97865413053f443cd891134a6d0e1d20ab3939e8b09f5c54356"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "82fa0d47486a07fcf73466c8bf3fca04529ac993cf346db0ea4652a830a9368c"
-    sha256 cellar: :any, arm64_tahoe:       "09dc8d1ae363f8c0e01569a8cab41e4f69cce1200926cd37c86a1ce6831d62f2"
-    sha256 cellar: :any, arm64_sequoia:     "24a61726eff11157bf10f7d4cf9866d76d627517afc93d3de219ebf733476f09"
-    sha256 cellar: :any, arm64_linux:       "d645840187e99895628f62a6e23db3eb94d4f0a75749343b48d4230a46577bcf"
-    sha256 cellar: :any, x86_64_linux:      "b981da8513393f34433ddfbe56116254aa400d6826a928b5915d5fa3aeb040ca"
+    sha256 cellar: :any, arm64_golden_gate: "d7a281f04f513506a489115e2371cc959085b9f5fc9dd0178d74b7ca3bb4b75f"
+    sha256 cellar: :any, arm64_tahoe:       "df00a4bfb41f49f6a1e0860ed99d558fd8d71a10a100252fd348c45624258f90"
+    sha256 cellar: :any, arm64_sequoia:     "64fad25a3ff64808ed1136a768113bc38b6d58112dfc116f0c99264e687e64bd"
+    sha256 cellar: :any, arm64_linux:       "d66e67af1962b7de165fb6a797f1f741189123d50d5cef2f3153c7b455ef8a8a"
+    sha256 cellar: :any, x86_64_linux:      "b767ebac624bc1bc6e9fc7db781c2008e9227f47ec4a57433f006d303851c8a5"
   end
 
   depends_on "cmake" => :build

@@ -35,7 +35,6 @@ class Bento < Formula
         stdout: {}
     YAML
 
-    output = shell_output("echo foobar | bento -c #{testpath}/config.yaml")
-    assert_match "FOOBAR", output
+    assert_match "FOOBAR", pipe_output("#{bin}/bento -c #{testpath}/config.yaml", "foobar", 0)
   end
 end

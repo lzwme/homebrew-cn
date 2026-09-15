@@ -6,11 +6,12 @@ class PgCron < Formula
   license "PostgreSQL"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "f70213216b90da41859c6a8da096af2fd2934832329e13388eaed335c133682c"
-    sha256 cellar: :any, arm64_sequoia: "3a4f9fc32502da9f9841ad7a0edb813fdef369ef2a8be5504144d0521f95ea93"
-    sha256 cellar: :any, arm64_sonoma:  "d17dd6d4c5579e3c32800990d4df4b6b4da12ed5b369cff465524808fb3b87f3"
-    sha256 cellar: :any, arm64_linux:   "a14941b26606e49a3f69aaca137f8d59e6171a365dc4b4706ba67cf96b57974b"
-    sha256 cellar: :any, x86_64_linux:  "22c919f61d6492ee31b437126078406263a7d43a26e898bf66a9cbe011f18df6"
+    sha256 cellar: :any, arm64_golden_gate: "95211c055fab71118be825193a38433f33553a6d1b91fe48d64a8929ac532df9"
+    sha256 cellar: :any, arm64_tahoe:       "f70213216b90da41859c6a8da096af2fd2934832329e13388eaed335c133682c"
+    sha256 cellar: :any, arm64_sequoia:     "3a4f9fc32502da9f9841ad7a0edb813fdef369ef2a8be5504144d0521f95ea93"
+    sha256 cellar: :any, arm64_sonoma:      "d17dd6d4c5579e3c32800990d4df4b6b4da12ed5b369cff465524808fb3b87f3"
+    sha256 cellar: :any, arm64_linux:       "a14941b26606e49a3f69aaca137f8d59e6171a365dc4b4706ba67cf96b57974b"
+    sha256 cellar: :any, x86_64_linux:      "22c919f61d6492ee31b437126078406263a7d43a26e898bf66a9cbe011f18df6"
   end
 
   depends_on "postgresql@17" => [:build, :test]

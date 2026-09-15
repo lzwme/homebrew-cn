@@ -6,12 +6,12 @@ class Xrdb < Formula
   license all_of: ["MIT-open-group", "HPND-DEC"]
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "9e5d8f010f1d1822fb0e48675ac8a2839c3d3fe0e20b33c5bfce698357e19c07"
-    sha256 cellar: :any, arm64_sequoia: "da4838f09bac02e4f36fd8997c1c1ba79a1c77d0791a90b9d92f1783ea964965"
-    sha256 cellar: :any, arm64_sonoma:  "d87535873c12a31be875fd75d82e54e20b0889d690e3a36162f62dc991d06e2d"
-    sha256 cellar: :any, sonoma:        "3044db43fa489b4975d6391a90839e7fb5b06ed568029e5890b7c569877d1752"
-    sha256 cellar: :any, arm64_linux:   "50b322ffd56b13a5241fe4e20baa6b917af04778b85955bdfc821042d0f782f0"
-    sha256 cellar: :any, x86_64_linux:  "5c4bb19b0419ed08d31bc8f5942267f63ad518464a267a8e95167b31e84b2b2e"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "de514ce3ca23012eda0c38f03e40c5865bb8ee8a9299b449a3162c61356fcd55"
+    sha256 cellar: :any, arm64_tahoe:       "7ddd048d9e571628fea436be64442dae27dbcc875a8d2025299e2881645436c6"
+    sha256 cellar: :any, arm64_sequoia:     "4bcb60c61e5d6ba2158bcad4ea980f315a9b2f59ced380856ca9fa6b90bc593a"
+    sha256 cellar: :any, arm64_linux:       "8d018863fc1c74a0cad12d182e3b610887bbe2ec2ebe8407845c60151095c8f7"
+    sha256 cellar: :any, x86_64_linux:      "9ba83e56d97189302216b1aee508bfcde96f50c3738ad2069e9c1c8a04201fd5"
   end
 
   depends_on "pkgconf" => :build
@@ -27,7 +27,8 @@ class Xrdb < Formula
 
   test do
     IO.pipe do |read_io, write_io|
-      pid = spawn(formula_opt_bin("xorg-server")/"Xvfb", "-displayfd", write_io.fileno.to_s, write_io => write_io)
+      xvfb = formula_opt_bin("xorg-server")/"Xvfb"
+      pid = spawn(xvfb, "-displayfd", write_io.fileno.to_s, "-listen", "tcp", write_io => write_io)
       write_io.close
       ENV["DISPLAY"] = ":#{read_io.read.strip}"
       system bin/"xrdb", "-query"

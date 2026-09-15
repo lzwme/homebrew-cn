@@ -1,18 +1,16 @@
 class ImessageExporter < Formula
   desc "Command-line tool to export and inspect local iMessage database"
   homepage "https://github.com/ReagentX/imessage-exporter"
-  url "https://ghfast.top/https://github.com/ReagentX/imessage-exporter/archive/refs/tags/4.2.0.tar.gz"
-  sha256 "3b5edd3d3e5387c96c44bcfc5cb21702426d816339091d100323a6564c6962f0"
+  url "https://ghfast.top/https://github.com/ReagentX/imessage-exporter/archive/refs/tags/4.3.0.tar.gz"
+  sha256 "aaa19f21a3144bf9d115ce02a77a988bfdf3485fcd1d35cdb9ac4c81b86e2400"
   license "GPL-3.0-only"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "9fe19f5387b244b888a722d4cc2734b58cfe0b864ee36a5295fe6b567b6b194a"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "d73061b9f2c1e5141469e5db62f61a38ab947cf194c140981805dfc8188acf2b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "8e5b42547e4fed80fb089954fcc09a40ad2120be3e135329d75f90693dc6aba8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "50bfda58d4f7e6f0f6e42a93a639b18a9379dbfdd369c45ac8005d679b2f6169"
-    sha256 cellar: :any_skip_relocation, sonoma:            "38675a4d99a31f22f8aaeb035afafbd078da6325b6272df3d8bed32f75a93e3c"
-    sha256 cellar: :any,                 arm64_linux:       "7399e3b6a6e2337eeef9d45f78719d19dba2df8e6ce913b06e55ef36d5ddf670"
-    sha256 cellar: :any,                 x86_64_linux:      "cb14d97ab80246b437302d1ea2ce9a47c9b42505d020cb367aa51d3f6e29010a"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "3a13633ab4c670dbfb2c6e7269fc2410fbdff5f31be637cdd5f52e6fbaaeb08d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "b884f25e96bbf1670744f467cd03b3cf793c2b289969693292cf2641c0ebc287"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "ebbf4b6aa8bf6862ef6d41d9a7e3db37e950f5565d3515622ad63e602eff962d"
+    sha256 cellar: :any,                 arm64_linux:       "407f84f51a844aac366ca5834d4a1323417690d7f4a92402f13dc26decbd2902"
+    sha256 cellar: :any,                 x86_64_linux:      "ea6c0a4623f60c146c9d980e66408a7599fe8c317a1c3301afe9a2f5e873844e"
   end
 
   depends_on "rust" => :build

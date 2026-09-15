@@ -15,12 +15,13 @@ class Citus < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "1c62bb79313f8dc9fa5846984f080835e019daa01a34a595fbcfe84329d36197"
-    sha256 cellar: :any, arm64_sequoia: "5ba714d6301fa67228652bea3131d9ceb1ca37674acac4705c10f6c6c802c119"
-    sha256 cellar: :any, arm64_sonoma:  "223cbc8138935b0b9d9d5dc953157eb983490ed330e8c98a54e1d5fab4065114"
-    sha256 cellar: :any, sonoma:        "07c28e3ca3679d14c85e1918cca56af8ce9cdeb306b72cf50b31719aae732680"
-    sha256 cellar: :any, arm64_linux:   "9589b7cc1442b68bc2c8691976adce6cf4afd0605f6bef3aa4f1388e07a55485"
-    sha256 cellar: :any, x86_64_linux:  "0721d9092c6f35b8f53aacc1ebf029fcdbf4abd69e39e8d57aa97fbdad29a98e"
+    sha256 cellar: :any, arm64_golden_gate: "fa6bbd5c550c2e47c2387bf5d709d7c35acad4cc00b7298db8a60f3475a38507"
+    sha256 cellar: :any, arm64_tahoe:       "1c62bb79313f8dc9fa5846984f080835e019daa01a34a595fbcfe84329d36197"
+    sha256 cellar: :any, arm64_sequoia:     "5ba714d6301fa67228652bea3131d9ceb1ca37674acac4705c10f6c6c802c119"
+    sha256 cellar: :any, arm64_sonoma:      "223cbc8138935b0b9d9d5dc953157eb983490ed330e8c98a54e1d5fab4065114"
+    sha256 cellar: :any, sonoma:            "07c28e3ca3679d14c85e1918cca56af8ce9cdeb306b72cf50b31719aae732680"
+    sha256 cellar: :any, arm64_linux:       "9589b7cc1442b68bc2c8691976adce6cf4afd0605f6bef3aa4f1388e07a55485"
+    sha256 cellar: :any, x86_64_linux:      "0721d9092c6f35b8f53aacc1ebf029fcdbf4abd69e39e8d57aa97fbdad29a98e"
   end
 
   depends_on "postgresql@17" => [:build, :test]

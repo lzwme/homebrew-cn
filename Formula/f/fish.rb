@@ -12,8 +12,6 @@ class Fish < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
-  pour_bottle? only_if: :default_prefix
-
   bottle do
     sha256 cellar: :any, arm64_golden_gate: "178bdd28d5b888253d95cd9f09749ec5b0786e38ffb2b29c5e9c883d0eba5434"
     sha256 cellar: :any, arm64_tahoe:       "c530bd62ac9277e7e1ae3de9ff5e0a83fdb5f49d39f456ce8f61dce6f56dd8c3"

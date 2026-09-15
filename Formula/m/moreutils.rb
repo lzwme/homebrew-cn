@@ -1,8 +1,8 @@
 class Moreutils < Formula
   desc "Collection of tools that nobody wrote when UNIX was young"
   homepage "https://joeyh.name/code/moreutils/"
-  url "https://git.joeyh.name/index.cgi/moreutils.git/snapshot/moreutils-0.70.tar.gz"
-  sha256 "f2bf46d410ba567cc8d01507e94916994e48742722e690dc498fab59f5250132"
+  url "https://deb.debian.org/debian/pool/main/m/moreutils/moreutils_0.70.orig.tar.xz"
+  sha256 "a844c5e3360a73d12c0a5624750ecc1969d64afea2e84925328f137576e2eb55"
   license all_of: [
     "GPL-2.0-or-later",
     { any_of: ["GPL-2.0-only", "Artistic-2.0"] },
@@ -15,14 +15,12 @@ class Moreutils < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bb9c8584114eafbe7eab4f89b0502d72688b7ea7d1dea6fd485a1bd5e5541149"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4d054e5d66851413c272c39e156a48467f39959e89c84f91c1de41cd690c6b78"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fe0990b48df79c064ba76b72360019bea03328e6fcbd99a866ab9d6a1a37e95f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "52bc03dcf5828555287e4f2ddd22da821a332a07f73118449dfd7fb9b86bf2dc"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e26e5d2933b3012c95929c26c6d7298a1820370f9b15e2c05fa10ca4e8b020f5"
-    sha256 cellar: :any_skip_relocation, ventura:       "42dc76da4d89f2bea57718ad8ccba438651099ee27881b5a8e34c9052777947f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3f3ea30db435d1e85633c12f11dc1d4545530c21f0415999b651be6b7d02306f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "06d1c740d7401fec23a230bcd5f113e8d10c00c0d80f8b12861acc5d64b79b3a"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "f533802691224945833b48a1e863892a96ce8e5e2628ac8c6b4b14bd384bb62e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "b0a34e96a17bb7b858cc814f77883b48ebb343ddf1be4665d46ab0e95bb6def7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "85e92e23c3134e822c04671a8b80d0a3ca2fe898ec6b6ea2018264e554687eca"
+    sha256 cellar: :any,                 arm64_linux:       "16e5e4ed9955126db2fd7eeace322fc6c450542bd7247a32ab2ef4c38c388ada"
+    sha256 cellar: :any,                 x86_64_linux:      "fb287d198077078c09137d7f3725b4f2b9825ee9ad52483a189e6c18a0cce842"
   end
 
   depends_on "docbook-xsl" => :build

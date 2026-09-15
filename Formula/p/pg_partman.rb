@@ -11,12 +11,13 @@ class PgPartman < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "18c89267abe429d31fa63d1f9920959dd428e8492690afe562f7ec8edcac0da5"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a657498e05914cbabd51e078a3b9bab7a16b04e14731d2b765bb10fe96c16c66"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3dd3be1c8ad300fe3437f7b6099626f453974d8d8a575ecdf8f430f546b5d952"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6cf572b39ee7866988e601eb2741ccd9ee90fe883fb2dfd413d6d4aea6e20ea9"
-    sha256 cellar: :any,                 arm64_linux:   "fe379b2bf29971be8bd12d4ce1945017075f37adb2184686cb9adf0a1a9220f9"
-    sha256 cellar: :any,                 x86_64_linux:  "355e53753f0b773ae2d447069fd227d50d6640279c17b4f3ece9bb8561b9373c"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "354986c7d6a7e5c6fce60b42e53ee557a823d839a8df24b2226e046343bf2987"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "18c89267abe429d31fa63d1f9920959dd428e8492690afe562f7ec8edcac0da5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "a657498e05914cbabd51e078a3b9bab7a16b04e14731d2b765bb10fe96c16c66"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "3dd3be1c8ad300fe3437f7b6099626f453974d8d8a575ecdf8f430f546b5d952"
+    sha256 cellar: :any_skip_relocation, sonoma:            "6cf572b39ee7866988e601eb2741ccd9ee90fe883fb2dfd413d6d4aea6e20ea9"
+    sha256 cellar: :any,                 arm64_linux:       "fe379b2bf29971be8bd12d4ce1945017075f37adb2184686cb9adf0a1a9220f9"
+    sha256 cellar: :any,                 x86_64_linux:      "355e53753f0b773ae2d447069fd227d50d6640279c17b4f3ece9bb8561b9373c"
   end
 
   depends_on "postgresql@17" => [:build, :test]

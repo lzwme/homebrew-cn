@@ -56,15 +56,14 @@ class Kuzu < Formula
 
   test do
     db_path = testpath/"testdb.kuzu"
-    cypher_path = testpath/"test.cypher"
-    cypher_path.write <<~EOS
+    cypher = <<~EOS
       CREATE NODE TABLE Person(name STRING, age INT64, PRIMARY KEY(name));
       CREATE (:Person {name: 'Alice', age: 25});
       CREATE (:Person {name: 'Bob', age: 30});
       MATCH (a:Person) RETURN a.name AS NAME, a.age AS AGE ORDER BY a.name ASC;
     EOS
 
-    output = shell_output("#{bin}/kuzu #{db_path} < #{cypher_path}")
+    output = pipe_output("#{bin}/kuzu #{db_path}", cypher, 0)
 
     expected_1 = <<~EOS
       ┌────────────────────────────────┐

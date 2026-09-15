@@ -7,11 +7,12 @@ class Sh4d0wup < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "a6279e7eeb190a0a04ab8a9f90a101f84438c54e6c6cd61ed39d40edb6caf236"
-    sha256 cellar: :any, arm64_sequoia: "314a2bc7d776e0cf034a665cec3f9036b2a3fd24812c9e96f2444a2fdd1deede"
-    sha256 cellar: :any, arm64_sonoma:  "a9080458a5d207b84902f2b5bd29b30907536a2e09f3d58a7544c56e2116d498"
-    sha256 cellar: :any, arm64_linux:   "fbe8a62b11f71851f3a5fa620c7c1691aafd9d3bce41414475fc648c3de8f4e0"
-    sha256 cellar: :any, x86_64_linux:  "5a7deebaadb04cd1e385afe305a7d366a71e4cb8dc2fe9be5de3a6daae38e45e"
+    sha256 cellar: :any, arm64_golden_gate: "9335eed1619e8bbd08e27e73b5e147a83760090470daa834fca0a6d226537e35"
+    sha256 cellar: :any, arm64_tahoe:       "a6279e7eeb190a0a04ab8a9f90a101f84438c54e6c6cd61ed39d40edb6caf236"
+    sha256 cellar: :any, arm64_sequoia:     "314a2bc7d776e0cf034a665cec3f9036b2a3fd24812c9e96f2444a2fdd1deede"
+    sha256 cellar: :any, arm64_sonoma:      "a9080458a5d207b84902f2b5bd29b30907536a2e09f3d58a7544c56e2116d498"
+    sha256 cellar: :any, arm64_linux:       "fbe8a62b11f71851f3a5fa620c7c1691aafd9d3bce41414475fc648c3de8f4e0"
+    sha256 cellar: :any, x86_64_linux:      "5a7deebaadb04cd1e385afe305a7d366a71e4cb8dc2fe9be5de3a6daae38e45e"
   end
 
   depends_on "pkgconf" => :build

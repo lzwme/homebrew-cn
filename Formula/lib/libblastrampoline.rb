@@ -1,8 +1,8 @@
 class Libblastrampoline < Formula
   desc "Using PLT trampolines to provide a BLAS and LAPACK demuxing library"
   homepage "https://github.com/JuliaLinearAlgebra/libblastrampoline"
-  url "https://ghfast.top/https://github.com/JuliaLinearAlgebra/libblastrampoline/archive/refs/tags/v5.15.0.tar.gz"
-  sha256 "69e0be57ebf037c1997c35edf03565614cd3c6863a695d01348a21bf1f482e74"
+  url "https://ghfast.top/https://github.com/JuliaLinearAlgebra/libblastrampoline/archive/refs/tags/v5.16.0.tar.gz"
+  sha256 "0067b9a0044011ba0a443c9d7677c574d2bfd419fc27dc080b33005cce2ab92d"
   license all_of: [
     "MIT",
     "BSD-2-Clause-Views", # include/common/f77blas.h
@@ -10,12 +10,11 @@ class Libblastrampoline < Formula
   ]
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_golden_gate: "90f6de35e38c114a4423470feee4c574c1d861737a6f2e8ad1267f3130077a93"
-    sha256 cellar: :any, arm64_tahoe:       "7d8bd0dbe33b63006fbd5b14ac0a143622158ed89e56b109699c8e33899b2983"
-    sha256 cellar: :any, arm64_sequoia:     "e682c144697c7ba4524a2e93f4e0596697ba0f671125ff0b84e3c395490d80a6"
-    sha256 cellar: :any, arm64_linux:       "ca2d58d5ffd6d9e18bbfc9ae8e7d0bc2ab0b01ad7ba3779222fdef29546a9761"
-    sha256 cellar: :any, x86_64_linux:      "a8d8a6da9a5366f30696cac341e8049d7461045e47d8b526f0de668f7aef1808"
+    sha256 cellar: :any, arm64_golden_gate: "59cbab5b3da6915ee96a4679b2c967609d042509774b610b4aca260460e6dc43"
+    sha256 cellar: :any, arm64_tahoe:       "be4220763373b3e66590e14be7b5481e997bbe8bd54156571210e4f9636126cc"
+    sha256 cellar: :any, arm64_sequoia:     "d402d97b4d342aa444e39bed5e19193659d3120779e6209f3be42294c75c108a"
+    sha256 cellar: :any, arm64_linux:       "52a0072fd9d4b6b84248585dae972baab7dbaddcd39b3b727394a8d05702db14"
+    sha256 cellar: :any, x86_64_linux:      "bd488926e5bf9867a561ca837d22e2373fd106bf049c6dddffc1803828166157"
   end
 
   depends_on "openblas64" => :test

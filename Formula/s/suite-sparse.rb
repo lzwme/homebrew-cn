@@ -1,8 +1,8 @@
 class SuiteSparse < Formula
   desc "Suite of Sparse Matrix Software"
   homepage "https://people.engr.tamu.edu/davis/suitesparse.html"
-  url "https://ghfast.top/https://github.com/DrTimothyAldenDavis/SuiteSparse/archive/refs/tags/v7.14.0.tar.gz"
-  sha256 "c552c4b4bb7d0978796e57263a73295bca0c6b41ad137b45b4f264cfe9300fcb"
+  url "https://ghfast.top/https://github.com/DrTimothyAldenDavis/SuiteSparse/archive/refs/tags/v7.14.1.tar.gz"
+  sha256 "81e560e1f74546df139edb765b3f5bc865866da23062312ffe8fd821063c8397"
   license all_of: [
     "BSD-3-Clause",
     "LGPL-2.1-or-later",
@@ -19,13 +19,11 @@ class SuiteSparse < Formula
   end
 
   bottle do
-    sha256               arm64_golden_gate: "191048624a07641a205caf5644eb7f84c23c48fb95995a5a47929d90898b5566"
-    sha256               arm64_tahoe:       "a3b1dfaacedb759181afb0ad110c359a89b5c705f107a6d65243998e515b6cfe"
-    sha256               arm64_sequoia:     "57526f091043632c65fbcb851e716f6dc9febe7d81a81e044f1c1c6d16d4bb14"
-    sha256               arm64_sonoma:      "4e1d912df4f1b2bae2c72b3f729f398b50e5593d24e10c070a3fdc5a3d08681e"
-    sha256               sonoma:            "fdce115afffbd2eb6b871a6227a243d307fc5e340526f439aae3c93a899de5c7"
-    sha256 cellar: :any, arm64_linux:       "ecafb6094f68b500f8bba9694e46432e8ef35334f2f7327df8557db3142c0ea0"
-    sha256 cellar: :any, x86_64_linux:      "ebd703e7cb6a1e7af5704a0bc40020e67059f0989c8bb094b60e733f6f75b14f"
+    sha256               arm64_golden_gate: "38a8db6a267ddbbc864b84144565a2a2a06513d46efa82cb8e821edd7abb50eb"
+    sha256               arm64_tahoe:       "078d7908550e08b2702ce8b0a1b7887898071da304d057838150a2ed11d1e359"
+    sha256               arm64_sequoia:     "7e6ff57565ec5aeca3ddb9710325e466165123ccfd1f6e76e60bb155bc022599"
+    sha256 cellar: :any, arm64_linux:       "0d2e28554dabd53f019e170613fcb02d8126e53e5347a29751e940d7c98727b1"
+    sha256 cellar: :any, x86_64_linux:      "a1c4ec6dfff832ac77a4753f04879eb6f8b329a7575061259303945bd02aceaa"
   end
 
   depends_on "cmake" => :build

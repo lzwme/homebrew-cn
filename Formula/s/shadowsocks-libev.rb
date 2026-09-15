@@ -8,12 +8,13 @@ class ShadowsocksLibev < Formula
   head "https://github.com/shadowsocks/shadowsocks-libev.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "a42fdc941a6684fc34969d13cfb8943ab85ec4759e6648969c568c08f91578f9"
-    sha256 cellar: :any,                 arm64_sequoia: "bfe681be47331281dfa702c0869bc11e98881b4f3c0fcec40fbaf4cf480935cd"
-    sha256 cellar: :any,                 arm64_sonoma:  "19bf52cee9260d0669dc847fe5ecf000b905c4f8be5f303df4071db906082d36"
-    sha256 cellar: :any,                 sonoma:        "790bc99c821cc3fd8b4a685e37ec40ef4a6c0f470911a43b1863db3af4773f81"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "36ee4c22c4c47e0a887832c226ce0d422fd69133a648afdb718f651faeff05e6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e622c9cb22667b5b5b27358b753e6d6a987df4620f56ca811ee54c6505e8a573"
+    sha256 cellar: :any,                 arm64_golden_gate: "79df11458302fd9a0a07ed8bd6fe34db0c0b129bb810d9a1943e5fba6f449056"
+    sha256 cellar: :any,                 arm64_tahoe:       "a42fdc941a6684fc34969d13cfb8943ab85ec4759e6648969c568c08f91578f9"
+    sha256 cellar: :any,                 arm64_sequoia:     "bfe681be47331281dfa702c0869bc11e98881b4f3c0fcec40fbaf4cf480935cd"
+    sha256 cellar: :any,                 arm64_sonoma:      "19bf52cee9260d0669dc847fe5ecf000b905c4f8be5f303df4071db906082d36"
+    sha256 cellar: :any,                 sonoma:            "790bc99c821cc3fd8b4a685e37ec40ef4a6c0f470911a43b1863db3af4773f81"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "36ee4c22c4c47e0a887832c226ce0d422fd69133a648afdb718f651faeff05e6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "e622c9cb22667b5b5b27358b753e6d6a987df4620f56ca811ee54c6505e8a573"
   end
 
   deprecate! date: "2027-03-31", because: "needs EOL `mbedtls@3`"

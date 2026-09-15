@@ -7,12 +7,13 @@ class Shuffledns < Formula
   head "https://github.com/projectdiscovery/shuffledns.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "169bd116ca2c2ded412843dc7bc8ae58c7d80fe88dbeff1e4b921bd689d94d11"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4cc57e03bc1578d038f038e61732bb6792218b0f4ded826f8c121434fc968cce"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3be0efb8a70e71c1d14114e32377e8edddc0b1b5d8c8990da0589ad6388820d9"
-    sha256 cellar: :any_skip_relocation, sonoma:        "defb16f81861103feb5d35841c03a1bce871e490754cc688c576737977879aec"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6e8c9e9fabb9c728dbda633cd189d0a8c33cc1a568b67cbaa6b97c3932cf235d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "52df73fdcdf19cf5244cfc9c83d934681e7491a153c1ae98d94fba7a7cf33836"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "0587960ec32ac217a12fffff8b997208fddd89bad45fb3d6a50f3fc592428c22"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "169bd116ca2c2ded412843dc7bc8ae58c7d80fe88dbeff1e4b921bd689d94d11"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "4cc57e03bc1578d038f038e61732bb6792218b0f4ded826f8c121434fc968cce"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "3be0efb8a70e71c1d14114e32377e8edddc0b1b5d8c8990da0589ad6388820d9"
+    sha256 cellar: :any_skip_relocation, sonoma:            "defb16f81861103feb5d35841c03a1bce871e490754cc688c576737977879aec"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "6e8c9e9fabb9c728dbda633cd189d0a8c33cc1a568b67cbaa6b97c3932cf235d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "52df73fdcdf19cf5244cfc9c83d934681e7491a153c1ae98d94fba7a7cf33836"
   end
 
   depends_on "go" => :build

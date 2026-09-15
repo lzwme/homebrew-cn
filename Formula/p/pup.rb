@@ -1,18 +1,17 @@
 class Pup < Formula
   desc "CLI companion with 200+ commands across 33+ Datadog products"
   homepage "https://www.datadoghq.com"
-  url "https://ghfast.top/https://github.com/DataDog/pup/releases/download/v1.19.1/pup_1.19.1_source.tar.gz"
-  sha256 "d6ac2587e0bfccb0967d505122bb3c92f0b688c21fdf23d68066c9d2922fd82c"
+  url "https://ghfast.top/https://github.com/DataDog/pup/releases/download/v1.20.0/pup_1.20.0_source.tar.gz"
+  sha256 "7e7e1f2c3640457132e8f75e74d822a9dd97dc96774ca433af314d9aaca82562"
   license "Apache-2.0"
   head "https://github.com/DataDog/pup.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "7aaf9228d681e142b6a556ff34e94b1e2030b32b07252e3c6996917289f118b6"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "eb0babbaedb0c82e7adef5c681e0a77cc9a0d34d7572308ca826b316225ce615"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "d0bd58119bbc43c871431e66bbfae279f9ffbfdaff95e96a58f5dad98ca9d857"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "622a60858ab27a6e2941e3f1afca3a0c1ccebbcde55b591bcd64af1563d1c146"
-    sha256 cellar: :any,                 arm64_linux:       "dc4774bc3dc726bc4d3929c3a2337049d782ce433840bf8f3221f7526772463f"
-    sha256 cellar: :any,                 x86_64_linux:      "bcb7b2ef145095d231ecf0d8169d898e0d98b2a946580abbd649ab4bdf0ff120"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "cd5f90720caaa279846a6e26ce41abe3978a81baa01cf877df041d8b51f590b0"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "4b5050e14e253d5a3b95acfc1e2c96effcf656e228031f584f1162bbf8bd8138"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "f074c209c87c40071400038441accd1bb4351d7ab4eba4b8c97c3b3ba004089b"
+    sha256 cellar: :any,                 arm64_linux:       "bd538c448bb4718c335034e93cdcb1fd44b7d3df3104017c0daab75e53405964"
+    sha256 cellar: :any,                 x86_64_linux:      "770019299cd38a741cd43fbe355948ae9ae2ac5c711dbb4f475ec76e96c9b143"
   end
 
   depends_on "pkgconf" => :build

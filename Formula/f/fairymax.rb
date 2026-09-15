@@ -32,10 +32,7 @@ class Fairymax < Formula
   end
 
   test do
-    (testpath/"test").write <<~EOS
-      hint
-      quit
-    EOS
-    refute_match(/piece-description file .* not found/, shell_output("#{bin}/fairymax < test"))
+    output = pipe_output(bin/"fairymax", "hint\nquit\n", 0)
+    refute_match(/piece-description file .* not found/, output)
   end
 end

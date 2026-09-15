@@ -1,19 +1,17 @@
 class Ekphos < Formula
   desc "Terminal-based markdown research tool inspired by Obsidian"
   homepage "https://ekphos.netlify.app/docs"
-  url "https://ghfast.top/https://github.com/hanebox/ekphos/archive/refs/tags/v0.25.10.tar.gz"
-  sha256 "0f88f0555d1d453458d35fad5779b824288857e95ac039605ac1901733fe044b"
+  url "https://ghfast.top/https://github.com/hanebox/ekphos/archive/refs/tags/v0.50.0.tar.gz"
+  sha256 "fe42ee4e01b31041d2813c91d88271f3cebbd0d16cc79eebce9a1289dbecbcea"
   license "MIT"
   head "https://github.com/hanebox/ekphos.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "a92451cb750a8d36b75c8204653902e7e53db77510b532cec332f636ebc1cec2"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "d3ba9674592fbfc527b7cd204c9cc1dc8575cc02304664c85b82b23806f6ab04"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "c80a7ab6c5f12ce04accee0cdea02c40788e51ee84146b078c37316ca6dec1eb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "80a651010eafcd57fd2e08a65d2e0fd6cb273c5ae2dfa681aac00af9b85aec8c"
-    sha256 cellar: :any_skip_relocation, sonoma:            "fee19795d599090fe107827f628744b48c0ae67f08770ef7a4d1ffc005f424f6"
-    sha256 cellar: :any,                 arm64_linux:       "7b808c61a48038f5beb84c96a87f01ad8289ffff6c7025c13bf4652082b52488"
-    sha256 cellar: :any,                 x86_64_linux:      "110ec970c010a9c74a78f16400a82136a879d8424b6a0f5791520bf4fae9bff2"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "5e610c3b7d4b929c3f4662abe2d4426ab2f58ba0c8a06b10c4e2c0f06b47dacc"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "7758a2075634457eff0d3e2e74bfa0e308458ce560686fd954082d358926a6b0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "022cfa0ab957b641207d5cd07cb1b2d5f15e28c79fdd12a16e37fda2a50c7c6f"
+    sha256 cellar: :any,                 arm64_linux:       "1c7f74648da65f7d627c276973835131b7f6c83b258ea7769b355d16aa400cf5"
+    sha256 cellar: :any,                 x86_64_linux:      "d9fba8e94fa23cefbca2455042e132fddb8b29d26395fd48d204ebf954d529e5"
   end
 
   depends_on "rust" => :build

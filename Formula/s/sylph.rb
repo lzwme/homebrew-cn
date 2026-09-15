@@ -1,18 +1,16 @@
 class Sylph < Formula
   desc "Ultrafast taxonomic profiling and genome querying for metagenomic samples"
   homepage "https://github.com/bluenote-1577/sylph"
-  url "https://ghfast.top/https://github.com/bluenote-1577/sylph/archive/refs/tags/v0.9.0.tar.gz"
-  sha256 "c11fbe5720500c43e7102a359dd9ec59b09b93a15a8ce6f6a3bb917430c3059e"
+  url "https://ghfast.top/https://github.com/bluenote-1577/sylph/archive/refs/tags/v1.0.0.tar.gz"
+  sha256 "dd4ba47906be7f3502b6bec88fa212ba5340b1eefced0192052ef0da82ca3a2d"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "6667ec47bbebceed264e3143db4b73fb021e579cef49749683383946d9c9e3d9"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "65a5db917f22490e7ccfe1c708fbea9ef4e12d58e9e204f1be4cba864dfa5a9d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "90e6499a3be2395901efaecb8b29f8afed13d73f43c15d2f85206975d971c98c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "a96d1d8693721ee1e787c42758e4e50c30a8d63d3104e8a50709edf1ecc22ed5"
-    sha256 cellar: :any_skip_relocation, sonoma:            "6558b4a6efc0fffea34185b1efd5930b6465b0020467815e923f436d5813b9cb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "49a547053071374c6de1152c674611eaacf7ba5ca3b51eba8e0e286d20d207a1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "2d5ab406da26adf6e3b73144a1bdce61fba7aeb84082691510fdb3254782d0d2"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "ce1cc43a16a406426cde777ee7abfde0553d6c5c8a6461d9bf0bd55b6e6dedc7"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "2e016ca805181652ca6d8eb424163bb2f5ef69615353c4684cf4ed3040672b07"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "75192d460f8261a3e40c5343827037c0774704f7020ce2ecc954ecb4419d968b"
+    sha256 cellar: :any,                 arm64_linux:       "ca22476a188aa5c44dfbdb757e2f285a2c20c36ee748cb58d332208ca390d54c"
+    sha256 cellar: :any,                 x86_64_linux:      "9c34a2aa31a97052880507dc2590d76447cd96a3fa1f64f51680ce085c049057"
   end
 
   depends_on "cmake" => :build

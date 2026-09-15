@@ -30,18 +30,18 @@ class Json2hcl < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/json2hcl -version")
 
-    (testpath/"input.json").write <<~JSON
+    json = <<~JSON
       {
         "hello": "world"
       }
     JSON
 
-    assert_equal "\"hello\" = \"world\"", shell_output("#{bin}/json2hcl < input.json")
+    assert_equal "\"hello\" = \"world\"", pipe_output(bin/"json2hcl", json, 0)
 
-    (testpath/"input.tf").write <<~HCL
+    hcl = <<~HCL
       hello = "world"
     HCL
 
-    assert_equal "{\n  \"hello\": \"world\"\n}", shell_output("#{bin}/json2hcl -reverse < input.tf").chomp
+    assert_equal json.chomp, pipe_output("#{bin}/json2hcl -reverse", hcl, 0).chomp
   end
 end

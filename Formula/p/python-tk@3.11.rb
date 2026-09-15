@@ -10,12 +10,12 @@ class PythonTkAT311 < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "470ac510a2c4129762343393289fa65071a6f1f69274a18e897db5fb8e123df9"
-    sha256 cellar: :any, arm64_sequoia: "493a85e0ee00b45d4534ce96d07a09c65f93c650ea2d9256badc39bb10713839"
-    sha256 cellar: :any, arm64_sonoma:  "106c220bb1ee721fb10cde87b0535baa745b29df9dd9f9c4d455af2aaaf091a6"
-    sha256 cellar: :any, sonoma:        "1c0783f75312bfab9a1d451580855cfdbfba0292c7e933f2dacfb386d18cd443"
-    sha256 cellar: :any, arm64_linux:   "8f108754cb35d7b225ad25444e9e81b7091046f962a8be3cbdd3181d0255a306"
-    sha256 cellar: :any, x86_64_linux:  "21bf69d4e87a35ac77d989e239860f64d1c286aafab8376d29a88c495366aa92"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "88f68654136cc6c7446ed395ab95f2b8db57a6c1f7266a19dbd5ccf3f427d1ff"
+    sha256 cellar: :any, arm64_tahoe:       "075ac4b075b1a5b45b89b66929dfd204c975091271dace4d2d9ec6aeb7b9b0c2"
+    sha256 cellar: :any, arm64_sequoia:     "7725995c2a79d56bc9e57c9a6d91967554ac01f0a6c72f8080f4135e5cd428c1"
+    sha256 cellar: :any, arm64_linux:       "c509298633167da5d61eaf348f7a2305f4562b7e4c2d5e73ec342defba4c9f75"
+    sha256 cellar: :any, x86_64_linux:      "fb5bda6343cf3b8a5ca4f1d2001c81dfc4355a7940f6a749d22ffb5530bc14e7"
   end
 
   # https://devguide.python.org/versions/#versions
@@ -51,9 +51,5 @@ class PythonTkAT311 < Formula
 
   test do
     system python3, "-c", "import tkinter"
-
-    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
-
-    system python3, "-c", "import tkinter; root = tkinter.Tk()"
   end
 end

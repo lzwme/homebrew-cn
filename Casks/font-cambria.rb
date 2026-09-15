@@ -7,8 +7,8 @@ cask "font-cambria" do
   desc "Cambria font family"
   homepage "https://www.wfonts.com/font/cambria"
 
-  font "Cambria.ttf"
-  font "cambriab.ttf"
   font "CAMBRIAI.TTF"
   font "CAMBRIAZ.TTF"
+  font "Cambria.ttf"
+  font "cambriab.ttf"
 end

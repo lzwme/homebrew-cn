@@ -1,8 +1,8 @@
 class Grokj2k < Formula
   desc "JPEG 2000 Library"
   homepage "https://github.com/GrokImageCompression/grok"
-  url "https://ghfast.top/https://github.com/GrokImageCompression/grok/releases/download/v20.4.8/source-full.tar.gz"
-  sha256 "a9c1651398bebe214dc4b3c19ba0cb5d4b615c8b743d15742f9be6aa16bcd2f9"
+  url "https://ghfast.top/https://github.com/GrokImageCompression/grok/releases/download/v20.4.10/source-full.tar.gz"
+  sha256 "fafd50ef045900b09b6916d32800b36fff659801853be0a67e7f36701fa6a4c0"
   license "AGPL-3.0-or-later"
   head "https://github.com/GrokImageCompression/grok.git", branch: "master"
 
@@ -12,11 +12,11 @@ class Grokj2k < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "1b869e1b0ff921e7d02d5de65a5fbc4276019c37173e2f80c70d2dfe36210a70"
-    sha256 cellar: :any, arm64_tahoe:       "9b685350c46a355d297d5aba1fc90d688381422dffcef1b0b920fa2712e060be"
-    sha256 cellar: :any, arm64_sequoia:     "59b29bbaefcddd88067a5ca1aa86beb83e7a3a249e419012e586ee51af9d0eee"
-    sha256 cellar: :any, arm64_linux:       "a00eafbe8dbb9265d314f410124f230cc13adf7827713702ea258373fe4a00d2"
-    sha256 cellar: :any, x86_64_linux:      "65ee8032b7a14dec2eb634b83f8c36cc0ba8342cb356e679890388e86a7793f9"
+    sha256 cellar: :any, arm64_golden_gate: "5f1eeee73cf42126ce59be7d6b6d4d9d530e15bd8e28a748f4edcc81a0ae22d8"
+    sha256 cellar: :any, arm64_tahoe:       "9100f02580698ed631ebdd5cc1a7a2e33e924fd1f12c9272cc1e8b03892aa5d9"
+    sha256 cellar: :any, arm64_sequoia:     "7b17f8e45f6662a680ae16830886c675810610ef50d75333b68a64041da1707a"
+    sha256 cellar: :any, arm64_linux:       "6a94cf0073c4ebeef7db11da3de7779df7de618b56ef829f68c759944354e6f3"
+    sha256 cellar: :any, x86_64_linux:      "6f1f9f8170e76da2470b09d64ea3a36e8c73cf88646d962b45abf859d290d911"
   end
 
   depends_on "cmake" => :build
@@ -96,7 +96,7 @@ class Grokj2k < Formula
     testpath.install resource("homebrew-test_image")
     system bin/"grk_compress", "--in-file", "basn6a08.tif",
                                "--out-file", "test.jp2", "--out-fmt", "jp2"
-    output = shell_output("#{Formula["exiftool"].bin}/exiftool test.jp2")
+    output = shell_output("#{formula_opt_bin("exiftool")}/exiftool test.jp2")
 
     expected_fields = [
       "Capture X Resolution            : 2835",

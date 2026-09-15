@@ -34,8 +34,7 @@ class Lazysql < Formula
   end
 
   test do
-    path = testpath/"school.sql"
-    path.write <<~SQL
+    school = <<~SQL
       create table students (name text, age integer);
       insert into students (name, age) values ('Bob', 14);
       insert into students (name, age) values ('Sue', 12);
@@ -43,7 +42,7 @@ class Lazysql < Formula
       select name from students order by age asc;
     SQL
 
-    names = shell_output("sqlite3 test.db < #{path}").strip.split("\n")
+    names = pipe_output("sqlite3 test.db", school, 0).strip.split("\n")
     assert_equal %w[Sue Tim Bob], names
 
     assert_match "terminal not cursor addressable", shell_output("#{bin}/lazysql test.db 2>&1", 1)

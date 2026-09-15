@@ -7,12 +7,13 @@ class Sidekick < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b47090a52636675f0dfae5f548f852059b7dc088872a2d8d64eec484e19db617"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b47090a52636675f0dfae5f548f852059b7dc088872a2d8d64eec484e19db617"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b47090a52636675f0dfae5f548f852059b7dc088872a2d8d64eec484e19db617"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0ee43e780bc61973ce3d767a9685e535bda44b5fe2c92c0f387c1dc07b7b0dde"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0f0fc03a04c528d79af849d0ca02d8b168f2ab860699d2d98e1c48a27642ff43"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "39755a46cd0a9f3fa863f933fc9fbf682d4e8841be7a882547fe6eaca455a089"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "42075f071566a2fcc27427d12a4eeb743e4a3d5e111510574f4a3145f7cfd5c5"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "b47090a52636675f0dfae5f548f852059b7dc088872a2d8d64eec484e19db617"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "b47090a52636675f0dfae5f548f852059b7dc088872a2d8d64eec484e19db617"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "b47090a52636675f0dfae5f548f852059b7dc088872a2d8d64eec484e19db617"
+    sha256 cellar: :any_skip_relocation, sonoma:            "0ee43e780bc61973ce3d767a9685e535bda44b5fe2c92c0f387c1dc07b7b0dde"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "0f0fc03a04c528d79af849d0ca02d8b168f2ab860699d2d98e1c48a27642ff43"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "39755a46cd0a9f3fa863f933fc9fbf682d4e8841be7a882547fe6eaca455a089"
   end
 
   depends_on "go" => :build
