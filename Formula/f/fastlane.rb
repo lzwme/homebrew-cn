@@ -1,8 +1,8 @@
 class Fastlane < Formula
   desc "Easiest way to build and release mobile apps"
   homepage "https://fastlane.tools"
-  url "https://ghfast.top/https://github.com/fastlane/fastlane/archive/refs/tags/2.240.0.tar.gz"
-  sha256 "461b91f14602b640a6d0b20d98de9ffcbbf7875c6371227e67cff4ed11e3d4ab"
+  url "https://ghfast.top/https://github.com/fastlane/fastlane/archive/refs/tags/2.240.1.tar.gz"
+  sha256 "4282eebeedf59b3a8f3c9c823a6db971331adb60c94e137b6939bce7685fc250"
   license "MIT"
   head "https://github.com/fastlane/fastlane.git", branch: "master"
 
@@ -12,11 +12,11 @@ class Fastlane < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "ea3ea370bc1a867bacfc91c328fc80a5add76014feafbbd87d5dea0179ec9908"
-    sha256 cellar: :any, arm64_tahoe:       "e1d6868772f6a214fd6487c4e4d3ca49c6f77a7830401987006af69ef39125b3"
-    sha256 cellar: :any, arm64_sequoia:     "7c16a984734176676add3ec50d7890c0848ccb95851a87289d853266068b1a56"
-    sha256 cellar: :any, arm64_linux:       "de1540ba8fbdb690871269bd25c1a7197f7a5269e0a65a6b9055d4a43ab4aeb7"
-    sha256 cellar: :any, x86_64_linux:      "6d2872127b75a77aebff9e8fac5bee6b3ae8196058dd2cf0d89c2905477b30c9"
+    sha256 cellar: :any, arm64_golden_gate: "fe72467658cf55ff2447280e794fcbc639d8da493f63c037e652718514a33996"
+    sha256 cellar: :any, arm64_tahoe:       "8fe083c025c82b6b000c4dc513656695db7db4c0448ea63ac8c6de8335b8020f"
+    sha256 cellar: :any, arm64_sequoia:     "e22229517e04cc091f3863dc02b45e4f44ede9b24a63c386982ceca87f150aae"
+    sha256 cellar: :any, arm64_linux:       "d32cc4bf195a19d92903b34341a5a255ae0b8c992000eaa935eec85287c482a0"
+    sha256 cellar: :any, x86_64_linux:      "5d534a4ad0df56755e2255b14044204a16d407f2387f0bf54885e9657bc9efc1"
   end
 
   depends_on "ruby"

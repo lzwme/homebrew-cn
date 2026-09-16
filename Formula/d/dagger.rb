@@ -31,14 +31,16 @@ class Dagger < Formula
       -X github.com/dagger/dagger/engine.Tag=v#{version}
     ]
     system "go", "build", *std_go_args(ldflags:), "./cmd/dagger"
+
+    generate_completions_from_executable(bin/"dagger", shell_parameter_format: :cobra)
   end
 
   test do
     ENV["DOCKER_HOST"] = "unix://#{testpath}/invalid.sock"
 
-    assert_match "dagger v#{version}", shell_output("#{bin}/dagger version </dev/null")
+    assert_match "dagger v#{version}", shell_output("#{bin}/dagger version")
 
-    output = shell_output("#{bin}/dagger query brewtest </dev/null 2>&1", 1)
+    output = shell_output("#{bin}/dagger query brewtest 2>&1", 1)
     assert_match "failed to connect to the docker API", output
   end
 end

@@ -2,6 +2,7 @@ class Newlisp < Formula
   desc "Lisp-like, general-purpose scripting language"
   homepage "https://www.newlisp.org/"
   url "https://www.newlisp.org/downloads/newlisp-10.7.5.tgz"
+  mirror "https://deb.debian.org/debian/pool/main/n/newlisp/newlisp_10.7.5.orig.tar.gz"
   sha256 "dc2d0ff651c2b275bc4af3af8ba59851a6fb6e1eaddc20ae75fb60b1e90126ec"
   license "GPL-3.0-or-later"
 

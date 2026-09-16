@@ -19,7 +19,7 @@ class Bbrew < Formula
   depends_on "go" => :build
 
   # `test do` block fetches data from formulae.brew.sh
-  deny_network_access! [:build, :postinstall]
+  allow_network_access! :test
 
   def fetch
     system "go", "mod", "download"

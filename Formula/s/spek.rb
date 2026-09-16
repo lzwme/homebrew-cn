@@ -7,12 +7,13 @@ class Spek < Formula
   revision 8
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "f8373626cb49d786277b4347c1684431a6fe4732bdcf08b06c14860b4be8ccf1"
-    sha256 cellar: :any, arm64_sequoia: "b0a68889610aaf39000f9435f7f99d0e093969babb0695fdad39689a75bd2dac"
-    sha256 cellar: :any, arm64_sonoma:  "96d28527640336b7d2ca39687b9b66d56807565f33808c9d3f6eea0085ca9e33"
-    sha256 cellar: :any, sonoma:        "6b27bbda4bebbb1b271b5a4541388c0ff7342af863316f07f7f909cb8f736462"
-    sha256 cellar: :any, arm64_linux:   "894e5ac513494420ba3a96fdfb187365589d20cb9becb13f4628aeef8cea2cf8"
-    sha256 cellar: :any, x86_64_linux:  "703fb5b95180d12fce814c61e079c903eddfb5bdc92970d12d06fc0fc86ce6f6"
+    sha256 cellar: :any, arm64_golden_gate: "e3b8645e6608c4557f7f3b828e7ecb9fc68dd9c116170be90e9051548c77f9c2"
+    sha256 cellar: :any, arm64_tahoe:       "f8373626cb49d786277b4347c1684431a6fe4732bdcf08b06c14860b4be8ccf1"
+    sha256 cellar: :any, arm64_sequoia:     "b0a68889610aaf39000f9435f7f99d0e093969babb0695fdad39689a75bd2dac"
+    sha256 cellar: :any, arm64_sonoma:      "96d28527640336b7d2ca39687b9b66d56807565f33808c9d3f6eea0085ca9e33"
+    sha256 cellar: :any, sonoma:            "6b27bbda4bebbb1b271b5a4541388c0ff7342af863316f07f7f909cb8f736462"
+    sha256 cellar: :any, arm64_linux:       "894e5ac513494420ba3a96fdfb187365589d20cb9becb13f4628aeef8cea2cf8"
+    sha256 cellar: :any, x86_64_linux:      "703fb5b95180d12fce814c61e079c903eddfb5bdc92970d12d06fc0fc86ce6f6"
   end
 
   depends_on "gettext" => :build
@@ -38,22 +39,21 @@ class Spek < Formula
   end
 
   test do
-    cmd = "#{bin}/spek --version"
+    # Cannot run any useful test within macOS sandbox
+    spek = bin/"spek"
+    assert_path_exists spek
+    return if OS.mac?
 
-    pid = nil
-    if OS.linux?
-      IO.pipe do |read_io, write_io|
-        pid = spawn(formula_opt_bin("xorg-server")/"Xvfb", "-displayfd", write_io.fileno.to_s, write_io => write_io)
-        write_io.close
-        ENV["DISPLAY"] = ":#{read_io.read.strip}"
+    IO.pipe do |read_io, write_io|
+      pid = spawn(formula_opt_bin("xorg-server")/"Xvfb", "-displayfd", write_io.fileno.to_s, write_io => write_io)
+      write_io.close
+      ENV["DISPLAY"] = ":#{read_io.read.strip}"
+      assert_match "Spek version #{version}", shell_output("#{spek} --version")
+    ensure
+      if pid
+        Process.kill "TERM", pid
+        Process.wait pid
       end
-    end
-
-    assert_match "Spek version #{version}", shell_output(cmd)
-  ensure
-    if pid
-      Process.kill "TERM", pid
-      Process.wait pid
     end
   end
 end

@@ -8415,6 +8415,7 @@ Homebrew-homebrew-core/Formula/x/xurls.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/x/xvid.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/x/xwin.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/x/xwininfo.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/x/xwpe.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/x/xxh.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/x/xxhash.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/x/xz.rb, Homebrew/homebrew-core, 1
@@ -8746,7 +8747,6 @@ Homebrew-homebrew-cask/Casks/a/alisma.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/aliwangwang.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/aliworkbench.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/all-in-one-messenger.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/a/allen-and-heath-midi-control.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/alloy.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/alma.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/almighty.rb, Homebrew/homebrew-cask, 1
@@ -9067,6 +9067,7 @@ Homebrew-homebrew-cask/Casks/b/bitbox.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/b/bitcoin-core.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/bitfocus-buttons.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/bitmessage.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/b/bitmuse.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/bitrix24.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/bitwarden.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/b/bitwig-studio.rb, Homebrew/homebrew-cask, 0
@@ -9456,7 +9457,6 @@ Homebrew-homebrew-cask/Casks/c/commandpost.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/commandq.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/companion-satellite.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/companion.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/c/companion@beta.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/composercat.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/compositor.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/conar.rb, Homebrew/homebrew-cask, 0
@@ -9695,6 +9695,7 @@ Homebrew-homebrew-cask/Casks/d/displaybuddy.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/displaycal.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/displaylink.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/displays.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/d/distill-web-monitor.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/distroav.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/ditto.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/diversion-app.rb, Homebrew/homebrew-cask, 0
@@ -12861,6 +12862,7 @@ Homebrew-homebrew-cask/Casks/g/gitahead.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/g/gitblade.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/gitbutler.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/gitcomet.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/g/gitdifferent.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/gitdock.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/gitfiend.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/g/gitfinder.rb, Homebrew/homebrew-cask, 0
@@ -13396,6 +13398,7 @@ Homebrew-homebrew-cask/Casks/k/kitty@nightly.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/k/kiwi-for-gmail.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/k/kiwix.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/k/kkbox.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/k/kkterm.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/k/klatexformula.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/k/klayout.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/k/klogg.rb, Homebrew/homebrew-cask, 1
@@ -14175,6 +14178,7 @@ Homebrew-homebrew-cask/Casks/n/nutstore.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/nvidia-geforce-now.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/nvidia-nsight-compute.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/nvidia-nsight-systems.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/n/nvidia-pair.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/n/nvidia-sync.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/nvs.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/n/nwjs.rb, Homebrew/homebrew-cask, 0
@@ -15331,7 +15335,6 @@ Homebrew-homebrew-cask/Casks/s/springtoolsforeclipse.rb, Homebrew/homebrew-cask,
 Homebrew-homebrew-cask/Casks/s/spundle.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/spybuster.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/spyder.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/s/sq-mixpad.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/sql-tabs.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/sqlcl.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/sqlectron.rb, Homebrew/homebrew-cask, 1
@@ -15563,6 +15566,7 @@ Homebrew-homebrew-cask/Casks/t/telegram-a.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/telegram-desktop.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/telegram-desktop@beta.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/telegram.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/t/telegram@beta.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/teleport-connect.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/teleport-suite.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/teleport-suite@16.rb, Homebrew/homebrew-cask, 0
@@ -16426,6 +16430,7 @@ codello-homebrew-brewery/Casks/lilypond-font-ross.rb, codello/homebrew-brewery, 
 codello-homebrew-brewery/Casks/lilypond-font-scorlatti.rb, codello/homebrew-brewery, 1
 codello-homebrew-brewery/Casks/lilypond-font-sebastiano.rb, codello/homebrew-brewery, 1
 codello-homebrew-brewery/Casks/ovftool.rb, codello/homebrew-brewery, 0
+codello-homebrew-brewery/Casks/papers.rb, codello/homebrew-brewery, 1
 codello-homebrew-brewery/Casks/renew.rb, codello/homebrew-brewery, 0
 codello-homebrew-brewery/Casks/ultrastar-creator.rb, codello/homebrew-brewery, 1
 codello-homebrew-brewery/Casks/ultrastar-manager.rb, codello/homebrew-brewery, 1

@@ -4,16 +4,15 @@ class Libass < Formula
   url "https://ghfast.top/https://github.com/libass/libass/releases/download/0.17.5/libass-0.17.5.tar.xz"
   sha256 "2dca25c0e0c837ddf00b52011b3f82cac1e4ddd3ad018227806b0c2288864acc"
   license "ISC"
+  revision 1
   compatibility_version 1
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "381fa93013650f873816be115168cdf35f104c165494c45ce9be030cf5b99316"
-    sha256 cellar: :any, arm64_tahoe:       "47e1f2d60c97628331593c00673e03d00e675c2462c1267f1e459ba17a41129e"
-    sha256 cellar: :any, arm64_sequoia:     "3600420037feb1403141c0f6d07f135dcd79649cafa420ace2750468981664ec"
-    sha256 cellar: :any, arm64_sonoma:      "a14b9e2407d406f58b7a83c7c22d9332b69ba68dca53dd7e61d7e0afa0468ed4"
-    sha256 cellar: :any, sonoma:            "e380b555c2987bac9cfe30d47e2aaadd07112073cc263dee9d992f488297fe74"
-    sha256 cellar: :any, arm64_linux:       "5b13b14c5716ad5b9a1082e9d05f3f7cbb4aaf616bb19c03483e3f981b9b075f"
-    sha256 cellar: :any, x86_64_linux:      "c6a9a61e5e5b9f6a445a63690603bec9bc8c56513a2b69dd8ca3eab530b98ccc"
+    sha256 cellar: :any, arm64_golden_gate: "a066041fedbe188a5330faff55c9e3baac12f5d2ca156b7ae7d4cb1826ed8d84"
+    sha256 cellar: :any, arm64_tahoe:       "29ac9a179908bc0c3d918b0f41fc40f7fbdfbc8819fa774ac85f0620b9281dc3"
+    sha256 cellar: :any, arm64_sequoia:     "b893a0f114554c1b9ea3e046d8102d59c6cf98106936da144835310cab2878f3"
+    sha256 cellar: :any, arm64_linux:       "3bec3705e79ddd9243520f702d071fdc7786e88b7759ca96f99f15bc2cfa5a52"
+    sha256 cellar: :any, x86_64_linux:      "c07f0ce111a608118591aba37efc4c77643f6fe29a8c837efec9c093569f47d2"
   end
 
   head do

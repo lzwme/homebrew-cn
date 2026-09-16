@@ -6,11 +6,12 @@ class Httrack < Formula
   license "GPL-3.0-or-later" => { with: "openvpn-openssl-exception" }
 
   bottle do
-    sha256 arm64_golden_gate: "58dcc90893bb43a0bdcb9d82c25cec62a2514ec6f2f53f19ad1e233de53ee95d"
-    sha256 arm64_tahoe:       "8fea08c20e53a046161e8238e1b589b6462c699320167c5fd51ddedb22a8649c"
-    sha256 arm64_sequoia:     "87dcd04f345d0362be2d02be4a24f23f1bea6c5a947b3fbb9c0fb4e60231c887"
-    sha256 arm64_linux:       "fe3ce8273c5c561d75926fde367d23cfcd61c70c6a0068f0347b35418b0e4fa1"
-    sha256 x86_64_linux:      "5da51ae26f7b2ded9bf4a5e7b9b53e4e2efd498dd6047e4c619956f110fa05f5"
+    rebuild 1
+    sha256 arm64_golden_gate: "76f2ae1c62100cd255a22e6e9f9e3afaaca66bf943bf249f7edee03101268bdd"
+    sha256 arm64_tahoe:       "c71e83a97cb1e6e594edab5363cac6e0d359bee1f5c9efba4714486e10b232be"
+    sha256 arm64_sequoia:     "983f2f2a6c639dfd166ec3c9ad4b6ed8e8878de78fe82df60f046e9a52d8cb95"
+    sha256 arm64_linux:       "d4c265158038d0ae0eaacff167d3056bd48b79e328f8abf4c1ea766e5d5d1640"
+    sha256 x86_64_linux:      "aaea8c8af82ccf22f81fbf247af4a90a125037cac5bf6b14db5bb54ba7a117a5"
   end
 
   depends_on "openssl@4"
@@ -25,8 +26,8 @@ class Httrack < Formula
 
     system "./configure", "--disable-dependency-tracking", "--prefix=#{prefix}"
     system "make", "install"
-    # Don't need Gnome integration
-    rm_r(Dir["#{share}/{applications,pixmaps}"])
+    # Gnome integration is inert on macOS, but Linux desktops use it
+    rm_r(Dir["#{share}/{applications,pixmaps}"]) if OS.mac?
   end
 
   test do

@@ -22,6 +22,12 @@ class Bat < Formula
   depends_on "libgit2"
   depends_on "oniguruma"
 
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", "--locked", "--target", "host-tuple"
+  end
+
   def install
     ENV["LIBGIT2_NO_VENDOR"] = "1"
     ENV["RUSTONIG_DYNAMIC_LIBONIG"] = "1"

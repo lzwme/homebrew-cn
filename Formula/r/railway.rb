@@ -1,20 +1,26 @@
 class Railway < Formula
   desc "Develop and deploy code with zero configuration"
   homepage "https://railway.com/"
-  url "https://ghfast.top/https://github.com/railwayapp/cli/archive/refs/tags/v5.57.1.tar.gz"
-  sha256 "391a7529f347478b9e63dc60452654fd7c93078d095884e7bf1b166a9bb310f9"
+  url "https://ghfast.top/https://github.com/railwayapp/cli/archive/refs/tags/v5.57.2.tar.gz"
+  sha256 "cfdd43f669e99ab551791316f150911ff94c0d07ce96370828fcd15bfde8839a"
   license "MIT"
   head "https://github.com/railwayapp/cli.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "bbacb3007d0ba3e82c78fc3b97d3ef019106cbbdbc4b910e78cfc9ed8c9be096"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "58bd8487b4a15a2708962b7c3aa0decf07356df9839856ffdad8a8393a7faf91"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "339c7dbe260c48e082a41ab16910311af1f236f868e09f53ae0261aefcaad76d"
-    sha256 cellar: :any,                 arm64_linux:       "6daec360e56b9c7ded0f2b2ddbd932c2386a7beca1d4741b995b57e92cd1c5ec"
-    sha256 cellar: :any,                 x86_64_linux:      "6d1bdaad543e4af28f76d9c464c8182c43cee2a76eddf5b09fffa9213ef297b4"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "4058ad78a3fa7fdef8f71ca2de23c4c6d599d4d81b35f62935ae1a9cc1acd9bf"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "449116464b088d23f38a7f54a79b1fbae26d982c3a5ab25095644a92afa84d89"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "18006fc945f77037930839e8b0e6b0fcd99229c5135648eaf0644f7db7fca298"
+    sha256 cellar: :any,                 arm64_linux:       "d73454cb3ae6a88e219fd6742cb72fbcd7cf563528fe8f5f1e67894f646898b3"
+    sha256 cellar: :any,                 x86_64_linux:      "6f513e5561d0681fbb08281c168d9ce7f806269394d220f4d2757ee777df2d79"
   end
 
   depends_on "rust" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", "--locked", "--target", "host-tuple"
+  end
 
   def install
     system "cargo", "install", *std_cargo_args

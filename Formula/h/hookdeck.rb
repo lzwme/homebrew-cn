@@ -1,8 +1,8 @@
 class Hookdeck < Formula
   desc "Forward webhook events from Hookdeck to a local server"
   homepage "https://hookdeck.com"
-  url "https://ghfast.top/https://github.com/hookdeck/hookdeck-cli/archive/refs/tags/v2.5.0.tar.gz"
-  sha256 "16b421f3af652ebbea24e445815a750cae51584bc8bd069c2ffaad718b69076c"
+  url "https://ghfast.top/https://github.com/hookdeck/hookdeck-cli/archive/refs/tags/v2.6.0.tar.gz"
+  sha256 "141af8ff0bdb357310cb8662e5107a3b9928a4a44ce361a1928d65947d5e7383"
   license "Apache-2.0"
   head "https://github.com/hookdeck/hookdeck-cli.git", branch: "main"
 
@@ -12,13 +12,11 @@ class Hookdeck < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "48c00e04e5c6dd1603d371d624b4f9798acb88637c2e76dc76e0004d0bfa4d77"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "ca22512684caeecdf7453c151e70f81f2ff8b05d97a8d40c8e85407ca531d574"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "ca22512684caeecdf7453c151e70f81f2ff8b05d97a8d40c8e85407ca531d574"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "ca22512684caeecdf7453c151e70f81f2ff8b05d97a8d40c8e85407ca531d574"
-    sha256 cellar: :any_skip_relocation, sonoma:            "d3796a9083db6ac59c9f0c3b8a441dea6328370671b2fcba0f4cb6474a6babd8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "3479033747b02389540d5243a1c4748ab5fc55eba6840d62471fe5f78dd7eff1"
-    sha256 cellar: :any,                 x86_64_linux:      "8b66fa541ada3814150b63a834978ba42f3d37606933550235c5211a8c9a539c"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "f39cd6f951d3d726209294a20d12fd08bf941a835518b00af757caa021a3d33f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "f39cd6f951d3d726209294a20d12fd08bf941a835518b00af757caa021a3d33f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "f39cd6f951d3d726209294a20d12fd08bf941a835518b00af757caa021a3d33f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "0c34c42bb269ddf921c03839b88a846b8ac002e2898c790453115f7bf3c16fbc"
+    sha256 cellar: :any,                 x86_64_linux:      "eb9797146c921feae1ccbd536710d01438c15354de77c03f5a3accb1c7f92147"
   end
 
   depends_on "go" => :build

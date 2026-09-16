@@ -25,7 +25,7 @@ class Skopeo < Formula
   end
 
   # `test do` block inspects an image on Docker Hub
-  deny_network_access! [:build, :postinstall]
+  allow_network_access! :test
 
   def fetch
     system "go", "mod", "download"

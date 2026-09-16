@@ -40,7 +40,7 @@ class Abyss < Formula
     depends_on "libomp"
   end
 
-  deny_network_access! [:build, :postinstall]
+  allow_network_access! :test
 
   def install
     # Help link to libomp on macOS

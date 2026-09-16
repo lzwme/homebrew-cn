@@ -19,13 +19,13 @@ class Pawk < Formula
   end
 
   test do
-    (testpath/"elements.txt").write <<~EOS
+    elements = <<~EOS
       # Name Symbol
       Hydrogen  H
       Helium    He
       Lithium   Li
     EOS
-    output = shell_output("#{bin}/pawk -B 'd={}' -E 'json.dumps(d)' '!/^#/ d[f[1]] = f[0]' < elements.txt")
+    output = pipe_output("#{bin}/pawk -B 'd={}' -E 'json.dumps(d)' '!/^#/ d[f[1]] = f[0]'", elements, 0)
     assert_equal '{"H": "Hydrogen", "He": "Helium", "Li": "Lithium"}', output.strip
   end
 end

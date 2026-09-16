@@ -1,23 +1,28 @@
 class Sonic < Formula
   desc "Fast, lightweight & schema-less search backend"
   homepage "https://github.com/valeriansaliou/sonic"
-  url "https://ghfast.top/https://github.com/valeriansaliou/sonic/archive/refs/tags/v1.8.1.tar.gz"
-  sha256 "41e18e27fc8f1aa5d156877497fbc8960a4800c771cbd76ac5d221b0c203c95f"
+  url "https://ghfast.top/https://github.com/valeriansaliou/sonic/archive/refs/tags/v1.9.1.tar.gz"
+  sha256 "e17bdd7ee68dd4e7fe4d992f134a5819c3af63a8dc467a6f092450e8e744efc0"
   license "MPL-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "c9be0feeb6dd9c413ae52c56dc422dc0517137bf996ddf25153017629c855416"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "62f7f84c587f8dcd4b10bb2f6d5d1d90f41d801a48a71e961ce3c0578c366a1c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "36253e08494b81dda36c123ff2087b5eca859cb40ede9ca24f67880d999d78ab"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "a893cd56f7143dc605d4c16ef6e42476181a15398f9ceaa0bff4a9ebdf69f396"
-    sha256 cellar: :any_skip_relocation, sonoma:            "6b836a5514f7f2433f84fdc8a3423ffec0c9a2ce46b37280cb1c9881b016237b"
-    sha256 cellar: :any,                 arm64_linux:       "386ad2610ffa0db0f447b0a275297f698a5a40e99bbea68d1079945d7d285871"
-    sha256 cellar: :any,                 x86_64_linux:      "13a3c03f6e821b12af217c45b65202df0102c90a8d3767120023e9ae893a9eb8"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "5df83ddd3c235107da258734e7b9706509ba185ef576584c8330d03807c82844"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "c1cfb531591a40593eb201b5029b139697aca06cbdd4fd08426ed4d2c28b0cd1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "3b731a264f1388a0cf976114fd155d885502cedd2f2238dba389fc9b6b6668c7"
+    sha256 cellar: :any,                 arm64_linux:       "3ee5ce055b9d547357a8919d3751e37707e39262b48f32f0585a0d25b488ff5b"
+    sha256 cellar: :any,                 x86_64_linux:      "343d22af66d4917ea629365a5f22b3278a115b7c9f044d3d3fe185f775cac2c6"
   end
 
   depends_on "rust" => :build
 
   uses_from_macos "llvm" => :build
+
+  # `test do` block runs a local server
+  allow_network_access! :test
+
+  def fetch
+    system "cargo", "fetch", "--locked", "--target", "host-tuple"
+  end
 
   def install
     system "cargo", "install", *std_cargo_args(path: "server")

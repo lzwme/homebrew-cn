@@ -1,8 +1,8 @@
 class Logstash < Formula
   desc "Tool for managing events and logs"
   homepage "https://www.elastic.co/products/logstash"
-  url "https://ghfast.top/https://github.com/elastic/logstash/archive/refs/tags/v9.5.3.tar.gz"
-  sha256 "86ef7810bb4bdb57677072b396efa1d0d7a835751cba297822ccc282b3bfa070"
+  url "https://ghfast.top/https://github.com/elastic/logstash/archive/refs/tags/v9.5.4.tar.gz"
+  sha256 "4108b4eba0d5c4eaaf3943837e1e04a6f0db9d61a50b31159c078ffbe004f4a7"
   license "Apache-2.0"
   version_scheme 1
   head "https://github.com/elastic/logstash.git", branch: "main"
@@ -13,12 +13,11 @@ class Logstash < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "aae197b479a83a7050b1f5b5e71fab79640d440c6aea82a9032b61817825038f"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "de0988093f953c670a74eb0b26ef22997ebb3b3090a1d14b7f772098cdb7e402"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "7cf40e312a99fa99fc3e4c3a40e9e5e25a224338ac47f7612bc4e8eacf664e54"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "106aa718baa914f6e472758b2d5367d429da55721dea786e3e06d2b1c9449d05"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "70b891c54b7fc27cf9e137051950cd6e6e61a473f6f48e81553bd4d8079b0530"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "4ee0bca930f4fda9ad9b39af26ffa40219d78e78b2748400588408499b601367"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "938a6f1b928980b96dd144fb8715262d010d32305ace14384a55b72005552f93"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "62db6ea60f9acb80aa7fb483556bca6440330ad6e7f98cb238b9059c728ea45d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "326cbaed5ad3cbc25f9dc8c6e2c74512a3b703a627262fb45e2900b562d612e3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "0e4731532d89174ab1600ceb7025b660df87d8017206922257b20b384ffdc762"
   end
 
   depends_on "gradle@8" => :build # gradle 9 support issue, https://github.com/elastic/logstash/issues/16641

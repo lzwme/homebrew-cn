@@ -18,7 +18,7 @@ class Mailpit < Formula
   depends_on "node" => :build
 
   # `mailpit version` in the `test do` block checks GitHub for updates
-  deny_network_access! [:build, :postinstall]
+  allow_network_access! :test
 
   def fetch
     system "go", "mod", "download"
@@ -42,9 +42,9 @@ class Mailpit < Formula
   end
 
   test do
-    (testpath/"test_email.txt").write "wrong format message"
+    test_email = "wrong format message"
 
-    output = shell_output("#{bin}/mailpit sendmail < #{testpath}/test_email.txt 2>&1", 11)
+    output = pipe_output("#{bin}/mailpit sendmail 2>&1", test_email, 11)
     assert_match "error parsing message body: malformed header line", output
 
     assert_match "mailpit v#{version}", shell_output("#{bin}/mailpit version")

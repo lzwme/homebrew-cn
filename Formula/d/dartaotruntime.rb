@@ -2,7 +2,7 @@ class Dartaotruntime < Formula
   desc "Command-line tool for running AOT-compiled snapshots of Dart code"
   homepage "https://dart.dev/tools/dartaotruntime"
   # NOTE: Using a placeholder file because the build source is fetched by gclient
-  url "https://ghfast.top/https://raw.githubusercontent.com/dart-lang/sdk/refs/tags/3.13.3/README.md"
+  url "https://ghfast.top/https://raw.githubusercontent.com/dart-lang/sdk/refs/tags/3.13.4/README.md"
   sha256 "ff4301ec8e5c1259c5778c4abc947e303308cd31af30acd55575f5ca7ed6f405"
   license "BSD-3-Clause"
   compatibility_version 3
@@ -12,12 +12,11 @@ class Dartaotruntime < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "84cd16acf230ae245e9e8ceeba1db15964a8f0cdd65b4ab76ad23eb3f0d1d461"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "874eebf42fd268371e55411baa47b420e57e6722e8ad98a7f598db8ae5f78a92"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "57265a76550b5a1dd6e8cc5003410d4d533eb0a01aa71812f06fd4ec1663da4d"
-    sha256 cellar: :any,                 arm64_linux:       "9b0ca40301c174d20635d33f3a7e319cc38a24ffbbc749602afe3ce435f1a5c1"
-    sha256 cellar: :any,                 x86_64_linux:      "371cc589cc8fbd3689cfef83bb4971d1d1547f35a8d4d4ece255ab4f91aa2681"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "1dbc2c44fd2f5ef146498fadabe1df6251e09af9d61da54fd2e5fd701e26f1ea"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "b7a51731e44edbc21e5bdf3943a6cb5f1b98b663cd25df0533c64f1fea09ad13"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "6a2d1194c1740fa7f59eba8bcd8ab563582909e26a441f950bfe74a37a229a95"
+    sha256 cellar: :any,                 arm64_linux:       "1260f7b5abfba331d7a491b5efa6afe4bbe47ddc963a1d47597f83af081d6bc6"
+    sha256 cellar: :any,                 x86_64_linux:      "4bf626dd111dca58967d828f1a5fbee70fc622b93eaeff4b66c0b9b670f46610"
   end
 
   depends_on "ninja" => :build
@@ -34,8 +33,8 @@ class Dartaotruntime < Formula
   # always pull the latest commit from https://chromium.googlesource.com/chromium/tools/depot_tools.git/+/refs/heads/main
   resource "depot-tools" do
     url "https://chromium.googlesource.com/chromium/tools/depot_tools.git",
-        revision: "cb70c994a656601dc6a0d423f49ff57503bd70bc"
-    version "cb70c994a656601dc6a0d423f49ff57503bd70bc"
+        revision: "46afe8bfbb57583700c01d1584e7a49638d586ed"
+    version "46afe8bfbb57583700c01d1584e7a49638d586ed"
 
     livecheck do
       url "https://chromium.googlesource.com/chromium/tools/depot_tools.git/+/refs/heads/main?format=JSON"

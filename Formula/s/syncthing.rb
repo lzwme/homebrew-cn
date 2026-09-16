@@ -23,7 +23,7 @@ class Syncthing < Formula
   depends_on "go" => :build
 
   # `test do` block binds local ports for config generation
-  deny_network_access! [:build, :postinstall]
+  allow_network_access! :test
 
   def fetch
     system "go", "mod", "download"

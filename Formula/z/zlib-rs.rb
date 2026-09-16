@@ -1,19 +1,17 @@
 class ZlibRs < Formula
   desc "C API for zlib-rs"
   homepage "https://github.com/trifectatechfoundation/zlib-rs/tree/main/libz-rs-sys-cdylib#libz-rs-sys-cdylib"
-  url "https://ghfast.top/https://github.com/trifectatechfoundation/zlib-rs/archive/refs/tags/v0.6.7.tar.gz"
-  sha256 "a2dac1f1102f01a2da1ec5b708f8f3832cedad138a6732f241204fa0f3617b81"
+  url "https://ghfast.top/https://github.com/trifectatechfoundation/zlib-rs/archive/refs/tags/v0.6.8.tar.gz"
+  sha256 "10c2faddc8f0f150a4917c9641f49e350cb4c1ce187962bc88e7f7ce1411837e"
   license "Zlib"
   head "https://github.com/trifectatechfoundation/zlib-rs.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "1244081447b8dba099fcfd8644b6e5c6f91fd937214ebf872904c8a61e49b6f0"
-    sha256 cellar: :any, arm64_tahoe:       "23045e7acabdf73ca3fca0ea9aa6676dfdfaa1454afeedebf323977348a82da6"
-    sha256 cellar: :any, arm64_sequoia:     "91fbda2138f199f09f2e0c2a46e44a5f36a627bd5aabda6eba9f30c678499ce7"
-    sha256 cellar: :any, arm64_sonoma:      "6fd19133e9c2dbca2edc81ddbf5079eccc807e6d05b86ecc106c7212aaae3e11"
-    sha256 cellar: :any, sonoma:            "1712abb67f3c33a8db75982d144cbcb7ded9549e08fafdee2678a6b93fb2d6a7"
-    sha256 cellar: :any, arm64_linux:       "0ae5139c20f4017cde276757f6350efd8c7aa439358188f648e250b568b3eb17"
-    sha256 cellar: :any, x86_64_linux:      "dc27d1acaf6fa799684d8a98eb8edfbc5854ee22d1b3eeabee0c2090ac3faca2"
+    sha256 cellar: :any, arm64_golden_gate: "b55812598da1212a923cbc3f2ae0a21aa7a476e6a8b77b46c3051b363da16994"
+    sha256 cellar: :any, arm64_tahoe:       "6f1b7590384f19467c52fa2871f7e9d418dea1f7d8cd42fb9f278c5c7ee91090"
+    sha256 cellar: :any, arm64_sequoia:     "49b35291e790790cad24aae2251aad9f3553d362b3d3a4905fc7468c2d390a61"
+    sha256 cellar: :any, arm64_linux:       "e4dd90a177b01e7ada61cb59ac46da99b56320e7b0f6b12d3241216646efafda"
+    sha256 cellar: :any, x86_64_linux:      "db4ecf8e5d245e697e8d4d552eb3b889fa4ffd8493d5cb75f4e4785a087cdfee"
   end
 
   depends_on "cargo-c" => :build

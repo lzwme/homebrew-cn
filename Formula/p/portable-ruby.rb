@@ -3,10 +3,9 @@ require File.expand_path("../../Abstract/portable-formula", __dir__)
 class PortableRuby < PortableFormula
   desc "Powerful, clean, object-oriented scripting language"
   homepage "https://www.ruby-lang.org/"
-  url "https://cache.ruby-lang.org/pub/ruby/4.0/ruby-4.0.6.tar.gz"
-  sha256 "837d299e8f7ddf2be31a229a7a7e019d354979825117989acb3b32b1a9be262a"
+  url "https://cache.ruby-lang.org/pub/ruby/4.0/ruby-4.0.7.tar.gz"
+  sha256 "911ace20f90d068ca0e4dda6d0e4f0f81e52e52f2dd4f4004c721e253412e82d"
   license "Ruby"
-  revision 2
 
   # This regex restricts matching to versions other than X.Y.0.
   livecheck do
@@ -15,10 +14,10 @@ class PortableRuby < PortableFormula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "1643bb83d705f0c5e34445af151bb064bdf984081eff18a9646466b8fdd104db"
-    sha256 cellar: :any_skip_relocation, big_sur:       "33e2f1e2877739c45e4b4b4f5e13d46826b5933fc2bf80966263eb43f1ad2af8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6f13756b7972c87c21917aec5319453c17400e4818a22552999429ecc48db932"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "01c1adce6394bcb5b1daa0921e5b0b5c64ec90641abd4678681ea7df7445791a"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "e0088dff5614b39387300136ec7a5f95bf1e07589547245c919524fc9e8b4197"
+    sha256 cellar: :any_skip_relocation, big_sur:       "57bebadc864405cbd39743e32eef741f4b75c0ba121f5cd9296ab84994b9f83b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c9b75dd6bd9578921f3ce739dacae8866698c3399c0f83574a5d5fadda2aab2d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bf2a9bf102694d40084ed436b06a1566dded60a519f4d1879c90c81046e11081"
   end
 
   depends_on "pkgconf" => :build
@@ -32,8 +31,8 @@ class PortableRuby < PortableFormula
   end
 
   resource "msgpack" do
-    url "https://rubygems.org/downloads/msgpack-1.8.4.gem"
-    sha256 "4411c22d350dd1c20250f7eada3cca2695438c2f769cf0782f0cd065d90a3e7b"
+    url "https://rubygems.org/downloads/msgpack-1.8.5.gem"
+    sha256 "97419eaa7b35dfe3e462c0e6c1a3dfdcbfc8756605c09e46e4c6daef127517ba"
 
     livecheck do
       url "https://rubygems.org/api/v1/versions/msgpack.json"
@@ -97,6 +96,10 @@ class PortableRuby < PortableFormula
       --disable-dependency-tracking
     ]
 
+    # The Intel bottle is cross-built on a GitHub macos-15 runner whose Xcode
+    # ships <stdckdint.h>, so configure bakes HAVE_STDCKDINT_H into the shipped
+    # config.h and native gem builds on older Xcode/CLT fail to find it.
+    args << "ac_cv_header_stdckdint_h=no" if OS.mac? && Hardware::CPU.intel?
     # We don't specify OpenSSL as we want it to use the pkg-config, which `--with-openssl-dir` will disable
     args += %W[
       --with-libyaml-dir=#{libyaml.opt_prefix}

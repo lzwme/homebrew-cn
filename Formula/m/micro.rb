@@ -19,8 +19,16 @@ class Micro < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+    # the `build-tags` target's fetch-tags step, moved to the fetch phase
+    system "git", "fetch", "--tags", "--force"
+  end
+
   def install
-    system "make", "build-tags"
+    system "make", "build"
     bin.install "micro"
     man1.install "assets/packaging/micro.1"
   end

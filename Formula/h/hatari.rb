@@ -10,13 +10,12 @@ class Hatari < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "59c4605bc0598ee25df898492190eeaf8156d177ffb41529b830d1df1c08fa4d"
-    sha256 cellar: :any,                 arm64_sequoia: "d9b000457bb9dc9d31b05fe5dfeeac62b817142d98d974c9337f54d803ce4fb5"
-    sha256 cellar: :any,                 arm64_sonoma:  "021a7f31239d351dbb0a0872e5dceb0d60929f0131de8ca2e6a44bb8923799f0"
-    sha256 cellar: :any,                 sonoma:        "306b691f4301f03902b61716da6532a5fdff119e88a58f51893a62855270ed19"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3f9133ea1e05b9d5fa6328e6b780a93be6cb682cc45c6deba48e6c9e4e6fae19"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7ab439d6a576b5afe27ad1546ffe23fab4bc7cc8ec92ac71fef92dc098c48182"
+    rebuild 2
+    sha256 cellar: :any, arm64_golden_gate: "8b15bbe1d2952a755d91c6041b914bdcd81dc884084b867890adbc8091101c48"
+    sha256 cellar: :any, arm64_tahoe:       "fa9f0afbe42a4c1f9f2cdf6f75cca0aa9b574780ed5e2f3ef4a6ae4c646d9a33"
+    sha256 cellar: :any, arm64_sequoia:     "d2ae1893a8569d6f16a465eb1e9d5785c39f9192a83abcd0d367e5bc13dcd726"
+    sha256 cellar: :any, arm64_linux:       "02f7b9bf697d9b09c1097565393b12c0ae527a885dc54ae1410fb4d5ca61a77a"
+    sha256 cellar: :any, x86_64_linux:      "2d440e9158df9418c060a1907b8bc759957c54c9fcb4f1c87086d15d90ec09ff"
   end
 
   head do
@@ -26,10 +25,6 @@ class Hatari < Formula
 
   depends_on "cmake" => :build
   depends_on "libpng"
-
-  on_macos do
-    depends_on xcode: :build # for ibtool
-  end
 
   on_linux do
     depends_on "libx11"
@@ -49,22 +44,20 @@ class Hatari < Formula
   end
 
   def install
-    # Allow finding ibtool even if CLT is active in user environment
-    ENV["DEVELOPER_DIR"] = ENV["HOMEBREW_DEVELOPER_DIR"] if OS.mac?
-
-    # Set .app bundle destination
-    inreplace "src/CMakeLists.txt", "/Applications", prefix
-    system "cmake", "-S", ".", "-B", "build", "-DCMAKE_OSX_ARCHITECTURES=#{Hardware::CPU.arch}", *std_cmake_args
-    system "cmake", "--build", "build"
     if OS.mac?
-      prefix.install "build/src/Hatari.app"
-      bin.write_exec_script prefix/"Hatari.app/Contents/MacOS/hatari"
-    else
-      system "cmake", "--install", "build"
+      args = %W[
+        -DCMAKE_DISABLE_FIND_PACKAGE_X11=ON
+        -DCMAKE_OSX_ARCHITECTURES=#{Hardware::CPU.arch}
+        -DENABLE_OSX_BUNDLE=OFF
+      ]
     end
+
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
+
     resource("emutos").stage do
-      datadir = OS.mac? ? prefix/"Hatari.app/Contents/Resources" : pkgshare
-      datadir.install "etos1024k.img" => "tos.img"
+      pkgshare.install "etos1024k.img" => "tos.img"
     end
   end
 

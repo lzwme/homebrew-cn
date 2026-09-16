@@ -32,7 +32,7 @@ class Adplay < Formula
     depends_on "alsa-lib"
   end
 
-  deny_network_access! [:build, :postinstall]
+  allow_network_access! :test
 
   def install
     system "autoreconf", "--force", "--install", "--verbose" if build.head?

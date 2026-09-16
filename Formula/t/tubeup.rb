@@ -9,12 +9,13 @@ class Tubeup < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4563c6b274c601d9ad92a874bb5295c366926215bc79259e1a820953da0ad60f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d1f7433fb5777f12721a1d4d0e9e01fadc9dbef6c7992b043fd578f147344643"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9be4206946ed4b6e8a924c26716f645de003b7fbf4c4a3cf93332e0d0bb50ec8"
-    sha256 cellar: :any_skip_relocation, sonoma:        "48dfdb2820f7984492d9fc9fd91e0475b5febd7ddc8c5839038a661c06441528"
-    sha256 cellar: :any,                 arm64_linux:   "4d5ed3ceb0df3230e626886ec8f9d9552ce190d534777cf6f921e0412286eb5c"
-    sha256 cellar: :any,                 x86_64_linux:  "5b0148bfa5f0edc719d9b5165453e752d577b308d2888a28e5eaaceb05012c65"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "2a26b81a7fda55aa615ad9df57559a375dd45aea7d25704961709a0172282352"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "4563c6b274c601d9ad92a874bb5295c366926215bc79259e1a820953da0ad60f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "d1f7433fb5777f12721a1d4d0e9e01fadc9dbef6c7992b043fd578f147344643"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "9be4206946ed4b6e8a924c26716f645de003b7fbf4c4a3cf93332e0d0bb50ec8"
+    sha256 cellar: :any_skip_relocation, sonoma:            "48dfdb2820f7984492d9fc9fd91e0475b5febd7ddc8c5839038a661c06441528"
+    sha256 cellar: :any,                 arm64_linux:       "4d5ed3ceb0df3230e626886ec8f9d9552ce190d534777cf6f921e0412286eb5c"
+    sha256 cellar: :any,                 x86_64_linux:      "5b0148bfa5f0edc719d9b5165453e752d577b308d2888a28e5eaaceb05012c65"
   end
 
   depends_on "node" => :build
@@ -134,6 +135,6 @@ class Tubeup < Formula
   test do
     # Verify tubeup attempts to process a URL (expected failure for invalid video)
     output = shell_output("#{bin}/tubeup https://www.youtube.com/watch?v=invalid_video_id --dir #{testpath} 2>&1", 1)
-    assert_match "Video unavailable", output
+    assert_match "ERROR: [youtube] invalid_vid:", output
   end
 end

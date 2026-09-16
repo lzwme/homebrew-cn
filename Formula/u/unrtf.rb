@@ -26,6 +26,9 @@ class Unrtf < Formula
   depends_on "automake" => :build
 
   def install
+    # C23 treats the upstream's unprototyped function pointers as zero-argument functions
+    ENV["ac_cv_prog_cc_c23"] = "no"
+
     system "./bootstrap"
     args = %W[--prefix=#{prefix}]
     args << "LIBS=-liconv" if OS.mac?

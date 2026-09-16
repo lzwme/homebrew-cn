@@ -17,6 +17,10 @@ class NestopiaUe < Formula
     sha256 x86_64_linux:      "4c258b217dc499e3f126049d71a9e6e1aa8e5863154563ae692d011997347508"
   end
 
+  # 2.0.0 removed the FLTK port and only ships the win32 one; the cross-platform GUI moved to jgemu's QTea
+  deprecate! date: "2026-09-15", because: :deprecated_upstream
+  disable! date: "2027-09-15", because: :deprecated_upstream
+
   depends_on "autoconf" => :build
   depends_on "autoconf-archive" => :build
   depends_on "automake" => :build

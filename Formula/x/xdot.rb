@@ -22,10 +22,6 @@ class Xdot < Formula
   depends_on "pygobject3"
   depends_on "python@3.14"
 
-  on_linux do
-    depends_on "xorg-server" => :test
-  end
-
   pypi_packages exclude_packages: ["numpy", "pygobject"],
                 extra_packages:   "graphviz"
 
@@ -44,8 +40,20 @@ class Xdot < Formula
   end
 
   test do
-    cmd = "#{bin}/xdot --help"
-    cmd = "#{formula_opt_bin("xorg-server")}/xvfb-run #{cmd}" if OS.linux? && ENV.exclude?("DISPLAY")
-    assert_match "interactive viewer for graphs", shell_output(cmd)
+    # The GTK viewer cannot start inside brew's macOS test sandbox, so exercise the headless dot parser
+    (testpath/"test.dot").write "digraph G { a -> b }"
+    system formula_opt_bin("graphviz")/"dot", "-Txdot", "-o", "test.xdot", "test.dot"
+    (testpath/"test.py").write <<~PYTHON
+      from xdot.dot.lexer import DotLexer
+      from xdot.dot.parser import DotParser
+
+      class EdgeParser(DotParser):
+          def handle_edge(self, src_id, dst_id, attrs):
+              print(src_id.decode(), dst_id.decode(), "_draw_" in attrs)
+
+      with open("test.xdot", "rb") as f:
+          EdgeParser(DotLexer(buf=f.read())).parse()
+    PYTHON
+    assert_equal "a b True", shell_output("#{libexec}/bin/python test.py").strip
   end
 end

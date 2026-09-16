@@ -41,7 +41,7 @@ class Scheme48 < Formula
   end
 
   test do
-    (testpath/"hello.scm").write <<~SCHEME
+    hello_scm = <<~SCHEME
       (display "Hello, World!") (newline)
     SCHEME
 
@@ -52,7 +52,7 @@ class Scheme48 < Formula
 
     EOS
 
-    assert_equal expected, shell_output("#{bin}/scheme48 -a batch < hello.scm")
+    assert_equal expected, pipe_output("#{bin}/scheme48 -a batch", hello_scm, 0)
   end
 end
 

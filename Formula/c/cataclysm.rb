@@ -13,16 +13,18 @@ class Cataclysm < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "b85a378c456fe642a8a754371375e5976d5f03e2ea7bfc3973dad42c7f3ca5f1"
-    sha256 cellar: :any, arm64_sequoia: "f864e5b641aeb05177f24ffb6ec6af6496060c021400227790017cde54587bfd"
-    sha256 cellar: :any, arm64_sonoma:  "f4bbdcf29fa295fc2f1935afbaf85956d43047cd6ef65a97a4ccb4e968aa0055"
-    sha256 cellar: :any, sonoma:        "9de90362620a41e99a2d3f03cd42ac473f59ce60f03ae97e6e47761f8267dc7e"
-    sha256 cellar: :any, arm64_linux:   "643c8d9c04d3f8cec7a38943d29cc4ff05a295847b872b7feb8ab10f8478b4c4"
-    sha256 cellar: :any, x86_64_linux:  "c2cdfdc0d0b74612b9c345a5b42ebf0494fbdf4a4e628cbfdabfeeb32aefb6dd"
+    sha256 cellar: :any, arm64_golden_gate: "9973e30b538475072bbd1bf8153f41086878b8463ca16267421d31f5944be59b"
+    sha256 cellar: :any, arm64_tahoe:       "b85a378c456fe642a8a754371375e5976d5f03e2ea7bfc3973dad42c7f3ca5f1"
+    sha256 cellar: :any, arm64_sequoia:     "f864e5b641aeb05177f24ffb6ec6af6496060c021400227790017cde54587bfd"
+    sha256 cellar: :any, arm64_sonoma:      "f4bbdcf29fa295fc2f1935afbaf85956d43047cd6ef65a97a4ccb4e968aa0055"
+    sha256 cellar: :any, sonoma:            "9de90362620a41e99a2d3f03cd42ac473f59ce60f03ae97e6e47761f8267dc7e"
+    sha256 cellar: :any, arm64_linux:       "643c8d9c04d3f8cec7a38943d29cc4ff05a295847b872b7feb8ab10f8478b4c4"
+    sha256 cellar: :any, x86_64_linux:      "c2cdfdc0d0b74612b9c345a5b42ebf0494fbdf4a4e628cbfdabfeeb32aefb6dd"
   end
 
   head do
     url "https://github.com/CleverRaven/Cataclysm-DDA.git", branch: "master"
+
     on_macos do
       depends_on "freetype"
     end
@@ -55,6 +57,7 @@ class Cataclysm < Formula
       TILES=1
       SOUND=1
       RUNTESTS=0
+      TESTS=0
       ASTYLE=0
       LINTJSON=0
     ]
@@ -83,7 +86,7 @@ class Cataclysm < Formula
     user_config_dir.mkpath
 
     # "Error while initializing the interface: SDL_Init failed: No available video device"
-    ENV["SDL_VIDEODRIVER"] = "dummy" if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
+    ENV["SDL_VIDEODRIVER"] = "dummy"
 
     # run cataclysm for 50 seconds
     tries = 0

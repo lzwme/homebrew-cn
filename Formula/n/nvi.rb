@@ -12,18 +12,19 @@ class Nvi < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:    "aa9ca9f2bf556b19378cc59734101a3fd3ae96a4221589f4c39f0a2690c25e3e"
-    sha256 cellar: :any,                 arm64_sequoia:  "4dadb4e9103dae1a849b5bd29bb0a4fb66a66ae99302541fca056fe4cd305770"
-    sha256 cellar: :any,                 arm64_sonoma:   "c78ea8a45f937c0918dbbceeb33112139f86dd8c2d6c2aa12517289c3f88a7d9"
-    sha256                               arm64_ventura:  "aa6ba856388d331dce1cec171db093a6846d349d3b0013bd08c3331d9d6f09f1"
-    sha256                               arm64_monterey: "4172bb7673685b0e0f569ad84edbe4d568c152b419678e6146f539accd243c80"
-    sha256                               arm64_big_sur:  "0c504c79f2fd0be54ce31ee4236a1d9fb4d9e5d8f33fab07305e1acd9c4740de"
-    sha256 cellar: :any,                 sonoma:         "b471e00997873dd4a5b2841487af7ba9a403e1eb803aeab7d2326c27f1bc9b73"
-    sha256 cellar: :any,                 ventura:        "c7836fbb451c44095dec64bb0cac55e1b95829cca063201988a45eee538fcd09"
-    sha256 cellar: :any,                 monterey:       "4bbbf70becf3cfa52340027bb81f0b39b8071638dcb9f042cf314bee7a8feeac"
-    sha256 cellar: :any,                 big_sur:        "692b129c29e7018565decb9c3ece80c020028549eb571d638851bb0e8647b0d8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "77dc49d28cfd69d761ae59838253f8ee295a2f966eacd89ca3e3d4b2499e890a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d8eb6c0c8a8eef36a09bf55e35ced6d2e2afb4d75a70d93d96e88d9cbd5c4b56"
+    sha256 cellar: :any,                 arm64_golden_gate: "5f9095369484dad935232d0240a9696584d11391506ee700554376bc8830313a"
+    sha256 cellar: :any,                 arm64_tahoe:       "aa9ca9f2bf556b19378cc59734101a3fd3ae96a4221589f4c39f0a2690c25e3e"
+    sha256 cellar: :any,                 arm64_sequoia:     "4dadb4e9103dae1a849b5bd29bb0a4fb66a66ae99302541fca056fe4cd305770"
+    sha256 cellar: :any,                 arm64_sonoma:      "c78ea8a45f937c0918dbbceeb33112139f86dd8c2d6c2aa12517289c3f88a7d9"
+    sha256                               arm64_ventura:     "aa6ba856388d331dce1cec171db093a6846d349d3b0013bd08c3331d9d6f09f1"
+    sha256                               arm64_monterey:    "4172bb7673685b0e0f569ad84edbe4d568c152b419678e6146f539accd243c80"
+    sha256                               arm64_big_sur:     "0c504c79f2fd0be54ce31ee4236a1d9fb4d9e5d8f33fab07305e1acd9c4740de"
+    sha256 cellar: :any,                 sonoma:            "b471e00997873dd4a5b2841487af7ba9a403e1eb803aeab7d2326c27f1bc9b73"
+    sha256 cellar: :any,                 ventura:           "c7836fbb451c44095dec64bb0cac55e1b95829cca063201988a45eee538fcd09"
+    sha256 cellar: :any,                 monterey:          "4bbbf70becf3cfa52340027bb81f0b39b8071638dcb9f042cf314bee7a8feeac"
+    sha256 cellar: :any,                 big_sur:           "692b129c29e7018565decb9c3ece80c020028549eb571d638851bb0e8647b0d8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "77dc49d28cfd69d761ae59838253f8ee295a2f966eacd89ca3e3d4b2499e890a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "d8eb6c0c8a8eef36a09bf55e35ced6d2e2afb4d75a70d93d96e88d9cbd5c4b56"
   end
 
   # Last release in 2007 and build requires many patches from MacPorts and Debian.
@@ -78,6 +79,9 @@ class Nvi < Formula
   end
 
   def install
+    # autoconf 2.73 selects C23, which rejects nvi's K&R definitions and `()` prototypes
+    ENV["ac_cv_prog_cc_c23"] = "no"
+
     cd "dist" do
       # Run autoreconf on macOS to rebuild configure script so that it doesn't try
       # to build with a flat namespace.

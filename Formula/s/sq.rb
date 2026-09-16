@@ -40,14 +40,14 @@ class Sq < Formula
   end
 
   test do
-    (testpath/"test.sql").write <<~SQL
+    test_sql = <<~SQL
       create table t(a text, b integer);
       insert into t values ('hello',1),('there',42);
     SQL
-    system "sqlite3 test.db < test.sql"
+    pipe_output("sqlite3 test.db", test_sql, 0)
     out1 = shell_output("#{bin}/sq add --active --handle @tst test.db")
     assert_equal %w[@tst sqlite3 test.db], out1.strip.split(/\s+/)
-    out2 = shell_output("#{bin}/sq '@tst.t | .b' </dev/null 2>&1")
+    out2 = shell_output("#{bin}/sq '@tst.t | .b' 2>&1")
     assert_equal %w[b 1 42], out2.strip.split("\n")
   end
 end

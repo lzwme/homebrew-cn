@@ -1,17 +1,16 @@
 class Jscpd < Formula
   desc "Copy/paste detector for programming source code"
   homepage "https://jscpd.dev/"
-  url "https://ghfast.top/https://github.com/kucherenko/jscpd/archive/refs/tags/v5.2.0.tar.gz"
-  sha256 "8a474c5fb920922e011e3facbe05be797e2c4849ba61d31a7cdef217f9b4daaf"
+  url "https://ghfast.top/https://github.com/kucherenko/jscpd/archive/refs/tags/v5.2.1.tar.gz"
+  sha256 "902f07f7ebc3ff7c546b8533424a05176d29bab4539dbcc447c4815fc47c8136"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "14745891e5a514bd5b4e6d3177cfa2bf076457dd88cb2631617ce37b1428b1da"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "1e2c8e1fc6e5ba4deb25c752f7f7d5cbee057aa193eac811e13e837072031d69"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "6ef8b681a9153eea52b1edf88c1bbfa272852852381943b35f8e002e04509fdd"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "00620c1bb16d48618d92929b23a3aca0b533471e065cce153ada5aa1235eef08"
-    sha256 cellar: :any,                 arm64_linux:       "81a551812fd9b5c44b65b90111b65cd2a760c247c09c6f41855487bf8d717f76"
-    sha256 cellar: :any,                 x86_64_linux:      "26ce697faf8546dc76006abd434a47dede98cc1bf4d9633977300226d6329a90"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "fa0266fbe61763ee27f5c3662cc9ab8b5df3b23b0d12a424975304b35fc41b0b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "3efa2d9af0f640a1a3a143044bb274e3740b9dbd8156cfaaee2cfea2cced5451"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "bf571b464e3bf25ebb8fd7c68535068f7f6e1c5d9f7cd86997d73af7869040e0"
+    sha256 cellar: :any,                 arm64_linux:       "bc859f30aaf87994862ee247720dc77aa3dc11cf6f998164d3e8265829262e40"
+    sha256 cellar: :any,                 x86_64_linux:      "76eb7f5aa901d12d9bcf6b265714d60c3a7ff9987bfcddfcf92c06c7cedd2b63"
   end
 
   depends_on "rust" => :build

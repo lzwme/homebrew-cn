@@ -17,7 +17,7 @@ class GoParquetTools < Formula
   depends_on "go" => :build
 
   # `test do` block downloads a test fixture resource
-  deny_network_access! [:build, :postinstall]
+  allow_network_access! :test
 
   def fetch
     system "go", "mod", "download"

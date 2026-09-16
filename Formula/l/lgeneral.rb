@@ -7,12 +7,13 @@ class Lgeneral < Formula
 
   bottle do
     rebuild 4
-    sha256 arm64_tahoe:   "cb647aa60174371e139c2b586625b198de640d9f29d26435b09ddfb73db04db9"
-    sha256 arm64_sequoia: "07051ec2b86ffce75ae82c818b71752b2b868c7b4a076eb11b143f63afa67536"
-    sha256 arm64_sonoma:  "280f6bc05daf76a9668906f0400f27e4a0a1b27e5d3be40bc8364f0a81abdebf"
-    sha256 sonoma:        "440bf71a90bff16e1e29c78ae3df4ad0cf199e8fb14027f8cdb706cac94e5368"
-    sha256 arm64_linux:   "23c00f61a0e2fd389f288ed849f4a46724160aeaf2406ae54e52677cd9032f64"
-    sha256 x86_64_linux:  "25b0c6d313caff4b7ca397bcabc1712b5c98aff7f47ee1cf238f61686c39273c"
+    sha256 arm64_golden_gate: "8f1489c823a9fdf60b95dfc04ece8d7489c14b4ecb9abdcd661df0c23cfaeb61"
+    sha256 arm64_tahoe:       "cb647aa60174371e139c2b586625b198de640d9f29d26435b09ddfb73db04db9"
+    sha256 arm64_sequoia:     "07051ec2b86ffce75ae82c818b71752b2b868c7b4a076eb11b143f63afa67536"
+    sha256 arm64_sonoma:      "280f6bc05daf76a9668906f0400f27e4a0a1b27e5d3be40bc8364f0a81abdebf"
+    sha256 sonoma:            "440bf71a90bff16e1e29c78ae3df4ad0cf199e8fb14027f8cdb706cac94e5368"
+    sha256 arm64_linux:       "23c00f61a0e2fd389f288ed849f4a46724160aeaf2406ae54e52677cd9032f64"
+    sha256 x86_64_linux:      "25b0c6d313caff4b7ca397bcabc1712b5c98aff7f47ee1cf238f61686c39273c"
   end
 
   depends_on "sdl12-compat"
@@ -47,6 +48,9 @@ class Lgeneral < Formula
   end
 
   test do
+    assert_match "LGeneral reinforcement editor and query tool", shell_output("#{bin}/lged --help", 1)
+    return if OS.mac? # cannot run lgeneral within macOS sandbox
+
     system bin/"lgeneral", "--version"
 
     pid = spawn bin/"lgeneral"

@@ -18,23 +18,24 @@ class Smpeg < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:    "8b74893276266d73531cf99e6cb182bf238868d2d06c8a0051262ae15dd8a574"
-    sha256 cellar: :any,                 arm64_sequoia:  "e7a1451326b54dd9107b43762c877fc91a8d9cb7fcae37aad8f4a354c98c56bf"
-    sha256 cellar: :any,                 arm64_sonoma:   "d489427a87ed930d4d72e1536180d1781eb4f1f68992e5a2934c71df0dfbd7ed"
-    sha256 cellar: :any,                 arm64_ventura:  "8023f2a680920c2c2184d38422b4111359ee56dad5a3fa5abcf66e06ebbc3242"
-    sha256 cellar: :any,                 arm64_monterey: "f6bec866d75df98036cdf109c1f98fd0fa2be764e4f82a8d7382e4e5b4affa08"
-    sha256 cellar: :any,                 arm64_big_sur:  "75662ff4a7c2f2c1202fddcc301872696aa5123718028541cff67db96acad8d2"
-    sha256 cellar: :any,                 sonoma:         "457f91decc06341f70afa9a2812ac4398a3ed28f353bdb0d6616fd8dec8059d7"
-    sha256 cellar: :any,                 ventura:        "03c1eb05860e58ea080834b7fc760a10dc28aec402fb684c9a263b716693ec8f"
-    sha256 cellar: :any,                 monterey:       "27336fb6005e4d498db6eb1f68deee86cad53c86ac10843984f833e2bf5bcb7d"
-    sha256 cellar: :any,                 big_sur:        "7c97d1fb7a8df3df8cca2eb794a7898d9dc4c93ae3f201dc582ed8982c74e725"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "b4b46134434032d24f664aac17650a6641c70f589fce7dda983fb5b78a2db25b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b98076e9055fbe29549fd5c340deb22c733c24f3ab754a638dd24c425ba076d3"
+    sha256 cellar: :any,                 arm64_golden_gate: "6d8606bb2d70071a64b520a3351d921f0f564e9bc1efef06fdb8ff64d725ec58"
+    sha256 cellar: :any,                 arm64_tahoe:       "8b74893276266d73531cf99e6cb182bf238868d2d06c8a0051262ae15dd8a574"
+    sha256 cellar: :any,                 arm64_sequoia:     "e7a1451326b54dd9107b43762c877fc91a8d9cb7fcae37aad8f4a354c98c56bf"
+    sha256 cellar: :any,                 arm64_sonoma:      "d489427a87ed930d4d72e1536180d1781eb4f1f68992e5a2934c71df0dfbd7ed"
+    sha256 cellar: :any,                 arm64_ventura:     "8023f2a680920c2c2184d38422b4111359ee56dad5a3fa5abcf66e06ebbc3242"
+    sha256 cellar: :any,                 arm64_monterey:    "f6bec866d75df98036cdf109c1f98fd0fa2be764e4f82a8d7382e4e5b4affa08"
+    sha256 cellar: :any,                 arm64_big_sur:     "75662ff4a7c2f2c1202fddcc301872696aa5123718028541cff67db96acad8d2"
+    sha256 cellar: :any,                 sonoma:            "457f91decc06341f70afa9a2812ac4398a3ed28f353bdb0d6616fd8dec8059d7"
+    sha256 cellar: :any,                 ventura:           "03c1eb05860e58ea080834b7fc760a10dc28aec402fb684c9a263b716693ec8f"
+    sha256 cellar: :any,                 monterey:          "27336fb6005e4d498db6eb1f68deee86cad53c86ac10843984f833e2bf5bcb7d"
+    sha256 cellar: :any,                 big_sur:           "7c97d1fb7a8df3df8cca2eb794a7898d9dc4c93ae3f201dc582ed8982c74e725"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "b4b46134434032d24f664aac17650a6641c70f589fce7dda983fb5b78a2db25b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "b98076e9055fbe29549fd5c340deb22c733c24f3ab754a638dd24c425ba076d3"
   end
 
   # This formula is for usage with old SDL 1.2 with last release from 2013-02-17
   deprecate! date: "2026-06-01", because: :unmaintained
-  disable! date: "2027-06-01", because: :unmaintained
+  disable! date: "2026-12-01", because: :unmaintained
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
@@ -71,7 +72,7 @@ class Smpeg < Formula
   end
 
   test do
-    system bin/"plaympeg", "--version"
+    assert_match version.to_s, shell_output("#{bin}/smpeg-config --version")
   end
 end
 

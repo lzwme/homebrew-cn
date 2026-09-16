@@ -6,8 +6,6 @@ class Moor < Formula
   license "BSD-2-Clause"
   head "https://github.com/walles/moor.git", branch: "master"
 
-  no_autobump! because: :bumped_by_upstream
-
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_golden_gate: "5302106a45c53c3e93da63ce3559f6ba4d3e6a6324c2f80a74f1a8ed2bded467"
     sha256 cellar: :any_skip_relocation, arm64_tahoe:       "5302106a45c53c3e93da63ce3559f6ba4d3e6a6324c2f80a74f1a8ed2bded467"

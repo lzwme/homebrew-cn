@@ -17,7 +17,7 @@ class OsvScanner < Formula
   depends_on "go" => [:build, :test]
 
   # `test do` block queries api.osv.dev
-  deny_network_access! [:build, :postinstall]
+  allow_network_access! :test
 
   def fetch
     system "go", "mod", "download"

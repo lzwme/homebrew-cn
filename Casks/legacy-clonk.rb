@@ -1,8 +1,8 @@
 cask "legacy-clonk" do
   version "365"
-  sha256 "5cfdd3d13f2905bee8dde5ceb56e55c55ba08da57729cc23848d63fcbd900137"
+  sha256 "654498bfa8f5b029b4058cc3fb128d5a2b53c6a85d28328ad831aa2ad0e7693a"
 
-  url "https://ghfast.top/https://github.com/legacyclonk/LegacyClonk/releases/download/v#{version}/LegacyClonk-Mac-x64.zip"
+  url "https://ghfast.top/https://github.com/legacyclonk/LegacyClonk/releases/download/v#{version}/LegacyClonk-Mac-universal.zip"
   name "LegacyClonk"
   desc "2D Action Adventure Game"
   homepage "https://clonkspot.org/lc-en"
@@ -19,18 +19,20 @@ cask "legacy-clonk" do
   postflight_steps do
     run "/bin/sh", args:           ["-c", <<~SHELL],
       set -eu -o pipefail
-      /usr/bin/curl --fail --location --output "{{appdir}}/LegacyClonk/Graphics.c4g" \
+      cd "{{appdir}}/LegacyClonk"
+      /usr/bin/curl --fail --location --output Graphics.c4g \
         "https://ghfast.top/https://github.com/legacyclonk/LegacyClonk/releases/download/v{{version}}/Graphics.c4g"
-      echo "a064b2ee144ebfe100fa652e36e6f892c745aa2fc28f8cd596f9711aa5d1c835  Graphics.c4g" \
+      echo "4146962f4201f7ed7b504ae8332dc5c4c3b4303d5fc4aca3ad02c77e4c3fbae3  Graphics.c4g" \
         | /usr/bin/shasum --check --status -
     SHELL
                    network_access: true,
                    writable_paths: ["{{appdir}}/LegacyClonk"]
     run "/bin/sh", args:           ["-c", <<~SHELL],
       set -eu -o pipefail
-      /usr/bin/curl --fail --location --output "{{appdir}}/LegacyClonk/System.c4g" \
+      cd "{{appdir}}/LegacyClonk"
+      /usr/bin/curl --fail --location --output System.c4g \
         "https://ghfast.top/https://github.com/legacyclonk/LegacyClonk/releases/download/v{{version}}/System.c4g"
-      echo "efe00042285f7d49935c4f9724d0068caf489d4ca93bfbe4f7790cf345dcc8a4  System.c4g" \
+      echo "d91d9f0c9b56f0ca89ad8810971cbd427ee3391a4f75a841ee58c7aa52c3a478  System.c4g" \
         | /usr/bin/shasum --check --status -
     SHELL
                    network_access: true,

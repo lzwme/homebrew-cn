@@ -1,19 +1,17 @@
 class Xplr < Formula
   desc "Hackable, minimal, fast TUI file explorer"
   homepage "https://xplr.dev"
-  url "https://ghfast.top/https://github.com/sayanarijit/xplr/archive/refs/tags/v1.1.1.tar.gz"
-  sha256 "6f63a3394ad330cc80648448924d8c6dd848514707228d869ff27e35562804ff"
+  url "https://ghfast.top/https://github.com/sayanarijit/xplr/archive/refs/tags/v1.1.2.tar.gz"
+  sha256 "d483574fcf2510bee3c8e11d01301bf0402891d83a6dcce6132be438eb46fc6a"
   license "MIT"
   head "https://github.com/sayanarijit/xplr.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "03e7de6e5d2c72f04dab8bf5b09bd472f431c49c830a0b9a27e423a834f99632"
-    sha256 cellar: :any, arm64_tahoe:       "3d1e313aef234ea5747bb149eccb2aaff676f27ef4c945455c334185103240e7"
-    sha256 cellar: :any, arm64_sequoia:     "d2bdeb506ec05cd636e6ab2c9f1f01cb0b1f7bc7cd101179c0ca159766a139c3"
-    sha256 cellar: :any, arm64_sonoma:      "f1999d17311b9254f14b7bfa6baa48fffda5dc5dfc09d36a6edfc1fb2f75e5ed"
-    sha256 cellar: :any, sonoma:            "7a2306b2f0ff06a99b014da3888dbea01dda241dc3b9d3bcc7473260b8d5476f"
-    sha256 cellar: :any, arm64_linux:       "107a95f684327d775436f363e5620fb47821a439d5c448132ce56f5443db4abc"
-    sha256 cellar: :any, x86_64_linux:      "1b91f970fd1acb2e70e4f2f9cf386a2b775a820a77fa7845815ab925a9460dc1"
+    sha256 cellar: :any, arm64_golden_gate: "98db3ba3c1ab24d462f4e5198c7484dee9743a0c31152d317234fc6ea7875c2e"
+    sha256 cellar: :any, arm64_tahoe:       "2e152dcf397889bf85dbc1f56f4d795578ec6430372d4bbaef74c646db0cf898"
+    sha256 cellar: :any, arm64_sequoia:     "d52eb5e01d62230935d762e096fca0f54e5ddfae3f6e05c11f51b31e1897e2ff"
+    sha256 cellar: :any, arm64_linux:       "740d663e8b023e69d660d1a0d2f1b0757f5f766b5fa534ee2bc824f742bea6d9"
+    sha256 cellar: :any, x86_64_linux:      "b2497f79d647e0c9115d784415046c5b28526d1e5dedcae7dddee9ff8174396f"
   end
 
   depends_on "pkgconf" => :build

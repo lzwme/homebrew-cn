@@ -25,7 +25,7 @@ class Rumbledb < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/rumbledb repl < /dev/null 2>&1")
+    assert_match version.to_s, shell_output("#{bin}/rumbledb repl 2>&1")
     assert_equal "2", shell_output("#{bin}/rumbledb -q '1+1'").strip
   end
 end

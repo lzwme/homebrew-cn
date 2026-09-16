@@ -6,18 +6,19 @@ class Libvisual < Formula
   license all_of: ["GPL-2.0-or-later", "LGPL-2.1-or-later"]
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:    "0c7cc4aed9aca8fac6ca7f969966365592eaacbb29db5340f08dce1c0a9fa65a"
-    sha256 cellar: :any, arm64_sequoia:  "a3cf1f8ac6ed58fce5959717d16802adeb1920abfe6c421145de66eff2e9a51a"
-    sha256 cellar: :any, arm64_sonoma:   "c56b6225bce042d7c7984074c9c508e2ab4d4c17491f941d72dbfc0cee0c3caa"
-    sha256 cellar: :any, arm64_ventura:  "ba00f3f40ff28fe23cfea28a9a4782dd8e344e51d318cd9843c74fc3d52fe65a"
-    sha256 cellar: :any, arm64_monterey: "f9faaf86d813119e9c592781ec40405057118cc8567838bc77e30e757c6088da"
-    sha256 cellar: :any, arm64_big_sur:  "b789ada9eec40f397f5fc4e203abdbdce87da28c353e6b31f503a2b87f684c93"
-    sha256 cellar: :any, sonoma:         "73b2ed9dd9a84d784a31b662f202e236f0d6158346ce931b77d1205ca390faad"
-    sha256 cellar: :any, ventura:        "de0973df1bed9f47df99760b65c9e32fc44302b0931e5b41e47768cb3f6ea01e"
-    sha256 cellar: :any, monterey:       "8cf0b4866dee89d477602b4de996f10ad8115158c7a1fc0a04bfdf6b55ab7084"
-    sha256 cellar: :any, big_sur:        "6912bc1436fd9aa261090f4c0877c3b17b1aa8301defdb17c66f5f3410d060e1"
-    sha256               arm64_linux:    "c1037bb9d22337170f186be7d8ad1ccce9ef18dcf55e92cbd8424b7495204d03"
-    sha256               x86_64_linux:   "ceefedcaeb4e18c06c22c2a210e35d3439783f2f457107090d91d2b777e788f2"
+    sha256 cellar: :any, arm64_golden_gate: "26858babd5168242ae65b81a2770125a0378b6d15db0790503b0ccc382eede92"
+    sha256 cellar: :any, arm64_tahoe:       "0c7cc4aed9aca8fac6ca7f969966365592eaacbb29db5340f08dce1c0a9fa65a"
+    sha256 cellar: :any, arm64_sequoia:     "a3cf1f8ac6ed58fce5959717d16802adeb1920abfe6c421145de66eff2e9a51a"
+    sha256 cellar: :any, arm64_sonoma:      "c56b6225bce042d7c7984074c9c508e2ab4d4c17491f941d72dbfc0cee0c3caa"
+    sha256 cellar: :any, arm64_ventura:     "ba00f3f40ff28fe23cfea28a9a4782dd8e344e51d318cd9843c74fc3d52fe65a"
+    sha256 cellar: :any, arm64_monterey:    "f9faaf86d813119e9c592781ec40405057118cc8567838bc77e30e757c6088da"
+    sha256 cellar: :any, arm64_big_sur:     "b789ada9eec40f397f5fc4e203abdbdce87da28c353e6b31f503a2b87f684c93"
+    sha256 cellar: :any, sonoma:            "73b2ed9dd9a84d784a31b662f202e236f0d6158346ce931b77d1205ca390faad"
+    sha256 cellar: :any, ventura:           "de0973df1bed9f47df99760b65c9e32fc44302b0931e5b41e47768cb3f6ea01e"
+    sha256 cellar: :any, monterey:          "8cf0b4866dee89d477602b4de996f10ad8115158c7a1fc0a04bfdf6b55ab7084"
+    sha256 cellar: :any, big_sur:           "6912bc1436fd9aa261090f4c0877c3b17b1aa8301defdb17c66f5f3410d060e1"
+    sha256               arm64_linux:       "c1037bb9d22337170f186be7d8ad1ccce9ef18dcf55e92cbd8424b7495204d03"
+    sha256               x86_64_linux:      "ceefedcaeb4e18c06c22c2a210e35d3439783f2f457107090d91d2b777e788f2"
   end
 
   depends_on "pkgconf" => :build
@@ -39,8 +40,20 @@ class Libvisual < Formula
   end
 
   test do
-    # NOTE: Without any plug-ins, there is no more that we could test.
-    lv_tool = bin/"lv-tool-#{version.major_minor}"
-    assert_match version.to_s, shell_output("#{lv_tool} --version")
+    # `lv-tool` starts through SDL 1.2's Cocoa `SDLmain`, which never finishes launching in the test sandbox
+    (testpath/"test.c").write <<~C
+      #include <stdio.h>
+      #include <libvisual/libvisual.h>
+
+      int main(int argc, char **argv) {
+        visual_init(&argc, &argv);
+        puts(visual_get_version());
+        visual_quit();
+        return 0;
+      }
+    C
+    system ENV.cc, "test.c", "-o", "test", "-I#{include}/libvisual-#{version.major_minor}",
+                   "-L#{lib}", "-lvisual-#{version.major_minor}"
+    assert_equal version.to_s, shell_output("./test").strip
   end
 end

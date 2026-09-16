@@ -1,19 +1,16 @@
 class Skylighting < Formula
   desc "Flexible syntax highlighter using KDE XML syntax descriptions"
   homepage "https://github.com/jgm/skylighting"
-  url "https://hackage.haskell.org/package/skylighting-0.14.7/skylighting-0.14.7.tar.gz"
-  sha256 "05df6bce0aba5af7da7b618e1891cbe02833f6810b2405e96c254e9ff741001f"
+  url "https://hackage.haskell.org/package/skylighting-0.15/skylighting-0.15.tar.gz"
+  sha256 "2929c28a042453ee67785201dda234308ef19e068fb474cc1db69dd5f67c4dab"
   license "GPL-2.0-only"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_golden_gate: "3ed6681a5796e628cadae5c4fd9f168bb5d59f849d0395816025b9a154c30390"
-    sha256 cellar: :any, arm64_tahoe:       "1bbb4046dcfe86e9cbcc19b6a207971ce2761c76733ee1263f3c3dd01c21436f"
-    sha256 cellar: :any, arm64_sequoia:     "730ee7c866b559c734d4689c93259fdd9bdfe67fe5751c6389433456de3ec8ec"
-    sha256 cellar: :any, arm64_sonoma:      "5821b83e41fb31bc686e464b4497e6e14d90fad0c89998454c476545adc9803c"
-    sha256 cellar: :any, sonoma:            "07b1958368cac8aa092bb0bbd9c90de1c45b68df4cb4e602e90776e9b21859e6"
-    sha256 cellar: :any, arm64_linux:       "0e25564beb472c975d8e95f936019aff80708b9e261b9eb53b7197623af0ac82"
-    sha256 cellar: :any, x86_64_linux:      "84ba245e9a1f3df0cf208202f68e84710112620125255fc2ba37a6381c8c784d"
+    sha256 cellar: :any, arm64_golden_gate: "a37b774907c122728226b0b35e3d762dc7353b6935bdc3b960e112d28ebcffe6"
+    sha256 cellar: :any, arm64_tahoe:       "4c3fa2611a6f4069f850943622ce507aa06598b79492f8e8276c0386d836d9e6"
+    sha256 cellar: :any, arm64_sequoia:     "e6fd10b2a8c031cbd3d2fa40f0e6baf99eeb677c280ba956d6d615a8f3c57773"
+    sha256 cellar: :any, arm64_linux:       "074da3fb40d1647c0504b50dead72fba5735f8732fca3b5231e423b66f069b89"
+    sha256 cellar: :any, x86_64_linux:      "bd01fc200102922d4923cbc5f249ad86497cc98aeb1adc37d9e66679ece8aa10"
   end
 
   depends_on "cabal-install" => :build

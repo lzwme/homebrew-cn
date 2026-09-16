@@ -26,8 +26,21 @@ class Hstr < Formula
   end
 
   test do
+    require "pty"
+    require "io/console"
+
     ENV["HISTFILE"] = testpath/".hh_test"
     (testpath/".hh_test").write("test\n")
-    assert_match "test", shell_output("#{bin}/hh -n").chomp
+
+    output = ""
+    PTY.spawn(bin/"hh", "-n") do |r, _w, _pid|
+      r.winsize = [24, 80]
+      begin
+        r.each_line { |line| output += line }
+      rescue Errno::EIO
+        # GNU/Linux raises EIO when read is done on closed pty
+      end
+    end
+    assert_match "test", output
   end
 end

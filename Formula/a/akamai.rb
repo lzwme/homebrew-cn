@@ -19,7 +19,7 @@ class Akamai < Formula
   depends_on "go" => [:build, :test]
 
   # `test do` block installs a CLI package from GitHub
-  deny_network_access! [:build, :postinstall]
+  allow_network_access! :test
 
   def fetch
     system "go", "mod", "download"

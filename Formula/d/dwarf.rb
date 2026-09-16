@@ -60,7 +60,9 @@ class Dwarf < Formula
     else
       # Run test on x86-64 ELF as upstream never added EH_AARCH64 so part of
       # output doesn't show correctly if test is run on aarch64 ELF.
-      assert_match "main header: elf", shell_output("#{bin}/dwarf -p #{test_fixtures("elf/hello")}")
+      # dwarf opens files read-write, so work on a copy the sandbox lets us write
+      cp test_fixtures("elf/hello"), testpath
+      assert_match "main header: elf", shell_output("#{bin}/dwarf -p hello")
     end
   end
 end

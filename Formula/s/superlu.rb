@@ -38,7 +38,6 @@ class Superlu < Formula
   test do
     pkgconf_cflags = shell_output("pkgconf --cflags --libs superlu").chomp.split
     system ENV.cc, pkgshare/"dlinsol.c", *pkgconf_cflags, "-o", "test"
-    assert_match "No of nonzeros in L+U = 11886",
-                 shell_output("./test < #{pkgshare}/g20.rua")
+    assert_match "No of nonzeros in L+U = 11886", pipe_output("./test", (pkgshare/"g20.rua").read, 0)
   end
 end

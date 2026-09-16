@@ -1,9 +1,9 @@
 cask "diversion" do
   arch arm: "arm64", intel: "amd64"
 
-  version "1.6.122"
-  sha256 arm:   "c073137b2b8d0b7de51a5ed5aaf350ac77d9a15091db9e3452e29e8d45274f1c",
-         intel: "ca38e08311db72aa7176248d33686a94cec83a7340a48459a7e2a3354e011f68"
+  version "1.6.143"
+  sha256 arm:   "fb25831a928bdb37cb17c4d1b4e86142595ead4402e4064bda387404fc7b2276",
+         intel: "3d14fea9d20a5e1288d70a7175149c18e56ff0a954e1ec51d842c3ae75600288"
 
   url "https://get.diversion.dev/update/dv/v#{version}/darwin-#{arch}.gz"
   name "Diversion CLI"

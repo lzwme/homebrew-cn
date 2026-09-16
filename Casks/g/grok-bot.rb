@@ -2,9 +2,9 @@ cask "grok-bot" do
   arch arm: "arm64", intel: "x64"
   arch_suffix = on_arch_conditional intel: "_x64"
 
-  version "0.51.0"
-  sha256 arm:   "5c1f346c04c3151889b9c00ac012f7168a229aa2f77241ae100e89c8c2a5b440",
-         intel: "32a86a3838141280211f84557ef792bdc46b12b6709638b8ab347fdd69921c80"
+  version "0.53.0"
+  sha256 arm:   "dfcccb37a1bbb7fc426388929188c72e2b530b9245c47ee81b83c8a7beaf0444",
+         intel: "fc6b7e53ed91266a4276cdced220ae6f1216bcd2b160847ba2c149a68fe12818"
 
   url "https://downloads.cursor.com/sand/stable/darwin-#{arch}/#{version}/Grok_Bot_#{version}#{arch_suffix}.dmg"
   name "Grok Bot"

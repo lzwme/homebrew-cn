@@ -1,18 +1,16 @@
 class Rbspy < Formula
   desc "Sampling profiler for Ruby"
   homepage "https://rbspy.github.io/"
-  url "https://ghfast.top/https://github.com/rbspy/rbspy/archive/refs/tags/v0.51.0.tar.gz"
-  sha256 "56c574d1f3f1e57d961b6e2fd383497c68e7490c3968f6358e151645a3612eed"
+  url "https://ghfast.top/https://github.com/rbspy/rbspy/archive/refs/tags/v0.52.0.tar.gz"
+  sha256 "6bc7382de78687e2785fb739913c49041cbb97b7dfbde6e3e57ac97c7ebaedec"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "69f1a202a56d35a62fef931227626995e97d026752367a9009a18aeef18dbf91"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "6cf0ac649b88792c7957890107b4e492fa558a190df861fc4e430651c7e33a9a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "241fe2fee5f44f9fc80e872a80394816048c86c2476631b7f41feb68f0b8a5c8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "27950ddb3a5c6c72374edd036c613d63979520c790ab4c0b79fbb0f1380be971"
-    sha256 cellar: :any_skip_relocation, sonoma:            "90323590ae132f4879603a264c37cb3335456ec13e9f9c9d04fa63bacec78076"
-    sha256 cellar: :any,                 arm64_linux:       "fffca2ba973325b61a0c7e65e713c00521c36e5128f8082f8c1e5b6f51e33348"
-    sha256 cellar: :any,                 x86_64_linux:      "4c15d92f5a198ed23f67c096062a1cc425571b0ca337bdd56a3fbfeac8046832"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "80afc8b5e706c44c667038624399f95f3943c2486096f82c35662a19a12b7cc3"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "09cb739b765686db2135fb627551d8ea0ced506dfab21a789e980b8aa436d5b2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "f993a08f0d217d9346c9f5c046fb233853ee2c8b1852301ed5e1b299a46ad10d"
+    sha256 cellar: :any,                 arm64_linux:       "ff440d14c7fe72133cd94a91779d6c78c9ec221644a78729a08d47babb2b1689"
+    sha256 cellar: :any,                 x86_64_linux:      "19f773fce0990ed807d62f12e34a8f0f42f7b0d4b4ba9f9a7bfa263518745b09"
   end
 
   depends_on "rust" => :build

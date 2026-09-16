@@ -6,12 +6,13 @@ class Poke < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 arm64_tahoe:   "28d460a367b8e841626484f9eab13782ce77f08dc5540279ef6383045b513592"
-    sha256 arm64_sequoia: "bc8a3b20c5fcec70416f76a2de3cc298261195f34b2d33abdec30e539c1f6862"
-    sha256 arm64_sonoma:  "97a987881541e06a6efff389af06040f5e38dc8f7a836be9f1abe6c3f74e32c3"
-    sha256 sonoma:        "d6ac0c4a21d696d058c50c5eb95694eb334ae2c85425deac6ca7a6f3415fdb0f"
-    sha256 arm64_linux:   "47c44c4736f985ed41a8fa1e0589c4e959ccc258bbe933c25be18d479508f388"
-    sha256 x86_64_linux:  "b16549a3bc7696f3557f2bdd285b2bed5ea748b1b00bfb417519cc5e103b33ce"
+    sha256 arm64_golden_gate: "6497ffd366511b6c3f78817c56c88ceb50f774c9cf07f900b92d5bcbb6b2f6d9"
+    sha256 arm64_tahoe:       "28d460a367b8e841626484f9eab13782ce77f08dc5540279ef6383045b513592"
+    sha256 arm64_sequoia:     "bc8a3b20c5fcec70416f76a2de3cc298261195f34b2d33abdec30e539c1f6862"
+    sha256 arm64_sonoma:      "97a987881541e06a6efff389af06040f5e38dc8f7a836be9f1abe6c3f74e32c3"
+    sha256 sonoma:            "d6ac0c4a21d696d058c50c5eb95694eb334ae2c85425deac6ca7a6f3415fdb0f"
+    sha256 arm64_linux:       "47c44c4736f985ed41a8fa1e0589c4e959ccc258bbe933c25be18d479508f388"
+    sha256 x86_64_linux:      "b16549a3bc7696f3557f2bdd285b2bed5ea748b1b00bfb417519cc5e103b33ce"
   end
 
   depends_on "help2man" => :build

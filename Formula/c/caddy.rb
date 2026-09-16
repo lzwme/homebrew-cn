@@ -24,7 +24,7 @@ class Caddy < Formula
   end
 
   # `test do` block runs a local server
-  deny_network_access! [:build, :postinstall]
+  allow_network_access! :test
 
   def fetch
     # caddy's own modules, for the `go run cmd/caddy/main.go` completions step

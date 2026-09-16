@@ -1,18 +1,16 @@
 class Evnx < Formula
   desc "Comprehensive CLI tool for managing .env files"
   homepage "https://evnx.dev"
-  url "https://ghfast.top/https://github.com/urwithajit9/evnx/archive/refs/tags/v0.3.8.tar.gz"
-  sha256 "00fdccff473c51c26f2184d02cf249da2d5b973381a32e41c8049501ee554f65"
+  url "https://ghfast.top/https://github.com/urwithajit9/evnx/archive/refs/tags/v0.4.0.tar.gz"
+  sha256 "7065528d9225521ad1f1b267aeeee77c476849f419109a79097e90b30c56c3f4"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "f4c619ef342ea712e9a95fa04490904ba9b5e6300bc6a8278414c6fa8b5c1dc0"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "42dae3897b04507b5b399fbbbebe35ae555568db249973d17700b87e258aa919"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "3b6424d5bf74b165c563c395504074b17009a36009b59cdb56fab780b9507453"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "39a4dbef29c2f0d350c5e8dd8e5f65fe43004f787a9219e864c32da661c85aa2"
-    sha256 cellar: :any_skip_relocation, sonoma:            "9b27fd4c9042cb39600b129e1b0e754ce5b1f8d6563d9bdec19471c3ed6bf86f"
-    sha256 cellar: :any,                 arm64_linux:       "1b5b22d1c6c9804ffc2556f3db58e97a8f9157686efd33e497dc43a376a77048"
-    sha256 cellar: :any,                 x86_64_linux:      "506cd3ed6458721fa6c262db5c4825e11a75017019dee17edbd0dc61de8ba0bd"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "20644c4d1aff1a03e919f499dcd86b3a1d1f26a488e6648f1261c15fc6ccc2fa"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "b2d18988887c9186c7de9fb05e997b69205d7e35adb92ba45997abb73c003847"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "28665ee718d23f2be3a0346ccfeebc005aad779dcf268edb948e278e3df379db"
+    sha256 cellar: :any,                 arm64_linux:       "e209b7c51c029895fc7a6f864f0363f505ee8892f615ca8922c8dc967440d0a4"
+    sha256 cellar: :any,                 x86_64_linux:      "3668b00c02d6e51b10d8a59728da98295c1b46486933c7df0c9eb36aaa587e40"
   end
 
   depends_on "rust" => :build

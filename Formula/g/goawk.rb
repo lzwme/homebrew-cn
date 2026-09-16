@@ -1,19 +1,17 @@
 class Goawk < Formula
   desc "POSIX-compliant AWK interpreter written in Go"
   homepage "https://benhoyt.com/writings/goawk/"
-  url "https://ghfast.top/https://github.com/benhoyt/goawk/archive/refs/tags/v1.31.0.tar.gz"
-  sha256 "2df274d8680a9405646b0729b6465b8952f795f118358cf8a25fe1526cbd0909"
+  url "https://ghfast.top/https://github.com/benhoyt/goawk/archive/refs/tags/v1.32.0.tar.gz"
+  sha256 "5425248c199bf506987af0deff9109bbdeecfb723f11b30c712c54a10b78f1a9"
   license "MIT"
   head "https://github.com/benhoyt/goawk.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "9012f8384d316e91f19a41514049794dc77e6a64b986352567c93fc4839a9a09"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "7aa05da6706f6f37b6b6e39b5836857813c4076a7c58f91676d8ef4856032e4f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "7aa05da6706f6f37b6b6e39b5836857813c4076a7c58f91676d8ef4856032e4f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "7aa05da6706f6f37b6b6e39b5836857813c4076a7c58f91676d8ef4856032e4f"
-    sha256 cellar: :any_skip_relocation, sonoma:            "9e8db0d21391319af239e1d699968d412d98b88432f515b5a305338d5a9347aa"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "69823243b989010cec1a19abbd4ec23078b3fea8277d22e0c88308d7a97668e2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "0427800ae701c9b427ac9d7c492a2fa9dde61ed17716f2395e1a72515311e6d1"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "86a2e75f2d3d6d6ee48156bba246b0c8a46dbee8f3e7ed74ad017cebe5f1f7b2"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "86a2e75f2d3d6d6ee48156bba246b0c8a46dbee8f3e7ed74ad017cebe5f1f7b2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "86a2e75f2d3d6d6ee48156bba246b0c8a46dbee8f3e7ed74ad017cebe5f1f7b2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "b21ebfd50d30fea14fa1babfefbdb99b7283d8cc7726b8b879ee710b185de85d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "48365a54a43506defa109cc1cf5fef6866eb4eecff99ae84eded4afcd7b164ca"
   end
 
   depends_on "go" => :build

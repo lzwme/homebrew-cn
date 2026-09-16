@@ -6,10 +6,10 @@ class Ocmtoc < Formula
   license "APSL-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "34843bb5ba58430a17255e04a445bf40be5d88c9063c0a322d5b7659c2b7cc4c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1600fd106867c86d9c5d570832bf95bc07ee70cc735ebca1ff04b5191206dcb4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cb37d60cdc18321191054e2118463722ab18bb30460b0c40a9efabfd86124a6a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3a3e4f56aa7092771863408c858c5979dd929a1b38440c60f1618a41c8e40d87"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "917fd4fced07f4d0a2670aaa0f5bdbad38b2981bad232c0c74b653885cc31826"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "b14b91a85d26c6219655ee5aeb5ffd349f0ce6c0cd6966e840db79408dbe561f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "f51c7a744c58df9f6ae3576de5629abdda34f1488164a8a32b96bd07436012cb"
   end
 
   depends_on xcode: :build
@@ -22,7 +22,8 @@ class Ocmtoc < Formula
                "-project", "cctools.xcodeproj",
                "-scheme", "mtoc",
                "-configuration", "Release",
-               "CONFIGURATION_BUILD_DIR=build/Release"
+               "CONFIGURATION_BUILD_DIR=build/Release",
+               "MACOSX_DEPLOYMENT_TARGET=#{MacOS.version}"
     bin.install "build/Release/mtoc"
     man1.install "man/mtoc.1"
   end

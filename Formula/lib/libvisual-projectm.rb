@@ -6,12 +6,13 @@ class LibvisualProjectm < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256                               arm64_tahoe:   "859857caed5c2cd954dbcbc27024d76eab9c9b6d34444d3a941d00577a4cb723"
-    sha256                               arm64_sequoia: "2cf5ca8c0590b88e843a67b0b45c3e169403474dbe7789bf4e7653dc005022d7"
-    sha256                               arm64_sonoma:  "b20d989cfe6113ef1004dcffd1ad1fdedbbd33cf6b0d96e68ea3015ca4abf4d5"
-    sha256                               sonoma:        "cde4f874618e5510008df0e300a7f758ec438559ddc470d9046fd2864fa7110b"
-    sha256                               arm64_linux:   "c15daec0a30a65bdabed7f628999eaf83c8c4bb89da4609d05c297749832c510"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "690a7080b1b273f44e57a7d3b41908f2806e39add912dac5f9146009fbcc1032"
+    sha256                               arm64_golden_gate: "e34810e34d368a8a3203e98878c626dcc2d0f3965cb452898785195d2f45cc86"
+    sha256                               arm64_tahoe:       "859857caed5c2cd954dbcbc27024d76eab9c9b6d34444d3a941d00577a4cb723"
+    sha256                               arm64_sequoia:     "2cf5ca8c0590b88e843a67b0b45c3e169403474dbe7789bf4e7653dc005022d7"
+    sha256                               arm64_sonoma:      "b20d989cfe6113ef1004dcffd1ad1fdedbbd33cf6b0d96e68ea3015ca4abf4d5"
+    sha256                               sonoma:            "cde4f874618e5510008df0e300a7f758ec438559ddc470d9046fd2864fa7110b"
+    sha256                               arm64_linux:       "c15daec0a30a65bdabed7f628999eaf83c8c4bb89da4609d05c297749832c510"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "690a7080b1b273f44e57a7d3b41908f2806e39add912dac5f9146009fbcc1032"
   end
 
   depends_on "cmake" => :build

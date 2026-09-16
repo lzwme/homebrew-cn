@@ -1,8 +1,8 @@
 class Wabt < Formula
   desc "Web Assembly Binary Toolkit"
   homepage "https://github.com/WebAssembly/wabt"
-  url "https://ghfast.top/https://github.com/WebAssembly/wabt/releases/download/1.0.41/wabt-1.0.41.tar.xz"
-  sha256 "ca9e69cc1de13b4633a3c74fd697319303b21108529d4f10960af4e1f4a65893"
+  url "https://ghfast.top/https://github.com/WebAssembly/wabt/releases/download/1.0.42/wabt-1.0.42.tar.xz"
+  sha256 "a76cda3c174a43097863a07fc0b0c202f770f53e21806ea2636f167d1ffb1e30"
   license "Apache-2.0"
 
   livecheck do
@@ -11,13 +11,11 @@ class Wabt < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_golden_gate: "fff3e7f325c60d2f7accb546ba54449a0910ae87027053359d5598e59fd97ebd"
-    sha256 cellar: :any,                 arm64_tahoe:       "0c69784b6323ff4755c133fd21ef1c12f5ff2b389ddd55a163b4d46b84a74383"
-    sha256 cellar: :any,                 arm64_sequoia:     "c0f0934c0ddbfca8923ed441c247426c43e532f0eada6c9fd80e89777e791428"
-    sha256 cellar: :any,                 arm64_sonoma:      "334b2517199cccd2d03e032c743c6221660ef3454b2926596f5a386fbebc2bce"
-    sha256 cellar: :any,                 sonoma:            "3e1fb5039b55bf2ec19fb20ef2d47ddca69429b4af37c1fc8405b4e1385fa24a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "c7b2fea8041ace07a06069f591441f64776acb549eecfe793ae75c14355866b6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "e2c1427ad7640607e8c7805656f7f8ab5f2ff32c0449a9025c0b590782deb69b"
+    sha256 cellar: :any, arm64_golden_gate: "8d9d4301d6367d0885568925ed4bde689f7388ef5039be5cd8fff6b9f88befea"
+    sha256 cellar: :any, arm64_tahoe:       "f633e46e0c43fd94d24cfd1c377ffde30bb6960dde7da0f7d0f94c1a4b8be04e"
+    sha256 cellar: :any, arm64_sequoia:     "6c753b42e46037fde432e38d610e0f182db239fe8eeaccffd1ce7bedec18c34c"
+    sha256 cellar: :any, arm64_linux:       "e734461106d03b4ffc228dd1c99dba2cad92029d11e95ac2b9bb510bb95cb169"
+    sha256 cellar: :any, x86_64_linux:      "87f9681fce361b612caa9dee882136d59ec16a145c11836d2b3e7708a251baab"
   end
 
   depends_on "cmake" => :build

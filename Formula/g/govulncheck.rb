@@ -20,7 +20,7 @@ class Govulncheck < Formula
   depends_on "go" => [:build, :test]
 
   # `test do` block queries the Go vulnerability database
-  deny_network_access! [:build, :postinstall]
+  allow_network_access! :test
 
   def fetch
     system "go", "mod", "download"

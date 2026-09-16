@@ -36,9 +36,9 @@ class OilsForUnix < Formula
   test do
     system bin/"osh", "-c", "shopt -q lastpipe"
     # Oils initialises readline on a TTY stdin, which stops shell_output's background process group with SIGTTOU
-    assert_equal testpath.to_s, shell_output("#{bin}/osh -c 'echo `pwd -P`' < /dev/null").strip
+    assert_equal testpath.to_s, shell_output("#{bin}/osh -c 'echo `pwd -P`'").strip
 
     system bin/"ysh", "-c", "shopt -u parse_equals"
-    assert_equal "bar", shell_output("#{bin}/ysh -c 'var foo = \"bar\"; write $foo' < /dev/null").strip
+    assert_equal "bar", shell_output("#{bin}/ysh -c 'var foo = \"bar\"; write $foo'").strip
   end
 end

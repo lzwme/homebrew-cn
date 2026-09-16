@@ -7,12 +7,13 @@ class Mcphost < Formula
   head "https://github.com/mark3labs/mcphost.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "baf5ddfa871a62fd5f7ea71379bc38387be696ac3be30f2ff1f0c18ee69242ed"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "baf5ddfa871a62fd5f7ea71379bc38387be696ac3be30f2ff1f0c18ee69242ed"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "baf5ddfa871a62fd5f7ea71379bc38387be696ac3be30f2ff1f0c18ee69242ed"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0b96d49d859e020cc22e32a70d313ccb97f2ef0d3bedc880beaee723d7fb0267"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7a0e3a53b7538f3d6a2c703033969dfea3af837378af1b6ffe6c6d6eab74c5c9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d8ff47f19f95d5594b56ceee0dfd7aca5295d5301503d9fd8caf8d98ba845fd5"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "96b45ef9bd9a87f191a9a62de19507a4eaee8f1e3caac71db74556e6d7f8e47b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "baf5ddfa871a62fd5f7ea71379bc38387be696ac3be30f2ff1f0c18ee69242ed"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "baf5ddfa871a62fd5f7ea71379bc38387be696ac3be30f2ff1f0c18ee69242ed"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "baf5ddfa871a62fd5f7ea71379bc38387be696ac3be30f2ff1f0c18ee69242ed"
+    sha256 cellar: :any_skip_relocation, sonoma:            "0b96d49d859e020cc22e32a70d313ccb97f2ef0d3bedc880beaee723d7fb0267"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "7a0e3a53b7538f3d6a2c703033969dfea3af837378af1b6ffe6c6d6eab74c5c9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "d8ff47f19f95d5594b56ceee0dfd7aca5295d5301503d9fd8caf8d98ba845fd5"
   end
 
   deprecate! date: "2026-07-17", because: :repo_archived

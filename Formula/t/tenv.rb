@@ -31,7 +31,7 @@ class Tenv < Formula
   conflicts_with "tgenv", because: "tgenv symlinks terragrunt binaries"
 
   # `test do` block queries GitHub releases
-  deny_network_access! [:build, :postinstall]
+  allow_network_access! :test
 
   def fetch
     system "go", "mod", "download"

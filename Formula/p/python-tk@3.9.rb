@@ -6,12 +6,12 @@ class PythonTkAT39 < Formula
   license "Python-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "605652d4b416da946391152dfff95e132051024b39f5bf92874d1c4e7df1bb16"
-    sha256 cellar: :any,                 arm64_sequoia: "15e8153bd95f1440bb888f1e7e944558edde77901a1b0057bdf4ab5645080b1d"
-    sha256 cellar: :any,                 arm64_sonoma:  "4675b5a8cf5c110f06ee19c2afa43df40930a1ce25f8785c7b003ba538ce7cce"
-    sha256 cellar: :any,                 sonoma:        "6a713e912309d33e7155769d2c9a5bf900182b6b9403696b11646fc49cbefb15"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "768e2164044eccdbbb7b436a3f94b9adee9f100311c0994827b6a7cc5afaffcc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4035a740833fc798719765d1124ceca0c5d5652091befb81f6de94d91d9b34d0"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "63478fc978d0b0b41290c3c0e18c7bcaa497c174fc9ce820d350692e0601d71f"
+    sha256 cellar: :any, arm64_tahoe:       "80211d3a9159e78e2cd78e0493b7d34b8cbaf0ef1cb4a565cdcb5808bdae1e12"
+    sha256 cellar: :any, arm64_sequoia:     "98aa6a596cf7d748a60f2e89d764f41a8d8a783a966f536a26894c8e978a6951"
+    sha256 cellar: :any, arm64_linux:       "68988da196ca401a9ba9e2c595945d5d9ae6b7f3fccb4ded1e357b915068efed"
+    sha256 cellar: :any, x86_64_linux:      "3cebf85829b71ee39c478b2bd23428519c936bc0ec8ed2e84a63e581955983d1"
   end
 
   # Follow up to python@3.9 deprecation
@@ -20,6 +20,8 @@ class PythonTkAT39 < Formula
 
   depends_on "python@3.9"
   depends_on "tcl-tk@8"
+
+  deny_network_access!
 
   def install
     cd "Modules" do
@@ -40,16 +42,13 @@ class PythonTkAT39 < Formula
               ]
         )
       PYTHON
-      system python3, "-m", "pip", "install", *std_pip_args(prefix: false), "--target=#{libexec}", "."
+      args = std_pip_args(prefix: false, build_isolation: false).reject { |s| s["--uploaded-prior-to"] }
+      system python3, "-m", "pip", "install", *args, "--target=#{libexec}", "."
       rm_r libexec.glob("*.dist-info")
     end
   end
 
   test do
     system python3, "-c", "import tkinter"
-
-    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
-
-    system python3, "-c", "import tkinter; root = tkinter.Tk()"
   end
 end

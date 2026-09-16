@@ -23,7 +23,7 @@ class Logcli < Formula
   depends_on "loki" => :test
 
   # `test do` block runs a local loki server
-  deny_network_access! [:build, :postinstall]
+  allow_network_access! :test
 
   def fetch
     system "go", "mod", "download"

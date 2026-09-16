@@ -1,18 +1,17 @@
 class VitePlus < Formula
   desc "Unified toolchain and entry point for web development"
   homepage "https://viteplus.dev"
-  url "https://ghfast.top/https://github.com/voidzero-dev/vite-plus/archive/refs/tags/v0.3.1.tar.gz"
-  sha256 "0cc878005ec54ed43ed40332144afb091efeb2c4dfacfacca23cc2f51b3b5946"
+  url "https://ghfast.top/https://github.com/voidzero-dev/vite-plus/archive/refs/tags/v0.3.2.tar.gz"
+  sha256 "44d6ccdb5760300b3879e06a3929917321459f556a849de8b93fc02c01cbb964"
   license "MIT"
   head "https://github.com/voidzero-dev/vite-plus.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "bc73d8da408bcac857549f50dcdbaefaa9b8496ea146320d575bf1cf021d39d7"
-    sha256 cellar: :any, arm64_tahoe:       "99bdcb2b508cd302980c04f6bf0327821c4f1651189d997deae4c5a15ba33e07"
-    sha256 cellar: :any, arm64_sequoia:     "97fdd38f1a9e09e59f8bcd9334be0d55194160a2c43224d63fa6babab404da12"
-    sha256 cellar: :any, arm64_sonoma:      "bfb779ca2b922223269ad3d6e812c728479c92172d8bb28805710bb867ee75e1"
-    sha256               arm64_linux:       "f58be36d5cf087ee4acfd3b98a70cfa14d3040f71e213de3737f16d8198cdbc8"
-    sha256               x86_64_linux:      "fda736aada80f253386ff01119f1ea7b8e4761bee7e33a690fa18d87a8788dd9"
+    sha256 cellar: :any, arm64_golden_gate: "f4e963182626ea11ace0cad36f13e552dd10022ddda12744d1cc3e6b98a4c032"
+    sha256 cellar: :any, arm64_tahoe:       "bc5bdf56f1006b1c051c24afbd0c7a44960fad03c76bb357491e029c78ad343a"
+    sha256 cellar: :any, arm64_sequoia:     "c8ffd5c4ff375814a8d1bf032a6c5fd057b9482c0e2016ad52433222d36a251e"
+    sha256               arm64_linux:       "a8559d5e9ab867e657077340605911c88efeacea22aa469d6b0d90dd84329155"
+    sha256               x86_64_linux:      "13f91c849bbb591c5d24463aae69d4a76908a5f688b1d29e78f7b16ce52d0348"
   end
 
   depends_on "cmake" => :build
@@ -23,8 +22,8 @@ class VitePlus < Formula
 
   resource "rolldown" do
     url "https://github.com/rolldown/rolldown.git",
-        revision: "26b4c6e56c5553d72a910d0f73d60fa331c0ed88"
-    version "26b4c6e56c5553d72a910d0f73d60fa331c0ed88"
+        revision: "9704b565076baf57b3703c98ebde973855506a68"
+    version "9704b565076baf57b3703c98ebde973855506a68"
 
     livecheck do
       url "https://ghfast.top/https://raw.githubusercontent.com/voidzero-dev/vite-plus/refs/tags/v#{LATEST_VERSION}/packages/tools/.upstream-versions.json"
@@ -36,8 +35,8 @@ class VitePlus < Formula
 
   resource "vite" do
     url "https://github.com/vitejs/vite.git",
-        revision: "de1111ab0be00879b404e7ed3b2a80e264edddc1"
-    version "de1111ab0be00879b404e7ed3b2a80e264edddc1"
+        revision: "434e8e9495436a60789f2b588a04a6a24a3d1661"
+    version "434e8e9495436a60789f2b588a04a6a24a3d1661"
 
     livecheck do
       url "https://ghfast.top/https://raw.githubusercontent.com/voidzero-dev/vite-plus/refs/tags/v#{LATEST_VERSION}/packages/tools/.upstream-versions.json"
@@ -87,11 +86,12 @@ class VitePlus < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/vp --version")
 
-    system bin/"vp", "create", "vite:application", "--no-interactive", "--directory", "test-app"
+    # `vp` calls `tcsetattr` on a tty stdin, which stops it with SIGTTOU on the test PTY
+    system "#{bin}/vp create vite:application --no-interactive --directory test-app < /dev/null"
     assert_path_exists testpath/"test-app/package.json"
 
     cd testpath/"test-app" do
-      output = shell_output("#{bin}/vp fmt")
+      output = shell_output("#{bin}/vp fmt < /dev/null")
       assert_match "Finished", output
     end
   end

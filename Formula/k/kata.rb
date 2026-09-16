@@ -17,7 +17,7 @@ class Kata < Formula
   depends_on "go" => :build
 
   # `test do` block needs network access for `kata init`
-  deny_network_access! [:build, :postinstall]
+  allow_network_access! :test
 
   def install
     ENV["CGO_ENABLED"] = "0"

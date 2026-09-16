@@ -19,7 +19,7 @@ class Helmfile < Formula
   depends_on "helm"
 
   # `test do` block adds a helm chart repository
-  deny_network_access! [:build, :postinstall]
+  allow_network_access! :test
 
   def fetch
     system "go", "mod", "download"

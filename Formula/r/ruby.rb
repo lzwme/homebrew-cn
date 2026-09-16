@@ -2,20 +2,19 @@ class Ruby < Formula
   desc "Powerful, clean, object-oriented scripting language"
   homepage "https://www.ruby-lang.org/"
   license "Ruby"
-  revision 1
   compatibility_version 1
 
   stable do
     # TODO: enable default_user_install when updating to Ruby 4.1
-    url "https://cache.ruby-lang.org/pub/ruby/4.0/ruby-4.0.6.tar.gz"
-    sha256 "837d299e8f7ddf2be31a229a7a7e019d354979825117989acb3b32b1a9be262a"
+    url "https://cache.ruby-lang.org/pub/ruby/4.0/ruby-4.0.7.tar.gz"
+    sha256 "911ace20f90d068ca0e4dda6d0e4f0f81e52e52f2dd4f4004c721e253412e82d"
 
     # Should be updated only when Ruby is updated (if an update is available).
     # The exception is Rubygem security fixes, which mandate updating this
     # formula & the versioned equivalents and bumping the revisions.
     resource "rubygems" do
-      url "https://rubygems.org/rubygems/rubygems-4.0.16.tgz"
-      sha256 "ea9c669526af82874f8f33f69bea1b6ddd99283756e598227a9a890035a5a06a"
+      url "https://rubygems.org/rubygems/rubygems-4.0.20.tgz"
+      sha256 "177c816f9952419dbfd1f56ef93e4a9d1fdc60d885c6ca0787283485b0c05408"
 
       livecheck do
         url "https://rubygems.org/pages/download"
@@ -30,13 +29,11 @@ class Ruby < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "e88e204ccb78788f45e8758b46fb30d84fcdff190283678fbb8136d2e66da198"
-    sha256 arm64_tahoe:       "4ce78c01101674d6b7f4fabbaf6c4fdc09ee735827faa2865348777b815421b8"
-    sha256 arm64_sequoia:     "836525a563d1cb7ff0d141b2a8a520a8e97c839576ab5c967a953b58f77f872c"
-    sha256 arm64_sonoma:      "aaa0345bf1d54313c2a08c1a41ea332e69ff4dea340b3b4af2aa2111e9158ec3"
-    sha256 sonoma:            "1256484800a5d262029f6a72551985ef40b2411b187c6c0e3309718586663382"
-    sha256 arm64_linux:       "244296422f82d4bd785a9d75e893eae8e8137fa271ee424f0592f999d5adf848"
-    sha256 x86_64_linux:      "8f6668cf18a8036389893b2dd38c0b49bd72873c35a386efeef544afaeac3b15"
+    sha256 arm64_golden_gate: "b4f1bf415d64f5b172a8de171ca43ebfe16cd24835c4475ba0e50b1a9b03c5ec"
+    sha256 arm64_tahoe:       "d89f333610f9509e7586d8063d8f65a7a875da39c4b3841a60e748d46352564f"
+    sha256 arm64_sequoia:     "01cce4590b2f82753b4a50f75cf406d4f95bc9a984cc3cb629d4c084c7d7e6b2"
+    sha256 arm64_linux:       "f27a89c01c7903ee0cc83665c7be7089c7b7b3333691fde22062bef512316051"
+    sha256 x86_64_linux:      "82528ed4385c4fab4f3339820e439bb85e97910ea488069b16ed469b98b82362"
   end
 
   head do

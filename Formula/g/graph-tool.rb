@@ -13,11 +13,12 @@ class GraphTool < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "e37dcc50527415d4fc064896e416bfea7f6f23a39948fc5caae942898bc62d39"
-    sha256 arm64_sequoia: "bdd5e66d58ff1700ec0d68a28f1e837ede76dfdf04d326e2e2b3182ca4c9df59"
-    sha256 arm64_sonoma:  "d6f70f039946ea94daf2c12f0529205803484a238911265a159eba8b139d6648"
-    sha256 arm64_linux:   "07d8fa9927808548e9e1c3f0a3307033fad618119cd32bd03e6dd7c83c920ec9"
-    sha256 x86_64_linux:  "b5b3f727fbc6ba05e8ff6921b5ab67ca5c3c9cc1e89518ba0d8edcb35a90f2ed"
+    rebuild 1
+    sha256 arm64_golden_gate: "ffacda50a55d05c392fd912bf9495a0d4674ce8cde15e837bb46cdd63214cb43"
+    sha256 arm64_tahoe:       "2879c5fdab894edaf84f6bd8f13e6d4b08944db2bee2e56a4415b9f501079a89"
+    sha256 arm64_sequoia:     "47d18c903208b0f3251ea762e1ae9b124040cd689fcb7b3a101aa35a037f9f67"
+    sha256 arm64_linux:       "19417ab928bab957e31caaa07cab83a951732bd391f5677aa4f2eacb88dc496b"
+    sha256 x86_64_linux:      "40e8356af90b4d74c021555f85515ce7d3993ffb0471ce4a4c44fe0969b313c4"
   end
 
   depends_on "cgal" => :build
@@ -26,7 +27,6 @@ class GraphTool < Formula
   depends_on "python-setuptools" => :build # for zstandard
 
   # only test optional graph drawing feature to reduce required runtime dependencies
-  depends_on "gtk+3" => :test
   depends_on "pygobject3" => :test
   depends_on "python-matplotlib" => :test
 
@@ -120,6 +120,9 @@ class GraphTool < Formula
 
   test do
     (testpath/"test.py").write <<~PYTHON
+      import sys
+      # Importing Gtk initialises GDK, which aborts without a window server, so skip GTK+ drawing
+      sys.modules["gi.repository.Gtk"] = None
       import graph_tool.all as gt
       g = gt.Graph()
       v1 = g.add_vertex()
@@ -128,6 +131,6 @@ class GraphTool < Formula
       assert g.num_edges() == 1
       assert g.num_vertices() == 2
     PYTHON
-    refute_match "drawing will not work", shell_output("#{python3} test.py 2>&1")
+    refute_match(/Error importing (cairo|matplotlib)/, shell_output("#{python3} test.py 2>&1"))
   end
 end

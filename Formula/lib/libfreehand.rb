@@ -1,8 +1,8 @@
 class Libfreehand < Formula
   desc "Interpret and import Aldus/Macromedia/Adobe FreeHand documents"
   homepage "https://wiki.documentfoundation.org/DLP/Libraries/libfreehand"
-  url "https://dev-www.libreoffice.org/src/libfreehand/libfreehand-0.1.3.tar.xz"
-  sha256 "a431d78767e5aa27ade7c6d1b7a11a9f1848cb4b9260bf0a6a44689553ecccfe"
+  url "https://dev-www.libreoffice.org/src/libfreehand/libfreehand-0.1.4.tar.xz"
+  sha256 "350b10d24a76d7e8c8ae98b74c2d432a2c8ddec08935d09856d20b695a35e600"
   license "MPL-2.0"
 
   livecheck do
@@ -11,13 +11,11 @@ class Libfreehand < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_golden_gate: "c9873d8b80f8889857305c29f1a5eb6ed88c55c94ed3c8d0794fa0f8944c974e"
-    sha256 cellar: :any,                 arm64_tahoe:       "d33bddefbe09049bfefff702e617aa5072b03ab2602af75c3fdc1b7ce3cd0ead"
-    sha256 cellar: :any,                 arm64_sequoia:     "4c601bd55e81fef558bf0c681b953d8467250f897d67e7ba764aeeff3b5f24c2"
-    sha256 cellar: :any,                 arm64_sonoma:      "31e4a1c33344398e8ea91f4f324a21589e565f8e3921db4abfafa5a455cc8b98"
-    sha256 cellar: :any,                 sonoma:            "b6249e044b194cd34175495d5c42f8e6ac70a0d2f61e422bffdfbe62b3f4110e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "78013df6365bdb51b64b118de7b04dadee3207698dbffe86ee96063b82e1ca63"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "4f7a7c203127d2ce3f773d8fbb2b85fa37923215b303a112f7860eae687da4eb"
+    sha256 cellar: :any, arm64_golden_gate: "a123c892432f9612a58cc7fb78182ce76f9cce010cbf767db0bfd82d05eba685"
+    sha256 cellar: :any, arm64_tahoe:       "04e2f344a5b0a5c219055eb85bf8226699d818b47830b854e7cd0100ab21bd49"
+    sha256 cellar: :any, arm64_sequoia:     "ee4e45db0dbda886e39c8edf5159b308777aafcb0f36162ba52c488e1a7c5eed"
+    sha256 cellar: :any, arm64_linux:       "51a443af0b072364daa917f3d42235b25da4e5e15c4550765aa7116851c94547"
+    sha256 cellar: :any, x86_64_linux:      "f30972de842b030b45f78a1421fffa25d101e9957163a3c709e7897dd1de22c6"
   end
 
   depends_on "boost" => :build

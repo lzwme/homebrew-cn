@@ -14,12 +14,13 @@ class ReconNg < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "5d0d878d5f6edba6536e509b5bec44ec2e5fd85ec6e0a3785439f98b1f454b90"
-    sha256 cellar: :any,                 arm64_sequoia: "3d53b980bcba6db9c0fb47fae0ee918218257ba5540f7f1aaaffe6427ca62623"
-    sha256 cellar: :any,                 arm64_sonoma:  "8f66b2989cd5af0973dad3cc2b99eb1bb932cac0d721c42a9cb857d1e236cc11"
-    sha256 cellar: :any,                 sonoma:        "5a578602afee724341f20d120c2d114d4313245c7c3d51ee809b0af1b4ab8ed2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c9df889447d25ba8cf1935285f191656ba419b82cdccdf321aa1e745878d14eb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ebaadd6d0d0f37a068d6c22c938ec40d55433344cc20cef7aaddd5454e3a2f4e"
+    sha256 cellar: :any,                 arm64_golden_gate: "d46aef2e894fd9e0f1996f87d6368094342589c00fe76c4a3246f3f14451ff98"
+    sha256 cellar: :any,                 arm64_tahoe:       "5d0d878d5f6edba6536e509b5bec44ec2e5fd85ec6e0a3785439f98b1f454b90"
+    sha256 cellar: :any,                 arm64_sequoia:     "3d53b980bcba6db9c0fb47fae0ee918218257ba5540f7f1aaaffe6427ca62623"
+    sha256 cellar: :any,                 arm64_sonoma:      "8f66b2989cd5af0973dad3cc2b99eb1bb932cac0d721c42a9cb857d1e236cc11"
+    sha256 cellar: :any,                 sonoma:            "5a578602afee724341f20d120c2d114d4313245c7c3d51ee809b0af1b4ab8ed2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "c9df889447d25ba8cf1935285f191656ba419b82cdccdf321aa1e745878d14eb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "ebaadd6d0d0f37a068d6c22c938ec40d55433344cc20cef7aaddd5454e3a2f4e"
   end
 
   depends_on "certifi" => :no_linkage
@@ -101,6 +102,14 @@ class ReconNg < Formula
       sha256 "779f8bab52308792b7ac2f01c3cd61335587640f98812c88cb074dce9fe8162d"
       type :unofficial
       resolves "https://github.com/html5lib/html5lib-python/pull/589"
+    end
+
+    # Python 3.14 with setuptools 81+ compatibility (`pkg_resources` removal)
+    patch do
+      url "https://github.com/html5lib/html5lib-python/commit/1dbc19cd6db72cb919885827bc4883423e0cb647.patch?full_index=1"
+      sha256 "5951b823f353dd70806ad6e163ab8f46899496c1e8bb53970c99abe8d1df1a78"
+      type :unofficial
+      resolves "https://github.com/html5lib/html5lib-python/pull/592"
     end
   end
 

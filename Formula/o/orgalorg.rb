@@ -12,16 +12,17 @@ class Orgalorg < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "aa11bd3501767c0c1057cdda65730e8893f9dc2f7da4cb96aaf78219df1a1fcc"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "dc20b9130dfde0b22594c6e0956e25ca597ad7b8d5bc1fab464fd27265ba9604"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "06947c8b72e6195a7f44ba80fd5fc0f9b61c5e592de035312365ad85b9c78e37"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "06947c8b72e6195a7f44ba80fd5fc0f9b61c5e592de035312365ad85b9c78e37"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "06947c8b72e6195a7f44ba80fd5fc0f9b61c5e592de035312365ad85b9c78e37"
-    sha256 cellar: :any_skip_relocation, sonoma:         "9609c5b392fa18422370ff6e1141699d277c7fda09160188f5c8b1891a47ab8c"
-    sha256 cellar: :any_skip_relocation, ventura:        "9609c5b392fa18422370ff6e1141699d277c7fda09160188f5c8b1891a47ab8c"
-    sha256 cellar: :any_skip_relocation, monterey:       "9609c5b392fa18422370ff6e1141699d277c7fda09160188f5c8b1891a47ab8c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "bc347549d933c2bc6eeff0f6a868e9022ce31d3f8603b5011a0c429a78c65e15"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7ddfaf7984ff3194c6966fe2765fcd79fae9bc91a5f96a96c9baba7aed1c6885"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "62b8c96f98fce64a132d038ca42c4ef48c1196571000dfe5058bbdb55907ed55"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "aa11bd3501767c0c1057cdda65730e8893f9dc2f7da4cb96aaf78219df1a1fcc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "dc20b9130dfde0b22594c6e0956e25ca597ad7b8d5bc1fab464fd27265ba9604"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "06947c8b72e6195a7f44ba80fd5fc0f9b61c5e592de035312365ad85b9c78e37"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:     "06947c8b72e6195a7f44ba80fd5fc0f9b61c5e592de035312365ad85b9c78e37"
+    sha256 cellar: :any_skip_relocation, arm64_monterey:    "06947c8b72e6195a7f44ba80fd5fc0f9b61c5e592de035312365ad85b9c78e37"
+    sha256 cellar: :any_skip_relocation, sonoma:            "9609c5b392fa18422370ff6e1141699d277c7fda09160188f5c8b1891a47ab8c"
+    sha256 cellar: :any_skip_relocation, ventura:           "9609c5b392fa18422370ff6e1141699d277c7fda09160188f5c8b1891a47ab8c"
+    sha256 cellar: :any_skip_relocation, monterey:          "9609c5b392fa18422370ff6e1141699d277c7fda09160188f5c8b1891a47ab8c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "bc347549d933c2bc6eeff0f6a868e9022ce31d3f8603b5011a0c429a78c65e15"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "7ddfaf7984ff3194c6966fe2765fcd79fae9bc91a5f96a96c9baba7aed1c6885"
   end
 
   depends_on "go" => :build

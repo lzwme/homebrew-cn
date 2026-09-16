@@ -12,12 +12,13 @@ class Orbiton < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "caa005e26ba6a2371c0af104ce83b2ac4c689b24e1bde5119eb1ac5045257ebc"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "caa005e26ba6a2371c0af104ce83b2ac4c689b24e1bde5119eb1ac5045257ebc"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "caa005e26ba6a2371c0af104ce83b2ac4c689b24e1bde5119eb1ac5045257ebc"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2924657469223ea95285220e3f4e970daa3ae34e0b53b04e032282adc04f51e1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a069f1a3ab4e9aed7dafaac70151a6a3dda036166cf3fa497c4075a08c5c8948"
-    sha256 cellar: :any,                 x86_64_linux:  "038bc714f8fd6155c352b9c835c708669a46ff847b4d6110d5bb602f5311c463"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "f2661a233f4cc9dae9ff9a27c57991242a8239f020e215fdb7ae6969a1a7e0d9"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "caa005e26ba6a2371c0af104ce83b2ac4c689b24e1bde5119eb1ac5045257ebc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "caa005e26ba6a2371c0af104ce83b2ac4c689b24e1bde5119eb1ac5045257ebc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "caa005e26ba6a2371c0af104ce83b2ac4c689b24e1bde5119eb1ac5045257ebc"
+    sha256 cellar: :any_skip_relocation, sonoma:            "2924657469223ea95285220e3f4e970daa3ae34e0b53b04e032282adc04f51e1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "a069f1a3ab4e9aed7dafaac70151a6a3dda036166cf3fa497c4075a08c5c8948"
+    sha256 cellar: :any,                 x86_64_linux:      "038bc714f8fd6155c352b9c835c708669a46ff847b4d6110d5bb602f5311c463"
   end
 
   depends_on "go" => :build
@@ -38,11 +39,10 @@ class Orbiton < Formula
 
     if OS.linux?
       system "xvfb-run", "sh", "-c", "#{copy_command} && #{paste_command}"
+      assert_equal (testpath/"hello.txt").read, (testpath/"hello2.txt").read
     else
-      system copy_command
-      system paste_command
+      # `--copy` and `--paste` need the pasteboard, which the test sandbox blocks
+      assert_match "hello", shell_output("#{bin}/o --list #{testpath}/hello.txt")
     end
-
-    assert_equal (testpath/"hello.txt").read, (testpath/"hello2.txt").read
   end
 end

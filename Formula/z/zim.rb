@@ -9,7 +9,8 @@ class Zim < Formula
   head "https://github.com/zim-desktop-wiki/zim-desktop-wiki.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "e6565c3460f6e8dca6e1a3ead1068b11996f5df20f7eb7c2b18eb0dfd2bacd9d"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "9a3040b9fcf74c2742c45a5c0b2c766707206eaf9bdf6b93adbb442d1606ac00"
   end
 
   depends_on "pkgconf" => :build
@@ -30,6 +31,8 @@ class Zim < Formula
   end
 
   def install
+    # Importing zim initialises GTK's Quartz display, which brew's macOS sandbox denies; build and test need none
+    ENV["GDK_BACKEND"] = "none" if OS.mac?
     venv = virtualenv_create(libexec, python3)
     venv.pip_install resources
     venv.pip_install buildpath, build_isolation: false
@@ -61,6 +64,7 @@ class Zim < Formula
       "Content-Type: text/x-zim-wiki\nWiki-Format: zim 0.4\n" \
       "Creation-Date: 2020-03-02T07:17:51+02:00\n\n[[https://brew.sh|Homebrew]]",
     )
+    ENV["GDK_BACKEND"] = "none" if OS.mac?
     system bin/"zim", "--index", "./Notes"
     system bin/"zim", "--export", "-r", "-o", "HTML", "./Notes"
     assert_match "Homebrew:Homebrew", (testpath/"HTML/Homebrew/Homebrew.html").read

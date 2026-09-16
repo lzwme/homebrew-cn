@@ -66,7 +66,7 @@ class Smlnj < Formula
   end
 
   test do
-    (testpath/"hello.sml").write <<~EOF
+    hello_sml = <<~EOF
       val () = print "Hello, Homebrew!\n";
       val _ = (
         CM.make "$/smlnj-lib.cm";
@@ -82,7 +82,7 @@ class Smlnj < Formula
         CM.make "$/xml-lib.cm"
       ) handle _ => OS.Process.exit OS.Process.failure
     EOF
-    output = shell_output "#{bin}/sml < hello.sml"
+    output = pipe_output(bin/"sml", hello_sml, 0)
     banner = Regexp.new("Standard ML of New Jersey [[Version #{version}, 64-bit; .*]]")
     assert_match banner, output
   end

@@ -18,7 +18,7 @@ class McpToolbox < Formula
   conflicts_with "kahip", because: "both install `toolbox` binaries"
 
   # `test do` block binds a local port
-  deny_network_access! [:build, :postinstall]
+  allow_network_access! :test
 
   def fetch
     system "go", "mod", "download"

@@ -2,20 +2,19 @@ class Filebeat < Formula
   desc "File harvester to ship log files to Elasticsearch or Logstash"
   homepage "https://www.elastic.co/products/beats/filebeat"
   url "https://github.com/elastic/beats.git",
-      tag:      "v9.5.3",
-      revision: "05460763bc6067b3a4708bc80219092eba134988"
+      tag:      "v9.5.4",
+      revision: "ccdfcad1de773e22e494089f508162c52b027ee2"
   # Outside of the "x-pack" folder, source code in a given file is licensed
   # under the Apache License Version 2.0
   license "Apache-2.0"
   head "https://github.com/elastic/beats.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "faa7d6697ac9080b24de679ceade4391a81bceb7caa44cbc54d5b76004f71524"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "831ff5ae81953b8195149f414c1bab349593bd888e1f4358b3bcf00c4fbac76e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "22792609df6cbb91c1187f783366056d9aac67658c54c5062eca12c8c867617c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "61d1571e78261f76fe1d99e3f6f177454a8e585a6713683b9101b319537b4f1d"
-    sha256 cellar: :any,                 arm64_linux:       "87f21f45915dd3bf76f1f0a298bdaafbc2c0df1ae9bb0644e5380d27b078d74d"
-    sha256 cellar: :any,                 x86_64_linux:      "027611b59f067898c97c1cdcaea3be7bf6115519719651063e939b21b5bf2335"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "abc3bfdca48bb8f9c2a505db7aa8397db3452fd09cb8384241104fd8d4ee4507"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "58e481f0246b41da63f6011d179813f85b21675ca624773cff6f3721da0e1461"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "456e164efc7f0375cf5cc918186784b6838f00d6487f9a44767f66b6d31c27ea"
+    sha256 cellar: :any,                 arm64_linux:       "d62eaa48ba208d8284b806019fd8223f26243b429c86a0853f00ccf219da4eac"
+    sha256 cellar: :any,                 x86_64_linux:      "c53185d2b89864d12363a8aabf1b576b64018ee1bfc9be5812395091e8b881fe"
   end
 
   depends_on "go" => :build

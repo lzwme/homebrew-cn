@@ -1,18 +1,16 @@
 class Libaegis < Formula
   desc "Portable C implementations of the AEGIS family of encryption algorithms"
   homepage "https://github.com/aegis-aead/libaegis"
-  url "https://ghfast.top/https://github.com/aegis-aead/libaegis/archive/refs/tags/0.10.3.tar.gz"
-  sha256 "2f2682c1d08d9a5510caca1c82e3f8ea91f7085fef2ecbed0c398b2a921c79b1"
+  url "https://ghfast.top/https://github.com/aegis-aead/libaegis/archive/refs/tags/0.10.4.tar.gz"
+  sha256 "d416b95ded205cf083c0c630767b522beff18d98a3f8066970e127ef129410a8"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "e84cf129cf281a23cb45d00575b45adc34cb1e3a0b459854e689ebdbd6367ddb"
-    sha256 cellar: :any, arm64_tahoe:       "9072fddecb6b077000edf40a561759d3aa53377f0e4ca0784044302740c4e299"
-    sha256 cellar: :any, arm64_sequoia:     "ec09589bd139feb28aafa06ddfc3b9d966c472d79c7932926c7a3d957e0ad6a2"
-    sha256 cellar: :any, arm64_sonoma:      "82095481991eaa985c7a6f3fb2e368bd7fe942731e0fa5fa9e96877c2f84ae57"
-    sha256 cellar: :any, sonoma:            "79ef35267e08bb4e1a716371da5bb35701bb1c586e00820f75a88eaa74847a8d"
-    sha256 cellar: :any, arm64_linux:       "167e84042e9fee90f3c6ddc23211724f35f839a506cd62c715af3d639958bb86"
-    sha256 cellar: :any, x86_64_linux:      "74ccde5fcd7cdb3bf5ea1f06b79398fc0633935e8e3365e78402280091e41038"
+    sha256 cellar: :any, arm64_golden_gate: "049ddc7ee2e652aad7fc6adf5e75a5af1332b67aeb73eb7a5e269f45f776d218"
+    sha256 cellar: :any, arm64_tahoe:       "6772e0d8689e314ecdb8c2e55f2b299cf496fe3d9de8e6bfb7bf5eb0b0dae8de"
+    sha256 cellar: :any, arm64_sequoia:     "26d3cd7c47133fdf1f091382de21877a1ab9e8ae3d2112e3c08effa10b1701c6"
+    sha256 cellar: :any, arm64_linux:       "1cb5e3cbb8f9b04c977f6940d20320233866526e6341a95ec457a24c0ba65323"
+    sha256 cellar: :any, x86_64_linux:      "c566117dbb432da1285ae1d994bcd1978d7b5019baaa01d523a238cd7ae0069c"
   end
 
   depends_on "cmake" => :build

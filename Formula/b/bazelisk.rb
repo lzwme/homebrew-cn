@@ -26,7 +26,7 @@ class Bazelisk < Formula
   end
 
   # `test do` block downloads a Bazel release
-  deny_network_access! [:build, :postinstall]
+  allow_network_access! :test
 
   def fetch
     system "go", "mod", "download"

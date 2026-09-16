@@ -7,12 +7,13 @@ class Yatas < Formula
   head "https://github.com/padok-team/yatas.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "68c90ed32a2ab843066a54f859e89126b50ca638e3db0de2c2fc31d5e0ffd0c0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "68c90ed32a2ab843066a54f859e89126b50ca638e3db0de2c2fc31d5e0ffd0c0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "68c90ed32a2ab843066a54f859e89126b50ca638e3db0de2c2fc31d5e0ffd0c0"
-    sha256 cellar: :any_skip_relocation, sonoma:        "26d27e64aade078931bb577f14a62f6d0917c7388031eb804a21da824319edef"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "13db6ee8ff945821f55f33129e5b8801c33a2d8a64b718653cc435932e27a857"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "94e88498a68d12b9053006e6c06132ebd5a68cdddf5e3852f6b418771d943afc"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "7d70c37608750984143eb31cab267a3736f49638afbfd7e88a3310a05b53fb36"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "68c90ed32a2ab843066a54f859e89126b50ca638e3db0de2c2fc31d5e0ffd0c0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "68c90ed32a2ab843066a54f859e89126b50ca638e3db0de2c2fc31d5e0ffd0c0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "68c90ed32a2ab843066a54f859e89126b50ca638e3db0de2c2fc31d5e0ffd0c0"
+    sha256 cellar: :any_skip_relocation, sonoma:            "26d27e64aade078931bb577f14a62f6d0917c7388031eb804a21da824319edef"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "13db6ee8ff945821f55f33129e5b8801c33a2d8a64b718653cc435932e27a857"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "94e88498a68d12b9053006e6c06132ebd5a68cdddf5e3852f6b418771d943afc"
   end
 
   depends_on "go" => :build

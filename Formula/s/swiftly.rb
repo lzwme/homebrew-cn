@@ -2,8 +2,8 @@ class Swiftly < Formula
   desc "Swift toolchain installer and manager"
   homepage "https://github.com/swiftlang/swiftly"
   url "https://github.com/swiftlang/swiftly.git",
-      tag:      "1.1.3",
-      revision: "8e759540b22a1d58e592da96b7c1de058c360a8f"
+      tag:      "1.1.4",
+      revision: "24b20ba8a53aa9837a04e9393c035be33968b1e8"
   license "Apache-2.0"
   head "https://github.com/swiftlang/swiftly.git", branch: "main"
 
@@ -13,15 +13,11 @@ class Swiftly < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "90d0c944755ea2bcd69ab49e10cb97c8862c5d9f7ff3f8c0c7a26c2c613e4b71"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "d58f5260ea47597dcd0dedb885538df6b96b4e1a54d55ff7ae8b0e988a92c5a2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "a531dc20b3ba718c037f3c6253c6d023278efa0d9788cb31b456c858712e2006"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "9e4e765c65e0460d40d27848e7c7593d54ae2263993edf3dc106407b6d5eef70"
-    sha256 cellar: :any_skip_relocation, tahoe:             "33ee936143c5cdcb0e82c6a4dcf0b85ce450d083d415240d5898b9702325e65a"
-    sha256 cellar: :any_skip_relocation, sequoia:           "6679cf1df2de0f6ffaddaaea427d8ad0178ac0a855bc280c0b04417bf4aff016"
-    sha256 cellar: :any_skip_relocation, sonoma:            "4397920617a5d54bb1cd921e200434191d24d823923bbed05406792bceb6d08a"
-    sha256                               arm64_linux:       "e19674db3979350e7f63e9a4f8d203b675ac50644788e60343e7c4674928637c"
-    sha256                               x86_64_linux:      "d0b771f75427955f9c7999313ed118bfb2b044838829d2abe0882cfca9e2f862"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "a957527a4e394efe370298ce5de008a993d3cf5add51845eb362f1f6c97caee0"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "6ffb024d7d864930141f5ee063ef01b93296fe6706a50f6c1d9d86f96b7a61cd"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "c9e181f4875aecf4d98e84baeac7a8ceb04d23d172a9ea2091008c77a72f1903"
+    sha256                               arm64_linux:       "5367f110ff637f6a60a2553253d5ef7cdaf60fd14b2ae750b8712998d626642f"
+    sha256                               x86_64_linux:      "a93b0b266576df9f80861859fbdb0647f63f2ec21d31abaa202faca924fb486c"
   end
 
   uses_from_macos "swift" => :build, since: :sonoma # swift 5.10+

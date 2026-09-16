@@ -1,12 +1,12 @@
 class Epubcheck < Formula
   desc "Validate EPUB files, version 2.0 and later"
   homepage "https://www.w3.org/publishing/epubcheck/"
-  url "https://ghfast.top/https://github.com/w3c/epubcheck/releases/download/v5.3.0/epubcheck-5.3.0.zip"
-  sha256 "6c07e68584b2e2ce2f89fe06e1246dfead3eb36b46b340e7d93524f29dcff6c5"
+  url "https://ghfast.top/https://github.com/w3c/epubcheck/releases/download/v5.4.0/epubcheck-5.4.0.zip"
+  sha256 "33350c61038e71dfb3d45a76aed04bf5481e6d5500cb780f6e98db8bbd15a28c"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "0299f18ea40b9b12c948221009f646286bb9cfad887ddd4fc10ccf578ae5262e"
+    sha256 cellar: :any_skip_relocation, all: "6740a640702575af8d520803def971d8edc138d9d20d804d7479ec8bd5e420a9"
   end
 
   depends_on "openjdk"

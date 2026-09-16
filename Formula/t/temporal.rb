@@ -1,8 +1,8 @@
 class Temporal < Formula
   desc "Command-line interface for running and interacting with Temporal Server and UI"
   homepage "https://temporal.io/"
-  url "https://ghfast.top/https://github.com/temporalio/cli/archive/refs/tags/v1.8.3.tar.gz"
-  sha256 "14280dbc5f157373a2b34d7d333dd0c8f1b8506fa9ff5b332edc9048527af6f8"
+  url "https://ghfast.top/https://github.com/temporalio/cli/archive/refs/tags/v1.9.1.tar.gz"
+  sha256 "d0310b8f4ef26b8a2240aa2e783c67c099406be01f34cf4edb3ae8aa2d86b7bb"
   license "MIT"
   head "https://github.com/temporalio/cli.git", branch: "main"
 
@@ -12,12 +12,11 @@ class Temporal < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "e67abbbbcc9ffe3fe6857a5b4215adfdd368e82fa77bbbe1b3d62eb395c6228a"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "29ea945ee33d6305113e48604e328d0a7528618a4704d92817baf157df916577"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "3ae10408774c8319d5a7e6a571da083afd5ed3c2521c8532162febe87a11cb6a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "713b6bd559c89e0b2950399d7c2c0ec29f063e6ffec1c7b7a1c1c4af7490db52"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "870fb1f806477746de9ef77b4e0db55d78a6575280204b63c2fe9b0d1301ea92"
-    sha256 cellar: :any,                 x86_64_linux:      "9e9bb58ca66c323bff062b813b4c0cf6b278555693addb95d833b4d8518c421f"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "a8458821c49b8c5d50a4b9f2d5d2c587ae7a1da5a5e04da59410146fc8b6311e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "1b1059bdcf06a2eb6bc835d70d583b3454c80d4cbf2781ee9e3fd97a6639a4b8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "2825ad96b8aead509e4b3bdd347de25ec90965f9e584581dbdd9ccb3acf87d24"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "53023811e0a158eaf7b55d4197c7c969f9a7d9920c5dc132aa86dc883779bee5"
+    sha256 cellar: :any,                 x86_64_linux:      "6a4430177c0accca5f76215f8a7377571ec9ced4193542cce13a2873f3106850"
   end
 
   depends_on "go" => :build
@@ -45,10 +44,9 @@ class Temporal < Formula
   end
 
   test do
-    run_output = shell_output("#{bin}/temporal --version")
-    assert_match "temporal version #{version}", run_output
+    assert_match version.to_s, shell_output("#{bin}/temporal --version")
 
-    run_output = shell_output("#{bin}/temporal workflow list --address 192.0.2.0:1234 2>&1", 1)
-    assert_match "failed reaching server", run_output
+    assert_match "failed connecting to Temporal server",
+      shell_output("#{bin}/temporal workflow list --address 192.0.2.0:1234 2>&1", 1)
   end
 end

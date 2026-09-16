@@ -23,6 +23,18 @@ class Typescript < Formula
   depends_on "go" => :build
   depends_on "node" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download", "-C", "tsc"
+    cd "tsc" do
+      system "npm", "ci", "--ignore-scripts"
+      # the build's codegen resolves dprint plugins from the npm registry at
+      # runtime; run it once here to populate dprint's plugin cache
+      system "npm", "run", "generate", "--workspace=@typescript/native-preview"
+    end
+  end
+
   def install
     cd "tsc" do
       # Upstream stamps the built package.json with the current commit, which
@@ -32,7 +44,6 @@ class Typescript < Formula
         s.gsub!(/^[ \t]*inputPackageJson\.gitHead = gitHead;\R/, "")
       end
 
-      system "npm", "ci", "--ignore-scripts"
       # Without `--forRelease` upstream packs the host platform package only.
       system "./node_modules/.bin/hereby", "native-preview:pack-packages"
     end

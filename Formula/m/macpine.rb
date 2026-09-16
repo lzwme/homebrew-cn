@@ -1,8 +1,8 @@
 class Macpine < Formula
   desc "Lightweight Linux VMs on MacOS"
   homepage "https://beringresearch.github.io/macpine/"
-  url "https://ghfast.top/https://github.com/beringresearch/macpine/archive/refs/tags/v1.1.5.tar.gz"
-  sha256 "59dab9df872adffe0f2b5032d1dce086048551041289c08662280ae5b6407f2f"
+  url "https://ghfast.top/https://github.com/beringresearch/macpine/archive/refs/tags/v1.2.3.tar.gz"
+  sha256 "010522b05de0ff6d228beefb272922eb6d4850388d1a76f05b47b41f6e0a31e3"
   license "Apache-2.0"
   head "https://github.com/beringresearch/macpine.git", branch: "main"
 
@@ -21,14 +21,11 @@ class Macpine < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "57aa4ea14a21f206adfd53a6f4a7bfab0a9c2afb67a2c172c3360f4767b7f5b8"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "7105cc79202b0248984d1741b9709a479eaf7c145324a288bdaffadd12f4c8f3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "7105cc79202b0248984d1741b9709a479eaf7c145324a288bdaffadd12f4c8f3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "7105cc79202b0248984d1741b9709a479eaf7c145324a288bdaffadd12f4c8f3"
-    sha256 cellar: :any_skip_relocation, sonoma:            "eec8efe3b14eaee61cb9db6292c402135e7100f8539a00b4f17ecf917eac4b6e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "d77eceb6fa16941e6378524ebce721ee1cebbc0846f65ff313e8434d3eb9aab1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "39252a23eb162d8e255fbd000a29e56882824fc382064f9324c9925443bca3a0"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "5723aec635018a78557ce1b3377e72c5f71ec1b3573b04c8062d90f91378808b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "5723aec635018a78557ce1b3377e72c5f71ec1b3573b04c8062d90f91378808b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "5723aec635018a78557ce1b3377e72c5f71ec1b3573b04c8062d90f91378808b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "4de2a02b104ed8d3134936574134b6d06646f3fe3090adcdf4c3c8ad654b74ba"
+    sha256 cellar: :any,                 x86_64_linux:      "f70eefb6ca07247f54ee8c4c2bd7f69b50dd0667c2dbe4958fd508e4cf416b58"
   end
 
   depends_on "go" => :build

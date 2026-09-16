@@ -19,7 +19,7 @@ class Kubelogin < Formula
   depends_on "kubernetes-cli" => :test
 
   # `test do` block performs OIDC discovery against samples.auth0.com
-  deny_network_access! [:build, :postinstall]
+  allow_network_access! :test
 
   def fetch
     system "go", "mod", "download"

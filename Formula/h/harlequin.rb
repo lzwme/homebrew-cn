@@ -3,20 +3,19 @@ class Harlequin < Formula
 
   desc "Easy, fast, and beautiful database client for the terminal"
   homepage "https://harlequin.sh", browsed: "2026-09-05"
-  url "https://files.pythonhosted.org/packages/ef/9a/cff4402e0cf9d6cff4d8d7676806e54a63fd2481cffdf965f845281ffb94/harlequin-2.13.0.tar.gz"
-  sha256 "b613ec50c170d2284200eb3e8a86a24b287d1fd99e4f1707077e0110732fc7f0"
+  url "https://files.pythonhosted.org/packages/11/62/59e4f4fe3a98b62e1db9f91b5da47e79feac4a6be7cb848dd8db6e7ac67e/harlequin-2.14.0.tar.gz"
+  sha256 "623e085b700bd2486778751968615444f4b908a2081efad7b3bc0bdb34cc5be6"
   license "MIT"
   head "https://github.com/tconbeer/harlequin.git", branch: "main"
 
   no_autobump! because: "has non-PyPI resources"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "29f491782234f879c7832e3f8b4e8df5a24d33036bfb89dbd3837bcc43a0ce52"
-    sha256 cellar: :any, arm64_tahoe:       "d51a9389005242b73ea90578f92df8886cfa0a27fb0025c453fd2e145c1befee"
-    sha256 cellar: :any, arm64_sequoia:     "30a332ea95b4dd4978d68c7e03bbf43b768bb3d346576861b1abf3c1e3304fdd"
-    sha256 cellar: :any, arm64_sonoma:      "0f5a40b4f6ed60c075c7da76474417d530b6a6ef4c0bfa099b9ac58334755b48"
-    sha256 cellar: :any, arm64_linux:       "9848e223bbcb1d6f66227c2cbd56008af59bacbe3dc62bce735d5941d6ef863b"
-    sha256 cellar: :any, x86_64_linux:      "9e76c6806421f02143f5e439e8fd9b122e7aa5ffa3667f8cb4f041875e583831"
+    sha256 cellar: :any, arm64_golden_gate: "6b1ddf888092b118a5da8b4cfeb83d6b3cb3f59fc556a75dcb126d874141b16d"
+    sha256 cellar: :any, arm64_tahoe:       "c073ec2b86ff530c0737f8095ad73cb0a26bbfccd96127e342c336bd9cc789be"
+    sha256 cellar: :any, arm64_sequoia:     "8a55b3157e05287ead8137254aa31d67f068c5c34c35d056e18df519846670c7"
+    sha256 cellar: :any, arm64_linux:       "efe2b904685a219cfcdc19e61303553244786695ee64838202962c0bde14183f"
+    sha256 cellar: :any, x86_64_linux:      "d16ccb3881e75260de2d98ca4f1f3083de6a21073d57b04bec5de96398df698b"
   end
 
   depends_on "cmake" => :build
@@ -103,8 +102,8 @@ class Harlequin < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/69/b7/802a56eca9f2fac455b8bab5375a2647b0f0e14a2cd63ef077de3c4a7658/platformdirs-4.11.7.tar.gz"
-    sha256 "4f41487eeeeeb07f3a6625e61d9bc0ae6809f92d3386dbd74392fbb76108104d"
+    url "https://files.pythonhosted.org/packages/53/18/f3bb8ef0d3b930692343da8aa4d3cbcd6749477c053959395ac81965a6e9/platformdirs-4.11.8.tar.gz"
+    sha256 "f23abafea7dd4276d1f29104b83598d7dcc567cafd07c9c951e66665645437fc"
   end
 
   resource "prompt-toolkit" do
@@ -158,8 +157,8 @@ class Harlequin < Formula
   end
 
   resource "rich-click" do
-    url "https://files.pythonhosted.org/packages/f7/ea/21e4867ea0ef881ffd4c0550fc21a061435e50d6324bcd034396633cbc18/rich_click-1.9.8.tar.gz"
-    sha256 "4008f921da88b5d91646c134ec881c1500e5a6b3f093e90e8f29400e09608371"
+    url "https://files.pythonhosted.org/packages/96/3e/5688fdd83aea416de336582a274f2bc8236b5c261b04c11e17bc262786ad/rich_click-1.9.9.tar.gz"
+    sha256 "324cba7513cd4187ee92b2eef21f071714e45be062458c8b157bd7e0c81103e3"
   end
 
   resource "shandy-sqlfmt" do
@@ -173,8 +172,8 @@ class Harlequin < Formula
   end
 
   resource "textual-fastdatatable" do
-    url "https://files.pythonhosted.org/packages/1e/7b/79a2c566bf0a7e087c2b29738fdec807d2457b3553bf44b8fa034bfa1f1e/textual_fastdatatable-0.19.1.tar.gz"
-    sha256 "c546de625c193b21431140c3e312c12d8cfdbefb61a5c9550b3dde7715c1d7a9"
+    url "https://files.pythonhosted.org/packages/7c/e1/16c0b9f1d14895b1232e3a8b6f169191bf3258ab78ff80dbcc4885c55423/textual_fastdatatable-0.19.2.tar.gz"
+    sha256 "97a692d4d02551b8d311758b8a9fb6e755a445dc457ac37633c981f74baa1441"
   end
 
   resource "textual-textarea" do
@@ -188,8 +187,8 @@ class Harlequin < Formula
   end
 
   resource "tqdm" do
-    url "https://files.pythonhosted.org/packages/21/3b/6c24bec5be5e743ffd99576daa5cc077722fc7d5bbc00bd133fa0c698dc6/tqdm-4.70.0.tar.gz"
-    sha256 "55b0b0dbd97462d06ebee91e4dac24ed4d4702be82b24f07e6c1d27e08cea220"
+    url "https://files.pythonhosted.org/packages/0d/ea/b2a5bd54b28a324dae8211928b2d730b6547500342c7e6c6dea08bd0a485/tqdm-4.70.1.tar.gz"
+    sha256 "cefd0eca11b2a37a3aee776544d4f4ae913f02688135b5556b8788dfa474afc4"
   end
 
   resource "tree-sitter" do

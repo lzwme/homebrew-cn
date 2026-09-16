@@ -14,14 +14,15 @@ class Ncview < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "e3346928e2612dabba4b6798e8f9cb497ff302f1972344cd5271dbb2034ad2ae"
-    sha256 cellar: :any,                 arm64_sequoia: "2834b30675b2ef5ac05d70cf900f8dee5543198f5bdd95e67af41a732222f9c4"
-    sha256 cellar: :any,                 arm64_sonoma:  "65dcdc11101cafd4f43490814d21345cc5f4ffb9c57a8f64fb396b2731fda2ed"
-    sha256 cellar: :any,                 arm64_ventura: "2bc952df1f41c6f9050a745254138365ae9496d82b1be390712d69820dca9409"
-    sha256 cellar: :any,                 sonoma:        "2936bd01d289bc341a2a52e604692c7baa1611f8a2f7aa33d2a2c8e0fef22081"
-    sha256 cellar: :any,                 ventura:       "51021664ece85a65f8941d091657cd9c10f7a6d5875cd2306cf8cd3d50437ef9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "29d0391497116f259d6adbe90d555e92bc49a78fc040e0ba3636354f0cf8284d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ed6715afe50ab90f472bcdd31e4b51f047b0705796cc1e103162f74d113a4f44"
+    sha256 cellar: :any,                 arm64_golden_gate: "193853e09d0e456e2352e95f0d291985342b93f67b10640450eab4fe8f95c001"
+    sha256 cellar: :any,                 arm64_tahoe:       "e3346928e2612dabba4b6798e8f9cb497ff302f1972344cd5271dbb2034ad2ae"
+    sha256 cellar: :any,                 arm64_sequoia:     "2834b30675b2ef5ac05d70cf900f8dee5543198f5bdd95e67af41a732222f9c4"
+    sha256 cellar: :any,                 arm64_sonoma:      "65dcdc11101cafd4f43490814d21345cc5f4ffb9c57a8f64fb396b2731fda2ed"
+    sha256 cellar: :any,                 arm64_ventura:     "2bc952df1f41c6f9050a745254138365ae9496d82b1be390712d69820dca9409"
+    sha256 cellar: :any,                 sonoma:            "2936bd01d289bc341a2a52e604692c7baa1611f8a2f7aa33d2a2c8e0fef22081"
+    sha256 cellar: :any,                 ventura:           "51021664ece85a65f8941d091657cd9c10f7a6d5875cd2306cf8cd3d50437ef9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "29d0391497116f259d6adbe90d555e92bc49a78fc040e0ba3636354f0cf8284d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "ed6715afe50ab90f472bcdd31e4b51f047b0705796cc1e103162f74d113a4f44"
   end
 
   depends_on "libice"

@@ -68,7 +68,7 @@ class Telnet < Formula
       server.close
     end
 
-    output = shell_output("#{bin}/telnet 127.0.0.1 #{port} </dev/null 2>&1", 1)
+    output = shell_output("#{bin}/telnet 127.0.0.1 #{port} 2>&1", 1)
     assert_match(/Connected to (127\.0\.0\.1|localhost)\./, output)
 
     server_thread.join

@@ -81,7 +81,7 @@ class Node < Formula
     end
   end
 
-  deny_network_access! [:build, :postinstall]
+  allow_network_access! :test
 
   def install
     # `ncrypto.cc` uses `std::vector` but libc++ 23 dropped the transitive include

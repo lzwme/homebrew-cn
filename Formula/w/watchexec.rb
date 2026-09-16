@@ -1,8 +1,8 @@
 class Watchexec < Formula
   desc "Execute commands when watched files change"
   homepage "https://watchexec.github.io/"
-  url "https://ghfast.top/https://github.com/watchexec/watchexec/archive/refs/tags/v2.7.2.tar.gz"
-  sha256 "ad87aac074e5d1b018bb50ef98240911cd31d96d68d9b8ac0f02c14879930f50"
+  url "https://ghfast.top/https://github.com/watchexec/watchexec/archive/refs/tags/v2.7.3.tar.gz"
+  sha256 "6f395178a963ffd478f0ee2e13146d375e8bbe4fec6859a56a0086a90e07e6f2"
   license "Apache-2.0"
   head "https://github.com/watchexec/watchexec.git", branch: "main"
 
@@ -12,12 +12,11 @@ class Watchexec < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "acc0f85501c5fdf0588a2c2726dc30972f7d364bf2034e294a9b421323f7fd04"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "d658053d02e8576b2fed86fb60e57eeb07805630eebd8d1592a6cac2e4ecc63a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "99fe0d815cc2d98ef4585bed73928878efa2a367a3943cdadedbea3688751501"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "49f61e9032c2961e6e555e01ad50c6c658e407360d28b677dba3cd818d8e3ef8"
-    sha256 cellar: :any,                 arm64_linux:       "e6b45c9886704d864fcc3bc872d17cd9f6eb51fe7c5c81bdd0ba776f5dbf2d21"
-    sha256 cellar: :any,                 x86_64_linux:      "03dea3bb8c4ce185e30257f95e5bacef80fd8363eca6d583f92fe80c0ca166a7"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "796535e5ddc7b3341f61716f8f811d32c82f06856eeb4e1dff6fa518a3bf844c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "7ac49fafa5b4538036979dfc4e0965eb6ad1165805ea97fb70745521c42118d5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "2014c7b3fca00160164812bc7ec30edd37a3c0bb16a2f48886079b5a514b4f5b"
+    sha256 cellar: :any,                 arm64_linux:       "6dc835c27a2f788569337748141a242f9a856f9927c2d50d7ac2a26e7f0aa311"
+    sha256 cellar: :any,                 x86_64_linux:      "f476d8a8a4bc6e6f6ff16a989bf67479953b4c57d39dc6c5d1fad94b1aac8200"
   end
 
   depends_on "rust" => :build

@@ -1,19 +1,17 @@
 class Rammap < Formula
   desc "Extensible and performant aligner and read mapper"
   homepage "https://github.com/jwanglab/rammap"
-  url "https://ghfast.top/https://github.com/jwanglab/rammap/archive/refs/tags/v1.1.2.tar.gz"
-  sha256 "d6d349495da8fb26e50ce6408235a587a297f666063f01ca8ebf05439b47d33c"
+  url "https://ghfast.top/https://github.com/jwanglab/rammap/archive/refs/tags/v1.1.3.tar.gz"
+  sha256 "39b9e74da0b39546d39c992f8e8c91ce9da97a7ac0f0045d541c44e0106eb17b"
   license "MIT"
   head "https://github.com/jwanglab/rammap.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "f862d409ca86dcd3af613c1c19bac1ea6905b6d946006273d06a647043520633"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "3c230660b760455357ef639a9d5ed521cafca8f0d427b916b8c0420ab9f1a49c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "93df8805e393847485dedc6de1f8a0c0aa9bce162c486723e6dee92bb75e84e2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "c004cc6781f948985fdda36982f013f9f9a7eb627c9151d08eb26715a6389482"
-    sha256 cellar: :any_skip_relocation, sonoma:            "b1453cd0dbb877a0756061e58e84d6a07be60fd3ded457efb6e7ad33c9235287"
-    sha256 cellar: :any,                 arm64_linux:       "ca1ad43da63c59688c85dc0dface39ae63a40eec96a58c88cbb6c6ee997d1de6"
-    sha256 cellar: :any,                 x86_64_linux:      "2f08907e5d89e9a4b604d567606738528222893b05b51b6ff5a1bc58f03542a9"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "7a01caa76af6e0d40977553b4c40c91214c7e121be6b78f10a88a53eafe183d4"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "9e0f269ccf869bc30e115ebcd37e195d3e453b5c87b80871ea77cc9bca713971"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "1a7162807a86f553fae6d85cbcd23bc9765cb5ce8bf60c6269c909ded28b11a1"
+    sha256 cellar: :any,                 arm64_linux:       "f4ec690be0d9953cf5cf152f597d5b8add4d41ea4e3756a9fed40fe961cdc194"
+    sha256 cellar: :any,                 x86_64_linux:      "07d0137fe3ec3f1b6fb2f076f3555d602e40abf1bfe315cdb6d55d836bf60bc7"
   end
 
   depends_on "rust" => :build

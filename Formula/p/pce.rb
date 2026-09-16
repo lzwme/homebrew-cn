@@ -19,12 +19,13 @@ class Pce < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "e75f725e3f355fec9e470c79180eb547575cee5c223e58ec67c2d4affa16bc30"
-    sha256 cellar: :any,                 arm64_sequoia: "e3d82bb4edc2bdcf6f53ca58219d9f750cda8e0bfea13859764900e9d143d709"
-    sha256 cellar: :any,                 arm64_sonoma:  "3874dacd53efffaf435c7985575be825d3c50c64d142a4936e26dd6c22ffeb1d"
-    sha256 cellar: :any,                 sonoma:        "d12b682138c89026b7cdc5b6fdeab59642b2fcc1cc23c3fbd31c6d3b5d6e30b5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f04b8a55a22eed4d80da0bd08e216c4a0c1adc6c5281199fba17e59f17337257"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "10292a0e1101299ae6d09ea8a36478b444148da246a25fb132d2a126b082925d"
+    sha256 cellar: :any,                 arm64_golden_gate: "c5cc1717844e98b3fe2026ff9fa1604c12ec46ed3df7c733e05b3a3f34cdfab1"
+    sha256 cellar: :any,                 arm64_tahoe:       "e75f725e3f355fec9e470c79180eb547575cee5c223e58ec67c2d4affa16bc30"
+    sha256 cellar: :any,                 arm64_sequoia:     "e3d82bb4edc2bdcf6f53ca58219d9f750cda8e0bfea13859764900e9d143d709"
+    sha256 cellar: :any,                 arm64_sonoma:      "3874dacd53efffaf435c7985575be825d3c50c64d142a4936e26dd6c22ffeb1d"
+    sha256 cellar: :any,                 sonoma:            "d12b682138c89026b7cdc5b6fdeab59642b2fcc1cc23c3fbd31c6d3b5d6e30b5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "f04b8a55a22eed4d80da0bd08e216c4a0c1adc6c5281199fba17e59f17337257"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "10292a0e1101299ae6d09ea8a36478b444148da246a25fb132d2a126b082925d"
   end
 
   head do
@@ -62,6 +63,6 @@ class Pce < Formula
   end
 
   test do
-    system bin/"pce-ibmpc", "-V"
+    assert_match version.to_s, shell_output("#{bin}/pce-img -V")
   end
 end

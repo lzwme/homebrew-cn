@@ -42,7 +42,7 @@ class Cpi < Formula
     CPP
 
     # cpi changes the terminal mode of stdin, which stops it with SIGTTOU on the PTY used by `brew test`
-    assert_match "Hello world", shell_output("#{bin}/cpi #{testpath}/test1.cpp < /dev/null")
+    assert_match "Hello world", shell_output("#{bin}/cpi #{testpath}/test1.cpp")
 
     (testpath/"test2.cpp").write <<~CPP
       #include <iostream>
@@ -58,6 +58,6 @@ class Cpi < Formula
       // CompileOptions: -lm
     CPP
 
-    assert_match "1.41421", shell_output("#{bin}/cpi #{testpath}/test2.cpp 2 < /dev/null")
+    assert_match "1.41421", shell_output("#{bin}/cpi #{testpath}/test2.cpp 2")
   end
 end

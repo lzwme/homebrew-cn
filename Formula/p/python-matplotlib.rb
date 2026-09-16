@@ -3,18 +3,16 @@ class PythonMatplotlib < Formula
 
   desc "Python library for creating static, animated, and interactive visualizations"
   homepage "https://matplotlib.org/"
-  url "https://files.pythonhosted.org/packages/49/64/f9a391af28f518b11ad45a8a712353c94a0aefce09d3703200e5c54b610a/matplotlib-3.11.1.tar.gz"
-  sha256 "69647db5746941c793d6e445a4cd349323ffb87d9cc958c2ad84a659b4832d30"
+  url "https://files.pythonhosted.org/packages/e7/c8/9aa712a0afb882649424dd8de8ad9aa6235e796e84c6052e8f6dc1598d0d/matplotlib-3.11.2.tar.gz"
+  sha256 "cec596316640f2b394b8f0daa0ea61a8eae82d017b620b9f202befb972a59ea4"
   license "PSF-2.0"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "ad8018901617d5ffeaf255d71e74730683690fdeb22812ea2a79ad2582cfb0b7"
-    sha256 cellar: :any, arm64_tahoe:       "c5e9bd293aa2e7d4484aec924925db10025f371eea34ee0fc8840292218d124f"
-    sha256 cellar: :any, arm64_sequoia:     "f1915ea710b6778b4844fd67261af9297330706a015a280f1bfd8136f48ea94b"
-    sha256 cellar: :any, arm64_sonoma:      "b350fc37e822606245f99bd8ec33764dde0b2e960c882198614dec4b69147c78"
-    sha256 cellar: :any, sonoma:            "ca2b5806a421e0daee3e63283a6e800a020b954cc486b2c377220fce205bf8f4"
-    sha256 cellar: :any, arm64_linux:       "3009a0d8d45d579f79b518fd74c2384ba0cadad315ebe4e8216d25db1754674b"
-    sha256 cellar: :any, x86_64_linux:      "d8d38646475cdba6007eaccb34dfefb627754f2d1065c77786c49f1e64378821"
+    sha256 cellar: :any, arm64_golden_gate: "83debd71f3bd86005e87a71f90cc050afd6ea13c9c84b8a32e684ebfa598a3bd"
+    sha256 cellar: :any, arm64_tahoe:       "cb261af4bfdf8736adb53d77a7115badc37e6bdd1e52196c883d9f83de64cf8b"
+    sha256 cellar: :any, arm64_sequoia:     "277c0161f440ac2c0f6312800c30a2dac778abef10e4eea4de06597b27dff031"
+    sha256 cellar: :any, arm64_linux:       "21e087c295071d099aaed896d0a26cb80e2a400253a8d738b3c628f59f422eb6"
+    sha256 cellar: :any, x86_64_linux:      "81c0d4bd7372776834a958812de7b19899fbcc7769e9cda5950146304841a3ed"
   end
 
   depends_on "cmake" => :build # for contourpy
@@ -34,8 +32,8 @@ class PythonMatplotlib < Formula
   pypi_packages exclude_packages: %w[numpy pillow]
 
   resource "contourpy" do
-    url "https://files.pythonhosted.org/packages/58/01/1253e6698a07380cd31a736d248a3f2a50a7c88779a1813da27503cadc2a/contourpy-1.3.3.tar.gz"
-    sha256 "083e12155b210502d0bca491432bb04d56dc3432f95a979b429f2848c3dbe880"
+    url "https://files.pythonhosted.org/packages/83/5a/a55177dd22553a277388e8a1b3220e92de91bacb28356cdc73caa240121d/contourpy-1.4.0.tar.gz"
+    sha256 "20156f5a1ac4f8ce02656e39a61e82164a3d359796dc8026f75b062783d500e1"
   end
 
   resource "cycler" do
@@ -44,18 +42,18 @@ class PythonMatplotlib < Formula
   end
 
   resource "fonttools" do
-    url "https://files.pythonhosted.org/packages/84/69/c97f2c18e0db87d2c7b15da1974dace76ae938f1cfa22e2727a648b7ed43/fonttools-4.63.0.tar.gz"
-    sha256 "caeb583deeb5168e694b65cda8b4ee62abedfa66cf88488734466f2366b9c4e0"
+    url "https://files.pythonhosted.org/packages/77/51/d63c7e52163ac14393a35bd14bd7c0da95f8f74be5d7cc988092f9965129/fonttools-4.65.0.tar.gz"
+    sha256 "762ba5431358d0dbd4a01982484a1d494fb267e91f974cdcf20b80eab8560f6f"
   end
 
   resource "kiwisolver" do
-    url "https://files.pythonhosted.org/packages/d0/67/9c61eccb13f0bdca9307614e782fec49ffdde0f7a2314935d489fa93cd9c/kiwisolver-1.5.0.tar.gz"
-    sha256 "d4193f3d9dc3f6f79aaed0e5637f45d98850ebf01f7ca20e69457f3e8946b66a"
+    url "https://files.pythonhosted.org/packages/ba/07/bd78e6a8fae171ea041ef5bba3ed21a003522fa088834b069b1909981f30/kiwisolver-1.5.1.tar.gz"
+    sha256 "f1303ef2eec81262a4b708c3e858afe58d7c75ad91c1c05266eda7673369859a"
   end
 
   resource "packaging" do
-    url "https://files.pythonhosted.org/packages/d7/f1/e7a6dd94a8d4a5626c03e4e99c87f241ba9e350cd9e6d75123f992427270/packaging-26.2.tar.gz"
-    sha256 "ff452ff5a3e828ce110190feff1178bb1f2ea2281fa2075aadb987c2fb221661"
+    url "https://files.pythonhosted.org/packages/7d/fa/3944b40b07da9ce895c0e6303a5ab7d53da063554f534556b134a54d6093/packaging-26.3.tar.gz"
+    sha256 "94edc256424af38762eb31306eed28beb9f0efc50a8837492c9d6fd6004aed79"
   end
 
   resource "pyparsing" do

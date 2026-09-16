@@ -27,7 +27,7 @@ class Astro < Formula
   end
 
   # `test do` block queries updates.astronomer.io
-  deny_network_access! [:build, :postinstall]
+  allow_network_access! :test
 
   def fetch
     system "go", "mod", "download"

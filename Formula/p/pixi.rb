@@ -1,8 +1,8 @@
 class Pixi < Formula
   desc "Package management made easy"
   homepage "https://pixi.sh"
-  url "https://ghfast.top/https://github.com/prefix-dev/pixi/archive/refs/tags/v0.80.0.tar.gz"
-  sha256 "5f1c9096161d35772053268d89523a511e69a4d43270c145c9c5e91945751cbf"
+  url "https://ghfast.top/https://github.com/prefix-dev/pixi/archive/refs/tags/v0.81.0.tar.gz"
+  sha256 "6de3f263642615b772400140562ca0a79db2ef489df2efd2499611225481ac24"
   license "BSD-3-Clause"
   head "https://github.com/prefix-dev/pixi.git", branch: "main"
 
@@ -15,12 +15,11 @@ class Pixi < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "feb79e6e4b21688214f8572492d0363ff0f60f2600acafc67c118fd484453f30"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "4591af1f0ae313004e55fb089761c1b6f31bacf7857c3c1d657d68295a87872d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "890288dae4cab5495dfc01e898614864a7f14b5d30d16b2e654d4c522113b72b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "19fcead1ec9e15b3928018b785f58488729b845349a69bb825e7531297614dcf"
-    sha256 cellar: :any,                 arm64_linux:       "7fec984032c75d122607da48ed6968ed3e6951d68c60c12590014a154e8b5f6e"
-    sha256 cellar: :any,                 x86_64_linux:      "a3e2eb0a18a9bf82ec8e9a5fd2c1e3ff92a39520cc4cf1cf28e295904ce59827"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "679c028b24bf2c7f609b55643bc15b34978499d4726f9374f36419bdadd83ae9"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "4c8b41bc6e0efbce1c65b7d2be5890d0dc3f0c6e7d90a0914d5c7428a1a16963"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "239095d2f3652876ce3391ddb71350495c5b32ce5bea6d069c7e592586f71b35"
+    sha256 cellar: :any,                 arm64_linux:       "2c7720e698ffa8c2f631554ddc18a2dd5077e24470f1edee54ee14a8bd4f6336"
+    sha256 cellar: :any,                 x86_64_linux:      "251243992e245aa4fed5194d6db7858e23e5dfee586747197815b4fdddde65bf"
   end
 
   depends_on "cmake" => :build

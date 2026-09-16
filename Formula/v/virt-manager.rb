@@ -65,10 +65,6 @@ class VirtManager < Formula
   depends_on "spice-gtk"
   depends_on "vte3"
 
-  on_linux do
-    depends_on "xorg-server" => :test
-  end
-
   pypi_packages package_name:     "",
                 exclude_packages: "certifi",
                 extra_packages:   "requests"
@@ -114,23 +110,11 @@ class VirtManager < Formula
   end
 
   test do
-    pids = [spawn(Formula["libvirt"].opt_sbin/"libvirtd", "-f", Formula["libvirt"].etc/"libvirt/libvirtd.conf")]
+    # The GUI cannot start inside brew's macOS test sandbox, so check its entry point and the `virtinst` tools
+    assert_match version.to_s, shell_output("#{bin}/virt-manager --version")
 
-    if OS.linux? && ENV.exclude?("DISPLAY")
-      pids << spawn(formula_opt_bin("xorg-server")/"Xvfb", ":1")
-      ENV["DISPLAY"] = ":1"
-      sleep 10
-    end
-
-    output = testpath/"virt-manager.log"
-    pids << spawn(bin/"virt-manager", "-c", "test:///default", "--debug", [:out, :err] => output.to_s)
-    sleep 20
-
-    assert_match "conn=test:///default changed to state=Active", output.read
-  ensure
-    pids.reverse_each do |pid|
-      Process.kill("TERM", pid)
-      Process.wait(pid)
-    end
+    output = shell_output("#{bin}/virt-install --connect test:///default --name brewtest --memory 64 " \
+                          "--disk none --import --osinfo detect=on,require=off --print-xml")
+    assert_match "<name>brewtest</name>", output
   end
 end

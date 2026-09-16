@@ -31,7 +31,7 @@ class GrafanaAlloy < Formula
   conflicts_with "alloy-analyzer", because: "both install `alloy` binaries"
 
   # `test do` block runs a local server
-  deny_network_access! [:build, :postinstall]
+  allow_network_access! :test
 
   def fetch
     system "go", "mod", "download", "-C", "collector"

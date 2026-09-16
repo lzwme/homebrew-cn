@@ -19,7 +19,7 @@ class Kubeconform < Formula
   depends_on "go" => :build
 
   # `test do` block downloads Kubernetes JSON schemas
-  deny_network_access! [:build, :postinstall]
+  allow_network_access! :test
 
   def fetch
     system "go", "mod", "download"

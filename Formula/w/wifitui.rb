@@ -7,12 +7,13 @@ class Wifitui < Formula
   head "https://github.com/shazow/wifitui.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d208680502412041387ce6043a6e6fe833646d572350f81914c402749cbb4284"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d208680502412041387ce6043a6e6fe833646d572350f81914c402749cbb4284"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d208680502412041387ce6043a6e6fe833646d572350f81914c402749cbb4284"
-    sha256 cellar: :any_skip_relocation, sonoma:        "fe2c5f2680c9588372b52575d28e1cae0e41a1cc217e8cc77baf26e1152dcb47"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9e9b478cd907d1f27d33cbca85c347e93e708a5494986843d2759542bf66bdab"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "054c3dfe8be701c105b7edf657532be3579d66eb863d4baa7fc48617b7d3bf2a"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "f26b402ae7d0633b466401e7a8fa981549b3850935b4141763b68bcb6cd94c00"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "d208680502412041387ce6043a6e6fe833646d572350f81914c402749cbb4284"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "d208680502412041387ce6043a6e6fe833646d572350f81914c402749cbb4284"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "d208680502412041387ce6043a6e6fe833646d572350f81914c402749cbb4284"
+    sha256 cellar: :any_skip_relocation, sonoma:            "fe2c5f2680c9588372b52575d28e1cae0e41a1cc217e8cc77baf26e1152dcb47"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "9e9b478cd907d1f27d33cbca85c347e93e708a5494986843d2759542bf66bdab"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "054c3dfe8be701c105b7edf657532be3579d66eb863d4baa7fc48617b7d3bf2a"
   end
 
   depends_on "go" => :build

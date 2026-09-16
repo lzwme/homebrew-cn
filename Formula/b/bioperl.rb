@@ -128,8 +128,9 @@ class Bioperl < Formula
   end
 
   test do
-    (testpath/"test.fa").write ">homebrew\ncattaaatggaataacgcgaatgg"
-    assert_match ">homebrew\nH*ME*REW", shell_output("#{bin}/bp_translate_seq < test.fa")
+    sequence = ">homebrew\ncattaaatggaataacgcgaatgg"
+    (testpath/"test.fa").write sequence
+    assert_match ">homebrew\nH*ME*REW", pipe_output(bin/"bp_translate_seq", sequence, 0)
     assert_match(/>homebrew-100_percent-1\n[atg]/, shell_output("#{bin}/bp_mutate -i test.fa -p 100 -n 1"))
     assert_match "GC content is 0.3750", shell_output("#{bin}/bp_gccalc test.fa")
   end

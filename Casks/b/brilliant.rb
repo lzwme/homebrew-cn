@@ -1,6 +1,6 @@
 cask "brilliant" do
-  version "0.1.0-beta.73"
-  sha256 "0e341feb42c0fc4f634aed16efdf72d7ba109ea92ba5a61edb340ead543f9745"
+  version "0.1.0-beta.76"
+  sha256 "fbb124f5316ea19660ad2786eacd8d267934be129b8a78d92d263cb603249560"
 
   url "https://api.brilliant.design/v1/download/macos/#{version}"
   name "Brilliant"

@@ -1,8 +1,8 @@
 class Grafana < Formula
   desc "Gorgeous metric visualizations and dashboards for timeseries databases"
   homepage "https://grafana.com"
-  url "https://ghfast.top/https://github.com/grafana/grafana/archive/refs/tags/v13.2.1.tar.gz"
-  sha256 "4b410340987a5d8090d5b39d9312095b1009f20f2e27c9a50f65da6cf74a9962"
+  url "https://ghfast.top/https://github.com/grafana/grafana/archive/refs/tags/v13.2.2.tar.gz"
+  sha256 "eb5c8001e18b3e587bdda93c2fff925301d46c61ba1688c97585ccbda3848e03"
   license "AGPL-3.0-only"
   head "https://github.com/grafana/grafana.git", branch: "main"
 
@@ -12,12 +12,11 @@ class Grafana < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "c4033a52feaa59e4bcdf76891ab2aac48cfcd9b50100bb9391e777020ffe5a79"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "b05775651d636123367546cd375327f4fe24a2149a9ede255f404af67314ec7a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "0c57d40dcca3ac5bd47040dd40f707637b2c36c13fdd2d95af421984a5515a46"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "13e1d70f7b868c54e37b0329925e9085c8049fa2884d9372f4f3af7c74a8c500"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "97c6d0cee6b827c86d69ee9c3428c1de605e9ab5f069f4c6383e6b51d99bb6f7"
-    sha256 cellar: :any,                 x86_64_linux:      "0df3037a5bc92e3bdb24abfc32aca3e9e6f88f7aaf80023bfc07e92550c696e6"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "797c314dd3d7a26f320be33d1c7936dcca772d7065cf63b28da0e094fb40bff3"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "33550a9f0f3b5df1b77e6efb5f54fd3fcf35e0413a361e77adfdb4ecaf8aa95d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "26e2048d6b5ea03f84d65112ca284a138c9a47afceb07ce338d674a8d3f2dde7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "4b2fb66038ea4f66f21f7978f3432f048864e5ee0424587c1895881cda4f6d55"
+    sha256 cellar: :any,                 x86_64_linux:      "6e222bd2371f191d354f42569d40a4915a29583c0ddef6fb573ad52161afe997"
   end
 
   depends_on "go" => :build
@@ -32,6 +31,17 @@ class Grafana < Formula
     depends_on "zlib-ng-compat"
   end
 
+  # `test do` block runs a local server
+  allow_network_access! :test
+
+  def fetch
+    ENV["NODE_OPTIONS"] = "--max-old-space-size=8000"
+    ENV["npm_config_build_from_source"] = "true"
+
+    system "go", "mod", "download"
+    system "yarn", "install", "--immutable"
+  end
+
   def install
     ENV["COMMIT_SHA"] = tap.user
     ENV["BUILD_NUMBER"] = revision.to_s
@@ -41,7 +51,6 @@ class Grafana < Formula
     system "make", "gen-go"
     system "make", "build-backend"
 
-    system "yarn", "install", "--immutable"
     system "yarn", "build"
 
     os = OS.kernel_name.downcase

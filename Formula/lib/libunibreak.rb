@@ -1,10 +1,10 @@
 class Libunibreak < Formula
   desc "Implementation of the Unicode line- and word-breaking algorithms"
   homepage "https://github.com/adah1972/libunibreak"
-  url "https://ghfast.top/https://github.com/adah1972/libunibreak/releases/download/libunibreak_7_0/libunibreak-7.0.tar.gz"
-  sha256 "8c9a6e121736cd0d5c890ae3ae96f3f4010a19aa040f1dbded833a62a87717d3"
+  url "https://ghfast.top/https://github.com/adah1972/libunibreak/releases/download/libunibreak_8_0/libunibreak-8.0.tar.gz"
+  sha256 "9c4fad6e517338a098373acc9f35579ae2c325e6446666fb9ac2666ba15ceba4"
   license "Zlib"
-  compatibility_version 2
+  compatibility_version 3
 
   livecheck do
     url :stable
@@ -15,13 +15,11 @@ class Libunibreak < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_golden_gate: "60ef50494fc04f942a7f8213a361d9d5746479f5d7d352f568ab653a03fe17a6"
-    sha256 cellar: :any,                 arm64_tahoe:       "23a52d6cf9cffb57d86c8a06daf8b47ce0ddcd7688e5a31daf73fbc10d3ca53b"
-    sha256 cellar: :any,                 arm64_sequoia:     "820ed99a285c5ebc04c5124dc44a2d4ce61fdb27f1ed5e3429b9c29e767238ef"
-    sha256 cellar: :any,                 arm64_sonoma:      "447bad02c83e0d39057ba1b350bd0759e0a4f8ba60b5f194f49e80d8cba30ca9"
-    sha256 cellar: :any,                 sonoma:            "90367ff83d8a676939c1c37d0ec5f119ef7d79150400f8d69e06dfb3455ffc09"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "e1866075bff3a2f672ed91d549c7fe660de2ae3cf1a2e9a4f367c454705cbcb6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "4fff762dc25ef27872f8d1cd64377a527d12e782248cfa04031e60f2d8aee006"
+    sha256 cellar: :any, arm64_golden_gate: "aacd69ecf3c43aca5ffd2b37d41cb7de99fd5a1d2e48ffc9cdf2c0a66c717408"
+    sha256 cellar: :any, arm64_tahoe:       "b5ea43d5ae7e12db466b52c75ae517be48aa31c270e9dbb2cb8a9412d94f1aff"
+    sha256 cellar: :any, arm64_sequoia:     "fdd04ab1291384622b07b5409786fd297ddb2ceec4715074f9f35c807649ff50"
+    sha256 cellar: :any, arm64_linux:       "216db2d318c3de5b050e09fc11eda2e201f2e6fdab7a1efc32614a77831fe7c5"
+    sha256 cellar: :any, x86_64_linux:      "b26dbb5d7886f37e4300d510a1d0947b5044ed4871039a4064cb258bf21e1083"
   end
 
   def install

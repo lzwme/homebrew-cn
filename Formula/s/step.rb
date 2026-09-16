@@ -24,7 +24,7 @@ class Step < Formula
   end
 
   # `test do` block runs a local step-ca server
-  deny_network_access! [:build, :postinstall]
+  allow_network_access! :test
 
   def fetch
     system "go", "mod", "download"

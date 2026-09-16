@@ -18,7 +18,7 @@ class Httpx < Formula
   depends_on "go" => :build
 
   # `test do` block probes example.org
-  deny_network_access! [:build, :postinstall]
+  allow_network_access! :test
 
   def fetch
     system "go", "mod", "download"

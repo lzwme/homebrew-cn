@@ -6,12 +6,12 @@ class Libgr < Formula
   license "MIT"
 
   bottle do
-    sha256 arm64_tahoe:   "8c0ac01aebbcae1f6b8060e753e1045cb29265e58d4455d32467f39fd39a9554"
-    sha256 arm64_sequoia: "7cdcbe82efa0bcec2651d1e3037ef6619747d921f04823831e90415fa643a72f"
-    sha256 arm64_sonoma:  "a0f2107330148a7999098e58b8c2d7adef934b9e8de2511edbe2f7592c6aafbc"
-    sha256 sonoma:        "86544e72a5ef6edd05cfa1da91fb8e7eabbc8c712d2f4979930cc9e76024832d"
-    sha256 arm64_linux:   "b9e9c85bde0859c553504ebb2798d7c5603265c98d648183dc195e8345365c2a"
-    sha256 x86_64_linux:  "acfae23f4f9fd49b358212855cd7ae4af44f5f4609665ec73524f8fc1f0fc9ae"
+    rebuild 1
+    sha256 arm64_golden_gate: "97470c73731b8146e302578111249e07281c10b1d364c84ca25d1b22ad064f68"
+    sha256 arm64_tahoe:       "2ca280b0b4e763eb659d22585a55b903c796fe2171e8cec2b5220b1adf9c820e"
+    sha256 arm64_sequoia:     "c5b621c207017e2d3537fab8618005bc7fe9500e99defe7531310d8012479c62"
+    sha256 arm64_linux:       "33541e81f803c1c0e72a88b79d7daa74804034eb14c114457d46f89a925c3d74"
+    sha256 x86_64_linux:      "230c61d1d0950541adac591a4471867a151b1724ec12ae9f9d54e202ded03963"
   end
 
   depends_on "cmake" => :build
@@ -35,6 +35,10 @@ class Libgr < Formula
   end
 
   def install
+    # FIXME: macOS 27 SDK's `XPC_INLINE` uses `inline`, which the plugin's strict C90 rejects
+    inreplace "CMakeLists.txt", "quartzplugin\n    PROPERTIES C_STANDARD 90",
+                                "quartzplugin\n    PROPERTIES C_STANDARD 99"
+
     system "cmake", "-S", ".", "-B", "build", "-DGR_PREFER_XCODEBUILD=OFF",
                                               "-DCMAKE_INSTALL_RPATH=#{rpath}",
                                               *std_cmake_args

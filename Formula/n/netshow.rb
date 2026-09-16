@@ -10,12 +10,13 @@ class Netshow < Formula
   head "https://github.com/taylorwilsdon/netshow.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c19197cfda0a864cc73f3087f4d79051beeb024ebed3900d20ccadb22fc10114"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e56ee6c4dce9911931a31077e3ba125a4788ff6802717ce025badd165fcbf9bc"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "84e27dac8459026acceedbb031c99f28064d7e648dd253280faa8f0c43f9496e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ad8cf47828851f33b628bb330602f72b575d49cd23511ff38d4daf9ec817e353"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "aaaf002e96270f89bbfdd38cb3ebdf0d27c37e42054b18f332dfb981bc6b94b7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "964965e3bd8ca444a2a708839104c98b56f37813cc7c4e0424afe52850a5cc16"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "3ffaa09f143a6a3fe2e06f5748be72da6d716ea4de9ffa5225c8657c372aa0fe"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "c19197cfda0a864cc73f3087f4d79051beeb024ebed3900d20ccadb22fc10114"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "e56ee6c4dce9911931a31077e3ba125a4788ff6802717ce025badd165fcbf9bc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "84e27dac8459026acceedbb031c99f28064d7e648dd253280faa8f0c43f9496e"
+    sha256 cellar: :any_skip_relocation, sonoma:            "ad8cf47828851f33b628bb330602f72b575d49cd23511ff38d4daf9ec817e353"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "aaaf002e96270f89bbfdd38cb3ebdf0d27c37e42054b18f332dfb981bc6b94b7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "964965e3bd8ca444a2a708839104c98b56f37813cc7c4e0424afe52850a5cc16"
   end
 
   depends_on "python@3.14"
@@ -80,12 +81,18 @@ class Netshow < Formula
   end
 
   test do
-    output_log = testpath/"output.log"
-    pid = spawn bin/"netshow", [:out, :err] => output_log.to_s
-    sleep 3
-    assert_match "Netshow (lsof)", output_log.read
-  ensure
-    Process.kill("TERM", pid)
-    Process.wait(pid)
+    require "expect"
+    require "pty"
+    require "io/console"
+
+    PTY.spawn(bin/"netshow") do |r, w, _pid|
+      r.winsize = [24, 80]
+      r.set_encoding("UTF-8")
+      refute_nil r.expect("Netshow (lsof)", 30), "expected the netshow title"
+      w.write "q"
+      r.read
+    rescue Errno::EIO
+      # GNU/Linux raises EIO when read is done on closed pty
+    end
   end
 end

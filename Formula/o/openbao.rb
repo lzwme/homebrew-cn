@@ -29,7 +29,7 @@ class Openbao < Formula
   conflicts_with "bao", because: "both install `bao` binaries"
 
   # `test do` block runs a local server
-  deny_network_access! [:build, :postinstall]
+  allow_network_access! :test
 
   def fetch
     system "go", "mod", "download"

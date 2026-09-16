@@ -3,19 +3,17 @@ class Uvicorn < Formula
 
   desc "ASGI web server"
   homepage "https://uvicorn.dev/"
-  url "https://files.pythonhosted.org/packages/f2/0f/3f86e61397dd33bf2ccf28188c40db6a740658aeebbbf6e7dbc101a1f487/uvicorn-0.52.4.tar.gz"
-  sha256 "73acfee47a0b133c5de13d219492d62d8a31e935f4fe6e41a232451a15379f86"
+  url "https://files.pythonhosted.org/packages/5d/ad/04bbb797c84fc1f26cb171f7394716f4865ffb8d8c5e1eef42565c2dfa6b/uvicorn-0.53.0.tar.gz"
+  sha256 "a9356f0cb89b3b8621529c5d5eebd69bfe154f4c3f68b4cf2de47e45fa855c2e"
   license "BSD-3-Clause"
   head "https://github.com/Kludex/uvicorn.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "06a203e4a83df9bc93e139c2880fb6e0dc7c612d3e9655de3baeaa8a4ce7186c"
-    sha256 cellar: :any, arm64_tahoe:       "570d14dabf66471f18963c1a09949b6985399631fd8252be08ad2facea7d0384"
-    sha256 cellar: :any, arm64_sequoia:     "241e83dba13dfabd967ba0295c0b822c484b3f9389cf47c4e98f5e4999997ea9"
-    sha256 cellar: :any, arm64_sonoma:      "86a4c496c3e37377526110d99849e49a2d212cf7a864ce9bc5d247666a33a4aa"
-    sha256 cellar: :any, sonoma:            "528dfb22681dc52e72ce6f363a7ff9d50252c0eba1b6a1699f1e51a16db1aaf0"
-    sha256 cellar: :any, arm64_linux:       "94994ef15e6fcf65504ccb2bbd46d2662adad887c87984eda273d6e0579e3b26"
-    sha256 cellar: :any, x86_64_linux:      "5a6cf5901201b6b8b0cbfad7fae20e5578b9fb2ed5186d8e9027b61d7833012e"
+    sha256 cellar: :any, arm64_golden_gate: "575557c318b5fc62358c1bfa30e5c98b994c905a2f9589339be3f78919d032ed"
+    sha256 cellar: :any, arm64_tahoe:       "5f1a9f8ff90883b595150bd038af41336321f2984a5657f27af8d1506c8408d5"
+    sha256 cellar: :any, arm64_sequoia:     "7a05c0fbc40abf18c34ab77b143d24f055ca9c4d1d86c532d64a708b0f7a87c8"
+    sha256 cellar: :any, arm64_linux:       "013072f0d2f131e6e25d299902e150fd2dc6ce2028de3cb9270ee2757633d2dc"
+    sha256 cellar: :any, x86_64_linux:      "8e007f61488b53c40ae3f0b0f69b4421c0caf59bed80056abd072727f8bf6ec3"
   end
 
   depends_on "rust" => :build
@@ -25,13 +23,13 @@ class Uvicorn < Formula
   pypi_packages package_name: "uvicorn[standard]"
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/61/cc/a381afa6efea9f496eff839d4a6a1aed3bfafc7b3ab4b0d1b243a12573dd/anyio-4.14.2.tar.gz"
-    sha256 "cfa139f3ed1a23ee8f88a145ddb5ac7605b8bbfd8592baacd7ce3d8bb4313c7f"
+    url "https://files.pythonhosted.org/packages/a9/d2/f4d173e22df740bc37b1db102b386ba719b66e95b0f0d751f556b387e6d2/anyio-4.15.1.tar.gz"
+    sha256 "9f28306018cbd6d329e64a36d58256edff76dd996fe423bc957326e578b82a94"
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/76/d4/81420972a676e8ffea40450d8c8c92943e7218a78fe9b64359836cc9876b/click-8.4.2.tar.gz"
-    sha256 "9a6cea6e60b17ebe0a44c5cc636d94f09bd66142c1cd7d8b4cd731c4917a15f6"
+    url "https://files.pythonhosted.org/packages/c7/0e/7fa0ef50764b67090eca4114772a2abf8b6148198475e54c660b97caeee6/click-8.5.0.tar.gz"
+    sha256 "ba0d2089de75ea0310e2dde03160e6ca10009947fb95a182f9b54021bb272e34"
   end
 
   resource "h11" do
@@ -59,6 +57,11 @@ class Uvicorn < Formula
     sha256 "d76623373421df22fb4cf8817020cbb7ef15c725b9d5e45f17e189bfc384190f"
   end
 
+  resource "typing-extensions" do
+    url "https://files.pythonhosted.org/packages/f6/cc/6253133b5bb138fc3306cebfbda2c520f545d36b5be2c7255cc528bb45d6/typing_extensions-4.16.0.tar.gz"
+    sha256 "dc983d19a509c94dba722ee6abd33940f7c05a89e243c47e907eb4db6f1a43e5"
+  end
+
   resource "uvloop" do
     url "https://files.pythonhosted.org/packages/06/f0/18d39dbd1971d6d62c4629cc7fa67f74821b0dc1f5a77af43719de7936a7/uvloop-0.22.1.tar.gz"
     sha256 "6c84bae345b9147082b17371e3dd5d42775bddce91f885499017f4607fdaf39f"
@@ -70,8 +73,8 @@ class Uvicorn < Formula
   end
 
   resource "websockets" do
-    url "https://files.pythonhosted.org/packages/f7/96/e01084f83a64bcb3a27994bd0cb0db68ff29d9c6707fae37ec19b18ba990/websockets-17.0.1.tar.gz"
-    sha256 "5baa9bc0dfbae8c507e51c8cf1b6d4628086f7a87bbd3a9952bd5f035451f1cc"
+    url "https://files.pythonhosted.org/packages/18/72/fba934cb3dff7a85d811820efffcd141ddd52b5a2a01637f64551373ff4d/websockets-17.1.tar.gz"
+    sha256 "acfea4c20bf54384883ea33b1240fc1db4f52e190823a4e2b334bc3e8bfca96a"
   end
 
   def install

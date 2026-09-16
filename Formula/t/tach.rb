@@ -3,19 +3,17 @@ class Tach < Formula
 
   desc "Tool to enforce dependencies using modular architecture"
   homepage "https://docs.gauge.sh/getting-started/introduction"
-  url "https://files.pythonhosted.org/packages/81/54/8bae607899ba9fd7abd9895215f2e5dc789a73529f8afeb0a10d2ee71500/tach-0.35.0.tar.gz"
-  sha256 "db8594820685f8ce316ef45d4dfa1a8ed39ce97dd873aa5006800d2668c3b3bb"
+  url "https://files.pythonhosted.org/packages/f3/66/d5b253c9e846a2de009d14fbf3fa352a2f8fe74d0184ae3dbe453772f2fa/tach-0.35.1.tar.gz"
+  sha256 "72a30df29fcf6cfef4cf145447eef23c1432377594d37b0b28ab195e11ccfe64"
   license "MIT"
-  revision 5
   head "https://github.com/tach-org/tach.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "6362673796b2ea867546f01d89fbe3381a807113052ebe578760e9cd7fbc09b1"
-    sha256 cellar: :any, arm64_tahoe:       "d840c56d84b9ef5ada3637921d614c7d880831854faf3e1998e5f779eff6de37"
-    sha256 cellar: :any, arm64_sequoia:     "b23cfd2bc21dea430ea2aa888aae260983c605ccc1cef44c0326f992d2f255fd"
-    sha256 cellar: :any, arm64_sonoma:      "727f5f046051c263892e46dfedbda1aea129b0d3be8e567e15651d80d7cafdf6"
-    sha256 cellar: :any, arm64_linux:       "0a93a0d652da484185ff7d61a8e96d1f957629b245925fbb6a1cf31901444dac"
-    sha256 cellar: :any, x86_64_linux:      "18aeecfcea0f54db0957bf2f2feea6000bb72e25022c44eedd0d7473ac35aae1"
+    sha256 cellar: :any, arm64_golden_gate: "284594b811a629c9bb59f8bb28f06d442229352fc91addbf326673ae3e322d9a"
+    sha256 cellar: :any, arm64_tahoe:       "2af30c6dcfb6bf4e6ef95efbe67481b99a49d0202141531009968259ff83ea32"
+    sha256 cellar: :any, arm64_sequoia:     "ffcde8cba3a207ab42b10de4d0c5f973bcd75d886950f272d7f591a71d06f42f"
+    sha256 cellar: :any, arm64_linux:       "30471a50e96507e6e996d62ddd7fec78eeec07f3aa46e755039f6578396dc9b3"
+    sha256 cellar: :any, x86_64_linux:      "9e09e531017d7dcaa62433530e0062b88e03b060e5f24d47125234924428fd2d"
   end
 
   depends_on "rust" => :build
@@ -28,8 +26,8 @@ class Tach < Formula
   end
 
   resource "gitpython" do
-    url "https://files.pythonhosted.org/packages/6f/61/3285044215fb596bf093e39ccb96ece0a1076a8ca57a61e069a6a33cdb1b/gitpython-3.1.61.tar.gz"
-    sha256 "f51c24d8c0f733a195447385f5774a5dfe8767f5acfd7994a33755644c6ecc95"
+    url "https://files.pythonhosted.org/packages/e0/db/3ca813cbacb23ab6fe46ff38a9b5ef8e73e970c8051f2ce903aacafe0446/gitpython-3.1.62.tar.gz"
+    sha256 "1791de66309bc0c7cfca40bf8d2e3de7ca091cbf94e6051be1ad0722c61062af"
   end
 
   resource "markdown-it-py" do

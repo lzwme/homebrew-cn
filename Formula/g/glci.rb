@@ -1,18 +1,17 @@
 class Glci < Formula
   desc "Run GitLab CI/CD pipelines locally"
   homepage "https://gitlab.com/gitlab-org/ci-cd/runner-tools/glci"
-  url "https://gitlab.com/gitlab-org/ci-cd/runner-tools/glci/-/archive/v0.7.0/glci-v0.7.0.tar.gz"
-  sha256 "350367daf09af8da22b0d4376222bc004c43b372151d6206b3ce717857c15d62"
+  url "https://gitlab.com/gitlab-org/ci-cd/runner-tools/glci/-/archive/v0.8.0/glci-v0.8.0.tar.gz"
+  sha256 "d5da2c86d3e17d1080f8cc577ae84b15ad9ef08a2fbc63dd9c72fb3f55b64f96"
   license "MIT"
   head "https://gitlab.com/gitlab-org/ci-cd/runner-tools/glci.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "119e017dbe583e0cf82062d58ceee63badda696c5b2094861b46fd839e522ec0"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "8d1f5670f585498e4a420a2fc85c973d59ce8ba036954f630447287a00d8a115"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "8d1f5670f585498e4a420a2fc85c973d59ce8ba036954f630447287a00d8a115"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "8d1f5670f585498e4a420a2fc85c973d59ce8ba036954f630447287a00d8a115"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "f695ba8e6e82746d09316131b6f62a27670afbe7701b5ac94ee7e4fc13dd4542"
-    sha256 cellar: :any,                 x86_64_linux:      "3fef0c83ec9697ab4f1b25545b4cfd345ecb00c47a007dfd37b92c6f68a41346"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "0e8824267bff105657afbac27476dc28be5bd718263a5a79f14002402967a0b2"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "0e8824267bff105657afbac27476dc28be5bd718263a5a79f14002402967a0b2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "0e8824267bff105657afbac27476dc28be5bd718263a5a79f14002402967a0b2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "fe8a8bf2f414e0e820a4c05f9aabdc886df3f54ef3882b7d3ad98fbbf51d1e0d"
+    sha256 cellar: :any,                 x86_64_linux:      "63d60e7b49598b48d2ddc4856e345b2045257aac041c5b57682bb66cc292ccf2"
   end
 
   depends_on "go" => :build

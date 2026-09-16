@@ -6,10 +6,10 @@ class Mtoc < Formula
   license "APSL-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e996d7b3f938d78a596addcfb3e80252ecefc185bf9804aaab8487e305768517"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b3771dbe9bdb163d107a1a965fd940432f28fce425b9c6a73b69c98dc35dffea"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "537e62b8d59a45af233d66c2294361e9d89ce31ac57fd2f9b8b4c191a6a80e35"
-    sha256 cellar: :any_skip_relocation, sonoma:        "926cf20954a1b9c7a8bafe7ce597256d2f516cd16e1a4a48db600feec95d91ea"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "ee3b0b982580acbaa738c5a7e7a08647ce601a0a8a97f9f0604de30c7ec5ec60"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "adb45ecff560e344b072468cdd5779e48da051825c5e432f158ca7b3f3078766"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "62f924f7b8d67d754ff4927d64d6729e5a23f02cf5dc97a65ccf2cb057a2342f"
   end
 
   depends_on "llvm" => :build
@@ -30,6 +30,7 @@ class Mtoc < Formula
                "-IDEBuildLocationStyle=Custom",
                "-IDECustomDerivedDataLocation=#{buildpath}",
                "CONFIGURATION_BUILD_DIR=build/Release",
+               "MACOSX_DEPLOYMENT_TARGET=#{MacOS.version}",
                "HEADER_SEARCH_PATHS=#{formula_opt_include("llvm")} $(HEADER_SEARCH_PATHS)"
     bin.install "build/Release/mtoc"
     man1.install "man/mtoc.1"

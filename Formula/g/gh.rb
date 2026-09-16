@@ -1,8 +1,8 @@
 class Gh < Formula
   desc "GitHub command-line tool"
   homepage "https://cli.github.com/"
-  url "https://ghfast.top/https://github.com/cli/cli/archive/refs/tags/v2.100.0.tar.gz"
-  sha256 "39d5123f08a553a6fa69e46de86c22d04d97a217e03d0e6584b66d0fea50f1fe"
+  url "https://ghfast.top/https://github.com/cli/cli/archive/refs/tags/v2.101.0.tar.gz"
+  sha256 "a266fe8575c0e061b987920c1831a15f71bf0036a8729a5ebb93c2fb0164899c"
   license "MIT"
   compatibility_version 1
   head "https://github.com/cli/cli.git", branch: "trunk"
@@ -13,12 +13,11 @@ class Gh < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "f41eb608c75b93238413a42becf5f6d552ca8755e8954b610af2af46eb11722f"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "4e98510bc683db27f42ff84c9c7f5b884e3109f499c08241991617031bd63666"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "deaa10d8960ecefb3008008a3d881120aee18f1c0c0301fd6fce5f570289ec58"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "ccb93acb03870be8f4fd361de031631225c848552aa3c60c5f292e199b2f4644"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "75f46ca3e63fe494c6d5cce5357cbaceb57b1f195e77cce19e630e78d62b79ee"
-    sha256 cellar: :any,                 x86_64_linux:      "fc13b7681c5eab78725e8ed13a9cd032a9a9dca849c9b04fcf9278627a0c557b"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "7ae24b7f4a10249212370f0028103a72c235910258b28ddf20aca48aa9d95cae"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "8019604f792cceb8a24bfdba13458457fb98a889144b29fc51e2df022fe4865c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "ba8652a45f996be2c6ee389e567d7719624c45a3e3a97b7bed55f64d20548cc8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "751efd50f8ec1f0fb66696c12b5d48b266e624d421d57f85f35cb804da863c61"
+    sha256 cellar: :any,                 x86_64_linux:      "27b7df78ab30d0a99ebf05f0f0c0b8191935ddacdc901c6225ec162ef7753d53"
   end
 
   depends_on "go" => :build

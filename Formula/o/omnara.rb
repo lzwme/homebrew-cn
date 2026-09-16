@@ -21,7 +21,7 @@ class Omnara < Formula
 
   # https://github.com/omnara-ai/omnara
   deprecate! date: "2026-02-05", because: :repo_archived
-  disable! date: "2027-02-05", because: :repo_archived
+  disable! date: "2026-09-15", because: :repo_archived
 
   depends_on "rust" => :build
   depends_on "certifi" => :no_linkage

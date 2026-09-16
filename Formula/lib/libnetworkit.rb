@@ -1,8 +1,8 @@
 class Libnetworkit < Formula
   desc "NetworKit is an OS-toolkit for large-scale network analysis"
   homepage "https://networkit.github.io"
-  url "https://ghfast.top/https://github.com/networkit/networkit/archive/refs/tags/11.2.1.tar.gz"
-  sha256 "969718847465937086728a884b5f143d7f36cfd3f6cdc04ef9ae4f64ba61b60c"
+  url "https://ghfast.top/https://github.com/networkit/networkit/archive/refs/tags/11.2.2.tar.gz"
+  sha256 "04fffd0f801a91524a6dc2643f7d262e79600b086e4688bcb1b7988b2b5448dd"
   license "MIT"
 
   livecheck do
@@ -10,13 +10,11 @@ class Libnetworkit < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_golden_gate: "2b485d8b55138acb86a4950087da45d6fb0af5480ec2205ebad70d1f81efa513"
-    sha256 cellar: :any,                 arm64_tahoe:       "77c3f853f13a533978f790671a938a0341ae8d77d02698d9d1d89efd51d8c45e"
-    sha256 cellar: :any,                 arm64_sequoia:     "51c9d11342d2e0cd45b9ef5e2c7ff6834b6582398dec59ce37cafe91e1ccee27"
-    sha256 cellar: :any,                 arm64_sonoma:      "f50f9503044e1021d1d61169ecd04fe907148de0745b93e7cdb095c7d0308d3c"
-    sha256 cellar: :any,                 sonoma:            "a47488310d81eff3eac5596af4099e3585896d2828f1bdf51524b3d5bc8be76a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "7369fce424d18d4e14a1125462f5bd8543fe2bbb1112b1699256f04f54f375d0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "47b4cb78951b041733d9d8f352e5fb4b7d48ab6747ad41ad05c31e9d25ffa150"
+    sha256 cellar: :any, arm64_golden_gate: "3fb12d60ade5660a3e813d9be1c6768dd16f5d17aff4cced23d82cc60a0671ed"
+    sha256 cellar: :any, arm64_tahoe:       "0b16dca753bec93f58f09b63ec7449c1fc361bca83f1722f6b77f1b691c9fde1"
+    sha256 cellar: :any, arm64_sequoia:     "f43a37fc50f836ba1bc754448bbdf7aa7038c2d65fc31cfb950ab3f6744a2d4a"
+    sha256 cellar: :any, arm64_linux:       "a46d3d36083b57d66cd56a24239b89aa1cda60a077ecd914533c323c214b304a"
+    sha256 cellar: :any, x86_64_linux:      "7eb623aae119b462f9ff7b12ccbfccb26c3b6772ae78971e8d22f490066fd75e"
   end
 
   depends_on "cmake" => :build

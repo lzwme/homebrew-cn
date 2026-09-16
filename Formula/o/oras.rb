@@ -23,7 +23,7 @@ class Oras < Formula
   depends_on "go" => :build
 
   # `test do` block binds a local port
-  deny_network_access! [:build, :postinstall]
+  allow_network_access! :test
 
   def fetch
     system "go", "mod", "download"

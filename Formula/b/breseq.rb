@@ -1,18 +1,16 @@
 class Breseq < Formula
   desc "Computational pipeline for finding mutations in short-read DNA resequencing data"
   homepage "https://barricklab.org/breseq"
-  url "https://ghfast.top/https://github.com/barricklab/breseq/releases/download/v0.40.2/breseq-0.40.2-Source.tar.gz"
-  sha256 "48983208a12b094022203ffcebb83f247fdebf13e82eacce072d271e227a41e5"
+  url "https://ghfast.top/https://github.com/barricklab/breseq/releases/download/v0.40.3/breseq-0.40.3-Source.tar.gz"
+  sha256 "547769032d69af08a155985844ce314081368792cd48d7747631b332a37d291d"
   license all_of: ["GPL-2.0-or-later", "MIT", "BSD-3-Clause"]
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "499a537b7611782cec434e0f9cfe9d39cac639aad93d2c37b98160516952423a"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "55c917e2b31851435889dab41c77d179725e315f3bc08f47e83c3db9223ebef1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "34427cfc91cb99f96eff833928e6b99ca7905a3b06cbab32045e01ee82230e7c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "463797f0a600385f50fd16a9d7c07be58976c3d72e35c635859d2231c96dc68a"
-    sha256 cellar: :any_skip_relocation, sonoma:            "2a3f85cef0ef0ceb80f32e6365fe0c84357c2c35a7598729e2d5476dfc0da3ef"
-    sha256 cellar: :any,                 arm64_linux:       "55583e338a76372cd2df9672da425894060453e187ffd07054555e3cbd23998d"
-    sha256 cellar: :any,                 x86_64_linux:      "282be82d60584b68970046a1d4547045aa2fec58bc81d557065864ad61661e21"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "c462c15ee597fc4e12dc374c635bb7795e0e043d63051b8bc2f93678e6cb39da"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "846c5cd36fb225f17a4f2cf2ce0e1d2036d59750fc9bb32dac6924c96a31a70d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "fd605a578b171d8b5e11cee880724ce766782cdb97b30e9ab7fa9124925f4fee"
+    sha256 cellar: :any,                 arm64_linux:       "701f023b6d791bf5169a00a6193965ea1b4045927181ccf912975e48504340ff"
+    sha256 cellar: :any,                 x86_64_linux:      "eee49502a6c17d26edf2ed5e8226b9df3530deb8414293c369f537acda142945"
   end
 
   head do

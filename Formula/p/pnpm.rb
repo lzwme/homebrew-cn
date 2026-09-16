@@ -1,8 +1,8 @@
 class Pnpm < Formula
   desc "Fast, disk space efficient package manager"
   homepage "https://pnpm.io/"
-  url "https://ghfast.top/https://github.com/pnpm/pnpm/archive/refs/tags/v12.4.1.tar.gz"
-  sha256 "7388d1fe40ff2862d97645d4f5fca9f4a2459ac534c005d990717298aeacef6b"
+  url "https://ghfast.top/https://github.com/pnpm/pnpm/archive/refs/tags/v12.4.2.tar.gz"
+  sha256 "2fca2c303b978c8177c13550b2d0f8e442cf32b833bea7878421f90c18a7c612"
   license "MIT"
   compatibility_version 1
   head "https://github.com/pnpm/pnpm.git", branch: "main"
@@ -15,11 +15,11 @@ class Pnpm < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "35fbf8bd23bf2ed90fdf70caa924c1182142562bf81ac9b3517023ac3d3cc84f"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "0c902946d697b30e93dfb200e635e773f18bf396538fd83011d374785a1f32c5"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "bcb4c6e7d941dd36bdba96c185a50fc3fc342bf8dd5fe97e0a9809789910d86f"
-    sha256 cellar: :any,                 arm64_linux:       "d073ad1f1bf648bcc7107eabf3ffa04f27ee084105af5b84444dc73138029c36"
-    sha256 cellar: :any,                 x86_64_linux:      "a4aae3264cca8457a012b05d432e9ef536d521bda3b56f864b1762efbaef3969"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "2b588226918748f8c40e75f146041c692d82d585072cdf480edc010e8f11e544"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "2c63a0fc02ffe96b2daed111033bd6a0031946fa63d756635440d58ff41d58f2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "c0f751553beabd227719a12b6e05e1c9673dabfba16091c5f552b3e73fe8bf85"
+    sha256 cellar: :any,                 arm64_linux:       "3decc717b5170c49b82f7d765d9fae2c2963d9926ae0127bc2697c593eaa0d89"
+    sha256 cellar: :any,                 x86_64_linux:      "3bae211cc035e0bf33b17f3f7c5ac69ba8366c988fe5a8cb8c2f6a3d38e567a6"
   end
 
   depends_on "rust" => :build
@@ -29,6 +29,7 @@ class Pnpm < Formula
   deny_network_access!
 
   def fetch
+    rm ".cargo/config.toml"
     system "cargo", "fetch", "--locked", "--target", "host-tuple"
   end
 

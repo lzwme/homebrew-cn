@@ -1,19 +1,17 @@
 class Polaris < Formula
   desc "Validation of best practices in your Kubernetes clusters"
   homepage "https://www.fairwinds.com/polaris"
-  url "https://ghfast.top/https://github.com/FairwindsOps/polaris/archive/refs/tags/v10.2.2.tar.gz"
-  sha256 "7a5620c1cf2d0f3800b15390d29cf3dbcfff6bed2ecaeb63baa75f4b4be0153b"
+  url "https://ghfast.top/https://github.com/FairwindsOps/polaris/archive/refs/tags/v10.2.3.tar.gz"
+  sha256 "7608471f6c4afae8212055e599531bf60cc08ee621605b8cdfa6876e71f8e125"
   license "Apache-2.0"
   head "https://github.com/FairwindsOps/polaris.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "a15c7acd14c3d8e7915d2efd68e8d016e516a543c7faab6ab7caf6a37b18b732"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "dc6e6dc38d0d1a7e440bcee3ef651a7632f7cde833b28486543265a2fba16518"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "e947cc4f79927b4afe4961634aa340123f3b8bb0c6a31b4ef07a6e75a1a93b1c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "52dcc4f2b89acaf18b766f86ac1a8fe363c065bad09bdcb64c3a8bf3dac808f2"
-    sha256 cellar: :any_skip_relocation, sonoma:            "956e5c31fb7ccc74512e131811642bdc7c8f5b0b9d80d2332eafaf1b98b6b3e9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "b540fd93e2ada0d086557cf39fa539ef8602e7208eee9974ca5c6e8233f1c3de"
-    sha256 cellar: :any,                 x86_64_linux:      "f2adde68e36fba5883829401913e7e9210f0093461dca986270bf09a1ca01e1b"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "a01c826bb64ac0d99fe327cab047d6baf40f887269549145547d60b8b836b0f7"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "daee374cc594ca9ca683a0b2d80e71d7fee407b3df0b25b11664695f4714cb5a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "82ce6a300399cbbd7551b2eb14959a09ecbf950d6e5da84e1aa10aed4d9e392f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "457eb14c4e33dc5125c6a609a23a56e1be78e335e79c212b77b795648c984112"
+    sha256 cellar: :any,                 x86_64_linux:      "b3b7217017a73f96a7927a041405c22fd17f9d66e984ac302e1fce399046798b"
   end
 
   depends_on "go" => :build

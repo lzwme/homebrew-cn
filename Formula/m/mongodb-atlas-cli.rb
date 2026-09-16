@@ -26,7 +26,7 @@ class MongodbAtlasCli < Formula
   conflicts_with "atlas", "nim", because: "both install `atlas` executable"
 
   # `test do` block expects an `unauthorized` error from cloud.mongodb.com
-  deny_network_access! [:build, :postinstall]
+  allow_network_access! :test
 
   def fetch
     system "go", "mod", "download"

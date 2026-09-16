@@ -1,16 +1,16 @@
 class Diskwatch < Formula
   desc "Cross-platform disk diagnostics TUI"
   homepage "https://www.netwatchlabs.com/labs/diskwatch"
-  url "https://ghfast.top/https://github.com/matthart1983/diskwatch/archive/refs/tags/v0.5.7.tar.gz"
-  sha256 "a6a3c2f3bb7e5a8597f507bcde1abd898020a53b9b169e8df3b53cc2eed6e60f"
+  url "https://ghfast.top/https://github.com/matthart1983/diskwatch/archive/refs/tags/v0.5.8.tar.gz"
+  sha256 "4768e2d8cd86c470f93e152bb262116c75b6316c4b19fa963a4c19888bf18c73"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "55bd986a6403e8159caf5097857eb1d14edcab89ce2b14920f30bcc83d28075b"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "09836f566e0699cd06e08a5630990bff3ae551f1c5a892e889319926134f03f9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "85a6e3504fae4ff2ec3236e5956567190878e71c96067d1c7a7c42e2aa447d80"
-    sha256 cellar: :any,                 arm64_linux:       "7af5407574b2ceb765796b12cd805cc0277d36d5f60c0fad6be795e7fd0d1db8"
-    sha256 cellar: :any,                 x86_64_linux:      "8046070774138809fe4dba3ae2ed1f7671fa47bcc635302eccfefe7ef8a2372d"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "98faaa2950a02f9aec9aed2d7c7bc185fa3e605e0ffb3e0fd0bf239ba887292c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "a26fb37e30887a4164b48778607d190e418c5f241a0ad8ee24d7067f3425346a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "a3354079dac8823dcfa2757c81a165f378cd3db0f65ebedbfe6a7bd86a70a0f5"
+    sha256 cellar: :any,                 arm64_linux:       "1d225e4361d7d5231e43e74cd39a28c0ba26d33f181af927235b39ffa71cd7cb"
+    sha256 cellar: :any,                 x86_64_linux:      "c8b6878b46bcf601ab9a117da01acf4e00d4ccbc651b6b5837d83820d7c42612"
   end
 
   depends_on "rust" => :build

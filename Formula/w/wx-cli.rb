@@ -14,8 +14,9 @@ class WxCli < Formula
     sha256 cellar: :any,                 x86_64_linux:  "b0741780081ff08ed00f9a44f4a43748d534a77324d447080bc3113bb1612bca"
   end
 
-  deprecate! date: "2026-07-17", because: :repo_removed
-  disable! date: "2026-10-17", because: :repo_removed
+  # "Repository unavailable due to DMCA takedown."
+  deprecate! date: "2026-07-17", because: :does_not_build
+  disable! date: "2026-10-17", because: :does_not_build
 
   depends_on "rust" => :build
 

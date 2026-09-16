@@ -1,8 +1,8 @@
 class Sui < Formula
   desc "Next-generation smart contract platform powered by the Move programming language"
   homepage "https://sui.io"
-  url "https://ghfast.top/https://github.com/MystenLabs/sui/archive/refs/tags/testnet-v1.79.0.tar.gz"
-  sha256 "5e193cda4f10121d192e6c3470f0c870670324df83ecf02818e1ba3f17855629"
+  url "https://ghfast.top/https://github.com/MystenLabs/sui/archive/refs/tags/testnet-v1.80.0.tar.gz"
+  sha256 "1d86468d6dd5d729bc591b89d6c2227b7572b44594e68ddb576ea654601dea90"
   license "Apache-2.0"
 
   livecheck do
@@ -11,12 +11,11 @@ class Sui < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "cf26e66988051bc5c0bf055bcc788ef6dc1122a9660f727bf4f69060d9e85f99"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "fd55881bcb1d16cdc12eac62f8247ebfde02031fd98cb98716120170ce7c7f0a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "1c0843284b025b6fa14140a2cdcdd1d37c618dbcf24fb745208a28e6a4e0a207"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "6b07bc2056fa602fa5a55b9ccccb0ac85899dc6f3b430f22b91372c643db4c62"
-    sha256 cellar: :any,                 arm64_linux:       "de521a970d861221f2ffd779aaf2987351756701852eb86d83637dded53a0052"
-    sha256 cellar: :any,                 x86_64_linux:      "5de92fad40e8d76e467005a7018685b39df4dddded358a24b69a5b82c59abaee"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "32eb6d38c4bc48c530b990dd3072669c64f946b6351c386ec90b3a41939d2a59"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "e61a03389004ee626d9148a0889141b6e4148a0c7d7c506c62ff61217ba3a95b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "e583603fb92a77ac680d38d1cf90f675ec4be42eea98b4f8e460ba5fbcbf5f8b"
+    sha256 cellar: :any,                 arm64_linux:       "e56d7453dd00b46057b07a613915874fab873709a127446e805137327461e574"
+    sha256 cellar: :any,                 x86_64_linux:      "f76230cee4846059b5b25f2c4cd4ed86fd801567ff25018f50a1a7377cc03b60"
   end
 
   depends_on "cmake" => :build

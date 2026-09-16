@@ -1,8 +1,8 @@
 class Xk6 < Formula
   desc "Build k6 with extensions"
   homepage "https://k6.io"
-  url "https://ghfast.top/https://github.com/grafana/xk6/releases/download/v1.4.12/xk6_1.4.12_source.tar.gz"
-  sha256 "cecf07a18f6ae981360bbbb4fb24439467049093d838a9cddd9602d23cc7491b"
+  url "https://ghfast.top/https://github.com/grafana/xk6/releases/download/v1.4.13/xk6_1.4.13_source.tar.gz"
+  sha256 "175a48e236aa8d24a7b05782e35a8961f7774e8171fb6bbbd1aa19def5d2bfd7"
   license "Apache-2.0"
   head "https://github.com/grafana/xk6.git", branch: "master"
 
@@ -12,13 +12,11 @@ class Xk6 < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "56a4b626d0d67509ef5b2c51ee9fc55c6eb36b5c4f3ea257ac67e871d57b5285"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "bd85df82ac7b647e3225f8dca1994586944a1e7fba71e8754b094a96a8fa3b2d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "bd85df82ac7b647e3225f8dca1994586944a1e7fba71e8754b094a96a8fa3b2d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "bd85df82ac7b647e3225f8dca1994586944a1e7fba71e8754b094a96a8fa3b2d"
-    sha256 cellar: :any_skip_relocation, sonoma:            "bdbed708ff9b44e55266990675c409dc7405482cc9d4b4248e4acaee1c8f71e7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "9ed75f25a62ffe82b890e6ec2cb4f4611e660050930f7a01a2fa2dccbe13618c"
-    sha256 cellar: :any,                 x86_64_linux:      "b1e549e9aae181f22ff272b61b5df1e0786238e28985b7716c3ba5108781c488"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "8e0348c579a0aaba4314e5d0f77ded107cc0e2edae8d9da8ef7e221a73284a2e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "8e0348c579a0aaba4314e5d0f77ded107cc0e2edae8d9da8ef7e221a73284a2e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "8e0348c579a0aaba4314e5d0f77ded107cc0e2edae8d9da8ef7e221a73284a2e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "19c5f733095139651dfe9aa52c35b186bc0645ce2bf4934b5525b65e14f62467"
+    sha256 cellar: :any,                 x86_64_linux:      "a0a6d27d42ba35af066c4c38886a9449426855199703793afaa4fd57739bb803"
   end
 
   depends_on "go"

@@ -7,25 +7,29 @@ class Verilator < Formula
   head "https://github.com/verilator/verilator.git", branch: "master"
 
   bottle do
-    sha256 arm64_tahoe:   "a63b3d71bbede6310fe3b5c11bc11770edbf16fb68d9d65d425928c556653e8f"
-    sha256 arm64_sequoia: "3c91aed6b03099c6fd99b58ff0cb0b65b91121dc7491146c29e67c8a24463f6e"
-    sha256 arm64_sonoma:  "7751a4969262543593b50d464206a7c73ffccdffcdc180e0c1a1a35b3c890d80"
-    sha256 arm64_linux:   "0c80a9945d24cd2637a8a9306296d00698f0e0d315b653ba73a773c1a4d24034"
-    sha256 x86_64_linux:  "7aaf304fbe83c038d8aa9656fbc870f5d7bd681d47bbb5c03910d900931fdab4"
+    rebuild 1
+    sha256 arm64_golden_gate: "66a097432fffcf28165bcce9b74beae19a3c5d86e931226ff0fa76f131b73054"
+    sha256 arm64_tahoe:       "e7feb1dd658e25f1fb18ee4b1ef4f54e865685041f59f02c1f1b19aa6acba3bb"
+    sha256 arm64_sequoia:     "94ddddacd076100014c0b238781046f965a9b388f1323dbd5b91d4fcd221b4a9"
+    sha256 arm64_linux:       "b45364801472a41bec00e3e088878d581d15e6a700e997e3a361cd7848ff5b3f"
+    sha256 x86_64_linux:      "57851f051cf12172e355fc7b7566d55dc69c76174a03937f2532409f4f93b72a"
   end
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
+  # macOS 27's system flex emits `yy_create_buffer(FILE *, yy_size_t)`, mismatching `src/V3PreLex.h`
+  depends_on "flex" => :build
   depends_on "help2man" => :build
 
   uses_from_macos "bison" => :build
-  uses_from_macos "flex" => :build
   uses_from_macos "perl"
   uses_from_macos "python"
 
   skip_clean "bin" # Allows perl scripts to keep their executable flag
 
   def install
+    # FIXME: Homebrew flex's `FlexLexer.h` keeps `int` signatures; skip flexfix's `size_t` rewrite for Apple's header
+    inreplace "src/flexfix", 'platform.system() == "Darwin"', "False"
     system "autoconf"
     system "./configure", "--prefix=#{prefix}"
     ENV.deparallelize if OS.mac?

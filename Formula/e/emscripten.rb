@@ -8,6 +8,7 @@ class Emscripten < Formula
     "Apache-2.0" => { with: "LLVM-exception" }, # llvm
     any_of: ["MIT", "NCSA"], # emscripten
   ]
+  revision 1
   head "https://github.com/emscripten-core/emscripten.git", branch: "main"
 
   livecheck do
@@ -16,12 +17,11 @@ class Emscripten < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "adf27419729838c3d09a11b584c595e718deb78310f405e43a95be9ec8cdd3d0"
-    sha256 cellar: :any, arm64_tahoe:       "c26be06556dd6aaffd1375dac5f93a63617a9657b2bf5ec46a81017f6f5508f1"
-    sha256 cellar: :any, arm64_sequoia:     "a84cc196d5b4dd04156e17769cdf5f8a92ea243595dc51289dfb2557a1766ccf"
-    sha256 cellar: :any, arm64_sonoma:      "074c529bd2e74b896a390db5404a550d60bd7bd50630d96dc5e21e1923fdcaa6"
-    sha256 cellar: :any, arm64_linux:       "29dba8937994ead18a7d2642e92249234e547dbf42e24a2809379af2763abdec"
-    sha256 cellar: :any, x86_64_linux:      "2f816d73ed8afd8e2bcee43ced57214ed1b244fa307ad0cc358b3e042ac335ff"
+    sha256 cellar: :any, arm64_golden_gate: "0a26b808056147e8072454e368efff99aa0ebc04d4975c024af0822d3e7fc9ab"
+    sha256 cellar: :any, arm64_tahoe:       "bfa3e0c2fc6e1946260f0f43057e2724d3e9f8999e9290903ca218c6fb429877"
+    sha256 cellar: :any, arm64_sequoia:     "a8de0c15852bffb4f0646433b35ec087fa560c17d3cd4230c8267fa6f600c9d1"
+    sha256 cellar: :any, arm64_linux:       "209321ee1fbc425f69d7a8e3936d4d421971520de5eb8108a6aa579bf1be2195"
+    sha256 cellar: :any, x86_64_linux:      "9f459aaf38fb21f0a1b38ac149b8259bc65c8cf926cfa80ce98e54176602d0c3"
   end
 
   depends_on "cmake" => :build
@@ -160,7 +160,7 @@ class Emscripten < Formula
 
       # Remove unneeded tools. Taken from upstream `src/build.py`.
       unneeded = %w[
-        check cl cpp extef-mapping format func-mapping import-test offload-bundler refactor rename scan-deps
+        check cl cpp extef-mapping format func-mapping import-test offload-bundler refactor rename
       ].map { |suffix| "clang-#{suffix}" }
       unneeded += %w[lld-link ld.lld ld64.lld llvm-lib ld64.lld.darwinnew ld64.lld.darwinold]
       (libexec/"llvm/bin").glob("{#{unneeded.join(",")}}").map(&:unlink)

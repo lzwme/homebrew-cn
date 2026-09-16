@@ -7,14 +7,15 @@ class Swiftgen < Formula
   head "https://github.com/SwiftGen/SwiftGen.git", branch: "stable"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "001dc72c675528810114e961f7a9d743504ab3fd58c50e5be6363fcb76c91382"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "49cf0b56d500cf87acc05ca32f5007b750469c865253bd6b070dffcd309d8065"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "dc57fa733294a7d4d27714cd3eb954f2f8de1231cc0f991e6c043e2528a25311"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ab20119231242e90668b5129c07d7114abaa9e7af647fe3f9fa511999f0b6548"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "6efea7084dd6e75732483d417abf476da8f41a0513059f0133c03b1711e92ac3"
-    sha256 cellar: :any_skip_relocation, sonoma:         "20b600909007b301f5daae7954e1587b4275a2818671ab96ae584139fb6d184f"
-    sha256 cellar: :any_skip_relocation, ventura:        "61b7e10cb59fa9a8a84b55c7945cdcc3d854b40baaca057e658e528aac091f4b"
-    sha256 cellar: :any_skip_relocation, monterey:       "535fd043b81c91f3c8953cfd7d13721d12d205215f19b10f6549230847cbe3f1"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "b8ac1ee13c3bf7f9ebc968623099acb20f60f3d7df77534b435ea904cde667ef"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "001dc72c675528810114e961f7a9d743504ab3fd58c50e5be6363fcb76c91382"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "49cf0b56d500cf87acc05ca32f5007b750469c865253bd6b070dffcd309d8065"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "dc57fa733294a7d4d27714cd3eb954f2f8de1231cc0f991e6c043e2528a25311"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:     "ab20119231242e90668b5129c07d7114abaa9e7af647fe3f9fa511999f0b6548"
+    sha256 cellar: :any_skip_relocation, arm64_monterey:    "6efea7084dd6e75732483d417abf476da8f41a0513059f0133c03b1711e92ac3"
+    sha256 cellar: :any_skip_relocation, sonoma:            "20b600909007b301f5daae7954e1587b4275a2818671ab96ae584139fb6d184f"
+    sha256 cellar: :any_skip_relocation, ventura:           "61b7e10cb59fa9a8a84b55c7945cdcc3d854b40baaca057e658e528aac091f4b"
+    sha256 cellar: :any_skip_relocation, monterey:          "535fd043b81c91f3c8953cfd7d13721d12d205215f19b10f6549230847cbe3f1"
   end
 
   depends_on xcode: ["13.3", :build]
@@ -64,7 +65,6 @@ class Swiftgen < Formula
     #                 command     template             rsrc_group  generated            fixture & params
     test_command.call "colors",   "swift5",            "Colors",   "defaults.swift",    "colors.xml"
     test_command.call "coredata", "swift5",            "CoreData", "defaults.swift",    "Model.xcdatamodeld"
-    test_command.call "files",    "structured-swift5", "Files",    "defaults.swift",    ""
     test_command.call "fonts",    "swift5",            "Fonts",    "defaults.swift",    ""
     test_command.call "ib",       "scenes-swift5",     "IB-iOS",   "all.swift",         "", "--param module=SwiftGen"
     test_command.call "json",     "runtime-swift5",    "JSON",     "all.swift",         ""

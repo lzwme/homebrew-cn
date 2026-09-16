@@ -1,8 +1,8 @@
 class Cryptominisat < Formula
   desc "Advanced SAT solver"
   homepage "https://www.msoos.org/cryptominisat5/"
-  url "https://ghfast.top/https://github.com/msoos/cryptominisat/archive/refs/tags/release/v5.14.7.tar.gz"
-  sha256 "4d59b5af77ea632901b95e884adaaacc976a6822c440d9757eaa374290fd953f"
+  url "https://ghfast.top/https://github.com/msoos/cryptominisat/archive/refs/tags/release/v5.15.0.tar.gz"
+  sha256 "274016b8440716897e84c12e6f94ff607017cfa427a3319cac253177594d6b28"
   # Everything that's needed to run/build/install/link the system is MIT licensed. This allows
   # easy distribution and running of the system everywhere.
   license "MIT"
@@ -14,13 +14,11 @@ class Cryptominisat < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "0584c7e056a8c8046cfba1ab37ff94e35ff2b4636d4162d5870546b2289aa00a"
-    sha256 cellar: :any, arm64_tahoe:       "7793bdca8de1ecaf72fd743f85fe381db98d4d48012b24eeeaa6cb0daa7ed41d"
-    sha256 cellar: :any, arm64_sequoia:     "0d430699e034827936bc8a5d3fbc025336342b4b41c5fefd297213597a877bcd"
-    sha256 cellar: :any, arm64_sonoma:      "36436058757a927821b83a13c7dc7015853e9a17adf775dcd07116d01233c479"
-    sha256 cellar: :any, sonoma:            "7e9438c8d7720af3257eabe47d3388cda20d059df697e109de0bde62ef9a323e"
-    sha256 cellar: :any, arm64_linux:       "17a6a186038072afc450f237ef285b2379be9496ac79cf2409cb5a82811bea01"
-    sha256 cellar: :any, x86_64_linux:      "167a554ea8a966752d75a9aaa136c2578d6e125d1e276dc4caaebb281c8205cb"
+    sha256 cellar: :any, arm64_golden_gate: "d1fa3a2099c5177b22be17aa1238b5a641f5d9163627aee1ff912c3edf09d63c"
+    sha256 cellar: :any, arm64_tahoe:       "1e09ba0cc5fcb044421ec175381dc1b566edd22222a9569c97cb901639ff368e"
+    sha256 cellar: :any, arm64_sequoia:     "2187367adc01c4c6bc31ecc4fc6075faf08e4b4cba8c489c2c92a3fa822f0688"
+    sha256 cellar: :any, arm64_linux:       "436bd9726c057908f76ed4e060775f7009fb88395fe487bfc2a7b32ec1e94398"
+    sha256 cellar: :any, x86_64_linux:      "19cbdf088a5733af2642c77c38bb9613974d1aa9d06c8c5801d94817184bac71"
   end
 
   depends_on "cmake" => :build
@@ -34,9 +32,9 @@ class Cryptominisat < Formula
 
   # Currently using revision in flake.lock
   resource "cadical" do
-    url "https://ghfast.top/https://github.com/meelgroup/cadical/archive/394c3f72858c2fe8cd35321f74f11f0f61c91123.tar.gz"
-    version "394c3f72858c2fe8cd35321f74f11f0f61c91123"
-    sha256 "68756da68674bdd689e9ac7735ab98363c9dca8ee0c7369b2083be0daabf7039"
+    url "https://ghfast.top/https://github.com/meelgroup/cadical/archive/818c9562f114b315a9246ced943b66b60b38e8fb.tar.gz"
+    version "818c9562f114b315a9246ced943b66b60b38e8fb"
+    sha256 "beaeb17a751db88d5384b35d65be82501d94cf60f758b768b59bfb2b437cb34b"
 
     livecheck do
       url "https://ghfast.top/https://raw.githubusercontent.com/msoos/cryptominisat/refs/tags/release/v#{LATEST_VERSION}/flake.lock"
@@ -48,9 +46,9 @@ class Cryptominisat < Formula
 
   # Currently using revision in flake.lock
   resource "cadiback" do
-    url "https://ghfast.top/https://github.com/meelgroup/cadiback/archive/3b6a84062b1304433eb8960a4bff6b9a80de9c54.tar.gz"
-    version "3b6a84062b1304433eb8960a4bff6b9a80de9c54"
-    sha256 "336fcaa8a205fd70230ceabb28795e24e7c91b907cd7d811056368783f0770b5"
+    url "https://ghfast.top/https://github.com/meelgroup/cadiback/archive/47a6d821085ef8cb033241659824beafeb798cff.tar.gz"
+    version "47a6d821085ef8cb033241659824beafeb798cff"
+    sha256 "ccc2faf23c78ba22e2c73bb8c8ebe33995083dce77ee0ca8eb7ee3009955d9c4"
 
     livecheck do
       url "https://ghfast.top/https://raw.githubusercontent.com/msoos/cryptominisat/refs/tags/release/v#{LATEST_VERSION}/flake.lock"
@@ -64,8 +62,12 @@ class Cryptominisat < Formula
     # fix audit failure with `lib/libcryptominisat5.5.7.dylib`
     inreplace "src/GitSHA1.cpp.in", "@CMAKE_CXX_COMPILER@", ENV.cxx
 
+    # Build static libraries as these are only installed into `buildpath` to link into cryptominisat
     resource("cadical").stage do
-      system "cmake", "-S", ".", "-B", "build", *std_cmake_args(install_prefix: buildpath/"cadical")
+      inreplace "src/cadical_gitsha1.cpp.in", "@CMAKE_CXX_COMPILER@", ENV.cxx
+
+      args = ["-DBUILD_SHARED_LIBS=OFF"]
+      system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args(install_prefix: buildpath/"cadical")
       system "cmake", "--build", "build"
       system "cmake", "--install", "build"
     end
@@ -73,7 +75,7 @@ class Cryptominisat < Formula
     resource("cadiback").stage do
       inreplace "CMakeLists.txt", 'set(CADIBACK_BUILD "${CMAKE_CXX_COMPILER}")', "set(CADIBACK_BUILD \"#{ENV.cxx}\")"
 
-      args = ["-Dcadical_DIR=#{buildpath}/cadical"]
+      args = ["-DBUILD_SHARED_LIBS=OFF", "-Dcadical_DIR=#{buildpath}/cadical"]
       system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args(install_prefix: buildpath/"cadiback")
       system "cmake", "--build", "build"
       system "cmake", "--install", "build"

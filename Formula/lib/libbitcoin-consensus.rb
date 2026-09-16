@@ -21,8 +21,8 @@ class LibbitcoinConsensus < Formula
   end
 
   # Upstream repository was removed from GitHub; the library was dropped from libbitcoin v4 builds in 2024.
-  deprecate! date: "2026-09-13", because: :repo_removed
-  disable! date: "2026-12-13", because: :repo_removed
+  deprecate! date: "2026-09-13", because: :does_not_build
+  disable! date: "2026-12-13", because: :does_not_build
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
