@@ -1,8 +1,8 @@
 class Wartremover < Formula
   desc "Flexible Scala code linting tool"
   homepage "https://www.wartremover.org/"
-  url "https://ghfast.top/https://github.com/wartremover/wartremover/archive/refs/tags/v3.6.1.tar.gz"
-  sha256 "311ae54c70e846c43137fa5ed63f142f6eb45e92f684615033ed2645ad32b353"
+  url "https://ghfast.top/https://github.com/wartremover/wartremover/archive/refs/tags/v3.6.2.tar.gz"
+  sha256 "b734a060e2566d5f15386b50ba6b0cca7bf785666d7b4abf47a67698ede40da7"
   license "Apache-2.0"
   head "https://github.com/wartremover/wartremover.git", branch: "master"
 
@@ -12,13 +12,11 @@ class Wartremover < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "462ca206a55bb638954be05c107c11582ecac02ae1396ad6e1c197bc6a540825"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "40f211cb144d0bc21d9dbbacb0fab92236267ce03b295c8acf8e692a51d55c91"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "40f211cb144d0bc21d9dbbacb0fab92236267ce03b295c8acf8e692a51d55c91"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "40f211cb144d0bc21d9dbbacb0fab92236267ce03b295c8acf8e692a51d55c91"
-    sha256 cellar: :any_skip_relocation, sonoma:            "40f211cb144d0bc21d9dbbacb0fab92236267ce03b295c8acf8e692a51d55c91"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "e91d94a4f3ec102d5c764d9afa099c6dd17585a2abda47f29b72463aff858791"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "e91d94a4f3ec102d5c764d9afa099c6dd17585a2abda47f29b72463aff858791"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "cfd76d0a92310e33268191f6541634a1c0e51e54fef3ae545cd656ba9bff61be"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "cfd76d0a92310e33268191f6541634a1c0e51e54fef3ae545cd656ba9bff61be"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "cfd76d0a92310e33268191f6541634a1c0e51e54fef3ae545cd656ba9bff61be"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "f4c607456089c14fae5c31082406192e08fc05ba3a3f4eacac82753205f826b8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "f4c607456089c14fae5c31082406192e08fc05ba3a3f4eacac82753205f826b8"
   end
 
   depends_on "sbt" => :build

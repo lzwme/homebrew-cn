@@ -1,8 +1,8 @@
 class CargoNextest < Formula
   desc "Next-generation test runner for Rust"
   homepage "https://nexte.st"
-  url "https://ghfast.top/https://github.com/nextest-rs/nextest/archive/refs/tags/cargo-nextest-0.9.144.tar.gz"
-  sha256 "ca0bbe5138a588e8ee57da135e952d865e074b91bcef56f28a8f26eefe63bde2"
+  url "https://ghfast.top/https://github.com/nextest-rs/nextest/archive/refs/tags/cargo-nextest-0.9.145.tar.gz"
+  sha256 "6ba31b7dace0cfa57a7f9f534a82732d037481e161e076bd713c3edf1fdf6a63"
   license "Apache-2.0"
 
   livecheck do
@@ -11,12 +11,11 @@ class CargoNextest < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "0a040008885355583090111d1a86fa9744c9398b54a53a35d0448ff439a53e99"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "223ac1dca9f0a2a12e97456d4a5fb4387538a6f0cd01741d167d67c3a5bef0b0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "e556806d99b85c374ba5a6e53295ecedb24425b78657a25a070ee7677ceb4f85"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "050b1d4923b12f0849ef77e0688e7a703454e8264f686bd32930457dbcf4f042"
-    sha256 cellar: :any,                 arm64_linux:       "72d5adcb29f68b1ab1daafd60fc0bd7f320a22b8c7fe03f99b63187841475a60"
-    sha256 cellar: :any,                 x86_64_linux:      "106e56ab12bba4f19df23e45a333830c2c790bc96649f3e9e5401d52a929e314"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "f0d3a038006737bc52bda122de331418342cac500dee7978f399e4573b8f730c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "3487529536651b035167decd86d103110891a88f8c1d14e1a9adc3c0c48473e1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "1668cf837fcc1372697d231be5bedef9998c15f31431fb838f76c167ed923c1b"
+    sha256 cellar: :any,                 arm64_linux:       "3149db6d3259f422ac73aa6751a3d68d8aa11d73f5bd11252b11d2b15192b123"
+    sha256 cellar: :any,                 x86_64_linux:      "448172e8695c28373a7ef653acaf7ebeee9c77b29cceb22a7c9f7057f5db46b0"
   end
 
   depends_on "rust" => :build

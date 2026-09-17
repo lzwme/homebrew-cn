@@ -16,6 +16,14 @@ class Liquidsoap < Formula
       type :backport
       resolves "https://github.com/savonet/liquidsoap/pull/5239"
     end
+
+    # Cap camomile below 2.1.0, which changed `Config.Type`
+    patch do
+      url "https://github.com/savonet/liquidsoap/commit/faf9bad3a0f8d94ea119092e94495e3e7b5cddce.patch?full_index=1"
+      sha256 "f89e4ad6ea6a3c3f2b0c931236b4b7213258f695f79621594df80680e2c07dbb"
+      type :cherry_pick
+      resolves "https://github.com/savonet/liquidsoap/commit/faf9bad3a0f8d94ea119092e94495e3e7b5cddce"
+    end
   end
 
   livecheck do
@@ -24,12 +32,12 @@ class Liquidsoap < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "e9af08238819333db3c5541bd2a01c0a08814de2b534ce9cab4f01ddc5dfc2f2"
-    sha256 arm64_sequoia: "1e7bf8839ec4fa7a9c8e5b829f4b4fffa01ca6cd5b420ed4ae84d4526f8f195b"
-    sha256 arm64_sonoma:  "a9426987655c6fdd7f4fcf9d6ce8e53f1113728a76ab525c8dbb23b4f6f0293d"
-    sha256 sonoma:        "8ab528e9b2d23d0fcc7aa6849ad1a6f6f7a718db9868a2fd38e5963774cbf79e"
-    sha256 arm64_linux:   "6cb7a68541d05fa5049b052b8df9e81de8c9834a330bb1605b92e32b556ae4cf"
-    sha256 x86_64_linux:  "079a495c93e6d10cd4bdd71fe2797875e0fe33a98a2ccaccf17c4dcfd20e4e70"
+    rebuild 1
+    sha256 arm64_golden_gate: "a82aa143b74fa434070e3bf00b479cc5ecd5cd1589ff61160956daeb799e5114"
+    sha256 arm64_tahoe:       "d197a4de8dacf6e6fb801ea84f9914cd9c151a29f3337b197bdcd5381369fa69"
+    sha256 arm64_sequoia:     "8e7d87772bf6c1ee613277bc6e090bc5256be73f1613790d45eef215bcbe4e15"
+    sha256 arm64_linux:       "93cfb9b1361ef150afaa0177be5010272147a3a3e709076ce095cfaa2c8baae4"
+    sha256 x86_64_linux:      "f7947b32cde2d5974bb3bec4653f9bcbea0efa06578ad9f3754b340fd21d3998"
   end
 
   depends_on "ocaml" => :build

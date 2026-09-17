@@ -16,6 +16,14 @@ class Ty < Formula
 
   depends_on "rust" => :build
 
+  deny_network_access!
+
+  def fetch
+    # The sdist prunes some `ruff` workspace members but ships the full repo
+    # Cargo.lock, so `cargo fetch --locked` would refuse to shrink it.
+    system "cargo", "fetch", "--target", "host-tuple", "--manifest-path", "ruff/Cargo.toml"
+  end
+
   def install
     ENV["TY_COMMIT_SHORT_HASH"] = tap.user
     ENV["TY_COMMIT_DATE"] = time.strftime("%F")

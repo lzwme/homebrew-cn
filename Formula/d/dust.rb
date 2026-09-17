@@ -1,8 +1,8 @@
 class Dust < Formula
   desc "More intuitive version of du in rust"
   homepage "https://github.com/bootandy/dust"
-  url "https://ghfast.top/https://github.com/bootandy/dust/archive/refs/tags/v1.2.5.tar.gz"
-  sha256 "4445e61f1341ea567e9e49367f275a1f4b026a60526e60048265f7af4a4943fd"
+  url "https://ghfast.top/https://github.com/bootandy/dust/archive/refs/tags/v1.2.6.tar.gz"
+  sha256 "9dd1ec7576d43574e6f48342cb96a5087338b4c308460a848f5895f72ddc3bc9"
   license "Apache-2.0"
   head "https://github.com/bootandy/dust.git", branch: "master"
 
@@ -12,16 +12,20 @@ class Dust < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "810cd1a8d7b8fd7eb91f52c4a12dca935d84825bc37b351fb2a7f0b2ab38d34a"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "a959a4c2fcaa73b15c1dbc33500913b46652431ff2080c6ef2b21e2fb5dfb568"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "9a387723fd85c6c45ff6b2f9f6cd0f28897c11fbe5a4d087be8402fa5d70073b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "80a6ec6ad5cacbbd7b85fe48884b84bfa8765bc91d40ab5811536b7ec42ee30f"
-    sha256 cellar: :any_skip_relocation, sonoma:            "eadeb1f952f6fdf552800939c71ae43f7e20df8e3e14d8f3c4760e8da714bb1f"
-    sha256 cellar: :any,                 arm64_linux:       "db0bdd78f8b22e1e256a695af1c0cde94b94d10ac98d2152273330a63858a095"
-    sha256 cellar: :any,                 x86_64_linux:      "f2c79cba60ce1bdefd759502d5be8f68482bbd76daaeac6b4f0abc4fd453b6df"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "a4629a8f9efe50acde6bb93815f41285c530edfe26d98f4083d3b058c3fc71da"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "1012137818b9c1d28d30e28bdce6f82ff34090328890adca39b927fe7ba850b7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "52dc5e4b48d504edb90048fbccb961054e96c06388c4b676f88b667ee34545fb"
+    sha256 cellar: :any,                 arm64_linux:       "12dfd66b128bed2bf7756944a011e8b30b0abfe59eed1b4970c5fa9613d7f938"
+    sha256 cellar: :any,                 x86_64_linux:      "5886d5c418efd219cf5bd77bda3c167c452261ba612bc91da9c13aa13c6ddc3d"
   end
 
   depends_on "rust" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", "--locked", "--target", "host-tuple"
+  end
 
   def install
     system "cargo", "install", *std_cargo_args

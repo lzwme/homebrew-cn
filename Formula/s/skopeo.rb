@@ -1,18 +1,16 @@
 class Skopeo < Formula
   desc "Work with remote images registries"
   homepage "https://github.com/podman-container-tools/skopeo"
-  url "https://ghfast.top/https://github.com/podman-container-tools/skopeo/archive/refs/tags/v1.24.0.tar.gz"
-  sha256 "1eea9364e344c4d6cb398fac53bc387663d19690552003b43c75819e8bb55527"
+  url "https://ghfast.top/https://github.com/podman-container-tools/skopeo/archive/refs/tags/v1.24.1.tar.gz"
+  sha256 "6a3f342a327ec7684198eb0e15114940b6101506db48d9a96590f5942cb3b335"
   license "Apache-2.0"
 
   bottle do
-    sha256               arm64_golden_gate: "260ed8eed3a5d62a88e1927fd380fa243f2826f4427c9183d1d6330a7c3a62ad"
-    sha256               arm64_tahoe:       "c74b2682dac252629ff09804a4f4e0ed6f553b1b27125c1e31b9366acb98626b"
-    sha256               arm64_sequoia:     "dcaecd12aeddc4df66766d0076edb3c699d6e84dc512653aede47ae62b9f8352"
-    sha256               arm64_sonoma:      "4f9d7e60258db1d6c4225519704c569c268c5c296e8f0f8a9be5fcfed0abcb78"
-    sha256 cellar: :any, sonoma:            "39f5447da03e88d5e53a4751f786067ee83f152d379b22065f7c87f6d808163c"
-    sha256               arm64_linux:       "6b909e109ed9289ea283977d6a39540812eca422c1677ce8701c7692867611db"
-    sha256               x86_64_linux:      "bf78f2d80e89cfc8073aa38f412f7ae72d8dbdde0d15dbc7aa800788d67c81fa"
+    sha256 arm64_golden_gate: "2495e972107dc5585aa717819abe418502eff9c0f9c89448401b8fe1590b4e43"
+    sha256 arm64_tahoe:       "efd52716aa3a6530509482147fc0d1d1555a5d815cff3384c45a70c996f8ddcd"
+    sha256 arm64_sequoia:     "3f11c07daafc82339cd18de22f071c0c4e1068574e3e6aa429e06c4cbcb294fb"
+    sha256 arm64_linux:       "143acd2c195e7ac32aca1b514539cfbab7b8d98cfc2ec63cb62d825a4ae03274"
+    sha256 x86_64_linux:      "cc76368dd7672bdccb6a160231871a58357f94aeef7a07608a9f9d9fac4fd941"
   end
 
   depends_on "go" => :build

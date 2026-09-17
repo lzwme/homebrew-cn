@@ -1,19 +1,17 @@
 class Fakecloud < Formula
   desc "Free, open-source local AWS cloud emulator for integration testing"
   homepage "https://fakecloud.dev/"
-  url "https://ghfast.top/https://github.com/faiscadev/fakecloud/archive/refs/tags/v0.44.10.tar.gz"
-  sha256 "72376f92ee00602ba8b15035eef3339722f790bfe00c2e9c8299cdddcff0ef1e"
+  url "https://ghfast.top/https://github.com/faiscadev/fakecloud/archive/refs/tags/v0.45.0.tar.gz"
+  sha256 "a04e3e9165052a831356397de32d7f0f4e76b46087c57302e1517a0ab54045fc"
   license "AGPL-3.0-or-later"
   head "https://github.com/faiscadev/fakecloud.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "14620f4b17a76f03c75cc84e04ada150379776ff0662e3e5758e0cb3ad8cd9c7"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "4441c54edc3f57fcb4ca7a7c1b797416102b7d9b394313dfbfdc4768e882ce0c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "78f49bd5618921c6df02f8181452b58d612507b82984feb49caa98523293f358"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "f5a9d6908b1cc8b6abce2dbd85279f9a428c308aa81404006c27b568e473aa42"
-    sha256 cellar: :any_skip_relocation, sonoma:            "7904583b80247bf0e16dd81a70fdd8c09eed3ba18d1faa9236d6f9008878aa7c"
-    sha256 cellar: :any,                 arm64_linux:       "68a68cb0dca6c7498427fafeceb5878ee606db1683e8e831bd8bfd929b92bba3"
-    sha256 cellar: :any,                 x86_64_linux:      "8c42310106caed3bf30893716a1771ae718f711afac8bb84813f412cbea28923"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "4f1ac58695cea9d8ff6884fc225539ed373859a3f08645396d56ec16f30bd5df"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "c74ada655a29315c22da66d676850f2435dc68c322a6430847dce9e2291557de"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "e059712d075c8a0c1ef5ac01f2b2437c939812777a9f6ab7a8890e1e84c70014"
+    sha256 cellar: :any,                 arm64_linux:       "f2350e89dee58bb4dacf7109d34dda059311f287c676cc4e7efb98f1fe205e88"
+    sha256 cellar: :any,                 x86_64_linux:      "d65b86a70aad3b85a5367d34a4d4c8ddd31c5be71db642e279306bb0e7e8674c"
   end
 
   depends_on "pkgconf" => :build

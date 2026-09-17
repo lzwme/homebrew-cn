@@ -1,19 +1,17 @@
 class Hysteria < Formula
   desc "Feature-packed proxy & relay tool optimized for lossy, unstable connections"
   homepage "https://hysteria.network/"
-  url "https://ghfast.top/https://github.com/apernet/hysteria/archive/refs/tags/app/v2.12.2.tar.gz"
-  sha256 "8db04a112e73685a1e5916d5d4d3df3ed897dbabc3e639fda4880b7ca9a7d18e"
+  url "https://ghfast.top/https://github.com/apernet/hysteria/archive/refs/tags/app/v2.12.3.tar.gz"
+  sha256 "2679b76ab9cacbfd7574a48453325843865a347f1925858c4fb4fee3be132147"
   license "MIT"
   head "https://github.com/apernet/hysteria.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "6ccd12d0e6f7ef674fe9e836e736ccd43fcfca97a5416d19b6bd449470bbb98f"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "96198a0789c732b710ccb76f09460e75b0bc7b9fa3a201e2411b2ffeb2f96f22"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "96198a0789c732b710ccb76f09460e75b0bc7b9fa3a201e2411b2ffeb2f96f22"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "96198a0789c732b710ccb76f09460e75b0bc7b9fa3a201e2411b2ffeb2f96f22"
-    sha256 cellar: :any_skip_relocation, sonoma:            "9460173265af8924e06a30a98a824775a9980234acabea7b11f46fc9dd7442fd"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "c5c86915f4cc156fa46a053f5b5ccb865974f56c9a7b8987e4c438d1bf5a63fb"
-    sha256 cellar: :any,                 x86_64_linux:      "0a911acced4493696869621f004728df8e8e29bc7fc5cd26b66ce0c55f67961a"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "3df51fb1f5276dbef654025626eed12f29e34c4608e7a6fdc796c44b9bd62a7d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "3df51fb1f5276dbef654025626eed12f29e34c4608e7a6fdc796c44b9bd62a7d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "3df51fb1f5276dbef654025626eed12f29e34c4608e7a6fdc796c44b9bd62a7d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "721c39b87e7e808330f177a977b1bf9c287a7a68029aaa13b8c82952a5e8380f"
+    sha256 cellar: :any,                 x86_64_linux:      "b2e266343327ada3022251b9dfc82b058d3e284c1394c7598b6ee704eecefcbd"
   end
 
   depends_on "go" => :build

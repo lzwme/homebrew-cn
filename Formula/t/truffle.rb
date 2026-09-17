@@ -21,7 +21,7 @@ class Truffle < Formula
 
   # https://consensys.io/blog/consensys-announces-the-sunset-of-truffle-and-ganache-and-new-hardhat
   deprecate! date: "2025-11-22", because: :unsupported
-  disable! date: "2026-11-22", because: :unsupported
+  disable! date: "2026-09-16", because: :unsupported
 
   depends_on "node"
 

@@ -3,18 +3,17 @@ class OciCli < Formula
 
   desc "Oracle Cloud Infrastructure CLI"
   homepage "https://docs.cloud.oracle.com/iaas/Content/API/Concepts/cliconcepts.htm"
-  url "https://files.pythonhosted.org/packages/c9/a6/ea6ae30b461da650cdbf628d1618ea841034be83be6604a8058141676553/oci_cli-3.92.1.tar.gz"
-  sha256 "1cae35dcf23de4732446c1e9fa640e4c7c8934f0c8638dfe142afa4c5f8d3481"
+  url "https://files.pythonhosted.org/packages/78/05/fa114eff74fc1ca64f8238caf393fd46ae6a586d497eeda6c875c72da90b/oci_cli-3.93.0.tar.gz"
+  sha256 "67bd840fd68e070243d9de08a67ed707aff0e8cb85264c9458626ccf67fffcbd"
   license any_of: ["UPL-1.0", "Apache-2.0"]
   head "https://github.com/oracle/oci-cli.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "a25a1bb9bcdb0d1877ce0d8c8b65dd7078e558bf2308f88add23bb5307d58b1c"
-    sha256 cellar: :any, arm64_tahoe:       "be77719c8c25ef871078badc633ce83a86fd6084bf56bab36f470f4bbdd74656"
-    sha256 cellar: :any, arm64_sequoia:     "772c1ad95df3a1dfd3e4c9ee9230177241d6172dff269ad701ff920b6da96829"
-    sha256 cellar: :any, arm64_sonoma:      "ef54b84a6a714a49dc9035882756c5d43b4288751572303b09dd1930ec6acd69"
-    sha256 cellar: :any, arm64_linux:       "c23eaedb854a68d383ccb579d729ac38dc1f5ce54b973bd043a390285d4491e1"
-    sha256 cellar: :any, x86_64_linux:      "0379962c33870552d59ab1744c32bb96702765513e7d75ca6d0c21f5bff845e8"
+    sha256 cellar: :any, arm64_golden_gate: "4d722f75b2d2e324fdc0ce874aabcfa0eb3680324209e8eee6ba9fdc7815e636"
+    sha256 cellar: :any, arm64_tahoe:       "2e9fcb31b4efa323e0e06c4306ccb16179a8edbf17437b10b41fca68e2af496f"
+    sha256 cellar: :any, arm64_sequoia:     "46bf1520fca6200b7bbb59f1c9d1efc81a3d92b95da28cd08b4f4810e4be7bf7"
+    sha256 cellar: :any, arm64_linux:       "7b00fd9b24ee1eccf14ac17155afb56fc04ef83107915bb39cfc74253f8ca6b6"
+    sha256 cellar: :any, x86_64_linux:      "d4c4212230b80a9763f75d3941aab1cd1af2794b403bfe61708296ccddc3a41e"
   end
 
   depends_on "certifi" => :no_linkage
@@ -80,13 +79,13 @@ class OciCli < Formula
   end
 
   resource "multidict" do
-    url "https://files.pythonhosted.org/packages/1a/c2/c2d94cbe6ac1753f3fc980da97b3d930efe1da3af3c9f5125354436c073d/multidict-6.7.1.tar.gz"
-    sha256 "ec6652a1bee61c53a3e5776b6049172c53b6aaba34f18c9ad04f82712bac623d"
+    url "https://files.pythonhosted.org/packages/14/95/989c1b5ca17b72128661530cd6e351a0a83cda9a4d6c036e9ed976c18931/multidict-6.8.0.tar.gz"
+    sha256 "5cd4637ce76312ba1e05eb9c5193fec231f64fee0944e135fa1e951242355b37"
   end
 
   resource "oci" do
-    url "https://files.pythonhosted.org/packages/be/56/ace05495d62cf8bfc8e2b2097fd1dd6e8639a32e23ad4eda1acc6464af37/oci-2.185.2.tar.gz"
-    sha256 "4ac140f9b54e22ed2cf0164dd800fc94fe78f1660ee18383308d95510d0735ed"
+    url "https://files.pythonhosted.org/packages/12/36/d97822d2cfc4dd842934724a45d4e4591433432d673ebf5bb7c342249508/oci-2.186.0.tar.gz"
+    sha256 "d8c75fb73bddaadcf3835b07b584f80c785686aa3c8a66ae4e4062ac63757c58"
   end
 
   resource "prompt-toolkit" do
@@ -100,8 +99,8 @@ class OciCli < Formula
   end
 
   resource "pyjwt" do
-    url "https://files.pythonhosted.org/packages/3b/81/58d0ac84e1ef3a3843791d6954d94c0b33d526c75eeb1efbce9d0a4c4077/pyjwt-2.13.0.tar.gz"
-    sha256 "41571c89ca91598c79e8ef18a2d07367d4810fbbd6f637794879baf1b7703423"
+    url "https://files.pythonhosted.org/packages/af/c3/8a3b59c25070cc61dc517fbdfa5dc0904670c96f605cc69759dc09166b99/pyjwt-2.14.0.tar.gz"
+    sha256 "77283c83fb56ecf566a886c757a714bc83668e38156de2cce8263302f42e0b86"
   end
 
   resource "pyopenssl" do
@@ -140,8 +139,8 @@ class OciCli < Formula
   end
 
   resource "tzdata" do
-    url "https://files.pythonhosted.org/packages/92/ff/5a28bdfd8c3ebec42564ac7d0e54ca3db65044a9314a97f9564fa7a1e926/tzdata-2026.3.tar.gz"
-    sha256 "4a1518b8993086a7982523e071643f3c0e5f213e75b21318e78bcabfff9d1415"
+    url "https://files.pythonhosted.org/packages/e4/31/3d74fa778a63b98b7374323befcc0be5ab3bd94afd4096a0124e7379152c/tzdata-2026.4.tar.gz"
+    sha256 "f1b8bd365d8d210c55353f4d7f8d6d8561c0ba50d704b700d195a9424bba0d79"
   end
 
   resource "urllib3" do

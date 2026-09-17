@@ -38,6 +38,13 @@ class Tectonic < Formula
     depends_on "zlib-ng-compat"
   end
 
+  # `test do` block downloads a TeX bundle
+  allow_network_access! :test
+
+  def fetch
+    system "cargo", "fetch", "--locked", "--target", "host-tuple"
+  end
+
   def install
     ENV["MACOSX_DEPLOYMENT_TARGET"] = MacOS.version.to_s if OS.mac? # needed for CLT-only builds
 

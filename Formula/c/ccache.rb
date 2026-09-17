@@ -8,12 +8,13 @@ class Ccache < Formula
   head "https://github.com/ccache/ccache.git", branch: "master"
 
   bottle do
-    sha256               arm64_tahoe:   "563c1bb519f8bf4e1bb1035faabc1b4a3dcf8f6062b1b709bfb67c933b7d3ad1"
-    sha256               arm64_sequoia: "1653bdb3e24e1996333102371d12eece9f4748194dfc5ddefa4850e912f0edbe"
-    sha256               arm64_sonoma:  "ebc119cd6b1e5f7e23497798867aaebc9e5880af01764c6e62a90ffa07296ead"
-    sha256 cellar: :any, sonoma:        "7de841855e44972bf8ab43408b7996d6dbfb15de7b08042e783d6d400538ac27"
-    sha256               arm64_linux:   "43b42373ed9a8da5530e67f410c6e972de9a6d7a1b4d48a13711998d9b973fa8"
-    sha256               x86_64_linux:  "20b74813b08fc5f7853d4db7e9082d666b317f3143b0915f62e05bbccb0afb53"
+    sha256               arm64_golden_gate: "9476c41d4fc744f0b9e0fb50e4246bd6a2f68a6c6aade7b7db0a9aeba0af9170"
+    sha256               arm64_tahoe:       "563c1bb519f8bf4e1bb1035faabc1b4a3dcf8f6062b1b709bfb67c933b7d3ad1"
+    sha256               arm64_sequoia:     "1653bdb3e24e1996333102371d12eece9f4748194dfc5ddefa4850e912f0edbe"
+    sha256               arm64_sonoma:      "ebc119cd6b1e5f7e23497798867aaebc9e5880af01764c6e62a90ffa07296ead"
+    sha256 cellar: :any, sonoma:            "7de841855e44972bf8ab43408b7996d6dbfb15de7b08042e783d6d400538ac27"
+    sha256               arm64_linux:       "43b42373ed9a8da5530e67f410c6e972de9a6d7a1b4d48a13711998d9b973fa8"
+    sha256               x86_64_linux:      "20b74813b08fc5f7853d4db7e9082d666b317f3143b0915f62e05bbccb0afb53"
   end
 
   depends_on "asciidoctor" => :build
@@ -30,6 +31,10 @@ class Ccache < Formula
   depends_on "openssl@3"
   depends_on "xxhash"
   depends_on "zstd"
+
+  on_macos do
+    depends_on "gcc" => :build
+  end
 
   on_linux do
     depends_on "zlib-ng-compat"
@@ -49,8 +54,16 @@ class Ccache < Formula
     # (especially with IPO enabled), adds negligible time to the build process, and we don't actually test
     # this formula properly in the test block since doing so would be too complicated.
     # See https://github.com/Homebrew/homebrew-core/pull/83900#issuecomment-90624064
-    with_env(CC: DevelopmentTools.locate(DevelopmentTools.default_compiler)) do
-      system "ctest", "-j#{ENV.make_jobs}", "--test-dir", "build"
+    #
+    # FIXME: Running test with clang adds SDKSettings.json which causes test failures
+    # and also hit test.remote_helper after a brew change.
+    test_cc = if OS.mac?
+      formula_opt_bin("gcc")/"gcc"
+    else
+      DevelopmentTools.locate(DevelopmentTools.default_compiler)
+    end
+    with_env(CC: test_cc) do
+      system "ctest", "-j#{ENV.make_jobs}", "--test-dir", "build", "--rerun-failed", "--output-on-failure"
     end
 
     system "cmake", "--install", "build"

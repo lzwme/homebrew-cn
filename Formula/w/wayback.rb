@@ -11,12 +11,13 @@ class Wayback < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6d960cfc0c58348407eeb214ec708af67bbf0d46857b08170e7096c57a1fd9a0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1630231d3014a16a74c75736f1157cf9570b63583d03b8165f9ad78bac8107b3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a2198e9f836b5edf8e947010ea077dc2a92c27399076ce9fb99c067e5f2566e5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "fbe17e70fc84fbe5646ce96dcb9aa99189046bf5e11ef092acc1f381fe4bef8e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "009e9b72bb982fc71b5128babcb01d3939a47b3e80d441ebb355f6f54ff1e09a"
-    sha256 cellar: :any,                 x86_64_linux:  "e8fa078d5bd363cb61a016b64da5840de51ff000e7a455858aa78f9870bff708"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "9a413959b2f684159c86697fd40db910aacb2bbdd265def9c7cc0708e1293a8f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "6d960cfc0c58348407eeb214ec708af67bbf0d46857b08170e7096c57a1fd9a0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "1630231d3014a16a74c75736f1157cf9570b63583d03b8165f9ad78bac8107b3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "a2198e9f836b5edf8e947010ea077dc2a92c27399076ce9fb99c067e5f2566e5"
+    sha256 cellar: :any_skip_relocation, sonoma:            "fbe17e70fc84fbe5646ce96dcb9aa99189046bf5e11ef092acc1f381fe4bef8e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "009e9b72bb982fc71b5128babcb01d3939a47b3e80d441ebb355f6f54ff1e09a"
+    sha256 cellar: :any,                 x86_64_linux:      "e8fa078d5bd363cb61a016b64da5840de51ff000e7a455858aa78f9870bff708"
   end
 
   depends_on "go" => :build
@@ -33,7 +34,8 @@ class Wayback < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/wayback --version")
 
-    output = shell_output("#{bin}/wayback --ia https://brew.sh 2>&1")
-    assert_match(%r{https://web\.archive\.org/web/\d{14}/https://brew\.sh/}, output)
+    (testpath/"wayback.conf").write "WAYBACK_POOLING_SIZE=9\n"
+    output = shell_output("#{bin}/wayback --print --config #{testpath}/wayback.conf 2>&1")
+    assert_match "poolingSize: (int) 9", output
   end
 end

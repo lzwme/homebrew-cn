@@ -6,14 +6,15 @@ class Pcaudiolib < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "797c5e0ec4adb982e3efbcb3ff386d0ad3bbe212e731ce88375002cc6d0cf72d"
-    sha256 cellar: :any,                 arm64_sequoia: "9581956c3f6ac62ed80312bad32f93be3bda767e7fb6ce251c600971371bbdd8"
-    sha256 cellar: :any,                 arm64_sonoma:  "bd84f4e1511c570a34e372cf8f4532e92e9eaea2089e0a93d387f191d5c36845"
-    sha256 cellar: :any,                 arm64_ventura: "3d8b34973b1a08cf739c4b7ce2c6a5b80dbfb3856d5777c5f26d4b9011b62bff"
-    sha256 cellar: :any,                 sonoma:        "48118ebffee0146173486843027d4b5a07c8dd0c7be2a17a8fac5de80aebf6f8"
-    sha256 cellar: :any,                 ventura:       "cc9fdf752114a5959fd6906ecd9b2bf182eea8eae5a43769ba6434e3679d6d2d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9f2763bfa17d7805667730aeff7bcdc00f649d41e82e51415ad36b2a135da6dd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "103253ad42ee7905b3f45cba3c1fdfc646aca631b912f1346589e7f79e916fd4"
+    sha256 cellar: :any,                 arm64_golden_gate: "d3d2a3921bf151eb0ea70be556eb0c95150bec5f85878e6c2f7695cdef4fbca0"
+    sha256 cellar: :any,                 arm64_tahoe:       "797c5e0ec4adb982e3efbcb3ff386d0ad3bbe212e731ce88375002cc6d0cf72d"
+    sha256 cellar: :any,                 arm64_sequoia:     "9581956c3f6ac62ed80312bad32f93be3bda767e7fb6ce251c600971371bbdd8"
+    sha256 cellar: :any,                 arm64_sonoma:      "bd84f4e1511c570a34e372cf8f4532e92e9eaea2089e0a93d387f191d5c36845"
+    sha256 cellar: :any,                 arm64_ventura:     "3d8b34973b1a08cf739c4b7ce2c6a5b80dbfb3856d5777c5f26d4b9011b62bff"
+    sha256 cellar: :any,                 sonoma:            "48118ebffee0146173486843027d4b5a07c8dd0c7be2a17a8fac5de80aebf6f8"
+    sha256 cellar: :any,                 ventura:           "cc9fdf752114a5959fd6906ecd9b2bf182eea8eae5a43769ba6434e3679d6d2d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "9f2763bfa17d7805667730aeff7bcdc00f649d41e82e51415ad36b2a135da6dd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "103253ad42ee7905b3f45cba3c1fdfc646aca631b912f1346589e7f79e916fd4"
   end
 
   head do
@@ -54,6 +55,10 @@ class Pcaudiolib < Formula
     C
 
     system ENV.cc, "test.c", "-o", "test", "-L#{lib}", "-lpcaudio"
-    system "./test"
+    if OS.mac?
+      assert_match "Runtime error fffff448", shell_output("./test", 72) # error from sandbox
+    else
+      system "./test"
+    end
   end
 end

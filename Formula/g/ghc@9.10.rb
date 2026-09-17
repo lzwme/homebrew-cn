@@ -36,6 +36,11 @@ class GhcAT910 < Formula
   uses_from_macos "m4" => :build
   uses_from_macos "ncurses"
 
+  on_macos do
+    # TODO: Try removing in 9.10.4: https://gitlab.haskell.org/ghc/ghc/-/merge_requests/16079
+    depends_on maximum_macos: [:tahoe, :build]
+  end
+
   on_linux do
     depends_on "gmp" => :build
   end
@@ -101,6 +106,7 @@ class GhcAT910 < Formula
     ENV["PYTHON"] = python3
 
     # Workaround for https://gitlab.haskell.org/ghc/ghc/-/issues/26166
+    # TODO: Try removing in 9.10.4
     if DevelopmentTools.ld64_version >= "1221.4"
       inreplace "rts/rts.cabal", /("-Wl,-undefined,dynamic_lookup)"/, "\\1,-ld_classic\""
     end

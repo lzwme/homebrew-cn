@@ -3,16 +3,16 @@ class Schemathesis < Formula
 
   desc "Testing tool for web applications with specs"
   homepage "https://schemathesis.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/46/d0/e0ab1d87068e0fbc2d5319ae040279cdde22eee2b94dfa954280b3a6ff2e/schemathesis-4.27.1.tar.gz"
-  sha256 "f83b8b735634d4f202bd820517481f97cb3c48c350c09166b362d67934c1a52e"
+  url "https://files.pythonhosted.org/packages/21/ab/0445e87c4f1bc9991eb641b3f6b97de1ba32583c9c9492e397be868d92da/schemathesis-4.27.2.tar.gz"
+  sha256 "2b249971f4e174a1224000338fe4ff3d09de59dbdecc1d8a52e8747ba14d49c3"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "e22ce2337df3f2d9e127f35945a27a3dfd32381191d2772cd7547d232304750a"
-    sha256 cellar: :any, arm64_tahoe:       "7f0c79bc666e73e9873379cc017dce8c6e28502dac89e35a33981f114b17a6f5"
-    sha256 cellar: :any, arm64_sequoia:     "c627bffa4faeefe4762a71e9349c4bc79e0be2ad1159207cab52e2c8c9ec299a"
-    sha256 cellar: :any, arm64_linux:       "9f0d828e8a1abb309aa9ca21c8b3cb213d37bdd2cd6a363804ef0984caa8732a"
-    sha256 cellar: :any, x86_64_linux:      "a94236d1a631dd99de81d63e042e08e9bd0474e2ea72ffc1845233bd4bc44a92"
+    sha256 cellar: :any, arm64_golden_gate: "3a5fc5f22f37c090ccadcbdf109534605b2bde947921d50b55ee4ab74e5d1411"
+    sha256 cellar: :any, arm64_tahoe:       "109feb229de164805cf506ee88227c69713f153696ec091404c8797d850b2982"
+    sha256 cellar: :any, arm64_sequoia:     "29e8527fc8f0ddd96790280f4be53ad493a15794581d25b8fdbfa5f094638dab"
+    sha256 cellar: :any, arm64_linux:       "c2447e4871b8ae0cab7d618e4c54bd253605df9822bc6cdf6e4996dfe63142eb"
+    sha256 cellar: :any, x86_64_linux:      "cf02f9e8c1cc6af3d3c60100fdadc4bfc7d023bf9d8e52ff9ea418440ff69349"
   end
 
   depends_on "rust" => :build # for jsonschema-rs
@@ -141,8 +141,8 @@ class Schemathesis < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/53/0c/06f8b233b8fd13b9e5ee11424ef85419ba0d8ba0b3138bf360be2ff56953/urllib3-2.7.0.tar.gz"
-    sha256 "231e0ec3b63ceb14667c67be60f2f2c40a518cb38b03af60abc813da26505f4c"
+    url "https://files.pythonhosted.org/packages/e3/05/b17359e1cefb4f909b5e40b1b90a496d987258916dbbf88e842c729f510e/urllib3-2.8.0.tar.gz"
+    sha256 "63bf2ead4c879426ebf22ef2a781eeb4aa3b4ae798a0435506f8687fd5bb9b63"
   end
 
   resource "werkzeug" do

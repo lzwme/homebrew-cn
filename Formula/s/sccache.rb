@@ -26,6 +26,13 @@ class Sccache < Formula
     depends_on "openssl@3" # Uses Secure Transport on macOS
   end
 
+  # `test do` block starts a local sccache server
+  allow_network_access! :test
+
+  def fetch
+    system "cargo", "fetch", "--locked", "--target", "host-tuple"
+  end
+
   def install
     system "cargo", "install", *std_cargo_args(features: "all")
   end

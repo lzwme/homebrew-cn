@@ -1,19 +1,16 @@
 class Gucharmap < Formula
   desc "GNOME Character Map, based on the Unicode Character Database"
   homepage "https://wiki.gnome.org/Apps/Gucharmap"
-  url "https://gitlab.gnome.org/GNOME/gucharmap/-/archive/17.0.2/gucharmap-17.0.2.tar.bz2"
-  sha256 "d5aa79bee703846af9ba477803e0fd8c8f63d9c7c522a48e64ebf304bfbfe324"
+  url "https://gitlab.gnome.org/GNOME/gucharmap/-/archive/18.0.0/gucharmap-18.0.0.tar.bz2"
+  sha256 "564aca0ed8a25e4880ed5298de033889dfbc11bd49af1d7ee2959a5f46eb8f1d"
   license "GPL-3.0-or-later"
 
   bottle do
-    rebuild 1
-    sha256 arm64_golden_gate: "118e6def449b2853740e1e562607fb7004760aecf225794f05382bb9c6d107eb"
-    sha256 arm64_tahoe:       "09cb32a02e2edb50223d4f9ebe8412245e9c83891e5a3fb2a490268a7bcbb8b0"
-    sha256 arm64_sequoia:     "fdcad739389029c24449e013293d83fa598de25b676ce79fb6552482a3eddada"
-    sha256 arm64_sonoma:      "61ff6905c2c143cbfc0db25c2dd130a488acae6fee1f38df06b73cc419e2bb1c"
-    sha256 sonoma:            "7bfd643c6ea7027e1ff9b0fb33f6d70535deed333b55107e3b6278c417b154ed"
-    sha256 arm64_linux:       "28d9ab835720e30da0ca28cb2ca9622f7601c64181589e5d8efb702d0b90c4e2"
-    sha256 x86_64_linux:      "daca552d1c157d3b348489af518a968aa9e3e5122d507db32db78866a1994509"
+    sha256 arm64_golden_gate: "59469221d9d575259b06736923fc90275ab1df0d0ebc8b5a7d087e5d9109da90"
+    sha256 arm64_tahoe:       "768f8db2281a78643978397ac90f65cba1f869e4d13a9f709726c62f53e1efcf"
+    sha256 arm64_sequoia:     "39a493527ba3b0d6ce466726c6444da0dd9e95a82cfc6f710f04200c41d7b236"
+    sha256 arm64_linux:       "5456e835e81ea04bbd349364773cb904b2cd9a036e04f14592d4eef7b4d8ce92"
+    sha256 x86_64_linux:      "f2b8b202b1174996afd75cd28e8ed0cae0e3b22fa3321f807d8c6b115aa5ce28"
   end
 
   depends_on "desktop-file-utils" => :build
@@ -40,8 +37,8 @@ class Gucharmap < Formula
   end
 
   resource "ucd" do
-    url "https://www.unicode.org/Public/17.0.0/ucd/UCD.zip"
-    sha256 "2066d1909b2ea93916ce092da1c0ee4808ea3ef8407c94b4f14f5b7eb263d28e"
+    url "https://www.unicode.org/Public/18.0.0/ucd/UCD.zip"
+    sha256 "7b3e555514060b92290d154f53655c5eb0fa62b16eb04c03434ff72d1a66a0d8"
 
     livecheck do
       url "https://gitlab.gnome.org/GNOME/gucharmap/-/raw/#{LATEST_VERSION}/gucharmap/unicode-i18n.h"
@@ -50,8 +47,8 @@ class Gucharmap < Formula
   end
 
   resource "unihan" do
-    url "https://www.unicode.org/Public/17.0.0/ucd/Unihan.zip", using: :nounzip
-    sha256 "f7a48b2b545acfaa77b2d607ae28747404ce02baefee16396c5d2d7a8ef34b5e"
+    url "https://www.unicode.org/Public/18.0.0/ucd/Unihan.zip", using: :nounzip
+    sha256 "4c93ea9c1f636451729a840978f1667a53886af37ba854fdcce109721c63d43e"
 
     livecheck do
       url "https://gitlab.gnome.org/GNOME/gucharmap/-/raw/#{LATEST_VERSION}/gucharmap/unicode-i18n.h"

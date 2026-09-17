@@ -3,20 +3,24 @@ class Glib < Formula
 
   desc "Core application library for C"
   homepage "https://docs.gtk.org/glib/"
-  url "https://download.gnome.org/sources/glib/2.88/glib-2.88.3.tar.xz"
-  sha256 "ab24d24e698dfa1e408b7bcdb508f4aafc906185a8b8ce72fdf79bbbdc9b383b"
+  url "https://download.gnome.org/sources/glib/2.90/glib-2.90.0.tar.xz"
+  sha256 "17d15cac2af80a33271127408e0abc2748eb297c595c2a26409e81e14e7d1b8f"
   license "LGPL-2.1-or-later"
   compatibility_version 1
 
+  # FIXME: remove livecheck block once `https://download.gnome.org/sources/glib/cache.json` is fixed
+  livecheck do
+    url "https://download.gnome.org/sources/glib/"
+    regex(%r{href="(\d+(?:\.\d+))/"}i)
+    strategy :page_match
+  end
+
   bottle do
-    rebuild 1
-    sha256 arm64_golden_gate: "a18b3abe0fc7be6cf0d3119482de99aab576f9657b88252beaa4f78e17418dab"
-    sha256 arm64_tahoe:       "04cba8ddae9201ed3e950547bfdde97927e4151da37db32c80f5298bf4d6255f"
-    sha256 arm64_sequoia:     "ca168ac34920f6ee13187d8e88af7d55c50b582fa78a5511e15fe9dd875e8b40"
-    sha256 arm64_sonoma:      "360e1e14e0db7d9374a2ebc5e0df52c3765e6f42e3d4c8080ac8df8289e181c8"
-    sha256 sonoma:            "77ecae9f10b03757b47b6c9dc2e8cadcace52a685dccc0f846871037628e1c3e"
-    sha256 arm64_linux:       "9362d75c1ee1db3ebb022d00d20a651e0dcc76293a51ad3182a5293953d14c97"
-    sha256 x86_64_linux:      "6e2840b72dee7594f310838f9b0b0b82894eb12e562894b3f1b43563487b9987"
+    sha256 arm64_golden_gate: "07422c68ee1c3d01ba6ac6296668e82cad2ee21c9466e60e79a70da2c5947207"
+    sha256 arm64_tahoe:       "e2d2d3cff3bb121e8f6c98f9a831e03f78b66e88063fc5d432a68bf0b4951092"
+    sha256 arm64_sequoia:     "91df2202a093cd00b90fa9919f1c1e61e8f78d8ddd9a307009af6d4007072180"
+    sha256 arm64_linux:       "456f327b958864c762c53286469ec4471fd41a57c031ce2d8c3e24f6dedbad0f"
+    sha256 x86_64_linux:      "91d875d68772c609400983913f59695beb053223973791ee32ee33d1edd9df6c"
   end
 
   depends_on "bison" => :build # for gobject-introspection
@@ -118,12 +122,11 @@ class Glib < Formula
 
     # `pkg-config --libs glib-2.0` includes -lintl, and gettext itself does not
     # have a pkgconfig file, so we add gettext lib and include paths here.
-    gettext = Formula["gettext"]
     inreplace lib/"pkgconfig/glib-2.0.pc" do |s|
       s.gsub! "Libs: -L${libdir} -lglib-2.0 -lintl",
-              "Libs: -L${libdir} -lglib-2.0 -L#{gettext.opt_lib} -lintl"
+              "Libs: -L${libdir} -lglib-2.0 -L#{formula_opt_lib("gettext")} -lintl"
       s.gsub! "Cflags: -I${includedir}/glib-2.0 -I${libdir}/glib-2.0/include",
-              "Cflags: -I${includedir}/glib-2.0 -I${libdir}/glib-2.0/include -I#{gettext.opt_include}"
+              "Cflags: -I${includedir}/glib-2.0 -I${libdir}/glib-2.0/include -I#{formula_opt_include("gettext")}"
     end
   end
 

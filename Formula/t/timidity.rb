@@ -12,14 +12,15 @@ class Timidity < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "d1870a696de648a1ed46e25d590b6f6a3bfa73091044c8623fbf77901e71c7a9"
-    sha256 arm64_sequoia: "8e504bb7f36e5feae11358a05aaa0b9651b84cc60664d4d8199c6c72c07d13c4"
-    sha256 arm64_sonoma:  "faa51ccbf4324d22f47660879db054f204dd19fd7d18361a4e8bc207b261ae10"
-    sha256 arm64_ventura: "ae1cb080608f21a9265afd6faa3ce8a045a69ef72347306661580adad6da2d4a"
-    sha256 sonoma:        "e64e294d42736c8781c217604b149e2bbc03754312416f92b3bae9a6e2ecde54"
-    sha256 ventura:       "8547254f49bc780399c907f8a23916843840065a06ebdfce850b0a3280429b2d"
-    sha256 arm64_linux:   "4c6b979e2ec599528a1fa01884d6886e757ccfb57624785b27f3ca2c4bf6167c"
-    sha256 x86_64_linux:  "641143b8f2f77b6d9c41cf16994b389cfd2523ec4f97d6bd1acabca4a5f376d1"
+    sha256 arm64_golden_gate: "5b5aa1245821538c929e113efd43f602be43b1eb07e15b8bd2b0c1426cda9650"
+    sha256 arm64_tahoe:       "d1870a696de648a1ed46e25d590b6f6a3bfa73091044c8623fbf77901e71c7a9"
+    sha256 arm64_sequoia:     "8e504bb7f36e5feae11358a05aaa0b9651b84cc60664d4d8199c6c72c07d13c4"
+    sha256 arm64_sonoma:      "faa51ccbf4324d22f47660879db054f204dd19fd7d18361a4e8bc207b261ae10"
+    sha256 arm64_ventura:     "ae1cb080608f21a9265afd6faa3ce8a045a69ef72347306661580adad6da2d4a"
+    sha256 sonoma:            "e64e294d42736c8781c217604b149e2bbc03754312416f92b3bae9a6e2ecde54"
+    sha256 ventura:           "8547254f49bc780399c907f8a23916843840065a06ebdfce850b0a3280429b2d"
+    sha256 arm64_linux:       "4c6b979e2ec599528a1fa01884d6886e757ccfb57624785b27f3ca2c4bf6167c"
+    sha256 x86_64_linux:      "641143b8f2f77b6d9c41cf16994b389cfd2523ec4f97d6bd1acabca4a5f376d1"
   end
 
   depends_on "autoconf" => :build
@@ -39,6 +40,8 @@ class Timidity < Formula
 
   def install
     ENV.append_to_cflags "-DSTDC_HEADERS" if OS.mac?
+    # autoconf 2.73 selects C23, which rejects the K&R declarations in this codebase
+    ENV["ac_cv_prog_cc_c23"] = "no"
     audio_options = %w[
       vorbis
       flac

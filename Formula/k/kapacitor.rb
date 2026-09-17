@@ -2,8 +2,8 @@ class Kapacitor < Formula
   desc "Open source time series data processor"
   homepage "https://github.com/influxdata/kapacitor"
   url "https://github.com/influxdata/kapacitor.git",
-      tag:      "v1.8.6",
-      revision: "ab88ca501f0ce0873dd837bee8643ef64f4d518b"
+      tag:      "v1.8.7",
+      revision: "732d0f06a862762529eda2d2743986d6fff5e940"
   license "MIT"
   head "https://github.com/influxdata/kapacitor.git", branch: "master"
 
@@ -13,13 +13,11 @@ class Kapacitor < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "1cb04cba298a9296816f104c57f246a3d494ca9d67ca0e97862882a0410aee79"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "7c3bb986375c4e6ad9f6a2ff2f9bd2f4b9498037ce8dcac1386173ddebcd35a5"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "976a2f80f1773a2f7cf1fb0ba7070e306764deb43b7d2decef53185ed7b8016f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "0f2baf08a8efad92ac0ba6badf160dd7816a5017f218a6ec97d3f0ee0e1a1210"
-    sha256 cellar: :any_skip_relocation, sonoma:            "49247f7c6d705941c141f864dbc946349d0c3b560b9a41e495e3e4d6386d67fc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "a6d78e06c5a2426d6f9d40e2cccaed1d529d95c0266481d90e107eb07c800b9f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "6561b70701cb82e1390bf52d2eaf674cdce8c8b529c3358f6cadababce7950e5"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "4a6c589f7c647e7e9e6b651b3aca6790b1eba8be6031e3bd0542c05f635b4885"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "739bc577094f6cf22049d1836b5d441e4c51fc4fde135b5e59c8734166d0f56d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "b38dd54701a8b474c4b68ef25822a7d4a31b9e6f7d059a54bc47b53ded807a2b"
+    sha256 cellar: :any,                 arm64_linux:       "e58892d7977e9075b6672c78995e8d6eb9fc9a0c327b40139cd76fbb06816638"
+    sha256 cellar: :any,                 x86_64_linux:      "88137b53a056ca917784c3d0e550e13e2e73d36666ff39ea5948de4fb0b18217"
   end
 
   # TODO: unpin go@1.26 when kapacitor supports go 1.27

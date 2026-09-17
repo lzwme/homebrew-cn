@@ -7,10 +7,11 @@ class Periphery < Formula
   head "https://github.com/peripheryapp/periphery.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f15a284eb5136ad3f57886f3c58a175ee177eae01b0e4574e6c1d4ec9b8acf19"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "af70d2f0d974fd39d099b14382ccffcbe1742bd0a818888a4050a8c8655f8a49"
-    sha256                               arm64_linux:   "a8737879d7f4647e4f0e3de71f8552dbba0cfe7e55e357b9ff90f5d309a27a23"
-    sha256                               x86_64_linux:  "523743acbbe6a4b623831033f479acb3abd04050b3fd742d3bea3cc1abedbeda"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "91cf1abd736f7f5daab0fe1bfc6ec6c9da87a2fea3d52091934a2cbec72bb40c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "f15a284eb5136ad3f57886f3c58a175ee177eae01b0e4574e6c1d4ec9b8acf19"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "af70d2f0d974fd39d099b14382ccffcbe1742bd0a818888a4050a8c8655f8a49"
+    sha256                               arm64_linux:       "a8737879d7f4647e4f0e3de71f8552dbba0cfe7e55e357b9ff90f5d309a27a23"
+    sha256                               x86_64_linux:      "523743acbbe6a4b623831033f479acb3abd04050b3fd742d3bea3cc1abedbeda"
   end
 
   # We need the CLT installed for libIndexStore.dylib.
@@ -47,7 +48,8 @@ class Periphery < Formula
 
   test do
     system "swift", "package", "init", "--name", "test", "--type", "executable"
-    system "swift", "build", "--disable-sandbox"
+    # Swift Build, the default since Swift 6.4, only writes an index store when asked
+    system "swift", "build", "--disable-sandbox", "--enable-index-store"
     manifest = shell_output "swift package --disable-sandbox describe --type json"
     File.write "manifest.json", manifest
     system bin/"periphery", "scan", "--strict", "--skip-build", "--json-package-manifest-path", "manifest.json"

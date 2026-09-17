@@ -19,7 +19,7 @@ class KeepkeyAgent < Formula
 
   # https://github.com/romanz/trezor-agent/commit/60bed0f411595ea1b0bb122fafdd0852e10d1eec
   deprecate! date: "2026-02-21", because: :unmaintained
-  disable! date: "2027-02-21", because: :unmaintained
+  disable! date: "2026-09-16", because: :unmaintained
 
   depends_on "pkgconf" => :build # for hidapi resource
   depends_on "cryptography"

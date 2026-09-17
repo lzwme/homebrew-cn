@@ -1,34 +1,19 @@
 class Fcp < Formula
   desc "Significantly faster alternative to the classic Unix cp(1) command"
   homepage "https://github.com/Svetlitski/fcp/"
-  url "https://ghfast.top/https://github.com/Svetlitski/fcp/archive/refs/tags/v0.2.1.tar.gz"
-  sha256 "e835d014849f5a3431a0798bcac02332915084bf4f4070fb1c6914b1865295f2"
+  url "https://ghfast.top/https://github.com/Svetlitski/fcp/archive/refs/tags/v0.2.2.tar.gz"
+  sha256 "c8c3da588711b1684370009e9a186232fe3c6c0db7ceff00b0ce0dacb98b9403"
   license "BSD-3-Clause"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "3ecde8d0f0c52f74dd8b0b7eb77f87d9e17a3da375da6a5c0849de5c7e68fc92"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "6e7d88353ca2875a9db0c92e402a0b6e3872dc6d09ffa332524238d50b1535f2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c5c7dd64a671f3be2b628cddb46a09bd5f7584d52b6b64ed0a1dd67f56b97564"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3b0e528ead3af345955bcd02b2793a037e0cf8593b2b94c834ef27eeab2785e5"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "4763ef14ff83f2fbea8fa7ed18a06cf3e8e1551524d41efd3cbc860724d1593d"
-    sha256 cellar: :any_skip_relocation, sonoma:         "8cff2c5b5be26264b89298a8387318b8dea3e005f8d66a6d09af4277ffe12e8c"
-    sha256 cellar: :any_skip_relocation, ventura:        "60b50e242a72308c45294e69ce7e49722d2de21e82897fef7bead52809056cb1"
-    sha256 cellar: :any_skip_relocation, monterey:       "cbae19b5f16fac050195c57c77c40dcf6d5737d0ed8dec5d7876274456e9581e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "b91b77aba18ae0a1806de04a8543dd7c6234f73936bd9a6653ed8052c31d1d3f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1c4dc5c096786f4581a3799e890ac3c98c86d32a9ef59f57ca525a4a717f4eab"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "726a6e02c898303b23176423dea7a525bd4146fefdf544ed7f8f4e3a4ed1e133"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "9cd7cac8e1836e0bcd97890b29c61a6c4121a8e1ae29f653a535da53996319e2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "b2256850c5d557b19ea7e27b0cb1fb62b1b011eb2e3605eae0b61f68bb835380"
+    sha256 cellar: :any,                 arm64_linux:       "b5329a998ce87196e31d753a92c9df02e2f838c717a205a77c5fca449b41325b"
+    sha256 cellar: :any,                 x86_64_linux:      "8f769ddab1abbc3a21c4d2cb11ee200b0d9fc4468464ca23f1b7b2bb848cac4b"
   end
-
-  # Failed to build against latest Rust, and no commits since 08/22/2022
-  deprecate! date: "2026-01-23", because: :unmaintained
-  disable! date: "2027-01-23", because: :unmaintained
 
   depends_on "rust" => :build
-
-  # rust 1.80 build patch, upstream pr ref, https://github.com/Svetlitski/fcp/pull/42
-  patch do
-    file "Patches/fcp/rust-1.80.patch"
-  end
 
   def install
     system "cargo", "install", *std_cargo_args

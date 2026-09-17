@@ -1,18 +1,17 @@
 class Checkpwn < Formula
   desc "Check Have I Been Pwned and see if it's time for you to change passwords"
   homepage "https://github.com/brycx/checkpwn"
-  url "https://static.crates.io/crates/checkpwn/checkpwn-0.6.1.crate"
-  sha256 "96b9c24f535d00f32031fe3b2d4bab9e6276ad5ad565b141ebf4f9d1bd197fa7"
+  url "https://static.crates.io/crates/checkpwn/checkpwn-0.6.2.crate"
+  sha256 "ab3ba2a2fe867307ae05121d24eef96527b25ca1ca8ef10d808b24e2e51c271e"
   license "MIT"
   head "https://github.com/brycx/checkpwn.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "565c76f080b2ab16453606892e2884aff4da7187f4d45538bf69210874211276"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "52a6b3eaa8d91838f553b3c2bf62de861bc598682fdb8a2e555184250d0f1608"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "eb40324086a06beec2f0a09343193141ede8d54c065d2a63ca505ae6e19281dc"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "fe0612a01cb7399ec573706fba582c89cad825d012c7829db1aca0f2fc1114a0"
-    sha256 cellar: :any,                 arm64_linux:       "1e8426c2c2bfc07fdc43a1059da103205733f36e36efa8a54cffafead7e09585"
-    sha256 cellar: :any,                 x86_64_linux:      "217bdc353245d2fd5adfe8f4f46e0ecb40a33077418c340f8a36ac96c416d14e"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "4d50ca7a08012847eb110945a91cc2dcbd79fc15c693e5101181405c716ae7a9"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "694011d3bb43326d542b06174a33275fde6eb7ab023854fa3835ded88c0ba5ec"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "a8e72c9e4834aaf47aba49711d419167ed305a7f0993f38e459eeab3aa5eff08"
+    sha256 cellar: :any,                 arm64_linux:       "86d730294b35b3f7d2e27ad36c46d4c83d5237af6ea98024220002b0033b2491"
+    sha256 cellar: :any,                 x86_64_linux:      "c4623c95d50367b3a5871d27b04b1718a0258f0c66ba975cca4f156e2e996a32"
   end
 
   depends_on "rust" => :build

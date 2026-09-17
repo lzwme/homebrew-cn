@@ -1,8 +1,8 @@
 class Biome < Formula
   desc "Toolchain of the web"
   homepage "https://biomejs.dev/"
-  url "https://ghfast.top/https://github.com/biomejs/biome/archive/refs/tags/@biomejs/biome@2.5.13.tar.gz"
-  sha256 "a84601f38b4a7039cc8d39dc5bb6472a05566b7c680bb66835fab9a1a61703f3"
+  url "https://ghfast.top/https://github.com/biomejs/biome/archive/refs/tags/@biomejs/biome@2.5.14.tar.gz"
+  sha256 "5b87b7df94e8c6b968d44daecf92c46231908012be5f6f41ac33bcabbd53e66e"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/biomejs/biome.git", branch: "main"
 
@@ -12,15 +12,20 @@ class Biome < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "ce8690d1027944058725aaa2483a30178e33cebcd5b5088d9ef84e9d22acb73c"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "ceb11dd04a8aea5039cdd78b9475bbae233d906131567fdcb48a5f6d8fe5c1ec"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "f59ef8118538c7a80b69d27a8b8df882433951519c4173c05705e9b46a8e40c7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "6c42d707b0acfa03dd341760ee0439d935757a8f4b425d61c8108831afe74a73"
-    sha256 cellar: :any,                 arm64_linux:       "f3dcdde1bd0042c2edbf1b40f34b5bbedb9afb58c5faa5eb0a5c958c6985dc00"
-    sha256 cellar: :any,                 x86_64_linux:      "ee1bede99db993df1ff9a21f00b13ae0774f5e0ab61833c1599b8ae2a663312e"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "6f88c7683746e1e3f2c88c5e6257754a5c35731b6e6166d4feaa30fb629b9ea9"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "33be538f2023ca710dc85d948a2c7472de5cda0292cfc33b8c92283cc2778371"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "96bdf96848c3bfc2b8535c39a8a6b92d74306626c071fc9ae9c6568fc8840a89"
+    sha256 cellar: :any,                 arm64_linux:       "e49169d64fda53b9cd28e6bb1935459c62b96f6a8c2a6b51d128ae93c5406890"
+    sha256 cellar: :any,                 x86_64_linux:      "b47b6f7a021d58a8fa0b3d7a1a5018f6b3855111f84f1b0d999c22c9bd0f0ec0"
   end
 
   depends_on "rust" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", "--locked", "--target", "host-tuple"
+  end
 
   def install
     # Work around SIGKILL on arm64 linux runner from fat LTO

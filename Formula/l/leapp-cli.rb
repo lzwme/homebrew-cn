@@ -6,17 +6,12 @@ class LeappCli < Formula
   license "MPL-2.0"
 
   bottle do
-    rebuild 1
-    sha256                               arm64_tahoe:    "a08d025eecfd8d28388c454b5e6c5265cdcd49996228d2f6ff08621ee1955ad5"
-    sha256                               arm64_sequoia:  "a9f0381ebb60002b45fb92808def37bb0d636c0b3f843277e24e96f8a5b5b3de"
-    sha256                               arm64_sonoma:   "db6a98507e65188b1fe4eb7708746e9a0e9e5fb7966a0f824b6f70ab2ca7891f"
-    sha256                               arm64_ventura:  "1a9d83cc2ab81ea856376671c9cf61dfa0274030cd58db67a63b5233d8b055f8"
-    sha256                               arm64_monterey: "b418a493285d50efe1cce5809193c085243026e22664ac795c8c352dcc60fa01"
-    sha256                               sonoma:         "ee8f75982419c3a730061d07335b51a2911c3c22dc21a398c8d68f3bcfe8f0ba"
-    sha256                               ventura:        "fe8abfb2954f71fb7c34d7611235983d0878086a378e1945d62f8686963616fb"
-    sha256                               monterey:       "d53b9cb4420f95a20647b6d0ca02da15c005941889272b7aa00e4a2d1e5206cb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "a3b894178f3e5aacfefb391d2ad86beaee359c2ef6d5263338ec6e69eaaa9af6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d9b5a0a0f4dfdef5663463397ef4b2d68d917de753f7bc0ccafeda392a1356d7"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "ecc6de45eedbb13cdfd6657b15eeeb24ef368d4424c70ee3537d659cdc401c61"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "cc1e7ec357d22e8c68abcb8f5b2621df647bd6a08e1c4bbc5a728ffee04c0c3b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "94ed65f571e7a93cafbdfd13e3c48a5d2f8124775e4362267391f181099d66f9"
+    sha256 cellar: :any,                 arm64_linux:       "a199c8d0df81843247b1bf519763fdde8c7d061465ba43492ee7271ef75b960d"
+    sha256 cellar: :any,                 x86_64_linux:      "70795892174769c47f4fcf3bb8a44682054f626800df115138492b7c51d12f02"
   end
 
   depends_on "pkgconf" => :build
@@ -33,6 +28,11 @@ class LeappCli < Formula
   def install
     system "npm", "install", *std_npm_args
     bin.install_symlink libexec.glob("bin/*")
+
+    # Build keytar's native addon explicitly
+    cd libexec/"lib/node_modules/@noovolari/leapp-cli/node_modules/keytar" do
+      system "npm", "run", "build"
+    end
   end
 
   def caveats

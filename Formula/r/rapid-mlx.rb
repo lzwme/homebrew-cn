@@ -3,14 +3,14 @@ class RapidMlx < Formula
 
   desc "Fast local AI engine for Apple Silicon with an OpenAI-compatible API"
   homepage "https://github.com/raullenchai/Rapid-MLX"
-  url "https://files.pythonhosted.org/packages/99/20/83bef369fa0dacbd873e63355f23054d59f5bcf9ba6ad9b615b643296161/rapid_mlx-0.14.1.tar.gz"
-  sha256 "d476e16dde0e796b7b6f56e061ca1c1908cd38fae8807733e426a476345e2782"
+  url "https://files.pythonhosted.org/packages/fa/0f/479be68f215f1ff03c5cbfbfec07cc41e3c27a07e3dd115b12fba0cf5a85/rapid_mlx-0.14.2.tar.gz"
+  sha256 "6dccf4ebdccad65199b29a1276fe4e91eb9a07beff5286acdfed50059e9ecfb3"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "19468e5713aeab62bc89c4bdb53d45fcb601a8b74699cdf52de61c6cf962d3bc"
-    sha256 cellar: :any, arm64_tahoe:       "123a01a32fb75e9fb8fa7463e8a8d4ac3ca31e5e956acb68bf633b58b0720d55"
-    sha256 cellar: :any, arm64_sequoia:     "eacf9d0ffb5d3b6f2111d3a99274cf5a9c54b53b0b5023a5ae561be603e54997"
+    sha256 cellar: :any, arm64_golden_gate: "48de88f7236901a063367a6d6fb63283963a3bc53d502cd78d44eb29b46e3e81"
+    sha256 cellar: :any, arm64_tahoe:       "1c9984b9793401deca3097e5125dbaf9022768c6a663781881b4c290b7185a2d"
+    sha256 cellar: :any, arm64_sequoia:     "7388a4b99741808720f098cad9ee84517386e91e9c19743dd280f436b826347c"
   end
 
   depends_on "cmake" => :build
@@ -90,8 +90,8 @@ class RapidMlx < Formula
   end
 
   resource "httpcore2" do
-    url "https://files.pythonhosted.org/packages/be/ad/f4f0e57345f1870f3e8cb624e058d7eca6e5a27d33bcc3311d9b618734cd/httpcore2-2.12.0.tar.gz"
-    sha256 "9293522bba0aa7c4c8e9e3f040c16575bd8868e155a77fa30c7a9085a5eae648"
+    url "https://files.pythonhosted.org/packages/15/8c/e925b1c92018abb3a1863ce1549d76d2381e334d21d65d4ac8f65dabd78a/httpcore2-2.13.0.tar.gz"
+    sha256 "2adc8be4fb285fbcd6d894298db3b52c177e74b6674eda3a76bd36be3292a3db"
   end
 
   resource "httpx" do
@@ -100,8 +100,8 @@ class RapidMlx < Formula
   end
 
   resource "httpx2" do
-    url "https://files.pythonhosted.org/packages/7f/f8/579a8b51e42e38ee32647df9f08aa25643ae788e275cc625b199829c4671/httpx2-2.12.0.tar.gz"
-    sha256 "7631fe9887a8a2275f4a2540e053aa670fcc50742864a9ae7c66e609fdcf12cf"
+    url "https://files.pythonhosted.org/packages/b9/a0/e9deef4654132857b5a5dbe4eddd0ac59c2814500e11f2f5044cd81103ee/httpx2-2.13.0.tar.gz"
+    sha256 "81bd07dc67a3701729ef1f777a3c00c915d4539604fdb5afd327f8682f6b7b44"
   end
 
   resource "huggingface-hub" do
@@ -195,8 +195,8 @@ class RapidMlx < Formula
   end
 
   resource "pyjwt" do
-    url "https://files.pythonhosted.org/packages/3b/81/58d0ac84e1ef3a3843791d6954d94c0b33d526c75eeb1efbce9d0a4c4077/pyjwt-2.13.0.tar.gz"
-    sha256 "41571c89ca91598c79e8ef18a2d07367d4810fbbd6f637794879baf1b7703423"
+    url "https://files.pythonhosted.org/packages/af/c3/8a3b59c25070cc61dc517fbdfa5dc0904670c96f605cc69759dc09166b99/pyjwt-2.14.0.tar.gz"
+    sha256 "77283c83fb56ecf566a886c757a714bc83668e38156de2cce8263302f42e0b86"
   end
 
   resource "python-multipart" do
@@ -270,8 +270,8 @@ class RapidMlx < Formula
   end
 
   resource "tqdm" do
-    url "https://files.pythonhosted.org/packages/21/3b/6c24bec5be5e743ffd99576daa5cc077722fc7d5bbc00bd133fa0c698dc6/tqdm-4.70.0.tar.gz"
-    sha256 "55b0b0dbd97462d06ebee91e4dac24ed4d4702be82b24f07e6c1d27e08cea220"
+    url "https://files.pythonhosted.org/packages/0d/ea/b2a5bd54b28a324dae8211928b2d730b6547500342c7e6c6dea08bd0a485/tqdm-4.70.1.tar.gz"
+    sha256 "cefd0eca11b2a37a3aee776544d4f4ae913f02688135b5556b8788dfa474afc4"
   end
 
   resource "transformers" do
@@ -295,8 +295,8 @@ class RapidMlx < Formula
   end
 
   resource "uvicorn" do
-    url "https://files.pythonhosted.org/packages/f2/0f/3f86e61397dd33bf2ccf28188c40db6a740658aeebbbf6e7dbc101a1f487/uvicorn-0.52.4.tar.gz"
-    sha256 "73acfee47a0b133c5de13d219492d62d8a31e935f4fe6e41a232451a15379f86"
+    url "https://files.pythonhosted.org/packages/5d/ad/04bbb797c84fc1f26cb171f7394716f4865ffb8d8c5e1eef42565c2dfa6b/uvicorn-0.53.0.tar.gz"
+    sha256 "a9356f0cb89b3b8621529c5d5eebd69bfe154f4c3f68b4cf2de47e45fa855c2e"
   end
 
   resource "websockets" do

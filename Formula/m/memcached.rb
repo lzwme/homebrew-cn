@@ -11,12 +11,13 @@ class Memcached < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "68e37be8e89af4d756d69cbcc46334f310bf4865d4d0f70bebf5db16a3a9c3db"
-    sha256 cellar: :any, arm64_sequoia: "63862e6cd5e5f3d7f146a8d7d05e29be08943ff2efee6364d759604c63024904"
-    sha256 cellar: :any, arm64_sonoma:  "60b574b8eee009f0332f3f9baddbd00ee050f19126c5d69a356fda88f40b8d72"
-    sha256 cellar: :any, sonoma:        "0addce6ba648a7e617ceb0efe5e7fae7309e20a6c2383905c44faed13e42d48f"
-    sha256 cellar: :any, arm64_linux:   "55341142efcfc8946468e3cf6765d29fe0e3c58e661a7e53bf04a745ab3cdea5"
-    sha256 cellar: :any, x86_64_linux:  "3b54b11a1b8f0edc671ab50c1a38a6b6c224e2b806ffce1e097047a9e3ce802b"
+    sha256 cellar: :any, arm64_golden_gate: "d4b809816dfffcd1a4e2034184c835bd47fca206204cb8cb781341f3fe3c93db"
+    sha256 cellar: :any, arm64_tahoe:       "68e37be8e89af4d756d69cbcc46334f310bf4865d4d0f70bebf5db16a3a9c3db"
+    sha256 cellar: :any, arm64_sequoia:     "63862e6cd5e5f3d7f146a8d7d05e29be08943ff2efee6364d759604c63024904"
+    sha256 cellar: :any, arm64_sonoma:      "60b574b8eee009f0332f3f9baddbd00ee050f19126c5d69a356fda88f40b8d72"
+    sha256 cellar: :any, sonoma:            "0addce6ba648a7e617ceb0efe5e7fae7309e20a6c2383905c44faed13e42d48f"
+    sha256 cellar: :any, arm64_linux:       "55341142efcfc8946468e3cf6765d29fe0e3c58e661a7e53bf04a745ab3cdea5"
+    sha256 cellar: :any, x86_64_linux:      "3b54b11a1b8f0edc671ab50c1a38a6b6c224e2b806ffce1e097047a9e3ce802b"
   end
 
   head do
@@ -30,6 +31,9 @@ class Memcached < Formula
   depends_on "openssl@3"
 
   def install
+    # Workaround to disable sandbox feature due to https://github.com/memcached/memcached/issues/1313
+    ENV["ac_cv_header_sandbox_h"] = "no" if OS.mac? && MacOS.version >= :golden_gate
+
     system "./autogen.sh" if build.head?
     system "./configure", "--disable-coverage", "--enable-tls", *std_configure_args
     system "make", "install"

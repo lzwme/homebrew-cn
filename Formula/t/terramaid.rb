@@ -18,8 +18,8 @@ class Terramaid < Formula
   end
 
   # https://github.com/RoseSecurity/Terramaid/issues/565
-  deprecate! date: "2026-07-04", because: :repo_archived
-  disable! date: "2027-01-04", because: :repo_archived
+  deprecate! date: "2026-07-04", because: :checksum_mismatch
+  disable! date: "2027-01-04", because: :checksum_mismatch
 
   depends_on "go" => [:build, :test]
   depends_on "opentofu" => :test

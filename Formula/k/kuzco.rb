@@ -18,8 +18,8 @@ class Kuzco < Formula
   end
 
   # upstream repository is removed (or made private)
-  deprecate! date: "2026-07-03", because: :repo_removed
-  disable! date: "2027-07-03", because: :repo_removed
+  deprecate! date: "2026-07-03", because: :does_not_build
+  disable! date: "2027-01-03", because: :does_not_build
 
   depends_on "go" => :build
   depends_on "opentofu" => :test

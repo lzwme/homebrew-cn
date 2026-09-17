@@ -1,19 +1,17 @@
 class SlintCompiler < Formula
   desc "Compiler for the Slint UI markup language"
   homepage "https://slint.dev/"
-  url "https://ghfast.top/https://github.com/slint-ui/slint/archive/refs/tags/v1.17.1.tar.gz"
-  sha256 "68222567f8c70ff677cd4a98cd94fb4765ac0f797eb8f8608a646911c908dc2a"
+  url "https://ghfast.top/https://github.com/slint-ui/slint/archive/refs/tags/v1.18.0.tar.gz"
+  sha256 "399ef10a0bcd8db236f755e68548e2e55e7cac00ee3da7f50e8d9d6881d34c25"
   license "GPL-3.0-only"
   head "https://github.com/slint-ui/slint.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "3f40754e3a90a02041c252dd640303b6d97cc721bab03f892e6d3efb74046034"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "afd63a837ea6f0e7fcf0ce7ff03e1b097e5bdbac2b8b5b1e41dd647850f63ae7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "371503c0334cfc487fc9b5b84c527ca69ef606e6a556a6ad4526c679802ea367"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "b8f41b00edc47778e0c9d6db52c9936c799767ab3b3283ddd56db288da0bdd15"
-    sha256 cellar: :any_skip_relocation, sonoma:            "c459f5ba08d010d970189d9a73be84b59b62856789cf1905bd0edb8c8ea25ff5"
-    sha256 cellar: :any,                 arm64_linux:       "2d5715db959e9a4e1c88d0c4f46d96650c3295119294eae274e5a9901f95129a"
-    sha256 cellar: :any,                 x86_64_linux:      "bd2fead8dd3d72cb647253028a660e73df67ff6df7783deb01004355e0f23373"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "743901481ea9b37a8863fccfec22baddecade629674e44542b6b031b8d71f03c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "27f3eb4b5e267073fa19ed7e94c0a0be71932e3edcb03067c12a11d52c7a517e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "c8cb924528b6f5c3a916d2fe06dc71fae4a734f043b26a260af9fa1885ebb193"
+    sha256 cellar: :any,                 arm64_linux:       "b8d54584bba96a0e301f222e927804d31d5d0a4625bc05250553e6adc86797a9"
+    sha256 cellar: :any,                 x86_64_linux:      "e6e99f66d7bb8cac9ea691f70c6eec7de2e9d0833bcd7e96e0da74395745cd5f"
   end
 
   depends_on "rust" => :build

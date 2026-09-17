@@ -1,29 +1,21 @@
 class AtomicQueue < Formula
   desc "C++14 lock-free queues"
   homepage "https://max0x7ba.github.io/atomic_queue/html/benchmarks.html"
-  url "https://ghfast.top/https://github.com/max0x7ba/atomic_queue/archive/refs/tags/v1.9.3.tar.gz"
-  sha256 "08157c1ffa6dee0ee9c34a102ee1a9da91b822e213a7cce79d6d8aed9c7a7979"
+  url "https://ghfast.top/https://github.com/max0x7ba/atomic_queue/archive/refs/tags/v1.9.4.tar.gz"
+  sha256 "fecfa9ca12fc203e40fd967c2bfa8033f77d0bde0e3b21c8ca5f5f9eeeabe022"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "9a4f80416f7dd14c64ecfbcc3f69fe047c5d036f145ad071ef6b0b22e3e683c5"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "9a4f80416f7dd14c64ecfbcc3f69fe047c5d036f145ad071ef6b0b22e3e683c5"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "9a4f80416f7dd14c64ecfbcc3f69fe047c5d036f145ad071ef6b0b22e3e683c5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "909aa19375ab3cf179685fed3df9d63e665d6f2062078d947c6044d6dbe618cb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "909aa19375ab3cf179685fed3df9d63e665d6f2062078d947c6044d6dbe618cb"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "7f0efd983f44e6bde5d7aa18466b0883b764edfe8e5b764493152be3f806d1ac"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "7f0efd983f44e6bde5d7aa18466b0883b764edfe8e5b764493152be3f806d1ac"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "7f0efd983f44e6bde5d7aa18466b0883b764edfe8e5b764493152be3f806d1ac"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "ebf77bfb6c05e1f69cbd142920e8a491831f2044ad0728554ba3382b64179825"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "ebf77bfb6c05e1f69cbd142920e8a491831f2044ad0728554ba3382b64179825"
   end
 
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkgconf" => :test
-
-  # Apple clang has no `libatomic`, which the meson build requires since 1.9.3
-  patch do
-    url "https://github.com/max0x7ba/atomic_queue/commit/73647516617e9ddb356f7f24811e4b0ae58672d1.patch?full_index=1"
-    sha256 "5b750112ef279aba5c30770953ebe1b2ebcc2a0fd0e9e2198330c649682cb52c"
-    type :unofficial
-    resolves "https://github.com/max0x7ba/atomic_queue/pull/108"
-  end
 
   def install
     system "meson", "setup", "build", "-Dtests=false", *std_meson_args

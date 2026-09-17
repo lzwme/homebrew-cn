@@ -1,8 +1,8 @@
 class Goaccess < Formula
   desc "Log analyzer and interactive viewer for the Apache Webserver"
   homepage "https://goaccess.io/"
-  url "https://tar.goaccess.io/goaccess-1.11.tar.gz"
-  sha256 "01024b129c974582bfe7a4653eb55b1c83cb2b57ab3dda96e820bc185a25ff71"
+  url "https://tar.goaccess.io/goaccess-1.12.tar.gz"
+  sha256 "3aef5f6d5061decc6fc4946339b3a61b170bd256f80b4e861194b095df83ec86"
   license "MIT"
 
   livecheck do
@@ -11,13 +11,11 @@ class Goaccess < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "426bfcae974e4b63fae3b6a6660a941fbdf3b53034f9b720043c094f71ec675e"
-    sha256 arm64_tahoe:       "82ba580103ce56e1381c57dd768fa01c9bbc8c4622c9db2df2a31bfe6dcbb961"
-    sha256 arm64_sequoia:     "526b8d4b348e5a520fb09cf9f725b7669213dde9007c91f9fb0d0eb07d97b504"
-    sha256 arm64_sonoma:      "d9f8365df61a0fe016d3fc22056dbfc0146c154e84aa3bbe1afeeaf1c3f5153c"
-    sha256 sonoma:            "8a90c9aab787d336896fcda6e34dcd3300a6e3a62cf0c78b977beea884d46cf6"
-    sha256 arm64_linux:       "7d95821151d86d700aaac3fa0003f6cd180bb44f10aa0aeee77bfcdc2caf08f6"
-    sha256 x86_64_linux:      "4b70eaa508cce11b985f83bb6ee6b092a71127e6e744f71bf4a58ce48b25f956"
+    sha256 arm64_golden_gate: "28598cdadafc44cc2bf2aa8657faecc7feeb1d761090d2e0c5477ad673b4db13"
+    sha256 arm64_tahoe:       "e718f0d4c244e03e9fe8598864e27aa04b12a34b3dd316de308dab48d4700b2d"
+    sha256 arm64_sequoia:     "b8e456822cbc356e0d5cedc96a437947dc1efb83ac3c8a5e7b91f87697c3fcc2"
+    sha256 arm64_linux:       "b6f1e983bcb2a5504ac9dd4f701d872e3096cfe561a54fea598e91aa81afadc3"
+    sha256 x86_64_linux:      "7dce0adedf72e4ad07bc8817dbfe97661ab7ed983631011c5108eef11e8ea309"
   end
 
   head do

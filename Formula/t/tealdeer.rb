@@ -21,6 +21,13 @@ class Tealdeer < Formula
   conflicts_with "tlrc", because: "both install `tldr` binaries"
   conflicts_with "tldr", because: "both install `tldr` binaries"
 
+  # `test do` block downloads the tldr pages cache
+  allow_network_access! :test
+
+  def fetch
+    system "cargo", "fetch", "--locked", "--target", "host-tuple"
+  end
+
   def install
     system "cargo", "install", *std_cargo_args
     bash_completion.install "completion/bash_tealdeer" => "tldr"

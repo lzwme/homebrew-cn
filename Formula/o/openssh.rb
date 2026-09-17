@@ -14,12 +14,13 @@ class Openssh < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "4c2ccf5627e6f828305f242128b8763bb9360d28ea13a5e3c565a0a8f1a36a1b"
-    sha256 arm64_sequoia: "32a4774dd72242b4a9edc85ef9ac3da1e0a6b890fc5fe794759b25161c03ccd5"
-    sha256 arm64_sonoma:  "eb91e04da08f67b0b52d5dd6991bf511478ab267ebe8ee3d2532d5cbcd5f3645"
-    sha256 sonoma:        "9c3f633ef50138f4dd704567cf80857d4c17a0f03d451c7ef407be80d93ae988"
-    sha256 arm64_linux:   "f8ba944aeedf80c1260a6b746f73c016a804e95e9f24d4b7df20af5124566641"
-    sha256 x86_64_linux:  "7884435d1290c3f9a890cd55c97dc72b23a6ac657d2772f6b4bbf6f56098c9bc"
+    sha256 arm64_golden_gate: "a6e570a6db2e595e18c9543a499f8079d6aaf85cb2f949ce122bd792c3526018"
+    sha256 arm64_tahoe:       "4c2ccf5627e6f828305f242128b8763bb9360d28ea13a5e3c565a0a8f1a36a1b"
+    sha256 arm64_sequoia:     "32a4774dd72242b4a9edc85ef9ac3da1e0a6b890fc5fe794759b25161c03ccd5"
+    sha256 arm64_sonoma:      "eb91e04da08f67b0b52d5dd6991bf511478ab267ebe8ee3d2532d5cbcd5f3645"
+    sha256 sonoma:            "9c3f633ef50138f4dd704567cf80857d4c17a0f03d451c7ef407be80d93ae988"
+    sha256 arm64_linux:       "f8ba944aeedf80c1260a6b746f73c016a804e95e9f24d4b7df20af5124566641"
+    sha256 x86_64_linux:      "7884435d1290c3f9a890cd55c97dc72b23a6ac657d2772f6b4bbf6f56098c9bc"
   end
 
   # Please don't resubmit the keychain patch option. It will never be accepted.
@@ -36,6 +37,17 @@ class Openssh < Formula
   uses_from_macos "libedit"
   uses_from_macos "libxcrypt"
 
+  # Backport for kSBXProfilePureComputation removal
+  on_golden_gate :or_newer do
+    depends_on "autoconf" => :build
+    depends_on "automake" => :build
+    patch do
+      url "https://github.com/openssh/openssh-portable/commit/d4b4c304a202f5099f2f60be9af9ba266212bb74.patch?full_index=1"
+      sha256 "55bd3ca5d1f1ba82279572a357c8d0d72c447668a67fe1d6cf2eee40599c3b2d"
+      type :backport
+    end
+  end
+
   on_linux do
     depends_on "linux-pam"
     depends_on "zlib-ng-compat"
@@ -48,6 +60,9 @@ class Openssh < Formula
 
   def install
     ENV.append "CPPFLAGS", "-D__APPLE_SANDBOX_NAMED_EXTERNAL__" if OS.mac?
+
+    # Regenerate configure due to patch
+    system "autoreconf", "--force", "--install", "--verbose" if OS.mac? && MacOS.version >= :golden_gate
 
     args = %W[
       --sysconfdir=#{etc}/ssh

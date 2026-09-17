@@ -1,8 +1,8 @@
 class Mmctl < Formula
   desc "Remote CLI tool for Mattermost server"
   homepage "https://mattermost.com"
-  url "https://ghfast.top/https://github.com/mattermost/mattermost/archive/refs/tags/v11.10.2.tar.gz"
-  sha256 "561b6fb1593d75d32c94519d8922a0c68e86eabb7c6af028465d0ccfa8297977"
+  url "https://ghfast.top/https://github.com/mattermost/mattermost/archive/refs/tags/v11.11.0.tar.gz"
+  sha256 "b382caff73c9e65eb022d70ef7e14ad43c242861519315beaa956c7cb3628674"
   license all_of: ["AGPL-3.0-only", "Apache-2.0"]
   head "https://github.com/mattermost/mattermost.git", branch: "master"
 
@@ -12,11 +12,11 @@ class Mmctl < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "78f4abeee0f1c31721ad5a3437ce306f9f095471f6dbd996cb56b04f5138dc48"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "78f4abeee0f1c31721ad5a3437ce306f9f095471f6dbd996cb56b04f5138dc48"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "78f4abeee0f1c31721ad5a3437ce306f9f095471f6dbd996cb56b04f5138dc48"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "16a6d2ed62f5ceef831eb68c7e9de3d4cc08a72d70078ac785a64f7fb867e7c2"
-    sha256 cellar: :any,                 x86_64_linux:      "252b47e316599fd977d9ee88dd811a947b821e8639432fbc2461fac2b1fd0f27"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "4a19ec95c55c6d16e1de99fcb9e8b9d7463fd5628e09b8762a2dabd37d565b1d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "4a19ec95c55c6d16e1de99fcb9e8b9d7463fd5628e09b8762a2dabd37d565b1d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "4a19ec95c55c6d16e1de99fcb9e8b9d7463fd5628e09b8762a2dabd37d565b1d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "77beeb88ee606a70ea138cf73b854977e7dc4459f62e5a6b01c70a40f222fe6f"
+    sha256 cellar: :any,                 x86_64_linux:      "abe64c61ab7ab03c27d2269ad970a98f8f6d7ee684ad661d5c165ffe119acdf4"
   end
 
   depends_on "go" => :build

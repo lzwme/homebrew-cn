@@ -1,18 +1,16 @@
 class Pangomm < Formula
   desc "C++ interface to Pango"
   homepage "https://www.gtk.org/docs/architecture/pango"
-  url "https://download.gnome.org/sources/pangomm/2.56/pangomm-2.56.2.tar.xz"
-  sha256 "f1e984c85a85b6a0e61616366521f51dd8282a072bb45d15b5084762b62f4c0e"
+  url "https://download.gnome.org/sources/pangomm/2.58/pangomm-2.58.0.tar.xz"
+  sha256 "217514c1a65035c2fce6e69e33b0d92bafa2594cc474e995a4473441b10f3a33"
   license "LGPL-2.1-only"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "f8162d4ca4c3ac4e349e97704e1e35d2c823af376180fdafd5f7826d84e0203d"
-    sha256 cellar: :any, arm64_tahoe:       "c50be3b577c1dd5329b742b97c51182af99225e4af2c7e9ae7a30c27f3f9e4f3"
-    sha256 cellar: :any, arm64_sequoia:     "66876cb88e4a97c28bfc160bbef33c2e87252a060f3b4bf21ef0c0f69290fc91"
-    sha256 cellar: :any, arm64_sonoma:      "4a9fa4ed2f7cf7619f980ebe916e6f4d7267bcc07e5fa23881e95f68ec6ef012"
-    sha256 cellar: :any, sonoma:            "2acbac325ad9deb034b28d161a3f6bdf43275e98de4fd9da11cdae42e332c9fe"
-    sha256               arm64_linux:       "d02e8869da84ce1e9ac044a46af2f6532afb03a78570da1b8533b827d2c38771"
-    sha256               x86_64_linux:      "6d53e3d4fff1001e35dc57f5ebfc19bfd5539aed55e74283d844270942c28ed9"
+    sha256 cellar: :any, arm64_golden_gate: "4ed7a8fd20c2c4b23080fc8881e107499f3a51e3347c854a77ef3051a090e6e7"
+    sha256 cellar: :any, arm64_tahoe:       "af63e35822fdec3f914dba2af313c621d34b0c2d123714c2a5408aed2caa571e"
+    sha256 cellar: :any, arm64_sequoia:     "1ee24cf248414829a0bd416ca6774bd230f92c214470a36f061eb2bd707a06cf"
+    sha256 cellar: :any, arm64_linux:       "f9da19ee46804e872edd1066cab040e1f85b42e0d9ae62a9c0ae39887bd57f34"
+    sha256 cellar: :any, x86_64_linux:      "e15b8ad21c1571af43370a0243481d9dd73b0b8fab14b9d5b822441b39a885d1"
   end
 
   depends_on "meson" => :build

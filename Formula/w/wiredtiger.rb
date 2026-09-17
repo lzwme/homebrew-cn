@@ -11,17 +11,15 @@ class Wiredtiger < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "dfd76ff5a1f4613d737c82c0ebb8bcbf5cb79faf7a11a2b103c689bccfbed8f8"
-    sha256 cellar: :any,                 arm64_sequoia: "a7462c10690b4b271a507ebe77a9401f6407fd7730d6cffc3dd91f46cecc7f02"
-    sha256 cellar: :any,                 arm64_sonoma:  "69d074c898cc7496956c98b3bfe5e65e69ffbd164cb8797f33c004de39e15b2d"
-    sha256 cellar: :any,                 sonoma:        "98b5ac96a1369d4e5f87e1538fc4c1d1888ce15949aa901e336561297796fa43"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ba8058cc496593f04586db264681fa2698427402b7b44de3cccc99402596f2df"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "440d19c8f513fc401876a626f5cbba6ba4750ef959c44bf3106481ec50277098"
+    rebuild 2
+    sha256 cellar: :any, arm64_golden_gate: "5e151cc2c0ceca8de05d5f4f7f1bf98d5cabf917db585fea82d76fde3cb9dfe1"
+    sha256 cellar: :any, arm64_tahoe:       "7702bdf65943a7b8034ec68f5b7d6b5931b924d19af568e296fc19d4f1ac7871"
+    sha256 cellar: :any, arm64_sequoia:     "2af1845b1c55625951c23e50faa7b403f2331cb25a0fee4a15aaf21be6104301"
+    sha256 cellar: :any, arm64_linux:       "6ff57955e5789fba8c9dbb84e96204360c27a7455b2c97303ab74f4557cb6f52"
+    sha256 cellar: :any, x86_64_linux:      "3b7328a417a34d0730f0e5ffa4eebb0f4c78d839661ef3e11042048319bc93b0"
   end
 
   depends_on "cmake" => :build
-  depends_on "swig" => :build
   depends_on "lz4"
   depends_on "snappy"
   depends_on "zstd"
@@ -43,6 +41,7 @@ class Wiredtiger < Formula
       -DHAVE_BUILTIN_EXTENSION_SNAPPY=1
       -DHAVE_BUILTIN_EXTENSION_ZLIB=1
       -DCMAKE_INSTALL_RPATH=#{rpath}
+      -DENABLE_PYTHON=OFF
     ]
     args << "-DCMAKE_C_FLAGS=-Wno-maybe-uninitialized" if OS.linux?
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args

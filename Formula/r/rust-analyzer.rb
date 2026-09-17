@@ -16,6 +16,12 @@ class RustAnalyzer < Formula
 
   depends_on "rust" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", "--locked", "--target", "host-tuple"
+  end
+
   def install
     cd "crates/rust-analyzer" do
       system "cargo", "install", "--bin", "rust-analyzer", *std_cargo_args

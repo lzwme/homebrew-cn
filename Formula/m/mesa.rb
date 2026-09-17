@@ -3,8 +3,8 @@ class Mesa < Formula
 
   desc "Graphics Library"
   homepage "https://www.mesa3d.org/"
-  url "https://archive.mesa3d.org/mesa-26.2.2.tar.xz"
-  sha256 "eeb29ca7e56cfaa8e8a79538dcf834e3b18e501c31bef5145e959ea437cc4216"
+  url "https://archive.mesa3d.org/mesa-26.2.3.tar.xz"
+  sha256 "1628058a8d2c0615975de5a15ab7bbb9638c50000b5bed9456ff423ea034a81f"
   license all_of: [
     "MIT",
     "Apache-2.0", # include/{EGL,GLES*,vk_video,vulkan}, src/egl/generate/egl.xml, src/mapi/glapi/registry/gl.xml
@@ -24,12 +24,11 @@ class Mesa < Formula
   head "https://gitlab.freedesktop.org/mesa/mesa.git", branch: "main"
 
   bottle do
-    sha256 arm64_golden_gate: "d985fca00d3b8e83f9c2ffe16058bb3efc347ffc2dc0b0fd4f27da4b07a5dada"
-    sha256 arm64_tahoe:       "dbd98b3a630082cfd33e1dd45751af4eccfe610e5fedaea366aba4f711bd6523"
-    sha256 arm64_sequoia:     "b37dd89aed3f02acfb78201716dcce30317dd3c83a9d0cef8176d3bca1ead9f5"
-    sha256 arm64_sonoma:      "1d4005c486575de0d028932c054b59924fb2b2404347e4cafe222c2d7679ba8e"
-    sha256 arm64_linux:       "3a97eff9252820a20a9f199457ad9aabd25849d16bcb966faeb239c42c18fb99"
-    sha256 x86_64_linux:      "9a02d335dd8104816826c7d1cda415b13235dcf3e1e09dc5365c0ee63a25d095"
+    sha256 arm64_golden_gate: "348097ee8a0dac2b8bd05ab5b504956fba72c470f63c0c9d47b242f3b148ee72"
+    sha256 arm64_tahoe:       "a844a02d02920664696f70557f4b25219fdcd61803acc87821c56927a2e7d41b"
+    sha256 arm64_sequoia:     "a9a970b52daa86073f791a57bfe0ac35ddf9c009234e524fa2cd791067713e1a"
+    sha256 arm64_linux:       "fcacab5b5a16acabfb7e7f88e47792339659d649c35dbac5ed442fe962168730"
+    sha256 x86_64_linux:      "869a6670604a2d0629c36f9505d6df66e2eaa2225646c216ab7b6f6129d97d8a"
   end
 
   depends_on "bindgen" => :build

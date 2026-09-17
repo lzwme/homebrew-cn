@@ -16,12 +16,12 @@ class Gwyddion < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "0b68818a49fef20580c6d7f3055ad7e108fda64592c4e66353dbe91762ab2830"
-    sha256 arm64_sequoia: "2bf33cea35773f3a6db7ff6a6c80700ceeffe32c382c3710c82be3ac1f57a646"
-    sha256 arm64_sonoma:  "79abadad092e0670df97cc6078ac31c0f7e88f1e78baee412b62087bc76aa848"
-    sha256 sonoma:        "9fa8d23ece1da41bcb48ee217e92ce1579b76741f2d456dd2d2c35c80eefdad9"
-    sha256 arm64_linux:   "0b3934f11b431c089878be3263c8a26e86e25ab5fd5b138eb4524449ef0657a4"
-    sha256 x86_64_linux:  "4a4aba81dfb4883218e0b5f2f9237285f1c1fc7b18bd364c28d4e773a5d658a2"
+    rebuild 1
+    sha256 arm64_golden_gate: "0e98c179fbc6b04f19fda239c020380d532d13a3c75afb18efacc38cdc581372"
+    sha256 arm64_tahoe:       "4eb0ec4c6d67cc4fb1ccf43a7d59e94b411cfccb485521a30b2209e8b0d38eee"
+    sha256 arm64_sequoia:     "20b1a41d80218345defef9ab299277dccdf2e49f127d710d9919ef795ff9eff2"
+    sha256 arm64_linux:       "ea90ad30db6da25be39eac715197cf5937914306cf8812bed4fb61a5a54fe3ab"
+    sha256 x86_64_linux:      "d1bd85a414c63f04bf18bf24ed6b07f26bf54e169cd6d71e1a691bf892e0904a"
   end
 
   head do
@@ -57,6 +57,7 @@ class Gwyddion < Formula
   depends_on "libxml2"
   depends_on "libzip"
   depends_on "pango"
+  depends_on "webp"
   depends_on "zstd"
 
   uses_from_macos "bzip2"

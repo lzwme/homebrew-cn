@@ -1,18 +1,16 @@
 class Vet < Formula
   desc "Policy driven vetting of open source dependencies"
   homepage "https://safedep.io/"
-  url "https://ghfast.top/https://github.com/safedep/vet/archive/refs/tags/v1.19.0.tar.gz"
-  sha256 "cafa628de006e4c11d6fa5d884d8aafc2e38f7826feb50d309fc66edece5cefb"
+  url "https://ghfast.top/https://github.com/safedep/vet/archive/refs/tags/v1.19.1.tar.gz"
+  sha256 "529c9d663e8b21250e3e7da5708327f8c7b927621734f09004ba74387709bf1d"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "15fc2758321834ff52a1577b3ed97dbbd9562c8b6645437b59d32212457f93d2"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "1967f1934b044953f7e8b9dbf9c76f98b9c6e834b5f215318a1a3bc3e1ba9534"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "1e7a3df6e2beb2e0cf4cd5f39807f67a2bce86c29be28e9d4f1b6d49a4701464"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "0aa809c9d900a27399acd879b8dfccefe0996825b5256ccab569db6ee9878c83"
-    sha256 cellar: :any_skip_relocation, sonoma:            "fff1713ed4a0a4f1c944a61b1ff274b6c9bad4ac70af0eb6814bdac6fae84afa"
-    sha256 cellar: :any,                 arm64_linux:       "2b33aa666462b63f321ea2e339580e3bb0f284b3426dfb29a96dfc25ff695d3c"
-    sha256 cellar: :any,                 x86_64_linux:      "98a77eca9816e455efe9c76a0bd61dd0bad22e200c7a15d0b1defc4c83a5da11"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "5ed647425e864ceccd02270bc63e444705159c996351b878b5f0e4141d48ef40"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "8e4a1b09af2e8b1924e010843a68ce2637c9a91f92069aa0dac71b71a18742c6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "5365a895868adbfe55dbab1c3204e66f2abe73b842e16ea279634bace1daaef0"
+    sha256 cellar: :any,                 arm64_linux:       "e2ae746b61436043de660e1a201e322f24cfb0c2d9c1063d05b1930b633f4d20"
+    sha256 cellar: :any,                 x86_64_linux:      "f446b8825b39d3592237ba7d8b15865ebb9555c38fabc694b3b9f1d26bc2c277"
   end
 
   depends_on "go"

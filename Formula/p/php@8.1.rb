@@ -9,12 +9,13 @@ class PhpAT81 < Formula
 
   bottle do
     rebuild 1
-    sha256 arm64_tahoe:   "5ff7fd9f131a31f4687f4c94326d8b1a32a8fb2e9fe105347210318d75c54574"
-    sha256 arm64_sequoia: "8a6c91d23b7c081a89cdfb5de7f406e6602ab62df17b3c6c18175e1d761e4e62"
-    sha256 arm64_sonoma:  "f30bb2362d2624871040e87fe626a6b9403266e953195aed6f99cffb333eee1a"
-    sha256 sonoma:        "b67e28c6ecd1cdfacd93e38800b6932d5c26bce44944131a80e88e554d3db8e7"
-    sha256 arm64_linux:   "3303fd88f104755b8ed7afd47f64fd480697e53709b042e2e187fc178cd0e686"
-    sha256 x86_64_linux:  "90b8ea1e11381a9d967460cf44f9d15b5e1461af005aaf5e4c6334d4a96abd76"
+    sha256 arm64_golden_gate: "93c4e6a34a30ea010c76a7bda9db25b68f218faafdd16b186983d01fdfd8405c"
+    sha256 arm64_tahoe:       "5ff7fd9f131a31f4687f4c94326d8b1a32a8fb2e9fe105347210318d75c54574"
+    sha256 arm64_sequoia:     "8a6c91d23b7c081a89cdfb5de7f406e6602ab62df17b3c6c18175e1d761e4e62"
+    sha256 arm64_sonoma:      "f30bb2362d2624871040e87fe626a6b9403266e953195aed6f99cffb333eee1a"
+    sha256 sonoma:            "b67e28c6ecd1cdfacd93e38800b6932d5c26bce44944131a80e88e554d3db8e7"
+    sha256 arm64_linux:       "3303fd88f104755b8ed7afd47f64fd480697e53709b042e2e187fc178cd0e686"
+    sha256 x86_64_linux:      "90b8ea1e11381a9d967460cf44f9d15b5e1461af005aaf5e4c6334d4a96abd76"
   end
 
   keg_only :versioned_formula
@@ -76,6 +77,9 @@ class PhpAT81 < Formula
     # Work around to support `icu4c` 75, which needs C++17.
     # Can remove if upstream backports support into PHP 8.1
     ENV["ICU_CXXFLAGS"] = "-std=c++17"
+
+    # Avoid C23 due to K&R declarations
+    ENV["ac_cv_prog_cc_c23"] = "no"
 
     # buildconf required due to system library linking bug patch
     system "./buildconf", "--force" if OS.mac?
@@ -312,6 +316,7 @@ class PhpAT81 < Formula
       ErrorLog "#{testpath}/httpd-error.log"
       ServerRoot "#{formula_opt_prefix("httpd")}"
       PidFile "#{testpath}/httpd.pid"
+      Mutex file:#{testpath} default
       LoadModule authz_core_module lib/httpd/modules/mod_authz_core.so
       LoadModule unixd_module lib/httpd/modules/mod_unixd.so
       LoadModule dir_module lib/httpd/modules/mod_dir.so

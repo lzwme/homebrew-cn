@@ -1,23 +1,25 @@
 class Duck < Formula
   desc "Command-line interface for Cyberduck (a multi-protocol file transfer tool)"
   homepage "https://duck.sh/"
-  url "https://dist.duck.sh/duck-src-9.5.3.45464.tar.gz"
-  sha256 "22ca9fea06ae284d25f785be68dbe69201c196cf743329c4d5e3139e53865a37"
+  url "https://ghfast.top/https://github.com/iterate-ch/cyberduck/archive/refs/tags/release-9-5-4.tar.gz"
+  version "9.5.4.45528"
+  sha256 "dce8e54c5f7b813b3cc42595f939b1f0135679cb4c802a5c0a1c4464a7086c75"
   license "GPL-3.0-only"
   head "https://github.com/iterate-ch/cyberduck.git", branch: "master"
 
   livecheck do
     url "https://dist.duck.sh/"
-    regex(/href=.*?duck(?:-src)?[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    regex(/href=.*?duck[._-]v?(\d+(?:\.\d+)+)[._-][^"]*?\.deb/i)
   end
 
+  no_autobump! because: :incompatible_version_format
+
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "aaa64c7995f44b96596e7ec8fdd39eae7e9f6aea77001ddf1288d909eddf47ec"
-    sha256 cellar: :any, arm64_sequoia: "7205c2b3150b1ea9db43c7bee77a274bf2f91bbab10d0bfcbf901836c7541f6e"
-    sha256 cellar: :any, arm64_sonoma:  "3dbe404d4402b56590a55241bee6d49fc9ed7402f41c6fc093534fe065d297ef"
-    sha256 cellar: :any, sonoma:        "05846a69ffdfdaab907da63353b0e0d329e5e6c91eeb0bc5be043be770e90944"
-    sha256 cellar: :any, arm64_linux:   "1c863f9737c1aad13a891a086bab1996c4d0978969321f4bbb46bf5657027392"
-    sha256 cellar: :any, x86_64_linux:  "d38e70bac903b3e9c97ed9acae5c8e23adb12315c1623a20476e8be2b3fb32d1"
+    sha256 cellar: :any, arm64_golden_gate: "d1b4fa4464ab9db587b0b9b6da38012af08d61963fe21d4143a9b137f82bb987"
+    sha256 cellar: :any, arm64_tahoe:       "b7febceeea6a50e7976c10fed24eb8f8231ec871b0a0306e20f377ae09e1659a"
+    sha256 cellar: :any, arm64_sequoia:     "c4598837c09438d328ca8a3cb4a79db36e3d2ac29bcae607b0145e39fe4132a1"
+    sha256 cellar: :any, arm64_linux:       "66c1b771f99c36eefb9852f0d2f7a8ee9fc1f38f707a599b0db2d6d02ffb3571"
+    sha256 cellar: :any, x86_64_linux:      "4381fe1fcf8a18605401ac1c6a15336fc59e982363fb30b41bb6237392bbc3c6"
   end
 
   depends_on "ant" => :build
@@ -120,6 +122,8 @@ class Duck < Formula
 
       cd "apple/JavaNativeFoundation" do
         xcodebuild "VALID_ARCHS=#{Hardware::CPU.arch}",
+                   "MACOSX_DEPLOYMENT_TARGET=#{MacOS.version}", # Xcode 27 rejects the project's 10.14 target
+                   "OTHER_LDFLAGS=-headerpad_max_install_names",
                    "OTHER_CFLAGS=-Wno-strict-prototypes", # Workaround for Xcode 14.3
                    "-project", "JavaNativeFoundation.xcodeproj"
         buildpath.install "build/Release/JavaNativeFoundation.framework"

@@ -1,42 +1,43 @@
 class BazelDiff < Formula
   desc "Performs Bazel Target Diffing between two revisions in Git"
   homepage "https://github.com/Tinder/bazel-diff/"
-  url "https://ghfast.top/https://github.com/Tinder/bazel-diff/archive/refs/tags/v47.0.0.tar.gz"
-  sha256 "cd39da1c8e00fc10887448c63f3f5d538aac5f9b6e98ae5bde4f0bc0267b3028"
+  url "https://ghfast.top/https://github.com/Tinder/bazel-diff/archive/refs/tags/v48.0.0.tar.gz"
+  sha256 "a4c0c0f7a78266ec95716ae32b38e14a6035b105eb7779fa15d9b6310c10f2ba"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "33b96607aecc240f119e633d45b36929aceddf181af0dcbb12d2f2f7bbc903e0"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "33b96607aecc240f119e633d45b36929aceddf181af0dcbb12d2f2f7bbc903e0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "33b96607aecc240f119e633d45b36929aceddf181af0dcbb12d2f2f7bbc903e0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "9868b6fec7458999d81462fb9ba571a3198c63a440977a92b6255a98fbf55d2a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "9868b6fec7458999d81462fb9ba571a3198c63a440977a92b6255a98fbf55d2a"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "d6e415eb47e987df248b3cee11208945a8f32d32d8073d877f377aecdbee4fdb"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "49df1086bb2289670381b040f809816529aafa78bc3f248bb1d7d0d5ec6d2b51"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "221487511d2054752f618fa69113584759c2ff3cb80805848e4b9e358ee110f8"
+    sha256 cellar: :any,                 arm64_linux:       "b7898f10d2ebe9ae9cb5e4f92aba95f25356719e4d9696a1e96d30ecf10b31c0"
+    sha256 cellar: :any,                 x86_64_linux:      "617aefb72547857df3f281e85faa263eb65009ab1bd7d947d5cb7b90727cef19"
   end
 
-  depends_on "bazel" => [:build, :test]
-  depends_on "openjdk"
+  depends_on "protobuf" => :build
+  depends_on "rust" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", "--locked", "--target", "host-tuple"
+  end
 
   def install
-    ENV["JAVA_HOME"] = formula_opt_prefix("openjdk")
-    rm ".bazelversion"
-
-    extra_bazel_args = %w[
-      -c opt
-      --@protobuf//bazel/toolchains:prefer_prebuilt_protoc
-      --enable_bzlmod
-      --java_runtime_version=local_jdk
-      --tool_java_runtime_version=local_jdk
-      --repo_contents_cache=
-    ]
-
-    system "bazel", "build", *extra_bazel_args, "//cli:bazel-diff_deploy.jar"
-
-    libexec.install "bazel-bin/cli/bazel-diff_deploy.jar"
-    bin.write_jar_script libexec/"bazel-diff_deploy.jar", "bazel-diff"
+    # Use our protoc rather than the prebuilt one from `protoc-bin-vendored`
+    ENV["PROTOC"] = formula_opt_bin("protobuf")/"protoc"
+    system "cargo", "install", *std_cargo_args
   end
 
   test do
-    output = shell_output("#{bin}/bazel-diff generate-hashes --workspacePath=#{testpath} 2>&1", 1)
-    assert_match "ERROR: The 'info' command is only supported from within a workspace", output
+    (testpath/"from.json").write <<~JSON
+      {"//app:leaf": "Rule#old~old", "//app:top": "Rule#top~same"}
+    JSON
+    (testpath/"to.json").write <<~JSON
+      {"//app:leaf": "Rule#new~new", "//app:top": "Rule#top~same"}
+    JSON
+
+    output = shell_output("#{bin}/bazel-diff get-impacted-targets --startingHashes from.json " \
+                          "--finalHashes to.json --workspacePath #{testpath}")
+    assert_equal "//app:leaf\n", output
   end
 end

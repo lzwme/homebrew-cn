@@ -3,18 +3,17 @@ class Apm < Formula
 
   desc "Dependency manager for AI agent configuration"
   homepage "https://microsoft.github.io/apm/"
-  url "https://files.pythonhosted.org/packages/80/63/11eb297d227893a5418efe044d99f74390985ceb8730a7d007538372dc02/apm_cli-0.30.0.tar.gz"
-  sha256 "4f412c65aac6a19864c0552904199d85e8f1a286c60de48ebd3b1422eccb760f"
+  url "https://files.pythonhosted.org/packages/30/ac/cdfcdd0bcb7e070e3d02f901863d354bbf7b9a4bbace6babad7aace7725f/apm_cli-0.31.0.tar.gz"
+  sha256 "bb1cd2e86fc04545fc2ad4cea96660614df002b78ee1dbb8085ce5141722253d"
   license "MIT"
   head "https://github.com/microsoft/apm.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "b06871256555a18150497809af760def53cf66f5e1eaa075dd988bf72d595564"
-    sha256 cellar: :any, arm64_tahoe:       "c6725e4933de8ce421fda6b966badf60c68f0b22688a219d122bb07415cf3299"
-    sha256 cellar: :any, arm64_sequoia:     "74b52dec31a3b42f78a446fb8e6d9a92c7d581b53c4b74330502ef6d9a29aeab"
-    sha256 cellar: :any, arm64_sonoma:      "e28da78caf310c348a1b11fb9635d9425b7b1b770592ebfae8f708c0d6789b64"
-    sha256 cellar: :any, arm64_linux:       "5a83fab1331d5d67186d39a35606ea9a08d268be16495c4a5f25a11e27949739"
-    sha256 cellar: :any, x86_64_linux:      "066c3eb782a2a42e6be2083cd45961b138eb0c4621b9cf4830d14a627f085c75"
+    sha256 cellar: :any, arm64_golden_gate: "7e8d7f395471b5418df63af1788bb3961940c3c98079b527cca160a05ea7c75c"
+    sha256 cellar: :any, arm64_tahoe:       "a3c59b3c15b35708e08d75311cd713a3f4dcae4fd61c863833dca02094e404ce"
+    sha256 cellar: :any, arm64_sequoia:     "7c34d18acfb2391a77b7e5f5bce6c36c8ed95c417d95b0a72d8e1e3d5a042e1e"
+    sha256 cellar: :any, arm64_linux:       "5c243353d774c02f554583efca71c1b7ab96fc7beb4994a131a2145d3b600e1c"
+    sha256 cellar: :any, x86_64_linux:      "f473de38b379b0e837ada64aeff5248cba5d3a2fc51c973f182c320933a711e9"
   end
 
   depends_on "rust" => :build # for jiter
@@ -86,8 +85,8 @@ class Apm < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/0a/a0/50c2c0ce5e74d7721bbb1b19a26ebd339aac5878553a6e35308c2f31f935/filelock-3.32.5.tar.gz"
-    sha256 "f6a6a28f743f9b95ce19db5abe0f376f75eb56517dff21e1a4751e2657d3e83d"
+    url "https://files.pythonhosted.org/packages/38/46/126b1831dca12060d4a8296bf9c4fe5c93c4f22197fa239cb0cc82042bba/filelock-3.32.6.tar.gz"
+    sha256 "a3f55a18af3652a94d8f47d6055df434f254ca1d02ef2524850c6d249ca2512c"
   end
 
   resource "frozenlist" do
@@ -111,13 +110,13 @@ class Apm < Formula
   end
 
   resource "httpcore2" do
-    url "https://files.pythonhosted.org/packages/be/ad/f4f0e57345f1870f3e8cb624e058d7eca6e5a27d33bcc3311d9b618734cd/httpcore2-2.12.0.tar.gz"
-    sha256 "9293522bba0aa7c4c8e9e3f040c16575bd8868e155a77fa30c7a9085a5eae648"
+    url "https://files.pythonhosted.org/packages/15/8c/e925b1c92018abb3a1863ce1549d76d2381e334d21d65d4ac8f65dabd78a/httpcore2-2.13.0.tar.gz"
+    sha256 "2adc8be4fb285fbcd6d894298db3b52c177e74b6674eda3a76bd36be3292a3db"
   end
 
   resource "httpx2" do
-    url "https://files.pythonhosted.org/packages/7f/f8/579a8b51e42e38ee32647df9f08aa25643ae788e275cc625b199829c4671/httpx2-2.12.0.tar.gz"
-    sha256 "7631fe9887a8a2275f4a2540e053aa670fcc50742864a9ae7c66e609fdcf12cf"
+    url "https://files.pythonhosted.org/packages/b9/a0/e9deef4654132857b5a5dbe4eddd0ac59c2814500e11f2f5044cd81103ee/httpx2-2.13.0.tar.gz"
+    sha256 "81bd07dc67a3701729ef1f777a3c00c915d4539604fdb5afd327f8682f6b7b44"
   end
 
   resource "idna" do
@@ -131,13 +130,13 @@ class Apm < Formula
   end
 
   resource "jiter" do
-    url "https://files.pythonhosted.org/packages/1d/1f/10936e16d8860c70698a1aa939a46aa0224813b782bce4e000e637da0b2d/jiter-0.16.0.tar.gz"
-    sha256 "7b24c3492c5f4f84a37946ad9cf504910cf6a782d6a4e0689b6673c5894b4a1c"
+    url "https://files.pythonhosted.org/packages/9c/1f/8176d92e001f86505424b41664032ae26a882bc9ca41a32c803f373f9195/jiter-0.17.0.tar.gz"
+    sha256 "03e432f226a453851079fb84cd17c6da9991eab723e28d716f14ae3d906e0c12"
   end
 
   resource "llm" do
-    url "https://files.pythonhosted.org/packages/f9/8e/5ffec2a091d4cd2691cfd0e8ba3e1904aeb1931313287cfd68f9c1db8b40/llm-0.34.tar.gz"
-    sha256 "09d0b076c4c720c4daeece6ee3a0aae76620059aced552f09589e0e0d7c5f09d"
+    url "https://files.pythonhosted.org/packages/b5/68/baeda27122a280940c5e9ae7291b821fa96ea23f50a00f568e9cff0c3aac/llm-0.35.tar.gz"
+    sha256 "2ee0955b2e372408813ce966f3d03ad2c7419b85a547880c53797d31d3a3fdb6"
   end
 
   resource "llm-github-models" do
@@ -156,13 +155,13 @@ class Apm < Formula
   end
 
   resource "multidict" do
-    url "https://files.pythonhosted.org/packages/1a/c2/c2d94cbe6ac1753f3fc980da97b3d930efe1da3af3c9f5125354436c073d/multidict-6.7.1.tar.gz"
-    sha256 "ec6652a1bee61c53a3e5776b6049172c53b6aaba34f18c9ad04f82712bac623d"
+    url "https://files.pythonhosted.org/packages/14/95/989c1b5ca17b72128661530cd6e351a0a83cda9a4d6c036e9ed976c18931/multidict-6.8.0.tar.gz"
+    sha256 "5cd4637ce76312ba1e05eb9c5193fec231f64fee0944e135fa1e951242355b37"
   end
 
   resource "openai" do
-    url "https://files.pythonhosted.org/packages/f2/b0/1100c93f93e1c174205ce8d15a049a446f0dc88e9262c1f1f223fe6b9493/openai-3.8.0.tar.gz"
-    sha256 "6138a5a1333a1be9e4d1edea2d160b311542787b029543f87de4961c66358d16"
+    url "https://files.pythonhosted.org/packages/d0/88/472211fbaee888238d2e0657bcfdba5f64f3d38899dbfdada5e632a9758f/openai-3.14.0.tar.gz"
+    sha256 "714ba70b91ee1e78e75263694bebfeaca004432032685333a46d0e0206114bf9"
   end
 
   resource "pluggy" do
@@ -171,8 +170,8 @@ class Apm < Formula
   end
 
   resource "propcache" do
-    url "https://files.pythonhosted.org/packages/ec/44/c87281c333769159c50594f22610f77398a47ccbfbbf23074e744e86f87c/propcache-0.5.2.tar.gz"
-    sha256 "01c4fc7480cd0598bb4b57022df55b9ca296da7fc5a8760bd8451a7e63a7d427"
+    url "https://files.pythonhosted.org/packages/a7/a6/9e6708e2a34a43f1070246c8d0e773e315cc4fdb598a9cdb8ff7d0c450b2/propcache-0.5.3.tar.gz"
+    sha256 "5f283fde8fd8b1944fd1a1bd11db759b55c5f190795668d5187d3e3b1165d98b"
   end
 
   resource "puremagic" do
@@ -276,8 +275,8 @@ class Apm < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/53/0c/06f8b233b8fd13b9e5ee11424ef85419ba0d8ba0b3138bf360be2ff56953/urllib3-2.7.0.tar.gz"
-    sha256 "231e0ec3b63ceb14667c67be60f2f2c40a518cb38b03af60abc813da26505f4c"
+    url "https://files.pythonhosted.org/packages/e3/05/b17359e1cefb4f909b5e40b1b90a496d987258916dbbf88e842c729f510e/urllib3-2.8.0.tar.gz"
+    sha256 "63bf2ead4c879426ebf22ef2a781eeb4aa3b4ae798a0435506f8687fd5bb9b63"
   end
 
   resource "watchdog" do
@@ -291,8 +290,8 @@ class Apm < Formula
   end
 
   resource "yarl" do
-    url "https://files.pythonhosted.org/packages/31/33/ebe9e3d1f86c7a0b51094c0a146392045ca1631d2664889539dec8088a33/yarl-1.24.5.tar.gz"
-    sha256 "e81b83143bee16329c23db3c1b2d82b29892fcbcb849186d2f6e98a5abe9a57f"
+    url "https://files.pythonhosted.org/packages/75/16/e8be8e2fb175bbf41a0680381a319f1199fae256588241a2ac8677eafb49/yarl-1.25.1.tar.gz"
+    sha256 "03dd38de09bc213e9a8b29761eec33ee1d5318dac0e49d8af36e4d27830e23a7"
   end
 
   def install

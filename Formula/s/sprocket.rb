@@ -1,8 +1,8 @@
 class Sprocket < Formula
   desc "Bioinformatics workflow engine built on the Workflow Description Language (WDL)"
   homepage "https://sprocket.bio"
-  url "https://ghfast.top/https://github.com/stjude-rust-labs/sprocket/archive/refs/tags/v0.30.1.tar.gz"
-  sha256 "f0c425502ef2330cd90f386012b20d2c5e6bcc4e80ae89ee1c5d419bee3c2fbf"
+  url "https://ghfast.top/https://github.com/stjude-rust-labs/sprocket/archive/refs/tags/v0.31.0.tar.gz"
+  sha256 "71e61ebc2aa03253c1a1836721ab3afe4b14563b215de8a8fa2fdf20548fe4fe"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/stjude-rust-labs/sprocket.git", branch: "main"
 
@@ -12,12 +12,11 @@ class Sprocket < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "cac1bf91a93a943883ab748791c3cb74bc819dbed7c71e04eb5541b6b3d9c7f7"
-    sha256 cellar: :any, arm64_tahoe:       "bbb9c68f649c64c6f47e9c9c88c766b0455982d7fd0834968e3c7eaebbd14edc"
-    sha256 cellar: :any, arm64_sequoia:     "8daf37530f9fd357b528a9d1c048b8b0e7e8c3c3510cc4f8342b691d41ad66e2"
-    sha256 cellar: :any, arm64_sonoma:      "78b92a09932ee4734960ba41ee65011936b8bc2a7d5e22cb9462b14135f56afc"
-    sha256 cellar: :any, arm64_linux:       "00b316bdd51c9da5aaf60f519ed90a04b7d874a1677f43d5e47c10a971851083"
-    sha256 cellar: :any, x86_64_linux:      "3192560b2f257f319d94174d89e96b0a12777a489949fcf4231f9c66c7ad8ee3"
+    sha256 cellar: :any, arm64_golden_gate: "26fc6de346fd9cd7d95928b0186f392fca4ab10dcb2bd13f385978b5ebe57a62"
+    sha256 cellar: :any, arm64_tahoe:       "04bf43c6de0cee0485abdfd6e9125f5cb6d810dad27b0d7a30ac4f4f478a2345"
+    sha256 cellar: :any, arm64_sequoia:     "4b72eb7fe673cdeef858d7f54f3ff705415ee72de861db50aaf8b08b1e3f860f"
+    sha256 cellar: :any, arm64_linux:       "409e9de50b46fa1a856760610a0e08bfcf8788455b61dd3cbc165c1b9193f120"
+    sha256 cellar: :any, x86_64_linux:      "93471fa2c64fa3995613d4b7d0908c36c2ed31cb0af44cd5a87bcd09545b7c94"
   end
 
   depends_on "pkgconf" => :build

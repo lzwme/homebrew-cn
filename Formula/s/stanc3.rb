@@ -2,19 +2,16 @@ class Stanc3 < Formula
   desc "Stan transpiler"
   homepage "https://github.com/stan-dev/stanc3"
   url "https://github.com/stan-dev/stanc3.git",
-      tag:      "v2.39.0",
-      revision: "739471362446086911f1d6472c19ae0749c366ea"
+      tag:      "v2.40.0",
+      revision: "d58446e631b02cacc5355e373defc6092a684554"
   license "BSD-3-Clause"
-  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "f9f27c34095f1f1e91215f4c6b7b56ce26f09e9ddbe0ec23f62851c068f9fd93"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "801baa07706b72c4d489abdff6ed987b71be14c85caa878fe4ba196c42ab3f21"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "8b1807dcba8574e4eadd96d6e25e894560125921a103ef3a09c534dac80593a2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "e3e42a84e539e4a08369f282f2ddb9fca1bec5ea1cb89c705f70eaf6e327bd42"
-    sha256 cellar: :any_skip_relocation, sonoma:            "77703df7b945ecbe94f40cd97d5ef4b0fa491110a16f4c7db2457d3bf56ee19e"
-    sha256                               arm64_linux:       "f896cb1a403c1ead0df52f40637511b7dd6ea94dad519af28029a68aa5a8762e"
-    sha256                               x86_64_linux:      "5d1a3c2fa48e2069cd36174d384fe74b92c5acc79bb7f1eb583e89723bf618d6"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "a79fe8f081c77718538a0f6d9a13cf8917359af4088a20d6f3e30748960081c8"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "fe1941ff3ff9b3ac76a74b9216d5d74ec4babe3348bd3296f2fced78614bd95b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "e8b6d20d8d19596b3d06f563c79df00cfda92e3647d17ac30a9cea5355c5a387"
+    sha256                               arm64_linux:       "5465af6ad97b923d6cff76306b5eacfe9811267406bd74d48b4e16f097d20c57"
+    sha256                               x86_64_linux:      "38f000db2857431ab90a425aedf574f6e0d12a65616d7c6cab966a375f5bdb73"
   end
 
   depends_on "ocaml" => :build
@@ -30,13 +27,6 @@ class Stanc3 < Formula
   deny_network_access!
 
   def fetch
-    # Workaround to build with OCaml 5.5.0
-    inreplace "stanc.opam" do |s|
-      s.gsub! '"ocaml" {= "4.14.1"}', '"ocaml" {>= "4.14.1"}'
-      s.gsub! '"core" {= "v0.16.1"}', '"core" {= "v0.17.2"}'
-      s.gsub! '"ppx_deriving" {= "5.2.1"}', '"ppx_deriving" {= "6.1.1"}'
-    end
-
     system "opam", "init", "--compiler=ocaml-system", "--disable-sandboxing", "--no-setup"
     system "opam", "install", ".", "--deps-only", "--download-only"
   end
@@ -55,6 +45,6 @@ class Stanc3 < Formula
     system bin/"stanc", "algebra_solver_good.stan"
     assert_path_exists testpath/"algebra_solver_good.hpp"
 
-    assert_match "stanc3 v#{version}", shell_output("#{bin}/stanc --version")
+    assert_match version.to_s, shell_output("#{bin}/stanc --version")
   end
 end

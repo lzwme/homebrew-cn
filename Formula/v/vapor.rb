@@ -7,10 +7,12 @@ class Vapor < Formula
   head "https://github.com/vapor/toolbox.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "74cfa46115a5eed7f286976223201bf8591812c99a40a99f4ac5a92aa9556dab"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e4ce207c66f4c6041934098bdd900d82c0d74290dbf52d0f6cc18c8d9899e780"
-    sha256 cellar: :any,                 arm64_linux:   "1649275728cd8456e616cb802216706b72a0b2f5c803efdbbea190c70ecee0e8"
-    sha256 cellar: :any,                 x86_64_linux:  "57eb082ec54f0d0a837e422f332ed464877df153bc795443bbe9cd12cfd0d380"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "648947c1a7ee2636b801057f502e529edac0aa87cf1f37c96508abcaa0f43fe4"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "6d7141680a4ae37fc708f0c89a13e3e3f80d24133f951514042ce9b2e724960d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "46f4b86f2f0e4ac77a3c4f83951fb044a4ce019372fe0a74f45b961f13df05c6"
+    sha256 cellar: :any,                 arm64_linux:       "4259332f366f8de7c4852127f4f13f443db6ca6a1ac11d74ea77010d22990db0"
+    sha256 cellar: :any,                 x86_64_linux:      "a0780e507e178ee981f0d5afaa9d83ae752890e3a7832f7f4e1ae2f7a34fd9f4"
   end
 
   depends_on xcode: ["26.0", :build]
@@ -22,7 +24,7 @@ class Vapor < Formula
   end
 
   def install
-    system "swift", "build", "-Xswiftc", "-cross-module-optimization", *std_swift_args
+    system "swift", "build", *std_swift_args
     bin.install ".build/release/vapor"
   end
 

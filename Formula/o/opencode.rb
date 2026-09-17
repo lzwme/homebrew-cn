@@ -4,18 +4,18 @@ class Opencode < Formula
   url "https://ghfast.top/https://github.com/anomalyco/opencode/archive/refs/tags/v1.18.30.tar.gz"
   sha256 "d54574de6a2b02d58fe4d403035103a08bdca0f4eafac63d3681cda774e85cd9"
   license "MIT"
-  revision 1
+  revision 2
 
   livecheck do
     throttle 5
   end
 
   bottle do
-    sha256 arm64_golden_gate: "74aef99234335cf4e7c74f724acb66218a21991b3873dd722b8a79b168976053"
-    sha256 arm64_tahoe:       "37aa61490b80598c35055d0d3893c5aa21f40a17bdd64b8f1e04038a40927a9c"
-    sha256 arm64_sequoia:     "d4e1dcfe36727e65aac1bc0e4ac2ef98e2b9cb2d113c0ca837e4474132fc7299"
-    sha256 arm64_linux:       "9049d03d60e73f27050635acbcbb424a06f24fed80495ef5d3657fe1c234f1ed"
-    sha256 x86_64_linux:      "22fcc4f26cd3e99c3e810a77724e59cec10860444b8f0066b8eafc05a116771d"
+    sha256 arm64_golden_gate: "6eca0861d2393d59644241ffd768dec95423a62d72fc8d65af66e1bd22565942"
+    sha256 arm64_tahoe:       "e6b0af7ecb05fd9a033a3f0a2547c1351ec389ec4b10b1de9ad602bc91319f4c"
+    sha256 arm64_sequoia:     "4334a8e50a57fcb38beb8484bc04ccd130cff328aaa414e5a0daea1f6eb6156a"
+    sha256 arm64_linux:       "a7ccff3922000524824e102603273d7bf5bb1a04e47c81cd53af67b6a1e5ce5d"
+    sha256 x86_64_linux:      "81106fe0486c1347f80ee8b3b255da3a9c272ad460efb0425cfbae9305ddff56"
   end
 
   depends_on "bun" => :build
@@ -31,6 +31,11 @@ class Opencode < Formula
   def install
     ENV["OPENCODE_VERSION"] = version.to_s
     ENV["OPENCODE_CHANNEL"] = "prod"
+
+    # Fix server errors when building with Bun 1.4.2 by disabling splitting
+    # https://github.com/anomalyco/opencode/issues/48645
+    # https://github.com/NixOS/nixpkgs/issues/563241
+    inreplace "packages/opencode/script/build.ts", "splitting: true,", "splitting: false,"
 
     system "bun", "install", "--frozen-lockfile"
 

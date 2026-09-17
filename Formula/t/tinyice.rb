@@ -1,17 +1,17 @@
 class Tinyice < Formula
   desc "Modern, all-in-one Icecast-compatible audio/video streaming server"
   homepage "https://datanoisetv.github.io/tinyice/"
-  url "https://ghfast.top/https://github.com/DatanoiseTV/tinyice/archive/refs/tags/v2.8.2.tar.gz"
-  sha256 "2216adbfd529a2d0a80b2aa98753ef73fd7405f1706e5162a7540831e2705e39"
+  url "https://ghfast.top/https://github.com/DatanoiseTV/tinyice/archive/refs/tags/v2.10.2.tar.gz"
+  sha256 "d3816726c366f0fbbe68a9a507d1a1053fbdecb8f4d0a1294335e63381692854"
   license "Apache-2.0"
   head "https://github.com/DatanoiseTV/tinyice.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "194d28756ef3d0631c076fe8624eb0a88d416b02b24088b0567350175d88d201"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "194d28756ef3d0631c076fe8624eb0a88d416b02b24088b0567350175d88d201"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "194d28756ef3d0631c076fe8624eb0a88d416b02b24088b0567350175d88d201"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "ad0fd1a0c847bbac8dd562d72de17c52c43ee4bbe13287fb0cd142528d8183c4"
-    sha256 cellar: :any,                 x86_64_linux:      "31c10698052efcba01c6f3babe252952d2a3bf62f0dcb425b98f156fbf312a13"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "5cda2e7b7113cbc7c52868c3ef40102e8752a9101de088eaf64aaa2635255152"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "5cda2e7b7113cbc7c52868c3ef40102e8752a9101de088eaf64aaa2635255152"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "5cda2e7b7113cbc7c52868c3ef40102e8752a9101de088eaf64aaa2635255152"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "1de3602f29b6bc0977ba9d8cae1fc4850ffb1ce5570d8a3dae7f1ce5153e9509"
+    sha256 cellar: :any,                 x86_64_linux:      "099bb764d26f09e04274431616a1688db103711e036a3a6120edb48d31dc0e70"
   end
 
   depends_on "go" => :build

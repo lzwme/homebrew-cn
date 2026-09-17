@@ -1,19 +1,17 @@
 class Serf < Formula
   desc "Service orchestration and management tool"
   homepage "https://github.com/hashicorp/serf"
-  url "https://ghfast.top/https://github.com/hashicorp/serf/archive/refs/tags/v0.10.4.tar.gz"
-  sha256 "14b667203f34dd0a2cb54fcf863cd91799268f8b20230ad893fc36c23a1c7a00"
+  url "https://ghfast.top/https://github.com/hashicorp/serf/archive/refs/tags/v0.11.0.tar.gz"
+  sha256 "9b1705247d0e325d4050b79fb4ef05db899095d20ffbbf72f23161df6fd91143"
   license "MPL-2.0"
   head "https://github.com/hashicorp/serf.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "3408bbb71bf17529caec3cf9172ca136a2cb306a2cbc357701311d96226db410"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "405fa10a1160c4be7af2b49daf1e8695ec698e8083c989fbe1681b75ddc70278"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "405fa10a1160c4be7af2b49daf1e8695ec698e8083c989fbe1681b75ddc70278"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "405fa10a1160c4be7af2b49daf1e8695ec698e8083c989fbe1681b75ddc70278"
-    sha256 cellar: :any_skip_relocation, sonoma:            "fbcde3482f611e66d3a4c341b3831881a9003f071f2a2bf6e1646598188b2595"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "cbdfdf4b95ef7c5cc9ce92e8bd465b7c950d74656e3ab0c1e93e409886db705d"
-    sha256 cellar: :any,                 x86_64_linux:      "4259471cae03202c99b8a6368dea5bc3772c513753c990380013a2a7cdcb6764"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "cde5efa135b027ccc05a06d2530f37bf40fb6ccddb83999057d8f91fd1af8c23"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "cde5efa135b027ccc05a06d2530f37bf40fb6ccddb83999057d8f91fd1af8c23"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "cde5efa135b027ccc05a06d2530f37bf40fb6ccddb83999057d8f91fd1af8c23"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "56957740c2ee1379419824632086979e5ac768d44dcf2ca45e1327a8346c10dc"
+    sha256 cellar: :any,                 x86_64_linux:      "c6051672372425d9d971f60b5025d568456cd8fb0aa8854c0ba513f0ed04291d"
   end
 
   depends_on "go" => :build

@@ -1,14 +1,14 @@
 class GssNtlmssp < Formula
   desc "NTLM authentication plugin for GSSAPI"
   homepage "https://github.com/gssapi/gss-ntlmssp"
-  url "https://ghfast.top/https://github.com/gssapi/gss-ntlmssp/releases/download/v1.3.1/gssntlmssp-1.3.1.tar.gz"
-  sha256 "eb87b4c2c1137959025b355296fa556b4d5a09c480e75918ee4b13c354eae29d"
+  url "https://ghfast.top/https://github.com/gssapi/gss-ntlmssp/releases/download/v1.3.2/gssntlmssp-1.3.2.tar.gz"
+  sha256 "e5cc8d74e5f88cfe74622b14d1d28e85710dec898b754c2c78969f25147bbb55"
   license "ISC"
   head "https://github.com/gssapi/gss-ntlmssp.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_linux:  "e86ca4dcbe5d70c868f9c7b8739ef8a2e0944825dd6e66972a74f74a3d03a030"
-    sha256 cellar: :any, x86_64_linux: "d68f43184a27e73931f39e7843df728ba6d6663c2b6d43c4278deecf08b9a78d"
+    sha256 cellar: :any, arm64_linux:  "cc7534e45f967a33fcd580f9dd667ec663d383a9a4f485576949c33fb26bdc44"
+    sha256 cellar: :any, x86_64_linux: "8484e1f1db394de0e244a2becb5f3cca13fe0df9b6cae80e6dcc5485bc298522"
   end
 
   depends_on "gettext" => :build

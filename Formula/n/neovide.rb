@@ -7,12 +7,13 @@ class Neovide < Formula
   head "https://github.com/neovide/neovide.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7708b2c0dd2a7e477cbf5356651356aeee272dbe3abacc43a5458ed791a49d6d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d745456e8e4fe4ae122473125fc4193912efc7a2bec54bef439c6f683099b176"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4a601edbdf48cd39c52325dcc0ece4c63015874b9a19664b4196edb84b43f5d8"
-    sha256 cellar: :any_skip_relocation, sonoma:        "fe2e463394919597829d82ecdb9d02971941bb8d75033e141e1563618761517e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4a1d67b6e85b580e3d47ff66029ef37a77df37f5f2ebd8e9d006eecb16bce34b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "363ff7bb4895c4626687bb96d9f1dac82d73e9a73853177854dec561c8ccab51"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "9096d6a07ec45a66b6649e18dc0501d16c2208dcaf232dd84fff7c86faae3dd1"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "7708b2c0dd2a7e477cbf5356651356aeee272dbe3abacc43a5458ed791a49d6d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "d745456e8e4fe4ae122473125fc4193912efc7a2bec54bef439c6f683099b176"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "4a601edbdf48cd39c52325dcc0ece4c63015874b9a19664b4196edb84b43f5d8"
+    sha256 cellar: :any_skip_relocation, sonoma:            "fe2e463394919597829d82ecdb9d02971941bb8d75033e141e1563618761517e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "4a1d67b6e85b580e3d47ff66029ef37a77df37f5f2ebd8e9d006eecb16bce34b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "363ff7bb4895c4626687bb96d9f1dac82d73e9a73853177854dec561c8ccab51"
   end
 
   depends_on "ninja" => :build
@@ -24,6 +25,8 @@ class Neovide < Formula
 
   on_macos do
     depends_on "cargo-bundle" => :build
+    # work around https://github.com/rust-skia/rust-skia/issues/1331
+    depends_on "llvm@22" => :build if DevelopmentTools.clang_build_version >= 2100
   end
 
   on_linux do
@@ -59,6 +62,9 @@ class Neovide < Formula
       # GN doesn't use CFLAGS so pass extra paths using superenv
       ENV.append_path "HOMEBREW_INCLUDE_PATHS", formula_opt_include("freetype")/"freetype2"
       ENV.append_path "HOMEBREW_INCLUDE_PATHS", formula_opt_include("harfbuzz")/"harfbuzz"
+    elsif DevelopmentTools.clang_build_version >= 2100
+      # Work around https://github.com/rust-skia/rust-skia/issues/1331
+      ENV["CLANG_PATH"] = formula_opt_bin("llvm@22")/"clang"
     end
 
     system "cargo", "install", *std_cargo_args
@@ -82,6 +88,9 @@ class Neovide < Formula
   end
 
   test do
+    assert_match version.to_s, shell_output("#{bin}/neovide --version")
+    return if OS.mac? # unable to start neovide within macOS sandbox
+
     socket = testpath/"nvim.sock"
     nvim_cmd = ["nvim", "--headless", "-i", "NONE", "-u", "NONE", "--listen", socket]
     ohai nvim_cmd.join(" ")
@@ -89,15 +98,26 @@ class Neovide < Formula
 
     sleep 1 until socket.exist? && socket.socket?
 
-    neovide_cmd = [bin/"neovide", "--no-fork", "--server=#{socket}"]
-    neovide_cmd.unshift(formula_opt_bin("xorg-server")/"xvfb-run") if OS.linux? && ENV.exclude?("DISPLAY")
-    ohai neovide_cmd.join(" ")
-    neovide_pid = spawn(*neovide_cmd)
+    IO.pipe do |read_io, write_io|
+      xvfb = formula_opt_bin("xorg-server")/"Xvfb"
+      xvfb_pid = spawn(xvfb, "-displayfd", write_io.fileno.to_s, write_io => write_io)
+      write_io.close
+      ENV["DISPLAY"] = ":#{read_io.read.strip}"
 
-    sleep 1 until nvim_ui_count(socket).positive?
-    system "nvim", "--server", socket, "--remote-send", ":q<CR>"
+      neovide_cmd = [bin/"neovide", "--no-fork", "--server=#{socket}"]
+      ohai neovide_cmd.join(" ")
+      neovide_pid = spawn(*neovide_cmd)
 
-    Process.wait nvim_pid
-    Process.wait neovide_pid
+      sleep 1 until nvim_ui_count(socket).positive?
+      system "nvim", "--server", socket, "--remote-send", ":q<CR>"
+
+      Process.wait nvim_pid
+      Process.wait neovide_pid
+    ensure
+      if xvfb_pid
+        Process.kill "TERM", xvfb_pid
+        Process.wait xvfb_pid
+      end
+    end
   end
 end

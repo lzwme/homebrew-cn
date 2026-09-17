@@ -1,8 +1,8 @@
 class Unbound < Formula
   desc "Validating, recursive, caching DNS resolver"
   homepage "https://www.unbound.net"
-  url "https://nlnetlabs.nl/downloads/unbound/unbound-1.26.0.tar.gz"
-  sha256 "77458a7156e275c0b7b17fabcb357cb12445d95cfcb26fb9bb7d5ecba45e0b63"
+  url "https://nlnetlabs.nl/downloads/unbound/unbound-1.26.1.tar.gz"
+  sha256 "35a6dc0e425a9282c3426d9a3043144011bf0534aed4b73ab62c52aee0af1503"
   license "BSD-3-Clause"
   compatibility_version 1
   head "https://github.com/NLnetLabs/unbound.git", branch: "master"
@@ -16,13 +16,11 @@ class Unbound < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "fdbfde9bda903264ae631edb6f0e5f1e4562406e2d85769a7ef3d6ae6cc9214c"
-    sha256 arm64_tahoe:       "029c014b5d546a9f1df752aa3eab596900405aba33b2425fba15d545ab2132b4"
-    sha256 arm64_sequoia:     "291fdeea9b8decc2ddba0b6fdda9704c68fcf7ed0e3bace8e47299a43490472f"
-    sha256 arm64_sonoma:      "e425db2eb4bb95c81d1820ffbcb6fe1212193182c42f5425a46b1f6018f07447"
-    sha256 sonoma:            "078f66d2720fef061b8c0094de7e2a340e9ec5518039907b68f30da39c226766"
-    sha256 arm64_linux:       "b0a83ff8d726e32eadb98ebca5c707a7acda9b0b64f3d0112992e8babaf32790"
-    sha256 x86_64_linux:      "366ce454604f5929565b050637d256e3f0891ecdb387d5127a29994d87f552ca"
+    sha256 arm64_golden_gate: "a1f2f2cc1c73c790c73d01672b38db709bc284f632b43c9dc9675ba370fc78ec"
+    sha256 arm64_tahoe:       "7fb46e16f257df7082f48484f368f69f4c6bbc8f49966afe10f1a3de9619f61c"
+    sha256 arm64_sequoia:     "2ec2046518d7df0ca1e641865797f1c095994df8b8996bfcac71cd44aea52c47"
+    sha256 arm64_linux:       "a94584990e9e79d1403945f7f2f9df851f11d824d52af98e13f81402c6b6e109"
+    sha256 x86_64_linux:      "071515a3b4b4d3cc72906ad32a5765ad9408d29e733123e6656f168b4852c035"
   end
 
   depends_on "libevent"

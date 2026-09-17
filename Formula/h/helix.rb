@@ -7,15 +7,12 @@ class Helix < Formula
   head "https://github.com/helix-editor/helix.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_golden_gate: "164de210f7e0bd293b0b33e7e7d486a6b25901b5c430a4a9e3f4788c7356f0f9"
-    sha256 cellar: :any,                 arm64_tahoe:       "7f0f62bb6efba768f5d1f2e39cd060be9e17d35704c66597955da5bb3a898c25"
-    sha256 cellar: :any,                 arm64_sequoia:     "55a17081c4827c430ac891d6d60ed6c88f8ac698727f70467d879aef85f40e7b"
-    sha256 cellar: :any,                 arm64_sonoma:      "b0af62e33605ad1fd05cdb6ef8c978a71cc714299ae12164d1d09aa71f6fa3c9"
-    sha256 cellar: :any,                 arm64_ventura:     "9a37be124a4fd1c03b74c965a8f0267d112af349d24b7df90f0dc8f7db9c9b36"
-    sha256 cellar: :any,                 sonoma:            "0549f3a3483f52e6f4cf91d1eb5d0bbc7337f8306cce31c33f833ce41acbe1b4"
-    sha256 cellar: :any,                 ventura:           "860969afdadeda30a99d0bffce48ace7b9e8c25bd8d8b03bc734043268c96955"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "fb65655cfc088fb01da162a60ab75b419bbacb4f9e262c3be09c4193c382b56d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "8c25fb6e1058913aaeb3b39e024bd7c917ceb6bb701ade5ce9cfe2e967113363"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "4e68c5975370f7be5918cd8c160798b3e1b4085aea62403181924e8685256b6c"
+    sha256 cellar: :any, arm64_tahoe:       "0a55fa8eec03e38aaadfb2df8cf3f09d1bf9a1078c12ba7bbfded3b1253c7dbc"
+    sha256 cellar: :any, arm64_sequoia:     "590d036799387c9ca8dbda933a8c0fbb2361a98932973d862f3e08960e1a6556"
+    sha256 cellar: :any, arm64_linux:       "f61f3b4d8f06fe37b72bd67a51cb4383b64644eeb1e617f717af7e69d4b66245"
+    sha256 cellar: :any, x86_64_linux:      "acb6fd5cc7046ec666d02d28aa4aede836f539c759af26f8103b500a077e49f7"
   end
 
   depends_on "rust" => :build
@@ -23,11 +20,17 @@ class Helix < Formula
   conflicts_with "evil-helix", because: "both install `hx` binaries"
   conflicts_with "hex", because: "both install `hx` binaries"
 
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", "--locked", "--target", "host-tuple"
+  end
+
   def install
-    ENV["HELIX_DEFAULT_RUNTIME"] = libexec/"runtime"
     system "cargo", "install", "-vv", *std_cargo_args(path: "helix-term")
     rm_r "runtime/grammars/sources/"
     libexec.install "runtime"
+    bin.env_script_all_files libexec/"bin", HELIX_RUNTIME: "${HELIX_RUNTIME:-#{libexec}/runtime}"
 
     bash_completion.install "contrib/completion/hx.bash" => "hx"
     fish_completion.install "contrib/completion/hx.fish"

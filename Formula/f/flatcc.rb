@@ -1,20 +1,17 @@
 class Flatcc < Formula
   desc "FlatBuffers Compiler and Library in C for C"
   homepage "https://github.com/dvidelabs/flatcc"
-  url "https://ghfast.top/https://github.com/dvidelabs/flatcc/archive/refs/tags/v0.6.3.tar.gz"
-  sha256 "29db48a025bda2dd79399fc36f1d26516343414c0cf7d0b751b8add6b2e6181b"
+  url "https://ghfast.top/https://github.com/dvidelabs/flatcc/archive/refs/tags/v0.6.4.tar.gz"
+  sha256 "463c1cbc95777a01e103a6c961325f28e8876cb44a195b5c0f8d1117ae019580"
   license "Apache-2.0"
   head "https://github.com/dvidelabs/flatcc.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_golden_gate: "8f0034f1d3b9363ce05cc55df434ebf6a10e222eb7ede4fd7113803c0a7a0cd4"
-    sha256 cellar: :any, arm64_tahoe:       "04812aec2e32f6231fe8ab2d364fd6d5ba278f589f75fd81dba66d28f05ae012"
-    sha256 cellar: :any, arm64_sequoia:     "9f012f3973ad5b0c9ea006dd16e36346073b8a2fdc9129100806533f706e10d3"
-    sha256 cellar: :any, arm64_sonoma:      "6ae664eb8de821447bb69f380d0614fc67d13fd90f6ab852280900bac0df1ebd"
-    sha256 cellar: :any, sonoma:            "dd197eb907f67c941f6651adeffd333bba7185b72f6efe257463c746436840c2"
-    sha256 cellar: :any, arm64_linux:       "09c8f2c18b012718bf8df6fa2137405aadc7c8d325eb55b6ac073f3276cdfdf2"
-    sha256 cellar: :any, x86_64_linux:      "a07bc9305668ce062ae98478c41b3ec31cb4e2558ec118fe2ef34c228e545c3b"
+    sha256 cellar: :any, arm64_golden_gate: "b390488a0565e30084d6d5e1e69e975de78ee116e1ccb4eea8a7478865c3af09"
+    sha256 cellar: :any, arm64_tahoe:       "a66439c7140f8c2b781fd4bdcb1b00987b56b851c012f04779da95372aad8483"
+    sha256 cellar: :any, arm64_sequoia:     "9fb98c5faffdde130da5702211e6f6db22e8a68259875acedde5ac573c0c0e8e"
+    sha256 cellar: :any, arm64_linux:       "64a9b89080a483267b415722dd07ecc104a5e98550f02cd2a0e7957bfdfef717"
+    sha256 cellar: :any, x86_64_linux:      "3e06eef49163cc53d7d069671cece04dcca4a4b214a5110b421153e472f2ac3a"
   end
 
   depends_on "cmake" => :build

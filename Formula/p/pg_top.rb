@@ -15,18 +15,19 @@ class PgTop < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:    "9adc494d9d026662d8e072527c22e736fe60bf0153eecdc5d3d4b6271abfc8a9"
-    sha256 cellar: :any,                 arm64_sequoia:  "b9d888449873a35c6f29b43698da65bda0e4136eb1f2d0176338fcbc617e4e5b"
-    sha256 cellar: :any,                 arm64_sonoma:   "852a0e040171868c8c6c677306c82c81ed1fc52e7cb47413c1ddcb48cf5bb987"
-    sha256 cellar: :any,                 arm64_ventura:  "c7d46c3124f4336b96d82dac38fdaf58ecb871587f7e1f1bc52368ab3ba29e78"
-    sha256 cellar: :any,                 arm64_monterey: "a157f605a85907c0d04410199dfcc4d7de515844f0ad41bcbcde1b8b771431c8"
-    sha256 cellar: :any,                 arm64_big_sur:  "506d2459e302e37bac0f38f99cd2cc2d3c3f5fd39631ee540a6f54d59af07f4a"
-    sha256 cellar: :any,                 sonoma:         "59ad81e7e985e9b841a4667a901e94cadac8923be21654c5918326a230424910"
-    sha256 cellar: :any,                 ventura:        "825e51d876eb38a90e72413f751b88c291b1da0956c8f07b494da5d51f10ca95"
-    sha256 cellar: :any,                 monterey:       "6252dc42f3d6e6570b0371f2f10cd146a06bd52b492636bbb35f62ff07239b7a"
-    sha256 cellar: :any,                 big_sur:        "7980c5af9dec1de3a76a74fbd4b359ec1a90bdd7223fa7ffc8f4294642042fc8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "fbf1018624db8c4c76d72d83d18a7d079ae6d1fba0d7c65aea8078f9e1c31519"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "65fe3861c5e90a4c9403f4b551892cd8ac85fbbea1cc23f551ee0eda3c9de01d"
+    sha256 cellar: :any,                 arm64_golden_gate: "2b942d86fa039282ce25edcd9a7d87dce2a28fbf505e256164955375d939d1d9"
+    sha256 cellar: :any,                 arm64_tahoe:       "9adc494d9d026662d8e072527c22e736fe60bf0153eecdc5d3d4b6271abfc8a9"
+    sha256 cellar: :any,                 arm64_sequoia:     "b9d888449873a35c6f29b43698da65bda0e4136eb1f2d0176338fcbc617e4e5b"
+    sha256 cellar: :any,                 arm64_sonoma:      "852a0e040171868c8c6c677306c82c81ed1fc52e7cb47413c1ddcb48cf5bb987"
+    sha256 cellar: :any,                 arm64_ventura:     "c7d46c3124f4336b96d82dac38fdaf58ecb871587f7e1f1bc52368ab3ba29e78"
+    sha256 cellar: :any,                 arm64_monterey:    "a157f605a85907c0d04410199dfcc4d7de515844f0ad41bcbcde1b8b771431c8"
+    sha256 cellar: :any,                 arm64_big_sur:     "506d2459e302e37bac0f38f99cd2cc2d3c3f5fd39631ee540a6f54d59af07f4a"
+    sha256 cellar: :any,                 sonoma:            "59ad81e7e985e9b841a4667a901e94cadac8923be21654c5918326a230424910"
+    sha256 cellar: :any,                 ventura:           "825e51d876eb38a90e72413f751b88c291b1da0956c8f07b494da5d51f10ca95"
+    sha256 cellar: :any,                 monterey:          "6252dc42f3d6e6570b0371f2f10cd146a06bd52b492636bbb35f62ff07239b7a"
+    sha256 cellar: :any,                 big_sur:           "7980c5af9dec1de3a76a74fbd4b359ec1a90bdd7223fa7ffc8f4294642042fc8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "fbf1018624db8c4c76d72d83d18a7d079ae6d1fba0d7c65aea8078f9e1c31519"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "65fe3861c5e90a4c9403f4b551892cd8ac85fbbea1cc23f551ee0eda3c9de01d"
   end
 
   depends_on "autoconf" => :build
@@ -49,7 +50,8 @@ class PgTop < Formula
     # This file uses "vm_stats" as a symbol name which conflicts with vm_stats()
     # function in the SDK:
     inreplace "machine/m_macosx.c", "vm_stats", "vm_stats_data"
-    system "make", "install"
+    # `configure` hardcodes `CFLAGS`; pre-C23 code redeclares `bool` and uses `()` prototypes
+    system "make", "install", "CFLAGS=-std=gnu17"
   end
 
   test do

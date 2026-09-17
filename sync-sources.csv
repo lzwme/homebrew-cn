@@ -3592,6 +3592,7 @@ Homebrew-homebrew-core/Formula/k/keploy.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kepubify.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kerl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kertish-dos.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/k/ketch.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kettle.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/k/kew.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/keychain.rb, Homebrew/homebrew-core, 1
@@ -5489,6 +5490,7 @@ Homebrew-homebrew-core/Formula/o/opendoor.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/o/openexr.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/openfa.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/o/openfast.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/o/openfasttrace.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/openfga.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/openfortivpn.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/openfpgaloader.rb, Homebrew/homebrew-core, 1
@@ -8693,6 +8695,7 @@ Homebrew-homebrew-cask/Casks/a/after-dark-classic.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/afterglow.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/agent-tars.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/agentide.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/a/agentiloop-agent.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/agentkube.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/agentsmesh.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/agentsview.rb, Homebrew/homebrew-cask, 1
@@ -9029,6 +9032,7 @@ Homebrew-homebrew-cask/Casks/b/bettercmdtab.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/b/bettercmdtab@beta.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/b/betterdiscord-installer.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/b/betterdisplay.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/b/bettermacwidgets.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/bettermouse.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/bettershot.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/b/bettertouchtool.rb, Homebrew/homebrew-cask, 0
@@ -13057,6 +13061,7 @@ Homebrew-homebrew-cask/Casks/h/hop.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/h/hopper-disassembler.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/h/hoppscotch-selfhost.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/h/hoppscotch.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/h/hoptodesk.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/h/horos.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/h/hostsx.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/h/hot.rb, Homebrew/homebrew-cask, 1
@@ -14261,6 +14266,7 @@ Homebrew-homebrew-cask/Casks/o/opencomic.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/opencore-configurator.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/opencore-patcher.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/opencpn.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/o/opendisk.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/opendisplay.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/opendnsupdater.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/openemu.rb, Homebrew/homebrew-cask, 1
@@ -15143,6 +15149,7 @@ Homebrew-homebrew-cask/Casks/s/shureplus-motiv.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/shutter-encoder.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/sidenotes.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/sidequest.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/s/sidex.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/sigdigger.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/sigil.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/sigmaos.rb, Homebrew/homebrew-cask, 0
@@ -15235,6 +15242,7 @@ Homebrew-homebrew-cask/Casks/s/smplayer.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/sms-plus.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/smultron.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/snagit.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/s/snapline.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/snapmaker-luban.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/snapmaker-orca.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/snapmotion.rb, Homebrew/homebrew-cask, 0
@@ -15562,6 +15570,7 @@ Homebrew-homebrew-cask/Casks/t/teamviewermeeting.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/techsmith-capture.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/teensy.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/teeworlds.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/t/telari.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/telegram-a.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/telegram-desktop.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/telegram-desktop@beta.rb, Homebrew/homebrew-cask, 1

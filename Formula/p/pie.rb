@@ -1,18 +1,16 @@
 class Pie < Formula
   desc "PHP Installer for Extensions"
   homepage "https://github.com/php/pie"
-  url "https://ghfast.top/https://github.com/php/pie/releases/download/1.4.10/pie.phar"
-  sha256 "b88792235c8e80be568436d4cb043b49fd1869c89b64e83d23e2882ae19d70a8"
+  url "https://ghfast.top/https://github.com/php/pie/releases/download/1.5.0/pie.phar"
+  sha256 "d195dc35d311b6e0d5e2a3bd02893628f9898db3c004563f0c3a333a02010873"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "baae917ed758cea16f5b9c168d86a4b0ef82156c65a0e22b6860af18865bafa7"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "baae917ed758cea16f5b9c168d86a4b0ef82156c65a0e22b6860af18865bafa7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "baae917ed758cea16f5b9c168d86a4b0ef82156c65a0e22b6860af18865bafa7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "baae917ed758cea16f5b9c168d86a4b0ef82156c65a0e22b6860af18865bafa7"
-    sha256 cellar: :any_skip_relocation, sonoma:            "8506d994669184b540a39a841aabca66996b2549b7082e551b37d59ecf5318be"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "691d3fe2c6c0b70d801de76f0107f49e9e1efb57b594b7f87cd78704f1437486"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "691d3fe2c6c0b70d801de76f0107f49e9e1efb57b594b7f87cd78704f1437486"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "23da6ec2f28c61ec08c7fc333b76e771e2e49cca4830550fc7d7bbf782baca18"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "23da6ec2f28c61ec08c7fc333b76e771e2e49cca4830550fc7d7bbf782baca18"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "23da6ec2f28c61ec08c7fc333b76e771e2e49cca4830550fc7d7bbf782baca18"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "a35ad98f930cb7bdaf8cc33343aefa909e589b40703bcde08a25a0f59d6514ed"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "a35ad98f930cb7bdaf8cc33343aefa909e589b40703bcde08a25a0f59d6514ed"
   end
 
   depends_on "pkgconf" => :test

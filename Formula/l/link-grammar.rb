@@ -7,12 +7,12 @@ class LinkGrammar < Formula
   head "https://github.com/opencog/link-grammar.git", branch: "master"
 
   bottle do
-    sha256 arm64_tahoe:   "5082434ff9e6e700ef8355dbb540108970a46a576bd16adc45355d34942afe61"
-    sha256 arm64_sequoia: "31cc3eed5672970a75316f8d48d903929cb384f3431493276ad8f57595c9cb35"
-    sha256 arm64_sonoma:  "496da3ec09a9cd14994de8ca1e243f9246d6519df45c0cbedc43193a7a4fb13e"
-    sha256 sonoma:        "547980bfce54be897fb4095e0a172523e96574d668d881dfe6788bf8783e6427"
-    sha256 arm64_linux:   "33ffa53d4b71da419d2216e3d108ede83b23655ae0bddb3afab8f4f27be964b0"
-    sha256 x86_64_linux:  "3c3a54388b2f5f386aa59849f1f5f6197c09a97da3b62bfaa1232eb0d820e093"
+    rebuild 1
+    sha256 arm64_golden_gate: "ccf8cad221341e3a5b430063b7f9458245584419a96873e4ba7fc3a952cd98e7"
+    sha256 arm64_tahoe:       "d33b0976e53138135d4f4630436298779f502f7aefc069bbc53259436ccd6626"
+    sha256 arm64_sequoia:     "03f694cdcdc9d2e6ce3265e8d08e61a59333be3c915b002f193b22ae9f3da479"
+    sha256 arm64_linux:       "f0d1ccffa7ff47795bcb97fba75d17757f1935621a28672a0efd126ddc478ebd"
+    sha256 x86_64_linux:      "9af0e02f2077e830d742f0028c5d30702188c943e931a021b0dd5f0f8a7a2146"
   end
 
   depends_on "ant" => :build
@@ -27,6 +27,22 @@ class LinkGrammar < Formula
   uses_from_macos "flex" => :build
   uses_from_macos "libedit"
   uses_from_macos "sqlite"
+
+  # Fix build when autoconf adds `-std=gnu23` to `CC`
+  patch do
+    url "https://github.com/opencog/link-grammar/commit/b296c8fa844a66c1320b4d04713e615db9d011f0.patch?full_index=1"
+    sha256 "072b663ed547792761786530cf367b49ed526e2a722120b0f8565e1f36a21b36"
+    type :backport
+    resolves "https://github.com/opencog/link-grammar/pull/1540"
+  end
+
+  # Fix build with SWIG 4.5, which dropped the Python 2 `PyInt_*` compatibility macros
+  patch do
+    url "https://github.com/opencog/link-grammar/commit/5611221d83fc6571418e86374bbfa5daf5e5428a.patch?full_index=1"
+    sha256 "f72c7482d73fd21e6b766a147d15ac7f6186a99b632093aa4e6161620e3ac3ff"
+    type :unofficial
+    resolves "https://github.com/opencog/link-grammar/pull/1543"
+  end
 
   def install
     # Fix compile with newer Clang

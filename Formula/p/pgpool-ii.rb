@@ -11,12 +11,13 @@ class PgpoolIi < Formula
   end
 
   bottle do
-    sha256               arm64_tahoe:   "3806b34a57e6d14816d509815a5d20677cbaa384ee2a1b59882400bafa9cb15e"
-    sha256               arm64_sequoia: "8d2ccc431f16cf61383927700db7093b5daf1716196fc29d38c9a89d3afd9b79"
-    sha256               arm64_sonoma:  "8d84be999d0621382adcfcc1542e052f3b5dde0745fd6ecda5776bc072be5efb"
-    sha256 cellar: :any, sonoma:        "3dc9d2b61e2665bb17261337f9604832dab5fec058e656db37c5c99f4090fc2f"
-    sha256               arm64_linux:   "14a5c29f49ff4d7a1f6df15503efcbe8653730735c7527114301018e9a728750"
-    sha256               x86_64_linux:  "16b632529ebf79e4bcc79ba949a2474e872b5285103238168ad0849c4f5c9c3b"
+    sha256               arm64_golden_gate: "7667cad59e5e2a6a9c71d1b4503be6db0eea865d62ef42a964d3a153ec26e4a0"
+    sha256               arm64_tahoe:       "3806b34a57e6d14816d509815a5d20677cbaa384ee2a1b59882400bafa9cb15e"
+    sha256               arm64_sequoia:     "8d2ccc431f16cf61383927700db7093b5daf1716196fc29d38c9a89d3afd9b79"
+    sha256               arm64_sonoma:      "8d84be999d0621382adcfcc1542e052f3b5dde0745fd6ecda5776bc072be5efb"
+    sha256 cellar: :any, sonoma:            "3dc9d2b61e2665bb17261337f9604832dab5fec058e656db37c5c99f4090fc2f"
+    sha256               arm64_linux:       "14a5c29f49ff4d7a1f6df15503efcbe8653730735c7527114301018e9a728750"
+    sha256               x86_64_linux:      "16b632529ebf79e4bcc79ba949a2474e872b5285103238168ad0849c4f5c9c3b"
   end
 
   depends_on "libmemcached"

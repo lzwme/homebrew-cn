@@ -1,17 +1,16 @@
 class CalmCli < Formula
   desc "CLI allows you to interact with the Common Architecture Language Model (CALM)"
   homepage "https://github.com/finos/architecture-as-code/tree/main/cli"
-  url "https://registry.npmjs.org/@finos/calm-cli/-/calm-cli-1.59.0.tgz"
-  sha256 "787a5e9eccee59232c48d09e307119b65fb5a320b48169e2ab03c8764d0460e9"
+  url "https://registry.npmjs.org/@finos/calm-cli/-/calm-cli-1.60.0.tgz"
+  sha256 "f0a287f464ae9c9f52c3d94e3840e0fa8c7646aee24c57d5806e17f9eb7409fe"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "cef9e3dd5489167c1bda4ef5f4e1b15267613fe50e09654771102fb36e3696a9"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "f6bf87443af1d59c17df5d7268f237126a06c0f0e6721c75e6ada48dc29979f8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "f6bf87443af1d59c17df5d7268f237126a06c0f0e6721c75e6ada48dc29979f8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "f6bf87443af1d59c17df5d7268f237126a06c0f0e6721c75e6ada48dc29979f8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "c203cc1cba28e19ace36a0c7eebdb1417f5d8b0174d413ff865f9489157050c5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "90c200986919afb8280aadf5c82a8c321476f1c3694743cadfd36fd70c46e3c3"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "66f2665957d4a6009768cefa2b4c3804b7ccb71558a66707cb2d0ca4e50eb604"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "66f2665957d4a6009768cefa2b4c3804b7ccb71558a66707cb2d0ca4e50eb604"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "66f2665957d4a6009768cefa2b4c3804b7ccb71558a66707cb2d0ca4e50eb604"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "1e5cdc1d33154acc87cf5f8e2cee622d148637c1a90b0a56479966f6da3c60a9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "8fe7809efe30a2cb962e332ceda70ba9f7c67adf4d6f318b7276af545fd8cf6a"
   end
 
   depends_on "node"

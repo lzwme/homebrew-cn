@@ -1,19 +1,17 @@
 class CargoRelease < Formula
   desc "Cargo subcommand `release`: everything about releasing a rust crate"
   homepage "https://github.com/crate-ci/cargo-release"
-  url "https://ghfast.top/https://github.com/crate-ci/cargo-release/archive/refs/tags/v1.1.5.tar.gz"
-  sha256 "6d02028b9b1525ad6890a792854ad6e74c2a7cd791f118c442293538ae6bbf8d"
+  url "https://ghfast.top/https://github.com/crate-ci/cargo-release/archive/refs/tags/v1.1.6.tar.gz"
+  sha256 "7244e50f80b829383ead0bf6a026d6e1773f661fd7e3db4369cbad2d42f83ae0"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/crate-ci/cargo-release.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "74e109e874325b0f36d161f71135b4998cd48c1e6c5769e5da59eba3f1f6bc68"
-    sha256 cellar: :any, arm64_tahoe:       "e8143b3b07f8a3db22aa5c9f41626a9407683c2279307f3b54452588633453c2"
-    sha256 cellar: :any, arm64_sequoia:     "c67179f0c3287daa8b30816c17db24a97d86cc54ad375b6d8698d3fe1caa7987"
-    sha256 cellar: :any, arm64_sonoma:      "f907623a89a752758a85aa0d618e4fc8a22c9ba4530ada1edda4a4fcd534fb63"
-    sha256 cellar: :any, sonoma:            "8cd9a7eac06dc602d82238a0a30f34fa3facb880a043afacda76270b2b66b285"
-    sha256 cellar: :any, arm64_linux:       "6fd38b5892f5375026aa7709e229ddf89fffb6d6bceb179e2c757f64be3d3fbf"
-    sha256 cellar: :any, x86_64_linux:      "d7e30f0990b38b86522c2d0462a8f5fe5022472cbd168d23b56c1eb8d73c4765"
+    sha256 cellar: :any, arm64_golden_gate: "d0e8ef22e8e6681fcfc72c7a58dfc03c791cbbffd7fa0179b960bfa6f1e12e76"
+    sha256 cellar: :any, arm64_tahoe:       "5a20de5114d2575862b5af7a94b25790218cc1e2185a2f34ba44f699565078d8"
+    sha256 cellar: :any, arm64_sequoia:     "9935f38040ee08d6d56a590ff8fb2e13b04dd876c16450ff88d774c3ab2a2a32"
+    sha256 cellar: :any, arm64_linux:       "60131bb26f71cbb46e3d7c708ef4a57b7f8261f5c1bec9b4164d6e78044003d7"
+    sha256 cellar: :any, x86_64_linux:      "c2cf6b018906b7b4fd5506221c212e2f8e852d4c86faee7d193b36972f5afde8"
   end
 
   depends_on "pkgconf" => :build

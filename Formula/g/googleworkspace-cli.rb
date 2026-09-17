@@ -20,6 +20,13 @@ class GoogleworkspaceCli < Formula
 
   conflicts_with "gws", because: "both install a `gws` binary"
 
+  # `test do` block queries the Google Workspace API discovery endpoint
+  allow_network_access! :test
+
+  def fetch
+    system "cargo", "fetch", "--locked", "--target", "host-tuple"
+  end
+
   def install
     system "cargo", "install", *std_cargo_args(path: "crates/google-workspace-cli")
   end

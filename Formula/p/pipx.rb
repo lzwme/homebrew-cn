@@ -3,13 +3,13 @@ class Pipx < Formula
 
   desc "Execute binaries from Python packages in isolated environments"
   homepage "https://pipx.pypa.io"
-  url "https://files.pythonhosted.org/packages/42/93/06d1b5899ecd84cb952b21418939db6518ccb681881c1d1e3f1cb75fa213/pipx-1.17.2.tar.gz"
-  sha256 "e29d68d05f5b4707d3d3dbddb0adfc4ca4ddcd77052dbb8f4e1b5ad31629a07c"
+  url "https://files.pythonhosted.org/packages/6e/cc/f10580f98f53806af7b9ea38cf1d9347c6c237ee6b892708c3cc866a4dbb/pipx-1.17.3.tar.gz"
+  sha256 "136b43c5c754c6644011a321102b6cf106e73fc48aaeb09c9cd608d1af10a9b8"
   license "MIT"
   head "https://github.com/pypa/pipx.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "03bab822f60ae4c7a6b963b6374bff63e9774aabeb51ce967fc5fb40f0e0d377"
+    sha256 cellar: :any_skip_relocation, all: "342147521ba539faaf7d2bf959e6b44915c9f4bf8730774fb50f36e26801fbf6"
   end
 
   depends_on "python@3.14"
@@ -25,8 +25,8 @@ class Pipx < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/0a/a0/50c2c0ce5e74d7721bbb1b19a26ebd339aac5878553a6e35308c2f31f935/filelock-3.32.5.tar.gz"
-    sha256 "f6a6a28f743f9b95ce19db5abe0f376f75eb56517dff21e1a4751e2657d3e83d"
+    url "https://files.pythonhosted.org/packages/0f/59/e19834834cb01a32febfbb0f8a23a9088088f5d45991824ff2bc3b5e8acb/filelock-3.32.7.tar.gz"
+    sha256 "37b8a3d9811b0f9aef7e5ec5c71bb320de52df51e6ca9bcd6f5ad81187660da7"
   end
 
   resource "packaging" do
@@ -35,8 +35,8 @@ class Pipx < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/69/b7/802a56eca9f2fac455b8bab5375a2647b0f0e14a2cd63ef077de3c4a7658/platformdirs-4.11.7.tar.gz"
-    sha256 "4f41487eeeeeb07f3a6625e61d9bc0ae6809f92d3386dbd74392fbb76108104d"
+    url "https://files.pythonhosted.org/packages/53/18/f3bb8ef0d3b930692343da8aa4d3cbcd6749477c053959395ac81965a6e9/platformdirs-4.11.8.tar.gz"
+    sha256 "f23abafea7dd4276d1f29104b83598d7dcc567cafd07c9c951e66665645437fc"
   end
 
   resource "userpath" do

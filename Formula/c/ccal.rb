@@ -22,8 +22,8 @@ class Ccal < Formula
   end
 
   # Upstream homepage is gone
-  deprecate! date: "2026-06-22", because: :repo_removed
-  disable! date: "2027-06-22", because: :repo_removed
+  deprecate! date: "2026-06-22", because: :does_not_build
+  disable! date: "2026-12-22", because: :does_not_build
 
   def install
     system "make", "-e", "BINDIR=#{bin}", "install"

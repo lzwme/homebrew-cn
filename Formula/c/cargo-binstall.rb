@@ -25,6 +25,13 @@ class CargoBinstall < Formula
 
   depends_on "rust" => :build
 
+  # `test do` block resolves a crate from crates.io
+  allow_network_access! :test
+
+  def fetch
+    system "cargo", "fetch", "--locked", "--target", "host-tuple"
+  end
+
   def install
     system "cargo", "install", *std_cargo_args(path: "crates/bin")
   end

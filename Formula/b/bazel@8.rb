@@ -11,11 +11,12 @@ class BazelAT8 < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "45ab17c56c065ada98033d83604ae330bf416e39f5d7dc97655fd69ca6296c32"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "68c06176600a688cebde2b0b719e612e05ff20b700531597df7eb411b2b8236e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "819f7f90b0c7e38f1566d2b5cb63eb3c763073fcf25ca429867e3fc8c1ffac2e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b0099f6e24178be4bea03b13bab549836052c5a5bda89b5e69bad8bda3d43dbf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f02618a3fc77f4c914127c252a6a68f0e2c17c2f8c6003b1b94b1df593160a60"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "c3ea5706d55f5603fb33ed78a8710d9b09197cff2fd10fb535ca1df3b44b09fe"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "126644ea64dd3a8408bc465df2e699f7b440dda31886290669f27e03172390b7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "818adf6c106cd0fddb3f50e80f3f8c9eb28c80f0f6825f980670ce0c6531def5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "a2968e2f6d4a8bcb7a0674316635f6ac518908ce1c667761c7cd2fe0fdc9f13d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "f9c79b77078ecaee02388883820309d7a9a13216b54b9fcafae91c428a19ee7f"
   end
 
   keg_only :versioned_formula
@@ -54,6 +55,11 @@ class BazelAT8 < Formula
     ENV["BAZEL_WRKDIR"] = buildpath/"work"
     # Force Bazel to use brew OpenJDK
     extra_bazel_args = ["--tool_java_runtime_version=local_jdk"]
+    if OS.mac?
+      # Tools built for the exec configuration only follow `--host_macos_minimum_os`
+      extra_bazel_args << "--macos_minimum_os=#{MacOS.version}.0"
+      extra_bazel_args << "--host_macos_minimum_os=#{MacOS.version}.0"
+    end
     ENV.merge! java_home_env.transform_keys(&:to_s)
     # Bazel clears environment variables which breaks superenv shims
     ENV.remove "PATH", Superenv.shims_path
@@ -70,7 +76,7 @@ class BazelAT8 < Formula
       extra_bazel_args << "--linkopt=-Wl,--dynamic-linker=#{ENV["HOMEBREW_DYNAMIC_LINKER"]}"
     end
 
-    if OS.linux? && Hardware::CPU.arch == :arm64
+    if OS.linux? && Hardware::CPU.arm64?
       extra_bazel_args << "--linkopt=-fuse-ld=lld"
       extra_bazel_args << "--host_linkopt=-fuse-ld=lld"
     end

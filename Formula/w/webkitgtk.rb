@@ -1,8 +1,8 @@
 class Webkitgtk < Formula
   desc "GTK interface to WebKit"
   homepage "https://webkitgtk.org"
-  url "https://webkitgtk.org/releases/webkitgtk-2.52.6.tar.xz"
-  sha256 "179a2ea3f8f6edd4be7f31fdc55afc57bd0729f1fba648c61d4181539ac116fc"
+  url "https://webkitgtk.org/releases/webkitgtk-2.54.0.tar.xz"
+  sha256 "846fd19ccedbae1dbfe904f26dbf2d68a800a33a50caf2ad5222c8dcb3f25682"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -11,14 +11,15 @@ class Webkitgtk < Formula
   end
 
   bottle do
-    sha256 arm64_linux:  "8fc4c719033499d238b82fec25bdf77f343d6f1e08f8a353df227e4bdda0635e"
-    sha256 x86_64_linux: "e9658205d7b4ecc1e97eed4659e4ae9c4ef491a0e53644e3b42d7ee1579958c2"
+    sha256 arm64_linux:  "2b0640e1b3a4cee4a6bfbb77172ce0f6332dfc7d84ab66ca9f2e01a516318405"
+    sha256 x86_64_linux: "1a42e107b65b2c3e8538a5feb2072ef2dcc8a6d7b93b1ae850c895da6f475ed8"
   end
 
   depends_on "cmake" => :build
   depends_on "gettext" => :build
   depends_on "gobject-introspection" => :build
   depends_on "gperf" => :build
+  depends_on "ninja" => :build
   depends_on "perl" => :build
   depends_on "pkgconf" => [:build, :test]
   depends_on "python@3.14" => :build
@@ -83,7 +84,7 @@ class Webkitgtk < Formula
       -DPython_EXECUTABLE=#{python3}
     ]
 
-    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
+    system "cmake", "-S", ".", "-B", "build", "-G", "Ninja", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end

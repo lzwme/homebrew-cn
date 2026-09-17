@@ -7,12 +7,13 @@ class JupyterR < Formula
   revision 4
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "8b52a2ecd5cae8b0e7f26d340f9070721b0b4b9e7b6160871f3723366c2fdeac"
-    sha256 cellar: :any,                 arm64_sequoia: "7e058343e45031f0b0cc2400d979731b51837b30e9a35a5d26bf02e2af1695ea"
-    sha256 cellar: :any,                 arm64_sonoma:  "cb7e41a453ba60a345463583a87809235e581037fb4ca44f58162a9bde730cbf"
-    sha256 cellar: :any,                 sonoma:        "c2a981972fd3ad4a426099b7fa1aa75a3531e3c8a18eaf78f0bfe45baf19af99"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "abea55961a0952c101763e607ba86afa8c789a75d34769d09f1a274b2de20eb8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "33bcd191c536ee0e3b8bb35b28b98823470e03d0147cfc90386dab6fe1451941"
+    sha256 cellar: :any,                 arm64_golden_gate: "11d0c71feab8b6cc11800beeffed2df1de1f21853484ff0609611416d87cf7eb"
+    sha256 cellar: :any,                 arm64_tahoe:       "8b52a2ecd5cae8b0e7f26d340f9070721b0b4b9e7b6160871f3723366c2fdeac"
+    sha256 cellar: :any,                 arm64_sequoia:     "7e058343e45031f0b0cc2400d979731b51837b30e9a35a5d26bf02e2af1695ea"
+    sha256 cellar: :any,                 arm64_sonoma:      "cb7e41a453ba60a345463583a87809235e581037fb4ca44f58162a9bde730cbf"
+    sha256 cellar: :any,                 sonoma:            "c2a981972fd3ad4a426099b7fa1aa75a3531e3c8a18eaf78f0bfe45baf19af99"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "abea55961a0952c101763e607ba86afa8c789a75d34769d09f1a274b2de20eb8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "33bcd191c536ee0e3b8bb35b28b98823470e03d0147cfc90386dab6fe1451941"
   end
 
   depends_on "pkgconf" => :build

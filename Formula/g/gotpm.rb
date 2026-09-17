@@ -1,19 +1,17 @@
 class Gotpm < Formula
   desc "CLI for using TPM 2.0"
   homepage "https://github.com/google/go-tpm-tools"
-  url "https://ghfast.top/https://github.com/google/go-tpm-tools/archive/refs/tags/v0.4.9.tar.gz"
-  sha256 "a2eb3739afa65b60c351550c6c0541f17c5af6a22837da3690fcd6e44ef354bf"
+  url "https://ghfast.top/https://github.com/google/go-tpm-tools/archive/refs/tags/v0.4.10.tar.gz"
+  sha256 "a40ecfff3222c9303c4fd0fb7aae9aa60f74bb7a7c649df661daaf5db47c6f80"
   license "Apache-2.0"
   head "https://github.com/google/go-tpm-tools.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "410f4396f93525e0de0a02358add53134c8bde19f9073f32927b9f442dbb1491"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "67ce1f4f112a053eb9f48a7e69f9e6a8f4bdc01623278c9d22b6718800ee873c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "67ce1f4f112a053eb9f48a7e69f9e6a8f4bdc01623278c9d22b6718800ee873c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "67ce1f4f112a053eb9f48a7e69f9e6a8f4bdc01623278c9d22b6718800ee873c"
-    sha256 cellar: :any_skip_relocation, sonoma:            "bfbbf0aa121c637637d574d21de8026dd59c064e1566332d9478621b0905130f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "4bb9d36fafbf498e1210f46a970a2de664c3ca7f65dd7b63770be78379e06e76"
-    sha256 cellar: :any,                 x86_64_linux:      "bc081fe93f7e79ac5a6c3795f3b847a3dd3e8b508cb45631206c189dfc75e172"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "97f8b68f7de57c20e8ac42e0ae350ad06e03d444497f880f76bf4404af930f60"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "97f8b68f7de57c20e8ac42e0ae350ad06e03d444497f880f76bf4404af930f60"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "97f8b68f7de57c20e8ac42e0ae350ad06e03d444497f880f76bf4404af930f60"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "9fb5f602191fa2385adf452f73f36de75309cf0618a92dcaa391dbf07c9f5de1"
+    sha256 cellar: :any,                 x86_64_linux:      "03394a2fc51cb2ebf830aee949a01be63c641b025318aebef8f92cd4b34f76b9"
   end
 
   depends_on "go" => :build

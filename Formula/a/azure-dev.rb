@@ -1,18 +1,17 @@
 class AzureDev < Formula
   desc "Developer CLI that provides commands for working with Azure resources"
   homepage "https://aka.ms/azd"
-  url "https://ghfast.top/https://github.com/Azure/azure-dev/archive/refs/tags/azure-dev-cli_1.34.0.tar.gz"
-  sha256 "8d53317656216cfb61444a62de75c02e031240f6ce0b749542031e75edd06447"
+  url "https://ghfast.top/https://github.com/Azure/azure-dev/archive/refs/tags/azure-dev-cli_1.34.1.tar.gz"
+  sha256 "ba65e9f2b3d7a1d1e3ea8b1048c717e8f2ec458545870cc7bcd8eaf6f752e741"
   license "MIT"
   head "https://github.com/Azure/azure-dev.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "1a5164224530a481caa91700eb841911a744f3bb7c3633a45805a9f909c8de7d"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "1a5164224530a481caa91700eb841911a744f3bb7c3633a45805a9f909c8de7d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "1a5164224530a481caa91700eb841911a744f3bb7c3633a45805a9f909c8de7d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "1a5164224530a481caa91700eb841911a744f3bb7c3633a45805a9f909c8de7d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "b37876ddcde7a65b5927a7857d477a16bee322a4b1d50580adeda3b5a63f6c1e"
-    sha256 cellar: :any,                 x86_64_linux:      "a48f5516f033caa1f27a4451399cfe944dc61355ab565a57304b60588fe4e772"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "ae14779a8d8992a6a77900de30cebe9b4ed6d7b6186cfef0bde111b4b97d2a01"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "ae14779a8d8992a6a77900de30cebe9b4ed6d7b6186cfef0bde111b4b97d2a01"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "ae14779a8d8992a6a77900de30cebe9b4ed6d7b6186cfef0bde111b4b97d2a01"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "7c30540937e2d11a84b68f77c230e145d4ffb7d58406290dd9e63792a092e39d"
+    sha256 cellar: :any,                 x86_64_linux:      "041c81e6683abf751f9ae695c1711909f198d99e3e31d52c569c80b965f22256"
   end
 
   depends_on "go" => :build
