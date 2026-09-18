@@ -1,20 +1,16 @@
 class Hellwal < Formula
   desc "Fast, extensible color palette generator"
   homepage "https://github.com/danihek/hellwal"
-  url "https://ghfast.top/https://github.com/danihek/hellwal/archive/refs/tags/v1.0.7.tar.gz"
-  sha256 "78cea94425b35a4dc377e498921ddb2927b093ed6b825606554f25b98699310c"
+  url "https://ghfast.top/https://github.com/danihek/hellwal/archive/refs/tags/1.0.8.tar.gz"
+  sha256 "53f629f22bd80c95150fa8510c4c5f4969beec06bfd01ad33a5fdad3d56a357e"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "974e75acafd63230a15346dc9a108bb4c26f23f86a8ebc2e7b89102ef011cecc"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "cfc5e8ad72740938b145df1f38466551c055a2fbf5119859a7cd35423a68d54c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "96f793601bdf6475d4d23ceb1f187acd6e8d6847975c4910ba887044cc655e31"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "87cd5c204b43091bc96917c0b6511517eb93b89b2f5d8c85ed7a61203bb4425f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:     "82a9c9ffbfd161281dcf0171794cb523396ba53f3489ef5f2ce64d21fe87b964"
-    sha256 cellar: :any_skip_relocation, sonoma:            "30c0b0f64a0de8093a854c19a8f18ac5dbc3113f49182b874d18bfd663948b54"
-    sha256 cellar: :any_skip_relocation, ventura:           "d753966a3b24aedb2b838060414951b9f05310c6cf10ab7dea0d0f40f5ef058c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "5a2eba338afdcf106cb12a2a6a8213c53b8996309e1cae25364bc4e403f7b169"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "dbd4d1a76335f7fe6a12d94124cd2ec8f3a0d72eff2f3d5bdf0375894d79d715"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "c878b9620f231a54aebc76e61fd70d8e86f56d52adb9624c5698d4ce5cdd6c44"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "bf4242ff50905d089417461d5d5736fd017b089ea457dbe8b71804216b0c993b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "5490782b0e56972fe9b0aeb3e0d2d182a644012f93ee777a99f151335752ab4c"
+    sha256 cellar: :any,                 arm64_linux:       "b124d10fb5b5bd860b33fb44bd44ee9495f59acf48e20797ede02c642a965db9"
+    sha256 cellar: :any,                 x86_64_linux:      "432792a355394a09a0f26bf0a2f1d07bb9e306bf587aaa8ca0a8bb6c37856942"
   end
 
   def install

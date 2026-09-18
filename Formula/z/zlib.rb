@@ -28,6 +28,9 @@ class Zlib < Formula
     keg_only "it conflicts with zlib-ng-compat"
   end
 
+  # `test do` block downloads a test fixture resource
+  allow_network_access! :test
+
   def install
     system "./configure", "--prefix=#{prefix}"
     system "make", "install"

@@ -1,18 +1,16 @@
 class Cnats < Formula
   desc "C client for the NATS messaging system"
   homepage "https://github.com/nats-io/nats.c"
-  url "https://ghfast.top/https://github.com/nats-io/nats.c/archive/refs/tags/v3.13.0.tar.gz"
-  sha256 "f6ec9ee2ab367594b56dd3265e3561074ade7c3d7410a6f45a77704c5e537024"
+  url "https://ghfast.top/https://github.com/nats-io/nats.c/archive/refs/tags/v3.14.0.tar.gz"
+  sha256 "1f8b450bc295d0c94be201e34713ca0b515aae2c0d1b279273c3e6e0e72fe005"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "c83a886a46bf4cae0c7c9b92eb0616bba6f841533384993daf308e83826f9cb6"
-    sha256 cellar: :any, arm64_tahoe:       "22e12ff22d295f76e6d68850e64eec5e912d6483cd358d9cb16d9216b7191ffd"
-    sha256 cellar: :any, arm64_sequoia:     "ea5886d7778bf262d28dd5cac8c1b7c1f8ab9ee826b95299ffce8b5260908c1d"
-    sha256 cellar: :any, arm64_sonoma:      "e0802d0c00e642ce1f18b502e1e243bc1aa7ee518663888e2071383fc0ddbdcb"
-    sha256 cellar: :any, sonoma:            "82d9e9f13cc53c0f368e94ce14d6741b581b506375898583617d1e25f9a9a3a0"
-    sha256 cellar: :any, arm64_linux:       "31330dc0d04e95e195bbb1ee9038d645c2c9222d8740099d0e896cc48df198f9"
-    sha256 cellar: :any, x86_64_linux:      "ba7aa71b4c62aedb7b998fdb73055f0f28739b21529b870891ff0c9324699be1"
+    sha256 cellar: :any, arm64_golden_gate: "c0b48c772a713bf986e7c0ed1b8c4d95dcb5c775034d37537026812d6dff0d34"
+    sha256 cellar: :any, arm64_tahoe:       "b12e05c399c776e78a6b088aad44019cf55eee0c27f250c96bfb34e5eaa681b7"
+    sha256 cellar: :any, arm64_sequoia:     "453efb871697b97b47c507332fd4f187d94af33ac88e9269af5729ba5b29818d"
+    sha256 cellar: :any, arm64_linux:       "7b35686110c20daf884ae3a3f73892f03f0df14fbf757c6971c0c3d0ac7d31bc"
+    sha256 cellar: :any, x86_64_linux:      "66e637912b64ecbc22701a8e8d12765bb43beef917623579f4c7e9bf394f6839"
   end
 
   depends_on "cmake" => :build

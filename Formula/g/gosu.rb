@@ -7,11 +7,12 @@ class Gosu < Formula
   head "https://github.com/gosu-lang/gosu-lang.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "eeb2a517a202f3a05b1e5fc26fcf1fc90e6c61ea563fbe819a8331671ba9c027"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "04c11c5216058a04eca5cb2e4c0481df9bbfba0072522ac69a48e865ecc34a46"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dc051231f8ca139bb46a4c63c7853e023019120836cec98ec99a25cea01f6234"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "86109b1939cebda10eaeab6ddac4f567c1083ecdf44b3b0bba810a0aeef06e74"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cc6d498301ff31e45fc88b13638012892af1350beaa4406364b8353cc11c5242"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "211ebe85b6a4cdacc8b5f6fde41f3f35e40f2ac6e17544c324296e726f9c1058"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "eeb2a517a202f3a05b1e5fc26fcf1fc90e6c61ea563fbe819a8331671ba9c027"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "04c11c5216058a04eca5cb2e4c0481df9bbfba0072522ac69a48e865ecc34a46"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "dc051231f8ca139bb46a4c63c7853e023019120836cec98ec99a25cea01f6234"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "86109b1939cebda10eaeab6ddac4f567c1083ecdf44b3b0bba810a0aeef06e74"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "cc6d498301ff31e45fc88b13638012892af1350beaa4406364b8353cc11c5242"
   end
 
   depends_on "maven" => :build

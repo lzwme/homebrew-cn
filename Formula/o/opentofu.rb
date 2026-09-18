@@ -22,6 +22,13 @@ class Opentofu < Formula
 
   conflicts_with "tenv", "tofuenv", because: "both install tofu binary"
 
+  # `test do` block downloads a provider from the OpenTofu registry
+  allow_network_access! :test
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ENV["CGO_ENABLED"] = OS.mac? ? "1" : "0"
     ldflags = "-X github.com/opentofu/opentofu/version.dev=no"

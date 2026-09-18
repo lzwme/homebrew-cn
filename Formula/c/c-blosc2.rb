@@ -8,11 +8,12 @@ class CBlosc2 < Formula
   head "https://github.com/Blosc/c-blosc2.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "9f1716bcf80dc784c76d0ab126649f92a34ad7ad4d214f0aa769285799737945"
-    sha256 cellar: :any, arm64_tahoe:       "af2b8fc8734bbb2be1fd7f4946d9372ca3f9344d55e055a5902fda541427bbf9"
-    sha256 cellar: :any, arm64_sequoia:     "6141f3696fa403a767ae598b4745ea40bb48802ebb9edfc84345eb890cd3f3ab"
-    sha256 cellar: :any, arm64_linux:       "07676187feb9e434725dca0ae4feeb0c9b4df9b3240ef52d5a7c9c2eda1060cc"
-    sha256 cellar: :any, x86_64_linux:      "acbec52d743132d92107fb1045ed4eab6e82afb3f439f898e8745e4a3a1e1998"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "3850c2d7ee303d60d2b86e9df8f48183a5d5f96af5e6b20c8bc1fa1d8fa92235"
+    sha256 cellar: :any, arm64_tahoe:       "2c571c64c9156dedc19acc3809c2a082b89eab1cfe324dc6d9b56add0fe3fbac"
+    sha256 cellar: :any, arm64_sequoia:     "0cb9a1b11588983b2dfe882aa41368346f3350556608abecf9cb9ab33455dd70"
+    sha256 cellar: :any, arm64_linux:       "8d03dacfab93068f887b0ccd6c699d0755c756d36378b14acfec14fdeb24d2c4"
+    sha256 cellar: :any, x86_64_linux:      "a523cfb2752132bc500546a8dafeaa81de799ecd90379a61fc114b9789d2ef51"
   end
 
   depends_on "cmake" => :build

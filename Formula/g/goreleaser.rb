@@ -2,8 +2,8 @@ class Goreleaser < Formula
   desc "Deliver Go binaries as fast and easily as possible"
   homepage "https://goreleaser.com/"
   url "https://github.com/goreleaser/goreleaser.git",
-      tag:      "v2.18.1",
-      revision: "9fa2a65578f357f21fc3f3035ff96ba9e2890ad9"
+      tag:      "v2.18.2",
+      revision: "25a52e520f9c993711b93ea1111ed90c024e0528"
   license "MIT"
   head "https://github.com/goreleaser/goreleaser.git", branch: "main"
 
@@ -13,12 +13,11 @@ class Goreleaser < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "7370caba84a1da059a9af202ba09d544832d26454eb5700798635424b3b20bc1"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "0abfe03d9686cd6cb94fb38c030d212a012e242fbcf342187454c666e784c147"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "28a5fa890321ca8fedfc31e0998c0e1fa00a644787d48a420b8b902723a04ad3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "1087c3bf0dc9e08a0f0e9c97ed5936d2a479cbff244a640173fe1f551ff1d325"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "1727f276e2ba8ce7c6e475d8c0dad0c3d0db5e2c5735f9c16f3b5f8db5c22ed7"
-    sha256 cellar: :any,                 x86_64_linux:      "7fabc937a70d3b4fc153da55f5c5eeee3cd01cafe2cf84737426c516af90feeb"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "57e881014461d92030bc589bf3bbdf7988fbc7009f9fcb2f2c534157b2eb19e8"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "3c38f8153fe297dfb64591e24e75e142abf27a42b6b9032951e54512ba6d07eb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "91f529622008d50573b4e12c13309201930d91a4394a25f1863af74754ae286a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "26aa449a21132519e3c0c9bf771180dfbaa9838bf4a24d8e1d66f66943b34625"
+    sha256 cellar: :any,                 x86_64_linux:      "9f7d969daf6391c3e9ca4ff7a38426a1b70146fcc2eb3457e1560275a400502f"
   end
 
   depends_on "go" => :build

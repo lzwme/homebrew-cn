@@ -26,6 +26,12 @@ class Coder < Formula
   # TODO: unpin go@1.26 when coder supports go 1.27
   depends_on "go@1.26" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ldflags = %W[
       -X github.com/coder/coder/v2/buildinfo.tag=#{version}

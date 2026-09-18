@@ -25,6 +25,12 @@ class Vuls < Formula
   # ref: https://github.com/aquasecurity/trivy/pull/11127
   depends_on "go@1.26" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ENV["GOEXPERIMENT"] = "jsonv2"
 

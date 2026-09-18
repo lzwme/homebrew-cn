@@ -1,17 +1,16 @@
 class McpInspector < Formula
   desc "Visual testing tool for MCP servers"
   homepage "https://modelcontextprotocol.io/docs/tools/inspector"
-  url "https://registry.npmjs.org/@modelcontextprotocol/inspector/-/inspector-2.6.0.tgz"
-  sha256 "e9bde03c45b62453d3b320b1dc2d2e8e997d172883b082b75deb938ef0c96a29"
+  url "https://registry.npmjs.org/@modelcontextprotocol/inspector/-/inspector-2.7.0.tgz"
+  sha256 "6c47dea0a6b230fbca12c4b10472e5cbae8a72b03eaf5335daf83d017b0fdfcd"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_golden_gate: "70ea5f23dc747772b9fe57605cf7fc3f38a1b40982b2d673a04d1448fbec003a"
-    sha256 cellar: :any,                 arm64_tahoe:       "2555882a6149230df840d594b904cb1a0fda536b6fb3e71e985097a056e8ef2c"
-    sha256 cellar: :any,                 arm64_sequoia:     "5371383deb90f485fb8c9381a898d7775b0878f218ebf8cf45897e2a3faf1cd8"
-    sha256 cellar: :any,                 arm64_sonoma:      "283fd953b111154709879074da9f4021e35e51c947be4e9686cc1f3ffe521a7b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "06e39d0d7c1a9b8276cbdc184f3022446e0b2137ce626da40faa93ef85992cb2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "d7ff6d1498b4ae0e45b00183485d00e858430af233104b48abe3bddbaeeda8af"
+    sha256 cellar: :any,                 arm64_golden_gate: "3f63fd6d130c3c7533f90f698cd501ed31eba0ef78bc96958ae098fdb9811505"
+    sha256 cellar: :any,                 arm64_tahoe:       "756c9adaba3a805064e45854b5ff0662245488936e8a993b798d926252ca0aa8"
+    sha256 cellar: :any,                 arm64_sequoia:     "36abbebf0301fbc615a32b5c9d931d091544d5b4d7edef1b97d1dfad6d765119"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "a7182675106d63a2efd72236040347109851ed20b0452518113928389b13a480"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "f98096821ac0ed057f54df0a0d2c24119f490a9a0794b2e09e9c9b06a15f67ac"
   end
 
   depends_on "node"

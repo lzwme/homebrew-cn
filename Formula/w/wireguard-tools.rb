@@ -1,9 +1,11 @@
 class WireguardTools < Formula
   desc "Tools for the WireGuard secure network tunnel"
   homepage "https://www.wireguard.com/"
+  # Using git checkout as snapshot archives have previously changed from server updates
+  # https://github.com/Homebrew/homebrew-core/pull/290649#issuecomment-5654421778
   url "https://git.zx2c4.com/wireguard-tools.git",
-    tag:      "v1.0.20260223",
-    revision: "49ce333da02056ae7b22ee2aeb6afe8aaed79b19"
+      tag:      "v1.0.20260223",
+      revision: "49ce333da02056ae7b22ee2aeb6afe8aaed79b19"
   license "GPL-2.0-only"
   head "https://git.zx2c4.com/wireguard-tools.git", branch: "master"
 

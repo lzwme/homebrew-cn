@@ -1,18 +1,17 @@
 class JustLsp < Formula
   desc "Language server for just"
   homepage "https://github.com/terror/just-lsp"
-  url "https://ghfast.top/https://github.com/terror/just-lsp/archive/refs/tags/0.8.0.tar.gz"
-  sha256 "b4d4122b8698f47cb80912d274d1abcf00af1a93d7d84cc2f0d84e8f32596782"
+  url "https://ghfast.top/https://github.com/terror/just-lsp/archive/refs/tags/0.9.0.tar.gz"
+  sha256 "b9fc878286b054b630c48e458f09f47dfb4cf6047cae2636225ab66a378b8773"
   license "CC0-1.0"
   head "https://github.com/terror/just-lsp.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "25387543e53b89ec923c224fc727c5868da5162077a90e750f078f6cb8e2b734"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "6827b83e195723110379ce84c197683f29bc066885dc4e23ae21a64cb1d24d39"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "f98a519d1d0356dabfb6e37d3d7efbc1a9d8a2d41a62c669d17882fcce1b7cc8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "27b1e3f6c2008ac9c29d86f1177377ebfdcf24f2484ecd9e727b925f6895be04"
-    sha256 cellar: :any,                 arm64_linux:       "bc2667bac80a3f5279563893575b1ececddf768d455f826f8a7e481d3f618848"
-    sha256 cellar: :any,                 x86_64_linux:      "6d431328a4713e3a86ced56a693fd7dad63b75b12705caf2b03a9d4e3bfc424b"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "04db6a0204b723ba09984fd8d7d18eaf826a6c13bbe2c1a03ed9823ce3b9eb6f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "f6006d7ba743bef2eae5e2e2efb68118532c9ab8f7d1afb305c68bd013e27e15"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "18c771a800022899402bc6994f9c71ddbee61de3a6232a1b33b3b31f26dcf937"
+    sha256 cellar: :any,                 arm64_linux:       "bc3ae0c747d312d805cd95a870778718049d90f70a53ebb19f4a64d3302f6004"
+    sha256 cellar: :any,                 x86_64_linux:      "f63f2412042f99801146f8b75f45a0df23eb4933a78833910a8af7eb433aff9a"
   end
 
   depends_on "rust" => :build

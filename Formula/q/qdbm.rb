@@ -11,14 +11,12 @@ class Qdbm < Formula
   end
 
   bottle do
-    rebuild 3
-    sha256 cellar: :any,                 arm64_golden_gate: "a489ef5f76d79ff7ba5eb709434ccce0df3903090a8dd1947d618f76a1999e96"
-    sha256 cellar: :any,                 arm64_tahoe:       "8758b4bbc07fe322baf1aeb4815956e31dfe20720429254f6e78a2e6c500acbe"
-    sha256 cellar: :any,                 arm64_sequoia:     "9983b409d48f7443900ce5b980b08f95e0f102854608c1615f4ff4f45b961f0a"
-    sha256 cellar: :any,                 arm64_sonoma:      "445dc7761c805ee218c4a5d29b521338a9ba3d0e773fdddd0622b272b970cbf6"
-    sha256 cellar: :any,                 sonoma:            "e972c7da4e44db7be3104ae998c53c23f3834aedba2eaf6a3169933327670571"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "8063229ce3fc0aac1e402f27c5f9c9ab27f7e1101006887aedc8047844b69fee"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "4f532caae96d2ab1726eb1fd9196db93dd0b4511f9b407b209c545a801449877"
+    rebuild 4
+    sha256 cellar: :any, arm64_golden_gate: "2ac9f0535a8950ee5b039c0274dd4a31aff23840d2a0574e5fc44b467c421d32"
+    sha256 cellar: :any, arm64_tahoe:       "39f437a07c0042d360d21bfb1d6001d1af034aa544b19ef62bccf7be4f858e8e"
+    sha256 cellar: :any, arm64_sequoia:     "85643dc7b30d1c9743d008801ca71631e93cdcb1c1e364c8cf71a1df4b248bed"
+    sha256 cellar: :any, arm64_linux:       "8269475292a4b33b47ad57c78c14b9877108f1c13a8855b7beae8ea5ae570627"
+    sha256 cellar: :any, x86_64_linux:      "878dcc3b3e52dc428e32d6dc3aa45aa150669a469bcc9252bc4649b372c76ba0"
   end
 
   # Last release on 2007-12-22. Succeeded by tokyo-cabinet -> kyoto-cabinet -> tkrzw
@@ -43,6 +41,9 @@ class Qdbm < Formula
     else
       ENV.append "LDFLAGS", "-L#{formula_opt_lib("zlib-ng-compat")}"
     end
+
+    # The hash functions rely on signed integer overflow wrapping, which Clang 21 optimises away
+    ENV.append "CPPFLAGS", "-fwrapv"
 
     # GCC < 13 with -O2 or higher can cause segmentation faults from loop optimisation bug
     if ENV.compiler.to_s.start_with?("gcc") && DevelopmentTools.gcc_version(ENV.compiler) < 13

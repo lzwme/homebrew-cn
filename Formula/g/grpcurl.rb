@@ -19,6 +19,12 @@ class Grpcurl < Formula
   # ref: https://github.com/fullstorydev/grpcurl/issues/568
   depends_on "go@1.26" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     system "go", "build", *std_go_args(ldflags: "-X main.version=#{version}"), "./cmd/grpcurl"
   end

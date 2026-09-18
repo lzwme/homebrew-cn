@@ -21,6 +21,8 @@ class ChibiScheme < Formula
     sha256 x86_64_linux:      "dca1976f433bd1fa6f0d3125e0ec9a5a9b70f390834a1d6fbc1d66eaa91c4680"
   end
 
+  deny_network_access!
+
   def install
     ENV.deparallelize
 

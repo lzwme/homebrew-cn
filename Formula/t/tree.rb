@@ -16,6 +16,8 @@ class Tree < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:      "b98eef11e53b024a3e9422fbeabeb6c9b13d70ea884087703e7e1536820b3c5c"
   end
 
+  deny_network_access!
+
   def install
     system "make", "install", "PREFIX=#{prefix}", "MANDIR=#{man}"
   end

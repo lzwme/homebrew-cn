@@ -1,8 +1,8 @@
 class RattlerIndex < Formula
   desc "Index conda channels using rattler"
   homepage "https://github.com/conda/rattler"
-  url "https://ghfast.top/https://github.com/conda/rattler/archive/refs/tags/rattler_index-v0.31.5.tar.gz"
-  sha256 "d10519a93389710ec66e3ddd4dc90a446233ed184077a1ba4c92e755a844cf99"
+  url "https://ghfast.top/https://github.com/conda/rattler/archive/refs/tags/rattler_index-v0.31.6.tar.gz"
+  sha256 "91c15976b0e874428437c42e0cafef0159604922a4d2dae1e42c6670ea21af1e"
   license "BSD-3-Clause"
   head "https://github.com/conda/rattler.git", branch: "main"
 
@@ -12,12 +12,11 @@ class RattlerIndex < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "0a9ef9f5494126a131d003c7177ada1567f0a24cb80b31872d621a34deb5b176"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "9d9bddeb232ce11eeb718368aea6ecdadac007edf35bb2063d09e79f261e50c8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "79cd6621256b794c90c79ad6ab2e34dc61eededa23623117de33cf2755739a7d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "f4488112dd93e99a980a925f9e22911b6d161a358f0a7f8b2827f10cf068ca6e"
-    sha256 cellar: :any,                 arm64_linux:       "b2189b95029244fc592a7bd86d0367fce0fb9e2c9fba1e1389dfadbfda571ced"
-    sha256 cellar: :any,                 x86_64_linux:      "ef1ea3aece4b612403fa226b877e5d136eda2df92627ffcd7b110a854f5a9613"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "e7016715c588fdbfca0479ce726fd4e0cfecffb16383353d92e94fa7f809378b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "3c04e39fccab52d11cbf466ee10388a6391691ec91614d3f29a2c7f25eaf30c3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "54c119bb63d144b121c949933074d28cfcf7ccc0b968870f2a6dfa202b738c54"
+    sha256 cellar: :any,                 arm64_linux:       "b88ae3b9ab1340fffe89f595d25baf28f7fb866be05234b49af3a5bdcfb7df62"
+    sha256 cellar: :any,                 x86_64_linux:      "7a0560844f28ee5ba09fad897556bc98926933e3e09b25e7ca4fcefdebad8a0e"
   end
 
   depends_on "pkgconf" => :build

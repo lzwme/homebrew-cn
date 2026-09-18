@@ -27,6 +27,8 @@ class Lua < Formula
     file "Patches/lua/lua-shared.patch"
   end
 
+  deny_network_access!
+
   def install
     # Fix: /usr/bin/ld: lapi.o: relocation R_X86_64_32 against `luaO_nilobject_' can not be used
     # when making a shared object; recompile with -fPIC

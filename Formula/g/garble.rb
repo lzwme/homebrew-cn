@@ -19,6 +19,12 @@ class Garble < Formula
   # TODO: unpin go@1.26 when garble supports go 1.27
   depends_on "go@1.26" => [:build, :test]
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     system "go", "build", *std_go_args
   end

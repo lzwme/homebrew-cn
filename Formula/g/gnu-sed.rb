@@ -17,6 +17,8 @@ class GnuSed < Formula
     sha256                               x86_64_linux:      "6c02e4e02bd27c0807dbfb2ff7759b66f992cd490102a67f5d76c4fd63e59f8d"
   end
 
+  deny_network_access!
+
   def install
     args = %W[
       --prefix=#{prefix}

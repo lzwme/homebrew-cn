@@ -23,6 +23,8 @@ class Jsonnet < Formula
 
   conflicts_with "go-jsonnet", because: "both install binaries with the same name"
 
+  deny_network_access!
+
   def install
     system "make"
     bin.install "jsonnet"

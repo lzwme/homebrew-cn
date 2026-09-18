@@ -3,18 +3,18 @@ class Awscli < Formula
 
   desc "Official Amazon AWS command-line interface"
   homepage "https://aws.amazon.com/cli/"
-  url "https://ghfast.top/https://github.com/aws/aws-cli/archive/refs/tags/2.36.47.tar.gz"
-  sha256 "1889008a7defd5ac83593d05f328c61504dbd5044c904e35055257f5e063ab2c"
+  url "https://ghfast.top/https://github.com/aws/aws-cli/archive/refs/tags/2.36.48.tar.gz"
+  sha256 "e174fc2b052c16a381de4ef0ec5bd49cb50a78eac71edba7525b1b248dc39086"
   license "Apache-2.0"
   compatibility_version 1
   head "https://github.com/aws/aws-cli.git", branch: "v2"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "4273a9867df6e1791a2c36c5c55b2c53ef8e20a6aa1632a2a78ed0ab8881e6bc"
-    sha256 cellar: :any, arm64_tahoe:       "f47dee7e34bbccf49071b66801d7898e67c755268278809534ec2da4304eb6ad"
-    sha256 cellar: :any, arm64_sequoia:     "bcdc937f402d755f52f22a783835a4e325311a81f78320d592fe5c527bef152a"
-    sha256 cellar: :any, arm64_linux:       "483bb6b1f22f41f6a7742e6574ebc37aa49520e07e8c79af60dd50a611de9074"
-    sha256 cellar: :any, x86_64_linux:      "b1527e2b6d24c060028a77995536ba4752be4c3685a2a447ff1d8efc07616005"
+    sha256 cellar: :any, arm64_golden_gate: "367a749052f7b94f365bd60664831695c64cd7d784896ebdae18c44389fc2997"
+    sha256 cellar: :any, arm64_tahoe:       "daabad2898c2841322a266c797f363e24bca06194bea284a4e7b5c39c1a3932e"
+    sha256 cellar: :any, arm64_sequoia:     "f47d62402ae5b71265a1355c376abb9aaf855df125bc3384108764419a716dac"
+    sha256 cellar: :any, arm64_linux:       "4f80e3074928199eb9dd14f2e9d1fac0768a2e13a487576ac1c8ac2e80c1f098"
+    sha256 cellar: :any, x86_64_linux:      "3b33966a4985966bedc26a1cc37e82688985d1f9ccd6a6fd96edbe8f30c28a5c"
   end
 
   depends_on "aws-c-auth"
@@ -33,8 +33,8 @@ class Awscli < Formula
   pypi_packages extra_packages: "flit-core"
 
   resource "awscrt" do
-    url "https://files.pythonhosted.org/packages/fd/d5/7bb52ee6dfcb36abfc787d5512c8d11fb231f1a7caac7c52479d98ed8dd6/awscrt-0.36.2.tar.gz"
-    sha256 "6a6ad171cc3bb2763fb006c9c5c1c3df85d9c1d30b2ca0908ce539e5ee694629"
+    url "https://files.pythonhosted.org/packages/bb/02/2a724318c05aa0e6e74e2537e3a841097ad2aeb737bdc27c6a74ce72358f/awscrt-0.36.4.tar.gz"
+    sha256 "5b6a53f10e8dd060e7c0c91d063831137239c234877a6d1f03b277dfbac0c507"
   end
 
   resource "colorama" do
@@ -53,8 +53,8 @@ class Awscli < Formula
   end
 
   resource "flit-core" do
-    url "https://files.pythonhosted.org/packages/46/ef/34533186e76c526d9ec17a1ad9a10c7354cbfb20f51583cc36dfe4bdccd0/flit_core-4.0.2.tar.gz"
-    sha256 "b6929defd93884b584d7c87829e0e7b5c26ed6be17b0b873979019314aa841c8"
+    url "https://files.pythonhosted.org/packages/e7/91/add211b38c357bf1b94900b4f79c34661a92be65c0243d2b0a3393c5092d/flit_core-4.1.0.tar.gz"
+    sha256 "62e12b63ead8335b37f59fabb977c7167fe476dafb5e41785dfa8c9aff843bc6"
   end
 
   resource "jmespath" do

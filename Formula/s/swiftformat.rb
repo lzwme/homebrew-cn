@@ -17,6 +17,8 @@ class Swiftformat < Formula
 
   uses_from_macos "swift" => :build
 
+  deny_network_access!
+
   def install
     system "swift", "build", *std_swift_args
     bin.install ".build/release/swiftformat"

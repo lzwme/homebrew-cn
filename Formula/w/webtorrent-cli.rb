@@ -6,12 +6,12 @@ class WebtorrentCli < Formula
   license "MIT"
 
   bottle do
-    sha256 arm64_tahoe:   "d0eef5abf6e01e1bfa8330bce0f2cbdf45afa4749480e07cc08ea3e3c7efb2b0"
-    sha256 arm64_sequoia: "1d37da2d7d7865819ac6a77548adefaec6d638e8a3054d0dc85d6199512b7de7"
-    sha256 arm64_sonoma:  "dc73ce373313a7c9a4bb7d6cf1efadb9d8657945091264bcf966d4429cf866aa"
-    sha256 sonoma:        "3f933ceee91ee375a014da72820f676a6e8ecaa200090d5a3f3229a5f9a0c7ab"
-    sha256 arm64_linux:   "4cc65c1a5649f21e8cbb982334bb10854bccfc40a24df872deabda523692beae"
-    sha256 x86_64_linux:  "aef5a3aebb182b7486a37ed9fba1e097c5a64f712b2ba973b2446c758d8f6472"
+    rebuild 1
+    sha256 arm64_golden_gate: "65795fe55d6fdc653ae0871b0248898bfbb6a59d33216247f4720f46d37576d6"
+    sha256 arm64_tahoe:       "0931429f7e1c620ea713e95bcb801d93694c558c753f3399af44541d6d3edbdf"
+    sha256 arm64_sequoia:     "509fa851b4b17d2a7cd6d23b28d9000865adfa517cdd8bcd90c6b6c7c77ce671"
+    sha256 arm64_linux:       "9876df2e219cd51817475b705ae64887d070f2b2ad41e6a3a263d09035ba4eb9"
+    sha256 x86_64_linux:      "5ce04c17d6218ae377fe348bd900cb6c9bbdc8fe4e70d72509f65ac4cc38441b"
   end
 
   deprecate! date: "2025-10-28", because: "uses deprecated node@20"
@@ -24,10 +24,12 @@ class WebtorrentCli < Formula
   depends_on "node@20"
 
   def install
-    system "npm", "install", *std_npm_args(ignore_scripts: false)
-    bin.install_symlink libexec.glob("bin/*")
+    # Install locally as `npx only-allow pnpm` in `ip-set`'s preinstall script fails in global mode
+    system "npm", "install", "--omit=dev", *std_npm_args(prefix: false, ignore_scripts: false)
+    libexec.install Dir["*"]
+    bin.install_symlink libexec/"bin/cmd.js" => "webtorrent"
 
-    nm = libexec/"lib/node_modules/webtorrent-cli/node_modules"
+    nm = libexec/"node_modules"
 
     # Remove node-datachannel dev dependencies which were installed via
     # `npm install --ignore-scripts --production=false` to build node-datachannel.node
@@ -44,7 +46,7 @@ class WebtorrentCli < Formula
     arch = Hardware::CPU.intel? ? "x64" : Hardware::CPU.arch.to_s
     platforms = ["#{os}-#{arch}"]
     platforms << "#{os}-x64+arm64" if OS.mac?
-    pb = nm/"{bare-fs,bare-os,bare-url,bufferutil,fs-native-extensions,utp-native,utf-8-validate}"
+    pb = nm/"{bare-fs,bare-os,bare-path,bare-url,bufferutil,fs-native-extensions,utp-native,utf-8-validate}"
     libexec.glob(pb/"prebuilds/*").each do |dir|
       rm_r(dir) if platforms.exclude?(dir.basename.to_s)
       dir.glob("*.musl.node").map(&:unlink) if OS.linux?

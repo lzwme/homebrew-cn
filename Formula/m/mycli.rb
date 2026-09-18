@@ -3,16 +3,16 @@ class Mycli < Formula
 
   desc "CLI for MySQL with auto-completion and syntax highlighting"
   homepage "https://www.mycli.net/"
-  url "https://files.pythonhosted.org/packages/d2/a5/08e82432567bb30affe6b9161d586a508a9a839e93dc14e16c4934f5c8ce/mycli-2.24.4.tar.gz"
-  sha256 "3b9a308ea268895248ef6d9edeef64ba56cc634b5f6de8f3ce5339ec12a16eb0"
+  url "https://files.pythonhosted.org/packages/23/c0/5f693a9aa996993e91e962358040e80a3cffa865c9888062a769d884a24c/mycli-2.25.1.tar.gz"
+  sha256 "e616c0a591d24efb63815765149c83ea8ff57b03680dda2d5ad1974d8bcb9223"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "c6b0b4e2ed29085c844952fd31082e02aa06ae47d2c90e72680aea3231bd4b6f"
-    sha256 cellar: :any, arm64_tahoe:       "68cafc483b2d31607a249bde06570c7a3f3445b5c4b527ed85dd9ba0355c2ea4"
-    sha256 cellar: :any, arm64_sequoia:     "53714d67d83e41f500e79ce98cab511472587854beb285c4bef8b637ad3da5ed"
-    sha256 cellar: :any, arm64_linux:       "f9eab89edaaf8317eb51699bda83b9b29918cbfe1a7cda7f29ac8a9a5ec42069"
-    sha256 cellar: :any, x86_64_linux:      "951a070e2c43a46d896e445af8f685896191f3438e32203ad9ce95a4059932a9"
+    sha256 cellar: :any, arm64_golden_gate: "b8ce4bfda204bb50d900a794987e8c311809daacca09b4e9302b78c123099f61"
+    sha256 cellar: :any, arm64_tahoe:       "ba87bdeda411dfd75006efc3e6909aed993bd792deb030f8402f4a295bf9a085"
+    sha256 cellar: :any, arm64_sequoia:     "37fa38ae196dbf47365d4a35ad6a6d1022cee8c932a73a9f66a25d428e683595"
+    sha256 cellar: :any, arm64_linux:       "67cd9b88c9f7be7c06436c517f4be7521c0a253abee96944b37a753cb35ef27d"
+    sha256 cellar: :any, x86_64_linux:      "68ead0080a09e098b507a03c059a9be1083857d3ba1215dc913dbdad00e3df94"
   end
 
   depends_on "rust" => :build # for jiter, polars, vl-convert
@@ -84,13 +84,13 @@ class Mycli < Formula
   end
 
   resource "httpcore2" do
-    url "https://files.pythonhosted.org/packages/be/ad/f4f0e57345f1870f3e8cb624e058d7eca6e5a27d33bcc3311d9b618734cd/httpcore2-2.12.0.tar.gz"
-    sha256 "9293522bba0aa7c4c8e9e3f040c16575bd8868e155a77fa30c7a9085a5eae648"
+    url "https://files.pythonhosted.org/packages/15/8c/e925b1c92018abb3a1863ce1549d76d2381e334d21d65d4ac8f65dabd78a/httpcore2-2.13.0.tar.gz"
+    sha256 "2adc8be4fb285fbcd6d894298db3b52c177e74b6674eda3a76bd36be3292a3db"
   end
 
   resource "httpx2" do
-    url "https://files.pythonhosted.org/packages/7f/f8/579a8b51e42e38ee32647df9f08aa25643ae788e275cc625b199829c4671/httpx2-2.12.0.tar.gz"
-    sha256 "7631fe9887a8a2275f4a2540e053aa670fcc50742864a9ae7c66e609fdcf12cf"
+    url "https://files.pythonhosted.org/packages/b9/a0/e9deef4654132857b5a5dbe4eddd0ac59c2814500e11f2f5044cd81103ee/httpx2-2.13.0.tar.gz"
+    sha256 "81bd07dc67a3701729ef1f777a3c00c915d4539604fdb5afd327f8682f6b7b44"
   end
 
   resource "idna" do
@@ -164,8 +164,8 @@ class Mycli < Formula
   end
 
   resource "openai" do
-    url "https://files.pythonhosted.org/packages/40/f1/4874c4f7db30121885e6a763e2670b2fe1d76c79ed4732f8acbb51c8d96e/openai-3.13.0.tar.gz"
-    sha256 "a8f87a9b3b9c08eb446d68bd0a80e8ec907c4c35fdea63f4265c7b34b2de3a60"
+    url "https://files.pythonhosted.org/packages/a2/a5/bc3681f645a0d026332047cc19a703315979740a11a5763f46c163abd614/openai-3.14.1.tar.gz"
+    sha256 "2f3423a71af767d9071b059cf6df1e97a721c3a8d19417375ad7993d4df0d346"
   end
 
   resource "packaging" do

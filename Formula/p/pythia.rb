@@ -1,9 +1,9 @@
 class Pythia < Formula
   desc "Monte Carlo event generator"
   homepage "https://pythia.org"
-  url "https://pythia.org/releases/pythia83/pythia8317.tgz"
-  version "8.317"
-  sha256 "1ae551d14dac495ddfe6b344792035ebe410fe6c6004d44a335e0ece0e745adf"
+  url "https://pythia8.web.cern.ch/releases/pythia83/pythia8318.tgz"
+  version "8.318"
+  sha256 "85dce1e623f91499b2973e3f939bf760b0f745ad4f4eb1bd0fbce2074e2e8f5c"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -17,14 +17,11 @@ class Pythia < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    rebuild 1
-    sha256 arm64_golden_gate: "acb732d1eb04fc76372174c7881190afd95b2582a75639659e74c0e675cfa401"
-    sha256 arm64_tahoe:       "2941fbfcc53f567e97c62bf8154af156977892accdd8ea954b61596d7bbce87a"
-    sha256 arm64_sequoia:     "330a6e6a8f92479a137bfefaea5a6b996cce777a3f957a121abf6faa9b1ab33a"
-    sha256 arm64_sonoma:      "5a40b3af7cd7afab37bd87c58c77a7c6eee0c980bbffc5f5459f20654f3bd2bb"
-    sha256 sonoma:            "d7bd8c5bd64b0c6ce006e245c9f2b59cdaf70bd4676da0571cb0e1acc735debc"
-    sha256 arm64_linux:       "5803ca24ee29b5727453f35aa6bf722d9ac7e0fc6e143934f24095e9c4dd8d99"
-    sha256 x86_64_linux:      "c8d064a5b974c230b8da926afa06b4426918168bfae7870205285b0aee64c4fe"
+    sha256 arm64_golden_gate: "e4445e451928da92135dbbb8800d527a58bd53bc3be424c765112022a9bf0423"
+    sha256 arm64_tahoe:       "e5160ba954d21bc69f470619a00ec7c0a77ad6126f97a2af5d0bc428939d1d74"
+    sha256 arm64_sequoia:     "85871e9517a839d3a516fdb7377766f6ea7e04c8dfe63c15bb3a900526c2ffa7"
+    sha256 arm64_linux:       "d4753068ceeb3e21384c19ff6476bccecd6fbabf71781f49a71dde1a7b7567e0"
+    sha256 x86_64_linux:      "4d91d0cc9709076766e193f8fe5e6fbdca1005f46fe9a2427ae38154cd6fe6c1"
   end
 
   uses_from_macos "rsync" => :build

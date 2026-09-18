@@ -18,6 +18,8 @@ class Smartmontools < Formula
     sha256 x86_64_linux:      "61712e27dc30e3b492fe259a6dbf69f637018f8348abd5dd1be752526abdd811"
   end
 
+  deny_network_access!
+
   def install
     (var/"run").mkpath
     (var/"lib/smartmontools").mkpath

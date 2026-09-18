@@ -10,11 +10,10 @@ class Iconsur < Formula
   license "MIT"
 
   bottle do
-    rebuild 5
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3ed36e4e583cfc13793ba7b84a20be55acd4c399f16d736fccd5db0f6fba3346"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6e69e2cec7e1593543a7ea270b85527e30397ad6adb9e6cbca698ba598592094"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "02c6747a94e5f9022f44b0c0c289df651a3090075f75aa1606247cac05c79293"
-    sha256 cellar: :any_skip_relocation, sonoma:        "395551a9edc345cfcaf5741a75d6d5b117f7a4e34691c542ae880ed7d2511359"
+    rebuild 6
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "c8092c4a573094e89a8370d965d103a32d6c8884f7ff9a6437d12d8bc3404819"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "d498225ce7ab40121942e4b3358464704680d67ab13acf6d7940acddd4aeca2d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "8f7e4d6cf6f6a7208f43c28faf77088949eb4adf41a73b7cb9239dcafaf4625a"
   end
 
   deprecate! date: "2026-08-01", because: :repo_archived
@@ -56,6 +55,8 @@ class Iconsur < Formula
     if MacOS.version >= :monterey
       # Help `pyobjc-framework-cocoa` pick correct SDK after removing -isysroot from Python formula
       ENV.append_to_cflags "-isysroot #{MacOS.sdk_path}"
+      # `pyobjc-core` needs Apple's `libffi` extensions, so keep `node`'s `libffi` out of the link
+      ENV.remove "HOMEBREW_LIBRARY_PATHS", formula_opt_lib("libffi")
 
       venv = virtualenv_create(libexec/"venv", python3)
       venv.pip_install resources

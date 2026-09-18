@@ -22,6 +22,8 @@ class Stow < Formula
 
   uses_from_macos "perl"
 
+  deny_network_access!
+
   def install
     system "./configure", *std_configure_args
     system "make", "install"

@@ -9,14 +9,15 @@ class ConanAT1 < Formula
   revision 3
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "347415104db865374e09109080fa117d919130b502de713bc9062501e4ff8564"
-    sha256 cellar: :any,                 arm64_sequoia: "7dcfb73f071f82c9a5a5a2c081b54030c8c7aa87f11293897d499400972a9b78"
-    sha256 cellar: :any,                 arm64_sonoma:  "22c8bfd4738a91ec58429ca930af4d1cdcb2c2e13f4b3759e1c0fa576502f392"
-    sha256 cellar: :any,                 arm64_ventura: "e1d35af5f0d27ff9afbc35cf1c81373919968f71928bd78c6ec249d165b7f3ad"
-    sha256 cellar: :any,                 sonoma:        "583dee8e43b2560874eea8d5d9b55ad6c557b802763d457a9682e03234d669f6"
-    sha256 cellar: :any,                 ventura:       "8660e16c3f77b91771d8f5568b8fa7adf05c6867dfb097e322c51f95a087e0cb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6adb3426b67add70f591333351e37feed8d4afed2d8c85b1872c4b980f8a483b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e88aafef9632abd643dd8e617093529b01fddffcf6a8e57f867f59d07f684930"
+    sha256 cellar: :any,                 arm64_golden_gate: "cb4dedcbadef88b89c6b797078ed14b08bb733063e15ef1cb9bb560950ec041c"
+    sha256 cellar: :any,                 arm64_tahoe:       "347415104db865374e09109080fa117d919130b502de713bc9062501e4ff8564"
+    sha256 cellar: :any,                 arm64_sequoia:     "7dcfb73f071f82c9a5a5a2c081b54030c8c7aa87f11293897d499400972a9b78"
+    sha256 cellar: :any,                 arm64_sonoma:      "22c8bfd4738a91ec58429ca930af4d1cdcb2c2e13f4b3759e1c0fa576502f392"
+    sha256 cellar: :any,                 arm64_ventura:     "e1d35af5f0d27ff9afbc35cf1c81373919968f71928bd78c6ec249d165b7f3ad"
+    sha256 cellar: :any,                 sonoma:            "583dee8e43b2560874eea8d5d9b55ad6c557b802763d457a9682e03234d669f6"
+    sha256 cellar: :any,                 ventura:           "8660e16c3f77b91771d8f5568b8fa7adf05c6867dfb097e322c51f95a087e0cb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "6adb3426b67add70f591333351e37feed8d4afed2d8c85b1872c4b980f8a483b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "e88aafef9632abd643dd8e617093529b01fddffcf6a8e57f867f59d07f684930"
   end
 
   keg_only :versioned_formula
@@ -32,6 +33,10 @@ class ConanAT1 < Formula
   depends_on "certifi"
   depends_on "libyaml"
   depends_on "python@3.12" # https://github.com/conan-io/conan/issues/17220#issuecomment-2437381133
+
+  on_tahoe :or_newer do
+    depends_on "gcc@14" => :test
+  end
 
   pypi_packages exclude_packages: "certifi",
                 extra_packages:   "distro"
@@ -146,6 +151,7 @@ class ConanAT1 < Formula
   test do
     system bin/"conan", "search", "zlib", "--remote", "conancenter"
 
+    ENV.method(:"gcc-14").call if OS.mac? && MacOS.version >= :tahoe
     system bin/"conan", "install", "zlib/1.3.1@", "--build"
     assert_path_exists testpath/".conan/data/zlib/1.3.1"
   end

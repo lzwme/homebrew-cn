@@ -1,10 +1,16 @@
 class Sigi < Formula
   desc "Organizing tool for terminal lovers that hate organizing"
   homepage "https://sigi.quest/"
+  # TODO: url "https://static.crates.io/crates/sigi/sigi-3.8.0.crate"
   url "https://ghfast.top/https://github.com/so-dang-cool/sigi/archive/refs/tags/v3.8.0.tar.gz"
   sha256 "a40abce8da7fadd4ce4b51f9124210cc9337c474b40046e4eb6301c42da9af22"
   license "GPL-2.0-only"
   head "https://github.com/so-dang-cool/sigi.git", branch: "core"
+
+  # TODO: remove if undeprecated
+  livecheck do
+    url :stable
+  end
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "757ca1039232442b3540534d73ce4b5d9d94b8763761186535e7f193009a1d15"
@@ -14,6 +20,11 @@ class Sigi < Formula
     sha256 cellar: :any,                 arm64_linux:   "7aa08f41a9610d2d49585f7b6b09343a89af37f1dcda69fa7fc7e43f9b0d7f8b"
     sha256 cellar: :any,                 x86_64_linux:  "7f33abcfa44f8164cc54e0a4c222e2019ea573a644469daffc20e40b4f1d6967"
   end
+
+  # Can be undeprecated on new release or if upstream responds:
+  # https://github.com/so-dang-cool/sigi/issues/30
+  deprecate! date: "2026-09-17", because: :checksum_mismatch
+  disable! date: "2027-09-17", because: :checksum_mismatch
 
   depends_on "rust" => :build
 

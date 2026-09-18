@@ -28,7 +28,6 @@ class Zig < Formula
 
   # NOTE: `z3` should be macOS-only dependency whenever we need to re-add
   on_macos do
-    depends_on macos: :big_sur # https://github.com/ziglang/zig/issues/13313
     depends_on "zstd"
   end
 

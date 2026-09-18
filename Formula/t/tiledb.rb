@@ -11,12 +11,13 @@ class Tiledb < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "98fee684203c548244cc2f3ec9459f7f4539369e385b3be78240a2ccd30ef106"
-    sha256 cellar: :any,                 arm64_sequoia: "c1de4bb360650a489724b55e763de8db121f70ecde9b95e8174fe5af11114715"
-    sha256 cellar: :any,                 arm64_sonoma:  "d2486b2bb95402d98de88de5872c2a9339eac39dc80d7d2495cee23b73589ff7"
-    sha256 cellar: :any,                 sonoma:        "8c0caf0184e82ca10c8d739210ca07bfc0e2fea6349a04693b2a2ab9b43485e2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "bc141748f5b5f2635e77346efcd4cd158ee0b61f71a63d7b816e5deb2cb93421"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "69feef5a67603d461607fba63663fff92e5b955b124675e87e655589a224d2f0"
+    sha256 cellar: :any,                 arm64_golden_gate: "23f3546a573f349d45df6f064fb36df887841ef21943799c3124eb60bf0008e5"
+    sha256 cellar: :any,                 arm64_tahoe:       "98fee684203c548244cc2f3ec9459f7f4539369e385b3be78240a2ccd30ef106"
+    sha256 cellar: :any,                 arm64_sequoia:     "c1de4bb360650a489724b55e763de8db121f70ecde9b95e8174fe5af11114715"
+    sha256 cellar: :any,                 arm64_sonoma:      "d2486b2bb95402d98de88de5872c2a9339eac39dc80d7d2495cee23b73589ff7"
+    sha256 cellar: :any,                 sonoma:            "8c0caf0184e82ca10c8d739210ca07bfc0e2fea6349a04693b2a2ab9b43485e2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "bc141748f5b5f2635e77346efcd4cd158ee0b61f71a63d7b816e5deb2cb93421"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "69feef5a67603d461607fba63663fff92e5b955b124675e87e655589a224d2f0"
   end
 
   depends_on "c-blosc2" => :build

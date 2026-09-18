@@ -1,16 +1,16 @@
 class ClaudeCodeRouter < Formula
   desc "Tool to route Claude Code requests to different models and customize any request"
   homepage "https://musistudio.github.io/claude-code-router/"
-  url "https://registry.npmjs.org/@musistudio/claude-code-router/-/claude-code-router-3.1.0.tgz"
-  sha256 "f9bc4a77a56d1d9a951889a60096c75b2212cfe6328f762fce5a9c071be2175a"
+  url "https://registry.npmjs.org/@musistudio/claude-code-router/-/claude-code-router-3.1.1.tgz"
+  sha256 "3a7cb06f392090ad77fa9174ed412c4e408b926c96bcb511b62140bd6bebba5a"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "158fa2c84ecb41c6a22fbbe608a91ba28d15a1ea78f4ac95311589831124059d"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "3f2efe1289ec72eb62ea8c34b2afa957b47f3ca4178391ef4806e625a1372450"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "6f1d849ca3056b3f5b68b52db4e20b505a51950ac615e786a32260aa54d2886d"
-    sha256 cellar: :any,                 arm64_linux:       "0add81b07a2e4ec26c990245197571b73c3b3a8a92b448e0838700fbe0b61461"
-    sha256 cellar: :any,                 x86_64_linux:      "2c272eb4ebe7e6524f8fa0650fe5ff9216af7f5c4e89ae3320556552620fc436"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "679068419a44d4621d4a6b3538bdb9a4725635ad02d356072c1bf070711c2e9f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "c0e7272fd0f6dd983bfa7206bb234b0ef6c6a52e5b6bbba61fcb5eb58c369cc7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "aac2b599ec7acdb4e41134d240b6d67f18bbed16a3418674fcd26e982a8c1f43"
+    sha256 cellar: :any,                 arm64_linux:       "066e3b59fd0f4b0762b50d1e7d8feab01754d17679678146a20689e657d2e04b"
+    sha256 cellar: :any,                 x86_64_linux:      "60743f741ffda09220af853380341d8c08bd514b02e5d83e447a414be8c25d02"
   end
 
   depends_on "node"

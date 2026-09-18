@@ -3,18 +3,16 @@ class Hatch < Formula
 
   desc "Modern, extensible Python project management"
   homepage "https://hatch.pypa.io/latest/"
-  url "https://files.pythonhosted.org/packages/10/fd/634c575b5becad2dfa7135f3ad66d57102cd77d834cf473756d868a808ff/hatch-1.18.0.tar.gz"
-  sha256 "463d214cb068391454be198e58d3cc0846f71e39d68c5568ba650af7781e8ae3"
+  url "https://files.pythonhosted.org/packages/91/81/a5a77aaa23df824562d50ad25eeb52ae6446924d0dc68c7c19ed6d8b171f/hatch-1.18.1.tar.gz"
+  sha256 "222fff78e197cf12a39db7efe5318ca403f2614db213416fd106a6c3260ef221"
   license "MIT"
-  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "d993f68aeeca964abcbc5e0fffcc27b1a6197b2136aabf9d9f5824dce8862e03"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "d993f68aeeca964abcbc5e0fffcc27b1a6197b2136aabf9d9f5824dce8862e03"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "d993f68aeeca964abcbc5e0fffcc27b1a6197b2136aabf9d9f5824dce8862e03"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "d993f68aeeca964abcbc5e0fffcc27b1a6197b2136aabf9d9f5824dce8862e03"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "92aeb4d548a3d154b7748469c1667a0c5e8ccab853cd41bee30d27429d60d62e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "92aeb4d548a3d154b7748469c1667a0c5e8ccab853cd41bee30d27429d60d62e"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "39832f1e61e0327b005825e51990eac1f890f39d04c4726bc22696f2dc2998e3"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "39832f1e61e0327b005825e51990eac1f890f39d04c4726bc22696f2dc2998e3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "39832f1e61e0327b005825e51990eac1f890f39d04c4726bc22696f2dc2998e3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "c76b7c7b1461f141706475cf5096671d5c76012ef55e2b3fb4f1ead12f0960bb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "c76b7c7b1461f141706475cf5096671d5c76012ef55e2b3fb4f1ead12f0960bb"
   end
 
   depends_on "certifi" => :no_linkage
@@ -45,9 +43,14 @@ class Hatch < Formula
     sha256 "f152097224a0ae24be5a0f6bae1b9359af82133bce63f98a95f86cae1aede9ed"
   end
 
+  resource "distro" do
+    url "https://files.pythonhosted.org/packages/fc/f8/98eea607f65de6527f8a2e8885fc8015d3e6f5775df186e443e0964a11c3/distro-1.9.0.tar.gz"
+    sha256 "2fa77c6fd8940f116ee1d6b94a2f90b13b5ea8d019b98bc8bafdcabcdd9bdbed"
+  end
+
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/0a/a0/50c2c0ce5e74d7721bbb1b19a26ebd339aac5878553a6e35308c2f31f935/filelock-3.32.5.tar.gz"
-    sha256 "f6a6a28f743f9b95ce19db5abe0f376f75eb56517dff21e1a4751e2657d3e83d"
+    url "https://files.pythonhosted.org/packages/0f/59/e19834834cb01a32febfbb0f8a23a9088088f5d45991824ff2bc3b5e8acb/filelock-3.32.7.tar.gz"
+    sha256 "37b8a3d9811b0f9aef7e5ec5c71bb320de52df51e6ca9bcd6f5ad81187660da7"
   end
 
   resource "h11" do
@@ -61,13 +64,13 @@ class Hatch < Formula
   end
 
   resource "httpcore2" do
-    url "https://files.pythonhosted.org/packages/be/ad/f4f0e57345f1870f3e8cb624e058d7eca6e5a27d33bcc3311d9b618734cd/httpcore2-2.12.0.tar.gz"
-    sha256 "9293522bba0aa7c4c8e9e3f040c16575bd8868e155a77fa30c7a9085a5eae648"
+    url "https://files.pythonhosted.org/packages/15/8c/e925b1c92018abb3a1863ce1549d76d2381e334d21d65d4ac8f65dabd78a/httpcore2-2.13.0.tar.gz"
+    sha256 "2adc8be4fb285fbcd6d894298db3b52c177e74b6674eda3a76bd36be3292a3db"
   end
 
   resource "httpx2" do
-    url "https://files.pythonhosted.org/packages/7f/f8/579a8b51e42e38ee32647df9f08aa25643ae788e275cc625b199829c4671/httpx2-2.12.0.tar.gz"
-    sha256 "7631fe9887a8a2275f4a2540e053aa670fcc50742864a9ae7c66e609fdcf12cf"
+    url "https://files.pythonhosted.org/packages/b9/a0/e9deef4654132857b5a5dbe4eddd0ac59c2814500e11f2f5044cd81103ee/httpx2-2.13.0.tar.gz"
+    sha256 "81bd07dc67a3701729ef1f777a3c00c915d4539604fdb5afd327f8682f6b7b44"
   end
 
   resource "hyperlink" do
@@ -136,8 +139,8 @@ class Hatch < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/69/b7/802a56eca9f2fac455b8bab5375a2647b0f0e14a2cd63ef077de3c4a7658/platformdirs-4.11.7.tar.gz"
-    sha256 "4f41487eeeeeb07f3a6625e61d9bc0ae6809f92d3386dbd74392fbb76108104d"
+    url "https://files.pythonhosted.org/packages/58/b9/8adc4e1b422b27fd88540ec7bf1f406f77ef393ec070e26fc430e914cde8/platformdirs-4.11.9.tar.gz"
+    sha256 "e2c66a8d384596cd98e3c4aea2d761df7bac95d9d8a2cc3946daa8cdafdaebc1"
   end
 
   resource "pluggy" do
@@ -156,8 +159,8 @@ class Hatch < Formula
   end
 
   resource "pyproject-hooks" do
-    url "https://files.pythonhosted.org/packages/e7/82/28175b2414effca1cdac8dc99f76d660e7a4fb0ceefa4b4ab8f5f6742925/pyproject_hooks-1.2.0.tar.gz"
-    sha256 "1e859bd5c40fae9448642dd871adf459e5e2084186e8d2c2a79a824c970da1f8"
+    url "https://files.pythonhosted.org/packages/6d/5d/f2ddeef4a855a102aaae5e97826a0260007522ab504421b75addfdb1517c/pyproject_hooks-1.3.3.tar.gz"
+    sha256 "defda19b854fa0d3bd4f76ea4ddcba8abd7dcfcdd585a6690ade050744fc5f43"
   end
 
   resource "python-discovery" do
@@ -211,8 +214,8 @@ class Hatch < Formula
   end
 
   resource "virtualenv" do
-    url "https://files.pythonhosted.org/packages/08/1c/69faa2e6a83484e2a8227bce5cfaa183941c5720f99c48f204931d286b07/virtualenv-21.7.8.tar.gz"
-    sha256 "1dc49c790072a9072cb1803f9bd62aa69cd583077cada32390f75505cdc64c9b"
+    url "https://files.pythonhosted.org/packages/45/9d/5acd348310e0803c658c8cf7c4d928e2d22fc4f79c29098b651cd3edfdba/virtualenv-21.7.10.tar.gz"
+    sha256 "a7bf10f37ecc36f1942d6e469d6b59f5fe308f60ac711f66f51ef3bd8cb2c9aa"
   end
 
   def install

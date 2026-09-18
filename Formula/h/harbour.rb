@@ -22,12 +22,13 @@ class Harbour < Formula
 
   bottle do
     rebuild 2
-    sha256 cellar: :any,                 arm64_tahoe:   "06c136368fdf19cd9b6a627930406bd96d06c82a60beef63d4f702000eda8e6c"
-    sha256 cellar: :any,                 arm64_sequoia: "161bee9030b1f4d9170c831ba10fb682f89d54be2d206f895d78b73ec08aa7b9"
-    sha256 cellar: :any,                 arm64_sonoma:  "d23b54efd3605e0e59fbb7ddbec4d17d990a99772af413f6643679064e346dde"
-    sha256 cellar: :any,                 sonoma:        "d9581caceab52be6bdd840f98a0f6fcc30349ce80dd3a1dca3fc88d580b8b9c7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a6964cc72ed89391d86c565cdcef99c45c753aa6b3196826da4ebe859280a9a4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5b07b5a9ec6f887b51a0c212a363e1943a4cb1c0059b23261ae9ea2649f274ab"
+    sha256 cellar: :any,                 arm64_golden_gate: "98d9c25c1b0f27205fc2493de59cb485c993a4f978b718c1580d83e5e5e734fa"
+    sha256 cellar: :any,                 arm64_tahoe:       "06c136368fdf19cd9b6a627930406bd96d06c82a60beef63d4f702000eda8e6c"
+    sha256 cellar: :any,                 arm64_sequoia:     "161bee9030b1f4d9170c831ba10fb682f89d54be2d206f895d78b73ec08aa7b9"
+    sha256 cellar: :any,                 arm64_sonoma:      "d23b54efd3605e0e59fbb7ddbec4d17d990a99772af413f6643679064e346dde"
+    sha256 cellar: :any,                 sonoma:            "d9581caceab52be6bdd840f98a0f6fcc30349ce80dd3a1dca3fc88d580b8b9c7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "a6964cc72ed89391d86c565cdcef99c45c753aa6b3196826da4ebe859280a9a4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "5b07b5a9ec6f887b51a0c212a363e1943a4cb1c0059b23261ae9ea2649f274ab"
   end
 
   deprecate! date: "2026-01-05", because: "uses deprecated libxdiff"

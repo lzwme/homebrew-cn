@@ -23,6 +23,8 @@ class Chicken < Formula
 
   conflicts_with "mono", because: "both install `csc`, `csi` binaries"
 
+  deny_network_access!
+
   def install
     ENV.deparallelize
 

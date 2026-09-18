@@ -20,6 +20,8 @@ class P7zip < Formula
   # Remove non-free RAR sources
   patch :DATA
 
+  deny_network_access!
+
   def install
     if OS.mac?
       mv "makefile.macosx_llvm_64bits", "makefile.machine"

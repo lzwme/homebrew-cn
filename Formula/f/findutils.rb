@@ -16,6 +16,8 @@ class Findutils < Formula
     sha256 cellar: :any,                 x86_64_linux:      "8b89e4687b71a6ed5b3c3d7e64adfd50901e000c4d1060b2cedd5f7c1dfcf01b"
   end
 
+  deny_network_access!
+
   def install
     args = %W[
       --disable-nls

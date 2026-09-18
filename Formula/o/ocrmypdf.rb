@@ -3,17 +3,16 @@ class Ocrmypdf < Formula
 
   desc "Adds an OCR text layer to scanned PDF files"
   homepage "https://ocrmypdf.readthedocs.io/en/latest/"
-  url "https://files.pythonhosted.org/packages/4c/9a/f7d7c943e07b0a28cb0958229ac480f3c51b4169ad9df030477f103b298a/ocrmypdf-17.11.0.tar.gz"
-  sha256 "8e41cbba23bba9ce20bc557576211e1829d1beaef00183bacd227b4b9482af87"
+  url "https://files.pythonhosted.org/packages/37/b5/2ffe5431eb7a8e4fb620d30351e06b8f97212800d23145979c459784bea0/ocrmypdf-17.12.1.tar.gz"
+  sha256 "aca73a23a80cf2f46a4c15040b0035203dbf74054b7a0c3a7ee93b05abc555a6"
   license "MPL-2.0"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "7d1096c24bf9af0054400e0093f7f687184b8f2cd26d253f39129dd26aef6c4c"
-    sha256 cellar: :any, arm64_tahoe:       "c2c2bac90923f262b8dc7ed1a76476d0f04854ddeab4f5d7709cd96e3819f95f"
-    sha256 cellar: :any, arm64_sequoia:     "3118ac8ef7711d9ae6b4ac70341f76a5cdb2715586a3972a468ce7c3f9b90473"
-    sha256 cellar: :any, arm64_sonoma:      "ef2fd221c343b040498c1e346366d2716f982f39e487a8bd5bbcb0059f57526f"
-    sha256 cellar: :any, arm64_linux:       "e0ebcea7605eecb8483a8f1afb4313216538aaadfba5bea6343aa50d5a121af1"
-    sha256 cellar: :any, x86_64_linux:      "84cd997a496e5e1ad810a0464a2aabd5e1262d13c9ca98b6bcbd68f0c38b9aa4"
+    sha256 cellar: :any, arm64_golden_gate: "b346f5e02faff0e08b77de78c4796b490919ce5a3d1cf82399ad96c98bca44fd"
+    sha256 cellar: :any, arm64_tahoe:       "064085f3ad6a80e9ff2c4193fe8b7c8d51bc8da23729834b80ed3612515d334f"
+    sha256 cellar: :any, arm64_sequoia:     "38cdb109911e52c5e7206dae205df0305ea838d9188573e2e7e668c6e8da634c"
+    sha256 cellar: :any, arm64_linux:       "baab52bfdefafc6e5a4b51fa46bff46ea2b2c0c9c965f60ef579ae55dfed9e7e"
+    sha256 cellar: :any, x86_64_linux:      "c71b2f074aadf6c19e5694a7c93e2b3e267dd1264b036c0dad991f034535e247"
   end
 
   depends_on "cmake" => :build # for pikepdf
@@ -51,8 +50,8 @@ class Ocrmypdf < Formula
   end
 
   resource "fonttools" do
-    url "https://files.pythonhosted.org/packages/84/69/c97f2c18e0db87d2c7b15da1974dace76ae938f1cfa22e2727a648b7ed43/fonttools-4.63.0.tar.gz"
-    sha256 "caeb583deeb5168e694b65cda8b4ee62abedfa66cf88488734466f2366b9c4e0"
+    url "https://files.pythonhosted.org/packages/77/51/d63c7e52163ac14393a35bd14bd7c0da95f8f74be5d7cc988092f9965129/fonttools-4.65.0.tar.gz"
+    sha256 "762ba5431358d0dbd4a01982484a1d494fb267e91f974cdcf20b80eab8560f6f"
   end
 
   resource "fpdf2" do
@@ -66,8 +65,8 @@ class Ocrmypdf < Formula
   end
 
   resource "lxml" do
-    url "https://files.pythonhosted.org/packages/ad/a9/970b8fa0ecc4fbf1dfaed0d89bbc1fc1421b25ec26a2038c91e872dc6c8e/lxml-6.1.2.tar.gz"
-    sha256 "1055241852f2b02068af4a625a5d32c087db193c12251928af2562ecd2239f18"
+    url "https://files.pythonhosted.org/packages/23/ad/28ecd7cb894d172f3c9c80a075eeeb2017ac62e3632cee05a5f9493547eb/lxml-6.1.3.tar.gz"
+    sha256 "45222d94ddd511536f3b2f7d9deae3b2339b4ce0f075f1ca25703b07cad9dd21"
   end
 
   resource "markdown-it-py" do
@@ -90,14 +89,9 @@ class Ocrmypdf < Formula
     sha256 "96bfd431e3577a55a0efd25676968ca4ce8fd5b53f14565f85716ff363889602"
   end
 
-  resource "pi-heif" do
-    url "https://files.pythonhosted.org/packages/6a/a2/70168b601b41bdf5726dfc8dc110eb4052a2e851fed9c9bdae95910e401d/pi_heif-1.4.0.tar.gz"
-    sha256 "e1199d9d41d9ecc877cf3ae7322ff099f6404574f2e62da47590cd4ecb9ec554"
-  end
-
   resource "pikepdf" do
-    url "https://files.pythonhosted.org/packages/1e/d4/f4383bb3ac90cb322cb340cd4253bfc19f80819a97d61a49077ab3a0581e/pikepdf-10.12.0.tar.gz"
-    sha256 "cbc790243a333a2c87bb4c1a69e3d7036b4a7f43c7fafc8ec7cee06985b48ae9"
+    url "https://files.pythonhosted.org/packages/1c/0e/6e74dd213537b71c945743a4b3112dbb430896ad68b8a6ad22e4468455d4/pikepdf-10.13.0.post1.tar.gz"
+    sha256 "4b73f926ebae81f04bf14527af330bd00bb268be767e0f189f7c4c3e4ad7ae0a"
   end
 
   resource "pluggy" do
@@ -121,8 +115,8 @@ class Ocrmypdf < Formula
   end
 
   resource "uharfbuzz" do
-    url "https://files.pythonhosted.org/packages/58/85/c7545959fdf6b9377b926c826f6d80bddf034ac361b09306d430a0f556a5/uharfbuzz-0.56.0.tar.gz"
-    sha256 "77f4ad1c9f32f44cc6f0c0c4f98fab54587719c96c810a043d01669f704d3e0c"
+    url "https://files.pythonhosted.org/packages/60/77/48457fb0c51f6f8c1e3082b126322e075d60fea60ee0df2b18cc050d9874/uharfbuzz-0.56.1.tar.gz"
+    sha256 "a0a6928ed66b166a931ebe5df9ac551b9c42983513030233dcd95b41fa827f97"
   end
 
   def install

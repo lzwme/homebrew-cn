@@ -19,6 +19,8 @@ class Sshpass < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:      "29700081d945fb21d977430b0fabefb7e38a53da955ffb2a9b1d28e14203c877"
   end
 
+  deny_network_access!
+
   def install
     system "./configure", *std_configure_args
     system "make", "install"

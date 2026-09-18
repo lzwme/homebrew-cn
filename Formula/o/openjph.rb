@@ -1,20 +1,18 @@
 class Openjph < Formula
   desc "Open-source implementation of JPEG2000 Part-15 (or JPH or HTJ2K)"
   homepage "https://github.com/aous72/OpenJPH"
-  url "https://ghfast.top/https://github.com/aous72/OpenJPH/archive/refs/tags/0.31.0.tar.gz"
-  sha256 "fe169dbbaae71a169a0a6a68dccb346616193252c1ca044217afa0d5d1dc436f"
+  url "https://ghfast.top/https://github.com/aous72/OpenJPH/archive/refs/tags/0.32.0.tar.gz"
+  sha256 "5cb1ebe18e5ee1322d23ff2130b37562d447d1ad5586c3d16cf84be3ae30f719"
   license "BSD-2-Clause"
-  compatibility_version 6
+  compatibility_version 7
   head "https://github.com/aous72/OpenJPH.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "07f7c432bc8b89c3b1be89953077212abee4d228e962d696dbd532d60ef8abb9"
-    sha256 cellar: :any, arm64_tahoe:       "3b748fc99e37f3af562e582669a5defaec38dee6eba88d6e3a9b8e22811a415e"
-    sha256 cellar: :any, arm64_sequoia:     "5f4edc3e48c906383aa0cc3fd1671c5a6e07f2cdeae5d41064488c2143f71ffa"
-    sha256 cellar: :any, arm64_sonoma:      "692729a850222f277dd2d01e09e997e4cdeb7996586c6308b64390a7093fa624"
-    sha256 cellar: :any, sonoma:            "c8af7daeeba0558f8c029418e0b342ed634890ac0f910db84b28becdba5263a5"
-    sha256 cellar: :any, arm64_linux:       "f436eb20cb5ce29ed1b56455b6fdba74221b23f8d668c8fda0fa246d627bb8c8"
-    sha256 cellar: :any, x86_64_linux:      "f46e8ddbc8b67794009720090ebd74a774a85d2029a7c54f97fc8b031e35466e"
+    sha256 cellar: :any, arm64_golden_gate: "0b8eb7715378b2336cd0dd4b43cbbdd9e70aece80e76b7b3bb6420055adf6c5c"
+    sha256 cellar: :any, arm64_tahoe:       "5d007e77d74a266d101de537c05d3c4f03a6936550938e86c03bf7d6e6ca2072"
+    sha256 cellar: :any, arm64_sequoia:     "a543eb8908cdb84823c5798f0c7b6355af68338f133806a41746d5c22250e01f"
+    sha256 cellar: :any, arm64_linux:       "df596ce6f8fd0855aa63099725d6d391b2aa52d486830b0cee48298d62eb8f70"
+    sha256 cellar: :any, x86_64_linux:      "e03661605160485e1ebd99d75e29ea2e1ca5bfd14e788f9d6b3b5b27226af577"
   end
 
   depends_on "cmake" => :build

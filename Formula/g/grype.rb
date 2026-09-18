@@ -1,18 +1,17 @@
 class Grype < Formula
   desc "Vulnerability scanner for container images and filesystems"
   homepage "https://github.com/anchore/grype"
-  url "https://ghfast.top/https://github.com/anchore/grype/archive/refs/tags/v0.118.0.tar.gz"
-  sha256 "6963758836cd46fd019d4c5e2eb903ec26960c34814a35058ebea56971dc592c"
+  url "https://ghfast.top/https://github.com/anchore/grype/archive/refs/tags/v0.119.0.tar.gz"
+  sha256 "be9c904938d9702e432e3c24ea2288913678af33968405980d2061d6159248b2"
   license "Apache-2.0"
   head "https://github.com/anchore/grype.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "6ffe659a0c2363b9fef15c4806555761a402c46a51ebc0bf0fc995878a83c5ac"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "82a2f04e3392928c58a80273a336682708574a639e17b1f606a2210ac08a339b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "c748a21c076ae4449b1b647b4e6050f7c781ceb8497bcc600c6c83bc7c2e45b7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "3ba81e450133fa8936d7eba68c20509ebc49752775c9def62948b78e31db2ede"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "82fa7b79d0abdd7ff7f37e85dae5a4b79846bb0783477187576b533d580f367d"
-    sha256 cellar: :any,                 x86_64_linux:      "49e9a564ca91a18d4eca02ce902ff2a60eae4e78c12d4145078c5e9128530e46"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "e62d4cde890a75aa91c4f903f7a9a1a2155764c0b0c96e20836be7d9e4e4c7ca"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "ab8ae4d0cc5fc78363b1da634ec793534114dc20689419dd7520e9713b49faf6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "a2f0bf4be0cc311ed1788ecffc433377ba0ef89553760afcf7b1d23078a03efd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "37410c87cf9a54e1f94d2473c823bce821ba2d7c898f1d923afd9b6d5be1f3ee"
+    sha256 cellar: :any,                 x86_64_linux:      "4ac747f51bd4f0f5deab3bd857fefaa8a6b04aaffe245a8e93a4a1d0ebe6eaa7"
   end
 
   depends_on "go" => :build

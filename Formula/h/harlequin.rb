@@ -3,19 +3,19 @@ class Harlequin < Formula
 
   desc "Easy, fast, and beautiful database client for the terminal"
   homepage "https://harlequin.sh", browsed: "2026-09-05"
-  url "https://files.pythonhosted.org/packages/11/62/59e4f4fe3a98b62e1db9f91b5da47e79feac4a6be7cb848dd8db6e7ac67e/harlequin-2.14.0.tar.gz"
-  sha256 "623e085b700bd2486778751968615444f4b908a2081efad7b3bc0bdb34cc5be6"
+  url "https://files.pythonhosted.org/packages/40/40/d5c6c59761d07a589d5f43fe52db5dd7448801146732394d45b779c94460/harlequin-2.15.0.tar.gz"
+  sha256 "3129c6a1b0eb87eea64229c57835b8eb72e02b5b959c4af7c4768ed485037900"
   license "MIT"
   head "https://github.com/tconbeer/harlequin.git", branch: "main"
 
   no_autobump! because: "has non-PyPI resources"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "6b1ddf888092b118a5da8b4cfeb83d6b3cb3f59fc556a75dcb126d874141b16d"
-    sha256 cellar: :any, arm64_tahoe:       "c073ec2b86ff530c0737f8095ad73cb0a26bbfccd96127e342c336bd9cc789be"
-    sha256 cellar: :any, arm64_sequoia:     "8a55b3157e05287ead8137254aa31d67f068c5c34c35d056e18df519846670c7"
-    sha256 cellar: :any, arm64_linux:       "efe2b904685a219cfcdc19e61303553244786695ee64838202962c0bde14183f"
-    sha256 cellar: :any, x86_64_linux:      "d16ccb3881e75260de2d98ca4f1f3083de6a21073d57b04bec5de96398df698b"
+    sha256 cellar: :any, arm64_golden_gate: "7997d96819b02c8c2532bb0d99bc9f6290bc72ad289de9718e2acaa9fe648ed4"
+    sha256 cellar: :any, arm64_tahoe:       "c5b9280f5a45127224319255bcb672a55de8cffc29174a3b6932076898502b2a"
+    sha256 cellar: :any, arm64_sequoia:     "b6193591fb72cda3e98924a33f4cdca58dcc0e0c6a2d38f20a5fc01921a185ea"
+    sha256 cellar: :any, arm64_linux:       "8231ea72222da69af5ce08c8305f52b3b4fd17ce08797e88a0b90e60759d3d03"
+    sha256 cellar: :any, x86_64_linux:      "35a0b11c961c9da2bb35bf6739204df94d42e3c363acdb8a5fb2fe5fe9b18676"
   end
 
   depends_on "cmake" => :build
@@ -57,8 +57,8 @@ class Harlequin < Formula
   end
 
   resource "harlequin-postgres" do
-    url "https://files.pythonhosted.org/packages/fc/9a/43b082e83eed259438af8a32271584464b8a5a71ff0e5fc88a592fdb4525/harlequin_postgres-1.4.1.tar.gz"
-    sha256 "e352c74312752f279aa33bf97284e322ef1447f18595b0b583265ad843df7bab"
+    url "https://files.pythonhosted.org/packages/61/45/d0cfcaf40f57ff544047ca884389bedfc6317e60e4c6310971e89b638faf/harlequin_postgres-1.5.0.tar.gz"
+    sha256 "df245e8079b3c6882709be3249e10b8d3127c245d115f6f428889245b3fbaea0"
   end
 
   resource "jinja2" do
@@ -102,8 +102,8 @@ class Harlequin < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/53/18/f3bb8ef0d3b930692343da8aa4d3cbcd6749477c053959395ac81965a6e9/platformdirs-4.11.8.tar.gz"
-    sha256 "f23abafea7dd4276d1f29104b83598d7dcc567cafd07c9c951e66665645437fc"
+    url "https://files.pythonhosted.org/packages/58/b9/8adc4e1b422b27fd88540ec7bf1f406f77ef393ec070e26fc430e914cde8/platformdirs-4.11.9.tar.gz"
+    sha256 "e2c66a8d384596cd98e3c4aea2d761df7bac95d9d8a2cc3946daa8cdafdaebc1"
   end
 
   resource "prompt-toolkit" do
@@ -177,8 +177,8 @@ class Harlequin < Formula
   end
 
   resource "textual-textarea" do
-    url "https://files.pythonhosted.org/packages/a2/e8/061ba3d6861984e5377b08bbf6f55d06fe43623d5bb4b26e27239a0f3959/textual_textarea-0.18.2.tar.gz"
-    sha256 "55890c62e270dd6f4a8988e0cfc54120a05022eead82c665095dd2be14bf17a9"
+    url "https://files.pythonhosted.org/packages/a4/6d/35b6546171af47d134338f5c25eed86ec17ede907d54d09ef8f28824509b/textual_textarea-0.18.4.tar.gz"
+    sha256 "d95f96ef88ea8856c5644717498c11decbeeab4b6d02e8124fc6bd4c511c7481"
   end
 
   resource "tomlkit" do

@@ -4,18 +4,18 @@ class LibheifPlugins < Formula
   url "https://ghfast.top/https://github.com/strukturag/libheif/releases/download/v1.23.4/libheif-1.23.4.tar.gz"
   sha256 "d0c02b4b0e978f34a1974b6f3eea7975a537bf7a9195ffeea38e7242ff316fdd"
   license "LGPL-3.0-or-later"
+  revision 1
 
   livecheck do
     formula "libheif"
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "7096690d937138bcd1d38263f897bf720d838ee5a10d94d9f2fa041cd3f437d5"
-    sha256 cellar: :any, arm64_tahoe:       "9cd1b18c4425d5e0e3b443d4ce55275a8ff669b6004deef6272d4ebc317379fb"
-    sha256 cellar: :any, arm64_sequoia:     "e97a838b80bee6f36eceeadf2e1e14a0866284929025d0daca9d4780490290e2"
-    sha256 cellar: :any, arm64_sonoma:      "2b4c4ecbb485d54f375d9ea33f865f2f2f9be1498ca5a500ecaea14315168dca"
-    sha256 cellar: :any, arm64_linux:       "9f851327fd6ba3af76802d167c82b36ffc3d8e240d42c7e4961f73a48cf5727b"
-    sha256 cellar: :any, x86_64_linux:      "6b93ce92fbcc185f1d17ecf8533532fcc06d900c40127f3f5a047c7203571f74"
+    sha256 cellar: :any, arm64_golden_gate: "a05aa884b046f6278e433af7678f96344ebf324e81b62990b8920335890273d0"
+    sha256 cellar: :any, arm64_tahoe:       "16ee18bd87eda5ae2c28f630f3c4d686a4e4a0567d31a49dfa0d3070fc47aa07"
+    sha256 cellar: :any, arm64_sequoia:     "829034cf089c09b83f7f6ecc86c3593bbc38716dfa7e737a80f0c829cd1624aa"
+    sha256 cellar: :any, arm64_linux:       "c626b9846fb9b4d30089dc2bd04f1591657589c0dcca2d4bb6aa8f3948ae4fb9"
+    sha256 cellar: :any, x86_64_linux:      "dccaa999d883bc0b9bcb39866c6ffbd3bf344531c746b269cb009911460f045d"
   end
 
   depends_on "cmake" => :build

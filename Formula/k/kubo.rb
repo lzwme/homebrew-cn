@@ -25,6 +25,12 @@ class Kubo < Formula
   # TODO: unpin go@1.26 when kubo supports go 1.27
   depends_on "go@1.26" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ldflags = "-X github.com/ipfs/kubo.CurrentCommit=#{tap.user}"
     system "go", "build", *std_go_args(ldflags:, output: bin/"ipfs"), "./cmd/ipfs"

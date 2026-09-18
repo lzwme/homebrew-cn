@@ -14,12 +14,13 @@ class Pdal < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "2642d99c9f01ff1dcb5b53f40c78099a4da7930d9a2faab98333916fd80dac0c"
-    sha256 cellar: :any, arm64_sequoia: "95d6d1984c8b04f0f16975c395bb8e9c2045e6046da0e946ffb8d61137046c60"
-    sha256 cellar: :any, arm64_sonoma:  "ab9bb98d89fce6c67a5c0fc10d0d291476b2cc2a6f3b31353e0a77d968e7f3f6"
-    sha256 cellar: :any, sonoma:        "e1f2688f3eff74f797e8268ce8b0fcaedc9026fb7e0deafc7f28f58d27fe2c4e"
-    sha256 cellar: :any, arm64_linux:   "b333653c1099ab0ff2da719b4e5f72280ff53214f474e37d3c33a464d58864bd"
-    sha256 cellar: :any, x86_64_linux:  "194de33dd537a725a2588f5680304cf00420b6c0e7cde3ebb017edad56019fb5"
+    sha256 cellar: :any, arm64_golden_gate: "5fcedf5dad6c83ae206fb0b915b3148ceacf95d4b3621a58e065c712463e5b91"
+    sha256 cellar: :any, arm64_tahoe:       "2642d99c9f01ff1dcb5b53f40c78099a4da7930d9a2faab98333916fd80dac0c"
+    sha256 cellar: :any, arm64_sequoia:     "95d6d1984c8b04f0f16975c395bb8e9c2045e6046da0e946ffb8d61137046c60"
+    sha256 cellar: :any, arm64_sonoma:      "ab9bb98d89fce6c67a5c0fc10d0d291476b2cc2a6f3b31353e0a77d968e7f3f6"
+    sha256 cellar: :any, sonoma:            "e1f2688f3eff74f797e8268ce8b0fcaedc9026fb7e0deafc7f28f58d27fe2c4e"
+    sha256 cellar: :any, arm64_linux:       "b333653c1099ab0ff2da719b4e5f72280ff53214f474e37d3c33a464d58864bd"
+    sha256 cellar: :any, x86_64_linux:      "194de33dd537a725a2588f5680304cf00420b6c0e7cde3ebb017edad56019fb5"
   end
 
   depends_on "cmake" => :build

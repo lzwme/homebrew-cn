@@ -1,8 +1,11 @@
 class Pass < Formula
   desc "Password manager"
   homepage "https://www.passwordstore.org/"
-  url "https://git.zx2c4.com/password-store/snapshot/password-store-1.7.4.tar.xz"
-  sha256 "cfa9faf659f2ed6b38e7a7c3fb43e177d00edbacc6265e6e32215ff40e3793c0"
+  # Using git checkout as snapshot archives have previously changed from server updates
+  # https://github.com/Homebrew/homebrew-core/pull/290649#issuecomment-5654421778
+  url "https://git.zx2c4.com/password-store.git",
+      tag:      "1.7.4",
+      revision: "1078f2514d579178d5df7042c6a790e9c9b731ad"
   license "GPL-2.0-or-later"
   head "https://git.zx2c4.com/password-store.git", branch: "master"
 
@@ -13,16 +16,17 @@ class Pass < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "98bd9949756576685149b0bba825a0d4a12efc5f256d703236a09e24fb6ab2b9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "28e5b23335b5260675224af5d330a5d4f3b5e3d9be5f9491c68dbdb48ab8a6fb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "14e3206a94f04e911f0168b7e458f0149b8c42cd34014a113610431d2a142e1b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "14e3206a94f04e911f0168b7e458f0149b8c42cd34014a113610431d2a142e1b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "14e3206a94f04e911f0168b7e458f0149b8c42cd34014a113610431d2a142e1b"
-    sha256 cellar: :any_skip_relocation, sonoma:         "1132f363a63efb874ebf98f406dcc6f9346496b10b0a3b3c2063b447c8035180"
-    sha256 cellar: :any_skip_relocation, ventura:        "1132f363a63efb874ebf98f406dcc6f9346496b10b0a3b3c2063b447c8035180"
-    sha256 cellar: :any_skip_relocation, monterey:       "1132f363a63efb874ebf98f406dcc6f9346496b10b0a3b3c2063b447c8035180"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "22b1e65c5e116f21af96530d78f73e8b698debaec80c2b078d71c031895cc1fa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ee3104f2584abf3c35e811152282541832cc3e672d8b28024ee8d77d49cca172"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "6cdc9a58159d0de8de8eaa5685f82aa2e56c7cd908e09f99abc854c1b5005418"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "98bd9949756576685149b0bba825a0d4a12efc5f256d703236a09e24fb6ab2b9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "28e5b23335b5260675224af5d330a5d4f3b5e3d9be5f9491c68dbdb48ab8a6fb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "14e3206a94f04e911f0168b7e458f0149b8c42cd34014a113610431d2a142e1b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:     "14e3206a94f04e911f0168b7e458f0149b8c42cd34014a113610431d2a142e1b"
+    sha256 cellar: :any_skip_relocation, arm64_monterey:    "14e3206a94f04e911f0168b7e458f0149b8c42cd34014a113610431d2a142e1b"
+    sha256 cellar: :any_skip_relocation, sonoma:            "1132f363a63efb874ebf98f406dcc6f9346496b10b0a3b3c2063b447c8035180"
+    sha256 cellar: :any_skip_relocation, ventura:           "1132f363a63efb874ebf98f406dcc6f9346496b10b0a3b3c2063b447c8035180"
+    sha256 cellar: :any_skip_relocation, monterey:          "1132f363a63efb874ebf98f406dcc6f9346496b10b0a3b3c2063b447c8035180"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "22b1e65c5e116f21af96530d78f73e8b698debaec80c2b078d71c031895cc1fa"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "ee3104f2584abf3c35e811152282541832cc3e672d8b28024ee8d77d49cca172"
   end
 
   depends_on "gnupg"

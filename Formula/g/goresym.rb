@@ -18,6 +18,12 @@ class Goresym < Formula
   # ref: https://github.com/mandiant/GoReSym/issues/90
   depends_on "go@1.26" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     system "go", "build", *std_go_args
   end

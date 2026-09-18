@@ -9,12 +9,12 @@ class LuaLanguageServer < Formula
   head "https://github.com/LuaLS/lua-language-server.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "aa6839d4c3cf588ac83019ed7bdb9862f66744c7e5bb07b3ecbc247a92e426ec"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "00adc51fd5d33e3ab372b514c41a242a752273a505160cc53514414b32394207"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a6c6a1faab397b6b0af923b15886a86013c489580e8f9d2d179d1fb162b44fe4"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4b39698df5f5fe9987688a6e16bea5bbf90c9bcedb36725832c6e2e05484a20f"
-    sha256 cellar: :any,                 arm64_linux:   "f0dd8f0497ed736c64fcd5201200d8185653f1866f9092bd8ee1fc5ccf6ba25d"
-    sha256 cellar: :any,                 x86_64_linux:  "498127427c5b3b9fe0a3d4e56697b142ae4913b1b00a05eb0b75f028fc3bafdb"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "a7b8dea25ad1d0749997294eeb31d98da5e85043d64fe9fa6381e55c145f6b68"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "d856c8709d98e4af1da64c12abf7575f02e336134838e91d6dbcfad730a9e8fe"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "b7fbab20c3e23c0c3857caedf5e3031a12efde0043f076dde2fc9f0465403586"
+    sha256 cellar: :any,                 arm64_linux:       "c012324731c6b93866e16a64de709934b1dd77d56260704f20d511e4e1fe3eba"
+    sha256 cellar: :any,                 x86_64_linux:      "16384ed7c7ecb71912b70f8b8dfbeb49547b81117be0eaa39d768e3ee462768d"
   end
 
   depends_on "ninja" => :build
@@ -25,7 +25,7 @@ class LuaLanguageServer < Formula
     inreplace color_h, '#include "format.h"', "\\0\n#include <algorithm>"
 
     # disable all tests by build script (fail in build environment)
-    inreplace buildpath.glob("**/3rd/bee.lua/test/test.lua"),
+    inreplace buildpath.glob("**/bee.lua/test/test.lua"),
       "os.exit(lt.run(), true)",
       "os.exit(true, true)"
 

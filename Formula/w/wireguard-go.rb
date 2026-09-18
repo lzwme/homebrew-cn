@@ -1,10 +1,11 @@
 class WireguardGo < Formula
   desc "Userspace Go implementation of WireGuard"
   homepage "https://www.wireguard.com/"
+  # Using git checkout as snapshot archives have previously changed from server updates
+  # https://github.com/Homebrew/homebrew-core/pull/290649#issuecomment-5654421778
   url "https://git.zx2c4.com/wireguard-go.git",
-    tag:      "0.0.20250522",
-    revision: "f333402bd9cbe0f3eeb02507bd14e23d7d639280"
-  # mirror "https://github.com/wireguard/wireguard-go.git"
+      tag:      "0.0.20250522",
+      revision: "f333402bd9cbe0f3eeb02507bd14e23d7d639280"
   license "MIT"
   head "https://git.zx2c4.com/wireguard-go.git", branch: "master"
 

@@ -32,7 +32,6 @@ class ZigAT015 < Formula
   depends_on "llvm@20"
 
   on_macos do
-    depends_on macos: :big_sur # https://github.com/ziglang/zig/issues/13313
     depends_on "zstd"
   end
 

@@ -1,8 +1,8 @@
 class Ratify < Formula
   desc "Artifact Ratification Framework"
   homepage "https://ratify.dev"
-  url "https://ghfast.top/https://github.com/notaryproject/ratify/archive/refs/tags/v1.4.5.tar.gz"
-  sha256 "82b05fc373327e71495cbec472afd2eec81e08a30b472e2c634eda507d3baa00"
+  url "https://ghfast.top/https://github.com/notaryproject/ratify/archive/refs/tags/v1.4.6.tar.gz"
+  sha256 "fc1304714e395f60a77ec71e03453841b36eb7afb4798179886377bca6778629"
   license "Apache-2.0"
   head "https://github.com/notaryproject/ratify.git", branch: "main"
 
@@ -14,13 +14,11 @@ class Ratify < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "d71f522235f5f615983bf0aa5907b3c413e942a7e76568fdb38093a85786bfe0"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "138ff2891fc6d28cffa3afc63552d7800abdcf7ac5e3b943f6c4c50712554dc1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "bccb8c1b10b819dece823328d6bc546aa2d7199f3947bb480a4f65932739e065"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "b41d9dae5ef28639388da97e914ccc17515d1726dd36e1e41868dc978f03d354"
-    sha256 cellar: :any_skip_relocation, sonoma:            "573b841032f0500c9d80c9fec0e5d323a7ab17fd90616a5719f087b1c0570301"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "4e0d4355b3d54e5e99f6f33aa50ed324c962a91e4f4ae2281e64070934c78ee3"
-    sha256 cellar: :any,                 x86_64_linux:      "9ad4310af1f42945f2b52f78991a0a2efefecc9dba064a9f6d38793f8a100a8a"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "6dad4018a334c852684758229cd41b0028cd2484646d1c48b13e8649924770cf"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "b44f1015ead3db953c8dd5444c2a09859583ee4aa76aa041260677b13d250d96"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "960f47f1576f72aade6e642ab00f9261e5e7db1426caf80a2cfb579570c5274c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "39fa719e93883e633e41c70de072509420fd7cd46ac917f25860e2965c1a1af9"
+    sha256 cellar: :any,                 x86_64_linux:      "39e6bb565176673178aa91f62fa162f9056153866438d128f1d907f16b5ff421"
   end
 
   depends_on "go" => :build

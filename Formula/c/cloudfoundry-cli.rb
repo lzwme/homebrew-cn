@@ -25,6 +25,12 @@ class CloudfoundryCli < Formula
 
   conflicts_with "cf", because: "both install `cf` binaries"
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ldflags = %W[
       -X code.cloudfoundry.org/cli/v8/version.binaryVersion=#{version}

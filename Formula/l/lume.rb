@@ -13,8 +13,9 @@ class Lume < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ab0d9458b6da654116d7ce851e35fe6234a5915fa08c8935fb3c5d84c34c2173"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "40ff1b2f1821475bdb08905364ade2feeb909adb929b60cb0864e21d1e0710dd"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "c06b33660e46c11af45c4ec3792ee331fe86b11a4da89e6ad9ed60240ee77128"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "ab0d9458b6da654116d7ce851e35fe6234a5915fa08c8935fb3c5d84c34c2173"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "40ff1b2f1821475bdb08905364ade2feeb909adb929b60cb0864e21d1e0710dd"
   end
 
   depends_on xcode: ["16.0", :build]
@@ -46,8 +47,7 @@ class Lume < Formula
     output = shell_output("#{bin}/lume setup does-not-exist --unattended tahoe 2>&1", 1)
     assert_match "Virtual machine not found", output
 
-    # Test ipsw command
-    assert_match "Found latest IPSW URL", shell_output("#{bin}/lume ipsw")
+    assert_match "No virtual machines found", shell_output("#{bin}/lume ls")
 
     # Test management HTTP server
     port = free_port

@@ -1,18 +1,17 @@
 class Syft < Formula
   desc "CLI for generating a Software Bill of Materials from container images"
   homepage "https://github.com/anchore/syft"
-  url "https://ghfast.top/https://github.com/anchore/syft/archive/refs/tags/v1.51.1.tar.gz"
-  sha256 "da8d83cdca78f2c553e08a5ecb9734016a05adb904168531f582bebfbb9bb2cf"
+  url "https://ghfast.top/https://github.com/anchore/syft/archive/refs/tags/v1.52.0.tar.gz"
+  sha256 "8b999a1b8bd08b12512176cdec5d063db9cfe209c65cc5de9c4eb2ab7bdc7b3c"
   license "Apache-2.0"
   head "https://github.com/anchore/syft.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "6e890386f407ceb408dac2b3bb19442e626ffd44e4745af48a33332b230e13c0"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "953c3f99e76db3f63362fd035cf428ff75173ea858e86e321dd5eefacb210e57"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "bbb1efdf4e878ae660528329c1c7b280d77ffb172a728b628b3dcb5658b442d1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "ea350664ee8dc144de92ac4fdb07df0aa6c0bc97b18bac7bb738bf0be6d74316"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "dc10911dd732fde0c952dd1d32b9abfdb451021fbe023427991f51dca430be63"
-    sha256 cellar: :any,                 x86_64_linux:      "d234ac2d2401ddf8fff2befb4d2e36651cf630bd8f5f0c56b23f030a6bed1546"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "46fdc2094d0457d61857fd79edd713d869a51f0c2fb36e486f6e661b4fc9b9b4"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "20dc2da9c4a1e00a7737eb8ecc9cfee332abe845a1f9655339799ba8e0c2fcbc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "feab2969b8b47e0e97a58e3719442e1aeed8b78e2d3d905ffa780f56f4f40368"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "0c17a51ba1b8bbbc69db5bf8f3cfd4af1dd421e1b46313f32b35c00218e0ff4e"
+    sha256 cellar: :any,                 x86_64_linux:      "952f0ea73a2190e99e5f3e80372c28b13d5318ba1f95f0fe3d9a693ec515cd55"
   end
 
   depends_on "go" => :build

@@ -1,19 +1,17 @@
 class Cmctl < Formula
   desc "Command-line tool to manage cert-manager"
   homepage "https://cert-manager.io"
-  url "https://ghfast.top/https://github.com/cert-manager/cmctl/archive/refs/tags/v2.5.0.tar.gz"
-  sha256 "4e7f137c2b5411f92948749dbdb31d61911088a54d32e14aea609da02c203bb5"
+  url "https://ghfast.top/https://github.com/cert-manager/cmctl/archive/refs/tags/v2.6.1.tar.gz"
+  sha256 "83226abe4516e4e39953dee0d341b26e4c6f5a7f2f62ea07074bd2f8dd55c664"
   license "Apache-2.0"
   head "https://github.com/cert-manager/cmctl.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "dbf7f2cfae2baeccead5611fcdcfc0a6527815e076e462dade7d12d8c0e576c9"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "271671ba1bdfaa5a69f55f616a89b06e1acc5bdf7f13dc848d6655cf7178b25f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "0a42ced3630aafc6c83f88f391d41e3000b3ac86504670847e2a7e6b58cffc63"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "bbbf9b497ec577ea8243a5bb4866450f7a4037def0cdf4f898099298d494caa6"
-    sha256 cellar: :any_skip_relocation, sonoma:            "4eb05bd9dabd9c5704431fa5606dd3d1565c3df246cde61441695643de1d00d8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "0508c06169c85a918120f264e9d9578e0ca802ef0500c634e928f6cfc542a01d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "dd6659b2651cd73fba23df6899578954392f7a77b557cdf00d2dc3d24cafe61a"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "eadb67d79ee52df9b729545c75dc862f3cafa4998c9cd29c43de168180a37e4f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "886c201764a25ecc7bde87ec9f5af0906774fefc16e49dc6389ce5cbc24f5858"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "bfbffbe343313bb19a2d21feacc289bf973c75f8bdf8b7bbeec45bc45264d584"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "c756ae42d2799c0c226df646cb1749143d9a70a9ffd74cd73abd61060b62e8dc"
+    sha256 cellar: :any,                 x86_64_linux:      "c5dcb068f1a918636d63f031c8a7ba61301a20ea2669001718faf6b89cc9c419"
   end
 
   depends_on "go" => :build

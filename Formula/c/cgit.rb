@@ -1,8 +1,11 @@
 class Cgit < Formula
   desc "Hyperfast web frontend for Git repositories written in C"
   homepage "https://git.zx2c4.com/cgit/"
-  url "https://git.zx2c4.com/cgit/snapshot/cgit-1.3.1.tar.xz"
-  sha256 "c40fd71e120783d5e57d822208f3e17333cde2cd4baf3e7c8c75630b68afe12a"
+  # Using git checkout as snapshot archives have previously changed from server updates
+  # https://github.com/Homebrew/homebrew-core/pull/290649#issuecomment-5654421778
+  url "https://git.zx2c4.com/cgit.git",
+      tag:      "v1.3.1",
+      revision: "044821677c774cd24f25f1818ea51d09cc64b006"
   license "GPL-2.0-only"
 
   livecheck do
@@ -29,13 +32,6 @@ class Cgit < Formula
     depends_on "zlib-ng-compat"
   end
 
-  # git version is mandated by cgit: see GIT_VER variable in Makefile
-  # https://git.zx2c4.com/cgit/tree/Makefile?h=v1.2#n17
-  resource "git" do
-    url "https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.54.0.tar.gz"
-    sha256 "45e8107643a44e3ce46f5665beb35af3932fb0d70017687905ab5d4e3aafa8eb"
-  end
-
   # cgit 1.2.2+ needs memrchr, for which macOS provides no implementation
   # https://lists.zx2c4.com/pipermail/cgit/2020-August/004510.html
   patch do
@@ -43,7 +39,6 @@ class Cgit < Formula
   end
 
   def install
-    resource("git").stage(buildpath/"git")
     system "make", "prefix=#{prefix}",
                    "CGIT_SCRIPT_PATH=#{pkgshare}",
                    "CGIT_DATA_PATH=#{var}/www/htdocs/cgit",

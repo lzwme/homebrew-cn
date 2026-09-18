@@ -24,6 +24,12 @@ class Ethereum < Formula
   # TODO: unpin go@1.26 when ethereum supports go 1.27
   depends_on "go@1.26" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     # Force superenv to use -O0 to fix "cgo-dwarf-inference:2:8: error:
     # enumerator value for '__cgo_enum__0' is not an integer constant".

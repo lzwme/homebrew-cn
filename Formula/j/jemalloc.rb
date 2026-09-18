@@ -1,18 +1,16 @@
 class Jemalloc < Formula
   desc "Implementation of malloc emphasizing fragmentation avoidance"
   homepage "https://jemalloc.net/"
-  url "https://ghfast.top/https://github.com/jemalloc/jemalloc/releases/download/5.3.1/jemalloc-5.3.1.tar.bz2"
-  sha256 "3826bc80232f22ed5c4662f3034f799ca316e819103bdc7bb99018a421706f92"
+  url "https://ghfast.top/https://github.com/jemalloc/jemalloc/releases/download/5.4.0/jemalloc-5.4.0.tar.bz2"
+  sha256 "200776fac271093e7c2f21edd6d62657ecd2be578d9328633f2a86bfa6ef4f1d"
   license "BSD-2-Clause"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "3088efb1cf52afef0dea1e596c1bba53e033e31d16a0f360d000db97a2a7e12c"
-    sha256 cellar: :any, arm64_tahoe:       "5040904022a39fae26c7da8fed26596b15a1ccd88ac8a1335e60311a4a7de632"
-    sha256 cellar: :any, arm64_sequoia:     "c0e6201b5be8ae36eb3aeecf2bb2a616860089e637979ab6bf238ad74aebc3be"
-    sha256 cellar: :any, arm64_sonoma:      "0616a2e0a342d8f28eea75db184bdd21f9ab3855530192e4b50e8c5130329959"
-    sha256 cellar: :any, sonoma:            "0783dba303dacc3110b7a15df15c7567a144ca99994f1e69ee1419eb4c75e8bc"
-    sha256 cellar: :any, arm64_linux:       "a80a49c1e8d92bb5bf08b74841fa4fb15ea4d4d3069a40dbfba4bfc77cdaaaae"
-    sha256 cellar: :any, x86_64_linux:      "e3a515d40e76209d400bb170515fae4f25b6ca09736fec178af32654f5aa97b3"
+    sha256 cellar: :any, arm64_golden_gate: "ebc856c594fac98560d03ee45b1a74dafc7564cfd1cc54223c717b8976697096"
+    sha256 cellar: :any, arm64_tahoe:       "2d6b12cd49be74b19e4fbae76ee7d7cb8b9556bbc3ee8a16a001742ab866675b"
+    sha256 cellar: :any, arm64_sequoia:     "100f278db6678ee5e3487e6e56c679759739195010755498d2c25d5f9013b6f9"
+    sha256 cellar: :any, arm64_linux:       "c7783f196bc57093dfbd6c1eb0a9c146b5cef2ae2cfabcf7d2972f3a4060a51a"
+    sha256 cellar: :any, x86_64_linux:      "6c66c4b42238fe1015bd74f76efdc03e9f745590c03502a237028a0c7fc05981"
   end
 
   head do

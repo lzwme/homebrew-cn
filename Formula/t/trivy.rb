@@ -21,6 +21,13 @@ class Trivy < Formula
   # ref: https://github.com/aquasecurity/trivy/pull/11127
   depends_on "go@1.26" => :build
 
+  # `test do` block downloads a container image and the vulnerability DB
+  allow_network_access! :test
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ENV["GOEXPERIMENT"] = "jsonv2"
 

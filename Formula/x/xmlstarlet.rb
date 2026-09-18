@@ -27,6 +27,8 @@ class Xmlstarlet < Formula
     resolves "https://sourceforge.net/p/xmlstar/patches/23/"
   end
 
+  deny_network_access!
+
   def install
     ENV.append_to_cflags "-Wno-incompatible-function-pointer-types" if DevelopmentTools.clang_build_version >= 1500
     system "./configure", "--disable-dependency-tracking",

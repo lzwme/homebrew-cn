@@ -7,17 +7,20 @@ class Lunarr < Formula
   head "https://github.com/lunarr-app/lunarr-go.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "2e2c9b2ed181a3eeb4592289aa3e39b3883aee219bf2525a238b7f3826d4eb7f"
-    sha256 cellar: :any, arm64_sequoia: "7efed3f6f965c3103848457bd0d6ab60681577a289ae33745287785900c5902a"
-    sha256 cellar: :any, arm64_sonoma:  "5a1f25d296be9c2e79e2769bf1a6fdde5fa01b24466a6533e46dd8b65ee588e3"
-    sha256 cellar: :any, arm64_linux:   "954b52651270479f8549ac96ae52338b454c1cf17b41020af0eb2eb18f0827f6"
-    sha256 cellar: :any, x86_64_linux:  "1b376e643ead7a1523906c26192e68cd59b58df8308b8e597eb46a9855831912"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "53317b1d617acca892fb46a24adfa8ce85960f1fd66a85395c38195bcdfe7ca8"
+    sha256 cellar: :any, arm64_tahoe:       "3e4b112b6a344d508977a70b97541181128bd49f06ba45ca4a4e12a741721da4"
+    sha256 cellar: :any, arm64_sequoia:     "1b094b8872d1e1ffe33a83725e6f00a765c18790a9e65a932da32fa39ee20b8a"
+    sha256 cellar: :any, arm64_linux:       "598a67ea9d4c4d237a8719306b2a30dd3dfcbb185b09c5afd9803c02109b58f9"
+    sha256 cellar: :any, x86_64_linux:      "e30fcc34d3135f53a47b9e5db359f218753b1e383343c6093cc4072d5064408f"
   end
 
   depends_on "ffmpeg"
   depends_on "node"
 
   def install
+    # FIXME: pin `@better-auth/core` to match `better-auth`; newer versions drop exports it imports
+    system "npm", "pkg", "set", "overrides[@better-auth/core]=1.7.2"
     system "npm", "install", *std_npm_args(prefix: false)
     system "npm", "run", "build"
     system "npm", "prune", "--omit=dev"

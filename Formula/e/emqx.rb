@@ -7,12 +7,13 @@ class Emqx < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "ea4bc45725fd897789f8360bdb243ce2d36936f66326a07d91ad0c3882c9e299"
-    sha256 cellar: :any,                 arm64_sequoia: "13dd5052c5746825684505959eb6f411df487913f2adec72720582ff648ddbb5"
-    sha256 cellar: :any,                 arm64_sonoma:  "6dd0c8bf218af6232eaf6accbe4485efef61224cbba8b68bdb932e4fa61485cf"
-    sha256 cellar: :any,                 sonoma:        "b0753b148145e421a7e9f43db9b07723f7ad5b01592b5d647edc7984b4a25cea"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8e122333462acf2e5cc639eea4d56afeb80426b619938b941496c7b6e011be16"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "130babd6f5e5408a49cccdcfc312106cdca17225031c3978899257c38691408b"
+    sha256 cellar: :any,                 arm64_golden_gate: "348c7d9b5b018c22848b1a23a89c3cc9ad03c8c48817430fd7f92d32ed5992fe"
+    sha256 cellar: :any,                 arm64_tahoe:       "ea4bc45725fd897789f8360bdb243ce2d36936f66326a07d91ad0c3882c9e299"
+    sha256 cellar: :any,                 arm64_sequoia:     "13dd5052c5746825684505959eb6f411df487913f2adec72720582ff648ddbb5"
+    sha256 cellar: :any,                 arm64_sonoma:      "6dd0c8bf218af6232eaf6accbe4485efef61224cbba8b68bdb932e4fa61485cf"
+    sha256 cellar: :any,                 sonoma:            "b0753b148145e421a7e9f43db9b07723f7ad5b01592b5d647edc7984b4a25cea"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "8e122333462acf2e5cc639eea4d56afeb80426b619938b941496c7b6e011be16"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "130babd6f5e5408a49cccdcfc312106cdca17225031c3978899257c38691408b"
   end
 
   # https://www.emqx.com/en/news/emqx-adopts-business-source-license
@@ -48,6 +49,9 @@ class Emqx < Formula
 
     ENV["PKG_VSN"] = version.to_s
     ENV["BUILD_WITHOUT_QUIC"] = "1"
+
+    # Workaround to avoid C23
+    ENV["ac_cv_prog_cc_c23"] = "no"
 
     touch(".prepare")
     system "make", "emqx-rel"

@@ -16,30 +16,30 @@ class Bluepill < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "69a5e53d56d1093929bd7f7cdf80718d832834e6c0b1790202508f3b935ee6a4"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "40123f2981d2e731f0a15473049696f035e8e25f0b27752603550c16e904fd05"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a92ddfe4cfcaabe31286b25bea4673891111bb9225751574894552d7bc56fc00"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "48bb18fef3a6ba58029c0167a3bf903b6e7fd88e96af3ccb2dc7cfdcd4846e26"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e562b58dd64848a0f333325f2925883f1f3a8f841d9d122b4d7e0a3db032c5ad"
-    sha256 cellar: :any_skip_relocation, sonoma:         "c1c6546ce0eed8ede74042419f0ce6a242dfa971db31806f6927fff369a3537e"
-    sha256 cellar: :any_skip_relocation, ventura:        "b89586a8fe4f4049de8446d3e55f040ebf645678b7038a2c59b0c5714db11bb3"
-    sha256 cellar: :any_skip_relocation, monterey:       "81990e0749d7b856571867c719d08c2b15ec2414e300ba7dc1a2b0d7dbf6af07"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "e88f54d8ee8bfebbafafdef87a4313e7e1e892ec607355151806f0c38d883330"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "69a5e53d56d1093929bd7f7cdf80718d832834e6c0b1790202508f3b935ee6a4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "40123f2981d2e731f0a15473049696f035e8e25f0b27752603550c16e904fd05"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "a92ddfe4cfcaabe31286b25bea4673891111bb9225751574894552d7bc56fc00"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:     "48bb18fef3a6ba58029c0167a3bf903b6e7fd88e96af3ccb2dc7cfdcd4846e26"
+    sha256 cellar: :any_skip_relocation, arm64_monterey:    "e562b58dd64848a0f333325f2925883f1f3a8f841d9d122b4d7e0a3db032c5ad"
+    sha256 cellar: :any_skip_relocation, sonoma:            "c1c6546ce0eed8ede74042419f0ce6a242dfa971db31806f6927fff369a3537e"
+    sha256 cellar: :any_skip_relocation, ventura:           "b89586a8fe4f4049de8446d3e55f040ebf645678b7038a2c59b0c5714db11bb3"
+    sha256 cellar: :any_skip_relocation, monterey:          "81990e0749d7b856571867c719d08c2b15ec2414e300ba7dc1a2b0d7dbf6af07"
   end
 
   depends_on xcode: ["14.0", :build]
   depends_on :macos
 
   def install
-    pbxprojs = ["bluepill", "bp"].map { |name| "#{name}/#{name}.xcodeproj/project.pbxproj" }
-    inreplace pbxprojs, "x86_64", Hardware::CPU.arch.to_s
-
-    xcodebuild "-workspace", "Bluepill.xcworkspace",
-               "-scheme", "bluepill",
-               "-configuration", "Release",
-               "-IDECustomDerivedDataLocation=#{buildpath}",
-               "SYMROOT=../",
-               "ARCHS=#{Hardware::CPU.arch}"
-    bin.install "Release/bluepill", "Release/bp"
+    %w[bp bluepill].each do |exe|
+      xcodebuild "-project", "#{exe}/#{exe}.xcodeproj",
+                 "-scheme", exe,
+                 "-arch", Hardware::CPU.arch,
+                 "-configuration", "Release",
+                 "-derivedDataPath", "build",
+                 "MACOSX_DEPLOYMENT_TARGET=#{MacOS.version}"
+      bin.install "build/Build/Products/Release/#{exe}"
+    end
   end
 
   test do

@@ -29,6 +29,10 @@ class Cline < Formula
 
   depends_on "node"
 
+  on_macos do
+    depends_on maximum_macos: :tahoe # doesn't run on macOS 27 and unable to update
+  end
+
   def install
     system "npm", "install", *std_npm_args
     bin.install_symlink libexec.glob("bin/*")

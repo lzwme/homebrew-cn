@@ -1,21 +1,17 @@
 class Nerdlog < Formula
   desc "TUI log viewer with timeline histogram and no central server"
   homepage "https://dmitryfrank.com/projects/nerdlog/article"
-  url "https://ghfast.top/https://github.com/dimonomid/nerdlog/archive/refs/tags/v1.10.0.tar.gz"
-  sha256 "95fb629044c5a74c2c541d4c39a9622674f15e59b98e6d1b025a47c218f69189"
+  url "https://ghfast.top/https://github.com/dimonomid/nerdlog/archive/refs/tags/v1.11.0.tar.gz"
+  sha256 "a4027f3667d14eac04f64e2c8312823953caf47ccc6f5b6055f9c28a8c53fda7"
   license "BSD-2-Clause"
   head "https://github.com/dimonomid/nerdlog.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "fb6426fabe1b300893b737086ebba53b56eea5f0368edb10b4b015c56fffaaab"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "1c5c89f5703c5254d79bf17a35b93a5fee15af1df0b0ca8983c30e5994fce9f7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "d6fb84d243d9107eb44579b8efb03c69d1378ce7d51000e1485f7204d115db7e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "9336a81b6b484ea7d3381cb51c854a2ab11f23e2d5a06ad1b7639e0d956ec503"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:     "9ce359089fa9e49ad6b31ce3e6b85e7c39f4ecdc0a71acc8f9070246566bfa24"
-    sha256 cellar: :any_skip_relocation, sonoma:            "942073a7a936ef2b14570bb472c2e044a21ccd43d9cc8076bb4524e2f026dd60"
-    sha256 cellar: :any_skip_relocation, ventura:           "fe0e4d94a6541428b5932e6dd1fd26165f4ea70dfc4767d3051bb2191c302a02"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "8e9c31155687ffe5ca26602124ab8326b6241afe7c78ec2d7595ade960d85dbb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "9007cfebff78d395297b19ebf89943c4ca617db012ba47246a8f9389030e5faf"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "81ed87fba9226d415496bfe59b2150417eff0f6a67146eef47391210a61e010c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "ec818d81463d5099aa08285273d7e988f306b9b3e29f58c67416368ce7c7986e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "6043912c1b993c4b4cc44341e1c80f1288714c46b8d9df97abe491fad663be2e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "91cabafef3277d057ae8d4aec4aee5d3cb3c0cfffbeec30a9a7d52362faf1f1a"
+    sha256 cellar: :any,                 x86_64_linux:      "5737f5c9e88ff61065067a921224c582e7a34ded52886b5cbc6a6d49c100ff29"
   end
 
   depends_on "go" => :build

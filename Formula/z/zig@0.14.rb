@@ -34,7 +34,6 @@ class ZigAT014 < Formula
 
   on_macos do
     depends_on maximum_macos: [:sequoia, :build]
-    depends_on macos: :big_sur # https://github.com/ziglang/zig/issues/13313
     depends_on "zstd"
   end
 

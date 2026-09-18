@@ -11,12 +11,13 @@ class GtkGnutella < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "f492432b6563cffe018b22d40bc67ac10df71218191bcb3d01bdb44439c4fd90"
-    sha256 arm64_sequoia: "3ddf5be67bae89d47e24e091fe506f7df1c683afa50c0a9f9bfea627294619d0"
-    sha256 arm64_sonoma:  "c1eb2f15ccd9aeb50fdf9b9d0f08e1d9c129e6be6b558f80cec2978e312d7bba"
-    sha256 sonoma:        "577e742af6e7e062a2b18bfb59d3081bea7d0bcfe316792d48c899547e21f239"
-    sha256 arm64_linux:   "ff989c183f80b230b847617fd63810b60acb3eddd3b003510d414fcebbb215a1"
-    sha256 x86_64_linux:  "42da940ea4d5b4e15fc07d033f986b119de287944b136cea7f4ff02319214f24"
+    sha256 arm64_golden_gate: "fb065ff2163dc253a5112a8f6c1115fb5759504796ef9ea7e109087f83167d34"
+    sha256 arm64_tahoe:       "f492432b6563cffe018b22d40bc67ac10df71218191bcb3d01bdb44439c4fd90"
+    sha256 arm64_sequoia:     "3ddf5be67bae89d47e24e091fe506f7df1c683afa50c0a9f9bfea627294619d0"
+    sha256 arm64_sonoma:      "c1eb2f15ccd9aeb50fdf9b9d0f08e1d9c129e6be6b558f80cec2978e312d7bba"
+    sha256 sonoma:            "577e742af6e7e062a2b18bfb59d3081bea7d0bcfe316792d48c899547e21f239"
+    sha256 arm64_linux:       "ff989c183f80b230b847617fd63810b60acb3eddd3b003510d414fcebbb215a1"
+    sha256 x86_64_linux:      "42da940ea4d5b4e15fc07d033f986b119de287944b136cea7f4ff02319214f24"
   end
 
   deprecate! date: "2026-08-28", because: "needs EOL `gtk+`"
@@ -44,6 +45,9 @@ class GtkGnutella < Formula
   def install
     # Work-around for build issue with Xcode 15.3: https://sourceforge.net/p/gtk-gnutella/bugs/583/
     ENV.append_to_cflags "-Wno-incompatible-function-pointer-types" if DevelopmentTools.clang_build_version >= 1500
+
+    # FIXME: Xcode 27's clang lists `SDKSettings.json` first, so `dep.o:` and `dep.h` end up on different `-M` lines
+    inreplace "Configure", '$contains "dep$_o:.*dep\.h" dep.out', '$contains "dep\.h" dep.out'
 
     ENV.deparallelize
 

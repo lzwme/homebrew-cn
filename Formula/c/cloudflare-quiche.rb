@@ -2,8 +2,8 @@ class CloudflareQuiche < Formula
   desc "Savoury implementation of the QUIC transport protocol and HTTP/3"
   homepage "https://docs.quic.tech/quiche/"
   url "https://github.com/cloudflare/quiche.git",
-      tag:      "0.29.3",
-      revision: "55886df3be579579207104c8e645825b6347a209"
+      tag:      "0.30.0",
+      revision: "be47c5011215b9f13bad06bd7627d3ae49888a19"
   license "BSD-2-Clause"
   head "https://github.com/cloudflare/quiche.git", branch: "master"
 
@@ -13,13 +13,11 @@ class CloudflareQuiche < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "9795e50331a427d67cead8eac819b8a3a9c447ef350113627dea026245f1456c"
-    sha256 cellar: :any, arm64_tahoe:       "3ab6bff012a2e2193d30e5b8b54d04b5eea7388820c26aa6da87211cf8b69f90"
-    sha256 cellar: :any, arm64_sequoia:     "f0081d3e1d456d15aa0bc3b9d56d21ab3a56242dc11f74cf60687163ce2d259d"
-    sha256 cellar: :any, arm64_sonoma:      "3569f2d7dafee62ea8f556cd716a9267831d308a2f5e51d45e52b0edff4edc89"
-    sha256 cellar: :any, sonoma:            "9fa84c7899f5c11116449e48ab011f28951b64c3c66caabed2465e7b77409218"
-    sha256 cellar: :any, arm64_linux:       "e69a1368b2e9826ffa0b499171b356febc2cdd94ce73de4d031abaa38749f966"
-    sha256 cellar: :any, x86_64_linux:      "b30ebb2fc9cfb15d619925f2927dcee1cb726b9d82ec01aec86191d988fb3f4d"
+    sha256 cellar: :any, arm64_golden_gate: "60c0c2dcdb910c4f26bafb26b56113e41a55c11eac12fa4196abd290be250054"
+    sha256 cellar: :any, arm64_tahoe:       "7f3ae246b4f1d3a135499e9a7053ab64d3718cc7f7f404e573bd27a251d61e53"
+    sha256 cellar: :any, arm64_sequoia:     "385d710feeb1bf15264312fa5d1d9af4088c3e960ea4c438427fa5a1228efbec"
+    sha256 cellar: :any, arm64_linux:       "d0a4a12227bd3fd6c855ca1ed9a58a77108fb2159ac3ae4ae06f3bc9f2fc2fe5"
+    sha256 cellar: :any, x86_64_linux:      "1299e7e4a919f9c9335dbf849d76d3874de9270c17d151bab5160ecf23cdab75"
   end
 
   depends_on "cmake" => :build

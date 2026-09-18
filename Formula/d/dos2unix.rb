@@ -19,6 +19,8 @@ class Dos2unix < Formula
     sha256 cellar: :any,                 x86_64_linux:      "16bdc27badba287098103e6b6f772e433e8191903d3beb4e662df3ee97695866"
   end
 
+  deny_network_access!
+
   def install
     args = %W[
       prefix=#{prefix}

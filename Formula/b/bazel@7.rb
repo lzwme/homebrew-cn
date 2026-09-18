@@ -11,12 +11,12 @@ class BazelAT7 < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9951a2c2d7fb46a35db66a6a9adbc96b4ca75d184f0fa78545979b3e203b26cb"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9951a2c2d7fb46a35db66a6a9adbc96b4ca75d184f0fa78545979b3e203b26cb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d0f609c4a1e3092ab0a738f36ff02b0023f86fce0fabad542c375c6a9286bf3c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4e304d2c45194de90324fb87be2cafb3a2bc4a32449676f2045114354c96b6d2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "53a676cca2f198259a54d153ccbca884b6ff31046fe6d39cad15a3df20cd1eac"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "551daae69da44de6887ed21c29cfb5705c5dfd92be88fa47b9aeeb03adee474c"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "2fd2f1f3f6da11661e72500e9c1d6b89f22898156fe737c544348edd3c24cf41"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "35b7370023eaa71c716d143f8b965fdd99b3fe8872ea7f69f7fe76e42800b23b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "04c85eb3d06bf48562c6af9e7a39f48e47cbddb32f5ea86a222692027dbd14ba"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "be804bd472ee3068872cac6363d66348736a97308aba506c3b3dee06161ca6e3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "9cf42a1b8b599f964df63a934e6c265845200ccbf23bc0d194d6acf9e857dbd3"
   end
 
   keg_only :versioned_formula
@@ -51,6 +51,17 @@ class BazelAT7 < Formula
     ENV["BAZEL_WRKDIR"] = buildpath/"work"
     # Force Bazel to use brew OpenJDK
     extra_bazel_args = ["--tool_java_runtime_version=local_jdk"]
+    if OS.mac?
+      # Tools built for the exec configuration only follow `--host_macos_minimum_os`
+      extra_bazel_args << "--macos_minimum_os=#{MacOS.version}.0"
+      extra_bazel_args << "--host_macos_minimum_os=#{MacOS.version}.0"
+      # Apple clang 21 lists `SDKSettings.json` as a dependency, but Bazel 7's toolchain only allows the CLT SDK
+      if MacOS::CLT.installed?
+        %w[action_env host_action_env repo_env].each do |opt|
+          extra_bazel_args << "--#{opt}=SDKROOT=#{MacOS::CLT::PKG_PATH}/SDKs/MacOSX.sdk"
+        end
+      end
+    end
     ENV.merge! java_home_env.transform_keys(&:to_s)
     # Bazel clears environment variables which breaks superenv shims
     ENV.remove "PATH", Superenv.shims_path
@@ -67,6 +78,7 @@ class BazelAT7 < Formula
       system "./compile.sh"
       system "./output/bazel", "--output_user_root=#{buildpath}/output_user_root",
                                "build",
+                               *extra_bazel_args,
                                "scripts:bash_completion",
                                "scripts:fish_completion"
 

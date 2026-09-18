@@ -18,16 +18,18 @@ class Teleport < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "99c9ddd6177a247db329b1b08e417d653a7c41270e97ff714558fc694b593ea2"
-    sha256 cellar: :any, arm64_sequoia: "142340f428e131a5634830484c5499426b3c9b26e3c85ddc69992ef0c20e10b2"
-    sha256 cellar: :any, arm64_sonoma:  "773a21d3681278677f591d9c4c3f5fa37806c5c3f9c674ebf2e68734ebf31522"
-    sha256 cellar: :any, sonoma:        "5e8235a2fc9959b9e066b82eb7a6446027051edc034bb8a2f93de13027edd4c1"
-    sha256 cellar: :any, arm64_linux:   "4a83f639d7ddd80bb57929a5937dd0c37a5aec093531796bf2bd2eeec8c26455"
-    sha256 cellar: :any, x86_64_linux:  "7178fa4eb6da2c632f5c522c85c1e5dedf9cb9121f4c62dae2b3c1e0312b5ed8"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "d179902fc3daf073e5d2c263dca2b4e059b0d153b3deda0bb81033719b21b363"
+    sha256 cellar: :any, arm64_tahoe:       "824eb2ce8626174ac5b5d68185743d5d12479f7b65e0b06c6c64a1ec45b930df"
+    sha256 cellar: :any, arm64_sequoia:     "ab68ce1341b9d143f58037ae8fc6fadeaedd8abef59a6e90ccc02bb2cd6ca76c"
+    sha256 cellar: :any, arm64_linux:       "ea148eef1212beef1063305a4f5e71f6c65466034198ad927034573bf9097c90"
+    sha256 cellar: :any, x86_64_linux:      "698c0f9ef4995295bb77b65f083f8912e7458894c85b8c427dcb1f81d138e5db"
   end
 
   depends_on "binaryen" => :build
-  depends_on "go" => :build
+  # TODO: unpin go@1.26 when teleport bumps `charlievieth/strcase` to v0.0.6+
+  # ref: https://github.com/gravitational/teleport/pull/6880
+  depends_on "go@1.26" => :build
   depends_on "node" => :build
   depends_on "pkgconf" => :build
   depends_on "pnpm" => :build
@@ -77,10 +79,14 @@ class Teleport < Formula
     # Issue ref: https://github.com/aws/aws-lc-rs/issues/1097
     ENV["AWS_LC_SYS_NO_JITTER_ENTROPY"] = "1"
 
-    # wasm-bindgen 0.2.100+ needs the ironrdp wasm built with reference-types intrinsics
-    inreplace "Makefile",
-              %q(RUSTFLAGS='--cfg getrandom_backend="wasm_js"'),
+    inreplace "Makefile" do |s|
+      # wasm-bindgen 0.2.100+ needs the ironrdp wasm built with reference-types intrinsics
+      s.gsub! %q(RUSTFLAGS='--cfg getrandom_backend="wasm_js"'),
               %q(RUSTFLAGS='--cfg getrandom_backend="wasm_js" -C target-feature=+reference-types')
+
+      # avoid building another wasm-opt
+      s.gsub!(/^(ensure-wasm-deps: .*) ensure-wasm-opt( .*)?$/, "\\1\\2")
+    end
 
     ENV.deparallelize { system "make", "full", "FIDO2=dynamic" }
     bin.install Dir["build/*"]

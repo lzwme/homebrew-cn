@@ -2,8 +2,8 @@ class Ollama < Formula
   desc "Create, run, and share large language models (LLMs)"
   homepage "https://ollama.com/"
   url "https://github.com/ollama/ollama.git",
-      tag:      "v0.34.0",
-      revision: "d8ab4b4f0ca24b51d3a46b3bf4f462e58ce66b1f"
+      tag:      "v0.34.1",
+      revision: "38fdb5dd58c761f850cddd6ba1e78a7954646b4f"
   license "MIT"
   head "https://github.com/ollama/ollama.git", branch: "main"
 
@@ -16,11 +16,11 @@ class Ollama < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "36e3d198d5aff246e3d66f0bd4f303fadc4d1b55be9840639463e30600a06c5f"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "8d95bf2c868071c0cc4b085812f17c4da3fc61ece60c6008503fd65ac98ccf53"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "5eed24da1b04ae021ed23e6cd31c7272e21807dc74531093d3b232ddf597431f"
-    sha256 cellar: :any,                 arm64_linux:       "42c00b182bb736302512990f663f2893c819d323321c9b92d629f184b8cbefbe"
-    sha256 cellar: :any,                 x86_64_linux:      "12f4a46a27576e8d12534c2270639cb27902964e718517bf44d319abb75a6326"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "47928031db6ce94a5f35649efba523f907e9038099d63411a90bbeafd89d2d7a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "7b8d10e83894dad80408c67e64ca1108e21fd019706537e650da22bb3f1c9629"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "0c8a8b408319c80fe9b0260f953d8d6f57734442ce3483e578f19b75eebba06a"
+    sha256 cellar: :any,                 arm64_linux:       "e2d29f376c403ef1aa7866b03813759961dc1fbaf6455201d2c811d57ebe4729"
+    sha256 cellar: :any,                 x86_64_linux:      "70948a3026057b797c2241a7132445cf454671c0dcfc5ba06c6b4a8ddf067b7c"
   end
 
   depends_on "cmake" => :build
@@ -34,6 +34,8 @@ class Ollama < Formula
       # https://github.com/ollama/ollama/commit/0bb09259203ff8f6d361faae1d40c4f83d2a99f7
       # `mlx_cumsum_axis` only exists after mlx-c commit for MLX 0.32.2:
       # https://github.com/ml-explore/mlx-c/commit/d4afaec5cc5c9ffbe58f37fdc038b2faaedc6e70
+      # `mlx_gather_qmm` has no `global_scale` in MLX 0.32.1, so always use the wrapper fallback:
+      # https://github.com/ollama/ollama/blob/v0.34.1/mlx/compat/0001-mlx-c-qmm-global-scale.patch
       patch :DATA
     end
   end
@@ -41,8 +43,8 @@ class Ollama < Formula
   # Pinned dependency required by llama-server
   resource "llama.cpp" do
     url "https://github.com/ggml-org/llama.cpp.git",
-        tag:      "b10760",
-        revision: "0f3a71be15af836d277c9f918adfafb45732677e"
+        tag:      "b10864",
+        revision: "5d806aa2575e01e126651fd69ab1ab6cefff861d"
 
     livecheck do
       url "https://ghfast.top/https://raw.githubusercontent.com/ollama/ollama/refs/tags/v#{LATEST_VERSION}/LLAMA_CPP_VERSION"
@@ -148,6 +150,9 @@ class Ollama < Formula
   end
 
   test do
+    # Avoid compiling Metal shaders during backend discovery and the server test.
+    ENV["GGML_METAL_DEVICES"] = "0" if OS.mac?
+
     port = free_port
     ENV["OLLAMA_HOST"] = "localhost:#{port}"
 
@@ -212,7 +217,7 @@ index 27d5724..f38a670 100644
 diff --git a/x/mlxrunner/mlx/ops.go b/x/mlxrunner/mlx/ops.go
 --- a/x/mlxrunner/mlx/ops.go
 +++ b/x/mlxrunner/mlx/ops.go
-@@ -103,8 +103,7 @@
+@@ -103,7 +103,6 @@
  
  func (t *Array) Cumsum(axis int, reverse, inclusive bool) *Array {
  	out := New("CUMSUM")
@@ -221,3 +226,31 @@ diff --git a/x/mlxrunner/mlx/ops.go b/x/mlxrunner/mlx/ops.go
 +	mlxCheck(C.mlx_cumsum(&out.ctx, t.ctx, C.int(axis), C.bool(reverse), C.bool(inclusive), DefaultStream().ctx))
  	return out
  }
+diff --git a/x/mlxrunner/mlx/ops_extra.go b/x/mlxrunner/mlx/ops_extra.go
+--- a/x/mlxrunner/mlx/ops_extra.go
++++ b/x/mlxrunner/mlx/ops_extra.go
+@@ -122,7 +122,7 @@
+ 	optGroupSize := C.mlx_optional_int{value: C.int(groupSize), has_value: true}
+ 	optBits := C.mlx_optional_int{value: C.int(bits), has_value: true}
+ 
+-	var b, lhs, rhs, gs C.mlx_array
++	var b, lhs, rhs C.mlx_array
+ 	if biases != nil {
+ 		b = biases.ctx
+ 	}
+@@ -134,13 +134,10 @@
+ 	}
+ 	// The wrapper fallback needs rhs indices to map output rows to experts;
+ 	// without them the native path reports the unsupported combination.
+-	applyWrapperScale := globalScale != nil && !MetalIsAvailable() && rhsIndices != nil
+-	if globalScale != nil && !applyWrapperScale {
+-		gs = globalScale.ctx
+-	}
++	applyWrapperScale := globalScale != nil
+ 
+ 	out := New("GATHER_QMM")
+-	mlxCheck(C.mlx_gather_qmm(&out.ctx, x.ctx, w.ctx, scales.ctx, b, lhs, rhs, C.bool(transpose), optGroupSize, optBits, cMode, gs, C.bool(sortedIndices), DefaultStream().ctx))
++	mlxCheck(C.mlx_gather_qmm(&out.ctx, x.ctx, w.ctx, scales.ctx, b, lhs, rhs, C.bool(transpose), optGroupSize, optBits, cMode, C.bool(sortedIndices), DefaultStream().ctx))
+ 	if applyWrapperScale {
+ 		out = mulGatherQMMGlobalScale(out, globalScale, rhsIndices)
+ 	}

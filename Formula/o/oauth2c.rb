@@ -1,19 +1,17 @@
 class Oauth2c < Formula
   desc "User-friendly CLI for OAuth2"
   homepage "https://github.com/SecureAuthCorp/oauth2c"
-  url "https://ghfast.top/https://github.com/SecureAuthCorp/oauth2c/archive/refs/tags/v1.20.0.tar.gz"
-  sha256 "36606ec1c5eca7c7fff6bb87d4171031ddc5bfb93474eaf97191fe16b9902f24"
+  url "https://ghfast.top/https://github.com/SecureAuthCorp/oauth2c/archive/refs/tags/v1.21.0.tar.gz"
+  sha256 "f03ec7b08fa9612f8196d236658f6aaa3245ddd1cab6aa94a086fe5d938a0bfc"
   license "Apache-2.0"
   head "https://github.com/SecureAuthCorp/oauth2c.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "b110e7f466c0b9e52293d10652da38bcfd4d13764e228d982476f2db036a7d23"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "496f8d7bdd55e8d793c97349fdce2d60be8cdc9dafcea75b78be79f3c1ed7d16"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "496f8d7bdd55e8d793c97349fdce2d60be8cdc9dafcea75b78be79f3c1ed7d16"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "496f8d7bdd55e8d793c97349fdce2d60be8cdc9dafcea75b78be79f3c1ed7d16"
-    sha256 cellar: :any_skip_relocation, sonoma:            "0df25bbe0206dbf3750f5f2761b4d83b4a028333dfe1647c5758e2b0d11c4ea6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "068bc90b3bc0b2386a5ae098c0a2550feb64625fca7ecfd8c871da14bf655dd8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "6e7d1c31e096d50643c1b14ba5d83c1ae457e1870c67abf374e9ff8193fd710e"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "0760551fcfbe5673c854be3edf0cbbb32eef47e9dadac0e3eff9b38ce77b0d4b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "0760551fcfbe5673c854be3edf0cbbb32eef47e9dadac0e3eff9b38ce77b0d4b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "0760551fcfbe5673c854be3edf0cbbb32eef47e9dadac0e3eff9b38ce77b0d4b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "e665041a1098d7f70cfe829f7431984c8e77a42269de4657ef8dec3506e674c0"
+    sha256 cellar: :any,                 x86_64_linux:      "0aa3076d02dab34bf8c4ed4f79bc77949ca26300200b7ef8d914fbfef8b8f039"
   end
 
   depends_on "go" => :build

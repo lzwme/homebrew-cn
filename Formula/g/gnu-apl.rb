@@ -1,7 +1,10 @@
 class GnuApl < Formula
   desc "GNU implementation of the programming language APL"
   homepage "https://www.gnu.org/software/apl/"
-  url "https://ftpmirror.gnu.org/apl/apl-1.9/apl-1.9.tar.gz"
+  # NOTE: keep url and mirrors even if they don't exist
+  url "https://ftpmirror.gnu.org/apl/apl-1.9.tar.gz"
+  mirror "https://ftpmirror.gnu.org/apl/apl-1.9/apl-1.9.tar.gz"
+  mirror "https://ftp.gnu.org/gnu/apl/apl-1.9.tar.gz"
   mirror "https://ftp.gnu.org/gnu/apl/apl-1.9/apl-1.9.tar.gz"
   sha256 "291867f1b1937693abb57be7d9a37618b0376e3e2709574854a7bbe52bb28eb8"
   license "GPL-3.0-or-later"
@@ -35,7 +38,6 @@ class GnuApl < Formula
   depends_on "libx11"
   depends_on "libxcb"
   depends_on "pcre2"
-  depends_on "readline" # GNU Readline is required, libedit won't work
   depends_on "sqlite"
 
   on_macos do
@@ -47,13 +49,11 @@ class GnuApl < Formula
   end
 
   on_sequoia do
-    # The macOS 15 SDK's libc++ lacks the generic `std::char_traits` used for `std::basic_string<T>`
-    patch :DATA
+    # https://developer.apple.com/documentation/xcode-release-notes/xcode-16_4-release-notes (149025504)
+    depends_on xcode: ["16.4", :build]
   end
 
   def install
-    ENV.append "CXXFLAGS", "-include #{buildpath}/src/char_traits_fix.hh" if OS.mac? && MacOS.version == :sequoia
-
     system "autoreconf", "--force", "--install", "--verbose" if build.head?
     system "./configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
@@ -63,47 +63,3 @@ class GnuApl < Formula
     assert_match "6 15 24", shell_output("#{bin}/apl --noSV --eval '+/ (3 3⍴1 2 3 4 5 6 7 8 9)' < /dev/null").strip
   end
 end
-
-__END__
---- /dev/null
-+++ b/src/char_traits_fix.hh
-@@ -0,0 +1,39 @@
-+// The macOS 15 SDK's libc++ lacks the generic std::char_traits that
-+// GNU APL relies on for std::basic_string with non-character types.
-+#include <cstring>
-+#include <cwchar>
-+#include <ios>
-+#include <string>
-+
-+_LIBCPP_BEGIN_NAMESPACE_STD
-+template <class _CharT>
-+struct char_traits {
-+  using char_type  = _CharT;
-+  using int_type   = int;
-+  using off_type   = streamoff;
-+  using pos_type   = streampos;
-+  using state_type = mbstate_t;
-+
-+  static void assign(_CharT& __a, const _CharT& __b) noexcept { __a = __b; }
-+  static bool eq(_CharT __a, _CharT __b) noexcept { return __a == __b; }
-+  static bool lt(_CharT __a, _CharT __b) noexcept { return __a < __b; }
-+  static int compare(const _CharT* __a, const _CharT* __b, size_t __n) {
-+    for (; __n; --__n, ++__a, ++__b)
-+      if (!eq(*__a, *__b)) return lt(*__a, *__b) ? -1 : 1;
-+    return 0;
-+  }
-+  static size_t length(const _CharT* __s) { size_t __n = 0; while (!eq(__s[__n], _CharT())) ++__n; return __n; }
-+  static const _CharT* find(const _CharT* __s, size_t __n, const _CharT& __c) {
-+    for (; __n; --__n, ++__s) if (eq(*__s, __c)) return __s;
-+    return nullptr;
-+  }
-+  static _CharT* move(_CharT* __d, const _CharT* __s, size_t __n) { return static_cast<_CharT*>(memmove(__d, __s, __n * sizeof(_CharT))); }
-+  static _CharT* copy(_CharT* __d, const _CharT* __s, size_t __n) { return static_cast<_CharT*>(memcpy(__d, __s, __n * sizeof(_CharT))); }
-+  static _CharT* assign(_CharT* __s, size_t __n, _CharT __c) { for (size_t __i = 0; __i < __n; ++__i) __s[__i] = __c; return __s; }
-+  static int_type not_eof(int_type __c) noexcept { return __c == eof() ? ~eof() : __c; }
-+  static _CharT to_char_type(int_type __c) noexcept { return _CharT(__c); }
-+  static int_type to_int_type(_CharT __c) noexcept { return int_type(__c); }
-+  static bool eq_int_type(int_type __a, int_type __b) noexcept { return __a == __b; }
-+  static int_type eof() noexcept { return int_type(EOF); }
-+};
-+_LIBCPP_END_NAMESPACE_STD

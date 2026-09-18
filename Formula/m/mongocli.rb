@@ -1,8 +1,8 @@
 class Mongocli < Formula
   desc "MongoDB CLI enables you to manage your MongoDB in the Cloud"
   homepage "https://www.mongodb.com/docs/mongocli/current/"
-  url "https://ghfast.top/https://github.com/mongodb/mongodb-cli/archive/refs/tags/mongocli/v2.0.7.tar.gz"
-  sha256 "39060cf7b67650963b45e7e8f5bb3ba1b91187adf4bf779bb88fd4d43782f71e"
+  url "https://ghfast.top/https://github.com/mongodb/mongodb-cli/archive/refs/tags/mongocli/v2.0.8.tar.gz"
+  sha256 "3c12529959e459d990b5e1670e471f7137f95b294503b2c620eda17aab4112bb"
   license "Apache-2.0"
   head "https://github.com/mongodb/mongodb-cli.git", branch: "main"
 
@@ -12,13 +12,11 @@ class Mongocli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "b5929cb43fa4ddace42308953c643513d2aa356cac25578731feddb54461226b"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "c1f35ee0b5565c50098d5153c9ab3fdaeae8e5980b9c3c247218c232e130e507"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "c69443a3dee4214f6c7f4df6389658dc3559454f692ad9816e59309fd9bc50bb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "772f76e5ff26d57ae8560413ce8164339f0189f91b22685bf9b6498590932af4"
-    sha256 cellar: :any_skip_relocation, sonoma:            "1ec225fe62b327fc3ba91969ebbf1b5a84b568070e5152b2f657b5cc2f39c192"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "4c34d8f7f035603070b116f1bbc8067ea3a389a0ef8a57662774dd1c0cb98780"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "dea1584b44fa20fd97342d27690b9e0361fb0b05d9be4f85f864b9502465b592"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "1b2b7e1e422e0aa9cd2c23c354e46ad7a28048bc03b0daeb549a967fd7ab084c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "b16b26ee90526e19625813739c3895004666ca80026a7d011336851ea7777104"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "71973858864a6fd36075881f81fc3ebf572471b9d2ed42d1e3586c70febc736a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "b5b7d331153ecbc3e5327817c9737850ffb17efae5f1223639c2a177db898fb0"
+    sha256 cellar: :any,                 x86_64_linux:      "81f3365084cab0cfe7d235daa2f776c023d21d4c40f720cefa0b7e9a39a1eb84"
   end
 
   depends_on "go" => :build

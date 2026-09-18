@@ -1,19 +1,17 @@
 class Nats < Formula
   desc "Utility for NATS Server and JetStream administration"
   homepage "https://github.com/nats-io/natscli"
-  url "https://ghfast.top/https://github.com/nats-io/natscli/archive/refs/tags/v0.4.0.tar.gz"
-  sha256 "6dc9056aa439f90de2a705983005363ae05f1f9985b81881cbfffa867a344ef6"
+  url "https://ghfast.top/https://github.com/nats-io/natscli/archive/refs/tags/v0.5.0.tar.gz"
+  sha256 "832f2fcd53de5eceeb9d497ab603cbf32698646dfe156d23b70553e40eb1438b"
   license "Apache-2.0"
   head "https://github.com/nats-io/natscli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "5079447215285805eeafa0f3448b6972c45babfacc76c040ed0e332d47a7833b"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "ed76909dd6173fb6080410ac2b0c600d5a380e01ae1c86d0508186a97a71e008"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "bcc3c11493c0c6ab49a7274d8e5c4a817bfe2ef083a57966982afbc7321ac37c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "b449507a6e72777e9ff0134c433c399e588e9606e06a674ee070240b48bb5297"
-    sha256 cellar: :any_skip_relocation, sonoma:            "0854f3a3ffded7e6faae8ee778596d34df27f487fc55974c7bc836318843634d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "95d566e14d2676997b9779b2158589832c248969ce8921c63012fb2c79d74f8d"
-    sha256 cellar: :any,                 x86_64_linux:      "db2b2a103154f64077c04de5971255647898afa12907d71a7e7672bb619859d2"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "814deaeedd530ae32ef35d96fca56202640d75ead4a24ecec07687b9bfc55884"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "165673e92ba48954f7d1b3e3c4ca47f53beb9e3f640553ce07640f67a3161df0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "e0a3936a8133f4753b8cf5341464784c13b7f3db08ed09ef6eb68ed5ffb7a27e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "2c67f22255a269f86a81c69715a091866195a9465cd3cd878b3d35a87676e578"
+    sha256 cellar: :any,                 x86_64_linux:      "d93bc98bc76cf8d88383117433fa28524bb509aae1a65ec4377faa208a6a3d94"
   end
 
   depends_on "go" => :build

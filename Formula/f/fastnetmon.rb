@@ -28,10 +28,6 @@ class Fastnetmon < Formula
   uses_from_macos "libpcap"
   uses_from_macos "ncurses"
 
-  on_macos do
-    depends_on macos: :big_sur # We need C++ 20 available for build which is available from Big Sur
-  end
-
   on_linux do
     depends_on "elfutils"
     depends_on "libbpf"

@@ -24,6 +24,12 @@ class Dumpling < Formula
   # ref: https://github.com/pingcap/tidb/issues/70069
   depends_on "go@1.26" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     project = "github.com/pingcap/tidb/dumpling"
     ldflags = %W[

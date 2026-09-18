@@ -1,8 +1,8 @@
 class Logcli < Formula
   desc "Run LogQL queries against a Loki server"
   homepage "https://grafana.com/oss/loki"
-  url "https://ghfast.top/https://github.com/grafana/loki/archive/refs/tags/v3.7.7.tar.gz"
-  sha256 "e2e8863c15ad97a4649a6f0795d549a8977e44f4413e2b001e6eb0c12c22eb9c"
+  url "https://ghfast.top/https://github.com/grafana/loki/archive/refs/tags/v3.7.8.tar.gz"
+  sha256 "313a9c2de71ca7ffca1189f6ac2916073df36f498f2d6f77130d07bcd6fc5724"
   license "AGPL-3.0-only"
   head "https://github.com/grafana/loki.git", branch: "main"
 
@@ -11,12 +11,11 @@ class Logcli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "742d68ae76b41e2924268532bd1d54860dad77392f7f5a2d35b7b81ff56da230"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "4b684ea41575dfcd24408d5e31def521be4aef604ceae8120aba7f482c7c2d60"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "dbe3979cb8530c6c914c7d892a2530faaeab8523d8d60f0faf2deae3796a2e04"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "3450cba9e453a6978d86fe44dc4b973f427384477f7a1b284b1fd014223b55b8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "162ee00d38cd7b3cc161488b66cea64e53dd8845d422a25799824d3ca316eece"
-    sha256 cellar: :any,                 x86_64_linux:      "1d55b28c1f9207d3cac3afbb8282891612c4c538e07db16b184dd294e01c6203"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "72c99f82bafcfe71ebdc95f75c2bed6ad32e894d0134e33dd7f5681f4986c8f9"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "2771a20e92d6ea7f59d4bde4c9fad1a2ed50ece8b75f8b36c81e964388065fe3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "6de3cc2803bfef2a910bd9df805f7b09c11601531acbf52732e0a55cb02bcccd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "1a799da2a42fbe65ae43abbe56bb3d90fc2b1d50c86d1e5db6b5a86776cddf96"
+    sha256 cellar: :any,                 x86_64_linux:      "e81918580815560b083b39551b430d195d01057e52b7472c5cee7a004e12671f"
   end
 
   depends_on "go" => :build

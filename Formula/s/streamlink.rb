@@ -3,17 +3,17 @@ class Streamlink < Formula
 
   desc "CLI for extracting streams from various websites to a video player"
   homepage "https://streamlink.github.io/"
-  url "https://files.pythonhosted.org/packages/87/10/a2fbcddc6f79a06266d91bbca49f2a04d1752972c4be94c1ffc940f740af/streamlink-8.6.0.tar.gz"
-  sha256 "94da7d0176a5561e45518376e0b1907b595f79c7ee89f31bfdfb29dacaae8e80"
+  url "https://files.pythonhosted.org/packages/a2/64/2ecd92de6d19a724634f29748f81aab8e68d34bbaa1d7cfcaa4f3a101988/streamlink-8.6.1.tar.gz"
+  sha256 "29ba76ed6d6913c9e69bc730fc584b581b2860022af18661a1d08c8daee03642"
   license "BSD-2-Clause"
   head "https://github.com/streamlink/streamlink.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "b31482b03cc963e9673302f894d30ff218259478d947cced74ab3fda3921930e"
-    sha256 cellar: :any, arm64_tahoe:       "7cf518df3a068f52bcee4e263ab69987be9307ca825d98de3f7c38251b711392"
-    sha256 cellar: :any, arm64_sequoia:     "148ba0c70b8662a388bcc6737a52ad48813cfd521b7c1ef5955b0f622c384d74"
-    sha256 cellar: :any, arm64_linux:       "8ee70f64f2dafec382312eaf3fdb68f70e53f542073a6a10c59949ed76997f81"
-    sha256 cellar: :any, x86_64_linux:      "20600e4beac6ebadf77d8ed6502203e5c2508d0575d2ef645af34cb0c1833e54"
+    sha256 cellar: :any, arm64_golden_gate: "9d857bf366d0756723195d61503af0809d96f401685e5735bf993c6865ae5542"
+    sha256 cellar: :any, arm64_tahoe:       "a4cee7cc607dc9464ccadb07f0b2d253562760e219be7f2e0b162f8241c15f9d"
+    sha256 cellar: :any, arm64_sequoia:     "7012f4f09906f3237663f885b8e354ea0394dfbcfbb65ede92da534a01f0a72a"
+    sha256 cellar: :any, arm64_linux:       "33c1487a31757f4e8a9ba1ed9ea47f7fb2de510b1c187cdcbb4fa3cb4c4dd389"
+    sha256 cellar: :any, x86_64_linux:      "b2a1385dc5b76bf51a4470452fc9cab53532bf3f1cdea3b34b5df22b85a6211e"
   end
 
   depends_on "pkgconf" => :build
@@ -102,8 +102,8 @@ class Streamlink < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/53/0c/06f8b233b8fd13b9e5ee11424ef85419ba0d8ba0b3138bf360be2ff56953/urllib3-2.7.0.tar.gz"
-    sha256 "231e0ec3b63ceb14667c67be60f2f2c40a518cb38b03af60abc813da26505f4c"
+    url "https://files.pythonhosted.org/packages/e3/05/b17359e1cefb4f909b5e40b1b90a496d987258916dbbf88e842c729f510e/urllib3-2.8.0.tar.gz"
+    sha256 "63bf2ead4c879426ebf22ef2a781eeb4aa3b4ae798a0435506f8687fd5bb9b63"
   end
 
   resource "websocket-client" do

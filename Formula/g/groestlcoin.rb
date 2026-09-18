@@ -35,10 +35,6 @@ class Groestlcoin < Formula
 
   uses_from_macos "sqlite"
 
-  on_macos do
-    depends_on macos: :big_sur
-  end
-
   on_linux do
     depends_on "util-linux" => :build # for `hexdump`
   end
