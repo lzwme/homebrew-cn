@@ -1,8 +1,8 @@
 class Kumactl < Formula
   desc "Kuma control plane command-line utility"
   homepage "https://kuma.io/"
-  url "https://ghfast.top/https://github.com/kumahq/kuma/archive/refs/tags/v2.14.4.tar.gz"
-  sha256 "a7669804aa41eebb1f23e9c1d25f740b758ac1b1aafc1fc2e08b6a6a47e208b2"
+  url "https://ghfast.top/https://github.com/kumahq/kuma/archive/refs/tags/v2.14.5.tar.gz"
+  sha256 "56cdecc20c8c95b53c37656c2bd19dbd807f98fb995360ee271b0bdecd8f2aef"
   license "Apache-2.0"
   head "https://github.com/kumahq/kuma.git", branch: "master"
 
@@ -12,15 +12,20 @@ class Kumactl < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "5a48350e5cee124a800c6665baafef2d75a5b4abd38c79436d6a620942a8c54d"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "21dad164e64b668c6c0aaac0936cbe71bf2f8077474d9f237f2464ee5d5b0c77"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "6b2af81cf838943537ec924856974b6c8168190cab93fcf520e57f5856c613ea"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "8b9a7d7dc14544fedf0944d2e869ca2476ac42210cec93d4af6cd9c608d7573f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "0cc6e55bffcfe8f95e011fb7508dc1880c35bcd75fb3de2f00858c8190c76fe3"
-    sha256 cellar: :any,                 x86_64_linux:      "c5da0c1fccd604b479ccbb999eaf803cdce7ed35a2507e036c239ac00ebd8880"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "94df930427857df2e9af883ad8601c8121d055926b44224b8c5b84f665f2d683"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "47672a3a38e789b76d59d5a852940b52ca9d8987615e3a98c34deb60929cc68a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "82d5f3438bf255c12d2bd26962d22348465993ebd32077355a80c88654b9379e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "688bdda9672f96d2ace62ac4e85175de1cf8162e9fb0283d7479d82565915fd8"
+    sha256 cellar: :any,                 x86_64_linux:      "5b907d1909f66ebccb05cb90328c043ba57e9ff8441e3a93fbc7a45568cf975e"
   end
 
   depends_on "go" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     ldflags = %W[

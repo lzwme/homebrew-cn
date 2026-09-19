@@ -4,6 +4,7 @@ class Asciidoctorj < Formula
   url "https://search.maven.org/remotecontent?filepath=org/asciidoctor/asciidoctorj/3.0.1/asciidoctorj-3.0.1-bin.zip"
   sha256 "18b085b7f67a7f872abe00352be5caacd9b436400aec27f838c6380077cb88bf"
   license "Apache-2.0"
+  revision 1
 
   livecheck do
     url "https://search.maven.org/remotecontent?filepath=org/asciidoctor/asciidoctorj/maven-metadata.xml"
@@ -11,7 +12,7 @@ class Asciidoctorj < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "62fa66eccf522cfbe6e838d155c9f091708190a4b5fbef5160d522f67c253258"
+    sha256 cellar: :any_skip_relocation, all: "8aab5c459734531d3ff945ef0e3bf29663caac82240c36f836dacd7435ddb751"
   end
 
   depends_on "openjdk"
@@ -19,6 +20,9 @@ class Asciidoctorj < Formula
   def install
     rm_r(Dir["bin/*.bat"]) # Remove Windows files.
     libexec.install Dir["*"]
+    # JDK 27 removed `-Xverify:none` (JDK-8382727) and refuses to start with it.
+    # Remove: https://github.com/asciidoctor/asciidoctorj/issues/1034
+    inreplace libexec/"bin/asciidoctorj", '"-Xverify:none" ', ""
     (bin/"asciidoctorj").write_env_script libexec/"bin/asciidoctorj", JAVA_HOME: formula_opt_prefix("openjdk")
   end
 

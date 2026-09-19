@@ -6,6 +6,11 @@ class Abpoa < Formula
   license "MIT"
   head "https://github.com/yangao07/abPOA.git", branch: "main"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_golden_gate: "7754fce45bd7a37b567741016605492e9b3e94db53955011a308cbab011bc22c"
     sha256 cellar: :any_skip_relocation, arm64_tahoe:       "fd232c10a127d10f27d2f7e427bc35bfd8c2fdad4e5f817848538f7e4d8c1207"

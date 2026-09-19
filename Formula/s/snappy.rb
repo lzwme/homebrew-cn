@@ -1,18 +1,18 @@
 class Snappy < Formula
   desc "Compression/decompression library aiming for high speed"
   homepage "https://google.github.io/snappy/"
-  url "https://ghfast.top/https://github.com/google/snappy/archive/refs/tags/1.3.0.tar.gz"
-  sha256 "695d585b7679489a5dc9f5148a91781c8a14f4a9a5dbcdb5672ce0e761468b23"
+  url "https://ghfast.top/https://github.com/google/snappy/archive/refs/tags/1.3.1.tar.gz"
+  sha256 "893f708a0bf4b5529d555ffcee390e940e932fcf90261f682604475a76cd0247"
   license "BSD-3-Clause"
   compatibility_version 1
   head "https://github.com/google/snappy.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "56a72b07396e784b1baf26bd6d3e17eb4f42d6daaa547d94c2c0c7af46d3ab3c"
-    sha256 cellar: :any, arm64_tahoe:       "ed46206fcb9d94e26c725e32e2628d1b5316afd6b59bc2b5352ca05c462103da"
-    sha256 cellar: :any, arm64_sequoia:     "b494e64dbd96af17defdb6a0ebf60edd284d3df904c867c825c2d5cf9033782b"
-    sha256 cellar: :any, arm64_linux:       "7a621f5fa89c4339bee3cc592331f6d5c1adabc7ff1e7349670cc1039b3c85bb"
-    sha256 cellar: :any, x86_64_linux:      "18aec5843943b24eb10d51af1d42b6a7e32120b46a045bbf0bc5e908fbb5f837"
+    sha256 cellar: :any, arm64_golden_gate: "7f20ac629eaf9a34a0e4d0e1fe60a933d42ececf3d956988fa8b24916e467c85"
+    sha256 cellar: :any, arm64_tahoe:       "11f6a15644bc2dece119e6d0cf912e702ed5355ec706409a57bb8d482ff022b0"
+    sha256 cellar: :any, arm64_sequoia:     "0b5ff66b47727b8af0cc62797ff3bd88632be5a6de6d03786a706114d8883488"
+    sha256 cellar: :any, arm64_linux:       "10c3b695f1253505788952dcd0fe7fdbb81d6b16e2ae5906ac8bf765aa9de69b"
+    sha256 cellar: :any, x86_64_linux:      "0c8c71cc1a07999d9ee6761178c594cae7d7e7519de4cb4f870b76a27210fdf3"
   end
 
   depends_on "cmake" => :build

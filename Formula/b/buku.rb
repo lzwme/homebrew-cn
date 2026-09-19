@@ -7,7 +7,7 @@ class Buku < Formula
   url "https://ghfast.top/https://github.com/jarun/buku/archive/refs/tags/v5.1.tar.gz"
   sha256 "0f1a3e15f882fe9a0f8e550abae7388d3cb81d4718a1b4309dcf4363633cb7b1"
   license "GPL-3.0-or-later"
-  revision 6
+  revision 7
   head "https://github.com/jarun/buku.git", branch: "master"
 
   livecheck do
@@ -18,13 +18,11 @@ class Buku < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "4a780b072823102897c2df25c007ad8b5da731a2f264513d3ceb26f23fea4c7f"
-    sha256 cellar: :any, arm64_tahoe:       "59c422dd91e2597a9b6587a296b50eaa6f13e77dea7670f45c3c5f4f9a46b51f"
-    sha256 cellar: :any, arm64_sequoia:     "57e550f4582ff9096241744e786a267fa326f45fd94b9af766cd63d40c7f01a4"
-    sha256 cellar: :any, arm64_sonoma:      "a4842de8dd5348d601168af329dd80f763b29b7e54b98e2e473855176386f849"
-    sha256 cellar: :any, sonoma:            "f058ca566cc9e115513f272e8f407a57135eaa9667595a09387966c6122a7671"
-    sha256 cellar: :any, arm64_linux:       "be1dadf4e8c2791f122bc1ded834ded6fa14fb762452630ae9c78392cfa6ff8b"
-    sha256 cellar: :any, x86_64_linux:      "5293e68aa3306349d0eec6ef4faf8c3dd1dea67d75c5a9064ff44d4afa1fa62c"
+    sha256 cellar: :any, arm64_golden_gate: "12d9eab3f5e924ccb6c2254892dd3e8a6cea0f78012b0c17b822d2d318a79860"
+    sha256 cellar: :any, arm64_tahoe:       "a963b962313227865ebf59d6ebc596e11ac37ec29556d4346963c421994236b8"
+    sha256 cellar: :any, arm64_sequoia:     "d311b666430a81b932c6e6c3193ef704fe622f31c4aa9b265e91f8402fc9be58"
+    sha256 cellar: :any, arm64_linux:       "968fff2e1823c91b92937c2b4fbc0b93a0928fd70abe3dae53d619c0fb11ef6e"
+    sha256 cellar: :any, x86_64_linux:      "101b84757dd573699a4c37590eb0f4aabd0839ea7674214e73ed3029109b3437"
   end
 
   depends_on "certifi" => :no_linkage
@@ -59,8 +57,8 @@ class Buku < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/76/d4/81420972a676e8ffea40450d8c8c92943e7218a78fe9b64359836cc9876b/click-8.4.2.tar.gz"
-    sha256 "9a6cea6e60b17ebe0a44c5cc636d94f09bd66142c1cd7d8b4cd731c4917a15f6"
+    url "https://files.pythonhosted.org/packages/c7/0e/7fa0ef50764b67090eca4114772a2abf8b6148198475e54c660b97caeee6/click-8.5.0.tar.gz"
+    sha256 "ba0d2089de75ea0310e2dde03160e6ca10009947fb95a182f9b54021bb272e34"
   end
 
   resource "flasgger" do
@@ -128,13 +126,13 @@ class Buku < Formula
   end
 
   resource "mistune" do
-    url "https://files.pythonhosted.org/packages/7b/a5/2dab368d6950e6808904dec98f54c7e726ee7be4a0c6afe00e6e011bd52d/mistune-3.3.3.tar.gz"
-    sha256 "c4c6c0c840b8637a2e9b8b6d607eb7c8f00888bf14c754409bcd339e848c2477"
+    url "https://files.pythonhosted.org/packages/7b/92/328a294a6de83bacb95bed01f04e0eaff4e3616ee359fc821a5dfc539b02/mistune-3.3.4.tar.gz"
+    sha256 "58b5c96d6fcb61190dfe5fae498d2b2065f99cf61e9649418fd54cf1ada86dfe"
   end
 
   resource "packaging" do
-    url "https://files.pythonhosted.org/packages/d7/f1/e7a6dd94a8d4a5626c03e4e99c87f241ba9e350cd9e6d75123f992427270/packaging-26.2.tar.gz"
-    sha256 "ff452ff5a3e828ce110190feff1178bb1f2ea2281fa2075aadb987c2fb221661"
+    url "https://files.pythonhosted.org/packages/7d/fa/3944b40b07da9ce895c0e6303a5ab7d53da063554f534556b134a54d6093/packaging-26.3.tar.gz"
+    sha256 "94edc256424af38762eb31306eed28beb9f0efc50a8837492c9d6fd6004aed79"
   end
 
   resource "python-dateutil" do
@@ -158,8 +156,8 @@ class Buku < Formula
   end
 
   resource "soupsieve" do
-    url "https://files.pythonhosted.org/packages/47/2c/0a5f6f8ee0d5589e48c7640213ed5175d52cf540a06725b628cc1a45d6ce/soupsieve-2.8.4.tar.gz"
-    sha256 "e121fd02e975c695e4e9e8774a5ee35d74714b59307868dcc5319ad2d9e3328e"
+    url "https://files.pythonhosted.org/packages/69/99/a6ca3beb3ccacb41fb3321d8a60e5566f9e6467601ef8eba6a17e1b89778/soupsieve-2.9.2.tar.gz"
+    sha256 "4a55d8cf158a9c2e587fa4922f1bbb91d68ac829e2d6f25403a85747c71daf74"
   end
 
   resource "typing-extensions" do
@@ -168,18 +166,18 @@ class Buku < Formula
   end
 
   resource "tzdata" do
-    url "https://files.pythonhosted.org/packages/ba/19/1b9b0e29f30c6d35cb345486df41110984ea67ae69dddbc0e8a100999493/tzdata-2026.2.tar.gz"
-    sha256 "9173fde7d80d9018e02a662e168e5a2d04f87c41ea174b139fbef642eda62d10"
+    url "https://files.pythonhosted.org/packages/e4/31/3d74fa778a63b98b7374323befcc0be5ab3bd94afd4096a0124e7379152c/tzdata-2026.4.tar.gz"
+    sha256 "f1b8bd365d8d210c55353f4d7f8d6d8561c0ba50d704b700d195a9424bba0d79"
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/53/0c/06f8b233b8fd13b9e5ee11424ef85419ba0d8ba0b3138bf360be2ff56953/urllib3-2.7.0.tar.gz"
-    sha256 "231e0ec3b63ceb14667c67be60f2f2c40a518cb38b03af60abc813da26505f4c"
+    url "https://files.pythonhosted.org/packages/e3/05/b17359e1cefb4f909b5e40b1b90a496d987258916dbbf88e842c729f510e/urllib3-2.8.0.tar.gz"
+    sha256 "63bf2ead4c879426ebf22ef2a781eeb4aa3b4ae798a0435506f8687fd5bb9b63"
   end
 
   resource "webencodings" do
-    url "https://files.pythonhosted.org/packages/0b/02/ae6ceac1baeda530866a85075641cec12989bd8d31af6d5ab4a3e8c92f47/webencodings-0.5.1.tar.gz"
-    sha256 "b36a1c245f2d304965eb4e0a82848379241dc04b865afcc4aab16748587e1923"
+    url "https://files.pythonhosted.org/packages/d5/a0/8fd707bcb776a7be556bad06a2ea5fb9bd519df78ef8e26f70ccf0f38bff/webencodings-0.6.1.tar.gz"
+    sha256 "565f9ad031c702dae404e27a099e3e09186a3ab1b9520f06d215502b651fd910"
   end
 
   resource "werkzeug" do

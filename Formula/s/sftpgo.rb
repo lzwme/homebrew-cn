@@ -5,6 +5,11 @@ class Sftpgo < Formula
   sha256 "2c7eb3a01c6a2dc67d13408302428a056032e42d57bbb74ba92ac24f68f35aff"
   license "AGPL-3.0-only"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     sha256 arm64_golden_gate: "3cdc59924323a118b2f134cc1adb374557687bd909775a3d3ddc6a3d0db7a33a"
     sha256 arm64_tahoe:       "607f9998c1da9a53ac0fadc8a446b9f67c13b3fdbec7f89e18e50f9d4aff9426"

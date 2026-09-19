@@ -1,21 +1,18 @@
 class Edencommon < Formula
   desc "Shared library for Watchman and Eden projects"
   homepage "https://github.com/facebookexperimental/edencommon"
-  url "https://ghfast.top/https://github.com/facebookexperimental/edencommon/archive/refs/tags/v2026.07.27.00.tar.gz"
-  sha256 "7be895a8d9a6eb88523488142503ce9b14d097b518967dd50b9c4cf7675c8080"
+  url "https://ghfast.top/https://github.com/facebookexperimental/edencommon/archive/refs/tags/v2026.09.14.00.tar.gz"
+  sha256 "9886133897aa1f80e1721be2ff36cc0548f615c2b2a5a74443efa16d623d4c76"
   license "MIT"
-  revision 1
   compatibility_version 1
   head "https://github.com/facebookexperimental/edencommon.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "600426818d4b4c3e50615a2f55b138170ec377fe964c5c881906dce0df1bdb00"
-    sha256 cellar: :any, arm64_tahoe:       "a383d39e667eddaf4e0e99aec0ea721c259a85a024825a37051ff494f6d8b494"
-    sha256 cellar: :any, arm64_sequoia:     "4a467cb502c1c63b9ea93a41cfbb5023914d56b46b81fe794266045a7b4432c1"
-    sha256 cellar: :any, arm64_sonoma:      "191759e6fcee746840053a1905bd5aa5c86d49fe01879b42806fd1c500a8c7a9"
-    sha256 cellar: :any, sonoma:            "f81229eb96a146cac1d15bc610b9e106d08d798e3d60fa6a936704e9f94e9cb7"
-    sha256 cellar: :any, arm64_linux:       "502b1f1a25c311f44ff1e1a20ab3baa9cdb9c550a9b85a6eb0be5523b7926e93"
-    sha256 cellar: :any, x86_64_linux:      "e5cabb86e645026ad23c8a0d83e9035aba08ca59494a81f1a3b0c0d187555147"
+    sha256 cellar: :any, arm64_golden_gate: "f3dd101fb629b5014fc5d51c85e7477cf473818b932a0f60c9817600ac3bb7ff"
+    sha256 cellar: :any, arm64_tahoe:       "d42aba5f1e56476638e065d21e34842fd4abec5c98b747398700a9f362441e5b"
+    sha256 cellar: :any, arm64_sequoia:     "96f08dea62babc5b5cb2e10ea16100911e90c2ba066a0d25ada99cca66d94266"
+    sha256 cellar: :any, arm64_linux:       "c84e9f56eb2905caf3f4deedbae9178ee4cc4e67b63b399d4fdf77ab0f55403d"
+    sha256 cellar: :any, x86_64_linux:      "81eb7279a9851a38b19f3e9dee52f260fbcee13fb8b28777cdaa5066227928a1"
   end
 
   depends_on "cmake" => :build

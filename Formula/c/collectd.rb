@@ -21,12 +21,13 @@ class Collectd < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "324dda8ec5aa63c4d4b84b36f6858321e63f31c03e46cf692bf6bce2173df4cd"
-    sha256 arm64_sequoia: "7aea2380df608747796f5f7c3aac79ee6c36a301f07beb4ff25db121119a7311"
-    sha256 arm64_sonoma:  "4d93f8eb7f727cfaab7784fb1d94c5efb9763447c29d1f9662a9558859dfb74a"
-    sha256 sonoma:        "315359880ba2c73615ce322d5a56074e72179c75c694b1ad31ef0f2d0d653e46"
-    sha256 arm64_linux:   "3c3fce87eece6ded5ece1b4cf1a377e42df47015287218f88df213c5b299d32d"
-    sha256 x86_64_linux:  "6c17fdeb04fee0e5b58e8b08a2c3586f427c1952dfe95f981ae3cf95ce935d27"
+    sha256 arm64_golden_gate: "44f49a58d3a6954467bb86b35369cced485fff64644bd06f8f293094c7b5a744"
+    sha256 arm64_tahoe:       "324dda8ec5aa63c4d4b84b36f6858321e63f31c03e46cf692bf6bce2173df4cd"
+    sha256 arm64_sequoia:     "7aea2380df608747796f5f7c3aac79ee6c36a301f07beb4ff25db121119a7311"
+    sha256 arm64_sonoma:      "4d93f8eb7f727cfaab7784fb1d94c5efb9763447c29d1f9662a9558859dfb74a"
+    sha256 sonoma:            "315359880ba2c73615ce322d5a56074e72179c75c694b1ad31ef0f2d0d653e46"
+    sha256 arm64_linux:       "3c3fce87eece6ded5ece1b4cf1a377e42df47015287218f88df213c5b299d32d"
+    sha256 x86_64_linux:      "6c17fdeb04fee0e5b58e8b08a2c3586f427c1952dfe95f981ae3cf95ce935d27"
   end
 
   head do

@@ -40,6 +40,8 @@ class Akku < Formula
     resolves "https://gitlab.com/akkuscm/akku/-/commit/73acf1ff4f3ee77028d954d051a2c852e6b8a620"
   end
 
+  deny_network_access!
+
   def install
     system "./configure", "--disable-silent-rules", *std_configure_args
     system "make"
@@ -50,6 +52,6 @@ class Akku < Formula
     system bin/"akku", "init", "brewtest"
     assert_path_exists testpath/"brewtest/brewtest.sls"
     assert_match "akku-package (\"brewtest\"", (testpath/"brewtest/Akku.manifest").read
-    assert_match "Akku.scm #{version}", shell_output("#{bin}/akku --help 2>&1")
+    assert_match version.to_s, shell_output("#{bin}/akku --help 2>&1")
   end
 end

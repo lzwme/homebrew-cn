@@ -1,18 +1,17 @@
 class GoLibrespot < Formula
   desc "Spotify client"
   homepage "https://github.com/devgianlu/go-librespot"
-  url "https://ghfast.top/https://github.com/devgianlu/go-librespot/archive/refs/tags/v0.9.1.tar.gz"
-  sha256 "f3c16d87728089778e48f9f16104c046bf77e855e4347f308b03ba38698314ed"
+  url "https://ghfast.top/https://github.com/devgianlu/go-librespot/archive/refs/tags/v0.10.0.tar.gz"
+  sha256 "0d60022635f9658a454e4917e47c5bdf1689a6be6fd87ad067fde67233f8bfe4"
   license "GPL-3.0-only"
   head "https://github.com/devgianlu/go-librespot.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "9b008549dec579778f33357f431ab7ad179d97972713853c115e4063afd8461a"
-    sha256 cellar: :any, arm64_tahoe:       "1b8074469d1b5b005fb8dd4d72b2587db60225daf0b7812d231900c89840970d"
-    sha256 cellar: :any, arm64_sequoia:     "96f1c2f6d84c79f2b2917795bc68862079bd75679e4eff623167fc6b61f67d18"
-    sha256 cellar: :any, arm64_sonoma:      "a9311a01b9c8c38cf78e3793056ffca0b7c6893d2ca58066f032906ed02372f3"
-    sha256 cellar: :any, arm64_linux:       "150a226d2108711d2df6f270e8bc90a15a2a528bd589dabf7049480f4f5520cf"
-    sha256 cellar: :any, x86_64_linux:      "322d01205eb7bcad63e794585d0eb0511eea705f499ce5531ecce42379a82f17"
+    sha256 cellar: :any, arm64_golden_gate: "d5e9953c0f63e5d5f0337412434ec7312f321bf9b9533d354ce52a2cc9961748"
+    sha256 cellar: :any, arm64_tahoe:       "de714a7664120c43ff2727163d7dc800ec6d151f69bf0db9f801990035c72ede"
+    sha256 cellar: :any, arm64_sequoia:     "870b88e6bd97f2a88622647436421c66ba584eb2888cdd9f74b8247fb7299497"
+    sha256 cellar: :any, arm64_linux:       "008bd8a37af64100cd06a900e19bfe60f8de2bb21f9b14f4192c443f4bcc8fcf"
+    sha256 cellar: :any, x86_64_linux:      "0b1aca5f9c377b2f22b013785d64c79cc90c84afd868492b07937c0ae4409c48"
   end
 
   depends_on "go" => :build
@@ -24,6 +23,12 @@ class GoLibrespot < Formula
 
   on_linux do
     depends_on "alsa-lib"
+  end
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
   end
 
   def install

@@ -16,6 +16,8 @@ class Ddrescue < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:      "7a3f54e1611eb72a3326d5dafd360801a32dd4b397801f491b142afbb7be253c"
   end
 
+  deny_network_access!
+
   def install
     system "./configure", "--prefix=#{prefix}",
                           "CXX=#{ENV.cxx}"

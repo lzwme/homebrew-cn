@@ -1,8 +1,8 @@
 class ForgejoRunner < Formula
   desc "Official Actions runner for Forgejo instances"
   homepage "https://code.forgejo.org/forgejo/runner"
-  url "https://code.forgejo.org/forgejo/runner/archive/v13.1.0.tar.gz"
-  sha256 "bdece01a00354bb29de4e36b6c72afae9ed571ed1fba1905d01bc8961de41819"
+  url "https://code.forgejo.org/forgejo/runner/archive/v13.2.0.tar.gz"
+  sha256 "9a7cc5bce2385feaa124213a7e000090dfac6e6a0177b04ae084e7dcb6ba46d5"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -13,15 +13,20 @@ class ForgejoRunner < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "c9ef417a682da199d5d02b48162493df45ac7c6519137be2797316cbe7a7eb05"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "c9ef417a682da199d5d02b48162493df45ac7c6519137be2797316cbe7a7eb05"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "c9ef417a682da199d5d02b48162493df45ac7c6519137be2797316cbe7a7eb05"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "c9ef417a682da199d5d02b48162493df45ac7c6519137be2797316cbe7a7eb05"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "9a4e16724efb1b7658a483b2b9ad0d6c673af4f64757ae62a92e9ae8cbb6caf7"
-    sha256 cellar: :any,                 x86_64_linux:      "31e774ea791448d03684211d1b9d9d3e5f09f8f959c8ae9059d8957b08b6c3c2"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "1c8b9bd534ab0b380cd5e34186088964740b63ef9a7d2c450a42eedfe20a54d9"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "1c8b9bd534ab0b380cd5e34186088964740b63ef9a7d2c450a42eedfe20a54d9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "1c8b9bd534ab0b380cd5e34186088964740b63ef9a7d2c450a42eedfe20a54d9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "2992055ca9c45ffb38dc027b258e3fb401dd77d31d0da72d09d4db6c966e4a08"
+    sha256 cellar: :any,                 x86_64_linux:      "2b980c34f907a83cec7609c412c182c731718dfc66554b2f448a33ba49a60f6a"
   end
 
   depends_on "go" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     ldflags = %W[-X code.forgejo.org/forgejo/runner/v#{version.major}/internal/pkg/ver.version=v#{version}]

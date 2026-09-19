@@ -19,6 +19,8 @@ class Diffutils < Formula
     sha256                               x86_64_linux:      "0d9d0320b98b399c0f3f1f0ec76b83192bbf74b393105b198c2322285ed08f12"
   end
 
+  deny_network_access!
+
   def install
     system "./configure", "--disable-dependency-tracking", "--prefix=#{prefix}"
     system "make", "install"

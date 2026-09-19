@@ -2,8 +2,8 @@ class Ollama < Formula
   desc "Create, run, and share large language models (LLMs)"
   homepage "https://ollama.com/"
   url "https://github.com/ollama/ollama.git",
-      tag:      "v0.34.1",
-      revision: "38fdb5dd58c761f850cddd6ba1e78a7954646b4f"
+      tag:      "v0.34.2",
+      revision: "dfabde4539e42ba1e1eab50a3a50b88aea7958a0"
   license "MIT"
   head "https://github.com/ollama/ollama.git", branch: "main"
 
@@ -16,13 +16,14 @@ class Ollama < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "47928031db6ce94a5f35649efba523f907e9038099d63411a90bbeafd89d2d7a"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "7b8d10e83894dad80408c67e64ca1108e21fd019706537e650da22bb3f1c9629"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "0c8a8b408319c80fe9b0260f953d8d6f57734442ce3483e578f19b75eebba06a"
-    sha256 cellar: :any,                 arm64_linux:       "e2d29f376c403ef1aa7866b03813759961dc1fbaf6455201d2c811d57ebe4729"
-    sha256 cellar: :any,                 x86_64_linux:      "70948a3026057b797c2241a7132445cf454671c0dcfc5ba06c6b4a8ddf067b7c"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "d993723f4446c2b4e4202a1291e5b9c219c5e4a409de7cea29db8b68b210aada"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "832c1987856f8e13b5b3be96055960d0667e07ce91685dce6148638007d918df"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "5740749e799819877ac2905e3be323a82bb588266313f620b1c09fa9046c7a98"
+    sha256 cellar: :any,                 arm64_linux:       "63c1a9712288c4fed6e12008b44480bc49420f8c0e6b3239d0a0f53d23a4e681"
+    sha256 cellar: :any,                 x86_64_linux:      "0b9b2320b16fef168ade06730c34084b6fa1e0462cbfb4007b59c05d35eac14b"
   end
 
+  depends_on "ccache" => :build
   depends_on "cmake" => :build
   depends_on "go" => :build
 
@@ -43,8 +44,8 @@ class Ollama < Formula
   # Pinned dependency required by llama-server
   resource "llama.cpp" do
     url "https://github.com/ggml-org/llama.cpp.git",
-        tag:      "b10864",
-        revision: "5d806aa2575e01e126651fd69ab1ab6cefff861d"
+        tag:      "b10969",
+        revision: "391fac16460f15233a7740550d858ac96df3419d"
 
     livecheck do
       url "https://ghfast.top/https://raw.githubusercontent.com/ollama/ollama/refs/tags/v#{LATEST_VERSION}/LLAMA_CPP_VERSION"
@@ -110,10 +111,10 @@ class Ollama < Formula
       mlx_args << "-tags=mlx"
 
       # Generate wrappers from our mlx-c; the vendored headers are newer and declare symbols it lacks
-      mlx_headers = buildpath/"x/mlxrunner/mlx/include/mlx"
+      mlx_headers = buildpath/"mlx/include/mlx"
       rm_r(mlx_headers/"c")
       mlx_headers.install_symlink formula_opt_include("mlx-c")/"mlx/c"
-      system "go", "generate", *mlx_args, "./x/mlxrunner/mlx"
+      system "go", "generate", *mlx_args, "./mlx"
     end
 
     # Build into libexec so the mlx runner's required `<exe_dir>/lib/ollama/`
@@ -207,16 +208,16 @@ class Ollama < Formula
 end
 
 __END__
-diff --git a/x/mlxrunner/mlx/fast.go b/x/mlxrunner/mlx/fast.go
+diff --git a/mlx/fast.go b/mlx/fast.go
 index 27d5724..f38a670 100644
---- a/x/mlxrunner/mlx/fast.go
-+++ b/x/mlxrunner/mlx/fast.go
+--- a/mlx/fast.go
++++ b/mlx/fast.go
 @@ -24 +24 @@ func FastScaledDotProductAttention(q, k, v *Array, scale float32, mode string, m
 -	mlxCheck(C.mlx_fast_scaled_dot_product_attention(&out.ctx, q.ctx, k.ctx, v.ctx, C.float(scale), cMode, maskCtx, sinks.ctx, C.bool(false), DefaultStream().ctx))
 +	mlxCheck(C.mlx_fast_scaled_dot_product_attention(&out.ctx, q.ctx, k.ctx, v.ctx, C.float(scale), cMode, maskCtx, sinks.ctx, DefaultStream().ctx))
-diff --git a/x/mlxrunner/mlx/ops.go b/x/mlxrunner/mlx/ops.go
---- a/x/mlxrunner/mlx/ops.go
-+++ b/x/mlxrunner/mlx/ops.go
+diff --git a/mlx/ops.go b/mlx/ops.go
+--- a/mlx/ops.go
++++ b/mlx/ops.go
 @@ -103,7 +103,6 @@
  
  func (t *Array) Cumsum(axis int, reverse, inclusive bool) *Array {
@@ -226,9 +227,9 @@ diff --git a/x/mlxrunner/mlx/ops.go b/x/mlxrunner/mlx/ops.go
 +	mlxCheck(C.mlx_cumsum(&out.ctx, t.ctx, C.int(axis), C.bool(reverse), C.bool(inclusive), DefaultStream().ctx))
  	return out
  }
-diff --git a/x/mlxrunner/mlx/ops_extra.go b/x/mlxrunner/mlx/ops_extra.go
---- a/x/mlxrunner/mlx/ops_extra.go
-+++ b/x/mlxrunner/mlx/ops_extra.go
+diff --git a/mlx/ops_extra.go b/mlx/ops_extra.go
+--- a/mlx/ops_extra.go
++++ b/mlx/ops_extra.go
 @@ -122,7 +122,7 @@
  	optGroupSize := C.mlx_optional_int{value: C.int(groupSize), has_value: true}
  	optBits := C.mlx_optional_int{value: C.int(bits), has_value: true}

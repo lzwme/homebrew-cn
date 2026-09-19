@@ -1,8 +1,8 @@
 class Libfabric < Formula
   desc "OpenFabrics libfabric"
   homepage "https://ofiwg.github.io/libfabric/"
-  url "https://ghfast.top/https://github.com/ofiwg/libfabric/releases/download/v2.6.0/libfabric-2.6.0.tar.bz2"
-  sha256 "1ee2ab6eb16462c0fe7a836f9df52b8f12309dfee3f3774aa93a86f521a8e8b1"
+  url "https://ghfast.top/https://github.com/ofiwg/libfabric/releases/download/v2.7.0/libfabric-2.7.0.tar.bz2"
+  sha256 "366000427e194d4ce22e272519b608afbebb1fc9915bcf5da924157a8a47fe10"
   license any_of: ["BSD-2-Clause", "GPL-2.0-only"]
   head "https://github.com/ofiwg/libfabric.git", branch: "main"
 
@@ -12,13 +12,11 @@ class Libfabric < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "66e0d2c520d1129894aa6d433ec898afe39c4a37869fa39314fef39b8f5f9e82"
-    sha256 cellar: :any, arm64_tahoe:       "f5c27820d3d5ab09cc1b6dedb83d9130e0ad4681b0394a03d89207c36532b229"
-    sha256 cellar: :any, arm64_sequoia:     "0a5d94acf1897471bda1d148fbc898aba833dd61f1ba8afdf8a2b26e8d2fcd8c"
-    sha256 cellar: :any, arm64_sonoma:      "ce609666bd9a47dec6ff1ddba8029797b17b9f3cdca9bcaa5d940b7e85a3c9db"
-    sha256 cellar: :any, sonoma:            "5c1d12aa2aeda2bbda52c62cc3333ab1606cb1b6315041ef64e0c3fb5418f6b2"
-    sha256 cellar: :any, arm64_linux:       "a49929c131b79248a953bd13324f41f7c5285702cf81f20150b3fcfe28df7c1c"
-    sha256 cellar: :any, x86_64_linux:      "ae5a82abd6528b7b146eb3812aa7dcb47acbfd6ed6f2c70963b3596173d1821b"
+    sha256 cellar: :any, arm64_golden_gate: "00e9ef43819e45fc51eb7aa874c34a4f19b9e2a258c3d8efb5321e6e18c90ec5"
+    sha256 cellar: :any, arm64_tahoe:       "0726305d521d5c6a0eb585bdba78e7812178725f71ebfd8400780f4f08127d98"
+    sha256 cellar: :any, arm64_sequoia:     "911320e794efd1ba2bc0fef756838f32fe1311bdc36e783699966aad93fd52c5"
+    sha256 cellar: :any, arm64_linux:       "248babb342dff1d36c5f59622c082d9285e77fc35cad484dc8f22a3c67c3ecb0"
+    sha256 cellar: :any, x86_64_linux:      "7bf38ed2e48785e7b09e5389cf51a19acf4a368db3bf3b8bfe4cb3a1722041fb"
   end
 
   depends_on "autoconf" => :build

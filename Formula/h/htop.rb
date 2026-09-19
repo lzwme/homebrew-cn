@@ -35,6 +35,8 @@ class Htop < Formula
     depends_on "lm-sensors"
   end
 
+  deny_network_access!
+
   def install
     system "./autogen.sh" if build.head?
     args = ["--prefix=#{prefix}"]

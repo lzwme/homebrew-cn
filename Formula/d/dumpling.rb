@@ -1,8 +1,8 @@
 class Dumpling < Formula
   desc "Creating SQL dump from a MySQL-compatible database"
   homepage "https://github.com/pingcap/tidb"
-  url "https://ghfast.top/https://github.com/pingcap/tidb/archive/refs/tags/v26.3.14.tar.gz"
-  sha256 "3add022251d78b0007f4f03b85e47867fc20a44b732203e35e356d4d2162c5c3"
+  url "https://ghfast.top/https://github.com/pingcap/tidb/archive/refs/tags/v26.3.15.tar.gz"
+  sha256 "ba4b13a1c80f1a0cb6a5538b223422ca9351614b0f30cb036583cb40d70a4706"
   license "Apache-2.0"
   head "https://github.com/pingcap/tidb.git", branch: "master"
 
@@ -12,12 +12,11 @@ class Dumpling < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "d2304b2eee5e81079484f49e9f4ffac20773a370a1d2b0aa4cdc34bcaaa3d198"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "e154dd44df6dd45bb79db8d6ae345790b1d3e8015ab6c4b592ca2b8f1045a6ce"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "5ade04a4cc5353858cdc481bb567a13c87c310a51e5895c139486f294f57ccdb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "0c403563036f87fc908af09f365a1aa6d33c177e1691e77ded701df2300b6544"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "2b12ac239be2cc07cc8ae91e5ca9779ad2d81511f068eb61395f3bf24d11a30e"
-    sha256 cellar: :any,                 x86_64_linux:      "02463d96fc0cb0550fcc5b599a42e180fd73faec26d7f39b0c163dd9dd620dcc"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "6f5561b542880b245920d5b910cf6f16b07bd29b92ccb31e3f2c01f057ce46ee"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "aae1886d695e3fa3d92c8343ca5002d7bd024375c9c9563b0f1b29a6debd1ab0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "6ce9ff1d8afa4a2b22ec5f52ef70fc373ace491b8f02ef4d6da3d68e8d241b06"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "38ed42128090d2fb0c2c057659d3bce28a3f6435ec2b0d8a4058efb6811c6255"
+    sha256 cellar: :any,                 x86_64_linux:      "d5cf12ca62e9c5ff96bd7ddae83e072b8dabb07d54dec3d1805ebcab63d2bedf"
   end
 
   # TODO: unpin go@1.26 when dumpling supports go 1.27

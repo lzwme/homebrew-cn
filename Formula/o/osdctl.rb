@@ -6,6 +6,11 @@ class Osdctl < Formula
   license "Apache-2.0"
   head "https://github.com/openshift/osdctl.git", branch: "master"
 
+  # TODO: remove if undeprecated
+  livecheck do
+    url :stable
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "83bd97a6deebbed90593088c1339d88c6bbe738b7e5dc6ff1fbeae875a5e2a76"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "83bd97a6deebbed90593088c1339d88c6bbe738b7e5dc6ff1fbeae875a5e2a76"
@@ -13,6 +18,11 @@ class Osdctl < Formula
     sha256 cellar: :any_skip_relocation, arm64_linux:   "0ac2e8adaf213abafcbf1d56742bb4145897e8b8d82c962f6961d63225f7ed44"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "fd850f295a27b3f3193bfa5f1ca9dc0b733006cf4bb24e0da814ca00b2849cef"
   end
+
+  # Can be undeprecated on new release or if upstream responds:
+  # https://github.com/openshift/osdctl/issues/963
+  deprecate! date: "2026-09-18", because: :checksum_mismatch
+  disable! date: "2027-09-18", because: :checksum_mismatch
 
   depends_on "go" => :build
 

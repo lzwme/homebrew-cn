@@ -1,19 +1,17 @@
 class Httm < Formula
   desc "Interactive, file-level Time Machine-like tool for ZFS/btrfs"
   homepage "https://github.com/kimono-koans/httm"
-  url "https://ghfast.top/https://github.com/kimono-koans/httm/archive/refs/tags/0.50.2.tar.gz"
-  sha256 "5fbe0c376c2fa3d8cd32cebfb4bde1e4980b50892c52b3be242894bc11213614"
+  url "https://ghfast.top/https://github.com/kimono-koans/httm/archive/refs/tags/0.51.0.tar.gz"
+  sha256 "4c83d3a54aa2b4089e8009049dcf61f501ede0d5b6d03691b8d783bd43bb960b"
   license "MPL-2.0"
   head "https://github.com/kimono-koans/httm.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "8066161747bbdb07955d56f7064a294be53417aad60fbd25f46d0edfa5af3b9c"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "2619dd691ee1322d2de05d644d213b2512f7fe5017acca3a0c22be49a0f58690"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "d82f7d23b1534c62b293b516e3faa9115db54bcf9f3c20bab3d89a46ec890b16"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "f910da202475377a0715bd0e0685317bd28831340e044c5385c4dbf9735d2c3b"
-    sha256 cellar: :any_skip_relocation, sonoma:            "0e6b1dc202c434845e13b9af9f89f2c633f36c4244c308ea00dcab0e7916115e"
-    sha256 cellar: :any,                 arm64_linux:       "9dc202cab2732739a1ac117b1ef334f3432d01f716a2af1708118369b3ca41b9"
-    sha256 cellar: :any,                 x86_64_linux:      "d5dce89aa0608882a36981e927d03d95ff6b59f7e9a77eef8f8c23c5d2591be9"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "937e9536209a61f1bc629ab7ca6a4d10ae4e1b3c39154f8014b7536970aab060"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "06a9a1e96371482a45cf87044cebc8ca7df154362673525db291f44dc515d957"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "2f72e1d233cefe264f1a4f9618792dba605955e80ca7e0bf31077387b5a42eaf"
+    sha256 cellar: :any,                 arm64_linux:       "8c8093a9c667079555b12ef32d26dfd2bf4036874e8f96e8320d81dd7e75d420"
+    sha256 cellar: :any,                 x86_64_linux:      "bde98379a2230dca7f38433924b97ae71789bbe806feb1506d2acd9dd023e14d"
   end
 
   depends_on "rust" => :build

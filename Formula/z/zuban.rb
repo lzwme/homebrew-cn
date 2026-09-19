@@ -1,18 +1,17 @@
 class Zuban < Formula
   desc "Python language server and type checker, written in Rust"
   homepage "https://zubanls.com/"
-  url "https://ghfast.top/https://github.com/zubanls/zuban/archive/refs/tags/v0.9.3.tar.gz"
-  sha256 "c5dcbadf3ee569c85c8481e785200270f7203d79a6c30617256bd55bb412f983"
+  url "https://ghfast.top/https://github.com/zubanls/zuban/archive/refs/tags/v0.10.0.tar.gz"
+  sha256 "ef18bed5412da00667862751e16b4cf66039ae39e3618ef891f58d089fabe5c0"
   license "AGPL-3.0-only"
   head "https://github.com/zubanls/zuban.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "892a18bacdb5f4b603ec1bdd04028e67d9dd05c63427b347fc05c5994285c7a9"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "6767da00199fd3b44bdb76f3ff74b9146857d5141201a458dda03dfe6da28463"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "c6b12b1d8f0afec99267b0f648c76886c306dcc3ae6b2476683708f50a0691fd"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "b1051333e2a447da354ec6523a8af52e5251995f9bab5f32b3bc2e6c346d5561"
-    sha256 cellar: :any,                 arm64_linux:       "942b3cfa000bc593c2d4385e54b924c10c5830ab4fb6255d9920de457ae2640f"
-    sha256 cellar: :any,                 x86_64_linux:      "46fcc5467d1cdc7c0a6d40a9468ff066b2d8b0d6bc26ebe7622ecb13442e81ee"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "44f56bd96874e552a8901e65c7aa6e393abbb7c0c07a91dd2e01405db26bb39a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "bedded60441bcd5c80d7a6f8569a1815921edf25ac19bc8be00a66d0f4962b61"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "76def94832f0ca408ebcfe7d48b156342557bac5d119222c3c61b28344498e0f"
+    sha256 cellar: :any,                 arm64_linux:       "c0eab74c1361f4fa021100605ea625e6466c264e2ca1869ffad47af4edfefcb1"
+    sha256 cellar: :any,                 x86_64_linux:      "e75b29203145732eaa07a5bf90c574b1d4199662a328b6f5138240d95251dfb2"
   end
 
   depends_on "rust" => :build
@@ -28,6 +27,12 @@ class Zuban < Formula
         json["sha"]
       end
     end
+  end
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", "--locked", "--target", "host-tuple"
   end
 
   def install

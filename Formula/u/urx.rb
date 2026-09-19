@@ -1,18 +1,16 @@
 class Urx < Formula
   desc "Extracts URLs from OSINT Archives for Security Insights"
   homepage "https://urx.hahwul.com"
-  url "https://ghfast.top/https://github.com/hahwul/urx/archive/refs/tags/0.10.0.tar.gz"
-  sha256 "d05f11d2cb2994c3d79b15a563685cc2b8ca5d9acf4af8ab659ae1d280d58931"
+  url "https://ghfast.top/https://github.com/hahwul/urx/archive/refs/tags/0.11.0.tar.gz"
+  sha256 "ff8f5d9bbd4c3ca1c3cdafb17a4742bc0f8a132ca2edc9b76d9c871af3cb4dec"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "1be9de8f6cd0441fa8c6fd6a1a3e26b69f385161894efbb24bde18974f44ac09"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "381d0abcb1b8f6d1718bed9ea9c0409d97813a9d09a2091265a861ca66135c37"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "d1bb9fb1a4c943460e7f28fa7529f9fb721640efa5199966ca67414eff543cf2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "93cf8a5730338673c973957ca9a0d5d6a12dc66a580f0f1aa4a579b96fbcdf0f"
-    sha256 cellar: :any_skip_relocation, sonoma:            "c8a9307d46328586c75ce2ffcdc947762f4645cbe0df984fa4be6a68ad5dcf4f"
-    sha256 cellar: :any,                 arm64_linux:       "cc40c7fec7e4c8042ebc15d34538e6b05c632c0a9ea2da20b81dd90b5734e9bf"
-    sha256 cellar: :any,                 x86_64_linux:      "281af0c4dec67b1320d7e509fdf1b93cf00f95e062223eff6f73616a13cd1af3"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "b7926fa5f1e35a4ce2cebc4f524094c0330fb219cc34603988bad470d1d9fe41"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "f82e46383b5606735a9967c4cff334a1a1c39322c4720ac05d41cae483c7d0b9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "fdf94721cf7a4b18c9df53faf8ccc96e6dfa0e046289b06555280cb761176173"
+    sha256 cellar: :any,                 arm64_linux:       "442d16eec1c295dc6f126ac2307b487b4d4363f2f97ce0445b0aec566ee5956a"
+    sha256 cellar: :any,                 x86_64_linux:      "d36ed6bba8077396faeaa99011b7a0814f68b619483a150abaffb8e09753df51"
   end
 
   depends_on "pkgconf" => :build

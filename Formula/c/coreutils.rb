@@ -8,11 +8,12 @@ class Coreutils < Formula
   compatibility_version 1
 
   bottle do
-    sha256 arm64_golden_gate: "4421a3a30a13aeef2871cc4ed61ce74e6c01ae63aac458f248163d6b910ff53b"
-    sha256 arm64_tahoe:       "f6fd88f7e28c355f2fbfee87f7d40b1f3d1155f61481782459910ba80426bc28"
-    sha256 arm64_sequoia:     "fa47ead734434aec427e2450ceb3297e169ee945ce66e059ee4520bd662fe449"
-    sha256 arm64_linux:       "cec5baeeb459f4e12f10aac17860adb3dbc29c93e6da6ef7252af2dbd3332bef"
-    sha256 x86_64_linux:      "fc3f61abb4fa8b16956dda47cd04854dcc38b9086a9fa9c6e9fabadd6a0461ec"
+    rebuild 1
+    sha256 arm64_golden_gate: "47f3076c16c02a734c142e52d16646bb76961353e7f9dc621b6e45215d916cb3"
+    sha256 arm64_tahoe:       "df8e4e3dfb6ee737404df9e8dc78bb54d5eeb3c767241fca617fa5196c5747e2"
+    sha256 arm64_sequoia:     "208a94fb7d6c2ebfb412fc127a6699d8ccb37e8492a940b843d1046db6a1e755"
+    sha256 arm64_linux:       "d379b254313c151324d2220ef1009f5e7572eb7e39fac15ba9cc0a8b3e877687"
+    sha256 x86_64_linux:      "2694642f5877654a15ef2277bdf7197b578368f9d505d45690a9dc06aec27616"
   end
 
   head do
@@ -22,11 +23,11 @@ class Coreutils < Formula
     depends_on "automake" => :build
     depends_on "bison" => :build
     depends_on "gettext" => :build
-    depends_on "texinfo" => :build
     depends_on "wget" => :build
     depends_on "xz" => :build
   end
 
+  depends_on "texinfo" => :build
   depends_on "gmp"
   uses_from_macos "gperf" => :build
 
@@ -46,6 +47,17 @@ class Coreutils < Formula
   # https://github.com/Homebrew/homebrew-core/pull/36494
   def breaks_macos_users
     %w[dir dircolors vdir]
+  end
+
+  # GNU coreutils-9.12 added quoting to 'env' and 'printenv'. This has caused
+  # some unforeseen issues in some invocations. Use a patch from upstream which
+  # only quotes when standard output is not a terminal. See the following
+  # mailing list discussion:
+  # https://lists.gnu.org/archive/html/coreutils/2026-09/msg00061.html
+  patch do
+    url "https://github.com/coreutils/coreutils/commit/782a1e5bc2090212273bb731dceee2cc2a071e54.patch?full_index=1"
+    sha256 "d93cf338341d9418522a637e3c99c4211a25a967d0cffd2f036fd18871f15e35"
+    type :backport
   end
 
   deny_network_access!

@@ -6,10 +6,21 @@ class ContainerCompose < Formula
   license "MIT"
   head "https://github.com/mcrich23/container-compose.git", branch: "main"
 
+  # TODO: remove if undeprecated
+  livecheck do
+    url :stable
+  end
+
   bottle do
     sha256 arm64_tahoe:   "39b51710b3a9abf3d39700b8467226d48e574a10838098f8ecdb2ca8052fb17a"
     sha256 arm64_sequoia: "40986c3e40d5c8be43e045326921f5d29bf1098cdbb25ccab9f4d10ebcffe732"
   end
+
+  # TODO: Can be undeprecated on official new release or if upstream confirms change
+  # in upstream issue: https://github.com/Mcrich23/Container-Compose/issues/158
+  # See: https://docs.brew.sh/Homebrew-homebrew-core-Maintainer-Guide#retagged-formulae
+  deprecate! date: "2026-09-18", because: :checksum_mismatch
+  disable! date: "2027-09-18", because: :checksum_mismatch
 
   depends_on xcode: ["26.0", :build]
   depends_on arch: :arm64

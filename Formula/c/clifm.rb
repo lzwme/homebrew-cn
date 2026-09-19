@@ -1,8 +1,8 @@
 class Clifm < Formula
   desc "Command-line Interface File Manager"
   homepage "https://github.com/leo-arch/clifm"
-  url "https://ghfast.top/https://github.com/leo-arch/clifm/archive/refs/tags/v1.28.tar.gz"
-  sha256 "65ac33825fb55d6388c1044572e464a50ad367b607448774fb396d850b7c4420"
+  url "https://ghfast.top/https://github.com/leo-arch/clifm/archive/refs/tags/v1.29.tar.gz"
+  sha256 "dfdc0f339437345d9d5d8c2cb4bd43294c05821ebc8d5f0c9abfa4eec8f6c905"
   license "GPL-2.0-or-later"
 
   # Upstream creates releases that use a stable tag (e.g., `v1.2.3`) but are
@@ -14,13 +14,11 @@ class Clifm < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "eab90db2533c58be911590cdd833c6692fae9e3a34ef1eb924d2fbd2c9098e8a"
-    sha256 arm64_tahoe:       "8773b7edc529535c6c303c8f1904f3fa8a3d46c5e3d3f3399c59b83aaec81fc9"
-    sha256 arm64_sequoia:     "df873ccf50105c59a59870e045bed6ff27555973c6c05951ca4beb1be052191f"
-    sha256 arm64_sonoma:      "6df2f1ba90f5b4ea8473979d4f70250284bd9c93523ea6001a59b6a02343ce5e"
-    sha256 sonoma:            "a24cfccd341046be57b99427cb456342c0d22b73ea3d0c85885951b829b86858"
-    sha256 arm64_linux:       "d00099c85729bde8558efd86578846065ab434b31c58d92b40304cd795561421"
-    sha256 x86_64_linux:      "319a94323db425715ddbde68031da23f6e2649d25136297c251dbcd0b4143d48"
+    sha256 arm64_golden_gate: "e1cbc3fe6bbeb42e4be4bed591ea19947e17180fd1b9339b54b22d5fca2f6243"
+    sha256 arm64_tahoe:       "f0ad9c9ebb953ad5cf1e1cc4bbd2541dc40f190cc26307d27ad210a049eb8f22"
+    sha256 arm64_sequoia:     "a1102226d22fd8768f6e5fdffb32b83c249d45cd6bbb7356f7c5235e57bf3193"
+    sha256 arm64_linux:       "070825355117bcaa233e007b490e45f43bf9ec2f74715f7b2a7cb8a6bddbb1b1"
+    sha256 x86_64_linux:      "464438b7230264085f495d22fdff402e5ec19fd5e8725901dfd786177cfc2a18"
   end
 
   depends_on "cmake" => :build
@@ -37,6 +35,8 @@ class Clifm < Formula
     depends_on "acl"
     depends_on "libcap"
   end
+
+  deny_network_access!
 
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args

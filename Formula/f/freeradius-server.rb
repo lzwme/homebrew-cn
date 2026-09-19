@@ -16,12 +16,13 @@ class FreeradiusServer < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "532b3720fb3fc420f4585af91d229398d6ac2ffa377954ee84f282870fca1fb2"
-    sha256 arm64_sequoia: "cdb9e076e72940aa871e452671283bb683e987c43c71bdf51a8283c60bb6a157"
-    sha256 arm64_sonoma:  "7dfe6d59e276163df2bf90211f1b89a2db3e480068f5cff66af3a65fc5010c2b"
-    sha256 sonoma:        "237c68e330d5f43f2c772dcbeec6f40d6e7c4ab3f4d4baf08cbac481d3ddd7ae"
-    sha256 arm64_linux:   "277c2f46a945caba616e1f4b25b9ecf00fe14d6bcb7537d4cf6f4ebf454debc0"
-    sha256 x86_64_linux:  "f5b14e3602ba57cdb296bd1aee12f3440043f9ae958d8d8f7014b2d95b1b8680"
+    sha256 arm64_golden_gate: "9794541a272fa509d03cacf436e61aa99e9c83e030d0254fa5c27774e162c043"
+    sha256 arm64_tahoe:       "532b3720fb3fc420f4585af91d229398d6ac2ffa377954ee84f282870fca1fb2"
+    sha256 arm64_sequoia:     "cdb9e076e72940aa871e452671283bb683e987c43c71bdf51a8283c60bb6a157"
+    sha256 arm64_sonoma:      "7dfe6d59e276163df2bf90211f1b89a2db3e480068f5cff66af3a65fc5010c2b"
+    sha256 sonoma:            "237c68e330d5f43f2c772dcbeec6f40d6e7c4ab3f4d4baf08cbac481d3ddd7ae"
+    sha256 arm64_linux:       "277c2f46a945caba616e1f4b25b9ecf00fe14d6bcb7537d4cf6f4ebf454debc0"
+    sha256 x86_64_linux:      "f5b14e3602ba57cdb296bd1aee12f3440043f9ae958d8d8f7014b2d95b1b8680"
   end
 
   depends_on "collectd"

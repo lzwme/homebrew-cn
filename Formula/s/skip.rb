@@ -4,18 +4,21 @@ class Skip < Formula
   url "https://ghfast.top/https://github.com/skiptools/skipstone/archive/refs/tags/1.9.10.tar.gz"
   sha256 "440d4a9ac7ce2184001206d0121baebd79987412b59a084561c57158af0ce4c3"
   license "AGPL-3.0-only"
+  revision 1
   head "https://github.com/skiptools/skipstone.git", branch: "main"
 
   bottle do
-    sha256 arm64_golden_gate: "d8f999761a5120d19429e6d2426c45b6b42f0f64149011223fc4f6842f381663"
-    sha256 arm64_tahoe:       "bea0d222b8ff7b614bcfca2def9433d4f6f94c287bfb34462d792e51f0d888a6"
-    sha256 arm64_sequoia:     "0838f1023da66605625fb103922881c2a35dacd1d059c5386078b523b9e23e2e"
-    sha256 arm64_linux:       "263ee17350b212de66e9a929253d1099b51793e5a6c55fccb4def1139bd93876"
-    sha256 x86_64_linux:      "e189015d682d19a2366150518c8306d4ad832e2d979996f2148acd730a19f12b"
+    sha256 arm64_golden_gate: "c86579f9e3bc9435d3d171f74623d6e18914db9dd21fbf82ef30cffd6883dcc5"
+    sha256 arm64_tahoe:       "d9907b253aaeb6e0124ed5d98c427ff100cff5a08ba47071d280f37508c122ff"
+    sha256 arm64_sequoia:     "1b90d7ddfcdd8d20f90d06e0a20b2d239e77c0ca5bf5fa0061206bfabc7d3e15"
+    sha256 arm64_linux:       "7750a533c47335e667320b420ec5bf04cf75f73dd9df52c279197f80cbdfb172"
+    sha256 x86_64_linux:      "15f5cae8b62b0991b142813de70be63190882bc04fc31ca84d48e18de672bede"
   end
 
   depends_on "gradle"
-  depends_on "openjdk"
+  # TODO: Switch back to `openjdk` together with `gradle`, which runs on `openjdk@25`
+  # until Gradle supports JDK 27; mixing both in one dependency tree fails `brew audit`.
+  depends_on "openjdk@25"
   depends_on "swiftly"
 
   uses_from_macos "swift" => [:build, :test]

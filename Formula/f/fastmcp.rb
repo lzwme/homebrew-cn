@@ -3,17 +3,17 @@ class Fastmcp < Formula
 
   desc "Fast, Pythonic way to build MCP servers and clients"
   homepage "https://gofastmcp.com/getting-started/welcome"
-  url "https://files.pythonhosted.org/packages/55/b9/43c8a57614b130855800c7233ab7865ae9f67bd8ff025bf9324f92b866d9/fastmcp-4.0.4.tar.gz"
-  sha256 "1ba4809c5072f18647474e6d49583d7c7cfca7d41bd7d86a5f653a7aababe496"
+  url "https://files.pythonhosted.org/packages/60/4a/1d69a384952d8d3a972dae2c9549a9c0fc572d705021ddad4fb1b8e3670d/fastmcp-4.0.5.tar.gz"
+  sha256 "4234f9dfc396310ed3a04c2b5314f85394cab161023f9de2fa06842be96288cb"
   license "Apache-2.0"
   head "https://github.com/jlowin/fastmcp.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "a914bedc654d7c19b1dd0fef468edde495cc0e76f973f7aaf267f8ead477f414"
-    sha256 cellar: :any, arm64_tahoe:       "f042b183a789d668e41df940ff72a451f491295629751fcf8b8d236666560081"
-    sha256 cellar: :any, arm64_sequoia:     "0d5e230759d4b0cb2fb32c4ef5a6d4403d770d3d48d87ec44960c1d805552810"
-    sha256 cellar: :any, arm64_linux:       "9da559827015c8ba5081eed57154a6bd73deef34e8062b558416f1807554afbf"
-    sha256 cellar: :any, x86_64_linux:      "a193cb3b66c5462abb858263d1e421599ebfd33764885854240ee41d1392ffea"
+    sha256 cellar: :any, arm64_golden_gate: "b66a06573ee52617f6451c9a90c2ba36bf2a819f74bf73d5f1f6c1b8099a2f4c"
+    sha256 cellar: :any, arm64_tahoe:       "f057228964f508eaabae2f05fe5d15d00aaef38356464e63a361ac8b052b5b8b"
+    sha256 cellar: :any, arm64_sequoia:     "e343c3402ef5265d332b781f71c4b1b5a817a90c3d2451760ab038280bbfcac5"
+    sha256 cellar: :any, arm64_linux:       "d467fd777fb1bed051374ddaecbbc0a0a2e055e565e8a6f557211c2906ff4689"
+    sha256 cellar: :any, x86_64_linux:      "15e3d92e9ab740ad044c3566c41d03d8a51add6b3f3448642afab86a3bff04c4"
   end
 
   depends_on "rust" => :build # for py_key_value_aio
@@ -54,8 +54,8 @@ class Fastmcp < Formula
   end
 
   resource "cachetools" do
-    url "https://files.pythonhosted.org/packages/4b/39/9a4689914dd907915cee74733b95888fc1d8a21aad47a24a0a2deec73ac4/cachetools-7.1.8.tar.gz"
-    sha256 "1221d547a0b24b7f26fa891d40d488b5258beab9aebd8ed68c729be3af849c43"
+    url "https://files.pythonhosted.org/packages/29/2c/3f18755527b03ca9ff6be724bd5370cb777c76a87f17301377cf04a4729b/cachetools-7.2.0.tar.gz"
+    sha256 "bcac1a1b8da6909994a2957238a57b8140dab7c5c5c69a43669654fe87a33c1d"
   end
 
   resource "caio" do
@@ -69,8 +69,8 @@ class Fastmcp < Formula
   end
 
   resource "cyclopts" do
-    url "https://files.pythonhosted.org/packages/16/8f/6caec9cf291ba294a0d0669b0388e5676d8887d8b75a8c3ad0a2dc2eeed9/cyclopts-4.25.2.tar.gz"
-    sha256 "0776bc1fa796cd351646c345b7420279e58d6c2c4a8f5d5dd54dea85bdb2de8f"
+    url "https://files.pythonhosted.org/packages/c1/08/a444f3cca86cb27bc256831fc8c42b578390f4087bf6631cccb5334bd9ed/cyclopts-4.25.3.tar.gz"
+    sha256 "7d3a067bc7699a1a65fe2ea0b092a925855bb711a05adc1e65c5b9ba307acea4"
   end
 
   resource "dnspython" do
@@ -94,8 +94,8 @@ class Fastmcp < Formula
   end
 
   resource "fastmcp-slim" do
-    url "https://files.pythonhosted.org/packages/e5/46/4a2f2d62250f6ad89c23010eccbd20ccdff077ce0f6ecd2e78374c3fda27/fastmcp_slim-4.0.4.tar.gz"
-    sha256 "117ffce5719ba5ad2c4ca923176709dd50233717d22c0124c084a4c85925818f"
+    url "https://files.pythonhosted.org/packages/7f/78/fa6a58bfc3d2b218f591f8e8c261639dd6fc56e2d6a70be0d1c42244ffa0/fastmcp_slim-4.0.5.tar.gz"
+    sha256 "5dc5395bcacb0eb405787393298891210c821d3f66334c2695e5e435d88fe575"
   end
 
   resource "griffelib" do
@@ -119,8 +119,8 @@ class Fastmcp < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/5f/f7/abb373e5757eaec4b922b92f97ec8d6d7e057cf06778247604fbc4e7c3f3/idna-3.19.tar.gz"
-    sha256 "5e0811a4383b21dc5838069f801c4fb62113b7447663d2530d2bd6e77b49bf15"
+    url "https://files.pythonhosted.org/packages/f5/08/8eea9d4b8302028f3abb2c0813953f7aec26d33b7a8960ed760e65ff29fa/idna-3.20.tar.gz"
+    sha256 "a7db850025b95ded1eae8a46181a1a6c56c92c96f0e2b005d9ff8dc0210cab44"
   end
 
   resource "jaraco-classes" do
@@ -219,8 +219,8 @@ class Fastmcp < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/53/18/f3bb8ef0d3b930692343da8aa4d3cbcd6749477c053959395ac81965a6e9/platformdirs-4.11.8.tar.gz"
-    sha256 "f23abafea7dd4276d1f29104b83598d7dcc567cafd07c9c951e66665645437fc"
+    url "https://files.pythonhosted.org/packages/58/b9/8adc4e1b422b27fd88540ec7bf1f406f77ef393ec070e26fc430e914cde8/platformdirs-4.11.9.tar.gz"
+    sha256 "e2c66a8d384596cd98e3c4aea2d761df7bac95d9d8a2cc3946daa8cdafdaebc1"
   end
 
   resource "py-key-value-aio" do

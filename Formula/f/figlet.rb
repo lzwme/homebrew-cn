@@ -42,6 +42,8 @@ class Figlet < Formula
     sha256 "e6493f51c96f8671c29ab879a533c50b31ade681acfb59e50bae6b765e70c65a"
   end
 
+  deny_network_access!
+
   def install
     (pkgshare/"fonts").install resource("contrib"), resource("intl")
 

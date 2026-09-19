@@ -1,18 +1,16 @@
 class Miasma < Formula
   desc "Trap AI web scrapers in an endless poison pit"
   homepage "https://github.com/austin-weeks/miasma"
-  url "https://ghfast.top/https://github.com/austin-weeks/miasma/archive/refs/tags/v0.4.2.tar.gz"
-  sha256 "f5d6dfb6e035acd5822e083d3ab01a004b408c9a5597456893417cd377548d92"
+  url "https://ghfast.top/https://github.com/austin-weeks/miasma/archive/refs/tags/v0.4.3.tar.gz"
+  sha256 "2163817b6489517fa3dfd27beab9eb8429c53578a603fb984b8b05ecabd97159"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "654efb80c7a2480898374b6e640e4fc11e5ee07056fb0b41d3578b43e2e4ca0d"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "f0174c6e7f0b4cd6d4149e8aa94a6af7535e46af26994ed2e7a1cc45883082ae"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "b7ce39755a5df1acb37f054057d3d4dbc0200737827743318d1be1f31e845af1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "398f0d677a3c7bd055cb7f5592a3c33afd07a47e4bd41ee5057ca179de15a256"
-    sha256 cellar: :any_skip_relocation, sonoma:            "8e7152acb223d6fa6709859b9e3a55e35433f9bc72073d6baa81e67c594c3038"
-    sha256 cellar: :any,                 arm64_linux:       "2812562fcc6b20c65115221be9d5940c1e3908bb02ab2c9dd5a503be63b8182a"
-    sha256 cellar: :any,                 x86_64_linux:      "84bbd60da4749f07badcf4192723bebd2f507689a9ab9bc1015cd1da8dc94cff"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "769b2759cc1fa53a8b910eceb0f65f105d04a9a618e6dc1cc63d750e8d9b0f79"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "b5dd9d32cd45cb1d5eda730c7a21927f006af72852cc164023a9e08d3befeaf6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "c00dbefa1f3247f678d4ed0141c9e63373579c696b75908e23d97f73d1fc64ee"
+    sha256 cellar: :any,                 arm64_linux:       "9adc1d4e3b73748169cae9c409c1630e3b8eda4ca60cee2adaff4c0761781ba1"
+    sha256 cellar: :any,                 x86_64_linux:      "fde99c3c6f2894bfb8b61c5e0f058ea7b916fa88a42543aea9a21495c43e11e4"
   end
 
   depends_on "rust" => :build

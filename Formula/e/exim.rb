@@ -1,9 +1,9 @@
 class Exim < Formula
   desc "Complete replacement for sendmail"
   homepage "https://exim.org"
-  url "https://ftp.exim.org/pub/exim/exim4/exim-4.100.tar.xz"
-  mirror "https://ftp.exim.org/pub/exim/exim4/old/exim-4.100.tar.xz"
-  sha256 "5bd0a3e353dbfcd5c8174388b824316a61ee2455d9052ea2f0877dee939d33b3"
+  url "https://ftp.exim.org/pub/exim/exim4/exim-4.100.1.tar.xz"
+  mirror "https://ftp.exim.org/pub/exim/exim4/old/exim-4.100.1.tar.xz"
+  sha256 "e9fb41f6724a5b136d64c9d19dbc5f26494af879a3e7e3190f91639eaa79fa0d"
   license "GPL-2.0-or-later"
 
   # Maintenance releases are kept in a `fixes` subdirectory, so it's necessary
@@ -30,13 +30,11 @@ class Exim < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "47a50d36a456a6047495d4141e9d41216af4e4f52aa604520c1be911a3db17b9"
-    sha256 arm64_tahoe:       "a282cebb088427f1a9280595c8d5f47d405032472722464dfd6a5eacfc652ae1"
-    sha256 arm64_sequoia:     "805627e4c1eb2c46384002048278dea4ab5441c819d17b7850b79a840c544627"
-    sha256 arm64_sonoma:      "811793d37e5e93d1dc56036d792df911c753236d6f426d869e726915bb4f999a"
-    sha256 sonoma:            "5ee1805dac66afb85c2536640feb9f4a27d92535b3f788e9392222479c707da4"
-    sha256 arm64_linux:       "4177aad431743c3eac49e1a77a2341f6f40ba41a2f4f753707360a58459eb280"
-    sha256 x86_64_linux:      "c2c2e09d16dbd4ee1985cf6fd4bfbae4c2b614c10621df9e994d93891fd897c6"
+    sha256 arm64_golden_gate: "93457cc469268b4a60a73d01f590e67d1ea8c98b3ccf4ab8fe0dd3b8a84325c7"
+    sha256 arm64_tahoe:       "ad3d7dc027f383803ae7d186169511ade5626e9ab90b2d344d306500be74cde7"
+    sha256 arm64_sequoia:     "9d3e150fb0edb711f78c118b9da90de3dcc604f23d3938fe5cf20e82ea922629"
+    sha256 arm64_linux:       "db3d6f92c3d7656047fd777c10c724003b7bdfe6984e3e56401bab46817ce9fe"
+    sha256 x86_64_linux:      "fd671028d9126a09d7b16309162146caf35e455af5f867cdff4e1121e4ee4406"
   end
 
   depends_on "openssl@3"
@@ -54,6 +52,8 @@ class Exim < Formula
       url :url
     end
   end
+
+  deny_network_access!
 
   def install
     # Fix compile with newer Clang

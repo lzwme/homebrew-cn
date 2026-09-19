@@ -1,29 +1,35 @@
 class NativefiledialogExtended < Formula
   desc "Native file dialog library with C and C++ bindings"
   homepage "https://github.com/btzy/nativefiledialog-extended"
-  url "https://ghfast.top/https://github.com/btzy/nativefiledialog-extended/archive/refs/tags/v1.3.0.tar.gz"
-  sha256 "2fea19102cf4d5283a80fb87a784792166988e85bb92baa962d34f72b22dcc1a"
+  url "https://ghfast.top/https://github.com/btzy/nativefiledialog-extended/archive/refs/tags/v1.4.0.tar.gz"
+  sha256 "38116050495cd7de77a91d6d8d59c1aa0a0848c56daa60029bd5b59f3c897229"
   license "Zlib"
 
   bottle do
-    sha256 cellar: :any,                 arm64_golden_gate: "32bb4c05cac93d46511a6b0ad331bc97dde4dcee0146f59c75d9712899300b38"
-    sha256 cellar: :any,                 arm64_tahoe:       "a1183c71f2f72655aa54a7ed4031954fdb9a7b346c8ac27cc01d2d74419e481c"
-    sha256 cellar: :any,                 arm64_sequoia:     "65a2aa7061b67d6e18055f3beb5269bbb80b52e201d48d7d7ac7cf504b4d2ac3"
-    sha256 cellar: :any,                 arm64_sonoma:      "ca6472d511ece4fc9e6f082f566c2cfa89032bb2b8f42442c3c8c587ed6c5394"
-    sha256 cellar: :any,                 sonoma:            "13ff4a381d5222689b00379c4953ff4de3ef00ab1a6ed107c51e2e6360c99b07"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "51dc0d5a51585b3abe21d9e45a9a913ef38b6de85f7fc89417ad7cf10434c341"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "78ba8588b6b519f5ae687b156c556c5951c7ae59cea47d70cc3021e0f9555673"
+    sha256 cellar: :any, arm64_golden_gate: "482ed246590013b5718983202acd16cc9894e3c53ce89649bb12bbb802e01642"
+    sha256 cellar: :any, arm64_tahoe:       "bad96e7ef75a6fe5a4e87b8d249bbf08e263c429e12af85f015d19ea196d3c35"
+    sha256 cellar: :any, arm64_sequoia:     "0c186de91e0d1dc30015f61e24f980bf1dbb2b27e92feff01d1f3866551fc8d7"
+    sha256 cellar: :any, arm64_linux:       "f37df06a7df46f4038379fa40db27e3bae879df197857ce50a8d12a4902643a2"
+    sha256 cellar: :any, x86_64_linux:      "3acaf44171f45b086223cc2cf6c3e203a11133ded73ba10b54dd69be3938621c"
   end
 
   depends_on "cmake" => :build
 
   on_linux do
     depends_on "pkgconf" => :build
+    depends_on "wayland-protocols" => :build
     depends_on "glib"
     depends_on "gtk+3"
+    depends_on "wayland"
   end
 
   def install
+    if OS.linux?
+      # Use our `wayland-protocols` as the tarball lacks the `3ps/wayland-protocols` submodule
+      rmdir "3ps/wayland-protocols"
+      ln_s Formula["wayland-protocols"].opt_pkgshare, "3ps/wayland-protocols"
+    end
+
     args = %w[
       -DBUILD_SHARED_LIBS=ON
       -DNFD_BUILD_TESTS=OFF

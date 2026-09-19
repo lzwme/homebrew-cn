@@ -1,8 +1,8 @@
 class Libuninameslist < Formula
   desc "Library of Unicode names and annotation data"
   homepage "https://github.com/fontforge/libuninameslist"
-  url "https://ghfast.top/https://github.com/fontforge/libuninameslist/releases/download/20260107/libuninameslist-dist-20260107.tar.gz"
-  sha256 "aadfaf62a96f20914d8dd248e8f19325471ead0cf3133b2f8ae0624c2da3657b"
+  url "https://ghfast.top/https://github.com/fontforge/libuninameslist/releases/download/20260918/libuninameslist-dist-20260918.tar.gz"
+  sha256 "deb2ec02640c232a4bc333c2cd301ee6b286914eeeb0ccc31ccafe326aed0029"
   license "BSD-3-Clause"
 
   livecheck do
@@ -12,13 +12,11 @@ class Libuninameslist < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_golden_gate: "93012cd87439cc656965d7f69fdcb50b3f0edbcc64c92376aa97a625e0ac2d39"
-    sha256 cellar: :any,                 arm64_tahoe:       "53b985c29ff83f71b0dba677c75f7fc710f0f0649295258efd0d3d7ef95344a2"
-    sha256 cellar: :any,                 arm64_sequoia:     "c536b67396adcce357f243174654cbbe708b8be3ee655620236c867a8ceecbe5"
-    sha256 cellar: :any,                 arm64_sonoma:      "a3e816eddacb78c8cd10d4139b142e8fbae5ee24b5170558d1314416ddc12a9b"
-    sha256 cellar: :any,                 sonoma:            "fe1fb18127b16de2f48709a26873e90dfc20e01da58467589c3c281b4ae1b854"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "32ea5e402bcd2d9a72d7bd4a2e660bfd70e11e6cbbe06ca43b8938073e402b74"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "d0f4513836950d34e04e862392706ec2bc51e274d162e9dde35044b89e2564a8"
+    sha256 cellar: :any, arm64_golden_gate: "be30cf7255db988eb9d9de6f5cc6bea2f05b8cbd7e7d2a0212c3011da6c34da9"
+    sha256 cellar: :any, arm64_tahoe:       "6ed38b913c30d8c8c10ddad1cb1cb40fb6148fb58a9f80b81df348166fc9beaf"
+    sha256 cellar: :any, arm64_sequoia:     "0d934878052ae876f93d80748f0fdad7c0680227da6b0d85e697923cf98b6fcb"
+    sha256 cellar: :any, arm64_linux:       "94c9829f9578e8069835a368504dd1e28d9230e8a39ce79d5861656958c31d0b"
+    sha256 cellar: :any, x86_64_linux:      "05f11945ac79c613b461a3c7c8042dd57b259169335d78dfe74c3302268d0fcf"
   end
 
   head do

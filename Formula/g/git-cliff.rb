@@ -1,22 +1,27 @@
 class GitCliff < Formula
   desc "Highly customizable changelog generator"
   homepage "https://git-cliff.org/"
-  url "https://ghfast.top/https://github.com/orhun/git-cliff/archive/refs/tags/v2.14.1.tar.gz"
-  sha256 "22f01e016a02d674eb23afee3f0169a725352cc42d54549ecdb031e8f59e87e6"
+  url "https://ghfast.top/https://github.com/orhun/git-cliff/archive/refs/tags/v2.14.2.tar.gz"
+  sha256 "fbbb1f8ade8e9affeaacd632bedc94ac898fb726516f2f5a86d1bfba947635f4"
   license all_of: ["Apache-2.0", "MIT"]
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "f1469b965d447eab2f22ff600e5a6de3e29d19eed29c45a1dc4c1a72b7be7cb5"
-    sha256 cellar: :any, arm64_tahoe:       "072b4479c491735a3b9a9fc14e9e89185544a05ecfb7c2e952ae279ca4fc4916"
-    sha256 cellar: :any, arm64_sequoia:     "3dc1436aa45d691ad40be4e43def42d9881c0e97b014fafd86708c2a416fdd73"
-    sha256 cellar: :any, arm64_sonoma:      "42646c0692caca88ab31ec5a83f8d8a2f5ad6ab9851924b3b87c2ecb7d337232"
-    sha256 cellar: :any, arm64_linux:       "46a3c55d055289346f60002db8f084003bfc7d418c7e3802c73a12e720635631"
-    sha256 cellar: :any, x86_64_linux:      "eef4c5cd83097093c04bd6f8ad39ab0a8a86172c24a722f7d42796f0d18703e5"
+    sha256 cellar: :any, arm64_golden_gate: "69fe771ba746247b913c4ed681cfe1ccba1f5025ddbf22b49832436c0c48f7a3"
+    sha256 cellar: :any, arm64_tahoe:       "87cb3ecf594fcb3d633860459dae6d4ab4951d1cdd2bd2978fdb58099f9022a5"
+    sha256 cellar: :any, arm64_sequoia:     "f02241c6a9253453eaf643ce75f4af6b53f6f3fd7b3483a3643a5520108396d0"
+    sha256 cellar: :any, arm64_linux:       "6baddeabcdac191f5f9f01e8f6c0330ad120be102dff6652ce76b5777af11338"
+    sha256 cellar: :any, x86_64_linux:      "4e9cf54718d4d615e0ad2c4a47a2066aa5b8ed338a72518811279cf9f9a841bb"
   end
 
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "libgit2"
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", "--locked", "--target", "host-tuple"
+  end
 
   def install
     ENV["LIBGIT2_NO_VENDOR"] = "1"

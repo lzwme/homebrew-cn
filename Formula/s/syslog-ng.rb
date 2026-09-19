@@ -15,10 +15,11 @@ class SyslogNg < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "1cc7802d0ad12b86ee7e7475b9c29491bebd371f99f256700e14f12c05c1624f"
-    sha256 arm64_sequoia: "1b05a2673f1a44cb5e5ea6cfabea224fdd3f0286e59015ed6b8a12f95db7ece0"
-    sha256 arm64_linux:   "3268b3ebd59d6a1a8f7459a2c138bba132ac8e84aee66783db0fdfbc8e9c070d"
-    sha256 x86_64_linux:  "e87d395ac923ac94c7cd055937f02486ff22a2d9ecc0f659973d57ce7dba30fd"
+    sha256 arm64_golden_gate: "385aa3ad97b3ee307254ec2c0c2941936cdecea71434f20c21372e898b3aeabd"
+    sha256 arm64_tahoe:       "1cc7802d0ad12b86ee7e7475b9c29491bebd371f99f256700e14f12c05c1624f"
+    sha256 arm64_sequoia:     "1b05a2673f1a44cb5e5ea6cfabea224fdd3f0286e59015ed6b8a12f95db7ece0"
+    sha256 arm64_linux:       "3268b3ebd59d6a1a8f7459a2c138bba132ac8e84aee66783db0fdfbc8e9c070d"
+    sha256 x86_64_linux:      "e87d395ac923ac94c7cd055937f02486ff22a2d9ecc0f659973d57ce7dba30fd"
   end
 
   depends_on "pkgconf" => :build

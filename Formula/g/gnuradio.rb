@@ -30,12 +30,13 @@ class Gnuradio < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "c58f17fb1842b683ca2b1da90e1ce945ffbcc1a12fd3cd5d06f5f23181d00dcf"
-    sha256 cellar: :any, arm64_sequoia: "3276915ae3de66a9e12a3438d9bf3218c656e597fedcfe7b0d17da500649ec7b"
-    sha256 cellar: :any, arm64_sonoma:  "ea636cd143aad90f1ac466764f31e6f6f4c1b51254bca2ba6c192641ac604fe0"
-    sha256 cellar: :any, sonoma:        "b9c9ca90bcc5392396f71e22906f037f843cc932966419d185f7a41d4de7e889"
-    sha256 cellar: :any, arm64_linux:   "8b67a7f5ec5eddc173271d488f83df23dd102c76c6cad2e626c572ace7de706c"
-    sha256 cellar: :any, x86_64_linux:  "a9275f625dc889a850fea0c1a2d74fb4700ece22c1010db2ac8ad2f30b881d92"
+    sha256 cellar: :any, arm64_golden_gate: "5fcff9cda85dad90bbe0898e7ef188abd9d25d2e47ecd9de78e2570c431459ab"
+    sha256 cellar: :any, arm64_tahoe:       "c58f17fb1842b683ca2b1da90e1ce945ffbcc1a12fd3cd5d06f5f23181d00dcf"
+    sha256 cellar: :any, arm64_sequoia:     "3276915ae3de66a9e12a3438d9bf3218c656e597fedcfe7b0d17da500649ec7b"
+    sha256 cellar: :any, arm64_sonoma:      "ea636cd143aad90f1ac466764f31e6f6f4c1b51254bca2ba6c192641ac604fe0"
+    sha256 cellar: :any, sonoma:            "b9c9ca90bcc5392396f71e22906f037f843cc932966419d185f7a41d4de7e889"
+    sha256 cellar: :any, arm64_linux:       "8b67a7f5ec5eddc173271d488f83df23dd102c76c6cad2e626c572ace7de706c"
+    sha256 cellar: :any, x86_64_linux:      "a9275f625dc889a850fea0c1a2d74fb4700ece22c1010db2ac8ad2f30b881d92"
   end
 
   head do
@@ -168,6 +169,9 @@ class Gnuradio < Formula
     venv = virtualenv_create(libexec/"venv", python3)
     venv.pip_install resources
     ENV.prepend_create_path "PYTHONPATH", venv.root/site_packages
+
+    # Homebrew-specific workaround due to sandbox usage breaking GTK functionality
+    inreplace "grc/CMakeLists.txt", "; gi.require_version('Gtk', '3.0');", "; import sys; sys.exit();" if OS.mac?
 
     # Avoid references to the Homebrew shims directory
     inreplace "CMakeLists.txt" do |s|

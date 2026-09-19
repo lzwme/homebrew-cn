@@ -1,19 +1,17 @@
 class Talm < Formula
   desc "Manage Talos Linux configurations the GitOps way"
   homepage "https://github.com/cozystack/talm"
-  url "https://ghfast.top/https://github.com/cozystack/talm/archive/refs/tags/v0.34.0.tar.gz"
-  sha256 "459b97ccbbd76f4daec83b95dc6f4ffc4f1563b60623323e0a4d2e1f7f0c3f79"
+  url "https://ghfast.top/https://github.com/cozystack/talm/archive/refs/tags/v0.35.0.tar.gz"
+  sha256 "6b302b2e005374274c2d9ddea01355d291e4a77e3def5009bab8416458047c63"
   license "Apache-2.0"
   head "https://github.com/cozystack/talm.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "803dc8d1aa79e5c5ce4feeae7569b7da09b24325d398be7675f0f9f1061be2db"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "aa184a0a78a0e492ac0e31f91bd3e6b848c2ee8a13c3c03c33b5e04314df42d4"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "093605a417b9f7e2e8bef5a64de4b4fc7f1d61285d78075a8f14f236cb20f2ea"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "a7836b4c613a73ba46258f3c6977a7c8ce5ae4ba1a274928031abb22debef138"
-    sha256 cellar: :any_skip_relocation, sonoma:            "8a8fbc96a20e24797ed6d48a9ed26f832617cbc3fc9c8e001577d755b81b6a98"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "4ad454982bfd720343c01764e6613fa3a1aee0af468ad70c65e895ae553b7746"
-    sha256 cellar: :any,                 x86_64_linux:      "314f67dca38af98c692290742f6f2247481485fca9ad10d7b405e9f140dcbb2e"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "d2e7a55cb595407a36e7ee7f4074d04330ea9419fc896e9fc414163893982290"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "456c207efcd939dc0b0b71b09c8fabae189daf2ebffd0286578d6d87555904c4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "eb2847785b339d32db17c16c935ea2d15d9274dac8e699094079ffe1a3eeac5e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "4aa570dec00c83ecccb275355869f15b150386a8c3be5e7c27cd51830ff2877c"
+    sha256 cellar: :any,                 x86_64_linux:      "27e291b5e74809cacca5224c3d436c9987d14edbeb3aae2269ab2d2adc3bdaea"
   end
 
   depends_on "go" => :build

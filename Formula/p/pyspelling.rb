@@ -6,16 +6,14 @@ class Pyspelling < Formula
   url "https://files.pythonhosted.org/packages/fe/ed/3fe00b8a3f8a74a993e1e08931d674cde7bd718c1af44ef415ff1f6b000b/pyspelling-2.12.1.tar.gz"
   sha256 "9108981dc174d6400a7ed4917cf4af91daf3eb83578d4570c0726b92c2a32e7a"
   license "MIT"
-  revision 2
+  revision 3
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "f2b46cf83a2a8355eed200f53e66cfff4055470588c6f4dd4aeb65332314688b"
-    sha256 cellar: :any, arm64_tahoe:       "daefdf93f0ac7b961c87933901482281e75e6ab051434448f80b96007ba6e686"
-    sha256 cellar: :any, arm64_sequoia:     "59ae100d401ad1f98c06c01f64222fbac91f55ab26da1c674afdd275e79986ba"
-    sha256 cellar: :any, arm64_sonoma:      "44507880ab060d0e28c87fce3e899ae5910d02eeded812837e63cc1f42ebc751"
-    sha256 cellar: :any, sonoma:            "77b434cba087c6131e57dce44492c532f517eff02b6d93a08e9fe6fdbfe05fc7"
-    sha256 cellar: :any, arm64_linux:       "b7a46ab1812b1d7ccf515427b26ab78881c0f332b6416954404b77d27710ee6a"
-    sha256 cellar: :any, x86_64_linux:      "6dad3d81d92626456cb453ffcb6e8fb43fde73314e638a3ef4474e1346b98288"
+    sha256 cellar: :any, arm64_golden_gate: "a174a1d067b3b4eea7ceeb70836c230ba9146a85d0675062b1a4a864acf13696"
+    sha256 cellar: :any, arm64_tahoe:       "53ef517e0c3a54ce3b3e0f74f9b81838f6fec74aac2d84fce7054b71ed9d4211"
+    sha256 cellar: :any, arm64_sequoia:     "ddfa190d29c754cbe0eae7a38152585a82c180269fb7e97f5b6463fb22ab8d05"
+    sha256 cellar: :any, arm64_linux:       "20e14770e3c8f61e9e1751386af491590e166a55dd2089e7f984e6a727307aa4"
+    sha256 cellar: :any, x86_64_linux:      "b1b09834642fca3b35dca5789a48a20cb7a6435b6d55704888e9902fa85e1e79"
   end
 
   depends_on "aspell" => :test
@@ -31,8 +29,8 @@ class Pyspelling < Formula
   end
 
   resource "bracex" do
-    url "https://files.pythonhosted.org/packages/d0/f5/4473ad9b48cd0420a2d762a3750fa0e078e23e060b1af72662e5987e5530/bracex-3.0.tar.gz"
-    sha256 "b73f718d6bd98d8419e45df02426c86e9967c179949f779340d6c3a8c83b9111"
+    url "https://files.pythonhosted.org/packages/ac/01/5f394b8bcd6e5b92f73130990960423bbb19711f906bd9fe9ea5557c667c/bracex-3.0.1.tar.gz"
+    sha256 "4e38e32392e4a4780fe15d644bfc7c8514057cfc3861e060b11814ce829c25e4"
   end
 
   resource "html5lib" do
@@ -49,13 +47,13 @@ class Pyspelling < Formula
   end
 
   resource "lxml" do
-    url "https://files.pythonhosted.org/packages/05/3b/aab6728cae887456f409b4d75e8a01856e4f04bd510de38052a47768b680/lxml-6.1.1.tar.gz"
-    sha256 "ba96ae44888e0185281e937633a743ea90d5a196c6000f82565ebb0580012d40"
+    url "https://files.pythonhosted.org/packages/23/ad/28ecd7cb894d172f3c9c80a075eeeb2017ac62e3632cee05a5f9493547eb/lxml-6.1.3.tar.gz"
+    sha256 "45222d94ddd511536f3b2f7d9deae3b2339b4ce0f075f1ca25703b07cad9dd21"
   end
 
   resource "markdown" do
-    url "https://files.pythonhosted.org/packages/2b/f4/69fa6ed85ae003c2378ffa8f6d2e3234662abd02c10d216c0ba96081a238/markdown-3.10.2.tar.gz"
-    sha256 "994d51325d25ad8aa7ce4ebaec003febcce822c3f8c911e3b17c52f7f589f950"
+    url "https://files.pythonhosted.org/packages/29/6f/da4c6aea59b3001f2e8c0ec7497475aadaf3b021c10cab5b2858f0f32b26/markdown-3.10.3.tar.gz"
+    sha256 "3589362618f743188b4d955b874402bc814f4f83f544dc207719f4baa7d9c45f"
   end
 
   resource "pyyaml" do
@@ -69,8 +67,8 @@ class Pyspelling < Formula
   end
 
   resource "soupsieve" do
-    url "https://files.pythonhosted.org/packages/47/2c/0a5f6f8ee0d5589e48c7640213ed5175d52cf540a06725b628cc1a45d6ce/soupsieve-2.8.4.tar.gz"
-    sha256 "e121fd02e975c695e4e9e8774a5ee35d74714b59307868dcc5319ad2d9e3328e"
+    url "https://files.pythonhosted.org/packages/69/99/a6ca3beb3ccacb41fb3321d8a60e5566f9e6467601ef8eba6a17e1b89778/soupsieve-2.9.2.tar.gz"
+    sha256 "4a55d8cf158a9c2e587fa4922f1bbb91d68ac829e2d6f25403a85747c71daf74"
   end
 
   resource "typing-extensions" do
@@ -79,13 +77,13 @@ class Pyspelling < Formula
   end
 
   resource "wcmatch" do
-    url "https://files.pythonhosted.org/packages/11/15/dc61746d8c0852f6d711ad09c774b63cf7c8211aa49e30871ac3d342b7e2/wcmatch-10.2.1.tar.gz"
-    sha256 "ecac70a5c70e62ba854b78318d3a1408e8651f8f1c96e5837743b71aa6a4fb92"
+    url "https://files.pythonhosted.org/packages/57/43/30e407989e313677dbb9d5f045f966549a7254834571e342eaa4b55cc67b/wcmatch-11.0.1.tar.gz"
+    sha256 "1ea2b4fa678b8ca268253798d5963935df39132d47c3e241c0a0732224005e7d"
   end
 
   resource "webencodings" do
-    url "https://files.pythonhosted.org/packages/0b/02/ae6ceac1baeda530866a85075641cec12989bd8d31af6d5ab4a3e8c92f47/webencodings-0.5.1.tar.gz"
-    sha256 "b36a1c245f2d304965eb4e0a82848379241dc04b865afcc4aab16748587e1923"
+    url "https://files.pythonhosted.org/packages/d5/a0/8fd707bcb776a7be556bad06a2ea5fb9bd519df78ef8e26f70ccf0f38bff/webencodings-0.6.1.tar.gz"
+    sha256 "565f9ad031c702dae404e27a099e3e09186a3ab1b9520f06d215502b651fd910"
   end
 
   def install

@@ -61,6 +61,8 @@ class GnuGetopt < Formula
     resolves "https://github.com/util-linux/util-linux/pull/4173"
   end
 
+  deny_network_access!
+
   def install
     system "./configure", "--disable-silent-rules",
                           "--disable-liblastlog2",

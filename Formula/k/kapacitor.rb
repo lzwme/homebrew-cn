@@ -13,16 +13,15 @@ class Kapacitor < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "4a6c589f7c647e7e9e6b651b3aca6790b1eba8be6031e3bd0542c05f635b4885"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "739bc577094f6cf22049d1836b5d441e4c51fc4fde135b5e59c8734166d0f56d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "b38dd54701a8b474c4b68ef25822a7d4a31b9e6f7d059a54bc47b53ded807a2b"
-    sha256 cellar: :any,                 arm64_linux:       "e58892d7977e9075b6672c78995e8d6eb9fc9a0c327b40139cd76fbb06816638"
-    sha256 cellar: :any,                 x86_64_linux:      "88137b53a056ca917784c3d0e550e13e2e73d36666ff39ea5948de4fb0b18217"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "1f1a32167d73ea8962a7da2f05e8215742fd70f3b022df475755c3bba4e84114"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "fa5787af03c87a93b12513d307ed38efa320b31f75e894e6da8d3a13b388f99b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "eb65e4f7cbdc07bbd6a9716fc0a917a5cc9e860274acf79c5c354a2fb22ed166"
+    sha256 cellar: :any,                 arm64_linux:       "d3f93b7570977c0aea6a26bbd3365f811c1bcd985cca2dc53efd961110d604df"
+    sha256 cellar: :any,                 x86_64_linux:      "6bd4f4d917ec6d108ff379eef10009d77b9d6b4430fc8d65d37e63a7c5baa18e"
   end
 
-  # TODO: unpin go@1.26 when kapacitor supports go 1.27
-  # ref: https://github.com/influxdata/kapacitor/pull/2902
-  depends_on "go@1.26" => :build
+  depends_on "go" => :build
   depends_on "pkgconf" => :build # for `pkg-config-wrapper`
   depends_on "rust" => :build
 

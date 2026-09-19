@@ -6,10 +6,10 @@ class Redo < Formula
   url "https://ghfast.top/https://github.com/apenwarr/redo/archive/refs/tags/redo-0.42d.tar.gz"
   sha256 "47056b429ff5f85f593dcba21bae7bc6a16208a56b189424eae3de5f2e79abc1"
   license "Apache-2.0"
-  revision 3
+  revision 4
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "14dfa35e1537c7decfa87f8f39414c6c08e4e031be133aa69739984f33a74923"
+    sha256 cellar: :any_skip_relocation, all: "d416c3c9c29f94263928f8ea61a5c45afed6e71c2c4ef3b6b831c0b5c83337e9"
   end
 
   depends_on "python@3.14"
@@ -26,13 +26,13 @@ class Redo < Formula
   end
 
   resource "markdown" do
-    url "https://files.pythonhosted.org/packages/2b/f4/69fa6ed85ae003c2378ffa8f6d2e3234662abd02c10d216c0ba96081a238/markdown-3.10.2.tar.gz"
-    sha256 "994d51325d25ad8aa7ce4ebaec003febcce822c3f8c911e3b17c52f7f589f950"
+    url "https://files.pythonhosted.org/packages/29/6f/da4c6aea59b3001f2e8c0ec7497475aadaf3b021c10cab5b2858f0f32b26/markdown-3.10.3.tar.gz"
+    sha256 "3589362618f743188b4d955b874402bc814f4f83f544dc207719f4baa7d9c45f"
   end
 
   resource "soupsieve" do
-    url "https://files.pythonhosted.org/packages/47/2c/0a5f6f8ee0d5589e48c7640213ed5175d52cf540a06725b628cc1a45d6ce/soupsieve-2.8.4.tar.gz"
-    sha256 "e121fd02e975c695e4e9e8774a5ee35d74714b59307868dcc5319ad2d9e3328e"
+    url "https://files.pythonhosted.org/packages/69/99/a6ca3beb3ccacb41fb3321d8a60e5566f9e6467601ef8eba6a17e1b89778/soupsieve-2.9.2.tar.gz"
+    sha256 "4a55d8cf158a9c2e587fa4922f1bbb91d68ac829e2d6f25403a85747c71daf74"
   end
 
   resource "typing-extensions" do

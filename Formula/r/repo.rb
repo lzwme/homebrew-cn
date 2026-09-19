@@ -20,6 +20,8 @@ class Repo < Formula
 
   uses_from_macos "python"
 
+  deny_network_access!
+
   def install
     bin.install "repo"
     doc.install (buildpath/"docs").children

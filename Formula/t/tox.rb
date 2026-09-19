@@ -3,19 +3,19 @@ class Tox < Formula
 
   desc "Generic Python virtualenv management and test command-line tool"
   homepage "https://tox.wiki/en/latest/"
-  url "https://files.pythonhosted.org/packages/33/57/5a24f6f81ee81a25d34773045db61ddef3a76ed43e6fbd0fca2657678ad6/tox-4.61.4.tar.gz"
-  sha256 "d3fa82dc2fe847fe45b576ed0614e850a674aadec3a664f409e2bf295c473e20"
+  url "https://files.pythonhosted.org/packages/87/c8/1a333d5addd65474030ead665d65af8e7a189ebf62983f3b7e4ab2d0627c/tox-4.61.5.tar.gz"
+  sha256 "d1f535a6ca4827c087e0a2a173dd74621d6e1688c740c8dd44e0377480020431"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "8566522822ad65910b6838931d7196874e8a8601895d6c7dafe86272b8dfcf23"
+    sha256 cellar: :any_skip_relocation, all: "a8d9f6f53c9242548e6b12b42d91d43d471437c231f3e3a9029faa6fe9fe66d4"
   end
 
   depends_on "python@3.14"
 
   resource "cachetools" do
-    url "https://files.pythonhosted.org/packages/4b/39/9a4689914dd907915cee74733b95888fc1d8a21aad47a24a0a2deec73ac4/cachetools-7.1.8.tar.gz"
-    sha256 "1221d547a0b24b7f26fa891d40d488b5258beab9aebd8ed68c729be3af849c43"
+    url "https://files.pythonhosted.org/packages/29/2c/3f18755527b03ca9ff6be724bd5370cb777c76a87f17301377cf04a4729b/cachetools-7.2.0.tar.gz"
+    sha256 "bcac1a1b8da6909994a2957238a57b8140dab7c5c5c69a43669654fe87a33c1d"
   end
 
   resource "colorama" do
@@ -29,8 +29,8 @@ class Tox < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/38/46/126b1831dca12060d4a8296bf9c4fe5c93c4f22197fa239cb0cc82042bba/filelock-3.32.6.tar.gz"
-    sha256 "a3f55a18af3652a94d8f47d6055df434f254ca1d02ef2524850c6d249ca2512c"
+    url "https://files.pythonhosted.org/packages/0f/59/e19834834cb01a32febfbb0f8a23a9088088f5d45991824ff2bc3b5e8acb/filelock-3.32.7.tar.gz"
+    sha256 "37b8a3d9811b0f9aef7e5ec5c71bb320de52df51e6ca9bcd6f5ad81187660da7"
   end
 
   resource "packaging" do
@@ -39,8 +39,8 @@ class Tox < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/53/18/f3bb8ef0d3b930692343da8aa4d3cbcd6749477c053959395ac81965a6e9/platformdirs-4.11.8.tar.gz"
-    sha256 "f23abafea7dd4276d1f29104b83598d7dcc567cafd07c9c951e66665645437fc"
+    url "https://files.pythonhosted.org/packages/58/b9/8adc4e1b422b27fd88540ec7bf1f406f77ef393ec070e26fc430e914cde8/platformdirs-4.11.9.tar.gz"
+    sha256 "e2c66a8d384596cd98e3c4aea2d761df7bac95d9d8a2cc3946daa8cdafdaebc1"
   end
 
   resource "pluggy" do
@@ -49,8 +49,8 @@ class Tox < Formula
   end
 
   resource "pyproject-api" do
-    url "https://files.pythonhosted.org/packages/ab/bd/2f985c12bf33fdd8637e3a8f9418d6806f177601dee7c4924d0b2bb28650/pyproject_api-1.11.0.tar.gz"
-    sha256 "b8807d85a293e6c9f133e6575946fed45f1d42b22d58c780b33aa2421a799549"
+    url "https://files.pythonhosted.org/packages/0b/f1/bc8eb24666303b854f9c139040088ea451b83e3d87e93169e679b6b838f5/pyproject_api-1.11.1.tar.gz"
+    sha256 "999ba9741fca3519a3876482cd2eddbce250c31c42c031506c5ea5610f1d3589"
   end
 
   resource "python-discovery" do
@@ -64,8 +64,8 @@ class Tox < Formula
   end
 
   resource "virtualenv" do
-    url "https://files.pythonhosted.org/packages/52/5c/ba82fdd0da13ade01453fc08277a70abc79128101319549f55f2e13f8f83/virtualenv-21.7.9.tar.gz"
-    sha256 "a7e42d81d779dec8afd7dc4be71640fb959ea861bccfa5980cb4ad9f92e30675"
+    url "https://files.pythonhosted.org/packages/45/9d/5acd348310e0803c658c8cf7c4d928e2d22fc4f79c29098b651cd3edfdba/virtualenv-21.7.10.tar.gz"
+    sha256 "a7bf10f37ecc36f1942d6e469d6b59f5fe308f60ac711f66f51ef3bd8cb2c9aa"
   end
 
   def install

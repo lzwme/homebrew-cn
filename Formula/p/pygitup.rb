@@ -6,9 +6,10 @@ class Pygitup < Formula
   url "https://files.pythonhosted.org/packages/45/19/b3f4b5adbb9e0118d858d8ede758da325a45ba105ed33eb37eca7668cad9/git_up-2.5.0.tar.gz"
   sha256 "7341db24c27add12cc16ac7ce048c1a9a851d945b0be4d8a48f93c8b1a69f83f"
   license "MIT"
+  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "1ddad23f842adc4e720644e07509d5ec93f84285d5241d87aadafe5d80a13338"
+    sha256 cellar: :any_skip_relocation, all: "7567fadda303198bb57afd03cf840766c82f49df7b8c12eff9fd3c2805746165"
   end
 
   depends_on "python@3.14"
@@ -24,8 +25,8 @@ class Pygitup < Formula
   end
 
   resource "gitpython" do
-    url "https://files.pythonhosted.org/packages/ca/dc/126b28e76b24a9268ba931ad3e012f71ebdadf62fd9f17758f7074bb0b20/gitpython-3.1.59.tar.gz"
-    sha256 "0a1475cfdc38a5bfba1a3e9a4a9da52a39749ecec322b772915c019f94e5b7e4"
+    url "https://files.pythonhosted.org/packages/e0/db/3ca813cbacb23ab6fe46ff38a9b5ef8e73e970c8051f2ce903aacafe0446/gitpython-3.1.62.tar.gz"
+    sha256 "1791de66309bc0c7cfca40bf8d2e3de7ca091cbf94e6051be1ad0722c61062af"
   end
 
   resource "packaging" do

@@ -3,8 +3,8 @@ class Netpbm < Formula
   homepage "https://netpbm.sourceforge.net/"
   # Maintainers: Look at https://sourceforge.net/p/netpbm/code/HEAD/tree/
   # for stable versions and matching revisions.
-  url "https://svn.code.sf.net/p/netpbm/code/stable", revision: "5319"
-  version "11.02.29"
+  url "https://svn.code.sf.net/p/netpbm/code/stable", revision: "5358"
+  version "11.02.30"
   license "GPL-3.0-or-later"
   version_scheme 1
   compatibility_version 1
@@ -19,12 +19,11 @@ class Netpbm < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    sha256 arm64_golden_gate: "dfd7fb5af4f0818424fa9ec1fbb1bc75057e8034213912b9dba663fe0a5908e8"
-    sha256 arm64_tahoe:       "559514ccb42088b161a8e5b31bf8fce39f3f2f619fd58cadcb98f368a7e88fbc"
-    sha256 arm64_sequoia:     "574b837bd16cfb8ff8d09b569e0355fb6560d897517cbf4c3c8f77741326da66"
-    sha256 arm64_sonoma:      "85a82ebce6e60089679b0af9f646c6d415134afcf8c5890d044669b0fa73da57"
-    sha256 arm64_linux:       "2c9e56afec45bc11f7151ea20f1a22c30a0b09db7ddca9038c0a4e288912b12d"
-    sha256 x86_64_linux:      "d2f9be3fe880babe3bd0e74559fd888c4d0f5d40d982d570f7c603005111ce33"
+    sha256 arm64_golden_gate: "2fd7307fa5a703a288971d7b38efb217c912b5da90daea0b114d2e555d2e554e"
+    sha256 arm64_tahoe:       "acb9284d843ccbe3667b976bbba3cbe5a295dcc281853cbcd91962abb42452d9"
+    sha256 arm64_sequoia:     "292e1635e563dfe22f4103d5f5313f4ea912f0cfd8b5814a70a64f8f99acc1e6"
+    sha256 arm64_linux:       "bf8ee82e9d646f6a75b0e369b9e1a002cb74134a48ec3b4cefc4c10a2c57679b"
+    sha256 x86_64_linux:      "d234463812ea8bfe30df940ee2732a622366ac4ade33216865b3edd86aad123d"
   end
 
   depends_on "pkgconf" => :build
@@ -46,8 +45,8 @@ class Netpbm < Formula
   resource "html" do
     # Rolling release, latest revision also documents previous software versions
     # NOTE: Keep "revision" and "version" in sync
-    url "https://svn.code.sf.net/p/netpbm/code/userguide", revision: "5316"
-    version "5316"
+    url "https://svn.code.sf.net/p/netpbm/code/userguide", revision: "5348"
+    version "5348"
 
     livecheck do
       url "https://sourceforge.net/p/netpbm/code/HEAD/log/?path=/userguide"
@@ -55,6 +54,8 @@ class Netpbm < Formula
       strategy :page_match
     end
   end
+
+  deny_network_access!
 
   def install
     cp "config.mk.in", "config.mk"

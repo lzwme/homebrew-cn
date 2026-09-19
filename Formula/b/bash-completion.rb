@@ -44,6 +44,8 @@ class BashCompletion < Formula
   # Backports (a variant of) an upstream patch to fix man completion.
   patch :DATA
 
+  deny_network_access!
+
   def install
     inreplace "bash_completion" do |s|
       s.gsub! "/etc/bash_completion", etc/"bash_completion"

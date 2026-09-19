@@ -1,20 +1,17 @@
 class Papilo < Formula
   desc "Parallel Presolve for Integer and Linear Optimization"
-  homepage "https://www.scipopt.org"
-  url "https://ghfast.top/https://github.com/scipopt/papilo/archive/refs/tags/v3.0.1.tar.gz"
-  sha256 "b7c70e754c23f8bef5843ac02b82f9dc1707a653c867474123e635951305af88"
+  homepage "https://www.scipopt.org", browsed: "2026-09-18"
+  url "https://ghfast.top/https://github.com/scipopt/papilo/archive/refs/tags/v3.0.2.tar.gz"
+  sha256 "3ab6e4a41667aa1edc87697dfcc0dc7d517d047d4366abafd8858d22e02d4f2f"
   license "Apache-2.0"
-  revision 1
   version_scheme 1
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "8f4a1fc0338357a18a88c9b35a41476e012134838242dcff7b72c53c9a02ae13"
-    sha256 cellar: :any, arm64_tahoe:       "4c7789a51574302947874e9dcc46e14c68d47f3978e17e050e31bd940d35635d"
-    sha256 cellar: :any, arm64_sequoia:     "09d3220af1a1bb2d8daf1cd6b4c490aac33bf3f29883ade5121d2045f26e4b0d"
-    sha256 cellar: :any, arm64_sonoma:      "056cfa53026ccb19a3e6949259cefcfec4ada37314d7f75ffab1094a28285e8d"
-    sha256 cellar: :any, sonoma:            "d9c9e94dadf1259a3ddb37cdfa6fa5fc9e681a60ad19b382546c4d1aceec1037"
-    sha256 cellar: :any, arm64_linux:       "4a1db47d03b0910bb5f4f77ea452883ae5465258480d20a5b8fd96ef279fee37"
-    sha256 cellar: :any, x86_64_linux:      "d315d22ae574c5c4fe7e8487f8bf04ae61191008dc23bbdd60a091c1e05ca422"
+    sha256 cellar: :any, arm64_golden_gate: "a3e22125aa7ff189326a169b6ac70a82130b4b8aa3de46383e26d0227edcaa36"
+    sha256 cellar: :any, arm64_tahoe:       "2798c40754021e04cb150aca412baec0ec1f0624e6e8cf5974bbc032b085a74e"
+    sha256 cellar: :any, arm64_sequoia:     "eacc1cf1dcf01558291455e6c546015d3253db1d90adfe466e3347e4fa495039"
+    sha256 cellar: :any, arm64_linux:       "bfa51c5035c86ac267a8a6e3dc39a9af1bc9401103fa8bba29b95f569d2b4127"
+    sha256 cellar: :any, x86_64_linux:      "4910a46ab4a09132dff9da5d0d73a6a1435de77f3451fb43b8d16efd123ee678"
   end
 
   depends_on "cmake" => :build
@@ -23,6 +20,8 @@ class Papilo < Formula
   depends_on "gmp"
   depends_on "openblas"
   depends_on "tbb"
+
+  deny_network_access!
 
   def install
     cmake_args = %w[

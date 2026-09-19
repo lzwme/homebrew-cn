@@ -1,26 +1,31 @@
 class Cookcli < Formula
   desc "CLI-tool for cooking recipes formated using Cooklang"
   homepage "https://cooklang.org"
-  url "https://ghfast.top/https://github.com/cooklang/cookcli/archive/refs/tags/v0.35.0.tar.gz"
-  sha256 "413aaea997cdc6afe5ff122d5673733aea2ff6314173342235b4e7120ea1c276"
+  url "https://ghfast.top/https://github.com/cooklang/cookcli/archive/refs/tags/v0.36.0.tar.gz"
+  sha256 "868ea0e05be14bce98e4cc89028e3a5d8a3fc6b2131b10376103db8a46b644c6"
   license "MIT"
   head "https://github.com/cooklang/cookcli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "0ee77b9bab2e76c7f229e8d36ed046058ad34fa7220162abfbc529c027034418"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "fc029bc5636075cc7201a71077ac7eac6e927bb7955144f9e779f2a5ba8b28b2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "3928b150a8481c74c815a7a0cb40b8a5768e8f8a73841f87ea9a65ec75afda15"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "b33b7945e389e65d7293cb061c7930c4f0759dced0015eae4666e38811392a1d"
-    sha256 cellar: :any,                 arm64_linux:       "bb718704e432ca83383b2a08ca4d6dc95a3c9a1c888b562f5c8479b3fa2f70f3"
-    sha256 cellar: :any,                 x86_64_linux:      "376439b3a8d3f772c634d23513ba31bd86b74dd98f436a2a58cd90e43e003d74"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "8a4a5120ce441297f2bf0dfd45553f43437b1130aded552d659a8890dfa7691e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "458efaaf7c89989189b3fe05ac2f9c73b045fd4dc4bb686050e680cc93f9041f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "2d9e31f0f7932b1455ec3f1cef8bbffc96ddb292aa87176d11b2958c5c34cc3c"
+    sha256 cellar: :any,                 arm64_linux:       "5accf14a2848e5bee29c2d6925659f5646bbbd6122ab954e2afdf2f8f3cc9ff6"
+    sha256 cellar: :any,                 x86_64_linux:      "d9dfdea5cb6ac996f27af217cd323621b4a827374d7601379d71f08b9347a279"
   end
 
   depends_on "node" => :build
   depends_on "rust" => :build
 
-  def install
-    # Install npm dependencies and build assets
+  deny_network_access!
+
+  def fetch
     system "npm", "install", *std_npm_args(prefix: false)
+    system "cargo", "fetch", "--locked", "--target", "host-tuple"
+  end
+
+  def install
+    # Build assets
     system "npm", "run", "build-css"
     system "npm", "run", "build-js"
 
@@ -49,8 +54,7 @@ class Cookcli < Formula
 
       ## Steps
 
-      1. Crack the eggs into a blender, then add the plain flour, milk and sea salt,
-      and blitz until smooth.
+      1. Crack the eggs into a blender, then add the plain flour, milk and sea salt, and blitz until smooth.
     MARKDOWN
     assert_match (testpath/"expected.md").read,
       shell_output("#{bin}/cook recipe read --format markdown pancakes.cook")

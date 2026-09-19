@@ -1,19 +1,17 @@
 class Dbmate < Formula
   desc "Lightweight, framework-agnostic database migration tool"
   homepage "https://github.com/amacneil/dbmate"
-  url "https://ghfast.top/https://github.com/amacneil/dbmate/archive/refs/tags/v2.35.1.tar.gz"
-  sha256 "2576832a3405c5011ad948cdf5a3c08e35158396bc1007cc95057047b68e81cd"
+  url "https://ghfast.top/https://github.com/amacneil/dbmate/archive/refs/tags/v2.36.0.tar.gz"
+  sha256 "a72ecd5a04ab627a6e2e0a3d0caace438e1f0a584d6ea5929640dda60fb8c8d9"
   license "MIT"
   head "https://github.com/amacneil/dbmate.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "1a977851cded440b3046b36d5ee64bb0fbd46b8aeb6b34207d2b446043b48cfd"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "b9551846172b0f8b00259df071e4ac9393d11662ec7c130b68d12b44791e898a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "e2ca1240705326660123bfd58069140d0d5ef2dc61e8b84b533b0fbb7f1a05cb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "bd0c9a8f740b61ab3ac0cedd7f32a33b32ed9ab7a5d64f4a130537280fbf2b32"
-    sha256 cellar: :any_skip_relocation, sonoma:            "4b4caf68ad0b5dfbbc25be29d5bbdac7ee276c2d8049b81c55f9464787ed9510"
-    sha256 cellar: :any,                 arm64_linux:       "91284e4c1c9300dd098e240627ec137b2deede0503a6fe3e54c0db632728a5ff"
-    sha256 cellar: :any,                 x86_64_linux:      "88bc5469aecd804b675b35a7a8b627fa095c6ded286441b0d5a85f02e16e9721"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "1532b7d23fc81dce68d26fe307ff124889905f96212e7452e5832af9b7c1d617"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "8ecb698cbb6210fa5ac5c042633abd65dc255caac82c1110f2be8388c013e9b7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "7cb32fa11d63ba4361450d473e2d667d28bd5ffdd31939bb7c680bb7ef630c3b"
+    sha256 cellar: :any,                 arm64_linux:       "5f2b246c7977c21c7f484fa6440183c5c46664c352c9864a7ab370028aa403f7"
+    sha256 cellar: :any,                 x86_64_linux:      "3cae43243ddbd624e3b92ecce4a900bb35f43cc81cb510a90ae95dd8fa2b4fc1"
   end
 
   depends_on "go" => :build

@@ -3,18 +3,17 @@ class Beets < Formula
 
   desc "Music library manager and tagger"
   homepage "https://beets.io/"
-  url "https://files.pythonhosted.org/packages/b6/3b/359d68ce968214ffec8f55d9babe6de82794a846b5e02027f013456ef988/beets-2.14.0.tar.gz"
-  sha256 "f412c9072ddc0bed04d843546a4222fcd24c9fe64cf233517ddcdb40190feea8"
+  url "https://files.pythonhosted.org/packages/b0/5e/ad1f57f5de4846e7b274f2fa3b9df4dd7a641cb35bf047698a99b5179279/beets-2.14.1.tar.gz"
+  sha256 "b25dc7bf8ed093d8b6e043e88013736902c1082c958b81a598af5db5275539a5"
   license "MIT"
   head "https://github.com/beetbox/beets.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "6c724cde3331d9b2347d8a53d1ca0e336cb3daa400a3434c31bf36b41135b3d8"
-    sha256 cellar: :any, arm64_tahoe:       "50f03f6a0720e452fb6aad43fa407b8e2b5e4337dfee9e5cfe2833b8f3c21ddc"
-    sha256 cellar: :any, arm64_sequoia:     "9eeaf54378dc36078175d800302c674f328244b1ada108a2978f05617e891e2b"
-    sha256 cellar: :any, arm64_sonoma:      "e3e31e52ffba674202e8e84cd58b3f507430550be3d18a248d7bea1b89b76c35"
-    sha256 cellar: :any, arm64_linux:       "0e61b7cd8745b16d9fda96ab4adf6ba86ed548b63b2ef1a424e175af33fded90"
-    sha256 cellar: :any, x86_64_linux:      "6454d6b02d1fb84f0ecd5f5c20127557c7a0e0f1007fa8638194426afb62e87a"
+    sha256 cellar: :any, arm64_golden_gate: "c6855c76b0a980219852f6968e35ef09f0ede09cb4b56e7f6e9e3f8bf88610d4"
+    sha256 cellar: :any, arm64_tahoe:       "29c0f8221048bc797ab30dead5a163c8728eb5094df2fdc08828aa6df812d352"
+    sha256 cellar: :any, arm64_sequoia:     "fdc41fa296ed2ea8b62dfd4145e17b75b098b56008f7c7f8fa9f8a1d65b68e81"
+    sha256 cellar: :any, arm64_linux:       "ef9adcf249ec403ae6c062a5fcb377559ab119574ce8db381eca93a732c96fab"
+    sha256 cellar: :any, x86_64_linux:      "3ba6d305c69e1b232f4519cb84d9ca19f62b6d4cf782209e7ddf57e776d4522c"
   end
 
   depends_on "cython" => :build
@@ -43,8 +42,8 @@ class Beets < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/5f/f7/abb373e5757eaec4b922b92f97ec8d6d7e057cf06778247604fbc4e7c3f3/idna-3.19.tar.gz"
-    sha256 "5e0811a4383b21dc5838069f801c4fb62113b7447663d2530d2bd6e77b49bf15"
+    url "https://files.pythonhosted.org/packages/f5/08/8eea9d4b8302028f3abb2c0813953f7aec26d33b7a8960ed760e65ff29fa/idna-3.20.tar.gz"
+    sha256 "a7db850025b95ded1eae8a46181a1a6c56c92c96f0e2b005d9ff8dc0210cab44"
   end
 
   resource "jellyfish" do
@@ -73,8 +72,8 @@ class Beets < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/69/b7/802a56eca9f2fac455b8bab5375a2647b0f0e14a2cd63ef077de3c4a7658/platformdirs-4.11.7.tar.gz"
-    sha256 "4f41487eeeeeb07f3a6625e61d9bc0ae6809f92d3386dbd74392fbb76108104d"
+    url "https://files.pythonhosted.org/packages/58/b9/8adc4e1b422b27fd88540ec7bf1f406f77ef393ec070e26fc430e914cde8/platformdirs-4.11.9.tar.gz"
+    sha256 "e2c66a8d384596cd98e3c4aea2d761df7bac95d9d8a2cc3946daa8cdafdaebc1"
   end
 
   resource "pyrate-limiter" do
@@ -108,8 +107,8 @@ class Beets < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/53/0c/06f8b233b8fd13b9e5ee11424ef85419ba0d8ba0b3138bf360be2ff56953/urllib3-2.7.0.tar.gz"
-    sha256 "231e0ec3b63ceb14667c67be60f2f2c40a518cb38b03af60abc813da26505f4c"
+    url "https://files.pythonhosted.org/packages/e3/05/b17359e1cefb4f909b5e40b1b90a496d987258916dbbf88e842c729f510e/urllib3-2.8.0.tar.gz"
+    sha256 "63bf2ead4c879426ebf22ef2a781eeb4aa3b4ae798a0435506f8687fd5bb9b63"
   end
 
   def install

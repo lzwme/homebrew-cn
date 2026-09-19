@@ -185,6 +185,8 @@ class Lcov < Formula
     sha256 "4848679a3f201e3f3b0c5f6f9526e602af52923ffa471a2a3657db786bd3bdc5"
   end
 
+  deny_network_access!
+
   def install
     ENV.prepend_create_path "PERL5LIB", libexec/"lib/perl5"
 

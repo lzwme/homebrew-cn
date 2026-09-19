@@ -1,21 +1,18 @@
 class Folly < Formula
   desc "Collection of reusable C++ library artifacts developed at Facebook"
   homepage "https://github.com/facebook/folly"
-  url "https://ghfast.top/https://github.com/facebook/folly/archive/refs/tags/v2026.07.27.00.tar.gz"
-  sha256 "dcb373984e571468659be8a74c0a43a1cb6548fbe5579a806674db43d7261c4e"
+  url "https://ghfast.top/https://github.com/facebook/folly/archive/refs/tags/v2026.09.14.00.tar.gz"
+  sha256 "0b6153196c7fcb9f51636e3d0a68dce86f0e2ca5c94ea32925f6c6d474a57d68"
   license "Apache-2.0"
-  revision 1
   compatibility_version 1
   head "https://github.com/facebook/folly.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "18447323b1208ed8d596eb426508d8637356109f43b592f84d117e680b335f95"
-    sha256 cellar: :any, arm64_tahoe:       "ca829c7c29e070584824222cac53a307a21b02019a810e66c41aed1574d7bd7a"
-    sha256 cellar: :any, arm64_sequoia:     "1c4fb613ea8fa4933b633d8085055be15ab3b5c176e37447833a2ec109a28994"
-    sha256 cellar: :any, arm64_sonoma:      "ee13757641b4954b047906148e4a702974ca82b15a0e9b1d2cfbff15681ebbcc"
-    sha256 cellar: :any, sonoma:            "0b745bcda203ace18e3253b2c783e34acbfc65a0cc9cab75d11ba6b09421e396"
-    sha256 cellar: :any, arm64_linux:       "959ce97f4933b90b20fafb5e5001123bc85de08c9e662bfea6715bcdfa96683c"
-    sha256 cellar: :any, x86_64_linux:      "c041bbfc45f07d9f6c1f0e11adedb77ea8503d3822a540f40e31408e7a415199"
+    sha256 cellar: :any, arm64_golden_gate: "226c87d6cd4aa49d93e249b519c8dd59d283bd918d5d1d06841e43555138cb7b"
+    sha256 cellar: :any, arm64_tahoe:       "351358ee5009a16e6a3d37c69c84c03d73ede85d6a2f95a15ccf8476808406f0"
+    sha256 cellar: :any, arm64_sequoia:     "08630b2feb78b4c38e76882373b5057479a6538b3f8b1bc38f75923b5f45343c"
+    sha256 cellar: :any, arm64_linux:       "d8e5e099ef42eb7321aeafab3b188c05aeac5cf7e777158bae5e6ac742021633"
+    sha256 cellar: :any, x86_64_linux:      "784b0f68958e5f463476ec80701ece7c3d70f32a23aeee60fb98aa73bf3c3ed5"
   end
 
   depends_on "cmake" => :build

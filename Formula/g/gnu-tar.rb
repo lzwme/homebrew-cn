@@ -29,6 +29,8 @@ class GnuTar < Formula
     depends_on "acl"
   end
 
+  deny_network_access!
+
   def install
     args = %W[
       --prefix=#{prefix}

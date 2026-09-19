@@ -4,6 +4,7 @@ class Gradle < Formula
   url "https://services.gradle.org/distributions/gradle-9.7.1-all.zip"
   sha256 "92c1a136d76b5017732a66d2e0a648ebff00dd3687d8bff0d0047a1bd904fdf2"
   license "Apache-2.0"
+  revision 1
 
   livecheck do
     url "https://gradle.org/releases/"
@@ -11,17 +12,19 @@ class Gradle < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "fb3b1da09f092f6433b62479bc0c243e5dad11f2f229ff94a1e23289b7b34fb6"
+    sha256 cellar: :any_skip_relocation, all: "69e2b16cbfaf650571d90e7967fca5b492615e5c94e89e6c3587fd90341812e9"
   end
 
   depends_on "gradle-completion"
+  # TODO: Switch back to `openjdk` once Gradle supports running on JDK 27; 9.7.1 fails with
+  # "Unsupported class file major version 71".
   # https://github.com/gradle/gradle/blob/master/platforms/documentation/docs/src/docs/userguide/releases/compatibility.adoc
-  depends_on "openjdk"
+  depends_on "openjdk@25"
 
   def install
     rm(Dir["bin/*.bat"])
     libexec.install %w[bin lib src] # excluding 300MB+ of docs
-    env = Language::Java.overridable_java_home_env
+    env = Language::Java.overridable_java_home_env("25")
     (bin/"gradle").write_env_script libexec/"bin/gradle", env
   end
 

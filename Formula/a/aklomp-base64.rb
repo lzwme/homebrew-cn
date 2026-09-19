@@ -19,6 +19,8 @@ class AklompBase64 < Formula
 
   conflicts_with "base64", because: "both install `base64` binaries"
 
+  deny_network_access!
+
   def install
     system "cmake", "-S", ".", "-B", "build",
                     "-DBUILD_SHARED_LIBS=ON",

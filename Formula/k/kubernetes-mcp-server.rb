@@ -1,22 +1,26 @@
 class KubernetesMcpServer < Formula
   desc "MCP server for Kubernetes"
   homepage "https://github.com/containers/kubernetes-mcp-server"
-  url "https://ghfast.top/https://github.com/containers/kubernetes-mcp-server/archive/refs/tags/v0.0.66.tar.gz"
-  sha256 "db97557535eb27d37eb35c56d5710cb0c286c45ddde2c4badddbcc1563ddd473"
+  url "https://ghfast.top/https://github.com/containers/kubernetes-mcp-server/archive/refs/tags/v0.0.67.tar.gz"
+  sha256 "650449c50fb661857db047764991e7f890ee411a1cc47a3c40f3cc02694817c4"
   license "Apache-2.0"
   head "https://github.com/containers/kubernetes-mcp-server.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "8e6fb9d72a5afc630223e0761d1fe6a7c299c939586e33e3c3bb4c07c2e21c9c"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "2dece98fc5d3c69b9af13f6fbb8964ea30d7507efbd61c11c8dfbe8f4c64f40c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "2d4c9d07177c24aebc6255b590fbfd95fb25e476c919a2dec672066838c12bc4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "526a39d2548a73991f7a5db91321d6cfab4def72eb2ca3e215c6f682c4eabc7e"
-    sha256 cellar: :any_skip_relocation, sonoma:            "0af94528bf6073730933dfb5fc3ac332a6cebeecfa30c9e159d8756c3879c7d1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "3bf50ccf982e620ca7714328fd929f04c5084814dd93161c0b9cd502f728b3de"
-    sha256 cellar: :any,                 x86_64_linux:      "26ebd4269a1fcc21e9e519c0f390b6d65cf7c9b904bc4c625f1bfef55c853ba9"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "92119222827a647523f5b927064a17c52b7e1f6be82500709590731a19639838"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "202f44a2158228a5e102b079fc75192c049778a48f46f3432ce32e1b1042e136"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "0790712329ce1a61a7091d6163776a3c5e9d7f3c3d598d1c301a9a3b16d26075"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "f776ecc45fad087723530b8db79c27ce0bc43dee73e1b9b139503f506f0dd415"
+    sha256 cellar: :any,                 x86_64_linux:      "fa5c8361ae863dd68a17138de6df9da09bfb66d61da94a866b6ef9a7896c88d1"
   end
 
   depends_on "go" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     ldflags = %W[

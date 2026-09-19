@@ -8,11 +8,12 @@ class Glib < Formula
   license "LGPL-2.1-or-later"
   compatibility_version 1
 
-  # FIXME: remove livecheck block once `https://download.gnome.org/sources/glib/cache.json` is fixed
+  # This regex is intended to avoid the `Gnome` strategy's version filtering
+  # logic while maintaining the "even-numbered minor is stable" behavior, as
+  # minor versions >= 90 are still stable in this case.
   livecheck do
-    url "https://download.gnome.org/sources/glib/"
-    regex(%r{href="(\d+(?:\.\d+))/"}i)
-    strategy :page_match
+    url :stable
+    regex(/glib[._-]v?(\d+\.\d*[02468](?:\.\d+)*)\.t/i)
   end
 
   bottle do

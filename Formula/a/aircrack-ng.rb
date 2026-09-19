@@ -63,6 +63,8 @@ class AircrackNg < Formula
     type :unofficial
   end
 
+  deny_network_access!
+
   def install
     system "./autogen.sh", "--disable-silent-rules",
                            "--sysconfdir=#{etc}",

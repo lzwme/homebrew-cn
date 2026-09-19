@@ -12,12 +12,13 @@ class ArgyllCms < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "ad024d41761298dfa2f61e8f233fb7601562ad3171586b572bd6592e9ef59641"
-    sha256 cellar: :any, arm64_sequoia: "ec9dc920b963d51b861d30f1bac076b2af27fa5f5b8ab7dddea552e4ba718c14"
-    sha256 cellar: :any, arm64_sonoma:  "5d8283a588d6646c5e1cefe0b1aaabb7939786d09c6e568569e7679887e1af1c"
-    sha256 cellar: :any, sonoma:        "34f854d137000aa8be85754b576214963f1f1afa01336495854ab8b300e78c1f"
-    sha256               arm64_linux:   "2125b4c16e24180474d11d494a7883c492c0e5473acd7c7838ce2b17e7f8508d"
-    sha256               x86_64_linux:  "c38a332aa8e7a21574b3144a645676b01201718e1bd9df1266b7063df6f034cb"
+    sha256 cellar: :any, arm64_golden_gate: "33048ce1694c92374efae0f17efbfe7cab2b532762f4fd186cd77ccab9c5bc2d"
+    sha256 cellar: :any, arm64_tahoe:       "ad024d41761298dfa2f61e8f233fb7601562ad3171586b572bd6592e9ef59641"
+    sha256 cellar: :any, arm64_sequoia:     "ec9dc920b963d51b861d30f1bac076b2af27fa5f5b8ab7dddea552e4ba718c14"
+    sha256 cellar: :any, arm64_sonoma:      "5d8283a588d6646c5e1cefe0b1aaabb7939786d09c6e568569e7679887e1af1c"
+    sha256 cellar: :any, sonoma:            "34f854d137000aa8be85754b576214963f1f1afa01336495854ab8b300e78c1f"
+    sha256               arm64_linux:       "2125b4c16e24180474d11d494a7883c492c0e5473acd7c7838ce2b17e7f8508d"
+    sha256               x86_64_linux:      "c38a332aa8e7a21574b3144a645676b01201718e1bd9df1266b7063df6f034cb"
   end
 
   depends_on "jpeg-turbo"
@@ -90,6 +91,9 @@ class ArgyllCms < Formula
       s.gsub! "/usr/X11R6/include", HOMEBREW_PREFIX/"include"
       s.gsub! "/usr/X11R6/lib", HOMEBREW_PREFIX/"lib"
     end
+    (buildpath/"Jamtop").append_lines <<~JAM
+      CCFLAGS += -fno-strict-aliasing ;
+    JAM
 
     ENV["NUMBER_OF_PROCESSORS"] = ENV.make_jobs.to_s
 

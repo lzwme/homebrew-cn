@@ -1,18 +1,17 @@
 class CargoGenerate < Formula
   desc "Use pre-existing git repositories as templates"
   homepage "https://github.com/cargo-generate/cargo-generate"
-  url "https://ghfast.top/https://github.com/cargo-generate/cargo-generate/archive/refs/tags/v0.24.0.tar.gz"
-  sha256 "cdabbd70646c41f48fded463fd937a79b1686b3bed6673d14eb9dd9e0e4663f8"
+  url "https://ghfast.top/https://github.com/cargo-generate/cargo-generate/archive/refs/tags/v0.25.0.tar.gz"
+  sha256 "972a7083b97e8a0e6fae8a0c2b2fbc15f15369acebb1902ddadc93dc0deb9c09"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/cargo-generate/cargo-generate.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "0224c5b31f713b4956fd455192fbb5cb874340d9df98be9a6b1f9c1afa41e3db"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "f1e27cfe217f1c56ca1f32071c5aa406ddd458c8bdd86e68de6c216cdf9ac371"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "76f369f6b0f302867029e80ff35401eb42454d64a94fc847b68f50e2b5289f7d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "d7c569b36512ee7cffc2e527e37bcf4204cc046f88767e442a11048b9cd73120"
-    sha256 cellar: :any,                 arm64_linux:       "3ef72c55fc567bf6dbe2126c07fdd0f2f3a3d62313d1e50ae4abc4523e45ef28"
-    sha256 cellar: :any,                 x86_64_linux:      "27afafce25134342b371d9d83dedcf6d9651553383a375338dc777af89df49aa"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "a59646b1430768b26e15559c4af6b4dbffd13fd671cb760dbc67801b9b34774d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "086df390b02c840d1dccbb8c51dfe65f48f0965021e6294500e2140ae6398bec"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "6651701a20cb037bc0db288371fbad115f37f6d9d5832fe75fba779a54551ccc"
+    sha256 cellar: :any,                 arm64_linux:       "64b9ebcf373d66035d014a3d6108a70fcfab17573eeabbc8430d3c5dda8235f4"
+    sha256 cellar: :any,                 x86_64_linux:      "b1b934f16e6137cd047c7cc5e92c4cbd783c2b0b5f1eea6f0d4adcb7fb1d8841"
   end
 
   depends_on "rust" => :build

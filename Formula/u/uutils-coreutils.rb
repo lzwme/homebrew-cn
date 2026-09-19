@@ -1,8 +1,8 @@
 class UutilsCoreutils < Formula
   desc "Cross-platform Rust rewrite of the GNU coreutils"
   homepage "https://uutils.github.io/coreutils/"
-  url "https://ghfast.top/https://github.com/uutils/coreutils/archive/refs/tags/0.11.0.tar.gz"
-  sha256 "a47966117783bef18650cc724f1b1d061b717ac91a0feaabdd34910703cf70a4"
+  url "https://ghfast.top/https://github.com/uutils/coreutils/archive/refs/tags/0.12.0.tar.gz"
+  sha256 "4fb327655cb4ffcbf2f16550cf9234079ffe839692f7aa1a6eda104af684e122"
   license "MIT"
   head "https://github.com/uutils/coreutils.git", branch: "main"
 
@@ -12,16 +12,21 @@ class UutilsCoreutils < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "2e3b1797d058c55565817682b4a8513f2ea54e1ef0f454316b0337a9cad0701a"
-    sha256 cellar: :any, arm64_tahoe:       "1be42be4b24c8b26bf7fafd464671d21a14ad0a1bb452f06eb03bd1dcc94ff94"
-    sha256 cellar: :any, arm64_sequoia:     "b70a34a29e55591472c59b74bb56093ba42c02504aca7488555fa2cadfa2f105"
-    sha256 cellar: :any, arm64_sonoma:      "12d799a82502002df1bf7ca9ab3e26f5a59bdf696ec024eeb1056ddce5d76380"
-    sha256 cellar: :any, arm64_linux:       "6fd365901b4b48ba97a91b3c7d19800cded910a1570b79c30445ee35a7b23675"
-    sha256 cellar: :any, x86_64_linux:      "55cb91bd524c38b57455e38c54b10b163291b59a0766f959fe6665a3dc9efa34"
+    sha256 cellar: :any, arm64_golden_gate: "c6dd3ee75ae24d92be1afaee6243d360e72f3d5282e35816cab707e0edeed825"
+    sha256 cellar: :any, arm64_tahoe:       "1d05013da1b606a9e411c5527f7145480a217cc6662e0d81f866d116b4e8aa3b"
+    sha256 cellar: :any, arm64_sequoia:     "351f88ec6c0251f40877e4a274e5f9643d6b922d6ad372adafc00fd03f99b621"
+    sha256 cellar: :any, arm64_linux:       "87a61889e18c16cacc15858cf7df59e299e77c324e0768d4ec2272f1b7e9fba1"
+    sha256 cellar: :any, x86_64_linux:      "38950d1ada2c3ace4236f32830bc65797a95d2eec8f544b50893ce5e0c32e13b"
   end
 
   depends_on "rust" => :build
   depends_on "sphinx-doc" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", "--locked", "--target", "host-tuple"
+  end
 
   def install
     man1.mkpath

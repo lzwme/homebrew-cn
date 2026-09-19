@@ -1,8 +1,8 @@
 class Soplex < Formula
   desc "Optimization package for solving linear programming problems (LPs)"
-  homepage "https://soplex.zib.de/"
-  url "https://soplex.zib.de/download/release/soplex-8.0.3.tgz"
-  sha256 "14ae9ad62701d2d5f0ac8a93ed4805b44c94440123d051c7c88bb862013f2cd8"
+  homepage "https://soplex.zib.de/", browsed: "2026-09-18"
+  url "https://soplex.zib.de/download/release/soplex-8.1.0.tgz"
+  sha256 "e7daa1725d9cf01ea1f0a548fa396e7dcc945c1e81af626c2c98503b0c4e5990"
   license "Apache-2.0"
 
   livecheck do
@@ -11,13 +11,11 @@ class Soplex < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "b63f11ac2ad17244504d1637a60644e99269bb65fbe31d22907ff57cc11d1ef3"
-    sha256 cellar: :any, arm64_tahoe:       "683aace3a66e35fd99172eaf1608253eff103abb7fb83e2d47a630f88f8ce620"
-    sha256 cellar: :any, arm64_sequoia:     "87d025017dd3ab6c7f793a27b7fa7f80e8e06c654eeb40322339add7850d9e9c"
-    sha256 cellar: :any, arm64_sonoma:      "c0fae1c0717700b652668c2aedd692ab1df6af0dc3ddfe4bd195004c16ea5c7d"
-    sha256 cellar: :any, sonoma:            "d1f5576aa2d11cc6cef6652762ba52665e682ba8e2bd4291ce9b95629ddefc18"
-    sha256 cellar: :any, arm64_linux:       "46ba78bed91f5158572392c78123c3435fe06c1036aa753e2c55f80f70577a15"
-    sha256 cellar: :any, x86_64_linux:      "f8ab7d8bb3208db083556ffa18526e110ff6a72f86a30581d077bf541669b0e5"
+    sha256 cellar: :any, arm64_golden_gate: "c2ae4c15de4db6494a960143f7c16bf8f9a3f297dfff54b21a620f54a0bfa799"
+    sha256 cellar: :any, arm64_tahoe:       "eac15c7cba992d07b176eaf59f148fe574cc41b9a65dfe26c515146588bd3ff5"
+    sha256 cellar: :any, arm64_sequoia:     "58bd2205aa57bb30bebc87bfa158895c4babfb015813cdda9227c5a50b3fb646"
+    sha256 cellar: :any, arm64_linux:       "af25fc2c56ba32006dded4a0f56a5762675a274bde8de7dfc2349d32301064cf"
+    sha256 cellar: :any, x86_64_linux:      "ab09bb5a1b033da0b6c9d430f3d90b902108585d6a3d51723a81a90fb9067d0f"
   end
 
   depends_on "cmake" => :build

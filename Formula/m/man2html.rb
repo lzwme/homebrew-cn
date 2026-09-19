@@ -27,6 +27,8 @@ class Man2html < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:      "481efdcde976cadff40796f063650a6926dff892b7e3753ee9cf65e669d8aab1"
   end
 
+  deny_network_access!
+
   def install
     bin.mkpath
     man1.mkpath

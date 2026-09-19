@@ -1,10 +1,10 @@
 class Openjdk < Formula
   desc "Development kit for the Java programming language"
   homepage "https://openjdk.org/"
-  url "https://ghfast.top/https://github.com/openjdk/jdk26u/archive/refs/tags/jdk-26.0.2.1-ga.tar.gz"
-  sha256 "91dd5ddd93e156f00a12c28d9b74b5ee1704e9f12d323d412d158b12e91d56d0"
+  url "https://ghfast.top/https://github.com/openjdk/jdk27u/archive/refs/tags/jdk-27-ga.tar.gz"
+  sha256 "7b0d39b840e008bd0a8e3d2c93d874d48536ec3e4c13045a7a83179042e2011e"
   license "GPL-2.0-only" => { with: "Classpath-exception-2.0" }
-  compatibility_version 1
+  compatibility_version 2
 
   livecheck do
     url :stable
@@ -12,13 +12,11 @@ class Openjdk < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "c718352ba7c0e3f3ff595ad737e2a340f73b1a03c442681fdc72aa07ba08edd9"
-    sha256 cellar: :any, arm64_tahoe:       "862a8543a74a1d00cc67465694c7da4625554378cb200c3ca7ffb19a45676b96"
-    sha256 cellar: :any, arm64_sequoia:     "b68d6286284e063ce998473afe8e86e8cb7646ebf4e9c8db5873b5c8e5b86571"
-    sha256 cellar: :any, arm64_sonoma:      "f1700914e59ae80bc61d8887c67c8c0c909f92a2c7390098ed0ff6fc367daadc"
-    sha256 cellar: :any, sonoma:            "3bfb3cc59a9cd3133f85cf67e5436f64b6bf32e8362663d35458b5c925ce7334"
-    sha256               arm64_linux:       "5c11165dc6e768b8cbc6f34b54563c6e1cd6fa0027b2d4a43dbfbe9be48719ba"
-    sha256               x86_64_linux:      "3db956d316850256d3ee25df12c9e95a2409ba8483da8852c373e289d2b14b6a"
+    sha256 cellar: :any, arm64_golden_gate: "db2b560ca59a2b2b8bf7e1bc900a80479d74c6c855dec497c9df2eeb5282790a"
+    sha256 cellar: :any, arm64_tahoe:       "060b8fe0ebe12e885dccb992c063973018262defb1d3483939d5941fa5d00c9f"
+    sha256 cellar: :any, arm64_sequoia:     "934cf2a836e98792d3a4c8f3a2cea90788b4cbc01958aa85c16cdd3609d34738"
+    sha256               arm64_linux:       "cc7ba53035abcfaa0d525df2a334398713753520f91fd159c5c7c095db2f654c"
+    sha256               x86_64_linux:      "71bcc4e1bec60bef2b495a95676c41002536aec8490a344fa074c5685ed2d4c6"
   end
 
   keg_only :shadowed_by_macos
@@ -57,22 +55,22 @@ class Openjdk < Formula
   resource "boot-jdk" do
     on_macos do
       on_arm do
-        url "https://download.java.net/java/GA/jdk26.0.1/458fda22e4c54d5ba572ab8d2b22eb83/8/GPL/openjdk-26.0.1_macos-aarch64_bin.tar.gz"
-        sha256 "b2d57405194a312ed4ec6ec08e83b314d3fd2e425e895d704ec5ef8ea6059e17"
+        url "https://download.java.net/java/GA/jdk26.0.2.1/3b8e6c7ec6274148a7aa15e7e7dfb53c/1/GPL/openjdk-26.0.2.1_macos-aarch64_bin.tar.gz"
+        sha256 "3a61f9bbfbf2e09308aa4b1a5c044fcbc82f6ba49e074be49a7b7911e1f00efd"
       end
       on_intel do
-        url "https://download.java.net/java/GA/jdk26.0.1/458fda22e4c54d5ba572ab8d2b22eb83/8/GPL/openjdk-26.0.1_macos-x64_bin.tar.gz"
-        sha256 "e52bc05aefe4991329a6a103c9b42ae4b9b77240a9f9d3d12f6a7365db1ae16a"
+        url "https://download.java.net/java/GA/jdk26.0.2.1/3b8e6c7ec6274148a7aa15e7e7dfb53c/1/GPL/openjdk-26.0.2.1_macos-x64_bin.tar.gz"
+        sha256 "5ec3817530ffa1c38f15a55609a2767335bbd0c59ea8ce41aad68d3cd620c0ae"
       end
     end
     on_linux do
       on_arm do
-        url "https://download.java.net/java/GA/jdk26.0.1/458fda22e4c54d5ba572ab8d2b22eb83/8/GPL/openjdk-26.0.1_linux-aarch64_bin.tar.gz"
-        sha256 "12a3649b2f4a0c9f6491d220bdd04b4fff07cae502b435aaff46eac0e36f4df1"
+        url "https://download.java.net/java/GA/jdk26.0.2.1/3b8e6c7ec6274148a7aa15e7e7dfb53c/1/GPL/openjdk-26.0.2.1_linux-aarch64_bin.tar.gz"
+        sha256 "b96b265a4a1a36c02454148891aa58ca63303cbc2d1b7979c33b4fe99e09117b"
       end
       on_intel do
-        url "https://download.java.net/java/GA/jdk26.0.1/458fda22e4c54d5ba572ab8d2b22eb83/8/GPL/openjdk-26.0.1_linux-x64_bin.tar.gz"
-        sha256 "2f2802d57b5fc414f1ddf6648ba12cc9a6454cf67b32ac95407c018f2e6ab0b0"
+        url "https://download.java.net/java/GA/jdk26.0.2.1/3b8e6c7ec6274148a7aa15e7e7dfb53c/1/GPL/openjdk-26.0.2.1_linux-x64_bin.tar.gz"
+        sha256 "a1489256029b389ce6ee52da0de1d01496c5df1776d6870241fe4823b998ea61"
       end
     end
   end

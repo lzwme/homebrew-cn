@@ -1,8 +1,8 @@
 class OpenMpi < Formula
   desc "High performance message passing library"
   homepage "https://www.open-mpi.org/"
-  url "https://download.open-mpi.org/release/open-mpi/v5.0/openmpi-5.0.10.tar.bz2"
-  sha256 "0acecc4fc218e5debdbcb8a41d182c6b0f1d29393015ed763b2a91d5d7374cc6"
+  url "https://download.open-mpi.org/release/open-mpi/v5.0/openmpi-5.0.11.tar.bz2"
+  sha256 "e668a3c4acd50c41dc204c8a6dd98a611e0f26af89cf677577fa9be8a2698003"
   license all_of: [
     "BSD-3-Clause-Open-MPI",
     "mpich2", # opal/datatype/opal_datatype_pack_unpack_predefined.h
@@ -15,13 +15,11 @@ class OpenMpi < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "12f53b92f77349378adf7d2f936566c359ce232186897ad851017278ca90474b"
-    sha256 arm64_tahoe:       "709205b316ba4664f2038c5025116d439d41f0df3696f926550076464fe4c405"
-    sha256 arm64_sequoia:     "1eb21cdfeb0db7ef414fb8909a545749f23fc056eb85d5cf4f7c694a70c17291"
-    sha256 arm64_sonoma:      "a808ec0715fa5673e3d997b4b6ec6c5b177e3a659cea7ed1ac3b18f41466e293"
-    sha256 sonoma:            "71d9083e918fe51219277277372f8229aee62c87acc9d28a80d41d2173c9dbbc"
-    sha256 arm64_linux:       "50409b679df103d8d2be51fd02da0ab48b6827b5b586169485c1410c7a04b177"
-    sha256 x86_64_linux:      "1526af8a7f8975249b0c845cd7c86fa9871e5d23fb53bad58fd31756419ecfb6"
+    sha256 arm64_golden_gate: "dfff4ff05401c1ffea4f9b7484499e949ed0e75f1dca4b57b593d08bc281a1c6"
+    sha256 arm64_tahoe:       "d095a9ea0c14990e346727304518721a182e3303ec04d8f1768a0cc5f418748e"
+    sha256 arm64_sequoia:     "4553b1769afb3afbb1d42f7cc14f2953e3ad965549d42ca52667c6be4cc74259"
+    sha256 arm64_linux:       "717133b8d1cd6c857c244525473177f3785b33e059e66aa383d07b0278346a04"
+    sha256 x86_64_linux:      "f343a7d4e6acaa8e21b827d8ed4af0b22e927732e7cf7657821ee75548dfad11"
   end
 
   head do

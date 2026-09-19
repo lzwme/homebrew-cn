@@ -1,8 +1,8 @@
 class Node < Formula
   desc "Open-source, cross-platform JavaScript runtime environment"
   homepage "https://nodejs.org/"
-  url "https://registry.npmmirror.com/-/binary/node/v26.8.2/node-v26.8.2.tar.xz"
-  sha256 "36b37bf5ee4d092b9d9dff2d1a90b1444f8b453eddf6ff96cabdebb97d32f41d"
+  url "https://registry.npmmirror.com/-/binary/node/v26.9.0/node-v26.9.0.tar.xz"
+  sha256 "47b970d88511b429e587b740fa733176909d2a2005a29662f01b05205f58468b"
   license "MIT"
   compatibility_version 1
   head "https://github.com/nodejs/node.git", branch: "main"
@@ -13,16 +13,16 @@ class Node < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "fe6230919e4def1f5f826bae455c03c94839a195f05f5a5d87fd46f945ee513b"
-    sha256 arm64_tahoe:       "5ce9391f268deed81f0a03d03e733d4b71a5b0a0f86ae1c4f1546eba529b3261"
-    sha256 arm64_sequoia:     "3812d245042092595e0a2cbeb7eeda5ad7b5371d022e4ca3226af6b8293ea706"
-    sha256 arm64_sonoma:      "9de768818c0e39d68df01f1c3d7eb1af50fbb80f7cb2834fec1326b9411b55a9"
-    sha256 arm64_linux:       "4445d9c937905c0d13de05d76cf18f10004384c045b08147fe8c5734c64aeda5"
-    sha256 x86_64_linux:      "9a99580633172e34d94abe65eda03a0fb7f6c50bf5f118fc9247dcb4c935d7a0"
+    sha256 arm64_golden_gate: "363c34f43fadfa1464fc7d9499dc11737a5fe06e63e4c5b632771de0b90baca6"
+    sha256 arm64_tahoe:       "af32e7b3770a4baed79dc4b8cb5af8acea5f772e7f869398233b28ce6c938e6b"
+    sha256 arm64_sequoia:     "b12ff55fd070ced68018d89102934efd171d92cb001d7536784c2eff9cb2a9b4"
+    sha256 arm64_linux:       "39663980886dbab1cf829a373e1e7a8f23e4021c03b9594c751e3dff7c839b07"
+    sha256 x86_64_linux:      "43d559fe30247f7ca229965b0363e1e856c05a867d05923c9994c31e3b25963a"
   end
 
   depends_on "pkgconf" => :build
   depends_on "python@3.14" => :build
+  depends_on "abseil"
   depends_on "ada-url"
   depends_on "brotli"
   depends_on "c-ares"
@@ -30,8 +30,6 @@ class Node < Formula
   depends_on "icu4c@78"
   depends_on "libffi" # System `libffi` is missing some definitions used by node
   depends_on "libnghttp2"
-  depends_on "libnghttp3"
-  depends_on "libngtcp2"
   depends_on "libuv"
   depends_on "llhttp"
   depends_on "merve"
@@ -46,9 +44,11 @@ class Node < Formula
 
   on_macos do
     depends_on "llvm" => :build if DevelopmentTools.clang_build_version <= 1699
+    depends_on "highway"
   end
 
   on_linux do
+    depends_on "highway" => :build
     depends_on "zlib-ng-compat"
   end
 
@@ -84,9 +84,6 @@ class Node < Formula
   allow_network_access! :test
 
   def install
-    # `ncrypto.cc` uses `std::vector` but libc++ 23 dropped the transitive include
-    inreplace "deps/ncrypto/ncrypto.cc",
-              "#include <string_view>", "#include <string_view>\n#include <vector>"
     # make sure subprocesses spawned by make are using our Python 3
     ENV["PYTHON"] = python3
 
@@ -111,18 +108,18 @@ class Node < Formula
     # and corresponding formula name as these can all differ.
     {
       # flag name         sub-directory      formula name
+      "abseil"        => ["v8/third_party/abseil-cpp", "abseil"],
       "ada"           => ["ada",             "ada-url"],
       "brotli"        => ["brotli",          "brotli"],
       "cares"         => ["cares",           "c-ares"],
       "ffi"           => ["libffi",          "libffi"],
       "hdr-histogram" => ["histogram",       "hdrhistogram_c"],
+      "highway"       => ["v8/third_party/highway", "highway"],
       "http-parser"   => ["llhttp",          "llhttp"],
       "libuv"         => ["uv",              "libuv"],
       "merve"         => ["merve",           "merve"],
       "nbytes"        => ["nbytes",          "nbytes"],
       "nghttp2"       => ["nghttp2",         "libnghttp2"],
-      "nghttp3"       => ["ngtcp2/nghttp3",  "libnghttp3"],
-      "ngtcp2"        => ["ngtcp2",          "libngtcp2"],
       "openssl"       => ["openssl/openssl", "openssl@3"],
       "simdjson"      => ["simdjson",        "simdjson"],
       "sqlite"        => ["sqlite",          "sqlite"],
@@ -143,11 +140,16 @@ class Node < Formula
     # - `--shared-simdutf` seems to result in build failures.
     # - `--shared-temporal_capi` is only used when building with `--v8-enable-temporal-support`
     # - `--shared-lief` is only used for disabled SEA feature
+    # - `--shared-perfetto` is only used when building with `--with-perfetto`
+    # - `--shared-nghttp3` and `--shared-ngtcp2` are only used when building with `--experimental-quic`
     ignored_shared_flags = %w[
       gtest
       simdutf
       temporal_capi
       lief
+      perfetto
+      nghttp3
+      ngtcp2
     ].map { |library| "--shared-#{library}" }
 
     configure_help = Utils.safe_popen_read("./configure", "--help")

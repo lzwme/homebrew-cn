@@ -1708,7 +1708,7 @@ Homebrew-homebrew-core/Formula/d/dosbox-staging.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dosbox-x.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dosfstools.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dotbot.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/d/dotdrop.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/d/dotdrop.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/dotenv-linter.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dotnet.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dotnet@6.rb, Homebrew/homebrew-core, 1
@@ -7498,6 +7498,7 @@ Homebrew-homebrew-core/Formula/t/tengo.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tenv.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tenyr.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tere.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/t/termaid.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/termbg.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/termbox.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/termcolor.rb, Homebrew/homebrew-core, 1
@@ -8260,6 +8261,7 @@ Homebrew-homebrew-core/Formula/w/wordgrinder.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/wordle.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/w/wordnet.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/w/wordplay.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/w/workmux.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/worktrunk.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/worm-scraper.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/w/wormhole-william.rb, Homebrew/homebrew-core, 1
@@ -14024,6 +14026,7 @@ Homebrew-homebrew-cask/Casks/m/mural.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/murus.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/musaicfm.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/muse-code.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/m/muse.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/museeks.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/musescore.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/music-decoy.rb, Homebrew/homebrew-cask, 1
@@ -15546,6 +15549,7 @@ Homebrew-homebrew-cask/Casks/t/tangleguard-cli.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/taobao.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/tap-forms.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/taphouse.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/t/tapmap.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/tartelet.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/taskade.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/taskbar.rb, Homebrew/homebrew-cask, 1

@@ -48,13 +48,12 @@ class Libsigrok < Formula
   end
 
   bottle do
-    rebuild 4
-    sha256                               arm64_tahoe:   "6c226511f47960806234805a61c081be4951ac579cb9492c61940f92360b1b81"
-    sha256                               arm64_sequoia: "ae00fe2035dcc37cd642d351aae8f1e5670196abe63a5b618fb2e11cea120623"
-    sha256                               arm64_sonoma:  "b736c6afd2d3db63696355aa02b613237dacf115b626f384e2a97e9688990ae9"
-    sha256                               sonoma:        "9be55acc242d543e4f1d853e1d58df3f9c05840bdb3e959649c9e36a8d0194ea"
-    sha256                               arm64_linux:   "e8ee1b325f73075f927dff66d9d02c419273fb98f00084485fbabc6fa05edb1d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "28e1eeccbe1471973305c0c57cdf01e454623fdee93b47ec0a7567ac10fca17b"
+    rebuild 5
+    sha256               arm64_golden_gate: "083bc299566beece6d7f582e9a091593e598bc6dfa542247019c31c570b299e4"
+    sha256               arm64_tahoe:       "28671d372513343cd4820779e13eb1bdf10a7ba1ce51be6f032664577c165039"
+    sha256               arm64_sequoia:     "452a314ee92dd001c8eeb742e731dfe343b925dd2d4bc33f71b38730838afc9a"
+    sha256               arm64_linux:       "8bb458272a5be45e1c1f5ce0cafc710e8f2af686cdd2bcd31a32fc990c1803c0"
+    sha256 cellar: :any, x86_64_linux:      "96bd5bd71fbd75c9a6a6058ff88dff3297a447fe3b4f234a0c96a77360055320"
   end
 
   head do
@@ -94,7 +93,9 @@ class Libsigrok < Formula
     depends_on "libsigc++@2"
   end
 
-  # Fix for swig 4.4 changing the return type of %init
+  # Fix for swig 4.4 changing the return type of %init and a backport of
+  # https://github.com/sigrokproject/libsigrok/pull/303 for swig 4.5 dropping
+  # the Python 2 integer API macros
   patch :DATA
 
   def install
@@ -164,9 +165,54 @@ class Libsigrok < Formula
 end
 
 __END__
-diff --git a/bindings/python/sigrok/core/classes.i b/bindings/python/sigrok/core/classes.i
 --- a/bindings/python/sigrok/core/classes.i
 +++ b/bindings/python/sigrok/core/classes.i
-@@ -85,1 +85,1 @@ typedef guint pyg_flags_type;
+@@ -85,7 +85,7 @@
+     if (!GLib) {
+         fprintf(stderr, "Import of gi.repository.GLib failed.\n");
+ #if PY_VERSION_HEX >= 0x03000000
 -        return nullptr;
 +        return 0;
+ #else
+         return;
+ #endif
+@@ -325,8 +325,6 @@
+ {
+     enum sr_datatype type = (enum sr_datatype) key->data_type()->id();
+ 
+-    if (type == SR_T_UINT64 && PyInt_Check(input))
+-        return Glib::Variant<guint64>::create(PyInt_AsLong(input));
+     if (type == SR_T_UINT64 && PyLong_Check(input))
+         return Glib::Variant<guint64>::create(PyLong_AsLong(input));
+     else if (type == SR_T_STRING && string_check(input))
+@@ -335,8 +333,8 @@
+         return Glib::Variant<bool>::create(input == Py_True);
+     else if (type == SR_T_FLOAT && PyFloat_Check(input))
+         return Glib::Variant<double>::create(PyFloat_AsDouble(input));
+-    else if (type == SR_T_INT32 && PyInt_Check(input))
+-        return Glib::Variant<gint32>::create(PyInt_AsLong(input));
++    else if (type == SR_T_INT32 && PyLong_Check(input))
++        return Glib::Variant<gint32>::create(PyLong_AsLong(input));
+     else
+         throw sigrok::Error(SR_ERR_ARG);
+ }
+@@ -347,8 +345,6 @@
+ {
+     GVariantType *type = option->default_value().get_type().gobj();
+ 
+-    if (type == G_VARIANT_TYPE_UINT64 && PyInt_Check(input))
+-        return Glib::Variant<guint64>::create(PyInt_AsLong(input));
+     if (type == G_VARIANT_TYPE_UINT64 && PyLong_Check(input))
+         return Glib::Variant<guint64>::create(PyLong_AsLong(input));
+     else if (type == G_VARIANT_TYPE_STRING && string_check(input))
+@@ -357,8 +353,8 @@
+         return Glib::Variant<bool>::create(input == Py_True);
+     else if (type == G_VARIANT_TYPE_DOUBLE && PyFloat_Check(input))
+         return Glib::Variant<double>::create(PyFloat_AsDouble(input));
+-    else if (type == G_VARIANT_TYPE_INT32 && PyInt_Check(input))
+-        return Glib::Variant<gint32>::create(PyInt_AsLong(input));
++    else if (type == G_VARIANT_TYPE_INT32 && PyLong_Check(input))
++        return Glib::Variant<gint32>::create(PyLong_AsLong(input));
+     else
+         throw sigrok::Error(SR_ERR_ARG);
+ }

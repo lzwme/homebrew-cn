@@ -1,8 +1,8 @@
 class Mrbayes < Formula
   desc "Bayesian inference of phylogenies and evolutionary models"
   homepage "https://nbisweden.github.io/MrBayes/"
-  url "https://ghfast.top/https://github.com/NBISweden/MrBayes/releases/download/v3.2.7a/mrbayes-3.2.7a.tar.gz"
-  sha256 "1a4670be84e6b968d59382328294db4c8ceb73e0c19c702265deec6f2177815c"
+  url "https://ghfast.top/https://github.com/NBISweden/MrBayes/archive/refs/tags/v3.2.8.tar.gz"
+  sha256 "331ceb0af036d07cd8bd7091d39632f6d102d8b98c160409d19df3958db85dc2"
   license "GPL-3.0-or-later"
   head "https://github.com/NBISweden/MrBayes.git", branch: "develop"
 
@@ -12,18 +12,18 @@ class Mrbayes < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_golden_gate: "711f6adc0df538fc80a9abf9d1d71d8cb582db8e8a9eb4adf5c192aacfd1be3b"
-    sha256 cellar: :any,                 arm64_tahoe:       "7e0813e7f10eb1abadd4172e54fc18d7fac02f2a2521d3034217ea8ee99ffa04"
-    sha256 cellar: :any,                 arm64_sequoia:     "098da5cbc7c3371cbc845399356634f3373723ab9a10813af39420706adc495b"
-    sha256 cellar: :any,                 arm64_sonoma:      "3297974985b7c483dad355decca53663b6dd88f9aff0571200997b491a44d582"
-    sha256 cellar: :any,                 sonoma:            "4e22bb908f3d2fabacebe0f1896de5cc05f74b5a1bcd224fb2fa85585db5074c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "4b2aaf7489371e64e11bc0dde781218fd8b4a85a41cd7db039f2a8c377f726c1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "5b7379add8dcffcc268785b68f80f88fb0478f10c76ef139b43b0c6983e30675"
+    sha256 cellar: :any, arm64_golden_gate: "2198adef427b45f96b95d14dcba9b9e30e857f643212e96c4c3435ee9e48d774"
+    sha256 cellar: :any, arm64_tahoe:       "c9871b950fc0607aaf979461cf5d067c01f670f8ebac0ceaa9ee2be6d5c2faf4"
+    sha256 cellar: :any, arm64_sequoia:     "85913540941f7795ca1dffb21cda7a1b13f4966bbe45efff26283a412fe2e363"
+    sha256 cellar: :any, arm64_linux:       "fa29744a5aa6b88758e48035f6f5e02507ef0161d623b72f7f415921c2dff1c8"
+    sha256 cellar: :any, x86_64_linux:      "1d68660d7a570f0f14d90c5dd10cc198e6e086f7742680adceecedfa9bd5869e"
   end
 
   depends_on "pkgconf" => :build
   depends_on "beagle"
   depends_on "open-mpi"
+
+  deny_network_access!
 
   def install
     args = ["--with-mpi=yes"]

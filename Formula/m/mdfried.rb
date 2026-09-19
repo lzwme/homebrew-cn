@@ -1,8 +1,8 @@
 class Mdfried < Formula
   desc "Terminal markdown viewer"
   homepage "https://github.com/benjajaja/mdfried"
-  url "https://ghfast.top/https://github.com/benjajaja/mdfried/archive/refs/tags/v0.22.5.tar.gz"
-  sha256 "366f904940ff5e4863ab85862cc126d111c16dd83578d2a144d91dac2a09e43b"
+  url "https://ghfast.top/https://github.com/benjajaja/mdfried/archive/refs/tags/v0.22.6.tar.gz"
+  sha256 "143518acf0765e1cc4425b28b9d8059a6097ee08a6690dcf052e906b5a3947bb"
   license "GPL-3.0-or-later"
   head "https://github.com/benjajaja/mdfried.git", branch: "master"
 
@@ -12,13 +12,11 @@ class Mdfried < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "0ab35962a9c4d70102044b2ab4335f680fff9a27fa385af965191bde5c6b1c7c"
-    sha256 cellar: :any, arm64_tahoe:       "c2db802211a4d6f9a76bb599951aaadbae197003f626e5f1e9036049ef2676f1"
-    sha256 cellar: :any, arm64_sequoia:     "9c4e5ddc51ac46a8b8914f1cc9a780808723c03fc3107e40362c85b11898da37"
-    sha256 cellar: :any, arm64_sonoma:      "b212375ad181005a6e3f4339332120cfd30ee368ab70dc667d5dbb82933683d1"
-    sha256 cellar: :any, sonoma:            "fbdfe32caf1b703b5e3e3dde8cc6e88f9752c2aae4d55c1ac1fad1270dec56cf"
-    sha256 cellar: :any, arm64_linux:       "ec8147d82bc0077ae71d6053e9613d6da763b875335ed864c9a132db5dce8253"
-    sha256 cellar: :any, x86_64_linux:      "798de72d8f2233249b4d9277359e2becf9f49132020da1bcb33b3b82051de5b4"
+    sha256 cellar: :any, arm64_golden_gate: "7e56b5ab30776c4a7d8a2781a4021b35f8c52f063bb48a4b6bb034dafab57731"
+    sha256 cellar: :any, arm64_tahoe:       "8200f4462d736797dd8b7c6bff2aaf8c84e35f6fe4077d996d183d1ccd103c4a"
+    sha256 cellar: :any, arm64_sequoia:     "0647a10c1b056efbd57ca9e0a35375224ce85e71231be509c90ece227cdf9ff0"
+    sha256 cellar: :any, arm64_linux:       "b8ecc6a2d156844ebf351d5f7ee673b05ab81b926545c5110ac033f7d08c0cc6"
+    sha256 cellar: :any, x86_64_linux:      "c159158f8b6583e2cb249bf3d38bdfe7e7f80b4c35ff4ef150afc4c37b0e04c0"
   end
 
   depends_on "pkgconf" => :build
@@ -28,6 +26,12 @@ class Mdfried < Formula
   on_macos do
     depends_on "gettext"
     depends_on "glib"
+  end
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", "--locked", "--target", "host-tuple"
   end
 
   def install

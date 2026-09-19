@@ -29,6 +29,8 @@ class Autossh < Formula
 
   patch :DATA
 
+  deny_network_access!
+
   def install
     system "./configure", "--prefix=#{prefix}", "--mandir=#{man}"
     system "make", "install"

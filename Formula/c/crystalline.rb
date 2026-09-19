@@ -1,19 +1,16 @@
 class Crystalline < Formula
   desc "Language Server Protocol implementation for Crystal"
   homepage "https://github.com/elbywan/crystalline"
-  url "https://ghfast.top/https://github.com/elbywan/crystalline/archive/refs/tags/v0.19.0.tar.gz"
-  sha256 "7cab91e23bf2e7d87ab3e63c60a555507a00da709af1fad5fe55de44dadea71a"
+  url "https://ghfast.top/https://github.com/elbywan/crystalline/archive/refs/tags/v0.20.0.tar.gz"
+  sha256 "8693e91c0f2afa9afa66885aa2bbdc971e539ff95e3d89b2f5d499d07acad02d"
   license "MIT"
-  revision 1
 
   bottle do
-    sha256 arm64_golden_gate: "895bccb231b8082e39eb21d2ebec8e0dab2ed7a4c75dc43116ade17cefde11bd"
-    sha256 arm64_tahoe:       "f07c7d13ef5fdf413d9258e4a4c421163c8a821c7853d7c03ad15f34c4b28af5"
-    sha256 arm64_sequoia:     "77134e5b99a0c697210112504b1e499313858cc3c4ce6ad34ccd186577b16652"
-    sha256 arm64_sonoma:      "1dd71e2bfe371c7af0f60db6932fa708bbfec066de4220695f44529e207e5d69"
-    sha256 sonoma:            "005a9d70afbd4d50f30a92594270775dd0e44648b6b4c514ef3222ea7807dd4b"
-    sha256 arm64_linux:       "1a8246f537582e818bd14d55345edbd691605d83fd6dc79fb1b3cd165455484c"
-    sha256 x86_64_linux:      "c469a271f9fb95142f7bd22971e3f0785f088af26b6d9134e7516c6262ecc418"
+    sha256 arm64_golden_gate: "9dbee58249b91669e31b946cbbbdb5047a749e110c39506f381e1c265d4accef"
+    sha256 arm64_tahoe:       "53ee7da763c8fc480e2808debfbd0cd0606b8ec2c024a493bd816c6fdf49223e"
+    sha256 arm64_sequoia:     "a9bf68068f4926e1440f634f3c9b3363d30d13deb052b652656781947e52c404"
+    sha256 arm64_linux:       "6dec77b52072ddfbdcb23f290ad40b53aecf159cde525ce4dff7668382c4fea5"
+    sha256 x86_64_linux:      "9857bd43467e458008b04b7ae5701475b280d23fef6dc34412784db199fe8cb1"
   end
 
   depends_on "bdw-gc"
@@ -23,8 +20,13 @@ class Crystalline < Formula
   depends_on "llvm@22"
   depends_on "pcre2"
 
+  deny_network_access!
+
+  def fetch
+    system "shards", "install", "--production", "--skip-postinstall"
+  end
+
   def install
-    system "shards", "install"
     system "crystal", "build", "./src/crystalline.cr",
       "--release", "--no-debug",
       "-Dpreview_mt",

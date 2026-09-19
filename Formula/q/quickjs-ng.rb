@@ -1,24 +1,24 @@
 class QuickjsNg < Formula
   desc "QuickJS, the Next Generation: a mighty JavaScript engine"
   homepage "https://quickjs-ng.github.io/quickjs/"
-  url "https://ghfast.top/https://github.com/quickjs-ng/quickjs/archive/refs/tags/v0.16.2.tar.gz"
-  sha256 "97c80625b26775a4c7ca618c004d4ea24cf99cbf867e4eba78bd927a8b23d106"
+  url "https://ghfast.top/https://github.com/quickjs-ng/quickjs/archive/refs/tags/v0.17.0.tar.gz"
+  sha256 "559bc4c420475e55c7ab4510adbc562f55d7524d75e8e89d79ce4bb02f5687d9"
   license "MIT"
   head "https://github.com/quickjs-ng/quickjs.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "65522381bb4cbd13dea788907c7a3ed9551172146d15b8dba4827e26732f8618"
-    sha256 cellar: :any, arm64_tahoe:       "327df6140b60c1d789a19cd54cbca7b312d848c8a49cae6811da3871fd4bd36c"
-    sha256 cellar: :any, arm64_sequoia:     "1680ff159fe8cd1bf165d9c9e14e4b18016b22d86ad80e1e141b27486d14fbc9"
-    sha256 cellar: :any, arm64_sonoma:      "620c075bd10521dce17054de8c0ece535bc6fcebefff80b24cb9ec0cd8fd7be1"
-    sha256 cellar: :any, sonoma:            "c2f6908934519b040c6858ff60bef626e6536897667c0c17fceb3ab92a182065"
-    sha256 cellar: :any, arm64_linux:       "4a304e2998f8821529bb935c573c70f48be8d0f6783d26989d8788d7f09cde03"
-    sha256 cellar: :any, x86_64_linux:      "6b64f396cf94c0b8bb6f5cb38b2c491303e1b4c64a29a6679ddd33f523420486"
+    sha256 cellar: :any, arm64_golden_gate: "d16d3608d538b1b61f2fbc062a117d88dfb1f2857b99b43867bfd064d57ddebc"
+    sha256 cellar: :any, arm64_tahoe:       "87f8466998b94688d6991b40c1682f9dc44d1c83ea8d6fecee2e15eb00288983"
+    sha256 cellar: :any, arm64_sequoia:     "3b7ee057b20abf6a32ce66387946cb95037446c820032e9d9e2b7088f28e87a8"
+    sha256 cellar: :any, arm64_linux:       "ad399022c60c13a8b1bea2c72ef6dcacf6de9c46ce0b0d420fdabc621e39cf84"
+    sha256 cellar: :any, x86_64_linux:      "a8882caaf9b102caeccfa98a4cdbcb549ffad6fc41cefdf1fc6a247f26cb424d"
   end
 
   depends_on "cmake" => :build
 
   conflicts_with "quickjs", because: "both install a `qjs` binary"
+
+  deny_network_access!
 
   def install
     system "cmake", "-S", ".", "-B", "build",

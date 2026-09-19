@@ -1,8 +1,8 @@
 class Pnetcdf < Formula
   desc "Parallel netCDF library for scientific data using the OpenMPI library"
   homepage "https://parallel-netcdf.github.io/index.html"
-  url "https://parallel-netcdf.github.io/Release/pnetcdf-1.15.0.tar.gz"
-  sha256 "39813fe91ec901c7cfca3212731edbb5201029ebf55caeaaaa08d9e33c6bad65"
+  url "https://parallel-netcdf.github.io/Release/pnetcdf-1.15.1.tar.gz"
+  sha256 "169c6adab08ba49154f14261225992601c573971b823c2066008a8ff57973f8a"
   license "NetCDF"
 
   livecheck do
@@ -11,19 +11,19 @@ class Pnetcdf < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "324f4e6b1eec63f27f6754b6c49f29fe7c9e54ef9c217e6617ee67fd578874b5"
-    sha256 arm64_tahoe:       "3e099c299cd39a2e9ec03b607f1e4e790ea3d57efff82a62447eeb707a1b25fc"
-    sha256 arm64_sequoia:     "6930f5b42b302421a98a35eade739c28180ff1d6ec327643924a0565ea55de1b"
-    sha256 arm64_sonoma:      "4c0380dff4533ae2bd1ab9f83bcd74e9df84f5e7cf4591fd893b19862401dd2d"
-    sha256 sonoma:            "41df2dee0ffa0db39829510ce306110b1892e3caa9219f298c8161e7d714ea47"
-    sha256 arm64_linux:       "793ed327d2a4b2f1eaf269652cc7daf9e9ee71c15ed6d3790761085c1f533599"
-    sha256 x86_64_linux:      "439b71f099c530df58080a4fa6a3c0bf9fa6e0e5a286025b6ad105455b2114f4"
+    sha256 arm64_golden_gate: "0b71509e01f93cc7e846ebfbd5141c75bbf673c77155026cc79c27771ffa2482"
+    sha256 arm64_tahoe:       "521e5af7ae603eed617aa27e55fab4459944cf0d81393537759295c1e959e487"
+    sha256 arm64_sequoia:     "26c745ad7dec7dcda1ee1b5ade59a545bed659d2a0e30b8df27ac7f18c104b87"
+    sha256 arm64_linux:       "4845d6748856a9f7b8fae2eba47ad5bc7b1bbd4441d1ee164ef0d7586ca7b9d6"
+    sha256 x86_64_linux:      "a19b3da41ab1828ed5751fe1ea82b966d4c4b1b7913ba28a2c8f40360375b2b4"
   end
 
   depends_on "gcc"
   depends_on "open-mpi"
 
   uses_from_macos "m4" => :build
+
+  deny_network_access!
 
   def install
     system "./configure", "--disable-silent-rules",

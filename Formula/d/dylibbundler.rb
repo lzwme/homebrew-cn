@@ -22,6 +22,8 @@ class Dylibbundler < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:      "b8c2ea435fa7ee838cc3fa07684b4f1b68ac5f65a224c7b5860b5bf06d254f50"
   end
 
+  deny_network_access!
+
   def install
     system "make"
     bin.install "dylibbundler"

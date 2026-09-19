@@ -1,8 +1,8 @@
 class Proxygen < Formula
   desc "Collection of C++ HTTP libraries"
   homepage "https://github.com/facebook/proxygen"
-  url "https://ghfast.top/https://github.com/facebook/proxygen/releases/download/v2026.07.27.00/proxygen-v2026.07.27.00.tar.gz"
-  sha256 "f9293844b00001549dcba2c10d453ccc2af268a45b52a31c622b543ee0cfe7e9"
+  url "https://ghfast.top/https://github.com/facebook/proxygen/releases/download/v2026.09.14.00/proxygen-v2026.09.14.00.tar.gz"
+  sha256 "e539c8bcb9a3ebe0ac71ef0ce4bf645508dc84404029c02b28bdde38e07c51aa"
   license "BSD-3-Clause"
   head "https://github.com/facebook/proxygen.git", branch: "main"
 
@@ -12,13 +12,11 @@ class Proxygen < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "8dc10d9ca72d13c256e6c1140b3a46a9f32b2607db325c85c6275d12286f32fe"
-    sha256 cellar: :any, arm64_tahoe:       "969cc065653958e34e6e69e774e5bac9462958bb02d7b33b2f964aa8a2b0ebda"
-    sha256 cellar: :any, arm64_sequoia:     "7bbcd2f81d69dea5c5563b36b933faf36398255e7f439f01a1ff95b11d374bf0"
-    sha256 cellar: :any, arm64_sonoma:      "5d52bf0644406a742adefe8aed3d6c00f4b308e6e264c639d05ac8346592305f"
-    sha256 cellar: :any, sonoma:            "6a117d96fb0b944cb5f99a6b43c7d5d9727d33b232cfbb6dd6cc07c749e6a81d"
-    sha256 cellar: :any, arm64_linux:       "69679b7f048fe80b8884d3385a6ac5729c9bc68aa87f6c6efdfec22e844e3db0"
-    sha256 cellar: :any, x86_64_linux:      "02bc3fd314ae4743c21a57c05070b50d26e482b51df93c0346b0793d0e2eb9fd"
+    sha256 cellar: :any, arm64_golden_gate: "0d10d6a95f62731e42598c8f22316cfaf9f17640a1922c3b06dcedcc8cef4acd"
+    sha256 cellar: :any, arm64_tahoe:       "a3ceea1a68325cf1eb541a13ca8745c610d5ac9b598e4ea1e9723fbf63b4caa0"
+    sha256 cellar: :any, arm64_sequoia:     "49ffa2a1dda9853044500df7e3f853622def4694ab4e2ebd4561ce5ddb47424b"
+    sha256 cellar: :any, arm64_linux:       "1f4846fa722a57e368e6d4eb733c208710b6330c15bbeb47facab6e0efcc4674"
+    sha256 cellar: :any, x86_64_linux:      "c76f23fb08924fcbac877a62668dc15abfbfbf457e7477bf5c7ffe8d2ab9aef7"
   end
 
   depends_on "boost" => :build

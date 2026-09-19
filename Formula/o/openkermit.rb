@@ -1,8 +1,8 @@
 class Openkermit < Formula
   desc "Scriptable network and serial communication for UNIX and VMS"
   homepage "https://www.openkermit.org/"
-  url "https://ghfast.top/https://github.com/openkermit/ckermit/archive/refs/tags/v11.0.509.tar.gz"
-  sha256 "628f756a93dc366dd3f51954e11fe6d6d80c00b6f0aace0efc2487f64abe67bf"
+  url "https://ghfast.top/https://github.com/openkermit/ckermit/archive/refs/tags/v11.0.510.tar.gz"
+  sha256 "8be27f47dd9c303a697190fee847e62f2394248752638acc65c26d8a078a727c"
   license "BSD-3-Clause"
 
   livecheck do
@@ -11,13 +11,11 @@ class Openkermit < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "838760d2aa6b6bbc8ccffe5526f30dade3f3abc5dc75f58c0261bf0dc89c3ffb"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "664063edb5f7590c9de44b548d61896e551f775bfae2d4bb808dc2a7548bcfad"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "fe3463c097de830c9f0782a95c70ceddbbbcff8d2bc45071cac64692ff528406"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "88c22b6cb44241014f4c2420444884a6369c5322c468b5071442c6bc0211db10"
-    sha256 cellar: :any_skip_relocation, sonoma:            "c4d64c74de7fcb26c74b636fc590685a7e365d6f11a9ef2ebb32f3e1df833af7"
-    sha256 cellar: :any,                 arm64_linux:       "5e79bcf4c51eeff886789a939bf817881e7db4be5976891fac3dc6a36a3ae8dc"
-    sha256 cellar: :any,                 x86_64_linux:      "39423bf1bb25c8ab3a2b506dee36a4263133424a0175ec0f33662bccb79786f8"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "3429addf13648c49362d84475061bad9fe8abc73b68a0594ad091a1e9e9fa734"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "d50ac411978cb492196edcc76eaf3d8e7dd85597d0dc0bb8c2435a229fb9d286"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "47c833396f33a69e725b22c1204214329d873d3262c1b6dd89ff6fa009a20da5"
+    sha256 cellar: :any,                 arm64_linux:       "e1100f63e42e84fb95985847503034bfabf81b5ab6b6fe88ff3793b5726a15db"
+    sha256 cellar: :any,                 x86_64_linux:      "4a0c12ee31c5897e86252d210255d465623ec3a48aeab5bdcb6b663f448bc5c3"
   end
 
   uses_from_macos "libxcrypt"

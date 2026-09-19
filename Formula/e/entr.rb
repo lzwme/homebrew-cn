@@ -21,6 +21,8 @@ class Entr < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:      "be565d82b4b77bda77413c369cce336b188cb752a74c21a75ac87a227b8fb60a"
   end
 
+  deny_network_access!
+
   def install
     ENV["PREFIX"] = prefix
     ENV["MANPREFIX"] = man

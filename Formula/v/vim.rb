@@ -56,6 +56,8 @@ class Vim < Formula
 
   def extra_deps = deps.select { |dep| dep.build? && dep.test? }
 
+  deny_network_access!
+
   def install
     ENV.prepend_path "PATH", formula_opt_libexec("python@3.14")/"bin"
 

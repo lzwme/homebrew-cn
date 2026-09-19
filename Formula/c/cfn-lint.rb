@@ -3,16 +3,16 @@ class CfnLint < Formula
 
   desc "Validate CloudFormation templates against the CloudFormation spec"
   homepage "https://github.com/aws-cloudformation/cfn-lint/"
-  url "https://files.pythonhosted.org/packages/73/da/e419b9775114b082e089e3856ba64b27ed1d16c100e9bdf09b844ca7ba08/cfn_lint-1.56.3.tar.gz"
-  sha256 "cdca8797e33aad72c2eb94b49cb4b129cd1cd4309f7376c109d4d9446605bf41"
+  url "https://files.pythonhosted.org/packages/78/73/98d18ce1fbc2fba31ea38415faca85fe4f54f7d177a5dd9c7d4434dacca4/cfn_lint-1.57.0.tar.gz"
+  sha256 "0328f10652a3d3e8d3586f32d063c53bdd69d3b8b8f4cfa422bef241c6e0acc1"
   license "MIT-0"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "3682880eb599410f167adca2cd2407c5ddac3563524fcd5168f93b9916f1a467"
-    sha256 cellar: :any, arm64_tahoe:       "aeff92d165b1f4736cfcf49c944d732d4d9efd8837c2ce27852805d803f029c3"
-    sha256 cellar: :any, arm64_sequoia:     "dd2061ef1e64abfc4dbac1d26220bb85ca813afbd0907c35f17d51b6c9db4e7f"
-    sha256 cellar: :any, arm64_linux:       "d59656f26738c13c59a10cad628538a1edef72aeda30f287f5510efe307691e8"
-    sha256 cellar: :any, x86_64_linux:      "3a784ae08239870abc4604574b6b5b323b3f7715b3684bee7dfd47b4bf55379b"
+    sha256 cellar: :any, arm64_golden_gate: "ed7f281dc210766b89790c3e83b267f266cfafa6d75b81ba1305d3eae9b9990d"
+    sha256 cellar: :any, arm64_tahoe:       "16d3b12c6ffd3cb27710adfaf280ae7e381b83e5d7b29ec2453c0ef5638c8f0d"
+    sha256 cellar: :any, arm64_sequoia:     "c97dc7af10dd92bc34c26673a49f178701c0b5cf3f00e3c9239e4f4d72f76453"
+    sha256 cellar: :any, arm64_linux:       "d88c2d47d84598c348112948dfe1e942e3fe0ee5f1ff5d9c51f69abde0b21eda"
+    sha256 cellar: :any, x86_64_linux:      "b1407bd9ecabfb150705ed3328e7adbf268a84bd70ed2d2c88a98f9fc301f5d3"
   end
 
   depends_on "libyaml"

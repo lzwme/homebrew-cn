@@ -6,6 +6,11 @@ class Iowow < Formula
   license "MIT"
   head "https://github.com/Softmotions/iowow.git", branch: "master"
 
+  # TODO: remove if undeprecated
+  livecheck do
+    url :stable
+  end
+
   bottle do
     sha256 cellar: :any, arm64_tahoe:   "4dac6d27bde72bded22b86df1abc9a6e8b15cf9aec1b06600264d8865e999f3d"
     sha256 cellar: :any, arm64_sequoia: "a8bdcd631fcc6a10ac91ca6b7bc102a067b83e4c08a0b972dce7107dcb7e54ee"
@@ -13,6 +18,10 @@ class Iowow < Formula
     sha256 cellar: :any, arm64_linux:   "c1cf5c964e9c976f4fd37bb9e6fa3c880e6f70fc2b9d1b9169250eeae7a94965"
     sha256 cellar: :any, x86_64_linux:  "1e84629f06d514f9af58691b2b5ecfd2f4eb391fdf2920bc5a8baa5b6952e863"
   end
+
+  # TODO: Can be considered for undeprecation on new release
+  deprecate! date: "2026-09-18", because: :checksum_mismatch
+  disable! date: "2027-09-18", because: :checksum_mismatch
 
   depends_on "pkgconf" => :build
 

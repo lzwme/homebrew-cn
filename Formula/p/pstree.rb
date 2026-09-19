@@ -24,6 +24,8 @@ class Pstree < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:      "d65aff524b410c2ea45556fad2e5b07b9052896c07ee386fc6213208fdc7bc43"
   end
 
+  deny_network_access!
+
   def install
     system "make", "pstree"
     bin.install "pstree"

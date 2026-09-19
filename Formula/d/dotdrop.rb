@@ -3,19 +3,18 @@ class Dotdrop < Formula
 
   desc "Save your dotfiles once, deploy them everywhere"
   homepage "https://github.com/deadc0de6/dotdrop"
-  # TODO: Restore pypi url: https://github.com/deadc0de6/dotdrop/pull/475
-  url "https://ghfast.top/https://github.com/deadc0de6/dotdrop/archive/refs/tags/v1.17.0.tar.gz"
-  sha256 "e4716796eb8a8605d37a92fd7c9056f9faabaab45b3407f9fff034b50093af2a"
+  url "https://files.pythonhosted.org/packages/db/82/ba348f6732bbf8280b44cdef2059319270d4a856ceae1745256106c4f086/dotdrop-1.17.0.tar.gz"
+  sha256 "fb2617d0283760536ab70ef291596d8a87cebc597b8d3d7237a09d77f0ce9fd4"
   license "GPL-3.0-or-later"
   head "https://github.com/deadc0de6/dotdrop.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "bf2818bd58c0d61fe54f01774fb1abd85462d876675d24138577a84fb00fce30"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "ec499a7309db5115a19d2ca70a4cad3a4090a0db2fb0d31c9c363f35fdede723"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "d99833bd369f86b4dfe6263408515bd1237611c999c2468a76189e0865c8f126"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "d8728b3d4e9d3ef7eea5b8960ef6645caa6512766c56fd8d7e0a8a990a2b8325"
-    sha256 cellar: :any,                 arm64_linux:       "927a05764a648bf582735882c056485f44092e3e6b513d8430cebf92943d7bf4"
-    sha256 cellar: :any,                 x86_64_linux:      "c114fd1b339546eebf3e6f9a67c19e3286316810be99eb9051a7cd5b30da91fe"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "93f91909ac173bde09172105fc6dc3b9380eb6444d053aa2693ae27fbee22db5"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "0bb82b25fbc48f3defaf89e95fb90629eafc820f709174a6ef588315d974e9a2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "6504e17bab94d13b2cfd2d4753602020a7111b6be5a06626bca5f42481b5f034"
+    sha256 cellar: :any,                 arm64_linux:       "abc52db35c899cc193a3ac393b22b76b7e9297feeb6b3f567d6fe029304f585d"
+    sha256 cellar: :any,                 x86_64_linux:      "3431ecdcf0851bd3515aab65c818c0237b5315484e1454e52a436a62791b5675"
   end
 
   depends_on "certifi" => :no_linkage

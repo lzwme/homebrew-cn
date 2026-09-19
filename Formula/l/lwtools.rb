@@ -19,6 +19,10 @@ class Lwtools < Formula
     sha256 cellar: :any,                 x86_64_linux:  "aeb524b30f7e8867525e95cc255fbac0b62902a692d1b6b18488195733978689"
   end
 
+  # TODO: Can be considered for undeprecation on new release
+  deprecate! date: "2026-09-18", because: :checksum_mismatch
+  disable! date: "2027-09-18", because: :checksum_mismatch
+
   def install
     system "make"
     system "make", "install", "PREFIX=#{prefix}"

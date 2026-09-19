@@ -31,6 +31,8 @@ class ProxychainsNg < Formula
     sha256 x86_64_linux:      "72117ba62cdda573a388e3ba19b52a7991fb941237197f624249a906db414c47"
   end
 
+  deny_network_access!
+
   def install
     system "./configure", *std_configure_args, "--sysconfdir=#{etc}"
     system "make"

@@ -27,6 +27,8 @@ class Miniupnpc < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:      "21e083d283863e771c6927a44ad88f565f0c4af7b9448a96f99af0c773d66f8e"
   end
 
+  deny_network_access!
+
   def install
     # When building from head we have to cd into the miniupnpc directory
     build_dir = build.head? ? "miniupnpc" : "."

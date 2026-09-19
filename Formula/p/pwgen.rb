@@ -21,6 +21,8 @@ class Pwgen < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:      "d869f0f3b08bf09648754a037fedc9a729b1b5e718bc366e2cf9a7cca2861813"
   end
 
+  deny_network_access!
+
   def install
     system "./configure", "--disable-debug", "--disable-dependency-tracking",
                           "--prefix=#{prefix}",

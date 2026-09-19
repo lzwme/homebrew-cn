@@ -8,12 +8,13 @@ class GnomeBuilder < Formula
 
   bottle do
     rebuild 1
-    sha256 arm64_tahoe:   "82adf89ed4bc89f83e846a4c12a47f3f99bf21ed637b6cc73686dea62a860b42"
-    sha256 arm64_sequoia: "119151b397a7577f8726b6f0fc6fde53c59416e2b0d4fba2692b9c23b375618a"
-    sha256 arm64_sonoma:  "d01b7896e6b8aadfe27f4d4b867a58341b02f5fac7dccecc1fd2e900a68cff76"
-    sha256 sonoma:        "fb653d68e57b0faff070eec61216cec2184d43cd7d0e5b6da67378b4c39fd4ca"
-    sha256 arm64_linux:   "61cc2bbf19babe959024f950b4d222ac6741a55a71e1673fdf1f717b311ae196"
-    sha256 x86_64_linux:  "76704c6bea1bf2317ff332733759cbf8b72235b3d0f55794abb9fa477a6e447c"
+    sha256 arm64_golden_gate: "555c22b9b54b91bbe0dfa54315d3db399de78a27156e79783c31e1b782fa6c24"
+    sha256 arm64_tahoe:       "82adf89ed4bc89f83e846a4c12a47f3f99bf21ed637b6cc73686dea62a860b42"
+    sha256 arm64_sequoia:     "119151b397a7577f8726b6f0fc6fde53c59416e2b0d4fba2692b9c23b375618a"
+    sha256 arm64_sonoma:      "d01b7896e6b8aadfe27f4d4b867a58341b02f5fac7dccecc1fd2e900a68cff76"
+    sha256 sonoma:            "fb653d68e57b0faff070eec61216cec2184d43cd7d0e5b6da67378b4c39fd4ca"
+    sha256 arm64_linux:       "61cc2bbf19babe959024f950b4d222ac6741a55a71e1673fdf1f717b311ae196"
+    sha256 x86_64_linux:      "76704c6bea1bf2317ff332733759cbf8b72235b3d0f55794abb9fa477a6e447c"
   end
 
   depends_on "desktop-file-utils" => :build
@@ -54,6 +55,9 @@ class GnomeBuilder < Formula
     cause "https://gitlab.gnome.org/GNOME/gnome-builder/-/issues/2176"
   end
 
+  # FIXME: https://gitlab.gnome.org/GNOME/gnome-builder/-/work_items/2415
+  patch :DATA
+
   def install
     # Prevent Meson post install steps from running
     ENV["DESTDIR"] = "/"
@@ -82,3 +86,31 @@ class GnomeBuilder < Formula
     assert_equal "GNOME Builder #{version}", shell_output("#{bin}/gnome-builder --version").strip
   end
 end
+
+__END__
+diff --git a/meson.build b/meson.build
+index 384a2e8de..fcbca4f97 100644
+--- a/meson.build
++++ b/meson.build
+@@ -351,6 +351,8 @@ else
+ endif
+ 
+ check_functions = [
++  ['HAVE_PIPE2', 'pipe2'],
++
+   # pty
+   ['HAVE_GRANTPT', 'grantpt'],
+   ['HAVE_POSIX_OPENPT', 'posix_openpt'],
+diff --git a/src/libide/threading/ide-unix-fd-map.c b/src/libide/threading/ide-unix-fd-map.c
+index 47f604727..0a69094dd 100644
+--- a/src/libide/threading/ide-unix-fd-map.c
++++ b/src/libide/threading/ide-unix-fd-map.c
+@@ -422,7 +422,7 @@ ide_unix_fd_map_steal_from (IdeUnixFDMap  *self,
+   return TRUE;
+ }
+ 
+-#ifdef __APPLE__
++#ifndef HAVE_PIPE2
+ static int
+ pipe2 (int      fd_pair[2],
+        unsigned flags)

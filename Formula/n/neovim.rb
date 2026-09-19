@@ -106,6 +106,8 @@ class Neovim < Formula
     depends_on "gettext"
   end
 
+  deny_network_access!
+
   def install
     if build.head?
       cmake_deps = (buildpath/"cmake.deps/deps.txt").read.lines

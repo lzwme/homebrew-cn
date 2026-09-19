@@ -1,20 +1,22 @@
 class WhodbCli < Formula
   desc "Database management CLI with TUI interface, MCP server support, AI, and more"
   homepage "https://whodb.com/"
-  url "https://ghfast.top/https://github.com/clidey/whodb/archive/refs/tags/0.127.0.tar.gz"
-  sha256 "dfa1207f62c7a78e2d796c395272932b443742e43f0faa30d1c826dfd07b19aa"
+  url "https://ghfast.top/https://github.com/clidey/whodb/archive/refs/tags/0.129.0.tar.gz"
+  sha256 "b2cada31f6c2b324585572b00099c7cee78cd1d57eadc2a04cd67dcf3cd3b046"
   license "Apache-2.0"
   head "https://github.com/clidey/whodb.git", branch: "main"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "20230b0e256d4b29f7416444b887b7b0318fe3fda3e9d23d4d67b68eb7efa386"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "1050143e72a6976d6ddd3b71c94355e87a0d44e52d5609153159bf13bae6fc4f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "ab0c1f688dead9781bc4a3bcb512069344d7b1dc57151a8cd374a17603d2744e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "5e4777273c8acb52eac0f43dda41cc0c1d0add886197ee317e943c0fbe8a7598"
-    sha256 cellar: :any_skip_relocation, sonoma:            "67064c262901e81939dfa9e83f9fbe1507e7be38fc7c20f20404b11c8d0224c1"
-    sha256 cellar: :any,                 arm64_linux:       "649ca07c37c9b6ae4276bc1d3c22786adfe3861d464ed358d77ab15d6c07808d"
-    sha256 cellar: :any,                 x86_64_linux:      "e9139e5712b381025e2a539153eb4ff7b0a2c74349f3f860fa18741efa2fc146"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "4a6352983afe7cb73a7d5758b596f90ae65e90233353af63f13750bdbedc6297"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "bd705ab87cc82f4e0ad33305687f7d1fa9549cb2296c5209767f250c62a37a68"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "af419fbf4fc44144d57a825f9ffe56b4ed0a1bb0ee2a2db6c2006da784b86c49"
+    sha256 cellar: :any,                 arm64_linux:       "56b4df808553be1bb983619b4e1c84abc43039ad5a428366a0cc0e157cf14334"
+    sha256 cellar: :any,                 x86_64_linux:      "79e5d7ae4eae5873416ac393e449889a7cd827f24bf3f693a87762a5141fde5b"
   end
 
   depends_on "go" => :build

@@ -18,14 +18,16 @@ class Sdcc < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "6d47098872badfc3dc3cef80a3919b0dfdfcae1bc3836c5aa390ce86591ef501"
-    sha256 arm64_tahoe:       "12879efac9fd9db3e0ffc661cb7f474071306e0a3b3b04fd6d0454b44127897f"
-    sha256 arm64_sequoia:     "fdf93768b166020bebfab447bff7abdc86598d22ead0716c7e72e9e9e2694d34"
-    sha256 arm64_linux:       "101cc977ff15708ead6b93c085db2d1cd5437f9dc5cacdf1d047952f8c9498fd"
-    sha256 x86_64_linux:      "db5e0835f4396e95209c015955d3e9424b24512f68533dd89afe995e3df0e51e"
+    rebuild 1
+    sha256 arm64_golden_gate: "37dfb62fc92f063a5ef482b2872c2943a02db6b8101207ef27a5368cdce24c07"
+    sha256 arm64_tahoe:       "0e768549a12987be316142abbf9e2a9d7a3d9cfd29896152f0a5e20f602eda2c"
+    sha256 arm64_sequoia:     "5f0e5cc88c1481d32c3c6b034143bff0011c78b9dd8e3ccd196e2f8a76e8cac6"
+    sha256 arm64_linux:       "876ce7ee8975df84fb5fd2339e955f28439a435ddffa06657140ee83ea9b5f3e"
+    sha256 x86_64_linux:      "15ffb6a5bb6d3d149f6d6fc1c841361990914374127a738f84074aff1ea403cb"
   end
 
   depends_on "boost" => :build
+  depends_on "binutils" => :test # to check for conflicts
   depends_on "gputils"
   depends_on "readline"
 
@@ -45,11 +47,19 @@ class Sdcc < Formula
   end
 
   def install
-    system "./configure", "--disable-non-free", "--without-ccache", *std_configure_args
+    args = %w[
+      --disable-install-libbfd
+      --disable-nls
+      --disable-non-free
+      --without-ccache
+    ]
+    system "./configure", *args, *std_configure_args
     system "make", "install"
     elisp.install bin.glob("*.el")
     # FIXME: sdbinutils prefixes every tool except the demangler, which clashes with `binutils`
     mv bin/"c++filt", bin/"sdc++filt"
+    # Remove info files that are part of binutils
+    rm_r(info)
   end
 
   test do

@@ -4,6 +4,7 @@ class TinyRemapper < Formula
   url "https://maven.fabricmc.net/net/fabricmc/tiny-remapper/0.14.1/tiny-remapper-0.14.1-fat.jar"
   sha256 "3d54d68fc747e0799f1080833aad2196fae8007ee9d588e5663dbc1258ff544b"
   license "LGPL-3.0-only"
+  revision 1
 
   livecheck do
     url "https://maven.fabricmc.net/net/fabricmc/tiny-remapper/maven-metadata.xml"
@@ -11,18 +12,22 @@ class TinyRemapper < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "5876ea3e7f013a4b16ec3ba4cc44e32edd0fd058291ea33b0658f8336b7790fb"
+    sha256 cellar: :any_skip_relocation, all: "5274513a1151c6a6fd6acb726dbf7f9a7b2bd6ee0c37027847e719dad830f9de"
   end
 
-  depends_on "openjdk"
+  # TODO: Switch back to `openjdk` once a release bundles an ASM that supports
+  # class file major version 71 (JDK 27); 0.14.1 fails with
+  # "Unsupported class file major version 71".
+  depends_on "openjdk@25"
 
   def openjdk
-    Formula["openjdk"]
+    Formula["openjdk@25"]
   end
 
   def install
     libexec.install "tiny-remapper-#{version}-fat.jar"
-    bin.write_jar_script libexec/"tiny-remapper-#{version}-fat.jar", "tiny-remapper"
+    bin.write_jar_script libexec/"tiny-remapper-#{version}-fat.jar", "tiny-remapper",
+                         java_version: "25"
   end
 
   test do

@@ -1,19 +1,17 @@
 class Difftastic < Formula
   desc "Diff that understands syntax"
   homepage "https://difftastic.wilfred.me.uk/"
-  url "https://ghfast.top/https://github.com/Wilfred/difftastic/archive/refs/tags/0.70.0.tar.gz"
-  sha256 "4f89fdce7f58eb0521c14c14a7f76144dab5aa01400b332dd8710b550d32dc4c"
+  url "https://ghfast.top/https://github.com/Wilfred/difftastic/archive/refs/tags/0.71.0.tar.gz"
+  sha256 "d6afd26103c6492a91307dc6779c7dd0ca4d4c85499f81d7dc53fdfa5107331d"
   license "MIT"
   compatibility_version 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "401dff888ab199f6892814ebc354e109b237a961e9a2a53d4a6b53bde7564072"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "ad1ca4686d476b7b6783c03b052cd73cc3edd97f9172c14c89415a4a8a3de2dc"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "f9f3d560214fb3f4277953bab812a0c8ad3ea699dc8a1aa347c8910e78af8664"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "3dcfdc526d9aefd9eff45f6dd8045634ab2f0eceaa9dcd84aacb655030a87c1a"
-    sha256 cellar: :any_skip_relocation, sonoma:            "a61e10e46ce5797caf1b66f62594803d45f853a0c9a5c1dbe26c9e979b549b11"
-    sha256 cellar: :any,                 arm64_linux:       "8bbd7298a69e44335666033f15bef61fcbc7f2cef6b4d7152b1d3535475b3012"
-    sha256 cellar: :any,                 x86_64_linux:      "3b80591fc994c67efa94403f93451e13deb8737af999f636ec05f3ca52e1c5aa"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "5578ee6094135d736ede1dd69a6017aad8ac8d63dc3ee0e0227e5a2fdd564a7c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "c7f055b257d9555a8f43c79df32518dc4f23e68a6294a53418c0915bdebfe2e0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "3a87d1b22ad38660211129051f6a3a33fa05528e26a1b4d80f9f7f5c7b41ad7f"
+    sha256 cellar: :any,                 arm64_linux:       "02cb64d0d56cf55db18d6ae838432b1bfa44552968682c1df8623b40d571a5ff"
+    sha256 cellar: :any,                 x86_64_linux:      "2af99f057a86b205a04c4c590ce481a3d22fa60aab4a1f388debc2bbf3c6cf7c"
   end
 
   depends_on "rust" => :build

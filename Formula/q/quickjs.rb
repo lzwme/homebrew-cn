@@ -22,6 +22,8 @@ class Quickjs < Formula
 
   conflicts_with "quickjs-ng", because: "both install a `qjs` binary"
 
+  deny_network_access!
+
   def install
     system "make", "install", "PREFIX=#{prefix}", "CONFIG_M32="
   end

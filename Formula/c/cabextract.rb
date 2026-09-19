@@ -26,6 +26,8 @@ class Cabextract < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:      "5631eaa72da365accb3b576606fcfcc619879e83bfdd97c74233c073f6f42374"
   end
 
+  deny_network_access!
+
   def install
     system "./configure", "--disable-dependency-tracking",
                           "--disable-silent-rules",

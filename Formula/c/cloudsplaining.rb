@@ -6,16 +6,15 @@ class Cloudsplaining < Formula
   url "https://files.pythonhosted.org/packages/7c/89/bf53630e908aef0680a4c843c4e8acd0b96a22b196ffec5a94bcc5249f80/cloudsplaining-0.9.1.tar.gz"
   sha256 "14ef4f786144b8a2147372aeaa810822dc70f75d3d7c53dd965a12d1a1167cb9"
   license "BSD-3-Clause"
+  revision 1
   head "https://github.com/salesforce/cloudsplaining.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "d70dd32b2c223d75a05afefc6c1b43651806474aa7c18c8c2307c8f928e1c9f3"
-    sha256 cellar: :any, arm64_tahoe:       "ebf93c9d04bec4843a52545c316738c34cacd1e3867bdd68960d934064629f91"
-    sha256 cellar: :any, arm64_sequoia:     "8639cfd208c131fbf1d3be215e2e3f281607de774cfbdbe75440f49d4072eb03"
-    sha256 cellar: :any, arm64_sonoma:      "c4d811819a9e23bdf0e4954cba452592a821ce3bbffc2c13f3045a406b62042f"
-    sha256 cellar: :any, sonoma:            "293de1c38afc9b5c36aa0b02a5b1617667d9a349086120e5f813e52bdace0f49"
-    sha256 cellar: :any, arm64_linux:       "a6370bc12ee831cddd6e69a3bdc3040efc6f81b04a0b8734358d5ef921723342"
-    sha256 cellar: :any, x86_64_linux:      "20c4631c24b10ad64e746d6f83f672696e6ba16e30e088b9072a84b3cafc3197"
+    sha256 cellar: :any, arm64_golden_gate: "093eaf299cc8593de4210d2aaf80a9b25bb23fed57f44ecdd4b54463c372f268"
+    sha256 cellar: :any, arm64_tahoe:       "5b354c402a9910ee91822730dcd2653ce85d9e7ada9e21005d3e3219b5d574b8"
+    sha256 cellar: :any, arm64_sequoia:     "2f6c6fcc434fe5904cfe25347bbee6ae4d63cdd4acd222bce68e2179e4c067da"
+    sha256 cellar: :any, arm64_linux:       "06944e23ca224bc8b97809a93b7e2e47638ad536ce39bdddd35095a00f91ff61"
+    sha256 cellar: :any, x86_64_linux:      "51a47670df27454168d9bc1027c18c4d34d2ef493917eae04c27ac9ee83e6108"
   end
 
   depends_on "rust" => :build # for orjson
@@ -31,23 +30,23 @@ class Cloudsplaining < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/85/a6/9c02ff00d08ea87908934351d244e35bb6fb5cbc169e1a14fc5bd80d124b/boto3-1.43.29.tar.gz"
-    sha256 "354006c512cdb87ef8214a095f2ade961c8145734475cd7a7e6b39260ff5494a"
+    url "https://files.pythonhosted.org/packages/16/b6/41173fa75983750c794e9b64017a3203407725a0e8c9c7f6de39686dc97b/boto3-1.43.96.tar.gz"
+    sha256 "30fb2b5467ef5175ed48f43c06c435eec5da841594a5d7653c4da679df0740fc"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/6f/54/df99c5ca5c9ef275e34b87e177782e3ca054fc35f1f462c40fe180936c81/botocore-1.43.29.tar.gz"
-    sha256 "dce39d33b707aa162aa3820975f99d7f8f746d46576169fb42ce4f2b3b56b261"
+    url "https://files.pythonhosted.org/packages/d2/8d/a3d51a726b62585d032bc55eaa45068dec381d51329cca0140f9c233b792/botocore-1.43.96.tar.gz"
+    sha256 "3ef7c8c40738bb42a40eb0ac3dc2d9f1698946541874ae9b505e49f289272805"
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/e7/a1/67fe25fac3c7642725500a3f6cfe5821ad557c3abb11c9d20d12c7008d3e/charset_normalizer-3.4.7.tar.gz"
-    sha256 "ae89db9e5f98a11a4bf50407d4363e7b09b31e55bc117b4f7d80aab97ba009e5"
+    url "https://files.pythonhosted.org/packages/e5/3f/143b048436775b0f76ac3eec145c019e8173ccc2885c8f20319b996d5e83/charset_normalizer-3.5.1.tar.gz"
+    sha256 "6117b84ea48435e5356dc737f5121485c30920ba43375fa7b434fd753df0eac3"
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/9b/98/518d8e5081007684232226f475082b30087d0f585e8457db087298259f49/click-8.4.1.tar.gz"
-    sha256 "918b5633eddf6b41c32d4f454bf0de810065c74e3f7dbf8ee5452f8be88d3e96"
+    url "https://files.pythonhosted.org/packages/c7/0e/7fa0ef50764b67090eca4114772a2abf8b6148198475e54c660b97caeee6/click-8.5.0.tar.gz"
+    sha256 "ba0d2089de75ea0310e2dde03160e6ca10009947fb95a182f9b54021bb272e34"
   end
 
   resource "click-option-group" do
@@ -56,8 +55,8 @@ class Cloudsplaining < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/cd/63/9496c57188a2ee585e0f1db071d75089a11e98aa86eb99d9d7618fc1edce/idna-3.18.tar.gz"
-    sha256 "ffb385a7e039654cef1ab9ef32c6fafe283c0c0467bba1d9029738ce4a14a848"
+    url "https://files.pythonhosted.org/packages/5f/f7/abb373e5757eaec4b922b92f97ec8d6d7e057cf06778247604fbc4e7c3f3/idna-3.19.tar.gz"
+    sha256 "5e0811a4383b21dc5838069f801c4fb62113b7447663d2530d2bd6e77b49bf15"
   end
 
   resource "jinja2" do
@@ -76,8 +75,8 @@ class Cloudsplaining < Formula
   end
 
   resource "orjson" do
-    url "https://files.pythonhosted.org/packages/7e/0c/964746fcafbd16f8ff53219ad9f6b412b34f345c75f384ad434ceaadb538/orjson-3.11.9.tar.gz"
-    sha256 "4fef17e1f8722c11587a6ef18e35902450221da0028e65dbaaa543619e68e48f"
+    url "https://files.pythonhosted.org/packages/0f/f3/742fb1f62b825f2c010697eaf4e828004bc2a81e7e806666989c132c7c42/orjson-3.12.0.tar.gz"
+    sha256 "d14203fb1aae2ad9b3d52f8a0e82aeb10197ef1c9bc61da7f358bd70b00123d5"
   end
 
   resource "policy-sentry" do
@@ -101,8 +100,8 @@ class Cloudsplaining < Formula
   end
 
   resource "s3transfer" do
-    url "https://files.pythonhosted.org/packages/e0/1f/12417f7f493fc45e1f9fd5d4a9b6c125cf8d2cf3f8ddbdfab3e76406e9d6/s3transfer-0.18.0.tar.gz"
-    sha256 "3760b8b7ec1315da54048b2d626276732bee4300d054d492d4e1d43e20d4ecbd"
+    url "https://files.pythonhosted.org/packages/76/43/35e4d8aa320bffe8287fe8f65f578fa2d2db0a64212f0e710dce58267854/s3transfer-0.19.2.tar.gz"
+    sha256 "ba0309fd86be3c27dbf78cdd813c13c5e1df16e5874b99d2535ebbdfb9892993"
   end
 
   resource "schema" do
@@ -116,18 +115,18 @@ class Cloudsplaining < Formula
   end
 
   resource "soupsieve" do
-    url "https://files.pythonhosted.org/packages/47/2c/0a5f6f8ee0d5589e48c7640213ed5175d52cf540a06725b628cc1a45d6ce/soupsieve-2.8.4.tar.gz"
-    sha256 "e121fd02e975c695e4e9e8774a5ee35d74714b59307868dcc5319ad2d9e3328e"
+    url "https://files.pythonhosted.org/packages/69/99/a6ca3beb3ccacb41fb3321d8a60e5566f9e6467601ef8eba6a17e1b89778/soupsieve-2.9.2.tar.gz"
+    sha256 "4a55d8cf158a9c2e587fa4922f1bbb91d68ac829e2d6f25403a85747c71daf74"
   end
 
   resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/72/94/1a15dd82efb362ac84269196e94cf00f187f7ed21c242792a923cdb1c61f/typing_extensions-4.15.0.tar.gz"
-    sha256 "0cea48d173cc12fa28ecabc3b837ea3cf6f38c6d1136f85cbaaf598984861466"
+    url "https://files.pythonhosted.org/packages/f6/cc/6253133b5bb138fc3306cebfbda2c520f545d36b5be2c7255cc528bb45d6/typing_extensions-4.16.0.tar.gz"
+    sha256 "dc983d19a509c94dba722ee6abd33940f7c05a89e243c47e907eb4db6f1a43e5"
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/53/0c/06f8b233b8fd13b9e5ee11424ef85419ba0d8ba0b3138bf360be2ff56953/urllib3-2.7.0.tar.gz"
-    sha256 "231e0ec3b63ceb14667c67be60f2f2c40a518cb38b03af60abc813da26505f4c"
+    url "https://files.pythonhosted.org/packages/e3/05/b17359e1cefb4f909b5e40b1b90a496d987258916dbbf88e842c729f510e/urllib3-2.8.0.tar.gz"
+    sha256 "63bf2ead4c879426ebf22ef2a781eeb4aa3b4ae798a0435506f8687fd5bb9b63"
   end
 
   def install

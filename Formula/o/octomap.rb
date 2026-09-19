@@ -1,22 +1,16 @@
 class Octomap < Formula
   desc "Efficient probabilistic 3D mapping framework based on octrees"
   homepage "https://octomap.github.io/"
-  url "https://ghfast.top/https://github.com/OctoMap/octomap/archive/refs/tags/v1.10.0.tar.gz"
-  sha256 "8da2576ec6a0993e8900db7f91083be8682d8397a7be0752c85d1b7dd1b8e992"
+  url "https://ghfast.top/https://github.com/OctoMap/octomap/archive/refs/tags/v1.10.1.tar.gz"
+  sha256 "b6b6c10c99ab15701dd105840e7d4cf18e226eb68714dd4bdfe049dede5cd489"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any,                 arm64_golden_gate: "55205ecd5d7bcb297120a5981fd665d0560df82acc428c74033dd94cb87bef32"
-    sha256 cellar: :any,                 arm64_tahoe:       "f538d4ca1ff6befd6b3f0e3dd2388a1265b302d379047be9d9ad8e57f18e5cbf"
-    sha256 cellar: :any,                 arm64_sequoia:     "429f4b461e548ab14d2eecd4c1599bceb2791956ef53e98c0f7814b242d799d0"
-    sha256 cellar: :any,                 arm64_sonoma:      "808dfdfdf000b3da4f5223c77d5520bdb5078cc867bd98c2c27f9c1351c30e2f"
-    sha256 cellar: :any,                 arm64_ventura:     "908e29c2a7423b82e4ce8cbe612595f1ab57a3e0e481d70caca34c0cbd77951a"
-    sha256 cellar: :any,                 arm64_monterey:    "420b3e35f3bd06f4eb1b33af0f3c85ef21666b1c1ba8946b8c6b89508133bb1e"
-    sha256 cellar: :any,                 sonoma:            "7d6b02432d6144a747ca089b0b5bf3c873162373b4239b550bdfaf64968f027d"
-    sha256 cellar: :any,                 ventura:           "c23f61388fadeb444fa809c33f35f24546ccaede8b5f30d52f1e676d0a65341d"
-    sha256 cellar: :any,                 monterey:          "65c3b7a193ce7eec45b4aa579776df10a6fe6981d542a013d177d75d51cd7f48"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "523d6db6329bdbb4d6ed11dd3334643c0cf8d4e61f20bec4e39bef09955d8f72"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "6c9e829f1df5f7f11c58e4477884ac1ba082590820b0cd00e361ba02effc6b50"
+    sha256 cellar: :any, arm64_golden_gate: "ebe6fd230093c36f670de6dde66f7f135a064f4953892a0cfe655e2280455c91"
+    sha256 cellar: :any, arm64_tahoe:       "341f9ad94e1234a57a01680062414ca5f729a3c3f497e2b1cec9f1a07566b1b4"
+    sha256 cellar: :any, arm64_sequoia:     "ee0e6c608e4dbfa6f0fa0388bbe0710cf602121d25d877c1ed86043752a901a1"
+    sha256 cellar: :any, arm64_linux:       "2faca0e4b7d529f5a098e081b167f994f58601dc759d40e61f416168ebf0c5ff"
+    sha256 cellar: :any, x86_64_linux:      "61d4e164f82d93c8c7fb050ccdfddcc965ce7bd1346687e6b73fa52efa512972"
   end
 
   depends_on "cmake" => :build

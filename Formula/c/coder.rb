@@ -1,8 +1,8 @@
 class Coder < Formula
   desc "Tool for provisioning self-hosted development environments with Terraform"
   homepage "https://coder.com"
-  url "https://ghfast.top/https://github.com/coder/coder/archive/refs/tags/v2.36.5.tar.gz"
-  sha256 "50bb05d9e5e0d2cba499a7479b293e620cc868c5a1f58c1314d07648ae9daef3"
+  url "https://ghfast.top/https://github.com/coder/coder/archive/refs/tags/v2.36.6.tar.gz"
+  sha256 "8608be7d0e14e4d7a38b3cc958a14fca18ec6d4adc509a8562f77fc7a35e7f3e"
   license "AGPL-3.0-only"
   head "https://github.com/coder/coder.git", branch: "main"
 
@@ -15,12 +15,11 @@ class Coder < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "02f577235038184f4ad2c33a21b0b81066c7e4e302d15dd68ca5bc78b2ac11fd"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "4e36e89aa052d371edf9af10a3f31ddc990a38453c54efce695b4940be763510"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "3beb7dd80e7f4b729c888732fda28132a2fc18ceb807ae7bb97c344007fa75d7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "e15784163eb5cb461f20cff94fc5fa787050063dcfd25bce103d09736871341c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "d12f60326544151f473b01b73b315178fa83ad1c1a0746bd47f6e343a7cd09ad"
-    sha256 cellar: :any,                 x86_64_linux:      "255eb401b9f7fdd55e4e935528244ebf51e5a3849f27dbc5d198d59f93d244ab"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "41dfadc32f8c5e803bd0fa9ffba6face713c1e99f546ac3b090423f77814b5d3"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "e326fd73d058db39d39137883290068b47b5da43f47c351c8cc6b5be8f30f92d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "5ca1ce99bbb2d91d3c62b869804c8007708546cf2f6e8bf24475eb7e706c0d27"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "727c520f097da9abe0f3665580feeef67355022c81b6ef4671e5bfed51e46eb4"
+    sha256 cellar: :any,                 x86_64_linux:      "ff96053481da758b5db54e16ca3e2ce758642dbad07c48e894b582b14c74b86c"
   end
 
   # TODO: unpin go@1.26 when coder supports go 1.27

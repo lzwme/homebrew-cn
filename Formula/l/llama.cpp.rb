@@ -27,6 +27,9 @@ class LlamaCpp < Formula
   depends_on "ggml" # NOTE: reject all PRs that try to bundle ggml
   depends_on "openssl@3"
 
+  # `test do` block downloads a model from Hugging Face
+  allow_network_access! :test
+
   def install
     args = %W[
       -DBUILD_SHARED_LIBS=ON

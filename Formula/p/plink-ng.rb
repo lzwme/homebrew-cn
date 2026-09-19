@@ -1,9 +1,9 @@
 class PlinkNg < Formula
   desc "Whole-genome association analysis toolset (PLINK 2.0)"
   homepage "https://www.cog-genomics.org/plink/2.0/"
-  url "https://ghfast.top/https://github.com/chrchang/plink-ng/archive/refs/tags/v2.0.0-a.7.6.tar.gz"
-  version "2.0.0-a.7.6"
-  sha256 "e305761e80441a719f76485acec6e5eb0610e3ad792a58933e535a4ac260d50f"
+  url "https://ghfast.top/https://github.com/chrchang/plink-ng/archive/refs/tags/v2.0.0-a.7.7.tar.gz"
+  version "2.0.0-a.7.7"
+  sha256 "93afd3545d7075c7c68af0e20096e32911715ac46b783a951cb26852d6adf16b"
   license all_of: ["GPL-3.0-or-later", "LGPL-3.0-or-later"]
   head "https://github.com/chrchang/plink-ng.git", branch: "master"
 
@@ -13,11 +13,11 @@ class PlinkNg < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "e331b3c0942c1afd2deb3b4d671c4a4381bcda08439ec71a716d2c9485bc25f8"
-    sha256 cellar: :any, arm64_tahoe:       "7c790868d62869479c32b49dbc42b6f72a52dde09637eaea1eaa71d059c332ae"
-    sha256 cellar: :any, arm64_sequoia:     "af57f78042269de8258547ff607b99ba38c6f98ad0f5774409556be37e500224"
-    sha256 cellar: :any, arm64_linux:       "2d4d9a403422a93cd2307a95473d1ab528e57cd786df9e25a7c9a8c04c51ad2d"
-    sha256 cellar: :any, x86_64_linux:      "b394a607fec93b40cc4657da17b970515a5f1030c6bb8085bad21c4bf5392769"
+    sha256 cellar: :any, arm64_golden_gate: "f4999e57e4f13af05d58fd7678c5e0ba24ef1fc035f63a96e780400c49a48a9b"
+    sha256 cellar: :any, arm64_tahoe:       "f8b4eb6df4a15ba6c296d075f4f53b4f1ce2438653744bb31c5f66e7dfc9327e"
+    sha256 cellar: :any, arm64_sequoia:     "30526aa25cc8c94d4935d8aadc4c61dd5c862d477a941b5095f4c235e948b9e0"
+    sha256 cellar: :any, arm64_linux:       "1326c84fc51c0ba0729912118e96455be1af966bbb13d3a38b8cbb4a391e01b8"
+    sha256 cellar: :any, x86_64_linux:      "39b6953fd9c593619fde340ecf728eb05c071beda9ce21f4c7a9fa3a7bcbe6f2"
   end
 
   depends_on "zstd"
@@ -26,6 +26,8 @@ class PlinkNg < Formula
     depends_on "openblas"
     depends_on "zlib-ng-compat"
   end
+
+  deny_network_access!
 
   def install
     cd "2.0/build_dynamic" do
