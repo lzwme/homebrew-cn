@@ -6,15 +6,14 @@ class Johnnydep < Formula
   url "https://files.pythonhosted.org/packages/2d/f6/f12b82239e1ac6ab9605e231db848574f88f38f25fba9ffa6d12b8024332/johnnydep-2.1.0.tar.gz"
   sha256 "54f05293767aac2d5496f273299bb8d76529f737ba73a6123a65cb52846061ca"
   license "MIT"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_golden_gate: "1739a30e577a0535cbbce93741c9795c43d86cb9af7be60e85229983259ffc96"
-    sha256 cellar: :any,                 arm64_tahoe:       "bc995df060d0de34f2cec41faeaa09faa29779aa9c3733844289eac06ecef681"
-    sha256 cellar: :any,                 arm64_sequoia:     "861f4baa1c12aa5140ad6b7698406b0a2347643c29d86f6625aaf24d27bdfa90"
-    sha256 cellar: :any,                 arm64_sonoma:      "8c3914c3d6ce33232a424725ddbc6d736e760eede9c67e604bb8d92d2d9d0ffb"
-    sha256 cellar: :any,                 sonoma:            "9688d6e4e0e3d3a4706e878ceca2fa77f3f44ff3f1d7bdae5493ee38fa5aa131"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "9af4b62bc618af3944c552105715883bc3d7dda0240b15dd57471796856107fb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "769eca35a2bdce0366ee9b03faf8c84394001ad2db6b4de2c3fb49d4de8c33a7"
+    sha256 cellar: :any, arm64_golden_gate: "bd06c692e3446939a37dff8ef6435894617798fd5d9e7c2cdb303a5091141c59"
+    sha256 cellar: :any, arm64_tahoe:       "57d07a082d4cdce674f21518a7a01d7b0c14f1ad40252a062667599320d73e73"
+    sha256 cellar: :any, arm64_sequoia:     "20515ceccdd2de9ed5dc68cd9bf88a6bdfa444eb55030e2ee90ec3bc39cc5cb8"
+    sha256 cellar: :any, arm64_linux:       "98a0f9f38ffe440b3998728eacf3104bbbc9e0ef4fb5ac5cd0164e4356831552"
+    sha256 cellar: :any, x86_64_linux:      "dafb0b33e7186e6c5134e2850e0607621b88a24402485bf89ea5775be5c8dda4"
   end
 
   depends_on "certifi" => :no_linkage
@@ -25,8 +24,8 @@ class Johnnydep < Formula
   pypi_packages exclude_packages: %w[certifi uv]
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/19/14/2c5dd9f512b66549ae92767a9c7b330ae88e1932ca57876909410251fe13/anyio-4.13.0.tar.gz"
-    sha256 "334b70e641fd2221c1505b3890c69882fe4a2df910cba14d97019b90b24439dc"
+    url "https://files.pythonhosted.org/packages/a9/d2/f4d173e22df740bc37b1db102b386ba719b66e95b0f0d751f556b387e6d2/anyio-4.15.1.tar.gz"
+    sha256 "9f28306018cbd6d329e64a36d58256edff76dd996fe423bc957326e578b82a94"
   end
 
   resource "h11" do
@@ -45,8 +44,8 @@ class Johnnydep < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/82/77/7b3966d0b9d1d31a36ddf1746926a11dface89a83409bf1483f0237aa758/idna-3.15.tar.gz"
-    sha256 "ca962446ea538f7092a95e057da437618e886f4d349216d2b1e294abfdb65fdc"
+    url "https://files.pythonhosted.org/packages/f5/08/8eea9d4b8302028f3abb2c0813953f7aec26d33b7a8960ed760e65ff29fa/idna-3.20.tar.gz"
+    sha256 "a7db850025b95ded1eae8a46181a1a6c56c92c96f0e2b005d9ff8dc0210cab44"
   end
 
   resource "loguru" do
@@ -65,13 +64,13 @@ class Johnnydep < Formula
   end
 
   resource "packaging" do
-    url "https://files.pythonhosted.org/packages/d7/f1/e7a6dd94a8d4a5626c03e4e99c87f241ba9e350cd9e6d75123f992427270/packaging-26.2.tar.gz"
-    sha256 "ff452ff5a3e828ce110190feff1178bb1f2ea2281fa2075aadb987c2fb221661"
+    url "https://files.pythonhosted.org/packages/7d/fa/3944b40b07da9ce895c0e6303a5ab7d53da063554f534556b134a54d6093/packaging-26.3.tar.gz"
+    sha256 "94edc256424af38762eb31306eed28beb9f0efc50a8837492c9d6fd6004aed79"
   end
 
   resource "pygments" do
-    url "https://files.pythonhosted.org/packages/c3/b2/bc9c9196916376152d655522fdcebac55e66de6603a76a02bca1b6414f6c/pygments-2.20.0.tar.gz"
-    sha256 "6757cd03768053ff99f3039c1a36d6c0aa0b263438fcab17520b30a303a82b5f"
+    url "https://files.pythonhosted.org/packages/49/2e/ced460408999b33da6b31b0021b0f37d329e202d4169aeb164493778f25b/pygments-2.21.0.tar.gz"
+    sha256 "610ca751c9bc2492b38eb9a38a7fbc93edbbb2d7182edaf34e66ae493dee5c8c"
   end
 
   resource "pyyaml" do
@@ -89,9 +88,14 @@ class Johnnydep < Formula
     sha256 "2dd14fac5a47c27be9cd4c976af5a12d87fb1f0b4512f81d69cce3b35ae25021"
   end
 
+  resource "typing-extensions" do
+    url "https://files.pythonhosted.org/packages/f6/cc/6253133b5bb138fc3306cebfbda2c520f545d36b5be2c7255cc528bb45d6/typing_extensions-4.16.0.tar.gz"
+    sha256 "dc983d19a509c94dba722ee6abd33940f7c05a89e243c47e907eb4db6f1a43e5"
+  end
+
   resource "unearth" do
-    url "https://files.pythonhosted.org/packages/47/1f/cdad555c0e8643232cce619e8d88d5bec81b4d41e4cc1c65bee8a51a4750/unearth-0.18.2.tar.gz"
-    sha256 "1e53d7f52f46dd5f875e77ff1c55b12477e215a092e4b66c9764a77df4a9b520"
+    url "https://files.pythonhosted.org/packages/09/51/6e5d36fe4d468c8247afb7a9719cad001da78e65da4ed5015aec9150e095/unearth-0.18.3.tar.gz"
+    sha256 "14067cf1141c906f787d6d9d070cbcfdd443fd1058aecaa650ce9519aa10dbdc"
   end
 
   def install

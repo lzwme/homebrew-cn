@@ -27,6 +27,8 @@ class Masscan < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:      "e9fe1b11c5d18f102a83a6497972a7e49298f856adc260f83ac7a3d406824887"
   end
 
+  deny_network_access!
+
   def install
     system "make"
     bin.install "bin/masscan"

@@ -20,19 +20,26 @@ class Postgraphile < Formula
   test do
     ENV["LC_ALL"] = "C"
     ENV["GRAPHILE_ENV"] = "development"
+    ENV["PGHOST"] = testpath.to_s
     assert_match "postgraphile", shell_output("#{bin}/postgraphile --help")
 
     pg_bin = formula_opt_bin("postgresql@18")
     system pg_bin/"initdb", "-D", testpath/"test"
-    pid = spawn("#{pg_bin}/postgres", "-D", testpath/"test")
+    pid = spawn("#{pg_bin}/postgres", "-D", testpath/"test", "-k", testpath, "-h", "")
 
     begin
       sleep 2
       system pg_bin/"createdb", "test"
 
       preset = libexec/"lib/node_modules/postgraphile/dist/presets/amber.js"
-      graphite_pid = spawn bin/"postgraphile", "-c", "postgres:///test", "--preset", preset
-      sleep 3
+      port = free_port
+      graphite_pid = spawn bin/"postgraphile", "-c", "postgres:///test?host=#{testpath}",
+                          "--preset", preset, "--port", port.to_s
+      query = { query: "{ __typename }" }.to_json
+      output = shell_output("curl --silent --show-error --fail --retry 5 --retry-connrefused --retry-delay 1 " \
+                            "--header 'Content-Type: application/json' --data '#{query}' " \
+                            "http://localhost:#{port}/graphql")
+      assert_equal "Query", JSON.parse(output).dig("data", "__typename")
     ensure
       Process.kill("TERM", graphite_pid)
       Process.wait(graphite_pid)

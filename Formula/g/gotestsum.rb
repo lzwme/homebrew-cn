@@ -26,6 +26,12 @@ class Gotestsum < Formula
     resolves "https://github.com/gotestyourself/gotestsum/pull/528"
   end
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ldflags = "-X gotest.tools/gotestsum/cmd.version=#{version}"
     system "go", "build", *std_go_args(ldflags:)

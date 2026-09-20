@@ -5,18 +5,17 @@ class SbomTool < Formula
   # For now, we track newer git tags which haven't been marked as releases.
   # Upstream seems to have stopped responding to issues since deciding to not
   # accept contributions: https://github.com/microsoft/sbom-tool#contributing
-  url "https://ghfast.top/https://github.com/microsoft/sbom-tool/archive/refs/tags/v4.1.11.tar.gz"
-  sha256 "2f0c4ad09e7d8cc1faa02dad900683bf3b3d43482de835950a9ce2e697a79107"
+  url "https://ghfast.top/https://github.com/microsoft/sbom-tool/archive/refs/tags/v4.1.12.tar.gz"
+  sha256 "cb1116622aa38e352b02d7c968c3c50944d970edc52acb55e0a3368b2c465888"
   license "MIT"
   head "https://github.com/microsoft/sbom-tool.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bc7677e917f6676b5702d1530aab5036b6348d46f2d0ffe8fbc2f36743ef76a1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8358a4c362227e3f11612d26c1db7e53c927bb0529a516874c8db4ee2f063214"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dcd0ecd2c0920a0b402391062c5d802bb77136abcbe48b6bb668a19037be64df"
-    sha256 cellar: :any_skip_relocation, sonoma:        "cc3f907ee1da54d9f2c29f421dfe66eea8c64f11185af9ee6eb48e23a20ab81a"
-    sha256 cellar: :any,                 arm64_linux:   "f7e8740396696242a547a7a7b68fedbac8657707bfc3b67a763fe9a248fbfbe9"
-    sha256 cellar: :any,                 x86_64_linux:  "32452307c931f8d9988ac09f3c6b205ecd46b83b0d86b9ab95a3341c190cd8c5"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "16f859cdfae3bd4f7be01e91c7a3b39b12d53b1b67552346908da2e93b38d2ba"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "f228560d736f05482e2191cb1724db63711a31feb34ba75906464b7091bba848"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "00e262e97e0e16cd5dff88f9e9a9f7716a36b22c9611846235dd0c9c77331b90"
+    sha256 cellar: :any,                 arm64_linux:       "fee8e53f638d1c29f81240a56c086a737c7413de7331f90a88aa1ebbb6317464"
+    sha256 cellar: :any,                 x86_64_linux:      "d2ce814f79914567d7f170d6fba5382a45374caf165b149b0c71624365e33557"
   end
 
   # Aligned to .NET dependency. Can remove if updated to latest .NET
@@ -53,6 +52,9 @@ class SbomTool < Formula
   end
 
   test do
+    # The sandbox denies FSEvents, so .NET's config file watcher would hang
+    ENV["DOTNET_USE_POLLING_FILE_WATCHER"] = "1" if OS.mac?
+
     args = %W[
       -b #{testpath}
       -bc #{testpath}

@@ -21,6 +21,12 @@ class Linkerd < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "aa8884bcde37cad52a2b79557c62ca573c2c2b3870166c40de9cc41ce12ad83b"
   end
 
+  # TODO: Can be undeprecated on official new release or if upstream confirms change
+  # in upstream issue: https://github.com/linkerd/linkerd2/issues/15664
+  # See: https://docs.brew.sh/Homebrew-homebrew-core-Maintainer-Guide#retagged-formulae
+  deprecate! date: "2026-09-18", because: :checksum_mismatch
+  disable! date: "2027-09-18", because: :checksum_mismatch
+
   depends_on "go" => :build
 
   def install

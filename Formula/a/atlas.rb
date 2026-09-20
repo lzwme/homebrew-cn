@@ -22,6 +22,12 @@ class Atlas < Formula
 
   conflicts_with "mongodb-atlas-cli", "nim", because: "both install `atlas` executable"
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download", "-C", "cmd/atlas"
+  end
+
   def install
     ldflags = %W[-X ariga.io/atlas/cmd/atlas/internal/cmdapi.version=v#{version}]
     cd "./cmd/atlas" do

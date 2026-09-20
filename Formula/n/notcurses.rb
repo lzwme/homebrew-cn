@@ -32,9 +32,19 @@ class Notcurses < Formula
   end
 
   test do
-    # current homebrew CI runs with TERM=dumb. given that Notcurses explicitly
-    # does not support dumb terminals (i.e. those lacking the "cup" terminfo
-    # capability), we expect a failure here. all output will go to stderr.
-    assert_empty shell_output(bin/"notcurses-info", 1)
+    require "pty"
+
+    # Notcurses rejects dumb terminals; it opens `/dev/tty`, so give it its own PTY to avoid SIGTTOU
+    ENV["TERM"] = "dumb"
+    output_log = testpath/"output.log"
+    PTY.spawn(bin/"notcurses-info", [:out, :err] => output_log.to_s) do |r, _w, pid|
+      r.read
+    rescue Errno::EIO
+      # GNU/Linux raises EIO when read is done on closed pty
+    ensure
+      Process.wait(pid)
+    end
+    assert_equal 1, $CHILD_STATUS.exitstatus
+    assert_match "required terminfo capability 'cup' not defined", output_log.read
   end
 end

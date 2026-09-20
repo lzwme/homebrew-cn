@@ -7,12 +7,13 @@ class Medusa < Formula
   head "https://github.com/crytic/medusa.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "171577dd8a1423ffcb8e8322e3f6ff7372f06aadb500e5fa947e01856c046df6"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e74b21070cf3a32810e5729a12625eb5aaeb308b56fe40157a5d4b2ec3de1053"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "90b9bf4570c49a9860f61627fca1ec1fd9500469df3cb049a7e8fd45f6337ae0"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4475b58792b0a2cb28549b69cc11fa8b6cebb19e14fadb06f240053a310f771a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "65f2808967ea59f2651dbfd5315ca052d004b18989a46c5a96dd4483e58e7503"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "602048de2af9385120c31cc1846b48c56c88f3236b12dca86ff389ebb04961d3"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "92ba04b222523c6a42263e67dec07116cb72315fa1f0e0759227b6f2071386a2"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "171577dd8a1423ffcb8e8322e3f6ff7372f06aadb500e5fa947e01856c046df6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "e74b21070cf3a32810e5729a12625eb5aaeb308b56fe40157a5d4b2ec3de1053"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "90b9bf4570c49a9860f61627fca1ec1fd9500469df3cb049a7e8fd45f6337ae0"
+    sha256 cellar: :any_skip_relocation, sonoma:            "4475b58792b0a2cb28549b69cc11fa8b6cebb19e14fadb06f240053a310f771a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "65f2808967ea59f2651dbfd5315ca052d004b18989a46c5a96dd4483e58e7503"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "602048de2af9385120c31cc1846b48c56c88f3236b12dca86ff389ebb04961d3"
   end
 
   depends_on "go" => :build

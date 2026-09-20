@@ -1,17 +1,16 @@
 class Cake < Formula
   desc "Cross platform build automation system with a C# DSL"
   homepage "https://cakebuild.net/"
-  url "https://ghfast.top/https://github.com/cake-build/cake/archive/refs/tags/v6.2.0.tar.gz"
-  sha256 "5fe61d9df142ef8c1d15def04dc3a634f07459f0ecc6098efb760207ddc6a452"
+  url "https://ghfast.top/https://github.com/cake-build/cake/archive/refs/tags/v6.3.0.tar.gz"
+  sha256 "6db077c1a78323dce1b53a799e5c53ed4d864dd4f6c6d206d46e5d71733e3dcf"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "66aca50add4eb13e63791f5358f4cb88df0090dad8e259a1f5fd4dced99d4a9d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2fb46fcfcaa4a522f3b3564d1e0c12ce8bd88c43f51415c92d01d8c2fda2c8ef"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e01b123fa2ec64278de8b5240e5425ab6ec1d7f07465687d4d63419ff0112c7b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0910f94001d5073311e780ebc5aaee94e48617467e1578480c82991d8fce486d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a272a1691e03fecf254ab324a9a024d0cd1f420edc356661f593571852dd2f04"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2012a88e489d8d3f680a975c66f22a8ecfaad8ace90bdcc222530c04dc075bbb"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "eab86942aefd359d3492bf7ab0e634994ef5077b9663cdc5ab18022d0be4a21b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "2035b88305f7e1b4d6f600d152715ccf4384e67257e48af96a20005990d14a3c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "03a1dfb9fb1d45c686d239b2f3aa7ab2c2c0bd2ae5b2676f1ee79839cd94680b"
+    sha256 cellar: :any,                 arm64_linux:       "75a1e6f8322a7320f6046cc739be111931e6516f9b9b72f87de49627c65b7d0b"
+    sha256 cellar: :any,                 x86_64_linux:      "49dadedc8d28580466aa31f021d0c4f22c24adf1ecfafc83aeb5f67ee532f3a6"
   end
 
   depends_on "dotnet"

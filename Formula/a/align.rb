@@ -17,6 +17,8 @@ class Align < Formula
 
   conflicts_with "speech-tools", because: "both install `align` binaries"
 
+  deny_network_access!
+
   def install
     system "make", "install", "BINDIR=#{bin}"
   end

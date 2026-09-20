@@ -18,6 +18,8 @@ class Gpatch < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:      "62f0d5010f2d0a3e11af30cc8b7b5982b1da2c7badc027f01d4fb33f2e6cc2bb"
   end
 
+  deny_network_access!
+
   def install
     args = std_configure_args
     args << "--program-prefix=g" if OS.mac?

@@ -1,17 +1,17 @@
 class Jackett < Formula
   desc "API Support for your favorite torrent trackers"
   homepage "https://github.com/Jackett/Jackett"
-  url "https://ghfast.top/https://github.com/Jackett/Jackett/archive/refs/tags/v0.24.2551.tar.gz"
-  sha256 "2de64032d5d352517fb07477ce3ca51ec0a473faf230900517561f04cc1cefc8"
+  url "https://ghfast.top/https://github.com/Jackett/Jackett/archive/refs/tags/v0.24.2624.tar.gz"
+  sha256 "92e849511845373cfd25e66b7177f211b305ac01227cde1e040bf64bd72dd4d6"
   license "GPL-2.0-only"
   head "https://github.com/Jackett/Jackett.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "67f37fad8642539f6f7a55c63bb60ebac97c6085c8b0c9a75e0f0e714c1cdfbc"
-    sha256 cellar: :any, arm64_sequoia: "b60e2c0998e2c15b9ac9cbc676bc7979cafbe45a373ef2c556fbf67f89a48fba"
-    sha256 cellar: :any, arm64_sonoma:  "f6f69d23c78cdff25e1a09b60fb43c60f770c1315f4e0b73aa38e86e0650d5ba"
-    sha256 cellar: :any, arm64_linux:   "767cc5f99accdf37dab0bf271e55308410b90ae04e6279e23b69513606d3b827"
-    sha256 cellar: :any, x86_64_linux:  "01b1a263ca54806ce28e5943a87029df00c935d6af794574d8ba3d69dac0158b"
+    sha256 cellar: :any, arm64_golden_gate: "959f39257fdc797d06b603b52b34113c08fcf5b7c03b0fac061ca186f41c4a0d"
+    sha256 cellar: :any, arm64_tahoe:       "1e1ac4854003477b3a55dc04daee8ff20fe8addc49ce6fe101dd0077e4dd9d6e"
+    sha256 cellar: :any, arm64_sequoia:     "e5f20917af528597cb9effc939d40148613f249bef77e861c49bd11e21704892"
+    sha256 cellar: :any, arm64_linux:       "db91eb9aeabd6a49176ce3503f66c5fa8ea1c40b74a6b1bf194fd015fe92b783"
+    sha256 cellar: :any, x86_64_linux:      "84ea93a99b4e7bdf8d4d5cb4b3736183b832cc5f6cd0ef736b7cc29e5f3fda8d"
   end
 
   # Aligned to .NET dependency. Can remove if updated to latest .NET
@@ -57,6 +57,9 @@ class Jackett < Formula
   end
 
   test do
+    # The sandbox denies FSEvents, so .NET's config file watcher would hang
+    ENV["DOTNET_USE_POLLING_FILE_WATCHER"] = "1" if OS.mac?
+
     assert_match(/^Jackett v#{Regexp.escape(version)}$/, shell_output("#{bin}/jackett --version 2>&1; true"))
 
     port = free_port

@@ -26,6 +26,8 @@ class Sl < Formula
 
   conflicts_with "sapling", because: "both install `sl` binaries"
 
+  deny_network_access!
+
   def install
     system "make", "-e"
     bin.install "sl"

@@ -3,16 +3,16 @@ class Dotnet < Formula
   homepage "https://dotnet.microsoft.com/"
   license "MIT"
   version_scheme 1
-  compatibility_version 6
+  compatibility_version 7
 
   stable do
     # Source-build tag announced at https://github.com/dotnet/source-build/discussions
-    url "https://ghfast.top/https://github.com/dotnet/dotnet/releases/download/v10.0.400/release.json"
-    sha256 "ced5589f3daa58a6165aa22c0c0fe477d0067c5692ac7b9cd607830b1a251482"
+    url "https://ghfast.top/https://github.com/dotnet/dotnet/releases/download/v10.0.401/release.json"
+    sha256 "6dc88b00a048b315868625e038212bfd06d2f9661254863848507ee4b70fdb36"
 
     resource "src" do
-      url "https://ghfast.top/https://github.com/dotnet/dotnet/archive/refs/tags/v10.0.400.tar.gz"
-      sha256 "00365983ee184aede6cd63c45ed0d072f1f529dfed702819f29c81456ec9ea9e"
+      url "https://ghfast.top/https://github.com/dotnet/dotnet/archive/refs/tags/v10.0.401.tar.gz"
+      sha256 "3119efad4a965c5b9bf87fc795da50176cff73047b396981710b3f1aefb7d6af"
 
       livecheck do
         formula :parent
@@ -22,8 +22,8 @@ class Dotnet < Formula
     # NOTE: 1xx band resources are only used when on 2xx/3xx/4xx band.
     # Can leave in formula even when unused to simplify version bumps.
     resource "1xx" do
-      url "https://ghfast.top/https://github.com/dotnet/dotnet/archive/refs/tags/v10.0.111.tar.gz"
-      sha256 "e0ab9aa44378fc5a37820628b10d27e9cabdcfe546a8ead16cdcaa92c035a7a0"
+      url "https://ghfast.top/https://github.com/dotnet/dotnet/archive/refs/tags/v10.0.112.tar.gz"
+      sha256 "0107a6a9aca7635fcb66a90dd22269e42640797ce2ba0731c8669ba59f4e310d"
 
       livecheck do
         url "https://ghfast.top/https://github.com/dotnet/dotnet/releases/download/v#{LATEST_VERSION}/release.json"
@@ -40,8 +40,8 @@ class Dotnet < Formula
     end
 
     resource "1xx-manifest" do
-      url "https://ghfast.top/https://github.com/dotnet/dotnet/releases/download/v10.0.111/release.json"
-      sha256 "bf2a2e6d9339b955255ee31fb193c0a6ae3587afc74554c464491e219cbb7161"
+      url "https://ghfast.top/https://github.com/dotnet/dotnet/releases/download/v10.0.112/release.json"
+      sha256 "df14b07ce83d8b4d59c9dbb34f83ca6d8e1f99f41aa02133cba87f546a620db0"
 
       livecheck do
         url "https://ghfast.top/https://github.com/dotnet/dotnet/releases/download/v#{LATEST_VERSION}/release.json"
@@ -67,13 +67,11 @@ class Dotnet < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "45210f3fc6960aa840b6e55f71fd83fb85b9a4313ddcc0009ae3800119a2f0aa"
-    sha256 cellar: :any, arm64_tahoe:       "2d6c38d16688574920a6e658b1dbc8e16d998a66aa0c171fc55f274a8f3097ed"
-    sha256 cellar: :any, arm64_sequoia:     "f0145278cd51bf248a142a1fbaa8257c9393852b2f0adaa9ce30c957d8a759c4"
-    sha256 cellar: :any, arm64_sonoma:      "91c21ef6247ca517fa23ac38773199182ed36af0505b727f0f3fa75b34984b3f"
-    sha256 cellar: :any, sonoma:            "a16cf13cff871cc4b471115fbc801241a7482f6c3adec181f946a528612bdc76"
-    sha256 cellar: :any, arm64_linux:       "7a7f969e9973c18e064856b60f07373b91f8cbe371d1d0e1f34eec93936cd5bc"
-    sha256               x86_64_linux:      "d52c2b07dcb40c627442b7a9e553cb5e05977799aefd43f468eba99c2989f27a"
+    sha256 cellar: :any, arm64_golden_gate: "1ec8dccd449b0f8e0508c8531c964ad2ad60f7a60ea51b3c8d5267ec4e89c341"
+    sha256 cellar: :any, arm64_tahoe:       "98cebf3046740a70932aea26120652cdfa776fced10042f6b087eb55baa671d2"
+    sha256 cellar: :any, arm64_sequoia:     "aca490de30124197d814b5753bc9bc1a81c8815757687838187655456452143c"
+    sha256 cellar: :any, arm64_linux:       "cde949cfc40d879e719b474d55b5ed2d53e149ddcfd31b05e358115e885e9458"
+    sha256               x86_64_linux:      "33a862efb5d26be9886dd5a2589d368f1ea2f680ddd72a414457b42d7ba38f2b"
   end
 
   head do
@@ -131,6 +129,21 @@ class Dotnet < Formula
       args << "-p:PortableBuild=true"
     end
 
+    on_macos do
+      inreplace Dir["src/msbuild/src/{Shared,Framework/BackEnd}/NamedPipeUtil.cs"],
+                      'Path.Combine("/tmp", pipeName)',
+                      'Path.Combine(Path.GetTempPath().Length < 38 ? Path.GetTempPath() : "/tmp", pipeName)'
+      # `prep-source-build.sh` runs binary detection with the prebuilt SDK, so patch its MSBuild first
+      system "./prep-source-build.sh", "--no-binary-removal"
+      # Avoid worker nodes, which the unpatched bootstrap MSBuild cannot reach
+      system ".dotnet/dotnet", "build", "src/msbuild/src/MSBuild/MSBuild.csproj", "--configuration", "Release",
+             "-maxcpucount:1"
+      # Replace the bootstrap SDK's MSBuild with the patched one
+      cp Dir["src/msbuild/artifacts/bin/MSBuild/Release/net*/{MSBuild,Microsoft.Build*}.dll"],
+         Dir[".dotnet/sdk/*"].first
+      # `build.sh` builds MSBuild again into the same directory
+      rm_r "src/msbuild/artifacts"
+    end
     system "./prep-source-build.sh"
     system "./build.sh", *args
     buildpath.install "artifacts/assets/Release"

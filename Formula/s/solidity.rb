@@ -11,11 +11,12 @@ class Solidity < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "7005723a3aaaf1be56416ff2148593fd563664771118cf3d1749889d8fe34caf"
-    sha256 cellar: :any, arm64_sequoia: "47baaa05ef4f27c03d4bd8fd02ba23fca85c400d72edff36550a9d6642949e6a"
-    sha256 cellar: :any, arm64_sonoma:  "04b85ecc66f6efacab14fcfe58378b338437635f5d099b0b783c12eda6bab3e8"
-    sha256 cellar: :any, arm64_linux:   "6a079f1028886d60080d0c7bd8ac7b85493d813055db41913eb86ea35f90ddfa"
-    sha256 cellar: :any, x86_64_linux:  "d1a97bad2ecd02a881ab89f20b356509b6fa518598f269a31785e9de9552da37"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "f6670235d9eca969a357efb5d2995e819000c05dde8d0173566a0b9f07596f3c"
+    sha256 cellar: :any, arm64_tahoe:       "545a7a1683aa06d64d0c2a1d86192de77b6f5f414ee61c9f5782968cd6aa0885"
+    sha256 cellar: :any, arm64_sequoia:     "4e0edcec1250896a4bb0b5810905c57a10fce130a28bb5d80e28f7bca663e21f"
+    sha256 cellar: :any, arm64_linux:       "0c85b0e3e7e55c4b8fb527764d24c8ebd3a264082e220418c1c32848a9a521bd"
+    sha256 cellar: :any, x86_64_linux:      "02bb12c5ad3307a601d2624084ef9856964d72ea21f1a0114d097813d0240611"
   end
 
   depends_on "cmake" => :build
@@ -27,8 +28,19 @@ class Solidity < Formula
 
   conflicts_with "solc-select", because: "both install `solc` binaries"
 
+  # Fix build with libc++ 22 (Xcode 27), which rejects the `std::less<YulArity>` specialization
+  patch do
+    url "https://github.com/argotorg/solidity/commit/7543cf45326f58d2597c9464d3d525822b6e28c7.patch?full_index=1"
+    sha256 "d8bb9605e0b472eff8ba98e52d48d913d842d93e29b2348af9979c52901dbc4f"
+    type :unofficial
+    resolves "https://github.com/argotorg/solidity/pull/17027"
+  end
+
   def install
     rm_r("deps")
+
+    # Avoid using an older deployment target than our bottle
+    inreplace "CMakeLists.txt", "set(CMAKE_OSX_DEPLOYMENT_TARGET ", "# \\0"
 
     system "cmake", "-S", ".", "-B", "build",
                     "-DBoost_USE_STATIC_LIBS=OFF",

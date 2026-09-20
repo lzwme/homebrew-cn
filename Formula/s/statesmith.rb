@@ -7,12 +7,13 @@ class Statesmith < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4eca6c6515c34c384f38aba48ebf44e9b7650cc8b19317997686373bcbd6c047"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bce2e978401b34b8e2e51af99142555b142789399cf5032a5b30e463308c4c16"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0f78e984837628c05fda50fc96482d6ee4e6df2b160466678a453bcfff3d3f97"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3b1736097256e2948122af1e65072afb9c09233c03ea15d2a8ab99169d211c95"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "60e0f249d28ccf3faa4e8dc6c2d9c1d6f550a7cd52fb20b7ff8bea0ea3bd4b77"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1c54a48c9fdfa149e96133eb558d55e0921555e1eb9527dbea3e9d3233f5bd6f"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "a23339d221e337b8d03c5d3278829c9457c34002f98f0f92aff403bdc6063959"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "4eca6c6515c34c384f38aba48ebf44e9b7650cc8b19317997686373bcbd6c047"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "bce2e978401b34b8e2e51af99142555b142789399cf5032a5b30e463308c4c16"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "0f78e984837628c05fda50fc96482d6ee4e6df2b160466678a453bcfff3d3f97"
+    sha256 cellar: :any_skip_relocation, sonoma:            "3b1736097256e2948122af1e65072afb9c09233c03ea15d2a8ab99169d211c95"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "60e0f249d28ccf3faa4e8dc6c2d9c1d6f550a7cd52fb20b7ff8bea0ea3bd4b77"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "1c54a48c9fdfa149e96133eb558d55e0921555e1eb9527dbea3e9d3233f5bd6f"
   end
 
   # Aligned to .NET dependency. Can remove if updated to latest .NET

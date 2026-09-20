@@ -1,10 +1,10 @@
 class Gismo < Formula
   desc "C++ library for isogeometric analysis (IGA)"
   homepage "https://gismo.github.io"
-  url "https://ghfast.top/https://github.com/gismo/gismo/archive/refs/tags/v25.07.0.tar.gz"
-  sha256 "6d20f0b43ed80d3bf34fcabdac10a6bed6afbb314239dcbd0495a362a87aca9a"
+  url "https://ghfast.top/https://github.com/gismo/gismo/archive/refs/tags/v26.09.0.tar.gz"
+  sha256 "1274f62cb448f098cb793a44feb9e0b7f053ef6ef96b4eedb2dd6b4c67c92085"
   license "MPL-2.0"
-  head "https://github.com/gismo/gismo.git", branch: "stable"
+  head "https://github.com/gismo/gismo.git", branch: "dev"
 
   # There can be a notable gap between when a version is tagged and a
   # corresponding release is created, so we check the "latest" release instead
@@ -15,14 +15,11 @@ class Gismo < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_golden_gate: "4d9939d6a5c3e80d1b93e1be0e3951501d3180ae4f1ae9a7f0bf75cc28fde808"
-    sha256 cellar: :any,                 arm64_tahoe:       "fd7006fc0945d60cb2d347a09f019f801c1527730b40730165c06ae76a88c842"
-    sha256 cellar: :any,                 arm64_sequoia:     "300458041bc09d87f28ef16f0071c0cc1b0024b87cda3da9c9ef65640c92019d"
-    sha256 cellar: :any,                 arm64_sonoma:      "12eea2c988fcbdf05ca9dfeefbe47febab751e7c0fc6d7c90d79149f60bf90eb"
-    sha256 cellar: :any,                 sonoma:            "ba784d2ae9dcca467f6d9e861669791ff1ec1fe366e5427da632c9af96ba5bdd"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "71a85158fdc809bceb5bee05754ffa396d4b25c6d4899138121b29447f559656"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "0a427d0bff623017d3cd0d7572ef898df0a0bef277788019c08a0a7c89a1a294"
+    sha256 cellar: :any, arm64_golden_gate: "2b8e5b1042e508704bfc9c14528698c0dbfa0b2f922560b6c7064433da80ca12"
+    sha256 cellar: :any, arm64_tahoe:       "e85fcd9adc1d0191fa065ee1c0fbb8e9d3d933e63650115bd652df46ddee97a6"
+    sha256 cellar: :any, arm64_sequoia:     "7a5f1e092c3a19a90b5ed994d47eb5ff4f7e71f17b9e6cd97c9b6decf7c7b9e0"
+    sha256 cellar: :any, arm64_linux:       "4664ad91ae588e7d450737e00f338912e96094ac98727206f5076561aa102f58"
+    sha256 cellar: :any, x86_64_linux:      "d269c6874b8652e1326cb82f0f69fbf6475da24055cbc2f9d14489fb3b5bc298"
   end
 
   depends_on "cmake" => :build
@@ -37,6 +34,8 @@ class Gismo < Formula
   on_linux do
     depends_on "zlib-ng-compat"
   end
+
+  deny_network_access!
 
   def install
     args = %W[

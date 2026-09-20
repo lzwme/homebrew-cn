@@ -1,19 +1,16 @@
 class Nvc < Formula
   desc "VHDL compiler and simulator"
   homepage "https://www.nickg.me.uk/nvc/"
-  url "https://ghfast.top/https://github.com/nickg/nvc/releases/download/r1.22.1/nvc-1.22.1.tar.gz"
-  sha256 "8cde9a11603dc512e40f12a349a1d3b1bef4a6fdcec9bf0ab0f790899390c56f"
+  url "https://ghfast.top/https://github.com/nickg/nvc/releases/download/r1.23.0/nvc-1.23.0.tar.gz"
+  sha256 "10dab7ea016d8a2f7c4ea74a438b6c999423007aa69c0568fedb59564440b3e2"
   license "GPL-3.0-or-later"
-  revision 1
 
   bottle do
-    sha256 arm64_golden_gate: "ecb7d20decd2c9f716142d8e97136ccac38eac0018a5fc3708844fe3425b12c3"
-    sha256 arm64_tahoe:       "e486075d582fb3b05662b0d3b4053e568145ccfa630193484128d72e4bcfbf3d"
-    sha256 arm64_sequoia:     "ffb13e65afaafcb83f439742a5766359658ce5c0a857edc07d81a66d855d4727"
-    sha256 arm64_sonoma:      "1bd46aa2821cdcc482be6091e09d8b683da054e1069ffb3198223cc64000435d"
-    sha256 sonoma:            "9c86d2077d7975fb2c6abd7b185b53266a47e5a29ad7de48434be164364c72f4"
-    sha256 arm64_linux:       "f5ea4953cf63dcb730deca3a9c7fa1091dcdf742351ba7d71ad6c3df0c23b6b8"
-    sha256 x86_64_linux:      "574fadc94fba04697060ce77c001cd718d02abf028ac4408da566d75643016ef"
+    sha256 arm64_golden_gate: "36c32376fd5bdcd0563424acc5f7e3873eba40d23b2041d14cb3b01a100ed1c8"
+    sha256 arm64_tahoe:       "1cdfbf6234b0ca5d376fd447a89a97624d696b2d23a7ca5e79b238ba4e886e0c"
+    sha256 arm64_sequoia:     "45e00d44410af7c5a52fe64bcd84bf841b0480955c88723a690aac01a5a4d33e"
+    sha256 arm64_linux:       "dffe8d466142f69111710c74d6b82728062dac477b89b922c88b633f7abceafc"
+    sha256 x86_64_linux:      "19c681428d3229afc4edc87a73769added6e6cb1e71a3e111529090ccd56a274"
   end
 
   head do
@@ -47,8 +44,12 @@ class Nvc < Formula
       system "../configure", "--with-llvm=#{formula_opt_bin("llvm")}/llvm-config",
                              "--disable-silent-rules",
                              *std_configure_args
-      system "make", "V=1"
-      system "make", "V=1", "install"
+      args = ["V=1"]
+      # Use a two-level namespace for plugins while retaining runtime symbol lookup.
+      # TODO: Remove this override when https://github.com/nickg/nvc/issues/1663 is fixed upstream.
+      args << "SHLIB_LDFLAGS=-shared -undefined dynamic_lookup -Wl,-no_fixup_chains" if OS.mac?
+      system "make", *args
+      system "make", *args, "install"
     end
 
     (pkgshare/"examples").install "test/regress/wait1.vhd"

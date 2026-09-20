@@ -1,18 +1,17 @@
 class MinioWarp < Formula
   desc "S3 benchmarking tool"
   homepage "https://github.com/minio/warp"
-  url "https://ghfast.top/https://github.com/minio/warp/archive/refs/tags/v1.7.0.tar.gz"
-  sha256 "c99bdb158e46e96aca9092b7d5fd6483e3901093045b1c8e987094d1fec94f2d"
+  url "https://ghfast.top/https://github.com/minio/warp/archive/refs/tags/v1.8.0.tar.gz"
+  sha256 "5f0f8cbffccb4685cb5d1b191337369becf8fdd65277b68b189eb1e9eba6647b"
   license "AGPL-3.0-or-later"
   head "https://github.com/minio/warp.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "9224153235f18d539966093127aa07bffd8b9cbf7b2ac97cdbad5e2e81097b9a"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "54fbaa578d3bf067d7d84d6a1b1c027d7c6cddf888319d99f465d642b37fce29"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "075160b6193d1af54cadad2c8bbaabbd630e4cc1e0730ce88e27c149742b831c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "b25a218f0100b4b3e682e668efb082f219fb6d13fbeb95a6568c8361fe70c10a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "a6b63deca34c56435c0e812d29b8ce358ad6c888a21f8f76de403253f0e877b8"
-    sha256 cellar: :any,                 x86_64_linux:      "a339847bac2f4e36eea517e51cbee48330e5d0a1710f05bf64519c3ffd2090b4"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "3e309a30a86d40b1e79aa07a9d15224772a688c4c3ee9d210f7552efb7211c68"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "22c517bd8e66fde990c6fee120bb09225aa82277298a833a8659be21ba1dff46"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "07b66f60e1f5f4118410010a5b41a6691821e72830b64f2d6718193bc2aa9e98"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "a6902a23b164b4779a298d48143fd6ef2b55a2668bca9ba5fcfc33fe6d3f8b41"
+    sha256 cellar: :any,                 x86_64_linux:      "1e91c9f4cb1783521ea05fea41638985ed51951650607794e3fdab4f6fff7ba6"
   end
 
   depends_on "go" => :build
@@ -29,7 +28,7 @@ class MinioWarp < Formula
   end
 
   test do
-    output = shell_output("#{bin}/warp list --no-color 2>&1", 1)
+    output = shell_output("#{bin}/warp list --no-color --quiet 2>&1", 1)
     assert_match "warp: <ERROR> Error preparing server", output
 
     assert_match version.to_s, shell_output("#{bin}/warp --version")

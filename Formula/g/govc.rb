@@ -26,6 +26,12 @@ class Govc < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download", "-C", "govc"
+  end
+
   def install
     ldflags = %W[
       -X github.com/vmware/govmomi/cli/flags.BuildVersion=#{version}

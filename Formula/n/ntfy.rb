@@ -17,6 +17,13 @@ class Ntfy < Formula
 
   depends_on "go" => :build
 
+  # `test do` block publishes a message to ntfy.sh
+  allow_network_access! :test
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     tags = %w[noserver]
     if OS.linux?

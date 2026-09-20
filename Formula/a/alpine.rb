@@ -60,6 +60,8 @@ class Alpine < Formula
 
   conflicts_with "macpine", because: "both install `alpine` binaries"
 
+  deny_network_access!
+
   def install
     ENV.deparallelize
 

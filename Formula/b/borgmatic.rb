@@ -3,13 +3,17 @@ class Borgmatic < Formula
 
   desc "Simple wrapper script for the Borg backup software"
   homepage "https://torsion.org/borgmatic/"
-  url "https://files.pythonhosted.org/packages/6c/8a/3652e103c7d1908d8bf93109921614af093e6cda1319d783395166494f9c/borgmatic-2.1.7.tar.gz"
-  sha256 "aac07ce7ae3009605e9acc67eef2019a7b5d69bccad63eda80ff192b69f375cf"
+  url "https://files.pythonhosted.org/packages/9e/bd/d146400c656d2ed761af20233b87e44951ade59181935cb7540ff0338c64/borgmatic-2.1.8.tar.gz"
+  sha256 "3e6b20948d77c31c211dd075a6fd6deb93777a80902de7090498b66cf47d8487"
   license "GPL-3.0-or-later"
   head "https://projects.torsion.org/borgmatic-collective/borgmatic.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "240707f0c2369f7522d62c009bc2421c2ab525e41d9c0aa24b93919b447863fd"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "0d973a0db4fc5da8f7ce140b2f2107d8659eff2b977024f0aaea4e12cf57ae98"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "f613936e27ad1d98dc6e4d8e863244d0ef18000f04d6f4d0c3c1544e07b49664"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "000a76f68804378eb7843a0f6439d7ebc341a4f5faffc555cd972ce0322169ec"
+    sha256 cellar: :any,                 arm64_linux:       "7802bd48f724bdd21e3dd2d99dd53a93ee395b63c46117c559b08afd386503ca"
+    sha256 cellar: :any,                 x86_64_linux:      "bcb408bc104e3bb9807ed15e97d244001804aef8fb4f2f40ea7ecadfe5ee04ac"
   end
 
   depends_on "certifi" => :no_linkage
@@ -24,13 +28,13 @@ class Borgmatic < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/cb/31/4971872b3ed8715346231fb6eb4da8fcba65a4143c189db151ee28a2812b/charset_normalizer-3.5.0.tar.gz"
-    sha256 "49bd5feb59b0bf3cbf6ebcf4352e371c95b9da9bacd4449f8b64d0ad2c10a26e"
+    url "https://files.pythonhosted.org/packages/e5/3f/143b048436775b0f76ac3eec145c019e8173ccc2885c8f20319b996d5e83/charset_normalizer-3.5.1.tar.gz"
+    sha256 "6117b84ea48435e5356dc737f5121485c30920ba43375fa7b434fd753df0eac3"
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/cd/63/9496c57188a2ee585e0f1db071d75089a11e98aa86eb99d9d7618fc1edce/idna-3.18.tar.gz"
-    sha256 "ffb385a7e039654cef1ab9ef32c6fafe283c0c0467bba1d9029738ce4a14a848"
+    url "https://files.pythonhosted.org/packages/f5/08/8eea9d4b8302028f3abb2c0813953f7aec26d33b7a8960ed760e65ff29fa/idna-3.20.tar.gz"
+    sha256 "a7db850025b95ded1eae8a46181a1a6c56c92c96f0e2b005d9ff8dc0210cab44"
   end
 
   resource "jsonschema" do
@@ -46,6 +50,11 @@ class Borgmatic < Formula
   resource "packaging" do
     url "https://files.pythonhosted.org/packages/7d/fa/3944b40b07da9ce895c0e6303a5ab7d53da063554f534556b134a54d6093/packaging-26.3.tar.gz"
     sha256 "94edc256424af38762eb31306eed28beb9f0efc50a8837492c9d6fd6004aed79"
+  end
+
+  resource "psutil" do
+    url "https://files.pythonhosted.org/packages/aa/c6/d1ddf4abb55e93cebc4f2ed8b5d6dbad109ecb8d63748dd2b20ab5e57ebe/psutil-7.2.2.tar.gz"
+    sha256 "0746f5f8d406af344fd547f1c8daa5f5c33dbc293bb8d6a16d80b4bb88f59372"
   end
 
   resource "referencing" do
@@ -64,8 +73,8 @@ class Borgmatic < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/53/0c/06f8b233b8fd13b9e5ee11424ef85419ba0d8ba0b3138bf360be2ff56953/urllib3-2.7.0.tar.gz"
-    sha256 "231e0ec3b63ceb14667c67be60f2f2c40a518cb38b03af60abc813da26505f4c"
+    url "https://files.pythonhosted.org/packages/e3/05/b17359e1cefb4f909b5e40b1b90a496d987258916dbbf88e842c729f510e/urllib3-2.8.0.tar.gz"
+    sha256 "63bf2ead4c879426ebf22ef2a781eeb4aa3b4ae798a0435506f8687fd5bb9b63"
   end
 
   def install

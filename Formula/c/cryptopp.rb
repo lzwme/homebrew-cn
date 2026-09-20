@@ -28,6 +28,8 @@ class Cryptopp < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:      "3f784742a258c83ac87f661ea435fbe4ec565c57dc517f8dca6af6f549981c5f"
   end
 
+  deny_network_access!
+
   def install
     ENV.runtime_cpu_detection # https://github.com/weidai11/cryptopp/blob/master/cpu.h
 

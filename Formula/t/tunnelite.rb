@@ -29,7 +29,6 @@ class Tunnelite < Formula
       --output #{libexec}
       --no-self-contained
       --use-current-runtime
-      --maxcpucount:1
       -p:PublishSingleFile=true
       -p:Version=#{version}
     ]
@@ -40,6 +39,9 @@ class Tunnelite < Formula
   end
 
   test do
+    # The sandbox denies FSEvents, so .NET's config file watcher would hang
+    ENV["DOTNET_USE_POLLING_FILE_WATCHER"] = "1" if OS.mac?
+
     assert_match version.to_s, shell_output("#{bin}/tunnelite --version")
     assert_match "Unsupported protocol", shell_output("#{bin}/tunnelite ftp://localhost:1")
   end

@@ -4,7 +4,7 @@ class MysqlAT97 < Formula
   url "https://cdn.mysql.com/Downloads/MySQL-9.7/mysql-9.7.2.tar.gz"
   sha256 "e5a676c7cb73738dc6ea33db2093806ebd512b629a139b897fcab68fcd81aaa4"
   license "GPL-2.0-only" => { with: "Universal-FOSS-exception-1.0" }
-  revision 1
+  revision 2
 
   livecheck do
     url "https://dev.mysql.com/downloads/mysql/9.7.html?tpl=files&os=src",
@@ -13,12 +13,11 @@ class MysqlAT97 < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "e8b9800672783499579d3d611aba96d60b1fb5798d099b37b7edaa974f6736b3"
-    sha256 arm64_tahoe:       "4fdf0c28f25252c0bf48b506a30ce261e96e48a02e5f40f0363f9f4d56248a87"
-    sha256 arm64_sequoia:     "4620ba18b7a82c247a917fd15fa933cc9096bf32fa6e3e3713fd5553ef6bd47d"
-    sha256 arm64_sonoma:      "4c3db270c53888995dc7eb6708a2e432ff734d02d7e88870f7203bfdd727d222"
-    sha256 arm64_linux:       "3084db9b0b2bfb483f1fc624b3055e50c96e552fe50fb11a2f141375392b251c"
-    sha256 x86_64_linux:      "91f6eab3ed8b13f563fdbc9ebb17949294b5536ff783ecf17c85593bc1d26235"
+    sha256 arm64_golden_gate: "ea1374c1500401f987e9bb81a157eda228e02809f89f04710ccf7601e9d5ec9f"
+    sha256 arm64_tahoe:       "10fba60d1760b00f7eb33c57232547d87e25ba61c10b9edc6ca0d4fa2a0377c0"
+    sha256 arm64_sequoia:     "99ac61a718a2a5d789b4cdc5ae2bb77f5cf4213ce33752cb0c292b9bb9891e30"
+    sha256 arm64_linux:       "57c6cfff90697b894f5c95a5074c299c77ed9bfa36560cabf16bb4b88c26b743"
+    sha256 x86_64_linux:      "18606c7b27ad4d086ac834e2078169d8236a2558818028f457685a7863ec3d86"
   end
 
   keg_only :versioned_formula

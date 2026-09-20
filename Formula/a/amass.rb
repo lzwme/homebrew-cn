@@ -18,6 +18,13 @@ class Amass < Formula
 
   depends_on "go" => :build
 
+  # `test do` block performs DNS enumeration
+  allow_network_access! :test
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ENV["CGO_ENABLED"] = "0"
     system "go", "build", *std_go_args, "./cmd/amass"

@@ -4,14 +4,14 @@ class Camlpdf < Formula
   url "https://ghfast.top/https://github.com/johnwhitington/camlpdf/archive/refs/tags/v2.9.2.tar.gz"
   sha256 "1885549dbb2e243b12d1b3752f443efc460400283ce318ec56fbe2f438a57ac8"
   license "LGPL-2.1-only" => { with: "OCaml-LGPL-linking-exception" }
+  revision 1
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "c0492e9e177cbd22933f42dc90c3b964ce32dc2a25646f2ee87af681debe982c"
-    sha256 cellar: :any, arm64_tahoe:       "9030f89e39a806d39f5025e4936e8793770c1350dbfc6417c024d421b598c547"
-    sha256 cellar: :any, arm64_sequoia:     "982b6fb5956daba2cca9d43a0aa1abef64380b44b7e0bc7569f748ebe62e9b63"
-    sha256 cellar: :any, arm64_sonoma:      "606903b74259c4df53e48ce6f46f5456eceb1d62b713d22f6cf850b626d20ef1"
-    sha256 cellar: :any, arm64_linux:       "cb16f9b8feb7097664683d452b6308f543461d078e79926658af759fd739d854"
-    sha256 cellar: :any, x86_64_linux:      "05b8080ddd834db231d480b6813674a7aa1469a3e146d4c215bdf056bf4ea63d"
+    sha256 cellar: :any, arm64_golden_gate: "8622f4faf3a68302b19a14c6956c853f5b28d4bd6adbcd2e115c3fe7f41d48f7"
+    sha256 cellar: :any, arm64_tahoe:       "d230195e3669115b5c9f13685055d91d349e1f585de5920877314ed75ac82a62"
+    sha256 cellar: :any, arm64_sequoia:     "2d4802aa515ad59381258620151faef8ccb4273b8a60036eb25f62d82ffe9896"
+    sha256 cellar: :any, arm64_linux:       "601c933dc03bc2a863f4a2c4eb39ee5de5232c73218389300c179101b5df6dcc"
+    sha256 cellar: :any, x86_64_linux:      "62a0307c0039cec147c066be4a3da3e2712b23e7e972731537571a461565541c"
   end
 
   depends_on "ocaml-findlib" => :build

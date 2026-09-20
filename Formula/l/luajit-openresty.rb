@@ -28,6 +28,8 @@ class LuajitOpenresty < Formula
 
   keg_only "it conflicts with the LuaJIT formula"
 
+  deny_network_access!
+
   def install
     # 1 - Override the hardcoded gcc.
     # 2 - Remove the "-march=i686" so we can set the march in cflags.

@@ -1,19 +1,25 @@
 class NetworkDoctor < Formula
   desc "Network troubleshooting TUI"
   homepage "https://github.com/heymaikol/network-doctor/"
-  url "https://ghfast.top/https://github.com/heymaikol/network-doctor/archive/refs/tags/v1.17.3.tar.gz"
-  sha256 "6df7e95267e095b5e2bcab7c96a6029b954bea064b1f9da3ee2e60c308efaf59"
+  url "https://ghfast.top/https://github.com/heymaikol/network-doctor/archive/refs/tags/v1.17.4.tar.gz"
+  sha256 "8b77001068c7c8985fc02ffad5e25a68b8f7343afef7a666ba150caa8659175d"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "0e3e3f9f754628b2915e261dbf7917d5a07de436ae0b1152057dc8211a3cb44a"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "0e3e3f9f754628b2915e261dbf7917d5a07de436ae0b1152057dc8211a3cb44a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "0e3e3f9f754628b2915e261dbf7917d5a07de436ae0b1152057dc8211a3cb44a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "7ace538c375d4047745fd48da03229e77b6754dce38ecc81db0392318c74f7c6"
-    sha256 cellar: :any,                 x86_64_linux:      "197f23753cd2107353d609701706de48a91ba287a7a83a51245a61b8c0acb834"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "cd0711d75de610ac4fdb98dc101589edb85ad0fc1ddd7e6b60a95c237fe62ab4"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "cd0711d75de610ac4fdb98dc101589edb85ad0fc1ddd7e6b60a95c237fe62ab4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "cd0711d75de610ac4fdb98dc101589edb85ad0fc1ddd7e6b60a95c237fe62ab4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "e17ce8acdcd9b356fcd6b6b75f8487913be0bd3194b1df1db7b662433321f176"
+    sha256 cellar: :any,                 x86_64_linux:      "34e950c37f488c9ef17fda1d75c99722fc36295a15aec75995c350d11e62090f"
   end
 
   depends_on "go" => :build
+
+  allow_network_access! :test
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     system "go", "build", *std_go_args(ldflags: "-X main.version=#{version}", output: bin/"netdoc")

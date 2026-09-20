@@ -23,6 +23,13 @@ class Bitrise < Formula
 
   uses_from_macos "rsync"
 
+  # Test downloads the envman and stepman tools and the step library
+  allow_network_access! :test
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ldflags = %W[
       -X github.com/bitrise-io/bitrise/v#{version.major}/version.VERSION=#{version}

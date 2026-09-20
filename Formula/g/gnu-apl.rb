@@ -25,10 +25,11 @@ class GnuApl < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "415920b4c553171c5a0eceb1953989049b462e4134daf8e04cb7209fa267e8c7"
-    sha256 arm64_sequoia: "066f0d40a60f92a1d7f4b0fd5aa8d18012c976ec7cedef011f2979ff7cea2176"
-    sha256 arm64_linux:   "5dc6f9e6a8c99d7df7fd81f25083490892b7e6355521a2687d2a8492b75c9b23"
-    sha256 x86_64_linux:  "a5550e649fd32123c5f133bf0b4b28ff3ba2a94102625a96d5621a48a35c6cc7"
+    sha256 arm64_golden_gate: "2063be39d2ad488f60ce2f1d08a77000ad669363e66d42c875ee1154c82b0400"
+    sha256 arm64_tahoe:       "415920b4c553171c5a0eceb1953989049b462e4134daf8e04cb7209fa267e8c7"
+    sha256 arm64_sequoia:     "066f0d40a60f92a1d7f4b0fd5aa8d18012c976ec7cedef011f2979ff7cea2176"
+    sha256 arm64_linux:       "5dc6f9e6a8c99d7df7fd81f25083490892b7e6355521a2687d2a8492b75c9b23"
+    sha256 x86_64_linux:      "a5550e649fd32123c5f133bf0b4b28ff3ba2a94102625a96d5621a48a35c6cc7"
   end
 
   head do
@@ -57,12 +58,22 @@ class GnuApl < Formula
     depends_on "pango"
   end
 
+  on_golden_gate :or_newer do
+    depends_on "llvm@21" => :build
+  end
+
   on_sequoia do
     # https://developer.apple.com/documentation/xcode-release-notes/xcode-16_4-release-notes (149025504)
     depends_on xcode: ["16.4", :build]
   end
 
   def install
+    # FIXME: Work around newer clang producing a broken binary
+    if OS.mac? && MacOS.version >= :golden_gate
+      ENV["CC"] = formula_opt_bin("llvm@21")/"clang"
+      ENV["CXX"] = formula_opt_bin("llvm@21")/"clang++"
+    end
+
     system "autoreconf", "--force", "--install", "--verbose" # TODO: if build.head?
     system "./configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"

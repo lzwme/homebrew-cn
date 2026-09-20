@@ -1,17 +1,17 @@
 class AgentManager < Formula
   desc "Terminal UI to manage AI coding-agent tmux sessions"
   homepage "https://github.com/YoanWai/agent-manager"
-  url "https://ghfast.top/https://github.com/YoanWai/agent-manager/archive/refs/tags/v0.37.0.tar.gz"
-  sha256 "be00eb6b9fe7dfcf3c5ccfce0bd0823c7cb460fbcaf725cd148c54e8d213df80"
+  url "https://ghfast.top/https://github.com/YoanWai/agent-manager/archive/refs/tags/v0.38.0.tar.gz"
+  sha256 "55b74bfac8507542ed7c6d9d79ee1ca52bb3f7e9eec8ba40cf0cb332e532fb64"
   license "Apache-2.0"
   head "https://github.com/YoanWai/agent-manager.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "47cf6701b93cc927ba9e1ef418c8294af656bcc7402d6017aaff3be36d64e841"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "358424adb2d6c0703767e36f3830aeeaa3b6a12435ec46447238fb6cc5f565b9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "95b00714351d39e3a09626669d021b9a91f9e70e1f402040bb8bdc8f6ff25916"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "16e5a5e70d141132339aef77421ca3a0fa19b25f658b0df0c9491fbb9108da5d"
-    sha256 cellar: :any,                 x86_64_linux:      "5cd9f1b38b32bf2895f0fd8b2e508f64b317a8a9c920cbe85e48c8a6e62296a0"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "8ce0a5981f0b3e508268c02a2bf715804434bbfbc0dcc5a07fe7832d1222537b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "5f7ee2d9eee041b36fce8ddb34b099a9853aae5f47eff5a7262810a8b3b628dd"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "4c980654934d9a3d3e79e1e2323ad371f070f9743d209cb4309d322505896ca9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "e5972375df8f365bfd6662c64b7bb944a413a6589a703ce65f5f96f57571e9e7"
+    sha256 cellar: :any,                 x86_64_linux:      "d6634a31f8c4aaecafa00b3534d830ac3af4b831ac8871a7a6cacc8bd96def83"
   end
 
   depends_on "go" => :build

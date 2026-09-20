@@ -17,6 +17,13 @@ class Hey < Formula
 
   depends_on "go" => :build
 
+  # `test do` block load-tests example.com
+  allow_network_access! :test
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     system "go", "build", *std_go_args
   end

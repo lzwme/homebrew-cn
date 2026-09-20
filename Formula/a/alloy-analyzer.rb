@@ -18,6 +18,8 @@ class AlloyAnalyzer < Formula
 
   conflicts_with "grafana-alloy", because: "both install `alloy` binaries"
 
+  deny_network_access!
+
   def install
     libexec.install "org.alloytools.alloy.dist-#{version}.jar"
     bin.write_jar_script libexec/"org.alloytools.alloy.dist-#{version}.jar", "alloy"
@@ -26,7 +28,6 @@ class AlloyAnalyzer < Formula
   test do
     output = shell_output("#{bin}/alloy version 2>&1")
     filtered_output = output.lines.reject { |line| line.start_with?("Picked up") }.join
-    ohai "Expected version: #{version}"
     assert_match version.to_s, filtered_output
   end
 end

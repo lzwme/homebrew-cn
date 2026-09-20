@@ -22,6 +22,12 @@ class Telegraf < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     build_version = build.head? ? "0.0.0-#{version}" : version
     ldflags = "-X github.com/influxdata/telegraf/internal.Version=#{build_version}"

@@ -1,8 +1,8 @@
 class Wstunnel < Formula
   desc "Tunnel all your traffic over Websocket or HTTP2"
   homepage "https://github.com/erebe/wstunnel"
-  url "https://ghfast.top/https://github.com/erebe/wstunnel/archive/refs/tags/v10.7.1.tar.gz"
-  sha256 "016cc051c48159cbd7a2b172024ae70ca7e3db298022828fdcc6b7324aa62d85"
+  url "https://ghfast.top/https://github.com/erebe/wstunnel/archive/refs/tags/v11.0.0.tar.gz"
+  sha256 "d1a009091179863d4d6dbde10f7bcfdcf2ce7b245a3accf27e09fa82752ab3c0"
   license "BSD-3-Clause"
   head "https://github.com/erebe/wstunnel.git", branch: "main"
 
@@ -15,15 +15,20 @@ class Wstunnel < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "3639615eaf7cd2d7e218dc3de254be37e3419540bbb381fc4cdc7d7ad5040571"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "da6e243d21ecd91e7ed8e377ac2d71340fce9f959f2939b958333e8ef86f23fd"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "24db473b1fa6b0587a17a8a299b6e938fe2a7cea19f919f2c097016771e577f2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "ec33cc4edfc72971f8c2aca7755c8dc69b58e0c24b57cf60cc431076d70cbcbe"
-    sha256 cellar: :any,                 arm64_linux:       "cf99f39da63e674d7662f24e77aee225592133f81456d64d8f0674db4e6c1dd0"
-    sha256 cellar: :any,                 x86_64_linux:      "e32bbbe4a06fc6bef324e0f6f18eb34b9073bb1775d1a66d6a111e8f4e097085"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "acfa530cd8adae1d50819b39c24a80ca41b66fb213c795df341df1e97df533da"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "8f45b2937165027102d6509ff86373fedbcb476610268834392bf7b132f3f2c6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "84fd27ac88fefca678fcf6a26df7e975e408045314c917ae5fb98a6f2c3a01b0"
+    sha256 cellar: :any,                 arm64_linux:       "3c59cf0302127f0c2888a69c6de5528998765878d67a2946512c92e7cb48f20e"
+    sha256 cellar: :any,                 x86_64_linux:      "e2994034518a75e0442cec91462084919d74df59f29572f677ae16bcf858c1c6"
   end
 
   depends_on "rust" => :build
+
+  allow_network_access! :test
+
+  def fetch
+    system "cargo", "fetch", "--locked", "--target", "host-tuple"
+  end
 
   def install
     system "cargo", "install", *std_cargo_args(path: "wstunnel-cli")

@@ -19,6 +19,12 @@ class Ghq < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download", "all"
+  end
+
   def install
     system "make", "build", "VERBOSE=1"
     bin.install "ghq"

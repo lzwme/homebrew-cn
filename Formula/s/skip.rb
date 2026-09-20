@@ -1,18 +1,17 @@
 class Skip < Formula
   desc "Tool for building Swift apps for Android"
   homepage "https://skip.dev"
-  url "https://ghfast.top/https://github.com/skiptools/skipstone/archive/refs/tags/1.9.10.tar.gz"
-  sha256 "440d4a9ac7ce2184001206d0121baebd79987412b59a084561c57158af0ce4c3"
+  url "https://ghfast.top/https://github.com/skiptools/skipstone/archive/refs/tags/1.9.11.tar.gz"
+  sha256 "da5280142a7537ad4424e6b420128d01edc24a0be6e654b60f8f44f56ffb4a85"
   license "AGPL-3.0-only"
-  revision 1
   head "https://github.com/skiptools/skipstone.git", branch: "main"
 
   bottle do
-    sha256 arm64_golden_gate: "c86579f9e3bc9435d3d171f74623d6e18914db9dd21fbf82ef30cffd6883dcc5"
-    sha256 arm64_tahoe:       "d9907b253aaeb6e0124ed5d98c427ff100cff5a08ba47071d280f37508c122ff"
-    sha256 arm64_sequoia:     "1b90d7ddfcdd8d20f90d06e0a20b2d239e77c0ca5bf5fa0061206bfabc7d3e15"
-    sha256 arm64_linux:       "7750a533c47335e667320b420ec5bf04cf75f73dd9df52c279197f80cbdfb172"
-    sha256 x86_64_linux:      "15f5cae8b62b0991b142813de70be63190882bc04fc31ca84d48e18de672bede"
+    sha256 arm64_golden_gate: "1d7afd74ad748fb317aa75eedbf63aa3a83f2bc11b33eb3c87ba0e3a8421f4b7"
+    sha256 arm64_tahoe:       "4c75fe32d25c2846b381a60bbcc1290850a800876199ec6c7671678cfc7c5271"
+    sha256 arm64_sequoia:     "6ee0ae35694b0b9960518cd8dfda3f793b3ba5ea1be03a610115f92978f503ed"
+    sha256 arm64_linux:       "65c366f04615d89b827fd769b2ec9f261feac4b495c7b1940953e6a33d998a8b"
+    sha256 x86_64_linux:      "01ee1aa34976e57f6951b98f4603ba66514ea471f415971506e907c0b4cfa490"
   end
 
   depends_on "gradle"
@@ -35,8 +34,8 @@ class Skip < Formula
   end
 
   resource "skipsubmodule" do
-    url "https://ghfast.top/https://github.com/skiptools/skip/archive/refs/tags/1.9.10.tar.gz"
-    sha256 "2f9b0b50038ed5f088e6caca005639bcd35f5a76e78255241d79541ca030dcb2"
+    url "https://ghfast.top/https://github.com/skiptools/skip/archive/refs/tags/1.9.11.tar.gz"
+    sha256 "ac55fb432f02460df5acba18f3ad814be9d2cb970b38ad0917ff7ad010acd8c7"
 
     livecheck do
       formula :parent

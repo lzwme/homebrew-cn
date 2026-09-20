@@ -16,6 +16,8 @@ class Allure < Formula
 
   depends_on "openjdk"
 
+  deny_network_access!
+
   def install
     # Remove all windows files
     rm(Dir["bin/*.bat"])

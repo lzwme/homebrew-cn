@@ -8,12 +8,13 @@ class Marksman < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "da4817971f267aaa10093ffe12e568b6e1ba29021c794d66086d9a6956d958c6"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "438ee8a52c1fc8556cfe210d9c63366306d9fa5bd517fe22f2926d63c3241fd2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e10962409dc514362c16d9effcb22c38ccd7c2bf481a3652b745097a057305b1"
-    sha256 cellar: :any_skip_relocation, sonoma:        "66ae61aec5ffe5ba77c662fdc59c6eb5f5e573ed5a0484182452fd6d85d1b4eb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0e02dd83e9db94a0092a8007187a0cc10202bfce5fa657dcd3c7b5a2db01c394"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9d7dc81a783f1866894aaaa40d440034da2230c09389c74a4411697ea9293990"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "4a9163fc0dfefc7ed1286f638a9f3d779ccea5ddd0ea243ce19af7556021d749"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "da4817971f267aaa10093ffe12e568b6e1ba29021c794d66086d9a6956d958c6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "438ee8a52c1fc8556cfe210d9c63366306d9fa5bd517fe22f2926d63c3241fd2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "e10962409dc514362c16d9effcb22c38ccd7c2bf481a3652b745097a057305b1"
+    sha256 cellar: :any_skip_relocation, sonoma:            "66ae61aec5ffe5ba77c662fdc59c6eb5f5e573ed5a0484182452fd6d85d1b4eb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "0e02dd83e9db94a0092a8007187a0cc10202bfce5fa657dcd3c7b5a2db01c394"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "9d7dc81a783f1866894aaaa40d440034da2230c09389c74a4411697ea9293990"
   end
 
   # Aligned to .NET dependency. Can remove if updated to latest .NET

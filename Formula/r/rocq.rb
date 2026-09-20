@@ -2,15 +2,15 @@ class Rocq < Formula
   desc "Proof assistant for higher-order logic"
   homepage "https://rocq-prover.org/"
   license "LGPL-2.1-only"
-  compatibility_version 2
+  compatibility_version 3
 
   stable do
-    url "https://ghfast.top/https://github.com/rocq-prover/rocq/releases/download/V9.2.0/rocq-9.2.0.tar.gz"
-    sha256 "a45280ab4fbaac7540b136a6b073b4a6db15739ec1e149bded43fa6f4fc25f20"
+    url "https://ghfast.top/https://github.com/rocq-prover/rocq/releases/download/V9.3.0/rocq-9.3.0.tar.gz"
+    sha256 "3f0fc283e8644394aa9c7a6e3995b6d9ebbe1e6dda712bf431f9c372dcef95ad"
 
     resource "stdlib" do
-      url "https://ghfast.top/https://github.com/rocq-prover/stdlib/releases/download/V9.1.0/stdlib-9.1.0.tar.gz"
-      sha256 "2d66421c52ed32719a15cb039c368e063c4d85f670e3d142f5eb7415fb427985"
+      url "https://ghfast.top/https://github.com/rocq-prover/stdlib/releases/download/V9.2.0/stdlib-9.2.0.tar.gz"
+      sha256 "f2ee1cb0b9af3e7b20625f0e9ec4becb7a27bb453d53b9bc0ea3d67bc8b3142c"
     end
   end
 
@@ -20,13 +20,11 @@ class Rocq < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "27e78332f7eba9182f70c256e0424530e0679ef4aa3f8738b9e07c0eb3613cd2"
-    sha256 arm64_tahoe:       "2e2a4c16e90c21d3baa45352ff39df6bc934d643c5e9fecdddf9f4ee3483aecd"
-    sha256 arm64_sequoia:     "4e5910bd59bf71c5b891591d1f7b039029cbef5415e73dc0bb4448923c403a8b"
-    sha256 arm64_sonoma:      "cab7ab2eff645985a0cfe97c53d99c17dac6bcc192d58f7ad5b38d2de5fee619"
-    sha256 sonoma:            "c1bd10138d7aa10292f4337e33cfc2721b045572738e8f69d77ac6a90e152f82"
-    sha256 arm64_linux:       "f9e9c8d1fef13ded0918f8ba02a9a04e319356bf19a88e50ff69c9e781d2455b"
-    sha256 x86_64_linux:      "61bfbed04999eaabaf499bf0c0f884bd16298300ddd0d692bc819d947f6a1fb3"
+    sha256 arm64_golden_gate: "aa8e3bcb62ef598b8fed867c758c42c10e5e59a02caee260ff18988518d3a8c0"
+    sha256 arm64_tahoe:       "034125ee4c09f42e6a3a25b04fd86b5f26898be6cc36523d6203590f90428708"
+    sha256 arm64_sequoia:     "92baae84953c61311baab80628130dd32a72bfb4927010506693984f202487a0"
+    sha256 arm64_linux:       "bcfa77c3473be7e8f2bf44480e6e701ad570fbcf034673f1b444db68985fadf2"
+    sha256 x86_64_linux:      "edb9f518845541984014fd9d77f350482b17dc07ee057e00bb4b570b3bc9aeab"
   end
 
   head do
@@ -55,13 +53,6 @@ class Rocq < Formula
     ENV.prepend_path "OCAMLPATH", formula_opt_lib("ocaml-findlib")/"ocaml"
 
     packages = %w[rocq-runtime coq-core rocq-core coqide-server]
-
-    # dune 3.24 deleted the `coq` language extension. The default (rule_gen)
-    # build doesn't use it (only the unused `dune.disabled` files do) and the
-    # `(coq ...)` env field only sets dev-profile flags, so drop both to keep
-    # building until a release adopts the Rocq build language.
-    inreplace "dune-project", /^\(using coq [\d.]+\)\n/, ""
-    inreplace "dune", /\n\s*\(coq \(flags :standard -w \+default\)\)\)/, ")"
 
     system "./configure", "-prefix", prefix,
                           "-libdir", HOMEBREW_PREFIX/"lib/ocaml/coq",

@@ -9,7 +9,7 @@ class Katago < Formula
     "MIT",
     "CC0-1.0", # g170 resources
   ]
-  revision 1
+  revision 2
 
   livecheck do
     url :stable
@@ -17,12 +17,11 @@ class Katago < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "4415b3fe5d922ab27c706b921ff4ab4e2fcbc8506535732b69015ff8224f6b87"
-    sha256 cellar: :any, arm64_tahoe:       "a5d94fa6c5a4ee62144f9caeea69df03057ca1cff2c39a3fd984fac758cd0887"
-    sha256 cellar: :any, arm64_sequoia:     "12b4947ca775ab6f38a50053b845ad19da7a20be4a142b91982ef2b8ca123ec7"
-    sha256 cellar: :any, arm64_sonoma:      "d932fc15526cd251dae30eceeafcdc4bb215e9c50b2b8245d3767cd7d8e665bb"
-    sha256 cellar: :any, arm64_linux:       "daf0e1bec32efb456e78f809a33c6c991c555426e64491a3db734de1b2720392"
-    sha256 cellar: :any, x86_64_linux:      "e40f12ebf48b8a16a26627c7696b5e708236cfb542ab5253d45ae3e49671d89e"
+    sha256 cellar: :any, arm64_golden_gate: "d89cdb99b223b3d4cf26c5984fecacf0142a5cbe20fb62b8dfe16f298584df0d"
+    sha256 cellar: :any, arm64_tahoe:       "72e07d097c976c0d57802a81c6dfda3e3ec6d885397d77666b355da5db6ea2eb"
+    sha256 cellar: :any, arm64_sequoia:     "7ff0aef28c12264c64b8d03f2b0168a7e92a7b5c9e6bd5ee1cc5ea2a54cd865a"
+    sha256 cellar: :any, arm64_linux:       "93e915993f95246bb7284bc2854d2dd27ab6cb8dcd7169bd56100543ab3710c0"
+    sha256 cellar: :any, x86_64_linux:      "e5f740c4830b24298c5b310a87c4536527c0b2239fe131e14b5896ab0e5dbc4e"
   end
 
   depends_on "cmake" => :build

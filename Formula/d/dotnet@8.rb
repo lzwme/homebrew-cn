@@ -13,11 +13,12 @@ class DotnetAT8 < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "3f07359848f9883e27d9242a063b21b1b159e90209f0b7ed8ca2bc26a7a6e448"
-    sha256 cellar: :any, arm64_sequoia: "2166e2f4856aa1e6066dff9e4079eb892b74b226cc96a2ba25b593e9a1587c46"
-    sha256 cellar: :any, arm64_sonoma:  "9a4c379ec1728f843bb74b725c9a8ae465d9ea865fce21d8faf65983e228c4c8"
-    sha256 cellar: :any, arm64_linux:   "dde17475ab661cec62698a886bcd336fa16cfa619377ce80dce5d3bc2922d118"
-    sha256 cellar: :any, x86_64_linux:  "e70864dc08b6369bf730383dc425c3e2436b179e400f8371b525b327f005a5ce"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "1541927a6d3509acafc72ae3735e8d449e2c67835e84296da542a43b1784ecea"
+    sha256 cellar: :any, arm64_tahoe:       "c78fadd8d5546c7cfa7cef7127ae8dc942b41263eed9e9714029dac3601b9315"
+    sha256 cellar: :any, arm64_sequoia:     "c0c2fa17e79aa727bfe40d9ae3b284b9cce10c2f3407457a5587ffcbc978bc0f"
+    sha256 cellar: :any, arm64_linux:       "2dbcb5921af87f3aa8de94c6ef9d798a08efd2396207d393c30be4706c160038"
+    sha256 cellar: :any, x86_64_linux:      "f39876995501a0350b3b6c4e9940167f037267da1b30796f189c2eb345cc20f3"
   end
 
   keg_only :versioned_formula
@@ -104,16 +105,34 @@ class DotnetAT8 < Formula
       inreplace "src/runtime/eng/SourceBuild.props",
                 "--outputrid $(TargetRid)",
                 "\\0 --cmakeargs -DCLR_CMAKE_USE_SYSTEM_LIBUNWIND=ON"
-
-      # Work around build script getting stuck when running shutdown command on Linux
-      # Ref: https://github.com/dotnet/source-build/discussions/3105#discussioncomment-4373142
-      inreplace "build.sh", '"$CLI_ROOT/dotnet" build-server shutdown', ""
-      inreplace "repo-projects/Directory.Build.targets",
-                '<Exec Command="$(DotnetToolCommand) build-server shutdown" />',
-                ""
     end
 
+    # Skip shutting down build servers, which gets stuck on Linux and fails in the macOS build sandbox
+    # Ref: https://github.com/dotnet/source-build/discussions/3105#discussioncomment-4373142
+    inreplace "build.sh", '"$CLI_ROOT/dotnet" build-server shutdown', ""
+    inreplace "repo-projects/Directory.Build.targets",
+              '<Exec Command="$(DotnetToolCommand) build-server shutdown" />',
+              ""
+
     system "./prep.sh"
+    if OS.mac?
+      # MSBuild hardcodes `/tmp` for its sockets, which the build sandbox denies, so prefer a short `TMPDIR`.
+      # Below 38 characters, even its longest socket name (66) fits macOS's 103-byte socket path limit.
+      # https://github.com/Homebrew/brew/issues/23934
+      inreplace "src/msbuild/src/Shared/NamedPipeUtil.cs",
+                'Path.Combine("/tmp", pipeName)',
+                'Path.Combine(Path.GetTempPath().Length < 38 ? Path.GetTempPath() : "/tmp", pipeName)'
+      # Avoid worker nodes, which the unpatched bootstrap MSBuild cannot reach
+      system ".dotnet/dotnet", "build", "src/msbuild/src/MSBuild/MSBuild.csproj", "--configuration", "Release",
+             "-maxcpucount:1"
+      # Replace the bootstrap SDK's MSBuild with the patched one
+      cp Dir["src/msbuild/artifacts/bin/MSBuild/Release/net*/{MSBuild,Microsoft.Build*}.dll"],
+         Dir[".dotnet/sdk/*"].first
+      # `build.sh` builds MSBuild again into the same directory
+      rm_r "src/msbuild/artifacts"
+    end
+    # The sandbox also denies the Roslyn compiler server's `/tmp` socket, so compile without it
+    ENV["UseSharedCompilation"] = "false" if OS.mac?
     # We unset "CI" environment variable to work around aspire build failure
     # error MSB4057: The target "GitInfo" does not exist in the project.
     # Ref: https://github.com/Homebrew/homebrew-core/pull/154584#issuecomment-1815575483

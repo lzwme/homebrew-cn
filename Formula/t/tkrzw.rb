@@ -1,8 +1,8 @@
 class Tkrzw < Formula
   desc "Set of implementations of DBM"
   homepage "https://dbmx.net/tkrzw/"
-  url "https://dbmx.net/tkrzw/pkg/tkrzw-1.0.32.tar.gz"
-  sha256 "d3404dfac6898632b69780c0f0994c5f6ba962191a61c9b0f4b53ba8bb27731c"
+  url "https://dbmx.net/tkrzw/pkg/tkrzw-1.0.33.tar.gz"
+  sha256 "faa41fdad6a27ae11fbf29d185c142761ea8bad4ae89382d16ccc3f2fae0e39c"
   license "Apache-2.0"
 
   livecheck do
@@ -11,14 +11,11 @@ class Tkrzw < Formula
   end
 
   bottle do
-    rebuild 2
-    sha256 arm64_golden_gate: "37bc73c0c44c517ecd9d81fe32cc4758db3e3e4860614b9f64ea1fca13c90c6a"
-    sha256 arm64_tahoe:       "2a93d5a38b3e08c37d54d667daec5725390de6704e0ded01dae185d6fece38fa"
-    sha256 arm64_sequoia:     "c0d04a3456293bd15f82e6a73841e89afa3667c703090ef5bbf8cc83f65a7ed3"
-    sha256 arm64_sonoma:      "4cdac837ea7a7725dfd53dd144ecf10bdd943ad16afb69a78fb157898902c159"
-    sha256 sonoma:            "f0a9dfb7aa1d28dc848b8ae5a67093fe8ba7d73576fbb49f6eaf31804a46f63c"
-    sha256 arm64_linux:       "2b2d2a3bc55190b7b8d86704fc5ca5920280277a238d55b20ae15c8ec00f1496"
-    sha256 x86_64_linux:      "b4afc2a954abf29f144c953048526c89d242af29652ac59d9ee05cd5d715ecd0"
+    sha256 arm64_golden_gate: "5865ac984d39f4fb153ae44920466fdea6d4ba8a86af561c60a515ae5ac6d825"
+    sha256 arm64_tahoe:       "cb4b48332204e75f562e3c50921dad32ca438d271bcbe5c290457acab6d70613"
+    sha256 arm64_sequoia:     "b7aa8e0461e051c758fcdf515864f06febc33cdf5ff9d6612650e5f8cd99ccfb"
+    sha256 arm64_linux:       "ccf6eb112f27fee8a4c894470d1e5c5c28d29f7363487d01426b9812a6abdec9"
+    sha256 x86_64_linux:      "3935085ecc08d9a4db49ddb135d5f28687b9a00ce5be722cdb80c89983f5875a"
   end
 
   depends_on "lz4"
@@ -28,6 +25,8 @@ class Tkrzw < Formula
   on_linux do
     depends_on "zlib-ng-compat"
   end
+
+  deny_network_access!
 
   def install
     # Don't add -lstdc++ to tkrzw_build_util and tkrzw.pc

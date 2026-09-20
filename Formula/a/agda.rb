@@ -4,6 +4,7 @@ class Agda < Formula
   # agda2hs.cabal specifies BSD-3-Clause but it installs an MIT LICENSE file.
   # Everything else specifies MIT license and installs corresponding file.
   license all_of: ["MIT", "BSD-3-Clause"]
+  revision 1
 
   stable do
     url "https://ghfast.top/https://github.com/agda/agda/archive/refs/tags/v2.8.0.2.tar.gz"
@@ -51,8 +52,16 @@ class Agda < Formula
     end
 
     resource "agda-language-server" do
-      url "https://ghfast.top/https://github.com/agda/agda-language-server/archive/refs/tags/v6.tar.gz"
-      sha256 "e2ffa646385585ecd0230f6031ee7cb66d1ea743007b41bc92cc469b2218ebe5"
+      url "https://ghfast.top/https://github.com/agda/agda-language-server/archive/refs/tags/v7.tar.gz"
+      sha256 "294a8d0fe92b80711d221bc50fab5eced2285f6a43123482b27c52073a6e2c5a"
+
+      # Fix the reported ALS version, upstream PR ref, https://github.com/agda/agda-language-server/pull/56
+      patch do
+        url "https://github.com/agda/agda-language-server/commit/a585542a717d4af65a998adaddd87e1020bf9ac1.patch?full_index=1"
+        sha256 "01a09b16be7cf4f1fda548461515559417dedc1a17275cf744a0ceef93655d13"
+        type :unofficial
+        resolves "https://github.com/agda/agda-language-server/pull/56"
+      end
     end
   end
 
@@ -64,11 +73,11 @@ class Agda < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "e16d5b9a4c960d2410be2b441b1d9d1b5bfd4f162749e98e0ab32f197de511f0"
-    sha256 arm64_tahoe:       "cd835f9c78b6422aca35c4252b94f5ec33ebafff3b0dce3ca7e057312e3a49eb"
-    sha256 arm64_sequoia:     "ccb6e7ec57a78f9058d763e849bc8eddad8e1efcfb10322d07349f54e42f6ffe"
-    sha256 arm64_linux:       "a090b9c540c6866b94c43b681b3f8b54529107e706713a0ee114bb39941ba44e"
-    sha256 x86_64_linux:      "3f7760c14bbd35475dacb6caed38f3a65e511760263712f2128f563136e1585c"
+    sha256 arm64_golden_gate: "d546a84adfc9f050d04d3d37f9d5b47cb11f2cb1c0b5fc968421c8b336ee8def"
+    sha256 arm64_tahoe:       "26d87e9af2763c2330a9004b73b7d2be6636813018db23a4f68c6b0a794e382a"
+    sha256 arm64_sequoia:     "e6b09f39a2ad9ba7ae167a10c367e9ea54c227129d68d6c2b7f51eb757e29034"
+    sha256 arm64_linux:       "6d6907cd9f3f86e3ac32518b6a9152028bbd1b713a95cfdb449cea5338287949"
+    sha256 x86_64_linux:      "cdd83b5a8e3561150a41c510a1c8f0a1806875fe7c5c57eccbf69da35a392b5d"
   end
 
   head do
@@ -428,7 +437,7 @@ class Agda < Formula
     system bin/"agda2hs", "--out-dir=#{testpath}", agda2hstest
     assert_equal agda2hsexpect, agda2hsout.read
 
-    # check that the installed als binary reports the correct version
-    assert_equal "Agda v2.8.0 Language Server v6", shell_output("#{bin}/als -V").strip
+    assert_equal "Agda v#{version.major_minor_patch} Language Server v#{resource("agda-language-server").version}",
+                 shell_output("#{bin}/als -V").strip
   end
 end

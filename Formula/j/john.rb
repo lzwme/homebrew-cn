@@ -33,6 +33,8 @@ class John < Formula
     file "Patches/john/1.9.0.patch"
   end
 
+  deny_network_access!
+
   def install
     inreplace "src/params.h" do |s|
       s.gsub!(/#define JOHN_SYSTEMWIDE[[:space:]]*0/, "#define JOHN_SYSTEMWIDE 1")

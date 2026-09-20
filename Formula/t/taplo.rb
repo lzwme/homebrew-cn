@@ -30,6 +30,12 @@ class Taplo < Formula
 
   depends_on "rust" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", "--locked", "--target", "host-tuple"
+  end
+
   def install
     system "cargo", "install", *std_cargo_args(path: "crates/taplo-cli", features: "lsp")
     generate_completions_from_executable(bin/"taplo", "completions", shells: [:bash, :zsh, :fish, :pwsh])

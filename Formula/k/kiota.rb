@@ -7,11 +7,12 @@ class Kiota < Formula
   head "https://github.com/microsoft/kiota.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4a9c77a399ba1c195f46f0ac9fba316ca3961b95bd932f692a488151161b30d0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "78f4b23e3ec267cb0ab4e12ba3d759a664fcb6e69ebcbd29edef04d820021312"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5e14039346cb054f65d1e2c1e13a76ad431298db00bb9930a35d36f7c9d7352f"
-    sha256 cellar: :any,                 arm64_linux:   "06e6370227aca99b8fd718f27513e493a3be1d169f0f21de6a46782bf3bb12f2"
-    sha256 cellar: :any,                 x86_64_linux:  "073a5802af59ff09c924102e3cab02b37f0f98d1bb885b2cd60971a46a6402ef"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "4b87845f945786d6b686d73e611cfd6e2d2e63cd13cd6760d15845b6dce32e58"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "4a9c77a399ba1c195f46f0ac9fba316ca3961b95bd932f692a488151161b30d0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "78f4b23e3ec267cb0ab4e12ba3d759a664fcb6e69ebcbd29edef04d820021312"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "5e14039346cb054f65d1e2c1e13a76ad431298db00bb9930a35d36f7c9d7352f"
+    sha256 cellar: :any,                 arm64_linux:       "06e6370227aca99b8fd718f27513e493a3be1d169f0f21de6a46782bf3bb12f2"
+    sha256 cellar: :any,                 x86_64_linux:      "073a5802af59ff09c924102e3cab02b37f0f98d1bb885b2cd60971a46a6402ef"
   end
 
   depends_on "dotnet"
@@ -38,6 +39,9 @@ class Kiota < Formula
   end
 
   test do
+    # The sandbox denies FSEvents, so .NET's config file watcher would hang
+    ENV["DOTNET_USE_POLLING_FILE_WATCHER"] = "1" if OS.mac?
+
     assert_match version.to_s, shell_output("#{bin}/kiota --version")
 
     info_output = shell_output("#{bin}/kiota info")

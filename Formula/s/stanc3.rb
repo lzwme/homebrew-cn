@@ -7,11 +7,12 @@ class Stanc3 < Formula
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "a79fe8f081c77718538a0f6d9a13cf8917359af4088a20d6f3e30748960081c8"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "fe1941ff3ff9b3ac76a74b9216d5d74ec4babe3348bd3296f2fced78614bd95b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "e8b6d20d8d19596b3d06f563c79df00cfda92e3647d17ac30a9cea5355c5a387"
-    sha256                               arm64_linux:       "5465af6ad97b923d6cff76306b5eacfe9811267406bd74d48b4e16f097d20c57"
-    sha256                               x86_64_linux:      "38f000db2857431ab90a425aedf574f6e0d12a65616d7c6cab966a375f5bdb73"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "dfe53612ffae4cf72094cd4265d3e2492a03f6bb34b0d0a1486d06eb8569ff5b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "0c7b77a3cb300ca440fe6282f8e403fd79c04f243c5199f8888926e137626a51"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "08bfe3a11b10e0c6dcb3a72037a4a510c176eb0d2b315a8d6aa362070bc1267d"
+    sha256                               arm64_linux:       "b600d142ba784335f89a054dbeba5822babf856d94f1c5acf994a613e9e2ca14"
+    sha256                               x86_64_linux:      "2d5d18812a525f078226bdfbf2b003bb99e831f34da8428f09f16c1c3dc886c4"
   end
 
   depends_on "ocaml" => :build
@@ -22,6 +23,14 @@ class Stanc3 < Formula
   resource "homebrew-testfile" do
     url "https://ghfast.top/https://raw.githubusercontent.com/stan-dev/stanc3/2e833ac746a36cdde11b7041fe3a1771dec92ba6/test/integration/good/algebra_solver_good.stan"
     sha256 "44e66f05cc7be4d0e0a942b3de03aed1a2c2abd93dbd5607542051d9d6ae2a0b"
+  end
+
+  # Update pinned OCaml to 5.5.1
+  patch do
+    url "https://github.com/stan-dev/stanc3/commit/a580643374c9390e7c7a9ec3db014ebb65f0e7bc.patch?full_index=1"
+    sha256 "4f6489e6144dbada19046eda03b66ad4d120ca8e659b7c7187aa65fc13264807"
+    type :backport
+    resolves "https://github.com/stan-dev/stanc3/pull/1707"
   end
 
   deny_network_access!

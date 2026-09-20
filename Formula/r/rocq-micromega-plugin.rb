@@ -4,6 +4,7 @@ class RocqMicromegaPlugin < Formula
   url "https://ghfast.top/https://github.com/rocq-community/micromega-plugin/archive/refs/tags/v1.1.1.tar.gz"
   sha256 "5ed46c62dfb7c06ad1df2f744bca5a39282ac9787c57433478a87a706e6e4391"
   license "LGPL-2.1-only"
+  revision 2
 
   livecheck do
     url :stable
@@ -11,13 +12,11 @@ class RocqMicromegaPlugin < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "1ce63a78dd8f3acae33c2a1c476f296519a4a50fa365ff5804f0934af3f32ea0"
-    sha256 cellar: :any, arm64_tahoe:       "c04708a0953af29c96453358190183f87ec8f0afd7470321e70b88cce61a4db8"
-    sha256 cellar: :any, arm64_sequoia:     "c3d7c9df193f7f2839292b54a610791e0696736f3efdcd3d84c53de03c1c7053"
-    sha256 cellar: :any, arm64_sonoma:      "807b853049b18c8fcfc15bce78a84eb282742e8419cfdcc7a536ff7e4ab5241b"
-    sha256 cellar: :any, sonoma:            "ec6d0db7151013988fbd768c35d314d84681364534343afa13100468f12bbdb6"
-    sha256 cellar: :any, arm64_linux:       "530462f339caa852f7186e472449869685c4b509f572299e15cb4ab5e7e3411c"
-    sha256 cellar: :any, x86_64_linux:      "97621d7474e127377d099fbc804c0c77ea86d22acc7b20b8dabd9ec6998b9b7d"
+    sha256 cellar: :any, arm64_golden_gate: "d6ada3d5c0ca2dd30bfb3d3bd4e170e1421309b902eeaed96cf6962375b22bfb"
+    sha256 cellar: :any, arm64_tahoe:       "e3b7e603ec115bdb0fc407fb742b0e3bd865e2a7a3f15ad9cae5d19092e5c615"
+    sha256 cellar: :any, arm64_sequoia:     "1a67d62f01d5a865bd879f9683fc33674b58fe0c846204b68db99faea7360e89"
+    sha256 cellar: :any, arm64_linux:       "cc49aa8e5ab6f3f8a72761cbfa43cf78067b536e15f7766698c0feeede2d748c"
+    sha256 cellar: :any, x86_64_linux:      "8bba083d3e93bbc504d526208477edac76a0dc9dd7799157412e3b927093fc2f"
   end
 
   depends_on "dune" => :build

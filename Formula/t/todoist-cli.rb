@@ -1,24 +1,24 @@
 class TodoistCli < Formula
   desc "Official command-line interface for Todoist"
   homepage "https://github.com/Doist/todoist-cli"
-  url "https://registry.npmjs.org/@doist/todoist-cli/-/todoist-cli-5.3.7.tgz"
-  sha256 "ffa29660bba78502b2984008f9ee66ddf3f787d5436d75a86c5bddeeefac993f"
+  url "https://registry.npmjs.org/@doist/todoist-cli/-/todoist-cli-5.3.9.tgz"
+  sha256 "3c1824021a7b294f279e579fcd45ae5f5d118ba11301c2b6db518e3b44839f19"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_golden_gate: "d05f7b75f85f60e2e064f48b3464b1d5fc9f038f0791db17a777ee358657fa40"
-    sha256 cellar: :any,                 arm64_tahoe:       "2954c0118f22476784c980dc64f9395bfdf76af6cf0a969b4ab34781a0c6b87c"
-    sha256 cellar: :any,                 arm64_sequoia:     "df5ec50c6275720e743d052bd255e0c82f4b6ad7dca0a7694db9167c5c5cd814"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "d6d9fd5ad53de8b42043ffb5078a25215c96c69a9bce2413075b1ba1426998e6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "888790636ac712b31fec8bbf846d159b0369a5aa8898421b2670d2690bc42c73"
+    sha256 cellar: :any,                 arm64_golden_gate: "88eefd57330ce9f696a9ef7f86d9d03f610679a8aacd5773be97bf4c07df1a0c"
+    sha256 cellar: :any,                 arm64_tahoe:       "e9f81a3e81c7a2c0d96600f28c5e16cc98af25a89b6edf38ad70eefc5934aa32"
+    sha256 cellar: :any,                 arm64_sequoia:     "30d95de91150f071f444b91be0750839662625c6b75b21b22af65bd4fd43a51c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "8a7faca9522d84d90e02a9e365b9d16c6e3d73ed3a1593be26be407b9415e844"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "cdf6495d639950ad6e7eb15aab80ebd80d275806f037e7f384d1493e6eff80f4"
   end
 
   depends_on "rust" => :build
   depends_on "node"
 
   resource "keyring" do
-    url "https://ghfast.top/https://github.com/Brooooooklyn/keyring-node/archive/refs/tags/v2.0.0.tar.gz"
-    sha256 "0a3eb14fe07b733e945d25d1a5425021c728ed19886f426d22afa84fc97c7754"
+    url "https://ghfast.top/https://github.com/Brooooooklyn/keyring-node/archive/refs/tags/v2.1.0.tar.gz"
+    sha256 "dcb0381cf252c577ff5c0c3bb0d5dd0750fd04a528484e5dbfdfb3c1add12467"
 
     livecheck do
       url "https://ghfast.top/https://raw.githubusercontent.com/Doist/todoist-cli/v#{LATEST_VERSION}/package-lock.json"

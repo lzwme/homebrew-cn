@@ -1,21 +1,26 @@
 class Tailcat < Formula
   desc "Netcat-like tool over Tailscale's data plane, without its control plane"
   homepage "https://github.com/tailscale/tailcat"
-  url "https://ghfast.top/https://github.com/tailscale/tailcat/archive/refs/tags/v0.6.0.tar.gz"
-  sha256 "14d0e1a80dd4836053dd3e2cd6bbb1ad40ecf72c181c3f92d319d325bf7f6e6f"
+  url "https://ghfast.top/https://github.com/tailscale/tailcat/archive/refs/tags/v0.7.0.tar.gz"
+  sha256 "54a97d9046d0bf2afbf99987ff630fc425ee79272c6c7ccd645a49a076d3cecb"
   license "BSD-3-Clause"
   head "https://github.com/tailscale/tailcat.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "d08b8febde3fea5526f1c2877d546bf522e835df5f16602f3a44065442e4ed3b"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "9f686d22d495a8ee91bc1af7f908500af276851aaf7913a8a99c5993974d429b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "3e132bd00487bca6a37dd8c500a5343b4febe7663b5063d89eaf348fffd23179"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "f91c1798eb7e91de6ea3cdea482c467e4810f607393af82080d743461228a345"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "7a913305bf974b4cc867189a6f6a3f33d792f5f990a4be06a6ba4a78c36b43df"
-    sha256 cellar: :any,                 x86_64_linux:      "1d2ff46c7d8d17f801c5517631a1779d85981a872ffa56db56d43282addd384e"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "6b9a79a9c847a94c7ac4544ef8b975db39fcc5db94dc9285b9a15ae24e52e6d4"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "cfd5f77dfda9a3fc6e66ec60a0d408527281d61f47cf06680fea0c28ffe5f212"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "4ad12dbe1687b64f6eb990a71dc111f6d33c0aebff1e342a8ae6c209412f6769"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "313ccd5f792b7ee23fc88d352fd09fb801bac0bed8b6dc03d4b1735fca83031b"
+    sha256 cellar: :any,                 x86_64_linux:      "3d20bb3caa436e21d7f13eab763919b36b948917e411af52342b8cbcbedbb19a"
   end
 
   depends_on "go" => :build
+
+  allow_network_access! :test
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     system "go", "build", *std_go_args(ldflags: "-X main.version=v#{version}"), "./cmd/tailcat"

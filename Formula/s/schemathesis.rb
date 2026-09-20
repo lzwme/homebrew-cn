@@ -3,16 +3,16 @@ class Schemathesis < Formula
 
   desc "Testing tool for web applications with specs"
   homepage "https://schemathesis.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/e4/5a/06fc9ac14b04775bcfb3b33dbdf7b8e09384fd544be8c978732c05e5685a/schemathesis-4.27.3.tar.gz"
-  sha256 "4d2420f82f74c0f5e917d7030297c8153a02a218c460ccf19de6a881efa1402b"
+  url "https://files.pythonhosted.org/packages/a0/8e/a46f5546bd11215eeca792322bd0f364a7dae4e672510f77da1b0131ab0b/schemathesis-4.27.4.tar.gz"
+  sha256 "10946b0f6e535b3180eb6320f18e542b542a6a64c6dddd40de40739c754be7db"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "5db18e3693075ac3ac230d11b33e7ca2a41bf53d184759b7be81bc904544a7b2"
-    sha256 cellar: :any, arm64_tahoe:       "2b433973fafa1aa5161e7812b96dfb929fd8813bff282cde59eca3e2eea4c35d"
-    sha256 cellar: :any, arm64_sequoia:     "0246846869727631c5d61af610de10b9794fe6c231c20ca4c82c557c2d96b4f2"
-    sha256 cellar: :any, arm64_linux:       "0789ecbda973f66f0c5fb19f39c58aeb54bfc3fc07c089cae76cb9210a5444bd"
-    sha256 cellar: :any, x86_64_linux:      "a184785d489f1b276c04a3a94d5c5f2a3f4d3f40c504b7e7a519c57d868722fc"
+    sha256 cellar: :any, arm64_golden_gate: "d89538f5aebcc26351c4dc9826cfcbef6af1826d6754447fd90612b106cedb61"
+    sha256 cellar: :any, arm64_tahoe:       "961f6b0d1ce15d8333d887a801ad876dcb564f419c20fa17edbb42e0f03ab50c"
+    sha256 cellar: :any, arm64_sequoia:     "9279c3bdca58b2460fa6940b3853f00c491af49e1679675f4a45fe01813ded3d"
+    sha256 cellar: :any, arm64_linux:       "473110ebb368c213d3c1ca7de740948381f0111e765977bc272e34c9c08406ee"
+    sha256 cellar: :any, x86_64_linux:      "8f6ab312f30061c737a673045d6f2b38db4aaa853f421509a1c329fbef640c19"
   end
 
   depends_on "rust" => :build # for jsonschema-rs
@@ -61,8 +61,8 @@ class Schemathesis < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/5f/f7/abb373e5757eaec4b922b92f97ec8d6d7e057cf06778247604fbc4e7c3f3/idna-3.19.tar.gz"
-    sha256 "5e0811a4383b21dc5838069f801c4fb62113b7447663d2530d2bd6e77b49bf15"
+    url "https://files.pythonhosted.org/packages/f5/08/8eea9d4b8302028f3abb2c0813953f7aec26d33b7a8960ed760e65ff29fa/idna-3.20.tar.gz"
+    sha256 "a7db850025b95ded1eae8a46181a1a6c56c92c96f0e2b005d9ff8dc0210cab44"
   end
 
   resource "iniconfig" do

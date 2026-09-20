@@ -26,6 +26,8 @@ class Cppunit < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:      "1024a59b0bca4572448d7ed2e1152688d1b9be616d3b0644c15de8cd982c32a5"
   end
 
+  deny_network_access!
+
   def install
     system "./configure", *std_configure_args
     system "make", "install"

@@ -1,19 +1,17 @@
 class Onnx < Formula
   desc "Open standard for machine learning interoperability"
   homepage "https://onnx.ai/"
-  url "https://ghfast.top/https://github.com/onnx/onnx/archive/refs/tags/v1.22.0.tar.gz"
-  sha256 "70bb8b25cf31ea9b1d9f94baacfdc8c4fa27a760f9a10f5d93881bc9eede5fbc"
+  url "https://ghfast.top/https://github.com/onnx/onnx/archive/refs/tags/v1.23.0.tar.gz"
+  sha256 "b0ff8a948f6f2b8200493857e7549109f51a31ecbeb8a12c7e8c60c2c4fc93a4"
   license "Apache-2.0"
-  revision 4
   compatibility_version 1
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "1b5e3b1e63efebfc4652a2e499fbd9120e73160f036b7fced9f24588e7a48298"
-    sha256 cellar: :any, arm64_tahoe:       "a7f62703c646599e69bbd6060325770ffd8c8d6560eb4021620c1801fb59c4e1"
-    sha256 cellar: :any, arm64_sequoia:     "dc2bff2f3571b8f5a31f307e5aa01009b586eb006e86b911d13cfe43f5b4b49a"
-    sha256 cellar: :any, arm64_sonoma:      "20d8e860c551b86ca826da0d9c1e2ab4474129f609f6aca5802a7bc2b27d1241"
-    sha256 cellar: :any, arm64_linux:       "26ad61f746c593109048c77a9ed3ce7a3a8f31936f7c5a40a84c9c6b3927f0cc"
-    sha256 cellar: :any, x86_64_linux:      "68b1196df239958ad559ac0fe85647498bc7528556dcdf80267b188da3937aad"
+    sha256 cellar: :any, arm64_golden_gate: "76dc75b5c806f0de3f3ca049c7022a51964abaeae5ec9ca5c62e19f6c1a3778a"
+    sha256 cellar: :any, arm64_tahoe:       "0a89432d08a852d4f798685df7c495c76f288edf4e713fb0d503ceb95888c280"
+    sha256 cellar: :any, arm64_sequoia:     "a319a815d50e0acec84efef2cf04c9ab0b68193d624168aad116c621a73e3195"
+    sha256 cellar: :any, arm64_linux:       "d37c9295432985afd33063b4d089b4761dd4bb9216bfa5e34f90c51bbcfc3060"
+    sha256 cellar: :any, x86_64_linux:      "5d845895cf925c3ee78b2b78ddc6a571c0968c955139402753227a54dfe80a36"
   end
 
   depends_on "cmake" => [:build, :test]

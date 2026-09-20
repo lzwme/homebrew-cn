@@ -11,13 +11,12 @@ class Metview < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "8ea0aac6d5efa12195864cd47b2a6c3f2947fb67c08dcd20484776aabc6ee1c8"
-    sha256 cellar: :any,                 arm64_sequoia: "8d3b1a19af31c9bd7e1c2bc0e9ee7d973531072b8a21809bf33c3f1fc1af19f2"
-    sha256 cellar: :any,                 arm64_sonoma:  "3c7f68f83c3a04ccf87213a3c2e658c5c1d8d3042e0bc938a6fc79c4822bceb5"
-    sha256 cellar: :any,                 sonoma:        "9967ae04346f24e99ef21b3f8cb173b2bd60adc0282f0f148bff79b7917d6923"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7924342f589a4aa78003c16731d9a13dfdf2ce19cc2c666f214083a263c667fe"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "81dbd92e9ed28d630b33df5e19c966dde006ce193601edb94713d1a8c7d4636c"
+    rebuild 2
+    sha256 cellar: :any, arm64_golden_gate: "5a1d1e76099dbf127a5b12d140c67177c89badf19738f851329a68e2fc907057"
+    sha256 cellar: :any, arm64_tahoe:       "bd863ad07297b790be7f2926d5c0ece1ac0e6ac539a917df45bd2598a0505529"
+    sha256 cellar: :any, arm64_sequoia:     "3faa35a75423cf43a8792429f3c37d6ad586573ad6993dd480e143eff9946874"
+    sha256 cellar: :any, arm64_linux:       "4ca04059eda9ac1ba987a1735b48bbe4aacd240c5be43fb00d6bcbeb473513e7"
+    sha256 cellar: :any, x86_64_linux:      "61d3356ddca4c0457bdac6122ee00357340c0adf7fe3bef276de6e92238caa34"
   end
 
   depends_on "cmake" => :build
@@ -48,12 +47,18 @@ class Metview < Formula
     depends_on "gcc" # for gfortran
     depends_on "gettext"
     depends_on "harfbuzz"
+    depends_on "libomp"
   end
 
   on_linux do
     depends_on "libtirpc"
     depends_on "openblas"
   end
+
+  # FIXME: Should be handled upstream
+  # MvTemplates.h:159:11: error: virtual function 'getInfo' has a different return type
+  # ('char *') than the function it overrides (which has return type 'const char *')
+  patch :DATA
 
   def install
     args = %W[
@@ -112,3 +117,18 @@ class Metview < Formula
     assert_path_exists testpath/"test.1.png"
   end
 end
+
+__END__
+diff --git a/metview/src/libMetview/MvTemplates.h b/metview/src/libMetview/MvTemplates.h
+index 1bbb4cc..8296b57 100644
+--- a/metview/src/libMetview/MvTemplates.h
++++ b/metview/src/libMetview/MvTemplates.h
+@@ -156,7 +156,7 @@ protected:
+     TMvFunction(MvTransaction* t) :
+         MvFunction(t) {}
+     MvTransaction* cloneSelf() { return new TMvFunction<T>(this); }
+-    char* getInfo() { return Info; }
++    const char* getInfo() { return Info; }
+ 
+ public:
+     TMvFunction() :

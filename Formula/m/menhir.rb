@@ -4,16 +4,14 @@ class Menhir < Formula
   url "https://gitlab.inria.fr/fpottier/menhir/-/archive/20260209/menhir-20260209.tar.bz2"
   sha256 "06f6e571aadd7d66cc3da808052d9a65f8be96fe27e0ad7e57bbbf8c20f4a832"
   license "GPL-3.0-or-later"
-  revision 1
+  revision 2
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "fe973dd70648175dffa0c4486bc6062d3033b42a7a59c3a024095fc8ab0273b0"
-    sha256 cellar: :any, arm64_tahoe:       "d1a66c4b6941afb80b0aadb164785119b861126372ed35ffbe676fb64fe8661f"
-    sha256 cellar: :any, arm64_sequoia:     "cf4092141bf3aa6c254724e787b839e63bfa29b4d1f8bf6897e5d9c12ed7d768"
-    sha256 cellar: :any, arm64_sonoma:      "b83889d4561b8329dfebd154a8253965dc7e7c1686e09fe4e68d543e1ac1e0e7"
-    sha256 cellar: :any, sonoma:            "c6e4c120b6d81d5744a1413cd5f2db5bf947997973378a6b59f33cdf7b448302"
-    sha256 cellar: :any, arm64_linux:       "dae63b81d9880d515ee22f6bbb580d7b56df526f2ce9a0e4557866cbba37fbcd"
-    sha256 cellar: :any, x86_64_linux:      "a0eb1b47d06bd256da1f007f63f02cb743797a0cbec9d0726233a1a3f365f97d"
+    sha256 cellar: :any, arm64_golden_gate: "87d1a6f7fa151ddf1de28d9995e37e16e2dc524e9535596d183142414076a7b5"
+    sha256 cellar: :any, arm64_tahoe:       "43af046448515ba9704d2d1aaa83c11c5ca6fb6e0837c336533ca84f75717dd7"
+    sha256 cellar: :any, arm64_sequoia:     "e92475c1bc5431eb558e055bcc2ed6b849aa8dc0b4c195f2311da317c7ebce8f"
+    sha256 cellar: :any, arm64_linux:       "a8da683ffae4530db882842956e605b8766c84ac5d5ec65a6915395d63081c57"
+    sha256 cellar: :any, x86_64_linux:      "817623b4c127287e8c5e2206c0d8cf127ebd3e9736b3d65fe9a01d61bc19d815"
   end
 
   depends_on "dune" => :build
@@ -21,7 +19,8 @@ class Menhir < Formula
   depends_on "ocaml"
 
   def install
-    system "dune", "build", "@install"
+    # Use the release profile like opam so `menhirLib` matches copies bundled by other formulae
+    system "dune", "build", "--release", "@install"
     system "dune", "install", "--prefix=#{prefix}", "--mandir=#{man}"
   end
 

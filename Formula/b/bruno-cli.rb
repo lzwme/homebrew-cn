@@ -18,7 +18,7 @@ class BrunoCli < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/bru --version")
-    assert_match "You can run only at the root of a collection", shell_output("#{bin}/bru run 2>&1", 4)
+    assert_match version.to_s, pipe_output("#{bin}/bru --version", nil, 0)
+    assert_match "You can run only at the root of a collection", pipe_output("#{bin}/bru run 2>&1", nil, 4)
   end
 end

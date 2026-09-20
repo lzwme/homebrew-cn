@@ -1,20 +1,26 @@
 class OpenCodeReview < Formula
   desc "AI-powered code review tool with deterministic pipelines and an LLM agent"
   homepage "https://open-codereview.ai"
-  url "https://ghfast.top/https://github.com/alibaba/open-code-review/archive/refs/tags/v1.12.6.tar.gz"
-  sha256 "1f33c7ded9e347212eb0f181ab41a008625c7a42292b0647c96cac2b4710ef0d"
+  url "https://ghfast.top/https://github.com/alibaba/open-code-review/archive/refs/tags/v1.12.7.tar.gz"
+  sha256 "ff4e4ff4aeceb7332aef7f8d222ea51646c002e820e09a60db1ec108085181b4"
   license "Apache-2.0"
   head "https://github.com/alibaba/open-code-review.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "e417716238f0dcd0a862c622854c2492b877079329cee0fa47686cb8ff7801ab"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "e417716238f0dcd0a862c622854c2492b877079329cee0fa47686cb8ff7801ab"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "e417716238f0dcd0a862c622854c2492b877079329cee0fa47686cb8ff7801ab"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "ab6ec5f7c27357126c3de573a6a4960658ecbdc552b547e1bfffde241389d5f9"
-    sha256 cellar: :any,                 x86_64_linux:      "034eaea0faf6f878e600f0905a376d02e062b42395de1fecc0b680edc5eebef2"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "85754fb4f760ae51225daae712acb8f7d2947dc39952be7db5a632d8a357f112"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "85754fb4f760ae51225daae712acb8f7d2947dc39952be7db5a632d8a357f112"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "85754fb4f760ae51225daae712acb8f7d2947dc39952be7db5a632d8a357f112"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "0edb0a5cb58b0ea4066e5c4ef77c7dca502cd555ed95ff92415dbd7e8a8ba059"
+    sha256 cellar: :any,                 x86_64_linux:      "2bce178367a59fa0952f8ca90523d4d44007c73f53c39f25e544313539e9cafa"
   end
 
   depends_on "go" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     ldflags = "-X main.Version=#{version}"

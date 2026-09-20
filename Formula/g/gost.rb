@@ -24,6 +24,13 @@ class Gost < Formula
 
   conflicts_with "vulsio-gost", because: "both install `gost` binaries"
 
+  # `test do` block runs a local proxy server
+  allow_network_access! :test
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     system "go", "build", *std_go_args, "./cmd/gost"
     prefix.install "README_en.md"

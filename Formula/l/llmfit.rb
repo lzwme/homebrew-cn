@@ -1,18 +1,17 @@
 class Llmfit < Formula
   desc "Find what models run on your hardware"
   homepage "https://github.com/AlexsJones/llmfit"
-  url "https://static.crates.io/crates/llmfit/llmfit-1.1.15.crate"
-  sha256 "7c45bd6d52c7f492b40b68e6bf39c16baf83e2963b2ba7e25075c4e09a580a1f"
+  url "https://static.crates.io/crates/llmfit/llmfit-1.1.16.crate"
+  sha256 "f3d331c1169e6e6cdd1a9d6d807a623690bce8142c1d3bd1ffa72487e01c637a"
   license "MIT"
   head "https://github.com/AlexsJones/llmfit.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "2dd20be971cdcaa23caf56edf1f08fa29178f7ae6aa47f7613d57433e8cd1556"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "4b1a1c651c3dfb1e0c8240e4e66cb8a06a5af700aa489f34d666c803c94f89bd"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "bd79be411d9a6e10b1650ace83f487564ec332807003f1849e81ebca628647c4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "2de5dd5d0a878ce3a9669c4ad6cd1f70aaabc05e68f84af03770aa2d881b083f"
-    sha256 cellar: :any,                 arm64_linux:       "5e84f289bf8a354388ec6ffa30ad062b4041ab716eab93638723b43a7ac7ef6b"
-    sha256 cellar: :any,                 x86_64_linux:      "88e6daef4535f4de64f0fe593f1006265eb080ef41c1626ef883aea76cf13a9d"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "b8e3abe2e5d5f02347da4effdacb363b59cbb0ff2c8a176371a01d0c1d31b143"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "343b24e32a7f7e3c3b922b2c76f556af4d28bf0764cc0b265700883c834d6374"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "2ff9cd8897f88e7eba956a9d29ce85f5436a90e9471e55cc7a7aa242bf5da9a9"
+    sha256 cellar: :any,                 arm64_linux:       "2d491541de553d2264076e7d0c6c2802d376368fb12bbc460d365e26d335b209"
+    sha256 cellar: :any,                 x86_64_linux:      "2da55ba734fb60484c349d7af89223fc5fe1e64d3091b2e041f5982c48f04a6c"
   end
 
   depends_on "rust" => :build

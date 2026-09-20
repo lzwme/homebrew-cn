@@ -1,8 +1,8 @@
 class Xxhash < Formula
   desc "Extremely fast non-cryptographic hash algorithm"
   homepage "https://xxhash.com"
-  url "https://ghfast.top/https://github.com/Cyan4973/xxHash/archive/refs/tags/v0.8.3.tar.gz"
-  sha256 "aae608dfe8213dfd05d909a57718ef82f30722c392344583d3f39050c7f29a80"
+  url "https://ghfast.top/https://github.com/Cyan4973/xxHash/archive/refs/tags/v0.8.4.tar.gz"
+  sha256 "5738270935e7c3d38a79b3adf7c9692566ce7895a25f67de43ad52ab504acd32"
   license all_of: [
     "BSD-2-Clause", # library
     "GPL-2.0-or-later", # `xxhsum` command line utility
@@ -14,18 +14,16 @@ class Xxhash < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_golden_gate: "365b33fd726602e6e3c8841266180f241a9077b0407d1d9782c03ada00ca03c2"
-    sha256 cellar: :any,                 arm64_tahoe:       "60aa4eca9aa378cbaa79fb2ffc0d1b4a142fd32c0aaf7371b09c291530fb85d2"
-    sha256 cellar: :any,                 arm64_sequoia:     "89bd0369c7033c364428cf03daad6f58ca5e5defd8dc585b8f0bc6a111714013"
-    sha256 cellar: :any,                 arm64_sonoma:      "32a8ae9615395368644020266663a1758cd4b32b15cdf8c547c9b5a3a3bc3016"
-    sha256 cellar: :any,                 arm64_ventura:     "60dfb4150b26f590cb36561262a3bf0d845bacb2e26ec7d4bf5f619be9ddce5a"
-    sha256 cellar: :any,                 sonoma:            "e2355ea12831286d6858820e7fedcc3a044904f510ecc47d988698cd629a7ab0"
-    sha256 cellar: :any,                 ventura:           "b48f20a3ccf572377aa01bc280f66692e43c94b26d1eac4ac5493ce576c5cd3b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "f094838a4f796f2314aa813a8e254d6d6582920fef2e0071a9f0c94ce538e350"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "18dc2081164fec96866d5f6300bde1e3c3a80c0d7659183195e5810a8e438470"
+    sha256 cellar: :any, arm64_golden_gate: "8fadb24f4ee2177c8763b1d454dda05c26787af9aeacef31d79f622d6c283471"
+    sha256 cellar: :any, arm64_tahoe:       "4378420ce577ea0fbffbac3c97f9bbf8d862ff85bc2aecd81b2d87aeec82e51e"
+    sha256 cellar: :any, arm64_sequoia:     "11fa633824f0462f584909a90b3231d4bd18c6735addfd154ffff06b0c0f039c"
+    sha256 cellar: :any, arm64_linux:       "5129b758780c883c989048cc8fb2b52859ab00c9f020fd766b535efc56dbcb7a"
+    sha256 cellar: :any, x86_64_linux:      "64866e1f4d8bf1c49e7883592290d186d47b2d3b3ce434ffc73364f534275ae6"
   end
 
   depends_on "cmake" => [:build, :test]
+
+  deny_network_access!
 
   def install
     ENV.O3
@@ -42,9 +40,9 @@ class Xxhash < Formula
     # We use CMake for package configuration files which are needed by `manticoresearch`.
     # The Makefile is used for everything else as it is the only officially supported way.
     ENV["DESTDIR"] = buildpath
-    system "cmake", "-S", "cmake_unofficial", "-B", "build", *std_cmake_args
-    system "cmake", "--build", "build" # needed to run `--install` which rewrites build path in .cmake file
-    system "cmake", "--install", "build"
+    system "cmake", "-S", "build/cmake", "-B", "_build", *std_cmake_args
+    system "cmake", "--build", "_build" # needed to run `--install` which rewrites build path in .cmake file
+    system "cmake", "--install", "_build"
     lib.install File.join(buildpath, lib, "cmake")
   end
 

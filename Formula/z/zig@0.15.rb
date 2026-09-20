@@ -11,13 +11,12 @@ class ZigAT015 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_golden_gate: "e21d96f969e06dfd3bf62cba5e6c74d4457337bfe4d442b8d3889c5cebaad858"
-    sha256 cellar: :any,                 arm64_tahoe:       "3376720c6c088ddce7219a4dca4f50d790bcc97087c9a44f66a427d6a6718515"
-    sha256 cellar: :any,                 arm64_sequoia:     "6984547a314038f1c7123bb3be4a127e82dd0200c12101e7f388adb8ebad03ed"
-    sha256 cellar: :any,                 arm64_sonoma:      "50e79a382a4310c562a5afbdc15435018a5e4d9ff9149729261670e6eaced4b6"
-    sha256 cellar: :any,                 sonoma:            "fbf88162ef3557bbf834f9d2ca329e12ca3d0d383f52e073f48a61a63b650961"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "df1dbd800df23e6abbe082fb4dd6ab3decb6a428c7b8919f25f815ff204fa2bf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "2a63a3ccb03202319d56571238da8f5bb23dbbd2446217c3724b8b934c24e832"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "5d6f38219bd78bf111b00a640d4d6aadb75a480da61fa8ceb947a9ae61ef1eaf"
+    sha256 cellar: :any, arm64_tahoe:       "7bb95027a7c58e87b0849908d70acc21c52d457eff743804171e0ea51568d349"
+    sha256 cellar: :any, arm64_sequoia:     "6642afc23c2a5205fd0c05955d624ece59896d0841c675ea826c1ff7b2ef36c2"
+    sha256 cellar: :any, arm64_linux:       "87a486ef22d5d089d96056632350c2fb6b486a1c00d7ac89e54ecd4090df9fcb"
+    sha256 cellar: :any, x86_64_linux:      "00f3684955c20dee27f676290be00f5b5ed3ced66da204b1c775b6b74e00a905"
   end
 
   keg_only :versioned_formula
@@ -44,6 +43,13 @@ class ZigAT015 < Formula
   #   https://github.com/Homebrew/homebrew-core/issues/252365
   patch do
     file "Patches/zig/0.15.patch"
+    type :unofficial
+  end
+
+  # Fix `INFINITY` with macOS 27 SDK `math.h`.
+  #   https://github.com/llvm/llvm-project/pull/164348
+  patch do
+    file "Patches/zig/0.15-float-infinity-nan.patch"
     type :unofficial
   end
 

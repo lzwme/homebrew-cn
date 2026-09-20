@@ -1,8 +1,8 @@
 class Docfx < Formula
   desc "Tools for building and publishing API documentation for .NET projects"
   homepage "https://dotnet.github.io/docfx/"
-  url "https://ghfast.top/https://github.com/dotnet/docfx/archive/refs/tags/v2.78.5.tar.gz"
-  sha256 "79f9e2c4bb8de2225d91a812a4e9d2cc71a8ed5613b3b4b2940d2a1d5db38793"
+  url "https://ghfast.top/https://github.com/dotnet/docfx/archive/refs/tags/v2.80.1.tar.gz"
+  sha256 "89607eba1d832063bccbe1be365d88ddec9ee90f3098e8081f9ba922c6916baf"
   license "MIT"
 
   livecheck do
@@ -11,12 +11,11 @@ class Docfx < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "523bb3a1bb69486ba96ed04a14cf5275a03eaee24666548664367c6ec751008b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4285f72a9207278e027124dacd47cfca73a31697f318a55699b27f5a0f586231"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a2ea16f5a93cabc62e5206f4b58fc4962f7193502983909d8d8706ff1011153e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "74dd5ee74560f786debd8cbda5021834c5b2199b9890f385325de614f6be39be"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ef38f65f11a369979e4a188ba5677a49831eac7d2c5160f65b80bd324d8ea38c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f703a20bc12c55ae2083dadc0364892ee5aa0bec6b34c53aa2758fa48cd0d762"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "69b42d70f57aaa3b00c70ac516ae6ec606b6633aa0c0f5dfbf42c7cb369e0792"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "68d52e254e90a6af67a80f9e8b5adb42e661ed47c8d83bd8add8cff7d78b1cf4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "910204c1488929c80d6c72341f2b82db10743d764df5c78bb0dd8f91a4552fac"
+    sha256 cellar: :any,                 arm64_linux:       "c9a00da37456181ce55eea257eebffc5110be21fe7a4fb5ec9ff682b488ea823"
+    sha256 cellar: :any,                 x86_64_linux:      "4d18cd290abb9f49365eef4ca59192e74250c1d45806fd57bade431ef4bf2107"
   end
 
   depends_on "node" => :build
@@ -52,6 +51,9 @@ class Docfx < Formula
   end
 
   test do
+    # The sandbox denies FSEvents, so .NET's config file watcher would hang
+    ENV["DOTNET_USE_POLLING_FILE_WATCHER"] = "1" if OS.mac?
+
     system bin/"docfx", "init", "--yes", "--output", testpath/"docfx_project"
     assert_path_exists testpath/"docfx_project/docfx.json", "Failed to generate project"
     assert_match "modern", shell_output("#{bin}/docfx template list")

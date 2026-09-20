@@ -1,19 +1,22 @@
 class Baguette < Formula
   desc "Headless iOS Simulator manager and host-side input injection for iOS 26"
   homepage "https://tddworks.github.io/baguette/"
-  url "https://ghfast.top/https://github.com/tddworks/baguette/archive/refs/tags/v0.1.98.tar.gz"
-  sha256 "afa14ccf47e36942ad623f5194e9a00c5971a3ff60e76856e0bad233d9a0fd6c"
+  url "https://ghfast.top/https://github.com/tddworks/baguette/archive/refs/tags/v0.1.99.tar.gz"
+  sha256 "688e4f8690848b30996975cc65c6fb5a395efde39f42dbea8acc3663d6a43cdc"
   license "Apache-2.0"
   head "https://github.com/tddworks/baguette.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "eb11be1d4fe5238dcfa917db997229a8d85ee2a3d3744b6782d08ad182230045"
-    sha256 cellar: :any, arm64_tahoe:       "14bc01b2d965af6031e072384cf0d6425d6cdd8298ea01bc3354ad03c4125b4a"
+    sha256 cellar: :any, arm64_golden_gate: "7f39cc6d09cd5ae008a10c6771068ebe154a2e07e1cffb6d44e3943cdd619967"
+    sha256 cellar: :any, arm64_tahoe:       "5ec0826bf415a4dc7f389db1c38a54e4497e92824ed0ae66375a21c3cd960e87"
   end
 
   depends_on xcode: ["26.0", :build]
   depends_on arch: :arm64
   depends_on macos: :tahoe
+
+  # `swift build` fetches packages
+  allow_network_access! :build
 
   def install
     # replace version like upstreams release process
@@ -61,6 +64,8 @@ class Baguette < Formula
     libexec.install ".build/release/Baguette" => "baguette"
     libexec.install ".build/release/Baguette_Baguette.bundle"
     bin.install_symlink libexec/"baguette"
+
+    deuniversalize_machos libexec/"Baguette_Baguette.bundle/Contents/Resources/HingeControl/HingeControl"
   end
 
   test do

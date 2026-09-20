@@ -11,10 +11,10 @@
 class Ocaml < Formula
   desc "General purpose programming language in the ML family"
   homepage "https://ocaml.org/"
-  url "https://caml.inria.fr/pub/distrib/ocaml-5.5/ocaml-5.5.0.tar.xz"
-  sha256 "fcc6ae665d1ec51d52510eaac7834a86a9806bf5a258bb7cca78733fccf015ba"
+  url "https://caml.inria.fr/pub/distrib/ocaml-5.5/ocaml-5.5.1.tar.xz"
+  sha256 "cd0a97bdbfc99f00f53f4ee48491964c73627afb09ed8e4de230ba4488a3d6b9"
   license "LGPL-2.1-only" => { with: "OCaml-LGPL-linking-exception" }
-  compatibility_version 3
+  compatibility_version 4
   head "https://github.com/ocaml/ocaml.git", branch: "trunk"
 
   livecheck do
@@ -23,13 +23,11 @@ class Ocaml < Formula
   end
 
   bottle do
-    sha256               arm64_golden_gate: "dbacef1f885b8e524ae42c57fa69202bbfddf2ae047224e8b2f73d6362429248"
-    sha256               arm64_tahoe:       "0d48c3078a778fa1de69bfedb7f7696001812add764554d64ead0e8d69206ad9"
-    sha256               arm64_sequoia:     "f52b904227f30bc0e67d333f15cd3e6d85e8620c8313ec6d5c435607e9aeb01c"
-    sha256               arm64_sonoma:      "2204aec877a5b2f408bb9b405f34f5d026692f25fc3aad8b0a3df4a5c6a25aa3"
-    sha256 cellar: :any, sonoma:            "c244bd048371c9cccdf514d2aae303094afeac614fce66f626e8b1957d13a7aa"
-    sha256               arm64_linux:       "8727fddf919b9fc6d179ac761d8c24173345d6398901424c23fbdd431733488e"
-    sha256               x86_64_linux:      "2c5dbf3005114fde4cfc7da70edd3f8ef79ae47f10a8cac617582a10b87f406c"
+    sha256 arm64_golden_gate: "95adb6440d66e2da94536ea4e820c4bfc18670cbef5e39ed1da430e26efef2aa"
+    sha256 arm64_tahoe:       "5331b7eaf0ea569bf7807fd69c2f155f0a70f30e0544166d4f903bab57d0f5c5"
+    sha256 arm64_sequoia:     "ff8bff28f3edc0973363b2bcef67399747bd17d913a0409fe9cfd34b97e8bfe7"
+    sha256 arm64_linux:       "9a3dc5d0f4dee1393f0500b78b1f21ecc7af0d6d5ec60c466211519673f2bd74"
+    sha256 x86_64_linux:      "bb7764e69bf78bd310d1148d979fb6f99097ed73c1c40e379269ef903d5c0b03"
   end
 
   # The ocaml compilers embed prefix information in weird ways that the default

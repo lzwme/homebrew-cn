@@ -19,6 +19,10 @@ class RosaCli < Formula
     sha256 cellar: :any,                 x86_64_linux:  "c5025e84940f1331c304724eb41223063066ae327185d59d0b0f46fb5b18b3f7"
   end
 
+  # TODO: Can be undeprecated on official new release or if upstream confirms change
+  deprecate! date: "2026-09-19", because: :checksum_mismatch
+  disable! date: "2027-09-19", because: :checksum_mismatch
+
   depends_on "go" => :build
   depends_on "awscli"
 

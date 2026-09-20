@@ -35,6 +35,13 @@ class Gping < Formula
 
   conflicts_with "inetutils", because: "both install `gping` binaries"
 
+  # `test do` block pings google.com
+  allow_network_access! :test
+
+  def fetch
+    system "cargo", "fetch", "--locked", "--target", "host-tuple"
+  end
+
   def install
     system "cargo", "install", *std_cargo_args(path: "gping")
     man.install "gping.1"

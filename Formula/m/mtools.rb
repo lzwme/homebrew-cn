@@ -21,6 +21,8 @@ class Mtools < Formula
   conflicts_with "mcat", because: "both install `mcat` binaries"
   conflicts_with "multimarkdown", because: "both install `mmd` binaries"
 
+  deny_network_access!
+
   def install
     args = %W[
       --disable-debug

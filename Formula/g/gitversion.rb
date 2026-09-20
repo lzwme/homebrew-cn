@@ -8,12 +8,13 @@ class Gitversion < Formula
   no_autobump! because: :bumped_by_upstream
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "2125213b57952276cb8061484e008859ad0657a8bba56dd312ec6400c771b482"
-    sha256 cellar: :any, arm64_sequoia: "0bf4cd2cd05aba7af483e41ff29468133f2a94a98fb1a74d5750252cc61ec285"
-    sha256 cellar: :any, arm64_sonoma:  "e3508fdfa8135122614d0ac7cb5facc9adab96253ca742f60d31b25a1092d257"
-    sha256 cellar: :any, sonoma:        "595228141204dfb9ee0c78852290f8c8bae44fc776e308d7f6702a61b48769c0"
-    sha256 cellar: :any, arm64_linux:   "bf2329ef9f28eda35385d77f101d0c4ac475b6d7d8894a05f8685cc032bf9d48"
-    sha256 cellar: :any, x86_64_linux:  "caf15de5aeb5ed923dfff139899257411c0eb81fa5435ee28750ba1544130a96"
+    sha256 cellar: :any, arm64_golden_gate: "77ceaa3900984b8c4fd2f98e86c0cbf303bde969bbe6314e1fef272605ee4570"
+    sha256 cellar: :any, arm64_tahoe:       "2125213b57952276cb8061484e008859ad0657a8bba56dd312ec6400c771b482"
+    sha256 cellar: :any, arm64_sequoia:     "0bf4cd2cd05aba7af483e41ff29468133f2a94a98fb1a74d5750252cc61ec285"
+    sha256 cellar: :any, arm64_sonoma:      "e3508fdfa8135122614d0ac7cb5facc9adab96253ca742f60d31b25a1092d257"
+    sha256 cellar: :any, sonoma:            "595228141204dfb9ee0c78852290f8c8bae44fc776e308d7f6702a61b48769c0"
+    sha256 cellar: :any, arm64_linux:       "bf2329ef9f28eda35385d77f101d0c4ac475b6d7d8894a05f8685cc032bf9d48"
+    sha256 cellar: :any, x86_64_linux:      "caf15de5aeb5ed923dfff139899257411c0eb81fa5435ee28750ba1544130a96"
   end
 
   depends_on "dotnet"
@@ -45,6 +46,9 @@ class Gitversion < Formula
   end
 
   test do
+    # The sandbox denies FSEvents, so .NET's config file watcher would hang
+    ENV["DOTNET_USE_POLLING_FILE_WATCHER"] = "1" if OS.mac?
+
     # Circumvent GitVersion's build server detection scheme:
     ENV["GITHUB_ACTIONS"] = nil
 

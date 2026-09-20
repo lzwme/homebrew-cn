@@ -1,9 +1,10 @@
 class Scip < Formula
   desc "Solver for mixed integer programming and mixed integer nonlinear programming"
-  homepage "https://scipopt.org"
-  url "https://scipopt.org/download/release/scip-10.0.3.tgz"
-  sha256 "7fe90d216e1481b430eaed2bfc25c0349ffd73bfad6201bd96fa082dc54c1438"
+  homepage "https://scipopt.org", browsed: "2026-09-18"
+  url "https://scipopt.org/download/release/scip-10.1.0.tgz"
+  sha256 "fe8cfd15a03970ef45156ed56c6a4382485bd095e0e99cf7d7db87cdf8d47304"
   license "Apache-2.0"
+  compatibility_version 1
 
   livecheck do
     url "https://github.com/scipopt/scip"
@@ -11,13 +12,11 @@ class Scip < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "2d9a359fe1ebfbad7458841d3510e741e2192f74b19708ff3006ccaef4bcb2ef"
-    sha256 cellar: :any, arm64_tahoe:       "7a5d94c82d1e704abb4b64a0a3ae21bbea51307268bb191111d6705952a25107"
-    sha256 cellar: :any, arm64_sequoia:     "df296a77a559c5263983273bc68a3b30c001ab540c27798aacd0258bbbcf5abd"
-    sha256 cellar: :any, arm64_sonoma:      "dc10945a5455bb3f2b7c9215dea89e2049aa458f3d48e23cc2fd4c6a1239cd64"
-    sha256 cellar: :any, sonoma:            "2b68f3acd9a4c0197380b7a10876550b142f65936e8d4dddae1df55ce9c01fb1"
-    sha256 cellar: :any, arm64_linux:       "7ccedb8dfa5ee651209e01c90326b4d84b1284a6970369a5103481e534d4cee3"
-    sha256 cellar: :any, x86_64_linux:      "de5eaca960c321ad20b9e798514d9a3e3f662f43a92d552df5474ac6fb815edb"
+    sha256 cellar: :any, arm64_golden_gate: "71394d6ace28a14dc76b6b43dbe9a1f11ab83ca7b7f6e063475d60b13aa40c3a"
+    sha256 cellar: :any, arm64_tahoe:       "2a856e103a7f6e88d048316e016c5e95247a2815f2b678f1bba73c556e3818d5"
+    sha256 cellar: :any, arm64_sequoia:     "bfe7455c138840fab4c81089d7b6b2424e8330b1f2fa61eaea2f1212017897f2"
+    sha256 cellar: :any, arm64_linux:       "c5fccc3a85ba12c92ced74ff4bb212556fe6c50be3aae9efabee6517c7ed894e"
+    sha256 cellar: :any, x86_64_linux:      "ae5473952780d42b25b3cf9aa70a4647f009a9ad74736d786d97d6935703d26b"
   end
 
   depends_on "cmake" => :build

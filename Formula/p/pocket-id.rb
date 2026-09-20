@@ -1,27 +1,31 @@
 class PocketId < Formula
   desc "Open-source identity provider for secure user authentication"
   homepage "https://pocket-id.org"
-  url "https://ghfast.top/https://github.com/pocket-id/pocket-id/archive/refs/tags/v2.14.0.tar.gz"
-  sha256 "bf04835908e5ad80ac8d5c3b7fd136f43d5e1bbe1953cb6d531a3226e2beec5d"
+  url "https://ghfast.top/https://github.com/pocket-id/pocket-id/archive/refs/tags/v2.15.0.tar.gz"
+  sha256 "c8296ea0b760dbf058d42cdc12eeb402a058be9d77b7b64f09d987c635fbc3c7"
   license "BSD-2-Clause"
   head "https://github.com/pocket-id/pocket-id.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "bc988fa32870b524bc861d6a669547560350b5684d9c59b30d5b74e170a576a0"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "f04580a868a6b6e1864e441752a4826e98f339196e1e763cfcacfc53709935aa"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "f5ec4ac3f5a8ada65a315b6591f79068cfa3f43b38b087e3c4fa9dc7ac9c3014"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "2367ec8a7763724edb613b9249fb86074be774036287d71d3caafc6b685a6853"
-    sha256 cellar: :any_skip_relocation, sonoma:            "34dd587d7dd3b3c1cda1a55b3e175324982a29cfd65ca40472d82378da91a164"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "de7b921d1ffb712c6a8b071f9487b9c30c94b8dd60e7e89bf1bef3078cf62a79"
-    sha256 cellar: :any,                 x86_64_linux:      "224088ae6824d117440d1d8d6d2aa33886fc012d668303bb18793c9436d6a234"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "36731eb94a57492c5b9973a4408d1c78a40b0ba188c2b5921b7ecbaa877f1323"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "a49458e8a23f43b3e9d5e8bae546963381ed8768929a29a2a2f277af770a1833"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "08d2636f9b1ac07f587e1745eeb0a737208e1499858b109022d67bfbc725dc93"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "712d26751d9438954c408bd0a0e66c74524a9ef15a1316f6c85ad42fb2eda118"
+    sha256 cellar: :any,                 x86_64_linux:      "7e08a0309d175b9c3c16a2ac12add17e0280aacc380f9396d4b1ae3b00b29265"
   end
 
   depends_on "go" => :build
   depends_on "node" => :build
   depends_on "pnpm" => :build
 
-  def install
+  allow_network_access! :test
+
+  def fetch
     system "pnpm", "with", "current", "--dir", "frontend", "install", "--frozen-lockfile", "--ignore-scripts"
+    system "go", "mod", "download", "-C", "backend/cmd"
+  end
+
+  def install
     system "pnpm", "with", "current", "--dir", "frontend", "run", "build"
     system "go", "build", "-C", "backend/cmd", *std_go_args(output: bin/"pocket-id")
   end
@@ -49,7 +53,7 @@ class PocketId < Formula
 
     system "curl", "-s", "--fail", "http://127.0.0.1:#{port}/health"
   ensure
-    Process.kill("TERM", pid) if pid
-    Process.wait(pid) if pid
+    Process.kill("TERM", pid)
+    Process.wait(pid)
   end
 end

@@ -1,8 +1,8 @@
 class Zpaqfranz < Formula
   desc "Deduplicating command-line archiver and backup tool"
   homepage "https://github.com/fcorbelli/zpaqfranz"
-  url "https://ghfast.top/https://github.com/fcorbelli/zpaqfranz/archive/refs/tags/64.8.tar.gz"
-  sha256 "051b903b34bbdd98af2bc94558119f48b81bfa382a3ea8c507788f0751ddeda4"
+  url "https://ghfast.top/https://github.com/fcorbelli/zpaqfranz/archive/refs/tags/65.1.tar.gz"
+  sha256 "30f38dd31f1f99df2820c0852d8ac35356c8dbf8de8902d8a171987454e7539e"
   license all_of: [:public_domain, "MIT", "Zlib", "Unlicense", "BSD-2-Clause", "Apache-2.0"]
   head "https://github.com/fcorbelli/zpaqfranz.git", branch: "main"
 
@@ -14,13 +14,11 @@ class Zpaqfranz < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "986d388513581c3fc18369b80483486491624fcb932b66aa6593a5157fc2bf04"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "4fd1a25bc69e290ce43891bc84094c1957f269c81c5c0c1becd86cd27c2a5ac7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "3587224af19043dab95664ed1177c522b0b48aa07f4112aec39fe26144d86e13"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "da0fc868b5f9d331f7de9bfd26db91237b60addbff90a6be982320e85a1dc483"
-    sha256 cellar: :any_skip_relocation, sonoma:            "c6b9e24c6222392d2aa62e1a5ca59a7804f45f769acd5df039a899063e59cbc5"
-    sha256 cellar: :any,                 arm64_linux:       "8257c88ac8c28d293bf9e33a6ab7976539df225965c869188c2b7eb242f55319"
-    sha256 cellar: :any,                 x86_64_linux:      "24a956caa2761b5594b378f38d4dde946b681e23c1376925966c9772d2775520"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "09c4e3d404939260a164626ef249f950e86ef6cacf02868217ba2790b62de320"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "8c68d796783a8c4d8a1445fc76317e2a60353b15da1d32aed4c3a327c1ad64ae"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "bac4072c0d60264035ef1d31f4cf6bbc591efe388809372146dda6a6133e0433"
+    sha256 cellar: :any,                 arm64_linux:       "04da5ffa363d3084020c19644128d254ba9da9ee72166a95d735f3864bccdef2"
+    sha256 cellar: :any,                 x86_64_linux:      "7378b8ca9dd7482cd6f3608531c034ec157d210b7be5aedc951587132a3bf473"
   end
 
   deny_network_access!

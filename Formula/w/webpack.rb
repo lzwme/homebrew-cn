@@ -3,13 +3,13 @@ require "json"
 class Webpack < Formula
   desc "Bundler for JavaScript and friends"
   homepage "https://webpack.js.org/"
-  url "https://registry.npmjs.org/webpack/-/webpack-5.111.0.tgz"
-  sha256 "00b65057846e6c4f02f851279ff1aee00eda671576825bab95ae7e74e3684367"
+  url "https://registry.npmjs.org/webpack/-/webpack-5.111.1.tgz"
+  sha256 "6d1f5b3890768c6669417f040363b2811e56cc26a9d90556742aaf598e02a39c"
   license "MIT"
   head "https://github.com/webpack/webpack.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "a378b11523e4103eaad0eee988fcda5e0af886a802ebd3535aea3ef6b72fd46a"
+    sha256 cellar: :any_skip_relocation, all: "25dd4daf985cfa8cef54a01ea5c9b4568fb8cbbbb8ddc7f09ecb9cf8288da6a7"
   end
 
   depends_on "node"

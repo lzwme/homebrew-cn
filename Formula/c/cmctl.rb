@@ -16,6 +16,12 @@ class Cmctl < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     project = "github.com/cert-manager/cmctl/v2"
     ldflags = %W[

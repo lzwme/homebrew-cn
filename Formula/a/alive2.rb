@@ -53,6 +53,8 @@ class Alive2 < Formula
     cause "error: reference to local binding 'src_data' declared in enclosing function 'IR::State::copyUBFromBB'"
   end
 
+  deny_network_access!
+
   def install
     system "cmake", "-S", ".", "-B", "build", "-DBUILD_LLVM_UTILS=ON", "-DBUILD_TV=ON", *std_cmake_args
     system "cmake", "--build", "build"

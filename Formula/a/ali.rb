@@ -20,6 +20,12 @@ class Ali < Formula
 
   conflicts_with "nmh", because: "both install `ali` binaries"
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     system "go", "build", *std_go_args(ldflags: :goreleaser)
   end

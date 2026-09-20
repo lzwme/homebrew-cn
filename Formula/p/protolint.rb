@@ -18,6 +18,12 @@ class Protolint < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     protolint_ldflags = %W[
       -X github.com/yoheimuta/protolint/internal/cmd.version=#{version}

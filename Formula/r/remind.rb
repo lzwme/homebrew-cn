@@ -1,8 +1,8 @@
 class Remind < Formula
   desc "Sophisticated calendar and alarm"
   homepage "https://dianne.skoll.ca/projects/remind/"
-  url "https://dianne.skoll.ca/projects/remind/download/remind-06.03.03.tar.gz"
-  sha256 "6045283b98e004a683b13a636409ba691401d2ae9e5122d244c151972e923341"
+  url "https://dianne.skoll.ca/projects/remind/download/remind-06.03.04.tar.gz"
+  sha256 "c56976b4bb3f3c838b4861f35b1a0ed80695b6a5e27c7736763c6518a884218b"
   license "GPL-2.0-only"
   head "https://git.skoll.ca/Skollsoft-Public/Remind.git", branch: "master"
 
@@ -12,22 +12,24 @@ class Remind < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "d89bef8a31cb40e4cd7f2d279540a2f70c2c4a3a725c74730129b14d6dc2685c"
-    sha256 arm64_tahoe:       "6ad4216bf1bc1de25c706e1b55ba5c1614e871b733ee775ba1fdd3601d169a08"
-    sha256 arm64_sequoia:     "2edb4e4c4d1613720d1e9b55dfabaa966e7bec4cac70adf119c5e19f725b6200"
-    sha256 arm64_sonoma:      "c3b20268f0656638a9d76350d6c50388f5891e2319d8329b8240e6f6a5a668ee"
-    sha256 arm64_linux:       "d555720ffed4fcd5b57d08175fe381fb88770084074b518aaecbdf58403fa3ce"
-    sha256 x86_64_linux:      "8a9eda10f991364f432c497b3d9dbcdbf6c6cce451c180bb33052cb5e5022d49"
+    sha256 arm64_golden_gate: "b11a20edbcc8dacd210354145a829340ff2c751d76c639061cda230893b12b62"
+    sha256 arm64_tahoe:       "c23f19a7e8bd13e02a95fe46c5f204cbe3e6801347532846922693588fa88d09"
+    sha256 arm64_sequoia:     "b99e59b8231f140b7c3274405a6f14f9ecee7238a6a502c032ea2b2c2c2edb69"
+    sha256 arm64_linux:       "51e2389b2e59a57d3b4592db492e87ec6e6dfff598a04b3899b8c0580566438c"
+    sha256 x86_64_linux:      "e745d3f1e944eba9a639056ebf92c4d996d93212a0d32b3ac53e4caa17c55dad"
   end
 
   conflicts_with "rem", because: "both install `rem` binaries"
 
-  def install
-    # Fix to error: unsupported option '-ffat-lto-objects' for target 'arm64-apple-darwin24.4.0'
-    inreplace "configure", "-ffat-lto-objects", "" if DevelopmentTools.clang_build_version >= 1700
+  deny_network_access!
 
-    system "./configure", "--prefix=#{prefix}"
-    system "make", "install"
+  def install
+    # Exclude unrecognized options
+    args = std_configure_args.reject { |s| s["--disable-debug"] || s["--disable-dependency-tracking"] }
+
+    system "./configure", *args
+    system "make", "-C", "src", "install"
+    system "make", "-C", "rem2html", "install"
   end
 
   test do

@@ -24,10 +24,19 @@ class Helix < Formula
 
   def fetch
     system "cargo", "fetch", "--locked", "--target", "host-tuple"
+
+    # HEAD builds need to fetch grammar sources bundled in release tarballs.
+    system "cargo", "run", "--locked", "--package", "helix-loader", "--bin", "hx-loader" if build.head?
   end
 
   def install
+    if build.head?
+      # Build the fetched grammars explicitly without trying to fetch them again.
+      ENV["HELIX_DISABLE_AUTO_GRAMMAR_BUILD"] = "1"
+      ENV["CARGO_MANIFEST_DIR"] = buildpath/"helix-term"
+    end
     system "cargo", "install", "-vv", *std_cargo_args(path: "helix-term")
+    system bin/"hx", "--grammar", "build", "--strict" if build.head?
     rm_r "runtime/grammars/sources/"
     libexec.install "runtime"
     bin.env_script_all_files libexec/"bin", HELIX_RUNTIME: "${HELIX_RUNTIME:-#{libexec}/runtime}"
