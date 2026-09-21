@@ -18,6 +18,8 @@ class Clipper < Formula
   depends_on "go" => :build
   depends_on :macos
 
+  deny_network_access!
+
   def install
     clipper_version = if build.stable?
       version.to_s

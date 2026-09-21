@@ -22,6 +22,12 @@ class Medusa < Formula
 
   conflicts_with "bash-completion", because: "both install `medusa` bash completion"
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     system "go", "build", *std_go_args
     generate_completions_from_executable(bin/"medusa", "completion", shells: [:bash, :zsh])

@@ -18,6 +18,12 @@ class Vulcain < Formula
 
   depends_on "go" => :build
 
+  allow_network_access! :test
+
+  def fetch
+    system "go", "mod", "download", "-C", "caddy"
+  end
+
   def install
     ldflags = "-X github.com/caddyserver/caddy/v2.CustomVersion=Vulcain.rocks.#{version}"
 

@@ -19,6 +19,12 @@ class Bom < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ldflags = %W[
       -X sigs.k8s.io/release-utils/version.gitVersion=v#{version}

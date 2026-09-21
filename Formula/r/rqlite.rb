@@ -16,6 +16,12 @@ class Rqlite < Formula
 
   depends_on "go" => :build
 
+  allow_network_access! :test
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     # Workaround to avoid patchelf corruption when cgo is required (for go-sqlite3)
     if OS.linux? && Hardware::CPU.arch == :arm64

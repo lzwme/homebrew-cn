@@ -31,6 +31,8 @@ class Mogenerator < Formula
     resolves "https://github.com/rentzsch/mogenerator/pull/390"
   end
 
+  deny_network_access!
+
   def install
     xcodebuild "-arch", Hardware::CPU.arch,
                "-target", "mogenerator",

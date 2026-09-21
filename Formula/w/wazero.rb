@@ -23,6 +23,12 @@ class Wazero < Formula
   depends_on "go" => :build
   depends_on "wabt" => :test
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ldflags = %W[-X github.com/tetratelabs/wazero/internal/version.version=#{version}]
     system "go", "build", *std_go_args(ldflags:), "./cmd/wazero"

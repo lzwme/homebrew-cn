@@ -19,6 +19,12 @@ class Nsq < Formula
 
   depends_on "go" => :build
 
+  allow_network_access! :test
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     system "make", "DESTDIR=#{prefix}", "PREFIX=", "install"
   end

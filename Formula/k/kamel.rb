@@ -18,6 +18,12 @@ class Kamel < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ldflags = "-X github.com/apache/camel-k/v#{version.major}/pkg/util/defaults.GitCommit=#{tap.user}-#{version}"
     system "go", "build", *std_go_args(ldflags:), "./cmd/kamel"

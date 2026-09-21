@@ -27,6 +27,12 @@ class Scorecard < Formula
 
   depends_on "go" => :build
 
+  allow_network_access! :test
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     pkg = "sigs.k8s.io/release-utils/version"
     ldflags = %W[

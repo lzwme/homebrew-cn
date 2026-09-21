@@ -17,12 +17,13 @@ class Cafeobj < Formula
 
   bottle do
     rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3816497dcfe09704825701f9c1d7401906d7d2977d1a237554eb8c014f08934c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1e276e1f6077e65371b1e2ad548736c190c22099ae144db02eef4f04fc1e92d6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d346f3487d50bf95498918a3ebc8fde45369c09f0a0cf48c1ee67a6b472b3f87"
-    sha256 cellar: :any_skip_relocation, sonoma:        "155b179dedb8de24c47ceba4231542916a8d529b0c6aa2b98deb2ee9c9d71f3b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d3d04d93f1d10743cd4a7992b27864c948a1c24bf58d5807d1a70aed62c03118"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "49da247664e0e23d8872b0396992af76364d60c64134a2262798ca22c2252935"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "a24206d6592735981bcece76089d4f805395b29bb1abba6b02bc3f87693576df"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "3816497dcfe09704825701f9c1d7401906d7d2977d1a237554eb8c014f08934c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "1e276e1f6077e65371b1e2ad548736c190c22099ae144db02eef4f04fc1e92d6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "d346f3487d50bf95498918a3ebc8fde45369c09f0a0cf48c1ee67a6b472b3f87"
+    sha256 cellar: :any_skip_relocation, sonoma:            "155b179dedb8de24c47ceba4231542916a8d529b0c6aa2b98deb2ee9c9d71f3b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "d3d04d93f1d10743cd4a7992b27864c948a1c24bf58d5807d1a70aed62c03118"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "49da247664e0e23d8872b0396992af76364d60c64134a2262798ca22c2252935"
   end
 
   depends_on "clisp"

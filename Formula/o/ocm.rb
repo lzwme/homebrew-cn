@@ -16,6 +16,12 @@ class Ocm < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     system "go", "build", *std_go_args, "./cmd/ocm"
     generate_completions_from_executable(bin/"ocm", shell_parameter_format: :cobra)

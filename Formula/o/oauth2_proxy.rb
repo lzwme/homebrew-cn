@@ -18,6 +18,12 @@ class Oauth2Proxy < Formula
 
   depends_on "go" => :build
 
+  allow_network_access! :test
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ldflags = "-X github.com/oauth2-proxy/oauth2-proxy/v7/pkg/version.VERSION=#{version}"
     system "go", "build", *std_go_args(ldflags:, output: bin/"oauth2-proxy")

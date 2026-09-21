@@ -20,6 +20,12 @@ class GoAir < Formula
 
   conflicts_with "air", because: "both install binaries with the same name"
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ldflags = %W[
       -X main.BuildTimestamp=#{time.iso8601}

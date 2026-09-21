@@ -21,6 +21,12 @@ class Babelfish < Formula
   depends_on "go" => :build
   depends_on "fish" => :test
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     system "go", "build", *std_go_args(gcflags: "all=-l -B -wb=false")
     fish_function.install "babel.fish"

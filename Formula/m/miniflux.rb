@@ -18,6 +18,12 @@ class Miniflux < Formula
   depends_on "go" => :build
   depends_on "postgresql@18" => :test
 
+  allow_network_access! :test
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ldflags = %W[
       -X miniflux.app/v2/internal/version.Version=#{version}

@@ -23,6 +23,12 @@ class Inframap < Formula
 
   depends_on "go" => :build
 
+  allow_network_access! :test
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     system "go", "build", *std_go_args(ldflags: "-X github.com/cycloidio/inframap/cmd.Version=v#{version}")
 

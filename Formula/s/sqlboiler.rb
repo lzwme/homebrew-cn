@@ -18,6 +18,12 @@ class Sqlboiler < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     %w[mssql mysql psql sqlite3].each do |driver|
       f = "sqlboiler-#{driver}"

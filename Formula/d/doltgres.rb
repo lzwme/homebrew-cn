@@ -26,6 +26,12 @@ class Doltgres < Formula
   depends_on "libpq" => :test
   depends_on "icu4c@78"
 
+  allow_network_access! :test
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ENV["CGO_ENABLED"] = "1" if OS.linux? && Hardware::CPU.arm?
 

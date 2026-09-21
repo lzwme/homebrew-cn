@@ -19,6 +19,12 @@ class Sgn < Formula
   depends_on "go" => :build
   depends_on "keystone"
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ENV["CGO_ENABLED"] = "1" if OS.linux?
     system "go", "build", *std_go_args(ldflags: "-X github.com/EgeBalci/sgn/config.Version=#{version}")

@@ -19,6 +19,14 @@ class Rswift < Formula
   depends_on :macos # needs CoreGraphics, a macOS-only library
   depends_on xcode: "13.3"
 
+  deny_network_access!
+
+  def fetch
+    # SwiftPM tries to apply its own sandbox, which cannot nest inside the
+    # build sandbox; Homebrew's sandbox still confines the whole process.
+    system "swift", "package", "resolve", "--disable-sandbox"
+  end
+
   def install
     system "swift", "build", *std_swift_args
     bin.install ".build/release/rswift"

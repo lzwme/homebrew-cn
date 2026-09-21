@@ -3,13 +3,17 @@ class Virtualenv < Formula
 
   desc "Tool for creating isolated virtual python environments"
   homepage "https://virtualenv.pypa.io/"
-  url "https://files.pythonhosted.org/packages/cb/8f/d4da8965384182e79d005cf165097c194e15df7b9f13c2dc09d7fa3d4b97/virtualenv-21.7.15.tar.gz"
-  sha256 "072c16d3d1d796cb6a851145d2eae314f8434bd625a55f18b8b72b29890cc366"
+  url "https://files.pythonhosted.org/packages/2f/5d/42254e91a9203a13d95ab4f5211f4cdda52b82fc3546340f7fb33a642173/virtualenv-21.9.0.tar.gz"
+  sha256 "fa0f2a26fcb6f32b376fc8b2c705b6057366763d5b9e5242d1ab10ecc3279fd3"
   license "MIT"
   head "https://github.com/pypa/virtualenv.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "702fe0cd72cdda77cf063ed843d3c75d5b091227e44aa59ade5032bdc10328a7"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "88268c336ec43ee6cde4d660e3361e3a1178cd9d6cb886032a929fdf2dba2541"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "db8717a1bd4f7a1dc7f4b6e182d2c4f3ede46ddd8fe5156b800f22ebc03c75d3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "b952f48f945ae4d1b16e6a9ce8d76cdbfccb58fd84fc96fc59418c6c77f53793"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "9e52a3a3a13e00ab068fe1a2317b3803eb7220ffaefa6972d668d300ff895b68"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "b007f55521e307975a6bc10b8d1f930b696f8d7c1e689c5eb3f55fa36b826559"
   end
 
   depends_on "python@3.14"
@@ -25,8 +29,8 @@ class Virtualenv < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/89/24/92d90bebedf197eb15b144367ce6fd4ad2de571927cd09dde190a36db8fc/platformdirs-4.11.10.tar.gz"
-    sha256 "9cd351c078ccf7dda1fdc5f8ccb9d8f5258984c63990e6df3627dde0b70b51d0"
+    url "https://files.pythonhosted.org/packages/f8/13/f870dd0b42690138e4e37a76b5138e5690ed4365a77071bb092d59037da0/platformdirs-4.11.11.tar.gz"
+    sha256 "b0befe8a90759e4a9a8b9820d434ae226a6549063210b596da0038a7a05aede4"
   end
 
   resource "python-discovery" do

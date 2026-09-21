@@ -1,8 +1,8 @@
 class Geeqie < Formula
   desc "Lightweight Gtk+ based image viewer"
   homepage "https://www.geeqie.org/"
-  url "https://ghfast.top/https://github.com/BestImageViewer/geeqie/releases/download/v3.1/geeqie-3.1.tar.xz"
-  sha256 "ca550826e30fee9d6ccfc621ddd0e4c430d440f51cdfcbebe623cedfe64fd805"
+  url "https://ghfast.top/https://github.com/BestImageViewer/geeqie/releases/download/v3.2/geeqie-3.2.tar.xz"
+  sha256 "ef10cdf72d8ab739286cc26fa3ff0a3535633ceea75c4cbdea39916bf9af2e0f"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -11,13 +11,11 @@ class Geeqie < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "6728802fba99b02827b0efb7e8b0d12c2cc65dc4370647d90b817b1241badf40"
-    sha256 cellar: :any, arm64_tahoe:       "1ac7a7e716b5c1f253ac8ce8c1329fe69e6eca7fba4acc69d515afc135e70c1b"
-    sha256 cellar: :any, arm64_sequoia:     "aa1092c0b0859252bd374eaccfa40f6bea4341dcf56f287fd631bb62b3a296e3"
-    sha256 cellar: :any, arm64_sonoma:      "a563501590477fbc2565b62da57f005b9025519954e48c9a1c1019a90b6ddd08"
-    sha256 cellar: :any, sonoma:            "f7942ef6f84f8c7e401306647d926a093f888a4e04ac71d666ddd96edfa25e8f"
-    sha256               arm64_linux:       "db14107c08e880841f29222f9864666461cc6c3b7f35fcf74575061f3db54954"
-    sha256               x86_64_linux:      "fb44ac9dcf9764a5fa85a234176118e9c5bd60bff3ae37ddfbe4770c78d58f66"
+    sha256 cellar: :any, arm64_golden_gate: "25bfd8ec1abee12514c8a9ee0c3fc21d2b5fc91331d5468ec1fb09b12f6e7d2f"
+    sha256 cellar: :any, arm64_tahoe:       "f3b1f8ed75145e27a2e55f4ed9e88a801a8389c8d2d0504e23f7116f9a416ac2"
+    sha256 cellar: :any, arm64_sequoia:     "36ef42c3785c249d2a2dccd54fa5e7ade98be8a725110c36d32cee88f2586bbd"
+    sha256 cellar: :any, arm64_linux:       "285f462fce61db40cdc4e1b49582638e425300d31cd3b93332a1363a5055044a"
+    sha256 cellar: :any, x86_64_linux:      "277f3f5632772d62a9717331c927b672821afb861cc50e185591638b32b54ce2"
   end
 
   depends_on "gettext" => :build
@@ -62,8 +60,10 @@ class Geeqie < Formula
     depends_on "xorg-server" => :test
   end
 
+  deny_network_access!
+
   def install
-    args = %w[-Dlua=disabled -Dyelp-build=disabled]
+    args = %w[-Dlua=disabled]
     system "meson", "setup", "build", *args, *std_meson_args
     system "meson", "compile", "-C", "build", "--verbose"
     system "meson", "install", "-C", "build"

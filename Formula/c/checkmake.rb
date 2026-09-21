@@ -18,6 +18,12 @@ class Checkmake < Formula
   depends_on "go" => :build
   depends_on "pandoc" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ENV["BUILDER_NAME"] = "Homebrew"
     ENV["BUILDER_EMAIL"] = "homebrew@brew.sh"

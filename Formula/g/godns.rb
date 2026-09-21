@@ -25,6 +25,12 @@ class Godns < Formula
     end
   end
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     resource("web").stage(buildpath/"internal/server/out")
     system "go", "build", *std_go_args(ldflags: "-X main.Version=v#{version}"), "./cmd/godns"

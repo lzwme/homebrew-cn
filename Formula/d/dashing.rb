@@ -31,7 +31,15 @@ class Dashing < Formula
     sha256 "08e5cc1fc0776fd60492ae90961031b1419ea6ed02e2c2d9db2ede67d9d67852"
   end
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
+    ENV["CGO_ENABLED"] = "1" if OS.linux? && Hardware::CPU.arm?
+
     system "go", "build", *std_go_args(ldflags: "-X main.version=#{version}")
   end
 

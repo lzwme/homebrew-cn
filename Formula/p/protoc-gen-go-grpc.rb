@@ -23,6 +23,12 @@ class ProtocGenGoGrpc < Formula
   depends_on "go" => :build
   depends_on "protobuf" => :no_linkage
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download", "-C", "cmd/protoc-gen-go-grpc"
+  end
+
   def install
     cd "cmd/protoc-gen-go-grpc" do
       system "go", "build", *std_go_args

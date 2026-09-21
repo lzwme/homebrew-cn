@@ -26,6 +26,12 @@ class Stolon < Formula
   depends_on "etcd" => :test
   depends_on "libpq"
 
+  allow_network_access! :test
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ldflags = "-X github.com/sorintlab/stolon/cmd.Version=#{version}"
 

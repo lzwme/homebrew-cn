@@ -31,6 +31,12 @@ class Depot < Formula
     resolves "https://github.com/depot/cli/pull/570"
   end
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ldflags = %W[
       -X github.com/depot/cli/internal/build.Version=#{version}

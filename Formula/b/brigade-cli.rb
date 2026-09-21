@@ -30,6 +30,12 @@ class BrigadeCli < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download", "-C", "v2"
+  end
+
   def install
     ENV["SKIP_DOCKER"] = "true"
     ENV["VERSION"] = "v#{version}"

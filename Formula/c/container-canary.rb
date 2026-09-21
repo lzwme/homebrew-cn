@@ -20,6 +20,12 @@ class ContainerCanary < Formula
   depends_on "go" => :build
   depends_on "docker" => :test
 
+  allow_network_access! :test
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ldflags = %W[
       -X github.com/nvidia/container-canary/internal.Version=#{version}

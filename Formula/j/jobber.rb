@@ -25,6 +25,8 @@ class Jobber < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
   def install
     system "./configure", "--prefix=#{prefix}", "--libexecdir=#{libexec}", "--sysconfdir=#{etc}",
       "--localstatedir=#{var}"

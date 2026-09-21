@@ -21,6 +21,12 @@ class ChartReleaser < Formula
   depends_on "go" => :build
   depends_on "helm" => :test
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ldflags = %W[
       -X github.com/helm/chart-releaser/cr/cmd.Version=#{version}

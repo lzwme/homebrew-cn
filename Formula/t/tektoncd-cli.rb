@@ -22,6 +22,8 @@ class TektoncdCli < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
   def install
     system "make", "bin/tkn"
     bin.install "bin/tkn" => "tkn"

@@ -25,6 +25,12 @@ class NewrelicInfraAgent < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     goarch = Hardware::CPU.intel? ? "amd64" : Hardware::CPU.arch.to_s
     os = OS.kernel_name.downcase

@@ -21,6 +21,12 @@ class Msgvault < Formula
 
   uses_from_macos "sqlite" => :build
 
+  allow_network_access! :test
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ENV["CGO_ENABLED"] = "1"
     # DuckDB is linked dynamically against this formula via the duckdb_use_lib

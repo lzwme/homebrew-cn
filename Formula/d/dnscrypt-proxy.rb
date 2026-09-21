@@ -23,6 +23,12 @@ class DnscryptProxy < Formula
 
   depends_on "go" => :build
 
+  allow_network_access! :test
+
+  def fetch
+    system "go", "mod", "download", "-C", "dnscrypt-proxy"
+  end
+
   def install
     cd "dnscrypt-proxy" do
       system "go", "build", *std_go_args(ldflags: "-X main.version=#{version}", output: sbin/"dnscrypt-proxy")

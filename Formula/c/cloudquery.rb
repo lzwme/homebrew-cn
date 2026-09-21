@@ -21,6 +21,12 @@ class Cloudquery < Formula
 
   depends_on "go" => :build
 
+  allow_network_access! :test
+
+  def fetch
+    system "go", "mod", "download", "-C", "cli"
+  end
+
   def install
     cd "cli" do
       ldflags = "-X github.com/cloudquery/cloudquery/cli/v6/cmd.Version=#{version}"

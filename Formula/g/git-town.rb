@@ -18,6 +18,8 @@ class GitTown < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
   def install
     ldflags = %W[
       -X github.com/git-town/git-town/v#{version.major}/src/cmd.version=v#{version}

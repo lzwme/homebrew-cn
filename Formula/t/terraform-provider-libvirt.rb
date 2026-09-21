@@ -19,6 +19,12 @@ class TerraformProviderLibvirt < Formula
 
   depends_on "libvirt"
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     system "go", "run", "./internal/codegen"
     system "go", "build", *std_go_args(ldflags: "-X main.version=#{version}")

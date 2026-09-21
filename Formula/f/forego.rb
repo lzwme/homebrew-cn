@@ -29,6 +29,8 @@ class Forego < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
   def install
     ldflags = "-X main.Version=#{version} -X main.allowUpdate=false"
     system "go", "build", *std_go_args(ldflags:)

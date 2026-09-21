@@ -23,6 +23,8 @@ class K3sup < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
   def install
     ldflags = %W[
       -X github.com/alexellis/k3sup/cmd.Version=#{version}

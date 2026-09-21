@@ -23,6 +23,12 @@ class Xk6 < Formula
   depends_on "gosec"
   depends_on "govulncheck"
 
+  allow_network_access! :test
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     system "go", "build", *std_go_args(ldflags: "-X go.k6.io/xk6/internal/cmd.version=#{version}")
   end

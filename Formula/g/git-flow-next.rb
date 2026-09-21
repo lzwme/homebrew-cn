@@ -19,6 +19,12 @@ class GitFlowNext < Formula
 
   conflicts_with "git-flow", because: "both install the same binaries"
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     commit = build.head? ? Utils.git_short_head : tap.user
     ldflags = %W[

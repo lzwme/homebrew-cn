@@ -1,24 +1,31 @@
 class Xboard < Formula
   desc "Graphical user interface for chess"
   homepage "https://www.gnu.org/software/xboard/"
-  url "https://ftpmirror.gnu.org/xboard/xboard-4.9.1.tar.gz"
-  mirror "https://ftp.gnu.org/gnu/xboard/xboard-4.9.1.tar.gz"
-  sha256 "2b2e53e8428ad9b6e8dc8a55b3a5183381911a4dae2c0072fa96296bbb1970d6"
   license "GPL-3.0-or-later"
   revision 4
 
+  stable do
+    # TODO: Switch to GTK+3 build on next release (see HEAD build)
+    url "https://ftpmirror.gnu.org/xboard/xboard-4.9.1.tar.gz"
+    mirror "https://ftp.gnu.org/gnu/xboard/xboard-4.9.1.tar.gz"
+    sha256 "2b2e53e8428ad9b6e8dc8a55b3a5183381911a4dae2c0072fa96296bbb1970d6"
+
+    depends_on "libx11"
+    depends_on "libxaw"
+    depends_on "libxmu"
+    depends_on "libxt"
+
+    # Fix `--help` abort under `_FORTIFY_SOURCE=3`, reported upstream to <bug-xboard@gnu.org>
+    patch :DATA
+  end
+
   bottle do
-    sha256 arm64_golden_gate: "b48773d5c1749c861ead3ba9db3ba72c5584bdae841e59b8442b103e145b0f07"
-    sha256 arm64_tahoe:       "49fb2045c979c8788ec25bbba4416f8f5a38729d9018d610ea1dd41f2595263b"
-    sha256 arm64_sequoia:     "a3b2d95bd28d0e7034e8c740bb5daf60ebd131dec5586eda4c8caa491b96f99b"
-    sha256 arm64_sonoma:      "286ed707d8d03708c836b4ac6a00777425e5984b6fe5be083ae571cfcfccb877"
-    sha256 arm64_ventura:     "50cd0e9fe8b8c1e1cafca11ab050238c046b037db55561204c25bd238438cdd4"
-    sha256 arm64_monterey:    "90dd23652bb03fee8b0ff31fba73ad979861fcefc17602a19d9197d0eee77170"
-    sha256 sonoma:            "e03a15e4427bb343a6f1bdfbae67eb899542e0b9b78bb9bd70c8b3fe8efa1bee"
-    sha256 ventura:           "144abeb78c31d18571fe410dbb0759657566bb9162013102bdb5c59fb95e1aae"
-    sha256 monterey:          "983ceebe82b7abeb9c0126c06e9d8954302431c2de2f47e3a05b40423633be98"
-    sha256 arm64_linux:       "a3c183cb0e434de3eec05adddb804c87f92d93c892d908cfcbd47d25a92ecfea"
-    sha256 x86_64_linux:      "fa58bc09398cf9c5fcfe470ee69366d7d2e07b8e369475f54ca6d0c7426281fb"
+    rebuild 1
+    sha256 arm64_golden_gate: "74171650ea32aaa60891345f4d72f953901bfa37df649b6c229b78ea4865107c"
+    sha256 arm64_tahoe:       "53d55768d79426bf00e69bf7db2a9a05a53c7f9b0b8dd7545f988e50e79f990a"
+    sha256 arm64_sequoia:     "d667ffcdbf166279d7cfdad4d6f21f53a8e44639d5bb211e70199f005681027a"
+    sha256 arm64_linux:       "c0d6a2a152c01dd748ebc1a88404ba01f97e0ededd8a9a7f6c4669c65b34031f"
+    sha256 x86_64_linux:      "814476c1bfed7cc7ca7302269e5828e5addf1d6a6ded74b181f2ff2fcaae5529"
   end
 
   head do
@@ -27,25 +34,20 @@ class Xboard < Formula
     depends_on "autoconf" => :build
     depends_on "automake" => :build
     depends_on "gettext" => :build
-  end
+    depends_on "gtk+3"
 
-  deprecate! date: "2026-01-05", because: "uses deprecated polyglot"
+    on_macos do
+      depends_on "gettext"
+    end
+  end
 
   depends_on "pkgconf" => :build
   depends_on "cairo"
-  depends_on "fairymax"
+  depends_on "fairymax" => :no_linkage
   depends_on "gdk-pixbuf"
   depends_on "glib"
-  depends_on "gtk+"
   depends_on "librsvg"
   depends_on "pango"
-  depends_on "polyglot"
-
-  on_macos do
-    depends_on "at-spi2-core"
-    depends_on "gettext"
-    depends_on "harfbuzz"
-  end
 
   on_system :linux, macos: :ventura_or_newer do
     depends_on "texinfo" => :build
@@ -53,13 +55,22 @@ class Xboard < Formula
 
   def install
     ENV.append_to_cflags "-fcommon" if OS.linux?
+    ENV.append "LDFLAGS", "-Wl,-dead_strip_dylibs" if OS.mac?
 
-    system "./autogen.sh" if build.head?
-    system "./configure", "--disable-silent-rules",
-                          "--disable-zippy",
-                          "--with-gtk",
-                          "--without-Xaw",
-                          *std_configure_args
+    args = %w[
+      --disable-silent-rules
+      --disable-zippy
+    ]
+    if build.stable?
+      args += %w[
+        --disable-nls
+        --with-Xaw
+        --without-gtk
+      ]
+    else
+      system "autoreconf", "--force", "--install", "--verbose"
+    end
+    system "./configure", *args, *std_configure_args
     system "make", "install"
   end
 
@@ -67,3 +78,16 @@ class Xboard < Formula
     system bin/"xboard", "--help"
   end
 end
+
+__END__
+--- a/xaw/xboard.c
++++ b/xaw/xboard.c
+@@ -963,7 +963,7 @@
+          " Persistent options (saved in the settings file) are marked with *)\n\n");
+   while(p->argName) {
+     if(p->argType == ArgCommSettings) { p++; continue; } // XBoard has no comm port
+-    snprintf(buf+len, MSG_SIZ, "-%s%s", p->argName, PrintArg(p->argType));
++    snprintf(buf+len, MSG_SIZ-len, "-%s%s", p->argName, PrintArg(p->argType));
+     if(p->save) strcat(buf+len, "*");
+     for(q=p+1; q->argLoc == p->argLoc; q++) {
+       if(q->argName[0] == '-') continue;

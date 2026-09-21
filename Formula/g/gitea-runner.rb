@@ -15,6 +15,12 @@ class GiteaRunner < Formula
 
   depends_on "go" => :build
 
+  allow_network_access! :test
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ldflags = %W[-X gitea.com/gitea/runner/internal/pkg/ver.version=v#{version}]
     system "go", "build", *std_go_args(ldflags:)

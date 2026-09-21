@@ -18,6 +18,12 @@ class Pgstream < Formula
   depends_on "postgresql@18" => :test
   depends_on "wal2json" => :test
 
+  allow_network_access! :test
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ldflags = "-X github.com/xataio/pgstream/cmd.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:)

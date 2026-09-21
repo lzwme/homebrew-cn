@@ -18,6 +18,12 @@ class TronbytServer < Formula
   depends_on "pkgconf" => :build
   depends_on "webp"
 
+  allow_network_access! :test
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ENV["CGO_ENABLED"] = "1" if OS.linux? && Hardware::CPU.arm?
 

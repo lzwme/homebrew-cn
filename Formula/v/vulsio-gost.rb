@@ -19,6 +19,12 @@ class VulsioGost < Formula
 
   conflicts_with "gost", because: "both install `gost` binaries"
 
+  allow_network_access! :test
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ldflags = %W[
       -X github.com/vulsio/gost/config.Version=#{version}

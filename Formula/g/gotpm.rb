@@ -16,6 +16,12 @@ class Gotpm < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     system "go", "build", *std_go_args, "./cmd/gotpm"
     generate_completions_from_executable(bin/"gotpm", shell_parameter_format: :cobra)

@@ -33,6 +33,14 @@ class SwiftProtobuf < Formula
     depends_on xcode: ["15.3", :build]
   end
 
+  deny_network_access!
+
+  def fetch
+    # SwiftPM tries to apply its own sandbox, which cannot nest inside the
+    # build sandbox; Homebrew's sandbox still confines the whole process.
+    system "swift", "package", "resolve", "--disable-sandbox"
+  end
+
   def install
     system "swift", "build", "--product", "protoc-gen-swift", *std_swift_args
     bin.install ".build/release/protoc-gen-swift"

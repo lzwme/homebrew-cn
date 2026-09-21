@@ -25,6 +25,12 @@ class Gemgen < Formula
   depends_on "go" => :build
   depends_on "scdoc" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     system "make", "install", "PREFIX=#{prefix}"
   end

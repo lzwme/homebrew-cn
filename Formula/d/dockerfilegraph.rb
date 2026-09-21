@@ -19,6 +19,12 @@ class Dockerfilegraph < Formula
   depends_on "go" => :build
   depends_on "graphviz"
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ldflags = %W[
       -X github.com/patrickhoefler/dockerfilegraph/internal/cmd.gitVersion=#{version}

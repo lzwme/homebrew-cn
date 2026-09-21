@@ -18,6 +18,12 @@ class Fetch < Formula
 
   depends_on "go" => :build
 
+  allow_network_access! :test
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     system "go", "build", *std_go_args(ldflags: "-X main.VERSION=v#{version}")
   end

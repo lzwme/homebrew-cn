@@ -24,6 +24,8 @@ class DockerCredentialHelper < Formula
     depends_on "libsecret"
   end
 
+  deny_network_access!
+
   def install
     ENV["CGO_ENABLED"] = "1" if OS.linux? && Hardware::CPU.arm?
 

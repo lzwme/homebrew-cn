@@ -4,6 +4,7 @@ class HaskellLanguageServer < Formula
   url "https://ghfast.top/https://github.com/haskell/haskell-language-server/releases/download/2.15.0.0/haskell-language-server-2.15.0.0-src.tar.gz"
   sha256 "a6ecf9eeac802dfa358f151d4309803ca082671ed18195d1db0d60771a2159e2"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/haskell/haskell-language-server.git", branch: "master"
 
   # we need :github_latest here because otherwise
@@ -14,12 +15,11 @@ class HaskellLanguageServer < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "41c1cfa58a5033708f1e73dcd67c0f2fbf953a56109143d60785bb77633ba954"
-    sha256 cellar: :any, arm64_tahoe:       "4f850e4cce2515edb1efaa7af4f0d9bbbfa40ba1baee33dfcdf77d318a1d6dea"
-    sha256 cellar: :any, arm64_sequoia:     "812c706399dfe479985d83d0d76f0b70508325a68c7a0d62b4c736e807121241"
-    sha256 cellar: :any, arm64_sonoma:      "80b4f4068eb9b8c7e449b24f463b95f3ea3d8a1f249367a105ff46aab735fe85"
-    sha256 cellar: :any, arm64_linux:       "483c934e6136e6de6ed62e5f4a233276523a6c6b38f86c83590f824871f2a97d"
-    sha256 cellar: :any, x86_64_linux:      "d1e8069630b25eb9a25d2f03e1a1f9c349c038f7b5c85234062675783770a94d"
+    sha256 cellar: :any, arm64_golden_gate: "6ba67077e95b10113101ad3a720e8673e3da7a83194cb0e6e4535323f66bb6b9"
+    sha256 cellar: :any, arm64_tahoe:       "6966b807d9f51058b712e8f08e9560e035a5c8ae363ee2d1b2eb8993abb50d05"
+    sha256 cellar: :any, arm64_sequoia:     "fd2453e138366a67a5a7a1f9c3c7f58d0c6af52e13bae91c3c3b07ed39d7243c"
+    sha256 cellar: :any, arm64_linux:       "c905ee532fa1002c3cf1d156e2a64ac519b39bf874bb686d87b34b7d3f2dab83"
+    sha256 cellar: :any, x86_64_linux:      "1887673d1b1a5fce13a2491c20be5c549a08c2ada37e55fcfaeae2fce513f5b1"
   end
 
   depends_on "cabal-install" => [:build, :test]

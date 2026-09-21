@@ -1,12 +1,12 @@
 class AcmeSh < Formula
   desc "ACME client"
   homepage "https://github.com/acmesh-official/acme.sh"
-  url "https://ghfast.top/https://github.com/acmesh-official/acme.sh/archive/refs/tags/3.1.5.tar.gz"
-  sha256 "a5e5b61bf98464fd7bf9925951b97e9ed8c127e041d3b8e9703d2360cd6e19b6"
+  url "https://ghfast.top/https://github.com/acmesh-official/acme.sh/archive/refs/tags/3.1.6.tar.gz"
+  sha256 "0d3f9000ac44a6331314742a88c475f79134e24fc991997883652adc59efc486"
   license "GPL-3.0-only"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "2e0d35ef65443913d9bbca1695224c87c055f8f40c836d6bc5ff925d07dca2cd"
+    sha256 cellar: :any_skip_relocation, all: "c3a73e20dde99f68cb40a5b436e471a24d1f2e8b3712c9d89fc625c035b8cec2"
   end
 
   deny_network_access!

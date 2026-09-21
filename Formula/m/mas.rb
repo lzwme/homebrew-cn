@@ -42,6 +42,15 @@ class Mas < Formula
     depends_on xcode: ["26.0", :build]
   end
 
+  # Test looks up an app on itunes.apple.com
+  allow_network_access! :test
+
+  def fetch
+    # SwiftPM tries to apply its own sandbox, which cannot nest inside the
+    # build sandbox; Homebrew's sandbox still confines the whole process.
+    system "swift", "package", "resolve", "--disable-sandbox"
+  end
+
   def install
     ENV["MAS_DIRTY_INDICATOR"] = ""
     system "Scripts/build", "#{tap&.name}/#{name}", "--disable-sandbox", "-c", "release"

@@ -1,20 +1,26 @@
 class Keploy < Formula
   desc "Testing Toolkit creates test-cases and data mocks from API calls, DB queries"
   homepage "https://keploy.io"
-  url "https://ghfast.top/https://github.com/keploy/keploy/archive/refs/tags/v3.6.66.tar.gz"
-  sha256 "4491b90cf0e684f4a37497291554a26d43f61d6930530423c1e45a77f0e54f97"
+  url "https://ghfast.top/https://github.com/keploy/keploy/archive/refs/tags/v3.6.68.tar.gz"
+  sha256 "36ec1958f1a6bc572a72f93de87714f92767a0711f78071f4f4e8b8f86eb77f2"
   license "Apache-2.0"
   head "https://github.com/keploy/keploy.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "cbaa198a650873f0d3e156da7b467e361ea06979d8e45efe23d1677863c9de21"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "cbaa198a650873f0d3e156da7b467e361ea06979d8e45efe23d1677863c9de21"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "cbaa198a650873f0d3e156da7b467e361ea06979d8e45efe23d1677863c9de21"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "b19c02e5f9a12eb27b01f4bb1e59fa11583e8fb8e88a084c1ddb2ed57611deb5"
-    sha256 cellar: :any,                 x86_64_linux:      "23f4ec5beac455dcb0d10aa86b52c3b4a968b200dea1945afb8f472b159b4df8"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "ecf2d748eb55d3d7c96acb2da4fef046cc3ac87da994132e005b88ea876e0065"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "ecf2d748eb55d3d7c96acb2da4fef046cc3ac87da994132e005b88ea876e0065"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "ecf2d748eb55d3d7c96acb2da4fef046cc3ac87da994132e005b88ea876e0065"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "f64f02ab3cd61ec6be02c367a525af0c5ccec7bab9320f58790337dc8092e8b5"
+    sha256 cellar: :any,                 x86_64_linux:      "82eb891285ae560a8b9899b3469b1054e5450b28a5ee603afe637d835258afa0"
   end
 
   depends_on "go" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     system "go", "build", *std_go_args(ldflags: "-X main.version=#{version}")

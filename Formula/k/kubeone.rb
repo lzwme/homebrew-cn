@@ -18,6 +18,12 @@ class Kubeone < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ldflags = %W[
       -X k8c.io/kubeone/pkg/cmd.version=#{version}

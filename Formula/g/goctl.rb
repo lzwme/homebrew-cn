@@ -23,6 +23,12 @@ class Goctl < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download", "-C", "tools/goctl"
+  end
+
   def install
     chdir "tools/goctl" do
       system "go", "build", *std_go_args, "goctl.go"

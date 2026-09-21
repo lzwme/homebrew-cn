@@ -26,6 +26,12 @@ class Oak < Formula
 
   conflicts_with "oakc", because: "both install `oak` binaries"
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     system "go", "build", *std_go_args
   end

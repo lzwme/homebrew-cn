@@ -22,6 +22,14 @@ class Mockolo < Formula
     depends_on xcode: ["15.3", :build]
   end
 
+  deny_network_access!
+
+  def fetch
+    # SwiftPM tries to apply its own sandbox, which cannot nest inside the
+    # build sandbox; Homebrew's sandbox still confines the whole process.
+    system "swift", "package", "resolve", "--disable-sandbox"
+  end
+
   def install
     inreplace "Sources/Mockolo/Version.swift", "development", version.to_s
     system "swift", "build", "--product", "mockolo", *std_swift_args

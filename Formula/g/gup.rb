@@ -16,6 +16,12 @@ class Gup < Formula
 
   depends_on "go"
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ldflags = "-X github.com/nao1215/gup/internal/cmdinfo.Version=v#{version}"
     system "go", "build", *std_go_args(ldflags:)

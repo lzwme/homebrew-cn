@@ -18,6 +18,12 @@ class Kbld < Formula
 
   depends_on "go" => :build
 
+  allow_network_access! :test
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ldflags = %W[
       -X carvel.dev/kbld/pkg/kbld/version.Version=#{version}

@@ -20,6 +20,12 @@ class ShuttleCli < Formula
 
   conflicts_with "cargo-shuttle", because: "both install `shuttle` binaries"
 
+  allow_network_access! :test
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ldflags = %W[
       -X github.com/lunarway/shuttle/cmd.version=#{version}

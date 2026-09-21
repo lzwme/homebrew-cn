@@ -17,6 +17,12 @@ class Pgweb < Formula
 
   depends_on "go" => :build
 
+  allow_network_access! :test
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ldflags = %W[
       -X github.com/sosedoff/pgweb/pkg/command.BuildTime=#{time.iso8601}

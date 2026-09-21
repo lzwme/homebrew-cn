@@ -22,6 +22,12 @@ class Flyscrape < Formula
 
   uses_from_macos "sqlite"
 
+  allow_network_access! :test
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     tags = "osusergo,netgo,sqlite_omit_load_extension"
     system "go", "build", *std_go_args(tags:), "./cmd/flyscrape"

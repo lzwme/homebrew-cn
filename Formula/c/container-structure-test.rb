@@ -18,6 +18,12 @@ class ContainerStructureTest < Formula
 
   depends_on "go" => :build
 
+  allow_network_access! :test
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     project = "github.com/GoogleContainerTools/container-structure-test"
     ldflags = %W[

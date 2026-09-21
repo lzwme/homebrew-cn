@@ -33,6 +33,12 @@ class Cql < Formula
     resolves "https://github.com/CovenantSQL/CovenantSQL/pull/379"
   end
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ENV["CGO_ENABLED"] = "1"
 

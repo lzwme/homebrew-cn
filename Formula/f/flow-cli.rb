@@ -25,6 +25,12 @@ class FlowCli < Formula
 
   conflicts_with "flow", "flow-control", because: "both install `flow` binaries"
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     system "make", "cmd/flow/flow", "VERSION=v#{version}"
     bin.install "cmd/flow/flow"

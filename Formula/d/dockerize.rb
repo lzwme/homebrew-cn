@@ -17,6 +17,12 @@ class Dockerize < Formula
   depends_on "go" => :build
   conflicts_with "powerman-dockerize", because: "powerman-dockerize and dockerize install conflicting executables"
 
+  allow_network_access! :test
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     system "go", "build", *std_go_args(ldflags: "-X main.buildVersion=#{version}")
   end

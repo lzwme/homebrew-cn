@@ -18,6 +18,12 @@ class TfplugingenOpenapi < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     commit = build.head? ? Utils.git_short_head : tap.user
     ldflags = "-X main.commit=#{commit} -X main.version=#{version}"

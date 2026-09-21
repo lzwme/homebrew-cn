@@ -23,6 +23,12 @@ class Batt < Formula
   depends_on arch: :arm64
   depends_on :macos
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     # GOTAGS is set to disable built-in install/uninstall commands when building for Homebrew.
     system "make", "GOTAGS=brew", "VERSION=v#{version}"

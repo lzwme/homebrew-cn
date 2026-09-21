@@ -17,6 +17,12 @@ class Gabo < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download", "-C", "src/gabo"
+  end
+
   def install
     cd "src/gabo" do
       system "go", "build", *std_go_args, "./cmd/gabo"

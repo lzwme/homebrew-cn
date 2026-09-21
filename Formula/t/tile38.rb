@@ -19,6 +19,12 @@ class Tile38 < Formula
 
   depends_on "go" => :build
 
+  allow_network_access! :test
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ldflags = %W[
       -X github.com/tidwall/tile38/core.Version=#{version}

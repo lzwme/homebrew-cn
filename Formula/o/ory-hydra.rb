@@ -25,6 +25,12 @@ class OryHydra < Formula
 
   conflicts_with "hydra", because: "both install `hydra` binaries"
 
+  allow_network_access! :test
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ENV["CGO_ENABLED"] = "1" if OS.linux? && Hardware::CPU.arm?
 

@@ -1,8 +1,8 @@
 class Redress < Formula
   desc "Tool for analyzing stripped Go binaries compiled with the Go compiler"
   homepage "https://github.com/goretk/redress"
-  url "https://ghfast.top/https://github.com/goretk/redress/archive/refs/tags/v1.2.85.tar.gz"
-  sha256 "192e9163113189c10c2ad4eb80f26050452da3b7a304784cdd17e3d405ab0060"
+  url "https://ghfast.top/https://github.com/goretk/redress/archive/refs/tags/v1.2.86.tar.gz"
+  sha256 "8f2c87e9423a1e4e71b834b680430e95ecdc0bb4e7208aabd2389209820a402a"
   license "AGPL-3.0-only"
   head "https://github.com/goretk/redress.git", branch: "develop"
 
@@ -12,15 +12,20 @@ class Redress < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "f282f7c1c9d753e4e900c43717e622d81da427afa4cf8965aee27b7f573c3669"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "b25736a8c54217d9387cb008f247f9ef8ffff150f32ebfda9abbdf5af7fe7dc8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "047fce16686bd7d4ceb04317af0d3c1b5c0fc44b9c9daed79b7ec459435ff1b3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "34c9b45ed7e8acadf68df48b39cb7791f4ea8c81d1c3f944f751fcd64e959c40"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "d3ab9e9a3c5cfe2242e4dd6fd6dc9f8972aac16c4758cb5554d18c2343c6a3bd"
-    sha256 cellar: :any,                 x86_64_linux:      "d6bfcae685e9cf92b58eda0c2ed067f6712bc11414aa0f20c569000ef9039e28"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "c17209cd9e340595b6c7a5654b57020614f0a19efa0f10d4a4a7767afa9e837e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "1dd1d3b7ec896758c85f82f97208ca088e464faf4ec64f3f40ac496c8667c213"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "0965399e241145859c954eb611c82d445c33dfcc4044570860ddf7d06b68587d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "6594e261dbd9ec5a8b879db6965e1edbe53cc37852d4cdab37b35bc95bda4145"
+    sha256 cellar: :any,                 x86_64_linux:      "4a4ec9fd328c3a50ed6cd8f99fbbcb85e33b4600a2688ecbef053edce65d8c8d"
   end
 
   depends_on "go" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     # https://github.com/goretk/redress/blob/develop/Makefile#L11-L14

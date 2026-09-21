@@ -25,6 +25,8 @@ class IpinfoCli < Formula
 
   conflicts_with "ipinfo", because: "ipinfo and ipinfo-cli install the same binaries"
 
+  deny_network_access!
+
   def install
     system "./ipinfo/build.sh"
     bin.install "build/ipinfo"

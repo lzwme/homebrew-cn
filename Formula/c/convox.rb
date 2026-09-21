@@ -27,6 +27,12 @@ class Convox < Formula
     depends_on "systemd" # for libudev
   end
 
+  allow_network_access! :test
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ldflags = "-X main.version=#{version}"
     system "go", "build", "-mod=readonly", *std_go_args(ldflags:), "./cmd/convox"

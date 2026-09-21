@@ -22,6 +22,8 @@ class Cfssl < Formula
   depends_on "go" => :build
   depends_on "libtool"
 
+  deny_network_access!
+
   def install
     ldflags = "-X github.com/cloudflare/cfssl/cli/version.version=#{version}"
 

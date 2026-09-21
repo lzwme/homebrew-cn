@@ -21,6 +21,12 @@ class Tgpt < Formula
     depends_on "libx11"
   end
 
+  allow_network_access! :test
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     system "go", "build", *std_go_args
   end

@@ -32,7 +32,6 @@ class TrezorBridge < Formula
     end
   end
 
-  # Fix libusb build for newer Go
   patch do
     url "https://github.com/trezor/trezord-go/commit/318b01237604256b1a561b2fa57826aa0ebb218d.patch?full_index=1"
     sha256 "b48d0026281814f9a6a8cac48b701db741391d285867593b4ce272e70aff229a"
@@ -40,13 +39,22 @@ class TrezorBridge < Formula
     resolves "https://github.com/trezor/trezord-go/pull/300"
   end
 
-  # Fix build with go 1.24
   patch do
     url "https://github.com/trezor/trezord-go/commit/8ca9600d176bebf6cd2ad93ee9525a04059ee735.patch?full_index=1"
     sha256 "3eaa5c4bcc09a931e2c07ca7a6183346ee07ca5cf98e75a0ee237677e3269a7d"
     type :backport
     resolves "https://github.com/trezor/trezord-go/pull/305"
   end
+
+  allow_network_access! :test
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
+  # Fix libusb build for newer Go
+
+  # Fix build with go 1.24
 
   def install
     ENV["CGO_ENABLED"] = "1" if OS.linux? && Hardware::CPU.arm?

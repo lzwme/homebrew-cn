@@ -19,6 +19,8 @@ class Charm < Formula
   # Go 1.27 dropped bzr support: https://github.com/golang/go/issues/78090
   depends_on "go@1.26" => :build
 
+  deny_network_access!
+
   def fetch
     # Charm requires bzr (bazaar vcs) for fetching launchpad.net/lpad Go module.
     ENV["GOVCS"] = "launchpad.net:bzr"

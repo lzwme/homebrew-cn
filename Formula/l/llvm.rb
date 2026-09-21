@@ -2,6 +2,7 @@ class Llvm < Formula
   desc "Next-gen compiler infrastructure"
   homepage "https://llvm.org/"
   license "Apache-2.0" => { with: "LLVM-exception" }
+  revision 1
   compatibility_version 2
   head "https://github.com/llvm/llvm-project.git", branch: "main"
 
@@ -32,12 +33,11 @@ class Llvm < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256               arm64_golden_gate: "c42a2ea5f0e065b50e2b121f112fb9f736b30d1bf09432f087f55260e6dee445"
-    sha256               arm64_tahoe:       "6542e45742b50f455290cb54dcb6a1a91098bc2234393855569860676f4035ee"
-    sha256               arm64_sequoia:     "d987cff5f1a77fb8c8f2f61f7097fef675c5ab3a26db67e3eeb1f1a0e2d83231"
-    sha256 cellar: :any, arm64_linux:       "309680eb98c68b7c3b4952b07dc3ba9705104b075dce57da3a6440c782064036"
-    sha256 cellar: :any, x86_64_linux:      "2e66ffbfb5734e6f7d29897e6d1f1a44d92fd6a518dbbf526b9890075e252c46"
+    sha256               arm64_golden_gate: "173e8e1b5ca3d92227f1f3d9a3ae1cb25528f6c3c39b78c2a657f5ffa5660afb"
+    sha256               arm64_tahoe:       "53fddc24c7eb19ed180f7bcdf6dd7bebe67ab8a266a2c511c316b3870abb0fe8"
+    sha256               arm64_sequoia:     "4ca75cd24ea8f06f85ad16113dc274bbd2496e3330cb0765e69b142a39749876"
+    sha256 cellar: :any, arm64_linux:       "946215894962b307b054d176683f75ebb5434692c27d8e21ddc77997953e33b9"
+    sha256 cellar: :any, x86_64_linux:      "c62c7ce9ef13163db5ff176f54e97ab937c85221a5e062ccc27185e999657d2e"
   end
 
   keg_only :provided_by_macos
@@ -447,23 +447,53 @@ class Llvm < Formula
 
     return unless lto_build
 
-    # Convert LTO-generated bitcode in our static archives to MachO. Adapted from Fedora:
-    # https://src.fedoraproject.org/rpms/redhat-rpm-config/blob/rawhide/f/brp-llvm-compile-lto-elf
-    lib.glob("*.a").each do |static_archive|
-      mktemp do
-        system bin/"llvm-ar", "x", static_archive
-        rebuilt_files = []
+    lib.glob("*.a").each { |static_archive| convert_lto_archive(static_archive) }
+  end
 
-        Pathname.glob("*.o").each do |bc_file|
-          file_type = Utils.safe_popen_read("file", "--brief", bc_file)
-          next unless file_type.match?(/^LLVM (IR )?bitcode/)
+  # Convert LTO-generated bitcode in our static archives to Mach-O.
+  # Archives with unique member names keep flat extraction and replacement.
+  # Only archives containing duplicate names require per-occurrence extraction
+  # and rebuilding: flat extraction overwrites same-named members, while
+  # `llvm-ar r` replaces only the first matching member.
+  #
+  # Adapted from Fedora:
+  # https://src.fedoraproject.org/rpms/redhat-rpm-config/blob/1c5e204554732b224956618610a990e7acd74f62/f/brp-llvm-compile-lto-elf
+  def convert_lto_archive(static_archive)
+    mktemp do
+      members = Utils.safe_popen_read(bin/"llvm-ar", "t", static_archive).split("\n")
+      has_duplicates = members.uniq.length != members.length
 
-          rebuilt_files << bc_file
-          system bin/"clang", "-fno-lto", "-Wno-unused-command-line-argument",
-                              "-x", "ir", bc_file, "-c", "-o", bc_file
+      member_files = if has_duplicates
+        occurrences = Hash.new(0)
+        members.each_with_index.map do |member, index|
+          member_dir = Pathname.pwd/index.to_s
+          member_dir.mkpath
+          occurrences[member] += 1
+          system bin/"llvm-ar", "xN", occurrences[member].to_s, static_archive, member,
+                 "--output=#{member_dir}"
+          member_dir/member
         end
+      else
+        system bin/"llvm-ar", "x", static_archive
+        Pathname.glob("*.o")
+      end
 
-        system bin/"llvm-ar", "r", static_archive, *rebuilt_files if rebuilt_files.present?
+      converted_files = member_files.select do |bc_file|
+        file_type = Utils.safe_popen_read("file", "--brief", bc_file)
+        next false unless file_type.match?(/^LLVM (IR )?bitcode/)
+
+        system bin/"clang", "-fno-lto", "-Wno-unused-command-line-argument",
+                            "-x", "ir", bc_file, "-c", "-o", bc_file
+        true
+      end
+      next if converted_files.empty?
+
+      if has_duplicates
+        rebuilt_archive = Pathname.pwd/static_archive.basename
+        system bin/"llvm-ar", "qcs", rebuilt_archive, *member_files
+        mv rebuilt_archive, static_archive
+      else
+        system bin/"llvm-ar", "r", static_archive, *converted_files
       end
     end
   end
@@ -545,6 +575,24 @@ class Llvm < Formula
     assert_equal "-lLLVM-#{soversion}", shell_output("#{bin}/llvm-config --libs").chomp
     assert_equal (lib/shared_library("libLLVM-#{soversion}")).to_s,
                  shell_output("#{bin}/llvm-config --libfiles").chomp
+
+    if OS.mac?
+      # Regression: duplicate archive members must all be converted from bitcode to Mach-O.
+      # Assumes clang/lib/Driver/ToolChains/{AMDGPU.cpp, Arch/AMDGPU.cpp} produce exactly
+      # two AMDGPU.cpp.o members in libclangDriver.a. Upstream source/target restructuring
+      # or object-naming changes may invalidate the archive name, member name, or count.
+      archive = lib/"libclangDriver.a"
+      member = "AMDGPU.cpp.o"
+      members = Utils.safe_popen_read(bin/"llvm-ar", "t", archive).split("\n")
+      assert_equal 2, members.count(member)
+
+      (1..2).each do |instance|
+        mkdir testpath/"archive-member-#{instance}" do
+          system bin/"llvm-ar", "xN", instance.to_s, archive, member
+          assert_match(/^Mach-O/, Utils.safe_popen_read("file", "--brief", member))
+        end
+      end
+    end
 
     (testpath/"test.c").write <<~'C'
       #include <stdio.h>

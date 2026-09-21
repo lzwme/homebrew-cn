@@ -23,6 +23,12 @@ class Ryelang < Formula
 
   conflicts_with "rye", because: "both install `rye` binaries"
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ENV["CGO_ENABLED"] = OS.mac? ? "1" : "0"
 

@@ -1,8 +1,8 @@
 class PnpmAT11 < Formula
   desc "Fast, disk space efficient package manager"
   homepage "https://pnpm.io/"
-  url "https://registry.npmjs.org/pnpm/-/pnpm-11.26.0.tgz"
-  sha256 "c332207e738f84b7ccf95d5f21f6fdf10b0dc5b133f0a349834a26fd17abacd8"
+  url "https://registry.npmjs.org/pnpm/-/pnpm-11.27.1.tgz"
+  sha256 "d50f8841e67ef0b1d82e7c90b240656c7ca04d5f1aa33f06108007c81fd76766"
   license "MIT"
   compatibility_version 1
 
@@ -14,12 +14,11 @@ class PnpmAT11 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_golden_gate: "67d8d48f46b87113500eb4a3c169886013e825c7e2eaae8fe9b36d85812df6c9"
-    sha256 cellar: :any,                 arm64_tahoe:       "67d8d48f46b87113500eb4a3c169886013e825c7e2eaae8fe9b36d85812df6c9"
-    sha256 cellar: :any,                 arm64_sequoia:     "67d8d48f46b87113500eb4a3c169886013e825c7e2eaae8fe9b36d85812df6c9"
-    sha256 cellar: :any,                 arm64_sonoma:      "67d8d48f46b87113500eb4a3c169886013e825c7e2eaae8fe9b36d85812df6c9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "8fbcb34b2259570171541e8a4d9decd66dad16ecf935d5fca1f6bedcedb89c62"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "8fbcb34b2259570171541e8a4d9decd66dad16ecf935d5fca1f6bedcedb89c62"
+    sha256 cellar: :any,                 arm64_golden_gate: "5a67758e4f0aef405ff6be4cd80b413717cc65ea8379bbfe4cdb1b23e415d246"
+    sha256 cellar: :any,                 arm64_tahoe:       "5a67758e4f0aef405ff6be4cd80b413717cc65ea8379bbfe4cdb1b23e415d246"
+    sha256 cellar: :any,                 arm64_sequoia:     "5a67758e4f0aef405ff6be4cd80b413717cc65ea8379bbfe4cdb1b23e415d246"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "f53a7cd787a746f46c7806368419531081b5324e9ddee644c87d40919518a3b2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "f53a7cd787a746f46c7806368419531081b5324e9ddee644c87d40919518a3b2"
   end
 
   keg_only :versioned_formula

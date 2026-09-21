@@ -20,6 +20,12 @@ class DroneCli < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ENV["CGO_ENABLED"] = "0"
     ldflags = "-X main.version=#{version}"

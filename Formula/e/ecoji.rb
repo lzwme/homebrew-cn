@@ -26,6 +26,12 @@ class Ecoji < Formula
     resolves "https://github.com/keith-turner/ecoji/pull/39"
   end
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download", "-C", "cmd/ecoji"
+  end
+
   def install
     cd "cmd/ecoji" do
       system "go", "build", *std_go_args

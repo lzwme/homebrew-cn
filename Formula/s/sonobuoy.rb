@@ -17,6 +17,12 @@ class Sonobuoy < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ldflags = "-X github.com/vmware-tanzu/sonobuoy/pkg/buildinfo.Version=v#{version}"
     system "go", "build", *std_go_args(ldflags:)

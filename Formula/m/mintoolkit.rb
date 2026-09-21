@@ -33,6 +33,8 @@ class Mintoolkit < Formula
 
   skip_clean "bin/mint-sensor"
 
+  deny_network_access!
+
   def install
     system "go", "generate", "./pkg/appbom"
     ldflags = "-X github.com/mintoolkit/mint/pkg/version.appVersionTag=#{version}"

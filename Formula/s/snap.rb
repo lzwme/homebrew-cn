@@ -22,6 +22,13 @@ class Snap < Formula
   depends_on "go" => :build
   depends_on "squashfs"
 
+  deny_network_access!
+
+  def fetch
+    work_dir = File.directory?("snapd-#{version}") ? "snapd-#{version}" : "."
+    system "go", "mod", "download", "-C", work_dir
+  end
+
   def install
     # 2.77's vendor tarball wraps the source in an extra directory, unlike the packing scripts
     work_dir = File.directory?("snapd-#{version}") ? "snapd-#{version}" : "."

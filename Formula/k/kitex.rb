@@ -24,6 +24,12 @@ class Kitex < Formula
   depends_on "go" => [:build, :test]
   depends_on "thriftgo" => :test
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     system "go", "build", *std_go_args, "./tool/cmd/kitex"
   end

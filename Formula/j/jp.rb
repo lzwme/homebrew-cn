@@ -27,6 +27,8 @@ class Jp < Formula
   # Fix build on ARM by adding a corresponding Makefile target
   patch :DATA
 
+  deny_network_access!
+
   def install
     ENV["GOPATH"] = buildpath
     ENV["GO111MODULE"] = "auto"

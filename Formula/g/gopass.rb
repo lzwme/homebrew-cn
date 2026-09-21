@@ -22,6 +22,12 @@ class Gopass < Formula
     depends_on "terminal-notifier"
   end
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     args = ["PREFIX=#{prefix}/"]
     # Build without -buildmode=pie to avoid patchelf.rb corrupting binary

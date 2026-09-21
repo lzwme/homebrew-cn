@@ -25,6 +25,12 @@ class Uptoc < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ldflags = "-X main.release=#{version} -X main.commit=#{Utils.git_head} -X main.repo=#{stable.url}"
     system "go", "build", *std_go_args(ldflags:), "./cmd"

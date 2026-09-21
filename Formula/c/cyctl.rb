@@ -20,6 +20,12 @@ class Cyctl < Formula
 
   depends_on "go" => :build
 
+  allow_network_access! :test
+
+  def fetch
+    system "go", "mod", "download", "-C", "cyctl"
+  end
+
   def install
     cd "cyctl" do
       system "go", "build", *std_go_args(ldflags: "-X github.com/cyclops-ui/cycops-cyctl/common.CliVersion=#{version}")

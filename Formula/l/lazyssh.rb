@@ -18,6 +18,12 @@ class Lazyssh < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     # The commit variable only displays 7 characters, so we can't use #{tap.user} or "Homebrew".
     ldflags = %W[

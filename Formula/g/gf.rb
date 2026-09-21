@@ -18,6 +18,12 @@ class Gf < Formula
 
   depends_on "go" => [:build, :test]
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download", "-C", "cmd/gf"
+  end
+
   def install
     cd "cmd/gf" do
       system "go", "build", *std_go_args

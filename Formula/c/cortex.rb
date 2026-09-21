@@ -25,6 +25,12 @@ class Cortex < Formula
 
   conflicts_with "cortexso", because: "both install `cortex` binaries"
 
+  allow_network_access! :test
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     system "go", "build", *std_go_args, "./cmd/cortex"
     inreplace "docs/configuration/single-process-config-blocks.yaml", "/tmp", var

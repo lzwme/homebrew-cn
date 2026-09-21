@@ -23,6 +23,15 @@ class Vapor < Formula
     depends_on macos: :sequoia
   end
 
+  # Test clones the project template from GitHub
+  allow_network_access! :test
+
+  def fetch
+    # SwiftPM tries to apply its own sandbox, which cannot nest inside the
+    # build sandbox; Homebrew's sandbox still confines the whole process.
+    system "swift", "package", "resolve", "--disable-sandbox"
+  end
+
   def install
     system "swift", "build", *std_swift_args
     bin.install ".build/release/vapor"

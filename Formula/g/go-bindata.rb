@@ -24,6 +24,8 @@ class GoBindata < Formula
 
   depends_on "go"
 
+  deny_network_access!
+
   def install
     system "go", "build", *std_go_args, "./go-bindata"
   end

@@ -23,6 +23,12 @@ class Rsc2fa < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     system "go", "build", "-mod=mod", *std_go_args(output: bin/"2fa")
   end

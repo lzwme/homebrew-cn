@@ -53,6 +53,12 @@ class V2ray < Formula
     end
   end
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     system "go", "build", *std_go_args(ldflags: "-buildid=", output: libexec/"v2ray"), "./main"
 

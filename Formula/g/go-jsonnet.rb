@@ -25,6 +25,12 @@ class GoJsonnet < Formula
 
   conflicts_with "jsonnet", because: "both install binaries with the same name"
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     system "go", "build", *std_go_args(output: bin/"jsonnet"), "./cmd/jsonnet"
     system "go", "build", *std_go_args(output: bin/"jsonnetfmt"), "./cmd/jsonnetfmt"

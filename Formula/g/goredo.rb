@@ -25,6 +25,8 @@ class Goredo < Formula
 
   conflicts_with "redo", because: "both install `redo` and `redo-*` binaries"
 
+  deny_network_access!
+
   def install
     cd "src" do
       system "go", "build", *std_go_args, "-mod=vendor"

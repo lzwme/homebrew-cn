@@ -20,6 +20,12 @@ class Yor < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     inreplace "src/common/version.go", "Version = \"9.9.9\"", "Version = \"#{version}\""
     system "go", "build", *std_go_args

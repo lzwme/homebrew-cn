@@ -26,6 +26,12 @@ class H2spec < Formula
 
   depends_on "go" => :build
 
+  allow_network_access! :test
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     commit = Utils.git_short_head
     ldflags = %W[

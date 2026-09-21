@@ -11,13 +11,12 @@ class Fio < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "40bb3545c7c0f3064df4dbff89f7868c410fbcd6a3e96c4912449eddfbd2872a"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "611c21aa09abf75e1df6e31658b1bf04182e7b7c678a0b29bb978cf15e2cbb9a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "7a4f2a8dab06afd2289586c52856e49777630e387161a3cc791ffe1ecb54dbf7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "bb7a4ffae3b6efc4de0cd489f458448eeacf4a1226711a2443ab48dd0b6accff"
-    sha256 cellar: :any_skip_relocation, sonoma:            "960759c937bf7dc1e54d4605ef912a443ced521e4531062e29c856af476add9f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "dc1623f397fd345e7bcec43a36a9e679a20d108281c1f3581f67b03cfb599a6b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "8539bfd65ae2df6839534e907f291e50943eab0df04bb9513b868a45ce6e5247"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "3af8fe1fd79c2f0af228bf7b26ff05318d8e25bed8562d376ac834e74cd7dbd2"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "58e848c3df90d32bb612fab64ab2bf0687c68aec576586aa095e32ed436b7274"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "081260c4fda9d5ef5cf55bd78b8b113584d8d4c74f4b75f0d102c35943493829"
+    sha256 cellar: :any,                 arm64_linux:       "b604761a8ee4f26a9bb88ff7ad8cd7d4d9cfcc5551fae0c88499631c3ee3830f"
+    sha256 cellar: :any,                 x86_64_linux:      "e05c2cb90955ee36734cb9f0fa9d81773fe721dee0be52d4456705fc5715ae4d"
   end
 
   on_linux do
@@ -27,8 +26,19 @@ class Fio < Formula
   conflicts_with "fiona", because: "both install `fio` binaries"
 
   def install
+    # fio's configure script passes `-march` flags as part of detecting CRC
+    # support on ARM. By default brew's logic removes such flags, resulting
+    # in the prope falsely succeeding (probes compile when they shouldn't)
+    # and `ARCH_HAVE_CRC_CRYPTO` being enabled when it shouldn't, giving a
+    # compile time failure later in the build.
+    # Solve by enabling `runtime_cpu_detection` which configures brew not
+    # to strip those flags, so the configure probe fails correctly when it
+    # should.
     ENV.runtime_cpu_detection
-    system "./configure"
+    # fio's' configure script enables `-march=native` by default. Disable
+    # this to ensure binaries are portable. Ordinarily brew's logic would
+    # remove `-march` flags by default - but we disabled that above.
+    system "./configure", "--disable-native"
     # fio's CFLAGS passes vital stuff around, and crushing it will break the build
     system "make", "prefix=#{prefix}",
                    "mandir=#{man}",

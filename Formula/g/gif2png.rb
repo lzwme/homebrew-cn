@@ -21,6 +21,12 @@ class Gif2png < Formula
 
   uses_from_macos "python" # for web2png
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     system "make", "install", "PREFIX=#{prefix}"
   end

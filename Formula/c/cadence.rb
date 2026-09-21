@@ -28,6 +28,12 @@ class Cadence < Formula
 
   conflicts_with "cadence-workflow", because: "both install a `cadence` executable"
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     system "go", "build", *std_go_args, "./cmd/main"
   end

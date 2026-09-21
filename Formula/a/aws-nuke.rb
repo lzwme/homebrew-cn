@@ -1,20 +1,26 @@
 class AwsNuke < Formula
   desc "Nuke a whole AWS account and delete all its resources"
   homepage "https://aws-nuke.ekristen.dev"
-  url "https://ghfast.top/https://github.com/ekristen/aws-nuke/archive/refs/tags/v3.67.0.tar.gz"
-  sha256 "69ef6d51aba9d1b875c2adae35e321e4030bf098c4bedc8c10822a99af8fc95b"
+  url "https://ghfast.top/https://github.com/ekristen/aws-nuke/archive/refs/tags/v3.68.1.tar.gz"
+  sha256 "124179d55b69a7844109fe1ac4a7aa2b3058e4a917dd7975e8e327b588145da5"
   license "MIT"
   head "https://github.com/ekristen/aws-nuke.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "3179dd56ec752173af2e8d13c291582275d470271320f3c76cf7cb3d5dece735"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "3179dd56ec752173af2e8d13c291582275d470271320f3c76cf7cb3d5dece735"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "3179dd56ec752173af2e8d13c291582275d470271320f3c76cf7cb3d5dece735"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "1d704d9fbfb6339abcd55cfbb0436870d43a0b3486110898c01b7520580c0e2c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "4316b42169e4e523d5b39c6c694d85d8fdaa7fb08a89160c3bb615d3b75a6484"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "92b2e3402ccbe0816194e8a83a961c6a09ab8f7c4561b4dd229d4a6ccca2afcc"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "92b2e3402ccbe0816194e8a83a961c6a09ab8f7c4561b4dd229d4a6ccca2afcc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "92b2e3402ccbe0816194e8a83a961c6a09ab8f7c4561b4dd229d4a6ccca2afcc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "ab7060de642266d8ec4508ff6950e589503ad44baa1ae1d19bd6f1706edc4fae"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "3ce8887afeb39e03b1deb47df8e5ce941d22623b222894e1aa07b5403e53775e"
   end
 
   depends_on "go" => :build
+
+  allow_network_access! :test
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     ldflags = %W[-X github.com/ekristen/aws-nuke/v#{version.major}/pkg/common.SUMMARY=#{version}]

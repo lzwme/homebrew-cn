@@ -12,13 +12,12 @@ class Libpng < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_golden_gate: "d83a3631d041986456c084c192e7dcb4cfac4b645c3b21c26bb2252b3e0888fd"
-    sha256 cellar: :any,                 arm64_tahoe:       "a28e1e29bf508ddf89800c215a013694c2751ca63e8ae40aca859aff7bf7b02c"
-    sha256 cellar: :any,                 arm64_sequoia:     "3d976f549e04ea0695078e5d8a3ae08c62e4dccd2b92f5b83c3ee9f1708c001b"
-    sha256 cellar: :any,                 arm64_sonoma:      "fd6cbd5d7a231b83e359fd96231bb3dd668124ab5c2009697dee906ace98fadd"
-    sha256 cellar: :any,                 sonoma:            "c74a40635359b753e614fb0a69a32149179a27f79d3338d5c5b685f66e223967"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "1443b4f2e5f5e870e8d4f286cabee11a5efc471506765f2262f3a8daa0471411"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "b5099e23c861337cff22c4b5a8c4f110b5e3bb0a3f5686fcd62f6377fac894b3"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "02e4e023512c6bf086f139717bcb90fb53ece5fbab3ab4354b0d5fed25afa5db"
+    sha256 cellar: :any, arm64_tahoe:       "afb3b4e1b5035a602d60668b8a16369704dfa32aca18330f4e0faaec54b3134f"
+    sha256 cellar: :any, arm64_sequoia:     "bc998bd8497a87e10e613348858c295a38f29f12914408ccbec81f0d0c2e77c8"
+    sha256 cellar: :any, arm64_linux:       "36876a725450f53a659f499b1bae414674d451ee558c59b14a76a459dd1b31d5"
+    sha256 cellar: :any, x86_64_linux:      "fef7fad4ecddc7ba44bd310ef6fbdbacbadeb99027577e3df1f05bd330554eac"
   end
 
   head do
@@ -38,6 +37,8 @@ class Libpng < Formula
       sha256 "f925a657a5343cfb724414c01e87afd4d60b1f82a46edc0e11f016a126f84064"
     end
   end
+
+  deny_network_access!
 
   def install
     resource("pngtest.png").stage(buildpath) if OS.linux?

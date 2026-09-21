@@ -16,6 +16,12 @@ class Octl < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ldflags = %W[-X github.com/outscale/octl/pkg/version.Version=v#{version}]
     system "go", "build", *std_go_args(ldflags:, tags: "homebrew")

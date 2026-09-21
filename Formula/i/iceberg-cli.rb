@@ -17,6 +17,12 @@ class IcebergCli < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     # See: https://github.com/apache/iceberg-go/pull/531
     inreplace "utils.go", "(unknown version)", version.to_s

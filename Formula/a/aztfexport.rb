@@ -19,6 +19,12 @@ class Aztfexport < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ENV["CGO_ENABLED"] = "0"
     system "go", "build", *std_go_args(ldflags: "-X 'main.version=v#{version}' -X 'main.revision=#{Utils.git_short_head(length: 7)}'")

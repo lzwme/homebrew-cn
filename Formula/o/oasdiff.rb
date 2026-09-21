@@ -22,6 +22,12 @@ class Oasdiff < Formula
 
   depends_on "go" => :build
 
+  allow_network_access! :test
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ldflags = "-X github.com/oasdiff/oasdiff/build.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:)

@@ -21,6 +21,12 @@ class TwoMs < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ldflags = "-X github.com/checkmarx/2ms/v#{version.major}/cmd.Version=v#{version}"
     system "go", "build", *std_go_args(ldflags:, output: bin/"2ms"), "main.go"

@@ -17,6 +17,8 @@ class Karmadactl < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
   def install
     ldflags = %W[
       -X github.com/karmada-io/karmada/pkg/version.gitVersion=#{version}

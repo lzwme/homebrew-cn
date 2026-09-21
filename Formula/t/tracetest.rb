@@ -19,6 +19,12 @@ class Tracetest < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ldflags = "-X github.com/kubeshop/tracetest/cli/config.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:), "./cli"

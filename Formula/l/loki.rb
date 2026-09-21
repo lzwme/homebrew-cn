@@ -21,6 +21,12 @@ class Loki < Formula
 
   depends_on "go" => :build
 
+  allow_network_access! :test
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     cd "cmd/loki" do
       system "go", "build", *std_go_args

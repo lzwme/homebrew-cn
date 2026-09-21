@@ -20,6 +20,12 @@ class ChiselTunnel < Formula
   conflicts_with "chisel", because: "both install `chisel` binaries"
   conflicts_with "foundry", because: "both install `chisel` binaries"
 
+  allow_network_access! :test
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ldflags = "-X github.com/jpillora/chisel/share.BuildVersion=v#{version}"
     system "go", "build", *std_go_args(ldflags:, output: bin/"chisel")

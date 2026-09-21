@@ -23,6 +23,12 @@ class Gowall < Formula
     sha256 "086b656bbb00c314083b7097b1d295f98034f4d75ffddf4fc706a5f1c3c5cf6b"
   end
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download", "all"
+  end
+
   def install
     # Work around https://github.com/gen2brain/go-fitz/issues/143
     (buildpath/"go-fitz").install resource("go-fitz")

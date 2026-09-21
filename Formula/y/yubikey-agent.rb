@@ -26,6 +26,12 @@ class YubikeyAgent < Formula
     depends_on "pinentry"
   end
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ENV["CGO_ENABLED"] = "1" if OS.linux? && Hardware::CPU.arm?
     system "go", "build", *std_go_args(ldflags: "-X main.Version=v#{version}")

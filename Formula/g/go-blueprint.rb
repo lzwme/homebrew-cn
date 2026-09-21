@@ -19,6 +19,12 @@ class GoBlueprint < Formula
 
   depends_on "go"
 
+  allow_network_access! :test
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     system "go", "build", *std_go_args(ldflags: "-X github.com/melkeydev/go-blueprint/cmd.GoBlueprintVersion=#{version}")
 

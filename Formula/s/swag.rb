@@ -18,6 +18,12 @@ class Swag < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     # version patch PR, https://github.com/swaggo/swag/pull/2049
     inreplace "version.go", "1.16.4", version.to_s

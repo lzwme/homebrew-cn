@@ -24,6 +24,12 @@ class Zrepl < Formula
     sha256 "f27b21716e6efdc208481a8f7399f35fd041183783e00c57f62b3a5520470c05"
   end
 
+  allow_network_access! :test
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     system "go", "build", *std_go_args(ldflags: "-X github.com/zrepl/zrepl/version.zreplVersion=#{version}")
     (etc/"zrepl").mkpath

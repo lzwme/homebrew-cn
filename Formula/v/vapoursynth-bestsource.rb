@@ -1,8 +1,8 @@
 class VapoursynthBestsource < Formula
   desc "Audio/video source and FFmpeg wrapper"
   homepage "https://github.com/vapoursynth/bestsource"
-  url "https://ghfast.top/https://github.com/vapoursynth/bestsource/archive/refs/tags/R21.tar.gz"
-  sha256 "37bfc1a40c04506e7a2906bf09b4ac12ebe161a9d6aa1cf06d866b61230f81c1"
+  url "https://ghfast.top/https://github.com/vapoursynth/bestsource/archive/refs/tags/R22.tar.gz"
+  sha256 "8233ecf8f1bbc9edb2330ce0e0cf79a5f821220a95750edbcddf2fb0b46c0ed2"
   license "MIT"
   head "https://github.com/vapoursynth/bestsource.git", branch: "master"
 
@@ -12,13 +12,11 @@ class VapoursynthBestsource < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "72dc5461370db730360563781f11f638b0f9dbbbbe601eaf90599d95adc58baf"
-    sha256 cellar: :any, arm64_tahoe:       "0fae161dc623ebd34acf7b5029c3444dfade4069cb206fb62dd603298ef76cec"
-    sha256 cellar: :any, arm64_sequoia:     "632e26f30d52ec3bbbee064973540d8e1beab36624219233819f8422389ca704"
-    sha256 cellar: :any, arm64_sonoma:      "dc9b9bba33649512d87cfea9ad387a724a21a2febb6bd4514428ec1ffd27314b"
-    sha256 cellar: :any, sonoma:            "8c548d9106de9713e05d1ef824e3303269a75443d150b83ef78f80d590c9c229"
-    sha256               arm64_linux:       "bb5d49a9f8d49e3970568104556b68aaf85127926a50de94d3970c47ba5d24c5"
-    sha256               x86_64_linux:      "3d09f51b11b7a0907cd3b43029fb2c27216c20ab04600ba33b0c61c4bb9825b1"
+    sha256 cellar: :any, arm64_golden_gate: "111c5162447ef0a4d4813bf1def84bdb4edbe58a640630f48e9c2b1be4cc4ecb"
+    sha256 cellar: :any, arm64_tahoe:       "eec2ec30f58df856f53a3355f6c490d09a50e59e913a987c2b0e38159149a0ab"
+    sha256 cellar: :any, arm64_sequoia:     "918a419a28cba355c47f2ca805f037d229afb55537776afc9ea61277260236e1"
+    sha256 cellar: :any, arm64_linux:       "d34f0c0d6e37bbb72b54244ab567fe2e119026b5b313ec88083b7057e030dd41"
+    sha256 cellar: :any, x86_64_linux:      "413baca85ceb01bcd0b5aba2fdaec9e61e17c14993b9ac03a8875d7ffa426796"
   end
 
   depends_on "avisynthplus" => :build

@@ -32,6 +32,8 @@ class LunchyGo < Formula
     type :backport
   end
 
+  deny_network_access!
+
   def install
     system "go", "build", *std_go_args(output: bin/"lunchy")
   end

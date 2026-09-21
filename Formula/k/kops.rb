@@ -24,6 +24,8 @@ class Kops < Formula
   depends_on "go" => :build
   depends_on "kubernetes-cli"
 
+  deny_network_access!
+
   def install
     ldflags = "-X k8s.io/kops.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:), "k8s.io/kops/cmd/kops"

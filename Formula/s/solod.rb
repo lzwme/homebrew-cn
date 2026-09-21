@@ -19,6 +19,12 @@ class Solod < Formula
 
   conflicts_with "so", because: "both install `so` binaries"
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     system "go", "build", *std_go_args(output: bin/"so"), "./cmd/so"
   end

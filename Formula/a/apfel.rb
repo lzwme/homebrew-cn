@@ -15,6 +15,14 @@ class Apfel < Formula
   depends_on arch: :arm64
   depends_on macos: :tahoe
 
+  deny_network_access!
+
+  def fetch
+    # SwiftPM tries to apply its own sandbox, which cannot nest inside the
+    # build sandbox; Homebrew's sandbox still confines the whole process.
+    system "swift", "package", "resolve", "--disable-sandbox"
+  end
+
   def install
     system "swift", "build", *std_swift_args
     bin.install ".build/release/apfel"

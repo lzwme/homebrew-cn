@@ -20,6 +20,12 @@ class GoRice < Formula
 
   depends_on "go" => [:build, :test]
 
+  allow_network_access! :test
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ldflags = "-X main.BuildVersion=#{version}"
     system "go", "build", *std_go_args(ldflags:, output: bin/"rice"), "./rice"

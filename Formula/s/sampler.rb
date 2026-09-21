@@ -27,6 +27,12 @@ class Sampler < Formula
     depends_on "alsa-lib"
   end
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download", "all"
+  end
+
   def install
     ENV["CGO_ENABLED"] = "1" if OS.linux? && Hardware::CPU.arm?
 

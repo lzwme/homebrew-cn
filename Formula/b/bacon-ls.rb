@@ -1,19 +1,17 @@
 class BaconLs < Formula
   desc "Rust diagnostic provider based on Bacon"
   homepage "https://github.com/crisidev/bacon-ls"
-  url "https://ghfast.top/https://github.com/crisidev/bacon-ls/archive/refs/tags/0.30.0.tar.gz"
-  sha256 "c26692de95e7f838aeee2353d8e10bd9b32fb1a97b10f63e31aad0fc05285d40"
+  url "https://ghfast.top/https://github.com/crisidev/bacon-ls/archive/refs/tags/0.31.0.tar.gz"
+  sha256 "dce1cd99b8a4ad8337338997477437917126bbccf10e7c3161dd538c14c746fd"
   license "MIT"
   head "https://github.com/crisidev/bacon-ls.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "ca3c3ca5c7699fa099d64100e6ebc8edf950e29a4d78b77929fadd578cf80d57"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "6d2ff68a095584ce52b660d2ca1e8e6605a35b44f5d44380058debf2f817f38d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "c66b7399f6768b959e2cda53d317a492750041c29a88832013deb8989602fe83"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "75b27c9eab7ac917b571792bbfc3952dd24faefaa4143386a43a58be0af95989"
-    sha256 cellar: :any_skip_relocation, sonoma:            "d3ec5a595e441a76ae2cd6c037e4be927000045b38502fed2a4976d6484ab5ca"
-    sha256 cellar: :any,                 arm64_linux:       "8acdb035237769e7b410365448f68e6c8a608e777da1c2df25198c05f90d2e3d"
-    sha256 cellar: :any,                 x86_64_linux:      "121d62a251faddd84605ffb92129f39d6b59b8bd5c31b232fda90a9c3658bbd4"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "214426c64353514d4b8bbbfb5c2188e86654040dc4942eee69178de6aabbe3b4"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "a67135f9134a9f78d39fc8af1111e5c57581e9e9f71be6a5a7c1c9a6d7af3c01"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "cd7b4a52c2d878c76f1f8d6cb3008a5396ce8ec68524cb490e385a770c946b98"
+    sha256 cellar: :any,                 arm64_linux:       "1efa5d707bc349c81fd9928e731afc02441b0c659d0eda06dd602686ac7b403c"
+    sha256 cellar: :any,                 x86_64_linux:      "9767b471b4a8d1ead9255e5d65c4b2aab67a9f335a19fb80553fd330a730010d"
   end
 
   depends_on "rust" => :build

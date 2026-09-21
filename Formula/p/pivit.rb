@@ -22,6 +22,12 @@ class Pivit < Formula
     depends_on "pcsc-lite"
   end
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ENV["CGO_ENABLED"] = "1"
     system "go", "build", *std_go_args, "./cmd/pivit"

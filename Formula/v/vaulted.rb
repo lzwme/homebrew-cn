@@ -24,6 +24,12 @@ class Vaulted < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     system "go", "build", *std_go_args
     man1.install Dir["doc/man/vaulted*.1"]

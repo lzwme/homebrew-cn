@@ -22,6 +22,12 @@ class FuegoFirestore < Formula
 
   conflicts_with "fuego", because: "both install `fuego` binaries"
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     system "go", "build", *std_go_args(output: bin/"fuego")
   end

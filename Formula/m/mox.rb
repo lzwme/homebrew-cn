@@ -25,6 +25,12 @@ class Mox < Formula
     type :unofficial
   end
 
+  allow_network_access! :test
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ldflags = %W[
       -X github.com/mjl-/mox/moxvar.Version=#{version}

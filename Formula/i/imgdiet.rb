@@ -28,6 +28,12 @@ class Imgdiet < Formula
     depends_on "gettext"
   end
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     # Workaround to avoid patchelf corruption when cgo is required
     if OS.linux? && Hardware::CPU.arch == :arm64

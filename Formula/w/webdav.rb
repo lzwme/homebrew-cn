@@ -1,21 +1,26 @@
 class Webdav < Formula
   desc "Simple and standalone WebDAV server"
   homepage "https://github.com/hacdias/webdav"
-  url "https://ghfast.top/https://github.com/hacdias/webdav/archive/refs/tags/v5.15.1.tar.gz"
-  sha256 "ec00b065c2b9ddca63b8e4a3c2aa551ad49b192b5e12537c771f70a96a346f52"
+  url "https://ghfast.top/https://github.com/hacdias/webdav/archive/refs/tags/v5.16.0.tar.gz"
+  sha256 "77f40c292556092128ef7954788ca1b93228e0dd88d9ce89e179e38e9e564d52"
   license "MIT"
   head "https://github.com/hacdias/webdav.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "0a76e92bd7a85faccc0e39ae9c495ef2e843fc30b798fc124b310ea70e2e6437"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "0a76e92bd7a85faccc0e39ae9c495ef2e843fc30b798fc124b310ea70e2e6437"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "0a76e92bd7a85faccc0e39ae9c495ef2e843fc30b798fc124b310ea70e2e6437"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "0a76e92bd7a85faccc0e39ae9c495ef2e843fc30b798fc124b310ea70e2e6437"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "da62499384b13cd1a1ea71cbbfa4ddd1700f1feed306ff0a67c7373e2d52bbb2"
-    sha256 cellar: :any,                 x86_64_linux:      "e5405f7464a72f772fe9df8a3107c52adeefb97965bd3221946def8c05b33753"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "34f38d15cc36a519cbc5f066f39c1fb735b880c5a4b1401f2994f0fe972a4c82"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "34f38d15cc36a519cbc5f066f39c1fb735b880c5a4b1401f2994f0fe972a4c82"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "34f38d15cc36a519cbc5f066f39c1fb735b880c5a4b1401f2994f0fe972a4c82"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "601f5ffc6b5c3a6a83e586af61aaea595240f5edf5caa2bfbc69ec85d2cb42a7"
+    sha256 cellar: :any,                 x86_64_linux:      "e2239a3ff0f393c08ccc4b0689b0da77c10dab4cbfcb7294f57114e14d8ad677"
   end
 
   depends_on "go" => :build
+
+  allow_network_access! :test
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     ldflags = "-X github.com/hacdias/webdav/v5/cmd.version=#{version}"

@@ -18,6 +18,12 @@ class Dstask < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ldflags = %W[
       -X github.com/naggie/dstask.GIT_COMMIT=#{tap.user}

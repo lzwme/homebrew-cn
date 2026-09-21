@@ -17,6 +17,8 @@ class WoodpeckerCli < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
   def install
     ldflags = "-X go.woodpecker-ci.org/woodpecker/v#{version.major}/version.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:), "./cmd/cli"

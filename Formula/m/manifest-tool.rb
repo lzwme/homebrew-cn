@@ -18,6 +18,8 @@ class ManifestTool < Formula
 
   depends_on "go" => :build
 
+  allow_network_access! :test
+
   def install
     system "make", "all"
     system "make", "install", "PREFIX=#{prefix}"

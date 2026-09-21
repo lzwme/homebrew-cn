@@ -22,6 +22,12 @@ class Tfproviderlint < Formula
   # ref: https://github.com/bflad/tfproviderlint/issues/345
   depends_on "go@1.26" => [:build, :test]
 
+  allow_network_access! :test
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ldflags = %W[
       -X github.com/bflad/tfproviderlint/version.Version=#{version}

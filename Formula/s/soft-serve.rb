@@ -18,6 +18,12 @@ class SoftServe < Formula
 
   depends_on "go" => :build
 
+  allow_network_access! :test
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ldflags = "-X main.Version=#{version} -X main.CommitSHA=#{tap.user} -X main.CommitDate=#{time.iso8601}"
     system "go", "build", *std_go_args(ldflags:, output: bin/"soft"), "./cmd/soft"

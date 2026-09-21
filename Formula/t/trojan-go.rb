@@ -35,6 +35,12 @@ class TrojanGo < Formula
     sha256 "186158b6c2f67ac59e184ed997ebebcef31938be9874eb8a7d5e3854187f4e8d"
   end
 
+  allow_network_access! :test
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     execpath = libexec/name
     ldflags = %W[

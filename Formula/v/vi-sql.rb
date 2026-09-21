@@ -18,6 +18,12 @@ class ViSql < Formula
 
   uses_from_macos "sqlite" => :test
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     system "go", "build", *std_go_args(ldflags: "-X github.com/kopecmaciej/vi-sql/internal/build.Version=#{version}")
   end

@@ -44,6 +44,12 @@ class Xray < Formula
     end
   end
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     execpath = libexec/name
     system "go", "build", *std_go_args(output: execpath, ldflags: "-buildid="), "./main"

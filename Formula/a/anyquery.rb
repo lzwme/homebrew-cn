@@ -19,6 +19,12 @@ class Anyquery < Formula
   depends_on "go" => :build
   depends_on "mysql-client" => :test
 
+  allow_network_access! :test
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ENV["CGO_ENABLED"] = "1" if OS.linux? && Hardware::CPU.arm?
 

@@ -93,6 +93,7 @@ class Texlive < Formula
   conflicts_with "lcdf-typetools", because: "both install a `cfftot1` executable"
   conflicts_with "ht", because: "both install `ht` binaries"
   conflicts_with "opendetex", because: "both install `detex` binaries"
+  conflicts_with "ratex", because: "both install `lualatex`, `pdflatex`, `xelatex` binaries"
   conflicts_with "weave", because: "both install a `weave` binary"
 
   resource "texlive-extra" do

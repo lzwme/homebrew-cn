@@ -34,6 +34,12 @@ class Hof < Formula
     resolves "https://github.com/hofstadter-io/hof/pull/410"
   end
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     arch = Hardware::CPU.intel? ? "amd64" : Hardware::CPU.arch.to_s
     os = OS.kernel_name.downcase

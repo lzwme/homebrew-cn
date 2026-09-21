@@ -18,6 +18,8 @@ class Hebcal < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
   def install
     # populate DEFAULT_CITY variable
     system "make", "dcity.go", "man"

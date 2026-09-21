@@ -20,6 +20,12 @@ class Run < Formula
 
   conflicts_with "run-kit", because: "both install a `run` binary"
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     system "go", "build", *std_go_args
   end

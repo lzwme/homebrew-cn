@@ -26,9 +26,15 @@ class Fortio < Formula
 
   depends_on "go" => :build
 
+  allow_network_access! :test
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
-    system "make", "-j1", "official-build-clean", "official-build-version", "OFFICIAL_BIN=#{bin}/fortio",
-      "BUILD_DIR=./tmp/fortio_build"
+    system "make", "-j1", "MODE=build", "official-build-clean", "official-build-version",
+      "OFFICIAL_BIN=#{bin}/fortio", "BUILD_DIR=./tmp/fortio_build"
   end
 
   test do

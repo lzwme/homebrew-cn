@@ -24,6 +24,12 @@ class ChartTesting < Formula
 
   conflicts_with "coreos-ct", because: "both install `ct` binaries"
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     # Fix default search path for configuration files, needed for ARM
     inreplace "pkg/config/config.go", "/usr/local/etc", etc

@@ -25,6 +25,12 @@ class Hz < Formula
 
   depends_on "go" => [:build, :test]
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download", "-C", "cmd/hz"
+  end
+
   def install
     cd "cmd/hz" do
       system "go", "build", *std_go_args

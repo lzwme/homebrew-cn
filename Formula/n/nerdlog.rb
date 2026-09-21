@@ -20,6 +20,12 @@ class Nerdlog < Formula
     depends_on "libx11"
   end
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ldflags = %W[
       -X github.com/dimonomid/nerdlog/version.version=#{version}

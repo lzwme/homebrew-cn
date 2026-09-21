@@ -18,6 +18,12 @@ class GphotosUploaderCli < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ldflags = %W[-X github.com/gphotosuploader/gphotos-uploader-cli/version.versionString=#{version}]
     system "go", "build", *std_go_args(ldflags:)

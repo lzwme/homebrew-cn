@@ -19,6 +19,12 @@ class Gojq < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     revision = Utils.git_short_head
     ldflags = %W[-X github.com/itchyny/gojq/cli.revision=#{revision}]

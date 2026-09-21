@@ -17,6 +17,12 @@ class RushParallel < Formula
 
   conflicts_with "rush", because: "both install `rush` binaries"
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     system "go", "build", *std_go_args(output: bin/"rush")
   end

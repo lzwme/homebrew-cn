@@ -26,6 +26,8 @@ class Ccat < Formula
 
   conflicts_with "ccrypt", because: "both install `ccat` binaries"
 
+  deny_network_access!
+
   def install
     ENV["GOPATH"] = buildpath
     ENV["GO111MODULE"] = "auto"

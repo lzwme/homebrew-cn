@@ -1,21 +1,22 @@
 class Fribidi < Formula
   desc "Implementation of the Unicode BiDi algorithm"
   homepage "https://github.com/fribidi/fribidi"
-  url "https://ghfast.top/https://github.com/fribidi/fribidi/releases/download/v1.0.16/fribidi-1.0.16.tar.xz"
-  sha256 "1b1cde5b235d40479e91be2f0e88a309e3214c8ab470ec8a2744d82a5a9ea05c"
+  url "https://ghfast.top/https://github.com/fribidi/fribidi/releases/download/v1.0.17/fribidi-1.0.17.tar.xz"
+  sha256 "6949dcde27d41cebad1fd741fcafc36d55a1020d2d872d4a6eb3914caabbada2"
   license all_of: ["GPL-2.0-or-later", "LGPL-2.1-or-later"]
 
   bottle do
-    sha256 cellar: :any,                 arm64_golden_gate: "be8c0adc4638377f6c4d23be38eac38a0861c26a43f4f858bddf7f13bf196c94"
-    sha256 cellar: :any,                 arm64_tahoe:       "4f6b90cece7f5eb2491a4938689366c84e5cba64e4a99009f20c92aaf341d186"
-    sha256 cellar: :any,                 arm64_sequoia:     "4904bb3375c1b1f2539cb657fbf17b0d93c050904febbba51e9dd690f3540e3b"
-    sha256 cellar: :any,                 arm64_sonoma:      "0b03218a59bba62ca5a27b1a59d8c63f40478e3a957192121e1b2c593fcdb80c"
-    sha256 cellar: :any,                 arm64_ventura:     "334c412359217397f5e5c5ad082540ac3d5d494ef543d81c01f4e482b36b699b"
-    sha256 cellar: :any,                 sonoma:            "abda3f3925574ac53d9fa5a7629102dda29132a64cf1a9f756eedc3258d1e855"
-    sha256 cellar: :any,                 ventura:           "70e46d9ac5dafc34d891f6d4e1fea8416e23383c30a3ef7b52250295a9643643"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "f77859595dfecda802be39353e61b545c1cf1c67e9630f9441be68010f555d00"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "da83ac3be7e395ab2444c0968fb3dce389161f10c2b481ddd4b18a9056bc2d60"
+    sha256 cellar: :any, arm64_golden_gate: "d33019c9cebfdf9b432c1eb85debc62e4d4f3a5ea763bb1b157e9b3a5dbc4457"
+    sha256 cellar: :any, arm64_tahoe:       "1933df503db74d65aa5c47dc71f7eedf88692b1e1866a2d98b8422c085f8ef15"
+    sha256 cellar: :any, arm64_sequoia:     "c1e62df532f06bf13ebb31df04d7e78645271a00e4261b17594248d16cf7e5b8"
+    sha256 cellar: :any, arm64_linux:       "0c0762f498578823db2a45de24b02c8f4cc9c217c708da865cdf0090bcc8aa05"
+    sha256 cellar: :any, x86_64_linux:      "1e7ec5073ebe601d951fa4df6ce5cda4aa03bc7bff95216116c29d2ef82dbe17"
   end
+
+  depends_on "help2man" => :build
+  depends_on "pkgconf" => :build
+
+  deny_network_access!
 
   def install
     system "./configure", "--disable-debug",

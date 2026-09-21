@@ -23,7 +23,10 @@ class Imposm3 < Formula
   depends_on "geos"
   depends_on "leveldb"
 
+  deny_network_access!
+
   def install
+    ENV["CGO_ENABLED"] = "1" if OS.linux? && Hardware::CPU.arm?
     ENV["CGO_LDFLAGS"] = "-L#{formula_opt_lib("geos")} -L#{formula_opt_lib("leveldb")}"
     ENV["CGO_CFLAGS"] = "-I#{formula_opt_include("geos")} -I#{formula_opt_include("leveldb")}"
 

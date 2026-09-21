@@ -28,6 +28,18 @@ class WhisperkitCli < Formula
     resolves "https://github.com/argmaxinc/argmax-oss-swift/pull/524"
   end
 
+  # Test downloads a Whisper model from Hugging Face
+  allow_network_access! :test
+
+  def fetch
+    # BUILD_ALL enables additional dependencies in Package.swift and must
+    # match `install`. SwiftPM tries to apply its own sandbox, which cannot
+    # nest inside the build sandbox; Homebrew's sandbox still confines the
+    # whole process.
+    ENV["BUILD_ALL"] = "1"
+    system "swift", "package", "resolve", "--disable-sandbox"
+  end
+
   def install
     ENV["BUILD_ALL"] = "1"
     system "swift", "build", "--product", "whisperkit-cli", *std_swift_args

@@ -29,6 +29,12 @@ class Werf < Formula
     depends_on "btrfs-progs" => :build
   end
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ENV["CGO_ENABLED"] = "1"
 

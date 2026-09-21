@@ -34,6 +34,8 @@ class Hub < Formula
     depends_on "util-linux"
   end
 
+  deny_network_access!
+
   def install
     system "make", "install", "prefix=#{prefix}"
 

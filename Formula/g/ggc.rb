@@ -20,6 +20,12 @@ class Ggc < Formula
 
   uses_from_macos "vim"
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     system "go", "build", *std_go_args(ldflags: :goreleaser)
   end

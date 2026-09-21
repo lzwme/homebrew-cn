@@ -21,6 +21,8 @@ class Massren < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
   def install
     ENV["CGO_ENABLED"] = "1" if OS.linux? && Hardware::CPU.arm?
 

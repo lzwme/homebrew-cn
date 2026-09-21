@@ -15,6 +15,12 @@ class Vet < Formula
 
   depends_on "go"
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ENV["CGO_ENABLED"] = "1"
     ldflags = "-X main.version=#{version} -X main.commit=#{tap.user}"

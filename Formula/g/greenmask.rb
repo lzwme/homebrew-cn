@@ -23,6 +23,12 @@ class Greenmask < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ldflags = "-X github.com/greenmaskio/greenmask/cmd/greenmask/cmd.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:, tags: "viper_bind_struct"), "./cmd/greenmask"

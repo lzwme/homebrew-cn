@@ -17,6 +17,12 @@ class Vfkit < Formula
   depends_on "go" => :build
   depends_on :macos
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     arch = Hardware::CPU.intel? ? "amd64" : Hardware::CPU.arch.to_s
     version_ldflags = "-X github.com/crc-org/vfkit/pkg/cmdline.gitVersion=#{version}"

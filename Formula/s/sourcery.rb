@@ -30,6 +30,16 @@ class Sourcery < Formula
     depends_on xcode: "14.3"
   end
 
+  deny_network_access!
+
+  def fetch
+    # SwiftPM tries to apply its own sandbox, which cannot nest inside the
+    # build sandbox; Homebrew's sandbox still confines the whole process.
+    # The Rakefile builds with `--build-path build/`; resolve into the same
+    # SwiftPM scratch path so the checkouts are found offline.
+    system "swift", "package", "resolve", "--disable-sandbox", "--build-path", "build/"
+  end
+
   def install
     # Build script is unfortunately not customisable.
     # We want static stdlib on Linux as the stdlib is not ABI stable there

@@ -22,6 +22,12 @@ class GopassJsonapi < Formula
     depends_on macos: :sonoma # for SCScreenshotManager
   end
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     system "go", "build", *std_go_args(ldflags: "-X main.version=#{version}")
   end

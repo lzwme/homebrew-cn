@@ -23,6 +23,12 @@ class Risor < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     chdir "cmd/risor" do
       ldflags = "-X 'main.version=#{version}' -X 'main.date=#{time.iso8601}'"

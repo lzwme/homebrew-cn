@@ -36,6 +36,13 @@ class Tt < Formula
     depends_on "bash-completion"
   end
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+    system "go", "mod", "download", "-C", "cli/cartridge/third_party/cartridge-cli"
+  end
+
   def install
     ENV["TT_CLI_BUILD_SSL"] = "shared"
     system "mage", "build"

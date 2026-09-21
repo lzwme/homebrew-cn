@@ -26,6 +26,12 @@ class Kubekey < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     project = "github.com/kubesphere/kubekey/v#{version.major}"
     ldflags = %W[

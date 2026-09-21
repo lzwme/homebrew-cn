@@ -1,18 +1,16 @@
 class Goffice < Formula
   desc "Gnumeric spreadsheet program"
   homepage "https://gitlab.gnome.org/GNOME/goffice"
-  url "https://download.gnome.org/sources/goffice/0.10/goffice-0.10.61.tar.xz"
-  sha256 "558597fd9ca59b93ff562750218d1e7ea8ec3c8d0ed6a5cc096aa715ef909a15"
+  url "https://download.gnome.org/sources/goffice/0.10/goffice-0.10.62.tar.xz"
+  sha256 "500eaff50628faa75adb3cd560236a4db498d9e7c52c036b78fa9a57f21805b3"
   license any_of: ["GPL-3.0-only", "GPL-2.0-only"]
 
   bottle do
-    sha256 arm64_golden_gate: "07951bb4504b0c7d195ebe9050f0576e3e53993a930d979b6c3bf8da963f1436"
-    sha256 arm64_tahoe:       "522418201d09ea524f368f5ab087ab7bb37760d62b4aa2780e042942ef0df461"
-    sha256 arm64_sequoia:     "bb6b50141024dd9e959ca8e72155346419631de5704f4f428255b6af77224c6b"
-    sha256 arm64_sonoma:      "61c51e1998edeae4f15f3dc5302c87b400c1ce0614d45e22aec245e833e00617"
-    sha256 sonoma:            "fef69f79921e6530b9f083ff8e70a8976aeb10b0e4de6250f0bd195b7bf71edc"
-    sha256 arm64_linux:       "5294caf9332c6befcfbec1049c30a00cbe5068733fb41522d7de2d4d27034fb6"
-    sha256 x86_64_linux:      "e911e3bdf48cfb46e6dc8fcc61e10f5112d9dca1e809b8f7b997c527db731db0"
+    sha256 arm64_golden_gate: "2e4c85c395fc38bc6b0f159b4a0a3660957aa9112148b8f9e59d2a85c8f33531"
+    sha256 arm64_tahoe:       "ef735f1e58f015529fa308870f9c882a2b0bfdcbfa83867672a7407ee414a4c4"
+    sha256 arm64_sequoia:     "d107599cfa733f29c98e60daac6e810223a5e38174f95517da6e6caadab476b3"
+    sha256 arm64_linux:       "0d6a83cf84818a7b386f6385b713a9c58daf0fe7144a46d405b7eabc7f9b6c36"
+    sha256 x86_64_linux:      "207f1dc802b02ff9e93046fbf8dfeccdc2d9bdf195b89c957be1e3463fb709fc"
   end
 
   head do

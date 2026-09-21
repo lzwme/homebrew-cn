@@ -21,6 +21,12 @@ class WalG < Formula
   depends_on "libsodium"
   depends_on "lzo"
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ENV["GOEXPERIMENT"] = "jsonv2"
     ENV["CGO_ENABLED"] = "1"

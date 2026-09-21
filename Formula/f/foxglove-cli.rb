@@ -18,6 +18,12 @@ class FoxgloveCli < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download", "-C", "foxglove"
+  end
+
   def install
     cd "foxglove" do
       system "make", "build", "VERSION=v#{version}"

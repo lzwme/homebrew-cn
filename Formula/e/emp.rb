@@ -24,6 +24,8 @@ class Emp < Formula
 
   depends_on "go" => :build
 
+  allow_network_access! :test
+
   def install
     ENV["GOPATH"] = buildpath
     ENV["GO111MODULE"] = "auto"

@@ -23,6 +23,12 @@ class Imgproxy < Formula
     depends_on "gettext"
   end
 
+  allow_network_access! :test
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ENV["CGO_LDFLAGS_ALLOW"] = "-s|-w"
     ENV["CGO_CFLAGS_ALLOW"] = "-Xpreprocessor"

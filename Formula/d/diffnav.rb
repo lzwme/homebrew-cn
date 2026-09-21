@@ -20,6 +20,12 @@ class Diffnav < Formula
   depends_on "go" => :build
   depends_on "git-delta"
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     system "go", "build", *std_go_args
     generate_completions_from_executable(bin/"diffnav", shell_parameter_format: :cobra)

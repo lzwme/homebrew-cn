@@ -3,16 +3,16 @@ class Mycli < Formula
 
   desc "CLI for MySQL with auto-completion and syntax highlighting"
   homepage "https://www.mycli.net/"
-  url "https://files.pythonhosted.org/packages/81/ca/5c7ee3a2927698f99e5b77c7aab082e263fcec0d36ca41d4a62d805dd0c2/mycli-2.25.2.tar.gz"
-  sha256 "343470fae15ee3ec4ef1a0ac6f4ca30dfad69df814c2b681403d7d0ab2a77792"
+  url "https://files.pythonhosted.org/packages/23/af/3b7ca0c2ad0d9914e10ca3f5236c01c72abcec4d6c56bf678d73cc586753/mycli-2.25.3.tar.gz"
+  sha256 "c76ec811af9006461abc77ffe3f041fb32a347fe8f6e3fdccfc2771c8ebf6dec"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "bf1aec34da4bdff386fd897b9b6be074a15b629ccd0ebe07fb06bb4143470278"
-    sha256 cellar: :any, arm64_tahoe:       "d77df032d14a2464a6e4d2f4d569ba4598453c209f01274cf100e96b4dbddba8"
-    sha256 cellar: :any, arm64_sequoia:     "d10bc870a374bad110bc15fc80fb91701728e1144ef0f57bbb0dfa5e8dd1d265"
-    sha256 cellar: :any, arm64_linux:       "938b47b706d5b86c74b82dde77152359753ca50cca608802ac5a4d6acd165bef"
-    sha256 cellar: :any, x86_64_linux:      "b7a096f89a401c0b166190041f992221c93ea9bb9a00c384b59873d304b15a28"
+    sha256 cellar: :any, arm64_golden_gate: "d7dd65cdeb9b25ed5a23b109d6c59eafcbb0e95ad6461ca14902c3c75bebfb1e"
+    sha256 cellar: :any, arm64_tahoe:       "c27a501448cfc2f93e5c2f8fc0a1205f7d63f9a42d47dacdf38c97b4951acf1f"
+    sha256 cellar: :any, arm64_sequoia:     "727169b27426df8b428d69e188bc9d6e3bf17ff78f0e5012ecdfe866640a88c2"
+    sha256 cellar: :any, arm64_linux:       "c181aa4a795eafc91ebeb120594ab2499c9f997f386444d00594979e054b8d88"
+    sha256 cellar: :any, x86_64_linux:      "9ded770b3a7aacb669986bd1e34538b592e2a3da1114403f7be67af215c80c28"
   end
 
   depends_on "rust" => :build # for jiter, polars, vl-convert
@@ -94,8 +94,8 @@ class Mycli < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/5f/f7/abb373e5757eaec4b922b92f97ec8d6d7e057cf06778247604fbc4e7c3f3/idna-3.19.tar.gz"
-    sha256 "5e0811a4383b21dc5838069f801c4fb62113b7447663d2530d2bd6e77b49bf15"
+    url "https://files.pythonhosted.org/packages/f5/08/8eea9d4b8302028f3abb2c0813953f7aec26d33b7a8960ed760e65ff29fa/idna-3.20.tar.gz"
+    sha256 "a7db850025b95ded1eae8a46181a1a6c56c92c96f0e2b005d9ff8dc0210cab44"
   end
 
   resource "jaraco-classes" do
@@ -164,8 +164,8 @@ class Mycli < Formula
   end
 
   resource "openai" do
-    url "https://files.pythonhosted.org/packages/a2/a5/bc3681f645a0d026332047cc19a703315979740a11a5763f46c163abd614/openai-3.14.1.tar.gz"
-    sha256 "2f3423a71af767d9071b059cf6df1e97a721c3a8d19417375ad7993d4df0d346"
+    url "https://files.pythonhosted.org/packages/e2/c6/770171ef28854d8092ee2c3df68ef97d127362b28771e6b423c948894e07/openai-3.16.2.tar.gz"
+    sha256 "e129455fc6a744276cda63a9e2f0759207bc0cf24afc4cf356bf5029e631e955"
   end
 
   resource "packaging" do
@@ -319,8 +319,8 @@ class Mycli < Formula
   end
 
   resource "wcwidth" do
-    url "https://files.pythonhosted.org/packages/36/57/ed58088fafdf4c55a0ad6bde846502567645424d7ebf325230b9237f4085/wcwidth-0.8.3.tar.gz"
-    sha256 "d128512515fbf4612e0ff21fd6380399210318b7b54a9af59dff8454cf9730eb"
+    url "https://files.pythonhosted.org/packages/3d/7a/f98d4ada7c499565ab0c0fcef28a4e54fafa72b8228a6309803c80493c92/wcwidth-0.8.4.tar.gz"
+    sha256 "2dae09efa25253ae2874188e86d6861af3b1652aef4118cdf3f0bda288a957fb"
   end
 
   resource "yaspin" do

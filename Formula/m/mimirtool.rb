@@ -27,6 +27,8 @@ class Mimirtool < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
   def install
     system "make", "BUILD_IN_CONTAINER=false", "GENERATE_FILES=false", "cmd/mimirtool/mimirtool"
     bin.install "cmd/mimirtool/mimirtool"

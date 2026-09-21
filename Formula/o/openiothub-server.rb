@@ -19,6 +19,8 @@ class OpeniothubServer < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
   def install
     (etc/"server-go").mkpath
     system "go", "build", "-mod=vendor", *std_go_args(ldflags: :goreleaser)

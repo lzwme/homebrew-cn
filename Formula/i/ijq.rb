@@ -21,6 +21,12 @@ class Ijq < Formula
 
   uses_from_macos "jq", since: :sequoia
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     system "make", "prefix=#{prefix}", "install"
   end

@@ -1,8 +1,8 @@
 class Melange < Formula
   desc "Build APKs from source code"
   homepage "https://github.com/chainguard-dev/melange"
-  url "https://ghfast.top/https://github.com/chainguard-dev/melange/archive/refs/tags/v0.61.0.tar.gz"
-  sha256 "bca6e5dcadbac95278489e5c9f8b4aef11d263075e9a19130fc80829548c92aa"
+  url "https://ghfast.top/https://github.com/chainguard-dev/melange/archive/refs/tags/v0.61.1.tar.gz"
+  sha256 "298e1a7348e51d7c80dfb6527f8d7871b0d81bb3f9ab686f97c36763145a33a0"
   license "Apache-2.0"
   head "https://github.com/chainguard-dev/melange.git", branch: "main"
 
@@ -12,14 +12,20 @@ class Melange < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "d0fe390a40994ceb2391598b39a11b4a7aec0da2c8b6ce1dd4553ed945dd97b7"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "dcf2ffc79c99987392592e3cedba0fec2523d2cf46dbfaa6a4bbc6320bc0c4a7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "2f776c5d04fe77723147ba8a29f91b1451a739073865d8e997eb377e96d46994"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "709787aafd29a6680af483f490efaa8fe87f0d3d088bcbafd19eb98f3b00a50e"
-    sha256 cellar: :any,                 x86_64_linux:      "ac978dcfd2514fd6f29f26c672bb757a87c9f98cd68b7aba3fd151935f5cd5f8"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "10ec040c483c54ac7001638496aa5c8af213cbcb7ef641dc6765994fd7e9a8bd"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "11b6c1e0d2c6e4d4fce6ca0df44143fbf042b5dd6223edbb27bf71af47fc658f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "394c57c17079b6ec9fcf6139679cd1decc24e7c0b1e80f85e7e6c59b8a3d665e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "18a73d103ee0b5b140691861e691d9a4ac394cc21d6d3d1390b1fc8171384110"
+    sha256 cellar: :any,                 x86_64_linux:      "f94ddb1e15372c765c0bc30bbf3b6eb3dfc856722ee7ae573544cbcaf448fbd7"
   end
 
   depends_on "go" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     ldflags = %W[

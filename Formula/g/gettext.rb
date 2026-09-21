@@ -11,14 +11,12 @@ class Gettext < Formula
   compatibility_version 1
 
   bottle do
-    rebuild 1
-    sha256 arm64_golden_gate: "f65cd0001209a5d431234383e2ff96af4f82f9da1b63b43823edcdf837422856"
-    sha256 arm64_tahoe:       "2b713227e438f51d025d76df24cfa45a2b813b61718df7bb91a6cedb1091037b"
-    sha256 arm64_sequoia:     "dde3cd0db0d7549fadf762b901f8c548dae99e3c592a6e6d41f60e1436253e5e"
-    sha256 arm64_sonoma:      "d11a97db1d735fb9860a9637e72b2765ef93536851d36c8f0b5cbbc22b539c5a"
-    sha256 sonoma:            "e0072004be0db53c5f501d6ab2b78b9219067243f8989c40604720751dd6bdc4"
-    sha256 arm64_linux:       "a436430dfcd915d3c9cd7888f6b4f82f7d02d1d9556f48bef218704df482879e"
-    sha256 x86_64_linux:      "2dcf2f53d79cf6beb5c0df6f880c2cb7d21890be81533b3f74fc628d7f435cac"
+    rebuild 2
+    sha256 arm64_golden_gate: "4db034aa2ae4b1f18d86906707ece14c895198090ad028d2fb1ae4fbeb3ca6fd"
+    sha256 arm64_tahoe:       "3af5392939e50a6ef73e42799fc3ead6ef72fe0040c0a45183d04a4008306d6a"
+    sha256 arm64_sequoia:     "98a116d35792ccd730360ffc8c0d8fc5799b2282b96bb7696192c573f064a331"
+    sha256 arm64_linux:       "3cad13274e2b89d4b625623c0e6553b341dc04f2f24465892c511332dc80c2d2"
+    sha256 x86_64_linux:      "2d8896fdb7fe81fc987cefd609ddcd3696f99b71b7b6b60508a2c53f0e99eb5a"
   end
 
   depends_on "json-c" # for spit
@@ -31,6 +29,8 @@ class Gettext < Formula
   on_linux do
     depends_on "acl"
   end
+
+  deny_network_access!
 
   def install
     # Workaround for newer Clang

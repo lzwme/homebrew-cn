@@ -23,6 +23,12 @@ class Yutu < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     mod = "github.com/eat-pray-ai/yutu/cmd"
     ldflags = %W[

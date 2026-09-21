@@ -23,6 +23,12 @@ class Testkube < Formula
   depends_on "helm"
   depends_on "kubernetes-cli"
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ldflags = "-X main.version=#{version} -X main.builtBy=#{tap.user}"
 

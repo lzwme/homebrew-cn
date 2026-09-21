@@ -18,6 +18,8 @@ class Noti < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
   def install
     ldflags = %W[-X codeberg.org/roble/noti/internal/command.Version=#{version}]
     system "go", "build", *std_go_args(ldflags:), "cmd/noti/main.go"

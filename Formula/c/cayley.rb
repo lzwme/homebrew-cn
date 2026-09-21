@@ -27,6 +27,12 @@ class Cayley < Formula
   depends_on "go" => :build
   depends_on "mercurial" => :build
 
+  allow_network_access! :test
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     dir = buildpath/"src/github.com/cayleygraph/cayley"
     dir.install buildpath.children

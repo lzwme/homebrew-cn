@@ -30,6 +30,12 @@ class CvsFastExport < Formula
 
   uses_from_macos "python"
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     system "make", "man"
     system "go", "build", *std_go_args(ldflags: "-X main.version=#{version}")

@@ -18,6 +18,12 @@ class Godap < Formula
 
   depends_on "go" => :build
 
+  allow_network_access! :test
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     system "go", "build", *std_go_args(ldflags: "-X main.Version=#{version}")
     generate_completions_from_executable(bin/"godap", shell_parameter_format: :cobra)

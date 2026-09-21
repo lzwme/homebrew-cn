@@ -23,6 +23,12 @@ class GhOst < Formula
 
   depends_on "go" => :build
 
+  allow_network_access! :test
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ldflags = "-X main.AppVersion=#{version} -X main.GitCommit=#{tap.user}"
     system "go", "build", *std_go_args(ldflags:), "./go/cmd/gh-ost"

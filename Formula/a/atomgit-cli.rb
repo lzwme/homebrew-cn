@@ -17,6 +17,12 @@ class AtomgitCli < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ldflags = %W[
       -X atomgit.com/hust-open-atom-club/atomgit-cli/internal/version.Version=#{version}

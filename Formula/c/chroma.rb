@@ -18,6 +18,12 @@ class Chroma < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download", "-C", "cmd/chroma"
+  end
+
   def install
     cd "cmd/chroma" do
       system "go", "build", *std_go_args

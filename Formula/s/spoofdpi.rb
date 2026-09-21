@@ -26,6 +26,12 @@ class Spoofdpi < Formula
 
   depends_on "go" => :build
 
+  allow_network_access! :test
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     # Disable CGO for Linux builds
     ENV["CGO_ENABLED"] = OS.linux? ? "0" : "1"

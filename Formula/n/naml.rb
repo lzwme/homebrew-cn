@@ -24,6 +24,8 @@ class Naml < Formula
 
   depends_on "go"
 
+  deny_network_access!
+
   def install
     ldflags = %W[-X github.com/kris-nova/naml.Version=#{version}]
 

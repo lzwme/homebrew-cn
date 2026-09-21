@@ -18,6 +18,12 @@ class Decompose < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ldflags = "-X main.GitTag=#{version} -X main.GitHash=#{tap.user} -X main.BuildDate=#{time.iso8601}"
     system "go", "build", *std_go_args(ldflags:), "./cmd/decompose"

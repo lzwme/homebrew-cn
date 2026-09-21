@@ -19,6 +19,12 @@ class Terramate < Formula
 
   conflicts_with "tenv", because: "both install terramate binary"
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     system "go", "build", *std_go_args(output: bin/"terramate"), "./cmd/terramate"
     system "go", "build", *std_go_args(output: bin/"terramate-ls"), "./cmd/terramate-ls"

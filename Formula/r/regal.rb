@@ -23,6 +23,12 @@ class Regal < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ldflags = %W[
       -X github.com/open-policy-agent/regal/pkg/version.Version=#{version}

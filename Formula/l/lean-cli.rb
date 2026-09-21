@@ -26,6 +26,12 @@ class LeanCli < Formula
 
   conflicts_with "elan-init", because: "both install `lean` binaries"
 
+  allow_network_access! :test
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     build_from = build.head? ? "homebrew-head" : "homebrew"
     system "go", "build", *std_go_args(output: bin/"lean", ldflags: "-X main.pkgType=#{build_from}"), "./lean"

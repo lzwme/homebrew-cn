@@ -35,6 +35,8 @@ class Vgrep < Formula
   depends_on "go" => :build
   depends_on "go-md2man" => :build
 
+  deny_network_access!
+
   def install
     system "go", "build", *std_go_args(ldflags: "-X main.version=#{version}")
     system "make", "install-docs", "PREFIX=#{prefix}"

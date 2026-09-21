@@ -13,21 +13,20 @@ class Webp < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_golden_gate: "0a9b881ff894ed388802e77dfd3597534489f98f01ca39abfbc1202c6de38a41"
-    sha256 cellar: :any,                 arm64_tahoe:       "11a19ac5db13a8485d4d6f712d65d48531f99e8d7237407ab42718777eefacb3"
-    sha256 cellar: :any,                 arm64_sequoia:     "ad74e4538a799bc21e85fb2899c2267f7b6c8761212d195ec3cb3583062ad19e"
-    sha256 cellar: :any,                 arm64_sonoma:      "2c0172632efa4d17103aad0d82dd27addce7db290b5cf52cd9afcbff3c39a497"
-    sha256 cellar: :any,                 arm64_ventura:     "984de8caf92ff3492d12b9c0afabd97e07139f212222021a6813a2c99f66855d"
-    sha256 cellar: :any,                 sonoma:            "ea4e1ab3ff7e848a8b26a6e851e032887c0a5853d4586e77e98ca586b7f96a35"
-    sha256 cellar: :any,                 ventura:           "f5fa0476d932c52eedee49bdfc95d49514a6816f38c479cd8732a866e44ee3b3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "4d8b90c79d3e912e86136a88e49295f76fe2b67803b299c5fbe7ab12f01f4faf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "5520d52bce6d837491accd768420cb44e9c64b6bcd4063817668fd5245fc9cfc"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "85d3cb86c87f53f027b48cdfe15a31e82932caa43344a6fe06e00e5de402a3e7"
+    sha256 cellar: :any, arm64_tahoe:       "89d7380c156284433cf5a130b82423b1a3d83b4aac88fe88ba35d174bcc9d3b6"
+    sha256 cellar: :any, arm64_sequoia:     "3f5c1ccc592312b2170bc1ea673f902aa65fc479aa9a4c308ff0b1b1a35315fe"
+    sha256 cellar: :any, arm64_linux:       "3aa68517215779bc0c0a877c934c81ed82e5d5727c0114878ccfd6a1fa138fae"
+    sha256 cellar: :any, x86_64_linux:      "74466119f8e80a2375631657c0daaf53c910938c4a8754385c579b4d71f95887"
   end
 
   depends_on "cmake" => :build
   depends_on "giflib"
   depends_on "jpeg-turbo"
   depends_on "libpng"
+
+  deny_network_access!
 
   def install
     args = %W[

@@ -31,6 +31,14 @@ class SwiftFormat < Formula
     depends_on xcode: ["14.0", :build]
   end
 
+  deny_network_access!
+
+  def fetch
+    # SwiftPM tries to apply its own sandbox, which cannot nest inside the
+    # build sandbox; Homebrew's sandbox still confines the whole process.
+    system "swift", "package", "resolve", "--disable-sandbox"
+  end
+
   def install
     system "swift", "build", "--product", "swift-format", *std_swift_args
     bin.install ".build/release/swift-format"

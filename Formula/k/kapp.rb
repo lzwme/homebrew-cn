@@ -23,6 +23,8 @@ class Kapp < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
   def install
     ldflags = "-X carvel.dev/kapp/pkg/kapp/version.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:), "./cmd/kapp"

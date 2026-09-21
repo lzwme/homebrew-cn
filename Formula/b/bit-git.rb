@@ -26,6 +26,12 @@ class BitGit < Formula
 
   conflicts_with "bit", because: "both install `bit` binaries"
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     system "go", "build", *std_go_args(ldflags: "-X main.version=v#{version}")
     bin.install_symlink "bit-git" => "bit"

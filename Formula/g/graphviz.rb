@@ -13,11 +13,12 @@ class Graphviz < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "ef2f6a5a452065bbe3f7214e9366e20f05b7cda0a1a5fe841ea323678559315f"
-    sha256 arm64_tahoe:       "f7058305ab3e33cf9e6729ba7e68f0a2fed7bc7d188391be74163c8d956c28ea"
-    sha256 arm64_sequoia:     "b21e979836c012ff0c48b671fc9dbf037e07e11f0b1e55ee6c67a256dc6ca9cc"
-    sha256 arm64_linux:       "4e0f5b6bfa78ac2c9a1ef6a0fd8e5e0d68c82a6661659d1f49e53dc6fc819f6f"
-    sha256 x86_64_linux:      "b67628bec6a481d8ead0cac5c3f5a4c840ca21e97d039b8caf4c199ed24f2c99"
+    rebuild 1
+    sha256 arm64_golden_gate: "95e16aa7a3a16775ed16a50a8d4a5347b8c6edd5604e6006206bfa2b23da2365"
+    sha256 arm64_tahoe:       "9fba08a285c160f3c1c5db363b06bd5ffe6b1175c74b6be8d36383d1f1b0ab13"
+    sha256 arm64_sequoia:     "2f2c0a364687e48071a527f352024faaad7aacf20e928a1657bc15fd006b9964"
+    sha256 arm64_linux:       "14b6558a629a614c57cd4657a04f4d569cc91e91cb4762d207c82d253766f117"
+    sha256 x86_64_linux:      "b577048dcf51da574b0d6feaf37ec54ffdffb8c2d69fa96b47767f98316d5448"
   end
 
   head do
@@ -54,6 +55,8 @@ class Graphviz < Formula
   on_linux do
     depends_on "zlib-ng-compat"
   end
+
+  deny_network_access!
 
   def install
     args = %w[

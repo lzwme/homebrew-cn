@@ -19,6 +19,8 @@ class SourceToImage < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
   def install
     system "hack/build-go.sh"
     arch = Hardware::CPU.intel? ? "amd64" : Hardware::CPU.arch.to_s

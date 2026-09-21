@@ -22,6 +22,12 @@ class Tanka < Formula
   depends_on "go" => :build
   depends_on "kubernetes-cli"
 
+  allow_network_access! :test
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ENV["CGO_ENABLED"] = "0"
     ldflags = %W[-X github.com/grafana/tanka/pkg/tanka.CurrentVersion=#{version}]

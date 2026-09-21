@@ -21,6 +21,12 @@ class Mp4ff < Formula
     %w[mp4ff-crop mp4ff-decrypt mp4ff-encrypt mp4ff-info mp4ff-mvhevc mp4ff-nallister mp4ff-pslister mp4ff-subslister]
   end
 
+  allow_network_access! :test
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     tools.each do |tool|
       system "go", "build", *std_go_args(output: bin/tool), "./cmd/#{tool}"

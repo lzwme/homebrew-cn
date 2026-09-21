@@ -19,6 +19,12 @@ class Dexidp < Formula
 
   conflicts_with "dex", because: "both install `dex` binaries"
 
+  allow_network_access! :test
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ldflags = "-w -X main.version=#{version}"
     system "go", "build", *std_go_args(ldflags:, output: bin/"dex"), "./cmd/dex"

@@ -25,6 +25,14 @@ class Sourcekitten < Formula
     depends_on xcode: "6.0"
   end
 
+  deny_network_access!
+
+  def fetch
+    # SwiftPM tries to apply its own sandbox, which cannot nest inside the
+    # build sandbox; Homebrew's sandbox still confines the whole process.
+    system "swift", "package", "resolve", "--disable-sandbox"
+  end
+
   def install
     system "make", "prefix_install", "PREFIX=#{prefix}", "TEMPORARY_FOLDER=#{buildpath}/SourceKitten.dst"
     generate_completions_from_executable(bin/"sourcekitten", "--generate-completion-script")

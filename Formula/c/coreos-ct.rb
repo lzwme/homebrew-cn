@@ -26,6 +26,8 @@ class CoreosCt < Formula
 
   conflicts_with "chart-testing", because: "both install `ct` binaries"
 
+  deny_network_access!
+
   def install
     system "make", "all", "VERSION=v#{version}"
     bin.install "./bin/ct"

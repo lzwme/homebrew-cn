@@ -25,6 +25,8 @@ class Jsonpp < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
   def install
     ENV["GO111MODULE"] = "auto"
     system "go", "build", *std_go_args

@@ -22,6 +22,15 @@ class Carthage < Formula
   depends_on xcode: ["10.0", :build]
   depends_on :macos
 
+  # Test runs `carthage update`, which clones dependencies from GitHub
+  allow_network_access! :test
+
+  def fetch
+    # SwiftPM tries to apply its own sandbox, which cannot nest inside the
+    # build sandbox; Homebrew's sandbox still confines the whole process.
+    system "swift", "package", "resolve", "--disable-sandbox"
+  end
+
   def install
     system "make", "prefix_install", "PREFIX=#{prefix}"
     bash_completion.install "Source/Scripts/carthage-bash-completion" => "carthage"

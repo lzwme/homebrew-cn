@@ -20,6 +20,8 @@ class S5cmd < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
   def install
     ldflags = %W[
       -X=github.com/peak/s5cmd/v2/version.Version=#{version}

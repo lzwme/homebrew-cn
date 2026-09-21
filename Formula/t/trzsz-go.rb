@@ -19,6 +19,12 @@ class TrzszGo < Formula
 
   conflicts_with "trzsz", because: "both install `trz`, `tsz` binaries"
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     system "go", "build", *std_go_args(output: bin/"trz"), "./cmd/trz"
     system "go", "build", *std_go_args(output: bin/"tsz"), "./cmd/tsz"

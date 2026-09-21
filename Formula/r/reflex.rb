@@ -20,6 +20,12 @@ class Reflex < Formula
 
   conflicts_with "re-flex", because: "both install `reflex` binaries"
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     system "go", "build", *std_go_args
   end

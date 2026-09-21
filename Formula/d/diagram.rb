@@ -31,6 +31,12 @@ class Diagram < Formula
     depends_on "wayland"
   end
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     # Workaround to avoid patchelf corruption when cgo is required (for gioui.org/internal/vk)
     if OS.linux? && Hardware::CPU.arch == :arm64

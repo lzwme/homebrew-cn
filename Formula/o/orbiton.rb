@@ -28,6 +28,8 @@ class Orbiton < Formula
     depends_on "xclip"
   end
 
+  deny_network_access!
+
   def install
     system "make", "install", "symlinks", "license", "DESTDIR=", "PREFIX=#{prefix}", "MANDIR=#{man}"
   end
