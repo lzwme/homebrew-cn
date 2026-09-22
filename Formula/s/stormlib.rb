@@ -27,6 +27,8 @@ class Stormlib < Formula
   # prevents cmake from trying to write to /Library/Frameworks/
   patch :DATA
 
+  deny_network_access!
+
   def install
     system "cmake", "-S", ".", "-B", "build/static", *std_cmake_args
     system "cmake", "--build", "build/static"

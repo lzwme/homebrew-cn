@@ -34,6 +34,8 @@ class YubicoPivTool < Formula
     depends_on "zlib-ng-compat"
   end
 
+  deny_network_access!
+
   def install
     ENV.append_to_cflags "-I#{formula_opt_include("pcsc-lite")}/PCSC" unless OS.mac?
 

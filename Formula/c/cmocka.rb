@@ -18,6 +18,7 @@ class Cmocka < Formula
 
   depends_on "cmake" => :build
 
+  deny_network_access!
   def install
     args = %w[
       -DWITH_STATIC_LIB=ON

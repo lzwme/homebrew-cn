@@ -30,6 +30,8 @@ class AyatanaIdo < Formula
     depends_on "gettext"
   end
 
+  deny_network_access!
+
   def install
     args = %w[-DENABLE_TESTS=OFF]
     args << "-DCMAKE_SHARED_LINKER_FLAGS=-Wl,-dead_strip_dylibs" if OS.mac?

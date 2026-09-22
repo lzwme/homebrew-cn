@@ -38,6 +38,8 @@ class IncludeWhatYouUse < Formula
     deps.map(&:to_formula).find { |f| f.name.match?(/^llvm(@\d+(\.\d+)*)?$/) }
   end
 
+  deny_network_access!
+
   def install
     resource_dir = Utils.safe_popen_read(llvm.opt_bin/"clang", "-print-resource-dir").chomp
     resource_dir.sub! llvm.prefix.realpath, llvm.opt_prefix

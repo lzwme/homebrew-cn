@@ -1,18 +1,17 @@
 class AtuinServer < Formula
   desc "Sync server for atuin - Improved shell history for zsh, bash, fish and nushell"
   homepage "https://atuin.sh"
-  url "https://ghfast.top/https://github.com/atuinsh/atuin/releases/download/v18.22.0/source.tar.gz"
-  sha256 "46f9d940105791b09d870ca87e8952190dc69f968ea0036502a43840f83a56a0"
+  url "https://ghfast.top/https://github.com/atuinsh/atuin/releases/download/v18.23.0/source.tar.gz"
+  sha256 "64b4b9b0f84ef34bcfa88e992d38cc0b95d3cf1f6d470bb695d3ef0231445b26"
   license "MIT"
   head "https://github.com/atuinsh/atuin.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "61888be5d4bf0394a99ad3dbdd57068b102fe2cceb7844a2291907345f3bb449"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "ee907a1ac2e630b75dced397986c4e4fe06c4dfe8e00dc6aa1ee9054df59b325"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "a105fd482e56f8dced60abdd430ae1367b082340354f75186597a48031a4ea72"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "fd767e28179f9986f1b83d87e8c0054d66e502133e3a651d49e87345426f8ea7"
-    sha256 cellar: :any,                 arm64_linux:       "a03dd9a013169971089092c63b54096d74ccf94ae4ada14e89c6b30b3f13986c"
-    sha256 cellar: :any,                 x86_64_linux:      "ab55045ff2a5cfe15bbb084348f90ddb0a9c610729d1f24dd45edfa1235b9ab3"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "2142a76c23fb5c7ad6c1f6303a62a41b5d89918168b26e87b942c99223ebe834"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "94fc0a2ba870caa4ee32b09e758ba22692f24df96676836b851f49133917a738"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "b7b202607be0964ce6149e21c3c6aa80c617cbd7d6522b72f6760aa125598126"
+    sha256 cellar: :any,                 arm64_linux:       "9e0f8cc52d701adebf898355ac2f49eee07f13623c5b2e4aed9ce5041ab86df6"
+    sha256 cellar: :any,                 x86_64_linux:      "99d4313c5a7e6c2bb99f44d7ea632ee110d4644e52ac659414ed984db3470982"
   end
 
   depends_on "pkgconf" => :build

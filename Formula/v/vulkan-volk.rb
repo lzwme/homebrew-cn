@@ -38,6 +38,8 @@ class VulkanVolk < Formula
     res
   end
 
+  deny_network_access!
+
   def install
     system "cmake", "-S", ".", "-B", "build",
            "-DVOLK_INSTALL=ON",

@@ -25,6 +25,8 @@ class Autoconf < Formula
   depends_on "m4"
   uses_from_macos "perl"
 
+  deny_network_access!
+
   def install
     if OS.mac?
       ENV["PERL"] = "/usr/bin/perl"

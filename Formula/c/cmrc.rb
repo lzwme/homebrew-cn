@@ -24,6 +24,8 @@ class Cmrc < Formula
 
   depends_on "cmake" => [:build, :test]
 
+  deny_network_access!
+
   def install
     (share/"cmake").install "CMakeRC.cmake"
     (share/"CMakeRC/cmake").install_symlink share/"cmake/CMakeRC.cmake" => "CMakeRCConfig.cmake"

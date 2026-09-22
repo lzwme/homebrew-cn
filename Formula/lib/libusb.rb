@@ -33,6 +33,8 @@ class Libusb < Formula
     depends_on "systemd"
   end
 
+  deny_network_access!
+
   def install
     args = %W[--disable-dependency-tracking --prefix=#{prefix}]
 

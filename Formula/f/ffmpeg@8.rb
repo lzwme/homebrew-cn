@@ -1,8 +1,8 @@
 class FfmpegAT8 < Formula
   desc "Play, record, convert, and stream select audio and video codecs"
   homepage "https://ffmpeg.org/"
-  url "https://ffmpeg.org/releases/ffmpeg-8.1.2.tar.xz"
-  sha256 "464beb5e7bf0c311e68b45ae2f04e9cc2af88851abb4082231742a74d97b524c"
+  url "https://ffmpeg.org/releases/ffmpeg-8.1.3.tar.xz"
+  sha256 "7138d28c96d9d3e3af4ee3d8cad72741f8ffb40da90c1112235dea3ecd3178a3"
   # None of these parts are used by default, you have to explicitly pass `--enable-gpl`
   # to configure to activate them. In this case, FFmpeg's license changes to GPL v2+.
   # Passing `--enable-version3` changes the license to GPL v3+.
@@ -14,12 +14,11 @@ class FfmpegAT8 < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "80f2a047e1451cc5b8604f97a863251361dc5e84c7780e5551890a0cebc76574"
-    sha256 arm64_tahoe:       "c571b15555a2e0416bea6d33c6515347071e0e4b81ce5b75bec4c83606fd0fef"
-    sha256 arm64_sequoia:     "a4291ecb5da3e8a936117f64d1fb6b26cbf8d342c97fadcffe49036c28b2e7de"
-    sha256 arm64_sonoma:      "52d4b4896b3b96465e8deb6075de667e0258430b1bf5d6ba2715051007ec4b56"
-    sha256 arm64_linux:       "a90bd5c6109eaedd3a72e66db04abc8dfb99c42fca01993813b27c30ef93912b"
-    sha256 x86_64_linux:      "a364024c4dc9ed4d7851af70a60a75483fe8a3d7e0919282c67c2cbf83d32b84"
+    sha256 arm64_golden_gate: "e0bb3491dcbe64a7af3d8f88b65ec57a00ea5bcb9bdeda98b807e0de9239d8e6"
+    sha256 arm64_tahoe:       "b0e96b24ffbbe3f48755094714607adb93b3697b32cbf3932f1b17f95fea59b1"
+    sha256 arm64_sequoia:     "55bbc2119ef63841c81c4ea2e7bfc25fd4f9679e9b825b0ae0901316a1efb67f"
+    sha256 arm64_linux:       "2c9d38b4b17e41bbf1ba8cf08162d64a37f52fb8d49c20c36bbd83de806fdefb"
+    sha256 x86_64_linux:      "a160ad1931056eecb37dc44d3c4d4f41ea7d8478db07dced385e21c788c1b647"
   end
 
   keg_only :versioned_formula

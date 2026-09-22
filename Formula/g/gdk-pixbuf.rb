@@ -35,6 +35,8 @@ class GdkPixbuf < Formula
     depends_on "shared-mime-info"
   end
 
+  deny_network_access!
+
   def install
     # Use HOMEBREW_PREFIX to find modules installed by dependents without
     # needing environment variables or inreplaces. In order to support this,

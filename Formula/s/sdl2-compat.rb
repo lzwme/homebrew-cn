@@ -18,6 +18,8 @@ class Sdl2Compat < Formula
   depends_on "cmake" => :build
   depends_on "sdl3" => :no_linkage
 
+  deny_network_access!
+
   def install
     args = ["-DCMAKE_INSTALL_RPATH=#{rpath(target: formula_opt_lib("sdl3"))}"] if OS.mac?
 

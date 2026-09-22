@@ -36,6 +36,8 @@ class Libswiftnav < Formula
     sha256 "7b6995bcc97d001cfe5c4741a8fa3637bc4dc2c3460b908585aef5e7af268798"
   end
 
+  deny_network_access!
+
   def install
     (buildpath/"cmake/common").install resource("swift-nav/cmake")
 

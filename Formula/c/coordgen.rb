@@ -21,6 +21,8 @@ class Coordgen < Formula
   depends_on "cmake" => :build
   depends_on "maeparser"
 
+  deny_network_access!
+
   def install
     system "cmake", "-S", ".", "-B", "build",
                     "-DCMAKE_POLICY_VERSION_MINIMUM=3.5", # https://github.com/schrodinger/coordgenlibs/pull/130

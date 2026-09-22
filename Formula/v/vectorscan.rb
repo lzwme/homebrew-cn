@@ -21,6 +21,8 @@ class Vectorscan < Formula
   depends_on "pkgconf" => :build
   depends_on "ragel" => :build
 
+  deny_network_access!
+
   def install
     # Avoid building hscollider which needs EOL `pcre`
     # Issue ref: https://github.com/VectorCamp/vectorscan/issues/320

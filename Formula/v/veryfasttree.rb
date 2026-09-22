@@ -36,6 +36,8 @@ class Veryfasttree < Formula
     depends_on "zlib-ng-compat"
   end
 
+  deny_network_access!
+
   def install
     # remove libraries that can be unbundled
     rm_r(Dir["libs/*"] - ["libs/CLI11", "libs/bxzstr"])

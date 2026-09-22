@@ -18,6 +18,8 @@ class Onedpl < Formula
   depends_on "cmake" => :build
   depends_on "tbb"
 
+  deny_network_access!
+
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     # `cmake --build build` is for tests

@@ -33,6 +33,8 @@ class FluentBit < Formula
     depends_on "zlib-ng-compat"
   end
 
+  deny_network_access!
+
   def install
     # Prevent fluent-bit to install files into global init system
     # For more information see https://github.com/fluent/fluent-bit/issues/3393

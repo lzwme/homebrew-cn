@@ -33,6 +33,8 @@ class Wb32DfuUpdaterCli < Formula
     resolves "https://github.com/WestberryTech/wb32-dfu-updater/pull/17"
   end
 
+  deny_network_access!
+
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"

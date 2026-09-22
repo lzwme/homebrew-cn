@@ -37,6 +37,8 @@ class Kallisto < Formula
     resolves "https://github.com/pachterlab/kallisto/pull/506"
   end
 
+  deny_network_access!
+
   def install
     # Fix to error: unsupported option '-mno-avx2'
     inreplace "ext/bifrost/CMakeLists.txt", "-mno-avx2", ""

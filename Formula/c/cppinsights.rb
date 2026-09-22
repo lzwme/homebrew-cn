@@ -23,6 +23,8 @@ class Cppinsights < Formula
     cause "Requires Clang > 15.0"
   end
 
+  deny_network_access!
+
   def install
     args = %W[
       -DINSIGHTS_LLVM_CONFIG=#{formula_opt_bin("llvm@21")}/llvm-config

@@ -25,6 +25,8 @@ class Notcurses < Formula
   depends_on "libunistring"
   depends_on "ncurses"
 
+  deny_network_access!
+
   def install
     system "cmake", "-S", ".", "-B", "build", "-DCMAKE_INSTALL_RPATH=#{rpath}", *std_cmake_args
     system "cmake", "--build", "build"

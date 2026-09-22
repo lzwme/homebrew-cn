@@ -26,6 +26,8 @@ class Opencsg < Formula
     depends_on "mesa"
   end
 
+  deny_network_access!
+
   def install
     system "cmake", "-S", ".", "-B", "build", "-DBUILD_EXAMPLE=OFF", *std_cmake_args
     system "cmake", "--build", "build"

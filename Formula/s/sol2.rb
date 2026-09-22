@@ -28,6 +28,8 @@ class Sol2 < Formula
     resolves "https://github.com/ThePhD/sol2/pull/1676"
   end
 
+  deny_network_access!
+
   def install
     system "cmake", "-S", ".", "-B", "build", "-DSOL2_BUILD_LUA=OFF", *std_cmake_args
     system "cmake", "--build", "build"

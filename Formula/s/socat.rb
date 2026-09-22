@@ -24,6 +24,9 @@ class Socat < Formula
 
   depends_on "openssl@3"
 
+  # Test connects to a remote host
+  allow_network_access! :test
+
   def install
     # NOTE: readline must be disabled as the license is incompatible with GPL-2.0-only,
     # https://www.gnu.org/licenses/gpl-faq.html#AllCompatibility

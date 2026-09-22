@@ -22,6 +22,8 @@ class Imath < Formula
   link_overwrite "lib/libImath.dylib"
   link_overwrite "lib/libImath.so"
 
+  deny_network_access!
+
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"

@@ -19,6 +19,8 @@ class Chromaprint < Formula
   depends_on "cmake" => :build
   depends_on "ffmpeg"
 
+  deny_network_access!
+
   def install
     system "cmake", "-S", ".", "-B", "build",
                     "-DBUILD_TOOLS=ON",

@@ -5,24 +5,23 @@ class Sourcekitten < Formula
       tag:      "0.38.0",
       revision: "821fc0eaa7c07fc98df1e9d3d43371cace697644"
   license "MIT"
+  revision 1
   compatibility_version 1
   head "https://github.com/jpsim/SourceKitten.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "adf01435a2bfc708624e1feb05607b1920b6a544f45322b0bafbccd48934c06b"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "b158fba55960f880a4dde1a9824d57ca3107d33080616be3ebdc2375f2026c64"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "988ca2e154bf0baeffc8558f75b72eaf273123c45f29fed462d0215fe30f50cb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "c333a8003a872a1c2283faf947908f1fdb8282d0a5ad007ff59979a8f3edc415"
-    sha256 cellar: :any_skip_relocation, sonoma:            "3840fb11432051e881248cb0bc0186773b4f73176c279981915a21f2738866f9"
-    sha256                               arm64_linux:       "c23c6d5135a62d4cb1701813810e1e218131ab408877ce5cb20bc9217195d70b"
-    sha256                               x86_64_linux:      "c3cd592a6d2596a5f3ce0ed67ccd63498bcfd66f5ea4dace5fc163aef6a201b1"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "3337c29f17e677b3c60125357245a07f38745675cff992c0f7d4f611937bc255"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "c212e9aea3bae0aad47f3cb0b1cc9f963587a343a5756b91bb10aedb1be0e47e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "01cc198a6d008ef342bb28aa150c3a979b9b9fa7e6012b06537aa774b9af76ea"
+    sha256                               arm64_linux:       "538bc5d8707398b80bc38a7bdc44cfd4d9ec06748dd4d0d1f3bd7bb4d02aaaad"
+    sha256                               x86_64_linux:      "59838ce768d30216221fb2b958e4429e93b9dce0ea8d7f2c57d62f8f944de34a"
   end
 
   uses_from_macos "swift"
 
   on_macos do
     depends_on xcode: ["14.0", :build]
-    depends_on xcode: "6.0"
+    depends_on xcode: "6.0" # does not support CLT sourcekitd.framework
   end
 
   deny_network_access!

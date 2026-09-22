@@ -1,18 +1,16 @@
 class ProtonPassCli < Formula
   desc "Command-line interface for Proton Pass"
   homepage "https://protonpass.github.io/pass-cli/"
-  url "https://ghfast.top/https://github.com/protonpass/pass-cli/archive/refs/tags/2.3.3.tar.gz"
-  sha256 "a064b89fc4fb5d2db47a99e46e1782b7672dc1078e2ecbb881d0910c01947611"
+  url "https://ghfast.top/https://github.com/protonpass/pass-cli/archive/refs/tags/2.4.1.tar.gz"
+  sha256 "0fa81f9d7dc494383dff91d6854095dfdde61a76ae63d200a5b71d9e9ba66ef9"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "5390fdc521abc8768ddf5cf4bc372e8834564dbbf0a69ebaab68b8bb8301d6c3"
-    sha256 cellar: :any, arm64_tahoe:       "7578f2ca2d0f263ab7b361d18a5859ff0df7aa2fcd2b44b59f283f1d6a385ca7"
-    sha256 cellar: :any, arm64_sequoia:     "eae98cc909a9c68a05720dc53d287eec92ef241cb93df26b8c47fb75b7367696"
-    sha256 cellar: :any, arm64_sonoma:      "7c223fff651acee33bd3b45721748857a424ee4e25e748116f1b44b5883d17b2"
-    sha256 cellar: :any, sonoma:            "21cf3b64c173ed3632ac238564a1c8857ddafb62585b31dc90f5de9ccfa2615f"
-    sha256 cellar: :any, arm64_linux:       "8e4ed9615dff6a43ec79f6fa2fb9af170b710fff8b825aa73e1cb18c38e4bbbb"
-    sha256 cellar: :any, x86_64_linux:      "f18d354f99416626bce13f1911b36730e804eba7fc38f8f963a17b867572ee85"
+    sha256 cellar: :any, arm64_golden_gate: "343a4cea568e82a10e22b462134cfb184f71c6319feec987d7a07923942ed0ab"
+    sha256 cellar: :any, arm64_tahoe:       "44c0f5f198a8bfd8b1e68b7eb296c05ec65a6f9ee494a375835159e1f330964b"
+    sha256 cellar: :any, arm64_sequoia:     "f7c157827848038884d79a65ee2a96537e686cd6f19422cafda39b6b156fd4df"
+    sha256 cellar: :any, arm64_linux:       "e77c1bec79002eac58e5fd229f7e676328ad9d32055afc745c3bcf6076874b0c"
+    sha256 cellar: :any, x86_64_linux:      "5aea350b9079b3a0c5410c82f8930bf870b66a467f489b7797f9497620355e28"
   end
 
   depends_on "pkgconf" => :build
@@ -22,6 +20,12 @@ class ProtonPassCli < Formula
   # Upstream does not currently accept external contributions.
   # Increase the recursion limit required to compile pass-cli 2.3.3.
   patch :DATA
+
+  allow_network_access! :test
+
+  def fetch
+    system "cargo", "fetch", "--locked", "--target", "host-tuple"
+  end
 
   def install
     system "cargo", "install", *std_cargo_args(path: "pass-cli")

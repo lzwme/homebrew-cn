@@ -8,13 +8,12 @@ class X265 < Formula
   head "https://github.com/Multicorewareinc/x265.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "93688303ea9445129620cccc3c824cdc0787ddd4a912f176d687ec6132ddc08b"
-    sha256 cellar: :any, arm64_tahoe:       "844a99704d4b41e0b33331b795d3a0bba7756001f68c1925dc3dea88d5aa3a18"
-    sha256 cellar: :any, arm64_sequoia:     "d7a29d4ca9769865867553e82966934fa9bc28c82e28a5b3c7a58aab1b198aed"
-    sha256 cellar: :any, arm64_sonoma:      "43a69b4518ba9d8d805293f004eda174e755e82da2281d647a328e9e1958a188"
-    sha256 cellar: :any, sonoma:            "4897c4847fd853aa6504f46afeeed3ede5be35f3e81c77085ce1c637a6864bc3"
-    sha256 cellar: :any, arm64_linux:       "6453c51228d07d5dc9df25f958b72a3e661bde039165e61cc52c3059bdeeb637"
-    sha256 cellar: :any, x86_64_linux:      "2a9573f55f4c30c18fcd56604e255f8b2c26528ac3de08e015b6469503ebd637"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "df60f322e2ea139e4f3075fcf93e09d02249f183084d1ffa2d8f0cc9427de882"
+    sha256 cellar: :any, arm64_tahoe:       "46dd2b3656ec8e99438a789b627e41a25e3a24407dc76a3a6b88cf159b447858"
+    sha256 cellar: :any, arm64_sequoia:     "18e89a5822e2f4f91f919c5bf2fbac31433a561c48174fc15e13b4911a1232ac"
+    sha256 cellar: :any, arm64_linux:       "f30cc9469b596d98729aec68017e7a671d5cc5244e72314583bc6a08eec4a7a6"
+    sha256 cellar: :any, x86_64_linux:      "d9ce6c22591a7e62792420fafc0d717daa6e15ecf90d5ee58d8c8440f3408c31"
   end
 
   depends_on "cmake" => :build
@@ -22,6 +21,9 @@ class X265 < Formula
   on_intel do
     depends_on "nasm" => :build
   end
+
+  # downloads a test file
+  allow_network_access! :test
 
   def install
     ENV.runtime_cpu_detection

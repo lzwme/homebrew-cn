@@ -27,6 +27,8 @@ class Libchaos < Formula
   # Support for Xcode 15+ (LLVM 16+)
   patch :DATA
 
+  deny_network_access!
+
   def install
     args = %w[
       -DLIBCHAOS_ENABLE_TESTING=OFF

@@ -1,21 +1,22 @@
 class Md4c < Formula
   desc "C Markdown parser. Fast. SAX-like interface"
   homepage "https://github.com/mity/md4c"
-  url "https://ghfast.top/https://github.com/mity/md4c/archive/refs/tags/release-0.5.3.tar.gz"
-  sha256 "353c346f376b87c954a13f3415ede2d51264cc61dc5abcd38ff1d2aa0d059b9e"
+  url "https://ghfast.top/https://github.com/mity/md4c/archive/refs/tags/v0.6.0.tar.gz"
+  sha256 "4d151298125a81da3b2efa2e0eed8bdb7a9318569804e4fa4d7a2375ab83ef70"
   license "MIT"
+  head "https://github.com/mity/md4c.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_golden_gate: "95abb2ae5a106e536a424dd3d4915127b9418532725218f6468d26c4ba30b7db"
-    sha256 cellar: :any,                 arm64_tahoe:       "32f2359b9c497452dfc897a44bdd10031aa1a2f1d85639844942bd844bf2a42c"
-    sha256 cellar: :any,                 arm64_sequoia:     "2d0ec98420dcb79e21758f1cc32043bfbebfbf0e5195f44968507092f30b29a7"
-    sha256 cellar: :any,                 arm64_sonoma:      "d3e2962165abbffe5cf6f50e0c220b4baa9ee453bf64ec92043abfe249f881ba"
-    sha256 cellar: :any,                 sonoma:            "1989ec20fcab62d4fb41a900ad7ab3fe3e35aadc92200c4df8832f4028881708"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "222c0c3879934ca82c72c87568a501bdfe4e68c27d6ed9c0ec9918567e768e21"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "43976f4c7033d21274f1891ee268a129d8680cc3514bd14016b4bf5d7de45bdd"
+    sha256 cellar: :any, arm64_golden_gate: "39d01500e866f6e934898a804827632f1ad6ed19a3cb077ce1ebfbbd3c277779"
+    sha256 cellar: :any, arm64_tahoe:       "e332bdecfcbea2fdf20eb00fd1fcc973970aad2765c2a239b4e1a85617df9291"
+    sha256 cellar: :any, arm64_sequoia:     "480a50456cf91e1ed3d04f1ef33e617f0febbc472f26880ae1bc6c903c3f535d"
+    sha256 cellar: :any, arm64_linux:       "033936261176a8211d449226d12ad01ba7f911492e6446062da1f0b9b6ac6761"
+    sha256 cellar: :any, x86_64_linux:      "53c8c2e65e2867b21cb7b65165f5386b8b4015b3529a0f6b19bce2717029478c"
   end
 
   depends_on "cmake" => :build
+
+  deny_network_access!
 
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args, "-DCMAKE_INSTALL_RPATH=#{rpath}"

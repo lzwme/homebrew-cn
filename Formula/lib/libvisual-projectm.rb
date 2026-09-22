@@ -21,6 +21,8 @@ class LibvisualProjectm < Formula
   depends_on "libvisual"
   depends_on "projectm"
 
+  deny_network_access!
+
   def install
     # NOTE: We cannot write to libvisual's cellar, so we deflect
     #       installation and leverage brew's auto-symlinking

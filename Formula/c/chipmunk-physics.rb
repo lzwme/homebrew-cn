@@ -27,6 +27,8 @@ class ChipmunkPhysics < Formula
 
   depends_on "cmake" => :build
 
+  deny_network_access!
+
   def install
     inreplace "src/cpHastySpace.c", "#include <sys/sysctl.h>", "#include <linux/sysctl.h>" if OS.linux?
 

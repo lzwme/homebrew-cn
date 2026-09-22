@@ -18,6 +18,8 @@ class Lunasvg < Formula
   depends_on "cmake" => :build
   depends_on "plutovg"
 
+  deny_network_access!
+
   def install
     args = %w[
       -DBUILD_SHARED_LIBS=ON

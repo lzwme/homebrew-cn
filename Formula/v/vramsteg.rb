@@ -29,6 +29,8 @@ class Vramsteg < Formula
 
   depends_on "cmake" => :build
 
+  deny_network_access!
+
   def install
     # Workaround for CMake 4 until following commit is in a release:
     # https://github.com/GothenburgBitFactory/vramsteg/commit/b43db620a922b8ee4b8324804aa0fd6150985e03

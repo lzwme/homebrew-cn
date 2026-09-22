@@ -25,6 +25,8 @@ class Libebur128 < Formula
   depends_on "pkgconf" => :build
   depends_on "speex"
 
+  deny_network_access!
+
   def install
     # Upstream issue for CMake 4 workaround: https://github.com/jiixyj/libebur128/issues/134
     system "cmake", "-S", ".", "-B", "build", "-DCMAKE_POLICY_VERSION_MINIMUM=3.5", *std_cmake_args

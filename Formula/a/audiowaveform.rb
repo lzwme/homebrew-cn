@@ -23,6 +23,8 @@ class Audiowaveform < Formula
   depends_on "libsndfile"
   depends_on "mad"
 
+  deny_network_access!
+
   def install
     cmake_args = %w[-DENABLE_TESTS=OFF]
     system "cmake", "-S", ".", "-B", "build", *cmake_args, *std_cmake_args

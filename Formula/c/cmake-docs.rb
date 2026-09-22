@@ -23,6 +23,8 @@ class CmakeDocs < Formula
   depends_on "cmake" => :build
   depends_on "sphinx-doc" => :build
 
+  deny_network_access!
+
   def install
     args = %w[
       -DCMAKE_DOC_DIR=share/doc/cmake

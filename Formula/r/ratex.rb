@@ -1,17 +1,17 @@
 class Ratex < Formula
   desc "Fast TeX engine written in Rust"
   homepage "https://github.com/leoliu0/ratex"
-  url "https://ghfast.top/https://github.com/leoliu0/ratex/archive/refs/tags/v0.4.0.tar.gz"
-  sha256 "9a9ac0bc31a4004271772fbe44aed298a96f5b486b47df2579ea6dd4c8da4dab"
+  url "https://ghfast.top/https://github.com/leoliu0/ratex/archive/refs/tags/v0.4.3.tar.gz"
+  sha256 "b90d2bcba0080d2dcfd564e9c88ff931ce83381a3aa4daba1e355b9dfec637e5"
   license any_of: ["MIT", "Apache-2.0"]
   head "https://github.com/leoliu0/ratex.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "e7b2d8c976913f8ca888ed19bc4ba86e6e1179b9eb8957d01ef29e9e0dbc7710"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "a6d4fe546fd25a0d2174486198febb3dfd32ba3a3b76e88b0030e4728e905b87"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "e4f8f44c00968d33e3276e57fc41f1f89c2ec8455212b2b8fe5f4a94d3d6d498"
-    sha256 cellar: :any,                 arm64_linux:       "8434a5d8598f9b2102da2b7907d051618403fc75489f1c1c95ee3ed6fbcf6a41"
-    sha256 cellar: :any,                 x86_64_linux:      "00561ee86e8259cc814d290aedbedfb59bde351865dc19d092ed09da2faaf76c"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "7b4be39a9fc8b3c8400dd4027d977dfd29da73a319f444cca5696301a19f9ea7"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "94a6b62869c558d38c34226ddbf015a415d6c003ed775f978bfe629981408d21"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "897416b79b37c7e5386732d3402c68f7a98ee14273a44b489bbc665d34b39f6d"
+    sha256 cellar: :any,                 arm64_linux:       "03ec9c159613f69a4b7d5836a388b7036b89cc94647aae6a5ccc5829580d6c29"
+    sha256 cellar: :any,                 x86_64_linux:      "cf02dc6ca3a725527494c760ddee10866424dd6fb96773ff6f8ae58a93a32fd8"
   end
 
   depends_on "rust" => :build

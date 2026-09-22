@@ -1,8 +1,8 @@
 class Pypy < Formula
   desc "Highly performant implementation of Python 2 in Python"
   homepage "https://pypy.org/"
-  url "https://downloads.python.org/pypy/pypy2.7-v7.3.23-src.tar.bz2"
-  sha256 "7aa8eaf414d25f916fe426365404759c56aa28aea6190e65967c4a45f64dc899"
+  url "https://downloads.python.org/pypy/pypy2.7-v8.0.0-src.tar.gz"
+  sha256 "e2a56b587014a97a7e6bd14ae99b55247cf2939d67a05a09e62af0afc16125cb"
   license "MIT"
   head "https://github.com/pypy/pypy.git", branch: "main"
 
@@ -12,14 +12,11 @@ class Pypy < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_golden_gate: "a778b7a86b8a444fcd371ba74b3bfa806d2153eecd4eb812ad1f638766efbdd9"
-    sha256 cellar: :any, arm64_tahoe:       "f403fcf0e3dc6ea661c1f2beea1a9230fa296b99d92ca3dc130c981dda34e719"
-    sha256 cellar: :any, arm64_sequoia:     "88a6553cd49af39771447c20095bd6fc500caeed422a2f932e8f2075eaf250e0"
-    sha256 cellar: :any, arm64_sonoma:      "85f7eab78c8a24c73377af3791bbaf7a6ff275105b008020fd4bb6f91fe6ef17"
-    sha256 cellar: :any, sonoma:            "395b16e6d61733b95ecf1006994d54fb66cccdffcc9a55b78f5dbbe3f386f9be"
-    sha256 cellar: :any, arm64_linux:       "1f98e9cba9cdc685d855555a4b20c5b50a4914e09dc92268e1e328a4dcafcdd3"
-    sha256 cellar: :any, x86_64_linux:      "a7aaf47dac6ff47d8ee48fff1a496baba49fc52c0ff461ff7807b053772acdcb"
+    sha256 cellar: :any, arm64_golden_gate: "1a9b8421c23abf87f1eb974e3bbac18013d042f7b2ecec89f1075485afa03ecc"
+    sha256 cellar: :any, arm64_tahoe:       "55335dba761b5a36705e0a19d8fdd67b0b25d418f275b9c0d385ec92a8f4308c"
+    sha256 cellar: :any, arm64_sequoia:     "edcb93d7c3ff8ccb83975f35ccc8d27d801e29c706bd5a2d6a97b10d378e2b72"
+    sha256 cellar: :any, arm64_linux:       "bfe7a367b2af89a616b04f653720d0fb72fdcc685f4c3a3dfa0d5d8aa7bf6743"
+    sha256 cellar: :any, x86_64_linux:      "7f65b9c1898c96d714bf71b79b87dc30085050399e385af8f1201a549f2c3ccf"
   end
 
   depends_on "pkgconf" => :build
@@ -131,7 +128,7 @@ class Pypy < Formula
                                                    "--no-keep-debug",
                                                    "--no-make-portable"
     libexec.mkpath
-    system "tar", "-C", libexec.to_s, "--strip-components", "1", "-xf", "pypy.tar.bz2"
+    system "tar", "-C", libexec.to_s, "--strip-components", "1", "-xf", "pypy.tar.gz"
 
     %w[setuptools pip].each do |pkg|
       resource(pkg).stage do

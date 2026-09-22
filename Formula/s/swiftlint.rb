@@ -10,13 +10,12 @@ class Swiftlint < Formula
   no_autobump! because: :bumped_by_upstream
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "181c4b4e40bea7ad3b421711781ad66fc017b024857f3b23ccefcbec9ec8787e"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "c6b8e9b80ac560e006af06124c41682ee00eb4db47b4c5500e5e153c86d0c09e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "379cd81efd42ca0b6b7995477f4f4e096b560ca1a4dfa4f68f8246c6446ba3ae"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "758d2d2157b9f40b3dd93042fcb51963d53dcc3835d39538356a5d0bf708ec6c"
-    sha256 cellar: :any_skip_relocation, sonoma:            "6170b6899ed29ca518e2a911667e0f197344931f941ad6a163bd9704a9649085"
-    sha256 cellar: :any,                 arm64_linux:       "02e5dd965a9a891ed798faa5784861aa41a6fb7a128b2960897d8dfc6d0e0b00"
-    sha256 cellar: :any,                 x86_64_linux:      "11453dbb5a364c41b412301d2afd63adcf9554c160d19dc89f38440cd1a5f95a"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "e986deaff3ecaa4dd5c1f169a0900131dd5ff56c5ec4cbf96b73b1033196e593"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "1d50373afecfb6ad0dbb527de4bd678d38cf9f9a42c248e85b7235055a8db68a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "a08a9e47fe0ccaf6c4eacec3961a6897393d9431dfd0fcb52767994f2ea197c4"
+    sha256 cellar: :any,                 arm64_linux:       "309cb49b4012b0dcbf56b74305734209706122e074e2fb93e8e7a62e86c19c1d"
+    sha256 cellar: :any,                 x86_64_linux:      "e79601d7a4c1483ed94d820ca94f8f39609728d7826f29d2aad51b9861549ab3"
   end
 
   depends_on xcode: "8.0"
@@ -27,6 +26,14 @@ class Swiftlint < Formula
 
   on_macos do
     depends_on macos: :ventura
+  end
+
+  deny_network_access!
+
+  def fetch
+    # SwiftPM tries to apply its own sandbox, which cannot nest inside the
+    # build sandbox; Homebrew's sandbox still confines the whole process.
+    system "swift", "package", "resolve", "--disable-sandbox"
   end
 
   def install

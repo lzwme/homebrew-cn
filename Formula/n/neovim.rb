@@ -108,27 +108,32 @@ class Neovim < Formula
 
   deny_network_access!
 
-  def install
-    if build.head?
-      cmake_deps = (buildpath/"cmake.deps/deps.txt").read.lines
-      cmake_deps.each do |line|
-        next unless line.match?(/TREESITTER_[^_]+_URL/)
+  def resource_source_directory(root, resource_name) = root/"deps-build/build/src"/resource_name
 
-        parser, parser_url = line.split
-        parser_name = parser.delete_suffix("_URL")
-        parser_sha256 = cmake_deps.find { |l| l.include?("#{parser_name}_SHA256") }.split.last
-        parser_name = parser_name.downcase.tr("_", "-")
+  def resource_build_directory(root, resource_name) = root/"deps-build/build"/resource_name
 
-        resource parser_name do
-          url parser_url
-          sha256 parser_sha256
-        end
+  def define_resources
+    cmake_deps = (buildpath/"cmake.deps/deps.txt").read.lines
+    cmake_deps.each do |line|
+      next unless line.match?(/TREESITTER_[^_]+_URL/)
+
+      parser, parser_url = line.split
+      parser_name = parser.delete_suffix("_URL")
+      parser_sha256 = cmake_deps.find { |l| l.include?("#{parser_name}_SHA256") }.split.last
+      parser_name = parser_name.downcase.tr("_", "-")
+
+      resource parser_name do
+        url parser_url
+        sha256 parser_sha256
       end
     end
+  end
+
+  def fetch
+    define_resources if build.head?
 
     resources.each do |r|
-      source_directory = buildpath/"deps-build/build/src"/r.name
-      build_directory = buildpath/"deps-build/build"/r.name
+      source_directory = resource_source_directory(buildpath, r.name)
 
       parser_name = r.name.split("-").last
       cmakelists = case parser_name
@@ -138,6 +143,16 @@ class Neovim < Formula
 
       r.stage(source_directory)
       cp buildpath/"cmake.deps/cmake"/cmakelists, source_directory/"CMakeLists.txt"
+    end
+  end
+
+  def install
+    define_resources if build.head?
+
+    resources.each do |r|
+      source_directory = resource_source_directory(buildpath, r.name)
+      build_directory = resource_build_directory(buildpath, r.name)
+      parser_name = r.name.split("-").last
 
       system "cmake", "-S", source_directory, "-B", build_directory, "-DPARSERLANG=#{parser_name}", *std_cmake_args
       system "cmake", "--build", build_directory

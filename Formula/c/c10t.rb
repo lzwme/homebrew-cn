@@ -55,6 +55,8 @@ class C10t < Formula
   # Fix build with Boost 1.89.0, issue ref: https://github.com/udoprog/c10t/issues/315
   patch :DATA
 
+  deny_network_access!
+
   def install
     args = ["-DCMAKE_CXX_STANDARD=11", "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"]
     args << "-DCMAKE_LINK_WHAT_YOU_USE=ON" unless OS.mac?

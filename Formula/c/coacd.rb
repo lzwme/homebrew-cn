@@ -23,6 +23,8 @@ class Coacd < Formula
         revision: "ec03b309fd18102ab1da069f2edf3b37be5d1fb3"
   end
 
+  deny_network_access!
+
   def install
     resource("cdt").stage(buildpath/"3rd/cdt")
 

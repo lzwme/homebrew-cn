@@ -11,6 +11,8 @@ class TlExpected < Formula
 
   depends_on "cmake" => :build
 
+  deny_network_access!
+
   def install
     args = %w[
       -DEXPECTED_ENABLE_TESTS=OFF

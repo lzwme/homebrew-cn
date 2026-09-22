@@ -1,29 +1,29 @@
 class Zlog < Formula
   desc "High-performance C logging library"
   homepage "https://github.com/HardySimpson/zlog"
-  url "https://ghfast.top/https://github.com/HardySimpson/zlog/archive/refs/tags/1.2.18.tar.gz"
-  sha256 "3977dc8ea0069139816ec4025b320d9a7fc2035398775ea91429e83cb0d1ce4e"
+  url "https://ghfast.top/https://github.com/HardySimpson/zlog/archive/refs/tags/1.2.19.tar.gz"
+  sha256 "475df1b30be64190fd692de834ad4c45510f996188b5ecd4b6e3da2527c74a32"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_golden_gate: "cac0c67d3017eed10d2c8874ee74cdf0330c544c5c3be50ba562bbc833c44eb7"
-    sha256 cellar: :any,                 arm64_tahoe:       "e71ea809671f98c7c971dd32bb10b6277631f2216ad5c47b3742449c07f0c2f0"
-    sha256 cellar: :any,                 arm64_sequoia:     "048b4b3e71147569f94ac5a81fcaabe259d313f81bc0634617737fbb3c38e98e"
-    sha256 cellar: :any,                 arm64_sonoma:      "37e945fe1dd889750af896e816c0790db9b18f3a534772cac3d2be22e720b637"
-    sha256 cellar: :any,                 arm64_ventura:     "5553716576ac0457c4fb359f1f5a68304ee9801b7741a29d14d20ef7d2f45791"
-    sha256 cellar: :any,                 arm64_monterey:    "d88d92564bd205190476a208b4bf684f20e6f4c8390c050a42a4e8acf31cc0b1"
-    sha256 cellar: :any,                 sonoma:            "fd76e9b11c931478c0106c32c4f67feb6f5c1ddfd10cdf985278ececff977aa6"
-    sha256 cellar: :any,                 ventura:           "3a641c10f7447de85a8b04d1c283aa0b9804efd9feb73115b68afd2cd06f13cf"
-    sha256 cellar: :any,                 monterey:          "84cded237749c8ffb59d04d0426765cf86f42beefe415e54fb6ad99508c7f247"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "2262180dca42195cb202e911f78dff3225ca41768ab9ea44c99854f8c34baa8c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "868ff2416cf589e55963163d173f2b30515350a114b0dc70183f6b0183c62191"
+    sha256 cellar: :any, arm64_golden_gate: "4b7acd797537992097538927b710515616f0d9242c833505f3253aa393326184"
+    sha256 cellar: :any, arm64_tahoe:       "68df05708e497ba44e05f9a29ae69300e80828d8d9aed525be3339d1c2a1c992"
+    sha256 cellar: :any, arm64_sequoia:     "12c23c9213302e0f2d37bd0dd8054d61759e24845677afc271be2ee3ce07e67e"
+    sha256 cellar: :any, arm64_linux:       "b67c8df75531aa96bbe34618e711dd0f908fc9c4ca219f042afbb49bfd426398"
+    sha256 cellar: :any, x86_64_linux:      "a6812c10fbf7026cb9dd067b20eb7785dd232915ebb420581060a0385c12cf81"
+  end
+
+  on_macos do
+    depends_on "make" => :build
   end
 
   deny_network_access!
 
   def install
-    system "make", "PREFIX=#{prefix}"
-    system "make", "PREFIX=#{prefix}", "install"
+    make = OS.mac? ? "gmake" : "make"
+
+    system make, "PREFIX=#{prefix}"
+    system make, "PREFIX=#{prefix}", "install"
   end
 
   test do

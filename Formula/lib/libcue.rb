@@ -24,6 +24,8 @@ class Libcue < Formula
   uses_from_macos "bison" => :build
   uses_from_macos "flex" => :build
 
+  deny_network_access!
+
   def install
     system "cmake", "-S", ".", "-B", "build",
                     "-DBUILD_SHARED_LIBS=ON",

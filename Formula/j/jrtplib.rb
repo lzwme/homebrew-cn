@@ -26,9 +26,11 @@ class Jrtplib < Formula
   end
 
   depends_on "cmake" => :build
+
   depends_on "pkgconf" => :build
   depends_on "jthread"
 
+  deny_network_access!
   def install
     # Workaround to build with CMake 4
     args = %w[-DCMAKE_POLICY_VERSION_MINIMUM=3.5]

@@ -18,6 +18,8 @@ class Sheenbidi < Formula
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
 
+  deny_network_access!
+
   def install
     args = [
       "-DBUILD_SHARED_LIBS=ON",

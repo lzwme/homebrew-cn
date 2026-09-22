@@ -16,6 +16,15 @@ class Oxipng < Formula
 
   depends_on "rust" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+    # `xtask` (used for man page generation) is a standalone manifest with its
+    # own lockfile, outside the root workspace.
+    system "cargo", "fetch", *std_cargo_fetch_args, "--manifest-path", "xtask/Cargo.toml"
+  end
+
   def install
     system "cargo", "install", *std_cargo_args
     system "cargo", "run",

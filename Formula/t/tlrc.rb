@@ -21,6 +21,13 @@ class Tlrc < Formula
   conflicts_with "tealdeer", because: "both install `tldr` binaries"
   conflicts_with "tldr", because: "both install `tldr` binaries"
 
+  # Test downloads the tldr pages cache on first run
+  allow_network_access! :test
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
     system "cargo", "install", *std_cargo_args
 

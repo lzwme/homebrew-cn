@@ -21,6 +21,8 @@ class Alpscore < Formula
   depends_on "hdf5"
   depends_on "open-mpi"
 
+  deny_network_access!
+
   def install
     args = %W[
       -DALPS_BUILD_SHARED=ON

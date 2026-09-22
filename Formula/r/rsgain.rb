@@ -23,6 +23,8 @@ class Rsgain < Formula
   depends_on "libebur128"
   depends_on "taglib"
 
+  deny_network_access!
+
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"

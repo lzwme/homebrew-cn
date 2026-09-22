@@ -22,6 +22,8 @@ class Blisp < Formula
   depends_on "argtable3"
   depends_on "libserialport"
 
+  deny_network_access!
+
   def install
     args = %w[
       -DBLISP_USE_SYSTEM_LIBRARIES=ON

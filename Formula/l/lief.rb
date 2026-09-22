@@ -40,6 +40,8 @@ class Lief < Formula
     resolves "https://github.com/lief-project/LIEF/pull/1380"
   end
 
+  deny_network_access!
+
   def install
     rm_r Dir["third-party/*"]
     resource("mbedtls").stage do

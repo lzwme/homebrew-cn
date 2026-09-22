@@ -13,6 +13,8 @@ class Inja < Formula
   depends_on "cmake" => :build
   depends_on "nlohmann-json"
 
+  deny_network_access!
+
   def install
     args = %w[
       -DBUILD_BENCHMARK=OFF

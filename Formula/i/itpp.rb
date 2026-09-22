@@ -23,6 +23,8 @@ class Itpp < Formula
   depends_on "cmake" => :build
   depends_on "fftw"
 
+  deny_network_access!
+
   def install
     # Rename VERSION file to avoid build failure: version:1:1: error: expected unqualified-id
     # Reported upstream at: https://sourceforge.net/p/itpp/bugs/262/

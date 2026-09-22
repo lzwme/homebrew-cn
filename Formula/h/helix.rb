@@ -23,7 +23,7 @@ class Helix < Formula
   deny_network_access!
 
   def fetch
-    system "cargo", "fetch", "--locked", "--target", "host-tuple"
+    system "cargo", "fetch", *std_cargo_fetch_args
 
     # HEAD builds need to fetch grammar sources bundled in release tarballs.
     system "cargo", "run", "--locked", "--package", "helix-loader", "--bin", "hx-loader" if build.head?

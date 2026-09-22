@@ -1,8 +1,8 @@
 class Oxlint < Formula
   desc "High-performance linter for JavaScript and TypeScript written in Rust"
   homepage "https://oxc.rs/"
-  url "https://ghfast.top/https://github.com/oxc-project/oxc/archive/refs/tags/oxlint_v1.83.0.tar.gz"
-  sha256 "9f4540efd8e95068d26e277b7c6433d76bf788f15b4670317fbcf26c75b707fb"
+  url "https://ghfast.top/https://github.com/oxc-project/oxc/archive/refs/tags/oxlint_v1.85.0.tar.gz"
+  sha256 "cd5fe4bb755e4ef23b4be0ebf11ae4f6c84b46add4104ea06b04c32f2e4bf3b2"
   license "MIT"
   head "https://github.com/oxc-project/oxc.git", branch: "main"
 
@@ -12,14 +12,20 @@ class Oxlint < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "d80c28fa777dc2a446fb9ef9fe57a970623d156a53751067c0e074e675e791c1"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "f2920a05c7c0a887de7d7b1210e4129264a76480d8aa3e930eb79acc6c870955"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "2dd0124d6079d87e69cc8f1ff1b2945c5d52bf4c002889549da5ede03647f963"
-    sha256 cellar: :any,                 arm64_linux:       "e3069820d524408d992bc81cf0c07538b28ecc6a454ac16961b7f2e22aacbbf1"
-    sha256 cellar: :any,                 x86_64_linux:      "530c3ca116d2c7f0acfcf8d7f415d5d11bdeff36caf5f39fb52f4ac589a03332"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "e9d060806c356f0377e29ef55e19fc07f1d337e6889531fb77dddd24d8b08fd3"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "b5bcb325b33ab83689d03041dfac9e2442b1f1510963e0690ce9dc485ce52519"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "95a86d3144240e678bb60fef2fb820899db23d56cbd5add80352c71b967dc747"
+    sha256 cellar: :any,                 arm64_linux:       "c683245b3bb1c75644f43dc6b4aa89b45b8b77bcb5ddc66f30ee33644e356a1d"
+    sha256 cellar: :any,                 x86_64_linux:      "66d6ef02ed3f75beca390d7bd4d8d713ead878c2fdd6803ac987b0fe1e916449"
   end
 
   depends_on "rust" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
 
   def install
     system "cargo", "install", *std_cargo_args(path: "apps/oxlint")

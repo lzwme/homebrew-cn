@@ -21,6 +21,8 @@ class Keystone < Formula
   depends_on "cmake" => :build
   depends_on "python@3.14" => :build
 
+  deny_network_access!
+
   def install
     args = %W[
       -DPYTHON_EXECUTABLE=#{python3}

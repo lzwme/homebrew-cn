@@ -8,13 +8,12 @@ class Libvpx < Formula
   head "https://chromium.googlesource.com/webm/libvpx.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "e398b92b26506522e80a74dd0b584bcfb8bc96ba3eaf1003ee26c295511af381"
-    sha256 cellar: :any, arm64_tahoe:       "0b25798cd931cf522c100b7dafbdb75a4bf9f3758e3036e91bef071375d3ec09"
-    sha256 cellar: :any, arm64_sequoia:     "2476b7be93b0a47ca091583c16e576871b50e7e29cb84efe9f9b5bd805793371"
-    sha256 cellar: :any, arm64_sonoma:      "c5cc847271f8da90dfd2b72db35fa134fa5cfdda346d7077f41a57a27b2c7a7f"
-    sha256 cellar: :any, sonoma:            "041dc03d0f23bff4696145e2205befdf6a9612d04401a0e4b60f9b619e8fb323"
-    sha256 cellar: :any, arm64_linux:       "91cb1cd1ae26b6327ee06e4b8e3c9031829d5592c186848286aaa031c6dec0b5"
-    sha256 cellar: :any, x86_64_linux:      "813cf7ed3afbaf502065971561bf0d17e0da569a4d70ac32d0ee1867cf164423"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "f9a11c2c10694acd896b66b09697b159cb82f5552837603cbb90366049562572"
+    sha256 cellar: :any, arm64_tahoe:       "f98fa074f8eef7b2de3346fb83d4da15e7e6284fd13bf65210d855043f78f8c1"
+    sha256 cellar: :any, arm64_sequoia:     "dd7924c0a05fa5f840f17ab9f5fac72d8672d75b2a7d44dbbf811274f70d17d6"
+    sha256 cellar: :any, arm64_linux:       "82c10ba5a9b83d8afc77b2a9e7025ccfb9d75aee7332b85e489b374240347754"
+    sha256 cellar: :any, x86_64_linux:      "85e403fcad2c6060c590a53b5cd17d8685ce155fd57385a4d17e70809e62e282"
   end
 
   on_intel do
@@ -23,6 +22,8 @@ class Libvpx < Formula
 
   # Add Golden Gate support. Remove patch when supported in a released version.
   patch :DATA
+
+  deny_network_access!
 
   def install
     ENV.runtime_cpu_detection

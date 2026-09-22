@@ -1,18 +1,17 @@
 class Atuin < Formula
   desc "Improved shell history for zsh, bash, fish and nushell"
   homepage "https://atuin.sh/"
-  url "https://ghfast.top/https://github.com/atuinsh/atuin/releases/download/v18.22.0/source.tar.gz"
-  sha256 "46f9d940105791b09d870ca87e8952190dc69f968ea0036502a43840f83a56a0"
+  url "https://ghfast.top/https://github.com/atuinsh/atuin/releases/download/v18.23.0/source.tar.gz"
+  sha256 "64b4b9b0f84ef34bcfa88e992d38cc0b95d3cf1f6d470bb695d3ef0231445b26"
   license "MIT"
   head "https://github.com/atuinsh/atuin.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "36bcdf51929806d9ac8308fda1dafe4d128b39c4fa7249c46313e3134ad81fc3"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "08b41ecb401bc825a26b86850a7a3199b56292866e0db3dc048b632267cc24ad"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "68a41c4fe6269de733483192666f51d1fc435a2130e768bf45b2b5cfecc03630"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "ccf9d4a21490dfe4f165f7221a5ea0be578d8ed7d68123d6d45a6152d2b436fd"
-    sha256 cellar: :any,                 arm64_linux:       "4ed18f8b2b73872f82ce7f9cefc569e43051eb5ced8191f45ea2001808ae83e4"
-    sha256 cellar: :any,                 x86_64_linux:      "853bf72c33922f42bfdebe79eb56ea1355c82a19df306d36416ec2637f07c1f3"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "740304375a97cc50f12c95b5775ce1b5ceda44d62f4bca8297ace69e24aa1d70"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "6cfda78404e0ff42c312745b37e5d94a1c56b5087f739da0138bb097c85087f6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "f38f477450693215c9c6656ba4c2177235faa13698ac2029acf5a47303b45b1f"
+    sha256 cellar: :any,                 arm64_linux:       "5bc61c272251aadc929ba4c3ce03239a5f50aa6f816a95938542fca532c95ee2"
+    sha256 cellar: :any,                 x86_64_linux:      "a8e7f16af81e916e5ae481daebdb08b8c49da508b934e9f3828dccce42531be1"
   end
 
   depends_on "pkgconf" => :build
@@ -26,7 +25,7 @@ class Atuin < Formula
   deny_network_access!
 
   def fetch
-    system "cargo", "fetch", "--locked", "--target", "host-tuple"
+    system "cargo", "fetch", *std_cargo_fetch_args
   end
 
   def install

@@ -35,6 +35,8 @@ class Direwolf < Formula
     depends_on "systemd"
   end
 
+  deny_network_access!
+
   def install
     inreplace "src/symbols.c", "/opt/local/share", share
     inreplace "conf/CMakeLists.txt", " /usr/lib/udev/rules.d", " #{lib}/udev/rules.d"

@@ -17,9 +17,11 @@ class JsonFortran < Formula
   end
 
   depends_on "cmake" => :build
+
   depends_on "ford" => :build
   depends_on "gcc" # for gfortran
 
+  deny_network_access!
   def install
     args = %w[
       -DUSE_GNU_INSTALL_CONVENTION:BOOL=TRUE

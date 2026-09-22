@@ -23,6 +23,8 @@ class Wfa2Lib < Formula
     depends_on "libomp"
   end
 
+  deny_network_access!
+
   def install
     system "cmake", "-S", ".", "-B", "build", "-DCMAKE_INSTALL_RPATH=#{rpath}", "-DOPENMP=ON", *std_cmake_args
     system "cmake", "--build", "build"

@@ -1,17 +1,17 @@
 class Pup < Formula
   desc "CLI companion with 200+ commands across 33+ Datadog products"
   homepage "https://www.datadoghq.com"
-  url "https://ghfast.top/https://github.com/DataDog/pup/releases/download/v1.22.1/pup_1.22.1_source.tar.gz"
-  sha256 "678ef18627a754fad5b8bb7d58e873cd1d70afb5ca25f3002a777fa73b56a4fb"
+  url "https://ghfast.top/https://github.com/DataDog/pup/releases/download/v1.23.0/pup_1.23.0_source.tar.gz"
+  sha256 "82bb12b873cff2a67ddc3dc1f46cc43bf49070a92fdf700fb7ac4bd8fde0612c"
   license "Apache-2.0"
   head "https://github.com/DataDog/pup.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "9604711f892f537f342139b5579e79d4736eb07f76025e97a3dfba1b1017ce36"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "dc22f8c648c7c7e9736e40e5c5c7cbc8725a38b708453fc2b66ce0ebb931c60a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "92bdff47600dc362940b3a8624545c7b996ddb060388ecf91fa648754418b6cb"
-    sha256 cellar: :any,                 arm64_linux:       "7a49587a0cdd14ebf231c32b535e4afc9e370d06cfeda7dece02abf645804bfa"
-    sha256 cellar: :any,                 x86_64_linux:      "9b978bfaf9217c1a1b144bcbcc4e33b6c1d268d15ab89bd78702c8073bff2092"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "38cb473f0835dc6ce97dff2e03b0d610ea8f47f63f450d965ac4286be441192c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "5a59decd6bdccef5f78c7662d9b05d41c30ffd7269040911bd942e0541e9a7f9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "05d88fb3c17804f544dcd124dc517e2019df2207593dcc8696e2be21ccbc5d87"
+    sha256 cellar: :any,                 arm64_linux:       "0ebaef3533eafc2783eeacfb984728d93f5ca95a2a8e13ea0611e92b3978b443"
+    sha256 cellar: :any,                 x86_64_linux:      "349b2a845b8db9ac3e5b3d01ac5ab7f551100e085a9ce961c9276343b1bfcadd"
   end
 
   depends_on "pkgconf" => :build
@@ -24,7 +24,7 @@ class Pup < Formula
   deny_network_access!
 
   def fetch
-    system "cargo", "fetch", "--locked", "--target", "host-tuple"
+    system "cargo", "fetch", *std_cargo_fetch_args
   end
 
   def install

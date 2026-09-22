@@ -35,6 +35,8 @@ class Openjazz < Formula
     sha256 "ed025415c0bc5ebc3a41e7a070551bdfdfb0b65b5314241152d8bd31f87c22da"
   end
 
+  deny_network_access!
+
   def install
     args = ["-DDATAPATH=#{pkgshare}"]
     if build.head?

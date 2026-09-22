@@ -55,6 +55,8 @@ class MysqlClient < Formula
     cause "Requires C++20"
   end
 
+  deny_network_access!
+
   def install
     # Disable ABI checking
     inreplace "cmake/abi_check.cmake", "RUN_ABI_CHECK 1", "RUN_ABI_CHECK 0" if OS.linux?

@@ -31,6 +31,8 @@ class Vc4asm < Formula
     resolves "https://github.com/maazl/vc4asm/pull/28"
   end
 
+  deny_network_access!
+
   def install
     # Upstream create a "CMakeCache.txt" directory in their tarball
     # because they don't want CMake to write a cache file, but brew

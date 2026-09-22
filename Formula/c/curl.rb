@@ -55,6 +55,9 @@ class Curl < Formula
     depends_on "zlib-ng-compat"
   end
 
+  # Test fetches remote URLs
+  allow_network_access! :test
+
   def install
     tag_name = "curl-#{version.to_s.tr(".", "_")}"
     if build.stable? && stable.mirrors.grep(%r{\Ahttps?://(www\.)?github\.com/}).first.exclude?(tag_name)

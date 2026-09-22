@@ -26,6 +26,8 @@ class Blitz < Formula
 
   uses_from_macos "python" => :build
 
+  deny_network_access!
+
   def install
     # Workaround to build with CMake 4
     args = %w[-DCMAKE_POLICY_VERSION_MINIMUM=3.5]

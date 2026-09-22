@@ -1,8 +1,8 @@
 class Srtp < Formula
   desc "Implementation of the Secure Real-time Transport Protocol"
   homepage "https://github.com/cisco/libsrtp"
-  url "https://ghfast.top/https://github.com/cisco/libsrtp/archive/refs/tags/v2.8.0.tar.gz"
-  sha256 "d123dcff5c56d4f1a9006f2b311ea99a85016cbf3bb24b1007885d422237db85"
+  url "https://ghfast.top/https://github.com/cisco/libsrtp/archive/refs/tags/v2.8.1.tar.gz"
+  sha256 "ef5569220749529d778013aae1178391d972570a2b4f7288dda22effa875b07c"
   license "BSD-3-Clause"
   compatibility_version 1
   head "https://github.com/cisco/libsrtp.git", branch: "main"
@@ -13,17 +13,17 @@ class Srtp < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_golden_gate: "9110c79ed8d27f6f9cc1cedc48c7266903a98a71eb9ce3df358ba95a2ffd685b"
-    sha256 cellar: :any,                 arm64_tahoe:       "57991308e7a77e9101f56b5746b72dc84d7ec71cccb0952255e150bb61fa8b31"
-    sha256 cellar: :any,                 arm64_sequoia:     "456aa17cfcc530e2e116ea4dc8dc8bac7d1f57e82e9354da9c5afdf73efb719a"
-    sha256 cellar: :any,                 arm64_sonoma:      "fe511a421b2601d56208bca5b723dcf0cedabac7820b6dbc29b2e9a9975027be"
-    sha256 cellar: :any,                 sonoma:            "1f4d6d9dd142b054f6ce5951553620d5638bcdad5b476049a8d8aef66699f3e0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "d8a50543ee3639a000b4e79006e72d66b7023905bb96a7b2699fc839cf16fd0a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "5efdbe2656736401da2b1b83008f1b61be3831f33c675d77f1b3446888a01813"
+    sha256 cellar: :any, arm64_golden_gate: "3649654b411ae51017c7bec40da936c910bd5eea3498be0002775cd8654890bd"
+    sha256 cellar: :any, arm64_tahoe:       "6f392a60b22b5699938c7a3d1622cc69cbc70c3f9e1d241f4e4d76c86b6eefbc"
+    sha256 cellar: :any, arm64_sequoia:     "3c19e95950df9ef96eb6ca4d100ac7811bf6055b0a0ea41911138d016ff62de2"
+    sha256 cellar: :any, arm64_linux:       "aeea299389b07bab9158c453a11cb00bd1fefa82156285e8b9f6345976e2d74e"
+    sha256 cellar: :any, x86_64_linux:      "89882f2b0d9bc32098721fb2855719e9d217b8b33f1345215972c3da1412c141"
   end
 
   depends_on "pkgconf" => :build
   depends_on "openssl@3"
+
+  deny_network_access!
 
   def install
     system "./configure", "--enable-openssl", *std_configure_args

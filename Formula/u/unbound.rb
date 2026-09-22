@@ -29,6 +29,8 @@ class Unbound < Formula
 
   uses_from_macos "expat"
 
+  deny_network_access!
+
   def install
     expat_prefix = OS.mac? ? "#{MacOS.sdk_for_formula(self).path}/usr" : formula_opt_prefix("expat")
     args = %W[

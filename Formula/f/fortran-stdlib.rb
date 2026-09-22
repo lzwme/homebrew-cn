@@ -20,6 +20,8 @@ class FortranStdlib < Formula
   depends_on "fypp" => :build
   depends_on "gcc" # for gfortran
 
+  deny_network_access!
+
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"

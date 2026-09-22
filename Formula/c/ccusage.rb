@@ -1,16 +1,16 @@
 class Ccusage < Formula
   desc "CLI tool for analyzing Claude Code usage from local JSONL files"
   homepage "https://github.com/ccusage/ccusage"
-  url "https://ghfast.top/https://github.com/ccusage/ccusage/archive/refs/tags/v20.0.23.tar.gz"
-  sha256 "24c16f14ee72801ac913d751b891a8eb9dde6ef85ee5302c1e26643a745efa84"
+  url "https://ghfast.top/https://github.com/ccusage/ccusage/archive/refs/tags/v20.0.25.tar.gz"
+  sha256 "67fb7d06af4d46f31391381a58e3f51cba6480d34b20a561b288cb95093b5478"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "d85125f99e1fcded832b25507ecde4c9f91def8c73a9f2ad72b1e6a9e6161280"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "557b98b6bdb2d49dc683b5d3644bde57f3c59216cb6321a05522b025b9d97e9a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "4dc971d28fa21d5e7af44952556bf0c184b1550acfca3191e570a1791dbb5159"
-    sha256 cellar: :any,                 arm64_linux:       "d35c414649920e9779b4fb30eb87e05ed87a8d611dcddfefb2d81a881c66e21c"
-    sha256 cellar: :any,                 x86_64_linux:      "1e698f3864277cb152344dce7d668c11f9d13aa231fe115bbb2bca2456413921"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "910fb1d30a51d5b08e04e7349ba8cf23d8f44433959263f6122485c67407255a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "edec62abebc3745c53e512e38b150e88089357920da93bc08c61cdca9dbee2a8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "d3679153d327417b80c7d8c8fd5c89573f547a0aaa282194165b6e885444cee3"
+    sha256 cellar: :any,                 arm64_linux:       "93da6373fa1c83b070f147f7b0bfe4a8664f3ec6462ddbff77c7d327e3e79a0d"
+    sha256 cellar: :any,                 x86_64_linux:      "309523d1afece1ef00ac9f6767349324daad9d03ffc15c30915723f1f9c5598b"
   end
 
   depends_on "rust" => :build

@@ -24,6 +24,8 @@ class Snappystream < Formula
   depends_on "cmake" => :build
   depends_on "snappy"
 
+  deny_network_access!
+
   def install
     args = %w[
       -DBUILD_TESTS=ON

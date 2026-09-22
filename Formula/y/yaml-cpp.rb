@@ -18,6 +18,8 @@ class YamlCpp < Formula
 
   depends_on "cmake" => :build
 
+  deny_network_access!
+
   def install
     args = %w[-DYAML_BUILD_SHARED_LIBS=ON -DYAML_CPP_BUILD_TESTS=OFF]
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args

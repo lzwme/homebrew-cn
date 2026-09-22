@@ -38,6 +38,8 @@ class Stlink < Formula
   depends_on "pkgconf" => :build
   depends_on "libusb"
 
+  deny_network_access!
+
   def install
     libusb = Formula["libusb"]
     args = %W[

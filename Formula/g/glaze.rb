@@ -11,6 +11,8 @@ class Glaze < Formula
 
   depends_on "cmake" => [:build, :test]
 
+  deny_network_access!
+
   def install
     args = %w[
       -Dglaze_DEVELOPER_MODE=OFF

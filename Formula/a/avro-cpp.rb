@@ -38,6 +38,8 @@ class AvroCpp < Formula
     end
   end
 
+  deny_network_access!
+
   def install
     (buildpath/"cmake").install resource("avro-cpp-config.cmake.in")
 

@@ -26,6 +26,8 @@ class Muparser < Formula
 
   link_overwrite "lib/libmuparser.dylib", "lib/libmuparser.2.dylib"
 
+  deny_network_access!
+
   def install
     system "cmake", "-S", ".", "-B", "build", "-DENABLE_OPENMP=ON", *std_cmake_args
     system "cmake", "--build", "build"

@@ -14,6 +14,8 @@ class Dlpack < Formula
   depends_on "numpy" => :test
   depends_on "python@3.14" => :test
 
+  deny_network_access!
+
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"

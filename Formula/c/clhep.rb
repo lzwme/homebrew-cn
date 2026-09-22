@@ -18,6 +18,8 @@ class Clhep < Formula
 
   depends_on "cmake" => :build
 
+  deny_network_access!
+
   def install
     # Build directory is not allowed inside source folder
     (buildpath/"CLHEP").install buildpath.children

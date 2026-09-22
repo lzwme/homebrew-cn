@@ -28,6 +28,8 @@ class Wimlib < Formula
     depends_on "ntfs-3g"
   end
 
+  deny_network_access!
+
   def install
     args = %w[--disable-silent-rules]
     args += %w[--without-fuse --without-ntfs-3g] if OS.mac?

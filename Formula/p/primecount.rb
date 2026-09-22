@@ -22,6 +22,8 @@ class Primecount < Formula
     depends_on "libomp"
   end
 
+  deny_network_access!
+
   def install
     system "cmake", "-S", ".", "-B", "build", "-DBUILD_SHARED_LIBS=ON",
                                               "-DBUILD_LIBPRIMESIEVE=OFF",

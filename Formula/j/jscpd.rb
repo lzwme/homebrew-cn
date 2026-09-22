@@ -1,16 +1,16 @@
 class Jscpd < Formula
   desc "Copy/paste detector for programming source code"
   homepage "https://jscpd.dev/"
-  url "https://ghfast.top/https://github.com/kucherenko/jscpd/archive/refs/tags/v5.3.0.tar.gz"
-  sha256 "a0287018300ebee9e406793b54f2df106be1eee5cdab94c6172cdd5869b49d39"
+  url "https://ghfast.top/https://github.com/kucherenko/jscpd/archive/refs/tags/v5.3.1.tar.gz"
+  sha256 "1d457dfac79e056825e3e45fd70356b4e36eef6bba20a88eea0397d13505cf9e"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "9a4e418733c58915e2af1fef52ecca3eac2c7073e204b4eb076ed36f429e186a"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "c0698ca50ed6feb4b0c55bd8272e025042580ff80fd8fd21582f262a6bc515ff"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "83137e60fd49674d84d9e9cf1cedd38e6aedd88f5df74a9ad52056f3026912c0"
-    sha256 cellar: :any,                 arm64_linux:       "bfa8c7989e320e984db789cfaa795afa8158654b71e2f7b10dc30b9ca9958109"
-    sha256 cellar: :any,                 x86_64_linux:      "10ade997af4bdb669dd684617e1b3ad182a4d3d07e2ccf755d68fcae17891a43"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "13083c283f3e2cc9ad15c78e25396775bde3364d0ab8eff999237a55a22310bd"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "bd6c8438c507f64b87ad57addf5b682f5b79a3edf23a13273954e727c830f59b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "8cfec2a4549025a271bc6c75d2d22ce4dbc1ec65b9f3f68bff190e0a078dbf60"
+    sha256 cellar: :any,                 arm64_linux:       "7ee919cff9b9e9cd8182f9e1bfb98f789934d277683408b66b4d37f72348e338"
+    sha256 cellar: :any,                 x86_64_linux:      "4ef6cb663a8cbfdf68adc1290c2340a09d5d1cfb8e1317aca297ef0f1a97fa4d"
   end
 
   depends_on "rust" => :build
@@ -18,7 +18,7 @@ class Jscpd < Formula
   deny_network_access!
 
   def fetch
-    system "cargo", "fetch", "--locked", "--target", "host-tuple", "--manifest-path", "rust/Cargo.toml"
+    system "cargo", "fetch", *std_cargo_fetch_args, "--manifest-path", "rust/Cargo.toml"
   end
 
   def install

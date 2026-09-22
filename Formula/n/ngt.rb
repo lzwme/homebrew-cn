@@ -29,6 +29,8 @@ class Ngt < Formula
     depends_on "openblas"
   end
 
+  deny_network_access!
+
   def install
     args = %W[
       -DCMAKE_INSTALL_RPATH=#{rpath}

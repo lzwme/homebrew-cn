@@ -34,6 +34,8 @@ class Vcflib < Formula
     depends_on "zlib-ng-compat"
   end
 
+  deny_network_access!
+
   def install
     args = ["-DZIG=OFF"]
     args << "-DCMAKE_INSTALL_RPATH=#{rpath}" if OS.mac?

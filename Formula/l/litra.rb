@@ -23,6 +23,12 @@ class Litra < Formula
     depends_on "hidapi"
   end
 
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
     # Update to use system hidapi for linux build, upstream pr, https://github.com/timrogers/litra-rs/pull/210
     if OS.linux?

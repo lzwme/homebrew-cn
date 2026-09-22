@@ -3,18 +3,16 @@ class Pgcli < Formula
 
   desc "CLI for Postgres with auto-completion and syntax highlighting"
   homepage "https://pgcli.com/"
-  url "https://files.pythonhosted.org/packages/97/5d/d6fcf98556e6089915e12af12c6189e9d774d82b473c4ce9e124a62ec235/pgcli-4.6.0.tar.gz"
-  sha256 "4b0633a6ce753ea38fb1fe2dc54b66b732c4d0b29fadf48cad78b2e7f6636d9d"
+  url "https://files.pythonhosted.org/packages/3e/bd/66e94c76c8e3e52d9194eec079ab2b7a253896e6b1422d0c726094955299/pgcli-4.7.1.tar.gz"
+  sha256 "195d00ae994c89d43ed8e570ddfa0a9fb6105e6b783dfc1eb6cea9b326dc3346"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "23c082d48fb7c78273602d851b830e95f1c18c05e45a0da453561f0e7c095931"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "482b23c78df2b2d9e8162ca4bfbb3faf42edbe03fb9b3cc8a82242f95dab7af2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "93dd4abdbf90168ccba03d291f6c72a9cb2f59537eae9b856574050eccb76a25"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "901759856e69c0eab10d7a13a20f4d90ba9d16834291dee684694e4eb35f36b3"
-    sha256 cellar: :any_skip_relocation, sonoma:            "57964a8208659cf15900cd8b0afc66a64b555086695392acb9667666ea444fd3"
-    sha256 cellar: :any,                 arm64_linux:       "330e12582566f3dded4ce5197694a017de7c58e49fbc9cb658ab95bffd416f83"
-    sha256 cellar: :any,                 x86_64_linux:      "628a83a33f7fdf9d8f4bfc8cab765496e0f88fd25cc07ae0ec5222bad8db030c"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "077bad072d0eb3b2d374703e2e3d1f23e3fbd4566b6ffc15a9797ac51e54cb9d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "e79ae34e6ac22f15dbe552083a419fe88b3c26870a3f1ba04e081f5be044ec57"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "d001290f9f337c7febb957dcffd3130ac59f14482a4469a15ed9dbf71a6aaa0b"
+    sha256 cellar: :any,                 arm64_linux:       "c4592205e4cf7b2e710dd47038e7e390841f2b49256a40f129f177d0303775ba"
+    sha256 cellar: :any,                 x86_64_linux:      "b3cc63f9d20cdf05df70b68bb9a1c9b12484ec4f9ebd530e0d6a38c3cb9a19e4"
   end
 
   depends_on "libpq"
@@ -26,8 +24,8 @@ class Pgcli < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/76/d4/81420972a676e8ffea40450d8c8c92943e7218a78fe9b64359836cc9876b/click-8.4.2.tar.gz"
-    sha256 "9a6cea6e60b17ebe0a44c5cc636d94f09bd66142c1cd7d8b4cd731c4917a15f6"
+    url "https://files.pythonhosted.org/packages/c7/0e/7fa0ef50764b67090eca4114772a2abf8b6148198475e54c660b97caeee6/click-8.5.0.tar.gz"
+    sha256 "ba0d2089de75ea0310e2dde03160e6ca10009947fb95a182f9b54021bb272e34"
   end
 
   resource "configobj" do
@@ -46,8 +44,8 @@ class Pgcli < Formula
   end
 
   resource "psycopg" do
-    url "https://files.pythonhosted.org/packages/db/2f/cb91e5502ec9de1de6f1b76cfbf69531932725361168bb06963620c77e2e/psycopg-3.3.4.tar.gz"
-    sha256 "e21207764952cff81b6b8bdacad9a3939f2793367fdac2987b3aac36a651b5bc"
+    url "https://files.pythonhosted.org/packages/76/26/3ea4ca5eaea1c0debcdf7ee7c1613fbe721dc27a03c461c0817ffd8a0601/psycopg-3.3.6.tar.gz"
+    sha256 "c081f2250df751a943036e42db6df4571c66cd0aabe8291a7a506512b12007d2"
   end
 
   resource "pygments" do
@@ -76,8 +74,8 @@ class Pgcli < Formula
   end
 
   resource "wcwidth" do
-    url "https://files.pythonhosted.org/packages/34/74/c6428f875774288bec1396f5bfcbc2d925700a4dad61727fd5f2b12f249d/wcwidth-0.8.2.tar.gz"
-    sha256 "91fbef97204b96a3d4d421609b80340b760cf33e26da123ff243d76b1fda8dda"
+    url "https://files.pythonhosted.org/packages/3d/7a/f98d4ada7c499565ab0c0fcef28a4e54fafa72b8228a6309803c80493c92/wcwidth-0.8.4.tar.gz"
+    sha256 "2dae09efa25253ae2874188e86d6861af3b1652aef4118cdf3f0bda288a957fb"
   end
 
   def install
@@ -94,7 +92,7 @@ class Pgcli < Formula
   end
 
   test do
-    assert_match "Invalid DSNs found in the config file", shell_output("#{bin}/pgcli --list-dsn 2>&1", 1)
+    assert_match version.to_s, shell_output("#{bin}/pgcli --version")
     (testpath/"pgclirc").write <<~EOS
       [alias_dsn]
       homebrew_dsn = postgresql://homebrew:password@localhost/dbname

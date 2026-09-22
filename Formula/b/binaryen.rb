@@ -1,8 +1,8 @@
 class Binaryen < Formula
   desc "Compiler infrastructure and toolchain library for WebAssembly"
   homepage "https://webassembly.org/"
-  url "https://ghfast.top/https://github.com/WebAssembly/binaryen/archive/refs/tags/version_132.tar.gz"
-  sha256 "ede5e20f2f5148641bad31ceaef3c1fd4de4fb63b2d7b5081c605ba475483f6b"
+  url "https://ghfast.top/https://github.com/WebAssembly/binaryen/archive/refs/tags/version_133.tar.gz"
+  sha256 "2f3e3d9edc56751499571da073a8a81943ca3fcbc08a945d2c619a7a1d4eb88b"
   license "Apache-2.0"
   head "https://github.com/WebAssembly/binaryen.git", branch: "main"
 
@@ -12,16 +12,16 @@ class Binaryen < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "4aa27b7eeae9363f339593897bb1dc1ea3c36d87d83022da943c240c3de27e7e"
-    sha256 cellar: :any, arm64_tahoe:       "8fa307a56219d5020e0121442027d4d1830a140fa5b3df01871f19522bea5c61"
-    sha256 cellar: :any, arm64_sequoia:     "5396f0b840a9a596a83ddfee9fe292dd8e4462f75139759b9334c6df5a55fe15"
-    sha256 cellar: :any, arm64_sonoma:      "b615593153dc386584f60cddb59f57bff8b2afd9bc50ea5dba7a9a40541d4178"
-    sha256 cellar: :any, sonoma:            "6a235ff87bd895ef5d39b82b63c84879d3a98e640f2d29e6281e6a97dfd8311e"
-    sha256 cellar: :any, arm64_linux:       "8d201c5cc262c946c237c5e326d2c3ea334c8d590ad4e4e7816524d437df7ce4"
-    sha256 cellar: :any, x86_64_linux:      "a38a54e6d7321a7af8fa4109ff59874add0efc9e0d0fcc9124eefb2f828299c2"
+    sha256 cellar: :any, arm64_golden_gate: "d98332fb7205da8d5f51cd41bad8b3c5390ced0aec627a49b63f6add4f54b711"
+    sha256 cellar: :any, arm64_tahoe:       "22c610b253130cd20d22055ed8af19b919683ae2a337b6a14010f8a2abe295e1"
+    sha256 cellar: :any, arm64_sequoia:     "2258f7ce1551dfaeb292ac27dce0340d07be96d66b6fe7eb0708194c923a4b7f"
+    sha256 cellar: :any, arm64_linux:       "faf309f60e3dd21428407fa26962b45ea726811003569367b11bc6cc9995f2a3"
+    sha256 cellar: :any, x86_64_linux:      "af2f77531dbf1624763c2e35ba9a0a5a07416c2fba1dc46bf10b14e6e8bccd25"
   end
 
   depends_on "cmake" => :build
+
+  deny_network_access!
 
   def install
     system "cmake", "-S", ".", "-B", "build", "-DBUILD_TESTS=false", *std_cmake_args

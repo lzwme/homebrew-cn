@@ -31,6 +31,8 @@ class CassandraCppDriver < Formula
     depends_on "zlib-ng-compat"
   end
 
+  deny_network_access!
+
   def install
     # Fix to error: Unsupported compiler: AppleClang
     inreplace "CMakeLists.txt", 'STREQUAL "Clang"', 'STREQUAL "AppleClang"' if OS.mac?

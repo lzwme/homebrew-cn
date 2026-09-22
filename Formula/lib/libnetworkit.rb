@@ -25,6 +25,8 @@ class Libnetworkit < Formula
     depends_on "libomp"
   end
 
+  deny_network_access!
+
   def install
     system "cmake", "-S", ".", "-B", "build",
                     "-DNETWORKIT_EXT_TLX=#{formula_opt_prefix("tlx")}",

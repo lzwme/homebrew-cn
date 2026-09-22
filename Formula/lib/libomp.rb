@@ -30,6 +30,8 @@ class Libomp < Formula
     depends_on "python@3.14"
   end
 
+  deny_network_access!
+
   def install
     # Disable LIBOMP_INSTALL_ALIASES, otherwise the library is installed as
     # libgomp alias which can conflict with GCC's libgomp.

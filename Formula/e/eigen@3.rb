@@ -27,6 +27,8 @@ class EigenAT3 < Formula
 
   depends_on "cmake" => :build
 
+  deny_network_access!
+
   def install
     args = %w[
       -DEIGEN_BUILD_BLAS=OFF

@@ -23,6 +23,7 @@ class Ledger < Formula
   end
 
   depends_on "cmake" => :build
+
   depends_on "texinfo" => :build # for makeinfo
   depends_on "boost"
   depends_on "gmp"
@@ -38,6 +39,7 @@ class Ledger < Formula
     depends_on "libassuan"
   end
 
+  deny_network_access!
   def install
     ENV.prepend_path "PATH", formula_opt_libexec("python@3.14")/"bin"
 

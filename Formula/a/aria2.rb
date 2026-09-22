@@ -32,6 +32,9 @@ class Aria2 < Formula
     depends_on "zlib-ng-compat"
   end
 
+  # Test downloads a file from the network
+  allow_network_access! :test
+
   def install
     ENV.append "LIBS", "-framework Security" if OS.mac?
 

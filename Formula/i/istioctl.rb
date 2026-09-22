@@ -1,8 +1,8 @@
 class Istioctl < Formula
   desc "Istio configuration command-line utility"
   homepage "https://istio.io/"
-  url "https://ghfast.top/https://github.com/istio/istio/archive/refs/tags/1.31.0.tar.gz"
-  sha256 "92c1b606ee9c7ddd644dd523978e5d22fb3d62775dc60cd5cdb613540100b1da"
+  url "https://ghfast.top/https://github.com/istio/istio/archive/refs/tags/1.31.1.tar.gz"
+  sha256 "ca78a0afc0bbd7a4ec4dfc53833daed009ae86aaedabfc05c467974ad36358b3"
   license "Apache-2.0"
   head "https://github.com/istio/istio.git", branch: "master"
 
@@ -12,12 +12,11 @@ class Istioctl < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "c1b9bca35e5de30e8b038956716e2f986ca0bb3b2a03ac14d97d99f99bc6d2af"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "dec8204ae67bd9bc302779ee27d17dbad789707377f9c674ff62a0d608f04df2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "e4fc4941b5a953094f8072189abec56539f4d912c302dcd118a4692a40e80e88"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "f8f4235edede9af825c01258effca9c3c3bb9abd559723fc7f92016d8ea69e97"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "e9442c2e8dbf3155d8946513b3fe0f34649707e1ba80a82ec87ea3d3d07c9f39"
-    sha256 cellar: :any,                 x86_64_linux:      "2d1acef05250a2df7ae539e9d017f7793ff1690489b034a339cbf70bcd66234d"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "8a4987c5eb865b685fa559656a514cc36011a2485ca6871f02c6b5234f50f170"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "a98c38e6aa91d587711f501f633928e35e1727a0ba2f033a8396cba48580a670"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "bb88680e0635f39b5562eefe4fedbc93824b2ec40a70f5cbf60122577d479518"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "50cc94b16c7a56c831cc71b691ceee706ca4ba28efabc0a0ef0036509d087a03"
+    sha256 cellar: :any,                 x86_64_linux:      "aef9db819e0ad81ef0a053070504ae391be38232c7c074fc6d5a0915b2aabb50"
   end
 
   depends_on "go" => :build

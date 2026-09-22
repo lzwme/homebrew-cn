@@ -18,6 +18,8 @@ class Frei0r < Formula
 
   depends_on "cmake" => :build
 
+  deny_network_access!
+
   def install
     args = %w[
       -DWITHOUT_OPENCV=ON

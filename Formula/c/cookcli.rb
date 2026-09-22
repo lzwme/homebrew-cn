@@ -21,7 +21,7 @@ class Cookcli < Formula
 
   def fetch
     system "npm", "install", *std_npm_args(prefix: false)
-    system "cargo", "fetch", "--locked", "--target", "host-tuple"
+    system "cargo", "fetch", *std_cargo_fetch_args
   end
 
   def install

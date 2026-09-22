@@ -26,6 +26,8 @@ class Sdl3Sound < Formula
 
   uses_from_macos "perl" => :build
 
+  deny_network_access!
+
   def install
     args = %w[
       -DSDLSOUND_BUILD_DOCS=OFF

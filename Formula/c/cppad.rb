@@ -25,6 +25,8 @@ class Cppad < Formula
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
 
+  deny_network_access!
+
   def install
     ENV.cxx11
 

@@ -25,6 +25,8 @@ class Latino < Formula
     depends_on "readline"
   end
 
+  deny_network_access!
+
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"

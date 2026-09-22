@@ -1,10 +1,9 @@
 class Pypy311 < Formula
   desc "Implementation of Python 3 in Python"
   homepage "https://pypy.org/"
-  url "https://downloads.python.org/pypy/pypy3.11-v7.3.23-src.tar.bz2"
-  sha256 "f15c9c41e03f3f7ecc25228c6c67427b8918f21ef2d694215994b1fade20f69b"
+  url "https://downloads.python.org/pypy/pypy3.11-v8.0.0-src.tar.gz"
+  sha256 "829cef413d84383563488f0234b3cc537a8034e43fda13e0530500dad2d5dc3b"
   license "MIT"
-  revision 2
 
   livecheck do
     url "https://downloads.python.org/pypy/"
@@ -12,13 +11,11 @@ class Pypy311 < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "40691241446a39de3ba46da2c38e8391e9e8436eff42ab964ee41e17b214cebc"
-    sha256 cellar: :any, arm64_tahoe:       "3c1660e17d7360389844c21e0dd90e40f291c04efc569b0d64cf96e1b89b4110"
-    sha256 cellar: :any, arm64_sequoia:     "c4e23b23ed712b028f95f63665c161812aa866a09106ff8fc9e6fe1fa0a15fe3"
-    sha256 cellar: :any, arm64_sonoma:      "3f599b8f7b09b417fc02650f91c0e1ce11a0973bd67c8492e3c6a87c0e2ff5be"
-    sha256 cellar: :any, sonoma:            "8079052ae3bf3c1487087f6525f7e9bbb3f4a3f70b711f1234230747a59c2c9e"
-    sha256 cellar: :any, arm64_linux:       "3fb7fd9c301e8b9c916fab38ddd222af014f219b7eddad00b8d81b5f1b36bb46"
-    sha256 cellar: :any, x86_64_linux:      "36d4e831a1ccbabe784a220bbbbef72e52484265c2ab4831a86dd87c43196b0c"
+    sha256 cellar: :any, arm64_golden_gate: "33ecf9f323e61e0aca48cb4a94086d8cfdc1962f3fe79d7a94a84dec5b454515"
+    sha256 cellar: :any, arm64_tahoe:       "1217e4b388ee551b54d7ec0d55956ee32854f644fa2178688819b045f4552f42"
+    sha256 cellar: :any, arm64_sequoia:     "8829be3527ab3164867cdfbc2c3073ac02b7e812949f5d2d4ba598185c091cca"
+    sha256 cellar: :any, arm64_linux:       "d3adf4b494989c208afad97b769953ba3986f9aef7b1f4bedf5cc30c390a100d"
+    sha256 cellar: :any, x86_64_linux:      "0e428811901ffa3a04394c7cf2c8c19231ae12d1cb588ce1480431a12fe837b9"
   end
 
   depends_on "pkgconf" => :build
@@ -44,8 +41,8 @@ class Pypy311 < Formula
                 extra_packages: %w[flit-core pip setuptools wheel]
 
   resource "flit-core" do
-    url "https://files.pythonhosted.org/packages/46/ef/34533186e76c526d9ec17a1ad9a10c7354cbfb20f51583cc36dfe4bdccd0/flit_core-4.0.2.tar.gz"
-    sha256 "b6929defd93884b584d7c87829e0e7b5c26ed6be17b0b873979019314aa841c8"
+    url "https://files.pythonhosted.org/packages/e7/91/add211b38c357bf1b94900b4f79c34661a92be65c0243d2b0a3393c5092d/flit_core-4.1.0.tar.gz"
+    sha256 "62e12b63ead8335b37f59fabb977c7167fe476dafb5e41785dfa8c9aff843bc6"
   end
 
   resource "packaging" do
@@ -146,7 +143,7 @@ class Pypy311 < Formula
                                                    "--no-keep-debug",
                                                    "--no-make-portable"
     libexec.mkpath
-    system "tar", "-C", libexec.to_s, "--strip-components", "1", "-xf", "pypy3.tar.bz2"
+    system "tar", "-C", libexec.to_s, "--strip-components", "1", "-xf", "pypy3.tar.gz"
 
     # Prepare virtualenv for wheel
     common_pip_args = %w[

@@ -1,8 +1,8 @@
 class UtilLinux < Formula
   desc "Collection of Linux utilities"
   homepage "https://github.com/util-linux/util-linux"
-  url "https://mirrors.edge.kernel.org/pub/linux/utils/util-linux/v2.42/util-linux-2.42.3.tar.xz"
-  sha256 "66ac7c0e725278eb2b039e3104f2c91119341d941b41bac7a285c695f940bd57"
+  url "https://mirrors.edge.kernel.org/pub/linux/utils/util-linux/v2.42/util-linux-2.42.4.tar.xz"
+  sha256 "fbd62a100ab7bb8746ba0661255c3c48185b1e9021507c624da01fbc696330ec"
   license all_of: [
     "BSD-3-Clause",
     "BSD-4-Clause-UC",
@@ -25,12 +25,11 @@ class UtilLinux < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "85d6dbbd6e114707c4ae5a29f5fd594ad4f3727bdde3caec3e13decd6bbd4d32"
-    sha256 arm64_tahoe:       "b464010e7b47d4af2fc2f430c42b6b73ed2f950163fa215fde267ae45028932d"
-    sha256 arm64_sequoia:     "60173ddb3b0b5091799e992f09f775fb7132cf248b9a1e26b7022298793e344f"
-    sha256 arm64_sonoma:      "597dadb1211920897a83dbd91bda97b2fbd8bdf9872a9a067bfa9aca5e17715d"
-    sha256 arm64_linux:       "1eb0711633b8c65f11a1f85bd56b15e2ab21f99c914a997f8206c8af1fa5a5d3"
-    sha256 x86_64_linux:      "f5481596e2b7cea2d92f1c4eed7e8984d9fbc3360bd2634110637b37f01e959e"
+    sha256 arm64_golden_gate: "fbc4e7669248f29d3ec91b3724b4a1fc0383c624d4f6e09ae643703e879f8e0a"
+    sha256 arm64_tahoe:       "aba531ed615bc666cee842fbda966f2aa513e9801c73974f758e4a1b15aea602"
+    sha256 arm64_sequoia:     "46746bd46db509001b062ffe3d13b3428e7bf274884afbadd25e44bb400b4025"
+    sha256 arm64_linux:       "98d4c3f1afb746272ba0b5b134c5717df6e1796b50103f9072abe34083a7d43d"
+    sha256 x86_64_linux:      "a2f2f02b1a397f4bbda2832fc1403c55daff00e3c52c6a8c970d0c98fff95139"
   end
 
   keg_only :shadowed_by_macos, "macOS provides the uuid.h header"
@@ -55,13 +54,7 @@ class UtilLinux < Formula
     conflicts_with "rename", because: "both install `rename` binaries"
   end
 
-  # libmount/src/hook_idmap.c:335:33: error: ‘RESOLVE_NO_SYMLINKS’ undeclared (first use in this function)
-  patch do
-    url "https://github.com/util-linux/util-linux/commit/a323dddbcd1ed05a10e7e870b3e1a48b4ed44a43.patch?full_index=1"
-    sha256 "7c3cd540618ff46cfb1e22a5273d198012711c0b1169b70ddd731d8e581e6f64"
-    type :backport
-    resolves "https://github.com/util-linux/util-linux/issues/4597"
-  end
+  deny_network_access!
 
   def install
     args = %W[--disable-silent-rules --disable-asciidoc --with-bashcompletiondir=#{bash_completion}]

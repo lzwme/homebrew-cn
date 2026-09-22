@@ -22,6 +22,8 @@ class NlohmannJson < Formula
     resolves "https://github.com/nlohmann/json/pull/4736"
   end
 
+  deny_network_access!
+
   def install
     system "cmake", "-S", ".", "-B", "build",
                     "-DJSON_BuildTests=OFF", "-DJSON_MultipleHeaders=ON", *std_cmake_args

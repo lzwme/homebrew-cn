@@ -4,17 +4,15 @@ class Iblinter < Formula
   url "https://ghfast.top/https://github.com/IBDecodable/IBLinter/archive/refs/tags/0.5.0.tar.gz"
   sha256 "d1aafdca18bc81205ef30a2ee59f33513061b20184f0f51436531cec4a6f7170"
   license "MIT"
-  revision 1
+  revision 2
   head "https://github.com/IBDecodable/IBLinter.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "9ff1414d27f69bbae3a44bfcfc26d0a99defd9384bf18845659bd3002f7513dd"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "3ccc5cf7c9e37c007329b85160d1973f853444d151f027469f87501be2ce1dfd"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "d81bd417d74fbf2809e041c78801e8d83ea8b5e658519e459023197f1e1c3ffb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "fba87c8a17f3b162579d58ae7bdb89bc015e7d4c7930d652c8826136767f2f0e"
-    sha256 cellar: :any_skip_relocation, sonoma:            "5df5917b52968d0e5ae274fd7ed90a2740b0cefa51b04e59d1a736d4a3de86d0"
-    sha256                               arm64_linux:       "f3d53ef7a5072cd59df9ff826df7809fac46dd2fc764f57ceefd22824640ff96"
-    sha256                               x86_64_linux:      "c3a4dcb0445ce6cc30ee0d563919b23c5f7acd012cb83316d3f9a389343ad74c"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "1e66ec7fdee3ae5b454e67336ba833cfcafe29417fc976c6a7a09fe4874a6893"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "edfa9a0703e03c81df343d462d2c33c87742c1d38047a7bbe26366a78d21c394"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "b88dff6dcb1898da9fc0f4270d88a60cbc1fcb6e639ceb8d94c7bfb9e228008f"
+    sha256                               arm64_linux:       "895973d1b3ddb94bb99ec7fae5321bde3a12512d6ad1f6b1f69b4c1f3ee26302"
+    sha256                               x86_64_linux:      "682df528a5c33efbf78869d3d51e60f98417bba4fe759767ec75c32603cac632"
   end
 
   uses_from_macos "swift"
@@ -24,25 +22,27 @@ class Iblinter < Formula
   end
 
   # Fetch a copy of SourceKitten in order to fix build with newer Swift.
-  # Issue ref: https://github.com/IBDecodable/IBLinter/issues/189
+  # TODO: remove when fixed: https://github.com/IBDecodable/IBLinter/issues/189
   resource "SourceKitten" do
-    on_system :linux, macos: :sonoma_or_newer do
-      # https://github.com/IBDecodable/IBLinter/blob/0.5.0/Package.resolved#L41-L47
-      url "https://github.com/jpsim/SourceKitten.git",
-          tag:      "0.29.0",
-          revision: "77a4dbbb477a8110eb8765e3c44c70fb4929098f"
+    # https://github.com/IBDecodable/IBLinter/blob/0.5.0/Package.resolved#L41-L47
+    url "https://github.com/jpsim/SourceKitten.git",
+        tag:      "0.29.0",
+        revision: "77a4dbbb477a8110eb8765e3c44c70fb4929098f"
 
-      # Backport of import from HEAD
-      patch :DATA
-    end
+    # Backport of import from HEAD
+    patch :DATA
+  end
+
+  deny_network_access!
+
+  def fetch
+    (buildpath/"SourceKitten").install resource("SourceKitten")
+    system "swift", "package", "--disable-sandbox", "edit", "SourceKitten", "--path", buildpath/"SourceKitten"
+    system "swift", "package", "--disable-sandbox", "resolve"
   end
 
   def install
     args = ["--disable-sandbox", "--configuration", "release"]
-    if !OS.mac? || MacOS.version >= :sonoma
-      (buildpath/"SourceKitten").install resource("SourceKitten")
-      system "swift", "package", *args, "edit", "SourceKitten", "--path", buildpath/"SourceKitten"
-    end
 
     system "swift", "build", *args
     bin.install ".build/release/iblinter"

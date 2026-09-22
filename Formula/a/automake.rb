@@ -17,6 +17,8 @@ class Automake < Formula
 
   depends_on "autoconf"
 
+  deny_network_access!
+
   def install
     ENV["PERL"] = "/usr/bin/perl" if OS.mac?
 

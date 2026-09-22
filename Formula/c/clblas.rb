@@ -42,6 +42,8 @@ class Clblas < Formula
     resolves "https://github.com/clMathLibraries/clBLAS/pull/360"
   end
 
+  deny_network_access!
+
   def install
     # Workaround for CMake 4 and CMP0048 as project looks unmaintained.
     # Can consider deprecating if bandicoot migrates to alternative like CLBlast:

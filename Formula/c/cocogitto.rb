@@ -21,6 +21,12 @@ class Cocogitto < Formula
 
   conflicts_with "cogapp", "cog", because: "both install `cog` binaries"
 
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
     ENV["LIBGIT2_NO_VENDOR"] = "1"
 

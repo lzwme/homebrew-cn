@@ -39,6 +39,8 @@ class Freediameter < Formula
     resolves "https://github.com/freeDiameter/freeDiameter/pull/84"
   end
 
+  deny_network_access!
+
   def install
     args = %W[
       -DDEFAULT_CONF_PATH=#{etc}

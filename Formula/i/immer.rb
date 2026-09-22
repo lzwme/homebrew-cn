@@ -17,6 +17,8 @@ class Immer < Formula
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
 
+  deny_network_access!
+
   def install
     args = %w[
       -Dimmer_BUILD_EXAMPLES=OFF

@@ -22,6 +22,8 @@ class Qrencode < Formula
   depends_on "pkgconf" => :build
   depends_on "libpng"
 
+  deny_network_access!
+
   def install
     args = %W[
       -DBUILD_SHARED_LIBS=ON

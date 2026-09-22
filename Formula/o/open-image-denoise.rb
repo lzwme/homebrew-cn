@@ -21,6 +21,8 @@ class OpenImageDenoise < Formula
 
   uses_from_macos "python" => :build
 
+  deny_network_access!
+
   def install
     # Fix arm64 build targeting iOS
     inreplace "cmake/oidn_ispc.cmake", 'set(ISPC_TARGET_OS "--target-os=ios")', ""

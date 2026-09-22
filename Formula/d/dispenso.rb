@@ -17,6 +17,8 @@ class Dispenso < Formula
 
   depends_on "cmake" => [:build, :test]
 
+  deny_network_access!
+
   def install
     system "cmake", "-S", ".", "-B", "build",
                     "-DDISPENSO_BUILD_TESTS=OFF",

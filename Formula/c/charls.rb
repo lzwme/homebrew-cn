@@ -18,6 +18,8 @@ class Charls < Formula
 
   depends_on "cmake" => :build
 
+  deny_network_access!
+
   def install
     args = %w[
       -DCHARLS_BUILD_TESTS=OFF

@@ -26,6 +26,8 @@ class Msdfgen < Formula
   depends_on "libpng"
   depends_on "tinyxml2"
 
+  deny_network_access!
+
   def install
     system "cmake", "-S", ".", "-B", "build",
            "-DMSDFGEN_USE_VCPKG=OFF",

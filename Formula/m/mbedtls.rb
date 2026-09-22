@@ -26,6 +26,8 @@ class Mbedtls < Formula
 
   uses_from_macos "python" => :build
 
+  deny_network_access!
+
   def install
     inreplace "tf-psa-crypto/include/psa/crypto_config.h" do |s|
       # enable pthread mutexes

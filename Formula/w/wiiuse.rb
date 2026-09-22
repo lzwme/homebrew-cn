@@ -21,6 +21,8 @@ class Wiiuse < Formula
     depends_on "bluez"
   end
 
+  deny_network_access!
+
   def install
     args = %w[
       -DBUILD_EXAMPLE=NO

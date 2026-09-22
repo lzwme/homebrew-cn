@@ -21,6 +21,8 @@ class Minuit2 < Formula
 
   depends_on "cmake" => :build
 
+  deny_network_access!
+
   def install
     system "cmake", "-S", "math/minuit2", "-B", "build/shared", *std_cmake_args,
                     "-Dminuit2_standalone=ON", "-DCMAKE_CXX_FLAGS='-std=c++14'", "-DBUILD_SHARED_LIBS=ON",

@@ -1,8 +1,8 @@
 class Velero < Formula
   desc "Disaster recovery for Kubernetes resources and persistent volumes"
   homepage "https://velero.io/"
-  url "https://ghfast.top/https://github.com/velero-io/velero/archive/refs/tags/v1.18.2.tar.gz"
-  sha256 "68d8c95817d882b2832c4c08689eb5f7b14dd581f71292a6c794acd15633b6d9"
+  url "https://ghfast.top/https://github.com/velero-io/velero/archive/refs/tags/v1.18.3.tar.gz"
+  sha256 "63ce48e63ae9104e241d323d098e49953ec1659ef243518de292bc479846d74b"
   license "Apache-2.0"
 
   livecheck do
@@ -11,13 +11,11 @@ class Velero < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "3248937d6a4641d1f7a9a4d4fcf19b5c9f99199afa59d1fdd2980aa3425d5f8b"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "5807c3e8ff2c6f38845127a1a11eea30962cdaaffeeac42d715e73d0c59354ab"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "9355be9150f7cf4441826ab163e151013aad947416340b6b60b4e0aa22d3709c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "e50a8f9b9a18fdb3fc18915b8b4896e3fdfef35110464e5989a0d7de22dd1072"
-    sha256 cellar: :any_skip_relocation, sonoma:            "02f165b2c27f281bbd41cf7060e1482a02e2dde2d1d5e22b5c82993b64536fc3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "c73dce7dc888ec67a8990e2054745c1f45f050470dec645958462fbef8b0a7e4"
-    sha256 cellar: :any,                 x86_64_linux:      "c069033f761a035e739e91f96fb920cd7419342afd2c9728f2f35b809ff82a9c"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "6723008fa7d48f18b1a8d04aab298942edefc17cf6900e409135cc27e4b373f4"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "b245156c7afdb09d785cf4673ef0323fe3fc94ac88b6bfd115dbec68761cddba"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "1f6af2dd027165e248bef43106302931051c5a22ba1aea748ef6980812ef5edd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "6e4999d44509cc41bdcf77426d6aaf9e5c5b95dd420f34584edc1a06913faed3"
+    sha256 cellar: :any,                 x86_64_linux:      "0ee161de05cd618956d496a0b1fc1b5101d730cae7d48a4621e79e125095fc3a"
   end
 
   depends_on "go" => :build

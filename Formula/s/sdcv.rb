@@ -41,6 +41,8 @@ class Sdcv < Formula
     resolves "https://github.com/Dushistov/sdcv/pull/103"
   end
 
+  deny_network_access!
+
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build", "--target", "lang"

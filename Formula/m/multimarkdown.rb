@@ -22,6 +22,8 @@ class Multimarkdown < Formula
   conflicts_with "markdown", because: "both install `markdown` binaries"
   conflicts_with "discount", because: "both install `markdown` binaries"
 
+  deny_network_access!
+
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"

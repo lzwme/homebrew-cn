@@ -40,6 +40,8 @@ class Apngasm < Formula
     resolves "https://github.com/apngasm/apngasm/pull/111"
   end
 
+  deny_network_access!
+
   def install
     inreplace "cli/CMakeLists.txt", "${CMAKE_INSTALL_PREFIX}/man/man1",
                                     "${CMAKE_INSTALL_PREFIX}/share/man/man1"

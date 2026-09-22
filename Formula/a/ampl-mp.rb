@@ -22,6 +22,8 @@ class AmplMp < Formula
 
   depends_on "cmake" => :build
 
+  deny_network_access!
+
   def install
     args = %W[
       -DAMPL_LIBRARY_DIR=#{libexec}/bin

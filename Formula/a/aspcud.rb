@@ -26,6 +26,8 @@ class Aspcud < Formula
   depends_on "re2c" => :build
   depends_on "clingo"
 
+  deny_network_access!
+
   def install
     args = %W[
       -DASPCUD_GRINGO_PATH=#{formula_opt_bin("clingo")}/gringo

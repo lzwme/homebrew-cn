@@ -19,6 +19,12 @@ class LeafMarkdownViewer < Formula
   conflicts_with "leaf", because: "both install `leaf` binaries"
   conflicts_with "leaf-proxy", because: "both install `leaf` binaries"
 
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
     system "cargo", "install", *std_cargo_args
   end

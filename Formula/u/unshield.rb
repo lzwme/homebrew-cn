@@ -24,6 +24,8 @@ class Unshield < Formula
     depends_on "zlib-ng-compat"
   end
 
+  deny_network_access!
+
   def install
     # cmake check for libiconv will miss the OS library without this hint
     ENV.append "LDFLAGS", "-liconv" if OS.mac?

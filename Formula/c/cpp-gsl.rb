@@ -12,6 +12,8 @@ class CppGsl < Formula
 
   depends_on "cmake" => :build
 
+  deny_network_access!
+
   def install
     system "cmake", "-S", ".", "-B", "build", "-DGSL_TEST=false", *std_cmake_args
     system "cmake", "--build", "build"

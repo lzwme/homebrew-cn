@@ -22,6 +22,8 @@ class Pngcheck < Formula
     depends_on "zlib-ng-compat"
   end
 
+  deny_network_access!
+
   def install
     # Remove files only needed on non-Unix. Doesn't need to be removed as CMake handles it
     # but they have different or dubious licenses so let's be explicit to prove that the above license DSL is correct.

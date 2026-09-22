@@ -45,6 +45,8 @@ class Cubeb < Formula
     depends_on "pulseaudio"
   end
 
+  deny_network_access!
+
   def install
     if build.head?
       system "cmake", "-S", ".", "-B", "build",

@@ -19,6 +19,8 @@ class Litehtml < Formula
   depends_on "cmake" => :build
   depends_on "gumbo-parser"
 
+  deny_network_access!
+
   def install
     rm_r("src/gumbo")
     # FIXME: gumbo-parser doesn't have a CMake configuration file or module

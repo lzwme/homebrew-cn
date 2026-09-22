@@ -9,17 +9,18 @@ class Libngtcp2 < Formula
   head "https://github.com/ngtcp2/ngtcp2.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "50c31a96342afa5a8357cb0715f9620e70f14d098c35d88b5684d22043e96616"
-    sha256 cellar: :any, arm64_tahoe:       "301e7664d107756e42c21a981628ef09fa9a9b86731286deba8e0ccbce89fb54"
-    sha256 cellar: :any, arm64_sequoia:     "863fe84438291c89a972d647eee6d6099620b7c77039e6d84d704076e25de21c"
-    sha256 cellar: :any, arm64_sonoma:      "a5f12e89e3c5727186d96a097a8fd49669fe1e4536138ab42be25a6a0ecf2c30"
-    sha256 cellar: :any, sonoma:            "2b09d593d53fdd5cc33c964196a25cf335d0ad6dfe97d7786a2094f3606a3d31"
-    sha256 cellar: :any, arm64_linux:       "a9335ca272b9a50e7fc9ba789e120cd522885d9b3b9267446488a41623c30414"
-    sha256 cellar: :any, x86_64_linux:      "6c5b43b89a08020041b734e63d6c7048e151726a8f9072e58ae677fb21e615e3"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "c569e1a7224a28d3aeed8b69fd785fc21bd7e65e30d2e7c817362ba76b1a71c6"
+    sha256 cellar: :any, arm64_tahoe:       "3cc13c879b90b9e59e28d56d78e7d08e131ea7df7e76426e7a5e83f6db2da274"
+    sha256 cellar: :any, arm64_sequoia:     "c7a7d09443d52cdc9490415c9362fcf58b8cbb096fd325629053df54e4cbdd40"
+    sha256 cellar: :any, arm64_linux:       "2ee9aab2c03e56e676bdfd3ea249a1cd193134f5887558b92bb0d7cd8465409b"
+    sha256 cellar: :any, x86_64_linux:      "b17e4099e3e634cb807d0b00aba8e69060be0d021b7fdb83cf1bd3a84b01d022"
   end
 
   depends_on "pkgconf" => :build
   depends_on "openssl@3"
+
+  deny_network_access!
 
   def install
     system "./configure", "--disable-silent-rules", *std_configure_args

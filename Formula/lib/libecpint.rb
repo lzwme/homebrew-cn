@@ -31,6 +31,8 @@ class Libecpint < Formula
     resolves "https://github.com/robashaw/libecpint/issues/65"
   end
 
+  deny_network_access!
+
   def install
     args = [
       "-DBUILD_SHARED_LIBS=ON",

@@ -14,6 +14,8 @@ class CppLazy < Formula
   depends_on "pkgconf" => :test
   depends_on "fmt"
 
+  deny_network_access!
+
   def install
     args = %w[
       -DCPP-LAZY_USE_STANDALONE=ON

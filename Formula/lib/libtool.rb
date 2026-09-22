@@ -21,6 +21,8 @@ class Libtool < Formula
 
   depends_on "m4"
 
+  deny_network_access!
+
   def install
     ENV["M4"] = formula_opt_bin("m4")/"m4"
 

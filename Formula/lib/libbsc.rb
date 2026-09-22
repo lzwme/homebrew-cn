@@ -25,6 +25,8 @@ class Libbsc < Formula
 
   conflicts_with "bsc", because: "both install `bsc` binaries"
 
+  deny_network_access!
+
   def install
     args = %W[
       -DBSC_ENABLE_NATIVE_COMPILATION=OFF

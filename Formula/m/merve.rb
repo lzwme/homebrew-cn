@@ -17,6 +17,8 @@ class Merve < Formula
   depends_on "cmake" => :build
   depends_on "simdutf"
 
+  deny_network_access!
+
   def install
     args = %w[
       -DMERVE_TESTING=OFF

@@ -19,6 +19,8 @@ class Taskflow < Formula
   depends_on "cmake" => :build
   depends_on "make" => :build
 
+  deny_network_access!
+
   def install
     args = %w[
       -DTF_BUILD_EXAMPLES=OFF

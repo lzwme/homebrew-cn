@@ -20,6 +20,8 @@ class Viennacl < Formula
     depends_on "pocl"
   end
 
+  deny_network_access!
+
   def install
     args = %w[
       -DBUILD_EXAMPLES=OFF

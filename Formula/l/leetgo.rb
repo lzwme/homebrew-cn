@@ -1,19 +1,17 @@
 class Leetgo < Formula
   desc "CLI tool for LeetCode"
   homepage "https://github.com/j178/leetgo"
-  url "https://ghfast.top/https://github.com/j178/leetgo/archive/refs/tags/v1.4.18.tar.gz"
-  sha256 "6268de85aec3acf4db6fbe76b39a033dcc166d2ce1e8dc5304f603d60a5994eb"
+  url "https://ghfast.top/https://github.com/j178/leetgo/archive/refs/tags/v1.4.19.tar.gz"
+  sha256 "39537b3d2e221c5cec3826c845711903223fb878e93f81a1b452d814c806c819"
   license "MIT"
   head "https://github.com/j178/leetgo.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "8cfd5fcb1622585f8a9bff7f179b5bb67fac4ffa3104af5cbdc9f620edf90f52"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "2a99853980ea02580a158f8168f0470bc3481e8a4250ee7feb048130827cc908"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "f7fc64ed28c8c787d9cfc2974a59959a5152501a11e41c63ad1ed018c9f272a3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "c45c4b06f6d6265eb9ecd6a4c6ef46de6e7467f3e33120a2818cc7732f7ac29e"
-    sha256 cellar: :any_skip_relocation, sonoma:            "5e729850bdf691f56999ba588dfce6cc0742c035b2749701db7581a936fc675e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "43ecd167ba7342b5041e8b5be52b35a6b01ee0b182016c0677781fcec00b9afb"
-    sha256 cellar: :any,                 x86_64_linux:      "0093263f77bc9f1890e826bf31748e5751ecb575f58eefb14f8cc5d21c5fa23b"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "0ac911d10a0bb60a57032a3e503b04e44584974c53bcea8cd67f1157ae17edae"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "c51a1093323ea7c655bddacca6dfd31b167e6bf7e468b4d62ac3f15b29f15e7d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "69281ca8121ff998e7ed8d340b28b082aa9d5ceaa63aacee1346ac244cac94a9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "53bb3b48c2fcb399726dcd7537b93e0bd1cc877a42fe74a13919f10a4c928dce"
+    sha256 cellar: :any,                 x86_64_linux:      "5edc54c85d70f024998be2f78c9f5549cef2eb19a81a3dccd23cd663021a9a08"
   end
 
   depends_on "go" => :build

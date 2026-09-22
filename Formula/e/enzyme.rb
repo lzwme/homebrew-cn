@@ -22,6 +22,8 @@ class Enzyme < Formula
     deps.map(&:to_formula).find { |f| f.name.match?(/^llvm(@\d+)?$/) }
   end
 
+  deny_network_access!
+
   def install
     system "cmake", "-S", "enzyme", "-B", "build", "-DLLVM_DIR=#{llvm.opt_lib}/cmake/llvm", *std_cmake_args
     system "cmake", "--build", "build"

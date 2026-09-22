@@ -13,6 +13,8 @@ class Cppzmq < Formula
   depends_on "pkgconf" => :build
   depends_on "zeromq"
 
+  deny_network_access!
+
   def install
     system "cmake", "-S", ".", "-B", "build", "-DCPPZMQ_BUILD_TESTS=OFF", *std_cmake_args
     system "cmake", "--build", "build"

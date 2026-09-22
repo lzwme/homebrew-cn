@@ -18,6 +18,12 @@ class Numbat < Formula
 
   depends_on "rust" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
     ENV["NUMBAT_SYSTEM_MODULE_PATH"] = "#{pkgshare}/modules"
     system "cargo", "install", *std_cargo_args(path: "numbat-cli")

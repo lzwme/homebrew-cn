@@ -28,6 +28,8 @@ class Cjson < Formula
     resolves "https://github.com/DaveGamble/cJSON/pull/986"
   end
 
+  deny_network_access!
+
   def install
     args = %W[
       -DENABLE_CJSON_UTILS=ON

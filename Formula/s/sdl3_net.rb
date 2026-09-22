@@ -21,6 +21,8 @@ class Sdl3Net < Formula
 
   uses_from_macos "perl" => :build
 
+  deny_network_access!
+
   def install
     args = %w[-DSDLNET_INSTALL_MAN=ON -DSDLNET_SAMPLES=OFF]
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args

@@ -20,6 +20,8 @@ class Cpptrace < Formula
   depends_on "dwarfutils"
   depends_on "zstd"
 
+  deny_network_access!
+
   def install
     args = %W[
       -DBUILD_SHARED_LIBS=ON

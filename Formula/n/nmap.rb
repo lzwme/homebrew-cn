@@ -13,13 +13,12 @@ class Nmap < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "e9970e9c33357f46023332de6c6fdb5964cd5c7c95cb7ac664e16d5deebf92c9"
-    sha256 arm64_tahoe:       "7b44210db7bec422a6db3551c6ce37c032d549c6e4b7c1fc73dfc3fd84ffcb61"
-    sha256 arm64_sequoia:     "53af60fb8bc2a54c94d48522bec7b90c8de5843e1057203e56d5ed922ee05f5e"
-    sha256 arm64_sonoma:      "7f1314efd3f78af8cebad0f254de7c4a8d0b1f4f0e881f99f64bbc42d184d9aa"
-    sha256 sonoma:            "8e0cf28019b8f08cd0c861743fce47446e11197a1c0dd4fa5e6d930ef5c0c78a"
-    sha256 arm64_linux:       "1d20106da65dabc3c10921eac6666505c2433cc4d9646fefc4cfa6a2403fb547"
-    sha256 x86_64_linux:      "d3f0b702152aaba2e73585a51352ec2143ca9f1870f1849058de81fdfed7a116"
+    rebuild 1
+    sha256 arm64_golden_gate: "da686a61f09704b97db2f688d77925bc343dc5cd0f9bbd2fa5214d3439763c7d"
+    sha256 arm64_tahoe:       "2af6d8142c901b9cafa4a51a9c4f6af9efb5e25dff425640ee9b191e48bd45d0"
+    sha256 arm64_sequoia:     "9981df8a0aedf35b1d0d6aa07d824f21616d2bc19a89d312677467066e73891f"
+    sha256 arm64_linux:       "8f39c06169f489bf54172bddc47690e8f45575f10b1fed412db8457a426c2313"
+    sha256 x86_64_linux:      "7e587aad517ea562de25586e3da591bc88e7edef09783a8e0cac6b0c8a0b4d6a"
   end
 
   depends_on "python-setuptools" => :build
@@ -40,6 +39,9 @@ class Nmap < Formula
   end
 
   conflicts_with "cern-ndiff", "ndiff", because: "both install `ndiff` binaries"
+
+  # needs a network connection to test
+  allow_network_access! :test
 
   def install
     # Fix to missing VERSION file

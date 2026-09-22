@@ -22,6 +22,8 @@ class Lbfgspp < Formula
     resolves "https://github.com/yixuan/LBFGSpp/pull/48"
   end
 
+  deny_network_access!
+
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"

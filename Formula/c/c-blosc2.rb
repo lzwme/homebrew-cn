@@ -32,6 +32,8 @@ class CBlosc2 < Formula
     build 1400
   end
 
+  deny_network_access!
+
   def install
     args = %w[
       -DBUILD_TESTS=OFF

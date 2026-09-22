@@ -48,6 +48,8 @@ class Libzen < Formula
   link_overwrite "lib/pkgconfig/libzen.pc"
   link_overwrite "lib/libzen.*"
 
+  deny_network_access!
+
   def install
     system "cmake", "-S", "Project/CMake", "-B", "build", "-DBUILD_SHARED_LIBS=ON", *std_cmake_args
     system "cmake", "--build", "build"

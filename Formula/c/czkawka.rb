@@ -37,6 +37,12 @@ class Czkawka < Formula
     depends_on "harfbuzz"
   end
 
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
     features = %w[heif libraw libavif]
     %w[czkawka_cli czkawka_gui krokiet].each do |cmd|

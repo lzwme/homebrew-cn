@@ -21,6 +21,8 @@ class EbookTools < Formula
 
   uses_from_macos "libxml2"
 
+  deny_network_access!
+
   def install
     # Workaround to build with CMake 4
     args = %W[

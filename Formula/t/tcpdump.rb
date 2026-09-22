@@ -1,8 +1,8 @@
 class Tcpdump < Formula
   desc "Command-line packet analyzer"
   homepage "https://www.tcpdump.org/"
-  url "https://www.tcpdump.org/release/tcpdump-4.99.6.tar.gz"
-  sha256 "5839921a0f67d7d8fa3dacd9cd41e44c89ccb867e8a6db216d62628c7fd14b09"
+  url "https://www.tcpdump.org/release/tcpdump-4.99.7.tar.gz"
+  sha256 "8be364e28d3b745ef1459b385cd2f4bc0e1ebad7a5d2ebdf70071d6c9b5b9a54"
   license "BSD-3-Clause"
   head "https://github.com/the-tcpdump-group/tcpdump.git", branch: "master"
 
@@ -12,14 +12,11 @@ class Tcpdump < Formula
   end
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_golden_gate: "7520408303b0d6e1b438bf26611f3bca05cba23313e32eab81ada05f2b1e0753"
-    sha256 cellar: :any,                 arm64_tahoe:       "f801b7b1f7dcecc71f8cecee3147a1469abc87ccbade07f89628c99b2a4a402f"
-    sha256 cellar: :any,                 arm64_sequoia:     "884b3e4ef5f4aa2853a36a960c8977aa7fde7abc7ece17c01d79264eb83ccb96"
-    sha256 cellar: :any,                 arm64_sonoma:      "0b5d241847887ac54dd98b874ef61846e4e606e6a4181d61e91a8e96dd069dbc"
-    sha256 cellar: :any,                 sonoma:            "f1d1f31399e5dbebbffcd35b70fa0e4240860828047e4ade009a85bd4e79394b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "e64d475e30d608775b89020fadd69bba4c6b4fcba6f5beb01093a03218595734"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "0f4c8f9ff9f7c7a60c082d95239fff8ae4df1c795d359bd5a03fc948323b9aca"
+    sha256 cellar: :any, arm64_golden_gate: "341de462ccfc70404357d038d390069652d9b7797471d83ff96cd21302f4730f"
+    sha256 cellar: :any, arm64_tahoe:       "784a23c965e8f634559e485dbd2f007cab67c26fa19a08cb0a5df382db4fb147"
+    sha256 cellar: :any, arm64_sequoia:     "c12571f0e8bc8e57f9840ccba5613650f40b6a7ee857fa48e1113a6f6916e285"
+    sha256 cellar: :any, arm64_linux:       "b6a2a75286adbe94f5c9e799dd74ecd8bbd0ff97a2b19cd641de9e7c1babc0a8"
+    sha256 cellar: :any, x86_64_linux:      "da1037446a6f860d6c690636689fc92392eab6dbbad9382425fe7dc221f1e361"
   end
 
   depends_on "libpcap"

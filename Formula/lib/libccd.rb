@@ -25,6 +25,8 @@ class Libccd < Formula
 
   depends_on "cmake" => :build
 
+  deny_network_access!
+
   def install
     args = %w[
       -DENABLE_DOUBLE_PRECISION=ON

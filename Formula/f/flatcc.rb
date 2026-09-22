@@ -16,6 +16,8 @@ class Flatcc < Formula
 
   depends_on "cmake" => :build
 
+  deny_network_access!
+
   def install
     args = %W[
       -DFLATCC_INSTALL=ON

@@ -29,6 +29,8 @@ class Kfr < Formula
     end
   end
 
+  deny_network_access!
+
   def install
     args = ["-DKFR_USE_BOOST=ON"]
     # C API requires some clang extensions.

@@ -14,6 +14,8 @@ class Quantumxx < Formula
   depends_on "eigen"
   depends_on "pybind11"
 
+  deny_network_access!
+
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build", "--target", "install"

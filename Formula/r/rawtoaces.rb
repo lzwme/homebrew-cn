@@ -35,6 +35,8 @@ class Rawtoaces < Formula
     sha256 "d84051305009e5a154062f837f62d432bc69f7ad9e220f3a57a056ddc9b8911f"
   end
 
+  deny_network_access!
+
   def install
     # Replace data path to homebrew one
     inreplace "src/rawtoaces_util/image_converter.cpp", "/usr/local/share", "#{HOMEBREW_PREFIX}/share" if OS.linux?

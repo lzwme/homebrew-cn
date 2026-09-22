@@ -21,6 +21,8 @@ class BehaviortreeCpp < Formula
 
   uses_from_macos "sqlite"
 
+  deny_network_access!
+
   def install
     args = %W[
       -DCMAKE_INSTALL_RPATH=#{rpath}

@@ -1,8 +1,8 @@
 class GnuGetopt < Formula
   desc "Command-line option parsing utility"
   homepage "https://github.com/util-linux/util-linux"
-  url "https://mirrors.edge.kernel.org/pub/linux/utils/util-linux/v2.42/util-linux-2.42.3.tar.gz"
-  sha256 "2f4c3484f67c79688a50974b9e0ae52d089fe07a63d2dbb59b20e50ed26fe89f"
+  url "https://mirrors.edge.kernel.org/pub/linux/utils/util-linux/v2.42/util-linux-2.42.4.tar.gz"
+  sha256 "af3241e7776964dcb6bb9a811ca7b0d93000b563e2ae2a8df8f80a7cd6e04d56"
   license "GPL-2.0-or-later"
   compatibility_version 1
 
@@ -39,12 +39,11 @@ class GnuGetopt < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "ba18bd761e52e6bcc6aaa3e6adee0b53bb69bed8d3713198796642692d7b5946"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "5afb8fbda82ad0bcc5e2b862e8b93ee4f0985e38bf798f554c38ca82a0862bc0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "153c2ee20e8e5d531ee0d891c7a816af5493dcdd2052e41663fba85285e8e4a1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "a324652160bfd1a448e42c957ebdc1bf6d8872cd11f27579e16a9a1ce1c3c477"
-    sha256 cellar: :any,                 arm64_linux:       "f4b3362e3bfb442e1155235b1be219ddcbb7a796f00c533a5505e7f22be253eb"
-    sha256 cellar: :any,                 x86_64_linux:      "8eb99ac6873a35b8eddeec966b45f7e3ac971ef05c6a7c389e2fc162729b33ac"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "0614621d302ea14221955fc85e81812c876ae5439a049ea9815d697b6ba93b2d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "442922ec7b2f94f0b0f9e5036f7e17627973f3904116f78b78dffd663ab35c83"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "a11448e84e277c582599f0b5edc94e1e4961c6c7fc958eb3074ab5c7b4834168"
+    sha256 cellar: :any,                 arm64_linux:       "b3ba5a2df1092d95a48ef3dc5efc2ef68da529b905d969d4e120da3bab20dca8"
+    sha256 cellar: :any,                 x86_64_linux:      "38b1e756f71a8b80f6e6f3c077407830982b88096c2d0347461ede3c25b26f21"
   end
 
   keg_only :shadowed_by_macos, "macOS provides BSD getopt"

@@ -19,6 +19,8 @@ class Cnats < Formula
   depends_on "openssl@3"
   depends_on "protobuf-c"
 
+  deny_network_access!
+
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"

@@ -29,6 +29,8 @@ class Jerryscript < Formula
     resolves "https://github.com/jerryscript-project/jerryscript/pull/5204"
   end
 
+  deny_network_access!
+
   def install
     args = %w[
       -DCMAKE_BUILD_TYPE=MinSizeRel

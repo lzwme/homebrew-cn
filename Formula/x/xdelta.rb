@@ -19,6 +19,8 @@ class Xdelta < Formula
   depends_on "blake3"
   depends_on "xz"
 
+  deny_network_access!
+
   def install
     # Fix library target to the same as `blake3` formula.
     inreplace "xdelta3/CMakeLists.txt",

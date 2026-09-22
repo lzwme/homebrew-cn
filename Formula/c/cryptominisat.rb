@@ -1,8 +1,8 @@
 class Cryptominisat < Formula
   desc "Advanced SAT solver"
   homepage "https://www.msoos.org/cryptominisat5/"
-  url "https://ghfast.top/https://github.com/msoos/cryptominisat/archive/refs/tags/release/v5.15.0.tar.gz"
-  sha256 "274016b8440716897e84c12e6f94ff607017cfa427a3319cac253177594d6b28"
+  url "https://ghfast.top/https://github.com/msoos/cryptominisat/archive/refs/tags/release/v5.16.0.tar.gz"
+  sha256 "e3a02fe9a1a13ede75b6e52866ca2cc98032d134cd7ccaadabc07b9977df4908"
   # Everything that's needed to run/build/install/link the system is MIT licensed. This allows
   # easy distribution and running of the system everywhere.
   license "MIT"
@@ -14,11 +14,11 @@ class Cryptominisat < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "d1fa3a2099c5177b22be17aa1238b5a641f5d9163627aee1ff912c3edf09d63c"
-    sha256 cellar: :any, arm64_tahoe:       "1e09ba0cc5fcb044421ec175381dc1b566edd22222a9569c97cb901639ff368e"
-    sha256 cellar: :any, arm64_sequoia:     "2187367adc01c4c6bc31ecc4fc6075faf08e4b4cba8c489c2c92a3fa822f0688"
-    sha256 cellar: :any, arm64_linux:       "436bd9726c057908f76ed4e060775f7009fb88395fe487bfc2a7b32ec1e94398"
-    sha256 cellar: :any, x86_64_linux:      "19cbdf088a5733af2642c77c38bb9613974d1aa9d06c8c5801d94817184bac71"
+    sha256 cellar: :any, arm64_golden_gate: "a7816f28f00e59959221fcd33b7ff37867e54170d10a0a3c1bd60ae346ccf1cc"
+    sha256 cellar: :any, arm64_tahoe:       "98ebe46a40908ef24c9cf4441c0337c4e1179ddcae1741c4b8d7238b7ab5d586"
+    sha256 cellar: :any, arm64_sequoia:     "293d7bc4197647f06eef022efcc2e3ff59d621d0f2b601e201cec7468410f033"
+    sha256 cellar: :any, arm64_linux:       "e041606e2e6251b1ca3d1f3b320fe6ee01f34e3623593a4b875c8a607cba36ef"
+    sha256 cellar: :any, x86_64_linux:      "a3e1534f5349db87df55327a06944d7332ad63eecc642a08a0d5809b994acef4"
   end
 
   depends_on "cmake" => :build

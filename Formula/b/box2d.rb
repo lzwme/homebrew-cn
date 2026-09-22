@@ -20,6 +20,8 @@ class Box2d < Formula
 
   depends_on "cmake" => :build
 
+  deny_network_access!
+
   def install
     args = %w[
       -DBUILD_SHARED_LIBS=ON

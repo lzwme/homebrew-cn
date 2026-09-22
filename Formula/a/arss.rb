@@ -24,6 +24,8 @@ class Arss < Formula
   depends_on "cmake" => :build
   depends_on "fftw"
 
+  deny_network_access!
+
   def install
     # CMake Error in CMakeLists.txt: No cmake_minimum_required command is present.
     inreplace "src/CMakeLists.txt", /\A/, "cmake_minimum_required(VERSION 3.10)\n"

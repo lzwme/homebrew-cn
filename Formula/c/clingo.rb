@@ -40,6 +40,8 @@ class Clingo < Formula
   link_overwrite "bin/lpconvert"
   link_overwrite "bin/reify"
 
+  deny_network_access!
+
   def install
     site_packages = Language::Python.site_packages(python3)
 

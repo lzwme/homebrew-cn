@@ -12,6 +12,8 @@ class Cli11 < Formula
 
   depends_on "cmake" => :build
 
+  deny_network_access!
+
   def install
     args = %w[
       -DCLI11_BUILD_DOCS=OFF

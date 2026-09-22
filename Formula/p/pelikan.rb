@@ -24,6 +24,8 @@ class Pelikan < Formula
 
   depends_on "cmake" => :build
 
+  deny_network_access!
+
   def install
     # Work around failure from GCC 10+ using default of `-fno-common`
     # multiple definition of `signals'; ../buffer/cc_buf.c.o:(.bss+0x20): first defined here

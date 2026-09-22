@@ -26,6 +26,8 @@ class Seal < Formula
     sha256 "5035cedff6984060c10e2ce7587dab83483787ea2010e1b60d18d19bb3538f3b"
   end
 
+  deny_network_access!
+
   def install
     # Support Microsoft GSL 5.x, which upstream has not widened its version request to yet
     inreplace "CMakeLists.txt", "Microsoft.GSL 4 CONFIG", "Microsoft.GSL 5 CONFIG"

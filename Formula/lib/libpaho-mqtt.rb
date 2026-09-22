@@ -19,6 +19,8 @@ class LibpahoMqtt < Formula
   depends_on "cmake" => :build
   depends_on "openssl@3"
 
+  deny_network_access!
+
   def install
     args = %W[
       -DBUILD_SHARED_LIBS=ON

@@ -33,6 +33,8 @@ class Sdl3Mixer < Formula
   depends_on "sdl3"
   depends_on "wavpack"
 
+  deny_network_access!
+
   def install
     args = %w[
       -DBUILD_SHARED_LIBS=ON

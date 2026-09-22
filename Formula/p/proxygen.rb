@@ -1,8 +1,8 @@
 class Proxygen < Formula
   desc "Collection of C++ HTTP libraries"
   homepage "https://github.com/facebook/proxygen"
-  url "https://ghfast.top/https://github.com/facebook/proxygen/releases/download/v2026.09.14.00/proxygen-v2026.09.14.00.tar.gz"
-  sha256 "e539c8bcb9a3ebe0ac71ef0ce4bf645508dc84404029c02b28bdde38e07c51aa"
+  url "https://ghfast.top/https://github.com/facebook/proxygen/releases/download/v2026.09.21.00/proxygen-v2026.09.21.00.tar.gz"
+  sha256 "7144f76b1a47424d82a432b55522f7391f7fc3b5d46214238b1bc3ba4d529476"
   license "BSD-3-Clause"
   head "https://github.com/facebook/proxygen.git", branch: "main"
 
@@ -12,11 +12,11 @@ class Proxygen < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "0d10d6a95f62731e42598c8f22316cfaf9f17640a1922c3b06dcedcc8cef4acd"
-    sha256 cellar: :any, arm64_tahoe:       "a3ceea1a68325cf1eb541a13ca8745c610d5ac9b598e4ea1e9723fbf63b4caa0"
-    sha256 cellar: :any, arm64_sequoia:     "49ffa2a1dda9853044500df7e3f853622def4694ab4e2ebd4561ce5ddb47424b"
-    sha256 cellar: :any, arm64_linux:       "1f4846fa722a57e368e6d4eb733c208710b6330c15bbeb47facab6e0efcc4674"
-    sha256 cellar: :any, x86_64_linux:      "c76f23fb08924fcbac877a62668dc15abfbfbf457e7477bf5c7ffe8d2ab9aef7"
+    sha256 cellar: :any, arm64_golden_gate: "7f524b8f0ce18e7cf00a0d4f480c5cae2e969e92c8c7776198ecd75a1351d681"
+    sha256 cellar: :any, arm64_tahoe:       "4b1177dae5a1a001ffa564def269f2f062f44ba3b461caaeb88415e6b332b020"
+    sha256 cellar: :any, arm64_sequoia:     "a8044c2ef145cd65505518b95e11a8d70c3b36c3a74f31ecd3bca91b79f8b761"
+    sha256 cellar: :any, arm64_linux:       "1611b300100c53e3072ab6b40479a1687074c360a4fda2d42b07d56660f6d484"
+    sha256 cellar: :any, x86_64_linux:      "eef748c0d9500ec32d1b1ea63ff11ce69415cfedee942bb4e915ee8330e38033"
   end
 
   depends_on "boost" => :build

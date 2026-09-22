@@ -3,37 +3,34 @@ class Netshow < Formula
 
   desc "Interactive network connection monitor with friendly service names"
   homepage "https://github.com/taylorwilsdon/netshow"
-  url "https://files.pythonhosted.org/packages/2b/dc/7dde1dd71210311e124155309b38b209e0e81c631422e58c762821b37b61/netshow-0.2.2.tar.gz"
-  sha256 "c3a684d186463033b99df13d2408669d779cbd8051f031a45fab6380dd34a1e7"
+  url "https://files.pythonhosted.org/packages/7f/81/fc97b3c70ecdd747583c1016373a64bb0e8b7519ed02fd234eaaf527a756/netshow-0.3.0.tar.gz"
+  sha256 "9641bf5a6512615c5faa09d4077756a0e8dfd97a7b202b960e4ac1f04f5f8c8c"
   license "MIT"
-  revision 1
   head "https://github.com/taylorwilsdon/netshow.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "3ffaa09f143a6a3fe2e06f5748be72da6d716ea4de9ffa5225c8657c372aa0fe"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "c19197cfda0a864cc73f3087f4d79051beeb024ebed3900d20ccadb22fc10114"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "e56ee6c4dce9911931a31077e3ba125a4788ff6802717ce025badd165fcbf9bc"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "84e27dac8459026acceedbb031c99f28064d7e648dd253280faa8f0c43f9496e"
-    sha256 cellar: :any_skip_relocation, sonoma:            "ad8cf47828851f33b628bb330602f72b575d49cd23511ff38d4daf9ec817e353"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "aaaf002e96270f89bbfdd38cb3ebdf0d27c37e42054b18f332dfb981bc6b94b7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "964965e3bd8ca444a2a708839104c98b56f37813cc7c4e0424afe52850a5cc16"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "fa0e5a5368cefe90e16c40d4ea3f3d7d3e27675b49743fed5523b8ff2018f9b5"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "f263f859f94b773b607fcce2835e91a41010a7e08b30e331bf38a9b7b2642183"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "5b40453e1b9694f045b8bdaceba70ac7cb4a7d993a10e2dffe0212d973c6a32b"
+    sha256 cellar: :any,                 arm64_linux:       "294a8b3bdb565bc09f92f16d61b2a2f82d4644b59f7ac2643cc1b12f1883d1e3"
+    sha256 cellar: :any,                 x86_64_linux:      "dea578f1d76356612454476ebff2a7e3f1fe5ed4067fe2e3f15efabac2005a0f"
   end
 
   depends_on "python@3.14"
 
   resource "linkify-it-py" do
-    url "https://files.pythonhosted.org/packages/2e/c9/06ea13676ef354f0af6169587ae292d3e2406e212876a413bf9eece4eb23/linkify_it_py-2.1.0.tar.gz"
-    sha256 "43360231720999c10e9328dc3691160e27a718e280673d444c38d7d3aaa3b98b"
+    url "https://files.pythonhosted.org/packages/45/98/7a1a5f31fd5c7ba93e963b168e244b8e3dd705b3d2a718e3c3307583bf57/linkify_it_py-2.2.0.tar.gz"
+    sha256 "907acd2d17ac1fbb9ddb62c8957ccbd6158cac602231a15c3b0cd1e215f03cee"
   end
 
   resource "markdown-it-py" do
-    url "https://files.pythonhosted.org/packages/5b/f5/4ec618ed16cc4f8fb3b701563655a69816155e79e24a17b651541804721d/markdown_it_py-4.0.0.tar.gz"
-    sha256 "cb0a2b4aa34f932c007117b194e945bd74e0ec24133ceb5bac59009cda1cb9f3"
+    url "https://files.pythonhosted.org/packages/06/ff/7841249c247aa650a76b9ee4bbaeae59370dc8bfd2f6c01f3630c35eb134/markdown_it_py-4.2.0.tar.gz"
+    sha256 "04a21681d6fbb623de53f6f364d352309d4094dd4194040a10fd51833e418d49"
   end
 
   resource "mdit-py-plugins" do
-    url "https://files.pythonhosted.org/packages/b2/fd/a756d36c0bfba5f6e39a1cdbdbfdd448dc02692467d83816dff4592a1ebc/mdit_py_plugins-0.5.0.tar.gz"
-    sha256 "f4918cb50119f50446560513a8e311d574ff6aaed72606ddae6d35716fe809c6"
+    url "https://files.pythonhosted.org/packages/59/fc/f8d0863f8862f25602c0404d75568e89fb6b4109804645e5cdfb1be5cf56/mdit_py_plugins-0.6.1.tar.gz"
+    sha256 "a2bca0f039f39dbd35fb74ae1b5f998608c437463371f0ff7f49a19a17a114d0"
   end
 
   resource "mdurl" do
@@ -42,8 +39,8 @@ class Netshow < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/19/56/8d4c30c8a1d07013911a8fdbd8f89440ef9f08d07a1b50ab8ca8be5a20f9/platformdirs-4.9.4.tar.gz"
-    sha256 "1ec356301b7dc906d83f371c8f487070e99d3ccf9e501686456394622a01a934"
+    url "https://files.pythonhosted.org/packages/f8/13/f870dd0b42690138e4e37a76b5138e5690ed4365a77071bb092d59037da0/platformdirs-4.11.11.tar.gz"
+    sha256 "b0befe8a90759e4a9a8b9820d434ae226a6549063210b596da0038a7a05aede4"
   end
 
   resource "psutil" do
@@ -52,28 +49,23 @@ class Netshow < Formula
   end
 
   resource "pygments" do
-    url "https://files.pythonhosted.org/packages/c3/b2/bc9c9196916376152d655522fdcebac55e66de6603a76a02bca1b6414f6c/pygments-2.20.0.tar.gz"
-    sha256 "6757cd03768053ff99f3039c1a36d6c0aa0b263438fcab17520b30a303a82b5f"
+    url "https://files.pythonhosted.org/packages/49/2e/ced460408999b33da6b31b0021b0f37d329e202d4169aeb164493778f25b/pygments-2.21.0.tar.gz"
+    sha256 "610ca751c9bc2492b38eb9a38a7fbc93edbbb2d7182edaf34e66ae493dee5c8c"
   end
 
   resource "rich" do
-    url "https://files.pythonhosted.org/packages/b3/c6/f3b320c27991c46f43ee9d856302c70dc2d0fb2dba4842ff739d5f46b393/rich-14.3.3.tar.gz"
-    sha256 "b8daa0b9e4eef54dd8cf7c86c03713f53241884e814f4e2f5fb342fe520f639b"
+    url "https://files.pythonhosted.org/packages/e9/67/cae617f1351490c25a4b8ac3b8b63a4dda609295d8222bad12242dfdc629/rich-14.3.4.tar.gz"
+    sha256 "817e02727f2b25b40ef56f5aa2217f400c8489f79ca8f46ea2b70dd5e14558a9"
   end
 
   resource "textual" do
-    url "https://files.pythonhosted.org/packages/4f/07/766ad19cf2b15cae2d79e0db46a1b783b62316e9ff3e058e7424b2a4398b/textual-8.2.1.tar.gz"
-    sha256 "4176890e9cd5c95dcdd206541b2956b0808e74c8c36381c88db53dcb45237451"
+    url "https://files.pythonhosted.org/packages/00/21/39a76b01bd5eea82a04baaca7580e105d8c59450df03998345bb2cfb307b/textual-8.2.8.tar.gz"
+    sha256 "3f106a9fbc73e39dd266c9712432087de78a6d644084c7c241d6a25c3169115b"
   end
 
   resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/72/94/1a15dd82efb362ac84269196e94cf00f187f7ed21c242792a923cdb1c61f/typing_extensions-4.15.0.tar.gz"
-    sha256 "0cea48d173cc12fa28ecabc3b837ea3cf6f38c6d1136f85cbaaf598984861466"
-  end
-
-  resource "uc-micro-py" do
-    url "https://files.pythonhosted.org/packages/78/67/9a363818028526e2d4579334460df777115bdec1bb77c08f9db88f6389f2/uc_micro_py-2.0.0.tar.gz"
-    sha256 "c53691e495c8db60e16ffc4861a35469b0ba0821fe409a8a7a0a71864d33a811"
+    url "https://files.pythonhosted.org/packages/f6/cc/6253133b5bb138fc3306cebfbda2c520f545d36b5be2c7255cc528bb45d6/typing_extensions-4.16.0.tar.gz"
+    sha256 "dc983d19a509c94dba722ee6abd33940f7c05a89e243c47e907eb4db6f1a43e5"
   end
 
   def install
@@ -88,7 +80,7 @@ class Netshow < Formula
     PTY.spawn(bin/"netshow") do |r, w, _pid|
       r.winsize = [24, 80]
       r.set_encoding("UTF-8")
-      refute_nil r.expect("Netshow (lsof)", 30), "expected the netshow title"
+      refute_nil r.expect("Netshow", 30), "expected the netshow title"
       w.write "q"
       r.read
     rescue Errno::EIO

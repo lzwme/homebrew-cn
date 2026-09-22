@@ -31,6 +31,8 @@ class Dynamips < Formula
     depends_on "elfutils"
   end
 
+  deny_network_access!
+
   def install
     cmake_args = ["-DANY_COMPILER=1"]
     cmake_args << if OS.mac?

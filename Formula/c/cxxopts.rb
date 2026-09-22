@@ -13,6 +13,8 @@ class Cxxopts < Formula
 
   depends_on "cmake" => :build
 
+  deny_network_access!
+
   def install
     # set `CXXOPTS_CMAKE_DIR` and `CMAKE_INSTALL_LIBDIR_ARCHIND` to create an `:all` bottle.
     args = %w[

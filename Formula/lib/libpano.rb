@@ -33,6 +33,8 @@ class Libpano < Formula
 
   patch :DATA
 
+  deny_network_access!
+
   def install
     args = %W[-DCMAKE_INSTALL_RPATH=#{rpath}]
     # Workaround for CMake 4 compatibility

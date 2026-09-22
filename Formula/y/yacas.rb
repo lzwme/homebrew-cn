@@ -24,6 +24,8 @@ class Yacas < Formula
 
   depends_on "cmake" => :build
 
+  deny_network_access!
+
   def install
     cmake_args = [
       "-DENABLE_CYACAS_GUI=OFF",

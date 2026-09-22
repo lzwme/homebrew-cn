@@ -22,6 +22,8 @@ class Open62541 < Formula
   depends_on "cmake" => :build
   uses_from_macos "python" => :build
 
+  deny_network_access!
+
   def install
     cmake_args = %w[
       -DBUILD_SHARED_LIBS=ON

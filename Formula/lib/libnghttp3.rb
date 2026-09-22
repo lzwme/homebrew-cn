@@ -9,16 +9,17 @@ class Libnghttp3 < Formula
   head "https://github.com/ngtcp2/nghttp3.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "a9128a67f2736db924ba2adfd93dc3f4dbc127880773342329277188daef5ff5"
-    sha256 cellar: :any, arm64_tahoe:       "896929daeacaf435ed2a119156d648526ee7ab83394f50f207b5a4dda376025a"
-    sha256 cellar: :any, arm64_sequoia:     "7d805c2219e1473377ac0d7b6ba6465d278ad016e71a535d9c89308c4e7f95fd"
-    sha256 cellar: :any, arm64_sonoma:      "47258af952ff526bd115d4c7973186487ba21cafbe2b4d48082be6309fc26781"
-    sha256 cellar: :any, sonoma:            "f7166812a06ced8bae92fa85019699d74084574149271030ba3cfbc329b6cbe0"
-    sha256 cellar: :any, arm64_linux:       "36ede951ed147d201e0012f6084fb41ef52f46731c111511b8ae2710996f1fd1"
-    sha256 cellar: :any, x86_64_linux:      "23d4c3f5d3b91b6fab9f77b66e96484ba9c389a88768e3d792037cbf2c46c2e4"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "b04718068d48592d75eac39237bc5c792313ac1bf267bf5a4c91f26c45aa45b1"
+    sha256 cellar: :any, arm64_tahoe:       "f06612abad603898100dfc4fdcff8464789a2b57593ec70255ed633d664020e7"
+    sha256 cellar: :any, arm64_sequoia:     "f0c56bcde3273d2599455d0ab18a281d6a329d63af4672fdbdf3f07633276475"
+    sha256 cellar: :any, arm64_linux:       "aabb9a105e6abaef3fb08330986306c71ff1716ff27a5edc29963b9279134657"
+    sha256 cellar: :any, x86_64_linux:      "70585a5cc3fd09d477862550303e6d356361da783605bc6854ac556be5047512"
   end
 
   depends_on "cmake" => :build
+
+  deny_network_access!
 
   def install
     system "cmake", "-S", ".", "-B", "build", "-DENABLE_LIB_ONLY=1", *std_cmake_args

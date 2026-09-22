@@ -1,8 +1,8 @@
 class RRig < Formula
   desc "R Installation Manager"
   homepage "https://github.com/r-lib/rig"
-  url "https://ghfast.top/https://github.com/r-lib/rig/archive/refs/tags/v0.8.1.tar.gz"
-  sha256 "a0f00e7c84573c15819cf7d907dd8668ad67a31784b07e1edd59039e514675fd"
+  url "https://ghfast.top/https://github.com/r-lib/rig/archive/refs/tags/v0.10.0.tar.gz"
+  sha256 "09f020effe1e0a6bbdf57b17e5f8e1b9d5536f53bcd9de55d54aa6b2fec109f1"
   license "MIT"
 
   livecheck do
@@ -11,13 +11,11 @@ class RRig < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "0b65622a17c7db1ccec57421b4aaffa083fdc95081a779db4e9c8f8d0b48d0d0"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "65b85df1c4324713324196fb256f99a49b66699dada1f040e71451610c39eae6"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "d4e421e0ab51394d40e0e8e72513a0465753840c809808c87605dd471a6b7bc9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "5cd7e40ecc47ec03a4a9c27dfa8ca18f2dfe298d07c936e4f5d281513e505e67"
-    sha256 cellar: :any_skip_relocation, sonoma:            "37d62621eb1f01413a185009e93b424efa6ed14a5de5e14e81e8f367af78cb35"
-    sha256 cellar: :any,                 arm64_linux:       "78301c10dda15d1c359a552706b603ae3bd87ae66c45f95061dc89a0e62dd27a"
-    sha256 cellar: :any,                 x86_64_linux:      "b278bf851710cf4251259f1870c64d3b23868eeece7fbd19d1c4456b582f187c"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "f9a9560361b1c70fa6c0ffa1ece5d4c16516a922104314e3f14afc0236004f7e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "161eb6878816f81287e1a980c584955a8ad33aa4502732dc72b8a1dabc8824a7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "63f365888401081150f1b86ff6af99baca0ccbfca3f1a1e86b4646523a4f6890"
+    sha256 cellar: :any,                 arm64_linux:       "334a69d7da59ec7464362d24a8b2efb12e3dcca6434e61c5833e810152de92d2"
+    sha256 cellar: :any,                 x86_64_linux:      "5457f9a9a8f9b0693b045f12a7adae83b89d50bf10f86f223e737fc2a7f983e7"
   end
 
   depends_on "rust" => :build

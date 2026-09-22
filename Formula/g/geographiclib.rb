@@ -23,6 +23,8 @@ class Geographiclib < Formula
 
   depends_on "cmake" => :build
 
+  deny_network_access!
+
   def install
     args = ["-DEXAMPLEDIR="]
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args

@@ -17,6 +17,8 @@ class LsHpack < Formula
 
   depends_on "cmake" => :build
 
+  deny_network_access!
+
   def install
     # Upstream has no install() rules in CMakeLists, so install artifacts manually.
     # https://github.com/litespeedtech/ls-hpack/issues/21

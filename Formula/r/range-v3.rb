@@ -20,6 +20,8 @@ class RangeV3 < Formula
     resolves "https://github.com/ericniebler/range-v3/pull/1863"
   end
 
+  deny_network_access!
+
   def install
     args = %w[
       -DRANGE_V3_TESTS=OFF

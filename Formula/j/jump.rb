@@ -1,19 +1,17 @@
 class Jump < Formula
   desc "Helps you navigate your file system faster by learning your habits"
   homepage "https://github.com/gsamokovarov/jump"
-  url "https://ghfast.top/https://github.com/gsamokovarov/jump/archive/refs/tags/v0.67.0.tar.gz"
-  sha256 "b54bc4d1173be7ad5e4866f3b76f02c59506cc66b05fafe4aa3854cad1d2d531"
+  url "https://ghfast.top/https://github.com/gsamokovarov/jump/archive/refs/tags/v0.69.0.tar.gz"
+  sha256 "17567f7acd305e2e8093f49e591aa03d74bc5c94204b0461550b0bd8055490af"
   license "MIT"
   head "https://github.com/gsamokovarov/jump.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "4a2de81a815760cf80adfe9546321940f52234e6fe3ba71ba9721dcf9f1e1295"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "748682eed44f56971f34905be8df1497ac2db7e407ca0a6e3f5b2b0e2aa9eff4"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "748682eed44f56971f34905be8df1497ac2db7e407ca0a6e3f5b2b0e2aa9eff4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "748682eed44f56971f34905be8df1497ac2db7e407ca0a6e3f5b2b0e2aa9eff4"
-    sha256 cellar: :any_skip_relocation, sonoma:            "c968580a05c97faac5046d4e03aa8faf2bc89008db64ff81e83b55cefaea2029"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "7d762b4bcfa955462e651c27b6781955bdc6d82f80f5975abfb0ba0421e3009a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "cb2c9042ebf1cdd8b15dcfc1f541e862917588fbfed90a40f5a60b69ed726d65"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "d7a865810c0b3e76b0eb06147455604e031b827a1d10d7abf2711150a6e29c2d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "d7a865810c0b3e76b0eb06147455604e031b827a1d10d7abf2711150a6e29c2d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "d7a865810c0b3e76b0eb06147455604e031b827a1d10d7abf2711150a6e29c2d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "f6e93b19a4501cded7674a6c592b789a2e4381ed45e9256359ac1a14d762a98b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "6a893287a10358e6f9e49ce4b488104c784f699976e2761181ac788492a3c056"
   end
 
   depends_on "go" => :build

@@ -17,6 +17,8 @@ class Enkits < Formula
 
   depends_on "cmake" => :build
 
+  deny_network_access!
+
   def install
     args = %w[
       -DENKITS_BUILD_EXAMPLES=OFF

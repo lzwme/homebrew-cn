@@ -33,6 +33,8 @@ class AmqpCpp < Formula
     resolves "https://github.com/CopernicaMarketingSoftware/AMQP-CPP/pull/541"
   end
 
+  deny_network_access!
+
   def install
     args = %w[
       -DAMQP-CPP_BUILD_SHARED=ON

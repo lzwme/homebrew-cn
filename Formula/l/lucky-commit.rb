@@ -24,6 +24,12 @@ class LuckyCommit < Formula
     depends_on "pocl"
   end
 
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
     if OS.mac? && DevelopmentTools.clang_build_version >= 2100
       # FIXME: Apple clang 21 crashes assembling `sha1-asm`, whose upstream is archived

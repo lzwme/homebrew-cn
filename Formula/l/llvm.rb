@@ -65,6 +65,8 @@ class Llvm < Formula
 
   def clang_config_file_dir = etc/"clang"
 
+  deny_network_access!
+
   def install
     # The clang bindings need a little help finding keg-only libclang.
     inreplace "clang/bindings/python/clang/cindex.py",

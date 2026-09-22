@@ -28,6 +28,8 @@ class Mt32emu < Formula
   depends_on "libsamplerate"
   depends_on "libsoxr"
 
+  deny_network_access!
+
   def install
     system "cmake", "-S", "mt32emu", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"

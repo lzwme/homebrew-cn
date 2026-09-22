@@ -1,8 +1,8 @@
 class ContainerCompose < Formula
   desc "Manage Apple Container with Docker Compose files"
   homepage "https://github.com/mcrich23/container-compose"
-  url "https://ghfast.top/https://github.com/Mcrich23/container-compose/archive/refs/tags/1.1.0.tar.gz"
-  sha256 "8158413f98e97e2cf514cdff4c7e4ce11640d5a78bb91246929164e8112c83ba"
+  url "https://ghfast.top/https://github.com/Mcrich23/container-compose/archive/refs/tags/1.2.0.tar.gz"
+  sha256 "f7bf17856e9eecf3ed711cd32b93297c20c2afc7b47efd2f316aae52ccb55830"
   license "MIT"
   head "https://github.com/mcrich23/container-compose.git", branch: "main"
 
@@ -12,8 +12,9 @@ class ContainerCompose < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "39b51710b3a9abf3d39700b8467226d48e574a10838098f8ecdb2ca8052fb17a"
-    sha256 arm64_sequoia: "40986c3e40d5c8be43e045326921f5d29bf1098cdbb25ccab9f4d10ebcffe732"
+    sha256 arm64_golden_gate: "b4bb037d0d35999b0e737b03791212e8bd06f62594b56350e056588ca36cb214"
+    sha256 arm64_tahoe:       "de2546ced76db4244352f6962673ebf29725a19b62c175964406ce58c4c5a4b2"
+    sha256 arm64_sequoia:     "91f9fa8cf9f3025776412acbda1f5f877128d75ddcab819d1c48943807e2f151"
   end
 
   # TODO: Can be undeprecated on official new release or if upstream confirms change

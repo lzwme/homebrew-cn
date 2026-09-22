@@ -1,6 +1,6 @@
 cask "telari" do
-  version "0.5.8"
-  sha256 "f891f80b1d4df4e8cf6297fe5c30631d585e0203a66e77f8f26d249c4d265b8e"
+  version "0.5.10"
+  sha256 "16713c487303f917ddb0640dfa77d378affe4e8db3853734609db51eaac0fbfb"
 
   url "https://dl.telari.app/Telari-#{version}.dmg"
   name "Telari"

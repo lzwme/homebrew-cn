@@ -15,6 +15,12 @@ class ImessageExporter < Formula
 
   depends_on "rust" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
     # manifest set to 0.0.0 for some reason, matching upstream build behavior
     # https://github.com/ReagentX/imessage-exporter/blob/develop/build.sh

@@ -21,6 +21,8 @@ class Caf < Formula
   depends_on "cmake" => :build
   depends_on "openssl@4"
 
+  deny_network_access!
+
   def install
     tools = pkgshare/"tools"
     rpaths = [rpath, rpath(source: tools)]

@@ -20,6 +20,8 @@ class Libformfactor < Formula
   depends_on "cmake" => :build
   depends_on "libheinz"
 
+  deny_network_access!
+
   def install
     system "cmake", "-S", ".", "-B", "build",
                     "-DLibHeinz_DIR=#{formula_opt_prefix("libheinz")}/cmake",

@@ -23,10 +23,10 @@ class Kraken2 < Formula
   end
 
   depends_on "gperftools"
-  depends_on "python@3.14"
   depends_on "wget"
 
   uses_from_macos "perl"
+  uses_from_macos "python"
   uses_from_macos "rsync"
 
   on_macos do

@@ -1,17 +1,17 @@
 class Navidrome < Formula
   desc "Modern Music Server and Streamer compatible with Subsonic/Airsonic"
   homepage "https://www.navidrome.org"
-  url "https://ghfast.top/https://github.com/navidrome/navidrome/archive/refs/tags/v0.64.0.tar.gz"
-  sha256 "0f395ee2672d32eed9da9ad6b16ec21d1a270d3ba5299fd638ddca237db5fa4c"
+  url "https://ghfast.top/https://github.com/navidrome/navidrome/archive/refs/tags/v0.64.1.tar.gz"
+  sha256 "aeea3e4570a29105bc09957da47f3d969700352bb846ba9ff8f1ddff69d31afe"
   license "GPL-3.0-only"
   head "https://github.com/navidrome/navidrome.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "07fa928a0933be79b8252668eb94735f40c7da169130f8c3856f619d6bab679c"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "0ac8fa8b4ccdfcfbc35f8b6a78bc75665804a13d1ab377038f354d1315dce51c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "d916c58b6878bf3fdd34dd83033ffabc9e3b3190def468fa6cd80c9fb560cf92"
-    sha256 cellar: :any,                 arm64_linux:       "d00f536ff47bbc9f8c69728758e22992fedd1943082add4108e0b06aa91f4410"
-    sha256 cellar: :any,                 x86_64_linux:      "b585894984028fe847896b525e595c1b6bd891696828aae8b8850254a1d7f99c"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "f4e2c3aed555fdda4e21de4903f371ca640873f445636f9d2f5f680ba0bd31b5"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "a3cfe0b044c25a0bf1b990b7effeebf3263fa9fae8a687f1802ad57bf161e13f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "85e1efdda9210186e0307f261f0c2a62fd2bd8d4be1655cbcde65da317688954"
+    sha256 cellar: :any,                 arm64_linux:       "236728253b0bc9a1e7cef8f39c6c88882ea2942e46f07497ac84fbf04e0a08f6"
+    sha256 cellar: :any,                 x86_64_linux:      "c30199eb0ea9163585fd98624d26b360729084923387a9be1c85b4849fae9491"
   end
 
   depends_on "go" => :build

@@ -23,6 +23,12 @@ class SemCli < Formula
     depends_on "zlib-ng-compat"
   end
 
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args, "--manifest-path", "crates/sem-cli/Cargo.toml"
+  end
+
   def install
     system "cargo", "install", *std_cargo_args(path: "crates/sem-cli")
   end

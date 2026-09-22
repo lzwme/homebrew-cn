@@ -25,6 +25,8 @@ class Kahip < Formula
 
   conflicts_with "mcp-toolbox", because: "both install `toolbox` binaries"
 
+  deny_network_access!
+
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"

@@ -11,6 +11,8 @@ class Protozero < Formula
 
   depends_on "cmake" => :build
 
+  deny_network_access!
+
   def install
     # We only install headers, so we can skip `cmake --build`.
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args

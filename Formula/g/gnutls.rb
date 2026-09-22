@@ -64,6 +64,9 @@ class Gnutls < Formula
     resolves "https://gitlab.com/gnutls/gnutls/-/merge_requests/2106"
   end
 
+  # Test performs a TLS handshake with expired.badssl.com
+  allow_network_access! :test
+
   def install
     # DANE support is disabled so GnuTLS does not have an indirect dependency on OpenSSL.
     # If the feature is wanted, then can consider shipping as split `gnutls-dane` formula.

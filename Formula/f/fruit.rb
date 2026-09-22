@@ -31,6 +31,8 @@ class Fruit < Formula
     type :backport
   end
 
+  deny_network_access!
+
   def install
     system "cmake", "-S", ".", "-B", "_build", "-DFRUIT_USES_BOOST=False", *std_cmake_args
     system "cmake", "--build", "_build"

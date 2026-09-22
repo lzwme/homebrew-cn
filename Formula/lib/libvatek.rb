@@ -21,6 +21,7 @@ class Libvatek < Formula
   depends_on "cmake" => :build
   depends_on "libusb"
 
+  deny_network_access!
   def install
     system "cmake", "-S", ".", "-B", "builddir",
                     "-DSDK2_EN_QT=OFF", "-DSDK2_EN_APP=OFF", "-DSDK2_EN_SAMPLE=OFF",

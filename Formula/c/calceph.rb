@@ -1,8 +1,8 @@
 class Calceph < Formula
   desc "C library to access the binary planetary ephemeris files"
   homepage "https://calceph.imcce.fr"
-  url "https://www.imcce.fr/content/medias/recherche/equipes/asd/calceph/calceph-5.0.0.tar.gz"
-  sha256 "aea5120af73f0a492cea2fdc9c63078ee5b625a181cc4f0622ffa68160a2d20b"
+  url "https://www.imcce.fr/content/medias/recherche/equipes/asd/calceph/calceph-5.0.1.tar.gz"
+  sha256 "923d5db2fca10636b64e5529552edf1de8bd3da1da3cc7ac963ae6c3895a31ae"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -11,26 +11,25 @@ class Calceph < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "f325852f1fb82ac4b9ec9ef0fcd1c58da9166def41eb8283b6400c31620551cb"
-    sha256 cellar: :any, arm64_tahoe:       "6eee07b5e3eb9ffe17467f1d4e002607ebcbd0e6240ff17db45d613713550e2f"
-    sha256 cellar: :any, arm64_sequoia:     "bd0abe2d6c82207fee9edd8d265c05c6dc91b5694a118f487d5ad887d328cf5d"
-    sha256 cellar: :any, arm64_sonoma:      "f29c80e99a4b49893a5c78e6e7584ea2a9cf3953b67f2fedc0b406612df34d51"
-    sha256 cellar: :any, sonoma:            "c9acd7c2ef7a11e54ea48c48781315682428c5633d573a19aab81ca8d70f437b"
-    sha256 cellar: :any, arm64_linux:       "41840ebcd20d272037f2623f108ab1bf27d4001773d57865a6224e7e8f51906f"
-    sha256 cellar: :any, x86_64_linux:      "b42bb590fb5819332ddad034a2ea82d997bb08158d0fb2bf8fec1c2c4686e950"
+    sha256 cellar: :any, arm64_golden_gate: "82950772ec0dc121bac775e5430730da451dfa429b14e36cdc85ecf273d18b27"
+    sha256 cellar: :any, arm64_tahoe:       "5f9ee625bfc6da755cc6747e51b330dfae42478d1f580e3ed05871df08fdfb77"
+    sha256 cellar: :any, arm64_sequoia:     "f575faca305766338278980c758e8bbdfd660a90dcaef6f51af5d8a644ebca6a"
+    sha256 cellar: :any, arm64_linux:       "331fba5627f656977c3f17525f395a03bb9e6334f287bd3e8a986280855f0b22"
+    sha256 cellar: :any, x86_64_linux:      "2906c6e83b3630c189d1caa84c4e8f5f237c483b1e7c6bf7726d9e12b3da22bb"
   end
 
   depends_on "cmake" => :build
   depends_on "gcc" # for gfortran
 
+  deny_network_access!
+
   def install
-    # Fall back to gfortran's mangling if Fortran/C interface detection fails.
+    # CMake FortranCInterface_VERIFY fails with LTO on Linux due to different GCC and GFortran versions
+    ENV.append "FFLAGS", "-fno-lto" if OS.linux?
     args = %W[
       -DBUILD_SHARED_LIBS=ON
       -DENABLE_FORTRAN=ON
       -DCMAKE_INSTALL_RPATH=#{rpath}
-      -DFortranCInterface_GLOBAL_CASE=LOWER
-      -DFortranCInterface_GLOBAL__SUFFIX=_
     ]
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"

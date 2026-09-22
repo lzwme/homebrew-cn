@@ -23,6 +23,8 @@ class Packcc < Formula
 
   depends_on "cmake" => :build
 
+  deny_network_access!
+
   def install
     inreplace "src/packcc.c", "/usr/share/packcc/import", "#{opt_pkgshare}/import"
 

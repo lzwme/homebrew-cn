@@ -33,6 +33,8 @@ class Libical < Formula
     depends_on "gettext"
   end
 
+  deny_network_access!
+
   def install
     args = %W[
       -DCMAKE_DISABLE_FIND_PACKAGE_BerkeleyDB=ON

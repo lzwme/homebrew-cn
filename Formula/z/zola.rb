@@ -21,6 +21,12 @@ class Zola < Formula
     depends_on "openssl@3" # Uses Secure Transport on macOS
   end
 
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
     ENV["RUSTONIG_SYSTEM_LIBONIG"] = "1"
     system "cargo", "install", *std_cargo_args

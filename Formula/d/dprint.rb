@@ -19,6 +19,13 @@ class Dprint < Formula
   depends_on "rust" => :build
   depends_on "xz" # required for lzma support
 
+  # Test downloads dprint formatter plugins
+  allow_network_access! :test
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
     ENV.append_to_rustflags "-C link-arg=-Wl,-undefined,dynamic_lookup" if OS.mac?
 

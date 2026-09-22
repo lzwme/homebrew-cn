@@ -24,6 +24,8 @@ class Libcds < Formula
 
   depends_on "cmake" => :build
 
+  deny_network_access!
+
   def install
     # Change the install library directory for x86_64 arch to `lib`
     inreplace "CMakeLists.txt", "set(LIB_SUFFIX \"64\")", ""

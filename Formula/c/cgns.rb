@@ -26,6 +26,8 @@ class Cgns < Formula
   depends_on "gcc" # for gfortran
   depends_on "hdf5"
 
+  deny_network_access!
+
   def install
     # CMake FortranCInterface_VERIFY fails with LTO on Linux due to different GCC and GFortran versions
     ENV.append "FFLAGS", "-fno-lto" if OS.linux?

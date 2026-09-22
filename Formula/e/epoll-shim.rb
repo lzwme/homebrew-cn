@@ -21,6 +21,8 @@ class EpollShim < Formula
 
   depends_on :macos
 
+  deny_network_access!
+
   def install
     args = %W[
       -DCMAKE_INSTALL_PKGCONFIGDIR=#{lib}/pkgconfig

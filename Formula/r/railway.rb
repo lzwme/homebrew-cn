@@ -1,17 +1,17 @@
 class Railway < Formula
   desc "Develop and deploy code with zero configuration"
   homepage "https://railway.com/"
-  url "https://ghfast.top/https://github.com/railwayapp/cli/archive/refs/tags/v5.58.0.tar.gz"
-  sha256 "27eb284ae49446f32ac8f383fa9eef39baf264188278ac55dd9bbd46406259c3"
+  url "https://ghfast.top/https://github.com/railwayapp/cli/archive/refs/tags/v5.59.0.tar.gz"
+  sha256 "83d257bc559f6d6081b113d4e61af77f93e584ff792b2bac6a53fb4fdd1e349d"
   license "MIT"
   head "https://github.com/railwayapp/cli.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "9a75bc3991107de99c0ef2aae5ebe250a8dc88370f6eaa9a705d20e5519c1256"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "959d3a050f418dfbbf418d56b4de5cf2f63ae3205658e4b2c225270489ffd1e3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "e3f8ec498e03bed9c6b1e0a3abe9ad4c0d6940ee9a52d178a78653bf3ab93064"
-    sha256 cellar: :any,                 arm64_linux:       "40db986f2748eb9a4bdd427fd2efa17a1e104e0f47fed6278eef70d8acf27967"
-    sha256 cellar: :any,                 x86_64_linux:      "4b1711228c9d1c76cb5d4274bc14a5dba10b314bdfd774c3e8b694ec51ad69a1"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "7460922d9465722f68b8408b629cbf11ec6e894d9b863a9513bf65fba2b047da"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "aeb6cc5ec93698d968d5b2c585eb3f6794e75a155f38efb7bcc8e7f4c941c896"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "bf7322f0890e0eb0bd87ce9a8c04fba8ab2b98d9d27aa33f40e624d123064dbe"
+    sha256 cellar: :any,                 arm64_linux:       "54bba72634b51123a01d574aa372f799562c0ee24e4e0df1c240e097b9d40236"
+    sha256 cellar: :any,                 x86_64_linux:      "00315918cf19d3d45e824b13e20b2ec5c23b9fdbb9f053029055ca6bcfd73205"
   end
 
   depends_on "rust" => :build
@@ -19,7 +19,7 @@ class Railway < Formula
   deny_network_access!
 
   def fetch
-    system "cargo", "fetch", "--locked", "--target", "host-tuple"
+    system "cargo", "fetch", *std_cargo_fetch_args
   end
 
   def install

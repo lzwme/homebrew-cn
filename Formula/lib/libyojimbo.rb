@@ -14,11 +14,13 @@ class Libyojimbo < Formula
   end
 
   depends_on "cmake" => :build
+
   depends_on "libsodium"
   depends_on "netcode"
   depends_on "reliable"
   depends_on "serialize"
 
+  deny_network_access!
   def install
     system "cmake", "-S", ".", "-B", "build",
                     "-DYOJIMBO_SYSTEM_DEPS=ON",

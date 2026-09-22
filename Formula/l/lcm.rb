@@ -23,12 +23,14 @@ class Lcm < Formula
   end
 
   depends_on "cmake" => :build
+
   depends_on "pkgconf" => :build
   depends_on "glib"
   depends_on "lua"
   depends_on "openjdk"
   depends_on "python@3.14"
 
+  deny_network_access!
   def install
     # Adding RPATH in #{lib}/lua/X.Y/lcm.so and some #{bin}/*.
     lua_lib = lib/"lua"/Formula["lua"].version.major_minor

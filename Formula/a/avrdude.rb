@@ -33,6 +33,8 @@ class Avrdude < Formula
     depends_on "readline"
   end
 
+  deny_network_access!
+
   def install
     args = std_cmake_args + ["-DCMAKE_INSTALL_SYSCONFDIR=#{etc}"]
     shared_args = ["-DBUILD_SHARED_LIBS=ON", "-DCMAKE_INSTALL_RPATH=#{rpath}"]

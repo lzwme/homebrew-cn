@@ -25,6 +25,7 @@ class Gpsbabel < Formula
   end
 
   depends_on "cmake" => :build
+
   depends_on "pkgconf" => :build
   depends_on "qtserialport" => :build
   depends_on "libusb"
@@ -36,6 +37,7 @@ class Gpsbabel < Formula
     depends_on "zlib-ng-compat"
   end
 
+  deny_network_access!
   def install
     # force use of homebrew libusb-1.0 instead of included version.
     # force use of homebrew shapelib instead of included version.

@@ -19,6 +19,8 @@ class Libvidstab < Formula
   depends_on "cmake" => :build
   depends_on "pkgconf" => :test
 
+  deny_network_access!
+
   def install
     args = %w[
       -DUSE_OMP=OFF

@@ -49,6 +49,9 @@ class Tesseract < Formula
     sha256 "9cf5d576fcc47564f11265841e5ca839001e7e6f38ff7f7aacf46d15a96b00ff"
   end
 
+  # Test downloads a sample image to OCR
+  allow_network_access! :test
+
   def install
     # explicitly state leptonica header location, as the makefile defaults to /usr/local/include,
     # which doesn't work for non-default homebrew location

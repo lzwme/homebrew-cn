@@ -36,6 +36,8 @@ class Amtterm < Formula
     end
   end
 
+  allow_network_access! :test
+
   def install
     ENV.prepend_create_path "PERL5LIB", libexec/"lib/perl5"
 

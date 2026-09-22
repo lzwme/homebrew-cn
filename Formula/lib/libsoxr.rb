@@ -37,6 +37,8 @@ class Libsoxr < Formula
     file "Patches/libsoxr/arm64_defines.patch"
   end
 
+  deny_network_access!
+
   def install
     args = %w[
       -DCMAKE_POLICY_VERSION_MINIMUM=3.5

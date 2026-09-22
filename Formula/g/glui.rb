@@ -51,6 +51,7 @@ class Glui < Formula
     resolves "https://github.com/libglui/glui/pull/60"
   end
 
+  deny_network_access!
   def install
     # Find framework first to avoid linking to XQuartz libraries if installed
     system "cmake", "-S", ".", "-B", "build",

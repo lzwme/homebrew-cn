@@ -18,6 +18,8 @@ class Libyang < Formula
   depends_on "cmake" => :build
   depends_on "pcre2"
 
+  deny_network_access!
+
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args, "-DCMAKE_INSTALL_RPATH=#{lib}"
     system "cmake", "--build", "build"

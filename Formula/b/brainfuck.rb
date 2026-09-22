@@ -26,6 +26,8 @@ class Brainfuck < Formula
 
   uses_from_macos "libedit"
 
+  deny_network_access!
+
   def install
     args = %w[
       -DBUILD_SHARED_LIB=ON

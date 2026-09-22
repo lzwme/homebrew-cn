@@ -40,6 +40,8 @@ class VulkanProfiles < Formula
     depends_on "mesa" => :test
   end
 
+  deny_network_access!
+
   def install
     # fix dependency on no-longer-existing CMake files for jsoncpp
     inreplace "CMakeLists.txt",

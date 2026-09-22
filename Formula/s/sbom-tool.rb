@@ -5,17 +5,17 @@ class SbomTool < Formula
   # For now, we track newer git tags which haven't been marked as releases.
   # Upstream seems to have stopped responding to issues since deciding to not
   # accept contributions: https://github.com/microsoft/sbom-tool#contributing
-  url "https://ghfast.top/https://github.com/microsoft/sbom-tool/archive/refs/tags/v4.1.12.tar.gz"
-  sha256 "cb1116622aa38e352b02d7c968c3c50944d970edc52acb55e0a3368b2c465888"
+  url "https://ghfast.top/https://github.com/microsoft/sbom-tool/archive/refs/tags/v4.1.13.tar.gz"
+  sha256 "4fba2326473b3cfa40cf6e4ee2dec25d2f7951fdba6a9bcabb217c5ca99d2d0c"
   license "MIT"
   head "https://github.com/microsoft/sbom-tool.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "16f859cdfae3bd4f7be01e91c7a3b39b12d53b1b67552346908da2e93b38d2ba"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "f228560d736f05482e2191cb1724db63711a31feb34ba75906464b7091bba848"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "00e262e97e0e16cd5dff88f9e9a9f7716a36b22c9611846235dd0c9c77331b90"
-    sha256 cellar: :any,                 arm64_linux:       "fee8e53f638d1c29f81240a56c086a737c7413de7331f90a88aa1ebbb6317464"
-    sha256 cellar: :any,                 x86_64_linux:      "d2ce814f79914567d7f170d6fba5382a45374caf165b149b0c71624365e33557"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "55e1afc312180a210fcd9e11fd2290a324aa664bbfef49a47a51af2e18fcca27"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "089eb84af886373eca4c8e5b765772cf851bce5fbc75d0df01dfe62397a6ab14"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "1dae838b49c03e7dadc2ee1ee0249646ee7e3dd97a259eb0efa31f1b57f6c62e"
+    sha256 cellar: :any,                 arm64_linux:       "4b50991c2c6a78a4773912cbc42b32524bf41144d977b7dce27f5c6446dd06e7"
+    sha256 cellar: :any,                 x86_64_linux:      "b2228fff1b907bf2e945f9943a8fbb8a5d1c67fcb284a16c10511c70a20decc8"
   end
 
   # Aligned to .NET dependency. Can remove if updated to latest .NET

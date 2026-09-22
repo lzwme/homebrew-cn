@@ -24,6 +24,8 @@ class Orcania < Formula
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
 
+  deny_network_access!
+
   def install
     args = %W[
       -DDINSTALL_HEADER=ON

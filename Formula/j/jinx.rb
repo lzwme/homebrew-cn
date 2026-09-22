@@ -18,6 +18,8 @@ class Jinx < Formula
 
   depends_on "cmake" => :build
 
+  deny_network_access!
+
   def install
     # disable building tests
     inreplace "CMakeLists.txt", "if(NOT jinx_is_subproject)", "if(FALSE)"

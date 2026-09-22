@@ -18,12 +18,12 @@ class Gnupg < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_golden_gate: "23c218fe13f49e5410a151b46b3db9864b7b416f8f62218adc8e8ecf9fe07bbf"
-    sha256 arm64_tahoe:       "ce8657136dfd5782c9dd0dcde21edf739db4391a02df0105a499309f40823ab5"
-    sha256 arm64_sequoia:     "100bcea709850d9e2ac71afe515aeb78f62fa2be69289a8f2de59d9aa3023743"
-    sha256 arm64_linux:       "18b3d53cf6758772229953f6dfb5c6e3a8c0abb1b79b59258f43821a43566d1f"
-    sha256 x86_64_linux:      "3d39661c4e7cca8c23b88fcb8b120e00685185a18d6fef5c4e7ee95a22a1a171"
+    rebuild 2
+    sha256 arm64_golden_gate: "c16da6eaf71cc52bfd26854cfe672a2eca70e502d1e72e92bcc1b4d41234f459"
+    sha256 arm64_tahoe:       "5f1d3a0ad0a8f9e80167c00baa65d7f0fe3800cdf33e8dca0058f58435b2f3b2"
+    sha256 arm64_sequoia:     "d96a2a95d5bfaf7f642e5b24e407b8684e012062d451847cf873683ab384e501"
+    sha256 arm64_linux:       "c8a26fe0cd4a0a50d73b0c6966fa67d68cfc1439d5119a70e0b04d5b09300f5b"
+    sha256 x86_64_linux:      "d464ae0af3d50b6840d2aeb07b202b1b7594921b1054eaf25b37ab028f920e8d"
   end
 
   depends_on "pkgconf" => :build
@@ -48,6 +48,8 @@ class Gnupg < Formula
   on_linux do
     depends_on "zlib-ng-compat"
   end
+
+  deny_network_access!
 
   def install
     libusb = Formula["libusb"]

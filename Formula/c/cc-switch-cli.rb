@@ -16,6 +16,12 @@ class CcSwitchCli < Formula
 
   depends_on "rust" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args, "--manifest-path", "src-tauri/Cargo.toml"
+  end
+
   def install
     system "cargo", "install", *std_cargo_args(path: "src-tauri")
     generate_completions_from_executable(bin/"cc-switch", "completions")

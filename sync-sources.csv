@@ -911,6 +911,7 @@ Homebrew-homebrew-core/Formula/c/ccfits.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/ccheck.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/ccls.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/ccm.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/c/ccmux.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cconv.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/ccrypt.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/cctz.rb, Homebrew/homebrew-core, 1
@@ -1233,6 +1234,7 @@ Homebrew-homebrew-core/Formula/c/condure.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/confd.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/config-file-validator.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/configen.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/c/confluence-markdown-exporter.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/conftest.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/confuse.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/conman.rb, Homebrew/homebrew-core, 1
@@ -16276,6 +16278,7 @@ Homebrew-homebrew-cask/Casks/y/yandex-music-unofficial.rb, Homebrew/homebrew-cas
 Homebrew-homebrew-cask/Casks/y/yandex-music.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/y/yandex.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/y/yandextelemost.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/y/yap-app.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/y/yate.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/y/yattee.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/y/yealink-meeting.rb, Homebrew/homebrew-cask, 0

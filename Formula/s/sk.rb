@@ -1,8 +1,8 @@
 class Sk < Formula
   desc "Fuzzy Finder in rust!"
   homepage "https://github.com/skim-rs/skim"
-  url "https://ghfast.top/https://github.com/skim-rs/skim/archive/refs/tags/v5.7.0.tar.gz"
-  sha256 "3a239d8ee284206e5a3891b2fd4e9dfe9150d120a63912b4b764bec2e6ef3966"
+  url "https://ghfast.top/https://github.com/skim-rs/skim/archive/refs/tags/v5.7.1.tar.gz"
+  sha256 "dca8c3e56066415b8ba629726de02cbc132a24d7af9ada46d2baecc75e0270a8"
   license "MIT"
   head "https://github.com/skim-rs/skim.git", branch: "master"
 
@@ -12,12 +12,11 @@ class Sk < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "aac75482271ee92292a32182b09ee60c02ad4d159a3bf67a00ed9a3fc9e85a0d"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "b1e8ed7fce5aab8569c947892522f410e61e060cc4a275accb6cdc36ba7d8bfd"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "bde1951675bd6926f0de967e538861a173f47390421062c6e051d53655f2f449"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "5927ab87cf6d45e664570cd471f2206d75f7c272ab45aeeb60231c72fecc36a4"
-    sha256 cellar: :any,                 arm64_linux:       "d143eacc37a1917adf9b385da4d270c4253d47a776b6fb4eb4bd870403d40bf6"
-    sha256 cellar: :any,                 x86_64_linux:      "ed41fd107f83b88e12894269e8e1784d4c319da4c5ce67308192aa9bea8e7c5d"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "e1c4634256bebe012338367bd2e73b78e2a141b5bb4e4896a86f1727877abf35"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "5d148fdba20f0d69c87ecac9f53f1e0619ab9a31692792d00ec177e86c2696a0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "aa6981a795d679fb0116c07908ad1458ef15096163643e201bb1db0d69112d46"
+    sha256 cellar: :any,                 arm64_linux:       "a09b2ef43a954bfab562b18dd3ac24a8533fe69470d66554d60b83c4aa171b6b"
+    sha256 cellar: :any,                 x86_64_linux:      "54d040add2fc87259af99acb3cb5bd396b6e0ea10afd1db1325921e376a7b13e"
   end
 
   depends_on "rust" => :build
@@ -25,7 +24,7 @@ class Sk < Formula
   deny_network_access!
 
   def fetch
-    system "cargo", "fetch", "--locked", "--target", "host-tuple"
+    system "cargo", "fetch", *std_cargo_fetch_args
   end
 
   def install

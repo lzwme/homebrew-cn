@@ -26,6 +26,8 @@ class Srt < Formula
   depends_on "pkgconf" => :build
   depends_on "openssl@3"
 
+  deny_network_access!
+
   def install
     openssl = Formula["openssl@3"]
 

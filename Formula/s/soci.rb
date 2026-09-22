@@ -23,6 +23,8 @@ class Soci < Formula
   depends_on "cmake" => :build
   depends_on "sqlite"
 
+  deny_network_access!
+
   def install
     args = %W[
       -DCMAKE_CXX_STANDARD=14

@@ -41,16 +41,19 @@ class Wget < Formula
     depends_on "zlib-ng-compat"
   end
 
+  # Test downloads from the network
+  allow_network_access! :test
+
   def install
     system "./bootstrap", "--skip-po" if build.head?
-    system "./configure", "--prefix=#{prefix}",
-                          "--sysconfdir=#{etc}",
+    system "./configure", "--sysconfdir=#{etc}",
                           "--with-ssl=openssl",
                           "--with-libssl-prefix=#{formula_opt_prefix("openssl@3")}",
                           "--disable-pcre",
                           "--disable-pcre2",
                           "--with-libpsl",
-                          "--without-included-regex"
+                          "--without-included-regex",
+                          *std_configure_args
     system "make", "install"
   end
 

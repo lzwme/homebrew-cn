@@ -32,6 +32,8 @@ class Binutils < Formula
 
   link_overwrite "bin/dwp"
 
+  deny_network_access!
+
   def install
     args = %W[
       --disable-default-execstack

@@ -29,6 +29,7 @@ class Libplctag < Formula
     resolves "https://github.com/libplctag/libplctag/pull/618"
   end
 
+  deny_network_access!
   def install
     # Vendored libyafl uses MAP_ANONYMOUS which requires _GNU_SOURCE on Linux
     ENV.append "CFLAGS", "-D_GNU_SOURCE" if OS.linux?

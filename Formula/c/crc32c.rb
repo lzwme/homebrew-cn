@@ -24,6 +24,8 @@ class Crc32c < Formula
 
   depends_on "cmake" => :build
 
+  deny_network_access!
+
   def install
     # Backport support for CMake 4. Remove on the next release when inreplace fails
     # https://github.com/google/crc32c/commit/2bbb3be42e20a0e6c0f7b39dc07dc863d9ffbc07

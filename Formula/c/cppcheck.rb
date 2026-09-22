@@ -28,6 +28,8 @@ class Cppcheck < Formula
 
   uses_from_macos "libxml2" => :build
 
+  deny_network_access!
+
   def install
     ENV.deparallelize
 

@@ -35,6 +35,9 @@ class Nginx < Formula
   # Allow broken symlink to be created by post install
   skip_clean "html"
 
+  # Test starts a local nginx server
+  allow_network_access! :test
+
   def install
     # keep clean copy of source for compiling dynamic modules e.g. passenger
     (pkgshare/"src").mkpath

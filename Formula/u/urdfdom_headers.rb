@@ -20,6 +20,8 @@ class UrdfdomHeaders < Formula
   depends_on "cmake" => :build
   depends_on "pkgconf" => :test
 
+  deny_network_access!
+
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"

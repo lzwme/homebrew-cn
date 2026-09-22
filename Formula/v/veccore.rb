@@ -13,6 +13,8 @@ class Veccore < Formula
   depends_on "cmake" => :build
   depends_on "vc"
 
+  deny_network_access!
+
   def install
     args = %w[
       -DUMESIMD=OFF

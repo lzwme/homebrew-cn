@@ -27,6 +27,8 @@ class Bandicoot < Formula
     depends_on "pocl"
   end
 
+  deny_network_access!
+
   def install
     args = ["-DFIND_CUDA=false"]
     # Enable the detection of OpenBLAS on macOS. Avoid specifying detection for linux

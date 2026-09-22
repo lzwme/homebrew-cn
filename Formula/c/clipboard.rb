@@ -42,6 +42,8 @@ class Clipboard < Formula
     cause "Requires C++20 support"
   end
 
+  deny_network_access!
+
   def install
     # `-Os` is slow and buggy.
     #   https://github.com/Homebrew/homebrew-core/issues/136551

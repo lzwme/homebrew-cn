@@ -16,6 +16,7 @@ class Ifopt < Formula
   end
 
   depends_on "cmake" => :build
+
   depends_on "pkgconf" => :build
   depends_on "eigen"
   depends_on "ipopt"
@@ -36,6 +37,7 @@ class Ifopt < Formula
     resolves "https://github.com/ethz-adrl/ifopt/pull/112"
   end
 
+  deny_network_access!
   def install
     system "cmake", "-S", ".", "-B", "build", "-DCMAKE_POLICY_VERSION_MINIMUM=3.5", *std_cmake_args
     system "cmake", "--build", "build"

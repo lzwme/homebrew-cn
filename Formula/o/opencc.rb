@@ -21,6 +21,8 @@ class Opencc < Formula
   depends_on "marisa"
   uses_from_macos "python" => :build
 
+  deny_network_access!
+
   def install
     args = %W[
       -DCMAKE_INSTALL_RPATH=#{rpath}

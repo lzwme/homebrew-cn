@@ -35,6 +35,8 @@ class Bde < Formula
     end
   end
 
+  deny_network_access!
+
   def install
     (buildpath/"bde-tools").install resource("bde-tools")
 

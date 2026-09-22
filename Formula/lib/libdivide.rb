@@ -12,6 +12,8 @@ class Libdivide < Formula
 
   depends_on "cmake" => :build
 
+  deny_network_access!
+
   def install
     # Skip `cmake --build`, as this is only for building tests.
     system "cmake", "-S", ".", "-B", "build", "-DLIBDIVIDE_BUILD_TESTS=OFF", *std_cmake_args

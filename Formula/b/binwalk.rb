@@ -48,6 +48,12 @@ class Binwalk < Formula
   pypi_packages exclude_packages: ["numpy", "pillow"],
                 extra_packages:   %w[capstone gnupg matplotlib pycryptodome]
 
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
     system "cargo", "install", *std_cargo_args
   end

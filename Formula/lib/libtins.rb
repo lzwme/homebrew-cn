@@ -17,10 +17,12 @@ class Libtins < Formula
   end
 
   depends_on "cmake" => :build
+
   depends_on "openssl@4"
 
   uses_from_macos "libpcap"
 
+  deny_network_access!
   def install
     args = %w[
       -DLIBTINS_BUILD_EXAMPLES=OFF

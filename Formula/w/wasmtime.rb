@@ -2,8 +2,8 @@ class Wasmtime < Formula
   desc "Standalone JIT-style runtime for WebAssembly, using Cranelift"
   homepage "https://wasmtime.dev/"
   url "https://github.com/bytecodealliance/wasmtime.git",
-      tag:      "v48.0.2",
-      revision: "e9f1ea232fd245aea338ab3eb7d73487ae75cab1"
+      tag:      "v49.0.0",
+      revision: "17830bd3c0331d920a8aa38846eebc4d46d98c23"
   license "Apache-2.0" => { with: "LLVM-exception" }
   head "https://github.com/bytecodealliance/wasmtime.git", branch: "main"
 
@@ -16,11 +16,11 @@ class Wasmtime < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "c69a114a7dd658113f9ff6dc30792e12dc1e746bb238040120e6bf767d144eb4"
-    sha256 cellar: :any, arm64_tahoe:       "21c95b527f0ad047e78afe4cccaefe3814ee2b70c67212ae8bcd93b14b22a253"
-    sha256 cellar: :any, arm64_sequoia:     "53a88661eea2a0dc77ede405831c56877f272d8515ab5da11b1738646406b573"
-    sha256 cellar: :any, arm64_linux:       "01f7febc4265b0e75c4c53f2a56ba37ca9a4ab648977f6cb810f311e2e8eba58"
-    sha256 cellar: :any, x86_64_linux:      "c3f173a4d11e1a84380c77b82f7bbdb731e705b979f973b60829f8c0470008ca"
+    sha256 cellar: :any, arm64_golden_gate: "9eb3aabe99abc36b1054c7956d6f3a21482feaea17131905a53e378922dcec78"
+    sha256 cellar: :any, arm64_tahoe:       "0d0229f17c3a34a7670dd75d938d7a755644253bf5fc504e4904bb396501a08f"
+    sha256 cellar: :any, arm64_sequoia:     "88b3f53f600919b733d2803398fcd27b1ec1e0163eb5050721befa8cd3098fc2"
+    sha256 cellar: :any, arm64_linux:       "473658377a49473ed5d759524bf8c79f680d81d9da00307cdd06d794761960f2"
+    sha256 cellar: :any, x86_64_linux:      "51b561821bf9559e97f69e518d24c38e3b1b859b8fe5dd7463107595eed2c2c6"
   end
 
   depends_on "cmake" => :build

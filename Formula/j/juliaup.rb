@@ -23,6 +23,12 @@ class Juliaup < Formula
 
   conflicts_with "julia", because: "both install `julia` binaries"
 
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
     system "cargo", "install", "--bin", "juliaup", *std_cargo_args
     system "cargo", "install", "--bin", "julialauncher", *std_cargo_args(features: "binjulialauncher")

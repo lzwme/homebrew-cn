@@ -1,8 +1,8 @@
 class Topgrade < Formula
   desc "Upgrade all the things"
   homepage "https://github.com/topgrade-rs/topgrade"
-  url "https://ghfast.top/https://github.com/topgrade-rs/topgrade/archive/refs/tags/v17.12.0.tar.gz"
-  sha256 "30d817864537599284729d57c67afd7b9d10039802d4788afe4fc180a7bbe922"
+  url "https://ghfast.top/https://github.com/topgrade-rs/topgrade/archive/refs/tags/v17.12.1.tar.gz"
+  sha256 "12beb81a0405c049920148d58747cdc5d406a68825eb955a95ad9bc989bd38bc"
   license "GPL-3.0-or-later"
   head "https://github.com/topgrade-rs/topgrade.git", branch: "main"
 
@@ -14,11 +14,11 @@ class Topgrade < Formula
   no_autobump! because: :bumped_by_upstream
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "a43bb3cda7ffa35d2daa97a70f52b0158f698c24164b372e535fe7fa7b45fdcd"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "6e71ed23372b11a1a01e082a91593f7409c3398b3976c16a621f1dd4b4f9dabe"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "73916bf92caf67b747f7d31123d0359f07d5d619d86a62f2cd885a74b18f56b2"
-    sha256 cellar: :any,                 arm64_linux:       "e601f1a4e46ff858ad0174d2f91f24b58542ed93b674de9e56735059cabee4b8"
-    sha256 cellar: :any,                 x86_64_linux:      "2b0f495492e7e13becf6aab37e66de03fe50beb68f20e7ace8f40d6db0176dc7"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "a16849e663b5b51368c09691006d24347bce0ac2562f05ee436d0a1753c78354"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "bca40d75eb42c6f809456f22bc3380ffb38eafc02d1c601813acb8f37d6be5b5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "1f7d44f1fbe77ab1092c396ad8994e0b45ea7b16e0966f24c42d72788fae1a27"
+    sha256 cellar: :any,                 arm64_linux:       "a29ba839153bb1f8faabfca2ac19bb0b195ba0a7ab9d5102b92ef887334b2ca5"
+    sha256 cellar: :any,                 x86_64_linux:      "813e594269e821d7da36ce2a28dc7e256ae2c993dde1a97c2c466b6f2b3f305f"
   end
 
   depends_on "rust" => :build
@@ -26,7 +26,7 @@ class Topgrade < Formula
   deny_network_access!
 
   def fetch
-    system "cargo", "fetch", "--locked", "--target", "host-tuple"
+    system "cargo", "fetch", *std_cargo_fetch_args
   end
 
   def install

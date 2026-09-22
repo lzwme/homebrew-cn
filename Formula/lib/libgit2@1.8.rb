@@ -33,6 +33,7 @@ class Libgit2AT18 < Formula
     depends_on "zlib-ng-compat"
   end
 
+  deny_network_access!
   def install
     args = %w[-DBUILD_EXAMPLES=OFF -DBUILD_TESTS=OFF -DUSE_SSH=ON -DUSE_BUNDLED_ZLIB=OFF]
 

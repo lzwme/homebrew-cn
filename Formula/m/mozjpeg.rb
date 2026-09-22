@@ -40,6 +40,8 @@ class Mozjpeg < Formula
     type :backport
   end
 
+  deny_network_access!
+
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args(install_libdir: lib)
     system "cmake", "--build", "build"

@@ -22,6 +22,8 @@ class Asar < Formula
     depends_on "coreutils" => :test # for sha256sum
   end
 
+  deny_network_access!
+
   def install
     system "cmake", "-S", "src", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"

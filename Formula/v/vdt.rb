@@ -20,6 +20,8 @@ class Vdt < Formula
 
   uses_from_macos "python" => :build
 
+  deny_network_access!
+
   def install
     # https://github.com/dpiparo/vdt/issues/21
     args = %w[

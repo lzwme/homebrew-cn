@@ -32,6 +32,8 @@ class Fifechan < Formula
     depends_on "mesa"
   end
 
+  deny_network_access!
+
   def install
     args = %W[
       -DCMAKE_POLICY_VERSION_MINIMUM=3.5

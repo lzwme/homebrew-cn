@@ -12,14 +12,15 @@ class Giflib < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_golden_gate: "44e9867e1013aeea94295a6ec8d7921f10531503a3580e11d700a49979f098a2"
-    sha256 cellar: :any,                 arm64_tahoe:       "bef1f5fb654184cce8af628e3a0c222eeab3c61fcaa4ff169974b22c22f01a8c"
-    sha256 cellar: :any,                 arm64_sequoia:     "87a14dfa72601220313c1190505c7a4d0426b384a6a2d1ba3c5a36bdc784d1b0"
-    sha256 cellar: :any,                 arm64_sonoma:      "513c620b8bcf0f74370b4852fa823f1e29761b843540abfb6b9fa9cd9517994b"
-    sha256 cellar: :any,                 sonoma:            "2f33f13f237f51ac1521faa46e71338de79a6fe6c826e4f739388fac3ba510f0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "88ab65a2310db6f6801c33aa8856dad4309bc61868006c9fbac62f8730b977b5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "e349e61810df032b3fff5eaac4f0db46dcc66580a070b5640a60482d6779bf64"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "bdf5a53f053c10c716573cf955e5f50d704d97f9d2dedc781161031744b77849"
+    sha256 cellar: :any, arm64_tahoe:       "5bf0850f756c9fe9469d628d1833b0d44db914e44b6b67037e91312c0d0f560d"
+    sha256 cellar: :any, arm64_sequoia:     "cfd0ce71b021f10c57fe01270b77703a82c56032afd078a48d7ad48c603ae0de"
+    sha256 cellar: :any, arm64_linux:       "298868b541405172596e292ed27ba704239eaaae6d83816e37ae945a47ab141e"
+    sha256 cellar: :any, x86_64_linux:      "8e8b91a9a5412978380c43049dd2101939e7b699a6ded7bd18e72a91b34d3e3a"
   end
+
+  deny_network_access!
 
   def install
     args = ["PREFIX=#{prefix}"]

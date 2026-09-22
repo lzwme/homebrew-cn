@@ -18,6 +18,8 @@ class GoogleBenchmark < Formula
 
   depends_on "cmake" => :build
 
+  deny_network_access!
+
   def install
     args = %w[-DBENCHMARK_ENABLE_GTEST_TESTS=OFF]
     # Workaround for the build misdetecting our compiler features because of superenv.

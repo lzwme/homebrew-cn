@@ -21,6 +21,8 @@ class LibomemoC < Formula
   depends_on "pkgconf" => :test
   depends_on "protobuf-c"
 
+  deny_network_access!
+
   def install
     args = %w[-DBUILD_SHARED_LIBS=TRUE]
     # Workaround to build with CMake 4

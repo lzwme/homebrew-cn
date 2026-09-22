@@ -19,6 +19,8 @@ class Superlu < Formula
   depends_on "pkgconf" => :test
   depends_on "openblas"
 
+  deny_network_access!
+
   def install
     args = %W[
       -Denable_internal_blaslib=NO

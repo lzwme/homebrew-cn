@@ -1,16 +1,16 @@
 class Sonic < Formula
   desc "Fast, lightweight & schema-less search backend"
   homepage "https://github.com/valeriansaliou/sonic"
-  url "https://ghfast.top/https://github.com/valeriansaliou/sonic/archive/refs/tags/v1.9.1.tar.gz"
-  sha256 "e17bdd7ee68dd4e7fe4d992f134a5819c3af63a8dc467a6f092450e8e744efc0"
+  url "https://ghfast.top/https://github.com/valeriansaliou/sonic/archive/refs/tags/v1.10.0.tar.gz"
+  sha256 "1f9a332c7a8a87cef3eb0c6c2ea721d50e846fd5cab828623aeaaac82895da81"
   license "MPL-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "5df83ddd3c235107da258734e7b9706509ba185ef576584c8330d03807c82844"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "c1cfb531591a40593eb201b5029b139697aca06cbdd4fd08426ed4d2c28b0cd1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "3b731a264f1388a0cf976114fd155d885502cedd2f2238dba389fc9b6b6668c7"
-    sha256 cellar: :any,                 arm64_linux:       "3ee5ce055b9d547357a8919d3751e37707e39262b48f32f0585a0d25b488ff5b"
-    sha256 cellar: :any,                 x86_64_linux:      "343d22af66d4917ea629365a5f22b3278a115b7c9f044d3d3fe185f775cac2c6"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "982bc8786502a98bce02f58580118fbc1e3cc7b9d30d3e28ec1a2ee1f480d09e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "3a8fbcabc0d75852f1352882e4e52e08ac4f7a24c29489c2fdca70ea2988f780"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "cb48ed9a6298d90828f6823b9e65a6cf4c147a807450c8c81e02a7a8fb2df147"
+    sha256 cellar: :any,                 arm64_linux:       "d51d28c2f08b5fd7f4979653388935f43fdb0b9ac905198e61d8e07dda8bc090"
+    sha256 cellar: :any,                 x86_64_linux:      "9ac0f06f411b24b8d702337c6b5cf33957eca7fe5a23218ad2226978361bee16"
   end
 
   depends_on "rust" => :build
@@ -21,7 +21,7 @@ class Sonic < Formula
   allow_network_access! :test
 
   def fetch
-    system "cargo", "fetch", "--locked", "--target", "host-tuple"
+    system "cargo", "fetch", *std_cargo_fetch_args
   end
 
   def install

@@ -31,6 +31,8 @@ class CernNdiff < Formula
 
   conflicts_with "ndiff", "nmap", because: "both install `ndiff` binaries"
 
+  deny_network_access!
+
   def install
     # Workaround for CMake 4 compatibility
     args = %w[-DCMAKE_POLICY_VERSION_MINIMUM=3.5]

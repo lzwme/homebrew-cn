@@ -9,14 +9,15 @@ class Libunistring < Formula
   compatibility_version 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_golden_gate: "d489b51a9ce0a76657f226159fdc39eab37798c86b0465c56ccfbde60c98d953"
-    sha256 cellar: :any,                 arm64_tahoe:       "bae6d6d8dffc573c039a850a96e36f1b7fd846abd9ccada8260b7e888b5a3646"
-    sha256 cellar: :any,                 arm64_sequoia:     "463b68c92d30d845df10b1b137aa8e41a744f1ce2d2cab024dd26c766335b797"
-    sha256 cellar: :any,                 arm64_sonoma:      "dc4d4b4406a2c7032dd838ae362ecaeba114d8ac9d9daaa18f760d1d71ba3577"
-    sha256 cellar: :any,                 sonoma:            "fbb3a7908a19f306823dbd51b417705c73f710a9a1fb1e34ba7aa67a3c966094"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "362f8bd62dc8a3db8ca85938b2bfc7ebd09bd3d4f676ae1491183239d576b7ea"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "2491acf49407cf75d5f95a6296f2a1c0294646834022fdcad7e22471c0c9a6d4"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "57307eb89a02e09aa4de70e09391994dfc9520d9f101ec7e64f9af21dcea2420"
+    sha256 cellar: :any, arm64_tahoe:       "14a72bd0aa3f1b2b3a7360be24380171d140b2fc5abbde0144807d3847b6728c"
+    sha256 cellar: :any, arm64_sequoia:     "513bf2378982459bf3daf286cec9d50d3f491686f8caa8749604de3be4e6db77"
+    sha256 cellar: :any, arm64_linux:       "27ac70a1873a544d1602e2c23a60feab68707d8a5403fb686567ce94ef08e2cd"
+    sha256 cellar: :any, x86_64_linux:      "a1153bcda606e120f9bf8e7e274d102e9f87a517c88fc8324c488ffdf1cfce71"
   end
+
+  deny_network_access!
 
   def install
     # macOS iconv implementation is slightly broken since Sonoma.

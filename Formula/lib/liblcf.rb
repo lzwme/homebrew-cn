@@ -23,6 +23,8 @@ class Liblcf < Formula
 
   uses_from_macos "expat"
 
+  deny_network_access!
+
   def install
     system "cmake", "-S", ".", "-B", "build",
                     "-DCMAKE_INSTALL_RPATH=#{rpath}",

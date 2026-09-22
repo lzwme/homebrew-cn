@@ -18,6 +18,13 @@ class Geckodriver < Formula
 
   depends_on "rust" => :build
 
+  # Test binds and drives a local geckodriver server
+  allow_network_access! :test
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
     cd "testing/geckodriver" if build.head?
     system "cargo", "install", *std_cargo_args

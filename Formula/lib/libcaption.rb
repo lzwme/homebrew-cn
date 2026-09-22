@@ -21,6 +21,8 @@ class Libcaption < Formula
 
   depends_on "cmake" => :build
 
+  deny_network_access!
+
   def install
     ENV["CMAKE_POLICY_VERSION_MINIMUM"] = "3.5"
     system "cmake", "-S", ".", "-B", "build",

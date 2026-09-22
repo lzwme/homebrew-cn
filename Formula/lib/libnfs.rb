@@ -18,6 +18,8 @@ class Libnfs < Formula
   depends_on "docbook" => :build
   depends_on "docbook-xsl" => :build
 
+  deny_network_access!
+
   def install
     ENV["XML_CATALOG_FILES"] = "#{etc}/xml/catalog"
 

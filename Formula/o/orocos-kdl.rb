@@ -17,6 +17,8 @@ class OrocosKdl < Formula
   depends_on "cmake" => :build
   depends_on "eigen"
 
+  deny_network_access!
+
   def install
     system "cmake", "-S", "orocos_kdl", "-B", "build",
                     "-DCMAKE_CXX_STANDARD=14",

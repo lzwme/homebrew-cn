@@ -18,6 +18,8 @@ class Crow < Formula
   depends_on "cmake" => :build
   depends_on "asio"
 
+  deny_network_access!
+
   def install
     system "cmake", "-S", ".", "-B", "build",
            "-DCROW_BUILD_EXAMPLES=OFF", "-DCROW_BUILD_TESTS=OFF", *std_cmake_args

@@ -33,6 +33,8 @@ class Never < Formula
   uses_from_macos "flex" => :build
   uses_from_macos "libffi"
 
+  deny_network_access!
+
   def install
     ENV.append_to_cflags "-I#{MacOS.sdk_path}/usr/include/ffi" if OS.mac?
 

@@ -17,6 +17,8 @@ class Oatpp < Formula
 
   depends_on "cmake" => :build
 
+  deny_network_access!
+
   def install
     ENV.append "LDFLAGS", "-Wl,-rpath,#{lib}/oatpp-#{version}" if OS.linux?
 

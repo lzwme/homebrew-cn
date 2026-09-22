@@ -56,6 +56,8 @@ class Podofo < Formula
     depends_on "zlib-ng-compat"
   end
 
+  deny_network_access!
+
   def install
     if OS.mac? && MacOS.version <= :ventura
       # When using Homebrew's superenv shims, we need to use HOMEBREW_LIBRARY_PATHS

@@ -37,6 +37,8 @@ class Tasksh < Formula
     depends_on "readline"
   end
 
+  deny_network_access!
+
   def install
     # Workaround for CMake 4 compatibility
     args = %w[-DCMAKE_POLICY_VERSION_MINIMUM=3.5]

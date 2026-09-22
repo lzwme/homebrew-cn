@@ -1,17 +1,17 @@
 class Fnox < Formula
   desc "Fort Knox for your secrets - flexible secret management tool"
   homepage "https://fnox.jdx.dev/"
-  url "https://ghfast.top/https://github.com/jdx/fnox/archive/refs/tags/v1.35.2.tar.gz"
-  sha256 "04167c32ba742727f5ea5b674b1120b34fa87776f9c63f90d68a0e7ad9b3511a"
+  url "https://ghfast.top/https://github.com/jdx/fnox/archive/refs/tags/v1.35.3.tar.gz"
+  sha256 "5df718dd9d7a071e5112baed1b5ccf9e096554ccf2a118bf1af978206836b722"
   license "MIT"
   head "https://github.com/jdx/fnox.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "cb4a0428aa80ea72eb6065dc3072e5408e7690e1163d2aa49e929e558a66f04a"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "2b0d98f11372b7b3c1e1ea8e41d80853b255220216c472cb000824c089975678"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "f67fb7f7adb425026e4d5e8cfa8593a33c6b4ee505a78efd3c5d26eb1190d340"
-    sha256 cellar: :any,                 arm64_linux:       "8808687d14fbd5ec5556dde9c793f2bea3a970287371bb089699f2846cbe2a0f"
-    sha256 cellar: :any,                 x86_64_linux:      "94c5f0064a5d511e656bfa2adfd0e2163317c1988f5ab67524befffa7e0a87fb"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "30a801ff9d9b1da17d59458accc9b7557cbe8070ca5ba6d0144d7cdaaf4ce954"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "eef540d2173c50f5760743b75ecc601d5e06197a63bc14a41960daf530a14d6a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "c43b9c21846735eb1fa67d1d630df3897a1dfbe71340d070b748df8b686dbf32"
+    sha256 cellar: :any,                 arm64_linux:       "c874cf8aacd094fcac633e0b8caec686caa53257ec9acb406bbb720204fb15a0"
+    sha256 cellar: :any,                 x86_64_linux:      "4ffb3261c66be485c32968148a45034bd425fec75710196075a7c28d3144a0ca"
   end
 
   depends_on "pkgconf" => :build
@@ -22,6 +22,12 @@ class Fnox < Formula
   on_linux do
     depends_on "openssl@3"
     depends_on "systemd" # libudev
+  end
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
   end
 
   def install

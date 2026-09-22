@@ -34,6 +34,8 @@ class Libgr < Formula
     depends_on "zlib-ng-compat"
   end
 
+  deny_network_access!
+
   def install
     # FIXME: macOS 27 SDK's `XPC_INLINE` uses `inline`, which the plugin's strict C90 rejects
     inreplace "CMakeLists.txt", "quartzplugin\n    PROPERTIES C_STANDARD 90",

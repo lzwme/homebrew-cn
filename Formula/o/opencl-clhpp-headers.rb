@@ -15,6 +15,8 @@ class OpenclClhppHeaders < Formula
   depends_on "cmake" => :build
   depends_on "opencl-headers"
 
+  deny_network_access!
+
   def install
     system "cmake", "-S", ".", "-B", "build",
                     "-DBUILD_DOCS=OFF",

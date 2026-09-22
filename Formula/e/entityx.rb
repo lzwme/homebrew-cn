@@ -23,6 +23,8 @@ class Entityx < Formula
 
   depends_on "cmake" => :build
 
+  deny_network_access!
+
   def install
     args = %w[
       -DENTITYX_BUILD_SHARED=off

@@ -31,6 +31,8 @@ class Bloaty < Formula
   depends_on "protobuf"
   depends_on "re2"
 
+  deny_network_access!
+
   def install
     # Workaround until new release with
     # https://github.com/google/bloaty/commit/9677d4938ec5be44f04eae774c94e10d339fd3a7

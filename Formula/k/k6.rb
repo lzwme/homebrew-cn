@@ -1,8 +1,8 @@
 class K6 < Formula
   desc "Modern load testing tool, using Go and JavaScript"
   homepage "https://k6.io"
-  url "https://ghfast.top/https://github.com/grafana/k6/archive/refs/tags/v2.2.0.tar.gz"
-  sha256 "c7dee72fc5fe54c3230fb5cdd67e9b9668bd98784cde057a92294fc2093a45aa"
+  url "https://ghfast.top/https://github.com/grafana/k6/archive/refs/tags/v2.3.0.tar.gz"
+  sha256 "35d0e4ce17ac3b7557f220a63bd9486f24dd63e032fbe1aed8a79326191a2097"
   license "AGPL-3.0-or-later"
   head "https://github.com/grafana/k6.git", branch: "master"
 
@@ -12,13 +12,11 @@ class K6 < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "bebc87c2288377510eed1a5cb3c786d282642ee1abb7f5bf72f76a9d5590d505"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "0f0af69503fbe5bfba9e93d54c3504046958b6c15cf52cc6063ee7f3de73042a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "2877060a2cf3b74c302b76aba662447c7552548281fa0f11ac6d58168e62c902"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "095d432c2d7a53ad48683cff439db812500cf3854bb5cb46e5ae53aa3f030531"
-    sha256 cellar: :any_skip_relocation, sonoma:            "b1c624789041f7d83279e66f1de11dd912befeae8eca58d404f9804e3277c89a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "f1f232e4b6c9ec1ee0e79e7f4d47f19d324722197111df14574945f770f77ed7"
-    sha256 cellar: :any,                 x86_64_linux:      "03d8262d32365f51f60996f4791ec31fadd784653adac999831bd752ba40f270"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "0cd11b4fc89c72d6e711a2f8beca9140f720de2970d23d35f12e8a5362ff2bd6"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "7228c2394a74d6174596016cdbe20c3125a1c58c4f83a18a62b5600cd2b6d820"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "26904d0e9e6260c94dfbd82c468e114276ef69c89b28e522f57cb88ab7570de4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "685e64adc23770f166f7dd8da4420f4a0e3c210b7007ae845f228c912043c2b3"
+    sha256 cellar: :any,                 x86_64_linux:      "042e8311f61d0a4a57dd71cc65470db5c987e4b6b49e899e9ce9369d703b394f"
   end
 
   depends_on "go" => :build

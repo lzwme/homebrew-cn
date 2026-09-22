@@ -18,6 +18,8 @@ class Entt < Formula
   depends_on "cmake" => :build
   depends_on "pkgconf" => :test
 
+  deny_network_access!
+
   def install
     system "cmake", "-S", ".", "-B", "build", "-DENTT_INSTALL=ON", "-DENTT_BUILD_DOCS=OFF", *std_cmake_args
     system "cmake", "--build", "build"

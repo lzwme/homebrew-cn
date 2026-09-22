@@ -49,6 +49,8 @@ class Ccls < Formula
         .find { |f| f.name.match?(/^llvm(@\d+)?$/) }
   end
 
+  deny_network_access!
+
   def install
     ENV.append "LDFLAGS", "-Wl,-rpath,#{rpath(target: llvm.opt_lib)}" if OS.linux?
     resource_dir = Utils.safe_popen_read(llvm.opt_bin/"clang", "-print-resource-dir").chomp

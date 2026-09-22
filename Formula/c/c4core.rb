@@ -19,6 +19,8 @@ class C4core < Formula
 
   conflicts_with "rapidyaml", because: "both install `c4core` files `include/c4`"
 
+  deny_network_access!
+
   def install
     system "cmake", "-S", ".", "-B", "build", "-DBUILD_SHARED_LIBS=ON", *std_cmake_args
     system "cmake", "--build", "build"

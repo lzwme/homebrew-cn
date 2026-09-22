@@ -13,6 +13,8 @@ class MitamaCppResult < Formula
   depends_on "cmake" => :build
   depends_on "fmt" => :test
 
+  deny_network_access!
+
   def install
     # We don't need to do `cmake --build` since this is header-only.
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args

@@ -40,6 +40,8 @@ class Iqtree3 < Formula
     end
   end
 
+  deny_network_access!
+
   def install
     resource("lsd2").stage buildpath/"lsd2"
 

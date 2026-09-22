@@ -1,8 +1,8 @@
 class Ghidra < Formula
   desc "Multi-platform software reverse engineering framework"
   homepage "https://github.com/NationalSecurityAgency/ghidra"
-  url "https://ghfast.top/https://github.com/NationalSecurityAgency/ghidra/archive/refs/tags/Ghidra_12.1.3_build.tar.gz"
-  sha256 "474e327d27fa87aeea9fff8f842351d229a3c8e7a07c02ce3ac53141b79057c2"
+  url "https://ghfast.top/https://github.com/NationalSecurityAgency/ghidra/archive/refs/tags/Ghidra_12.1.4_build.tar.gz"
+  sha256 "2a858300c350f05ae2e729dff86b4f584d0b9a6b398879c55025574e67696cec"
   license "Apache-2.0"
 
   livecheck do
@@ -11,13 +11,11 @@ class Ghidra < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "6b22221b5d3ea942506d09cee0292fff4b712a7e53c4671398a80bf83c7fff7f"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "11dbbd3b531c84d74560c43c35fa79c2581be71303c3a917ba614f52120c5028"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "13b50282999f82a52e881a7f0d947cf85fafb3773b829a1ee90305e47253258d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "902d39e245123ed991081801b67edd5b271c3d35573c353c9462d018463780dc"
-    sha256 cellar: :any_skip_relocation, sonoma:            "fdb2693de04dbafd7c2cde11869fb3bee821d558eb704739ece5405d45a46188"
-    sha256 cellar: :any,                 arm64_linux:       "58bad99dcc15a626545e390f5ebde72c98b01ebfac412474bd28a7f3a2acf4d5"
-    sha256 cellar: :any,                 x86_64_linux:      "5aabf2edd2f8337b0d78d9124a853f6049e6b6146341f2049b18fa9af4f2a4df"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "70f281725bc5340068fa6f39526d17cd7249cf990e950c00458ba53ff0a9020d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "d2a6222389d18d32d48e55079407c1d877d90f86d692911b0399a6ff5e440a9a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "fdaf330d5d9e3a2ad7c58c4cf69c6a145ec8a964c119617d6476f911434d6ca2"
+    sha256 cellar: :any,                 arm64_linux:       "b8cca5890f3486247bcf94b329ed2558cf5277ced3de9055cbd59a9e27611321"
+    sha256 cellar: :any,                 x86_64_linux:      "1808ba1b278316e6458c0cf8312dc421897f057cbbaf47c7ca3755360a3df121"
   end
 
   depends_on "gradle" => :build

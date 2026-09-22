@@ -26,6 +26,8 @@ class Beagle < Formula
   depends_on "cmake" => :build
   depends_on "openjdk" => [:build, :test]
 
+  deny_network_access!
+
   def install
     # Avoid building Linux bottle with `-march=native`. Need to enable SSE4.1 for _mm_dp_pd
     # Issue ref: https://github.com/beagle-dev/beagle-lib/issues/189

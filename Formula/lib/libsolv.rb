@@ -1,8 +1,8 @@
 class Libsolv < Formula
   desc "Library for solving packages and reading repositories"
   homepage "https://github.com/openSUSE/libsolv"
-  url "https://ghfast.top/https://github.com/openSUSE/libsolv/archive/refs/tags/0.7.39.tar.gz"
-  sha256 "2a74cbf1e49984cb01f75ac4b19a237f24de6ce199766858aeb9ab3aae2b95fa"
+  url "https://ghfast.top/https://github.com/openSUSE/libsolv/archive/refs/tags/0.7.40.tar.gz"
+  sha256 "30f529ad39d23bdc284b81ea3ed29679162011fc5fb9392635db0b4d1c8e3511"
   license "BSD-3-Clause"
 
   livecheck do
@@ -11,13 +11,11 @@ class Libsolv < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_golden_gate: "98d64ddf7b96c25f6435a0fa5447997e9c0d3f6ed25722199cf893092a3af3a5"
-    sha256 cellar: :any,                 arm64_tahoe:       "7f8c754af1537c3a4bdfa36beafba00e3c0327aa8203630bbfc4659a4f3be500"
-    sha256 cellar: :any,                 arm64_sequoia:     "324c5b3734665fa23a33f5298557655527140c95844ce378f0eb94f0e2197b6c"
-    sha256 cellar: :any,                 arm64_sonoma:      "efec1c124d205cc8db8ebd47f060807d0b5e6ec485b9ce1b9122a5079f0ffbfc"
-    sha256 cellar: :any,                 sonoma:            "5f48921930095ce2fe31feb579966311356d03631ab3936c9a67325e4f6e3c07"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "aa20085a60b40439b691afeb5b942edf04dbb12d1d1595532b3c1280e6a02100"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "8ea07388c8559e8422e9f4efdfff6d546568d33a561401ea51e76377de72083f"
+    sha256 cellar: :any, arm64_golden_gate: "e91e7d84e5bd0b42544fbd0070c9066644a3a8e1b3a168bdd8ad20bfe21f3fc0"
+    sha256 cellar: :any, arm64_tahoe:       "1c138aa288008e33c7d9dd1c006dc3248da8d684f92ea11a2ec489168f994889"
+    sha256 cellar: :any, arm64_sequoia:     "1247aaf9aa468e31fa43f173d64ce07b3fbf9e8a0a98f2b6369171d290af8b94"
+    sha256 cellar: :any, arm64_linux:       "960c9f4ee0d7f64ac5f567e229b68819f8e5275fa252cef162a4b163767ac074"
+    sha256 cellar: :any, x86_64_linux:      "fd2baa871032917426101d6d1f369c066934929b06e709aad69c73968b60371f"
   end
 
   depends_on "cmake" => :build
@@ -31,6 +29,8 @@ class Libsolv < Formula
   on_linux do
     depends_on "zlib-ng-compat"
   end
+
+  deny_network_access!
 
   def install
     args = %W[

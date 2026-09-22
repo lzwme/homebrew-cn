@@ -21,6 +21,8 @@ class Leveldb < Formula
   depends_on "cmake" => :build
   depends_on "snappy"
 
+  deny_network_access!
+
   def install
     args = %W[
       -DLEVELDB_BUILD_TESTS=OFF

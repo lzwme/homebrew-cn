@@ -25,6 +25,8 @@ class Cpputest < Formula
 
   depends_on "cmake" => :build
 
+  deny_network_access!
+
   def install
     # Backport support for CMake 4. Remove in the next release
     # https://github.com/cpputest/cpputest/commit/fbb8526750aa370e642da7c21a98d6efdf7a3f37

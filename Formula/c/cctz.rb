@@ -19,6 +19,7 @@ class Cctz < Formula
 
   depends_on "cmake" => :build
 
+  deny_network_access!
   def install
     args = ["-DCMAKE_POSITION_INDEPENDENT_CODE=ON"]
 

@@ -25,6 +25,8 @@ class Liboqs < Formula
   depends_on "ninja" => :build
   depends_on "openssl@3"
 
+  deny_network_access!
+
   def install
     args = %W[
       -DOQS_USE_OPENSSL=ON

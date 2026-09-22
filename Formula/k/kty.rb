@@ -25,6 +25,12 @@ class Kty < Formula
     depends_on "openssl@3"
   end
 
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
     inreplace "Cargo.toml", "0.0.0-UNSTABLE", version.to_s
     system "cargo", "install", *std_cargo_args

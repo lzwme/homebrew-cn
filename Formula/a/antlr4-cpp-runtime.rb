@@ -28,6 +28,8 @@ class Antlr4CppRuntime < Formula
     depends_on "util-linux"
   end
 
+  deny_network_access!
+
   def install
     args = %w[
       -DANTLR4_INSTALL=ON

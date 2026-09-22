@@ -20,6 +20,8 @@ class Plutosvg < Formula
   depends_on "freetype"
   depends_on "plutovg"
 
+  deny_network_access!
+
   def install
     args = %w[
       -DBUILD_SHARED_LIBS=ON

@@ -14,6 +14,8 @@ class Lager < Formula
   depends_on "boost" => :no_linkage
   depends_on "zug" => :no_linkage
 
+  deny_network_access!
+
   def install
     args = %w[
       -Dlager_BUILD_DEBUGGER_EXAMPLES=OFF

@@ -24,6 +24,8 @@ class Libebml < Formula
   depends_on "cmake" => :build
   depends_on "utf8cpp" => :build
 
+  deny_network_access!
+
   def install
     args = %w[-DBUILD_SHARED_LIBS=ON]
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args

@@ -1,8 +1,8 @@
 class Terragrunt < Formula
   desc "Thin wrapper for Terraform e.g. for locking state"
   homepage "https://terragrunt.gruntwork.io/"
-  url "https://ghfast.top/https://github.com/gruntwork-io/terragrunt/archive/refs/tags/v1.1.5.tar.gz"
-  sha256 "f2bcb7de559d8e5a9556ea272a5cc9d86ff75054dab484e3a9f820bf8fcfcbf5"
+  url "https://ghfast.top/https://github.com/gruntwork-io/terragrunt/archive/refs/tags/v1.1.6.tar.gz"
+  sha256 "13d96feff7d0cbd47d3bb875ff4ca4f27f871dee98bf7ac32acb8d766cd33dc3"
   license "MIT"
   head "https://github.com/gruntwork-io/terragrunt.git", branch: "main"
   # Upstream creates releases that use a stable tag (e.g., `v1.2.3`) but are
@@ -14,11 +14,11 @@ class Terragrunt < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "85cd32365a984e0de3d68a5d94829560237836495e28d1942e06621416cb32a6"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "85cd32365a984e0de3d68a5d94829560237836495e28d1942e06621416cb32a6"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "85cd32365a984e0de3d68a5d94829560237836495e28d1942e06621416cb32a6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "78d78ce2fb4197d2b251e637703e38780dfb34cc93eccae6d31656bb8abd8ebb"
-    sha256 cellar: :any,                 x86_64_linux:      "318817adbdf7ab1b53662ab2b6085dcba53c08323b34182853be9b55733bdf04"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "cfc2dca5fde13ea27c5e2499371000ead17b07161c5dc915d40ca488d387588b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "cfc2dca5fde13ea27c5e2499371000ead17b07161c5dc915d40ca488d387588b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "cfc2dca5fde13ea27c5e2499371000ead17b07161c5dc915d40ca488d387588b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "360c960c0a01f511c6ff0976b0de4c9e790fba8ac4dc2dcbd2fcb1941792dc7d"
+    sha256 cellar: :any,                 x86_64_linux:      "caeba6f57bc2034b94ab002f5a1e783f78a556aa174f53e31e6f3e227afbf7ec"
   end
 
   depends_on "go" => :build

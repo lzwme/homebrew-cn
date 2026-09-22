@@ -29,6 +29,8 @@ class Watch < Formula
 
   conflicts_with "visionmedia-watch"
 
+  deny_network_access!
+
   def install
     args = %w[
       --disable-nls

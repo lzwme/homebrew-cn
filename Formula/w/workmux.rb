@@ -1,16 +1,16 @@
 class Workmux < Formula
   desc "Git worktrees + tmux windows for zero-friction parallel dev"
   homepage "https://workmux.raine.dev"
-  url "https://ghfast.top/https://github.com/raine/workmux/archive/refs/tags/v0.1.263.tar.gz"
-  sha256 "9b86c529ffe740bd32dc00ff150562545169200140d364c0a134ddb16ce05e13"
+  url "https://ghfast.top/https://github.com/raine/workmux/archive/refs/tags/v0.1.264.tar.gz"
+  sha256 "8556029834a960725bc25ad920ca246690e61b6acba1fa9feda9191929dee55c"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "2ad288038f3e4c93545fc8f50227be3329a767ca5777511b84abdf6ce25cf30d"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "85a8fa705930c2e8c2afa5aceb7918b30fbd4d12e9c7c302bc8977da9c23476e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "8f6eb19e57995c8a6953ebc0e737848c2b07a0b0250582a9246f5416e2493470"
-    sha256 cellar: :any,                 arm64_linux:       "8231e46173a82383a176959ad25473bfe1e2cdf0a875213d3027073884331bb4"
-    sha256 cellar: :any,                 x86_64_linux:      "144fb44082d804e2dd7a2a69473d4daf61aa2d16f7f3550abae2c37fd56f8a1b"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "4f46dc0f3ef624f81a0453ffa54aa65091cc49352b8f243f907257733e0d1839"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "2c79731f5d90ed5aec63ba8b7eec3d66fd7aa223d7b317698f916f5c1be62fcb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "51e6f3a1670e2a140a888c00fce60987b0158f070851ab5cce086d8a57fb5083"
+    sha256 cellar: :any,                 arm64_linux:       "34a50b821563d9f584e7cd795fcf3cd9a38373b238b3158a3b217f1cc9a26d6a"
+    sha256 cellar: :any,                 x86_64_linux:      "c2e6abda41d2ececdc09104ba8e9d29264bde092ac2d1f30434c5caa85c58eef"
   end
 
   depends_on "rust" => :build
@@ -19,7 +19,7 @@ class Workmux < Formula
   deny_network_access!
 
   def fetch
-    system "cargo", "fetch", "--locked", "--target", "host-tuple"
+    system "cargo", "fetch", *std_cargo_fetch_args
   end
 
   def install

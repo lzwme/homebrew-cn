@@ -18,6 +18,8 @@ class Catimg < Formula
 
   depends_on "cmake" => :build
 
+  deny_network_access!
+
   def install
     args = %W[-DMAN_OUTPUT_PATH=#{man1}]
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args

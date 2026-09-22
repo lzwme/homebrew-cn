@@ -22,6 +22,8 @@ class Ctl < Formula
   depends_on "libtiff"
   depends_on "openexr"
 
+  deny_network_access!
+
   def install
     system "cmake", "-S", ".", "-B", "build",
                     "-DBUILD_SHARED_LIBS=ON",

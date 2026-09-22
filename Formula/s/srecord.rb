@@ -43,6 +43,8 @@ class Srecord < Formula
     resolves "https://github.com/sierrafoxtrot/srecord/issues/29"
   end
 
+  deny_network_access!
+
   def install
     # Issue ref: https://github.com/sierrafoxtrot/srecord/issues/65
     inreplace "CMakeLists.txt", 'set(CMAKE_INSTALL_PREFIX "/usr")', ""

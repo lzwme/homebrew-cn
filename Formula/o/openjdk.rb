@@ -12,11 +12,12 @@ class Openjdk < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "db2b560ca59a2b2b8bf7e1bc900a80479d74c6c855dec497c9df2eeb5282790a"
-    sha256 cellar: :any, arm64_tahoe:       "060b8fe0ebe12e885dccb992c063973018262defb1d3483939d5941fa5d00c9f"
-    sha256 cellar: :any, arm64_sequoia:     "934cf2a836e98792d3a4c8f3a2cea90788b4cbc01958aa85c16cdd3609d34738"
-    sha256               arm64_linux:       "cc7ba53035abcfaa0d525df2a334398713753520f91fd159c5c7c095db2f654c"
-    sha256               x86_64_linux:      "71bcc4e1bec60bef2b495a95676c41002536aec8490a344fa074c5685ed2d4c6"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "d99d540259b7b84a72c407bb297dd20d100dac1de96c0093c9ea9643b7f11093"
+    sha256 cellar: :any, arm64_tahoe:       "e705b9d3e07933059ad2f0d71ae68bba009e3a4ed22a6fdc8a85177d19eee58b"
+    sha256 cellar: :any, arm64_sequoia:     "092f285a7132b7344d00f0f142800b70986098752a8ac92deb11c57acfd9ed0b"
+    sha256               arm64_linux:       "d682f5c59644c4522d48bab952b52129687d63cd76ce4ace73c2aa7a826c2e2e"
+    sha256               x86_64_linux:      "9714890e29906234cd392b7ed7f63e6a387ca3fd93e038504253bfe13db952d6"
   end
 
   keg_only :shadowed_by_macos
@@ -74,6 +75,9 @@ class Openjdk < Formula
       end
     end
   end
+
+  # uses local ports during build process
+  allow_network_access! :build
 
   def install
     boot_jdk = buildpath/"boot-jdk"

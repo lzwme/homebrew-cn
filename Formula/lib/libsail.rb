@@ -37,6 +37,8 @@ class Libsail < Formula
     depends_on "xz"
   end
 
+  deny_network_access!
+
   def install
     args = %W[
       -DCMAKE_INSTALL_RPATH=#{rpath};#{rpath(source: lib/"sail/codecs")}

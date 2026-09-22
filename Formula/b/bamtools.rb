@@ -25,6 +25,8 @@ class Bamtools < Formula
     depends_on "zlib-ng-compat"
   end
 
+  deny_network_access!
+
   def install
     # Delete bundled jsoncpp to avoid fallback
     rm_r(buildpath/"src/third_party/jsoncpp")

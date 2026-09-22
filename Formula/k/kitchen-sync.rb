@@ -27,6 +27,8 @@ class KitchenSync < Formula
   depends_on "libpq"
   depends_on "mariadb-connector-c"
 
+  deny_network_access!
+
   def install
     system "cmake", "-S", ".", "-B", "build",
                     "-DMySQL_INCLUDE_DIR=#{formula_opt_include("mariadb-connector-c")}/mariadb",

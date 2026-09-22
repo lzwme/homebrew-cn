@@ -3,17 +3,17 @@ class Poetry < Formula
 
   desc "Python package management tool"
   homepage "https://python-poetry.org/"
-  url "https://files.pythonhosted.org/packages/e4/48/9656abd10e8c6c78d23c3e9ebbaed7ebd2fbdb792ff33fcb9afe37990177/poetry-2.5.0.tar.gz"
-  sha256 "e73b873890526c03e4d8e20d934292175f55a5823b3bdee2f154f63dae81336f"
+  url "https://files.pythonhosted.org/packages/43/86/204ef622b09005c0290b4cb23cc8178b0fdd52d8d6b36ad6d78dab447035/poetry-2.5.1.tar.gz"
+  sha256 "19fbd566efced512be58989a756aa1333cdc9b6aabb4fc84fd1ec9d29ee74874"
   license "MIT"
   head "https://github.com/python-poetry/poetry.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "68bcf0b88112828dee41d1bfa7bdbb670980ee80af2867e5cef935395bcecf7a"
-    sha256 cellar: :any, arm64_tahoe:       "b8fcea19fb3c6192b0af3b32af13d1ba605ddfeba6d19c7db104159d37fe3051"
-    sha256 cellar: :any, arm64_sequoia:     "4790dd9d27bb4e209188d5e9308f0a201d2b56814d62215249cc3d27e0caada3"
-    sha256 cellar: :any, arm64_linux:       "170a77a1fd1fbfb1315d1e3cddbd6d4b4ad7e64136126d03c09c1a2e4c09bae0"
-    sha256 cellar: :any, x86_64_linux:      "26b4e4408196fb2a2ba7c64d40f21c43b8416cba750eb09b44b90310317907a6"
+    sha256 cellar: :any, arm64_golden_gate: "3113af7554fa9ff1184ad83f82fa51bc9c99d25836bbb98f57dcbb1b92c05a04"
+    sha256 cellar: :any, arm64_tahoe:       "1a5877d1c842be460e34c090298a3e5b3d3644b09b194b72acafc9d15263ca66"
+    sha256 cellar: :any, arm64_sequoia:     "6c1e18982f053c2957f665a56536777834a5a2efbd95063f4c14bf55401095ac"
+    sha256 cellar: :any, arm64_linux:       "93a7fb1a279181e76fe45b75095b931c295f2c27585cdb06329f904fd244329e"
+    sha256 cellar: :any, x86_64_linux:      "1f8a9eba9b0a5ab11acccca3f5c84b5c6998eb2c04d8084445fd1bd44ddaa80e"
   end
 
   depends_on "cmake" => :build # for rapidfuzz
@@ -229,8 +229,8 @@ class Poetry < Formula
   end
 
   resource "virtualenv" do
-    url "https://files.pythonhosted.org/packages/af/76/6067b553c6cfda44ed049ef821bdeda1b40b4597c934663ecd6cdfcdfc16/virtualenv-21.8.1.tar.gz"
-    sha256 "529a4c883b4efa067b98cfb61b64cdc0e453d01800ef5b5a29d0a9c514499a4f"
+    url "https://files.pythonhosted.org/packages/2f/5d/42254e91a9203a13d95ab4f5211f4cdda52b82fc3546340f7fb33a642173/virtualenv-21.9.0.tar.gz"
+    sha256 "fa0f2a26fcb6f32b376fc8b2c705b6057366763d5b9e5242d1ab10ecc3279fd3"
   end
 
   resource "xattr" do

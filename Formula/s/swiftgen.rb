@@ -23,15 +23,26 @@ class Swiftgen < Formula
 
   uses_from_macos "ruby" => :build
 
-  def install
-    # Install bundler (needed for our rake tasks)
+  deny_network_access!
+
+  def fetch
+    # Download bundler, the gems (into vendor/cache) and the SwiftPM
+    # dependencies up front; `install` installs the gems from the cache with
+    # `bundle install --local`. SwiftPM tries to apply its own sandbox, which
+    # cannot nest inside the build sandbox; Homebrew's sandbox still confines
+    # the whole process.
     ENV["GEM_HOME"] = buildpath/"gem_home"
-
-    # we use the macOS ruby (2.6.10p210 (2022-04-12 revision 67958)) this is the last supported bundler version
     system "gem", "install", "bundler", "-v 2.4.22"
-
     ENV.prepend_path "PATH", buildpath/"gem_home/bin"
-    system "bundle", "install", "--without", "development", "release"
+    system "bundle", "cache", "--no-install"
+    system "swift", "package", "resolve", "--disable-sandbox"
+  end
+
+  def install
+    # bundler and the gem cache were downloaded by `fetch` (needed for our rake tasks)
+    ENV["GEM_HOME"] = buildpath/"gem_home"
+    ENV.prepend_path "PATH", buildpath/"gem_home/bin"
+    system "bundle", "install", "--local", "--without", "development", "release"
 
     # Disable linting
     ENV["NO_CODE_LINT"] = "1"
