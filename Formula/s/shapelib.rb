@@ -22,6 +22,8 @@ class Shapelib < Formula
 
   depends_on "cmake" => :build
 
+  deny_network_access!
+
   def install
     # shapelib's CMake scripts interpret `CMAKE_INSTALL_LIBDIR=lib` as relative
     # to the current directory, i.e. `CMAKE_INSTALL_LIBDIR:PATH=$(pwd)/lib`

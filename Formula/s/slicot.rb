@@ -19,6 +19,8 @@ class Slicot < Formula
   depends_on "gcc" # for gfortran
   depends_on "openblas"
 
+  deny_network_access!
+
   def install
     system "cmake", "-S", ".", "-B", "build",
                     "-DBUILD_SHARED_LIBS=ON",

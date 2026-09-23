@@ -1,8 +1,8 @@
 class DartSass < Formula
   desc "Reference implementation of Sass, written in Dart"
   homepage "https://sass-lang.com/dart-sass"
-  url "https://ghfast.top/https://github.com/sass/dart-sass/archive/refs/tags/1.104.1.tar.gz"
-  sha256 "9092c81fe13bb64eae448a10559e4b319b74d4c9d23dea2e8435403d1a831cad"
+  url "https://ghfast.top/https://github.com/sass/dart-sass/archive/refs/tags/1.105.0.tar.gz"
+  sha256 "cc526648540511381187af2e71d7c831e7ad2ba27d8fb0d0d882e78053a4df79"
   license "MIT"
 
   # Some tags are used for sass-api/sass-parser
@@ -12,11 +12,11 @@ class DartSass < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_golden_gate: "da04f2e9110a3fb3638ce8f92625f9a927f88e684f4ded4f344e13f387f6581f"
-    sha256 cellar: :any,                 arm64_tahoe:       "1bbfd1c2c8b57e50fea82aed6b304c253591c3179833082a9bb1ef7b516757db"
-    sha256 cellar: :any,                 arm64_sequoia:     "05f014133523ace00850f24fe96d99425bf9e7a9bae2a20258759900039eea21"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "80e78f21336ddeebab779a94a176e8a4d6bab139e8a7019ecd8dfebffb05d23d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "4a7bf93fde78dc342c748980d269806d17b3d974d2255d72e81fe95883507a21"
+    sha256 cellar: :any,                 arm64_golden_gate: "33bcfb863cf4ffcd8525dc8a128ba373918afeed67cf910a6d21b0e4808e3a5d"
+    sha256 cellar: :any,                 arm64_tahoe:       "446973761bae913168d0700a1b0d5bd87b200147b8e6b8ce4b7f156d558f018c"
+    sha256 cellar: :any,                 arm64_sequoia:     "83e378c917e845975131957c6049bd14d208479a33ef8bd3096f07f881784093"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "a39575dcbe94ec95179804796a21ed744879b88c7cdf5014757206fc49c9a7a9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "f63f464643b7eabfd89796438c721ddb0333e1aff5a0664e82dddcfc9056cbb0"
   end
 
   depends_on "buf" => :build
@@ -24,8 +24,8 @@ class DartSass < Formula
   depends_on "dartaotruntime"
 
   resource "language" do
-    url "https://ghfast.top/https://github.com/sass/sass/archive/refs/tags/embedded-protocol-3.2.0.tar.gz"
-    sha256 "4e1f81684bc1666f03e52ddc790d0c2c22d99a5313fa2efe1dde4a5b5733c186"
+    url "https://ghfast.top/https://github.com/sass/sass/archive/refs/tags/embedded-protocol-3.3.0.tar.gz"
+    sha256 "17ea26c8ae3bb03a7dc72f841d7d832b64410230483cdde8807ab4b7f9204ce8"
 
     livecheck do
       url :url

@@ -49,6 +49,8 @@ class Ggml < Formula
     end
   end
 
+  deny_network_access!
+
   def install
     # CPU detection is needed to build multiple backends, particularly on ARM (e.g. `-march=armv8.x-a+...`)
     ENV.runtime_cpu_detection

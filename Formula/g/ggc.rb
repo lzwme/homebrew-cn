@@ -1,19 +1,17 @@
 class Ggc < Formula
   desc "Modern Git CLI"
   homepage "https://github.com/bmf-san/ggc"
-  url "https://ghfast.top/https://github.com/bmf-san/ggc/archive/refs/tags/v8.7.3.tar.gz"
-  sha256 "b1ccfb7996670c1f176c96cb66877168c24a17a0da04d92f9d4a5fdfbaad48ae"
+  url "https://ghfast.top/https://github.com/bmf-san/ggc/archive/refs/tags/v8.7.4.tar.gz"
+  sha256 "1ff5dd7cedc765f92bcc72f57bbeb5f77ab62daf9020e514ab87998994351059"
   license "MIT"
   head "https://github.com/bmf-san/ggc.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "5924d7d9d9dc455442a6e292176ea3272d8b44fcb0bbbaf220431350ecfea8cf"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "13cd9f25dc3e4b8bd24648c412d325cd14db1d46f2237b38ab1599fcb9b0c95d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "13cd9f25dc3e4b8bd24648c412d325cd14db1d46f2237b38ab1599fcb9b0c95d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "13cd9f25dc3e4b8bd24648c412d325cd14db1d46f2237b38ab1599fcb9b0c95d"
-    sha256 cellar: :any_skip_relocation, sonoma:            "6d9ce5a3186d1a72bb23d6ddd603916107c7f1dad108bbc8861dc273a3b9ed9f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "0d64c6803ef37d889dad903121d7667894dd55a6c5470d8bf7cc7a503e6460fa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "ff2f62831890b8be28a7ae8e481f86689b505bf2bd853606e92ae867d7301f61"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "4e424c81404f1f223700b2f163c006ca4197714b49893e7e77b7df55b33a8d8b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "4e424c81404f1f223700b2f163c006ca4197714b49893e7e77b7df55b33a8d8b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "4e424c81404f1f223700b2f163c006ca4197714b49893e7e77b7df55b33a8d8b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "21f71ab667f313622361ebc0b57bf5ea6d2635bdcd9900284b059af14c950379"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "f0ded1f4c6b9b46f46489407e849dbd5c2290848aac2a1aa4694ee735c01f624"
   end
 
   depends_on "go" => :build

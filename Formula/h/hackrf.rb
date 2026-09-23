@@ -26,6 +26,8 @@ class Hackrf < Formula
   depends_on "fftw"
   depends_on "libusb"
 
+  deny_network_access!
+
   def install
     args = %W[
       -DCMAKE_INSTALL_RPATH=#{rpath}

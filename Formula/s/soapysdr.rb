@@ -29,6 +29,8 @@ class Soapysdr < Formula
   depends_on "swig" => :build
   depends_on "python@3.14"
 
+  deny_network_access!
+
   def install
     args = %W[
       -DPYTHON_EXECUTABLE=#{python3}

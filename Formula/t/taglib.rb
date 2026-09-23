@@ -23,6 +23,8 @@ class Taglib < Formula
     depends_on "zlib-ng-compat"
   end
 
+  deny_network_access!
+
   def install
     args = %w[-DWITH_MP4=ON -DWITH_ASF=ON -DBUILD_SHARED_LIBS=ON]
 

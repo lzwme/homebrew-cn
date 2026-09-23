@@ -1,20 +1,17 @@
 class Bom < Formula
   desc "Utility to generate SPDX-compliant Bill of Materials manifests"
   homepage "https://kubernetes-sigs.github.io/bom/"
-  url "https://ghfast.top/https://github.com/kubernetes-sigs/bom/archive/refs/tags/v0.7.1.tar.gz"
-  sha256 "3893c25e7ea3b625c7c7c7d2f89cdd53fe6d8d43fac8c587a8f81c920498cca2"
+  url "https://ghfast.top/https://github.com/kubernetes-sigs/bom/archive/refs/tags/v0.8.0.tar.gz"
+  sha256 "1d411d8467c7fb9d3ed60d00a99614fb260a96aa533b727d50135b1ac46e9006"
   license "Apache-2.0"
   head "https://github.com/kubernetes-sigs/bom.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "1382fd03bc53a71e42cc34bcfd565a0bf84769ceebb82d769495663355843111"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "7b48f971e9f1eb27f2597c5b769d5c5b04c98b4a58e96d2a3518d4a70217a929"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "7b48f971e9f1eb27f2597c5b769d5c5b04c98b4a58e96d2a3518d4a70217a929"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "7b48f971e9f1eb27f2597c5b769d5c5b04c98b4a58e96d2a3518d4a70217a929"
-    sha256 cellar: :any_skip_relocation, sonoma:            "24e9021594ab6c2789cbbd4bcdb40d8c5572091da769a155a89e83b577d3e79d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "d745d7af5e11523d0717206e9f42265663b3c6b39e5eaa51e366474897d6e140"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "afd114ea53280a22f13d028a6c33e61e34193b24b54ac2ecf8e9c66db5e07b2f"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "f26a57dc100765ebbd5d294cde8730bc73162bf2113f41f621213c8869a84f98"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "f26a57dc100765ebbd5d294cde8730bc73162bf2113f41f621213c8869a84f98"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "f26a57dc100765ebbd5d294cde8730bc73162bf2113f41f621213c8869a84f98"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "d6730ac5a8abf3be3c6dfe1998a2c115450fea6a018cbb28408fd8695fa8b080"
+    sha256 cellar: :any,                 x86_64_linux:      "97c9870589efa245856d94242d5fbf4c97fc21e90811bb5b199c19c8c9f0d1d9"
   end
 
   depends_on "go" => :build

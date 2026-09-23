@@ -40,6 +40,8 @@ class SimpleAmqpClient < Formula
   depends_on "boost"
   depends_on "rabbitmq-c"
 
+  deny_network_access!
+
   def install
     system "cmake", "-S", ".", "-B", "build", "-DBUILD_API_DOCS=OFF", "-DCMAKE_CXX_STANDARD=14", *std_cmake_args
     system "cmake", "--build", "build"

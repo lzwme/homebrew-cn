@@ -36,6 +36,8 @@ class Ibex < Formula
   # Issue ref: https://github.com/ibex-team/ibex-lib/issues/567
   patch :DATA
 
+  deny_network_access!
+
   def install
     rpaths = [loader_path, rpath, rpath(target: lib/"ibex/3rd")]
 

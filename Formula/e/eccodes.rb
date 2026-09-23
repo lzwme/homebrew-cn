@@ -1,8 +1,8 @@
 class Eccodes < Formula
   desc "Decode and encode messages in the GRIB 1/2 and BUFR 3/4 formats"
   homepage "https://confluence.ecmwf.int/display/ECC"
-  url "https://confluence.ecmwf.int/download/attachments/45757960/eccodes-2.48.0-Source.tar.gz"
-  sha256 "62e8fa5ca137d138189a5fdd6d5b2205c89cc26338e3f4286aba3d89b49c9f9a"
+  url "https://confluence.ecmwf.int/download/attachments/45757960/eccodes-2.49.0-Source.tar.gz"
+  sha256 "ef5566475f017e5fe6c6c794907f0a2cf2fccbf20c34b25a4ba4529e5dc48226"
   license "Apache-2.0"
   compatibility_version 1
 
@@ -12,13 +12,11 @@ class Eccodes < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "5d0d401a744f6428aa6851b4025d627094586c3cbf31f31f15b6fa13c04f2184"
-    sha256 arm64_tahoe:       "e786e80c6ed8a9ca496f9abf841fc02d1a086855c508ca02a0fb056386f22ce2"
-    sha256 arm64_sequoia:     "4fa85c5d33e38c8e667c4d16d875f809ccbb3af0f808c1ebdc4a4bc690b3bbee"
-    sha256 arm64_sonoma:      "6c99bf984310295024d1ef5f6c012a4fe56c7c68775650fe83462cbaa28d8a78"
-    sha256 sonoma:            "bbf561b45aab1b39c485479824f53700a45cdf9f478a6fff9d7906ff232f935f"
-    sha256 arm64_linux:       "50c47a5cbffa1448cbc0fa703d6b615c9af58ffe59b0eb1962e013bfdbbef39b"
-    sha256 x86_64_linux:      "d9200d5dd37fbe1332ba9d3708fbb847774a8beb83ac8d2b731b6c1a526c308b"
+    sha256 arm64_golden_gate: "00fe6961d70465221c29988e900e1c3fe11ab797378a7f6daf6b9557a0c3a054"
+    sha256 arm64_tahoe:       "5605082bd7bb8888472fc17d5743ceb111384e1033ca0d7a60d4ea0615aed115"
+    sha256 arm64_sequoia:     "9987ab7fb082064625cc5fed0d181ae6586e3527929657f58a10301db34c4b4a"
+    sha256 arm64_linux:       "93e9ea87a1bf683747ca984834acb02c426082742852823ca6e94b6a4fd13386"
+    sha256 x86_64_linux:      "ffecde5a1352d6bf2c868770bcb51c66605db662d35d1728076c957c4e316fac"
   end
 
   depends_on "cmake" => :build
@@ -27,6 +25,8 @@ class Eccodes < Formula
   depends_on "libpng"
   depends_on "netcdf"
   depends_on "openjpeg"
+
+  deny_network_access!
 
   def install
     args = %w[

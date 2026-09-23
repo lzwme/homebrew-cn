@@ -28,6 +28,8 @@ class Teem < Formula
   # Fixes build with CMake 4.0+.
   patch :DATA
 
+  deny_network_access!
+
   def install
     # Installs CMake archive files directly into lib, which we discourage.
     # Workaround by adding version to libdir & then symlink into expected structure.

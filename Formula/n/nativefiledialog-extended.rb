@@ -23,6 +23,8 @@ class NativefiledialogExtended < Formula
     depends_on "wayland"
   end
 
+  deny_network_access!
+
   def install
     if OS.linux?
       # Use our `wayland-protocols` as the tarball lacks the `3ps/wayland-protocols` submodule

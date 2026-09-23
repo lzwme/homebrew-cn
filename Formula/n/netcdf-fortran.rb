@@ -20,6 +20,8 @@ class NetcdfFortran < Formula
   depends_on "gcc" # for gfortran
   depends_on "netcdf"
 
+  deny_network_access!
+
   def install
     args = std_cmake_args + %w[-DENABLE_TESTS=OFF -DENABLE_DOXYGEN=OFF]
 

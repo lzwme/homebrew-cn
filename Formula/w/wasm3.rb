@@ -23,6 +23,8 @@ class Wasm3 < Formula
   depends_on "cmake" => :build
   depends_on "uvwasi"
 
+  allow_network_access! :test
+
   def install
     # Unbundle uvwasi and link to shared library
     inreplace "CMakeLists.txt",

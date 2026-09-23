@@ -42,6 +42,8 @@ class NeovimQt < Formula
     resolves "https://github.com/equalsraf/neovim-qt/issues/1192"
   end
 
+  deny_network_access!
+
   def install
     system "cmake", "-S", ".", "-B", "build", "-DUSE_SYSTEM_MSGPACK=ON", "-DWITH_QT=Qt6", *std_cmake_args
     system "cmake", "--build", "build"

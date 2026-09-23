@@ -27,6 +27,8 @@ class Libwebsockets < Formula
   depends_on "libuv"
   depends_on "openssl@3"
 
+  deny_network_access!
+
   def install
     # HTTP/3 forces the GnuTLS backend from 5.0.0 onwards, which ttyd cannot build against.
     system "cmake", "-S", ".", "-B", "build",

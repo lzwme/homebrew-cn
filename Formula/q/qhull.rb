@@ -36,6 +36,8 @@ class Qhull < Formula
 
   depends_on "cmake" => :build
 
+  deny_network_access!
+
   def install
     # Workaround for CMake 4.0+
     ENV["CMAKE_POLICY_VERSION_MINIMUM"] = "3.5"

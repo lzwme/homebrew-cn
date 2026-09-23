@@ -1,18 +1,17 @@
 class HfMount < Formula
   desc "Mount Hugging Face Buckets and repos as local filesystems"
   homepage "https://github.com/huggingface/hf-mount"
-  url "https://ghfast.top/https://github.com/huggingface/hf-mount/archive/refs/tags/v0.10.1.tar.gz"
-  sha256 "5b567736a1fd715786d0a98190679c7055176538f39947cd77c99f83d6939f06"
+  url "https://ghfast.top/https://github.com/huggingface/hf-mount/archive/refs/tags/v0.11.0.tar.gz"
+  sha256 "dc83b2cfb054c89ff005bd068fe9c48eb1465b23ec5c5bd0602908c138cba25d"
   license "Apache-2.0"
   head "https://github.com/huggingface/hf-mount.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "7f79dfd78bc065f66a9a39db39fdcd1605e9d3c2c6a269707074248632809b09"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "ace84ce0d4566e7083fea5a5e4f1a9b23a73e1d93f191ca554fd73f8b667102e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "852bebed1e3027891c0993742947cd6f5c7504f238d93f868accaeb5bf7fce26"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "5768d7495ac2f310671164276b5ee2cbf840c2cdd47169b18748f750d0c2dafd"
-    sha256 cellar: :any,                 arm64_linux:       "73b7e6581502a5e7a587b17c37274a9f4074dfe18151d860b0462838d6bb6d99"
-    sha256 cellar: :any,                 x86_64_linux:      "deaa6a1cad94a42ae7b0ec69b9bde0df5bf582635c6e7e8d73374a0ea92c387b"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "c560b995ecf87e04d95fd17051b2787209fecc55c75dee832b94664f1dead249"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "897d445a953259422ed4df70af4b1053ae6ab438ced70a0e4e4d06a44ba382a5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "3b1340ccf9fec130a8420f9a469bab9f45292b5b10d0c302b7dbf931cec941cf"
+    sha256 cellar: :any,                 arm64_linux:       "6f0270e1d25c87491fa2a1965d9c750632881a498e55f90199b8c8978163ca71"
+    sha256 cellar: :any,                 x86_64_linux:      "1a013531a8e7cd945e6aaeac393ce7fef15b497ff0bccf39da562a20a9a8b8cd"
   end
 
   depends_on "pkgconf" => :build

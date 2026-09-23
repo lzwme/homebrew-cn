@@ -21,6 +21,8 @@ class Tfel < Formula
   depends_on "pybind11" => :build
   depends_on "python@3.14"
 
+  deny_network_access!
+
   def install
     args = [
       "-DUSE_EXTERNAL_COMPILER_FLAGS=ON",

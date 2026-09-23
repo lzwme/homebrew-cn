@@ -21,6 +21,8 @@ class Openfa < Formula
 
   depends_on "cmake" => :build
 
+  deny_network_access!
+
   def install
     args = %W[
       -DBUILD_SHARED_LIBS=ON

@@ -15,11 +15,12 @@ class Pixi < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "679c028b24bf2c7f609b55643bc15b34978499d4726f9374f36419bdadd83ae9"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "4c8b41bc6e0efbce1c65b7d2be5890d0dc3f0c6e7d90a0914d5c7428a1a16963"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "239095d2f3652876ce3391ddb71350495c5b32ce5bea6d069c7e592586f71b35"
-    sha256 cellar: :any,                 arm64_linux:       "2c7720e698ffa8c2f631554ddc18a2dd5077e24470f1edee54ee14a8bd4f6336"
-    sha256 cellar: :any,                 x86_64_linux:      "251243992e245aa4fed5194d6db7858e23e5dfee586747197815b4fdddde65bf"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "7fc9bd2b041f97bd81cb632d5a44d105f2988bd60544893a63d8a610764e9f21"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "260119450320fd5a00805faafecf1d90c28826aeeeaf8fc2c42f1829b4e166d4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "e767b7c79bac55d87a965db688bb11df035880f4b5afa4b47457194d49de2fd4"
+    sha256 cellar: :any,                 arm64_linux:       "67cb9ec079fe989d0dc6e8762c7ae5eef58ec63585f27e6ad6f771d0e347daf3"
+    sha256 cellar: :any,                 x86_64_linux:      "f3e26e64998ebf2c7532f4cbcdf831d17a57871f9a5b79e00423fa304248db0d"
   end
 
   depends_on "cmake" => :build
@@ -29,7 +30,7 @@ class Pixi < Formula
   uses_from_macos "bzip2"
 
   on_linux do
-    depends_on "openssl@3"
+    depends_on "openssl@4"
     depends_on "xz" # for liblzma
   end
 

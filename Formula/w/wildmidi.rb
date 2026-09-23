@@ -21,6 +21,8 @@ class Wildmidi < Formula
     depends_on "alsa-lib"
   end
 
+  deny_network_access!
+
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args, "-DCMAKE_INSTALL_RPATH=#{rpath}"
     system "cmake", "--build", "build"

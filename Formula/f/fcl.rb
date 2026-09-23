@@ -56,6 +56,8 @@ class Fcl < Formula
   depends_on "libccd"
   depends_on "octomap"
 
+  deny_network_access!
+
   def install
     system "cmake", "-S", ".", "-B", "build", "-DCMAKE_CXX_STANDARD=14", *std_cmake_args
     system "cmake", "--build", "build"

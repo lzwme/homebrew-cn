@@ -30,6 +30,8 @@ class Ompl < Formula
   depends_on "flann"
   depends_on "ode"
 
+  deny_network_access!
+
   def install
     args = %w[
       -DOMPL_REGISTRATION=OFF

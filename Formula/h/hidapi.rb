@@ -27,6 +27,8 @@ class Hidapi < Formula
     depends_on "systemd" # for libudev
   end
 
+  deny_network_access!
+
   def install
     system "cmake", "-S", ".", "-B", "build",
                     "-DHIDAPI_BUILD_HIDTEST=ON",

@@ -26,6 +26,8 @@ class Libemf2svg < Formula
     depends_on "argp-standalone" => :build
   end
 
+  allow_network_access! :test
+
   def install
     args = %W[-DCMAKE_INSTALL_RPATH=#{rpath}]
     args << "-DEXTERNAL_ICONV=iconv" if OS.mac?

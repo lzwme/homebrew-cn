@@ -342,7 +342,7 @@ class Theharvester < Formula
     sha256 "03dd38de09bc213e9a8b29761eec33ee1d5318dac0e49d8af36e4d27830e23a7"
   end
 
-  deny_network_access! [:test]
+  allow_network_access! :build
 
   def install
     ENV["SETUPTOOLS_SCM_PRETEND_VERSION_FOR_PLAYWRIGHT"] = resource("playwright").version

@@ -32,6 +32,8 @@ class Svlang < Formula
     cause "needs std::views::join, missing from the macOS 14 SDK's libc++"
   end
 
+  deny_network_access!
+
   def install
     # `fmt/core.h` stopped pulling in `fmt::format` in fmt 12.2, remove in next release
     ENV.append_to_cflags "-DFMT_DEPRECATED_HEAVY_CORE"

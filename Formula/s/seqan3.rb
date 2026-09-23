@@ -16,6 +16,8 @@ class Seqan3 < Formula
     depends_on "gcc" => :test if DevelopmentTools.clang_build_version < 1700
   end
 
+  deny_network_access!
+
   def install
     args = %w[-DCPM_LOCAL_PACKAGES_ONLY=ON]
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args

@@ -13,20 +13,19 @@ class Typst < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "b451f631c006027ba85c93f4cc011251e7c80465e2ba1e5d0bfbe84814156cf0"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "a8df57b7abe7ad8d6b56456e80be509a47f2f0ab7ef265fb09a982d1fad05393"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "1bc0a76c1894c6eb2a73519f0df8b305e9d035eff4d3304818784d29d55ca2f2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "e52305b0beac09e21dd31db3cdc5c844de6aaa79d119ae2abddbacc5658e9394"
-    sha256 cellar: :any_skip_relocation, sonoma:            "eaf429e12831dd8e576a109e14f8a957da69df2303bf21a3b71419e4dbcf9f8e"
-    sha256 cellar: :any,                 arm64_linux:       "e14821b5092f4a52ba68159d38c12d8f6e12c0c3777461f74d629aac47eafe8a"
-    sha256 cellar: :any,                 x86_64_linux:      "77dbbfcfa0dc142c62ef71b5ff777a99797fe563db67ed5ebfae23643b437cd1"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "534233338dee13f1b93c2e1c08d1e0c6c5fe201f793ba640d938d58666388808"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "37bfa441d1641d246e8663d742f940811688b7cd56b50b29a6177928ed949beb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "baa3a28555bff94f9f6f6154b8ef34458733daec86f22ffb1fd9af01fe9956b8"
+    sha256 cellar: :any,                 arm64_linux:       "8e9ac4d200c27bf7d5f96213ddbc0e6ab95710740c598341049df5705d072adb"
+    sha256 cellar: :any,                 x86_64_linux:      "ec392c6b39754c10c733dd48a51c67e2eb58a8dac3e66bc3c5d8e033e288e6e8"
   end
 
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
 
   on_linux do
-    depends_on "openssl@3"
+    depends_on "openssl@4"
   end
 
   deny_network_access!

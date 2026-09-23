@@ -1,29 +1,34 @@
 class SqlxCli < Formula
   desc "Command-line utility for SQLx, the Rust SQL toolkit"
   homepage "https://github.com/transact-rs/sqlx"
-  url "https://ghfast.top/https://github.com/transact-rs/sqlx/archive/refs/tags/v0.9.0.tar.gz"
-  sha256 "48eaacc9a800af48c35713d300bc0de0c1e04b84c810b25de1007806fa1d718c"
+  url "https://static.crates.io/crates/sqlx-cli/sqlx-cli-0.9.0.crate"
+  sha256 "93ef3857a4a0b48fcbf536b77a9122a35c7631686f2ccfbc75e616335771e8d0"
   license any_of: ["Apache-2.0", "MIT"]
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "bd449c282dfaec3bf0a1bc9af831127f3df8bf1156f8801a83983665dbe537ab"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "6905b7820d20f88b03711327e7e59993617712ccb58c4830d8001287920ed30f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "3c1071d2d59a75b0bd8400e573e97b6feb386d828753ccc7bd1ee091237114de"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "7c0d09f42e2219e0b8fcc1773b0fffaa7e54f11a7acf70459a3d7a8a794b1350"
-    sha256 cellar: :any_skip_relocation, sonoma:            "2007fb6ba0a9ed1022a5da2e5d047f2a5c16dc2cf3ee8d9524ef083c7299757b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "30bcecee4ef0036459fb2c26c0aa200d35ad13662fec6332fb95aad37931d426"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "b505c3d6f5b2815c2507087836eeaf1f8d2e1e4f674ef66f8b434c0db7ff9a30"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "17f96346339df8309f2f8d5020a878c3a794da751dc2a040fa71de00f8970e25"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "1345cd07b26c471448eeaa7845fbe87ec84f94c24441e38179482dd6e554bfb8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "cf39cd229538f7cf6c608a9d22d0a7cde3e8edef84eb1e12478151d8e1dac9d4"
+    sha256 cellar: :any,                 arm64_linux:       "ffd6a2e3df2697ab46d243288e9fd1a536a5936b0b0f46a3f721de38816f2b8b"
+    sha256 cellar: :any,                 x86_64_linux:      "1961041ef533e6f542d3b94951820947defe630ec25f8a33a67eac1f32eb61dd"
   end
 
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
 
   on_linux do
-    depends_on "openssl@3"
+    depends_on "openssl@4"
+  end
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
   end
 
   def install
-    system "cargo", "install", *std_cargo_args(path: "sqlx-cli")
+    system "cargo", "install", *std_cargo_args
 
     generate_completions_from_executable(bin/"sqlx", "completions")
   end

@@ -44,6 +44,8 @@ class Qca < Formula
     cause "Requires C++20"
   end
 
+  deny_network_access!
+
   def install
     if OS.mac? && DevelopmentTools.clang_build_version <= 1400
       ENV.append "LDFLAGS", "-L#{formula_opt_lib("llvm")}/c++ -L#{formula_opt_lib("llvm")}/unwind -lunwind"

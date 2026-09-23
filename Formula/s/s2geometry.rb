@@ -32,6 +32,8 @@ class S2geometry < Formula
     resolves "https://github.com/google/s2geometry/pull/653"
   end
 
+  deny_network_access!
+
   def install
     # Keep C++ standard in sync with `abseil.rb`.
     args = %w[

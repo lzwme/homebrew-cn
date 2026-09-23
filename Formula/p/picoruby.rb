@@ -8,15 +8,18 @@ class Picoruby < Formula
   head "https://github.com/picoruby/picoruby.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "e7a1c312226e6c04c9f1e99df13eb08cfe7b69f31d3962a309f7e34a51f5e62e"
-    sha256 cellar: :any, arm64_tahoe:       "24b5a0a92db1046a3b0525b91238648fb90c0f3ddeac45f1507a1fa148a0658a"
-    sha256 cellar: :any, arm64_sequoia:     "0748b083bb0b0c212c3e18e1032e7b4e5b84adf4fd937b1b5fefc56492de7dfa"
-    sha256 cellar: :any, arm64_linux:       "9cb24583c4974f5d350c726b226529716a94dd73296e4a007056e80580cfe09e"
-    sha256 cellar: :any, x86_64_linux:      "7fc52af3158b3fca76ed93328722b55690a687dfdd65b498e44b756c7d567768"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "4ad68ab8e335970cd70e90c36a135ad5a25ffbb33697260dbc094c07df2e61f9"
+    sha256 cellar: :any, arm64_tahoe:       "602d4390128c20360061053da9e4e99c517750eca9526e33962bbdad648723b6"
+    sha256 cellar: :any, arm64_sequoia:     "453459ff68ab7709618ab14fe167e41f0b851b33253a4706677959d919fe8c68"
+    sha256 cellar: :any, arm64_linux:       "aa3dbf4e408eebbfbdd9a93d5bc3e621fabc9a8a72efee7c6f32f3e3b26b1d1a"
+    sha256 cellar: :any, x86_64_linux:      "166a9028b1ce88abcd6f629856fbda980b557c7f20043ffbc69dc0d2860ff384"
   end
 
   depends_on "ruby" => :build # for numbered block parameter `_1'
-  depends_on "openssl@3"
+  depends_on "openssl@4"
+
+  deny_network_access!
 
   def install
     ENV["MRUBY_CONFIG"] = buildpath/"build_config/default.rb"

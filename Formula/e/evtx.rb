@@ -1,19 +1,17 @@
 class Evtx < Formula
   desc "Windows XML Event Log parser"
   homepage "https://github.com/omerbenamram/evtx"
-  url "https://ghfast.top/https://github.com/omerbenamram/evtx/archive/refs/tags/v0.12.2.tar.gz"
-  sha256 "d1d69b5e4daab47214eec816bb3ef3b4cdadf3921879b4c422210b8dda297cd3"
+  url "https://ghfast.top/https://github.com/omerbenamram/evtx/archive/refs/tags/v0.12.3.tar.gz"
+  sha256 "51bdafee164fdaa25645acce3b79346736b7547734695cec7a24dbb833298516"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/omerbenamram/evtx.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "fe72edba3eb0111469fded7cf3ac93115ed5ce044d13c3847d9c2a8b25424db0"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "14056c38ae410b13f9c0899db53ad1ce5c842b8702fd40fd69afa85385d19df9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "ca2554822e49c8a2f23b07654b451203a362b1f693466f28132f5090926b5cfc"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "ab567dacc770f023f3a8af124ce154b0fce80a92cdac70b89cdc7efc82be2142"
-    sha256 cellar: :any_skip_relocation, sonoma:            "f50135e8d7f430ba1dd78e343708a0eef87de384f41c897bed49e756418ee551"
-    sha256 cellar: :any,                 arm64_linux:       "5fe5fec81b8775de162690a4b75c10ef5669f36d7c6c364a334372b949a847ad"
-    sha256 cellar: :any,                 x86_64_linux:      "7f55a0f0b432f1f5392abe5236c66826860375328e0d437003610343f90b82ca"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "49593a1a22b89efad98c424ad44a8c17b650a01d4b584b943d4c73cdde055da0"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "b4e6817c3dbb88f03847bee9df24f9182fe2e793084a4a41ab3fdf6a8ae0840f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "dc63117c2e41a2cb115cff516b322bd3b20827b8ffd268aa28bc408d091ca5e8"
+    sha256 cellar: :any,                 arm64_linux:       "4c0850e5b28fc6257716c2b6fc5c1e66c48ab6168c789c626af5e5bd72542a25"
+    sha256 cellar: :any,                 x86_64_linux:      "451fa936f0be8a0b6d5c1cf215de5c190206b5b8a057df47d867d9e468d27527"
   end
 
   depends_on "rust" => :build

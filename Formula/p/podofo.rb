@@ -23,13 +23,12 @@ class Podofo < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "2f43a4c409b9e92bf670b1765fbf197f3572280e6961064580b16c2a2244648a"
-    sha256 cellar: :any, arm64_tahoe:       "1a7b951f6e9d553a2958ed922fd18d08b13a24e429b82820d19ce13787819b7c"
-    sha256 cellar: :any, arm64_sequoia:     "0ac2ef3c796d651a47ac64e0b4125b2a3fe1b7d286c1b722f8700145b3bf569b"
-    sha256 cellar: :any, arm64_sonoma:      "6e20f51323ed0c344798ef7f14333b8ec66730d93ce5a7a4d3e77b59e4a3a38f"
-    sha256 cellar: :any, sonoma:            "9c0338f3168227a7c7d5efe212c4333b72f169937e42006903f3b0c0aa8a695d"
-    sha256 cellar: :any, arm64_linux:       "87ce69276e48983f3e63b968fc2b29bca490735691c090467a5d72209a59ac63"
-    sha256 cellar: :any, x86_64_linux:      "e5eb97711f90edd3eb9a85e450010aafcdedc5259912d69f235c3fb9cbf8bd05"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "d6110a28fbd1626014a943c2a41cc41e413edce77241cd18c15cff5f4a86b4d1"
+    sha256 cellar: :any, arm64_tahoe:       "8012b1323ebcdc73b741cf8dbe24c1189de436d52d636ae70d5bd216c029b5cc"
+    sha256 cellar: :any, arm64_sequoia:     "3214b3f3a9c123e89c28cd6c6d4393f0ac9e3730bccef82f7dd787a8105a8023"
+    sha256 cellar: :any, arm64_linux:       "1420f955d6c25f75cb54e828ac8d43b1e9114aeb9acbbf0c49a4ad0720bdf5f7"
+    sha256 cellar: :any, x86_64_linux:      "676339aa4c473a3924bb3cc5364f539dfec8e67ee728abbaac36af7a9b5dda64"
   end
 
   depends_on "cmake" => :build
@@ -40,7 +39,7 @@ class Podofo < Formula
   depends_on "jpeg-turbo"
   depends_on "libpng"
   depends_on "libtiff"
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   uses_from_macos "libxml2"
 

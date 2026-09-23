@@ -22,12 +22,16 @@ class Wassette < Formula
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
 
-  on_linux do
-    depends_on "openssl@3"
+  deny_network_access!
+
+  def crate_path = "crates/wassette-mcp-server"
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args, "--manifest-path", "#{crate_path}/Cargo.toml"
   end
 
   def install
-    system "cargo", "install", *std_cargo_args(path: "crates/wassette-mcp-server")
+    system "cargo", "install", *std_cargo_args(path: crate_path)
   end
 
   test do

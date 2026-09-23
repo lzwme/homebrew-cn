@@ -27,6 +27,8 @@ class Libfido2 < Formula
     depends_on "zlib-ng-compat"
   end
 
+  deny_network_access!
+
   def install
     args = OS.linux? ? ["-DUDEV_RULES_DIR=#{lib}/udev/rules.d"] : []
 

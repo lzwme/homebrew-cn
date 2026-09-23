@@ -29,6 +29,8 @@ class LibgrapeLite < Formula
     resolves "https://github.com/alibaba/libgrape-lite/pull/181"
   end
 
+  deny_network_access!
+
   def install
     system "cmake", "-S", ".", "-B", "build", "-DCMAKE_POLICY_VERSION_MINIMUM=3.5", *std_cmake_args
     system "cmake", "--build", "build"

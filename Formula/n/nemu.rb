@@ -33,6 +33,8 @@ class Nemu < Formula
     depends_on "libusb"
   end
 
+  deny_network_access!
+
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"

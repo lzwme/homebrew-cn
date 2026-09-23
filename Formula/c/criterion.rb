@@ -26,8 +26,16 @@ class Criterion < Formula
 
   uses_from_macos "libffi"
 
+  deny_network_access!
+
+  def subprojects = %w[boxfort debugbreak klib]
+
+  def fetch
+    system "meson", "subprojects", "download", *subprojects if build.head?
+  end
+
   def install
-    system "meson", "setup", "build", "--force-fallback-for=boxfort,debugbreak,klib", *std_meson_args
+    system "meson", "setup", "build", "--force-fallback-for=#{subprojects.join(",")}", *std_meson_args
     system "meson", "compile", "-C", "build"
     system "meson", "install", "--skip-subprojects", "-C", "build"
   end

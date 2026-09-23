@@ -18,6 +18,8 @@ class Gflags < Formula
 
   depends_on "cmake" => [:build, :test]
 
+  deny_network_access!
+
   def install
     args = %w[
       -DBUILD_SHARED_LIBS=ON

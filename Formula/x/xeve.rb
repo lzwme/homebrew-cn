@@ -24,6 +24,8 @@ class Xeve < Formula
 
   depends_on "cmake" => :build
 
+  allow_network_access! :test
+
   def install
     system "cmake", "-S", ".", "-B", "build",
                     "-DSET_PROF=MAIN", *std_cmake_args

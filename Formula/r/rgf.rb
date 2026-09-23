@@ -28,6 +28,8 @@ class Rgf < Formula
 
   depends_on "cmake" => :build
 
+  deny_network_access!
+
   def install
     cd "RGF" do
       mkdir "build" do

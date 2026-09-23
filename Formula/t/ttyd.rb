@@ -30,6 +30,8 @@ class Ttyd < Formula
     depends_on "zlib-ng-compat"
   end
 
+  allow_network_access! :test
+
   def install
     system "cmake", "-S", ".", "-B", "build",
                     "-DOPENSSL_ROOT_DIR=#{formula_opt_prefix("openssl@3")}",

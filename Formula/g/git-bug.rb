@@ -1,21 +1,17 @@
 class GitBug < Formula
   desc "Distributed, offline-first bug tracker embedded in git, with bridges"
   homepage "https://github.com/git-bug/git-bug"
-  url "https://ghfast.top/https://github.com/git-bug/git-bug/archive/refs/tags/v0.10.1.tar.gz"
-  sha256 "1b5cafa3d9918ce18c4674c93b83359e211def83e716d5841fa93c77b457e6c2"
+  url "https://ghfast.top/https://github.com/git-bug/git-bug/archive/refs/tags/v0.11.0.tar.gz"
+  sha256 "31ae65e733e31fbf37ecea8f31966fe46cbeb1657a144876c855d5cf09cffb69"
   license "GPL-3.0-or-later"
   head "https://github.com/git-bug/git-bug.git", branch: "trunk"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "adb49593074c1d4380b506de4cc389f3fafdbb06ce6cabff1479f98506883c93"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "cec89cbb8556d9825da3d5211cfd8e8091387081f365c52cf505e98f5e7ca70d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "46a716e687114907ed936a8c22b5fa1ca9658eecb26a0537ec894f97ae2c4ca9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "5744168a1453fba21ab2782333d4015f9cd9c1b9497ebc909d350af435da737c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:     "a271df2167a6a767e15beb87eea6eed4245f09db052f3f61b1cd5136349709de"
-    sha256 cellar: :any_skip_relocation, sonoma:            "d5bb614c77aca72bf32c5d2809befa82500f59fc5b603366d261cd83ac7f5762"
-    sha256 cellar: :any_skip_relocation, ventura:           "8721018faf434cc44ecad8440923d69c41886c780e8e10ac73942d8532696de1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "0b84957c63e145ff5a12b5dac9cea8023ca7e7870f04f4ba92581a3811b11bd9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "c614beca0af4af926599abdd8959820da8cb6621c7c4451ffaaef8cc00a9c268"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "ee3013a6d25e298a74f0246b2d1d4e256f263a2565a85a4bf9754299968b151b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "ecf692341b6d5713dfdc9ecaff6422cd5fa08e7b7181eeebcdbb2eabd95ec4bf"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "c045a269cf20a3b60422fc670770703e6f30583116ef68ae19dd5b7791587234"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "6efca2224e87ef7df8b0a323e47f8f8f51704e21866679b8149dce44b141a675"
+    sha256 cellar: :any,                 x86_64_linux:      "21a974cab95bbd8de8a742aa952a570a2930313f58013637b81268e0df1a4b57"
   end
 
   depends_on "go" => :build
@@ -28,13 +24,8 @@ class GitBug < Formula
 
   def install
     ENV["GOBIN"] = bin
-    ldflags = %W[
-      -X github.com/git-bug/git-bug/commands.GitCommit="v#{tap.user}"
-      -X github.com/git-bug/git-bug/commands.GitLastTag="v#{version}"
-      -X github.com/git-bug/git-bug/commands.GitExactTag="v#{version}"
-    ]
     system "go", "generate"
-    system "go", "build", *std_go_args(ldflags:)
+    system "go", "build", *std_go_args(ldflags: "-X main.version=v#{version}")
 
     man1.install Dir["doc/man/*.1"]
     doc.install Dir["doc/md/*.md"]

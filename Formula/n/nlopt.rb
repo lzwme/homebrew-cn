@@ -18,6 +18,8 @@ class Nlopt < Formula
 
   depends_on "cmake" => [:build, :test]
 
+  deny_network_access!
+
   def install
     args = %w[
       -DNLOPT_GUILE=OFF

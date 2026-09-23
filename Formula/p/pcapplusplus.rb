@@ -24,6 +24,8 @@ class Pcapplusplus < Formula
   depends_on "cmake" => [:build, :test]
   uses_from_macos "libpcap"
 
+  deny_network_access!
+
   def install
     cmake_args = %w[
       -DPCAPPP_BUILD_EXAMPLES=OFF

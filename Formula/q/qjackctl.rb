@@ -32,6 +32,8 @@ class Qjackctl < Formula
     depends_on "alsa-lib"
   end
 
+  deny_network_access!
+
   def install
     args = %w[
       -DCONFIG_DBUS=OFF

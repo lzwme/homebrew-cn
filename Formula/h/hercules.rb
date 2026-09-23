@@ -75,6 +75,8 @@ class Hercules < Formula
     end
   end
 
+  deny_network_access!
+
   def install
     resources.each do |r|
       resource_prefix = buildpath/r.name

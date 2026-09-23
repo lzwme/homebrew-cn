@@ -18,6 +18,8 @@ class ExtraCmakeModules < Formula
   depends_on "cmake" => [:build, :test]
   depends_on "sphinx-doc" => :build
 
+  deny_network_access!
+
   def install
     args = %w[
       -DBUILD_HTML_DOCS=ON

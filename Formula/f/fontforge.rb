@@ -51,6 +51,8 @@ class Fontforge < Formula
     depends_on "zlib-ng-compat"
   end
 
+  allow_network_access! :test
+
   def install
     args = %W[
       -DENABLE_GUI=OFF

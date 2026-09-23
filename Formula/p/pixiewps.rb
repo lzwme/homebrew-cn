@@ -7,22 +7,17 @@ class Pixiewps < Formula
   head "https://github.com/wiire-a/pixiewps.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_golden_gate: "8c52359ac51fc50c748c24a8f2a47c5df8dc4afdba847bd532b53f7ff3fb1dff"
-    sha256 cellar: :any,                 arm64_tahoe:       "39f6d24e45aca635aea5b72c94fae6fc63fd53cdf10b9f23b97e02d1a567e948"
-    sha256 cellar: :any,                 arm64_sequoia:     "c88ef0a54b523b538d88e491bf10933853e5600ebb4c391d0529e28b5feac368"
-    sha256 cellar: :any,                 arm64_sonoma:      "db1461e5abc8e20b06a0e50a99a377367aa6f7840303307b49962ce4d31dcbe8"
-    sha256 cellar: :any,                 arm64_ventura:     "721604be69bab25231f1bda20ed0f5c6f8dcb5a2788e2350c28726f86e043a1c"
-    sha256 cellar: :any,                 arm64_monterey:    "faac5957f271cf40bed4393b1bcaa534ddc451c86b3898063d8f0261ef6702d3"
-    sha256 cellar: :any,                 arm64_big_sur:     "2f777465467b09513a89236e118390430e9f019a8df3cec11bf8984ebc2d1453"
-    sha256 cellar: :any,                 sonoma:            "a3840cc6caeabe8b3b10ab4647635514caccac688edee6c6830a7f961ec0057b"
-    sha256 cellar: :any,                 ventura:           "5bca2f2fa9f976cb82339438061efabb2f6dc8c311d1aae97765890d00bba93e"
-    sha256 cellar: :any,                 monterey:          "55bf66c8040b07df2441c3fcf7c13eb27686e4b9c9ca62daf74d57f144fa90f7"
-    sha256 cellar: :any,                 big_sur:           "d714557686dab4f733d680e7d127452599a5bf9707941e275088848f2674070d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "ed23311b1d5fba1e327d4897c4373df6b992c8d4eeca4cb9e531d04b6ddde7ed"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "b5a93abb2c126230b4c9254243b6fc99b778fb0d4aa220d0296a02940a46865e"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "6c8934528d0b0209a5b87a20aecdaa878e84c7334cf708741a6a428022a404e2"
+    sha256 cellar: :any, arm64_tahoe:       "c627bbe17e0e1c9bb1adf3b08d0d60515c16498c3cec960e3b6a3779f8adff58"
+    sha256 cellar: :any, arm64_sequoia:     "088c2611b7bbd032ba14130863220fc271a5c7af9e665488b02d40d18e21a2e2"
+    sha256 cellar: :any, arm64_linux:       "47d6608519f969e4d886b7a33040e7b627210e309f2a8666f1149aca433729c7"
+    sha256 cellar: :any, x86_64_linux:      "184d2a1709ed2e52ada20d98584b8c13af0d8e9e9b4e591c9410287fc94702bc"
   end
 
-  depends_on "openssl@3"
+  depends_on "openssl@4"
+
+  deny_network_access!
 
   def install
     system "make", "PREFIX=#{prefix}", "OPENSSL=1", "install"

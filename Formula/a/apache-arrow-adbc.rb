@@ -25,6 +25,8 @@ class ApacheArrowAdbc < Formula
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
 
+  deny_network_access!
+
   def install
     args = %w[
       -DADBC_BUILD_STATIC=OFF

@@ -25,6 +25,8 @@ class Woff2 < Formula
   depends_on "cmake" => :build
   depends_on "brotli"
 
+  allow_network_access! :test
+
   def install
     args = %W[
       -DCMAKE_INSTALL_NAME_DIR=#{opt_lib}

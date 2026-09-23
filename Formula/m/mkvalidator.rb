@@ -28,6 +28,8 @@ class Mkvalidator < Formula
 
   depends_on "cmake" => :build
 
+  allow_network_access! :test
+
   def install
     # Workaround for CMake 4 compatibility
     args = %w[-DCMAKE_POLICY_VERSION_MINIMUM=3.5]

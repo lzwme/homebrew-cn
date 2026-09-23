@@ -381,20 +381,25 @@ class Texlive < Formula
     end
 
     resource("install-tl").stage do
-      cd "tlpkg" do
-        (share/"tlpkg").install "installer"
-        (share/"tlpkg").install "tltcl"
-      end
+      # Clean unused files
+      rm_r("tlpkg/installer/wget")
+      rm_r("tlpkg/installer/xz")
+
+      (share/"tlpkg").install "tlpkg/installer"
+      (share/"tlpkg").install "tlpkg/tltcl"
     end
 
-    resource("texlive-texmf").stage do
+    # We manually extract the resource to reduce total disk space needed.
+    # Tarball is ~5GB and a full unpack is ~9GB with half being docs we discard.
+    mkdir "texlive-texmf" do
+      system "tar", "--exclude=texmf-dist/doc",
+                    "--extract",
+                    "--file", resource("texlive-texmf").cached_download,
+                    "--strip-components", "1"
       share.install "texmf-dist"
+      # Make sure doc is removed to account for different tar implementations/versions
+      rm_r(share/"texmf-dist/doc") if (share/"texmf-dist/doc").exist?
     end
-
-    # Clean unused files
-    rm_r(share/"texmf-dist/doc")
-    rm_r(share/"tlpkg/installer/wget")
-    rm_r(share/"tlpkg/installer/xz")
 
     # Set up config files to use the correct path for the TeXLive root
     inreplace buildpath/"texk/kpathsea/texmf.cnf",

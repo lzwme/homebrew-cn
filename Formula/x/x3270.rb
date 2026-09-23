@@ -11,16 +11,15 @@ class X3270 < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "ed6787df31201af31cbcb1ff5bd8d04688bd45e37d2ea92d58a507936f76e987"
-    sha256 arm64_tahoe:       "d98a21ae48675fa3bf1901e468c2a09245206a000ec31b8b58ea56b3d9bd6ab8"
-    sha256 arm64_sequoia:     "58e3b3d5401b4db0e63539d122eda5de386bed1b6973ef88dc04789599b4b118"
-    sha256 arm64_sonoma:      "9c27bf91ab48b87570a8a437cec920939c714563fd66d5d5ebe01791d069c8d2"
-    sha256 sonoma:            "f0473cfa720f226dcf71ff593ad988ee127627afff065fa3a612d138553d6727"
-    sha256 arm64_linux:       "85c3f9d9454286b88aee99f3fd8edc351d5b0a8920072abc855894c42a16dd02"
-    sha256 x86_64_linux:      "4914534421e8d1394c8a6feb0a2f5dbf0b6c98f9e9807b59990e103e9ab326db"
+    rebuild 1
+    sha256 arm64_golden_gate: "ea3453124778264fd8410b6a3be158e557daadab66c4197680851fc893623780"
+    sha256 arm64_tahoe:       "449e02fc6cddf44e3790bc046985804b71c3fadb2e4fe0f7afa142eee75b8a1d"
+    sha256 arm64_sequoia:     "e6d75144a80b4730a875a0960609af6961426646f92e21f8278eabf1252014bb"
+    sha256 arm64_linux:       "26e35b6219fb72f3eed9c1c8444a3b84eab7fb2816dbf4f545671ffbf40cbc65"
+    sha256 x86_64_linux:      "c6a8b41cba0c85ae6b5df9430d8515eb9f374e11b93d2a0e3f9519eaa0e0e141"
   end
 
-  depends_on "openssl@3"
+  depends_on "openssl@4"
   depends_on "readline"
 
   uses_from_macos "python" => :build
@@ -35,6 +34,8 @@ class X3270 < Formula
     depends_on "libxmu"
     depends_on "libxt"
   end
+
+  deny_network_access!
 
   def install
     args = %w[

@@ -25,6 +25,8 @@ class Sfcgal < Formula
   depends_on "gmp"
   depends_on "mpfr"
 
+  deny_network_access!
+
   def install
     # TODO: Drop SFCGAL_WITH_EIGEN=ON once SFCGAL enbles it when Eigen is detected
     # See: https://gitlab.com/sfcgal/SFCGAL/-/merge_requests/778

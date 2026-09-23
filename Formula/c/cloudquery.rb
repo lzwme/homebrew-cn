@@ -1,8 +1,8 @@
 class Cloudquery < Formula
   desc "Data movement tool to sync data from any source to any destination"
   homepage "https://www.cloudquery.io"
-  url "https://ghfast.top/https://github.com/cloudquery/cloudquery/archive/refs/tags/cli-v6.42.3.tar.gz"
-  sha256 "4c29d87dfa78bda9b6fd06789ffdd37f100e9b95b55e370b02c3d68d20250bb1"
+  url "https://ghfast.top/https://github.com/cloudquery/cloudquery/archive/refs/tags/cli-v6.43.0.tar.gz"
+  sha256 "6f817f48c91360e115b0b12aedc2b4b8b2f974c5441be577ac8ff7099a68c3af"
   license "MPL-2.0"
   head "https://github.com/cloudquery/cloudquery.git", branch: "main"
 
@@ -12,11 +12,11 @@ class Cloudquery < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "ad5892a0fcda57d820cd163e95595aa75b3513fd8438ce951846b242433ad7ab"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "ad5892a0fcda57d820cd163e95595aa75b3513fd8438ce951846b242433ad7ab"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "ad5892a0fcda57d820cd163e95595aa75b3513fd8438ce951846b242433ad7ab"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "005f608c2bdbfa82b593232e0de4f5f44b05553280f1d17f6b024a095f26fca3"
-    sha256 cellar: :any,                 x86_64_linux:      "69dccde4eba8eb469d8036c38328f97971726208f29f0da4fcaf2331e836d614"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "9dd8f2d66ef0d9f50445f879ebd750c0e81b7ca75cd151af29809c38b1e99ce3"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "9dd8f2d66ef0d9f50445f879ebd750c0e81b7ca75cd151af29809c38b1e99ce3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "9dd8f2d66ef0d9f50445f879ebd750c0e81b7ca75cd151af29809c38b1e99ce3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "21aeffbea1f665f15e5f19f54729148f3bba3171424d24ba4ffc6386f50f52ed"
+    sha256 cellar: :any,                 x86_64_linux:      "0f49c08daebbeb662382d33467382fe7b977aa822426183375a58b41787492af"
   end
 
   depends_on "go" => :build

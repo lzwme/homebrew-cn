@@ -25,6 +25,8 @@ class LibayatanaAppindicator < Formula
   depends_on "libayatana-indicator"
   depends_on "libdbusmenu"
 
+  deny_network_access!
+
   def install
     args = %w[
       -DENABLE_BINDINGS_MONO=OFF

@@ -1,10 +1,9 @@
 class Getxbook < Formula
   desc "Tools to download ebooks from various sources"
   homepage "https://njw.name/getxbook/"
-  url "https://njw.name/getxbook/getxbook-1.2.tar.xz"
-  sha256 "7a4b1636ecb6dace814b818d9ff6a68167799b81ac6fc4dca1485efd48cf1c46"
+  url "https://njw.name/getxbook/getxbook-1.3.tar.xz"
+  sha256 "a1b8252a50ba61e7c66a82161af35e08f4e6187e8c2cea1e2a040d167932de18"
   license "ISC"
-  revision 1
 
   livecheck do
     url :homepage
@@ -12,20 +11,11 @@ class Getxbook < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_golden_gate: "8283e20f14b73cd96b7b6897cfccfbe73abec91967ccd58c862895bca78d2bcd"
-    sha256 cellar: :any,                 arm64_tahoe:       "b96137ef10aade7270e91deec24e1487fc1626b19d45ce68755f982b4e85cc96"
-    sha256 cellar: :any,                 arm64_sequoia:     "a85ed5a0d8897a0fbffbc97e23dff2575241b3a620ecb2f274d757f1812621cb"
-    sha256 cellar: :any,                 arm64_sonoma:      "142814753bace7b2f0465c067b29a1e58bba5d638c53e044e8250843b7be64e2"
-    sha256 cellar: :any,                 arm64_ventura:     "7254e0b761a6e9eb9388b1a7af5f70d4ec26afbfec79924a11ff343ac68cffd8"
-    sha256 cellar: :any,                 arm64_monterey:    "2237deb414c3adb1808dd399db44aaa9716d6c015a23091fd0293551caa18d41"
-    sha256 cellar: :any,                 arm64_big_sur:     "00932264ebc086317cc3ef8fbd68c7cc06be424ecd51c331fc84797a1a862268"
-    sha256 cellar: :any,                 sonoma:            "3f75182278ee1a2114c21be830e8b3c805e62ff7c8f943b990e08a8d5bcd1ce8"
-    sha256 cellar: :any,                 ventura:           "cf59d18cfd93e5378cfa7d99833955936c352c78de14f30fea628fb828057bb0"
-    sha256 cellar: :any,                 monterey:          "95ba1369c672fc85ee368dfeed1854d0c60ead37fb2ee61d970b62e4c0ae5668"
-    sha256 cellar: :any,                 big_sur:           "2af17bd072313e56ca6c199dcf9aadbdfbed69288fb21345a7395777b5d88a45"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "9a7a42e68f0b88ac65a703f2d06486ec72ca8283c587cceecfc072f7e844361c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "9c87c43136c6d85bd87766fff817a618abedc7392a1a4be393acd0546a02cdc6"
+    sha256 cellar: :any, arm64_golden_gate: "6bb08299390cc6bd1e82ebf4c3bfe9b15711645c9cb09525fb4ed70d1d7fbc5f"
+    sha256 cellar: :any, arm64_tahoe:       "1cd590d9e843093b1425cf52f0635ecec0552c84792ebcb16b4436962f8decfc"
+    sha256 cellar: :any, arm64_sequoia:     "27280fe2e0ded386f16ed1c0e0807cae3afd0ad0929ef40952dc5f6d305a98b4"
+    sha256 cellar: :any, arm64_linux:       "10a6317fe73e22e88465b3b0405bacc30c6b20c614ae58eb177ccc7406a1b047"
+    sha256 cellar: :any, x86_64_linux:      "f7bba65c19614b08f1836c012d9d64a71caae129ad475a9132ad1d2147ffb117"
   end
 
   depends_on "openssl@3"

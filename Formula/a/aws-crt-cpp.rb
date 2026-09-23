@@ -26,6 +26,8 @@ class AwsCrtCpp < Formula
   depends_on "aws-c-sdkutils"
   depends_on "aws-checksums"
 
+  deny_network_access!
+
   def install
     args = %W[
       -DBUILD_DEPS=OFF

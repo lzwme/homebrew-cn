@@ -26,6 +26,8 @@ class Sdl12Compat < Formula
   depends_on "cmake" => :build
   depends_on "sdl2-compat" => :no_linkage
 
+  deny_network_access!
+
   def install
     args = ["-DSDL12TESTS=OFF"]
     args << "-DCMAKE_INSTALL_RPATH=#{rpath(target: formula_opt_lib("sdl2-compat"))}" if OS.mac?

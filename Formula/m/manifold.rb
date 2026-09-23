@@ -18,6 +18,8 @@ class Manifold < Formula
   depends_on "clipper2"
   depends_on "tbb"
 
+  deny_network_access!
+
   def install
     args = %w[
       -DMANIFOLD_DOWNLOADS=OFF

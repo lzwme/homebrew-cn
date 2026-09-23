@@ -18,6 +18,8 @@ class Plog < Formula
     end
   end
 
+  deny_network_access!
+
   def install
     args = []
     if OS.linux?

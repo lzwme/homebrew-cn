@@ -45,6 +45,8 @@ class Wv2 < Formula
   # are cleaned up post-build.
   patch :DATA
 
+  deny_network_access!
+
   def install
     ENV.append "LDFLAGS", "-lgobject-2.0" # work around broken detection
     ENV.append "LDFLAGS", "-liconv" if OS.mac?

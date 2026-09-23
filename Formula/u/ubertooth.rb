@@ -25,6 +25,8 @@ class Ubertooth < Formula
   depends_on "libbtbb"
   depends_on "libusb"
 
+  deny_network_access!
+
   def install
     args = ["-DCMAKE_INSTALL_RPATH=#{rpath}", "-DENABLE_PYTHON=OFF"]
     # Workaround for CMake 4 until fixed upstream, https://github.com/greatscottgadgets/ubertooth/pull/546

@@ -22,6 +22,8 @@ class Flann < Formula
   depends_on "hdf5"
   depends_on "lz4"
 
+  allow_network_access! :test
+
   def install
     args = %W[
       -DBUILD_PYTHON_BINDINGS=OFF

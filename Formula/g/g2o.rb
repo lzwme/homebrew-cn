@@ -41,6 +41,8 @@ class G2o < Formula
     resolves "https://github.com/RainerKuemmerle/g2o/pull/922"
   end
 
+  allow_network_access! :test
+
   def install
     cmake_args = std_cmake_args + %w[-DG2O_BUILD_EXAMPLES=OFF]
     # For Intel: manually set desired SSE features to enable support for older machines.

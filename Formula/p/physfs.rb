@@ -30,6 +30,8 @@ class Physfs < Formula
     depends_on "readline"
   end
 
+  deny_network_access!
+
   def install
     # Workaround for CMake 4.0+. Remove on next release.
     if build.stable?

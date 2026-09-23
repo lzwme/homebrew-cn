@@ -44,10 +44,8 @@ class Mlx < Formula
   # https://github.com/ml-explore/mlx/blob/v#{version}/CMakeLists.txt
   # Included in not_a_binary_url_prefix_allowlist.json
   resource "metal-cpp" do
-    on_arm do
-      url "https://developer.apple.com/metal/cpp/files/metal-cpp_26.zip"
-      sha256 "4df3c078b9aadcb516212e9cb03004cbc5ce9a3e9c068fa3144d021db585a3a4"
-    end
+    url "https://developer.apple.com/metal/cpp/files/metal-cpp_26.zip"
+    sha256 "4df3c078b9aadcb516212e9cb03004cbc5ce9a3e9c068fa3144d021db585a3a4"
   end
 
   # Update to GIT_TAG at https://github.com/ml-explore/mlx/blob/v#{version}/mlx/io/CMakeLists.txt
@@ -56,9 +54,12 @@ class Mlx < Formula
     sha256 "9e30bc1eb82cc2231150d39ce37dcdd6f844d6994fba18da83fc537a487ba86f"
   end
 
+  deny_network_access!
+
   def install
     ENV.append_to_cflags "-I#{formula_opt_include("nlohmann-json")}/nlohmann"
     (buildpath/"gguflib").install resource("gguflib")
+    (buildpath/"metal_cpp").install resource("metal-cpp")
 
     mlx_python_dir = prefix/Language::Python.site_packages(python3)/"mlx"
 
@@ -73,17 +74,12 @@ class Mlx < Formula
       -DCMAKE_INSTALL_RPATH=#{rpath}
       -DFETCHCONTENT_TRY_FIND_PACKAGE_MODE=ALWAYS
       -DFETCHCONTENT_SOURCE_DIR_GGUFLIB=#{buildpath}/gguflib
+      -DFETCHCONTENT_SOURCE_DIR_METAL_CPP=#{buildpath}/metal_cpp
     ]
-    args << if Hardware::CPU.arm?
-      (buildpath/"metal_cpp").install resource("metal-cpp")
-      "-DFETCHCONTENT_SOURCE_DIR_METAL_CPP=#{buildpath}/metal_cpp"
-    else
-      "-DMLX_ENABLE_X64_MAC=ON"
-    end
 
     ENV["CMAKE_ARGS"] = (args + std_cmake_args).join(" ")
     ENV[build.head? ? "DEV_RELEASE" : "PYPI_RELEASE"] = "1"
-    ENV["MACOSX_DEPLOYMENT_TARGET"] = "#{MacOS.version.major}.#{MacOS.version.minor.to_i}"
+    ENV["MACOSX_DEPLOYMENT_TARGET"] = MacOS.version.to_s
 
     system python3, "-m", "pip", "install", *std_pip_args, "."
   end

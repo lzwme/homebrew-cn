@@ -47,6 +47,8 @@ class Sdl3 < Formula
     depends_on "pulseaudio" => :no_linkage
   end
 
+  deny_network_access!
+
   def install
     inreplace "cmake/sdl3.pc.in", "@SDL_PKGCONFIG_PREFIX@", HOMEBREW_PREFIX
 

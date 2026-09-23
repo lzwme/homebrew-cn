@@ -1,8 +1,8 @@
 class Cliproxyapi < Formula
   desc "Wrap Gemini CLI, Codex, Claude Code, Qwen Code as an API service"
   homepage "https://github.com/router-for-me/CLIProxyAPI"
-  url "https://ghfast.top/https://github.com/router-for-me/CLIProxyAPI/archive/refs/tags/v7.3.10.tar.gz"
-  sha256 "f2472ce602141fee9646cfa2afabac1e52b71eceb93b6b8779e6819c80b0b24a"
+  url "https://ghfast.top/https://github.com/router-for-me/CLIProxyAPI/archive/refs/tags/v7.3.15.tar.gz"
+  sha256 "5a6fc5058ca443d046e01b92e730707838975d56e34ef995cca85b01435d6e60"
   license "MIT"
   head "https://github.com/router-for-me/CLIProxyAPI.git", branch: "main"
 
@@ -13,11 +13,11 @@ class Cliproxyapi < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "c606c6c19dbd024f1fae7a74febec75de37aba6ba9989f11729e7db09c348594"
-    sha256 arm64_tahoe:       "61cba013fdde654532e88d950e6b904d6a814058a4f99a5178bafc4f53e59228"
-    sha256 arm64_sequoia:     "f44d3cd8346e6939c624331c74146c6d868b6cb7e69f4cf30143050eeb5dfd5b"
-    sha256 arm64_linux:       "aea320282cd7c4f0bd2cc33c4a0934c00745e9b1f3ff6728fa2b42864d0c9a0a"
-    sha256 x86_64_linux:      "05a51dd62a4562c06020a09c8a50fc57dc1910ee93142558b0034b0b31cebb62"
+    sha256 arm64_golden_gate: "ddd9faa5f34ad15807fdc7bcc7d7d61f2770c3a656a0c6f66cd1018c3b87318a"
+    sha256 arm64_tahoe:       "5403c506bb02371ec0f95fafc06371830475f6d721b39ce5197e8f03d71b1ac0"
+    sha256 arm64_sequoia:     "93b949f4e5aa4585c9b58acbf0857df38ad165ae127c8e019a1f930e6f6166cc"
+    sha256 arm64_linux:       "695d11722a5966a5756d60c9500ce1026d9906ec135b8ed331abdb5e72100eb0"
+    sha256 x86_64_linux:      "45711b9947591dcdb380f003a9e7198283ba15f341335eb3f53167118af59739"
   end
 
   depends_on "go" => :build

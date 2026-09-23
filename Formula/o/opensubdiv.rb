@@ -26,6 +26,8 @@ class Opensubdiv < Formula
   depends_on "cmake" => :build
   depends_on "glfw"
 
+  deny_network_access!
+
   def install
     glfw = Formula["glfw"]
     args = %W[

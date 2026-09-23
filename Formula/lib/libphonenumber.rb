@@ -34,6 +34,8 @@ class Libphonenumber < Formula
     resolves "https://github.com/google/libphonenumber/pull/3903"
   end
 
+  deny_network_access!
+
   def install
     ENV.append_to_cflags "-Wno-sign-compare" # Avoid build failure on Linux.
     system "cmake", "-S", "cpp", "-B", "build",

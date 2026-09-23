@@ -20,6 +20,8 @@ class Spdlog < Formula
   depends_on "cmake" => :build
   depends_on "fmt"
 
+  deny_network_access!
+
   def install
     ENV.cxx11
 

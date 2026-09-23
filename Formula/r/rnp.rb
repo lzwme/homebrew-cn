@@ -39,6 +39,8 @@ class Rnp < Formula
     resolves "https://github.com/rnpgp/rnp/pull/2387"
   end
 
+  deny_network_access!
+
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"

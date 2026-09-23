@@ -31,6 +31,8 @@ class SagittariusScheme < Formula
     depends_on "zlib-ng-compat"
   end
 
+  deny_network_access!
+
   def install
     # Work around build error on Apple Silicon by forcing little endian.
     # src/sagittarius/private/sagittariusdefs.h:200:3: error: Failed to detect endian

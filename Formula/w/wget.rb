@@ -1,21 +1,29 @@
 class Wget < Formula
   desc "Internet file retriever"
   homepage "https://www.gnu.org/software/wget/"
-  url "https://ftpmirror.gnu.org/wget/wget-1.25.0.tar.gz"
-  mirror "https://ftp.gnu.org/gnu/wget/wget-1.25.0.tar.gz"
-  sha256 "766e48423e79359ea31e41db9e5c289675947a7fcf2efdcedb726ac9d0da3784"
   license "GPL-3.0-or-later"
+  revision 2
   compatibility_version 1
 
+  stable do
+    url "https://ftpmirror.gnu.org/wget/wget-1.25.0.tar.gz"
+    mirror "https://ftp.gnu.org/gnu/wget/wget-1.25.0.tar.gz"
+    sha256 "766e48423e79359ea31e41db9e5c289675947a7fcf2efdcedb726ac9d0da3784"
+
+    # Backport support for OpenSSL 4
+    patch do
+      url "https://gitlab.com/gnuwget/wget/-/commit/aaec8d52a06c46eeab570b8ef3e10760ebc66b7a.diff"
+      sha256 "96aa2923ce9a12dbc2c82969705da4f72792816b087dbee19c04cd2cb2769ea8"
+      type :backport
+    end
+  end
+
   bottle do
-    rebuild 2
-    sha256 arm64_golden_gate: "48133c59a3139fc5b20d89148e9ffacd93aabd3c88a52714bd810db9f4344899"
-    sha256 arm64_tahoe:       "27e15ca14afaaa7c2016bba7a098452cf66d1d8a74330ed6195a0b6ae7a4dada"
-    sha256 arm64_sequoia:     "aa19cf5de262d5b67631af8288cce233a075c251c68050a1e73699314a911e7b"
-    sha256 arm64_sonoma:      "ebac9bd5e93603af8d3dcf3cfed9924f773e0fa5f8a827c12c69ad07cc80a6de"
-    sha256 sonoma:            "32e76ca0ef4b26d7022dd1cad7621e8cd9bccca7677b7d4646d30d2fa009f413"
-    sha256 arm64_linux:       "f6e698ad339b9d9398f9769ad46ffa999809e9e07ab0e6d9a1537ec136dbaf01"
-    sha256 x86_64_linux:      "8f58b44e7482ee12e910df582cf43a4dadb808e4db70bfc760aaf258942652a5"
+    sha256 arm64_golden_gate: "d89ea78fbc8ec79a80d52c7dcaa28e50c2bb435acd1470ee2cae4ef7646eff7e"
+    sha256 arm64_tahoe:       "38024004cafd418d1ce2e2cd6b11ecf8a5e6a24d2641ba624dd016bb650d2240"
+    sha256 arm64_sequoia:     "899cfc98a094aa22f54d7b46762f2e9529dfa621bc2103d2612747ad251c633c"
+    sha256 arm64_linux:       "ba2ac22093f8e594a55574c7bf86a488dfe0a539faf5370d20fab3a3872d4254"
+    sha256 x86_64_linux:      "32d971ac2d28eb31c50812004d459c597fbdd6691db82129e244b5e80c06f952"
   end
 
   head do
@@ -29,7 +37,7 @@ class Wget < Formula
   depends_on "pkgconf" => :build
   depends_on "libidn2"
   depends_on "libpsl"
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   on_macos do
     depends_on "gettext"
@@ -48,7 +56,7 @@ class Wget < Formula
     system "./bootstrap", "--skip-po" if build.head?
     system "./configure", "--sysconfdir=#{etc}",
                           "--with-ssl=openssl",
-                          "--with-libssl-prefix=#{formula_opt_prefix("openssl@3")}",
+                          "--with-libssl-prefix=#{formula_opt_prefix("openssl@4")}",
                           "--disable-pcre",
                           "--disable-pcre2",
                           "--with-libpsl",

@@ -20,6 +20,8 @@ class Openapv < Formula
 
   depends_on "cmake" => :build
 
+  allow_network_access! :test
+
   def install
     system "cmake", "-S", ".", "-B", "build",
            "-DOAPV_APP_STATIC_BUILD=OFF",

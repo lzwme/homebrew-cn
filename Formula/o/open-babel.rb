@@ -35,6 +35,8 @@ class OpenBabel < Formula
 
   conflicts_with "surelog", because: "both install `roundtrip` binaries"
 
+  deny_network_access!
+
   def install
     args = %W[
       -DINCHI_INCLUDE_DIR=#{formula_opt_include("inchi")}/inchi

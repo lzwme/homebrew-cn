@@ -24,6 +24,12 @@ class Tsui < Formula
     depends_on "libx11"
   end
 
+  allow_network_access! :test
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ENV["CGO_ENABLED"] = "1" if OS.linux? && Hardware::CPU.arm?
 
@@ -31,26 +37,18 @@ class Tsui < Formula
   end
 
   test do
-    input, = Open3.popen2 "SHELL=/bin/sh script -q output.txt"
-    input.puts "stty rows 80 cols 130"
-    input.puts bin/"tsui"
-    sleep 10
-    input.putc "q"
-    input.puts "exit"
-    sleep 10
-    input.close
-    sleep 10
+    require "pty"
 
-    screenlog = (testpath/"output.txt").read
-    # remove ANSI colors
-    screenlog.encode!("UTF-8", "binary",
-      invalid: :replace,
-      undef:   :replace,
-      replace: "")
-
-    assert_match(Regexp.union(
-                   /Status:\s+(Not )?Connected/, # If Tailscale running
-                   /Failed to connect to local Tailscale daemon/, # If Tailscale not running
-                 ), screenlog)
+    # `tsui` renders a TUI, so it only produces output on a terminal
+    output = ""
+    PTY.spawn(bin/"tsui") do |r, _w, _pid|
+      r.winsize = [80, 130]
+      begin
+        r.each_line { |line| output += line }
+      rescue Errno::EIO
+        # GNU/Linux raises EIO when read is done on closed pty
+      end
+    end
+    assert_match "Failed to connect to local Tailscale daemon", output
   end
 end

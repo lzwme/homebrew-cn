@@ -25,6 +25,8 @@ class Qdmr < Formula
   depends_on "qttools"
   depends_on "yaml-cpp"
 
+  deny_network_access!
+
   def install
     system "cmake", "-S", ".", "-B", "build", "-DINSTALL_UDEV_RULES=OFF", *std_cmake_args
     system "cmake", "--build", "build"

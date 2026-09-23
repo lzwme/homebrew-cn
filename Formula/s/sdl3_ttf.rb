@@ -26,6 +26,8 @@ class Sdl3Ttf < Formula
 
   uses_from_macos "perl" => :build
 
+  deny_network_access!
+
   def install
     system "cmake", "-S", ".",
                     "-B", "build",

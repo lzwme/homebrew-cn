@@ -17,6 +17,8 @@ class Spglib < Formula
 
   depends_on "cmake" => [:build, :test]
 
+  deny_network_access!
+
   def install
     # TODO: Fortran packaging is disabled for now because packaging does not pick it up properly
     # https://github.com/spglib/spglib/issues/352#issuecomment-1784943807

@@ -40,6 +40,8 @@ class Ladybug < Formula
     cause "Requires C++20 std::format, https://gcc.gnu.org/gcc-13/changes.html#libstdcxx"
   end
 
+  deny_network_access!
+
   def install
     args = %W[-DCMAKE_INSTALL_RPATH=#{rpath}]
 

@@ -22,6 +22,8 @@ class AwsCS3 < Formula
   depends_on "aws-c-io"
   depends_on "aws-checksums"
 
+  deny_network_access!
+
   def install
     args = ["-DBUILD_SHARED_LIBS=ON"]
     # Avoid linkage to `aws-c-compression` and `aws-c-sdkutils`

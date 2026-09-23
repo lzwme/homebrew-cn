@@ -29,6 +29,8 @@ class Souffle < Formula
     depends_on "zlib-ng-compat"
   end
 
+  deny_network_access!
+
   def install
     cmake_args = [
       "-DSOUFFLE_DOMAIN_64BIT=ON",

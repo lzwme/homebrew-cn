@@ -35,6 +35,8 @@ class Pivy < Formula
     type :unofficial
   end
 
+  deny_network_access!
+
   def install
     site_packages = prefix/Language::Python.site_packages(python3)
     rpaths = [rpath(source: site_packages/"pivy"), rpath(source: site_packages/"pivy/gui")]

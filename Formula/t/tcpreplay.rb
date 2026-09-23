@@ -20,6 +20,8 @@ class Tcpreplay < Formula
 
   uses_from_macos "libpcap"
 
+  deny_network_access!
+
   def install
     args = %W[-DWITH_LIBDNET=#{formula_opt_prefix("libdnet")}]
     args << "-DWITH_LIBPCAP=#{formula_opt_prefix("libpcap")}" if OS.linux?

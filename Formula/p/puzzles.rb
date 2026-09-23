@@ -40,6 +40,8 @@ class Puzzles < Formula
 
   conflicts_with "samba", because: "both install `net` binaries"
 
+  deny_network_access!
+
   def install
     # Disable universal binaries
     inreplace "cmake/platforms/osx.cmake", "set(CMAKE_OSX_ARCHITECTURES arm64 x86_64)", "" if OS.mac?

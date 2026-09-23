@@ -31,6 +31,8 @@ class MysqlConnectorCxx < Formula
     depends_on "zlib-ng-compat"
   end
 
+  allow_network_access! :test
+
   def install
     ENV["CMAKE_POLICY_VERSION_MINIMUM"] = "3.5"
 

@@ -14,6 +14,8 @@ class Burst < Formula
   depends_on "cmake" => [:build, :test]
   depends_on "boost" => :no_linkage
 
+  deny_network_access!
+
   def install
     system "cmake", "-S", ".", "-B", "build",
                     "-DBURST_TESTING=OFF",

@@ -17,10 +17,6 @@ class Zola < Formula
   depends_on "rust" => :build
   depends_on "oniguruma" # for onig_sys
 
-  on_linux do
-    depends_on "openssl@3" # Uses Secure Transport on macOS
-  end
-
   deny_network_access!
 
   def fetch

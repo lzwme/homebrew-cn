@@ -38,6 +38,8 @@ class Prjtrellis < Formula
     resolves "https://github.com/YosysHQ/prjtrellis/issues/251"
   end
 
+  allow_network_access! :test
+
   def install
     (buildpath/"database").install resource("prjtrellis-db")
 

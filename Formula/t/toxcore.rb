@@ -25,6 +25,8 @@ class Toxcore < Formula
   depends_on "libvpx"
   depends_on "opus"
 
+  allow_network_access! :test
+
   def install
     system "cmake", "-S", ".", "-B", "_build", *std_cmake_args
     system "cmake", "--build", "_build"

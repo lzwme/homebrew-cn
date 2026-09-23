@@ -28,6 +28,8 @@ class Faust < Formula
   depends_on "libsndfile"
   depends_on "llvm"
 
+  deny_network_access!
+
   def install
     # `brew linkage` doesn't like the pre-built Android libsndfile.so for faust2android.
     # Not an essential feature so just remove it when building arm64 linux in CI.

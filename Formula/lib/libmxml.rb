@@ -1,22 +1,22 @@
 class Libmxml < Formula
   desc "Mini-XML library"
   homepage "https://michaelrsweet.github.io/mxml/"
-  url "https://ghfast.top/https://github.com/michaelrsweet/mxml/releases/download/v4.0.5/mxml-4.0.5.tar.gz"
-  sha256 "28ecade70e3481e726907e79f8816b9e77d03cb810bccc8535a7a32bb08740c0"
+  url "https://ghfast.top/https://github.com/michaelrsweet/mxml/releases/download/v4.0.6/mxml-4.0.6.tar.gz"
+  sha256 "ec1af6f7a752f63649ad00cf7355cf36366ccf729658a1a4696270de8bd74854"
   license "Apache-2.0"
   head "https://github.com/michaelrsweet/mxml.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "8b22848ce43bee35ebf13e7d7c1b79da67fc087050277585a5117165e83b72d4"
-    sha256 cellar: :any, arm64_tahoe:       "63249105e541f275772497ee648662944489e4c48fb08ac49b2f2481ce6fc3c1"
-    sha256 cellar: :any, arm64_sequoia:     "36f1c25086b7d53bf920f27f4c545e1f53f72295defb904f8d6cba8983ac1500"
-    sha256 cellar: :any, arm64_sonoma:      "3458a98b468310caaf60a7f969999af01ed2448cae6ac90f0203e74136a7da30"
-    sha256 cellar: :any, sonoma:            "46708becd4693826a74064c96ce90b0199275dd26cba22608e041745d66dfad1"
-    sha256 cellar: :any, arm64_linux:       "949838339c6eb13aff8235b4d31c27731107294358d7ca11b994444d4fbb6d08"
-    sha256 cellar: :any, x86_64_linux:      "41c5022d54b96b08890c92cbd5994e70bf6264920e395edd7681d1ad42ac7e7f"
+    sha256 cellar: :any, arm64_golden_gate: "b26c5e30103ccf3cde2318342f04005b32746c3172ed11b05dbd0ffcb1138335"
+    sha256 cellar: :any, arm64_tahoe:       "f1a73853f88ad5939b1ee35b19ab0a99a86bb2510d8b2e1be51444c2d0dbd309"
+    sha256 cellar: :any, arm64_sequoia:     "72c5171a3de34db7a162fb5aa0b44c5db9fafa744b967fe77e1b4d706ce48414"
+    sha256 cellar: :any, arm64_linux:       "b6c398dbcd40129bfe717049bc804081286bc0ef2ce8d0984dd61cf9673caab8"
+    sha256 cellar: :any, x86_64_linux:      "f47fc4593704d533469508e90eed317cd2e4fe36b231093e0a95e8cbcfa44dd8"
   end
 
   depends_on "pkgconf" => :test
+
+  deny_network_access!
 
   def install
     system "./configure", "--enable-shared", *std_configure_args

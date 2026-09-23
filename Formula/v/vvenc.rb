@@ -18,6 +18,8 @@ class Vvenc < Formula
 
   depends_on "cmake" => :build
 
+  allow_network_access! :test
+
   def install
     system "cmake", "-S", ".", "-B", "build",
            "-DVVENC_INSTALL_FULLFEATURE_APP=1",

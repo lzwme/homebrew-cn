@@ -16,6 +16,7 @@ class Pidgin < Formula
     depends_on "gtk+"
     depends_on "libgcrypt"
     depends_on "libgnt"
+    depends_on "libidn"
     depends_on "libotr"
     depends_on "ncurses" # due to `libgnt`
     depends_on "tcl-tk@8" # ignores TCL 9
@@ -88,7 +89,6 @@ class Pidgin < Formula
   depends_on "gettext" => :build
   depends_on "pkgconf" => :build
   depends_on "glib"
-  depends_on "libidn"
   depends_on "pango"
 
   uses_from_macos "libxml2"
@@ -97,12 +97,20 @@ class Pidgin < Formula
     depends_on "gettext"
   end
 
+  deny_network_access!
+
+  def subprojects = %w[birb hasl ibis seagull xeme]
+
+  def fetch
+    system "meson", "subprojects", "download", *subprojects if build.head?
+  end
+
   def install
     if build.head?
       # TODO: Patch pidgin to read plugins from HOMEBREW_PREFIX similar to stable build
       ENV["DESTDIR"] = "/"
       ENV["GI_GIR_PATH"] = HOMEBREW_PREFIX/"share/gir-1.0"
-      system "meson", "setup", "build", "--force-fallback-for=birb,hasl,ibis,seagull,xeme", *std_meson_args
+      system "meson", "setup", "build", "--force-fallback-for=#{subprojects.join(",")}", *std_meson_args
       system "meson", "compile", "-C", "build", "--verbose"
       system "meson", "install", "-C", "build"
       return

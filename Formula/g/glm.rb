@@ -26,6 +26,8 @@ class Glm < Formula
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
 
+  deny_network_access!
+
   def install
     args = %w[
       -DGLM_BUILD_TESTS=OFF

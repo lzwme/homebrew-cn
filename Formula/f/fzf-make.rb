@@ -1,22 +1,28 @@
 class FzfMake < Formula
   desc "Fuzzy finder with preview window for various command runners including make"
   homepage "https://github.com/kyu08/fzf-make"
-  url "https://ghfast.top/https://github.com/kyu08/fzf-make/archive/refs/tags/v0.74.0.tar.gz"
-  sha256 "3297dcff19019ff4099bfd271cd8463109bdd590a2ba5213d65ca3cd1b5d9d33"
+  url "https://ghfast.top/https://github.com/kyu08/fzf-make/archive/refs/tags/v0.75.0.tar.gz"
+  sha256 "41587f1340cfa440491704a0edbe945a0fe7f4965c09ea4cad84580ab7f6f937"
   license "MIT"
   head "https://github.com/kyu08/fzf-make.git", branch: "main"
 
   no_autobump! because: :bumped_by_upstream
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "45df1b036ee274f83ce9e7432bc8cfeddeb544eba3f77c495eaae3f6f895d78e"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "2a73e68c330f84aae59b81f1b737f1ddd817d9da9672b78b6f323f38278ae76e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "aab764eccefae41c0c89d7c7c743e8ad7f08c8a90ab7b4c7341395f9bf6592b3"
-    sha256 cellar: :any,                 arm64_linux:       "4e8c16ae2bece76936090d76198a9f4a56660b94b7fb6a1064825168717f99f9"
-    sha256 cellar: :any,                 x86_64_linux:      "e30677e65ab56e0edddcb33277caed2ff090a215d35586896d4034aeb60e341f"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "894357124f3f5ae426e842fde3768b579f7a86f914f90682b3598698ba2dfc43"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "2c13b7667840265e01971ee7216b614a5d62593bb5bb3806781ccc59aac002ba"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "3c529f0e31b7aa1c62c7ef4fb12872b9270a895e7721bd31a6849e945a6d6853"
+    sha256 cellar: :any,                 arm64_linux:       "17c3a68e5fc2c3c992c53de8a4b92c2afa8c6d5668899a8a482be274dad07c03"
+    sha256 cellar: :any,                 x86_64_linux:      "3f23f1d70373c58901afdd69edb9d3e01b27cf30f1847747bce08cf44c2bbf3e"
   end
 
   depends_on "rust" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
 
   def install
     system "cargo", "install", *std_cargo_args

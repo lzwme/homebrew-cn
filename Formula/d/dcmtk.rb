@@ -35,6 +35,8 @@ class Dcmtk < Formula
     depends_on "zlib-ng-compat"
   end
 
+  deny_network_access!
+
   def install
     args = std_cmake_args + ["-DDCMTK_WITH_ICU=OFF"]
 

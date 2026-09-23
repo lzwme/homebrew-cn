@@ -32,6 +32,8 @@ class Lapack < Formula
     keg_only "it conflicts with openblas"
   end
 
+  deny_network_access!
+
   def install
     ENV.delete("MACOSX_DEPLOYMENT_TARGET")
 

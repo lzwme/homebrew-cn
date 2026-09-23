@@ -1,18 +1,16 @@
 class Bob < Formula
   desc "Version manager for neovim"
   homepage "https://github.com/MordechaiHadad/bob"
-  url "https://ghfast.top/https://github.com/MordechaiHadad/bob/archive/refs/tags/v4.1.7.tar.gz"
-  sha256 "ad9c8b7ba04e3eb006d1d3646107abfcf5615ee588c1deb7969a9cfca6267f76"
+  url "https://ghfast.top/https://github.com/MordechaiHadad/bob/archive/refs/tags/v4.2.0.tar.gz"
+  sha256 "eec4a76b145ab8cfb29cc4aa3fa668747050bd253f92667445583d19e9ea5aaa"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "329328604675a485a40f2f1b854e4cdbc58c61e9a40666d8bc8d0b0c35fefd34"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "24380fb4df756e2c13586d049d76f6da879dbb606f3d7288e9c7911bbfc1570a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "62fbf4131d2f43b1e5771358c5b46272f1c7df3be3d0b9fda8931ff5d81592e2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "e4f6717e783186338cf38ed614e717e648f9290aa51cb319e565ed79d448e41d"
-    sha256 cellar: :any_skip_relocation, sonoma:            "b549c88829bd38e798d9882380eeb8789e4319fc7561d6d4fe2bc87f360d19c7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "2a5f3d29d468128ffb037aa8553353bf007ef0d6d095ffc0a33031d050c3f9f8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "a0cd8c2bdb705538d162ca02c2ffb48c87cf19ff85953156e755a4cbfe50f062"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "fd90497207ba028e478e3dc50a2519efc4d7f31b709b5998f2477392ac09708a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "5f3deae32c62fca270824371673c1478166602800c0bc1de02251ee9f54d3986"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "50660ea59f42b39c0da514adc6eca4724efd25260a3a682b818b3fcd4a8af722"
+    sha256 cellar: :any,                 arm64_linux:       "05085e0ffa97c687e8bf7481611c0efb84cde39f6d44f73096aac5e3b5bbbd7c"
+    sha256 cellar: :any,                 x86_64_linux:      "71db234865a9f1530b9e4fa6078d8f82d493c302928650c95996112ce2c19828"
   end
 
   depends_on "rust" => :build

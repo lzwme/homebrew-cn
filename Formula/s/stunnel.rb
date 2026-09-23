@@ -11,32 +11,35 @@ class Stunnel < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "14e399909d79196097c6e93f263f9dc55c0eccbebccb2bf0f3dd46ea22205c3d"
-    sha256 cellar: :any, arm64_tahoe:       "821e5a4d1461524ee6e472a12460e621c0379bbdec553fb74d208e6169602508"
-    sha256 cellar: :any, arm64_sequoia:     "8eacf36bbaeb1ed8b010b0a87163bf50d5b50a99f79d4e030ef7cd14de6ca911"
-    sha256 cellar: :any, arm64_linux:       "88cf920aa5417768663f7097f65d55f0575c89124de8cbec253f1ebfb082e0d6"
-    sha256 cellar: :any, x86_64_linux:      "b853a3eca4ee7fd41a1ca65b9fd45cde6285fd49d12b3dd0f3ac3d33b3cd523d"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "4044153e9399a0fb0b9cef7909bbd2af734d8544b7ad9f97df792cb33673ae11"
+    sha256 cellar: :any, arm64_tahoe:       "03ff961d9d1484ef6c5ec0102d2d8ce0ea63c9e79289a04d131507aa94dd1bf3"
+    sha256 cellar: :any, arm64_sequoia:     "2ca637904a66de67e377c34661fd60702398032ff1a71805e021e755bc1a9066"
+    sha256 cellar: :any, arm64_linux:       "70353f0367b261072717e6a4b7e8fd1269682f5d488503733055fd27ff89ee1b"
+    sha256 cellar: :any, x86_64_linux:      "3d092ce85bba5c37aae0be718e3f4dfe10530468281f6deadafcf0375b89f17d"
   end
 
-  depends_on "openssl@3"
+  depends_on "openssl@4"
+
+  deny_network_access!
 
   def install
-    system "./configure", "--disable-dependency-tracking",
+    openssl = "openssl@4"
+    system "./configure", "--disable-libwrap",
                           "--disable-silent-rules",
-                          "--prefix=#{prefix}",
+                          "--disable-systemd",
                           "--sysconfdir=#{etc}",
                           "--localstatedir=#{var}",
                           "--mandir=#{man}",
-                          "--disable-libwrap",
-                          "--disable-systemd",
-                          "--with-ssl=#{formula_opt_prefix("openssl@3")}"
+                          "--with-ssl=#{formula_opt_prefix(openssl)}",
+                          *std_configure_args
     system "make", "install"
 
     # This programmatically recreates pem creation used in the tools Makefile
     # which would usually require interactivity to resolve.
     cd "tools" do
       system "dd", "if=/dev/urandom", "of=stunnel.rnd", "bs=256", "count=1"
-      system "#{formula_opt_bin("openssl@3")}/openssl", "req",
+      system "#{formula_opt_bin(openssl)}/openssl", "req",
         "-new", "-x509",
         "-days", "365",
         "-rand", "stunnel.rnd",

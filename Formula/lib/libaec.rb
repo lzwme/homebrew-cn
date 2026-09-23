@@ -27,6 +27,8 @@ class Libaec < Formula
   link_overwrite "lib/libsz.so"
   link_overwrite "lib/libsz.so.2"
 
+  deny_network_access!
+
   def install
     # run ctest for libraries, also added `"-DBUILD_TESTING=ON` in the end as
     # `std_cmake_args` has `BUILD_TESTING` off

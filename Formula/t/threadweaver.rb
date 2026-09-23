@@ -26,6 +26,8 @@ class Threadweaver < Formula
   depends_on "qttools" => :build
   depends_on "qtbase"
 
+  deny_network_access!
+
   def install
     system "cmake", "-S", ".", "-B", "build", "-DBUILD_QCH=ON", *std_cmake_args
     system "cmake", "--build", "build"

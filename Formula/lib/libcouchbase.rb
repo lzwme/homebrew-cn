@@ -32,6 +32,8 @@ class Libcouchbase < Formula
 
   conflicts_with "cbc", because: "both install `cbc` binaries"
 
+  allow_network_access! :test
+
   def install
     system "cmake", "-S", ".", "-B", "build",
                     "-DLCB_NO_TESTS=1",

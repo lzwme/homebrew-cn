@@ -1,17 +1,17 @@
 class Gcx < Formula
   desc "CLI for managing Grafana Cloud resources"
   homepage "https://github.com/grafana/gcx"
-  url "https://ghfast.top/https://github.com/grafana/gcx/archive/refs/tags/v1.3.0.tar.gz"
-  sha256 "c5bfdc31048547b2e6918f7e595f343208bbae9da3bbc4aa68195fd58b5472ad"
+  url "https://ghfast.top/https://github.com/grafana/gcx/archive/refs/tags/v1.3.1.tar.gz"
+  sha256 "27c694a8377d6c9bbe59ea15660194991e603709672b3b1d3532c7d5b2cdfaa4"
   license "Apache-2.0"
   head "https://github.com/grafana/gcx.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "1dd77ffa9086853ee33d1b1640459a78c5031119106a0943f7e8c9903c6a5d3a"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "d47d6e8d070feca3520572d175bf544993d9b11b0bc9a96311346207e812ffc2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "518e774f5bfe7ddddd2d26714fecbc853909b10951ec79d2fc132510a8b2829b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "1d627cfcf237cf53d64ed3a8e4440eec9d1b5f222e07dd56aac2ccfd1eb0f9e2"
-    sha256 cellar: :any,                 x86_64_linux:      "e1edf35e1c1166db771e0f88a0a5b8fa9feb27e6b4314f974442fb1285fb3d64"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "2a2da896a87c2ff6db722e83755f0cbdf9adebf872ce7371baa3db9439b6aa0d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "81d63247a17245ca042f70aaa3fc2219de3279516748dc47adfa8567d601d6bc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "0d53fc0863abb29863b7eb3fc3ba1b486b58027cf9d81505204b51ece0730f6b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "635f0c65fb3bc8901b8340e27bd75a4d5aff6152daaab89338c50537c75d7df3"
+    sha256 cellar: :any,                 x86_64_linux:      "d247ac718fd3037710d6d9b808707fe1f9687fda090945bbad48f768a5fcb97f"
   end
 
   depends_on "go" => :build

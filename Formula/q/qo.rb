@@ -1,18 +1,16 @@
 class Qo < Formula
   desc "Interactive minimalist TUI to query JSON, CSV, and TSV using SQL"
   homepage "https://github.com/kiki-ki/go-qo"
-  url "https://ghfast.top/https://github.com/kiki-ki/go-qo/archive/refs/tags/v0.4.1.tar.gz"
-  sha256 "c0fce1acfc0844c6b0c5a3ef133f861fcddb64d10b72e870c5530cdb3a2fdfb1"
+  url "https://ghfast.top/https://github.com/kiki-ki/go-qo/archive/refs/tags/v0.5.0.tar.gz"
+  sha256 "8034b154c8388d719cb7cd012c6d5c457250150aa2e70877a0a10ad3a0696ec0"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "6ebb0771f13fb854b241bd4a59c5cbed36d0a3ac092bdd7aac24198ce730e27f"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "5e708ca99e83055cd381e8264ad6802a6ed92a026e8e8b45846bd88e57143610"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "5e708ca99e83055cd381e8264ad6802a6ed92a026e8e8b45846bd88e57143610"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "5e708ca99e83055cd381e8264ad6802a6ed92a026e8e8b45846bd88e57143610"
-    sha256 cellar: :any_skip_relocation, sonoma:            "ee2696791118bd7a8eae800ce1d1f4190effd15c6cf1e6987b02834d67f7ef57"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "481ae3f92cbae5e3568bf10d64c8d9bd236aded20c131051ff8dd4a17806f8b7"
-    sha256 cellar: :any,                 x86_64_linux:      "cf9edacc6380c1b0a464e48f5838a4f8e0b7c46ecd99a9fbc205facbdf6d14b8"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "c924cba56b0ed933047f1b31880cf6aedc90566417b195811fab461063a5889e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "c924cba56b0ed933047f1b31880cf6aedc90566417b195811fab461063a5889e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "c924cba56b0ed933047f1b31880cf6aedc90566417b195811fab461063a5889e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "0c214f10b10f071e22dd9e1e1c2da167a3dbf678aeda606ca20a72c49c1f0bc0"
+    sha256 cellar: :any,                 x86_64_linux:      "1345653b4db3807ae0c84e179226ee6ca297ffe70f2d41a4ed4fa50f8bfd65c9"
   end
 
   depends_on "go" => :build

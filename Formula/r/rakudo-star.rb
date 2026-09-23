@@ -11,19 +11,19 @@ class RakudoStar < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "473efa05604dcaa8a3611ca7029790db134c18e1c7886850b7d97d415d1efe31"
-    sha256 arm64_tahoe:       "a0f35795cdecb9d192e21f92b3a9077376bf7884bfc77cbcafd88c9c91c2b72e"
-    sha256 arm64_sequoia:     "98cbeadfee3a1d6632b0d771e87e129581b2938d3e92ca2811353ef389880ea8"
-    sha256 arm64_sonoma:      "afe6741d66a5060648473f5844a782631e9b0e887d8bc33c03660cf9257b6c98"
-    sha256 arm64_linux:       "4bcca2415f098f3bf26518bb0eb3e270476a7fd70ee0bf125ef0e60484782e2f"
-    sha256 x86_64_linux:      "eb0dab208bc44869f6f2e547f5128b2313731b2616b10c8efb89dc466747bda8"
+    rebuild 1
+    sha256 arm64_golden_gate: "39fa9c4dc4fbeb5fb1479d628f9b37ffa2d564771b3f93030d1832d1dc2e954a"
+    sha256 arm64_tahoe:       "5d5c529cf398c4ce698d2571e2fc1f046ac2346bb0e99381152f0b4455fb8f39"
+    sha256 arm64_sequoia:     "8919a68a00b7cbb112766028f1b364a5473e0549875bbc03ae0f9804e697e38e"
+    sha256 arm64_linux:       "4a1f7117b731c3041445a2f732ae6739ff63b0d30e5a38bdd83cbcbd533d2fa0"
+    sha256 x86_64_linux:      "572711ed55d42d67d411f1e9b33e2279dc998f30dbc9de36e8362ac8f62a3037"
   end
 
   depends_on "pkgconf" => :build
   depends_on "sqlite" => [:build, :test]
   depends_on "libtommath"
   depends_on "mimalloc"
-  depends_on "openssl@3" => :no_linkage # for OpenSSL module, loaded by path
+  depends_on "openssl@4" => :no_linkage # for OpenSSL module, loaded by path
   depends_on "readline" => :no_linkage # for Readline module, loaded by path
   depends_on "zstd"
 
@@ -80,7 +80,7 @@ class RakudoStar < Formula
     ENV["DBIISH_SQLITE_LIB"] = formula_opt_lib("sqlite")/shared_library("libsqlite3")
 
     # openssl module's brew --prefix openssl probe fails so set value here
-    ENV["OPENSSL_PREFIX"] = formula_opt_prefix("openssl@3")
+    ENV["OPENSSL_PREFIX"] = formula_opt_prefix("openssl@4")
 
     rm buildpath.glob("src/rakudo-star-modules/**/*.o")
     # Skip module tests probe for optional DB/client libraries and rely on the test block instead

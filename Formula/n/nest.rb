@@ -34,6 +34,8 @@ class Nest < Formula
     depends_on "libomp"
   end
 
+  deny_network_access!
+
   def install
     # Help FindReadline find macOS system ncurses library
     args = if OS.mac? && (sdk_path = MacOS.sdk_path)

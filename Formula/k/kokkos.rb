@@ -27,6 +27,8 @@ class Kokkos < Formula
     depends_on "libomp"
   end
 
+  deny_network_access!
+
   def install
     args = %W[
       -DKokkos_ENABLE_OPENMP=ON

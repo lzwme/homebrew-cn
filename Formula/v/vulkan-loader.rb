@@ -35,6 +35,8 @@ class VulkanLoader < Formula
     depends_on "wayland"
   end
 
+  deny_network_access!
+
   def install
     system "cmake", "-S", ".", "-B", "build",
                     "-DVULKAN_HEADERS_INSTALL_DIR=#{formula_opt_prefix("vulkan-headers")}",

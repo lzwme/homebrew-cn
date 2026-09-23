@@ -44,6 +44,8 @@ class Groestlcoin < Formula
     cause "Requires std::filesystem support"
   end
 
+  deny_network_access!
+
   def install
     system "cmake", "-S", ".", "-B", "build", "-DWITH_ZMQ=ON", *std_cmake_args
     system "cmake", "--build", "build"

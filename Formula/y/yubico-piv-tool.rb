@@ -11,14 +11,12 @@ class YubicoPivTool < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_golden_gate: "4d115996aa1c21704905ed408953a2984c6f2a43f8621db35145c69c16260500"
-    sha256 cellar: :any,                 arm64_tahoe:       "e333d0e9ab4d352ec6e6ceab61be769ef2c75bf2c3d71727b902ff636ae62a45"
-    sha256 cellar: :any,                 arm64_sequoia:     "0a2c7096892f5466c58e8c882c38c89a972aa6679ad0ab54a483669eb5d29732"
-    sha256 cellar: :any,                 arm64_sonoma:      "9e5fa0af709675cfd39ed0e696e1eea9bc31ac039999a377b86e0b9bf555946e"
-    sha256 cellar: :any,                 sonoma:            "a54fe53dd00eac5705e8bca16907ad020e7616fdc5a180a3f4a9dc1f2755afd9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "5d26838f59ec2946210ed9a5116fa68ff5dbc32ad909cf9e8faf401392f9beb7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "6f7c8857568353e8e6429257d68babd45390b03dc9db2b6636a36c2ddec458af"
+    rebuild 2
+    sha256 cellar: :any, arm64_golden_gate: "e1483709af170adefa9460acf1b5df1588a58c200a78a1107c244de609326c2d"
+    sha256 cellar: :any, arm64_tahoe:       "5276dc02eb4082e94f23377ce12607dcb3da58cfddeb39781eda5355a5b7e773"
+    sha256 cellar: :any, arm64_sequoia:     "100e3a16c8c0029a0c896f1b0cc60725e2ddae683f1633c7a976ed7f594f3aa6"
+    sha256 cellar: :any, arm64_linux:       "de22960e155a0d9fe5b64feeef907aef7b5296aaf80fcf88b5af15331777a5e3"
+    sha256 cellar: :any, x86_64_linux:      "83d18863b29d2c476ab51746a5187be48e1860ecbde157dfaf7aec6bfd8a0656"
   end
 
   depends_on "check" => :build
@@ -26,7 +24,7 @@ class YubicoPivTool < Formula
   depends_on "gengetopt" => :build
   depends_on "help2man" => :build
   depends_on "pkgconf" => :build
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   uses_from_macos "pcsc-lite"
 

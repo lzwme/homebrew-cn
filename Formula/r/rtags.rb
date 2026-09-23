@@ -16,24 +16,24 @@ class Rtags < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_golden_gate: "bab0242b1f2f81a0f210080497cc86748e37405d1b77993f4a32242527ef24d0"
-    sha256 cellar: :any, arm64_tahoe:       "d5cbf12e8b49fea2e82bfe1d149fac6a4b8491cc88b134d5dfb364fbc4d116d8"
-    sha256 cellar: :any, arm64_sequoia:     "7fe06ee97d346edb41b7a3ee18d8d13efe5b54b4d8ae6e87e2983111eaa1e101"
-    sha256 cellar: :any, arm64_sonoma:      "1a992b51b048b29d94fb10bb6a50e0a1cdf2a3761e959cba97880ab128312561"
-    sha256 cellar: :any, sonoma:            "06375c067b9667b6f201e3ce67853ca432133747249a90b53049bdec0742d0ba"
-    sha256               arm64_linux:       "b9b7c563f938a73fd2537389b0c93037d95221f6b4002e0832b0a8518a4429f5"
-    sha256               x86_64_linux:      "6189640b1116d0a70c690175bf2c37bdae14eda7c9b42b0e97789d4e5d24d675"
+    rebuild 2
+    sha256 cellar: :any, arm64_golden_gate: "5ead3132649c1fbcbb5df3a728669d099a3f791f80f3e2c4f561a1cc7c61f414"
+    sha256 cellar: :any, arm64_tahoe:       "79281b4fef009adcb15d0589bda97063eec383f920aaa801ba16cfccd9faa307"
+    sha256 cellar: :any, arm64_sequoia:     "cc6effbfe02d7ff1092dc60dcb9083c684729f0f26059e68ae5dfaa0eb7a86b7"
+    sha256               arm64_linux:       "cf6be132f5fd0ecab7f1c87d3c8950545ad6d11a36cac08cda4965a2e2ccc6b8"
+    sha256               x86_64_linux:      "fa0c4fc86a7f1a1f3446d6d951c81c66ff308bdbc7c6bf10f0af750dc58e7fc4"
   end
 
   depends_on "cmake" => :build
   depends_on "emacs"
   depends_on "llvm"
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   on_linux do
     depends_on "zlib-ng-compat"
   end
+
+  deny_network_access!
 
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args

@@ -1,8 +1,8 @@
 class Libslirp < Formula
   desc "General purpose TCP-IP emulator"
   homepage "https://gitlab.freedesktop.org/slirp/libslirp"
-  url "https://gitlab.freedesktop.org/slirp/libslirp/-/archive/v4.9.4/libslirp-v4.9.4.tar.gz"
-  sha256 "3998863b020aeda34bddc567097c6efba55a78cdf6eeee6bcd42c11ef23967da"
+  url "https://gitlab.freedesktop.org/slirp/libslirp/-/archive/v4.9.5/libslirp-v4.9.5.tar.gz"
+  sha256 "f43e68b60b580647574ec4a0e2b6c600a56281e6c39f79426510832dc810f483"
   license "BSD-3-Clause"
   compatibility_version 1
 
@@ -12,13 +12,11 @@ class Libslirp < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "9f24148638d099d7c11b64a73a52fd80d8510a1352c7b0d8f3ada6d92848d503"
-    sha256 cellar: :any, arm64_tahoe:       "85933cddee6ab6b7bd3de70d4a00b22ee54482bc77c24fd6061787dc6e5e0c2a"
-    sha256 cellar: :any, arm64_sequoia:     "78dc33e108213bceb8f4b8a9d0293c0ff578a806ace4dfc4199af8c9714a2ffe"
-    sha256 cellar: :any, arm64_sonoma:      "e15efc0fe9723daa55244be80ebbb3e62b7530cc8d7be1c6ac62fbd229ee740e"
-    sha256 cellar: :any, sonoma:            "9f0d539814503d22bfdf171064372fd4b2b5cc777fd5128cb81243e49f60d8c3"
-    sha256               arm64_linux:       "592da2491c816e9e97a3eab49789e8af2dcf611ba824999b63f15dfe40543652"
-    sha256               x86_64_linux:      "7767c469e12306692839f22e506127f793746b0ce5d44e37cbb8dff43c63cb58"
+    sha256 cellar: :any, arm64_golden_gate: "9c0233380116a46e7d292a7f0b1b3084214f399ae839806bcff0018f581da405"
+    sha256 cellar: :any, arm64_tahoe:       "c6dccd35007a151895b8be9583f6c0c7d0a1fbd3801ba53e53911b7382033ce7"
+    sha256 cellar: :any, arm64_sequoia:     "af14169e3c82f790b4b3982e638d6e9fb261887ff5f315d640f812604012a7b3"
+    sha256 cellar: :any, arm64_linux:       "36c0ffd37761f75f6380c0f792fc392c37c5202118cbada783debf052ab05a75"
+    sha256 cellar: :any, x86_64_linux:      "d811f6df841573ec7057cedea35cfb5876f4e298fc4a85f97f79751601e522b0"
   end
 
   depends_on "meson" => :build

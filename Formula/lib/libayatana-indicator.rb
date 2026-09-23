@@ -23,6 +23,8 @@ class LibayatanaIndicator < Formula
   depends_on "glib"
   depends_on "gtk+3"
 
+  deny_network_access!
+
   def install
     args = %w[
       -DENABLE_IDO=ON

@@ -3,17 +3,17 @@ class Virtualenv < Formula
 
   desc "Tool for creating isolated virtual python environments"
   homepage "https://virtualenv.pypa.io/"
-  url "https://files.pythonhosted.org/packages/2f/5d/42254e91a9203a13d95ab4f5211f4cdda52b82fc3546340f7fb33a642173/virtualenv-21.9.0.tar.gz"
-  sha256 "fa0f2a26fcb6f32b376fc8b2c705b6057366763d5b9e5242d1ab10ecc3279fd3"
+  url "https://files.pythonhosted.org/packages/76/87/5d3963c31de2d19adce4c14c611279eb8a724fb43eb29338b1a437693508/virtualenv-21.9.1.tar.gz"
+  sha256 "4d2256a16b2c99cb30e58abe96d009a4328e215d64f229c7738fc5adad83cd1a"
   license "MIT"
   head "https://github.com/pypa/virtualenv.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "88268c336ec43ee6cde4d660e3361e3a1178cd9d6cb886032a929fdf2dba2541"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "db8717a1bd4f7a1dc7f4b6e182d2c4f3ede46ddd8fe5156b800f22ebc03c75d3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "b952f48f945ae4d1b16e6a9ce8d76cdbfccb58fd84fc96fc59418c6c77f53793"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "9e52a3a3a13e00ab068fe1a2317b3803eb7220ffaefa6972d668d300ff895b68"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "b007f55521e307975a6bc10b8d1f930b696f8d7c1e689c5eb3f55fa36b826559"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "3b4e6cc0a7b2a7830ce71c46a3b068ea4f59784e83dbdd4b55af07b44496e5fa"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "caea3b0bc607627fcfaf96f7362fd98c24088e123cb37959800293ce96603144"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "8d0f494e82b348d3f0bb4a586f3e9f9f64deec8a8e660405e604c4c36887d8ea"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "b7c55fbe6fa54b9821f64c4a2f1732302178cf54ffd5df1ba6228b46bac4bad1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "8d947f5690be7d512e06b9706cb2b7d177b35c6fc3dce02fed6f2906ef373147"
   end
 
   depends_on "python@3.14"
@@ -29,8 +29,8 @@ class Virtualenv < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/f8/13/f870dd0b42690138e4e37a76b5138e5690ed4365a77071bb092d59037da0/platformdirs-4.11.11.tar.gz"
-    sha256 "b0befe8a90759e4a9a8b9820d434ae226a6549063210b596da0038a7a05aede4"
+    url "https://files.pythonhosted.org/packages/ea/dd/65804b0c2925a1c821a05502ea57517b69a073ff400d25ab9faa3a2cf012/platformdirs-4.11.12.tar.gz"
+    sha256 "e8dc1cb58f1153fd7f61db1374317770baababec2480b37b8f01c6cc25b45267"
   end
 
   resource "python-discovery" do

@@ -1,6 +1,6 @@
 cask "claude" do
-  version "2.2553.1,c38127e27202ddc1c8c187102f7798a93b1b8ede"
-  sha256 "18c591e7d8a5d9f767c2388d04eee51b22ad9222c5872c6d2a80a1e1bfe0ddd9"
+  version "2.7032.0,6c468ab6ed862a68c9555cce34f11186c35f526d"
+  sha256 "f616a119258c78406d6c576cf98851108a59754c766bdb73bb2e37759b71aacd"
 
   url "https://downloads.claude.ai/releases/darwin/universal/#{version.csv.first}/Claude-#{version.csv.second}.zip"
   name "Claude"

@@ -23,6 +23,8 @@ class OpenclIcdLoader < Formula
 
   conflicts_with "ocl-icd", because: "both install `lib/libOpenCL.so` library"
 
+  deny_network_access!
+
   def install
     inreplace "loader/icd_platform.h", "\"/etc/", "\"#{etc}/"
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args

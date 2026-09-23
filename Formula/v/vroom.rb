@@ -7,21 +7,19 @@ class Vroom < Formula
   license "BSD-2-Clause"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_golden_gate: "7f509a81c864f11f6c386a2cc51d1341889e179339bb5698f2dcd2e97fbbaf41"
-    sha256 cellar: :any, arm64_tahoe:       "7744afdfd4869482feafc33eb89ec4a3879aa0834e7e42a89ad9778ca61bd769"
-    sha256 cellar: :any, arm64_sequoia:     "0b0d31f32ec9ef559d948f558527632afcc5388456569801e98e3647cb82ec66"
-    sha256 cellar: :any, arm64_sonoma:      "4cf49df44fd7999cc2083a3e526ea48daa0aa2cb3662e3e8a552f94c2d655a39"
-    sha256 cellar: :any, sonoma:            "1a3b3a8de929a276843f4a331c001dbf2b05b0ed8a3ab252913917ec54c3108e"
-    sha256 cellar: :any, arm64_linux:       "a2a1d04eb068ee7dfae180aafe0dab114be21a4216e6cc23da1a7a5f3d7e4c31"
-    sha256 cellar: :any, x86_64_linux:      "ae5cf02e2d7babb46ded692739e45eff866e7bfee3900fefba3dc42a402fea40"
+    rebuild 2
+    sha256 cellar: :any, arm64_golden_gate: "70bb9f8f81057e5809842a2b9e713504ec779dbc04aaf6978cb7e1661b19245a"
+    sha256 cellar: :any, arm64_tahoe:       "65665effda41316eca56f3cc55ea85b6a77f82bac89217361e6f160b0e026308"
+    sha256 cellar: :any, arm64_sequoia:     "563ae010f0c39f498a37e323c08688adf02f33d8db8e74bd961d18db9a241168"
+    sha256 cellar: :any, arm64_linux:       "806d645470b907cc7123c38535d92c3e4735fb38933c8217b8ceccc5a82437a9"
+    sha256 cellar: :any, x86_64_linux:      "4ca927919c1330981dcb36606ab2df039dc9b0284e3d140ee424d31b76e134af"
   end
 
   depends_on "asio" => :build
   depends_on "cxxopts" => :build
   depends_on "pkgconf" => :build
   depends_on "rapidjson" => :build
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   on_macos do
     depends_on "llvm" => :build if DevelopmentTools.clang_build_version <= 1699
@@ -49,6 +47,8 @@ class Vroom < Formula
     type :backport
     resolves "https://github.com/VROOM-Project/vroom/pull/1333"
   end
+
+  deny_network_access!
 
   def install
     # Use brewed dependencies instead of vendored dependencies

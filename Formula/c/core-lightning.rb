@@ -7,8 +7,8 @@ class CoreLightning < Formula
   head "https://github.com/ElementsProject/lightning.git", branch: "master"
 
   stable do
-    url "https://ghfast.top/https://github.com/ElementsProject/lightning/releases/download/v26.06.7/clightning-v26.06.7.zip"
-    sha256 "b313d207e53f1e2dbf9fbac79d5af48c352e874a653390bddb81b52795a153dc"
+    url "https://ghfast.top/https://github.com/ElementsProject/lightning/releases/download/v26.06.8/clightning-v26.06.8.zip"
+    sha256 "2809c4f6aba5e928317d9857fbff5b29232b5e799ed74e1150872a9bf11de025"
 
     patch do
       url "https://github.com/ElementsProject/lightning/commit/d384750883216e7e19e01779d06bc36295380296.patch?full_index=1"
@@ -39,11 +39,11 @@ class CoreLightning < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "9b9bc17504d639b97a7a48cdd9925a04fd456cd6ee2a1213087364880ae74bfd"
-    sha256 arm64_tahoe:       "fcd29d52bfe8ac80006cf9150ca62f55d0d27f3f906f168ff2ee6dd475d6819b"
-    sha256 arm64_sequoia:     "7708cd6e6a6a9370884c6cf945703aec11547cc91f4414e36ccf57bad5bd59e8"
-    sha256 arm64_linux:       "0e5419b10ffb3d9f4e3f884ada3e2200b147d636552d65f1c0cd1a7d79ead840"
-    sha256 x86_64_linux:      "9460dcb46fb62f3e59c79aa8a379d7a3acf6eeada1cfef2a3b13a4ad0219a242"
+    sha256 arm64_golden_gate: "d5d2e5fec81d9a5aa0781f6b121547962ba08ec27b0faecc7cf0bd61de61c0ad"
+    sha256 arm64_tahoe:       "0d54031e4ee5e081043555988366afbe47527d3f91fe3c22b29f35e73cf1504e"
+    sha256 arm64_sequoia:     "93ac5a2cdca57000ed6b43258fcb6eb98f3d3c82c7d3dd036a4e5959f405cd38"
+    sha256 arm64_linux:       "83674e03c464f958b75883e733e84fd800fba443a6a32cc159655e150939f58a"
+    sha256 x86_64_linux:      "2ee98b36949b39639037f1428e0983ec7b8695ea78621103db536f0b5b580e6a"
   end
 
   depends_on "autoconf" => :build

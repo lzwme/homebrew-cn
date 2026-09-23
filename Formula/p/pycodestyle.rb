@@ -3,14 +3,13 @@ class Pycodestyle < Formula
 
   desc "Simple Python style checker in one Python file"
   homepage "https://pycodestyle.pycqa.org/"
-  url "https://ghfast.top/https://github.com/PyCQA/pycodestyle/archive/refs/tags/2.14.0.tar.gz"
-  sha256 "ffcf4dc55f1e5fbdc6dd6acf5db0fd07ded534ae376eee23a742e1410b48d9ae"
+  url "https://ghfast.top/https://github.com/PyCQA/pycodestyle/archive/refs/tags/2.15.0.tar.gz"
+  sha256 "3cb6afba1667f13b4ca7884154299108ef8e633a36526e29412a5cec7b5db4bd"
   license "MIT"
   head "https://github.com/PyCQA/pycodestyle.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "cbab819ac63a266ecb40a5cf66d17f03c9acdff4c17eb44aa102a5cf20985506"
+    sha256 cellar: :any_skip_relocation, all: "f7878329ff002babefd806b7da085360bcdbb1676d4edd699e3df7d9e87c7d30"
   end
 
   depends_on "python@3.14"

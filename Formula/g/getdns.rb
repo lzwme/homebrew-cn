@@ -49,6 +49,8 @@ class Getdns < Formula
   depends_on "openssl@3"
   depends_on "unbound"
 
+  deny_network_access!
+
   def install
     system "cmake", "-S", ".", "-B", "build",
                     "-DCMAKE_INSTALL_RPATH=#{rpath}",

@@ -3,8 +3,8 @@ class Systemd < Formula
 
   desc "System and service manager"
   homepage "https://systemd.io"
-  url "https://ghfast.top/https://github.com/systemd/systemd/archive/refs/tags/v261.3.tar.gz"
-  sha256 "3f8d3d3969af7214bda600930e14c6a24135eb3dce1ba7f1b980b74e6dc15b72"
+  url "https://ghfast.top/https://github.com/systemd/systemd/archive/refs/tags/v262.tar.gz"
+  sha256 "6aa77506c0644aa67f940a48e3d3a7368601f787e4f249139516d353f107bcab"
   license all_of: [
     # Main license is LGPL-2.1-or-later while systemd-udevd is GPL-2.0-or-later
     "LGPL-2.1-or-later",
@@ -31,8 +31,8 @@ class Systemd < Formula
   head "https://github.com/systemd/systemd.git", branch: "main"
 
   bottle do
-    sha256 arm64_linux:  "643e4e10ae816664b625f69d85706721b8a72cd326cd34354cc9108a11c8418e"
-    sha256 x86_64_linux: "4671122c97f9e9f207876b1eefc8c569d25a3dd3d0eb8676affca716c6bc5957"
+    sha256 arm64_linux:  "b8781f5f5dd6f7294408065331d564fa7e1d089fa8598e0e02431252801f2a4c"
+    sha256 x86_64_linux: "8992355dbcecf65e0fc4ba2f8929cc1204c46050dd359b7506a59524604c8f1c"
   end
 
   keg_only "it will shadow system systemd if linked"
@@ -86,9 +86,6 @@ class Systemd < Formula
     args = %W[
       --localstatedir=#{var}
       --sysconfdir=#{etc}
-      -Dsysvinit-path=#{etc}/init.d
-      -Dsysvrcnd-path=#{etc}/rc.d
-      -Drc-local=#{etc}/rc.local
       -Dpamconfdir=#{etc}/pam.d
       -Dbashcompletiondir=#{bash_completion}
       -Dmode=release

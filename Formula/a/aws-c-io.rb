@@ -21,6 +21,8 @@ class AwsCIo < Formula
   depends_on "openssl@3"
   depends_on "s2n"
 
+  deny_network_access!
+
   def install
     system "cmake", "-S", ".", "-B", "build", "-DBUILD_SHARED_LIBS=ON", *std_cmake_args
     system "cmake", "--build", "build"

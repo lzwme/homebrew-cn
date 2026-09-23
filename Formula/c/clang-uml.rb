@@ -27,6 +27,8 @@ class ClangUml < Formula
         .find { |f| f.name.match?(/^llvm(@\d+)?$/) }
   end
 
+  deny_network_access!
+
   def install
     ENV.append "LDFLAGS", "-Wl,-rpath,#{rpath(target: llvm.opt_lib)}" if OS.linux? && llvm.versioned_formula?
     args = %w[

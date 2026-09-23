@@ -26,6 +26,8 @@ class Glbinding < Formula
     depends_on "mesa-glu"
   end
 
+  deny_network_access!
+
   def install
     # Force install to use system directory structure as the upstream only
     # considers /usr and /usr/local to be valid for a system installation

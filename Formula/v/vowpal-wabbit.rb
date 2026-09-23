@@ -1,17 +1,17 @@
 class VowpalWabbit < Formula
   desc "Online learning algorithm"
   homepage "https://vowpalwabbit.org"
-  url "https://ghfast.top/https://github.com/VowpalWabbit/vowpal_wabbit/archive/refs/tags/9.11.4.tar.gz"
-  sha256 "7b32f93f662435e4e6b3b63ad0a0e4232d6531aba0bd7a51b9421c0c43983ba0"
+  url "https://ghfast.top/https://github.com/VowpalWabbit/vowpal_wabbit/archive/refs/tags/9.11.6.tar.gz"
+  sha256 "dc55e96ee95af7eb35a4dd87c56130ebad0d9735d42bf51911bb5598cb256e02"
   license "BSD-3-Clause"
   head "https://github.com/VowpalWabbit/vowpal_wabbit.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "79430b5bd35a3bd69ab48ff6bdc7e04cdeccb033b9697f6bb03c2b6f5eb434fa"
-    sha256 cellar: :any, arm64_tahoe:       "836b986b8af1d809d903bc8b219b7cb19cbc1f354947e68de3aa6e88e4a73cf4"
-    sha256 cellar: :any, arm64_sequoia:     "7225082be50e681f209d176022b9ce62cf4678cdc9a6a5dbfa82844c0e691dd3"
-    sha256 cellar: :any, arm64_linux:       "6f195050106d86ee24c736a3441a9150110d6cef80886e946dbd11bc34d1e393"
-    sha256 cellar: :any, x86_64_linux:      "1b9754af65f84983338dcec4e09826d1f4bc9787212a1f98a46f1b0af7745d6b"
+    sha256 cellar: :any, arm64_golden_gate: "518ad61e830cc03c6b9884d42e39295ba8ba1ff7165724e39e4f551914b1eac8"
+    sha256 cellar: :any, arm64_tahoe:       "9abd9252af109c46cfed5e64a04318ff0d86457bbda25e4684afd8979679b40a"
+    sha256 cellar: :any, arm64_sequoia:     "29c9ee41960d006b12a2f09311d84a5eba1583c0d1f13f021365a70cb4426680"
+    sha256 cellar: :any, arm64_linux:       "63737a9b81a7d58f981422e4ae926a67ebdff683dc580c2523a57ce1a7acc82e"
+    sha256 cellar: :any, x86_64_linux:      "601e9009c0ef43cdd669a8756e1749a4a1ed2bae9832a6f7816e187c7b5b38da"
   end
 
   depends_on "boost" => :build
@@ -28,6 +28,8 @@ class VowpalWabbit < Formula
   on_arm do
     depends_on "sse2neon" => :build
   end
+
+  deny_network_access!
 
   def install
     args = %w[

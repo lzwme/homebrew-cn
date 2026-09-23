@@ -7,12 +7,12 @@ class SpotifyPlayer < Formula
   head "https://github.com/aome510/spotify-player.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "56638375d3ac6616a5be81b27a726bbea7c9365734199e4692bae279064312a6"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "781fd718e080d8349c4f7e760fa1bc01616a38bd9eef9e6a5d1788c34241ec9a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "fad9aad2bee2679bdad8bd4b6ee79e963b3be8b8f9ccd653ec5fb5a374398bf6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "a64e47465e70118cc48c18096b4d45ad4c237870bf04fc564aa49ec7bae98c14"
-    sha256 cellar: :any,                 arm64_linux:       "f19543a544b7415dcc91719ff7a3aa7241ad2445aade31773673ea90fd142289"
-    sha256 cellar: :any,                 x86_64_linux:      "0669a15a7e6d3ff1d567f19973d667b662d28e671f47692d491ede69feccd239"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "87de5d8f3d29149224ac39f04c1c1e7988cc1b98ab57e7dc97cc61b695015ae7"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "39105f6ba7355064d23f2764dbf6b58f23cb12c2c12faf716600ca47e5404e2b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "c48e80b40cf6489be7aeb8dae09499114f030604f9eefefe16225d3f41c3eb2b"
+    sha256 cellar: :any,                 arm64_linux:       "0811b62641b633fab090151cfc7ed109b147b8798f6a739edc168222ce39707c"
+    sha256 cellar: :any,                 x86_64_linux:      "f33a5f80811ad9b3a5a404656dc43646deab883e58374826d7da23c675755968"
   end
 
   depends_on "pkgconf" => :build
@@ -21,14 +21,18 @@ class SpotifyPlayer < Formula
   on_linux do
     depends_on "alsa-lib"
     depends_on "dbus"
-    depends_on "openssl@3"
+    depends_on "openssl@4"
   end
 
-  deny_network_access! :test
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
 
   def install
     # Ensure that the `openssl` crate picks up the intended library.
-    ENV["OPENSSL_DIR"] = formula_opt_prefix("openssl@3")
+    ENV["OPENSSL_DIR"] = formula_opt_prefix("openssl@4")
 
     features = ["image", "notify"]
     system "cargo", "install", *std_cargo_args(path: "spotify_player", features:)

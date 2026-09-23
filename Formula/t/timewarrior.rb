@@ -23,6 +23,8 @@ class Timewarrior < Formula
     depends_on "man-db" => :test
   end
 
+  deny_network_access!
+
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"

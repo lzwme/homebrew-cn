@@ -37,6 +37,8 @@ class Libavif < Formula
     end
   end
 
+  deny_network_access!
+
   def install
     resource("libargparse").unpack(buildpath/"ext/libargparse")
 

@@ -32,6 +32,8 @@ class Surelog < Formula
 
   conflicts_with "open-babel", because: "both install `roundtrip` binaries"
 
+  deny_network_access!
+
   def install
     antlr = Formula["antlr"]
     system "cmake", "-S", ".", "-B", "build",

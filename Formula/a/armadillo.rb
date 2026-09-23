@@ -24,6 +24,8 @@ class Armadillo < Formula
   depends_on "arpack"
   depends_on "openblas"
 
+  deny_network_access!
+
   def install
     system "cmake", "-S", ".", "-B", "build", "-DALLOW_OPENBLAS_MACOS=ON", *std_cmake_args
     system "cmake", "--build", "build"

@@ -21,6 +21,8 @@ class Librtlsdr < Formula
   depends_on "pkgconf" => :build
   depends_on "libusb"
 
+  deny_network_access!
+
   def install
     system "cmake", "-S", ".", "-B", "build", "-DCMAKE_INSTALL_RPATH=#{rpath}", *std_cmake_args
     system "cmake", "--build", "build"

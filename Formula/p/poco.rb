@@ -1,10 +1,11 @@
 class Poco < Formula
   desc "C++ class libraries for building network and internet-based applications"
   homepage "https://pocoproject.org/"
-  url "https://pocoproject.org/releases/poco-1.15.3/poco-1.15.3-all.tar.bz2"
-  sha256 "562a1ba1a6db4665f81091c35e997b73f87e1b45e2ab2854cd720d2349518abc"
+  url "https://pocoproject.org/releases/poco-1.15.4/poco-1.15.4-all.tar.bz2"
+  sha256 "d92e9e6711957a6b4415d4ffe0df5470b229bfa123334865c3b6a065030cd3a8"
   license "BSL-1.0"
-  compatibility_version 4
+  revision 1
+  compatibility_version 6
   head "https://github.com/pocoproject/poco.git", branch: "main"
 
   livecheck do
@@ -13,17 +14,15 @@ class Poco < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_golden_gate: "92dadff32c0c96ec42e5cecd002240848c95db3ca2a0497863457f8263bede5a"
-    sha256 cellar: :any,                 arm64_tahoe:       "0c81421dc2f3992003c3661a37ab2c1575b59e726fedf787bbf0814cc69eb5a8"
-    sha256 cellar: :any,                 arm64_sequoia:     "58342ece9f3454e5c80bf55aa1a64cf2e4c3c5fd2f6609d3aca0f365906d4911"
-    sha256 cellar: :any,                 arm64_sonoma:      "2bf92a0f689198ad630246df6366c2c47dc2770bd086d332d2e034fdd110c300"
-    sha256 cellar: :any,                 sonoma:            "30d1007827e66319d6519b8aaa8b37130c8428e934df71886bcbfd4e112b2f08"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "e2803c48feb6871678ffe83f9238d703b325160bf5e1e886c17a4f5041fe8e03"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "e88bc5b6b7d9d0b1f4d242353261e3ae01f9493afa8f7de58cc0bbaf2b0095b3"
+    sha256 cellar: :any, arm64_golden_gate: "4dcfd8016a852af701b225ec12fe5f09058a35a42894c632f1706629eeb7e98a"
+    sha256 cellar: :any, arm64_tahoe:       "44108fc84fd41996338bb43baa0e9a43cc7b6ec37d17fbffcd74bffd45889019"
+    sha256 cellar: :any, arm64_sequoia:     "f2291b64afb1a2552622b7ce340588b71e9d90994c38a8e091f78f0dc0848e91"
+    sha256 cellar: :any, arm64_linux:       "840a622f6fe19e963dd2a670833e70af7ea7ffa6e0f7db2edc48d4c685ab4528"
+    sha256 cellar: :any, x86_64_linux:      "56a0a56930acc6efe217ce37584bde71979c29c240d10ae263cd96ba4c6f28a7"
   end
 
   depends_on "cmake" => :build
-  depends_on "openssl@3"
+  depends_on "openssl@4"
   depends_on "pcre2"
   depends_on "utf8proc"
 
@@ -33,6 +32,8 @@ class Poco < Formula
   on_linux do
     depends_on "zlib-ng-compat"
   end
+
+  deny_network_access!
 
   def install
     args = %W[

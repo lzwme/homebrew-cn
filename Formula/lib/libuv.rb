@@ -25,6 +25,8 @@ class Libuv < Formula
   depends_on "cmake" => :build
   depends_on "sphinx-doc" => :build
 
+  deny_network_access!
+
   def install
     # This isn't yet handled by the make install process sadly.
     system "make", "-C", "docs", "man"

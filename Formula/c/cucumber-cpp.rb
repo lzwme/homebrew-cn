@@ -22,6 +22,8 @@ class CucumberCpp < Formula
   depends_on "asio"
   depends_on "tclap"
 
+  allow_network_access! :test
+
   def install
     args = %w[
       -DBUILD_SHARED_LIBS=ON

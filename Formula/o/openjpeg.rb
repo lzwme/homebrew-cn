@@ -23,6 +23,8 @@ class Openjpeg < Formula
   depends_on "libtiff"
   depends_on "little-cms2"
 
+  deny_network_access!
+
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args,
                     "-DCMAKE_INSTALL_RPATH=#{rpath}",

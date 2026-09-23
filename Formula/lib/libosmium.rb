@@ -21,6 +21,8 @@ class Libosmium < Formula
     depends_on "zlib-ng-compat"
   end
 
+  deny_network_access!
+
   def install
     args = %W[
       -DBUILD_EXAMPLES=OFF

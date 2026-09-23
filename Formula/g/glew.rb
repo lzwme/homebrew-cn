@@ -34,6 +34,8 @@ class Glew < Formula
     resolves "https://github.com/nigels-com/glew/pull/455"
   end
 
+  deny_network_access!
+
   def install
     args = ["-DCMAKE_INSTALL_RPATH=#{rpath}"]
     args << "-DOPENGL_glx_LIBRARY=#{formula_opt_lib("mesa")}/libGL.so" if OS.linux?

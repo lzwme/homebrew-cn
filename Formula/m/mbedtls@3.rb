@@ -31,6 +31,8 @@ class MbedtlsAT3 < Formula
 
   uses_from_macos "python" => :build
 
+  deny_network_access!
+
   def install
     inreplace "include/mbedtls/mbedtls_config.h" do |s|
       # enable pthread mutexes

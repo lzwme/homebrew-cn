@@ -33,6 +33,8 @@ class Icemon < Formula
     depends_on "libcap-ng"
   end
 
+  deny_network_access!
+
   def install
     args = ["-DECM_DIR=#{Formula["extra-cmake-modules"].opt_share}/ECM/cmake"]
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args

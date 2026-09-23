@@ -12,6 +12,8 @@ class FfcH < Formula
 
   depends_on "cmake" => [:build, :test]
 
+  deny_network_access!
+
   def install
     args = %w[-DFETCHCONTENT_SOURCE_DIR_SUPPLEMENTAL_TEST_FILES=/dev/null] # unused
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args

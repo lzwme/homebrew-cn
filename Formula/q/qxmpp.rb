@@ -34,6 +34,8 @@ class Qxmpp < Formula
     cause "Requires C++20 and GCC 13 crashes with ICE"
   end
 
+  deny_network_access!
+
   def install
     system "cmake", "-S", ".", "-B", "build", "-DBUILD_DOCUMENTATION=OFF", *std_cmake_args
     system "cmake", "--build", "build"

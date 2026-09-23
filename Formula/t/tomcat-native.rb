@@ -7,24 +7,26 @@ class TomcatNative < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "30ff0dbd36edab0d78af20da688004b2ee9e13980f276f69037bd95ec04a56ab"
-    sha256 cellar: :any, arm64_tahoe:       "8d04e331907d5ec97d93580b3b7652ca30b00933f9606258efac527f939879a4"
-    sha256 cellar: :any, arm64_sequoia:     "dc1a1c99a7a5b302c25d131ea5c5db1f5663f9ea0f09a16dc7361d22807029e2"
-    sha256 cellar: :any, arm64_sonoma:      "aebdc5a10c167d482ec32aaeba11d8a21cb6b7eb81576254a5114a127ef9a70b"
-    sha256 cellar: :any, arm64_linux:       "122404412691dfff4d0d847c3fbba8e761e6624544a4983bcea3c3a2f9edc075"
-    sha256 cellar: :any, x86_64_linux:      "e432921e28e58ac086b67de5ee5ceb676355079d08acb51d090c51054b71191d"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "28eba952cb5b7035af70544a661c529af93072c3efa1a6cd0cd3a10542706fec"
+    sha256 cellar: :any, arm64_tahoe:       "9cfb2599e7f56cadf3d413028cabb8aadeedf51ef7e683c78ad52327d98b16e3"
+    sha256 cellar: :any, arm64_sequoia:     "c1cb3af230cc5c1f2031686bd9286f5cbc67bbeaa5f25f7982c187d1e1e6c95a"
+    sha256 cellar: :any, arm64_linux:       "b7b4eb5fe0b4809e81787265c466b79eb94727f3c995f5027cdb2834c7bdedf0"
+    sha256 cellar: :any, x86_64_linux:      "45ddf4ee5eb2732cf29acecd83cbac0eafe47e6e3677ab1a51c89f7aaba5c1b0"
   end
 
   depends_on "tomcat" => :test
   depends_on "apr"
   depends_on "openjdk"
-  depends_on "openssl@3"
+  depends_on "openssl@4"
+
+  allow_network_access! :test
 
   def install
     cd "native" do
       system "./configure", "--with-apr=#{formula_opt_prefix("apr")}",
                             "--with-java-home=#{formula_opt_prefix("openjdk")}",
-                            "--with-ssl=#{formula_opt_prefix("openssl@3")}",
+                            "--with-ssl=#{formula_opt_prefix("openssl@4")}",
                             *std_configure_args
       system "make"
       system "make", "install"

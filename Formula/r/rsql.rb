@@ -7,20 +7,19 @@ class Rsql < Formula
   head "https://github.com/theseus-rs/rsql.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "a1e567103354e96dcb41ad73a73a70680e7affcf1d91fa162d9cdd76473669a4"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "3953d453c4a0d3b0c4741d0cb13df9fb9933d0602355b04bfc807e70533a769e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "e330767631aa248b8e34b011380d1c200acb91ec4a72fdedb5d301d24c9931d2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "9afd4ccf0bddf366efddc46b136675d87dbd95ff6fb0fabdb02c1a49c57e8e87"
-    sha256 cellar: :any_skip_relocation, sonoma:            "f73e8518707ae20152d1f347aa842b8256e4631ba1ea7cdc2d7b70e59235099b"
-    sha256 cellar: :any,                 arm64_linux:       "78dc8e6db9fe9d62e1c22c24329299acf9ebedd88cc56ef09c1436768db54032"
-    sha256 cellar: :any,                 x86_64_linux:      "25e113a3b1587015aeb2b7290c43c43c19d888b9a63b527265f37487e589a0e8"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "cec566f2650f943db78c7baff4df43c60ed5e0c5a6ee859c1df659a958693916"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "3c81a0a62ddcb71c9365b17d3954cc004cc394105f5e333edf31722af819fa6b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "0e68209a6d3fa6fd007243054a6274f21e9bc285b453675dc19582f5bc5aa32d"
+    sha256 cellar: :any,                 arm64_linux:       "8abc40bf045b6da42d8f082ad6e5aa18e367dc23986b58c0da6302b104608c3f"
+    sha256 cellar: :any,                 x86_64_linux:      "6f5a7463e4872626cbab42ef99e0eb9ffc47f7839ac5088ba5480c1e80745d92"
   end
 
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
 
   on_linux do
-    depends_on "openssl@3"
+    depends_on "openssl@4"
   end
 
   def install

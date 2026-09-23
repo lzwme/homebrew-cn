@@ -31,6 +31,8 @@ class Libvncserver < Formula
     depends_on "zlib-ng-compat"
   end
 
+  deny_network_access!
+
   def install
     args = %W[
       -DJPEG_INCLUDE_DIR=#{formula_opt_include("jpeg-turbo")}

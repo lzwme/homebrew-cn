@@ -39,6 +39,8 @@ class Rvvm < Formula
     depends_on "wayland"
   end
 
+  allow_network_access! :test
+
   def install
     if stable?
       system "make"

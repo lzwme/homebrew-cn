@@ -26,6 +26,8 @@ class Dlib < Formula
   depends_on "libpng"
   depends_on "openblas"
 
+  deny_network_access!
+
   def install
     args = %W[
       -DDLIB_USE_BLAS=ON

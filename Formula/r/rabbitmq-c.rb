@@ -20,6 +20,8 @@ class RabbitmqC < Formula
   depends_on "openssl@3"
   depends_on "popt"
 
+  deny_network_access!
+
   def install
     ENV["XML_CATALOG_FILES"] = etc/"xml/catalog"
     system "cmake", "-S", ".", "-B", "build",

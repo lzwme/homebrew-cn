@@ -21,6 +21,8 @@ class MsdfAtlasGen < Formula
   depends_on "msdfgen"
   depends_on "tinyxml2"
 
+  deny_network_access!
+
   def install
     args = %w[
       -DMSDF_ATLAS_USE_VCPKG=OFF

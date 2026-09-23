@@ -13,17 +13,19 @@ class Valkey < Formula
   head "https://github.com/valkey-io/valkey.git", branch: "unstable"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "a6e719d537a9fa42f7e97f51dc1c10345a95727097ff45f0cfddc77981328279"
-    sha256 cellar: :any, arm64_tahoe:       "a746f300d368d3ee99deb2a4fa75462a0d042c2f6fe87be4146bc0b8b7a24a93"
-    sha256 cellar: :any, arm64_sequoia:     "f4c76aacd3e201ff73c11b7789f3ed9825688bd5ff13cd214b535eff648268d5"
-    sha256 cellar: :any, arm64_sonoma:      "7445bef871f00c179f49a4f674ae3a2108ee5a322a185b5f525254e5f9ce7a56"
-    sha256 cellar: :any, arm64_linux:       "ba3807aa5e6479aaa550809c0dfae7f2b1234561af9981bbdb26ae5eeac8760c"
-    sha256 cellar: :any, x86_64_linux:      "3f3fb3b5a57b1fd215dc80cfc3d9eab1f5374e833b09e51c0026c5e374857a69"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "5b0ec8d457677eab77965c460a27782d7b76b36f99cddb8f5085904e813f024d"
+    sha256 cellar: :any, arm64_tahoe:       "3319ebe198120ab55fa35f31aef84d164837b60cc7afd8dbc6ef43568762a113"
+    sha256 cellar: :any, arm64_sequoia:     "da82708524bc70a3c03b2378b58cad08479ad7116eb0b6e7dfae260949534884"
+    sha256 cellar: :any, arm64_linux:       "657e966d70191d25d7993f7f3214d6d60f0a93993088ce8e3ee71a7f27e335eb"
+    sha256 cellar: :any, x86_64_linux:      "578578ab31dea1b183e1206d3817019466d56f27a94fa93f2e042072844863a0"
   end
 
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   conflicts_with "redis", because: "both install `redis-*` binaries"
+
+  deny_network_access!
 
   def install
     system "make", "install", "PREFIX=#{prefix}", "CC=#{ENV.cc}", "BUILD_TLS=yes"

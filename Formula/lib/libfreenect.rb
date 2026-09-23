@@ -23,6 +23,8 @@ class Libfreenect < Formula
   depends_on "cmake" => :build
   depends_on "libusb"
 
+  deny_network_access!
+
   def install
     args = %W[
       -DBUILD_OPENNI2_DRIVER=ON

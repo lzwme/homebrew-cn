@@ -31,6 +31,8 @@ class Precomp < Formula
     resolves "https://github.com/schnaader/precomp-cpp/pull/146"
   end
 
+  deny_network_access!
+
   def install
     # Workaround for CMake 4 compatibility
     args = %w[-DCMAKE_POLICY_VERSION_MINIMUM=3.5]

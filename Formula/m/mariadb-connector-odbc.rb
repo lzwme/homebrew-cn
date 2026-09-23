@@ -32,6 +32,8 @@ class MariadbConnectorOdbc < Formula
   depends_on "openssl@3"
   depends_on "unixodbc"
 
+  deny_network_access!
+
   def install
     ENV.append_to_cflags "-I#{formula_opt_include("mariadb-connector-c")}/mariadb"
     ENV.append "LDFLAGS", "-L#{formula_opt_lib("mariadb-connector-c")}/mariadb"

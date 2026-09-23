@@ -1,6 +1,6 @@
 cask "ghostex" do
-  version "9.9.0"
-  sha256 "f6459d40b078b486f09ff52e139c1842a387114e810cb5f5cce6be9c36f8a964"
+  version "10.1.0"
+  sha256 "7e50b8d1eda2886693143fdadc876410c98d208b1235970a19cefb326bb2a1da"
 
   url "https://ghfast.top/https://github.com/maddada/Ghostex/releases/download/v#{version}/ghostex-#{version}-arm64.dmg"
   name "Ghostex"
@@ -11,8 +11,6 @@ cask "ghostex" do
     url "https://ghfast.top/https://raw.githubusercontent.com/maddada/Ghostex/main/appcast.xml"
     strategy :sparkle, &:short_version
   end
-
-  no_autobump! because: :bumped_by_upstream
 
   auto_updates true
   depends_on arch: :arm64

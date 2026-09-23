@@ -19,6 +19,8 @@ class AwsCCal < Formula
   depends_on "aws-c-common"
   depends_on "openssl@3"
 
+  deny_network_access!
+
   def install
     # ed25519 is needed by awscli
     args = %w[

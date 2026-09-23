@@ -1,18 +1,17 @@
 class Gopass < Formula
   desc "Slightly more awesome Standard Unix Password Manager for Teams"
   homepage "https://www.gopass.pw/"
-  url "https://ghfast.top/https://github.com/gopasspw/gopass/releases/download/v1.17.2/gopass-1.17.2.tar.gz"
-  sha256 "e338e6e45a8482db4dfc9ead2bb9ef0ba5be093ef813eaa64c4a5d34354ef002"
+  url "https://ghfast.top/https://github.com/gopasspw/gopass/releases/download/v1.17.3/gopass-1.17.3.tar.gz"
+  sha256 "25cdfa2da64b0c416d73c5b87c87a0708da046d6eaba7623c4dbd47e7fa3563c"
   license "MIT"
   head "https://github.com/gopasspw/gopass.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "57ed746d3dea5fac86b498cd9b4e59c3183c2085a96f3a3485308848cbe63d0d"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "c3f41e21c59631a152247b7ea5a366d3e3f4dcf3a0c180d4606321827cd69a00"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "c7ec1de3342eab9021d975374a9e479714b1d050ee654d67176082602d63dc45"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "cecf2457e6e843da4f033c3a147df1bdc03a5c52a36ec9627f3809906ee3fc43"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "bdf4c7030a7a7a772dacbdbbfe995beb2b69eaf31863adc411b97b773cba1251"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "484a766eeff405e914cb78ba4d8b2bd733e27e3d56c79b3592b084e4c0f449ce"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "fa8d3ac4ee14a2656827eede87a46e8b5e4c0c30498ef3c7dd4fb77cb2afab77"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "a815f29491de007923e83d29b83f1275f85013492f8e1dbfa1f679f1ff859852"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "a021e11ad7c6409695268fa14e52a5295055e5690d7fcecfd133bf4f569250c3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "7ba7674bfafbe446a66dd41c719fd8932cb658aaf45f563bbf4edb87ffd79c0f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "8c992c243e1af667e10ff2b86c8400549fe72978f289a8bbb42d3f0c456baff0"
   end
 
   depends_on "go" => :build

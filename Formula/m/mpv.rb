@@ -2,7 +2,7 @@ class Mpv < Formula
   desc "Media player based on MPlayer and mplayer2"
   homepage "https://mpv.io"
   license all_of: ["GPL-2.0-or-later", "LGPL-2.1-or-later"]
-  revision 9
+  revision 10
   compatibility_version 1
   head "https://github.com/mpv-player/mpv.git", branch: "master"
 
@@ -17,15 +17,22 @@ class Mpv < Formula
       type :backport
       resolves "https://github.com/mpv-player/mpv/pull/17731"
     end
+
+    # Backport fix for use-after-free crash on audio device change (macOS 26/27)
+    patch do
+      url "https://github.com/mpv-player/mpv/commit/c5d391adba7bd024954d0df1e0405f5749f4d4ca.patch?full_index=1"
+      sha256 "769b218df220738cc1cf9f81cf696c16518c5dfe56a5ef028e33b22536e0e924"
+      type :backport
+      resolves "https://github.com/mpv-player/mpv/issues/18274"
+    end
   end
 
   bottle do
-    sha256 arm64_golden_gate: "3be8690e865b98a3f3f7527acaa72a097b8d7f4d64d38e9242e472cdc98ccad4"
-    sha256 arm64_tahoe:       "136d94fc3b285de144445862e16b4a988b032dafb74e126bf5172055182b6457"
-    sha256 arm64_sequoia:     "ef4f4e6295d752e686b16750e607ef1955d9df68afce1004744e0462415d1b7a"
-    sha256 arm64_sonoma:      "adeccfdd66dd3d5c1a0a6f44dd400b10d01263e876941f8eb03e33975ba6cdc8"
-    sha256 arm64_linux:       "a9847b882a10583d069c850a84e96ac241081a9876c1edc972835f2eca8e4ec4"
-    sha256 x86_64_linux:      "56173ebbe72abfcbf17681a55eadc3270a45b39937175857f7852deef2769c80"
+    sha256 arm64_golden_gate: "4d0a9933b9a7261ad2df2d04e2cc32994d4267f0b4a7c305428dbd54ccfd45f3"
+    sha256 arm64_tahoe:       "7d498f6e80a4f6b4071c5f2862e1a228edac45961d52c713831e0cef8e1cf6ba"
+    sha256 arm64_sequoia:     "a0313cae157832a61b4cd2428f5907cba22f43d2a7d133982c4ec11406a5b89d"
+    sha256 arm64_linux:       "0b2f9e376d168a00a08f88d1d1d563923f933520cf698024d13f4123f4768acf"
+    sha256 x86_64_linux:      "39523c457175387b97c53bc2e80bfcf9ebd0fd300553f8c2be1549f4edab5d99"
   end
 
   depends_on "docutils" => :build

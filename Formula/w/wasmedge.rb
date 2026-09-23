@@ -31,6 +31,8 @@ class Wasmedge < Formula
     resolves "https://github.com/WasmEdge/WasmEdge/pull/4936"
   end
 
+  deny_network_access!
+
   def install
     # Use CMAKE_BUILD_WITH_INSTALL_RPATH to keep versioned LLVM in RPATH on Linux
     args = ["-DCMAKE_BUILD_WITH_INSTALL_RPATH=ON"] if OS.linux?

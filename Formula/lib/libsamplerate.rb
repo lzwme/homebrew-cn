@@ -37,6 +37,8 @@ class Libsamplerate < Formula
     resolves "https://github.com/libsndfile/libsamplerate/pull/225"
   end
 
+  deny_network_access!
+
   def install
     args = ["-DLIBSAMPLERATE_EXAMPLES=OFF"]
 

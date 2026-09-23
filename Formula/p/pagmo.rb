@@ -36,6 +36,8 @@ class Pagmo < Formula
     resolves "https://github.com/esa/pagmo2/pull/608"
   end
 
+  deny_network_access!
+
   def install
     args = %w[
       -DPAGMO_WITH_EIGEN3=ON

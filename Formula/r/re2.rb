@@ -27,6 +27,8 @@ class Re2 < Formula
   depends_on "cmake" => :build
   depends_on "abseil"
 
+  deny_network_access!
+
   def install
     # Build and install static library
     system "cmake", "-S", ".", "-B", "build-static",

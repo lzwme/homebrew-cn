@@ -1,8 +1,8 @@
 class Cairo < Formula
   desc "Vector graphics library with cross-device output support"
   homepage "https://cairographics.org/"
-  url "https://cairographics.org/releases/cairo-1.18.4.tar.xz"
-  sha256 "445ed8208a6e4823de1226a74ca319d3600e83f6369f99b14265006599c32ccb"
+  url "https://cairographics.org/releases/cairo-1.18.6.tar.xz"
+  sha256 "1c767308174337a74694da0f3ec069c271452163a1ef4540964c50c301f157d4"
   license any_of: ["LGPL-2.1-only", "MPL-1.1"]
   head "https://gitlab.freedesktop.org/cairo/cairo.git", branch: "master"
 
@@ -12,14 +12,11 @@ class Cairo < Formula
   end
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any, arm64_golden_gate: "b59be4a36cedcd5b460a5adb6a88914c05a31f717466ab58e8da0030b083fb9b"
-    sha256 cellar: :any, arm64_tahoe:       "3099d9356456b9aced4b35bfb6723c45014c09d7b090190bcd8d17053244dd3c"
-    sha256 cellar: :any, arm64_sequoia:     "91a09ffb4c4025f8204305e25c9d16b5d9e3427c65baabe8a11c7c5e6e07e29e"
-    sha256 cellar: :any, arm64_sonoma:      "28602bd6232c6f102f2f545662a8ea5db0ef1405de2c5296bd8490c910f391af"
-    sha256 cellar: :any, sonoma:            "8eac751ce30d7e665220bb02d2bd7aa209c041951edca3439918554e9dcb0e63"
-    sha256               arm64_linux:       "8d2393d42a2e6b4abda5d72981614960f30d35599f9a213944d3948b085529d7"
-    sha256               x86_64_linux:      "3d852e0bcef8e7bf1f4e5b9defa709da64a2dc2dcef4c35d177cebdbf552e65b"
+    sha256 cellar: :any, arm64_golden_gate: "1dab52f452b0eb0a90432a5f1022529abaab3aaa83b36b9e0edde404ee168f0e"
+    sha256 cellar: :any, arm64_tahoe:       "e067e63e664c7d95bdff0a08a293b4a0182a26f38b750f5f7958012e00823416"
+    sha256 cellar: :any, arm64_sequoia:     "2eb1ea8f47088a4bddf68c052eef3ef5e52a5bc1369118d432db6bea2e363853"
+    sha256 cellar: :any, arm64_linux:       "7608281ea691a911abee820f95200dfcbdfc5396511f842fb05196521e025cd5"
+    sha256 cellar: :any, x86_64_linux:      "5fd48263c0683b91d89c475f500db3bcd00178490005646cb6b09d57d7b30c91"
   end
 
   depends_on "meson" => :build

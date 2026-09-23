@@ -18,6 +18,8 @@ class Vvdec < Formula
 
   depends_on "cmake" => :build
 
+  allow_network_access! :test
+
   def install
     # SIMD implementations behind the per-source `-march` flags are chosen at runtime.
     ENV.runtime_cpu_detection

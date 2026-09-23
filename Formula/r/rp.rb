@@ -18,6 +18,8 @@ class Rp < Formula
 
   depends_on "cmake" => :build
 
+  deny_network_access!
+
   def install
     system "cmake", "-S", "src", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"

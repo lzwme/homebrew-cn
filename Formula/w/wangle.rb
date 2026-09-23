@@ -25,6 +25,8 @@ class Wangle < Formula
   depends_on "glog"
   depends_on "openssl@3"
 
+  allow_network_access! :test
+
   def install
     args = ["-DBUILD_TESTS=OFF"]
     # Prevent indirect linkage with boost, libsodium, snappy and xz

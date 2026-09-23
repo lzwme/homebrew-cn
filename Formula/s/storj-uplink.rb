@@ -1,8 +1,8 @@
 class StorjUplink < Formula
   desc "Uplink CLI for the Storj network"
   homepage "https://storj.io"
-  url "https://ghfast.top/https://github.com/storj/storj/archive/refs/tags/v1.163.4.tar.gz"
-  sha256 "952fa603e68dd86a20d4d434217027b0dd1d6f91a274908d8a4572cf4794ff82"
+  url "https://ghfast.top/https://github.com/storj/storj/archive/refs/tags/v1.163.6.tar.gz"
+  sha256 "578757c0e7bb56f487089f3ea2706180560132cdbb0b2c92fb7918a89a43231c"
   license "AGPL-3.0-only"
 
   # Upstream creates stable releases and marks them as "pre-release" before
@@ -18,12 +18,11 @@ class StorjUplink < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "5cc3d291a3cc3ccb3c40ebb76fcd299db0bc85970e3d0aa2bd436e0d18f82fb7"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "5cc3d291a3cc3ccb3c40ebb76fcd299db0bc85970e3d0aa2bd436e0d18f82fb7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "5cc3d291a3cc3ccb3c40ebb76fcd299db0bc85970e3d0aa2bd436e0d18f82fb7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "5cc3d291a3cc3ccb3c40ebb76fcd299db0bc85970e3d0aa2bd436e0d18f82fb7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "8134d433473525d8791cf1f11fbe486a0ad0e2cc4140086cd7689a5033ab6494"
-    sha256 cellar: :any,                 x86_64_linux:      "505c8d04129c4f6f2f0cc9690441e9be79ac592220aee8487d15809868673aff"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "5ff99e85935e1ab049bc42020a4147349097894885d3bb320ba3b23ec18d8b22"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "5ff99e85935e1ab049bc42020a4147349097894885d3bb320ba3b23ec18d8b22"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "5ff99e85935e1ab049bc42020a4147349097894885d3bb320ba3b23ec18d8b22"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "a4b00c644cee2c5197a8d552fbcd95e63d472d4035ee4cd1b2e7eb5de390237b"
+    sha256 cellar: :any,                 x86_64_linux:      "fb92c2774096143e3ad3e1ead41e48e3cdadb4870959419b2184273e1e8af443"
   end
 
   depends_on "go" => :build

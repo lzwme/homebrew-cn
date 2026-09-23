@@ -29,6 +29,8 @@ class Yder < Formula
     depends_on "systemd"
   end
 
+  deny_network_access!
+
   def install
     args = ["-DWITH_JOURNALD=OFF"] if OS.mac?
 

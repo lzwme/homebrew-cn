@@ -37,6 +37,8 @@ class Rizin < Formula
     depends_on "zlib-ng-compat"
   end
 
+  deny_network_access!
+
   def install
     args = %W[
       -Dpackager=#{tap.user}
@@ -58,7 +60,6 @@ class Rizin < Formula
       -Dextra_prefix=#{HOMEBREW_PREFIX}
       -Denable_tests=false
       -Denable_rz_test=false
-      --wrap-mode=nodownload
     ]
 
     fallback = %w[blake2 rzgdb rzwinkd rzar rzqnx rzspp rizin-shell-parser rzheap]

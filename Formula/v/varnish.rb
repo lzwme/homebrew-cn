@@ -1,8 +1,8 @@
 class Varnish < Formula
   desc "High-performance HTTP accelerator"
   homepage "https://www.varnish-cache.org/"
-  url "https://ghfast.top/https://github.com/varnish/varnish/releases/download/varnish-9.0.4/varnish-9.0.4.tar.gz"
-  sha256 "766e91abf4d9ca7f00a88e105bc61109f1145983c09116db4228c9067fa2adc3"
+  url "https://ghfast.top/https://github.com/varnish/varnish/releases/download/varnish-9.1.0/varnish-9.1.0.tar.gz"
+  sha256 "fe615fa024c801d12928e7eea0e822ba93ab625a585841143c36ae02d5bcc37a"
   license "BSD-2-Clause"
 
   livecheck do
@@ -11,18 +11,19 @@ class Varnish < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "58025af862e72bbc09216e8c182720fc71191a567c1dfdaff99ac2a2a278dcad"
-    sha256 arm64_tahoe:       "7fe681f746c81c05952284bf7f3a0a58128b37bde3429da1c82c74eea951cbf8"
-    sha256 arm64_sequoia:     "a6d4e714e678d83d8a2a6f98ac211870a513f31f9d815603c2cca0d36cc8c7d5"
-    sha256 arm64_linux:       "ebaff57055beaad53b54e330a0d995cd383281421a2899d9786755083147b735"
-    sha256 x86_64_linux:      "e09b0bc393d66ca79167a0aa996f61c5ba173f8443de2da3413e6042509ebadf"
+    rebuild 1
+    sha256 arm64_golden_gate: "5743f8185faae8bbf62299d043e5fb5735e76829913709f349f2aceefa5c16bc"
+    sha256 arm64_tahoe:       "31f8a6d2501682262e417011f9519a921d8ed0dfcf502629624cd6ee56b582b8"
+    sha256 arm64_sequoia:     "47b0ab43e0452ef95facb1a6826317e80d8b085e62e2175ad83f8c27eda291d7"
+    sha256 arm64_linux:       "e9205c632059750db52fd8829461516c186f324fa6c19aaf54efae79d9a1c098"
+    sha256 x86_64_linux:      "51232ee95d2b758767468df4b56a8f622be95371a9e3c36698ee301c47720c8d"
   end
 
   depends_on "docutils" => :build
   depends_on "graphviz" => :build
   depends_on "pkgconf" => :build
   depends_on "sphinx-doc" => :build
-  depends_on "openssl@3"
+  depends_on "openssl@4"
   depends_on "pcre2"
 
   uses_from_macos "python" => :build
@@ -90,6 +91,7 @@ class Varnish < Formula
       testpath/"m00027.vtc",
       testpath/"m00048.vtc",
       testpath/"m00049.vtc",
+      testpath/"m00050.vtc",
       testpath/"m00054.vtc",
       testpath/"m00053.vtc",
       testpath/"m00051.vtc",

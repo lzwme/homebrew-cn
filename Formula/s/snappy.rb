@@ -22,6 +22,8 @@ class Snappy < Formula
   # `folly` issue ref: https://github.com/facebook/folly/issues/1583
   patch :DATA
 
+  deny_network_access!
+
   def install
     args = %w[
       -DSNAPPY_BUILD_TESTS=OFF

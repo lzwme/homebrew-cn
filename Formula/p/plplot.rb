@@ -35,6 +35,8 @@ class Plplot < Formula
     depends_on "harfbuzz"
   end
 
+  deny_network_access!
+
   def install
     # These example files end up with references to the Homebrew build
     # shims unless we tweak them:

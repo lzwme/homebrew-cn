@@ -45,6 +45,8 @@ class Symengine < Formula
     resolves "https://github.com/symengine/symengine/pull/2137"
   end
 
+  deny_network_access!
+
   def install
     llvm = deps.map(&:to_formula).find { |f| f.name.match?(/^llvm(@\d+)?$/) }
     system "cmake", "-S", ".", "-B", "build",

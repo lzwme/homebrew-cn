@@ -22,6 +22,8 @@ class Tgui < Formula
   depends_on "cmake" => :build
   depends_on "sfml"
 
+  deny_network_access!
+
   def install
     # `gui-builder` is installed into pkgshare, so it needs its own rpath to lib
     args = %W[

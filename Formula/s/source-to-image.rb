@@ -2,19 +2,17 @@ class SourceToImage < Formula
   desc "Tool for building source and injecting into docker images"
   homepage "https://github.com/openshift/source-to-image"
   url "https://github.com/openshift/source-to-image.git",
-      tag:      "v1.6.3",
-      revision: "f1a48f01c0249612e85bc51b0074c51e113bafa1"
+      tag:      "v1.6.4",
+      revision: "7a7c7d8af341d163d43198d1a6529ef4042fb989"
   license "Apache-2.0"
   head "https://github.com/openshift/source-to-image.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "9724d14c194962d4d3b88d7dcfb6d2668453536ec8f36299bd9d31b1342f2d6d"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "d0626d97844a572a4f44f07eae9afea49b1132d77f98ef9136ffe280ef29b599"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "5e71ffafe350e8aee9c117333670fa0a9ec90d010684d063ad18d1bbcc6dcbd9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "2eb55202be23c3bdffdb21775b8ccdff1871c50281ca48ac62dd7817e7836ebd"
-    sha256 cellar: :any_skip_relocation, sonoma:            "d98c7ea0f3d4f6c68baf8a785d96851a434d00fcac97205b200d139d4e23848f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "c17c48b03d15ef57cac80cedb6e292d5a637bb6b9626728eb5ce957f83fb8d8c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "197832980b3dabfea413eb550836f73d7ac2fe5fda7464937c3c40625027463d"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "7efd521c16af4025e1ec8d1429ab09daff18e4513a1e2f83b77f874364830581"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "8c06e0f36e185aaaa07d0b4bdedbf52f09f291564da99049d8d739814ec7bcbc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "e814e974a12fac44340415b99c12008244fca6cb062e30af392b3f8c1aade3d4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "5ce26921c24ee2641eb56aa887ee3c9268eb9999c8337f08858c569037fa620f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "a0fe773a735548322880dc3eb73b81a9a28f4213f9adda2a1117d283a51f64e2"
   end
 
   depends_on "go" => :build

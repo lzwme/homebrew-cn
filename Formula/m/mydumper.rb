@@ -33,6 +33,8 @@ class Mydumper < Formula
     depends_on "openssl@3"
   end
 
+  deny_network_access!
+
   def install
     # Avoid installing config into /etc
     inreplace "CMakeLists.txt", "/etc", etc

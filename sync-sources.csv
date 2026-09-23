@@ -4249,6 +4249,7 @@ Homebrew-homebrew-core/Formula/lib/libkate.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libkeccak.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libkeyfinder.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libkiwix.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/lib/libklvanc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libkml.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libks.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libksba.rb, Homebrew/homebrew-core, 0
@@ -7206,7 +7207,7 @@ Homebrew-homebrew-core/Formula/s/sqlmap.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sqlpage.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sqlparse.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/sqlsmith.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/s/sqlx-cli.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/s/sqlx-cli.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/sqruff.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sqsmover.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sqtop.rb, Homebrew/homebrew-core, 1
@@ -14280,6 +14281,7 @@ Homebrew-homebrew-cask/Casks/o/opencat.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/openchamber.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/openchrom.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/openclaw.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/o/openclip.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/opencloud.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/opencode-desktop.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/opencomic.rb, Homebrew/homebrew-cask, 1
@@ -16528,3 +16530,7 @@ shivammathur-homebrew-php/Formula/php@8.6-debug-zts.rb, shivammathur/homebrew-ph
 shivammathur-homebrew-php/Formula/php@8.6-debug.rb, shivammathur/homebrew-php, 1
 shivammathur-homebrew-php/Formula/php@8.6-zts.rb, shivammathur/homebrew-php, 1
 shivammathur-homebrew-php/Formula/php@8.6.rb, shivammathur/homebrew-php, 1
+shivammathur-homebrew-php/Formula/php@8.7-debug-zts.rb, shivammathur/homebrew-php, 1
+shivammathur-homebrew-php/Formula/php@8.7-debug.rb, shivammathur/homebrew-php, 1
+shivammathur-homebrew-php/Formula/php@8.7-zts.rb, shivammathur/homebrew-php, 1
+shivammathur-homebrew-php/Formula/php@8.7.rb, shivammathur/homebrew-php, 1

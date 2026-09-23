@@ -25,6 +25,8 @@ class AwsCMqtt < Formula
   depends_on "aws-c-http"
   depends_on "aws-c-io"
 
+  deny_network_access!
+
   def install
     args = ["-DBUILD_SHARED_LIBS=ON"]
     # Avoid linkage to `aws-c-cal` and `aws-c-compression`

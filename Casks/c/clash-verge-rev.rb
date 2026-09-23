@@ -1,9 +1,9 @@
 cask "clash-verge-rev" do
   arch arm: "aarch64", intel: "x64"
 
-  version "2.5.4"
-  sha256 arm:   "983a6a4eda5f9df1c9485b063b8211c7c75e3719b61fe9981211f61f37027194",
-         intel: "c5d59287fc49a922d964b57921ca0bd160249d5e7c1e4236245822de37fb5724"
+  version "2.5.5"
+  sha256 arm:   "67e1da80eee9dcabad5099ec6128bd8db774240ac8196f5921f515964d9b50b1",
+         intel: "d312218666b665435055d0d4e7e697a4983542aad2eec633ba69afda2fcf7185"
 
   url "https://ghfast.top/https://github.com/clash-verge-rev/clash-verge-rev/releases/download/v#{version}/Clash.Verge_#{version}_#{arch}.dmg"
   name "Clash Verge Rev"
@@ -19,6 +19,8 @@ cask "clash-verge-rev" do
   depends_on :macos
 
   app "Clash Verge.app"
+
+  uninstall quit: "io.github.clash-verge-rev.clash-verge-rev"
 
   zap trash: [
     "~/Library/Application Support/io.github.clash-verge-rev.clash-verge-rev",

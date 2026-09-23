@@ -1,18 +1,18 @@
 class Trufflehog < Formula
   desc "Find and verify credentials"
   homepage "https://trufflesecurity.com/"
-  url "https://ghfast.top/https://github.com/trufflesecurity/trufflehog/archive/refs/tags/v3.97.5.tar.gz"
-  sha256 "5c4fce6fe81bcd7f175852af433ad5146d2f21ce8b2ae268c85be0166b69192a"
+  url "https://ghfast.top/https://github.com/trufflesecurity/trufflehog/archive/refs/tags/v3.97.6.tar.gz"
+  sha256 "3a19686c5d7a4492e7e5a56fd940d91400791c8205a582c296aaf68c5e65ccbe"
   # upstream license ask, https://github.com/trufflesecurity/trufflehog/issues/1446
   license "AGPL-3.0-only"
   head "https://github.com/trufflesecurity/trufflehog.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "1226ab964b5c6ed9bd676825aa3955fad6875bff7a164a1ff3754971bbcb07e7"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "4dff40ad829afcd9963540745aff3bc77ebf4cae862a10e1f244999a0c2cb53c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "9c16a075cbffb10c1d643f652f32ca4678aadad825543bd24bd01eb9217cb202"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "0a5ad8a93941b9bef3a29d7d2ddb18de372525d4172af49211db9bb6be86c09f"
-    sha256 cellar: :any,                 x86_64_linux:      "efbb68dcfa6920ee201a212e9532d2e93a4be4c0aac238adca6ec7bca8267470"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "f80dc8c4da2f07e323cded941f40e2f9fd35c5ac11acbbde1c30566d1f9768a4"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "def6c02292bf491131923951b2bbd217165cc0caaebea726a5f34ad327a7561d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "27681c72079de1e1788fba97077db538bce5296ee466382673fc458c4a76c66c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "fb34836d51bd620edd7b6f4106ce8c3a00461c0eabaa10df53d23839775b0a31"
+    sha256 cellar: :any,                 x86_64_linux:      "d31ed3ec6cb154fc997d1bbd57916caa487b9da636776507aa96c0d16cc7ffcc"
   end
 
   depends_on "go" => :build

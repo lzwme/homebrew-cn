@@ -1,8 +1,8 @@
 class Rebar3 < Formula
   desc "Erlang build tool"
   homepage "https://rebar3.org"
-  url "https://ghfast.top/https://github.com/erlang/rebar3/archive/refs/tags/3.27.0.tar.gz"
-  sha256 "985cae6e957334cfa549190b9f5efb9185c184a18fc181c87b8dde096ba79f38"
+  url "https://ghfast.top/https://github.com/erlang/rebar3/archive/refs/tags/3.27.1.tar.gz"
+  sha256 "e34cf5e8f25fc7e59b2ff5c56fed507cf1378d4eef2a4aa7957b3c7e80812d64"
   license "Apache-2.0"
 
   livecheck do
@@ -11,14 +11,11 @@ class Rebar3 < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "951b72bd0beb1531eaebb233600e8061f89ef9a4567ddadd9977d44e09ab063f"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "197a84b47739f53fdad86802701343503cf5e2f29679d6d471f10c01593ee176"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "bf5a9f0d9cd01805c8cc1a985e4d702638911d4364770f3734898e183c358fba"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "b75f7c470bf26337b63def63e6b02bb610b6d1ccb8fcae5b256ac9bf75c8c16b"
-    sha256 cellar: :any_skip_relocation, sonoma:            "d8581adc38827a457b4811dd6ed82c7e3e0a6439892c9fff692c6de1098394d5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "6882937c20792209d1cad1c23ce0cab1d971faf184f021482f30b675d261dc85"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "106d9656022f800b514743fd657fdc4a4a73d0dea82e036780da401d4b1bbb83"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "fc98d9413efe323c177637a770293182f65151244634373b8dd1d77b32da3bdd"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "c444b4c7cf52dd62efed60a0f82b7e27eb2935d7ab4e29102b45cc0a478e2442"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "b2a4f723453d34ed26ea453cddab72888a6aa20d46a0618f452306f68cd78ac6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "6fd3b3f35d7ac9710ed414754d219606f3b74010378467813d2656b2caee6d42"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "ff48dad25d6b0d6498a7a9afbbf7b7edb6a8e4b87fa6578e943032af0d1a44d7"
   end
 
   depends_on "erlang@27" => [:build, :test]

@@ -25,6 +25,8 @@ class Proxsuite < Formula
   depends_on "scipy" => :no_linkage
   depends_on "simde"
 
+  deny_network_access!
+
   def install
     system "git", "submodule", "update", "--init", "--recursive" if build.head?
 

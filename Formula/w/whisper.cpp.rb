@@ -26,6 +26,8 @@ class WhisperCpp < Formula
   depends_on "llama.cpp"
   depends_on "sdl2-compat"
 
+  deny_network_access!
+
   def install
     args = %W[
       -DBUILD_SHARED_LIBS=ON
