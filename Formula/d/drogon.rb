@@ -31,6 +31,8 @@ class Drogon < Formula
     depends_on "zlib-ng-compat"
   end
 
+  allow_network_access! :test
+
   def install
     args = ["-DBUILD_SHARED_LIBS=ON", "-DCMAKE_INSTALL_RPATH=#{rpath}"]
     args << "-DUUID_DIR=#{formula_opt_prefix("util-linux")}" if OS.linux?

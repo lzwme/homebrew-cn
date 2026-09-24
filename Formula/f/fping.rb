@@ -27,6 +27,8 @@ class Fping < Formula
     depends_on "automake" => :build
   end
 
+  allow_network_access! :test
+
   def install
     system "./autogen.sh" if build.head?
     system "./configure", *std_configure_args, "--sbindir=#{bin}"

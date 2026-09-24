@@ -18,19 +18,20 @@ class Ircii < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "47a771ccc427aa9a24bdb1c4888dced46bb481b2affef20abfa4ea3fe33ab8b3"
-    sha256 arm64_tahoe:       "f27001eb7472423ac807513f3620dfc50a7abe587b60cae376fcfe1f73bf9d62"
-    sha256 arm64_sequoia:     "a7dd4d97eaef44799d4d2432bc2929eed4f9466766629e377a84518a4d5b35fe"
-    sha256 arm64_sonoma:      "69ea0e7fa6d00012902506b4a8c5169eff23475d842239f2c98652ffb38bbe54"
-    sha256 sonoma:            "d7faa252ac267d329da31e1016bfc06f5774e6e628c89b7e9e5050bd3132ba5b"
-    sha256 arm64_linux:       "634fd789ba9b7e1c538c0e0c3458f9fa8272ca812047976d10c5b56739a1b8d1"
-    sha256 x86_64_linux:      "541eedf1463ed4337afcb37c39f32be57642e9a7cc99777283431be2bdcf0ab3"
+    rebuild 1
+    sha256 arm64_golden_gate: "13ebbf524835d17fc45426d8c938c6b53ddb2ee80da87a693962183190ed9204"
+    sha256 arm64_tahoe:       "8a11c2fa353238c8bc04bb2272e3c3379f7a375b506c3a1a6d25debf57a0e684"
+    sha256 arm64_sequoia:     "2f4008ee66119222dc6146102e7fda300ca30a2c1e241f9b4297def808e9fd06"
+    sha256 arm64_linux:       "5fca12b00e20b231928fffa60c3ee84024e6a3d4aa5d210c032c6ed42ea5af1e"
+    sha256 x86_64_linux:      "ef01fd427bbfc49593060935645b9ce17a1c8a23c90694ddf734d3de0efab623"
   end
 
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   uses_from_macos "libxcrypt"
   uses_from_macos "ncurses"
+
+  deny_network_access!
 
   def install
     ENV.append "LIBS", "-liconv" if OS.mac?

@@ -38,6 +38,8 @@ class Gsoap < Formula
     depends_on "zlib-ng-compat"
   end
 
+  allow_network_access! :test
+
   def install
     system "./configure", "--disable-silent-rules", *std_configure_args
     system "make"

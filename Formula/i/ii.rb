@@ -27,6 +27,8 @@ class Ii < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:      "b2dbf5ccf220ff7c74c9c409f2ed36465f28fe20ab14d42e62b8df2499b5c320"
   end
 
+  allow_network_access! :test
+
   def install
     # macOS already provides strlcpy
     if OS.mac?

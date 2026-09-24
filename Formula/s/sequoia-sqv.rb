@@ -7,24 +7,29 @@ class SequoiaSqv < Formula
   head "https://gitlab.com/sequoia-pgp/sequoia-sqv.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "b324e56e4aeadeeeca4b8992bfb67c5382bd4b81cc7f4b25c8be9259094a018d"
-    sha256 cellar: :any, arm64_tahoe:       "3ea889ab5ab37e22d8f432bfbe0057d0e01e89659995f514bd0a118af31495b1"
-    sha256 cellar: :any, arm64_sequoia:     "87912a68b3dd4307bcf61b2af41679a248b91cd39f6bb050bd347a298d66e805"
-    sha256 cellar: :any, arm64_sonoma:      "f56d097deb461baf37bedacd0b2afb0ee23ba8f4d1229b12a7dbdf7fc164a04b"
-    sha256 cellar: :any, sonoma:            "2fcddfb42c6c83daa1f0d845c35084926507b8ccdedd9c7689a5079dd16e2cd5"
-    sha256 cellar: :any, arm64_linux:       "8ae453705f3a164ce38fd8733a857d770b16e8ae2b28aaf3d075df988b586652"
-    sha256 cellar: :any, x86_64_linux:      "d5eb5a4f73054fb8d4f215ba3767d87adc351394e832d8cab10ac9fb68bfb6d1"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "4901e4a68f1a3041e3289605044783cf056958c4d0ec735f94dd62afb73b99e1"
+    sha256 cellar: :any, arm64_tahoe:       "a0be56817a575d08053d42ff37df1662a28cf3e92317b84b8fe85b7d8da9b370"
+    sha256 cellar: :any, arm64_sequoia:     "77974f2e835e41c29c22fde6cef4f64fe9a4440c96a474ee90b39bfab2a865ca"
+    sha256 cellar: :any, arm64_linux:       "26da1c192176be3d758175dfffc8031a954f3ae43e6641403594cd2c0e516700"
+    sha256 cellar: :any, x86_64_linux:      "cb2267d295815a6f88b3c6641ef20c5d09c7f334e4037541784cdf967a190469"
   end
 
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
 
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   uses_from_macos "llvm" => :build # for libclang (bindgen)
 
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
-    ENV["OPENSSL_DIR"] = formula_opt_prefix("openssl@3")
+    ENV["OPENSSL_DIR"] = formula_opt_prefix("openssl@4")
     ENV["ASSET_OUT_DIR"] = buildpath
     system "cargo", "install", "--no-default-features", *std_cargo_args(features: "crypto-openssl")
 

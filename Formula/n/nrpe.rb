@@ -19,6 +19,8 @@ class Nrpe < Formula
   depends_on "nagios-plugins"
   depends_on "openssl@3"
 
+  allow_network_access! :test
+
   def install
     user  = `id -un`.chomp
     group = `id -gn`.chomp

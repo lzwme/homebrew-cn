@@ -11,26 +11,28 @@ class Liboqs < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "10bb5e8e91511bdb8f0021fd05ff66272c3a15b99591b154efc9319faa94e957"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "9ab14bee159d7d6ebaa31b25db60880d8f2d5c9f8fa259ed93482dcec27d5e94"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "96a37748eef828d887209d70d0634e84c5f956d32d869a659e70e33a576cc245"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "689c0523b4592ebd73310bb72b8fc6211e907c9857457cb201de3d5d17781527"
-    sha256 cellar: :any_skip_relocation, sonoma:            "3cc873a9338bacafd8b4219b9aa08dd73a47a08194877918f8b327324c284195"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "d80a9952b57de6a68b429478926a6651992a3e24e0647f56775ee6337b0f06a9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "b38e74277f956f35a965a7eaef455c331a08ed0f299006861375c5b8a7b398dc"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "49219c29dabe554d5a94683c09188a52f0a809875bdd88e70342abbc10690d7f"
+    sha256 cellar: :any, arm64_tahoe:       "d1bafc1d1aa7d09b2b4c5efb2d4713327fc3100cfd9bf149851ac7d3fe567546"
+    sha256 cellar: :any, arm64_sequoia:     "eabb4df936ed371458d18485e9b59bcd315ad59e06d38b90a0a859e522cb9491"
+    sha256 cellar: :any, arm64_linux:       "6e381ca66850b6eec6638f7f9c2b55ed3786b00a8164eecc3940e01ca1ec5dfa"
+    sha256 cellar: :any, x86_64_linux:      "85a55828104442d9fb8f162d3d94f2e1e04e7c723b640abcd2d18f58a3bb68ce"
   end
 
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
   depends_on "ninja" => :build
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   deny_network_access!
 
+  def openssl = "openssl@4"
+
   def install
     args = %W[
+      -DBUILD_SHARED_LIBS=ON
       -DOQS_USE_OPENSSL=ON
-      -DOPENSSL_ROOT_DIR=#{formula_opt_prefix("openssl@3")}
+      -DOPENSSL_ROOT_DIR=#{formula_opt_prefix(openssl)}
     ]
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
@@ -43,8 +45,8 @@ class Liboqs < Formula
   test do
     cp pkgshare/"tests/example_kem.c", "test.c"
     system ENV.cc, "test.c",
-                  "-I#{formula_opt_include("openssl@3")}", "-I#{include}",
-                  "-L#{formula_opt_lib("openssl@3")}", "-L#{lib}",
+                  "-I#{formula_opt_include(openssl)}", "-I#{include}",
+                  "-L#{formula_opt_lib(openssl)}", "-L#{lib}",
                   "-loqs", "-lssl", "-lcrypto", "-o", "test"
     assert_match "operations completed", shell_output("./test")
   end

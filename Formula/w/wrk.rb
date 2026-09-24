@@ -27,6 +27,8 @@ class Wrk < Formula
   depends_on "luajit"
   depends_on "openssl@4"
 
+  allow_network_access! :test
+
   def install
     ENV.deparallelize
     ENV["MACOSX_DEPLOYMENT_TARGET"] = MacOS.version.to_s if OS.mac?

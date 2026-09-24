@@ -209,30 +209,17 @@ class Llvm < Formula
     pgo_build = build.stable? && build.bottle? && OS.mac? && !versioned_formula?
     lto_build = pgo_build && OS.mac?
 
-    if ENV.cflags.present?
-      args << "-DCMAKE_C_FLAGS=#{ENV.cflags}" unless pgo_build
-      runtimes_cmake_args << "-DCMAKE_C_FLAGS=#{ENV.cflags}"
-      builtins_cmake_args << "-DCMAKE_C_FLAGS=#{ENV.cflags}"
-    end
-
-    if ENV.cxxflags.present?
-      args << "-DCMAKE_CXX_FLAGS=#{ENV.cxxflags}" unless pgo_build
-      runtimes_cmake_args << "-DCMAKE_CXX_FLAGS=#{ENV.cxxflags}"
-      builtins_cmake_args << "-DCMAKE_CXX_FLAGS=#{ENV.cxxflags}"
-    end
-
-    args << "-DRUNTIMES_CMAKE_ARGS=#{runtimes_cmake_args.join(";")}" if runtimes_cmake_args.present?
-    args << "-DBUILTINS_CMAKE_ARGS=#{builtins_cmake_args.join(";")}" if builtins_cmake_args.present?
-
     llvmpath = buildpath/"llvm"
     if pgo_build
       # We build LLVM a few times first for optimisations. See
       # https://github.com/Homebrew/homebrew-core/issues/77975
-
       # PGO build adapted from:
       # https://llvm.org/docs/HowToBuildWithPGO.html#building-clang-with-pgo
       # https://github.com/llvm/llvm-project/blob/33ba8bd2/llvm/utils/collect_and_build_with_pgo.py
       # https://github.com/facebookincubator/BOLT/blob/01f471e7/docs/OptimizingClang.md
+      stage1 = buildpath/"stage1"
+      stage2 = buildpath/"stage2"
+      stage2_profdata = buildpath/"stage2-profdata"
 
       # We build the basic parts of a toolchain to profile.
       # The extra targets on macOS are part of a default Compiler-RT build.
@@ -252,7 +239,7 @@ class Llvm < Formula
 
         args << "-DLLVM_ENABLE_LTO=Thin" if lto_build
         # LTO creates object files not recognised by Apple libtool.
-        args << "-DCMAKE_LIBTOOL=#{llvmpath}/stage1/bin/llvm-libtool-darwin"
+        args << "-DCMAKE_LIBTOOL=#{stage1}/bin/llvm-libtool-darwin"
 
         # These are needed to enable LTO.
         ["llvm-libtool-darwin", "LTO"]
@@ -274,15 +261,13 @@ class Llvm < Formula
       # and use system Clang instead, but this stage does not take too long, and we want
       # to avoid incompatibilities from generating profile data with a newer Clang than
       # the one we consume the data with.
-      mkdir llvmpath/"stage1" do
-        system "cmake", "-G", "Ninja", "..", *extra_args, *std_cmake_args
-        system "cmake", "--build", ".", "--target", *stage1_targets
-      end
+      system "cmake", "-S", llvmpath, "-B", stage1, "-G", "Ninja", *extra_args, *std_cmake_args
+      system "cmake", "--build", stage1, "--target", *stage1_targets
 
       # Barring the stage where we generate the profile data, there is no benefit to
       # rebuilding these.
-      extra_args << "-DCLANG_TABLEGEN=#{llvmpath}/stage1/bin/clang-tblgen"
-      extra_args << "-DLLVM_TABLEGEN=#{llvmpath}/stage1/bin/llvm-tblgen"
+      extra_args << "-DCLANG_TABLEGEN=#{stage1}/bin/clang-tblgen"
+      extra_args << "-DLLVM_TABLEGEN=#{stage1}/bin/llvm-tblgen"
 
       if OS.linux?
         # Make sure brewed glibc will be used if it is installed.
@@ -316,73 +301,78 @@ class Llvm < Formula
         extra_args << "-DCMAKE_CXX_FLAGS=#{cxxflags.join(" ")}"
       end
 
+      # LLVM Profile runs out of static counters
+      # https://reviews.llvm.org/D92669, https://reviews.llvm.org/D93281
+      # Without this, the build produces many warnings of the form
+      # LLVM Profile Warning: Unable to track new values: Running out of static counters.
+      instrumented_cflags = cflags + %w[-Xclang -mllvm -Xclang -vp-counters-per-site=6]
+      instrumented_cxxflags = cxxflags + %w[-Xclang -mllvm -Xclang -vp-counters-per-site=6]
+      instrumented_extra_args = extra_args.reject { |s| s[/CMAKE_C(XX)?_FLAGS/] }
+
       # Next, build an instrumented stage2 compiler
-      mkdir llvmpath/"stage2" do
-        # LLVM Profile runs out of static counters
-        # https://reviews.llvm.org/D92669, https://reviews.llvm.org/D93281
-        # Without this, the build produces many warnings of the form
-        # LLVM Profile Warning: Unable to track new values: Running out of static counters.
-        instrumented_cflags = cflags + %w[-Xclang -mllvm -Xclang -vp-counters-per-site=6]
-        instrumented_cxxflags = cxxflags + %w[-Xclang -mllvm -Xclang -vp-counters-per-site=6]
-        instrumented_extra_args = extra_args.reject { |s| s[/CMAKE_C(XX)?_FLAGS/] }
-
-        system "cmake", "-G", "Ninja", "..",
-                        "-DCMAKE_C_COMPILER=#{llvmpath}/stage1/bin/clang",
-                        "-DCMAKE_CXX_COMPILER=#{llvmpath}/stage1/bin/clang++",
-                        "-DLLVM_BUILD_INSTRUMENTED=IR",
-                        "-DLLVM_BUILD_RUNTIME=NO",
-                        "-DCMAKE_C_FLAGS=#{instrumented_cflags.join(" ")}",
-                        "-DCMAKE_CXX_FLAGS=#{instrumented_cxxflags.join(" ")}",
-                        *instrumented_extra_args, *std_cmake_args
-        system "cmake", "--build", ".", "--target", "clang", "lld", "runtimes"
-
+      system "cmake", "-S", llvmpath, "-B", stage2, "-G", "Ninja",
+                      "-DCMAKE_C_COMPILER=#{stage1}/bin/clang",
+                      "-DCMAKE_CXX_COMPILER=#{stage1}/bin/clang++",
+                      "-DLLVM_BUILD_INSTRUMENTED=IR",
+                      "-DLLVM_BUILD_RUNTIME=NO",
+                      "-DCMAKE_C_FLAGS=#{instrumented_cflags.join(" ")}",
+                      "-DCMAKE_CXX_FLAGS=#{instrumented_cxxflags.join(" ")}",
+                      *instrumented_extra_args, *std_cmake_args
+      system "cmake", "--build", stage2, "--target", "clang", "lld", "runtimes"
+      begin
         # We run some `check-*` targets to increase profiling
         # coverage. These do not need to succeed.
         # NOTE: If using `Unix Makefiles` generator, `-k 0` needs to replaced with `--keep-going`.
-        begin
-          system "cmake", "--build", ".", "--target", "check-clang", "check-llvm", "--", "-k", "0"
-        rescue BuildError
-          nil
-        end
+        system "cmake", "--build", stage2, "--target", "check-clang", "check-llvm", "--", "-k", "0"
+      rescue BuildError
+        nil
       end
 
       # Then, generate the profile data
-      mkdir llvmpath/"stage2-profdata" do
-        system "cmake", "-G", "Ninja", "..",
-                        "-DCMAKE_C_COMPILER=#{llvmpath}/stage2/bin/clang",
-                        "-DCMAKE_CXX_COMPILER=#{llvmpath}/stage2/bin/clang++",
-                        "-DLLVM_BUILD_RUNTIMES=OFF",
-                        *extra_args.reject { |s| s["TABLEGEN"] },
-                        *std_cmake_args
-
+      system "cmake", "-S", llvmpath, "-B", stage2_profdata, "-G", "Ninja",
+                      "-DCMAKE_C_COMPILER=#{stage2}/bin/clang",
+                      "-DCMAKE_CXX_COMPILER=#{stage2}/bin/clang++",
+                      "-DLLVM_BUILD_RUNTIMES=OFF",
+                      *extra_args.reject { |s| s["TABLEGEN"] },
+                      *std_cmake_args
+      begin
         # This build is for profiling, so it is safe to ignore errors.
         # NOTE: If using `Unix Makefiles` generator, `-k 0` needs to replaced with `--keep-going`.
-        begin
-          system "cmake", "--build", ".", "--", "-k", "0"
-        rescue BuildError
-          nil
-        end
+        system "cmake", "--build", stage2_profdata, "--", "-k", "0"
+      rescue BuildError
+        nil
       end
 
       # Merge the generated profile data
-      profpath = llvmpath/"stage2/profiles"
+      profpath = stage2/"profiles"
       pgo_profile = profpath/"pgo_profile.prof"
-      system llvmpath/"stage1/bin/llvm-profdata", "merge", "-output=#{pgo_profile}", *profpath.glob("*.profraw")
+      system stage1/"bin/llvm-profdata", "merge", "-output=#{pgo_profile}", *profpath.glob("*.profraw")
 
       # Make sure to build with our profiled compiler and use the profile data
-      args << "-DCMAKE_C_COMPILER=#{llvmpath}/stage1/bin/clang"
-      args << "-DCMAKE_CXX_COMPILER=#{llvmpath}/stage1/bin/clang++"
+      args << "-DCMAKE_C_COMPILER=#{stage1}/bin/clang"
+      args << "-DCMAKE_CXX_COMPILER=#{stage1}/bin/clang++"
       args << "-DLLVM_PROFDATA_FILE=#{pgo_profile}"
       # `llvm-tblgen` is an install target, so let's build that.
-      args << "-DCLANG_TABLEGEN=#{llvmpath}/stage1/bin/clang-tblgen"
+      args << "-DCLANG_TABLEGEN=#{stage1}/bin/clang-tblgen"
 
       # Silence some warnings
-      cflags << "-Wno-backend-plugin"
-      cxxflags << "-Wno-backend-plugin"
-
-      args << "-DCMAKE_C_FLAGS=#{cflags.join(" ")}"
-      args << "-DCMAKE_CXX_FLAGS=#{cxxflags.join(" ")}"
+      ENV.append_to_cflags "-Wno-backend-plugin"
     end
+
+    if ENV.cflags.present?
+      args << "-DCMAKE_C_FLAGS=#{ENV.cflags}"
+      runtimes_cmake_args << "-DCMAKE_C_FLAGS=#{ENV.cflags}"
+      builtins_cmake_args << "-DCMAKE_C_FLAGS=#{ENV.cflags}"
+    end
+
+    if ENV.cxxflags.present?
+      args << "-DCMAKE_CXX_FLAGS=#{ENV.cxxflags}"
+      runtimes_cmake_args << "-DCMAKE_CXX_FLAGS=#{ENV.cxxflags}"
+      builtins_cmake_args << "-DCMAKE_CXX_FLAGS=#{ENV.cxxflags}"
+    end
+
+    args << "-DRUNTIMES_CMAKE_ARGS=#{runtimes_cmake_args.join(";")}" if runtimes_cmake_args.present?
+    args << "-DBUILTINS_CMAKE_ARGS=#{builtins_cmake_args.join(";")}" if builtins_cmake_args.present?
 
     # Now, we can build.
     system "cmake", "-S", llvmpath, "-B", "build", "-G", "Ninja", *args, *std_cmake_args

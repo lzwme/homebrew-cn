@@ -27,6 +27,8 @@ class IosWebkitDebugProxy < Formula
   depends_on "libusbmuxd"
   depends_on "openssl@3"
 
+  allow_network_access! :test
+
   def install
     system "./autogen.sh", *std_configure_args
     system "make", "install"

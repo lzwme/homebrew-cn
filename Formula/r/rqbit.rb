@@ -7,13 +7,12 @@ class Rqbit < Formula
   head "https://github.com/ikatson/rqbit.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "2926fe475c67856d43161fce3569ed56d888742a6a5b711f9bf03c77e8fb6d86"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "4dca7d2cd2f280e9faf40def0976b4af3376ccf0fa55a97542825fbb92b22d14"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "5e2f6c877977e8cf35fe3d594b2765f1c32e74574b5e93df44f59519cc787427"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "5140af1afa446f83e16b442e21b4c8e7c2719978ab93d277594e0fffef3c030f"
-    sha256 cellar: :any_skip_relocation, sonoma:            "a6ddf1439b0d0d2c817e05e56783995efc31b2a82eab0cfe3eb20e5d2996fec6"
-    sha256 cellar: :any,                 arm64_linux:       "68a70796b2f168200ea6f0f819a83c00978304ccc6c435453bb26582df07b1e9"
-    sha256 cellar: :any,                 x86_64_linux:      "19cf681f97b552aff7540b3c156264c59329182dbbb3d4fa0d3f74c168608188"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "62bb2ae7f7c4e50d60cc0a6451e27c65b52f058fc35c7805eadf0da979c6eea3"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "2b92188a2fe9685b54265af619f9f9f619507bc372b272e452671010272a5a4f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "8e9e0fe8ac528b26d540c2e132b52d2523fbef6492913db129d08b78e494ff87"
+    sha256 cellar: :any,                 arm64_linux:       "6a601699eb076c96eaff3d208172ebcee07877becdf737ac5e72e01abcdb651f"
+    sha256 cellar: :any,                 x86_64_linux:      "209d4e7c338188f569c1f7a0e4d26e640d4f03649d7936f2070b6bc66aae8372"
   end
 
   depends_on "node" => :build
@@ -21,13 +20,22 @@ class Rqbit < Formula
   depends_on "rust" => :build
 
   on_linux do
-    depends_on "openssl@3"
+    depends_on "openssl@4"
+  end
+
+  allow_network_access! :test
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+    cd "crates/librqbit/webui" do
+      system "npm", "install", *std_npm_args(prefix: false)
+    end
   end
 
   def install
-    # Ensure the declared `openssl@3` dependency will be picked up.
+    # Ensure the declared `openssl@4` dependency will be picked up.
     # https://docs.rs/openssl/latest/openssl/#manual
-    ENV["OPENSSL_DIR"] = formula_opt_prefix("openssl@3")
+    ENV["OPENSSL_DIR"] = formula_opt_prefix("openssl@4")
 
     system "cargo", "install", *std_cargo_args(path: "crates/rqbit")
 
@@ -42,8 +50,8 @@ class Rqbit < Formula
     if OS.linux?
       require "utils/linkage"
       [
-        formula_opt_lib("openssl@3")/shared_library("libssl"),
-        formula_opt_lib("openssl@3")/shared_library("libcrypto"),
+        formula_opt_lib("openssl@4")/shared_library("libssl"),
+        formula_opt_lib("openssl@4")/shared_library("libcrypto"),
       ].each do |library|
         assert Utils.binary_linked_to_library?(bin/"rqbit", library),
                "No linkage with #{library.basename}! Cargo is likely using a vendored version."

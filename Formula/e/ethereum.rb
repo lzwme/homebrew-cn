@@ -1,8 +1,8 @@
 class Ethereum < Formula
   desc "Official Go implementation of the Ethereum protocol"
   homepage "https://geth.ethereum.org/"
-  url "https://ghfast.top/https://github.com/ethereum/go-ethereum/archive/refs/tags/v1.17.5.tar.gz"
-  sha256 "8428049b30e76efcd19507225aa67c67d5d98c10a0f3a4ea339dfbba285bac7d"
+  url "https://ghfast.top/https://github.com/ethereum/go-ethereum/archive/refs/tags/v1.17.6.tar.gz"
+  sha256 "b358cd5abb0f5639cd2409877d73f3d5002d834c3e781734a1010dda1c0914ad"
   license "LGPL-3.0-or-later"
   head "https://github.com/ethereum/go-ethereum.git", branch: "master"
 
@@ -12,17 +12,14 @@ class Ethereum < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "cede3b04789ef95cad33fbe554869d4f334fb9843b5465685411f55c4dd4621d"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "12d2b11da1c0b6619e13d3cc86ad83459410b85a9eb48b5d0a27028fc48c4cb4"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "ec5e60a5b948adf930f7cf08b0bef630e979a86cb842a519ae1a0a4fa30037dd"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "5fb56f12ee1745b9ee0863cdc5c95e0d78968bd6c0c75f39f63defb1f8400725"
-    sha256 cellar: :any_skip_relocation, sonoma:            "f9f745105329c47aa874d0dbc5af508a89887029489093e824e2557ad183e117"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "5c85fe88f7e63c5c9737ee9d6b06748531a9ed94b0782cfdd42d060a81ba37a3"
-    sha256 cellar: :any,                 x86_64_linux:      "99e3debd89b376ab8edeca2ec575fa210f0fb4a07bcbec51ba109a2c5fa40934"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "53c6b84ae67d4016e825311faec1aad55fc8f49882ad9e6fc5ca42aaec29416d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "4a1272a1403773cfcfe01ac109531dac268c4fe7c74ce12fea8761d65fe8ffd6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "074e5f0071d6ebceb2b54bd9aeeaacf436daef0f749ea701012cee6ea02c5079"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "031587f595a246a871c6886f99e4f390b7211214a2b8e30df8fb1c060eafa36f"
+    sha256 cellar: :any,                 x86_64_linux:      "a57e5f5df64f37d2e3e5bd97915c85f8ca15101c477bcfa938b6ee0f64383ed1"
   end
 
-  # TODO: unpin go@1.26 when ethereum supports go 1.27
-  depends_on "go@1.26" => :build
+  depends_on "go" => :build
 
   deny_network_access!
 

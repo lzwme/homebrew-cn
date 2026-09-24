@@ -1,18 +1,16 @@
 class PayloadDumperGo < Formula
   desc "Android OTA payload dumper written in Go"
   homepage "https://github.com/ssut/payload-dumper-go"
-  url "https://ghfast.top/https://github.com/ssut/payload-dumper-go/archive/refs/tags/2.0.2.tar.gz"
-  sha256 "76ee9b4798fc6fd270885b15640e794bb5e9fd5739b843d0a68c2637a06e50c8"
+  url "https://ghfast.top/https://github.com/ssut/payload-dumper-go/archive/refs/tags/2.1.0.tar.gz"
+  sha256 "a08b778cab580d3e30b4867f9598ffa99b85d63cab2b4dab7a4c29694f04112c"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "1c40c2c970b51a0ecaa94a1bd9ac63fe74629bed83587b4ba0b1aa6b15802dd3"
-    sha256 cellar: :any, arm64_tahoe:       "1f40d23e05a8ce1e81cc64d772a521d8bff997af3cdff1d69b63993674db4f7c"
-    sha256 cellar: :any, arm64_sequoia:     "7005af14505be5f4582db4b9696bea16e2461791374e9c2a5c91b0ef2cd5e7e9"
-    sha256 cellar: :any, arm64_sonoma:      "2eb565646c5fa6b9d80d254e6aebfd8136981cc05d27cdc98e84d21180cd66b7"
-    sha256 cellar: :any, sonoma:            "21692997384aa75a4a7b431593ebab71f3d62b24b847ae42cb1dda83b32dbaaf"
-    sha256 cellar: :any, arm64_linux:       "dc0003def87970fc4e904881a45f7d7cd594c4fab6f874742dd99c80338de3c7"
-    sha256 cellar: :any, x86_64_linux:      "dc00c729b29a11397ade1c6077e9bd01164e3f093d7135ee369856db51fef768"
+    sha256 cellar: :any, arm64_golden_gate: "0fec05bd01f42f1eea69c5a7a7dcf26c29bfa48eb3d7583ddd61f4b2df8a9609"
+    sha256 cellar: :any, arm64_tahoe:       "a7ac9a4f7d075a9b5f30199c213524c3a9fa7c9731f1b4de61fa105781161916"
+    sha256 cellar: :any, arm64_sequoia:     "807b512a330347c3edfc92ad305106f0698a011aedcdf7332998e6c31dd14f14"
+    sha256 cellar: :any, arm64_linux:       "2fb22a52d86e908876570e4ae71379f8add08dfa9ebaa59cc778ba801d4b39e2"
+    sha256 cellar: :any, x86_64_linux:      "59257b1d11a9096ad059fa0b234f549625f75531a4704f4c7c653d6ba7cc46e7"
   end
 
   depends_on "go" => :build

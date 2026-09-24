@@ -25,6 +25,8 @@ class Sixtunnel < Formula
     depends_on "libtool" => :build
   end
 
+  allow_network_access! :test
+
   def install
     system "./autogen.sh" if build.head?
     system "./configure", "--disable-silent-rules", *std_configure_args

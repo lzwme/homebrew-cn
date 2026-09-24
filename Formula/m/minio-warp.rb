@@ -1,17 +1,17 @@
 class MinioWarp < Formula
   desc "S3 benchmarking tool"
   homepage "https://github.com/minio/warp"
-  url "https://ghfast.top/https://github.com/minio/warp/archive/refs/tags/v1.8.0.tar.gz"
-  sha256 "5f0f8cbffccb4685cb5d1b191337369becf8fdd65277b68b189eb1e9eba6647b"
+  url "https://ghfast.top/https://github.com/minio/warp/archive/refs/tags/v1.8.1.tar.gz"
+  sha256 "b76116e34897c98a4cf8903d5b8cfde14bc0a2a39208027c2690c2b6f5e4f088"
   license "AGPL-3.0-or-later"
   head "https://github.com/minio/warp.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "3e309a30a86d40b1e79aa07a9d15224772a688c4c3ee9d210f7552efb7211c68"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "22c517bd8e66fde990c6fee120bb09225aa82277298a833a8659be21ba1dff46"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "07b66f60e1f5f4118410010a5b41a6691821e72830b64f2d6718193bc2aa9e98"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "a6902a23b164b4779a298d48143fd6ef2b55a2668bca9ba5fcfc33fe6d3f8b41"
-    sha256 cellar: :any,                 x86_64_linux:      "1e91c9f4cb1783521ea05fea41638985ed51951650607794e3fdab4f6fff7ba6"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "5468e5851d3235cabf89aa568b8907f96ce490f79b8ad88f7118ada51db4a985"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "c7440392f8fa853b0e1e8a5c8fd6fb5d4025deb4468d01003d0b357189c4154a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "6f14f709f25957c7564ab32b49eb78e906f7d9c982efeb6c7ca05795500f6dab"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "6673e643e4e3a8fc551f3176551f4f7e8b0be839244bd33f62ba4fa5f1876b4f"
+    sha256 cellar: :any,                 x86_64_linux:      "282eabd0b64b1b8af3e5657e60505e7ea210d4e842cbaec1d389d625578cd524"
   end
 
   depends_on "go" => :build

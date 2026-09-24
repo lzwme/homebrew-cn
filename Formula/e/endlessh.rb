@@ -20,6 +20,8 @@ class Endlessh < Formula
 
   uses_from_macos "netcat" => :test
 
+  allow_network_access! :test
+
   def install
     inreplace "endlessh.c", "/etc/endlessh/", "#{pkgetc}/"
     system "make", "PREFIX=#{prefix}", "install"

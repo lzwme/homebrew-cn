@@ -38,6 +38,8 @@ class Stubby < Formula
     depends_on "bind" => :test
   end
 
+  allow_network_access! :test
+
   def install
     args = %W[
       -DCMAKE_INSTALL_RUNSTATEDIR=#{var}/run/

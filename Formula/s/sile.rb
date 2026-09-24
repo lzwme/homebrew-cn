@@ -7,14 +7,12 @@ class Sile < Formula
   revision 1
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_golden_gate: "8b28c7de2675b2c573eea222c022628c8eb49eaad3fd9498ec1fb6720dfa05c1"
-    sha256 cellar: :any,                 arm64_tahoe:       "84311a8e0777cad0808ef2e936df25589c908410fdf80f8e59a336c07530eb0d"
-    sha256 cellar: :any,                 arm64_sequoia:     "758458193f72b63e0404eb5475aeb44bdd6819942918e758e97dcb32bdc05090"
-    sha256 cellar: :any,                 arm64_sonoma:      "ad308a0c985244934ca559aab8ba718e217e72e4ad805504e6c8dc8c1037e458"
-    sha256 cellar: :any,                 sonoma:            "1fbd167ab091deeb57811129b2c31446acef25597accf72de9a1bf9efe8c55e6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "4f05214a3fe6b2a84909859ab5484935dcba0045e3aff5bc5104e2a39f56eb4a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "6074cb5bbd1485cbcda34b290269ed29990895d800d9458e7d8c814904b8ad11"
+    rebuild 2
+    sha256 cellar: :any, arm64_golden_gate: "8f2cc9a1c1e2eed25cfcada436bdec5c60c9da652d03775f43244962a0fb7d0c"
+    sha256 cellar: :any, arm64_tahoe:       "aef6063bd080d98dbe720ef38fa12ca7e73ea30b2a2b97dee8deed3aeca2594f"
+    sha256 cellar: :any, arm64_sequoia:     "5941b9a72ba6beb6171e787dbace80575793fb1ebd4a186c9ba1e35974f2d963"
+    sha256 cellar: :any, arm64_linux:       "3cd11c17826b43a7ca4ac452c0d4db11db0f46bc2ab746e8b89d0749c1a42270"
+    sha256 cellar: :any, x86_64_linux:      "f289240fd0caf4f28de5d38fcfdbe81294978ca47f7c922ca023055aeaebc902"
   end
 
   head do
@@ -35,7 +33,7 @@ class Sile < Formula
   depends_on "libpng"
   depends_on "luajit"
   depends_on "luarocks"
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   uses_from_macos "jq" => :build, since: :sequoia
   uses_from_macos "unzip" => :build
@@ -174,7 +172,7 @@ class Sile < Formula
     luarocks_args = %W[
       ZLIB_DIR=#{zlib_dir}
       EXPAT_DIR=#{expat_dir}
-      OPENSSL_DIR=#{formula_opt_prefix("openssl@3")}
+      OPENSSL_DIR=#{formula_opt_prefix("openssl@4")}
       --tree=#{luapath}
       --lua-dir=#{lua.opt_prefix}
     ]

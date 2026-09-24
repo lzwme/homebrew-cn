@@ -17,6 +17,8 @@ class ScmManager < Formula
   depends_on "jsvc"
   depends_on "openjdk"
 
+  allow_network_access! :test
+
   def install
     # Replace pre-built `jsvc` with formula to add Apple Silicon support
     inreplace "bin/scm-server", %r{ \$BASEDIR/libexec/jsvc-.*"}, " #{formula_opt_bin("jsvc")}/jsvc\""

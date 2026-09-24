@@ -17,6 +17,8 @@ class Hss < Formula
 
   depends_on "readline"
 
+  allow_network_access! :test
+
   def install
     system "make"
     system "make", "install", "INSTALL_BIN=#{bin}"

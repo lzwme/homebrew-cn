@@ -30,6 +30,8 @@ class Urdfdom < Formula
   depends_on "tinyxml2"
   depends_on "urdfdom_headers"
 
+  deny_network_access!
+
   def install
     ENV.cxx11
     system "cmake", "-S", ".", "-B", "build", "-DCMAKE_INSTALL_RPATH=#{rpath}", *std_cmake_args

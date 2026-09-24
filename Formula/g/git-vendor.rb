@@ -11,6 +11,8 @@ class GitVendor < Formula
     sha256 cellar: :any_skip_relocation, all: "787b5a6895706acdec2ad5cc6dade2cef8dbdfcd0d0352b6fbc45a6a40489f0e"
   end
 
+  allow_network_access! :test
+
   def install
     system "make", "PREFIX=#{prefix}", "install"
   end

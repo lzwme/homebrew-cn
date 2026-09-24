@@ -30,11 +30,13 @@ class Zim < Formula
     sha256 "3267bb3074e934df202af2ee0868575484108581e6f3cb006af1da35395e88b4"
   end
 
+  deny_network_access!
+
   def install
     # Importing zim initialises GTK's Quartz display, which brew's macOS sandbox denies; build and test need none
     ENV["GDK_BACKEND"] = "none" if OS.mac?
     venv = virtualenv_create(libexec, python3)
-    venv.pip_install resources
+    venv.pip_install resources, build_isolation: false
     venv.pip_install buildpath, build_isolation: false
 
     (bin/"zim").write_env_script libexec/"bin/zim",

@@ -1,8 +1,8 @@
 class FetchCrl < Formula
   desc "Retrieve certificate revocation lists (CRLs)"
   homepage "https://wiki.nikhef.nl/grid/FetchCRL3"
-  url "https://dist.eugridpma.info/distribution/util/fetch-crl3/fetch-crl-3.0.24.tar.gz"
-  sha256 "6a109c3cd93531e5fbd9e3fc4cef5cdda4a553c31e983507cead72a145627fa7"
+  url "https://dist.eugridpma.info/distribution/util/fetch-crl3/fetch-crl-3.0.25.tar.gz"
+  sha256 "e466f90a7f8deb9bbe29874897a308f456f8775dd0e00b4971757f97d5855151"
   license "Apache-2.0"
 
   livecheck do
@@ -11,12 +11,11 @@ class FetchCrl < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "8dd6f07a8c4f8a431947dc62fb4227d2533b8b8109e5846a40ff0921cd7ab279"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "8dd6f07a8c4f8a431947dc62fb4227d2533b8b8109e5846a40ff0921cd7ab279"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "8dd6f07a8c4f8a431947dc62fb4227d2533b8b8109e5846a40ff0921cd7ab279"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "8dd6f07a8c4f8a431947dc62fb4227d2533b8b8109e5846a40ff0921cd7ab279"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "b1e966c1cc59d653cc3873e176c93e166d6c1024b039975617bf67b5f23452ba"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "fe090b6633c495b997db7697b0576524d9b283b2d036dc62cb4ff494afd20dd5"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "2385527f2d6cb73580e951ac76bcdfa89cfe526695db164b39304e1b58a97146"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "2385527f2d6cb73580e951ac76bcdfa89cfe526695db164b39304e1b58a97146"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "2385527f2d6cb73580e951ac76bcdfa89cfe526695db164b39304e1b58a97146"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "1b211afaed479ca3f780bb8409c684f4364b56155a8bac56abf3ba3d9052499e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "9752e315cb9d6eaec70792ea3363c219fb548ac324aaea849b05e211e5c98779"
   end
 
   uses_from_macos "perl"

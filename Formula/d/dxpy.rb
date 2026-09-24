@@ -3,16 +3,16 @@ class Dxpy < Formula
 
   desc "DNAnexus toolkit utilities and platform API bindings for Python"
   homepage "https://github.com/dnanexus/dx-toolkit"
-  url "https://files.pythonhosted.org/packages/d7/10/d38552dc28cf53c28b3a07bdd4936ea78a65a420c969e8caa60b52b66cae/dxpy-0.414.0.tar.gz"
-  sha256 "0f8c502a0087d91c4f616dcbfffdc5116ea4b7699e7297b5cb152540f63266b9"
+  url "https://files.pythonhosted.org/packages/98/98/7f8504aa4b04172fb73e8226696349111a92221db85016e6baf4e258f319/dxpy-0.415.0.tar.gz"
+  sha256 "62ca97b746e673da5428f0ab1cb2517aaed324173c340b1a2039dbdf5e3befd2"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "6e8dc76dd7371602f1c339782075068f83425a8981482f8e82f37b33870af627"
-    sha256 cellar: :any, arm64_tahoe:       "926550b5f46d1686bd90c27f9ff6b8d07c3a70b56473d28a8b660aa319f3a5f6"
-    sha256 cellar: :any, arm64_sequoia:     "5dfd53326a18fcb3179505a160543bf17e747f907685352486098f21268d84df"
-    sha256 cellar: :any, arm64_linux:       "29f5b743766f1bb5e0cde555136e2a25554be5d089fe60725d4eb3faac4ea771"
-    sha256 cellar: :any, x86_64_linux:      "a38feac534b9be02ee4bc34b605b0c210547c2e450fef3aeed658f7d542d1f73"
+    sha256 cellar: :any, arm64_golden_gate: "571dc3d3fa54ce81fc1e7a99875b357da0440f00b70d34ba0940ecead066f995"
+    sha256 cellar: :any, arm64_tahoe:       "1f267584cbafc8dd7d62ed24c1fa6a12804e584d86366286a6fee8bbd3bd737a"
+    sha256 cellar: :any, arm64_sequoia:     "2c55cce96ff232f07ace602d2cf660c51a5555384b613a381189da8f32fd9218"
+    sha256 cellar: :any, arm64_linux:       "fca4096aa4d98afde50329144b46ee42d41672a8eb9282e50f1c667a08adf1da"
+    sha256 cellar: :any, x86_64_linux:      "d656a25521b624ee281c4b5cf532c16969d0a8e5c0767c079d747271d3be8118"
   end
 
   depends_on "aws-c-auth"
@@ -45,8 +45,8 @@ class Dxpy < Formula
   end
 
   resource "awscrt" do
-    url "https://files.pythonhosted.org/packages/5a/bd/c2f26ee1e70b263f9a8c798749e0ec0b5a599c1dc46fe5648a6d6ebd9b44/awscrt-0.36.3.tar.gz"
-    sha256 "d3e97196dcf152232e0a8df9eb5a41dec4b3a3315794179116f1ace4b331c750"
+    url "https://files.pythonhosted.org/packages/bb/02/2a724318c05aa0e6e74e2537e3a841097ad2aeb737bdc27c6a74ce72358f/awscrt-0.36.4.tar.gz"
+    sha256 "5b6a53f10e8dd060e7c0c91d063831137239c234877a6d1f03b277dfbac0c507"
   end
 
   resource "crc32c" do

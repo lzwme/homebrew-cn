@@ -2,18 +2,17 @@ class Aom < Formula
   desc "Codec library for encoding and decoding AV1 video streams"
   homepage "https://aomedia.googlesource.com/aom"
   url "https://aomedia.googlesource.com/aom.git",
-      tag:      "v3.15.0",
-      revision: "de4c1d1edc49723a78954d30a83690aa1937422f"
+      tag:      "v3.15.1",
+      revision: "44d0a57786f432d933ff64b653347c66f4d0fa1d"
   license "BSD-2-Clause"
   head "https://aomedia.googlesource.com/aom.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "af36a21b43824331dd0dcc3b5e6f8ad30f0987977346b63a794fb43af6f4cdda"
-    sha256 cellar: :any, arm64_tahoe:       "fa21f5d8f33607865ebb97f3d0d00c1b66478974655429fbb380453860b49bc8"
-    sha256 cellar: :any, arm64_sequoia:     "11f0ac517540167458ed0cf802122c1c2acb0e68324e4e15f68b42fbcbcb4085"
-    sha256 cellar: :any, arm64_sonoma:      "55e1d1912482f0eb4b3a1d361aa539d60a133fc7970b54fbf03a9de6b9a06979"
-    sha256 cellar: :any, arm64_linux:       "a3050f86d92eaff18666350a942860196c36beaf918dbbea42f461f7a05246bb"
-    sha256 cellar: :any, x86_64_linux:      "cab4a72d9c97b16f8e418afcb05d4660f64fe68d20668b821cb57d47296b59b8"
+    sha256 cellar: :any, arm64_golden_gate: "1b8cc8b3704e99e634b6bb3baff07ec508cd7a055fbf51cb4a951d8fb4b2065f"
+    sha256 cellar: :any, arm64_tahoe:       "f78fc63421cf6d79eae934ffb0c0b8e671285cee6e4213c4fd08e5ff84b3d393"
+    sha256 cellar: :any, arm64_sequoia:     "356ad2843b8ab1c11cc83043256cbcfeb659eb031215ecd116dfcbe2ea3f1d11"
+    sha256 cellar: :any, arm64_linux:       "e6b3ee10a86d33cae4d6658a7cbfe3b164fedafe4cf279f80c14f84113cda99a"
+    sha256 cellar: :any, x86_64_linux:      "ed7e7a71a73934b4d5e599fa0f7e61517c8ef6bae02626f438ca2f90fb389370"
   end
 
   depends_on "cmake" => :build
@@ -23,6 +22,8 @@ class Aom < Formula
   on_intel do
     depends_on "nasm" => :build
   end
+
+  allow_network_access! :test
 
   def install
     ENV.runtime_cpu_detection

@@ -20,10 +20,22 @@ class Zrok < Formula
   depends_on "go" => :build
   depends_on "node" => :build
 
-  def install
-    ["ui", "agent/agentUi"].each do |ui_dir|
-      cd "#{buildpath}/#{ui_dir}" do
+  deny_network_access!
+
+  def ui_dirs = ["ui", "agent/agentUi"]
+
+  def fetch
+    ui_dirs.each do |ui_dir|
+      cd ui_dir do
         system "npm", "install", *std_npm_args(prefix: false)
+      end
+    end
+    system "go", "mod", "download"
+  end
+
+  def install
+    ui_dirs.each do |ui_dir|
+      cd ui_dir do
         system "npm", "run", "build"
       end
     end

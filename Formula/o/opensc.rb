@@ -1,9 +1,20 @@
 class Opensc < Formula
   desc "Tools and libraries for smart cards"
   homepage "https://github.com/OpenSC/OpenSC/wiki"
-  url "https://ghfast.top/https://github.com/OpenSC/OpenSC/releases/download/0.27.1/opensc-0.27.1.tar.gz"
-  sha256 "976f4a23eaf3397a1a2c3a7aac80bf971a8c3d829c9a79f06145bfaeeae5eca7"
   license "LGPL-2.1-or-later"
+
+  stable do
+    url "https://ghfast.top/https://github.com/OpenSC/OpenSC/releases/download/0.27.1/opensc-0.27.1.tar.gz"
+    sha256 "976f4a23eaf3397a1a2c3a7aac80bf971a8c3d829c9a79f06145bfaeeae5eca7"
+
+    # Backport support for OpenSSL 4.0
+    patch do
+      url "https://github.com/OpenSC/OpenSC/commit/8ad96adc5fea0cef923a2a679600f3a5c4c5bfce.patch?full_index=1"
+      sha256 "0b4c4985150892ce1a0108b1a36f3db4c29e7f4453e86b039bf3b36384db43ee"
+      type :backport
+      resolves "https://github.com/OpenSC/OpenSC/pull/3655"
+    end
+  end
 
   livecheck do
     url :stable
@@ -11,13 +22,12 @@ class Opensc < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "337e57c3db5e9723e3c8649993e5417b65d9467fd1e8779df6aa9f78415fc3de"
-    sha256 arm64_tahoe:       "a0fc8a7cfee8eb808f3dd85158c0cd45d53b6862166943c4c78b32ba0a00a6a5"
-    sha256 arm64_sequoia:     "214b7c86658066779e336e95389d52708b72aea0b56cdddf19fd239f46ba5149"
-    sha256 arm64_sonoma:      "b4aa3d604ff4ba095b74c24095c513ce0e5c8e9ff9597098b948e187da718bd4"
-    sha256 sonoma:            "8b550f5d6a6dc75cf9d04b7275d183a774ac527ef18992a78da86b2361e2ea5c"
-    sha256 arm64_linux:       "6425b5a29fa9a7552449200f4fd125d9b90a2d2db4db5f6f7d5465dae07b12de"
-    sha256 x86_64_linux:      "dbd088f9f5696f2469be2b0ca5e89d4dbc90575c5fa7fb79b56f20680546f8f4"
+    rebuild 1
+    sha256 arm64_golden_gate: "e461bcb7d55a07718b3c30b27d5dffd6ad9854fe8934145f046bd8d12b22f55e"
+    sha256 arm64_tahoe:       "89c9f2fb19add21311025692b85e8e5e9b8b47a715f41046745f146f16b8de51"
+    sha256 arm64_sequoia:     "7cfe160130e306d3e502ee373b41d6d4f8550030ff1ae24a4ba3da611c09eb2a"
+    sha256 arm64_linux:       "79bee22657f8edb9b348b8a2e51ab94fc1e54bbd919c9c739185353f6373d794"
+    sha256 x86_64_linux:      "1649fd1a59be34d6b3640cf7b57bfb7c00c058e82ec3e188dd148a451989c3a7"
   end
 
   head do
@@ -30,7 +40,7 @@ class Opensc < Formula
 
   depends_on "docbook-xsl" => :build
   depends_on "pkgconf" => :build
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   uses_from_macos "libxslt" => :build # for xsltproc
   uses_from_macos "pcsc-lite"
@@ -40,6 +50,8 @@ class Opensc < Formula
     depends_on "readline"
     depends_on "zlib-ng-compat"
   end
+
+  deny_network_access!
 
   def install
     args = %W[

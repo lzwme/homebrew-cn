@@ -53,6 +53,8 @@ class ZigAT015 < Formula
     type :unofficial
   end
 
+  deny_network_access!
+
   def install
     # Workaround for https://github.com/Homebrew/homebrew-core/pull/141453#discussion_r1320821081.
     # This will likely be fixed upstream by https://github.com/ziglang/zig/pull/16062.

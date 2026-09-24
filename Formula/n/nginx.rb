@@ -15,14 +15,15 @@ class Nginx < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "727d0120e6e0a3c74ea173e3922a90ab13583cfa4cfeecba0724a7435b3ef3cf"
-    sha256 arm64_tahoe:       "592c48aa9f9b0087b62fc448828f05aac754de34fba1900530ddc3c0e4438738"
-    sha256 arm64_sequoia:     "5199c9f6ac0382edf21724c27cd533001e887a053776253da95db8f5fb5ec307"
-    sha256 arm64_linux:       "05cafc7cb85ff8bf4c2950a9de43ef537a49af8bc5a8af751153da7ce824b554"
-    sha256 x86_64_linux:      "5a8bc928b7a57fb7d8a9db830261f236537df94b303703fa5f4dd2926e8487e1"
+    rebuild 1
+    sha256 arm64_golden_gate: "a0adfa614cd117c10a6944942f6c054b9f80d6cb87bc395eee08bee298c6d320"
+    sha256 arm64_tahoe:       "7d1f7ba9e21db0602bc1eee30fca7562496e3639794316b1a301dd011ee29003"
+    sha256 arm64_sequoia:     "1660d7abde703fd3f02c4019eadd41635843ad72dff68d26a39dfde9da1a69be"
+    sha256 arm64_linux:       "c390da25705b43679fe6302c02252743f03466156d0ca6b2f464ea7da4da5721"
+    sha256 x86_64_linux:      "20ca5e6cf3194cac5f472054e1c3d770d9b9e6b48fd8faff86952df6c9336bff"
   end
 
-  depends_on "openssl@3"
+  depends_on "openssl@4"
   depends_on "pcre2"
 
   uses_from_macos "xz" => :build
@@ -49,8 +50,8 @@ class Nginx < Formula
       s.gsub! "    #}\n\n}", "    #}\n    include servers/*;\n}"
     end
 
-    cc_opt = "-I#{formula_opt_include("pcre2")} -I#{formula_opt_include("openssl@3")}"
-    ld_opt = "-L#{formula_opt_lib("pcre2")} -L#{formula_opt_lib("openssl@3")}"
+    cc_opt = "-I#{formula_opt_include("pcre2")} -I#{formula_opt_include("openssl@4")}"
+    ld_opt = "-L#{formula_opt_lib("pcre2")} -L#{formula_opt_lib("openssl@4")}"
 
     args = %W[
       --prefix=#{prefix}

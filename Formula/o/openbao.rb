@@ -2,8 +2,8 @@ class Openbao < Formula
   desc "Provides a software solution to manage, store, and distribute sensitive data"
   homepage "https://openbao.org/"
   url "https://github.com/openbao/openbao.git",
-      tag:      "v2.6.2",
-      revision: "dd9c19c37a878cf4a81b18efb8d6f0599c7da923"
+      tag:      "v2.7.0",
+      revision: "ca305a02daa68b203325daa1b25c18d7a252d4b3"
   license "MPL-2.0"
   head "https://github.com/openbao/openbao.git", branch: "main"
 
@@ -13,13 +13,11 @@ class Openbao < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "2afe3add99949b534b3c2c7ab3ef9cd33311ac9903ef5774286115ef906e9798"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "d0104caeb286c38a7a9f920f9c93e21ec542274fe35fb1618f921fcd52fde4b6"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "7c83911684793c99ce8192304aa6f60ea9741a398bf9e9e51d5623b5ce556797"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "f7ef2a38eed42d7a5cc6ec6bda937b8e0edc12dbb313a587d7da92f3b0a7018a"
-    sha256 cellar: :any_skip_relocation, sonoma:            "d3d56fe3db5327332c44833c7ad657bd26a79f5d1ea96e0bcae283e5261a33aa"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "bb438ff14b3e20ce2d3dfc66f810f76af0f437a762e8398749dbb24f0761c552"
-    sha256 cellar: :any,                 x86_64_linux:      "888e53f7fa454054b602a0872cbb8993d5398f71aa9b49b7b5cd8a6c997317ad"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "d89cc489bd62f0ecb058a201e6cd3db12689e167f2041974a647815791fa3932"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "9d83205515d4863f2ba1a8abe6d65df9342fa88c6ef8090d2958519930c80358"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "aea1672fa7f7de8968957a9c687bbbe550868ddcbcc9a0e8c30e96c1e8f3492a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "bf1ef6f1e159ccccc027238eeee3389bb39134937fda11e0a56f1e2a59617be1"
+    sha256 cellar: :any,                 x86_64_linux:      "e7d212f36c7e5b6236b7731bbd5d778207b03638815c45902218643a1e58b7f6"
   end
 
   depends_on "go" => :build

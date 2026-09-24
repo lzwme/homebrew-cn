@@ -78,6 +78,8 @@ class Dovecot < Formula
     type :unofficial
   end
 
+  allow_network_access! :test
+
   def install
     # Re-generate file as only Linux has inotify support for imap-hibernate
     rm "src/config/all-settings.c" unless OS.linux?

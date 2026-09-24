@@ -12,18 +12,19 @@ class SequoiaSq < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "5ab6271093026566f938f68062dd2431070ed8526e5edc96e95077b52647cc38"
-    sha256 cellar: :any, arm64_tahoe:       "5dd374a00324f2f3aaff69e05626a5eac6e774685d41aecaedac950703505b43"
-    sha256 cellar: :any, arm64_sequoia:     "c383b86714c75e5f061b900f117defd67cb8f762699e9249654050bac18d39a5"
-    sha256 cellar: :any, arm64_linux:       "1e4b2cca0210bfaee779794a0ba3f3948859b2ed184886ad51cb2919e1779ae8"
-    sha256 cellar: :any, x86_64_linux:      "bf868f2eacab66e2a60f8a046ae8944a8d82b856a153cb9794d540657414ce50"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "622f31af9956e3a8903c8817cc2bb1ff0043e24ed16c4de20e648b43ec898df4"
+    sha256 cellar: :any, arm64_tahoe:       "8024c747ca5b7ba54c2f439729ae1dbbb7c9f26d5c78487e640ed04b3047d83c"
+    sha256 cellar: :any, arm64_sequoia:     "9bb43b2aeae455aa329ca1b529f3a0e571d388ca26e378ef144c1addc169cc0c"
+    sha256 cellar: :any, arm64_linux:       "4dbb45b4b8bf1a3110267ddd10bacc7b3d2519966680afc1ce23a4656f38e4d7"
+    sha256 cellar: :any, x86_64_linux:      "6b377318dc71380cd0fe5ff03b18f7ee1818d0fa5630cd77d69731ea699205e5"
   end
 
   depends_on "capnp" => :build
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
 
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   uses_from_macos "llvm" => :build
   uses_from_macos "bzip2"
@@ -31,8 +32,14 @@ class SequoiaSq < Formula
 
   conflicts_with "sq", "squirrel-lang", because: "both install `sq` binaries"
 
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
-    ENV["OPENSSL_DIR"] = formula_opt_prefix("openssl@3")
+    ENV["OPENSSL_DIR"] = formula_opt_prefix("openssl@4")
     ENV["ASSET_OUT_DIR"] = buildpath
 
     system "cargo", "install", "--no-default-features", *std_cargo_args(features: "crypto-openssl")

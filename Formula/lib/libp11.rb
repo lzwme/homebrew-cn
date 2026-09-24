@@ -11,12 +11,12 @@ class Libp11 < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "3a3d8c0562e26805ff3044941a6f9f08571dd2f9b860069177daa789854ff503"
-    sha256 cellar: :any, arm64_tahoe:       "0a4c68939012e96b0a0a90ee8ab45d8250a31034b04a88f2f9e11cf97512e283"
-    sha256 cellar: :any, arm64_sequoia:     "f34dbb71ec65bf6efbbea04f315bb78dcd0fbdf415290475e293e78c1163dd9a"
-    sha256 cellar: :any, arm64_sonoma:      "3ade95480d16f681cbf20bb11b57fa1ed50def7d832c3c368916e4270c3c5b9f"
-    sha256 cellar: :any, arm64_linux:       "dc49f2a295a4a8650c7d4523eb041c81a31cd0dea9abae72a74791e3d6c3b77a"
-    sha256 cellar: :any, x86_64_linux:      "9296e49c72bfb784ae401a8b1cdc1e76616844583df03774a7c2978ce9944198"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "f5b19e4558fa37afa2c3c3a3deeefaf8d425ccd23a269a7e85fffbd8fa580ce9"
+    sha256 cellar: :any, arm64_tahoe:       "b0af52e43f671ff8da921e1a1190afe177bca853d0acfd93b524d8485b42e365"
+    sha256 cellar: :any, arm64_sequoia:     "0100187fd64dd40d62334fd6f913a7f5f30e81d1ff2cbe00801e3da4ac1cd8c5"
+    sha256 cellar: :any, arm64_linux:       "520d4087824a06ade4605034c6ae5f8cc93fbccc4318ee44e486778b8a5621f2"
+    sha256 cellar: :any, x86_64_linux:      "c1bd3fc9862f17eebfe3795270a9eef0021e166c2e329c64db8b953c8d170d18"
   end
 
   head do
@@ -28,20 +28,16 @@ class Libp11 < Formula
 
   depends_on "pkgconf" => :build
   depends_on "libtool"
-  depends_on "openssl@3"
+  depends_on "openssl@4"
+
+  deny_network_access!
 
   def install
-    openssl = deps.find { |d| d.name.match?(/^openssl/) }
-                  .to_formula
-    enginesdir = Utils.safe_popen_read("pkgconf", "--variable=enginesdir", "libcrypto").chomp
-    enginesdir.sub!(openssl.prefix.realpath, prefix)
-
-    modulesdir = Utils.safe_popen_read("pkgconf", "--variable=modulesdir", "libcrypto").chomp
-    modulesdir.sub!(openssl.prefix.realpath, prefix)
+    pkgconf_options = ["--define-variable=prefix=#{prefix}", "--variable=modulesdir"]
+    modulesdir = Utils.safe_popen_read("pkgconf", *pkgconf_options, "libcrypto").chomp
 
     system "./bootstrap" if build.head?
     system "./configure", "--disable-silent-rules",
-                          "--with-enginesdir=#{enginesdir}",
                           "--with-modulesdir=#{modulesdir}",
                           *std_configure_args
     system "make", "install"
@@ -49,8 +45,9 @@ class Libp11 < Formula
   end
 
   test do
-    system ENV.cc, pkgshare/"auth.c", "-I#{formula_opt_include("openssl@3")}",
-                   "-L#{lib}", "-L#{formula_opt_lib("openssl@3")}",
+    openssl = "openssl@4"
+    system ENV.cc, pkgshare/"auth.c", "-I#{formula_opt_include(openssl)}",
+                   "-L#{lib}", "-L#{formula_opt_lib(openssl)}",
                    "-lp11", "-lcrypto", "-o", "test"
   end
 end

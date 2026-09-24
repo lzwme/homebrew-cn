@@ -37,6 +37,8 @@ class Dynomite < Formula
     end
   end
 
+  allow_network_access! :test
+
   def install
     # Work around build failure on recent Clang
     # Issue ref: https://github.com/Netflix/dynomite/issues/818

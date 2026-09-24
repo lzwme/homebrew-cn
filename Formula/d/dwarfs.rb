@@ -53,6 +53,8 @@ class Dwarfs < Formula
     cause "Not all required C++23 features are supported"
   end
 
+  deny_network_access!
+
   def install
     args = %W[
       -DBUILD_SHARED_LIBS=ON

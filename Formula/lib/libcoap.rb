@@ -7,20 +7,34 @@ class Libcoap < Formula
   license "BSD-2-Clause"
 
   bottle do
-    sha256 cellar: :any,                 arm64_golden_gate: "62b4d2b1a6463b0355aadffe1942b187d7e9f6af7c101ba3836c65effe1194cd"
-    sha256 cellar: :any,                 arm64_tahoe:       "4614d5a660ad58aa00e228de30c28add5dd4ee8611c0ddc5c3236a8a3941d9ef"
-    sha256 cellar: :any,                 arm64_sequoia:     "349f96040d93262a68f26c292a45204d1a96202b99de55f094825cb3ab520493"
-    sha256 cellar: :any,                 arm64_sonoma:      "54b950c8e6d8e55a442a70b56cde596a146bd9cec7d04229a0d208233b09a971"
-    sha256 cellar: :any,                 sonoma:            "a9b7105c8631b2e1786751405313d385724af7d3aaf0a9458fb348043f0f87d5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "4d8292ca619e7c69e16abb18cb5fe081aef97b1a21e2bf5bf5803fa3f9135a69"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "e67be80f3a376965b7144640716268676dc9b2314256d41092cd9e5ba7954da3"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "148d4541164a5107839ff43cd9f237d4fd7027452312e5be39f75d83ff72b8e5"
+    sha256 cellar: :any, arm64_tahoe:       "217cd4af1702fdf3e004afc72bd303800c82420002a9c257e32e5a43af33cc0b"
+    sha256 cellar: :any, arm64_sequoia:     "0faff1587a9d48cf0d6864c859acd24f7bd2b070957ed5122c7fd248a5adedba"
+    sha256 cellar: :any, arm64_linux:       "8e532ce37b03f0c8c4b04e46434d1d541202971f29ba12371ae9b72e12371d9f"
+    sha256 cellar: :any, x86_64_linux:      "fd2820c7f5e8ab17f7f22631c1c7a947f5d7f616bf8b6f39bc8218a804e665cf"
   end
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
   depends_on "pkgconf" => :build
-  depends_on "openssl@3"
+  depends_on "openssl@4"
+
+  # Backport support for OpenSSL 4
+  patch do
+    url "https://github.com/obgm/libcoap/commit/83ceb9687cfcc3c4683e8b1423ac00ba01c5be3c.patch?full_index=1"
+    sha256 "4d22e9267fe8fe8d23424df1ec1fac1ccfffd50d07010d2f459402feb71abcdf"
+    type :backport
+  end
+  patch do
+    url "https://github.com/obgm/libcoap/commit/5ea8b7d5e956d1574d78115da007bf23d118f1ae.patch?full_index=1"
+    sha256 "58f7d528e62c7a887201f7c47ae91dbe8b09b0f5cdc5a26fb3c685bb4815ea69"
+    type :backport
+    resolves "https://github.com/obgm/libcoap/pull/2048"
+  end
+
+  allow_network_access! :test
 
   def install
     system "./autogen.sh"

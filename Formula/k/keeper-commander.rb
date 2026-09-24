@@ -3,21 +3,19 @@ class KeeperCommander < Formula
 
   desc "Command-line and SDK interface to Keeper Password Manager"
   homepage "https://docs.keeper.io/en/privileged-access-manager/commander-cli/overview"
-  url "https://files.pythonhosted.org/packages/31/25/f07b69a6a3dc5b9ef182c9d4a4051b9675b1aa311a5a098c0f7f99de92b5/keepercommander-18.1.1.tar.gz"
-  sha256 "09974c18f7edf6f0fa7d1e37caa59f8d6d63fd5d623c4d7ac1ca75058b80758f"
+  url "https://files.pythonhosted.org/packages/6f/1b/36eb0178d6539eb78edb5878cc23056ac982f69a6f7bf9b0c6c5dad7fc34/keepercommander-18.1.5.tar.gz"
+  sha256 "56fbc0fc3a92af441d3b7a24ff38ada43c42f8d7788c5ca51a36007b349fbbe3"
   license "MIT"
   head "https://github.com/Keeper-Security/Commander.git", branch: "master"
 
   no_autobump! because: "macOS resources cannot be updated on linux CI"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "f20df733465383830c6ed5699f5bbdc915b772a21fb057c8033b3b57811b6828"
-    sha256 cellar: :any, arm64_tahoe:       "911c747ef3d27e32d7a41f0e118b715f2d9572f18092ee949a385af1a5c1db88"
-    sha256 cellar: :any, arm64_sequoia:     "4ef1e19c72e12f92ce7d1f762c93bb886d97f478044cfe798a3a54e49f16f56a"
-    sha256 cellar: :any, arm64_sonoma:      "87d036e9d343a6081a4ae1801243ae151a7e5d970640254ec911f154117e38ff"
-    sha256 cellar: :any, sonoma:            "ead90b6de01efff272595585016f664a8ed0ac8055e6e7d516254e2b936a1e0b"
-    sha256 cellar: :any, arm64_linux:       "867d8cda8eb42ab95afa4410e52896908fc4c1a6204431e5e11cfc60e63b8b47"
-    sha256 cellar: :any, x86_64_linux:      "41db969edfde44fce27d0ae2b147550cac354ac23d20d52895af14e401da69a1"
+    sha256 cellar: :any, arm64_golden_gate: "433ac401ac68f32e18e075871c954687b744ec79c1e38d6923c53d05710ffef3"
+    sha256 cellar: :any, arm64_tahoe:       "ffe8d0605267829feedb26206853dc1e04438f320d73ebe5594c2fc3c5ba8f7d"
+    sha256 cellar: :any, arm64_sequoia:     "0bafbf6f721034dd21525d3b13180c91198e0be8a6c1af2c579b37d7dc9f0162"
+    sha256 cellar: :any, arm64_linux:       "f6b6bf769308bfe8f91fe1fe982f9e87bd8414bbadf1908585993fd89283ba04"
+    sha256 cellar: :any, x86_64_linux:      "3b0bef76900cc344e47c9d39fde2fd1ecee7fe5ca1fec932d88b42438cbeba42"
   end
 
   # `pkgconf` and `rust` are for bcrypt

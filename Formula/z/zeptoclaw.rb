@@ -18,9 +18,14 @@ class Zeptoclaw < Formula
 
   depends_on "rust" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
-    # upstream bug report on the build target issue, https://github.com/qhkm/zeptoclaw/issues/119
-    system "cargo", "install", "--bin", "zeptoclaw", *std_cargo_args
+    system "cargo", "install", *std_cargo_args
   end
 
   service do

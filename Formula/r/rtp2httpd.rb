@@ -16,6 +16,8 @@ class Rtp2httpd < Formula
 
   depends_on "cmake" => :build
 
+  allow_network_access! :test
+
   def install
     ENV["RELEASE_VERSION"] = version.to_s
 

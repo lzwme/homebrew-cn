@@ -31,6 +31,8 @@ class Zopfli < Formula
     resolves "https://github.com/google/zopfli/pull/207"
   end
 
+  deny_network_access!
+
   def install
     args = %W[
       -DBUILD_SHARED_LIBS=ON

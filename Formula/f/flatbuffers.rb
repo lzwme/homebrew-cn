@@ -24,6 +24,8 @@ class Flatbuffers < Formula
 
   depends_on "cmake" => :build
 
+  deny_network_access!
+
   def install
     system "cmake", "-S", ".", "-B", "build",
                     "-DFLATBUFFERS_BUILD_SHAREDLIB=ON",

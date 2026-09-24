@@ -1,19 +1,17 @@
 class Dependabot < Formula
   desc "Tool for testing and debugging Dependabot update jobs"
   homepage "https://github.com/dependabot/cli"
-  url "https://ghfast.top/https://github.com/dependabot/cli/archive/refs/tags/v1.92.0.tar.gz"
-  sha256 "11a6cbbb69b75428a0abcd85f7e118c87ba18b2d00cc56b3dcf52379e0f54ca3"
+  url "https://ghfast.top/https://github.com/dependabot/cli/archive/refs/tags/v1.93.0.tar.gz"
+  sha256 "5f20ce039cde14f642dd89b5580419732e46899236f752ff09dd724626837964"
   license "MIT"
   head "https://github.com/dependabot/cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "c82c60435cb6fa188f67fc71bb9b9d5ad9b99d52a57bdbe58c0f089e8861610d"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "277bcf1556bcb32cd8784d4655bc97de003684fa60e714eeb76802b1649e1a35"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "277bcf1556bcb32cd8784d4655bc97de003684fa60e714eeb76802b1649e1a35"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "277bcf1556bcb32cd8784d4655bc97de003684fa60e714eeb76802b1649e1a35"
-    sha256 cellar: :any_skip_relocation, sonoma:            "a1897ce062452d6ebe4e3ed6686e089f57e01ee0ac180147cb24201dfdf1a1f1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "de69c6ad8668a1e6c262e6c430ab1e4ad7c3ae0d739a32ee48d8362acd71a5e0"
-    sha256 cellar: :any,                 x86_64_linux:      "19d776c916bb5dfdb0f22d246d5a3dc4c2646d90a3404fd16b9236466dafc9b0"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "407a95a694885b532c311e20808901426d0b92aa4d436dc16625c7ed5db69535"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "407a95a694885b532c311e20808901426d0b92aa4d436dc16625c7ed5db69535"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "407a95a694885b532c311e20808901426d0b92aa4d436dc16625c7ed5db69535"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "fd05854392ab12ca4487f7c51ee6b1be6805056669b71b4771ac46b0f8ed83a3"
+    sha256 cellar: :any,                 x86_64_linux:      "06dbc3ca9045d5951a1a235c8c872b45ddbcf141d8e7d81e6228c3206a48c455"
   end
 
   depends_on "go" => :build

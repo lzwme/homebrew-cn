@@ -22,6 +22,8 @@ class Iperf < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:      "30cab186caf9720f6d1758b086d8df5978ea56022a32ad4367f232ab82c1750e"
   end
 
+  allow_network_access! :test
+
   def install
     system "./configure", "--disable-dependency-tracking", "--prefix=#{prefix}"
     system "make", "install"

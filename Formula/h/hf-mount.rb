@@ -1,17 +1,17 @@
 class HfMount < Formula
   desc "Mount Hugging Face Buckets and repos as local filesystems"
   homepage "https://github.com/huggingface/hf-mount"
-  url "https://ghfast.top/https://github.com/huggingface/hf-mount/archive/refs/tags/v0.11.0.tar.gz"
-  sha256 "dc83b2cfb054c89ff005bd068fe9c48eb1465b23ec5c5bd0602908c138cba25d"
+  url "https://ghfast.top/https://github.com/huggingface/hf-mount/archive/refs/tags/v0.12.0.tar.gz"
+  sha256 "eb51765d6783b39ced2a7a94c793ca1b5d368919727c961c826ce36d0734d2b2"
   license "Apache-2.0"
   head "https://github.com/huggingface/hf-mount.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "c560b995ecf87e04d95fd17051b2787209fecc55c75dee832b94664f1dead249"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "897d445a953259422ed4df70af4b1053ae6ab438ced70a0e4e4d06a44ba382a5"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "3b1340ccf9fec130a8420f9a469bab9f45292b5b10d0c302b7dbf931cec941cf"
-    sha256 cellar: :any,                 arm64_linux:       "6f0270e1d25c87491fa2a1965d9c750632881a498e55f90199b8c8978163ca71"
-    sha256 cellar: :any,                 x86_64_linux:      "1a013531a8e7cd945e6aaeac393ce7fef15b497ff0bccf39da562a20a9a8b8cd"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "0ce85cb8ea34060795fee83256141658928a3f98549d3c39d6b570d021cc5a30"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "3f97360bec792025dd19fd049dd9c85053c45cfff4eba1c944b7cd7a69861f8e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "9e61194c4f2c41288ad5de3c307739f0e587310623346f383337cd428c50c81e"
+    sha256 cellar: :any,                 arm64_linux:       "da3473c2e1f845de7c854ebb4a02bb611adea514b67a486b6441525d7c4264f6"
+    sha256 cellar: :any,                 x86_64_linux:      "c7f001785c7346c291caf7062049260c548aaa4d2932e8277c719226ccfe022a"
   end
 
   depends_on "pkgconf" => :build

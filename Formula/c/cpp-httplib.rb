@@ -25,6 +25,8 @@ class CppHttplib < Formula
     EOS
   end
 
+  allow_network_access! :test
+
   def install
     # Set args for consistent dependencies used in generated CMake config
     args = %w[

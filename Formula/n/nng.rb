@@ -23,6 +23,8 @@ class Nng < Formula
   depends_on "cmake" => :build
   depends_on "ninja" => :build
 
+  allow_network_access! :test
+
   def install
     system "cmake", "-S", ".", "-B", "build", "-G", "Ninja",
                     "-DNNG_ENABLE_DOC=ON",

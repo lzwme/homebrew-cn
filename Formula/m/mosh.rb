@@ -7,11 +7,12 @@ class Mosh < Formula
   revision 43
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "acbfb8dfc2449b4ef45e487d2f9c7823da349d754f7b51a7d5c2c9d4670157d8"
-    sha256 cellar: :any, arm64_tahoe:       "430fb1dbac65092068c1eda359bfd2cf7c06c7e8ce7801966f1d5bb3c93af418"
-    sha256 cellar: :any, arm64_sequoia:     "40fdf3049243bdcbc809eb1727021f9523059697d58c86f52fbaf8844c52b4ef"
-    sha256 cellar: :any, arm64_linux:       "3cf695e51c1044c6ddea63a714abce095aed950e1235cba025dfea4c61957d01"
-    sha256 cellar: :any, x86_64_linux:      "64033d1609d622d682e423424a686031a4c34578a088c41ba585d5b897cc8b37"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "2a6fda6cadc30f71c946cdd175d673bac2a3a66da8defd0f59eaf74738e4388c"
+    sha256 cellar: :any, arm64_tahoe:       "bb486005805a4fddce729231b85fad256120c0851313a085d44843f2a6a6d3ec"
+    sha256 cellar: :any, arm64_sequoia:     "b1c2a786c156c761f2073900233edc9ca87b1d246dd7323c882736aa559ff45d"
+    sha256 cellar: :any, arm64_linux:       "fdcf721b9b2f4c67f4fc78d8244f3974e40bd544fe8bd1d672a2b782c64292e9"
+    sha256 cellar: :any, x86_64_linux:      "1341fb3a61915fd3d68bf70cd182f243d74db62d7bd9d94dc4914a8ce686f242"
   end
 
   head do
@@ -31,7 +32,7 @@ class Mosh < Formula
   end
 
   on_linux do
-    depends_on "openssl@3" # Uses CommonCrypto on macOS
+    depends_on "openssl@4" # Uses CommonCrypto on macOS
     depends_on "zlib-ng-compat"
   end
 

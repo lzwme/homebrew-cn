@@ -16,6 +16,8 @@ class Jetty < Formula
 
   depends_on "openjdk"
 
+  allow_network_access! :test
+
   def install
     libexec.install Dir["*"]
     (libexec/"logs").mkpath

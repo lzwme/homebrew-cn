@@ -29,6 +29,8 @@ class Libhttpserver < Formula
 
   uses_from_macos "curl" => :test
 
+  allow_network_access! :test
+
   def install
     system "./bootstrap" if build.head?
     mkdir "build" do

@@ -4,17 +4,17 @@ class Repo < Formula
   desc "Repository tool for Android development"
   homepage "https://source.android.com/source/developing.html"
   url "https://gerrit.googlesource.com/git-repo.git",
-      tag:      "v2.68",
-      revision: "8c7e0a683e88cf23f2c4765b26cfa1c917b660f4"
+      tag:      "v2.68.1",
+      revision: "e1e215a14ea5373419acb8753b6865de19d1f122"
   license "Apache-2.0"
   version_scheme 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "e593308b278d2455821256afffc47b99ea7af7a7b48a858c6af73140da59c9e6"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "e593308b278d2455821256afffc47b99ea7af7a7b48a858c6af73140da59c9e6"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "e593308b278d2455821256afffc47b99ea7af7a7b48a858c6af73140da59c9e6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "938ed41b4440d148c9d60be7d2d38e7c87361db1c612e4541693aad5eb9b2a24"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "938ed41b4440d148c9d60be7d2d38e7c87361db1c612e4541693aad5eb9b2a24"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "77395ec79df4650f0c3ca246a9f4ae788aefa9d00b3902839d2e378511e18fb2"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "77395ec79df4650f0c3ca246a9f4ae788aefa9d00b3902839d2e378511e18fb2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "77395ec79df4650f0c3ca246a9f4ae788aefa9d00b3902839d2e378511e18fb2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "7c4fe914d3de83c435ca1571f391d9895329633f2d375b7b244fb53781d1e176"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "7c4fe914d3de83c435ca1571f391d9895329633f2d375b7b244fb53781d1e176"
   end
 
   uses_from_macos "python"

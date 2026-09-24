@@ -25,6 +25,8 @@ class Dump1090Fa < Formula
   depends_on "librtlsdr"
   depends_on "ncurses"
 
+  allow_network_access! :test
+
   def install
     system "make", "DUMP1090_VERSION=#{version}"
     bin.install "dump1090"

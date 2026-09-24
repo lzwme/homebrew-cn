@@ -32,6 +32,8 @@ class Opendht < Formula
   depends_on "nettle"
   depends_on "readline"
 
+  allow_network_access! :test
+
   def install
     system "cmake", "-S", ".", "-B", "build",
                     "-DOPENDHT_C=ON",

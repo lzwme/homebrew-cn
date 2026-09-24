@@ -12,26 +12,20 @@ class Libexosip < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_golden_gate: "06cf09538180abdfd54e8ffd107f7a01346575a47cb18cbfec6d1eac5bfa3380"
-    sha256 cellar: :any,                 arm64_tahoe:       "65ae132c14b0b6e7928dacd91669bf489bf089b1cdcee75612ab52a2c6dc5363"
-    sha256 cellar: :any,                 arm64_sequoia:     "642cdbf3c7e2c28d59ba0bfa578465767fcc52a0640153ae68efea87e928243a"
-    sha256 cellar: :any,                 arm64_sonoma:      "4fc704e8d56094e3cae0b85da0ef283821679c52d11376eab270a5532b75e7e8"
-    sha256 cellar: :any,                 arm64_ventura:     "f16e7871375ba4b6fa1a0449efdbaac6cd0ecd385cb30ca73b81e5303b4fe643"
-    sha256 cellar: :any,                 arm64_monterey:    "986de480122d68131d838a6f0d37921978491b83e01fc53ab8631c50ce428cf0"
-    sha256 cellar: :any,                 arm64_big_sur:     "54df18bb3bea9dca975b830312f28ac7510dadb108db9053a3eafdf8481add0b"
-    sha256 cellar: :any,                 sonoma:            "63dc5332096f15cfab981171841ea55a5462cfdfe779bd750c5c5f470169ff7a"
-    sha256 cellar: :any,                 ventura:           "836deee9270859281bfb13c2b75d44cad2e6d2f38a2a99490c086b749f45258e"
-    sha256 cellar: :any,                 monterey:          "a3ffa4272cd49779d2ba780252af1a9e9bc56d30dae6e1b757bdd449e7c47221"
-    sha256 cellar: :any,                 big_sur:           "7af6a64fb918f2ddc565947e49f911520f7340f8ddf09cb23a28aad2e4be35cf"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "f2248230c56cae9643494c59e8b62ed822cabc1dc5fc1013b98efbf608bad015"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "07fe4531bd26a4c6fabb8833e55dc9b955c3f995c5c024177b9a9e3800785782"
+    rebuild 2
+    sha256 cellar: :any, arm64_golden_gate: "2d36e210652e3d69b74813ca3df06b03b4cd4a31734fd1026e066d9bba213ea4"
+    sha256 cellar: :any, arm64_tahoe:       "fd656403b8e8d5437cb745a7bdd4361a91e7d2189f047feb8fc666e2986ea6d8"
+    sha256 cellar: :any, arm64_sequoia:     "5ef1ade494065b22d7fad22c10f08cba832b76773fca7de7bae22661f13af8df"
+    sha256 cellar: :any, arm64_linux:       "652d6f38ba6fb236578ddc94d3d8188d682a791b1a5c89719f72140b80d5c830"
+    sha256 cellar: :any, x86_64_linux:      "045476fc48b507eaa2ac61574dd617897df6a8682057b82ceaabd1b65cf20457"
   end
 
   depends_on "pkgconf" => :build
   depends_on "c-ares"
   depends_on "libosip"
-  depends_on "openssl@3"
+  depends_on "openssl@4"
+
+  allow_network_access! :test
 
   def install
     # Extra linker flags are needed to build this on macOS. See:

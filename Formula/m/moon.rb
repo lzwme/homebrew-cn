@@ -12,11 +12,12 @@ class Moon < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "b68aa70af4710fc5b238ae155010887f8b36a912ff3e04c2920fd35270a18202"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "dafe9f35d304fdc581ad10e9e48744dc357594d245fdf8fdb5320f710169483f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "4a9c4f85cca16d496e3c56f35c1fabe18d3ca197ae7055ab2b3fd7cfbc06a6ff"
-    sha256 cellar: :any,                 arm64_linux:       "b32393e3d4d1c2c991ef4f13495ded0581b470fb5894e8ced23c95946719be61"
-    sha256 cellar: :any,                 x86_64_linux:      "068805cc4844af1e0d66eb035185ef011ffc2336642a4b258134dd898530eda6"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "d06b3b5fa189b0f956363103e261cefe788e20b572748ecea3bdeb235461d1e6"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "106a55daba98ebade4d0e09619599438b0fc9ba5d04f34b5fc9f8bdaad0cf8bd"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "a54a30bd4524b51403f206dced83805c51a35b5009bd4ecf2fbf49d8e113ce86"
+    sha256 cellar: :any,                 arm64_linux:       "d49b0d96e28ee7a9cdd2bc908bad8bf7de9584d3b17154ce01d37b3c62dbce65"
+    sha256 cellar: :any,                 x86_64_linux:      "07cd16c6647b5659e45889eb0fa500bdcd7fb16a0d6aa0796ee949929d0d2e11"
   end
 
   depends_on "pkgconf" => :build
@@ -26,7 +27,7 @@ class Moon < Formula
   uses_from_macos "bzip2"
 
   on_linux do
-    depends_on "openssl@3"
+    depends_on "openssl@4"
     depends_on "xz"
   end
 

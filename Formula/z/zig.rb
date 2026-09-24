@@ -53,6 +53,8 @@ class Zig < Formula
     type :unofficial
   end
 
+  deny_network_access!
+
   def install
     # Reduce max_rss to build on CI with less than 8GB memory available
     inreplace "build.zig", ".max_rss = 8_000_000_000,", ".max_rss = 6_900_000_000,"

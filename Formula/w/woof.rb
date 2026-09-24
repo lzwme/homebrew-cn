@@ -27,6 +27,8 @@ class Woof < Formula
     resolves "https://github.com/simon-budig/woof/pull/21"
   end
 
+  allow_network_access! :test
+
   def install
     rewrite_shebang detected_python_shebang(use_python_from_path: true), "woof"
     bin.install "woof"

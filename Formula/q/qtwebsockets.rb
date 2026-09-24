@@ -34,6 +34,8 @@ class Qtwebsockets < Formula
 
   conflicts_with "qt@5", because: "both link conflicting binaries"
 
+  allow_network_access! :test
+
   def install
     args = ["-DCMAKE_STAGING_PREFIX=#{prefix}"]
     args << "-DQT_NO_APPLE_SDK_AND_XCODE_CHECK=ON" if OS.mac?

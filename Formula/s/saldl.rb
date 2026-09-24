@@ -35,6 +35,8 @@ class Saldl < Formula
     sha256 "93909bca823a675f9f40af7c65b24887c3a3c0efdf411ff1978ba827194bdeb0"
   end
 
+  allow_network_access! :test
+
   def install
     ENV.refurbish_args
 

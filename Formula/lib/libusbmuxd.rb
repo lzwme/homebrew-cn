@@ -30,6 +30,8 @@ class Libusbmuxd < Formula
   depends_on "libimobiledevice-glue"
   depends_on "libplist"
 
+  allow_network_access! :test
+
   def install
     configure = build.head? ? "./autogen.sh" : "./configure"
     system configure, "--disable-silent-rules", *std_configure_args

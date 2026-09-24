@@ -30,6 +30,8 @@ class Links < Formula
     depends_on "zlib-ng-compat"
   end
 
+  allow_network_access! :test
+
   def install
     system "./configure", "--mandir=#{man}",
                           "--with-ssl=#{formula_opt_prefix("openssl@4")}",

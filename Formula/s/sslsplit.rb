@@ -41,6 +41,8 @@ class Sslsplit < Formula
   depends_on "libpcap"
   depends_on "openssl@3"
 
+  allow_network_access! :test
+
   def install
     ENV["LIBNET_BASE"] = formula_opt_prefix("libnet")
     system "make"

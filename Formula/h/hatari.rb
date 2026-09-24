@@ -43,6 +43,8 @@ class Hatari < Formula
     end
   end
 
+  deny_network_access!
+
   def install
     if OS.mac?
       args = %W[

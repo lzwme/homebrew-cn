@@ -26,6 +26,8 @@ class NetcdfCxx < Formula
     depends_on "zstd"
   end
 
+  deny_network_access!
+
   def install
     args = std_cmake_args + %w[
       -DNCXX_ENABLE_TESTS=OFF

@@ -2,19 +2,17 @@ class KubectlCnpg < Formula
   desc "CloudNativePG plugin for kubectl"
   homepage "https://cloudnative-pg.io/"
   url "https://github.com/cloudnative-pg/cloudnative-pg.git",
-      tag:      "v1.30.0",
-      revision: "4b5e244a7d031f67e025c83c1555e7726ecbbfa1"
+      tag:      "v1.30.1",
+      revision: "2a35abb4628f209d149825ef3c38011e0701ff2f"
   license "Apache-2.0"
   head "https://github.com/cloudnative-pg/cloudnative-pg.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "5c47cd2dd00bc145fde07662b5cbe85731939848eeec556e40d8e8fdf9e1435e"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "c3d851e9c702d01d26d9eafc8f27228face0d85222cf9857d62fdf847dbae2ed"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "704de512ab1ccc428982363bf159f08357bece9c42e42eb2d2b2c8094a695fb1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "da76c0b031442f3a338473f030b48a241963a7adf83eca26d5c864b2df80329a"
-    sha256 cellar: :any_skip_relocation, sonoma:            "82ba554323b5252b43fd32f79a86ce1a9259916fd2ddcd0962f2a1e2e32fc170"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "fa158a9bd1b3baf0a17be94bc2bc5b19e6083b2c2d4c6b6e427298e40fa39d94"
-    sha256 cellar: :any,                 x86_64_linux:      "6b425af985eeb98c57917e78d4db13a8cd893f6138d42104a14cf209fd1b938e"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "7e5eca805b095ddaf8f3514bb208d42a0d3a39f3fbb65e051b7d276c0448c4d9"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "8f414e333fd0bd1c6c89d02dcdd6e7a67613b773d3517bb18dec38f5a2e0501d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "24d6554b125b03e8b792d5fea6224c11e5b390ed62a566f327e20ee60e5a9b20"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "2a542c9fbefc1c15566f31fe8dbb5947410927dc94e1fd704bb24cf8ed76fed2"
+    sha256 cellar: :any,                 x86_64_linux:      "f57c6a3b61299a15791316cffa19465958b3b0bbea802ae95dfb2215affc3195"
   end
 
   depends_on "go" => :build

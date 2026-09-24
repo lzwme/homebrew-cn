@@ -1,8 +1,8 @@
 class Fio < Formula
   desc "I/O benchmark and stress test"
   homepage "https://github.com/axboe/fio"
-  url "https://ghfast.top/https://github.com/axboe/fio/archive/refs/tags/fio-3.42.tar.gz"
-  sha256 "56b03497a918d07692257890fd759bf73168ad79df5be78a2bcbbdc8ce67895b"
+  url "https://ghfast.top/https://github.com/axboe/fio/archive/refs/tags/fio-3.43.tar.gz"
+  sha256 "efa49b3f36eda9adf29294f27a87d7e457747d676cd0f73996d6365357832cfe"
   license "GPL-2.0-only"
 
   livecheck do
@@ -11,12 +11,11 @@ class Fio < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "3af8fe1fd79c2f0af228bf7b26ff05318d8e25bed8562d376ac834e74cd7dbd2"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "58e848c3df90d32bb612fab64ab2bf0687c68aec576586aa095e32ed436b7274"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "081260c4fda9d5ef5cf55bd78b8b113584d8d4c74f4b75f0d102c35943493829"
-    sha256 cellar: :any,                 arm64_linux:       "b604761a8ee4f26a9bb88ff7ad8cd7d4d9cfcc5551fae0c88499631c3ee3830f"
-    sha256 cellar: :any,                 x86_64_linux:      "e05c2cb90955ee36734cb9f0fa9d81773fe721dee0be52d4456705fc5715ae4d"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "4b7197238360929e9f2b3ba6d2fb8e359061dc07dd23a055405440ae9991fe91"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "b1f4fa60ee65027f3689aa11fe168bde90ffc169c20a92625a18ca6454474b4b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "7f18f3fa32b5893cc37db51000a8c52ca2b01fadea876a3de006c50307e89a77"
+    sha256 cellar: :any,                 arm64_linux:       "38c2bf604b600681233a88c987ed04480bd86ebe85ec3e202ed7d40d4565f3ab"
+    sha256 cellar: :any,                 x86_64_linux:      "0a1b798a44a7027561385f294a36a2710ad163d378ea4caa89442a9978e38e3a"
   end
 
   on_linux do

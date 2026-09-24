@@ -15,6 +15,8 @@ class Mongoose < Formula
     sha256 cellar: :any, x86_64_linux:      "290d39e1f09d2f9e40fa650569d6aa5bcfc12f2b759c0621f361d1ed25ddcf1b"
   end
 
+  allow_network_access! :test
+
   def install
     # No Makefile but is an expectation upstream of binary creation
     # https://github.com/cesanta/mongoose/issues/326

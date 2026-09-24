@@ -47,6 +47,8 @@ class DsdaDoom < Formula
     root/"share/games/doom"
   end
 
+  deny_network_access!
+
   def install
     system "cmake", "-S", "prboom2", "-B", "build",
                     "-DDOOMWADDIR=#{doomwaddir(HOMEBREW_PREFIX)}",

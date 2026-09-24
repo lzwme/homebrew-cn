@@ -2,19 +2,17 @@ class Revive < Formula
   desc "Fast, configurable, extensible, flexible, and beautiful linter for Go"
   homepage "https://revive.run"
   url "https://github.com/mgechev/revive.git",
-      tag:      "v1.16.0",
-      revision: "b9bc17af86830bdb3a254d97b8f92c8035d0583a"
+      tag:      "v1.17.0",
+      revision: "916b341d054fb1f13280f583c6bffcbd297a550e"
   license "MIT"
   head "https://github.com/mgechev/revive.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "66fa1363241909f46237d7a644b58cd0c2dc1b572fb8bd382bb3c495c1ca7ed0"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "c6aa056baaa4a5c4d4e0007e5ed6f98cb381e87d3a2b97b38a88803eeb0ef109"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "c6aa056baaa4a5c4d4e0007e5ed6f98cb381e87d3a2b97b38a88803eeb0ef109"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "c6aa056baaa4a5c4d4e0007e5ed6f98cb381e87d3a2b97b38a88803eeb0ef109"
-    sha256 cellar: :any_skip_relocation, sonoma:            "4604143e67846621f64e380c47f13ca5819f1f95fb412b4a40f5772e95a2e422"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "8494d7c4a43001cbbcac4fffbdc712efccfb4c8ede8ec6a59f63a92631f8fd12"
-    sha256 cellar: :any,                 x86_64_linux:      "71a94f6ff64c3e900e305ba941b90d2bcc61a3f35641e9eea430183b828bc5f2"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "f927b18c520d3247e16842bba365f7ecdb271d7cfffc69bcf7d63a0e01f31f9f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "f927b18c520d3247e16842bba365f7ecdb271d7cfffc69bcf7d63a0e01f31f9f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "f927b18c520d3247e16842bba365f7ecdb271d7cfffc69bcf7d63a0e01f31f9f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "67c2dd209795d6bf0242379a8795c8707f032da1c16cb3c62569f3670f8d1aec"
+    sha256 cellar: :any,                 x86_64_linux:      "693e4c263e408c73ff800d48c8c2db7e3dc7c1ecf07a3d29341ef314c4b6a691"
   end
 
   depends_on "go" => [:build, :test]

@@ -32,6 +32,8 @@ class Fheroes2 < Formula
     depends_on "zlib-ng-compat"
   end
 
+  deny_network_access!
+
   def install
     # Avoid running dylibbundler to prevent copying dylibs
     inreplace "CMakeLists.txt", /^(\s*run_dylibbundler)\s+ALL$/, "\\1"

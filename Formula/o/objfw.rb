@@ -12,24 +12,25 @@ class Objfw < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "374319fc520d70f4e0acd0b1e3bf7caad4073f4f7a5543161f793679ed8f709f"
-    sha256 arm64_tahoe:       "d26124e8f5b8ed93dee88c5701bbcfb2c2899352115bcfc062587eae738f8a07"
-    sha256 arm64_sequoia:     "f4d373bd9d4e274baf4b663d3d774042e62e919d18c5a61394c6e99f346a86ea"
-    sha256 arm64_sonoma:      "b5c85d7a7a69ffa812c49319e4dbe7a92071ae494cbefad0bdf08b83abb49a9e"
-    sha256 sonoma:            "c7be82ff8bd5d4f7fdb65a55ccd2ab97bded01cb1d777455991227807a4c6bd4"
-    sha256 arm64_linux:       "e207568c4a5d27b20232df54b6e78f076c30f9e3bbfb73d06b7844381f4851b9"
-    sha256 x86_64_linux:      "e5f54a7a545408a3ecfc109ee65e4a037f4d21ffdacfa4ad4fd2a3cc42000cc2"
+    rebuild 1
+    sha256 arm64_golden_gate: "582e436d5ca560d556602a93cdf250a14aeff4b367c2619c4dee381ee2d6bbbb"
+    sha256 arm64_tahoe:       "10b176023682f5111607d0e3c9f7bb0fbf6d7b662835ba0747abd53e4c1afda0"
+    sha256 arm64_sequoia:     "06bed702a19c019baead09d2b29b9a7049d00cb6907239c3f2ba3d158b1d63b2"
+    sha256 arm64_linux:       "73803cebaac8ffee2c5d65206dba8a1cae5c450f62e48dcf73ab2d240c787ba7"
+    sha256 x86_64_linux:      "52d1fd8eace8f3ea3b0654ad97084ab04e3774885160509a92718ded789752fa"
   end
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   uses_from_macos "llvm" => :no_linkage
 
   fails_with :gcc
 
   patch :DATA
+
+  deny_network_access!
 
   def install
     ENV.clang if OS.linux?

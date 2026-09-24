@@ -26,6 +26,8 @@ class Pgrouting < Formula
   depends_on "postgresql@18" => [:build, :test]
   depends_on "postgis"
 
+  allow_network_access! :test
+
   def postgresqls
     deps.map(&:to_formula).sort_by(&:version).filter { |f| f.name.start_with?("postgresql@") }
   end

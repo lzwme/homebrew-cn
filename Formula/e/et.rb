@@ -26,6 +26,8 @@ class Et < Formula
     depends_on "zlib-ng-compat"
   end
 
+  allow_network_access! :test
+
   def install
     # https://github.com/protocolbuffers/protobuf/issues/9947
     ENV.append_to_cflags "-DNDEBUG"

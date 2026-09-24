@@ -12,11 +12,12 @@ class Mise < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "c97442e27a105917722a557941b14218d56af5ac2db69b0e2f602eb34b11731d"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "a62c1eebafc455a9da3fecacaa964119c9b7ea678ea36aeb8f780b87dd726a2f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "5355b066b93eed1f330e7b139f064012d32e070d8e4dbd75c83a0beaea1821e5"
-    sha256 cellar: :any,                 arm64_linux:       "9edc993f01d19eee8259d7d335a48f0a47fced3691471c34d06fac4ef879eb7c"
-    sha256 cellar: :any,                 x86_64_linux:      "d651f0f18df87a5391b478d5805dd9bb61edb1da2c65bdb1c6d7d0b9545514d8"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "047d86c5f19824a91c65613a2eb7270b0bb4047c13671985e63b11eff593b069"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "51b423464b590b91a09bb78341b332368aa6e5b1dc9399bcf957210b331163a2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "4bcfeee920830e95506aabcbb88d7a2c49fe0c6f2feac19fcc8849c5a84bfc96"
+    sha256 cellar: :any,                 arm64_linux:       "4cb3d189109b1243912e6bef73e2785ca0ac1be57fe182f4ab2bfe70ba21a1cc"
+    sha256 cellar: :any,                 x86_64_linux:      "c661cde34c85681a2e643b36184a6451e3eba81b391f1182e101e63e85cd1855"
   end
 
   depends_on "cmake" => :build
@@ -27,7 +28,7 @@ class Mise < Formula
   uses_from_macos "bzip2"
 
   on_linux do
-    depends_on "openssl@3"
+    depends_on "openssl@4"
   end
 
   # downloads crates during install and binaries in the test
@@ -35,7 +36,7 @@ class Mise < Formula
 
   def install
     # Ensure that the `openssl` crate picks up the intended library.
-    ENV["OPENSSL_DIR"] = formula_opt_prefix("openssl@3")
+    ENV["OPENSSL_DIR"] = formula_opt_prefix("openssl@4") if OS.linux?
 
     system "cargo", "install", *std_cargo_args
     man1.install "man/man1/mise.1"

@@ -7,13 +7,12 @@ class Oha < Formula
   head "https://github.com/hatoo/oha.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "3196a13042b8cc0e23df9d18167367ae96512bf89d6219078b73cd2d6728413e"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "fbd6ca66167b92068f32f27955dc2cc24b03ae1150c3fab1d694fcfbc1b68c84"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "2aaf7ed96e64b1a5a005b701677a6fbb7865d9de35320e70b4e703546ae338e6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "4473565fed70137bbeeb2319eaa7bd34ce12ab87561e5e44dd60d4505ef65ca8"
-    sha256 cellar: :any_skip_relocation, sonoma:            "bd7675fcb19378bd8b71aafb84e5d4163b245430e2548b0344b37a768c6b716a"
-    sha256 cellar: :any,                 arm64_linux:       "86d1bf8ec57ff6f0625ed1a861e1fa43310f9676ef58f7dc66b32d3abc6c0911"
-    sha256 cellar: :any,                 x86_64_linux:      "bc241c2c44580cb730c5018cd29aa61584d541de196b664c63ff091dbb464b2b"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "8315770d6eceb8b72eacf6e9886351146f60dcf22aedbaffd1cd07c0cb01e645"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "597f6b2ab99b4f3babc59012162b446ee2359874774e8829749af4151e4af230"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "8259062a1f7c81bc75596a758d19d23de81090fe2f2cce87311dd7aba0158167"
+    sha256 cellar: :any,                 arm64_linux:       "c89b24dcbe00a46df02cea31b6dd885d9bc5b9eca825681052652e88df263665"
+    sha256 cellar: :any,                 x86_64_linux:      "4de4913aabb8a9a54e7867c22ecbde08ffe92e6a921fd0ee5bb1f0cf413f610c"
   end
 
   depends_on "cmake" => :build # for aws-lc-sys
@@ -21,7 +20,13 @@ class Oha < Formula
   depends_on "rust" => :build
 
   on_linux do
-    depends_on "openssl@3" # Uses Secure Transport on macOS
+    depends_on "openssl@4" # Uses Secure Transport on macOS
+  end
+
+  allow_network_access! :test
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
   end
 
   def install

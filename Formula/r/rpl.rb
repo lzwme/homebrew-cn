@@ -1,18 +1,16 @@
 class Rpl < Formula
   desc "Text replacement utility"
   homepage "https://github.com/rrthomas/rpl"
-  url "https://ghfast.top/https://github.com/rrthomas/rpl/releases/download/v2.1.0/rpl-2.1.0.tar.gz"
-  sha256 "478d3c4c0a3b8ce3b7a1f7c6e576adb4a6a6e9d898ef6673994aac6d61ca7988"
+  url "https://ghfast.top/https://github.com/rrthomas/rpl/releases/download/v2.1.1/rpl-2.1.1.tar.gz"
+  sha256 "c3298cac724b82a6f71e8c31ef15627e53dcad9afc40411366d2ac90988a53d0"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "47ffca276ea2482c5883e30ca89322e048b295a55565602440cefae30a08e83e"
-    sha256 cellar: :any, arm64_tahoe:       "8ecf751ed038cfcb047990b67f499b2ad4463cc0140f320a8237d44a8c69fcc6"
-    sha256 cellar: :any, arm64_sequoia:     "d1657696a2ff7db8d5ed76327473de914cb1eff1f6b3732bd3097f831c675444"
-    sha256 cellar: :any, arm64_sonoma:      "2416e1bfd3cfd0ad7e53db57f746d97e6ec07018e3706425f177133e87857a89"
-    sha256 cellar: :any, sonoma:            "0d06113c84c876308821d1d82d9f59242754b7418b41234ba77dff703d583aa8"
-    sha256 cellar: :any, arm64_linux:       "596a3d6a1cce526af5265bd320d9ed9912dd7418035603ffceba0afae6fea253"
-    sha256 cellar: :any, x86_64_linux:      "e5e77b94d63e31657b7f82df99ac37727018f3a53f83b6b5daed66897e7b87f0"
+    sha256 cellar: :any, arm64_golden_gate: "ed0e5aa3201678b41e1bb3b1df21af6c1f455f7e0f0f568fa99434b9d278a486"
+    sha256 cellar: :any, arm64_tahoe:       "5f7ad6e07f85b121c668ca396528095e7c7863598c9023f20dda1ca3810374b1"
+    sha256 cellar: :any, arm64_sequoia:     "d9e58f3b1811c814774aa5d9a74a7a25fdeb9529bf83efaf934b9b156e1d49df"
+    sha256 cellar: :any, arm64_linux:       "0f0bad3a569ee5c8b98c0c00224ae2d922a02871486c27937bb9b3ec6eb4686f"
+    sha256 cellar: :any, x86_64_linux:      "f5ca2ae431d0ea21c46e5faa91bcf49dcf649f8dbfa97a0b05194591ebc4c716"
   end
 
   depends_on "help2man" => :build

@@ -35,6 +35,8 @@ class Cppcms < Formula
     resolves "https://github.com/artyom-beilis/cppcms/pull/106"
   end
 
+  allow_network_access! :test
+
   def install
     rewrite_shebang detected_python_shebang(use_python_from_path: true), "bin/cppcms_tmpl_cc"
 

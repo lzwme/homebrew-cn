@@ -1,12 +1,12 @@
 class Phpstan < Formula
   desc "PHP Static Analysis Tool"
   homepage "https://phpstan.org/"
-  url "https://ghfast.top/https://github.com/phpstan/phpstan/releases/download/2.2.14/phpstan.phar"
-  sha256 "a7d45c01d3bd5aceb2cb9e596a67e50ff9f12b8757a373b93c0761deb8cd77e1"
+  url "https://ghfast.top/https://github.com/phpstan/phpstan/releases/download/2.2.15/phpstan.phar"
+  sha256 "adccacab7cd31a262a5da17478ad5befea6f808afc32cf5f3e8af09702165f90"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "e0ba742e55f6850a95a286b5335f23710dda3f743835a4658fd7a81a3030d496"
+    sha256 cellar: :any_skip_relocation, all: "20d198321cb4f448f35a5da7dc6109c6082635df8451b01d0e7011124248a570"
   end
 
   depends_on "php" => :test

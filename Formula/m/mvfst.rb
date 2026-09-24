@@ -25,6 +25,8 @@ class Mvfst < Formula
   depends_on "glog"
   depends_on "openssl@3"
 
+  allow_network_access! :test
+
   def install
     shared_args = ["-DBUILD_SHARED_LIBS=ON", "-DCMAKE_INSTALL_RPATH=#{rpath}"]
     shared_args << "-DCMAKE_SHARED_LINKER_FLAGS=-Wl,-undefined,dynamic_lookup -Wl,-dead_strip_dylibs" if OS.mac?

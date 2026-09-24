@@ -34,6 +34,9 @@ class Zurl < Formula
     depends_on "openssl@3"
   end
 
+  # needs to connect to a local server
+  allow_network_access! :test
+
   def install
     args = ["--qtselect=#{Formula["qtbase"].version.major}"]
     args << "--extraconf=QMAKE_MACOSX_DEPLOYMENT_TARGET=#{MacOS.version}" if OS.mac?

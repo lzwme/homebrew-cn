@@ -29,24 +29,32 @@ class Ncrack < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_golden_gate: "8ac66b223617ff6eb6868b111f6aa775cdd8c7646cfb6d8f5178951bd6b6e4e0"
-    sha256 arm64_tahoe:       "f73a2674042b2e7cf64f321316d88dd2a9f92fa116b6a77d73f2d2f348c6e742"
-    sha256 arm64_sequoia:     "b21c1901137325fd1923931265abf68349d6d977943b9138ca9572aa507b5cd0"
-    sha256 arm64_sonoma:      "159b54f1da255b7c861fb23320c8e15012612f75cdbe8ee9123c6384b408d043"
-    sha256 sonoma:            "52d3c2ce600c1124c6b23231bd23ad9342f20481cb94f3ae8b94856c4dabc427"
-    sha256 arm64_linux:       "6fd8f73ef2ee53e70fb6e58641425eb6b4e692fd1b891bf6c53d279539e37eaa"
-    sha256 x86_64_linux:      "9e0c60c65ad23af0cfa59dfa65d970850ae9fab8d270c105ffc1b0672af75d60"
+    rebuild 2
+    sha256 arm64_golden_gate: "65094a52b2c9793ea270cef78fb031aa8791512ba07081f6622b42fa2a2f7bb2"
+    sha256 arm64_tahoe:       "85017d5ac2d1fd2dc639b61f71c86369b39bb32bde557388bd664cbb54db0161"
+    sha256 arm64_sequoia:     "0861dda9a4b22f65928d52d2ef0f3b5c62d3581915cd01047bebde9fa8be4066"
+    sha256 arm64_linux:       "b710bf67ad6f53f0eef7ecf99d084cb0522570f27365fe44b2400a5a3bb7397c"
+    sha256 x86_64_linux:      "d53db34925dae25f4faefe250f69afda50f22815bce28df5ef5782605078e0f0"
   end
 
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   on_linux do
     depends_on "zlib-ng-compat"
   end
 
+  # Apply open PR to support OpenSSL 4 which is used by Ubuntu and Fedora
+  patch do
+    url "https://github.com/nmap/ncrack/commit/76a0eabaad402ed935c1294f98663cf58a806a06.patch?full_index=1"
+    sha256 "7eb44ecf8b43fa2d201763bafe411db8606643064bf1cf3e78531c13f5e2138f"
+    type :unofficial
+    resolves "https://github.com/nmap/ncrack/pull/147"
+  end
+
+  deny_network_access!
+
   def install
-    system "./configure", "--with-openssl=#{formula_opt_prefix("openssl@3")}", *std_configure_args
+    system "./configure", "--with-openssl=#{formula_opt_prefix("openssl@4")}", *std_configure_args
     system "make"
     system "make", "install"
   end

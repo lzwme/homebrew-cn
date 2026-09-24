@@ -71,6 +71,8 @@ class Cpprestsdk < Formula
   # Workaround to build with Boost 1.89.0
   patch :DATA
 
+  allow_network_access! :test
+
   def install
     system "cmake", "-S", "Release", "-B", "build",
                     "-DBUILD_SAMPLES=OFF",

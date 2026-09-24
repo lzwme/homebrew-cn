@@ -48,8 +48,6 @@ class Systemd < Formula
   depends_on "ninja" => :build
   depends_on "pkgconf" => :build
   depends_on "python@3.14" => :build
-  depends_on "glib"
-  depends_on "libcap"
   depends_on "libxcrypt"
   depends_on :linux
   depends_on "lz4"

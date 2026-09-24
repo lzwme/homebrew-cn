@@ -15,13 +15,12 @@ class Snort < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_golden_gate: "83d420866e0020f41893a72f0135921a0ed77e690693efe68168908265697857"
-    sha256 cellar: :any,                 arm64_tahoe:       "22535016e81034f4128a8437703afe7db861dbc78a64ef851b760fcdf0e5861c"
-    sha256 cellar: :any,                 arm64_sequoia:     "a4cbf3bf4567436a6064e0001d12f9bc2a105399405fac0792589fee5d1ba122"
-    sha256 cellar: :any,                 arm64_sonoma:      "d1ac9a27e6616c50350582b0ae4a97c39930d5c39bbf17e50e6d51156270b4f7"
-    sha256 cellar: :any,                 sonoma:            "b124feccfdc173aacaea506a0f445eef9403b4559f244ce6bdb60d989e1b40e8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "9b25a087deea2a558670ecfea00930e7119e73bc74a443f7360d0f94ef3b67bb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "1807a54fe2f92464e4db0eecdd31f610d58bab960c7776ba260d6dd416c6ba4c"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "dafe7c135cd7c22279f55dbb65e7271f23d58abb57482418790d9b2c9bb11bf0"
+    sha256 cellar: :any, arm64_tahoe:       "7c7c722c4743d25cff27ccbea3a61b8a3ace36d0e75a95f3c64248ad33095c1a"
+    sha256 cellar: :any, arm64_sequoia:     "1337f6bc8f092a84d5655a8bd93aaa8dbcbb3f2d0667c9d093fe600e1a77b7a6"
+    sha256 cellar: :any, arm64_linux:       "59f654ffd81a9cda1d350aa318e80ae4836038f0a6c9b0ec6169983696879140"
+    sha256 cellar: :any, x86_64_linux:      "93bdc4b78bf8709e3877f32d4d6250af5a435f883ed5fe6403b945e32d2b3b42"
   end
 
   depends_on "cmake" => :build
@@ -33,7 +32,7 @@ class Snort < Formula
   depends_on "libdnet"
   depends_on "libpcap" # macOS version segfaults
   depends_on "luajit"
-  depends_on "openssl@3"
+  depends_on "openssl@4"
   depends_on "pcre2"
   depends_on "vectorscan"
   depends_on "xz" # for lzma.h
@@ -42,6 +41,16 @@ class Snort < Formula
     depends_on "libunwind"
     depends_on "zlib-ng-compat"
   end
+
+  # Apply open PR for OpenSSL 4.0 support
+  patch do
+    url "https://github.com/snort3/snort3/commit/286352b0e3f3e0798666d4f78ca35668d8695ab5.patch?full_index=1"
+    sha256 "8707359cf1854a85bf7f48e8e8b5a949739e0965ee55078bfdef033055971fc7"
+    type :unofficial
+    resolves "https://github.com/snort3/snort3/pull/477"
+  end
+
+  deny_network_access!
 
   def install
     # These flags are not needed for LuaJIT 2.1 (Ref: https://luajit.org/install.html).

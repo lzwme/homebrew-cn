@@ -2,9 +2,9 @@ class PhpDebug < Formula
   desc "General-purpose scripting language"
   homepage "https://www.php.net/"
   # Should only be updated if the new version is announced on the homepage, https://www.php.net/
-  url "https://www.php.net/distributions/php-8.5.10.tar.xz"
-  mirror "https://fossies.org/linux/www/php-8.5.10.tar.xz"
-  sha256 "6a8bebaa4d5a979a38db29a9373e9851f60c6b11f72172c585947e78f3081957"
+  url "https://www.php.net/distributions/php-8.5.11.tar.xz"
+  mirror "https://fossies.org/linux/www/php-8.5.11.tar.xz"
+  sha256 "d9be75c08e8c316f4c8f4194d8fbe1750a15f6a6d9d4e3fe72082abeeb800360"
   license all_of: [
     "PHP-3.01",
 
@@ -29,7 +29,6 @@ class PhpDebug < Formula
     "TCL",                   # 7
     "Zlib",                  # 8
   ]
-  revision 1
 
   livecheck do
     url "https://www.php.net/downloads?source=Y"
@@ -38,12 +37,11 @@ class PhpDebug < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/php"
-    sha256 arm64_golden_gate: "bbb07ce55932fadda9284a6d76b30ac51ba43e55d8b604cda56dacc5ca896567"
-    sha256 arm64_tahoe:       "d9bf6f2cd264995668591675335053b4c250a84a72cd7302f052599554b1e23d"
-    sha256 arm64_sequoia:     "27917a67592b9144ef9e46c603fe79d819cfdcea0e7288886cd0713548f83da0"
-    sha256 arm64_sonoma:      "dda10f8a2ec99a1f5356a94024a1a8620aa69c7eb469e34900d049f6085d92f0"
-    sha256 arm64_linux:       "89699e704e8f41c222fe104a1aac4172865a62e893e14e5f5bf792afe725fde5"
-    sha256 x86_64_linux:      "1eda10dc7a32b25623ac53c821c70685083ca65a60d28a97f8177d6287aef6fc"
+    sha256 arm64_golden_gate: "c7849bd2b5ed671353d007f5bcba8d3880f8af8000bf016ef15245e32e4baba9"
+    sha256 arm64_tahoe:       "a656c885beac18c1a6c92cb14726df83abb5864d7e0ac1a96d5db045b9a10302"
+    sha256 arm64_sequoia:     "4fae85f9f35c7a88f14784db07cedb503d6b3828b03be3c29afd3fadf1ff7887"
+    sha256 arm64_linux:       "018d9c92a584e77d469285f0976d6202152987bb3cb324b10e61c4f98d7a2e9b"
+    sha256 x86_64_linux:      "663cbd282c1eed3c064c1c4ad3628435812dcd1db38b387dc69e9f82a61480de"
   end
 
   depends_on "bison" => :build

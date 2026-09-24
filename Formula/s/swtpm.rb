@@ -4,15 +4,14 @@ class Swtpm < Formula
   url "https://ghfast.top/https://github.com/stefanberger/swtpm/archive/refs/tags/v0.10.2.tar.gz"
   sha256 "f61cf6f1e9bbcb4cefb30b70cafaf1c4df54c6961e65cfa63830e8ad0e220134"
   license "BSD-3-Clause"
+  revision 1
 
   bottle do
-    sha256 arm64_golden_gate: "2feb4b3fae93b381d53cf29523fcbd76e421b65ecf0b9024dc4754d30501a2dd"
-    sha256 arm64_tahoe:       "7c061c6f76ae1ddac24748f1b1ec3a421ed9b5419a190f64b77d5c6dbb44978f"
-    sha256 arm64_sequoia:     "3c0a94003525270a225ad7c92caad295005cb1022656eef611e1d3308f6bc4d7"
-    sha256 arm64_sonoma:      "2c35a122e5c9f031d9665fbcc5767ed26642897a780d4f26801401dd9c892379"
-    sha256 sonoma:            "b5772c37534f67b52b627875152a12d42763d73ef033a70f9681e5fc37d3e80e"
-    sha256 arm64_linux:       "49d2065659915890b1f20a852f5c23a6c206f48f41a7b10448dccbfdb83444c3"
-    sha256 x86_64_linux:      "5c45c9ffb823f66bbf15839301cf2cf11ca06220144009f301200bfab8f49867"
+    sha256 arm64_golden_gate: "481e1daf351c3210c7d4109bdf0841c0703ed16b2b7992a069555eaa4a8d8f71"
+    sha256 arm64_tahoe:       "13c155af6c66a83912f24c667c397c427faa0176cbb6036eff43b8790b52ebcf"
+    sha256 arm64_sequoia:     "8fe633a43a2cbd25cd05a6d7b0bfcc03917e2da3ff3ac01ff6f5be8a7d953085"
+    sha256 arm64_linux:       "2e823e9e2c09d4ea33d23e557c6db6725678b7862be4dc6736935d9064edd76d"
+    sha256 x86_64_linux:      "bfeedebd02a0b0665792d725e33a898c0cd3272b8260e58587a409612722a5c4"
   end
 
   depends_on "autoconf" => :build
@@ -26,7 +25,7 @@ class Swtpm < Formula
   depends_on "json-glib"
   depends_on "libtasn1"
   depends_on "libtpms"
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   on_macos do
     depends_on "gettext"
@@ -45,7 +44,10 @@ class Swtpm < Formula
     resolves "https://github.com/stefanberger/swtpm/pull/1094"
   end
 
+  allow_network_access! :test
+
   def install
+    ENV.prepend_path "PKG_CONFIG_PATH", formula_opt_lib("openssl@4")/"pkgconfig"
     system "./autogen.sh", "--disable-tests", "--with-openssl", *std_configure_args
     system "make"
     system "make", "install"

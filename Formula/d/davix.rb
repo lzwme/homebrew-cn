@@ -36,6 +36,8 @@ class Davix < Formula
     depends_on "util-linux"
   end
 
+  allow_network_access! :test
+
   def install
     # Remove `-DCMAKE_POLICY_VERSION_MINIMUM=3.5` once fixed upstream
     # Issue ref: https://github.com/cern-fts/davix/issues/139

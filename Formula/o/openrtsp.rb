@@ -1,11 +1,11 @@
 class Openrtsp < Formula
   desc "Command-line RTSP client"
   homepage "http://www.live555.com/openRTSP"
-  url "https://download.live555.com/live.2026.09.21.tar.gz"
-  mirror "https://download.videolan.org/pub/videolan/testing/contrib/live555/live.2026.09.21.tar.gz"
-  mirror "https://pkg.freebsd.org/ports-distfiles/live.2026.09.21.tar.gz"
+  url "https://download.live555.com/live.2026.09.23.tar.gz"
+  mirror "https://download.videolan.org/pub/videolan/testing/contrib/live555/live.2026.09.23.tar.gz"
+  mirror "https://pkg.freebsd.org/ports-distfiles/live.2026.09.23.tar.gz"
   # Keep a mirror as upstream tarballs are removed after each version
-  sha256 "b719b39d7d8bf15d6ddc10a6df2c19999c1becd2cc0d8cb8b270d5755e666a57"
+  sha256 "22da8a0e12219f049051052317ff3774eaae888e6f94fd7be746bc236ad0d7eb"
   license "LGPL-3.0-or-later"
 
   livecheck do
@@ -14,14 +14,17 @@ class Openrtsp < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "5119fd9429b10847e24753b6667baf35a5334837a92c858b932271a786ccb84d"
-    sha256 cellar: :any, arm64_tahoe:       "1241b6337e0048910ac9ff84c18f554851155cb90f3e9460f338451a1cea864f"
-    sha256 cellar: :any, arm64_sequoia:     "b8d2205e83cb8a4726f56a18f851edfd57315732398f2570b2ad13722d26b318"
-    sha256 cellar: :any, arm64_linux:       "ef95a12f2c7e7aee65d4dc782d4c1add23f22abc49d226741b68c15b75815b48"
-    sha256 cellar: :any, x86_64_linux:      "f8c7f699545e792d3364a90c1323b194bf798e0b693a6ab36bb1435ee4732b94"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "8233da38c6d55a151733c9848910ed2e7a943498476f650108375bdc10d480f8"
+    sha256 cellar: :any, arm64_tahoe:       "a3b2f72c67651a5cb6150e6a6abe42a1710cdbc3e186edd8319d392e4ba369e8"
+    sha256 cellar: :any, arm64_sequoia:     "4c39375d0f66cb9c8a760cb059d5a2ed37de1a050501badbf56937042ba04352"
+    sha256 cellar: :any, arm64_linux:       "4e2a8ecb51e8e79cb2fc24f6f705129bfa37dbd765040d7532ad2fe62125b4ae"
+    sha256 cellar: :any, x86_64_linux:      "6f2e5492d46a0a019b775582cb6145288e39a3fdaec5487ee424e67010af58ea"
   end
 
-  depends_on "openssl@3"
+  depends_on "openssl@4"
+
+  deny_network_access!
 
   def install
     # "test" was added to std::atomic_flag in C++20
@@ -30,8 +33,8 @@ class Openrtsp < Formula
 
     # Avoid linkage to system OpenSSL
     libs = [
-      formula_opt_lib("openssl@3")/shared_library("libcrypto"),
-      formula_opt_lib("openssl@3")/shared_library("libssl"),
+      formula_opt_lib("openssl@4")/shared_library("libcrypto"),
+      formula_opt_lib("openssl@4")/shared_library("libssl"),
     ]
 
     os_flag = OS.mac? ? "macosx-bigsur" : "linux"

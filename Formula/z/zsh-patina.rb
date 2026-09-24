@@ -20,6 +20,12 @@ class ZshPatina < Formula
 
   uses_from_macos "zsh" => :test
 
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
     ENV["CARGO_PROFILE_RELEASE_LTO"] = "fat"
     ENV["CARGO_PROFILE_RELEASE_CODEGEN_UNITS"] = "1"

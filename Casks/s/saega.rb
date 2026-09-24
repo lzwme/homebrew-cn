@@ -1,6 +1,6 @@
 cask "saega" do
-  version "1.0.23"
-  sha256 "3cbbaa358339f8bc066e279049120bc261597fe7c166649d71f27b605c97b60a"
+  version "1.0.25"
+  sha256 "f1a101db3621691f1b5ae66287f7bcd264fa4234d1be80ed6662ae97c61878de"
 
   url "https://storage.googleapis.com/saega-downloads/Saega-#{version}.dmg"
   name "Saega"

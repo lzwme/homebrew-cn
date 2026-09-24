@@ -23,6 +23,8 @@ class Weighttp < Formula
   depends_on "pkgconf" => :build
   depends_on "libev"
 
+  allow_network_access! :test
+
   def install
     system "meson", "setup", "build", *std_meson_args
     system "meson", "compile", "-C", "build", "--verbose"

@@ -24,6 +24,8 @@ class Rtmidi < Formula
     depends_on "jack"
   end
 
+  deny_network_access!
+
   def install
     system "cmake", "-S", ".", "-B", "build", "-DRTMIDI_BUILD_TESTING=OFF", *std_cmake_args
     system "cmake", "--build", "build"

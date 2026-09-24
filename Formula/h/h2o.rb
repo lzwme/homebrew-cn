@@ -29,6 +29,8 @@ class H2o < Formula
     depends_on "zlib-ng-compat"
   end
 
+  allow_network_access! :test
+
   def install
     # https://github.com/Homebrew/homebrew-core/pull/1046
     # https://github.com/Homebrew/brew/pull/251

@@ -50,6 +50,8 @@ class Nghttp2 < Formula
     cause "Requires C++23 <print> header"
   end
 
+  allow_network_access! :test
+
   def install
     # Don't build nghttp2 library - use the previously built one.
     inreplace "Makefile.in", /(SUBDIRS =) lib/, "\\1"

@@ -22,6 +22,8 @@ class Bozohttpd < Formula
 
   depends_on "openssl@4"
 
+  allow_network_access! :test
+
   def install
     system "make", "-f", "Makefile.boot", "CC=#{ENV.cc}"
     bin.install "bozohttpd"

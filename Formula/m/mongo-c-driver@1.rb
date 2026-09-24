@@ -11,11 +11,12 @@ class MongoCDriverAT1 < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "b0aa58382d635dffa7bd19b155c65f51d0086f1d2146b72003c109149f4adbd7"
-    sha256 cellar: :any, arm64_tahoe:       "b0c816f3730929c63d15607e9eb7a280e54501d22da987e3eb58367850938724"
-    sha256 cellar: :any, arm64_sequoia:     "1d0d540fb5225fed07c25cbd09aebb1350c092def2592cdff6e7bed2d0781de0"
-    sha256 cellar: :any, arm64_linux:       "c9f15818addfa39d2f6b4fefd952319617264e5dbe5f645f6980143f1d09c75d"
-    sha256 cellar: :any, x86_64_linux:      "bc9565384186d28c39d4d398417666aef4013f169e8378e79ff43f4a83313bbe"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "3a6e061527f71476feb0396550e2bbf83afb77ffc1270de4a2e6a2c82b12fb13"
+    sha256 cellar: :any, arm64_tahoe:       "5a9b76e3d16f85b1cd572c82794f368307fd28df6d01ad8d9dcadc8c2ccab236"
+    sha256 cellar: :any, arm64_sequoia:     "f275342a36dbe035e6a4e137042db3dbf549d4337a5bb3c43b412a45c81d9b3d"
+    sha256 cellar: :any, arm64_linux:       "9a399bb1fa47cf591609d90701f4a2de917942ab5537d151fe82c6084534a831"
+    sha256 cellar: :any, x86_64_linux:      "95d5e1c321c0c40316fcc14d13b170b2ad797cde404ce86056249267dcb714b3"
   end
 
   keg_only :versioned_formula
@@ -26,10 +27,10 @@ class MongoCDriverAT1 < Formula
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
   depends_on "sphinx-doc" => :build
-  depends_on "openssl@3"
   depends_on "zstd"
 
   on_linux do
+    depends_on "openssl@4"
     depends_on "zlib-ng-compat"
   end
 

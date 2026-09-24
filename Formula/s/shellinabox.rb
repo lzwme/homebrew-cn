@@ -32,6 +32,8 @@ class Shellinabox < Formula
     resolves "https://github.com/shellinabox/shellinabox/pull/467"
   end
 
+  allow_network_access! :test
+
   def install
     # Workaround for Xcode 14.3
     # https://github.com/shellinabox/shellinabox/issues/518

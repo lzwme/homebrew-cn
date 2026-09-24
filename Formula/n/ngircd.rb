@@ -12,21 +12,22 @@ class Ngircd < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "f5df67b8f3bea1ac9c87f9281a5aa04fcef9e6daa9b984bf88680823c02842cb"
-    sha256 arm64_tahoe:       "8420033aa662564ea50929687690e933b4ced45a802d6167e4e370092f93452c"
-    sha256 arm64_sequoia:     "8735f62952cfe1b1606dbabb8b2702a4d29eb7a11a148aef0262f9c9a1621108"
-    sha256 arm64_sonoma:      "0b0cf7bc44eafface072719512c90d87ea21f416832e361258d0b90a1d195591"
-    sha256 sonoma:            "e59912741a534222eea238627a9b747680fcd80c26b637c59aa73d1adfa4ebd6"
-    sha256 arm64_linux:       "f7ab85c075855fe140f879f1335741153912efbbe622b2204b8c528dd8048244"
-    sha256 x86_64_linux:      "8a3eef52801ab52e10cd3f1d858abe5b315ac9c2431afb12c2950968661b7fe1"
+    rebuild 1
+    sha256 arm64_golden_gate: "2dad8f0e52214c496bbce97abd6cd1b7b64232b35089ff3278dd1b575ce4e732"
+    sha256 arm64_tahoe:       "87bc6a006ee2a63d03860f388378b53405cd2bddcfaa702e960f7d7af502eb1e"
+    sha256 arm64_sequoia:     "e8f213f92636952b0a7616a3022c32ec026af92c16c210b85b4131f5b722e158"
+    sha256 arm64_linux:       "e5b1f3ac2780bfd8c7a553cd92c79c5abe730e01577a50c97fdc3c3230d143cc"
+    sha256 x86_64_linux:      "d33cbb6f13b29f35c32fc26b9dafbfa9cc35b45d9c1f18c59e6f2f3c606a1365"
   end
 
   depends_on "libident"
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   on_linux do
     depends_on "zlib-ng-compat"
   end
+
+  deny_network_access!
 
   def install
     system "./configure", "--disable-silent-rules",

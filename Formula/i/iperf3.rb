@@ -31,6 +31,8 @@ class Iperf3 < Formula
 
   depends_on "openssl@4"
 
+  allow_network_access! :test
+
   def install
     system "./bootstrap.sh" if build.head?
     system "./configure", "--disable-silent-rules",

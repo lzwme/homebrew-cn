@@ -1,8 +1,8 @@
 class Jcode < Formula
   desc "AI coding agent harness for the terminal"
   homepage "https://jcode.sh"
-  url "https://ghfast.top/https://github.com/1jehuang/jcode/archive/refs/tags/v0.87.0.tar.gz"
-  sha256 "075eb1335cc2fde18e1027c4a7f7f9fc37cb30df0bb94e60698f5e65ce0e9818"
+  url "https://ghfast.top/https://github.com/1jehuang/jcode/archive/refs/tags/v0.88.0.tar.gz"
+  sha256 "967e5a825f29b1ed3ab9649fe55966545ba4eba8e0d44e2897b015d2ada43b96"
   license "MIT"
 
   livecheck do
@@ -11,11 +11,12 @@ class Jcode < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "451a17ad57c34913715a612739eacabd5494818e4d8e0d1f76abd5d0321fbc29"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "b4defebd9fe73a43ede6767a1504a4f44c8d071d1c3586e87333c294bcf5f56f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "89d62e74b05b24954bf2169361551c85f804ed7e4223e017d80284e5f024816e"
-    sha256 cellar: :any,                 arm64_linux:       "d651d38e015f06d99cec40f9884039330ccf5f50293d8bc2aed5081b53de1d4c"
-    sha256 cellar: :any,                 x86_64_linux:      "362dd9dca2bc3b37069353b301354cf9b0bb6ea995d1c8f71555d6d22c46c972"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "193694aaf3f762740ea0fe648d3984851de5d6d55e0854020e7da195551b3b23"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "305fb1319999d2954b3c0a8d10d63f856ac061a2ad74d2efb28eb58609b725cb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "7c0f0f1b1c32b8fc55b2e0894619ae5c1c324ca4b5e80fcad9772bd2abfc9146"
+    sha256 cellar: :any,                 arm64_linux:       "c5430b1f6ed8a7214bd6d871ca79e25543be6e34040129c7f1b98fba766a8dbf"
+    sha256 cellar: :any,                 x86_64_linux:      "656fad0ee8cf31a302335f60ae648b41a7ba81bfa7c73827c63b9c675a26eb1e"
   end
 
   depends_on "cmake" => :build
@@ -23,13 +24,13 @@ class Jcode < Formula
   depends_on "rust" => :build
 
   on_linux do
-    depends_on "openssl@3"
+    depends_on "openssl@4"
   end
 
   deny_network_access! :build
 
   def fetch
-    system "cargo", "fetch", "--locked"
+    system "cargo", "fetch", *std_cargo_fetch_args
   end
 
   def install

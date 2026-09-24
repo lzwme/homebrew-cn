@@ -21,6 +21,14 @@ class ZlibRs < Formula
     depends_on "zlib-ng-compat" => :test
   end
 
+  # FIXME: needs to download a test resource. Brew changes are needed to
+  # allow `brew fetch` to handle this properly so it works in dependent tests
+  allow_network_access! :test
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args, "--manifest-path", "libz-rs-sys-cdylib/Cargo.toml"
+  end
+
   def install
     # https://github.com/trifectatechfoundation/zlib-rs/tree/main/libz-rs-sys-cdylib#-cllvm-args-enable-dfa-jump-thread
     ENV.append_to_rustflags "-Cllvm-args=-enable-dfa-jump-thread"

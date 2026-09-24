@@ -16,6 +16,8 @@ class CassandraReaper < Formula
 
   depends_on "openjdk"
 
+  allow_network_access! :test
+
   def install
     inreplace Dir["resource/*.yaml"], " /var/log", " #{var}/log"
     inreplace "bin/cassandra-reaper", "/usr/local/share", share

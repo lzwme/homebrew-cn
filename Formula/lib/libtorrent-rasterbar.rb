@@ -32,6 +32,8 @@ class LibtorrentRasterbar < Formula
 
   conflicts_with "libtorrent-rakshasa", because: "both use the same libname"
 
+  deny_network_access!
+
   def install
     # Work around Homebrew's prefix scheme, which makes Python's reported
     # site-packages path absolute and outside the keg.

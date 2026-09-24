@@ -41,6 +41,8 @@ class Proxygen < Formula
 
   conflicts_with "hq", because: "both install `hq` binaries"
 
+  allow_network_access! :test
+
   def install
     # FIXME: shared libraries are currently broken
     # Issue ref: https://github.com/facebook/proxygen/issues/599

@@ -1,21 +1,17 @@
 class Gammaray < Formula
   desc "Examine and manipulate Qt application internals at runtime"
   homepage "https://www.kdab.com/software-technologies/developer-tools/gammaray/"
-  url "https://ghfast.top/https://github.com/KDAB/GammaRay/releases/download/v3.4.0/gammaray-3.4.0.tar.gz"
-  sha256 "bcac8aa24671bcfd563213f5cfd9e61cf555b22ee3896e8111a5c3a588aacadf"
+  url "https://ghfast.top/https://github.com/KDAB/GammaRay/releases/download/v3.4.1/gammaray-3.4.1.tar.gz"
+  sha256 "f3b9e28a6d799a3b798e9e0dfde52481a9b8aa6aeb68c65890b3736731603740"
   license "GPL-2.0-or-later"
-  revision 1
   head "https://github.com/KDAB/GammaRay.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_golden_gate: "ec943b25d9b9b050a90e868f6829f3536e13c047dcad586951cd3ba99c83dfec"
-    sha256 cellar: :any, arm64_tahoe:       "c0223fd056506e3eabc4fdde27eca3ee0b7d95c2b2d8d3dee7c028f7344873b1"
-    sha256 cellar: :any, arm64_sequoia:     "1620f3ce5fc6abac6d87e80022ea773b496e13dc5b69191c1f45a89152577e54"
-    sha256 cellar: :any, arm64_sonoma:      "1c69fefd316a5da83b5dcff89924fa549ecf66a9f8979fc4b4dcad760de528fe"
-    sha256 cellar: :any, sonoma:            "81f1b1ed7c0eb5daf8c4504506911c5f5c0c90e9d026d5b030371f7d8a2d9e32"
-    sha256 cellar: :any, arm64_linux:       "72277a6183c81c8e71994b248be74f1d5532dcfca6f7edbdd1b21a037c864ddc"
-    sha256 cellar: :any, x86_64_linux:      "b5b2546e543d8565d1f487cba7b7a8eb974aff43da5f18f6a1d676e609533ddd"
+    sha256 cellar: :any, arm64_golden_gate: "7cc4d656ec29e288cde7f67ef54a6feedf8e579e0f8f10ec3028d35557e04704"
+    sha256 cellar: :any, arm64_tahoe:       "3f8f07614cb0b93347c43efac6e6fd0252f66db651ea8c1dc543334043f6eb66"
+    sha256 cellar: :any, arm64_sequoia:     "cee87e550ee7c82d1887372c330fc48d6042a7270bb4aead270632738ee7b4d4"
+    sha256 cellar: :any, arm64_linux:       "453a344a0e9c931f6b1e722c390c46b8624cef02386a7c3706df7d70c4cdc499"
+    sha256 cellar: :any, x86_64_linux:      "0014a99c8331d8d2eff449be0e96314ef7de35bb78947b0f79999ec47ef267e2"
   end
 
   depends_on "cmake" => :build
@@ -42,14 +38,6 @@ class Gammaray < Formula
     depends_on "elfutils"
     depends_on "qtwayland"
     depends_on "wayland"
-  end
-
-  # Make rootPath follow symlink to support linked keg.
-  patch do
-    url "https://github.com/KDAB/GammaRay/commit/23e98b93e4e430806a43f6cfa5b1dd0ee1ee1c80.patch?full_index=1"
-    sha256 "aed9d33a97b4c2dbe11eaff0d06554aa4f80fc2ca10e0f34f1a55526da79423a"
-    type :backport
-    resolves "https://github.com/KDAB/GammaRay/pull/1126"
   end
 
   def install

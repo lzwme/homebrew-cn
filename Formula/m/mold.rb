@@ -46,6 +46,8 @@ class Mold < Formula
     cause "Requires C++20 `std::atomic_ref`"
   end
 
+  deny_network_access!
+
   def install
     # Avoid embedding libdir in the binary.
     # This helps make the bottle relocatable.

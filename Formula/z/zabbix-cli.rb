@@ -135,6 +135,8 @@ class ZabbixCli < Formula
     sha256 "2dae09efa25253ae2874188e86d6861af3b1652aef4118cdf3f0bda288a957fb"
   end
 
+  allow_network_access! :build
+
   def install
     venv = virtualenv_install_with_resources(without: "socksio")
     resource("socksio").stage do

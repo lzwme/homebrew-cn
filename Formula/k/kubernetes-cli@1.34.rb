@@ -2,8 +2,8 @@ class KubernetesCliAT134 < Formula
   desc "Kubernetes command-line interface"
   homepage "https://kubernetes.io/docs/reference/kubectl/"
   url "https://github.com/kubernetes/kubernetes.git",
-      tag:      "v1.34.11",
-      revision: "3a634765b787dd069f7f714fa77d767cb7d43795"
+      tag:      "v1.34.12",
+      revision: "26c89157669bdc7e3657302bc1abde758507095b"
   license "Apache-2.0"
 
   livecheck do
@@ -12,13 +12,11 @@ class KubernetesCliAT134 < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "5da6e6952c308e722ad3cf257b6d9a104c7bb336a1de8d1b46fcc610e13f2250"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "8d4c143e815a9fce0c1aca6f2b5b9d03307c8342de5e0a5e360b4176f70fa6fa"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "64ccdbcbd9bbbf8c6fd58ce0c0dd6ecb34538ed31d4b90ab1b799bc7cb38de90"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "4cb7a29800a775798e3022cb30d2d47f67d361adec3e5adac13209b3112c28a6"
-    sha256 cellar: :any_skip_relocation, sonoma:            "373910661bac1db0ff6b90f9a76e89a0cbdfaba85a23e1bfd503d44b1fcfdfda"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "20331723913e7abd4c1fc8a7d322e16618d7d30b2c54e40a3f841101aabda38e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "eb385480b0d1d5e75a70b52b1cc30a722964e38424f1ef06afff562b7dab83af"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "20cab07242b18a54bab5f265f58edd3ad87cc0f0587b80e701b0c6528f001c3f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "6bf1fd06054ce91d6cfbbc794646e9f89eca432f370d4a607f285b944d5df489"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "7e5d97dc7e99f6394220d3eebc7a023ad0b7b80b0439fa808088f8f3df4163d6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "a14ef96376d0a0433cf8613756e48e10023495b18272bd0cd18ba94131ccf35f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "630053bd7a06fff3ab8630eba89c02fb61570e8d6b06731d32af2855d7466129"
   end
 
   keg_only :versioned_formula

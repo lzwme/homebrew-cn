@@ -26,6 +26,8 @@ class Zssh < Formula
   depends_on "libtool"  => :build
   depends_on "lrzsz"
 
+  deny_network_access!
+
   def install
     # Workaround for Xcode 15
     ENV.append_to_cflags "-Wno-incompatible-function-pointer-types" if DevelopmentTools.clang_build_version >= 1500

@@ -34,6 +34,8 @@ class Oclgrind < Formula
     depends_on "llvm@22"
   end
 
+  deny_network_access!
+
   def install
     llvm = deps.find { |dep| dep.name.match?(/^llvm(@\d+)?$/) }
                .to_formula

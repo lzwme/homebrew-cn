@@ -27,6 +27,8 @@ class Cntlm < Formula
     sha256 x86_64_linux:      "523184cb07c5b9c17d65a2a36f767ed37726570ec5ac3239ae49be84e12c5f6b"
   end
 
+  allow_network_access! :test
+
   def install
     system "./configure"
     system "make", "CC=#{ENV.cc}", "SYSCONFDIR=#{etc}"

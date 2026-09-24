@@ -16,6 +16,8 @@ class Zipkin < Formula
 
   depends_on "openjdk"
 
+  allow_network_access! :test
+
   def install
     (libexec/"bin").install "zipkin-server-#{version}-exec.jar"
     bin.write_jar_script libexec/"bin/zipkin-server-#{version}-exec.jar", "zipkin"

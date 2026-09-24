@@ -35,6 +35,8 @@ class Libmemcached < Formula
     file "Patches/libtool/configure-pre-0.4.2.418-big_sur.diff"
   end
 
+  allow_network_access! :test
+
   def install
     system "./configure", "--prefix=#{prefix}"
     system "make", "install"

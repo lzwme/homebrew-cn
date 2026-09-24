@@ -11,20 +11,18 @@ class ArgyllCms < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_golden_gate: "33048ce1694c92374efae0f17efbfe7cab2b532762f4fd186cd77ccab9c5bc2d"
-    sha256 cellar: :any, arm64_tahoe:       "ad024d41761298dfa2f61e8f233fb7601562ad3171586b572bd6592e9ef59641"
-    sha256 cellar: :any, arm64_sequoia:     "ec9dc920b963d51b861d30f1bac076b2af27fa5f5b8ab7dddea552e4ba718c14"
-    sha256 cellar: :any, arm64_sonoma:      "5d8283a588d6646c5e1cefe0b1aaabb7939786d09c6e568569e7679887e1af1c"
-    sha256 cellar: :any, sonoma:            "34f854d137000aa8be85754b576214963f1f1afa01336495854ab8b300e78c1f"
-    sha256               arm64_linux:       "2125b4c16e24180474d11d494a7883c492c0e5473acd7c7838ce2b17e7f8508d"
-    sha256               x86_64_linux:      "c38a332aa8e7a21574b3144a645676b01201718e1bd9df1266b7063df6f034cb"
+    rebuild 2
+    sha256 cellar: :any, arm64_golden_gate: "585de1b56d00de6d7ab345d8d590cd415d70e3c5f5a847ab37196f074b1b5c22"
+    sha256 cellar: :any, arm64_tahoe:       "3f2bd767813d16e34fcb2eef9c377a21788cb67a0bd293f505cbfbb7b6be01c1"
+    sha256 cellar: :any, arm64_sequoia:     "85b0ae0e0e6d6591900bf6085241b854b4d8c55d28685cc4be783d42c413633b"
+    sha256               arm64_linux:       "c00d9e488f123acea9ac11e5bcdf23d21833a9432d829e25e389087837cacba8"
+    sha256               x86_64_linux:      "5c6c560545149c627bb8b069668ed4769ea81c2dc1d309c5046b32dd50112842"
   end
 
   depends_on "jpeg-turbo"
   depends_on "libpng"
   depends_on "libtiff"
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   on_linux do
     depends_on "libx11"
@@ -73,17 +71,17 @@ class ArgyllCms < Formula
     %w[jpeg png tiff zlib].each { |l| rm_r(buildpath/l) }
 
     inreplace "Jamtop" do |s|
-      openssl = Formula["openssl@3"]
+      openssl = "openssl@4"
       libname = shared_library("lib$(lcase)")
       usr = "#{MacOS.sdk_path if OS.mac?}/usr"
 
       # These two inreplaces make sure all Homebrew and SDK libraries can be found by the Jamfile
       s.gsub! "[ GLOB /usr/include$(subd) : $(lcase).h $(lcase)lib.h ]",
-              "[ GLOB #{openssl.opt_include}$(subd) : $(lcase).h $(lcase)lib.h ] || " \
+              "[ GLOB #{formula_opt_include(openssl)}$(subd) : $(lcase).h $(lcase)lib.h ] || " \
               "[ GLOB #{HOMEBREW_PREFIX}/include$(subd) : $(lcase).h $(lcase)lib.h ] || " \
               "[ GLOB #{usr}/include$(subd) : $(lcase).h $(lcase)lib.h ]"
       s.gsub! "[ GLOB /usr/lib : lib$(lcase).so ]",
-              "[ GLOB #{openssl.opt_lib} : #{libname} ] || " \
+              "[ GLOB #{formula_opt_lib(openssl)} : #{libname} ] || " \
               "[ GLOB #{HOMEBREW_PREFIX}/lib : #{libname} ] || " \
               "[ GLOB #{usr}/lib : #{libname} lib$(lcase).tbd ]"
 

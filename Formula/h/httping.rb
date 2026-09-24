@@ -45,6 +45,8 @@ class Httping < Formula
     resolves "https://github.com/folkertvanheusden/HTTPing/pull/48"
   end
 
+  allow_network_access! :test
+
   def install
     system "cmake", "-S", ".", "-B", "build",
                     "-DCMAKE_BUILD_TYPE=Release",

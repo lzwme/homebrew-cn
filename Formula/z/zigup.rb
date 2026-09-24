@@ -35,6 +35,13 @@ class Zigup < Formula
     depends_on maximum_macos: [:sequoia, :build] # TODO: remove with Zig 0.15+
   end
 
+  # Test needs to download index from network
+  allow_network_access! :test
+
+  def fetch
+    system "zig", "build", "--fetch"
+  end
+
   def install
     system "zig", "build", *std_zig_args.reject { |s| s["-Doptimize="] }
   end

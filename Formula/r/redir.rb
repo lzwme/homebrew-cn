@@ -17,6 +17,8 @@ class Redir < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:      "42d0afabc5b8a627139420184283cd83e9c277f5aabcf8f3c3192f0508116ec8"
   end
 
+  allow_network_access! :test
+
   def install
     system "./configure", "--disable-silent-rules", "--enable-compat", *std_configure_args
     system "make", "install"

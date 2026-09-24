@@ -19,6 +19,8 @@ class Rabbitmq < Formula
 
   uses_from_macos "python" => :build
 
+  allow_network_access! :test
+
   def install
     # Install the base files
     prefix.install Dir["*"]

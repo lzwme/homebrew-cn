@@ -18,6 +18,8 @@ class Tinyproxy < Formula
   depends_on "asciidoc" => :build
   depends_on "docbook-xsl" => :build
 
+  allow_network_access! :test
+
   def install
     ENV["XML_CATALOG_FILES"] = "#{etc}/xml/catalog"
 
