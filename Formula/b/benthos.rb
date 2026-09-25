@@ -1,18 +1,17 @@
 class Benthos < Formula
   desc "Stream processor for mundane tasks written in Go"
   homepage "https://github.com/redpanda-data/benthos"
-  url "https://ghfast.top/https://github.com/redpanda-data/benthos/archive/refs/tags/v4.80.0.tar.gz"
-  sha256 "7797b9ed34176f836c8facbf9825317d4f1bf37495c2155d892da8189a7e7f1c"
+  url "https://ghfast.top/https://github.com/redpanda-data/benthos/archive/refs/tags/v4.81.0.tar.gz"
+  sha256 "01aa9ee6f477ed3167cb1ee6a869bc6501f0c0bd8d06129244346bb5ed3f9d74"
   license "MIT"
   head "https://github.com/redpanda-data/benthos.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "1c64c632f041a8b6e2549fd45130ce035422eef30fee335059ca55a07deda6ac"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "1c64c632f041a8b6e2549fd45130ce035422eef30fee335059ca55a07deda6ac"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "1c64c632f041a8b6e2549fd45130ce035422eef30fee335059ca55a07deda6ac"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "1c64c632f041a8b6e2549fd45130ce035422eef30fee335059ca55a07deda6ac"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "d822d795e0fe5cf75bda10e518d9be9bbc2338040260a9b79d5481566370e069"
-    sha256 cellar: :any,                 x86_64_linux:      "f0d688a0bf57bb21cc0bd1d011c941207f4e7ff94d2161929b68b9b994c5d29c"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "b868e363d2c04b0944ef68fdfb076309e5f109a928e42b600db4fabb9de10182"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "b868e363d2c04b0944ef68fdfb076309e5f109a928e42b600db4fabb9de10182"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "b868e363d2c04b0944ef68fdfb076309e5f109a928e42b600db4fabb9de10182"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "539ec43c9dd3e80a746ecb03955dab1379426abe11003dad1365f637c7c1bba7"
+    sha256 cellar: :any,                 x86_64_linux:      "2f0647fb4654b6323ad69ef7adafe337824b79b54d6e720c9959e07d4b17c7e3"
   end
 
   depends_on "go" => :build

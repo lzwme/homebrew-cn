@@ -18,8 +18,10 @@ class Iamb < Formula
 
   uses_from_macos "sqlite", since: :ventura # requires sqlite3_error_offset
 
-  on_linux do
-    depends_on "openssl@3"
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
   end
 
   def install

@@ -11,13 +11,12 @@ class Gkrellm < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "9c12bd13d8d8329403ab1a212d68ae3e2b9e6d4c2cfccb475783b543c103995b"
-    sha256 arm64_tahoe:       "936a8c81763c7bec55bff88e4191b3c550629ea638728b94924ad7548a52f663"
-    sha256 arm64_sequoia:     "cf13c52a8564497ea6b470048141efec9afad5fe0173982a1a8e8d7f6e6211eb"
-    sha256 arm64_sonoma:      "c2113a61b119137b16dcc32073cfbca1851e8def91cf7a7588628e01cb29d5b6"
-    sha256 sonoma:            "5580325f07672b8271d4dfd69a7018e9d6b242a695fc4f62903479cd83ab120b"
-    sha256 arm64_linux:       "29063e4bc0c06e3e6c1328fad75f9f1a5061a1d66d41bfcbe16a7faa91136817"
-    sha256 x86_64_linux:      "f3d9b23caf99e6749de17b505878868a235bb4e7cca6143470c32335a6a1fe7a"
+    rebuild 1
+    sha256 arm64_golden_gate: "b2f3336e082ca1453e99d97a93e9ed430995a675a5e77a208ee58ac208e2910a"
+    sha256 arm64_tahoe:       "581345f1aeb95ba675efa58f0146116db5753788c370d4f7c47adf58acbdd565"
+    sha256 arm64_sequoia:     "a916eba8009a177b6361c20b42ee40c5db0dc9ffd5d36af504ddff64a61f939b"
+    sha256 arm64_linux:       "88f4670d5555924f1077b713473724db3b9472ceba5e864849828f2c20aeb67e"
+    sha256 x86_64_linux:      "7593315e3dab7c523b936a5ab033e117df9b6851728939ed3be277b3915ecdab"
   end
 
   # Can be undeprecated if upstream moves to GTK 3 / cairo:
@@ -32,7 +31,7 @@ class Gkrellm < Formula
   depends_on "gdk-pixbuf"
   depends_on "glib"
   depends_on "gtk+" # GTK3 issue: https://git.srcbox.net/gkrellm/gkrellm/issues/1
-  depends_on "openssl@3"
+  depends_on "openssl@4"
   depends_on "pango"
 
   on_macos do
@@ -45,7 +44,11 @@ class Gkrellm < Formula
     depends_on "libx11"
   end
 
+  allow_network_access! :test
+
   def install
+    ENV.prepend_path "PKG_CONFIG_PATH", formula_opt_lib("openssl@4")/"pkgconfig"
+
     args = []
     args << "-Dx11=disabled" if OS.mac?
     system "meson", "setup", "build", *args, *std_meson_args

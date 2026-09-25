@@ -6,14 +6,15 @@ class Chunkah < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any, arm64_linux:  "e376f86e27788248fdf2d2527b59cd84c7c4fc716e0696cadbdc7d186cfa70f6"
-    sha256 cellar: :any, x86_64_linux: "0d3206b3438d99534cec5dd854fafc982d1a3fff5ee41aef177eb9c4a0cadf37"
+    rebuild 1
+    sha256 cellar: :any, arm64_linux:  "fcfa4a846a77542a308238aff164be13ea81f8ed02edf6522b700df778882de3"
+    sha256 cellar: :any, x86_64_linux: "3fe148a0a8c74780947f906bf8e48933f8a4c4a625f930ec560736a417899f95"
   end
 
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on :linux
-  depends_on "openssl@3"
+  depends_on "openssl@4"
   depends_on "zlib-ng-compat"
 
   resource "homebrew-test-rootfs" do

@@ -4,17 +4,15 @@ class Ctl < Formula
   url "https://ghfast.top/https://github.com/aces-aswf/CTL/archive/refs/tags/ctl-1.5.5.tar.gz"
   sha256 "b6a36ac31e0a79224216e4fc41b56982939cec7a1afd4e80165cec3f1c37d265"
   license "AMPAS"
+  revision 1
   head "https://github.com/aces-aswf/CTL.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_golden_gate: "2fe44db3ce9386dafa15ae96edf52a39168421ad55748535b9ea99b0c182e4ed"
-    sha256 cellar: :any, arm64_tahoe:       "47ab02f6566688c853c02238bcbd7eb1c625c58ec5715a10699ec2d3254f968b"
-    sha256 cellar: :any, arm64_sequoia:     "cae61bd17827cf4258fd0ed62d3b0cc4c1e5f225cdcefd0f93d1f2714f9ed2ba"
-    sha256 cellar: :any, arm64_sonoma:      "ae55a5403c29344467d027fbe63f833d239c25a8e98a866bb1bbbb5289d4a0cd"
-    sha256 cellar: :any, sonoma:            "b992a7caddeacea47fe70eac3a6472a0469182352049d12df3505d17ada69eef"
-    sha256 cellar: :any, arm64_linux:       "d81b51797f7a0d4924d4a25718f98140e11f0fda57f39264fc8d79df9885b990"
-    sha256 cellar: :any, x86_64_linux:      "ccf4269d792537b2a2af10e3c4c1afb6ee37ffd97038e0583713ba20941765be"
+    sha256 cellar: :any, arm64_golden_gate: "400c29e424a05b0898c56e6455d67b71cdbc53c969354f980018fc1e95cb9c0f"
+    sha256 cellar: :any, arm64_tahoe:       "3035799ef4261b9bb5ea6aa0d849eac318792c4e07cda89d260b97e0e75219da"
+    sha256 cellar: :any, arm64_sequoia:     "51a985402e336b1a42885d2b9a1f0b9439e13be1868d3136472e79e7e1b45d8c"
+    sha256 cellar: :any, arm64_linux:       "18d9a39c698a67b53092e9d65bb8ac1ec1c9956bff29c583e2d2f1f94063eca4"
+    sha256 cellar: :any, x86_64_linux:      "47325aad92767d26fc02154cb3815616a0474e6408db1d0ddf86a798b550a064"
   end
 
   depends_on "cmake" => :build

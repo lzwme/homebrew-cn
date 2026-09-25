@@ -4,18 +4,14 @@ class SfmlAT2 < Formula
   url "https://www.sfml-dev.org/files/SFML-2.6.2-sources.zip"
   sha256 "19d6dbd9c901c74441d9888c13cb1399f614fe8993d59062a72cfbceb00fed04"
   license "Zlib"
-  revision 1
+  revision 2
 
   bottle do
-    sha256 cellar: :any,                 arm64_golden_gate: "f6b257eca5ac15218960bbdaf984efe119f534b96a6564e15e6779025bcef989"
-    sha256 cellar: :any,                 arm64_tahoe:       "3b56c69d70b30eca4493fcd6ab9063a5f281cc3c82def8c43d55a63312372971"
-    sha256 cellar: :any,                 arm64_sequoia:     "7cb3afc70bc71a9a3c45edd4bf9ca54dc9514bc576a894f5f01d58c3b04e0b44"
-    sha256 cellar: :any,                 arm64_sonoma:      "529996e0afcd2b27ad6c7f5e124067fb940d2c6c4b3dface4d21db5694c16b2e"
-    sha256 cellar: :any,                 arm64_ventura:     "8d76a3051365d997d2fcbe5b24c3042bb217df18f3f64d25bb0708875cdcbc91"
-    sha256 cellar: :any,                 sonoma:            "96b5e8246f95125ed017da1a3b0ebf37ec9006c644efb2587d8e7e6d3fb4a5ec"
-    sha256 cellar: :any,                 ventura:           "d7f41e0d4c78d3c6ecd487c9d8ba1f094ec42bf7dbddc3678bccc13e13091ed0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "de95401fa9357605881a1ff217dffa3c0fc7703968ce9f99ee25db3fb16fd2f8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "83c161b5438b103ca014927de4b1ccba2782c9e6a654cce77e6041e02c91d1f3"
+    sha256 cellar: :any, arm64_golden_gate: "56dc46402b2a136a2f61f7c417996add5805f05294914a38cc36ccf9685e7a2d"
+    sha256 cellar: :any, arm64_tahoe:       "ce4ae98701f057009e94b093b2b5cf4c3958397d59daf0624a8b1b29fedb20bd"
+    sha256 cellar: :any, arm64_sequoia:     "9c63b784731a08cc47a12980b7f4214e3f60f0ff4d979e04e6941b97cfe70e5d"
+    sha256 cellar: :any, arm64_linux:       "a8b7547e627c71683677ab9d7b33bf6139b1d45fe2a36df0030798b47b0e82c3"
+    sha256 cellar: :any, x86_64_linux:      "18d53d74a00320c8982b4dae5d95e4412b9e236540af1c727bbd9dfc71663614"
   end
 
   keg_only :versioned_formula
@@ -36,6 +32,16 @@ class SfmlAT2 < Formula
     depends_on "openal-soft"
     depends_on "systemd"
   end
+
+  # Define character traits for unsigned strings, upstream PR ref, https://github.com/SFML/SFML/pull/3592
+  patch do
+    url "https://github.com/SFML/SFML/commit/6171cc2a0106b3d1d7aa9ea4e3aff9ca4246f34b.patch?full_index=1"
+    sha256 "686bd41e2f1c4fec9d7ef266b65a50862577297056a12c6d5ee507f62dabf11f"
+    type :backport
+    resolves "https://github.com/SFML/SFML/pull/3592"
+  end
+
+  deny_network_access!
 
   def install
     # Always remove the "extlibs" to avoid install_name_tool failure
@@ -58,10 +64,13 @@ class SfmlAT2 < Formula
 
   test do
     (testpath/"test.cpp").write <<~CPP
+      #include "SFML/System/String.hpp"
       #include "SFML/System/Time.hpp"
       int main() {
         sf::Time t1 = sf::milliseconds(10);
-        return 0;
+        sf::String text("SFML");
+        const auto utf8 = text.toUtf8();
+        return t1.asMilliseconds() == 10 && utf8.size() == 4 && utf8[0] == 'S' ? 0 : 1;
       }
     CPP
 

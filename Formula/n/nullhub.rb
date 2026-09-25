@@ -23,6 +23,8 @@ class Nullhub < Formula
 
   depends_on "zig" => :build
 
+  allow_network_access! :test
+
   def install
     system "zig", "build", "-Dversion=#{version}", *std_zig_args
   end

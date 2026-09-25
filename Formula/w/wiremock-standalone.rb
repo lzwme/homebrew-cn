@@ -16,6 +16,8 @@ class WiremockStandalone < Formula
 
   depends_on "openjdk"
 
+  allow_network_access! :test
+
   def install
     libexec.install "wiremock-standalone-#{version}.jar"
     bin.write_jar_script libexec/"wiremock-standalone-#{version}.jar", "wiremock"

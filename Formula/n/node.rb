@@ -1,11 +1,29 @@
 class Node < Formula
   desc "Open-source, cross-platform JavaScript runtime environment"
   homepage "https://nodejs.org/"
-  url "https://registry.npmmirror.com/-/binary/node/v26.9.0/node-v26.9.0.tar.xz"
-  sha256 "47b970d88511b429e587b740fa733176909d2a2005a29662f01b05205f58468b"
   license "MIT"
+  revision 1
   compatibility_version 1
   head "https://github.com/nodejs/node.git", branch: "main"
+
+  stable do
+    url "https://registry.npmmirror.com/-/binary/node/v26.10.0/node-v26.10.0.tar.xz"
+    sha256 "7b3a546d33cb7e15a43bdd7a57e0be5d5fd5ffc553e6e4c120033e66f0ba20c5"
+
+    # Backport support for temporal with system ICU
+    patch do
+      url "https://github.com/nodejs/node/commit/c4c11636b1420fd996e16a583b37309c179d17df.patch?full_index=1"
+      sha256 "7790de4db394b03fc6c8df8101c126ea401506347d67cc1555aeeb9be1ad87f1"
+      type :backport
+      resolves "https://github.com/nodejs/node/pull/65992"
+    end
+    patch do
+      url "https://github.com/nodejs/node/commit/bba34225c149b21f5fee96e168d7ee6f0bb5efb9.patch?full_index=1"
+      sha256 "68764ccc83203cd0a9e5b3693ffc4f9673f7dc348dffe76efb15948c07fa3d03"
+      type :backport
+      resolves "https://github.com/nodejs/node/pull/65992"
+    end
+  end
 
   livecheck do
     url "https://registry.npmmirror.com/-/binary/node/"
@@ -13,15 +31,16 @@ class Node < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "363c34f43fadfa1464fc7d9499dc11737a5fe06e63e4c5b632771de0b90baca6"
-    sha256 arm64_tahoe:       "af32e7b3770a4baed79dc4b8cb5af8acea5f772e7f869398233b28ce6c938e6b"
-    sha256 arm64_sequoia:     "b12ff55fd070ced68018d89102934efd171d92cb001d7536784c2eff9cb2a9b4"
-    sha256 arm64_linux:       "39663980886dbab1cf829a373e1e7a8f23e4021c03b9594c751e3dff7c839b07"
-    sha256 x86_64_linux:      "43d559fe30247f7ca229965b0363e1e856c05a867d05923c9994c31e3b25963a"
+    sha256 arm64_golden_gate: "a9b7dd7df23477efc9ef741c7550394e106cbb6126628ddfd54e8b2e3a1c934f"
+    sha256 arm64_tahoe:       "a0e40226c78b59e15d17b381fc1b314cd1a3fee5999ea9659b217b28a88dafa5"
+    sha256 arm64_sequoia:     "79cf85225e2968d3fc35c02b55f340e3604fc73ee6c4f6b04543eedcac659621"
+    sha256 arm64_linux:       "99d5876aebcd8a993a2eb11d6850eeaa7ed16fa6d6886d840a36ac6aa504b813"
+    sha256 x86_64_linux:      "e0eb65b1f63ae9cb0f242a97b1d71885d81a3b6565dd71e82393879ed3f32e79"
   end
 
   depends_on "pkgconf" => :build
   depends_on "python@3.14" => :build
+  depends_on "rust" => :build
   depends_on "abseil"
   depends_on "ada-url"
   depends_on "brotli"
@@ -36,6 +55,7 @@ class Node < Formula
   depends_on "nbytes"
   depends_on "openssl@3"
   depends_on "simdjson"
+  depends_on "simdutf"
   depends_on "sqlite" # Fails with macOS sqlite.
   depends_on "uvwasi"
   depends_on "zstd"
@@ -107,25 +127,26 @@ class Node < Formula
     # used in configure (e.g. `--shared-<flag>`) to the bundled subdirectory
     # and corresponding formula name as these can all differ.
     {
-      # flag name         sub-directory      formula name
+      # flag name         sub-directory                formula name
       "abseil"        => ["v8/third_party/abseil-cpp", "abseil"],
-      "ada"           => ["ada",             "ada-url"],
-      "brotli"        => ["brotli",          "brotli"],
-      "cares"         => ["cares",           "c-ares"],
-      "ffi"           => ["libffi",          "libffi"],
-      "hdr-histogram" => ["histogram",       "hdrhistogram_c"],
-      "highway"       => ["v8/third_party/highway", "highway"],
-      "http-parser"   => ["llhttp",          "llhttp"],
-      "libuv"         => ["uv",              "libuv"],
-      "merve"         => ["merve",           "merve"],
-      "nbytes"        => ["nbytes",          "nbytes"],
-      "nghttp2"       => ["nghttp2",         "libnghttp2"],
-      "openssl"       => ["openssl/openssl", "openssl@3"],
-      "simdjson"      => ["simdjson",        "simdjson"],
-      "sqlite"        => ["sqlite",          "sqlite"],
-      "uvwasi"        => ["uvwasi",          "uvwasi"],
-      "zlib"          => ["zlib",            ("zlib-ng-compat" unless OS.mac?)],
-      "zstd"          => ["zstd",            "zstd"],
+      "ada"           => ["ada",                       "ada-url"],
+      "brotli"        => ["brotli",                    "brotli"],
+      "cares"         => ["cares",                     "c-ares"],
+      "ffi"           => ["libffi",                    "libffi"],
+      "hdr-histogram" => ["histogram",                 "hdrhistogram_c"],
+      "highway"       => ["v8/third_party/highway",    "highway"],
+      "http-parser"   => ["llhttp",                    "llhttp"],
+      "libuv"         => ["uv",                        "libuv"],
+      "merve"         => ["merve",                     "merve"],
+      "nbytes"        => ["nbytes",                    "nbytes"],
+      "nghttp2"       => ["nghttp2",                   "libnghttp2"],
+      "openssl"       => ["openssl/openssl",           "openssl@3"],
+      "simdjson"      => ["simdjson",                  "simdjson"],
+      "simdutf"       => ["v8/third_party/simdutf",    "simdutf"],
+      "sqlite"        => ["sqlite",                    "sqlite"],
+      "uvwasi"        => ["uvwasi",                    "uvwasi"],
+      "zlib"          => ["zlib",                      ("zlib-ng-compat" unless OS.mac?)],
+      "zstd"          => ["zstd",                      "zstd"],
     }.each do |flag, (subdir, formula)|
       rm_r(buildpath/"deps"/subdir)
       args << "--shared-#{flag}"
@@ -136,15 +157,15 @@ class Node < Formula
     end
 
     # TODO: Try to devendor these libraries.
+    # - `--shared-temporal_capi`
+    #
+    # Following libraries are unused:
     # - `--shared-gtest` is only used for building the test suite, which we don't run here.
-    # - `--shared-simdutf` seems to result in build failures.
-    # - `--shared-temporal_capi` is only used when building with `--v8-enable-temporal-support`
     # - `--shared-lief` is only used for disabled SEA feature
     # - `--shared-perfetto` is only used when building with `--with-perfetto`
     # - `--shared-nghttp3` and `--shared-ngtcp2` are only used when building with `--experimental-quic`
     ignored_shared_flags = %w[
       gtest
-      simdutf
       temporal_capi
       lief
       perfetto
@@ -231,7 +252,6 @@ class Node < Formula
   def caveats
     <<~EOS
       Single Executable Application is disabled as it doesn't work with shared libnode.
-      Temporal support is disabled as it doesn't work with shared ICU library.
     EOS
   end
 
@@ -246,6 +266,9 @@ class Node < Formula
 
     output = shell_output("#{bin}/node -e 'console.log(new Intl.NumberFormat(\"de-DE\").format(1234.56))'").strip
     assert_equal "1.234,56", output
+
+    output = shell_output("#{bin}/node -e 'console.log(new Temporal.Instant(0n).toString())'").strip
+    assert_equal "1970-01-01T00:00:00Z", output
 
     # make sure npm can find node
     ENV.prepend_path "PATH", opt_bin

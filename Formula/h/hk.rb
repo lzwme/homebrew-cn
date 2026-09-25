@@ -24,7 +24,6 @@ class Hk < Formula
   depends_on "pkl" => :build
   depends_on "rust" => [:build, :test]
 
-  depends_on "openssl@3"
   depends_on "usage"
 
   uses_from_macos "python" => :build
@@ -33,10 +32,13 @@ class Hk < Formula
     depends_on "zlib-ng-compat"
   end
 
-  def install
-    # Ensure the correct `openssl` will be picked up.
-    ENV["OPENSSL_DIR"] = formula_opt_prefix("openssl@3")
+  deny_network_access!
 
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
+  def install
     system "cargo", "install", *std_cargo_args
 
     generate_completions_from_executable(bin/"hk", "completion")

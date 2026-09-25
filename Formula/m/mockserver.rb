@@ -16,6 +16,8 @@ class Mockserver < Formula
 
   depends_on "openjdk"
 
+  allow_network_access! :test
+
   def install
     inreplace "bin/run_mockserver.sh", "/usr/local", HOMEBREW_PREFIX
     libexec.install Dir["*"]

@@ -7,11 +7,12 @@ class Firefoxpwa < Formula
   head "https://github.com/filips123/PWAsForFirefox.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "72a0165deca44bf50c454787841bdfd01171050341ee4b82af6fec5d75312ef5"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "e645c0267ba766f9a85957f0fb88dd54afd82a541085ec07b39597ccda6ef7d1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "3dab5090fd3dbd4316c08093603de710f5587964966462fe10b0e732b58a1e77"
-    sha256 cellar: :any,                 arm64_linux:       "cc97b4212415c9a625ed4c1f30c9bacebc13ce177b4fa236e0159f2aefde0789"
-    sha256 cellar: :any,                 x86_64_linux:      "fa2925a674fd6782f6396c344e12ab886c695ec3bdd62611d2dfe14ffd22170e"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "0b1e3a14faede097ed467064fde4d8fc3df104c367380b2b1452744902dd1312"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "f9a2eb48c0d4a25cd39c950fa950d9aad583c2e19e6b57972d47be372e5f78b7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "94b8067949481ab732de2609c6b8834a639bb4f1967fcf7360ac844972915681"
+    sha256 cellar: :any,                 arm64_linux:       "f54a6d1751446e2d79df7ae84f7a985f5226685a06fb2cbad8c07f397e898e6c"
+    sha256 cellar: :any,                 x86_64_linux:      "df67e62ece4a339420de153ad9106304c5f62d696a54dd5ea7ad987a63934403"
   end
 
   depends_on "pkgconf" => :build
@@ -19,7 +20,7 @@ class Firefoxpwa < Formula
 
   on_linux do
     depends_on "bzip2" # not used on macOS
-    depends_on "openssl@3"
+    depends_on "openssl@4"
   end
 
   def install

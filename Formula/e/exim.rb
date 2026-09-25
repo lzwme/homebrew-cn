@@ -30,14 +30,15 @@ class Exim < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "93457cc469268b4a60a73d01f590e67d1ea8c98b3ccf4ab8fe0dd3b8a84325c7"
-    sha256 arm64_tahoe:       "ad3d7dc027f383803ae7d186169511ade5626e9ab90b2d344d306500be74cde7"
-    sha256 arm64_sequoia:     "9d3e150fb0edb711f78c118b9da90de3dcc604f23d3938fe5cf20e82ea922629"
-    sha256 arm64_linux:       "db3d6f92c3d7656047fd777c10c724003b7bdfe6984e3e56401bab46817ce9fe"
-    sha256 x86_64_linux:      "fd671028d9126a09d7b16309162146caf35e455af5f867cdff4e1121e4ee4406"
+    rebuild 1
+    sha256 arm64_golden_gate: "c34123d8f430558f9e115a860d8c23da3bcb7f8e017fb48f4e0f5874d6198145"
+    sha256 arm64_tahoe:       "ea7f0786ea3c915aa0237344bea3cc87717ee4539fc9989ee61754371eb376ff"
+    sha256 arm64_sequoia:     "3e1e8964ca2a18e8892a74766900c71f2db3a422c158bf07194fdab38b445f1d"
+    sha256 arm64_linux:       "8fa69a3d190c550249d0aed68dc8c100d0bd2925f6a427bc4e65dbb4e2287eb3"
+    sha256 x86_64_linux:      "894aa0f2f4ca1c79300e39c0e44a6d0d679b39873943018145cb33beacec26b1"
   end
 
-  depends_on "openssl@3"
+  depends_on "openssl@4"
   depends_on "pcre2"
 
   uses_from_macos "libxcrypt"

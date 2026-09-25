@@ -1,8 +1,8 @@
 class Osdctl < Formula
   desc "CLI tool for managed OpenShift clusters"
   homepage "https://github.com/openshift/osdctl"
-  url "https://ghfast.top/https://github.com/openshift/osdctl/archive/refs/tags/v0.64.0.tar.gz"
-  sha256 "da817547c5f2992d52abe7c13be6d6d7c56535184392aa76739a46ad5978b2c6"
+  url "https://ghfast.top/https://github.com/openshift/osdctl/archive/refs/tags/v0.65.0.tar.gz"
+  sha256 "2e16cab11da13200abb799675fb96efa54f82efc4cea32482d7e6a526bc5472c"
   license "Apache-2.0"
   head "https://github.com/openshift/osdctl.git", branch: "master"
 
@@ -12,11 +12,11 @@ class Osdctl < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "83bd97a6deebbed90593088c1339d88c6bbe738b7e5dc6ff1fbeae875a5e2a76"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "83bd97a6deebbed90593088c1339d88c6bbe738b7e5dc6ff1fbeae875a5e2a76"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "83bd97a6deebbed90593088c1339d88c6bbe738b7e5dc6ff1fbeae875a5e2a76"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0ac2e8adaf213abafcbf1d56742bb4145897e8b8d82c962f6961d63225f7ed44"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fd850f295a27b3f3193bfa5f1ca9dc0b733006cf4bb24e0da814ca00b2849cef"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "35186d0629e364464e399c98eca2f850fa4a74f5582857032b7654b04bcdff2a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "35186d0629e364464e399c98eca2f850fa4a74f5582857032b7654b04bcdff2a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "35186d0629e364464e399c98eca2f850fa4a74f5582857032b7654b04bcdff2a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "2984c5e341acad716455cbcbdc308e8228e400de09e566a51af492c2e842006c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "4d08676cc4091147189762132b012dd121a99e90cb7dc7340cae6f21c7951ce0"
   end
 
   # Can be undeprecated on new release or if upstream responds:

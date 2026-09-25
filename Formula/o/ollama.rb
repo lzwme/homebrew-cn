@@ -2,8 +2,8 @@ class Ollama < Formula
   desc "Create, run, and share large language models (LLMs)"
   homepage "https://ollama.com/"
   url "https://github.com/ollama/ollama.git",
-      tag:      "v0.34.3",
-      revision: "6383a0fa9cbf97494b847226e189f6e36b401a08"
+      tag:      "v0.34.4",
+      revision: "b2da9e468af2479058ae18c6d908ed29de410684"
   license "MIT"
   head "https://github.com/ollama/ollama.git", branch: "main"
 
@@ -16,11 +16,11 @@ class Ollama < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "417775adf2e8694739ebde778cff95caa609c2b03e2c502c65966555e5f20a32"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "35c4cdcdb4ae728a07519c8a468021f6116731aa41e0ac1ffdad66569d5df2e1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "1f022973b1a27ccf26a3baf200d71a9a77918869d0bc37d7cf555adad1e37fc0"
-    sha256 cellar: :any,                 arm64_linux:       "6baa97ed0900bfbe9aa118c785b903dbcddef7d082483425633fbfc0a9521c8b"
-    sha256 cellar: :any,                 x86_64_linux:      "e0240f6ed470491625051c80fd2fb0c045e25309de5d88a835fa7fe671b91077"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "3dec6368ea875450deb80d5073621f8e4e63e905ae054afd5188131d7b12c9b5"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "39056e8b6030e007cb9b94ae727b946000c3290e98de239fba2551618f635abc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "5edd8fe607b9e6b6f67fa8db95d704eb748c165f9cb6ce0ad5c850682dce2d4e"
+    sha256 cellar: :any,                 arm64_linux:       "a8626384aa7767fcb5c96122283b6c65f366e4272430ba9a27c11135aa780a75"
+    sha256 cellar: :any,                 x86_64_linux:      "9714a43bfb3186cab5d9a555375c433944a7ae4836a732bbbcefc8b9d7b3b604"
   end
 
   depends_on "ccache" => :build
@@ -37,6 +37,8 @@ class Ollama < Formula
       # https://github.com/ml-explore/mlx-c/commit/d4afaec5cc5c9ffbe58f37fdc038b2faaedc6e70
       # `mlx_gather_qmm` has no `global_scale` in MLX 0.32.1, so always use the wrapper fallback:
       # https://github.com/ollama/ollama/blob/v0.34.1/mlx/compat/0001-mlx-c-qmm-global-scale.patch
+      # `mlx_fast_gated_delta_update` needs MLX newer than 0.32.1, so always use Ollama's own kernel:
+      # https://github.com/ollama/ollama/blob/v0.34.4/mlx/compat/mlx-c/0002-fast-gated-delta-update.patch
       patch :DATA
     end
   end
@@ -44,8 +46,8 @@ class Ollama < Formula
   # Pinned dependency required by llama-server
   resource "llama.cpp" do
     url "https://github.com/ggml-org/llama.cpp.git",
-        tag:      "b10969",
-        revision: "391fac16460f15233a7740550d858ac96df3419d"
+        tag:      "b11081",
+        revision: "161755f29e415e2c33efe906e91843c068efd664"
 
     livecheck do
       url "https://ghfast.top/https://raw.githubusercontent.com/ollama/ollama/refs/tags/v#{LATEST_VERSION}/LLAMA_CPP_VERSION"
@@ -67,14 +69,6 @@ class Ollama < Formula
     # Build llama-server
     llama_source_dir = buildpath/"llama.cpp"
     llama_source_dir.install resource("llama.cpp")
-
-    # b10630: tools/tuning hardcodes CMAKE_SOURCE_DIR, which is the ollama
-    # build root under FetchContent; retarget to llama.cpp's own ggml-metal dir.
-    # Remove when llama.cpp fixes it upstream:
-    # https://github.com/ggml-org/llama.cpp/issues/28114
-    inreplace llama_source_dir/"tools/tuning/CMakeLists.txt",
-              "${CMAKE_SOURCE_DIR}/ggml/src/ggml-metal",
-              "${CMAKE_CURRENT_SOURCE_DIR}/../../ggml/src/ggml-metal"
 
     preset = (OS.mac? && Hardware::CPU.arm?) ? "darwin" : "cpu"
 
@@ -209,12 +203,56 @@ end
 
 __END__
 diff --git a/mlx/fast.go b/mlx/fast.go
-index 27d5724..f38a670 100644
 --- a/mlx/fast.go
 +++ b/mlx/fast.go
-@@ -24 +24 @@ func FastScaledDotProductAttention(q, k, v *Array, scale float32, mode string, m
+@@ -21,7 +21,7 @@
+ 	}
+ 
+ 	out := New("FAST_SDPA")
 -	mlxCheck(C.mlx_fast_scaled_dot_product_attention(&out.ctx, q.ctx, k.ctx, v.ctx, C.float(scale), cMode, maskCtx, sinks.ctx, C.bool(false), DefaultStream().ctx))
 +	mlxCheck(C.mlx_fast_scaled_dot_product_attention(&out.ctx, q.ctx, k.ctx, v.ctx, C.float(scale), cMode, maskCtx, sinks.ctx, DefaultStream().ctx))
+ 	return out
+ }
+ 
+@@ -30,38 +30,6 @@
+ 	Bias   *Array `weight:"bias"`
+ }
+ 
+-// fastGatedDeltaUpdate applies MLX's gated-delta recurrence and returns its
+-// per-token outputs and final float32 state. state and mask may be nil.
+-func fastGatedDeltaUpdate(q, k, v, gates, beta, state, mask *Array) (y, nextState *Array) {
+-	outVec := mlxCheck(C.mlx_vector_array_new())
+-	defer freeVectorArray(outVec)
+-
+-	var stateCtx, maskCtx C.mlx_array
+-	if state != nil {
+-		stateCtx = state.ctx
+-	}
+-	if mask != nil {
+-		maskCtx = mask.ctx
+-	}
+-
+-	mlxCheck(C.mlx_fast_gated_delta_update(
+-		&outVec,
+-		q.ctx,
+-		k.ctx,
+-		v.ctx,
+-		gates.ctx,
+-		beta.ctx,
+-		stateCtx,
+-		maskCtx,
+-		DefaultStream().ctx))
+-
+-	y = New("FAST_GATED_DELTA_Y")
+-	nextState = New("FAST_GATED_DELTA_STATE")
+-	mlxCheck(C.mlx_vector_array_get(&y.ctx, outVec, C.size_t(0)))
+-	mlxCheck(C.mlx_vector_array_get(&nextState.ctx, outVec, C.size_t(1)))
+-	return y, nextState
+-}
+-
+ func (r *LayerNorm) Forward(x *Array, eps float32) *Array {
+ 	out := New("FAST_LAYERNORM")
+ 	mlxCheck(C.mlx_fast_layer_norm(&out.ctx, x.ctx, r.Weight.ctx, r.Bias.ctx, C.float(eps), DefaultStream().ctx))
 diff --git a/mlx/ops.go b/mlx/ops.go
 --- a/mlx/ops.go
 +++ b/mlx/ops.go
@@ -255,3 +293,16 @@ diff --git a/mlx/ops_extra.go b/mlx/ops_extra.go
  	if applyWrapperScale {
  		out = mulGatherQMMGlobalScale(out, globalScale, rhsIndices)
  	}
+diff --git a/mlx/gated_delta.go b/mlx/gated_delta.go
+--- a/mlx/gated_delta.go
++++ b/mlx/gated_delta.go
+@@ -298,9 +298,6 @@
+ // directly.
+ func gatedDeltaRecurrence(q, k, v, g, beta, state *Array) (y, nextState *Array) {
+ 	if dims, ok := resolveGatedDeltaRecurrenceDims(q, k, v, g, beta, state); ok {
+-		if supportsFastGatedDeltaUpdate(dims) {
+-			return fastGatedDeltaUpdate(q, k, v, g, beta, state, nil)
+-		}
+ 		outs := gatedDeltaRecurrenceKernel.run(gpuLaunch{
+ 			dtypes: []gpuDTypeArg{{"InT", q.DType()}, {"StT", state.DType()}},
+ 			ints:   []gpuIntArg{{"Dk", dims.Dk}, {"Dv", dims.Dv}, {"Hk", dims.Hk}, {"Hv", dims.Hv}},

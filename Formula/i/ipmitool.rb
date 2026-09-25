@@ -13,21 +13,18 @@ class Ipmitool < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "b2c455680f66b73133b5e3f9be5a091583c168a074fb7f660055a0afab500ff2"
-    sha256 arm64_tahoe:       "3e1a327a4ff22704b4c6868fc1e17a29f2d138106d8b9ea495916c7e4ce8d059"
-    sha256 arm64_sequoia:     "edbce0fa9c0eb8554d49e69266b9a954b48675511ae98cab9f252df858c60feb"
-    sha256 arm64_sonoma:      "4209c292804d02871d7ffbb5eacfe3d0a9b4c433bd7ea324d7411453e5898ed8"
-    sha256 arm64_ventura:     "d5f56eab1fc400e5160b2e08df8161d8d8c0bfeb9935ed220ae28e60ab6f460c"
-    sha256 sonoma:            "6486e5cfbef27dc3affea78d2ce0d06b50b44030e27606095f25ad9f42dafce7"
-    sha256 ventura:           "b232ea31418c3291675268781731b137e2d5737e3e588c46508bc5c7c9bcc3ce"
-    sha256 arm64_linux:       "9a89dea49852f23f465ae0c9d72c718cb06f593e097dc8e1370f22061800ba7c"
-    sha256 x86_64_linux:      "610caf753fee4dcb908b7213554bb2397a9e303c00c95b52a7168da42ba804f7"
+    rebuild 1
+    sha256 arm64_golden_gate: "b7cb2691bf1d9efd8e53c2e5ec84a162f5c775cb8e4f27600d93b49f7cecdcf4"
+    sha256 arm64_tahoe:       "fac2be6b6864c8ba04561644fa6c71fadd657c26725aab90ab009afcaf6ae437"
+    sha256 arm64_sequoia:     "ace2463c31aa8323d12f23808698220aaf1a119fb599bc7996d757f3670bea5e"
+    sha256 arm64_linux:       "9d8f46de91af22a4e3f4249d440cf15f3163148c94db6fa4de3fa64d42d22d2b"
+    sha256 x86_64_linux:      "7ba2fa2ab338c124d5aab91f6aa0339c71fb774143fb2ec4eaa64f87dd581eb9"
   end
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   on_linux do
     depends_on "readline"

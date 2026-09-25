@@ -1,8 +1,8 @@
 class Mapnik < Formula
   desc "Toolkit for developing mapping applications"
   homepage "https://mapnik.org/"
-  url "https://ghfast.top/https://github.com/mapnik/mapnik/releases/download/v4.3.1/mapnik-v4.3.1.tar.bz2"
-  sha256 "aadfe037a8fdf7524bca7d72594ed9783c7047b7a53c6cf2e767f6e802d53edd"
+  url "https://ghfast.top/https://github.com/mapnik/mapnik/releases/download/v4.3.2/mapnik-v4.3.2.tar.bz2"
+  sha256 "1858a9d57f4d2007d717ea84af23bcb32bd984fbc635426b79124fe9f7a682c4"
   license "LGPL-2.1-or-later"
   head "https://github.com/mapnik/mapnik.git", branch: "master"
 
@@ -12,12 +12,11 @@ class Mapnik < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "8e50afe8a3bd50601577181997bfd2aa9fc70a5a929b3c6c7784774f89088fa0"
-    sha256 cellar: :any, arm64_tahoe:       "99db6651491ca3a306f61d5cbf6bca857f5031e1c13e982cdc72b7d9e5c76c80"
-    sha256 cellar: :any, arm64_sequoia:     "64bbeca5e052b964c53ec208f4b5119c78d2270ded7f13d5682822baa0861cbd"
-    sha256 cellar: :any, arm64_sonoma:      "f27b4e8159b53d0f6ce40cb21e1ffc53adbb423b10c1d236614243af02cac79c"
-    sha256 cellar: :any, arm64_linux:       "f2c15b9d4d17f09a399172b6461b8e1d7b12a83812d84c71f237937429254c43"
-    sha256 cellar: :any, x86_64_linux:      "79ec3d1289b7955084669787f0d1a5cac52f2eb932d0d796af5002bd97ded36c"
+    sha256 cellar: :any, arm64_golden_gate: "382b770e37078a58bfe5a1984e2944b62a9c483d48a9b4d5bf85679046087611"
+    sha256 cellar: :any, arm64_tahoe:       "acbeae8ddc75a6d34ec2e6c8c41e7d072944f746290e23f817e4c6782670fe36"
+    sha256 cellar: :any, arm64_sequoia:     "38e4be5ff7a850f629aff3a4a8f2bd7a92d1e4c226d3095d1d66aeec6f7ceff7"
+    sha256 cellar: :any, arm64_linux:       "7b03a861716b3ad636702f883a28f38dba6ac2a93ff1cf61a483047f8ea9ed22"
+    sha256 cellar: :any, x86_64_linux:      "772e16eb8a3ac45517d6c703a3d7baeeec7e5edd42ab844fbd15f724c5b99372"
   end
 
   depends_on "cmake" => :build
@@ -54,6 +53,12 @@ class Mapnik < Formula
       -DCMAKE_INSTALL_RPATH:PATH=#{rpath};#{rpath(source: lib/"mapnik/input")}
       -DUSE_EXTERNAL_MAPBOX_PROTOZERO=ON
     ]
+
+    # TODO: Remove this workaround once either:
+    # a) CMake in mapnik properly handles C language requirements for proj OR
+    # b) The workaround is no longer needed with proj > 9.9.0
+    #    Ref: https://github.com/OSGeo/PROJ/issues/4862
+    inreplace "CMakeLists.txt", "LANGUAGES CXX\n", "LANGUAGES C CXX\n"
 
     system "cmake", "-S", ".", "-B", "build", *cmake_args, *std_cmake_args
     system "cmake", "--build", "build"

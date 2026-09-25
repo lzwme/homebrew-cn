@@ -9,6 +9,11 @@ class Floresta < Formula
   ]
   head "https://github.com/getfloresta/Floresta.git", branch: "master"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_golden_gate: "f93a8f22c9506bd74f7dedbc53e8a967402a2ad4e7cf7b889a17aa98845f8c03"
     sha256 cellar: :any_skip_relocation, arm64_tahoe:       "8ba412b48e231c0e21051fa442177a6697709361495d100d6b6ee16e6d47d755"

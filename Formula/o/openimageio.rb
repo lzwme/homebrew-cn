@@ -4,6 +4,7 @@ class Openimageio < Formula
   url "https://ghfast.top/https://github.com/AcademySoftwareFoundation/OpenImageIO/archive/refs/tags/v3.1.17.0.tar.gz"
   sha256 "92a26c0af4ffc6676d72d9dfe0e991eb45fdf3192abee3d0855a24d6c721b013"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/AcademySoftwareFoundation/OpenImageIO.git", branch: "main"
 
   livecheck do
@@ -13,12 +14,11 @@ class Openimageio < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "f316ded4d9e21e4681e936a507d405c5dcde2ffab194f6e9a9d11a6f41ac7e6f"
-    sha256 cellar: :any, arm64_tahoe:       "7f21f19f750a277c283adf167bc37040303e3e797c84837606f68a4a57ed5d96"
-    sha256 cellar: :any, arm64_sequoia:     "c04a4fc35ab97e97826f330d0131181606894894209d3cdcb26fbea912e8840f"
-    sha256 cellar: :any, arm64_sonoma:      "80fcc748bdf097551e2402ac6833c42a81f57f3afffc2101a110b4727c0d09c0"
-    sha256 cellar: :any, arm64_linux:       "9e9552c6b6a19fc01830f0d3ae7979836af1ea8bec9b900d4672481647543a28"
-    sha256 cellar: :any, x86_64_linux:      "9d0085bd1459aa9a5d43bca116466d952db88a3aba6042f360ff02013a03f39e"
+    sha256 cellar: :any, arm64_golden_gate: "8264fc175137cbe682c3a6acde42d13fa7583954b4d2a6b7c8fcb15423e052a0"
+    sha256 cellar: :any, arm64_tahoe:       "142f0d78648cfa23157fdc8e39ef162eb7ecc3c7c16b41057fa28e73db960a24"
+    sha256 cellar: :any, arm64_sequoia:     "fcff8f6b22921f60e6bf87dcc586d6ca597e66852369df3b35fd164ad883bec9"
+    sha256 cellar: :any, arm64_linux:       "a28d0b950d1b84b4bef891df77ea66cb91c5ae7c208c09707686bafa3ecaa595"
+    sha256 cellar: :any, x86_64_linux:      "647cc7d5fccf5f6d1c78e8cf5a702623981521eaebe65d767abc47fdd9fb079d"
   end
 
   depends_on "cmake" => :build

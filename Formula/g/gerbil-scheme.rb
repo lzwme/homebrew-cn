@@ -11,17 +11,16 @@ class GerbilScheme < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "6fb37eb896420e9cfac3d53f8e78c3b48ba3f025ff899b516ccb6d38e2f64883"
-    sha256 arm64_tahoe:       "5d5b0c0983acb6e54a5b980bafd5966d0a56a565ad5629a70f6664652cfab2b5"
-    sha256 arm64_sequoia:     "d0d981ad80f1b71ffe7ef8fff4b6e5f5e330bb348ed82415d1d536ae6d387f27"
-    sha256 arm64_sonoma:      "32a553ff944193e9152d3e164380e484d19d4ef71232e292a62c1515c90673e7"
-    sha256 sonoma:            "5004a6b5a26614f190c4fc4e5d3e353cbb35b4f56c01498a7d278a6494f065b0"
-    sha256 arm64_linux:       "b329cfd3d24ed07d56b6a6558e051f970083f29c02b43689db0b575d6077a376"
-    sha256 x86_64_linux:      "9e1c6732baed62c845e8fe0169f5e3eb5998773fd12aaa3700a47c1d21fe6403"
+    rebuild 1
+    sha256 arm64_golden_gate: "645a7be1ea6315305ced4c9ace7649cf4434769aabfb48c8829db6a7848ea67f"
+    sha256 arm64_tahoe:       "9f0e9f0c40582159ad09a24edb9c6f7c77356081a14b6faad6471fdaff4f23c2"
+    sha256 arm64_sequoia:     "42b0fcf59dd86f661c824bab9fdc4cc0a6219c605f3dd5a96f6ba0d34147969b"
+    sha256 arm64_linux:       "163e1f4377da81f57b4286d575318e543b2b9f96d0808839d793e62f157c933f"
+    sha256 x86_64_linux:      "c5fdfb594b38294206186b90cf5d9bab89359386cdf30dcf0ec8df37de4c957e"
   end
 
   depends_on "pkgconf" => :build
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   uses_from_macos "sqlite"
 

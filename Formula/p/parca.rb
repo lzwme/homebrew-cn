@@ -1,29 +1,17 @@
 class Parca < Formula
   desc "Continuous profiling for analysis of CPU and memory usage"
   homepage "https://www.parca.dev/"
+  url "https://ghfast.top/https://github.com/parca-dev/parca/archive/refs/tags/v0.29.0.tar.gz"
+  sha256 "703d518f2ff1c5f583b1ec98944cd02155085784ac051907faed10291d7ab698"
   license "Apache-2.0"
   head "https://github.com/parca-dev/parca.git", branch: "main"
 
-  stable do
-    url "https://ghfast.top/https://github.com/parca-dev/parca/archive/refs/tags/v0.28.0.tar.gz"
-    sha256 "1b19d722b88db0e6a31aeef1b8846156a3f38568cf1af059a287ffbb608599c8"
-
-    # Backport migration to pnpm 11
-    patch do
-      url "https://github.com/parca-dev/parca/commit/cce673deb34ae93cdeeba37f5391c077e1a6e53c.patch?full_index=1"
-      sha256 "b8b3392ea97bcffa4ec2d178acc9eee24092eae0638d1b8b6391867c1b654a46"
-      type :backport
-    end
-  end
-
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "adf9b8eea90b615f1482cb59b51881638a9ab3496b66f2f91ba096383244690f"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "2d21f675c0cca9a7e326dd62a6911944c5e2ddf6fe79632b8f64261b7da8fe56"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "10e7d8fdff5314eaf0c69538db05b8c1359ddf32c3973da2e250751a1c2848ad"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "4339e9f89bff3817e65ba94a2a32f7d79c4cb7cfc03c7530b0a2e67e49146143"
-    sha256 cellar: :any_skip_relocation, sonoma:            "adfe5aef4131d721cc19299c8c14344fcfe61ecd9aa244cbea7d03fda44dae30"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "fe22b4f736e5c788166bde18c3b19418024b8b77188a422836f431cd8f5d382e"
-    sha256 cellar: :any,                 x86_64_linux:      "e9ad672a3c90fff570752744eed9442ef58f8560f938fb562be17a35d5a50abc"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "a80a1dd359b7943fbb36d72349cabb9cf88b38a36d2576e8079a3367707fe07b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "faac3085fc4987a18704df5936cabe21fc1371b93eced1f8cfe4cf93a7d8df1c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "8622c2130a11ddfbe8ad74b31ff41ebf7dd07bae40e8c3a40b4481f52c76766a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "d222d21913dbefa3d3a92d69f0646ad0643a2e75017a63a931d6ce7b37354bf5"
+    sha256 cellar: :any,                 x86_64_linux:      "388a08a239642c0781218f3fbe7994f22c36d004fdaaeb17fd41b43a51c9548d"
   end
 
   depends_on "go" => :build

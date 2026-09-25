@@ -20,6 +20,8 @@ class Sslh < Formula
   depends_on "libev"
   depends_on "pcre2"
 
+  allow_network_access! :test
+
   def install
     system "./configure", *std_configure_args
     system "make", "install", "PREFIX=#{prefix}"

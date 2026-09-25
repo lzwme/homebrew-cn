@@ -7,6 +7,7 @@ class Swift < Formula
   url "https://ghfast.top/https://github.com/swiftlang/swift/archive/refs/tags/swift-6.4.0-RELEASE.tar.gz"
   sha256 "8ac51c183d353a5b0f42cf0718f09977bf8723595a99f2218fe7458023cdead7"
   license "Apache-2.0"
+  revision 1
   compatibility_version 1
 
   # This uses the `GithubLatest` strategy because a `-RELEASE` tag is often
@@ -18,11 +19,11 @@ class Swift < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "1ce1a4674a290f87cb8d259e538a12f10ce693f040f3dc1cdc20c642b8d01973"
-    sha256 arm64_tahoe:       "db6131f79f6dd2c54340791cc52397dbc5081d48c288473435a5b790bfca1ab1"
-    sha256 arm64_sequoia:     "ef385bbeeb59f2bf81cc968e2eb708cdddedfe444ea6c3ed7e06bc25dff24403"
-    sha256 arm64_linux:       "49ba54c80a1b011a40109fa9fc39d2306cfaa7e8b1a53a246d1fbed78d894b61"
-    sha256 x86_64_linux:      "5be4feca7e69fccac132d805618ddab2418d2476926b7c59c3fe2d0746469a7d"
+    sha256 arm64_golden_gate: "90b2578046a6ab86e94c91bf0530f184b84bb480152cdaa0eb9f1456017dd270"
+    sha256 arm64_tahoe:       "9416b24a2dee0dd07a365700870a2977a4684bf009c8f9ba5f18fd5d830e5e20"
+    sha256 arm64_sequoia:     "03965366e79b04d8fdd1bc211484fe99b574d0704f1ae3d39575abbef480ec9f"
+    sha256 arm64_linux:       "9444128808d7449741baa6dc5fd152bff7f537eb6b86066af91272049801588c"
+    sha256 x86_64_linux:      "7ca808433a80891a66ea4c2e1325047a0c71bed53a41346c768e9d0dd12598cd"
   end
 
   keg_only :provided_by_macos
@@ -51,7 +52,6 @@ class Swift < Formula
 
   on_linux do
     depends_on "lld" => :build
-    depends_on "python-setuptools" => :build # for distutils in lldb build
     depends_on "util-linux"
     depends_on "zlib-ng-compat"
 
@@ -168,6 +168,14 @@ class Swift < Formula
 
     livecheck do
       formula :parent
+    end
+
+    # Backport fix for linking static libs
+    patch do
+      url "https://github.com/swiftlang/swift-build/commit/9766f5f94a3b1e384995ecfe44681240080258c7.patch?full_index=1"
+      sha256 "c499e470c9d4909ebccb6f580a468e0237c4769773620825581019db13a2d24b"
+      type :backport
+      resolves "https://github.com/swiftlang/swift-build/issues/1764"
     end
   end
 
@@ -606,9 +614,9 @@ class Swift < Formula
       ]
       llvm_components = %w[
         llvm-ar llvm-nm llvm-ranlib llvm-cov llvm-profdata
-        llvm-symbolizer IndexStore
+        llvm-objdump llvm-objcopy llvm-symbolizer IndexStore
         clang clang-resource-headers builtins runtimes
-        clangd clang-features-file libclang lld
+        clangd clang-features-file libclang lld LTO
       ]
 
       if OS.mac?

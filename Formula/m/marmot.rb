@@ -1,8 +1,8 @@
 class Marmot < Formula
   desc "Open-source data catalog exposing metadata to AI agents"
   homepage "https://marmotdata.io"
-  url "https://ghfast.top/https://github.com/marmotdata/marmot/archive/refs/tags/v0.10.0.tar.gz"
-  sha256 "9c06cc0d0f460cb7910ebf8de45c18b242caeccf32c7c3f55b1fb7416c515526"
+  url "https://ghfast.top/https://github.com/marmotdata/marmot/archive/refs/tags/v0.11.0.tar.gz"
+  sha256 "28d4b279c6f0c05469e39d08ced70c31e6ae885746387a8a46b9f2c41b9bf95d"
   license "MIT"
   head "https://github.com/marmotdata/marmot.git", branch: "main"
 
@@ -12,13 +12,11 @@ class Marmot < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "fecd6b043a558187bf7dd1ce0c331076a7c800d6c58fdf06fbf41d673bc45f3c"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "7daf374e207ad65f4e9138558698f68f7504da1ee5363921d3c8ed0799aea33c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "7daf374e207ad65f4e9138558698f68f7504da1ee5363921d3c8ed0799aea33c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "7daf374e207ad65f4e9138558698f68f7504da1ee5363921d3c8ed0799aea33c"
-    sha256 cellar: :any_skip_relocation, sonoma:            "d55865e302db1e1aa8225ff1bb1e6f05a8ed6896ac8fa8c0a3cfafc296c1f3d0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "6369b382a540f7ea36bbc51a03b064e577d89610e7262104ffd380afa6085c4f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "c9261426e07b5133be2ffccb63beee3bc0cc65bc3908bc1e00905c7cfba49ed3"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "1e1e42809feedc9d79dc06afb023c63629659000b27952d335bfba4c0e9326e9"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "1e1e42809feedc9d79dc06afb023c63629659000b27952d335bfba4c0e9326e9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "1e1e42809feedc9d79dc06afb023c63629659000b27952d335bfba4c0e9326e9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "7edcf40d158cefb28c6a207e1fd3b3c5134eae1a4a57c376bcde799ab855c24f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "339532ba15a4ed1b53f69328b122d513c6f4c93266aaa0e8e1369eb2907336e7"
   end
 
   depends_on "go" => :build

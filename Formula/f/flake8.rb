@@ -3,13 +3,13 @@ class Flake8 < Formula
 
   desc "Lint your Python code for style and logical errors"
   homepage "https://flake8.pycqa.org/"
-  url "https://files.pythonhosted.org/packages/d9/71/d9a14f80e00bd0fc2871d85ff7b7a64d84c32f58665ac060de6705a6a78f/flake8-7.4.0.tar.gz"
-  sha256 "d3e0beb3d152209b4dc50fa5e3132844bf4ee4ff994cec87d6913d06b8eb5afc"
+  url "https://files.pythonhosted.org/packages/c2/94/85870fc02dfe4ab0885c440e7e41f6a986b10e43eca6717e90f8ce1215cc/flake8-7.4.1.tar.gz"
+  sha256 "84ea5afcaf344487b0ea5baaebb8100f4cfaebc01f755998f75876664029f587"
   license "MIT"
   head "https://github.com/PyCQA/flake8.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "30ea98dab5ff24d552dfecceaf698dc688c8739a14c358fa580b89c247b24f56"
+    sha256 cellar: :any_skip_relocation, all: "d66e8f966c5d03fd1a6330bcabb59086cdb95f97aa798073c5cd31b353e4ca2f"
   end
 
   depends_on "python@3.14"

@@ -6,18 +6,27 @@ class Imapfilter < Formula
   license "MIT"
 
   bottle do
-    sha256 arm64_golden_gate: "e408fd1a195e50b7110abe9a6a4ec81257ad86b578ba2bb37b1378d7da8190ba"
-    sha256 arm64_tahoe:       "1ffec7b7bf2c3c7f24bfc811025285e07faa6739701b6dfe1576c7713234935c"
-    sha256 arm64_sequoia:     "5b5390a704d72710b016e5c5917afa812c717328e6960939a353157f09088124"
-    sha256 arm64_sonoma:      "651cffae52fb88e225283749dad1a275c423f2218127a318efb60c982421d4da"
-    sha256 sonoma:            "edeb5b2c307b63a2dda4361dd61a52f59c29db146dd117c43d0566ec4c72328a"
-    sha256 arm64_linux:       "2aa3b98279fd72f7024ad9815f171fa31111026926248b0a7a1ba0548984b6d5"
-    sha256 x86_64_linux:      "80b95649f62f4f690f8f687bdfe2b14d0bc6e4d9ed4cd127415ae63ac48f43ed"
+    rebuild 1
+    sha256 arm64_golden_gate: "76613dfae6048733352e2d71778da1ad2c6b98534789bef6b44bd07a9768e64d"
+    sha256 arm64_tahoe:       "e4d9cb640ff502c91dd2aa79ecaf07751ee96810ae7e2773c0d4740787cd85fe"
+    sha256 arm64_sequoia:     "b8db295a4a69ac4db0a94e791d450f225beee8a7725178caf6ad932edd2fa267"
+    sha256 arm64_linux:       "c96f8f0fb5e75c8c9a358f167118974b8661474a732bf6947c8901d2e488942d"
+    sha256 x86_64_linux:      "f3a9917c776dfb842ec9410bfabc5e82a5296f72975c26ae69de2ba5d6305599"
   end
 
   depends_on "lua"
-  depends_on "openssl@3"
+  depends_on "openssl@4"
   depends_on "pcre2"
+
+  # Apply open PR by Ubuntu maintainer to support OpenSSL 4
+  patch do
+    url "https://github.com/lefcha/imapfilter/commit/d0e1b29ee5ae0e6e91944fd5c04b943fc810e13c.patch?full_index=1"
+    sha256 "b4c52d30ad177546cac2393722184038d974a3b59bdbc14a832c5e3be27f578b"
+    type :unofficial
+    resolves "https://github.com/lefcha/imapfilter/pull/317"
+  end
+
+  deny_network_access!
 
   def install
     # find Homebrew's libpcre and lua

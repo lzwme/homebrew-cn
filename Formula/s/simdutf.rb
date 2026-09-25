@@ -4,7 +4,8 @@ class Simdutf < Formula
   url "https://ghfast.top/https://github.com/simdutf/simdutf/archive/refs/tags/v9.2.1.tar.gz"
   sha256 "582f9d0dcf578f6d4766fa29ea12a7f2f02bd3c6ad9e0cf35a8e0ec8478eba4b"
   license any_of: ["Apache-2.0", "MIT"]
-  compatibility_version 5
+  revision 1
+  compatibility_version 6
   head "https://github.com/simdutf/simdutf.git", branch: "master"
 
   livecheck do
@@ -13,11 +14,11 @@ class Simdutf < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "e5c1ae108e4d53384b38ad0a865bb58140b7c2c8e8528e9d8a7bd7810c03d83f"
-    sha256 cellar: :any, arm64_tahoe:       "c0992a6098ad9b85df9db148ef58ecd82d712adabbb39016fe6b8a7c9bc1459f"
-    sha256 cellar: :any, arm64_sequoia:     "47c8bfe62737cdda001f35e79375248269eacb81b259977aa9c75eaae0be623b"
-    sha256 cellar: :any, arm64_linux:       "ac704b64b9877e89baa13c19c9b1c4997a68ea5b6f3abe1392ee63baed7fa564"
-    sha256 cellar: :any, x86_64_linux:      "4dada8ea727a9f78c007cdcea0b29d33c4f2639804f9dc611f6271d70a0e9346"
+    sha256 cellar: :any, arm64_golden_gate: "b5990df2e687dbd5b2d3212adf7a5d60dc2ea7f20eb8245711f23b259f3b861a"
+    sha256 cellar: :any, arm64_tahoe:       "5621579c497fe7f5f6d0c4ccf0f61d9107f319231ade4922c5fc9578f2728cb1"
+    sha256 cellar: :any, arm64_sequoia:     "39b53197558ebd796c9bc4d8e9f7a0fe040cedceca9c6e448e16cebf27d98176"
+    sha256 cellar: :any, arm64_linux:       "73355ee95d638fb3a61f1abeef369bd9435a3f240f3aa3e2d427084f1730bb81"
+    sha256 cellar: :any, x86_64_linux:      "c326e7ae4d05162d4242b52eac9663311e5a2c5b702db58795bd4fb912b77cbb"
   end
 
   depends_on "aklomp-base64" => :build
@@ -29,6 +30,7 @@ class Simdutf < Formula
   deny_network_access!
 
   def install
+    # C++20 is needed by `node`
     args = %W[
       -DBUILD_SHARED_LIBS=ON
       -DCMAKE_INSTALL_RPATH=#{rpath}
@@ -36,6 +38,7 @@ class Simdutf < Formula
       -DCPM_LOCAL_PACKAGES_ONLY=ON
       -DPython3_EXECUTABLE=#{which("python3")}
       -DSIMDUTF_BENCHMARKS=ON
+      -DSIMDUTF_CXX_STANDARD=20
     ]
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"

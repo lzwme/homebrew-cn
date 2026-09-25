@@ -7,13 +7,12 @@ class Flawz < Formula
   head "https://github.com/orhun/flawz.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "d52e22d9292f63c218d596a9e2958a9d1a0da7c10f3caa706eeee34e776b4513"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "c93092557f6fb166c0b746bb3e64abc4c15394d1fc90726219b814a4469b14b1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "96d0de83f22314aad4ab7c0800ff3ccb2ee25640ae821c94c281960f201c7b1b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "d0bddc1c8e9c928e93d485d194148c9e6d996beadf9c50b303b057acc6d9986d"
-    sha256 cellar: :any_skip_relocation, sonoma:            "65bdc4361aa4173feaa4351dfb68ae2315c35dd83103d398c902df5815ace1f0"
-    sha256 cellar: :any,                 arm64_linux:       "2c6c3e1564895ebdd2071af7b20936afaf36c94c0548ec5346e79588832d8b71"
-    sha256 cellar: :any,                 x86_64_linux:      "8d4caff11b22a623428797da9903d523353151292db51e18531fd8edadcf2b76"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "7701200ca9a319e1630bdd0ae229fdf4cfe2ec8c0f630e29cfb997f22b0a651c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "a5391e6b06f900858eae6f6b6b56daf0d488c6c839adb184164b777be4d6502e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "5bb8302663275870e215fca1308fe23cf7caa0d6eefa1e21073f3bf3d43fd503"
+    sha256 cellar: :any,                 arm64_linux:       "ec4de4d6a20c29e7ad4b9ee64208293b195cd91831cd88e22e071ea7bdeac971"
+    sha256 cellar: :any,                 x86_64_linux:      "3b9066f11b2a40a1cf9e3c90e734cd5403da68e085afb096c5a7b1f6a5c3a44b"
   end
 
   depends_on "pkgconf" => :build
@@ -21,8 +20,10 @@ class Flawz < Formula
 
   uses_from_macos "sqlite"
 
-  on_linux do
-    depends_on "openssl@3"
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
   end
 
   def install

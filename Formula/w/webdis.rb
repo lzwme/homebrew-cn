@@ -17,6 +17,8 @@ class Webdis < Formula
 
   depends_on "libevent"
 
+  allow_network_access! :test
+
   def install
     system "make"
     bin.install "webdis"

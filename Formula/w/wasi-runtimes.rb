@@ -1,8 +1,8 @@
 class WasiRuntimes < Formula
   desc "Compiler-RT and libc++ runtimes for WASI"
   homepage "https://wasi.dev"
-  url "https://ghfast.top/https://github.com/llvm/llvm-project/releases/download/llvmorg-23.1.1/llvm-project-23.1.1.src.tar.xz"
-  sha256 "ebe9be46fe8756d58c5b198ffad0fa2a766257add81a4dc52179bfacc7888ee6"
+  url "https://ghfast.top/https://github.com/llvm/llvm-project/releases/download/llvmorg-23.1.2/llvm-project-23.1.2.src.tar.xz"
+  sha256 "c98bbef08a2b4c2613cd50e9aa9ae7b69b1fe6c16b2c40373bc0ab6116fdf78a"
   license "Apache-2.0" => { with: "LLVM-exception" }
   head "https://github.com/llvm/llvm-project.git", branch: "main"
 
@@ -11,12 +11,11 @@ class WasiRuntimes < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "0d32b900f8c0861bdee67b3b0c3f31c4481ac1a2868819eb9884029c571620e0"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "0d32b900f8c0861bdee67b3b0c3f31c4481ac1a2868819eb9884029c571620e0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "0d32b900f8c0861bdee67b3b0c3f31c4481ac1a2868819eb9884029c571620e0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "0d32b900f8c0861bdee67b3b0c3f31c4481ac1a2868819eb9884029c571620e0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "3ba4b195b878296fac2c875a6e83e2ed81d65e927b6b0370eedef435e8c18932"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "807611a2e94ce1b99f4cd1c5cc1422afa45c484ad862105158350453c7be9a81"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "2811a4e27847f147c89520d5dd86093399f8301602a27c4999496f99614ce1f9"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "2811a4e27847f147c89520d5dd86093399f8301602a27c4999496f99614ce1f9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "2811a4e27847f147c89520d5dd86093399f8301602a27c4999496f99614ce1f9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "3e65bc58625e78a2deb6a8719f259767d8ed053ee691a98cd126b5989ca81329"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "ace69accd32a2d9c5159c41d4c055e0d0a1398b9024f9127877d7eeb63d4c77a"
   end
 
   depends_on "cmake" => :build

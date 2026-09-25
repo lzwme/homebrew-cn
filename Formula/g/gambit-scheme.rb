@@ -11,16 +11,15 @@ class GambitScheme < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "f29e1ddfe29f255a08523544bb18681492e14b19fbb3be418616acbfb808b4f0"
-    sha256 arm64_tahoe:       "d2b89e48bcc3696606b22560e530afd8c7cc41745ffdbccdaf03eb414f83ce5b"
-    sha256 arm64_sequoia:     "dee55256d8b72036f5512f5c6c5ff526e90ef741a321cc3abb1703efd2018625"
-    sha256 arm64_sonoma:      "792b27e088e7eed175fdf4297ff387cd6301e4a831c2d5e19767cf2cb16f4d0d"
-    sha256 sonoma:            "fc2714c39fba97197e264255efe3e6359f2aa2020a11c877270ddc644718f50c"
-    sha256 arm64_linux:       "abb910c7c95fa1ed5f135d9c8b877152333b4233dc71a93d4c7ccd2e480b861c"
-    sha256 x86_64_linux:      "562e24e2eb6eb60a92ed469b94dda9974f3f4d0e56f8a47e877344c4013fdee1"
+    rebuild 1
+    sha256 arm64_golden_gate: "71b7111dd6f7b3c1bd0e711493cfc468dd6ba15ae5236811c9642496960ca53a"
+    sha256 arm64_tahoe:       "18972a99033b1bd893b769bd0e6a29267a1e7e8069494512a007a6d25b32c7f6"
+    sha256 arm64_sequoia:     "5d4867bde22dc23c0821177f759f25f8db1c1e3e6b75c24253c5f7239e89e146"
+    sha256 arm64_linux:       "eefa71bc2bac0b446c63b84d897ed9a9b478ceeef763502039780aa339a181c1"
+    sha256 x86_64_linux:      "fe6904a521d67c22c221a32c9acf79c1353143a84a55a79a32cccf64bc166886"
   end
 
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   on_macos do
     depends_on "gcc"
@@ -32,6 +31,8 @@ class GambitScheme < Formula
 
   # Clang is slower both for compiling and for running output binaries
   fails_with :clang
+
+  deny_network_access!
 
   def install
     args = %W[
@@ -47,7 +48,7 @@ class GambitScheme < Formula
 
     # Fixed in gambit HEAD, but they haven't cut a release
     inreplace "config.status" do |s|
-      s.gsub! %r{/usr/local/opt/openssl(@\d(\.\d)?)?}, formula_opt_prefix("openssl@3")
+      s.gsub! %r{/usr/local/opt/openssl(@\d(\.\d)?)?}, formula_opt_prefix("openssl@4")
     end
     system "./config.status"
 

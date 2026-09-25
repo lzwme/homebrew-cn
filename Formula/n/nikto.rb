@@ -12,22 +12,19 @@ class Nikto < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "ee8428e989403476c6d5449e32e74a715e218005556008bf2209943c9c603d39"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "509554a0dc1926484896618e1791bd5ca0ce9ec18b6bf1d9a070e13fcecb36a6"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "509554a0dc1926484896618e1791bd5ca0ce9ec18b6bf1d9a070e13fcecb36a6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "509554a0dc1926484896618e1791bd5ca0ce9ec18b6bf1d9a070e13fcecb36a6"
-    sha256 cellar: :any_skip_relocation, tahoe:             "509554a0dc1926484896618e1791bd5ca0ce9ec18b6bf1d9a070e13fcecb36a6"
-    sha256 cellar: :any_skip_relocation, sequoia:           "509554a0dc1926484896618e1791bd5ca0ce9ec18b6bf1d9a070e13fcecb36a6"
-    sha256 cellar: :any_skip_relocation, sonoma:            "509554a0dc1926484896618e1791bd5ca0ce9ec18b6bf1d9a070e13fcecb36a6"
-    sha256 cellar: :any,                 arm64_linux:       "ccc5b28402631afb9bf000029cec799911e4370be34485e3c5a3a99488015933"
-    sha256 cellar: :any,                 x86_64_linux:      "a0f96a84ce423f9250ce6b879b028728008f2309684c572812e25ec4b0d3c596"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "7c35f535d8885c015724569ceb2757ecb3b175f2d53f65e38aac053c73984c5b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "7c35f535d8885c015724569ceb2757ecb3b175f2d53f65e38aac053c73984c5b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "7c35f535d8885c015724569ceb2757ecb3b175f2d53f65e38aac053c73984c5b"
+    sha256 cellar: :any,                 arm64_linux:       "9c1746d64ddadf53574d7822e4cddb553cffa71b8ff5989c36dfa1ee8af14a2a"
+    sha256 cellar: :any,                 x86_64_linux:      "aa2f53f705ee66143958a1ae0d3aab24ff94b6734966975d2833797fe1c4dc28"
   end
 
   uses_from_macos "perl"
 
   on_linux do
     depends_on "zlib-ng-compat" => :build
-    depends_on "openssl@3"
+    depends_on "openssl@4"
 
     # Modules loaded in program/nikto.pl and Net::SSLeay for program/plugins/LW2.pm
     resource "JSON" do
@@ -58,13 +55,24 @@ class Nikto < Formula
     resource "Net::SSLeay" do
       url "https://cpan.metacpan.org/authors/id/C/CH/CHRISN/Net-SSLeay-1.96.tar.gz"
       sha256 "ab213691685fb2a576c669cbc8d9266f8165a31563ad15b7c4030b94adfc0753"
+
+      # Backport support for OpenSSL 4.0
+      patch do
+        url "https://github.com/radiator-software/p5-net-ssleay/commit/a55abab4a33b040fbd56cc18fde6c257af2928e2.patch?full_index=1"
+        sha256 "dd0fab47cfb05393ba1124f0b3fcbdf43cb346212ca145beed5aa8af9dfbd12d"
+        type :backport
+        resolves "https://github.com/radiator-software/p5-net-ssleay/pull/553"
+      end
     end
   end
+
+  deny_network_access!
 
   def install
     if OS.linux?
       ENV.prepend_create_path "PERL5LIB", libexec/"lib/perl5"
       ENV["PERL_MM_USE_DEFAULT"] = "1"
+      ENV["OPENSSL_PREFIX"] = formula_opt_prefix("openssl@4")
 
       resources.each do |r|
         r.stage do

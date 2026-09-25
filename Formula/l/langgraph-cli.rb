@@ -3,17 +3,16 @@ class LanggraphCli < Formula
 
   desc "Command-line interface for deploying apps to the LangGraph platform"
   homepage "https://www.github.com/langchain-ai/langgraph"
-  url "https://files.pythonhosted.org/packages/51/47/b436abcd95cdc0685e662b7b6670566fed6f96a6ebeb130ad20b9781cd45/langgraph_cli-0.4.31.tar.gz"
-  sha256 "b35951d901bc8bcb998be6715ee3512a545182ddbb8f72702d0558fe39cea505"
+  url "https://files.pythonhosted.org/packages/00/39/c8a77a0e5ab87c9cebf135e6cfcf3456570eba0b56f931b49ffac5362849/langgraph_cli-0.4.32.tar.gz"
+  sha256 "d06d6311ca9804f3b9940a6c44f9993a8a0bfc3479e0321a26a9b4c73eedaf0e"
   license "MIT"
-  revision 1
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "1caef4944b4232c8eefc02b1956ecbdb5b66a37ab2f1d9815cce940ef1ac3d9f"
-    sha256 cellar: :any, arm64_tahoe:       "26a1e96968c7150302190b8d2887136191c373145eecb2dda7e76c04cad285b9"
-    sha256 cellar: :any, arm64_sequoia:     "e5541bf07d30e2b49591cab164545fc2d5ffddee8b6f31e1f394bea587d8e246"
-    sha256 cellar: :any, arm64_linux:       "928b25e9a3fab27d4689d1a64c68e1d32242798dd177d55dba7348fe635293e2"
-    sha256 cellar: :any, x86_64_linux:      "2037bcbe2940315d98d93d2e59e198be32330d1638d472046e855437a216bef0"
+    sha256 cellar: :any, arm64_golden_gate: "dd6c4437d7fc7436aaf46dbf3f10e1d96e9379e12cbee35b1cdc86d1239f9e3f"
+    sha256 cellar: :any, arm64_tahoe:       "f293e639c241f093e5697228f91227888c3b325bc8aa96648f1fe8f6cae36ef4"
+    sha256 cellar: :any, arm64_sequoia:     "8becb69a865dc9e56cb547379685eccc5d90fa291520309448f841dae1b36b7c"
+    sha256 cellar: :any, arm64_linux:       "728ff6456d7984286db8021b23c51108ce5de9121da9bc830f02a56523f91535"
+    sha256 cellar: :any, x86_64_linux:      "75be6b9faf4fe8509b2baaf5162f069e9bf11ff675b46f02c81828ff05aa8490"
   end
 
   depends_on "rust" => :build # for orjson
@@ -57,8 +56,8 @@ class LanggraphCli < Formula
   end
 
   resource "httpcore2" do
-    url "https://files.pythonhosted.org/packages/15/8c/e925b1c92018abb3a1863ce1549d76d2381e334d21d65d4ac8f65dabd78a/httpcore2-2.13.0.tar.gz"
-    sha256 "2adc8be4fb285fbcd6d894298db3b52c177e74b6674eda3a76bd36be3292a3db"
+    url "https://files.pythonhosted.org/packages/cb/f3/1db7aa2bc2524062192bb0e0323969492d1883152a232fe36eea65f4e35c/httpcore2-2.13.1.tar.gz"
+    sha256 "e0aa977abe17e69a3b820a24542a6fa88702676d83880b8d194dcd18408e5103"
   end
 
   resource "httpx" do
@@ -67,8 +66,8 @@ class LanggraphCli < Formula
   end
 
   resource "httpx2" do
-    url "https://files.pythonhosted.org/packages/b9/a0/e9deef4654132857b5a5dbe4eddd0ac59c2814500e11f2f5044cd81103ee/httpx2-2.13.0.tar.gz"
-    sha256 "81bd07dc67a3701729ef1f777a3c00c915d4539604fdb5afd327f8682f6b7b44"
+    url "https://files.pythonhosted.org/packages/d5/44/474bef2a0e9d90f1715d32cb98b0738695ca17ba324095fb2497ed7fbd59/httpx2-2.13.1.tar.gz"
+    sha256 "e48744a19e3af5ee48313d0ce5fe941d5422fae5705ea922a4aabf94d7800dfa"
   end
 
   resource "idna" do
@@ -87,8 +86,8 @@ class LanggraphCli < Formula
   end
 
   resource "langchain-core" do
-    url "https://files.pythonhosted.org/packages/06/d7/1482670ccebc863166852516a08a1956fc50da40fbe2fe7dd218abfef4a1/langchain_core-1.6.3.tar.gz"
-    sha256 "88b430944fbd4d40fa98135d6c873581d497b6f33515d01962337548e918df2f"
+    url "https://files.pythonhosted.org/packages/5d/ed/a9c3711721031d3ed8cbd681f90a856538965d1036dc5dd6ed1e48dcc569/langchain_core-1.6.4.tar.gz"
+    sha256 "c1caae770d991bb6f2376bad791970bf77bb29abd1f15823fa9ea7dbac080fa0"
   end
 
   resource "langchain-protocol" do
@@ -97,13 +96,13 @@ class LanggraphCli < Formula
   end
 
   resource "langgraph-sdk" do
-    url "https://files.pythonhosted.org/packages/3f/ae/91446c1fffa04a2dc1f81afbfb5bfff3590452891a72bd9098a656ab2657/langgraph_sdk-0.4.4.tar.gz"
-    sha256 "4e651ffa09de695681579396375377bdde23bedbc8e35b070e615cbd5af7da8b"
+    url "https://files.pythonhosted.org/packages/e8/9c/7ff305b366ce986052a27dc5946839bef2823b3567664cbad22e294dff5a/langgraph_sdk-0.4.5.tar.gz"
+    sha256 "d49a98a2ee8e0c494b101a7caf8061c8b4b94d3ee5ada0ea2dbe50903a5487b1"
   end
 
   resource "langsmith" do
-    url "https://files.pythonhosted.org/packages/1f/ab/53c8110164e52ae759d3fed27a24cf860c717995be3ab652cf4d671a2a60/langsmith-0.12.6.tar.gz"
-    sha256 "f16901a5be1539f8c789cd26391f1935886f4029bfaf465d82afde7f7cb464bb"
+    url "https://files.pythonhosted.org/packages/7d/bb/4f39a8d864618aab01c4fc374a9f579ad6e0f3c91f32cfbd86f0180cb9e1/langsmith-0.14.0.tar.gz"
+    sha256 "294a02addc2358fab390156b74fa942e2dd40b711f6507c5f26b5c208cc89e15"
   end
 
   resource "orjson" do

@@ -24,6 +24,8 @@ class Memcacheq < Formula
   depends_on "berkeley-db@5" # keep berkeley-db < 6 to avoid AGPL incompatibility
   depends_on "libevent"
 
+  allow_network_access! :test
+
   def install
     ENV.append "CFLAGS", "-std=gnu89"
     system "./configure", "--enable-threads", *std_configure_args

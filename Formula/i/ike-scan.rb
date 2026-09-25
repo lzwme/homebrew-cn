@@ -18,33 +18,27 @@ class IkeScan < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_golden_gate: "b512e00a684f034b7f7621d613cdfbae95eb3692a05dffb25f52ff1ea823b785"
-    sha256 arm64_tahoe:       "c6ffd9dfa6a9f7ad65866b0a815dc92d00ebd6a1385949fbb0654494ea15efd4"
-    sha256 arm64_sequoia:     "ab952b41aca2d112e8238ac293c43b90382a49fa9afca8f1726a5f1b138dd1aa"
-    sha256 arm64_sonoma:      "a26d56aa62837f5f384c928cdcb10db12c18608365bb8de3606db95fd9a2ab69"
-    sha256 arm64_ventura:     "4962babb485008c4ca7365744527389c7f100c26a37e286f4131f554d8d30e76"
-    sha256 arm64_monterey:    "2cdc49f704f821bd0aaa51534c4d9b8b73524fae1737ca302308b026c4d48db9"
-    sha256 arm64_big_sur:     "e3e644f24b55009f2acb78739cd2504f72800c07d3faac4fe2f8af7256b119a4"
-    sha256 sonoma:            "6626bcdb27b825c736d4ea41c785e8f0368276575e0bb789effe317b27031868"
-    sha256 ventura:           "d75a804e64246fb47fa55b2b96cfe9ad00659b29f11c35b14eb182dd0dd0a298"
-    sha256 monterey:          "a75856c7333e0bdfd2668348ed6abfbee95361f1e3645998c7730f84eecf45a1"
-    sha256 big_sur:           "43fb51d3ef205224920eee1e85861d8957159684d86d3de76c925b3e14b22c87"
-    sha256 arm64_linux:       "f64aff3a995ef7e1742735b56834e1558567f4bc6605fd1740cc1a3c23445462"
-    sha256 x86_64_linux:      "2b7b0f9ab06373c381c2133befa3d9524bcdb27c6ccd0f44acdc52d5497cee24"
+    rebuild 2
+    sha256 arm64_golden_gate: "5fdc157bfdc1bb0e6ff949842c754b8c975f2a2f83313b76ecc98b2e22a982a7"
+    sha256 arm64_tahoe:       "8a05a1989d1d1b4f2ffb610f2a823b9fc43cc8101d1e9fff8c600d757a503e0b"
+    sha256 arm64_sequoia:     "296923a6d7acc5878774485c04096e8bb6052cbcb26de0580d3fc9132ec89b07"
+    sha256 arm64_linux:       "b044d5bb035382f8634d053bc864b1bc2190821fbac409fcfe83e2123d08a6fb"
+    sha256 x86_64_linux:      "d51df1bc00e8729ffddef17c664efe73500ac72a0c40be3da26366ac2296dc0a"
   end
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
-  depends_on "openssl@3"
+  depends_on "openssl@4"
+
+  deny_network_access!
 
   def install
     # The bundled `getopt.h` declares `getopt()` without a prototype, which C23 reads as taking no arguments
     ENV["ac_cv_prog_cc_c23"] = "no"
     system "autoreconf", "--force", "--install", "--verbose"
     system "./configure", "--mandir=#{man}",
-                          "--with-openssl=#{formula_opt_prefix("openssl@3")}",
+                          "--with-openssl=#{formula_opt_prefix("openssl@4")}",
                           *std_configure_args
     system "make", "install"
   end

@@ -3,18 +3,16 @@ class Cronboard < Formula
 
   desc "Terminal-based dashboard for managing cron jobs locally and on servers"
   homepage "https://cronboard.dev/"
-  url "https://ghfast.top/https://github.com/antoniorodr/cronboard/archive/refs/tags/v1.1.1.tar.gz"
-  sha256 "db467c4d36fa372470ff07035b2072d81863079c99e6947c9b93959703bc6e8a"
+  url "https://ghfast.top/https://github.com/antoniorodr/cronboard/archive/refs/tags/v1.2.0.tar.gz"
+  sha256 "8fb5da686de6ab564ed72d38dc19d0157d0d85f791824e7e33e768908b57f9b6"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "f4ba0b5af0a837cc235665d112260d18dbf4bffd36e0da57d8bf148c714f324d"
-    sha256 cellar: :any, arm64_tahoe:       "995c0c0f9556509f6d943e5dd9482fec2101319807258b6918b9ce5b8624a4fe"
-    sha256 cellar: :any, arm64_sequoia:     "3cf0cc5d139fd00016b7979d30b24d79418fc5b73bdf773405329fb75d5e4f0c"
-    sha256 cellar: :any, arm64_sonoma:      "083bed9131a6b2e899fe6600ba10bd31b8d76ff9ceb98f47d27e1181a3550a42"
-    sha256 cellar: :any, sonoma:            "700f4b9341d2377e75e7d915e8306e6e50628d3bd52e6ac17639479c35ec1e1c"
-    sha256 cellar: :any, arm64_linux:       "1bf4835f9eb53423a936303c1687aea66052673df682b55f1bcd7477e358dee8"
-    sha256 cellar: :any, x86_64_linux:      "af37e0631fb5725a497635d8b0bd43bd7646fda817c1d94afaf1f9c88dc5a88b"
+    sha256 cellar: :any, arm64_golden_gate: "463d46098c6d3061f2a3abc09d2fc5c809b7f1ec8f64805993382d498a7a9fe0"
+    sha256 cellar: :any, arm64_tahoe:       "1c256bdfb8753d4dc77770911a960af73e7fc2716d54e4dd0a31fdbe1d8e529c"
+    sha256 cellar: :any, arm64_sequoia:     "0ba754e6c7cf84e8b8f0d92b5400ed0fd2498f1a7c37f544ec22adfa0be7b3b6"
+    sha256 cellar: :any, arm64_linux:       "966b7103c98c7463fbe44ecc84218021cc973297376f6b66f7d6c6ca2b18c3e9"
+    sha256 cellar: :any, x86_64_linux:      "9126b76e41db77353763a5a08fb17f241b6dfcf19619009744417c111f9667cf"
   end
 
   # `pkgconf` and `rust` are for bcrypt
@@ -47,8 +45,8 @@ class Cronboard < Formula
   end
 
   resource "linkify-it-py" do
-    url "https://files.pythonhosted.org/packages/2e/c9/06ea13676ef354f0af6169587ae292d3e2406e212876a413bf9eece4eb23/linkify_it_py-2.1.0.tar.gz"
-    sha256 "43360231720999c10e9328dc3691160e27a718e280673d444c38d7d3aaa3b98b"
+    url "https://files.pythonhosted.org/packages/45/98/7a1a5f31fd5c7ba93e963b168e244b8e3dd705b3d2a718e3c3307583bf57/linkify_it_py-2.2.0.tar.gz"
+    sha256 "907acd2d17ac1fbb9ddb62c8957ccbd6158cac602231a15c3b0cd1e215f03cee"
   end
 
   resource "markdown-it-py" do
@@ -72,13 +70,13 @@ class Cronboard < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/78/9b/560e4be8e26f6fd133a03630a8df0c663b9e8d61b4ade152b72005aec83b/platformdirs-4.11.0.tar.gz"
-    sha256 "0555d18370482847566ffabcaa53ad7c6c1c29f195989ae1ed634a05f76ea1e0"
+    url "https://files.pythonhosted.org/packages/ea/dd/65804b0c2925a1c821a05502ea57517b69a073ff400d25ab9faa3a2cf012/platformdirs-4.11.12.tar.gz"
+    sha256 "e8dc1cb58f1153fd7f61db1374317770baababec2480b37b8f01c6cc25b45267"
   end
 
   resource "pygments" do
-    url "https://files.pythonhosted.org/packages/c3/b2/bc9c9196916376152d655522fdcebac55e66de6603a76a02bca1b6414f6c/pygments-2.20.0.tar.gz"
-    sha256 "6757cd03768053ff99f3039c1a36d6c0aa0b263438fcab17520b30a303a82b5f"
+    url "https://files.pythonhosted.org/packages/49/2e/ced460408999b33da6b31b0021b0f37d329e202d4169aeb164493778f25b/pygments-2.21.0.tar.gz"
+    sha256 "610ca751c9bc2492b38eb9a38a7fbc93edbbb2d7182edaf34e66ae493dee5c8c"
   end
 
   resource "pynacl" do
@@ -87,8 +85,8 @@ class Cronboard < Formula
   end
 
   resource "python-crontab" do
-    url "https://files.pythonhosted.org/packages/99/7f/c54fb7e70b59844526aa4ae321e927a167678660ab51dda979955eafb89a/python_crontab-3.3.0.tar.gz"
-    sha256 "007c8aee68dddf3e04ec4dce0fac124b93bd68be7470fc95d2a9617a15de291b"
+    url "https://files.pythonhosted.org/packages/49/3e/f61917a63b20d0ce0dfb58e44192201892a1cfe9d4167264b93fa5485594/python_crontab-3.4.0.tar.gz"
+    sha256 "d2b5ad91f7a641d774661b7f3ba52258fd68273862c88713f4cc092ba614e707"
   end
 
   resource "python-dateutil" do
@@ -124,11 +122,6 @@ class Cronboard < Formula
   resource "typing-extensions" do
     url "https://files.pythonhosted.org/packages/f6/cc/6253133b5bb138fc3306cebfbda2c520f545d36b5be2c7255cc528bb45d6/typing_extensions-4.16.0.tar.gz"
     sha256 "dc983d19a509c94dba722ee6abd33940f7c05a89e243c47e907eb4db6f1a43e5"
-  end
-
-  resource "uc-micro-py" do
-    url "https://files.pythonhosted.org/packages/78/67/9a363818028526e2d4579334460df777115bdec1bb77c08f9db88f6389f2/uc_micro_py-2.0.0.tar.gz"
-    sha256 "c53691e495c8db60e16ffc4861a35469b0ba0821fe409a8a7a0a71864d33a811"
   end
 
   def install

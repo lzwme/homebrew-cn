@@ -6,13 +6,12 @@ class GrinWallet < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "9bdb3eed541de46d7061c4f0f22a27bee31a478fb8aab6c4a8493b09ade46052"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "7b538547f8f353523ecd0f14e8741a886b614923904e923805c08fc970752bc3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "80f41829165e9bff9b75ba0d4e9d7ca576fd072c4dae92f73abc628af80814bd"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "0209739acdd0bf38a3618ab79325d4a13e017e62700f1d9c83a029134f91167a"
-    sha256 cellar: :any_skip_relocation, sonoma:            "36a84297d88d46d57dcaf3348deeb07cfcd742168fc8a4c1596b387525787ccf"
-    sha256 cellar: :any,                 arm64_linux:       "7254284a98578b6bd886ffbb5b4969557564bfa9ca4a0c0b92f98cd24397cc80"
-    sha256 cellar: :any,                 x86_64_linux:      "f4b12c9dae570cce10873ffa6bc6091e41905fe025b0196e69f288177664e678"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "4ed02d4fbaec1df37883d93751d45ec6b287e959a62075e9757e28dc60cbd970"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "d96c21b3a5460e1f0408a2047b1fc484e4074daf9de5776484395ebedab2d8e1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "d63c9f8a494c6f4087c1a4612ae14fde97a1f8d89126d1ba1978324201b5912d"
+    sha256 cellar: :any,                 arm64_linux:       "839f63ee589971f0b35131de3edb60df0fa5319e426d8b2d9065b29df3e82866"
+    sha256 cellar: :any,                 x86_64_linux:      "bf6d8f17048485bc3a7732258956cd3d77d4daa917c1c4ed061db98b7e155cc7"
   end
 
   depends_on "pkgconf" => :build
@@ -21,7 +20,7 @@ class GrinWallet < Formula
   uses_from_macos "llvm" => :build
 
   on_linux do
-    depends_on "openssl@3" # Uses Secure Transport on macOS
+    depends_on "openssl@4" # Uses Secure Transport on macOS
   end
 
   resource "grin" do
@@ -29,8 +28,14 @@ class GrinWallet < Formula
     sha256 "841a698986ff05768c6d7cdf2e59d44571533522fbcffdab0a0de01c8de1d4a3"
   end
 
-  def install
+  deny_network_access!
+
+  def fetch
     resource("grin").stage buildpath/"grin"
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
+  def install
     system "cargo", "install", *std_cargo_args
   end
 

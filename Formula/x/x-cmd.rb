@@ -1,8 +1,8 @@
 class XCmd < Formula
   desc "Bootstrap 1000+ command-line tools in seconds"
   homepage "https://x-cmd.com"
-  url "https://ghfast.top/https://github.com/x-cmd/x-cmd/archive/refs/tags/v0.10.10.tar.gz"
-  sha256 "d7c0aa54c08b3f9f8abd30f26bc3c3f398ed7f4c26729e44b3b1d6ccd99de069"
+  url "https://ghfast.top/https://github.com/x-cmd/x-cmd/archive/refs/tags/v0.10.12.tar.gz"
+  sha256 "f33a29e2232570e117bb96285fe3fcb7a39536f920fba07dfd06b345745d48d6"
   license all_of: ["Apache-2.0", "MIT", "BSD-3-Clause"]
   head "https://github.com/x-cmd/x-cmd.git", branch: "X"
 
@@ -12,12 +12,11 @@ class XCmd < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "b1df2b6db0689f3421dc77f3b3ea0d5714d7d98fce80289d189efda304074555"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "b1df2b6db0689f3421dc77f3b3ea0d5714d7d98fce80289d189efda304074555"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "b1df2b6db0689f3421dc77f3b3ea0d5714d7d98fce80289d189efda304074555"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "b1df2b6db0689f3421dc77f3b3ea0d5714d7d98fce80289d189efda304074555"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "73b4c29e1291125c965d9e705b121ff6a337b736cea4138beabc166b17b16f41"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "73b4c29e1291125c965d9e705b121ff6a337b736cea4138beabc166b17b16f41"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "d7ee61eedef9b76b25ea600a2b2045e9318d5bfd9884d191a84153bb399e980f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "d7ee61eedef9b76b25ea600a2b2045e9318d5bfd9884d191a84153bb399e980f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "d7ee61eedef9b76b25ea600a2b2045e9318d5bfd9884d191a84153bb399e980f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "28ae9d449643298d73dddd444acc7e5983b931e379a2d3c874a02879e38e9cd4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "28ae9d449643298d73dddd444acc7e5983b931e379a2d3c874a02879e38e9cd4"
   end
 
   def install

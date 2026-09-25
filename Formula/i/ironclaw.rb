@@ -24,7 +24,6 @@ class Ironclaw < Formula
   depends_on "node" => :build
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
-  depends_on "openssl@3"
 
   uses_from_macos "python" => :build
 

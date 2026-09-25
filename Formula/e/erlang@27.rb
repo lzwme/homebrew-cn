@@ -13,16 +13,17 @@ class ErlangAT27 < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "2863aee34d1f91ae54edc31bd0eb50982f76ee549ff61100e7f194a2c0ae5870"
-    sha256 cellar: :any, arm64_tahoe:       "1a66aa6079af904c0bcc313ea34a799c86befcce600469c5c01b8545d64a0192"
-    sha256 cellar: :any, arm64_sequoia:     "1032f6930769bb39651320e1383e1d86d903e01ebe325d903e734d4ff6039cb6"
-    sha256 cellar: :any, arm64_linux:       "143fec3eea5792042e9bfcc1441f3af87f2070b8f7e2119d2359975c4e59a601"
-    sha256 cellar: :any, x86_64_linux:      "04d780f2f04724dbf7d8a866ca70cbabe8c828d04c0626c435215d34c03a8474"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "bf38f62596b644cd3b215ca5a0c7b6457a617907d5c067082a7251e2533a6324"
+    sha256 cellar: :any, arm64_tahoe:       "b737b5615663c8991d924866e4e525c18f7964288c9d4297e9b418e6c138b59f"
+    sha256 cellar: :any, arm64_sequoia:     "f454c654b53c6610d61b8cdda1d347abfec910a8404195b180d8b1a3c3f842d2"
+    sha256 cellar: :any, arm64_linux:       "7a3ba811900bb7dcf396259b183118b459777ed71ad680abf8c0b3b22ed7b12d"
+    sha256 cellar: :any, x86_64_linux:      "ee6f7b27acb79b5f79335d612d4a3f9d8fde1f44a2545dd891463ab36477ce9a"
   end
 
   keg_only :versioned_formula
 
-  depends_on "openssl@3"
+  depends_on "openssl@4"
   depends_on "unixodbc"
   depends_on "wxwidgets@3.2" # for GUI apps like observer
 
@@ -55,6 +56,8 @@ class ErlangAT27 < Formula
     end
   end
 
+  allow_network_access! :test
+
   def install
     ex_doc_url = (buildpath/"make/ex_doc_link").read.strip
     odie "`ex_doc` resource needs updating!" if ex_doc_url != resource("ex_doc").url
@@ -73,7 +76,7 @@ class ErlangAT27 < Formula
     args = %W[
       --enable-dynamic-ssl-lib
       --with-odbc=#{formula_opt_prefix("unixodbc")}
-      --with-ssl=#{formula_opt_prefix("openssl@3")}
+      --with-ssl=#{formula_opt_prefix("openssl@4")}
       --without-javac
       --with-wx-config=#{wx_config}
     ]

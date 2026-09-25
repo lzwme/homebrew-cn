@@ -14,14 +14,12 @@ class Imapsync < Formula
   end
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "244685baf70e94411a8344bfe9eb9f802b8c7038382c82a988c82b2968f67efb"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "7d6eb2699657f7785a288db80bd25ae97c357fe0eb9d53a498e1fa74a62fee02"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "a02a6577a4677416aaced6be8c7de5c27eb302a21e3a9b1c264c0ec40f85a657"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "524cb92af305ac1500f8400b84cf13e5469667d400f05ab81f48f46e153f73db"
-    sha256 cellar: :any_skip_relocation, sonoma:            "1fc333d3c458eea4e684d76a3104ba836ce56cef6da9b5dd5e1ccc8fd36fe33a"
-    sha256 cellar: :any,                 arm64_linux:       "8522ca218f7572eb3fedc5cdabf9ba4340fc465036c68a7e569c6c2e4a9e9745"
-    sha256 cellar: :any,                 x86_64_linux:      "f53106c74646fb572a462858c610d936f6e19f8311ca6c186e039a96abf31949"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "2d7904f9995562b3e56cd8b1c3d9a5586733e3aa94c44784aeb5280f54e82c8e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "cbb9402caf8fb24a642200a66b067dfffdb9b18209aad065b194b4f73c9f3f07"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "4cdf34a0097eea1cd4a269abed053d4bd4aacff886554ad1fb46dab2a03ae809"
+    sha256 cellar: :any,                 arm64_linux:       "9f1662da0730c3c11d2ccd973786d5400b9dc44822018155f0a1c620468a5652"
+    sha256 cellar: :any,                 x86_64_linux:      "866853667c281b401b0a684cef5c206cac3327ae5b65420375b131c24c34abf0"
   end
 
   depends_on "pod2man" => :build
@@ -29,7 +27,7 @@ class Imapsync < Formula
   uses_from_macos "perl"
 
   on_linux do
-    depends_on "openssl@3"
+    depends_on "openssl@4"
     depends_on "zlib-ng-compat"
 
     resource "Digest::HMAC_SHA1" do
@@ -53,8 +51,16 @@ class Imapsync < Formula
     end
 
     resource "Net::SSLeay" do
-      url "https://cpan.metacpan.org/authors/id/C/CH/CHRISN/Net-SSLeay-1.94.tar.gz"
-      sha256 "9d7be8a56d1bedda05c425306cc504ba134307e0c09bda4a788c98744ebcd95d"
+      url "https://cpan.metacpan.org/authors/id/C/CH/CHRISN/Net-SSLeay-1.96.tar.gz"
+      sha256 "ab213691685fb2a576c669cbc8d9266f8165a31563ad15b7c4030b94adfc0753"
+
+      # Backport support for OpenSSL 4.0
+      patch do
+        url "https://github.com/radiator-software/p5-net-ssleay/commit/a55abab4a33b040fbd56cc18fde6c257af2928e2.patch?full_index=1"
+        sha256 "dd0fab47cfb05393ba1124f0b3fcbdf43cb346212ca145beed5aa8af9dfbd12d"
+        type :backport
+        resolves "https://github.com/radiator-software/p5-net-ssleay/pull/553"
+      end
     end
 
     resource "Term::ReadKey" do
@@ -166,6 +172,7 @@ class Imapsync < Formula
   def install
     ENV.prepend_create_path "PERL5LIB", libexec/"lib/perl5"
     ENV["PERL_MM_USE_DEFAULT"] = "1"
+    ENV["OPENSSL_PREFIX"] = formula_opt_prefix("openssl@4") if OS.linux?
 
     build_pl = ["Module::Build", "JSON::WebToken", "Module::Build::Tiny", "Readonly", "IO::Socket::IP"]
 

@@ -4,16 +4,15 @@ class Opencolorio < Formula
   url "https://ghfast.top/https://github.com/AcademySoftwareFoundation/OpenColorIO/archive/refs/tags/v2.5.2.tar.gz"
   sha256 "722601e01b78b7a12da4829cb450674935f404b0e508f3f20046fa77570e3272"
   license "BSD-3-Clause"
+  revision 1
   head "https://github.com/AcademySoftwareFoundation/OpenColorIO.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_golden_gate: "c8fd0d2d0d5ba9b93ae0505ccc25c54f6059365935ef973a638dff7810f51e74"
-    sha256 cellar: :any,                 arm64_tahoe:       "7b0813d78b3d682eedd037eed1ffdea77789be0e1d646c10c8867cb1ffe924e3"
-    sha256 cellar: :any,                 arm64_sequoia:     "07d927af277f3b4d4a2214b903d8e98cd0501e93194d7d66c8f6402177ff43c1"
-    sha256 cellar: :any,                 arm64_sonoma:      "144a0ec28a8e5f0f4caa6fbd56c5e62f9efc9105483b8787ce48d1760e1e51af"
-    sha256 cellar: :any,                 sonoma:            "1ded26e55687b43f2a79e6c03cefa728cf25c87c2ac54f534b92b70db8df52d0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "b9be8653abb0c4e297138156044a226b55e7a6184a78aa3690e10106902f4108"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "c0a7734028b65c35ccd63aa6b239686444da7c6c49c76f8c9a2532f801f8bdde"
+    sha256 cellar: :any, arm64_golden_gate: "47e5a000a0dee9e5c18548c9b15297647b3077c5af3b8815fffd847e0d897a76"
+    sha256 cellar: :any, arm64_tahoe:       "2519a0398a5815e8159a67f15fa5c4efb378712cfcedb2b15e4e1882563bccc8"
+    sha256 cellar: :any, arm64_sequoia:     "cf7448c782008716e5892d907a7080dac09ee3510ee2a9f5b232a18350eed318"
+    sha256 cellar: :any, arm64_linux:       "32882dc5a7d237d3d87132e7bc50f9bc73eb728d6f1e187b8089d797f2899e06"
+    sha256 cellar: :any, x86_64_linux:      "2acc6be54d12aaf29ecb47bbc0de030ea97771c56131c8e32dd99b0807561dd6"
   end
 
   depends_on "cmake" => :build

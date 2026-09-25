@@ -3,18 +3,17 @@ class Otterdog < Formula
 
   desc "Manage GitHub organizations at scale using an infrastructure as code approach"
   homepage "https://otterdog.readthedocs.io/en/latest/"
-  url "https://files.pythonhosted.org/packages/fa/c8/ba6fafb19415e0261e96900fa1cd35354ff35790039c2712e72809d32d6c/otterdog-1.5.0.tar.gz"
-  sha256 "3f9e5f38e6435e04c74fad2649af07e8e136dc47364a74239b4a4ae0de43b5a8"
+  url "https://files.pythonhosted.org/packages/fb/d4/473b0c07cfc95a249d4b5249016d3896c2d6fffb170881af38efe1901d24/otterdog-1.6.0.tar.gz"
+  sha256 "431afd9999dc592a24621c3e71dbe281278d540c9d33ae343e148350cce0696a"
   license "EPL-2.0"
   head "https://github.com/eclipse-csi/otterdog.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "62094da1115ac16cb2415626b6ff7d7d946a323b2b7b6f39708b08fab2a97e9a"
-    sha256 cellar: :any, arm64_tahoe:       "b4966872f78cd723012eb5a7e85ae01aaa60b809e106a3d093c685ce18af40e8"
-    sha256 cellar: :any, arm64_sequoia:     "261043abe382b328fdbed418037eee1a439e9f7b469d820f480490424471f777"
-    sha256 cellar: :any, arm64_sonoma:      "a91802dc93184b64e6d1beb05759b1b6fa116524c426166f58570ac4e26c3902"
-    sha256 cellar: :any, arm64_linux:       "8eb8c251107623c65308fa26a499df2341ad437eaee1ce0c4ec087abc69e4239"
-    sha256 cellar: :any, x86_64_linux:      "871e4219618e6cc40bb83906fcd0ddc8a384e78b869c75a008997bbae9267b51"
+    sha256 cellar: :any, arm64_golden_gate: "be8f275757b1fdaa6959b83180d386e5d261cc8b91e911781eb2c715827df933"
+    sha256 cellar: :any, arm64_tahoe:       "9def83f5617877f9e4dbe399f08656b12408d97b5db49d393c1ab51f5b166b1c"
+    sha256 cellar: :any, arm64_sequoia:     "30f90205ae46a402ca7ea07ce9d8fe4a84d2feb3f6616b1504b97f879a88fd86"
+    sha256 cellar: :any, arm64_linux:       "7fad938f956f29c86356e969dce77765fc7742d2f0fb7083518b39b56ff2151f"
+    sha256 cellar: :any, x86_64_linux:      "69b0112e869741ccf0820ce532717fcaeb2c85aba8ada182c0f84ddfedbfb895"
   end
 
   depends_on "rust" => :build # for rjsonnet
@@ -128,8 +127,8 @@ class Otterdog < Formula
   end
 
   resource "greenlet" do
-    url "https://files.pythonhosted.org/packages/0b/d8/7cc97c142388aef03f622e001c572c4f84e9252a439549d483f555771970/greenlet-3.5.5.tar.gz"
-    sha256 "adb4bae02e91a8e863e48b177e4014bdcac8a6b5e047ea1df687a61534b85e6c"
+    url "https://files.pythonhosted.org/packages/3e/6e/0091f175ccd02b02bc8811bbcbcc6ac2e980be116e3b2f7a736ca322bf84/greenlet-3.5.6.tar.gz"
+    sha256 "8e67c43bdfc88d5fee6db0d3e40175b362fc95fb85f0412d233b9b203c53a575"
   end
 
   resource "hvac" do
@@ -138,8 +137,8 @@ class Otterdog < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/5f/f7/abb373e5757eaec4b922b92f97ec8d6d7e057cf06778247604fbc4e7c3f3/idna-3.19.tar.gz"
-    sha256 "5e0811a4383b21dc5838069f801c4fb62113b7447663d2530d2bd6e77b49bf15"
+    url "https://files.pythonhosted.org/packages/f5/08/8eea9d4b8302028f3abb2c0813953f7aec26d33b7a8960ed760e65ff29fa/idna-3.20.tar.gz"
+    sha256 "a7db850025b95ded1eae8a46181a1a6c56c92c96f0e2b005d9ff8dc0210cab44"
   end
 
   resource "importlib-resources" do
@@ -172,11 +171,6 @@ class Otterdog < Formula
     sha256 "b540987f239e745613c7a9176f3edb72b832a4ac465cf02712288397832b5e8d"
   end
 
-  resource "jwt" do
-    url "https://files.pythonhosted.org/packages/7f/20/21254c9e601e6c29445d1e8854c2a81bdb554e07a82fb1f9846137a6965c/jwt-1.4.0.tar.gz"
-    sha256 "f6f789128ac247142c79ee10f3dba6e366ec4e77c9920d18c1592e28aa0a7952"
-  end
-
   resource "markdown-it-py" do
     url "https://files.pythonhosted.org/packages/06/ff/7841249c247aa650a76b9ee4bbaeae59370dc8bfd2f6c01f3630c35eb134/markdown_it_py-4.2.0.tar.gz"
     sha256 "04a21681d6fbb623de53f6f364d352309d4094dd4194040a10fd51833e418d49"
@@ -193,13 +187,13 @@ class Otterdog < Formula
   end
 
   resource "multidict" do
-    url "https://files.pythonhosted.org/packages/1a/c2/c2d94cbe6ac1753f3fc980da97b3d930efe1da3af3c9f5125354436c073d/multidict-6.7.1.tar.gz"
-    sha256 "ec6652a1bee61c53a3e5776b6049172c53b6aaba34f18c9ad04f82712bac623d"
+    url "https://files.pythonhosted.org/packages/d6/99/1d4d69c3512d0ddbfa3a1b69cfd9a151012ab2eb4eabbb096201b1f0b7d8/multidict-6.9.1.tar.gz"
+    sha256 "0f06e60fa190aa7abd0914c2a766736fdc8e9f34878c4346338534b73d1b20e2"
   end
 
   resource "propcache" do
-    url "https://files.pythonhosted.org/packages/ec/44/c87281c333769159c50594f22610f77398a47ccbfbbf23074e744e86f87c/propcache-0.5.2.tar.gz"
-    sha256 "01c4fc7480cd0598bb4b57022df55b9ca296da7fc5a8760bd8451a7e63a7d427"
+    url "https://files.pythonhosted.org/packages/b3/9a/9fbf4e4ec0c2d7f1c32519fff782ef467859b8faa9fbc5331a96f6395d43/propcache-0.5.4.tar.gz"
+    sha256 "ff6b113f50bc066a698db5d944d2c6dc7507168dd3341e255a8892fd0715a558"
   end
 
   resource "pyee" do
@@ -210,6 +204,11 @@ class Otterdog < Formula
   resource "pygments" do
     url "https://files.pythonhosted.org/packages/49/2e/ced460408999b33da6b31b0021b0f37d329e202d4169aeb164493778f25b/pygments-2.21.0.tar.gz"
     sha256 "610ca751c9bc2492b38eb9a38a7fbc93edbbb2d7182edaf34e66ae493dee5c8c"
+  end
+
+  resource "pyjwt" do
+    url "https://files.pythonhosted.org/packages/02/a5/5197bfd06417837ac079921c66fa6393f1dea3557272a263cebfef69e432/pyjwt-2.15.0.tar.gz"
+    sha256 "b11c5f9791d7bf51c2b39a81ed669f6b2dbbd669df2942f6c60167e9e3d1abe4"
   end
 
   resource "pynacl" do
@@ -258,18 +257,18 @@ class Otterdog < Formula
   end
 
   resource "url-normalize" do
-    url "https://files.pythonhosted.org/packages/8b/cd/846d87d6d49d963b04ef4429b73d71d3c17468059956bab360866a9b0aec/url_normalize-3.0.0.tar.gz"
-    sha256 "0552cbf2831a32a28994a13d29bca58a60e10ff6c0380e343ec6d1c2a0d232d8"
+    url "https://files.pythonhosted.org/packages/33/26/b60cce0211e94bb130e88dbcba87583f61c6ddf386fa6adc10a167461f6a/url_normalize-3.0.1.tar.gz"
+    sha256 "1655cd214159d9d47dc37aa6ce993c2149da44fa35cac6bafd90036a4eda3ac3"
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/53/0c/06f8b233b8fd13b9e5ee11424ef85419ba0d8ba0b3138bf360be2ff56953/urllib3-2.7.0.tar.gz"
-    sha256 "231e0ec3b63ceb14667c67be60f2f2c40a518cb38b03af60abc813da26505f4c"
+    url "https://files.pythonhosted.org/packages/e3/05/b17359e1cefb4f909b5e40b1b90a496d987258916dbbf88e842c729f510e/urllib3-2.8.0.tar.gz"
+    sha256 "63bf2ead4c879426ebf22ef2a781eeb4aa3b4ae798a0435506f8687fd5bb9b63"
   end
 
   resource "yarl" do
-    url "https://files.pythonhosted.org/packages/31/33/ebe9e3d1f86c7a0b51094c0a146392045ca1631d2664889539dec8088a33/yarl-1.24.5.tar.gz"
-    sha256 "e81b83143bee16329c23db3c1b2d82b29892fcbcb849186d2f6e98a5abe9a57f"
+    url "https://files.pythonhosted.org/packages/75/16/e8be8e2fb175bbf41a0680381a319f1199fae256588241a2ac8677eafb49/yarl-1.25.1.tar.gz"
+    sha256 "03dd38de09bc213e9a8b29761eec33ee1d5318dac0e49d8af36e4d27830e23a7"
   end
 
   def install

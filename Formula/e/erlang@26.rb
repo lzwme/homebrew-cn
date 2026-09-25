@@ -13,13 +13,12 @@ class ErlangAT26 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_golden_gate: "b076d8687dacecafabfdb6be87af7658bb415661d81772a2074791368f5cb62a"
-    sha256 cellar: :any,                 arm64_tahoe:       "6b1dbfa63890bb11e0beb4f69d4e43b3b0dbb16167d8b5c1bdd431276ce05236"
-    sha256 cellar: :any,                 arm64_sequoia:     "562520d8643c16d939f5279746ce653492df1f0685496d7ea1541c12e0ceceff"
-    sha256 cellar: :any,                 arm64_sonoma:      "6d00dd641199b90b37181be23b2c58915a56594ab54f6408225c554ab27f80ab"
-    sha256 cellar: :any,                 sonoma:            "4746bdba1010c2fd05a1b0a484548a1d4d8fccbc88a41b0f7f0d5232c29ce40b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "b4e88e06263348f4944c44079f46110348fc95d901ac6e80f51c75c7a5b8205d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "442f37c41256f6fdab998ff494092057243887bc2495102c4177e473d2447cd1"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "d977a0f4ce46804747d701bc660aefebf8374e87dbe51b2ed048bad457fa0028"
+    sha256 cellar: :any, arm64_tahoe:       "5fb2436c16382f76b0b7710424fc335df5ec22cf18448213eebf9ee8377bb181"
+    sha256 cellar: :any, arm64_sequoia:     "90678c5300e6b09e19a142d0063d70fe372cc809a76f833f3411a8379e784b51"
+    sha256 cellar: :any, arm64_linux:       "a78b53683c9678b615dad545cccfeff964924e2a938a2c3db288db326a860f49"
+    sha256 cellar: :any, x86_64_linux:      "5533faa2542eda62b1b3dfad84837734ceba760b4447a7323084d1668b50fffa"
   end
 
   keg_only :versioned_formula
@@ -28,7 +27,7 @@ class ErlangAT26 < Formula
   deprecate! date: "2026-05-27", because: :unsupported
   disable! date: "2027-05-27", because: :unsupported
 
-  depends_on "openssl@3"
+  depends_on "openssl@4"
   depends_on "unixodbc"
   depends_on "wxwidgets@3.2" # for GUI apps like observer
 
@@ -48,6 +47,8 @@ class ErlangAT26 < Formula
       formula :parent
     end
   end
+
+  allow_network_access! :test
 
   def install
     odie "html resource needs to be updated" if version != resource("html").version
@@ -70,7 +71,7 @@ class ErlangAT26 < Formula
       --enable-threads
       --enable-wx
       --with-odbc=#{formula_opt_prefix("unixodbc")}
-      --with-ssl=#{formula_opt_prefix("openssl@3")}
+      --with-ssl=#{formula_opt_prefix("openssl@4")}
       --without-javac
       --with-wx-config=#{wx_config}
     ]

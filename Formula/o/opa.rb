@@ -1,18 +1,17 @@
 class Opa < Formula
   desc "Open source, general-purpose policy engine"
   homepage "https://www.openpolicyagent.org"
-  url "https://ghfast.top/https://github.com/open-policy-agent/opa/archive/refs/tags/v1.20.2.tar.gz"
-  sha256 "3689adff37794f117989a0e57f55f49eb4bcf6872560368cad14624d4fd4ca88"
+  url "https://ghfast.top/https://github.com/open-policy-agent/opa/archive/refs/tags/v1.21.0.tar.gz"
+  sha256 "0e486b6a7707ee60a55f239d632d6d3d5b8eca485145f8e1eb630262aac00d7d"
   license "Apache-2.0"
   head "https://github.com/open-policy-agent/opa.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "dbe53275b843ccd72bc99a1c37dfb9f36570ca27c85e65a6ce5ef0c5cb717866"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "b55b3d9549ee2b96808ccda3d514f639034493015d9af2da45f3c7f1329de90a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "ca3194c75bef725ff3d49e5dfc09c58ff9bb63d00e1eaf96a62531c598513bf3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "5c87d497e9f924d5821909640629211bd12dbbfb4c770aa75a5c5498207ba82b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "fbf3afa62105c7fa71507a699588d440ddce67d0f203d76d1a932d0e2ca1b0bb"
-    sha256 cellar: :any,                 x86_64_linux:      "5d0f778b7a36275c55c90b4a977db28db6b71499e0489bc7d4dd6aed42f5e61d"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "5cf28a8979bcc460d77e6aad90ba0b68ac8c1a8d9cbb49027003c3768b41a2e6"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "f55cb3212e5a7027ccde74e801440bf6caedc24e46dc36b5b641b4b7b0dafeb6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "72c79bb58457a366a96fd859ea1c287a4511d763ac17afbf863fc451e1793ef1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "64198ff91605df3f7d140d6aaff96bd257270bb2cdd38f6ee50d4823840b0232"
+    sha256 cellar: :any,                 x86_64_linux:      "a81791b13ceeda8db18b79c70c1b8e9fd22ac727573b342608807d564c799e4e"
   end
 
   depends_on "go" => :build

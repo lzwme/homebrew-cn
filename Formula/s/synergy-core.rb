@@ -1,8 +1,8 @@
 class SynergyCore < Formula
   desc "Synergy, the keyboard and mouse sharing tool"
   homepage "https://symless.com/synergy"
-  url "https://ghfast.top/https://github.com/symless/synergy/archive/refs/tags/v1.20.4.tar.gz"
-  sha256 "1fbcfeac4e1c516e4ab9f4e1c3186e507df737aa162540aff8297047730bc6e6"
+  url "https://ghfast.top/https://github.com/symless/synergy/archive/refs/tags/v1.21.3.tar.gz"
+  sha256 "363b20ce6e80c737f692e09a07d1325db8cf9361a7918184ed5d0ef49818c7b0"
   license "GPL-2.0-only" => { with: "openvpn-openssl-exception" }
   head "https://github.com/symless/synergy.git", branch: "master"
 
@@ -17,32 +17,31 @@ class SynergyCore < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "8ed9b728be17c0cd8c0b22b6c7235462d9066be128867e5a9cb26bc55eaaf2ef"
-    sha256 cellar: :any, arm64_tahoe:       "14fdc5d12f9c4a69b425f8f27a16d20ca487eff465c784bc7332882d766e9aab"
-    sha256 cellar: :any, arm64_sequoia:     "d7d3bb3d4e06fd61bed0117f84eddac9a302ae308827ac027e2e5fe8974697c5"
-    sha256 cellar: :any, arm64_sonoma:      "149f3c62320bf7bbe8305a1a606c6f38fb2f0856467ea11cf0034b0ae2558e35"
-    sha256 cellar: :any, sonoma:            "455c651259b1567e4d7f1396d9e43a2ecb7bc22ed03cb8cf09a04d29f03ef5f3"
-    sha256 cellar: :any, arm64_linux:       "5105a972356eea48bee3c0ffc10cf083f2adefa7e751af2442e025614446e135"
-    sha256 cellar: :any, x86_64_linux:      "4dbfd78cd444230426fe2e4a778a0442e59309026a9a0ed2b475c6895321deba"
+    sha256 cellar: :any, arm64_golden_gate: "4cda7e29e117c1f87d5f4356c494d4290ac908f4b69c0469c7b8042a6f3e6af7"
+    sha256 cellar: :any, arm64_tahoe:       "00b43438d4da5f6711074f3c3a769b1ccd44c8f07375319b71033d810d3e39c2"
+    sha256 cellar: :any, arm64_sequoia:     "19dfde03d384f3d8ac947d97e03b5806a5cd2d5345f09e8ee19ba33995bed270"
+    sha256 cellar: :any, arm64_linux:       "bc6243721e490e0f8eddd7d51f2a4f1422d8089e49f3a24fcb299ef403cc4033"
+    sha256 cellar: :any, x86_64_linux:      "c5f0d6c144e21f1e70f265ac98984dd2fd4e8a5f060958541ff18dc39eb52340"
   end
 
   depends_on "cmake" => :build
+  depends_on "qttools" => :build
   depends_on "openssl@3"
   depends_on "qtbase"
 
   on_macos do
     depends_on "llvm" => :build if DevelopmentTools.clang_build_version <= 1402
+    depends_on "qttranslations" => :build
   end
 
   on_linux do
     depends_on "pkgconf" => :build
-    depends_on "gdk-pixbuf"
     depends_on "glib"
-    depends_on "libnotify"
     depends_on "libx11"
     depends_on "libxext"
     depends_on "libxi"
     depends_on "libxinerama"
+    depends_on "libxkbcommon"
     depends_on "libxkbfile"
     depends_on "libxrandr"
     depends_on "libxtst"
@@ -53,43 +52,30 @@ class SynergyCore < Formula
     cause "needs `std::ranges::find`"
   end
 
-  resource "synergy-extra" do
-    url "https://github.com/symless/synergy-extra.git",
-        revision: "706bdf4d815643c0db722389b67a273a365d2225"
-
-    # Version.cmake in `synergy-extra` reads .git folder of `synergy`.
-    # but it's submodule uses ssh protocol which will be failed in CI
-    # and so we use tarball of `synergy` and apply patch to ignore git process
-    patch :DATA
-  end
-
   def install
     # Avoid statically linking OpenSSL on macOS
-    inreplace "cmake/Libraries.cmake", "set(OPENSSL_USE_STATIC_LIBS TRUE)", ""
+    inreplace "src/lib/net/CMakeLists.txt", "set(OPENSSL_USE_STATIC_LIBS TRUE)", ""
 
-    mkdir_p buildpath/"ext/synergy-extra"
-    (buildpath/"ext/synergy-extra").install resource("synergy-extra")
-
-    if OS.mac?
-      # Disable macdeployqt to prevent copying dylibs.
-      inreplace "src/gui/CMakeLists.txt",
-                /"execute_process\(COMMAND \${MACDEPLOYQT_CMD}.*\)"/,
-                '"MESSAGE (\\"Skipping macdeployqt in Homebrew\\")"'
-    end
-
+    # Release builds now require a serial key in the GUI by default; keep it keyless like 1.20
     args = %w[
       -DBUILD_TESTS:BOOL=OFF
       -DSYNERGY_VERSION_RELEASE=ON
+      -DSYNERGY_ENABLE_ACTIVATION=OFF
     ]
+    if OS.mac?
+      # Skip macdeployqt, which copies Qt dylibs into the app bundle
+      args << "-DDEPLOYQT=/usr/bin/true"
+      # The bundle's Qt translations are looked up in the qttools prefix
+      args << "-D_QT_QM_FILE=#{Formula["qttranslations"].opt_share}/qt/translations/qtbase_en.qm"
+    end
+
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
 
     if OS.mac?
-      prefix.install buildpath/"build/bundle"
-      bin.install_symlink prefix/"bundle/Synergy.app/Contents/MacOS/synergy" # main GUI program
-      bin.install_symlink prefix/"bundle/Synergy.app/Contents/MacOS/synergy-server" # server
-      bin.install_symlink prefix/"bundle/Synergy.app/Contents/MacOS/synergy-client" # client
+      bin.install_symlink prefix/"Synergy.app/Contents/MacOS/Synergy" => "synergy"
+      bin.install_symlink prefix/"Synergy.app/Contents/MacOS/synergy-core"
     end
   end
 
@@ -103,8 +89,9 @@ class SynergyCore < Formula
     # user may need to revoke all permissions for 'Accessibility' and re-grant
     # them when upgrading synergy-core.
     on_macos do
-      s = <<~EOS
-        Synergy requires the 'Accessibility' permission.
+      <<~EOS
+        Synergy requires the 'Accessibility' permission for:
+          #{opt_prefix}/Synergy.app
         You can grant this permission by navigating to:
           System Preferences -> Security & Privacy -> Privacy -> Accessibility
 
@@ -113,81 +100,15 @@ class SynergyCore < Formula
         You can then grant the 'Accessibility' permission again.
         You may need to clear this list each time you upgrade synergy-core.
       EOS
-      # On ARM, macOS is even more picky when dealing with applications not signed
-      # by a trusted certificate, and, for whatever reason, both the app bundle and
-      # the actual executable binary need to be granted the permission by the user.
-      # (On Intel macOS, only the app bundle needs to be granted the permission.)
-      #
-      # This is particularly unfortunate because the operating system will prompt
-      # the user to grant the permission to the app bundle, but will *not* prompt
-      # the user to grant the permission to the executable binary, even though the
-      # application will not actually work without doing both. Hence, this caveat
-      # message is important.
-      on_arm do
-        s += "\n" + <<~EOS
-          On ARM macOS machines, the 'Accessibility' permission must be granted to
-          both of the following two items:
-            (1) #{opt_prefix}/bundle/Synergy.app
-            (2) #{opt_bin}/synergy
-        EOS
-      end
-      s
     end
   end
 
   test do
-    version_string = version.major_minor_patch.to_s
-    assert_match(/synergy-server v#{version_string}.*, protocol v/,
-                 shell_output("#{opt_bin}/synergy-server --version"))
-    assert_match(/synergy-client v#{version_string}.*, protocol v/,
-                 shell_output("#{opt_bin}/synergy-client --version"))
+    # Linux CI has no display for the default xcb platform plugin
+    ENV["QT_QPA_PLATFORM"] = "minimal" if OS.linux?
 
-    assert_match "synergy-server: failed to load config",
-                 shell_output("#{opt_bin}/synergy-server 2>&1", 4)
-    assert_match "synergy-client: a server address or name is required",
-                 shell_output("#{opt_bin}/synergy-client 2>&1", 3)
+    assert_match "synergy-core v#{version.major_minor_patch}, protocol v",
+                 shell_output("#{bin}/synergy-core --version")
+    assert_match "synergy-core: failed to load config", shell_output("#{bin}/synergy-core server 2>&1", 4)
   end
 end
-
-__END__
-diff --git a/cmake/Version.cmake b/cmake/Version.cmake
-index 0ea44d0..392f6a0 100644
---- a/cmake/Version.cmake
-+++ b/cmake/Version.cmake
-@@ -51,36 +51,6 @@ function(version_from_git_tags VERSION VERSION_MAJOR VERSION_MINOR VERSION_PATCH
-   set(minor_match "${CMAKE_MATCH_2}")
-   set(patch_match "${CMAKE_MATCH_3}")
- 
--  set(git_path "${CMAKE_CURRENT_SOURCE_DIR}/.git")
--  if(NOT EXISTS ${git_path})
--    message(FATAL_ERROR "Not a Git repository: ${git_path}")
--  endif()
--  
--  find_package(Git)
--  if(NOT GIT_FOUND)
--    message(FATAL_ERROR "Git not found")
--  endif()
--  message(VERBOSE "Git repo: " ${CMAKE_CURRENT_SOURCE_DIR})
--
--  # Creating a release tag through the GitHub UI creates a lightweight tag, so use --tags
--  # to include lightweight tags in the search.
--  execute_process(
--    COMMAND ${GIT_EXECUTABLE} describe origin/master --tags --long --match "v[0-9]*"
--    WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}"
--    OUTPUT_VARIABLE git_describe
--    ERROR_QUIET OUTPUT_STRIP_TRAILING_WHITESPACE
--  )
--  if (NOT git_describe)
--    message(FATAL_ERROR "No version tags found in the Git repository")
--  endif()
--  message(VERBOSE "Git describe: " ${git_describe})
--
--  string(REGEX REPLACE ".*-([0-9]+)-g.*" "\\1" rev_count ${git_describe})
--  if ("${rev_count}" STREQUAL "")
--    message(FATAL_ERROR "No revision count found in Git describe output")
--  endif()
--  message(VERBOSE "Changes since last tag: " ${rev_count})
--
-   if (SYNERGY_VERSION_RELEASE)
-     
-     message(VERBOSE "Version is release")

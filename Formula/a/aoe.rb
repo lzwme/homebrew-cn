@@ -1,17 +1,17 @@
 class Aoe < Formula
   desc "Terminal session manager for AI coding agents"
   homepage "https://github.com/agent-of-empires/agent-of-empires"
-  url "https://ghfast.top/https://github.com/agent-of-empires/agent-of-empires/archive/refs/tags/v1.16.1.tar.gz"
-  sha256 "464b3c62d2a5627275bdcd4dfd7983b0a0a11a5f966126b6b0b49fdd780e67f1"
+  url "https://ghfast.top/https://github.com/agent-of-empires/agent-of-empires/archive/refs/tags/v1.17.0.tar.gz"
+  sha256 "cae6d4888f7111d7173f4ecd85da330d85134beb9c9b763e2aa494b994c761a2"
   license "MIT"
   head "https://github.com/agent-of-empires/agent-of-empires.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "55c8c5fabfc7252759a9bf7b67b75ee64780be5501257914f20853378a128efb"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "0007d5f7c1cfad1ea4312f9225f4a48513499fdc8ffb78a155ff08c87f3b0d94"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "e881e38a6a2f609a09ade03408308ae72aa969a6c4b94bfa7e5c0e1371f08db9"
-    sha256 cellar: :any,                 arm64_linux:       "e80a8cd908de182717e73119f0eb74712da4cd822996d8ea2a41a5845f9b586f"
-    sha256 cellar: :any,                 x86_64_linux:      "c98ae697576f7cf813cffe11e6d1f2f14fd63466946b69cb78dbbd0effe64fc4"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "e9f91380f53953d79d796694d5072d92d38e1139b06bc12b87c80343d50a0c47"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "0f7bb3dd67b191076e2e4f0d87b877cfae57e013d8e9d381ea800f6d89190295"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "6c5124b7dd1680f7d77d2b17fdd63e07a268cbc16bb8e39e2b1e264b58acb342"
+    sha256 cellar: :any,                 arm64_linux:       "aefbce990629a96491e0dd4326653eb368caffb20269b7c7365f2024526ad16f"
+    sha256 cellar: :any,                 x86_64_linux:      "3c3c1fd926424e0f9478444629f5937cbc68ab85655031a8c3f52564d46ed795"
   end
 
   depends_on "node" => :build

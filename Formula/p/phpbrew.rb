@@ -25,6 +25,8 @@ class Phpbrew < Formula
     end
   end
 
+  allow_network_access! :test
+
   def install
     libexec.install "phpbrew.phar" => "phpbrew"
     (bin/"phpbrew").write <<~PHP
@@ -35,6 +37,6 @@ class Phpbrew < Formula
 
   test do
     system bin/"phpbrew", "init"
-    assert_match "8.0", shell_output("#{bin}/phpbrew known")
+    assert_match "8.5", shell_output("#{bin}/phpbrew known")
   end
 end

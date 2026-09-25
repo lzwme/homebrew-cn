@@ -1,8 +1,8 @@
 class Tt < Formula
   desc "Command-line utility to manage Tarantool applications"
   homepage "https://github.com/tarantool/tt"
-  url "https://ghfast.top/https://github.com/tarantool/tt/releases/download/v2.14.0/tt-2.14.0-complete.tar.gz"
-  sha256 "311bdbab08d98c946ae42f336fd033802a27bfe50bf8d8ca018ebaf7c333c500"
+  url "https://ghfast.top/https://github.com/tarantool/tt/releases/download/v2.15.0/tt-2.15.0-complete.tar.gz"
+  sha256 "37a4568d2d723f3f840f688e8c5fe636aac0d6866b14176fd5add19f649bf764"
   license "BSD-2-Clause"
 
   # There can be a notable gap between when a version is tagged and a
@@ -14,13 +14,11 @@ class Tt < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "6b252150b6b713a097292e9c0c410fb256592d2424b98d9cb86d9ef9c011cff4"
-    sha256 cellar: :any, arm64_tahoe:       "cc605d2c008d0d23926cc54a2b115ee87181cfc98ca946076b5fcc85c3cc40af"
-    sha256 cellar: :any, arm64_sequoia:     "61bc13d81e0cbc96b2c7db81ef2ecbc5237572b7654c874dbe3822b4bb763ea1"
-    sha256 cellar: :any, arm64_sonoma:      "628a3253ab986f63f9cee5dafc74b480da7a42ba6fadbdfc18f40eb4deb8bfc7"
-    sha256 cellar: :any, sonoma:            "acb9e81beae084e1721d138f376154f8eef5216b4d39d11c9f833f6c9eb93ab2"
-    sha256 cellar: :any, arm64_linux:       "d8ca30012ae2a98af1f956ac25d7ddb6f5d05f5cc6d1da00b0e6ac6c0b1e19f4"
-    sha256 cellar: :any, x86_64_linux:      "b47ef62a574d6a8f8fb52495809aeefde8516b64f83b67e0a2cdac1063739e88"
+    sha256 cellar: :any, arm64_golden_gate: "3669ea46808a2a9c3d3db148b56a15089d61fe02e25e4d322609e3084600bded"
+    sha256 cellar: :any, arm64_tahoe:       "ac3d6433c925c4089b4a5a69cd54129253e4bcc28a5e4e3418c44eee20ad0a45"
+    sha256 cellar: :any, arm64_sequoia:     "4a5842f60358d1e95d916eb522124be14c52ec46a11b9d0f5f41300fc320556a"
+    sha256 cellar: :any, arm64_linux:       "3475f74b1c301ea8f3821814c21b80c6cb844021db8c15294c8ce0c919ca55e2"
+    sha256 cellar: :any, x86_64_linux:      "b0af315bd274c0cbf15398ae299de60f97288ebd00fa022a53cda5f6e84066d5"
   end
 
   depends_on "go" => :build

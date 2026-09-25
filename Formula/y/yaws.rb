@@ -36,6 +36,8 @@ class Yaws < Formula
   skip_clean "lib/yaws/examples/ebin"
   skip_clean "lib/yaws/examples/include"
 
+  allow_network_access! :test
+
   def install
     # Ensure pam headers are found on Xcode-only installs
     pam_include = OS.mac? ? "#{MacOS.sdk_path}/usr/include" : formula_opt_include("linux-pam")

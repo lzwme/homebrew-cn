@@ -67,11 +67,12 @@ class Dotnet < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "1ec8dccd449b0f8e0508c8531c964ad2ad60f7a60ea51b3c8d5267ec4e89c341"
-    sha256 cellar: :any, arm64_tahoe:       "98cebf3046740a70932aea26120652cdfa776fced10042f6b087eb55baa671d2"
-    sha256 cellar: :any, arm64_sequoia:     "aca490de30124197d814b5753bc9bc1a81c8815757687838187655456452143c"
-    sha256 cellar: :any, arm64_linux:       "cde949cfc40d879e719b474d55b5ed2d53e149ddcfd31b05e358115e885e9458"
-    sha256               x86_64_linux:      "33a862efb5d26be9886dd5a2589d368f1ea2f680ddd72a414457b42d7ba38f2b"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "a5024a30fdc501d20ff89c6f5d9466fb6b6bcb2ff9322f3e0af70e6838a4e5fb"
+    sha256 cellar: :any, arm64_tahoe:       "6dfc193bf00817200f19683c7993e7ce5b96240842aac662456b702323f9da7f"
+    sha256 cellar: :any, arm64_sequoia:     "4c2036895068dff02de38d0d70e56106a3fb6d013cfd5685d2ffe474283e1094"
+    sha256 cellar: :any, arm64_linux:       "a10b57d633642f97861efa31a614ef3667cd7606af1b4fe230eb6e712443777c"
+    sha256 cellar: :any, x86_64_linux:      "e5d520ed9ebfd35b82e215de0aef3c5ace18b8809e74f7f02443c97b50d7f527"
   end
 
   head do
@@ -223,6 +224,19 @@ class Dotnet < Formula
     libexec.mkpath
     tarball = buildpath.glob("Release/dotnet-sdk-*.tar.gz").first
     system "tar", "--extract", "--file", tarball, "--directory", libexec
+
+    if OS.linux?
+      # Source-only builds default `KeepNativeSymbols` to true, so the native
+      # binaries keep their DWARF. That leaves build paths in the binaries and
+      # adds hundreds of MB to the x86_64 bottle. Upstream asks packagers to
+      # strip downstream rather than flip that switch, see
+      # https://github.com/dotnet/source-build/blob/main/Documentation/debugging-support.md
+      # `--strip-debug` keeps `.symtab`, so native frames still symbolise, and
+      # unlike an `--only-keep-debug` split it leaves no `.dbg` files behind.
+      native_binaries = libexec.glob("**/*").select { |path| path.file? && path.elf? }
+      system "strip", "--strip-debug", "--preserve-dates", *native_binaries
+    end
+
     doc.install libexec.glob("*.txt")
     (bin/"dotnet").write_env_script libexec/"dotnet", DOTNET_ROOT: libexec
 

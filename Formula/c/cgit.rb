@@ -28,7 +28,7 @@ class Cgit < Formula
   end
 
   on_linux do
-    depends_on "openssl@3" => :build # Uses CommonCrypto on macOS
+    depends_on "openssl@4" => :build # Uses CommonCrypto on macOS
     depends_on "zlib-ng-compat"
   end
 

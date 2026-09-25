@@ -3,8 +3,8 @@ class V8 < Formula
   homepage "https://v8.dev/docs"
   # Track V8 version from Chrome stable: https://chromiumdash.appspot.com/releases?platform=Mac
   # Check `brew livecheck --resources v8` for any resource updates
-  url "https://ghfast.top/https://github.com/v8/v8/archive/refs/tags/15.4.80.11.tar.gz"
-  sha256 "6745e4e54780c226a478249706ca18c7558175bcb4ac2b0d25803ef17551a226"
+  url "https://ghfast.top/https://github.com/v8/v8/archive/refs/tags/15.5.35.7.tar.gz"
+  sha256 "276a78b754c91d521b21f3e05f73542ac497d320b2337cfac7be51ee45b1da05"
   license "BSD-3-Clause"
 
   livecheck do
@@ -24,11 +24,11 @@ class V8 < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "6780b115bf1b5cef347bf880f813c349a9ece139c246a9b0f8c02ea1d76fea1c"
-    sha256 cellar: :any, arm64_tahoe:       "261c1dce9265de064eab8dc7b6e90a4806091908db52273078a66bf155e0d2bb"
-    sha256 cellar: :any, arm64_sequoia:     "cac456634bde575fcf2559b81c2fe98a0ec5b206dbb2bd3b7c7c1ec91a744cc4"
-    sha256 cellar: :any, arm64_linux:       "1db8ca7c5ad6e2720b3c93b781686e9574919dc89ad77280e48e34f53c977969"
-    sha256 cellar: :any, x86_64_linux:      "443ea10c3e16fbf3e9c7e0f5e69ff50babac4872464d7042228f5495c3d68bd4"
+    sha256 cellar: :any, arm64_golden_gate: "d92d51004b19ba3cb5a80626334ba69dc29e32a274c1165f9b254b8078578468"
+    sha256 cellar: :any, arm64_tahoe:       "1ea12790234ad6ab4000c6323d471eeea53c138c188ce737782f110771e30cb6"
+    sha256 cellar: :any, arm64_sequoia:     "5a76a6f1da68f64a60dda2fb52c1e3c88991f4adcb0ce2e52087c908d34d2f06"
+    sha256 cellar: :any, arm64_linux:       "c0464f68d67953665386d8e4b4d00a2e01c153f4e56d4b66850a5d471df9da34"
+    sha256 cellar: :any, x86_64_linux:      "35c0f3bd30fb481d0943ce54240b08d2816c8dd5b1d78fd29032250335e7ac5c"
   end
 
   depends_on "llvm" => :build
@@ -58,8 +58,8 @@ class V8 < Formula
   # e.g. for CIPD dependency gn: https://chromium.googlesource.com/v8/v8.git/+/refs/tags/<version>/DEPS#99
   resource "gn" do
     url "https://gn.googlesource.com/gn.git",
-        revision: "d71c4a70bd2ece461a09cbd6321970b9247fdab2"
-    version "d71c4a70bd2ece461a09cbd6321970b9247fdab2"
+        revision: "a99d46a9d04c770d6bb87387058e1d7b151758ce"
+    version "a99d46a9d04c770d6bb87387058e1d7b151758ce"
 
     livecheck do
       url "https://ghfast.top/https://raw.githubusercontent.com/v8/v8/refs/tags/#{LATEST_VERSION}/DEPS"
@@ -69,8 +69,8 @@ class V8 < Formula
 
   resource "build" do
     url "https://chromium.googlesource.com/chromium/src/build.git",
-        revision: "fdd530b37c6cd6c8645cdfa296d209643ab2dc26"
-    version "fdd530b37c6cd6c8645cdfa296d209643ab2dc26"
+        revision: "8ca8a372cab9ff143072204053d30fbc2c17bd7a"
+    version "8ca8a372cab9ff143072204053d30fbc2c17bd7a"
 
     livecheck do
       url "https://ghfast.top/https://raw.githubusercontent.com/v8/v8/refs/tags/#{LATEST_VERSION}/DEPS"
@@ -157,8 +157,8 @@ class V8 < Formula
 
   resource "third_party/icu" do
     url "https://chromium.googlesource.com/chromium/deps/icu.git",
-        revision: "8cc91d9b6ab9991802fd208ee03a69714fd0251c"
-    version "8cc91d9b6ab9991802fd208ee03a69714fd0251c"
+        revision: "6ebb40c594776cc2c21ea14df85a2a89a328b364"
+    version "6ebb40c594776cc2c21ea14df85a2a89a328b364"
 
     livecheck do
       url "https://ghfast.top/https://raw.githubusercontent.com/v8/v8/refs/tags/#{LATEST_VERSION}/DEPS"
@@ -179,8 +179,8 @@ class V8 < Formula
 
   resource "third_party/llvm-libc/src" do
     url "https://chromium.googlesource.com/external/github.com/llvm/llvm-project/libc.git",
-        revision: "320824188c37e5c28738b9652a0ca8087c934bc9"
-    version "320824188c37e5c28738b9652a0ca8087c934bc9"
+        revision: "43a9a99ce4b5a04954090f8a0e74bf2786f59379"
+    version "43a9a99ce4b5a04954090f8a0e74bf2786f59379"
 
     livecheck do
       url "https://ghfast.top/https://raw.githubusercontent.com/v8/v8/refs/tags/#{LATEST_VERSION}/DEPS"
@@ -201,8 +201,8 @@ class V8 < Formula
 
   resource "third_party/partition_alloc" do
     url "https://chromium.googlesource.com/chromium/src/base/allocator/partition_allocator.git",
-        revision: "f0d1e646eb41d8736261d5d8d8f094404bac62ac"
-    version "f0d1e646eb41d8736261d5d8d8f094404bac62ac"
+        revision: "c029851c21b7e1154fa3964e08c97710adc92cc7"
+    version "c029851c21b7e1154fa3964e08c97710adc92cc7"
 
     livecheck do
       url "https://ghfast.top/https://raw.githubusercontent.com/v8/v8/refs/tags/#{LATEST_VERSION}/DEPS"
@@ -223,8 +223,8 @@ class V8 < Formula
 
   resource "third_party/zlib" do
     url "https://chromium.googlesource.com/chromium/src/third_party/zlib.git",
-        revision: "5eb4d7ed380f214e7a0a23c18f629048d3ba9e00"
-    version "5eb4d7ed380f214e7a0a23c18f629048d3ba9e00"
+        revision: "285e94b8fa95ad3b7d16b80798ec8dce6febb8c8"
+    version "285e94b8fa95ad3b7d16b80798ec8dce6febb8c8"
 
     livecheck do
       url "https://ghfast.top/https://raw.githubusercontent.com/v8/v8/refs/tags/#{LATEST_VERSION}/DEPS"
@@ -262,19 +262,20 @@ class V8 < Formula
 
     # setup gn args
     gn_args = {
-      is_debug:                     false,
-      is_component_build:           true,
-      v8_use_external_startup_data: false,
-      v8_enable_fuzztest:           false,
-      v8_enable_i18n_support:       true,  # enables i18n support with icu
-      clang_use_chrome_plugins:     false, # disable the usage of Google's custom clang plugins
-      treat_warnings_as_errors:     false, # ignore not yet supported clang argument warnings
+      is_debug:                      false,
+      is_component_build:            true,
+      v8_use_external_startup_data:  false,
+      v8_enable_fuzztest:            false,
+      v8_enable_i18n_support:        true,  # enables i18n support with icu
+      clang_use_chrome_plugins:      false, # disable the usage of Google's custom clang plugins
+      treat_warnings_as_errors:      false, # ignore not yet supported clang argument warnings
       # disable options which require Google's custom libc++
-      use_custom_libcxx:            false,
-      enable_rust:                  false,
-      use_sysroot:                  false,
-      v8_enable_temporal_support:   false,
-      v8_enable_sandbox:            false, # sandbox is not supported by use_custom_libcxx: false
+      use_custom_libcxx:             false,
+      enable_rust:                   false,
+      use_sysroot:                   false,
+      v8_enable_temporal_support:    false,
+      v8_enable_sandbox:             false, # sandbox is not supported by use_custom_libcxx: false
+      v8_use_metagen_instance_types: false, # metagen needs the unvendored `llvm-libclang`
     }
 
     # uses Homebrew clang instead of Google clang

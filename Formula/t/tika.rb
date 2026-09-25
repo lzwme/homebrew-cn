@@ -22,6 +22,8 @@ class Tika < Formula
     end
   end
 
+  allow_network_access! :test
+
   def install
     odie "update `server` resource" if version != resource("server").version
     libexec.install "tika-app-#{version}.jar"

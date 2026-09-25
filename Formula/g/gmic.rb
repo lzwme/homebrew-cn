@@ -4,6 +4,7 @@ class Gmic < Formula
   url "https://gmic.eu/files/source/gmic_4.0.5.tar.gz"
   sha256 "c6771c48693ed615b2e85d1db7a9626358d4606eb2c75dcf009b2924f396da59"
   license "CECILL-2.1"
+  revision 1
   head "https://github.com/GreycLab/gmic.git", branch: "master"
 
   livecheck do
@@ -12,12 +13,11 @@ class Gmic < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "886dbbc3a903994f65173e57769115603752e7b83995d3d38c1964edf54f7b6e"
-    sha256 cellar: :any, arm64_tahoe:       "ff5e0846f7e56974765a1024da244a8fb2fd69abb69e536425b18dc6f22a9ac2"
-    sha256 cellar: :any, arm64_sequoia:     "3213641b846514fbd28d46eb3f3a8eff179089a29eab78d4f3bff742c100ca65"
-    sha256 cellar: :any, arm64_sonoma:      "912d93075511e67ea756e0eaf2f8cf46f40476758c0384ec9bb41fc2387f462d"
-    sha256 cellar: :any, arm64_linux:       "f530c7ddb913ee3f988a3ec83cb346740ddd072f06f9bd0825b4e752468fba30"
-    sha256 cellar: :any, x86_64_linux:      "4d295bd6a34d698e66b10d713bfbde59104907c81239083b3d6294d7daf8fb91"
+    sha256 cellar: :any, arm64_golden_gate: "c23127101e92ce5c39b9ceda747069faa9a183de7928e8fcc1d4c3249cd62499"
+    sha256 cellar: :any, arm64_tahoe:       "e1eb7aafdb2ef5553893b7d37b77465490dafd03bd654178c3ea0e81be1d439c"
+    sha256 cellar: :any, arm64_sequoia:     "380e021c05d657ecdf4cbaebe8fd8ecee7812d8a6e6c85f3461264abff3f731b"
+    sha256 cellar: :any, arm64_linux:       "a8f60f8fd9e18309cfd0e24455e33f4445b0af8ccd95b40ec68ea8779b575ec2"
+    sha256 cellar: :any, x86_64_linux:      "27e2043a8e924509a09e54ac1c89f2188a6a98b8403f1815e95ee23771ef8e9e"
   end
 
   depends_on "cmake" => :build

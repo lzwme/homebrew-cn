@@ -1,8 +1,8 @@
 class Oxen < Formula
   desc "Data VCS for structured and unstructured machine learning datasets"
   homepage "https://www.oxen.ai/"
-  url "https://ghfast.top/https://github.com/Oxen-AI/Oxen/archive/refs/tags/v0.57.0.tar.gz"
-  sha256 "c382675e41930d7a8097a55c884a7f08832e9d8c36506432ac8df39dca3eed8c"
+  url "https://ghfast.top/https://github.com/Oxen-AI/Oxen/archive/refs/tags/v0.58.1.tar.gz"
+  sha256 "030352c4656927136f04fc33ee19653c4e88ce5554dcf55055ea001b4aa12714"
   license "Apache-2.0"
   head "https://github.com/Oxen-AI/Oxen.git", branch: "main"
 
@@ -17,11 +17,11 @@ class Oxen < Formula
   no_autobump! because: :bumped_by_upstream
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "b5b93604cf6e33c262e62a89aa6488c8e71a807ec1ec3eebc62dbc724ab21e39"
-    sha256 cellar: :any, arm64_tahoe:       "2311a1bc580adf1997e879b7f9767f5c77a17b114eb3323d888e4baf565a02b8"
-    sha256 cellar: :any, arm64_sequoia:     "b31cfaa0056dfe140d18e40621d818745c43a92e0b28cb0cec41795589af55f9"
-    sha256 cellar: :any, arm64_linux:       "a7ce01e7a0f7c68b49c19fe6c3eb89f1ebb0f332270b701c8f0217d825bec215"
-    sha256 cellar: :any, x86_64_linux:      "a8a15a2363436377fad385f8b78c3effe321776e6df0ef2dce26f75815dec396"
+    sha256 cellar: :any, arm64_golden_gate: "eb3ece38c842329610b6074ccbb12aa598bc935f62f68e212446509199504306"
+    sha256 cellar: :any, arm64_tahoe:       "5b145362fd0dcd5dd59a6e124a5e4f36309a7d72c5781a2f59480e458d6faa9b"
+    sha256 cellar: :any, arm64_sequoia:     "1ff7fead9f4a399fa408db0f1dab2ec1942deef40b8fcdbac38f403dcfccf2d8"
+    sha256 cellar: :any, arm64_linux:       "3eef5b1960c03fecfdad6d6b8114983e6ad5d2189266c4734d7534dfbeeeb31c"
+    sha256 cellar: :any, x86_64_linux:      "fc1ec3b3038ddd3ec8b66c9f634e8d55285b771cb86ce5d6dedbc7a2ae996e87"
   end
 
   depends_on "cmake" => :build # for libz-ng-sys
@@ -29,6 +29,12 @@ class Oxen < Formula
   depends_on "rocksdb"
 
   uses_from_macos "llvm" => :build # for libclang
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
 
   def install
     ENV["ROCKSDB_LIB_DIR"] = formula_opt_lib("rocksdb")

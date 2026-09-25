@@ -1,27 +1,43 @@
 class IntelliShell < Formula
   desc "Like IntelliSense, but for shells"
   homepage "https://lasantosr.github.io/intelli-shell/"
-  url "https://ghfast.top/https://github.com/lasantosr/intelli-shell/archive/refs/tags/v3.4.5.tar.gz"
-  sha256 "3bb19e59f65e5076c549379cdd8bbe37ab38ddb45187f2333d4356f49e5b1f41"
   license "Apache-2.0"
   head "https://github.com/lasantosr/intelli-shell.git", branch: "main"
 
+  stable do
+    url "https://ghfast.top/https://github.com/lasantosr/intelli-shell/archive/refs/tags/v3.4.5.tar.gz"
+    sha256 "3bb19e59f65e5076c549379cdd8bbe37ab38ddb45187f2333d4356f49e5b1f41"
+
+    # Backport support for OpenSSL 4
+    patch do
+      url "https://github.com/lasantosr/intelli-shell/commit/fecf5c2ba5ecf648e8e582361f4568f937e014ff.patch?full_index=1"
+      sha256 "760c4982138e87ef95a903e87ca60de6f0bf58843d1fa7446f0971eb6dc3f8f9"
+      type :backport
+      resolves "https://github.com/lasantosr/intelli-shell/issues/63"
+    end
+  end
+
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "87b3b248e099f133ee4d529895ae359ee0a7dc78aef8c1d854a8a0de52f3cfb8"
-    sha256 cellar: :any, arm64_tahoe:       "22e5bc09de34b3ed8342a4bfb8787a4d29a8ae501fa59a094886b9ce64ec811e"
-    sha256 cellar: :any, arm64_sequoia:     "5c36a03bcc346abecf17198df4e5f8b4975b1c5e4dbccfeadb97f66f9fa119a9"
-    sha256 cellar: :any, arm64_sonoma:      "52b7296107b8e6654ce6e83f6a951bc862e430d5c2e6df5219506f5c494c193f"
-    sha256 cellar: :any, sonoma:            "f3cabfd7921792db3bdbe48f4e56c36887fb983d52a51cdac9640179e228b8db"
-    sha256 cellar: :any, arm64_linux:       "bb9b8ab9d2c017970d08560bedb3864a7060c7da6918f31ab16f4d6de9f4b107"
-    sha256 cellar: :any, x86_64_linux:      "19db7acc6640f5ca464cbfc1360c4173e67cd017829ece87e5cdca2184761c62"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "a0d12a69cadc997ff2d3a6c417fa66c97c1d2615e1d80ca5429beb4f430ac1d9"
+    sha256 cellar: :any, arm64_tahoe:       "32f4d229b561c0321224292a23691076f23bd48243df5d3a68eff3bc54ffbc44"
+    sha256 cellar: :any, arm64_sequoia:     "8edb24e4ecb07d4ff91b69b78f256bd432828ade902b0ad47586a5b942a8184b"
+    sha256 cellar: :any, arm64_linux:       "64ba901c2ef059180565b2d4af71c5cf2b069ad588206524c430e989e2b8fbfa"
+    sha256 cellar: :any, x86_64_linux:      "5b45e326d19e6ea9255d90bd886796c4c940ad9e716875f2daa9242716701d62"
   end
 
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   on_linux do
     depends_on "zlib-ng-compat"
+  end
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
   end
 
   def install

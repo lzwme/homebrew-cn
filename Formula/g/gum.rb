@@ -1,18 +1,18 @@
 class Gum < Formula
   desc "Tool for glamorous shell scripts"
   homepage "https://github.com/charmbracelet/gum"
-  url "https://ghfast.top/https://github.com/charmbracelet/gum/archive/refs/tags/v2.0.1.tar.gz"
-  sha256 "2cbc41662ff6c8df30ff3f6c133d4276db72a6f9b3df7eb942f1a798bcbf3d80"
+  url "https://ghfast.top/https://github.com/charmbracelet/gum/archive/refs/tags/v2.0.2.tar.gz"
+  sha256 "06403707671e9b2af386640d8b9f6079efc0aadf77e8f6b091bd191fe16c1264"
   license "MIT"
   compatibility_version 1
   head "https://github.com/charmbracelet/gum.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "a14d2861ff1a4e86b07abedb7e6b5715c39e64c66c9a0d392e6f0871ddfbb6cb"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "a14d2861ff1a4e86b07abedb7e6b5715c39e64c66c9a0d392e6f0871ddfbb6cb"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "a14d2861ff1a4e86b07abedb7e6b5715c39e64c66c9a0d392e6f0871ddfbb6cb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "57ca4d607f804b079dd431837ad85bce1110d80b9f20b6da7b1497004e100f73"
-    sha256 cellar: :any,                 x86_64_linux:      "56a727a82cfd54775cfc550634b3c6da4bf4b7001fbc038cf9b9deb5f434961c"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "9909c2899539ee2e31e3ba5e5b672e27613b2ed6a3728cf0a317cc8063278aef"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "9909c2899539ee2e31e3ba5e5b672e27613b2ed6a3728cf0a317cc8063278aef"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "9909c2899539ee2e31e3ba5e5b672e27613b2ed6a3728cf0a317cc8063278aef"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "014dd90a816a7ca29194e1b4287c3029c1abe04a975126dfc9f04a81de242c6f"
+    sha256 cellar: :any,                 x86_64_linux:      "2470131a951e140ddc0d511171473d395f52c9057eeea6617b0ee18e346572fc"
   end
 
   depends_on "go" => :build

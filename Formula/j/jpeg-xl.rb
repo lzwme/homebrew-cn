@@ -4,6 +4,7 @@ class JpegXl < Formula
   url "https://ghfast.top/https://github.com/libjxl/libjxl/archive/refs/tags/v0.12.0.tar.gz"
   sha256 "03e9be69a30be4011f559da75328b6d7cea8ad921fabfbd551ce10bf45cdc992"
   license "BSD-3-Clause"
+  revision 1
   compatibility_version 2
 
   livecheck do
@@ -12,13 +13,11 @@ class JpegXl < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "c97ab89af2a879219f5af8686a2588afdcaf769802de285d66251a3be92734e8"
-    sha256 cellar: :any, arm64_tahoe:       "ee54d6aaca2716c393a0620f1ecc152aca52909afbeb93d7d918e7a4c3b4af47"
-    sha256 cellar: :any, arm64_sequoia:     "d919e4dd479bf5550a3825928860a44e1586fc49688a3b76bd789ad93a8073b8"
-    sha256 cellar: :any, arm64_sonoma:      "8a1f0c6a9ab98cab7ecf157ba28c6b5c7f400adb3bd655fc4fc817afe38eb341"
-    sha256 cellar: :any, sonoma:            "c29eb241a83264b027b11aac8716a22e6a618fc13d104c69f31957984b5e004b"
-    sha256 cellar: :any, arm64_linux:       "0056396bc9621f3548bc71d7774e179985d2bd5470942aa9bcac2586edad03ab"
-    sha256 cellar: :any, x86_64_linux:      "cb12204090763ee301e7c9c9084c964baac6872d69dc7c7b5c28c23e8048b035"
+    sha256 cellar: :any, arm64_golden_gate: "f5613d8fd10ef72372c1fe2b14ccb51fa332f4119f916deabb9fa07b8a1f3f3a"
+    sha256 cellar: :any, arm64_tahoe:       "1da12f614c4db97c3afa09d7dec5b9e719dca06bb1a3f545358ff38ce6dbb33b"
+    sha256 cellar: :any, arm64_sequoia:     "3c193d49dacde5e78331ff37462b5ef7f09d44279801ad2df911a7a5d618c109"
+    sha256 cellar: :any, arm64_linux:       "164c7ce15a5764ec30fc41ccb62229e9f88896e5c05f0391a67a225e8fc1a92a"
+    sha256 cellar: :any, x86_64_linux:      "10819cf13cf5b5fcc5c8170c5c857fd6903dfcc02f328899c76f69ddd4ee8fbe"
   end
 
   depends_on "asciidoc" => :build

@@ -23,10 +23,6 @@ class Flowrs < Formula
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
 
-  on_linux do
-    depends_on "openssl@3"
-  end
-
   def install
     system "cargo", "install", *std_cargo_args
   end

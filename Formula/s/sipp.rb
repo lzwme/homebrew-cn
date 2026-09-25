@@ -2,31 +2,33 @@ class Sipp < Formula
   desc "Traffic generator for the SIP protocol"
   homepage "https://sipp.sourceforge.net/"
   url "https://github.com/SIPp/sipp.git",
-      tag:      "v3.7.7",
-      revision: "369b3c187f0ff96f3ec9795650820e80cf17c776"
+      tag:      "v3.7.8",
+      revision: "741ee230bfda890c8605253b32b449dfef3dd421"
   license "GPL-2.0-or-later"
-  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_golden_gate: "f3e6f10845d02e69d5a6fb9e80d702899b05224b036f15af5c441adbb62892af"
-    sha256 cellar: :any,                 arm64_tahoe:       "04a868199a774e7dffbb6974c523173aeb1a70c6319ac081b07d21ffa095b79c"
-    sha256 cellar: :any,                 arm64_sequoia:     "07b010ab115ed3dbea66d4c6e9eaa4ab2b11a681291e626f0f1a5ca1a94bb3c6"
-    sha256 cellar: :any,                 arm64_sonoma:      "372ad9aa6622667c1808a5b8a0ecf09e4246689189ec8b94f809a414c36f0d68"
-    sha256 cellar: :any,                 sonoma:            "7ca2fd99cf19d1248849f4e4c9e58d133d07cc7632c896bce1a9eb0073a85e6f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "6733f16449a1f4d3b4e95112ac9b47af384eb498263e837a7c96c2c8fac00564"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "55afaac7579d5bd70e414a66ec9e753c202d168abbe1d5ca295616c416586db0"
+    sha256 cellar: :any, arm64_golden_gate: "7b7c8f2c83843426ae8a0ee55bf001e267b07b159b241619bfae550f75cb74ff"
+    sha256 cellar: :any, arm64_tahoe:       "d86175424861489a045269e986f88646395cd3e48b8a3a2beb578026a5c66734"
+    sha256 cellar: :any, arm64_sequoia:     "75d5968b8e0954c9c09f8c81f419a491cc04df6f01fd2adf447f214c66ec8d8e"
+    sha256 cellar: :any, arm64_linux:       "8dbca031af559688827135846853c5d8849fa2bf7afb326f0dc50a0a096ba547"
+    sha256 cellar: :any, x86_64_linux:      "997b814f1b05538c8bfb9ab978fe8610feff992fc03a7891b2f932de9bedb38b"
   end
 
   depends_on "cmake" => :build
+  depends_on "pkgconf" => :build
   depends_on "openssl@4"
+  depends_on "pugixml"
 
   uses_from_macos "libpcap"
   uses_from_macos "ncurses"
+
+  deny_network_access!
 
   def install
     args = %w[
       -DUSE_PCAP=1
       -DUSE_SSL=1
+      -DUSE_SYSTEM_PUGIXML=ON
     ]
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args

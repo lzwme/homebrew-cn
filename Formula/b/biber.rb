@@ -6,12 +6,12 @@ class Biber < Formula
   license "Artistic-2.0"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_golden_gate: "3ac812c44d3c8b0a8a1a38347b5728a329dd3fb0bd35e95447b94cecac03161c"
-    sha256 cellar: :any, arm64_tahoe:       "ff71789356a3285f6854b6cb5dd75beb85fff1997dab2282517d0701ee06b7e0"
-    sha256 cellar: :any, arm64_sequoia:     "607af65f5f2a5f697a9f2d1a92150ade4630aaf0139f7b152732d366275de8f2"
-    sha256 cellar: :any, arm64_linux:       "0468c4ebd19b8bf432b94bc104093fae6610b88b6a3740a16ef74b7fec4c84e4"
-    sha256 cellar: :any, x86_64_linux:      "c25d46fc70146117cb8bee0030103076cd34079b509f4db211f292a5750f156d"
+    rebuild 2
+    sha256 cellar: :any, arm64_golden_gate: "8b7449bedeb39cfb25cc533b9448a473283f306e6325c8ae1ce6253ea63dd6ec"
+    sha256 cellar: :any, arm64_tahoe:       "de9f5e453d737f1d25bae91b5fc87c16af5e8174a4f3c378e5de0a4949e285b1"
+    sha256 cellar: :any, arm64_sequoia:     "0d8056305d36256d3346916977baf4c32fa6dfeaa502bbd1e12e22e7f01bd68a"
+    sha256 cellar: :any, arm64_linux:       "a9417721640ff25ce4713575a5e3885222e42fc94621991506d082f6ebf4d6fa"
+    sha256 cellar: :any, x86_64_linux:      "edd833e7e014a511884d29368463478c2e984e1c94246c80af440bb9bb1489be"
   end
 
   depends_on "pkgconf" => :build
@@ -22,7 +22,7 @@ class Biber < Formula
   uses_from_macos "perl"
 
   on_linux do
-    depends_on "openssl@3"
+    depends_on "openssl@4"
 
     resource "Algorithm::Diff" do
       url "https://cpan.metacpan.org/authors/id/R/RJ/RJBS/Algorithm-Diff-1.201.tar.gz"
@@ -300,8 +300,16 @@ class Biber < Formula
     end
 
     resource "Net::SSLeay" do
-      url "https://cpan.metacpan.org/authors/id/C/CH/CHRISN/Net-SSLeay-1.94.tar.gz"
-      sha256 "9d7be8a56d1bedda05c425306cc504ba134307e0c09bda4a788c98744ebcd95d"
+      url "https://cpan.metacpan.org/authors/id/C/CH/CHRISN/Net-SSLeay-1.96.tar.gz"
+      sha256 "ab213691685fb2a576c669cbc8d9266f8165a31563ad15b7c4030b94adfc0753"
+
+      # Backport support for OpenSSL 4.0
+      patch do
+        url "https://github.com/radiator-software/p5-net-ssleay/commit/a55abab4a33b040fbd56cc18fde6c257af2928e2.patch?full_index=1"
+        sha256 "dd0fab47cfb05393ba1124f0b3fcbdf43cb346212ca145beed5aa8af9dfbd12d"
+        type :backport
+        resolves "https://github.com/radiator-software/p5-net-ssleay/pull/553"
+      end
     end
 
     resource "Number::Compare" do
@@ -622,7 +630,7 @@ class Biber < Formula
 
   def install
     ENV["ALIEN_INSTALL_TYPE"] = "system"
-    ENV["OPENSSL_PREFIX"] = formula_opt_prefix("openssl@3")
+    ENV["OPENSSL_PREFIX"] = formula_opt_prefix("openssl@4") if OS.linux?
     ENV["PERL_MM_USE_DEFAULT"] = "1"
     ENV.prepend_create_path "PERL5LIB", libexec/"lib/perl5"
     ENV.prepend_path "PERL5LIB", libexec/"lib"

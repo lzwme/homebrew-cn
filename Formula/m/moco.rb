@@ -16,6 +16,8 @@ class Moco < Formula
 
   depends_on "openjdk"
 
+  allow_network_access! :test
+
   def install
     libexec.install "moco-runner-#{version}-standalone.jar"
     bin.write_jar_script libexec/"moco-runner-#{version}-standalone.jar", "moco"

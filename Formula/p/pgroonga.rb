@@ -1,8 +1,8 @@
 class Pgroonga < Formula
   desc "PostgreSQL plugin to use Groonga as index"
   homepage "https://pgroonga.github.io/"
-  url "https://packages.groonga.org/source/pgroonga/pgroonga-4.0.8.tar.gz"
-  sha256 "09509b7c23f29bcb00d8c769b222156a023ee7ddd896ee875b0a4acdcd657498"
+  url "https://packages.groonga.org/source/pgroonga/pgroonga-4.0.9.tar.gz"
+  sha256 "7d9fd0d8380ef0e807683c30ea25934e0bf5cfdc9553ad17a5907b620e0cbf72"
   license "PostgreSQL"
 
   livecheck do
@@ -11,13 +11,11 @@ class Pgroonga < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "00cb5e6735812d3bad1edae320a6e22c3a9eef726a9449aeca411e90c4e46cc1"
-    sha256 cellar: :any, arm64_tahoe:       "be226018f10397f393fc94b08be1cb8aae94d4c0f03b09c05c4a559902bf3688"
-    sha256 cellar: :any, arm64_sequoia:     "43782ac2bec73ec954972ab95473a9bfa9e68cfe146b3a118b1c016a4c4ae403"
-    sha256 cellar: :any, arm64_sonoma:      "f170aea63296b816880ef4dc7778d078a28fd4dd85ecf7c02aa26006436c92b6"
-    sha256 cellar: :any, sonoma:            "1a1d445f5cf62200b3b0a3051cba3d7a5297818f140d1024955a2d5a8f66427e"
-    sha256               arm64_linux:       "9eed0d181b97fe6efc875d6fb0b0cdbf649a8c41ad71f2b6feab6cc3975d7598"
-    sha256               x86_64_linux:      "9d37fa0c32b65e643908f80a037168d5f477a42fbfc622c543c55bb2a4ea1945"
+    sha256 cellar: :any, arm64_golden_gate: "3bdf1ca0702137c0e9e5f163f5c28fd8161eb605fe94643eae5021974890cd66"
+    sha256 cellar: :any, arm64_tahoe:       "0157e6102c4d83fbd10cb2c53230873b456db1d1634db200ab0157ebf0f0d4c8"
+    sha256 cellar: :any, arm64_sequoia:     "c9f157043f4c074b8546b00823c148e9f8a8f184108204494ff4d3b18b7b4118"
+    sha256 cellar: :any, arm64_linux:       "91b656670c82d0139339676e3915a299a3357a05aa7bfe94a4b2d6df6d477f0d"
+    sha256 cellar: :any, x86_64_linux:      "74552185fa4d449d60d62c0c2ef72392732fe87f55162f26a0a71c47f863d7e3"
   end
 
   depends_on "meson" => :build
@@ -28,6 +26,8 @@ class Pgroonga < Formula
   depends_on "groonga"
   depends_on "msgpack"
   depends_on "xxhash"
+
+  deny_network_access!
 
   def postgresqls
     deps.map(&:to_formula).sort_by(&:version).filter { |f| f.name.start_with?("postgresql@") }
@@ -61,17 +61,16 @@ class Pgroonga < Formula
     postgresqls.each do |postgresql|
       pg_ctl = postgresql.opt_bin/"pg_ctl"
       psql = postgresql.opt_bin/"psql"
-      port = free_port
 
       datadir = testpath/postgresql.name
       system pg_ctl, "initdb", "-D", datadir
       (datadir/"postgresql.conf").write <<~CONF, mode: "a+"
-        port = #{port}
+        listen_addresses = ''
         unix_socket_directories = '#{testpath}'
       CONF
       system pg_ctl, "start", "-D", datadir, "-l", testpath/"log-#{postgresql.name}"
       begin
-        system psql, "-h", testpath, "-p", port.to_s, "-c", "CREATE EXTENSION \"pgroonga\";", "postgres"
+        system psql, "-h", testpath, "-c", "CREATE EXTENSION \"pgroonga\";", "postgres"
       ensure
         system pg_ctl, "stop", "-D", datadir
       end

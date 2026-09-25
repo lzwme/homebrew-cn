@@ -20,14 +20,19 @@ class Mubeng < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ldflags = "-s -w -X github.com/mubeng/mubeng/common.Version=v#{version}"
     system "go", "build", *std_go_args(ldflags:)
   end
 
   test do
-    expected = OS.mac? ? "no proxy file provided" : "has no valid proxy URLs"
-    assert_match expected, shell_output("#{bin}/mubeng 2>&1", 1)
+    assert_match "has no valid proxy URLs", pipe_output("#{bin}/mubeng 2>&1", "", 1)
 
     assert_match version.to_s, shell_output("#{bin}/mubeng --version", 1)
   end

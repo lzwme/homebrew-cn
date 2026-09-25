@@ -12,13 +12,12 @@ class Dwarfs < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "5307d195a74f64fcfe275a3aecdc9b358bc22d8e6921258c1764e9373ff8f90c"
-    sha256 cellar: :any, arm64_tahoe:       "72ed61531d6165024d026a3342753b0edc7aef7a80c3c4d9c23fe92f1db2cd54"
-    sha256 cellar: :any, arm64_sequoia:     "167dc9eaffa66553afad32e08cbd5a760c02626a10707adf963cd51b4fb3ff1c"
-    sha256 cellar: :any, arm64_sonoma:      "b4f7cd9c951e11e83cfe263821ad58298feaba6ea1942bd2f944df09be0befc2"
-    sha256 cellar: :any, sonoma:            "e3172c84191ac7feeaafad8ae100d2d5aba4b1c6a44029b1a7e97060dc75a153"
-    sha256 cellar: :any, arm64_linux:       "eef63bdf573fce3efc0142b4013660e5c94058fc4397c8b5cde378855fae468e"
-    sha256 cellar: :any, x86_64_linux:      "b4cb15cefb602be0d4ac517d6567eda8e784540b6a9752fef962a3a994f6a4fd"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "f39262b31c6a921306a10596365cc41e2edd18fcdf49cbab767cad9787896544"
+    sha256 cellar: :any, arm64_tahoe:       "24f271f3a1129694d38e26d040e4455d3545295a0e4d4a24f2d4702ccfc9dbf9"
+    sha256 cellar: :any, arm64_sequoia:     "87084711b64e35e44867ad4645335d7df806804879620ebc96636a562000d145"
+    sha256 cellar: :any, arm64_linux:       "c511fd605d13564d4dab6e70c4dfbed89c6308c35d67a170fba371636908dd23"
+    sha256 cellar: :any, x86_64_linux:      "e88811e21d3195c707c33b5a275285b66a0581f74afe8c0f57681ebaf633c51a"
   end
 
   depends_on "cmake" => :build
@@ -32,7 +31,7 @@ class Dwarfs < Formula
   depends_on "libarchive"
   depends_on "lz4"
   depends_on "nlohmann-json"
-  depends_on "openssl@3"
+  depends_on "openssl@4"
   depends_on "parallel-hashmap"
   depends_on "range-v3"
   depends_on "utf8cpp"

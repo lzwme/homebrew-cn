@@ -3,12 +3,12 @@ class Pylint < Formula
 
   desc "It's not just a linter that annoys you!"
   homepage "https://pylint.readthedocs.io/en/latest/"
-  url "https://files.pythonhosted.org/packages/5c/2e/424cbfcb3af792a6b7da6e5c640de463b98c8d3a49fbd8882f38e83d4232/pylint-4.0.8.tar.gz"
-  sha256 "1c1b2128bde5ff5e966801413080b6384d42a5782718d528c906dbb6beab94ed"
+  url "https://files.pythonhosted.org/packages/e0/5e/d5ec2c861010cf8577a3e5baaf2405fdf1004f1657d9245c4efb006c1dfd/pylint-4.0.9.tar.gz"
+  sha256 "6f1305780229ae720e89b8aff2b3ff857cbb268fbab98c8b586960267667ad34"
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "5b2c69d4232e744a5b3904ee417a044d76768b1ac620f20a07898429c01d552e"
+    sha256 cellar: :any_skip_relocation, all: "662402bfb0903063a14de87638e3d265d11a96b3686dd19ce8a449fd06bbf544"
   end
 
   depends_on "rust" => :build # for `isort`
@@ -40,8 +40,8 @@ class Pylint < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/ea/06/cf1564dcc2e2261c8c8c6c05628dc8b418943bdae2a4e58640ceb2f770fa/platformdirs-4.11.5.tar.gz"
-    sha256 "e8b31f4f8bcbbedef91a6b57a706255e4f148d2a4e01648382a0a47342539173"
+    url "https://files.pythonhosted.org/packages/ea/dd/65804b0c2925a1c821a05502ea57517b69a073ff400d25ab9faa3a2cf012/platformdirs-4.11.12.tar.gz"
+    sha256 "e8dc1cb58f1153fd7f61db1374317770baababec2480b37b8f01c6cc25b45267"
   end
 
   resource "tomlkit" do

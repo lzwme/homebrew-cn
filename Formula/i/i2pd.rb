@@ -7,22 +7,23 @@ class I2pd < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "3f496a96f489be0f1dd3e46a5b63cf8ad799f3c361b38c3ea06887f76272a497"
-    sha256 cellar: :any, arm64_tahoe:       "bbb312e11ddd3a87d24916943a010855aa479d41a9023ff2f132e7542f1eb9e1"
-    sha256 cellar: :any, arm64_sequoia:     "744b5ed726c6c370d13ef44928636f9d8f109cdbdc6a8aac2afe2aaee27aa4cc"
-    sha256 cellar: :any, arm64_sonoma:      "da60b20f5e1d5ed9daa270863bb5d6b9b852e646b70b780bbb2dbfa8026b9d51"
-    sha256 cellar: :any, sonoma:            "29c619d92c0c49286881fb81551e82c520b1d6e8056d42c32f97dd98076fc114"
-    sha256 cellar: :any, arm64_linux:       "561e64cae448454b85a96b604f00803d23f24ddfffa8e1a4f56aefc7e4e869c0"
-    sha256 cellar: :any, x86_64_linux:      "fac2896ca3f31cc74fb4ee816c05b54027fd3b871d9bce158d8e48922c54e691"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "f9b045848be1b25adaf05a91d5b92e4f98231a784563824c6396cec496eb61d9"
+    sha256 cellar: :any, arm64_tahoe:       "eba1e18fb8fcc359e488ad38534ac074354329ea20f6254ddb20efb974846fb6"
+    sha256 cellar: :any, arm64_sequoia:     "d8e2f6a38996467a0cae0c3bd5439747359fb630724b66b74b6872668b3af783"
+    sha256 cellar: :any, arm64_linux:       "3372018cc4fdc11805b2ec6a2835b10930c3e792854ecb1dc261b1b6a6c54872"
+    sha256 cellar: :any, x86_64_linux:      "ff2e8d6b2368f1613f0f913f5b37d6f8c9d5092f1318fd91b5f8e9765aff790f"
   end
 
   depends_on "boost"
   depends_on "miniupnpc"
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   on_linux do
     depends_on "zlib-ng-compat"
   end
+
+  deny_network_access!
 
   def install
     args = %W[
@@ -31,7 +32,7 @@ class I2pd < Formula
       USE_UPNP=yes
       PREFIX=#{prefix}
       BREWROOT=#{HOMEBREW_PREFIX}
-      SSLROOT=#{formula_opt_prefix("openssl@3")}
+      SSLROOT=#{formula_opt_prefix("openssl@4")}
     ]
     args << "USE_AESNI=no" if Hardware::CPU.arm?
 

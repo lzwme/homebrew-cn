@@ -23,9 +23,14 @@ class Bkmr < Formula
 
   depends_on "rust" => :build
   depends_on "onnxruntime"
-  depends_on "openssl@3"
 
   uses_from_macos "python"
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args, "--manifest-path", "bkmr/Cargo.toml"
+  end
 
   def install
     # Ensure that the `openssl` crate picks up the intended library.

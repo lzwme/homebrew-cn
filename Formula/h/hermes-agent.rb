@@ -3,8 +3,8 @@ class HermesAgent < Formula
 
   desc "Self-improving AI agent that creates skills from experience"
   homepage "https://hermes-agent.nousresearch.com"
-  url "https://ghfast.top/https://github.com/NousResearch/hermes-agent/archive/refs/tags/v2026.9.14.tar.gz"
-  sha256 "47df72ebd3f9c96d806a94541163f7fe7d7ce5b84f85c1d3787e6dfeea1d7834"
+  url "https://ghfast.top/https://github.com/NousResearch/hermes-agent/archive/refs/tags/v2026.9.21.tar.gz"
+  sha256 "c38cd7639707fe695f94ecd948ee7a9ce7de0c57461e39fb022966d79a692a65"
   license "MIT"
   head "https://github.com/NousResearch/hermes-agent.git", branch: "main"
 
@@ -14,12 +14,11 @@ class HermesAgent < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_golden_gate: "10dbbc10a9641257c301bbf2bd0433e4dbcec7f64923ed634fcebfa156dc2272"
-    sha256 cellar: :any, arm64_tahoe:       "810a996a30316af3fb8ab9632bde721e05c6d0b6134f7d8db9a0a8a427676487"
-    sha256 cellar: :any, arm64_sequoia:     "a56c429dc37be69999a87f2f2d7f4de6f9af98f8c37983efa36e200503f6c3e2"
-    sha256 cellar: :any, arm64_linux:       "830df3c3211c0420d5dd6a59829492aba875f7e2a325ed88332d85ca1cd724a2"
-    sha256 cellar: :any, x86_64_linux:      "99ac18004da7e5569efcab2f3a28a103d162e9c9266930d9542264d5d6f731fd"
+    sha256 cellar: :any, arm64_golden_gate: "73fc4f40c8a1351648e526f95fac466e09d5f4621bea0f3be45bd6f401cd58cd"
+    sha256 cellar: :any, arm64_tahoe:       "a7830a491787a795040db30ac627e850f0d41f56d1bc7096dd91df55e051ed78"
+    sha256 cellar: :any, arm64_sequoia:     "fb9c7a850c213a172c8c9eca7b4d605c8b0d1cca347927b1356789e4f8e6d440"
+    sha256 cellar: :any, arm64_linux:       "f0ca3867f092450e1af5a561ebbf2658e59e2e80c76891b4367d9838954196a8"
+    sha256 cellar: :any, x86_64_linux:      "a1efcadad9dc06dc6f6e955c4b1249b1f8f21f0e47d43f92df63d9722bdad388"
   end
 
   depends_on "pkgconf" => :build
@@ -101,8 +100,8 @@ class HermesAgent < Formula
   end
 
   resource "fastapi" do
-    url "https://files.pythonhosted.org/packages/8a/02/91e3416a8fdd715abb903a952a6bec7cdd8d14eed55d415fc8595524c319/fastapi-0.141.1.tar.gz"
-    sha256 "e8822fc40db1e1858054d7a949a888695bc9bdce70139178e33bd2871a453ca1"
+    url "https://files.pythonhosted.org/packages/22/6f/0eafed8349eea1fa462238b54a624c8b408cd1ba2795c8e64aa6c34f8ab7/fastapi-0.133.1.tar.gz"
+    sha256 "ed152a45912f102592976fde6cbce7dae1a8a1053da94202e51dd35d184fadd6"
   end
 
   resource "fire" do
@@ -121,8 +120,8 @@ class HermesAgent < Formula
   end
 
   resource "google-api-core" do
-    url "https://files.pythonhosted.org/packages/8d/19/0a08cdd1198b3b74550464b8108f6976e873f0b4b035e1be3c3872345153/google_api_core-2.37.0.tar.gz"
-    sha256 "cf58f220aa797f1ffdda52194c4c7d72efeced09297c2976529f8135f6d85b9a"
+    url "https://files.pythonhosted.org/packages/59/e5/18aeff14213db86267a0f79d869352954394ab4ab3a3866d9b9b0e82dc6a/google_api_core-2.38.0.tar.gz"
+    sha256 "31e326eafa31b34f1db7a715f50f61dbca7e6e37277762f252ed90e6ce94c246"
   end
 
   resource "google-api-python-client" do
@@ -186,8 +185,8 @@ class HermesAgent < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/5f/f7/abb373e5757eaec4b922b92f97ec8d6d7e057cf06778247604fbc4e7c3f3/idna-3.19.tar.gz"
-    sha256 "5e0811a4383b21dc5838069f801c4fb62113b7447663d2530d2bd6e77b49bf15"
+    url "https://files.pythonhosted.org/packages/f5/08/8eea9d4b8302028f3abb2c0813953f7aec26d33b7a8960ed760e65ff29fa/idna-3.20.tar.gz"
+    sha256 "a7db850025b95ded1eae8a46181a1a6c56c92c96f0e2b005d9ff8dc0210cab44"
   end
 
   resource "jinja2" do
@@ -241,8 +240,8 @@ class HermesAgent < Formula
   end
 
   resource "multidict" do
-    url "https://files.pythonhosted.org/packages/14/95/989c1b5ca17b72128661530cd6e351a0a83cda9a4d6c036e9ed976c18931/multidict-6.8.0.tar.gz"
-    sha256 "5cd4637ce76312ba1e05eb9c5193fec231f64fee0944e135fa1e951242355b37"
+    url "https://files.pythonhosted.org/packages/d6/99/1d4d69c3512d0ddbfa3a1b69cfd9a151012ab2eb4eabbb096201b1f0b7d8/multidict-6.9.1.tar.gz"
+    sha256 "0f06e60fa190aa7abd0914c2a766736fdc8e9f34878c4346338534b73d1b20e2"
   end
 
   resource "nemo-relay" do
@@ -296,8 +295,8 @@ class HermesAgent < Formula
   end
 
   resource "protobuf" do
-    url "https://files.pythonhosted.org/packages/86/73/f66c748df06e7fe24e658eddd600d19c4b40bad836c97ce2d0ad9851fb6b/protobuf-7.36.1.tar.gz"
-    sha256 "d0f6470f0ce2b84e3feaea2d4b816378b37ba4d4aa08a274305373de93e2d524"
+    url "https://files.pythonhosted.org/packages/d9/89/5b8517baa72f84a67b8a307ba953c91057af618bf40bf676f3c03551f8f0/protobuf-7.36.2.tar.gz"
+    sha256 "497d0463ff3316681da6c0b9e8d06cb465d61abce00b613ab42226175644d1bb"
   end
 
   resource "psutil" do
@@ -331,8 +330,8 @@ class HermesAgent < Formula
   end
 
   resource "pyparsing" do
-    url "https://files.pythonhosted.org/packages/f3/91/9c6ee907786a473bf81c5f53cf703ba0957b23ab84c264080fb5a450416f/pyparsing-3.3.2.tar.gz"
-    sha256 "c777f4d763f140633dcb6d8a3eda953bf7a214dc4eff598413c070bcdc117cbc"
+    url "https://files.pythonhosted.org/packages/e4/11/b213bebff182584360cb8d17c72c1677fec5c5c228de439e63bcf8ab1c8f/pyparsing-3.3.3.tar.gz"
+    sha256 "928ae7e20211f3b6f3915a72f06a0cfd29ab9d24279dd6346b6b1a7146397d36"
   end
 
   resource "python-dateutil" do
@@ -429,8 +428,8 @@ class HermesAgent < Formula
   end
 
   resource "starlette" do
-    url "https://files.pythonhosted.org/packages/b5/b4/205b0d5241d934e8add0c38aa924c4f9fb7330834ff11e5444db964ec3f9/starlette-1.6.0.tar.gz"
-    sha256 "d4e3ac5e546444960c710297a3c9fc3f7ebae1b7e963f3d36173b49da535be9b"
+    url "https://files.pythonhosted.org/packages/eb/e3/7c1dc7381d9f8ab7d854328ebfa884e62cb3f3d8549ddfd37c7814f42afa/starlette-1.3.1.tar.gz"
+    sha256 "05d0213193f2fbaae60e2ecb593b4add4262ad4e46536b54abe36f11a71724e0"
   end
 
   resource "tenacity" do
@@ -459,13 +458,13 @@ class HermesAgent < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/53/0c/06f8b233b8fd13b9e5ee11424ef85419ba0d8ba0b3138bf360be2ff56953/urllib3-2.7.0.tar.gz"
-    sha256 "231e0ec3b63ceb14667c67be60f2f2c40a518cb38b03af60abc813da26505f4c"
+    url "https://files.pythonhosted.org/packages/e3/05/b17359e1cefb4f909b5e40b1b90a496d987258916dbbf88e842c729f510e/urllib3-2.8.0.tar.gz"
+    sha256 "63bf2ead4c879426ebf22ef2a781eeb4aa3b4ae798a0435506f8687fd5bb9b63"
   end
 
   resource "uvicorn" do
-    url "https://files.pythonhosted.org/packages/f2/0f/3f86e61397dd33bf2ccf28188c40db6a740658aeebbbf6e7dbc101a1f487/uvicorn-0.52.4.tar.gz"
-    sha256 "73acfee47a0b133c5de13d219492d62d8a31e935f4fe6e41a232451a15379f86"
+    url "https://files.pythonhosted.org/packages/32/ce/eeb58ae4ac36fe09e3842eb02e0eb676bf2c53ae062b98f1b2531673efdd/uvicorn-0.41.0.tar.gz"
+    sha256 "09d11cf7008da33113824ee5a1c6422d89fbc2ff476540d69a34c87fab8b571a"
   end
 
   resource "uvloop" do
@@ -474,13 +473,13 @@ class HermesAgent < Formula
   end
 
   resource "watchfiles" do
-    url "https://files.pythonhosted.org/packages/cd/41/5e1a4bb12aac5f1493fa1bdc11154eca3b258ca4eba65d39c473fe19d8e9/watchfiles-1.2.0.tar.gz"
-    sha256 "c995fba777f1ea992f090f9236e9284cf7a5d1a0130dd5a3d82c598cacd76838"
+    url "https://files.pythonhosted.org/packages/b3/68/e6aa0b77d217b31f8f486ec0cdfe5e00e6e38dc0be657e7d85819b9faf0a/watchfiles-1.3.0.tar.gz"
+    sha256 "99aee4a07847c06820765fd7b1b49ceac4f3f711ccb7d104655a33231de1c207"
   end
 
   resource "wcwidth" do
-    url "https://files.pythonhosted.org/packages/36/57/ed58088fafdf4c55a0ad6bde846502567645424d7ebf325230b9237f4085/wcwidth-0.8.3.tar.gz"
-    sha256 "d128512515fbf4612e0ff21fd6380399210318b7b54a9af59dff8454cf9730eb"
+    url "https://files.pythonhosted.org/packages/3d/7a/f98d4ada7c499565ab0c0fcef28a4e54fafa72b8228a6309803c80493c92/wcwidth-0.8.4.tar.gz"
+    sha256 "2dae09efa25253ae2874188e86d6861af3b1652aef4118cdf3f0bda288a957fb"
   end
 
   resource "websockets" do
@@ -565,7 +564,12 @@ class HermesAgent < Formula
 
     assert_match "No sessions found", shell_output("#{bin}/hermes sessions list")
     system bin/"hermes", "status"
-    system bin/"hermes", "doctor"
+
+    # `doctor` exits 1 while issues remain, and an unconfigured test environment always has some
+    doctor = shell_output("#{bin}/hermes doctor", 1)
+    assert_match "Run 'hermes setup' to create .env", doctor
+    assert_match "Run 'hermes setup' to configure missing API keys", doctor
+    assert_match "Reinstall entry point", doctor
 
     plugins_list = shell_output("#{bin}/hermes plugins list")
     assert_match "bundled", plugins_list

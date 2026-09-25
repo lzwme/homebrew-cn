@@ -1,18 +1,17 @@
 class BackplaneCli < Formula
   desc "CLI for interacting with the OpenShift Backplane API"
   homepage "https://github.com/openshift/backplane-cli"
-  url "https://ghfast.top/https://github.com/openshift/backplane-cli/archive/refs/tags/v0.12.1.tar.gz"
-  sha256 "8c97efdbc41f99cb280c2549f1502a26b8b8183c1a7e4d93ae85b4f9e2e0a83f"
+  url "https://ghfast.top/https://github.com/openshift/backplane-cli/archive/refs/tags/v1.0.0.tar.gz"
+  sha256 "1ec7691ce6cf2432a6233609cee48ca735d62b75946336dac3c1162ef1345a9f"
   license "Apache-2.0"
   head "https://github.com/openshift/backplane-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "dafaf178b34e0393bef1b0101b7f9acf4bd0187d6e2a4a874b38a9c04894f27b"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "e4ced5e58129de6064ddfda53b25e8f072f0d652848acab55dd824ee7f52d505"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "626c1533dda34c3fc15e9d49c94c76520f222335b1bcac809f17261a4fc05557"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "2a0759915b56fd9dca487999ec65ea018b662b97d4987d33225e6f28a8e08f1a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "98c25bff5f5fa447f14afe58bc0dabaf3a892d20bd1f622e6c408347acc5694d"
-    sha256 cellar: :any,                 x86_64_linux:      "45b4a83837e9300ead60a8c61c5de9c2a289cf7ef5476e15b5998abf01bea591"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "0afb0c39724fcf2e3f56fde7bbd4c1fddf6c7208f2d20fe2dcf8a762339ef521"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "3fa8aa7ddc3fca29c2edc25f65cad119c1adb9935147a7bc2483eec58d98dd27"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "0aa28afc049c3ef41b0b0672296cbd1451b17916001e3cd3b8ee4f4752d2ab88"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "e1fcdd77890ee88b999cb2333c12909af50eeb06e4e4d92c1e35aa3c537a5ffc"
+    sha256 cellar: :any,                 x86_64_linux:      "005f7eb80002d57616e41574a3e44a57ec76f2e56213f032200e69f645a9767d"
   end
 
   depends_on "go" => :build

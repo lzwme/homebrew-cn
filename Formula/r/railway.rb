@@ -1,17 +1,17 @@
 class Railway < Formula
   desc "Develop and deploy code with zero configuration"
   homepage "https://railway.com/"
-  url "https://ghfast.top/https://github.com/railwayapp/cli/archive/refs/tags/v5.62.0.tar.gz"
-  sha256 "2753b88aa5bd5e2342cea9efc35623a2ae912fe6dd9c0170f83f67154b1eb85a"
+  url "https://ghfast.top/https://github.com/railwayapp/cli/archive/refs/tags/v5.62.1.tar.gz"
+  sha256 "0f5fc7e3a5b35820103fe6e9f615abe27bf383a1a3c0710f4bfcb3f84897fc5c"
   license "MIT"
   head "https://github.com/railwayapp/cli.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "76a02c21d030b6e792e427109e5f81e07f2678a6f74891f3424105be2c96bc39"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "ea1902fa3e6c274ede056eaa0bfe0a2720b2bd1016aa547c884bb56ece7a18d5"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "f5c9d218aa18b72d60e8941841733590f0858639c7226bea31e7442b436c327a"
-    sha256 cellar: :any,                 arm64_linux:       "a75bfc0eea018ddccf9541bd99ea1a5847219c4099e29f58c06b080c496d280c"
-    sha256 cellar: :any,                 x86_64_linux:      "a88a4c3e18b3099cc2efb8937bec684e9ec620b79553bd5814d555c80f598427"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "7fdcf340fcc4a7fac50b25083db1b67a0e05e4555b7625112f183e32318da17a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "9c85a5bcbd45f8aa433518270443fd43596872e956ba16327e6a2e0860f5a6d6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "f65b8b92df0124a6ba49abe0373afe0710fb3d3530a6842461f5b34c71c53eab"
+    sha256 cellar: :any,                 arm64_linux:       "047091e3c30d29b67bfd17c4a6465166797f957c1853a692d0bb4823eb9931e1"
+    sha256 cellar: :any,                 x86_64_linux:      "915ed0bbb14dcd1ecacf1d9130140ed590677d2108d3e88a38ef8b44ad79401f"
   end
 
   depends_on "rust" => :build

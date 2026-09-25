@@ -12,20 +12,19 @@ class Irssi < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "11c6c57ba73ef3985d653576990b78ea34e62c90029cf50755fe98facb7e5190"
-    sha256 arm64_tahoe:       "320bd94484beb359b8a802a58496e081ddbf4c5fd1160e614c72e0a8db23d1a8"
-    sha256 arm64_sequoia:     "69df4f8eb16990eb29a65c168fcbd296400c2d71645f9d230ef5bda0279b9596"
-    sha256 arm64_sonoma:      "52a6038357be2290d73699c90c3d562621b2a4c0701dec7d8f156e0977ebaa7d"
-    sha256 sonoma:            "29de29330e0ffc6cacfcea52980e9ce81e87e63164938d3b4a9e141abcd8a9c2"
-    sha256 arm64_linux:       "3f5dfe48c7d5a032a1cb69ac5327ecda63bb65d309033e10d8f81b24cb096607"
-    sha256 x86_64_linux:      "444b5e769de9168ffa56ce868435b86ecf8963eb3998e2b83885e4605c97d911"
+    rebuild 1
+    sha256 arm64_golden_gate: "8abd032e0f87f1a0a6ada2bc59ff4c5ecf8741e30ec5e60810f4f05f3659abf0"
+    sha256 arm64_tahoe:       "63a9bacb5877588da97645351c1b2db8709421a909787e11da2663b34331f5c3"
+    sha256 arm64_sequoia:     "dd157a807bfb407c75deac84ecccb71acb21afe9d82b458d5d5749d76df25ca4"
+    sha256 arm64_linux:       "6207bbec2b3944dca829886bec462824f0192f89b9d61bdfd2afb69e70ee279d"
+    sha256 x86_64_linux:      "11aec7b48552d3ce880b87262551b9eefe1251e7850124b66bc2f996d7aa05f1"
   end
 
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkgconf" => :build
   depends_on "glib"
-  depends_on "openssl@3"
+  depends_on "openssl@4"
   depends_on "perl"
 
   uses_from_macos "ncurses"
@@ -34,7 +33,11 @@ class Irssi < Formula
     depends_on "gettext"
   end
 
+  deny_network_access!
+
   def install
+    ENV.prepend_path "PKG_CONFIG_PATH", formula_opt_lib("openssl@4")/"pkgconfig"
+
     perl_vendorarch = Utils.safe_popen_read("perl", "-MConfig", "-e", "print $Config{vendorarch}")
 
     args = %W[

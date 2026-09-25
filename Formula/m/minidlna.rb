@@ -49,6 +49,8 @@ class Minidlna < Formula
   # Add missing include: https://sourceforge.net/p/minidlna/bugs/351/
   patch :DATA
 
+  allow_network_access! :test
+
   def install
     system "./autogen.sh" if build.head?
     system "./configure", *std_configure_args

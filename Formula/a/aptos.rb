@@ -1,8 +1,8 @@
 class Aptos < Formula
   desc "Layer 1 blockchain built to support fair access to decentralized assets for all"
   homepage "https://aptosfoundation.org/", browsed: "2026-09-05"
-  url "https://ghfast.top/https://github.com/aptos-labs/aptos-core/archive/refs/tags/aptos-cli-v9.5.1.tar.gz"
-  sha256 "b879c442d065801aa086ab60817614c0fb0c469ba70ebd98a5e1c2392f0ef14b"
+  url "https://ghfast.top/https://github.com/aptos-labs/aptos-core/archive/refs/tags/aptos-cli-v9.6.0.tar.gz"
+  sha256 "c3386da89449ca7f453b0f92572730d1f08dedc49fd02a5059ddd934321651ef"
   license "Apache-2.0"
   head "https://github.com/aptos-labs/aptos-core.git", branch: "main"
 
@@ -14,13 +14,11 @@ class Aptos < Formula
   no_autobump! because: :bumped_by_upstream
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "a60d6600a881ca3dbb4e9542c96aa66a89908b7c3cf1144af208855f32681550"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "17b35e1ac627921fbf8be39799b807ed5e2f33e1c1aa3633dfcaf6ffe7cdb0ef"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "b5544019d04c35797fcfb8b2d87b8842f950bcdf0b59161b78d319d639876fdf"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "2f943918d7d229a5098cd87196b21e76965585539a2de7bc61ce72281a6beabd"
-    sha256 cellar: :any_skip_relocation, sonoma:            "8c11cb840fc37e7e55d1f8797ddab0dcc8410ef2f23d3ef8c0541330410285b0"
-    sha256 cellar: :any,                 arm64_linux:       "96ca4ebf962464d4e273f24dc639f09f3555947858c41014b07201db0b7f2345"
-    sha256 cellar: :any,                 x86_64_linux:      "e95a8478cd61aa956e761ef2bb3cdbdb0146d0329ab1c3d8ff702d3da85ce330"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "6bac873c4680069d4ab290e8e07cf7b36bf765edab01afefc218ef8640cf2869"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "ebdc6936c70bae93ecb55abbee0cc78aa2ce84c37d06c33e37a459a7ea57bf74"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "d476fb7b03302a9c113338634b7074402a4db2bddb2ecfa50563158ca91262e6"
+    sha256 cellar: :any,                 arm64_linux:       "f881c6542f3e8f849e440d0f1e28a287d61971d93f754a06fc78834cd9e8095b"
+    sha256 cellar: :any,                 x86_64_linux:      "db9b8e0c2d516476dcc6e5e006ece18f72b662addd61fef5213bbf02d93a5583"
   end
 
   depends_on "cmake" => :build
@@ -38,6 +36,12 @@ class Aptos < Formula
     on_intel do
       depends_on "lld" => :build
     end
+  end
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
   end
 
   def install

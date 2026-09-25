@@ -37,6 +37,8 @@ class Icecast < Formula
   uses_from_macos "libxml2"
   uses_from_macos "libxslt"
 
+  allow_network_access! :test
+
   def install
     args = %W[
       --disable-silent-rules
