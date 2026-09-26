@@ -1,18 +1,16 @@
 class Wait4x < Formula
   desc "Wait for a port or a service to enter the requested state"
   homepage "https://wait4x.dev"
-  url "https://ghfast.top/https://github.com/wait4x/wait4x/archive/refs/tags/v3.7.1.tar.gz"
-  sha256 "36b1e0d3e7894ab20d29dfed19ec306c19e94608c2cb1a61ef5084d5127dfca8"
+  url "https://ghfast.top/https://github.com/wait4x/wait4x/archive/refs/tags/v3.7.2.tar.gz"
+  sha256 "841781dba59ce4504deba7c5fc1aa8d85e2b10a1dbcc0749b0ac019a4666a87c"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "21f263f02679dbdf3d00a6be1a118427f422de738c1e5dc9e133542947ce9185"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "4da6bfdb8a6dc72b8ac91582928f8948ca7cf6f78f8cb79abc255115e5746e04"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "76ee44ccaa3a6e7572a93fafe409ef2a28fa28147551bfaabe0e7da7a9f39d82"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "81d21d37a78296987be49ac49ba3ef618aa89920871402ad4b9977ae3c724ab8"
-    sha256 cellar: :any_skip_relocation, sonoma:            "3cbe17c4dccc6bc02b0a32d952a8e20e05aebb4b88b89b60afe0da105a7f3f21"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "0c554115fa790e91f6c42ba600ac7bac454eb78b1355aec6157150e1d3cf1645"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "9a94b6e7f58cdb63547b00ab415245f97cdd65c86a588693f06e0f115b053948"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "9296d32435327417aea8e0deeabb14118b8bc352754630a3a61c4e3d18aea107"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "1ed04dd9b78a1e387ca41a2d4ef28ceab382019cb5638cba42d65d3ff17c2c57"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "fe4d9c2c90262e35f164f536ee5be2294d901dde4a23e3994ca7976c7953a67d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "ce02e09281551c0d84df4e77f34415eb5a3694a2940d30f86f88487b21df199f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "499cffca070e55d3cba9e3e35a716aeaaaa7dc97f39f943a89c10dfa62408d7d"
   end
 
   depends_on "go" => :build

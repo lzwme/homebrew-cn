@@ -3,19 +3,17 @@ class Ggshield < Formula
 
   desc "Scanner for secrets and sensitive data in code"
   homepage "https://www.gitguardian.com"
-  url "https://files.pythonhosted.org/packages/d8/3b/f78b04da02a8d7389fc9d13c154351cafdca34aa005559db3873029b6002/ggshield-1.54.0.tar.gz"
-  sha256 "2861919706bb5fae2cffa8b1a26ac2643534388fb286818f9e6dace61692d65a"
+  url "https://files.pythonhosted.org/packages/1c/93/bebb2317a2e1eda08870f39a8caf6ee769e0a50cfc899976ec163350ecd1/ggshield-1.55.0.tar.gz"
+  sha256 "06b8bbef8885abaa18ab87c70708584e625a1ddbd0902ccf93ba97e15784f766"
   license "MIT"
   head "https://github.com/GitGuardian/ggshield.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_golden_gate: "e0b4a2a28453880aa0683d2eecde1e176d6b2806462d6ccc89d44ece8a11d4eb"
-    sha256 cellar: :any, arm64_tahoe:       "2cc0248382bc8b3be0c8732570887a9a5f0eb96264eb90256d1d56d090c68788"
-    sha256 cellar: :any, arm64_sequoia:     "8e9286a1e9e7ae273d2dd94476f7a0ea5fea54d9fae346378c58fcfbd90a0787"
-    sha256 cellar: :any, arm64_sonoma:      "21d9b39f1946ee11a383e73a37eb3eb319dc27fd95a7ecf74534241cab0c75ce"
-    sha256 cellar: :any, arm64_linux:       "03def5daf3b68f678fc9f1595311067a74cbdd1a2d805285fe15b0f9b1597159"
-    sha256 cellar: :any, x86_64_linux:      "024fdca87ad2bda80147311fd25061b843368380e94f62a58c5bc99932846b40"
+    sha256 cellar: :any, arm64_golden_gate: "6c1e7a85c46e1dab85283bf422556c7cea22ab63eb9c56b14af2a88c09520a98"
+    sha256 cellar: :any, arm64_tahoe:       "7b1cc74a5af1e824e2e5554f5be17d42e5412bf0d88229c930da05627f7f000c"
+    sha256 cellar: :any, arm64_sequoia:     "03061b7f1644c66ea966740870b208ed60f218f44b0f1805b9a5b3db31a8f728"
+    sha256 cellar: :any, arm64_linux:       "b59bc593aba5acfd3495aa8c3d6766ea98890da6078bf3ae9fbc2cf224b64adb"
+    sha256 cellar: :any, x86_64_linux:      "59589ba68ed7eb52fadb94ee3e8aee0f659040cad305ff302e8355c8c42aa17c"
   end
 
   depends_on "pkgconf" => :build # for `rfc3161_client`
@@ -61,8 +59,8 @@ class Ggshield < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/38/46/126b1831dca12060d4a8296bf9c4fe5c93c4f22197fa239cb0cc82042bba/filelock-3.32.6.tar.gz"
-    sha256 "a3f55a18af3652a94d8f47d6055df434f254ca1d02ef2524850c6d249ca2512c"
+    url "https://files.pythonhosted.org/packages/4f/b8/9ba8f569df649beb7058db5eb392a5f779bdbc3b82cf3942f0be439fb99e/filelock-4.0.3.tar.gz"
+    sha256 "87296d60478e14204fd9406e79831400fef76693bae2895deec236c98e87a8aa"
   end
 
   resource "h11" do
@@ -86,8 +84,8 @@ class Ggshield < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/5f/f7/abb373e5757eaec4b922b92f97ec8d6d7e057cf06778247604fbc4e7c3f3/idna-3.19.tar.gz"
-    sha256 "5e0811a4383b21dc5838069f801c4fb62113b7447663d2530d2bd6e77b49bf15"
+    url "https://files.pythonhosted.org/packages/f5/08/8eea9d4b8302028f3abb2c0813953f7aec26d33b7a8960ed760e65ff29fa/idna-3.20.tar.gz"
+    sha256 "a7db850025b95ded1eae8a46181a1a6c56c92c96f0e2b005d9ff8dc0210cab44"
   end
 
   resource "jaraco-classes" do
@@ -166,8 +164,8 @@ class Ggshield < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/53/18/f3bb8ef0d3b930692343da8aa4d3cbcd6749477c053959395ac81965a6e9/platformdirs-4.11.8.tar.gz"
-    sha256 "f23abafea7dd4276d1f29104b83598d7dcc567cafd07c9c951e66665645437fc"
+    url "https://files.pythonhosted.org/packages/ea/dd/65804b0c2925a1c821a05502ea57517b69a073ff400d25ab9faa3a2cf012/platformdirs-4.11.12.tar.gz"
+    sha256 "e8dc1cb58f1153fd7f61db1374317770baababec2480b37b8f01c6cc25b45267"
   end
 
   resource "pyasn1" do
@@ -176,8 +174,8 @@ class Ggshield < Formula
   end
 
   resource "pygitguardian" do
-    url "https://files.pythonhosted.org/packages/46/8f/5233d9261d1b4748343c6bd9f2514d4b0f322a70f9157e00599057bc2c47/pygitguardian-1.34.0.tar.gz"
-    sha256 "b0ea1d1ef76ed429ea16ad0f4deafe90f7d162715624b55b0e962c076baf2c57"
+    url "https://files.pythonhosted.org/packages/e3/6a/2ff0e9a42bf6ef3a11bf0d9b2d53bc0bb3ca84531ef4435d856c187d10fe/pygitguardian-1.35.0.tar.gz"
+    sha256 "e9af79fe66cfd5e8063fc140cdaac95b987949ba1dc96941bb27b53ae2b8bc38"
   end
 
   resource "pygments" do
@@ -186,8 +184,8 @@ class Ggshield < Formula
   end
 
   resource "pyjwt" do
-    url "https://files.pythonhosted.org/packages/3b/81/58d0ac84e1ef3a3843791d6954d94c0b33d526c75eeb1efbce9d0a4c4077/pyjwt-2.13.0.tar.gz"
-    sha256 "41571c89ca91598c79e8ef18a2d07367d4810fbbd6f637794879baf1b7703423"
+    url "https://files.pythonhosted.org/packages/02/a5/5197bfd06417837ac079921c66fa6393f1dea3557272a263cebfef69e432/pyjwt-2.15.0.tar.gz"
+    sha256 "b11c5f9791d7bf51c2b39a81ed669f6b2dbbd669df2942f6c60167e9e3d1abe4"
   end
 
   resource "pyopenssl" do
@@ -211,8 +209,8 @@ class Ggshield < Formula
   end
 
   resource "rfc3161-client" do
-    url "https://files.pythonhosted.org/packages/18/a6/cf05ce2b73da1e7c876c8992035bcbede938483f16ad04f0bda34c39b299/rfc3161_client-1.0.8.tar.gz"
-    sha256 "4bda5a2bc6947c16b6f8df90ff0e99cb333d78ab1465517f637d313d75703651"
+    url "https://files.pythonhosted.org/packages/56/53/e2f526fb6957023180c928448e2dd71b03b35038c315aed2d12d9a77c3af/rfc3161_client-1.0.9.tar.gz"
+    sha256 "66997415086d2c6e5d57a2d315157b32a9c3f4f1312877ca8eb55e2e0ddf8ce4"
   end
 
   resource "rfc8785" do
@@ -286,8 +284,8 @@ class Ggshield < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/53/0c/06f8b233b8fd13b9e5ee11424ef85419ba0d8ba0b3138bf360be2ff56953/urllib3-2.7.0.tar.gz"
-    sha256 "231e0ec3b63ceb14667c67be60f2f2c40a518cb38b03af60abc813da26505f4c"
+    url "https://files.pythonhosted.org/packages/e3/05/b17359e1cefb4f909b5e40b1b90a496d987258916dbbf88e842c729f510e/urllib3-2.8.0.tar.gz"
+    sha256 "63bf2ead4c879426ebf22ef2a781eeb4aa3b4ae798a0435506f8687fd5bb9b63"
   end
 
   def install

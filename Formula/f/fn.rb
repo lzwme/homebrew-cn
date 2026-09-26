@@ -1,20 +1,20 @@
 class Fn < Formula
   desc "Command-line tool for the fn project"
   homepage "https://fnproject.io"
-  url "https://ghfast.top/https://github.com/fnproject/cli/archive/refs/tags/0.6.67.tar.gz"
-  sha256 "782d20fd52152ecd160f89286ee2e317c2602e3050d0f6d207f1ebe2bc241670"
+  url "https://ghfast.top/https://github.com/fnproject/cli/archive/refs/tags/0.6.70.tar.gz"
+  sha256 "152d807a9d411490c3ca61cf5a8c36ea9d66965ab08973e10310b0594992eb73"
   license "Apache-2.0"
   head "https://github.com/fnproject/cli.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "de4dfb3d9c3e116457c607a41e333b051d3834790f692b3ef832d2ed0b0534c0"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "de4dfb3d9c3e116457c607a41e333b051d3834790f692b3ef832d2ed0b0534c0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "de4dfb3d9c3e116457c607a41e333b051d3834790f692b3ef832d2ed0b0534c0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "7af687802711de7d3bf41e92b7afb886428314d5d01dd92840c705f003bc5a36"
-    sha256 cellar: :any,                 x86_64_linux:      "25df6c15ab745a246dcbd50651c3306702c6aca598bbd596cc78408b1002ab7c"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "f1522fda034fbd8d8345cca114a1e799a6b078d9e97470fdeefee93887d3c719"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "f1522fda034fbd8d8345cca114a1e799a6b078d9e97470fdeefee93887d3c719"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "f1522fda034fbd8d8345cca114a1e799a6b078d9e97470fdeefee93887d3c719"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "c392dc19d358bb7e91149b774e384c91ba4b6b83da1a7cdeb151815b4934bb41"
+    sha256 cellar: :any,                 x86_64_linux:      "833855e725ce0f971bea4fd7d4f6b1c9d730378d41082a957c6c3f5bbf7e641a"
   end
 
-  depends_on "go" => :build
+  depends_on "go" => [:build, :test]
 
   allow_network_access! :test
 

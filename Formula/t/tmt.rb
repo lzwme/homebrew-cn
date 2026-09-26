@@ -3,17 +3,16 @@ class Tmt < Formula
 
   desc "Test Management Tool"
   homepage "https://tmt.readthedocs.io"
-  url "https://files.pythonhosted.org/packages/0b/53/5cebfa10c4842f9210684876e58fdb593a1b1f285b7c7fabd2668b43d196/tmt-1.78.0.tar.gz"
-  sha256 "cf885e8679a3aa9cb5db54674bcf540f11a114e8e87b63bb31522ccdf0bf348c"
+  url "https://files.pythonhosted.org/packages/93/c6/582f9e74b702240ce224f227aadc2e0a34485b7e67cfef21461a38f0cd19/tmt-1.79.0.tar.gz"
+  sha256 "c94f11b5593a02cdabfd585af4798f9bbe38943be0369cf058a128bb3d6c225f"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "6a6358073e50a5ae7fb3250e80f2f4ccd9163af068a0907eaaae1fe85cff6810"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "21d1c602adfdc584ea4b8aae53930969aa7a9c5f73e2c4848de4ba5652557d96"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "db54c07456d7cbcb47e5b9bd25ca63f446765ed362e5bbd901aaf74d70e073b5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "581e56f4afa760047e7e7965a375999c6da1c2e427aacf691ee99a80361b054b"
-    sha256 cellar: :any,                 arm64_linux:       "be38c83f86a482f0315ad024d776eafd2ee48356964c138c93b6096ee77b6fef"
-    sha256 cellar: :any,                 x86_64_linux:      "ddfc92277fb92136ed9d15bd9cc4afd509ab76a0f6209ab809c8ca058c4f8a95"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "9b7f5ac709cc4ce8452225c2558cc2e4233e50a5dbfcbe59ecf215d4f23507cd"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "d4ed30b9098ec9580b12e012bf3303e74dd96fc2681d04df04a60d4128d33ee2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "2202450601db1ca596b310061993709044741061362ebc434c5d673975ec8cee"
+    sha256 cellar: :any,                 arm64_linux:       "a6951da9a864d0d955cd7979afd47a8d30035a611fd5263ae33de0abf395b462"
+    sha256 cellar: :any,                 x86_64_linux:      "9f4b6d7d91a9504c0a0ee241c68890c481b5e627323cdc608c85b71d5d3cd153"
   end
 
   depends_on "beakerlib"
@@ -45,8 +44,8 @@ class Tmt < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/6d/30/03b03951873a1a0ffc7e8ca0e10c15597b59e8d0e39260704cd2ea087bc4/filelock-3.32.4.tar.gz"
-    sha256 "2bde2e4cf732e0153406d8a7bc80620ecf5e621fe0d25e41143c4e3b4733ff30"
+    url "https://files.pythonhosted.org/packages/4f/b8/9ba8f569df649beb7058db5eb392a5f779bdbc3b82cf3942f0be439fb99e/filelock-4.0.3.tar.gz"
+    sha256 "87296d60478e14204fd9406e79831400fef76693bae2895deec236c98e87a8aa"
   end
 
   resource "flexcache" do
@@ -65,8 +64,8 @@ class Tmt < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/5f/f7/abb373e5757eaec4b922b92f97ec8d6d7e057cf06778247604fbc4e7c3f3/idna-3.19.tar.gz"
-    sha256 "5e0811a4383b21dc5838069f801c4fb62113b7447663d2530d2bd6e77b49bf15"
+    url "https://files.pythonhosted.org/packages/f5/08/8eea9d4b8302028f3abb2c0813953f7aec26d33b7a8960ed760e65ff29fa/idna-3.20.tar.gz"
+    sha256 "a7db850025b95ded1eae8a46181a1a6c56c92c96f0e2b005d9ff8dc0210cab44"
   end
 
   resource "jinja2" do
@@ -95,13 +94,13 @@ class Tmt < Formula
   end
 
   resource "pint" do
-    url "https://files.pythonhosted.org/packages/52/9d/b1379cdbd33a49d17d627bc24e2b63cca06a1c5343b38072d2889499e82e/pint-0.25.3.tar.gz"
-    sha256 "f8f5df6cf65314d74da1ade1bf96f8e3e4d0c41b51577ac53c49e7d44ca5acee"
+    url "https://files.pythonhosted.org/packages/9f/bc/2c38c32e0fb1f966d3695f4493a3f3ce2cc0cca1bbe7c958b92261b31af9/pint-0.26.1.tar.gz"
+    sha256 "1bbde36eae57a5a289cd05081c6405618a5899814940752064ce351cd0204f71"
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/ea/06/cf1564dcc2e2261c8c8c6c05628dc8b418943bdae2a4e58640ceb2f770fa/platformdirs-4.11.5.tar.gz"
-    sha256 "e8b31f4f8bcbbedef91a6b57a706255e4f148d2a4e01648382a0a47342539173"
+    url "https://files.pythonhosted.org/packages/ea/dd/65804b0c2925a1c821a05502ea57517b69a073ff400d25ab9faa3a2cf012/platformdirs-4.11.12.tar.gz"
+    sha256 "e8dc1cb58f1153fd7f61db1374317770baababec2480b37b8f01c6cc25b45267"
   end
 
   resource "pygments" do
@@ -130,8 +129,8 @@ class Tmt < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/53/0c/06f8b233b8fd13b9e5ee11424ef85419ba0d8ba0b3138bf360be2ff56953/urllib3-2.7.0.tar.gz"
-    sha256 "231e0ec3b63ceb14667c67be60f2f2c40a518cb38b03af60abc813da26505f4c"
+    url "https://files.pythonhosted.org/packages/e3/05/b17359e1cefb4f909b5e40b1b90a496d987258916dbbf88e842c729f510e/urllib3-2.8.0.tar.gz"
+    sha256 "63bf2ead4c879426ebf22ef2a781eeb4aa3b4ae798a0435506f8687fd5bb9b63"
   end
 
   def install

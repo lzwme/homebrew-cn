@@ -22,6 +22,9 @@ class Rtl433 < Formula
   depends_on "libusb"
   depends_on "openssl@3"
 
+  # Test needs to download resources
+  allow_network_access! :test
+
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"
@@ -30,21 +33,22 @@ class Rtl433 < Formula
 
   test do
     resource "homebrew-test_cu8" do
-      url "https://ghfast.top/https://raw.githubusercontent.com/merbanan/rtl_433_tests/master/tests/oregon_scientific/uvr128/g001_433.92M_250k.cu8"
+      url "https://ghfast.top/https://raw.githubusercontent.com/merbanan/rtl_433_tests/038234077f4d8b9022759430da1154d2c3631344/tests/oregon_scientific/uvr128/g001_433.92M_250k.cu8"
       sha256 "7aa07b72cec9926f463410cda6056eb2411ac9e76006ba4917a0527492c5f65d"
     end
-
-    resource "homebrew-expected_json" do
-      url "https://ghfast.top/https://raw.githubusercontent.com/merbanan/rtl_433_tests/master/tests/oregon_scientific/uvr128/g001_433.92M_250k.json"
-      sha256 "08637818a2a268da4862bdb98c62a3afc9a4a0d751230451abbeacd47f58860c"
-    end
-
     testpath.install resource("homebrew-test_cu8")
-    testpath.install resource("homebrew-expected_json")
 
-    expected_output = (testpath/"g001_433.92M_250k.json").read
-    rtl_433_output = shell_output("#{bin}/rtl_433 -c 0 -F json -r #{testpath}/g001_433.92M_250k.cu8")
+    # Check following if test fails on new release
+    # https://github.com/merbanan/rtl_433_tests/blame/master/tests/oregon_scientific/uvr128/g001_433.92M_250k.json
+    expected = {
+      "time"       => "@0.156680s",
+      "model"      => "Oregon-UVR128",
+      "id"         => 150,
+      "uvi"        => 0.000,
+      "battery_ok" => 1,
+    }
 
-    assert_equal rtl_433_output, expected_output
+    output = shell_output("#{bin}/rtl_433 -c 0 -F json -r #{testpath}/g001_433.92M_250k.cu8")
+    assert_equal expected, JSON.parse(output.chomp)
   end
 end

@@ -3,14 +3,14 @@ class RapidMlx < Formula
 
   desc "Fast local AI engine for Apple Silicon with an OpenAI-compatible API"
   homepage "https://github.com/raullenchai/Rapid-MLX"
-  url "https://files.pythonhosted.org/packages/a7/7c/81e95e65bca9e56c6124300681db5369ade3bd235512a1dfbe91ad855197/rapid_mlx-0.15.0.tar.gz"
-  sha256 "67dcbedd7f9f3a0f4b88dc0fe10777f6bd62fad4bb4ffa21ca2249503a8c6da8"
+  url "https://files.pythonhosted.org/packages/a1/c3/cf7f460b89301a65e0bf6bab286d438932e9e661d0af113cb3816f2ea577/rapid_mlx-0.15.1.tar.gz"
+  sha256 "09b0109c9cb6a7dbab38500facd5cb806f45ab995dd0bb6dcaffbd18ec793d27"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "bd5db75728c64c839ddf7803f974b4abd35f5e477df42414e06776f2409b62a3"
-    sha256 cellar: :any, arm64_tahoe:       "10f8c88ff3873644a68620ff7c343219af7bd49a4beeb82824e675da1d3239b3"
-    sha256 cellar: :any, arm64_sequoia:     "8b4242583b91ff04dc796ecf6d9e5bcb3afc2e1a989ccb82c23a03369baade21"
+    sha256 cellar: :any, arm64_golden_gate: "dcba01e769917cfd0a65a3f0d6aa394cf32a12cd9c37deb1253f4f836aee4e65"
+    sha256 cellar: :any, arm64_tahoe:       "66908cdfca37da72df0dc070c2bdf330a6f104aca74bc9f8384ab59ec263dd42"
+    sha256 cellar: :any, arm64_sequoia:     "a035864e6d584d30c53e720cec06721305e3950b2569735020278fd4a5ba7382"
   end
 
   depends_on "cmake" => :build
@@ -65,8 +65,8 @@ class RapidMlx < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/6f/38/88cd6eda96c40594a1e3da7d8b40f04bc40ace5a6aef9ac5cb407540f173/filelock-4.0.1.tar.gz"
-    sha256 "fdefc3f3e87716d855ae2b732c1cfd521dd99799ef2b4d00e8c0d4dcdc7cc94b"
+    url "https://files.pythonhosted.org/packages/4f/b8/9ba8f569df649beb7058db5eb392a5f779bdbc3b82cf3942f0be439fb99e/filelock-4.0.3.tar.gz"
+    sha256 "87296d60478e14204fd9406e79831400fef76693bae2895deec236c98e87a8aa"
   end
 
   resource "fsspec" do
@@ -90,8 +90,8 @@ class RapidMlx < Formula
   end
 
   resource "httpcore2" do
-    url "https://files.pythonhosted.org/packages/15/8c/e925b1c92018abb3a1863ce1549d76d2381e334d21d65d4ac8f65dabd78a/httpcore2-2.13.0.tar.gz"
-    sha256 "2adc8be4fb285fbcd6d894298db3b52c177e74b6674eda3a76bd36be3292a3db"
+    url "https://files.pythonhosted.org/packages/cb/f3/1db7aa2bc2524062192bb0e0323969492d1883152a232fe36eea65f4e35c/httpcore2-2.13.1.tar.gz"
+    sha256 "e0aa977abe17e69a3b820a24542a6fa88702676d83880b8d194dcd18408e5103"
   end
 
   resource "httpx" do
@@ -100,8 +100,8 @@ class RapidMlx < Formula
   end
 
   resource "httpx2" do
-    url "https://files.pythonhosted.org/packages/b9/a0/e9deef4654132857b5a5dbe4eddd0ac59c2814500e11f2f5044cd81103ee/httpx2-2.13.0.tar.gz"
-    sha256 "81bd07dc67a3701729ef1f777a3c00c915d4539604fdb5afd327f8682f6b7b44"
+    url "https://files.pythonhosted.org/packages/d5/44/474bef2a0e9d90f1715d32cb98b0738695ca17ba324095fb2497ed7fbd59/httpx2-2.13.1.tar.gz"
+    sha256 "e48744a19e3af5ee48313d0ce5fe941d5422fae5705ea922a4aabf94d7800dfa"
   end
 
   resource "huggingface-hub" do
@@ -195,8 +195,8 @@ class RapidMlx < Formula
   end
 
   resource "pyjwt" do
-    url "https://files.pythonhosted.org/packages/af/c3/8a3b59c25070cc61dc517fbdfa5dc0904670c96f605cc69759dc09166b99/pyjwt-2.14.0.tar.gz"
-    sha256 "77283c83fb56ecf566a886c757a714bc83668e38156de2cce8263302f42e0b86"
+    url "https://files.pythonhosted.org/packages/02/a5/5197bfd06417837ac079921c66fa6393f1dea3557272a263cebfef69e432/pyjwt-2.15.0.tar.gz"
+    sha256 "b11c5f9791d7bf51c2b39a81ed669f6b2dbbd669df2942f6c60167e9e3d1abe4"
   end
 
   resource "python-multipart" do
@@ -250,8 +250,8 @@ class RapidMlx < Formula
   end
 
   resource "starlette" do
-    url "https://files.pythonhosted.org/packages/b5/b4/205b0d5241d934e8add0c38aa924c4f9fb7330834ff11e5444db964ec3f9/starlette-1.6.0.tar.gz"
-    sha256 "d4e3ac5e546444960c710297a3c9fc3f7ebae1b7e963f3d36173b49da535be9b"
+    url "https://files.pythonhosted.org/packages/7b/2b/3850dc6bf7ef71b088962eba31dafc6cffd2f96e577ebb0bb316df96da3e/starlette-1.7.0.tar.gz"
+    sha256 "c79f74ea63cff761804fbbfb182f1e0b440c2d07b164d24700c5a1bab5d6ff5d"
   end
 
   resource "tabulate" do

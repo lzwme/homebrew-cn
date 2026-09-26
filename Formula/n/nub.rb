@@ -1,8 +1,8 @@
 class Nub < Formula
   desc "Fast TypeScript runtime and package manager that augments Node"
   homepage "https://nubjs.com"
-  url "https://ghfast.top/https://github.com/nubjs/nub/archive/refs/tags/v0.9.3.tar.gz"
-  sha256 "a59fa2e65d500eace079aa5ee0168af57fac71e2a2dd168dbb6ff11a8d163ffb"
+  url "https://ghfast.top/https://github.com/nubjs/nub/archive/refs/tags/v0.9.5.tar.gz"
+  sha256 "334a0fa057149df3e08b54fc393dc10b29bb0aa6cb22f38f2a439f231594ce5b"
   license "MIT"
 
   livecheck do
@@ -11,11 +11,11 @@ class Nub < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "aae399245585bfef99e2b9641dfc5f07b2aec9f45b45c1e6396d2cadf755db24"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "2bf49bd851c2b9a8478d3ff4592339e491e3ab7f666ebd9a6cbae70f348f53f8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "82d73ad35e07b76405fcb98ef38554763bb5816fb504e781c513166b9ed8b66b"
-    sha256 cellar: :any,                 arm64_linux:       "641ae302d3fa7a8bae1d74f2952a70dfc5236c57c18086d2f00af97014b28662"
-    sha256 cellar: :any,                 x86_64_linux:      "c0b6dae44ee68004d0fc4df38ca44086415d28f29da9391c61f6715998630a98"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "bb5d94e472e243441b9a68607c1277bc9a36694cfe233ef7bd52b6cf3ad2ebce"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "9297094235d113275ba8e940b6a0ed23817f21314d168c780a22b663514e336f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "4e28e331d347dba809035c3fd2be54684848a63a00814d750bd390666554a981"
+    sha256 cellar: :any,                 arm64_linux:       "310d1d461bf69d48261aa0358ec82e49faa227a1a996442b55f000778256b158"
+    sha256 cellar: :any,                 x86_64_linux:      "af4264d01b974bdc8286118c6f4cd6712c536a8b0d9eac47b2d46792847fb9f2"
   end
 
   depends_on "cmake" => :build

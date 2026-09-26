@@ -1,18 +1,16 @@
 class Step < Formula
   desc "Crypto and x509 Swiss-Army-Knife"
   homepage "https://smallstep.com"
-  url "https://ghfast.top/https://github.com/smallstep/cli/releases/download/v0.30.6/step_0.30.6.tar.gz"
-  sha256 "cea2360b959320cbc81a21b0497bc40811ceb4e822ea77cb21f69507d5e5df08"
+  url "https://ghfast.top/https://github.com/smallstep/cli/releases/download/v0.31.0/step_0.31.0.tar.gz"
+  sha256 "28b8f239e4813566c68e92a7c00547dec0f3706da0c434e22a8048d012cb9246"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "afb41bf3240d56dbd5273d901d047788215c0ae0b3a15f89a9518313ce686d67"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "ff20aaf7d984b3e4cda9ba37973eb95da5d0db52c4e1919cec5e1772ec85dea4"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "7c54566df5c2a4bf781cc748d60700351ecb6bbeabf372b772bd2e4777484eca"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "eaa14d11b61897733627120cf7788e6a363f4b225ab5755a440ab15de7df7c2b"
-    sha256 cellar: :any_skip_relocation, sonoma:            "beb8ee61efe6fcd57df2a50bc7484f070ac017d7baca6a5ebf5348d68797ea4b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "7ba5424c5a52e4715ddc6de246a11c4f8ffe67a497b09ffb6ed8063e764808e1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "40817050568237d5710c658bb0d31e5be8333b64a028daf1b88e12e029fd8f9f"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "a4d097e34ef3ec9bbac57af27566a201890679ac154c56555d7af217586bed4a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "0ca195ed5744fb6faa55922309bb903beb84e72b4d244e580f5236042828b0e0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "3ed351d8139def7b42040b036068c48e6ced501ef714add5b46b238be882b190"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "6148025e544caf2f24b4109ee620adc470503d3077f151648c4d389e2bfe10d1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "69e67fd2d7de6c770711690685f46bd51c0d4fe41020a20f7ded624a15af0ba6"
   end
 
   depends_on "go" => :build

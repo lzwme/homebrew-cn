@@ -101,6 +101,7 @@ class Fbthrift < Formula
       target_link_libraries(test FBThrift::transport)
     CMAKE
 
+    ENV.append_path "CMAKE_PREFIX_PATH", formula_opt_prefix("openssl@3")
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"
   end

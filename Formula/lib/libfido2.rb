@@ -60,6 +60,7 @@ class Libfido2 < Formula
       }
     C
 
+    ENV.prepend_path "PKG_CONFIG_PATH", formula_opt_lib("openssl@3")/"pkgconfig"
     flags = shell_output("pkgconf --cflags --libs libfido2").chomp.split
     system ENV.cc, "test.c", "-I#{include}", "-o", "test", *flags
     system "./test"

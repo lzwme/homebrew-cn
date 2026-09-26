@@ -1,8 +1,8 @@
 class Zpaqfranz < Formula
   desc "Deduplicating command-line archiver and backup tool"
   homepage "https://github.com/fcorbelli/zpaqfranz"
-  url "https://ghfast.top/https://github.com/fcorbelli/zpaqfranz/archive/refs/tags/65.3.tar.gz"
-  sha256 "f9b883e3653acecf2aa82143136a21943871663d53c1186f0c54461189ab47ca"
+  url "https://ghfast.top/https://github.com/fcorbelli/zpaqfranz/archive/refs/tags/65.4.tar.gz"
+  sha256 "92c84b7e7bd9c4177cbc0851947f4a3f0f5b61d1d8c61a3b48e0293e487865d0"
   license all_of: [:public_domain, "MIT", "Zlib", "Unlicense", "BSD-2-Clause", "Apache-2.0"]
   head "https://github.com/fcorbelli/zpaqfranz.git", branch: "main"
 
@@ -14,11 +14,11 @@ class Zpaqfranz < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "8af81284d8eb8b0576d8da512f35d33b91d921dd3f6fcc9e72611e417c0e7d22"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "dd7dc0c8600b05e00ebba8fb1d075ed11213ad807d2575f0a3b5474a2fac63b5"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "bb99490afd65400ed016db37f4105fcc73753df1ae166fb632e549aa3e371ab7"
-    sha256 cellar: :any,                 arm64_linux:       "a9d9100053f379ea048d51b2a4e026c5fbfcc0a1e09864123d60824707f63076"
-    sha256 cellar: :any,                 x86_64_linux:      "0a7df6f4e142d37476ab8b3269c210baf88b2b472c2b0975f82ff4d3d4c072ac"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "0eecd92d59debccbdd2cc8dec3076914ce9538690315aacba1b22c4d38dd438d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "dcb576e7bb2b957e606eca83ffa1d4007f66627385b31b3dfb4d1d10a5d2c7d0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "6186ff722aee3038e385f78c3c2b43cca48d5322b76f6f84dc468c13956e5d64"
+    sha256 cellar: :any,                 arm64_linux:       "0db2e1cd1a0c94bc16da845f63c0dd2e17b67ecea706e43b5d9d7f4d8af18c1b"
+    sha256 cellar: :any,                 x86_64_linux:      "f31c21292072a31fae2fefacedee8cba03328140c4c0ee6267df3480f77de0fc"
   end
 
   deny_network_access!

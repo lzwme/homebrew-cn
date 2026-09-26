@@ -4,8 +4,8 @@ class Samba < Formula
   # option. The shared folder appears in the guest as "\\10.0.2.4\qemu".
   desc "SMB/CIFS file, print, and login server for UNIX"
   homepage "https://www.samba.org/"
-  url "https://download.samba.org/pub/samba/stable/samba-4.24.7.tar.gz"
-  sha256 "45b7747a47452eff2b2159a44cc63eb43690d339fd1069088e023a015fed06c7"
+  url "https://download.samba.org/pub/samba/stable/samba-4.25.0.tar.gz"
+  sha256 "2e2cb7296833b35b8f7a7fb76045e0c57adc0c2cd03264b37df5d58e40f28437"
   license "GPL-3.0-or-later"
   compatibility_version 2
 
@@ -15,12 +15,11 @@ class Samba < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "339bb05e59779887b6ed2d51bcb838d07d3cee4702b52768b7fed1171ccce10e"
-    sha256 arm64_tahoe:       "c1d8111cf68a38541cff8d8defe4cfc2525c6df2048ca2606476828abdeebde1"
-    sha256 arm64_sequoia:     "89218d852fc9c5bac8ef21939ee2ac0fe3f6ddd6cf810e7049fbda4933c9c37c"
-    sha256 arm64_sonoma:      "e43f4f6d82543f2d3c9651186e73c47975ae9607279d33168643f22fb3e475db"
-    sha256 arm64_linux:       "5fd534aeaac56a0cb4666a164f014fa58b7c97a7ce171e8ed0453cc0991a571a"
-    sha256 x86_64_linux:      "53052e6d5b4598628d883789cafdc12a0cd511f5626fc6739408d0e87568e604"
+    sha256 arm64_golden_gate: "fd521b4639ed9029675e07c2f6e986902e62eb727d6dafcfdcbc61e7c2b0c003"
+    sha256 arm64_tahoe:       "2ade08fb55d5723790bc3ace95d096f032d26b2905c8e9d8be8f30df9b536f3a"
+    sha256 arm64_sequoia:     "0921e42b55ccaa7e694278acaba74405f2a875e2a52cdc14430f2cca181de3e6"
+    sha256 arm64_linux:       "f7e8cd9839cfc320b56eedf128e1e9926cf1a1df4dd2685139b25174289ca720"
+    sha256 x86_64_linux:      "031466c8ad75a6f4e12a250aae7f041a1f8a97018fc3a1fb9d4a9cb272e66fc8"
   end
 
   depends_on "bison" => :build
@@ -63,14 +62,28 @@ class Samba < Formula
     sha256 "3810e998308fba2e0f4f26043035032b027ce51ce5c8a52a8b8e340ca65f13e5"
   end
 
-  # upstream bug report, https://bugzilla.samba.org/show_bug.cgi?id=10791
-  # https://bugzilla.samba.org/show_bug.cgi?id=10626
-  # https://bugzilla.samba.org/show_bug.cgi?id=9665
+  # Fix the macOS build of the BSD-style `statvfs` code
   patch do
-    url "https://gitlab.com/samba-team/samba/-/commit/a2736fe78a4e75e71b9bc53dc24c36d71b911d2a.diff"
-    sha256 "7d1bf9eb26211e2ab9e3e67ae32308a3704ff9904ab2369e5d863e079ea8a03f"
+    url "https://gitlab.com/samba-team/samba/-/commit/5c855f9b484c99cedc224e1bf9536383cdf37057.diff"
+    sha256 "f017f43545e587e7960e9fe22edad4c3dfa0d76b8edc969b7dcd5075a2f65a14"
     type :unofficial
-    resolves "https://gitlab.com/samba-team/samba/-/merge_requests/3902"
+    resolves "https://gitlab.com/samba-team/samba/-/merge_requests/4728"
+  end
+
+  # Link `LP_RESOLVE` against `resolv` for `res_search`, which is not in libc on macOS
+  patch do
+    url "https://gitlab.com/samba-team/samba/-/commit/398068b565f6c97f09a9a7d97d623362d4e75b0c.diff"
+    sha256 "5f305220f57b8c1e7e70d217c71902b574882d0e68025974c627b49e8448e6bd"
+    type :unofficial
+    resolves "https://gitlab.com/samba-team/samba/-/merge_requests/4728"
+  end
+
+  # Give macOS libraries `@rpath` install names so installed files don't reference the build tree
+  patch do
+    url "https://gitlab.com/samba-team/samba/-/commit/0da9389015101a855f4230a340165347f3f7b99c.diff"
+    sha256 "089018252c79648a6e8227b5e05c2c859a211a60f1b30b0333606256e1e7f68d"
+    type :unofficial
+    resolves "https://gitlab.com/samba-team/samba/-/merge_requests/4729"
   end
 
   def install

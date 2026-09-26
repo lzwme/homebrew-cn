@@ -3,17 +3,17 @@ class Bazarr < Formula
 
   desc "Companion to Sonarr and Radarr for managing and downloading subtitles"
   homepage "https://www.bazarr.media"
-  url "https://ghfast.top/https://github.com/morpheus65535/bazarr/releases/download/v1.6.1/bazarr.zip"
-  sha256 "9fb83af026da7e9b7aa52d7547dfd15e7efa872ee90c7a5ecbe4bc6f213670e9"
+  url "https://ghfast.top/https://github.com/morpheus65535/bazarr/releases/download/v1.6.2/bazarr.zip"
+  sha256 "82d1c61ea8508b28503d820bd5924360cc503467e7de51fa29205cac34c2627b"
   license "GPL-3.0-or-later"
   head "https://github.com/morpheus65535/bazarr.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "d7c5510ee4c525a5eede50a73f40cda4533fc5fe3770a0d0e27dc4e0ad03b273"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "96ec6cfa375ced33d5af6f2c37ce1bcbb188d4a66fff6669abdfdaf8011ed462"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "e34ab26bddc90ddbfb35e91d57069a8dc8d61f119ce2a68d94ce9f244fb46f61"
-    sha256 cellar: :any,                 arm64_linux:       "9e5e69854d1e4d7e0bce7f0cd7ba7f4abaebca5fb4dea423bb5480419e60d578"
-    sha256 cellar: :any,                 x86_64_linux:      "c873fd54810e7031c7b3e00f9a338bdc7a33c62f30675b1e8597adb0ceceef63"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "0c73590e516700a7df2315970b883c84609c06d1f9f7bcda5e603cc927a1e164"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "45133d41ec3666290c28f4b5a5be3af04687449669710f2305a4a077554f8c01"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "b156e919db0efd65d93ec27bae6b458c60bd1211d941bee1f00717cdd16f99fa"
+    sha256 cellar: :any,                 arm64_linux:       "eb0e2de8680a11f8c6c1f4b624302c6d6b9b956ae45d5b3b982597b9d703322f"
+    sha256 cellar: :any,                 x86_64_linux:      "a715e89ef129a4459547b8ff791a784697037299b03510603d477c43e3953dbb"
   end
 
   depends_on "node" => :build

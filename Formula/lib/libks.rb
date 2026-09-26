@@ -58,7 +58,9 @@ class Libks < Formula
       }
     C
 
-    system ENV.cc, "test.c", "-o", "test", "-I#{include}/libks2", "-L#{lib}", "-lks2"
+    system ENV.cc, "test.c", "-o", "test",
+           "-I#{include}/libks2", "-I#{formula_opt_include("openssl@3")}",
+           "-L#{lib}", "-L#{formula_opt_lib("openssl@3")}", "-lks2"
     system "./test"
   end
 end

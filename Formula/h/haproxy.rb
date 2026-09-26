@@ -1,8 +1,8 @@
 class Haproxy < Formula
   desc "Reliable, high performance TCP/HTTP load balancer"
   homepage "https://www.haproxy.org/"
-  url "https://www.haproxy.org/download/3.4/src/haproxy-3.4.4.tar.gz"
-  sha256 "b0c5053c4d46840ecdee3925736fe9a3de6472559b43c69183d70e593d9133df"
+  url "https://www.haproxy.org/download/3.4/src/haproxy-3.4.5.tar.gz"
+  sha256 "ec5095095bce7db2e0e6e971f616dded1bb505717e692ec6c3cc8dab6a31678a"
   license "GPL-2.0-or-later" => { with: "openvpn-openssl-exception" }
 
   livecheck do
@@ -12,11 +12,11 @@ class Haproxy < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any, arm64_golden_gate: "d33b4205194dee55b06840e506b6ffc4db2536b9ff52d5dc803d0f48b866ff5c"
-    sha256 cellar: :any, arm64_tahoe:       "8e63267aa8ee9425d5596cbc98da9da2b98868120c62e0a26949c3654716b0b4"
-    sha256 cellar: :any, arm64_sequoia:     "0641579a28186f277ca5eeb072f539d10b47b34595d0149d49f1247a1501da6e"
-    sha256 cellar: :any, arm64_linux:       "1f42dfb4dd2314cf6f7c5f7f56ffb087e669176cad0da1f19c71f5c352b4a661"
-    sha256 cellar: :any, x86_64_linux:      "721f6d9fdd4d09bd7e8a0529b4de62756d5661370612ad0139feeeb0656d746e"
+    sha256 cellar: :any, arm64_golden_gate: "0166ce3d19b81651d9e2cb89fb3c36fd13619e26e40d83edba93e623eb87576c"
+    sha256 cellar: :any, arm64_tahoe:       "86361587ada777cb2ff3849ccb2fe2e25103aab69adbd15b63a4443b47581d1d"
+    sha256 cellar: :any, arm64_sequoia:     "d7bab1c230485c4277fea6a3e03d5bff91d6366e215b349be3932154bfd2908b"
+    sha256 cellar: :any, arm64_linux:       "2d42d36946772c05aa63f265f72bfeea5a1e8e489671650be193a13a346fcc64"
+    sha256 cellar: :any, x86_64_linux:      "c0bab811d9dc74153567aaa1a3ea495b6fdc7ae3432faa14066dff49c9ce5b5c"
   end
 
   depends_on "openssl@4"

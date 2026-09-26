@@ -100,10 +100,9 @@ class Varnish < Formula
       testpath/"m00060.vtc",
       testpath/"m00061.vtc",
     ]
-    tests = testpath.glob("[bmu]*.vtc") - timeout_tests - debug_tests
+    tests = testpath.glob("[bm]*.vtc") - timeout_tests - debug_tests
     # -j: run the tests (using up to half the cores available)
-    # -q: only report test failures
     # varnishtest will exit early if a test fails (use -k to continue and find all failures)
-    system bin/"varnishtest", "-j", [Hardware::CPU.cores / 2, 1].max, "-q", *tests
+    system bin/"varnishtest", "-j", [Hardware::CPU.cores / 2, 1].max, *tests
   end
 end

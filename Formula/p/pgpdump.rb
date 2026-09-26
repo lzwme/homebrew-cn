@@ -1,19 +1,17 @@
 class Pgpdump < Formula
   desc "PGP packet visualizer"
   homepage "https://www.mew.org/~kazu/proj/pgpdump/en/"
-  url "https://ghfast.top/https://github.com/kazu-yamamoto/pgpdump/archive/refs/tags/v0.37.tar.gz"
-  sha256 "bc3b6b85f3c95c68010883675283c1c905e6c4070ac5609ced1a87c53b3ee814"
+  url "https://ghfast.top/https://github.com/kazu-yamamoto/pgpdump/archive/refs/tags/v0.38.tar.gz"
+  sha256 "6e994c2ee7479ea4f4492d5d94d7177ac493fdb1b1bcf698aa90ae26495fd95b"
   license "BSD-3-Clause"
   head "https://github.com/kazu-yamamoto/pgpdump.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "8f107a8fb7917f6cee982634dc50c048a487232e8c35227cf5dfa94ddce1785a"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "7271c0c87d0ab2641ee5ba2b4a56087dc676c94c74114f35864c2b05bfd5d740"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "538a68ce61a4964200f14a933f9ef1153b3c6aeb7912e9652d5175e993bc5f01"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "f7d16c551bec4f31b919c6c25373d2eb1217e97143c690ed1828be4c5376d186"
-    sha256 cellar: :any_skip_relocation, sonoma:            "5bd623ea842793c2e06a30ec74e377ba98b6cc671c1bd3437f124af2a1b5028c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "37130fe3de7e8189c3ebdc12b5d8f83a7d91aeb6932183266b7c48ea93244b82"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "cc370e7ed6cd6bf5ea931c21086f4c2c1e493f166f663212682b4d4427d50cb0"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "461263e1f721e46bb5673ead579b1fabb6c5e9c462a3003f4e14ee879e10fa52"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "8fc69f799ea95e3e89ccb78bc8661153a67343db86b19d92d822e6428b71e7d9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "bc5590a7b082b8c32cd7fb39b62906eb31d08b742b8e4faa095a75b2c81d46f8"
+    sha256 cellar: :any,                 arm64_linux:       "0a0d71dde70381e31b523b558e00d30aa46f2da428fd6bb87db1cd1059073d31"
+    sha256 cellar: :any,                 x86_64_linux:      "186cbee04dff0d6c779c20c0e4d5bdc76f486149124aaa02a0adbc5f45bcd4ba"
   end
 
   depends_on "autoconf" => :build
@@ -24,6 +22,8 @@ class Pgpdump < Formula
   on_linux do
     depends_on "zlib-ng-compat"
   end
+
+  deny_network_access!
 
   def install
     system "autoreconf", "--force", "--install", "--verbose"

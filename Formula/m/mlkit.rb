@@ -1,8 +1,8 @@
 class Mlkit < Formula
   desc "Compiler for the Standard ML programming language"
   homepage "https://melsman.github.io/mlkit"
-  url "https://ghfast.top/https://github.com/melsman/mlkit/archive/refs/tags/v4.7.22.tar.gz"
-  sha256 "b8dcf6047595da0bd1a5a18168d7f430eb74e9927c092d20bfeacecea9b8a397"
+  url "https://ghfast.top/https://github.com/melsman/mlkit/archive/refs/tags/v4.7.23.tar.gz"
+  sha256 "6a79ae8d910392827d3405c2acb3bd975f568c76d0da5db0bf5017077de1fb1f"
   license "GPL-2.0-or-later"
   head "https://github.com/melsman/mlkit.git", branch: "master"
 
@@ -12,28 +12,48 @@ class Mlkit < Formula
   end
 
   bottle do
-    sha256 sonoma:       "b541fe0ef24e6c2bd3099b2e12462de310d1358d6ed8c5ff817bea516bda408e"
-    sha256 x86_64_linux: "1f19cf6f078616b113668e9b37766e0879746f64669c9634811b5ab320c6ca24"
+    sha256 arm64_golden_gate: "e24b7427a34ac06de335882227851b72ed9a3df7b37d9637862314fc83d3ebfd"
+    sha256 arm64_tahoe:       "f8d5a3680ede372d063795b2da20293cb1713b9a3ed5385ab56ed77a6522c513"
+    sha256 arm64_sequoia:     "a76c1f1fb63cda699f7c31440ae3ceb478603e7cc9d46b3839282dc3348a4186"
+    sha256 x86_64_linux:      "c0aae9571a07a319cdd9e4e6bef46ff6b26adb63a59fa7633c33a8901460e5bd"
   end
 
   depends_on "autoconf" => :build
-  depends_on "mlton" => :build
-  depends_on arch: :x86_64 # https://github.com/melsman/mlkit/issues/115
   depends_on "gmp"
 
-  on_macos do
-    # Can be undeprecated if upstream decides to support arm64 macOS
-    deprecate! date: "2025-09-28", because: "is unsupported, https://docs.brew.sh/Support-Tiers#future-macos-support"
-    disable! date: "2026-09-28", because: "is unsupported, https://docs.brew.sh/Support-Tiers#future-macos-support"
+  on_linux do
+    depends_on arch: :x86_64 # https://github.com/melsman/mlkit/tree/master#mlkit---native-backends
   end
 
+  on_intel do
+    depends_on "mlton" => :build
+  end
+
+  # Apple Silicon build requires building with mlkit not mlton.
+  # Similar to other bootstraps, can keep on oldest compatible version.
+  resource "bootstrap" do
+    on_arm do
+      url "https://ghfast.top/https://github.com/melsman/mlkit/releases/download/v4.7.23/mlkit-bin-dist-darwin.tgz"
+      sha256 "1872feca49574c2dacc1e508657c6bdec3fdcd38a2fb71b9ab929c1c8735229b"
+    end
+  end
+
+  deny_network_access!
+
   def install
-    # AArch64 inline asm is gated on the compiler rather than the target arch, breaking x86_64 clang
-    # https://github.com/melsman/mlkit/commit/f1811c7c8da109f4ef1a9d6314edb20f65d84cc6
-    inreplace "src/Runtime/Region.c", "#ifdef __clang__", "#if defined(__aarch64__)"
+    # https://github.com/melsman/mlkit/tree/master#native-arm64-on-macos
+    if OS.mac? && Hardware::CPU.arm?
+      resource("bootstrap").stage("bootstrap")
+      ENV["MLKIT_BOOTSTRAP"] = buildpath/"bootstrap/bin/mlkit"
+      ENV["MLKIT_BOOTSTRAP_SML_LIB"] = buildpath/"bootstrap"
+      ENV["MLKIT_BOOTSTRAP_FLAGS"] = "-gc"
+      ENV["SML_LIB"] = buildpath
+      ENV["DARWIN_NATIVE"] = "1"
+      args = ["--with-compiler=mlkit"]
+    end
 
     system "sh", "./autobuild"
-    system "./configure", "--prefix=#{prefix}"
+    system "./configure", "--prefix=#{prefix}", *args
 
     # The ENV.permit_arch_flags specification is needed on 64-bit
     # machines because the mlkit compiler generates 32-bit machine

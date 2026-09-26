@@ -3,18 +3,17 @@ class PocketTts < Formula
 
   desc "Text-to-speech application designed to run efficiently on CPUs"
   homepage "https://github.com/kyutai-labs/pocket-tts"
-  url "https://files.pythonhosted.org/packages/b4/4d/2c97117deb4ce79adeaffa0d1aaf6d31dfd902b539fb48b211998fbb8eb5/pocket_tts-3.1.0.tar.gz"
-  sha256 "7991e312a36a5150da639d5cb1eda8ed3a5faf915dc725a51044564478c32580"
+  url "https://files.pythonhosted.org/packages/56/e4/08262e47704291a99c211515b17e754d4891a899323a8171e220f468e45b/pocket_tts-3.3.0.tar.gz"
+  sha256 "997b3dd39d43c0555cdd9b8efd72ac926dbfcd250fb5f3575aa29c33db5b6621"
   license "MIT"
   head "https://github.com/kyutai-labs/pocket-tts.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "40c982b335707f8623ec67dc108ba3b3baf39cf75ba6a2b2c7b2b7f73139ee50"
-    sha256 cellar: :any, arm64_tahoe:       "776736ea619a49b5cfbdd9830e51ac247207bd7336869758bca0bb5e5a3e32eb"
-    sha256 cellar: :any, arm64_sequoia:     "a48f98b256d1e82fbf2db0a732efa90da48d73252e33e866feddaaff765dbf98"
-    sha256 cellar: :any, arm64_sonoma:      "915ecc7c975cdc53d1d074a38e6a2efe0f1a09abc0f25d9e9410569be852ba85"
-    sha256 cellar: :any, arm64_linux:       "472c51dffdea06f8ad64db15555fe22d2e990c1e4f0c352e1c3af84ca8eca6d4"
-    sha256 cellar: :any, x86_64_linux:      "943ad42c0ae1487c6fe41ac9f6bd3c6e98e5e99e042ca81b4f6b22bf196f0b38"
+    sha256 cellar: :any, arm64_golden_gate: "4f2580fa3c141acbf4a2d6179794f3f228654e672ed1c9c185dfa45ebbbb9dac"
+    sha256 cellar: :any, arm64_tahoe:       "5c29cbb62a5c0d93ed87ef77ff9f0791fab7bf80976063ef88b4f1f07d1e8d85"
+    sha256 cellar: :any, arm64_sequoia:     "8ed0dfa02db56d118f5f170b3af446859f53f2b3a3e76cbc1188ecbcdb1bd3f9"
+    sha256 cellar: :any, arm64_linux:       "38bf483a2b45445083e470de826fb9d6b214f32bc3dcfa0982762b413e4e3251"
+    sha256 cellar: :any, x86_64_linux:      "ddacfe76ce10a4c7667c1b6c0b87a51de5414372979b677992648e68c9d3901f"
   end
 
   depends_on "cmake" => :build
@@ -39,8 +38,8 @@ class PocketTts < Formula
   end
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/ea/9a/c15a60547004a3f3cea20296c934f827ddd7bdba225a2e7e9fcb5ec48c80/anyio-4.15.0.tar.gz"
-    sha256 "b5c620ed540725e2579c31b17bb995b3bf02c9281c9cace04c7d186380bab85e"
+    url "https://files.pythonhosted.org/packages/a9/d2/f4d173e22df740bc37b1db102b386ba719b66e95b0f0d751f556b387e6d2/anyio-4.15.1.tar.gz"
+    sha256 "9f28306018cbd6d329e64a36d58256edff76dd996fe423bc957326e578b82a94"
   end
 
   resource "charset-normalizer" do
@@ -84,13 +83,13 @@ class PocketTts < Formula
   end
 
   resource "huggingface-hub" do
-    url "https://files.pythonhosted.org/packages/35/97/2eb4abaa5b969ed385066a0496a3823b3ff467fc1082e2202955f1867d60/huggingface_hub-1.30.0.tar.gz"
-    sha256 "e6a6120bc8c8e2723d03648434ee247088cceb55ba7067e7d34d692cad5fdb57"
+    url "https://files.pythonhosted.org/packages/25/2a/484d112c0d8fc5f665d7b65137ac9cdb2953c982391598c3597968a12ee7/huggingface_hub-1.33.0.tar.gz"
+    sha256 "367be21a201db9523eddf8aeac7048f2602c1b308691c97640d5e72ed188007e"
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/5f/f7/abb373e5757eaec4b922b92f97ec8d6d7e057cf06778247604fbc4e7c3f3/idna-3.19.tar.gz"
-    sha256 "5e0811a4383b21dc5838069f801c4fb62113b7447663d2530d2bd6e77b49bf15"
+    url "https://files.pythonhosted.org/packages/f5/08/8eea9d4b8302028f3abb2c0813953f7aec26d33b7a8960ed760e65ff29fa/idna-3.20.tar.gz"
+    sha256 "a7db850025b95ded1eae8a46181a1a6c56c92c96f0e2b005d9ff8dc0210cab44"
   end
 
   resource "markdown-it-py" do
@@ -149,13 +148,18 @@ class PocketTts < Formula
   end
 
   resource "starlette" do
-    url "https://files.pythonhosted.org/packages/b5/b4/205b0d5241d934e8add0c38aa924c4f9fb7330834ff11e5444db964ec3f9/starlette-1.6.0.tar.gz"
-    sha256 "d4e3ac5e546444960c710297a3c9fc3f7ebae1b7e963f3d36173b49da535be9b"
+    url "https://files.pythonhosted.org/packages/7b/2b/3850dc6bf7ef71b088962eba31dafc6cffd2f96e577ebb0bb316df96da3e/starlette-1.7.0.tar.gz"
+    sha256 "c79f74ea63cff761804fbbfb182f1e0b440c2d07b164d24700c5a1bab5d6ff5d"
+  end
+
+  resource "tokenizers" do
+    url "https://files.pythonhosted.org/packages/18/1e/bc6587c5ab643b2e17776cace9070a2ae73549c86bffac9934a600bf3c31/tokenizers-0.23.2.tar.gz"
+    sha256 "7f0f085686b9de0d0079e6f874ae053600db64c5d13049e0bbc0119926d25aac"
   end
 
   resource "tqdm" do
-    url "https://files.pythonhosted.org/packages/21/3b/6c24bec5be5e743ffd99576daa5cc077722fc7d5bbc00bd133fa0c698dc6/tqdm-4.70.0.tar.gz"
-    sha256 "55b0b0dbd97462d06ebee91e4dac24ed4d4702be82b24f07e6c1d27e08cea220"
+    url "https://files.pythonhosted.org/packages/0d/ea/b2a5bd54b28a324dae8211928b2d730b6547500342c7e6c6dea08bd0a485/tqdm-4.70.1.tar.gz"
+    sha256 "cefd0eca11b2a37a3aee776544d4f4ae913f02688135b5556b8788dfa474afc4"
   end
 
   resource "typer" do
@@ -164,18 +168,21 @@ class PocketTts < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/53/0c/06f8b233b8fd13b9e5ee11424ef85419ba0d8ba0b3138bf360be2ff56953/urllib3-2.7.0.tar.gz"
-    sha256 "231e0ec3b63ceb14667c67be60f2f2c40a518cb38b03af60abc813da26505f4c"
+    url "https://files.pythonhosted.org/packages/e3/05/b17359e1cefb4f909b5e40b1b90a496d987258916dbbf88e842c729f510e/urllib3-2.8.0.tar.gz"
+    sha256 "63bf2ead4c879426ebf22ef2a781eeb4aa3b4ae798a0435506f8687fd5bb9b63"
   end
 
   resource "uvicorn" do
-    url "https://files.pythonhosted.org/packages/f2/0f/3f86e61397dd33bf2ccf28188c40db6a740658aeebbbf6e7dbc101a1f487/uvicorn-0.52.4.tar.gz"
-    sha256 "73acfee47a0b133c5de13d219492d62d8a31e935f4fe6e41a232451a15379f86"
+    url "https://files.pythonhosted.org/packages/5d/ad/04bbb797c84fc1f26cb171f7394716f4865ffb8d8c5e1eef42565c2dfa6b/uvicorn-0.53.0.tar.gz"
+    sha256 "a9356f0cb89b3b8621529c5d5eebd69bfe154f4c3f68b4cf2de47e45fa855c2e"
   end
 
   def install
     # Work around superenv breaking aws-lc-sys `-O0` needed to build CPU Jitter RNG
     ENV["AWS_LC_SYS_NO_JITTER_ENTROPY"] = "1"
+
+    # `tokenizers` builds a PyO3 extension through maturin.
+    ENV.append_to_rustflags "-C link-arg=-Wl,-undefined,dynamic_lookup"
 
     venv = virtualenv_install_with_resources(without: ["hf-xet", "sentencepiece"])
 

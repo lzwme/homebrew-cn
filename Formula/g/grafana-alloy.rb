@@ -1,8 +1,8 @@
 class GrafanaAlloy < Formula
   desc "OpenTelemetry Collector distribution with programmable pipelines"
   homepage "https://grafana.com/oss/alloy-opentelemetry-collector/"
-  url "https://ghfast.top/https://github.com/grafana/alloy/archive/refs/tags/v1.19.2.tar.gz"
-  sha256 "3906c641ccfa03ad2ff777618c13ca3a0ee8417f995d192b5912d310aa5a34a4"
+  url "https://ghfast.top/https://github.com/grafana/alloy/archive/refs/tags/v1.20.0.tar.gz"
+  sha256 "156870fee9c38c6ff7748ac3cda86da0f0ccd897cb52bcd99c3ffa7526ec37fe"
   license "Apache-2.0"
   head "https://github.com/grafana/alloy.git", branch: "main"
 
@@ -12,13 +12,11 @@ class GrafanaAlloy < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "2d389210537ee450e0608866af1327b6ff757e69d4c290dd9184a51d0836e972"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "129bd2ac4a2490c75daf16f158b2e20eee190e467b8512361f85afc218c67a74"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "b930361f022e115483b0a0648a7811e14e1301d97ff7d295a3086a261e708468"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "473289a03a7b5f8e874a262ae7369e81982e980539cfacc628d380562f1f81c0"
-    sha256 cellar: :any_skip_relocation, sonoma:            "3fd4efacf9cf10fbe6dfc9ef3a1d77fdcb801147aef7b0ff4a632d4e0d7f431b"
-    sha256 cellar: :any,                 arm64_linux:       "da08511ff740cc2742b7c6f37df769840d58173312a103a0071cb4ddd2017009"
-    sha256 cellar: :any,                 x86_64_linux:      "a8324ee08b3e3c0d066c2500bbf91dc66a8b173e124cc1a7cff17127d699ecca"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "b0dcb368bbccf99872d3e7b5cfc449e568545011ff68017d83a3af6c01afdfd2"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "52b53598c5ed7039caae587fffe44af6767eb7452956939c72e3a0eb660d82ee"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "38e2eefb2b95a9de21d00baded8af6a4643ae4de8d88ae0fe0358af122347c1d"
+    sha256 cellar: :any,                 arm64_linux:       "13a19408af6dae8fd7b0f851994ba49eff3835a58cd0153f1feae0d333f300b6"
+    sha256 cellar: :any,                 x86_64_linux:      "374fc753a177b370744f6b77b0b41bb2c736103db0c7cd6d0cefa95c370ceb46"
   end
 
   depends_on "go" => :build

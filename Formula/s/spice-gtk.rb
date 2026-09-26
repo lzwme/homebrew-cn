@@ -117,7 +117,8 @@ class SpiceGtk < Formula
         return spice_session_new() ? 0 : 1;
       }
     CPP
-    ENV.prepend_path "PKG_CONFIG_PATH", "#{Formula["icu4c"].lib}/pkgconfig"
+    ENV.prepend_path "PKG_CONFIG_PATH", formula_opt_lib("openssl@3")/"pkgconfig"
+    ENV.prepend_path "PKG_CONFIG_PATH", formula_opt_lib("icu4c")/"pkgconfig"
     system ENV.cc, "test.cpp",
                    *shell_output("pkgconf --cflags --libs spice-client-gtk-3.0").chomp.split,
                    "-o", "test"

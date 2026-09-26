@@ -1,19 +1,17 @@
 class ShuttleCli < Formula
   desc "CLI for handling shared build and deploy tools between many projects"
   homepage "https://github.com/lunarway/shuttle"
-  url "https://ghfast.top/https://github.com/lunarway/shuttle/archive/refs/tags/v0.25.0.tar.gz"
-  sha256 "dddc84927c985ec29cbbad7952d8c5e3d6c1fe1bcd5732c49269d0f517000f90"
+  url "https://ghfast.top/https://github.com/lunarway/shuttle/archive/refs/tags/v0.25.1.tar.gz"
+  sha256 "7112b1b562aee1f2b9af17362aa18891a02571ab405d64719fb67ce887a3c5a3"
   license "Apache-2.0"
   head "https://github.com/lunarway/shuttle.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "92b1cc88bbfbb35175a2ff69711e2b2ae00e358b65dd4e87d45b0c610e547804"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "e155472f49226c07b7e6aed2b2b171988b7eb72dbf8f6c0c726272907048a6ba"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "e155472f49226c07b7e6aed2b2b171988b7eb72dbf8f6c0c726272907048a6ba"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "e155472f49226c07b7e6aed2b2b171988b7eb72dbf8f6c0c726272907048a6ba"
-    sha256 cellar: :any_skip_relocation, sonoma:            "ea4c203c0e820940809b3947ca17c1612ddee2f7e58a301181a414acaf906739"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "74cde4615cf2909bcfc049ddcceb1b4361c08511f7cfb7ff1f938d6055090428"
-    sha256 cellar: :any,                 x86_64_linux:      "1fbd93fcc9cae06d68da50868b6a86ce49c9fd591872d4250f32de76e51f8d46"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "aefec12638d4390492d12eca20ed2a7c414176d493f2fe9ab51f530dd0619854"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "aefec12638d4390492d12eca20ed2a7c414176d493f2fe9ab51f530dd0619854"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "aefec12638d4390492d12eca20ed2a7c414176d493f2fe9ab51f530dd0619854"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "5e8c5bcaddb5bdbebb85518aa3746cb916c473c48beabec58b683168d9580d5f"
+    sha256 cellar: :any,                 x86_64_linux:      "ce45f1a3ea7684bff6e8096717437959b4db0d6fc89eb821ef3a329099efa4a0"
   end
 
   depends_on "go" => :build

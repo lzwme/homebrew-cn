@@ -1,8 +1,8 @@
 class Supabase < Formula
   desc "Postgres development platform"
   homepage "https://supabase.com/docs/reference/cli/about"
-  url "https://ghfast.top/https://github.com/supabase/cli/archive/refs/tags/v2.117.0.tar.gz"
-  sha256 "630de8f7edba860d85a4ca303731241bf7ae96267c00d99a7f7d0496164cee1c"
+  url "https://ghfast.top/https://github.com/supabase/cli/archive/refs/tags/v2.118.0.tar.gz"
+  sha256 "12067ce52ad06669442103c383e332c06555afea0922f104de334501a874f9ab"
   license "MIT"
   head "https://github.com/supabase/cli.git", branch: "develop"
 
@@ -12,12 +12,11 @@ class Supabase < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_golden_gate: "46895fdbabd96d4d8483f4c930a40d715227de4547d03195ec012696c5f5eeaf"
-    sha256 arm64_tahoe:       "88c8ca854e32462e11f38498919bad67e673ec43d91b21cabd7e993f5ee67496"
-    sha256 arm64_sequoia:     "550046e4943d9d240e0b1e383891bfc8e647c4a173b899b428def6dd1ec6615c"
-    sha256 arm64_linux:       "740bafba13f5bcd9796bc4212785facff2ed856468821ee54a49064e468ed80d"
-    sha256 x86_64_linux:      "2a81316572c76868727fb9f05a15b632678011241d2e90c5d0bb2a321d8d9ad2"
+    sha256 arm64_golden_gate: "23599f5c02f75b37ecbfdf857bf1afea08340075925ad71d0f1e4eab5dbdbb04"
+    sha256 arm64_tahoe:       "3b214316689b3d208b107aeb781e9cbf3069d730fccbf24cc383d31b0cd07b73"
+    sha256 arm64_sequoia:     "7c55b87b986e8b9afefa05ccd0c8f23aa3da5ffc425c0d3e935c83814726c1de"
+    sha256 arm64_linux:       "0cd637c90dd80845aabacae652c07be8d173b60a0b0583f9033cfbfd3058bcd0"
+    sha256 x86_64_linux:      "8e2b81e28e546b745b93625b9b505195816517fa1e677ec64d10fce42cf68f96"
   end
 
   depends_on "bun" => :build
@@ -56,11 +55,11 @@ class Supabase < Formula
 
     cd "apps/cli" do
       system "bun", "scripts/build-binary.ts"
-      libexec.install "dist/supabase-legacy" => "supabase"
+      libexec.install "dist/supabase"
     end
 
     # supabase-go must stay next to the shell binary: it is resolved relative to
-    # process.execPath (apps/cli/src/shared/legacy/go-proxy.layer.ts).
+    # process.execPath (apps/cli/src/command-internal/go-proxy.layer.ts).
     bin.install_symlink libexec/"supabase"
   end
 

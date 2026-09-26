@@ -137,7 +137,7 @@ class Curl < Formula
     assert_path_exists testpath/"certdata.txt"
 
     ENV["PKG_CONFIG_PATH"] = lib/"pkgconfig"
-    ENV.append_path "PKG_CONFIG_PATH", Formula["zlib-ng-compat"].lib/"pkgconfig" unless OS.mac?
+    ENV.append_path "PKG_CONFIG_PATH", formula_opt_lib("openssl@3")/"pkgconfig"
     system "pkgconf", "--cflags", "libcurl"
   end
 end

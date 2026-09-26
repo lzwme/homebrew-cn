@@ -1,9 +1,9 @@
 class DockerMachine < Formula
   desc "Create Docker hosts locally and on cloud providers"
   homepage "https://docs.gitlab.com/runner/executors/docker_machine.html"
-  url "https://gitlab.com/gitlab-org/ci-cd/docker-machine/-/archive/v0.16.2-gitlab.55/docker-machine-v0.16.2-gitlab.55.tar.bz2"
-  version "0.16.2-gitlab.55"
-  sha256 "706a897a1db8a6a6eede7abd465e9c74218d6ae129efc894b5582b6f6a0d6109"
+  url "https://gitlab.com/gitlab-org/ci-cd/docker-machine/-/archive/v0.16.2-gitlab.56/docker-machine-v0.16.2-gitlab.56.tar.bz2"
+  version "0.16.2-gitlab.56"
+  sha256 "a90a2471fc8eab5c2e4d1239c9edd7e25d569f1b58cbfb346e1dd82a984609ec"
   license "Apache-2.0"
   compatibility_version 1
   head "https://gitlab.com/gitlab-org/ci-cd/docker-machine.git", branch: "main"
@@ -14,11 +14,11 @@ class DockerMachine < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "83934f4cf8cdfb9fec6913e7d089306d49d820a669281bc8bdc12dd8c0182031"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "83934f4cf8cdfb9fec6913e7d089306d49d820a669281bc8bdc12dd8c0182031"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "83934f4cf8cdfb9fec6913e7d089306d49d820a669281bc8bdc12dd8c0182031"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "df067d0fa062f9dfe01ed1d5347fc16541e33f5aa607b13fe4bcad5d33d38593"
-    sha256 cellar: :any,                 x86_64_linux:      "dd711cab530e268e87049ec48172dbd5a0468d6ff6c473f9a8c858d3bc8b8c13"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "d66655f4807b22f00426164c5a913edfac7aaa8ba1b12f2369e011cb669ebbca"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "d66655f4807b22f00426164c5a913edfac7aaa8ba1b12f2369e011cb669ebbca"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "d66655f4807b22f00426164c5a913edfac7aaa8ba1b12f2369e011cb669ebbca"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "e1004c38c4c3936b13ae2477cb7d685c8f9356d476b666e6563b43b30edf5065"
+    sha256 cellar: :any,                 x86_64_linux:      "0da8e3775fd6b6e54a530a967384e80921832285b566afee2a717f6076e9c88e"
   end
 
   # After Docker ended support for original docker-machine[^1], we have used
@@ -30,6 +30,12 @@ class DockerMachine < Formula
   disable! date: "2027-06-30", because: :deprecated_upstream
 
   depends_on "go" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     system "go", "build", *std_go_args, "./cmd/docker-machine"

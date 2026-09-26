@@ -1,8 +1,8 @@
 class Bigloo < Formula
   desc "Scheme implementation with object system, C, and Java interfaces"
   homepage "https://www-sop.inria.fr/indes/fp/Bigloo/"
-  url "https://www-sop.inria.fr/indes/fp/Bigloo/download/bigloo-4.7a.tar.gz"
-  sha256 "4425c37f499e2df1a7be3334ae8520fd76214733d9d9fe97b2fba71d1c4cf63b"
+  url "https://www-sop.inria.fr/indes/fp/Bigloo/download/bigloo-4.7b.tar.gz"
+  sha256 "06271cc3da5c164d7fb4a5dc29c442f13d4f4b48319e63c40f8bfa12dc39f22c"
   license "GPL-2.0-or-later"
   head "https://github.com/manuel-serrano/bigloo.git", branch: "master"
 
@@ -12,13 +12,11 @@ class Bigloo < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "515d86137012f3db551c90efe4b47c520621b0f4c3b173741330b49c89da836c"
-    sha256 arm64_tahoe:       "11f7b488d0a97682bdd9a21520fb44c86b68c35d9b07654732a9805cab999ae0"
-    sha256 arm64_sequoia:     "590f9170ba36f83430d2ed9fdb2f043ef66ae237baa567842721a72de09bd997"
-    sha256 arm64_sonoma:      "bb9b651b527caa4736a17ae09e98b56b48a1654b741d59ed3075826389e86963"
-    sha256 sonoma:            "80c07844cddc69479f05e9344afaf486f82c0dc67e0149e9300c66a79f3d14c4"
-    sha256 arm64_linux:       "45843491137d0e4d47f649464784636973f2f784f01577fd5134130a332d6db6"
-    sha256 x86_64_linux:      "5431a4fb5ad2aba6aa3fb7d8d695df6a5544e5f4b5acef5a00b602abda9fe026"
+    sha256 arm64_golden_gate: "751e577ca8ec64e2d1a7d9dd107e490b72a8cae551210ed4984908ce6b39a952"
+    sha256 arm64_tahoe:       "3483652e2903ad8d176ef988714de839533331989bc9a46fd264b6eaf5dcbcee"
+    sha256 arm64_sequoia:     "aa651cb6ee7ae955c9b4a1eaa6857f0e2f397802f540e24969b34dcdee9f3d2f"
+    sha256 arm64_linux:       "d7693040966269426692365c78b27246d5a2ef5e0a23afcadc52a583a8dc8b63"
+    sha256 x86_64_linux:      "9177720e3971e598efbbb8c9f0e1360cdc05248ba19606d3f7063f2f7b6ee9d8"
   end
 
   depends_on "autoconf" => :build
@@ -30,10 +28,14 @@ class Bigloo < Formula
   depends_on "gmp"
   depends_on "libunistring"
   depends_on "libuv"
-  depends_on "openjdk"
+  # configure runs `java -noverify`, which JDK 27 removed
+  # https://github.com/manuel-serrano/bigloo/pull/157
+  depends_on "openjdk@25"
   depends_on "openssl@3"
   depends_on "pcre2"
   depends_on "sqlite"
+
+  uses_from_macos "zip" => :build
 
   on_linux do
     depends_on "alsa-lib"
@@ -59,6 +61,8 @@ class Bigloo < Formula
       --disable-flac
       --jvm=yes
     ]
+    # Record the keg-only JDK so the JVM backend does not depend on `PATH`
+    args << "--javaprefix=#{formula_opt_bin("openjdk@25")}"
 
     if OS.mac?
       args << "--os-macosx"
@@ -67,7 +71,8 @@ class Bigloo < Formula
       args << "--disable-libbacktrace"
     end
 
-    system "./configure", *args, *std_configure_args
+    # configure reads the Java version from the first line of `javac -version`, which `_JAVA_OPTIONS` pushes down
+    with_env(_JAVA_OPTIONS: nil) { system "./configure", *args, *std_configure_args }
     system "make"
     system "make", "install"
 

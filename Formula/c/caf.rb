@@ -2,20 +2,17 @@ class Caf < Formula
   # Renamed from libccpa
   desc "Implementation of the Actor Model for C++"
   homepage "https://www.actor-framework.org/"
-  url "https://ghfast.top/https://github.com/actor-framework/actor-framework/archive/refs/tags/1.1.0.tar.gz"
-  sha256 "9febd85d3a4f50dac760592043028a36bea62bba50c3ee2fc1eace954dd8ae27"
+  url "https://ghfast.top/https://github.com/actor-framework/actor-framework/archive/refs/tags/1.2.0.tar.gz"
+  sha256 "2e4c5e2f02e0a2cfda0b011b26cf61b436ef206bea0cce235f5ee55e3d6327fb"
   license "BSD-3-Clause"
   head "https://github.com/actor-framework/actor-framework.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_golden_gate: "151cc1ca7f347591aa567ddf6f131cdc40532ef90d68c4c640dc39f5aa42bd29"
-    sha256 cellar: :any,                 arm64_tahoe:       "cdea98fe4c1d6c96ce9c27d279bbbd9c27bb201be0c7d3962d13a4a5ea544eb4"
-    sha256 cellar: :any,                 arm64_sequoia:     "8feab93e8b57d114236e22652bed925c45a0c99d5973c9156b12bd8252b0f95c"
-    sha256 cellar: :any,                 arm64_sonoma:      "0e1a5cdca6696088cc37f12d0908abf669655689e6187066994eb022814905e8"
-    sha256 cellar: :any,                 sonoma:            "66f289a4e6565895a7dce5c54560496b541944792a8bdba92742276371f43b17"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "5be578ceca56236f6383d890131db23cd0c113e57d090866a4e85231bd7ac2dc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "308c700f475a619ae55aec7ce2952dce2db3df85ea38ecc8a8067f6365ca1dd7"
+    sha256 cellar: :any, arm64_golden_gate: "b66ac1ea69dc7ced6e3e58552c38041c8398e3bb283f6a29155afece3e755db7"
+    sha256 cellar: :any, arm64_tahoe:       "c60f46aa757ac231b3e43c7a215e0678db8053ab2ef1e34fea168e7a327b1580"
+    sha256 cellar: :any, arm64_sequoia:     "a63573dba3ca05be8b524081f41b1691c52a4cc968bd8a4027f6e35b499d2e20"
+    sha256 cellar: :any, arm64_linux:       "c84ba5286471211d1e6a2052b26b10c982fc3b61959b21b77c79cc35f542331f"
+    sha256 cellar: :any, x86_64_linux:      "52a2d94ee7e4f9ad55abcbf45a37c81e2381d06d3b7f18bebd53447d71cfa7c6"
   end
 
   depends_on "cmake" => :build

@@ -2,8 +2,8 @@ class Influxdb < Formula
   desc "Time series, events, and metrics database"
   homepage "https://influxdata.com/time-series-platform/influxdb/"
   url "https://github.com/influxdata/influxdb.git",
-      tag:      "v3.11.4",
-      revision: "3c2314a424a1a72d74c37ebaceb52b5fda36fe75"
+      tag:      "v3.11.5",
+      revision: "f083f73c92eaa87186d39c81bbd8afc3a3fd8d94"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/influxdata/influxdb.git", branch: "main"
 
@@ -15,12 +15,11 @@ class Influxdb < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "d8e9c1f4b4d1cffa45b84f1bb1a209b4417a5b2e7bbfe1c49247bfd7a9df27ff"
-    sha256 cellar: :any, arm64_tahoe:       "89f6d1376dd2e83a910d01f25722b88b273ef7d94a791fa7a73accb0770efd65"
-    sha256 cellar: :any, arm64_sequoia:     "fabeed37e15f862621abd55350078d9bc642745e12072e01ac0bb8febac12c94"
-    sha256 cellar: :any, arm64_sonoma:      "45c139af2bc3f3d6fdcfebfc6b699da5eec255286971283526437e795a5e4b3d"
-    sha256 cellar: :any, arm64_linux:       "618f98e9f29e60f0148be66f440dace876070765a51e17bd5c4602fd4cec153d"
-    sha256 cellar: :any, x86_64_linux:      "56dfe2bdd89ad7e92be696f8b305b498ff5c6d58b62fa47c14f9a39f3668881c"
+    sha256 cellar: :any, arm64_golden_gate: "215074a593e34a4d0aedc197e0e7e904e35873f60b2bf311156a6a933048558c"
+    sha256 cellar: :any, arm64_tahoe:       "5753d61d37c1e8124fb8523c2510521cb0acc0fa0b5ce596d1cb41df2f7ba329"
+    sha256 cellar: :any, arm64_sequoia:     "0c6f93850db1d9bd32bdd1404423137c26dfbc5b2be7d60a0849206a9842e691"
+    sha256 cellar: :any, arm64_linux:       "42bcc7d377fa90ed539d2302539171692102a5c4d4d9550260a1ae6a68ded53e"
+    sha256 cellar: :any, x86_64_linux:      "af8f5839b9454d66b203ce30a560918de1d90bef6ebd6a93d30edccba10abcb7"
   end
 
   depends_on "pkgconf" => :build

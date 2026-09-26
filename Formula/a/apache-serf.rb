@@ -39,6 +39,8 @@ class ApacheSerf < Formula
     depends_on "zlib-ng-compat"
   end
 
+  def openssl = "openssl@3"
+
   def install
     # scons ignores our compiler and flags unless explicitly passed
     args = %W[
@@ -48,7 +50,7 @@ class ApacheSerf < Formula
       CFLAGS=#{ENV.cflags}
       GSSAPI=#{OS.mac? ? MacOS.sdk_for_formula(self).path/"usr" : formula_opt_prefix("krb5")}
       LINKFLAGS=#{ENV.ldflags}
-      OPENSSL=#{formula_opt_prefix("openssl@3")}
+      OPENSSL=#{formula_opt_prefix(openssl)}
       PREFIX=#{prefix}
     ]
     args << "ZLIB=#{formula_opt_prefix("zlib-ng-compat")}" if OS.linux?
@@ -94,9 +96,10 @@ class ApacheSerf < Formula
       }
     C
 
+    ENV.prepend_path "PKG_CONFIG_PATH", formula_opt_lib(openssl)/"pkgconfig"
     if OS.mac?
-      ENV.prepend_path "PKG_CONFIG_PATH", Formula["apr"].lib/"pkgconfig"
-      ENV.prepend_path "PKG_CONFIG_PATH", Formula["apr-util"].lib/"pkgconfig"
+      ENV.prepend_path "PKG_CONFIG_PATH", formula_opt_lib("apr")/"pkgconfig"
+      ENV.prepend_path "PKG_CONFIG_PATH", formula_opt_lib("apr-util")/"pkgconfig"
     end
     flags = shell_output("pkgconf --cflags --libs serf-1 apr-util-1 apr-1").chomp.split
     system ENV.cc, "test.c", "-o", "test", *flags

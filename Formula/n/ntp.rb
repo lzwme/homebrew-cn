@@ -49,6 +49,6 @@ class Ntp < Formula
   test do
     # On Linux all binaries are installed in bin, while on macOS they are split between bin and sbin.
     ntpdate_bin = OS.mac? ? sbin/"ntpdate" : bin/"ntpdate"
-    assert_match "step time server ", shell_output("#{ntpdate_bin} -bq pool.ntp.org")
+    assert_match "step time server ", shell_output("#{ntpdate_bin} -bdq pool.ntp.org")
   end
 end

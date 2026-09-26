@@ -22,7 +22,8 @@ class SequoiaSqv < Formula
 
   uses_from_macos "llvm" => :build # for libclang (bindgen)
 
-  deny_network_access!
+  # Test needs to fetch stable tarball
+  allow_network_access! :test
 
   def fetch
     system "cargo", "fetch", *std_cargo_fetch_args

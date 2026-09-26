@@ -1,8 +1,8 @@
 class Plink1 < Formula
   desc "Whole-genome association analysis toolset"
   homepage "https://www.cog-genomics.org/plink/1.9/"
-  url "https://ghfast.top/https://github.com/chrchang/plink-ng/archive/refs/tags/v1.9.0-rc1.tar.gz"
-  sha256 "345ee8dcb9064f96a609b69dba4b285f0ae9a5ed6b4799b8a82b91330f11fc3a"
+  url "https://ghfast.top/https://github.com/chrchang/plink-ng/archive/refs/tags/v1.9.0-rc3.tar.gz"
+  sha256 "faa07757dd814ce0692275e6c2247f76ece74f3f49c50e6f3e4cc3539e85fe39"
   license "GPL-3.0-or-later"
   head "https://github.com/chrchang/plink-ng.git", branch: "master"
 
@@ -12,11 +12,11 @@ class Plink1 < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "b043c1d6721a533649b44aba8ad029ccdde066f658b7c1b442b9f878410e28c8"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "d6aaade61eafed2c74bdcbaea0a6173df4e2ce0d8096ad17cb64d51c5dca01f0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "424709073c0c2788cfffaa2f6b8675bd26214759952ec03b1cd4808ef3ec70f9"
-    sha256 cellar: :any,                 arm64_linux:       "1ad05260d6bd7378d8de35553041633d210e471a7cd40cfb601980095b24e438"
-    sha256 cellar: :any,                 x86_64_linux:      "5fd6576dcb1643c11cd5a7bdbb7d7936f95db4f346598b0080ab004259368e15"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "1d16abde3fea24b093b23d6b5bb9158742b2677dfa2de88bc9e7472fe6225360"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "c14d5d1ea6c074e076ce35ad25836a4cb922a0d30faa5d5673b76661d04b7a51"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "530cdfb5ffeff958a6eff92b3d75127a4d3d1c62d172f1017f576904900539fd"
+    sha256 cellar: :any,                 arm64_linux:       "4700c6df4706cea9bcdb88907ccdf650dc94ac40613e593ee8cef4f677c3b5bb"
+    sha256 cellar: :any,                 x86_64_linux:      "fd33d9b6a05733c0a336b903f9508942bf145cf78f6869ab3b001e768d9a04b3"
   end
 
   on_linux do
@@ -25,6 +25,8 @@ class Plink1 < Formula
   end
 
   conflicts_with "putty", because: "both install a `plink` binary"
+
+  deny_network_access!
 
   def install
     # PLINK 1.9 lives in the `1.9` subdirectory of the plink-ng repository.

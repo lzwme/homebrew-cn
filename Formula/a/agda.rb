@@ -4,7 +4,7 @@ class Agda < Formula
   # agda2hs.cabal specifies BSD-3-Clause but it installs an MIT LICENSE file.
   # Everything else specifies MIT license and installs corresponding file.
   license all_of: ["MIT", "BSD-3-Clause"]
-  revision 1
+  revision 2
 
   stable do
     url "https://ghfast.top/https://github.com/agda/agda/archive/refs/tags/v2.8.0.2.tar.gz"
@@ -52,16 +52,8 @@ class Agda < Formula
     end
 
     resource "agda-language-server" do
-      url "https://ghfast.top/https://github.com/agda/agda-language-server/archive/refs/tags/v7.tar.gz"
-      sha256 "294a8d0fe92b80711d221bc50fab5eced2285f6a43123482b27c52073a6e2c5a"
-
-      # Fix the reported ALS version, upstream PR ref, https://github.com/agda/agda-language-server/pull/56
-      patch do
-        url "https://github.com/agda/agda-language-server/commit/a585542a717d4af65a998adaddd87e1020bf9ac1.patch?full_index=1"
-        sha256 "01a09b16be7cf4f1fda548461515559417dedc1a17275cf744a0ceef93655d13"
-        type :unofficial
-        resolves "https://github.com/agda/agda-language-server/pull/56"
-      end
+      url "https://ghfast.top/https://github.com/agda/agda-language-server/archive/refs/tags/v8.tar.gz"
+      sha256 "58c18627786451d43269cde03a062716a05dc9ff1fa74fc82e6f48f449c9e5c9"
     end
   end
 
@@ -73,11 +65,11 @@ class Agda < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "d546a84adfc9f050d04d3d37f9d5b47cb11f2cb1c0b5fc968421c8b336ee8def"
-    sha256 arm64_tahoe:       "26d87e9af2763c2330a9004b73b7d2be6636813018db23a4f68c6b0a794e382a"
-    sha256 arm64_sequoia:     "e6b09f39a2ad9ba7ae167a10c367e9ea54c227129d68d6c2b7f51eb757e29034"
-    sha256 arm64_linux:       "6d6907cd9f3f86e3ac32518b6a9152028bbd1b713a95cfdb449cea5338287949"
-    sha256 x86_64_linux:      "cdd83b5a8e3561150a41c510a1c8f0a1806875fe7c5c57eccbf69da35a392b5d"
+    sha256 arm64_golden_gate: "87d401edaab575cfaa9e28bd357d5ccadfc7ea7e31acbd1be0be7ad863e3ccea"
+    sha256 arm64_tahoe:       "1d163cb056ba37c65662f54668b9bb47a03a31d47aeac950d1daf541188d96f6"
+    sha256 arm64_sequoia:     "e8dbe09a5c55af86c8ab97af359672b99b2d68a41aac1eb4118c6753a778b5e5"
+    sha256 arm64_linux:       "712c575bd41b3af6111feea653bb96662ee79c521f0efc75f84e51020ada4dab"
+    sha256 x86_64_linux:      "9a531c138a9c6cc2c1a856c1018571dac37ad69025836f5742f566d9279ec63e"
   end
 
   head do
@@ -114,6 +106,7 @@ class Agda < Formula
 
   depends_on "cabal-install" => :build
   depends_on "emacs" => :build
+  depends_on "hpack" => :build
   depends_on "pkgconf" => :build
   depends_on "ghc"
   depends_on "gmp"
@@ -152,7 +145,6 @@ class Agda < Formula
 
     # Make the language server build tolerate point releases
     inreplace als/"package.yaml", "Agda == 2.8.0", "Agda >= 2.8.0 && < 2.9.0"
-    inreplace als/"agda-language-server.cabal", "Agda ==2.8.0", "Agda >= 2.8.0 && < 2.9.0"
 
     # Make agda2hs build compatible with GHC 9.14
     inreplace agda2hs_build/"agda2hs.cabal",
@@ -161,6 +153,11 @@ class Agda < Formula
 
     # Make the Agda Emacs mode compatible with Emacs >= 31.1
     inreplace buildpath/"src/data/emacs-mode/agda2-highlight.el", " font-lock-", " 'font-lock-"
+
+    # Create the cabal file for the language server build
+    cd als do
+      system "hpack"
+    end
 
     # Relative package paths keep Cabal file monitoring inside the build directory.
     (buildpath/"cabal.project").write <<~HASKELL

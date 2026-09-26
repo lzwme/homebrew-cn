@@ -46,6 +46,7 @@ class Amber < Formula
       assert_match path, output
     end
 
+    ENV.prepend_path "PKG_CONFIG_PATH", formula_opt_lib("openssl@3")/"pkgconfig"
     cd "test_app" do
       shards = formula_opt_bin("crystal")/"shards"
       assert_match "Building", shell_output("#{shards} --without-development build test_app -Dwithout_mt")

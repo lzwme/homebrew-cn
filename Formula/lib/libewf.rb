@@ -3,8 +3,8 @@ class Libewf < Formula
   homepage "https://github.com/libyal/libewf"
   # The main libewf repository is currently "experimental".
   # See discussions in this issue: https://github.com/libyal/libewf/issues/127
-  url "https://ghfast.top/https://github.com/libyal/libewf-legacy/releases/download/20140816/libewf-20140816.tar.gz"
-  sha256 "6b2d078fb3861679ba83942fea51e9e6029c37ec2ea0c37f5744256d6f7025a9"
+  url "https://ghfast.top/https://github.com/libyal/libewf-legacy/releases/download/20140817/libewf-20140817.tar.gz"
+  sha256 "6dbbefe68e913243dc000b9daaf59f293e33c2340024f7dfb144f1ad90b06544"
   license "LGPL-3.0-or-later"
 
   livecheck do
@@ -14,14 +14,11 @@ class Libewf < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_golden_gate: "edbdbf2f6f501b99b6152e7f8afd787b885fd210251b949018baf07fc5fcdf95"
-    sha256 cellar: :any,                 arm64_tahoe:       "ec8c3c0ffa57df2d43c53a5065ef5f1b40a4623c530a2e29f20fbd99c22df90f"
-    sha256 cellar: :any,                 arm64_sequoia:     "6869e95d17a26169a28afe5bf0f53db15a9f845d33353648488cd7f9cf1e0f6e"
-    sha256 cellar: :any,                 arm64_sonoma:      "09be901af33844926f5c24a55652e11288f32dcdc63981de7bdc85dfb183238c"
-    sha256 cellar: :any,                 sonoma:            "1b2e461e480ef015de567fd9f9916601cd5229755c6910b13c856c0ef0676d41"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "841da9d3b3197875feffc6ee142edb398a9389f8675d1fdc38310088bfef67e1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "2f52e9116f349a9f1889a7b006dac88b00e54d80cf908afa81d351f3d84951e4"
+    sha256 cellar: :any, arm64_golden_gate: "1ec9dbeadfcff305be1c18d9e5b0899eafe4ad7433fc9739d901773b2804aa35"
+    sha256 cellar: :any, arm64_tahoe:       "8792a4b916c961bd9b3e7de6faf86f3a10736e280a9c24f22ef5278c9046c7ad"
+    sha256 cellar: :any, arm64_sequoia:     "f3d83ba7fbcf13ea2c9791cc4292a952950a97e3d03704d9a80817618b1ce33e"
+    sha256 cellar: :any, arm64_linux:       "28bd71b9e943961157da7409353c1a6bcd95c851e65952a399405e756162bd4a"
+    sha256 cellar: :any, x86_64_linux:      "20d57304f8cd5355fb4761a3d74d0577fbfcc50acdb867627c8f2155477b1676"
   end
 
   head do

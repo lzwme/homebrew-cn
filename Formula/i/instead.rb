@@ -1,19 +1,17 @@
 class Instead < Formula
   desc "Interpreter of simple text adventures"
   homepage "https://instead.hugeping.ru/"
-  url "https://ghfast.top/https://github.com/instead-hub/instead/archive/refs/tags/3.5.2.tar.gz"
-  sha256 "589f80cbac9edf51b29d86e1528b9e72c576129fa5c95f1bac3e5bb25c210cf3"
+  url "https://ghfast.top/https://github.com/instead-hub/instead/releases/download/3.5.2/instead_3.5.2.tar.gz"
+  sha256 "77906fcd9099dcfe422e9b6e0ae2782b17c4a780836ed98864321b183732577a"
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 arm64_golden_gate: "855236ee29d66c3e000a610e9d44cffbacd877154f7b823e8fc91af4de484e34"
-    sha256 arm64_tahoe:       "c2466f19712599960fdf617de00a5c87e31419ce1ab9e83a28fc67ea433a0956"
-    sha256 arm64_sequoia:     "a30498f22007194b3d1fde6afb2b2e3ad5a5cef5a7a763f477c26cc625a44fba"
-    sha256 arm64_sonoma:      "631b5131f25ddaf10acbf42922cddf3996561d00e53ec60eafb2f782683a6834"
-    sha256 sonoma:            "055fa879171dbd50e4234937229b42b16073c1bd4e85ea0be5287735f30eb4b3"
-    sha256 arm64_linux:       "37c0dbb0fad67fe9883639294c3b63c150900e8d7af0d36277c021f10af1c8b3"
-    sha256 x86_64_linux:      "e188ffae06055d161cb807e5a814a2fe2a60604964436b2e4efd835d7e68b747"
+    rebuild 2
+    sha256 arm64_golden_gate: "1c1e5a933c65864ba48dcead307d97932572d6371bce746d265993eef0d0cf85"
+    sha256 arm64_tahoe:       "9c66bd5025cd98a1d6728895d208cd9f0fe36a4f5a3ac60f76a9a04a125aeb6c"
+    sha256 arm64_sequoia:     "92ce8a6ec45d5ac109f985d8bafb0bd9c6c08563f68e6295013a640bfe1af00b"
+    sha256 arm64_linux:       "22d5f39dd5833ac098f6a9048cc0029deab9dd15ad0f05386d10be9ef0d87933"
+    sha256 x86_64_linux:      "ffd96d25da618026346183328a2b165143ac9a11a482e329080036444d640b3f"
   end
 
   depends_on "cmake" => :build
@@ -38,6 +36,8 @@ class Instead < Formula
   on_linux do
     depends_on "zlib-ng-compat"
   end
+
+  deny_network_access!
 
   def install
     system "cmake", "-S", ".", "-B", "build",

@@ -3,17 +3,17 @@ class Datalad < Formula
 
   desc "Data distribution geared toward scientific datasets"
   homepage "https://www.datalad.org"
-  url "https://files.pythonhosted.org/packages/0c/73/d4d528b995333c195cee46a84593d1b8be9ce73d8f26b6e19ee53917641c/datalad-1.6.3.tar.gz"
-  sha256 "10b012cf403a76dcad5c9df230db4dfa17c4027b7eeb77daeeccf84b7890a1af"
+  url "https://files.pythonhosted.org/packages/7e/b0/329407fb5f06237d55cf35919388e3b017749d7d8591ecf0b61da0c4814c/datalad-1.6.4.tar.gz"
+  sha256 "e0a0a3d0c6dc0ed49e9d784bbc0fb1b508e8be571d108041d6a4621548beef8a"
   license "MIT"
   head "https://github.com/datalad/datalad.git", branch: "maint"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "78e94eae761dbe50b7317de3f1aaf03a463fb39151acae5d4185c6c72a238a16"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "96767935e29432ab263782e4883725493d3e226b776b113e12e9055f6972632f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "801965dbe8d54f6f7aa2078cb1a8c6098d724c502870361065e03b854284c87e"
-    sha256 cellar: :any,                 arm64_linux:       "8016e1bf5affd375b40922fac1b73f5c595088fe869277bdd0b981f19cd31596"
-    sha256 cellar: :any,                 x86_64_linux:      "05a0cf93c3fa928b57f14b18216d75449f22df9c9caacbedcd8fa792c5ac253f"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "7ca5821fb252d40d262462e4edcd6e7d2e1fa0d78eb601096a17ba69fb6d0f20"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "434e063d60dfeb1b06dc4362b9c0b23e42b97dbc3a7f0e5677ced150edbcf726"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "996983e0ed64c09f565f7e1cd0d25edce55603687792b57c90e080601107f00e"
+    sha256 cellar: :any,                 arm64_linux:       "2ca48d7319117914ebbd51ba5453798545968b2eb65f57f7862145b9407be6f4"
+    sha256 cellar: :any,                 x86_64_linux:      "145812026e6112c032c04ff18ff86afa5a71d26f5f48978cfa8e270b13fc92ef"
   end
 
   depends_on "certifi" => :no_linkage
@@ -37,13 +37,13 @@ class Datalad < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/16/b6/41173fa75983750c794e9b64017a3203407725a0e8c9c7f6de39686dc97b/boto3-1.43.96.tar.gz"
-    sha256 "30fb2b5467ef5175ed48f43c06c435eec5da841594a5d7653c4da679df0740fc"
+    url "https://files.pythonhosted.org/packages/ad/ef/096f1520a4b0cbc794348fcf77ada637e5f98145c3453f219d678c3a0798/boto3-1.43.101.tar.gz"
+    sha256 "49f3eb750f70e050df9929a7e9392e67896c97d7d0a448f13ed3354c634268bd"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/d2/8d/a3d51a726b62585d032bc55eaa45068dec381d51329cca0140f9c233b792/botocore-1.43.96.tar.gz"
-    sha256 "3ef7c8c40738bb42a40eb0ac3dc2d9f1698946541874ae9b505e49f289272805"
+    url "https://files.pythonhosted.org/packages/12/12/e90cc51bd65ecdcd0eedcd522d3c9f102b1d2c601f39f1f1c256695d63a3/botocore-1.43.101.tar.gz"
+    sha256 "3bc67fb55046e1e05ce5f2bd0171f37bef1cf54161786ef04ff338614d98169e"
   end
 
   resource "chardet" do
@@ -77,8 +77,8 @@ class Datalad < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/5f/f7/abb373e5757eaec4b922b92f97ec8d6d7e057cf06778247604fbc4e7c3f3/idna-3.19.tar.gz"
-    sha256 "5e0811a4383b21dc5838069f801c4fb62113b7447663d2530d2bd6e77b49bf15"
+    url "https://files.pythonhosted.org/packages/f5/08/8eea9d4b8302028f3abb2c0813953f7aec26d33b7a8960ed760e65ff29fa/idna-3.20.tar.gz"
+    sha256 "a7db850025b95ded1eae8a46181a1a6c56c92c96f0e2b005d9ff8dc0210cab44"
   end
 
   resource "iso8601" do
@@ -147,8 +147,8 @@ class Datalad < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/58/b9/8adc4e1b422b27fd88540ec7bf1f406f77ef393ec070e26fc430e914cde8/platformdirs-4.11.9.tar.gz"
-    sha256 "e2c66a8d384596cd98e3c4aea2d761df7bac95d9d8a2cc3946daa8cdafdaebc1"
+    url "https://files.pythonhosted.org/packages/ea/dd/65804b0c2925a1c821a05502ea57517b69a073ff400d25ab9faa3a2cf012/platformdirs-4.11.12.tar.gz"
+    sha256 "e8dc1cb58f1153fd7f61db1374317770baababec2480b37b8f01c6cc25b45267"
   end
 
   resource "psutil" do

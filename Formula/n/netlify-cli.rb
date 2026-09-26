@@ -1,16 +1,16 @@
 class NetlifyCli < Formula
   desc "Netlify command-line tool"
   homepage "https://www.netlify.com/docs/cli"
-  url "https://registry.npmjs.org/netlify-cli/-/netlify-cli-27.8.1.tgz"
-  sha256 "8b99ac1fef5261ba1921de444c323cb557cb50ca35f12e298b888e5fc8074a79"
+  url "https://registry.npmjs.org/netlify-cli/-/netlify-cli-27.9.0.tgz"
+  sha256 "d385adc2f7bda645a99a706c47fbe692abc2232eb04b0647fdf9c082aeece045"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "95580933f552e45b53fb12886c277b0af1c32cfa067e8287f413ba6ce269db0a"
-    sha256 cellar: :any, arm64_tahoe:       "079fe274f719b8adf19f12e1c26eec4b0ae98e25f67246fb3ce17d10afb68971"
-    sha256 cellar: :any, arm64_sequoia:     "8dcfef5638bfd83a22bbd32ef535d6fdefd077ec417bd10da1feb81e90e42c0c"
-    sha256 cellar: :any, arm64_linux:       "80781258b485dddda21b320fdbbfcb26f7d9599dabd93328b937a2b4612c2a50"
-    sha256 cellar: :any, x86_64_linux:      "ad444e209f56bb76f766c7664f2dd460ebc6208936bc6b9e32e30c2353253d2b"
+    sha256 cellar: :any, arm64_golden_gate: "54cca659c3c8c5e7b6002f776c49873d3599bfa473f580c9a4a201d14cf0f273"
+    sha256 cellar: :any, arm64_tahoe:       "09eacf0ed06e0cb6bb917dfe89bebd1c0a2bb887c8096d4f6d376fe1d53cf092"
+    sha256 cellar: :any, arm64_sequoia:     "60bd51741fa2f471c9cfe60dd6fffb0465e3be96e17204a10b27c890ba3dc9d4"
+    sha256 cellar: :any, arm64_linux:       "fbd0aa7261e1d8b4226f6b3c5088799d931d82eb115dc2675402d551d3e2279a"
+    sha256 cellar: :any, x86_64_linux:      "a5b4971c11fd33bb8454b57ad88afe95c61fbde9573539cd974fca38967d57ac"
   end
 
   depends_on "pkgconf" => :build

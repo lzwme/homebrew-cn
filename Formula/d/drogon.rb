@@ -9,20 +9,19 @@ class Drogon < Formula
   head "https://github.com/drogonframework/drogon.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_golden_gate: "6b7012e84be1de5cf935218ab061262849296846609d7400cef2f2ea79565714"
-    sha256 cellar: :any,                 arm64_tahoe:       "bd4e451e290fe59e8a97d423868017e5973dec2a282bddeaa37b9ed9aac479a4"
-    sha256 cellar: :any,                 arm64_sequoia:     "359653713e2a256dab4f2997cd0b35d528b8e00e605bb27b866aef387f76e5f8"
-    sha256 cellar: :any,                 arm64_sonoma:      "64b5c9c0120a69a16c6cc23ff1fe7a0aaf0f24fa46405cad14b5469e2fe58b0d"
-    sha256                               sonoma:            "1e4f10a5417224e39f16f2c74d8c1cae7e13f4ca824f9545905bc10b7edec65e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "e3fc5b99f99e7254e3fd7ed42288339e4278277361dbe7d723d829394bda069c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "3f6fc1a8a1e4a57deb723112fac807e92b956be749d51872198a8dbcedc5a2a9"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "d0e62373deac65d1fb493b679c8bcd8df49fc2525cd0bbb46f2469323e7b9edf"
+    sha256 cellar: :any, arm64_tahoe:       "18dca8c71ad37b5bbb770932d6caaf0fb548ba7f139a6539b6966027ef111a03"
+    sha256 cellar: :any, arm64_sequoia:     "6814df6a07b39480cb2813ef644eb323d6082ecee79619825183d6d792bec4a3"
+    sha256 cellar: :any, arm64_linux:       "09023fabf142669b866365a24071e244380fa43a7144490a2d5d455c984f676e"
+    sha256 cellar: :any, x86_64_linux:      "fae8c1fdfe1d13392e692a87f7c024b13337ef047c4d7b46872e951c77eb7e22"
   end
 
   depends_on "cmake" => [:build, :test]
   depends_on "brotli"
   depends_on "c-ares"
   depends_on "jsoncpp"
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   uses_from_macos "sqlite"
 
@@ -48,7 +47,7 @@ class Drogon < Formula
       port = free_port
       inreplace "main.cc", "5555", port.to_s
 
-      system "cmake", "-S", ".", "-B", "build"
+      system "cmake", "-S", ".", "-B", "build", "-DCMAKE_PREFIX_PATH=#{formula_opt_prefix("openssl@4")}"
       system "cmake", "--build", "build"
 
       begin

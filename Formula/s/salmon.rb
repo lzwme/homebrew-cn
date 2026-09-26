@@ -1,18 +1,17 @@
 class Salmon < Formula
   desc "Transcript-level quantification from RNA-seq reads"
   homepage "https://github.com/COMBINE-lab/salmon"
-  url "https://ghfast.top/https://github.com/COMBINE-lab/salmon/archive/refs/tags/v2.7.0.tar.gz"
-  sha256 "95385ffca31017f2a7910ed6b1e46157cf8722fcefa9aecf3fd34fbf2fe7b038"
+  url "https://ghfast.top/https://github.com/COMBINE-lab/salmon/archive/refs/tags/v2.8.0.tar.gz"
+  sha256 "298e6fe9980e4d60e4a4ca8f043d3446e6a1ed0777487331224151eb93ae7dd4"
   license "BSD-3-Clause"
   head "https://github.com/COMBINE-lab/salmon.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "54cd84efbe529bf117e071e0ab58ef9a6f20c3adbff88c98ff316b7697f715a2"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "81e6255898a2b81b7f25468ee2705314b73abfb68f0a895ee033192ee41b6823"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "55c1f472c5d5495fa26b37c707d80e6ec3c0b3c474d43d1fbbc9df814ac5cae8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "5df9960d4f270fef1a35b001de7dfa548dc1e9c09b75858ba0411d30c5988cf5"
-    sha256 cellar: :any,                 arm64_linux:       "3c4e0b309ea4dd8c09377a93c55d202a393aca2eaad81b1e0a8626d50d7f53e1"
-    sha256 cellar: :any,                 x86_64_linux:      "b85a622bc5d53955078e5c6c285c4e6b0d0ac478c84c6f524440d8efd26fc038"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "38d6e3dde376b9942d4ab997af0495669fd5d9a3c413868dfea556eb59b375a4"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "1b0400dd176161e753b3bcc97dd1e34aaae9761db3749006d8fedd647839b1d9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "a73c59b0c8adc359fcd058d510858109716a5349200d2704a7b010a9b7ff4a01"
+    sha256 cellar: :any,                 arm64_linux:       "7c94a9e80b23c2bb8b513b8f5961a3e9ae63daa3656bd13c0dc74c7e41ee0e70"
+    sha256 cellar: :any,                 x86_64_linux:      "4212c65463ebce7ae3ca5d7957f87dff3ec333ebbf1219d3ffbc0de0aa00db2e"
   end
 
   depends_on "rust" => :build

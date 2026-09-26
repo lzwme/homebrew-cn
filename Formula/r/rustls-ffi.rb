@@ -1,19 +1,17 @@
 class RustlsFfi < Formula
   desc "FFI bindings for the rustls TLS library"
   homepage "https://github.com/rustls/rustls-ffi"
-  url "https://ghfast.top/https://github.com/rustls/rustls-ffi/archive/refs/tags/v0.15.3.tar.gz"
-  sha256 "f1612b770be384ff23d5647c815ac3f47734e2ec3c4a03cabc453723461234bc"
+  url "https://ghfast.top/https://github.com/rustls/rustls-ffi/archive/refs/tags/v0.15.4.tar.gz"
+  sha256 "f9d7416a0e8a3678e4192244639ab0a5cadfd12802001dc1c43491a27f12d1bc"
   license any_of: ["Apache-2.0", "MIT", "ISC"]
   head "https://github.com/rustls/rustls-ffi.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_golden_gate: "784d314635bf91aad2db4b5366fbb6cabf51f8d11a4d9b90c9ad45eee3aa0d58"
-    sha256 cellar: :any,                 arm64_tahoe:       "d52b081a594c924d54f8321691b8d8a312f41c3da1a4c0f60ef067f23a0fdeb1"
-    sha256 cellar: :any,                 arm64_sequoia:     "7ef0c4fec7e7a045114f167fbbb2fd4d066e1515131c50c97369dcb166834520"
-    sha256 cellar: :any,                 arm64_sonoma:      "867c80295b29566fe7f6dcfdadbb6a3d653b5b164f9c383a96a769e338cd0b92"
-    sha256 cellar: :any,                 sonoma:            "a713519dba820e8c803ccf35eaf7171bbfa9590da8b0937645a74f557cc2a39c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "ac7af3add00daff1bccce74385ca82408ec61f735f0c0664e93a204f9508994f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "69ef5bc7c81d3423a8d1fa30b1baccfed4a30da8b83a0fbfb5a828a6c4f3182a"
+    sha256 cellar: :any, arm64_golden_gate: "66a0039980bb6e8e77c059d4212c18414bb951c27cea4a159b1ecfede81e2707"
+    sha256 cellar: :any, arm64_tahoe:       "da40e0fde571c01831130d4d737de97cd2b4cc352fee2a6530f9cfeab14f37e7"
+    sha256 cellar: :any, arm64_sequoia:     "cbb342b73592ef2727b60a642cf1820e953072437d1f3753ed845ab80586b943"
+    sha256 cellar: :any, arm64_linux:       "de05c90cdd1963dccc514df6e3b77a3bb4c2acbf038f7d2ce76000dccc3e4c4a"
+    sha256 cellar: :any, x86_64_linux:      "0f2e2eaaabec051b2a9ebcb43b93fa0879fd698b48b4e4eb6f69495beecac7d3"
   end
 
   depends_on "cargo-c" => :build

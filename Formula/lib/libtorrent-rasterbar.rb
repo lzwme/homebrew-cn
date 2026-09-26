@@ -1,10 +1,9 @@
 class LibtorrentRasterbar < Formula
   desc "C++ bittorrent library with Python bindings"
   homepage "https://www.libtorrent.org/"
-  url "https://ghfast.top/https://github.com/arvidn/libtorrent/releases/download/v2.1.1/libtorrent-rasterbar-2.1.1.tar.gz"
-  sha256 "0f163516ecef2e3331500266751de3098835a3c3ae0c2290448046c632bc0e93"
+  url "https://ghfast.top/https://github.com/arvidn/libtorrent/releases/download/v2.1.2/libtorrent-rasterbar-2.1.2.tar.gz"
+  sha256 "3362546d9cd71b9e49ee6cac7d3f1f914ce9cdb217c86b63d5b22cbed0334dbc"
   license "BSD-3-Clause"
-  revision 1
   compatibility_version 1
   head "https://github.com/arvidn/libtorrent.git", branch: "RC_2_1"
 
@@ -14,13 +13,11 @@ class LibtorrentRasterbar < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "4bc6415df812cb83ee6d9932699ed5e5f95371d45097b02cf5e71f04ece6e977"
-    sha256 cellar: :any, arm64_tahoe:       "0fc57ac1c7e5282e8ee53d1f7669a43b83895ec5e9e01ec319fdc8588475c6fd"
-    sha256 cellar: :any, arm64_sequoia:     "cbd7bcc10d0f39a94ae4e840efb3d20276fed1ce35f712c0337583338ef4cad2"
-    sha256 cellar: :any, arm64_sonoma:      "8d023bf7105bb19804d1687f176bb6d2d222865c23599471aa9e37f93e5b96f1"
-    sha256 cellar: :any, sonoma:            "b743c21dc561aec8a7aba1fa16e22fb00c831801ba5394dabef728a33d5117cb"
-    sha256 cellar: :any, arm64_linux:       "991c9397f2dabaa5165fbd54b497e5c7cc5a915bdfae0b0333a99bbe54490406"
-    sha256 cellar: :any, x86_64_linux:      "e47e247a055d9d0a9fc1029f90ee38f3d7e5391430ab971ccf4ff6d8a83480af"
+    sha256 cellar: :any, arm64_golden_gate: "f6ed443b032213a748b3f8e7df0663f59c41f70270ecf363067ea52d3277af75"
+    sha256 cellar: :any, arm64_tahoe:       "84b63ac9b2d8b12fb8f2632ccb6e44f3d2812ceec5df6fe107a90e94b7685fea"
+    sha256 cellar: :any, arm64_sequoia:     "2da0349cae7639d7698e9774672a0507ddb4ce8468fa791f6be2c9c2546d8fdb"
+    sha256 cellar: :any, arm64_linux:       "1a855d90bd7f38a193aedb2c1aaa807785552caf8b782eee85d0b54d77663a64"
+    sha256 cellar: :any, x86_64_linux:      "b7f044c2bd078f594284b5f40deac776aae1f7afb00c4b38b6ac61f6df07025f"
   end
 
   depends_on "cmake" => :build

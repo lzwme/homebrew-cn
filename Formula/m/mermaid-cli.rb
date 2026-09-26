@@ -1,17 +1,16 @@
 class MermaidCli < Formula
   desc "CLI for Mermaid library"
   homepage "https://github.com/mermaid-js/mermaid-cli"
-  url "https://registry.npmjs.org/@mermaid-js/mermaid-cli/-/mermaid-cli-11.17.0.tgz"
-  sha256 "23f2c2722262d98347cf979da6d88bc8693eef2cd8798a38ac393a7f006938a0"
+  url "https://registry.npmjs.org/@mermaid-js/mermaid-cli/-/mermaid-cli-12.0.0.tgz"
+  sha256 "b5b43bc60c2e6bc87f7d12ab3e6e78883c799213ea5b015363fecdd5e6363c84"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_golden_gate: "ed41fc00a91e5b7321eac1209ca7410b1939c0d25c87f9ea281603a27df8aed5"
-    sha256 cellar: :any,                 arm64_tahoe:       "95231880e1f86550a5b54289b9f6999068cb3a5323c8ab88de0e408060dd2017"
-    sha256 cellar: :any,                 arm64_sequoia:     "95231880e1f86550a5b54289b9f6999068cb3a5323c8ab88de0e408060dd2017"
-    sha256 cellar: :any,                 arm64_sonoma:      "95231880e1f86550a5b54289b9f6999068cb3a5323c8ab88de0e408060dd2017"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "628623b4f972e428b4965ab1c37ffb71755adb6ff7ffe609426dfc4250c97ff2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "2a3b6a08e80f3c39f4b733c3bbfd4ce6ec5f46ff0d13ec89ddd5c844cac85d96"
+    sha256 cellar: :any,                 arm64_golden_gate: "db05323cf6a5485488e6f9f1efd153a7f191a625fae3e7afca744db36fff9371"
+    sha256 cellar: :any,                 arm64_tahoe:       "db05323cf6a5485488e6f9f1efd153a7f191a625fae3e7afca744db36fff9371"
+    sha256 cellar: :any,                 arm64_sequoia:     "db05323cf6a5485488e6f9f1efd153a7f191a625fae3e7afca744db36fff9371"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "417e2f41f528b3af2831669949bd1777ee4dee3f7fd9f598afbeb1e6b3d6c7b8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "1c56ffe763302fb7f3c76785750fed99e1bf9c80c7aeb750deac0f913840997a"
   end
 
   depends_on "node"

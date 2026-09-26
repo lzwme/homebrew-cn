@@ -146,7 +146,7 @@ Homebrew-homebrew-core/Formula/a/anchor.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/ancient.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/angband.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/angle-grinder.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/a/angular-cli.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/a/angular-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/animdl.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/ansible-builder.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/ansible-cmdb.rb, Homebrew/homebrew-core, 1
@@ -3695,6 +3695,7 @@ Homebrew-homebrew-core/Formula/k/kubectl-ai.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kubectl-cnpg.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/k/kubectl-explore.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kubectl-klock.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/k/kubectl-radar.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kubectl-rook-ceph.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kubectl-tree.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kubectx.rb, Homebrew/homebrew-core, 1
@@ -8672,6 +8673,7 @@ Homebrew-homebrew-cask/Casks/a/active-trader-pro.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/activedock.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/activitywatch.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/activitywatch@beta.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/a/activitywatch@experimental.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/actual-odbc-pack.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/actual.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/adapter.rb, Homebrew/homebrew-cask, 0
@@ -8793,6 +8795,7 @@ Homebrew-homebrew-cask/Casks/a/amitv87-pip.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/ammonite.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/amneziavpn.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/amore.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/a/amp-app.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/ampps.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/anaconda.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/ananas-analytics-desktop-edition.rb, Homebrew/homebrew-cask, 1
@@ -12058,6 +12061,7 @@ Homebrew-homebrew-cask/Casks/font/font-p/font-patua-one.rb, Homebrew/homebrew-ca
 Homebrew-homebrew-cask/Casks/font/font-p/font-pavanam.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-p/font-paytone-one.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-p/font-peddana.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/font/font-p/font-pennstander.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-p/font-peralta.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-p/font-permanent-marker.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-p/font-petemoss.rb, Homebrew/homebrew-cask, 0
@@ -13580,6 +13584,7 @@ Homebrew-homebrew-cask/Casks/l/lo-rain.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/loading.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/loaf.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/l/lobehub.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/l/local-studio.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/l/local.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/local@beta.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/localcan.rb, Homebrew/homebrew-cask, 0

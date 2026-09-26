@@ -1,8 +1,8 @@
 class Feluda < Formula
   desc "Detect license usage restrictions in your project"
   homepage "https://github.com/anistark/feluda"
-  url "https://ghfast.top/https://github.com/anistark/feluda/archive/refs/tags/v1.16.0.tar.gz"
-  sha256 "3a5bb932b07a7f9e8433fb61ee5e8a7cea8648e35d5d58001a77261f6b42e917"
+  url "https://ghfast.top/https://github.com/anistark/feluda/archive/refs/tags/v1.17.0.tar.gz"
+  sha256 "67f2c71fa894480d9ac8d03abd786b34be07ad0c7b117a40adadf5c8bd98168f"
   license "MIT"
   head "https://github.com/anistark/feluda.git", branch: "main"
 
@@ -15,13 +15,11 @@ class Feluda < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "cf27d193ce09625ecaf450dfde026d41ec3b79589bd403adba9fdf3f0e46cde0"
-    sha256 cellar: :any, arm64_tahoe:       "24b45110ba49ce61728bd9a6cdcbac2891debd3b7ddc176c2f4f93ac4e2a114a"
-    sha256 cellar: :any, arm64_sequoia:     "f5a31c5fe52eac0075ed53e994752838dba8d9b2b699880604894e8fd76bdd2c"
-    sha256 cellar: :any, arm64_sonoma:      "bf5dbe9b74fc166acf2f639f02b7a2f2ab34a472e7b25a4c6616f4f0ed8ae603"
-    sha256 cellar: :any, sonoma:            "bf4b63689a3f5725ee2f1dec4f28cc95a109e7a182aa56fb15a1d96e60d41620"
-    sha256 cellar: :any, arm64_linux:       "474e4dce4532d40a7f59c802e2be03d5d48dfbe303d176c7d625694e771ce1f3"
-    sha256 cellar: :any, x86_64_linux:      "216d7d3ceb826964ef28cb3ecea8d58be9eb043cf8558680b3744397fb796b22"
+    sha256 cellar: :any, arm64_golden_gate: "b822d0b5dd4903d301bf4eb0ea6bd10e0920d0bdfbe9011372b007404dd4ed75"
+    sha256 cellar: :any, arm64_tahoe:       "bd29cbb04b417ae0cd4b4819867e09ead478363ecf44d69c8b185d1cc41a55e7"
+    sha256 cellar: :any, arm64_sequoia:     "bfc75246c9b5503b06628d7adfe8e9602a3aeca0559519c359840ea03d1abbc2"
+    sha256 cellar: :any, arm64_linux:       "2b5d291a421bc04114aac3b6aa84a273f793762c3e20875ceda9a058925fcfa8"
+    sha256 cellar: :any, x86_64_linux:      "516caafa476dcd77ed450b3f2ea0e190fdbd496d96a5631e988038f954a24b7e"
   end
 
   depends_on "pkgconf" => :build

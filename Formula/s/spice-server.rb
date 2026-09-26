@@ -63,6 +63,8 @@ class SpiceServer < Formula
           return 0;
       }
     C
+
+    ENV.prepend_path "PKG_CONFIG_PATH", formula_opt_lib("openssl@3")/"pkgconfig"
     flags = shell_output("pkg-config --cflags --libs spice-server").chomp.split
     system ENV.cc, "test.c", *flags, "-o", "test"
 

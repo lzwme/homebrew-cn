@@ -1,16 +1,16 @@
 class Containerd < Formula
   desc "Open and reliable container runtime"
   homepage "https://containerd.io"
-  url "https://ghfast.top/https://github.com/containerd/containerd/archive/refs/tags/v2.4.0.tar.gz"
-  sha256 "01b8974eac869ee146b510af13b56653e4c3da16aa71342dd3ba244c1ac01ab0"
+  url "https://ghfast.top/https://github.com/containerd/containerd/archive/refs/tags/v2.4.1.tar.gz"
+  sha256 "c213c8222ec2b51f88eb541cd75e5905b35ae7d0b82d6d812f0b8121d11131a6"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "e94eebb687355336d4bf29b816203b72a4da365a41956811d4c2df6eb8fca623"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "cf3e87b9bbfbed99dde475d0ef08270910e28ec33da043e1e5add735f0d281f7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "1bfb08f58ba3ffc07529092d1a21f91ebd9f7de4448417270e4259b8738790dd"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "83fcbe6ded475ad0ecfe69a2d1f7583c355e7f6f6d0d8cb77e3545eac3b0c847"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "8d7b705ef2359eeb4c372cec5fb0f60b8e68cde03b9dc479978c96087ed346df"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "55ca39aae736fd6b33de4a6db606ee46ef106d7fef27fc7ac8897c6e0212c41f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "8aa759fa39ed25938df9d693a8f59468c617cfa5412b31174e237cf36b054712"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "80689caf28f38fe8eed14b97d7dab1b7f8e9f2cdeeeb7e381f4a6950c9ec4e32"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "bd57730329fda483eda8eb3927b2d5d12ada22ee2d2344beb13486b20483d3df"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "da1fd1121e6814bbeb70926e6f89e74a96358a65117ca11bc918262c0f976764"
   end
 
   depends_on "go" => :build

@@ -13,26 +13,27 @@ class Libfixbuf < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_golden_gate: "351f17c67e9a36c65cd2d680ad5ef0f4c0f96638ce4e1004724368e46ad3a866"
-    sha256 cellar: :any,                 arm64_tahoe:       "e2b8afeb4d9ce3d8d2b55f488e3f4df93c85791bb64b32c33fcc1d662eba7e11"
-    sha256 cellar: :any,                 arm64_sequoia:     "3bfaea10816dbd5dd6c4e51a9755e07bea1929768023f0eec78bb69ca2c24cbf"
-    sha256 cellar: :any,                 arm64_sonoma:      "3fa7c6d28c84ffc5300bd79dbb67ddeeecdd572caab22529bdebfb9eb735163c"
-    sha256 cellar: :any,                 sonoma:            "64d4455a477ea65a1cc54c6f0633286d42c35da7328e04708a56b45cac3a095c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "d339e5ada6c9d514e5d5dd4e757f52673aeb189cc151d29bdce63c48be1e0f82"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "8ce88f5bcefb33debbe42fb4c64f5d72488988d59a110ad95c6598a3abfbddb3"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "06a5af7406b391531dbba99e4b0459c9b6577108f4d0eed1a8f2af8e344af234"
+    sha256 cellar: :any, arm64_tahoe:       "882ab760594b41aa9201adb97609adadbc5687b18e99e1c515aa6ec3d14ee224"
+    sha256 cellar: :any, arm64_sequoia:     "55fd6d658098efbc3bedd78c1d308e08a25217ce572bfdb3ea35a74b08ffad42"
+    sha256 cellar: :any, arm64_linux:       "e0922aac6dddc9a1e5b9bfe77e05c151dc785de184a439d171e15c6e4e0c5ad5"
+    sha256 cellar: :any, x86_64_linux:      "5faf63faafa693d0e2f5f0b447033b0aa08241539bd245f39f4e69b0047fc3d0"
   end
 
   depends_on "pkgconf" => [:build, :test]
 
   depends_on "glib"
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   on_macos do
     depends_on "gettext"
   end
 
+  deny_network_access!
+
   def install
-    system "./configure", "--with-openssl=#{formula_opt_prefix("openssl@3")}",
+    system "./configure", "--with-openssl=#{formula_opt_lib("openssl@4")}/pkgconfig",
                           "--mandir=#{man}",
                           *std_configure_args
     system "make", "install"
@@ -56,6 +57,7 @@ class Libfixbuf < Formula
       }
     C
 
+    ENV.prepend_path "PKG_CONFIG_PATH", formula_opt_lib("openssl@4")/"pkgconfig"
     flags = shell_output("pkgconf --cflags --libs libfixbuf").chomp.split
     system ENV.cc, "test.c", "-o", "test", *flags
     system "./test"

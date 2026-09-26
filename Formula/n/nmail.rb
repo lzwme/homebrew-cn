@@ -1,19 +1,17 @@
 class Nmail < Formula
   desc "Terminal-based email client for Linux and macOS"
   homepage "https://github.com/d99kris/nmail"
-  url "https://ghfast.top/https://github.com/d99kris/nmail/archive/refs/tags/v5.15.8.tar.gz"
-  sha256 "51f763e310c5f4467a17a926a0e3b8b2eaeb166af888b3f0277c46b2961d56e8"
+  url "https://ghfast.top/https://github.com/d99kris/nmail/archive/refs/tags/v5.16.4.tar.gz"
+  sha256 "5e563291964d60d4c73aef6e1d7067958960be4a9e99c1c3735dde82c5166dbe"
   license "MIT"
   head "https://github.com/d99kris/nmail.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "b028b1d924be4e5781563e16f197a07f51920acb6fbd02115e8e6e5dece55513"
-    sha256 cellar: :any, arm64_tahoe:       "d03f95813a44d8d10823aa7658a3a317dafa3090c72265823b9222a7e55ab0e2"
-    sha256 cellar: :any, arm64_sequoia:     "743f40ad3da2dabbeb12cf886b5d421a40777c31d4fd9c0b997bef713d21c472"
-    sha256 cellar: :any, arm64_sonoma:      "63a7aac49b893b99575e345a09092f24c3e3b86c40314323b96b2c89bde25cbd"
-    sha256 cellar: :any, sonoma:            "430855416092be503b0c30718d3c23dd2545986a8cc489d72611d8cd3badcf0e"
-    sha256 cellar: :any, arm64_linux:       "ebc0469ab79db456e1ef77c67a5a5c742a1b36cfa4b90ff8f2eab28b1c5d6967"
-    sha256 cellar: :any, x86_64_linux:      "b46e3c70199307c937a6c0723a42bc98def0096a8acbea769652247870f5545f"
+    sha256 cellar: :any, arm64_golden_gate: "1f0472adc9c25a53e40d071ee93295adf21701290a8f7ae1d742a13bcb01d544"
+    sha256 cellar: :any, arm64_tahoe:       "c1d29d5ba630473e179744cd7fded0264a2a54e3ab3222f10be470cecefc5ebd"
+    sha256 cellar: :any, arm64_sequoia:     "67035bba568b6bcf6ceb140f537582b1b794f2775d1f15a67622709468b787dd"
+    sha256 cellar: :any, arm64_linux:       "77bd992de07b6d154337ee7338e75b95566666af141a6034ecf7ddd149c47ede"
+    sha256 cellar: :any, x86_64_linux:      "9e53a62dff2e1f017609ec14b4a295b13d53557f5a6cb934a7e9496141842ec2"
   end
 
   depends_on "cmake" => :build

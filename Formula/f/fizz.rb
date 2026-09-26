@@ -85,7 +85,8 @@ class Fizz < Formula
 
     ENV.delete "CPATH"
 
-    args = OS.mac? ? [] : ["-DCMAKE_BUILD_RPATH=#{lib};#{HOMEBREW_PREFIX}/lib"]
+    args = ["-DCMAKE_PREFIX_PATH=#{formula_opt_prefix("openssl@3")}"]
+    args << "-DCMAKE_BUILD_RPATH=#{lib};#{HOMEBREW_PREFIX}/lib" if OS.linux?
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     assert_match "TLS", shell_output("./build/test")

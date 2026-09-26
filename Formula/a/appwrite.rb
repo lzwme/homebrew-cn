@@ -1,17 +1,16 @@
 class Appwrite < Formula
   desc "Command-line tool for Appwrite"
   homepage "https://appwrite.io"
-  url "https://ghfast.top/https://github.com/appwrite/sdk-for-cli/archive/refs/tags/27.3.0.tar.gz"
-  sha256 "363950af2290b149d5ea376e1f7dd202d61a3a38f3b536bb2fcefd515a1c9a57"
+  url "https://ghfast.top/https://github.com/appwrite/sdk-for-cli/archive/refs/tags/28.0.0.tar.gz"
+  sha256 "fde62b48a9df1adf85d25f7d6a1b970fc10277f021dd238a010007aba67b33ee"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "bd0c8a4785bb6944364a965ef3c15987c859c18e0d80dccc559d3c5cf4aeca51"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "bd0c8a4785bb6944364a965ef3c15987c859c18e0d80dccc559d3c5cf4aeca51"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "bd0c8a4785bb6944364a965ef3c15987c859c18e0d80dccc559d3c5cf4aeca51"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "bd0c8a4785bb6944364a965ef3c15987c859c18e0d80dccc559d3c5cf4aeca51"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "3a04abd5e78b12d6d40ab45fb69872059e3f10df2f10f13478daec3c9cdbffc8"
-    sha256 cellar: :any,                 x86_64_linux:      "0a334eda8cd171ea41f0a2b7336080b5ec8f1450495b6e2fb30d6154cd1a24fa"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "8ce7fe1234216aa49f80fece2fe2708d1a528c639d9351315e8b134c9c408d99"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "8ce7fe1234216aa49f80fece2fe2708d1a528c639d9351315e8b134c9c408d99"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "8ce7fe1234216aa49f80fece2fe2708d1a528c639d9351315e8b134c9c408d99"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "bdeb607b3d482b673eb0b32803a96749b230991473ac42d78b38b0ba864284f7"
+    sha256 cellar: :any,                 x86_64_linux:      "d4b01d62fe9ee3a033f8344b51aee1b30a55e0206daa515996a484125b4321f0"
   end
 
   depends_on "go" => :build

@@ -2,16 +2,17 @@ class Superseedr < Formula
   desc "BitTorrent Client in your Terminal"
   homepage "https://github.com/Jagalite/superseedr"
   url "https://ghfast.top/https://github.com/Jagalite/superseedr/archive/refs/tags/v1.0.15.tar.gz"
-  sha256 "f8afb92fe959b42007eeaceb9328cb96cbe095a91510aea15c042c9befbb4b0e"
+  sha256 "ca658aefa9d39656cffc8af2a0005bf27f9d61bc8d97afdb059dbd970cc89bfa"
   license "GPL-3.0-or-later"
   head "https://github.com/Jagalite/superseedr.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "119d41bf48e675718af7128fa491d0164c620bec4c125e1eb4a0c692b3f0cd67"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "431a872758d3e41fb4e0fddf93ce168413c5daf9e9bcdffaaea7c3894c54130d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "9d7e04178806a883150f93c8bee52fafbaf1f1be3a5a5791119fac22ca970d7f"
-    sha256 cellar: :any,                 arm64_linux:       "0963b90c6d85df5eeb17cafe2e73680de1acca47f8bd2e2bfc6f2c80cb316f08"
-    sha256 cellar: :any,                 x86_64_linux:      "957846f77265d812d21a576932208188240d5dc9ce6d5964106fe46ced4dcfed"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "40587c60d44115fe256e7eed2fac0d43a99d4c4ba9b0d3f73e972f6c776e29c2"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "7b392bf282f5faa2c97ba6dd3f9a992636e2dc65e9ec9a4f689b66f96e073583"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "9711e44996320359935e02f814cd3793fb5ac781c297cdf681e1260044e859e1"
+    sha256 cellar: :any,                 arm64_linux:       "c7df2b7c87268e904589d6756b3c01907df0051c8622b02be806490618af643a"
+    sha256 cellar: :any,                 x86_64_linux:      "b036ecba4d465558e9e3eaba9aafc5824f947eb49f31c8f7f80dbdb1013dea0e"
   end
 
   depends_on "pkgconf" => :build

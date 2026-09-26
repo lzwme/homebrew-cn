@@ -1,19 +1,17 @@
 class Miller < Formula
   desc "Like sed, awk, cut, join & sort for name-indexed data such as CSV"
   homepage "https://github.com/johnkerl/miller"
-  url "https://ghfast.top/https://github.com/johnkerl/miller/releases/download/v6.21.0/miller-6.21.0.tar.gz"
-  sha256 "d05b6edb506c16d448e9c66308b0169c80c93e0f3f2ef6ad248d22520684990f"
+  url "https://ghfast.top/https://github.com/johnkerl/miller/releases/download/v6.22.0/miller-6.22.0.tar.gz"
+  sha256 "a6fba59814a49821896be2096aab80eb4818eb26fd2bfce72a231623be38b246"
   license "BSD-2-Clause"
   head "https://github.com/johnkerl/miller.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "5b57bf2001d027d2c5f42199e404075995459c8b579858e1e48fe43472247b05"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "3887ac6b342f53eaa8c92f8a51e96e8ffadf3b2df11979e5addb31b5a25a9502"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "b4be4e1b6ef9dee802b72ba1f397d57bba85e4cdd1f4b9b5d3a2328e206353d6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "3915388a6c1334b285898a9dff8df2359ecf801baf40027fb67def6de803ccc4"
-    sha256 cellar: :any_skip_relocation, sonoma:            "36a9e686fcd4c2f54d604a37fc70316e1800e7b743dc81a4a5a55942da6cf4c5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "c11495d2c6c448791a7adcdce76482e6d08e6ea7fead526a8edd41a41d34475e"
-    sha256 cellar: :any,                 x86_64_linux:      "92472be416628948acb0e2627976a29680d0222b69f4b62f2d673a5395e1a105"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "ae20086e916bbe716850278ff3f996f8a48b09420d37add897fea3cb5d3e3bb4"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "cb845519ef5f71c8b53284ab935ae550f1397846e4c0cffeeb7c2f093608ffdd"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "cf1459de90c3878d38fd340ef13073067c1096bca9bd92d52f797088dae95e19"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "db09359fe64ff5f95977cdaf16aa2aaaca60d2a1321acf174e076e7c03881dba"
+    sha256 cellar: :any,                 x86_64_linux:      "466df6f0ce46908a9ccac859a6207a03ac70f3eeb95026c0c4b6264a666db03a"
   end
 
   depends_on "go" => :build
