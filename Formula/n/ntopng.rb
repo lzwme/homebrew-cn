@@ -50,6 +50,8 @@ class Ntopng < Formula
     sha256 "bac497857759e991fa4e1638bccf936cb36d10ad79273695a570272cc4891428"
   end
 
+  allow_network_access! :test
+
   def install
     # Remove bundled libraries
     rm_r Dir["third-party/{json-c,rrdtool}*"]

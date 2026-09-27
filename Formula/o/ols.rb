@@ -6,12 +6,12 @@ class Ols < Formula
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "a8c2c77dfc19c898fcacf0ce6e4281e17feb25ee43399e126b2922434eabcde1"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "1bd6653534dc50b6e15eabdf6fe16242ad4cce655c7c7a2fa363d1cf146267ed"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "6a5df06f67d0d20f5f0a472f50abe8a6e8384ddd67fae6cea47a9df78afc1c15"
-    sha256 cellar: :any,                 arm64_linux:       "3b2ea7d4c75442ad560218248b1bf718e69366208e187831f83e0e3c4b2ef048"
-    sha256 cellar: :any,                 x86_64_linux:      "12348430da10574489ec6e59cd3a9a44eced5aa67b1297f61434581d802022ad"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "d1eea32145df80d1bba93312ec2f550b41dcedb3aab32265522e029fe09a3d86"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "0a5a601616565b0bdcfaa484ffe0f589677848e88592b16722d48febeaa01b91"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "52f49213b3a19715408ff48c32af6105d876955e22ccb39b60c4f11eacdc0007"
+    sha256 cellar: :any,                 arm64_linux:       "12d2f63811a29d6d45042aa194651bd77d843038d925be9bb926062d67d22fd9"
+    sha256 cellar: :any,                 x86_64_linux:      "d454e3a6cc1e7d657c826533524b87b56bbf3b728775b68319515a743a253f72"
   end
 
   depends_on "odin" => :build
@@ -29,10 +29,11 @@ class Ols < Formula
       -out:ols
       -collection:src=src
       -define:VERSION=#{version}
-      -microarch:native
       -o:speed
       -no-bounds-check
     ]
+    # Odin defaults to x86-64-v2, which is newer than Homebrew's oldest supported x86_64 CPU
+    args << "-microarch:#{ENV.effective_arch}" if Hardware::CPU.intel?
     system "odin", "build", "src/", *args
 
     libexec.install "ols"

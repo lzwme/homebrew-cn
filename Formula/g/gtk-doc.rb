@@ -3,10 +3,9 @@ class GtkDoc < Formula
 
   desc "GTK+ documentation tool"
   homepage "https://gitlab.gnome.org/GNOME/gtk-doc"
-  url "https://download.gnome.org/sources/gtk-doc/1.36/gtk-doc-1.36.1.tar.xz"
-  sha256 "0e517a5f97069831181be177516bde8aa8b3922398f2bdb09e265d22aecadbc5"
+  url "https://download.gnome.org/sources/gtk-doc/1.37/gtk-doc-1.37.0.tar.xz"
+  sha256 "2facfb530ddcd20c03ed4758ef934e832626c393e2cacd23fc1249b7ed0e4246"
   license "GPL-2.0-or-later"
-  revision 1
 
   # We use a common regex because gtk-doc doesn't use GNOME's
   # "even-numbered minor is stable" version scheme.
@@ -16,13 +15,11 @@ class GtkDoc < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "148169825f695d4e693f2efd71530d16ecf08bbd7641a1e613a4b75d3703e1dd"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "10ffbf3cbe6b5a3aa9707a9ac01c256b208a92f179fa279ba1c42aa641bc36c7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "faf1207cdda1baeb9fe4b6282394afc9465ac6192d356315ec3f590a5f354896"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "0e1d337546ff4c8dda08e1d70069985675009c2c88e1c510c5b278e6bf62ee29"
-    sha256 cellar: :any_skip_relocation, sonoma:            "4899cf390c65bef2d73d072f1a228bc2def11be1480e4a2f74f23609bf439325"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "cf876fe048491a3d10bd980e4022ac7cce4761a931651b29d85606a0bb06fc33"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "7dfea56e91394088e0dc7b8fc79a56810342b8981c86a3b45eec0baca3aa6b2a"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "7d1898204cd8ca31f070f6330031edd3f1dfa73dc9deba726bc70820bba45f25"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "c60299b698203012eca8ba77eb2ef628e2e9a49c76b3fac7f649219e090723c5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "cb13c51e5ef584c0088a2a9696ca55ecb304bb281503aaed354c4be0f8321080"
+    sha256 cellar: :any,                 arm64_linux:       "8ede875de3135522b871f54fe7898a712d39af955a3bf42db0a8aa9e68b0786a"
+    sha256 cellar: :any,                 x86_64_linux:      "85fcd7f3589814d422c46975c53a1b1e187b8187e07a4a2f693b4075555cad88"
   end
 
   depends_on "meson" => :build
@@ -39,13 +36,13 @@ class GtkDoc < Formula
                 extra_packages: %w[lxml pygments]
 
   resource "lxml" do
-    url "https://files.pythonhosted.org/packages/28/30/9abc9e34c657c33834eaf6cd02124c61bdf5944d802aa48e69be8da3585d/lxml-6.1.0.tar.gz"
-    sha256 "bfd57d8008c4965709a919c3e9a98f76c2c7cb319086b3d26858250620023b13"
+    url "https://files.pythonhosted.org/packages/23/ad/28ecd7cb894d172f3c9c80a075eeeb2017ac62e3632cee05a5f9493547eb/lxml-6.1.3.tar.gz"
+    sha256 "45222d94ddd511536f3b2f7d9deae3b2339b4ce0f075f1ca25703b07cad9dd21"
   end
 
   resource "pygments" do
-    url "https://files.pythonhosted.org/packages/c3/b2/bc9c9196916376152d655522fdcebac55e66de6603a76a02bca1b6414f6c/pygments-2.20.0.tar.gz"
-    sha256 "6757cd03768053ff99f3039c1a36d6c0aa0b263438fcab17520b30a303a82b5f"
+    url "https://files.pythonhosted.org/packages/49/2e/ced460408999b33da6b31b0021b0f37d329e202d4169aeb164493778f25b/pygments-2.21.0.tar.gz"
+    sha256 "610ca751c9bc2492b38eb9a38a7fbc93edbbb2d7182edaf34e66ae493dee5c8c"
   end
 
   def install

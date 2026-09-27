@@ -5,11 +5,11 @@ class Bsc < Formula
   head "https://github.com/B-Lang-org/bsc.git", branch: "main"
 
   stable do
-    url "https://ghfast.top/https://github.com/B-Lang-org/bsc/archive/refs/tags/2026.01.tar.gz"
-    sha256 "f9204b7d6efd6ac2b2c1b42c80b01d179319ac33575d258719eaf73be44d4ec5"
+    url "https://ghfast.top/https://github.com/B-Lang-org/bsc/archive/refs/tags/2026.07.1.tar.gz"
+    sha256 "819026c092715671b17003dd9bad4863498d89171bfbf0ad358905161cf80db2"
 
     resource "yices" do
-      url "https://ghfast.top/https://github.com/B-Lang-org/bsc/releases/download/2026.01/yices-src-for-bsc-2026.01.tar.gz", using: :nounzip
+      url "https://ghfast.top/https://github.com/B-Lang-org/bsc/releases/download/2026.07.1/yices-src-for-bsc-2026.07.1.tar.gz", using: :nounzip
       sha256 "a5114c8f1e04a75a06598ac9763922f9186554b6f1326c1454b2e06deafd5575"
 
       livecheck do
@@ -24,13 +24,11 @@ class Bsc < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_golden_gate: "b9a0b7be39f91fde2088e6def3420496d9ba28a4b34da95c10fa7814443825bf"
-    sha256 cellar: :any,                 arm64_tahoe:       "d8f0f4684c6942cb3f8bebaf6887a34b423f943dd14a7d732cf510d000f5aedf"
-    sha256 cellar: :any,                 arm64_sequoia:     "81122fad527aa5eb99d9f3eb6f020febfe0eecaacce237e6458b9fbf51c48113"
-    sha256 cellar: :any,                 arm64_sonoma:      "6eccf669a11573271f60e49d71a88d9205024363ed20926bef42f97898de2ab4"
-    sha256 cellar: :any,                 sonoma:            "b00f8030da0c9306aa05f303e1655a339e45b5a19b4265d9177609f928133e3b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "f1162728cde2aaddca9401e47a219a328c4885090333fb436052983b706b9bb1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "a5c042102cb67bdd8b81b9ae4e065bd41e413ede786fc2f9986c655e2ef7bb18"
+    sha256 cellar: :any, arm64_golden_gate: "0d8fd080c2542f5cb3024ae93843f7dae35ff3d02305c81782b21abfad22a0df"
+    sha256 cellar: :any, arm64_tahoe:       "6818e9977beaec7bd9f0f027dde1faf1a93ce43d942858bb76fe85baeee24ae5"
+    sha256 cellar: :any, arm64_sequoia:     "d641b4c1179b71a628b2e30f6080a8deffb31d3fd600417f7f6801d58d6b4bef"
+    sha256 cellar: :any, arm64_linux:       "40199a9fff3800260fbec86b0ef1e27c463f5ce95957d30d936c61df8fe6b97b"
+    sha256 cellar: :any, x86_64_linux:      "3207c503c9fe8e16b85592749476d3eeeb1145714400acf66d4a4fc3c8142eae"
   end
 
   depends_on "autoconf" => :build

@@ -65,6 +65,8 @@ class EtcdCppApiv3 < Formula
     resolves "https://github.com/etcd-cpp-apiv3/etcd-cpp-apiv3/pull/299"
   end
 
+  allow_network_access! :test
+
   def install
     system "cmake", "-S", ".", "-B", "build",
                     "-DCMAKE_CXX_STANDARD=17",

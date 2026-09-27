@@ -37,6 +37,8 @@ class Qtwebview < Formula
     depends_on "qtwebchannel"
   end
 
+  allow_network_access! :test
+
   def install
     args = ["-DCMAKE_STAGING_PREFIX=#{prefix}"]
     args << "-DQT_NO_APPLE_SDK_AND_XCODE_CHECK=ON" if OS.mac?

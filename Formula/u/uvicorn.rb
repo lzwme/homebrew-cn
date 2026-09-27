@@ -3,17 +3,17 @@ class Uvicorn < Formula
 
   desc "ASGI web server"
   homepage "https://uvicorn.dev/"
-  url "https://files.pythonhosted.org/packages/5d/ad/04bbb797c84fc1f26cb171f7394716f4865ffb8d8c5e1eef42565c2dfa6b/uvicorn-0.53.0.tar.gz"
-  sha256 "a9356f0cb89b3b8621529c5d5eebd69bfe154f4c3f68b4cf2de47e45fa855c2e"
+  url "https://files.pythonhosted.org/packages/da/34/30e9280707135d2cfc589dfff3cb796bd07a3aeb1a3e415ba09dd89d7bb4/uvicorn-0.54.0.tar.gz"
+  sha256 "a2e33cbfaa0306f8e6b0c13e0cb89d7d7a2da3e62b90c66e18c33d9807b28620"
   license "BSD-3-Clause"
   head "https://github.com/Kludex/uvicorn.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "575557c318b5fc62358c1bfa30e5c98b994c905a2f9589339be3f78919d032ed"
-    sha256 cellar: :any, arm64_tahoe:       "5f1a9f8ff90883b595150bd038af41336321f2984a5657f27af8d1506c8408d5"
-    sha256 cellar: :any, arm64_sequoia:     "7a05c0fbc40abf18c34ab77b143d24f055ca9c4d1d86c532d64a708b0f7a87c8"
-    sha256 cellar: :any, arm64_linux:       "013072f0d2f131e6e25d299902e150fd2dc6ce2028de3cb9270ee2757633d2dc"
-    sha256 cellar: :any, x86_64_linux:      "8e007f61488b53c40ae3f0b0f69b4421c0caf59bed80056abd072727f8bf6ec3"
+    sha256 cellar: :any, arm64_golden_gate: "18f5c54b3db0e37e6232e689eb2c6c41d28ba62b0423f3cf1d12984bd0e2c553"
+    sha256 cellar: :any, arm64_tahoe:       "d1821baf86612900513329415615ae47dcc9df098930f9f95c7db5202b0a35d2"
+    sha256 cellar: :any, arm64_sequoia:     "d71e0461cc9abf7c8b15d19b4fac129a742716759a804d33e226c90fc0647ddd"
+    sha256 cellar: :any, arm64_linux:       "2892ff997ffc9df3c67f568245956bb20d2861b87353b3dc80622fd448aadea0"
+    sha256 cellar: :any, x86_64_linux:      "f3cc76dd0bb5cd57b36764f4b72e6cf4248a4b3d1535c649459221442d4f5b65"
   end
 
   depends_on "rust" => :build
@@ -43,8 +43,8 @@ class Uvicorn < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/5f/f7/abb373e5757eaec4b922b92f97ec8d6d7e057cf06778247604fbc4e7c3f3/idna-3.19.tar.gz"
-    sha256 "5e0811a4383b21dc5838069f801c4fb62113b7447663d2530d2bd6e77b49bf15"
+    url "https://files.pythonhosted.org/packages/f5/08/8eea9d4b8302028f3abb2c0813953f7aec26d33b7a8960ed760e65ff29fa/idna-3.20.tar.gz"
+    sha256 "a7db850025b95ded1eae8a46181a1a6c56c92c96f0e2b005d9ff8dc0210cab44"
   end
 
   resource "python-dotenv" do
@@ -68,8 +68,8 @@ class Uvicorn < Formula
   end
 
   resource "watchfiles" do
-    url "https://files.pythonhosted.org/packages/cd/41/5e1a4bb12aac5f1493fa1bdc11154eca3b258ca4eba65d39c473fe19d8e9/watchfiles-1.2.0.tar.gz"
-    sha256 "c995fba777f1ea992f090f9236e9284cf7a5d1a0130dd5a3d82c598cacd76838"
+    url "https://files.pythonhosted.org/packages/b3/68/e6aa0b77d217b31f8f486ec0cdfe5e00e6e38dc0be657e7d85819b9faf0a/watchfiles-1.3.0.tar.gz"
+    sha256 "99aee4a07847c06820765fd7b1b49ceac4f3f711ccb7d104655a33231de1c207"
   end
 
   resource "websockets" do

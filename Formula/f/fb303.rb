@@ -60,10 +60,14 @@ class Fb303 < Formula
     CMAKE
 
     ENV.delete "CPATH" if OS.mac?
-    if Tab.for_formula(Formula["folly"]).built_as_bottle
+    folly = Formula["folly"]
+    if Tab.for_formula(folly).built_as_bottle
       ENV.remove_from_cflags "-march=native"
       ENV.append_to_cflags "-march=#{Hardware.oldest_cpu}" if Hardware::CPU.intel?
     end
+
+    openssl = folly.deps.find { |dep| dep.name.start_with?("openssl@") }
+    ENV.append_path "CMAKE_PREFIX_PATH", formula_opt_prefix(openssl.name)
 
     args = OS.mac? ? [] : ["-DCMAKE_BUILD_RPATH=#{lib};#{HOMEBREW_PREFIX}/lib"]
     system "cmake", "-S", ".", "-B", ".", *args, *std_cmake_args

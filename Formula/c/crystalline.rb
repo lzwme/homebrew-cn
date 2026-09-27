@@ -4,20 +4,21 @@ class Crystalline < Formula
   url "https://ghfast.top/https://github.com/elbywan/crystalline/archive/refs/tags/v0.20.0.tar.gz"
   sha256 "8693e91c0f2afa9afa66885aa2bbdc971e539ff95e3d89b2f5d499d07acad02d"
   license "MIT"
+  revision 1
 
   bottle do
-    sha256 arm64_golden_gate: "9dbee58249b91669e31b946cbbbdb5047a749e110c39506f381e1c265d4accef"
-    sha256 arm64_tahoe:       "53ee7da763c8fc480e2808debfbd0cd0606b8ec2c024a493bd816c6fdf49223e"
-    sha256 arm64_sequoia:     "a9bf68068f4926e1440f634f3c9b3363d30d13deb052b652656781947e52c404"
-    sha256 arm64_linux:       "6dec77b52072ddfbdcb23f290ad40b53aecf159cde525ce4dff7668382c4fea5"
-    sha256 x86_64_linux:      "9857bd43467e458008b04b7ae5701475b280d23fef6dc34412784db199fe8cb1"
+    sha256 arm64_golden_gate: "6ab9d531bcf06d3e4047657f7381b44981b5c0490888eac83700457438b40057"
+    sha256 arm64_tahoe:       "fcadc0e91448d09a06ad11ae9d47a183e31f2672d91b2a084e9022929b0f19c6"
+    sha256 arm64_sequoia:     "afd54b02d3320d7d80d912c9f3f76493f1c596af5c93791272f9e547fa211b6b"
+    sha256 arm64_linux:       "d7b8de1e6ebe6026c1cfc165c64c03e11a342d510ef66457e3fc81f13dc22aad"
+    sha256 x86_64_linux:      "c85501ee8bf9782375ddc4047bd27dd1d5ddab0a3d02ae86ce57aa4d43acc2aa"
   end
 
   depends_on "bdw-gc"
   depends_on "crystal"
   depends_on "libevent"
   depends_on "libyaml"
-  depends_on "llvm@22"
+  depends_on "llvm"
   depends_on "pcre2"
 
   deny_network_access!

@@ -20,6 +20,12 @@ class Dtm < Formula
 
   depends_on "go" => :build
 
+  allow_network_access! :test
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     system "go", "build", *std_go_args(ldflags: "-X main.Version=v#{version}")
     system "go", "build", *std_go_args(output: bin/"dtm-qs"), "qs/main.go"

@@ -1,8 +1,8 @@
 class Nushell < Formula
   desc "Modern shell for the GitHub era"
   homepage "https://www.nushell.sh"
-  url "https://ghfast.top/https://github.com/nushell/nushell/archive/refs/tags/0.115.1.tar.gz"
-  sha256 "06df93281a0f858019d09ea6cf821b19a7cd9017cdfb9e898cfe8dd4bd8101c2"
+  url "https://ghfast.top/https://github.com/nushell/nushell/archive/refs/tags/0.116.0.tar.gz"
+  sha256 "1174d023ffc8083750daec8ee2dfe6486a8ef9f5c22396aa675b61d1bb0fad2d"
   license "MIT"
   head "https://github.com/nushell/nushell.git", branch: "main"
 
@@ -13,13 +13,11 @@ class Nushell < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "26083e23245ced613c7cd224426d77775276f15c48a8463a0866d876fd09057a"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "7f678dfd862086ff6128b88dc81408627182bea32af9760922c901f33801507f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "8ee47a2bf7b7cf524b3d1efb16f98218aee0e7202db44971a799b0580c8af1dd"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "fba8d351459ae7d1087fbac9e60d76ce8dee32ca1c1dea55c500e80df5c83416"
-    sha256 cellar: :any_skip_relocation, sonoma:            "619eeee5c683cb390c7f7341544c1689de6b99d5fea3fb352e7fdadea996842b"
-    sha256 cellar: :any,                 arm64_linux:       "b51ec5cf71f930dd3ac9cb0a75039a240cc79310ba65e77948c4005523fd9cd1"
-    sha256 cellar: :any,                 x86_64_linux:      "5d781a13a8866c7ee34fb9277da469154b0dfd2977ada6024e7431a5417827fa"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "d603b3f6afa449b4ff7c1a323a13e3b31f9e26d43f663d35ad3e4c6e26d75c1f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "d2570af2675749c20604afafec125580e5164241b05871a96f9bee1fb89a1bad"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "daf066540cea5fa5ec1e51da261aaf62b11b7d04d961dbda524f2b508638adb4"
+    sha256 cellar: :any,                 arm64_linux:       "19b38f0346f4a6a82a2970a36c921eb455b26255ea42b1a04db4b545c5c2fbcc"
+    sha256 cellar: :any,                 x86_64_linux:      "c274b7a9cdbcfdb2c1d29662f68634a8a9dd572d950bfbe5c013dece7318c5e7"
   end
 
   depends_on "pkgconf" => :build

@@ -1,19 +1,17 @@
 class Bacon < Formula
   desc "Background rust code check"
   homepage "https://dystroy.org/bacon/"
-  url "https://ghfast.top/https://github.com/Canop/bacon/archive/refs/tags/v3.25.0.tar.gz"
-  sha256 "6657e968d189dd5c165dd6c9b97f667140baea87d126d765a2d5f1e97b007b26"
+  url "https://ghfast.top/https://github.com/Canop/bacon/archive/refs/tags/v3.26.0.tar.gz"
+  sha256 "d86249d01175f83ce30c7d52d36ed3422855c7eef00907161e673d490955702d"
   license "AGPL-3.0-or-later"
   head "https://github.com/Canop/bacon.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "2bcd86295f9becd3e8662ec8fd07d350095199e880c19e98177c8181213c6b08"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "a922e2c4abb065c3d9bb6aee311d7ae918b2210c6618894166b8f04e420376c1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "12e284f1aead5c76b7153595ef5f8cb77f83a9b1d1bdc84945c6f683bfe0393e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "4289a136184f5fe0ec034a0ffa815a1af735892813b5611e0c89cbc4f887f19e"
-    sha256 cellar: :any_skip_relocation, sonoma:            "c8723f7420ed15ae42e84a8db06c73bb4966b2353ed1e39e6e44181fea3fb29d"
-    sha256 cellar: :any,                 arm64_linux:       "411f3bfbf1dde219e349ee6ce981611388e3853ab355e275e2db6b9cae8273d9"
-    sha256 cellar: :any,                 x86_64_linux:      "cd2f9ac5770d9d017d36f76803c3d69339bd21500e54526cc83a424d7ea34357"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "ca223043e4a28db5fa369a5ffc8c14368112f49e0940c242f3880eb6d2a67a54"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "b27d3533ce8c8ac7abc1737c3d2d7f8fbe1be1515e952b32c5b42ac247d9bae6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "9084b6e9ad5c57572f84e0175f2f20e3ba1ebb14660bc89884478a844b7a4959"
+    sha256 cellar: :any,                 arm64_linux:       "b397d1c665129398b4742a7a8ac6167bb7315ee5bc12b72a94db0b0b83a67b1a"
+    sha256 cellar: :any,                 x86_64_linux:      "70153aee87958cd6b3b49c161c78fe1c6c179729b5d07cec6ebd9de9c14211e0"
   end
 
   depends_on "pkgconf" => :build

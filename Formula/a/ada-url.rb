@@ -76,15 +76,11 @@ class AdaUrl < Formula
     system ENV.cxx, "test.cpp", "-std=c++20", "-I#{include}", "-L#{lib}", "-lada", "-o", "test"
     assert_equal "http:", shell_output("./test").chomp
 
-    if OS.mac?
-      output = shell_output("#{bin}/adaparse -d http://www.google.com/bal?a==11#fddfds")
-    else
-      require "pty"
-      PTY.spawn(bin/"adaparse", "-d", "http://www.google.com/bal?a==11#fddfds") do |r, _w, pid|
-        Process.wait(pid)
-        output = r.read_nonblock(1024)
-      end
-    end
-    assert_match "search_start 25", output
+    require "pty"
+    output_log = testpath/"output.log"
+    test_url = "http://www.google.com/bal?a==11#fddfds"
+    pid = PTY.spawn(bin/"adaparse", "-d", test_url, [:out, :err] => output_log.to_s).last
+    Process.wait(pid)
+    assert_match "search_start 25", output_log.read
   end
 end

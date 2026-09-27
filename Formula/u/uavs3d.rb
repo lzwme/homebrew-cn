@@ -24,6 +24,8 @@ class Uavs3d < Formula
 
   depends_on "cmake" => :build
 
+  allow_network_access! :test
+
   def install
     # CMAKE_INSTALL_RPATH doesn't seem to work here. https://github.com/uavs3/uavs3d/issues/42
     ENV["LDFLAGS"] = "-Wl,-rpath,#{rpath}"

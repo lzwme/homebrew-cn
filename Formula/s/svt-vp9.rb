@@ -16,6 +16,8 @@ class SvtVp9 < Formula
   depends_on arch: :x86_64
   depends_on :linux
 
+  allow_network_access! :test
+
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"

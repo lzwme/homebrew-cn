@@ -6,19 +6,34 @@ class Nanoarrow < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "98477a7f5c1640888a22a307515793f6d55af038e21c4704a90ab7c72a53f1f3"
-    sha256 cellar: :any, arm64_tahoe:       "c67c700f950c7bdef70be90de5f7d6d19af2f1e7bb131975c542bb0ff91b63c7"
-    sha256 cellar: :any, arm64_sequoia:     "56dd6ec71ec9a068df2f6c07163961b6457047854634ff65bc137120d0ffe4c3"
-    sha256 cellar: :any, arm64_sonoma:      "82b2b1a752b94b669c670610266f1f654b6dbcb0ee3545944f5cd36f762fa256"
-    sha256 cellar: :any, sonoma:            "73738cb0dce0d4c6a360ee252a0ed9feb0f52b5ea5bca6b2bfba2219bf05c64d"
-    sha256 cellar: :any, arm64_linux:       "e88bc81d87f9dbd08a57bbce97b58074012b169d89867e643ff8c43ddde2f051"
-    sha256 cellar: :any, x86_64_linux:      "0f656bab74987e1d095c0a5fb0c5ce96ac8d135cb1fc2cbfdd3b1ef3bc640fce"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "a9cf515ce719208286d7711e11310d2e17e494b53e903637e32d213c9ff59d4d"
+    sha256 cellar: :any, arm64_tahoe:       "05e38f5f26b17f039c6b44dbda1f9808ed840b2e79e8f4eae668ad4c57852bf2"
+    sha256 cellar: :any, arm64_sequoia:     "2dbc5294a93664ec30176212ce50918e856ffb76e4ba8de888ad21eec297ff08"
+    sha256 cellar: :any, arm64_linux:       "f70a15dd725d21f7b631d0599539c9f7061ef452ef67c370c28961068268d7de"
+    sha256 cellar: :any, x86_64_linux:      "29f62d89306b9b292d0b2fcb8f0caf3b738e2c569188b4238caefbfe24f1bff5"
   end
 
   depends_on "cmake" => :build
+  depends_on "flatcc"
+
+  # Allow linking against a shared flatccrt
+  patch do
+    url "https://github.com/apache/arrow-nanoarrow/commit/4c8bedd1db791914068cb19e17a98c5e6ef70582.patch?full_index=1"
+    sha256 "e77804be9bd97b638e4aa22f490c2bcb1646d8b6d5fa11b4e1a33ab82aca598f"
+    type :unofficial
+    resolves "https://github.com/apache/arrow-nanoarrow/pull/949"
+  end
+
+  deny_network_access!
 
   def install
-    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    args = %W[
+      -DCMAKE_INSTALL_RPATH=#{rpath}
+      -DNANOARROW_FLATCC_ROOT_DIR=#{formula_opt_prefix("flatcc")}
+      -DNANOARROW_IPC=ON
+    ]
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end
@@ -34,5 +49,19 @@ class Nanoarrow < Formula
     C
     system ENV.cc, "test.c", "-L#{lib}", "-lnanoarrow_shared", "-o", "test"
     system "./test"
+
+    # Test IPC functionality
+    (testpath/"test_ipc.c").write <<~C
+      #include <nanoarrow/nanoarrow.h>
+      #include <nanoarrow/nanoarrow_ipc.h>
+
+      int main() {
+        struct ArrowIpcInputStream input;
+        input.release = NULL;
+        return 0;
+      }
+    C
+    system ENV.cc, "test_ipc.c", "-L#{lib}", "-lnanoarrow_shared", "-lnanoarrow_ipc_shared", "-o", "test_ipc"
+    system "./test_ipc"
   end
 end

@@ -87,12 +87,6 @@ class B4 < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/b4 --version")
 
-    ENV["GIT_CONFIG_GLOBAL"] = "#{testpath}/.gitconfig"
-    (testpath/".gitconfig").write <<~EOS
-      [user]
-        name = Homebrew
-        email = foo@brew.sh
-    EOS
     assert_match "No thanks necessary.", shell_output("#{bin}/b4 ty 2>&1")
   end
 end

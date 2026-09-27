@@ -48,12 +48,6 @@ class GitSeries < Formula
   test do
     require "utils/linkage"
 
-    (testpath/".gitconfig").write <<~EOS
-      [user]
-        name = Real Person
-        email = notacat@hotmail.cat
-    EOS
-
     system "git", "init"
     (testpath/"test").write "foo"
     system "git", "add", "test"

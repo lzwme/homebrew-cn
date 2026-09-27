@@ -40,6 +40,8 @@ class Picotool < Formula
   depends_on "pkgconf" => :build
   depends_on "libusb"
 
+  allow_network_access! :test
+
   def install
     odie "pico-sdk resource needs to be updated" if build.stable? && version != resource("pico-sdk").version
 

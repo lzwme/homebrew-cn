@@ -32,6 +32,8 @@ class Gitea < Formula
 
   uses_from_macos "sqlite"
 
+  allow_network_access! :test
+
   def install
     ENV["TAGS"] = "bindata sqlite sqlite_unlock_notify"
     system "make", "build"

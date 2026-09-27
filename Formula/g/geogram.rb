@@ -29,6 +29,8 @@ class Geogram < Formula
     depends_on "tbb"
   end
 
+  allow_network_access! :test
+
   def install
     (buildpath/"CMakeOptions.txt").append_lines <<~CMAKE
       set(CMAKE_INSTALL_PREFIX #{prefix})

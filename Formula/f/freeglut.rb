@@ -33,8 +33,8 @@ class Freeglut < Formula
     sha256 "74ff9c3f722043fc617807f19d3052440073b1cb5308626c1cefd6798a284613"
   end
 
-  deny_network_access!
-
+  allow_network_access! :test
+  deny_network_access! [:build, :postinstall]
   def install
     args = %W[
       -DFREEGLUT_BUILD_DEMOS=OFF

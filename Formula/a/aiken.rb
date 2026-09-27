@@ -1,19 +1,17 @@
 class Aiken < Formula
   desc "Modern smart contract platform for Cardano"
   homepage "https://aiken-lang.org/"
-  url "https://ghfast.top/https://github.com/aiken-lang/aiken/archive/refs/tags/v1.1.23.tar.gz"
-  sha256 "e462fd02ee47546b7e1b42fcca54e4a70410fb0fe0e26cbb9f16f11292b2a5d1"
+  url "https://ghfast.top/https://github.com/aiken-lang/aiken/archive/refs/tags/v1.1.24.tar.gz"
+  sha256 "0508470ea01156ef7e275d97f12ceadc99d952897d4cb7454f790b15bfe31d0e"
   license "Apache-2.0"
   head "https://github.com/aiken-lang/aiken.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "7d66e57575a6d82f90cf32fafbf3d120b3fd10930540e6b770ffe0ef0b136ad5"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "f65184e76c5db347ce422eed5f1bf92ed85a5d3ed330fdb563a620da5e4e8e69"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "725814eeb6b54a36794a17f75e56e93056be91171c7eed4a65a583adfbbd98d4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "0fd508b880d89c9dbc999b11969ccb06e55fb02950cd69ae0d7da1cb62445391"
-    sha256 cellar: :any_skip_relocation, sonoma:            "7cc179f1156417c3cbd28713acc08fe26851cb01f303d2df874ad62ada871986"
-    sha256 cellar: :any,                 arm64_linux:       "85c3601261ad455b427fef0bc15b18b4d2041f4cd55d1e02f3ae040e0630ab0d"
-    sha256 cellar: :any,                 x86_64_linux:      "8d980c15ae590b1ce8b75f1674ae029ff2ac9b5ad7bc17995700ced021cc667f"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "88e769286eeb71f3346f50144b443bcc776e594e3dd52ebd0f0f08186f3f3a7d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "cbc54fab505addc057725bd0d8a9c22a70a1abd3b8a8ab1d90d13c4fc3369ca4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "923e0452295efde67f4e9da44f915dee9c276a7d2735427f76cbd4642b8196ea"
+    sha256 cellar: :any,                 arm64_linux:       "b74df01b8dca091b975db4e6c4b5e2050db76efbc07814316a4a6dea98646ebb"
+    sha256 cellar: :any,                 x86_64_linux:      "9a360a0c0a6fa3c6e7be5fafb6ca1874586f2cdff0523ae4b90fb615969de3ae"
   end
 
   depends_on "pkgconf" => :build

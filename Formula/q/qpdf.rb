@@ -1,18 +1,17 @@
 class Qpdf < Formula
   desc "Tools for and transforming and inspecting PDF files"
   homepage "https://qpdf.sourceforge.io/"
-  url "https://ghfast.top/https://github.com/qpdf/qpdf/releases/download/v12.4.1/qpdf-12.4.1.tar.gz"
-  sha256 "f045aa277be2356ff53a89a8622945958291177d2483afc20ede7c8a8cd3873c"
+  url "https://ghfast.top/https://github.com/qpdf/qpdf/releases/download/v12.4.2/qpdf-12.4.2.tar.gz"
+  sha256 "8a58af5b6141319287c1883bec8bd1bd545b7567b7fc5e6ce5d25a1c85f36397"
   license "Apache-2.0"
   compatibility_version 1
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "69b7950f76b696fc06b416534ae4cdba2a98823002dae19884e4bd1f865a26f0"
-    sha256 cellar: :any, arm64_tahoe:       "7e3e764df933760c100b2bd5d7177ebd0511733685e647e57d9e90afa01427c5"
-    sha256 cellar: :any, arm64_sequoia:     "e7703cd4a9b12bc795b2ef2cb95b16c21a695ffd044ea3d698a34dba474ae872"
-    sha256 cellar: :any, arm64_sonoma:      "a96ae2e150992a499f1eaf3cb00ae36c661cde22d3ae5de35a71d744f9d0ead8"
-    sha256 cellar: :any, arm64_linux:       "de9946eedec7edde9d4668a61216294b0c2377747e87fab4c97fe6cec3608c9e"
-    sha256 cellar: :any, x86_64_linux:      "e2f1bbcc782c60248f28f7925278977572c735a3ae82374f4692c59a10b4f6f1"
+    sha256 cellar: :any, arm64_golden_gate: "56e1db3fa21e577791180e1545bbcc5496bf13b3a3cc091a38f32fd5f14406c5"
+    sha256 cellar: :any, arm64_tahoe:       "0e28e074080e9421ef3864938178110b648ad30597b290851abb005435704c9a"
+    sha256 cellar: :any, arm64_sequoia:     "c53c9acf66108e0e2f91af257e4bf95a63b3bbf2ef457cbafde7ba26678e6770"
+    sha256 cellar: :any, arm64_linux:       "13a73184b81c17b76fbdf514367fcfbe91b17943c84ef10de8e8d37222ff7524"
+    sha256 cellar: :any, x86_64_linux:      "afefd57ebfb2ab05b5177d4aaba28c36fd6795e4919996a233e67f3fe5c461a7"
   end
 
   depends_on "cmake" => :build

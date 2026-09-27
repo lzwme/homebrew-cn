@@ -141,6 +141,8 @@ class PerconaXtrabackup < Formula
   # These fixes are analogous to the changes made by the FreeBSD patches.
   patch :DATA
 
+  allow_network_access! :test
+
   def install
     # Remove bundled libraries other than explicitly allowed below.
     # `boost` and `rapidjson` must use bundled copy due to patches.

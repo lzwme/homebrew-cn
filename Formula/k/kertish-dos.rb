@@ -21,6 +21,13 @@ class KertishDos < Formula
 
   depends_on "go" => :build
 
+  allow_network_access! :test
+
+  def fetch
+    system "go", "mod", "download", "-C", "fs-tool"
+    system "go", "mod", "download", "-C", "admin-tool"
+  end
+
   def install
     cd "fs-tool" do
       system "go", "build", *std_go_args(output: bin/"krtfs", ldflags: "-X main.version=#{version}")

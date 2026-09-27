@@ -3,18 +3,16 @@ class RobotFrameworkRobocop < Formula
 
   desc "Static code analysis tool (linter) and code formatter for Robot Framework"
   homepage "https://robocop.dev"
-  url "https://files.pythonhosted.org/packages/17/dc/96ab338c9f701ae26309943d92e77a4762feb2f8030c676e3caa8fa0be8b/robotframework_robocop-9.0.0.tar.gz"
-  sha256 "c176337e235a3ebf563bf7c064d6c2f890366133f8beccedf62152c2cb1a6009"
+  url "https://files.pythonhosted.org/packages/21/a6/3dee138281a211bb44cff4f3e88a48a1a0e0b782f1746a46b2da1970fa87/robotframework_robocop-9.1.0.tar.gz"
+  sha256 "1204a8645a48eaba0a7779035a8af3419a681fa3d511b875f57856e5357fe749"
   license "Apache-2.0"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "756a6b4b6e72eedaa917e03e2675d308f5e72f06b4fe1e852c063e2ab0c7bf67"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "b11fe41aaacc9ea88c8b04745143a738c9be95270a3292f00bfd75c1e4726bea"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "195774bd8bb8d649acab3afe19bdc6f56e0e6e640c449b84dfd9c6f026b6ea4f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "7023d91c06a214d988b3faed7d7cf4b1cea9e0de6c0f5de5cd8bdb30513d2601"
-    sha256 cellar: :any,                 arm64_linux:       "d1a90238ebc681d4e31e91264ebd1ff4f6ee914402fdd5c425137116545ea4b5"
-    sha256 cellar: :any,                 x86_64_linux:      "da514cb7f8273e40147b3c076b9804785e721fa267292fd071657e5ba609a1e5"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "4b2412a399ab2e1a79c083d83ae40a83f9c5b2c6fee39bee6b1beb82db96e32a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "5d746b9d2cf820ad07b8816a318e96eb68071d23b70d7fe70efbc121cc4c1ce7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "1ba782c253ec44bc7abae7a944eb96889a5c5bf80ca7a8d6e856cb9d2c3c666b"
+    sha256 cellar: :any,                 arm64_linux:       "9a32d972ad37653d440fc43dd3b34a7f4305a5b05a3f45d3e805b45a0cf22005"
+    sha256 cellar: :any,                 x86_64_linux:      "4b69ce7e8bd16218e655f9a9f04cf121f31589024dd1cfbaed06352ef220aa9a"
   end
 
   depends_on "python@3.14"
@@ -55,18 +53,13 @@ class RobotFrameworkRobocop < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/69/b7/802a56eca9f2fac455b8bab5375a2647b0f0e14a2cd63ef077de3c4a7658/platformdirs-4.11.7.tar.gz"
-    sha256 "4f41487eeeeeb07f3a6625e61d9bc0ae6809f92d3386dbd74392fbb76108104d"
+    url "https://files.pythonhosted.org/packages/53/0e/7be2983c52622d6c0899300f760e31ba143355cedf1afcb3e65689d5ca85/platformdirs-4.11.13.tar.gz"
+    sha256 "6985eefdc2298693e4ce1fe124645524cb967428eb6384e0ce5b49767e7ea8ba"
   end
 
   resource "pygments" do
     url "https://files.pythonhosted.org/packages/49/2e/ced460408999b33da6b31b0021b0f37d329e202d4169aeb164493778f25b/pygments-2.21.0.tar.gz"
     sha256 "610ca751c9bc2492b38eb9a38a7fbc93edbbb2d7182edaf34e66ae493dee5c8c"
-  end
-
-  resource "pytz" do
-    url "https://files.pythonhosted.org/packages/fb/48/fb042503b6ca6cd271261dc559fd6432f7d8c713153e9ec5c591af4dfc1c/pytz-2026.3.post1.tar.gz"
-    sha256 "2211d3fcf9a797d3405cac96ac7f61d80e6a644f72a3309607282fe8a2010c5d"
   end
 
   resource "rich" do
@@ -75,8 +68,8 @@ class RobotFrameworkRobocop < Formula
   end
 
   resource "robotframework" do
-    url "https://files.pythonhosted.org/packages/19/f3/ad51daf85d95848831601851598640f951a47a9f9de88039235cf58c5bb9/robotframework-7.4.2.tar.gz"
-    sha256 "1c934e7f43600de407860cd2bd2fdc41adad4a4a785d8b46b1ed485fdc0f6c9f"
+    url "https://files.pythonhosted.org/packages/66/77/5f60e5619082d387971d111c1354f1f529d2959ee742877982002d38d53d/robotframework-7.5.tar.gz"
+    sha256 "ff6233ff752a200ece4d0a6c59f6f9f7d0e96dcff0a7a3458296b997b812482e"
   end
 
   resource "shellingham" do

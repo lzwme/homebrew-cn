@@ -3,16 +3,16 @@ class Tox < Formula
 
   desc "Generic Python virtualenv management and test command-line tool"
   homepage "https://tox.wiki/en/latest/"
-  url "https://files.pythonhosted.org/packages/bf/92/1e311d474eb0892125dacb9aabe0b6a87945a69445cd9685b3f6a2d013ca/tox-4.64.2.tar.gz"
-  sha256 "64198e9beb76f907c4fe65a87e05c26aa3cd79c85a7162f5052484f866adda06"
+  url "https://files.pythonhosted.org/packages/a2/c4/999ef00c422f6aa3c0932ec07a6465fe50d7a4e2bc7778c18b2927f83595/tox-4.64.3.tar.gz"
+  sha256 "da24946605de8d5af261a309d092435f69ad0651c7d3e50c7bd92b97c39a77a9"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "652b3e8a41ab7d289e13976a9fdafedc86e3db505614a4d0dd511c4ae92551f6"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "652b3e8a41ab7d289e13976a9fdafedc86e3db505614a4d0dd511c4ae92551f6"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "652b3e8a41ab7d289e13976a9fdafedc86e3db505614a4d0dd511c4ae92551f6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "12adc6491f3bf6a5e6dda7490905e5aaa41eed2416290c56d6b34ec42e4a14f1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "12adc6491f3bf6a5e6dda7490905e5aaa41eed2416290c56d6b34ec42e4a14f1"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "8dfa41a3ac4a82c3a3db35ff6d9e6b7475c7f78090a12e2ac4bc8696285a8a3a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "8dfa41a3ac4a82c3a3db35ff6d9e6b7475c7f78090a12e2ac4bc8696285a8a3a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "8dfa41a3ac4a82c3a3db35ff6d9e6b7475c7f78090a12e2ac4bc8696285a8a3a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "2b96b37f2c4da9e8ed0f609e46aa3130e1a7fbf0fa561f0b961033478ec4d8a9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "2b96b37f2c4da9e8ed0f609e46aa3130e1a7fbf0fa561f0b961033478ec4d8a9"
   end
 
   depends_on "python@3.14"
@@ -43,8 +43,8 @@ class Tox < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/ea/dd/65804b0c2925a1c821a05502ea57517b69a073ff400d25ab9faa3a2cf012/platformdirs-4.11.12.tar.gz"
-    sha256 "e8dc1cb58f1153fd7f61db1374317770baababec2480b37b8f01c6cc25b45267"
+    url "https://files.pythonhosted.org/packages/5f/e0/7c20b5d0e0f147c40a934e8f9e9f717bd6e3e372c4d58ca5c2fcce2b1652/platformdirs-4.11.15.tar.gz"
+    sha256 "d7419e973b2b740d428200130f80c0e79304d1c71081001db911e15b26a3a6d4"
   end
 
   resource "pluggy" do

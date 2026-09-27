@@ -5,6 +5,7 @@ class TclTk < Formula
   mirror "https://fossies.org/linux/misc/tcl9.0.4-src.tar.gz"
   sha256 "d0aed49230bc02a65c1e0229e65f34590a4b037ec40d546f32573b467f7551ea"
   license "TCL"
+  revision 1
   compatibility_version 1
 
   livecheck do
@@ -13,17 +14,14 @@ class TclTk < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "391f017eddb5080e738fb02b7bcb540f25bed6b933f8189ec99ffc535ba7e90d"
-    sha256 arm64_tahoe:       "5f827b236bad97d36743a3abfa75f746f998ccf4d6cf46e55b4ad167cccf14d6"
-    sha256 arm64_sequoia:     "337f7db2e9c5b41a61cde887db2d02fe6293f76eedf81502783014b9922bef1e"
-    sha256 arm64_sonoma:      "83ece1e2a0f3d17e5ba0ed2d01203f357d25d008fcc1e3902c99e7200d652ea3"
-    sha256 sonoma:            "7814be4fc08ee90045ad3f6f1758982ab441f31bee964ddb876f6a5c6c6c8790"
-    sha256 arm64_linux:       "410d31028279d7a1d30dc73d4f6b012d54d837ab71cb6dadd1484932b7568b3b"
-    sha256 x86_64_linux:      "bb4f5dc50224e0e6ef9da8fd743964cf26dc43edaf9702c728272f8c839ed0b1"
+    sha256 arm64_golden_gate: "f4a3960886ab0e7031677bbe03605a1b724cfeec03522cd32fae086d9a926cbb"
+    sha256 arm64_tahoe:       "b4148308c75628f087db66c5ebac34f872f32723f76355a4bf64d255151284bc"
+    sha256 arm64_sequoia:     "0350f2d19a0705678bd4c38dfaadbca58fa9f4789ac381e522270fae7a10a5f7"
+    sha256 arm64_linux:       "a55da02a8c387fd4996612de6a49533c82ff27560ba9fcdcf86bc29158f98735"
+    sha256 x86_64_linux:      "996ee7af1459ac5daf0c9725a1e36940d80ad2d8a0973cc5080e55cc3928068f"
   end
 
   depends_on "libtommath"
-  depends_on "openssl@3"
 
   on_linux do
     depends_on "freetype" => :build
@@ -53,16 +51,6 @@ class TclTk < Formula
     livecheck do
       url "https://sourceforge.net/projects/tcllib/rss?path=/tcllib"
       regex(%r{url=.*?/tcllib[._-]v?(\d+(?:\.\d+)+)\.t}i)
-    end
-  end
-
-  resource "tcltls" do
-    url "https://core.tcl-lang.org/tcltls/uv/tcltls-2.0-src.tar.gz"
-    sha256 "f1fa46067984c4096976f04f131fdea54c07ba45ce2b03a0697a0ea801e3a23a"
-
-    livecheck do
-      url "https://core.tcl-lang.org/tcltls/wiki/Download"
-      regex(/href=.*?tcltls[._-]v?(\d+(?:\.\d+)+)(?:[._-]src)?\.t/i)
     end
   end
 
@@ -149,16 +137,6 @@ class TclTk < Formula
       ln_s "#{lib}/tcllibc/macosx-x86_64-clang", "#{lib}/tcllibc/macosx-x86_64" if OS.mac?
     end
 
-    resource("tcltls").stage do
-      system "./configure", "--with-openssl-dir=#{formula_opt_prefix("openssl@3")}",
-                            "--prefix=#{prefix}",
-                            "--with-tcl=#{lib}",
-                            "--with-tclinclude=#{include}/tcl-tk",
-                            "--includedir=#{include}/tcl-tk",
-                            "--mandir=#{man}"
-      system "make", "install"
-    end
-
     resource("itk4").stage do
       itcl_dir = lib.glob("itcl*").last
       # Workaround to build non-release tarball by using TEA files from itcl
@@ -187,6 +165,7 @@ class TclTk < Formula
   def caveats
     <<~EOS
       The sqlite3_analyzer binary is in the `sqlite-analyzer` formula.
+      TclTLS extension is now in the `tcltls` formula.
     EOS
   end
 

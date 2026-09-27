@@ -27,6 +27,8 @@ class Libogg < Formula
 
   depends_on "cmake" => :build
 
+  allow_network_access! :test
+
   def install
     system "cmake", "-S", ".", "-B", "build", "-DBUILD_SHARED_LIBS=TRUE", *std_cmake_args
     system "cmake", "--build", "build"

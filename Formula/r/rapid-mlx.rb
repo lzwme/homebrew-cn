@@ -3,14 +3,14 @@ class RapidMlx < Formula
 
   desc "Fast local AI engine for Apple Silicon with an OpenAI-compatible API"
   homepage "https://github.com/raullenchai/Rapid-MLX"
-  url "https://files.pythonhosted.org/packages/a1/c3/cf7f460b89301a65e0bf6bab286d438932e9e661d0af113cb3816f2ea577/rapid_mlx-0.15.1.tar.gz"
-  sha256 "09b0109c9cb6a7dbab38500facd5cb806f45ab995dd0bb6dcaffbd18ec793d27"
+  url "https://files.pythonhosted.org/packages/82/17/eff4b995cd19a4ff8c7a4d5aa1c63c2cc0158934301d8005ee2e466474e4/rapid_mlx-0.15.2.tar.gz"
+  sha256 "a2fe3d50977ac1c6ba57f301585c46f8ddac2c40d5f5cc5fbb00afd3ee207ce0"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "dcba01e769917cfd0a65a3f0d6aa394cf32a12cd9c37deb1253f4f836aee4e65"
-    sha256 cellar: :any, arm64_tahoe:       "66908cdfca37da72df0dc070c2bdf330a6f104aca74bc9f8384ab59ec263dd42"
-    sha256 cellar: :any, arm64_sequoia:     "a035864e6d584d30c53e720cec06721305e3950b2569735020278fd4a5ba7382"
+    sha256 cellar: :any, arm64_golden_gate: "fa49e116bd326e7d9cb4999dbadbdff24c9e46571b2edea02305eba2a38211b0"
+    sha256 cellar: :any, arm64_tahoe:       "1c84ec49e598d31338c93ef95e412840ad838d52f4c3ab52cab23d424027d50f"
+    sha256 cellar: :any, arm64_sequoia:     "a1c2bceaeded98acf865ee951f0389672c051e497969454d833fa0f38368971d"
   end
 
   depends_on "cmake" => :build
@@ -105,8 +105,8 @@ class RapidMlx < Formula
   end
 
   resource "huggingface-hub" do
-    url "https://files.pythonhosted.org/packages/fe/0f/e83fdd856da8fca26bf78d71709ebd120432a0ce535e72b9597cab1eb5bf/huggingface_hub-1.32.0.tar.gz"
-    sha256 "ed70a45498abe86039df7c2f4e5f7575de524be908d3840e8f828d5525eafd6a"
+    url "https://files.pythonhosted.org/packages/25/2a/484d112c0d8fc5f665d7b65137ac9cdb2953c982391598c3597968a12ee7/huggingface_hub-1.33.0.tar.gz"
+    sha256 "367be21a201db9523eddf8aeac7048f2602c1b308691c97640d5e72ed188007e"
   end
 
   resource "idna" do
@@ -170,8 +170,8 @@ class RapidMlx < Formula
   end
 
   resource "opentelemetry-api" do
-    url "https://files.pythonhosted.org/packages/ee/8b/aa9e2d8b8dfa7c946f7dec5d1f8f6ba8eca062f43509a06bdb5ce93d26c0/opentelemetry_api-1.44.0.tar.gz"
-    sha256 "67647e5e9566edcf421166fdf022b3537f818635daa852b289e34604dc6fb33a"
+    url "https://files.pythonhosted.org/packages/1f/dc/e12c1fe1ed8a7b7149777127b1a0e12ce5bd5a81d97408bedc2128c260f5/opentelemetry_api-1.45.0.tar.gz"
+    sha256 "711ede81773c8025c2c03dac0450bc89f3d30aea6eabcc815c570d4e35a963f7"
   end
 
   resource "packaging" do
@@ -295,8 +295,8 @@ class RapidMlx < Formula
   end
 
   resource "uvicorn" do
-    url "https://files.pythonhosted.org/packages/5d/ad/04bbb797c84fc1f26cb171f7394716f4865ffb8d8c5e1eef42565c2dfa6b/uvicorn-0.53.0.tar.gz"
-    sha256 "a9356f0cb89b3b8621529c5d5eebd69bfe154f4c3f68b4cf2de47e45fa855c2e"
+    url "https://files.pythonhosted.org/packages/da/34/30e9280707135d2cfc589dfff3cb796bd07a3aeb1a3e415ba09dd89d7bb4/uvicorn-0.54.0.tar.gz"
+    sha256 "a2e33cbfaa0306f8e6b0c13e0cb89d7d7a2da3e62b90c66e18c33d9807b28620"
   end
 
   resource "websockets" do

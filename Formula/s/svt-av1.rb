@@ -28,6 +28,8 @@ class SvtAv1 < Formula
     depends_on "nasm" => :build
   end
 
+  allow_network_access! :test
+
   def install
     # Features are enabled based on compiler support, and then the appropriate
     # implementations are chosen at runtime.

@@ -30,6 +30,8 @@ class Libpulsar < Formula
     depends_on "zlib-ng-compat"
   end
 
+  allow_network_access! :test
+
   def install
     args = %W[
       -DBUILD_TESTS=OFF

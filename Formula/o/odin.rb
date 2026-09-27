@@ -19,7 +19,7 @@ class Odin < Formula
 
   depends_on "glfw" => :no_linkage
   depends_on "lld@22"
-  depends_on "llvm@22"
+  depends_on "llvm@22" # TODO: LLVM 23 - https://github.com/odin-lang/Odin/pull/7491
   depends_on "raylib"
 
   fails_with :gcc do

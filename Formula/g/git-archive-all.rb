@@ -22,11 +22,6 @@ class GitArchiveAll < Formula
   end
 
   test do
-    (testpath/".gitconfig").write <<~EOS
-      [user]
-        name = Real Person
-        email = notacat@hotmail.cat
-    EOS
     system "git", "init"
     touch "homebrew"
     system "git", "add", "homebrew"

@@ -18,6 +18,8 @@ class Openjph < Formula
   depends_on "cmake" => :build
   depends_on "libtiff"
 
+  allow_network_access! :test
+
   def install
     ENV["DYLD_LIBRARY_PATH"] = lib.to_s
 

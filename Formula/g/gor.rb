@@ -38,6 +38,12 @@ class Gor < Formula
 
   uses_from_macos "libpcap"
 
+  allow_network_access! :test
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     # Workaround to avoid patchelf corruption when cgo is required (for gopacket)
     if OS.linux? && Hardware::CPU.arch == :arm64

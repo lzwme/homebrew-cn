@@ -11,14 +11,17 @@ class Getxbook < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "6bb08299390cc6bd1e82ebf4c3bfe9b15711645c9cb09525fb4ed70d1d7fbc5f"
-    sha256 cellar: :any, arm64_tahoe:       "1cd590d9e843093b1425cf52f0635ecec0552c84792ebcb16b4436962f8decfc"
-    sha256 cellar: :any, arm64_sequoia:     "27280fe2e0ded386f16ed1c0e0807cae3afd0ad0929ef40952dc5f6d305a98b4"
-    sha256 cellar: :any, arm64_linux:       "10a6317fe73e22e88465b3b0405bacc30c6b20c614ae58eb177ccc7406a1b047"
-    sha256 cellar: :any, x86_64_linux:      "f7bba65c19614b08f1836c012d9d64a71caae129ad475a9132ad1d2147ffb117"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "7793d356cf9b68b80252935afe198f9a762984db38dd7d100129b79ea8b72e2b"
+    sha256 cellar: :any, arm64_tahoe:       "c6379b8509478c4deed1c672e2a6adae0a113885812edc61510ce706b436a2ea"
+    sha256 cellar: :any, arm64_sequoia:     "7dc7859714c82d25b8b60eea5d33e25e0ae7846b8f7c7fae705871142d6a0a1c"
+    sha256 cellar: :any, arm64_linux:       "a1e97e82598234f99cd802dceddf434c12c0dc690d137008739f9a7d35fb9e4f"
+    sha256 cellar: :any, x86_64_linux:      "dc83d3c17c8d0c66559fd677418eabc6c2a1b7ebc6303a895ff7ea27bbd53443"
   end
 
-  depends_on "openssl@3"
+  depends_on "openssl@4"
+
+  deny_network_access!
 
   def install
     system "make", "CC=#{ENV.cc}", "PREFIX=#{prefix}"

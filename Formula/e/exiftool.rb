@@ -91,6 +91,8 @@ class Exiftool < Formula
     sha256 "37f40dd7cee44acea26f2f763a773e61d4ec223305ddeeca4612443cbf288fbf"
   end
 
+  allow_network_access! :test
+
   def install
     perl_lib = libexec/"lib/perl5"
     ENV.prepend_create_path "PERL5LIB", perl_lib

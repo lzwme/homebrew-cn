@@ -23,6 +23,8 @@ class Vrpn < Formula
   depends_on "jsoncpp"
   depends_on "libusb" # for HID support
 
+  allow_network_access! :test
+
   def install
     # Workaround for jsoncpp_lib resulting in jsoncpp_lib-NOTFOUND which may be
     # a side effect of switching the `jsoncpp` build to meson.

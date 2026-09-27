@@ -1,8 +1,8 @@
 class Gl2ps < Formula
   desc "OpenGL to PostScript printing library"
   homepage "https://www.geuz.org/gl2ps/"
-  url "https://geuz.org/gl2ps/src/gl2ps-1.4.2.tgz"
-  sha256 "8d1c00c1018f96b4b97655482e57dcb0ce42ae2f1d349cd6d4191e7848d9ffe9"
+  url "https://geuz.org/gl2ps/src/gl2ps-1.4.3.tgz"
+  sha256 "2e0a5368917cf0e5467ba8618bc576f50ae9f316c61201635b09711c7908efcc"
   license "GL2PS"
 
   livecheck do
@@ -11,14 +11,11 @@ class Gl2ps < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_golden_gate: "68f8fabc929b0c03103f339d418b6d84a25548dc9e4fa1e08018603d76de928f"
-    sha256 cellar: :any,                 arm64_tahoe:       "cfd40bfcb06fceef93e5b04ff17a59a5df05742997959ecd4be2c9f3badc2c70"
-    sha256 cellar: :any,                 arm64_sequoia:     "d45044992b502ffb0a34647b504eff67e034635c0d6c06fb580b504b3cdf9c80"
-    sha256 cellar: :any,                 arm64_sonoma:      "86df24cf3d5f86fd5d4d0a279126e8f0bfad2560637017b30ce3b8cee638fa4e"
-    sha256 cellar: :any,                 sonoma:            "17b1449046f6a3a523608a8b71277a442927ead68405f4a4881ac2686da8cea1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "852d33552ed074a82702007c52ac923cac04188db2c237fcffd2b4cacfc50342"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "892849e15a461c6ca9b2c24178518a6769d78807ef6c0c99a0b6997321c9be4b"
+    sha256 cellar: :any, arm64_golden_gate: "52ec6b7e9e0fe0284f68f65968e2ee6ff58f280fb0036b35d2f02a987b46b472"
+    sha256 cellar: :any, arm64_tahoe:       "724fa9c959ece3a3bb1b88ecfdf998a47697e41a3af09bdc428b06c5d6ce97a7"
+    sha256 cellar: :any, arm64_sequoia:     "5a11513099ebc466ea9ea99358ad7fddd200025a671e79524bc242317cd2ef7f"
+    sha256 cellar: :any, arm64_linux:       "afba4c8d11516a9e1c77f6526adf47239dcc01aaba74144f85f797e791e13176"
+    sha256 cellar: :any, x86_64_linux:      "d3ba7ae699aba5a875a152bddeccff91d2a697ac45e4ad2e09be93f0a27cbf78"
   end
 
   depends_on "cmake" => :build

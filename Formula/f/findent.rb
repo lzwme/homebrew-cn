@@ -1,9 +1,9 @@
 class Findent < Formula
   desc "Indent and beautify Fortran sources and generate dependency information"
   homepage "https://www.ratrabbit.nl/ratrabbit/findent/index.html"
-  url "https://downloads.sourceforge.net/project/findent/findent-4.3.7.tar.gz"
-  mirror "https://www.ratrabbit.nl/downloads/findent/findent-4.3.7.tar.gz"
-  sha256 "e2da8b8c0c1961b2bc9dce4c6caa79cad09245d36388bea1fc02c4ec1fd8b998"
+  url "https://downloads.sourceforge.net/project/findent/findent-4.4.0.tar.gz"
+  mirror "https://www.ratrabbit.nl/downloads/findent/findent-4.4.0.tar.gz"
+  sha256 "01cddb56be6b55e4c210817f6b81a3474945b01f69c30dc87656c3946f8bcbfd"
   license "BSD-3-Clause"
 
   livecheck do
@@ -12,13 +12,11 @@ class Findent < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "852390e16a3074f7f85d09960586c96be95884c4b5d5f05cab50956307396b29"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "b53bf06826f82f9d100c497b38bda4a417fd9c2fd55e9d49756b0cfb571f31b9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "53f23e0a9769be9eef0c102b9c9da50c25999f06ca355314775a338549c66c5a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "b743bf9cf374a09e433d029fbfdcc82484586a94162a2fcaaf804e3988eb2563"
-    sha256 cellar: :any_skip_relocation, sonoma:            "082aa9da389d6dbf126f6199bea9a4042a6a55a102c45417da9d1e75272ce70f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "be1463f7231258226a921b3dd68ae95b6ddba38d3ff4e423b7fd83f0117c51bd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "168e8c669289dca4ef86b934253345d80b2ea8652b653bdeddb486dc2bd568c6"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "e01821c301fd95de769c3bc98fbf5b891daef2510fac2ba0b1de981f4e06ba71"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "d395a5254a6a99c428e1ca07d01f83ef28c1a443f4382c9901bb354c767ee5f0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "f483ac6ca4872a8518282963ed0aa180e995d10197a78091b4f73e1a137c1797"
+    sha256 cellar: :any,                 arm64_linux:       "6e64ca49414c263a42b9c05303c1dd7b7f49246b54e394318342a501d962b092"
+    sha256 cellar: :any,                 x86_64_linux:      "26b247c008089643577c5fe4145cda0d47fe06077abc4fcae8e1174138a3ad06"
   end
 
   def install

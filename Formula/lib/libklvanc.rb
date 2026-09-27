@@ -3,7 +3,7 @@ class Libklvanc < Formula
   homepage "https://github.com/stoth68000/libklvanc"
   url "https://ghfast.top/https://github.com/stoth68000/libklvanc/archive/refs/tags/vid.obe.1.7.0.tar.gz"
   sha256 "a1c40c61eb34c98cd9023735b5769b7f43f4b34096149647c8bdf4de937e84c3"
-  license "LGPL-2.1-only"
+  license "LGPL-2.1-or-later"
   head "https://github.com/stoth68000/libklvanc.git", branch: "master"
 
   bottle do

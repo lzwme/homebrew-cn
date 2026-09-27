@@ -31,6 +31,8 @@ class Lgogdownloader < Formula
 
   uses_from_macos "curl"
 
+  allow_network_access! :test
+
   def install
     args = %W[
       -DJSONCPP_INCLUDE_DIR=#{formula_opt_include("jsoncpp")}

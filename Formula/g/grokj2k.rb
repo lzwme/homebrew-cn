@@ -49,6 +49,8 @@ class Grokj2k < Formula
     cause "GNU compiler version must be at least 10.0"
   end
 
+  allow_network_access! :test
+
   def install
     # Ensure we use Homebrew libraries
     %w[liblcms2 libpng libtiff libz].each { |l| rm_r(buildpath/"thirdparty"/l) }

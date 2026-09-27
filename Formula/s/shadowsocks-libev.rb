@@ -28,6 +28,8 @@ class ShadowsocksLibev < Formula
   depends_on "mbedtls@3"
   depends_on "pcre2"
 
+  allow_network_access! :test
+
   def install
     ENV["XML_CATALOG_FILES"] = etc/"xml/catalog"
 

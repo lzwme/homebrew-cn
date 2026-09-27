@@ -3,16 +3,16 @@ class Humanbound < Formula
 
   desc "Adversarial security testing engine, SDK, and CLI for AI agents"
   homepage "https://docs.humanbound.ai/"
-  url "https://files.pythonhosted.org/packages/1a/9d/bc432fcd1d6dcbe2f41a964421724f24f36e3ce168b262fd6e47ff9c13f8/humanbound-2.10.0.tar.gz"
-  sha256 "c3bec75dc75a917b1bb980bcb7e471ef90fd9e85bbb2cc18d7f0773e9e169d07"
+  url "https://files.pythonhosted.org/packages/b5/b3/1aecb216e06a41d234533e262a0835d9a410e552d9d8278ce1e0f257ffd7/humanbound-2.11.0.tar.gz"
+  sha256 "2e66add829ecc11191595ab8ca4abed1e5636d2b6338798f2641373efcad95dd"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "8139b2b67e8e3442a82db583c62a44193983aee62bd6eb67289ab10a6df650c6"
-    sha256 cellar: :any, arm64_tahoe:       "a32c218986e30afc9e019cc0abf30b03e1003e8f233086e8a68f24d96b75ee12"
-    sha256 cellar: :any, arm64_sequoia:     "4866e084c4d85318b6def7b6b57f00616dbca4c50598802a80fc09932aa632c8"
-    sha256 cellar: :any, arm64_linux:       "3ef58d003e52a812536806454043ab78a8cd7392e6cd629b04cec1487a9c3c1b"
-    sha256 cellar: :any, x86_64_linux:      "f24f902959ea4d3181a0b64f8ed855a93a7fdcd5a01d2597e1bd61bdb79c1d93"
+    sha256 cellar: :any, arm64_golden_gate: "7b34bbbc11903f3942fc4af047089e1bc7f80241db4f9de41fe7bf5839f9bb5a"
+    sha256 cellar: :any, arm64_tahoe:       "a251a5a1be7e3283aeaaa9870bb4f707523f4ecf712ec7d38aa1d05b34974ad8"
+    sha256 cellar: :any, arm64_sequoia:     "b8819b3973fe192e7d942be9f902afa5d691b052a852aaafc463f3bb01283c02"
+    sha256 cellar: :any, arm64_linux:       "94124c8a7906e76eb0ccb69e7ab924329c124a6c31d11acd3b93d1c3ab868e54"
+    sha256 cellar: :any, x86_64_linux:      "1439c73eef980cd0c97503146505e96f6be9db6d3dbaecceb9b9eda89db81e1a"
   end
 
   depends_on "certifi" => :no_linkage

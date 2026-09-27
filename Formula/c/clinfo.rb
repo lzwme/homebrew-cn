@@ -1,8 +1,8 @@
 class Clinfo < Formula
   desc "Print information about OpenCL platforms and devices"
   homepage "https://github.com/Oblomov/clinfo"
-  url "https://ghfast.top/https://github.com/Oblomov/clinfo/archive/refs/tags/3.0.25.02.14.tar.gz"
-  sha256 "48b77dc33315e6f760791a2984f98ea4bff28504ff37d460d8291585f49fcd3a"
+  url "https://ghfast.top/https://github.com/Oblomov/clinfo/archive/refs/tags/3.1.26.09.26.tar.gz"
+  sha256 "e944132329c6613b686ba0fcd373b15ebb553c367a01a734af8519ddb095c01f"
   license "CC0-1.0"
   head "https://github.com/Oblomov/clinfo.git", branch: "master"
 
@@ -12,15 +12,11 @@ class Clinfo < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "1f1b56eedee0e0725513d9f56e94a3fdc2042ec8d6d600fd066408bc394e4ab8"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "4f9f30aecde66c0eb0938f035b92db105242a3fe45ece3bc6c9c7d4b97f663d6"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "66be00f1c03820544063ebb39af878d24e1571a45e7c9bbc4cd6c1f2c576a927"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "4e0a75e7745ea32b3db3afb79fadd612b0e432e8412ed3f8e90768b46502b415"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:     "3f291734139a5f97270e79760822919be0824e9f273c732f796590c343e18e54"
-    sha256 cellar: :any_skip_relocation, sonoma:            "b844184911efd1eea8fc994b07e2e02c1ffbbc63c3fcb771ebd1ea588d02e337"
-    sha256 cellar: :any_skip_relocation, ventura:           "e13ffb6563cda2a028befe3a148ddb8bbe6c38f6fbf3cf4d9a82fd2a3ba7a8c6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "cbdeca056b99bf6960da8a6ab7c8533da3aba2efbf6afea09d5fa7be08bbba5a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "90e95ee551467da22ea1a32580ad4e42ff3ea26a1cdb66e3a63dd9b53e01f5f1"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "6da7459a4af0fce8e888837a9a3ea1d0bd8cd1572155bb865239323c772ed577"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "d6d143b4fef7c5021e5050db9dfb378385141e9c71e083d83126a9319207a7c5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "6dec10d570378544c0a49ec347e6510b1b0d453840eb0b0f0b117a05108414ff"
+    sha256 cellar: :any,                 arm64_linux:       "cf9d1a5d6cbcbe208e7f483ca044674dff6f22ca006f61a75cc3650ef1dd10fa"
+    sha256 cellar: :any,                 x86_64_linux:      "9c4f7686290e70ea80d4fae6afc8f9c1fc6278d747db3e444f91ab5d1b31a175"
   end
 
   on_linux do

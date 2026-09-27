@@ -3,17 +3,17 @@ class Borgmatic < Formula
 
   desc "Simple wrapper script for the Borg backup software"
   homepage "https://torsion.org/borgmatic/"
-  url "https://files.pythonhosted.org/packages/9e/bd/d146400c656d2ed761af20233b87e44951ade59181935cb7540ff0338c64/borgmatic-2.1.8.tar.gz"
-  sha256 "3e6b20948d77c31c211dd075a6fd6deb93777a80902de7090498b66cf47d8487"
+  url "https://files.pythonhosted.org/packages/26/b8/2d6cae8bc1bddbf20eb9b4e04c4cfce71b5091e674aa654841d2ca273dc9/borgmatic-2.1.9.tar.gz"
+  sha256 "fbf3f7eace4938dddcf132cc33a634ba090136e5ead91c63899d18ab3ee53c48"
   license "GPL-3.0-or-later"
   head "https://projects.torsion.org/borgmatic-collective/borgmatic.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "0d973a0db4fc5da8f7ce140b2f2107d8659eff2b977024f0aaea4e12cf57ae98"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "f613936e27ad1d98dc6e4d8e863244d0ef18000f04d6f4d0c3c1544e07b49664"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "000a76f68804378eb7843a0f6439d7ebc341a4f5faffc555cd972ce0322169ec"
-    sha256 cellar: :any,                 arm64_linux:       "7802bd48f724bdd21e3dd2d99dd53a93ee395b63c46117c559b08afd386503ca"
-    sha256 cellar: :any,                 x86_64_linux:      "bcb408bc104e3bb9807ed15e97d244001804aef8fb4f2f40ea7ecadfe5ee04ac"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "43ec665d54c96f800f103f73ab80ca6fde7d1c8a065a36e16d6537c29ad9400c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "a9ed8eea9b96ceebb6362f22b37a63868dd8ff4fac88663bf56afdb5751dc010"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "ff9950fe61cfe509f4383f27dfff3e19104baa0673f37bc5e86a5004be769235"
+    sha256 cellar: :any,                 arm64_linux:       "b0b5b39401bc90bba8f0160c2af5682a995bd6fd46ee95a7c78780045113f632"
+    sha256 cellar: :any,                 x86_64_linux:      "3abba5862fd191fca877bec5433c32b3afc81040456e26a4eb4b137bc676f487"
   end
 
   depends_on "certifi" => :no_linkage

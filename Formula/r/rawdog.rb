@@ -265,6 +265,6 @@ class Rawdog < Formula
 
   test do
     output = shell_output("#{bin}/rawdog test prompt 2>&1", 1)
-    assert_match "Missing credentials. Please pass an `api_key`", output
+    assert_match "using a GPT model without an API key", output
   end
 end

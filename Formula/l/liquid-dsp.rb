@@ -1,18 +1,16 @@
 class LiquidDsp < Formula
   desc "Digital signal processing library for software-defined radios"
   homepage "https://liquidsdr.org/"
-  url "https://ghfast.top/https://github.com/jgaeddert/liquid-dsp/archive/refs/tags/v1.8.2.tar.gz"
-  sha256 "a0adbc3ec5630d620a55351285573f59948153a14c703fb64b4ad58989bd6e2f"
+  url "https://ghfast.top/https://github.com/jgaeddert/liquid-dsp/archive/refs/tags/v1.8.3.tar.gz"
+  sha256 "18fa83b73db8bb6fe6ea0376e4b5aecf8645970f4604d10d9dadbf609f3f95e2"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "e12ec406b1c5f9353916d496701fec9b726477c3bdc6447d1b8a2c50fbcf3f3f"
-    sha256 cellar: :any, arm64_tahoe:       "7343ee4fb9ed2fd13c44e2b4a9c650859053e5f5a657b6b915e56c9cbaf67e12"
-    sha256 cellar: :any, arm64_sequoia:     "69d3a9c0585fe4ede3eb3a0ad032a5475c5850006f6bc86e8fd9421e07a36d99"
-    sha256 cellar: :any, arm64_sonoma:      "d89e0450a415d85035b747dee40bbf35f94fbfeb424a0eac46cf48fe66a6d2ee"
-    sha256 cellar: :any, sonoma:            "a3f5662e3479f98ae19c3a7b5bbe12bfae4f15d3394bdb469ac8870006fca999"
-    sha256 cellar: :any, arm64_linux:       "392c4cd0fe640c8d1c7f558d712d23eda5db1beab4716ea1c3983af46c617324"
-    sha256 cellar: :any, x86_64_linux:      "2f62b8fc4eca6a99cbca6031800d414be09d534a4f39b99f587363a344b8383c"
+    sha256 cellar: :any, arm64_golden_gate: "08f26b099934aba3db8a1a0c7b312f1fbc05a3790e7469d1e1433edcf972196c"
+    sha256 cellar: :any, arm64_tahoe:       "3edba8c938fce60d57b7cfef877a5cf2e82c5c547b4e748b9731c8048e6b9492"
+    sha256 cellar: :any, arm64_sequoia:     "1625b8ac210ee3edb1bf5763baf33ac8706c43eead41be7e3f3d27ab1a0d71b0"
+    sha256 cellar: :any, arm64_linux:       "270dc966585dccfe228ee8d83e542eb5973f1a0f2880f12268b614e21eef3ae7"
+    sha256 cellar: :any, x86_64_linux:      "a2fa13745f522f7060306acd7aaac916e2220b53c29c290481b4b761cad67f56"
   end
 
   depends_on "autoconf" => :build

@@ -25,11 +25,6 @@ class Rcm < Formula
 
   test do
     (testpath/".dotfiles").mkdir
-    (testpath/".gitconfig").write <<~EOS
-      [user]
-      	name = Test User
-      	email = test@test.com
-    EOS
     assert_match(/(Moving|Linking)\.\.\./x, shell_output("#{bin}/mkrc -v ~/.gitconfig"))
   end
 end

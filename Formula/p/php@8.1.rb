@@ -67,6 +67,8 @@ class PhpAT81 < Formula
     depends_on "zlib-ng-compat"
   end
 
+  allow_network_access! :test
+
   def install
     # Backport fix for libxml2 >= 2.13
     # Ref: https://github.com/php/php-src/commit/67259e451d5d58b4842776c5696a66d74e157609

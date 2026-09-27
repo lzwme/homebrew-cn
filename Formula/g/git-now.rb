@@ -39,11 +39,6 @@ class GitNow < Formula
   end
 
   test do
-    (testpath/".gitconfig").write <<~EOS
-      [user]
-        name = Real Person
-        email = notacat@hotmail.cat
-    EOS
     touch "file1"
     system "git", "init"
     system "git", "add", "file1"

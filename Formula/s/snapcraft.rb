@@ -5,8 +5,8 @@ class Snapcraft < Formula
   homepage "https://snapcraft.io/"
   # Use git checkout so setuptools-scm and update-python-resources works
   url "https://github.com/canonical/snapcraft.git",
-      tag:      "9.1.1",
-      revision: "7ed8b939eae902ab98f7b8f6901051a76e5a06a9"
+      tag:      "9.1.3",
+      revision: "2714626581672a42439dec34b73bae177cbed445"
   license "GPL-3.0-only"
   head "https://github.com/canonical/snapcraft.git", branch: "main"
 
@@ -16,11 +16,11 @@ class Snapcraft < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "153b1d3f59bf1f6fbecab801fc56b7f5df3bec9c48574949d628844ec102ff6d"
-    sha256 cellar: :any, arm64_tahoe:       "ea8f114d9dca904507d15d43f0a43f7a8e55a1af1473bc443f4d1c44a984d110"
-    sha256 cellar: :any, arm64_sequoia:     "483a7bd91b805110926af52815714346e65360fda428f7f7ab2b6baec79ab744"
-    sha256 cellar: :any, arm64_linux:       "7a96a2fe113a2752897dad21df7a28df0d91a98e72faaf6b2f8b292ebd3f4741"
-    sha256 cellar: :any, x86_64_linux:      "f662231d8f14627169f0aab8c582ab17184b95915b7c415253723724797b75c3"
+    sha256 cellar: :any, arm64_golden_gate: "c4fc6d7fd3dbe31dc37cb92b9c5dcdfb99e9a16fe063edd5a7aaf7fcc0bf13d3"
+    sha256 cellar: :any, arm64_tahoe:       "fff8071ec6f5bee533fda8662d61614db8af14e0af1ecd18508b4cf324e537ba"
+    sha256 cellar: :any, arm64_sequoia:     "bc2b77b99968356a303979b801fbee6f8638391e9d44a90c000afb39c3ed870a"
+    sha256 cellar: :any, arm64_linux:       "d01725b34918c5555f141692d233deb8c6a19fca96416ebb306af4f6668bb044"
+    sha256 cellar: :any, x86_64_linux:      "1d1e4a6301ca97f3f275091c71b7a8391eb9252ef3e2cf93fceba826a2529594"
   end
 
   depends_on "certifi" => :no_linkage
@@ -43,8 +43,9 @@ class Snapcraft < Formula
     depends_on "apt"
   end
 
+  # Pin until snapcraft's `Init.initialise_project` accepts the `vcs` argument passed by craft-application 7.3.0+
   pypi_packages exclude_packages: %w[certifi cryptography pydantic pygit2],
-                extra_packages:   %w[catkin-pkg jeepney pylxd secretstorage]
+                extra_packages:   %w[catkin-pkg craft-application==7.2.1 jeepney pylxd secretstorage]
 
   # We hit a build failure with requested 2.4.0ubuntu1 tarball so just using latest Debian
   resource "python-apt" do
@@ -105,8 +106,8 @@ class Snapcraft < Formula
   end
 
   resource "craft-parts" do
-    url "https://files.pythonhosted.org/packages/0e/e8/436812aa3d486893af5c69f3373003e9b9015720fcef23383a829b028afe/craft_parts-2.35.1.tar.gz"
-    sha256 "2467399997544ec249c4499ecc622d029dd9609d395da1e6c03781f9d29589aa"
+    url "https://files.pythonhosted.org/packages/04/d7/10cd8f5ed0392a287d770ea3d3b423f8b1cc749fd1aa67c21baca7250776/craft_parts-2.37.0.tar.gz"
+    sha256 "6dd0ddcedf330190fed9f85b91c80b290bc0f4053020767aa99e471b01717368"
   end
 
   resource "craft-platforms" do
@@ -255,8 +256,8 @@ class Snapcraft < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/f8/13/f870dd0b42690138e4e37a76b5138e5690ed4365a77071bb092d59037da0/platformdirs-4.11.11.tar.gz"
-    sha256 "b0befe8a90759e4a9a8b9820d434ae226a6549063210b596da0038a7a05aede4"
+    url "https://files.pythonhosted.org/packages/ea/dd/65804b0c2925a1c821a05502ea57517b69a073ff400d25ab9faa3a2cf012/platformdirs-4.11.12.tar.gz"
+    sha256 "e8dc1cb58f1153fd7f61db1374317770baababec2480b37b8f01c6cc25b45267"
   end
 
   resource "protobuf" do
@@ -310,8 +311,8 @@ class Snapcraft < Formula
   end
 
   resource "pytz" do
-    url "https://files.pythonhosted.org/packages/fb/48/fb042503b6ca6cd271261dc559fd6432f7d8c713153e9ec5c591af4dfc1c/pytz-2026.3.post1.tar.gz"
-    sha256 "2211d3fcf9a797d3405cac96ac7f61d80e6a644f72a3309607282fe8a2010c5d"
+    url "https://files.pythonhosted.org/packages/b0/ed/fa23d28713004418bbf2407127f80f385bfb0bf4e677bef02c25c27b00ee/pytz-2026.4.tar.gz"
+    sha256 "464303645bafafd72418898368b2429458f709cf1eb6a15372fbcc396b64da63"
   end
 
   resource "pyxdg" do

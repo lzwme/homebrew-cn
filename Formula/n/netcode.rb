@@ -16,6 +16,8 @@ class Netcode < Formula
   depends_on "cmake" => :build
   depends_on "libsodium"
 
+  allow_network_access! :test
+
   def install
     system "cmake", "-S", ".", "-B", "build",
                     "-DNETCODE_SYSTEM_SODIUM=ON",

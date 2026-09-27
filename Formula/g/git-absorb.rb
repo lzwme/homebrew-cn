@@ -34,11 +34,6 @@ class GitAbsorb < Formula
   end
 
   test do
-    (testpath/".gitconfig").write <<~EOS
-      [user]
-        name = Real Person
-        email = notacat@hotmail.cat
-    EOS
     system "git", "init"
     (testpath/"test").write "foo"
     system "git", "add", "test"

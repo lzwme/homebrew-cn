@@ -30,11 +30,6 @@ class Reposurgeon < Formula
   end
 
   test do
-    (testpath/".gitconfig").write <<~EOS
-      [user]
-        name = Real Person
-        email = notacat@hotmail.cat
-    EOS
     system "git", "init"
     system "git", "commit", "--allow-empty", "--message", "brewing"
 

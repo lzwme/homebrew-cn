@@ -26,6 +26,8 @@ class Brpc < Formula
     depends_on "pkgconf" => :test
   end
 
+  allow_network_access! :test
+
   def install
     args = %W[
       -DBUILD_SHARED_LIBS=ON

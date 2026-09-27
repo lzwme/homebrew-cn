@@ -22,6 +22,8 @@ class Graphite2 < Formula
     depends_on "freetype" => :build
   end
 
+  allow_network_access! :test
+
   def install
     args = %W[
       -DCMAKE_INSTALL_RPATH=#{rpath}

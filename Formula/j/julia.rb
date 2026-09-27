@@ -2,9 +2,11 @@ class Julia < Formula
   desc "Fast, Dynamic Programming Language"
   homepage "https://julialang.org/"
   # Use the `-full` tarball to avoid having to download during the build.
+  # TODO: Remove from eol_date_blocklist when bumping to next release
   url "https://ghfast.top/https://github.com/JuliaLang/julia/releases/download/v1.12.7/julia-1.12.7-full.tar.gz"
   sha256 "5c7d85b771de3185eeca9fbc2e6173d8bcf6d74f68418622a9e9c43ad752af51"
   license all_of: ["MIT", "BSD-3-Clause", "Apache-2.0", "BSL-1.0"]
+  revision 1
   head "https://github.com/JuliaLang/julia.git", branch: "master"
 
   # Upstream creates GitHub releases for both stable and LTS versions, so the
@@ -17,13 +19,11 @@ class Julia < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "b9a9d78659d7eca269021d649b8270cc13409215f9fe82394c66ac2a445489c6"
-    sha256 cellar: :any, arm64_tahoe:       "37dd4dbde13c3f895761d180caa5ae62353afc50f85826ec66f3dadd6117af32"
-    sha256 cellar: :any, arm64_sequoia:     "f5a0d14444fe579d8c103656fe43465582e893146ed6622d13fd3d7fce283f11"
-    sha256 cellar: :any, arm64_sonoma:      "909343a8f9ccc0bfe198adedc881f430110b2300cd56ad2bf0a90d502dcae120"
-    sha256 cellar: :any, sonoma:            "0ec55ac71e10be13892d3c8017e56f4e37f4c76b2a34dcd59b67a79798b494df"
-    sha256 cellar: :any, arm64_linux:       "f17a75dfbfadd7854f856f813372a53e0944717bed3487a88ea8493203d544b9"
-    sha256 cellar: :any, x86_64_linux:      "b502ddf0ac05abaa3e516f7c126c92a584af63dfb417fd562f6499c3a25c7b0c"
+    sha256 cellar: :any, arm64_golden_gate: "df990aa2df3bdfe935b8e0f914bb1a6df02a5e174c4dec67e71871783aa2c34a"
+    sha256 cellar: :any, arm64_tahoe:       "ed581a02572af9e1030c7c714833eea123f36bae3f136e49b9367b0445d15679"
+    sha256 cellar: :any, arm64_sequoia:     "a81f23e7b1dad761494c10830701ff895beabe36d622d1c6364ff6f0cf17e87a"
+    sha256 cellar: :any, arm64_linux:       "35f5ea8011129f2fff336817c5fde7dba65dda4517ea8a979b8a2ba496477ab1"
+    sha256 cellar: :any, x86_64_linux:      "1089f6e86e175aae7f9e3d9024645bde4aa5f4caaeb6096d42bf46036b9f04b2"
   end
 
   depends_on "cmake" => :build # Needed to build LLVM
@@ -56,6 +56,14 @@ class Julia < Formula
   end
 
   conflicts_with "juliaup", because: "both install `julia` binaries"
+
+  # Apply open PR to fix up install names to avoid build path
+  patch do
+    url "https://github.com/JuliaLang/julia/commit/a60153ef1ecf6928f1962bb557313489e00d8f59.patch?full_index=1"
+    sha256 "adba308fd9e3165c3d1c964ac7c659936347ff62e0eb60d406bbf4f21d9a5941"
+    type :unofficial
+    resolves "https://github.com/JuliaLang/julia/pull/63376"
+  end
 
   def install
     # Build documentation available at
@@ -129,22 +137,19 @@ class Julia < Formula
     # Parallel sysimage shards each hold a full copy of the module, which runs the builder out of memory
     ENV["JULIA_IMAGE_THREADS"] = "1" if OS.linux? && Hardware::CPU.arm?
 
+    gcclibdir = formula_opt_lib("gcc")/"gcc/current"
     ENV.append "LDFLAGS", "-Wl,-rpath,#{lib}/julia"
-    # Help Julia find keg-only dependencies
-    deps.map(&:to_formula).select(&:keg_only?).map(&:opt_lib).each do |libdir|
-      ENV.append "LDFLAGS", "-Wl,-rpath,#{libdir}"
-    end
-
-    gcc = Formula["gcc"]
-    gcclibdir = gcc.opt_lib/"gcc/current"
     if OS.mac?
+      # Help Julia find keg-only or unlinked dependencies
+      deps.select(&:required?).map(&:to_formula).map(&:opt_lib).select(&:directory?).each do |libdir|
+        ENV.append "LDFLAGS", "-Wl,-rpath,#{libdir}"
+      end
+
       ENV.append "LDFLAGS", "-Wl,-rpath,#{gcclibdir}"
       # List these two last, since we want keg-only libraries to be found first
       ENV.append "LDFLAGS", "-Wl,-rpath,#{HOMEBREW_PREFIX}/lib"
       ENV.append "LDFLAGS", "-Wl,-rpath,/usr/lib" # Needed to find macOS zlib.
       ENV["SDKROOT"] = MacOS.sdk_path
-    else
-      ENV.append "LDFLAGS", "-Wl,-rpath,#{lib}"
     end
 
     # Remove library versions from nghttp2_jll and others
@@ -185,9 +190,6 @@ class Julia < Formula
       # gcc's full version and revision number in the symlink path
       ln_sf so.relative_path_from(lib/"julia"), lib/"julia"
     end
-
-    # Some Julia packages look for libopenblas as libopenblas64_
-    (lib/"julia").install_symlink shared_library("libopenblas") => shared_library("libopenblas64_")
 
     # Keep Julia's CA cert in sync with ca-certificates'
     pkgshare.install_symlink Formula["ca-certificates"].pkgetc/"cert.pem"

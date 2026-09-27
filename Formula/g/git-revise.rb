@@ -19,12 +19,6 @@ class GitRevise < Formula
   end
 
   test do
-    (testpath/".gitconfig").write <<~EOS
-      [user]
-        name = J. Random Tester
-        email = test@example.com
-    EOS
-
     system "git", "init"
     (testpath/"test").write "foo"
     system "git", "add", "test"

@@ -6,12 +6,12 @@ class Odinfmt < Formula
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "0c4b537386ffad5a7472714b8959f88479480f581425783341e2d173459a7129"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "26ce7dfa2e94d18c691212443fb5dfe5dac27da298eace364b1b6788b9189a4d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "c97f51a703d9b38b53d1b05ea8a4696e57b15acb69c683263b65336e9721928d"
-    sha256 cellar: :any,                 arm64_linux:       "82a3a0d6d61ef9cee1777874d867265912e79333f5125cf3bd1a421b8a0ec120"
-    sha256 cellar: :any,                 x86_64_linux:      "941f7316382cef8d7780c045f7ec4b899b4c73ecdc99215df216404753ca54de"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "494a4a081da44055cdeb29830c7b33c5e32e5534739c1013c8ff8504adb12b7d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "e0aa4cb7225e0427fe6237132dcf155bfb71e086f4e2df786fdb62672ad2d79f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "6b06a56c00f6e06e546abdd6059c0b6d30f044e29fa96802fa1e8fdcd7ed9ee3"
+    sha256 cellar: :any,                 arm64_linux:       "b5746c5aa1060c205f6353384e4f703aa541760dd4cd7726ca27b010ea7aaaa9"
+    sha256 cellar: :any,                 x86_64_linux:      "0b80172954824ae95f532410ea7b21030e0a9ee3937ab30b93bf614028461bbf"
   end
 
   depends_on "odin" => :build
@@ -31,6 +31,8 @@ class Odinfmt < Formula
       -o:speed
       -file
     ]
+    # Odin defaults to x86-64-v2, which is newer than Homebrew's oldest supported x86_64 CPU
+    args << "-microarch:#{ENV.effective_arch}" if Hardware::CPU.intel?
     system "odin", "build", "tools/odinfmt/main.odin", *args
 
     bin.install "odinfmt"

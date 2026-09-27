@@ -26,6 +26,8 @@ class WasmMicroRuntime < Formula
 
   depends_on "cmake" => :build
 
+  allow_network_access! :test
+
   def install
     # Prevent CMake from downloading and building things on its own.
     buildpath.glob("**/build_llvm*").map(&:unlink)

@@ -60,6 +60,8 @@ class Musepack < Formula
     type :unofficial
   end
 
+  allow_network_access! :test
+
   def install
     system "cmake", "-S", ".", "-B", "build",
                     "-DCMAKE_INSTALL_RPATH=#{rpath}",

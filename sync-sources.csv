@@ -3093,6 +3093,7 @@ Homebrew-homebrew-core/Formula/h/hgrep.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/hickory-dns.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/hicolor-icon-theme.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/h/hidapi.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/h/hidapitester.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/hierarchy-builder.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/highlight.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/h/highs.rb, Homebrew/homebrew-core, 1
@@ -7465,6 +7466,7 @@ Homebrew-homebrew-core/Formula/t/tccutil.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tcl-tk.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tcl-tk@8.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tclap.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/t/tcltls.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/tcpdump.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/tcpflow.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/tcping.rb, Homebrew/homebrew-core, 1
@@ -12758,6 +12760,7 @@ Homebrew-homebrew-cask/Casks/font/font-x/font-xiaolai-mono.rb, Homebrew/homebrew
 Homebrew-homebrew-cask/Casks/font/font-x/font-xiaolai.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-x/font-xkcd-script.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-x/font-xkcd.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/font/font-x/font-xmind.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-y/font-yaldevi-colombo.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-y/font-yaldevi.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-y/font-yanone-kaffeesatz.rb, Homebrew/homebrew-cask, 0
@@ -15405,6 +15408,7 @@ Homebrew-homebrew-cask/Casks/s/ssdreporter-free.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/ssh-config-editor.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/sshfs-mac.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/ssl-360.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/s/ssl-download-manager.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/ssokit.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/stability-matrix.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/stack.rb, Homebrew/homebrew-cask, 0

@@ -25,6 +25,8 @@ class Flif < Formula
   depends_on "libpng"
   depends_on "sdl2-compat"
 
+  allow_network_access! :test
+
   def install
     args = %W[
       -DCMAKE_INSTALL_RPATH=#{rpath}

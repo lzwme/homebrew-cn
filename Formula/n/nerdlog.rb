@@ -1,17 +1,17 @@
 class Nerdlog < Formula
   desc "TUI log viewer with timeline histogram and no central server"
   homepage "https://dmitryfrank.com/projects/nerdlog/article"
-  url "https://ghfast.top/https://github.com/dimonomid/nerdlog/archive/refs/tags/v1.11.0.tar.gz"
-  sha256 "a4027f3667d14eac04f64e2c8312823953caf47ccc6f5b6055f9c28a8c53fda7"
+  url "https://ghfast.top/https://github.com/dimonomid/nerdlog/archive/refs/tags/v1.12.0.tar.gz"
+  sha256 "67cb9bcac2ae8c5fdd0b43232b1ef48c9d3966ba6b1b246fddd3154b31aa1f86"
   license "BSD-2-Clause"
   head "https://github.com/dimonomid/nerdlog.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "81ed87fba9226d415496bfe59b2150417eff0f6a67146eef47391210a61e010c"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "ec818d81463d5099aa08285273d7e988f306b9b3e29f58c67416368ce7c7986e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "6043912c1b993c4b4cc44341e1c80f1288714c46b8d9df97abe491fad663be2e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "91cabafef3277d057ae8d4aec4aee5d3cb3c0cfffbeec30a9a7d52362faf1f1a"
-    sha256 cellar: :any,                 x86_64_linux:      "5737f5c9e88ff61065067a921224c582e7a34ded52886b5cbc6a6d49c100ff29"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "6a1c08a7cf950cb89fbf4b105e9fb555e8b07ee47873aad7fdf5af6d4ee6124c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "cf496769765407c51a3d61d6cd3457572f715ff512399643476ea2e5d0896f43"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "22fdad6974c076a75ed4a126d36a40adefa00061f5b5513b07cd7048dd06031b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "bc828668171f7cf4a5197c19fc77b151a35c84db0980ef00c382787c41f7eca3"
+    sha256 cellar: :any,                 x86_64_linux:      "d64f24a1eba5443c9922d2a540d3ba764fbdb9c6632cb851f21a21b38b8b4f63"
   end
 
   depends_on "go" => :build

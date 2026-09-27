@@ -1,8 +1,8 @@
 class Counterfeiter < Formula
   desc "Tool for generating self-contained, type-safe test doubles in go"
   homepage "https://github.com/maxbrunsfeld/counterfeiter"
-  url "https://ghfast.top/https://github.com/maxbrunsfeld/counterfeiter/archive/refs/tags/v6.13.0.tar.gz"
-  sha256 "84253d68187a1f7e11c8d224dc4fc41d38e9d250b67d9103458e4c8806ae8c97"
+  url "https://ghfast.top/https://github.com/maxbrunsfeld/counterfeiter/archive/refs/tags/v6.14.0.tar.gz"
+  sha256 "dc0fcae6c854fd418ebe856018a490f5a5651aeb76aa6dd1736b0158ad9788f9"
   license "MIT"
   head "https://github.com/maxbrunsfeld/counterfeiter.git", branch: "main"
 
@@ -12,11 +12,11 @@ class Counterfeiter < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "f96208e0fc51d178a34499e38f4a3f41dbf8e26f236ae496ba8a109d51810d37"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "f96208e0fc51d178a34499e38f4a3f41dbf8e26f236ae496ba8a109d51810d37"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "f96208e0fc51d178a34499e38f4a3f41dbf8e26f236ae496ba8a109d51810d37"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "fadf155a3404f000af9bc966389269abee4cca16da4665bf0a728b40f8831cad"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "183e9ede3abbef545a20c31b7ceb54f19eca66af833186b87e859c4b41bdd43a"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "032c7e2a9a3d3b3a1878b777089ec2458965ce2d63e926521635308770d19e6e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "032c7e2a9a3d3b3a1878b777089ec2458965ce2d63e926521635308770d19e6e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "032c7e2a9a3d3b3a1878b777089ec2458965ce2d63e926521635308770d19e6e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "9fb4f6572ec31e385f80696db13a12c60df2d4e8c84318cbc2e4d23e502c5327"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "ab32af241719554bd543adab51980f6d262978c3c168c9bfbe315c96669fce24"
   end
 
   depends_on "go"

@@ -25,6 +25,8 @@ class RaxmlNg < Formula
     depends_on "open-mpi"
   end
 
+  allow_network_access! :test
+
   def install
     args = %w[-DUSE_GMP=ON]
     # Workaround to build with CMake 4
