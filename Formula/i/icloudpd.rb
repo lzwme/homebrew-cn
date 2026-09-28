@@ -10,11 +10,6 @@ class Icloudpd < Formula
   license "MIT"
   head "https://github.com/icloud-photos-downloader/icloud_photos_downloader.git", branch: "master"
 
-  # TODO: remove if undeprecated
-  livecheck do
-    url :stable
-  end
-
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d75e98879c1870a38623ec5c57e62b0dcf3e3d4354233c72e75d3ec0389ee2af"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "9b411400cc917e43b07f6feca4c9a0f513bc7412dc35ed83d9b3ba45bfa2d9a3"
@@ -24,7 +19,7 @@ class Icloudpd < Formula
     sha256 cellar: :any,                 x86_64_linux:  "fa2b74d975436de8237a387cf9d155faada39587641d57941d434175d3ff26ec"
   end
 
-  # Can be undeprecated on new release or if upstream responds:
+  # TODO: Can be undeprecated if upstream responds:
   # https://github.com/icloud-photos-downloader/icloud_photos_downloader/issues/1362
   deprecate! date: "2026-09-17", because: :checksum_mismatch
   disable! date: "2027-09-17", because: :checksum_mismatch

@@ -1,19 +1,16 @@
 class Makensis < Formula
   desc "System to create Windows installers"
   homepage "https://nsis.sourceforge.net/"
-  url "https://downloads.sourceforge.net/project/nsis/NSIS%203/3.12/nsis-3.12-src.tar.bz2"
-  sha256 "f3ed7a8e4aa2cf4e8cf47d3b563a02559e0cb4934db2662b2f9661b824e2b186"
+  url "https://downloads.sourceforge.net/project/nsis/NSIS%203/3.13/nsis-3.13-src.tar.bz2"
+  sha256 "a8ffe024602d46b6d766f9e1ce30c324ad2a24daeacd3efc2642d436a0c157ac"
   license "Zlib"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "eb77aff3f2fb8a98dd649f62760c0774a8c57e659fca3dd83ea5d21990d4f259"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "864af32755ca54ded9664cf2dc5340248f5ea16f1fe01796cf9e3c63de09638b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "159c8964f2d0312ed91441a05b111e945c65e7db6656e6399f787ca0da616e89"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "5f7d8424fa7801a3f9bfa4e8bae1ffb5c8b4df6e48abf79d01a9533524fd8c91"
-    sha256 cellar: :any_skip_relocation, sonoma:            "9b482291c76d7965a7c535ee2fddbca5f76a0e018100f6f4950ab92c25967e1d"
-    sha256 cellar: :any,                 arm64_linux:       "f36b465469553f0cd0503aa4093386237a9c95f318b8f00008ab568faec627ef"
-    sha256 cellar: :any,                 x86_64_linux:      "6c1c684f418c02c44af554592161ee8ce1defa11ccab493e5a6e06df70b78fac"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "fb902fdc6f21f2d0dee4f78d6a1350263901624217ed2ae591b94d107e665a38"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "e7c507dc02c50a630db44948fc68ff4dea7c2bae64592d96d134952c2624ddc1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "02605964f5fb05003331867c10cf89dbfa0bf4eeeca7ee397787a4d8084837ac"
+    sha256 cellar: :any,                 arm64_linux:       "4b830b3abe54cacaa0f575d8f15d92d59316629252105f30abf59f5f38e2ded8"
+    sha256 cellar: :any,                 x86_64_linux:      "ffa86d93e3affc4cb033d75d66c7cc4369664850928ccf518c665e6669a0ad6a"
   end
 
   depends_on "mingw-w64" => :build
@@ -24,8 +21,8 @@ class Makensis < Formula
   end
 
   resource "nsis" do
-    url "https://downloads.sourceforge.net/project/nsis/NSIS%203/3.12/nsis-3.12.zip"
-    sha256 "56581f90db321581c5381193d796fffcf2d24b2f8fed2160a6c6a3baa67f2c4f"
+    url "https://downloads.sourceforge.net/project/nsis/NSIS%203/3.13/nsis-3.13.zip"
+    sha256 "ba63dffc4410ee89193e1cb5a41989991bd77c61068da17e3156d136b7b0b3d8"
 
     livecheck do
       formula :parent

@@ -4,22 +4,20 @@ class Amber < Formula
   url "https://ghfast.top/https://github.com/amberframework/amber/archive/refs/tags/v1.5.0.tar.gz"
   sha256 "12c7b576a5f2e0dba53962ca23d18435526a2b685924783d57cb0d507bd93a03"
   license "MIT"
+  revision 1
 
   bottle do
-    sha256 arm64_golden_gate: "001ad470f30e4ea89ce0d85887199bbe3835faaf6bbfbb7c63c627e26d6d1600"
-    sha256 arm64_tahoe:       "6e720185a4c012a566b4399e728cbd43553a6eb27541c48c77b8552b8e98e37b"
-    sha256 arm64_sequoia:     "5ed58ee7e3f2883971712b2cf058e8717a13dcf00a40bbb5ce74a3d75f6896df"
-    sha256 arm64_sonoma:      "07294ec9c0106cf3efc94f91f0cdccdae25288cdcb05627785f4fba5d41d5720"
-    sha256 sonoma:            "03a76a11085d2a54a377f4c0980e5c94e6dedb58377a1ff63dbdab005c4876d6"
-    sha256 arm64_linux:       "65fb21b950336bf46af9f6edd3255ee2adc62448c572911fb7cb429efa80c0e6"
-    sha256 x86_64_linux:      "de9d850afa9b038d4ccfe909feb126f6e1ca950ec454232a31f052696518ccee"
+    sha256 arm64_golden_gate: "c5f84b98a879b6e845b43ade33c7cfbc3dd94b152e9510a69358c6bf9b5c7272"
+    sha256 arm64_tahoe:       "3b6c4bed6b888ed5253130c3c131205d114823e2b99e8c4c6f67ca660a644e1f"
+    sha256 arm64_sequoia:     "b70ddfdd4ef5bc01ae3c8c10d8ff0ef8683b5c819dc85cd6b656fb984d09086a"
+    sha256 arm64_linux:       "37e4f44c761eab1d58a3698693dbcc5a2ce7375016b91373bede311874cfe653"
+    sha256 x86_64_linux:      "8384d89aad94347eca84037576acddbc92f2103a896593837d1dc1c73febe301"
   end
 
   depends_on "bdw-gc"
   depends_on "crystal"
-  depends_on "libevent"
   depends_on "libyaml"
-  depends_on "openssl@3"
+  depends_on "openssl@4"
   depends_on "pcre2"
   depends_on "sqlite"
 
@@ -46,7 +44,7 @@ class Amber < Formula
       assert_match path, output
     end
 
-    ENV.prepend_path "PKG_CONFIG_PATH", formula_opt_lib("openssl@3")/"pkgconfig"
+    ENV.prepend_path "PKG_CONFIG_PATH", formula_opt_lib("openssl@4")/"pkgconfig"
     cd "test_app" do
       shards = formula_opt_bin("crystal")/"shards"
       assert_match "Building", shell_output("#{shards} --without-development build test_app -Dwithout_mt")

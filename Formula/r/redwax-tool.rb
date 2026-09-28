@@ -60,7 +60,8 @@ class RedwaxTool < Formula
       "emailAddress" => "hello@example.com",
     }
 
-    system "openssl", "req", "-x509", "-newkey", "rsa:4096", "-days", "1", "-nodes",
+    openssl = formula_opt_bin("openssl@3")/"openssl"
+    system openssl, "req", "-x509", "-newkey", "rsa:4096", "-days", "1", "-nodes",
            "-keyout", "key.pem", "-out", "cert.pem", "-sha256",
            "-subj", "/#{x509_args.map { |key, value| "#{key}=#{value}" }.join("/")}"
 

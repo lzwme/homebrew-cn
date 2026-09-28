@@ -3612,7 +3612,6 @@ Homebrew-homebrew-core/Formula/k/kfr.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/khal.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/k/khaos.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/khard.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/k/khiva.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/k/ki.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/ki18n.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/k/kibi.rb, Homebrew/homebrew-core, 1
@@ -8095,6 +8094,7 @@ Homebrew-homebrew-core/Formula/v/volta.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vorbis-tools.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/v/vorbisgain.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/v/voro++.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/v/vortix.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/votca.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vowpal-wabbit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vpcs.rb, Homebrew/homebrew-core, 1
@@ -13257,8 +13257,8 @@ Homebrew-homebrew-cask/Casks/i/isubtitle.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/isyncer.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/itau.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/itch.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/i/iterm2.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/i/iterm2@beta.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/i/iterm2.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/i/iterm2@beta.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/iterm2@nightly.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/itermai.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/itermbrowserplugin.rb, Homebrew/homebrew-cask, 0
@@ -13335,6 +13335,7 @@ Homebrew-homebrew-cask/Casks/j/journey.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/j/jpadilla-rabbitmq.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/j/jpadilla-redis.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/j/jpc-qlcolorcode.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/j/jpki.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/j/jprofiler.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/j/jquake.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/j/jslegendre-themeengine.rb, Homebrew/homebrew-cask, 1
@@ -13791,6 +13792,7 @@ Homebrew-homebrew-cask/Casks/m/mcloud.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mcpbundler.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mcreator.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/mdb-accdb-viewer.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/m/mdhero.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/mdrp.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mds.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mechvibes.rb, Homebrew/homebrew-cask, 1
@@ -14580,9 +14582,9 @@ Homebrew-homebrew-cask/Casks/p/pixieditor.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/pixpin.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/pktriot.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/plamo-translate.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/p/plane.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/planet.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/plasticity.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/p/plasticscm-cloud-edition.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/platinum-notes.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/platypus.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/plaud.rb, Homebrew/homebrew-cask, 0
@@ -15926,6 +15928,7 @@ Homebrew-homebrew-cask/Casks/u/unity-cli.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/u/unity-hub.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/u/unity-hub@beta.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/u/unity-ios-support-for-editor.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/u/unity-version-control.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/u/unity-webgl-support-for-editor.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/u/unity-windows-support-for-editor.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/u/unity.rb, Homebrew/homebrew-cask, 0

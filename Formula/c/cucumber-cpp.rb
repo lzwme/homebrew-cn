@@ -2,18 +2,16 @@ class CucumberCpp < Formula
   desc "Support for writing Cucumber step definitions in C++"
   homepage "https://cucumber.io"
   url "https://github.com/cucumber/cucumber-cpp.git",
-      tag:      "v0.8.0",
-      revision: "38bd34a3caaeb3fa6ab80d09b323e1a9d6fe24b7"
+      tag:      "v0.9.0",
+      revision: "3a906521e53846b4c5d59b994e4b60655097d5ea"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_golden_gate: "74a03b0fb861bc6b0621ecd234e89a7d92e9a3ea63b53a871c7e263350cad579"
-    sha256 cellar: :any,                 arm64_tahoe:       "35223aa4c6b55a58d5791ee51e2ae47359e11a8c4cf4512227e13150d443a4e3"
-    sha256 cellar: :any,                 arm64_sequoia:     "22354d052564f4bf8e49d62f5b99f1789c39fadba6e1ae42aaf7d44ad4fd7a20"
-    sha256 cellar: :any,                 arm64_sonoma:      "c99200855796c764cf8fb723fe2f70ba8a4c53dfe5b880ee3c2fe2ac85dbfc68"
-    sha256 cellar: :any,                 sonoma:            "3b9169520a6eb955a10b97cdcd5de61709a49df4b047a60fb52db09e03a0b83b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "18c389442081099600284c429bcb1693cdbde8af1c2705750d4d358918e4cbfd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "f94c8fe6c5d816f8b8a8e7cb6885d032e8a27431827ad6fd96aea155d37bc66c"
+    sha256 cellar: :any, arm64_golden_gate: "87fbd1fde771e87cc1cf6912f0ce365b2b543255c6bc75da2f1c2fadcb11a7b6"
+    sha256 cellar: :any, arm64_tahoe:       "9378982184549953aca702549098a4ae2d5a222d04f1b1a66127e2debfecd685"
+    sha256 cellar: :any, arm64_sequoia:     "9faf7c36dd7918e0eea7b3f7e6bbd1945906930d87e0bb65b345b5a8c0519520"
+    sha256 cellar: :any, arm64_linux:       "8414c70a32e4aa9a84cae73dac6bc80a24f3bde1187e2c278ba3acfc2a03651c"
+    sha256 cellar: :any, x86_64_linux:      "4f2f59e8cfae15023fde76bd1582e7888687a08f8af4cb10a6f55124c7699689"
   end
 
   depends_on "cmake" => :build

@@ -15,20 +15,12 @@ class Apib < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_golden_gate: "a92fc7e2114b5dc78437d062304543b82092bf346c4fe9a4f1dcdc42213cc947"
-    sha256 cellar: :any,                 arm64_tahoe:       "337cb9a61b2d654dd1217f9abb5c6b36056b0a9a1b0309493761e48b70e3c087"
-    sha256 cellar: :any,                 arm64_sequoia:     "16bdbdc8c1157d81ef431aa3c9065d08a8986f6f9863d6d1d9ec7b9bf9ba1a4c"
-    sha256 cellar: :any,                 arm64_sonoma:      "6b82511a66880598cbb30560c46652203f7448dd5fecea99bf50a73cc248f18a"
-    sha256 cellar: :any,                 arm64_ventura:     "0d3f8ebb9f43ccdebb3d1f0afea5decb6418aee36e2021d8c6eb2a182f023c09"
-    sha256 cellar: :any,                 arm64_monterey:    "c411bb84a6c9cedada2763065efefa16107e3d030108a0a56d58cbef1261ead7"
-    sha256 cellar: :any,                 arm64_big_sur:     "a2c0d222e5f4e7ce13ea2671367e125a2a493922696f1cdcccf01edb3fcafb8f"
-    sha256 cellar: :any,                 sonoma:            "8312ece497888c99b07749e20beb873192dcc2ccc16cd0f0f0193324e9bec9f1"
-    sha256 cellar: :any,                 ventura:           "829fdf8369067c69644601156922fa6f2a6b42909156c5760c9b37a0cfaf3a72"
-    sha256 cellar: :any,                 monterey:          "f8b39236e548bc511ac9be750bf5e34ea153828b66fee23f12d59cef6a1d2459"
-    sha256 cellar: :any,                 big_sur:           "26096e8f935082051fb8695d3f01ae9d0991baad89d170d96461794a9f756d3a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "3f95d7ee859f9339c976338e990352bf0416c79a14645c66eda6ee7387f4089b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "43509a772521b80a03d3702dba034b752371581c0739c6cfb7f1c48217398a42"
+    rebuild 2
+    sha256 cellar: :any, arm64_golden_gate: "95aac176ed13f2938a95a4b35b7de921d2b330d829f844d9e8d602a6d5d04dc0"
+    sha256 cellar: :any, arm64_tahoe:       "0c555bcff37de6ecbb0013234d602121bc25b7681fa94cea758ac235dcb554bd"
+    sha256 cellar: :any, arm64_sequoia:     "f30454422dad2befe6a123cb1ff6848b7d791f07525160d3fd0adfc37bf7a916"
+    sha256 cellar: :any, arm64_linux:       "e71b394c17bd50081aca595494ac682d3a99c8fbe9d1c11185945389a7811c0c"
+    sha256 cellar: :any, x86_64_linux:      "46856923ee54c34bc63dae4d4d2dcd0d3edd528911a7f498af0b06fdb7d08314"
   end
 
   deprecate! date: "2026-04-30", because: :repo_archived
@@ -36,12 +28,15 @@ class Apib < Formula
 
   depends_on "cmake" => :build
   depends_on "libev"
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   def install
     # Workaround to build with CMake 4
     args = %w[-DCMAKE_POLICY_VERSION_MINIMUM=3.5]
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
+    # Workaround to build bundled Abseil
+    inreplace "build/_deps/absl-src/absl/strings/internal/str_format/extension.h",
+              "#include <cstddef>", "\\0\n#include <cstdint>"
     system "cmake", "--build", "build", "--target", "apib", "apibmon"
     bin.install "build/apib/apib", "build/apib/apibmon"
   end

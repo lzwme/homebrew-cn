@@ -1,17 +1,17 @@
 class Secretspec < Formula
   desc "Declarative secrets management tool"
   homepage "https://secretspec.dev"
-  url "https://ghfast.top/https://github.com/cachix/secretspec/archive/refs/tags/v0.21.0.tar.gz"
-  sha256 "fa24f785bae57f6005b306493d5546002d08d71a42da6daf0cecd7a917e0b004"
+  url "https://ghfast.top/https://github.com/cachix/secretspec/archive/refs/tags/v0.21.1.tar.gz"
+  sha256 "e2bc9cd215f7ddf74d7ef00bbe7cda318354a8223e7c04d7564759c70f3730b0"
   license "Apache-2.0"
   head "https://github.com/cachix/secretspec.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "74464fccedc39c8271bba5749e7ac4838443d3e5f1a4ca672cd4ed8ed2345c40"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "9c3693eaf007f265b6e67159d929ec40e4228ba8b619ab34eef8c1b8935d3174"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "be30c166bf8bac1a554a0af6645e7828d06c2416eca6f33781b4cc5b7482834c"
-    sha256 cellar: :any,                 arm64_linux:       "a582273a96a0fb7213533e6a1da36314e6e1c0b714b813bfa12d645d1c2bd278"
-    sha256 cellar: :any,                 x86_64_linux:      "d0b6a81384e1a00c68d337c3f6cb7da8be1e5dbec562b470949f8b78c4bdf92e"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "93ca1e9d4a39b121c321f665b38c21de1385fa44152878bc51df4a49356cb9cc"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "f3a1e6501ca3ac2bb7c3ff32ff545815c41e3f115017c669f38c4efad5480e9c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "00ec1c821060956cdae207c3e2d776162e5c07cbee5bcd341933f6ed69207320"
+    sha256 cellar: :any,                 arm64_linux:       "de9047f0ca50138d786885d0bbadc85162ee85a3c8758900c5804ee227cff15b"
+    sha256 cellar: :any,                 x86_64_linux:      "041395cf177a029bf6586aec365f5cf7b69d5fedf83d9a62c5d678f7f4a90931"
   end
 
   depends_on "pkgconf" => :build
@@ -19,6 +19,12 @@ class Secretspec < Formula
 
   on_linux do
     depends_on "dbus"
+  end
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
   end
 
   def install

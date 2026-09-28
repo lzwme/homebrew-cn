@@ -5,11 +5,6 @@ class Nvtop < Formula
   sha256 "bfcf24a4bbc763c92a630900f1679f05cce3c9d5f4d1f4a95bdb9230ef562665"
   license "GPL-3.0-or-later"
 
-  # TODO: remove if undeprecated
-  livecheck do
-    url :stable
-  end
-
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "76ee86ee0c3aff96e54fceceea9fc3ad3df75cb8f31cb9f352f0215abdd33062"
     sha256 cellar: :any,                 arm64_sequoia: "032b3e5a4782ea16ecbb65a91098a8b2790c2e7add4da4befe2ccc4d57b82dc7"
@@ -19,7 +14,7 @@ class Nvtop < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "d59233a29922c798943bb0c5706aa7be60ae2237c513b7e926055e9e913062b1"
   end
 
-  # Can be undeprecated on new release or if upstream responds:
+  # TODO: Can be undeprecated if upstream responds:
   # https://github.com/Syllo/nvtop/issues/490
   deprecate! date: "2026-09-17", because: :checksum_mismatch
   disable! date: "2027-09-17", because: :checksum_mismatch

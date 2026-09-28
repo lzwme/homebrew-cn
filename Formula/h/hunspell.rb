@@ -1,18 +1,16 @@
 class Hunspell < Formula
   desc "Spell checker and morphological analyzer"
   homepage "https://hunspell.github.io"
-  url "https://ghfast.top/https://github.com/hunspell/hunspell/releases/download/v1.7.3/hunspell-1.7.3.tar.gz"
-  sha256 "433274dac0619cb00c2e18b43a3dd3a9d50da5b5613fa9b5c21781e35dd76bc1"
+  url "https://ghfast.top/https://github.com/hunspell/hunspell/releases/download/v1.7.4/hunspell-1.7.4.tar.gz"
+  sha256 "66ec82a577395fe9d471504267e6dd04615c76517c61af7c6b9c19e5e34e73c8"
   license any_of: ["MPL-1.1", "GPL-2.0-or-later", "LGPL-2.1-or-later"]
 
   bottle do
-    sha256 cellar: :any,                 arm64_golden_gate: "1334cb27e29e1fc5993f2ba6de973c8ed190ce5734e30dfa99d0012f0201ec14"
-    sha256 cellar: :any,                 arm64_tahoe:       "503e2e2d4928cbe8a5423b5ec26025fe60f31bdeecb6e9769562a169d4de9073"
-    sha256 cellar: :any,                 arm64_sequoia:     "3451e2496f485ce24b516a73ede197f309566310c9bc3bb5ace06990097af14d"
-    sha256 cellar: :any,                 arm64_sonoma:      "5bc2814195ba15c75ba9ff3d133cf67c2e9274a8ddb5d4ca239acae77a354a8f"
-    sha256 cellar: :any,                 sonoma:            "f9e25acf39a97417f787b787f8c871484a3e97ae21941f4680fff26c5984dc27"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "90da5726acbdd84fe613c115e9e2ba452e5cd662e635f3dfee5a2fc1bc052e1d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "75d9ba5107a1726e8e2efe5273fa8332865fad6e5d6074db95f9d62fd01ca566"
+    sha256 cellar: :any, arm64_golden_gate: "8ba6861ac4fdc4bf782dd45b82782069db915c37974e61553ef86be5d599fe64"
+    sha256 cellar: :any, arm64_tahoe:       "ea9c563e34dcfd74a81132f510b6551c6a0c5c04385d792333d01522e489afca"
+    sha256 cellar: :any, arm64_sequoia:     "eaa5e935b12d371a471ce60516dbcac5a17d2b71628f48b569c144ce7cb83ae2"
+    sha256 cellar: :any, arm64_linux:       "66b70207f08b1a6ca7d951b34a48ef1ae733349e48c957be4d33fa2ffc72425c"
+    sha256 cellar: :any, x86_64_linux:      "4b639fe475b179f28657090184cf266a5a9b9dacf6c616237016337768a87f46"
   end
 
   depends_on "gettext" => :build

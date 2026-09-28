@@ -10,6 +10,9 @@ class Fatal < Formula
     sha256 cellar: :any_skip_relocation, all: "00f4a4f24af792f102425ba6e653b99c3add770fd1106abf0053b44939325b34"
   end
 
+  deprecate! date: "2026-09-27", because: :repo_archived
+  disable! date: "2027-03-27", because: :repo_archived
+
   def install
     rm "fatal/.clang-tidy"
     include.install "fatal"

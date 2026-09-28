@@ -7,18 +7,19 @@ class Lavinmq < Formula
   head "https://github.com/cloudamqp/lavinmq.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "4eea07750eeab197a5a7b39b20f35fe862b121b43ad9285732622ed8d2041a7f"
-    sha256 cellar: :any, arm64_tahoe:       "00bceb8cb4b1c56090b3b670b38c6f44db7595ecfb0cf5509f9524da7ec88c71"
-    sha256 cellar: :any, arm64_sequoia:     "1b375442ef985c291d83fb4081d93aaf996f41df742b5f50176321c2a92d17cf"
-    sha256 cellar: :any, arm64_linux:       "c125db50c7f0bb0bd03cf0001ed3fad9262a417531e817e93df89291b3aa6d72"
-    sha256 cellar: :any, x86_64_linux:      "219d1ce430ac5bd95e6ca44828ddde975e16d997282d2015722f2871ce0eab57"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "bb662fb98849595e1ba05c7db1bf282d40e3e85db2e848644dbfb175fea5e791"
+    sha256 cellar: :any, arm64_tahoe:       "bd0608afb10da597fc8d7b8728c813347167fd121cdef34cef8ac58b39a7de0e"
+    sha256 cellar: :any, arm64_sequoia:     "6d645a78c27a33541cfa917e484abefedff7d2a2fc1953800c7c9142e9e933d1"
+    sha256 cellar: :any, arm64_linux:       "fb29ed5c9973c0c9003ad398732b80a8699ac82be319ffa4dd35a8df55fa67b8"
+    sha256 cellar: :any, x86_64_linux:      "bf5d4cc6fbc8763293812636e043b9972efd45b21742750634a6350767f36cee"
   end
 
   depends_on "crystal" => :build
   depends_on "help2man" => :build
   depends_on "bdw-gc"
   depends_on "lz4"
-  depends_on "openssl@3"
+  depends_on "openssl@4"
   depends_on "pcre2"
 
   on_macos do

@@ -1,20 +1,18 @@
 class Zrok < Formula
   desc "Geo-scale, next-generation sharing platform built on top of OpenZiti"
   homepage "https://zrok.io"
-  url "https://ghfast.top/https://github.com/openziti/zrok/releases/download/v2.0.4/source-v2.0.4.tar.gz"
-  sha256 "4da44266316277b4f4b219dd22098534d273f52b08950fca1b22914aebf6f393"
+  url "https://ghfast.top/https://github.com/openziti/zrok/releases/download/v2.0.5/source-v2.0.5.tar.gz"
+  sha256 "6b6aa28e841fb56cb0e4c8192e6444d74c214288ecc5f9c6816866057a8daf40"
   # The main license is Apache-2.0. ACKNOWLEDGEMENTS.md lists licenses for parts of code
   license all_of: ["Apache-2.0", "BSD-3-Clause", "MIT"]
   head "https://github.com/openziti/zrok.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "fd7437432d652864ac285b1d5e6be4f28d16c10303f1fe8cb9d2b7f0d78bb114"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "d3f28ef52ca95f59282e29d00c11e6db201dc2e792e194db097c52b999b938f4"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "760e4375381783fcd3180aa1531dda2f40f435fc93eb4c3863c73b552c393d97"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "c387edac9bf6497af920b5d217f744ba11fd49c23287265f4e4e3535328c4a0c"
-    sha256 cellar: :any_skip_relocation, sonoma:            "64831f44f09304a5570170dbac396716425f08b6c4b1c99ef50f0668c80f8c6c"
-    sha256 cellar: :any,                 arm64_linux:       "dc0eaa34fcb11f82bbc52212ed2e16d44c9105beaed9fde2ad2e02f8674836ab"
-    sha256 cellar: :any,                 x86_64_linux:      "f1b8406ba51ec78b24be8c118d121c47821876e78f8f123731febe36fa4fc890"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "dcfb9abc0c290b2936d488c58254fce3c62ab13c8e4bcc3db388d323aa343bec"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "944952fc2cefbaf1da79786aa1485f2d25a0158259d48cef9d0a2fa964cc0750"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "6f7a470c6cde6baf931b76d198d51f11700879a2b86e4b369c9b4b713cfc0f0a"
+    sha256 cellar: :any,                 arm64_linux:       "0775dd5fdc4fd4cb402fc7f7d9146e8fb3cd65a51b830cb410d28e8a73b3f51a"
+    sha256 cellar: :any,                 x86_64_linux:      "3baba58b69d22e86ef67c555cb42e01526d0cda6a56c28a23a3198bac0d36390"
   end
 
   depends_on "go" => :build

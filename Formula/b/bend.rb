@@ -1,13 +1,13 @@
 class Bend < Formula
   desc "Language that blocks AI mistakes via proof"
   homepage "https://bend-lang.com"
-  url "https://ghfast.top/https://github.com/bendlang/bend/archive/refs/tags/v2.0.29.tar.gz"
-  sha256 "ec92f01df46fc5f68fe8b102397027edae977b73ea6156ff2b818e26dd09afb6"
+  url "https://ghfast.top/https://github.com/bendlang/bend/archive/refs/tags/v2.0.32.tar.gz"
+  sha256 "58e390f1779fe04658764ee6ca5fd99bf2971a60e1d958b20a2ec701c8398df2"
   license "Apache-2.0"
   head "https://github.com/bendlang/bend.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "b6bc1dae01e2081deb4495847de70e6cd574333eb201699f700fd583b3031bff"
+    sha256 cellar: :any_skip_relocation, all: "8e1a6407101271c4f7e5cbad0883d32a5cf7aa1a072884dcf0714cd45c1f1d17"
   end
 
   depends_on "bun"

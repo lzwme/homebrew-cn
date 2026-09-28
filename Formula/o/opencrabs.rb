@@ -1,23 +1,24 @@
 class Opencrabs < Formula
   desc "Autonomous, self-improving AI agent in a single Rust binary"
   homepage "https://opencrabs.com"
-  url "https://ghfast.top/https://github.com/adolfousier/opencrabs/archive/refs/tags/v0.5.3.tar.gz"
-  sha256 "1b2ffbf219c4b63108eab557926e116618e34f949dd3ffb39d28d8e3f5190425"
+  url "https://ghfast.top/https://github.com/adolfousier/opencrabs/archive/refs/tags/v0.5.4.tar.gz"
+  sha256 "84f014d7dd2f17939489168db15ba2600ffb65e72f056474a6c2b39b24dba661"
   license "MIT"
   head "https://github.com/adolfousier/opencrabs.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "22adbfddcf86c0e64f966cb0a0b71a044c8710506c6e7ddcd156774fb022f5c8"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "1933ee9476c3ecb3a271d37415cc2c469f6f7c23c07b931c8abf5966654bdcc5"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "8e278e43bac1ed70190cf64c69273f0388083eabcc11fe53ac94f2fc5ee4760d"
-    sha256 cellar: :any,                 arm64_linux:       "e82fad0a191e400a8476a88eb9447ae37ef266358e4e8b6407d0552b77b4258c"
-    sha256 cellar: :any,                 x86_64_linux:      "248aa0b2c2145603286eea8089791ff12a1c8c32c901a4c6bec1f317364b2186"
+    sha256 cellar: :any, arm64_golden_gate: "0dcecb382085efcb2db1b62c249d2c8e1930503eeffe4e5df3fc60837efdc8aa"
+    sha256 cellar: :any, arm64_tahoe:       "c0f8afa8aad8dbbc74fa16ba0336282806f9fc6e868cbc837f3c5199e6392b96"
+    sha256 cellar: :any, arm64_sequoia:     "947e5135985b6986f86e44899d4e3e8a56435af1fc0c0ff6c76f7f62b53b385e"
+    sha256 cellar: :any, arm64_linux:       "61cb8da2264f1ea3ed8eb79e467317e626be8a28515bb7af1958208e68417ddb"
+    sha256 cellar: :any, x86_64_linux:      "7a446e0546236e675079a016b52e7e16aab1f52e7815afe7e93127bfcb978498"
   end
 
   depends_on "cmake" => :build
   depends_on "llvm" => :build
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
+  depends_on "opus"
   depends_on "rtk"
 
   on_linux do
@@ -32,6 +33,18 @@ class Opencrabs < Formula
   end
 
   def install
+    # symphonia-adapter-libopus bundles libopus by default
+    inreplace "Cargo.toml", /^symphonia-adapter-libopus = \{/, "\\0 default-features = false, "
+
+    # Work around arm64 linux runner crashing from fat LTO
+    github_arm64_linux = OS.linux? && Hardware::CPU.arm? &&
+                         ENV["HOMEBREW_GITHUB_ACTIONS"].present? &&
+                         ENV["GITHUB_ACTIONS_HOMEBREW_SELF_HOSTED"].blank?
+    if github_arm64_linux
+      ENV.deparallelize
+      ENV["CARGO_PROFILE_RELEASE_LTO"] = "thin"
+    end
+
     ENV["LIBCLANG_PATH"] = formula_opt_lib("llvm").to_s
     ENV["MACOSX_DEPLOYMENT_TARGET"] = MacOS.version.to_s if OS.mac?
 

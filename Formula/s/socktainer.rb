@@ -1,15 +1,14 @@
 class Socktainer < Formula
   desc "Docker-compatible REST API on top of Apple container"
   homepage "https://socktainer.github.io"
-  url "https://ghfast.top/https://github.com/socktainer/socktainer/archive/refs/tags/v1.2.1.tar.gz"
-  sha256 "6cc0c5c6356d72075f3bd4f9e116e52937d1dd8822ad623e2d0df97f4601e59e"
+  url "https://ghfast.top/https://github.com/socktainer/socktainer/archive/refs/tags/v1.4.0.tar.gz"
+  sha256 "2825df7c407a84a4087b1f9899798402e14df707b18b5d7cbeef37a7cc49e314"
   license "Apache-2.0"
   head "https://github.com/socktainer/socktainer.git", branch: "main"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "c33cf165f8e4de61aee8968eed0473cecb179d37578b64bd9996d57e82df5ebd"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "3fa403a38b8f0214044f8333797c5cd35c82091568d2af61adf7c7690182aa8d"
+    sha256 arm64_golden_gate: "4d08c365cb23c0c483a2897faf101179f16d5abcc5e18e6ac93e722920d9f300"
+    sha256 arm64_tahoe:       "a53964372d0142e27a601f70e08373716f7ff8ac874ad4b04e4290302801af01"
   end
 
   depends_on xcode: ["26.0", :build]
@@ -19,12 +18,12 @@ class Socktainer < Formula
 
   uses_from_macos "swift" => :build
 
-  # Support apple container >1.2
-  patch do
-    url "https://github.com/socktainer/socktainer/commit/f0bb750256fa23648f2f240625f6ef179e80e660.patch?full_index=1"
-    sha256 "395a690867b55e5f8bb262c3444076d67bb836b6303470327040d56c79396c07"
-    type :backport
-    resolves "https://github.com/socktainer/socktainer/issues/181"
+  deny_network_access!
+
+  def fetch
+    # SwiftPM tries to apply its own sandbox, which cannot nest inside the
+    # build sandbox; Homebrew's sandbox still confines the whole process.
+    system "swift", "package", "resolve", "--disable-sandbox"
   end
 
   def install

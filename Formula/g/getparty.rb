@@ -1,18 +1,17 @@
 class Getparty < Formula
   desc "Multi-part HTTP download manager"
   homepage "https://github.com/vbauerster/getparty"
-  url "https://ghfast.top/https://github.com/vbauerster/getparty/archive/refs/tags/v1.28.1.tar.gz"
-  sha256 "1dd4e69a44f5f758b34488073469a01aaefa2e82ef53a26b6b658ba35614a900"
+  url "https://ghfast.top/https://github.com/vbauerster/getparty/archive/refs/tags/v1.28.2.tar.gz"
+  sha256 "99b0f0fa8661b6bc70fddb69424c8eab5bd0a3c5ae29b6706a63c430e416cd4c"
   license "BSD-3-Clause"
   head "https://github.com/vbauerster/getparty.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "89510ba5ddec576961648efee8418c9ff2a2fcbfd240c2d147f192c34229f9f4"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "6d1720ea607d150686a6f3e20993f280d8c5bc61db7ea0817cfb6223c58ad4e2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "6d1720ea607d150686a6f3e20993f280d8c5bc61db7ea0817cfb6223c58ad4e2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "6d1720ea607d150686a6f3e20993f280d8c5bc61db7ea0817cfb6223c58ad4e2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "6c8a6c5334ed84a351db3672dc5e6198f5c905596257879cd8c702d69bd74f99"
-    sha256 cellar: :any,                 x86_64_linux:      "770ca9fb8583f05acd5d478aae96d400e01402b5762b7839008f5607e6fd85dc"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "71e810de46ded351e626447da1f46f11132f99d4cec1d099daac8805d56db2ef"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "71e810de46ded351e626447da1f46f11132f99d4cec1d099daac8805d56db2ef"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "71e810de46ded351e626447da1f46f11132f99d4cec1d099daac8805d56db2ef"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "cef0e38e3565b30549e3ab786728d0b61cf97928f20ef51cd3d55b3002767645"
+    sha256 cellar: :any,                 x86_64_linux:      "cfc7f0df85ae4b251dfb1af8301430cac575ebcd66ac7afbd57b50cb5a733938"
   end
 
   depends_on "go" => :build

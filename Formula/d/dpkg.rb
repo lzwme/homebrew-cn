@@ -23,9 +23,9 @@ class Dpkg < Formula
     sha256 x86_64_linux:      "8a3ff50cf54a6cfb738f78256bed0f037aa09b6fadb6091ee9fce029edd3031e"
   end
 
+  depends_on "gettext" => :build
   depends_on "pkgconf" => :build
   depends_on "po4a" => :build
-  depends_on "gettext"
   depends_on "gnu-tar"
   depends_on "gpatch"
   depends_on "libmd" # for md5.h
@@ -33,6 +33,10 @@ class Dpkg < Formula
   depends_on "xz" # For LZMA
 
   uses_from_macos "bzip2"
+
+  on_macos do
+    depends_on "gettext"
+  end
 
   on_linux do
     keg_only "it conflicts with system dpkg"

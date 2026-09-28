@@ -52,6 +52,13 @@ class Krb5 < Formula
     depends_on "keyutils"
   end
 
+  # Add support for OpenSSL 4
+  patch do
+    url "https://github.com/krb5/krb5/commit/ceee5d558a2be93a9b2df717be1ea42c5d83ee51.patch?full_index=1"
+    sha256 "f7af91992fa6c825a4d42bcc138cd521aa8b98d723f9301c3d39acc4e780d249"
+    type :backport
+  end
+
   def install
     cd "src" do
       system "./configure", "--disable-nls",

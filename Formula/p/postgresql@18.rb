@@ -11,13 +11,12 @@ class PostgresqlAT18 < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "dffba8a94890fc097713b4d75a49707e8d18bea50f572ea100ccc5566e36a7f8"
-    sha256 arm64_tahoe:       "01bed50e337f559e3818e6ece88a6f3f7a0e550eb833e62df56ad7d8cdca71f6"
-    sha256 arm64_sequoia:     "e4198d57ab3743928847184a294339921a450a39a14c32d09b32fe2b494a8304"
-    sha256 arm64_sonoma:      "7305bae0536d2eb69c73e8539272511e19afde052700fd55baaa7365ee1e1648"
-    sha256 sonoma:            "3d6375c9f23f3904465f26e99eed103f13568abf6aa42b5f4fc703b5b183c99e"
-    sha256 arm64_linux:       "09f349c59243be46d36d3f41a2dcf37d7679eb94a10d90b867efa0d0c5ad10af"
-    sha256 x86_64_linux:      "9bc83832f2724c1318364921e24bdd00487b2b850b8c573def2f33ba2109bc53"
+    rebuild 1
+    sha256 arm64_golden_gate: "31b40a10b68e4e69350a26f7033ea5c68c3360512ae61393ba1d801d7770c480"
+    sha256 arm64_tahoe:       "b526e79ca83b7c161a391585e70148c5aa45c53a8f593b398bc4a281f6922bd9"
+    sha256 arm64_sequoia:     "6c47c97af81964d3486cee9f3d96a1b188313c3fec11df649229173f3cff7074"
+    sha256 arm64_linux:       "aa9448fe3baa684e6e8191a8fb5546aa2a4aac1c6f6ce15d7aa5c2feb05c973b"
+    sha256 x86_64_linux:      "62d39ad0ec43d4a82a3053d5d6e8d22536aff66d5c936617cfc222b6c2991ceb"
   end
 
   keg_only :versioned_formula
@@ -145,13 +144,18 @@ class PostgresqlAT18 < Formula
 
       When uninstalling, some dead symlinks are left behind so you may want to run:
         brew cleanup --prune-prefix
+
+      If the service fails to start with a "postmaster.pid" lock file error after
+      an unclean shutdown, and no postgres is running, remove the stale file:
+        rm #{postgresql_datadir}/postmaster.pid
     EOS
   end
 
   service do
     run [opt_bin/"postgres", "-D", f.postgresql_datadir]
     environment_variables LC_ALL: "en_US.UTF-8"
-    keep_alive true
+    # Not `true`: a stale `postmaster.pid` makes `postgres` exit 1, which would restart forever
+    keep_alive crashed: true
     log_path f.postgresql_log_path
     error_log_path f.postgresql_log_path
     stop_timeout 120

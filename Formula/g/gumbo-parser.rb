@@ -1,18 +1,17 @@
 class GumboParser < Formula
   desc "C99 library for parsing HTML5"
   homepage "https://codeberg.org/gumbo-parser/gumbo-parser"
-  url "https://codeberg.org/gumbo-parser/gumbo-parser/archive/0.14.0.tar.gz"
-  sha256 "eac82480b916d520e4c7938cbd593ceda34c9241cba04022a078550d0d324cfe"
+  url "https://codeberg.org/gumbo-parser/gumbo-parser/archive/0.14.1.tar.gz"
+  sha256 "ba5d13b9b508ec693613b3b61518163aced38f8e885f7e28dc047348a4e61365"
   license "Apache-2.0"
   compatibility_version 2
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "3b00b08e1c68226c21c327e1dc2e622c6807602a7245340ccc92bf7c50b05ec2"
-    sha256 cellar: :any, arm64_tahoe:       "aeb97dc8e078af3ca64411c25764f720da99caa323eecac8b03977e120093dc7"
-    sha256 cellar: :any, arm64_sequoia:     "c5912aa60532919751ec4b2ab685d3528c93307893d3cf8e9769f96d8fb95062"
-    sha256 cellar: :any, arm64_sonoma:      "2e1ef3ac6dab8b652948b93cedb24cce0c9d63aebcd7e91091b62cf83ec3f981"
-    sha256 cellar: :any, arm64_linux:       "3559d483ddc898a201c1be70e9a2da4eb5116537badd05dbfcd4c45c01774501"
-    sha256 cellar: :any, x86_64_linux:      "964e6729f73031fee018819b1f746092bfa6b33c64aaaf2a864981f653374ce9"
+    sha256 cellar: :any, arm64_golden_gate: "4b8258521e8264f4c1ce161bf8010e8a3bea82a45cb5964979de8f59b5407aad"
+    sha256 cellar: :any, arm64_tahoe:       "f249b09f0538e5150e94cf91bb606a1593c12ebf8939b9b49bd1d8716b342667"
+    sha256 cellar: :any, arm64_sequoia:     "f25fd6ba73915738e518a72469eb9cc6b2a7ad96dea0c63e9e0fcf891ac6369c"
+    sha256 cellar: :any, arm64_linux:       "b392c88b12b3a03ce0d3b526d801e63deb8c3ea3b5da0c557b3981c6f6536427"
+    sha256 cellar: :any, x86_64_linux:      "27d8f965b1538d6427a962e1ebf8908bb263f3ac0aa634e33ccbac4bef51987b"
   end
 
   depends_on "autoconf" => :build

@@ -1,21 +1,27 @@
 class Netwatch < Formula
   desc "Cross-platform realtime network diagnostics TUI"
   homepage "https://www.netwatchlabs.com/labs/netwatch"
-  url "https://ghfast.top/https://github.com/matthart1983/netwatch/archive/refs/tags/v0.32.3.tar.gz"
-  sha256 "f91dfa39c0cf0dd721d5f8ec82bac46666c3ec2be1eb234b00b7524bc58122ba"
+  url "https://ghfast.top/https://github.com/matthart1983/netwatch/archive/refs/tags/v0.32.5.tar.gz"
+  sha256 "1529c82484599c349d2936708e0ae74f2175a66736d424cd621187c7d202cca8"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "0acdec1f6697fd2780b8687a85d8ef2f064dcfd7190ba1fef1af1c8c5c21e37b"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "699eeb423451adf11ea3113e96cc246955b9ed4c332b3db969a04439a619042c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "ac9d00cd223ff0bd482489d1df181f90558ea54fd7cd59df541b05f19beece9c"
-    sha256 cellar: :any,                 arm64_linux:       "cc1eeba1f4646dedc57cf8f625f706d5e5edfbe6f9be9c236bf5b51461388734"
-    sha256 cellar: :any,                 x86_64_linux:      "0b516cf88f529b2cfda8dae1ccba93a3e32ec6aaae9b344eb5cb0a7a846982cc"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "f0536789150c6951b7a32acdc3abf2056600a0a70461d1730294afcd3aaf7f3d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "f151459afef27bac974b54d69c65fb207f85be73e2dd52149372e35b9eeb2b0a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "f093aa8402698d1c0681e01ac984adb6ea527fbf5183681af769e5fdf9515bd9"
+    sha256 cellar: :any,                 arm64_linux:       "f4b7cd1793a82f4769a887ae03bef717f8e4437f5d581b3a5fcd9d0b24aacf46"
+    sha256 cellar: :any,                 x86_64_linux:      "7beff039906b70b505234c3b1553d4e1c50e356ce62ec3273ad61e627819e56a"
   end
 
   depends_on "rust" => :build
 
   uses_from_macos "libpcap"
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
 
   def install
     system "cargo", "install", *std_cargo_args

@@ -1,8 +1,8 @@
 class B43Fwcutter < Formula
   desc "Extract firmware from Braodcom 43xx driver files"
   homepage "https://wireless.docs.kernel.org/en/latest/en/users/drivers/b43.html"
-  url "https://bues.ch/b43/fwcutter/b43-fwcutter-020.tar.xz"
-  sha256 "bae58321c0926827b99afd4fddaebbc934c781d8e010fe62e1ddc4af83046214"
+  url "https://bues.ch/b43/fwcutter/b43-fwcutter-021.tar.xz"
+  sha256 "c21e0ccf0d15e668ade31fe4d4c424ef6be006b85f63603b6f965f4c5a6f3121"
   license "BSD-2-Clause"
 
   livecheck do
@@ -11,13 +11,11 @@ class B43Fwcutter < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "777cfbdcc63f8b8eb7c3e534620d3c7b6d9c76156f8a30ea4e5c61d57ddf315f"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "4e5e81ff865b2905041a0fea85e776c1ee09b134c3ab75f1b875458be7bea210"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "56b4f1d7cacb06e6e7de79de8013c0d5df2dd5c3edc79c4642d64d4f5d10a572"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "5324a1cf7a15dbdd27cb2635fc3b29334e532d6d97fecf4d4ee89941b598d950"
-    sha256 cellar: :any_skip_relocation, sonoma:            "8d48b82edbc8a9dabe2799c9f5fa6a1d45001658db8aa2c1a617b5080f026e5b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "d2c8d93464e6b0487659822b8593bceeb6abfa702bd684cc681139d23a2b914e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "a37b812c01e5e0ddedd9106aa5b18643da573d0ad4359ec8764806ec27a10094"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "8d3b3d9900452b2cb1f69d78cc5aee52e6d7a670846bd304f75b746c7f8fd42c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "57b8e25d937753bafc32ac5d300ea0fdac6352bcb4216eb12e56ea651f603e66"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "736cdf5c49916cf6889ca822ad79807073a7468d804e1e68f9a33aba018cf83b"
+    sha256 cellar: :any,                 arm64_linux:       "8766b8be4ecaf144ddb009d11664236a185347b8d013748f190b77ac623c0b0f"
+    sha256 cellar: :any,                 x86_64_linux:      "1a9d39f6f14afa678fc07affb74210ee13e65ce628a2430cf616c88716d32944"
   end
 
   def install

@@ -5,11 +5,6 @@ class Lwtools < Formula
   sha256 "a61fb716ed054951f8cd8f1cbad58363eb2115f5ce18af97d5f188e01fb5fcda"
   license "GPL-3.0-only"
 
-  livecheck do
-    url "https://www.lwtools.ca/releases/lwtools/"
-    regex(/href=.*?lwtools[._-]v?(\d+(?:\.\d+)+)\.t/i)
-  end
-
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "77612ade9fcd6272b8f4f5f27c9ed4ab80616130067e51f9b823d42c8219dc3b"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "ffe93d375d527663e0ecf2e291752893016d59dcb1809fc44038370233ce08af"
@@ -19,7 +14,7 @@ class Lwtools < Formula
     sha256 cellar: :any,                 x86_64_linux:  "aeb524b30f7e8867525e95cc255fbac0b62902a692d1b6b18488195733978689"
   end
 
-  # TODO: Can be considered for undeprecation on new release
+  # TODO: Can be considered for undeprecation if upstream verifies checksum change
   deprecate! date: "2026-09-18", because: :checksum_mismatch
   disable! date: "2027-09-18", because: :checksum_mismatch
 

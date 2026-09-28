@@ -1,16 +1,16 @@
 class Arf < Formula
   desc "Modern R console with syntax highlighting and fuzzy search"
   homepage "https://github.com/eitsupi/arf"
-  url "https://ghfast.top/https://github.com/eitsupi/arf/archive/refs/tags/v0.5.2.tar.gz"
-  sha256 "34647ecda535521c18dd26dc2b609c390b02876f47e76d661750bb44ca9fc602"
+  url "https://ghfast.top/https://github.com/eitsupi/arf/archive/refs/tags/v0.5.3.tar.gz"
+  sha256 "3d72268d7390b5838a3cdf270bdda742f63269b592d292c1d6f814a3cb555d67"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "0f3056a787006d50a3f030e9ecdd649393c69d9d60b8328dd74a75f29ddff656"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "0f20511ed1c3cfac855c0cb30a8751d3fe2357a98e2c82417e7b41a654d2e0b0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "01ff6b919243d64d473ee00c4db0a399785c7edfdc9771ab80685196389307f3"
-    sha256 cellar: :any,                 arm64_linux:       "2f174f5399ef721f298f5b1e8a71f793674e6975c4bd39171fb93544999de5aa"
-    sha256 cellar: :any,                 x86_64_linux:      "65589e48555d830088f91207b95ab6ce26ada088177a38247be432335c9e80f1"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "bda878cc35314a34eeb35a59f5468ae56286de231f1d81844439ab39896e80e1"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "640b6e962968a179b4f6a06bff264b5421cf6f7a8dcc3349aa403ccd1be07b0c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "1ace8e45f816b56052c71868aa4fffb1df8ea2192c51ce4337ead6024e30d5b6"
+    sha256 cellar: :any,                 arm64_linux:       "c95e647f636fa91840999157dc63e2164e5ac7975632a73d354afec972f5e104"
+    sha256 cellar: :any,                 x86_64_linux:      "02924acbdfaf187ab2b144e9dd8bc94c702e23101838b5a3cee3f6c637c5977c"
   end
 
   depends_on "rust" => :build

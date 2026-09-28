@@ -3,17 +3,16 @@ class Apprise < Formula
 
   desc "Send notifications from the command-line to popular notification services"
   homepage "https://pypi.org/project/apprise/"
-  url "https://files.pythonhosted.org/packages/81/44/5965c245998c72022297e2b515d9594281a97ed1442b3fa022c2c2324102/apprise-1.13.1.tar.gz"
-  sha256 "e7689dda71aaf739244d6c8690de13cb1361b8d0a79980fb48bb397455ca0bdd"
+  url "https://files.pythonhosted.org/packages/38/b0/2f2e9b6d9e52f7530b47ba7a9259ebf2378e3953f445222f54412fb27a68/apprise-2.0.0.tar.gz"
+  sha256 "aeb321737f951860d7cb0a9574159090cbdbcb0f1ba01c6b49c69018380adf8d"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "91673ac58d2f59774ee6bf43bd03ff7db27dd8556466fcae242277ff49fa9354"
-    sha256 cellar: :any, arm64_tahoe:       "926e0cb1d1de5e84baad49a06059c2a3d5b3b47816c6722ecf6e88f6fdc87478"
-    sha256 cellar: :any, arm64_sequoia:     "1d42b355db1ee957a1246087021c834d7b8b9b08c1e22b6293600b378bd6fb95"
-    sha256 cellar: :any, arm64_sonoma:      "a9d9b808a91a07ffeead85f3bf2f0fcf78da6301cdedd8f77819d4a331eb9a3b"
-    sha256 cellar: :any, arm64_linux:       "9289bffaa3948ac2b86bc64f9921ae3b2d0ed582f0006ba4a5a02bbfad6c308e"
-    sha256 cellar: :any, x86_64_linux:      "13a9638a3ea55c069b0608c8cf574eda997b9cdfd231495ea0d6671c4052f3ee"
+    sha256 cellar: :any, arm64_golden_gate: "db134f7d48049430754f101aee96b00abcddd45c193862751ddb6aa0571681e4"
+    sha256 cellar: :any, arm64_tahoe:       "4bffcb86267552680a4d8242f7025c43008edc032f840ae484737ecfb60c7d07"
+    sha256 cellar: :any, arm64_sequoia:     "6b500bbe45ecac33a48cabc9286daa6d96b6835dd9886ab68754c83d4de3bd1e"
+    sha256 cellar: :any, arm64_linux:       "dd293dd72dae648aaa058e28f4a2d1ac57cf62a3ef259248b849249bb84bcc63"
+    sha256 cellar: :any, x86_64_linux:      "9d6eee6c804093aec78085f7e34cfd3a4a71ee1067b9fad4bed13fbcc628b76e"
   end
 
   depends_on "certifi"
@@ -33,13 +32,13 @@ class Apprise < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/5f/f7/abb373e5757eaec4b922b92f97ec8d6d7e057cf06778247604fbc4e7c3f3/idna-3.19.tar.gz"
-    sha256 "5e0811a4383b21dc5838069f801c4fb62113b7447663d2530d2bd6e77b49bf15"
+    url "https://files.pythonhosted.org/packages/f5/08/8eea9d4b8302028f3abb2c0813953f7aec26d33b7a8960ed760e65ff29fa/idna-3.20.tar.gz"
+    sha256 "a7db850025b95ded1eae8a46181a1a6c56c92c96f0e2b005d9ff8dc0210cab44"
   end
 
   resource "markdown" do
-    url "https://files.pythonhosted.org/packages/29/6f/da4c6aea59b3001f2e8c0ec7497475aadaf3b021c10cab5b2858f0f32b26/markdown-3.10.3.tar.gz"
-    sha256 "3589362618f743188b4d955b874402bc814f4f83f544dc207719f4baa7d9c45f"
+    url "https://files.pythonhosted.org/packages/f8/4f/700155c8c20d9e655dd0732b5fc3c7614f291b9148da271d7388e50bf774/markdown-3.11.tar.gz"
+    sha256 "180224db6aed87ba9ce1f2781ebcd5826253de8ff637112090e24b84502bbf9f"
   end
 
   resource "oauthlib" do
@@ -63,8 +62,8 @@ class Apprise < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/53/0c/06f8b233b8fd13b9e5ee11424ef85419ba0d8ba0b3138bf360be2ff56953/urllib3-2.7.0.tar.gz"
-    sha256 "231e0ec3b63ceb14667c67be60f2f2c40a518cb38b03af60abc813da26505f4c"
+    url "https://files.pythonhosted.org/packages/e3/05/b17359e1cefb4f909b5e40b1b90a496d987258916dbbf88e842c729f510e/urllib3-2.8.0.tar.gz"
+    sha256 "63bf2ead4c879426ebf22ef2a781eeb4aa3b4ae798a0435506f8687fd5bb9b63"
   end
 
   def install

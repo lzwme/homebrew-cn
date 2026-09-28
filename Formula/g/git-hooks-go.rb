@@ -22,7 +22,7 @@ class GitHooksGo < Formula
   end
 
   deprecate! date: "2026-07-09", because: :checksum_mismatch
-  disable! date: "2027-07-09", because: :checksum_mismatch
+  disable! date: "2027-01-09", because: :checksum_mismatch
 
   depends_on "go" => :build
 

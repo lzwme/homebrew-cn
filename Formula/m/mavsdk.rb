@@ -19,11 +19,11 @@ class Mavsdk < Formula
     sha256               x86_64_linux:      "003a946051bdf9e7560b5b0649c00f0413431053ad70d4f733f16bd7abc92e64"
   end
 
+  depends_on "asio" => :build
   depends_on "cmake" => :build
   depends_on "python@3.14" => :build
   depends_on "rust" => :build
   depends_on "abseil"
-  depends_on "asio"
   depends_on "c-ares"
   depends_on "curl"
   depends_on "fmt"

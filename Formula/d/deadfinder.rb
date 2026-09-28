@@ -16,7 +16,6 @@ class Deadfinder < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:      "7b3b0164aa904fda4b1cb754c6cd4cb450fd7ff3d0004f0f6ad5134f845c2666"
   end
 
-  depends_on "cmake" => :build
   depends_on "crystal" => :build
   depends_on "lexbor" => :build
   depends_on "pkgconf" => :build

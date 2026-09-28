@@ -4,16 +4,15 @@ class Wolfmqtt < Formula
   url "https://ghfast.top/https://github.com/wolfSSL/wolfMQTT/archive/refs/tags/v2.1.0.tar.gz"
   sha256 "abfea53ef25678a540f9b44aceb4aeff3f7789d7b23454074471c8e8dbcb4ccb"
   license "GPL-3.0-or-later"
+  revision 1
   head "https://github.com/wolfSSL/wolfMQTT.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "09fc92cbe68aabeb3d7bc7fbe965d7e706be89b64d279dbfb9dd349b0eb1b94e"
-    sha256 cellar: :any, arm64_tahoe:       "906f1f132056faef3d98b7b8b8d78d9c7aa114f1665004ac84429a9527894e40"
-    sha256 cellar: :any, arm64_sequoia:     "e34e4cc010f6b5e61eed9dfe972da3fba4bddfc2bd1e2752905977f3793e15b1"
-    sha256 cellar: :any, arm64_sonoma:      "c55b48a15c74be43f6de8656e90ef5e1803e52cbfb08087abe1d69fff4b83f69"
-    sha256 cellar: :any, sonoma:            "478f70818690688a593270998b98fd02d09150b31950a75227e8f50ca66e3db9"
-    sha256 cellar: :any, arm64_linux:       "4d2cc1b55fe3e778a1e75caf017c80586dbae70df6aee982cd70dce670f4e461"
-    sha256 cellar: :any, x86_64_linux:      "35d88b8187d6264795fcf002a072ab28ccd12b6755079d0b2fb3222d2e6dc0e2"
+    sha256 cellar: :any, arm64_golden_gate: "ebc3c1b5b18b34218838255f3602649f45e8b33633ced2b31a302ee782be4188"
+    sha256 cellar: :any, arm64_tahoe:       "d49f4693e1aecbcfe0543d9a95560a3d135456b564d1a6064dd5ee38127dae9b"
+    sha256 cellar: :any, arm64_sequoia:     "ccfd7d918e37ade189bb82818c0b673c5bcb3a276dc255886d9396cdfcf542ef"
+    sha256 cellar: :any, arm64_linux:       "8530cf463c9106e14cc6b072be9cfc77c8138fe13273ef2e91a0f6c11848947c"
+    sha256 cellar: :any, x86_64_linux:      "acff17fb6292633caafcb05dea63bbc2bc02ee2209302ecc7d8e5543ff77b883"
   end
 
   depends_on "autoconf" => :build

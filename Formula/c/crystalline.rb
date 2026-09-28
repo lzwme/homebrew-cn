@@ -7,16 +7,16 @@ class Crystalline < Formula
   revision 1
 
   bottle do
-    sha256 arm64_golden_gate: "6ab9d531bcf06d3e4047657f7381b44981b5c0490888eac83700457438b40057"
-    sha256 arm64_tahoe:       "fcadc0e91448d09a06ad11ae9d47a183e31f2672d91b2a084e9022929b0f19c6"
-    sha256 arm64_sequoia:     "afd54b02d3320d7d80d912c9f3f76493f1c596af5c93791272f9e547fa211b6b"
-    sha256 arm64_linux:       "d7b8de1e6ebe6026c1cfc165c64c03e11a342d510ef66457e3fc81f13dc22aad"
-    sha256 x86_64_linux:      "c85501ee8bf9782375ddc4047bd27dd1d5ddab0a3d02ae86ce57aa4d43acc2aa"
+    rebuild 1
+    sha256 arm64_golden_gate: "5d1b267aa150b0861e16323f7e77ff141546aabaa631b951a8215ff1265fe4ad"
+    sha256 arm64_tahoe:       "ac4becdc7a7232e0ccdeb03db13db3530c8cf52920c835574316fde46b102ec4"
+    sha256 arm64_sequoia:     "bbbfb855eaecc0fc7f6977e9ecf6cbbf3454d65885eaabe65a9adbf03027b76f"
+    sha256 arm64_linux:       "00cef19501f480b1b11f4d94c728762b5c8075d30171a7b0e3d86f7987ce5e15"
+    sha256 x86_64_linux:      "1fcbf4eae5e2e4f3ef37cd665a5fbfd576b8af74d823e17259f0ddba3e0295de"
   end
 
   depends_on "bdw-gc"
   depends_on "crystal"
-  depends_on "libevent"
   depends_on "libyaml"
   depends_on "llvm"
   depends_on "pcre2"

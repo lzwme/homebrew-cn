@@ -2,6 +2,7 @@ class Crystal < Formula
   desc "Fast and statically typed, compiled language with Ruby-like syntax"
   homepage "https://crystal-lang.org/"
   license "Apache-2.0"
+  revision 1
   compatibility_version 2
 
   stable do
@@ -28,11 +29,11 @@ class Crystal < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "865d37c634c884ebb75ca490d3e65f92d5482c79aa7df8614c59520c89db24b2"
-    sha256 cellar: :any, arm64_tahoe:       "62bdc64efc05b4cba472cb1c2fe2927c54c8da87e7792399e0ce8fc4ec484b4b"
-    sha256 cellar: :any, arm64_sequoia:     "0a1e3592776b439ac9f907bfdb9201bf9020df5948f80355dae777d152047ced"
-    sha256 cellar: :any, arm64_linux:       "ec482dbd3b5c73b3c338fd5a353a774bd8e98892668792aa6b210e2b252c2401"
-    sha256 cellar: :any, x86_64_linux:      "9aa7918c9acd5e64843ac49df2001ecf1637f46161c67b36675e6479888fa0f5"
+    sha256 cellar: :any, arm64_golden_gate: "59ce85b849ea2e9efedfaa8e7990a441f656bf52e45616deadb59a7a0d7e5a73"
+    sha256 cellar: :any, arm64_tahoe:       "3efe943a1e958b1cb86360bdff2a025ad9854bbaed992a8d690a142465fdd25d"
+    sha256 cellar: :any, arm64_sequoia:     "30b8d9e04b84760db7e3f14713a573f69c3e404e0d9b867865d0e69ab17afb58"
+    sha256 cellar: :any, arm64_linux:       "fa0a7594dff38917696ed25433139da9ab95fd16613a38383561b9dee238f61d"
+    sha256 cellar: :any, x86_64_linux:      "b43270c362edf209e1ea6a41e8646031dbe8daf78af8c28ec10cbecc38d8184e"
   end
 
   head do
@@ -48,7 +49,7 @@ class Crystal < Formula
   depends_on "gmp" => :no_linkage # std uses it but it's not linked
   depends_on "libyaml"
   depends_on "llvm"
-  depends_on "openssl@3" # std uses it but it's not linked
+  depends_on "openssl@4" # std uses it but it's not linked
   depends_on "pcre2"
   depends_on "pkgconf" # @[Link] will use pkg-config if available
 

@@ -1,8 +1,8 @@
 class Fracturedjson < Formula
   desc "JSON formatter that produces highly readable but fairly compact output"
   homepage "https://github.com/j-brooke/FracturedJson"
-  url "https://ghfast.top/https://github.com/j-brooke/FracturedJson/archive/refs/tags/cli-v1.0.2.tar.gz"
-  sha256 "039e199c246206cb7a01dc800d10c60aced0e26572660c10148c7e6f303e3ab3"
+  url "https://ghfast.top/https://github.com/j-brooke/FracturedJson/archive/refs/tags/cli-v1.1.0.tar.gz"
+  sha256 "0b6efec044f5c7d738f837124cdf5fc9d3b94864be8a9b07c2de8ffe22e2235a"
   license "MIT"
 
   livecheck do
@@ -11,12 +11,11 @@ class Fracturedjson < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "fb1459aab4722e0c94ff97bbfb8e1e94d47ff8c4a54956b86ae0b35d830ab252"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "abb2da14912a49e0c78f00d589e486d7fb6f5a3c024833bf957fdcb78b795a87"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "24ec04771ada599b928f6fc4fedd45ee5e16e670b03959d9781fb1650526507e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "4f118eca5e7ed9c0ee83255cccd608469d1dc31b3ee1f5b0c49952d831d7a76d"
-    sha256 cellar: :any,                 arm64_linux:       "1e5d27d48dba85088a5f9a667946137acd1b5fbace83cc5ed71c95b37d881d83"
-    sha256 cellar: :any,                 x86_64_linux:      "a010c974d6327aa06d0a2a31ea18b84da90db6d9e7f54d863eb496f7c78b6353"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "e8adda3b3832506cc4ded6d7b28edad8fc15ab7709a9e503bcd735451bf81ab5"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "f3f8570519d75f23aa9c577b20f6f56bac177781fff191bab9484b6850f3c5f3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "d43a181c4c59244a196430507ab6b573ce64c98f9b83d4d569a9c70a5eb06e50"
+    sha256 cellar: :any,                 arm64_linux:       "6de70475655e71fe8b9f3aa0f976c504e7fc76a0dac6bd8959f1c3e6bd7fb609"
+    sha256 cellar: :any,                 x86_64_linux:      "d798f9509531b3f2dd32a4eb9a5ec6c7d09c28c30f64d0657bc8f647951071d9"
   end
 
   depends_on "dotnet" => :build

@@ -25,6 +25,8 @@ class Gcli < Formula
   uses_from_macos "curl"
   uses_from_macos "libedit"
 
+  allow_network_access! :test
+
   def install
     # Do not use `*std_configure_args`, `./configure` script throws errors if unknown flag is passed
     system "./configure", "--prefix=#{prefix}", "--release"
@@ -33,8 +35,8 @@ class Gcli < Formula
 
   test do
     assert_match "gcli: error: no account specified or no default account configured",
-      shell_output("#{bin}/gcli -t github repos 2>&1", 1)
+      shell_output("#{bin}/gcli -t gitlab repos 2>&1", 1)
     assert_match(/FORK\s+VISBLTY\s+DATE\s+FULLNAME/,
-      shell_output("#{bin}/gcli -t github repos -o linus"))
+      shell_output("#{bin}/gcli -t gitlab repos -o herrhotzenplotz"))
   end
 end

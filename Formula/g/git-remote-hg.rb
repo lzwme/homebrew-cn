@@ -33,6 +33,8 @@ class GitRemoteHg < Formula
     resolves "https://github.com/felipec/git-remote-hg/pull/100"
   end
 
+  deny_network_access!
+
   def install
     rewrite_shebang detected_python_shebang, "git-remote-hg"
     system "make", "install", "prefix=#{prefix}"
@@ -42,6 +44,17 @@ class GitRemoteHg < Formula
   end
 
   test do
-    system "git", "clone", "hg::https://www.mercurial-scm.org/repo/hello"
+    mkdir "hg-repo" do
+      system "hg", "init"
+      (testpath/"hg-repo/hello.txt").write "hello world\n"
+      system "hg", "add", "hello.txt"
+      system "hg", "--config", "ui.username=brew", "commit", "-m", "initial commit"
+    end
+
+    system "git", "clone", "hg::#{testpath}/hg-repo", "git-repo"
+
+    assert_path_exists testpath/"git-repo/hello.txt"
+    assert_match "hello world", (testpath/"git-repo/hello.txt").read
+    assert_match "initial commit", shell_output("git -C git-repo log -1")
   end
 end

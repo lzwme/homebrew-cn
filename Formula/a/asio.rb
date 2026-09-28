@@ -12,13 +12,8 @@ class Asio < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "672756b2ce33ba24c6eb10cd0d13cb9fa2a8aeff7710b56fc52a6f6123061d82"
-    sha256 cellar: :any, arm64_tahoe:       "2c3d2fd827beb61e9e7e9b90b973d7ccf03a530477552a5f165568f13b52bc4f"
-    sha256 cellar: :any, arm64_sequoia:     "bd5a90a612ca0d8f81a18e1d0dac9368a560e264ce686bc0013779d7773db33f"
-    sha256 cellar: :any, arm64_sonoma:      "1c44730757a01c8115fa24b97fa428978292a31a305f42a884559c0b2f8ab6ed"
-    sha256 cellar: :any, sonoma:            "7168ed026aadfa0727b89369fc5ea942dac7a3eeeab41cc8c477711065b9efd1"
-    sha256 cellar: :any, arm64_linux:       "bab4ec7e347864d62bb6350097c77b5663a620bb8b21df0f5eddb67a5e5e2b59"
-    sha256 cellar: :any, x86_64_linux:      "cf4d50d55bc680c3460d21437c55194c37a620a1cc930ad85f6b0e31bd92158b"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "11ef27f86eddd6a508404e15a51fe2b18d87c25bbc93660df71c04fc210fe0a5"
   end
 
   head do
@@ -27,7 +22,7 @@ class Asio < Formula
     depends_on "automake" => :build
   end
 
-  depends_on "openssl@3"
+  allow_network_access! :test
 
   def install
     if build.head?
@@ -35,20 +30,22 @@ class Asio < Formula
       system "./autogen.sh"
     end
 
+    # NOTE: OpenSSL is only used at build time for examples and tests.
+    # Dependents can still use optional SSL feature with any supported SSL
+    # (e.g. OpenSSL/WolfSSL) without needing to force a dependency.
     system "./configure", "--disable-silent-rules",
                           "--without-boost",
-                          "--with-openssl=#{formula_opt_prefix("openssl@3")}",
                           *std_configure_args
     system "make", "install"
-    pkgshare.install "src/examples"
+    (pkgshare/"example_http_server").install Dir["src/examples/cpp11/http/server/*.{cpp,hpp}"]
   end
 
   test do
-    found = Dir[pkgshare/"examples/cpp{11,03}/http/server/http_server"]
-    raise "no http_server example file found" if found.empty?
+    cp_r (pkgshare/"example_http_server").children, testpath
+    system ENV.cxx, "-std=c++11", "-o", "http_server", *Dir["*.cpp"]
 
     port = free_port
-    pid = spawn found.first, "127.0.0.1", port.to_s, "."
+    pid = spawn "./http_server", "127.0.0.1", port.to_s, "."
     begin
       sleep 5
       assert_match "404 Not Found", shell_output("curl http://127.0.0.1:#{port}")

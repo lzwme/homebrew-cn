@@ -7,11 +7,6 @@ class Sigi < Formula
   license "GPL-2.0-only"
   head "https://github.com/so-dang-cool/sigi.git", branch: "core"
 
-  # TODO: remove if undeprecated
-  livecheck do
-    url :stable
-  end
-
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "757ca1039232442b3540534d73ce4b5d9d94b8763761186535e7f193009a1d15"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "028bd7ae19a22f744a0b7b48e9865e85f207dbcac03facf8c3bb68f8a032caf0"
@@ -21,7 +16,7 @@ class Sigi < Formula
     sha256 cellar: :any,                 x86_64_linux:  "7f33abcfa44f8164cc54e0a4c222e2019ea573a644469daffc20e40b4f1d6967"
   end
 
-  # Can be undeprecated on new release or if upstream responds:
+  # TODO: Can be undeprecated if upstream responds:
   # https://github.com/so-dang-cool/sigi/issues/30
   deprecate! date: "2026-09-17", because: :checksum_mismatch
   disable! date: "2027-09-17", because: :checksum_mismatch

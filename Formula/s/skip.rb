@@ -7,17 +7,16 @@ class Skip < Formula
   head "https://github.com/skiptools/skipstone.git", branch: "main"
 
   bottle do
-    sha256 arm64_golden_gate: "1d7afd74ad748fb317aa75eedbf63aa3a83f2bc11b33eb3c87ba0e3a8421f4b7"
-    sha256 arm64_tahoe:       "4c75fe32d25c2846b381a60bbcc1290850a800876199ec6c7671678cfc7c5271"
-    sha256 arm64_sequoia:     "6ee0ae35694b0b9960518cd8dfda3f793b3ba5ea1be03a610115f92978f503ed"
-    sha256 arm64_linux:       "65c366f04615d89b827fd769b2ec9f261feac4b495c7b1940953e6a33d998a8b"
-    sha256 x86_64_linux:      "01ee1aa34976e57f6951b98f4603ba66514ea471f415971506e907c0b4cfa490"
+    rebuild 1
+    sha256 arm64_golden_gate: "aa75eaa2de8c356ffd63aa1d1201295e56200f8186a7f3ca32e7c2019b56745f"
+    sha256 arm64_tahoe:       "8d8461bd18684d07ab42382fd6179b51beb2aae63e6e453c03b08a3d16c8c744"
+    sha256 arm64_sequoia:     "2f09995b647ebfcd9eca162abd041951a4d36aee82e3a6ccccdb3c75cbfb3306"
+    sha256 arm64_linux:       "364eff7c5182923fa44d1a12b40bfc349d0f579db053f2cc082a8fae0da42771"
+    sha256 x86_64_linux:      "1cf0f543d1285c02b1664be8580b1ed3864fdeacfe85bf7aa72f19e2dab4d78d"
   end
 
   depends_on "gradle"
-  # TODO: Switch back to `openjdk` together with `gradle`, which runs on `openjdk@25`
-  # until Gradle supports JDK 27; mixing both in one dependency tree fails `brew audit`.
-  depends_on "openjdk@25"
+  depends_on "openjdk"
   depends_on "swiftly"
 
   uses_from_macos "swift" => [:build, :test]
@@ -45,7 +44,13 @@ class Skip < Formula
   def install
     resource("skipsubmodule").stage buildpath/"skip"
 
-    system "swift", "build", "--product", "SkipRunner", *std_swift_args
+    # FIXME: need to update brew as Swift 6.4.0+ doesn't use ld shim anymore
+    if OS.linux?
+      args = ENV["HOMEBREW_LIBRARY_PATHS"].to_s.split(":").flat_map { ["-Xlinker", "-L#{it}"] } +
+             ENV["HOMEBREW_RPATH_PATHS"].to_s.split(":").flat_map { ["-Xlinker", "-rpath", "-Xlinker", it] }
+    end
+
+    system "swift", "build", "--product", "SkipRunner", *args, *std_swift_args
     bin.install ".build/release/SkipRunner" => "skip"
     generate_completions_from_executable(bin/"skip", "--generate-completion-script")
   end

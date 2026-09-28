@@ -3,13 +3,13 @@ class Regipy < Formula
 
   desc "Offline registry hive parsing tool"
   homepage "https://github.com/mkorman90/regipy"
-  url "https://files.pythonhosted.org/packages/25/a2/9427da67acc61b39cda35be4cc788a9c99e27622b514e1c6ba87a90adb84/regipy-6.3.0.tar.gz"
-  sha256 "9c23f1f0b13680b79104fad4367fad63d8c44935a8a8658baec3e52f39e1ad47"
+  url "https://files.pythonhosted.org/packages/c2/3a/d154b10bbf5ac4051937493311ab74b05c67cab57053875968d7898bb84c/regipy-6.4.0.tar.gz"
+  sha256 "dc3f2fd33af7566ae66a9ddb0b78f15552ac009de262568e4ab7c4e36cb9a9e1"
   license "MIT"
   head "https://github.com/mkorman90/regipy.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "9df471cb308f1a3a3915bf916dbd0e0e067a83196dbac75a62ecd23b3a866452"
+    sha256 cellar: :any_skip_relocation, all: "0f603d354b5663547bd47b732a7b80fa9848b37a74b4fb701e4fcf7e2a73e695"
   end
 
   depends_on "python@3.14"
@@ -17,8 +17,8 @@ class Regipy < Formula
   pypi_packages package_name: "regipy[cli]"
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/76/d4/81420972a676e8ffea40450d8c8c92943e7218a78fe9b64359836cc9876b/click-8.4.2.tar.gz"
-    sha256 "9a6cea6e60b17ebe0a44c5cc636d94f09bd66142c1cd7d8b4cd731c4917a15f6"
+    url "https://files.pythonhosted.org/packages/c7/0e/7fa0ef50764b67090eca4114772a2abf8b6148198475e54c660b97caeee6/click-8.5.0.tar.gz"
+    sha256 "ba0d2089de75ea0310e2dde03160e6ca10009947fb95a182f9b54021bb272e34"
   end
 
   resource "construct" do
@@ -32,8 +32,8 @@ class Regipy < Formula
   end
 
   resource "pytz" do
-    url "https://files.pythonhosted.org/packages/ff/46/dd499ec9038423421951e4fad73051febaa13d2df82b4064f87af8b8c0c3/pytz-2026.2.tar.gz"
-    sha256 "0e60b47b29f21574376f218fe21abc009894a2321ea16c6754f3cad6eb7cdd6a"
+    url "https://files.pythonhosted.org/packages/b0/ed/fa23d28713004418bbf2407127f80f385bfb0bf4e677bef02c25c27b00ee/pytz-2026.4.tar.gz"
+    sha256 "464303645bafafd72418898368b2429458f709cf1eb6a15372fbcc396b64da63"
   end
 
   resource "tabulate" do
