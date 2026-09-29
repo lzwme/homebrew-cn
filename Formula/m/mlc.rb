@@ -1,19 +1,17 @@
 class Mlc < Formula
   desc "Check for broken links in markup files"
   homepage "https://github.com/becheran/mlc"
-  url "https://ghfast.top/https://github.com/becheran/mlc/archive/refs/tags/v1.2.0.tar.gz"
-  sha256 "635c05b2dacc3769089f3a8854bebac2b06605280648d07d0136996b1d1de596"
+  url "https://ghfast.top/https://github.com/becheran/mlc/archive/refs/tags/v1.2.2.tar.gz"
+  sha256 "6584889f81406f905d38bf624815861948abe62a13259a7a6805a00109f89648"
   license "MIT"
   head "https://github.com/becheran/mlc.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "1dffe5231ef4c1547d17a75feeb7b152d88f5fd9c9734221b74dda6a4ae52286"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "53f3cbfaf325342b02159254ef76d9662dd1e43ca0306c077d48383e426bbd49"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "2bcbbb02edc73eb77b65b210492ee793565303c99f3705a2df88e5b48585289e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "35d38d67b828a4acebdc9cedc31425c865bf87d314aa7c03a1a7182d27cd8652"
-    sha256 cellar: :any_skip_relocation, sonoma:            "735ecd15c43aaef25d4bbf33937057d868011c586652e4525b5ec2d2425fe277"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "ec8e9ee4cb303a6f3bb5cd58000e817f6147e40b892920b0e326e2cf11e2f5ee"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "28cd68a8dc923a784360d646cf81244900f0ec03bfd4885063fe395765cc3620"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "4c3c5f5a686e1bc92d5f2696c5ce29e04a4efe8c16aa0aa94e941e69b3dba430"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "cc765fc7e22ea474b9a7ef126b97f291079006a080690789094fd20ecb9e6acf"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "f6b7da6565800a35524e61d2bc631bc109851b9e904f0b09eb340d0aacd6936e"
+    sha256 cellar: :any,                 arm64_linux:       "1031fa9d0bea83836ac749d2275063891b1eb7bb02aad2a8eda00d6e81283a0c"
+    sha256 cellar: :any,                 x86_64_linux:      "c349128c6ee20000b39b842bd8d2e7f7c788fce4dd1d3b0095a7e22b678cb6fd"
   end
 
   depends_on "pkgconf" => :build

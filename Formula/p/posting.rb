@@ -3,17 +3,16 @@ class Posting < Formula
 
   desc "Modern API client that lives in your terminal"
   homepage "https://github.com/darrenburns/posting"
-  url "https://files.pythonhosted.org/packages/5e/81/8e3c84cba1f0e83e0e2d0263e6cd2370ec66ebedfd58fa9fd330095965e1/posting-2.10.0.tar.gz"
-  sha256 "4563f7c34bb0827a74b097490189f925fab825b1096e787c22171657531147f1"
+  url "https://files.pythonhosted.org/packages/e2/78/f3caa8ca36fd6d8a722c0d0233da6acd6a3543f7b67b8caa2948eae1b321/posting-2.11.0.tar.gz"
+  sha256 "3aca99e916f7d05640ba5a9e0393cdc019586d5ef49e0dba64770c6fbde670bc"
   license "Apache-2.0"
-  revision 3
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "fa9af3dcb23df39c26da36965cd87f2caf7d57913e1cbf776b63a86e8dbf013b"
-    sha256 cellar: :any, arm64_tahoe:       "686d7360cbc2913111836804a6f4ccfe9695722c2afc7fab034f86aa44501f70"
-    sha256 cellar: :any, arm64_sequoia:     "da6d4b520f10d464897ec7bbfbd6c36b9cdaa29f22624d18b0aee20c99332f57"
-    sha256 cellar: :any, arm64_linux:       "a68415e9992e9c609cd61f8b6dc39f93f89529263d43a9342c75429518993634"
-    sha256 cellar: :any, x86_64_linux:      "11a0d21065e8a353627c4be3a23171081ac2ea32c6e1330387a41919846432d9"
+    sha256 cellar: :any, arm64_golden_gate: "d0dec045c241e06560dcc87cc42bbba20ece600cd52c717096a9fd7b1a1cf9d8"
+    sha256 cellar: :any, arm64_tahoe:       "8a8ec191612cecff744e9891d1e9ae8a69673922b9fca276768c2f51cebbd715"
+    sha256 cellar: :any, arm64_sequoia:     "db0bcb7d028548c2bf68b0bfc23c1b9853aa1cb0038f0e914173fa2e8a58d194"
+    sha256 cellar: :any, arm64_linux:       "ff1819039bcca83eaaf215d43118b2963dd51024b3c3317ad0cd5c2e7d39089f"
+    sha256 cellar: :any, x86_64_linux:      "2e9a9f1a807e1a110debb43c9508542ef9bda15217d931db266eb6b06efffe96"
   end
 
   depends_on "cmake" => :build
@@ -94,8 +93,8 @@ class Posting < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/89/24/92d90bebedf197eb15b144367ce6fd4ad2de571927cd09dde190a36db8fc/platformdirs-4.11.10.tar.gz"
-    sha256 "9cd351c078ccf7dda1fdc5f8ccb9d8f5258984c63990e6df3627dde0b70b51d0"
+    url "https://files.pythonhosted.org/packages/23/4d/e78afe1b449720c481884ca0a2f960f85f9ffdaa34b2d127b5427422c564/platformdirs-4.12.0.tar.gz"
+    sha256 "095be5c143382b1bee917c4f3e9987a0d8d6a582261f1d061ad0c403b7695b5b"
   end
 
   resource "pydantic-settings" do
@@ -219,13 +218,13 @@ class Posting < Formula
   end
 
   resource "watchfiles" do
-    url "https://files.pythonhosted.org/packages/cd/41/5e1a4bb12aac5f1493fa1bdc11154eca3b258ca4eba65d39c473fe19d8e9/watchfiles-1.2.0.tar.gz"
-    sha256 "c995fba777f1ea992f090f9236e9284cf7a5d1a0130dd5a3d82c598cacd76838"
+    url "https://files.pythonhosted.org/packages/b3/68/e6aa0b77d217b31f8f486ec0cdfe5e00e6e38dc0be657e7d85819b9faf0a/watchfiles-1.3.0.tar.gz"
+    sha256 "99aee4a07847c06820765fd7b1b49ceac4f3f711ccb7d104655a33231de1c207"
   end
 
   resource "xdg-base-dirs" do
-    url "https://files.pythonhosted.org/packages/bf/d0/bbe05a15347538aaf9fa5b51ac3b97075dfb834931fcb77d81fbdb69e8f6/xdg_base_dirs-6.0.2.tar.gz"
-    sha256 "950504e14d27cf3c9cb37744680a43bf0ac42efefc4ef4acf98dc736cab2bced"
+    url "https://files.pythonhosted.org/packages/ae/3b/4dc3f77ec9c5073467d95b9c9ded466cfba9a8b71a889096a01ac94b9b4e/xdg_base_dirs-6.0.3.tar.gz"
+    sha256 "9e8274f6d2514b587d257bda21d7fcf758180343c4ad5a47be0b202548211ec2"
   end
 
   def install

@@ -1,19 +1,17 @@
 class Gmailctl < Formula
   desc "Declarative configuration for Gmail filters"
   homepage "https://github.com/mbrt/gmailctl"
-  url "https://ghfast.top/https://github.com/mbrt/gmailctl/archive/refs/tags/v0.12.0.tar.gz"
-  sha256 "30cd3e21e8f150081c79a2f656d43b46550a795ccc9cb7775bb7e68da686ee95"
+  url "https://ghfast.top/https://github.com/mbrt/gmailctl/archive/refs/tags/v0.13.0.tar.gz"
+  sha256 "49df3a2fe7929114ec406096d577004a27ad75bbb4c836ca603dff88c1a830bd"
   license "MIT"
   head "https://github.com/mbrt/gmailctl.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "b7b4c6547d7c9db87c0a1ca43f7633e8bae19d595d2d0536cc93bc726909da5c"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "3c88c7c7ccf993601e3c5017b4431c7260e38f83b4d24e30cac927bd184eb495"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "3c88c7c7ccf993601e3c5017b4431c7260e38f83b4d24e30cac927bd184eb495"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "3c88c7c7ccf993601e3c5017b4431c7260e38f83b4d24e30cac927bd184eb495"
-    sha256 cellar: :any_skip_relocation, sonoma:            "ca3bfa896f392fc2d30992b191d9b8ed511e81707c778f8ae15dda052a0d73f5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "fa27e252ea0679f043ad9352007d52f40a90b84dd852062ede0afb99c76c3b47"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "310e645f5844956602bcc9b5339e09dd2387a5a373b4b73aa49b82b1991477c7"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "4a5e37e6b02533386d57c745c9332b4cdd37a2e3b9da3958fde6079ac50f6be1"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "4a5e37e6b02533386d57c745c9332b4cdd37a2e3b9da3958fde6079ac50f6be1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "4a5e37e6b02533386d57c745c9332b4cdd37a2e3b9da3958fde6079ac50f6be1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "f10de85da1a397fca0758d1e7f98b0f03461bd13083fa07999100d789a1f3468"
+    sha256 cellar: :any,                 x86_64_linux:      "d09620ad1ca56409f7e520c43280907692ae8f9b4cbe0f5d134197ce3812e61b"
   end
 
   depends_on "go" => :build

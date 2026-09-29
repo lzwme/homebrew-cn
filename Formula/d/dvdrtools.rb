@@ -59,4 +59,8 @@ class Dvdrtools < Formula
     system "./configure", *args, *std_configure_args
     system "make", "install"
   end
+
+  test do
+    assert_match version.to_s, shell_output("#{bin}/dvdrecord -version").scrub
+  end
 end

@@ -44,9 +44,36 @@ class EmacsClangCompleteAsync < Formula
     resolves "https://github.com/Golevka/emacs-clang-complete-async/pull/59"
   end
 
+  deny_network_access!
+
   def install
     system "make"
     bin.install "clang-complete"
     share.install "auto-complete-clang-async.el"
+  end
+
+  test do
+    source = <<~C
+      struct point { int x; int y; };
+      int main(void) {
+        struct point p;
+        p.
+      }
+    C
+    (testpath/"test.c").write source
+
+    input = <<~EOS
+      COMPLETION
+      row:4
+      column:5
+      source_length:#{source.bytesize}
+      #{source}
+
+      SHUTDOWN
+    EOS
+
+    output = pipe_output("#{bin}/clang-complete test.c", input, 0)
+    assert_match "COMPLETION: x : [#int#]x", output
+    assert_match "COMPLETION: y : [#int#]y", output
   end
 end

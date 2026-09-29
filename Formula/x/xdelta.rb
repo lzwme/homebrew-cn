@@ -1,18 +1,16 @@
 class Xdelta < Formula
   desc "Binary diff, differential compression tools"
   homepage "https://github.com/jmacd/xdelta"
-  url "https://ghfast.top/https://github.com/jmacd/xdelta/archive/refs/tags/v3.2.0.tar.gz"
-  sha256 "ba2c9676b325f1958e504a60a20340145b8073d5f8664092de17389e15a93199"
+  url "https://ghfast.top/https://github.com/jmacd/xdelta/archive/refs/tags/v3.2.1.tar.gz"
+  sha256 "dc75f6a9615ac278fe00375d94241f47af4e893f11e4a9f46b4ca4e2e1f99e66"
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "1cd38ba3e54dd8cf84f742be5cd45e7f30da5cc2251be1da4f522bf8b2d1a3dc"
-    sha256 cellar: :any, arm64_tahoe:       "59e9b3265d1ed3eaa7acb45f2ae8db76c706fbe49f849e92fbd426d13e6182e2"
-    sha256 cellar: :any, arm64_sequoia:     "be26e483322fdec244a96911ed8bace807f1da8b4a1275a604192264ae6b4e26"
-    sha256 cellar: :any, arm64_sonoma:      "e9ba02aa6039dac4e32b2198684c6fd7a88e3a3ba8beff1de70841769bdfba9d"
-    sha256 cellar: :any, sonoma:            "a2328d725a6ef8abcc7e475957fc0972e42fcb65a56826e7b7af52a2bb9ce059"
-    sha256 cellar: :any, arm64_linux:       "87b7623b5ed5bbdf3a09ce88a6a221ffe9b45dca659f2dc50911f7cf0678647d"
-    sha256 cellar: :any, x86_64_linux:      "e5631b4554f80646caef4ab1a36ed8ccc08aed7ea133ca41433f445842e2f0df"
+    sha256 cellar: :any, arm64_golden_gate: "77c6710de1dd2e54af9581d7d2828a832479d01b1e0771d7025e6fe914c43624"
+    sha256 cellar: :any, arm64_tahoe:       "0e1d72580a6a761ba431651efb25d71ba49fa93d8e762c0756b7b75dbbdf9e35"
+    sha256 cellar: :any, arm64_sequoia:     "8ae2b737241d27f9aa909f418629c1cedb6006d888100a4d13623e16bb6613e1"
+    sha256 cellar: :any, arm64_linux:       "ab12a1403ff1fab874d446fb9f48e20e776b66a50189bf5287e6521b0f5a1f4a"
+    sha256 cellar: :any, x86_64_linux:      "be2365a878dd108cbdfd86958918c041be2f48de33be0a9d58a3989b6dd9f2a6"
   end
 
   depends_on "cmake" => :build

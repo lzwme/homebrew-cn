@@ -7,6 +7,8 @@ class Opencode < Formula
   revision 2
 
   livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
     throttle 5
   end
 

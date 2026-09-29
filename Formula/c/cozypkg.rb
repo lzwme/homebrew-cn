@@ -1,8 +1,8 @@
 class Cozypkg < Formula
   desc "CLI for managing Cozystack packages"
   homepage "https://cozystack.io"
-  url "https://ghfast.top/https://github.com/cozystack/cozystack/archive/refs/tags/v1.6.3.tar.gz"
-  sha256 "0325fad3a856a52937a397befc7f5fbe32076db991f19cdc8cd656367728cc1c"
+  url "https://ghfast.top/https://github.com/cozystack/cozystack/archive/refs/tags/v1.6.4.tar.gz"
+  sha256 "aa7d2af24abff359514077078c5f547844bbff5752ed51299d536c8a8dc4dd16"
   license "Apache-2.0"
   head "https://github.com/cozystack/cozystack.git", branch: "main"
 
@@ -12,12 +12,11 @@ class Cozypkg < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "3b43c7b81c3311092060e5790ebd206b4ab0a1dd22302cd9d970f08895aa6c75"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "9f61129d70cd9b7d12437ec9d54d0a896eb399f219992ac1974e16f7a2dccb6c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "743590b7871d991c487734a9259e1eae794683e29c4b26adf50c5359735f7385"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "3c41d7e630d3d34720f8a114b36c84abf2dce833050a60afa65de88398dddc3c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "7c61f1da1a9b9978c9ff351cf0ae89e60fd4739949371a737b6b4c5d8b3367a8"
-    sha256 cellar: :any,                 x86_64_linux:      "e5a1d41f9950c6be51f3be3b4cdef0b9f252874e18199f7ee658957ccf426f4e"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "cd29c05aaf2a3cbb510f296bde68156792f8b0c1b49f0530444c096a7234d76e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "7e7bc582a218d03303f32120e6ad238afe18081e05090e47fd514950821ea3c1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "ea6db5322c236985435d54d42630ca23979d75fc68948ea2c018da8094bc8188"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "a8611f14d29442c991cb1f46d9e3f7a4b6f8d55f1cf6dc848f19fdc3f39fdb00"
+    sha256 cellar: :any,                 x86_64_linux:      "26007664154059d3737395a15110963bf37aba4da6fedee09842708c574bcb35"
   end
 
   depends_on "go" => :build

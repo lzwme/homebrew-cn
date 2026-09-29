@@ -20,8 +20,18 @@ class Ext4fuse < Formula
   depends_on "libfuse@2"
   depends_on :linux # on macOS, requires closed-source macFUSE
 
+  deny_network_access!
+
   def install
     system "make"
     bin.install "ext4fuse"
+  end
+
+  test do
+    # Mounting requires FUSE, so check that the superblock is read and validated before mounting
+    (testpath/"test.img").write "\0" * 4096
+    (testpath/"mnt").mkpath
+    output = shell_output("#{bin}/ext4fuse test.img mnt 2>&1", 1)
+    assert_match "Partition doesn't contain EXT4 filesystem", output
   end
 end

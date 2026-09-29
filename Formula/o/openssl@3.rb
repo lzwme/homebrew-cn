@@ -6,6 +6,7 @@ class OpensslAT3 < Formula
   mirror "http://deb.debian.org/debian/pool/main/o/openssl/openssl_3.6.4.orig.tar.gz"
   sha256 "9bffaa1ad1e07b354c21bd3324ec02fa15579f45a7d0494b3e74bc449b7333ef"
   license "Apache-2.0"
+  revision 1
   compatibility_version 1
 
   livecheck do
@@ -14,13 +15,14 @@ class OpensslAT3 < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "51eb22ee51d7b6e678ef5dc2be234adb46f9f541ac1d98e5ed08c9a7535789dc"
-    sha256 arm64_tahoe:       "8c7dab98311d025fda379dba80eaf985af1ceca26c403c66318b3c7d43a028b9"
-    sha256 arm64_sequoia:     "b7139450ed389be82f807daaadffa778d9c4753a3b2d8f784da1cf7383994ee2"
-    sha256 arm64_sonoma:      "01887accd1964e9940ba516509e948eed9850d58d55cc02ca52c503435750685"
-    sha256 arm64_linux:       "e0f84cb8ab776813a17750423a6ce1b75b870df3ab2c21c54df9ce02646c1e1c"
-    sha256 x86_64_linux:      "73c4159878b98d82e6f4e343ef34a79b74ca2224927d38c0956ce3ea781d6d20"
+    sha256 arm64_golden_gate: "037d39aeb53c636e392fa670fa74c2a94b51b69521a4fb4fce4d0ea7500f5f94"
+    sha256 arm64_tahoe:       "ef13592a20830e81b8a72d958a65dfe671966e0df199c437cbbbe1d9362d72dc"
+    sha256 arm64_sequoia:     "9bcc21f1c395d9126f336f8e6f0a97ba5cdd0e27ff0b60b29bda96f652c8e537"
+    sha256 arm64_linux:       "936519e02a5aae4a48bb54c4b19b583a9ddf1067f26ee49597676df160e22a66"
+    sha256 x86_64_linux:      "5ccc94bb2a9f43b88aae2ebed93687e5a527143899b2479046672037466ed293"
   end
+
+  keg_only :versioned_formula
 
   depends_on "ca-certificates" => :no_linkage
 
@@ -43,11 +45,6 @@ class OpensslAT3 < Formula
       sha256 "43b33c20f8d82dba7cc48f8cd702f8fc9811e9d07880886dfd31b7077bd4a3a6"
     end
   end
-
-  link_overwrite "bin/c_rehash", "bin/openssl", "include/openssl/*"
-  link_overwrite "lib/libcrypto*", "lib/libssl*"
-  link_overwrite "lib/pkgconfig/libcrypto.pc", "lib/pkgconfig/libssl.pc", "lib/pkgconfig/openssl.pc"
-  link_overwrite "share/doc/openssl/*", "share/man/man*/*ssl"
 
   # SSLv2 died with 1.1.0, so no-ssl2 no longer required.
   # SSLv3 & zlib are off by default with 1.1.0 but this may not

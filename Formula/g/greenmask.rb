@@ -1,8 +1,8 @@
 class Greenmask < Formula
   desc "PostgreSQL dump and obfuscation tool"
   homepage "https://www.greenmask.io/"
-  url "https://ghfast.top/https://github.com/GreenmaskIO/greenmask/archive/refs/tags/v0.2.23.tar.gz"
-  sha256 "f951d9d349497b669cb438141d5c4671d632d4bf29ea710f48cdc633289ebd6d"
+  url "https://ghfast.top/https://github.com/GreenmaskIO/greenmask/archive/refs/tags/v0.2.24.tar.gz"
+  sha256 "9f74c7bf03ab6a99b3c78aba4afaa8873ef226b44b279e62df4dab118eb25841"
   license "Apache-2.0"
   head "https://github.com/GreenmaskIO/greenmask.git", branch: "main"
 
@@ -12,13 +12,11 @@ class Greenmask < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "aad8c256ad82ff0a6387a2d305126c1ade522fb704868b10f18caea2293abb52"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "fc72c2cef0359080e79c3ce727852430df16f4cc23d00f95480e84c5a04f83ee"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "fc72c2cef0359080e79c3ce727852430df16f4cc23d00f95480e84c5a04f83ee"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "fc72c2cef0359080e79c3ce727852430df16f4cc23d00f95480e84c5a04f83ee"
-    sha256 cellar: :any_skip_relocation, sonoma:            "8ac4aebe53c9af3ca63ba274be9505f6fd37a4e74066eb85fee83e77c40a3369"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "8b54fd753ad573adbb01f813b4c7728b1eb77a251afce6fbeb88073f48c76be9"
-    sha256 cellar: :any,                 x86_64_linux:      "5a20bb35ca0105564a1aee82a0e8eb86e0655493d1f95e72f92a65e1e53939ea"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "e40e9f9bf45072ff5deecf5fe01bc9705bf88dda3f7c9502badf9ba5c2e911f8"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "e40e9f9bf45072ff5deecf5fe01bc9705bf88dda3f7c9502badf9ba5c2e911f8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "e40e9f9bf45072ff5deecf5fe01bc9705bf88dda3f7c9502badf9ba5c2e911f8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "ac1d0e1cfcfab030ed2de4950bc7d7547e5066ce3610ef746260b5466699b127"
+    sha256 cellar: :any,                 x86_64_linux:      "3d0785c79b701a8a01e32e2bacc853a64b5d45886bf052aabfcb679f1867c84a"
   end
 
   depends_on "go" => :build

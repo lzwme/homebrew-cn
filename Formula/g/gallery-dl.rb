@@ -3,17 +3,17 @@ class GalleryDl < Formula
 
   desc "Command-line downloader for image-hosting site galleries and collections"
   homepage "https://codeberg.org/mikf/gallery-dl"
-  url "https://files.pythonhosted.org/packages/c4/62/1a49de3036eaf43c3e897974b3b01a52ba84a05d0c8fc701151050431743/gallery_dl-1.32.13.tar.gz"
-  sha256 "08c9f66b4cba4a21960dc61140626c154502caa89696203a24be5a6969a692bd"
+  url "https://files.pythonhosted.org/packages/e6/a7/81d656eee98122bbae8234a3e85b6923b19c6c5b7c43d3a907625806003a/gallery_dl-1.32.14.tar.gz"
+  sha256 "70657865488e09c2d7bcabc1faf9b5f8c5a8b550ee123a87ca5c7740f70ed382"
   license "GPL-2.0-only"
   head "https://codeberg.org/mikf/gallery-dl.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "71fb3046403ff6102992d50c703d48813a63ab4a527a2ba76b5aa6cde3c3c6ff"
-    sha256 cellar: :any, arm64_tahoe:       "4a6e6c94686d37ecdf315e2fb332f17abab48c2b7356cb9d9f023aa94f2b2bd0"
-    sha256 cellar: :any, arm64_sequoia:     "7b95208d6099e48cf01639789829073143bd7b03739ba165a023c74660b18302"
-    sha256 cellar: :any, arm64_linux:       "195bffac192d6303f0c944e040762a4651db5250cf6aee57085997821cfa1168"
-    sha256 cellar: :any, x86_64_linux:      "d4206e499008b6b2edc0cc6a0514e91f39280d7ac55dc0645361f6e23a1f6023"
+    sha256 cellar: :any, arm64_golden_gate: "6d405564af011d2f4453fae3275a0786901d1a96ffd7107b41706c9e141b81da"
+    sha256 cellar: :any, arm64_tahoe:       "d7df515810591bad433089bf3c9c5ba3b95491ad5d1412d7016ed5aa0f9b6a6d"
+    sha256 cellar: :any, arm64_sequoia:     "ec8d614a77435af93a48b42e4817a73157b1ffe439df0cc5cc09f778f0c8705b"
+    sha256 cellar: :any, arm64_linux:       "4ddc44a6567482a9c9830775e1d94473a979ef0c5e035edab5b2333015e687eb"
+    sha256 cellar: :any, x86_64_linux:      "27af792055428d058b9b68423c5601450083b30cb095bc280ff241968a448d92"
   end
 
   depends_on "certifi" => :no_linkage

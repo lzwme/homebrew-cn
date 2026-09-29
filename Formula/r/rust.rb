@@ -114,7 +114,7 @@ class Rust < Formula
   link_overwrite "bin/cargo-fmt", "bin/git-rustfmt", "bin/rustfmt", "bin/rustfmt-*"
 
   def llvm
-    Formula["llvm@22"]
+    deps.map(&:to_formula).find { |f| f.name.match?(/^llvm(@\d+)?$/) }
   end
 
   def install

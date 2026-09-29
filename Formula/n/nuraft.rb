@@ -4,30 +4,32 @@ class Nuraft < Formula
   url "https://ghfast.top/https://github.com/eBay/NuRaft/archive/refs/tags/v3.0.0.tar.gz"
   sha256 "073c3b321efec9ce6b2bc487c283e493a1b2dd41082c5e9ac0b8f00f9b73832d"
   license "Apache-2.0"
+  revision 1
 
   bottle do
-    rebuild 1
-    sha256 arm64_golden_gate: "8e633d9bb67772c7e575c2c2dbaf0d77ffcf66b6585b2c24d8574d59da9bae2a"
-    sha256 arm64_tahoe:       "ea3f306e6ff8caed8af6766269952ba484a9c93616bd3022536ecdf594244293"
-    sha256 arm64_sequoia:     "d8c11cb1794414a156702a0dd8e2e4c2f1364b3ce70d72fe0621ec8ee38e3153"
-    sha256 arm64_sonoma:      "12ba02a1696da77e500b797871ae74e95faef90716c9926226a89eb27bccc1b9"
-    sha256 sonoma:            "6448d43767ede630932d6bdb91a5d898fa1009c2fe50ef151c39c02d9d1b6c01"
-    sha256 arm64_linux:       "fc1791ce60a81c886fe5c3484636b8ef7645eb8fa08d7d4a0f1d7ab65d40b277"
-    sha256 x86_64_linux:      "922ce348211e72adc865d2a6976cd7a2b914d1ea88c4508fb80fd7430cac185a"
+    sha256 cellar: :any, arm64_golden_gate: "517e0a885621767c861246519db093fe346ab22726f7ea48401944b11c040890"
+    sha256 cellar: :any, arm64_tahoe:       "3fe144bec835ae99558360ce66dba39bf6d3c4ca19e38c66a579e14927e11418"
+    sha256 cellar: :any, arm64_sequoia:     "31b701afa908f0ab05f611ce43f4fc12dd462ad5284ca17a00a70c4e0c11b76c"
+    sha256 cellar: :any, arm64_linux:       "21045bf1bb5ccfab056b036173702c56190f4113ba09a0f84b84012a1c64aa27"
+    sha256 cellar: :any, x86_64_linux:      "cb7bb5d88c1a3bbba642b274b827b8b966dd5184e05321fc6d68e12d27c0780c"
   end
 
   depends_on "cmake" => :build
 
   depends_on "asio"
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   on_linux do
     depends_on "zlib-ng-compat"
   end
 
+  allow_network_access! :test
+
   def install
-    # We override OPENSSL_LIBRARY_PATH to avoid statically linking to OpenSSL
-    system "cmake", "-S", ".", "-B", "build", *std_cmake_args, "-DOPENSSL_LIBRARY_PATH="
+    # Avoid statically linking to OpenSSL
+    inreplace "CMakeLists.txt", "set(OPENSSL_USE_STATIC_LIBS TRUE)", ""
+
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
     pkgshare.install "examples"
@@ -38,9 +40,9 @@ class Nuraft < Formula
     system ENV.cxx, "-std=c++11", "-o", "test",
                     "quick_start.cxx", "logger.cc", "in_memory_log_store.cxx",
                     "-I#{include}/libnuraft", "-I#{testpath}/echo",
-                    "-I#{formula_opt_include("openssl@3")}",
+                    "-I#{formula_opt_include("openssl@4")}",
                     "-L#{lib}", "-lnuraft",
-                    "-L#{formula_opt_lib("openssl@3")}", "-lcrypto", "-lssl"
+                    "-L#{formula_opt_lib("openssl@4")}", "-lcrypto", "-lssl"
     assert_match "hello world", shell_output("./test")
   end
 end

@@ -1,14 +1,13 @@
 class Chunkah < Formula
   desc "OCI building tool for content-based layers"
   homepage "https://github.com/coreos/chunkah"
-  url "https://ghfast.top/https://github.com/coreos/chunkah/releases/download/v0.6.0/chunkah-0.6.0.tar.gz"
-  sha256 "de9c4905225cc30270c734c7aa6f27b870e188fb38013f35a144250008a1c90d"
+  url "https://ghfast.top/https://github.com/coreos/chunkah/releases/download/v0.7.0/chunkah-0.7.0.tar.gz"
+  sha256 "92a88a65c31d9fa223357334342ebc35c6a9c035eac3ce6dded536bc863ddd8a"
   license "Apache-2.0"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_linux:  "fcfa4a846a77542a308238aff164be13ea81f8ed02edf6522b700df778882de3"
-    sha256 cellar: :any, x86_64_linux: "3fe148a0a8c74780947f906bf8e48933f8a4c4a625f930ec560736a417899f95"
+    sha256 cellar: :any, arm64_linux:  "47481bef7c4bf109adfd92a921ea9963d79ebb5fda240dfe25d605c4cc48fee1"
+    sha256 cellar: :any, x86_64_linux: "caa89d700f07b7751fe70b5b474ffe8d8f85c8919593f249b7840a259323fe4c"
   end
 
   depends_on "pkgconf" => :build

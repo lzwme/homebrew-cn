@@ -1,22 +1,23 @@
 class Ortp < Formula
   desc "Real-time transport protocol (RTP, RFC3550) library"
   homepage "https://linphone.org/"
-  url "https://gitlab.linphone.org/BC/public/linphone-sdk/-/archive/5.5.23/linphone-sdk-5.5.23.tar.bz2"
-  sha256 "8c7f255e50e0b9f4a09bb2c4796d0e8ff5abdbdd13fe4c10a94cca9c2278c8fa"
+  url "https://gitlab.linphone.org/BC/public/linphone-sdk/-/archive/5.5.24/linphone-sdk-5.5.24.tar.bz2"
+  sha256 "44922b7016e5bd00eb7b92405c4c090052114d4b402e60c586d19ddea5a0b2b0"
   license all_of: ["AGPL-3.0-or-later", "GPL-3.0-or-later"]
   head "https://gitlab.linphone.org/BC/public/linphone-sdk.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "a300739862ed710bcc5106a7dd5d8f56e91aca14e6424913fda5be5ff78e50d2"
-    sha256 cellar: :any, arm64_tahoe:       "49b1ff892c047cbfe0761fcc10a26935daa01847a05f3989ec5519b0db2e9118"
-    sha256 cellar: :any, arm64_sequoia:     "e66e4b1d3377eb88c0b7e88cd3c9d0413ef65363b44cf6d0c214cadbe679daf4"
-    sha256 cellar: :any, arm64_linux:       "2359d8509d0f81a4c8d8df801fbb8e137ae4fb297b5d4eed0af6612cc47eb62c"
-    sha256 cellar: :any, x86_64_linux:      "74ba543edd8293a64a85999be64a31664f5ab4bf1260a42aa3f305a32020e477"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "08279ee6c0ab2114eceaa794341b5a20b7cbf67937cd1d35f83eba51caf35013"
+    sha256 cellar: :any, arm64_tahoe:       "91d79aa508e851f0cf9b7c8cb7dee37b7ce0d16e256c175f28c9005c0ef13a98"
+    sha256 cellar: :any, arm64_sequoia:     "9fc9343272801633d4eaf3b63787739b54a932f2b89fee31143815b7b3519b51"
+    sha256 cellar: :any, arm64_linux:       "a675840d153c65697b21f5808abbbd9b9f1374dda58b7e18101d9f62ed2b1d98"
+    sha256 cellar: :any, x86_64_linux:      "9ea61eb1cc90302a128951656f143af62f6d2442b4186f62025324fc70a9a6b2"
   end
 
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
-  depends_on "openssl@3" # OpenSSL 4 is not supported in monorepo
+  depends_on "openssl@4"
 
   def install
     args = %w[

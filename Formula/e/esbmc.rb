@@ -4,6 +4,7 @@ class Esbmc < Formula
   url "https://ghfast.top/https://github.com/esbmc/esbmc/archive/refs/tags/v8.5.tar.gz"
   sha256 "61a240ca75cccbd037292d4921b7da01bf12fef0ae760401d3284a3a8a17cff3"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/esbmc/esbmc.git", branch: "master"
 
   livecheck do
@@ -12,12 +13,11 @@ class Esbmc < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "69f031fb67362cefa30c6355fb80877424475bdd00c6e25ee76cf4aba6f510ce"
-    sha256 cellar: :any, arm64_tahoe:       "e68de291105aa20234dc7c4e0e183a3aba97adcfb21d1bb35ea800fd71b80c87"
-    sha256 cellar: :any, arm64_sequoia:     "b2a53e3b9cda8686172c29e024aad0e3a72ceaadf5b3e5b83122193ac8c0cdd5"
-    sha256 cellar: :any, arm64_sonoma:      "d34d9e0e0e71904a292c67c092b4c3fb67639cfb447619de7649add8f8e108dc"
-    sha256 cellar: :any, arm64_linux:       "f3ea238a336821b8b5838b10b4e6816de28d671a77ced0897aa416dca77cb2a4"
-    sha256 cellar: :any, x86_64_linux:      "c7b61f6235775dc0bc8ae4ac0cadf2827dd623ef0ae789a651a68e4c38889ccc"
+    sha256 cellar: :any, arm64_golden_gate: "cc4658e2195afa4892652ad92c6c70702a9e3563630033ddaa664eac50bcf075"
+    sha256 cellar: :any, arm64_tahoe:       "1d121b5c9fba0ae1b962f953164e8c20374edbe23c347fb0ef5a35f2a4efff26"
+    sha256 cellar: :any, arm64_sequoia:     "23e3afae2f854a918b8233784d37c3a2399a322664e1b4ffdc2b020bf8c3c89c"
+    sha256 cellar: :any, arm64_linux:       "972df7395ba95c7455e0ac720fe5442005fd5a1633771ebc851614263f020230"
+    sha256 cellar: :any, x86_64_linux:      "2ccae6e02b5219045ca0874b5d0b826a36b23bdd3b478fb2aac836e01616491c"
   end
 
   depends_on "bison" => :build # macOS ships 2.3; esbmc requires >= 2.6.1
@@ -59,6 +59,7 @@ class Esbmc < Formula
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
+    bin.env_script_all_files libexec/"bin", PATH: "#{formula_opt_libexec("python@3.14")}/bin:$PATH"
   end
 
   test do

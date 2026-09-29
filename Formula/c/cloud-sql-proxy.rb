@@ -1,18 +1,17 @@
 class CloudSqlProxy < Formula
   desc "Utility for connecting securely to your Cloud SQL instances"
   homepage "https://github.com/GoogleCloudPlatform/cloud-sql-proxy"
-  url "https://ghfast.top/https://github.com/GoogleCloudPlatform/cloud-sql-proxy/archive/refs/tags/v2.25.4.tar.gz"
-  sha256 "81efc0efbb2604681aafa8af7b697bdae65392eedae1936f6d1065e55dc4e543"
+  url "https://ghfast.top/https://github.com/GoogleCloudPlatform/cloud-sql-proxy/archive/refs/tags/v2.26.0.tar.gz"
+  sha256 "847959e97723aa25513b73812f6a323ada28c616c02677838bdfcb4842bfd67a"
   license "Apache-2.0"
   head "https://github.com/GoogleCloudPlatform/cloud-sql-proxy.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "89e5ae370395fce2499f2fd804db32888c8e7d9925fbc6b1c12ee5b0f6a10cac"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "4c2d75774948a72d84836f889e1bbfdab69bf057cd2c8eb57c40fae19fdbc2d3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "64e4a2f94991d62b2c2e8e133472b0e9ad0c87117eb5d467a6d73691d9696d5b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "c52dc7415e7b9e290c5be2fcd13429a1698220c9f4984030c7e30dae42b1370a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "1ac674c19c362238e2a1515b979940f25d319d77304a8b9cf9f34f4ca35971ff"
-    sha256 cellar: :any,                 x86_64_linux:      "dcaf7ee02b4d878b36e16a75fbb6d195c81134a26c31c7e5e53badbb2d520254"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "9c6c78c84dcf0a48a373aa645f2b998a81713951c6ea88906e1f8c4248d408ed"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "63b5d95de7ed829c4226681747728c4584f86572bc9fb581946f285de714e9dd"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "21a4f45b76b78e7296f450078febeddad3c48d9c374611abb2936193c220280d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "3f11fa4e0887e723faa2fde01c92138874cac057fb5525ec749b33ada56bd886"
+    sha256 cellar: :any,                 x86_64_linux:      "601aa7a05a37b1589e21a25a90fd700892ab454e60ce21a20036a61547888af3"
   end
 
   depends_on "go" => :build

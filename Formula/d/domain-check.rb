@@ -1,19 +1,17 @@
 class DomainCheck < Formula
   desc "CLI tool for checking domain availability using RDAP and WHOIS protocols"
   homepage "https://github.com/saidutt46/domain-check"
-  url "https://ghfast.top/https://github.com/saidutt46/domain-check/archive/refs/tags/v1.0.2.tar.gz"
-  sha256 "8ce92177fb4739b9c8d8c262c85d370173769e46411af4418d02acf70876ad54"
+  url "https://ghfast.top/https://github.com/saidutt46/domain-check/archive/refs/tags/v1.0.3.tar.gz"
+  sha256 "762e1a4239e3257a106e31248cefe94bccd8b1ba6e0b9ef504d0493a4488e334"
   license "Apache-2.0"
   head "https://github.com/saidutt46/domain-check.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "e68ecf2a58bbcd68046d5f8f8b506bfa774444974ca21945498775a28f336894"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "6dc3a3825a8ed97d4801594785706fbc6de93938bc6fdc51646f90ff48ad8b9b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "2f081fb38c78ec4e3e8e5a8c7c9c60824a57472aa3232e4c4301da3cf5eece24"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "58e12669d93aa4548ec57d5bba34e8debedaf5d684113e637f2fada060fd62a6"
-    sha256 cellar: :any_skip_relocation, sonoma:            "7155ec86dcf2d43f982b20959c906a2aae5d6abdc1eadcf4c557a13338e8df9d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "247221e67740fbfaa07daeab28b729211c75fec790dbece9a52336f4d9da50d2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "626d05f289cc1e412d8dcd8de8328b928b1b55c0115c33917a125dd262fbc13c"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "a51074ca330985c3ee943c2ef7afd718c741e9ff751821c2e843c6ccbdf200c2"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "8eca0fb3a2164c3546511cf948c3a93070fe973103e16b36c06e9d68ec6f51d5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "07a66b6572371786637c5096330a99e9d5b831361e375406345bc2384bb6dcec"
+    sha256 cellar: :any,                 arm64_linux:       "67ac470cf12eec9d76754e70273c1a1df4aaccdf7e94735f0cff16da2b4d1bca"
+    sha256 cellar: :any,                 x86_64_linux:      "baf4723e95739a18bb08c0f93ba3cda090a559984c94ba776a90c3d990029725"
   end
 
   depends_on "rust" => :build

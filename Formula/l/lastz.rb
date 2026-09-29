@@ -1,21 +1,17 @@
 class Lastz < Formula
   desc "Pairwise aligner for DNA sequences"
   homepage "https://lastz.github.io/lastz/"
-  url "https://ghfast.top/https://github.com/lastz/lastz/archive/refs/tags/1.04.52.tar.gz"
-  sha256 "274bf0d774e3f4da87c23ca0b5cc4269f3dcaecf71a1c6289d426e24fbccf4c8"
+  url "https://ghfast.top/https://github.com/lastz/lastz/archive/refs/tags/1.04.60.tar.gz"
+  sha256 "e66bb419a6599861b1d48c3b209d3746e8008c3ddde33f0dfeaa76e634bccebf"
   license "MIT"
   head "https://github.com/lastz/lastz.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "1ac67d5572bf92c42bfbb31950878afcbb0d72685ec53c1d91810a40a8057485"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "80f6fff47c343b4c7ace97eaae35488f03769f97fd9133f886c7bb34d95352e2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "0d663670926ee95d2ef1724b63284c96fb3f3a0a1c517f67a3066aaf9f2c03ee"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "591be15975aa9dd43fd51b15ed647d79dc22724fbf206af81baf67b3d8fe4877"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:     "7f64eee65d64b28cf1cdbaf97b1c1f59289aa1add290e394d778377245645f57"
-    sha256 cellar: :any_skip_relocation, sonoma:            "cbf9f6ac6360306a7d16069ba875c3b7bbc8bf519eeeae744d1e3fd2a9b67ed9"
-    sha256 cellar: :any_skip_relocation, ventura:           "87ed31cf1d1be9434962ea5261dedf49c514a452fa6f98e4e0c59219cb41c34c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "def54adb8c80103f68796212aa25a879efef110fc751f811c821e1508793772a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "b99c52372809d20f0228dc754d73c23fb5bf8bf0654025b472eba065b4341aec"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "f4c8f155a9acf8235de2895131fc62edc512a4eac70093b40b9a6c91c3b7e429"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "5112434c1872194d7e547c566850e281a442e0b23c7a9aa706c04ec7f634b3ee"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "9017e525dffe2a755d1b87255861861e33a3e8ac1b9dfc5d18d89a96b06aeb21"
+    sha256 cellar: :any,                 arm64_linux:       "1e118efabd4ee045fe260dee31976d2f7b9e47548d75e74b9a3d523421706297"
+    sha256 cellar: :any,                 x86_64_linux:      "f7f49c33dfcc3524952bf011dd539c764d296a1a428e1050f426562e2d5c1663"
   end
 
   def install

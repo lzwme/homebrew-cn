@@ -13,25 +13,15 @@ class Openlore < Formula
     sha256 cellar: :any, x86_64_linux:      "da877061968006e2d387cd588e798d317410e0c69c31343d41448245bd486545"
   end
 
-  depends_on "c-ares"
-  depends_on "ca-certificates"
-  depends_on "hdrhistogram_c"
   depends_on "node"
-  depends_on "openssl@3"
-
-  uses_from_macos "libffi"
 
   on_macos do
     depends_on arch: :arm64 # missing `onnxruntime` prebuilt binaries
   end
 
-  on_linux do
-    depends_on "python@3.14" => :build # for `node-gyp`
-  end
-
   def install
     system "npm", "install", *std_npm_args
-    bin.install_symlink Dir["#{libexec}/bin/*"]
+    bin.install_symlink libexec.glob("bin/*")
 
     node_modules = libexec/"lib/node_modules/openlore/node_modules"
     os = OS.kernel_name.downcase

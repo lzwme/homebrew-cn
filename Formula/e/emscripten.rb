@@ -8,6 +8,7 @@ class Emscripten < Formula
     "Apache-2.0" => { with: "LLVM-exception" }, # llvm
     any_of: ["MIT", "NCSA"], # emscripten
   ]
+  revision 1
   head "https://github.com/emscripten-core/emscripten.git", branch: "main"
 
   livecheck do
@@ -16,11 +17,11 @@ class Emscripten < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "f8b5b81ea19c14be8b07652d2caf53fc6ed19af6452dd5cfe0cfb6b28d6efa41"
-    sha256 cellar: :any, arm64_tahoe:       "d7ac0c75d062e515c4c69e4c1e5db534435cf9b9f411f8b751033ab0ab03934a"
-    sha256 cellar: :any, arm64_sequoia:     "6875e9a84200a72fab2b77aa9fb57e633cf52880d38b09d6c4d89189007abfde"
-    sha256 cellar: :any, arm64_linux:       "044d1049fd202e6c400dff9931f34f0acfb5ec4817758c17fb76b434e707868f"
-    sha256 cellar: :any, x86_64_linux:      "e886fdd717e1c226d613c68f4c113893067bf859b03baabdc71b8f3de5006868"
+    sha256 cellar: :any, arm64_golden_gate: "f68279d6c259c6c496172fde2f7affbc3b66505e6d822705361a9e62af49357d"
+    sha256 cellar: :any, arm64_tahoe:       "3e219c0a25ce2305b5baa06a5373eeecb2ca7602a050c061768f342fd8c46d72"
+    sha256 cellar: :any, arm64_sequoia:     "4646681e6c70bffe65fec06e05a7206da378264406aec57b3e6e2db5793f080f"
+    sha256 cellar: :any, arm64_linux:       "2f769c50f0a57d54de945a250c2b27fee2fb8f588dc1320dd602eb475195e031"
+    sha256 cellar: :any, x86_64_linux:      "94b97fba7ef43ae8c976b2bb08f5f724affcdb7101d2b1f4a218908b8ece9599"
   end
 
   depends_on "cmake" => :build
@@ -217,7 +218,7 @@ class Emscripten < Formula
 
     # Add JAVA_HOME to env_script on ARM64 macOS and Linux, so that google-closure-compiler
     # can find OpenJDK
-    emscript_env = { PYTHON: python3 }
+    emscript_env = { EMSDK_PYTHON: python3 }
     emscript_env.merge! Language::Java.overridable_java_home_env if OS.linux? || Hardware::CPU.arm?
 
     emscripts.each do |emscript|

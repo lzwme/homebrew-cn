@@ -5,16 +5,15 @@ class Trafficserver < Formula
   mirror "https://archive.apache.org/dist/trafficserver/trafficserver-10.2.0.tar.bz2"
   sha256 "bef171a7d064794e05ec7559e46d3e07c3ae6487a4647987fcc4f1cc5a82cec6"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/apache/trafficserver.git", branch: "master"
 
   bottle do
-    sha256 arm64_golden_gate: "3b6778630a61d68bb7297e75d80b5b83332c0cde12ce724c5777d30ea83f6b26"
-    sha256 arm64_tahoe:       "222cef46458d0e878da6222aafe39c7a4881dd00809bc942b54f3953ae43591b"
-    sha256 arm64_sequoia:     "9d413646a83fccdaec1430ca3dcc5e16e38c3a4c0eba847a6c67660bc9a3250b"
-    sha256 arm64_sonoma:      "b7a45470f429ff9e5f3db378ace87015f5e52bbedc58aaf80ec254898735a4b5"
-    sha256 sonoma:            "71ea596e4bf516b17c5973924946a90036aacabf44aba60eda48400ccf784d1e"
-    sha256 arm64_linux:       "79362c1a8db814b1abc10b05dbcb64bb2c4601a68f99a028eadc1699f269a65c"
-    sha256 x86_64_linux:      "970571f59da125b11c8f0d3cb694e5f8140faa1fb666ecd1112d5341168f8d34"
+    sha256 arm64_golden_gate: "25dc171995cf3f45663d95c1953575322ef2267059f50e70dd1a5ee0771d7217"
+    sha256 arm64_tahoe:       "695ab27752e888384b39aba46f8e240306c673b645cbda0310ca900c65b3f6cd"
+    sha256 arm64_sequoia:     "fdc674281e20e886b735130ec9f77ec4ef1e71c2a07734d488304d38dad243d0"
+    sha256 arm64_linux:       "0e136daa8aeb1d44194875dfae62bf16de73403a24b47792d0e1ea16c117706c"
+    sha256 x86_64_linux:      "fdd1a3704ed6e98176eee285f43a772685faabac9657f7fe43021a0dd19db5b2"
   end
 
   depends_on "cmake" => :build
@@ -27,14 +26,13 @@ class Trafficserver < Formula
   depends_on "libmaxminddb"
   depends_on "luajit"
   depends_on "nuraft"
-  depends_on "openssl@3"
+  depends_on "openssl@4"
   depends_on "pcre2"
   depends_on "xz"
   depends_on "yaml-cpp"
   depends_on "zstd"
 
   uses_from_macos "flex" => :build
-  uses_from_macos "curl"
   uses_from_macos "ncurses"
 
   on_linux do

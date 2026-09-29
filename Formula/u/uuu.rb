@@ -26,7 +26,6 @@ class Uuu < Formula
   depends_on "pkgconf" => :build
 
   depends_on "libusb"
-  depends_on "libzip"
   depends_on "openssl@3"
   depends_on "tinyxml2"
   depends_on "zstd"

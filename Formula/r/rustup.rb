@@ -1,11 +1,17 @@
 class Rustup < Formula
   desc "Rust toolchain installer"
   homepage "https://rust-lang.github.io/rustup/"
-  url "https://ghfast.top/https://github.com/rust-lang/rustup/archive/refs/tags/1.29.1.tar.gz"
-  sha256 "00f79a02275fd0252be6928d7a44f96bfba706a0cc47a0c85557aa4a875d1181"
   license any_of: ["Apache-2.0", "MIT"]
   compatibility_version 1
   head "https://github.com/rust-lang/rustup.git", branch: "main"
+
+  stable do
+    # TODO: Remove curl when release has following:
+    # https://github.com/rust-lang/rustup/commit/747057342d4616d6cd2cda6b00826c0ebdd0e671
+    url "https://ghfast.top/https://github.com/rust-lang/rustup/archive/refs/tags/1.29.1.tar.gz"
+    sha256 "00f79a02275fd0252be6928d7a44f96bfba706a0cc47a0c85557aa4a875d1181"
+    uses_from_macos "curl"
+  end
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_golden_gate: "b4397d25e9397419b22cb2cfcf72d4b8653bb538c73c40b37696d43a4b3c1ab3"
@@ -20,7 +26,6 @@ class Rustup < Formula
 
   depends_on "rust" => :build
 
-  uses_from_macos "curl"
   uses_from_macos "xz"
 
   on_linux do

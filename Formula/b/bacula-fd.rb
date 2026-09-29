@@ -11,17 +11,15 @@ class BaculaFd < Formula
   end
 
   bottle do
-    rebuild 2
-    sha256                               arm64_golden_gate: "f545bf12620fa7220fe06a81c651cb18be244f392b62f8743791003cd0f5f83d"
-    sha256                               arm64_tahoe:       "d8e6479890fe58003ea82668949e353c887a5142551e12fa482ab94291a41567"
-    sha256                               arm64_sequoia:     "1b45de630f6e4739ae934b5d00ae94500d70f6671bba548b08a0be0d980ed295"
-    sha256                               arm64_sonoma:      "fbe7144f73805ae418979f1585cbdeb44fd567d029123887790b45e066471839"
-    sha256                               sonoma:            "25564b366864ae82e37c6c6daebf04d060c416c47bd62981cfa984bacbe58dc8"
-    sha256                               arm64_linux:       "00e58d0749aa2b73b7c7f41074e77f62c072cd02c47a0d9e0bcf781775bc415f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "3f29b7a47f97ba906ad99a6ca74735719764540697d700495e4545bbf66c1038"
+    rebuild 3
+    sha256               arm64_golden_gate: "9d6cf94bc8c18cdf8870fcf9b003f9b5013f108ce440703c47594978e3028217"
+    sha256               arm64_tahoe:       "5688de1c1f3e7c7b1efc8e82286760a82e302f920d98f156a904d98d642396ed"
+    sha256               arm64_sequoia:     "069a15c74ec03e935573c9fca3d24dc68523bbb5e61dd6a2e7ed7c3ecd00d9b0"
+    sha256               arm64_linux:       "cd2207345e5e6999c3658f03b0847294d82cd7d1c9efe8cafc36b472c5ec3783"
+    sha256 cellar: :any, x86_64_linux:      "bdc741dd0a0b94175a12fd623ba9e88fa8ac508cc03dd4803d89927753ad2109"
   end
 
-  depends_on "openssl@3"
+  depends_on "openssl@4"
   depends_on "readline"
 
   on_linux do
@@ -34,6 +32,14 @@ class BaculaFd < Formula
   patch do
     file "Patches/libtool/configure-pre-0.4.2.418-big_sur.diff"
     type :unofficial
+  end
+
+  # Apply Ubuntu patch to support OpenSSL 4. Used by Fedora too.
+  patch do
+    url "https://git.launchpad.net/ubuntu/+source/bacula/plain/debian/patches/ubuntu/openssl-4-ftbfs.patch?id=0ff2f2f11dee0bbdfb5059d35379088fbe7ae5ab"
+    sha256 "841443a121aa2d61c8156a7e9029113ea659cc24d2d610c2d93a498655272ab8"
+    type :unofficial
+    resolves "https://gitlab.bacula.org/bacula-community-edition/bacula-community/-/work_items/2771"
   end
 
   def install

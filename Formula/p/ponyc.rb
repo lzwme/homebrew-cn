@@ -5,14 +5,14 @@ class Ponyc < Formula
       tag:      "0.72.1",
       revision: "de5eddd973a48689ceedd12d24bf42358e5694d5"
   license "BSD-2-Clause"
+  revision 1
 
   bottle do
-    rebuild 1
-    sha256               arm64_golden_gate: "4374f190c6d81bd63c78385f47207e2f2ba0845337da24c58a9be53610fe4fc4"
-    sha256               arm64_tahoe:       "4dde20673966b91111b10607708219b1a65c5606d30322c683a83c293543a7ab"
-    sha256               arm64_sequoia:     "777bc96467a38dd02ea3cb89f93ab3553834206258ed7624535c4c7c03e3bb1d"
-    sha256 cellar: :any, arm64_linux:       "a7cbfc2f2bef1d6fdbafc0e91d9a48946d103897f4e44658cbfd353784bc5fbd"
-    sha256 cellar: :any, x86_64_linux:      "7ed360ee1c8c14b63ff829e727a76940dfc9a1a64e15c7ddf3ea5e4841212a55"
+    sha256               arm64_golden_gate: "348218fc1d773cfbabde2750e93e7bb5e13ee8d13f9a2fb30e090477268b7747"
+    sha256               arm64_tahoe:       "fd99303849388424b3d1f6851e06b2f1bb8d15f70bc0f8a677031ddee34ca753"
+    sha256               arm64_sequoia:     "cd4bd1d7aa2bc58d097cdf486f83670681e99f67f7c8f0f984dbdb6adf55385b"
+    sha256 cellar: :any, arm64_linux:       "93f21b5893b5d465106d341105235e1b49270ce42a1c18942fb1c74ba5404079"
+    sha256 cellar: :any, x86_64_linux:      "05dcfed1415f78b413719003fa56fe8d8f15bc6654c309569a230313d600f2f5"
   end
 
   depends_on "cmake" => :build

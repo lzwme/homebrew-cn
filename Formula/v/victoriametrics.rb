@@ -1,8 +1,8 @@
 class Victoriametrics < Formula
   desc "Cost-effective and scalable monitoring solution and time series database"
   homepage "https://victoriametrics.com/"
-  url "https://ghfast.top/https://github.com/VictoriaMetrics/VictoriaMetrics/archive/refs/tags/v1.152.0.tar.gz"
-  sha256 "7197529fb8b433f766a51a8f97cf4a45cff02c70262b6e1ba865225f6b9e01ca"
+  url "https://ghfast.top/https://github.com/VictoriaMetrics/VictoriaMetrics/archive/refs/tags/v1.153.0.tar.gz"
+  sha256 "ea0d38ebe710c5ce542158440bc873b0b744837d47e5268995a51c2c4c6da11d"
   license "Apache-2.0"
 
   # There are tags like `pmm-6401-v1.89.1` in the upstream repo. They don't
@@ -14,11 +14,11 @@ class Victoriametrics < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "27d44cd990efa4e871ecc90cd3fa99e715d1c80042478e3027be3c6db7832cdc"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "41ced46cdef5a918b4f03ccb5980a222d4a1f71534001a7116ab0533ccde6774"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "3d82b88bdf4694cccde899d8a8624d78fba43ce6ccdb7e47da21a287c0a4b37a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "b1efb94faf5dc727f14bb0e2ecf7290089a19e553235b41cbbad3934800b6a29"
-    sha256 cellar: :any,                 x86_64_linux:      "3695cc4f5a7191e6291a09a44f155b33eb9563d3988759a9f52c06d4e4159434"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "bd8b58ab5828796813e1aae7283379cc5624551483604aa3f40736a9164015bb"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "fe183e83ef60132f1d4dea05f000656caeb801901566be5fc6e50712f1a5d10d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "455971de87e88c25e59d2f8ab597244c62dca468f828b3560630c8835e1b3350"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "479c31ff8ac40dba4a7f9dff1d12acb449215f9b52aace7dd497dc0305400cc2"
+    sha256 cellar: :any,                 x86_64_linux:      "7f25516fd060cd1cc44b791258d10ec2ed7759738cbf3106adbdfa3d91c108eb"
   end
 
   depends_on "go" => :build

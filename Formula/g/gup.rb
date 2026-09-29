@@ -1,17 +1,17 @@
 class Gup < Formula
   desc "Update binaries installed by go install"
   homepage "https://github.com/nao1215/gup"
-  url "https://ghfast.top/https://github.com/nao1215/gup/archive/refs/tags/v1.10.2.tar.gz"
-  sha256 "5f8d2a3131bdc3739c567e103fb1697ddd7464126f4c06ba0fdbf3a79d4b853f"
+  url "https://ghfast.top/https://github.com/nao1215/gup/archive/refs/tags/v1.10.3.tar.gz"
+  sha256 "2bdcd9189802c401d951f57e01a9a10fa1b535a071ebb0d2272bec9e1973debd"
   license "Apache-2.0"
   head "https://github.com/nao1215/gup.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "d2a8fdfa3f39b58e6ecbeca39874e64764bf551725cb94ee45de982262643ab8"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "d2a8fdfa3f39b58e6ecbeca39874e64764bf551725cb94ee45de982262643ab8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "d2a8fdfa3f39b58e6ecbeca39874e64764bf551725cb94ee45de982262643ab8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "fafa03c3a6b54c0cc70ea3531fb1c0ead5f221ffab36a966e4a38aa98255cf5e"
-    sha256 cellar: :any,                 x86_64_linux:      "75cd75efa0d15898ab505e3c6599b7923982842ff90af999fd635d4903f5eeaf"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "d02bd86731a696968644c16a4426f1dc7fff818adac6bb829da9331a6d29724a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "d02bd86731a696968644c16a4426f1dc7fff818adac6bb829da9331a6d29724a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "d02bd86731a696968644c16a4426f1dc7fff818adac6bb829da9331a6d29724a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "8e827f9ea06b10123f7a46b76550e37b2798fe68315a583dc4f96133ee651233"
+    sha256 cellar: :any,                 x86_64_linux:      "df581b9b9337d419b43e1aceb2e665d827cd19dc4e6d8b63c381fe0e7167464a"
   end
 
   depends_on "go"

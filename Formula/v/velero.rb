@@ -1,8 +1,8 @@
 class Velero < Formula
   desc "Disaster recovery for Kubernetes resources and persistent volumes"
   homepage "https://velero.io/"
-  url "https://ghfast.top/https://github.com/velero-io/velero/archive/refs/tags/v1.18.3.tar.gz"
-  sha256 "63ce48e63ae9104e241d323d098e49953ec1659ef243518de292bc479846d74b"
+  url "https://ghfast.top/https://github.com/velero-io/velero/archive/refs/tags/v1.18.4.tar.gz"
+  sha256 "f551c797c90bc9e76f4de31e07011888666aeb63cd277991b909e4509baf9142"
   license "Apache-2.0"
 
   livecheck do
@@ -11,11 +11,11 @@ class Velero < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "6723008fa7d48f18b1a8d04aab298942edefc17cf6900e409135cc27e4b373f4"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "b245156c7afdb09d785cf4673ef0323fe3fc94ac88b6bfd115dbec68761cddba"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "1f6af2dd027165e248bef43106302931051c5a22ba1aea748ef6980812ef5edd"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "6e4999d44509cc41bdcf77426d6aaf9e5c5b95dd420f34584edc1a06913faed3"
-    sha256 cellar: :any,                 x86_64_linux:      "0ee161de05cd618956d496a0b1fc1b5101d730cae7d48a4621e79e125095fc3a"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "e079634c642b84b138f12954ee98455f98551fe773eaf4c5cb2fa072c13c3b43"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "2577a977fdb4fffb584f04ede49f160df6cd27d8ee0d238d0aaf6f6d9f0aaa74"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "bbc1678b55230911c0b45f041c13e13f8c8e86b82932a25811ed48fd6484b2fc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "eac4545e845af20ab8cb525a64a4ab8cd6355ec7d03e2005776513c127dfd76c"
+    sha256 cellar: :any,                 x86_64_linux:      "06082880d77e8342cc65c24aefa05a28afbfc9ce78dc4b44427ad57af62f5251"
   end
 
   depends_on "go" => :build

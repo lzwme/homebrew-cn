@@ -1,18 +1,16 @@
 class Primecount < Formula
   desc "Fast prime counting function program and C/C++ library"
   homepage "https://github.com/kimwalisch/primecount"
-  url "https://ghfast.top/https://github.com/kimwalisch/primecount/archive/refs/tags/v8.7.tar.gz"
-  sha256 "5a19eccca337da9e1cc629f2a223890af08987bc21771b9e860e28d823006be3"
+  url "https://ghfast.top/https://github.com/kimwalisch/primecount/archive/refs/tags/v8.8.tar.gz"
+  sha256 "9e2a3a779d5a274607cc40119544317b5eb41761b84cebb348d5af7d75d073b6"
   license "BSD-2-Clause"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "862c1e9d04f99ddd3ce3520e610f9079ca8f926e528ab56cea3be7e840e3ef37"
-    sha256 cellar: :any, arm64_tahoe:       "ffe716151403d7609bc171bd844d6c5563475e1ed9f92ee584239168a514e5aa"
-    sha256 cellar: :any, arm64_sequoia:     "204a970a56ce4f7415935e9e909493d374bbba8e1a2a798d0767f562ff56540f"
-    sha256 cellar: :any, arm64_sonoma:      "bbf128e4f5f5411df300168940cca92bd0515a168b842b1b5bb9d73cfb329eba"
-    sha256 cellar: :any, sonoma:            "949c46cc910ddfa2cd2f96ffb65b4aa8f0b5224b325be9d0752e3b01cd97a96b"
-    sha256 cellar: :any, arm64_linux:       "388d905c0a75c17332d87c14f7745271ef15e5520c3645af14643ba811ec043f"
-    sha256 cellar: :any, x86_64_linux:      "8aa3f814bb295dc0ff609d50d2bb308139f40157706d6697a47991e5856045b5"
+    sha256 cellar: :any, arm64_golden_gate: "78edcc1ccddbdfe3f6b064cd9ded9ef75ec162c9f71198e855e1a8d1a8bd6ed5"
+    sha256 cellar: :any, arm64_tahoe:       "db12c37f96d38ae627be06749bc29e942d80db560e6d02b9bb5723e3294224de"
+    sha256 cellar: :any, arm64_sequoia:     "665974a1a2959769ea1886a3d16529c9466bf4d67f798e1b61a8f8cc9e960c5e"
+    sha256 cellar: :any, arm64_linux:       "011341d4a9509a8e55f96d71eca0cac41c8eab13f0f052b30c6c9b43308be4db"
+    sha256 cellar: :any, x86_64_linux:      "953dc7774ad112badaaa429b359eab08a0708cbf9412f8645c92c52da8698a41"
   end
 
   depends_on "cmake" => :build

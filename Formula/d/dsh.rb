@@ -45,4 +45,8 @@ class Dsh < Formula
     system "./configure", *args, *std_configure_args
     system "make", "install"
   end
+
+  test do
+    assert_match "dsh: no machine specified", shell_output("#{bin}/dsh echo 'test' 2>&1", 1)
+  end
 end

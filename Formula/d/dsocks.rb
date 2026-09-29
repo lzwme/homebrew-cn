@@ -30,4 +30,8 @@ class Dsocks < Formula
     lib.install shared_library("libdsocks")
     bin.install "dsocks.sh"
   end
+
+  test do
+    assert_match "test", shell_output("#{bin}/dsocks.sh echo 'test' 2>&1")
+  end
 end

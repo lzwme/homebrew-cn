@@ -8,11 +8,12 @@ class Zookeeper < Formula
   head "https://gitbox.apache.org/repos/asf/zookeeper.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "fbd2050163a7a2b34a3cd0e9c786b3031827d0225bb93285c5de3c4ba104487e"
-    sha256 cellar: :any, arm64_tahoe:       "0cf4ac55a57f36c1fb6f565ef14cc9e4e5a52c20b497fd4737ea2ec9714ae983"
-    sha256 cellar: :any, arm64_sequoia:     "8156fb198b4f09fa2492eaa3d96c4eb82d355db5aee9915c654f624da508fae4"
-    sha256 cellar: :any, arm64_linux:       "5d1b304ab278b7f2402a8b44fc1c86611823e626115cd34ca71cb45658927ced"
-    sha256 cellar: :any, x86_64_linux:      "a414f7fa9d373ef44c9f3ec12a6805d4a52437039377d500c1a80f4ad9ecf27a"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "447c4ad9c04cc740775c7f17fa082acfb796f75184bf64c0b7b7510b6a256d1c"
+    sha256 cellar: :any, arm64_tahoe:       "01e35c9c5419bf3e424e5e77f716997ee3a70429a0e89c8c9e635533e8eb0836"
+    sha256 cellar: :any, arm64_sequoia:     "d5b9541184630771847908f13efa9cfa3555fd2b12391af97a2d0b1f5ec0cd87"
+    sha256 cellar: :any, arm64_linux:       "a4469e2e5d9b74b3ceaa804526c95cd2d96956d0a517f17e6685b224394768b5"
+    sha256 cellar: :any, x86_64_linux:      "637a632c6293ecfbc7e033583b2b73fa9497fcae439c9bc7714dcd758888a2d4"
   end
 
   depends_on "autoconf" => :build
@@ -23,7 +24,9 @@ class Zookeeper < Formula
   depends_on "pkgconf" => :build
 
   depends_on "openjdk"
-  depends_on "openssl@3"
+  depends_on "openssl@4"
+
+  deny_network_access!
 
   def default_zk_env
     <<~ZSH
@@ -31,8 +34,12 @@ class Zookeeper < Formula
     ZSH
   end
 
+  def fetch
+    system "mvn", "dependency:go-offline", "-Pfull-build"
+  end
+
   def install
-    system "mvn", "install", "-Pfull-build", "-DskipTests"
+    system "mvn", "install", "-Pfull-build", "-DskipTests", "-Dc-client-openssl=#{formula_opt_prefix("openssl@4")}"
 
     system "tar", "-xf", "zookeeper-assembly/target/apache-zookeeper-#{version}-bin.tar.gz"
     binpfx = "apache-zookeeper-#{version}-bin"
@@ -47,7 +54,7 @@ class Zookeeper < Formula
     (var/"log/zookeeper").mkpath
     (var/"run/zookeeper/data").mkpath
 
-    Pathname.glob("#{libexec}/bin/*.sh") do |path|
+    libexec.glob("bin/*.sh") do |path|
       next if path == libexec/"bin/zkEnv.sh"
 
       script_name = path.basename

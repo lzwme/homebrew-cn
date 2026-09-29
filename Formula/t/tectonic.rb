@@ -15,13 +15,12 @@ class Tectonic < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "ef6785c6d740b9b43ff4f749a2607b1e9e39627b5b7500fca4939b1702ac7149"
-    sha256 cellar: :any, arm64_tahoe:       "ee7d67061132d36e8cc70e643698a95228fc7c798d6717f349f523a78782ac8f"
-    sha256 cellar: :any, arm64_sequoia:     "6a82627d47f54e626c1db4bf1e0c217dc7cd8438c231f3bfd04ea19e50852466"
-    sha256 cellar: :any, arm64_sonoma:      "02eca8f626b8063a4d386654e9d4147df8abeb8abb0a33afa48118cf88104284"
-    sha256 cellar: :any, sonoma:            "b34a2b38838e4dcba6fb692d71ed8f4f87c6fe349425584a21377db1976cab7e"
-    sha256 cellar: :any, arm64_linux:       "4ebbf66c75acbe74cd38b0cc9f0643c8bc4e1441b0979853b752d3353f315484"
-    sha256 cellar: :any, x86_64_linux:      "b3b37f5506ed4d1bfbe9bd7662a2dfaf93a76a4b02c47033009b03b72e5da538"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "cd5a512ed939507f6792f2e762a0135e47bcef6b92a972bc1d10222376f8d511"
+    sha256 cellar: :any, arm64_tahoe:       "c29a2920a91b0a4db3f3d70026d45ff62e9328dc003df2399bddf2f3beadfdfc"
+    sha256 cellar: :any, arm64_sequoia:     "37afa7011a76f2f2a44701c439f08593dba885a6d77c613ca1d8d1e0e4e13aa2"
+    sha256 cellar: :any, arm64_linux:       "43f2d25a37bfff6e5911ff2c543b9943e7915d207c695d59f3eb40d8df7b7451"
+    sha256 cellar: :any, x86_64_linux:      "17173ccaee1130ee6c92151bbddca0417e79e0e8d326f871cb76885f919ac805"
   end
 
   depends_on "pkgconf" => :build
@@ -31,10 +30,10 @@ class Tectonic < Formula
   depends_on "harfbuzz"
   depends_on "icu4c@78"
   depends_on "libpng"
-  depends_on "openssl@3"
 
   on_linux do
     depends_on "fontconfig"
+    depends_on "openssl@4"
     depends_on "zlib-ng-compat"
   end
 
@@ -50,7 +49,7 @@ class Tectonic < Formula
 
     # Ensure that the `openssl` crate picks up the intended library.
     # https://crates.io/crates/openssl#manual-configuration
-    ENV["OPENSSL_DIR"] = formula_opt_prefix("openssl@3")
+    ENV["OPENSSL_DIR"] = formula_opt_prefix("openssl@4") if OS.linux?
 
     system "cargo", "install", *std_cargo_args(features: "external-harfbuzz")
     bin.install_symlink bin/"tectonic" => "nextonic"

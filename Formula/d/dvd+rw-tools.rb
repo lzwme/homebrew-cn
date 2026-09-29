@@ -49,6 +49,15 @@ class DvdxrwTools < Formula
     man1.mkpath
     system "make", "prefix=#{prefix}", "install"
   end
+
+  test do
+    exit_code = if OS.mac?
+      134
+    else
+      143
+    end
+    assert_match "unable to open", shell_output("#{bin}/dvd+rw-mediainfo /dev/null 2>&1", exit_code)
+  end
 end
 
 __END__

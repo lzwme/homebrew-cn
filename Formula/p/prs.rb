@@ -15,11 +15,10 @@ class Prs < Formula
 
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
-  depends_on "gpgme"
+  depends_on "gnupg"
 
   on_linux do
     depends_on "libxcb"
-    depends_on "openssl@3"
   end
 
   deny_network_access!

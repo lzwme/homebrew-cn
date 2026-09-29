@@ -58,4 +58,10 @@ class Dirac < Formula
     system "./configure", *args, *std_configure_args
     system "make", "install"
   end
+
+  test do
+    touch "test.in"
+    system "#{bin}/dirac_decoder", "test.in", "test.out"
+    assert_path_exists "test.out"
+  end
 end

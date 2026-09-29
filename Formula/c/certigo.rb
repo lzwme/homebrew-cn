@@ -1,8 +1,8 @@
 class Certigo < Formula
   desc "Utility to examine and validate certificates in a variety of formats"
   homepage "https://github.com/square/certigo"
-  url "https://ghfast.top/https://github.com/square/certigo/archive/refs/tags/v1.18.0.tar.gz"
-  sha256 "f532bc215b8f57af6bd823d16b6ef2d57499a24f949722d06a2d1c8ea64df225"
+  url "https://ghfast.top/https://github.com/square/certigo/archive/refs/tags/v1.18.1.tar.gz"
+  sha256 "a9f3014ce5f25b6be6cc88b5ca6e08d0ead9263f246d147f85f3f89ac289dba8"
   license "Apache-2.0"
   head "https://github.com/square/certigo.git", branch: "master"
 
@@ -12,13 +12,11 @@ class Certigo < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "423526981f4cc362ff4ee1203f1da6f87f4de9fd210767208805a41241a199d4"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "44862825248945f87685110c1d1f17c8747c1ea7324291851092ce1c305cb420"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "1b90746920cb04d611b1f63ffd5a21a90402a256d0a4b5dbdb2cd44f7fc41bbb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "3dd0367a4272f7ed14fdd728a6c662702976bf2a5033c1a433b91ae53e69b819"
-    sha256 cellar: :any_skip_relocation, sonoma:            "18d5ebad42f5b96207b884102cfc401c086848f002645413216ac512a3134152"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "a01187764b521a5ecebb086618c825f08fe2657fec32067ecb0f7f4a028e7b0d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "6870ecd9f505c65d452c8b3a9450077a204eaeeeaf88300b4ada945d312a87ad"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "5d5049655362425ab210c2ff5b2b1896bfd9fdbf76464f45096bc83a6a08a0fa"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "13dd94e83d080752ba52a320b9a6bc180e814ed8da2c65bc9361f0de3d551b51"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "28efac5b1e1fb4c150009383f08fad6b71285c20a3645ebc225fd78ccfb6596d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "bbe15940102e5d90c27e321fbdbd0dc5f19e66f5edab4ad3e5f88831e560934e"
+    sha256 cellar: :any,                 x86_64_linux:      "20e03fb7ec71f8a594e75e70af76f8e05bc1f7973639092e48ca71077914f067"
   end
 
   depends_on "go" => :build

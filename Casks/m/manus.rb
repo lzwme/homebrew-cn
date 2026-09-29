@@ -1,6 +1,6 @@
 cask "manus" do
-  version "1.7.7"
-  sha256 "16aca171ecd36fdd237eeaeb31b6e237c299855256e87364d2c2bc5f1ed7d52f"
+  version "2.0.2"
+  sha256 "d7029a025392d2917b64bbac5c80ccab8c5d28c3bbe854ef1dd04d81c34cba60"
 
   url "https://download.manus.im/Manus-Setup-#{version}.dmg"
   name "Manus"
@@ -16,9 +16,13 @@ cask "manus" do
   depends_on arch: :arm64
   depends_on macos: :monterey
 
-  app "Manus.app"
+  app "Manus Studio.app"
 
-  uninstall quit: "im.manus.desktop"
+  uninstall launchctl: [
+              "application.im.manus.desktop.capture-helper.*",
+              "application.im.manus.desktop.computer-use.*",
+            ],
+            quit:      "im.manus.desktop"
 
   zap trash: [
     "~/Library/Application Support/Manus",

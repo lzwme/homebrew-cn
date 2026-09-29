@@ -4,7 +4,7 @@ class Ejabberd < Formula
   url "https://ghfast.top/https://github.com/processone/ejabberd/archive/refs/tags/26.07.tar.gz"
   sha256 "7b2e4efe2d5c867d2ced9cb1391731c5e6b9accd6f166ec71e734a3ae97813d7"
   license "GPL-2.0-or-later"
-  revision 2
+  revision 3
   head "https://github.com/processone/ejabberd.git", branch: "master"
 
   # There can be a notable gap between when a version is tagged and a
@@ -16,12 +16,11 @@ class Ejabberd < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "119f9e2e3fb9caf7824712fb47b6c4e183213983bce45489cc8ac1f83430f579"
-    sha256 cellar: :any, arm64_tahoe:       "7392a38aea2dbeec29d98ee5010acf9046ca0968c99014c96cdfa14f25abad9a"
-    sha256 cellar: :any, arm64_sequoia:     "8537f2664cb8e8179fd1fab136fe2e8cb68575d3b0b612ba07161268829910e3"
-    sha256 cellar: :any, arm64_sonoma:      "1dca086a9ab019f8927735ed0e2b0324ba3a1eb1f5c6ac216de9f476de2e3c62"
-    sha256 cellar: :any, arm64_linux:       "01035a43dbda58abfd1521426371fdc33356eb0c1b239ed82547c45b587b5084"
-    sha256 cellar: :any, x86_64_linux:      "cfc59032c3e8c3d7317733d6d9366b11dfb6ecd9b95770b2a8abd68b9f259424"
+    sha256 cellar: :any, arm64_golden_gate: "ca73720bd02f623818df3ada8b152ec4b2d518cf565c52fec8fdbad465b98585"
+    sha256 cellar: :any, arm64_tahoe:       "c3e892a0cca8085ce74a4e7a925dde78eb474a6e08eeb8e130213fc516249faa"
+    sha256 cellar: :any, arm64_sequoia:     "39733edff651dbfc6a7188403c90fa27805bffc4ffc681cdbe45a8cba0f661d8"
+    sha256 cellar: :any, arm64_linux:       "0d578b861cf64d64cb15c326d87aec19c0cc9e2de8fdbf5095b332553c0d25aa"
+    sha256 cellar: :any, x86_64_linux:      "9d7b0231fe81ff2394c4f0060ce99857b728513b4b902384bfb1fb330e910db5"
   end
 
   depends_on "autoconf" => :build
@@ -30,7 +29,7 @@ class Ejabberd < Formula
   depends_on "erlang"
   depends_on "gd"
   depends_on "libyaml"
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   uses_from_macos "expat"
 
@@ -49,6 +48,8 @@ class Ejabberd < Formula
     ENV["TARGET_DIR"] = ENV["DESTDIR"] = "#{lib}/ejabberd/erlang/lib/ejabberd-#{version}"
     ENV["MAN_DIR"] = man
     ENV["SBIN_DIR"] = sbin
+    ENV.append_to_cflags "-I#{formula_opt_include("openssl@4")}"
+    ENV.append "LDFLAGS", "-L#{formula_opt_lib("openssl@4")}"
 
     args = %W[
       --prefix=#{prefix}

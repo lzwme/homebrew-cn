@@ -14,4 +14,20 @@ class DyldHeaders < Formula
   def install
     include.install Dir["include/*"]
   end
+
+  test do
+    (testpath/"test.c").write <<~C
+      #include <stdio.h>
+      #include <mach-o/fixup-chains.h>
+
+      int main(void) {
+        struct dyld_chained_fixups_header header = { .fixups_version = 0, .imports_format = DYLD_CHAINED_IMPORT };
+        printf("%zu %u %d\\n", sizeof(header), header.imports_format, DYLD_CHAINED_PTR_ARM64E);
+        return 0;
+      }
+    C
+
+    system ENV.cc, "test.c", "-I#{include}", "-o", "test"
+    assert_equal "28 1 1", shell_output("./test").strip
+  end
 end

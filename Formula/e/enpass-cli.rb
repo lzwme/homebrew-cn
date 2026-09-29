@@ -1,19 +1,17 @@
 class EnpassCli < Formula
   desc "Enpass command-line client"
   homepage "https://github.com/hazcod/enpass-cli"
-  url "https://ghfast.top/https://github.com/hazcod/enpass-cli/archive/refs/tags/v1.12.0.tar.gz"
-  sha256 "c53922b4a4d6df280a13605b720a52ee6a465aa831f5c666564e1912b1690c7d"
+  url "https://ghfast.top/https://github.com/hazcod/enpass-cli/archive/refs/tags/v1.14.0.tar.gz"
+  sha256 "e54fee6a4af2fb0acb003b7ac8de13a9a8cedb2cfd55bfea7b18484d87a1de5f"
   license "MIT"
   head "https://github.com/hazcod/enpass-cli.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "b1dd115011929ae2ab071074f7e4488d3583c7b684ccd3a3a1f4a3ac2b2d84d7"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "ef015dbaf66347da6767f11bfdb24128482cc87b2313c5267653ad73ffd6da9e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "8800fa45a4b6989337e52b0b57f3c6f75664aaa01840f2f379d5b2a314d8d605"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "4768816d11644ab5c6a6cd64e8d97bbcfd0409a7caf06ebc213cd08c408b7835"
-    sha256 cellar: :any_skip_relocation, sonoma:            "3943f4dc781997b07c503ee3833dce713003c1a6c12a3659e23f9bf11fed499b"
-    sha256 cellar: :any,                 arm64_linux:       "f0aff1f75c1f1a2f573265f1df322359ee7882f5ee8748ba65074f3b73b571ea"
-    sha256 cellar: :any,                 x86_64_linux:      "a4e8bba6aca520bdee33d65f17d40a09715ceaff1c28998f21df4e263d613c81"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "7f5bc5117b499b0d5a3c37542d5c810597dc3ed5243ebdb0f6b2d575209bbf81"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "9e2d55619788054a43e3058efdaf3db60c7fa979c77bb1e73935c6cd55dc1a2b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "abb8245a4ac77d1990d1949043c2d1b8baf0162d03814ca0b81c29ae7851c889"
+    sha256 cellar: :any,                 arm64_linux:       "9a33794d9d1c440aea0a457d87a25bb76575b3c0f1886359a90e9ca51f0394e5"
+    sha256 cellar: :any,                 x86_64_linux:      "ca7f359344c4f97e6e7f27d798bfa464296b581c78cf5f3aef779b049294578f"
   end
 
   depends_on "go" => :build

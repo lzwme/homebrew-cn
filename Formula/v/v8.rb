@@ -235,17 +235,6 @@ class V8 < Formula
   def install
     resources.each { |r| r.stage(buildpath/r.name) }
 
-    inreplace buildpath/"build/config/compiler/BUILD.gn" do |s|
-      # GCC only flag, not supported by clang
-      s.gsub! "cflags += [ \"-fno-lifetime-dse\" ]", ""
-      # Google clang fork only flag, not supported by clang, gcc
-      s.gsub! "cflags += [ \"-fdiagnostics-show-inlining-chain\" ]", ""
-    end
-
-    # Google clang fork only flag, not supported by clang, gcc
-    inreplace buildpath/"build/config/sanitizers/sanitizers.gni",
-              "\"-fsanitize-ignore-for-ubsan-feature=${invoker.sanitizer}\",", ""
-
     # Build gn from source and add it to the PATH
     cd "gn" do
       system "python3", "build/gen.py"

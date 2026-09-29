@@ -25,14 +25,22 @@ class Ext2fuse < Formula
   # https://sourceforge.net/p/ext2fuse/patches/2/
   patch :DATA
 
+  deny_network_access!
+
   def install
     ENV.append "CFLAGS", "-D__i386__"
     ENV.append "CFLAGS", "-DHAVE_TYPE_SSIZE_T"
     ENV.append "CFLAGS", "-DNO_INLINE_FUNCS"
     ENV.append "CFLAGS", "-I#{formula_opt_include("libfuse@2")}/fuse"
-    system "./configure", "--disable-debug", "--disable-dependency-tracking",
-                          "--prefix=#{prefix}"
+    system "./configure", *std_configure_args
     system "make", "install"
+  end
+
+  test do
+    assert_equal "ext2fuse version #{version}", shell_output("#{bin}/ext2fuse --version", 9).strip
+
+    # Mounting requires FUSE, so check that a missing mount point is rejected instead
+    assert_match "ext2fuse devicename mountpoint", shell_output("#{bin}/ext2fuse test.img", 255)
   end
 end
 
@@ -43,7 +51,7 @@ index 1b9cd36..a7d8235 100644
 +++ b/lib/ext2fs/ismounted.c
 @@ -150,7 +150,7 @@ static errcode_t check_mntent_file(const char *mtab_file, const char *file,
  is_root:
- #define TEST_FILE "/.ismount-test-file"		
+ #define TEST_FILE "/.ismount-test-file"
  		*mount_flags |= EXT2_MF_ISROOT;
 -		fd = open(TEST_FILE, O_RDWR|O_CREAT);
 +		fd = open(TEST_FILE, O_RDWR|O_CREAT, S_IRUSR|S_IRGRP);

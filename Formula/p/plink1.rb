@@ -1,22 +1,22 @@
 class Plink1 < Formula
   desc "Whole-genome association analysis toolset"
   homepage "https://www.cog-genomics.org/plink/1.9/"
-  url "https://ghfast.top/https://github.com/chrchang/plink-ng/archive/refs/tags/v1.9.0-rc3.tar.gz"
-  sha256 "faa07757dd814ce0692275e6c2247f76ece74f3f49c50e6f3e4cc3539e85fe39"
+  url "https://ghfast.top/https://github.com/chrchang/plink-ng/archive/refs/tags/v1.9.0.tar.gz"
+  sha256 "07f74f8c588e9cdc95f60b3b665976852e27db1f188a3bb75ff5ff4cba075d9d"
   license "GPL-3.0-or-later"
   head "https://github.com/chrchang/plink-ng.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(/^v?(1(?:\.\d+)+-(?:b\.\d+(?:\.\d+)*|rc\d+))$/i)
+    regex(/^v?(1(?:\.\d+)+)$/i)
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "1d16abde3fea24b093b23d6b5bb9158742b2677dfa2de88bc9e7472fe6225360"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "c14d5d1ea6c074e076ce35ad25836a4cb922a0d30faa5d5673b76661d04b7a51"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "530cdfb5ffeff958a6eff92b3d75127a4d3d1c62d172f1017f576904900539fd"
-    sha256 cellar: :any,                 arm64_linux:       "4700c6df4706cea9bcdb88907ccdf650dc94ac40613e593ee8cef4f677c3b5bb"
-    sha256 cellar: :any,                 x86_64_linux:      "fd33d9b6a05733c0a336b903f9508942bf145cf78f6869ab3b001e768d9a04b3"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "fb433428e8386f8c9f8b13024d6836a22572a3c85ae9f37715b6e55e0273dfb5"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "96f621af00b7ab122779c032f1b99998fcf7e11a21f91f5f0cd447b42f602330"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "737ef1bbdc78f82560f2be2432dcb4db94b328c96128a727d5bfcfef947fcdc9"
+    sha256 cellar: :any,                 arm64_linux:       "0e814194b57cb6f0b44c3094a85a11d305beb34a00d81a8c55ac9870fca27c25"
+    sha256 cellar: :any,                 x86_64_linux:      "2b501a06fe30a39a547bfe3222519931dff1932b9743f3daef9891c1083a2e44"
   end
 
   on_linux do

@@ -3,17 +3,17 @@ class Cycode < Formula
 
   desc "Boost security in your dev lifecycle via SAST, SCA, Secrets & IaC scanning"
   homepage "https://github.com/cycodehq/cycode-cli"
-  url "https://files.pythonhosted.org/packages/1d/6f/2b1af599122b84b9357960d5d6221c07e3d1a8a48ccb42bc3967fb701c62/cycode-3.24.1.tar.gz"
-  sha256 "1a4555233d23da4b37210a02973a16daa46eed7cf90f20ba2752beb5275f4ea7"
+  url "https://files.pythonhosted.org/packages/b3/a8/1e56943693f7174726e642ab1233e94cd119103f1e8049de757b93219539/cycode-3.24.2.tar.gz"
+  sha256 "c2a01ef0b5489a8b2c55eedfd446fb3ea8620cba6dc67859f127f2b38101aea5"
   license "MIT"
   head "https://github.com/cycodehq/cycode-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "6757880ade89bbf93aa83d4bbb6c995ee3b21cb3ee263b761b016f6ae32fb72f"
-    sha256 cellar: :any, arm64_tahoe:       "dd5ecd2fc106415e51d331f3ee58d16c061c8ba4dd456ed1e2b9fe9d79e778d4"
-    sha256 cellar: :any, arm64_sequoia:     "5a981e265cede2b7c966dcd8b8e64fe24d2db2ae9e8290f034472e6b00befdab"
-    sha256 cellar: :any, arm64_linux:       "45bf37f7ac18a195c1da29b6e5816f265ad6b406c126e579f1207c1a706186b9"
-    sha256 cellar: :any, x86_64_linux:      "21da3cdf285f2ad6f674e373bdd8479fbdb9e2480919888487145cfba36d9272"
+    sha256 cellar: :any, arm64_golden_gate: "dde41f88f56755dbd22de326e6a473ee87d4d0017425a06fccd30f285058375c"
+    sha256 cellar: :any, arm64_tahoe:       "5bf56384037a1d35c9b0acf1735644253a679c5beac049ef0667c680f5206542"
+    sha256 cellar: :any, arm64_sequoia:     "0f941717ad99be42370f725368ed4788389c3526aac435dc5cd30f704b0b1e68"
+    sha256 cellar: :any, arm64_linux:       "8f1464df1945e6cf67ef8853051b18d47bfbfbe0f38debe57e3a45975ecdaf33"
+    sha256 cellar: :any, x86_64_linux:      "380c26259931a8cb3b20e097be9ebce6a1d80d99f6342665e3db380865fad7d3"
   end
 
   depends_on "certifi" => :no_linkage
@@ -141,8 +141,8 @@ class Cycode < Formula
   end
 
   resource "pyjwt" do
-    url "https://files.pythonhosted.org/packages/af/c3/8a3b59c25070cc61dc517fbdfa5dc0904670c96f605cc69759dc09166b99/pyjwt-2.14.0.tar.gz"
-    sha256 "77283c83fb56ecf566a886c757a714bc83668e38156de2cce8263302f42e0b86"
+    url "https://files.pythonhosted.org/packages/02/a5/5197bfd06417837ac079921c66fa6393f1dea3557272a263cebfef69e432/pyjwt-2.15.0.tar.gz"
+    sha256 "b11c5f9791d7bf51c2b39a81ed669f6b2dbbd669df2942f6c60167e9e3d1abe4"
   end
 
   resource "python-dateutil" do
@@ -201,8 +201,8 @@ class Cycode < Formula
   end
 
   resource "starlette" do
-    url "https://files.pythonhosted.org/packages/b5/b4/205b0d5241d934e8add0c38aa924c4f9fb7330834ff11e5444db964ec3f9/starlette-1.6.0.tar.gz"
-    sha256 "d4e3ac5e546444960c710297a3c9fc3f7ebae1b7e963f3d36173b49da535be9b"
+    url "https://files.pythonhosted.org/packages/7b/2b/3850dc6bf7ef71b088962eba31dafc6cffd2f96e577ebb0bb316df96da3e/starlette-1.7.0.tar.gz"
+    sha256 "c79f74ea63cff761804fbbfb182f1e0b440c2d07b164d24700c5a1bab5d6ff5d"
   end
 
   resource "tenacity" do
@@ -236,8 +236,8 @@ class Cycode < Formula
   end
 
   resource "uvicorn" do
-    url "https://files.pythonhosted.org/packages/5d/ad/04bbb797c84fc1f26cb171f7394716f4865ffb8d8c5e1eef42565c2dfa6b/uvicorn-0.53.0.tar.gz"
-    sha256 "a9356f0cb89b3b8621529c5d5eebd69bfe154f4c3f68b4cf2de47e45fa855c2e"
+    url "https://files.pythonhosted.org/packages/da/34/30e9280707135d2cfc589dfff3cb796bd07a3aeb1a3e415ba09dd89d7bb4/uvicorn-0.54.0.tar.gz"
+    sha256 "a2e33cbfaa0306f8e6b0c13e0cb89d7d7a2da3e62b90c66e18c33d9807b28620"
   end
 
   def install

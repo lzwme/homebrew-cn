@@ -1,9 +1,9 @@
 class Mpich < Formula
   desc "Implementation of the MPI Message Passing Interface standard"
   homepage "https://www.mpich.org/"
-  url "https://www.mpich.org/static/downloads/5.0.1/mpich-5.0.1.tar.gz"
-  mirror "https://ghfast.top/https://github.com/pmodels/mpich/releases/download/v5.0.1/mpich-5.0.1.tar.gz"
-  sha256 "8c1832a13ddacf071685069f5fadfd1f2877a29e1a628652892c65211b1f3327"
+  url "https://www.mpich.org/static/downloads/5.0.2/mpich-5.0.2.tar.gz"
+  mirror "https://ghfast.top/https://github.com/pmodels/mpich/releases/download/v5.0.2/mpich-5.0.2.tar.gz"
+  sha256 "928c2f18d350a91443fe8024ad01ce2c6009e9c551e0a73e797fc567f119137d"
   license "mpich2"
 
   livecheck do
@@ -12,14 +12,11 @@ class Mpich < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_golden_gate: "102e5681968b7531b59a8a23cb9b75abb8a18d7d9a3fd054a7ae01f1ebc8517f"
-    sha256 cellar: :any, arm64_tahoe:       "6a2f959bc2b8dd695c32ae58e089a9af89f650b1c526d03c70fc3a27df5f0b5d"
-    sha256 cellar: :any, arm64_sequoia:     "aee2fba617b861e8da95cf0d910505ec2a57f1bb07331d6ec1ea2f4fa77700aa"
-    sha256 cellar: :any, arm64_sonoma:      "d6057eecea78e99013d7a8b97e9c0a22686806c6c937250af029428313f97879"
-    sha256 cellar: :any, sonoma:            "378a784581c8b6ed5068e15f2195e05794129a2355bb8a8b8fc7be2e72a30e55"
-    sha256 cellar: :any, arm64_linux:       "8a71c6ff9137cf5ce6d64d93eeda5e1091c1c3c983496429546a473806cfa728"
-    sha256 cellar: :any, x86_64_linux:      "3c4e74676db58666f9de2cc4b14cdb90ea6bf79b9208647519e8e1a45f429f12"
+    sha256 cellar: :any, arm64_golden_gate: "7fa7d793d7ef08522a15208bac4a4b8ef9d2d716dcb602cb1f91c3f6cb7f86e2"
+    sha256 cellar: :any, arm64_tahoe:       "8d59adbbb2547d363b71121c4eb7e7fd52ada889332dd1fcd7e1251f1d688710"
+    sha256 cellar: :any, arm64_sequoia:     "932cc239fdbbd5b75f644c5f1271a7d24e6f331f6648fae54ba0180e9ecfd479"
+    sha256 cellar: :any, arm64_linux:       "1d9b96a6fc6ba36227116cee5017ae2faf5e60b763b14926e170c3315f5950fd"
+    sha256 cellar: :any, x86_64_linux:      "6cb3a31b31f2614fad70ff761a048404c71ae10123d84d98516cd38d4b6d07ff"
   end
 
   head do

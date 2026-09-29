@@ -1,18 +1,16 @@
 class Primesieve < Formula
   desc "Fast C/C++ prime number generator"
   homepage "https://github.com/kimwalisch/primesieve"
-  url "https://ghfast.top/https://github.com/kimwalisch/primesieve/archive/refs/tags/v12.15.tar.gz"
-  sha256 "acaafd94cc30dbeef4808e682d0cb096c05d25f74eda5bacecefd323f697833f"
+  url "https://ghfast.top/https://github.com/kimwalisch/primesieve/archive/refs/tags/v12.16.tar.gz"
+  sha256 "753530ec2b4cbf3b62808b0661ab00e0382d47bded8a57c4fe41a6a4409f7c94"
   license "BSD-2-Clause"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "a2d85b61907d81fd3e9d86f5b460caa7b523c36aac5b47515dfdae18ef0568e1"
-    sha256 cellar: :any, arm64_tahoe:       "23d18af2344f14d14e7c9bafba8af6a55977ac4b16a7ac846cc67a6d71671789"
-    sha256 cellar: :any, arm64_sequoia:     "5d16f66e7470f126df199bd3325c998514886a7575325163dbbdba54d75d3f37"
-    sha256 cellar: :any, arm64_sonoma:      "24d659a8e34beb319c9bbd2db00807d43665e2cbf47ee0a16957baf5ab452b35"
-    sha256 cellar: :any, sonoma:            "c4756dcacfab9b94bf8a030f949526551414f66beb535ad8a8ebc74de25f20f1"
-    sha256 cellar: :any, arm64_linux:       "9685d8a575973dd258652663c08bacb868f774bf38aef2a668a1d3f3f08f1211"
-    sha256 cellar: :any, x86_64_linux:      "ef3e8148314898b8f8c06ee1d28467bc2bfd53449071c781a7f866d6db954ee9"
+    sha256 cellar: :any, arm64_golden_gate: "5e0073096319b9fb4a8754e000c4d04c4539ec857601fe1442fea4a10801e9ea"
+    sha256 cellar: :any, arm64_tahoe:       "ccaa74654491bce29f25e245ce362d5a3b310847542269f60733a9e510edf092"
+    sha256 cellar: :any, arm64_sequoia:     "c795a6ee982185ed9fb0bdf2a93c70dae0529fb3174fbd9dfa9ccfac07dbb653"
+    sha256 cellar: :any, arm64_linux:       "56dda390e93be389d7c13daac6afea28f1445d6bac774be8f17d923ca895abbc"
+    sha256 cellar: :any, x86_64_linux:      "91814951c855ec14c9fd7371054803ea99c8dfd0bc37826592589233ac98c2da"
   end
 
   depends_on "cmake" => :build

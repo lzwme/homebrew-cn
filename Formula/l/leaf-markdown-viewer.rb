@@ -1,17 +1,17 @@
 class LeafMarkdownViewer < Formula
   desc "Terminal Markdown previewer with a GUI-like experience"
   homepage "https://leaf.rivolink.mg/"
-  url "https://ghfast.top/https://github.com/RivoLink/leaf/archive/refs/tags/1.28.2.tar.gz"
-  sha256 "838826fe69d90888b9a1e4d62e98565f2ab784054b13e64adba313d21a3df86b"
+  url "https://ghfast.top/https://github.com/RivoLink/leaf/archive/refs/tags/1.28.3.tar.gz"
+  sha256 "96250da66bdfd7dd2eb2879d3404dd3802872f4708e67cae40ad7b2af2b70bc8"
   license "MIT"
   head "https://github.com/RivoLink/leaf.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "a7bb9d85a3b838b584f9e5de2fa1d9628e78a4ff5afe0bf9e1166fe1ce670564"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "2bd2ddfae6b83c3a74f704b3be9105bc7fd5642c0619dfe94b537539244e0dcf"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "f377e1604c2d06b95b6652482bec935370e742db2b233282067c17da6a204958"
-    sha256 cellar: :any,                 arm64_linux:       "883e908e51fb176916721e97b69d300e20b112c9c9012f035f31fd63bb05dbae"
-    sha256 cellar: :any,                 x86_64_linux:      "48b25215b339df320516f1c5b98bbf8ae6abf7ef1c6e121c1caf6e9b139786aa"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "8512a79fd0a25ddca6a1642ef79e33533d583dc94d63fd3fc16aa0545dc1773a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "2af2dab6645750c50a8add7a5edca4e25e9227aba95198b9e5a1ab193c5927ed"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "b8fb1c5127ed51d8811d709701d5c6ccc6627bfde82c263b30c72397c1f10a92"
+    sha256 cellar: :any,                 arm64_linux:       "f1f7a096f0ab9bdf2c863a0d3e1d5658a8a60dc9362de12597e753de3fe2448f"
+    sha256 cellar: :any,                 x86_64_linux:      "a53642db1706da677aeaad0670103fd389625e68e11d1c136d98385112d944c6"
   end
 
   depends_on "rust" => :build

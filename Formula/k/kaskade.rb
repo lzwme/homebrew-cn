@@ -3,17 +3,17 @@ class Kaskade < Formula
 
   desc "TUI for Kafka"
   homepage "https://github.com/sauljabin/kaskade"
-  url "https://files.pythonhosted.org/packages/04/9d/b3762bf3d437e0498bac04ee7e6308b7bcf2b32acc2070297ab29f20d8c5/kaskade-5.0.1.tar.gz"
-  sha256 "fc4edee1758700acb76274ce5d5055fe5974353d4afb9fb67ed584a032631627"
+  url "https://files.pythonhosted.org/packages/f1/ed/0509ae0633a44853313926c7c9f7a5cc4986d3d6356289831648847df9c8/kaskade-5.0.2.tar.gz"
+  sha256 "516e39fcc84dd850b3031527846577731a7fe0d3599eea4df9962a46ef0d2e80"
   license "MIT"
   head "https://github.com/sauljabin/kaskade.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "7cd06f85d12508e8bbc653567d65c3e6452cb0b682bf0840f1ece5d4218ed76a"
-    sha256 cellar: :any, arm64_tahoe:       "47f0132913eb00d0428020566c3cafaaf0c404f7e0767b1b1bde337e994037af"
-    sha256 cellar: :any, arm64_sequoia:     "8ef0463c5fb3c8b1c1723579a34fb5bd17b461f5e61791e391e11ac4f47e69eb"
-    sha256               arm64_linux:       "bc106fe40b3d01377f5bff271424abf8a26b132fa0276e32b4bb66c35def9827"
-    sha256               x86_64_linux:      "c37c10592579491da1cd1d7016ec11e675e5c25400462245c0591de553ce0821"
+    sha256 cellar: :any, arm64_golden_gate: "9ffdafd394a9833fa90b1fdd4bab818c7c9cb43f7dbfd59f27c982313e913d5b"
+    sha256 cellar: :any, arm64_tahoe:       "928511682e8ab98e2aac64473ba698723d49b0840382c244814c92f506ac47a0"
+    sha256 cellar: :any, arm64_sequoia:     "afd071eb61091708245f8c58f719e555192a13c88ad90000d762969819f33111"
+    sha256               arm64_linux:       "ad729e4bd5e52d63bc626e392cb3b5cdda0367b55a53d03d5a2aa5b097f49467"
+    sha256               x86_64_linux:      "a2a620eafdd0f1f0a1e3f62dfa2bd0121f684aa6d07949287a6561727afb39a9"
   end
 
   depends_on "certifi" => :no_linkage
@@ -53,13 +53,13 @@ class Kaskade < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/99/10/5e0c4c1a87443680194db582888e8e5e0a80e3e1ed224ca8111becf9e5ed/boto3-1.43.99.tar.gz"
-    sha256 "328c8640e7b7dbdaebc271e6eea0f7301218872d67d0661a7beda7d3a1799c07"
+    url "https://files.pythonhosted.org/packages/46/59/012898d78087105e9c20fe31605d3f1999921745e1890ee0f0d993846e2e/boto3-1.43.103.tar.gz"
+    sha256 "524821052527f6446d249bf710847b032d9b12135e346c9751777a0a2811cf04"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/26/9e/4d67cee13c7f3aa7b04e70cdb7b8f80663a3aa6f13ff570223eb76c0f391/botocore-1.43.99.tar.gz"
-    sha256 "fb8b6e9b193a7c2ac1a22832f7635fe44c452f405aab82eca1e1b629b81dabb7"
+    url "https://files.pythonhosted.org/packages/3c/83/acbee6f2e3b1f02de935fef0c48a387511bf979149dc6b44466aaafba6a5/botocore-1.43.103.tar.gz"
+    sha256 "8c7f220e09f3b7ec99c59c716aa66cf6f5b2b57fd8731544054f3778aa744c6a"
   end
 
   resource "cachetools" do
@@ -93,8 +93,8 @@ class Kaskade < Formula
   end
 
   resource "googleapis-common-protos" do
-    url "https://files.pythonhosted.org/packages/8a/c5/4353a188e2c335aee33269e8b654af228278cca8e5f0b4b5f11e5d0e9adb/googleapis_common_protos-1.75.3.tar.gz"
-    sha256 "57c435ac2c68b108999b6db075d9053e4d7a936ba57b4a3d45667b1346f1738a"
+    url "https://files.pythonhosted.org/packages/4b/13/f83676de1dce4f8106bcba91725b3f3f4baf6ca1977685102b008b8e0097/googleapis_common_protos-1.75.4.tar.gz"
+    sha256 "4587babdc82a8d7e5a3d4f5a6697e064bf44a598b4d08341c212b68185eadbcd"
   end
 
   resource "grpcio" do
@@ -168,8 +168,8 @@ class Kaskade < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/f8/13/f870dd0b42690138e4e37a76b5138e5690ed4365a77071bb092d59037da0/platformdirs-4.11.11.tar.gz"
-    sha256 "b0befe8a90759e4a9a8b9820d434ae226a6549063210b596da0038a7a05aede4"
+    url "https://files.pythonhosted.org/packages/23/4d/e78afe1b449720c481884ca0a2f960f85f9ffdaa34b2d127b5427422c564/platformdirs-4.12.0.tar.gz"
+    sha256 "095be5c143382b1bee917c4f3e9987a0d8d6a582261f1d061ad0c403b7695b5b"
   end
 
   resource "protobuf" do

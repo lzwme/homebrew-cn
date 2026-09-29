@@ -10,18 +10,17 @@ class Pdfalyzer < Formula
   head "https://github.com/michelcrypt4d4mus/pdfalyzer.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_golden_gate: "3cc4451ba4e01ce85f745cefa7f694d0533833ab3ba7ba0001e8681271391fe5"
-    sha256 cellar: :any,                 arm64_tahoe:       "8eb35101ed39c0b5f9fd56e09882cd1a2685a3520073f32911fe8d07233f9c18"
-    sha256 cellar: :any,                 arm64_sequoia:     "3a2743fc7951058147b836fc172807e369766317a2ecd6da7c05ad2fcb2a831d"
-    sha256 cellar: :any,                 arm64_sonoma:      "02997c16281a47a3bdb0c40ad2ce6edf65b958b837497f9331174a2efa013f9f"
-    sha256 cellar: :any,                 sonoma:            "f28ad6d1d67341dd25fbf5bff8c31c3fbe7aff21a59e7335eb76b6519751d2d1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "342f81661d0cbef39cee0b850805036a5c92f3e6e8a05042a237d0680bd7a91c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "d72d18027947419e896ab1e7e0947d06a314d499acb3652acbef83680528254b"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "1eab5bf3e528016a8466b886eac1f14aae9f6fa7d9232d8ce6724e6305780f4e"
+    sha256 cellar: :any, arm64_tahoe:       "c669fef059da5e192a88d9306423424c9d6803257be5929e26efe7fb2efebe8c"
+    sha256 cellar: :any, arm64_sequoia:     "24c97c9c468d228b47468c6746703e05707d939b24c8aeb0292ff283f2eaf43b"
+    sha256 cellar: :any, arm64_linux:       "2b7240d07aa58ceb139e7e2179600c3ba08f4792f4bb02f8754292b09c131f57"
+    sha256 cellar: :any, x86_64_linux:      "5fcf1323b4439cce5af256fc9840bf5a076e7e941bc06ed1527b44ecacb22226"
   end
 
-  depends_on "openssl@3"
   depends_on "pillow"
   depends_on "python@3.14"
+  depends_on "yara"
 
   resource "anytree" do
     url "https://files.pythonhosted.org/packages/bc/a8/eb55fab589c56f9b6be2b3fd6997aa04bb6f3da93b01154ce6fc8e799db2/anytree-2.13.0.tar.gz"
@@ -79,7 +78,12 @@ class Pdfalyzer < Formula
   end
 
   def install
-    virtualenv_install_with_resources
+    venv = virtualenv_install_with_resources without: "yara-python"
+
+    resource("yara-python").stage do
+      inreplace "setup.py", "self.dynamic_linking = None", "self.dynamic_linking = True"
+      venv.pip_install Pathname.pwd
+    end
   end
 
   test do

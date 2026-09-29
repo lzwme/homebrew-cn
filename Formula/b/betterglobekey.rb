@@ -1,17 +1,15 @@
 class Betterglobekey < Formula
   desc "Reworked Globe key for faster input source switching"
   homepage "https://github.com/Serpentiel/betterglobekey"
-  url "https://ghfast.top/https://github.com/Serpentiel/betterglobekey/archive/refs/tags/v4.0.1.tar.gz"
-  sha256 "7afa2128bbd2fb2a7c33f4a9b6c2ddfe26a370017d9eb8a0dee904c49f7e915d"
+  url "https://ghfast.top/https://github.com/Serpentiel/betterglobekey/archive/refs/tags/v4.1.0.tar.gz"
+  sha256 "c4241735569fdfc698427e6c764cab111a591c19022f893506d85e261b67d23a"
   license "MIT"
   head "https://github.com/Serpentiel/betterglobekey.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "d6aac2739582f3787fe068e01dd7b01f3ed1d15191371c011bbf6ce089d5d76b"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "4ec4d470351e26b94f5b40dd679386bebe4b4a3803125a1eac90f9c3c7b31f85"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "bc368174670be60a8cb0c1bcd89790106832a97f37a56c2c4881a802a75e4f0d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "45dd809d958a950aa2e1205ea76359ff68b47dae3dd36136d3d1569bc3f5ef77"
-    sha256 cellar: :any_skip_relocation, sonoma:            "5a38b512bc8138cf37502d6db7fa86adccf5d886d283682c5687ee546d2e3a26"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "b6c566abf974b1c6f564ae952dd9ae9b45174d30bf1e89ebc97dc93e5cd28808"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "26e3de053cd6a5c54c58b602ffa2323a4ab2bf843d3a07cd734248afb3df6e54"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "e416110884136741cc139232a6cdd431edd1184e4e16e21d7b3f708b570236ca"
   end
 
   depends_on "go" => :build

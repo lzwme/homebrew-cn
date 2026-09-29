@@ -6,6 +6,7 @@ class Erlang < Formula
   url "https://ghfast.top/https://github.com/erlang/otp/releases/download/OTP-29.1.1/otp_src_29.1.1.tar.gz"
   sha256 "054e0143e39c780e091107fc9b345792a9c1a55f6bac1eca1c1101510fc06bf6"
   license "Apache-2.0"
+  revision 1
   compatibility_version 2
 
   livecheck do
@@ -14,11 +15,11 @@ class Erlang < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "f833857e036bbb282f66d0c6f32832a0c1bba34aebac69a9d875c2c83eae5b2e"
-    sha256 cellar: :any, arm64_tahoe:       "7e37a31ec5ea62c77dc3d412c9538d7e5aec68ca3b1b9b60b8d899799f29f60f"
-    sha256 cellar: :any, arm64_sequoia:     "909c13cd05f6c65d10e785b216787c73fd881b6ef00435bd77f4f99f5ac197c3"
-    sha256 cellar: :any, arm64_linux:       "0ba5303137461782efa9f2880a1375a17eca40f0260ac81a3de2350943687626"
-    sha256 cellar: :any, x86_64_linux:      "4f4938eee0a6126766d8b7dccc4fb8ef551639e7f67fda67d05d1437e4c4f2fc"
+    sha256 cellar: :any, arm64_golden_gate: "dad9bf11e1fd9ce6137fc104f24cebeed68cbe55b6affee2d186a10278629fd9"
+    sha256 cellar: :any, arm64_tahoe:       "a8cf42cb1691ced33ddae975c0284503929c46df2a5b9d594495b997c6751734"
+    sha256 cellar: :any, arm64_sequoia:     "1155b20c8aa7210a460278639eff5464dcb10f9a6b2659e17a316b7921d9f17b"
+    sha256 cellar: :any, arm64_linux:       "9c989cba0d2adb5a8e75374fd83d7e8e3a056cedfd4c7429172f2ee697b8f833"
+    sha256 cellar: :any, x86_64_linux:      "b1ec8490644e018b7d4a377dd7c2eaa80ebbc0b8c12c2fa967ba6e08693b896e"
   end
 
   head do
@@ -28,7 +29,7 @@ class Erlang < Formula
     depends_on "libtool" => :build
   end
 
-  depends_on "openssl@3"
+  depends_on "openssl@4"
   depends_on "unixodbc"
   depends_on "wxwidgets@3.2" # for GUI apps like observer
 
@@ -78,7 +79,7 @@ class Erlang < Formula
     args = %W[
       --enable-dynamic-ssl-lib
       --with-odbc=#{formula_opt_prefix("unixodbc")}
-      --with-ssl=#{formula_opt_prefix("openssl@3")}
+      --with-ssl=#{formula_opt_prefix("openssl@4")}
       --without-javac
       --with-wx-config=#{wx_config}
     ]

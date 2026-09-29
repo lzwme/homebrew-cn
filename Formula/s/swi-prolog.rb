@@ -25,6 +25,19 @@ class SwiProlog < Formula
         type :backport
       end
     end
+
+    # Backports to support OpenSSL 4
+    patch do
+      url "https://src.fedoraproject.org/rpms/pl/raw/7ce89990c46ecd45cf6fc9a5106d9aad9325df00/f/swipl-10.0.2-openssl4.patch"
+      sha256 "fbed115159222ecb936f56354f3c40bfa092dd135ab5a482ee0a9f2e6d27939a"
+      type :backport # https://github.com/SWI-Prolog/packages-ssl/commit/24cff8cff7f8c32633fb883d99f3d8b8cc3c5bec
+    end
+    patch do
+      url "https://github.com/SWI-Prolog/packages-ssl/commit/7673a282d2868d69172ecfbcc0824eb6b47d373a.patch?full_index=1"
+      sha256 "17b18f612872a876e163d1cfb5600d41d870dd0c8244ea2cd7a03c24cc44f530"
+      directory "packages/ssl"
+      type :backport
+    end
   end
 
   livecheck do
@@ -33,12 +46,12 @@ class SwiProlog < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_golden_gate: "5518e527429916e0cdf34f49256db598180a341896b9129c283414ca7588dab4"
-    sha256 arm64_tahoe:       "854b95df129481dd31112821dae9f7ca8e11aba159c8be6e44a0fe0fb070aef6"
-    sha256 arm64_sequoia:     "0d0022a550f922e393ebd34c505b67df7ac22b70cdde8976a4c630df5c7cef0b"
-    sha256 arm64_linux:       "fcf43f18543775aeb66d77eb524e98915b0b50d25753a3ac21d9ae0b854ac860"
-    sha256 x86_64_linux:      "a4aa6929cb68cc9bad10d28ece7412a36f1f973673697e699a41f56c3b876592"
+    rebuild 2
+    sha256 arm64_golden_gate: "10fcaf0f3d633f8321a2c9f0a2663f81497fc814918a64e3be9f73b7eebefaed"
+    sha256 arm64_tahoe:       "a8f6c8b08a159d40d071df244c9f9f346741820a4f17015398fc47872e765e6f"
+    sha256 arm64_sequoia:     "f0fcaea1c6c5393d63e45d5e8f843e587936ec0c3dd668ce5b211222da28d923"
+    sha256 arm64_linux:       "bd56b397c7384d3a92fccc12ae55fcdc506445d6e2b348852f09d48cefe4876d"
+    sha256 x86_64_linux:      "227daf585ace6d5a86bed58f53f15e458d6bd744edc0db1cff68cfbf89054f14"
   end
 
   depends_on "cmake" => :build
@@ -47,7 +60,7 @@ class SwiProlog < Formula
   depends_on "gmp"
   depends_on "libarchive"
   depends_on "libyaml"
-  depends_on "openssl@3"
+  depends_on "openssl@4"
   depends_on "pcre2"
   depends_on "unixodbc"
 

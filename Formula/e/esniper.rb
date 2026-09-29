@@ -30,9 +30,14 @@ class Esniper < Formula
 
   uses_from_macos "curl"
 
+  deny_network_access!
+
   def install
-    system "./configure", "--disable-dependency-tracking",
-                          "--prefix=#{prefix}"
+    system "./configure", *std_configure_args
     system "make", "install"
+  end
+
+  test do
+    assert_match "Auction file \"test.auction\" is not readable", shell_output("#{bin}/esniper test.auction 2>&1", 1)
   end
 end

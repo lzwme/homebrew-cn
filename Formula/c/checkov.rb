@@ -3,10 +3,9 @@ class Checkov < Formula
 
   desc "Prevent cloud misconfigurations during build-time for IaC tools"
   homepage "https://www.checkov.io/"
-  url "https://files.pythonhosted.org/packages/75/36/4bc9f41a1c5089a7b3b35f22dae8163c058dcc1fa9ba8aeaa09d7fc30e50/checkov-3.3.10.tar.gz"
-  sha256 "68e74fcc3e580817cb616882271be3fc53defe3776de95aadf8b5ba9e2189b9b"
+  url "https://files.pythonhosted.org/packages/88/a6/8945e7a78742a6bd87526d3537cde857e5f077824adf22b4012872660b26/checkov-3.3.20.tar.gz"
+  sha256 "493bfabc1d41526ab5da5b145e0fe0d9f2870d3963be3b655c0f8c31ddce4688"
   license "Apache-2.0"
-  revision 1
 
   livecheck do
     url "https://pypi.org/rss/project/checkov/releases.xml"
@@ -18,11 +17,11 @@ class Checkov < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "a4a60bcae6973e9779ff761faab5cdb8ccc1cb6644788fd6bf0230bd3aff30c4"
-    sha256 cellar: :any, arm64_tahoe:       "6f133f0edfd4455f9fdcbcacff712e01a82c5cc8985d254f34d3d23eb3e6bdad"
-    sha256 cellar: :any, arm64_sequoia:     "f7e57577569030a6f0ac08bd91da38c9f74c054599023fe8dd4bffa0e4b557f8"
-    sha256 cellar: :any, arm64_linux:       "c32b78424aa51518e53363455624f24f1c4b62f9ffe24b52b83d6aa952901a9d"
-    sha256 cellar: :any, x86_64_linux:      "5887435c1e2ebffff25fed0463e61339d1a0eb2e4fc5b3f823065ae9a17911fc"
+    sha256 cellar: :any, arm64_golden_gate: "1692be4443d5ad928aab1fa48cbc115e051799775829799719b6f8d97d22f5b2"
+    sha256 cellar: :any, arm64_tahoe:       "5d60389cf9e7deb91ed6fe0c4d924af98ae8e49c65ccda1a15f0f4f7d44618f8"
+    sha256 cellar: :any, arm64_sequoia:     "66d64e23e7eb8946614aefd5174ac51e48cd02a4a168a7ef2e9d0043e069d655"
+    sha256 cellar: :any, arm64_linux:       "e3a60f6c14d61ac7c3ef56829b4a3bab87abf336d03ce7a8d6bad21854e465f8"
+    sha256 cellar: :any, x86_64_linux:      "541557e2e0e523cc37736fbf4e6c394ab81960c63e05385d000a76b2023bcb24"
   end
 
   depends_on "cmake" => :build # for igraph
@@ -80,8 +79,8 @@ class Checkov < Formula
   end
 
   resource "bc-detect-secrets" do
-    url "https://files.pythonhosted.org/packages/82/fb/624aa462ea738cd21e56b1a5b7bbe375403e4114f7bc92a7cded7f516da0/bc_detect_secrets-1.5.47.tar.gz"
-    sha256 "a9be28a2e564f2b19731991df39e63ae6372cc84d828ee24e50c094cbb4c154c"
+    url "https://files.pythonhosted.org/packages/49/6d/ffa40dbb29321b45827329e26029a371f81463b803da76e99e9bf6f57e69/bc_detect_secrets-1.5.50.tar.gz"
+    sha256 "99037375d9cb49ed07e5bb12722f4bbb76fb8acaff6f367eef9df7559e7642b3"
   end
 
   resource "bc-jsonpath-ng" do
@@ -215,8 +214,8 @@ class Checkov < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/5f/f7/abb373e5757eaec4b922b92f97ec8d6d7e057cf06778247604fbc4e7c3f3/idna-3.19.tar.gz"
-    sha256 "5e0811a4383b21dc5838069f801c4fb62113b7447663d2530d2bd6e77b49bf15"
+    url "https://files.pythonhosted.org/packages/f5/08/8eea9d4b8302028f3abb2c0813953f7aec26d33b7a8960ed760e65ff29fa/idna-3.20.tar.gz"
+    sha256 "a7db850025b95ded1eae8a46181a1a6c56c92c96f0e2b005d9ff8dc0210cab44"
   end
 
   resource "importlib-metadata" do
@@ -260,8 +259,8 @@ class Checkov < Formula
   end
 
   resource "markdown" do
-    url "https://files.pythonhosted.org/packages/29/6f/da4c6aea59b3001f2e8c0ec7497475aadaf3b021c10cab5b2858f0f32b26/markdown-3.10.3.tar.gz"
-    sha256 "3589362618f743188b4d955b874402bc814f4f83f544dc207719f4baa7d9c45f"
+    url "https://files.pythonhosted.org/packages/f8/4f/700155c8c20d9e655dd0732b5fc3c7614f291b9148da271d7388e50bf774/markdown-3.11.tar.gz"
+    sha256 "180224db6aed87ba9ce1f2781ebcd5826253de8ff637112090e24b84502bbf9f"
   end
 
   resource "markupsafe" do
@@ -270,8 +269,8 @@ class Checkov < Formula
   end
 
   resource "multidict" do
-    url "https://files.pythonhosted.org/packages/14/95/989c1b5ca17b72128661530cd6e351a0a83cda9a4d6c036e9ed976c18931/multidict-6.8.0.tar.gz"
-    sha256 "5cd4637ce76312ba1e05eb9c5193fec231f64fee0944e135fa1e951242355b37"
+    url "https://files.pythonhosted.org/packages/d6/99/1d4d69c3512d0ddbfa3a1b69cfd9a151012ab2eb4eabbb096201b1f0b7d8/multidict-6.9.1.tar.gz"
+    sha256 "0f06e60fa190aa7abd0914c2a766736fdc8e9f34878c4346338534b73d1b20e2"
   end
 
   resource "networkx" do
@@ -295,8 +294,8 @@ class Checkov < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/58/b9/8adc4e1b422b27fd88540ec7bf1f406f77ef393ec070e26fc430e914cde8/platformdirs-4.11.9.tar.gz"
-    sha256 "e2c66a8d384596cd98e3c4aea2d761df7bac95d9d8a2cc3946daa8cdafdaebc1"
+    url "https://files.pythonhosted.org/packages/23/4d/e78afe1b449720c481884ca0a2f960f85f9ffdaa34b2d127b5427422c564/platformdirs-4.12.0.tar.gz"
+    sha256 "095be5c143382b1bee917c4f3e9987a0d8d6a582261f1d061ad0c403b7695b5b"
   end
 
   resource "ply" do
@@ -335,8 +334,8 @@ class Checkov < Formula
   end
 
   resource "pyparsing" do
-    url "https://files.pythonhosted.org/packages/f3/91/9c6ee907786a473bf81c5f53cf703ba0957b23ab84c264080fb5a450416f/pyparsing-3.3.2.tar.gz"
-    sha256 "c777f4d763f140633dcb6d8a3eda953bf7a214dc4eff598413c070bcdc117cbc"
+    url "https://files.pythonhosted.org/packages/e4/11/b213bebff182584360cb8d17c72c1677fec5c5c228de439e63bcf8ab1c8f/pyparsing-3.3.3.tar.gz"
+    sha256 "928ae7e20211f3b6f3915a72f06a0cfd29ab9d24279dd6346b6b1a7146397d36"
   end
 
   resource "python-dateutil" do
@@ -405,8 +404,8 @@ class Checkov < Formula
   end
 
   resource "soupsieve" do
-    url "https://files.pythonhosted.org/packages/69/99/a6ca3beb3ccacb41fb3321d8a60e5566f9e6467601ef8eba6a17e1b89778/soupsieve-2.9.2.tar.gz"
-    sha256 "4a55d8cf158a9c2e587fa4922f1bbb91d68ac829e2d6f25403a85747c71daf74"
+    url "https://files.pythonhosted.org/packages/71/c3/1b817965ac12dc002d7c9cd7dfffdd7d4fbf9b45763ef2ffe7b86ee94670/soupsieve-2.10.tar.gz"
+    sha256 "49e9380d7d2905463583bafe285e818c7366a9ed7b3aee221c1ac79c905d8bc0"
   end
 
   resource "spdx-tools" do
@@ -445,8 +444,8 @@ class Checkov < Formula
   end
 
   resource "wcwidth" do
-    url "https://files.pythonhosted.org/packages/36/57/ed58088fafdf4c55a0ad6bde846502567645424d7ebf325230b9237f4085/wcwidth-0.8.3.tar.gz"
-    sha256 "d128512515fbf4612e0ff21fd6380399210318b7b54a9af59dff8454cf9730eb"
+    url "https://files.pythonhosted.org/packages/dc/ac/3a943d2792c9bb368aaa8b50121c0f778460ba2d7fbdc0a0366201d9e761/wcwidth-0.9.1.tar.gz"
+    sha256 "5823209b0d43af322ce698c689380d7c15ca31fa8e6e3be8459f27031bef0af5"
   end
 
   resource "xmltodict" do

@@ -12,14 +12,12 @@ class Sproxy < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "e0e0970b084ce75bccab55855f6d38915f7c887045b3d4b55d5388b8f4cabdb8"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "2bc3a894dd3aabe0118dfd0af15f13d0fa9279aa28eaab848da92c98380a2ca0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "2bc3a894dd3aabe0118dfd0af15f13d0fa9279aa28eaab848da92c98380a2ca0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "2bc3a894dd3aabe0118dfd0af15f13d0fa9279aa28eaab848da92c98380a2ca0"
-    sha256 cellar: :any_skip_relocation, sonoma:            "2bc3a894dd3aabe0118dfd0af15f13d0fa9279aa28eaab848da92c98380a2ca0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "dbcb7f98b1e9f0c2a4129e262c402e56d1972a1864116107e123debfc8d77a8b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "0bf77197199267e3b521e88729b49abcc2341fc460cf017ce16d63473d6cbf63"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "6365f20dbe6308f241160aad69f8684c9ba74da050fc6b4816a21638a5e48c75"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "6365f20dbe6308f241160aad69f8684c9ba74da050fc6b4816a21638a5e48c75"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "6365f20dbe6308f241160aad69f8684c9ba74da050fc6b4816a21638a5e48c75"
+    sha256 cellar: :any,                 arm64_linux:       "7b328a86fba014fef3bbbed5fe8b48ccbd504bb9e50961b4bf1e0121beb72158"
+    sha256 cellar: :any,                 x86_64_linux:      "7553b651f1f3407d9805a11447f6da61eff1a788ef086bc7b5bccdb45d7f7a0e"
   end
 
   deprecate! date: "2026-07-09", because: :repo_removed
@@ -33,7 +31,7 @@ class Sproxy < Formula
   uses_from_macos "perl"
 
   on_linux do
-    depends_on "openssl@3"
+    depends_on "openssl@4"
     depends_on "zlib-ng-compat"
 
     resource "File::Remove" do
@@ -52,8 +50,16 @@ class Sproxy < Formula
     end
 
     resource "Net::SSLeay" do
-      url "https://cpan.metacpan.org/authors/id/C/CH/CHRISN/Net-SSLeay-1.92.tar.gz"
-      sha256 "47c2f2b300f2e7162d71d699f633dd6a35b0625a00cbda8c50ac01144a9396a9"
+      url "https://cpan.metacpan.org/authors/id/C/CH/CHRISN/Net-SSLeay-1.96.tar.gz"
+      sha256 "ab213691685fb2a576c669cbc8d9266f8165a31563ad15b7c4030b94adfc0753"
+
+      # Backport support for OpenSSL 4.0
+      patch do
+        url "https://github.com/radiator-software/p5-net-ssleay/commit/a55abab4a33b040fbd56cc18fde6c257af2928e2.patch?full_index=1"
+        sha256 "dd0fab47cfb05393ba1124f0b3fcbdf43cb346212ca145beed5aa8af9dfbd12d"
+        type :backport
+        resolves "https://github.com/radiator-software/p5-net-ssleay/pull/553"
+      end
     end
 
     resource "HTML::Parser" do
@@ -102,7 +108,7 @@ class Sproxy < Formula
       ENV.prepend_create_path "PERL5LIB", libexec/"lib/perl5"
       ENV.prepend_create_path "PERL5LIB", lib/"sproxy"
       ENV["PERL_MM_USE_DEFAULT"] = "1"
-      ENV["OPENSSL_PREFIX"] = formula_opt_prefix("openssl@3")
+      ENV["OPENSSL_PREFIX"] = formula_opt_prefix("openssl@4")
 
       resources.each do |r|
         r.stage do

@@ -22,10 +22,6 @@ class Powershell < Formula
 
   depends_on "dotnet"
 
-  on_linux do
-    depends_on "openssl@3"
-  end
-
   def install
     dotnet = Formula["dotnet"]
     ENV["DOTNET_CLI_TELEMETRY_OPTOUT"] = "1"

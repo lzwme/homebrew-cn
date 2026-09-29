@@ -6,20 +6,19 @@ class Teslamate < Formula
   license "AGPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "d961bf67e7aeff33223fab4c61c4e60dbbc0174410d48aa0a34dfe03d8ccf404"
-    sha256 cellar: :any, arm64_tahoe:       "41cffdfed0efd57429b6f1d85b02f116083db51cabcd2cf2f9395c148527cab1"
-    sha256 cellar: :any, arm64_sequoia:     "85cf442c05824866a7f6ba68da517f097d7e32ab65009ca663b1dd5b53273dc2"
-    sha256 cellar: :any, arm64_sonoma:      "5e80b78e00f9d0df21d40602f0717bb838a984ef13421ce8ba5de2dfd8794fac"
-    sha256 cellar: :any, sonoma:            "6463005c633cc797fb02dd95a994449f0822c3b561bb763c94b091715dae9bd9"
-    sha256 cellar: :any, arm64_linux:       "7d22150814d89449e3e239a3fc1c4feecfa19f982af0966863fdab7b47998197"
-    sha256 cellar: :any, x86_64_linux:      "6b94a2abdae7b276d1c04c9f547687632f5feaf846b2be9e39b24c7cd9a5fd9c"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "34e0f6bcc04e40961fe881257a618fa00a432dfdf00120335a0bab5eb081f5e2"
+    sha256 cellar: :any, arm64_tahoe:       "76ecabc808dc962ebc05b52ae4adec576ff2759ba437d8bb456277ae7785eee3"
+    sha256 cellar: :any, arm64_sequoia:     "f2542eae5382ba5291c8de2d5392f6feaace614e67c1392fe967b3a9b1c49ce0"
+    sha256 cellar: :any, arm64_linux:       "d30b1d465ca77432247812ed856c40f2d1b8b3c962c6986b40e5e918791dbc81"
+    sha256 cellar: :any, x86_64_linux:      "ed447cde952779d99fc4ba7a61bf542c6ba61df37b90cea838b78c15b4488412"
   end
 
   depends_on "elixir" => :build
   depends_on "erlang" => :build
   depends_on "node" => :build
   depends_on "postgresql@18" => :test
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   uses_from_macos "ncurses"
 

@@ -6,13 +6,12 @@ class DiffPdf < Formula
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_golden_gate: "2eb6817fec23f8507b44fff863493417682d6115c1587da599e3de18d6e278d9"
-    sha256 cellar: :any,                 arm64_tahoe:       "6a01e632da3e4503ad6263b32945640091e38519b0755fd7366ccebe6bad0c68"
-    sha256 cellar: :any,                 arm64_sequoia:     "47cfb2dd2bb8d255eeaf4e34f6837a072162fd62a9ff87efdde52a36c200a8a8"
-    sha256 cellar: :any,                 arm64_sonoma:      "af4b9eb8bd59d7f5bfa80a4b19a58e55d172ecad11ba7f1f7b7cf294197d4cc0"
-    sha256 cellar: :any,                 sonoma:            "7eb6849fe6ba6470939f031049d3e69bfb1b10e96157c5e281bad811af019ef0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "b6e83d1b6d78a2b87cc79c1e8dcec4f031d9fa8ecce2a7983312806fde32801d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "ed2a793df250161d395018d397133ee0c6608e4aaa88400079b5037648ba5c84"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "f20d201e44ab8e8932c9faa046ef2a923c631391f8b0d0bc8d5e917596b1eb46"
+    sha256 cellar: :any, arm64_tahoe:       "7f271d046458808b4fc0a4436c307e2c68dd2deedddbcab5544517ac7b6955f4"
+    sha256 cellar: :any, arm64_sequoia:     "f15e05f1baccb88a389aa670b72c20d76e1fa96ec1aa60698324c42148e6cee3"
+    sha256 cellar: :any, arm64_linux:       "6037d1b7b7db433d170222b1e5e71d47c6156525b8b4ffcaae28778832f46d44"
+    sha256 cellar: :any, x86_64_linux:      "d7d668cb169a4e392410107f865bc78c42d703cdd5cc10fe808eab2cda70c03a"
   end
 
   depends_on "autoconf" => :build
@@ -23,7 +22,7 @@ class DiffPdf < Formula
   depends_on "cairo"
   depends_on "glib"
   depends_on "poppler"
-  depends_on "wxwidgets@3.2"
+  depends_on "wxwidgets"
 
   on_macos do
     depends_on "gettext"
