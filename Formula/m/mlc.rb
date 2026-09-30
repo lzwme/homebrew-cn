@@ -7,18 +7,19 @@ class Mlc < Formula
   head "https://github.com/becheran/mlc.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "4c3c5f5a686e1bc92d5f2696c5ce29e04a4efe8c16aa0aa94e941e69b3dba430"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "cc765fc7e22ea474b9a7ef126b97f291079006a080690789094fd20ecb9e6acf"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "f6b7da6565800a35524e61d2bc631bc109851b9e904f0b09eb340d0aacd6936e"
-    sha256 cellar: :any,                 arm64_linux:       "1031fa9d0bea83836ac749d2275063891b1eb7bb02aad2a8eda00d6e81283a0c"
-    sha256 cellar: :any,                 x86_64_linux:      "c349128c6ee20000b39b842bd8d2e7f7c788fce4dd1d3b0095a7e22b678cb6fd"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "5b8bc74070f12f643d8dd7d94909b431dd5d6ff4f7002b59841a2d54f7cf6ba1"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "ee8c1d98726c59dfd60eb0d6df4eaae8fa087c97d67a3554fa111d8077920e59"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "6708c54bf42a1f1e9cd02b5ce69b467e2e748a5b180839c492c2a0e185f296ae"
+    sha256 cellar: :any,                 arm64_linux:       "51d010447eb946c2649e8c9afb635449b949d3dff4d7826b845208373a91e376"
+    sha256 cellar: :any,                 x86_64_linux:      "e993a1d09f938bf712f33d0dde8cc277fd95b73c87dea16ab1572395cfdd3003"
   end
 
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
 
   on_linux do
-    depends_on "openssl@3"
+    depends_on "openssl@4"
   end
 
   def install
@@ -26,7 +27,7 @@ class Mlc < Formula
     # incorrect or outdated linker (e.g. x86_64-apple-darwin14-clang)
     ENV.append_to_rustflags "-C linker=#{ENV.cc}"
 
-    ENV["OPENSSL_DIR"] = formula_opt_prefix("openssl@3")
+    ENV["OPENSSL_DIR"] = formula_opt_prefix("openssl@4")
 
     system "cargo", "install", *std_cargo_args
   end

@@ -22,7 +22,6 @@ class Poetry < Formula
   depends_on "certifi" => :no_linkage
   depends_on "cffi"
   depends_on "python@3.14"
-  depends_on "zstd"
 
   uses_from_macos "libffi"
 

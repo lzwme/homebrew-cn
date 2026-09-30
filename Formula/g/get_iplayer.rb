@@ -8,14 +8,12 @@ class GetIplayer < Formula
   head "https://github.com/get-iplayer/get_iplayer.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "89d99aa3af1edc9a0c8377ef3d625fb359d9fa574a4e566a2211c59466d5da02"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "f0e8ea02559b99d735440c901312dee0fef077666a88a1de8a301588cb88e26b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "f0e8ea02559b99d735440c901312dee0fef077666a88a1de8a301588cb88e26b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "f0e8ea02559b99d735440c901312dee0fef077666a88a1de8a301588cb88e26b"
-    sha256 cellar: :any_skip_relocation, sonoma:            "73a27b064a43def552d682249045185a96c75fad66916acf71ff2a910ea83749"
-    sha256 cellar: :any,                 arm64_linux:       "50ab7b51670a7ea85cf788a4f2474636f333a65664899f40653a6be4c1672135"
-    sha256 cellar: :any,                 x86_64_linux:      "e68ca32c02021d2b9698efa63938054069dcecb9b6b7e5773505ee31808a9159"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "56f686c6e52b8e48ca01545296e6308c492e7d899082f647f77c16416aa8c0ca"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "56f686c6e52b8e48ca01545296e6308c492e7d899082f647f77c16416aa8c0ca"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "56f686c6e52b8e48ca01545296e6308c492e7d899082f647f77c16416aa8c0ca"
+    sha256 cellar: :any,                 arm64_linux:       "d7493c2df7449da4887a576784169191d8d0403388d2efc5a3c8da811ae8975d"
+    sha256 cellar: :any,                 x86_64_linux:      "9980f9bbf3ed55b8ff899f94bb6241e17f23b227c3177b5dd96b4971fef91b6b"
   end
 
   depends_on "atomicparsley"
@@ -25,7 +23,7 @@ class GetIplayer < Formula
   uses_from_macos "perl"
 
   on_linux do
-    depends_on "openssl@3"
+    depends_on "openssl@4"
 
     resource "Try-Tiny" do
       url "https://cpan.metacpan.org/authors/id/E/ET/ETHER/Try-Tiny-0.30.tar.gz"
@@ -43,8 +41,16 @@ class GetIplayer < Formula
     end
 
     resource "Net::SSLeay" do
-      url "https://cpan.metacpan.org/authors/id/C/CH/CHRISN/Net-SSLeay-1.88.tar.gz"
-      sha256 "2000da483c8471a0b61e06959e92a6fca7b9e40586d5c828de977d3d2081cfdd"
+      url "https://cpan.metacpan.org/authors/id/C/CH/CHRISN/Net-SSLeay-1.96.tar.gz"
+      sha256 "ab213691685fb2a576c669cbc8d9266f8165a31563ad15b7c4030b94adfc0753"
+
+      # Backport support for OpenSSL 4.0
+      patch do
+        url "https://github.com/radiator-software/p5-net-ssleay/commit/a55abab4a33b040fbd56cc18fde6c257af2928e2.patch?full_index=1"
+        sha256 "dd0fab47cfb05393ba1124f0b3fcbdf43cb346212ca145beed5aa8af9dfbd12d"
+        type :backport
+        resolves "https://github.com/radiator-software/p5-net-ssleay/pull/553"
+      end
     end
 
     resource "HTML::Entities" do
@@ -117,6 +123,7 @@ class GetIplayer < Formula
     ENV.prepend_create_path "PERL5LIB", libexec/"lib/perl5"
     ENV["NO_NETWORK_TESTING"] = "1"
     ENV["PERL_MM_USE_DEFAULT"] = "1"
+    ENV["OPENSSL_PREFIX"] = formula_opt_prefix("openssl@4") if OS.linux?
 
     resources.each do |r|
       r.stage do

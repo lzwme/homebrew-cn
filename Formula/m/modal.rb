@@ -3,17 +3,16 @@ class Modal < Formula
 
   desc "Client library and CLI for Modal"
   homepage "https://modal.com/"
-  url "https://files.pythonhosted.org/packages/b9/a5/9e322043716e511b7f6c9120804f33b92e21a818bf4709b2d98b3c76d665/modal-1.5.5.tar.gz"
-  sha256 "30df363ed1898cc3d91a09ff3f95c38ab043f6b6294011b01085312c6a0ac777"
+  url "https://files.pythonhosted.org/packages/3a/e5/eb665f233679ed6cde1b24a7daa68b14eec02cb25046983426145fd3d32c/modal-1.6.0.tar.gz"
+  sha256 "c5dd551b5e0a283f3c764476c0a4ebe5bdef1e4a69432fa27e1b1ad8ca5e0817"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "fbdfbb5b9359a693887e44c597db48158e1cb0a7e5d9a108a1fb6b460a4501b9"
-    sha256 cellar: :any, arm64_tahoe:       "0d3839b23e93c525bfdcc8137e6efe50a879b31a504da001cce1192c26645983"
-    sha256 cellar: :any, arm64_sequoia:     "b9a1e8af9431e2697b8f7ca17a698019ecba67fe1f6c55a7b28d128b68efd965"
-    sha256 cellar: :any, arm64_sonoma:      "3a5208f289241a8a31ea2b50215bb2ff92b41f491c8f2f0c55f905607ef64746"
-    sha256 cellar: :any, arm64_linux:       "1ab8acd6af5f525924fdd918db08a677591fee4074975164345ebe7743382bb4"
-    sha256 cellar: :any, x86_64_linux:      "c6a64a9926edc19ff705dde3e7fe6dd75f9c96cb1250a26b1c8d40e0e8ae2c10"
+    sha256 cellar: :any, arm64_golden_gate: "2fac49a5395eb60f01fc03c2b162067aa110075013371c33f5f431487f552378"
+    sha256 cellar: :any, arm64_tahoe:       "d21ab41c1ca448dd2dc485e60dc47d44e5ff26a5e3c4dcf83920c0f437bf854d"
+    sha256 cellar: :any, arm64_sequoia:     "81ca8bed650cece1817a80a41e6520317e95f3806b0425355dae2b5134eb4a11"
+    sha256 cellar: :any, arm64_linux:       "489830b83e959a1b2eec5228886f2dc5e5637757ee56431f8901da287b7a3e36"
+    sha256 cellar: :any, x86_64_linux:      "769556ae02c54e14018695d6e696956486b516d34a5a6a6b33d8a64ed5ab614a"
   end
 
   depends_on "rust" => :build # for `cbor2`
@@ -38,8 +37,8 @@ class Modal < Formula
   end
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/61/cc/a381afa6efea9f496eff839d4a6a1aed3bfafc7b3ab4b0d1b243a12573dd/anyio-4.14.2.tar.gz"
-    sha256 "cfa139f3ed1a23ee8f88a145ddb5ac7605b8bbfd8592baacd7ce3d8bb4313c7f"
+    url "https://files.pythonhosted.org/packages/a9/d2/f4d173e22df740bc37b1db102b386ba719b66e95b0f0d751f556b387e6d2/anyio-4.15.1.tar.gz"
+    sha256 "9f28306018cbd6d329e64a36d58256edff76dd996fe423bc957326e578b82a94"
   end
 
   resource "attrs" do
@@ -83,8 +82,8 @@ class Modal < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/5f/f7/abb373e5757eaec4b922b92f97ec8d6d7e057cf06778247604fbc4e7c3f3/idna-3.19.tar.gz"
-    sha256 "5e0811a4383b21dc5838069f801c4fb62113b7447663d2530d2bd6e77b49bf15"
+    url "https://files.pythonhosted.org/packages/f5/08/8eea9d4b8302028f3abb2c0813953f7aec26d33b7a8960ed760e65ff29fa/idna-3.20.tar.gz"
+    sha256 "a7db850025b95ded1eae8a46181a1a6c56c92c96f0e2b005d9ff8dc0210cab44"
   end
 
   resource "markdown-it-py" do
@@ -98,13 +97,13 @@ class Modal < Formula
   end
 
   resource "multidict" do
-    url "https://files.pythonhosted.org/packages/1a/c2/c2d94cbe6ac1753f3fc980da97b3d930efe1da3af3c9f5125354436c073d/multidict-6.7.1.tar.gz"
-    sha256 "ec6652a1bee61c53a3e5776b6049172c53b6aaba34f18c9ad04f82712bac623d"
+    url "https://files.pythonhosted.org/packages/d6/99/1d4d69c3512d0ddbfa3a1b69cfd9a151012ab2eb4eabbb096201b1f0b7d8/multidict-6.9.1.tar.gz"
+    sha256 "0f06e60fa190aa7abd0914c2a766736fdc8e9f34878c4346338534b73d1b20e2"
   end
 
   resource "propcache" do
-    url "https://files.pythonhosted.org/packages/ec/44/c87281c333769159c50594f22610f77398a47ccbfbbf23074e744e86f87c/propcache-0.5.2.tar.gz"
-    sha256 "01c4fc7480cd0598bb4b57022df55b9ca296da7fc5a8760bd8451a7e63a7d427"
+    url "https://files.pythonhosted.org/packages/b3/9a/9fbf4e4ec0c2d7f1c32519fff782ef467859b8faa9fbc5331a96f6395d43/propcache-0.5.4.tar.gz"
+    sha256 "ff6b113f50bc066a698db5d944d2c6dc7507168dd3341e255a8892fd0715a558"
   end
 
   resource "protobuf" do
@@ -148,13 +147,13 @@ class Modal < Formula
   end
 
   resource "watchfiles" do
-    url "https://files.pythonhosted.org/packages/cd/41/5e1a4bb12aac5f1493fa1bdc11154eca3b258ca4eba65d39c473fe19d8e9/watchfiles-1.2.0.tar.gz"
-    sha256 "c995fba777f1ea992f090f9236e9284cf7a5d1a0130dd5a3d82c598cacd76838"
+    url "https://files.pythonhosted.org/packages/b3/68/e6aa0b77d217b31f8f486ec0cdfe5e00e6e38dc0be657e7d85819b9faf0a/watchfiles-1.3.0.tar.gz"
+    sha256 "99aee4a07847c06820765fd7b1b49ceac4f3f711ccb7d104655a33231de1c207"
   end
 
   resource "yarl" do
-    url "https://files.pythonhosted.org/packages/31/33/ebe9e3d1f86c7a0b51094c0a146392045ca1631d2664889539dec8088a33/yarl-1.24.5.tar.gz"
-    sha256 "e81b83143bee16329c23db3c1b2d82b29892fcbcb849186d2f6e98a5abe9a57f"
+    url "https://files.pythonhosted.org/packages/75/16/e8be8e2fb175bbf41a0680381a319f1199fae256588241a2ac8677eafb49/yarl-1.25.1.tar.gz"
+    sha256 "03dd38de09bc213e9a8b29761eec33ee1d5318dac0e49d8af36e4d27830e23a7"
   end
 
   def install

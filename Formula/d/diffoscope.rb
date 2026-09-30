@@ -3,16 +3,16 @@ class Diffoscope < Formula
 
   desc "In-depth comparison of files, archives, and directories"
   homepage "https://diffoscope.org"
-  url "https://files.pythonhosted.org/packages/28/c6/6455cdb169d73310b6fc9aa423315ead170c7f154fbd990fc69c109c3279/diffoscope-331.tar.gz"
-  sha256 "298a62c374f5d60dd3d3af38cdea21cbad7148c84dbfe9cc5a91fdb1b5af4e37"
+  url "https://files.pythonhosted.org/packages/93/cf/b7794181a2d0677841c6e6906687aeff3619d73a8b4022bd4cbde7d85e09/diffoscope-332.tar.gz"
+  sha256 "da858807ce2535f1bb5c3942020b01c7aef14f870257c964b70cd4e1f2333206"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "387f6dc728ee30f7e1f4d645a5e46237c84b78c9f1ab68c2a0cc3b31143c217a"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "387f6dc728ee30f7e1f4d645a5e46237c84b78c9f1ab68c2a0cc3b31143c217a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "387f6dc728ee30f7e1f4d645a5e46237c84b78c9f1ab68c2a0cc3b31143c217a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "22052786d159ddaec0f6cb5495dc8e228c113cdac01e47d7d9c067c3b708b690"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "22052786d159ddaec0f6cb5495dc8e228c113cdac01e47d7d9c067c3b708b690"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "ccfb4405c44add753b19bcd069d0eb30bf7e92817be43e91eac55b221c927652"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "ccfb4405c44add753b19bcd069d0eb30bf7e92817be43e91eac55b221c927652"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "ccfb4405c44add753b19bcd069d0eb30bf7e92817be43e91eac55b221c927652"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "fe91c2c9f570518d8e48ebb0317f82897a46cc6826fd6fe36e6266ddbe13ac46"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "fe91c2c9f570518d8e48ebb0317f82897a46cc6826fd6fe36e6266ddbe13ac46"
   end
 
   depends_on "libarchive"

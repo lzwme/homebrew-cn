@@ -1,8 +1,8 @@
 class Pdfcpu < Formula
   desc "PDF processor written in Go"
   homepage "https://pdfcpu.io"
-  url "https://ghfast.top/https://github.com/pdfcpu/pdfcpu/archive/refs/tags/v0.15.0.tar.gz"
-  sha256 "69924a7363ea19b4f3d4799ebf78bcabfec75a735c9569983a6e2834b5e8c6b3"
+  url "https://ghfast.top/https://github.com/pdfcpu/pdfcpu/archive/refs/tags/v0.16.0.tar.gz"
+  sha256 "29fd5d6dc46c4cff9e0be556447bf030f38be3ea29fbde0ac0307b109f91c160"
   license "Apache-2.0"
 
   livecheck do
@@ -11,13 +11,11 @@ class Pdfcpu < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "e71a2690ddb259aa1940df7d4bec582e595cf85086ae67c36b0514e7ceb7552f"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "e9b49c8c5a894d6e6e80cfd9dbef28033d26fc83c497907625d012bfd8eb8ff2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "e9b49c8c5a894d6e6e80cfd9dbef28033d26fc83c497907625d012bfd8eb8ff2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "e9b49c8c5a894d6e6e80cfd9dbef28033d26fc83c497907625d012bfd8eb8ff2"
-    sha256 cellar: :any_skip_relocation, sonoma:            "42c337d706a85d5577f81fd45abb9b3ad21226c9aefdf9092b75ff3a8cb03165"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "af3a53e00dc41d3ad9bb4ce473cb18c8af49ba38e4051ec7990ae559d3f446f1"
-    sha256 cellar: :any,                 x86_64_linux:      "86b1cd8dce6af8d0cba20388938747e408ac2309c108fe368f9a749663393eff"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "f74c5d3e359e85027830123e20e9ae1b0342df37c9a1b9634d6e176e5d7a142e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "f74c5d3e359e85027830123e20e9ae1b0342df37c9a1b9634d6e176e5d7a142e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "f74c5d3e359e85027830123e20e9ae1b0342df37c9a1b9634d6e176e5d7a142e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "b0b4273b318316ad9ed8aed771e555348ea79c0583435ef8a59fdd0540cc0bfa"
+    sha256 cellar: :any,                 x86_64_linux:      "9217a6dfdb77b2210bf19be9a17b11f1cc0283c53dbf4e8ab2e814b54e56228c"
   end
 
   depends_on "go" => :build
@@ -46,6 +44,7 @@ class Pdfcpu < Formula
     end
     # basic config.yml
     config_file.write <<~YAML
+      schemaVersion: 1
       reader15: true
       validationMode: ValidationRelaxed
       eol: EolLF

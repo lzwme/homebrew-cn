@@ -19,6 +19,9 @@ class Pypy < Formula
     sha256 cellar: :any, x86_64_linux:      "7f65b9c1898c96d714bf71b79b87dc30085050399e385af8f1201a549f2c3ccf"
   end
 
+  deprecate! date: "2026-09-29", because: "is Python 2 and needs vulnerable versions of pip and setuptools"
+  disable! date: "2027-03-29", because: "is Python 2 and needs vulnerable versions of pip and setuptools"
+
   depends_on "pkgconf" => :build
   depends_on "gdbm"
   depends_on "openssl@3"

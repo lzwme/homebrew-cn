@@ -1,18 +1,17 @@
 class Skip < Formula
   desc "Tool for building Swift apps for Android"
   homepage "https://skip.dev"
-  url "https://ghfast.top/https://github.com/skiptools/skipstone/archive/refs/tags/1.9.11.tar.gz"
-  sha256 "da5280142a7537ad4424e6b420128d01edc24a0be6e654b60f8f44f56ffb4a85"
+  url "https://ghfast.top/https://github.com/skiptools/skipstone/archive/refs/tags/1.9.12.tar.gz"
+  sha256 "2db83a0ef2be3483a49b6b8a46458851cae10077423bb86ea6e26d0038ab784b"
   license "AGPL-3.0-only"
   head "https://github.com/skiptools/skipstone.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 arm64_golden_gate: "aa75eaa2de8c356ffd63aa1d1201295e56200f8186a7f3ca32e7c2019b56745f"
-    sha256 arm64_tahoe:       "8d8461bd18684d07ab42382fd6179b51beb2aae63e6e453c03b08a3d16c8c744"
-    sha256 arm64_sequoia:     "2f09995b647ebfcd9eca162abd041951a4d36aee82e3a6ccccdb3c75cbfb3306"
-    sha256 arm64_linux:       "364eff7c5182923fa44d1a12b40bfc349d0f579db053f2cc082a8fae0da42771"
-    sha256 x86_64_linux:      "1cf0f543d1285c02b1664be8580b1ed3864fdeacfe85bf7aa72f19e2dab4d78d"
+    sha256 arm64_golden_gate: "8ec9dc64b958c9df0ff623d885ec21c8ac1613ec67b30b439c4dad9e5729bf5e"
+    sha256 arm64_tahoe:       "62e6922cbcc598d6ed553406476485865929ea2fe7cf2c71cd723e4552dc3d83"
+    sha256 arm64_sequoia:     "861682156d902c4c9b6e674fb599e17347b94b01b975bcd1b67fcb95632e9660"
+    sha256 arm64_linux:       "72bde03291459becdb0d8d12377bb49e882d3d8c7fda3af69c99fb87b5a1969e"
+    sha256 x86_64_linux:      "ced1efcbbd2879062bd406b9e4dd0dcde44bf2ab3c00d58892aca180d1ebc18d"
   end
 
   depends_on "gradle"
@@ -33,8 +32,8 @@ class Skip < Formula
   end
 
   resource "skipsubmodule" do
-    url "https://ghfast.top/https://github.com/skiptools/skip/archive/refs/tags/1.9.11.tar.gz"
-    sha256 "ac55fb432f02460df5acba18f3ad814be9d2cb970b38ad0917ff7ad010acd8c7"
+    url "https://ghfast.top/https://github.com/skiptools/skip/archive/refs/tags/1.9.12.tar.gz"
+    sha256 "7870592a199c2aca5e9efda496503bddf1a8daa1defc4a372576e4d43380cd99"
 
     livecheck do
       formula :parent

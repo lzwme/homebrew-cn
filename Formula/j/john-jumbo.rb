@@ -13,19 +13,17 @@ class JohnJumbo < Formula
   end
 
   bottle do
-    rebuild 3
-    sha256 arm64_golden_gate: "f78682354999c713df91e50395ff0adfe73c34435ade166d2499982bca3d6646"
-    sha256 arm64_tahoe:       "448e0b52a33cd8611647ecc701949472f5ef720c473a63664b28ffa481e9beb0"
-    sha256 arm64_sequoia:     "a940aac8b599b0346e085a473e3367e773f8b9d44048fb4e47f9a53b9394d283"
-    sha256 arm64_sonoma:      "5d50196128ef065a5c546ebd40346729616b4889133d8746e77d14a8e68be5be"
-    sha256 sonoma:            "406c9044ec72e8e28fcd908cdd46de40c2b29fb05a2137a6cb6a8c5dbb4d328b"
-    sha256 arm64_linux:       "ace4712b54d8585933de16c79f39c4a3231b0d341b6402601f00fee252a937ee"
-    sha256 x86_64_linux:      "caa234a6f29de486c38d075ef354608086b4787ac005226a17794d62afd8afdc"
+    rebuild 4
+    sha256 arm64_golden_gate: "52199f22fdef94eb0444037d86a80d20f060090a733cbc76c1553ffa56d219b0"
+    sha256 arm64_tahoe:       "eb036c2f183b0b8577a2f6708cd79b87e300e11013eba20aba0d33ba9bc73627"
+    sha256 arm64_sequoia:     "55a298783b6e1f11f54434c01e5d3c588444b54eb5a360035330cf162d176aa7"
+    sha256 arm64_linux:       "5e574793724a9959e8981265d4ebdc69612983f92f8dfe5d3a16784f68ba1198"
+    sha256 x86_64_linux:      "e9b0393ffd09a818421a1bdeb275a1162bacc6cf2320a5a5bf301d2acb2cfa98"
   end
 
   depends_on "pkgconf" => :build
   depends_on "gmp"
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   uses_from_macos "libxcrypt"
 
@@ -87,8 +85,8 @@ class JohnJumbo < Formula
     ENV.append "CFLAGS", "-DJOHN_SYSTEMWIDE_EXEC='\"#{share}/john\"'"
     ENV.append "CFLAGS", "-DJOHN_SYSTEMWIDE_HOME='\"#{share}/john\"'"
 
-    ENV["OPENSSL_LIBS"] = "-L#{formula_opt_lib("openssl@3")}"
-    ENV["OPENSSL_CFLAGS"] = "-I#{formula_opt_include("openssl@3")}"
+    ENV["OPENSSL_LIBS"] = "-L#{formula_opt_lib("openssl@4")}"
+    ENV["OPENSSL_CFLAGS"] = "-I#{formula_opt_include("openssl@4")}"
 
     cd "src" do
       system "./configure", "--disable-native-tests"

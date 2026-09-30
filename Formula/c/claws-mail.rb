@@ -12,30 +12,28 @@ class ClawsMail < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "a43d337303c59ec8e7dde1dee88108936c81756c460e3ab6e5bc5f8b4c747dfc"
-    sha256 arm64_tahoe:       "802a84e17c8e82c3b7794785d56f92e862c335c184525aa8437448e507e68ab0"
-    sha256 arm64_sequoia:     "5c4648384fea31d7c9ebe5116656e119b752ee0eddd86b3ad305fa4827d4c51d"
-    sha256 arm64_sonoma:      "037137457f0cad56a06a0ac87bc003dd9a9f8120ec4585ce3093ce1e79e12d0c"
-    sha256 sonoma:            "444debd26e80fa85dac3b1a5019ce26c2a22ee933be8a810c6454dd6d5c728d4"
-    sha256 arm64_linux:       "117612a79662d6f2241bf6e14a5aa149af5d2b055e632643cdf7bdc399bac776"
-    sha256 x86_64_linux:      "9cfb9bccb094e86849d6add6c7e6af8e6b621354963a9fda130cbcc6090547d6"
+    rebuild 1
+    sha256 arm64_golden_gate: "d9db5bd0175507711b16baace6f219a88d1f763673f245a53f889afe18e9055f"
+    sha256 arm64_tahoe:       "2b44bc7b150fb7a1300c1b349215b3ebf27cef545eab1ebf39293cec0111899a"
+    sha256 arm64_sequoia:     "95a87435b43c6b8620f5d6c4af4a882d765c1f4248338f2be61d589866eee6af"
+    sha256 arm64_linux:       "0df7c59a820265bdbc44cc4c560894374a22647360c6945766b9aa8177f562cf"
+    sha256 x86_64_linux:      "184237a3cc59c2084d4148ae844cbfb6dbe0ca986252700988773b8e4076a60c"
   end
 
   depends_on "pkgconf" => :build
+  depends_on "adwaita-icon-theme" => :no_linkage
   depends_on "cairo"
   depends_on "gdk-pixbuf"
   depends_on "glib"
   depends_on "gnutls"
   depends_on "gtk+3"
   depends_on "libetpan"
+  depends_on "librsvg"
   depends_on "nettle"
-  depends_on "openssl@3"
   depends_on "pango"
 
   on_macos do
-    depends_on "at-spi2-core"
     depends_on "gettext"
-    depends_on "harfbuzz"
   end
 
   on_linux do
@@ -45,6 +43,9 @@ class ClawsMail < Formula
   end
 
   def install
+    # Reduce overlinking
+    ENV.append "LDFLAGS", "-Wl,-dead_strip_dylibs" if OS.mac?
+
     system "./configure", "--disable-silent-rules",
                           "--disable-archive-plugin",
                           "--disable-dillo-plugin",

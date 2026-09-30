@@ -1,18 +1,18 @@
 class Zrok < Formula
   desc "Geo-scale, next-generation sharing platform built on top of OpenZiti"
   homepage "https://zrok.io"
-  url "https://ghfast.top/https://github.com/openziti/zrok/releases/download/v2.0.5/source-v2.0.5.tar.gz"
-  sha256 "6b6aa28e841fb56cb0e4c8192e6444d74c214288ecc5f9c6816866057a8daf40"
+  url "https://ghfast.top/https://github.com/openziti/zrok/releases/download/v2.0.6/source-v2.0.6.tar.gz"
+  sha256 "0e4a7d182e2bde3678bd2f3f92377eedb0c7b05324fb977d8e98c2ef089f56fa"
   # The main license is Apache-2.0. ACKNOWLEDGEMENTS.md lists licenses for parts of code
   license all_of: ["Apache-2.0", "BSD-3-Clause", "MIT"]
   head "https://github.com/openziti/zrok.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "dcfb9abc0c290b2936d488c58254fce3c62ab13c8e4bcc3db388d323aa343bec"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "944952fc2cefbaf1da79786aa1485f2d25a0158259d48cef9d0a2fa964cc0750"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "6f7a470c6cde6baf931b76d198d51f11700879a2b86e4b369c9b4b713cfc0f0a"
-    sha256 cellar: :any,                 arm64_linux:       "0775dd5fdc4fd4cb402fc7f7d9146e8fb3cd65a51b830cb410d28e8a73b3f51a"
-    sha256 cellar: :any,                 x86_64_linux:      "3baba58b69d22e86ef67c555cb42e01526d0cda6a56c28a23a3198bac0d36390"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "86b9f0214939b0d26c2c9701d19efcbd452bbe56fbc28cbe4473e5ce73bebfaa"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "f3110f8393b8d3a68f6d4b9c942699d446c50f4ac76b12dfe903df54b03c7e0c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "cd2b32c48c45557980eff5a20cffea508f1f66160fe727ffa501696751357532"
+    sha256 cellar: :any,                 arm64_linux:       "e1d79cf91344bfc9496188df497ef93f1aef2a5bf649604f759f2df2e8fa53c2"
+    sha256 cellar: :any,                 x86_64_linux:      "4aba7edbf72d040a2ff1f349ef370db8aa47e765f03e7504fc06bb457a730cad"
   end
 
   depends_on "go" => :build

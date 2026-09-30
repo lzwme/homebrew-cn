@@ -1,19 +1,17 @@
 class PostgresLanguageServer < Formula
   desc "Language Server for Postgres"
   homepage "https://pg-language-server.com/"
-  url "https://ghfast.top/https://github.com/supabase-community/postgres-language-server/archive/refs/tags/0.25.7.tar.gz"
-  sha256 "83875c5ea149d2742f4ba777c14391148e790cb2364decae4d3b7365ce20fdd0"
+  url "https://ghfast.top/https://github.com/supabase-community/postgres-language-server/archive/refs/tags/0.26.0.tar.gz"
+  sha256 "c01ed5ee8c019b4ac8d90a6db378e50a74cbde0a227cf28193b4fc092112a5b8"
   license "MIT"
   head "https://github.com/supabase-community/postgres-language-server.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "17c94da3cb20343716c8f0fec32bee46cc65daa7f5d6680d35b9b7374a924b4b"
-    sha256 cellar: :any, arm64_tahoe:       "036455622a7f0937d8fd4942a29fc39cd61d37f81f3d3d918d0736f1ac04f6a8"
-    sha256 cellar: :any, arm64_sequoia:     "41783ef3482d5565185f6992b7308c778b73c59f65bc5774301d780f235a84c3"
-    sha256 cellar: :any, arm64_sonoma:      "9611b6b3b4e0b65d2429dbe1209fde65e4f5d3638d27102dd233b76993b62728"
-    sha256 cellar: :any, sonoma:            "9179f011e065e36f32ce104ca98f6763628ac5c559eafd80a3e8cf08e9aae3ff"
-    sha256 cellar: :any, arm64_linux:       "183a50ee8c6e380149eb91059887a7d4e4d9b787d0249923c271e728eadbcad2"
-    sha256 cellar: :any, x86_64_linux:      "49fd561e20a2da4c4a00701640fba61621a6293c5081cfed6792970668149502"
+    sha256 cellar: :any, arm64_golden_gate: "61756b4c8e2b532c3369d9c7d96fea96488d76b826ab8c1bd80936d1691c0639"
+    sha256 cellar: :any, arm64_tahoe:       "581f3220b9e1b5c6fc007e23a235bf08f4218cd397843239acd92abba1cff18c"
+    sha256 cellar: :any, arm64_sequoia:     "f7d031c1cd4ccc9b628b9010d472660de4282381da879134c12fe61586796548"
+    sha256 cellar: :any, arm64_linux:       "b9a5ababc4c10ee4e10ca5764f1859eb03d6eb29130069f2db36e9f1f8e8b5a7"
+    sha256 cellar: :any, x86_64_linux:      "15fc08b9f104718d452920c7dc06833af3d9133379afb097c3f2d21cb59db324"
   end
 
   depends_on "llvm" => :build

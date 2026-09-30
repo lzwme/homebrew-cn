@@ -20,17 +20,12 @@ class Nemu < Formula
   depends_on "json-c"
   depends_on "libarchive"
   depends_on "ncurses"
-  depends_on "openssl@3"
 
   uses_from_macos "libxml2"
   uses_from_macos "sqlite"
 
   on_macos do
     depends_on "gettext"
-  end
-
-  on_linux do
-    depends_on "libusb"
   end
 
   deny_network_access!

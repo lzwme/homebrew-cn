@@ -1,20 +1,17 @@
 class Mprocs < Formula
   desc "Run multiple commands in parallel"
   homepage "https://github.com/pvolok/dekit"
-  url "https://ghfast.top/https://github.com/pvolok/dekit/archive/refs/tags/v0.9.6.tar.gz"
-  sha256 "294fa02bfec7c73bc29448c55497ac46deda8b82bec259e492c51cfb67330c2d"
+  url "https://ghfast.top/https://github.com/pvolok/dekit/archive/refs/tags/v0.10.0.tar.gz"
+  sha256 "de8ff37118570aa552493cc2abea18795beafc7184ea264e77cf3b7814dd294e"
   license "MIT"
   head "https://github.com/pvolok/dekit.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "3e2de351ed8a35cf51f96446c04b72d3ee451d5171ba81f5a61e397cdcb8582f"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "7e2ee1311391c3237cf1566c56de41d128f0e493bb190e4ef9fc99588f88986b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "24838ae6104b6c567d67de62b5c251c7a1f087d9d3949d245f49b8d3aa26dfc7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "a394ba6f897d91c7d0781481461bb652b88430a44deec1b13b96ffbf6b6b18c8"
-    sha256 cellar: :any_skip_relocation, sonoma:            "42271d967e074dfbfc6815c4003abedec74f7b43f98be40687718992036fd65d"
-    sha256 cellar: :any,                 arm64_linux:       "63568281004346602e185ebfb80fcd7cba9c33cbf01c4e4b2648551e23fdb22b"
-    sha256 cellar: :any,                 x86_64_linux:      "5255678add044d7886321bfb2fe6ecb02997c32bbbfd3e6cf38cf8471c9b4982"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "302d29cb65557f004944b837b0f2b8a6cc3c693ee5ecb0a69f8b42d79ec32388"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "36e5c20a22418b6447c453231f609c4dd4606c8556a828c03816c4a9fbb14589"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "d5851fbac70ff544d68a19680e5cf39260cb1993c2c328582c7a8e9c4d8e3e91"
+    sha256 cellar: :any,                 arm64_linux:       "1120730bd84a80d2d8ed1a6292e14f357fff6993ee60240d3c0402c36e03768f"
+    sha256 cellar: :any,                 x86_64_linux:      "8da2a4bbb75beb329e214e2cc1af3f6f3bff175028756e8663259b361d2f176a"
   end
 
   depends_on "rust" => :build
@@ -39,7 +36,7 @@ class Mprocs < Formula
     require "pty"
 
     begin
-      r, w, pid = PTY.spawn("#{bin}/mprocs 'echo hello mprocs'")
+      r, w, pid = PTY.spawn("#{bin}/dekit 'echo hello mprocs'")
       r.winsize = [80, 30]
       sleep 1
       w.write "q"

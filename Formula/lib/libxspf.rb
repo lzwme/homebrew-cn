@@ -21,7 +21,6 @@ class Libxspf < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:      "e901fd286da4e617543de36efef5f7e0a115d936eeb3ec01326ae92a02df29d8"
   end
 
-  depends_on "cpptest" => :build
   depends_on "pkgconf" => :build
   depends_on "uriparser"
 
@@ -44,7 +43,7 @@ class Libxspf < Formula
               "#if (URI_VER_MINOR < 7) || ((URI_VER_MINOR == 7) && (URI_VER_RELEASE < 2))",
               "#if (URI_VER_MAJOR == 0) && ((URI_VER_MINOR < 7) || ((URI_VER_MINOR == 7) && (URI_VER_RELEASE < 2)))"
 
-    system "./configure", *std_configure_args
+    system "./configure", "--disable-test", *std_configure_args
     system "make", "install"
   end
 

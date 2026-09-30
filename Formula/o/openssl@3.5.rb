@@ -1,8 +1,8 @@
 class OpensslAT35 < Formula
   desc "Cryptography and SSL/TLS Toolkit"
   homepage "https://openssl-library.org"
-  url "https://ghfast.top/https://github.com/openssl/openssl/releases/download/openssl-3.5.8/openssl-3.5.8.tar.gz"
-  sha256 "a8f84a39918ec6415ce765d9b429d313ba97b8143169c172e734b9514464f5b2"
+  url "https://ghfast.top/https://github.com/openssl/openssl/releases/download/openssl-3.5.9/openssl-3.5.9.tar.gz"
+  sha256 "603f5602e2eef00d77fbd429d34dcd5822bb301757a1bc9cdb24c670f1eb859a"
   license "Apache-2.0"
 
   livecheck do
@@ -11,15 +11,11 @@ class OpensslAT35 < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "0ec65ea0879beccba0a8b7cb12f08d49a8dbdaaaec236358349953516081ecda"
-    sha256 arm64_tahoe:       "6195683a95e6a839c4694a656a89bc5f8a273a670e004362be176a0489c43b79"
-    sha256 arm64_sequoia:     "1a4c97d1ab594a16b200f258fe208afc38d799e5584aebb143b51e54ab9e68db"
-    sha256 arm64_sonoma:      "31b9a3ebccd1782fe9313de5c1727352c96ddc23c475b4d04844d1d2d39ec2c2"
-    sha256 tahoe:             "8964c5484210bd921c5dfd9e5f26df9245ba3c759b066a503db121f6b884c7de"
-    sha256 sequoia:           "11af4da9ac7469aabf418a30ae480378aa5a882a80424ca24fd9e08b81bb3b98"
-    sha256 sonoma:            "c9052851587bbd82bd7dbd31d45bf10c27499e64231077e658149b216b2e43ba"
-    sha256 arm64_linux:       "996915f8a03fd0953f1e022fe1c1e4ce56b006b4021ebb547c06163512a5d5e1"
-    sha256 x86_64_linux:      "656278db8ef3e8c315cc1f46e79a91a215f5b18261020e3526a0685c41d60f43"
+    sha256 arm64_golden_gate: "f3b85e60518f62352127f940b8f5c575643edb5bca6343fbb850fa3b4d97502e"
+    sha256 arm64_tahoe:       "4c8961697f6b84c98203770441447a3751afe833c875d213976d47b74c11169a"
+    sha256 arm64_sequoia:     "4e4ab22f0a3ccd43e156fa824e4db53fa78850868179c81486dfe31c999f6b55"
+    sha256 arm64_linux:       "8f3815e63f9593c3dcac0c8f1d9ec588aa40ef3a197c9647b98aab7f19dfcd55"
+    sha256 x86_64_linux:      "104749ec292891f3dd7ecadfa49db0f61497067774e8af8eb7bcbbd143165198"
   end
 
   keg_only :versioned_formula

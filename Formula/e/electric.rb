@@ -11,18 +11,18 @@ class Electric < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "e3f00865bfed4d4a121627373a99ee0372fcd211485fb584b5434d0058d95b54"
-    sha256 cellar: :any, arm64_tahoe:       "b5f0c1a82ee44abe2affc7ddddfd8a79866b141be25fa6bc1db7daa705136197"
-    sha256 cellar: :any, arm64_sequoia:     "fbb30d204f706e41a7b534e4471672bc78cdf8740b3b40de70ffe3c2ad2fc124"
-    sha256 cellar: :any, arm64_sonoma:      "665053aa4f0a3153280c77339abfff42ca286d13ccca95ab0354413633f8effb"
-    sha256 cellar: :any, arm64_linux:       "390275db05a16bc8224a55e462a33180db71a269446895c37eec78c3ab0f2384"
-    sha256 cellar: :any, x86_64_linux:      "2adb216f215e3075e8bf20eae7912893b12eeb93169b09e32ba3ca63cc9d7275"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "84678fff7153f36807c3a80071fb73230d87c3099a070550497a668479871c1a"
+    sha256 cellar: :any, arm64_tahoe:       "5c504225e9f608cc2add83506a75884851019564604aecb436cbcc38c2fd1e9a"
+    sha256 cellar: :any, arm64_sequoia:     "888df4a0e5f45817c73f3f3346c46584ef49ca9eebf9cee3cca7eeb6246d41de"
+    sha256 cellar: :any, arm64_linux:       "85b55caad2c131e3c706bf02761677b280eb2e8b3ceebba4e214a3b9f121084a"
+    sha256 cellar: :any, x86_64_linux:      "ec646d80efb17aa62c67ac0ef88d57e91dc9840a7dae1f697eb8db86b9ef1864"
   end
 
   depends_on "elixir" => :build
-  depends_on "erlang@28" => :build # https://github.com/electric-sql/electric/pull/3992
+  depends_on "erlang" => :build
   depends_on "postgresql@18" => :test
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   uses_from_macos "ncurses"
 

@@ -1,24 +1,25 @@
 class Mp4ff < Formula
   desc "Tools for parsing and manipulating MP4/ISOBMFF files"
   homepage "https://github.com/Eyevinn/mp4ff"
-  url "https://ghfast.top/https://github.com/Eyevinn/mp4ff/archive/refs/tags/v0.56.0.tar.gz"
-  sha256 "431a057ca003c2fcca81a9495792a833457e06c79fbc73c2aa6400b94d9f5008"
+  url "https://ghfast.top/https://github.com/Eyevinn/mp4ff/archive/refs/tags/v0.57.0.tar.gz"
+  sha256 "642b451f674fde115dc41d249fb9e8f0bbbe10ca8b9099a9cd55cb4cf9601efb"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "6d453e8646368455f5e958f70cb42516c8f797d5052d9f88044ee3769dc5a955"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "feb115595cf70322621fa1d274ae10f365d84396b540a08ba7b4d6f426201cfc"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "feb115595cf70322621fa1d274ae10f365d84396b540a08ba7b4d6f426201cfc"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "feb115595cf70322621fa1d274ae10f365d84396b540a08ba7b4d6f426201cfc"
-    sha256 cellar: :any_skip_relocation, sonoma:            "c11f6aef23142d4dbb02cb7ac2e0e9d9ef9a0c6cb05e8316b8bfd38d70159df3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "02b089488f077d99623ed2411cb5b77b9d2a399aab4a665c760f23951dd84f60"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "46a4e1327f21e1f83c36fe795d60e1a4faf9b4a8f693362d85ed30971416cfad"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "56cca18c08711a1c254470a0368852db4eea81e080296b00f43f4ee1205387c6"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "56cca18c08711a1c254470a0368852db4eea81e080296b00f43f4ee1205387c6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "56cca18c08711a1c254470a0368852db4eea81e080296b00f43f4ee1205387c6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "6e26ae898def3894e86c746a6a646cf54e658cca86626b520d6792820e992d37"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "a0cb6a80d587c8ae381a7b4411c1c78b5fcc80a888986e9f8833f32749e49938"
   end
 
   depends_on "go" => :build
 
   def tools
-    %w[mp4ff-crop mp4ff-decrypt mp4ff-encrypt mp4ff-info mp4ff-mvhevc mp4ff-nallister mp4ff-pslister mp4ff-subslister]
+    %w[
+      mp4ff-crop mp4ff-decrypt mp4ff-defragment mp4ff-encrypt mp4ff-info
+      mp4ff-mvhevc mp4ff-nallister mp4ff-pslister mp4ff-subslister
+    ]
   end
 
   allow_network_access! :test
@@ -92,6 +93,12 @@ class Mp4ff < Formula
     dec_info = shell_output("#{bin}/mp4ff-info #{testpath}/dec.mp4")
     assert_match "[avc1]", dec_info
     refute_match "[encv]", dec_info
+
+    # mp4ff-defragment: fragmented to progressive
+    system bin/"mp4ff-defragment", testpath/"test.mp4", testpath/"defrag.mp4"
+    defrag_info = shell_output("#{bin}/mp4ff-info #{testpath}/defrag.mp4")
+    assert_match "[stsz] size=260", defrag_info
+    refute_match "[moof]", defrag_info
 
     # mp4ff-crop: progressive H.264
     testpath.install resource("homebrew-prog")

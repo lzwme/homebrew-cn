@@ -4959,7 +4959,6 @@ Homebrew-homebrew-core/Formula/m/mongocli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mongodb-atlas-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mongoose.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mongosh.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/m/mongrel2.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/monika.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/monit.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/monitoring-plugins.rb, Homebrew/homebrew-core, 0
@@ -9649,6 +9648,7 @@ Homebrew-homebrew-cask/Casks/d/deepchat.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/deeper.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/deepgit.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/deepl.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/d/deepseek-harness.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/deepstream.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/deezer.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/default-folder-x.rb, Homebrew/homebrew-cask, 0
@@ -10205,7 +10205,6 @@ Homebrew-homebrew-cask/Casks/f/fstream.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/ftdi-vcp-driver.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/fujifilm-tether-app.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/fujifilm-x-raw-studio.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/f/fujitsu-scansnap-home.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/functionflip.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/funter.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/furtherance.rb, Homebrew/homebrew-cask, 1
@@ -10350,6 +10349,7 @@ Homebrew-homebrew-cask/Casks/font/font-a/font-anuphan.rb, Homebrew/homebrew-cask
 Homebrew-homebrew-cask/Casks/font/font-a/font-anybody.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-a/font-aoboshi-one.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-a/font-aporetic.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-a/font-aptos.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-a/font-ar-one-sans.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-a/font-arapey.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-a/font-arbutus-slab.rb, Homebrew/homebrew-cask, 0
@@ -13766,6 +13766,7 @@ Homebrew-homebrew-cask/Casks/m/markdown-preview.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/markdown-service-tools.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/marked-app.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/markedit.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/m/markpad.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/markright.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/markviewer.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/mars.rb, Homebrew/homebrew-cask, 1
@@ -15069,6 +15070,7 @@ Homebrew-homebrew-cask/Casks/s/sauerbraten.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/save-hollywood.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/sc-menu.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/scala-ide.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/s/scansnap-home.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/scap-workbench.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/scapple.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/scatter.rb, Homebrew/homebrew-cask, 1

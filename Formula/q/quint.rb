@@ -1,12 +1,12 @@
 class Quint < Formula
   desc "Core tool for the Quint specification language"
   homepage "https://quint-lang.org"
-  url "https://registry.npmjs.org/@informalsystems/quint/-/quint-0.32.0.tgz"
-  sha256 "244b734b25915e4afa8ee4dbce07fef1ca69df1c7f186cd36e578b0bd37c0bf5"
+  url "https://registry.npmjs.org/@informalsystems/quint/-/quint-0.33.0.tgz"
+  sha256 "530a8d6bc25533387a5aaab6023de2b4505abe06639d681260eeab6b5aa1b646"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "fa6ed9e38ff62eb0886c5a879f79e25c1c2d98d949ba4cf43d0d10b0d5184416"
+    sha256 cellar: :any_skip_relocation, all: "ccb480bac53276c65a44ea8ef41499e2d2c951b27ba47a435717a5a3c23503da"
   end
 
   depends_on "node"

@@ -1,8 +1,8 @@
 class Calc < Formula
   desc "Arbitrary precision calculator"
   homepage "http://www.isthe.com/chongo/tech/comp/calc/"
-  url "https://ghfast.top/https://github.com/lcn2/calc/archive/refs/tags/v2.17.0.0.tar.gz"
-  sha256 "aeea09ed7c5b5a7c1913e4eff5bc49cd4bad0b987da8b259792293416b986525"
+  url "https://ghfast.top/https://github.com/lcn2/calc/archive/refs/tags/v2.17.0.1.tar.gz"
+  sha256 "6fa7e541324bf795c5737a840864858ec47bddbe9d985f367905e74da2c3b290"
   license "LGPL-2.1-or-later"
   head "https://github.com/lcn2/calc.git", branch: "master"
 
@@ -12,13 +12,11 @@ class Calc < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "a44eb4e7146f8564df6259dfd1f694483b56007e147edc03aee13e09aa0f124d"
-    sha256 arm64_tahoe:       "8c3e00cad2b6248ba7ef6979b6cb14936029c7f1433eba2edb401113c217596c"
-    sha256 arm64_sequoia:     "6c2015c6e285c4f78bb011c5dd0ff257eeebdb74b05e037475c7f0ec7ef0902b"
-    sha256 arm64_sonoma:      "53465dff12e74fb188d96c7d3cd975b57a8569c551eccc1843b804a5ef73ba03"
-    sha256 sonoma:            "6b452caa0141901021e0e5d3937019dbbb7584490f5d4efca98c050d7f92c95d"
-    sha256 arm64_linux:       "5b0f5a4d0f5b89d83ef5725126673529869bb472d58b60f1b1bd46224b04c8f2"
-    sha256 x86_64_linux:      "8a7b0de4ae90f6cb33a6b2dbec0bce240219a9832bbe8a0678af92c1fc7374ff"
+    sha256 arm64_golden_gate: "d7a23a3bc9e0b0286950470cf3b5ed539b631c540374c6b188b3cddefaea12ac"
+    sha256 arm64_tahoe:       "fb2eca8cdbca62794a1e77361bc6136a29e1e745e5c0ed872ef29ae2bb5bbd9b"
+    sha256 arm64_sequoia:     "fe30fd58df941161e5b0f7fa61e2f862ad55f03a8950214c6e9e6d4323a1d9c4"
+    sha256 arm64_linux:       "cfa39d480d7a44637ff3abe8b880c973c265aa8ca6fe9b048036c564205a991d"
+    sha256 x86_64_linux:      "f75079b41f548b2938109716a575b385018d9bf78870a3c7d1f961641764b214"
   end
 
   depends_on "readline"

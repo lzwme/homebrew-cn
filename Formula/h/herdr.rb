@@ -1,8 +1,8 @@
 class Herdr < Formula
   desc "Agent multiplexer that lives in your terminal"
   homepage "https://herdr.dev"
-  url "https://ghfast.top/https://github.com/herdrdev/herdr/archive/refs/tags/v0.9.1.tar.gz"
-  sha256 "03403d3ef80dcf2b954dd5d27eb636e6c4f5279d240b48de272b7f53e4b73093"
+  url "https://ghfast.top/https://github.com/herdrdev/herdr/archive/refs/tags/v0.9.3.tar.gz"
+  sha256 "e48f6706440c92362773663131ef5b524c62549523e50a03f2b55d315edca100"
   license "Apache-2.0"
   head "https://github.com/herdrdev/herdr.git", branch: "master"
 
@@ -12,15 +12,24 @@ class Herdr < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "4b2967a9b054c032e5a1b4362821a431bd5ebe2c3b4a72241da7be7f1ef9fe01"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "617e3f79d08d6dba1eb0e85983471c76b7c624ef977c616b36a4953fb2033f06"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "b818a170527ceeffe0b4a57679a4c85f2b83a314143cede0cd4a6b62dd18158f"
-    sha256 cellar: :any,                 arm64_linux:       "3bd0ed1b9352432e95cc9b0e673c74e531b28ca0412362f4a72287f39740b81e"
-    sha256 cellar: :any,                 x86_64_linux:      "acc8698edacde2b840a5fe62325421fd40e033e3da1037ce72401b278bedd6f8"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "60bb9a282c9350f100aa66d40f416b1b07892670e3a91489c039d093be6953b7"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "ca0dfafae3aa89abf46bbbd26726ad4813deb4f784f82fef851b75b2330ebc22"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "d381e8af36dc499593101d33b80098dd7316ba9f167b1535e4eeb76b2ac2e58a"
+    sha256 cellar: :any,                 arm64_linux:       "6b9e828aa918f11d6c5c27dc7237fb0a6c4a3766edcd76e0725f273fca2d3861"
+    sha256 cellar: :any,                 x86_64_linux:      "e3fd0aa811dc08c55f19d26dc71feb90b2897ae3998aad895ad90ab397f7cd02"
   end
 
   depends_on "rust" => :build
   depends_on "zig" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+    cd "vendor/libghostty-vt" do
+      system "zig", "build", "--fetch=all"
+    end
+  end
 
   def install
     system "cargo", "install", *std_cargo_args

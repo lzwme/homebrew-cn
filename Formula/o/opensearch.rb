@@ -2,18 +2,16 @@ class Opensearch < Formula
   desc "Open source distributed and RESTful search engine"
   homepage "https://github.com/opensearch-project/OpenSearch"
   url "https://github.com/opensearch-project/OpenSearch.git",
-      tag:      "3.8.0",
-      revision: "e5a3c5691be87af6c12dbe3e158c59c04ee72973"
+      tag:      "3.9.0",
+      revision: "4ee42a94e87f66fbf1e62a9871b1b87f91e02472"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "451ce6c06e05de9dfea84419886ffd8adfa856609ad1f451069bb53eda061b80"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "86c43adb1d25c94bc339b0f4935ef1087417f7cc7eadcddfc9fdb8b7e3756400"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "a7d56e828e1885ede7e3adb502595a47d66010395a551214781fb236ce0654c7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "e908826782f1b15322ffa71fc9f900ebf8c3111a714cfa5846249e54e1962709"
-    sha256 cellar: :any_skip_relocation, sonoma:            "354105ab2e288f3ab9f9837951d2c8af259609eb815564815749e40351993b0d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "c3a74d5b8dc06f7c83b2a01febcdbb1772bbef752efc8f8d7c4141461c031079"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "1f97ef7a2b0aa396252da4fed36b9750ee95bc32855f38168f2b57ab135f9d4a"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "66dc8dfda2d0fc66a9f19a2e60c419a22d3043bc6ad54fdc8654596c86b47320"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "897b3141d42c73adccbadbd3e0670e6369402a8ef913aeeec2ed42ccb7f6aa71"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "b9a3300301e2e0fdac45e27c0ab9de794f560b19b18e775e8867bc62e2099175"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "891b637b6e1ba69e5ee2f03949c85af0ac4cfd8865cb7f0d1a4fbce422da628d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "5c63435d50fd0325f5bf3f819b0fe7ac08926f516fc4f5ad990750e41ae3cdab"
   end
 
   # TODO: Use the vendored Gradle wrapper until its minor version matches Homebrew's `gradle`.

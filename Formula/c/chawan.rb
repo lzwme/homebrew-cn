@@ -26,6 +26,8 @@ class Chawan < Formula
   uses_from_macos "curl"
   uses_from_macos "ncurses"
 
+  deny_network_access!
+
   def install
     system "make"
     system "make", "install", "PREFIX=#{prefix}"
@@ -33,6 +35,8 @@ class Chawan < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/cha --version")
-    assert_match "Example Domain", shell_output("#{bin}/cha --dump https://example.com")
+
+    (testpath/"index.html").write("<h1>Hello, Homebrew!</h1>")
+    assert_equal "Hello, Homebrew!", shell_output("#{bin}/cha --dump #{testpath}/index.html").strip
   end
 end

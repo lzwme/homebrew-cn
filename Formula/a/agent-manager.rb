@@ -1,6 +1,6 @@
 class AgentManager < Formula
-  desc "Terminal UI to manage AI coding-agent tmux sessions"
-  homepage "https://github.com/YoanWai/agent-manager"
+  desc "Run Claude Code, Codex, OpenCode and other AI coding agents in tmux"
+  homepage "https://agent-manager.dev/"
   url "https://ghfast.top/https://github.com/YoanWai/agent-manager/archive/refs/tags/v0.39.0.tar.gz"
   sha256 "9589e5c867a2c0d78515778f28ffb0432362093fbc618ce6d701fa5f403735eb"
   license "Apache-2.0"

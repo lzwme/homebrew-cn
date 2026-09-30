@@ -19,14 +19,12 @@ class Opencascade < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_golden_gate: "5de1fd0fd76eda8d22ae5ae18c885d9312698383f5dfc44b9d41cb7853ff0200"
-    sha256 cellar: :any, arm64_tahoe:       "7f142d6d6e9e14e95f63a4d44251930ceddbe1a1e105187a6c7afe0d3bc4c2c9"
-    sha256 cellar: :any, arm64_sequoia:     "ae642e896bd65bb440b1a27392d917dd459512a81d3ef75431cff5287ad2fafd"
-    sha256 cellar: :any, arm64_sonoma:      "406660387186268f468a229c1b911d3579c7a001cff117cfdf4f56d5690230f4"
-    sha256 cellar: :any, sonoma:            "83ac6a62d80fa2e56d28ebf48aa9abadc832f69232e75e7c9c3d789122f8776c"
-    sha256 cellar: :any, arm64_linux:       "dc913ed6e8b8e4d1bd217d9687fc439eccb10b1377303d192563851719c32cfa"
-    sha256 cellar: :any, x86_64_linux:      "5139ef26e7b86024f68541d005a1681810690098fb303b47a37b8de0f58f4299"
+    rebuild 2
+    sha256 cellar: :any, arm64_golden_gate: "27c6bd32062cc3864edbe11c6daff505c866673baf4c9706502176abbf9df806"
+    sha256 cellar: :any, arm64_tahoe:       "bf744d8d3520150f03bfc1bbc578d22413a703985586eae9450c532db90c40d2"
+    sha256 cellar: :any, arm64_sequoia:     "ed5dfaeff1c71a1d3df421d862307593d88253f05fe725ea8f6118a007a5bb64"
+    sha256 cellar: :any, arm64_linux:       "62df045c76709134c9eedc5dee5c146c488fe26f4b955bdc1ef9d4339637f8f4"
+    sha256 cellar: :any, x86_64_linux:      "53014119157546ae92e3de650d1045d2dc1989482e70403ec8caf5caf1bb91b5"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -36,14 +34,11 @@ class Opencascade < Formula
   depends_on "freetype"
   depends_on "tbb"
 
-  on_macos do
-    depends_on "tcl-tk@8" # FIXME: TCL 9 causes segfaults in `f3d`
-  end
+  uses_from_macos "tcl-tk" # FIXME: TCL 9 causes segfaults in `f3d`
 
   on_linux do
     depends_on "libx11"
     depends_on "mesa" # For OpenGL
-    depends_on "tcl-tk"
   end
 
   def install
@@ -51,35 +46,36 @@ class Opencascade < Formula
     # Ref: https://archlinux.org/todo/drop-freeimage/
     odie "FreeImage should not be a dependency!" if deps.map(&:name).include?("freeimage")
 
-    if OS.mac?
-      tcltk = Formula["tcl-tk@8"]
-      libtk = tcltk.opt_lib/shared_library("libtk#{tcltk.version.major_minor}")
-    else
+    args = %W[
+      -DUSE_FREEIMAGE=OFF
+      -DUSE_RAPIDJSON=ON
+      -DUSE_TBB=ON
+      -DINSTALL_DOC_Overview=ON
+      -DBUILD_RELEASE_DISABLE_EXCEPTIONS=OFF
+      -D3RDPARTY_FREETYPE_DIR=#{formula_opt_prefix("freetype")}
+      -D3RDPARTY_RAPIDJSON_DIR=#{formula_opt_prefix("rapidjson")}
+      -D3RDPARTY_RAPIDJSON_INCLUDE_DIR=#{formula_opt_include("rapidjson")}
+      -D3RDPARTY_TBB_DIR=#{formula_opt_prefix("tbb")}
+      -DCMAKE_INSTALL_RPATH=#{rpath}
+    ]
+
+    unless OS.mac?
       tcltk = Formula["tcl-tk"]
       libtk = tcltk.opt_lib/shared_library("libtcl#{tcltk.version.major}tk#{tcltk.version.major_minor}")
+      libtcl = tcltk.opt_lib/shared_library("libtcl#{tcltk.version.major_minor}")
+      args += %W[
+        -D3RDPARTY_TCL_DIR:PATH=#{tcltk.opt_prefix}
+        -D3RDPARTY_TK_DIR:PATH=#{tcltk.opt_prefix}
+        -D3RDPARTY_TCL_INCLUDE_DIR:PATH=#{tcltk.opt_include}/tcl-tk
+        -D3RDPARTY_TK_INCLUDE_DIR:PATH=#{tcltk.opt_include}/tcl-tk
+        -D3RDPARTY_TCL_LIBRARY_DIR:PATH=#{tcltk.opt_lib}
+        -D3RDPARTY_TK_LIBRARY_DIR:PATH=#{tcltk.opt_lib}
+        -D3RDPARTY_TCL_LIBRARY:FILEPATH=#{libtcl}
+        -D3RDPARTY_TK_LIBRARY:FILEPATH=#{libtk}
+      ]
     end
-    libtcl = tcltk.opt_lib/shared_library("libtcl#{tcltk.version.major_minor}")
 
-    system "cmake", "-S", ".", "-B", "build",
-                    "-DUSE_FREEIMAGE=OFF",
-                    "-DUSE_RAPIDJSON=ON",
-                    "-DUSE_TBB=ON",
-                    "-DINSTALL_DOC_Overview=ON",
-                    "-DBUILD_RELEASE_DISABLE_EXCEPTIONS=OFF",
-                    "-D3RDPARTY_FREETYPE_DIR=#{formula_opt_prefix("freetype")}",
-                    "-D3RDPARTY_RAPIDJSON_DIR=#{formula_opt_prefix("rapidjson")}",
-                    "-D3RDPARTY_RAPIDJSON_INCLUDE_DIR=#{formula_opt_include("rapidjson")}",
-                    "-D3RDPARTY_TBB_DIR=#{formula_opt_prefix("tbb")}",
-                    "-D3RDPARTY_TCL_DIR:PATH=#{tcltk.opt_prefix}",
-                    "-D3RDPARTY_TK_DIR:PATH=#{tcltk.opt_prefix}",
-                    "-D3RDPARTY_TCL_INCLUDE_DIR:PATH=#{tcltk.opt_include}/tcl-tk",
-                    "-D3RDPARTY_TK_INCLUDE_DIR:PATH=#{tcltk.opt_include}/tcl-tk",
-                    "-D3RDPARTY_TCL_LIBRARY_DIR:PATH=#{tcltk.opt_lib}",
-                    "-D3RDPARTY_TK_LIBRARY_DIR:PATH=#{tcltk.opt_lib}",
-                    "-D3RDPARTY_TCL_LIBRARY:FILEPATH=#{libtcl}",
-                    "-D3RDPARTY_TK_LIBRARY:FILEPATH=#{libtk}",
-                    "-DCMAKE_INSTALL_RPATH=#{rpath}",
-                    *std_cmake_args
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
 

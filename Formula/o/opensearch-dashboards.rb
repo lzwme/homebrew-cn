@@ -3,8 +3,8 @@ class OpensearchDashboards < Formula
   homepage "https://docs.opensearch.org/latest/dashboards/"
   # Build fails if not a git repository
   url "https://github.com/opensearch-project/OpenSearch-Dashboards.git",
-      tag:      "3.8.0",
-      revision: "aa72a9818a045ad4e290a5eb9be59e025b90634d"
+      tag:      "3.9.0",
+      revision: "def668b5c4ad825dfff980ed0951cca07aa0ac4b"
   license "Apache-2.0"
 
   livecheck do
@@ -13,13 +13,11 @@ class OpensearchDashboards < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "f80a11da323af1dc919a8f398aea60646860e2112ed938ca9d2c9ef11857eb7a"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "105a7e00de200c30b5aecc55187eb153babe4afdf029a6661d6b82303c09a23d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "105a7e00de200c30b5aecc55187eb153babe4afdf029a6661d6b82303c09a23d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "105a7e00de200c30b5aecc55187eb153babe4afdf029a6661d6b82303c09a23d"
-    sha256 cellar: :any_skip_relocation, sonoma:            "ee21abd38e1505837c08e109de761fb1968186224269f8dcfb3ec5b4c5e62413"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "4ee91ce73af6bfeaae384067bfa10cf00b1c55f6f0cb86374cfcb143313ab60b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "5b923566fd977afe7d39955c8e84fe4140db2f95f54c90415d2d901a525be743"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "ab3a7b07fc52d93f4fb5cfbdb2c3eacf3c6c808c4eaaf2d332794b0fb793ba0e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "ab3a7b07fc52d93f4fb5cfbdb2c3eacf3c6c808c4eaaf2d332794b0fb793ba0e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "ab3a7b07fc52d93f4fb5cfbdb2c3eacf3c6c808c4eaaf2d332794b0fb793ba0e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "336f73c1d4b200da1fd28159e14fc394ba474a67cc5a8864d7fb369ceb33ef2d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "ab22d18044d2d37934d2c2594e727b313c4974962fff13ea4aa2145f415a430b"
   end
 
   depends_on "yarn" => :build

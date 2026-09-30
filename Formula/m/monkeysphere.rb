@@ -12,13 +12,12 @@ class Monkeysphere < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_golden_gate: "9abb55ea662e82abace3d634b579749cbaa3267450ff8bf827a41e704ad86fc4"
-    sha256 cellar: :any,                 arm64_tahoe:       "270aaca29d4132b3fe6334cfdb4fb76c3fc1719af706ebbc2efdab1ecfaf2bb2"
-    sha256 cellar: :any,                 arm64_sequoia:     "a2a32750ec3795bc95626c88255eff29170a8aa91d4f39cf6bb24dce87f8dd99"
-    sha256 cellar: :any,                 arm64_sonoma:      "15eb16e6f47470cec82e402aae7b64ff696fe6bd7c7ddfb8d3d3eb2e884a5c22"
-    sha256 cellar: :any,                 sonoma:            "2e7ba58c484a094f7ff4bfd954997e66bd97adf3f41014a2d62541c92df46f3e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "e7e31987425d7b97ebc7ed8413f9ae776b4a031851094f2074e062d1d68d9d28"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "1914ebe00f06674a892da92c25d236f87e05dfe185728a961fa19373ba9d0c42"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "65bb0bb595490c01778c36ff4705be95e6c967c0f6a533a7583fa6d2a293a27b"
+    sha256 cellar: :any, arm64_tahoe:       "074d6d5b27ab99e06b6451294aa7faaceb2472ebd2ecfe004a871489c7121b83"
+    sha256 cellar: :any, arm64_sequoia:     "600bb8e7616af38f8f49c2e6283d447ccba6294ca7bd128e07d624c723d89881"
+    sha256 cellar: :any, arm64_linux:       "53b4e37dbc0cec12dacec7a783001815d75bd9209b5f7e62ddf711cb2c207f2b"
+    sha256 cellar: :any, x86_64_linux:      "c0364318aef58e10a7e2b87afa91503954ac9dab52b880df153c17a53094a013"
   end
 
   # Original site is gone. We currently use Debian URLs but Debian removed package
@@ -32,7 +31,7 @@ class Monkeysphere < Formula
   depends_on "libassuan"
   depends_on "libgcrypt"
   depends_on "libgpg-error"
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   uses_from_macos "perl"
 
@@ -54,6 +53,7 @@ class Monkeysphere < Formula
   end
 
   def install
+    ENV["OPENSSL_PREFIX"] = formula_opt_prefix("openssl@4")
     ENV.prepend_path "PATH", formula_opt_libexec("gnu-sed")/"gnubin"
     ENV.prepend_create_path "PERL5LIB", libexec/"lib/perl5"
 

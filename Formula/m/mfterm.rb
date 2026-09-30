@@ -7,19 +7,12 @@ class Mfterm < Formula
   revision 3
 
   bottle do
-    sha256 cellar: :any,                 arm64_golden_gate: "4c6181af6c3fd3d987c70cb3d1738265c1fc61afaa7801776cdcb830e61f64d6"
-    sha256 cellar: :any,                 arm64_tahoe:       "ac306ee70b005b1e01bda26e00b9905ae5d4c940cf59df3a103c02fb1b95e45b"
-    sha256 cellar: :any,                 arm64_sequoia:     "c39d49d9fc6ecddfb36e2e6f92b5e0e130ab8f02a9e8865a33a5cf022479a528"
-    sha256 cellar: :any,                 arm64_sonoma:      "f8fe27bad6cfa36a2883513d7d5656022c08cd96974fe350a5e77f51a668fca1"
-    sha256 cellar: :any,                 arm64_ventura:     "d6700be1830322a6b2c164cecdfcdbeb2285c4ab2db1518a0782f820e842b63b"
-    sha256 cellar: :any,                 arm64_monterey:    "a8910ab8b9320d26fb258e95f1d2d8a1d5d8dfcbed739464c916e6f0b6b8b896"
-    sha256 cellar: :any,                 arm64_big_sur:     "d8ebffdc37a5ab667c1e7c969d66bf2407c820ade96701806fc149f8e95ffe78"
-    sha256 cellar: :any,                 sonoma:            "12c14653abe38cfd1333ddd11f24fe60e54e9eb5a19e5d6422983fb843a2bc96"
-    sha256 cellar: :any,                 ventura:           "bf979c85bd74aef426a7d1911fb54ec6e9d3e187c2fba1b692dc502020b832cc"
-    sha256 cellar: :any,                 monterey:          "524e0778d1d15de19bbb7e5f052c338542f2fd4684f4f1cae018cf662bbb1f81"
-    sha256 cellar: :any,                 big_sur:           "4f1976bef27bb44358dfb064726b666b3b7e08a7e2670d0964423fa78b8afa1f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "b288c27869934494b9292653aa589910b896d63537cdfcc4e6674455a443c0c7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "84f878e049935d495a6621ac26fb0757f6a936c4e85fa2f6ba1058feb4e7d844"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "e0f593b5e2b34ba00dd11867d7492b51988e9831a58232bf62dec2bbef789a13"
+    sha256 cellar: :any, arm64_tahoe:       "60aeea82c7d8adad403b01a6ac6360429e5761b88d6d8f5c8f613c7da808d656"
+    sha256 cellar: :any, arm64_sequoia:     "518dfba132ced0ec7b8f2fed7c11b9bbaec98fa31bac1a95814d369ab4344655"
+    sha256 cellar: :any, arm64_linux:       "d8ce19d5e8970f9169534e685f93fd44c2b0f786952851fea09a456a7ff06318"
+    sha256 cellar: :any, x86_64_linux:      "c7e2d26924345300a3dc724214e1be9b0b34bf520bb0bb934959836549149b63"
   end
 
   head do
@@ -30,7 +23,7 @@ class Mfterm < Formula
   end
 
   depends_on "libnfc"
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   uses_from_macos "bison" => :build
   uses_from_macos "flex" => :build
@@ -40,8 +33,8 @@ class Mfterm < Formula
   end
 
   def install
-    ENV.prepend "CPPFLAGS", "-I#{formula_opt_include("openssl@3")}"
-    ENV.prepend "LDFLAGS", "-L#{formula_opt_lib("openssl@3")}"
+    ENV.prepend "CPPFLAGS", "-I#{formula_opt_include("openssl@4")}"
+    ENV.prepend "LDFLAGS", "-L#{formula_opt_lib("openssl@4")}"
 
     if build.head?
       chmod 0755, "./autogen.sh"

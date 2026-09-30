@@ -14,11 +14,12 @@ class FfmpegAT8 < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "e0bb3491dcbe64a7af3d8f88b65ec57a00ea5bcb9bdeda98b807e0de9239d8e6"
-    sha256 arm64_tahoe:       "b0e96b24ffbbe3f48755094714607adb93b3697b32cbf3932f1b17f95fea59b1"
-    sha256 arm64_sequoia:     "55bbc2119ef63841c81c4ea2e7bfc25fd4f9679e9b825b0ae0901316a1efb67f"
-    sha256 arm64_linux:       "2c9d38b4b17e41bbf1ba8cf08162d64a37f52fb8d49c20c36bbd83de806fdefb"
-    sha256 x86_64_linux:      "a160ad1931056eecb37dc44d3c4d4f41ea7d8478db07dced385e21c788c1b647"
+    rebuild 1
+    sha256 arm64_golden_gate: "0115511f55079c8c925623c5b0b8932f149812e719cd881fc38ed39ae4ec7582"
+    sha256 arm64_tahoe:       "1b72e42cf496800d851455be25a4d53a501053f4eb130671724a2a333f1c4176"
+    sha256 arm64_sequoia:     "571de74a9d5d4f2f3d794ce992a3eb1bd6a53c4f9c66f6f7f95348a25df341ea"
+    sha256 arm64_linux:       "4fbbce99b286be3131368afd48cee4f5870127d1009cdb68a7058c117b7198c7"
+    sha256 x86_64_linux:      "9c168352ad9e464bbb227355cb21ccd39a89bd874735e658b1a5de4b7ed74816"
   end
 
   keg_only :versioned_formula
@@ -34,7 +35,7 @@ class FfmpegAT8 < Formula
   depends_on "lame"
   depends_on "libvmaf" # dependent: ab-av1
   depends_on "libvpx"
-  depends_on "openssl@3"
+  depends_on "openssl@4"
   depends_on "opus"
   depends_on "sdl2-compat"
   depends_on "svt-av1"

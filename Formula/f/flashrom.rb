@@ -12,12 +12,12 @@ class Flashrom < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "05fc622d67c4e9e8217ec1b6678bd6c031a1919678909bf96d7347e2a8321171"
-    sha256 cellar: :any, arm64_tahoe:       "abef39cb494d1475064b425daa8a0d12562bab5e608860178ddceb74a3d4ae02"
-    sha256 cellar: :any, arm64_sequoia:     "c9c225aa76b4dbdcfa75a7f8b2ab3f2bfb1db0bcf8980e837ea332dfa6e8dd40"
-    sha256 cellar: :any, arm64_sonoma:      "0e5d1e2587bcfbff9e208486f066f95fad7bc8e3768bbe8f4cedbba35c84b6f8"
-    sha256 cellar: :any, arm64_linux:       "62429c2654e7a723b1eba6f402f24a6862cb93e7e2e32e9f5453a33468942e26"
-    sha256 cellar: :any, x86_64_linux:      "d94065e9ad3a5c19cc2a5ae33f03eaef78694c1c3b179e2ab064f58b866ca4f0"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "0f3053314f9403e0c2717a333f62f5431ddc888a425ec0dab9636f0e63feccd5"
+    sha256 cellar: :any, arm64_tahoe:       "de92cfb1a0a58ded94110328febd98a9452de05d1f9e81c4027342103a1e24ca"
+    sha256 cellar: :any, arm64_sequoia:     "8738abe3c4deebf1835d30044570b4a8b1d93fff25d3dda72f7f7219f0dd3c82"
+    sha256 cellar: :any, arm64_linux:       "e0559039e6668b96c5f799f1c0696977f5dd71b785cb0d913ba95183bb5bc21f"
+    sha256 cellar: :any, x86_64_linux:      "498c5f46e5c462cb4b50ccc2abbbf1d28580af0642133c4a370b85b6ab81dde0"
   end
 
   depends_on "meson" => :build
@@ -27,7 +27,7 @@ class Flashrom < Formula
   depends_on "libftdi"
   depends_on "libjaylink"
   depends_on "libusb"
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   resource "DirectHW" do
     url "https://ghfast.top/https://github.com/PureDarwin/DirectHW/archive/refs/tags/DirectHW-1.tar.gz"
@@ -35,6 +35,7 @@ class Flashrom < Formula
   end
 
   def install
+    ENV.prepend_path "PKG_CONFIG_PATH", formula_opt_lib("openssl@4")/"pkgconfig"
     ENV["CONFIG_RAYER_SPI"] = "no"
     ENV["CONFIG_ENABLE_LIBPCI_PROGRAMMERS"] = "no"
 

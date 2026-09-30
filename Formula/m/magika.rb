@@ -1,8 +1,8 @@
 class Magika < Formula
   desc "Fast and accurate AI powered file content types detection"
   homepage "https://securityresearch.google/magika/"
-  url "https://ghfast.top/https://github.com/google/magika/archive/refs/tags/cli/v1.0.2.tar.gz"
-  sha256 "bae42b31c8f419f34043cc2cf26fa42d2ade7f7c91e2fb54919914432f799699"
+  url "https://ghfast.top/https://github.com/google/magika/archive/refs/tags/cli/v1.1.0.tar.gz"
+  sha256 "87fd85f33d2c644d657de024b83cdc36bbdcf4a2961be5e93fe74e081477076c"
   license "Apache-2.0"
   head "https://github.com/google/magika.git", branch: "main"
 
@@ -12,12 +12,11 @@ class Magika < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_golden_gate: "8f0842fc6d7d138c129444d04e10b8e3d0471daa0cc1f97e1939eed15bb630df"
-    sha256 cellar: :any, arm64_tahoe:       "0cc828c0f140e1703e72440d31a55258f3abd1b0989ea04c37de18facafa4da2"
-    sha256 cellar: :any, arm64_sequoia:     "9110a79c00a38458f82ff85580735a022630edbc276bfae22201ac9cf936e040"
-    sha256 cellar: :any, arm64_linux:       "d5294a877f99d126003f2093d2e230c0f7d3d11dd2dd2ea5319b7d0ee9a394e4"
-    sha256 cellar: :any, x86_64_linux:      "2237f518b1e31a7dc428b99624652da1bdfe946b08a2e0efac1e461cafe69740"
+    sha256 cellar: :any, arm64_golden_gate: "8a81ed8f18f52553aee8e953448a24e1b69e4b48ab1b245fe249c39ed23da7d2"
+    sha256 cellar: :any, arm64_tahoe:       "480c09eafe3216325a36608c11b59485ccdaa8477b523fcb7082a8ffbebdf728"
+    sha256 cellar: :any, arm64_sequoia:     "2d29a11e2bf2cdbf9afe3554ed856bc284f3c65b5e66c3761242013532d4e6a5"
+    sha256 cellar: :any, arm64_linux:       "93c9a3ab21223fb6e28993966a46dbd729e765cad665b005dc437b96716157f6"
+    sha256 cellar: :any, x86_64_linux:      "2053551f6042a33de1f4717e831ddb4d74a58f526cfff141585afdd7600c4dfb"
   end
 
   depends_on "pkgconf" => :build
@@ -25,15 +24,7 @@ class Magika < Formula
   depends_on "onnxruntime"
 
   on_linux do
-    depends_on "openssl@3"
-  end
-
-  # Fix x86_64 build compatibility for ort/ndarray, upstream PR ref,
-  patch do
-    url "https://github.com/google/magika/commit/f56ab8a0806c67a2ae87edc6cd032684d592b978.patch?full_index=1"
-    sha256 "7a3f701733c4df5ef0aceba3b7854f1d8e0f2a23c4fda95804911b0fa5e6ab9c"
-    type :unofficial
-    resolves "https://github.com/google/magika/pull/1312"
+    depends_on "openssl@4"
   end
 
   deny_network_access!
@@ -43,7 +34,9 @@ class Magika < Formula
   end
 
   def install
-    ENV["OPENSSL_DIR"] = formula_opt_prefix("openssl@3") if OS.linux?
+    ENV["OPENSSL_DIR"] = formula_opt_prefix("openssl@4") if OS.linux?
+    ENV["ORT_LIB_PATH"] = formula_opt_lib("onnxruntime")
+    ENV["ORT_PREFER_DYNAMIC_LINK"] = "1"
 
     system "cargo", "install", *std_cargo_args(path: "rust/cli")
   end

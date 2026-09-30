@@ -1,18 +1,16 @@
 class Modsecurity < Formula
   desc "Libmodsecurity is one component of the ModSecurity v3 project"
   homepage "https://github.com/owasp-modsecurity/ModSecurity"
-  url "https://ghfast.top/https://github.com/owasp-modsecurity/ModSecurity/releases/download/v3.0.16/modsecurity-v3.0.16.tar.gz"
-  sha256 "739be3c71b1939f14e91afe1eeae654acbd440da11bd29790458840bc315b4c0"
+  url "https://ghfast.top/https://github.com/owasp-modsecurity/ModSecurity/releases/download/v3.0.17/modsecurity-v3.0.17.tar.gz"
+  sha256 "f283b33d5c21130fd3a15c84a93a1abe12bd1949edaf44288b12af571b671a50"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "8b28e28def7ef47c4854a0d1851735e4504d5b64078cd93691d428ac2840f8df"
-    sha256 cellar: :any, arm64_tahoe:       "c5da00e5e5acf53ce53798e9e0bfcd768d6b46f4063ca021d589165d00a7cd84"
-    sha256 cellar: :any, arm64_sequoia:     "ed15406a6e8b0194ba73746044697c4b89941c1aeffe7cb470f5510fc2a96366"
-    sha256 cellar: :any, arm64_sonoma:      "2defe052614124fa7e20e16358c4d18429009a78028d9bb1bb0eff5d04f19878"
-    sha256 cellar: :any, sonoma:            "48b159b5e26675c53e6fe6d0f54d8d77cfe3b9f5b5b3a29859a6d61f97b71a68"
-    sha256 cellar: :any, arm64_linux:       "00cb4763e7114913214907f09f3064aa5d31c1b01468ddef6dd27f9591b4f81c"
-    sha256 cellar: :any, x86_64_linux:      "44b13d984cff8b0f4b75ac029cc6bf69f55990dea11efd4e2902753113350a2f"
+    sha256 cellar: :any, arm64_golden_gate: "69455a24d9a40cd015552a36f685d73db4042af46b3dd88dcc97f203556fd1cd"
+    sha256 cellar: :any, arm64_tahoe:       "8794c92d822c313a32a8dbc3c98f12e12059e18665422530360827ca4c5f253e"
+    sha256 cellar: :any, arm64_sequoia:     "ce76ad59f0b43361b075163bc96f29c43fb2ac3b31a38aa4fc52022dfe6c5e1b"
+    sha256 cellar: :any, arm64_linux:       "781a0525ebad7674ad0b47b5663f7611876f69a3ce26586444b8cd335096273a"
+    sha256 cellar: :any, x86_64_linux:      "5f9294bde5c2fa6d90dc3aefdce89f0bb00e0ec4f637ae520472d312d610deea"
   end
 
   depends_on "autoconf" => :build

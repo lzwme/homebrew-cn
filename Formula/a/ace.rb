@@ -1,10 +1,10 @@
 class Ace < Formula
   desc "ADAPTIVE Communication Environment: OO network programming in C++"
   homepage "https://www.dre.vanderbilt.edu/~schmidt/ACE.html"
-  url "https://ghfast.top/https://github.com/DOCGroup/ACE_TAO/releases/download/ACE%2BTAO-8_0_7/ACE+TAO-8.0.7.tar.bz2"
-  sha256 "d61aa5de71a3e1bee09f74a0ff5f1309f09d4af9dd9ee4804483af4cf7cf7495"
+  url "https://ghfast.top/https://github.com/DOCGroup/ACE_TAO/releases/download/ACE%2BTAO-8_0_8/ACE+TAO-8.0.8.tar.bz2"
+  sha256 "d7b1d3e1534095b0a627817f4472eed1cc27ccf83fd011557031cf073fc7222a"
   license "DOC"
-  compatibility_version 2
+  compatibility_version 3
 
   livecheck do
     url :stable
@@ -15,13 +15,11 @@ class Ace < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "b6893017337a55560db42ad5a00e5059de366467d5f7e26d2b7df71b17a26964"
-    sha256 cellar: :any, arm64_tahoe:       "3453c98056d85c2cf90b11dbfc669a5adf6db896c2901fa30bf11ee59462663d"
-    sha256 cellar: :any, arm64_sequoia:     "5f1ddaf95f1d5c1e971d6645ec3a8e7da275bce35b305d63b69b74604b80c858"
-    sha256 cellar: :any, arm64_sonoma:      "a2ba34e3ba971e8b4c34975ab7f74a9f97557cc53d677ce6f3b754010db5d2a8"
-    sha256 cellar: :any, sonoma:            "b898fb146aa7ec753ef78cc31c0200b0570877bbf536ee69a5c9a55d61d5032b"
-    sha256 cellar: :any, arm64_linux:       "49a726138235af2706cdedb773e4e15c29ca6264cbbd389eec46ccffcb0a6df3"
-    sha256 cellar: :any, x86_64_linux:      "7fe0511e2d8e4c71b60a0b9416ba7fa47ba932a8c099758d424f3ac6cf3750d3"
+    sha256 cellar: :any, arm64_golden_gate: "285859dbe41ddeef30775f0439be848fa4e2d48679656be0251552bf7de44b08"
+    sha256 cellar: :any, arm64_tahoe:       "2d77ce8098c09ad168bf5448ee8640200e0313bb3603fbf047fb37403b82f820"
+    sha256 cellar: :any, arm64_sequoia:     "5aa502f337d40bcbea1a0b9a47bddf659c35a28caf1f328512d13a323ff5292c"
+    sha256 cellar: :any, arm64_linux:       "fad05cfb26e5345a9a3a7a85934bc2844dbe6d51a171f1f22fea38998fdd853b"
+    sha256 cellar: :any, x86_64_linux:      "58d04e9b8c3407be1950519ec717442a73dcc4699a59488315c3444f86f76caa"
   end
 
   deny_network_access!

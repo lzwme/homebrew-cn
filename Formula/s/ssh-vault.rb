@@ -1,19 +1,19 @@
 class SshVault < Formula
   desc "Encrypt/decrypt using SSH keys"
   homepage "https://ssh-vault.com/"
-  url "https://ghfast.top/https://github.com/ssh-vault/ssh-vault/archive/refs/tags/1.3.5.tar.gz"
-  sha256 "4af818276fec8205babce8c0725c21661e8191d9e61c549ef4bcc90d8070e7a3"
+  url "https://ghfast.top/https://github.com/ssh-vault/ssh-vault/archive/refs/tags/1.3.6.tar.gz"
+  sha256 "5b948701b0ebe4ac72e12d898e7ce800eebd7ceca9a7748f73f3e680f3d95461"
   license "BSD-3-Clause"
   head "https://github.com/ssh-vault/ssh-vault.git", branch: "main"
 
   no_autobump! because: :bumped_by_upstream
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "6a6ca5bf377dc9094a81eca5c3d8427ab20fbaa0f373925e9ca9462d87015c06"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "824492df6458e67e91922788fd0cb24fe01a5eccb339e863f312883d3ac58540"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "5ec7ade81352de731fe686d89b96d0215d122b966c3912b86fdd702bc9a123ba"
-    sha256 cellar: :any,                 arm64_linux:       "ef5645ce6e6ead95c907f7cdd321bd29118dd7593f7723b3f116a6d2859f0084"
-    sha256 cellar: :any,                 x86_64_linux:      "b24513b3d76ce4d77e17f9401589dd9d0bd7f464a314f93ae1f03d59d6e25e20"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "d0abd65d6f43511d7a78f6eea107d062639590361a12329289efd1e0336405c2"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "1e0223cc24d67d1ece25e3eb8e804b242f4ff9b8d3a90d9b485888bb7f9344ac"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "8e296dd77befd5f5f7a2985ebc1c8fa3529967c522325cb58f3f54d36300298e"
+    sha256 cellar: :any,                 arm64_linux:       "6af9c127b430f753a041368fb1fb97cb31b56cddb192d11336e108207fbf1715"
+    sha256 cellar: :any,                 x86_64_linux:      "38c7023db8494ae3309e34b4c539995e82c1685a6566f5c79eb04d934e99872b"
   end
 
   depends_on "rust" => :build

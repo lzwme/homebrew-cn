@@ -3,12 +3,12 @@ class PassGitHelper < Formula
 
   desc "Git credential helper interfacing with pass"
   homepage "https://github.com/languitar/pass-git-helper"
-  url "https://ghfast.top/https://github.com/languitar/pass-git-helper/archive/refs/tags/v4.3.0.tar.gz"
-  sha256 "955cebd941ecbe4b7cb826c5e9659a78c957fe5b765d0e64d3b01d026e741cc5"
+  url "https://ghfast.top/https://github.com/languitar/pass-git-helper/archive/refs/tags/v5.0.0.tar.gz"
+  sha256 "7b3b496f3b4c885f1a4202b773e577bc80497faca875bff38dfc822b0824b11c"
   license "LGPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "253f94de049aca9e6f8eeafc5ff4628670385cb744ce78a2113d3c430de59197"
+    sha256 cellar: :any_skip_relocation, all: "c3e67b9ba7dedd61c2e40e36d3cc67a81c0ffdd9d5eef8c8c43aaed908d7cd6e"
   end
 
   depends_on "gnupg" => :test

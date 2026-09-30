@@ -3,16 +3,16 @@ class ConfluenceMarkdownExporter < Formula
 
   desc "Export Atlassian Confluence pages as Markdown files"
   homepage "https://github.com/Spenhouet/confluence-markdown-exporter"
-  url "https://files.pythonhosted.org/packages/21/dd/014f9b0f70d68391f4443a91ec1998c5a6ce75715a0dc73f9717431f7825/confluence_markdown_exporter-5.4.0.tar.gz"
-  sha256 "98a9b5d58a7ba99ac271c1765165eba629c559a8a9e3d4b5188fbc673119b684"
+  url "https://files.pythonhosted.org/packages/b2/06/57a7aa4ad69175eecce31577770ac12f661fc577102176bc1366356df3ed/confluence_markdown_exporter-5.5.0.tar.gz"
+  sha256 "c94c7026b0886c652dd294a16cb8d7535f2a7896b4f7d7c3841ff558568156db"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "bceb3be5d00f89ada12e5d651e6e90444e527e0a6c15968926cf1e30d12f50f3"
-    sha256 cellar: :any, arm64_tahoe:       "748afe898c976a7acb0c91de065c84fb0164b728d374b90335f2488e69dbab03"
-    sha256 cellar: :any, arm64_sequoia:     "f9e7fb251f1f65d310aa02f8da8dfa2331e02bf15e6c87d3e6d1f10089d764e9"
-    sha256 cellar: :any, arm64_linux:       "8085d11574cf1e928da42ff96b0b7f72416a6e55fcd225440e10038e95256b61"
-    sha256 cellar: :any, x86_64_linux:      "8ca4973ef3f587f5b370c45397ec8fc5f649d7fc0b5719c0d6d28a80bdd6fbe3"
+    sha256 cellar: :any, arm64_golden_gate: "c53720ad61fe2149cda93097dddf9fe480d5a025d72da105b1e859293f48284e"
+    sha256 cellar: :any, arm64_tahoe:       "14d370829cc671b38f5a15d5bcae4da410d3df69a3e6d37d898084410c398807"
+    sha256 cellar: :any, arm64_sequoia:     "4c2adea3e36e1cea5568366ff460c30177bcfcdc5d6865fed3a47352760ebfcf"
+    sha256 cellar: :any, arm64_linux:       "73bbd2dd70afc2b122e082a000163595673b352920cc120a29930431f077111c"
+    sha256 cellar: :any, x86_64_linux:      "93240c66c78e6587b78cd7802b3513f9bc36c5afdb1fa6748ec5311ce3de582e"
   end
 
   depends_on "certifi" => :no_linkage
@@ -46,8 +46,8 @@ class ConfluenceMarkdownExporter < Formula
   end
 
   resource "deprecated" do
-    url "https://files.pythonhosted.org/packages/49/85/12f0a49a7c4ffb70572b6c2ef13c90c88fd190debda93b23f026b25f9634/deprecated-1.3.1.tar.gz"
-    sha256 "b1b50e0ff0c1fddaa5708a2c6b0a6588bb09b892825ab2b214ac9ea9d92a5223"
+    url "https://files.pythonhosted.org/packages/f7/9c/16649913bf14c73e0a9453782e148362ff2657067deff6aa9c7ebcddcc31/deprecated-3.0.0.tar.gz"
+    sha256 "16850204d3a1e6bb0acd06bff48d96e8b0a0d25d1c52f71705405a0f4894192d"
   end
 
   resource "idna" do
@@ -81,8 +81,8 @@ class ConfluenceMarkdownExporter < Formula
   end
 
   resource "oauthlib" do
-    url "https://files.pythonhosted.org/packages/0b/5f/19930f824ffeb0ad4372da4812c50edbd1434f678c90c2733e1188edfc63/oauthlib-3.3.1.tar.gz"
-    sha256 "0f0f8aa759826a193cf66c12ea1af1637f87b9b4622d46e866952bb022e538c9"
+    url "https://files.pythonhosted.org/packages/7a/d8/a1bcc8ba112a627f8ffbdc212a78ce18d3ac07e91a5ca65d27918eee25a1/oauthlib-4.0.0.tar.gz"
+    sha256 "efb274799819440f95b4ab3b818869f1ce9ae26c5beacba0201d1a1b76b54f86"
   end
 
   resource "prompt-toolkit" do
@@ -146,8 +146,8 @@ class ConfluenceMarkdownExporter < Formula
   end
 
   resource "soupsieve" do
-    url "https://files.pythonhosted.org/packages/69/99/a6ca3beb3ccacb41fb3321d8a60e5566f9e6467601ef8eba6a17e1b89778/soupsieve-2.9.2.tar.gz"
-    sha256 "4a55d8cf158a9c2e587fa4922f1bbb91d68ac829e2d6f25403a85747c71daf74"
+    url "https://files.pythonhosted.org/packages/71/c3/1b817965ac12dc002d7c9cd7dfffdd7d4fbf9b45763ef2ffe7b86ee94670/soupsieve-2.10.tar.gz"
+    sha256 "49e9380d7d2905463583bafe285e818c7366a9ed7b3aee221c1ac79c905d8bc0"
   end
 
   resource "tabulate" do
@@ -166,13 +166,13 @@ class ConfluenceMarkdownExporter < Formula
   end
 
   resource "wcwidth" do
-    url "https://files.pythonhosted.org/packages/3d/7a/f98d4ada7c499565ab0c0fcef28a4e54fafa72b8228a6309803c80493c92/wcwidth-0.8.4.tar.gz"
-    sha256 "2dae09efa25253ae2874188e86d6861af3b1652aef4118cdf3f0bda288a957fb"
+    url "https://files.pythonhosted.org/packages/dc/ac/3a943d2792c9bb368aaa8b50121c0f778460ba2d7fbdc0a0366201d9e761/wcwidth-0.9.1.tar.gz"
+    sha256 "5823209b0d43af322ce698c689380d7c15ca31fa8e6e3be8459f27031bef0af5"
   end
 
   resource "wrapt" do
-    url "https://files.pythonhosted.org/packages/42/a6/6375d56c44d590ef24acf0f8f5bf7ed768ff7a510b959306ec412611e90f/wrapt-2.4.1.tar.gz"
-    sha256 "fd6390aab9e8aa40c52eff3c180f098e8d9f5894b1fd4c4fd2c207067b33ed16"
+    url "https://files.pythonhosted.org/packages/3e/d2/a254a26d8ceaea87e0eee2e89fcfe53ddc1858418647493bb2937549ab6f/wrapt-2.5.0.tar.gz"
+    sha256 "c48cdb6c904dca76d9915a579e4a5fab6b0c25f650c1019ce78a78effaf7a345"
   end
 
   def install

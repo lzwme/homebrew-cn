@@ -3,16 +3,16 @@ class Flexget < Formula
 
   desc "Multipurpose automation tool for content"
   homepage "https://www.flexget.com"
-  url "https://files.pythonhosted.org/packages/87/b3/ddad1524d1a4e7bb56abef728fde02dde8fbd5e7063bff5d2d63b167c97f/flexget-3.21.2.tar.gz"
-  sha256 "73700b725ddf99e1c1795acb8c2e1ee64d3d48f3714fa20aacea034bed596e20"
+  url "https://files.pythonhosted.org/packages/20/d1/352df00387049399307d8fad473ce3795ec4bb8d586fc437049ef0f5ac93/flexget-3.21.3.tar.gz"
+  sha256 "52c8b2a0882d4e968a00bcebd5a8104e8e3d11bfd8793b347937a719c4904122"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "e44c674e0e345b51a5fcf0852e17e1b8ed48ff4b29425c534d9d8d3c4437f637"
-    sha256 cellar: :any, arm64_tahoe:       "46e70ef894ae9ba2674d2c8c16c84e753c69efd7784abff08078719ada3e3cdc"
-    sha256 cellar: :any, arm64_sequoia:     "6c9083eb6212bec0cf4f7a82c24388eed529a6a99c070412c7fddd4c6a92f7f0"
-    sha256 cellar: :any, arm64_linux:       "aeb4386711d4852a73ee65e0b5d33bd7db1f31b4dd49e959bb054f33ae9f59fd"
-    sha256 cellar: :any, x86_64_linux:      "f4e833c0858286195a1cc9d55e51a66d66a43943982747b2f8639fc1d22761de"
+    sha256 cellar: :any, arm64_golden_gate: "aa92a220f69a7402fedd450e3c953a67c216c8feabdf84c1973777da5546d073"
+    sha256 cellar: :any, arm64_tahoe:       "6137c928c8c48a6081403925848e8191906a8321dbdc9a6a6e62dd381de84a40"
+    sha256 cellar: :any, arm64_sequoia:     "d059c14e452eca8eaee2f25734fcef80b004b8f5993f806417a470b8d177b71a"
+    sha256 cellar: :any, arm64_linux:       "33bc560fd94fffccd4b37fb147ae7d6a1a04b5e73acc2e1737c1f296c4d38220"
+    sha256 cellar: :any, x86_64_linux:      "47c4c3b8fa7d5c9c6e5f963994ae0d25e5eece595208ee03c5b054032ec54aa2"
   end
 
   depends_on "rust" => :build
@@ -328,13 +328,13 @@ class Flexget < Formula
   end
 
   resource "soupsieve" do
-    url "https://files.pythonhosted.org/packages/69/99/a6ca3beb3ccacb41fb3321d8a60e5566f9e6467601ef8eba6a17e1b89778/soupsieve-2.9.2.tar.gz"
-    sha256 "4a55d8cf158a9c2e587fa4922f1bbb91d68ac829e2d6f25403a85747c71daf74"
+    url "https://files.pythonhosted.org/packages/71/c3/1b817965ac12dc002d7c9cd7dfffdd7d4fbf9b45763ef2ffe7b86ee94670/soupsieve-2.10.tar.gz"
+    sha256 "49e9380d7d2905463583bafe285e818c7366a9ed7b3aee221c1ac79c905d8bc0"
   end
 
   resource "sqlalchemy" do
-    url "https://files.pythonhosted.org/packages/29/9c/271aa905cf2964f841371a97f3e63ab692bf51b4423d0491e67bc7f64037/sqlalchemy-2.0.54.tar.gz"
-    sha256 "baa8521e8ee9f24e75dfc7aaabc08020e551ef0d48d7c3e3536f5cddf277586b"
+    url "https://files.pythonhosted.org/packages/a8/cb/7c68da82239ffae9378eca076afe14c310e17a4f01e3d315112f266e26c7/sqlalchemy-2.1.1.tar.gz"
+    sha256 "fcf3cbb33bb23bad75d2150157c21804618745731e9931ab27e61879a9f6123b"
   end
 
   resource "tempora" do
@@ -383,8 +383,8 @@ class Flexget < Formula
   end
 
   resource "werkzeug" do
-    url "https://files.pythonhosted.org/packages/dd/b2/381be8cfdee792dd117872481b6e378f85c957dd7c5bca38897b08f765fd/werkzeug-3.1.8.tar.gz"
-    sha256 "9bad61a4268dac112f1c5cd4630a56ede601b6ed420300677a869083d70a4c44"
+    url "https://files.pythonhosted.org/packages/a4/34/4dd12fc8bb7d61c91467ec3efe415ffa7d5456f799954b40c5bbaeae470e/werkzeug-3.1.9.tar.gz"
+    sha256 "55ca7c70a75689be937aa27f8ff4b018f06ff4838fc73045560bf0f5a1291060"
   end
 
   resource "zc-lockfile" do

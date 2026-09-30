@@ -3,16 +3,16 @@ class Humanbound < Formula
 
   desc "Adversarial security testing engine, SDK, and CLI for AI agents"
   homepage "https://docs.humanbound.ai/"
-  url "https://files.pythonhosted.org/packages/b5/b3/1aecb216e06a41d234533e262a0835d9a410e552d9d8278ce1e0f257ffd7/humanbound-2.11.0.tar.gz"
-  sha256 "2e66add829ecc11191595ab8ca4abed1e5636d2b6338798f2641373efcad95dd"
+  url "https://files.pythonhosted.org/packages/ec/b1/157839a688c2202fc430f811ba9f979aa980710ef00d44e29f14f6559761/humanbound-2.12.0.tar.gz"
+  sha256 "01eca196c59fcd1893ae7229f28f4ebd1e873516e247d8368d5a2639e8dccc6f"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "7b34bbbc11903f3942fc4af047089e1bc7f80241db4f9de41fe7bf5839f9bb5a"
-    sha256 cellar: :any, arm64_tahoe:       "a251a5a1be7e3283aeaaa9870bb4f707523f4ecf712ec7d38aa1d05b34974ad8"
-    sha256 cellar: :any, arm64_sequoia:     "b8819b3973fe192e7d942be9f902afa5d691b052a852aaafc463f3bb01283c02"
-    sha256 cellar: :any, arm64_linux:       "94124c8a7906e76eb0ccb69e7ab924329c124a6c31d11acd3b93d1c3ab868e54"
-    sha256 cellar: :any, x86_64_linux:      "1439c73eef980cd0c97503146505e96f6be9db6d3dbaecceb9b9eda89db81e1a"
+    sha256 cellar: :any, arm64_golden_gate: "f9c9125e7cec7ee2163b87ecfe5e7c5f88cb76c9f0c671c98164599cd91885a1"
+    sha256 cellar: :any, arm64_tahoe:       "d1cf2db0e70e5410913e0135bc12c24a72cdaa3267c4a285681d2667a9feb111"
+    sha256 cellar: :any, arm64_sequoia:     "9955fded385f9f64a211708b0a7c8243f4255f834a4753dbf9ecded34ebc6254"
+    sha256 cellar: :any, arm64_linux:       "7516bd484f7d54449313500c0e26339d4a6060f83ed7f02a6948fe01813663f2"
+    sha256 cellar: :any, x86_64_linux:      "45322982f05881da12a6ec8a8d83aab1ed10c363b8e6cd1d51ef5abdee6cdc4a"
   end
 
   depends_on "certifi" => :no_linkage
@@ -83,8 +83,8 @@ class Humanbound < Formula
   end
 
   resource "posthog" do
-    url "https://files.pythonhosted.org/packages/bd/16/b5d1489bae5ef5bd20c85b5b95f2b44609926b4ddb6c86794213ce1a832b/posthog-7.60.0.tar.gz"
-    sha256 "6c1ab0f0d31c83b47a3cf6b6829d4ee83f250a4f8844c4c24adae329982d3f36"
+    url "https://files.pythonhosted.org/packages/29/ca/4fffd4d5377a8c84de14f6ea5a18bd8060eeaba5f6921d1ca420db564756/posthog-7.60.1.tar.gz"
+    sha256 "99436369a40b2f9e628145e997f1dcd98a5e5389da1605d4ab630d742cc1bd5d"
   end
 
   resource "pygments" do
@@ -112,9 +112,19 @@ class Humanbound < Formula
     sha256 "edd07a4824c6b40189fb7ac9bc4c52536e9780fbbfbddf6f1e2502c31b068c36"
   end
 
+  resource "starlette" do
+    url "https://files.pythonhosted.org/packages/7b/2b/3850dc6bf7ef71b088962eba31dafc6cffd2f96e577ebb0bb316df96da3e/starlette-1.7.0.tar.gz"
+    sha256 "c79f74ea63cff761804fbbfb182f1e0b440c2d07b164d24700c5a1bab5d6ff5d"
+  end
+
   resource "urllib3" do
     url "https://files.pythonhosted.org/packages/e3/05/b17359e1cefb4f909b5e40b1b90a496d987258916dbbf88e842c729f510e/urllib3-2.8.0.tar.gz"
     sha256 "63bf2ead4c879426ebf22ef2a781eeb4aa3b4ae798a0435506f8687fd5bb9b63"
+  end
+
+  resource "uvicorn" do
+    url "https://files.pythonhosted.org/packages/da/34/30e9280707135d2cfc589dfff3cb796bd07a3aeb1a3e415ba09dd89d7bb4/uvicorn-0.54.0.tar.gz"
+    sha256 "a2e33cbfaa0306f8e6b0c13e0cb89d7d7a2da3e62b90c66e18c33d9807b28620"
   end
 
   def install

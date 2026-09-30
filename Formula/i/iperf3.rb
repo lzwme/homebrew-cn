@@ -1,10 +1,9 @@
 class Iperf3 < Formula
   desc "Update of iperf: measures TCP, UDP, and SCTP bandwidth"
   homepage "https://github.com/esnet/iperf"
-  url "https://downloads.es.net/pub/iperf/iperf-3.21.tar.gz"
-  sha256 "656e4405ebd620121de7ceca3eaf43a88f79ea1b857d041a6a0b1314801acdd8"
+  url "https://downloads.es.net/pub/iperf/iperf-3.22.tar.gz"
+  sha256 "1c0d0fb02c52626111d6e132db80edfbf27bbaff8bd9245df2a371dcb0b35a92"
   license "BSD-3-Clause"
-  revision 1
 
   livecheck do
     url "https://downloads.es.net/pub/iperf/"
@@ -12,13 +11,11 @@ class Iperf3 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_golden_gate: "dab9da6414d2522c71799c1b1dc0bc115578518444ad58dd28775c2f4bce70ca"
-    sha256 cellar: :any,                 arm64_tahoe:       "4c9732362cf41e8564f33fca550a9a49356ea2b54bf5b1c021ac828038c6ae46"
-    sha256 cellar: :any,                 arm64_sequoia:     "9c2798aa7042d06364caca9fec400651d5cc5ae26446b24c308827c30649a40a"
-    sha256 cellar: :any,                 arm64_sonoma:      "c63e8ff6df89f6a8f9e5bf7689d0aee545d47725f9bf9068e492b42890fdabdc"
-    sha256 cellar: :any,                 sonoma:            "27a27e6ade18fc7b85803b70c08571a6a76178a7a12c27f48a4917dc5f05646a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "fcf35af72941dad9ecfc704500471dfb43bb5dc35bba09b47ad358acf25e6369"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "aa5c3dae2b89ab6be2a65e6c3f90a29d4a99ef5b54254c78331d970781eb82e2"
+    sha256 cellar: :any, arm64_golden_gate: "6f9b73d21926fdbb1e05ec0acc99bbcf14c4daf17646b517fe3ceb55b1782ed3"
+    sha256 cellar: :any, arm64_tahoe:       "0406c80fc7addf00ff01fccf8e80c90ec224fb59950cfc0545a28b0a871bd897"
+    sha256 cellar: :any, arm64_sequoia:     "4e9af1cced938a2b1b368ce3ac5fa6a69cf693926d638f93976e07d0f1618107"
+    sha256 cellar: :any, arm64_linux:       "6674f6a76dee7d39e08b7ffe4f9af8caa7bd6fd8fe698b1d134546475169db5d"
+    sha256 cellar: :any, x86_64_linux:      "e41796ff65e2813c6cf421fdc2915cb52dd93ec8869011d42e1fd885ff911858"
   end
 
   head do

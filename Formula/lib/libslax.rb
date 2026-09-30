@@ -11,13 +11,10 @@ class Libslax < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "5c513400422d36600c8f2ba18cf7ac787016f2dfcbf7fa6ba645dbe358afe656"
-    sha256 arm64_tahoe:       "12f2c058552c9216221ff77a798f59590788193cca59a0755f152f94396cef16"
-    sha256 arm64_sequoia:     "6f6c93212b2fd3099e730116bee98ad61fa5c8bab6e20d6b54d27e20ae789ec5"
-    sha256 arm64_sonoma:      "9b414bd048b9db9260c46345d5518559b1106d86b6ac318444acf4d6b2ef6605"
-    sha256 arm64_ventura:     "a9c26523a518372f3046748e74ebd0da8db2b1408d9bd5e641944a33b3338e67"
-    sha256 sonoma:            "af1f73ee5a96a72a62f8fba2f0dfe5ef02e1fd17ac6d8d8176a0265c73a3ba0c"
-    sha256 ventura:           "8d81b199e964178f69edc81aaf74f36358c8d364d41458d1ccfcba1e5291e61a"
+    rebuild 1
+    sha256 arm64_golden_gate: "1c6a1dd7d503e378b7fec3537bc7b14f545fbf4f4dc89e05aa85bdda891a9325"
+    sha256 arm64_tahoe:       "a5613d4bc2c5e4256475bdd86cbd07ca3c7976cecc9da3d33b7355e0ac3b9b08"
+    sha256 arm64_sequoia:     "37db7971d0033439284ed4d4b88119e1639548adcbbf27f3caaa84b4c107236a"
   end
 
   head do
@@ -30,7 +27,7 @@ class Libslax < Formula
   depends_on "bison" => :build
   depends_on "libtool" => :build
   depends_on :macos # needs libxslt built --with-debugger
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   uses_from_macos "curl"
   uses_from_macos "libedit"

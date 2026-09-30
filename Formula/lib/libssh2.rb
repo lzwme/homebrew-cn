@@ -6,7 +6,7 @@ class Libssh2 < Formula
   mirror "http://download.openpkg.org/components/cache/libssh2/libssh2-1.11.1.tar.gz"
   sha256 "d9ec76cbe34db98eec3539fe2c899d26b0c837cb3eb466a56b0f109cabf658f7"
   license "BSD-3-Clause"
-  revision 5
+  revision 6
   compatibility_version 1
 
   livecheck do
@@ -15,11 +15,11 @@ class Libssh2 < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "8a23ccc1f7b07c2e79f31f2e64f471523627d9039ba701463b10638d6a159341"
-    sha256 cellar: :any, arm64_tahoe:       "09b33a5ef8fc49fb40b27a5af6469ba25ab1b19216c8e539b291574f21215c0c"
-    sha256 cellar: :any, arm64_sequoia:     "59bced956adee6dd3609cb26312dba87463b1247c38fc727bf8a92ed86b34d80"
-    sha256 cellar: :any, arm64_linux:       "f1ac93bc5475de9cb16caa269273840d244419729f81c8e4719fa001e0626dea"
-    sha256 cellar: :any, x86_64_linux:      "606e0b4327f89b426503de858d204c96f98dc6d48e05823a19bf906790126b8d"
+    sha256 cellar: :any, arm64_golden_gate: "24bf37928fe5cced4a228526f01bb279204a067c6570415c04adc517edd5b58a"
+    sha256 cellar: :any, arm64_tahoe:       "916856f463c8b6f29d5a36c5b6f0ab6f62f5c4c3098dcd0b111028fb311a69c7"
+    sha256 cellar: :any, arm64_sequoia:     "481010a7c43b80c86129e5bb2892864d4a50b165338fbe5eb8918f1bb926b483"
+    sha256 cellar: :any, arm64_linux:       "9b31f6b60a7b76944d670018185c81aab767f533b2d385e6aae8779510da7c86"
+    sha256 cellar: :any, x86_64_linux:      "d7547bd8b67ed4bdcf5fb97cf501b309a51ec47a616d051a9799a50db556f836"
   end
 
   head do
@@ -130,6 +130,14 @@ class Libssh2 < Formula
     sha256 "a790ab6c15c8dd6300ca8a651121ecc91e90e0eda1a221ad8108f51de05e1cf3"
     type :backport
     resolves "OSV-2025-90", "OSV-2025-92"
+  end
+
+  # Disable deprecated algorithms; remove with the next release containing this fix.
+  patch do
+    url "https://github.com/libssh2/libssh2/commit/b89858b83d68d7e29e0c5b0bb803f8a68271710c.patch?full_index=1"
+    sha256 "76bdf62172e16e2f74fdde35cd3daa3db27b753c48c4a7bdfd295463444eb936"
+    type :backport
+    resolves "OSV-2022-24", "OSV-2024-847"
   end
 
   def install

@@ -1,8 +1,8 @@
 class Whosthere < Formula
   desc "LAN discovery tool with a modern TUI written in Go"
   homepage "https://github.com/ramonvermeulen/whosthere"
-  url "https://ghfast.top/https://github.com/ramonvermeulen/whosthere/archive/refs/tags/v0.8.3.tar.gz"
-  sha256 "e6f4203fc62464e160349f342ff34103f89c6cb516d18ce6c7ba2bf6e398a2b5"
+  url "https://ghfast.top/https://github.com/ramonvermeulen/whosthere/archive/refs/tags/v0.9.0.tar.gz"
+  sha256 "6d7cc7691999a461535492ceee18bb7cfc1ad04d563123fb838de41712e85fb6"
   license "Apache-2.0"
   head "https://github.com/ramonvermeulen/whosthere.git", branch: "main"
 
@@ -11,13 +11,11 @@ class Whosthere < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "612520a4652f9723accb7efaaf0444074268fa0ae1d4d1533b893e2014ed2b10"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "09d336e99331e1199db69cff3f257cb1b5dc1b92eb0f4de9fca7adca70456cdb"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "09d336e99331e1199db69cff3f257cb1b5dc1b92eb0f4de9fca7adca70456cdb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "09d336e99331e1199db69cff3f257cb1b5dc1b92eb0f4de9fca7adca70456cdb"
-    sha256 cellar: :any_skip_relocation, sonoma:            "ffc45c503d5bbd30976f0fe4a22bdcb4880e44fcaafdf044ae56ca815a7d4469"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "3173ae505abccc1c3804d481b5f1958a128ebc971a3869f85240c408669f67fe"
-    sha256 cellar: :any,                 x86_64_linux:      "1942a982f507d5fe27ac6db6ee0185537a1193b0c860f8c97e08a9f55149bfa6"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "36275c0ef5c5591103b816b7113993651e8f131db4206437a9ed090927a75abc"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "36275c0ef5c5591103b816b7113993651e8f131db4206437a9ed090927a75abc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "36275c0ef5c5591103b816b7113993651e8f131db4206437a9ed090927a75abc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "cef4ed6489e9aaa4b52d8437e38bad33c500e4139ba01ba030eefaa50d748215"
+    sha256 cellar: :any,                 x86_64_linux:      "777712d5c49f0dbf6f4c93cca4b250533ef215a8e776418c21de7f7493f4ed20"
   end
 
   depends_on "go" => :build

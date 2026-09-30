@@ -8,12 +8,12 @@ class Luvit < Formula
   head "https://github.com/luvit/luvit.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "1ffbec1b024b919f26e973894198ccbdce1d99b13ec892387f1e1bc0ea6a69dd"
-    sha256 cellar: :any, arm64_tahoe:       "96a9d7656677ed75d35c09a2ca9b39e31004fc62a5faf240f5b10dfcf46d0147"
-    sha256 cellar: :any, arm64_sequoia:     "425c064c6cee07a1507d0ec867997a49d932e70f16690662db84eb9d504f08d2"
-    sha256 cellar: :any, arm64_sonoma:      "61cb8a979f7b3db1b492c5362c4f4f2bdcbd0d5e6e83d583c73902b197c45beb"
-    sha256 cellar: :any, arm64_linux:       "1465af83c611c9e8a333cb359a9577590faa713cf75dfd4e7d72f31475d80c62"
-    sha256 cellar: :any, x86_64_linux:      "2fb5d60ef92e30964dbfd7d31672e4640886bef8c42e6e4973034ce8b450d383"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "0bd4ea063909954e584b00e7399931d1cab2b01f98389e0693457ac22bcff724"
+    sha256 cellar: :any, arm64_tahoe:       "e9ecf1d6f5fb623a9a196c21f63624b7642138dc43268923999dd58549fbe51e"
+    sha256 cellar: :any, arm64_sequoia:     "733731ae0c3bb8ab3cc39a64c5d50019e396282e82ba78432bf84e924060aabc"
+    sha256 cellar: :any, arm64_linux:       "91b319a535bbbab5d6c6fbda6e738533b2d130cd1f08f7d13e5cd62a2f9d54e0"
+    sha256 cellar: :any, x86_64_linux:      "96f0bea9bf89355edd4c2dbeebf55c925b6f0969e5f37907e576eb79e63e4540"
   end
 
   depends_on "cmake" => :build
@@ -21,7 +21,7 @@ class Luvit < Formula
   depends_on "libuv"
   depends_on "luajit"
   # TODO: depends_on "luv"
-  depends_on "openssl@3"
+  depends_on "openssl@4"
   depends_on "pcre2"
 
   conflicts_with "lit", because: "both install `lit` binaries"
@@ -61,6 +61,20 @@ class Luvit < Formula
         get_lit_page[:content][/LUVI_VERSION:-v?(\d+(?:\.\d+)+)/i, 1]
       end
     end
+
+    # Backport changes for newer lua-openssl
+    patch do
+      url "https://github.com/luvit/luvi/commit/1ca5bab12976821f7f8283982a18f4fc2076ab75.patch?full_index=1"
+      sha256 "8474fbb57bb7a60c48e3f6cffdda837b95ebda0b06e3982306247d0b1cb817a2"
+      type :backport
+    end
+  end
+
+  # Needed for OpenSSL 4 support. Remove when the `luvi`
+  # resource has a new enough version as a submodule.
+  resource "lua-openssl" do
+    url "https://ghfast.top/https://github.com/zhaozg/lua-openssl/releases/download/0.11.1-1/openssl-0.11.1-1.tar.gz"
+    sha256 "b49a010d254a44669d4bb84292a5211d805fdd57e312ee78f799c261525abcaf"
   end
 
   def install
@@ -68,6 +82,9 @@ class Luvit < Formula
     luajit = Formula["luajit"]
 
     resource("luvi").stage do
+      rm_r "deps/lua-openssl"
+      resource("lua-openssl").stage("deps/lua-openssl")
+
       # Build the bundled `luv` as `luvi` is not compatible with newer version.
       # We cannot use `-DWithSharedLibluv=OFF` as it will bundle `luajit` too.
       # TODO: Restore brew `luv` once support is available

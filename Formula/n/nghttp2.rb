@@ -6,13 +6,12 @@ class Nghttp2 < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "0dbedfbdaf1b6c1d6869dd86d6f8babe030bf47b6e3ebfa27c2349f57aaddf09"
-    sha256 cellar: :any, arm64_tahoe:       "2f36cb8a86910371dfcd4963b1d50ae82522c077d37041ed56198181262a3b03"
-    sha256 cellar: :any, arm64_sequoia:     "32b441750d304f3621feaf0424880dfb6aa0bb6563fcc85e59bc361a895f45a2"
-    sha256 cellar: :any, arm64_sonoma:      "926f2b7a4c85a24ce41d46bfaf3fe97daa0047233377f44fcd8322967340c72e"
-    sha256 cellar: :any, sonoma:            "3dbdd0376f89bd63e9b473993ad9d5db5dacb46f38b8431d435b1642f33433c0"
-    sha256 cellar: :any, arm64_linux:       "5606a9f74f3670f803f91cab65703119cd264b088f319e79483ecf7ebe4c731a"
-    sha256 cellar: :any, x86_64_linux:      "bb8ceeb4c929cf58760de0004852e160811df4ae409993cd0373409bd851817a"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "c8b46996ac9b4d5fa0e86655acf94cb0412cc91278fa5917cdc0c0be08e19086"
+    sha256 cellar: :any, arm64_tahoe:       "01da61bc5fd988294932c5fcf0843eb9902b781c73fc25acd040036f6203e85e"
+    sha256 cellar: :any, arm64_sequoia:     "aedd74fa570f6e47c0e49e8fb716450cf275513c16787465708336bd1b188674"
+    sha256 cellar: :any, arm64_linux:       "32eebdeb3dd6e2ac3e2a0d0835a56b12d6d245441551289786c6ac4eb30bce22"
+    sha256 cellar: :any, x86_64_linux:      "e3e8dd26e3af50e6af756a0d794a7b094110e910816f4948c6d1d8685e6e7f92"
   end
 
   head do
@@ -28,7 +27,7 @@ class Nghttp2 < Formula
   depends_on "jemalloc"
   depends_on "libev"
   depends_on "libnghttp2"
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   uses_from_macos "libxml2"
 

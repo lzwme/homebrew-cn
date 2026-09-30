@@ -6,19 +6,19 @@ class Echtvar < Formula
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_golden_gate: "b99733c8387d80230aa973fbc0db97f885d7a792aad7b6699855fdb94846effc"
-    sha256 cellar: :any, arm64_tahoe:       "cccb0f49754be42e90f922933a99419073082567bf5526ebb80b131e3846a12f"
-    sha256 cellar: :any, arm64_sequoia:     "38e002a6813dcdaf69846500bd6bfe924565d9ea8c96eb5c7a2d16453bcd4e29"
-    sha256 cellar: :any, arm64_linux:       "bd21001a526b2ddded21f1e35baf7ad15f7df90a2f4898e314fd5f2a6883b0ed"
-    sha256 cellar: :any, x86_64_linux:      "1c29e8ec6a808d0251e1318d1fbd3cb3f7ca23c59b1101faf7c0c7b8c3057ef0"
+    rebuild 2
+    sha256 cellar: :any, arm64_golden_gate: "cb43da7beb5cec375582901a362420e496216c705bd5eaf79a2606cb9f302665"
+    sha256 cellar: :any, arm64_tahoe:       "fcab74c9936cc1ab9df9caaf55de71874806f415acc052e33d9d74afaa3f0855"
+    sha256 cellar: :any, arm64_sequoia:     "61155b5559826f1bae9d78090a0885528aafe6ce7c34307e9be3a6c77f533e7f"
+    sha256 cellar: :any, arm64_linux:       "278794dce2a6315d3e2982e1424dfcf0a2a5968db8add141c38bb69dacb55670"
+    sha256 cellar: :any, x86_64_linux:      "d3bcf5b3fc9a3e7f743673396ebbc6f349c762b1447a507198d87ebd1989c14a"
   end
 
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "python@3.14" => :test
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   uses_from_macos "llvm" => :build # for `libclang`, used by `hts-sys` bindgen
   uses_from_macos "bzip2"

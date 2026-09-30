@@ -1,8 +1,8 @@
 class FaasCli < Formula
   desc "CLI for templating and/or deploying FaaS functions"
   homepage "https://www.openfaas.com/"
-  url "https://ghfast.top/https://github.com/openfaas/faas-cli/archive/refs/tags/0.18.13.tar.gz"
-  sha256 "ebb4958f5232ea3db870efcf953048bcd7be7e0231e3d1cdef38330e00e27d4c"
+  url "https://ghfast.top/https://github.com/openfaas/faas-cli/archive/refs/tags/0.18.14.tar.gz"
+  sha256 "b16538f8b7bd613b1d28af543a03b5e66efc39fec0633aa4f27e311f60dc8949"
   license "MIT"
   head "https://github.com/openfaas/faas-cli.git", branch: "master"
 
@@ -12,12 +12,11 @@ class FaasCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "c84ed4cd5b617c90f85d493b7caebf23b95488d07659fc14b85284fe2a22b1f2"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "c84ed4cd5b617c90f85d493b7caebf23b95488d07659fc14b85284fe2a22b1f2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "c84ed4cd5b617c90f85d493b7caebf23b95488d07659fc14b85284fe2a22b1f2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "c84ed4cd5b617c90f85d493b7caebf23b95488d07659fc14b85284fe2a22b1f2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "9731257f63bfd7436d0b59dfabf8ad8a7c5d08a835905ba1449e76b7bb841615"
-    sha256 cellar: :any,                 x86_64_linux:      "bcb56511f7b434444477eb4dd4ca2e9e2c4ce9d065acd882542a91b4e7f2932e"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "c81e70e11801369e2bff29c0c13b799b5637bc34609911b36d823782607eafd0"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "c81e70e11801369e2bff29c0c13b799b5637bc34609911b36d823782607eafd0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "c81e70e11801369e2bff29c0c13b799b5637bc34609911b36d823782607eafd0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "317a6b083e26de8fe2321ffff303f45f6b39394253d69afd072e4996d545603a"
+    sha256 cellar: :any,                 x86_64_linux:      "adafe57797aca7087eaa68715c45b7dad552144299b3f90cfa289bd440bc022b"
   end
 
   depends_on "go" => :build

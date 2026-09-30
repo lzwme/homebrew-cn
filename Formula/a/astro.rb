@@ -1,8 +1,8 @@
 class Astro < Formula
   desc "To build and run Airflow DAGs locally and interact with the Astronomer API"
   homepage "https://www.astronomer.io/"
-  url "https://ghfast.top/https://github.com/astronomer/astro-cli/archive/refs/tags/v1.45.0.tar.gz"
-  sha256 "d390f5a9aec106bba44a9dce1c0a27068682a6a7240c5573ceed5193e4625aaf"
+  url "https://ghfast.top/https://github.com/astronomer/astro-cli/archive/refs/tags/v1.46.0.tar.gz"
+  sha256 "ceb62ebdcb88ec733ab2ca8ffe25d593aca55dc5cc05c28c785939bf2f77c7ab"
   license "Apache-2.0"
   head "https://github.com/astronomer/astro-cli.git", branch: "main"
 
@@ -12,12 +12,11 @@ class Astro < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "3aeb8be3fce3d370ac8fabf5461e7f7844395de9e34c4b5fe8959811f1b7ce06"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "62e96d794bec8a890993b6d777fc3d559c991f4a87b43219bc9d0c6960d3be69"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "d4d242faf0ba3887625815339c4465e1eaca61330e876fe155f8534d9aca1618"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "1eaeb9caba33cc650223238eaab2ea24b735aea9d825114402e7665eaa1205ae"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "854eea480a48f56e271682f95a12c0a847904fdcdfa3b0ad9b53528b258cb26f"
-    sha256 cellar: :any,                 x86_64_linux:      "171fc9c06c224f635e1bcc764e93b1b6e4ce988ef2ec9b4134ceb028640921e2"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "86f1ce85902678f56f9bcb6c467ddb4b6c3c52db0d22beeac554eb1afdaa7acf"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "f2c5c63f416d86170251fd48d40f292589a8dec97e36baa71d674e62cd0e5023"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "5bbf3f7938ffaba94eb0331b82979702804263a9d017916250f91656c73e1bc3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "4dd2112fab1d2af63a1bb4c416156836576c33e603a985fc5aac7d89327649b5"
+    sha256 cellar: :any,                 x86_64_linux:      "cb2bf1d5eab715583b4d0c45ca9dcd5e383b43d669d1d7cb199171befed717aa"
   end
 
   depends_on "go" => :build

@@ -1,19 +1,17 @@
 class Wtfutil < Formula
   desc "Personal information dashboard for your terminal"
   homepage "https://wtfutil.com"
-  url "https://ghfast.top/https://github.com/wtfutil/wtf/archive/refs/tags/v0.50.0.tar.gz"
-  sha256 "cec9b0a4d01dd6d2a81a8cd429e992786a2a3a212d4e2c090ab4d10172ca9794"
+  url "https://ghfast.top/https://github.com/wtfutil/wtf/archive/refs/tags/v0.51.0.tar.gz"
+  sha256 "f34f37f01e44db4b60ae0ec56524ffb8420b037d3f7ca6515b177a0b9b7789c2"
   license "MPL-2.0"
   head "https://github.com/wtfutil/wtf.git", branch: "trunk"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "de41d9773de992aa71ac1cac78a015b53d2e746bdd4522f75caa836ebf0d4109"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "4ea6938225069f6512debc79090300e93255eccb23c808e6b735399bdf770156"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "dcb07cc6d7a924e00969fc1bf6b6b77c478588ae7e0bfd613e4c7fb287c86fb0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "5435bdf1477ed48580cb7f3c35f6b6341364160cb70d645dc3bc415c6ce9652d"
-    sha256 cellar: :any_skip_relocation, sonoma:            "22ccab71cb51acea3500ad7ab7936cb85a494e4b391c836f9510780cf553e065"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "eb863500bb7249c9baa2607b7c0cf3a47035ed62904bbebc3f446a17ca33bfb0"
-    sha256 cellar: :any,                 x86_64_linux:      "6fd1868752f7e160cff65cb962484c0f7a577f1226f5d2c81b81f239999e29f4"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "e56470f59b6f176883a2d18ccd1e089a480637b82fdc3ce8c60977697c7d5a43"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "1424b2560d1c16aedec250f3fbf5de6b6c0b4b0eb969c75b44d6b8931c9b935a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "01dc0e8918d34779805aab6de96f2101cd3e21005ae3456c4372a8cb820b5ae6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "c312809ed29beff62cecb05c7d929dc29fde3ec9c5ce682781f76282bee37093"
+    sha256 cellar: :any,                 x86_64_linux:      "cc60dac6fb09a85ed7f6dda9e75d20b9345ed0ae2a60d024e2f291ca54ced68d"
   end
 
   depends_on "go" => :build

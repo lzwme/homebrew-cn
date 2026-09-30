@@ -1,16 +1,16 @@
 class Concord < Formula
   desc "Terminal user interface client for Discord"
   homepage "https://github.com/chojs23/concord"
-  url "https://ghfast.top/https://github.com/chojs23/concord/archive/refs/tags/v2.6.0.tar.gz"
-  sha256 "ea07bb13db7de8f2b810d91a3ca1ad75551063c98305514a675bcfb4160ec311"
+  url "https://ghfast.top/https://github.com/chojs23/concord/archive/refs/tags/v2.6.1.tar.gz"
+  sha256 "0a4419088862a45b255c5b421a3bca6f7373922b19ab54c14be3a0a8ff6e671c"
   license "GPL-3.0-only"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "563d2ef3633d35de9f3f74bbfd964785cbf9b9a586802d5d1ad74bc1c117d8c1"
-    sha256 cellar: :any, arm64_tahoe:       "a084fa44fb3793ed1b3cd611c2ff85637a3ba588d0d0a66a0200fa785d38d926"
-    sha256 cellar: :any, arm64_sequoia:     "cedaea65c6306117cb0735d0692fef2797432513385ca54cc98a687532ab15c8"
-    sha256 cellar: :any, arm64_linux:       "a0cedbf4c658af8d639d9d5b16a9a90570034409435e79e8d1751a6e88f08046"
-    sha256 cellar: :any, x86_64_linux:      "3f15a5fa6a2219af8caf36cdf321efcabf1749194bcd41e254093cde7c6c2a1b"
+    sha256 cellar: :any, arm64_golden_gate: "8c3c3c02ad8e15aee0ff281019a6a6566e69e6016209c51f1a452e52360ed056"
+    sha256 cellar: :any, arm64_tahoe:       "e6f4d6b4cbc4c3342a1e7683a45b1ee0c4667792350a74b71b5649964b17d9eb"
+    sha256 cellar: :any, arm64_sequoia:     "3c9e93ab4dadddb3e48b9d17117eda0c2dd63197b4120cb06be118403f61c568"
+    sha256 cellar: :any, arm64_linux:       "46fe0a6ad12ff4ce4ca9d2a032f5979b930e27beed3cc0b07e764a9caabd2020"
+    sha256 cellar: :any, x86_64_linux:      "1388d38db4612da7a362d8f35137497ae34698ec18b5a3085afb8c85ba024e83"
   end
 
   depends_on "pkgconf" => :build

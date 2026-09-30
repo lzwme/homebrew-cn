@@ -3,16 +3,16 @@ class CfnLint < Formula
 
   desc "Validate CloudFormation templates against the CloudFormation spec"
   homepage "https://github.com/aws-cloudformation/cfn-lint/"
-  url "https://files.pythonhosted.org/packages/78/73/98d18ce1fbc2fba31ea38415faca85fe4f54f7d177a5dd9c7d4434dacca4/cfn_lint-1.57.0.tar.gz"
-  sha256 "0328f10652a3d3e8d3586f32d063c53bdd69d3b8b8f4cfa422bef241c6e0acc1"
+  url "https://files.pythonhosted.org/packages/db/50/a619a323a963433bc00aed28918f16c7089ab518b604572ebc7ad088fd42/cfn_lint-1.57.1.tar.gz"
+  sha256 "df72dd862d9c9dfdcf831dbc4751e2c2ffaf751989450b9ec504dfd72c32da0d"
   license "MIT-0"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "ed7f281dc210766b89790c3e83b267f266cfafa6d75b81ba1305d3eae9b9990d"
-    sha256 cellar: :any, arm64_tahoe:       "16d3b12c6ffd3cb27710adfaf280ae7e381b83e5d7b29ec2453c0ef5638c8f0d"
-    sha256 cellar: :any, arm64_sequoia:     "c97dc7af10dd92bc34c26673a49f178701c0b5cf3f00e3c9239e4f4d72f76453"
-    sha256 cellar: :any, arm64_linux:       "d88c2d47d84598c348112948dfe1e942e3fe0ee5f1ff5d9c51f69abde0b21eda"
-    sha256 cellar: :any, x86_64_linux:      "b1407bd9ecabfb150705ed3328e7adbf268a84bd70ed2d2c88a98f9fc301f5d3"
+    sha256 cellar: :any, arm64_golden_gate: "355758482fb9bb7dcc1ed4aca5a39044377c0bc220827d50434a9729d88fd001"
+    sha256 cellar: :any, arm64_tahoe:       "b49ece1633a815a7dd1c9c5b23bc6d6032d9c849b0971c145448a45b1ce40ee6"
+    sha256 cellar: :any, arm64_sequoia:     "6bea73eedd5cf61d2c274773afc02cbd391fb7439b60ff475cc2a43d476fcca4"
+    sha256 cellar: :any, arm64_linux:       "cdd47199cff67117dd378f8452363b119dcc918dd1f8f841046b2a9765af64ca"
+    sha256 cellar: :any, x86_64_linux:      "c2de20974413d75f90ad4247406c5da9e2202446db81e34dde12940ebcadd942"
   end
 
   depends_on "libyaml"
@@ -38,8 +38,8 @@ class CfnLint < Formula
   end
 
   resource "networkx" do
-    url "https://files.pythonhosted.org/packages/6a/51/63fe664f3908c97be9d2e4f1158eb633317598cfa6e1fc14af5383f17512/networkx-3.6.1.tar.gz"
-    sha256 "26b7c357accc0c8cde558ad486283728b65b6a95d85ee1cd66bafab4c8168509"
+    url "https://files.pythonhosted.org/packages/dc/76/3af777226b63a5e64a6b36b1ec5855c14e2b94a37096d4760e595fc43511/networkx-3.7.tar.gz"
+    sha256 "fd77a511bd90f39f3d016351345b52cf5319b813bdca01de3f755d3cca62e96a"
   end
 
   resource "pyyaml" do
@@ -48,8 +48,8 @@ class CfnLint < Formula
   end
 
   resource "regex" do
-    url "https://files.pythonhosted.org/packages/b9/5c/f403115361de25809e8f785686ec7096e30fef73be9ae35aa51da4e80abb/regex-2026.9.10.tar.gz"
-    sha256 "1e321e2c84f0e52c457f5ea5944f796d6e8e09cb99738ea98dcc1bfe402a128d"
+    url "https://files.pythonhosted.org/packages/fc/f2/af1da9d3ceed77bfcdce40427d49ba0be94e4fe84245e3bfef68c10e75b6/regex-2026.9.29.tar.gz"
+    sha256 "8b5fcc4771732191b2b7d1dd68d8f0353f47f8d90b6150f6dce58bf1112442cb"
   end
 
   resource "sympy" do

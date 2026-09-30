@@ -3,19 +3,17 @@ class Badkeys < Formula
 
   desc "Tool to find common vulnerabilities in cryptographic public keys"
   homepage "https://badkeys.info"
-  url "https://files.pythonhosted.org/packages/43/71/e2a8f3e504f3cdaeded9c4726dff0929d38ec4ab447560019c690a4777a3/badkeys-0.0.20.tar.gz"
-  sha256 "b1cbf5722dd3daf34d7dd205b33d0a57650608ce7a3ce6d6be595c6cfa5d27f2"
+  url "https://files.pythonhosted.org/packages/a1/05/6f1939e3fb4b7cdf7799d7a200c0151ca6a1662042a283b658fe98627f9b/badkeys-0.0.21.tar.gz"
+  sha256 "a4323c2a3de67e81786e87271d8c1cb302eed89054b770f85dbf1f95ce4264ad"
   license "MIT"
   head "https://github.com/badkeys/badkeys.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "e0d2ed18c6a4140ed7d435858ed77ac4ec50377e3cadd186224e76444be10ae7"
-    sha256 cellar: :any, arm64_tahoe:       "782ce0a0ddb91780b60e5de6b43af415f82705228d07c51a407d7cdbf6fb58b3"
-    sha256 cellar: :any, arm64_sequoia:     "17ab5252ef5caf13185ec3f17c681415fe1aba25ebadd1c485d099bd3d435a4d"
-    sha256 cellar: :any, arm64_sonoma:      "bcd881be16bda24b4b8846605ab14191525a702a5d3d23da075b7548f73451f9"
-    sha256 cellar: :any, sonoma:            "10d63e76b950fa2afa98b55c559b170abab0ab2280abc35ab141542c98b6f0d0"
-    sha256 cellar: :any, arm64_linux:       "39440953d69aec9be44039a73443708372aa9d5ed89aac4e4a4f72996ead5c1f"
-    sha256 cellar: :any, x86_64_linux:      "28e1a8d73bb7867d4fe2ed590364a9a39c8d00e855326d3dadf06f9acc8527d1"
+    sha256 cellar: :any, arm64_golden_gate: "92e9142d2b508eef73361de8901a9913f548a126aaebfdb8eb802fe33f46303b"
+    sha256 cellar: :any, arm64_tahoe:       "20b8dc3d5d1c404c79b4eadf8eaa8497e1f0d400611f3aecf4f04c8862f7ba74"
+    sha256 cellar: :any, arm64_sequoia:     "0b193beb57b95d7588416dd4af56e7f2d9b3cb832c749a9b0057637459c858f2"
+    sha256 cellar: :any, arm64_linux:       "83f26506993091d39c8a053275aedc125bcb45a18ccf8bc0323bd2d3d062e826"
+    sha256 cellar: :any, x86_64_linux:      "71d53b19cf02b2e20f7fe9521bd72adb1a19ec7a486238e14fca83ac126ef744"
   end
 
   depends_on "cryptography" => :no_linkage
@@ -29,6 +27,11 @@ class Badkeys < Formula
   resource "gmpy2" do
     url "https://files.pythonhosted.org/packages/03/47/5c59682cd4d94291382f447dbe1f6229c8b8a144aa85d32d38ecaf8cfb73/gmpy2-2.3.1.tar.gz"
     sha256 "313f35e9fe6b9ddf72759b14dac25166fe5757c970403e4bbf87a70ab2be07df"
+  end
+
+  resource "pyopenssl" do
+    url "https://files.pythonhosted.org/packages/3f/e8/7325d258199b159eb2c03fe32107533e2832e70e63f4fb88a6aa00023201/pyopenssl-26.4.0.tar.gz"
+    sha256 "28dfcce0162b9211413e26dfbfdf1d24317fbeba18fc93c12400a1856b2a0bc7"
   end
 
   def install

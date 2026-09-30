@@ -7,16 +7,17 @@ class Rsync < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "b9bf0049adf7c331cffcde8da12b499bbdc107ab097a328ba4b9a2a00358e235"
-    sha256 cellar: :any, arm64_tahoe:       "c13909ed22964467473786560c89a4e58a68f9bff46c8976db3785a083f539f7"
-    sha256 cellar: :any, arm64_sequoia:     "f4da2206419d4f03f6a966b35bf21283b3f975c1b7cbb69ef5926070264c5695"
-    sha256 cellar: :any, arm64_linux:       "ad05b5d79762136ad7aeb2753d37ee6c1f865a476ecef973a0f0a686717f9e38"
-    sha256 cellar: :any, x86_64_linux:      "67fc87a9f59d57b2df5ce78a36afc3a1ad2d5a8aaa9f0698e0e6b68b1dcf32e2"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "ed7eaefb29afddb3caa23fa9fb196ce22970a80ed122f8f8e8a748c470751969"
+    sha256 cellar: :any, arm64_tahoe:       "d69be3a3d34872a903df96ab8767de96a407819f3d9b80b8d8a75dc738796033"
+    sha256 cellar: :any, arm64_sequoia:     "3398c5c1587212bf7a9d88efaa4728fca79586b8110c6c2fb52ebf2622446879"
+    sha256 cellar: :any, arm64_linux:       "785b41d1bb830876bd483268a7103b2199361c72de9ea6afd0a118e9232432cb"
+    sha256 cellar: :any, x86_64_linux:      "a4b03666566e0693e4cd2016ba8a0104c0ab5c71c8237aeb20d973e1bf6e4b96"
   end
 
   depends_on "libidn2"
   depends_on "lz4"
-  depends_on "openssl@3"
+  depends_on "openssl@4"
   depends_on "popt"
   depends_on "xxhash"
   depends_on "zstd"

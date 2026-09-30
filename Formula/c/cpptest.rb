@@ -1,33 +1,16 @@
 class Cpptest < Formula
   desc "Unit testing framework handling automated tests in C++"
   homepage "https://cpptest.sourceforge.io/"
+  url "https://ghfast.top/https://github.com/cpptest/cpptest/releases/download/2.0.1/cpptest-2.0.1.tar.bz2"
+  sha256 "d2f13834dd9a5c4e56fa237e01d154474044687e7cc03f6c11017c5fe6ef0641"
   license "LGPL-2.1-or-later"
 
-  stable do
-    url "https://ghfast.top/https://github.com/cpptest/cpptest/releases/download/2.0.0/cpptest-2.0.0.tar.bz2"
-    sha256 "7c258936a407bcd1635a9b7719fbdcd6c6e044b5d32f53bbf6fbf6f205e5e429"
-
-    # Fix -flat_namespace being used on Big Sur and later.
-    patch do
-      file "Patches/libtool/configure-big_sur.diff"
-      type :unofficial
-    end
-  end
-
   bottle do
-    sha256 cellar: :any,                 arm64_golden_gate: "ccc4803c27a5c262e2e5e2d5cef1c6182d193fb3f413966cb3123ba0e5e4e064"
-    sha256 cellar: :any,                 arm64_tahoe:       "b7ba7a08b1659d230bf822ed02e72535423504b3b5fe659cac6b16f6aa64d3bd"
-    sha256 cellar: :any,                 arm64_sequoia:     "2e9bd9882a2be0879ed9c30b86dda312e9fdaf6f0913d1e52960e0c057454857"
-    sha256 cellar: :any,                 arm64_sonoma:      "02e96560cb00bb0e4a31cbeb0e1af8fe4d24071dc8693551a444a8ca899f64de"
-    sha256 cellar: :any,                 arm64_ventura:     "cc624fd1da48ba38d19025509d327580fc4d8b2603deaa398e1bdecbad88d676"
-    sha256 cellar: :any,                 arm64_monterey:    "c19519f153ca1eb3480428285c87c41f4f6e9216815ce028e8f4edb6ae2ca05c"
-    sha256 cellar: :any,                 arm64_big_sur:     "b76d3ce8ecaa806713abfbb903789702daa297cff3e491e670f531725c5e90b4"
-    sha256 cellar: :any,                 sonoma:            "da7e6e96d0971b33f75b13306310d9b73b20e353c359c65e0f8acb4af6a7b443"
-    sha256 cellar: :any,                 ventura:           "64ecd7007cbc36505613a0a664d0bdac0328ff7d59767fb73abe78a2ea3db85d"
-    sha256 cellar: :any,                 monterey:          "3607c24f58bd5195dd7258797f9a74c48d74fa724ac4dcf9aa60610cee085966"
-    sha256 cellar: :any,                 big_sur:           "89c6ffcf939917d09725840bb55497a8477ddf951895a8f62377a8ff11e11b6b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "f3e97b7775d83ef913b5d0e0c7ba785f2d12b16de00747f7aa5a6734a032ff1a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "ebb0d38cb3fb4038067867b4b10ff93cdc330528dc0f163d4af0a87a427a7375"
+    sha256 cellar: :any, arm64_golden_gate: "a6e005ad6ccd746830ec51260227eb4deb051368be0e6ace27cd3e208259181b"
+    sha256 cellar: :any, arm64_tahoe:       "ff05d900261e941e09c50275a3562648b96203434cdfaae13c4998c3c947a97a"
+    sha256 cellar: :any, arm64_sequoia:     "78d8c7f0a5ae8a12dc07e4297cb4dfc3ecac2fc34d9abd61344b09c0ffa52c10"
+    sha256 cellar: :any, arm64_linux:       "0c4a8b5d2bc3f7328882c1c0a7ff8e843e9956b12a264523df01c0a766eb7fb6"
+    sha256 cellar: :any, x86_64_linux:      "763b8ebff167fb12404c1e59bfbde9827b06b4b1648f2995590ccedbac59ddfc"
   end
 
   head do
@@ -37,6 +20,11 @@ class Cpptest < Formula
     depends_on "automake" => :build
     depends_on "libtool" => :build
   end
+
+  deprecate! date: "2026-09-28", because: :repo_archived
+  disable! date: "2027-09-28", because: :repo_archived
+
+  deny_network_access!
 
   def install
     system "./autogen.sh" if build.head?
