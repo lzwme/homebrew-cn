@@ -122,9 +122,9 @@ class Streamlink < Formula
 
   test do
     video = "https://www.youtube.com/watch?v=IVdyt2pNxn8"
-    if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
-      assert_match "Could not get video info - LOGIN_REQUIRED",
-        shell_output("#{bin}/streamlink \"#{video}\" worst -o video.mp4", 1)
+    if ENV["HOMEBREW_GITHUB_ACTIONS"].present? && ENV["GITHUB_ACTIONS_HOMEBREW_SELF_HOSTED"].blank?
+      output = shell_output("#{bin}/streamlink \"#{video}\" worst -o video.mp4", 1)
+      assert_match "Could not get video info - LOGIN_REQUIRED", output
       return
     end
 

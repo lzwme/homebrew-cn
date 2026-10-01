@@ -3,17 +3,17 @@ class Fonttools < Formula
 
   desc "Library for manipulating fonts"
   homepage "https://github.com/fonttools/fonttools"
-  url "https://files.pythonhosted.org/packages/a2/24/86f9930b930b97fc82266083320f3c34643ef67261c32651e893db525aca/fonttools-4.66.0.tar.gz"
-  sha256 "ef0610dfe7bb5bf574d9bdad6f597403ebc9807d124ac6f148d7604b2609be98"
+  url "https://files.pythonhosted.org/packages/87/b6/126c659ab7e0e03e01a5f5d223abf7b2c0691ae92718085a212a3924a2a3/fonttools-4.66.1.tar.gz"
+  sha256 "64967c6ddb0d4c610dfd8cb1485981b2d27972ddfb7d4bbbd9e199d2a089c450"
   license "MIT"
   head "https://github.com/fonttools/fonttools.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "98028fba9458995aab714fa6f116bcd8b7110fee2f383b01fd22d7dfcd758fff"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "979ec42a918f879e75eb1b54017e011ffa341373a19dd51a6cdf73a6820da71a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "ba870a5443ecc049cc3b21fec029afd0f89505f488e066f10976a4d6489dd0a0"
-    sha256 cellar: :any,                 arm64_linux:       "145a4d324fd475c0576b37ae34c09c6dad97c6b7f9425c4b5959e914ffcf99d1"
-    sha256 cellar: :any,                 x86_64_linux:      "089dfe3825a8fea24ac0e09e584eac59ed99eb3994057f5aa53e68f98d8d1e38"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "e1a9b490d43f37711b306897a25ebeb1fbcfbeaf0cf4bfd7452ee66621ba765c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "9bcb648f5d736d5c8d422f124cce6cf02c3e1285a53887374c5eeee5c4871f62"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "834fb1418a35c53112144c7159598ba4432129cd1fd72ec0d5514ab8338261d1"
+    sha256 cellar: :any,                 arm64_linux:       "a787edc5ed836a2cbc54879cab8951f0fddc7c3d80665673edd32f6428db87ba"
+    sha256 cellar: :any,                 x86_64_linux:      "dd2f767fba0d21cbd294546f1deefb14a6e2ae126a5b3bfa6370866e25bfcc25"
   end
 
   depends_on "python@3.14"

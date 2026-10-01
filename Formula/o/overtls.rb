@@ -1,17 +1,17 @@
 class Overtls < Formula
   desc "Simple proxy tunnel for bypassing the GFW"
   homepage "https://github.com/ShadowsocksR-Live/overtls"
-  url "https://ghfast.top/https://github.com/ShadowsocksR-Live/overtls/archive/refs/tags/v0.3.14.tar.gz"
-  sha256 "112ccc0ebed42d962dc6bb061dd9da7663cd453eb826dbb9fccc56c890ac0679"
+  url "https://ghfast.top/https://github.com/ShadowsocksR-Live/overtls/archive/refs/tags/v0.3.15.tar.gz"
+  sha256 "9cb695a606a6fb58b91704a7c7c27a971019460ad9e0f31979839de61c13d614"
   license "MIT"
   head "https://github.com/ShadowsocksR-Live/overtls.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "f8fa8f82919a6b051c2eb74d7cda84428592d54c4abcfe8e9346622be5ee55ca"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "1d71ef26278d41f4a7ea69a9f4f4b119bf3c96bc3150f35b9c047f4379531ab6"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "6158aad9356199038ad59ea37962b5544896ae01455ec6569d142f7fb1cf2b63"
-    sha256 cellar: :any,                 arm64_linux:       "6b79654baf2151cbca02c7c2b5b14c992354ee9d0af90becbd0157ba185fbb0c"
-    sha256 cellar: :any,                 x86_64_linux:      "c7812620d6127d283e1618b7bbd145915c1bd2cc541481cb75fbe490dc71d724"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "9bbb9c093c6fb2bb53cef2d75abb17177bf81a1962d99b8edb45c1183ba2486e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "1755d05e0dbbee7561c5e3cf8ed14a67feb4ca492472bcd643b7f872af8f4cf1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "58f56be3850707a9fb414086c9e4f9c935f99e4b5159a8935fb9c8482845a505"
+    sha256 cellar: :any,                 arm64_linux:       "f9ac842492366e040bff08e88d99371912b9088a70bd2d7f70fdb0be732c8708"
+    sha256 cellar: :any,                 x86_64_linux:      "f1bc69ce66eb3c1ad2490b0c37edeb88f034f766774441358b1087daf709518b"
   end
 
   depends_on "rust" => :build

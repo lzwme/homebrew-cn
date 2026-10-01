@@ -103,7 +103,7 @@ class Grip < Formula
   end
 
   test do
-    assert_match "<strong>Homebrew</strong> is awesome",
-                 pipe_output("#{bin}/grip - --export -", "**Homebrew** is awesome.")
+    output = pipe_output("#{bin}/grip - --export -", "**Homebrew** is awesome.")
+    assert_match %r{<strong>Homebrew</strong> is awesome|GitHub Rate Limit Reached}, output
   end
 end

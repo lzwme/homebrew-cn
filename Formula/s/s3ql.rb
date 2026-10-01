@@ -6,6 +6,7 @@ class S3ql < Formula
   url "https://ghfast.top/https://github.com/s3ql/s3ql/releases/download/s3ql-6.3.1/s3ql-6.3.1.tar.gz"
   sha256 "79d805de38ab0501f1457149e888c143f08ccd3aba7283d0cc845ca5bb662de6"
   license "GPL-3.0-only"
+  revision 1
 
   livecheck do
     url :stable
@@ -13,8 +14,8 @@ class S3ql < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_linux:  "1443d4c9c1969917ffecd377b073740bbd9e427b9af9a2754258dcf5a68b5ff8"
-    sha256 cellar: :any, x86_64_linux: "051f1775f7eddb0d5b19374059d182e8ddb0d94e2df8fc32a88a980eeea97efa"
+    sha256 cellar: :any, arm64_linux:  "66b82aa97297a9a5a6dcdcf851daf9bb2b18627476eb70d67d0d42079ac4f1c2"
+    sha256 cellar: :any, x86_64_linux: "1a48f687e9a74885343e0e4f91594f571ccb071973d74687626d092ae58a6352"
   end
 
   depends_on "pkgconf" => :build
@@ -60,8 +61,8 @@ class S3ql < Formula
   end
 
   resource "google-auth" do
-    url "https://files.pythonhosted.org/packages/ac/ca/f398a483ce5aad18ca2f735646e45ccee2439bd94a41a4ad0cfa646bd495/google_auth-2.58.0.tar.gz"
-    sha256 "55e30cf15e737de92c5323d78cda8a83fcd57e7ffbaf900c4600039fd60a80fd"
+    url "https://files.pythonhosted.org/packages/3b/0b/9b4e806ebcd29701b5193a162dd9906c4c5a16cbde8476461622d2bfa70e/google_auth-2.59.0.tar.gz"
+    sha256 "eb32f44f89f6b577947ebee5887c1db46e6b1a278889ba369a88179643f32240"
   end
 
   resource "google-auth-oauthlib" do
@@ -100,8 +101,8 @@ class S3ql < Formula
   end
 
   resource "oauthlib" do
-    url "https://files.pythonhosted.org/packages/0b/5f/19930f824ffeb0ad4372da4812c50edbd1434f678c90c2733e1188edfc63/oauthlib-3.3.1.tar.gz"
-    sha256 "0f0f8aa759826a193cf66c12ea1af1637f87b9b4622d46e866952bb022e538c9"
+    url "https://files.pythonhosted.org/packages/7a/d8/a1bcc8ba112a627f8ffbdc212a78ce18d3ac07e91a5ca65d27918eee25a1/oauthlib-4.0.0.tar.gz"
+    sha256 "efb274799819440f95b4ab3b818869f1ce9ae26c5beacba0201d1a1b76b54f86"
   end
 
   resource "outcome" do

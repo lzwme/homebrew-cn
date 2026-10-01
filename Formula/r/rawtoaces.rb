@@ -1,8 +1,8 @@
 class Rawtoaces < Formula
   desc "Utility for converting camera RAW image files to ACES"
   homepage "https://github.com/AcademySoftwareFoundation/rawtoaces"
-  url "https://ghfast.top/https://github.com/AcademySoftwareFoundation/rawtoaces/archive/refs/tags/v2.2.1.tar.gz"
-  sha256 "87daffd6036d533da948db63d6ac9f9b908385e4af99fd5ba8d063f3787dc5e2"
+  url "https://ghfast.top/https://github.com/AcademySoftwareFoundation/rawtoaces/archive/refs/tags/v2.2.2.tar.gz"
+  sha256 "1687f12ce34c3d01d5e3d293dacf14df3d815d51d4595c12321d0262a5adc792"
   license "Apache-2.0"
 
   livecheck do
@@ -11,13 +11,11 @@ class Rawtoaces < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "b42bb9a92d25f5eefe69d2cb465e8facb828f80b51a9bb3adb404d1ea4f05edb"
-    sha256 arm64_tahoe:       "8f9ac522c5c84086babad728ede43e5b18065b5ff47ecf2a0f434573b6860f59"
-    sha256 arm64_sequoia:     "62cbbb6ff9579a9680af8ffdca0da1ff624f965efd3191ee74cfba83d1af2274"
-    sha256 arm64_sonoma:      "6e37fa5bbd21c466b378154dcf6c7d62718dda2876c995315d04ff47be6f5d19"
-    sha256 sonoma:            "898ff90587abaf64cd9f805c4cabb79571256cd39b291a35652e7a7fa0f15b39"
-    sha256 arm64_linux:       "8f6e43d01779e2860e142a299efb31450ceef7761318ec0256ccb3de68b53e71"
-    sha256 x86_64_linux:      "803dd222c4f433cd5aaa14851cd2da8f97ee9fc24e8ef8c8f850f130186545a8"
+    sha256 arm64_golden_gate: "1d36e70deea44f06227ce3f2360f2eb6af091abaa6e5765ecfd6f29540b4fdd4"
+    sha256 arm64_tahoe:       "5cc1c6d66854d1e915a2347c9c1b6ff1eb3912efb392ea708314a94c2163c435"
+    sha256 arm64_sequoia:     "6a5c96c74c15557bf62f3fb8b97693b78bf0e3023dd88d78ff5844f5cbc36e68"
+    sha256 arm64_linux:       "254dd6eddbead6eff7415fb5ff5d11c86495487c11735a16b6545b9792e10feb"
+    sha256 x86_64_linux:      "d9f6a01a06755f96d9a3c429dc755c23fdd9bd27e8bc999115a45910764d90fa"
   end
 
   depends_on "cmake" => :build

@@ -1,17 +1,17 @@
 class Skillshare < Formula
   desc "Sync skills across AI CLI tools"
   homepage "https://skillshare.runkids.cc"
-  url "https://ghfast.top/https://github.com/runkids/skillshare/archive/refs/tags/v0.22.0.tar.gz"
-  sha256 "1699160c4e52f21acdb3ea001fd7f527850fb024b5c88e89ef8b0dc8c226fce0"
+  url "https://ghfast.top/https://github.com/runkids/skillshare/archive/refs/tags/v0.23.0.tar.gz"
+  sha256 "88ce7ce3c5a7bd41dc6a6cd9a273ce7c22058224bd90dd839f8a9e5e16fd2211"
   license "MIT"
   head "https://github.com/runkids/skillshare.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "301707eb84ea356c5d94de2875b96518fc834667d1ab98ef786adae32cfab44a"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "301707eb84ea356c5d94de2875b96518fc834667d1ab98ef786adae32cfab44a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "301707eb84ea356c5d94de2875b96518fc834667d1ab98ef786adae32cfab44a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "2ca4e0d605719f357bb1096f6bd3ca6506c954ceb16d7a069bd86751340a6573"
-    sha256 cellar: :any,                 x86_64_linux:      "b40cbe8f5fb663a7d4362f73419b3da978bf91c4a56346be12a72f6f81416bff"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "1d38a0d9f7411ca49519473a5d0c294af5f252febfd1ad1a0fd1b146bb07617e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "1d38a0d9f7411ca49519473a5d0c294af5f252febfd1ad1a0fd1b146bb07617e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "1d38a0d9f7411ca49519473a5d0c294af5f252febfd1ad1a0fd1b146bb07617e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "80139fdba163981e5f56b3550307718104a54ee315cd3cf593c91de7f665e2d0"
+    sha256 cellar: :any,                 x86_64_linux:      "a0986d943d0d1f1237285506be5d7529085c011fd5bde24df5895c8ef0576d05"
   end
 
   depends_on "go" => :build

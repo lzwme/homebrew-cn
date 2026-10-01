@@ -3,8 +3,8 @@ class Torchvision < Formula
 
   desc "Datasets, transforms, and models for computer vision"
   homepage "https://pytorch.org/vision/stable/index.html"
-  url "https://ghfast.top/https://github.com/pytorch/vision/archive/refs/tags/v0.29.0.tar.gz"
-  sha256 "24be57d922927d8a2ac2e8f076f07c3447ddf8f1d25ddbb7b65578f36c9ab8e3"
+  url "https://ghfast.top/https://github.com/pytorch/vision/archive/refs/tags/v0.29.1.tar.gz"
+  sha256 "0a14655bd32095148d93fa595f93aba45dda0d13b25cc7fe86a041340e4a4862"
   license "BSD-3-Clause"
 
   livecheck do
@@ -13,12 +13,11 @@ class Torchvision < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "e43a94c9660ee8f1e523754aa41346c63ce0eb02f6d60e27280ae12b011db449"
-    sha256 cellar: :any, arm64_tahoe:       "fbbec9dc9306b6a63492746cda0893c6367757dbda19760d5fc4bca7fac85386"
-    sha256 cellar: :any, arm64_sequoia:     "4a55da1e9081e733360b38589132ab79bb3a20ffe6c8c518d11c964d00610c1f"
-    sha256 cellar: :any, arm64_sonoma:      "0a359c4c86de8f9e2e4eb0789d8f9e853a9783468a2691c773c713822a2b0786"
-    sha256 cellar: :any, arm64_linux:       "aafdb2835f690982a3fc4c3e1115bd94c2a426aca4a88bc731fcba8428b5ae9d"
-    sha256 cellar: :any, x86_64_linux:      "5357fb84c5f2c4034b8f021e8002f9ed03bf10217d34dd1aa9bb127802d7328b"
+    sha256 cellar: :any, arm64_golden_gate: "b417ec20582bd532f15abd8c99e5458f8d1b0058a919158ed34dd685c4a17d95"
+    sha256 cellar: :any, arm64_tahoe:       "abfeecc1e8512c0a01c613f97bc7dd2303ba258f21762925906668cf5ce61289"
+    sha256 cellar: :any, arm64_sequoia:     "219d899127d785524ff7e47c53c538e763617c5947e4c099c51aef815bce6bf8"
+    sha256 cellar: :any, arm64_linux:       "e96ccba71516430500978fe64c9210aff6adb18703423394c3b060fbfac8e7af"
+    sha256 cellar: :any, x86_64_linux:      "bd151dd7daa0b3a98c2ccbcf31f6878a6d9c4782a8ec6bb80234275a29ae92c9"
   end
 
   depends_on "cmake" => :build

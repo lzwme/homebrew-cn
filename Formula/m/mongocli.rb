@@ -2,7 +2,7 @@ class Mongocli < Formula
   desc "MongoDB CLI enables you to manage your MongoDB in the Cloud"
   homepage "https://www.mongodb.com/docs/mongocli/current/"
   url "https://ghfast.top/https://github.com/mongodb/mongodb-cli/archive/refs/tags/mongocli/v2.0.9.tar.gz"
-  sha256 "5806ac8ba8bfc6e0527a4c8d389195edcf5f40534d485256338dc155520780f9"
+  sha256 "87ec0735839eba17d68d8690d3749144f9ad1eab2614a5861c41befe79f03cde"
   license "Apache-2.0"
   head "https://github.com/mongodb/mongodb-cli.git", branch: "main"
 
@@ -12,11 +12,12 @@ class Mongocli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "bae426beeb93fb836b87c2ff3b9ac2085695866f7458664d794c3bc3b77b13fe"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "9ebfa2a43d685e3c1f5b4f8799def3e77de9033859983548da1d9e74d8278099"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "5199542d9cae04f41a081098e09c2e1157ad482cdd74a6a67715915cd1e0f52c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "c261e142f5436685521935a7166c0251acce6f9c5eeb50de289ea8527e859b19"
-    sha256 cellar: :any,                 x86_64_linux:      "2bf73acd964dcbb9e3fa787a68fa611e78c93720032e68852d0051c26d6b7653"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "cde7d3032bea454de164aae17c82a33cf6c1450c45487e33a7b58443fa30a7c1"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "95588213669285cd90e3fa3df4b313fe05abf8fc5f054afce4d1d419075d932a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "47c2213c5bbce142dde501d609ec8818d51d2da71c30f7cc8ab4d411b5f59903"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "c552dc3ff23b7c5ea48e968e8e36806067aec365716250f9b56e6040805ae3af"
+    sha256 cellar: :any,                 x86_64_linux:      "9dad4ba7b4eb87f484e41e7615735626a9630b2a8048630ab7eb3bc1a8422166"
   end
 
   depends_on "go" => :build

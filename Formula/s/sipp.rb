@@ -2,16 +2,16 @@ class Sipp < Formula
   desc "Traffic generator for the SIP protocol"
   homepage "https://sipp.sourceforge.net/"
   url "https://github.com/SIPp/sipp.git",
-      tag:      "v3.7.8",
-      revision: "741ee230bfda890c8605253b32b449dfef3dd421"
+      tag:      "v3.7.9",
+      revision: "16aff5f67fd776d0bf79a895930c53b72e98ccfc"
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "7b7c8f2c83843426ae8a0ee55bf001e267b07b159b241619bfae550f75cb74ff"
-    sha256 cellar: :any, arm64_tahoe:       "d86175424861489a045269e986f88646395cd3e48b8a3a2beb578026a5c66734"
-    sha256 cellar: :any, arm64_sequoia:     "75d5968b8e0954c9c09f8c81f419a491cc04df6f01fd2adf447f214c66ec8d8e"
-    sha256 cellar: :any, arm64_linux:       "8dbca031af559688827135846853c5d8849fa2bf7afb326f0dc50a0a096ba547"
-    sha256 cellar: :any, x86_64_linux:      "997b814f1b05538c8bfb9ab978fe8610feff992fc03a7891b2f932de9bedb38b"
+    sha256 cellar: :any, arm64_golden_gate: "3e7413ea703fa2da55b773812de9d33412e7f22f53324e372fbe98703bb2507e"
+    sha256 cellar: :any, arm64_tahoe:       "811524259216601de1a45775c38732df1f66d3231d3a716ed6a68eb54d192e21"
+    sha256 cellar: :any, arm64_sequoia:     "2af422175974e7d2102d8bed59e04e65274bb46a8ccaf0f95b8c4dbb60de1c8c"
+    sha256 cellar: :any, arm64_linux:       "e1db0c13fca5dae6d01e36273a21a26f884ed5e1f0b895a4880b9874b07b9fcd"
+    sha256 cellar: :any, x86_64_linux:      "a4505c411a22cc7bcddf58c4345e2bb902ac6f696c36f69f97a9fd776a306ffb"
   end
 
   depends_on "cmake" => :build

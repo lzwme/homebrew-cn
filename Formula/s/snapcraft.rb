@@ -8,6 +8,7 @@ class Snapcraft < Formula
       tag:      "9.1.3",
       revision: "2714626581672a42439dec34b73bae177cbed445"
   license "GPL-3.0-only"
+  revision 1
   head "https://github.com/canonical/snapcraft.git", branch: "main"
 
   livecheck do
@@ -16,11 +17,11 @@ class Snapcraft < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "c4fc6d7fd3dbe31dc37cb92b9c5dcdfb99e9a16fe063edd5a7aaf7fcc0bf13d3"
-    sha256 cellar: :any, arm64_tahoe:       "fff8071ec6f5bee533fda8662d61614db8af14e0af1ecd18508b4cf324e537ba"
-    sha256 cellar: :any, arm64_sequoia:     "bc2b77b99968356a303979b801fbee6f8638391e9d44a90c000afb39c3ed870a"
-    sha256 cellar: :any, arm64_linux:       "d01725b34918c5555f141692d233deb8c6a19fca96416ebb306af4f6668bb044"
-    sha256 cellar: :any, x86_64_linux:      "1d1e4a6301ca97f3f275091c71b7a8391eb9252ef3e2cf93fceba826a2529594"
+    sha256 cellar: :any, arm64_golden_gate: "c34df5f69fb99964f36f0e2e156a5c5ea5b20357b6c81f3362f0f7d59f2650fc"
+    sha256 cellar: :any, arm64_tahoe:       "e0d63974e550344544a28f9bf50d0a20dcfef7b9791c4722b3c94babfaf3ddca"
+    sha256 cellar: :any, arm64_sequoia:     "5ce2f51ec1b8243be0d0165df51cec9445f340c67a6a9f9c16f6c9d784de5f64"
+    sha256 cellar: :any, arm64_linux:       "210de7b4a7d145571c072d0eb80dcf464dfd34eaf14dfc3a3194ec05cb5b3d07"
+    sha256 cellar: :any, x86_64_linux:      "0ad608e049f4de0bf8aab71b5d9aadb33922a91cdd9a851a41ea1dd739678375"
   end
 
   depends_on "certifi" => :no_linkage
@@ -48,18 +49,6 @@ class Snapcraft < Formula
                 extra_packages:   %w[catkin-pkg craft-application==7.2.1 jeepney pylxd secretstorage]
 
   # We hit a build failure with requested 2.4.0ubuntu1 tarball so just using latest Debian
-  resource "python-apt" do
-    on_linux do
-      url "https://deb.debian.org/debian/pool/main/p/python-apt/python-apt_3.1.0.tar.xz"
-      sha256 "daf46b0ed85061ccee64c3aa3004c695b33047f9f62f0de7863966c287731d5a"
-
-      livecheck do
-        url "https://deb.debian.org/debian/pool/main/p/python-apt/"
-        regex(/href=.*?python-apt[._-]v?(\d+(?:\.\d+)+)\.tar\.xz/i)
-      end
-    end
-  end
-
   resource "anyio" do
     url "https://files.pythonhosted.org/packages/a9/d2/f4d173e22df740bc37b1db102b386ba719b66e95b0f0d751f556b387e6d2/anyio-4.15.1.tar.gz"
     sha256 "9f28306018cbd6d329e64a36d58256edff76dd996fe423bc957326e578b82a94"
@@ -106,8 +95,8 @@ class Snapcraft < Formula
   end
 
   resource "craft-parts" do
-    url "https://files.pythonhosted.org/packages/04/d7/10cd8f5ed0392a287d770ea3d3b423f8b1cc749fd1aa67c21baca7250776/craft_parts-2.37.0.tar.gz"
-    sha256 "6dd0ddcedf330190fed9f85b91c80b290bc0f4053020767aa99e471b01717368"
+    url "https://files.pythonhosted.org/packages/f5/dd/ef029e36529a039c5ccf03804cc638f4f80383e0f834ba1999d0df9704b6/craft_parts-2.37.1.tar.gz"
+    sha256 "f38f1c95a93428119971bd03ca7dd202e424068ede06ea8812e974988faf34e8"
   end
 
   resource "craft-platforms" do
@@ -241,8 +230,8 @@ class Snapcraft < Formula
   end
 
   resource "oauthlib" do
-    url "https://files.pythonhosted.org/packages/0b/5f/19930f824ffeb0ad4372da4812c50edbd1434f678c90c2733e1188edfc63/oauthlib-3.3.1.tar.gz"
-    sha256 "0f0f8aa759826a193cf66c12ea1af1637f87b9b4622d46e866952bb022e538c9"
+    url "https://files.pythonhosted.org/packages/7a/d8/a1bcc8ba112a627f8ffbdc212a78ce18d3ac07e91a5ca65d27918eee25a1/oauthlib-4.0.0.tar.gz"
+    sha256 "efb274799819440f95b4ab3b818869f1ce9ae26c5beacba0201d1a1b76b54f86"
   end
 
   resource "overrides" do
@@ -256,8 +245,8 @@ class Snapcraft < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/ea/dd/65804b0c2925a1c821a05502ea57517b69a073ff400d25ab9faa3a2cf012/platformdirs-4.11.12.tar.gz"
-    sha256 "e8dc1cb58f1153fd7f61db1374317770baababec2480b37b8f01c6cc25b45267"
+    url "https://files.pythonhosted.org/packages/c3/8a/84ef03c1c83eacd7cc4540b05428a93b5cd4e42f62fb0b98ac2cb6ed3a6d/platformdirs-4.12.1.tar.gz"
+    sha256 "38da801a4af303033cbffccb39030db22bf0473e6414309b02acebeee7ca8bf1"
   end
 
   resource "protobuf" do

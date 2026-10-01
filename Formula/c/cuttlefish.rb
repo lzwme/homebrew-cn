@@ -1,17 +1,17 @@
 class Cuttlefish < Formula
   desc "Build compacted de Bruijn graphs from references or reads"
   homepage "https://combine-lab.github.io/cuttlefish/"
-  url "https://ghfast.top/https://github.com/COMBINE-lab/cuttlefish/archive/refs/tags/v3.0.3.tar.gz"
-  sha256 "dbe3fff5aebf72bfee2fc0f3f81fc2ec4ce9e599f52f3e9f3485cc8931679a7d"
+  url "https://ghfast.top/https://github.com/COMBINE-lab/cuttlefish/archive/refs/tags/v3.1.0.tar.gz"
+  sha256 "10eb5b1d7ec4ba4bcb76a10e0d14bace4a2a624f9d8927647b5b82eabe3320b2"
   license "BSD-3-Clause"
   head "https://github.com/COMBINE-lab/cuttlefish.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "d2e3b7b238f259f34e01cb7c59bdf2ebe94c8223c4029c05376364a19678caa4"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "098b1b3c07bb65a6b1a252a8fdb3a7ebd25617b7dab742e8d84800bf1f1a4383"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "d91db1c5e4f45ff745cb7b4ce4ea1124471dad433581e2824f8d7bcae9fef570"
-    sha256 cellar: :any,                 arm64_linux:       "f7e725f1249eb7f48d01c3ae472a9d370ee6836ae664c6072253d4136b244ab8"
-    sha256 cellar: :any,                 x86_64_linux:      "b44ce51c38cdd3419400dba7b003efdb4d5d4eb11fc9bdce3d1bd39abdb249c6"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "790c1bc93135f66ccffa1a453b8ee7ada035426436e9ae341adfee38b2c7e848"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "f25452ab1ab0ce9a1e3627d8f7aac941117e0b8b7d9e13eaab4feac0a33847fe"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "e3001392dd25e4f8f0d3bd0ae9fdaca1eff6860d6e4713123989201ef1057bea"
+    sha256 cellar: :any,                 arm64_linux:       "f4185b7ad89821d165524686cffe30bb797c18097aa4f53fa9fd47a8e454fa14"
+    sha256 cellar: :any,                 x86_64_linux:      "00e9331cb63accce73e35a844436a75a36daabad1e7396d69cb5906f22a904ec"
   end
 
   depends_on "rust" => :build

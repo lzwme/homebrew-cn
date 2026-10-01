@@ -1,8 +1,8 @@
 class WasmTools < Formula
   desc "Low level tooling for WebAssembly in Rust"
   homepage "https://github.com/bytecodealliance/wasm-tools"
-  url "https://ghfast.top/https://github.com/bytecodealliance/wasm-tools/archive/refs/tags/v1.259.0.tar.gz"
-  sha256 "c3ee7f0757d1220bd4b46260c4fad4549ceea211f91d706649c1ba24ca7fdc17"
+  url "https://ghfast.top/https://github.com/bytecodealliance/wasm-tools/archive/refs/tags/v1.260.0.tar.gz"
+  sha256 "a0fea568085f3f33f1f8064fe28d34f27fd12d8a083427fb6a3fb5f445af2770"
   license any_of: [
     { "Apache-2.0" => { with: "LLVM-exception" } },
     "Apache-2.0",
@@ -16,12 +16,11 @@ class WasmTools < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "6568a78ca72b9c983973250bf249714da22d886e5b78910919c7c75f12d4a9bf"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "793aa16b013417465a4e463054fdaa810050b477c6b3e23bfc4158359c3f3028"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "a0b52727a58c491fc116ecee8c3d3feb2904fdd3b309bac7641c8d79d3729ec9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "f30e43f626c4feb07c91da6458d82adaad3bc3700c1fc1b543628872a387c86a"
-    sha256 cellar: :any,                 arm64_linux:       "c7dc84f1ed3db946f4ae1ef9d2a799e08a3040278aab9c4dc0842cdc0e4d6ec0"
-    sha256 cellar: :any,                 x86_64_linux:      "21575b67bed36f24015f5fa28ba65c1cfba4294c49206b79f3f4baf7ab1889f4"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "1394e9db173c4ba5dada0c62717c46a888c5ec90a344ae9aa31fc5002196564e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "07d76b7c414703970a98a1068cb6f589de17d2753ae24e1234b253f558937a1b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "5bd99aed9717b52d098df09d54df81061cd05b658272ecec19508d257f6607e3"
+    sha256 cellar: :any,                 arm64_linux:       "9034d9d693f56048300e62ecc96a92280a8f448ffc862709ec7ed4e9c124fa41"
+    sha256 cellar: :any,                 x86_64_linux:      "1caba430c7104ab482ef706f4a9fb38d530d15df4da640c3821f92f33572a872"
   end
 
   depends_on "rust" => :build

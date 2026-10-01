@@ -1,20 +1,17 @@
 class Libsoup < Formula
   desc "HTTP client/server library for GNOME"
   homepage "https://wiki.gnome.org/Projects/libsoup"
-  url "https://download.gnome.org/sources/libsoup/3.6/libsoup-3.6.6.tar.xz"
-  sha256 "51ed0ae06f9d5a40f401ff459e2e5f652f9a510b7730e1359ee66d14d4872740"
+  url "https://download.gnome.org/sources/libsoup/3.8/libsoup-3.8.0.tar.xz"
+  sha256 "bbf08fa3e03a88c31a3d27a0d87cb422e9490f2d08e149211103df6d638a2238"
   license "LGPL-2.0-or-later"
   compatibility_version 1
 
   bottle do
-    rebuild 1
-    sha256 arm64_golden_gate: "8b35fb6221f657509787c02c3d82b05b54d4e9ca66b80a77a12b7e5649e3588d"
-    sha256 arm64_tahoe:       "5f72f9159dbbe2d66fe9fe9b2dedeacba280390f50d10ff337b35d2343fedf0c"
-    sha256 arm64_sequoia:     "85f9669848a5936194b531c35fdbc011ad26b856b235ea0aab0386153694cadc"
-    sha256 arm64_sonoma:      "1b11895e9bc1ae1cb472689c9fdeec59e306adaa9d572bd5bc60529c0cb82d75"
-    sha256 sonoma:            "6829a788855e2989eaa02a3f3cd96f043a8902729d045c9f36f620653c7ef5fd"
-    sha256 arm64_linux:       "f90f3792a0ace929f8b719754fa5fac11cb8fa1677f1e64dd50083bc007ed7a6"
-    sha256 x86_64_linux:      "7ebfdb0452d9fb68b33bc374afe63441ce9ee387f5b666342a617f1074bbf128"
+    sha256               arm64_golden_gate: "a1fbb62038cdd7bc55ce07ae592eeb0df01520e37a211c95aeb0fd5d82c98415"
+    sha256               arm64_tahoe:       "3d0e6032d46f74fa113ff206c1d5c54540e8cc18c39c825c4545e2955a75db0c"
+    sha256               arm64_sequoia:     "a8f0e6cbcbedc43bcecc98815f2abcc764bd4d7f33f9c574c4dbfe882c079160"
+    sha256 cellar: :any, arm64_linux:       "815c66094a8ab73fb8ba1a60c9ea1a192c027a480d4889d7410ae1a90e8599a8"
+    sha256 cellar: :any, x86_64_linux:      "657404066287b2d6dc7dc6ed0ecd56f7d1e82a6ad7a16fcfe3cfcac7f3d5b508"
   end
 
   depends_on "gobject-introspection" => :build
@@ -28,6 +25,7 @@ class Libsoup < Formula
   depends_on "libnghttp2"
   depends_on "libpsl"
   depends_on "sqlite"
+  depends_on "zstd"
 
   uses_from_macos "python" => :build
   uses_from_macos "krb5"
@@ -40,6 +38,8 @@ class Libsoup < Formula
     depends_on "brotli"
     depends_on "zlib-ng-compat"
   end
+
+  allow_network_access! :test
 
   def install
     system "meson", "setup", "build", *std_meson_args

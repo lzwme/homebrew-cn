@@ -1,8 +1,8 @@
 class Supabase < Formula
   desc "Postgres development platform"
   homepage "https://supabase.com/docs/reference/cli/about"
-  url "https://ghfast.top/https://github.com/supabase/cli/archive/refs/tags/v2.118.0.tar.gz"
-  sha256 "12067ce52ad06669442103c383e332c06555afea0922f104de334501a874f9ab"
+  url "https://ghfast.top/https://github.com/supabase/cli/archive/refs/tags/v2.119.0.tar.gz"
+  sha256 "21a07bc473f6acb38cf056bf6d83a1c3d84f3a13f00859826d8b8bb9bb0e4d05"
   license "MIT"
   head "https://github.com/supabase/cli.git", branch: "develop"
 
@@ -12,11 +12,11 @@ class Supabase < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "23599f5c02f75b37ecbfdf857bf1afea08340075925ad71d0f1e4eab5dbdbb04"
-    sha256 arm64_tahoe:       "3b214316689b3d208b107aeb781e9cbf3069d730fccbf24cc383d31b0cd07b73"
-    sha256 arm64_sequoia:     "7c55b87b986e8b9afefa05ccd0c8f23aa3da5ffc425c0d3e935c83814726c1de"
-    sha256 arm64_linux:       "0cd637c90dd80845aabacae652c07be8d173b60a0b0583f9033cfbfd3058bcd0"
-    sha256 x86_64_linux:      "8e2b81e28e546b745b93625b9b505195816517fa1e677ec64d10fce42cf68f96"
+    sha256 arm64_golden_gate: "eac119efaabd729d3233ce1c40b2a713a3c9ce5f35d14a6422ba8ea4f6a0767e"
+    sha256 arm64_tahoe:       "21a370119adf90d7169c513cdcfbbfccc43b0de5319cfa504f9cbd4e4723d145"
+    sha256 arm64_sequoia:     "2a5d12ccb53ee6eb17662c029d58af22d7b732b146f3751fe5af806d17259298"
+    sha256 arm64_linux:       "161303afe6a9834ea43ebc0115a7adc3beb15a730f35cff5f29f26051833f7fd"
+    sha256 x86_64_linux:      "31230514281c495345fedadf932aa9fc298c864ed4d252cd9a84b07fd7dd4b97"
   end
 
   depends_on "bun" => :build

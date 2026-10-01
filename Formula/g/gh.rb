@@ -1,8 +1,8 @@
 class Gh < Formula
   desc "GitHub command-line tool"
   homepage "https://cli.github.com/"
-  url "https://ghfast.top/https://github.com/cli/cli/archive/refs/tags/v2.101.0.tar.gz"
-  sha256 "a266fe8575c0e061b987920c1831a15f71bf0036a8729a5ebb93c2fb0164899c"
+  url "https://ghfast.top/https://github.com/cli/cli/archive/refs/tags/v2.102.0.tar.gz"
+  sha256 "08bf0ef8b4409893889175e0f5279d30d6edd96465816042c0d7c72eac598158"
   license "MIT"
   compatibility_version 1
   head "https://github.com/cli/cli.git", branch: "trunk"
@@ -13,11 +13,11 @@ class Gh < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "7ae24b7f4a10249212370f0028103a72c235910258b28ddf20aca48aa9d95cae"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "8019604f792cceb8a24bfdba13458457fb98a889144b29fc51e2df022fe4865c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "ba8652a45f996be2c6ee389e567d7719624c45a3e3a97b7bed55f64d20548cc8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "751efd50f8ec1f0fb66696c12b5d48b266e624d421d57f85f35cb804da863c61"
-    sha256 cellar: :any,                 x86_64_linux:      "27b7df78ab30d0a99ebf05f0f0c0b8191935ddacdc901c6225ec162ef7753d53"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "318851adb276a1dea4bd8946a992238627f67af6452c76fac7b86a6484401ca9"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "c2ca0cdf515e105bfc29ed033e0399a7f2cb394350a8846eec13c24025c39ad8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "18e4616fad2b57c7338c590ff74a5c04ea57667a5728e80a39ebd450647db38d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "8c877d6f322155b0060e369ef7e663b451ca070bf645214c8eab5b495496f103"
+    sha256 cellar: :any,                 x86_64_linux:      "a2b7a6d6c692202477adcd2dd063af49546bb834f0bae5b002002539d20676e1"
   end
 
   depends_on "go" => :build

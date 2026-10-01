@@ -1,10 +1,9 @@
 class Ejabberd < Formula
   desc "XMPP application server"
   homepage "https://www.ejabberd.im"
-  url "https://ghfast.top/https://github.com/processone/ejabberd/archive/refs/tags/26.07.tar.gz"
-  sha256 "7b2e4efe2d5c867d2ced9cb1391731c5e6b9accd6f166ec71e734a3ae97813d7"
+  url "https://ghfast.top/https://github.com/processone/ejabberd/archive/refs/tags/26.09.tar.gz"
+  sha256 "2853a0ccafc0343ba47a3a848267fd9971c521d594a29c4caa8114bc511f10ab"
   license "GPL-2.0-or-later"
-  revision 3
   head "https://github.com/processone/ejabberd.git", branch: "master"
 
   # There can be a notable gap between when a version is tagged and a
@@ -16,11 +15,11 @@ class Ejabberd < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "ca73720bd02f623818df3ada8b152ec4b2d518cf565c52fec8fdbad465b98585"
-    sha256 cellar: :any, arm64_tahoe:       "c3e892a0cca8085ce74a4e7a925dde78eb474a6e08eeb8e130213fc516249faa"
-    sha256 cellar: :any, arm64_sequoia:     "39733edff651dbfc6a7188403c90fa27805bffc4ffc681cdbe45a8cba0f661d8"
-    sha256 cellar: :any, arm64_linux:       "0d578b861cf64d64cb15c326d87aec19c0cc9e2de8fdbf5095b332553c0d25aa"
-    sha256 cellar: :any, x86_64_linux:      "9d7b0231fe81ff2394c4f0060ce99857b728513b4b902384bfb1fb330e910db5"
+    sha256 cellar: :any, arm64_golden_gate: "66b8495dea8063935e5bca3c2b30084455a35212c1fe51011f7bc1aebe7351c7"
+    sha256 cellar: :any, arm64_tahoe:       "e07909261f40164522b2bf1a94b9cfe41c83e9ebf5e1f59627b3b2eefed90329"
+    sha256 cellar: :any, arm64_sequoia:     "7362cc0b5087e94cebe20a4756af5e314603cc663a73b60332d00a57830751d2"
+    sha256 cellar: :any, arm64_linux:       "80d5d135529694ca90a6dae948151884fbd7d22dfd93a707ac45690345d2b734"
+    sha256 cellar: :any, x86_64_linux:      "0ccb4d1beb39ad5dabd1b932bc7d4514ed8765760238c29fefd64a82ac6aeec3"
   end
 
   depends_on "autoconf" => :build

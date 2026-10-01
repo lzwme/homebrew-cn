@@ -4937,6 +4937,7 @@ Homebrew-homebrew-core/Formula/m/mockserver.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/moco.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/modal.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/models.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/m/modflow6.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/modman.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mods.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/modsecurity.rb, Homebrew/homebrew-core, 1
@@ -13753,6 +13754,7 @@ Homebrew-homebrew-cask/Casks/m/mangodisk.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/manico.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/manictime.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/manila.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/m/manus-cue.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/manus.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/manuskript.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/manyverse.rb, Homebrew/homebrew-cask, 1

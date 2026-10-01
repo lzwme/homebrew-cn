@@ -1,18 +1,17 @@
 class AwsChecksums < Formula
   desc "Cross-Platform HW accelerated CRC32c and CRC32 with fallback"
   homepage "https://github.com/awslabs/aws-checksums"
-  url "https://ghfast.top/https://github.com/awslabs/aws-checksums/archive/refs/tags/v1.0.0.tar.gz"
-  sha256 "6c058812f5b537ce58eac1e529f441ff387a652ea62cbe9b844f9188339221b1"
+  url "https://ghfast.top/https://github.com/awslabs/aws-checksums/archive/refs/tags/v1.0.1.tar.gz"
+  sha256 "b24d4896e8406ddff8080037936c86d539929369918265694bedcb887cbe602b"
   license "Apache-2.0"
   compatibility_version 2
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "ce7b44604d62aaddd66eb329fe763795e7ebc7d2038da936cd51e0939bdcb005"
-    sha256 cellar: :any, arm64_tahoe:       "93cd0e5e990300033e5bc17facaf0594d9c2340d03848b3a0ad902737ff30e3d"
-    sha256 cellar: :any, arm64_sequoia:     "8047f945f26b39339e1e42cf913b316841acc8aa8b8de4d2b6ff0a0387094c4d"
-    sha256 cellar: :any, arm64_sonoma:      "fc90f1d09f6059255be7eab027ccc62779c28c5ecfda9b5453bbcc44fd12d4f6"
-    sha256 cellar: :any, arm64_linux:       "3bc35f4ed2476aa9557d0f846ce78a1277253b1946568f3af585b2fcba37e31a"
-    sha256 cellar: :any, x86_64_linux:      "f616469e31ccb7a85775295452d68cc8d8d9e286dd00eec602371f189aa93789"
+    sha256 cellar: :any, arm64_golden_gate: "9ce0e60dd5df71ef7cba4bdb9cd4bdecfa08a47557ff2c8fc7d262665de57942"
+    sha256 cellar: :any, arm64_tahoe:       "9fce0dae86f6403d7ed0b01c302b143031c87dc66350240a8fdc3dae6cdc6761"
+    sha256 cellar: :any, arm64_sequoia:     "f27ff2f02ea64ec556fe055173010e0d482e6306bf106d593c9e4a0255254a8a"
+    sha256 cellar: :any, arm64_linux:       "834e56c60b2fc82b73da34b21398dc9e392304ccb0d9139d9111f9c235a4b80c"
+    sha256 cellar: :any, x86_64_linux:      "69a90ac1aa866ca9b0967c51aaab8d56f065d643924c210389849eece5c8e245"
   end
 
   depends_on "cmake" => :build

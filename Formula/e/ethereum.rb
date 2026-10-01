@@ -1,8 +1,8 @@
 class Ethereum < Formula
   desc "Official Go implementation of the Ethereum protocol"
   homepage "https://geth.ethereum.org/"
-  url "https://ghfast.top/https://github.com/ethereum/go-ethereum/archive/refs/tags/v1.17.6.tar.gz"
-  sha256 "b358cd5abb0f5639cd2409877d73f3d5002d834c3e781734a1010dda1c0914ad"
+  url "https://ghfast.top/https://github.com/ethereum/go-ethereum/archive/refs/tags/v1.17.7.tar.gz"
+  sha256 "1b2b0759240d70d959d43fd9d2f9df3fe48ed990f270bb5fd9f593f61ef3127b"
   license "LGPL-3.0-or-later"
   head "https://github.com/ethereum/go-ethereum.git", branch: "master"
 
@@ -12,11 +12,11 @@ class Ethereum < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "53c6b84ae67d4016e825311faec1aad55fc8f49882ad9e6fc5ca42aaec29416d"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "4a1272a1403773cfcfe01ac109531dac268c4fe7c74ce12fea8761d65fe8ffd6"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "074e5f0071d6ebceb2b54bd9aeeaacf436daef0f749ea701012cee6ea02c5079"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "031587f595a246a871c6886f99e4f390b7211214a2b8e30df8fb1c060eafa36f"
-    sha256 cellar: :any,                 x86_64_linux:      "a57e5f5df64f37d2e3e5bd97915c85f8ca15101c477bcfa938b6ee0f64383ed1"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "14439eddfc9f8429cce9d83a06bbaeebab7af493e7640c4050b4a6566cbc5057"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "d28ccf0a41b835a50b1f6acf7b3939e19d623a0a15091a3346808752685fcb6f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "778ae881ad9b20b5efa484aceac58949c56c965cf39e9bc2ac47ddd0b6db1469"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "355f62d5d4457f9eb8c42eda363ee403ccaa4a2e13cc4aea4f695d9d7989aaad"
+    sha256 cellar: :any,                 x86_64_linux:      "1059df6616ede06510d28f09b07e85ec7585ed3a12b3b90ee86c4a7a6c99fb8c"
   end
 
   depends_on "go" => :build

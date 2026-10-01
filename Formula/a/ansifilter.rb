@@ -1,8 +1,8 @@
 class Ansifilter < Formula
   desc "Strip or convert ANSI codes into HTML, (La)Tex, RTF, or BBCode"
   homepage "http://andre-simon.de/doku/ansifilter/en/ansifilter.php"
-  url "https://gitlab.com/saalen/ansifilter/-/archive/2.23/ansifilter-2.23.tar.bz2"
-  sha256 "ff9efcfe8623593a54cd7bec2499711ec2a49a425ab50c61f2148c6d7450d525"
+  url "https://gitlab.com/saalen/ansifilter/-/archive/2.24/ansifilter-2.24.tar.bz2"
+  sha256 "e1f2ae665e49631c30f483e9048d4f6c7fc6f4854d945fbe3c68995c6bf5ec65"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -11,13 +11,11 @@ class Ansifilter < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "5a0470fdd4ed8811560e4004335b2dbe0e00c7904e9b5cc2e8393d0f361c875d"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "df4619471e2f831a7964c67ed54c85640697d9d482347c7619fb235a265dd674"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "5530b0be66b1bcf431848fa05c96c0a1ca46a9e57053c4a5ef525e0fa1450b7e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "23c823ac7ac45f9235d468a4e4c91017f8f49705f08249f969bfbfff04dbe684"
-    sha256 cellar: :any_skip_relocation, sonoma:            "db931624878ee3e4acd1efccedb770035c90bfdf209d9cb8654f0abeb0aadf98"
-    sha256 cellar: :any,                 arm64_linux:       "01f4a5303e79fa2756a3a3f5945cf25db9b12b9a245c434dac8ff92cd32bb44d"
-    sha256 cellar: :any,                 x86_64_linux:      "393a1cdaf31a9a74d34e9e8b92dd3de3066d90b0b84afb2a0c297195b737039e"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "ce2d3b8f8b9daf5eb918fc434b3b463f535e831baa3019a29bcc29342e979de6"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "26ead30ff7bba9161b224ae343fe5ff3580c0d0e23e8ea700a99ff11e8fd8569"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "464237c8e8b65a55a9d0230659d8f3f6fedb67fec2803ba3b5b3802f6e8e91d1"
+    sha256 cellar: :any,                 arm64_linux:       "ee7a9eb4a413f662525810d547f672a6f57702bf58dfde372ec2193f60b8979b"
+    sha256 cellar: :any,                 x86_64_linux:      "cf3d002314bd6fa6f9ca475909141cfcc3b2bbbbf5b6b6055525a7879e0e4a50"
   end
 
   def install

@@ -2,8 +2,8 @@ class Clusterawsadm < Formula
   desc "Home for bootstrapping, AMI, EKS, and other helpers in Cluster API Provider AWS"
   homepage "https://cluster-api-aws.sigs.k8s.io/clusterawsadm/clusterawsadm.html"
   url "https://github.com/kubernetes-sigs/cluster-api-provider-aws.git",
-      tag:      "v2.13.0",
-      revision: "a84670fca02690c9e644fadcbbbf967a6e6f89d6"
+      tag:      "v2.13.1",
+      revision: "6883178c3a1f426ecf70bc7dcf3ed0f4189e21a6"
   license "Apache-2.0"
   head "https://github.com/kubernetes-sigs/cluster-api-provider-aws.git", branch: "main"
 
@@ -13,13 +13,11 @@ class Clusterawsadm < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "9e6ae5a03ca180eeb79ed552bb9ec9a7ba2ddf0236ad3c8634b5504d5ec34ac4"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "46049f8c8adde5685d4b09f436ae6604125bab1b013c5d677eec853d08a9eb80"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "84dc3e6d70a67fe418e5958442db320713bf20863744be0fc10c92a3e58a4383"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "e6583d38ded1b993c113f1dac3d6e183900a291b50b0bb4af475106c18c95105"
-    sha256 cellar: :any_skip_relocation, sonoma:            "5708106d5d9722d19aa673a466ce549f23b6f59cbbcd64d3cdcc9f2d5310048c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "22772f978a2d0f5a305cc08c38e167bba6e2ef3a271519a926ad8312737de137"
-    sha256 cellar: :any,                 x86_64_linux:      "5cc393efc88ab2e9d11a4ca7222c64fb7e2bf608463d7eca86e2e842ed8d935c"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "12bb246ee0d1290bb2d60d929bd191121bc592d569c6205a2796503e6a34cc7f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "2d99be941e33c25667d2dd5dfa6325fe6cac950179246c0aa0662689e48779e9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "4826f2cd057fded5fd59e4e5e0fc8d47dc380bdd6095342a5a03cb421ee26210"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "87f85aefb2ed42e4e5fc87a7df938752577224b297ea6b3f0209b5bd3c6e3f52"
+    sha256 cellar: :any,                 x86_64_linux:      "7bb7f78eeef7b9948d7ae70fe9757821c84657a22bd79ca5a2f868ab9749c6ce"
   end
 
   depends_on "go" => :build

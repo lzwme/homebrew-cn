@@ -1,8 +1,8 @@
 class Stackql < Formula
   desc "SQL interface for arbitrary resources with full CRUD support"
   homepage "https://stackql.io/"
-  url "https://ghfast.top/https://github.com/stackql/stackql/archive/refs/tags/v0.12.718.tar.gz"
-  sha256 "bad9811684ee9164323c612581774d9163af811f251c6b8367c1b6a442e30ba9"
+  url "https://ghfast.top/https://github.com/stackql/stackql/archive/refs/tags/v0.12.732.tar.gz"
+  sha256 "02bcaefb0dc3aa9beaab3daa9d432684491c940094385c448d097fb1b79ba490"
   license "MIT"
   head "https://github.com/stackql/stackql.git", branch: "main"
 
@@ -12,11 +12,11 @@ class Stackql < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "eadb28640460991e197a8c08f3e78e18bc901b15ac3b17cd05fd293dfa329d94"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "eadb28640460991e197a8c08f3e78e18bc901b15ac3b17cd05fd293dfa329d94"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "eadb28640460991e197a8c08f3e78e18bc901b15ac3b17cd05fd293dfa329d94"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "47adafbf2cb4b8738307d255a22be0eb26466e3d97dbabd9d54fcc1738f536fd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "f3b60be856539def0ac0607d35256eef87daa868b47f5bc83050f0d188d90bef"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "f6869d4b12727a4b1b64725b79177881df57d1b5ae2cb327fa5691ecc0e78916"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "f6869d4b12727a4b1b64725b79177881df57d1b5ae2cb327fa5691ecc0e78916"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "f6869d4b12727a4b1b64725b79177881df57d1b5ae2cb327fa5691ecc0e78916"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "db27712796f62a21b8ab345768ec7ed8f0d005254ed9792cdcd5238dad163b73"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "b3c634c1aa877c47198c2e6c3d68bde1db2e982868202903fe860ebfe4149402"
   end
 
   depends_on "go" => :build

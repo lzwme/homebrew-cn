@@ -1,8 +1,8 @@
 class PythonAT313 < Formula
   desc "Interpreted, interactive, object-oriented programming language"
   homepage "https://www.python.org/"
-  url "https://www.python.org/ftp/python/3.13.15/Python-3.13.15.tgz"
-  sha256 "c28d9d213c09b5b5ab2c29812950e12f746999e099b82894231be954b26baed9"
+  url "https://www.python.org/ftp/python/3.13.16/Python-3.13.16.tgz"
+  sha256 "cfac63bddf956deafb1172ca131ae5dcaafd6f95056086e233fca205593ed427"
   license "Python-2.0"
   compatibility_version 1
 
@@ -12,15 +12,11 @@ class PythonAT313 < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "6c7740949c8a92290edcb64a358149759a97a7b8133fdc18741dcd69ff5d40d5"
-    sha256 arm64_tahoe:       "02e3c9b06f15a5aef1509838ca3572f111588ffb395c638148b54b0cf041848e"
-    sha256 arm64_sequoia:     "a7ce66c50eeee32186f6db8054ff259cf480942e8bf10767588d47cb45a97692"
-    sha256 arm64_sonoma:      "ae7e54b451cb0e3269c005e555b1ab01fb7f4dc63290e11a0689f91a303b95ca"
-    sha256 tahoe:             "144ba6fae15d158a69c66cc3d0228beccf10ee69d0523f350bb64717d7107a67"
-    sha256 sequoia:           "f2d7049c87cba28e4dce89c45bd3566ccf51441cad33c19e9e67525c603c1453"
-    sha256 sonoma:            "778fefac480f5167985a755f40c2c61c864be9f16d24388cc0fac06e7312345f"
-    sha256 arm64_linux:       "09232f1cc55cf6bd317cda47ef73b480d8c83052f298774c6f0a53e12f538ec3"
-    sha256 x86_64_linux:      "4cdbffcfe9e2b2d9a5c28597d8e00d2dc995962785c25a098b2e4d8298edec54"
+    sha256 arm64_golden_gate: "b62261cf377c58d5c1fdd16886ff563c26825239eba9b1e187a511819ddf2565"
+    sha256 arm64_tahoe:       "f37cb3f3f84cb552ee52e50f6b88c45817cf188c870c38e59f511aa644f07e95"
+    sha256 arm64_sequoia:     "4092a0e35ed492a6bb1004a672bebb4b336a5ca8c2bf1f9ebaff618fad887bc4"
+    sha256 arm64_linux:       "2381bfe3cac375017508f7d4aa8ce7427ad5ef495bac92791c55f7ac05f8beb7"
+    sha256 x86_64_linux:      "69b468332906f6627f99664b668eaea6c182c8f0f736cc0d918fd14cc167e998"
   end
 
   # https://devguide.python.org/versions/#versions
@@ -50,8 +46,8 @@ class PythonAT313 < Formula
                 extra_packages: %w[flit-core pip wheel]
 
   resource "flit-core" do
-    url "https://files.pythonhosted.org/packages/46/ef/34533186e76c526d9ec17a1ad9a10c7354cbfb20f51583cc36dfe4bdccd0/flit_core-4.0.2.tar.gz"
-    sha256 "b6929defd93884b584d7c87829e0e7b5c26ed6be17b0b873979019314aa841c8"
+    url "https://files.pythonhosted.org/packages/e7/91/add211b38c357bf1b94900b4f79c34661a92be65c0243d2b0a3393c5092d/flit_core-4.1.0.tar.gz"
+    sha256 "62e12b63ead8335b37f59fabb977c7167fe476dafb5e41785dfa8c9aff843bc6"
   end
 
   resource "packaging" do
@@ -60,13 +56,13 @@ class PythonAT313 < Formula
   end
 
   resource "pip" do
-    url "https://files.pythonhosted.org/packages/db/96/e6f8e9d9d7b9cc4457092712a7e919c3186aa2c2fa9ffed2c5d29cc947e8/pip-26.2.tar.gz"
-    sha256 "2d8542afcc84cdd8e846c2b36b2861fad1da376dd98f8e7113e9108a3c331690"
+    url "https://files.pythonhosted.org/packages/ae/15/4500e320e6b101ec3b719ae85b697d9940b6cda672bc555bd6016fc60c6f/pip-26.2.1.tar.gz"
+    sha256 "f6ad667e89a1fe78046c8f13232b247200f5258d7828f3f7883d660878e0813f"
   end
 
   resource "wheel" do
-    url "https://files.pythonhosted.org/packages/39/62/75f18a0f03b4219c456652c7780e4d749b929eb605c098ce3a5b6b6bc081/wheel-0.47.0.tar.gz"
-    sha256 "cc72bd1009ba0cf63922e28f94d9d83b920aa2bb28f798a31d0691b02fa3c9b3"
+    url "https://files.pythonhosted.org/packages/d0/20/50ed6bdf27dec98b568a8ae25dc599f35baa3d9709f9e83fd1edb56b9a90/wheel-0.48.0.tar.gz"
+    sha256 "94800765601e9171bf5d58d066e640662842bcedcbab982b2c90787a2c987322"
   end
 
   # Modify default sysconfig to match the brew install layout.
@@ -408,12 +404,6 @@ class PythonAT313 < Formula
                f'     You should `unset PYTHONPATH` to fix this.')
       # Only do this for a brewed python:
       if os.path.realpath(sys.executable).startswith('#{rack}'):
-          # Shuffle /Library site-packages to the end of sys.path
-          library_site = '/Library/Python/#{version.major_minor}/site-packages'
-          library_packages = [p for p in sys.path if p.startswith(library_site)]
-          sys.path = [p for p in sys.path if not p.startswith(library_site)]
-          # .pth files have already been processed so don't use addsitedir
-          sys.path.extend(library_packages)
           # the Cellar site-packages is a symlink to the HOMEBREW_PREFIX
           # site_packages; prefer the shorter paths
           long_prefix = re.compile(r'#{rack}/[0-9\\._abrc]+/(?:Frameworks/Python\\.framework/Versions/#{version.major_minor}/)?lib/python#{version.major_minor}/site-packages')

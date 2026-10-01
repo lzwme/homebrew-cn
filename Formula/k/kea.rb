@@ -3,10 +3,9 @@ class Kea < Formula
   homepage "https://www.isc.org/kea/"
   # NOTE: the livecheck block is a best guess at excluding development versions.
   #       Check https://www.isc.org/download/#Kea to make sure we're using a stable version.
-  url "https://downloads.isc.org/isc/kea/3.2.0/kea-3.2.0.tar.xz"
-  sha256 "14bf695d37b65b9b1bf550fea5d0adaf9806c50e5419ef2a176a4b8e9aade3df"
+  url "https://downloads.isc.org/isc/kea/3.2.1/kea-3.2.1.tar.xz"
+  sha256 "3478220be62b3aa361a2c7f97d5d2989b934f7864e82d4bd17056e1e208b9735"
   license "MPL-2.0"
-  revision 1
   head "https://gitlab.isc.org/isc-projects/kea.git", branch: "master"
 
   livecheck do
@@ -15,13 +14,11 @@ class Kea < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "63b52a6ac23ad8e6f0d271281e9ad2ab1ec4f1af3e18f275c3b91e93d9f1e815"
-    sha256 arm64_tahoe:       "759a63203ef99f498d69f5d04042d2e1713c29b3b1bd494996bab76eb4fafd3c"
-    sha256 arm64_sequoia:     "a66e27fc845bad65651f77cf331fe7c1dc45bee6fba18f3c6ca7da8a6bd78466"
-    sha256 arm64_sonoma:      "1e831fa6d2dde7df690e9da68a9e4332909f861ebb5313b58bdf79d2f5499024"
-    sha256 sonoma:            "c3f6816a15fedec482f4fce2787de82f4901f0d99bcd172dc9e72b44b85002ed"
-    sha256 arm64_linux:       "a0f7281e19533288a569275df5cf8b0f55b7e46e2c5456923f31abe6ea074d37"
-    sha256 x86_64_linux:      "1553fe10bd02eb1f6299b45978e21b36daf5ac0f03ae7dbc6b8325ad2d8f8766"
+    sha256 arm64_golden_gate: "be5dc2ab36b9d8ca6c63f6c9a6b5ad5db89c20afe8362639037dd19f53a3d2c3"
+    sha256 arm64_tahoe:       "c280bb0c0e457809def0fa213da09a7b66c26c71999af180cecd4016959e50a6"
+    sha256 arm64_sequoia:     "09165f679b1b8953d170fd380d13f01aa9639222d6c5922d848baa961e2576ce"
+    sha256 arm64_linux:       "480b658ab8687d4ee1db93ceb9b91321de9b7b8f415835c11c8640e34269cb3b"
+    sha256 x86_64_linux:      "2689b6ef31a99a7ff28f2665f905cac253593c079cb6816b2b49b601588d1d17"
   end
 
   depends_on "bison" => :build
@@ -31,7 +28,9 @@ class Kea < Formula
   depends_on "python@3.14" => :build
   depends_on "boost" => :no_linkage
   depends_on "log4cplus"
-  depends_on "openssl@3"
+  depends_on "openssl@4"
+
+  deny_network_access!
 
   def install
     # the build system looks for `sudo` to run some commands, but we don't want to use it

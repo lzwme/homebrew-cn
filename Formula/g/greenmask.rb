@@ -1,8 +1,8 @@
 class Greenmask < Formula
   desc "PostgreSQL dump and obfuscation tool"
   homepage "https://www.greenmask.io/"
-  url "https://ghfast.top/https://github.com/GreenmaskIO/greenmask/archive/refs/tags/v0.2.24.tar.gz"
-  sha256 "9f74c7bf03ab6a99b3c78aba4afaa8873ef226b44b279e62df4dab118eb25841"
+  url "https://ghfast.top/https://github.com/GreenmaskIO/greenmask/archive/refs/tags/v0.2.25.tar.gz"
+  sha256 "64d9bc79835414180fa42a8e459874f2a31864abf2b80e91f4264bc4d803b2fb"
   license "Apache-2.0"
   head "https://github.com/GreenmaskIO/greenmask.git", branch: "main"
 
@@ -12,11 +12,11 @@ class Greenmask < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "e40e9f9bf45072ff5deecf5fe01bc9705bf88dda3f7c9502badf9ba5c2e911f8"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "e40e9f9bf45072ff5deecf5fe01bc9705bf88dda3f7c9502badf9ba5c2e911f8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "e40e9f9bf45072ff5deecf5fe01bc9705bf88dda3f7c9502badf9ba5c2e911f8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "ac1d0e1cfcfab030ed2de4950bc7d7547e5066ce3610ef746260b5466699b127"
-    sha256 cellar: :any,                 x86_64_linux:      "3d0785c79b701a8a01e32e2bacc853a64b5d45886bf052aabfcb679f1867c84a"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "a20dbeb8240545457b83be112b79b5c9f80e98c3347963c447b9a6be5b559b68"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "a20dbeb8240545457b83be112b79b5c9f80e98c3347963c447b9a6be5b559b68"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "a20dbeb8240545457b83be112b79b5c9f80e98c3347963c447b9a6be5b559b68"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "d07cf8b53f59455b80c54733e68a37917cf25e16dd7c6a6a1a10de0511e65596"
+    sha256 cellar: :any,                 x86_64_linux:      "5754e091b4f9c927fa3dc45d80fe1888c665bfa4c74842f892eedaa71bfa4148"
   end
 
   depends_on "go" => :build

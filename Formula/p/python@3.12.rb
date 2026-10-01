@@ -1,8 +1,8 @@
 class PythonAT312 < Formula
   desc "Interpreted, interactive, object-oriented programming language"
   homepage "https://www.python.org/"
-  url "https://www.python.org/ftp/python/3.12.14/Python-3.12.14.tgz"
-  sha256 "6c6df908d2c3fd24e6d76869e92542abd0f33aec9dfc18df8875f89660286d43"
+  url "https://www.python.org/ftp/python/3.12.15/Python-3.12.15.tgz"
+  sha256 "de1a241a519e0a3374fea98988d0b52c886743f9d953f23be8269cc7b59c5fab"
   license "Python-2.0"
   compatibility_version 1
 
@@ -12,13 +12,11 @@ class PythonAT312 < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_golden_gate: "8827e3bc3081064f68f4dde33a57747afae2f20a02845c2a591933eb48817bed"
-    sha256 arm64_tahoe:       "2ee646972d8c8c73fb690e01fe8af56f90f97f6d0985156886fe6c1d1f90948f"
-    sha256 arm64_sequoia:     "24fb323265ae17b071cdb5b5743465a438366a9d7be366e33f29674ec47053d6"
-    sha256 arm64_sonoma:      "77c6b37122440f058dfac271bb2ccc4115d4f6a781c10eec34952acada3c5c77"
-    sha256 arm64_linux:       "2eb17465bc46ccb827ee596c2599336495fc169b963903e051e1c3c4024bb517"
-    sha256 x86_64_linux:      "75aefe1a5717cda3995accbc87b693c8c5466c06ffdabb68698af4edf9b482fd"
+    sha256 arm64_golden_gate: "993908c1658ab94ccb6ee64e6b2d5978e9524f41c7ef64fb4c8956103dc26994"
+    sha256 arm64_tahoe:       "1a4e26abe540986624b422747f7ed3dc06bcaed7617712d2e8101bf7f5d78ffd"
+    sha256 arm64_sequoia:     "91f025e6686ed675210de4228771fc98514ee9e27c963c54f5c7160f0754d44b"
+    sha256 arm64_linux:       "04079c888618a1bd404083e334327fb378cd66da0b43a4246ca0c511dd0c8484"
+    sha256 x86_64_linux:      "1719cde05f3694e0b66c94fee4e2d4d7f3df5167fbb8c9ede8eca8a2763d23eb"
   end
 
   # https://devguide.python.org/versions/#versions
@@ -51,8 +49,8 @@ class PythonAT312 < Formula
                 extra_packages: %w[flit-core pip wheel]
 
   resource "flit-core" do
-    url "https://files.pythonhosted.org/packages/46/ef/34533186e76c526d9ec17a1ad9a10c7354cbfb20f51583cc36dfe4bdccd0/flit_core-4.0.2.tar.gz"
-    sha256 "b6929defd93884b584d7c87829e0e7b5c26ed6be17b0b873979019314aa841c8"
+    url "https://files.pythonhosted.org/packages/e7/91/add211b38c357bf1b94900b4f79c34661a92be65c0243d2b0a3393c5092d/flit_core-4.1.0.tar.gz"
+    sha256 "62e12b63ead8335b37f59fabb977c7167fe476dafb5e41785dfa8c9aff843bc6"
   end
 
   resource "packaging" do
@@ -421,12 +419,6 @@ class PythonAT312 < Formula
                f'     You should `unset PYTHONPATH` to fix this.')
       # Only do this for a brewed python:
       if os.path.realpath(sys.executable).startswith('#{rack}'):
-          # Shuffle /Library site-packages to the end of sys.path
-          library_site = '/Library/Python/#{version.major_minor}/site-packages'
-          library_packages = [p for p in sys.path if p.startswith(library_site)]
-          sys.path = [p for p in sys.path if not p.startswith(library_site)]
-          # .pth files have already been processed so don't use addsitedir
-          sys.path.extend(library_packages)
           # the Cellar site-packages is a symlink to the HOMEBREW_PREFIX
           # site_packages; prefer the shorter paths
           long_prefix = re.compile(r'#{rack}/[0-9\\._abrc]+/(?:Frameworks/Python\\.framework/Versions/#{version.major_minor}/)?lib/python#{version.major_minor}/site-packages')

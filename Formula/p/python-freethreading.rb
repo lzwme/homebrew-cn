@@ -10,15 +10,12 @@ class PythonFreethreading < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "13b066948f3410a874e4a653dac74da05c73723a2284341ae773341cf2f50671"
-    sha256 arm64_tahoe:       "f5e84a9af0aa65cb85f13c8f5bde598f0784cefbf2de45aee6b74c17a6c0bb16"
-    sha256 arm64_sequoia:     "e04554eb94cd8d67616f5d072cdb96dc57e634ecc93132250d9f43d4216530a3"
-    sha256 arm64_sonoma:      "8e5052d2ccb46b4bfe192b6b0a15bf703a1c84baa4c6b406ae37711a7117a116"
-    sha256 tahoe:             "f0d12c3d42be0cf4c272b3e03979b5da09214653141d5d0f6cef75786a211c78"
-    sha256 sequoia:           "c4f997b2bb8a6dbbfeb1d41de181acd3094a63386287b4c5c8fc64ad4f47f736"
-    sha256 sonoma:            "56dc95e40feaab6cb0ca25d0f00e9fc8682315118cc670420becd16a140fc7e3"
-    sha256 arm64_linux:       "27c709fcae76d581b7897a78ab06544d74fff939273bb38ed8a8e1eee24128ea"
-    sha256 x86_64_linux:      "b0a23ba00dd02f7f38c3ae9489e9f8fc061d179a9ea271052f36b8a12847814e"
+    rebuild 1
+    sha256 arm64_golden_gate: "d74c8c6a9ebad0939b63e6233f260dca9dbba608e5bd0cc9a6644fbb336e852f"
+    sha256 arm64_tahoe:       "243b4a2f26ec91e39d61a7557f95d6a7c2b9533d11d779d9750a0453ef4a63ce"
+    sha256 arm64_sequoia:     "6fac4e5b5869125668e95adb4fb2a32527f92104287174c30e78eaa8a61c2ef5"
+    sha256 arm64_linux:       "e02653490ee44f881b76f7cce90ac0780e3d391c1c112537de1c3d975fc9107d"
+    sha256 x86_64_linux:      "0028fc94e037564f4d433b8d17813974e0e9ee9d21831f0d1cc0af814d9be8a8"
   end
 
   depends_on "pkgconf" => :build
@@ -34,13 +31,10 @@ class PythonFreethreading < Formula
   uses_from_macos "expat", since: :sequoia
   uses_from_macos "libedit"
   uses_from_macos "libffi"
-  uses_from_macos "libxcrypt"
   uses_from_macos "ncurses"
 
   on_linux do
     depends_on "gdbm"
-    depends_on "libnsl"
-    depends_on "libtirpc"
     depends_on "zlib-ng-compat"
   end
 
@@ -97,6 +91,8 @@ class PythonFreethreading < Formula
   def python3
     bin/"python#{version.major_minor}t"
   end
+
+  deny_network_access!
 
   def install
     # Unset these so that installing pip and setuptools puts them where we want
@@ -176,7 +172,7 @@ class PythonFreethreading < Formula
 
     # Disabled modules - provided in separate formulae
     args += %w[
-      py_cv_module__tkinter=disabled
+      py_cv_module__tkinter=n/a
     ]
 
     system "./configure", *args
@@ -381,12 +377,6 @@ class PythonFreethreading < Formula
                f'     You should `unset PYTHONPATH` to fix this.')
       # Only do this for a brewed python:
       if os.path.realpath(sys.executable).startswith('#{rack}'):
-          # Shuffle /Library site-packages to the end of sys.path
-          library_site = '/Library/Python/#{version.major_minor}t/site-packages'
-          library_packages = [p for p in sys.path if p.startswith(library_site)]
-          sys.path = [p for p in sys.path if not p.startswith(library_site)]
-          # .pth files have already been processed so don't use addsitedir
-          sys.path.extend(library_packages)
           # the Cellar site-packages is a symlink to the HOMEBREW_PREFIX
           # site_packages; prefer the shorter paths
           long_prefix = re.compile(r'#{rack}/(?:[0-9\\._abrc]+/Frameworks/PythonT\\.framework/Versions/#{version.major_minor}/)?lib/python#{version.major_minor}t/site-packages')

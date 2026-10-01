@@ -1,6 +1,6 @@
 cask "opendisplay" do
-  version "1.22.1"
-  sha256 "b2789d42e065a1bb32be64b27bdbca92b75bab3af440971cba71fda5d8d16841"
+  version "1.24.0"
+  sha256 "5db74be1559ef6c4b906ee1983d2e906f1a06024494993f52416ea21c96b5a19"
 
   url "https://ghfast.top/https://github.com/peetzweg/opendisplay/releases/download/v#{version}/OpenDisplay.dmg"
   name "OpenDisplay"

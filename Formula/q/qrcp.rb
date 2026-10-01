@@ -1,8 +1,8 @@
 class Qrcp < Formula
   desc "Transfer files to and from your computer by scanning a QR code"
   homepage "https://qrcp.sh"
-  url "https://ghfast.top/https://github.com/claudiodangelis/qrcp/archive/refs/tags/v0.11.6.tar.gz"
-  sha256 "a3eff505f366713fcb7694e0e292ff2da05e270f9539b6a8561c4cf267ec23c8"
+  url "https://ghfast.top/https://github.com/claudiodangelis/qrcp/archive/refs/tags/v0.11.7.tar.gz"
+  sha256 "e3dcc23b85e2f37f378cf95b41a7a7c2ee5cd9941e3935a3325e3a0c8c770a06"
   license "MIT"
 
   livecheck do
@@ -11,14 +11,11 @@ class Qrcp < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "82ee945a2dc76d8dae03b44d1141c00bf1d02dc3d9737f5a96f5abf85536102a"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "7a8bbc5ad237bf97d73501062a2f1e30d7ce8a5b9a38912f6ffb158370c96a8e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "7a8bbc5ad237bf97d73501062a2f1e30d7ce8a5b9a38912f6ffb158370c96a8e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "7a8bbc5ad237bf97d73501062a2f1e30d7ce8a5b9a38912f6ffb158370c96a8e"
-    sha256 cellar: :any_skip_relocation, sonoma:            "ffc63e2c7d66b1e1faedb36c2df428c712fb5852f1d88d55c7ed80bb7b18bb2e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "9a37b2bba75a20fd96c2dc6754444afb0bb152258e869d855644fa5bebb185a9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "d18ce31b0d751e4fffb64ecbac9d20fcb3bcda31877ca6de1950070fa3c06c91"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "4c0030d2091a35b171841b25fa852571ede6f65b301602af5ef387ece2026083"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "4c0030d2091a35b171841b25fa852571ede6f65b301602af5ef387ece2026083"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "4c0030d2091a35b171841b25fa852571ede6f65b301602af5ef387ece2026083"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "f3b8e031e4980377a1a55f881184dbe18dffeccb0f8bcc450fdadb1ae7bbc13e"
+    sha256 cellar: :any,                 x86_64_linux:      "3727188f3322ee679221137f83b63657f6b278538d2642809006a032a91b9507"
   end
 
   depends_on "go" => :build

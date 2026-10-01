@@ -4,6 +4,7 @@ class Wabt < Formula
   url "https://ghfast.top/https://github.com/WebAssembly/wabt/releases/download/1.0.42/wabt-1.0.42.tar.xz"
   sha256 "a76cda3c174a43097863a07fc0b0c202f770f53e21806ea2636f167d1ffb1e30"
   license "Apache-2.0"
+  revision 1
 
   livecheck do
     url :stable
@@ -11,22 +12,23 @@ class Wabt < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "8d9d4301d6367d0885568925ed4bde689f7388ef5039be5cd8fff6b9f88befea"
-    sha256 cellar: :any, arm64_tahoe:       "f633e46e0c43fd94d24cfd1c377ffde30bb6960dde7da0f7d0f94c1a4b8be04e"
-    sha256 cellar: :any, arm64_sequoia:     "6c753b42e46037fde432e38d610e0f182db239fe8eeaccffd1ce7bedec18c34c"
-    sha256 cellar: :any, arm64_linux:       "e734461106d03b4ffc228dd1c99dba2cad92029d11e95ac2b9bb510bb95cb169"
-    sha256 cellar: :any, x86_64_linux:      "87f9681fce361b612caa9dee882136d59ec16a145c11836d2b3e7708a251baab"
+    sha256 cellar: :any, arm64_golden_gate: "4c2876aaf9add1bc6463c8640b38f96b898a37fe791be8d345b38121bdf63f58"
+    sha256 cellar: :any, arm64_tahoe:       "fb7ff2dcb629614985f5039c63b3f8fb998d3e30d95018c7d2001ec20dee2886"
+    sha256 cellar: :any, arm64_sequoia:     "1575999319eecc660b7fcfbe5bb19f0a0262a0e52de14b152a8d331f6ef84eae"
+    sha256 cellar: :any, arm64_linux:       "9a1cf1a40ba898a3194449342464121d76c071804fa397313f78479a7ec44e48"
+    sha256 cellar: :any, x86_64_linux:      "9dd576f532afe4a9b5fb606592ed11163d0bb9117274c7f7eb555053d5840cb6"
   end
 
   depends_on "cmake" => :build
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   uses_from_macos "python" => :build
+
+  deny_network_access!
 
   def install
     args = %w[
       -DBUILD_TESTS=OFF
-      -DWITH_WASI=ON
       -DCMAKE_POLICY_VERSION_MINIMUM=3.5
     ]
     args << "-DCMAKE_POSITION_INDEPENDENT_CODE=ON" if OS.linux?

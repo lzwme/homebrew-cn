@@ -1,8 +1,8 @@
 class Tun2proxy < Formula
   desc "Tunnel (TUN) interface for SOCKS and HTTP proxies"
   homepage "https://github.com/tun2proxy/tun2proxy"
-  url "https://ghfast.top/https://github.com/tun2proxy/tun2proxy/archive/refs/tags/v0.8.3.tar.gz"
-  sha256 "1366ada8ffc7d1eb1956934696cfdb54d6fb6253e71061c28ae416474b2f3b5f"
+  url "https://ghfast.top/https://github.com/tun2proxy/tun2proxy/archive/refs/tags/v0.8.4.tar.gz"
+  sha256 "ab038ee45b727d121e544c1bd23ba4426a1b747b6ab279b43028e8733e3920ae"
   license "MIT"
   head "https://github.com/tun2proxy/tun2proxy.git", branch: "master"
 
@@ -12,13 +12,11 @@ class Tun2proxy < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "b2eef64f42430704552945b3836b5bc744a48941fd6e8d5798afd87c2cb1f890"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "88a7b02fdcad942ec020a69437de5396c9126b5802a039a1588010e8769f5ac8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "217702aa9fd4453ad8bd4afc8448cc3b2ecef521e653951cf32e53802dbad536"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "c898e71a6c30bbf87fe8f8bab83fefa1c6bf5f22163475721c1da40140181867"
-    sha256 cellar: :any_skip_relocation, sonoma:            "0340f0dc87d7df18b383dd463ec89958729ea28859d17feb3972aad542dac82c"
-    sha256 cellar: :any,                 arm64_linux:       "5226255438f3dfd9a2ac515e2c6de8701a2bea5319daba1a5284095a085696a5"
-    sha256 cellar: :any,                 x86_64_linux:      "09ecf80444c84ee33f2032657e05ae53a41809d9732ee3c9547de496204f1ba9"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "ce6de24475e2e16b2ca9d34b9fc26675d7aadcc431a8d064a0fc5bff209299b5"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "4c80043423bb8b6d572386cd0aa70c9c1038ff8dd48f8f03eacca8bf7f5fc1a9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "c33f981ce590a07cb9fc6c4f3427424787bc2e907abac2c3fbd54f321f55b59d"
+    sha256 cellar: :any,                 arm64_linux:       "69bab45cef45eba991fa569de4c0cdda2487a6969d4e52d57ad6e2ba985d17b0"
+    sha256 cellar: :any,                 x86_64_linux:      "54a3e44fc8237359487187b0882f52337859c61f4c24a38375fdce1c0de51a7e"
   end
 
   depends_on "rust" => :build

@@ -1,19 +1,17 @@
 class Caddy < Formula
   desc "Powerful, enterprise-ready, open source web server with automatic HTTPS"
   homepage "https://caddyserver.com/"
-  url "https://ghfast.top/https://github.com/caddyserver/caddy/archive/refs/tags/v2.11.4.tar.gz"
-  sha256 "2c3d02078286a6282cdb4d1d8744077788d556659dac0b64d8ed5886a7e5aeb9"
+  url "https://ghfast.top/https://github.com/caddyserver/caddy/archive/refs/tags/v2.11.6.tar.gz"
+  sha256 "cb65c6d2081e2700f44e03d808a0330344b483688934c87e53ba7b5728a3a04b"
   license "Apache-2.0"
   head "https://github.com/caddyserver/caddy.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "165c0d19019620d068ae6db54d0707b80dfa9966799b47eec133cfb8010c6d85"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "8e9aa3be3d01ea8128bd16cdb0de0b274da276dba4882addedd43b8748ad94d3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "8e9aa3be3d01ea8128bd16cdb0de0b274da276dba4882addedd43b8748ad94d3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "8e9aa3be3d01ea8128bd16cdb0de0b274da276dba4882addedd43b8748ad94d3"
-    sha256 cellar: :any_skip_relocation, sonoma:            "27b2aa14d92c02c159a265f1604240cfd55963e6ba5563b7ccac752937624859"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "24e586256f93f81b80de38b8bce008cbaf788f925b81e6aedecf98c7d3612385"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "ccfdb7ee4df4bbcbcba207c4a7009fc7d5859435df1277c784421b67d7127639"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "1b873c00dc3a62cd38c62081cd58736259ff3355868b79351ed70aeb6c50e97f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "1b873c00dc3a62cd38c62081cd58736259ff3355868b79351ed70aeb6c50e97f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "1b873c00dc3a62cd38c62081cd58736259ff3355868b79351ed70aeb6c50e97f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "9adc9e9e5361b8f7befe187a99e1db4a66889263781070a6cff6dd4fe26ecf19"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "263507fdd358fab21318e13ee4aaf03148ac76a4a9523830369d5c04c0fa15f2"
   end
 
   depends_on "go" => :build

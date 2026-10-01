@@ -1,20 +1,16 @@
 class Sextractor < Formula
   desc "Extract catalogs of sources from astronomical images"
   homepage "https://www.astromatic.net/software/sextractor/"
-  url "https://ghfast.top/https://github.com/astromatic/sextractor/archive/refs/tags/2.28.2.tar.gz"
-  sha256 "d92c5214ea75b8a70214d7d7f6824207fc53861ec923ceb2cc574f2ec9effa94"
+  url "https://ghfast.top/https://github.com/astromatic/sextractor/archive/refs/tags/2.29.0.tar.gz"
+  sha256 "f260886b1609f3a3dbe82ea14152761ed0434bc37631be4121137fee36025111"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 arm64_golden_gate: "e4c1ddc323c685169d89073b006dd8f58baa575abe999573a17a3e2a81d7c6d5"
-    sha256 arm64_tahoe:       "06bd29cd706f67f6b684f6cf2e4393e2977e0db250a242254c70ea95712358d4"
-    sha256 arm64_sequoia:     "114c7e6368360d1c5ef66850b1a2090bd84f759e323d320e0dd74549baed4714"
-    sha256 arm64_sonoma:      "2138d679b5172a8f2b76d0fbacde1a67de054ccd9db6d3f5bcf5a163107f9098"
-    sha256 arm64_ventura:     "ca726287370efe2c960b98a02c8bcbe3b9a8491a584864d6333fd89a020a477d"
-    sha256 sonoma:            "3a7f9a4b0880e0de0dca905679bea7e8747f3a299755f10a8437bd5432f65a30"
-    sha256 ventura:           "9d53959e43245ab7d3ebac8bf8696d42c56a512bcc89672670c9f358fbbb6586"
-    sha256 arm64_linux:       "eabbbb4573111bd7b50bf6fb15b0fa73a03146276d22d752c6a338f506a2f412"
-    sha256 x86_64_linux:      "6b0fd897f186d16e044a010354109fbf0fd4b7ba4afddc4b7715cca6e741186e"
+    sha256 arm64_golden_gate: "adc8b556f0810147755dd603f1ba7cf8b408f47341e040085f380e5414adb516"
+    sha256 arm64_tahoe:       "a4115da37455083592b0e177730dc18a318f01414048f4236a41f700357fccc8"
+    sha256 arm64_sequoia:     "0569170fda55206ac2196500f6935a6a5a5104f7c36d5214699af3e7da278bb4"
+    sha256 arm64_linux:       "9a17279567d154d5f537d9f11cd799f52be4d4a7a0ab68401aa743468a8d271b"
+    sha256 x86_64_linux:      "07c5be9f8e0acb8444bb4e471583c1903d4b670f04e58f59a8f9136d1791d6f6"
   end
 
   depends_on "autoconf" => :build
@@ -25,12 +21,6 @@ class Sextractor < Formula
   depends_on "openblas"
 
   # Backport for C23
-  patch do
-    url "https://github.com/astromatic/sextractor/commit/e93bbbd61807ac56e6770d3b5d9e72a3f4ca59e0.patch?full_index=1"
-    sha256 "6df2ac47f72613ece58d04384b2c2f7469f8f7ace90a93a79a40467188bf225a"
-    type :backport
-    resolves "https://github.com/astromatic/sextractor/issues/77"
-  end
 
   def install
     # Allow OpenBLAS header migration to subdirectory. Can remove once done

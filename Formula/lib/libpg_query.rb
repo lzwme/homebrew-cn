@@ -1,19 +1,17 @@
 class LibpgQuery < Formula
   desc "C library for accessing the PostgreSQL parser outside of the server environment"
   homepage "https://github.com/pganalyze/libpg_query"
-  url "https://ghfast.top/https://github.com/pganalyze/libpg_query/archive/refs/tags/18.0.0.tar.gz"
-  sha256 "6ad7783f272acfd116455c66a03298a0cac9a9168281df547969219112f0260f"
+  url "https://ghfast.top/https://github.com/pganalyze/libpg_query/archive/refs/tags/18.1.0.tar.gz"
+  sha256 "2d3486cf6a9d3955b53e66235db39d62b54216c820cd392ab66dc842c5b1316d"
   license all_of: ["BSD-3-Clause", "PostgreSQL"]
-  compatibility_version 1
+  compatibility_version 2
 
   bottle do
-    sha256 cellar: :any,                 arm64_golden_gate: "177a8b00a48aead436e6e54776d4f77570a145da306cbc55279d35ae64722732"
-    sha256 cellar: :any,                 arm64_tahoe:       "e760f32180555c1627c49bdeca785d9eee4ea71754603fef4d9555bd7399c3f5"
-    sha256 cellar: :any,                 arm64_sequoia:     "cc37d9d91d98a50f29b32e33219467a6d5b4c303732c75b08a6887e68a042e66"
-    sha256 cellar: :any,                 arm64_sonoma:      "02898261bf6b12bc0bbcd0da0a16d9fd9c345c91831809722f360637e470a9b0"
-    sha256 cellar: :any,                 sonoma:            "ac92b960fd6a94d149d8d78473bc7dce5fa96018b1b99447b08b1a246e0ec42d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "42ba15e2b97d2738c79047146cc5d76d1fe6038782acdb24866ae10b96ac602e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "76f75a23ed39c4aa6d5a705ab2fbe300eb27a1737b4a08e77dd5d8671dfe65cb"
+    sha256 cellar: :any, arm64_golden_gate: "6f0b6079051efd7269309edf8ce2e78753114d910e9d32ea30fab1bb7a44e8ac"
+    sha256 cellar: :any, arm64_tahoe:       "b2f8e2ad27549f4fb8c4bcbdc4fe2da63a30277b42b5fb0dc774b6e55cc3986c"
+    sha256 cellar: :any, arm64_sequoia:     "a4d6331474f417f6044e55a0c391761ad621f7f2d81ae876b225175af5ca94ec"
+    sha256 cellar: :any, arm64_linux:       "b4ac51d9a9448eb56be75bb15403b60569f6f268d7a8baf1107577ab06a120c7"
+    sha256 cellar: :any, x86_64_linux:      "9f8b94d7361d655d9154e36a47ff3f6957494e8ae4cb674b62110fd5d6cd0853"
   end
 
   def install

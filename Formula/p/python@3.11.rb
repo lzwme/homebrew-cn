@@ -1,8 +1,8 @@
 class PythonAT311 < Formula
   desc "Interpreted, interactive, object-oriented programming language"
   homepage "https://www.python.org/"
-  url "https://www.python.org/ftp/python/3.11.16/Python-3.11.16.tgz"
-  sha256 "6c0bd76ab0ec7d94ed400b1497f01ac6c7751c8822615ee0855a3eb2d893ea76"
+  url "https://www.python.org/ftp/python/3.11.17/Python-3.11.17.tgz"
+  sha256 "53cdee63ac4bf12387b7b33a53d3b1f8f4941cad73807a7b4fe91bb001ef004a"
   license "Python-2.0"
   compatibility_version 1
 
@@ -12,15 +12,11 @@ class PythonAT311 < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "ae448188ee2ce4ec6b98ce05612e75e0d6c4bbb375080de779d2c6502a7c3d30"
-    sha256 arm64_tahoe:       "327e07c376af6c8202978c834f9fef5ce63f81822b4404576b5078d62feb175e"
-    sha256 arm64_sequoia:     "a5dd571f54091ffd66c7ad74b24554bc8c3fd069e134a7218d12adfc16d093ca"
-    sha256 arm64_sonoma:      "b69dfc5cd39ad651bf78a5b3254c9293692a1fd44d988c6594d320a4bd75e4aa"
-    sha256 tahoe:             "620d4a9fd3ec8a243bfcac8789550f2e14715f621e1596358c320e2cb6665933"
-    sha256 sequoia:           "c3a01608bb6180b4d9e3a763d6ad702dcf2f4eb47135684aec4ce3a95fe1a38f"
-    sha256 sonoma:            "236c3ed840f053b6870764be88ecbd4b11f573c901a70e2c1bb995df18bd9bcd"
-    sha256 arm64_linux:       "e40aeb117135de34de6d116ad420d142c0a7aed6bf5f7505f48141e9054d487d"
-    sha256 x86_64_linux:      "6094d2090ffcc3a6d29e8eb5131ce91b20ddb7b42a095f619e2c9f1bd5938191"
+    sha256 arm64_golden_gate: "fc66c139434cb4139fecc36ccbfefddb9e2364f7ff613f5f124ad9ed07a824bf"
+    sha256 arm64_tahoe:       "7d173a6a3d5d782c47f9900af6653ef57a92203ccf82db6c1793975b712187ff"
+    sha256 arm64_sequoia:     "f12fb013f32c98e4c6f5c1d0ae2276b0a7807c57f993ad4edef4ec11b18cfd35"
+    sha256 arm64_linux:       "dd97f5d0caee2c259aa129df79ef419a0f7bae8f800bad144eefd57691a703be"
+    sha256 x86_64_linux:      "d85ffc204295a24dd17fb481546d41fb50f3fda23d4f34ff9c65aa98b4dbe307"
   end
 
   # setuptools remembers the build flags python is built with and uses them to
@@ -56,8 +52,8 @@ class PythonAT311 < Formula
 
   # Always update to latest release
   resource "flit-core" do
-    url "https://files.pythonhosted.org/packages/46/ef/34533186e76c526d9ec17a1ad9a10c7354cbfb20f51583cc36dfe4bdccd0/flit_core-4.0.2.tar.gz"
-    sha256 "b6929defd93884b584d7c87829e0e7b5c26ed6be17b0b873979019314aa841c8"
+    url "https://files.pythonhosted.org/packages/e7/91/add211b38c357bf1b94900b4f79c34661a92be65c0243d2b0a3393c5092d/flit_core-4.1.0.tar.gz"
+    sha256 "62e12b63ead8335b37f59fabb977c7167fe476dafb5e41785dfa8c9aff843bc6"
   end
 
   resource "packaging" do

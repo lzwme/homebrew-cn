@@ -1,8 +1,8 @@
 class Lighthouse < Formula
   desc "Rust Ethereum 2.0 Client"
   homepage "https://lighthouse.sigmaprime.io/"
-  url "https://ghfast.top/https://github.com/sigp/lighthouse/archive/refs/tags/v8.2.2.tar.gz"
-  sha256 "d7c2db0cfb18ad4748600b44c872714a1302b437cb8fd98ea42d4d311a0e3f8f"
+  url "https://ghfast.top/https://github.com/sigp/lighthouse/archive/refs/tags/v8.2.3.tar.gz"
+  sha256 "be02f4839b961634d2641fd683f61f6cb5c6fab0452dcc9ef5e132014d626509"
   license "Apache-2.0"
 
   livecheck do
@@ -11,13 +11,11 @@ class Lighthouse < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "f34b147a37f09f6ff72e02aca32f7901c878fc2679b930d67cf09bbcfa1ede37"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "8b2647bb0c98201ee467e5908cbb70c9fcf7274a2fabe9f4650e777c4ed8a27f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "a267a85d21783618b287962ed520c5ee8c095a7d6dbbce350115938fcce7f09e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "ec9db22729d6dcb6f6460077afae159b5653b6ab2410755d30dec3ed73f2bc39"
-    sha256 cellar: :any_skip_relocation, sonoma:            "ec8d6a540168f52fdaf8bc557cd5e8b3308f9681823e85a0ff410f5405a3ed90"
-    sha256 cellar: :any,                 arm64_linux:       "644cfaab1283328169841955c493d01daae1bb1a2bc2c06900f956711b0b92b9"
-    sha256 cellar: :any,                 x86_64_linux:      "99a1348b937b0e1499ee70a9317bfb733fd56120672247de78245756ad174d82"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "a475622c80d3009008fe4e7c23133a15b143382b21bb981c435d4e12007de991"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "98a1c345a19f7ff8d9341266a0438595dee28d4e175f8015f5d3c965dcdc3a08"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "93b2e81ce864ae9a44f42b92781b2a8522bf4f2fec714f8fae5fec66673991e6"
+    sha256 cellar: :any,                 arm64_linux:       "e87a168af8097f2818a05f983731993725771cd4b03f64fc74e22a8728a85e85"
+    sha256 cellar: :any,                 x86_64_linux:      "b5a3e76a94e591579f3ed665d8035b9214a436df40d282b92f88b5375ea0fc10"
   end
 
   depends_on "cmake" => :build

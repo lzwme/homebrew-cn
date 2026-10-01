@@ -6,13 +6,14 @@ class Apprise < Formula
   url "https://files.pythonhosted.org/packages/38/b0/2f2e9b6d9e52f7530b47ba7a9259ebf2378e3953f445222f54412fb27a68/apprise-2.0.0.tar.gz"
   sha256 "aeb321737f951860d7cb0a9574159090cbdbcb0f1ba01c6b49c69018380adf8d"
   license "BSD-3-Clause"
+  revision 1
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "db134f7d48049430754f101aee96b00abcddd45c193862751ddb6aa0571681e4"
-    sha256 cellar: :any, arm64_tahoe:       "4bffcb86267552680a4d8242f7025c43008edc032f840ae484737ecfb60c7d07"
-    sha256 cellar: :any, arm64_sequoia:     "6b500bbe45ecac33a48cabc9286daa6d96b6835dd9886ab68754c83d4de3bd1e"
-    sha256 cellar: :any, arm64_linux:       "dd293dd72dae648aaa058e28f4a2d1ac57cf62a3ef259248b849249bb84bcc63"
-    sha256 cellar: :any, x86_64_linux:      "9d6eee6c804093aec78085f7e34cfd3a4a71ee1067b9fad4bed13fbcc628b76e"
+    sha256 cellar: :any, arm64_golden_gate: "695ea94e78599fbf72e5bc5d3ed8a82ebba42be026b399c59fbcc8e27731d669"
+    sha256 cellar: :any, arm64_tahoe:       "bfb2f4a6ab1f7c5c72e74313d5ddb5a4a4db8e521f603a99d8498549896d2993"
+    sha256 cellar: :any, arm64_sequoia:     "981c51f0c19538155cf6705fffa18f5cb38d0eb27179c301331a39a85e80fb59"
+    sha256 cellar: :any, arm64_linux:       "2072d241f851457fb8d168e5380ebb8894c437936eda2ef2a580bd0c5cf1c459"
+    sha256 cellar: :any, x86_64_linux:      "136ebe7d7018aec671401f2597bb321c4c2b4bf3be41384f64c60004fcd62269"
   end
 
   depends_on "certifi"
@@ -42,8 +43,8 @@ class Apprise < Formula
   end
 
   resource "oauthlib" do
-    url "https://files.pythonhosted.org/packages/0b/5f/19930f824ffeb0ad4372da4812c50edbd1434f678c90c2733e1188edfc63/oauthlib-3.3.1.tar.gz"
-    sha256 "0f0f8aa759826a193cf66c12ea1af1637f87b9b4622d46e866952bb022e538c9"
+    url "https://files.pythonhosted.org/packages/7a/d8/a1bcc8ba112a627f8ffbdc212a78ce18d3ac07e91a5ca65d27918eee25a1/oauthlib-4.0.0.tar.gz"
+    sha256 "efb274799819440f95b4ab3b818869f1ce9ae26c5beacba0201d1a1b76b54f86"
   end
 
   resource "pyyaml" do

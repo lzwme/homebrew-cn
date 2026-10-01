@@ -2,21 +2,19 @@ class Tilt < Formula
   desc "Define your dev environment as code. For microservice apps on Kubernetes"
   homepage "https://tilt.dev/"
   url "https://github.com/tilt-dev/tilt.git",
-      tag:      "v0.37.7",
-      revision: "2b3a4064c6ba84e86c93258c085b498e5364a44b"
+      tag:      "v0.37.8",
+      revision: "9f48972fd201a27565380c093f2bac8001a7b130"
   license "Apache-2.0"
   head "https://github.com/tilt-dev/tilt.git", branch: "master"
 
   no_autobump! because: :bumped_by_upstream
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "f09e1600c6983eef5c0b4eeaaab66455542cb66a4ebcf65891133e4099d882ad"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "29d86973a163e2c6d66c4761cd507a89914637b9a2367cd4381a639e550c1629"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "aaad8c4643c5e033f5b3589b2a812b0f24f3e36c0b85fdc3363d93c2451be751"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "6d968916e24f29dda891bff7c862dead951142c6e13e9bc6835c48ad5bca47f2"
-    sha256 cellar: :any_skip_relocation, sonoma:            "4d1ed6d0508132a0c6df2e01deee7a3919660eb05e3706b1db902d9a38c8cfa6"
-    sha256 cellar: :any,                 arm64_linux:       "203c6ac8d7ddf2112d1ef6d2e188c0a06715e9b08ef561a993e73fa69b60cec1"
-    sha256 cellar: :any,                 x86_64_linux:      "5498d06066bd33ee28ca41f0e79ffcacb9dd7d7f611e5c5d2bf9ec34d4f2e8cb"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "54725585f4e061375642ecc26943d8a08ab45b401201e1e584bf963530e44162"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "06430c323b1c2ce3b9c0402433e9295375c50053669048bc2a5d16f17176c7d6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "5caf559f31e6cdb259713dfdbabadc7b8f3508b9d86e6d677ec843c38815c7ff"
+    sha256 cellar: :any,                 arm64_linux:       "466e7ad219da312e8018fc6f2c9cf72f72419d3b996e1643da8aae94ca72301d"
+    sha256 cellar: :any,                 x86_64_linux:      "528adb23b4e06ca455403b4161b925ddf03d051738c50c6dd101f016b8b3aadc"
   end
 
   depends_on "corepack" => :build # for newer yarn

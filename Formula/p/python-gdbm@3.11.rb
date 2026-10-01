@@ -1,8 +1,8 @@
 class PythonGdbmAT311 < Formula
   desc "Python interface to gdbm"
   homepage "https://www.python.org/"
-  url "https://www.python.org/ftp/python/3.11.16/Python-3.11.16.tgz"
-  sha256 "6c0bd76ab0ec7d94ed400b1497f01ac6c7751c8822615ee0855a3eb2d893ea76"
+  url "https://www.python.org/ftp/python/3.11.17/Python-3.11.17.tgz"
+  sha256 "53cdee63ac4bf12387b7b33a53d3b1f8f4941cad73807a7b4fe91bb001ef004a"
   license "Python-2.0"
 
   livecheck do
@@ -10,14 +10,11 @@ class PythonGdbmAT311 < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "387ad7b57ba9c12a4d70e2c6b2ba57543e0efce3d3e7beb9ce9d93e9a4a2004b"
-    sha256 cellar: :any, arm64_tahoe:       "3f4770b297554d1c56ecad45f3ab52c89e15c980542bfe49724d732971ea27cc"
-    sha256 cellar: :any, arm64_sequoia:     "03371e003c7743c2cf7eea1015c468daa6c2f3ea797dfe15ff790cbced5520a5"
-    sha256 cellar: :any, arm64_sonoma:      "8df9c38a3b70c4e77e850468191f5eb97065ed01ee811b6a985c72b969e78b49"
-    sha256 cellar: :any, sequoia:           "4491411ee065136c722506611c5624d22a6e37cff6ee32948854350d0e24261d"
-    sha256 cellar: :any, sonoma:            "5b7b630703553f7f62b43803ef2c595b013717806bcc00860230de224ae54e57"
-    sha256               arm64_linux:       "87b98b5412a45ee79ab384c2a91d0e6d0ed7bb97c935f01a9ecd4fa3338973fa"
-    sha256               x86_64_linux:      "03fc1e9e9cdc07d7abb28e1e0b2b027b9dbbf64ed0aff95cbc9efb0b8288b973"
+    sha256 cellar: :any, arm64_golden_gate: "bac8d541df8cf5958a0f303fced3f26f9186cfd40a8e5b34d9928c295825c732"
+    sha256 cellar: :any, arm64_tahoe:       "914429e663a83f2e3adca7c88236da1f5b198204a25ade835f9c7c2576cdbf63"
+    sha256 cellar: :any, arm64_sequoia:     "40d17d96679c530def977be4d1e32aa32673366253621796cb2644f58eaccfd2"
+    sha256               arm64_linux:       "be57e023828b4708e55b90c364efb684c71911723ceac717cd8036be0ba06c4e"
+    sha256               x86_64_linux:      "35785aa439e9b5d70a4c148d41738535b2f9357f37e2e3cfc53e4fcf42e499b7"
   end
 
   # https://devguide.python.org/versions/#versions

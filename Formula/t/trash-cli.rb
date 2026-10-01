@@ -3,17 +3,17 @@ class TrashCli < Formula
 
   desc "Command-line interface to the freedesktop.org trashcan"
   homepage "https://github.com/andreafrancia/trash-cli"
-  url "https://files.pythonhosted.org/packages/96/7c/906fcf701057e67ea9f335d502bfdde2cf353eb149b67fdbc8be4ccd4683/trash_cli-0.26.9.14.tar.gz"
-  sha256 "dfff726023223a864181e23ab5e349abb6a8e85d5341c0a4abb1c9340ad8764e"
+  url "https://files.pythonhosted.org/packages/a2/53/5eabf92b6057df00f97ab8f92a8463da4a934dffed57daf0897569be78e0/trash_cli-0.26.9.29.tar.gz"
+  sha256 "2ca3300fd9f3b0334cb3f576a3ec95ced8593cc729df4332608d69a28eb50fb0"
   license "GPL-2.0-or-later"
   head "https://github.com/andreafrancia/trash-cli.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "09318b59716e168dcd6f0b6f4ff6fe54c84f535e5abef40df93fb7a3e472fda0"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "04b8c55a25837c64348072cb3ce5acb1da34f757c16b3a918544e49401392e8d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "4e95d7d7ad03ab0076797af0652366b3995459fb4af9705d67a58354bf6b6a39"
-    sha256 cellar: :any,                 arm64_linux:       "27df1b49fa8a2f7d21da52fbc7a1c61edbf7aa0416c141243af42acaea7e7ec5"
-    sha256 cellar: :any,                 x86_64_linux:      "2d57ef4af3c555ee6d60b0916140075e8b3814fc40b55a75197be6f9d35e518f"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "5a5eeae8398c0040d806067e2204ecb7e26530c456668879d25cd7368f8f6939"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "20a5e685184748a046bf4e03689ca83a2dd31feaedbf6f5c6aa71e7f89bd5ebb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "a2b5d3c85c4f52775c4e8390158329f00529ccd1737bade3cf19d3ce1cd3e4da"
+    sha256 cellar: :any,                 arm64_linux:       "c64f6f17bd30ece7bb3bf7c7f13cc1ff068a0aef992963307a09319d10fbd5be"
+    sha256 cellar: :any,                 x86_64_linux:      "fb164eca5af4de10d5a3860a108ae92cd3c8aace8922d2c77d968979be9b2471"
   end
 
   keg_only :shadowed_by_macos

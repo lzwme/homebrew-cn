@@ -1,8 +1,8 @@
 class PythonAT310 < Formula
   desc "Interpreted, interactive, object-oriented programming language"
   homepage "https://www.python.org/"
-  url "https://www.python.org/ftp/python/3.10.21/Python-3.10.21.tgz"
-  sha256 "f276987f06270ae6c1fb4da620bd105edf78c31368c2f7e85e6c1d51c560b04b"
+  url "https://www.python.org/ftp/python/3.10.22/Python-3.10.22.tgz"
+  sha256 "9448b34d16f8e3db0964ac3ed9fb283197747543c2c021f283ffd2c8b7287357"
   license "Python-2.0"
   compatibility_version 1
 
@@ -12,14 +12,11 @@ class PythonAT310 < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "a8451a4eeba92b9523e87dcf9c2f0b572832993ee8b155e4084d51cf0ca357d1"
-    sha256 arm64_tahoe:       "8504eaa9a4b4cf052c1c1620e88fb6ceae15868a34a7b5e04785d79f33b34db7"
-    sha256 arm64_sequoia:     "88daade5b0e3e3c2d52502fa88d83f9d63b635c25d4d75e91d8b272933add252"
-    sha256 arm64_sonoma:      "63e4a7a2eeb97ec66beba93be7f3fd24e065daa5900ad166e7b8521e23f15ae8"
-    sha256 sequoia:           "1a1580395c24ae740dac208faa6a3b6329106732cd108a93128ae106497b1401"
-    sha256 sonoma:            "f8392affff160948f4282b65c4dc34dec295c911ac7a0708e768375938e2d715"
-    sha256 arm64_linux:       "8766e2d78a83f379aa6dd695426cc5a1705b7a6f026e72b39886a2b39ea66e52"
-    sha256 x86_64_linux:      "d5a0e35333527cb6d80d9f61ed8d746f68c9c304f2a69188cc328a147a1a4b98"
+    sha256 arm64_golden_gate: "36d2aa8d81c08b1711a8873e34e241da83f270b632d6479271541ea50c7a659c"
+    sha256 arm64_tahoe:       "a9d8a906b76635ff7e9b473f8d4375936841a2cf124dfef651c7e47c0b22a7c5"
+    sha256 arm64_sequoia:     "d14a16a39c5eca3a403197215f88f55517f194d95bd2b1641a4c1a20375a25fc"
+    sha256 arm64_linux:       "f6b0296809912b8085543561f2fd0c7554133dd4905f763cd1d91b0a3fcc45b9"
+    sha256 x86_64_linux:      "805a9a19f09d1c976dbe6f6dbd3d09f83c7cf7dc3060f36a57c361ea49f08360"
   end
 
   # setuptools remembers the build flags python is built with and uses them to
@@ -55,8 +52,8 @@ class PythonAT310 < Formula
 
   # Always update to latest release
   resource "flit-core" do
-    url "https://files.pythonhosted.org/packages/46/ef/34533186e76c526d9ec17a1ad9a10c7354cbfb20f51583cc36dfe4bdccd0/flit_core-4.0.2.tar.gz"
-    sha256 "b6929defd93884b584d7c87829e0e7b5c26ed6be17b0b873979019314aa841c8"
+    url "https://files.pythonhosted.org/packages/e7/91/add211b38c357bf1b94900b4f79c34661a92be65c0243d2b0a3393c5092d/flit_core-4.1.0.tar.gz"
+    sha256 "62e12b63ead8335b37f59fabb977c7167fe476dafb5e41785dfa8c9aff843bc6"
   end
 
   resource "packaging" do

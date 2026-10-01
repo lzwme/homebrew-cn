@@ -2,7 +2,7 @@ class Halide < Formula
   desc "Language for fast, portable data-parallel computation"
   homepage "https://halide-lang.org"
   license "MIT"
-  revision 1
+  revision 2
   head "https://github.com/halide/Halide.git", branch: "main"
 
   stable do
@@ -24,6 +24,14 @@ class Halide < Formula
       type :backport
       resolves "https://github.com/halide/Halide/pull/9016"
     end
+
+    # Backport support for wabt 1.0.42
+    patch do
+      url "https://github.com/halide/Halide/commit/038f2e8a2824ec69db8f7785bf963b0ff110df2f.patch?full_index=1"
+      sha256 "4179d05badd64af26a82fe38d2146bdbb2eb36d54a0fc7c9ccb30364813d69da"
+      type :backport
+      resolves "https://github.com/halide/Halide/pull/9473"
+    end
   end
 
   livecheck do
@@ -32,27 +40,22 @@ class Halide < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_golden_gate: "1de3b79eb30e6687c17b62174ea9e17bdf0d5f7a2dcb021144cdc584f58753be"
-    sha256 cellar: :any, arm64_tahoe:       "4037cdf06844aa825899743cf9580881f6e6bf90cc45c90720577f6a520053e6"
-    sha256 cellar: :any, arm64_sequoia:     "99e3feaaaf8a7d5494771880d9fbf987c7e9f3d67c803f65eac753e0a7e86eed"
-    sha256 cellar: :any, arm64_linux:       "a13a8eb7536c3198136093eabd8791d13ae098c6d496e141ac392691b8b6ab97"
-    sha256 cellar: :any, x86_64_linux:      "ccca9e28c9adaa58a204284f0322b138e8afbf5e4cbced80f98fe319ca118cb3"
+    sha256 cellar: :any, arm64_golden_gate: "7ca0e83ac0f31147e09d3327ba0749abd66f751eaf99f9a99d33f00371c20dae"
+    sha256 cellar: :any, arm64_tahoe:       "f97b9e138d92960a4747adaa6a784b2f5dc0338ab35c7d4b7bd6ec8ff19f3af3"
+    sha256 cellar: :any, arm64_sequoia:     "abb26d7b8cbd036bfccc45286b0d3d17d48cc707c2abeca443ac9793a44f9710"
+    sha256 cellar: :any, arm64_linux:       "169e921ef07f11439f914659c19d8916cc38ca9ca69795f6b336c644e59a42c1"
+    sha256 cellar: :any, x86_64_linux:      "9c1ed4e74648921d129c2d1619c4b3705c73be8bef50ab9420aa24e9e9263c57"
   end
 
   depends_on "cmake" => :build
+  depends_on "flatbuffers" => :build
   depends_on "pybind11" => :build
-  depends_on "flatbuffers"
-  depends_on "jpeg-turbo"
-  depends_on "libpng"
+  depends_on "python@3.14" => [:build, :test]
   depends_on "lld@21"
   depends_on "llvm@21"
-  depends_on "python@3.14"
-  depends_on "wabt"
+  depends_on "wabt" => :no_linkage
 
-  on_macos do
-    depends_on "openssl@3"
-  end
+  deny_network_access!
 
   def install
     # Disable SVE feature as broken: https://github.com/halide/Halide/issues/8529
@@ -69,6 +72,8 @@ class Halide < Formula
       "-DHalide_USE_FETCHCONTENT=OFF",
       "-DWITH_TESTS=NO",
     ]
+    args << "-DCMAKE_SHARED_LINKER_FLAGS=-Wl,-dead_strip_dylibs" if OS.mac?
+
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"

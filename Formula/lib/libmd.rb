@@ -1,9 +1,9 @@
 class Libmd < Formula
   desc "Message Digest functions from BSD systems"
   homepage "https://www.hadrons.org/software/libmd/"
-  url "https://archive.hadrons.org/software/libmd/libmd-1.2.0.tar.xz"
-  mirror "https://libbsd.freedesktop.org/releases/libmd-1.2.0.tar.xz"
-  sha256 "ac15ffb8430502fbaccdec66c5a82ee0eab0b0f36220df56710feadfeb13d0a0"
+  url "https://archive.hadrons.org/software/libmd/libmd-1.3.0.tar.xz"
+  mirror "https://libbsd.freedesktop.org/releases/libmd-1.3.0.tar.xz"
+  sha256 "fc0f1eb6b6766470326f2c014693809190e67dba84274a6fbae9d4912d066706"
   license all_of: ["BSD-3-Clause", "BSD-2-Clause", "ISC", "Beerware", :public_domain]
 
   livecheck do
@@ -12,13 +12,11 @@ class Libmd < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_golden_gate: "3d1f9bf7f5a53ecc38d83da8a976a8464f8343aeb5d0949683a73f540e0131cd"
-    sha256 cellar: :any,                 arm64_tahoe:       "724fae7568e4d980d58d5e4dd8b16df1bba6867b1b86b19b051506a5f3c2686f"
-    sha256 cellar: :any,                 arm64_sequoia:     "c31c4006f3500e54a24928f78209be6ceeb7cdeb2bce2e09e0c012e2f75e671e"
-    sha256 cellar: :any,                 arm64_sonoma:      "9dff072fc11c4cceba0618e321315414aac84c3079da934e29cd75d4debcc0f2"
-    sha256 cellar: :any,                 sonoma:            "6197fba0dd8a2a9b32bb252e0fefcc2f5d1a981d17ba0e404075c3549d18e8d1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "1df107088db7b9b9c7e8107005899123c9d530605e2de894742094771f850506"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "6d1a0983574b60ff431bd4c9e903440ce6e5336ad24e18cbaccb6852b07f332b"
+    sha256 cellar: :any, arm64_golden_gate: "366d28c7ac75b795b94100726d9a38e66c97b669f5609ace8c251f842b69efe7"
+    sha256 cellar: :any, arm64_tahoe:       "444402c6c05d552f31d5cd6acd6ea5654daa79b7d40d32d13aceeeb27e104713"
+    sha256 cellar: :any, arm64_sequoia:     "2e70abfbbe3959958db7befb2c8b218781214290717ec10d97dea6c3e82021cb"
+    sha256 cellar: :any, arm64_linux:       "64e7579f92d26396662dc6f7724c4d5837656ea7997a2c48e9d83ecdcb95f458"
+    sha256 cellar: :any, x86_64_linux:      "934faaf308977199217ed9d52185bea45a7426ab03b68f4f369d1c1583e59bdb"
   end
 
   head do

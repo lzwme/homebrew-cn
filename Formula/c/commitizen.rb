@@ -16,7 +16,6 @@ class Commitizen < Formula
     sha256 cellar: :any, x86_64_linux:      "81953dd7da84929bcae74b5288af5b44616d0afd7272a7132c0c8a3dbc99e342"
   end
 
-  depends_on "maturin" => :build
   depends_on "rust" => :build
   depends_on "libyaml"
   depends_on "python@3.14"
@@ -97,10 +96,10 @@ class Commitizen < Formula
   end
 
   def install
-    virtualenv_install_with_resources
+    venv = virtualenv_install_with_resources
 
     generate_completions_from_executable(
-      libexec/"bin/register-python-argcomplete", "cz",
+      venv.root/"bin/register-python-argcomplete", "cz",
       base_name:              "cz",
       shell_parameter_format: :arg
     )

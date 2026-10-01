@@ -15,16 +15,18 @@ class Kingfisher < Formula
 
   depends_on "boost" => :build
   depends_on "cmake" => :build
-  depends_on "openssl@3" => :build
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
 
   uses_from_macos "bzip2"
 
+  on_linux do
+    depends_on "openssl@4" => :build
+  end
+
   def install
-    args = std_cargo_args
-    args << "--features=system-alloc" if OS.mac?
-    system "cargo", "install", *args
+    args = ["--features=system-alloc"] if OS.mac?
+    system "cargo", "install", *args, *std_cargo_args
   end
 
   test do

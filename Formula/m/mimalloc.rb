@@ -1,8 +1,8 @@
 class Mimalloc < Formula
   desc "Compact general purpose allocator"
   homepage "https://github.com/microsoft/mimalloc"
-  url "https://ghfast.top/https://github.com/microsoft/mimalloc/archive/refs/tags/v3.5.3.tar.gz"
-  sha256 "3b4a15153a59905995f7070296ed604bb5ccc00cabb8b93446931aff77224d47"
+  url "https://ghfast.top/https://github.com/microsoft/mimalloc/archive/refs/tags/v3.5.4.tar.gz"
+  sha256 "36e9b5bf1bb703567a0347491721ce2098000db8284dc55cd53d211452723cdb"
   license "MIT"
 
   livecheck do
@@ -11,11 +11,11 @@ class Mimalloc < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "e57154353a4985af23799456a88de494cafa6b2a9191273266d55aa1c3aeae43"
-    sha256 cellar: :any, arm64_tahoe:       "ca0ddd2c2c99b0e389a2cbe6a410b9257adb299ec1f1235441a552b44ea2ce1f"
-    sha256 cellar: :any, arm64_sequoia:     "1ceb924c9f955e284e21094bf8c1af015710a86adf26e1328f72aef99f8ea55f"
-    sha256 cellar: :any, arm64_linux:       "9a09e0dc0ac3d08179f43d29a41d7be962bdc3e95d9b06e1a8b3a191e59e7126"
-    sha256 cellar: :any, x86_64_linux:      "1c9bf9a8922b91702359309e9ffa996e597c1fe6ee04f164e2a67e7dfc83d034"
+    sha256 cellar: :any, arm64_golden_gate: "dd60b93e8d14d142676e8fadc8716a3a89fd904e70ae64f8b7b37419dd841163"
+    sha256 cellar: :any, arm64_tahoe:       "16044798f74dc1afe43cf92bad17c8e6dd72c45b59e3e8f3ba31bb26914c3be7"
+    sha256 cellar: :any, arm64_sequoia:     "ed6ea628573310aaf4b84ca7fa1beb6adc70c0da47461d2cec75cf56373e9e79"
+    sha256 cellar: :any, arm64_linux:       "d1355a4f11b003abd071ad5dcc86a5f568349b61eb67c4f15db6f053b0936eb1"
+    sha256 cellar: :any, x86_64_linux:      "8bb224b5ff42420711e3e550be105fb3496e46945c95c46177cd3d792a94bf5b"
   end
 
   depends_on "cmake" => :build

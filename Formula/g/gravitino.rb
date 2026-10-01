@@ -1,8 +1,8 @@
 class Gravitino < Formula
   desc "High-performance, geo-distributed, and federated metadata lake"
   homepage "https://gravitino.apache.org"
-  url "https://ghfast.top/https://github.com/apache/gravitino/releases/download/v1.3.0/gravitino-1.3.0-src.tar.gz"
-  sha256 "4fec3128fcec5f38afb77a5aca3d5db80e985461c11939c1bdce7494ff3dbbe2"
+  url "https://ghfast.top/https://github.com/apache/gravitino/releases/download/v1.3.1/gravitino-1.3.1-src.tar.gz"
+  sha256 "d9f4abda3d8397cc38cc116c86c796fc634eb15c040dcafa286b3c02455331a2"
   license "Apache-2.0"
 
   livecheck do
@@ -11,13 +11,11 @@ class Gravitino < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "0e02beabcbf572151bada2627f54ba8e9ed6e729e3542e755913921c21b41fb1"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "794b4cc79e434926e460b0d0697ae2e5198efec4fdd6fd9ef73c32c55d8d872c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "4901ff795ebf93c216a95118c47f3f4981aeac8cda7c50411b4f0adc5d9ea1c3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "cf599f7ae3b3366ca3a912d1e38173295ed63a2fa8eec6469542715b4deb31b3"
-    sha256 cellar: :any_skip_relocation, sonoma:            "98ef093c496da92d131e1fadc8f14bf2a2c6fb54ba9ba7568634f14135d1cae4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "401f2545ca7c3e9a6b0bcf6e4cb1ad45be626cf8e2860443a4f76320d79b3781"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "7394f88858b425fc22774a867ce23a19e24eb9ad8cceb3a908f851a0b4d5fe14"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "99b10dc44d27ead919f150edc4f52ccb3cec1178dae11ca304a4f13f9c666a3a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "260ee6421d3606256a110a9b99ad1a362a58bdfc60680da6e721ea77d7141da6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "b1a76015c8a30240478cc6164bae73c595a371614ea4379beaf1bae886943408"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "f578548ff65f5be79e684d3a6e253d0a8b97c4200085660cff0fa8c968e631a7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "0976b1cd1ae095dffc1fe12e66764554bed144efc3591f7d5b75e11819911a13"
   end
 
   depends_on "gradle@8" => :build # Gradle 9 issue ref: https://github.com/apache/gravitino/issues/8571

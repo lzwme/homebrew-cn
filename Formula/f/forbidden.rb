@@ -6,17 +6,15 @@ class Forbidden < Formula
   url "https://files.pythonhosted.org/packages/9b/aa/98fc3ee28aac41cae341a197858ff6af5d79e40dcd45c8a6e37b1fdbfd19/forbidden-13.4.tar.gz"
   sha256 "dc987150b71515810d7ae252895b3ca6e077a8d9b3cbb0d09dfc9797c933a14d"
   license "MIT"
-  revision 7
+  revision 8
   head "https://github.com/ivan-sincek/forbidden.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "12521a3f3858a908edce9f47cd5601ef5dec9a80545a63d3a67d38cfaa3f9232"
-    sha256 cellar: :any, arm64_tahoe:       "6c78f46743a663c83ed0ed740bb456e5d13eba4e4ce999441d0b41d6922c7da3"
-    sha256 cellar: :any, arm64_sequoia:     "326e5f8bccaea76435ee581f550835ec29cc265d70068fc892510688ba9ce58e"
-    sha256 cellar: :any, arm64_sonoma:      "c5cb0dcdf023197c1fefdcd8b76dff45fe284ed389474997b9d471b6ecb10deb"
-    sha256 cellar: :any, sonoma:            "df2bccb30c6c1abf7fe28d5131c861db966076c72617cbf2b7623d3aa9ab6beb"
-    sha256 cellar: :any, arm64_linux:       "aedbcbbb725f1e38e4e9167c730ea2420f733a21950ee55d023a63c36697c20b"
-    sha256 cellar: :any, x86_64_linux:      "ec8650dcd08b92e15a9debec459a772e27e6d8accedf4b0b2eee06f18d952114"
+    sha256 cellar: :any, arm64_golden_gate: "2a7c909987bd2a4f0bd8434b15a5f9bb45d1806b411f1788025e2f743a31d07e"
+    sha256 cellar: :any, arm64_tahoe:       "db9449dace9afc4c19593e1f897e0ef551b8ffef29f11087d43c8133916e881a"
+    sha256 cellar: :any, arm64_sequoia:     "f0cf0dda284c275cb0d6c5351a0c464d090011bd70ac1fea00a8624bfb748c60"
+    sha256 cellar: :any, arm64_linux:       "68628116b5acde48ec9f09a26c87aff87d3e9327b8d78e99b0abaf0164e73cda"
+    sha256 cellar: :any, x86_64_linux:      "abecba717fbda4053b52de85588eb1b4b7057110509fe805b0d8fc9fa1f5d169"
   end
 
   depends_on "certifi" => :no_linkage
@@ -45,8 +43,8 @@ class Forbidden < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/e7/a1/67fe25fac3c7642725500a3f6cfe5821ad557c3abb11c9d20d12c7008d3e/charset_normalizer-3.4.7.tar.gz"
-    sha256 "ae89db9e5f98a11a4bf50407d4363e7b09b31e55bc117b4f7d80aab97ba009e5"
+    url "https://files.pythonhosted.org/packages/e5/3f/143b048436775b0f76ac3eec145c019e8173ccc2885c8f20319b996d5e83/charset_normalizer-3.5.1.tar.gz"
+    sha256 "6117b84ea48435e5356dc737f5121485c30920ba43375fa7b434fd753df0eac3"
   end
 
   resource "colorama" do
@@ -60,23 +58,23 @@ class Forbidden < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/b9/28/99c51f664567218d824af024c0251650fb27e4ca066df188dab0769c5b91/idna-3.17.tar.gz"
-    sha256 "5eb0cb53bc467c12eadcf6de83163ad8527cec9416f44b9b61b19caedad2b87f"
+    url "https://files.pythonhosted.org/packages/f5/08/8eea9d4b8302028f3abb2c0813953f7aec26d33b7a8960ed760e65ff29fa/idna-3.20.tar.gz"
+    sha256 "a7db850025b95ded1eae8a46181a1a6c56c92c96f0e2b005d9ff8dc0210cab44"
   end
 
   resource "pycurl" do
-    url "https://files.pythonhosted.org/packages/95/23/cc07b16591af8ca373494d29aafc8df13e547077579e6779bb865a3f5a7f/pycurl-7.46.0.tar.gz"
-    sha256 "422ed7005b98768fe60fe6b6cb8bb6a4e1fc18b5433402e8fbdaba91811c4604"
+    url "https://files.pythonhosted.org/packages/fe/62/5851dbbaba9b8ba69019ee74213f1c31b0b2b7ba643ad48e9407638b0dea/pycurl-7.48.0.tar.gz"
+    sha256 "b70961a76c412cd34f9cc2c9558e63f89fb37045c59eee396c585b52973be280"
   end
 
   resource "pyjwt" do
-    url "https://files.pythonhosted.org/packages/3b/81/58d0ac84e1ef3a3843791d6954d94c0b33d526c75eeb1efbce9d0a4c4077/pyjwt-2.13.0.tar.gz"
-    sha256 "41571c89ca91598c79e8ef18a2d07367d4810fbbd6f637794879baf1b7703423"
+    url "https://files.pythonhosted.org/packages/43/ea/5194e52748b0da83d71e082d75496eaec6e58f419f5e184786ded517e6a9/pyjwt-2.15.1.tar.gz"
+    sha256 "4f259e80cdfb6b3fc18a7de51fd1ef9ec79652f25019bae68975ca2468a34df8"
   end
 
   resource "regex" do
-    url "https://files.pythonhosted.org/packages/dc/0e/49aee608ad09480e7fd276898c99ec6192985fa331abe4eb3a986094490b/regex-2026.5.9.tar.gz"
-    sha256 "a8234aa23ec39894bfe4a3f1b85616a7032481964a13ac6fc9f10de4f6fca270"
+    url "https://files.pythonhosted.org/packages/fc/f2/af1da9d3ceed77bfcdce40427d49ba0be94e4fe84245e3bfef68c10e75b6/regex-2026.9.29.tar.gz"
+    sha256 "8b5fcc4771732191b2b7d1dd68d8f0353f47f8d90b6150f6dce58bf1112442cb"
   end
 
   resource "requests" do
@@ -95,8 +93,8 @@ class Forbidden < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/53/0c/06f8b233b8fd13b9e5ee11424ef85419ba0d8ba0b3138bf360be2ff56953/urllib3-2.7.0.tar.gz"
-    sha256 "231e0ec3b63ceb14667c67be60f2f2c40a518cb38b03af60abc813da26505f4c"
+    url "https://files.pythonhosted.org/packages/e3/05/b17359e1cefb4f909b5e40b1b90a496d987258916dbbf88e842c729f510e/urllib3-2.8.0.tar.gz"
+    sha256 "63bf2ead4c879426ebf22ef2a781eeb4aa3b4ae798a0435506f8687fd5bb9b63"
   end
 
   def install

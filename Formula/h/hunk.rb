@@ -1,8 +1,8 @@
 class Hunk < Formula
   desc "Review-first terminal diff viewer for agent-authored changesets"
   homepage "https://hunk.dev/"
-  url "https://ghfast.top/https://github.com/modem-dev/hunk/archive/refs/tags/v0.22.0.tar.gz"
-  sha256 "dd591936f924933746b45d0ecdd39c7fda625f45619b467ca577a601b0f67b04"
+  url "https://ghfast.top/https://github.com/modem-dev/hunk/archive/refs/tags/v0.23.0.tar.gz"
+  sha256 "41ee0e79c56fc292d0fe09ed174736048be4662d867ca448506921e7b9a65fa6"
   license "MIT"
   head "https://github.com/modem-dev/hunk.git", branch: "main"
 
@@ -12,12 +12,11 @@ class Hunk < Formula
   end
 
   bottle do
-    sha256                               arm64_golden_gate: "454336f6bd747701b925f5833ad1986497bde75e8ad9e15ffae51a0eff1e06fd"
-    sha256                               arm64_tahoe:       "454336f6bd747701b925f5833ad1986497bde75e8ad9e15ffae51a0eff1e06fd"
-    sha256                               arm64_sequoia:     "454336f6bd747701b925f5833ad1986497bde75e8ad9e15ffae51a0eff1e06fd"
-    sha256                               arm64_sonoma:      "454336f6bd747701b925f5833ad1986497bde75e8ad9e15ffae51a0eff1e06fd"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "e81546e66c63b0b2823b0d61308e39c06a3636af5633f98e08dce83c844a9dc4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "c7c26d05238d1c0ec89df72d9bacf905822b5b0ffc299751a919002b79c24284"
+    sha256                               arm64_golden_gate: "7015a2c63789ba3be5330cc3abca004d1408f5f54f497f75f64de7e439737c20"
+    sha256                               arm64_tahoe:       "7015a2c63789ba3be5330cc3abca004d1408f5f54f497f75f64de7e439737c20"
+    sha256                               arm64_sequoia:     "7015a2c63789ba3be5330cc3abca004d1408f5f54f497f75f64de7e439737c20"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "abb5098d0b57e78d89443e5c6f94fcb2620dcb6156314285d542dc975a145c02"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "dbbd755f1b4cbd964abe225c1cbcf127ed5f363e4eba8a155b41f1c7c584b7fc"
   end
 
   depends_on "bun" => :build

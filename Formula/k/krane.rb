@@ -1,18 +1,16 @@
 class Krane < Formula
   desc "Kubernetes deploy tool with rollout verification"
   homepage "https://github.com/Shopify/krane"
-  url "https://rubygems.org/downloads/krane-3.9.1.gem"
-  sha256 "eda88d26175aaf257df71b55b5df9d4868710a28df2b595bebadc1192a65bb8d"
+  url "https://rubygems.org/downloads/krane-3.9.2.gem"
+  sha256 "64da5d6b80b25e401e1b9a9c4966f2045002948ca56b567df3b2ceb7a237d4d1"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_golden_gate: "489561e176e8b1e2a20f15dbceecf45e163a2dac2b08fa38fd0d257776a0c625"
-    sha256 cellar: :any,                 arm64_tahoe:       "c6f7ce0880691e99783350621b81f818c2ab45895deda32fb071b718f7ae9c3c"
-    sha256 cellar: :any,                 arm64_sequoia:     "d7654441d438414758693a1ea71be2f1158b81363cc392de3854566c9805d1a6"
-    sha256 cellar: :any,                 arm64_sonoma:      "6201a5021aaf84c0783e76164be2007faa3194d8277e607296c82c35a180c510"
-    sha256 cellar: :any,                 sonoma:            "fcee877569b1606da620e2e189084e1aa1d902f56ca0b453d6838e2f625dd643"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "08545226cfed372f535b9aa70549de7ab57782bbc5793082005f357a04f5d768"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "56898f13d9e4ece67e8720802746036fab763dad1a8bf90de3cd59e0c905d0d6"
+    sha256 cellar: :any, arm64_golden_gate: "31df7f443f3c01ffbdebedc34b969285852a04f74bddd165a951dc0625ee5a45"
+    sha256 cellar: :any, arm64_tahoe:       "7fff026d82c3c1ad0e1e100ea2932b3f4dd3d40e6d3568a663da7ee92db168db"
+    sha256 cellar: :any, arm64_sequoia:     "e3a9158fd797a5314a600199928d4918cc37812a6d3f3c5c1b5084eeb2bcc313"
+    sha256 cellar: :any, arm64_linux:       "75b6651a579b662155b70497f3123dfe912fcd754d8a51ee4d6cc26077a1d74f"
+    sha256 cellar: :any, x86_64_linux:      "e3a14b671f12f9d95db087db90dacc89587799fcf8b7ac2807c469e38b2b21ff"
   end
 
   depends_on "kubernetes-cli"

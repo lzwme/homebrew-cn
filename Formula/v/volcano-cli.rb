@@ -1,18 +1,17 @@
 class VolcanoCli < Formula
   desc "CLI for Volcano, Cloud Native Batch System"
   homepage "https://volcano.sh"
-  url "https://ghfast.top/https://github.com/volcano-sh/volcano/archive/refs/tags/v1.15.2.tar.gz"
-  sha256 "047a2b05dc4a263e06b6debc5eeffb78cc8c782d71c1d3a7b30a0714b9927acd"
+  url "https://ghfast.top/https://github.com/volcano-sh/volcano/archive/refs/tags/v1.15.3.tar.gz"
+  sha256 "efaa04f2e0347d4fb5de4fcc8db2b6b933666bdb1f39c3c15bafb7eb3548fd56"
   license "Apache-2.0"
   head "https://github.com/volcano-sh/volcano.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "9598381fded7ee138c7e7234e54284723c9ae27227a86b1f48b497a075c23b71"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "c8ed7e197d008959cd3ebf0455eca8f35345e3c3e1bdf102746ad401094ffce0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "5035763ecb4e7cfae00f665729f092cd7fec132d3fa465b64a180809b67efa86"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "6fdd66c6126b09caf8ec8cf3ab608615a31ff4a53330dfae0e9627a00bf416cf"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "93682ba0188d07e2b76e9f570d6abfd15394941efabd07c627ba28337161eefa"
-    sha256 cellar: :any,                 x86_64_linux:      "65fe3400d1c3d9fc84915cec5cbc6693bf5c33eb555377fef9ff4e429e504072"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "e7d66b8307e64551536b4b514f0b7fb13b07ab50e6bbb39a05c9f3d998eb5ef7"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "22873da86567eeb351adbaa8e26d69efddc65b9ec4f0dde696104f8e4e3a9bf0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "df29e5c124436200fcf2ef8aa6a9652413e11836bbea4a4a2c63d930e1093e15"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "6fa238f571bed318c5349e5071ab447aa83a0c4a5a6a672bd70ebd4fce311fcc"
+    sha256 cellar: :any,                 x86_64_linux:      "ec7fb7beed7e5c5b2278d7c953f99803b4e7de6c51b46a0ea673350b077ab2e3"
   end
 
   depends_on "go" => :build

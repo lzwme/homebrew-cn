@@ -3,17 +3,17 @@ class CyclonedxPython < Formula
 
   desc "Creates CycloneDX Software Bill of Materials (SBOM) from Python projects"
   homepage "https://cyclonedx.org/"
-  url "https://files.pythonhosted.org/packages/e3/c2/5f3b9d4a9c548d870e5c3a78f4b87753a7fd152f973c2b2142f878195dbe/cyclonedx_bom-7.4.0.tar.gz"
-  sha256 "425862a74a6660cfa867fd4bc3dff34ca1cec49549594e4a9096663135426cfe"
+  url "https://files.pythonhosted.org/packages/02/87/65a331687130bcd70152b345e05b6ec6b81b8d5fb7709e8aab48babcdd32/cyclonedx_bom-7.5.0.tar.gz"
+  sha256 "396cc8c9cb7533d25a21f930b45d2699a1839e3ba2be9ba88f8bd61c566b51dc"
   license "Apache-2.0"
   head "https://github.com/CycloneDX/cyclonedx-python.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "d9ce13dab13d4ff306d4828c6ff2e390a490fdf7d49e16cd3d56a5a82019b0a5"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "6efdeec97400aba6f37352d53ee2bc961b899f3488415ed4e31b26181f686f59"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "0e6a282ed9c9323713b0fcb7b04f022b0fbc730731f3232ae73bb019b6dea36b"
-    sha256 cellar: :any,                 arm64_linux:       "54b20b3cf7d59e0179f8177e4912a2a8d155870931dab4024a0eb912e5e9a228"
-    sha256 cellar: :any,                 x86_64_linux:      "b929f6ac923bdc3d520f3788a8b8d548e32aaba4ee657739e6fd60283ad6bbbe"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "e2e2e6671f9b6cb34ea2fc4dc48fc7a779b52e2910e7e261bdf26daafc964393"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "4da8de49031b32b654a0489c376b64c9b3f81edacb2939abcb6df8a7898da838"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "ac17952337ab2c052239b2dc5a2d06af8804d4a76b076d7acac6a0581a61e089"
+    sha256 cellar: :any,                 arm64_linux:       "6dee30e4e9291b32e5dc20428430d9547447683e6601e8f2a3e3f5dc0395f544"
+    sha256 cellar: :any,                 x86_64_linux:      "3d7a66f6f7515f22d7b22eb32c1966a612999a1183813872a8cba6d83739f485"
   end
 
   depends_on "python@3.14"
@@ -40,8 +40,8 @@ class CyclonedxPython < Formula
   end
 
   resource "chardet" do
-    url "https://files.pythonhosted.org/packages/f3/0d/f7b6ab21ec75897ed80c17d79b15951a719226b9fababf1e40ea74d69079/chardet-5.2.0.tar.gz"
-    sha256 "1b3b6ff479a8c414bc3fa2c0852995695c4a026dcd6d0633b2dd092ca39c1cf7"
+    url "https://files.pythonhosted.org/packages/b1/51/cd61c567092a6cec796144510a68aff158ebfc1df82950a45bae65f28413/chardet-7.6.0.tar.gz"
+    sha256 "93d9df6089ded42ed1fe9f57e272c0b74bd0464d45c0c7d50f09f26f31105c3c"
   end
 
   resource "cyclonedx-python-lib" do
@@ -55,13 +55,13 @@ class CyclonedxPython < Formula
   end
 
   resource "fqdn" do
-    url "https://files.pythonhosted.org/packages/30/3e/a80a8c077fd798951169626cde3e239adeba7dab75deb3555716415bd9b0/fqdn-1.5.1.tar.gz"
-    sha256 "105ed3677e767fb5ca086a0c1f4bb66ebc3c100be518f0e0d755d9eae164d89f"
+    url "https://files.pythonhosted.org/packages/02/01/248d44fbda9e78fa1a7b5a475194bef4c4a3e285db286419f3bb42f2efdf/fqdn-1.6.0.tar.gz"
+    sha256 "e39bf62e2a9481aa2cb780554fdfd944dd8ee5f230eb831684d539cbafed8de2"
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/5f/f7/abb373e5757eaec4b922b92f97ec8d6d7e057cf06778247604fbc4e7c3f3/idna-3.19.tar.gz"
-    sha256 "5e0811a4383b21dc5838069f801c4fb62113b7447663d2530d2bd6e77b49bf15"
+    url "https://files.pythonhosted.org/packages/f5/08/8eea9d4b8302028f3abb2c0813953f7aec26d33b7a8960ed760e65ff29fa/idna-3.20.tar.gz"
+    sha256 "a7db850025b95ded1eae8a46181a1a6c56c92c96f0e2b005d9ff8dc0210cab44"
   end
 
   resource "isoduration" do
@@ -120,8 +120,8 @@ class CyclonedxPython < Formula
   end
 
   resource "pyparsing" do
-    url "https://files.pythonhosted.org/packages/f3/91/9c6ee907786a473bf81c5f53cf703ba0957b23ab84c264080fb5a450416f/pyparsing-3.3.2.tar.gz"
-    sha256 "c777f4d763f140633dcb6d8a3eda953bf7a214dc4eff598413c070bcdc117cbc"
+    url "https://files.pythonhosted.org/packages/e4/11/b213bebff182584360cb8d17c72c1677fec5c5c228de439e63bcf8ab1c8f/pyparsing-3.3.3.tar.gz"
+    sha256 "928ae7e20211f3b6f3915a72f06a0cfd29ab9d24279dd6346b6b1a7146397d36"
   end
 
   resource "python-dateutil" do
