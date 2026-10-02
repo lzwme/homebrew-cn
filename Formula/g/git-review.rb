@@ -6,11 +6,11 @@ class GitReview < Formula
   url "https://files.pythonhosted.org/packages/da/92/ddc922d34061791a4d0fd483ee4ffc5e026e93783b70fe5a29a129d0cf63/git_review-2.5.0.tar.gz"
   sha256 "1bcffaef02848a5a3b066e8268c7d700a77cbd8b2e56b128d30f60cd431cf0a8"
   license "Apache-2.0"
-  revision 7
+  revision 8
   head "https://opendev.org/opendev/git-review.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "50de30c497dcfcc3916e65b721ab047dd49a978970793dc29973fbcb88c57075"
+    sha256 cellar: :any_skip_relocation, all: "a8b1255fe6038df207ca7722367e9ea8ebfe0a759f9b1fe8b8ca6c9bd210614d"
   end
 
   depends_on "certifi"
@@ -21,13 +21,13 @@ class GitReview < Formula
   pypi_packages exclude_packages: "certifi"
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/e7/a1/67fe25fac3c7642725500a3f6cfe5821ad557c3abb11c9d20d12c7008d3e/charset_normalizer-3.4.7.tar.gz"
-    sha256 "ae89db9e5f98a11a4bf50407d4363e7b09b31e55bc117b4f7d80aab97ba009e5"
+    url "https://files.pythonhosted.org/packages/33/1c/f41d4e74c28ab327ff3acd36053f7ea506c55872d7a90b0fa71aa3ab0c89/charset_normalizer-3.5.2.tar.gz"
+    sha256 "39de2a259fc954455c57274dc94c79d5842774e1247a016aff30bc0efed0f4ef"
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/82/77/7b3966d0b9d1d31a36ddf1746926a11dface89a83409bf1483f0237aa758/idna-3.15.tar.gz"
-    sha256 "ca962446ea538f7092a95e057da437618e886f4d349216d2b1e294abfdb65fdc"
+    url "https://files.pythonhosted.org/packages/f5/08/8eea9d4b8302028f3abb2c0813953f7aec26d33b7a8960ed760e65ff29fa/idna-3.20.tar.gz"
+    sha256 "a7db850025b95ded1eae8a46181a1a6c56c92c96f0e2b005d9ff8dc0210cab44"
   end
 
   resource "requests" do
@@ -36,8 +36,8 @@ class GitReview < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/53/0c/06f8b233b8fd13b9e5ee11424ef85419ba0d8ba0b3138bf360be2ff56953/urllib3-2.7.0.tar.gz"
-    sha256 "231e0ec3b63ceb14667c67be60f2f2c40a518cb38b03af60abc813da26505f4c"
+    url "https://files.pythonhosted.org/packages/e3/05/b17359e1cefb4f909b5e40b1b90a496d987258916dbbf88e842c729f510e/urllib3-2.8.0.tar.gz"
+    sha256 "63bf2ead4c879426ebf22ef2a781eeb4aa3b4ae798a0435506f8687fd5bb9b63"
   end
 
   def install

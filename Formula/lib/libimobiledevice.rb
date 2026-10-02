@@ -4,17 +4,16 @@ class Libimobiledevice < Formula
   url "https://ghfast.top/https://github.com/libimobiledevice/libimobiledevice/releases/download/1.4.0/libimobiledevice-1.4.0.tar.bz2"
   sha256 "23cc0077e221c7d991bd0eb02150a0d49199bcca1ddf059edccee9ffd914939d"
   license "LGPL-2.1-or-later"
+  revision 1
   compatibility_version 1
   head "https://github.com/libimobiledevice/libimobiledevice.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_golden_gate: "0c372f1a8a7129bb2c32b09875db39c8be8b07652f9169767aa20b24581e5eaa"
-    sha256 cellar: :any,                 arm64_tahoe:       "57e9ce8270a268ce61766da57305ddf8adef5310556992f97534a0c6b8dc2112"
-    sha256 cellar: :any,                 arm64_sequoia:     "17e3e2fa9618cfdc21a0e87c97ae8d1ffb02de19f88ef5cc886a0663b6c1b66c"
-    sha256 cellar: :any,                 arm64_sonoma:      "ac0a39864d542e1b5d248efe7ee1bbb5dc58a2739dd248ec987dc7b794ef9fd9"
-    sha256 cellar: :any,                 sonoma:            "aa40670dbbdadabc7f035fe2ea17da68a1dab8937a4f1c0429c0a7fd58c108f5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "d54c686502da56b005f514e052d5d6f24242acc99236309da37854d573fd0206"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "8d22c1f4fccc06261e4e1775f3d56864ddbe37ba3980b28b5d17898d74662307"
+    sha256 cellar: :any, arm64_golden_gate: "a03c9a613bd9b5e84ab9259eeeecd8b62f147441d467b75beb7e19bb7f3ea887"
+    sha256 cellar: :any, arm64_tahoe:       "ac7bc52f4a95b6bd20cc15232d21b3ed7c0a5c40c89156895de10ce1a301d59c"
+    sha256 cellar: :any, arm64_sequoia:     "d1a3daa1a9ad566a86f553d4d3c677f9870c7f4e489155b581d6e6bc96d14cf4"
+    sha256 cellar: :any, arm64_linux:       "a7e06622c240701fc5723138da9c6cec6d2fa16dc3a3085deb835fca7b7b63be"
+    sha256 cellar: :any, x86_64_linux:      "75cd18a11ff1b43ef5eb2309b2da670914dc58b8e9e27e52856262f5859ed1a2"
   end
 
   depends_on "autoconf" => :build

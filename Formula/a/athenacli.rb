@@ -6,32 +6,36 @@ class Athenacli < Formula
   url "https://files.pythonhosted.org/packages/31/1b/fb72060d66d8afaaba86b5ead8c4edaf4a37a2a175baa8ac391c3ee60a48/athenacli-1.7.0.tar.gz"
   sha256 "1c81f420035ae4d6ed202da659ba640982880c65c7e7755c0b5a6d25adc2ac25"
   license "BSD-3-Clause"
-  revision 1
+  revision 2
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "8be4676b5d0d8fd27ae323d4228b236dc02fdd7ecd709c48f57a173933d72699"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "85eaea0d865a41d6c88d4b3c054d4d2054249f8db70052996fe1222e2b95fbcb"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "04441fe488e15e27377bb3fff9bdcd7f7e5a254fed8bd26487f7472b1a19e731"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "35ae975070f7ab57defd021f955ac9a52d250fc4c83c37da97b9c54daaae7f32"
+    sha256 cellar: :any,                 arm64_linux:       "20a927850697e9ddcf138b7a5e3bfeddc0971abe13c14af0113d7ca3e464bf8b"
+    sha256 cellar: :any,                 x86_64_linux:      "d0c49cccc3ba19fb188a658feeaa3b1beab8760853813f7ab3ab9c6d5cde15df"
   end
 
   depends_on "python@3.14"
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/0a/37/78c630d1308964aa9abf44951d9c4df776546ff37251ec2434944e205c4e/boto3-1.43.6.tar.gz"
-    sha256 "e6315effaf12b890b99956e6f8e2c3000a3f64e4ee91943cec3895ce9a836afb"
+    url "https://files.pythonhosted.org/packages/75/46/d8c87ada70a7647fb3d206c7f19eafca3580a0ae4c06d62da539a1ee1207/boto3-1.43.105.tar.gz"
+    sha256 "e51260aed9cc1474778b5488bc6f97ad28f27a0a7002f4bbaaf8191aff1422ea"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/79/a7/23d0f5028011455096a1eeac0ddf3cbe147b3e855e127342f8202552194d/botocore-1.43.6.tar.gz"
-    sha256 "b1e395b347356860398da42e61c808cf1e34b6fa7180cf2b9d87d986e1a06ba0"
+    url "https://files.pythonhosted.org/packages/2b/30/668f3c0533a440787e212cf56404cb6ec234ae8e6baf97fe17329d512d88/botocore-1.43.105.tar.gz"
+    sha256 "afb3e7706b123ab069d1c34571ca1fdf82528a48425574fe4693df3d039d503f"
   end
 
   resource "cli-helpers" do
-    url "https://files.pythonhosted.org/packages/95/ea/e6e224f35191f9347a506dcf7fa03d839599625798bd037faf1fb8820654/cli_helpers-2.14.0.tar.gz"
-    sha256 "798e0731f2f4d425767cb12a3ad966bf28b5de77a5651662061bb4a66bee8f35"
+    url "https://files.pythonhosted.org/packages/3f/de/278f4885fcd03661ab9b69dba9fc745c27d820858dbc06e427057899dcf5/cli_helpers-2.15.1.tar.gz"
+    sha256 "e9c0826dda2855745eb63b3fd8e33b6ac8881188f2ba91e51a516ed833fc0cb8"
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/bb/63/f9e1ea081ce35720d8b92acde70daaedace594dc93b693c869e0d5910718/click-8.3.3.tar.gz"
-    sha256 "398329ad4837b2ff7cbe1dd166a4c0f8900c3ca3a218de04466f38f6497f18a2"
+    url "https://files.pythonhosted.org/packages/c7/0e/7fa0ef50764b67090eca4114772a2abf8b6148198475e54c660b97caeee6/click-8.5.0.tar.gz"
+    sha256 "ba0d2089de75ea0310e2dde03160e6ca10009947fb95a182f9b54021bb272e34"
   end
 
   resource "configobj" do
@@ -40,8 +44,8 @@ class Athenacli < Formula
   end
 
   resource "fsspec" do
-    url "https://files.pythonhosted.org/packages/d5/8d/1c51c094345df128ca4a990d633fe1a0ff28726c9e6b3c41ba65087bba1d/fsspec-2026.4.0.tar.gz"
-    sha256 "301d8ac70ae90ef3ad05dcf94d6c3754a097f9b5fe4667d2787aa359ec7df7e4"
+    url "https://files.pythonhosted.org/packages/77/cd/9be253869fc42e764de7f3dedd6969af7d44ff9c3375214a3442a6f3fc08/fsspec-2026.9.0.tar.gz"
+    sha256 "0f08147951c8cb31d844c3547d631053b127863b60be04cf06e121333ee0e2fe"
   end
 
   resource "jmespath" do
@@ -50,13 +54,13 @@ class Athenacli < Formula
   end
 
   resource "prompt-toolkit" do
-    url "https://files.pythonhosted.org/packages/a1/96/06e01a7b38dce6fe1db213e061a4602dd6032a8a97ef6c1a862537732421/prompt_toolkit-3.0.52.tar.gz"
-    sha256 "28cde192929c8e7321de85de1ddbe736f1375148b02f2e17edd840042b1be855"
+    url "https://files.pythonhosted.org/packages/7d/ea/39b988c938f75cb75d7045b5c69f8bfed47ee2152c8837fb403de29d6fb8/prompt_toolkit-3.0.53.tar.gz"
+    sha256 "9ec8a0ad96d5c56148b3f914aa79c1564c3fde5d2e6b876e7bc327e353cf8fa6"
   end
 
   resource "pyathena" do
-    url "https://files.pythonhosted.org/packages/cd/f1/41cc66a42a581cbd463baa429f003dd999f3c544d6d136eef9a58d66642a/pyathena-3.30.1.tar.gz"
-    sha256 "012dacf4e5205dce705bbdc70a88025a8aeadc114bc9d2d0ac4fcb122afa0457"
+    url "https://files.pythonhosted.org/packages/dc/57/25d419dfffb2ceadcefce4a9cf8f56d0bcaf76f7b8db8a39c1d4f2ac7835/pyathena-3.37.0.tar.gz"
+    sha256 "ca3ce3ef18ededcd2c45ce2ebfaca9e9aaf9249161749a72f47062feb44037ea"
   end
 
   resource "pygments" do
@@ -70,8 +74,8 @@ class Athenacli < Formula
   end
 
   resource "s3transfer" do
-    url "https://files.pythonhosted.org/packages/9b/ec/7c692cde9125b77e84b307354d4fb705f98b8ccad59a036d5957ca75bfc3/s3transfer-0.17.0.tar.gz"
-    sha256 "9edeb6d1c3c2f89d6050348548834ad8289610d886e5bf7b7207728bd43ce33a"
+    url "https://files.pythonhosted.org/packages/76/43/35e4d8aa320bffe8287fe8f65f578fa2d2db0a64212f0e710dce58267854/s3transfer-0.19.2.tar.gz"
+    sha256 "ba0309fd86be3c27dbf78cdd813c13c5e1df16e5874b99d2535ebbdfb9892993"
   end
 
   resource "six" do
@@ -95,13 +99,13 @@ class Athenacli < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/53/0c/06f8b233b8fd13b9e5ee11424ef85419ba0d8ba0b3138bf360be2ff56953/urllib3-2.7.0.tar.gz"
-    sha256 "231e0ec3b63ceb14667c67be60f2f2c40a518cb38b03af60abc813da26505f4c"
+    url "https://files.pythonhosted.org/packages/e3/05/b17359e1cefb4f909b5e40b1b90a496d987258916dbbf88e842c729f510e/urllib3-2.8.0.tar.gz"
+    sha256 "63bf2ead4c879426ebf22ef2a781eeb4aa3b4ae798a0435506f8687fd5bb9b63"
   end
 
   resource "wcwidth" do
-    url "https://files.pythonhosted.org/packages/2c/ee/afaf0f85a9a18fe47a67f1e4422ed6cf1fe642f0ae0a2f81166231303c52/wcwidth-0.7.0.tar.gz"
-    sha256 "90e3a7ea092341c44b99562e75d09e4d5160fe7a3974c6fb842a101a95e7eed0"
+    url "https://files.pythonhosted.org/packages/dc/ac/3a943d2792c9bb368aaa8b50121c0f778460ba2d7fbdc0a0366201d9e761/wcwidth-0.9.1.tar.gz"
+    sha256 "5823209b0d43af322ce698c689380d7c15ca31fa8e6e3be8459f27031bef0af5"
   end
 
   def install

@@ -1,19 +1,17 @@
 class Oauth2Proxy < Formula
   desc "Reverse proxy for authenticating users via OAuth 2 providers"
   homepage "https://oauth2-proxy.github.io/oauth2-proxy/"
-  url "https://ghfast.top/https://github.com/oauth2-proxy/oauth2-proxy/archive/refs/tags/v7.15.4.tar.gz"
-  sha256 "52e46276359e8e06cc53e9636f605784b9d6f21819c2592d07f9cf5c1eb78779"
+  url "https://ghfast.top/https://github.com/oauth2-proxy/oauth2-proxy/archive/refs/tags/v7.15.5.tar.gz"
+  sha256 "cf8055fecef1f89bcc89834d3342009b4067e80b1994e6bb5c2456d8ff68995b"
   license "MIT"
   head "https://github.com/oauth2-proxy/oauth2-proxy.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "264f3f77994c7eff623049646351cbfaa9e80759ed19686e36080c2674b38b83"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "7ee307e2f05a71c12e3e7bb5fa7db5f909c81405f420dd1af64cd86765b8899c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "c9d5d69bd021ca707f9ffae951d8d654dd507bcf50987a32df8258b15f44e900"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "49cbec534a65a6a184ab1a92759c567bb65dd200836e47d934b307d9a32692ae"
-    sha256 cellar: :any_skip_relocation, sonoma:            "4fe0956296d32e82dc037cf77a0814c3b729db55d64da747f65974a17dc403a9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "4c9c0eea89a8290ff52dd268d75dddfe58da50a404b9dd80f2fec34beac066b3"
-    sha256 cellar: :any,                 x86_64_linux:      "7ffd275109ba2eaf2961a059714b709842c72426bf0c4d46e5e8028a43e554e6"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "15ce14d5e75a072f73315d89fba36361c4e786907e73c9de81030473bc424401"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "76d6c2819ebce530cb5a698e5e36412c15e421f72ef5ce68e97352c2dda96d16"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "86983352e8a449291a694c502bb30c532914c1169acd37af8134704b23507717"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "16462094aa070b585b4c6603a1628b8e3a5e59f6b2d5368b054cb5e5014db39d"
+    sha256 cellar: :any,                 x86_64_linux:      "173429be3e5962b95e0dfbf86671bbfaac580df84a7e41c858b66d97b74105a7"
   end
 
   depends_on "go" => :build

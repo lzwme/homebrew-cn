@@ -2,8 +2,8 @@ class ArchiSteamFarm < Formula
   desc "Application for idling Steam cards from multiple accounts simultaneously"
   homepage "https://github.com/JustArchiNET/ArchiSteamFarm"
   url "https://github.com/JustArchiNET/ArchiSteamFarm.git",
-      tag:      "6.3.9.6",
-      revision: "e8733970dd9a240ab357ab85d2d7155b6ec0427e"
+      tag:      "6.3.10.3",
+      revision: "27bd1d5dbdc8c4897eaaed0e3246d10ffe18b0ad"
   license "Apache-2.0"
   head "https://github.com/JustArchiNET/ArchiSteamFarm.git", branch: "main"
 
@@ -13,12 +13,11 @@ class ArchiSteamFarm < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "afe8ce9b6e666d4aa922d7c988855dd9604619e7bca01b4a53c0ae2981a8130b"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "91f7b543782cdf86f4b0a3bdbb215287f7a3e1f85d6eccc1529316a72a964be8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "4819ee9cbae68467af3063c5973d940aa579db7cb81bc0b1b1320d7db9f53807"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "3430a9ff96d501a41c383eef3d5edba8b22f8b51d280b6e3462f70dd7e33b702"
-    sha256 cellar: :any,                 arm64_linux:       "ccad4f1dbb20ce658740894c47eb65b71e61bfdac14c81c6d0f6257b4f2578c2"
-    sha256 cellar: :any,                 x86_64_linux:      "4f90f37c7993ec28709db6e46eef98a8d475d8cb99d28b947a0d6b483744e8e3"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "eafecb0f49c997d05739ad5662df693ce6cb2f362e7db7506360bb066889c991"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "6800e155779438f39d6c4869ef3e79cb2836a06b61982c0bfd832b33015af868"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "1188a150fa4c1805cf64892dc16b350e126953399df4b3b143b5a928c6a95599"
+    sha256 cellar: :any,                 arm64_linux:       "e685fdc552de16a5da133c0d9f14effeaf28d51358c067152d73bf16cdb0ccc9"
+    sha256 cellar: :any,                 x86_64_linux:      "6b4b5b82d0fe51a361c19b39ff760e85619253c12b0f94a12134a40f89dbbb84"
   end
 
   depends_on "node" => :build

@@ -1,17 +1,16 @@
 class Teslamate < Formula
   desc "Self-hosted data logger for your Tesla"
   homepage "https://docs.teslamate.org"
-  url "https://ghfast.top/https://github.com/teslamate-org/teslamate/archive/refs/tags/v4.2.0.tar.gz"
-  sha256 "423a138df210e2c26748c1d4321667920c2c5e71385d5da75c9f90309ec8990d"
+  url "https://ghfast.top/https://github.com/teslamate-org/teslamate/archive/refs/tags/v4.3.0.tar.gz"
+  sha256 "b27b77ba878211f59f4c6399dcbf434063f36c9cee06d581475834804a242728"
   license "AGPL-3.0-or-later"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_golden_gate: "34e0f6bcc04e40961fe881257a618fa00a432dfdf00120335a0bab5eb081f5e2"
-    sha256 cellar: :any, arm64_tahoe:       "76ecabc808dc962ebc05b52ae4adec576ff2759ba437d8bb456277ae7785eee3"
-    sha256 cellar: :any, arm64_sequoia:     "f2542eae5382ba5291c8de2d5392f6feaace614e67c1392fe967b3a9b1c49ce0"
-    sha256 cellar: :any, arm64_linux:       "d30b1d465ca77432247812ed856c40f2d1b8b3c962c6986b40e5e918791dbc81"
-    sha256 cellar: :any, x86_64_linux:      "ed447cde952779d99fc4ba7a61bf542c6ba61df37b90cea838b78c15b4488412"
+    sha256 cellar: :any, arm64_golden_gate: "5e5f641bb146a54e5f5fb719416c1ae4090941104aee08b95af14e1bbeebe205"
+    sha256 cellar: :any, arm64_tahoe:       "31baf7e293f89cfc858aad5d483f856e464226556b196a7af533b787b263d033"
+    sha256 cellar: :any, arm64_sequoia:     "204df32d836b0597d38703e7d64945f04ca5315facdd667edfac36b37e527fb2"
+    sha256 cellar: :any, arm64_linux:       "8933b9aa579e206256875d6f96baad10b99b6f3cddd6e50c36258043e8cf7751"
+    sha256 cellar: :any, x86_64_linux:      "1ab997fa20bb349fe93f06cb06d4b2a7d42abe44d7a2d6df142d389e1c4f1d4f"
   end
 
   depends_on "elixir" => :build
@@ -27,7 +26,8 @@ class Teslamate < Formula
   end
 
   def install
-    # See https://docs.teslamate.org/docs/installation/debian/
+    # See https://docs.teslamate.org/docs/installation/unsupported/debian
+    cd "elixir"
     system "mix", "local.hex", "--force"
     system "mix", "local.rebar", "--force"
     system "mix", "deps.get", "--only", "prod"
@@ -38,7 +38,7 @@ class Teslamate < Formula
       system "mix", "do", "phx.digest,", "release", "--overwrite"
     end
 
-    touch buildpath/"teslamate.env"
+    touch "teslamate.env"
     etc.install "teslamate.env"
     libexec.install Dir["_build/prod/rel/teslamate/*"]
     bin.install_symlink Dir["#{libexec}/bin/teslamate"]

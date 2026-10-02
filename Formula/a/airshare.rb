@@ -6,16 +6,14 @@ class Airshare < Formula
   url "https://files.pythonhosted.org/packages/cb/a2/d59c18cd6a143bf860c29acb70552b7351fd7e0f56213be86b624601106b/Airshare-0.1.6.tar.gz"
   sha256 "138976933bcf2c0bc99f18901242544919e9fafe43735b4f83b19d4ae5964be7"
   license "MIT"
-  revision 25
+  revision 26
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "8fd7872e10fd411963dc3a99d199d148758ce17d921953feefc9cc04c41f4c22"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "d4dffe6c05eb902f8fa60e686ccd6c97b9db5e4057dd6eeef49cdc73d53b1efb"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "79ea751647197fa43b05d98b3846280dc30d80ccd4aaaa237c5f6c1c58b237cf"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "c5350fcd3dc79a15d08feffead828e9eb27eeb6923698729b131741b4d71a24c"
-    sha256 cellar: :any_skip_relocation, sonoma:            "e52f2892960228f20f535a559f1b9d04a1ba2f67f660c42045aba941553ddec2"
-    sha256 cellar: :any,                 arm64_linux:       "3f1daf5b5bde34e34bb5cfa75e65377d30ef8074e13c29c503349b6d68c402fb"
-    sha256 cellar: :any,                 x86_64_linux:      "4eaff3e3ee6839036d576bba823a202ffee1e785f060516b9ae4efaa7c1d3a33"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "eaf2c602d03c65ed46366da9e5ddcb2e60822f97bf8909064b2d95db9a40d1cb"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "6a28c6fc3c48fb7e1154c21772f269fa085c66865d584d335fdf75cd531dcc88"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "ac238e7e7feafbe16630f259e90cea25ea63f9a0b633678972321552ea260bf7"
+    sha256 cellar: :any,                 arm64_linux:       "831549489b178494d664e47837f2d49698014446069eeb7e70c252cba3dbe30c"
+    sha256 cellar: :any,                 x86_64_linux:      "d9d9d2a9f42d2808536af72213102b9d86e7c1e3665ac16ef457c0a30cd39d22"
   end
 
   depends_on "certifi" => :no_linkage
@@ -49,13 +47,13 @@ class Airshare < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/bd/2a/23f34ec9d04624958e137efdc394888716353190e75f25dd22c7a2c7a8aa/charset_normalizer-3.4.9.tar.gz"
-    sha256 "673611bbd43f0810bec0b0f028ddeaaa501190339cac411f347ac76917c3ae7b"
+    url "https://files.pythonhosted.org/packages/33/1c/f41d4e74c28ab327ff3acd36053f7ea506c55872d7a90b0fa71aa3ab0c89/charset_normalizer-3.5.2.tar.gz"
+    sha256 "39de2a259fc954455c57274dc94c79d5842774e1247a016aff30bc0efed0f4ef"
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/76/d4/81420972a676e8ffea40450d8c8c92943e7218a78fe9b64359836cc9876b/click-8.4.2.tar.gz"
-    sha256 "9a6cea6e60b17ebe0a44c5cc636d94f09bd66142c1cd7d8b4cd731c4917a15f6"
+    url "https://files.pythonhosted.org/packages/c7/0e/7fa0ef50764b67090eca4114772a2abf8b6148198475e54c660b97caeee6/click-8.5.0.tar.gz"
+    sha256 "ba0d2089de75ea0310e2dde03160e6ca10009947fb95a182f9b54021bb272e34"
   end
 
   resource "colorama" do
@@ -74,8 +72,8 @@ class Airshare < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/cd/63/9496c57188a2ee585e0f1db071d75089a11e98aa86eb99d9d7618fc1edce/idna-3.18.tar.gz"
-    sha256 "ffb385a7e039654cef1ab9ef32c6fafe283c0c0467bba1d9029738ce4a14a848"
+    url "https://files.pythonhosted.org/packages/f5/08/8eea9d4b8302028f3abb2c0813953f7aec26d33b7a8960ed760e65ff29fa/idna-3.20.tar.gz"
+    sha256 "a7db850025b95ded1eae8a46181a1a6c56c92c96f0e2b005d9ff8dc0210cab44"
   end
 
   resource "ifaddr" do
@@ -84,13 +82,13 @@ class Airshare < Formula
   end
 
   resource "multidict" do
-    url "https://files.pythonhosted.org/packages/1a/c2/c2d94cbe6ac1753f3fc980da97b3d930efe1da3af3c9f5125354436c073d/multidict-6.7.1.tar.gz"
-    sha256 "ec6652a1bee61c53a3e5776b6049172c53b6aaba34f18c9ad04f82712bac623d"
+    url "https://files.pythonhosted.org/packages/d6/99/1d4d69c3512d0ddbfa3a1b69cfd9a151012ab2eb4eabbb096201b1f0b7d8/multidict-6.9.1.tar.gz"
+    sha256 "0f06e60fa190aa7abd0914c2a766736fdc8e9f34878c4346338534b73d1b20e2"
   end
 
   resource "propcache" do
-    url "https://files.pythonhosted.org/packages/ec/44/c87281c333769159c50594f22610f77398a47ccbfbbf23074e744e86f87c/propcache-0.5.2.tar.gz"
-    sha256 "01c4fc7480cd0598bb4b57022df55b9ca296da7fc5a8760bd8451a7e63a7d427"
+    url "https://files.pythonhosted.org/packages/b3/9a/9fbf4e4ec0c2d7f1c32519fff782ef467859b8faa9fbc5331a96f6395d43/propcache-0.5.4.tar.gz"
+    sha256 "ff6b113f50bc066a698db5d944d2c6dc7507168dd3341e255a8892fd0715a558"
   end
 
   resource "pyperclip" do
@@ -114,23 +112,23 @@ class Airshare < Formula
   end
 
   resource "tqdm" do
-    url "https://files.pythonhosted.org/packages/21/3b/6c24bec5be5e743ffd99576daa5cc077722fc7d5bbc00bd133fa0c698dc6/tqdm-4.70.0.tar.gz"
-    sha256 "55b0b0dbd97462d06ebee91e4dac24ed4d4702be82b24f07e6c1d27e08cea220"
+    url "https://files.pythonhosted.org/packages/0d/ea/b2a5bd54b28a324dae8211928b2d730b6547500342c7e6c6dea08bd0a485/tqdm-4.70.1.tar.gz"
+    sha256 "cefd0eca11b2a37a3aee776544d4f4ae913f02688135b5556b8788dfa474afc4"
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/53/0c/06f8b233b8fd13b9e5ee11424ef85419ba0d8ba0b3138bf360be2ff56953/urllib3-2.7.0.tar.gz"
-    sha256 "231e0ec3b63ceb14667c67be60f2f2c40a518cb38b03af60abc813da26505f4c"
+    url "https://files.pythonhosted.org/packages/e3/05/b17359e1cefb4f909b5e40b1b90a496d987258916dbbf88e842c729f510e/urllib3-2.8.0.tar.gz"
+    sha256 "63bf2ead4c879426ebf22ef2a781eeb4aa3b4ae798a0435506f8687fd5bb9b63"
   end
 
   resource "yarl" do
-    url "https://files.pythonhosted.org/packages/31/33/ebe9e3d1f86c7a0b51094c0a146392045ca1631d2664889539dec8088a33/yarl-1.24.5.tar.gz"
-    sha256 "e81b83143bee16329c23db3c1b2d82b29892fcbcb849186d2f6e98a5abe9a57f"
+    url "https://files.pythonhosted.org/packages/75/16/e8be8e2fb175bbf41a0680381a319f1199fae256588241a2ac8677eafb49/yarl-1.25.1.tar.gz"
+    sha256 "03dd38de09bc213e9a8b29761eec33ee1d5318dac0e49d8af36e4d27830e23a7"
   end
 
   resource "zeroconf" do
-    url "https://files.pythonhosted.org/packages/09/ea/34bb185645ecaa18d34e5883bffea71aa9bffbbb994634884e8b2f3ad0c4/zeroconf-0.150.0.tar.gz"
-    sha256 "a5fe7feab1de6ef5e541e0a3d07e534fd91629b813fc27281593584100f63164"
+    url "https://files.pythonhosted.org/packages/93/20/69744d9de9d375dae2639dda9add7dae85d52d690b68c61b23b8a6468434/zeroconf-0.151.5.tar.gz"
+    sha256 "28c2ec9d772007eedf11b41a9c9fd3d5c684c17b00721ff8f1ee31b20ad286a1"
   end
 
   def install

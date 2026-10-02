@@ -6,16 +6,14 @@ class Codelimit < Formula
   url "https://files.pythonhosted.org/packages/b7/e5/36aae3a408a00642a7ffa95c200799bdcecb8402e495f4ceffca44a7ab13/codelimit-0.21.0.tar.gz"
   sha256 "bd43892398acd2e20fa97d37cb6180e679745c6125253a055a55f75357bf8afb"
   license "GPL-3.0-or-later"
-  revision 9
+  revision 10
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "aace89978148c8b649235dd56e84b41286987f31c6af85e30c79a80aeacf38fb"
-    sha256 cellar: :any, arm64_tahoe:       "02b1a78bdd08d67ea97e11fbab6030386061b2c02fef23846ed625484aca18bd"
-    sha256 cellar: :any, arm64_sequoia:     "16375cc5c2937b79e5675faac60f7e93b43309839764359832c62fdccdbb8ab1"
-    sha256 cellar: :any, arm64_sonoma:      "ccc49e6fc52b6be185f0d9e4c8b0321e64229c731e9b1b92ed68a2e63edf296e"
-    sha256 cellar: :any, sonoma:            "e26e9a705131b18a054d80bc0b006438c8352f02f8f7b74e5a993f72dcfb9430"
-    sha256 cellar: :any, arm64_linux:       "32f7e4e28cca0bed62664e16852a6c669068e90bf7b61ef3620fd87668059c40"
-    sha256 cellar: :any, x86_64_linux:      "a3ce442b108ec3982310f02a2ef19bc2a39116dcc4f978563ff0f5c2c93b203a"
+    sha256 cellar: :any, arm64_golden_gate: "9b1d9fd19f657600bbfecec2d8524c5dd0c2cffb70c73f455782d85bf7c93a2c"
+    sha256 cellar: :any, arm64_tahoe:       "be7444fee1c0ed3b98078f837b36ea2c99371026b17205ef909040750e3b1775"
+    sha256 cellar: :any, arm64_sequoia:     "1dbb03cb8b65b5c73ea975004ff99baf5c41211ab3d615142b40f786d249db14"
+    sha256 cellar: :any, arm64_linux:       "77c1453b65c2b4ea5cc31906be6132db58a8efac9c6ff5fd9937ac08fb327d89"
+    sha256 cellar: :any, x86_64_linux:      "7a945e467135b956a56c801ff0b6ccb015f9cc67e73c81b2fa930f9d42b3bb01"
   end
 
   depends_on "certifi" => :no_linkage
@@ -50,8 +48,8 @@ class Codelimit < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/bd/2a/23f34ec9d04624958e137efdc394888716353190e75f25dd22c7a2c7a8aa/charset_normalizer-3.4.9.tar.gz"
-    sha256 "673611bbd43f0810bec0b0f028ddeaaa501190339cac411f347ac76917c3ae7b"
+    url "https://files.pythonhosted.org/packages/33/1c/f41d4e74c28ab327ff3acd36053f7ea506c55872d7a90b0fa71aa3ab0c89/charset_normalizer-3.5.2.tar.gz"
+    sha256 "39de2a259fc954455c57274dc94c79d5842774e1247a016aff30bc0efed0f4ef"
   end
 
   resource "click" do
@@ -65,8 +63,8 @@ class Codelimit < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/cd/63/9496c57188a2ee585e0f1db071d75089a11e98aa86eb99d9d7618fc1edce/idna-3.18.tar.gz"
-    sha256 "ffb385a7e039654cef1ab9ef32c6fafe283c0c0467bba1d9029738ce4a14a848"
+    url "https://files.pythonhosted.org/packages/f5/08/8eea9d4b8302028f3abb2c0813953f7aec26d33b7a8960ed760e65ff29fa/idna-3.20.tar.gz"
+    sha256 "a7db850025b95ded1eae8a46181a1a6c56c92c96f0e2b005d9ff8dc0210cab44"
   end
 
   resource "markdown-it-py" do
@@ -80,8 +78,8 @@ class Codelimit < Formula
   end
 
   resource "multidict" do
-    url "https://files.pythonhosted.org/packages/1a/c2/c2d94cbe6ac1753f3fc980da97b3d930efe1da3af3c9f5125354436c073d/multidict-6.7.1.tar.gz"
-    sha256 "ec6652a1bee61c53a3e5776b6049172c53b6aaba34f18c9ad04f82712bac623d"
+    url "https://files.pythonhosted.org/packages/d6/99/1d4d69c3512d0ddbfa3a1b69cfd9a151012ab2eb4eabbb096201b1f0b7d8/multidict-6.9.1.tar.gz"
+    sha256 "0f06e60fa190aa7abd0914c2a766736fdc8e9f34878c4346338534b73d1b20e2"
   end
 
   resource "pathspec" do
@@ -90,13 +88,13 @@ class Codelimit < Formula
   end
 
   resource "propcache" do
-    url "https://files.pythonhosted.org/packages/ec/44/c87281c333769159c50594f22610f77398a47ccbfbbf23074e744e86f87c/propcache-0.5.2.tar.gz"
-    sha256 "01c4fc7480cd0598bb4b57022df55b9ca296da7fc5a8760bd8451a7e63a7d427"
+    url "https://files.pythonhosted.org/packages/b3/9a/9fbf4e4ec0c2d7f1c32519fff782ef467859b8faa9fbc5331a96f6395d43/propcache-0.5.4.tar.gz"
+    sha256 "ff6b113f50bc066a698db5d944d2c6dc7507168dd3341e255a8892fd0715a558"
   end
 
   resource "pygments" do
-    url "https://files.pythonhosted.org/packages/c3/b2/bc9c9196916376152d655522fdcebac55e66de6603a76a02bca1b6414f6c/pygments-2.20.0.tar.gz"
-    sha256 "6757cd03768053ff99f3039c1a36d6c0aa0b263438fcab17520b30a303a82b5f"
+    url "https://files.pythonhosted.org/packages/49/2e/ced460408999b33da6b31b0021b0f37d329e202d4169aeb164493778f25b/pygments-2.21.0.tar.gz"
+    sha256 "610ca751c9bc2492b38eb9a38a7fbc93edbbb2d7182edaf34e66ae493dee5c8c"
   end
 
   resource "pyperclip" do
@@ -130,18 +128,18 @@ class Codelimit < Formula
   end
 
   resource "typer" do
-    url "https://files.pythonhosted.org/packages/37/78/fda3361b56efc27944f24225f6ecd13d96d6fcfe37bd0eb34e2f4c63f9fc/typer-0.27.0.tar.gz"
-    sha256 "629bd12ea5d13a17148125d9a264f949eb171fb3f120f9b04d85873cab054fa5"
+    url "https://files.pythonhosted.org/packages/16/f7/57713ba479fd405eb76de31404b2c744c289e336b2d999511ebf51e496f7/typer-0.27.2.tar.gz"
+    sha256 "269b7eb9d3c202ca84b4bc9618cb04ebb43d3d4d1e567e4c768607232c05f945"
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/53/0c/06f8b233b8fd13b9e5ee11424ef85419ba0d8ba0b3138bf360be2ff56953/urllib3-2.7.0.tar.gz"
-    sha256 "231e0ec3b63ceb14667c67be60f2f2c40a518cb38b03af60abc813da26505f4c"
+    url "https://files.pythonhosted.org/packages/e3/05/b17359e1cefb4f909b5e40b1b90a496d987258916dbbf88e842c729f510e/urllib3-2.8.0.tar.gz"
+    sha256 "63bf2ead4c879426ebf22ef2a781eeb4aa3b4ae798a0435506f8687fd5bb9b63"
   end
 
   resource "yarl" do
-    url "https://files.pythonhosted.org/packages/31/33/ebe9e3d1f86c7a0b51094c0a146392045ca1631d2664889539dec8088a33/yarl-1.24.5.tar.gz"
-    sha256 "e81b83143bee16329c23db3c1b2d82b29892fcbcb849186d2f6e98a5abe9a57f"
+    url "https://files.pythonhosted.org/packages/75/16/e8be8e2fb175bbf41a0680381a319f1199fae256588241a2ac8677eafb49/yarl-1.25.1.tar.gz"
+    sha256 "03dd38de09bc213e9a8b29761eec33ee1d5318dac0e49d8af36e4d27830e23a7"
   end
 
   def install

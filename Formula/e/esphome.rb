@@ -3,8 +3,8 @@ class Esphome < Formula
 
   desc "Make creating custom firmwares for ESP32/ESP8266 super easy"
   homepage "https://esphome.io/"
-  url "https://files.pythonhosted.org/packages/f4/60/a2117f13a4cc8ad7f495c6f311160f757e3bbf936cb3b7aed50332c0d3db/esphome-2026.9.0.tar.gz"
-  sha256 "d98e9c69f3683b7ba47b64e7b0f1dcdd7b68a2b491a78aa2046d9fd19aeff55e"
+  url "https://files.pythonhosted.org/packages/e6/2f/0f5d8c3776f9c9ef0456b16886fbe29e62fc48f5edab3f227e9f378831df/esphome-2026.9.1.tar.gz"
+  sha256 "6bc622ef585eb662baadc7772800ebf09fd2f267e4bfd46d57df4b7860876edf"
   license "MIT"
   head "https://github.com/esphome/esphome.git", branch: "dev"
 
@@ -12,11 +12,11 @@ class Esphome < Formula
   no_autobump! because: "macOS resources cannot be updated on linux CI"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "265aea2f4ae22dd211f81ebf91bffac27590a8edaa22fea595f9225a26fb734d"
-    sha256 cellar: :any, arm64_tahoe:       "77c39a4157876cae9611c893e8cbae6bf12b601a580d0cb4f69ef13d6ca6e6dd"
-    sha256 cellar: :any, arm64_sequoia:     "98a40f677e6bf80ef7027034d8534d4fa2ab157fe5ad413605a735981b9ef9a7"
-    sha256 cellar: :any, arm64_linux:       "1a23156ee0e3ffc0edd722f9c44da700421e4e13b732266a25c7c04eff9a7c90"
-    sha256 cellar: :any, x86_64_linux:      "87f914580e134f0781a015bf95c64b18a393a121cee8a9b92fa83fb697ce7a87"
+    sha256 cellar: :any, arm64_golden_gate: "d51c6a10bd4d1ae169dc346d18020945f797825c78036d2b9563f6bf3e5a5148"
+    sha256 cellar: :any, arm64_tahoe:       "26fee85dd01a3a1f49c09b6909b093247e354e06a36bf461900af261df91d205"
+    sha256 cellar: :any, arm64_sequoia:     "7eb79014f689334b51810190a562850e6b0a1a60f148e74036b3877059f485b1"
+    sha256 cellar: :any, arm64_linux:       "f86cdb8ef8163fd983acaca74c562d1163c4a6946e2e60b1cc3ffc1a7a7c0bfa"
+    sha256 cellar: :any, x86_64_linux:      "eb462d51b1f959256f9e2451d63678c80b8e1717b56d7d1712f8644c07d95dc8"
   end
 
   depends_on "rust" => :build
@@ -95,8 +95,8 @@ class Esphome < Formula
   end
 
   resource "cbor2" do
-    url "https://files.pythonhosted.org/packages/bd/cb/09939728be094d155b5d4ac262e39877875f5f7e36eea66beb359f647bd0/cbor2-5.9.0.tar.gz"
-    sha256 "85c7a46279ac8f226e1059275221e6b3d0e370d2bb6bd0500f9780781615bcea"
+    url "https://files.pythonhosted.org/packages/c6/14/b02446bacfe44351b1689c04937ade007588f44570431880a6937e525e6c/cbor2-6.1.4.tar.gz"
+    sha256 "01ecc79a28f33d17331943ce508fc1e21f4b06553c73f874f4c77120d72b2ef9"
   end
 
   resource "chacha20poly1305-reuseable" do
@@ -110,8 +110,8 @@ class Esphome < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/e5/3f/143b048436775b0f76ac3eec145c019e8173ccc2885c8f20319b996d5e83/charset_normalizer-3.5.1.tar.gz"
-    sha256 "6117b84ea48435e5356dc737f5121485c30920ba43375fa7b434fd753df0eac3"
+    url "https://files.pythonhosted.org/packages/33/1c/f41d4e74c28ab327ff3acd36053f7ea506c55872d7a90b0fa71aa3ab0c89/charset_normalizer-3.5.2.tar.gz"
+    sha256 "39de2a259fc954455c57274dc94c79d5842774e1247a016aff30bc0efed0f4ef"
   end
 
   resource "click" do
@@ -160,8 +160,8 @@ class Esphome < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/5f/f7/abb373e5757eaec4b922b92f97ec8d6d7e057cf06778247604fbc4e7c3f3/idna-3.19.tar.gz"
-    sha256 "5e0811a4383b21dc5838069f801c4fb62113b7447663d2530d2bd6e77b49bf15"
+    url "https://files.pythonhosted.org/packages/f5/08/8eea9d4b8302028f3abb2c0813953f7aec26d33b7a8960ed760e65ff29fa/idna-3.20.tar.gz"
+    sha256 "a7db850025b95ded1eae8a46181a1a6c56c92c96f0e2b005d9ff8dc0210cab44"
   end
 
   resource "ifaddr" do
@@ -240,8 +240,8 @@ class Esphome < Formula
   end
 
   resource "protobuf" do
-    url "https://files.pythonhosted.org/packages/86/73/f66c748df06e7fe24e658eddd600d19c4b40bad836c97ce2d0ad9851fb6b/protobuf-7.36.1.tar.gz"
-    sha256 "d0f6470f0ce2b84e3feaea2d4b816378b37ba4d4aa08a274305373de93e2d524"
+    url "https://files.pythonhosted.org/packages/d9/89/5b8517baa72f84a67b8a307ba953c91057af618bf40bf676f3c03551f8f0/protobuf-7.36.2.tar.gz"
+    sha256 "497d0463ff3316681da6c0b9e8d06cb465d61abce00b613ab42226175644d1bb"
   end
 
   resource "psutil" do
@@ -300,8 +300,8 @@ class Esphome < Formula
   end
 
   resource "pyparsing" do
-    url "https://files.pythonhosted.org/packages/f3/91/9c6ee907786a473bf81c5f53cf703ba0957b23ab84c264080fb5a450416f/pyparsing-3.3.2.tar.gz"
-    sha256 "c777f4d763f140633dcb6d8a3eda953bf7a214dc4eff598413c070bcdc117cbc"
+    url "https://files.pythonhosted.org/packages/e4/11/b213bebff182584360cb8d17c72c1677fec5c5c228de439e63bcf8ab1c8f/pyparsing-3.3.3.tar.gz"
+    sha256 "928ae7e20211f3b6f3915a72f06a0cfd29ab9d24279dd6346b6b1a7146397d36"
   end
 
   resource "pyppmd" do
@@ -360,8 +360,8 @@ class Esphome < Formula
   end
 
   resource "smp" do
-    url "https://files.pythonhosted.org/packages/0b/3a/2a5017d4ed321389f242f26392d1cadfa36d9c6f235206b26491df83aafb/smp-4.1.0.tar.gz"
-    sha256 "def270346a9f67e99e526a3c789a814e6e2203afa4d913cb11bb5a9bda6423a9"
+    url "https://files.pythonhosted.org/packages/ed/a0/92c0aecdca3d908e8d816230d96c6261689ef530a9907138463695992408/smp-4.2.0.tar.gz"
+    sha256 "9888e3becbfaf2473b76051cf255cb364d5dcfb5fb1712df00d0db2b99bc1f5b"
   end
 
   resource "smpclient" do

@@ -1,8 +1,8 @@
 class PythonFreethreading < Formula
   desc "Interpreted, interactive, object-oriented programming language"
   homepage "https://www.python.org/"
-  url "https://www.python.org/ftp/python/3.14.7/Python-3.14.7.tgz"
-  sha256 "62859805f6fdf25e2bcbf3fa3217801e1996887ca33e6a2af80674bdfa2dbe07"
+  url "https://www.python.org/ftp/python/3.14.8/Python-3.14.8.tgz"
+  sha256 "a65b20a728f169f4e66ae143f40b1bd3d33c38d770251663f627c9767b79b210"
   license "Python-2.0"
 
   livecheck do
@@ -10,12 +10,11 @@ class PythonFreethreading < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_golden_gate: "d74c8c6a9ebad0939b63e6233f260dca9dbba608e5bd0cc9a6644fbb336e852f"
-    sha256 arm64_tahoe:       "243b4a2f26ec91e39d61a7557f95d6a7c2b9533d11d779d9750a0453ef4a63ce"
-    sha256 arm64_sequoia:     "6fac4e5b5869125668e95adb4fb2a32527f92104287174c30e78eaa8a61c2ef5"
-    sha256 arm64_linux:       "e02653490ee44f881b76f7cce90ac0780e3d391c1c112537de1c3d975fc9107d"
-    sha256 x86_64_linux:      "0028fc94e037564f4d433b8d17813974e0e9ee9d21831f0d1cc0af814d9be8a8"
+    sha256 arm64_golden_gate: "45c0a011b5131760d17e0c84a4eab33ed58ba9e0ab65006a125f495f8b0c0d70"
+    sha256 arm64_tahoe:       "3217ba7722eb2b048d84d29a4c55ce4432b909e61d705c0884e26e42eb744161"
+    sha256 arm64_sequoia:     "f35377c2f538751e6879a23ccd20ab1a80e04a6dae10523cadfdf14114299655"
+    sha256 arm64_linux:       "2c8c4e855d891907588e5cab6236bfde53c6bd6f46801d1a32064e61bd9ac1f3"
+    sha256 x86_64_linux:      "e955f8f9010e06df0e90908f100e1307a4c1136d965a0926cc785c3f9ff1c2da"
   end
 
   depends_on "pkgconf" => :build
@@ -42,8 +41,8 @@ class PythonFreethreading < Formula
                 extra_packages: %w[flit-core pip wheel]
 
   resource "flit-core" do
-    url "https://files.pythonhosted.org/packages/46/ef/34533186e76c526d9ec17a1ad9a10c7354cbfb20f51583cc36dfe4bdccd0/flit_core-4.0.2.tar.gz"
-    sha256 "b6929defd93884b584d7c87829e0e7b5c26ed6be17b0b873979019314aa841c8"
+    url "https://files.pythonhosted.org/packages/e7/91/add211b38c357bf1b94900b4f79c34661a92be65c0243d2b0a3393c5092d/flit_core-4.1.0.tar.gz"
+    sha256 "62e12b63ead8335b37f59fabb977c7167fe476dafb5e41785dfa8c9aff843bc6"
   end
 
   resource "packaging" do
@@ -57,8 +56,8 @@ class PythonFreethreading < Formula
   end
 
   resource "wheel" do
-    url "https://files.pythonhosted.org/packages/39/62/75f18a0f03b4219c456652c7780e4d749b929eb605c098ce3a5b6b6bc081/wheel-0.47.0.tar.gz"
-    sha256 "cc72bd1009ba0cf63922e28f94d9d83b920aa2bb28f798a31d0691b02fa3c9b3"
+    url "https://files.pythonhosted.org/packages/d0/20/50ed6bdf27dec98b568a8ae25dc599f35baa3d9709f9e83fd1edb56b9a90/wheel-0.48.0.tar.gz"
+    sha256 "94800765601e9171bf5d58d066e640662842bcedcbab982b2c90787a2c987322"
   end
 
   # Modify default sysconfig to match the brew install layout.

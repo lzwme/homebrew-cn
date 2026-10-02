@@ -7,11 +7,12 @@ class Pitchfork < Formula
   head "https://github.com/jdx/pitchfork.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "33acb67da4095417e3e4772f279722ed5e8193c048903b916bec5426ee58fc7f"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "d4e3fc81807770594a5ebc0585397bba75eb38273534669c7c6bd965ded2ab74"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "87b8a96e14e61f617b9b5312310ebb1ad23823868d40f7fe295ac28dd06d9122"
-    sha256 cellar: :any,                 arm64_linux:       "eba40af4304ae8703ed2f10f171f409fe62d0841133840518b03a7f1176971fd"
-    sha256 cellar: :any,                 x86_64_linux:      "4c7a4079bdff474c8eccfa7a1a221349413dfb84b3cf02e4083d705500a42b8a"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "73cac7e68a5cd00a8267015f872dee9b3895d7bd5f3d4fe2d8132278275b6675"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "817e448fb961247376bb3d2faa9b14fa8c3e62203243fac2140b071207b10b25"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "b1a273f22272badcc52bbc76798a1de9b53002aedc0efbd56800d515cd0abab5"
+    sha256 cellar: :any,                 arm64_linux:       "8f813b97ef6b11eee7697f703ce4644dd9ddc9f4e1f56e461e49fb9af83a4865"
+    sha256 cellar: :any,                 x86_64_linux:      "c90857f5382cd960edbcad781de7194c703374ad1669b6f3299b3a9790e402e2"
   end
 
   depends_on "node" => :build
@@ -19,9 +20,18 @@ class Pitchfork < Formula
   depends_on "rust" => :build
   depends_on "usage"
 
+  allow_network_access! :test
+
+  def fetch
+    cd "ui" do
+      system "pnpm", "fetch"
+    end
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
     cd "ui" do
-      system "pnpm", "install", "--frozen-lockfile"
+      system "pnpm", "--offline", "install", "--frozen-lockfile"
       system "pnpm", "build"
     end
 

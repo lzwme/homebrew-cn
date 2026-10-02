@@ -6,17 +6,15 @@ class Bpython < Formula
   url "https://files.pythonhosted.org/packages/44/29/cd80e9108a6fc6a925ffb915f8f69198a2bb2388e39167a41d743ac2a8f4/bpython-0.26.tar.gz"
   sha256 "f79083e1e3723be9b49c9994ad1dd3a19ccb4d0d4f9a6f5b3a73bef8bc327433"
   license "MIT"
-  revision 6
+  revision 7
   head "https://github.com/bpython/bpython.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "dda8e51dce2ae8c667b2ab1c5498576c7ce2ee70ffc2e0cfe48b52fc231a45a3"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "99600adc9aa1fc6608bc0e8ec461116814b2a670c53fb0df0553ba8efc0ddbf3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "6a641141089968a765d235d82c6bb1425412bbffadeb640995c6c6c5573ad5d6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "8e47071bc0cde4cc167e1c7741d3b2f4c0292ebcd731db448b89639ed0b64290"
-    sha256 cellar: :any_skip_relocation, sonoma:            "ea4ceef6472766528cc021432956652329f3c3f5109ec54447fc1ea1d7ab9df5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "b8b3d9bd31f5ba12657b184598c497ab1bab286ee8a453b3348bf34a7607ca52"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "a4452730f8698510e1d09a2b4681c525b2929999988ba8449a224c34637111c4"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "19bd96e49e7897106e6526dc08349b4272fd4e6fcaec1132b3fa16d497243575"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "ffee203f7adc8cd835f24e6754e9520915eb641e483459bd17d7dbdc9e52dd51"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "c330ef9fc981ac7e4b1d2848cea31453a8f6143a36bbacb2eb8e2b0a2341444c"
+    sha256 cellar: :any,                 arm64_linux:       "02ad3f8e65d2c9036c29cad817e17aa8f8a069874f44e183cd41c213af9a3e6d"
+    sha256 cellar: :any,                 x86_64_linux:      "a1e1052b435ef63f9d4214e4d4b208738a84a92074273ab24e9d26447b873269"
   end
 
   depends_on "certifi" => :no_linkage
@@ -25,13 +23,13 @@ class Bpython < Formula
   pypi_packages exclude_packages: "certifi"
 
   resource "blessed" do
-    url "https://files.pythonhosted.org/packages/3b/02/603d04e776fca5258b476ae54fe6d73ce9633bc8ce21bb2142abd96c28c4/blessed-1.40.0.tar.gz"
-    sha256 "2f90b531464769f039f6303b9352bed7e004698b5c881bb01abf5b0772dd5160"
+    url "https://files.pythonhosted.org/packages/0c/7d/44d82d953d9bbcac57fe26507ea7ffba65ef1ec8f41f2b58da2fb12ef26c/blessed-1.50.0.tar.gz"
+    sha256 "046c9b2a5283a9c5bc340ed23b7d1c1f10ef2d7fb30b14bae13ef7ffc1f3ba56"
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/e7/a1/67fe25fac3c7642725500a3f6cfe5821ad557c3abb11c9d20d12c7008d3e/charset_normalizer-3.4.7.tar.gz"
-    sha256 "ae89db9e5f98a11a4bf50407d4363e7b09b31e55bc117b4f7d80aab97ba009e5"
+    url "https://files.pythonhosted.org/packages/33/1c/f41d4e74c28ab327ff3acd36053f7ea506c55872d7a90b0fa71aa3ab0c89/charset_normalizer-3.5.2.tar.gz"
+    sha256 "39de2a259fc954455c57274dc94c79d5842774e1247a016aff30bc0efed0f4ef"
   end
 
   resource "curtsies" do
@@ -45,23 +43,23 @@ class Bpython < Formula
   end
 
   resource "greenlet" do
-    url "https://files.pythonhosted.org/packages/3c/3f/dbf99fb14bfeb88c28f16729215478c0e265cacd6dc22270c8f31bb6892f/greenlet-3.5.0.tar.gz"
-    sha256 "d419647372241bc68e957bf38d5c1f98852155e4146bd1e4121adea81f4f01e4"
+    url "https://files.pythonhosted.org/packages/3e/6e/0091f175ccd02b02bc8811bbcbcc6ac2e980be116e3b2f7a736ca322bf84/greenlet-3.5.6.tar.gz"
+    sha256 "8e67c43bdfc88d5fee6db0d3e40175b362fc95fb85f0412d233b9b203c53a575"
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/82/77/7b3966d0b9d1d31a36ddf1746926a11dface89a83409bf1483f0237aa758/idna-3.15.tar.gz"
-    sha256 "ca962446ea538f7092a95e057da437618e886f4d349216d2b1e294abfdb65fdc"
+    url "https://files.pythonhosted.org/packages/f5/08/8eea9d4b8302028f3abb2c0813953f7aec26d33b7a8960ed760e65ff29fa/idna-3.20.tar.gz"
+    sha256 "a7db850025b95ded1eae8a46181a1a6c56c92c96f0e2b005d9ff8dc0210cab44"
   end
 
   resource "jinxed" do
-    url "https://files.pythonhosted.org/packages/cb/eb/8821ce6e7386e96355f2c6be83944925b4a0870572896fd33a4e61b8aa5a/jinxed-2.0.0.tar.gz"
-    sha256 "64b960b8f8d9966e1b2e7cb57ea2b1aa0a8d7e68045b96dc7ef58201e43a1209"
+    url "https://files.pythonhosted.org/packages/39/d7/6e6d474ec5eaeca6a61acc17766bb19563b3a372b4b9d92910078f5fe49f/jinxed-2.1.0.tar.gz"
+    sha256 "7e755b831faa2443d44fb4ce7c0202eb9c3ed39bd5bf1193365888f4f6092b54"
   end
 
   resource "pygments" do
-    url "https://files.pythonhosted.org/packages/c3/b2/bc9c9196916376152d655522fdcebac55e66de6603a76a02bca1b6414f6c/pygments-2.20.0.tar.gz"
-    sha256 "6757cd03768053ff99f3039c1a36d6c0aa0b263438fcab17520b30a303a82b5f"
+    url "https://files.pythonhosted.org/packages/49/2e/ced460408999b33da6b31b0021b0f37d329e202d4169aeb164493778f25b/pygments-2.21.0.tar.gz"
+    sha256 "610ca751c9bc2492b38eb9a38a7fbc93edbbb2d7182edaf34e66ae493dee5c8c"
   end
 
   resource "pyxdg" do
@@ -75,13 +73,13 @@ class Bpython < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/53/0c/06f8b233b8fd13b9e5ee11424ef85419ba0d8ba0b3138bf360be2ff56953/urllib3-2.7.0.tar.gz"
-    sha256 "231e0ec3b63ceb14667c67be60f2f2c40a518cb38b03af60abc813da26505f4c"
+    url "https://files.pythonhosted.org/packages/e3/05/b17359e1cefb4f909b5e40b1b90a496d987258916dbbf88e842c729f510e/urllib3-2.8.0.tar.gz"
+    sha256 "63bf2ead4c879426ebf22ef2a781eeb4aa3b4ae798a0435506f8687fd5bb9b63"
   end
 
   resource "wcwidth" do
-    url "https://files.pythonhosted.org/packages/2c/ee/afaf0f85a9a18fe47a67f1e4422ed6cf1fe642f0ae0a2f81166231303c52/wcwidth-0.7.0.tar.gz"
-    sha256 "90e3a7ea092341c44b99562e75d09e4d5160fe7a3974c6fb842a101a95e7eed0"
+    url "https://files.pythonhosted.org/packages/dc/ac/3a943d2792c9bb368aaa8b50121c0f778460ba2d7fbdc0a0366201d9e761/wcwidth-0.9.1.tar.gz"
+    sha256 "5823209b0d43af322ce698c689380d7c15ca31fa8e6e3be8459f27031bef0af5"
   end
 
   def install

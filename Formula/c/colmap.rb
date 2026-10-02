@@ -1,17 +1,16 @@
 class Colmap < Formula
   desc "Structure-from-Motion and Multi-View Stereo"
   homepage "https://colmap.github.io/"
-  url "https://ghfast.top/https://github.com/colmap/colmap/archive/refs/tags/4.2.0.tar.gz"
-  sha256 "b61731fb1a4a33609e64fb353fe589d483be6a73878a5965b7d32ae23fb22fc5"
+  url "https://ghfast.top/https://github.com/colmap/colmap/archive/refs/tags/4.2.1.tar.gz"
+  sha256 "15fb9e333541676e4ee9bc5d8ab95a3ed6e549a20eb13fc5aafd04ca06c76c88"
   license "BSD-3-Clause"
-  revision 3
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "42dae71a47e3ad16bad8b39f5146404575ca60d842dc3de5ac844914d9b1fdad"
-    sha256 cellar: :any, arm64_tahoe:       "514c90bd545dcb09269710ecd4d39db422054914aba7812dac4b7d8c3be3e673"
-    sha256 cellar: :any, arm64_sequoia:     "9b4b6c75345a1b333706358bf27eadcbd81ca67b7cfd92827e07dc9a350f9750"
-    sha256 cellar: :any, arm64_linux:       "5b67705ec4b7f73f622f2081db6ed3fdd6664c58ffc0d9761154ecda1268315f"
-    sha256 cellar: :any, x86_64_linux:      "ae6ff1aae2728eb4a021f16cb7de44871f77935bfcb6ae66f86adf4f3eeb45d8"
+    sha256 cellar: :any, arm64_golden_gate: "fa85d51a7ffe3aed106b2d196ad6cbd112b2aa44e141b73bad411d15e6573fc2"
+    sha256 cellar: :any, arm64_tahoe:       "e287b47bc83b7691af4da88bbb5ad2238e22879b054d2d1e08c18148f57550af"
+    sha256 cellar: :any, arm64_sequoia:     "06fa7db9d4adbd2ff5d8414d6f9e96b45425b6f087b9305d9636fa4ecd62bf92"
+    sha256 cellar: :any, arm64_linux:       "ed84d437b6b95b4ffb29761cfdd58a3fb614f2ff7ad18fce41634ce13257e87f"
+    sha256 cellar: :any, x86_64_linux:      "33224bd01b642d422334bac87c2f90e31b44b8457f4df174430a61e0acf1a3df"
   end
 
   depends_on "cmake" => :build

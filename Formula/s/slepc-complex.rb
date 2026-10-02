@@ -1,8 +1,8 @@
 class SlepcComplex < Formula
   desc "Scalable Library for Eigenvalue Problem Computations (complex)"
   homepage "https://slepc.upv.es"
-  url "https://slepc.upv.es/download/distrib/slepc-3.25.2.tar.gz"
-  sha256 "65795612fd50efd77d151bb884b0075429fe12c532963e38081988a5ed6efbd5"
+  url "https://slepc.upv.es/download/distrib/slepc-3.26.0.tar.gz"
+  sha256 "a2f4cc2af76d55c078c30ad8bc66b44736dac921a7912266eb44136fc1b6029d"
   license "BSD-2-Clause"
 
   livecheck do
@@ -10,11 +10,11 @@ class SlepcComplex < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "ec90423983d0d0eb291ba3d5f3d04fa3781bdbb4ec08e6b9920a3db4f3c37e67"
-    sha256 arm64_tahoe:       "520abb94eeea46a08f95fdad1e410c8e73458f55a7c5feeb642709e66cc455cf"
-    sha256 arm64_sequoia:     "49323007004f67f00f5f2216b05280dc9c7c817fc399a359717f0f4f930a1c2c"
-    sha256 arm64_linux:       "594305dbe1acab1e53c53eb9ce12c5a21bd50c7049ec6532ab7b4e837fbd07ab"
-    sha256 x86_64_linux:      "b1df053a4f1bff55bbdcf2192bfee5522960b48cdf7c40f22097fcd1b52439ae"
+    sha256 arm64_golden_gate: "5164ca7efd2f195ab43a07877a61cbbacec33de4742d0de5c70a3ed1648bd552"
+    sha256 arm64_tahoe:       "d70ce2e90780d62ebc62a718f40af3b6a8d7cba55d416d76c996b17063279224"
+    sha256 arm64_sequoia:     "6c8d907785699a08cc8854fe0279eeca3f7a25d3a9cece55eb845a17bb724b2b"
+    sha256 arm64_linux:       "51f467348374f6e815324fba32bafcab4cdec60790d5ef756579a585657b5447"
+    sha256 x86_64_linux:      "32395eb0d2508dc6b7121b89b4cd16740c7dc75a62d813f35585dd2d5015d83c"
   end
 
   depends_on "open-mpi"

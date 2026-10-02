@@ -3,10 +3,9 @@ class KnotResolver < Formula
 
   desc "Minimalistic, caching, DNSSEC-validating DNS resolver"
   homepage "https://www.knot-resolver.cz"
-  url "https://knot-resolver.nic.cz/release/knot-resolver-6.4.2.tar.xz"
-  sha256 "854ad23367bab66392f7d74f142f2219e3090ae81126b635430fce7b1916f1a3"
+  url "https://knot-resolver.nic.cz/release/knot-resolver-6.5.0.tar.xz"
+  sha256 "84599bbf889ecc7892aeabc088753355d63326354e5992b53a5ec82306224ee6"
   license all_of: ["CC0-1.0", "GPL-3.0-or-later", "LGPL-2.1-or-later", "MIT"]
-  revision 1
   head "https://gitlab.labs.nic.cz/knot/knot-resolver.git", branch: "master"
 
   livecheck do
@@ -15,12 +14,11 @@ class KnotResolver < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "55008fb4d524b225f13a5edc7c20e735e623b77d9ffcf4d4a00867f7748a4333"
-    sha256 arm64_tahoe:       "b7a7cdb1b43766baa89f24ce9dc60776a9f323fec5c12e5b508f5bfb15790f01"
-    sha256 arm64_sequoia:     "adbbc0e9730df937be5f36ab0a3408a6947e759487e96d6e0440ca72a1547f2b"
-    sha256 arm64_sonoma:      "8ab4eac02c65aba69893834f72c76bd9cefa62abe4c4eb138d8e7dcc4368e285"
-    sha256 arm64_linux:       "7b010b273f37049e385d7f9414dae44753d24b05b4a6db7e30629def07f1f2c5"
-    sha256 x86_64_linux:      "c31cff060e1c33de5dcddc1b48983fca509b15067fe03dfb5415ac0e0328f94b"
+    sha256 arm64_golden_gate: "a28e66bbc3a3e942b35ac054a34cbbd9ea2e4251bfbaa8ba9f1feb6bbe03e568"
+    sha256 arm64_tahoe:       "055f733d384542dd77e1a4cb865802d1a1d47c4c0b64f4574c5e4fe3749e1930"
+    sha256 arm64_sequoia:     "e6baf025909d7d9e626bba5e29a1bf31abe812c42bdadc33be14666e00c2f2c2"
+    sha256 arm64_linux:       "9f21dbf3abd8fd1e0bd8820ee59b8731f7e50b712551994be45e306ac18ad139"
+    sha256 x86_64_linux:      "ef7316ba3b81a58ef2fe9cf78ce27e5348adbff730d2b928798bd953dcad103f"
   end
 
   depends_on "meson" => :build
@@ -74,8 +72,8 @@ class KnotResolver < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/cd/63/9496c57188a2ee585e0f1db071d75089a11e98aa86eb99d9d7618fc1edce/idna-3.18.tar.gz"
-    sha256 "ffb385a7e039654cef1ab9ef32c6fafe283c0c0467bba1d9029738ce4a14a848"
+    url "https://files.pythonhosted.org/packages/f5/08/8eea9d4b8302028f3abb2c0813953f7aec26d33b7a8960ed760e65ff29fa/idna-3.20.tar.gz"
+    sha256 "a7db850025b95ded1eae8a46181a1a6c56c92c96f0e2b005d9ff8dc0210cab44"
   end
 
   resource "jinja2" do
@@ -89,8 +87,8 @@ class KnotResolver < Formula
   end
 
   resource "multidict" do
-    url "https://files.pythonhosted.org/packages/1a/c2/c2d94cbe6ac1753f3fc980da97b3d930efe1da3af3c9f5125354436c073d/multidict-6.7.1.tar.gz"
-    sha256 "ec6652a1bee61c53a3e5776b6049172c53b6aaba34f18c9ad04f82712bac623d"
+    url "https://files.pythonhosted.org/packages/d6/99/1d4d69c3512d0ddbfa3a1b69cfd9a151012ab2eb4eabbb096201b1f0b7d8/multidict-6.9.1.tar.gz"
+    sha256 "0f06e60fa190aa7abd0914c2a766736fdc8e9f34878c4346338534b73d1b20e2"
   end
 
   resource "prometheus-client" do
@@ -99,8 +97,8 @@ class KnotResolver < Formula
   end
 
   resource "propcache" do
-    url "https://files.pythonhosted.org/packages/ec/44/c87281c333769159c50594f22610f77398a47ccbfbbf23074e744e86f87c/propcache-0.5.2.tar.gz"
-    sha256 "01c4fc7480cd0598bb4b57022df55b9ca296da7fc5a8760bd8451a7e63a7d427"
+    url "https://files.pythonhosted.org/packages/b3/9a/9fbf4e4ec0c2d7f1c32519fff782ef467859b8faa9fbc5331a96f6395d43/propcache-0.5.4.tar.gz"
+    sha256 "ff6b113f50bc066a698db5d944d2c6dc7507168dd3341e255a8892fd0715a558"
   end
 
   resource "pyyaml" do
@@ -124,8 +122,8 @@ class KnotResolver < Formula
   end
 
   resource "yarl" do
-    url "https://files.pythonhosted.org/packages/31/33/ebe9e3d1f86c7a0b51094c0a146392045ca1631d2664889539dec8088a33/yarl-1.24.5.tar.gz"
-    sha256 "e81b83143bee16329c23db3c1b2d82b29892fcbcb849186d2f6e98a5abe9a57f"
+    url "https://files.pythonhosted.org/packages/75/16/e8be8e2fb175bbf41a0680381a319f1199fae256588241a2ac8677eafb49/yarl-1.25.1.tar.gz"
+    sha256 "03dd38de09bc213e9a8b29761eec33ee1d5318dac0e49d8af36e4d27830e23a7"
   end
 
   deny_network_access! :test

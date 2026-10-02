@@ -12,11 +12,12 @@ class GoSizeAnalyzer < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "e44b5546bd3055db4282cf6a2a0affdb4e763a9278e4ff34147a65068056f5e8"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "795c5eb237076023836f0a856c5c5d98800c231881a2302f81a428281563c405"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "c424b76b93a8ce423aab4c105d20a34930502f0f230b840c17b196bd4d27ccf2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "08f614c695e4a1af0fe97665eada89ff4c9c642851d2cbfdc329abd83d748b0c"
-    sha256 cellar: :any,                 x86_64_linux:      "5b31cad705c0ac3be57fc6609423f5726de915f81a7af3b29e76b3a0f48a3d4e"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "f28e1c237d7c97ca26ba22d5b45f630315409c6c6d02de8e3d2c7d57196b2f92"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "0ac03dff6f4e89ca85c90950aac44c447ce3268b2fa2a388fa616b0694db25e9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "d00339dfcd33e7511acab23cf2012518641c1d2641a78a414c8f51fb5b4aed7d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "b5322dccd71c4b79df238ee7ecbdcd3ed93af51c1d9a13a3f3213a948bf76bd1"
+    sha256 cellar: :any,                 x86_64_linux:      "82500d52509d998e904d9d8307c9681d63c64d51a23722e4e9158a31f764e42d"
   end
 
   depends_on "go" => [:build, :test]
@@ -25,14 +26,21 @@ class GoSizeAnalyzer < Formula
 
   conflicts_with "gwenhywfar", because: "both install `gsa` binaries"
 
-  def install
+  deny_network_access!
+
+  def fetch
     # Prevent pnpm from downloading another copy due to `packageManager` feature
     odie "Switch to `pnpm with current`!" if deps.map(&:name).exclude?("pnpm@10")
     (buildpath/"ui/pnpm-workspace.yaml").write <<~YAML
       managePackageManagerVersions: false
     YAML
 
-    system "pnpm", "--dir", "ui", "install", "--frozen-lockfile"
+    system "pnpm", "--dir", "ui", "fetch"
+    system "go", "mod", "download"
+  end
+
+  def install
+    system "pnpm", "--offline", "--dir", "ui", "install", "--frozen-lockfile"
     system "pnpm", "--dir", "ui", "build:ui"
 
     mv "ui/dist/webui/index.html", "internal/webui/index.html"

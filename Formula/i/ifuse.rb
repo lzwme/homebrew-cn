@@ -4,10 +4,11 @@ class Ifuse < Formula
   url "https://ghfast.top/https://github.com/libimobiledevice/ifuse/releases/download/1.2.1/ifuse-1.2.1.tar.bz2"
   sha256 "9d490470ba6553f8052b385bb5330462e46fbe82131ebe65be47a1cc1c70e857"
   license "LGPL-2.1-or-later"
+  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_linux:  "77cd5f5b3804240d52837a38f7e5f499430aa850c3a7bfe254c368bdc742a718"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "0987a44a88c77010ec95fa2f950d820fbd146cc38d49c03220f12c52b043c694"
+    sha256 cellar: :any, arm64_linux:  "fde2c9ac23dd7fe27002f7627d1831aeba02522cac8380db35f4d964c853b1d0"
+    sha256 cellar: :any, x86_64_linux: "ddf9ec56b61a314f94d8cc22570fc0ad1eb2f533f8f2658d0f85520c2bd6d47a"
   end
 
   head do

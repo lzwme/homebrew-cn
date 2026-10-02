@@ -2,8 +2,8 @@ class LaceworkCli < Formula
   desc "CLI for managing Lacework"
   homepage "https://github.com/lacework/go-sdk"
   url "https://github.com/lacework/go-sdk.git",
-      tag:      "v2.19.1",
-      revision: "ce6c365de09686761e71f43d5890051f193883f6"
+      tag:      "v2.19.2",
+      revision: "c71cecc606a28fd7abd145b3f60b118e4535cd11"
   license "Apache-2.0"
   head "https://github.com/lacework/go-sdk.git", branch: "main"
 
@@ -16,11 +16,11 @@ class LaceworkCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "375ad901cf27857bb336f47186256c6172235fcf6ebb939a04013215e34ff342"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "375ad901cf27857bb336f47186256c6172235fcf6ebb939a04013215e34ff342"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "375ad901cf27857bb336f47186256c6172235fcf6ebb939a04013215e34ff342"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "3c1c059125a23e3294908ce23574c89aaf7c706ac93003463cc961123f55b249"
-    sha256 cellar: :any,                 x86_64_linux:      "f28aaf92133167f0c820642de3c3ef64587f161d998670805fe38c7fa2b6515c"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "639d1ba41fecde22e7c74fbe4e66d31025cf0de4bc954949435378e635aa444e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "639d1ba41fecde22e7c74fbe4e66d31025cf0de4bc954949435378e635aa444e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "639d1ba41fecde22e7c74fbe4e66d31025cf0de4bc954949435378e635aa444e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "1a067bb4b0e46a10854ee10895ac680346d25d76580a87f77796609b1771d576"
+    sha256 cellar: :any,                 x86_64_linux:      "3bc09f9439dce9d78567e02c82ee6740e2e42af4c33e8fde82b5ba8f1724a27c"
   end
 
   depends_on "go" => :build

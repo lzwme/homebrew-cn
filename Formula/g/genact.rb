@@ -1,18 +1,16 @@
 class Genact < Formula
   desc "Nonsense activity generator"
   homepage "https://svenstaro.github.io/genact/"
-  url "https://ghfast.top/https://github.com/svenstaro/genact/archive/refs/tags/v1.5.1.tar.gz"
-  sha256 "07d62d0c7a41e83bf4ab8b76a1c0754556697faf5aa023b4e34906ff52323a7d"
+  url "https://ghfast.top/https://github.com/svenstaro/genact/archive/refs/tags/v1.6.0.tar.gz"
+  sha256 "bff905d0717cd8d5567cca3a81b718b64e0c965b6a49b119bb83b6726858e31d"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "99afe0d8a6ede3f9fa98f7ac3d7ac28d45827167b4508a693903ed5985214af5"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "9c8aa46fe815cb6071fa2d2ef972e90f8cff20cb20d9ac6f1bd7f29c71e58349"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "5c2e5db24a9ec0cadf2af721abc2dfd27313f99fcda417f6175b0740113d0332"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "8d7886757a4c9f642ac48430ed90a6fc639796a85c476e984ffe3fe6322de760"
-    sha256 cellar: :any_skip_relocation, sonoma:            "9fae2a7cae987cb1cfad8a48fa42d57b68e6760e767d2beae851ccff0d337201"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "e88c678ec203a1dbbb34426823d2a38316e51609756b20808ac4953ffcf69917"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "eef6ed32cd4140f969d859c3f3c46fb7e39facafb1b50430dd7a6b73e0e6a208"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "4f07ad6bc63cdd75cb4d147c543203ccc213a0014267933ee39ba822b78b0868"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "a60e80dcf99c77d411494da33296dc83366d5eb26b8b65f39dcc0d5393c961e6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "75e17e2fff597f44f11b22f0abd4522b85c6c54b24facec8d5349655a602bf8f"
+    sha256 cellar: :any,                 arm64_linux:       "45307fbaf1396ad104679ed6c9fa95de7267f2acbd7d2055a0718e81272decbb"
+    sha256 cellar: :any,                 x86_64_linux:      "5e24b161bf245cd2a2d06f02adb3a77eb2a83d15e2dbcd52b7769360ba5ac943"
   end
 
   depends_on "rust" => :build

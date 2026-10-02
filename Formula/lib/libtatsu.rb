@@ -4,18 +4,15 @@ class Libtatsu < Formula
   url "https://ghfast.top/https://github.com/libimobiledevice/libtatsu/releases/download/1.0.5/libtatsu-1.0.5.tar.bz2"
   sha256 "536fa228b14f156258e801a7f4d25a3a9dd91bb936bf6344e23171403c57e440"
   license "LGPL-2.1-or-later"
+  revision 1
   head "https://github.com/libimobiledevice/libtatsu.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_golden_gate: "f8316caaf7f1d59d376a0901b948ad52d8d911ba15ad7e9334aa84303011fc56"
-    sha256 cellar: :any,                 arm64_tahoe:       "4733e91bdb7fdcd93e030fc7a36174bfb8bc4f4e489270a47a5d5d70d0d9376c"
-    sha256 cellar: :any,                 arm64_sequoia:     "e729a89bd9fba8be9355e7c4dd4dfc89cb039f6c063ffcd1adb102d3dfec75d5"
-    sha256 cellar: :any,                 arm64_sonoma:      "efb9b3d41f8e825551a9047fd46788477ee53b3fa40f1c032bb74297be7ca21b"
-    sha256 cellar: :any,                 arm64_ventura:     "6324074e98eef39e5bccff4ed8dccd26cd28279d6cfeeb907e48ef8770bdc5bc"
-    sha256 cellar: :any,                 sonoma:            "3c64e4c3dec2b31b5d9a228073f08997d2efa813fe6ec431eba870112995fa08"
-    sha256 cellar: :any,                 ventura:           "73f65e3ab29de1deaa39d6784e9003867ba43205e91cede4847239f118bd7ebb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "be22c10c322aac3a41282d50b06cd6c8d3add347ba1f9978a3fc43da5418a753"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "6e616827b2db64dfa913646990030b20db78dc3cddd6e56a801eb82658ae6b07"
+    sha256 cellar: :any, arm64_golden_gate: "c1bb7119bc08c23940a1eb05055824915eee5e09f14554722e67750f6b8a8552"
+    sha256 cellar: :any, arm64_tahoe:       "f672af789246ca901b2feb021d27fb2d3e04c7b53a7f6170797d2fe3eb087e52"
+    sha256 cellar: :any, arm64_sequoia:     "913371367c79a4288583b15267122b9160e4ef444d6a944b0eaf96758850500a"
+    sha256 cellar: :any, arm64_linux:       "8bbd19a01ade741b4d5538812add677315675ae24f5423eeeae9824064dee461"
+    sha256 cellar: :any, x86_64_linux:      "aeefa1286b99cc1a205bcef00fdd26f60de3b0169d7c31d6b6fbd3e02957935d"
   end
 
   depends_on "autoconf" => :build

@@ -6,16 +6,15 @@ class Cf2tf < Formula
   url "https://files.pythonhosted.org/packages/7f/c3/a6dfdc4848cfd4fb50e15e9449c439791a009638c2bd06b6fe6982d9afc1/cf2tf-0.9.2.tar.gz"
   sha256 "3fcae8f42f2d1aeb14deb7ef70215cc76c1f1f5cac9b465081e87729498e3ac9"
   license "GPL-3.0-only"
-  revision 9
+  revision 10
   head "https://github.com/DontShaveTheYak/cf2tf.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "ee0a358f79e038e51745a8790562a2556c8ea409b44053875074bd020774e52e"
-    sha256 cellar: :any, arm64_tahoe:       "1d0a38b6baf1f202b232215480211662f5fdcf6b91854a202fd3ed359a321d07"
-    sha256 cellar: :any, arm64_sequoia:     "b40b1d0f37e1282f9c9968eb338bc9a05b00e4ccdab61e259c88cfbc0e071260"
-    sha256 cellar: :any, arm64_sonoma:      "229a19e74ef00378c487bbef13f6bf7b7c8b6d35b100a433768fe1bb1c59757d"
-    sha256 cellar: :any, arm64_linux:       "f926c911330666fa8a9ba476faf99bcdd754bff518e214e6e3dc88e9e40de432"
-    sha256 cellar: :any, x86_64_linux:      "bd371f7d40edc79230e2c423bf0dd6f587528a893c8a2aa6634654fb22016b27"
+    sha256 cellar: :any, arm64_golden_gate: "a4ee30224a576fe83ea5068f5e3996901002def5ec636caf97b5aad4b2a59372"
+    sha256 cellar: :any, arm64_tahoe:       "f51c3af127169d34c22a6d7112ffdf5e1ea1f712dd401f3cbf81556f9af714ea"
+    sha256 cellar: :any, arm64_sequoia:     "638203cca69d3385db0a187764510064bb8c887570c0bbeb63f0ce9330d73d8d"
+    sha256 cellar: :any, arm64_linux:       "1e6a6e894a0f7d64f4178529d29a7166ec21ca36d35f902538fb7ccc07f0ce9e"
+    sha256 cellar: :any, x86_64_linux:      "ae9e82dada31a13efbad7f4cf642d64802c1c3e9f9d47a67182c0ce7a53f6573"
   end
 
   depends_on "cmake" => :build
@@ -31,8 +30,8 @@ class Cf2tf < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/e5/3f/143b048436775b0f76ac3eec145c019e8173ccc2885c8f20319b996d5e83/charset_normalizer-3.5.1.tar.gz"
-    sha256 "6117b84ea48435e5356dc737f5121485c30920ba43375fa7b434fd753df0eac3"
+    url "https://files.pythonhosted.org/packages/33/1c/f41d4e74c28ab327ff3acd36053f7ea506c55872d7a90b0fa71aa3ab0c89/charset_normalizer-3.5.2.tar.gz"
+    sha256 "39de2a259fc954455c57274dc94c79d5842774e1247a016aff30bc0efed0f4ef"
   end
 
   resource "click" do
@@ -51,13 +50,13 @@ class Cf2tf < Formula
   end
 
   resource "gitpython" do
-    url "https://files.pythonhosted.org/packages/6f/61/3285044215fb596bf093e39ccb96ece0a1076a8ca57a61e069a6a33cdb1b/gitpython-3.1.61.tar.gz"
-    sha256 "f51c24d8c0f733a195447385f5774a5dfe8767f5acfd7994a33755644c6ecc95"
+    url "https://files.pythonhosted.org/packages/e0/db/3ca813cbacb23ab6fe46ff38a9b5ef8e73e970c8051f2ce903aacafe0446/gitpython-3.1.62.tar.gz"
+    sha256 "1791de66309bc0c7cfca40bf8d2e3de7ca091cbf94e6051be1ad0722c61062af"
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/5f/f7/abb373e5757eaec4b922b92f97ec8d6d7e057cf06778247604fbc4e7c3f3/idna-3.19.tar.gz"
-    sha256 "5e0811a4383b21dc5838069f801c4fb62113b7447663d2530d2bd6e77b49bf15"
+    url "https://files.pythonhosted.org/packages/f5/08/8eea9d4b8302028f3abb2c0813953f7aec26d33b7a8960ed760e65ff29fa/idna-3.20.tar.gz"
+    sha256 "a7db850025b95ded1eae8a46181a1a6c56c92c96f0e2b005d9ff8dc0210cab44"
   end
 
   resource "pyyaml" do
@@ -91,8 +90,8 @@ class Cf2tf < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/53/0c/06f8b233b8fd13b9e5ee11424ef85419ba0d8ba0b3138bf360be2ff56953/urllib3-2.7.0.tar.gz"
-    sha256 "231e0ec3b63ceb14667c67be60f2f2c40a518cb38b03af60abc813da26505f4c"
+    url "https://files.pythonhosted.org/packages/e3/05/b17359e1cefb4f909b5e40b1b90a496d987258916dbbf88e842c729f510e/urllib3-2.8.0.tar.gz"
+    sha256 "63bf2ead4c879426ebf22ef2a781eeb4aa3b4ae798a0435506f8687fd5bb9b63"
   end
 
   def install

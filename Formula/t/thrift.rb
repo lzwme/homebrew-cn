@@ -1,20 +1,18 @@
 class Thrift < Formula
   desc "Framework for scalable cross-language services development"
   homepage "https://thrift.apache.org/"
-  url "https://www.apache.org/dyn/closer.lua?path=thrift/0.24.0/thrift-0.24.0.tar.gz"
-  mirror "https://archive.apache.org/dist/thrift/0.24.0/thrift-0.24.0.tar.gz"
-  sha256 "e0fa5839a4c5c1d631b0931cf2c554ebbfa4e2fee3a9fb3ffd4f82ce4396c6e4"
+  url "https://www.apache.org/dyn/closer.lua?path=thrift/0.25.0/thrift-0.25.0.tar.gz"
+  mirror "https://archive.apache.org/dist/thrift/0.25.0/thrift-0.25.0.tar.gz"
+  sha256 "66da4707214c54c94bac082103dc67adaf9e08925662700f269170a7b534b214"
   license "Apache-2.0"
-  compatibility_version 3
+  compatibility_version 4
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "9cf20e9b0fc582ac22978fdf11b22c933293d633e06646638cb28fac6846be1c"
-    sha256 cellar: :any, arm64_tahoe:       "de51bdd718da379a12e5cdbaab831ae379e98b233311503a12f79d22fa468914"
-    sha256 cellar: :any, arm64_sequoia:     "d4d7301ccfec6227f482147ae3e7b60506f801ec240bdea2106a04e192dc4b52"
-    sha256 cellar: :any, arm64_sonoma:      "a1c4c94c0268dd8066c88e3b6410a376049a99136c229842d45cc76036a34b89"
-    sha256 cellar: :any, sonoma:            "88139860a06592e7b8d6fadf2f9595503a877f812a208c8d0d7664a268206857"
-    sha256 cellar: :any, arm64_linux:       "338f5358b943362edc879865b481fbc864c44efa233fb2b795821ad7869253db"
-    sha256 cellar: :any, x86_64_linux:      "3ccdaa58d273f59637873243322af545c11be400ebd4cd2e7ee9cb7cae700947"
+    sha256 cellar: :any, arm64_golden_gate: "0d285f9dacce1246fa9faaa0c049144c5d0d31e5b80817bae14fa2d676fd4ea3"
+    sha256 cellar: :any, arm64_tahoe:       "e25867b29dcbee74e54fb5c705bbcad6899b0f8f1dcde539acdd2e60f4891a74"
+    sha256 cellar: :any, arm64_sequoia:     "9604c7ca5fb75e3feadcfc7082138a0ffcefefeaa86acd10504cfed594a99fc5"
+    sha256 cellar: :any, arm64_linux:       "f283682e5cae69164465f3ecc6d99413cf7eede15bfaefc5866c7a22f870334c"
+    sha256 cellar: :any, x86_64_linux:      "d9b178eb3bca5dc3a50b48a44836ea9517fa14fbe893cf2de348d83b3f3f3297"
   end
 
   head do

@@ -6,17 +6,15 @@ class Cookiecutter < Formula
   url "https://files.pythonhosted.org/packages/92/03/f4c96d8fd4f5e8af0210bf896eb63927f35d3014a8e8f3bf9d2c43ad3332/cookiecutter-2.7.1.tar.gz"
   sha256 "ca7bb7bc8c6ff441fbf53921b5537668000e38d56e28d763a1b73975c66c6138"
   license "BSD-3-Clause"
-  revision 4
+  revision 5
   head "https://github.com/cookiecutter/cookiecutter.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_golden_gate: "861a7546cf3a654ddc21c745d534161064a752909077d2fc8f83f19fff324594"
-    sha256 cellar: :any,                 arm64_tahoe:       "6dc62ce8dc4063550bcfd19dcf5d635f66a75fec3b2ecab3c2d52d11e9d2703d"
-    sha256 cellar: :any,                 arm64_sequoia:     "37bc94e1364792e019a3a4caa1292e181bb33617446048e4fab9af0012815dd4"
-    sha256 cellar: :any,                 arm64_sonoma:      "d10d36cbebb83b12bc18b3645978cadd5c3cbba1bdbe651c2687ffe110ce7649"
-    sha256 cellar: :any,                 sonoma:            "543da37e1598e2480a55abf51c0d255eda847df5fe16a44cc0c99df76137215c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "9d37f1460e1749491fce22a6b27199c7c2b2525103323587571eb987e2f7f5e2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "4ebf52f67bca17fd1909c90cc23db67586f1c26012391819d4ef13d8e666906a"
+    sha256 cellar: :any, arm64_golden_gate: "c2cbcdee25c8ab754a68b3d450e2209bf65e824d3e84959a53de3190fc5e5ba0"
+    sha256 cellar: :any, arm64_tahoe:       "cd46b189534e133fe3d90d8ed7811124da70e67f067e17e5e5a111cf84711763"
+    sha256 cellar: :any, arm64_sequoia:     "da06f05849d13c9f98394b18e00679f6694abc14dbcc6d1d30eb426f83b6fd7e"
+    sha256 cellar: :any, arm64_linux:       "4282658cb9283f119f5465383601cebe36dff289a467618e8b8b8b19a3e383b4"
+    sha256 cellar: :any, x86_64_linux:      "60fb021316a587fab2c3830a0eafda27232515a3082d4551bc3e34a53a150f1f"
   end
 
   depends_on "certifi" => :no_linkage
@@ -36,18 +34,18 @@ class Cookiecutter < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/e7/a1/67fe25fac3c7642725500a3f6cfe5821ad557c3abb11c9d20d12c7008d3e/charset_normalizer-3.4.7.tar.gz"
-    sha256 "ae89db9e5f98a11a4bf50407d4363e7b09b31e55bc117b4f7d80aab97ba009e5"
+    url "https://files.pythonhosted.org/packages/33/1c/f41d4e74c28ab327ff3acd36053f7ea506c55872d7a90b0fa71aa3ab0c89/charset_normalizer-3.5.2.tar.gz"
+    sha256 "39de2a259fc954455c57274dc94c79d5842774e1247a016aff30bc0efed0f4ef"
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/23/e4/796662cd90cf80e3a363c99db2b88e0e394b988a575f60a17e16440cd011/click-8.4.0.tar.gz"
-    sha256 "638f1338fe1235c8f4e008e4a8a254fb5c5fbdcbb40ece3c9142ebb78e792973"
+    url "https://files.pythonhosted.org/packages/c7/0e/7fa0ef50764b67090eca4114772a2abf8b6148198475e54c660b97caeee6/click-8.5.0.tar.gz"
+    sha256 "ba0d2089de75ea0310e2dde03160e6ca10009947fb95a182f9b54021bb272e34"
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/82/77/7b3966d0b9d1d31a36ddf1746926a11dface89a83409bf1483f0237aa758/idna-3.15.tar.gz"
-    sha256 "ca962446ea538f7092a95e057da437618e886f4d349216d2b1e294abfdb65fdc"
+    url "https://files.pythonhosted.org/packages/f5/08/8eea9d4b8302028f3abb2c0813953f7aec26d33b7a8960ed760e65ff29fa/idna-3.20.tar.gz"
+    sha256 "a7db850025b95ded1eae8a46181a1a6c56c92c96f0e2b005d9ff8dc0210cab44"
   end
 
   resource "jinja2" do
@@ -71,8 +69,8 @@ class Cookiecutter < Formula
   end
 
   resource "pygments" do
-    url "https://files.pythonhosted.org/packages/c3/b2/bc9c9196916376152d655522fdcebac55e66de6603a76a02bca1b6414f6c/pygments-2.20.0.tar.gz"
-    sha256 "6757cd03768053ff99f3039c1a36d6c0aa0b263438fcab17520b30a303a82b5f"
+    url "https://files.pythonhosted.org/packages/49/2e/ced460408999b33da6b31b0021b0f37d329e202d4169aeb164493778f25b/pygments-2.21.0.tar.gz"
+    sha256 "610ca751c9bc2492b38eb9a38a7fbc93edbbb2d7182edaf34e66ae493dee5c8c"
   end
 
   resource "python-dateutil" do
@@ -81,8 +79,8 @@ class Cookiecutter < Formula
   end
 
   resource "python-slugify" do
-    url "https://files.pythonhosted.org/packages/87/c7/5e1547c44e31da50a460df93af11a535ace568ef89d7a811069ead340c4a/python-slugify-8.0.4.tar.gz"
-    sha256 "59202371d1d05b54a9e7720c5e038f928f45daaffe41dd10822f3907b937c856"
+    url "https://files.pythonhosted.org/packages/ad/df/32c87abe18f7d0560e2154ffbe23dfca6edad5d0d2d6c4636c99f4fb8b02/python_slugify-9.1.2.tar.gz"
+    sha256 "bd36ca98e5ebb1cd2b9dfa2f27b948ce87402fb083b762cbd9d0fa3aed489a92"
   end
 
   resource "pyyaml" do
@@ -111,13 +109,13 @@ class Cookiecutter < Formula
   end
 
   resource "tzdata" do
-    url "https://files.pythonhosted.org/packages/ba/19/1b9b0e29f30c6d35cb345486df41110984ea67ae69dddbc0e8a100999493/tzdata-2026.2.tar.gz"
-    sha256 "9173fde7d80d9018e02a662e168e5a2d04f87c41ea174b139fbef642eda62d10"
+    url "https://files.pythonhosted.org/packages/e4/31/3d74fa778a63b98b7374323befcc0be5ab3bd94afd4096a0124e7379152c/tzdata-2026.4.tar.gz"
+    sha256 "f1b8bd365d8d210c55353f4d7f8d6d8561c0ba50d704b700d195a9424bba0d79"
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/53/0c/06f8b233b8fd13b9e5ee11424ef85419ba0d8ba0b3138bf360be2ff56953/urllib3-2.7.0.tar.gz"
-    sha256 "231e0ec3b63ceb14667c67be60f2f2c40a518cb38b03af60abc813da26505f4c"
+    url "https://files.pythonhosted.org/packages/e3/05/b17359e1cefb4f909b5e40b1b90a496d987258916dbbf88e842c729f510e/urllib3-2.8.0.tar.gz"
+    sha256 "63bf2ead4c879426ebf22ef2a781eeb4aa3b4ae798a0435506f8687fd5bb9b63"
   end
 
   def install

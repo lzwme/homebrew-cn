@@ -1,18 +1,16 @@
 class Air < Formula
   desc "Fast and opinionated formatter for R code"
   homepage "https://posit-dev.github.io/air/"
-  url "https://ghfast.top/https://github.com/posit-dev/air/archive/refs/tags/0.11.0.tar.gz"
-  sha256 "07ce82c3200296afca23efdbc9aae1943c4d0b6dfd5aa3fa47353dd709dff648"
+  url "https://ghfast.top/https://github.com/posit-dev/air/archive/refs/tags/0.12.0.tar.gz"
+  sha256 "8f74d4a64213718a1611a8da2afae1e8196558ad46d15205e869a6642be4c228"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "d44eb7d17a1d0ec5513bb9939b560d20dd7a6cdcc71b3a1fe2abea9c755f1c35"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "fe24773c57236eb5e15a7866185f11961f17b1f63830c029a0f5e8a1a14b33fb"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "d06c1ec27ce2c8e58c555014b5518201f39e49fcbb7d60bfd5325f624afd74c4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "d0fd2e24c4886fca0baa0faf78d7e1da9438f2498f084cdd89dabfad8d77d637"
-    sha256 cellar: :any_skip_relocation, sonoma:            "5df4891be551c21c65a8bbc6579be7ce4acefa9c161f1f64c53853da5426a2fd"
-    sha256 cellar: :any,                 arm64_linux:       "5a521a49c5a2fef3999d8f9b3c3a281743ea5150bd3be98c0f4912947a258162"
-    sha256 cellar: :any,                 x86_64_linux:      "0de3fde42a0cd0d489dc3fd643a7e7924da954ca4c537a7479b390cf02f52f96"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "54799f29180cb8af194390ad8c54d5a8f0d81c1e8fecc7003e0f9764267874bb"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "a388de51b3c0ad79f3aa118791cc2fb06707cfa60387748e0ea26401dc28ff3e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "d5884da832cbc185e7fb510e69fd343c61638944e6fc1c7ce43277db84b991a2"
+    sha256 cellar: :any,                 arm64_linux:       "fd02d5b43f6e16c3e71ce4a769c8fee38db4ca1b5df15c39904441d54bf84830"
+    sha256 cellar: :any,                 x86_64_linux:      "2cfd97d1cb68eb888d6f04c8aa171eb46352b7da7be3315e83dc26f7c8ebc34c"
   end
 
   depends_on "rust" => :build

@@ -1,24 +1,24 @@
 class Svlang < Formula
   desc "SystemVerilog compiler and language services"
   homepage "https://sv-lang.com/"
-  url "https://ghfast.top/https://github.com/MikePopoloski/slang/archive/refs/tags/v11.0.tar.gz"
-  sha256 "50676d5a9adbefb97d266a4b174e6b0513901afd5ac57a6cdfea0a61149c3704"
+  url "https://ghfast.top/https://github.com/MikePopoloski/slang/archive/refs/tags/v12.0.tar.gz"
+  sha256 "64b3eb9d38ee126e009cbb8da0cfa6f68d970334e52ba084ad7c68e4b5fa804c"
   license "MIT"
   head "https://github.com/MikePopoloski/slang.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "126c27560e423ee920d6b214a5a7337f65c058f39b357c78749ffa3e3f87f285"
-    sha256 cellar: :any, arm64_tahoe:       "a5182e41983044275fc167af043d81ea8d202821017f8417d094a9c94f910600"
-    sha256 cellar: :any, arm64_sequoia:     "87aa125dca574a01827c92420c92b15a081597e4c03c1b2e09cb788919c91d79"
-    sha256 cellar: :any, arm64_sonoma:      "dc82f99aa17fdd9b112627b0c20134a3406efe2fb607ef16b58519f777f6f7af"
-    sha256 cellar: :any, sonoma:            "8841904fbbe822758474f70428b8c3978448b9b1b0a3e96c1dcbe2883bc5336d"
-    sha256 cellar: :any, arm64_linux:       "5c4e0748b60d9749502143b043f1d0e639f98aa476ed654b46ffe620387bb6e3"
-    sha256 cellar: :any, x86_64_linux:      "b960c02e941ea96322f3540dd07c271537edaf6c05f44db4f62e276b7db304ee"
+    sha256 cellar: :any, arm64_golden_gate: "332e75aa965dfd3c10aefd9623b25983faba4f9d07dcc3b294ac8e3f92d9d81e"
+    sha256 cellar: :any, arm64_tahoe:       "cd2120ec05548a5642a7cb7972b89181b37a48a6f8ece48405f34e693a3aa63c"
+    sha256 cellar: :any, arm64_sequoia:     "fccb04c7241e24312619b985b322a710c08881d9a3663fa4428ce1ccb4d06b16"
+    sha256 cellar: :any, arm64_linux:       "3e274000c539616552fca6a6d5230b832e89d76a1049fff792450fe206e02b0c"
+    sha256 cellar: :any, x86_64_linux:      "ee0e1b158befdb1d10169935b75887839756814f4f9cc0edf28b0dcb6b02c713"
   end
 
   depends_on "cmake" => :build
+  depends_on "boost"
   depends_on "fmt"
   depends_on "mimalloc"
+  depends_on "tomlplusplus"
 
   uses_from_macos "python" => :build
 
@@ -35,15 +35,15 @@ class Svlang < Formula
   deny_network_access!
 
   def install
-    # `fmt/core.h` stopped pulling in `fmt::format` in fmt 12.2, remove in next release
-    ENV.append_to_cflags "-DFMT_DEPRECATED_HEAVY_CORE"
-
     args = %w[
       -DHOMEBREW_ALLOW_FETCHCONTENT=ON
       -DFETCHCONTENT_FULLY_DISCONNECTED=ON
       -DFETCHCONTENT_TRY_FIND_PACKAGE_MODE=ALWAYS
       -DSLANG_INCLUDE_TESTS=OFF
       -DSLANG_INCLUDE_TOOLS=ON
+      -DSLANG_USE_SYSTEM_BOOST=ON
+      -DSLANG_USE_SYSTEM_FMT=ON
+      -DSLANG_USE_SYSTEM_TOMLPLUSPLUS=ON
     ]
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args

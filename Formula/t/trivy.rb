@@ -1,25 +1,21 @@
 class Trivy < Formula
   desc "Vulnerability scanner for container images, file systems, and Git repos"
   homepage "https://trivy.dev/"
-  url "https://ghfast.top/https://github.com/aquasecurity/trivy/archive/refs/tags/v0.74.0.tar.gz"
-  sha256 "04268af574690b84bc3474a5f19e002cd6da3e16899fac9fd39c6e84e7843940"
+  url "https://ghfast.top/https://github.com/aquasecurity/trivy/archive/refs/tags/v0.75.0.tar.gz"
+  sha256 "4ee2010384f90bf23d4059ae49c11129e5041816a3754d890a90ae80f678d765"
   license "Apache-2.0"
   compatibility_version 1
   head "https://github.com/aquasecurity/trivy.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "f8b8405453fce7ce15788906c6a26415605d2f201a157eedca0ea53068d4cbce"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "e2d5390bfd71240ba47eb2ef480d95b172d7379ff2a7d7c74024efa44ecad4b4"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "dac4c732a6accc32250b680c47c84a4f5c66bed80405c0ccc30526586581d080"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "e0163b35fb42cca43a4b1bd813ed0138d10e91a5942e20fa0d7d2489f2ed3c5c"
-    sha256 cellar: :any_skip_relocation, sonoma:            "94ef7d1e238b3f48415445be41799b5e229495e57192665fdf569e09f82d38c9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "7db8a5e8c1cadbc46fead3c842d3bcdcd883c4d0013c9a61febdd20239721ebd"
-    sha256 cellar: :any,                 x86_64_linux:      "3ff0409831540fa6fdb8208be7bfb2e4d5acd45cdba93849e815bfd8242d9322"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "4fe3192f521a72e0100943ffcde6d4eb3e2d2e2ff02b4bf4038726de90c57909"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "1d7f287ed34d2bd244e27d03fb56f28107d9dfe873e757761dd356281a5ec0ad"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "00587c5652a9c9ad7667a4b70af180cadaef5a05f40b0fea94b51c97a9cda21e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "7bfa5bf2cad495975da23f7ed4df0520fb6149779765b595b36832897ff8dc0e"
+    sha256 cellar: :any,                 x86_64_linux:      "308cc089fc0abef3b37c9db36cb5e531ebdcdd967eb5cb7c97c655df055a1c39"
   end
 
-  # TODO: unpin go@1.26 when trivy supports go 1.27
-  # ref: https://github.com/aquasecurity/trivy/pull/11127
-  depends_on "go@1.26" => :build
+  depends_on "go" => :build
 
   # `test do` block downloads a container image and the vulnerability DB
   allow_network_access! :test

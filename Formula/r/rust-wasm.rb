@@ -1,8 +1,8 @@
 class RustWasm < Formula
   desc "Rust standard library and sysroot for WebAssembly targets"
   homepage "https://www.rust-lang.org/"
-  url "https://static.rust-lang.org/dist/rustc-1.98.1-src.tar.gz"
-  sha256 "dc9f8b917b32444d6c7ac43cc1b409013d3a9a633338bb60c14cdae1d15ee65a"
+  url "https://static.rust-lang.org/dist/rustc-1.99.0-src.tar.gz"
+  sha256 "2035e4077b834a42ff8afd07f277ae3f06340098b86b1d2843aa234b4cfcae67"
   license any_of: ["Apache-2.0", "MIT"]
 
   livecheck do
@@ -10,16 +10,15 @@ class RustWasm < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "8cebb29c0751f19c2929cc6f17ab2dfc58078ce851c0a760537c639662c10515"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "8cebb29c0751f19c2929cc6f17ab2dfc58078ce851c0a760537c639662c10515"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "8cebb29c0751f19c2929cc6f17ab2dfc58078ce851c0a760537c639662c10515"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "8cebb29c0751f19c2929cc6f17ab2dfc58078ce851c0a760537c639662c10515"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "0c590153c44a5f1b63136abf8472da02e45ee8faa9a254df605d0684a53c7afe"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "ed5868d4107a332417fad2234792acafbda3651a6dc5869a379b0c2462e5be56"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "9158e6d281852de9231725820be10a74b82bc2870407fa25de07d1e30204532b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "9158e6d281852de9231725820be10a74b82bc2870407fa25de07d1e30204532b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "9158e6d281852de9231725820be10a74b82bc2870407fa25de07d1e30204532b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "49d3387d90b4504d811020b10d7b1daad5f2254db3cdf1f3e66b21cac180636e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "374f6b9ed6cfb99330f7238f5d7211729eaff7f27efb37796d70eeed3e3a36b3"
   end
 
   depends_on "wasmtime" => :test
-  depends_on "lld@22"
+  depends_on "lld"
   depends_on "rust"
   depends_on "wasi-libc"
   depends_on "wasm-component-ld"
@@ -137,7 +136,6 @@ class RustWasm < Formula
   end
 
   test do
-    ENV.prepend_path "PATH", formula_opt_bin("lld@22")
     config = pkgshare/"cargo-config.toml"
 
     # wasm32-unknown-unknown has no OS or runtime, so just confirm we can link a

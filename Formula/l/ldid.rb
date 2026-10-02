@@ -5,18 +5,15 @@ class Ldid < Formula
       tag:      "v2.1.5",
       revision: "a23f0faadd29ec00a6b7fb2498c3d15af15a7100"
   license "AGPL-3.0-or-later"
-  revision 1
+  revision 2
   head "git://git.saurik.com/ldid.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_golden_gate: "f85c650e7518cfcac1ea0b41874ffd5fb17de3bd763e4a639f101f439c47dab7"
-    sha256 cellar: :any,                 arm64_tahoe:       "4c28297c1094cde3ae7fe7061400807d8936b9d0fb9fc317a354ce7cd856bf33"
-    sha256 cellar: :any,                 arm64_sequoia:     "1aa932cfbef34182e232838733a904cd0f3579ea04f5593de9611afaff5e19e3"
-    sha256 cellar: :any,                 arm64_sonoma:      "63d9fa30a42dadd7fc7ca9d171d34b73159a082ab37dfb0cb8bd713388e8820a"
-    sha256 cellar: :any,                 sonoma:            "b60a204f73db3794d0cba7d85ec6318bb29050e69cd705a4e9ac540ef395cac1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "c406cbaf506a024df5d668b9fba39c5a776a28ad3601b34a89c445894fa7b646"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "b8a69a0616a8dda110f61623b22635142b61d1cf611e60f17a70b336a1df20e6"
+    sha256 cellar: :any, arm64_golden_gate: "7c8799de0bd1159299e337f15d28dc7e53b6e3d1bc2c6b4525b2acc31a250ee1"
+    sha256 cellar: :any, arm64_tahoe:       "b1deffb6e575a4996e31cef6cbc56aa009f5eea67b73b437f6aea597198866a6"
+    sha256 cellar: :any, arm64_sequoia:     "bafb40af217fc882cb89890b1c8ec8943d006369ad8736d5d2e6533c209b282b"
+    sha256 cellar: :any, arm64_linux:       "28926ee4770d925d7d7d5712774169b5116b034ce42f2f81c3fff5005ef8d0dc"
+    sha256 cellar: :any, x86_64_linux:      "dc1105c33e228c1afeecffc04094ad9fb24f092bfa8f6a774277930c6878340e"
   end
 
   depends_on "libplist"

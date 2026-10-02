@@ -6,16 +6,15 @@ class Cruft < Formula
   url "https://files.pythonhosted.org/packages/d1/7e/0e20012f2aa156e5d6a70483a8d90accb7ed4966dddb0c58987d9f6eba12/cruft-2.16.0.tar.gz"
   sha256 "184662853fbc1c16c0137fe0e9444e0cbe95e40362f5ebb2d9fae33d9223e73f"
   license "MIT"
-  revision 15
+  revision 16
   head "https://github.com/cruft/cruft.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "42f7b535ed83da6893c1b7b03cf7dcac300b507193e6c47c35b5c8d68188650e"
-    sha256 cellar: :any, arm64_tahoe:       "56763ddbfd61e0329a7069f906f16b144992d2b6051b41ce8081ed4c89baba7f"
-    sha256 cellar: :any, arm64_sequoia:     "e3df0acd6691ba12bb6726589518dec52eff5f2fdc5bb236189313b56f8b3bd4"
-    sha256 cellar: :any, arm64_sonoma:      "b8822ddb94162f5d5ec322c853b8cf6a526b759e44da3c37ecf0ad9bdab29c65"
-    sha256 cellar: :any, arm64_linux:       "48510584c3f2a904b43228206b796bb6c7d6ab940ba4b67f68a38240b86fc25e"
-    sha256 cellar: :any, x86_64_linux:      "67ddc6ffe399840364e32d59c31eb593a08ec6633d4f6cd5de8cbbeaa543af48"
+    sha256 cellar: :any, arm64_golden_gate: "9e15ea5625cbbefe96c4f4cf93894ff360a3f136e45960a9fc40465496752dde"
+    sha256 cellar: :any, arm64_tahoe:       "aa72c382215a78455c3a511055874977be3fb2d2a9fc5df1e7eba8f3248c0f36"
+    sha256 cellar: :any, arm64_sequoia:     "5c95580197564fc64d2dbd43655ac503b3ef4209ce18fb6cc1b10c80560733f3"
+    sha256 cellar: :any, arm64_linux:       "0c196bf37152a6d5452e066ec6d3457b2490f6b70f600e56118e06abde0ac736"
+    sha256 cellar: :any, x86_64_linux:      "11491f2508da35d0cdd7cf9c66f7669974ec03431c8a1fcf50698c817aa6173f"
   end
 
   depends_on "certifi" => :no_linkage
@@ -40,8 +39,8 @@ class Cruft < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/e5/3f/143b048436775b0f76ac3eec145c019e8173ccc2885c8f20319b996d5e83/charset_normalizer-3.5.1.tar.gz"
-    sha256 "6117b84ea48435e5356dc737f5121485c30920ba43375fa7b434fd753df0eac3"
+    url "https://files.pythonhosted.org/packages/33/1c/f41d4e74c28ab327ff3acd36053f7ea506c55872d7a90b0fa71aa3ab0c89/charset_normalizer-3.5.2.tar.gz"
+    sha256 "39de2a259fc954455c57274dc94c79d5842774e1247a016aff30bc0efed0f4ef"
   end
 
   resource "click" do
@@ -60,13 +59,13 @@ class Cruft < Formula
   end
 
   resource "gitpython" do
-    url "https://files.pythonhosted.org/packages/6f/61/3285044215fb596bf093e39ccb96ece0a1076a8ca57a61e069a6a33cdb1b/gitpython-3.1.61.tar.gz"
-    sha256 "f51c24d8c0f733a195447385f5774a5dfe8767f5acfd7994a33755644c6ecc95"
+    url "https://files.pythonhosted.org/packages/e0/db/3ca813cbacb23ab6fe46ff38a9b5ef8e73e970c8051f2ce903aacafe0446/gitpython-3.1.62.tar.gz"
+    sha256 "1791de66309bc0c7cfca40bf8d2e3de7ca091cbf94e6051be1ad0722c61062af"
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/5f/f7/abb373e5757eaec4b922b92f97ec8d6d7e057cf06778247604fbc4e7c3f3/idna-3.19.tar.gz"
-    sha256 "5e0811a4383b21dc5838069f801c4fb62113b7447663d2530d2bd6e77b49bf15"
+    url "https://files.pythonhosted.org/packages/f5/08/8eea9d4b8302028f3abb2c0813953f7aec26d33b7a8960ed760e65ff29fa/idna-3.20.tar.gz"
+    sha256 "a7db850025b95ded1eae8a46181a1a6c56c92c96f0e2b005d9ff8dc0210cab44"
   end
 
   resource "jinja2" do
@@ -100,8 +99,8 @@ class Cruft < Formula
   end
 
   resource "python-slugify" do
-    url "https://files.pythonhosted.org/packages/87/c7/5e1547c44e31da50a460df93af11a535ace568ef89d7a811069ead340c4a/python-slugify-8.0.4.tar.gz"
-    sha256 "59202371d1d05b54a9e7720c5e038f928f45daaffe41dd10822f3907b937c856"
+    url "https://files.pythonhosted.org/packages/ad/df/32c87abe18f7d0560e2154ffbe23dfca6edad5d0d2d6c4636c99f4fb8b02/python_slugify-9.1.2.tar.gz"
+    sha256 "bd36ca98e5ebb1cd2b9dfa2f27b948ce87402fb083b762cbd9d0fa3aed489a92"
   end
 
   resource "pyyaml" do
@@ -145,13 +144,13 @@ class Cruft < Formula
   end
 
   resource "tzdata" do
-    url "https://files.pythonhosted.org/packages/92/ff/5a28bdfd8c3ebec42564ac7d0e54ca3db65044a9314a97f9564fa7a1e926/tzdata-2026.3.tar.gz"
-    sha256 "4a1518b8993086a7982523e071643f3c0e5f213e75b21318e78bcabfff9d1415"
+    url "https://files.pythonhosted.org/packages/e4/31/3d74fa778a63b98b7374323befcc0be5ab3bd94afd4096a0124e7379152c/tzdata-2026.4.tar.gz"
+    sha256 "f1b8bd365d8d210c55353f4d7f8d6d8561c0ba50d704b700d195a9424bba0d79"
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/53/0c/06f8b233b8fd13b9e5ee11424ef85419ba0d8ba0b3138bf360be2ff56953/urllib3-2.7.0.tar.gz"
-    sha256 "231e0ec3b63ceb14667c67be60f2f2c40a518cb38b03af60abc813da26505f4c"
+    url "https://files.pythonhosted.org/packages/e3/05/b17359e1cefb4f909b5e40b1b90a496d987258916dbbf88e842c729f510e/urllib3-2.8.0.tar.gz"
+    sha256 "63bf2ead4c879426ebf22ef2a781eeb4aa3b4ae798a0435506f8687fd5bb9b63"
   end
 
   def install

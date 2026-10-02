@@ -33,7 +33,8 @@ class Libpano < Formula
 
   patch :DATA
 
-  deny_network_access!
+  # Test needs to fetch stable tarball
+  allow_network_access! :test
 
   def install
     args = %W[-DCMAKE_INSTALL_RPATH=#{rpath}]

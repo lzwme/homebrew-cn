@@ -7,18 +7,21 @@ class VitePlus < Formula
   head "https://github.com/voidzero-dev/vite-plus.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "b4ebd67b221876de7c821c21a0f1a86fdc7500b933ef8b511b91b9b062e98d85"
-    sha256 cellar: :any, arm64_tahoe:       "66ddadadb4e7db3b0d6232a831319a3e48705b7001b401665c7f363f57f20c10"
-    sha256 cellar: :any, arm64_sequoia:     "081eb841d6c93c0ca0f95d3bea670012c7659cb2ed51b147e51c6099f0c4774b"
-    sha256               arm64_linux:       "92c72c9f5ead41a3f3c5a4d96282454068d27fc9fb8c2250c84113729511c520"
-    sha256               x86_64_linux:      "753fb472e4d0344e76d3fa7c18ff3d0ff96e089d6a04ed361c08004434aad197"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "fdedbbf30804111ee34740719f6e7c429b5c0fe2e21865d59d1fa180d7b338ed"
+    sha256 cellar: :any, arm64_tahoe:       "dc47ff9adbe8db598401c7e1e7ba0efcd43a0c5ee741e18faf46ac490bc76b61"
+    sha256 cellar: :any, arm64_sequoia:     "bf915c24d620ab5418f6cac83fa2f1291d2c398339a7d497522991d7bf7efa69"
+    sha256               arm64_linux:       "2bdf52aa3a0eedf3000161a70e440078fbe1877cbb1f7488865ef984ea1b895c"
+    sha256               x86_64_linux:      "d27c2519bb56ef4920cbff1d572e159e0ca540bab031c303847210c430b8e095"
   end
 
   depends_on "cmake" => :build
   depends_on "just" => :build
+  depends_on "pkgconf" => :build
   depends_on "pnpm" => :build
-  depends_on "rustup" => :build # TODO: try to restore stable rust: https://github.com/voidzero-dev/vite-task/commit/db99ba4d5d33323cc9e7b329f11bdea0610fbc7f
+  depends_on "rust" => :build
   depends_on "node"
+  depends_on "sqlite"
 
   resource "rolldown" do
     url "https://github.com/rolldown/rolldown.git",
@@ -49,6 +52,9 @@ class VitePlus < Formula
   def install
     resource("rolldown").stage buildpath/"rolldown"
     resource("vite").stage buildpath/"vite"
+
+    ENV["LIBSQLITE3_SYS_USE_PKG_CONFIG"] = "1"
+    ENV["RUSTC_BOOTSTRAP"] = "1" # workaround to build with stable rust
 
     # Build with Homebrew pnpm. The staged resources pin their own versions too
     %w[package.json rolldown/package.json vite/package.json].each do |file|

@@ -4,18 +4,15 @@ class IosWebkitDebugProxy < Formula
   url "https://ghfast.top/https://github.com/google/ios-webkit-debug-proxy/archive/refs/tags/v1.9.2.tar.gz"
   sha256 "768f101612bf5d2507957f10a8e34e98675ea8fe3c63b8ed78772f8abd103fbf"
   license "BSD-3-Clause"
+  revision 1
   head "https://github.com/google/ios-webkit-debug-proxy.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_golden_gate: "bb5d63a7af54e7e8cb51cc2b485b058bc5ecf305d3952e1cf21c828481badf85"
-    sha256 cellar: :any,                 arm64_tahoe:       "c79d6aaae9beba337352d712a586104f7a3077e5d4ea9cbcd50c1603495b409f"
-    sha256 cellar: :any,                 arm64_sequoia:     "878606bc7a7c42583c379a8f9713820531dc4e5eeeacc477289f9d7590cca6b7"
-    sha256 cellar: :any,                 arm64_sonoma:      "2fad8ed6dc4a59daeb709bd10f69f7bdf8eb50b7d8e1d5e233172422b25adfad"
-    sha256 cellar: :any,                 arm64_ventura:     "c1e3ef891cfe774490f533c4149121064d4ad643e248940ba7735c95a80874ad"
-    sha256 cellar: :any,                 sonoma:            "7c8b1b853f68361cecff8b2381ef54476e0e739f9834d71dccf42e8732708c16"
-    sha256 cellar: :any,                 ventura:           "31f5c733af39160d923f3f8a7ddbe239cf912c0c38df56677411fe81014c2565"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "c83e58d00a3cb9b705be17b8263be3d196fd60e7f59de50c1d6ff2a243bee8f2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "50df7f8e566369e2053f177d72b37e768ca3c047afcfc27965313b4aa13651d2"
+    sha256 cellar: :any, arm64_golden_gate: "495426409dc5f5d8f3a8308e7595d5c093d054b2e7565a3c431b03b3223559f3"
+    sha256 cellar: :any, arm64_tahoe:       "27e1a82b10af5bb64bd1d70d21c4c49c9eac1f99c91b1cc5f2fdd932518067ff"
+    sha256 cellar: :any, arm64_sequoia:     "10cc141b7758f40c458df84a0e68496b140e4bce7b165e0db08af281fc819b9d"
+    sha256 cellar: :any, arm64_linux:       "7049de87834c2e981822f6fc2754440b96cb576a13c37b72d2aab0b30ecdad39"
+    sha256 cellar: :any, x86_64_linux:      "0f4fd6abf575ee83539ef31c76e6f0c3f54a2d9d525b0fedf3ce68e351233932"
   end
 
   depends_on "autoconf" => :build

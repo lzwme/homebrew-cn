@@ -1,8 +1,8 @@
 class Moon < Formula
   desc "Task runner and repo management tool for the web ecosystem, written in Rust"
   homepage "https://moonrepo.dev/moon"
-  url "https://ghfast.top/https://github.com/moonrepo/moon/archive/refs/tags/v2.5.5.tar.gz"
-  sha256 "7d9fa3040bfa76a54d8d23e73427bd055cc54751a0dfb789179c1e68c0a1612b"
+  url "https://ghfast.top/https://github.com/moonrepo/moon/archive/refs/tags/v2.5.6.tar.gz"
+  sha256 "40468c58e99071ddeb3a1c059dc5640d7afc911e55d1eca89f7846e2315cf33f"
   license "MIT"
   head "https://github.com/moonrepo/moon.git", branch: "master"
 
@@ -12,12 +12,11 @@ class Moon < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "d06b3b5fa189b0f956363103e261cefe788e20b572748ecea3bdeb235461d1e6"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "106a55daba98ebade4d0e09619599438b0fc9ba5d04f34b5fc9f8bdaad0cf8bd"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "a54a30bd4524b51403f206dced83805c51a35b5009bd4ecf2fbf49d8e113ce86"
-    sha256 cellar: :any,                 arm64_linux:       "d49b0d96e28ee7a9cdd2bc908bad8bf7de9584d3b17154ce01d37b3c62dbce65"
-    sha256 cellar: :any,                 x86_64_linux:      "07cd16c6647b5659e45889eb0fa500bdcd7fb16a0d6aa0796ee949929d0d2e11"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "92956b643e0f83126b34c090c41ff1805283995a456b2fce8a2addfb8ba75314"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "35a9691482ddf831b12091ae0089de94edf100dfba5fcaa6fae46e54cc97d09d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "f6c5aae39f02d3cc69fb40fd0ce814941e7f3859ee165640125e1440b0e69ae1"
+    sha256 cellar: :any,                 arm64_linux:       "f3e6f9d081bf34301ba01fd4b92b4464dc213f21f6bc16ae1c699d98b6411a83"
+    sha256 cellar: :any,                 x86_64_linux:      "25e015d865d22de73b39ad710fc482d11178142ca9b35ca387383bc8d28a8b19"
   end
 
   depends_on "pkgconf" => :build
@@ -29,6 +28,12 @@ class Moon < Formula
   on_linux do
     depends_on "openssl@4"
     depends_on "xz"
+  end
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
   end
 
   def install

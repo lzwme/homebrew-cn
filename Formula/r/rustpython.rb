@@ -1,8 +1,8 @@
 class Rustpython < Formula
   desc "Python Interpreter written in Rust"
   homepage "https://rustpython.github.io"
-  url "https://ghfast.top/https://github.com/RustPython/RustPython/archive/refs/tags/0.5.0.tar.gz"
-  sha256 "6fa2bfd6d3a6c0ecb2aae216552ba24ad263546198c8a7b0c03c8111b6389d9c"
+  url "https://ghfast.top/https://github.com/RustPython/RustPython/archive/refs/tags/0.6.0.tar.gz"
+  sha256 "bf290cf7a70f813758819d895868b2b49b9edea1f10de3524df2cae1f2d58a4d"
   license "MIT"
   head "https://github.com/RustPython/RustPython.git", branch: "main"
 
@@ -12,25 +12,24 @@ class Rustpython < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "481f86c82a76184842cefb54da6e8ba0d1547c4944413d00662209a0341ef097"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "a5c86e8851fd6fe9d48ff14a3a2a21ce70df5b6c8e10578801d92dcefb57c8f1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "507eb7aee8187bc1c145af2740f35283c6c171d4fe99c847ba465f3d884376f2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "bc8c185cc3e0f3e06891ce0feb0f92551fc9262c3575cf9283711af7bb8885c7"
-    sha256 cellar: :any_skip_relocation, sonoma:            "73d601ed328462e95ac1c711b1b1b9cc4c3b901777e47e842c9873c2bab39e62"
-    sha256                               arm64_linux:       "18d1505421182ac5bf45b0fac1a84e9f78f2c8d9a8c3f1707bcb99ff1c090ff7"
-    sha256                               x86_64_linux:      "9608e34be5adb1e39746c6f02e22b229ab8391bb56cd6b1739c21902059e83de"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "027b8d2ac35fc6044ce6a29208a751c28d4886f7f3ba8b1688175b27caaa246d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "1c023db1f504419fcf1b784d729f8d223fcd4a3aaf569d563b10d5712887cd6a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "efc8dd046f37dbef10db87660808e3893792292e04d4f95088f65b53aa10aef8"
+    sha256 cellar: :any,                 arm64_linux:       "41643e1fddef82f23163068ebe0b5d1adea0161be04838266bc053d90c5b0689"
+    sha256 cellar: :any,                 x86_64_linux:      "dbd53494f3e85d61dfd47b0ef14e6ec31858d8ce1e2025a57d36917fe58e6109"
   end
 
   depends_on "rust" => :build
 
   uses_from_macos "libffi"
 
-  def install
-    # Avoid references to Homebrew shims
-    inreplace "crates/vm/build.rs",
-              "std::env::vars_os()",
-              %Q(std::env::vars_os().filter(|(_, v)| !v.to_string_lossy().contains("#{HOMEBREW_SHIMS_PATH}")))
+  deny_network_access!
 
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
+  def install
     system "cargo", "install", "--features=freeze-stdlib", *std_cargo_args
   end
 

@@ -1,8 +1,8 @@
 class PythonAT314 < Formula
   desc "Interpreted, interactive, object-oriented programming language"
   homepage "https://www.python.org/"
-  url "https://www.python.org/ftp/python/3.14.7/Python-3.14.7.tgz"
-  sha256 "62859805f6fdf25e2bcbf3fa3217801e1996887ca33e6a2af80674bdfa2dbe07"
+  url "https://www.python.org/ftp/python/3.14.8/Python-3.14.8.tgz"
+  sha256 "a65b20a728f169f4e66ae143f40b1bd3d33c38d770251663f627c9767b79b210"
   license "Python-2.0"
   compatibility_version 1
 
@@ -12,15 +12,11 @@ class PythonAT314 < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "5d1e2409b58f5dbe834af769fe6e2fcfc868dd9ae9d99d9b12eb834c2d49741f"
-    sha256 arm64_tahoe:       "9747ec7c458569bb6c03e5b9e1f5fcb7552f4955794b8164e21d70e6b2839e08"
-    sha256 arm64_sequoia:     "e63dcc3e87bf6b04f62e970ca095e18ed973b31df823becfd491d05d8dc7287c"
-    sha256 arm64_sonoma:      "3bb63f5d9b49ef131d6e03e4472fb91fb8c9e311ea7a241e151cb76df4f6d198"
-    sha256 tahoe:             "edaf325ee40b533f6042d84317f06af217267e824d5105cb7cd9a7f05c466e2c"
-    sha256 sequoia:           "5ba706261f57e69d8aeabc910c06862c00224dba129925c2d8a73af9b0f88fdb"
-    sha256 sonoma:            "f0af307ce35e7eb232aff59592ff0d0cdb09f02d9fb5b65daaaa683eeefb85c2"
-    sha256 arm64_linux:       "dc54c583d5f2f05260bf970bbbe873dfc08aa24cd28eaa52ec1dbce3ec1203d0"
-    sha256 x86_64_linux:      "c1094d173aaae36f305c229bec64f43a23c77148f3c95244d1d3d0d4d28e8275"
+    sha256 arm64_golden_gate: "1fa018fedf8e842742a9678da884a453cf7323c763328081a69e743eaf4a6f73"
+    sha256 arm64_tahoe:       "2d9d3f6c8a6cbfb48bdd8a59316f229d355de399b638c674adfaebaed3bca14b"
+    sha256 arm64_sequoia:     "dfdc2ac8e7e2a3fae3bc8bf5615361dac095ab9366b0e1e8f75c95d52fd85c52"
+    sha256 arm64_linux:       "8bf3380ba064f5610a014fe6d511c110f3ee177cbb10258b90d732c0a39ece05"
+    sha256 x86_64_linux:      "32832ce16c4e07676b960dfca5582e5e6045ac0f3de904a88e83540612fb833e"
   end
 
   # https://devguide.python.org/versions/#versions
@@ -65,8 +61,8 @@ class PythonAT314 < Formula
                 extra_packages: %w[flit-core pip wheel]
 
   resource "flit-core" do
-    url "https://files.pythonhosted.org/packages/46/ef/34533186e76c526d9ec17a1ad9a10c7354cbfb20f51583cc36dfe4bdccd0/flit_core-4.0.2.tar.gz"
-    sha256 "b6929defd93884b584d7c87829e0e7b5c26ed6be17b0b873979019314aa841c8"
+    url "https://files.pythonhosted.org/packages/e7/91/add211b38c357bf1b94900b4f79c34661a92be65c0243d2b0a3393c5092d/flit_core-4.1.0.tar.gz"
+    sha256 "62e12b63ead8335b37f59fabb977c7167fe476dafb5e41785dfa8c9aff843bc6"
   end
 
   resource "packaging" do
@@ -80,8 +76,8 @@ class PythonAT314 < Formula
   end
 
   resource "wheel" do
-    url "https://files.pythonhosted.org/packages/39/62/75f18a0f03b4219c456652c7780e4d749b929eb605c098ce3a5b6b6bc081/wheel-0.47.0.tar.gz"
-    sha256 "cc72bd1009ba0cf63922e28f94d9d83b920aa2bb28f798a31d0691b02fa3c9b3"
+    url "https://files.pythonhosted.org/packages/d0/20/50ed6bdf27dec98b568a8ae25dc599f35baa3d9709f9e83fd1edb56b9a90/wheel-0.48.0.tar.gz"
+    sha256 "94800765601e9171bf5d58d066e640662842bcedcbab982b2c90787a2c987322"
   end
 
   # Modify default sysconfig to match the brew install layout.
@@ -426,12 +422,6 @@ class PythonAT314 < Formula
                f'     You should `unset PYTHONPATH` to fix this.')
       # Only do this for a brewed python:
       if os.path.realpath(sys.executable).startswith('#{rack}'):
-          # Shuffle /Library site-packages to the end of sys.path
-          library_site = '/Library/Python/#{version.major_minor}/site-packages'
-          library_packages = [p for p in sys.path if p.startswith(library_site)]
-          sys.path = [p for p in sys.path if not p.startswith(library_site)]
-          # .pth files have already been processed so don't use addsitedir
-          sys.path.extend(library_packages)
           # the Cellar site-packages is a symlink to the HOMEBREW_PREFIX
           # site_packages; prefer the shorter paths
           long_prefix = re.compile(r'#{rack}/[0-9\\._abrc]+/(?:Frameworks/Python\\.framework/Versions/#{version.major_minor}/)?lib/python#{version.major_minor}/site-packages')

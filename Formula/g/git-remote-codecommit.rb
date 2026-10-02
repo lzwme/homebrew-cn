@@ -6,18 +6,18 @@ class GitRemoteCodecommit < Formula
   url "https://files.pythonhosted.org/packages/6c/a0/feb4dfa42e8cb1a0bd91667233254e49696cf6618f51ad5629f6efd89dae/git-remote-codecommit-1.17.tar.gz"
   sha256 "fd4a9ba3fbd88cd455a8e2087765e415da0beaae9932d4e84010069a536de24e"
   license "Apache-2.0"
-  revision 7
+  revision 8
   head "https://github.com/aws/git-remote-codecommit.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "d85f5c91fe97d39f8d65551f61718e93d8ac6860693554dad9052603628a7f4f"
+    sha256 cellar: :any_skip_relocation, all: "76e425b127ad4dbf1ba1ac1003f8acc3d3e9bd35662ff29a85f5b058a2f1ef7f"
   end
 
   depends_on "python@3.14"
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/79/a7/23d0f5028011455096a1eeac0ddf3cbe147b3e855e127342f8202552194d/botocore-1.43.6.tar.gz"
-    sha256 "b1e395b347356860398da42e61c808cf1e34b6fa7180cf2b9d87d986e1a06ba0"
+    url "https://files.pythonhosted.org/packages/2b/30/668f3c0533a440787e212cf56404cb6ec234ae8e6baf97fe17329d512d88/botocore-1.43.105.tar.gz"
+    sha256 "afb3e7706b123ab069d1c34571ca1fdf82528a48425574fe4693df3d039d503f"
   end
 
   resource "jmespath" do
@@ -36,8 +36,8 @@ class GitRemoteCodecommit < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/53/0c/06f8b233b8fd13b9e5ee11424ef85419ba0d8ba0b3138bf360be2ff56953/urllib3-2.7.0.tar.gz"
-    sha256 "231e0ec3b63ceb14667c67be60f2f2c40a518cb38b03af60abc813da26505f4c"
+    url "https://files.pythonhosted.org/packages/e3/05/b17359e1cefb4f909b5e40b1b90a496d987258916dbbf88e842c729f510e/urllib3-2.8.0.tar.gz"
+    sha256 "63bf2ead4c879426ebf22ef2a781eeb4aa3b4ae798a0435506f8687fd5bb9b63"
   end
 
   def install

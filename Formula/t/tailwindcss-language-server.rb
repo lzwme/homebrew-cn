@@ -13,21 +13,28 @@ class TailwindcssLanguageServer < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "0add294096c390137faaf1e143c7d6486d6137b834953a51e540f4132f835d0c"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "5390ee453166eb73893690dc4d5d71ffd290e64f7453512a0ef3081fe464713a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "5390ee453166eb73893690dc4d5d71ffd290e64f7453512a0ef3081fe464713a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "5390ee453166eb73893690dc4d5d71ffd290e64f7453512a0ef3081fe464713a"
-    sha256 cellar: :any_skip_relocation, sonoma:            "5390ee453166eb73893690dc4d5d71ffd290e64f7453512a0ef3081fe464713a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "d73a855881e4ca1bce1845e45a2857aa6b6fa2ba7b96c6492b6443d707ff495a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "d73a855881e4ca1bce1845e45a2857aa6b6fa2ba7b96c6492b6443d707ff495a"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "018efd02aae8afaf25d5df49966ed0b14ee4f2fcf4b84d81368db6e0893a0f91"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "018efd02aae8afaf25d5df49966ed0b14ee4f2fcf4b84d81368db6e0893a0f91"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "018efd02aae8afaf25d5df49966ed0b14ee4f2fcf4b84d81368db6e0893a0f91"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "07a90272e63298815aa148574352b6222d99b1725ba1fcdbb1149e69a5681f24"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "07a90272e63298815aa148574352b6222d99b1725ba1fcdbb1149e69a5681f24"
   end
 
   depends_on "pnpm" => :build
   depends_on "node"
 
+  deny_network_access!
+
+  def fetch
+    cd "packages/tailwindcss-language-server" do
+      system "pnpm", "with", "current", "fetch", "--ignore-scripts"
+    end
+  end
+
   def install
     cd "packages/tailwindcss-language-server" do
-      system "pnpm", "with", "current", "install", "--frozen-lockfile", "--ignore-scripts"
+      system "pnpm", "--offline", "with", "current", "install", "--frozen-lockfile", "--ignore-scripts"
       system "pnpm", "with", "current", "run", "build"
       bin.install "bin/tailwindcss-language-server"
     end

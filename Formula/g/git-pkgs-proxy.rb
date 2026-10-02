@@ -1,18 +1,17 @@
 class GitPkgsProxy < Formula
   desc "Lightweight caching proxy for package registries"
   homepage "https://github.com/git-pkgs/proxy"
-  url "https://ghfast.top/https://github.com/git-pkgs/proxy/archive/refs/tags/v0.8.1.tar.gz"
-  sha256 "6c11a75241d3cfe4c761d9b25dc691862206284173d23d7aa6d29c988f80ff0d"
+  url "https://ghfast.top/https://github.com/git-pkgs/proxy/archive/refs/tags/v0.9.0.tar.gz"
+  sha256 "1902ea0ff1b38546dcd46cf56f5ebef1bf113d5037f973df649d16761a3ec241"
   license "GPL-3.0-or-later"
   head "https://github.com/git-pkgs/proxy.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "785a0a8d9a28a483c2d31e3b6fd993b5d59996526ae9cba61b564e0a1542dc87"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "aa4aaa889f6efe5d370a352ecf133c9e792967a68297814fd6c1de84a4406c4a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "6b486d5235c786c4da3a0dd71a561d24e9010c0669bcb7458929b3f8b5a307fe"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "57810e998e2d11cc505643fd25e98fb7b76c8a49cda2fc21188e7b7f32d44fbf"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "cc15257fbe8485700261012c843b297e677659e42943c2e24a9cccf7d7e90a3b"
-    sha256 cellar: :any,                 x86_64_linux:      "b2ea13b6f85c9ec8819ed78f9e8af06a5fff6bc2487d7f8d06d6e8fb5ae54779"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "3dd8ee6959932dd50c98a879482e136a87ae31e6750d08cea41365cdc11d20ba"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "058a290c9f46cc0acdf68623ecec3898fe60288d2f0f2530d6d3d512cdab513a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "5aefc8bba7add679df7c77edb6c4731c1230d75f62759666419f594bda82433c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "712d7f228af3cebb15fc54d7b1979f3a798a9cd5a240425c7a95e41efd1755da"
+    sha256 cellar: :any,                 x86_64_linux:      "bdb0254036a9bab6b5fc715f4a494fbcf8f3f68bd4f32691ec825da3ded8055a"
   end
 
   depends_on "go" => :build

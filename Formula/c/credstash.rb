@@ -6,17 +6,11 @@ class Credstash < Formula
   url "https://files.pythonhosted.org/packages/b4/89/f929fda5fec87046873be2420a4c0cb40a82ab5e30c6d9cb22ddec41450b/credstash-1.17.1.tar.gz"
   sha256 "6c04e8734ef556ab459018da142dd0b244093ef176b3be5583e582e9a797a120"
   license "Apache-2.0"
-  revision 15
+  revision 16
   head "https://github.com/fugue/credstash.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "8979b0dcca9ce90f260676414723ba9ba5b69faeb233507e6f444de8003250e7"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "5b734f4e5b83059c899d5aa46b394addda63d0478a1372197a8b8f992c7e9fd6"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "5b734f4e5b83059c899d5aa46b394addda63d0478a1372197a8b8f992c7e9fd6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "5b734f4e5b83059c899d5aa46b394addda63d0478a1372197a8b8f992c7e9fd6"
-    sha256 cellar: :any_skip_relocation, sonoma:            "5b734f4e5b83059c899d5aa46b394addda63d0478a1372197a8b8f992c7e9fd6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "1ae708a36bd879d0993fb5fc88f3b4de384022618ef58686fed363e26056411f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "5b734f4e5b83059c899d5aa46b394addda63d0478a1372197a8b8f992c7e9fd6"
+    sha256 cellar: :any_skip_relocation, all: "d325135fc83c15f3102e4cd02f12edcd76c211b66b9608cc1b33ed5aae1e3ba7"
   end
 
   depends_on "cryptography" => :no_linkage
@@ -25,13 +19,13 @@ class Credstash < Formula
   pypi_packages exclude_packages: "cryptography"
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/0a/37/78c630d1308964aa9abf44951d9c4df776546ff37251ec2434944e205c4e/boto3-1.43.6.tar.gz"
-    sha256 "e6315effaf12b890b99956e6f8e2c3000a3f64e4ee91943cec3895ce9a836afb"
+    url "https://files.pythonhosted.org/packages/75/46/d8c87ada70a7647fb3d206c7f19eafca3580a0ae4c06d62da539a1ee1207/boto3-1.43.105.tar.gz"
+    sha256 "e51260aed9cc1474778b5488bc6f97ad28f27a0a7002f4bbaaf8191aff1422ea"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/79/a7/23d0f5028011455096a1eeac0ddf3cbe147b3e855e127342f8202552194d/botocore-1.43.6.tar.gz"
-    sha256 "b1e395b347356860398da42e61c808cf1e34b6fa7180cf2b9d87d986e1a06ba0"
+    url "https://files.pythonhosted.org/packages/2b/30/668f3c0533a440787e212cf56404cb6ec234ae8e6baf97fe17329d512d88/botocore-1.43.105.tar.gz"
+    sha256 "afb3e7706b123ab069d1c34571ca1fdf82528a48425574fe4693df3d039d503f"
   end
 
   resource "jmespath" do
@@ -45,8 +39,8 @@ class Credstash < Formula
   end
 
   resource "s3transfer" do
-    url "https://files.pythonhosted.org/packages/9b/ec/7c692cde9125b77e84b307354d4fb705f98b8ccad59a036d5957ca75bfc3/s3transfer-0.17.0.tar.gz"
-    sha256 "9edeb6d1c3c2f89d6050348548834ad8289610d886e5bf7b7207728bd43ce33a"
+    url "https://files.pythonhosted.org/packages/76/43/35e4d8aa320bffe8287fe8f65f578fa2d2db0a64212f0e710dce58267854/s3transfer-0.19.2.tar.gz"
+    sha256 "ba0309fd86be3c27dbf78cdd813c13c5e1df16e5874b99d2535ebbdfb9892993"
   end
 
   resource "six" do
@@ -55,8 +49,8 @@ class Credstash < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/53/0c/06f8b233b8fd13b9e5ee11424ef85419ba0d8ba0b3138bf360be2ff56953/urllib3-2.7.0.tar.gz"
-    sha256 "231e0ec3b63ceb14667c67be60f2f2c40a518cb38b03af60abc813da26505f4c"
+    url "https://files.pythonhosted.org/packages/e3/05/b17359e1cefb4f909b5e40b1b90a496d987258916dbbf88e842c729f510e/urllib3-2.8.0.tar.gz"
+    sha256 "63bf2ead4c879426ebf22ef2a781eeb4aa3b4ae798a0435506f8687fd5bb9b63"
   end
 
   def install

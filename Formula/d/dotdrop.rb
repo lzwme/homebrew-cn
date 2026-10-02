@@ -6,15 +6,15 @@ class Dotdrop < Formula
   url "https://files.pythonhosted.org/packages/db/82/ba348f6732bbf8280b44cdef2059319270d4a856ceae1745256106c4f086/dotdrop-1.17.0.tar.gz"
   sha256 "fb2617d0283760536ab70ef291596d8a87cebc597b8d3d7237a09d77f0ce9fd4"
   license "GPL-3.0-or-later"
+  revision 1
   head "https://github.com/deadc0de6/dotdrop.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "93f91909ac173bde09172105fc6dc3b9380eb6444d053aa2693ae27fbee22db5"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "0bb82b25fbc48f3defaf89e95fb90629eafc820f709174a6ef588315d974e9a2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "6504e17bab94d13b2cfd2d4753602020a7111b6be5a06626bca5f42481b5f034"
-    sha256 cellar: :any,                 arm64_linux:       "abc52db35c899cc193a3ac393b22b76b7e9297feeb6b3f567d6fe029304f585d"
-    sha256 cellar: :any,                 x86_64_linux:      "3431ecdcf0851bd3515aab65c818c0237b5315484e1454e52a436a62791b5675"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "34fd269c1331a1fd306d2ae958223a5ccf0fd04ac01abda922377190c5fa9058"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "4cf0c2df0bea01e44a0390b6f43d8f5f5a418ddba510b2cc94e35f51a2698da0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "8f7eeb0d05d35b1f34a4312418a12397a9e3b6cba179382fa9d6d8ed744e6f32"
+    sha256 cellar: :any,                 arm64_linux:       "3a3a393d8a42cb406cd7dc2e2cdafba604afaaad283423a535d010ce20ea5495"
+    sha256 cellar: :any,                 x86_64_linux:      "473979b0f5a22238ea886a8433d8d525c4c166bc27fbea3442ba9d61265f2f95"
   end
 
   depends_on "certifi" => :no_linkage
@@ -24,8 +24,8 @@ class Dotdrop < Formula
   pypi_packages exclude_packages: "certifi"
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/e5/3f/143b048436775b0f76ac3eec145c019e8173ccc2885c8f20319b996d5e83/charset_normalizer-3.5.1.tar.gz"
-    sha256 "6117b84ea48435e5356dc737f5121485c30920ba43375fa7b434fd753df0eac3"
+    url "https://files.pythonhosted.org/packages/33/1c/f41d4e74c28ab327ff3acd36053f7ea506c55872d7a90b0fa71aa3ab0c89/charset_normalizer-3.5.2.tar.gz"
+    sha256 "39de2a259fc954455c57274dc94c79d5842774e1247a016aff30bc0efed0f4ef"
   end
 
   resource "distro" do
@@ -39,8 +39,8 @@ class Dotdrop < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/5f/f7/abb373e5757eaec4b922b92f97ec8d6d7e057cf06778247604fbc4e7c3f3/idna-3.19.tar.gz"
-    sha256 "5e0811a4383b21dc5838069f801c4fb62113b7447663d2530d2bd6e77b49bf15"
+    url "https://files.pythonhosted.org/packages/f5/08/8eea9d4b8302028f3abb2c0813953f7aec26d33b7a8960ed760e65ff29fa/idna-3.20.tar.gz"
+    sha256 "a7db850025b95ded1eae8a46181a1a6c56c92c96f0e2b005d9ff8dc0210cab44"
   end
 
   resource "jinja2" do
@@ -79,8 +79,8 @@ class Dotdrop < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/53/0c/06f8b233b8fd13b9e5ee11424ef85419ba0d8ba0b3138bf360be2ff56953/urllib3-2.7.0.tar.gz"
-    sha256 "231e0ec3b63ceb14667c67be60f2f2c40a518cb38b03af60abc813da26505f4c"
+    url "https://files.pythonhosted.org/packages/e3/05/b17359e1cefb4f909b5e40b1b90a496d987258916dbbf88e842c729f510e/urllib3-2.8.0.tar.gz"
+    sha256 "63bf2ead4c879426ebf22ef2a781eeb4aa3b4ae798a0435506f8687fd5bb9b63"
   end
 
   def install

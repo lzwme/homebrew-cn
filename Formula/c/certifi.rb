@@ -7,43 +7,37 @@ class Certifi < Formula
   compatibility_version 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "32634579cf563c68a3ee47d1a570f5f69866884e93524ece27eb912528aecbb3"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "80180b52ce893311447332b65baaa60e7a264fee17a66cb62802fa0a7d483161"
   end
 
+  depends_on "python-setuptools" => :build
   depends_on "python@3.14" => [:build, :test]
-  depends_on "python@3.12" => :test # keep on oldest python to support (externally managed and not EOL)
-  depends_on "ca-certificates"
+  depends_on "ca-certificates" => :no_linkage
 
-  def pythons
-    deps.filter_map { |dep| dep.to_formula if dep.name.start_with?("python@") }
-  end
+  deny_network_access!
 
   def install
-    oldest_python, python = pythons.sort_by(&:version)
-    python_exe = python.opt_libexec/"bin/python"
-    system python_exe, "-m", "pip", "install", *std_pip_args(build_isolation: true), "."
+    system python3, "-m", "pip", "install", *std_pip_args, "."
 
     # Use brewed ca-certificates PEM file instead of the bundled copy
-    site_packages = prefix/Language::Python.site_packages(python_exe)
+    site_packages = prefix/Language::Python.site_packages(python3)
     rm site_packages/"certifi/cacert.pem"
     (site_packages/"certifi").install_symlink Formula["ca-certificates"].pkgetc/"cert.pem" => "cacert.pem"
 
-    python.versioned_formulae.each do |extra_python|
-      next if extra_python.version < oldest_python.version
-
-      # Cannot use Python.site_packages as that requires formula to be installed
-      extra_site_packages = lib/"python#{extra_python.version.major_minor}/site-packages"
-      site_packages.find do |path|
-        (extra_site_packages/path.relative_path_from(site_packages)).dirname.install_symlink path if path.file?
+    # Add symlinks to use on all externally-managed pythons
+    extra_pythons = Keg.for(python3).to_formula.versioned_formulae.select { |f| f.version >= "3.12" }
+    extra_site_packages_list = extra_pythons.map { |f| lib/"python#{f.version.major_minor}/site-packages" }
+    extra_site_packages_list << (lib/"python#{Formula["python-freethreading"].version.major_minor}t/site-packages")
+    site_packages.find.select(&:file?).each do |path|
+      extra_site_packages_list.each do |extra_site_packages|
+        (extra_site_packages/path.relative_path_from(site_packages)).dirname.install_symlink path
       end
     end
   end
 
   test do
-    pythons.each do |python|
-      python_exe = python.opt_libexec/"bin/python"
-      output = shell_output("#{python_exe} -m certifi").chomp
-      assert_equal Formula["ca-certificates"].pkgetc/"cert.pem", Pathname(output).realpath
-    end
+    output = shell_output("#{python3} -m certifi").chomp
+    assert_equal Formula["ca-certificates"].pkgetc/"cert.pem", Pathname(output).realpath
   end
 end

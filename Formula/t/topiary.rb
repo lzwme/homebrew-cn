@@ -1,18 +1,16 @@
 class Topiary < Formula
   desc "Uniform formatter for simple languages, as part of the Tree-sitter ecosystem"
   homepage "https://topiary.tweag.io/"
-  url "https://ghfast.top/https://github.com/topiary/topiary/archive/refs/tags/v0.7.3.tar.gz"
-  sha256 "d90cb9ec7684d36b157faaf4e2b3bd53833882c840679543eecbffd1036e7019"
+  url "https://ghfast.top/https://github.com/topiary/topiary/archive/refs/tags/v0.8.0.tar.gz"
+  sha256 "203bdc6007989f51ef728424c7e051da2c131c0415fc76fb359da8fc49b8006e"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "c149fe37f4348f404dfd466b33b1c1efac851215782b09473017f7b41a895a0d"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "ba4ae09ed74f4e82ca182ca68a7254b08dbcd460b9b5f355558f64cc85d982e0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "adeacb55b4f3a3546e6ae0787c0afd97fde6ab4abfaed328706dc7fe8bb76179"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "7d88328e54021399709400a560e8507dfd9e6b29114253d4131efc47000a47ce"
-    sha256 cellar: :any_skip_relocation, sonoma:            "afe506d454dcb769fc8cb2e0b7680d5338f1d69099a7dcc14e84fdd6b27fb04e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "478b22e372afa4592362c5ccba76f089850efa6e533795ff6b616baa6990daed"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "d8cd290ce47d704c275ebd7270f1de192cb9628564fc0eea502a00db687a51b4"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "20ad8cd8c160af31d9bc68511cacf4987d942cfebc36aa16e5e7d9aba13bbe03"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "13ed87a3bb1782a6bf2d88efcc3a7f033dd4cb544a43798338fd64894d998b03"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "92956d7622b98e73ce45f8a2beaddf7c13c0b68d63746849adc5977b2b434fc0"
+    sha256 cellar: :any,                 arm64_linux:       "995f80b0e710d71d454de9685a2543c33b8c67fc6d463dabc23bd1f69b4ff00e"
+    sha256 cellar: :any,                 x86_64_linux:      "53152a488d481095a1beb53738a2e0e36cef0c16c4e67d5776dbc589f9892168"
   end
 
   depends_on "rust" => :build

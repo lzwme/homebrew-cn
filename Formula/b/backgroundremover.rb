@@ -6,16 +6,14 @@ class Backgroundremover < Formula
   url "https://files.pythonhosted.org/packages/01/23/b6db66a9a7ad24e34581bae7910e77e16fce103fd9658bd5b6aef4e5effd/backgroundremover-0.4.5.tar.gz"
   sha256 "b9fe5ebaa234d43bfae02a2f28734e589ee895a861e55c02f6f1a41518587852"
   license "MIT"
-  revision 1
+  revision 2
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "0fc19ab2a29963354571f2001239ffecefcee1bcf60a9aeec70ffbf5ddf219c4"
-    sha256 cellar: :any, arm64_tahoe:       "0d4877caa985c2ffd19edfc45bfd09b9a2f67418a09c5d44aa19e5d6d0ed1f92"
-    sha256 cellar: :any, arm64_sequoia:     "f3ea4da8a3bcee196f8ee563ae29f22adbd9255da0f678dd5b94dc02f709ae86"
-    sha256 cellar: :any, arm64_sonoma:      "7e2089dc0601803ef987f676aeef319b272576d00a4bba97f19ef1793078c615"
-    sha256 cellar: :any, sonoma:            "5f9bd9bba1da464c76bc1d778f01ebeae9315da16ab824db9ef36d186d90df2e"
-    sha256 cellar: :any, arm64_linux:       "abb2fbf6c90df60865a79dc8633632089b791f41adf0dfe82bb9aff0697f224b"
-    sha256 cellar: :any, x86_64_linux:      "3768c20557a8fc08ca7dc249a159dc65d0b242c886381975131f103358e0b038"
+    sha256 cellar: :any, arm64_golden_gate: "762f9456f9dffacd10dc03e712ac8ce8f38433885b721c6248a91ee56d6605b8"
+    sha256 cellar: :any, arm64_tahoe:       "e725846b654f35a5b22d26bb5c3f1554b21f3cd480f730e3564bb725bf963750"
+    sha256 cellar: :any, arm64_sequoia:     "0a84335deec736bbb7cfd7c86b3ecd0174d2d639f24df4418246c9eb2de2bed9"
+    sha256 cellar: :any, arm64_linux:       "f8a076ea1bc322cb9fbe7c1b75a361e4e942ea591684cee109e0df71f233aa7f"
+    sha256 cellar: :any, x86_64_linux:      "e5d2e727dded6be23f2018c82647ec1427d16ec4762c5eb073c4928e9c925153"
   end
 
   depends_on "cmake" => :build
@@ -44,13 +42,13 @@ class Backgroundremover < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/bd/2a/23f34ec9d04624958e137efdc394888716353190e75f25dd22c7a2c7a8aa/charset_normalizer-3.4.9.tar.gz"
-    sha256 "673611bbd43f0810bec0b0f028ddeaaa501190339cac411f347ac76917c3ae7b"
+    url "https://files.pythonhosted.org/packages/33/1c/f41d4e74c28ab327ff3acd36053f7ea506c55872d7a90b0fa71aa3ab0c89/charset_normalizer-3.5.2.tar.gz"
+    sha256 "39de2a259fc954455c57274dc94c79d5842774e1247a016aff30bc0efed0f4ef"
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/76/d4/81420972a676e8ffea40450d8c8c92943e7218a78fe9b64359836cc9876b/click-8.4.2.tar.gz"
-    sha256 "9a6cea6e60b17ebe0a44c5cc636d94f09bd66142c1cd7d8b4cd731c4917a15f6"
+    url "https://files.pythonhosted.org/packages/c7/0e/7fa0ef50764b67090eca4114772a2abf8b6148198475e54c660b97caeee6/click-8.5.0.tar.gz"
+    sha256 "ba0d2089de75ea0310e2dde03160e6ca10009947fb95a182f9b54021bb272e34"
   end
 
   resource "commandlines" do
@@ -89,13 +87,13 @@ class Backgroundremover < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/cd/63/9496c57188a2ee585e0f1db071d75089a11e98aa86eb99d9d7618fc1edce/idna-3.18.tar.gz"
-    sha256 "ffb385a7e039654cef1ab9ef32c6fafe283c0c0467bba1d9029738ce4a14a848"
+    url "https://files.pythonhosted.org/packages/f5/08/8eea9d4b8302028f3abb2c0813953f7aec26d33b7a8960ed760e65ff29fa/idna-3.20.tar.gz"
+    sha256 "a7db850025b95ded1eae8a46181a1a6c56c92c96f0e2b005d9ff8dc0210cab44"
   end
 
   resource "imageio" do
-    url "https://files.pythonhosted.org/packages/b1/84/93bcd1300216ea50811cee96873b84a1bebf8d0489ffaf7f2a3756bab866/imageio-2.37.3.tar.gz"
-    sha256 "bbb37efbfc4c400fcd534b367b91fcd66d5da639aaa138034431a1c5e0a41451"
+    url "https://files.pythonhosted.org/packages/81/c8/2b56274457e4fadcfa86bf7c0fb93f19e124ab8f38f4bfa4372423052046/imageio-2.38.0.tar.gz"
+    sha256 "fe1d406862f6bc2930e8ec662d7bc40d4370cb76e3390dcd33819560d2708531"
   end
 
   resource "imageio-ffmpeg" do
@@ -109,8 +107,8 @@ class Backgroundremover < Formula
   end
 
   resource "llvmlite" do
-    url "https://files.pythonhosted.org/packages/dc/a0/acc8ffcd5bdc63df0097e22c719bfcd61b604358343089313a8aebbb24ab/llvmlite-0.48.0.tar.gz"
-    sha256 "543b19f9ef8f3c7c60d1468191e4ee1b1537bf9f8a3d56f64c0ddd98de92edd2"
+    url "https://files.pythonhosted.org/packages/43/27/72ae94ea5c8f7349ec1c229d4cd058feb799cbd0833ad6d1b47c919b37b7/llvmlite-0.49.0.tar.gz"
+    sha256 "00f16db782f4a13c78c5804aedc434e46794a77e89999a168f9401106270e50a"
   end
 
   resource "more-itertools" do
@@ -124,18 +122,18 @@ class Backgroundremover < Formula
   end
 
   resource "numba" do
-    url "https://files.pythonhosted.org/packages/ae/a0/570e3dc53e5602b49108f62a13e529f1eec8bfc7ef37d49c825924dcf546/numba-0.66.0.tar.gz"
-    sha256 "b900e63a0e26c05ea9a6d5a3a5a0a177cb64c5011887bf43edb8c3ed2c38d363"
+    url "https://files.pythonhosted.org/packages/7a/90/2544f4e3a61e501d6c9a5418fd4b905323222693d54a02cab0106a0af865/numba-0.67.0.tar.gz"
+    sha256 "cd75aa535b33fa05d9d930b1ae8af9f97a2881e96d72dfb38ec9b78284d9f851"
   end
 
   resource "numpy" do
-    url "https://files.pythonhosted.org/packages/d0/ad/fed0499ce6a338d2a03ebae59cd15093910c8875328855781952abf6c2fe/numpy-2.4.6.tar.gz"
-    sha256 "f3a3570c4a2a16746ac2c31a7c7c7b0c186b95ce902e33db6f28094ed7387dda"
+    url "https://files.pythonhosted.org/packages/13/01/11703282db468b85f6f7b8c7f22d058de5970d5c7e60a3a8aaa313c3de36/numpy-2.5.3.tar.gz"
+    sha256 "df2d5874ff183595a4ba404edd04f6bd9b5505c1d7708573f6a6c17489a67563"
   end
 
   resource "pillow-heif" do
-    url "https://files.pythonhosted.org/packages/e3/5f/4753689400e657ca5d984f5e897657dab12d91b62f1bb6a1e73487b59a97/pillow_heif-1.4.0.tar.gz"
-    sha256 "55a7c0cb5321538d1ca74037be54b48d147017735a766eb29bcca4761253a1f1"
+    url "https://files.pythonhosted.org/packages/bb/4c/d5319a1f276c70528ff97893afc42a300ff28029e27ca8de89bb3b271680/pillow_heif-1.8.0.tar.gz"
+    sha256 "e47c27432c6fd3d66c22f0de9f27fd379383b646c947520bc485854ce72060d0"
   end
 
   resource "proglog" do
@@ -144,8 +142,8 @@ class Backgroundremover < Formula
   end
 
   resource "pymatting" do
-    url "https://files.pythonhosted.org/packages/9a/f5/83955aa915ea5e04cecb32612d419e8341604d0b898c2ebe4277adbc4c6b/pymatting-1.1.15.tar.gz"
-    sha256 "67cbadd68d04696357461ad1861bcb3c2adc9ec5fcd38d524db606addabe745a"
+    url "https://files.pythonhosted.org/packages/75/4b/01a653f1ec2a69b1579d9ff47578b41bc432216f1a2b6e57cf37f725a95b/pymatting-1.1.16.tar.gz"
+    sha256 "656e16f07c941b8792c8cd341b49791e74d1949ceae4d8c45fb4e10d3c6e7d77"
   end
 
   resource "pysocks" do
@@ -154,8 +152,8 @@ class Backgroundremover < Formula
   end
 
   resource "python-dotenv" do
-    url "https://files.pythonhosted.org/packages/82/ed/0301aeeac3e5353ef3d94b6ec08bbcabd04a72018415dcb29e588514bba8/python_dotenv-1.2.2.tar.gz"
-    sha256 "2c371a91fbd7ba082c2c1dc1f8bf89ca22564a087c2c287cd9b662adde799cf3"
+    url "https://files.pythonhosted.org/packages/6a/53/ed9d74092561d4b01a2ef1349d52cdbc135e526c245f366b089cfca6de49/python_dotenv-1.2.3.tar.gz"
+    sha256 "a20a594dabeaa385725aa239d5244871c143ecb356add8a20fcf23773a6c3a35"
   end
 
   resource "requests" do
@@ -169,13 +167,13 @@ class Backgroundremover < Formula
   end
 
   resource "tqdm" do
-    url "https://files.pythonhosted.org/packages/ae/5f/57ff8b434839e70dab45601284ea413e947a63799891b7553e5960a793a8/tqdm-4.68.4.tar.gz"
-    sha256 "19829c9673638f2a0b8617da4cdcb927e831cd88bcfcb6e78d42a4d1af131520"
+    url "https://files.pythonhosted.org/packages/0d/ea/b2a5bd54b28a324dae8211928b2d730b6547500342c7e6c6dea08bd0a485/tqdm-4.70.1.tar.gz"
+    sha256 "cefd0eca11b2a37a3aee776544d4f4ae913f02688135b5556b8788dfa474afc4"
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/53/0c/06f8b233b8fd13b9e5ee11424ef85419ba0d8ba0b3138bf360be2ff56953/urllib3-2.7.0.tar.gz"
-    sha256 "231e0ec3b63ceb14667c67be60f2f2c40a518cb38b03af60abc813da26505f4c"
+    url "https://files.pythonhosted.org/packages/e3/05/b17359e1cefb4f909b5e40b1b90a496d987258916dbbf88e842c729f510e/urllib3-2.8.0.tar.gz"
+    sha256 "63bf2ead4c879426ebf22ef2a781eeb4aa3b4ae798a0435506f8687fd5bb9b63"
   end
 
   resource "waitress" do
@@ -184,8 +182,8 @@ class Backgroundremover < Formula
   end
 
   resource "werkzeug" do
-    url "https://files.pythonhosted.org/packages/dd/b2/381be8cfdee792dd117872481b6e378f85c957dd7c5bca38897b08f765fd/werkzeug-3.1.8.tar.gz"
-    sha256 "9bad61a4268dac112f1c5cd4630a56ede601b6ed420300677a869083d70a4c44"
+    url "https://files.pythonhosted.org/packages/a4/34/4dd12fc8bb7d61c91467ec3efe415ffa7d5456f799954b40c5bbaeae470e/werkzeug-3.1.9.tar.gz"
+    sha256 "55ca7c70a75689be937aa27f8ff4b018f06ff4838fc73045560bf0f5a1291060"
   end
 
   def install

@@ -3,18 +3,16 @@ class Rasterio < Formula
 
   desc "Reads and writes geospatial raster datasets"
   homepage "https://rasterio.readthedocs.io/en/stable/"
-  url "https://files.pythonhosted.org/packages/1d/1a/ee73b447f1623a6bb6490af08d4bbed3fb6e38b0adc54553a0d244d4103a/rasterio-1.5.1.tar.gz"
-  sha256 "c1b6ae15f4ccad704f1fe8417da5c2250145c7bcdb91acb53833bf5aefdd9e48"
+  url "https://files.pythonhosted.org/packages/51/90/bd0a124e164f5fe776084c9731b43ab136b31281a18608e617cdb5f2be70/rasterio-1.5.2.tar.gz"
+  sha256 "e65a15b7bd22ce8f8ce8159856669dc9fafabf66cde6156e8f8e71d55abcd515"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "f7ad4d5fa5c84b784486ee327dbed6dc688ad9aa66d627e7894f5bf57d770f20"
-    sha256 cellar: :any, arm64_tahoe:       "7d2c360110f48c18138f42d686471f7e0dddbebed424d4bb7bd82a7826ba7fbe"
-    sha256 cellar: :any, arm64_sequoia:     "ee9e03924950759ed47ad4907c73a5baf9172df087cce2a312efbeb134281571"
-    sha256 cellar: :any, arm64_sonoma:      "f9c5ddb3b4cc768bdef2626ea64a98c4121558244fe6a472ce8c75ed213d68f9"
-    sha256 cellar: :any, sonoma:            "b095affc6058ade8559aa842a106a00885f3b20ebe762b6d1c9e8e5e9bb4a1a1"
-    sha256               arm64_linux:       "27126bb3eff5b0acf5b62d901d26b405fb99ad86ae8f8ba5589b8d98b1aeb87f"
-    sha256               x86_64_linux:      "420b8722ac51c8a79a9dad9604533bace3903e3215aa6620719be3b340e70402"
+    sha256 cellar: :any, arm64_golden_gate: "086c2059b0c3ddada92a80412f2e33cb94d8e94a9788f8e8b8bc967d76132425"
+    sha256 cellar: :any, arm64_tahoe:       "4bd0cf8616b5d4a49ef34a5d07a864fc27ad7560b4eda820b6046618668f5ba3"
+    sha256 cellar: :any, arm64_sequoia:     "dc57ce0f611a49d0ad8a341a0fa98ce0c650f0a941e350401dafe6184787f1da"
+    sha256 cellar: :any, arm64_linux:       "4b32288d2d867f47f4bd5299c4ea4f15117d4764775ee688c10fc2bfe9461467"
+    sha256 cellar: :any, x86_64_linux:      "28794166c990e7ac3582782ebfabc4a3f52625998c41bfa9617e169b26a828b6"
   end
 
   depends_on "cmake" => :build
@@ -34,8 +32,8 @@ class Rasterio < Formula
   pypi_packages exclude_packages: %w[certifi numpy]
 
   resource "affine" do
-    url "https://files.pythonhosted.org/packages/69/98/d2f0bb06385069e799fc7d2870d9e078cfa0fa396dc8a2b81227d0da08b9/affine-2.4.0.tar.gz"
-    sha256 "a24d818d6a836c131976d22f8c27b8d3ca32d0af64c1d8d29deb7bafa4da1eea"
+    url "https://files.pythonhosted.org/packages/63/e9/4a4480601992a529c5d0f406605f70ca59aeaef4a6f5ba8905cfde217d0b/affine-3.0.1.tar.gz"
+    sha256 "e1b3c38c5d4d3ef5024a182a6d1bf1e0c51ab221825781c741aeb4d0c079a7e2"
   end
 
   resource "attrs" do
@@ -44,13 +42,13 @@ class Rasterio < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/76/d4/81420972a676e8ffea40450d8c8c92943e7218a78fe9b64359836cc9876b/click-8.4.2.tar.gz"
-    sha256 "9a6cea6e60b17ebe0a44c5cc636d94f09bd66142c1cd7d8b4cd731c4917a15f6"
+    url "https://files.pythonhosted.org/packages/c7/0e/7fa0ef50764b67090eca4114772a2abf8b6148198475e54c660b97caeee6/click-8.5.0.tar.gz"
+    sha256 "ba0d2089de75ea0310e2dde03160e6ca10009947fb95a182f9b54021bb272e34"
   end
 
   resource "pyparsing" do
-    url "https://files.pythonhosted.org/packages/f3/91/9c6ee907786a473bf81c5f53cf703ba0957b23ab84c264080fb5a450416f/pyparsing-3.3.2.tar.gz"
-    sha256 "c777f4d763f140633dcb6d8a3eda953bf7a214dc4eff598413c070bcdc117cbc"
+    url "https://files.pythonhosted.org/packages/e4/11/b213bebff182584360cb8d17c72c1677fec5c5c228de439e63bcf8ab1c8f/pyparsing-3.3.3.tar.gz"
+    sha256 "928ae7e20211f3b6f3915a72f06a0cfd29ab9d24279dd6346b6b1a7146397d36"
   end
 
   def install

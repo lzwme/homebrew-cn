@@ -3,16 +3,17 @@ class Tartufo < Formula
 
   desc "Searches through git repositories for high entropy strings and secrets"
   homepage "https://tartufo.readthedocs.io/en/stable/"
-  # TODO: Switch to PyPI when upstream fixes workflow for 2FA
-  url "https://ghfast.top/https://github.com/godaddy/tartufo/archive/refs/tags/v6.0.0.tar.gz"
-  sha256 "ba84bb6192a3647a0dd2f8b4c08c7aff46e8d5bc742e13ee1714477ae8ad7787"
+  url "https://ghfast.top/https://github.com/godaddy/tartufo/archive/refs/tags/v6.0.1.tar.gz"
+  sha256 "d718aae7de80dcf933d0088329e55dc0751d5e14ecfc954880f4de15494bcb28"
   license "GPL-2.0-only"
-  revision 7
   head "https://github.com/godaddy/tartufo.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "90e5b001924b051af1ffba6f5e2906bf8aa0616ae662439dd8d46c94cf3eefc9"
+    sha256 cellar: :any_skip_relocation, all: "f91ef4f32e662aa01bb805c2a64735cbb2dfe6a900cc2fb81f3079c2c6fd5a06"
   end
+
+  deprecate! date: "2026-09-30", because: :repo_archived
+  disable! date: "2027-09-30", because: :repo_archived
 
   depends_on "pygit2" => :no_linkage
   depends_on "python@3.14"
@@ -37,8 +38,8 @@ class Tartufo < Formula
   end
 
   resource "gitpython" do
-    url "https://files.pythonhosted.org/packages/6f/61/3285044215fb596bf093e39ccb96ece0a1076a8ca57a61e069a6a33cdb1b/gitpython-3.1.61.tar.gz"
-    sha256 "f51c24d8c0f733a195447385f5774a5dfe8767f5acfd7994a33755644c6ecc95"
+    url "https://files.pythonhosted.org/packages/e0/db/3ca813cbacb23ab6fe46ff38a9b5ef8e73e970c8051f2ce903aacafe0446/gitpython-3.1.62.tar.gz"
+    sha256 "1791de66309bc0c7cfca40bf8d2e3de7ca091cbf94e6051be1ad0722c61062af"
   end
 
   resource "smmap" do

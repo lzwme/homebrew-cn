@@ -1,17 +1,17 @@
 class Opentofu < Formula
   desc "Drop-in replacement for Terraform. Infrastructure as Code Tool"
   homepage "https://opentofu.org/"
-  url "https://ghfast.top/https://github.com/opentofu/opentofu/archive/refs/tags/v1.13.0.tar.gz"
-  sha256 "ef769284412b20eb30b883be10519242ab0c92ea54d8a509261e62ba28da4663"
+  url "https://ghfast.top/https://github.com/opentofu/opentofu/archive/refs/tags/v1.13.1.tar.gz"
+  sha256 "54c534f3d1df253430cc02220d94b91c1d563e95f040bc24d29a4c45bc197838"
   license "MPL-2.0"
   head "https://github.com/opentofu/opentofu.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "0b1bb97bd33958c8a338493e9da49348284b89a3fca0b622545d5229592aacad"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "c5c0c59ff50e362826e6df255cf045beb54c6aab9889bb83cb32fef3d28afd9b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "2c6dcee95a60464d0a13d5cb7954af2e216469518ba7a3d801ea8358ba9c36e3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "8864eab388dde7b85b10ca486e8a1cdeed27f1898c499b10d9eadf9d53a874cb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "245d17f70afdf0e23657fc1daf89c5cdcc1c4f2814a398ea1acbf0aff6baf36e"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "e21bb4a4937783afa2a9b2c85583f0d80f0e98b3e49393cc2127f78c99c9f78f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "566406b46c4db9995246b4a9930e7b1ac34e46a4ae20919b296b5020d653d19d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "3ab8d2317e661672692489d4d708cfebeb52a5031de3b82a434b6402399d3872"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "5df70d936c051d32c5ab6f19976f112ed937a0326d12cb88468ccb7c5bfffdec"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "6de1bdcd602fe5b9b37f5c3486e1d76e528f4950d94cd29df4a6f8afb2695a81"
   end
 
   depends_on "go" => :build

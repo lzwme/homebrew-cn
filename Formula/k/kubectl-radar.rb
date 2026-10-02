@@ -11,11 +11,12 @@ class KubectlRadar < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "cd3f298efd6bc48e1ff64ce3cd9a8c9e887f24d94d3e423d76540d371418de54"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "ec591d55941646d4b72b264fa5ec2629d7ca773e06bcb1c146a4a2895b029b25"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "bffd9e8d3834d32ff4a4aa512f89905bb67c63404b3f5578eedd4aec6eec7a9c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "f1f2941055c63d177c4ea2ed74581f4f41c7432f517fffe57fde6ddf7caa4d07"
-    sha256 cellar: :any,                 x86_64_linux:      "bdc81bc4fcb333fa201fcba576e431e3ec54af2063ac33e84e4433b9c9905332"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "83e6ea1486c5a3601f6cdcdcdcc183425c8fbf33fa738203b35cfe94cfd0748f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "bbf697799b2a88693ed5abfb0a11034801d759e0fbdcc7b2a56337ff7fd02626"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "fa2b7d73e447f62d56df7b8851165747ec7ead69cb2b8b6e19dcd61bb8b9c799"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "6687afeb2346fc158ace9596d5a308bde66181f28ca1e04ef2fea35fdd711f61"
+    sha256 cellar: :any,                 x86_64_linux:      "18ae0a0cb19abd2107cc580f3e161dfddcb30eb45549937e912aacafefc16416"
   end
 
   depends_on "go" => :build
@@ -24,6 +25,7 @@ class KubectlRadar < Formula
   def install
     system "make", "build", "-j1", "VERSION=#{version}"
     bin.install "radar" => "kubectl-radar"
+    bin.install_symlink "kubectl-radar" => "radar"
   end
 
   test do

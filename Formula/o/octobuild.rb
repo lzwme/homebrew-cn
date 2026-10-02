@@ -1,19 +1,17 @@
 class Octobuild < Formula
   desc "Compiler cache for Unreal Engine"
   homepage "https://github.com/octobuild/octobuild"
-  url "https://ghfast.top/https://github.com/octobuild/octobuild/archive/refs/tags/1.9.2.tar.gz"
-  sha256 "26f92d8463ad823dc79089f2bfb9de6667d607fa1250ea5d4ab1bd4ef86942a4"
+  url "https://ghfast.top/https://github.com/octobuild/octobuild/archive/refs/tags/2.0.0.tar.gz"
+  sha256 "ff6c54184351fb03e1997c59db98eec705a5cea2969d72d220f50110d4c34853"
   license "MIT"
   head "https://github.com/octobuild/octobuild.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "3f62f398c11c8e8cbb142320d0612eb17b8748eb1c8f1aac7f4602774fe030df"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "3f152fc8cfc9edb0b56416a78c616dccd0d2d1519105e6fb5f112a0fc967b454"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "2097c6abac7a240b8e8d734f47905a5842a7ae9192b01f51da854ce26fc54b79"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "728de4d20ffc429b5f8f1b7b364f103722a8e3a956f1104cadf85d42db3fd5d0"
-    sha256 cellar: :any_skip_relocation, sonoma:            "e457bae6b4d726b565018b83adb58413d4a8f493d25ef9ba9334aedad965ef9a"
-    sha256 cellar: :any,                 arm64_linux:       "6b15fe5efa75c02ca6f663c1169eab4c72d216e01911e4abfa44d2ec1adf9897"
-    sha256 cellar: :any,                 x86_64_linux:      "47317db9cea8566d2d9d22d211bbcbefcb167715fd92872557bd6bc715a8d13b"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "795fa73f3a6b09f2d31291259713b08c65a1fb344946a9ebe08fe8adc6692b7f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "774070041d50dfd51c7187e8af49ac255094d0bc5f8a429390e634e7276ca54a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "bcead0bf62c999991c870bf8c0f4b5fdf8dc1125c4eef7723c47344a4bd37a65"
+    sha256 cellar: :any,                 arm64_linux:       "3f689aa09c5d00a20255c293eae7504ae204dcd3be27941096962244e66c3dc4"
+    sha256 cellar: :any,                 x86_64_linux:      "df99225d6e9d5ce8bf1eb23cf05c7f673ec59c0f91e66d934c01661983705fdc"
   end
 
   depends_on "pkgconf" => :build

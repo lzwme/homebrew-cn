@@ -1,8 +1,8 @@
 class Entr < Formula
   desc "Run arbitrary commands when files change"
   homepage "https://eradman.com/entrproject/"
-  url "https://eradman.com/entrproject/code/entr-5.8.tar.gz"
-  sha256 "dc9a2bdc556b2be900c1d8cdf432de26492de5af3ffade000d4bfd97f3122bfb"
+  url "https://eradman.com/entrproject/code/entr-5.9.tar.gz"
+  sha256 "0ef2ce7db728167844a91904944cd07c7ccc6fd3041b849cad861224d106a845"
   license "ISC"
   head "https://github.com/eradman/entr.git", branch: "master"
 
@@ -12,13 +12,11 @@ class Entr < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "0a44b02a27df613ecc47e041163ff91d7535810c344c3544b49370c47ea055f9"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "838218c42fb25f73f78c0a68631333ebc9372cb2b5fc21c4facbee3d94639596"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "1df251e5b118f90f573327376353af95ffebdd858f411074edc70d57fbe49667"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "609efce32b36a2faac1a8bf25a003517513ec3cbca5d79cabdefa676f0039b95"
-    sha256 cellar: :any_skip_relocation, sonoma:            "310c5ae14c62db4d53d5e1c007e7e02b1c723c4098946bcc88ea6b42ab6523b6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "2770c4fdd3add4a0c511fa16018883398c60398675f33c0865b886a20ce49ddf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "be565d82b4b77bda77413c369cce336b188cb752a74c21a75ac87a227b8fb60a"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "2684ccbd205b2b06eb1aa1174eab33c6db1a25e56fca6ab50cd4700dfebc28bb"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "44320e4d824dc977fadfc1c871bfd1a604e6a48f073be0c1263add9c8a499607"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "8af3d28815a4024e15fd973d1558e59b7264dd0ed79775d4b43382f9b48701b7"
+    sha256 cellar: :any,                 arm64_linux:       "78ae395c02f3e5f8451d1ae35bedcd03b6a077896c78f76b206903d053442d56"
+    sha256 cellar: :any,                 x86_64_linux:      "28eaca5c84b0952841d9615f9464ddfea9e6aef0da23477641f78dee9563da4e"
   end
 
   deny_network_access!

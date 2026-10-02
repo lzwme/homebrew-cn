@@ -1,18 +1,16 @@
 class IcebergCli < Formula
   desc "Command-line interface for Apache Iceberg"
   homepage "https://go.iceberg.apache.org/cli.html"
-  url "https://ghfast.top/https://github.com/apache/iceberg-go/archive/refs/tags/v0.6.0.tar.gz"
-  sha256 "3ecdaa8851b84fa1c109be61b7ae6817aef6f301cee98ce68eac1eb649686050"
+  url "https://ghfast.top/https://github.com/apache/iceberg-go/archive/refs/tags/v0.7.0.tar.gz"
+  sha256 "8c6bf515c17bd54127a20670f810f40ec1c4542ade2f862c07c323fa67718241"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "79f11b1d6f19d955969474bed49427dc6df85f5356007d5d5fba877f119c8d82"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "a59721565c616254f68c658a43ecbbcfa7c5787ae46569f8aea5f08ebf50534f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "a59721565c616254f68c658a43ecbbcfa7c5787ae46569f8aea5f08ebf50534f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "a59721565c616254f68c658a43ecbbcfa7c5787ae46569f8aea5f08ebf50534f"
-    sha256 cellar: :any_skip_relocation, sonoma:            "029efcd4e4d7847001a907fb8d04a199d88b0f4cff5b74789639c55d26cbad71"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "756172247d843244dc1daa9befb4f2460bbf0793f79eae5fff41fda24fc9267d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "63e9a1974e458b473cb66aa69b36c4332d1caac6c5499219c6708ec8b26ac645"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "f2b38eb44e2c67ac5052a75ab9558b170fe5f751ccea9bc1ee64b1283e91c423"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "f2b38eb44e2c67ac5052a75ab9558b170fe5f751ccea9bc1ee64b1283e91c423"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "f2b38eb44e2c67ac5052a75ab9558b170fe5f751ccea9bc1ee64b1283e91c423"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "17b536fbdce49bffd7e5c5b2d46ad529f7938f896acd1a790f70b94c6a586730"
+    sha256 cellar: :any,                 x86_64_linux:      "62bc87b45b98b11f6efaee5f4b278eb3e290fb348997383c2d5540faf8b544a7"
   end
 
   depends_on "go" => :build

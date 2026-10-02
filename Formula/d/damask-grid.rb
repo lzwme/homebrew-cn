@@ -4,6 +4,7 @@ class DamaskGrid < Formula
   url "https://damask-multiphysics.org/download/damask-3.1.0.tar.xz"
   sha256 "d1ba65a167aab221c13f003507aba17f663c53af94fc1cd4a47408008329def1"
   license "AGPL-3.0-only"
+  revision 1
 
   # The first-party website doesn't always reflect the newest version, so we
   # check GitHub releases for now.
@@ -13,13 +14,11 @@ class DamaskGrid < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "fdddbb3c38f7e6ad08381d61733675cf70eb1c31554ff738776eb111665753e0"
-    sha256 cellar: :any, arm64_tahoe:       "419ea702bb0b79eb8d11cb67faca390a47f06d97f7bfb9b918dbdffa9efe90f6"
-    sha256 cellar: :any, arm64_sequoia:     "9527ad6657164f0bb5e6a7dbc603a85a9f355eb6990ee1738064708873d183dc"
-    sha256 cellar: :any, arm64_sonoma:      "455f578b15d5c9c34d883fdd1c4bb4860dbf7e0dad821d3a88029f90ec0fd6af"
-    sha256 cellar: :any, sonoma:            "4e035ad2757c8c43217f5a207b36a110254774e7e0eba87e3a241ad5efaaca59"
-    sha256 cellar: :any, arm64_linux:       "9c6a32fc7878c851182c8be5564287039ac478bd315abd6b64846df6a5d28d4b"
-    sha256 cellar: :any, x86_64_linux:      "53f886a6648e13cec3d6df04928f6ea1316d84f5629a669a0fb7ba5eff5820e0"
+    sha256 cellar: :any, arm64_golden_gate: "2bebd819d0e4ed7378188eb1bea38ed6cdf96a590327337c8dd9ab4b539691dd"
+    sha256 cellar: :any, arm64_tahoe:       "211b023d8f4f2ebf88af33d59166658ba83caa3e6808cfaf0fefd8e213406e2e"
+    sha256 cellar: :any, arm64_sequoia:     "76ce727955d3aa8b3bdac63c831b7a0a44b4d12ad32d7c47110feaddfb7f9952"
+    sha256 cellar: :any, arm64_linux:       "1206f80692e5df5d5c2e1f1f62b48482c117f2da118cc3bec98a414002ed6e13"
+    sha256 cellar: :any, x86_64_linux:      "3eada3183508be0dcd031c2a93a98e6d8409e0c2473be34a922fb2682f7cf790"
   end
 
   depends_on "cmake" => :build
@@ -48,6 +47,9 @@ class DamaskGrid < Formula
 
     # Help link to libomp on macOS to avoid mixed OpenMP
     inreplace "cmake/Compiler-GNU.cmake", '"-fopenmp"', '"-Xpreprocessor -fopenmp -lomp"' if OS.mac?
+
+    # Allow PETSc 3.26, remove when upstream raises the supported maximum
+    inreplace "CMakeLists.txt", 'set(PETSC_VERSION_MINOR_MAX "25")', 'set(PETSC_VERSION_MINOR_MAX "26")'
 
     ENV["PETSC_DIR"] = formula_opt_prefix("petsc")
     args = %w[

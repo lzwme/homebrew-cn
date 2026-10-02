@@ -1,8 +1,8 @@
 class Libpng < Formula
   desc "Library for manipulating PNG images"
   homepage "https://www.libpng.org/pub/png/libpng.html"
-  url "https://downloads.sourceforge.net/project/libpng/libpng16/1.6.58/libpng-1.6.58.tar.xz"
-  sha256 "28eb403f51f0f7405249132cecfe82ea5c0ef97f1b32c5a65828814ae0d34775"
+  url "https://downloads.sourceforge.net/project/libpng/libpng16/1.6.59/libpng-1.6.59.tar.xz"
+  sha256 "d80dd2a38a37f803cb9b6ac7b14bd6e74ddc3b654780a8380bdf93523fdb4389"
   license "libpng-2.0"
   compatibility_version 1
 
@@ -12,12 +12,11 @@ class Libpng < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_golden_gate: "02e4e023512c6bf086f139717bcb90fb53ece5fbab3ab4354b0d5fed25afa5db"
-    sha256 cellar: :any, arm64_tahoe:       "afb3b4e1b5035a602d60668b8a16369704dfa32aca18330f4e0faaec54b3134f"
-    sha256 cellar: :any, arm64_sequoia:     "bc998bd8497a87e10e613348858c295a38f29f12914408ccbec81f0d0c2e77c8"
-    sha256 cellar: :any, arm64_linux:       "36876a725450f53a659f499b1bae414674d451ee558c59b14a76a459dd1b31d5"
-    sha256 cellar: :any, x86_64_linux:      "fef7fad4ecddc7ba44bd310ef6fbdbacbadeb99027577e3df1f05bd330554eac"
+    sha256 cellar: :any, arm64_golden_gate: "7e04225ac0bc048d2b12c603f678e5fa36459909812f2f1306dbd97af337cdec"
+    sha256 cellar: :any, arm64_tahoe:       "de1c24778cb63a442682c1e6a391560662046a68c2f0c207ecb4abbc81e98cff"
+    sha256 cellar: :any, arm64_sequoia:     "6461c4dde6a693b559c531357b32126bd649ab67f53db5a5b70c25a5c12de4f1"
+    sha256 cellar: :any, arm64_linux:       "51e66ffc9fe346bc8a42733a5c0ef451d85a7a83192e57e313cc945ed788f210"
+    sha256 cellar: :any, x86_64_linux:      "8955801e64761d8552a9cc206195694a438ab0b87cfe69f9ddbe9c29f69cfc50"
   end
 
   head do

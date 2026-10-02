@@ -6,16 +6,14 @@ class Certsync < Formula
   url "https://files.pythonhosted.org/packages/c8/75/3928920bdbfb0af317446236fad17b47a1d6aad507f1ae2eed6bbf7e7ad9/certsync-0.1.6.tar.gz"
   sha256 "bbfffd10f36edcb8c4d2d5033f2a2e1e7d641e41d6c5bd11069e7b0827fa1c8d"
   license "MIT"
-  revision 11
+  revision 12
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "778f203c989995c802b62649d77dce3e30c7b62b99318e898c6463444856e6b3"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "1f1cb01748c97f9fbf339d737b7db2c6639ed5d7b36b9a0cc356ba1bae0ff72b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "f88801ff9c2b9fe1708d93e8ec8c8f2c7e91687d7c216e694438015f3e071591"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "67d304ad8d430e3fb002b5dde6695b07bdcaf6e0185f15551e0ad3634cce6982"
-    sha256 cellar: :any_skip_relocation, sonoma:            "86b608865a0d43471b7a76efff2e53efa417b7bcc378ce46e2ef585c3d0f389e"
-    sha256 cellar: :any,                 arm64_linux:       "f00523800cb42867d71d43b957f556421d933cbca660e807d722ee5cc2151778"
-    sha256 cellar: :any,                 x86_64_linux:      "5fa62993a6519682092c762c81684b6f6d3f154749c12b66f62b949e8b93f468"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "c94387188b42b58d6e499e6de7d5ccfeb16dc79ecdcd357a526990557599bd82"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "03e864be6f2478154a57739fed729e72596a291bb6f8adc3f213b1e34a3d641b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "2015cdca53cf7a131d60279e9796abf6e5e7bddce86ba41dd5a429f23f95a927"
+    sha256 cellar: :any,                 arm64_linux:       "21bdd94ef58176b2a8162eda1f995be4f26f6a286069bd4583108a48b394c732"
+    sha256 cellar: :any,                 x86_64_linux:      "1c8e8bd6aa9c9a4d5cfabe3718105c65b20768d80427398ceced8e4ba4c720bc"
   end
 
   depends_on "certifi" => :no_linkage
@@ -43,13 +41,13 @@ class Certsync < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/bd/2a/23f34ec9d04624958e137efdc394888716353190e75f25dd22c7a2c7a8aa/charset_normalizer-3.4.9.tar.gz"
-    sha256 "673611bbd43f0810bec0b0f028ddeaaa501190339cac411f347ac76917c3ae7b"
+    url "https://files.pythonhosted.org/packages/33/1c/f41d4e74c28ab327ff3acd36053f7ea506c55872d7a90b0fa71aa3ab0c89/charset_normalizer-3.5.2.tar.gz"
+    sha256 "39de2a259fc954455c57274dc94c79d5842774e1247a016aff30bc0efed0f4ef"
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/76/d4/81420972a676e8ffea40450d8c8c92943e7218a78fe9b64359836cc9876b/click-8.4.2.tar.gz"
-    sha256 "9a6cea6e60b17ebe0a44c5cc636d94f09bd66142c1cd7d8b4cd731c4917a15f6"
+    url "https://files.pythonhosted.org/packages/c7/0e/7fa0ef50764b67090eca4114772a2abf8b6148198475e54c660b97caeee6/click-8.5.0.tar.gz"
+    sha256 "ba0d2089de75ea0310e2dde03160e6ca10009947fb95a182f9b54021bb272e34"
   end
 
   resource "dnspython" do
@@ -68,8 +66,8 @@ class Certsync < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/cd/63/9496c57188a2ee585e0f1db071d75089a11e98aa86eb99d9d7618fc1edce/idna-3.18.tar.gz"
-    sha256 "ffb385a7e039654cef1ab9ef32c6fafe283c0c0467bba1d9029738ce4a14a848"
+    url "https://files.pythonhosted.org/packages/f5/08/8eea9d4b8302028f3abb2c0813953f7aec26d33b7a8960ed760e65ff29fa/idna-3.20.tar.gz"
+    sha256 "a7db850025b95ded1eae8a46181a1a6c56c92c96f0e2b005d9ff8dc0210cab44"
   end
 
   resource "impacket" do
@@ -123,13 +121,13 @@ class Certsync < Formula
   end
 
   resource "pyopenssl" do
-    url "https://files.pythonhosted.org/packages/74/b7/da07bae88f5a9506b4def6f2f4903cf4c3b8831e560dba8fa18ca08f758f/pyopenssl-26.3.0.tar.gz"
-    sha256 "589de7fae1c9ea670d18422ed00fc04da787bbde8e1454aea872aa57b49ad341"
+    url "https://files.pythonhosted.org/packages/3f/e8/7325d258199b159eb2c03fe32107533e2832e70e63f4fb88a6aa00023201/pyopenssl-26.4.0.tar.gz"
+    sha256 "28dfcce0162b9211413e26dfbfdf1d24317fbeba18fc93c12400a1856b2a0bc7"
   end
 
   resource "pyspnego" do
-    url "https://files.pythonhosted.org/packages/7d/84/58577bd1b14293650879de0579ec263a1d8350f1d6d227226cf776b5a6a6/pyspnego-0.12.1.tar.gz"
-    sha256 "ff4fb6df38202a012ea2a0f43091ae9680878443f0ea61c9ea0e2e8152a4b810"
+    url "https://files.pythonhosted.org/packages/fd/8f/30bb9568554899a6147bed657762a3c707e2d3dcaabf3492161cc9550bb4/pyspnego-0.12.3.tar.gz"
+    sha256 "c4982c9f92e6aa5979c9d9a142a21339ff82ebcfbdb4e0649320cb050961a3cd"
   end
 
   resource "requests" do
@@ -148,8 +146,8 @@ class Certsync < Formula
   end
 
   resource "tqdm" do
-    url "https://files.pythonhosted.org/packages/ae/5f/57ff8b434839e70dab45601284ea413e947a63799891b7553e5960a793a8/tqdm-4.68.4.tar.gz"
-    sha256 "19829c9673638f2a0b8617da4cdcb927e831cd88bcfcb6e78d42a4d1af131520"
+    url "https://files.pythonhosted.org/packages/0d/ea/b2a5bd54b28a324dae8211928b2d730b6547500342c7e6c6dea08bd0a485/tqdm-4.70.1.tar.gz"
+    sha256 "cefd0eca11b2a37a3aee776544d4f4ae913f02688135b5556b8788dfa474afc4"
   end
 
   resource "unicrypto" do
@@ -158,13 +156,13 @@ class Certsync < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/53/0c/06f8b233b8fd13b9e5ee11424ef85419ba0d8ba0b3138bf360be2ff56953/urllib3-2.7.0.tar.gz"
-    sha256 "231e0ec3b63ceb14667c67be60f2f2c40a518cb38b03af60abc813da26505f4c"
+    url "https://files.pythonhosted.org/packages/e3/05/b17359e1cefb4f909b5e40b1b90a496d987258916dbbf88e842c729f510e/urllib3-2.8.0.tar.gz"
+    sha256 "63bf2ead4c879426ebf22ef2a781eeb4aa3b4ae798a0435506f8687fd5bb9b63"
   end
 
   resource "werkzeug" do
-    url "https://files.pythonhosted.org/packages/dd/b2/381be8cfdee792dd117872481b6e378f85c957dd7c5bca38897b08f765fd/werkzeug-3.1.8.tar.gz"
-    sha256 "9bad61a4268dac112f1c5cd4630a56ede601b6ed420300677a869083d70a4c44"
+    url "https://files.pythonhosted.org/packages/a4/34/4dd12fc8bb7d61c91467ec3efe415ffa7d5456f799954b40c5bbaeae470e/werkzeug-3.1.9.tar.gz"
+    sha256 "55ca7c70a75689be937aa27f8ff4b018f06ff4838fc73045560bf0f5a1291060"
   end
 
   def install

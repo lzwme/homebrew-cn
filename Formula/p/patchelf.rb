@@ -1,8 +1,8 @@
 class Patchelf < Formula
   desc "Modify dynamic ELF executables"
   homepage "https://github.com/NixOS/patchelf"
-  url "https://ghfast.top/https://github.com/NixOS/patchelf/releases/download/0.19.1/patchelf-0.19.1.tar.bz2"
-  sha256 "2cce01de93653829f6ab68a20c2ec275e1c00a946110704a27e928d2e6e88716"
+  url "https://ghfast.top/https://github.com/NixOS/patchelf/releases/download/0.19.2/patchelf-0.19.2.tar.bz2"
+  sha256 "d4ad9a4e5c689e09119ce2f30a94b0e8b4f98c78590123ea21665e34c6928801"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -11,13 +11,11 @@ class Patchelf < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "a3b4f1813e1bc51f22662447ca482ebe20344c9189f4b2c29be781365e8b0af2"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "2a41565145aaa4788879d5365668103f20b0a4d59d4dbd418cbca854d43e50cd"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "f53818518b304c220b5df5cbc15f40ee7ced3e9e5e4d926b0e48cc08d693467d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "88cc917662318f3890f42ec3836920f0ab725d9fbd1655974299e6efbcec5473"
-    sha256 cellar: :any_skip_relocation, sonoma:            "e549b8d24de2dc84f1c4dfd72bd747a3a2db611adcbfe5466dcd0f10908b9dbc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "d687a86b519f90ba73aeef58582937596d8dd7f2eec1698df06d050fe0485998"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "8e881ea72d3338780974e10cac8b614c8f099c3ffd99713bd68fb1e7aeae50ce"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "bd8031ce10d3b4494815b89f92d84f35cafe06629010d60407025fbb126f4267"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "ca983b871e31aa5ad8e5310f8436c9eea5044dce44cd6a9f2692dfcc8439bccf"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "173b1c00c78d2626621a598ee0d79094dbee6e67c4b8636afef77098f4d13f2a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "b902a6c4df239292e0bd32f17927f8500b25e4dbfd300ccbfb3a9da8efb91aff"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "a42d6647f56285333fa8b209faf526eb85e409b3a818f5a99cf036e3367e3ab1"
   end
 
   head do

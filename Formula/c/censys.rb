@@ -6,10 +6,11 @@ class Censys < Formula
   url "https://files.pythonhosted.org/packages/0a/f1/a7da18ea36eabdc73a7fd5c80ce475a61c7a05a3912be64edb3c33980ca7/censys-2.3.0.tar.gz"
   sha256 "7ebf18d6327acd27817265a5ad34342afae56f9f5c7f0016f651b82e593a6a33"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/censys/censys-python.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "4263f4902cbf7aeb010f544f8243499a4f8c934497f07877ca2fa5bb211851c2"
+    sha256 cellar: :any_skip_relocation, all: "442c70a01e2aca6b49634f7e03726a8cd082e69261345ce44ceb1b64b0667249"
   end
 
   depends_on "certifi" => :no_linkage
@@ -28,13 +29,13 @@ class Censys < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/e5/3f/143b048436775b0f76ac3eec145c019e8173ccc2885c8f20319b996d5e83/charset_normalizer-3.5.1.tar.gz"
-    sha256 "6117b84ea48435e5356dc737f5121485c30920ba43375fa7b434fd753df0eac3"
+    url "https://files.pythonhosted.org/packages/33/1c/f41d4e74c28ab327ff3acd36053f7ea506c55872d7a90b0fa71aa3ab0c89/charset_normalizer-3.5.2.tar.gz"
+    sha256 "39de2a259fc954455c57274dc94c79d5842774e1247a016aff30bc0efed0f4ef"
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/5f/f7/abb373e5757eaec4b922b92f97ec8d6d7e057cf06778247604fbc4e7c3f3/idna-3.19.tar.gz"
-    sha256 "5e0811a4383b21dc5838069f801c4fb62113b7447663d2530d2bd6e77b49bf15"
+    url "https://files.pythonhosted.org/packages/f5/08/8eea9d4b8302028f3abb2c0813953f7aec26d33b7a8960ed760e65ff29fa/idna-3.20.tar.gz"
+    sha256 "a7db850025b95ded1eae8a46181a1a6c56c92c96f0e2b005d9ff8dc0210cab44"
   end
 
   resource "markdown-it-py" do
@@ -63,8 +64,8 @@ class Censys < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/53/0c/06f8b233b8fd13b9e5ee11424ef85419ba0d8ba0b3138bf360be2ff56953/urllib3-2.7.0.tar.gz"
-    sha256 "231e0ec3b63ceb14667c67be60f2f2c40a518cb38b03af60abc813da26505f4c"
+    url "https://files.pythonhosted.org/packages/e3/05/b17359e1cefb4f909b5e40b1b90a496d987258916dbbf88e842c729f510e/urllib3-2.8.0.tar.gz"
+    sha256 "63bf2ead4c879426ebf22ef2a781eeb4aa3b4ae798a0435506f8687fd5bb9b63"
   end
 
   def install

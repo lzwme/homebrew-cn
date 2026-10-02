@@ -4,19 +4,16 @@ class LibimobiledeviceGlue < Formula
   url "https://ghfast.top/https://github.com/libimobiledevice/libimobiledevice-glue/releases/download/1.3.2/libimobiledevice-glue-1.3.2.tar.bz2"
   sha256 "6489a3411b874ecd81c87815d863603f518b264a976319725e0ed59935546774"
   license "LGPL-2.1-or-later"
+  revision 1
   compatibility_version 1
   head "https://github.com/libimobiledevice/libimobiledevice-glue.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_golden_gate: "2b56ca1ddf1f5773a6b87abe83f459bafc2258fdec798f3240b0fa9e6857d516"
-    sha256 cellar: :any,                 arm64_tahoe:       "befcdfa53f96584ae27e06bb7fbb39f27bcdbdd6a0b8d9b8c32b90d8af5dc9f9"
-    sha256 cellar: :any,                 arm64_sequoia:     "2e0718fa644afc01576aa96df4448e9a13476681b4287973ab3fda5d79e0a52a"
-    sha256 cellar: :any,                 arm64_sonoma:      "8839511835adac2934787a8a575c3dd6e02186d60db24ddb9c9aeed8a8069883"
-    sha256 cellar: :any,                 arm64_ventura:     "279cb7a80efc21378015aac5cc440e9fc51b922464adfcd00d08a6e3a5802785"
-    sha256 cellar: :any,                 sonoma:            "0b08285aeb078331e4240420422e5330d91aba640b21c0d1f06c470deb6b9eb6"
-    sha256 cellar: :any,                 ventura:           "c85de1ecdb49bc8ef1833ba82ea8987f121a7681645eb056a6b8b6b3c8689146"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "a5a59b43c4831f6c112f50876d8916b6144d66be4ad44741af5a49e6d3949380"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "d2472064748544eb0aca6ed2bf16ca7dab2561e3c45f96094f2a98a751fc2d67"
+    sha256 cellar: :any, arm64_golden_gate: "c67072788122860a4c2b7987f7d031199f3ddf85569eb96767c89a434f8e53d6"
+    sha256 cellar: :any, arm64_tahoe:       "8ba3edbfc9c9c50cd340f1d836a047bbc92f280ce0af88b76a77e501df367db2"
+    sha256 cellar: :any, arm64_sequoia:     "691e69439ca8c9954fc87cc709b6711e2cb2b8b3aa7ba430a63b378930fb623e"
+    sha256 cellar: :any, arm64_linux:       "5aed697d210d268f0723f41de1ae12d0559bee5175a4b30daef30034b1466035"
+    sha256 cellar: :any, x86_64_linux:      "b5560685c2c3f045c10588e02ffe91f43f3fa52d05704c54d01dc022bb92886f"
   end
 
   depends_on "autoconf" => :build
