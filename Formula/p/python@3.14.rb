@@ -12,11 +12,12 @@ class PythonAT314 < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "1fa018fedf8e842742a9678da884a453cf7323c763328081a69e743eaf4a6f73"
-    sha256 arm64_tahoe:       "2d9d3f6c8a6cbfb48bdd8a59316f229d355de399b638c674adfaebaed3bca14b"
-    sha256 arm64_sequoia:     "dfdc2ac8e7e2a3fae3bc8bf5615361dac095ab9366b0e1e8f75c95d52fd85c52"
-    sha256 arm64_linux:       "8bf3380ba064f5610a014fe6d511c110f3ee177cbb10258b90d732c0a39ece05"
-    sha256 x86_64_linux:      "32832ce16c4e07676b960dfca5582e5e6045ac0f3de904a88e83540612fb833e"
+    rebuild 1
+    sha256 arm64_golden_gate: "5029e587666812139ecd7582829aa9db86ac861007febdd9523611f4672037fb"
+    sha256 arm64_tahoe:       "14a1da5f9ee3d2e344ac8be1686d5cab15a4f0148754eab3b6b31549bb7787c8"
+    sha256 arm64_sequoia:     "2fb302150080fca00042a774ad4c3041593852268c3ac8ab02c5d18ef4f82542"
+    sha256 arm64_linux:       "3552d65ea3152427e25b599a9d146a7e99b770708d2acc9a89464fdf325dd3fe"
+    sha256 x86_64_linux:      "87a955d0f6f076cf0403a1d25841378181285c131ce89ce108b01b60b5fac5f2"
   end
 
   # https://devguide.python.org/versions/#versions
@@ -24,6 +25,7 @@ class PythonAT314 < Formula
   disable! date: "2031-11-01", because: :deprecated_upstream
 
   depends_on "pkgconf" => :build
+  depends_on "ca-certificates" => :no_linkage
   depends_on "mpdecimal"
   depends_on "openssl@3"
   depends_on "sqlite"
@@ -324,6 +326,11 @@ class PythonAT314 < Formula
            "--target=#{root_site_packages}",
            bundled/"pip-#{resource("pip").version}-py3-none-any.whl",
            libexec/"wheel-#{resource("wheel").version}-py3-none-any.whl"
+
+    # Use brewed ca-certificates PEM file instead of the bundled copy
+    certifi = root_site_packages/"pip/_vendor/certifi"
+    rm certifi/"cacert.pem"
+    certifi.install_symlink Formula["ca-certificates"].pkgetc/"cert.pem" => "cacert.pem"
 
     # pip install with --target flag will just place the bin folder into the
     # target, so move its contents into the appropriate location

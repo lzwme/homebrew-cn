@@ -6,14 +6,15 @@ class Papis < Formula
   url "https://files.pythonhosted.org/packages/34/39/91becff2d0b417d2a2b2777a939834df042944ff964c9a9828af3dc58a59/papis-0.16.1.tar.gz"
   sha256 "6cc509e8164ac1a9444c77bae4f8ce5cb04056d79dc4a92214474aec09556569"
   license "GPL-3.0-or-later"
+  revision 1
   head "https://github.com/papis/papis.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "3b6600209fdea851bbae45944d880a5dace00e09e440d68268cf30dbf14329d0"
-    sha256 cellar: :any, arm64_tahoe:       "7cdc5e1070facdddcf1c2ab96e1d7ec98887e36ac94ddd4456e6af723fdeafae"
-    sha256 cellar: :any, arm64_sequoia:     "3bff356c2cf8bff7f5b5e31b176855aa564f78d6911b5044650e4c9a8090a5b7"
-    sha256 cellar: :any, arm64_linux:       "bd94a85be0bb5e8b24c93375c4d3fd86cdfaf280a6448a775f8f20c63f507c0f"
-    sha256 cellar: :any, x86_64_linux:      "7d6db4bf4d7cc3094172c61383879c73882b3b91d4f1a1be433081add6acfe5f"
+    sha256 cellar: :any, arm64_golden_gate: "58fa7b7776552d96df5ed2b464b5965d93683fa546d626218876eaa79a10f9be"
+    sha256 cellar: :any, arm64_tahoe:       "1e342e215c15534016e49a05faf2f0f8377e75cb9be9f1a608b9f47ab75c5c11"
+    sha256 cellar: :any, arm64_sequoia:     "27fd33f03f2e7178ba7dbf0fc12a56474a9501141113e7b02ee8c2f91c8c33b3"
+    sha256 cellar: :any, arm64_linux:       "66a77a508b3ccf9cb343ce3666c9c8694ed97331dc95ea92064e49b478bb2747"
+    sha256 cellar: :any, x86_64_linux:      "2b19e5804b1d876eebfefd3dc61abdfc4d2577b5749960d6d661f6dd0d276a82"
   end
 
   depends_on "certifi" => :no_linkage
@@ -46,8 +47,8 @@ class Papis < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/e5/3f/143b048436775b0f76ac3eec145c019e8173ccc2885c8f20319b996d5e83/charset_normalizer-3.5.1.tar.gz"
-    sha256 "6117b84ea48435e5356dc737f5121485c30920ba43375fa7b434fd753df0eac3"
+    url "https://files.pythonhosted.org/packages/33/1c/f41d4e74c28ab327ff3acd36053f7ea506c55872d7a90b0fa71aa3ab0c89/charset_normalizer-3.5.2.tar.gz"
+    sha256 "39de2a259fc954455c57274dc94c79d5842774e1247a016aff30bc0efed0f4ef"
   end
 
   resource "click" do
@@ -81,18 +82,18 @@ class Papis < Formula
   end
 
   resource "httpcore2" do
-    url "https://files.pythonhosted.org/packages/be/ad/f4f0e57345f1870f3e8cb624e058d7eca6e5a27d33bcc3311d9b618734cd/httpcore2-2.12.0.tar.gz"
-    sha256 "9293522bba0aa7c4c8e9e3f040c16575bd8868e155a77fa30c7a9085a5eae648"
+    url "https://files.pythonhosted.org/packages/cb/f3/1db7aa2bc2524062192bb0e0323969492d1883152a232fe36eea65f4e35c/httpcore2-2.13.1.tar.gz"
+    sha256 "e0aa977abe17e69a3b820a24542a6fa88702676d83880b8d194dcd18408e5103"
   end
 
   resource "httpx2" do
-    url "https://files.pythonhosted.org/packages/7f/f8/579a8b51e42e38ee32647df9f08aa25643ae788e275cc625b199829c4671/httpx2-2.12.0.tar.gz"
-    sha256 "7631fe9887a8a2275f4a2540e053aa670fcc50742864a9ae7c66e609fdcf12cf"
+    url "https://files.pythonhosted.org/packages/d5/44/474bef2a0e9d90f1715d32cb98b0738695ca17ba324095fb2497ed7fbd59/httpx2-2.13.1.tar.gz"
+    sha256 "e48744a19e3af5ee48313d0ce5fe941d5422fae5705ea922a4aabf94d7800dfa"
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/5f/f7/abb373e5757eaec4b922b92f97ec8d6d7e057cf06778247604fbc4e7c3f3/idna-3.19.tar.gz"
-    sha256 "5e0811a4383b21dc5838069f801c4fb62113b7447663d2530d2bd6e77b49bf15"
+    url "https://files.pythonhosted.org/packages/f5/08/8eea9d4b8302028f3abb2c0813953f7aec26d33b7a8960ed760e65ff29fa/idna-3.20.tar.gz"
+    sha256 "a7db850025b95ded1eae8a46181a1a6c56c92c96f0e2b005d9ff8dc0210cab44"
   end
 
   resource "lark" do
@@ -111,8 +112,8 @@ class Papis < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/53/18/f3bb8ef0d3b930692343da8aa4d3cbcd6749477c053959395ac81965a6e9/platformdirs-4.11.8.tar.gz"
-    sha256 "f23abafea7dd4276d1f29104b83598d7dcc567cafd07c9c951e66665645437fc"
+    url "https://files.pythonhosted.org/packages/17/c8/721b3855fe457da514fe249247d404b9b39c5d16532278f70ebaa6acf18b/platformdirs-4.12.2.tar.gz"
+    sha256 "eab5f70271a490ef74618bb314fbb86e3c7e82fa3b9c922c2ea0e0a1a155d329"
   end
 
   resource "prompt-toolkit" do
@@ -136,8 +137,8 @@ class Papis < Formula
   end
 
   resource "python-slugify" do
-    url "https://files.pythonhosted.org/packages/1c/e7/dc2331a18e4b18721d6382468d2ca163fabacba45d2185945557f364ab39/python_slugify-9.0.0.tar.gz"
-    sha256 "1cd20fe7ebf941b11964a92aba9e5319edfe18606276c6e2481b92e737cde44a"
+    url "https://files.pythonhosted.org/packages/ad/df/32c87abe18f7d0560e2154ffbe23dfca6edad5d0d2d6c4636c99f4fb8b02/python_slugify-9.1.2.tar.gz"
+    sha256 "bd36ca98e5ebb1cd2b9dfa2f27b948ce87402fb083b762cbd9d0fa3aed489a92"
   end
 
   resource "pyyaml" do
@@ -151,8 +152,8 @@ class Papis < Formula
   end
 
   resource "soupsieve" do
-    url "https://files.pythonhosted.org/packages/69/99/a6ca3beb3ccacb41fb3321d8a60e5566f9e6467601ef8eba6a17e1b89778/soupsieve-2.9.2.tar.gz"
-    sha256 "4a55d8cf158a9c2e587fa4922f1bbb91d68ac829e2d6f25403a85747c71daf74"
+    url "https://files.pythonhosted.org/packages/71/c3/1b817965ac12dc002d7c9cd7dfffdd7d4fbf9b45763ef2ffe7b86ee94670/soupsieve-2.10.tar.gz"
+    sha256 "49e9380d7d2905463583bafe285e818c7366a9ed7b3aee221c1ac79c905d8bc0"
   end
 
   resource "text-unidecode" do
@@ -176,13 +177,13 @@ class Papis < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/53/0c/06f8b233b8fd13b9e5ee11424ef85419ba0d8ba0b3138bf360be2ff56953/urllib3-2.7.0.tar.gz"
-    sha256 "231e0ec3b63ceb14667c67be60f2f2c40a518cb38b03af60abc813da26505f4c"
+    url "https://files.pythonhosted.org/packages/e3/05/b17359e1cefb4f909b5e40b1b90a496d987258916dbbf88e842c729f510e/urllib3-2.8.0.tar.gz"
+    sha256 "63bf2ead4c879426ebf22ef2a781eeb4aa3b4ae798a0435506f8687fd5bb9b63"
   end
 
   resource "wcwidth" do
-    url "https://files.pythonhosted.org/packages/36/57/ed58088fafdf4c55a0ad6bde846502567645424d7ebf325230b9237f4085/wcwidth-0.8.3.tar.gz"
-    sha256 "d128512515fbf4612e0ff21fd6380399210318b7b54a9af59dff8454cf9730eb"
+    url "https://files.pythonhosted.org/packages/dc/ac/3a943d2792c9bb368aaa8b50121c0f778460ba2d7fbdc0a0366201d9e761/wcwidth-0.9.1.tar.gz"
+    sha256 "5823209b0d43af322ce698c689380d7c15ca31fa8e6e3be8459f27031bef0af5"
   end
 
   def install

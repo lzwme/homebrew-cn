@@ -14,14 +14,12 @@ class Perl < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "42bd9480eceb8d3d7e980695d98bf2cfd686958733e745cb52371d5d40beda05"
-    sha256 arm64_tahoe:       "d0978a92bfa545e49bf6dd16ce65d864c4f1d8c79105bab702845c1b16ddf5a9"
-    sha256 arm64_sequoia:     "2bd60c90c3a42cca58058a7158affc1df1bcf3ef411e0e8722320720537091f8"
-    sha256 arm64_sonoma:      "e5050ff19ceff250467139163ebfa608a46f1ddf9dde633be2ec6825e42b04c9"
-    sha256 sequoia:           "d6597a6ca568ceb53f8d8b6086f7fe746e30b6af49fbea3830a47eb572a71de7"
-    sha256 sonoma:            "785dbb6aeb21f3be8cc2ca414756f001879533b23ba91cb796f9b55be7e3f669"
-    sha256 arm64_linux:       "9c505ddbdf12eb5fb761f6ae5a9c6b0ce6659e058ae26d0beb3bdc7a968e81e5"
-    sha256 x86_64_linux:      "d497cdf66dd8e426392d85902d59e2644d46195dd3dead1c17ac6f533fa12f41"
+    rebuild 1
+    sha256 arm64_golden_gate: "112e18c3c12684a683ed68a2899f5891ca292c629dacd5aac44d4741120b477d"
+    sha256 arm64_tahoe:       "3933a5884ef2db18d9fc0681c5aa977877249f088781fc55a69f075bb9bf8715"
+    sha256 arm64_sequoia:     "1d63c5b5b743b9d30ea425ecd9d6bf6adabcff7848c33136f404cf602ccc7662"
+    sha256 arm64_linux:       "6de7e6ae13d1f1e02b9f2497cc747d96c2e30ca3797042bae01633e97031298e"
+    sha256 x86_64_linux:      "30389a67e4de441632b29645353b8ed1b3e774310abc910e5f1a6e04a9384eca"
   end
 
   depends_on "gdbm"
@@ -30,6 +28,8 @@ class Perl < Formula
 
   # Prevent site_perl directories from being removed
   skip_clean "lib/perl5/site_perl"
+
+  deny_network_access!
 
   def install
     args = %W[
@@ -46,6 +46,7 @@ class Perl < Formula
       -Dstartperl=#!#{opt_bin}/perl
       -Dman1dir=#{opt_share}/man/man1
       -Dman3dir=#{opt_share}/man/man3
+      -Dman3ext=3pm
       -Duseshrplib
       -Duselargefiles
       -Dusethreads

@@ -49,7 +49,7 @@ class Ggml < Formula
     end
   end
 
-  deny_network_access!
+  allow_network_access! :test
 
   def install
     # CPU detection is needed to build multiple backends, particularly on ARM (e.g. `-march=armv8.x-a+...`)

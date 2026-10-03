@@ -3,17 +3,17 @@ class Hf < Formula
 
   desc "Client library for huggingface.co hub"
   homepage "https://huggingface.co/docs/huggingface_hub/guides/cli"
-  url "https://files.pythonhosted.org/packages/0f/47/44e258e8f710d418bcf7522c966cd70c4b780fb2b65021f7c5f4f5461677/huggingface_hub-2.0.0.tar.gz"
-  sha256 "375e5ad35cb3505efbf19c0cdd7e3fbf1e2304b12cd0e6b7fc8d75c6f5484619"
+  url "https://files.pythonhosted.org/packages/5e/58/542f21ca4af36c79b157280abc1874cd0d8dedd45a8a3554759a859abe02/huggingface_hub-2.1.1.tar.gz"
+  sha256 "c56285bb7047ff1fe510f23be0705934fb3fd43afda75543341e6574a7e79630"
   license "Apache-2.0"
   head "https://github.com/huggingface/huggingface_hub.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "a6fe6f0d66be402845f493b3c3821c78cf7f4d7d32e5b1f428178a8128f03f52"
-    sha256 cellar: :any, arm64_tahoe:       "a9e5d82bf01c7dbf83e40a6f73834942c098b0c01f1617af2465f961dcca0ace"
-    sha256 cellar: :any, arm64_sequoia:     "9c94fb38fe918f46c52140cd8f5a145641ea2af81f24212f20751b9f6d5746ec"
-    sha256 cellar: :any, arm64_linux:       "551ac0045d1a7ef80751c2513e83b9bf6077c916e19e4203706a0e04941a45d2"
-    sha256 cellar: :any, x86_64_linux:      "f51224c63cbd7973d3e5914dc2f9a4ac9bf8a033ed631bee35a46432e264190e"
+    sha256 cellar: :any, arm64_golden_gate: "945f495d0890b4a25f5e94ce1f662a1a4316773ef0f30306dc6f4c93f3d2a456"
+    sha256 cellar: :any, arm64_tahoe:       "02bd252a6a03c4841d8eeb7092a077cbf88237eef589befa84108c2bf2b246e8"
+    sha256 cellar: :any, arm64_sequoia:     "901eee2c094e20d98fb26f2ffed00556fec1b147eeec3f2bf35513602085273e"
+    sha256 cellar: :any, arm64_linux:       "250c0291f08805b514612908df5248cd3764f9469cea5c200acf8139378e79b7"
+    sha256 cellar: :any, x86_64_linux:      "051b33a0c022bb92a2ccf8273b4ca851ff66099383b3938194d75aaaceb21ce4"
   end
 
   depends_on "pkgconf" => :build
@@ -42,8 +42,8 @@ class Hf < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/4f/b8/9ba8f569df649beb7058db5eb392a5f779bdbc3b82cf3942f0be439fb99e/filelock-4.0.3.tar.gz"
-    sha256 "87296d60478e14204fd9406e79831400fef76693bae2895deec236c98e87a8aa"
+    url "https://files.pythonhosted.org/packages/cc/19/d4f21fc4b7ad098dd3c774ccb2a2929178b15d6e1a3ba7d0929817c0b30c/filelock-4.0.8.tar.gz"
+    sha256 "733d9b6b153fc63672f86104324186818b6bbe9dd7db84e9bb9887b6a04a2775"
   end
 
   resource "fsspec" do

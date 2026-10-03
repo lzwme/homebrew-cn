@@ -1,8 +1,8 @@
 class WasmTools < Formula
   desc "Low level tooling for WebAssembly in Rust"
   homepage "https://github.com/bytecodealliance/wasm-tools"
-  url "https://ghfast.top/https://github.com/bytecodealliance/wasm-tools/archive/refs/tags/v1.260.0.tar.gz"
-  sha256 "a0fea568085f3f33f1f8064fe28d34f27fd12d8a083427fb6a3fb5f445af2770"
+  url "https://ghfast.top/https://github.com/bytecodealliance/wasm-tools/archive/refs/tags/v1.261.0.tar.gz"
+  sha256 "fa78e7cf1f6e5e76c8590f950a55256fd77e5f1cd55392d9b2da25b8a89b4e5c"
   license any_of: [
     { "Apache-2.0" => { with: "LLVM-exception" } },
     "Apache-2.0",
@@ -16,11 +16,11 @@ class WasmTools < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "1394e9db173c4ba5dada0c62717c46a888c5ec90a344ae9aa31fc5002196564e"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "07d76b7c414703970a98a1068cb6f589de17d2753ae24e1234b253f558937a1b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "5bd99aed9717b52d098df09d54df81061cd05b658272ecec19508d257f6607e3"
-    sha256 cellar: :any,                 arm64_linux:       "9034d9d693f56048300e62ecc96a92280a8f448ffc862709ec7ed4e9c124fa41"
-    sha256 cellar: :any,                 x86_64_linux:      "1caba430c7104ab482ef706f4a9fb38d530d15df4da640c3821f92f33572a872"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "2edb300b5c2b18b6024a97fc5aa7c79526c07834852e63b974ba128bba6da277"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "174ea331dbc6bd3bfddf16999754edfba048a8ac390b549cac0f28a995612f5d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "743aac9d0adb78e94cc280344456a042a6879fc2dcfec66ea596cd45386f2ece"
+    sha256 cellar: :any,                 arm64_linux:       "939365fc926f549d509bf861103371eb2a8c12400f1ba848bb47eb3cb2fe2b89"
+    sha256 cellar: :any,                 x86_64_linux:      "f0c1ca6e0d2c7ed623cb4c7e6e9378be33525845d5500f836b87dd8491972719"
   end
 
   depends_on "rust" => :build

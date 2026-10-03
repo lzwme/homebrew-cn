@@ -2,19 +2,17 @@ class Eksctl < Formula
   desc "Simple command-line tool for creating clusters on Amazon EKS"
   homepage "https://eksctl.io"
   url "https://github.com/eksctl-io/eksctl.git",
-      tag:      "v0.230.0",
-      revision: "6ee3b761771c4ae78c76c82bbf2ea168afd61a9e"
+      tag:      "v0.231.0",
+      revision: "f671416a1ca0f8eb407dd0056de22044283926b2"
   license "Apache-2.0"
   head "https://github.com/eksctl-io/eksctl.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "f2c1f1d9c447a3803a0c3b4a5676dbdb561462c511c9bb136ae1cbdc1906e3ab"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "41fa89e30a3a9828d86124e32644df97bccd9e637b9b5f95a1b7fe99eecce0c5"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "6cc6403758f63ae26ec34881db41e45acc125a25ba4a4b2671dfff76969b7609"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "9b85a8a7c756304693f568ca594c85a85253f3ba07035f81de5d8a354daf96dc"
-    sha256 cellar: :any_skip_relocation, sonoma:            "87b5b47e0bf209a78513c4bf4b68fbbd5a1b233570c2f741b6b998abf2356fc1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "4a2085ac39cbf61651724ceab61d57915fcf17dc01029d3ea3267d22213b129e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "38842c2f7c333dbc066840255512a48add4f56b8eb5f64084fad4b24b2dc4ab6"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "a8a182e9644298c2d1e633e14303705cbea402866512fd4840bff6350b8a3b10"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "d1793ce732f49d2a76a3acb659faf8be551e49d847e1885dde3943dc8b1491ad"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "b1945f74d6c24eb2f93a83bb8753cfcf6595a0d665eaa69a784e9a244db67ba4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "3f7130236713c29cc8c2215719b466f1bb693b2feb6d097ada426622aad420bb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "f0f021f674af45047a705b2f515e8e4e5b659e5864e9f1e450bfb5904ae36102"
   end
 
   depends_on "go" => :build

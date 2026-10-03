@@ -6,16 +6,15 @@ class Mk < Formula
   url "https://files.pythonhosted.org/packages/75/9e/dcc7813d9f7133f8d384eca24a4d4bb0cb056abcc53f1f170b8353084feb/mk-3.0.0.tar.gz"
   sha256 "0a041a3620057165f155b8372469d8ab55ae94dd91d6e27723ab9a7de1aa2086"
   license "MIT"
-  revision 14
+  revision 15
   head "https://github.com/pycontribs/mk.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "c5a51a4afa19ab88cfcc9d0dacb6b185017b421e9077852ccc9cc93f88a249ba"
-    sha256 cellar: :any, arm64_tahoe:       "97aa4ac231478f5bbdf932d476ef424a65d1564b1de0e64b2b68d8ebc79b82da"
-    sha256 cellar: :any, arm64_sequoia:     "4c051a4abe8f6620d4133d7d9b0a5497605c444faad96e2421b84d188f02eec8"
-    sha256 cellar: :any, arm64_sonoma:      "6869ca5f87dbbf5ef459ff886e5e5a59a3052ed67b5463f4946a0839d08f68a8"
-    sha256 cellar: :any, arm64_linux:       "9133361afb912c0139510b42008727bea5b60025e52df64014c57b9fbf4b3a1c"
-    sha256 cellar: :any, x86_64_linux:      "1d3c1bc038b6106a457acfc730d3db8a25dadd8cf12bc978bb9c8347fcc037ff"
+    sha256 cellar: :any, arm64_golden_gate: "07dbae2a90fb295c472609905216f75775534567d83fcc89b8c8cb677b9bdb5a"
+    sha256 cellar: :any, arm64_tahoe:       "51e1b2814a6d8f5563cf4a7ae7831b50d600061240d537e17e6028aa470d440d"
+    sha256 cellar: :any, arm64_sequoia:     "7bb06e2ebbbac8fbd680bbacc290992cd04d8c8308d6d446e0e274a12345de80"
+    sha256 cellar: :any, arm64_linux:       "2971e734da1f09f17904ae2e8e2bd5e7d83c1b7f403c88bdd132eb2b5c62c883"
+    sha256 cellar: :any, x86_64_linux:      "f94110bb45214e1f4e18f7e2af13f604edadd1f2d4fe9b8324529790db10afc4"
   end
 
   depends_on "rust" => :build
@@ -36,13 +35,13 @@ class Mk < Formula
   end
 
   resource "build" do
-    url "https://files.pythonhosted.org/packages/4d/b7/1db48a9ce2984842c8c886432ec8a2719613322e868a966ba82a28862f25/build-1.6.0.tar.gz"
-    sha256 "bd2c8afc603e7a2e0ce70e2ea85f0a6d02043bafbd307f5bada0f98669eca5af"
+    url "https://files.pythonhosted.org/packages/bd/67/4898a44ea4f3f8e213b0954ec0aa0a16971d62a6212d6ea3931e97115b99/build-1.6.1.tar.gz"
+    sha256 "51cc11666391ab6f092070437ac747002ff46f3e4113a3622177ee6b488bfc53"
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/e5/3f/143b048436775b0f76ac3eec145c019e8173ccc2885c8f20319b996d5e83/charset_normalizer-3.5.1.tar.gz"
-    sha256 "6117b84ea48435e5356dc737f5121485c30920ba43375fa7b434fd753df0eac3"
+    url "https://files.pythonhosted.org/packages/33/1c/f41d4e74c28ab327ff3acd36053f7ea506c55872d7a90b0fa71aa3ab0c89/charset_normalizer-3.5.2.tar.gz"
+    sha256 "39de2a259fc954455c57274dc94c79d5842774e1247a016aff30bc0efed0f4ef"
   end
 
   resource "diskcache" do
@@ -61,8 +60,8 @@ class Mk < Formula
   end
 
   resource "gitpython" do
-    url "https://files.pythonhosted.org/packages/6f/61/3285044215fb596bf093e39ccb96ece0a1076a8ca57a61e069a6a33cdb1b/gitpython-3.1.61.tar.gz"
-    sha256 "f51c24d8c0f733a195447385f5774a5dfe8767f5acfd7994a33755644c6ecc95"
+    url "https://files.pythonhosted.org/packages/6e/2d/6f6e649818da44d4499604802c89329b8d9799687a124e3a5e467a643336/gitpython-3.2.0.tar.gz"
+    sha256 "fb92310af6844d96adc95ca066ed2e617c00e1dbd146a326626c81e72e18cc2e"
   end
 
   resource "id" do
@@ -71,8 +70,8 @@ class Mk < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/5f/f7/abb373e5757eaec4b922b92f97ec8d6d7e057cf06778247604fbc4e7c3f3/idna-3.19.tar.gz"
-    sha256 "5e0811a4383b21dc5838069f801c4fb62113b7447663d2530d2bd6e77b49bf15"
+    url "https://files.pythonhosted.org/packages/f5/08/8eea9d4b8302028f3abb2c0813953f7aec26d33b7a8960ed760e65ff29fa/idna-3.20.tar.gz"
+    sha256 "a7db850025b95ded1eae8a46181a1a6c56c92c96f0e2b005d9ff8dc0210cab44"
   end
 
   resource "jaraco-classes" do
@@ -136,8 +135,8 @@ class Mk < Formula
   end
 
   resource "pyproject-hooks" do
-    url "https://files.pythonhosted.org/packages/e7/82/28175b2414effca1cdac8dc99f76d660e7a4fb0ceefa4b4ab8f5f6742925/pyproject_hooks-1.2.0.tar.gz"
-    sha256 "1e859bd5c40fae9448642dd871adf459e5e2084186e8d2c2a79a824c970da1f8"
+    url "https://files.pythonhosted.org/packages/6d/5d/f2ddeef4a855a102aaae5e97826a0260007522ab504421b75addfdb1517c/pyproject_hooks-1.3.3.tar.gz"
+    sha256 "defda19b854fa0d3bd4f76ea4ddcba8abd7dcfcdd585a6690ade050744fc5f43"
   end
 
   resource "pyyaml" do
@@ -211,8 +210,8 @@ class Mk < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/53/0c/06f8b233b8fd13b9e5ee11424ef85419ba0d8ba0b3138bf360be2ff56953/urllib3-2.7.0.tar.gz"
-    sha256 "231e0ec3b63ceb14667c67be60f2f2c40a518cb38b03af60abc813da26505f4c"
+    url "https://files.pythonhosted.org/packages/e3/05/b17359e1cefb4f909b5e40b1b90a496d987258916dbbf88e842c729f510e/urllib3-2.8.0.tar.gz"
+    sha256 "63bf2ead4c879426ebf22ef2a781eeb4aa3b4ae798a0435506f8687fd5bb9b63"
   end
 
   def install

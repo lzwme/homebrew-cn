@@ -6,17 +6,15 @@ class MongoOrchestration < Formula
   url "https://files.pythonhosted.org/packages/c9/3b/6e579eb7aae04e95c194e6ca57666bc4d1cd0dff4f81de0b3f7e663222b5/mongo_orchestration-0.11.2.tar.gz"
   sha256 "6f0996e5bb072e8dbd0009289b31debb88a647f562c486cfc2c73583ab059993"
   license "Apache-2.0"
-  revision 3
+  revision 4
   head "https://github.com/mongodb-labs/mongo-orchestration.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "68da2858566319404e86c10b1d1ffc35a45096fe4a3170b3a2caed24614d2569"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "98aad9202dd631affe1b734a485dcd6f5135f2cca12de99c99d672c410442139"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "445b318caa31aea5fad5ad0ec528f7a137b68957bd764d1b3206e8fe78a630da"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "1b10f2652820f14c0de9d07e3731dbfad4aab7cd19b0909d7018a3eb8c0d4e34"
-    sha256 cellar: :any_skip_relocation, sonoma:            "85ba26eae7bc5e71ca50f8a7305d70301c1439bd37c47afd3a8bd946dccde5d3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "a43c67cbdf6571564519b684bd3674a3553cef4378093bcb5852106c11eb7fc3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "3be5b3bcc5993f7e48af9c46f17984eb9eb3ec0d4231b2618b204d565c75ce5d"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "d7df1c44377977d741acad2ccd12c01fe49400ece6d36ce0091a8191d3fd78a0"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "626367ed910b291e69fb160cd8a1f5a1e5211edeeeda9f5ffd01a005eb412b98"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "96de464286b9b3b418e060bcd9094b0135ccd2b34b06fbf2468c3a38c60bbeae"
+    sha256 cellar: :any,                 arm64_linux:       "9ef25c6ffba7f9e72f7fb43d02657cd04bf305fbd68e95ea6ac5c61da587e184"
+    sha256 cellar: :any,                 x86_64_linux:      "b0caf75946a7792342184a885c9f731cc0fac6b032e3c64a1c86869d5f8614b4"
   end
 
   depends_on "certifi" => :no_linkage
@@ -30,8 +28,8 @@ class MongoOrchestration < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/e7/a1/67fe25fac3c7642725500a3f6cfe5821ad557c3abb11c9d20d12c7008d3e/charset_normalizer-3.4.7.tar.gz"
-    sha256 "ae89db9e5f98a11a4bf50407d4363e7b09b31e55bc117b4f7d80aab97ba009e5"
+    url "https://files.pythonhosted.org/packages/33/1c/f41d4e74c28ab327ff3acd36053f7ea506c55872d7a90b0fa71aa3ab0c89/charset_normalizer-3.5.2.tar.gz"
+    sha256 "39de2a259fc954455c57274dc94c79d5842774e1247a016aff30bc0efed0f4ef"
   end
 
   resource "cheroot" do
@@ -45,23 +43,23 @@ class MongoOrchestration < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/82/77/7b3966d0b9d1d31a36ddf1746926a11dface89a83409bf1483f0237aa758/idna-3.15.tar.gz"
-    sha256 "ca962446ea538f7092a95e057da437618e886f4d349216d2b1e294abfdb65fdc"
+    url "https://files.pythonhosted.org/packages/f5/08/8eea9d4b8302028f3abb2c0813953f7aec26d33b7a8960ed760e65ff29fa/idna-3.20.tar.gz"
+    sha256 "a7db850025b95ded1eae8a46181a1a6c56c92c96f0e2b005d9ff8dc0210cab44"
   end
 
   resource "jaraco-functools" do
-    url "https://files.pythonhosted.org/packages/36/cf/ea4ef2920830dea3f5ab2ea4da6fb67724e6dca80ee2553788c3607243d0/jaraco_functools-4.5.0.tar.gz"
-    sha256 "3bb5665ea4a020cf78a7040e89154c77edadb3ca74f366479669c5999aa70b03"
+    url "https://files.pythonhosted.org/packages/6c/1f/c23395957d41ccf27c4e535c3d334c4051e5395b3752057ba4cbaec35c56/jaraco_functools-4.6.0.tar.gz"
+    sha256 "880c577ec9720b3a052d5bc611fb9f2269b3d87902ef42440df443b88e443280"
   end
 
   resource "more-itertools" do
-    url "https://files.pythonhosted.org/packages/a2/f7/139d22fef48ac78127d18e01d80cf1be40236ae489769d17f35c3d425293/more_itertools-11.0.2.tar.gz"
-    sha256 "392a9e1e362cbc106a2457d37cabf9b36e5e12efd4ebff1654630e76597df804"
+    url "https://files.pythonhosted.org/packages/de/1d/f4da6f02cdffe04d6362210b807146a26044c88d839208aec273bb0d9184/more_itertools-11.1.0.tar.gz"
+    sha256 "48e8f4d9e7e5878571ecf6f2b4e57634f93cd474cc8cfbd2376f2d11b396e30d"
   end
 
   resource "pymongo" do
-    url "https://files.pythonhosted.org/packages/ca/64/50be6fbac9c79fe2e4c17401a467da2d8764d82833d83cec325afe5cab32/pymongo-4.17.0.tar.gz"
-    sha256 "70ffa08ba641468cc068cf46c06b34f01a8ce3489f6411309fcb5ceabe6b2fc0"
+    url "https://files.pythonhosted.org/packages/dc/04/455039b475bb8afa5af9b8c363fb773a45d898016f04ee40c1c75003a3f9/pymongo-4.18.2.tar.gz"
+    sha256 "1bd4321cc63c06954953eae9eb8fb5d9075296b96c0e3ed34ccb91a0dcce31a5"
   end
 
   resource "requests" do
@@ -70,8 +68,8 @@ class MongoOrchestration < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/53/0c/06f8b233b8fd13b9e5ee11424ef85419ba0d8ba0b3138bf360be2ff56953/urllib3-2.7.0.tar.gz"
-    sha256 "231e0ec3b63ceb14667c67be60f2f2c40a518cb38b03af60abc813da26505f4c"
+    url "https://files.pythonhosted.org/packages/e3/05/b17359e1cefb4f909b5e40b1b90a496d987258916dbbf88e842c729f510e/urllib3-2.8.0.tar.gz"
+    sha256 "63bf2ead4c879426ebf22ef2a781eeb4aa3b4ae798a0435506f8687fd5bb9b63"
   end
 
   def install

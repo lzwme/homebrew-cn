@@ -5,14 +5,14 @@ class PandocCrossref < Formula
   version "0.3.25a"
   sha256 "91712810bf91807869dbda35f5186cd4f39352c6201d5712c8f4ce1ac3691ab5"
   license "GPL-2.0-or-later"
+  revision 1
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "4a4e1b6d9652ef3e91fa419d1f959bedc7e11fd023e2e75be4642841683a03ef"
-    sha256 cellar: :any, arm64_tahoe:       "65567325efc7a6eb28cf5506ecaf3c44c3865d1d04b3898863c54b8e6926f920"
-    sha256 cellar: :any, arm64_sequoia:     "c32ff566e178ebe701acd0e805d18c956e0347aa2b2281963ddbfaffa51a7da5"
-    sha256 cellar: :any, arm64_sonoma:      "c2df91ac73bf8668a8436d0037fb67ac959d51048bcec02b1bde1f4955c8addf"
-    sha256 cellar: :any, arm64_linux:       "994e80c28e87596b96a098c15cf66ff54ef3c4b5b31d8a40297826050d070683"
-    sha256 cellar: :any, x86_64_linux:      "ee0aeaad2a8b0f09e4df07f4ace15d7d288093c770e6a8b3198825882733b1e1"
+    sha256 cellar: :any, arm64_golden_gate: "8baf63bdaf5a90cff63365481afa4de0ed53b9e1678cdb4bf080a1952ed6065f"
+    sha256 cellar: :any, arm64_tahoe:       "0f656d96c2b4066a7cda1116e858c62836cc9fe09dc494231ccda73aa7032952"
+    sha256 cellar: :any, arm64_sequoia:     "eb3f1d7443971a27ce678840fd0132edb5dafc8ec802f608c83023f2c9868722"
+    sha256 cellar: :any, arm64_linux:       "f8b14d36dc80528f96b35ebf54d25e174ed5fa3c8a559695e3517ffde505e83b"
+    sha256 cellar: :any, x86_64_linux:      "ab176e90248bfc3ec1d4ba4b633f848493ddab1cc7d4a87a803003a939142f5b"
   end
 
   depends_on "cabal-install" => :build
@@ -25,6 +25,14 @@ class PandocCrossref < Formula
 
   on_linux do
     depends_on "zlib-ng-compat"
+  end
+
+  # Relax the pandoc bound so the filter is compiled against pandoc 3.12
+  patch do
+    url "https://github.com/daeho-ro/pandoc-crossref/commit/5709f41df96ab5a7ca6d573e5695d10fc0db2928.patch?full_index=1"
+    sha256 "6ad18e41d5b89dd58cf452ccc83a9a6f1dcbb16562a954c86e328ea0306ec43f"
+    type :unofficial
+    resolves "https://github.com/lierdakil/pandoc-crossref/pull/514"
   end
 
   def install

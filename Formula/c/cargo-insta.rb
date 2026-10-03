@@ -1,18 +1,16 @@
 class CargoInsta < Formula
   desc "Snapshot testing CLI for Rust"
   homepage "https://insta.rs"
-  url "https://ghfast.top/https://github.com/mitsuhiko/insta/archive/refs/tags/1.48.0.tar.gz"
-  sha256 "acd7140f00155f3fe50b723296fb828dea9de68297f3e26f8a7e442bcc62fa79"
+  url "https://ghfast.top/https://github.com/mitsuhiko/insta/archive/refs/tags/1.49.0.tar.gz"
+  sha256 "4115f605a25f73bcf5bfda09b4992c03b6c37087f618b4afddcc43e23753b363"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "2b7aab9a552748a9a43ae149c6ad7b00b6795c78839d5c39eca9958e99c23f47"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "b48fff37f4381671d507159a9cd4122857d3ba888fa8c6dc17b925cdb5341174"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "1d6a9055ddbc17aae68feece40ace6a57be0677fcbcdd6339cb0d9d55b49bd56"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "4b17ad755ae64ce2ca35e18362ba9e123931668347d01fed461c94bf77e31ab9"
-    sha256 cellar: :any_skip_relocation, sonoma:            "bbc9eb83989f9f6e98744b16424d2d042162a8a303b272cfd63d8ac7f60b7fb0"
-    sha256 cellar: :any,                 arm64_linux:       "9fdaaa8b6a695e3535361b5870138c878ef5a91f20c0bd2e6aca03ec0780c272"
-    sha256 cellar: :any,                 x86_64_linux:      "3360339dadaff05b5f0d9de7df6868e952f823cc8ddfa38942d44e544746bda8"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "66d453af9becd015f430d9a2a4e7b0834a51d05d56cce59bdc6028c092f7860d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "bff749424745429b805d49f9ecee77368813f2927d86e4360590bba3dc79569a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "8064ed44a425ca2fa958e2c06c303ca9237419329447a66220e1fefc8c21009f"
+    sha256 cellar: :any,                 arm64_linux:       "945d27950d3dc8f1ff09be80c60c02932e95b8644fcb5b944d53fe696b9e47e7"
+    sha256 cellar: :any,                 x86_64_linux:      "2a05782154dbbc0d5b6a77997697bb44773f9a21f73e70bbc46f6108769860e5"
   end
 
   depends_on "rust" => :build

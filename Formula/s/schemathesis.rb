@@ -3,16 +3,16 @@ class Schemathesis < Formula
 
   desc "Testing tool for web applications with specs"
   homepage "https://schemathesis.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/bc/3a/11986afb7e8cd509fdd243e601fb5693db8bdc34c91e7141aa5325f82367/schemathesis-4.28.0.tar.gz"
-  sha256 "4a2f882dc614db41df0b73800a2e26754e00fff6e1086689a2db1755cc9e6eb4"
+  url "https://files.pythonhosted.org/packages/9b/7f/1645c745fa0d49f4c36eba863b204b49c31a457f727cc0f8b1339dc66c05/schemathesis-4.29.0.tar.gz"
+  sha256 "2419798da5e6a78edbdff6a689a43913d60ad08d9c83a6f592752edc7afee34e"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "99ef5bd5a7cd546b1134d42f83be7fa595bde6a6124261eebef59825618c4343"
-    sha256 cellar: :any, arm64_tahoe:       "e5436baded8f14a9d51b3b367ab59995fd6e3230bb3a77c68cbe69f2a6a71af7"
-    sha256 cellar: :any, arm64_sequoia:     "31bca6253dda5e8e4155ae947c3be39b941e7057251e0831a0c0650f5e257fab"
-    sha256 cellar: :any, arm64_linux:       "684b8f60c11c3006568a4b44dd4ff31f53cf6d18ebdf70889046e4f83b0fc5ae"
-    sha256 cellar: :any, x86_64_linux:      "af7b19b3b0317ff86d0c4c3814087c6a971dcf0b0e3b258def113fff5db0781c"
+    sha256 cellar: :any, arm64_golden_gate: "5f261a4724cf7bb38c0d795b325f72a45735be95eb421265261fb24c71de5e29"
+    sha256 cellar: :any, arm64_tahoe:       "2b3afaddfcd1f44c3aef11b0d0ff8d188b307c5b269176858f6c0939f8385540"
+    sha256 cellar: :any, arm64_sequoia:     "ed9c3c8c89dde8373001033b2222dc66a3d9bf52e3ca2e1c2236ff2b4b69b274"
+    sha256 cellar: :any, arm64_linux:       "34162d2bbdd56afe9e49400674ac145864eaf97170abb33640ea695d81a31ff1"
+    sha256 cellar: :any, x86_64_linux:      "5a73a0a3652a8ffc8a9b4c7cba18d074368434a126e9962e7623831a06551705"
   end
 
   depends_on "rust" => :build # for jsonschema-rs
@@ -31,8 +31,8 @@ class Schemathesis < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/e5/3f/143b048436775b0f76ac3eec145c019e8173ccc2885c8f20319b996d5e83/charset_normalizer-3.5.1.tar.gz"
-    sha256 "6117b84ea48435e5356dc737f5121485c30920ba43375fa7b434fd753df0eac3"
+    url "https://files.pythonhosted.org/packages/33/1c/f41d4e74c28ab327ff3acd36053f7ea506c55872d7a90b0fa71aa3ab0c89/charset_normalizer-3.5.2.tar.gz"
+    sha256 "39de2a259fc954455c57274dc94c79d5842774e1247a016aff30bc0efed0f4ef"
   end
 
   resource "click" do
@@ -41,8 +41,8 @@ class Schemathesis < Formula
   end
 
   resource "graphql-core" do
-    url "https://files.pythonhosted.org/packages/11/7f/671c1046fe72ba5b62be2de3979ea9e61cb3dba8f1edfb880b811f8bdf8b/graphql_core-3.2.12.tar.gz"
-    sha256 "4579094d5fc8a1a59555a9b18e51b320779d9bbc63e2302c519af0c4919d9543"
+    url "https://files.pythonhosted.org/packages/4e/5e/aa0d4e701b50db0bab71b125dd19ddb0f98c638d008d6f7e3d8ce9cbc92e/graphql_core-3.2.13.tar.gz"
+    sha256 "bb81dd266d4ab7b591bd976f1b23639d97776cb9ac1a896b4a93c271e11ed618"
   end
 
   resource "harfile" do
@@ -51,8 +51,8 @@ class Schemathesis < Formula
   end
 
   resource "hypothesis" do
-    url "https://files.pythonhosted.org/packages/5a/ce/c0946bebffb99b62426a6a7643d4272cc6c5cf777a488b3b4d0ee724e960/hypothesis-6.168.0.tar.gz"
-    sha256 "72af51087b7b5ab21c49f0d502f803c20897678652835596bd2a8b169a39135e"
+    url "https://files.pythonhosted.org/packages/09/b7/13118bbc45d6d8b9d04e2de779e2a4ff23145ea39efa692b994fb874ca72/hypothesis-6.168.3.tar.gz"
+    sha256 "a43388f9067678fef6e13bdff325b6cfa6961a590498bb37f7ff31589c83bc75"
   end
 
   resource "hypothesis-graphql" do
@@ -71,8 +71,8 @@ class Schemathesis < Formula
   end
 
   resource "jsonschema-rs" do
-    url "https://files.pythonhosted.org/packages/b4/d6/e3eaf97f6daf16f006df57736052656ca717a35bb4651548b5c96fe43e5c/jsonschema_rs-0.57.1.tar.gz"
-    sha256 "08ed69730c526544aff246d802373a2abf76082eb1aa7759528d104cad9a883b"
+    url "https://files.pythonhosted.org/packages/8e/1a/14a6bba94f5d679f5ea3630badd137e945545eb1e308a5e4eca42c585b36/jsonschema_rs-0.58.4.tar.gz"
+    sha256 "b4346c88c0cb692e630e25b13bcb3c37d33d6cf884d5849dbfb85e2fa07de4c9"
   end
 
   resource "markdown-it-py" do
@@ -146,8 +146,8 @@ class Schemathesis < Formula
   end
 
   resource "werkzeug" do
-    url "https://files.pythonhosted.org/packages/dd/b2/381be8cfdee792dd117872481b6e378f85c957dd7c5bca38897b08f765fd/werkzeug-3.1.8.tar.gz"
-    sha256 "9bad61a4268dac112f1c5cd4630a56ede601b6ed420300677a869083d70a4c44"
+    url "https://files.pythonhosted.org/packages/a4/34/4dd12fc8bb7d61c91467ec3efe415ffa7d5456f799954b40c5bbaeae470e/werkzeug-3.1.9.tar.gz"
+    sha256 "55ca7c70a75689be937aa27f8ff4b018f06ff4838fc73045560bf0f5a1291060"
   end
 
   def install
@@ -167,7 +167,7 @@ class Schemathesis < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/st --version")
     openapi_url = "https://httpbin.dmuth.org/openapi.json"
-    output = shell_output("#{bin}/st run #{openapi_url} --phases examples --include-path /ip")
+    output = shell_output("#{bin}/st run #{openapi_url} --phases examples --include-path /ip", 2)
     assert_match "Specification:    Open API 3.1.0", output
     assert_match "No test cases were generated", output
   end

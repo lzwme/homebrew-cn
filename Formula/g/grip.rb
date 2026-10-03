@@ -6,16 +6,14 @@ class Grip < Formula
   url "https://files.pythonhosted.org/packages/f4/3f/e8bc3ea1f24877292fa3962ad9e0234ad4bc787dc1eb5bd08c35afd0ceca/grip-4.6.2.tar.gz"
   sha256 "3cf6dce0aa06edd663176914069af83f19dcb90f3a9c401271acfa71872f8ce3"
   license "MIT"
-  revision 21
+  revision 22
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "e895e1c3516326d9a96c974c98c879181bcf21c0e3356362e5adbe2807b62e2c"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "4dd938c60743031d34eb7a6bfb6f2d83f5e3b41b610232d21e85850fa5d69b0f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "02f95e9882be64d789fc15485e13a4c47ddcd7b0709be2537a0c864f2cc35fa6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "c950edc4b30d2554ee59dc9b70e410fa7c1631c7f2de98011de0ea7d425bcd90"
-    sha256 cellar: :any_skip_relocation, sonoma:            "6113ce18559125c367e50c56d4c6d8ebe97c3adb7d35d0abd69e5c61c1d7a389"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "e54b2fab5421483739937976b6ddd9fb4292572ed47617c1f1bd5ea4199dcf6a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "330f74ec3966a0da73cb491198448c007fd2e7eb6a470430e951e7c7e06bcc73"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "9813bb434a834bba1a20b0a7e32f12a0edddc8a7bcd496da07f5f12d24c88e5d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "7bfeb48c0a059f124188e8223341057c4d90ea470b84010e4fc31cf91380d46d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "523b02502c1fc3ed1eeac3b53da4055ff6517e1a320926078b3bf7d9276c1be1"
+    sha256 cellar: :any,                 arm64_linux:       "d9291412ef1cfaf2417f92670e33b0372fbecd5905bbf226cfa6302612edf048"
+    sha256 cellar: :any,                 x86_64_linux:      "fb596e64d1ba9065dfcb21042bebbafe9c72042ee8acc52ab6351b2ed3359d7f"
   end
 
   depends_on "certifi"
@@ -29,13 +27,13 @@ class Grip < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/e7/a1/67fe25fac3c7642725500a3f6cfe5821ad557c3abb11c9d20d12c7008d3e/charset_normalizer-3.4.7.tar.gz"
-    sha256 "ae89db9e5f98a11a4bf50407d4363e7b09b31e55bc117b4f7d80aab97ba009e5"
+    url "https://files.pythonhosted.org/packages/33/1c/f41d4e74c28ab327ff3acd36053f7ea506c55872d7a90b0fa71aa3ab0c89/charset_normalizer-3.5.2.tar.gz"
+    sha256 "39de2a259fc954455c57274dc94c79d5842774e1247a016aff30bc0efed0f4ef"
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/23/e4/796662cd90cf80e3a363c99db2b88e0e394b988a575f60a17e16440cd011/click-8.4.0.tar.gz"
-    sha256 "638f1338fe1235c8f4e008e4a8a254fb5c5fbdcbb40ece3c9142ebb78e792973"
+    url "https://files.pythonhosted.org/packages/c7/0e/7fa0ef50764b67090eca4114772a2abf8b6148198475e54c660b97caeee6/click-8.5.0.tar.gz"
+    sha256 "ba0d2089de75ea0310e2dde03160e6ca10009947fb95a182f9b54021bb272e34"
   end
 
   resource "docopt" do
@@ -49,8 +47,8 @@ class Grip < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/82/77/7b3966d0b9d1d31a36ddf1746926a11dface89a83409bf1483f0237aa758/idna-3.15.tar.gz"
-    sha256 "ca962446ea538f7092a95e057da437618e886f4d349216d2b1e294abfdb65fdc"
+    url "https://files.pythonhosted.org/packages/f5/08/8eea9d4b8302028f3abb2c0813953f7aec26d33b7a8960ed760e65ff29fa/idna-3.20.tar.gz"
+    sha256 "a7db850025b95ded1eae8a46181a1a6c56c92c96f0e2b005d9ff8dc0210cab44"
   end
 
   resource "itsdangerous" do
@@ -64,8 +62,8 @@ class Grip < Formula
   end
 
   resource "markdown" do
-    url "https://files.pythonhosted.org/packages/2b/f4/69fa6ed85ae003c2378ffa8f6d2e3234662abd02c10d216c0ba96081a238/markdown-3.10.2.tar.gz"
-    sha256 "994d51325d25ad8aa7ce4ebaec003febcce822c3f8c911e3b17c52f7f589f950"
+    url "https://files.pythonhosted.org/packages/f8/4f/700155c8c20d9e655dd0732b5fc3c7614f291b9148da271d7388e50bf774/markdown-3.11.tar.gz"
+    sha256 "180224db6aed87ba9ce1f2781ebcd5826253de8ff637112090e24b84502bbf9f"
   end
 
   resource "markupsafe" do
@@ -79,8 +77,8 @@ class Grip < Formula
   end
 
   resource "pygments" do
-    url "https://files.pythonhosted.org/packages/c3/b2/bc9c9196916376152d655522fdcebac55e66de6603a76a02bca1b6414f6c/pygments-2.20.0.tar.gz"
-    sha256 "6757cd03768053ff99f3039c1a36d6c0aa0b263438fcab17520b30a303a82b5f"
+    url "https://files.pythonhosted.org/packages/49/2e/ced460408999b33da6b31b0021b0f37d329e202d4169aeb164493778f25b/pygments-2.21.0.tar.gz"
+    sha256 "610ca751c9bc2492b38eb9a38a7fbc93edbbb2d7182edaf34e66ae493dee5c8c"
   end
 
   resource "requests" do
@@ -89,13 +87,13 @@ class Grip < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/53/0c/06f8b233b8fd13b9e5ee11424ef85419ba0d8ba0b3138bf360be2ff56953/urllib3-2.7.0.tar.gz"
-    sha256 "231e0ec3b63ceb14667c67be60f2f2c40a518cb38b03af60abc813da26505f4c"
+    url "https://files.pythonhosted.org/packages/e3/05/b17359e1cefb4f909b5e40b1b90a496d987258916dbbf88e842c729f510e/urllib3-2.8.0.tar.gz"
+    sha256 "63bf2ead4c879426ebf22ef2a781eeb4aa3b4ae798a0435506f8687fd5bb9b63"
   end
 
   resource "werkzeug" do
-    url "https://files.pythonhosted.org/packages/dd/b2/381be8cfdee792dd117872481b6e378f85c957dd7c5bca38897b08f765fd/werkzeug-3.1.8.tar.gz"
-    sha256 "9bad61a4268dac112f1c5cd4630a56ede601b6ed420300677a869083d70a4c44"
+    url "https://files.pythonhosted.org/packages/a4/34/4dd12fc8bb7d61c91467ec3efe415ffa7d5456f799954b40c5bbaeae470e/werkzeug-3.1.9.tar.gz"
+    sha256 "55ca7c70a75689be937aa27f8ff4b018f06ff4838fc73045560bf0f5a1291060"
   end
 
   def install

@@ -6,15 +6,14 @@ class Mapproxy < Formula
   url "https://files.pythonhosted.org/packages/61/e1/6c490f14d9f34ea94938d48d544c186ab49699c3ade9fe9f14518e6f2622/mapproxy-7.0.0.tar.gz"
   sha256 "43c4972d98a01b04a2887f88eda5ad74e527233ad8fd01fd943a541907465d56"
   license "Apache-2.0"
+  revision 1
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "1f8888481a67e8efb5609fa66343f82e6c07752a7f29f4e18da14fb3004d0f34"
-    sha256 cellar: :any, arm64_tahoe:       "558488e5c488614a77140ca07c1bda683ca1465d9e4817b913e6f7e2e25b909e"
-    sha256 cellar: :any, arm64_sequoia:     "c148f0d03e022f289302fd292cc025dafa62135a044a3e9b4d07689f42f8ece5"
-    sha256 cellar: :any, arm64_sonoma:      "edb6fbdc52eca1fa9b064146ff0fd517f5b1a893298175db342d6b959868b06d"
-    sha256 cellar: :any, sonoma:            "808b3ff90bd2a904525fa9f95f02f1798ed09e982ac829aefb26db77d1fda243"
-    sha256 cellar: :any, arm64_linux:       "b061b482c59553beb5b5fc64c2c9c8a867e9913d874b2b691adc584b79885b9c"
-    sha256 cellar: :any, x86_64_linux:      "66a8857e1c8a7d2d8f72025a6fae6f2293eea6b13fe8aa0e7a2245dee8798021"
+    sha256 cellar: :any, arm64_golden_gate: "308545bf63b46e5e0be2b609a575d013744c567e39f496f8f0f42f13f1d71258"
+    sha256 cellar: :any, arm64_tahoe:       "e8de1bc56679f2f04c49087db3ab21599babdc8b1a333f529fb4683c5a05d786"
+    sha256 cellar: :any, arm64_sequoia:     "95eeb05b79389516ac6e61c8030cfb94eef58431fe958af3e4373a936046b429"
+    sha256 cellar: :any, arm64_linux:       "9197b0eb45ee15953901346c773563b93b58421af6395923cc2591057f62ea04"
+    sha256 cellar: :any, x86_64_linux:      "c029dd5ebb77537b8e11d7ff28b7da089942f73503f2a3c17e250063a841b6dc"
   end
 
   depends_on "pkgconf" => :build
@@ -49,8 +48,8 @@ class Mapproxy < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/bd/2a/23f34ec9d04624958e137efdc394888716353190e75f25dd22c7a2c7a8aa/charset_normalizer-3.4.9.tar.gz"
-    sha256 "673611bbd43f0810bec0b0f028ddeaaa501190339cac411f347ac76917c3ae7b"
+    url "https://files.pythonhosted.org/packages/33/1c/f41d4e74c28ab327ff3acd36053f7ea506c55872d7a90b0fa71aa3ab0c89/charset_normalizer-3.5.2.tar.gz"
+    sha256 "39de2a259fc954455c57274dc94c79d5842774e1247a016aff30bc0efed0f4ef"
   end
 
   resource "dill" do
@@ -64,8 +63,8 @@ class Mapproxy < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/cd/63/9496c57188a2ee585e0f1db071d75089a11e98aa86eb99d9d7618fc1edce/idna-3.18.tar.gz"
-    sha256 "ffb385a7e039654cef1ab9ef32c6fafe283c0c0467bba1d9029738ce4a14a848"
+    url "https://files.pythonhosted.org/packages/f5/08/8eea9d4b8302028f3abb2c0813953f7aec26d33b7a8960ed760e65ff29fa/idna-3.20.tar.gz"
+    sha256 "a7db850025b95ded1eae8a46181a1a6c56c92c96f0e2b005d9ff8dc0210cab44"
   end
 
   resource "jinja2" do
@@ -84,8 +83,8 @@ class Mapproxy < Formula
   end
 
   resource "lxml" do
-    url "https://files.pythonhosted.org/packages/05/3b/aab6728cae887456f409b4d75e8a01856e4f04bd510de38052a47768b680/lxml-6.1.1.tar.gz"
-    sha256 "ba96ae44888e0185281e937633a743ea90d5a196c6000f82565ebb0580012d40"
+    url "https://files.pythonhosted.org/packages/23/ad/28ecd7cb894d172f3c9c80a075eeeb2017ac62e3632cee05a5f9493547eb/lxml-6.1.3.tar.gz"
+    sha256 "45222d94ddd511536f3b2f7d9deae3b2339b4ce0f075f1ca25703b07cad9dd21"
   end
 
   resource "markupsafe" do
@@ -99,8 +98,8 @@ class Mapproxy < Formula
   end
 
   resource "pyproj" do
-    url "https://files.pythonhosted.org/packages/04/90/67bd7260b4ea9b8b20b4f58afef6c223ecb3abf368eb4ec5bc2cdef81b49/pyproj-3.7.2.tar.gz"
-    sha256 "39a0cf1ecc7e282d1d30f36594ebd55c9fae1fda8a2622cee5d100430628f88c"
+    url "https://files.pythonhosted.org/packages/c8/29/6598570c90cbfc84ddefc3ccac4aa412bf51a527d72c74cc4fe64a5e6f24/pyproj-3.8.0.tar.gz"
+    sha256 "efa59725bba68bf97fa808b61302df32934acdceb6a5c92a8dd0e71dc266a876"
   end
 
   resource "python-dateutil" do
@@ -134,13 +133,13 @@ class Mapproxy < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/53/0c/06f8b233b8fd13b9e5ee11424ef85419ba0d8ba0b3138bf360be2ff56953/urllib3-2.7.0.tar.gz"
-    sha256 "231e0ec3b63ceb14667c67be60f2f2c40a518cb38b03af60abc813da26505f4c"
+    url "https://files.pythonhosted.org/packages/e3/05/b17359e1cefb4f909b5e40b1b90a496d987258916dbbf88e842c729f510e/urllib3-2.8.0.tar.gz"
+    sha256 "63bf2ead4c879426ebf22ef2a781eeb4aa3b4ae798a0435506f8687fd5bb9b63"
   end
 
   resource "werkzeug" do
-    url "https://files.pythonhosted.org/packages/dd/b2/381be8cfdee792dd117872481b6e378f85c957dd7c5bca38897b08f765fd/werkzeug-3.1.8.tar.gz"
-    sha256 "9bad61a4268dac112f1c5cd4630a56ede601b6ed420300677a869083d70a4c44"
+    url "https://files.pythonhosted.org/packages/a4/34/4dd12fc8bb7d61c91467ec3efe415ffa7d5456f799954b40c5bbaeae470e/werkzeug-3.1.9.tar.gz"
+    sha256 "55ca7c70a75689be937aa27f8ff4b018f06ff4838fc73045560bf0f5a1291060"
   end
 
   def install

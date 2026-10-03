@@ -6,16 +6,15 @@ class OpentimestampsClient < Formula
   url "https://files.pythonhosted.org/packages/3d/cb/15156c9bc8ab404e1fc2750a3b5aa4ecafccd632923776d61c875f116702/opentimestamps-client-0.7.2.tar.gz"
   sha256 "083a08f59c3123682d6742cc57d3e229ed7b3397807638836efe3a949517accb"
   license "LGPL-3.0-or-later"
-  revision 7
+  revision 8
   head "https://github.com/opentimestamps/opentimestamps-client.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "969829d0f83948458eafbe6322913dedca646bf1cec30c0672d93a6c66e9ee4a"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "048842d698bcb718dd51f4aef325817a32411164da151a59fbb3b8f4d50d9f5b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "ecfaf2cee26262d5d08dd5068f36e4d8d4e1d8d41fd13e56c5aa0aa7e5a4da4a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "3d9824e5a6b54c2991ba0978354b8b416b95cbd0d7f4701852b0348172bb0218"
-    sha256 cellar: :any,                 arm64_linux:       "1ddf0186e4164f3f770fe7572dcb3357ac4f0eec21bcbeed1d7b45bd8ad76408"
-    sha256 cellar: :any,                 x86_64_linux:      "06310ffc31843a48aac9677124dc2dbcd97932764c21443b8c5d4043c2c0d57d"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "28c85d35628d92d7415141906b5b42d53e8bae5abe7e6a1f526492b32c3c93ec"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "d33f4c0f1df2b73635d9c34e33847f3a43728834b9669c82d89b4615481a9aa3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "faa80cd680b1a5f228df87c945d0a75da10e731f74c8cc3a3d2b71bf17432676"
+    sha256 cellar: :any,                 arm64_linux:       "9f00c23f58ef47f64f83218360f2419a6b365e1c07cbc2bcf5386a802d5f6809"
+    sha256 cellar: :any,                 x86_64_linux:      "e432a8e5b3c9e216629e2aab2cffe505869dbd96d6dc2701be23d89038ac7112"
   end
 
   depends_on "certifi" => :no_linkage
@@ -34,8 +33,8 @@ class OpentimestampsClient < Formula
   end
 
   resource "gitpython" do
-    url "https://files.pythonhosted.org/packages/6f/61/3285044215fb596bf093e39ccb96ece0a1076a8ca57a61e069a6a33cdb1b/gitpython-3.1.61.tar.gz"
-    sha256 "f51c24d8c0f733a195447385f5774a5dfe8767f5acfd7994a33755644c6ecc95"
+    url "https://files.pythonhosted.org/packages/6e/2d/6f6e649818da44d4499604802c89329b8d9799687a124e3a5e467a643336/gitpython-3.2.0.tar.gz"
+    sha256 "fb92310af6844d96adc95ca066ed2e617c00e1dbd146a326626c81e72e18cc2e"
   end
 
   resource "opentimestamps" do

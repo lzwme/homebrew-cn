@@ -5,6 +5,11 @@ class Bold < Formula
   sha256 "23f334869f73d85fdc761df4a4d2c43864ae31563280f52568f314ccae393e46"
   license "MIT"
 
+  # TODO: remove if undeprecated
+  livecheck do
+    url :stable
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ed79f743395beae0a5c50b97e5915036fc150a64876e09f93a4c23ec22290e11"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "166e358558a1248b63764912648a742d9852058095fa8291e6ba5104f1f47145"

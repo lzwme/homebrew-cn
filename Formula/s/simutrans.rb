@@ -1,8 +1,8 @@
 class Simutrans < Formula
   desc "Transport simulator"
   homepage "https://www.simutrans.com/"
-  url "svn://servers.simutrans.org/simutrans/trunk/", revision: "11993"
-  version "124.5"
+  url "svn://servers.simutrans.org/simutrans/trunk/", revision: "12321"
+  version "125.0"
   license "Artistic-1.0"
   head "https://github.com/simutrans/simutrans.git", branch: "master"
 
@@ -17,13 +17,11 @@ class Simutrans < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "74a4791a5071295d42519fe3351ba9f198091d7b7739647974ab38a2940b7f50"
-    sha256 cellar: :any, arm64_tahoe:       "9416e74ce4f562883c0ff06baaded29fd451a1287d1547823581f55cc1626742"
-    sha256 cellar: :any, arm64_sequoia:     "a6cd38e5e313c1cce8d93316f2fdd573752df936ee0587e272d80578156e2271"
-    sha256 cellar: :any, arm64_sonoma:      "d0208918d7fb9691c3d04ecd169e3ae54e017b1455c84dca9f45ea07ec919729"
-    sha256 cellar: :any, sonoma:            "a023cf4bbea6b5ca1eb15ba383c35ea3ab06d610edaea99e52ad74a0199482ac"
-    sha256 cellar: :any, arm64_linux:       "2c73684b77cc59a82487de4e1b03f5a7c2696f483065b395cfcc33a961411ba1"
-    sha256 cellar: :any, x86_64_linux:      "407b04e50236fb72b705df2ef9583618155c0d8dc452e7825ec43d4087674d9f"
+    sha256 cellar: :any, arm64_golden_gate: "48a17f38b1791aab60304da5318b03bd55e1ffb373c2f0da40efebdf42d93598"
+    sha256 cellar: :any, arm64_tahoe:       "fdae87b232ee8df110b6d374f134767124448b7fa858f9d241441b2081a1d8bd"
+    sha256 cellar: :any, arm64_sequoia:     "2ff427aad67e5cd32574d3e544fc7268cadfc243bfcaee99eb65460d26e725da"
+    sha256 cellar: :any, arm64_linux:       "fcc909f211b3c578907c4b14b16ae67713617aec813a867f065fdc38ad67a58b"
+    sha256 cellar: :any, x86_64_linux:      "d6ce9e4900c6bbd3f30a928cc4f99d7d09b85fb6a95f9d871d6c6d7e23509a7e"
   end
 
   depends_on "cmake" => :build
@@ -52,6 +50,9 @@ class Simutrans < Formula
     url "https://src.fedoraproject.org/repo/pkgs/PersonalCopy-Lite-soundfont/PCLite.sf2/629732b7552c12a8fae5b046d306273a/PCLite.sf2"
     sha256 "ba3304ec0980e07f5a9de2cfad3e45763630cbc15c7e958c32ce06aa9aefd375"
   end
+
+  # Translations are downloaded during `build` phase
+  allow_network_access! :build
 
   def install
     # These translations are dynamically generated.

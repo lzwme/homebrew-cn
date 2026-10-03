@@ -6,22 +6,21 @@ class Livereload < Formula
   url "https://files.pythonhosted.org/packages/43/6e/f2748665839812a9bbe5c75d3f983edbf3ab05fa5cd2f7c2f36fffdf65bd/livereload-2.7.1.tar.gz"
   sha256 "3d9bf7c05673df06e32bea23b494b8d36ca6d10f7d5c3c8a6989608c09c986a9"
   license "BSD-3-Clause"
-  revision 3
+  revision 4
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "17edcef008f894ff9f27a3f94f23b6d4bef74981bb48379303dfda4cb35a57a2"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "ec6c9fd4d7ef5093292693ee0eef02af4fdd7b57266437d53bf72aa301bf6f71"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "9c1e1ca7e1c9ba6c14572b8ec7d1eb251e57649de9812d52a2b9d828726b8aef"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "fd0afb7bfc39900d5119ea183def872433a59e49d03f709b35fb7e9742ea2faa"
-    sha256 cellar: :any,                 arm64_linux:       "b01ff5c68d8b3d2eee54c5f62e564c63c0af62c542e81e9a7e6416ae31632c06"
-    sha256 cellar: :any,                 x86_64_linux:      "777f1b568dc8dcd30623e147700b8f2acec750ffe982476435f0c37103de39ea"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "77dc6ee3ada2a0b47448a9af44669413f58e8525071532ac6f99f2e49822911e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "15aeb1318a37dab72f3aac01d20db588a8eb31ff819c54e6d1dddb3c85d1d89e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "1367d1f126fa4bd4bfd435f360e0239578b9a7e71f044979c5b265272da802ae"
+    sha256 cellar: :any,                 arm64_linux:       "13e2f4ca25f0bc4f3a2040170be4b877593ef579c4494e20563d549839103cd4"
+    sha256 cellar: :any,                 x86_64_linux:      "01625e5f67bda053d0c9dd062465f1bd58241df1f028e9ab46c7d0222b3a8ee7"
   end
 
   depends_on "python@3.14"
 
   resource "tornado" do
-    url "https://files.pythonhosted.org/packages/10/d3/343e5bb989d6515b1646cf3d40135d73f3d5e45339bded401b56cdac24dd/tornado-6.5.8.tar.gz"
-    sha256 "9452e1b208a8bd771e2cb1f2ff564985b9b214bdebbe622793e1799e0a6bd23f"
+    url "https://files.pythonhosted.org/packages/06/61/53d562a57b28c08eda40b258c0f975e360541943ad7c7bef897a40caafda/tornado-6.5.10.tar.gz"
+    sha256 "a6b1ccd08c04b4a06fb5aeb381be99de5ad1e5375c1785e31d78c880feb57687"
   end
 
   def install

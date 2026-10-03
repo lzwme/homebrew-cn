@@ -6,6 +6,11 @@ class Glyph < Formula
   license "MIT"
   revision 2
 
+  # TODO: remove if undeprecated
+  livecheck do
+    url :stable
+  end
+
   bottle do
     sha256 cellar: :any, arm64_sequoia: "b02ed837b5d2195d730ce7ddcd189907ef6d39b2ca99b09deaefa38286e40525"
     sha256 cellar: :any, arm64_sonoma:  "2c9fecb839cda3e0125e815cc6c716ce02b483d5d533d69afa72867e6a23670b"

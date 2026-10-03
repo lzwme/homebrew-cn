@@ -1,18 +1,16 @@
 class Decker < Formula
   desc "HyperCard-like multimedia sketchpad"
   homepage "https://beyondloom.com/decker/"
-  url "https://ghfast.top/https://github.com/JohnEarnest/Decker/archive/refs/tags/v1.70.tar.gz"
-  sha256 "c06e04f677cc3e799056d4b6250c0947eb463dae1f703e491236d572f6eb6162"
+  url "https://ghfast.top/https://github.com/JohnEarnest/Decker/archive/refs/tags/v1.71.tar.gz"
+  sha256 "1c7907f88bb1cb47f25e12110162198d4fc8947b8046bd98317a526d416073e5"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "2a80abde4bceff997871576ddd11f201c082853478830b31e4a8ddb2422216d8"
-    sha256 cellar: :any, arm64_tahoe:       "3a170025d4568179f0dec19cc4a96dabbc12f46daa6a96ee372d28b99809ee48"
-    sha256 cellar: :any, arm64_sequoia:     "7bfc08b6a90ff824cfb2fca4021bb5fda18ac806c94fb1c1bdd6b18ca9e8e431"
-    sha256 cellar: :any, arm64_sonoma:      "434bc7a14a0c37ea2553c519b97db6ff8fb748096b1665de9b7014402dd666fa"
-    sha256 cellar: :any, sonoma:            "af54884554340a8513842f8f719f03264273366004fda6b6288d23e8ddee4008"
-    sha256 cellar: :any, arm64_linux:       "f307fe797d17fdb2d6406115d6a540d3f442f9e4e4cec92765bc3709c559ffb7"
-    sha256 cellar: :any, x86_64_linux:      "c1de056afb3c4d3d7b5f16d6d535ba75bd9dd03043b8e87e97ee004b0d82411f"
+    sha256 cellar: :any, arm64_golden_gate: "431591185be514812c166c5cac9a46fc6ac37982c00e5dc067b83baef7f9ffbd"
+    sha256 cellar: :any, arm64_tahoe:       "5d0e6b02af4fc0535a70aac59185ef0b7ed415b4bdce60aa702282606228c552"
+    sha256 cellar: :any, arm64_sequoia:     "403717f836caa0bb771aca43cbac26ffcc9010513199588580ce26b41024a61b"
+    sha256 cellar: :any, arm64_linux:       "dc3c87ffbdfcfc46827ac32e1314bac885c933f0ef664f86f0a93f29666a09df"
+    sha256 cellar: :any, x86_64_linux:      "41bd4135572bfdfa86e55775705a2e311668bc1e80b0a33de4f6a0300a1cc5bc"
   end
 
   depends_on "sdl2-compat"

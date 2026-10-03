@@ -3,16 +3,16 @@ class Tox < Formula
 
   desc "Generic Python virtualenv management and test command-line tool"
   homepage "https://tox.wiki/en/latest/"
-  url "https://files.pythonhosted.org/packages/d8/5f/057ec2325e882e398c12e83b1a41c88cdc60dfefaf9b1b1f9bb6f9478620/tox-4.64.5.tar.gz"
-  sha256 "24aee91e57db257a59e61c9f942bcdc085388d622967fddd35c771064b7bf091"
+  url "https://files.pythonhosted.org/packages/7c/bd/d7467b015457cf8bd912154c3b0247b30739751498577606b574d389aefd/tox-4.64.7.tar.gz"
+  sha256 "b8033a00945a02493adebdc337e4e45136e21a7083c00b2ae27c998370b72af3"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "940d69385a3942861947a746389a1749725d8169103e15d4c9f91f6837199fb8"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "940d69385a3942861947a746389a1749725d8169103e15d4c9f91f6837199fb8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "940d69385a3942861947a746389a1749725d8169103e15d4c9f91f6837199fb8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "5787d0c7b7a898f04ffdc896036d4ce951ae0ab8a97d3a73fde8f33545b4208e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "5787d0c7b7a898f04ffdc896036d4ce951ae0ab8a97d3a73fde8f33545b4208e"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "1cd980e524f829e3e52e0579c9cd51d6a24b2363fbc20d5825d0c74b50a556e8"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "1cd980e524f829e3e52e0579c9cd51d6a24b2363fbc20d5825d0c74b50a556e8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "1cd980e524f829e3e52e0579c9cd51d6a24b2363fbc20d5825d0c74b50a556e8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "375c93217ed998495c8bd1c8d552835439b027d862f30c5cf15c0da62e02c72f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "375c93217ed998495c8bd1c8d552835439b027d862f30c5cf15c0da62e02c72f"
   end
 
   depends_on "python@3.14"
@@ -33,8 +33,8 @@ class Tox < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/2b/2d/5cb7a5ac017031e96a63173f3d57a8a5162ce36f9ff461e62bc6da4d88ab/filelock-4.0.6.tar.gz"
-    sha256 "323fab3b2fb22d889b29fa83774f60029addddb4b6a1bcfa1e73066eabffb5f2"
+    url "https://files.pythonhosted.org/packages/70/51/2bc9e529f154fad99b6cd0073e609291eb32fd23581b32362d33d164d316/filelock-4.0.9.tar.gz"
+    sha256 "635e7d67fa92654eed444e75e9ca18426d34e77ad9c469bf4373f75a932f7b22"
   end
 
   resource "packaging" do
@@ -43,8 +43,8 @@ class Tox < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/c3/8a/84ef03c1c83eacd7cc4540b05428a93b5cd4e42f62fb0b98ac2cb6ed3a6d/platformdirs-4.12.1.tar.gz"
-    sha256 "38da801a4af303033cbffccb39030db22bf0473e6414309b02acebeee7ca8bf1"
+    url "https://files.pythonhosted.org/packages/17/c8/721b3855fe457da514fe249247d404b9b39c5d16532278f70ebaa6acf18b/platformdirs-4.12.2.tar.gz"
+    sha256 "eab5f70271a490ef74618bb314fbb86e3c7e82fa3b9c922c2ea0e0a1a155d329"
   end
 
   resource "pluggy" do
@@ -68,8 +68,8 @@ class Tox < Formula
   end
 
   resource "virtualenv" do
-    url "https://files.pythonhosted.org/packages/31/0b/825cbfd46beb2cc96c46403141081190c1afd1a348d0232a4ebcb6dcd362/virtualenv-21.13.0.tar.gz"
-    sha256 "e8aa144aabba43ffd9058e1fd1a02012b1915f8cb915acc16ad50aba9c13bfdc"
+    url "https://files.pythonhosted.org/packages/01/59/5ebdaa984350ae7ef1dc14b4d0bd618f6e0d3fb13e7b336939433eebf37b/virtualenv-21.14.3.tar.gz"
+    sha256 "cb5cd3a87f12a6cfdc0cef6bc8bead6138221767f7718e0c00fee5fb907f9858"
   end
 
   def install

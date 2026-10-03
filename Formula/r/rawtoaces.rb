@@ -4,6 +4,7 @@ class Rawtoaces < Formula
   url "https://ghfast.top/https://github.com/AcademySoftwareFoundation/rawtoaces/archive/refs/tags/v2.2.2.tar.gz"
   sha256 "1687f12ce34c3d01d5e3d293dacf14df3d815d51d4595c12321d0262a5adc792"
   license "Apache-2.0"
+  revision 1
 
   livecheck do
     url :stable
@@ -11,11 +12,11 @@ class Rawtoaces < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "1d36e70deea44f06227ce3f2360f2eb6af091abaa6e5765ecfd6f29540b4fdd4"
-    sha256 arm64_tahoe:       "5cc1c6d66854d1e915a2347c9c1b6ff1eb3912efb392ea708314a94c2163c435"
-    sha256 arm64_sequoia:     "6a5c96c74c15557bf62f3fb8b97693b78bf0e3023dd88d78ff5844f5cbc36e68"
-    sha256 arm64_linux:       "254dd6eddbead6eff7415fb5ff5d11c86495487c11735a16b6545b9792e10feb"
-    sha256 x86_64_linux:      "d9f6a01a06755f96d9a3c429dc755c23fdd9bd27e8bc999115a45910764d90fa"
+    sha256 arm64_golden_gate: "f94c9904d3951ffd910e73561d46b6c81eb6c754a23e0192e087823256968776"
+    sha256 arm64_tahoe:       "6ed26bc049d6662d7083a4e1f59dfbb953632236fc89848040494255c6d701df"
+    sha256 arm64_sequoia:     "74e264e24f5340dad451f650ec8f1059adbf92dfd823380d19376dbf7cba835b"
+    sha256 arm64_linux:       "990a035d46e3c75f39241f3c337881bdf503b667bbe579f146ae8226f2f2a96d"
+    sha256 x86_64_linux:      "9ece41125ec6387d28e93650200c6a0cd29595b6542b5910cda50b9874e22255"
   end
 
   depends_on "cmake" => :build

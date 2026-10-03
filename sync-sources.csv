@@ -2275,7 +2275,6 @@ Homebrew-homebrew-core/Formula/f/fox.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/foxglove-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fpart.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fpc.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/f/fpdns.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fping.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/fplll.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fpm.rb, Homebrew/homebrew-core, 1
@@ -6833,6 +6832,7 @@ Homebrew-homebrew-core/Formula/s/sdl3_ttf.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sdl_gfx.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/sdlpop.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sdns.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/s/sdrmm.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/seal.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/seam.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/search-that-hash.rb, Homebrew/homebrew-core, 0
@@ -8896,6 +8896,7 @@ Homebrew-homebrew-cask/Casks/a/arctype.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/arduino-ide.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/arduino-ide@nightly.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/ares-emulator.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/a/argo-books.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/aria-maestosa.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/aria2d.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/ariang.rb, Homebrew/homebrew-cask, 1
@@ -15033,6 +15034,7 @@ Homebrew-homebrew-cask/Casks/r/routeconverter.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/routine.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/rouvy.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/rowboat.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/r/rowel.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/r/rowmote-helper.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/royal-tsx.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/royal-tsx@beta.rb, Homebrew/homebrew-cask, 0
@@ -15067,6 +15069,7 @@ Homebrew-homebrew-cask/Casks/s/salt.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/sameboy.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/samsung-magician.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/sanctum.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/s/sandisk.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/sanesidebuttons.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/santa.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/saoimageds9.rb, Homebrew/homebrew-cask, 0
@@ -15119,6 +15122,7 @@ Homebrew-homebrew-cask/Casks/s/sculptor.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/scummvm-app.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/sdformatter.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/sdm.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/s/sdrmm-app.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/seadrive.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/seafile-client.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/seam-app.rb, Homebrew/homebrew-cask, 0
@@ -15531,7 +15535,6 @@ Homebrew-homebrew-cask/Casks/s/swiftdialog.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/swiftformat-for-xcode.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/swiftplantumlapp.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/swiftpm-catalog.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/s/swifty.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/swiftybeaver.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/swimat.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/swinsian.rb, Homebrew/homebrew-cask, 0
@@ -15915,7 +15918,7 @@ Homebrew-homebrew-cask/Casks/u/ultimate-vocal-remover.rb, Homebrew/homebrew-cask
 Homebrew-homebrew-cask/Casks/u/ultimate.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/u/ultrastardeluxe.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/u/unblocked.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/u/unclack.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/u/unclack.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/u/unclutter.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/u/uncolored.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/u/understand.rb, Homebrew/homebrew-cask, 0

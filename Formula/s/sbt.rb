@@ -1,8 +1,8 @@
 class Sbt < Formula
   desc "Build tool for Scala projects"
   homepage "https://www.scala-sbt.org/"
-  url "https://ghfast.top/https://github.com/sbt/sbt/releases/download/v2.0.9/sbt-2.0.9.tgz"
-  sha256 "351087fb5ad0d8b271f21b4c6f8e4912c8f6dbf81e1d06fe215bb165f14668b3"
+  url "https://ghfast.top/https://github.com/sbt/sbt/releases/download/v2.0.10/sbt-2.0.10.tgz"
+  sha256 "783fe0c278564e67fbd14ecaa9ace6b9433cf8ece0ad8f50ad436cb24622105c"
   license "Apache-2.0"
 
   # Upstream sometimes creates releases that use a stable tag (e.g., `v1.2.3`)
@@ -13,10 +13,12 @@ class Sbt < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "2d9677d37f3944314d3300ca5907341b57fb8672a9bf0b4a0042c0bb22046892"
+    sha256 cellar: :any_skip_relocation, all: "62c72ecc8283e8c1419221b16e2477232766deed267b65f040b30a405bd0cbc5"
   end
 
   depends_on "openjdk"
+
+  allow_network_access! :test
 
   def install
     inreplace "bin/sbt" do |s|

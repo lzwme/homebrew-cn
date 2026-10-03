@@ -6,9 +6,14 @@ class Nox < Formula
   url "https://files.pythonhosted.org/packages/be/65/4cef8ae8f6dbcb5753b202e46791277f1ea0b4a0650d1a6cb940c468b143/nox-2026.8.17.tar.gz"
   sha256 "8d9c69c9b996a59db1eb2c6968deaebc2edbc55317d205981bbc4a37351d3f2e"
   license "Apache-2.0"
+  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "ce8da1530325854e4907cbb719a04878849b51dbd8f84d0b28de6ea4ae7a6b7e"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "f0947fa33fac238bb3b8842451485a0c91fc04e618d2173ff6a68c345bd4d0aa"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "f0947fa33fac238bb3b8842451485a0c91fc04e618d2173ff6a68c345bd4d0aa"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "f0947fa33fac238bb3b8842451485a0c91fc04e618d2173ff6a68c345bd4d0aa"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "a655d8cf99f75c29b53163137680bb13d8e7a366855270fada7c2b826a536b7c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "a655d8cf99f75c29b53163137680bb13d8e7a366855270fada7c2b826a536b7c"
   end
 
   depends_on "certifi" => :no_linkage
@@ -32,8 +37,8 @@ class Nox < Formula
   end
 
   resource "dependency-groups" do
-    url "https://files.pythonhosted.org/packages/62/55/f054de99871e7beb81935dea8a10b90cd5ce42122b1c3081d5282fdb3621/dependency_groups-1.3.1.tar.gz"
-    sha256 "78078301090517fd938c19f64a53ce98c32834dfe0dee6b88004a569a6adfefd"
+    url "https://files.pythonhosted.org/packages/b5/16/65e61d8e837e0d70a99a0d4dd76e2af53357c3a03ed1db8ad9b5786d7f25/dependency_groups-1.3.2.tar.gz"
+    sha256 "c81831f43828dbc3987ee247eb198241a0152b8e7ceab10977cc3808eb388ac7"
   end
 
   resource "distlib" do
@@ -42,8 +47,8 @@ class Nox < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/7d/64/a02e6765de08964ed371eca577870593245afc9dfac16d037de7c10d18e6/filelock-3.32.3.tar.gz"
-    sha256 "0ffa185a3540854c95caa7fa76b76cb219d907415e2c5dc9af25fd970563487f"
+    url "https://files.pythonhosted.org/packages/cc/19/d4f21fc4b7ad098dd3c774ccb2a2929178b15d6e1a3ba7d0929817c0b30c/filelock-4.0.8.tar.gz"
+    sha256 "733d9b6b153fc63672f86104324186818b6bbe9dd7db84e9bb9887b6a04a2775"
   end
 
   resource "humanize" do
@@ -57,18 +62,18 @@ class Nox < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/b8/d7/e7bfbc86e9f99ff7807e24de7703f032e9c9ba80bb355cf26e0e9bc5a75e/platformdirs-4.11.3.tar.gz"
-    sha256 "66a73d38a849810252df809a3d8bcbda8e26f6c189920e7535ad608a48dbb5ab"
+    url "https://files.pythonhosted.org/packages/17/c8/721b3855fe457da514fe249247d404b9b39c5d16532278f70ebaa6acf18b/platformdirs-4.12.2.tar.gz"
+    sha256 "eab5f70271a490ef74618bb314fbb86e3c7e82fa3b9c922c2ea0e0a1a155d329"
   end
 
   resource "python-discovery" do
-    url "https://files.pythonhosted.org/packages/38/b7/ac44da2cf0e53ada0e419033c2d058219c95dc1403126f163304c9e814b1/python_discovery-1.5.2.tar.gz"
-    sha256 "45fd4f20a4e3f9b7bf2e0817870bc8e3b320a19658da177af800768c82dbf354"
+    url "https://files.pythonhosted.org/packages/0c/57/250bd238b966cece44328235eb85290045d059265fdaf7527a3a958123db/python_discovery-1.6.1.tar.gz"
+    sha256 "cf87d3627dfb4412437fdd5b13eae402607722998d21567993aedbc59b23c15e"
   end
 
   resource "virtualenv" do
-    url "https://files.pythonhosted.org/packages/2d/dc/a6eb1ddfa7f1e390fa599b078453c97edb3f6f846b34fb4eac3e8ea16401/virtualenv-21.7.4.tar.gz"
-    sha256 "c9d960c95fa458171e58222a5ccab7465298e4b6559977865e627c4719f1e825"
+    url "https://files.pythonhosted.org/packages/67/57/630a01cf5ab58f33b9c7dc8a7f13464cb5740b5227f8a08cab9d798bd532/virtualenv-21.14.2.tar.gz"
+    sha256 "571930928b11e43db690073ad8228162eca8a3f8fd3a87acdeae07df7dd57068"
   end
 
   def install

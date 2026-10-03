@@ -9,14 +9,15 @@ class Jupyterlab < Formula
     "BSD-3-Clause",
     "MIT", # semver.py
   ]
+  revision 1
   compatibility_version 1
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "de2e34a3b6a2a3d04a53508783d70d77376caaba043bc5bab2ed1fb01c37caff"
-    sha256 cellar: :any, arm64_tahoe:       "92f871a64804a6eeaf4c8db9cfdba3ee59e3e534852f326fb1be81b00b002ca9"
-    sha256 cellar: :any, arm64_sequoia:     "3a5934c619014a0bcc330be397990bf7ba8d28329c153a52e738e8240c743d0f"
-    sha256 cellar: :any, arm64_linux:       "65ac48f668ac5b71ca34477982fb27977f53653ed2ee78912cefe8ee01280e5b"
-    sha256 cellar: :any, x86_64_linux:      "85026e243e5ab4d17a1061cd0c4a914a765719c94c33964ae3e174934dc9c424"
+    sha256 cellar: :any, arm64_golden_gate: "1f6ff087bf706cce029effee8cfba306ff4d69d020a3bd52b543a5472b0e39e5"
+    sha256 cellar: :any, arm64_tahoe:       "b36d55462ad95f752914ac13e6e47a2c6f72f9c0906a3781a1adee50e51b068c"
+    sha256 cellar: :any, arm64_sequoia:     "bf9b0b1eb76618922582183fe8167e6482d2d2846af80251d3ef83580c1d75cc"
+    sha256 cellar: :any, arm64_linux:       "118c0acdb5f0ee69568a78a007125e64b059d283c9be56076fd85ecbdd9a0592"
+    sha256 cellar: :any, x86_64_linux:      "0e75203ef79062f53b3e25e643cf53cab9051c6fb344106f248d0d18e68ca676"
   end
 
   depends_on "cmake" => :build # for ipykernel
@@ -91,8 +92,8 @@ class Jupyterlab < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/e5/3f/143b048436775b0f76ac3eec145c019e8173ccc2885c8f20319b996d5e83/charset_normalizer-3.5.1.tar.gz"
-    sha256 "6117b84ea48435e5356dc737f5121485c30920ba43375fa7b434fd753df0eac3"
+    url "https://files.pythonhosted.org/packages/33/1c/f41d4e74c28ab327ff3acd36053f7ea506c55872d7a90b0fa71aa3ab0c89/charset_normalizer-3.5.2.tar.gz"
+    sha256 "39de2a259fc954455c57274dc94c79d5842774e1247a016aff30bc0efed0f4ef"
   end
 
   resource "comm" do
@@ -121,8 +122,8 @@ class Jupyterlab < Formula
   end
 
   resource "fqdn" do
-    url "https://files.pythonhosted.org/packages/30/3e/a80a8c077fd798951169626cde3e239adeba7dab75deb3555716415bd9b0/fqdn-1.5.1.tar.gz"
-    sha256 "105ed3677e767fb5ca086a0c1f4bb66ebc3c100be518f0e0d755d9eae164d89f"
+    url "https://files.pythonhosted.org/packages/02/01/248d44fbda9e78fa1a7b5a475194bef4c4a3e285db286419f3bb42f2efdf/fqdn-1.6.0.tar.gz"
+    sha256 "e39bf62e2a9481aa2cb780554fdfd944dd8ee5f230eb831684d539cbafed8de2"
   end
 
   resource "h11" do
@@ -161,8 +162,8 @@ class Jupyterlab < Formula
   end
 
   resource "ipykernel" do
-    url "https://files.pythonhosted.org/packages/3d/c4/e4a38f579de4225a561305666f7541cdabb30075def2aa1ac17bd73c1fb5/ipykernel-7.3.0.tar.gz"
-    sha256 "9acaaaf97d16355166e4085afe9d225bfbdf2b7ef520f9df3be8f2b248275e09"
+    url "https://files.pythonhosted.org/packages/7a/05/e5499c8b762387d83926bf0389e8fff888c9bf6e7af30566a8527bc12f4a/ipykernel-7.4.0.tar.gz"
+    sha256 "4330114d22b9b33575b2c7c68753fc8faabbbcfbc60b0cdff9f14dd4ce63742f"
   end
 
   resource "ipython" do
@@ -296,13 +297,13 @@ class Jupyterlab < Formula
   end
 
   resource "nest-asyncio2" do
-    url "https://files.pythonhosted.org/packages/b4/73/731debf26e27e0a0323d7bda270dc2f634b398e38f040a09da1f4351d0aa/nest_asyncio2-1.7.2.tar.gz"
-    sha256 "1921d70b92cc4612c374928d081552efb59b83d91b2b789d935c665fa01729a8"
+    url "https://files.pythonhosted.org/packages/5e/a6/a2775b388a14b5ea0c894bbe513c0d3e04e65e8ae583e60f5357722b8e03/nest_asyncio2-1.7.3.tar.gz"
+    sha256 "2e9a84d5d1efe6d020c72988d21aec569bac42d98af2ff6b9de24640c5d22a34"
   end
 
   resource "notebook" do
-    url "https://files.pythonhosted.org/packages/31/d9/5c76de84e96e1cf8aae3fce930875e0615e14f3557bbcdb634aab52da9d3/notebook-7.6.2.tar.gz"
-    sha256 "cc02b5f0bb972160cccfe44ad8a1a202036206ba3439469c514f03aefa9ae807"
+    url "https://files.pythonhosted.org/packages/42/ac/aedb759dc683dcd129f6c75271bab5eb23020b0f7969163c726343718e1e/notebook-7.6.3.tar.gz"
+    sha256 "e2c08e469c0ae20bb0b3214f0ab77e79653317a2f8e5b34c10361c66874a5b50"
   end
 
   resource "notebook-shim" do
@@ -336,8 +337,8 @@ class Jupyterlab < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/f8/13/f870dd0b42690138e4e37a76b5138e5690ed4365a77071bb092d59037da0/platformdirs-4.11.11.tar.gz"
-    sha256 "b0befe8a90759e4a9a8b9820d434ae226a6549063210b596da0038a7a05aede4"
+    url "https://files.pythonhosted.org/packages/17/c8/721b3855fe457da514fe249247d404b9b39c5d16532278f70ebaa6acf18b/platformdirs-4.12.2.tar.gz"
+    sha256 "eab5f70271a490ef74618bb314fbb86e3c7e82fa3b9c922c2ea0e0a1a155d329"
   end
 
   resource "pluggy" do
@@ -431,8 +432,8 @@ class Jupyterlab < Formula
   end
 
   resource "soupsieve" do
-    url "https://files.pythonhosted.org/packages/69/99/a6ca3beb3ccacb41fb3321d8a60e5566f9e6467601ef8eba6a17e1b89778/soupsieve-2.9.2.tar.gz"
-    sha256 "4a55d8cf158a9c2e587fa4922f1bbb91d68ac829e2d6f25403a85747c71daf74"
+    url "https://files.pythonhosted.org/packages/71/c3/1b817965ac12dc002d7c9cd7dfffdd7d4fbf9b45763ef2ffe7b86ee94670/soupsieve-2.10.tar.gz"
+    sha256 "49e9380d7d2905463583bafe285e818c7366a9ed7b3aee221c1ac79c905d8bc0"
   end
 
   resource "stack-data" do
@@ -491,8 +492,8 @@ class Jupyterlab < Formula
   end
 
   resource "wcwidth" do
-    url "https://files.pythonhosted.org/packages/3d/7a/f98d4ada7c499565ab0c0fcef28a4e54fafa72b8228a6309803c80493c92/wcwidth-0.8.4.tar.gz"
-    sha256 "2dae09efa25253ae2874188e86d6861af3b1652aef4118cdf3f0bda288a957fb"
+    url "https://files.pythonhosted.org/packages/dc/ac/3a943d2792c9bb368aaa8b50121c0f778460ba2d7fbdc0a0366201d9e761/wcwidth-0.9.1.tar.gz"
+    sha256 "5823209b0d43af322ce698c689380d7c15ca31fa8e6e3be8459f27031bef0af5"
   end
 
   resource "webcolors" do

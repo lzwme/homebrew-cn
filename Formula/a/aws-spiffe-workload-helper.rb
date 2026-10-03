@@ -1,19 +1,17 @@
 class AwsSpiffeWorkloadHelper < Formula
   desc "Helper for providing AWS credentials to workloads using their SPIFFE identity"
   homepage "https://github.com/spiffe/aws-spiffe-workload-helper"
-  url "https://ghfast.top/https://github.com/spiffe/aws-spiffe-workload-helper/archive/refs/tags/v0.0.5.tar.gz"
-  sha256 "480071226243042f639422639edd38571199c4ab752f90f3ef71cdc71bef49b7"
+  url "https://ghfast.top/https://github.com/spiffe/aws-spiffe-workload-helper/archive/refs/tags/v0.0.6.tar.gz"
+  sha256 "83dfbfb0288dc79ed75968e86fb5ffe0bdd99f94a4ccbae0bf4677cf4b010bd5"
   license "Apache-2.0"
   head "https://github.com/spiffe/aws-spiffe-workload-helper.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "dc25313d3976c3052e8f8cdbf875dee8c0c8900839d7802d30ef5391dcf88dec"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "f8f0d08b54b3b9afebdcea300e7b8b815cc73207139c73d7bf7401d503098e99"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "f8f0d08b54b3b9afebdcea300e7b8b815cc73207139c73d7bf7401d503098e99"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "f8f0d08b54b3b9afebdcea300e7b8b815cc73207139c73d7bf7401d503098e99"
-    sha256 cellar: :any_skip_relocation, sonoma:            "8b9681ce3e3137b5bcbbca25922c87f0659d537e867fe5757a73b69e19547b98"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "77f121ce67cafbf8256ab11d73efbcba6d703202ae9d0a44324a3276ad38c4f7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "f7bf548d97cab892689d127a5284848748adbacf7f4dcc3f0e3eccd9c9d8bb57"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "b19ea518bc0130349fb38eab5ececc8a6c3db7bbc708dcdc755e8d92c7881596"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "b19ea518bc0130349fb38eab5ececc8a6c3db7bbc708dcdc755e8d92c7881596"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "b19ea518bc0130349fb38eab5ececc8a6c3db7bbc708dcdc755e8d92c7881596"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "70c82193ba68c5d82f1104849fba935facc4e15b1c251f83aaf29d1c8d2067a4"
+    sha256 cellar: :any,                 x86_64_linux:      "b85539082c2a3120c82124e60990f6ebbba37d280ba778faefef842391565c56"
   end
 
   depends_on "go" => :build

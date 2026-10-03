@@ -3,14 +3,14 @@ class RapidMlx < Formula
 
   desc "Fast local AI engine for Apple Silicon with an OpenAI-compatible API"
   homepage "https://github.com/raullenchai/Rapid-MLX"
-  url "https://files.pythonhosted.org/packages/82/17/eff4b995cd19a4ff8c7a4d5aa1c63c2cc0158934301d8005ee2e466474e4/rapid_mlx-0.15.2.tar.gz"
-  sha256 "a2fe3d50977ac1c6ba57f301585c46f8ddac2c40d5f5cc5fbb00afd3ee207ce0"
+  url "https://files.pythonhosted.org/packages/c8/93/b7d97a5c32cd871e0332c81dfc6779b8db4a7ecd3af4db0ddd4391f3998f/rapid_mlx-0.15.3.tar.gz"
+  sha256 "4c32e8c64d154d21867a7082a74d1a4eea1428d48acf3c32184a00dea217eb4f"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "fa49e116bd326e7d9cb4999dbadbdff24c9e46571b2edea02305eba2a38211b0"
-    sha256 cellar: :any, arm64_tahoe:       "1c84ec49e598d31338c93ef95e412840ad838d52f4c3ab52cab23d424027d50f"
-    sha256 cellar: :any, arm64_sequoia:     "a1c2bceaeded98acf865ee951f0389672c051e497969454d833fa0f38368971d"
+    sha256 cellar: :any, arm64_golden_gate: "12ad136d7423b76c6e93ad19648240e3957c10c81bec4d14ee9df9ccb5b3d047"
+    sha256 cellar: :any, arm64_tahoe:       "63c35671a54493b258ad1c133249443612d5161f26483b28dbe5c3df0c2abc4b"
+    sha256 cellar: :any, arm64_sequoia:     "b10a75f9ad26d49655aa2fa89c063473ebf921bc7df6d59522fc84f08b04affb"
   end
 
   depends_on "cmake" => :build
@@ -50,8 +50,8 @@ class RapidMlx < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/e5/3f/143b048436775b0f76ac3eec145c019e8173ccc2885c8f20319b996d5e83/charset_normalizer-3.5.1.tar.gz"
-    sha256 "6117b84ea48435e5356dc737f5121485c30920ba43375fa7b434fd753df0eac3"
+    url "https://files.pythonhosted.org/packages/33/1c/f41d4e74c28ab327ff3acd36053f7ea506c55872d7a90b0fa71aa3ab0c89/charset_normalizer-3.5.2.tar.gz"
+    sha256 "39de2a259fc954455c57274dc94c79d5842774e1247a016aff30bc0efed0f4ef"
   end
 
   resource "click" do
@@ -60,13 +60,13 @@ class RapidMlx < Formula
   end
 
   resource "fastapi" do
-    url "https://files.pythonhosted.org/packages/8a/02/91e3416a8fdd715abb903a952a6bec7cdd8d14eed55d415fc8595524c319/fastapi-0.141.1.tar.gz"
-    sha256 "e8822fc40db1e1858054d7a949a888695bc9bdce70139178e33bd2871a453ca1"
+    url "https://files.pythonhosted.org/packages/56/4f/f7c30a73127e0a8bbffe788369b8359e530b01ae06e2757936fa35bc5e6d/fastapi-0.142.2.tar.gz"
+    sha256 "06366626f2e70576367714d9ab2fe8472e6c8456dba69b399f9f797ab5e92570"
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/4f/b8/9ba8f569df649beb7058db5eb392a5f779bdbc3b82cf3942f0be439fb99e/filelock-4.0.3.tar.gz"
-    sha256 "87296d60478e14204fd9406e79831400fef76693bae2895deec236c98e87a8aa"
+    url "https://files.pythonhosted.org/packages/35/f5/14097cca69f53794270d8c7970b48321636302affe3154c7e0ba114eeff9/filelock-4.0.7.tar.gz"
+    sha256 "da5915714a70b55d167fdc7e251ad91302b0a36816fb574dfafae8f4f2c9bb21"
   end
 
   resource "fsspec" do
@@ -130,8 +130,8 @@ class RapidMlx < Formula
   end
 
   resource "llguidance" do
-    url "https://files.pythonhosted.org/packages/20/27/972de1ba4c93072fce816b967972e1d18bc48b04b145b5c77b5bd1dc9662/llguidance-1.8.0.tar.gz"
-    sha256 "18d1579eabb040e65c870d50c6df19a7bef140c5260d12ad35b7f0dc446312e0"
+    url "https://files.pythonhosted.org/packages/26/19/ab59b066f568bd3d3523019e3d220c1f3e0aeb00e18b92e741d013e70a5e/llguidance-1.9.0.tar.gz"
+    sha256 "0e1310908535ea90fd4128a50a72fb7d0e3403e34c3c4e33f6e7f87ecd169e95"
   end
 
   resource "markdown-it-py" do
@@ -195,8 +195,8 @@ class RapidMlx < Formula
   end
 
   resource "pyjwt" do
-    url "https://files.pythonhosted.org/packages/02/a5/5197bfd06417837ac079921c66fa6393f1dea3557272a263cebfef69e432/pyjwt-2.15.0.tar.gz"
-    sha256 "b11c5f9791d7bf51c2b39a81ed669f6b2dbbd669df2942f6c60167e9e3d1abe4"
+    url "https://files.pythonhosted.org/packages/43/ea/5194e52748b0da83d71e082d75496eaec6e58f419f5e184786ded517e6a9/pyjwt-2.15.1.tar.gz"
+    sha256 "4f259e80cdfb6b3fc18a7de51fd1ef9ec79652f25019bae68975ca2468a34df8"
   end
 
   resource "python-multipart" do
@@ -215,8 +215,8 @@ class RapidMlx < Formula
   end
 
   resource "regex" do
-    url "https://files.pythonhosted.org/packages/b9/5c/f403115361de25809e8f785686ec7096e30fef73be9ae35aa51da4e80abb/regex-2026.9.10.tar.gz"
-    sha256 "1e321e2c84f0e52c457f5ea5944f796d6e8e09cb99738ea98dcc1bfe402a128d"
+    url "https://files.pythonhosted.org/packages/fc/f2/af1da9d3ceed77bfcdce40427d49ba0be94e4fe84245e3bfef68c10e75b6/regex-2026.9.29.tar.gz"
+    sha256 "8b5fcc4771732191b2b7d1dd68d8f0353f47f8d90b6150f6dce58bf1112442cb"
   end
 
   resource "requests" do
@@ -245,8 +245,8 @@ class RapidMlx < Formula
   end
 
   resource "sse-starlette" do
-    url "https://files.pythonhosted.org/packages/2b/54/6767bb789b2f2fed6e0f953df949cd39dc263a384c1b65a95232598621d6/sse_starlette-3.4.11.tar.gz"
-    sha256 "1bae716c02f3e6f294be41ff333220692dae7c3cbab077c900f159676719dade"
+    url "https://files.pythonhosted.org/packages/e4/be/0123026f719d1a7936f214a88b553bb5701e04ff2511147c1dab0c5035eb/sse_starlette-3.5.0.tar.gz"
+    sha256 "75de713aa8a9441513cc283220826da079d982770965b951e9437720e8bafdb2"
   end
 
   resource "starlette" do

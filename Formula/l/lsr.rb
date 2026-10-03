@@ -6,6 +6,11 @@ class Lsr < Formula
       revision: "9bfcae0be1d3ee2db176bb8001c0f46650484249"
   license "MIT"
 
+  # TODO: remove if undeprecated
+  livecheck do
+    url :stable
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ee4d7eca5ce1db999d5e5efa67c6e8f5b9f5f681d17ec27a5212e1a8ef4c6b6e"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "1684d5db5fd99d451a80034ac2168b7e5ef5cb22a284ae9d9c587a7fa8f435bf"

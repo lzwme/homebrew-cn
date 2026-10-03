@@ -1,17 +1,17 @@
 class CargoAuditable < Formula
   desc "Make production Rust binaries auditable"
   homepage "https://github.com/rust-secure-code/cargo-auditable"
-  url "https://ghfast.top/https://github.com/rust-secure-code/cargo-auditable/archive/refs/tags/v0.7.6.tar.gz"
-  sha256 "04cb1c742bdd2ed0ddbb0e05a89dba24a00391c9145ef357c23ff653eba8c166"
+  url "https://ghfast.top/https://github.com/rust-secure-code/cargo-auditable/archive/refs/tags/v0.7.7.tar.gz"
+  sha256 "cab2a4b65cfde0734c98416740d24d4e3f03441ea8a0b385f0431e35244a05aa"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/rust-secure-code/cargo-auditable.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "7a81e23900ba84d7551b05790269fd491730a336914640fe6b9ef4d00799e220"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "9fdbc2bf0aaa50fd3fa46547e5ed25bf0b147c76f1129d99634013e32cc2e6db"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "341a7f5b45396a846efc7367aa921a27fc46af8541925295f5a0e247a2b07517"
-    sha256 cellar: :any,                 arm64_linux:       "f374033286f0e929aa1dbf1943505a185c460e638dc3bcb6363ba29751b43753"
-    sha256 cellar: :any,                 x86_64_linux:      "d91366bef7608b030c0167630519296e26558292aafe9c322a94378c788dd0e9"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "a66d872430a41061ab4f64aaa9693ba2b5f3df3aa799cdefbc3a69f53ced0ff5"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "0afffcf64e05a21a723357c0c452a0d1d9c9848d6af77cc48862211b8141cea3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "27b846616113f903d9671f2ae25081150296c45c2efe502f323e268144e1826e"
+    sha256 cellar: :any,                 arm64_linux:       "978f1ad0b26789856f8cceaf246db8f04a9fed06e1e8671074433b54937fee62"
+    sha256 cellar: :any,                 x86_64_linux:      "2da8addf73037eac36eb07ab06abe75c971c61fe295aaf31e6ff1fde1dd77638"
   end
 
   depends_on "rust" => :build

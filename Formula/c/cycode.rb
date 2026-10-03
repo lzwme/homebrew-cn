@@ -3,17 +3,17 @@ class Cycode < Formula
 
   desc "Boost security in your dev lifecycle via SAST, SCA, Secrets & IaC scanning"
   homepage "https://github.com/cycodehq/cycode-cli"
-  url "https://files.pythonhosted.org/packages/b3/a8/1e56943693f7174726e642ab1233e94cd119103f1e8049de757b93219539/cycode-3.24.2.tar.gz"
-  sha256 "c2a01ef0b5489a8b2c55eedfd446fb3ea8620cba6dc67859f127f2b38101aea5"
+  url "https://files.pythonhosted.org/packages/1f/f1/1897eadd9ed4411719cc8df491a263964c4dfbef4c083f16729045e928bb/cycode-3.25.0.tar.gz"
+  sha256 "b990f23af62f2418b8caa9a2e6fcf4522414d15c6b2f2559e20c4a67abbb5564"
   license "MIT"
   head "https://github.com/cycodehq/cycode-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "dde41f88f56755dbd22de326e6a473ee87d4d0017425a06fccd30f285058375c"
-    sha256 cellar: :any, arm64_tahoe:       "5bf56384037a1d35c9b0acf1735644253a679c5beac049ef0667c680f5206542"
-    sha256 cellar: :any, arm64_sequoia:     "0f941717ad99be42370f725368ed4788389c3526aac435dc5cd30f704b0b1e68"
-    sha256 cellar: :any, arm64_linux:       "8f1464df1945e6cf67ef8853051b18d47bfbfbe0f38debe57e3a45975ecdaf33"
-    sha256 cellar: :any, x86_64_linux:      "380c26259931a8cb3b20e097be9ebce6a1d80d99f6342665e3db380865fad7d3"
+    sha256 cellar: :any, arm64_golden_gate: "f2b5f0404efbc714f4d7df39fcaf0324893b453590118ddd6c29b58d884380ac"
+    sha256 cellar: :any, arm64_tahoe:       "eae1ac7a7a7251f52356fb69a53b490f0d60d11a67d1e71a733661edfe1e5e44"
+    sha256 cellar: :any, arm64_sequoia:     "bcfa998169a09e504e8e2f15651269403ee940305059f1a4753aa60162260510"
+    sha256 cellar: :any, arm64_linux:       "bb527f9f6d4f4f1b33c902834337ba0b2ba19f8f947c1bed351495eeea0a47af"
+    sha256 cellar: :any, x86_64_linux:      "c3a70ba35c44d309ce340aa4713bbe0d53d32472bd773a0c10b91abe582ab124"
   end
 
   depends_on "certifi" => :no_linkage
@@ -41,8 +41,8 @@ class Cycode < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/e5/3f/143b048436775b0f76ac3eec145c019e8173ccc2885c8f20319b996d5e83/charset_normalizer-3.5.1.tar.gz"
-    sha256 "6117b84ea48435e5356dc737f5121485c30920ba43375fa7b434fd753df0eac3"
+    url "https://files.pythonhosted.org/packages/33/1c/f41d4e74c28ab327ff3acd36053f7ea506c55872d7a90b0fa71aa3ab0c89/charset_normalizer-3.5.2.tar.gz"
+    sha256 "39de2a259fc954455c57274dc94c79d5842774e1247a016aff30bc0efed0f4ef"
   end
 
   resource "click" do
@@ -141,8 +141,8 @@ class Cycode < Formula
   end
 
   resource "pyjwt" do
-    url "https://files.pythonhosted.org/packages/02/a5/5197bfd06417837ac079921c66fa6393f1dea3557272a263cebfef69e432/pyjwt-2.15.0.tar.gz"
-    sha256 "b11c5f9791d7bf51c2b39a81ed669f6b2dbbd669df2942f6c60167e9e3d1abe4"
+    url "https://files.pythonhosted.org/packages/43/ea/5194e52748b0da83d71e082d75496eaec6e58f419f5e184786ded517e6a9/pyjwt-2.15.1.tar.gz"
+    sha256 "4f259e80cdfb6b3fc18a7de51fd1ef9ec79652f25019bae68975ca2468a34df8"
   end
 
   resource "python-dateutil" do
@@ -151,8 +151,8 @@ class Cycode < Formula
   end
 
   resource "python-dotenv" do
-    url "https://files.pythonhosted.org/packages/6a/53/ed9d74092561d4b01a2ef1349d52cdbc135e526c245f366b089cfca6de49/python_dotenv-1.2.3.tar.gz"
-    sha256 "a20a594dabeaa385725aa239d5244871c143ecb356add8a20fcf23773a6c3a35"
+    url "https://files.pythonhosted.org/packages/74/26/2fbeedb218a787a5eea551c7532cac4e009f83d689dd2faa0d0353473f86/python_dotenv-1.2.4.tar.gz"
+    sha256 "f0d53e69935a851c0dcc78f3ab7aaccd8cabef0b92382b576b824212902873c0"
   end
 
   resource "python-multipart" do
@@ -196,8 +196,8 @@ class Cycode < Formula
   end
 
   resource "sse-starlette" do
-    url "https://files.pythonhosted.org/packages/2b/54/6767bb789b2f2fed6e0f953df949cd39dc263a384c1b65a95232598621d6/sse_starlette-3.4.11.tar.gz"
-    sha256 "1bae716c02f3e6f294be41ff333220692dae7c3cbab077c900f159676719dade"
+    url "https://files.pythonhosted.org/packages/e4/be/0123026f719d1a7936f214a88b553bb5701e04ff2511147c1dab0c5035eb/sse_starlette-3.5.0.tar.gz"
+    sha256 "75de713aa8a9441513cc283220826da079d982770965b951e9437720e8bafdb2"
   end
 
   resource "starlette" do

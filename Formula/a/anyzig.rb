@@ -5,6 +5,14 @@ class Anyzig < Formula
   sha256 "bad066c1d98a4ac469cf1d9a0203a3be65425d4cd0bc1f1a3dbf042ebb9c1c62"
   license "MIT"
 
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:[._]\d+)+)$/i)
+    strategy :git do |tags, regex|
+      tags.filter_map { |tag| tag[regex, 1]&.tr("_", ".") }
+    end
+  end
+
   no_autobump! because: :incompatible_version_format
 
   bottle do

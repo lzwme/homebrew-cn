@@ -1,21 +1,27 @@
 class Kagent < Formula
   desc "Kubernetes native framework for building AI agents"
   homepage "https://kagent.dev"
-  url "https://ghfast.top/https://github.com/kagent-dev/kagent/archive/refs/tags/v0.10.2.tar.gz"
-  sha256 "452f6c79a5edf1f310bd80b5f8b893c9a4111cd3ba61e45b2c7feda9daf4695c"
+  url "https://ghfast.top/https://github.com/kagent-dev/kagent/archive/refs/tags/v0.10.3.tar.gz"
+  sha256 "258cd2ffd24221a6c00dab916d07639f164b96400ccbdfb6db2257ea1e655e5f"
   license "Apache-2.0"
   head "https://github.com/kagent-dev/kagent.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "3a24b9a797b050e3b4c5961b1e1b2c7b8719f76249acb8e730883fe4d7541eef"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "dd493dd152be66e8f8f9b8d3eca47c1532bc4a37702c47adae3ca28c94df4f74"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "dc6402104b1741284ef86f2b07cb27c2bbf7ecc578d5c0f35c7143d4f6c6875a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "6c89c756e4198f2403951163d0e27a0261fa105eb3dfa5ed21b8b9f7f26a9073"
-    sha256 cellar: :any,                 x86_64_linux:      "d937d98939a9350c59a2f0edf2006aab3fcc5b7ce70c0bd217e0be87252e37ee"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "5112611154bfc5d5093654d960a3374480f9c930e93999f7ebea907c50090d6c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "c60352ef17483c353919a68a2f8c82d8e7243ab26ef118864fb415facaa9e159"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "54c4f11c4fa38d2a002f76b6e997f277f0b20a4a0c1df731e8774aa603612221"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "f7f22dad978cc7d34c1edce808059626f9800bb9aa225c860d57c4ab3c0630a2"
+    sha256 cellar: :any,                 x86_64_linux:      "392cc4d7235de357fb374315cc18392ddfdd46a858a5a629f09185282cc81078"
   end
 
   depends_on "go" => :build
   depends_on "kubernetes-cli" => :test
+
+  allow_network_access! :test
+
+  def fetch
+    system "go", "mod", "download", "-C", "go"
+  end
 
   def install
     cd "go" do

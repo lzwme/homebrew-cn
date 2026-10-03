@@ -1,8 +1,8 @@
 class OsrmBackend < Formula
   desc "High performance routing engine"
   homepage "https://project-osrm.org/"
-  url "https://ghfast.top/https://github.com/Project-OSRM/osrm-backend/archive/refs/tags/v26.9.0.tar.gz"
-  sha256 "f58b0451452820d92197d393bdd01ee5a9644a0c0ad904f74faeec0d1d2d70fd"
+  url "https://ghfast.top/https://github.com/Project-OSRM/osrm-backend/archive/refs/tags/v26.10.0.tar.gz"
+  sha256 "2cb6f8b382b0eec99ae4a3c221edbba56bad11faa8f50e41a4d7408570df166e"
   license "BSD-2-Clause"
   head "https://github.com/Project-OSRM/osrm-backend.git", branch: "master"
 
@@ -12,12 +12,11 @@ class OsrmBackend < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "a267d5a9e2c6bb18951f726dd279a0d4baf4539af5559f9121c31bcd40b1d933"
-    sha256 cellar: :any, arm64_tahoe:       "6734dd80d5073f5bb604b5ba36d287221655346170d55c4ddc740a8318f67c4e"
-    sha256 cellar: :any, arm64_sequoia:     "d464163f75401534baa01cd84b8def82b900956b9c0c7af6c116b39a607f497b"
-    sha256 cellar: :any, arm64_sonoma:      "54676d6a11a221dcc0a4992c301b29ec6b64fbdb940076d33d166cb10214732c"
-    sha256 cellar: :any, arm64_linux:       "c0e635443c4ca93acb0ecb6579b94b303cbb3760b9ab9796ce48d1d44f246900"
-    sha256 cellar: :any, x86_64_linux:      "db9943ba4f7be2b9d04c5c518005ce5e084bae41399b48fdb38b3008c75b8618"
+    sha256 cellar: :any, arm64_golden_gate: "8b1ce75af2479d20a119ab36da61d179232ce830f0e16cffacbb253beee7cc11"
+    sha256 cellar: :any, arm64_tahoe:       "d62900ed33d8b0bc2cf335a184e9f2a43bf951b2ace56a680b36bb94c71689b4"
+    sha256 cellar: :any, arm64_sequoia:     "60c05fc8f6499928ff411c14c3af124a3eff48d23b154147cf868376d4a0cd9e"
+    sha256 cellar: :any, arm64_linux:       "6592ad2fa35b8544ad56ef21fd2d2ca43aaf8b56865a0a168b0df785ccf8cf4c"
+    sha256 cellar: :any, x86_64_linux:      "ae06f33d3b3b4de275e1dbfdd585f93f0f3c6ea34e429e3aa3adff402f1111ec"
   end
 
   depends_on "cmake" => :build
@@ -59,15 +58,20 @@ class OsrmBackend < Formula
     CAUSE
   end
 
-  # Add a missing `<ostream>` include, which libc++ 23 no longer provides transitively.
-  patch do
-    url "https://github.com/Project-OSRM/osrm-backend/commit/fb0251f4f91e2eb7e1baea350633d5352ffdb453.patch?full_index=1"
-    sha256 "fa2b62a256a49648e0fc717f5642456c4745b9c06e2b7581294c24b139a23499"
-    type :unofficial
-    resolves "https://github.com/Project-OSRM/osrm-backend/pull/7714"
+  resource "gauche" do
+    url "https://ghfast.top/https://github.com/Project-OSRM/gauche-rs/archive/b1c3af3029975ddbe573bad874c4520db77321d0.tar.gz"
+    sha256 "8b0e810d1b54285bb78a81050e0954ff70f4d6f8a67f84f4c9771c713f80ac08"
   end
 
   def install
+    resource("gauche").stage do
+      system "cmake", "-S", "cpp", "-B", "build", *std_cmake_args(install_prefix: libexec/"gauche"),
+                      "-DBUILD_SHARED_LIBS=OFF", "-DGAUCHE_BUILD_EXAMPLES=OFF"
+      system "cmake", "--build", "build"
+      system "cmake", "--install", "build"
+      (libexec/"gauche").install "LICENSE"
+    end
+
     lua = Formula["lua"]
     luaversion = lua.version.major_minor
 
@@ -76,6 +80,8 @@ class OsrmBackend < Formula
                     "-DLUA_INCLUDE_DIR=#{lua.opt_include}/lua#{luaversion}",
                     "-DLUA_LIBRARY=#{lua.opt_lib/shared_library("liblua", luaversion.to_s)}",
                     "-DENABLE_GOLD_LINKER=OFF",
+                    "-Dgauche_DIR=#{libexec}/gauche/lib/cmake/gauche",
+                    "-DCMAKE_CXX_FLAGS=-I#{libexec}/gauche/include",
                     *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"

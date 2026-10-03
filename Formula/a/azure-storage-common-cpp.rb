@@ -1,10 +1,9 @@
 class AzureStorageCommonCpp < Formula
   desc "Provides common Azure Storage-related abstractions for Azure SDK"
   homepage "https://github.com/Azure/azure-sdk-for-cpp/tree/main/sdk/storage/azure-storage-common"
-  url "https://ghfast.top/https://github.com/Azure/azure-sdk-for-cpp/archive/refs/tags/azure-storage-common_12.14.0.tar.gz"
-  sha256 "68b3d88d5f1358b3607b4fb76674373c91e1dd840920de05e5a82cf09fcc6e5b"
+  url "https://ghfast.top/https://github.com/Azure/azure-sdk-for-cpp/archive/refs/tags/azure-storage-common_12.15.0.tar.gz"
+  sha256 "23a10c84418f6d8c07858277f3b8e7c7344008f1ab9eacabdc485fb0744903e5"
   license "MIT"
-  revision 1
   compatibility_version 1
 
   livecheck do
@@ -13,13 +12,11 @@ class AzureStorageCommonCpp < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "4cafde82b59cb0606d33c143672aacf7d2d5b7aa3180c15b6c44c0512104c136"
-    sha256 cellar: :any, arm64_tahoe:       "e2d914c191a9eb1296b8b37238e7c519e3af7d8a60d9673c5af5f82ff053f73c"
-    sha256 cellar: :any, arm64_sequoia:     "a7dcf5922c055a18da2ad78b611c7e707ade1e115007578e097e1468355ab5a8"
-    sha256 cellar: :any, arm64_sonoma:      "5ad44e27669167fb22b00026ab8ed38b4ad456de277ce8bd95c939b8141da6b0"
-    sha256 cellar: :any, sonoma:            "b8805b24efce0ffd2ab6f63c8ac80bcb512a4607dc925122dea6ff4e742d02a7"
-    sha256 cellar: :any, arm64_linux:       "a577bad4ab187a026340ad4d4ef32af18627957041d0137b6593b9002256796b"
-    sha256 cellar: :any, x86_64_linux:      "04542da5a420d6c2a456a8f1665f9c25e5e391bf80346087a41481b820fbb8a6"
+    sha256 cellar: :any, arm64_golden_gate: "b00c8981cc471073c6ac58d8d317a8b5481fe912c2b1e0c0fbcf9fbe286a0a83"
+    sha256 cellar: :any, arm64_tahoe:       "85b6b625b71b845bb2c68e92eb2ad06687e66ca3082ae49f1440b68fe4fc1fe3"
+    sha256 cellar: :any, arm64_sequoia:     "5dd98d8e82ae42a430e98878c051c47a73aebf7fa1b3c3e341e7b672748cb19b"
+    sha256 cellar: :any, arm64_linux:       "8f9deafa3bf1f37aa9f499a936dc9deda66c94ef2e7d1066282d83935ebd268c"
+    sha256 cellar: :any, x86_64_linux:      "dff335fbf74d89c4921b389dcf7603a2b6109225e6b517aaf8d16a6e7d01a8ef"
   end
 
   depends_on "cmake" => :build

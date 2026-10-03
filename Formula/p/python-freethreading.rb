@@ -10,14 +10,16 @@ class PythonFreethreading < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "45c0a011b5131760d17e0c84a4eab33ed58ba9e0ab65006a125f495f8b0c0d70"
-    sha256 arm64_tahoe:       "3217ba7722eb2b048d84d29a4c55ce4432b909e61d705c0884e26e42eb744161"
-    sha256 arm64_sequoia:     "f35377c2f538751e6879a23ccd20ab1a80e04a6dae10523cadfdf14114299655"
-    sha256 arm64_linux:       "2c8c4e855d891907588e5cab6236bfde53c6bd6f46801d1a32064e61bd9ac1f3"
-    sha256 x86_64_linux:      "e955f8f9010e06df0e90908f100e1307a4c1136d965a0926cc785c3f9ff1c2da"
+    rebuild 1
+    sha256 arm64_golden_gate: "de96ec8574ef2a6f0e9707b93ef16574e96b05c6f37386c3407bf88bcdf22b91"
+    sha256 arm64_tahoe:       "6e912549b20939bdd3af2e2a368a7f1b4065eba821ea0d707a47ddab07e06056"
+    sha256 arm64_sequoia:     "19803a1d8caa67c12f3040d6e3cbbefc91378a1872357950bb6c7d4562804b06"
+    sha256 arm64_linux:       "dc241e177ad06c8cb4118174329b90997c26243cf440edf76dd8a9ffc6bf2daf"
+    sha256 x86_64_linux:      "48476bcf72c455edab1de6f5f01611e7dae7ffc25f43240afaac1bdf53a4c27f"
   end
 
   depends_on "pkgconf" => :build
+  depends_on "ca-certificates" => :no_linkage
   depends_on "mpdecimal"
   depends_on "openssl@3"
   depends_on "sqlite"
@@ -78,18 +80,12 @@ class PythonFreethreading < Formula
     end
   end
 
-  def site_packages_cellar
-    lib_cellar/"site-packages"
-  end
+  def site_packages_cellar = lib_cellar/"site-packages"
 
   # The HOMEBREW_PREFIX location of site-packages.
-  def site_packages
-    HOMEBREW_PREFIX/"lib/python#{version.major_minor}t/site-packages"
-  end
+  def site_packages = HOMEBREW_PREFIX/"lib/python#{version.major_minor}t/site-packages"
 
-  def python3
-    bin/"python#{version.major_minor}t"
-  end
+  def python3 = bin/"python#{version.major_minor}t"
 
   deny_network_access!
 
@@ -291,6 +287,11 @@ class PythonFreethreading < Formula
            bundled/"pip-#{resource("pip").version}-py3-none-any.whl",
            libexec/"wheel-#{resource("wheel").version}-py3-none-any.whl"
 
+    # Use brewed ca-certificates PEM file instead of the bundled copy
+    certifi = root_site_packages/"pip/_vendor/certifi"
+    rm certifi/"cacert.pem"
+    certifi.install_symlink Formula["ca-certificates"].pkgetc/"cert.pem" => "cacert.pem"
+
     # pip install with --target flag will just place the bin folder into the
     # target, so move its contents into the appropriate location
     mv (root_site_packages/"bin").children, bin
@@ -411,7 +412,7 @@ class PythonFreethreading < Formula
       Python has been installed as
         #{HOMEBREW_PREFIX}/bin/#{python3.basename}
 
-      See: https://docs.brew.sh/Homebrew-and-Python
+      See: https://docs.brew.sh/Language-Runtimes-and-Packages#python
     EOS
   end
 

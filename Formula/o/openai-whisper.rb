@@ -6,17 +6,15 @@ class OpenaiWhisper < Formula
   url "https://files.pythonhosted.org/packages/35/8e/d36f8880bcf18ec026a55807d02fe4c7357da9f25aebd92f85178000c0dc/openai_whisper-20250625.tar.gz"
   sha256 "37a91a3921809d9f44748ffc73c0a55c9f366c85a3ef5c2ae0cc09540432eb96"
   license "MIT"
-  revision 6
+  revision 7
   head "https://github.com/openai/whisper.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "9f5953d6d9906b8073290a9fd63fc3a2fa17b8055b765c7ca3d3a953835745bf"
-    sha256 cellar: :any, arm64_tahoe:       "088acd9176ff8ac06a13a7ce76c52441d506cb9d6f01ccbc6997fcce7ed0dd43"
-    sha256 cellar: :any, arm64_sequoia:     "6bd940b4edab977ef3c9e9ea2c199904c9766a42b256edb34dbc5bcd5624c90b"
-    sha256 cellar: :any, arm64_sonoma:      "4b55acb76df70a9e24d524c560e66659408a8513477beeb1cd18ae8d9af25c70"
-    sha256 cellar: :any, sonoma:            "ea662c73cced0c65fb7fabaa8d8a89e065f737cc48f58721a9008be557b519e5"
-    sha256 cellar: :any, arm64_linux:       "a2714f9ec18e8f466893774100ee8ec5e2fb053b72f03671b6c8d39f1b37f5e4"
-    sha256 cellar: :any, x86_64_linux:      "bc0bc452664aadc60f6a1efffadab5f63bc16742774e98d0f710951277a41bd1"
+    sha256 cellar: :any, arm64_golden_gate: "aba46921e803daaa6aa0e86cd6c200a43196f41a3fa3316b36c00ff32c922041"
+    sha256 cellar: :any, arm64_tahoe:       "8318c85c10b489a7371899607e7cc1f530f63d352744592bbd00cf914d1a87f5"
+    sha256 cellar: :any, arm64_sequoia:     "99df5bbb86f3bc7ee713997d2046a1b7165015f5c21d27713b3f1d639125fb28"
+    sha256 cellar: :any, arm64_linux:       "c11f7fcbabdc2b9ac6ab8363e3aa5b5f8534e46e06281cce02407df33ca4f8a5"
+    sha256 cellar: :any, x86_64_linux:      "43ffdf57cfe685df91da51d9c765aafb6effefdcd4a37ff7d2b90a2a878f4176"
   end
 
   depends_on "cmake" => :build
@@ -37,18 +35,18 @@ class OpenaiWhisper < Formula
   pypi_packages exclude_packages: %w[certifi torch]
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/e7/a1/67fe25fac3c7642725500a3f6cfe5821ad557c3abb11c9d20d12c7008d3e/charset_normalizer-3.4.7.tar.gz"
-    sha256 "ae89db9e5f98a11a4bf50407d4363e7b09b31e55bc117b4f7d80aab97ba009e5"
+    url "https://files.pythonhosted.org/packages/33/1c/f41d4e74c28ab327ff3acd36053f7ea506c55872d7a90b0fa71aa3ab0c89/charset_normalizer-3.5.2.tar.gz"
+    sha256 "39de2a259fc954455c57274dc94c79d5842774e1247a016aff30bc0efed0f4ef"
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/cd/63/9496c57188a2ee585e0f1db071d75089a11e98aa86eb99d9d7618fc1edce/idna-3.18.tar.gz"
-    sha256 "ffb385a7e039654cef1ab9ef32c6fafe283c0c0467bba1d9029738ce4a14a848"
+    url "https://files.pythonhosted.org/packages/f5/08/8eea9d4b8302028f3abb2c0813953f7aec26d33b7a8960ed760e65ff29fa/idna-3.20.tar.gz"
+    sha256 "a7db850025b95ded1eae8a46181a1a6c56c92c96f0e2b005d9ff8dc0210cab44"
   end
 
   resource "llvmlite" do
-    url "https://files.pythonhosted.org/packages/dc/a0/acc8ffcd5bdc63df0097e22c719bfcd61b604358343089313a8aebbb24ab/llvmlite-0.48.0.tar.gz"
-    sha256 "543b19f9ef8f3c7c60d1468191e4ee1b1537bf9f8a3d56f64c0ddd98de92edd2"
+    url "https://files.pythonhosted.org/packages/11/c5/907cec40688a34eb489cded74d555e1ee4af8cf49d83e03dba2c2d4cfe27/llvmlite-0.50.0.tar.gz"
+    sha256 "f2a2cd6ec9ffcc1b7147dea0d7a49efebf17a2b434e0c2844fe175999d571eb4"
   end
 
   resource "more-itertools" do
@@ -57,18 +55,18 @@ class OpenaiWhisper < Formula
   end
 
   resource "numba" do
-    url "https://files.pythonhosted.org/packages/ae/a0/570e3dc53e5602b49108f62a13e529f1eec8bfc7ef37d49c825924dcf546/numba-0.66.0.tar.gz"
-    sha256 "b900e63a0e26c05ea9a6d5a3a5a0a177cb64c5011887bf43edb8c3ed2c38d363"
+    url "https://files.pythonhosted.org/packages/4e/cd/e8280f9ffa30fea9fabc5341223701231fcc5d53a31f51419d42d4bec3a6/numba-0.68.0.tar.gz"
+    sha256 "8a781de54b980b98f43bff7f1093701b5f07c80d031c7cfa8a87493d8bf73f2d"
   end
 
   resource "numpy" do
-    url "https://files.pythonhosted.org/packages/d0/ad/fed0499ce6a338d2a03ebae59cd15093910c8875328855781952abf6c2fe/numpy-2.4.6.tar.gz"
-    sha256 "f3a3570c4a2a16746ac2c31a7c7c7b0c186b95ce902e33db6f28094ed7387dda"
+    url "https://files.pythonhosted.org/packages/13/01/11703282db468b85f6f7b8c7f22d058de5970d5c7e60a3a8aaa313c3de36/numpy-2.5.3.tar.gz"
+    sha256 "df2d5874ff183595a4ba404edd04f6bd9b5505c1d7708573f6a6c17489a67563"
   end
 
   resource "regex" do
-    url "https://files.pythonhosted.org/packages/f1/05/e4f219230e11e774a6c9987d2ab0d0c6b8573e13a17e143d0015bee710ef/regex-2026.6.28.tar.gz"
-    sha256 "3cb4b6c5cb3060cc31efdc1fbb27c25fb9b29044afd87e40601a1c4d9db54342"
+    url "https://files.pythonhosted.org/packages/fc/f2/af1da9d3ceed77bfcdce40427d49ba0be94e4fe84245e3bfef68c10e75b6/regex-2026.9.29.tar.gz"
+    sha256 "8b5fcc4771732191b2b7d1dd68d8f0353f47f8d90b6150f6dce58bf1112442cb"
   end
 
   resource "requests" do
@@ -77,18 +75,18 @@ class OpenaiWhisper < Formula
   end
 
   resource "tiktoken" do
-    url "https://files.pythonhosted.org/packages/e4/e5/5f3cb2159769d0f4324c0e9e87f9de3c4b1cd45848a96b2eb3566ad5ca77/tiktoken-0.13.0.tar.gz"
-    sha256 "c9435714c3a84c2319499de9a300c0e604449dd0799ff246458b3bb6a7f433c1"
+    url "https://files.pythonhosted.org/packages/66/62/167a842aa0429d45f5e797354fd4343a96f6043d67d0513c675c7b8d36e6/tiktoken-0.14.0.tar.gz"
+    sha256 "231dec90efcdccf1b565a1416107736f1e09b1a08fe736ef9d6363e626d03874"
   end
 
   resource "tqdm" do
-    url "https://files.pythonhosted.org/packages/87/d7/0535a28b1f5f24f6612fb3ff1e89fb1a8d160fee0f976e0aa6803862134b/tqdm-4.68.3.tar.gz"
-    sha256 "00dfa48452b6b6cfae3dd9885636c23d3422d1ec97c66d96818cbd5e0821d482"
+    url "https://files.pythonhosted.org/packages/0d/ea/b2a5bd54b28a324dae8211928b2d730b6547500342c7e6c6dea08bd0a485/tqdm-4.70.1.tar.gz"
+    sha256 "cefd0eca11b2a37a3aee776544d4f4ae913f02688135b5556b8788dfa474afc4"
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/53/0c/06f8b233b8fd13b9e5ee11424ef85419ba0d8ba0b3138bf360be2ff56953/urllib3-2.7.0.tar.gz"
-    sha256 "231e0ec3b63ceb14667c67be60f2f2c40a518cb38b03af60abc813da26505f4c"
+    url "https://files.pythonhosted.org/packages/e3/05/b17359e1cefb4f909b5e40b1b90a496d987258916dbbf88e842c729f510e/urllib3-2.8.0.tar.gz"
+    sha256 "63bf2ead4c879426ebf22ef2a781eeb4aa3b4ae798a0435506f8687fd5bb9b63"
   end
 
   def install

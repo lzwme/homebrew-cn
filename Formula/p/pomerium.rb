@@ -1,19 +1,18 @@
 class Pomerium < Formula
   desc "Identity and context-aware access proxy"
   homepage "https://www.pomerium.com"
-  url "https://ghfast.top/https://github.com/pomerium/pomerium/archive/refs/tags/v0.33.3.tar.gz"
-  sha256 "4ff8ca584b0350ba6cac14cec692515fac76510d758419c51c5d7f4bd88381bd"
+  url "https://ghfast.top/https://github.com/pomerium/pomerium/archive/refs/tags/v0.33.4.tar.gz"
+  sha256 "477bb4909f44b32c73d30655ef21478bd5b403922cf2bbc1549c97286ff2658f"
   license "Apache-2.0"
 
   head "https://github.com/pomerium/pomerium.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "17c6496a4b69440f3e9066464c4a581ee38386b0f32f25abe5cfae81d5e92686"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "402c7a7c05d67148f6e9967919a7c931ce4bdc4264732ee1c75b8b338cde3f26"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "276027b55014dfb7305ab533456bcdefc147b0154fe02cf48cfa4be9e4067544"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "1fd361b8e527b036baa61dceecb696e3a8eabb34222ce3bfce2f8c38d9913019"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "e25db5dd613d85a9ef2e486b80b6af54052d8f4801101c2687755df7ea2119d2"
-    sha256 cellar: :any,                 x86_64_linux:      "91ed1c1ce3c268b6fb705d4f08a2a0d557f04afacb949831be26233005e0065a"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "bbf773fb119f7298b47b97ec262bf89bf0203151ff479e9be3e11528f28052cc"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "bbc284f0f9757bdaa0f9d029b3db5e6f56cd9028fcd96bbf8009916f7888f2ff"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "5b9fb7c240ac2fc7e90801917f0199f79c219e2872ee3704db49f80bb0ce9cec"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "966d851cd86bf5316c79bf68f9133b15a9c8512109887ba1db34b0a2fa7a82b7"
+    sha256 cellar: :any,                 x86_64_linux:      "d66c849d2729e65199c05243e0732e8d8783a84ffb296c28b66949f586524389"
   end
 
   # TODO: unpin go@1.26 when pomerium supports go 1.27

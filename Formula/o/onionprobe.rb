@@ -6,17 +6,15 @@ class Onionprobe < Formula
   url "https://files.pythonhosted.org/packages/30/d0/6441b228ce174481ace50dec6a19ce6298eebdb35d06f40f7b1de66f51c4/onionprobe-1.4.1.tar.gz"
   sha256 "45c12c89829e344422974aa9d56cc653d1e20a2f225e73ee18aeb995ca47a2be"
   license "GPL-3.0-or-later"
-  revision 4
+  revision 5
   head "https://gitlab.torproject.org/tpo/onion-services/onionprobe.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_golden_gate: "9228e43b2e385085d789bb734d0f04872eb6790a9721f3633b6f376b1134ec48"
-    sha256 cellar: :any,                 arm64_tahoe:       "9ef708b4830dcb88a943f0195399e42fa7205767120f10b40aaa7e8f6c1e649a"
-    sha256 cellar: :any,                 arm64_sequoia:     "c60241f3136f07ab6b58162bb6a972772307f6734f5354d91abe735fa57bc840"
-    sha256 cellar: :any,                 arm64_sonoma:      "c5e0bccca5f32bb4dc3aae6afaf8ded18a4b3a8f4fc718a9107af9307326de9a"
-    sha256 cellar: :any,                 sonoma:            "3943e953f309fd8fce62d9ddf826e8801cb002889ae491bd15cf79bf11247fcb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "3228c686541b84be207909c917285e545b608f0fed4ad9dc4a8960f6e77b8e90"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "9c512220b17db1fac0235573106677d205b8f8092d0f63c70037446d0ec64e9d"
+    sha256 cellar: :any, arm64_golden_gate: "d13f71b1b6c1adf8476f32e6458bbad927f5edbb4b35a6ce722829741c5e25ac"
+    sha256 cellar: :any, arm64_tahoe:       "8d022f23593f09bac7e28f65addf9814881379f1846b390df73d55099ac8ecd7"
+    sha256 cellar: :any, arm64_sequoia:     "557a07273160caa90e01841011f12f6311d0b38aaf43656b28412667461c1b9e"
+    sha256 cellar: :any, arm64_linux:       "5a158b75a0c8f6a7a6ca1ec2214e5439cf7999dd62ec0d6fcea3c9ae807fc73a"
+    sha256 cellar: :any, x86_64_linux:      "638165cf24ca84720f4ef65d91d4d98c41c4671a97ee2003013c61dc5b38801c"
   end
 
   depends_on "certifi" => :no_linkage
@@ -28,18 +26,18 @@ class Onionprobe < Formula
   pypi_packages exclude_packages: %w[certifi cryptography]
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/e7/a1/67fe25fac3c7642725500a3f6cfe5821ad557c3abb11c9d20d12c7008d3e/charset_normalizer-3.4.7.tar.gz"
-    sha256 "ae89db9e5f98a11a4bf50407d4363e7b09b31e55bc117b4f7d80aab97ba009e5"
+    url "https://files.pythonhosted.org/packages/33/1c/f41d4e74c28ab327ff3acd36053f7ea506c55872d7a90b0fa71aa3ab0c89/charset_normalizer-3.5.2.tar.gz"
+    sha256 "39de2a259fc954455c57274dc94c79d5842774e1247a016aff30bc0efed0f4ef"
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/82/77/7b3966d0b9d1d31a36ddf1746926a11dface89a83409bf1483f0237aa758/idna-3.15.tar.gz"
-    sha256 "ca962446ea538f7092a95e057da437618e886f4d349216d2b1e294abfdb65fdc"
+    url "https://files.pythonhosted.org/packages/f5/08/8eea9d4b8302028f3abb2c0813953f7aec26d33b7a8960ed760e65ff29fa/idna-3.20.tar.gz"
+    sha256 "a7db850025b95ded1eae8a46181a1a6c56c92c96f0e2b005d9ff8dc0210cab44"
   end
 
   resource "prometheus-client" do
-    url "https://files.pythonhosted.org/packages/1b/fb/d9aa83ffe43ce1f19e557c0971d04b90561b0cfd50762aafb01968285553/prometheus_client-0.25.0.tar.gz"
-    sha256 "5e373b75c31afb3c86f1a52fa1ad470c9aace18082d39ec0d2f918d11cc9ba28"
+    url "https://files.pythonhosted.org/packages/52/73/f1334c29c2af4cd9dba6c7817e61b611bd0215e2eb5565c6064a4de18802/prometheus_client-0.26.0.tar.gz"
+    sha256 "04a91bcf94e2cf74a44a1a874d651a2e853ed354b6e822f3b7487751465d5c2b"
   end
 
   resource "pysocks" do
@@ -53,8 +51,8 @@ class Onionprobe < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/43/b8/7a707d60fea4c49094e40262cc0e2ca6c768cca21587e34d3f705afec47e/requests-2.34.0.tar.gz"
-    sha256 "7d62fe92f50eb82c529b0916bb445afa1531a566fc8f35ffdc64446e771b856a"
+    url "https://files.pythonhosted.org/packages/ac/c3/e2a2b89f2d3e2179abd6d00ebd70bff6273f37fb3e0cc209f48b39d00cbf/requests-2.34.2.tar.gz"
+    sha256 "f288924cae4e29463698d6d60bc6a4da69c89185ad1e0bcc4104f584e960b9ed"
   end
 
   resource "stem" do
@@ -63,9 +61,12 @@ class Onionprobe < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/53/0c/06f8b233b8fd13b9e5ee11424ef85419ba0d8ba0b3138bf360be2ff56953/urllib3-2.7.0.tar.gz"
-    sha256 "231e0ec3b63ceb14667c67be60f2f2c40a518cb38b03af60abc813da26505f4c"
+    url "https://files.pythonhosted.org/packages/e3/05/b17359e1cefb4f909b5e40b1b90a496d987258916dbbf88e842c729f510e/urllib3-2.8.0.tar.gz"
+    sha256 "63bf2ead4c879426ebf22ef2a781eeb4aa3b4ae798a0435506f8687fd5bb9b63"
   end
+
+  # TODO: Remove when descriptor retries preserve successful results, https://gitlab.torproject.org/tpo/onion-services/onionprobe/-/issues/117
+  patch :DATA
 
   def install
     virtualenv_install_with_resources
@@ -78,3 +79,18 @@ class Onionprobe < Formula
     assert_match "Status code is 200", output
   end
 end
+
+__END__
+--- a/packages/onionprobe/descriptor.py
++++ b/packages/onionprobe/descriptor.py
+@@ -253,8 +253,8 @@
+             self.set_metric('onion_service_descriptor_fetch_attempts',
+                             attempt, labels)
+
+-            # Return the inner layer or False
+-            return inner
++        # Return the inner layer or False
++        return inner
+
+     def hsdesc_event(
+             self,

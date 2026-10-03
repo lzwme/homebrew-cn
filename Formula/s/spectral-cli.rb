@@ -1,12 +1,12 @@
 class SpectralCli < Formula
   desc "JSON/YAML linter and support OpenAPI v3.1/v3.0/v2.0, and AsyncAPI v2.x"
   homepage "https://stoplight.io/open-source/spectral"
-  url "https://registry.npmjs.org/@stoplight/spectral-cli/-/spectral-cli-6.16.3.tgz"
-  sha256 "12e15e818dbaa8a148fa72030e5f9f9b87a0383794c9b5f8e934f63dd12a95f2"
+  url "https://registry.npmjs.org/@stoplight/spectral-cli/-/spectral-cli-6.17.0.tgz"
+  sha256 "fdff616155068111f5fe00cd06ae8fdb640630f1082ad1e59187d466af7039bf"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "fadec937051a82b4a54d63b3d472e8a8a3c35a3472fd23c372bb19e120e5ba7a"
+    sha256 cellar: :any_skip_relocation, all: "ec5b7447448ef8128e46d71e0271eee20c525c0e75c58dc429c7bc105f510e61"
   end
 
   depends_on "node"

@@ -6,11 +6,6 @@ class PythonAT310 < Formula
   license "Python-2.0"
   compatibility_version 1
 
-  livecheck do
-    url "https://www.python.org/downloads/source/"
-    regex(%r{href=.*?/Python[._-]v?(3\.10(?:\.\d+)*)\.t}i)
-  end
-
   bottle do
     sha256 arm64_golden_gate: "36d2aa8d81c08b1711a8873e34e241da83f270b632d6479271541ea50c7a659c"
     sha256 arm64_tahoe:       "a9d8a906b76635ff7e9b473f8d4375936841a2cf124dfef651c7e47c0b22a7c5"
@@ -23,9 +18,9 @@ class PythonAT310 < Formula
   # build packages later. Xcode-only systems need different flags.
   pour_bottle? only_if: :clt_installed
 
-  # https://devguide.python.org/versions/#versions
-  deprecate! date: "2026-10-15", because: :deprecated_upstream
-  disable! date: "2027-10-15", because: :deprecated_upstream
+  # https://devguide.python.org/versions/#unsupported-versions
+  deprecate! date: "2026-10-01", because: :deprecated_upstream
+  disable! date: "2027-10-01", because: :deprecated_upstream
 
   depends_on "pkgconf" => :build
   depends_on "gdbm"

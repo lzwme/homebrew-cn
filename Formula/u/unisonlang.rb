@@ -4,12 +4,12 @@ class Unisonlang < Formula
   license "MIT"
 
   stable do
-    url "https://ghfast.top/https://github.com/unisonweb/unison/archive/refs/tags/release/1.4.0.tar.gz"
-    sha256 "43fd81354afd6f16adefb6beda6bb06f3df853ba74cf0ae3e85baa4018c22b31"
+    url "https://ghfast.top/https://github.com/unisonweb/unison/archive/refs/tags/release/1.5.0.tar.gz"
+    sha256 "74f1327e94199a93d97619268744f186c5a1b7d0b1af7ce1f35799137d1d1357"
 
     resource "local-ui" do
-      url "https://ghfast.top/https://github.com/unisonweb/unison-local-ui/archive/refs/tags/release/1.4.0.tar.gz"
-      sha256 "36e5b24d4e9836b5b7bb52669fcd59bc5a952777c8a69c5136a61e606fa08a13"
+      url "https://ghfast.top/https://github.com/unisonweb/unison-local-ui/archive/refs/tags/release/1.5.0.tar.gz"
+      sha256 "d4cc5538f3826da2665c494c2cb6253dd2ffa60fe1cbdce48ba2543e293cc04b"
 
       livecheck do
         formula :parent
@@ -23,12 +23,10 @@ class Unisonlang < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "e1b182aaa2007527105a98e8d11683fe393902fb51e07ce9b8c09d36db70ad7f"
-    sha256 cellar: :any, arm64_sequoia: "a788df11b94caf5e1dc7aca9d27a4ea55d3ad7b2815de476a93a5482737016e9"
-    sha256 cellar: :any, arm64_sonoma:  "d6c410157b80a751527439ca540d77ab4847c6a4e177b6b61480b703b6540a95"
-    sha256 cellar: :any, sonoma:        "e4dfacde76d8a10d1bbe5bf6822cc3d5aeff21345e797c336420102fc1ea7710"
-    sha256 cellar: :any, arm64_linux:   "02f273b7190cb560122167ae28f46844e7481fcec589c21b7c70d78e1d552e93"
-    sha256 cellar: :any, x86_64_linux:  "b2748c470b5e364faac2d2322da18e478357a0232d12d93024b503367ade718a"
+    sha256 cellar: :any, arm64_tahoe:   "ffb7b68f53788bb18f1811a571196cff31a0671274e420457b79311c34a8a63a"
+    sha256 cellar: :any, arm64_sequoia: "40e7cb1fd92bbb37a8346f5f52c7807091ac44703155e8f68684a7faeba74560"
+    sha256 cellar: :any, arm64_linux:   "5bb9d4f360807834e59d5a606ef2c33a6ef33f7d221bee0cc089b2e6582f7fe6"
+    sha256 cellar: :any, x86_64_linux:  "2c04e3f8016eb807fb4c32965820c29b754b520ffe3675b10dbd216319ac0978"
   end
 
   head do

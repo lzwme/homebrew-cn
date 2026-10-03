@@ -1,8 +1,8 @@
 class Armadillo < Formula
   desc "C++ linear algebra library"
   homepage "https://arma.sourceforge.net/"
-  url "https://downloads.sourceforge.net/project/arma/armadillo-15.6.0.tar.xz"
-  sha256 "e00a11b15ce4f3a75c634bfa58411ce1acb4317705b418a72348e81dc8f56464"
+  url "https://downloads.sourceforge.net/project/arma/armadillo-15.6.1.tar.xz"
+  sha256 "23fe3b3848e2929ab39089ad6e8e445d3a24cc39d36c018a253b97e56ba88c2c"
   license "Apache-2.0"
 
   livecheck do
@@ -11,12 +11,11 @@ class Armadillo < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "b07cf3fcb50d2af52e0d21809ef5c4028ab272568f528f2256ec2a0e128a6c8f"
-    sha256 cellar: :any, arm64_tahoe:       "61b5c3ea056fdb0124a593dcba74b84638755e5742dffeadc03c45e315ecd229"
-    sha256 cellar: :any, arm64_sequoia:     "99f2a571210ec7f7e90e4aedab8d8706194fbe1d88d29272336051d49ce9ff15"
-    sha256 cellar: :any, arm64_sonoma:      "c1aa3611d5edad35932d8b6bb76563d30846fec60a2d8e59614f6efa03db2743"
-    sha256 cellar: :any, arm64_linux:       "669e073d3e6d2903d1f680a382d6d3c4a7ffea1c70a29ab3553309b601b51de4"
-    sha256 cellar: :any, x86_64_linux:      "7bdb417cfe61fd4deaa8b6e5cc3babc315e12da7ffbba2c3001f529b308be0af"
+    sha256 cellar: :any, arm64_golden_gate: "821e030c3900578e37f0b84cc70cb1717b77acf4d0cefbbfb6d9feac263b5b07"
+    sha256 cellar: :any, arm64_tahoe:       "6934af8b581da7a29d15acb654b2c35747bd59de11b30ead2b9164f87b216de6"
+    sha256 cellar: :any, arm64_sequoia:     "bf1270b5d374c3621bdf416459080c10a0d5b388e8c1bf707f190ed12c02436b"
+    sha256 cellar: :any, arm64_linux:       "f39aceba7334f02fff73b7fcf5fb850638d30534d5ecea9f2c3110927ea25db6"
+    sha256 cellar: :any, x86_64_linux:      "78cd5c616611820bffaa52766180e78e664e886d611553b1829a08305b25dce5"
   end
 
   depends_on "cmake" => :build

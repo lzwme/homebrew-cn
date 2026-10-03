@@ -1,18 +1,17 @@
 class Tfmcp < Formula
   desc "Terraform Model Context Protocol (MCP) Tool"
   homepage "https://github.com/nwiizo/tfmcp"
-  url "https://ghfast.top/https://github.com/nwiizo/tfmcp/archive/refs/tags/v0.2.3.tar.gz"
-  sha256 "4be94ef2a0779e679506cf83b200638c1073cc9718fc6a9125712eb8d5000da5"
+  url "https://ghfast.top/https://github.com/nwiizo/tfmcp/archive/refs/tags/v0.2.4.tar.gz"
+  sha256 "9eb67399692ec7f5d188e4a42064157592286d6ad906c9e2736501f5d697b324"
   license "MIT"
   head "https://github.com/nwiizo/tfmcp.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "6b26da3e94858028502be8763989e36185c45f33a491c6df811f603764e89b32"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "9ccf9842e3b1a9c63dd0fb73f170313240208c33386ddef74ea17c84dc44344b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "d926be8e8de3fa27550a5d2e82c9500383ce54b7d942cd33e01035c947595d72"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "a96c3ea440cf111eb6e7ec764208eff58b6d03f93ad466e845cdea72816f062e"
-    sha256 cellar: :any,                 arm64_linux:       "ac5bc598eb4e500afa4119ae236a7f4390e8bf48b3c164000f7657deeb878206"
-    sha256 cellar: :any,                 x86_64_linux:      "e07f68fa6c07836228917594b67a1eb2f5d08c420badaa7b7f2e9bc045e5c28d"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "b13a7b7e33962bf7cc11eb1cee0aca60e4ff7bd9dd8413c47b0832dacc12931f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "bc5090189f95811b5e7fd7e78eee084af8595dab79fbc4afd866e6a261cc56ab"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "b080181f0bdbeaa02de7b183b08c34bbea4f09ccf059de9de11b7fb6eb409121"
+    sha256 cellar: :any,                 arm64_linux:       "42737c0a9d274485d0bbbd7ffb2d6b890446ed703effedda6ef29c0b72151e37"
+    sha256 cellar: :any,                 x86_64_linux:      "50e140548e6e4452a80a0e10f3655226f1cec56fa9d16e0bda6645706662d513"
   end
 
   depends_on "rust" => :build

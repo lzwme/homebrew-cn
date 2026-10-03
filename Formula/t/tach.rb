@@ -3,17 +3,17 @@ class Tach < Formula
 
   desc "Tool to enforce dependencies using modular architecture"
   homepage "https://docs.gauge.sh/getting-started/introduction"
-  url "https://files.pythonhosted.org/packages/f3/66/d5b253c9e846a2de009d14fbf3fa352a2f8fe74d0184ae3dbe453772f2fa/tach-0.35.1.tar.gz"
-  sha256 "72a30df29fcf6cfef4cf145447eef23c1432377594d37b0b28ab195e11ccfe64"
+  url "https://files.pythonhosted.org/packages/f3/47/72b5a0c5c5902c064da76ad7041f814d3a4e7fe7980cc9eea627daed2a0b/tach-0.35.2.tar.gz"
+  sha256 "513ec05cbf16a0b343daaf54480512918b6cbdd8174e98fdbfcfe4b11da5e1fd"
   license "MIT"
   head "https://github.com/tach-org/tach.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "284594b811a629c9bb59f8bb28f06d442229352fc91addbf326673ae3e322d9a"
-    sha256 cellar: :any, arm64_tahoe:       "2af30c6dcfb6bf4e6ef95efbe67481b99a49d0202141531009968259ff83ea32"
-    sha256 cellar: :any, arm64_sequoia:     "ffcde8cba3a207ab42b10de4d0c5f973bcd75d886950f272d7f591a71d06f42f"
-    sha256 cellar: :any, arm64_linux:       "30471a50e96507e6e996d62ddd7fec78eeec07f3aa46e755039f6578396dc9b3"
-    sha256 cellar: :any, x86_64_linux:      "9e09e531017d7dcaa62433530e0062b88e03b060e5f24d47125234924428fd2d"
+    sha256 cellar: :any, arm64_golden_gate: "692c081ae46f9e14f4a1ebe3dc77d96577a5923ed1a942afaa125f0a9fbf3ed8"
+    sha256 cellar: :any, arm64_tahoe:       "a01f63151c5a13fc96c1ffab9c8b21e21ab93bb4f2559c89e5a9eec045e380a5"
+    sha256 cellar: :any, arm64_sequoia:     "bf2750e4723afc7f79d4947966ddf0b87c4c37b33cfb1480501b0be5c5700936"
+    sha256 cellar: :any, arm64_linux:       "8ddbbb9d240a5feb5e98e177cbdb0f6f145fd288cd93c20ba85520d9294f3866"
+    sha256 cellar: :any, x86_64_linux:      "1186a063cbbdd237de0beccbe5b177391be8c189d59862a5c4e1b4d4c915d3a8"
   end
 
   depends_on "rust" => :build
@@ -26,8 +26,8 @@ class Tach < Formula
   end
 
   resource "gitpython" do
-    url "https://files.pythonhosted.org/packages/e0/db/3ca813cbacb23ab6fe46ff38a9b5ef8e73e970c8051f2ce903aacafe0446/gitpython-3.1.62.tar.gz"
-    sha256 "1791de66309bc0c7cfca40bf8d2e3de7ca091cbf94e6051be1ad0722c61062af"
+    url "https://files.pythonhosted.org/packages/6e/2d/6f6e649818da44d4499604802c89329b8d9799687a124e3a5e467a643336/gitpython-3.2.0.tar.gz"
+    sha256 "fb92310af6844d96adc95ca066ed2e617c00e1dbd146a326626c81e72e18cc2e"
   end
 
   resource "markdown-it-py" do
@@ -41,8 +41,8 @@ class Tach < Formula
   end
 
   resource "networkx" do
-    url "https://files.pythonhosted.org/packages/6a/51/63fe664f3908c97be9d2e4f1158eb633317598cfa6e1fc14af5383f17512/networkx-3.6.1.tar.gz"
-    sha256 "26b7c357accc0c8cde558ad486283728b65b6a95d85ee1cd66bafab4c8168509"
+    url "https://files.pythonhosted.org/packages/dc/76/3af777226b63a5e64a6b36b1ec5855c14e2b94a37096d4760e595fc43511/networkx-3.7.tar.gz"
+    sha256 "fd77a511bd90f39f3d016351345b52cf5319b813bdca01de3f755d3cca62e96a"
   end
 
   resource "prompt-toolkit" do
@@ -61,8 +61,8 @@ class Tach < Formula
   end
 
   resource "pyparsing" do
-    url "https://files.pythonhosted.org/packages/f3/91/9c6ee907786a473bf81c5f53cf703ba0957b23ab84c264080fb5a450416f/pyparsing-3.3.2.tar.gz"
-    sha256 "c777f4d763f140633dcb6d8a3eda953bf7a214dc4eff598413c070bcdc117cbc"
+    url "https://files.pythonhosted.org/packages/e4/11/b213bebff182584360cb8d17c72c1677fec5c5c228de439e63bcf8ab1c8f/pyparsing-3.3.3.tar.gz"
+    sha256 "928ae7e20211f3b6f3915a72f06a0cfd29ab9d24279dd6346b6b1a7146397d36"
   end
 
   resource "pyyaml" do
@@ -91,8 +91,8 @@ class Tach < Formula
   end
 
   resource "wcwidth" do
-    url "https://files.pythonhosted.org/packages/36/57/ed58088fafdf4c55a0ad6bde846502567645424d7ebf325230b9237f4085/wcwidth-0.8.3.tar.gz"
-    sha256 "d128512515fbf4612e0ff21fd6380399210318b7b54a9af59dff8454cf9730eb"
+    url "https://files.pythonhosted.org/packages/dc/ac/3a943d2792c9bb368aaa8b50121c0f778460ba2d7fbdc0a0366201d9e761/wcwidth-0.9.1.tar.gz"
+    sha256 "5823209b0d43af322ce698c689380d7c15ca31fa8e6e3be8459f27031bef0af5"
   end
 
   def install

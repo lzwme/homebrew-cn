@@ -5,10 +5,6 @@ class PythonTkAT310 < Formula
   sha256 "9448b34d16f8e3db0964ac3ed9fb283197747543c2c021f283ffd2c8b7287357"
   license "Python-2.0"
 
-  livecheck do
-    formula "python@3.10"
-  end
-
   bottle do
     sha256 cellar: :any, arm64_golden_gate: "601d74823b6a4f89de6e47a05163444b612d491ebe40504386cad247ab60ddac"
     sha256 cellar: :any, arm64_tahoe:       "3c47717207f20bde1abf286ad572feeebc0c845a5e45e597c246c1acd4060939"
@@ -19,9 +15,9 @@ class PythonTkAT310 < Formula
 
   keg_only :versioned_formula
 
-  # https://devguide.python.org/versions/#versions
-  deprecate! date: "2026-10-15", because: :deprecated_upstream
-  disable! date: "2027-10-15", because: :deprecated_upstream
+  # https://devguide.python.org/versions/#unsupported-versions
+  deprecate! date: "2026-10-01", because: :deprecated_upstream
+  disable! date: "2027-10-01", because: :deprecated_upstream
 
   depends_on "python@3.10"
   depends_on "tcl-tk@8"

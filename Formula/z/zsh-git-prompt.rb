@@ -9,6 +9,9 @@ class ZshGitPrompt < Formula
     sha256 cellar: :any_skip_relocation, all: "d4fa3836434d56704bd03f88f3e45557cac6e12cb6e17cc251635ecdcbc431eb"
   end
 
+  deprecate! date: "2026-10-01", because: :unmaintained
+  disable! date: "2027-10-01", because: :unmaintained
+
   def install
     prefix.install Dir["*.{sh,py}"]
   end

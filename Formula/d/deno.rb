@@ -66,14 +66,10 @@ class Deno < Formula
   test do
     require "utils/linkage"
 
-    IO.popen("deno run -A -r https://fresh.deno.dev fresh-project", "r+") do |pipe|
-      pipe.puts "n"
-      pipe.puts "n"
-      pipe.close_write
-      pipe.read
+    system bin/"deno", "init", "my_project"
+    cd "my_project" do
+      system bin/"deno", "test"
     end
-
-    assert_match "# Fresh project", (testpath/"fresh-project/README.md").read
 
     (testpath/"hello.ts").write <<~TYPESCRIPT
       console.log("hello", "deno");
