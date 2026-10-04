@@ -2,8 +2,8 @@ class Rdkit < Formula
   desc "Open-source chemoinformatics library"
   homepage "https://rdkit.org/"
   # NOTE: Make sure to update RPATHs if any "@rpath-referenced libraries" show up in `brew linkage`
-  url "https://ghfast.top/https://github.com/rdkit/rdkit/archive/refs/tags/Release_2026_03_6.tar.gz"
-  sha256 "d4d20b3b140237084694518aab34fdba6929d44bd7f720bce69329516abef663"
+  url "https://ghfast.top/https://github.com/rdkit/rdkit/archive/refs/tags/Release_2026_09_1.tar.gz"
+  sha256 "86711e340759a3a0678a2e62f54f26f7ff564c3a02de0460f60b1ce89ac1bfe9"
   license "BSD-3-Clause"
   head "https://github.com/rdkit/rdkit.git", branch: "master"
 
@@ -16,12 +16,11 @@ class Rdkit < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "c4cbaa7f8942d281d4db8827d5c229f57af08dde1903f4bfb16400409b5d6dd6"
-    sha256 cellar: :any, arm64_tahoe:       "dedcf00d2c5b8b1021f3695eeb8788779886ad60dae6c14ac830f72e38ec5622"
-    sha256 cellar: :any, arm64_sequoia:     "80273e89611148b15e117cfe2502494085a3eea88620e201b9c9561e06c9d176"
-    sha256 cellar: :any, arm64_sonoma:      "c9ef0680e9e1ff558ebf8b0b525aa70fc1172c392800311ab2917a4a88adf27f"
-    sha256 cellar: :any, arm64_linux:       "cb9c967c6c923c879fa93718c8c40a4b1203920f854f33f36f5f3665ffbfdf73"
-    sha256 cellar: :any, x86_64_linux:      "a5e9d3892a3c813d4f36f2faddceee1527ba5025118a98dec2a3a25de07081eb"
+    sha256 cellar: :any, arm64_golden_gate: "a061790105db0118a998193489ce6d834ec4eb7ad5d0cf0b559d6f82ba4b276a"
+    sha256 cellar: :any, arm64_tahoe:       "abdba9b65abfe462ed1aa4cb2e5401d7742e9245d32d88dda53467fd546f2d49"
+    sha256 cellar: :any, arm64_sequoia:     "3523a26e6e8aac1ddd1eddc760a2dda87318b9622c3c7e33fe3c72e141957e1f"
+    sha256 cellar: :any, arm64_linux:       "68ca0c1506133ea4a30bb726f6b551a70bc2cabe7626c4b21cd57b88e7400109"
+    sha256 cellar: :any, x86_64_linux:      "c223fe99c7bc62a27ed9bd766a0a082f1db2e881ffa4426ac9ae124ad4f41bf5"
   end
 
   depends_on "catch2" => :build

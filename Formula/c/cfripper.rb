@@ -3,17 +3,16 @@ class Cfripper < Formula
 
   desc "Library and CLI tool to analyse CloudFormation templates for security issues"
   homepage "https://cfripper.readthedocs.io"
-  url "https://files.pythonhosted.org/packages/ad/ab/cf03ff1c0e248e1a5de91b603a5dbba6855e6069670a390f139669f61e9c/cfripper-1.21.1.tar.gz"
-  sha256 "e0f5f17e0869764d5ef6394a70898d9485c4d200b0b1e3b04e57e7c940bf9731"
+  url "https://files.pythonhosted.org/packages/7b/61/48e61b6e219578d6ac66fb4ed7411a0fbfee98f5a4026296752aff5abe50/cfripper-1.21.2.tar.gz"
+  sha256 "6e567a9427b8633895024e3a5062e785bb02b0b63b230f88fecb9e354e5064da"
   license "Apache-2.0"
-  revision 1
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "c51c0fde2f84447070450c02e46c5087012b8c73afe7998141db94f64bff41c5"
-    sha256 cellar: :any, arm64_tahoe:       "a3b774ad5ee37f0ec294dfc5a94b4de58832c290d9a8cb17cd89ae355f96c557"
-    sha256 cellar: :any, arm64_sequoia:     "4d21f2193a45b5707450b0bd780a0e4e82e0a573663b2543ec5807577a0dc492"
-    sha256 cellar: :any, arm64_linux:       "cd60e5ad6c5e22e83583abddd3f99614a7d227df954abddb008c4d40ea4ba540"
-    sha256 cellar: :any, x86_64_linux:      "e90748b9cbba2d8d3d5a50e14ba600e6aaf16831f6de67e5406f769e6d330eb2"
+    sha256 cellar: :any, arm64_golden_gate: "f3b8b6d7d5338c2550d357481f784d040e01001d659bb0a7ab64d8e33806ad56"
+    sha256 cellar: :any, arm64_tahoe:       "f357c8b25446a2444e4b5519c92512623256d4f0f3a0898efa011a3fe493cb13"
+    sha256 cellar: :any, arm64_sequoia:     "ba361aca53202baf9d05356d9eeb63961aa492eb51ba897c34269c220e971234"
+    sha256 cellar: :any, arm64_linux:       "8fd6d519c2ad92422df39e1d4ee0b4c63bd7850e065bb363ad314b7b3655d498"
+    sha256 cellar: :any, x86_64_linux:      "25b2b88f44d3663df3c19c4cd62de47f6b325b86b1921b8b0e61adf8ea7a297d"
   end
 
   depends_on "libyaml"
@@ -23,13 +22,13 @@ class Cfripper < Formula
   pypi_packages exclude_packages: "pydantic"
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/75/46/d8c87ada70a7647fb3d206c7f19eafca3580a0ae4c06d62da539a1ee1207/boto3-1.43.105.tar.gz"
-    sha256 "e51260aed9cc1474778b5488bc6f97ad28f27a0a7002f4bbaaf8191aff1422ea"
+    url "https://files.pythonhosted.org/packages/2a/c4/c68d22d91482898f1294dab7541ad83f8bcf9df83107e6d8436d6e9dbf01/boto3-1.43.107.tar.gz"
+    sha256 "c4e0f1a0295cbb7103f2950128cf88463c076d220080a7d0f127cf834969fc3a"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/2b/30/668f3c0533a440787e212cf56404cb6ec234ae8e6baf97fe17329d512d88/botocore-1.43.105.tar.gz"
-    sha256 "afb3e7706b123ab069d1c34571ca1fdf82528a48425574fe4693df3d039d503f"
+    url "https://files.pythonhosted.org/packages/4d/22/3aed44a1e0b9820485124a9ad25e9bccd5539c547ef12827547c3cbeb25f/botocore-1.43.107.tar.gz"
+    sha256 "4a37fa072a00280c746313532d19b00e2dc53f1993222601df104d71d548d5b6"
   end
 
   resource "cfn-flip" do

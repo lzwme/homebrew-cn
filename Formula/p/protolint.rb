@@ -1,19 +1,17 @@
 class Protolint < Formula
   desc "Pluggable linter and fixer to enforce Protocol Buffer style and conventions"
   homepage "https://github.com/yoheimuta/protolint"
-  url "https://ghfast.top/https://github.com/yoheimuta/protolint/archive/refs/tags/v0.57.0.tar.gz"
-  sha256 "c6bf097168e965dd32554830a4f8a87da6ab0e8902adcf12a3507009e3686e7a"
+  url "https://ghfast.top/https://github.com/yoheimuta/protolint/archive/refs/tags/v0.58.0.tar.gz"
+  sha256 "7d5f4650ed23f68c34a6be1ba77fb3661dd4b7b28b64664a479b6835febceb18"
   license "MIT"
   head "https://github.com/yoheimuta/protolint.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "34b8b3d31b615477c4fabd9a97adaaae31b7110bfb9b0f05c6d472342c8ed312"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "e0559a82734f9650e758873da7961db7d6e0641b1e419b2b8bac0782b6d32a03"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "e0559a82734f9650e758873da7961db7d6e0641b1e419b2b8bac0782b6d32a03"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "e0559a82734f9650e758873da7961db7d6e0641b1e419b2b8bac0782b6d32a03"
-    sha256 cellar: :any_skip_relocation, sonoma:            "06c39203942571a2443918910823661b51242edc913150696df911e48bf0fb5b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "1f53b31df68da617b457cf1a55f703660bad17aabe6a7c5006b0dde8809134cf"
-    sha256 cellar: :any,                 x86_64_linux:      "3f48e9221c8c7002332e239c4ae10ee9677dbb9792be757b2476cb17e4cf419d"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "50c67b56b137888adabb258b436b96edc4aedce2a7184fb4da4a3bd152f4b560"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "50c67b56b137888adabb258b436b96edc4aedce2a7184fb4da4a3bd152f4b560"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "50c67b56b137888adabb258b436b96edc4aedce2a7184fb4da4a3bd152f4b560"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "00082246c3369183f579e89f4fa92bed037df29f17d3c8f0cc56a68d698e7a3b"
+    sha256 cellar: :any,                 x86_64_linux:      "a1d61eb911accd7cbce6f1087ca35102ff4572ddaf79c7652aa2f3ec61866196"
   end
 
   depends_on "go" => :build

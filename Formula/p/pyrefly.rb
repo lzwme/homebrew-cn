@@ -1,20 +1,26 @@
 class Pyrefly < Formula
   desc "Fast type checker and IDE for Python"
   homepage "https://pyrefly.org/"
-  url "https://ghfast.top/https://github.com/facebook/pyrefly/archive/refs/tags/1.3.1.tar.gz"
-  sha256 "00777ca516a4bd6740c2f5b2c70a5ead3349bb565e5f86ba8ae59810b5ea3f45"
+  url "https://ghfast.top/https://github.com/facebook/pyrefly/archive/refs/tags/1.3.2.tar.gz"
+  sha256 "7da05b862497dafa3d34e7b574a9954f4daec71fe8423eb32f3765982d705b10"
   license "MIT"
   head "https://github.com/facebook/pyrefly.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "8114d22ab33328333b216cfabe9bdc40b7ab24f56ea1afbc8cfee6c3f90ce0f0"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "f49bcb78ca6d0c9ea4e2ca2e76b194435727cba6fd5d04d1a85adda46006726c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "74faa4a53f2c104575875b13af7a0dc5c13e719de90f6b32da2b33ea8159adbb"
-    sha256 cellar: :any,                 arm64_linux:       "dec38253d65642540a7228375dd40f251fed568353292caab56abc523f7fe6e5"
-    sha256 cellar: :any,                 x86_64_linux:      "d62e9dec44d7596db6474e24ddb0c16152fe31f7a630026a251a848414964dc0"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "ff84d77dbfa4beca5e65ce38b91a8462b0c3d2e0564c0a8074bf60c21120b951"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "c22299efa2b12801fc8ff222b6b3bc0ed869ee1bb1806cb63e5230a8a77e58c4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "d2e530634d675dad2c52920508484711bdf3c56de5b15b655e6792f709ded6bd"
+    sha256 cellar: :any,                 arm64_linux:       "c702381da8b2fb81c01c1902ec54fa656a7c383be5fc95d5ab54412fc85b6e65"
+    sha256 cellar: :any,                 x86_64_linux:      "fa834b488910df012b1923ee1e538ff9145c703e2567d7987cecbd03aa2c0da8"
   end
 
   depends_on "rust" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
 
   def install
     # Currently uses nightly rust features. Allow our stable rust to compile

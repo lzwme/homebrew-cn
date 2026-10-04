@@ -2,6 +2,7 @@ class Bsc < Formula
   desc "Bluespec Compiler (BSC)"
   homepage "https://github.com/B-Lang-org/bsc"
   license "BSD-3-Clause"
+  revision 1
   head "https://github.com/B-Lang-org/bsc.git", branch: "main"
 
   stable do
@@ -24,11 +25,11 @@ class Bsc < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "0d8fd080c2542f5cb3024ae93843f7dae35ff3d02305c81782b21abfad22a0df"
-    sha256 cellar: :any, arm64_tahoe:       "6818e9977beaec7bd9f0f027dde1faf1a93ce43d942858bb76fe85baeee24ae5"
-    sha256 cellar: :any, arm64_sequoia:     "d641b4c1179b71a628b2e30f6080a8deffb31d3fd600417f7f6801d58d6b4bef"
-    sha256 cellar: :any, arm64_linux:       "40199a9fff3800260fbec86b0ef1e27c463f5ce95957d30d936c61df8fe6b97b"
-    sha256 cellar: :any, x86_64_linux:      "3207c503c9fe8e16b85592749476d3eeeb1145714400acf66d4a4fc3c8142eae"
+    sha256 cellar: :any, arm64_golden_gate: "323b3ea0ac72592a6c37f079d8ea0435c7c01a3077df20b2e92c41ef3e424205"
+    sha256 cellar: :any, arm64_tahoe:       "b049841441cbce5e98752172f20f402eab30a1f5eba5f0f0492d8c7e13499492"
+    sha256 cellar: :any, arm64_sequoia:     "7a1f6e535570500088d040698d2ed54ee6e37bf8cb56734a6d791cd07cef6c9b"
+    sha256 cellar: :any, arm64_linux:       "c2a8d89692430dd6653c285220305d7bd43070bf793c19e94742806335984fba"
+    sha256 cellar: :any, x86_64_linux:      "2728a37a36ec9642142af0522082ea9dccbb3f210f7948301ca33071aaa610fd"
   end
 
   depends_on "autoconf" => :build
@@ -47,6 +48,8 @@ class Bsc < Formula
 
   conflicts_with "libbsc", because: "both install `bsc` binaries"
 
+  # TODO: Remove the Tcl 9.1 workaround once upstream supports it.
+  # https://github.com/B-Lang-org/bsc/issues/1130
   # Workaround to use brew `tcl-tk` until upstream adds support
   # https://github.com/B-Lang-org/bsc/issues/504#issuecomment-1286287406
   patch :DATA
@@ -167,3 +170,18 @@ __END__
  	echo -ltcl${TCL_SUFFIX}
  	exit 0
      fi
+--- a/platform.mk
++++ b/platform.mk
+@@ -77,10 +77,10 @@
+ ifeq ($(TCL_VERSION),8.6)
+ TCL_DEFS=
+ else
+-ifeq ($(TCL_VERSION),9.0)
++ifneq ($(filter 9.0 9.1,$(TCL_VERSION)),)
+ TCL_DEFS=TCL9
+ else
+-$(error Unsupported Tcl version: $(TCL_VERSION)
++$(error Unsupported Tcl version: $(TCL_VERSION))
+ endif
+ endif
+ endif

@@ -20,7 +20,7 @@ class Herdr < Formula
   end
 
   depends_on "rust" => :build
-  depends_on "zig" => :build
+  depends_on "zig@0.16" => :build
 
   deny_network_access!
 

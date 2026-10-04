@@ -3,12 +3,12 @@ class Khard < Formula
 
   desc "Console carddav client"
   homepage "https://khard.readthedocs.io/en/latest/"
-  url "https://files.pythonhosted.org/packages/8f/47/e31cf968dbbba341887dd33bb84fd1ecba737bc762a5149c9c673f1ab6da/khard-0.21.0.tar.gz"
-  sha256 "67a99a4655ceec9520ec4bb282845f83cc6c6efd29daf9b3208e5ed50270affb"
+  url "https://files.pythonhosted.org/packages/b8/80/56b6698504dd5ed2e1f354af6e823845da62254150198071958b900eada8/khard-0.22.0.tar.gz"
+  sha256 "99f8ce6ab338eafb4840d82881a155b3f13031505123efc92ea42e88e900c6dd"
   license "GPL-3.0-only"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "3076560e118814a4585519a518165ad52799407453ab454b1e96bbf313bc0461"
+    sha256 cellar: :any_skip_relocation, all: "1a1e083cb3faabfdb3db3111e95290a04b8247c51abc5ff22e07bcec4593e18c"
   end
 
   depends_on "python@3.14"
@@ -24,8 +24,8 @@ class Khard < Formula
   end
 
   resource "pytz" do
-    url "https://files.pythonhosted.org/packages/ff/46/dd499ec9038423421951e4fad73051febaa13d2df82b4064f87af8b8c0c3/pytz-2026.2.tar.gz"
-    sha256 "0e60b47b29f21574376f218fe21abc009894a2321ea16c6754f3cad6eb7cdd6a"
+    url "https://files.pythonhosted.org/packages/b0/ed/fa23d28713004418bbf2407127f80f385bfb0bf4e677bef02c25c27b00ee/pytz-2026.4.tar.gz"
+    sha256 "464303645bafafd72418898368b2429458f709cf1eb6a15372fbcc396b64da63"
   end
 
   resource "ruamel-yaml" do

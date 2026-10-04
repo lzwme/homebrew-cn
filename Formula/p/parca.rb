@@ -1,17 +1,17 @@
 class Parca < Formula
   desc "Continuous profiling for analysis of CPU and memory usage"
   homepage "https://www.parca.dev/"
-  url "https://ghfast.top/https://github.com/parca-dev/parca/archive/refs/tags/v0.29.0.tar.gz"
-  sha256 "703d518f2ff1c5f583b1ec98944cd02155085784ac051907faed10291d7ab698"
+  url "https://ghfast.top/https://github.com/parca-dev/parca/archive/refs/tags/v0.29.1.tar.gz"
+  sha256 "6c140085628511a69de6adca57230a267180421fdb94c52119012029f6545088"
   license "Apache-2.0"
   head "https://github.com/parca-dev/parca.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "a80a1dd359b7943fbb36d72349cabb9cf88b38a36d2576e8079a3367707fe07b"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "faac3085fc4987a18704df5936cabe21fc1371b93eced1f8cfe4cf93a7d8df1c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "8622c2130a11ddfbe8ad74b31ff41ebf7dd07bae40e8c3a40b4481f52c76766a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "d222d21913dbefa3d3a92d69f0646ad0643a2e75017a63a931d6ce7b37354bf5"
-    sha256 cellar: :any,                 x86_64_linux:      "388a08a239642c0781218f3fbe7994f22c36d004fdaaeb17fd41b43a51c9548d"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "1c8f295d5bc66b0c59cebe9bfe99d0567cc9532e40928c7ccc736411bd3df300"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "f759950fd76d892f53cecd7f7008e9186044e989e79c1af9257979d7bd88c316"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "98bf746a9970555a930d851479f13fe36727c3d1ff709b3ec8426b5f8072645f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "dd764c3438e06ac41ebc183d051102fa9147cd2faf83329640cfd3e53b5d22fe"
+    sha256 cellar: :any,                 x86_64_linux:      "294f63b03cc9d7b03450c24da19475935ab7256e1e1c2e8841df0173033fa17b"
   end
 
   depends_on "go" => :build

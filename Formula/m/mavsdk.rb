@@ -2,8 +2,8 @@ class Mavsdk < Formula
   desc "API and library for MAVLink compatible systems written in C++17"
   homepage "https://mavsdk.mavlink.io/main/en/index.html"
   url "https://github.com/mavlink/MAVSDK.git",
-      tag:      "v4.0.0",
-      revision: "2794207ac27b8cfbbe33e0cfa3b6b6ddef765c3a"
+      tag:      "v4.0.4",
+      revision: "10413fdf81ea67f0d9a9d064f36d329750d6f0e7"
   license "BSD-3-Clause"
 
   livecheck do
@@ -12,11 +12,11 @@ class Mavsdk < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "43224c3734265f6e91a1db13ccc0e2716858b5980346b3020b8e8e338ca847cb"
-    sha256 cellar: :any, arm64_tahoe:       "433fa4ecc8ce80eaeb14e59daa75a72809125416757a757690a4f112a1b3c0d5"
-    sha256 cellar: :any, arm64_sequoia:     "ad2d516d0044da0487138e01ff73df53bb6e2eed05e24425b767609404d8b94a"
-    sha256               arm64_linux:       "0ddc84d08958e80bac36bb47e384ff87d9c3b98ea62176389c7ec5083f9272ab"
-    sha256               x86_64_linux:      "003a946051bdf9e7560b5b0649c00f0413431053ad70d4f733f16bd7abc92e64"
+    sha256 cellar: :any, arm64_golden_gate: "3b06d662efbef865bc9f6841581bade32e2565688ceecdaa2ab0065d62e6168b"
+    sha256 cellar: :any, arm64_tahoe:       "f91e04d364694a046254b568b2fbc0b89060c38e68f893c3d6c20eaf327170eb"
+    sha256 cellar: :any, arm64_sequoia:     "65cc26bdf4a2641a6c9178f34e261579be3ca0d8cc9d2fac5732328fd43117b9"
+    sha256               arm64_linux:       "0c79bc58d7be58e79c3d956bbff6a18fce64dbe6d4f1ac821eb1ed66dc59d239"
+    sha256               x86_64_linux:      "7e80b61d823ea45868ee515075e27d4fed5299149bbe1f94d14e043660939729"
   end
 
   depends_on "asio" => :build

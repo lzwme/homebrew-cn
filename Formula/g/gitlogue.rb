@@ -1,18 +1,17 @@
 class Gitlogue < Formula
   desc "Cinematic Git commit replay tool"
   homepage "https://github.com/unhappychoice/gitlogue"
-  url "https://ghfast.top/https://github.com/unhappychoice/gitlogue/archive/refs/tags/v0.11.0.tar.gz"
-  sha256 "cf0814005bd39c02b7c48d385a258e2e4e1fd57980bb57db72ecb490494de06c"
+  url "https://ghfast.top/https://github.com/unhappychoice/gitlogue/archive/refs/tags/v0.12.0.tar.gz"
+  sha256 "57925fead2e74773e45cd268d4c4905c8ef4856b642141411f58a3e36bee76c9"
   license "ISC"
   head "https://github.com/unhappychoice/gitlogue.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "fa5b9b9dbf5657e107662f0b89322ea318974880d2fa7cca8a6ddf70661f68ac"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "2e3a72a19029a95c36e5b8371f77dfa920396ef4cc9de7a92291b27628e3c5d5"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "4139f6d66683b69298e15077b9944a7d0710ab3921fbf00ac06b0649592bd585"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "59eb342cc7c8b5775e459ba7568adc110bc9dc6fd17ce33c16b93fa949cc2078"
-    sha256 cellar: :any,                 arm64_linux:       "9701d92549616f3c0c3317a58d6817b1f97bd0b81bce0e536f9ba42699fb7b3a"
-    sha256 cellar: :any,                 x86_64_linux:      "cbf5f41b66b0bd919d1746bfd2049c1c6f2aa38b0cab906df5d462b1c8da5f87"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "e0043462f51f643e4b1b8659dc709422f40ba9cc6c00e3528d72be4044de323e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "926240b8292dbdbcc4abf22b8d0797a0bdcaf6368b22d38bd8a010e5fff64c5d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "14416a7e7045b9d37959e4b0c8e200fcdc21f0887cdeb2cdbc4592325057d2f2"
+    sha256 cellar: :any,                 arm64_linux:       "73ed3fb7273602bc78ff0f3598dd9f6da14741f446961c76abfed2ad270194c3"
+    sha256 cellar: :any,                 x86_64_linux:      "0f7bf685745076690d66f12ea33a01bba18aba0da1eaf353f5e1b40bede922e3"
   end
 
   depends_on "pkgconf" => :build

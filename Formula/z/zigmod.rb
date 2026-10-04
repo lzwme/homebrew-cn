@@ -21,9 +21,19 @@ class Zigmod < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:      "456c7505eecfd41737459a8cf5d4f3f2f4a745a9e71421b6bda86fa515320e55"
   end
 
+  depends_on "zig@0.16" => :build
   depends_on "zig"
 
+  deny_network_access!
+
+  def fetch
+    ENV.prepend_path "PATH", formula_opt_bin("zig@0.16")
+    system "zig", "build", "fetch", "-Dtag=#{version}"
+  end
+
   def install
+    ENV.prepend_path "PATH", formula_opt_bin("zig@0.16")
+
     args = %W[
       -Dtag=#{version}
       -Dstrip=true

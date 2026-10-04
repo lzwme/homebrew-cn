@@ -3,17 +3,17 @@ class Apm < Formula
 
   desc "Dependency manager for AI agent configuration"
   homepage "https://microsoft.github.io/apm/"
-  url "https://files.pythonhosted.org/packages/1f/f1/8da7ba1848916dd5eafd8d94c52c6ca235eda293b9a92b2dde145094aa22/apm_cli-0.32.0.tar.gz"
-  sha256 "761b774078975e3b028c332d8c5e43a7227baf022a96b0f0c42fc966e37f5d32"
+  url "https://files.pythonhosted.org/packages/84/3f/e383f7c304d46656d77e5959db7d914e590c283af5b407ddf94205d02edb/apm_cli-0.33.0.tar.gz"
+  sha256 "a523805a3cc9b51f80573c1efce13982b3a5665c8ae749a51e5648575a1d6633"
   license "MIT"
   head "https://github.com/microsoft/apm.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "2a8746b28e65208786dfb2fc074d8132f947eb8449fc02c775674ddd788c39a4"
-    sha256 cellar: :any, arm64_tahoe:       "37848f95354e99a3b45f23966f7039af7e2b16f33c4b94843e2004f2629a1dda"
-    sha256 cellar: :any, arm64_sequoia:     "7ed14ab616c0c08eb50230c31d85e1d8ac436e2131279440955729c0a4329f94"
-    sha256 cellar: :any, arm64_linux:       "ad4677fc538236fd25cdfb5210ed3495fa6ed0d33d71f07c3f271880278f8a6e"
-    sha256 cellar: :any, x86_64_linux:      "923a4e9ac97e683d7c3c2e78553dd8fe90cd5eafb137c6387b5968f39eeb4aed"
+    sha256 cellar: :any, arm64_golden_gate: "04a2a97805449298b0f58e5a95ab0373f6a9475d51fc37301b73858090d12abe"
+    sha256 cellar: :any, arm64_tahoe:       "91d2a5ef8b51692a2183e02a5640ce1a4e7a4b399ab35d7ebc84234804d41320"
+    sha256 cellar: :any, arm64_sequoia:     "a3ae60a3e93a54823e486560e609f3ef8d7d443270fc662690da34ff97b064d3"
+    sha256 cellar: :any, arm64_linux:       "6abf349d3361651e1dee05140a0c2caf1d0526b6b4f38a4f1b519a7a447ca62c"
+    sha256 cellar: :any, x86_64_linux:      "27ac2e31149b115bcdef315d93a87d352fd230ab14f8404cd55140517cfb98c2"
   end
 
   depends_on "rust" => :build # for jiter
@@ -60,8 +60,8 @@ class Apm < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/e5/3f/143b048436775b0f76ac3eec145c019e8173ccc2885c8f20319b996d5e83/charset_normalizer-3.5.1.tar.gz"
-    sha256 "6117b84ea48435e5356dc737f5121485c30920ba43375fa7b434fd753df0eac3"
+    url "https://files.pythonhosted.org/packages/33/1c/f41d4e74c28ab327ff3acd36053f7ea506c55872d7a90b0fa71aa3ab0c89/charset_normalizer-3.5.2.tar.gz"
+    sha256 "39de2a259fc954455c57274dc94c79d5842774e1247a016aff30bc0efed0f4ef"
   end
 
   resource "click" do
@@ -85,8 +85,8 @@ class Apm < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/4f/b8/9ba8f569df649beb7058db5eb392a5f779bdbc3b82cf3942f0be439fb99e/filelock-4.0.3.tar.gz"
-    sha256 "87296d60478e14204fd9406e79831400fef76693bae2895deec236c98e87a8aa"
+    url "https://files.pythonhosted.org/packages/70/51/2bc9e529f154fad99b6cd0073e609291eb32fd23581b32362d33d164d316/filelock-4.0.9.tar.gz"
+    sha256 "635e7d67fa92654eed444e75e9ca18426d34e77ad9c469bf4373f75a932f7b22"
   end
 
   resource "frozenlist" do
@@ -100,8 +100,8 @@ class Apm < Formula
   end
 
   resource "gitpython" do
-    url "https://files.pythonhosted.org/packages/e0/db/3ca813cbacb23ab6fe46ff38a9b5ef8e73e970c8051f2ce903aacafe0446/gitpython-3.1.62.tar.gz"
-    sha256 "1791de66309bc0c7cfca40bf8d2e3de7ca091cbf94e6051be1ad0722c61062af"
+    url "https://files.pythonhosted.org/packages/6e/2d/6f6e649818da44d4499604802c89329b8d9799687a124e3a5e467a643336/gitpython-3.2.0.tar.gz"
+    sha256 "fb92310af6844d96adc95ca066ed2e617c00e1dbd146a326626c81e72e18cc2e"
   end
 
   resource "h11" do
@@ -160,8 +160,8 @@ class Apm < Formula
   end
 
   resource "openai" do
-    url "https://files.pythonhosted.org/packages/7c/91/2d5722388a50cc86e162779df5fbfe0afa652a6e2d5c9ee616e081a82098/openai-3.19.2.tar.gz"
-    sha256 "de185f9834ad064d965ec42bd0766731cf66bceea16a7670294a835d207019e6"
+    url "https://files.pythonhosted.org/packages/73/4f/e57670227cb7b61362d8f9bfba54d4e9f7bde799798c342782788bc12d6c/openai-3.24.0.tar.gz"
+    sha256 "1e7463f7d78773ab2ce4fe85710481aa5bd5ffefd54c8de4b067506cd2d42895"
   end
 
   resource "pluggy" do

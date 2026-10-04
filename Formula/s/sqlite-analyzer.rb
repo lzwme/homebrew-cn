@@ -5,6 +5,7 @@ class SqliteAnalyzer < Formula
   version "3.53.4"
   sha256 "d18fa15aec74d8c17e1463f861095adc01b5ad190256acb4f91d22f0368d232b"
   license "blessing"
+  revision 1
 
   livecheck do
     formula "sqlite"
@@ -13,13 +14,11 @@ class SqliteAnalyzer < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "d08ef7db29d153795c41fe46ff2bccb88b63d8aff71b5771bc4cc098757ea2f7"
-    sha256 cellar: :any, arm64_tahoe:       "e0001cafaca5b5ab9d4e209d81e103ef7a872e4f66912d6d13a094a7737ac5d8"
-    sha256 cellar: :any, arm64_sequoia:     "74f7f55896ccdcca311ff43ab4198131384e3d71bd2dca155fba2287663194f4"
-    sha256 cellar: :any, arm64_sonoma:      "87b92e63a163c3ce7840c01c0f6e73bc36eb4a5a606b5a9e418f7c716f6d0af6"
-    sha256 cellar: :any, sonoma:            "397866508a17acfe31147353629863b7ada1107d5e264f4d8a22b6b0c78b7690"
-    sha256 cellar: :any, arm64_linux:       "5bc48810c7bcdef96f13fdd79663191b192ae50deb9ce8659404c3638684904f"
-    sha256 cellar: :any, x86_64_linux:      "a145efe6aa3120502d1214e36ba98b4307d0ef49a28f37310d47529d02f0921c"
+    sha256 cellar: :any, arm64_golden_gate: "25a7e4b8b2a4d4d2c43e9e9d21e374a3ee52f54581d77f073d6b68ea02889b82"
+    sha256 cellar: :any, arm64_tahoe:       "154c60f9ff4b9a3ad9a4bf1bee4a74c26adc6396335e3fb5a67db577d33ace09"
+    sha256 cellar: :any, arm64_sequoia:     "6b3dc3c406a3974a50d1e094039cc5666c524354650f7e17d8b874e67baf65ee"
+    sha256 cellar: :any, arm64_linux:       "08f1a98522d73ce29869d0c9f07d54291fa2ecc7a4b2be9d6d20c32baa25d412"
+    sha256 cellar: :any, x86_64_linux:      "889bfcddc0f0d87ae9daecbd8b8adffcd378160d3c241ce1e45fb83df3d9cdbe"
   end
 
   depends_on "tcl-tk"

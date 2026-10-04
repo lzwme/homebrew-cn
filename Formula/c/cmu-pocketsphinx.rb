@@ -30,4 +30,9 @@ class CmuPocketsphinx < Formula
     system "cmake", "--build", "build"
     system "cmake", "--build", "build", "--target", "install"
   end
+
+  test do
+    output = shell_output("#{bin}/pocketsphinx single #{test_fixtures("test.mp3")} 2>&1")
+    assert_match "{\"b\":0.000,\"d\":0.020,\"p\":1.000,\"t\":\"\",\"w\":[]}", output
+  end
 end

@@ -4,15 +4,15 @@ class Yosys < Formula
   url "https://ghfast.top/https://github.com/YosysHQ/yosys/releases/download/v0.69/yosys.tar.gz"
   sha256 "6dad6412cae417f5a53e2c943c2aee160162cfc1bdd31669230da1b7e3522571"
   license "ISC"
+  revision 1
   head "https://github.com/YosysHQ/yosys.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "233c46e19b8b6a4cb0ec1f5b5f88860f1ae316c91a11b25eaa01c1f486094fd5"
-    sha256 cellar: :any, arm64_tahoe:       "03e41ff8da0969905351eb9d4c08d47072ec9465e4388703fe01e2b15d0f93b6"
-    sha256 cellar: :any, arm64_sequoia:     "7e556dd0d1ce904c31a67d2ccc81e87dbb75d2d49ce77613440c0aae26c39a66"
-    sha256 cellar: :any, arm64_sonoma:      "c760ed86e6f0602c255a4ac93a951d6178db76b171304f1531e8fa68c77dba40"
-    sha256 cellar: :any, arm64_linux:       "c1a0fd0aa01db9396f33f32d21eef616eca474e42d972517c027168c2c59dfad"
-    sha256 cellar: :any, x86_64_linux:      "e1b53ea580f3986bf4a56927b336262438160294445572939be90242a45ba92f"
+    sha256 cellar: :any, arm64_golden_gate: "721d4ca90b7a6e54444b0e966f0d8e2946c824521065d97c46badd02864857ae"
+    sha256 cellar: :any, arm64_tahoe:       "80d534c82b29426761d7308665713423f278c65442c0d826f13936c6b94ab885"
+    sha256 cellar: :any, arm64_sequoia:     "ebcf5c499ce0451b78916cecc0f7770c43078da2b51bbac793e0cbf47cb2eeca"
+    sha256 cellar: :any, arm64_linux:       "912f49b90da114f147df3d71e318269f8224dfb3d46126af9bdbe04cc209e861"
+    sha256 cellar: :any, x86_64_linux:      "af0c3a822e3fafca65fe16ccba425bfb813a458be15c11ac46211132b4792175"
   end
 
   depends_on "bison" => :build

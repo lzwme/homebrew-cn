@@ -1,8 +1,8 @@
 class Meilisearch < Formula
   desc "Ultra relevant, instant and typo-tolerant full-text search API"
   homepage "https://docs.meilisearch.com/"
-  url "https://ghfast.top/https://github.com/meilisearch/meilisearch/archive/refs/tags/v1.54.0.tar.gz"
-  sha256 "088fd72985bca4d4dd3de9b1498397c59d7927dc6b5c82286acf9540cb4a0c1a"
+  url "https://ghfast.top/https://github.com/meilisearch/meilisearch/archive/refs/tags/v1.54.3.tar.gz"
+  sha256 "cac4e4b1ebfef7c76fc14527dca79b69501ffbf63938dfe08ffc2fcf849e283a"
   license "MIT"
 
   # There can be a notable gap between when a version is tagged and a
@@ -14,11 +14,11 @@ class Meilisearch < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "705119db3528e718319f083c97ebf3c29f45f57b0fcf549e838e4aea0b1ed056"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "4d495aedc81d19758e914f4efc1a29c1ada33be030a24faaa0a324f574d1c8b5"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "23d54ed506fddad1dae2dc4944caa8071331c5c12194b134dcf1801e16c7d2b8"
-    sha256 cellar: :any,                 arm64_linux:       "dde0f4246da3585b93055db6068e54465069ef0798f38c876079ffc957fbb773"
-    sha256 cellar: :any,                 x86_64_linux:      "725af9df40c342c612783cf83612a869042a3dcb8b0396e4a57806b0c2f883e8"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "4068bb3af93272972e5c9e6c4697503e9531f0b9c5a4c9d51cdf350d5f83fdb4"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "e7981fdc07bfc1d35fe2b4757cc6c226a497d2cf1d67ffd9238c33b8a2a00590"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "0e3f223add055c3c9f9dfafcded8cd4bd9819109947d3ef65ee7becfb02cbf5d"
+    sha256 cellar: :any,                 arm64_linux:       "f891857407ba4db212c9b555b3902cc2c3d71e679ab865a6bf6141cbcd02ead4"
+    sha256 cellar: :any,                 x86_64_linux:      "590d76681bad9c192cfef833ce7245817c4ab5c54ea0d2f821da4b4b15ab4857"
   end
 
   depends_on "rust" => :build

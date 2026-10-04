@@ -2,7 +2,7 @@ class Openmsx < Formula
   desc "MSX emulator"
   homepage "https://openmsx.org/"
   license "GPL-2.0-or-later"
-  revision 2
+  revision 3
   head "https://github.com/openMSX/openMSX.git", branch: "master"
 
   stable do
@@ -29,13 +29,11 @@ class Openmsx < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "642238c4cd78c826c676cbe8757f9078b9b1cc46a90de3f7ddeeec616f832434"
-    sha256 cellar: :any, arm64_tahoe:       "d119f746e37e9cc1f202e47bbeccd4a3a396164a451693b18e06bbbae098e0e4"
-    sha256 cellar: :any, arm64_sequoia:     "f3f25f04f4eb84bc2a4a7b1b70d03a5fc3340e2374f1813d1f2593970ce029db"
-    sha256 cellar: :any, arm64_sonoma:      "3e1f9864913d165c6a61621c7b9b368dade12909e4e0d0e718bc4a20674e09f0"
-    sha256 cellar: :any, sonoma:            "3bc8f45c362611a6679e1d53af5ff55eb1e93da2873fa53358481a91f360bea7"
-    sha256               arm64_linux:       "cad529500c86d30ecc21ede35a5478e13e308701d45c2a863338ebe893228479"
-    sha256 cellar: :any, x86_64_linux:      "909ffc1a07e59c33dfa4c6619b6917c01698af379533293d0a208cbe4524bf39"
+    sha256 cellar: :any, arm64_golden_gate: "3efae828701880f69da6ed8cf8a543723020fc71671f5be6cb9c1f7d8fdc685c"
+    sha256 cellar: :any, arm64_tahoe:       "910fa962df7e83b22b334e2db93c202378bec265dd422ea0c124e97246836519"
+    sha256 cellar: :any, arm64_sequoia:     "d70cf4451ad52cbd27081e474b60a23a510795322d3e8a14f5542b08eb085858"
+    sha256               arm64_linux:       "fc16d95f0f49afd1e7915e3571e833db18cc67aba40bfa23520e9527c69a567e"
+    sha256 cellar: :any, x86_64_linux:      "6410732bda07385b3ef46f390a10c19a4d5230eb1126aa8da49e293073f5e854"
   end
 
   depends_on "freetype"

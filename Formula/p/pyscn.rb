@@ -1,17 +1,17 @@
 class Pyscn < Formula
   desc "Intelligent Python Code Quality Analyzer"
   homepage "https://ludo-technologies.github.io/pyscn/"
-  url "https://ghfast.top/https://github.com/ludo-technologies/pyscn/archive/refs/tags/v1.32.2.tar.gz"
-  sha256 "cddb8bb45b09bf5e9bc654dee36900904cb5228d6ae69c26740e0924ba81cb0e"
+  url "https://ghfast.top/https://github.com/ludo-technologies/pyscn/archive/refs/tags/v1.32.3.tar.gz"
+  sha256 "a30d1a7990feefafd8938933155b3fdbeaad7b9ab379c77c7574cc5402ed446b"
   license "MIT"
   head "https://github.com/ludo-technologies/pyscn.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "e1617dac7b50c99dc62d4e37317b23c26c17cd6517fe920675251cac96276e64"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "2b7225a36b439d3b749953406fbe94594b8fa59676381c8ea2988b74ab9003d7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "aaf8dfc341b81a220875987c6fdec77858f6627316c05ffbd2c761363ab9d27c"
-    sha256 cellar: :any,                 arm64_linux:       "de811759d09d2f92ab006d2a4c6b03b3ae10d6593ebce3f19f82b642ccfb9dd0"
-    sha256 cellar: :any,                 x86_64_linux:      "2b5131fe2a7273946cc30038e915c9c6c428fb29bc2c8fbc831d96c6a651fcc6"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "8c9cc8f05ff66dff3844ef2f1f9d75e1847a46d628d0c161a9d1a2661b584e91"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "0031472c986b7654189452e11dd5d195e506758c1db7a517bcae59825cffc86e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "99f2e8428d730fd3e8b96b99dd96d4b28c1c6974e0aa160b5d31410a544cf210"
+    sha256 cellar: :any,                 arm64_linux:       "00dfc46c1e2e75130b4f8a3c603d8832f7d5ac20e5cce426e20249fe98149410"
+    sha256 cellar: :any,                 x86_64_linux:      "b83403094dca5081ee5e0005621b539cf556e94fc05ccf14fdae8907f768b3e5"
   end
 
   depends_on "go" => :build

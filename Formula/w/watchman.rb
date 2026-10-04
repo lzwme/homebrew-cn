@@ -3,17 +3,17 @@ class Watchman < Formula
 
   desc "Watch files and take action when they change"
   homepage "https://facebook.github.io/watchman/"
-  url "https://ghfast.top/https://github.com/facebook/watchman/archive/refs/tags/v2026.09.21.00.tar.gz"
-  sha256 "f6ea4036e4b292f31a9185d55f023aa875e6201f386c85ae8661976d055fcc85"
+  url "https://ghfast.top/https://github.com/facebook/watchman/archive/refs/tags/v2026.09.28.00.tar.gz"
+  sha256 "60a21426d65cb5f68e2fbf24bf26df42d13b48158ff679ac634a84ef5e9bda81"
   license "MIT"
   head "https://github.com/facebook/watchman.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "7936525ddc847375460cbbd34935ce55161bae041336efc4eca50a72ab337890"
-    sha256 cellar: :any, arm64_tahoe:       "b389ac112db24749351f8f8da57bce7a03a5c5826c3c409e3b755a49e330b798"
-    sha256 cellar: :any, arm64_sequoia:     "f27e5dd645aead4277830783b88e60f064488e6879a3c2c08700d38ce9272290"
-    sha256 cellar: :any, arm64_linux:       "fe8ddb337a36189cf1cf657fc3312b980eec022cff6db12296ed12223092d31e"
-    sha256 cellar: :any, x86_64_linux:      "8e0bd4d0764ae960ddd5cff021970233e9b8218140769896e52416ff21e3fdeb"
+    sha256 cellar: :any, arm64_golden_gate: "b500995747db3ec00fa5a42abc86eeeb23f390b10985c3586b310473c7238ec7"
+    sha256 cellar: :any, arm64_tahoe:       "3071ef32f548e3e4660fb56321ec60128198d32f4bad0b295711a7cf7ab71461"
+    sha256 cellar: :any, arm64_sequoia:     "204e57f0db5cd24449bf766325afb89bfb0a09518d7a28a8cd6ea36be53a77fd"
+    sha256 cellar: :any, arm64_linux:       "d41a779667df2f3561ef59e0417fdf1f1dc15d5f452790e25d12e3e362cb163f"
+    sha256 cellar: :any, x86_64_linux:      "4d0f81e2543d4a28128318d669edc59a2ce2898e888b5d19e2637779353859b1"
   end
 
   depends_on "cmake" => :build
@@ -70,6 +70,7 @@ class Watchman < Formula
       -DWATCHMAN_BUILDINFO_OVERRIDE=#{tap&.user || "Homebrew"}
       -DWATCHMAN_USE_XDG_STATE_HOME=ON
       -DCMAKE_CXX_STANDARD=20
+      -DOPENSSL_ROOT_DIR=#{formula_opt_prefix("openssl@4")}
     ]
     # Avoid overlinking with libsodium and mvfst
     args << "-DCMAKE_EXE_LINKER_FLAGS=-Wl,-dead_strip_dylibs" if OS.mac?

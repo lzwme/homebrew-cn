@@ -7,25 +7,50 @@ class Aoe < Formula
   head "https://github.com/agent-of-empires/agent-of-empires.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "8dfad661dbab244042a45c0882eb4be21499a94274bd65690e8a1e5332eb0f5c"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "febba661d950607ed5d0318a00c4996904b99460780a597d883a6b94be1f7526"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "5fa4fe647395af28fa2e8213feede6e31055259fec47339b99c10a44664a4afd"
-    sha256 cellar: :any,                 arm64_linux:       "aff153e45f46cc62f632b1ffecfe04d31f308573ace31832f19fe278c3ecf4e2"
-    sha256 cellar: :any,                 x86_64_linux:      "8a5c603d62933397f0e4515a41306f5250655688015b8faf0ac302a0962851f3"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "3c4d8b7a5fb52b18573ade01146c38cfaeb8e91b509742b917545bd157ef345a"
+    sha256 cellar: :any, arm64_tahoe:       "66fcc443d4f159c9dddd0bcc5f95f9e94d27c5dcdfa44d1760deb7060cb4f776"
+    sha256 cellar: :any, arm64_sequoia:     "7077fb837eeedf9f941c477f6cbd5a93992066420fda2aca538a06a7398483c8"
+    sha256 cellar: :any, arm64_linux:       "298ef8b674388905e9c4b8ea4492693425fdce29a717ecd492bc618656972703"
+    sha256 cellar: :any, x86_64_linux:      "282cc4a1b103e9f04baf338ffc1117a0f83b359379fcf07deb0465adb2ccc6a8"
   end
 
   depends_on "node" => :build
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
-  depends_on "openssl@3"
-  depends_on "tmux"
+  depends_on "libgit2"
+  depends_on "tmux" => :no_linkage
+
+  uses_from_macos "sqlite"
 
   on_linux do
-    depends_on "zlib-ng-compat"
+    depends_on "aws-lc" # cannot use on macOS due to openssl symbol conflict
+  end
+
+  allow_network_access! :test
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+    cd "web" do
+      system "npm", "ci", *std_npm_args(prefix: false)
+    end
+  end
+
+  allow_network_access! :test
+
+  def fetch
+    cd "web" do
+      system "npm", "install", *std_npm_args(prefix: false)
+    end
+    system "cargo", "fetch", *std_cargo_fetch_args
   end
 
   def install
-    system "cargo", "install", *std_cargo_args(features: "serve")
+    ENV["AWS_LC_SYS_USE_SYSTEM"] = "1" if OS.linux?
+    ENV["LIBGIT2_NO_VENDOR"] = "1"
+    ENV["LIBSQLITE3_SYS_USE_PKG_CONFIG"] = "1"
+
+    system "cargo", "install", *std_cargo_args(features: "web")
     generate_completions_from_executable(bin/"aoe", "completion", shells: [:bash, :zsh, :fish, :pwsh])
   end
 
@@ -42,9 +67,7 @@ class Aoe < Formula
     assert_equal 0, status["total"]
 
     port = free_port
-    pid = fork do
-      exec bin/"aoe", "serve", "--port", port.to_s, "--no-auth"
-    end
+    pid = spawn bin/"aoe", "serve", "--port", port.to_s, "--no-auth"
     sleep 2
     assert_match "Agent of Empires", shell_output("curl -s http://127.0.0.1:#{port}")
   ensure

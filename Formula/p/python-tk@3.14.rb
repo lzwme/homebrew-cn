@@ -4,17 +4,18 @@ class PythonTkAT314 < Formula
   url "https://www.python.org/ftp/python/3.14.8/Python-3.14.8.tgz"
   sha256 "a65b20a728f169f4e66ae143f40b1bd3d33c38d770251663f627c9767b79b210"
   license "Python-2.0"
+  revision 1
 
   livecheck do
     formula "python@3.14"
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "42ed9fed136c54737b8f4527c576e3410f8736e138c5f53e9e4a590fb19caf2b"
-    sha256 cellar: :any, arm64_tahoe:       "87e6f5a1ca14f9e0ba0c9d5f4299f1dadecf46174b814288de38e8cd54554c7b"
-    sha256 cellar: :any, arm64_sequoia:     "98d584c2129fb08bfa53cd14b5dcc712d4506899205a8cb2bd4c49eaaaf4da72"
-    sha256               arm64_linux:       "dd296e07e265b451a3293907e095e560f1ec0e5e817004f9e5b17b95ac63249c"
-    sha256               x86_64_linux:      "dabe938e0e6c0328e694fc406c975d2d26660f1316d793ddcc353e160068ce3b"
+    sha256 cellar: :any, arm64_golden_gate: "128a3adfdc43dcdb6eb62657b74c2685a3b637128345b50ccaca1476933da31b"
+    sha256 cellar: :any, arm64_tahoe:       "cced776a4fc9c4193d158d9631cab8732fadc2d41a9c4001daba603968a2c93d"
+    sha256 cellar: :any, arm64_sequoia:     "38b59b8dd4c5aca796713303518371a9ee263cc5e4f88048ec0aa410aff814be"
+    sha256               arm64_linux:       "36a7d1e8b32d7511c0d358e86aca6eb0666cf71072b4fcfd854888c074d732fd"
+    sha256               x86_64_linux:      "6c3db931d58c28f7b3856c7736d8d3b2fd0ebed1dcbd8f8d81d37b5bd6bea155"
   end
 
   # https://devguide.python.org/versions/#versions

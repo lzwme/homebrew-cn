@@ -1,10 +1,14 @@
 class Zls < Formula
   desc "Language Server for Zig"
   homepage "https://zigtools.org/zls/"
-  url "https://ghfast.top/https://github.com/zigtools/zls/archive/refs/tags/0.16.0.tar.gz"
-  sha256 "e7c5936f5b3a057ce851be0876e4e259b5c4d02f9aae038cd24a5d6b586b029f"
   license "MIT"
   head "https://github.com/zigtools/zls.git", branch: "master"
+
+  stable do
+    url "https://ghfast.top/https://github.com/zigtools/zls/archive/refs/tags/0.16.0.tar.gz"
+    sha256 "e7c5936f5b3a057ce851be0876e4e259b5c4d02f9aae038cd24a5d6b586b029f"
+    depends_on "zig@0.16" => :build
+  end
 
   bottle do
     sha256 arm64_golden_gate: "fda7c9d23512cd938bb93e340239bec8cdeccaf99d7a47845a3047a451807e51"
@@ -21,10 +25,12 @@ class Zls < Formula
   deny_network_access!
 
   def fetch
+    ENV.prepend_path "PATH", formula_opt_bin("zig@0.16") if build.stable?
     system "zig", "build", "--fetch"
   end
 
   def install
+    ENV.prepend_path "PATH", formula_opt_bin("zig@0.16") if build.stable?
     system "zig", "build", *std_zig_args
   end
 

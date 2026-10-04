@@ -19,7 +19,7 @@ class FxAgent < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:      "39379a5085eef7e7abb9dea50836d55725a65335f12e34854228afae501a65f1"
   end
 
-  depends_on "zig" => :build
+  depends_on "zig@0.16" => :build
 
   conflicts_with "fx", because: "both install an `fx` binary"
 

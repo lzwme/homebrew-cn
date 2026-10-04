@@ -3,14 +3,14 @@ class RapidMlx < Formula
 
   desc "Fast local AI engine for Apple Silicon with an OpenAI-compatible API"
   homepage "https://github.com/raullenchai/Rapid-MLX"
-  url "https://files.pythonhosted.org/packages/c8/93/b7d97a5c32cd871e0332c81dfc6779b8db4a7ecd3af4db0ddd4391f3998f/rapid_mlx-0.15.3.tar.gz"
-  sha256 "4c32e8c64d154d21867a7082a74d1a4eea1428d48acf3c32184a00dea217eb4f"
+  url "https://files.pythonhosted.org/packages/f0/aa/445300afefd97e8adae5d0e685f09bb600392a93b40cac1c18fac944a5f1/rapid_mlx-0.15.4.tar.gz"
+  sha256 "6e0a54be0541572762da44f2790878a448036e91e433a93b40ed0cff5b629d57"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "12ad136d7423b76c6e93ad19648240e3957c10c81bec4d14ee9df9ccb5b3d047"
-    sha256 cellar: :any, arm64_tahoe:       "63c35671a54493b258ad1c133249443612d5161f26483b28dbe5c3df0c2abc4b"
-    sha256 cellar: :any, arm64_sequoia:     "b10a75f9ad26d49655aa2fa89c063473ebf921bc7df6d59522fc84f08b04affb"
+    sha256 cellar: :any, arm64_golden_gate: "b1cd9befb0bb3a90d908e29ab56c062815c0e2245960493fb7d08a65aedecf68"
+    sha256 cellar: :any, arm64_tahoe:       "6f2297c2f0599e64c3fbffb468d7b20b24620e88f5f642a1e78c46f049631ebd"
+    sha256 cellar: :any, arm64_sequoia:     "440f2a22f5435767bb475b937cc97cf4e19f74c9aa35bef70a42f60ec09359e0"
   end
 
   depends_on "cmake" => :build
@@ -65,8 +65,8 @@ class RapidMlx < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/35/f5/14097cca69f53794270d8c7970b48321636302affe3154c7e0ba114eeff9/filelock-4.0.7.tar.gz"
-    sha256 "da5915714a70b55d167fdc7e251ad91302b0a36816fb574dfafae8f4f2c9bb21"
+    url "https://files.pythonhosted.org/packages/70/51/2bc9e529f154fad99b6cd0073e609291eb32fd23581b32362d33d164d316/filelock-4.0.9.tar.gz"
+    sha256 "635e7d67fa92654eed444e75e9ca18426d34e77ad9c469bf4373f75a932f7b22"
   end
 
   resource "fsspec" do
@@ -130,8 +130,8 @@ class RapidMlx < Formula
   end
 
   resource "llguidance" do
-    url "https://files.pythonhosted.org/packages/26/19/ab59b066f568bd3d3523019e3d220c1f3e0aeb00e18b92e741d013e70a5e/llguidance-1.9.0.tar.gz"
-    sha256 "0e1310908535ea90fd4128a50a72fb7d0e3403e34c3c4e33f6e7f87ecd169e95"
+    url "https://files.pythonhosted.org/packages/1e/2e/3b0e13c1e01d5598708a6e7b77c55f3ae9c6c4e242a50a239f03ee800630/llguidance-1.9.1.tar.gz"
+    sha256 "3ba1b37585d07f50bb73e06dca6d45c88c9d5801789c071c8ff784c9dbcc5c46"
   end
 
   resource "markdown-it-py" do

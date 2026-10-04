@@ -8,18 +8,18 @@ class AdaUrl < Formula
   head "https://github.com/ada-url/ada.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "fe5352461ca7eccb853b331be6a743eee9a050363499a61228004e5c3e1d6126"
-    sha256 cellar: :any, arm64_tahoe:       "e3b125f42e888b49edb6b7a6b65f47585d7740e170d59965ff96a2930e2c58fd"
-    sha256 cellar: :any, arm64_sequoia:     "06292729cd3fcf7e6b73704be693e10010d8231e54fe26dac091b4f8ee1c547a"
-    sha256 cellar: :any, arm64_sonoma:      "150fb2c766f3546b98576ebf04e4eac83cd5f1c6031b21133785f3b9b8228d88"
-    sha256 cellar: :any, sonoma:            "27fbcf06b02d39cffbc5187eac0f773feca8cb0bbcfd5492c30b5b3fa974f312"
-    sha256 cellar: :any, arm64_linux:       "ad0f4a73faaf785a75220c6e4c9dfd94e411cba5d0edb4680ca949e8f44cac17"
-    sha256 cellar: :any, x86_64_linux:      "5d9e6918837a81b750fc65b4f9315e99af2a4d8d31846611b456706adf3115e1"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "6235988a1cb39e53645f3d9b0ef889e94e7278ccd627a2b8fe16c64a7e4c0fb9"
+    sha256 cellar: :any, arm64_tahoe:       "8cd5b8133d5d34575ad20ddc10fd1c999d8445528bb636da563e3f7cb17b1937"
+    sha256 cellar: :any, arm64_sequoia:     "bb5f6f94e6215be0eed9580c6a204148d17618466fe2ee99201e2b7107b05e8e"
+    sha256 cellar: :any, arm64_linux:       "8e442e00c3b47def8f6d8fb38d18d9ad15be89c66a27085ae4ee40f067d0b722"
+    sha256 cellar: :any, x86_64_linux:      "6cc8c56c008d31dcb63f3beca7d20d124fcfb52e9710e69ef8a9ada954ce9df6"
   end
 
   depends_on "cmake" => :build
   depends_on "cxxopts" => :build
   depends_on "fmt"
+  depends_on "simdutf"
 
   uses_from_macos "python" => :build
 
@@ -47,11 +47,14 @@ class AdaUrl < Formula
     # Do not statically link to libstdc++
     inreplace "tools/cli/CMakeLists.txt", 'target_link_options(adaparse PRIVATE "-static-libstdc++")', "" if OS.linux?
 
+    # CPM/FetchContent args are to allow using our newer `simdutf`
     args = %W[
       -DCMAKE_INSTALL_RPATH=#{rpath}
       -DBUILD_SHARED_LIBS=ON
       -DADA_TOOLS=ON
-      -DCPM_LOCAL_PACKAGES_ONLY=ON
+      -DADA_USE_SIMDUTF=ON
+      -DCPM_USE_LOCAL_PACKAGES=ON
+      -DHOMEBREW_ALLOW_FETCHCONTENT=ON
       -DFETCHCONTENT_FULLY_DISCONNECTED=ON
     ]
 

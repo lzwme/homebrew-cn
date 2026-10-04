@@ -15,7 +15,7 @@ class VapoursynthVszip < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:      "17c791c26b95a83720a51d55bb1c869215894a7ea0e5ebee271280ae37b17e9f"
   end
 
-  depends_on "zig" => :build
+  depends_on "zig@0.16" => :build
   depends_on "python@3.14"
   depends_on "vapoursynth"
 

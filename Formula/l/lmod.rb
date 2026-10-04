@@ -4,14 +4,14 @@ class Lmod < Formula
   url "https://ghfast.top/https://github.com/TACC/Lmod/archive/refs/tags/9.4.2.tar.gz"
   sha256 "30c9e29d6ab942a194e9c8f7c78430f4e26269d9439a68f451fe1ca4063da774"
   license "MIT"
+  revision 1
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "d8cf46268e33319c0d44cc895c86b20f5b673202c530f1bc5cff29a9be9b989a"
-    sha256 cellar: :any, arm64_tahoe:       "66a8e31693ec3dc1010118c8a939040c7cfeb98c3faa2561dd80e6d430e30126"
-    sha256 cellar: :any, arm64_sequoia:     "1df555bae2204243bd6acfc5219abb7bd015d2f457c79f992a48932a4c5ac980"
-    sha256 cellar: :any, arm64_sonoma:      "297bce9d86f194b5ef7d21d7ee9fa0abb64611e3a3587fe37c38665232d457a7"
-    sha256 cellar: :any, arm64_linux:       "a03fab7d5dbcaa52d58557293cfa0403bade93aabc1222858c48c9ffd764752f"
-    sha256 cellar: :any, x86_64_linux:      "645c0d250d04763bada4c68b37d581e20b484c2492224ff24184fa4bfee618bb"
+    sha256 cellar: :any, arm64_golden_gate: "8f584a30ead302d62a9b332bce4f8d2e3ba7d8af27d1a89fa066617fca143b59"
+    sha256 cellar: :any, arm64_tahoe:       "8fd5f752a0f2841ed57c5b13039e8b98a3a4e6440639b3ad04edf5342e9d4f35"
+    sha256 cellar: :any, arm64_sequoia:     "2050a3ab32d171e324b2378d294f1ca0c38a9660e7c8d1e42e7f530fbdfb8403"
+    sha256 cellar: :any, arm64_linux:       "86af1e05975c43f4b964c0e9d0342de42afc49fea2c359b6174205f8cd465be1"
+    sha256 cellar: :any, x86_64_linux:      "399b821f4109b27f0212854e701a04df62db43b2db9db9e7b98c08e41bc78cf1"
   end
 
   depends_on "luarocks" => :build

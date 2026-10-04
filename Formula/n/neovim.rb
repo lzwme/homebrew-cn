@@ -15,7 +15,7 @@ class Neovim < Formula
 
     # TODO: Consider shipping these as separate formulae instead. See discussion at
     #       https://github.com/orgs/Homebrew/discussions/3611
-    # NOTE: The `install` method assumes that the parser name follows the final `-`.
+    # NOTE: The `fetch` method assumes that the parser name follows the final `-`.
     #       Please name the resources accordingly.
     resource "tree-sitter-c" do
       url "https://ghfast.top/https://github.com/tree-sitter/tree-sitter-c/archive/refs/tags/v0.24.1.tar.gz"
@@ -84,12 +84,12 @@ class Neovim < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "fda07719c6cdd5ed43684e1e68517fbb0d1d66b379dda958007490ee4d84481f"
-    sha256 arm64_tahoe:       "1fa5192523a6cc34b8c76cfb25b909888de98d4fd114def770921412172444a1"
-    sha256 arm64_sequoia:     "a6f4b223c5ee632a04afbd490411624e01b261dfbb6285275e4726d6cc01510f"
-    sha256 arm64_sonoma:      "878760350f9fadc29a2fe7873ce452b4648d9d601ba537980fe9782dc24ef72c"
-    sha256 arm64_linux:       "e565cfb4664b511b34eb4a3d57572969abd0d291d9be7d5e1f89d2cb26279f59"
-    sha256 x86_64_linux:      "54bf8c1bb1b895e89e72421cbd9208911eb6cac31a0593963403df451699c324"
+    rebuild 1
+    sha256 arm64_golden_gate: "1b7f55232d3aa6e506283ebd392a403bf175af08854028263cda628b4cf04295"
+    sha256 arm64_tahoe:       "10376b87b3bca77e04634d2ba06cfe9f99508921cf4afa6533598d34038da1d4"
+    sha256 arm64_sequoia:     "c329fd86c2bd1fd5c769d59d5884a051547879ee004bacc5e17cfc77ec647806"
+    sha256 arm64_linux:       "3aa9da187f97261d75b2cb48b98c68f65e340e0c64a348554dfc06579358b443"
+    sha256 x86_64_linux:      "e5d06f458aa248746374f702bbe4221d2422b453b766f9914fa77be3d05bc967"
   end
 
   depends_on "cmake" => :build
@@ -108,56 +108,27 @@ class Neovim < Formula
 
   deny_network_access!
 
-  def resource_source_directory(root, resource_name) = root/"deps-build/build/src"/resource_name
-
-  def resource_build_directory(root, resource_name) = root/"deps-build/build"/resource_name
-
-  def define_resources
-    cmake_deps = (buildpath/"cmake.deps/deps.txt").read.lines
-    cmake_deps.each do |line|
-      next unless line.match?(/TREESITTER_[^_]+_URL/)
-
-      parser, parser_url = line.split
-      parser_name = parser.delete_suffix("_URL")
-      parser_sha256 = cmake_deps.find { |l| l.include?("#{parser_name}_SHA256") }.split.last
-      parser_name = parser_name.downcase.tr("_", "-")
-
-      resource parser_name do
-        url parser_url
-        sha256 parser_sha256
-      end
-    end
-  end
-
   def fetch
-    define_resources if build.head?
-
     resources.each do |r|
-      source_directory = resource_source_directory(buildpath, r.name)
-
-      parser_name = r.name.split("-").last
-      cmakelists = case parser_name
-      when "markdown" then "MarkdownParserCMakeLists.txt"
-      else "TreesitterParserCMakeLists.txt"
-      end
-
-      r.stage(source_directory)
-      cp buildpath/"cmake.deps/cmake"/cmakelists, source_directory/"CMakeLists.txt"
+      r.stage(buildpath/"deps-build/build/src/treesitter_#{r.name.split("-").last}")
     end
+
+    (buildpath/"fetch-parsers.cmake").write <<~CMAKE
+      set_property(DIRECTORY PROPERTY EP_STEP_TARGETS download)
+      cmake_language(DEFER CALL get_property targets DIRECTORY PROPERTY BUILDSYSTEM_TARGETS)
+      cmake_language(DEFER CALL list FILTER targets INCLUDE REGEX "-download$")
+      cmake_language(DEFER CALL add_custom_target download DEPENDS ${targets})
+    CMAKE
+    system "cmake", "-S", "cmake.deps", "-B", "deps-build",
+                    "-DUSE_BUNDLED=OFF", "-DUSE_BUNDLED_TS_PARSERS=ON", "-DCMAKE_TLS_VERIFY=ON",
+                    "-DUSE_EXISTING_SRC_DIR=#{build.stable? ? "ON" : "OFF"}",
+                    "-DCMAKE_PROJECT_INCLUDE=#{buildpath}/fetch-parsers.cmake", *std_cmake_args
+    system "cmake", "--build", "deps-build", "--target", "download"
   end
 
   def install
-    define_resources if build.head?
-
-    resources.each do |r|
-      source_directory = resource_source_directory(buildpath, r.name)
-      build_directory = resource_build_directory(buildpath, r.name)
-      parser_name = r.name.split("-").last
-
-      system "cmake", "-S", source_directory, "-B", build_directory, "-DPARSERLANG=#{parser_name}", *std_cmake_args
-      system "cmake", "--build", build_directory
-      system "cmake", "--install", build_directory
-    end
+    system "cmake", "--build", "deps-build"
+    (lib/"nvim/parser").install (buildpath/"deps-build/usr/lib/nvim/parser").children
 
     # Point system locations inside `HOMEBREW_PREFIX`.
     inreplace "src/nvim/os/stdpaths.c" do |s|
@@ -171,12 +142,11 @@ class Neovim < Formula
     # Replace `-dirty` suffix in `--version` output with `-Homebrew`.
     inreplace "cmake/GenerateVersion.cmake", "--dirty", "--dirty=-Homebrew"
 
-    args = [
-      "-DLUV_LIBRARY=#{formula_opt_lib("luv")/shared_library("libluv")}",
-      "-DLIBUV_LIBRARY=#{formula_opt_lib("libuv")/shared_library("libuv")}",
-      "-DLPEG_LIBRARY=#{formula_opt_lib("lpeg")/shared_library("liblpeg")}",
-    ]
-    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
+    system "cmake", "-S", ".", "-B", "build",
+                    "-DLUV_LIBRARY=#{formula_opt_lib("luv")/shared_library("libluv")}",
+                    "-DLIBUV_LIBRARY=#{formula_opt_lib("libuv")/shared_library("libuv")}",
+                    "-DLPEG_LIBRARY=#{formula_opt_lib("lpeg")/shared_library("liblpeg")}",
+                    *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end

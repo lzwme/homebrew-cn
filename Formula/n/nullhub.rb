@@ -21,7 +21,7 @@ class Nullhub < Formula
     depends_on "node" => :build
   end
 
-  depends_on "zig" => :build
+  depends_on "zig@0.16" => :build
 
   allow_network_access! :test
 

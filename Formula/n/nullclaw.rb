@@ -16,7 +16,7 @@ class Nullclaw < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:      "e922a86bd4f9edf53e908775158d5de6a0918673da9ff4a02fa6bbb5eaea3e71"
   end
 
-  depends_on "zig" => :build
+  depends_on "zig@0.16" => :build
 
   deny_network_access!
 

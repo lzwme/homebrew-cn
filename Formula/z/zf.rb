@@ -15,7 +15,7 @@ class Zf < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:      "f026b84b2c3f6cb6e9e9a76f16fd56979ffe0d37ea43bd97db38db78cc96f90a"
   end
 
-  depends_on "zig" => :build
+  depends_on "zig@0.16" => :build
 
   deny_network_access!
 

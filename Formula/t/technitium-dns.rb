@@ -1,16 +1,16 @@
 class TechnitiumDns < Formula
   desc "Self host a DNS server for privacy & security"
   homepage "https://technitium.com/dns/"
-  url "https://ghfast.top/https://github.com/TechnitiumSoftware/DnsServer/archive/refs/tags/v15.5.1.tar.gz"
-  sha256 "cfe66f9ca12af058351a022b31de28bd8e1b876f07975cbba7300e5f02da9c16"
+  url "https://ghfast.top/https://github.com/TechnitiumSoftware/DnsServer/archive/refs/tags/v15.6.0.tar.gz"
+  sha256 "cfe796e9f9c9ded70cc8002a90d68d9663f20765062c385d24e4e5ff1b13ddcd"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "e74d816fe0888c86cc748ac2706765bc96250cca76ed9c78565bd9c4cc5309d6"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "037989768d56890eca9cbdb98f931ba366098b68e3662808670cdf950f709e4b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "60f115b5fddb9999e5bf4676949fa243b8085e0f5789c1527fd8bc8af0e035a7"
-    sha256 cellar: :any,                 arm64_linux:       "af4813d88289303102798efe24a6b402c04cf208e5de2f58eeb0d6b74943dde5"
-    sha256 cellar: :any,                 x86_64_linux:      "42f95f741dcb3f63a816edbc41c67f604a0c26e161a44f912e4644f621c578cd"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "363b4f77fd519c3d7e8aa6fc3f3d42a8e092cf4eeafdd622d8149e9527a6e34b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "e37d485d0d8175f916eadedc3729b808386949d49a7602ca90a1692c29825de0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "ae050b9360a01b162481a425f5825d3f82ffee52141dda96e28ea98350455dc6"
+    sha256 cellar: :any,                 arm64_linux:       "7388a2d59e5c9a52b8eb67e75ead5b43d7562caf4ab3508c5d24d477966c72e7"
+    sha256 cellar: :any,                 x86_64_linux:      "75cbd99442397725874e17cc4351b9ed0dbe14275cedbad5b0893bc4de31562a"
   end
 
   depends_on "dotnet"
@@ -68,7 +68,7 @@ class TechnitiumDns < Formula
       # Give the server time to start
       sleep 2
       # Use `dig` to resolve "localhost"
-      assert_match "Server was started successfully", r.gets
+      assert_match "was started successfully", r.gets
       output = shell_output("dig @127.0.0.1 localhost +tcp 2>&1")
       assert_match "ANSWER SECTION", output
       assert_match "localhost.", output

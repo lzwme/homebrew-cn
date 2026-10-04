@@ -1,18 +1,16 @@
 class VueLanguageServer < Formula
   desc "Vue.js language server"
   homepage "https://deepwiki.com/vuejs/language-tools"
-  url "https://registry.npmjs.org/@vue/language-server/-/language-server-3.3.11.tgz"
-  sha256 "dbd73606bc0691431fceb5aa5d278af0178d39c1154ca6878c526e704cf00594"
+  url "https://registry.npmjs.org/@vue/language-server/-/language-server-3.3.12.tgz"
+  sha256 "5ac7ec99308a8ef0a14de602be448268793f4149692137c3e92d46b3ca1360a7"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "6d75d1c12114cda15097fcc7af67f829f40e1fd569b4172fd2388d92b04160e6"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "6b50bae93c087d8cc00862ac325461c139246a992d3d62366a77d6d56b21e888"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "6b50bae93c087d8cc00862ac325461c139246a992d3d62366a77d6d56b21e888"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "6b50bae93c087d8cc00862ac325461c139246a992d3d62366a77d6d56b21e888"
-    sha256 cellar: :any_skip_relocation, sonoma:            "f82b0b77584cfc37ff40d3dd1a7783fc6c5724331c9181656d6beea0771d9c49"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "b83f264426a02ba47c2cf73d1423fa27594941fd73ddd4ce5d271c19de5b1aa2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "0453b3641734dd78c4a23edbf8991c09f4a80069594d4aa7139148d0c197b6a0"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "7c830a321b09cab7ff811c1a263c2ac9214898b0ab7e994c304fec76d5f5ac6f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "7c830a321b09cab7ff811c1a263c2ac9214898b0ab7e994c304fec76d5f5ac6f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "7c830a321b09cab7ff811c1a263c2ac9214898b0ab7e994c304fec76d5f5ac6f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "5fe4a1579ebc3aab52df203d8a8c108387ebe0120d29090859d69388db06fe03"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "7f4182f5b92a73cb033b66ef65875bb027b3f9c7dcbd532378194e8532473a6e"
   end
 
   depends_on "node"

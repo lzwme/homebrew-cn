@@ -5,6 +5,7 @@ class Ollama < Formula
       tag:      "v0.35.1",
       revision: "b0c1ca4f7549d7acdfa52a7dcffc934bc63a43ce"
   license "MIT"
+  revision 1
   head "https://github.com/ollama/ollama.git", branch: "main"
 
   # Upstream creates releases that use a stable tag (e.g., `v1.2.3`) but are
@@ -16,11 +17,11 @@ class Ollama < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "61a44e48885633e86b190e4bcd4fefe4d43abe3c43d79104560b1f162dd9b35b"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "ccbe4690c28ea3125a9eb66d2d7f97fc85614915ddcf33d72cba317ffddb2cd6"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "ff664622b50ad3853d5e8b58842b704d7966dcb1ae5b17cebc59daa0bf220f5c"
-    sha256 cellar: :any,                 arm64_linux:       "d6647d303e03178f053d16ab282720e7a3abf7822636958a089ec2100a262ae7"
-    sha256 cellar: :any,                 x86_64_linux:      "ba0f882811dd297350e359ddb197d53781da4e2b169a9434fb3e88bb8162cbbd"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "5dce9182bb7a472e0ef69b93d9d6b6c2ede372b9526c4f5bc1fadeed45e99b86"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "55b277688f55facaa45e5831de1982faf4c39a55fb4743586add21c3d8912331"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "d0eb232a4c437d9f6a36064fd622e912022e50a5ee6276a1327d995d7b41f54b"
+    sha256 cellar: :any,                 arm64_linux:       "02316ef8d5a5c9972662bd19bede5b35fda31d020f62c07563dd828fed4d9ded"
+    sha256 cellar: :any,                 x86_64_linux:      "cd9801c89d6d0d59d0f8e35b9be383caa10ed080d7d6c9e8a41bed1c6c26b535"
   end
 
   depends_on "ccache" => :build
@@ -31,13 +32,11 @@ class Ollama < Formula
     on_arm do
       depends_on "mlx-c" => :no_linkage
 
-      # Build with the mlx-c bindings for tagged MLX 0.32.1. Upstream targets a later MLX commit:
+      # Build with the mlx-c 0.7.0 bindings for tagged MLX 0.32.3. Upstream targets a later MLX commit:
       # https://github.com/ollama/ollama/commit/0bb09259203ff8f6d361faae1d40c4f83d2a99f7
-      # `mlx_cumsum_axis` only exists after mlx-c commit for MLX 0.32.2:
-      # https://github.com/ml-explore/mlx-c/commit/d4afaec5cc5c9ffbe58f37fdc038b2faaedc6e70
-      # `mlx_gather_qmm` has no `global_scale` in MLX 0.32.1, so always use the wrapper fallback:
+      # `mlx_gather_qmm` has no `global_scale` in mlx-c 0.7.0, so always use the wrapper fallback:
       # https://github.com/ollama/ollama/blob/v0.34.1/mlx/compat/0001-mlx-c-qmm-global-scale.patch
-      # `mlx_fast_gated_delta_update` needs MLX newer than 0.32.1, so always use Ollama's own kernel:
+      # `mlx_fast_gated_delta_update` is not in mlx-c 0.7.0, so always use Ollama's own kernel:
       # https://github.com/ollama/ollama/blob/v0.34.4/mlx/compat/mlx-c/0002-fast-gated-delta-update.patch
       patch :DATA
     end
@@ -205,15 +204,6 @@ __END__
 diff --git a/mlx/fast.go b/mlx/fast.go
 --- a/mlx/fast.go
 +++ b/mlx/fast.go
-@@ -21,7 +21,7 @@
- 	}
- 
- 	out := New("FAST_SDPA")
--	mlxCheck(C.mlx_fast_scaled_dot_product_attention(&out.ctx, q.ctx, k.ctx, v.ctx, C.float(scale), cMode, maskCtx, sinks.ctx, C.bool(false), DefaultStream().ctx))
-+	mlxCheck(C.mlx_fast_scaled_dot_product_attention(&out.ctx, q.ctx, k.ctx, v.ctx, C.float(scale), cMode, maskCtx, sinks.ctx, DefaultStream().ctx))
- 	return out
- }
- 
 @@ -30,38 +30,6 @@
  	Bias   *Array `weight:"bias"`
  }
@@ -253,18 +243,6 @@ diff --git a/mlx/fast.go b/mlx/fast.go
  func (r *LayerNorm) Forward(x *Array, eps float32) *Array {
  	out := New("FAST_LAYERNORM")
  	mlxCheck(C.mlx_fast_layer_norm(&out.ctx, x.ctx, r.Weight.ctx, r.Bias.ctx, C.float(eps), DefaultStream().ctx))
-diff --git a/mlx/ops.go b/mlx/ops.go
---- a/mlx/ops.go
-+++ b/mlx/ops.go
-@@ -103,7 +103,6 @@
- 
- func (t *Array) Cumsum(axis int, reverse, inclusive bool) *Array {
- 	out := New("CUMSUM")
--	optDtype := C.mlx_optional_dtype{has_value: false}
--	mlxCheck(C.mlx_cumsum_axis(&out.ctx, t.ctx, C.int(axis), C.bool(reverse), C.bool(inclusive), optDtype, DefaultStream().ctx))
-+	mlxCheck(C.mlx_cumsum(&out.ctx, t.ctx, C.int(axis), C.bool(reverse), C.bool(inclusive), DefaultStream().ctx))
- 	return out
- }
 diff --git a/mlx/ops_extra.go b/mlx/ops_extra.go
 --- a/mlx/ops_extra.go
 +++ b/mlx/ops_extra.go

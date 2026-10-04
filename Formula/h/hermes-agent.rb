@@ -6,7 +6,7 @@ class HermesAgent < Formula
   url "https://ghfast.top/https://github.com/NousResearch/hermes-agent/archive/refs/tags/v2026.9.21.tar.gz"
   sha256 "c38cd7639707fe695f94ecd948ee7a9ce7de0c57461e39fb022966d79a692a65"
   license "MIT"
-  revision 1
+  revision 2
   head "https://github.com/NousResearch/hermes-agent.git", branch: "main"
 
   livecheck do
@@ -15,11 +15,11 @@ class HermesAgent < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "51bffe3ee56452402e23c97c35db30c15acaecf0a888fdc3c9390c2c89e013ca"
-    sha256 cellar: :any, arm64_tahoe:       "6f483e226ac2ed116da23e1e60b1e1f03091ce985f0dea49c51277c0294a1012"
-    sha256 cellar: :any, arm64_sequoia:     "d6f34f34036e399b42a03653da5bc482db28117f2718d93d9ca97a1e69c4c604"
-    sha256 cellar: :any, arm64_linux:       "8c1217e7b4bd28758c163d385c996ada051d489c2b74c0570f3ccb3446bcb923"
-    sha256 cellar: :any, x86_64_linux:      "921b3146171b11324d2d1b87194129bed8670cd6a91729c7e54f33961ba9e094"
+    sha256 cellar: :any, arm64_golden_gate: "6d517533d89e35e7b2be6efdda7834d85b68d3a0f0f6b640b713cbdcf8863a19"
+    sha256 cellar: :any, arm64_tahoe:       "62b87375026861a2d1aab23bbf6f1983cbdfa96e1537a07880e3a5dc3bae10af"
+    sha256 cellar: :any, arm64_sequoia:     "2058f6c2cde2ff10605872561410d479bfd0a1023d065a1072bb6c25819cba9c"
+    sha256 cellar: :any, arm64_linux:       "e7593bd69d9e8b34aa81c5b02fdc9e942881b5570347cd34c9bb4e84ce4c9fb4"
+    sha256 cellar: :any, x86_64_linux:      "c4cede513bb21c5322823848586ebaf83a8ea09098109800966289e64abd83e5"
   end
 
   depends_on "pkgconf" => :build
@@ -92,8 +92,8 @@ class HermesAgent < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/e5/3f/143b048436775b0f76ac3eec145c019e8173ccc2885c8f20319b996d5e83/charset_normalizer-3.5.1.tar.gz"
-    sha256 "6117b84ea48435e5356dc737f5121485c30920ba43375fa7b434fd753df0eac3"
+    url "https://files.pythonhosted.org/packages/33/1c/f41d4e74c28ab327ff3acd36053f7ea506c55872d7a90b0fa71aa3ab0c89/charset_normalizer-3.5.2.tar.gz"
+    sha256 "39de2a259fc954455c57274dc94c79d5842774e1247a016aff30bc0efed0f4ef"
   end
 
   resource "click" do
@@ -142,8 +142,8 @@ class HermesAgent < Formula
   end
 
   resource "google-api-core" do
-    url "https://files.pythonhosted.org/packages/44/8d/cbdc715cdfb7acd7ccf1ce2869b103734c6a3cf124afd021f56c10c17522/google_api_core-2.39.0.tar.gz"
-    sha256 "824ee414a10adefefae33fc5e2ba28dc6f0f7089d011c9cc98ea9178e61299e9"
+    url "https://files.pythonhosted.org/packages/23/f7/0fb8c3618c783ad49da1aaf97f93a4bb9e4ed522135516b44d129a7f85bb/google_api_core-2.40.0.tar.gz"
+    sha256 "ebee7d1b138b5362beecec260e6e8988ac97346562c7382ccb6f0ad8435c599f"
   end
 
   resource "google-api-python-client" do
@@ -167,8 +167,8 @@ class HermesAgent < Formula
   end
 
   resource "googleapis-common-protos" do
-    url "https://files.pythonhosted.org/packages/4b/13/f83676de1dce4f8106bcba91725b3f3f4baf6ca1977685102b008b8e0097/googleapis_common_protos-1.75.4.tar.gz"
-    sha256 "4587babdc82a8d7e5a3d4f5a6697e064bf44a598b4d08341c212b68185eadbcd"
+    url "https://files.pythonhosted.org/packages/8d/2b/6ce81972d5c8cab9705fddce3153be63222d9e12fd96f8baba5038a744dd/googleapis_common_protos-1.75.5.tar.gz"
+    sha256 "c7a866fc34ed29a3b10af627a4b9b1dc2433313ca6e959f0ae4feb132047ed72"
   end
 
   resource "h11" do
@@ -272,8 +272,8 @@ class HermesAgent < Formula
   end
 
   resource "oauthlib" do
-    url "https://files.pythonhosted.org/packages/0b/5f/19930f824ffeb0ad4372da4812c50edbd1434f678c90c2733e1188edfc63/oauthlib-3.3.1.tar.gz"
-    sha256 "0f0f8aa759826a193cf66c12ea1af1637f87b9b4622d46e866952bb022e538c9"
+    url "https://files.pythonhosted.org/packages/7a/d8/a1bcc8ba112a627f8ffbdc212a78ce18d3ac07e91a5ca65d27918eee25a1/oauthlib-4.0.0.tar.gz"
+    sha256 "efb274799819440f95b4ab3b818869f1ce9ae26c5beacba0201d1a1b76b54f86"
   end
 
   resource "openai" do
@@ -317,8 +317,8 @@ class HermesAgent < Formula
   end
 
   resource "proto-plus" do
-    url "https://files.pythonhosted.org/packages/40/a6/4fbadcc2044034449b3f8f0ce82dcf3005d53f37c136642103fd4836a31c/proto_plus-1.28.4.tar.gz"
-    sha256 "5ff7ecad828e032a491fcb86947801768e32237f99dd049b649965b892ae9a63"
+    url "https://files.pythonhosted.org/packages/46/70/783e33ffbb4466cc154a94f79b869b92a451e2bd45605054e68ff68b7af6/proto_plus-1.29.0.tar.gz"
+    sha256 "cfb4e62ad7e13dd18f346cabbda00cab39930d36a05791fd81ddb074d6ee884f"
   end
 
   resource "protobuf" do
@@ -465,8 +465,8 @@ class HermesAgent < Formula
   end
 
   resource "sse-starlette" do
-    url "https://files.pythonhosted.org/packages/2b/54/6767bb789b2f2fed6e0f953df949cd39dc263a384c1b65a95232598621d6/sse_starlette-3.4.11.tar.gz"
-    sha256 "1bae716c02f3e6f294be41ff333220692dae7c3cbab077c900f159676719dade"
+    url "https://files.pythonhosted.org/packages/e4/be/0123026f719d1a7936f214a88b553bb5701e04ff2511147c1dab0c5035eb/sse_starlette-3.5.0.tar.gz"
+    sha256 "75de713aa8a9441513cc283220826da079d982770965b951e9437720e8bafdb2"
   end
 
   resource "starlette" do
@@ -520,8 +520,8 @@ class HermesAgent < Formula
   end
 
   resource "uvloop" do
-    url "https://files.pythonhosted.org/packages/06/f0/18d39dbd1971d6d62c4629cc7fa67f74821b0dc1f5a77af43719de7936a7/uvloop-0.22.1.tar.gz"
-    sha256 "6c84bae345b9147082b17371e3dd5d42775bddce91f885499017f4607fdaf39f"
+    url "https://files.pythonhosted.org/packages/fa/42/02c739ce85fb2ee8d99212c61417da8140c6b87e9d97c430bea520d76044/uvloop-0.23.0.tar.gz"
+    sha256 "28d160f51ab4da3b187063652e643dea6831072add4adc1e6d62afbe73b6be27"
   end
 
   resource "watchfiles" do

@@ -4,6 +4,7 @@ class Opencascade < Formula
   url "https://ghfast.top/https://github.com/Open-Cascade-SAS/OCCT/archive/refs/tags/V7_9_3.tar.gz"
   sha256 "5ecf094ec6b12d5413dfb851d8c3590c354058aee556e32e408bdfbf8c357d57"
   license "LGPL-2.1-only"
+  revision 1
 
   # The first-party download page (https://dev.opencascade.org/release)
   # references version 7.5.0 and hasn't been updated for later maintenance
@@ -19,12 +20,11 @@ class Opencascade < Formula
   end
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any, arm64_golden_gate: "27c6bd32062cc3864edbe11c6daff505c866673baf4c9706502176abbf9df806"
-    sha256 cellar: :any, arm64_tahoe:       "bf744d8d3520150f03bfc1bbc578d22413a703985586eae9450c532db90c40d2"
-    sha256 cellar: :any, arm64_sequoia:     "ed5dfaeff1c71a1d3df421d862307593d88253f05fe725ea8f6118a007a5bb64"
-    sha256 cellar: :any, arm64_linux:       "62df045c76709134c9eedc5dee5c146c488fe26f4b955bdc1ef9d4339637f8f4"
-    sha256 cellar: :any, x86_64_linux:      "53014119157546ae92e3de650d1045d2dc1989482e70403ec8caf5caf1bb91b5"
+    sha256 cellar: :any, arm64_golden_gate: "f3e8a4afb66a07801bd3977a165e9b897d4c49d3b65e41b556167ad1ff0b7cae"
+    sha256 cellar: :any, arm64_tahoe:       "cbbb914aee6197f6ce60cf75b26e8b558be68699265c79cfe7e51e9713a10ea8"
+    sha256 cellar: :any, arm64_sequoia:     "b62765e91c1b704cbee71297fc1901beb9db38d6a08d720735b490c10684b957"
+    sha256 cellar: :any, arm64_linux:       "567e8bba26485d08562963d9c9870ccaeb691e1acbefb07ee2606ff88040ace2"
+    sha256 cellar: :any, x86_64_linux:      "7118d9aee4489f4076b44ec19afa439de79466d5e4e96793467ed3bfb2b52e1d"
   end
 
   depends_on "cmake" => [:build, :test]

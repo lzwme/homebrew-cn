@@ -1,21 +1,44 @@
 class Superhtml < Formula
   desc "HTML Language Server & Templating Language Library"
   homepage "https://github.com/kristoff-it/superhtml"
-  url "https://ghfast.top/https://github.com/kristoff-it/superhtml/archive/refs/tags/v0.6.2.tar.gz"
-  sha256 "431d7189501e1b2e8da53c3ca8d6e7f1c642b523f3715c21cb8bfd2f8eef3971"
+  url "https://ghfast.top/https://github.com/kristoff-it/superhtml/archive/refs/tags/v0.7.0.tar.gz"
+  sha256 "92b2b76e6a38ac0aa2e10fe13ce4131366c2f1bb3d13131687aa8a2df82de82a"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "c453ef5eeebdb2eef2a2d6669543858f48830db8db9bb41059dd6451b4f14053"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "6ecdeda20aba3c932e654ce1a7ad91174f5084cc83633c5d9cd6f1390daee912"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "8012a4daf05ee0ddbb51d09172fadeb4fe23b21cadeed03a42c1663964bd52dc"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "bae9719b4bb4567edaf1678911be594bfdc8d537996bb723f300c3fb0f2aad93"
-    sha256 cellar: :any_skip_relocation, sonoma:            "f41742a7a7b61ce1e6bf019e897ae0b3f0076215353a8af4b7f53750533593f6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "b468973d40b401cf79782c7b85cf42696046c5064797af71a24de169e5b33d58"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "8874ee426039b691bb1faffd504ba20c22be4501f249d0bf8f84f2f46c636f5f"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "1167339abf714b81a333fec80ab403206f5e62df43a30bdc1b545829d1579f46"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "7687f485af9040ff1c8ade4cccabf61c15ebb1bc1ddf2da6031e52c5e97cf18f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "b181a3cab8e3d28217f15485b562294707917122d43975da8fd13e63bd665a7f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "c39007b2a917a73a9e5878f2c2a491f0795d47051fc922309f7f596aa058ad44"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "89bfa687bda56506584298d3badbbee00010c6423dac56500de59cd039ad5524"
   end
 
-  depends_on "zig@0.15" => :build # Blocked until Zig 0.17 is available which 0.7.0+ uses
+  depends_on "zig" => :build
+
+  # Backport fix for fmt
+  patch do
+    url "https://github.com/kristoff-it/superhtml/commit/269502486163f22e03f3ab5aa818ed729f8034b5.patch?full_index=1"
+    sha256 "9f01c36a089883c5c450f50562857ea869bb3dbfe940012d84b91acf3fcfbeea"
+    type :backport
+    resolves "https://github.com/kristoff-it/superhtml/issues/151"
+  end
+
+  # Backports for Zig 0.17 final release
+  patch do
+    url "https://github.com/kristoff-it/superhtml/commit/3e37d8b00b211ac1591766cfb0ea3efd2845bff2.patch?full_index=1"
+    sha256 "ed022f8c14de6803b30a576146d82dea6a10bd6ad6fa838e56f54f2ecf682d7c"
+    type :backport
+  end
+  patch do
+    url "https://github.com/kristoff-it/superhtml/commit/abd86c4ba995a37b0f0559801b32b35cde8bcef9.patch?full_index=1"
+    sha256 "fc7d5049191210804ac87130decf75006b738de403e9b1918e029f7949f4f3f5"
+    type :backport
+  end
+  patch do
+    url "https://github.com/kristoff-it/superhtml/commit/f0deee80ae422938d5cdc43a5598c417670db38b.patch?full_index=1"
+    sha256 "6b4e48705e52807e3c0286c938721749461c7947ca64dae09bc8de22a4b0ee8c"
+    type :backport
+  end
 
   deny_network_access!
 

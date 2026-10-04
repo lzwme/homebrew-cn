@@ -1,8 +1,8 @@
 class Libical < Formula
   desc "Implementation of iCalendar protocols and data formats"
   homepage "https://libical.github.io/libical/"
-  url "https://ghfast.top/https://github.com/libical/libical/releases/download/v4.0.5/libical-4.0.5.tar.gz"
-  sha256 "cc09a3ac41d60e6144e644bd3fcf97d47106d659c4a0b8965102581401e67c9c"
+  url "https://ghfast.top/https://github.com/libical/libical/releases/download/v4.0.6/libical-4.0.6.tar.gz"
+  sha256 "2e3729cb69c282d3bb17a8d2b198af6e4bc7502fd3621c9adf573921fe9dceb0"
   license any_of: ["LGPL-2.1-or-later", "MPL-2.0"]
   compatibility_version 1
 
@@ -12,13 +12,11 @@ class Libical < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "1dd69ef05cb14a22c0dd603aac8fae8dd67434bdbac49df6200ea4869536125f"
-    sha256 cellar: :any, arm64_tahoe:       "f1de09188a68e831bdd83655483216b53ef49c5335e4450b4fac95badf587796"
-    sha256 cellar: :any, arm64_sequoia:     "e29340ff7ce9cdb11c7f8f4f9c7a3e9a7412b8cdc8cdaea9e5b5faa5468cbdf4"
-    sha256 cellar: :any, arm64_sonoma:      "62aa6a36d618e228f58564b31286960b34df4241661f8d7ebdd5ad1a99cebfd8"
-    sha256 cellar: :any, sonoma:            "bd4a3ef9c7aca5b77697562c3499f9eb96da5ea4a49c302ad73085ebc6c1f804"
-    sha256 cellar: :any, arm64_linux:       "77f9a63ebfe12a913f3ff7303e91161d8fa38fdf0f29073cec6dd96e160063e3"
-    sha256 cellar: :any, x86_64_linux:      "3184327968b165956effba33099920b62ac22e68ccbaf29ffc259a8513ed24de"
+    sha256 cellar: :any, arm64_golden_gate: "43407333cb5755e06332bb6802e6bf6d596db041665137cf091dd945decb8c56"
+    sha256 cellar: :any, arm64_tahoe:       "6e2dc1199f3e3f78e93bb8173f6f55db09b3ae38dabc6c50bf3ccd66261252fb"
+    sha256 cellar: :any, arm64_sequoia:     "288b7c51c2daa1768e7996fc82bf83b5cc5e6fe1f2a27c08619ede4b774d09a2"
+    sha256 cellar: :any, arm64_linux:       "83959a77cc5a9dd361af6195f0e56f6f272736bc071ea782ffb8f9811c119091"
+    sha256 cellar: :any, x86_64_linux:      "aa6ad757af943637db8ab69d61032b284a77f0f390def5abeb6e559279f3563b"
   end
 
   depends_on "cmake" => :build
