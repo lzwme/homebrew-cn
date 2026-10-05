@@ -1,9 +1,9 @@
 cask "uniclipboard" do
   arch arm: "aarch64", intel: "x64"
 
-  version "1.0.1"
-  sha256 arm:   "9c8341421f619c563916e984e4163bf230e989b2cbe89a1a61f05fcdaaa36d5b",
-         intel: "b6a85617abb57dd44b073d3dcaf31a7981f4f1ea9653fac3e502300516a21647"
+  version "1.1.1"
+  sha256 arm:   "fe2d7785aae570d46695a663595367a6445960d83ad98e78a57c7b430379d0d1",
+         intel: "fc8415e6bec6398f3d984d2808ead0f591c4cb5f5f96d6c07e29cfd39ba8324b"
 
   url "https://ghfast.top/https://github.com/UniClipboard/UniClipboard/releases/download/v#{version}/UniClipboard_#{version}_#{arch}.dmg"
   name "UniClipboard"

@@ -27,6 +27,12 @@ class Rustnet < Formula
     depends_on "zlib-ng-compat"
   end
 
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
     ENV["RUSTNET_ASSET_DIR"] = buildpath/"assets-generated"
     (buildpath/"assets-generated").mkpath

@@ -27,6 +27,12 @@ class XCli < Formula
     depends_on "openssl@3"
   end
 
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
     # https://github.com/sferik/x-cli/issues/475
     inreplace "Cargo.toml", 'version = "6.0.0"', 'version = "5.0.0"'

@@ -31,12 +31,12 @@ class Klee < Formula
   head do
     url "https://github.com/klee/klee.git", branch: "master"
 
-    depends_on "llvm@18"
+    depends_on "llvm@19"
 
     # klee needs a version of libc++ compiled with wllvm
     resource "libcxx" do
-      url "https://ghfast.top/https://github.com/llvm/llvm-project/releases/download/llvmorg-18.1.8/llvm-project-18.1.8.src.tar.xz"
-      sha256 "0b58557a6d32ceee97c8d533a59b9212d87e0fc4d2833924eb6c611247db2f2a"
+      url "https://ghfast.top/https://github.com/llvm/llvm-project/releases/download/llvmorg-19.1.7/llvm-project-19.1.7.src.tar.xz"
+      sha256 "82401fea7b79d0078043f7598b835284d6650a75b93e64b6f761ea7b63097501"
     end
   end
 

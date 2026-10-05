@@ -23,14 +23,6 @@ class Pyrefly < Formula
   end
 
   def install
-    # Currently uses nightly rust features. Allow our stable rust to compile
-    # these unstable features to avoid needing a rustup-downloaded nightly.
-    # See https://rustc-dev-guide.rust-lang.org/building/bootstrapping/what-bootstrapping-does.html#complications-of-bootstrapping
-    # Remove when fixed: https://github.com/facebook/pyrefly/issues/374
-    ENV["RUSTC_BOOTSTRAP"] = "1"
-    # Set JEMALLOC configuration for ARM builds
-    ENV["JEMALLOC_SYS_WITH_LG_PAGE"] = "16" if Hardware::CPU.arm?
-
     system "cargo", "install", *std_cargo_args(path: "pyrefly")
   end
 

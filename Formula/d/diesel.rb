@@ -1,8 +1,8 @@
 class Diesel < Formula
   desc "Command-line tool for Rust ORM Diesel"
   homepage "https://diesel.rs"
-  url "https://ghfast.top/https://github.com/diesel-rs/diesel/archive/refs/tags/v2.3.13.tar.gz"
-  sha256 "3d1795761b4b48dc8b2c0e203c942ddfc97f767b5b59aca309f016e28cf0f6a4"
+  url "https://static.crates.io/crates/diesel_cli/diesel_cli-2.3.13.crate"
+  sha256 "33433d6849061fba43886c27cdd4584ebed32fa7a5cf300b3d4277e92bd4316c"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/diesel-rs/diesel.git", branch: "main"
 
@@ -21,8 +21,17 @@ class Diesel < Formula
 
   uses_from_macos "sqlite"
 
+  deny_network_access!
+
+  def fetch
+    cd(build.head? ? "diesel_cli" : ".") do
+      system "cargo", "generate-lockfile" if build.head?
+      system "cargo", "fetch", *std_cargo_fetch_args
+    end
+  end
+
   def install
-    system "cargo", "install", *std_cargo_args(path: "diesel_cli")
+    system "cargo", "install", *std_cargo_args(path: build.head? ? "diesel_cli" : ".")
     generate_completions_from_executable(bin/"diesel", "completions")
   end
 

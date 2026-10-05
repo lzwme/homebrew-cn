@@ -27,6 +27,12 @@ class Gitoxide < Formula
     depends_on "zlib-ng-compat"
   end
 
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
     features = %w[max-control gitoxide-core-blocking-client http-client-curl hashes]
     system "cargo", "install", "--no-default-features", *std_cargo_args(features:)

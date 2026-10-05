@@ -16,6 +16,12 @@ class Flyline < Formula
   depends_on "rust" => :build
   depends_on "bash" => :test
 
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
     cargo_args = std_cargo_args.reject { |arg| arg["--root"] || arg["--path"] }
     system "cargo", "build", "--lib", "--release", *cargo_args

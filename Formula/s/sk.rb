@@ -1,8 +1,8 @@
 class Sk < Formula
   desc "Fuzzy Finder in rust!"
   homepage "https://github.com/skim-rs/skim"
-  url "https://ghfast.top/https://github.com/skim-rs/skim/archive/refs/tags/v5.7.3.tar.gz"
-  sha256 "0b3f43eef53db02ab2c3411befe194ee60a727b4128f34b4273a240b76122038"
+  url "https://ghfast.top/https://github.com/skim-rs/skim/archive/refs/tags/v5.7.4.tar.gz"
+  sha256 "47934e9ff95935850d6cd7771bfbaf8d33a84ef5b80e1ab92d9b0e8a2812b3ef"
   license "MIT"
   head "https://github.com/skim-rs/skim.git", branch: "master"
 
@@ -12,11 +12,11 @@ class Sk < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "f822ae5eca75127f6eef69e72e783f047afb9627636d145a67d921fcb0ac1fbc"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "b286aa9ec1b2aaa4111070986726c3d68be719cce3f45b112edf2ce00520b988"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "b802ad0efaf7d11f810ee45acabe0a9de0f01a4e752f29b3224e1b13c6bc9dbe"
-    sha256 cellar: :any,                 arm64_linux:       "70b73d0789bb36e1824ac99f8f2d0e42f14aee4d010def4d73214fc8fea9be81"
-    sha256 cellar: :any,                 x86_64_linux:      "e743343d5f6789f248674f26a9125795507e725267b1efe4f27b594c6653d870"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "83a3bd0242e77ae5a3eb9314d3b93b107d5e41e1a4e308c474dcd0e4d52295a0"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "8d6e21e6faef4d8c7fb4491e867a8684ca07f39db90cff4f4417146f9a19d663"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "56d234d1cace3e905f1000db2fbfc5a7875921e4b46c4c4b3706145af72f4724"
+    sha256 cellar: :any,                 arm64_linux:       "9bebc0bf9cbced2b86064f5d40b2ad1bc75651103d72f7f587f05937598be2ce"
+    sha256 cellar: :any,                 x86_64_linux:      "b9242aa3bd55257dba0503e126e8f1cf5c5e7c852e8d2e767d2a497b0b39b41c"
   end
 
   depends_on "rust" => :build

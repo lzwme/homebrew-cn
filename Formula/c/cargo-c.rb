@@ -1,12 +1,13 @@
 class CargoC < Formula
   desc "Helper program to build and install c-like libraries"
   homepage "https://github.com/lu-zero/cargo-c"
-  url "https://ghfast.top/https://github.com/lu-zero/cargo-c/archive/refs/tags/v0.10.25.tar.gz"
-  sha256 "8054b12ae8b64259e7b63e40368406dd6b6510d5d92b658152b361c5d816a5de"
+  url "https://static.crates.io/crates/cargo-c/cargo-c-0.10.25+cargo-0.99.0.crate"
+  version "0.10.25"
+  sha256 "6b2ddde58a8a773ccce4b6384acacd3ce01373f52717dd2424633ed46755c627"
   license "MIT"
 
   livecheck do
-    url :stable
+    url :homepage
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
@@ -33,6 +34,12 @@ class CargoC < Formula
 
   on_linux do
     depends_on "zlib-ng-compat"
+  end
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
   end
 
   def install

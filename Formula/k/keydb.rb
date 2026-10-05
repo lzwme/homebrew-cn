@@ -19,12 +19,14 @@ class Keydb < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:      "66f4992328aeaa000bb75107076cb9d05eb8b3ce229e94a51262d33d853af1b7"
   end
 
+  # Last release on 2023-10-30 and last activity on 2024-04-04.
+  # Also see: https://github.com/Snapchat/KeyDB/issues/895
+  deprecate! date: "2026-10-04", because: :unmaintained
+  disable! date: "2027-04-04", because: :unmaintained
+
   depends_on "pkgconf" => :build
   depends_on "openssl@3"
-  depends_on "snappy"
-  depends_on "zstd"
 
-  uses_from_macos "bzip2"
   uses_from_macos "curl"
 
   on_linux do

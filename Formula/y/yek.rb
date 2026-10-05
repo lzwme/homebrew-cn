@@ -30,6 +30,12 @@ class Yek < Formula
     depends_on "zlib-ng-compat"
   end
 
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
     ENV["OPENSSL_DIR"] = formula_opt_prefix("openssl@3")
 

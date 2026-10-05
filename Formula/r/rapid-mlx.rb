@@ -3,14 +3,14 @@ class RapidMlx < Formula
 
   desc "Fast local AI engine for Apple Silicon with an OpenAI-compatible API"
   homepage "https://github.com/raullenchai/Rapid-MLX"
-  url "https://files.pythonhosted.org/packages/f0/aa/445300afefd97e8adae5d0e685f09bb600392a93b40cac1c18fac944a5f1/rapid_mlx-0.15.4.tar.gz"
-  sha256 "6e0a54be0541572762da44f2790878a448036e91e433a93b40ed0cff5b629d57"
+  url "https://files.pythonhosted.org/packages/19/78/2a0f45bf8cdf6413fb58f4942a6703930b2bb09108433d87e0f9ec5a5935/rapid_mlx-0.15.5.tar.gz"
+  sha256 "07f1fc6e3558640b67c6c766e88e062128b0b63fa1aa43e28f09b2e450782efe"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "b1cd9befb0bb3a90d908e29ab56c062815c0e2245960493fb7d08a65aedecf68"
-    sha256 cellar: :any, arm64_tahoe:       "6f2297c2f0599e64c3fbffb468d7b20b24620e88f5f642a1e78c46f049631ebd"
-    sha256 cellar: :any, arm64_sequoia:     "440f2a22f5435767bb475b937cc97cf4e19f74c9aa35bef70a42f60ec09359e0"
+    sha256 cellar: :any, arm64_golden_gate: "d701e8199eab02bf761de2e50b732dd34b76b88e47a3c682d3db74593b318a7b"
+    sha256 cellar: :any, arm64_tahoe:       "257964e48b903695cc0ac25fc7d592df2319bf4d40079cffdddb8879d72e9c6e"
+    sha256 cellar: :any, arm64_sequoia:     "2455bb5e3f44ef5a56993c59f501d68605f5ce92be63345f7f53aa14df1fcf1c"
   end
 
   depends_on "cmake" => :build
@@ -140,18 +140,18 @@ class RapidMlx < Formula
   end
 
   resource "markupsafe" do
-    url "https://files.pythonhosted.org/packages/7e/99/7690b6d4034fffd95959cbe0c02de8deb3098cc577c67bb6a24fe5d7caa7/markupsafe-3.0.3.tar.gz"
-    sha256 "722695808f4b6457b320fdc131280796bdceb04ab50fe1795cd540799ebe1698"
+    url "https://files.pythonhosted.org/packages/38/9b/e422a865e1d5d57d0e509b4e0bf1c1a70a7f6382c29a5aa428df994c8bc8/markupsafe-3.0.4.tar.gz"
+    sha256 "2e9ad7dd851bf45fab9f75cbff4cb493fee9979e8d8c7c9c3ee119022518edd6"
   end
 
   resource "mcp" do
-    url "https://files.pythonhosted.org/packages/76/31/ac54fb0fdd5b37de704486e288bba4fbbb463f24cfcfedbede407b854513/mcp-2.2.0.tar.gz"
-    sha256 "2dc37ecb1974becdcebdbf7561e7c15a07dbbf20ba21ba16c3593b3038b3afbd"
+    url "https://files.pythonhosted.org/packages/9d/8d/e0d339616f4810e9051d4aba6887afab289ab1f81875fe908b606cdfd0e3/mcp-2.3.0.tar.gz"
+    sha256 "8b147a50441cf059dc88c684e0aeed3687f0aa0f39c6cde7b90330effd2b34d8"
   end
 
   resource "mcp-types" do
-    url "https://files.pythonhosted.org/packages/ae/91/762d7755d971aff8a28d75f7961656148edf27875c8026e6385aaab08ae7/mcp_types-2.2.0.tar.gz"
-    sha256 "d3ed53703ddd10d9c6399f29d322bb66f3f67ab41348ac8556ba23e07fedefad"
+    url "https://files.pythonhosted.org/packages/9e/2d/7c251e34207f6c51000312fc8839111ac45cfe02023f90b44e7f1051dd8e/mcp_types-2.3.0.tar.gz"
+    sha256 "d1e46549edb35ee19a94940fcee6d1addd7e589ab7ea92dda83f5d84781fc362"
   end
 
   resource "mdurl" do
@@ -300,8 +300,8 @@ class RapidMlx < Formula
   end
 
   resource "websockets" do
-    url "https://files.pythonhosted.org/packages/18/72/fba934cb3dff7a85d811820efffcd141ddd52b5a2a01637f64551373ff4d/websockets-17.1.tar.gz"
-    sha256 "acfea4c20bf54384883ea33b1240fc1db4f52e190823a4e2b334bc3e8bfca96a"
+    url "https://files.pythonhosted.org/packages/01/89/3f825ab71c242fffb62ea8fe638741c290f62f8d7aadf8125ff897747af3/websockets-17.2.tar.gz"
+    sha256 "36c2fb94c990cc2545143b12690e2de6c16300f9dbe5b4f33fa300cf57dc8792"
   end
 
   def install

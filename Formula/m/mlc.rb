@@ -22,6 +22,12 @@ class Mlc < Formula
     depends_on "openssl@4"
   end
 
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
     # Explicitly set linker to avoid Cargo defaulting to
     # incorrect or outdated linker (e.g. x86_64-apple-darwin14-clang)

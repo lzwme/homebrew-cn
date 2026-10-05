@@ -4,15 +4,14 @@ class Pdftoipe < Formula
   url "https://ghfast.top/https://github.com/otfried/ipe-tools/archive/refs/tags/v7.2.29.2.tar.gz"
   sha256 "c8de0dc7eb8fa959c96539fb19ebfb8e16f459e9b4ef9259aeb30b76072cd083"
   license "GPL-2.0-or-later"
-  revision 6
+  revision 7
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "aa1d4a9c511b35749317916cd458ac51cfce34c8385e27331d6555fa2d55a5e3"
-    sha256 cellar: :any, arm64_tahoe:       "1210cd0771f9461b7e92b1b4cede74fa6f4b12c517cb76431466ff7e80f12f81"
-    sha256 cellar: :any, arm64_sequoia:     "6a92ef6284521331dbba8d0f6d027758372371bde0caf21e48f547cb21c52c1f"
-    sha256 cellar: :any, arm64_sonoma:      "8d9beb56269ffd0463bfaf6f1ee6e06770bd606d9088f422d68a6a321333cbb3"
-    sha256 cellar: :any, arm64_linux:       "7e4095055e683f54f70fe507cab0b198b0e68f14baa654d6194b1ae670901263"
-    sha256 cellar: :any, x86_64_linux:      "6b2c8ee3d505c166d88cb43ba36b42614f061fe235bc170528b7156d9c40bf2f"
+    sha256 cellar: :any, arm64_golden_gate: "eab950e03cf807d0a4b4c48c95b9415b849a44473d090f8d3c2ad02548d86855"
+    sha256 cellar: :any, arm64_tahoe:       "88c7c470ac5f9bf2f2bfe134d3aab7ccd76b29ac2f73bb7dae4a917024a78867"
+    sha256 cellar: :any, arm64_sequoia:     "3e0e835afc52eedc6ab19c1a9ff2281aae8504e0a14ff2ddc5ffc3cc5195f6d7"
+    sha256 cellar: :any, arm64_linux:       "3c8becc66f6fb46b53421f5f9d5732c6bbea0d2f28f02270692c3d7dc8135566"
+    sha256 cellar: :any, x86_64_linux:      "257b4b203ec6591017ea165d9e688907b03ff4163e4b50e7d8024417fdc1df48"
   end
 
   depends_on "pkgconf" => :build

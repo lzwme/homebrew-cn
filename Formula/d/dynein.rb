@@ -30,6 +30,12 @@ class Dynein < Formula
     depends_on "openssl@3" # need to build `openssl-sys`
   end
 
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
     system "cargo", "install", *std_cargo_args
   end

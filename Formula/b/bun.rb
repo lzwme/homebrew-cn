@@ -36,7 +36,7 @@ class Bun < Formula
   depends_on "cmake" => :build
   depends_on "llvm@21" => :build # LLVM 22 PR: https://github.com/oven-sh/bun/pull/34299
   depends_on "ninja" => :build
-  depends_on "rustup" => :build # needs nightly as uses `-Z` flags and unstable `#![feature(...)]`
+  depends_on "rust" => :build
 
   uses_from_macos "llvm" => :build
   uses_from_macos "perl" => :build # for webkit
@@ -128,6 +128,7 @@ class Bun < Formula
       inreplace "scripts/build/flags.ts", "-march=armv8-a+crc", ENV["HOMEBREW_OPTFLAGS"].to_s
     end
 
+    ENV["RUSTC_BOOTSTRAP"] = "1" # workaround to build with stable rust
     # Nested dep builds run `cmake --build` without `--parallel`, four at a time
     # (the `dep` ninja pool), so each one spawns its own core-count worth of
     # compilers on top of the outer build and Homebrew's job limit is ignored.

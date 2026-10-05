@@ -25,6 +25,12 @@ class SequoiaChameleonGnupg < Formula
   uses_from_macos "bzip2"
   uses_from_macos "sqlite"
 
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
     ENV["OPENSSL_DIR"] = formula_opt_prefix("openssl@3")
     ENV["ASSET_OUT_DIR"] = buildpath

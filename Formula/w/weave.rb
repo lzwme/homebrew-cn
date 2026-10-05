@@ -26,6 +26,12 @@ class Weave < Formula
 
   conflicts_with "texlive", because: "both install a `weave` binary"
 
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
     system "cargo", "install", *std_cargo_args(path: "crates/weave-cli")
     system "cargo", "install", *std_cargo_args(path: "crates/weave-driver")

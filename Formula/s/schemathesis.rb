@@ -3,16 +3,16 @@ class Schemathesis < Formula
 
   desc "Testing tool for web applications with specs"
   homepage "https://schemathesis.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/9b/7f/1645c745fa0d49f4c36eba863b204b49c31a457f727cc0f8b1339dc66c05/schemathesis-4.29.0.tar.gz"
-  sha256 "2419798da5e6a78edbdff6a689a43913d60ad08d9c83a6f592752edc7afee34e"
+  url "https://files.pythonhosted.org/packages/e2/5f/149793ab44b27ae6b4269f7e9010e1f85d882588a696e4d414641fae2896/schemathesis-4.29.1.tar.gz"
+  sha256 "b146b51c8e8553aed019572b0ea3177ca4a2b45ea8ebf12e08908185d5813a64"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "5f261a4724cf7bb38c0d795b325f72a45735be95eb421265261fb24c71de5e29"
-    sha256 cellar: :any, arm64_tahoe:       "2b3afaddfcd1f44c3aef11b0d0ff8d188b307c5b269176858f6c0939f8385540"
-    sha256 cellar: :any, arm64_sequoia:     "ed9c3c8c89dde8373001033b2222dc66a3d9bf52e3ca2e1c2236ff2b4b69b274"
-    sha256 cellar: :any, arm64_linux:       "34162d2bbdd56afe9e49400674ac145864eaf97170abb33640ea695d81a31ff1"
-    sha256 cellar: :any, x86_64_linux:      "5a73a0a3652a8ffc8a9b4c7cba18d074368434a126e9962e7623831a06551705"
+    sha256 cellar: :any, arm64_golden_gate: "8021222b3bec317b382b254049220496a07669a453f3008e09a4453ef6085317"
+    sha256 cellar: :any, arm64_tahoe:       "9820a2fc87ede4efe864030df5c7ac60b764288bc7b7e1adc397cb28149b2c20"
+    sha256 cellar: :any, arm64_sequoia:     "83347b24b5e4aaf06c89eca2537a0bdd0a893367dde397aa63045b239da0d1be"
+    sha256 cellar: :any, arm64_linux:       "125135e687c8d15bbc84436edd7b0d19e6854f469d4c645a6738be3b39ec42df"
+    sha256 cellar: :any, x86_64_linux:      "8bd693a13be980ee87a5b4152607d582442f87cb537089ade851c595653ea3e3"
   end
 
   depends_on "rust" => :build # for jsonschema-rs
@@ -71,8 +71,8 @@ class Schemathesis < Formula
   end
 
   resource "jsonschema-rs" do
-    url "https://files.pythonhosted.org/packages/8e/1a/14a6bba94f5d679f5ea3630badd137e945545eb1e308a5e4eca42c585b36/jsonschema_rs-0.58.4.tar.gz"
-    sha256 "b4346c88c0cb692e630e25b13bcb3c37d33d6cf884d5849dbfb85e2fa07de4c9"
+    url "https://files.pythonhosted.org/packages/30/01/a2d23d69bda7afec7a56949cc8f86393699334c687dd22496e379809a1c4/jsonschema_rs-0.58.5.tar.gz"
+    sha256 "b1f7c65fd467e2fe85ef1c4f824ebf96e4334b035d3c2a12623f7000eb0d9f5a"
   end
 
   resource "markdown-it-py" do
@@ -81,8 +81,8 @@ class Schemathesis < Formula
   end
 
   resource "markupsafe" do
-    url "https://files.pythonhosted.org/packages/7e/99/7690b6d4034fffd95959cbe0c02de8deb3098cc577c67bb6a24fe5d7caa7/markupsafe-3.0.3.tar.gz"
-    sha256 "722695808f4b6457b320fdc131280796bdceb04ab50fe1795cd540799ebe1698"
+    url "https://files.pythonhosted.org/packages/38/9b/e422a865e1d5d57d0e509b4e0bf1c1a70a7f6382c29a5aa428df994c8bc8/markupsafe-3.0.4.tar.gz"
+    sha256 "2e9ad7dd851bf45fab9f75cbff4cb493fee9979e8d8c7c9c3ee119022518edd6"
   end
 
   resource "mdurl" do

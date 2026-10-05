@@ -29,7 +29,7 @@ class Opusfile < Formula
   end
 
   head do
-    url "https://gitlab.xiph.org/xiph/opusfile.git", branch: "master"
+    url "https://gitlab.xiph.org/xiph/opusfile.git", branch: "main"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build

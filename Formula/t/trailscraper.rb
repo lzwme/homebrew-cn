@@ -6,19 +6,15 @@ class Trailscraper < Formula
   url "https://files.pythonhosted.org/packages/43/82/74344dd629ac17dc4b3906eb07a53a731c3ccc80913abdbbe378c658498f/trailscraper-0.10.0.tar.gz"
   sha256 "805994a27ebd3ecd9353cd85b54139822e73980b1da93f63fa0e5d42c8b67ec1"
   license "Apache-2.0"
-  revision 2
+  revision 3
   head "https://github.com/flosell/trailscraper.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "5c058ff282c1a24f8e349c66b34c8e65d20bedc9e212521728bbf27ae1d3a8af"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "c4590ee12fb56b39ca4ab0a1c8794d44c3e169ef982ff336f783e67906bdafb8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "0511b14386c89f606f2068ee0999712f16c30c395e2cc60eaec209d8da1e6dc0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "2ea45e87f3f69ad712391990a724736804a931558ed65be19b9cb7f37cf01718"
-    sha256 cellar: :any_skip_relocation, tahoe:             "09d7e2aa57417f3dce773c2fb46c7272c0d0b54a4e95bdaab74e1bfc324ddf06"
-    sha256 cellar: :any_skip_relocation, sequoia:           "e5d420b15578b0a7caf69a8bed841478b0e071ffaf2b2496577e7522509aa989"
-    sha256 cellar: :any_skip_relocation, sonoma:            "145f1e931b976f9ee9ef99e1baceb1f39f850b29b1faffbc6f0d67c1848a4687"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "581e4b2502e3d53f251a436530c58ce6edf78f475efe8a34de8de9f908006d3b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "537e15e89e07216eb4b76e52a14010b3cb8b58d951fb5f242014ce871eec6851"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "f13c9e8a10d5486c8c530bc3c117b44aa1c3772976b7011f8082faef02664206"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "c4b6975531056857a239dd634fca456c76a654908f55abb430c5c5523dca8da2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "38a2b46bdd21cba9fbd22d1e491ffef40110871db1e6c1867ee3da944e0665e4"
+    sha256 cellar: :any,                 arm64_linux:       "aeeba5272056ed969c563ed7900772fa7b4ee0b696ba2270d15d2e94b9f43296"
+    sha256 cellar: :any,                 x86_64_linux:      "a514e3546c7f53236597048e7cde38403429609065d287d56ca0805896eb8570"
   end
 
   depends_on "python@3.14"
@@ -59,8 +55,8 @@ class Trailscraper < Formula
   end
 
   resource "regex" do
-    url "https://files.pythonhosted.org/packages/dc/0e/49aee608ad09480e7fd276898c99ec6192985fa331abe4eb3a986094490b/regex-2026.5.9.tar.gz"
-    sha256 "a8234aa23ec39894bfe4a3f1b85616a7032481964a13ac6fc9f10de4f6fca270"
+    url "https://files.pythonhosted.org/packages/fc/f2/af1da9d3ceed77bfcdce40427d49ba0be94e4fe84245e3bfef68c10e75b6/regex-2026.9.29.tar.gz"
+    sha256 "8b5fcc4771732191b2b7d1dd68d8f0353f47f8d90b6150f6dce58bf1112442cb"
   end
 
   resource "ruamel-yaml" do
@@ -84,13 +80,13 @@ class Trailscraper < Formula
   end
 
   resource "tzlocal" do
-    url "https://files.pythonhosted.org/packages/8b/2e/c14812d3d4d9cd1773c6be938f89e5735a1f11a9f184ac3639b93cef35d5/tzlocal-5.3.1.tar.gz"
-    sha256 "cceffc7edecefea1f595541dbd6e990cb1ea3d19bf01b2809f362a03dd7921fd"
+    url "https://files.pythonhosted.org/packages/81/5b/879b2f932adfa7a053c360d50bc896c977fa6426109185f7c12ebdd0cb9d/tzlocal-5.4.4.tar.gz"
+    sha256 "8dbb8660838688a7b6ba4fed31d18dedf842afb4d47ca050d6d891c2c15f3be4"
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/53/0c/06f8b233b8fd13b9e5ee11424ef85419ba0d8ba0b3138bf360be2ff56953/urllib3-2.7.0.tar.gz"
-    sha256 "231e0ec3b63ceb14667c67be60f2f2c40a518cb38b03af60abc813da26505f4c"
+    url "https://files.pythonhosted.org/packages/e3/05/b17359e1cefb4f909b5e40b1b90a496d987258916dbbf88e842c729f510e/urllib3-2.8.0.tar.gz"
+    sha256 "63bf2ead4c879426ebf22ef2a781eeb4aa3b4ae798a0435506f8687fd5bb9b63"
   end
 
   def install

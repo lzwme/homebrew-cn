@@ -23,6 +23,12 @@ class Ncspot < Formula
     depends_on "pulseaudio"
   end
 
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
     if OS.mac?
       ENV["COREAUDIO_SDK_PATH"] = MacOS.sdk_path

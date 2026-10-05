@@ -1,8 +1,8 @@
 class FxAgent < Formula
   desc "Tiny, open, embeddable, native coding agent"
   homepage "https://fx.sh"
-  url "https://ghfast.top/https://github.com/vercel-labs/fx/archive/refs/tags/v0.0.12.tar.gz"
-  sha256 "03497fc19f2b73e110546d38951151842c63bfe174c978537285024b246bd6d9"
+  url "https://ghfast.top/https://github.com/vercel-labs/fx/archive/refs/tags/v0.0.13.tar.gz"
+  sha256 "bf2977563f2ded63ca5972cf3544f66c205d6b6533ae1101c04eeec266a3468c"
   license "Apache-2.0"
   head "https://github.com/vercel-labs/fx.git", branch: "main"
 
@@ -12,11 +12,11 @@ class FxAgent < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "acd2865425ad0465c6d4b3a9626b3c7df19c2654d07d3a4d1994535bb6564dbf"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "202d5fceb499e28e983e8c0eb12ad258dd10c36f6cbdf0414f2375c653b27c8f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "db2deb4bb5a9908a8feb4deeb084db86a85454fad8e74b3aa3f100ead4e99ac4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "b59b62832290920186537027d15f9bf562b380c6c2e3180f5e4eb9d4fe33238b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "39379a5085eef7e7abb9dea50836d55725a65335f12e34854228afae501a65f1"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "60e436fd5f533bd0a3b5a2cc804e86c7a15e91238f559d84957a05a583bafd9e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "56177514357a54f4e92c20c3aeab8d38595dd985382269888d20156ad740352b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "30c13031b4486052ff584a4a6e53a42d069e88e958de5a2a632ce35f7d6f03d7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "d5e8e22043980e9c6f922ddf97219c26e729d94fbd864ac56ae1e7b3c0d75002"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "c4e667833357128adec07443ddc6b961f23399d2d5214b1f7329bdb9a46dd584"
   end
 
   depends_on "zig@0.16" => :build

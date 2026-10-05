@@ -23,6 +23,14 @@ class Firefoxpwa < Formula
     depends_on "openssl@4"
   end
 
+  deny_network_access!
+
+  def fetch
+    cd "native" do
+      system "cargo", "fetch", *std_cargo_fetch_args
+    end
+  end
+
   def install
     cd "native"
 

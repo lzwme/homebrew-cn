@@ -24,6 +24,12 @@ class Near < Formula
     depends_on "zlib-ng-compat"
   end
 
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
     features = "ledger,ledger-ble,inspect_contract,verify_contract"
     system "cargo", "install", "--no-default-features", *std_cargo_args(features:)

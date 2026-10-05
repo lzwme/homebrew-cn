@@ -2,7 +2,7 @@ class Node < Formula
   desc "Open-source, cross-platform JavaScript runtime environment"
   homepage "https://nodejs.org/"
   license "MIT"
-  revision 1
+  revision 2
   compatibility_version 1
   head "https://github.com/nodejs/node.git", branch: "main"
 
@@ -31,11 +31,11 @@ class Node < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "a9b7dd7df23477efc9ef741c7550394e106cbb6126628ddfd54e8b2e3a1c934f"
-    sha256 arm64_tahoe:       "a0e40226c78b59e15d17b381fc1b314cd1a3fee5999ea9659b217b28a88dafa5"
-    sha256 arm64_sequoia:     "79cf85225e2968d3fc35c02b55f340e3604fc73ee6c4f6b04543eedcac659621"
-    sha256 arm64_linux:       "99d5876aebcd8a993a2eb11d6850eeaa7ed16fa6d6886d840a36ac6aa504b813"
-    sha256 x86_64_linux:      "e0eb65b1f63ae9cb0f242a97b1d71885d81a3b6565dd71e82393879ed3f32e79"
+    sha256 arm64_golden_gate: "227feb0486ba552d51b2b262b53b0c15950b03ac214099d61d45226b4ebdd5e7"
+    sha256 arm64_tahoe:       "e8723f370d99e7d2b9207068261267c8b3bdfa77ac1407e2a5c8b43f1dc43d7d"
+    sha256 arm64_sequoia:     "6bd0f4573a167bbac54a11d7ad9681be379d2d09c078d301ca5b4ca6acadbde1"
+    sha256 arm64_linux:       "d19e4090bcaf1f5058100c5151f52ef8690ae2d22134392984a0afa2a43b9df3"
+    sha256 x86_64_linux:      "7fb0019e5ae78b7bda4cc1929cc1c39835ad026c0bc6ef4e12d320783cfdc6b1"
   end
 
   depends_on "pkgconf" => :build
@@ -106,6 +106,8 @@ class Node < Formula
   def install
     # make sure subprocesses spawned by make are using our Python 3
     ENV["PYTHON"] = python3
+    # simdjson 5 `key_selector` uses `throw` in consteval, which clang <= 20 rejects with -fno-exceptions
+    ENV.append "CXXFLAGS", "-DSIMDJSON_CONCEPT_DISABLED"
 
     # Ensure Homebrew deps are used
     rm_r(["deps/icu-small", "deps/npm"])

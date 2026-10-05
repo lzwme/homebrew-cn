@@ -18,17 +18,18 @@ class Cmake < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "3e18887e41e77de2880e14a8adeb81942279a83a22639bfab3371fa011340a73"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "e322ced61d82633061cf06f6e7bbfece429863f7fcfc8a959c2e94587a6f4a67"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "0f5a61638cb59a8dd74d7d15d569c9e350ca19219f9d5c7024b98356f0bafbe5"
-    sha256 cellar: :any,                 arm64_linux:       "6123eeb013305ad72ce9e3f2e47946b442bd59957fff5fff5cbe089aec306ee6"
-    sha256 cellar: :any,                 x86_64_linux:      "f88edd266381d550caa776caf394d57a4f933123da0d1aa00a2b49e976e8b20d"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "6614033037dd78df8ef4fea463235b7a463f92caba61fc9fc93214fcd948cbe4"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "30efb5adfba2b7441a0fd6980039fadba94aff6ee1052a383dad9fab9b078eeb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "b2a7da6b1f351024c84fe36af692f31a196cb21be74dae8a3f36925467fa676b"
+    sha256 cellar: :any,                 arm64_linux:       "0ed7f678a53d9f729dbf80444ecb56769da1e232e642b9e803c9ef8b4352cb3d"
+    sha256 cellar: :any,                 x86_64_linux:      "103c3634b5e6027b19bcf41100bbe02b0146a68aa88d563ec296afcba206c46e"
   end
 
   uses_from_macos "ncurses"
 
   on_linux do
-    depends_on "openssl@3"
+    depends_on "openssl@4"
   end
 
   deny_network_access!

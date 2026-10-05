@@ -3,16 +3,16 @@ class Modal < Formula
 
   desc "Client library and CLI for Modal"
   homepage "https://modal.com/"
-  url "https://files.pythonhosted.org/packages/3a/e5/eb665f233679ed6cde1b24a7daa68b14eec02cb25046983426145fd3d32c/modal-1.6.0.tar.gz"
-  sha256 "c5dd551b5e0a283f3c764476c0a4ebe5bdef1e4a69432fa27e1b1ad8ca5e0817"
+  url "https://files.pythonhosted.org/packages/65/ba/2b36899ea5633bf101e6ba6f7e95a4da3e4b1f57f52bd0ba8f4cfd12e808/modal-1.6.1.tar.gz"
+  sha256 "ff17768f67a65595aa7882e893e6cb78e2e001b3653aa52cfe98d4051d8d9e9e"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "2fac49a5395eb60f01fc03c2b162067aa110075013371c33f5f431487f552378"
-    sha256 cellar: :any, arm64_tahoe:       "d21ab41c1ca448dd2dc485e60dc47d44e5ff26a5e3c4dcf83920c0f437bf854d"
-    sha256 cellar: :any, arm64_sequoia:     "81ca8bed650cece1817a80a41e6520317e95f3806b0425355dae2b5134eb4a11"
-    sha256 cellar: :any, arm64_linux:       "489830b83e959a1b2eec5228886f2dc5e5637757ee56431f8901da287b7a3e36"
-    sha256 cellar: :any, x86_64_linux:      "769556ae02c54e14018695d6e696956486b516d34a5a6a6b33d8a64ed5ab614a"
+    sha256 cellar: :any, arm64_golden_gate: "525937f6cb816b1142e3c08ff0f917a4cbc73880ff332d15e5975e4cabd1dcc9"
+    sha256 cellar: :any, arm64_tahoe:       "5ae922d391cd2de5ed31982413de874b24122adf72f58a0b60978bd8af61f844"
+    sha256 cellar: :any, arm64_sequoia:     "6a2e1423b74fde36451900ef51ea89f8288db2976b1bd52deb44f47a974793f8"
+    sha256 cellar: :any, arm64_linux:       "2b4b0aa35a3b764bb5c661720ebd907357e446b45d9d2436f6b8e3c99cc0de0b"
+    sha256 cellar: :any, x86_64_linux:      "70c2d62e8331d4148a9c31b2ac7953561b620f4d6777d4058b44cc843b70eb67"
   end
 
   depends_on "rust" => :build # for `cbor2`
@@ -47,8 +47,8 @@ class Modal < Formula
   end
 
   resource "cbor2" do
-    url "https://files.pythonhosted.org/packages/c6/14/b02446bacfe44351b1689c04937ade007588f44570431880a6937e525e6c/cbor2-6.1.4.tar.gz"
-    sha256 "01ecc79a28f33d17331943ce508fc1e21f4b06553c73f874f4c77120d72b2ef9"
+    url "https://files.pythonhosted.org/packages/39/34/d443914ea562a985ccb357682e17b7190d5d58eff797c741379be47a8f31/cbor2-6.1.5.tar.gz"
+    sha256 "6eb06160c42315ac0c4ded461c7d84d92fa18c69d13d17fc1dfc1fae96580c95"
   end
 
   resource "click" do
@@ -107,8 +107,8 @@ class Modal < Formula
   end
 
   resource "protobuf" do
-    url "https://files.pythonhosted.org/packages/66/70/e908e9c5e52ef7c3a6c7902c9dfbb34c7e29c25d2f81ade3856445fd5c94/protobuf-6.33.6.tar.gz"
-    sha256 "a6768d25248312c297558af96a9f9c929e8c4cee0659cb07e780731095f38135"
+    url "https://files.pythonhosted.org/packages/d9/89/5b8517baa72f84a67b8a307ba953c91057af618bf40bf676f3c03551f8f0/protobuf-7.36.2.tar.gz"
+    sha256 "497d0463ff3316681da6c0b9e8d06cb465d61abce00b613ab42226175644d1bb"
   end
 
   resource "pygments" do
@@ -122,8 +122,8 @@ class Modal < Formula
   end
 
   resource "synchronicity" do
-    url "https://files.pythonhosted.org/packages/5d/1c/f51dc54bbd302991026a53f9790735540e0e9e1184e9d5939f02446aa5bc/synchronicity-0.12.5.tar.gz"
-    sha256 "94d96b1d85698e3056b96a793b8c0949af6584e4a7d877fabdeb5385efe230aa"
+    url "https://files.pythonhosted.org/packages/ee/5f/9f6f7df5919f0d085013b96b9cb99b622b974fe722a04c126c10497bba8b/synchronicity-0.12.6.tar.gz"
+    sha256 "ac971eadb64c95938816b8d6125d6e28473982f3256789a35bdbe02025e1ce17"
   end
 
   resource "toml" do

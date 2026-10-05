@@ -22,6 +22,12 @@ class Onefetch < Formula
   depends_on "rust" => :build
   depends_on "zstd"
 
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
     ENV["ZSTD_SYS_USE_PKG_CONFIG"] = "1"
 

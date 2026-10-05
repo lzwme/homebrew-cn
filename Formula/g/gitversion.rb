@@ -8,40 +8,46 @@ class Gitversion < Formula
   no_autobump! because: :bumped_by_upstream
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "77ceaa3900984b8c4fd2f98e86c0cbf303bde969bbe6314e1fef272605ee4570"
-    sha256 cellar: :any, arm64_tahoe:       "2125213b57952276cb8061484e008859ad0657a8bba56dd312ec6400c771b482"
-    sha256 cellar: :any, arm64_sequoia:     "0bf4cd2cd05aba7af483e41ff29468133f2a94a98fb1a74d5750252cc61ec285"
-    sha256 cellar: :any, arm64_sonoma:      "e3508fdfa8135122614d0ac7cb5facc9adab96253ca742f60d31b25a1092d257"
-    sha256 cellar: :any, sonoma:            "595228141204dfb9ee0c78852290f8c8bae44fc776e308d7f6702a61b48769c0"
-    sha256 cellar: :any, arm64_linux:       "bf2329ef9f28eda35385d77f101d0c4ac475b6d7d8894a05f8685cc032bf9d48"
-    sha256 cellar: :any, x86_64_linux:      "caf15de5aeb5ed923dfff139899257411c0eb81fa5435ee28750ba1544130a96"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "27eb919eded79ab5813b14491887641e3d98383c83a0eafd74be46f4cac31e59"
+    sha256 cellar: :any, arm64_tahoe:       "7f514ea7bd2159c84e06d03daba4e900aafa36df3569a54fc69399a377b63882"
+    sha256 cellar: :any, arm64_sequoia:     "fb0f4e2c648885d6fee65dce3f09942f2e7b00591f0ae2c02b9654de23d71396"
+    sha256 cellar: :any, arm64_linux:       "4f48cf0bc6bf56c1aa2375e0ef93a4fd6ef68cb6676b53b89053dd151cedfe57"
+    sha256 cellar: :any, x86_64_linux:      "773910581edef4075a4f6108f3e9216debaa0a41072040de5e7d0f034336c14c"
   end
 
   depends_on "dotnet"
   depends_on "openssl@3"
 
+  deny_network_access!
+
+  def fetch
+    # GitVersion uses a global.json file to pin the latest SDK version, which may not be available
+    File.rename("global.json", "global.json.ignored")
+
+    system "dotnet", "restore", "src/GitVersion.App/GitVersion.App.csproj", "--use-current-runtime"
+  end
+
   def install
-    ENV["DOTNET_CLI_TELEMETRY_OPTOUT"] = "1"
     ENV["DOTNET_SYSTEM_GLOBALIZATION_INVARIANT"] = "1"
 
     dotnet = Formula["dotnet"]
-
     args = %W[
       --configuration Release
       --framework net#{dotnet.version.major_minor}
       --output #{libexec}
+      --no-restore
       --no-self-contained
       --use-current-runtime
       -p:PublishSingleFile=true
       -p:Version=#{version}
     ]
 
-    # GitVersion uses a global.json file to pin the latest SDK version, which may not be available
-    File.rename("global.json", "global.json.ignored")
     system "dotnet", "publish", "src/GitVersion.App/GitVersion.App.csproj", *args
     env = { DOTNET_ROOT: "${DOTNET_ROOT:-#{dotnet.opt_libexec}}" }
     # Ensure OpenSSL is available for cryptography operations on Linux
-    env["LD_LIBRARY_PATH"] = "#{formula_opt_lib("openssl")}:$LD_LIBRARY_PATH" if OS.linux?
+    openssl = deps.find { |dep| dep.name.start_with?("openssl@") }
+    env["LD_LIBRARY_PATH"] = "#{formula_opt_lib(openssl.name)}:${LD_LIBRARY_PATH}" if OS.linux?
     (bin/"gitversion").write_env_script libexec/"gitversion", env
   end
 

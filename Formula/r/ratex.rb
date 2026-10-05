@@ -1,17 +1,17 @@
 class Ratex < Formula
   desc "Fast TeX engine written in Rust"
   homepage "https://github.com/leoliu0/ratex"
-  url "https://ghfast.top/https://github.com/leoliu0/ratex/archive/refs/tags/v0.5.0.tar.gz"
-  sha256 "469fb82b5aeb24cba427eee292315141565aab40178353a2b0802fb40c25504d"
+  url "https://ghfast.top/https://github.com/leoliu0/ratex/archive/refs/tags/v0.5.2.tar.gz"
+  sha256 "9301909678a06e6ce583dd42c8aeb51e3b595d2dd7cc7f9a45b459603f312cb9"
   license any_of: ["MIT", "Apache-2.0"]
   head "https://github.com/leoliu0/ratex.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "5324c2c6e91c6614edb79ac0b2fa841cfbf964daac0a1c7cbc4ce68d57cddb1f"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "f6a9fb6e812879d133552c166d3ac8b8d1cb33c932a5ec35711159602ed25241"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "4f889888c6aa7fe5ba43a7e28008255ed987489c6f9e4711d850600aa258a63a"
-    sha256 cellar: :any,                 arm64_linux:       "20a483a655d99afafe5a7912f3072d84e8388be41aa136f42c994d26068340dd"
-    sha256 cellar: :any,                 x86_64_linux:      "7bba987482b9c7c2600cad96e1ec2581f2882f06325bac745983921cb1e3dd91"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "84aee572dc9406f2079aa3e4c31a2eedae5fdf7b948334440adfc2e48edee25f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "6e57b5bd531bda754ed248bc6134c8f5f2b75d39f8754e9b44ebfbc2ae4bbed9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "19b2b9fadfc2c2bbb8332f05dd919242b979f7f29543971c9700b4a67c918989"
+    sha256 cellar: :any,                 arm64_linux:       "7ba092f9443380aceb2c25f30efb178a57755547f2ba0977670cf8bdde90fb82"
+    sha256 cellar: :any,                 x86_64_linux:      "b5409a24d37436f67e0682747fb51757befd89d5e4ccc506b7b551adab043878"
   end
 
   depends_on "rust" => :build
@@ -25,13 +25,6 @@ class Ratex < Formula
   end
 
   def install
-    # TODO: Remove these settings once a release includes upstream's embedded-archive memory fix.
-    # https://github.com/leoliu0/ratex/issues/16
-    ENV.deparallelize
-    ENV["CARGO_PROFILE_RELEASE_LTO"] = "false"
-    ENV["CARGO_PROFILE_RELEASE_CODEGEN_UNITS"] = "1"
-
-    # Every bin embeds the package archive, so linking them all OOMs; `ratex` dispatches aliases by name.
     system "cargo", "install", "--bin", "ratex", *std_cargo_args(path: "crates/tex-cli")
     %w[latexdiff lualatex pdflatex tex-bibtex texmk xelatex].each { |cmd| bin.install_symlink "ratex" => cmd }
   end

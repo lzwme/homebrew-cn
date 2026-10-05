@@ -3,10 +3,9 @@ class Uhd < Formula
 
   desc "Hardware driver for all USRP devices"
   homepage "https://files.ettus.com/manual/"
-  url "https://ghfast.top/https://github.com/EttusResearch/uhd/archive/refs/tags/v4.10.0.0.tar.gz"
-  sha256 "a9c66b52abcd586b513999f3a52345807b7551d01efac8c98eed813838be0297"
+  url "https://ghfast.top/https://github.com/EttusResearch/uhd/archive/refs/tags/v4.11.0.0.tar.gz"
+  sha256 "1e53faec13ea2be9dd8f765956157d1434f41fa0a124fac8f7b2340f8445b026"
   license all_of: ["GPL-3.0-or-later", "LGPL-3.0-or-later", "MIT", "BSD-3-Clause", "Apache-2.0"]
-  revision 2
   compatibility_version 1
   head "https://github.com/EttusResearch/uhd.git", branch: "master"
 
@@ -16,20 +15,24 @@ class Uhd < Formula
   end
 
   bottle do
-    sha256               arm64_golden_gate: "ba2b9b8eecca8b202e04b2b360dbcda4df846d761503f94d720db73f84d2da91"
-    sha256               arm64_tahoe:       "02b42059af0149bc9345502d17d32cc06d7783fa425741cbc83a43398df9effb"
-    sha256               arm64_sequoia:     "b75a47663b765671797d214054a605ec5424c640a27daaaa8d3e0d288bf627ee"
-    sha256               arm64_sonoma:      "fa590ca2bdf8f399ed1f4b638e4857231d4b28b624b306f65b9ac9dee7fb1ca0"
-    sha256               sonoma:            "32e0a65f06fb469054d986b4e85e9f9baa784a539103c06087d1a6cbc39d1446"
-    sha256               arm64_linux:       "6855b734b594977ffe14903494cc546420197d187b4ae46be42112b555f18379"
-    sha256 cellar: :any, x86_64_linux:      "525fd3de49c9a5cfc01591626ed97a63896d3ce228e5b7dcc1959a66dbdcfe9d"
+    sha256 arm64_golden_gate: "8e97b65c35c514e84b3962a8e2047897f347221da665f3d32578a9f5eb10762c"
+    sha256 arm64_tahoe:       "24d0cbfdbf2e439c93d052f0e28b2ad79794828a244b3476e4a6a0188cd97c80"
+    sha256 arm64_sequoia:     "6a590e3c359eb967d2606a0ed474bcf13595ef8ea473c83a8c849c1978a0bd6f"
+    sha256 arm64_linux:       "4a246347940199a3a4d0d4d21bb03463259bbf4f292312f9c49ade4b68fa6ad8"
+    sha256 x86_64_linux:      "33402626089b2322c4db0b81ba050d95099185f90f84dc952925c315192c26cf"
   end
 
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
+  depends_on "abseil"
   depends_on "boost"
+  depends_on "c-ares"
+  depends_on "grpc"
   depends_on "libusb"
+  depends_on "openssl@3"
+  depends_on "protobuf"
   depends_on "python@3.14"
+  depends_on "re2"
 
   on_linux do
     depends_on "ncurses"
@@ -39,8 +42,8 @@ class Uhd < Formula
                 extra_packages: "mako"
 
   resource "mako" do
-    url "https://files.pythonhosted.org/packages/00/62/791b31e69ae182791ec67f04850f2f062716bbd205483d63a215f3e062d3/mako-1.3.12.tar.gz"
-    sha256 "9f778e93289bd410bb35daadeb4fc66d95a746f0b75777b942088b7fd7af550a"
+    url "https://files.pythonhosted.org/packages/2a/12/b5fa2353e2754cd67fb9f83793fa48ff42c213a5da7e719869d2301f6ab8/mako-1.4.1.tar.gz"
+    sha256 "d7904710b662996425a21627710c4777c45053146942cf8a7aebf757c92b8c27"
   end
 
   resource "markupsafe" do
@@ -48,15 +51,24 @@ class Uhd < Formula
     sha256 "722695808f4b6457b320fdc131280796bdceb04ab50fe1795cd540799ebe1698"
   end
 
-  def install
-    # Boost 1.89+ compatibility
-    inreplace "host/cmake/Modules/UHDConfig.cmake.in", /\s+system\n/, ""
+  # Fix macOS library namespace, upstream PR ref, https://github.com/EttusResearch/uhd/pull/947
+  patch do
+    url "https://github.com/EttusResearch/uhd/commit/2dc0ecf9288a2556da762fd6693600f1572ecd2d.patch?full_index=1"
+    sha256 "4e6bf9735767e245c87b57221c54e623cb76de3f9fa957787435b1ba20a2065c"
+    type :unofficial
+    resolves "https://github.com/EttusResearch/uhd/pull/947"
+  end
 
+  def install
     venv = virtualenv_create(buildpath/"venv", python3)
     venv.pip_install resources
     ENV.prepend_path "PYTHONPATH", venv.site_packages
 
     args = %W[
+      -DCMAKE_FIND_PACKAGE_PREFER_CONFIG=ON
+      -Dprotobuf_MODULE_COMPATIBLE=ON
+      -DGRPC_CPP_PLUGIN=#{formula_opt_bin("grpc")}/grpc_cpp_plugin
+      -DPYTHON_EXECUTABLE=#{venv.root}/bin/python
       -DENABLE_DOXYGEN=OFF
       -DENABLE_MANUAL=OFF
       -DENABLE_TESTS=OFF
@@ -69,5 +81,17 @@ class Uhd < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/uhd_config_info --version")
+
+    (testpath/"test.cpp").write <<~CPP
+      #include <iostream>
+      #include <uhd/types/device_addr.hpp>
+
+      int main() {
+        uhd::device_addr_t address("type=b200,serial=1234");
+        std::cout << address["type"] << ":" << address["serial"];
+      }
+    CPP
+    system ENV.cxx, "-std=c++17", "test.cpp", "-I#{include}", "-L#{lib}", "-luhd", "-o", "test"
+    assert_equal "b200:1234", shell_output("./test")
   end
 end

@@ -3,16 +3,16 @@ class Tox < Formula
 
   desc "Generic Python virtualenv management and test command-line tool"
   homepage "https://tox.wiki/en/latest/"
-  url "https://files.pythonhosted.org/packages/7c/bd/d7467b015457cf8bd912154c3b0247b30739751498577606b574d389aefd/tox-4.64.7.tar.gz"
-  sha256 "b8033a00945a02493adebdc337e4e45136e21a7083c00b2ae27c998370b72af3"
+  url "https://files.pythonhosted.org/packages/11/33/e8f6282e5ced7b01abd968706758014df0b602c622df2c0c61c148921800/tox-4.64.8.tar.gz"
+  sha256 "8d54028cd31f5c8b3dc319e8c2346d720a1ed066aadf3325fd80e9fd3d233825"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "1cd980e524f829e3e52e0579c9cd51d6a24b2363fbc20d5825d0c74b50a556e8"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "1cd980e524f829e3e52e0579c9cd51d6a24b2363fbc20d5825d0c74b50a556e8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "1cd980e524f829e3e52e0579c9cd51d6a24b2363fbc20d5825d0c74b50a556e8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "375c93217ed998495c8bd1c8d552835439b027d862f30c5cf15c0da62e02c72f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "375c93217ed998495c8bd1c8d552835439b027d862f30c5cf15c0da62e02c72f"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "c1caefebd4b5f87a36ceb7fc7d35451f26e4d855bcf69ac6075dd2751cb469d4"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "c1caefebd4b5f87a36ceb7fc7d35451f26e4d855bcf69ac6075dd2751cb469d4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "c1caefebd4b5f87a36ceb7fc7d35451f26e4d855bcf69ac6075dd2751cb469d4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "150aa4cd5a3ae351d20c0d8b44bfa004ab2072f9e8df51da9c8e603854125066"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "150aa4cd5a3ae351d20c0d8b44bfa004ab2072f9e8df51da9c8e603854125066"
   end
 
   depends_on "python@3.14"
@@ -33,8 +33,8 @@ class Tox < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/70/51/2bc9e529f154fad99b6cd0073e609291eb32fd23581b32362d33d164d316/filelock-4.0.9.tar.gz"
-    sha256 "635e7d67fa92654eed444e75e9ca18426d34e77ad9c469bf4373f75a932f7b22"
+    url "https://files.pythonhosted.org/packages/4b/51/a182494d1d8dde1240bff84dda57d48165d982e59582ce8f167e8e3d7628/filelock-4.0.10.tar.gz"
+    sha256 "00d6a81f976a6332551c2c10f39e12b4abb7e01c64d4c497b81a615bc9186f1f"
   end
 
   resource "packaging" do
@@ -43,8 +43,8 @@ class Tox < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/17/c8/721b3855fe457da514fe249247d404b9b39c5d16532278f70ebaa6acf18b/platformdirs-4.12.2.tar.gz"
-    sha256 "eab5f70271a490ef74618bb314fbb86e3c7e82fa3b9c922c2ea0e0a1a155d329"
+    url "https://files.pythonhosted.org/packages/42/23/4a86fc741c38c5b69792a4ef954b281afa69bea9f083f881de1b0d23bc07/platformdirs-4.12.3.tar.gz"
+    sha256 "427fc0bb321ae0c5b037fa03238ca74820437be162e78b4848c4d4055b9b766c"
   end
 
   resource "pluggy" do
@@ -53,8 +53,8 @@ class Tox < Formula
   end
 
   resource "pyproject-api" do
-    url "https://files.pythonhosted.org/packages/e1/2d/7b6837335aab9c00bcd18adde43c78948db6a2fe26dfa79a6bfcdefd3c5d/pyproject_api-1.11.2.tar.gz"
-    sha256 "7bff8690a101f5f0bac3221475d214018f196ae5eea3af9c9879f4d682a3fd60"
+    url "https://files.pythonhosted.org/packages/51/24/757e066eafeeb91ac4887c2edb9c0ac5eb2d5420f836897443577719647f/pyproject_api-1.11.3.tar.gz"
+    sha256 "4ca2f09f628d86ae019d7c701ebb65ee667efc28261f8b9ee3bd55bf0985712c"
   end
 
   resource "python-discovery" do
@@ -68,8 +68,8 @@ class Tox < Formula
   end
 
   resource "virtualenv" do
-    url "https://files.pythonhosted.org/packages/01/59/5ebdaa984350ae7ef1dc14b4d0bd618f6e0d3fb13e7b336939433eebf37b/virtualenv-21.14.3.tar.gz"
-    sha256 "cb5cd3a87f12a6cfdc0cef6bc8bead6138221767f7718e0c00fee5fb907f9858"
+    url "https://files.pythonhosted.org/packages/c4/f9/f323b3b6058cff3853b31cf6a49c0425ed797bf9611572ec10d065e08bac/virtualenv-21.14.5.tar.gz"
+    sha256 "c4cb6c13e46b57225a999c7e22a09b163393878facc7ac4c059a57f46faa1647"
   end
 
   def install

@@ -1,16 +1,16 @@
 class Pgbackrest < Formula
   desc "Reliable PostgreSQL Backup & Restore"
   homepage "https://pgbackrest.org"
-  url "https://ghfast.top/https://github.com/pgbackrest/pgbackrest/releases/download/release/2.59.2/pgbackrest-2.59.2.tar.gz"
-  sha256 "dbdc5edb5161c57bd3ae61e416b1cd763205ad6ce41d9356114432a0cc0ce577"
+  url "https://ghfast.top/https://github.com/pgbackrest/pgbackrest/releases/download/release/2.59.3/pgbackrest-2.59.3.tar.gz"
+  sha256 "14037901db002e5536a948bf9f0fc0ff6cde31f4e675d3e9b46f129071bf2e5f"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "7d311219289993ac8ea9743aa0150acddc3c8f73b61d6074c4a0ebe7f2c55ec3"
-    sha256 cellar: :any, arm64_tahoe:       "cc97f013b76516d4e7f9af80fa5f88601e0176bfee1d1acabc7807aa842fabe5"
-    sha256 cellar: :any, arm64_sequoia:     "fa6371227704f3903d8cf874d461d36acfec0ec41f6c9e30cd98648321de45ec"
-    sha256 cellar: :any, arm64_linux:       "57c174eae8e358c247b6a3ae4f2713729cfa1781ae71670ff8bbce991b7545ee"
-    sha256 cellar: :any, x86_64_linux:      "192f7c176521061fbd04700a9c2cd87d13b5f72e41d85e9223a06a10d3bda760"
+    sha256 cellar: :any, arm64_golden_gate: "692cd091842596f79eec1fd8f5837b4e3cd0cc23b128a1b2e9e06f01dd17af03"
+    sha256 cellar: :any, arm64_tahoe:       "e8dd2488e26fe2b07fa61b1e803c1835a0906f26536e4032c0b5d406f885e40c"
+    sha256 cellar: :any, arm64_sequoia:     "44f0152ba5a76f080f5f5634fc2bf0af9d586a5d9bb7a9a3f266e2de7f9b91bb"
+    sha256 cellar: :any, arm64_linux:       "6c04a716d569ab1ed917542331bd75d05a2a9dfa75a673ba025914e8c4211ec3"
+    sha256 cellar: :any, x86_64_linux:      "fc4bb5581d13a4bf17bda5b3f9ab43449963f17b2017b46c77f98239b7bb9aaa"
   end
 
   depends_on "cmake" => :build
@@ -29,6 +29,8 @@ class Pgbackrest < Formula
   on_linux do
     depends_on "zlib-ng-compat"
   end
+
+  deny_network_access!
 
   def install
     ENV.append "LDFLAGS", "-Wl,-rpath,#{rpath(target: formula_opt_lib("libpq"))}" if OS.linux?

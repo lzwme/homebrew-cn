@@ -23,6 +23,12 @@ class Intermodal < Formula
     depends_on "openssl@3"
   end
 
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
     system "cargo", "install", *std_cargo_args
     system "cargo", "run", "--package", "gen", "--", "--bin", bin/"imdl", "man"

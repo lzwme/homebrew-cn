@@ -24,17 +24,23 @@ class Komac < Formula
     depends_on "zlib-ng-compat"
   end
 
+  resource "testdata" do
+    url "https://ghfast.top/https://github.com/russellbanks/Komac/releases/download/v2.13.0/komac-setup-2.13.0-x86_64-pc-windows-msvc.exe"
+    sha256 "32c460e6d29903396f92f7b44dee1f9ac57f15d5c882d306e9af19fc7828842c"
+  end
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
     system "cargo", "install", *std_cargo_args
     generate_completions_from_executable(bin/"komac", "complete")
   end
 
   test do
-    resource "testdata" do
-      url "https://ghfast.top/https://github.com/russellbanks/Komac/releases/download/v2.13.0/komac-setup-2.13.0-x86_64-pc-windows-msvc.exe"
-      sha256 "32c460e6d29903396f92f7b44dee1f9ac57f15d5c882d306e9af19fc7828842c"
-    end
-
     resource("testdata").stage do
       assert_match "DisplayVersion: 2.13.0",
 shell_output("#{bin}/komac analyse komac-setup-2.13.0-x86_64-pc-windows-msvc.exe")

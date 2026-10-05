@@ -21,6 +21,12 @@ class Maturin < Formula
   depends_on "python@3.14" => :test
   depends_on "xz"
 
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
     # Work around an Xcode 15 linker issue which causes linkage against LLVM's
     # libunwind due to it being present in a library search path.

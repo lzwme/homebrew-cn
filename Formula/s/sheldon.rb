@@ -29,6 +29,12 @@ class Sheldon < Formula
   # FIXME: We should be able to use macOS curl on Ventura, but `curl-config` is broken.
   uses_from_macos "curl", since: :sonoma
 
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
     ENV["LIBGIT2_NO_VENDOR"] = "1"
     ENV["LIBSSH2_SYS_USE_PKG_CONFIG"] = "1"

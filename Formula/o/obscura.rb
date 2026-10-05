@@ -1,16 +1,16 @@
 class Obscura < Formula
   desc "Headless browser for AI agents and web scraping"
   homepage "https://obscura.sh"
-  url "https://ghfast.top/https://github.com/h4ckf0r0day/obscura/archive/refs/tags/v0.2.3.tar.gz"
-  sha256 "6c448e4c1deac7e057a146f53005c825ded428fb642379911a04f5dda8eaca4f"
+  url "https://ghfast.top/https://github.com/h4ckf0r0day/obscura/archive/refs/tags/v0.2.4.tar.gz"
+  sha256 "e8cfbad9025bd79d4f22da55e2c0f9111b8a082b821805f258c6be2594f25111"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "f7755c52b382d974705946a037900d19ac9b9d2fb7f97c1e2ae09334820b3a57"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "58b5c6879785d8105318d7b45453b3fe8ebe479282e77d41a669aea077b133e3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "1828b0c3a42d92cd2a00416c4403315a0d760675a9a76adca0d0a1c8c4ba768e"
-    sha256 cellar: :any,                 arm64_linux:       "7ed51d5d77cdfac047abe2b3bc075c15d4593a461c33befc85774daf261fd066"
-    sha256 cellar: :any,                 x86_64_linux:      "bf455bb95c5837a0c5b9e09a627825a60b274d79f111188925e44f429aa37d6a"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "b7388878a423b024fa93437a1c12277d7b90b3a865aca3c20c2b4edcdfe34231"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "1417a897e7c74e10b2fa70b6d4185c720d053fc0ec6b30e13d62ffcff4277cf5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "c1102fb7d353aae3bc53fb19806423964999a61c25b957917ae3563dc6c280e8"
+    sha256 cellar: :any,                 arm64_linux:       "720ab48d9045c2ea5e04f4b28fd05f49349f6670ed4a000801bce1b7f1c8046f"
+    sha256 cellar: :any,                 x86_64_linux:      "f0818345067d69c798022e9282c3d37a4d36207a5a2466c85ba4b4970be79bb4"
   end
 
   depends_on "rust" => :build

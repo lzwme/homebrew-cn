@@ -25,6 +25,12 @@ class Concord < Formula
     depends_on "pipewire"
   end
 
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
     # opusic-c bundles libopus and builds it with CMake by default
     inreplace "Cargo.toml", 'package = "opusic-c" }', 'package = "opusic-c", default-features = false }'
