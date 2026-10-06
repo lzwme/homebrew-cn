@@ -1,19 +1,17 @@
 class Hyperfine < Formula
   desc "Command-line benchmarking tool"
   homepage "https://github.com/sharkdp/hyperfine"
-  url "https://ghfast.top/https://github.com/sharkdp/hyperfine/archive/refs/tags/v1.20.0.tar.gz"
-  sha256 "f90c3b096af568438be7da52336784635a962c9822f10f98e5ad11ae8c7f5c64"
+  url "https://ghfast.top/https://github.com/sharkdp/hyperfine/archive/refs/tags/v1.21.0.tar.gz"
+  sha256 "aee01125074fd5a6a556818db7bba0577edae94cbe85165daae0e778aa28348d"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/sharkdp/hyperfine.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "80cd61175626bc35b5354fee6a0bc987196b66b8aa71ef706c6f7e3f5cda1b5a"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "2a79829da44dc03e12ea4977b6bfa122cea8487e741c24a7fbcc7ce6a4788db3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "d0c8ce81f2d2e32e5d600c474c433cd67af71c7f95c4c9de0622369557d4667b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "491753d73c724655595030aac15f675f3fe0240af8be73c673251b37a7a90017"
-    sha256 cellar: :any_skip_relocation, sonoma:            "35f05803354dc8621b9bdf918d50aef83eca450b90babc5b9899ca151177c39a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "cc0b9a0eb7628a130fb45cd3a5abc08321daa6f48eb175e26f784ef44fa9a18f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "a6cdec4cc985c9fdef714051f2c921b8d5158c444be11e73af825054589d0ddc"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "49d68347bfebd41af0a652dbd4714cda818c8bde1b9996c3f15f5ab208c376f0"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "a3663591c6a59dfefe6d68638fc61d022e78cbee65212472bbf6eee3ba3b053f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "2b46aaeb2d33a2148246b8bdf4df5a7e7200cb8d4e2c5aeba93bb0c147b19062"
+    sha256 cellar: :any,                 arm64_linux:       "cbb753bc1e355d3d50de8d47c30ce63ebf8dfd1bd26f296f77032bec3a4461cd"
+    sha256 cellar: :any,                 x86_64_linux:      "60c45f07fe5bbc674704b386d269dfc765261f3968f5aa7c57c2f45684236801"
   end
 
   depends_on "rust" => :build

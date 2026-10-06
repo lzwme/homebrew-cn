@@ -37,6 +37,16 @@ class NetSnmp < Formula
     file "Patches/libtool/configure-big_sur.diff"
   end
 
+  # Apply Debian patch to fix link failure: undefined reference to `run_shell_command'
+  patch do
+    on_linux do
+      url "https://salsa.debian.org/debian/net-snmp/-/raw/27ec8dbccda7b9b2f78f38445b5735f0398384f3/debian/patches/makefile_trap_needs_agent"
+      sha256 "b884acb45f79ab324fb31faa5a3a97bf7ced948177a2d888af9df8dd355aa6de"
+      type :unofficial
+      resolves "https://github.com/net-snmp/net-snmp/issues/434"
+    end
+  end
+
   def install
     args = [
       "--disable-debugging",

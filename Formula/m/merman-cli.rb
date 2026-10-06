@@ -1,18 +1,16 @@
 class MermanCli < Formula
   desc "Mermaid.js, but headless, in Rust"
   homepage "https://frankorz.com/merman/"
-  url "https://ghfast.top/https://github.com/Latias94/merman/archive/refs/tags/v0.7.0.tar.gz"
-  sha256 "e1d787154be74bca8262cc9c83ee3cb3f7e0c13dd4b8eb65c41cb2e42d3b5092"
+  url "https://ghfast.top/https://github.com/Latias94/merman/archive/refs/tags/v0.8.0.tar.gz"
+  sha256 "900fcb1c947e886ba501f5b5663f89455724fe16c3623fa5bb30b116bec7e33a"
   license any_of: ["MIT", "Apache-2.0"]
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "cccd8a1ffb4db0bfc23354b856887d7fa3f0c0b8622ab2eca5f6c865a49e96ed"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "4daa688ffac31a161ffb0891f4c275f24f6dd7a48734c892b8b616099e968137"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "a4f8bac9b238a6ef3e26d96700ea09ad4b14de1d9babd64b7bd3bbb323187321"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "9afb0c31502c2b5c8ae821e704023e46681a92e806b465a1ed8914b0962e0961"
-    sha256 cellar: :any_skip_relocation, sonoma:            "d1bc9b5695e1605c38c5cae9210c82c1c0572a2b324aa872f76a047042aac20f"
-    sha256 cellar: :any,                 arm64_linux:       "0e33aca699eb2f964c12aee57ad882653c766e1f8c1191c4b888ae6c77e188e8"
-    sha256 cellar: :any,                 x86_64_linux:      "e5fd23a4d0746f01733134feea28a166b00fa97fceb0840aaeb776997f3e7a38"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "dfd0f0d555b053f0223ec45756634efd974c3e2206dbd0fc69d55e94a6c24267"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "a541cd63827a5b7d9987ebede55c8113fce2f9c5cef14adcadb4445c189a2513"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "42497596399555985ca847d0622220b5456926fb5dbdeb4128618b76b2fecd5e"
+    sha256 cellar: :any,                 arm64_linux:       "a634bb48f22175c980a3faf74f2424ad574f3f5e94e5f0d201e1bedfb1fbd016"
+    sha256 cellar: :any,                 x86_64_linux:      "2526d5ca799a1469a5d313ee160cf68800207f7ac1a5ad3ca07045b78cc2a1e6"
   end
 
   depends_on "rust" => :build
@@ -36,6 +34,6 @@ class MermanCli < Formula
     MMD
     testdata = testpath/"sample.mmd"
     testdata.write(mermaid)
-    assert_match "svg", shell_output("#{bin}/merman-cli render --format svg #{testdata}")
+    assert_match "svg", shell_output("#{bin}/merman-cli render --format svg --output - #{testdata}")
   end
 end

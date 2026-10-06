@@ -1,8 +1,8 @@
 class Dartsim < Formula
   desc "Dynamic Animation and Robotics Toolkit"
   homepage "https://dartsim.github.io/"
-  url "https://ghfast.top/https://github.com/dartsim/dart/archive/refs/tags/v6.19.4.tar.gz"
-  sha256 "627a6d21650427da634503829eba6c0c20887cd3441082eb44187fb3f9250150"
+  url "https://ghfast.top/https://github.com/dartsim/dart/archive/refs/tags/v6.19.5.tar.gz"
+  sha256 "86539ba78f28a4e0d54eaac961a7b08c09d10ff6518ee77e401796133157bee0"
   license "BSD-2-Clause"
 
   livecheck do
@@ -11,13 +11,11 @@ class Dartsim < Formula
   end
 
   bottle do
-    sha256               arm64_golden_gate: "bb85a1238c4fb94601e7377530ec6b132ef623f153015104fa625e085d3b8969"
-    sha256               arm64_tahoe:       "f63057be0ef688c2d1eb482a39aa4f1a4e05cb1709c0d167ef8ecaa3f97c2293"
-    sha256               arm64_sequoia:     "776e505b28c9bac1ae279cd6098e99a6c5a802eb5ec2c84b6b459840d6dc07d1"
-    sha256               arm64_sonoma:      "5bb7f57da268c37c6051d3a870b2bd2d0c439ba0c5aa8c553d4b588bcc585445"
-    sha256               sonoma:            "15ef52ed76a01bdb93383be08334b329484af03a709820ef54a27a99daaa9ce5"
-    sha256               arm64_linux:       "ac94c358317cd1172ab84b97b48247a1a2833a676308a6a195c9680edc6da6d6"
-    sha256 cellar: :any, x86_64_linux:      "772da48e17dfcb714fbe921a120e6493b4b61766d5e24d8f20e977c63e0989b4"
+    sha256               arm64_golden_gate: "f2a1bee13fc00977aebfc82eccc7396a344595bb81a8b319d8f128986a429374"
+    sha256               arm64_tahoe:       "8bae6e3bb4bd27bf7e6b2c15cf6d69dd4032ef9c1cb20988465956b755701a32"
+    sha256               arm64_sequoia:     "f70e6ee20ebb4edead6ea4b7709393dd66ec5e58a832661342b42de48e4f73de"
+    sha256               arm64_linux:       "aa8825055a7ac80afc48fef0efd7258d37539de9d8b833b3a69f8fb7bf2ced6d"
+    sha256 cellar: :any, x86_64_linux:      "c05e82d54ab99a67f20415c162ed239484d62343e5838ae11edaa2e35934fa00"
   end
 
   depends_on "cmake" => [:build, :test]

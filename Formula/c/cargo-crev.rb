@@ -28,9 +28,15 @@ class CargoCrev < Formula
     depends_on "zlib-ng-compat"
   end
 
+  allow_network_access! :test
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
     ENV["OPENSSL_DIR"] = formula_opt_prefix("openssl@3")
-    system "cargo", "install", "--no-default-features", *std_cargo_args(path: "./cargo-crev")
+    system "cargo", "install", "--no-default-features", *std_cargo_args(path: "cargo-crev")
   end
 
   test do

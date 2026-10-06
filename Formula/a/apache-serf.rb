@@ -15,6 +15,14 @@ class ApacheSerf < Formula
       sha256 "d2ab43081a2fc60c6d00df1afc6946895921c91d09cac05a186f820282bea9c6"
       type :backport
     end
+
+    # Apply minimal Fedora patch to fix build with OpenSSL until next release with:
+    # https://github.com/apache/serf/commit/e8d61020b5f9afa21c06a1e2d72e7052d8e72225
+    patch do
+      url "https://src.fedoraproject.org/rpms/libserf/raw/b8f0ecc6dffd2e0cffc75f33644f0e16cc91862a/f/libserf-openssl4.patch"
+      sha256 "09649037c9ff17e282ffae0fa0d65f0376b55d341359ba45a1df3f666615e193"
+      type :unofficial
+    end
   end
 
   bottle do

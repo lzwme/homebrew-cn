@@ -1,10 +1,9 @@
 class Scrcpy < Formula
   desc "Display and control your Android device"
   homepage "https://github.com/Genymobile/scrcpy"
-  url "https://ghfast.top/https://github.com/Genymobile/scrcpy/archive/refs/tags/v4.1.tar.gz"
-  sha256 "537b2ade623cb94b6edddfa5c61bf0b0af21484aa8365ea2531b686ea573249a"
+  url "https://ghfast.top/https://github.com/Genymobile/scrcpy/archive/refs/tags/v5.0.tar.gz"
+  sha256 "a431f6ed9e63629938464bbfe92b022d6dddf09d7e1d52758b3fc5b52d4c4b03"
   license "Apache-2.0"
-  revision 1
 
   livecheck do
     url :stable
@@ -13,13 +12,11 @@ class Scrcpy < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "685aeb815223fdb69c967e4a99836250af393cfb10d3001edf542edb453991e0"
-    sha256 arm64_tahoe:       "645018bb3c49bf575317e28c286e9c27b79c378044b774bef8a0061a97857417"
-    sha256 arm64_sequoia:     "c52aeac3da0f31a41357daec5b29e9c739cce303c8d4425db14c28c7064eefec"
-    sha256 arm64_sonoma:      "3138af17805ee58bf974e234863402c5f4e829004f6113b80e52ee39c011ae32"
-    sha256 sonoma:            "d0f1333995560049557f0258839bda2cb4895964f7b9579a79af267033f24dff"
-    sha256 arm64_linux:       "cbc29f4775bccc612a2a6a1758348770c8b7d9b783b5485f7716d3ffac997b60"
-    sha256 x86_64_linux:      "6fc8bd0bcfb4b15d52997791f58cbca8cde6536f95ffed1156c6394fbe269bce"
+    sha256 arm64_golden_gate: "0fbbcce5c43425e9d6d986dc280cfbbf00d8a054571573061062f7147e699e77"
+    sha256 arm64_tahoe:       "e15c53aff881e7d42a6eb941ca0561e36f4f61459ad01241ec3e9358900b2938"
+    sha256 arm64_sequoia:     "477a91ee3ff1ed0e2f1f074d5cc31928681ee8f6e278cfa47727e257b38a9f8b"
+    sha256 arm64_linux:       "303ec2793ed1dfe3792f740e76850df6f3f04bcbd931a39a0c3f565d558dc527"
+    sha256 x86_64_linux:      "e73d14c83073e71158e5874045b6515284a9cf3c9b5a53c8cced9febb8a6d980"
   end
 
   depends_on "meson" => :build
@@ -29,14 +26,20 @@ class Scrcpy < Formula
   depends_on "libusb"
   depends_on "sdl3"
 
+  on_linux do
+    depends_on "libdrm"
+  end
+
   resource "prebuilt-server" do
-    url "https://ghfast.top/https://github.com/Genymobile/scrcpy/releases/download/v4.1/scrcpy-server-v4.1", using: :nounzip
-    sha256 "deacb991ed2509715160ffdc7907e47b4160eb30d1566217e9047fd5b8850cae"
+    url "https://ghfast.top/https://github.com/Genymobile/scrcpy/releases/download/v5.0/scrcpy-server-v5.0", using: :nounzip
+    sha256 "26cbc9ad0aced6c2282455bef4fb43462605c1f8758c74b4ab1dbf818c229daa"
 
     livecheck do
       formula :parent
     end
   end
+
+  allow_network_access! :test
 
   def install
     odie "prebuilt-server resource needs to be updated" if version != resource("prebuilt-server").version

@@ -34,7 +34,7 @@ class Echtvar < Formula
   def install
     # portable_simd feature requires nightly.
     # Use a stable-Rust stub to keep the CLI buildable without nightly.
-    ENV["RUSTC_BOOTSTRAP"] = "1"
+    ENV["RUSTC_BOOTSTRAP"] = "1" if Hardware::CPU.intel?
     ENV["LIBCLANG_PATH"] = formula_opt_lib("llvm") if OS.linux?
 
     system "cargo", "install", *std_cargo_args

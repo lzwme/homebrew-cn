@@ -10,25 +10,31 @@ class AwsSamCli < Formula
   head "https://github.com/aws/aws-sam-cli.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "2adfe77b755c26a26700dbc2348cb7528a479e0e51568c04a1cde0f257a67831"
-    sha256 cellar: :any, arm64_tahoe:       "b9f7c8217f509fe355dfe1882eabeb5827143f231a0e42568fea52596ea460ef"
-    sha256 cellar: :any, arm64_sequoia:     "6769aac575127832c424998b241a519096bbd9b449f80679535eedbeeb90d36c"
-    sha256 cellar: :any, arm64_linux:       "9f518d6e38e07959ad99255bfb0f715365ee5971c0796fa09c8aed78d23abc06"
-    sha256 cellar: :any, x86_64_linux:      "b759e5118fcba5618e0b5e8fc226521b4b7b4bddf58e2f5bb78053f1be94db9c"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "39c2c8dd8c81fc8f490f83d14b4829072795c432d9e2dfd66eb194ea2b0996b1"
+    sha256 cellar: :any, arm64_tahoe:       "c092b9d06a0ec6d9f547a5dc4c44013848cece0e2f745d09154c6b100311b8a7"
+    sha256 cellar: :any, arm64_sequoia:     "eb3974524b79609b49448af2044e4465ea7ba7724c95d277607778d29a60affb"
+    sha256 cellar: :any, arm64_linux:       "0d16a257312a042278df81bad5c3a66e3f1cc04125d1673566700953e590edb3"
+    sha256 cellar: :any, x86_64_linux:      "667ee2968d163406064107cb485f77ffb554a007d50d05e12cacb2aca685bdb7"
   end
 
-  depends_on "cmake" => :build # for `awscrt`
   depends_on "go" => :build
   depends_on "pkgconf" => :build
+  depends_on "aws-c-auth"
+  depends_on "aws-c-cal"
+  depends_on "aws-c-common"
+  depends_on "aws-c-event-stream"
+  depends_on "aws-c-http"
+  depends_on "aws-c-io"
+  depends_on "aws-c-mqtt"
+  depends_on "aws-c-s3"
+  depends_on "aws-checksums"
   depends_on "certifi" => :no_linkage
   depends_on "cryptography" => :no_linkage
   depends_on "libyaml"
-  depends_on "openssl@3" # for `awscrt`
   depends_on "pydantic" => :no_linkage
   depends_on "python@3.14"
   depends_on "rpds-py" => :no_linkage
-
-  uses_from_macos "libffi"
 
   pypi_packages exclude_packages: %w[certifi cryptography pydantic rpds-py]
 
@@ -73,13 +79,13 @@ class AwsSamCli < Formula
   end
 
   resource "boto3-stubs" do
-    url "https://files.pythonhosted.org/packages/66/10/4c1244eb3d33a5f8212f26bac763fadfcd231e900c970dee850595ee30ac/boto3_stubs-1.43.105.tar.gz"
-    sha256 "ac5676e912f2cabc907e507fb604fbdd53e884cb5928b31184abf1d68e20ef9b"
+    url "https://files.pythonhosted.org/packages/db/2c/b28a8cc8e4beea290fdac2323ebbdf3521ca6570cb1ab93f862d8d219738/boto3_stubs-1.43.108.tar.gz"
+    sha256 "a1ed29b4c7957568e6261fc36d4c59025c004997a229e8f01940c205f2128e4a"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/2b/30/668f3c0533a440787e212cf56404cb6ec234ae8e6baf97fe17329d512d88/botocore-1.43.105.tar.gz"
-    sha256 "afb3e7706b123ab069d1c34571ca1fdf82528a48425574fe4693df3d039d503f"
+    url "https://files.pythonhosted.org/packages/61/16/6b4477f433da2c11193802f538330ce080076c2f38d817ad437ed3cd1465/botocore-1.43.108.tar.gz"
+    sha256 "ee4f75cf3bdbb0da7912e089950e8112f692016539d939312c771499958e6cfd"
   end
 
   resource "botocore-stubs" do
@@ -173,8 +179,8 @@ class AwsSamCli < Formula
   end
 
   resource "markupsafe" do
-    url "https://files.pythonhosted.org/packages/7e/99/7690b6d4034fffd95959cbe0c02de8deb3098cc577c67bb6a24fe5d7caa7/markupsafe-3.0.3.tar.gz"
-    sha256 "722695808f4b6457b320fdc131280796bdceb04ab50fe1795cd540799ebe1698"
+    url "https://files.pythonhosted.org/packages/38/9b/e422a865e1d5d57d0e509b4e0bf1c1a70a7f6382c29a5aa428df994c8bc8/markupsafe-3.0.4.tar.gz"
+    sha256 "2e9ad7dd851bf45fab9f75cbff4cb493fee9979e8d8c7c9c3ee119022518edd6"
   end
 
   resource "mdurl" do
@@ -218,8 +224,8 @@ class AwsSamCli < Formula
   end
 
   resource "mypy-boto3-s3" do
-    url "https://files.pythonhosted.org/packages/97/3b/8ca4c299090b3a7fe97c6db8e17a6d7db92cb9b456804e59426ddea84824/mypy_boto3_s3-1.43.93.tar.gz"
-    sha256 "858e1ffe738ece3fa83ebc2b50f19aa53d0d69c1084739b37ec671b060713192"
+    url "https://files.pythonhosted.org/packages/46/db/e3922d6c62365c1098da97d9a775e78c66827df5cba11619a7d2a11cdae4/mypy_boto3_s3-1.43.106.tar.gz"
+    sha256 "731195f15830699a36e29d3c8abb2918bccd3587eb2edcb233f8046967893279"
   end
 
   resource "mypy-boto3-schemas" do
@@ -283,8 +289,8 @@ class AwsSamCli < Formula
   end
 
   resource "python-dotenv" do
-    url "https://files.pythonhosted.org/packages/6a/53/ed9d74092561d4b01a2ef1349d52cdbc135e526c245f366b089cfca6de49/python_dotenv-1.2.3.tar.gz"
-    sha256 "a20a594dabeaa385725aa239d5244871c143ecb356add8a20fcf23773a6c3a35"
+    url "https://files.pythonhosted.org/packages/74/26/2fbeedb218a787a5eea551c7532cac4e009f83d689dd2faa0d0353473f86/python_dotenv-1.2.4.tar.gz"
+    sha256 "f0d53e69935a851c0dcc78f3ab7aaccd8cabef0b92382b576b824212902873c0"
   end
 
   resource "python-slugify" do
@@ -293,8 +299,8 @@ class AwsSamCli < Formula
   end
 
   resource "pytz" do
-    url "https://files.pythonhosted.org/packages/b0/ed/fa23d28713004418bbf2407127f80f385bfb0bf4e677bef02c25c27b00ee/pytz-2026.4.tar.gz"
-    sha256 "464303645bafafd72418898368b2429458f709cf1eb6a15372fbcc396b64da63"
+    url "https://files.pythonhosted.org/packages/14/21/d83d6ef28c4c912c4bb4d1dcf591f7b8c6bde87b9c66f9f454677314e16d/pytz-2026.5.tar.gz"
+    sha256 "fa23724b9c486543b9ff54a327ee7569ac83ade54bb9afd0fc18676620401c86"
   end
 
   resource "pyyaml" do
@@ -363,8 +369,8 @@ class AwsSamCli < Formula
   end
 
   resource "tzdata" do
-    url "https://files.pythonhosted.org/packages/e4/31/3d74fa778a63b98b7374323befcc0be5ab3bd94afd4096a0124e7379152c/tzdata-2026.4.tar.gz"
-    sha256 "f1b8bd365d8d210c55353f4d7f8d6d8561c0ba50d704b700d195a9424bba0d79"
+    url "https://files.pythonhosted.org/packages/d9/68/f1b440335057bfce71b6e50a9d09445aa2ecbd08359a337976627b8409e7/tzdata-2026.5.tar.gz"
+    sha256 "8cc73c0a0bfca7dbfa59235d60b2eff82231dee33f53d206db1acd9173cfc0a7"
   end
 
   resource "tzlocal" do
@@ -403,12 +409,12 @@ class AwsSamCli < Formula
 
   def install
     ENV["AWS_CRT_BUILD_USE_SYSTEM_LIBCRYPTO"] = "1"
+    ENV["AWS_CRT_BUILD_USE_SYSTEM_LIBS"] = "1"
+    # Avoid overlinking to aws-c-* indirect dependencies
+    ENV.append "LDFLAGS", "-Wl,-dead_strip_dylibs" if OS.mac?
 
     venv = virtualenv_create(libexec, python3, system_site_packages: false)
-    venv.pip_install resources.reject { |r| ["awscrt", "aws-lambda-rie"].include?(r.name) }
-    # CPU detection is available in AWS C libraries
-    ENV.runtime_cpu_detection
-    venv.pip_install resource("awscrt")
+    venv.pip_install resources.reject { |r| r.name == "aws-lambda-rie" }
     venv.pip_install_and_link buildpath, build_isolation: false
 
     generate_completions_from_executable(bin/"sam", shell_parameter_format: :click)

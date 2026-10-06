@@ -1,13 +1,24 @@
 class Grpc < Formula
   desc "Next generation open source RPC library and framework"
   homepage "https://grpc.io/"
-  url "https://github.com/grpc/grpc.git",
-      tag:      "v1.84.0",
-      revision: "3252a89f10d8e92997862167ca7d095ecda85973"
   license "Apache-2.0"
   revision 1
   compatibility_version 6
   head "https://github.com/grpc/grpc.git", branch: "master"
+
+  stable do
+    url "https://github.com/grpc/grpc.git",
+        tag:      "v1.84.0",
+        revision: "3252a89f10d8e92997862167ca7d095ecda85973"
+
+    # Backport support for OpenSSL 4
+    patch do
+      url "https://github.com/grpc/grpc/commit/fb056ab0bb3ed003febe82f069ff41514288a4f3.patch?full_index=1"
+      sha256 "87b230d855ec21fe0a58d6a1d1c726c1a78ccd2cbda6269998f5177f12f10bb4"
+      type :backport
+      resolves "https://github.com/grpc/grpc/pull/41932"
+    end
+  end
 
   # There can be a notable gap between when a version is tagged and a
   # corresponding release is created, so we check releases instead of the Git

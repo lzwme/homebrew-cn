@@ -18,6 +18,12 @@ class Muffet < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
   end
@@ -27,6 +33,5 @@ class Muffet < Formula
 
     expected = "failed to fetch root page: lookup does.not.exist"
     assert_match expected, shell_output("#{bin}/muffet https://does.not.exist 2>&1", 1)
-    assert_match "https://example.com/", shell_output("#{bin}/muffet https://example.com/ 2>&1", 1)
   end
 end

@@ -1,6 +1,6 @@
 cask "cuadriver" do
-  version "0.33.3"
-  sha256 "e4d5a6c2f8b1dff776bc7260717b723d753c3deeb020469a6eb85eacf862bfca"
+  version "0.34.0"
+  sha256 "2d0ade531c07b4d16e8078844fe1b63a0dfa0ee19677c9dcc079b4d3460ab387"
 
   url "https://ghfast.top/https://github.com/trycua/cua/releases/download/cua-driver-rs-v#{version}/cua-driver-rs-#{version}-darwin-universal.tar.gz"
   name "Cua Driver"

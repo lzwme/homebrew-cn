@@ -2,11 +2,9 @@ class Julia < Formula
   desc "Fast, Dynamic Programming Language"
   homepage "https://julialang.org/"
   # Use the `-full` tarball to avoid having to download during the build.
-  # TODO: Remove from eol_date_blocklist when bumping to next release
-  url "https://ghfast.top/https://github.com/JuliaLang/julia/releases/download/v1.12.7/julia-1.12.7-full.tar.gz"
-  sha256 "5c7d85b771de3185eeca9fbc2e6173d8bcf6d74f68418622a9e9c43ad752af51"
+  url "https://ghfast.top/https://github.com/JuliaLang/julia/releases/download/v1.13.1/julia-1.13.1-full.tar.gz"
+  sha256 "1c2006bced7a1f8b6c92598ef65b7b24fc74aeaadc53535a45e4c6197001057c"
   license all_of: ["MIT", "BSD-3-Clause", "Apache-2.0", "BSL-1.0"]
-  revision 1
   head "https://github.com/JuliaLang/julia.git", branch: "master"
 
   # Upstream creates GitHub releases for both stable and LTS versions, so the
@@ -19,11 +17,11 @@ class Julia < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "df990aa2df3bdfe935b8e0f914bb1a6df02a5e174c4dec67e71871783aa2c34a"
-    sha256 cellar: :any, arm64_tahoe:       "ed581a02572af9e1030c7c714833eea123f36bae3f136e49b9367b0445d15679"
-    sha256 cellar: :any, arm64_sequoia:     "a81f23e7b1dad761494c10830701ff895beabe36d622d1c6364ff6f0cf17e87a"
-    sha256 cellar: :any, arm64_linux:       "35f5ea8011129f2fff336817c5fde7dba65dda4517ea8a979b8a2ba496477ab1"
-    sha256 cellar: :any, x86_64_linux:      "1089f6e86e175aae7f9e3d9024645bde4aa5f4caaeb6096d42bf46036b9f04b2"
+    sha256 cellar: :any, arm64_golden_gate: "acb7c48f853d410f4dab33903e76fdf4418474d95dd945652517f44cca65051c"
+    sha256 cellar: :any, arm64_tahoe:       "08ba412d490309837c59a45e8f51a0fe640b54d50c9fcc136e3a89f750f619bb"
+    sha256 cellar: :any, arm64_sequoia:     "3ea8eb8f6c4a48371c9758a10b48b9735543757f4ff589f3a9b0d44572d30255"
+    sha256 cellar: :any, arm64_linux:       "6a74cfab12b935cf155d348ac019daa167ca015e78315c7f5b45a945ce117c88"
+    sha256 cellar: :any, x86_64_linux:      "15b66f938dbc2e052a56652a17feaa499e56d30b7aa0f2d167cbf13efb44f25e"
   end
 
   depends_on "cmake" => :build # Needed to build LLVM
@@ -52,6 +50,8 @@ class Julia < Formula
 
   on_linux do
     depends_on "patchelf" => :build
+    depends_on "lz4"
+    depends_on "xz"
     depends_on "zlib-ng-compat"
   end
 
@@ -65,9 +65,38 @@ class Julia < Formula
     resolves "https://github.com/JuliaLang/julia/pull/63376"
   end
 
+  # Symlink system zstd into libexec so `make install` works with `USE_SYSTEM_ZSTD=1`
+  patch do
+    url "https://github.com/JuliaLang/julia/commit/c3eba74c6a7506b3651d3478a69d2e3cd67a4627.patch?full_index=1"
+    sha256 "cce58a5d6a0313c9d6dbf4455b7b11c7734a24025bdf4483dc308b49567fa1a0"
+    type :backport
+    resolves "https://github.com/JuliaLang/julia/issues/63100"
+  end
+
   def install
+    # Avoid build failure for LLVM benchmarks when building with GCC
+    inreplace "deps/llvm.mk", /-DLLVM_ENABLE_LIBEDIT=OFF$/, "\\0 -DLLVM_INCLUDE_BENCHMARKS=OFF"
+
+    if OS.linux?
+      # TODO: Remove once upstream preserves GCC's linker script.
+      # https://github.com/JuliaLang/julia/issues/63546
+      inreplace "deps/csl.mk", <<~OLD, <<~NEW
+        install-csl: $(build_shlibdir)/libgcc_s.$(SHLIB_EXT)
+        $(build_shlibdir)/libgcc_s.$(SHLIB_EXT): $(build_shlibdir)/$(call versioned_libname,libgcc_s,1)
+        \tln -sf $(call versioned_libname,libgcc_s,1) $@
+      OLD
+        $(eval $(call copy_csl,libgcc_s.$(SHLIB_EXT)))
+      NEW
+
+      # TODO: Remove once upstream recognizes symlinked loader paths.
+      # https://github.com/JuliaLang/julia/issues/63545
+      inreplace "base/linking.jl", "        occursin(re, p) && return p",
+                                 "        occursin(re, p) && return p\n        " \
+                                 "isfile(p) && occursin(re, realpath(p)) && return p"
+    end
+
     # Build documentation available at
-    # https://github.com/JuliaLang/julia/blob/v#{version}/doc/build/build.md
+    # https://github.com/JuliaLang/julia/blob/v#{version}/doc/src/devdocs/build/build.md
     args = %W[
       prefix=#{prefix}
       sysconfdir=#{etc}
@@ -92,6 +121,7 @@ class Julia < Formula
       USE_SYSTEM_PCRE=1
       USE_SYSTEM_UTF8PROC=1
       USE_SYSTEM_ZLIB=1
+      USE_SYSTEM_ZSTD=1
       VERBOSE=1
       LIBBLAS=-lopenblas64_
       LIBBLASNAME=libopenblas64_
@@ -124,7 +154,7 @@ class Julia < Formula
                           thunderx2t99
                           carmel,clone_all
                           apple-m1,base(3)
-                          neoverse-512tvb,base(3)]
+                          neoverse-512tvb,-rand,-fpac,base(3)]
       end
     end
     if Hardware::CPU.intel?
@@ -188,7 +218,12 @@ class Julia < Formula
 
       # Use `ln_sf` instead of `install_symlink` to avoid referencing
       # gcc's full version and revision number in the symlink path
-      ln_sf so.relative_path_from(lib/"julia"), lib/"julia"
+      if OS.linux? && so.basename.to_s == "libgcc_s.so"
+        # Keep the runtime alias loadable; GCC's unversioned file is a linker script.
+        ln_sf "libgcc_s.so.1", lib/"julia"/so.basename
+      else
+        ln_sf so.relative_path_from(lib/"julia"), lib/"julia"
+      end
     end
 
     # Keep Julia's CA cert in sync with ca-certificates'
@@ -236,7 +271,11 @@ class Julia < Formula
 
     with_env(CI: nil) do
       # FIXME: Skipping test on macOS as runners keep timing out
-      system bin/"julia", *args, "--eval", 'Base.runtests("core")' unless OS.mac?
+      unless OS.mac?
+        # Julia writes JSON reports beside its test sources.
+        cp_r pkgshare/"test", testpath/"test"
+        system bin/"julia", *args, testpath/"test/runtests.jl", "--buildroot=#{pkgshare}", "core"
+      end
     end
 
     # Check that Julia can load stdlibs that load non-Julia code.

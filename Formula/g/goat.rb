@@ -1,9 +1,8 @@
 class Goat < Formula
   desc "General purpose AT Protocol CLI in Go"
   homepage "https://github.com/bluesky-social/goat"
-  url "https://github.com/bluesky-social/goat.git",
-      tag:      "v0.2.5",
-      revision: "53ba4f937b70be32a89e8cf1b2bd998c8590ceaa"
+  url "https://ghfast.top/https://github.com/bluesky-social/goat/archive/refs/tags/v0.2.5.tar.gz"
+  sha256 "da72f4e0f1e481757a1a77f5032b0a2cc18f08df9ac748f9c5f1236a23bf4cd2"
   license any_of: ["MIT", "Apache-2.0"]
 
   bottle do
@@ -23,7 +22,7 @@ class Goat < Formula
   end
 
   def install
-    system "go", "build", *std_go_args
+    system "go", "build", *std_go_args(ldflags: :goreleaser)
   end
 
   test do

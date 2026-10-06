@@ -16,6 +16,8 @@ class DejaVu < Formula
 
   depends_on "go" => :build
 
+  conflicts_with "deja", because: "both install `deja` binaries"
+
   deny_network_access! [:postinstall, :test]
 
   def install

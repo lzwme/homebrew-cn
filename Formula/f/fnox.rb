@@ -1,17 +1,17 @@
 class Fnox < Formula
   desc "Fort Knox for your secrets - flexible secret management tool"
   homepage "https://fnox.jdx.dev/"
-  url "https://ghfast.top/https://github.com/jdx/fnox/archive/refs/tags/v1.37.0.tar.gz"
-  sha256 "62161159a07debe06d22425e51ee368b10ee6ea4b3688866f9a652c75342cc96"
+  url "https://ghfast.top/https://github.com/jdx/fnox/archive/refs/tags/v1.38.1.tar.gz"
+  sha256 "9adb4cf17095f9ba7408f370923d877d419eaffbd9ca1a3843212e0ccd6e173f"
   license "MIT"
   head "https://github.com/jdx/fnox.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "dddd24f2aeb9681ddfb036f7360180f9b1a242ba4273df81d66909f06e5f9b08"
-    sha256 cellar: :any, arm64_tahoe:       "93455bdead213cef32fe2abb9b5cb225dfde77a553325d8baade9254d49f122b"
-    sha256 cellar: :any, arm64_sequoia:     "252f56d4fd71a2139a21fb21d843d0506f814ddba0b2cbd399f8db73e0429fac"
-    sha256 cellar: :any, arm64_linux:       "03effabff1fd6e647723cbe940a5c1e2031e40643825f3e35fbfa8476e0c53fc"
-    sha256 cellar: :any, x86_64_linux:      "ef8cd7f1e0c84b5c3a84e726a6934fc5350badc0dd0b5e179e3e83701557d568"
+    sha256 cellar: :any, arm64_golden_gate: "2b6fee3a91d738f5c296355e9e1dfe72e70ea09890f4ddd6db1f90d081c2a003"
+    sha256 cellar: :any, arm64_tahoe:       "fde37026bda56c77d485f13c89cb9b4c67c2979468401d30da17625e479d71a0"
+    sha256 cellar: :any, arm64_sequoia:     "3a3e1fbe8c49cdb98ea1d42dea86d8f91bd609ac548f95e0c863c5d467d0e3e1"
+    sha256 cellar: :any, arm64_linux:       "1cf7bb27a90485a3138af338745c16350a71ee7d999e332e11afde85b3231d0a"
+    sha256 cellar: :any, x86_64_linux:      "0d4e592f9582e2454a05635c59d02203bf7f2a87f17d04b5eea46c3376b1ccc4"
   end
 
   depends_on "pkgconf" => :build

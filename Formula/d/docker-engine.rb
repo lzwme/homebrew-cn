@@ -26,6 +26,12 @@ class DockerEngine < Formula
   depends_on "runc"
   depends_on "tini"
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ldflags = %W[
       -X github.com/moby/moby/v2/dockerversion.BuildTime=#{time.iso8601}

@@ -28,6 +28,12 @@ class FlowControl < Formula
 
   conflicts_with "flow", "flow-cli", because: "both install `flow` binaries"
 
+  deny_network_access!
+
+  def fetch
+    system "zig", "build", "--fetch"
+  end
+
   def install
     if build.stable?
       # Avoid an error when the git repository is detached from HEAD

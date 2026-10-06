@@ -26,6 +26,12 @@ class CargoOutdated < Formula
     depends_on "zlib-ng-compat"
   end
 
+  allow_network_access! :test
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
     ENV["LIBGIT2_NO_VENDOR"] = "1"
     ENV["OPENSSL_DIR"] = formula_opt_prefix("openssl@3")

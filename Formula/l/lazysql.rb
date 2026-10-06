@@ -1,8 +1,8 @@
 class Lazysql < Formula
   desc "Cross-platform TUI database management tool"
   homepage "https://github.com/jorgerojas26/lazysql"
-  url "https://ghfast.top/https://github.com/jorgerojas26/lazysql/archive/refs/tags/v0.5.9.tar.gz"
-  sha256 "f7d6bd4dfc9f7b72d2fbae076dc8d8c05773a970978a4e9ac3458dfb393c3f33"
+  url "https://ghfast.top/https://github.com/jorgerojas26/lazysql/archive/refs/tags/v0.6.0.tar.gz"
+  sha256 "7f3c7d7838e3bd492261f992a5941debe22b2c4ba7e12faa4f8be040079986ac"
   license "MIT"
   head "https://github.com/jorgerojas26/lazysql.git", branch: "main"
 
@@ -12,11 +12,11 @@ class Lazysql < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "5da0fc1695e78c0390d639add0f7c794efaa8468467c65efb15110cfc950c14f"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "5da0fc1695e78c0390d639add0f7c794efaa8468467c65efb15110cfc950c14f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "5da0fc1695e78c0390d639add0f7c794efaa8468467c65efb15110cfc950c14f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "c6ff988088984c5f2732eaea47b717df438959aac3b219fa67ef8ab46cc34e1d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "f47900b38e8cb9cee6e308b4256b1f7d0b3dc506a78b44fb286cc1c40b190103"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "2b1572a9f3042c40181eb93d997b233839626386215afe1fd22d75acdc567f21"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "2b1572a9f3042c40181eb93d997b233839626386215afe1fd22d75acdc567f21"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "2b1572a9f3042c40181eb93d997b233839626386215afe1fd22d75acdc567f21"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "567c75306ae7ff3c6baffe175e232b4231810a9d0cf85ba5e7a0baae31902886"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "a5e6171317b9cd29a781181689a0abb361dd2f467e257c96d5b5909c6cb1acc1"
   end
 
   depends_on "go" => :build

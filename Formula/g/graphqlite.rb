@@ -1,8 +1,8 @@
 class Graphqlite < Formula
   desc "SQLite graph database extension"
   homepage "https://colliery-io.github.io/graphqlite/"
-  url "https://ghfast.top/https://github.com/colliery-io/graphqlite/archive/refs/tags/v0.8.0.tar.gz"
-  sha256 "736b1de695785761f998b20ff25e0284a3b5485f1c48a4741a7a3025410e348f"
+  url "https://ghfast.top/https://github.com/colliery-io/graphqlite/archive/refs/tags/v0.9.0.tar.gz"
+  sha256 "c100543b2195e2d3cc7fac36147eabfc4fdbc5b2e5ad66f7723f1aca0b34aef2"
   license "MIT"
 
   livecheck do
@@ -11,12 +11,11 @@ class Graphqlite < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "3c3087d0fa377b92a42d55691f763632ce7fac148bea907bf0fe62e40055f543"
-    sha256 cellar: :any, arm64_tahoe:       "4245e90c88b1da0398dd28fa13c5207d0327246ab9f86e3f669b036b3c5dfb7a"
-    sha256 cellar: :any, arm64_sequoia:     "deb175b3876d3a546f8a8770c4c7f19d229fcd2efef035a70463bdde66613d71"
-    sha256 cellar: :any, arm64_sonoma:      "f9b7bd6f2cc4f4ec1b0ea22bbcf1d1ab7f3d6941fb20531fb0a2372ab285a5a2"
-    sha256 cellar: :any, arm64_linux:       "374bf22917b8ac16acc1dff150016b7c1f6faa25879874f4db6f0f25d80271d4"
-    sha256 cellar: :any, x86_64_linux:      "16236149440b8c1e97cd1a7411ad64ed9dc3e2e824f190c0885954a371096813"
+    sha256 cellar: :any, arm64_golden_gate: "4379547eb0ecea3a4befb1d242a73880b5e47d104913c60dd572f4d9f3ad33d8"
+    sha256 cellar: :any, arm64_tahoe:       "b713f738a5f4d5056757bf007da6179adda4ef632727cfe35d93dccab4d82fc8"
+    sha256 cellar: :any, arm64_sequoia:     "5287b396e47a10153d7e69632c41098847e9586f079b088883fbbe3554f94499"
+    sha256 cellar: :any, arm64_linux:       "cf5cd17422dd86954ed204822c18674cdb9d36e2a75f6c26ac744da3e333c28d"
+    sha256 cellar: :any, x86_64_linux:      "3cb155e535500c69e903ba71ffa9a49eec6ba9d1b35e0e5ab3f73c44ca668d0f"
   end
 
   depends_on "bison" => :build # macOS bison is too old

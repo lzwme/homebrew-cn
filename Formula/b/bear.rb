@@ -23,6 +23,12 @@ class Bear < Formula
     depends_on "llvm" => :test
   end
 
+  allow_network_access! :test
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
     %w[driver wrapper].each do |crate|
       # Install binaries to `target/release` because `scripts/install.sh` expects them here

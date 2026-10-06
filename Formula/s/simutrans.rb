@@ -1,8 +1,8 @@
 class Simutrans < Formula
   desc "Transport simulator"
   homepage "https://www.simutrans.com/"
-  url "svn://servers.simutrans.org/simutrans/trunk/", revision: "12321"
-  version "125.0"
+  url "svn://servers.simutrans.org/simutrans/trunk/", revision: "12334"
+  version "125.0.1"
   license "Artistic-1.0"
   head "https://github.com/simutrans/simutrans.git", branch: "master"
 
@@ -17,11 +17,11 @@ class Simutrans < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "48a17f38b1791aab60304da5318b03bd55e1ffb373c2f0da40efebdf42d93598"
-    sha256 cellar: :any, arm64_tahoe:       "fdae87b232ee8df110b6d374f134767124448b7fa858f9d241441b2081a1d8bd"
-    sha256 cellar: :any, arm64_sequoia:     "2ff427aad67e5cd32574d3e544fc7268cadfc243bfcaee99eb65460d26e725da"
-    sha256 cellar: :any, arm64_linux:       "fcc909f211b3c578907c4b14b16ae67713617aec813a867f065fdc38ad67a58b"
-    sha256 cellar: :any, x86_64_linux:      "d6ce9e4900c6bbd3f30a928cc4f99d7d09b85fb6a95f9d871d6c6d7e23509a7e"
+    sha256 cellar: :any, arm64_golden_gate: "c6e6cef81ccaada65c6da17982d4ebbd5739d88eb99a0b05ef6d64f55ca92062"
+    sha256 cellar: :any, arm64_tahoe:       "33e918108571779adbba950ab0657b03f2225780bd387f66fa93d372bfa7d1c4"
+    sha256 cellar: :any, arm64_sequoia:     "876c640f5f46443e6d379c8bb2cf7702269564a248127ee1d64dd2e0aba19082"
+    sha256 cellar: :any, arm64_linux:       "d38cd926d1d3f213a201db32e0447946faa99e47b355514a0975dd6c026de4a8"
+    sha256 cellar: :any, x86_64_linux:      "29fca38adc8153e9d8dfab798ac9ed7e4f08390c585533a7270f1ed3ce85dff7"
   end
 
   depends_on "cmake" => :build
@@ -43,9 +43,10 @@ class Simutrans < Formula
   end
 
   resource "pak64" do
-    url "https://downloads.sourceforge.net/project/simutrans/pak64/124-4/simupak64-124-4.zip"
-    sha256 "edc6f9ca8d94af7bfcc9628ce1e7ddf468b07118cde0a50a8b5d0d30c22218ee"
+    url "https://downloads.sourceforge.net/project/simutrans/pak64/125-0/simupak64-125-0.zip"
+    sha256 "850108b76505ca306822b88c22a1829c7102a6c9d7390c057f533ba70d9ecdad"
   end
+
   resource "soundfont" do
     url "https://src.fedoraproject.org/repo/pkgs/PersonalCopy-Lite-soundfont/PCLite.sf2/629732b7552c12a8fae5b046d306273a/PCLite.sf2"
     sha256 "ba3304ec0980e07f5a9de2cfad3e45763630cbc15c7e958c32ce06aa9aefd375"

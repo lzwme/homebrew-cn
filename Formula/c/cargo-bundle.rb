@@ -23,6 +23,14 @@ class CargoBundle < Formula
     depends_on "openssl@3"
   end
 
+  allow_network_access! :test
+
+  def fetch
+    # `Cargo.lock` file is ignored
+    system "cargo", "generate-lockfile"
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
     system "cargo", "install", *std_cargo_args
   end

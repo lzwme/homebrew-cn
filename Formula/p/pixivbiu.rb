@@ -1,8 +1,8 @@
 class Pixivbiu < Formula
   desc "Pixiv client. Easy to search, browse, and download artworks"
   homepage "https://github.com/txperl/PixivBiu"
-  url "https://ghfast.top/https://github.com/txperl/PixivBiu/archive/refs/tags/v3.1.4.tar.gz"
-  sha256 "d530b902b8ccb8f749388d0da44380c8e9eb560741a5c23d65708bbe013d8a09"
+  url "https://ghfast.top/https://github.com/txperl/PixivBiu/archive/refs/tags/v3.1.5.tar.gz"
+  sha256 "dd49171a6a4895de51d6415f0bdfbeb768e6d603d6cd2f37af04df5bc49eb8cb"
   license "MIT"
 
   livecheck do
@@ -11,11 +11,11 @@ class Pixivbiu < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "d5d3ab05b6c71134a6ba29e57f1312f0f9def3ae0d05b5caeb632a7e2b54dfd7"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "adb9f7d6aeb1ca522e8ab2fff1ac0bba368d582dc86b1bc01f9a42444cf4d1ee"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "68e307ca7d2bfdcfa7489ee1774eff8f555a2b2590cffe70ea3f51712793d428"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "b651775ebab9af0c427242b321fc91c1af381eeaab0cc3bb5edcdb2ee0ea065f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "c9b2b6f1677a9d9aca2ce26a461845a0becfe7465ed55b32859f05851326cccb"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "2a6aea66383300432109d68651c39acd5902af0968d813212e284b1155091fd4"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "8d028a5db3510b085b6d21f35689a9205bfd54dfdfe67e61be29f17e562b4714"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "5bc2520af13085023424c96ff3ab59cc141c4352222896a2520cd5cf0ef881be"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "6c8dddafaab472968d7077b363cc859d331229ac18fe33d8a31f4f1e24ea4179"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "c437137b3b1e525bfb10a87e18fbd6b9128ea63bb4e8a150adea74dbb262a6b5"
   end
 
   depends_on "bun" => :build
