@@ -1,5 +1,5 @@
 cask "google-gemini" do
-  version "1.128.1.995"
+  version "1.128.2.1001"
   sha256 :no_check
 
   url "https://dl.google.com/release2/j33ro/release/Gemini.dmg"
@@ -35,10 +35,12 @@ cask "google-gemini" do
       ],
       pkgutil:   "com.google.pkg.Keystone",
       trash:     [
+        "~/Library/Application Scripts/com.google.GeminiMacOS.FinderSync",
         "~/Library/Application Support/com.google.GeminiMacOS",
         "~/Library/Application Support/com.google.GeminiMacOS.launcher",
         "~/Library/Caches/com.google.GeminiMacOS",
         "~/Library/Caches/com.google.GeminiMacOS.launcher",
+        "~/Library/Containers/com.google.GeminiMacOS.FinderSync",
         "~/Library/Google/GoogleSoftwareUpdate/Actives/com.google.GeminiMacOS",
         "~/Library/Group Containers/group.com.google.gemini",
         "~/Library/HTTPStorages/com.google.GeminiMacOS",

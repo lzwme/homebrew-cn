@@ -1,19 +1,17 @@
 class Deadfinder < Formula
   desc "Finds broken links"
   homepage "https://deadfinder.hahwul.com"
-  url "https://ghfast.top/https://github.com/hahwul/deadfinder/archive/refs/tags/2.0.2.tar.gz"
-  sha256 "13d3d4b0392d6b1548071d44dc03a14e790ea161781d5a57a196577316a97543"
+  url "https://ghfast.top/https://github.com/hahwul/deadfinder/archive/refs/tags/2.1.0.tar.gz"
+  sha256 "ae2364f33c1b94f9d2183162b6dd42ae33a68dbda970a1e67c9080ee1681c7d9"
   license "MIT"
   head "https://github.com/hahwul/deadfinder.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_golden_gate: "58ba4933e6685c5f8be7ccf6a890c936fcb28a8e0699aec98b53eb72acd1d00b"
-    sha256 cellar: :any,                 arm64_tahoe:       "3cd70822a8e851cba61fc82b404a3c288027c5e1428085419572da755190f3e7"
-    sha256 cellar: :any,                 arm64_sequoia:     "da399f4212adcd55edf32b957d467ba0ca4074b5b152b98761019110867b2807"
-    sha256 cellar: :any,                 arm64_sonoma:      "56b8210526219201d86964a11f215964e61bb78b21ad8663931f052c670f2d96"
-    sha256 cellar: :any,                 sonoma:            "25aae4c594c1a3a66a7f3c89df5958f044e61b09eb66989b135eb3607178314a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "3c0b06102fec2f436837c35f2990b04ad9bb64dea9ba7e51a3bb6cbdb835b5ce"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "7b3b0164aa904fda4b1cb754c6cd4cb450fd7ff3d0004f0f6ad5134f845c2666"
+    sha256 cellar: :any, arm64_golden_gate: "c91ccce9815476de101ed1bf76a34d24fbe65989f78309cb1b69deb9ab5a2298"
+    sha256 cellar: :any, arm64_tahoe:       "fd9328d00e1514b764cf949fc27f6706079dba78dcfa98fff25a85af673fd5a7"
+    sha256 cellar: :any, arm64_sequoia:     "6b79fc25e42087dbc7f565cd0ae452e74838fb4ebeecd5fd8e7f7ffadc87d683"
+    sha256 cellar: :any, arm64_linux:       "2610405c5b68214dd848316f6d800eb36c2cf8e07638aca0ba195f170bbad231"
+    sha256 cellar: :any, x86_64_linux:      "ee2fc74f8724a7c3fa9f5d5d40fd1242e2698cbff00b32676cd542cd55e7ae0c"
   end
 
   depends_on "crystal" => :build
@@ -38,6 +36,9 @@ class Deadfinder < Formula
   end
 
   def install
+    ENV["CRYSTAL_LIBRARY_PATH"] = formula_opt_lib("openssl@3")
+    ENV.prepend_path "PKG_CONFIG_PATH", formula_opt_lib("openssl@3")/"pkgconfig"
+
     # Use our lexbor as long as compatible with https://github.com/kostya/lexbor
     (buildpath/"lib/lexbor/src/ext/lexbor-c/build").install_symlink formula_opt_lib("lexbor")/"liblexbor_static.a"
 

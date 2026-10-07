@@ -33,7 +33,7 @@ class Hunk < Formula
 
     # Install the compiled binary and bundled skills. The repository-root
     # `skills` holds maintainer-only documents that upstream does not ship.
-    libexec.install "dist/hunk" => "hunk"
+    libexec.install "dist/hunk"
     libexec.install "packages/hunk/skills"
     (bin/"hunk").write_env_script libexec/"hunk", HUNK_INSTALL_SOURCE: "homebrew"
   end

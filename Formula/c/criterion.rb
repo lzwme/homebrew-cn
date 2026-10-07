@@ -4,14 +4,15 @@ class Criterion < Formula
   url "https://ghfast.top/https://github.com/Snaipe/Criterion/releases/download/v2.5.0/criterion-2.5.0.tar.xz"
   sha256 "740d5a9c00ca6f58f59dc20ba1ebecb3505d28287a8fe4ea3029c7f8a1906496"
   license "MIT"
+  revision 1
   head "https://github.com/Snaipe/Criterion.git", branch: "bleeding"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "6cb671bafa44818cdc8754d27b91434400ffa80ded53328e935d937da1d04538"
-    sha256 cellar: :any, arm64_tahoe:       "258f7fa60a5d5e9c7d7f15ce59b401257545516233cbac31e169bd5963a507eb"
-    sha256 cellar: :any, arm64_sequoia:     "dd76264619a9bf01c2f4702b6e254226c9599b95134ca97cbc9ea7444982cad9"
-    sha256 cellar: :any, arm64_linux:       "25a2c43c6b9a126868acb986505e6dfd535c7ab54b4d1beeca9e3ae764b2acd7"
-    sha256 cellar: :any, x86_64_linux:      "b526ef74e797e8467b6932af194e1a4faf3813796f470d1588cc4ca01b531741"
+    sha256 cellar: :any, arm64_golden_gate: "ab6001c80380e5a71112354992f9bad277cc26869b6aee3a0138f59356ac7dda"
+    sha256 cellar: :any, arm64_tahoe:       "6d7692b7bccedbd41434ef540d4612d08dbef0fb9113fd98da47f1826d1eb56a"
+    sha256 cellar: :any, arm64_sequoia:     "b8467413f3e3ed2491d1af160ffca6b9d368e8f73678f6148c8de9f2a8677f9c"
+    sha256 cellar: :any, arm64_linux:       "a3bb3c10344400a9ac431d94e9494ef21df2a978b52971574829df880b271654"
+    sha256 cellar: :any, x86_64_linux:      "8b0ef5dc1012de37395c058e2aaf5f033be10d140e15e9dd1e5ce776fa19c903"
   end
 
   depends_on "cmake" => :build

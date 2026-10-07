@@ -25,7 +25,7 @@ class Libshout < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:      "ec4015cc70b9e3b8c9d17596e744743589c3f8c0a1be06c1116054e6855a4619"
   end
 
-  depends_on "pkgconf" => :build
+  depends_on "pkgconf" => [:build, :test]
   depends_on "libogg"
   depends_on "libvorbis"
   depends_on "openssl@3"
@@ -37,11 +37,35 @@ class Libshout < Formula
     file "Patches/libtool/configure-big_sur.diff"
   end
 
+  deny_network_access!
+
   def install
     # Fix compile with newer Clang
     ENV.append_to_cflags "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1403
 
     system "./configure", *std_configure_args
     system "make", "install"
+  end
+
+  test do
+    (testpath/"test.c").write <<~C
+      #include <stdio.h>
+      #include <shout/shout.h>
+
+      int main(void) {
+        shout_init();
+        shout_t *shout = shout_new();
+        if (shout == NULL) return 1;
+        if (shout_set_host(shout, "127.0.0.1") != SHOUTERR_SUCCESS) return 1;
+        printf("%s %s\\n", shout_version(NULL, NULL, NULL), shout_get_host(shout));
+        shout_free(shout);
+        shout_shutdown();
+        return 0;
+      }
+    C
+    ENV.prepend_path "PKG_CONFIG_PATH", formula_opt_lib("openssl@3")/"pkgconfig"
+    pkgconf_flags = shell_output("pkgconf --cflags --libs shout").chomp.split
+    system ENV.cc, "test.c", "-o", "test", *pkgconf_flags
+    assert_equal "#{version} 127.0.0.1", shell_output("./test").strip
   end
 end

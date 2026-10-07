@@ -26,6 +26,7 @@ class Gexiv2 < Formula
   depends_on "vala" => :build
   depends_on "exiv2"
   depends_on "glib"
+  depends_on "openssl@3"
 
   def install
     site_packages = prefix/Language::Python.site_packages(python3)
@@ -40,6 +41,8 @@ class Gexiv2 < Formula
   end
 
   test do
+    ENV.prepend_path "PKG_CONFIG_PATH", formula_opt_lib("openssl@3")/"pkgconfig"
+
     (testpath/"test.c").write <<~C
       #include <gexiv2/gexiv2.h>
       int main() {

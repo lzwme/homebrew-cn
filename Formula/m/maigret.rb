@@ -6,14 +6,15 @@ class Maigret < Formula
   url "https://files.pythonhosted.org/packages/e6/c7/e807e9a94ac69cd9f967e4e440f8278422346b7f05cde1c81ff8919b1a83/maigret-0.6.6.tar.gz"
   sha256 "8a364955d6272ac7a7c719fba59b4218fb23839f343a776ff783ed2c432f21b8"
   license "MIT"
+  revision 1
   head "https://github.com/soxoj/maigret.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "c2e2e503dc3fd12972bace678fa20a269193317314dd9e71aa58609f93b4e240"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "b0d7d67a9e024647fc9e18ab1ae52145f68cb4b9dba1cffcd2f1f78776c18961"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "91c29adc84d14562b1ff5bdf61d897ae81870195f0ffd44e8358cfc31247f415"
-    sha256 cellar: :any,                 arm64_linux:       "de1315740879474e3c47822f4ee6e6b93b6c99404ca0de29753bbabd3168c6e3"
-    sha256 cellar: :any,                 x86_64_linux:      "372df20008e814575f2709bffb9c6f1f85515d8116534d1e53fc6ea4fd97cc40"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "82349a58995e7dd8d7d8ec859c178bd36fd3753f34badf754d07014aaec76444"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "62b008cd00ea62b5c92be67d9762939d874da55ec2df199de47908c11972ac4b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "ed386a7fb37d78488caaf2f84eeed71b55026d884bdbd9caaf04c875bd60f6b7"
+    sha256 cellar: :any,                 arm64_linux:       "1203a108a555dd6c0cb3063847680a0fee3acbd64f42b51642daa8b2c64402f4"
+    sha256 cellar: :any,                 x86_64_linux:      "bc416369334e2281acfe5bcf363015d8bc78e6f1475f6385528bfa6c164e1296"
   end
 
   depends_on "cmake" => :build # for pycares
@@ -98,8 +99,8 @@ class Maigret < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/e5/3f/143b048436775b0f76ac3eec145c019e8173ccc2885c8f20319b996d5e83/charset_normalizer-3.5.1.tar.gz"
-    sha256 "6117b84ea48435e5356dc737f5121485c30920ba43375fa7b434fd753df0eac3"
+    url "https://files.pythonhosted.org/packages/33/1c/f41d4e74c28ab327ff3acd36053f7ea506c55872d7a90b0fa71aa3ab0c89/charset_normalizer-3.5.2.tar.gz"
+    sha256 "39de2a259fc954455c57274dc94c79d5842774e1247a016aff30bc0efed0f4ef"
   end
 
   resource "click" do
@@ -189,8 +190,8 @@ class Maigret < Formula
   end
 
   resource "jsonpickle" do
-    url "https://files.pythonhosted.org/packages/8d/c0/dde9b4b42cc415b9579573f967f12efbb034e427a2a37e93ad5139891d87/jsonpickle-4.1.2.tar.gz"
-    sha256 "8afed18aa189fd81e2e833b426bb4af485594921f0b1d36c2001fc5637a2f210"
+    url "https://files.pythonhosted.org/packages/d7/65/8b589546fe473fd262aebdfead994c7ba237caaa8fa4ca8855d0888933b7/jsonpickle-4.1.3.tar.gz"
+    sha256 "de234c1d1ed2c5313833e608e2a2467202f48ae24ea7a2afa2d238d8999aa4b5"
   end
 
   resource "lxml" do
@@ -199,8 +200,8 @@ class Maigret < Formula
   end
 
   resource "markupsafe" do
-    url "https://files.pythonhosted.org/packages/7e/99/7690b6d4034fffd95959cbe0c02de8deb3098cc577c67bb6a24fe5d7caa7/markupsafe-3.0.3.tar.gz"
-    sha256 "722695808f4b6457b320fdc131280796bdceb04ab50fe1795cd540799ebe1698"
+    url "https://files.pythonhosted.org/packages/38/9b/e422a865e1d5d57d0e509b4e0bf1c1a70a7f6382c29a5aa428df994c8bc8/markupsafe-3.0.4.tar.gz"
+    sha256 "2e9ad7dd851bf45fab9f75cbff4cb493fee9979e8d8c7c9c3ee119022518edd6"
   end
 
   resource "matplotlib-inline" do
@@ -209,8 +210,8 @@ class Maigret < Formula
   end
 
   resource "multidict" do
-    url "https://files.pythonhosted.org/packages/14/95/989c1b5ca17b72128661530cd6e351a0a83cda9a4d6c036e9ed976c18931/multidict-6.8.0.tar.gz"
-    sha256 "5cd4637ce76312ba1e05eb9c5193fec231f64fee0944e135fa1e951242355b37"
+    url "https://files.pythonhosted.org/packages/d6/99/1d4d69c3512d0ddbfa3a1b69cfd9a151012ab2eb4eabbb096201b1f0b7d8/multidict-6.9.1.tar.gz"
+    sha256 "0f06e60fa190aa7abd0914c2a766736fdc8e9f34878c4346338534b73d1b20e2"
   end
 
   resource "networkx" do
@@ -229,8 +230,8 @@ class Maigret < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/89/24/92d90bebedf197eb15b144367ce6fd4ad2de571927cd09dde190a36db8fc/platformdirs-4.11.10.tar.gz"
-    sha256 "9cd351c078ccf7dda1fdc5f8ccb9d8f5258984c63990e6df3627dde0b70b51d0"
+    url "https://files.pythonhosted.org/packages/42/23/4a86fc741c38c5b69792a4ef954b281afa69bea9f083f881de1b0d23bc07/platformdirs-4.12.3.tar.gz"
+    sha256 "427fc0bb321ae0c5b037fa03238ca74820437be162e78b4848c4d4055b9b766c"
   end
 
   resource "prompt-toolkit" do
@@ -319,8 +320,8 @@ class Maigret < Formula
   end
 
   resource "soupsieve" do
-    url "https://files.pythonhosted.org/packages/69/99/a6ca3beb3ccacb41fb3321d8a60e5566f9e6467601ef8eba6a17e1b89778/soupsieve-2.9.2.tar.gz"
-    sha256 "4a55d8cf158a9c2e587fa4922f1bbb91d68ac829e2d6f25403a85747c71daf74"
+    url "https://files.pythonhosted.org/packages/71/c3/1b817965ac12dc002d7c9cd7dfffdd7d4fbf9b45763ef2ffe7b86ee94670/soupsieve-2.10.tar.gz"
+    sha256 "49e9380d7d2905463583bafe285e818c7366a9ed7b3aee221c1ac79c905d8bc0"
   end
 
   resource "stack-data" do
@@ -344,8 +345,8 @@ class Maigret < Formula
   end
 
   resource "wcwidth" do
-    url "https://files.pythonhosted.org/packages/3d/7a/f98d4ada7c499565ab0c0fcef28a4e54fafa72b8228a6309803c80493c92/wcwidth-0.8.4.tar.gz"
-    sha256 "2dae09efa25253ae2874188e86d6861af3b1652aef4118cdf3f0bda288a957fb"
+    url "https://files.pythonhosted.org/packages/f0/b4/7830542634bb2d3e62aa3b586a72d5b3b6c91c3168929e7000ef3fed041d/wcwidth-0.9.2.tar.gz"
+    sha256 "ae0ef90b90f6af38b54f1fe6d58662ec33b3cb4b8391958a62416d654231727b"
   end
 
   resource "webencodings" do
@@ -354,8 +355,8 @@ class Maigret < Formula
   end
 
   resource "werkzeug" do
-    url "https://files.pythonhosted.org/packages/dd/b2/381be8cfdee792dd117872481b6e378f85c957dd7c5bca38897b08f765fd/werkzeug-3.1.8.tar.gz"
-    sha256 "9bad61a4268dac112f1c5cd4630a56ede601b6ed420300677a869083d70a4c44"
+    url "https://files.pythonhosted.org/packages/a4/34/4dd12fc8bb7d61c91467ec3efe415ffa7d5456f799954b40c5bbaeae470e/werkzeug-3.1.9.tar.gz"
+    sha256 "55ca7c70a75689be937aa27f8ff4b018f06ff4838fc73045560bf0f5a1291060"
   end
 
   resource "xmind" do

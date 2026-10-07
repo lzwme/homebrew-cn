@@ -47,6 +47,8 @@ class SpatialiteGui < Formula
     depends_on "zlib-ng-compat"
   end
 
+  deny_network_access!
+
   def install
     # Link flags for sqlite don't seem to get passed to make, which
     # causes builds to fatally error out on linking.
@@ -63,5 +65,18 @@ class SpatialiteGui < Formula
 
     system "./configure", *args, *std_configure_args
     system "make", "install"
+  end
+
+  test do
+    # spatialite_gui has no headless mode; initialising wxWidgets needs WindowServer
+    # access on macOS, which the test sandbox denies.
+    assert_path_exists bin/"spatialite_gui"
+    return if OS.mac?
+
+    # Without a display, wxGTK fails to initialise after all shared libraries are loaded
+    ENV.delete "DISPLAY"
+    ENV.delete "WAYLAND_DISPLAY"
+    output = shell_output("#{bin}/spatialite_gui 2>&1", 255)
+    assert_match "Unable to initialize GTK+, is DISPLAY set properly?", output
   end
 end

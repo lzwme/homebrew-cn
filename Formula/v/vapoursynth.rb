@@ -3,18 +3,18 @@ class Vapoursynth < Formula
 
   desc "Video processing framework with simplicity in mind"
   homepage "https://www.vapoursynth.com"
-  url "https://files.pythonhosted.org/packages/66/22/4e7bb7682495b03470b2f594cbe30b13fb81d7b3378edf359042c9f1f6bf/vapoursynth-80.tar.gz"
-  sha256 "4d03e3ef64df65a855490e6fd77ccc74d5debf89799aea93a6bd08f6a90afeb0"
+  url "https://files.pythonhosted.org/packages/69/6a/f9441173c91a3355a32b870522726ed2252cd3c7b04b45e499f30b1a2c98/vapoursynth-81.tar.gz"
+  sha256 "3bf6c90ad737e8ffc5605b05a1ff29cd884f8632fbe0eb49a2705942073a96be"
   license "LGPL-2.1-or-later"
   compatibility_version 2
   head "https://github.com/vapoursynth/vapoursynth.git", branch: "master"
 
   bottle do
-    sha256               arm64_golden_gate: "f72abae3e621067617b021b597787916e3511e0f8e3b6ba7f70632e76c8e58cc"
-    sha256               arm64_tahoe:       "7c1ebe0fdcd313876c49a4228f8b8dd201915debdffe928030587c9a245891ce"
-    sha256               arm64_sequoia:     "81c0ce98eb728d987019413997b1288ddf25d2413a23a9993a602045fde0b7e7"
-    sha256 cellar: :any, arm64_linux:       "9acc9542ff2f4058e3c5ebfe014094f14c9365c615d08192d8313369148057d2"
-    sha256 cellar: :any, x86_64_linux:      "4b01172ff71302d10b11316520c77d606bc49f0e16e1def6c3c7704533c95912"
+    sha256               arm64_golden_gate: "2a318d41bb6963f8546e0f4eb2d768476da92880c6d7caff4a53e331e8d20f77"
+    sha256               arm64_tahoe:       "48bf3ab7222cef90544cf75e586dbf514071a29941376e715371ba4fb9b69b5a"
+    sha256               arm64_sequoia:     "b63ff69b522fe1170be61e7d9273973cd5bf997c5622581151d0961ee1654f66"
+    sha256 cellar: :any, arm64_linux:       "4457331ad62a04e831e354eced5b3798d0c3ecf759e1e04206c5df2814313ed6"
+    sha256 cellar: :any, x86_64_linux:      "c722ac103ae236c34d1263ff66e0ad4fb84f413f3a0f86754078bc53e815c317"
   end
 
   depends_on "ninja" => :build
@@ -37,8 +37,13 @@ class Vapoursynth < Formula
 
   # Upstream pins the shader compiler to keep the accepted GLSL dialect stable.
   resource "glslang" do
-    url "https://ghfast.top/https://github.com/KhronosGroup/glslang/archive/refs/tags/vulkan-sdk-1.4.357.0.tar.gz"
-    sha256 "81038794e20494556edbcc0fc70fa984d71d1b440f9c49adf2cbaaa60a519757"
+    url "https://ghfast.top/https://github.com/KhronosGroup/glslang/archive/refs/tags/vulkan-sdk-1.4.363.0.tar.gz"
+    sha256 "cda24ec765e6d2845d106b7caa593f34127195a88524cf87821ff0088fb6edec"
+
+    livecheck do
+      url :url
+      regex(/^vulkan-sdk-(\d+(?:\.\d+)+)$/i)
+    end
   end
 
   def install

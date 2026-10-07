@@ -45,6 +45,7 @@ class Gitg < Formula
   depends_on "libhandy"
   depends_on "libpeas@1"
   depends_on "libsecret"
+  depends_on "openssl@3"
   depends_on "pango"
 
   uses_from_macos "libxml2"
@@ -83,6 +84,8 @@ class Gitg < Formula
   end
 
   test do
+    ENV.prepend_path "PKG_CONFIG_PATH", formula_opt_lib("openssl@3")/"pkgconfig"
+
     # Disable this part of test on Linux because display is not available.
     assert_match version.to_s, shell_output("#{bin}/gitg --version") if OS.mac?
 

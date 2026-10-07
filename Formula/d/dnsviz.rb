@@ -21,7 +21,6 @@ class Dnsviz < Formula
   depends_on "json-c" => :test
   depends_on "cryptography" => :no_linkage
   depends_on "graphviz"
-  depends_on "openssl@3"
   depends_on "python@3.14"
 
   pypi_packages extra_packages: ["dnspython", "pygraphviz", "setuptools"]

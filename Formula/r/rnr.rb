@@ -28,7 +28,7 @@ class Rnr < Formula
     system "cargo", "install", *std_cargo_args
 
     deploy_dir = Dir["target/release/build/rnr-*/out"].first
-    zsh_completion.install "#{deploy_dir}/_rnr" => "_rnr"
+    zsh_completion.install "#{deploy_dir}/_rnr"
     bash_completion.install "#{deploy_dir}/rnr.bash" => "rnr"
     fish_completion.install "#{deploy_dir}/rnr.fish"
   end

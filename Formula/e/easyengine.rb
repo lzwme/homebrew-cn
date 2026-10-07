@@ -23,6 +23,8 @@ class Easyengine < Formula
     end
   end
 
+  deny_network_access!
+
   def install
     bin.install "easyengine.phar" => "ee"
   end

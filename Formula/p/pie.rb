@@ -17,6 +17,8 @@ class Pie < Formula
   depends_on "re2c" => :test
   depends_on "php"
 
+  allow_network_access! :test
+
   def install
     bin.install "pie.phar" => "pie"
     generate_completions_from_executable("php", bin/"pie", "completion")

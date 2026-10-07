@@ -35,6 +35,8 @@ class AwsSdkCpp < Formula
     depends_on "zlib-ng-compat"
   end
 
+  deny_network_access!
+
   def install
     # Avoid OOM failure on Github runner
     ENV.deparallelize if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"].present?

@@ -2,10 +2,9 @@ class Ollama < Formula
   desc "Create, run, and share large language models (LLMs)"
   homepage "https://ollama.com/"
   url "https://github.com/ollama/ollama.git",
-      tag:      "v0.35.1",
-      revision: "b0c1ca4f7549d7acdfa52a7dcffc934bc63a43ce"
+      tag:      "v0.40.0",
+      revision: "0d0720e51fb2fd9aa58781c3d720c06d720c2e7b"
   license "MIT"
-  revision 1
   head "https://github.com/ollama/ollama.git", branch: "main"
 
   # Upstream creates releases that use a stable tag (e.g., `v1.2.3`) but are
@@ -17,11 +16,11 @@ class Ollama < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "5dce9182bb7a472e0ef69b93d9d6b6c2ede372b9526c4f5bc1fadeed45e99b86"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "55b277688f55facaa45e5831de1982faf4c39a55fb4743586add21c3d8912331"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "d0eb232a4c437d9f6a36064fd622e912022e50a5ee6276a1327d995d7b41f54b"
-    sha256 cellar: :any,                 arm64_linux:       "02316ef8d5a5c9972662bd19bede5b35fda31d020f62c07563dd828fed4d9ded"
-    sha256 cellar: :any,                 x86_64_linux:      "cd9801c89d6d0d59d0f8e35b9be383caa10ed080d7d6c9e8a41bed1c6c26b535"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "8a549924ba96c0b8228085749c6af543c9c8552990d0f92c620778e086e3c3e4"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "33f209e8f2557744ef4c386ea5409842963dc49b1219c034a83ecf872e16a6dc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "c1fd33fa42b17052d7d7b47fcedcad603966f9eae3dbeccfb19c40bbf0a15d40"
+    sha256 cellar: :any,                 arm64_linux:       "fb0f2a407e1bbc91f7b4f7b61347c30b26550ea29a6ce384129b5d0be8fdad6d"
+    sha256 cellar: :any,                 x86_64_linux:      "87ecabf044507001bc650e260e103109f8911ff64de93a6122fc15e0e054123e"
   end
 
   depends_on "ccache" => :build
@@ -45,8 +44,8 @@ class Ollama < Formula
   # Pinned dependency required by llama-server
   resource "llama.cpp" do
     url "https://github.com/ggml-org/llama.cpp.git",
-        tag:      "b11232",
-        revision: "6f767fe960c3b97cf37fac4626c86400561ca1e4"
+        tag:      "b11351",
+        revision: "631109b34da437a3c4a5ebd75091d677671392e3"
 
     livecheck do
       url "https://ghfast.top/https://raw.githubusercontent.com/ollama/ollama/refs/tags/v#{LATEST_VERSION}/LLAMA_CPP_VERSION"

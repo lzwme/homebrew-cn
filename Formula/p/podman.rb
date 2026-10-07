@@ -138,7 +138,7 @@ class Podman < Formula
       bin.install_symlink bin/"podman-remote" => "podman"
 
       system "gmake", "podman-mac-helper"
-      bin.install "bin/darwin/podman-mac-helper" => "podman-mac-helper"
+      bin.install "bin/darwin/podman-mac-helper"
 
       resource("gvproxy").stage do
         system "gmake", "gvproxy"

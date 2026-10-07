@@ -75,11 +75,11 @@ class OpensslAT4 < Formula
 
   def caveats
     <<~EOS
-      To add additional certificates, place .pem files in
+      To add additional certificates, place .pem, .crt, .cer, or .crl files in
         #{pkgetc}/certs
 
       and run
-        #{opt_bin}/c_rehash
+        #{bin}/openssl rehash #{pkgetc}/certs
     EOS
   end
 

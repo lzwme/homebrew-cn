@@ -65,7 +65,7 @@ class Simutrans < Formula
     system "cmake", "--build", "build", "--target", "nettool"
 
     simutrans_path = OS.mac? ? "simutrans/simutrans.app/Contents/MacOS" : "simutrans"
-    libexec.install "build/#{simutrans_path}/simutrans" => "simutrans"
+    libexec.install "build/#{simutrans_path}/simutrans"
     libexec.install Dir["simutrans/*"]
     bin.write_exec_script libexec/"simutrans"
     bin.install "build/src/makeobj/makeobj"

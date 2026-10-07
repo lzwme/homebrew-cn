@@ -36,6 +36,14 @@ class Davix < Formula
     depends_on "util-linux"
   end
 
+  # Apply open PR from Fedora to support OpenSSL 4
+  patch do
+    url "https://github.com/cern-fts/davix/commit/5223f92a8472489acb427552317b160facccec2b.patch?full_index=1"
+    sha256 "77a143f47564cb2f8020d4bffe2754593e160512a52b6240f76ce5acb981a956"
+    type :unofficial
+    resolves "https://github.com/cern-fts/davix/pull/151"
+  end
+
   allow_network_access! :test
 
   def install

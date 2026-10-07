@@ -6,14 +6,15 @@ class SmbclientNg < Formula
   url "https://ghfast.top/https://github.com/p0dalirius/smbclient-ng/archive/refs/tags/3.1.0.tar.gz"
   sha256 "aad2a2b185ce3cbbc9d771dfea4144cc745d552dbd53c420d5719fff816d947c"
   license "GPL-3.0-or-later"
+  revision 1
   head "https://github.com/p0dalirius/smbclient-ng.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "41650b55ce11dda3939dabb7c8a50a862c408cd5a04f8b574bb15f30fd7161a4"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "3cb4a752600d7a5c968f901ebc09117bcdcf453a4605963c26a51c1247ade13e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "69fe232e491112da79f9b744fc26616d99f48b6f905bdf655d55e28cc829f8fc"
-    sha256 cellar: :any,                 arm64_linux:       "6bd4a05fb1094e1e54de46e0fd0215bef456a7f01323fead40240d8deb3251cc"
-    sha256 cellar: :any,                 x86_64_linux:      "aea1f1eb2014db31c8a2022107936006a5852c403b9b41252bd7c2deba9f6d09"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "bf27301c47761b6d8c7b39079ccf5de0a339670cbe39972b5388a50e8208093a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "c77b40df8ca784c630a45d502a67fe20e64529ac0ca364f7e68086f606bf53ac"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "eaa41914a681e1ea5a2d156efd755aef3bb7130ed8b39d83df8860fb851e5902"
+    sha256 cellar: :any,                 arm64_linux:       "66416a2b01e46f4465a10f1280f0ab10502df8c15126ec0d82543fd0e00e1e32"
+    sha256 cellar: :any,                 x86_64_linux:      "cfe728a0517f39d8dc64c559fbaa80fbd09f0307619ebcaddaff940398f964a6"
   end
 
   depends_on "samba" => :test
@@ -30,8 +31,8 @@ class SmbclientNg < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/e5/3f/143b048436775b0f76ac3eec145c019e8173ccc2885c8f20319b996d5e83/charset_normalizer-3.5.1.tar.gz"
-    sha256 "6117b84ea48435e5356dc737f5121485c30920ba43375fa7b434fd753df0eac3"
+    url "https://files.pythonhosted.org/packages/33/1c/f41d4e74c28ab327ff3acd36053f7ea506c55872d7a90b0fa71aa3ab0c89/charset_normalizer-3.5.2.tar.gz"
+    sha256 "39de2a259fc954455c57274dc94c79d5842774e1247a016aff30bc0efed0f4ef"
   end
 
   resource "click" do
@@ -80,8 +81,8 @@ class SmbclientNg < Formula
   end
 
   resource "markupsafe" do
-    url "https://files.pythonhosted.org/packages/7e/99/7690b6d4034fffd95959cbe0c02de8deb3098cc577c67bb6a24fe5d7caa7/markupsafe-3.0.3.tar.gz"
-    sha256 "722695808f4b6457b320fdc131280796bdceb04ab50fe1795cd540799ebe1698"
+    url "https://files.pythonhosted.org/packages/38/9b/e422a865e1d5d57d0e509b4e0bf1c1a70a7f6382c29a5aa428df994c8bc8/markupsafe-3.0.4.tar.gz"
+    sha256 "2e9ad7dd851bf45fab9f75cbff4cb493fee9979e8d8c7c9c3ee119022518edd6"
   end
 
   resource "mdurl" do
@@ -105,8 +106,8 @@ class SmbclientNg < Formula
   end
 
   resource "pycryptodomex" do
-    url "https://files.pythonhosted.org/packages/c9/85/e24bf90972a30b0fcd16c73009add1d7d7cd9140c2498a68252028899e41/pycryptodomex-3.23.0.tar.gz"
-    sha256 "71909758f010c82bc99b0abf4ea12012c98962fbf0583c2164f8b84533c2e4da"
+    url "https://files.pythonhosted.org/packages/4c/25/214ea825a9031f5af2c8b2506ee16701a2560d4712165dd00098dd527bcb/pycryptodomex-3.24.0.tar.gz"
+    sha256 "0428f19f13452c6b89bbaf2c530f84f369873811dfa77f0cee0da4f40fb0474f"
   end
 
   resource "pygments" do
@@ -130,8 +131,8 @@ class SmbclientNg < Formula
   end
 
   resource "werkzeug" do
-    url "https://files.pythonhosted.org/packages/dd/b2/381be8cfdee792dd117872481b6e378f85c957dd7c5bca38897b08f765fd/werkzeug-3.1.8.tar.gz"
-    sha256 "9bad61a4268dac112f1c5cd4630a56ede601b6ed420300677a869083d70a4c44"
+    url "https://files.pythonhosted.org/packages/a4/34/4dd12fc8bb7d61c91467ec3efe415ffa7d5456f799954b40c5bbaeae470e/werkzeug-3.1.9.tar.gz"
+    sha256 "55ca7c70a75689be937aa27f8ff4b018f06ff4838fc73045560bf0f5a1291060"
   end
 
   def install

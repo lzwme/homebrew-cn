@@ -108,14 +108,14 @@ class Rust < Formula
   # These used to belong in `rustfmt`.
   link_overwrite "bin/cargo-fmt", "bin/git-rustfmt", "bin/rustfmt", "bin/rustfmt-*"
 
-  def llvm
-    deps.map(&:to_formula).find { |f| f.name.match?(/^llvm(@\d+)?$/) }
-  end
+  def llvm = deps.map(&:name).find { |dep| dep.match?(/^llvm(@\d+)?$/) }
+
+  def openssl = deps.map(&:name).find { |dep| dep.start_with?("openssl@") }
 
   def install
     # Ensure that the `openssl` crate picks up the intended library.
     # https://docs.rs/openssl/latest/openssl/#manual
-    ENV["OPENSSL_DIR"] = formula_opt_prefix("openssl@3")
+    ENV["OPENSSL_DIR"] = formula_opt_prefix(openssl)
 
     ENV["LIBGIT2_NO_VENDOR"] = "1"
     ENV["LIBSQLITE3_SYS_USE_PKG_CONFIG"] = "1"
@@ -164,23 +164,17 @@ class Rust < Formula
       --prefix=#{prefix}
       --sysconfdir=#{etc}
       --tools=#{tools.join(",")}
-      --llvm-root=#{llvm.opt_prefix}
+      --llvm-root=#{formula_opt_prefix(llvm)}
       --enable-llvm-link-shared
       --enable-profiler
       --enable-vendor
       --disable-cargo-native-static
       --disable-docs
       --disable-lld
+      --release-channel=#{build.head? ? "nightly" : "stable"}
       --release-description=#{tap.user}
+      --set=build.allocator=jemalloc
     ]
-    if build.head?
-      args << "--disable-rpath"
-      args << "--release-channel=nightly"
-      args << "--set=build.allocator=jemalloc"
-    else
-      args << "--release-channel=stable"
-      args << "--set=rust.jemalloc" # TODO: use `--set=build.allocator=jemalloc` in 1.99.0 as old arg is deprecated
-    end
     # Restrict slower optimizations to bottling
     # https://github.com/rust-lang/rust/blob/main/src/doc/rustc-dev-guide/src/building/optimized-build.md
     if build.bottle?
@@ -207,7 +201,7 @@ class Rust < Formula
     # Replace the renamed llvm-objcopy with a symlink to make sure it can find libLLVM
     arch = Hardware::CPU.arm? ? :aarch64 : Hardware::CPU.arch
     rust_objcopy = lib/"rustlib/#{arch}-apple-darwin/bin/rust-objcopy"
-    llvm_objcopy = llvm.opt_bin/"llvm-objcopy"
+    llvm_objcopy = formula_opt_bin(llvm)/"llvm-objcopy"
     rm(rust_objcopy)
     ln_sf llvm_objcopy.relative_path_from(rust_objcopy.dirname), rust_objcopy
   end
@@ -248,11 +242,11 @@ class Rust < Formula
       bin/"cargo" => [
         formula_opt_lib("libgit2")/shared_library("libgit2"),
         formula_opt_lib("libssh2")/shared_library("libssh2"),
-        formula_opt_lib("openssl@3")/shared_library("libssl"),
+        formula_opt_lib(openssl)/shared_library("libssl"),
       ],
     }
     expected_linkage[bin/"cargo"] << if OS.mac?
-      formula_opt_lib("openssl@3")/shared_library("libcrypto")
+      formula_opt_lib(openssl)/shared_library("libcrypto")
     else
       formula_opt_lib("curl")/shared_library("libcurl")
     end

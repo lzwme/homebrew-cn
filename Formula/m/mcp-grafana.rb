@@ -1,17 +1,17 @@
 class McpGrafana < Formula
   desc "MCP server for Grafana"
   homepage "https://github.com/grafana/mcp-grafana"
-  url "https://ghfast.top/https://github.com/grafana/mcp-grafana/archive/refs/tags/v2.0.0.tar.gz"
-  sha256 "89a24ba3d67b784a22bbb2a5e529dc7e0afdff50c5c6005dd04df5c00b050baa"
+  url "https://ghfast.top/https://github.com/grafana/mcp-grafana/archive/refs/tags/v2.0.1.tar.gz"
+  sha256 "17d8b5aba2619193babd2a32e1f4cc37e14cb467b2b2381b655868714ffb703b"
   license "Apache-2.0"
   head "https://github.com/grafana/mcp-grafana.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "49c486dd66b383fe0f8cc15f3a26baa3251513224baa49e87bee32b9fe34ca5e"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "8c4b6289ef64e18440710c402c1bfade96eddaede2e57ec84df587428c9abd44"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "8c28df4fa6969d77b221025f9d73386d870e30e7a5113fa33198d858a3610fc2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "ee6c020359cb4ca2b6339b802fce4529de2e0a337f478f1250b973150f3bb072"
-    sha256 cellar: :any,                 x86_64_linux:      "adc9986bd844ae578edb2ef112fcb4c01bc20e5ce8ed6cabdef8080228cfcf35"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "e6d02d19db1f7514866482ff14f131efaa1ee2ff9626cd0894380e335cea5cfa"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "91275f20210024f103339033c1a822ecb3613a8c498d0b4242412909d4f62e70"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "3d435a5c8b5a7b4ddfeed28945431204534d342854041faff4589e3d86e44a74"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "27cb6b7cdf84dcf11a1a23f9488ed3c1f2c2e8233193c102f97abbe2e066536a"
+    sha256 cellar: :any,                 x86_64_linux:      "6279fddd6bbfd97719efb2dd51a270023e60179bb2164ca3122ae603e7d5eb26"
   end
 
   depends_on "go" => :build

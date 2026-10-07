@@ -3,17 +3,17 @@ class Borgmatic < Formula
 
   desc "Simple wrapper script for the Borg backup software"
   homepage "https://torsion.org/borgmatic/"
-  url "https://files.pythonhosted.org/packages/26/b8/2d6cae8bc1bddbf20eb9b4e04c4cfce71b5091e674aa654841d2ca273dc9/borgmatic-2.1.9.tar.gz"
-  sha256 "fbf3f7eace4938dddcf132cc33a634ba090136e5ead91c63899d18ab3ee53c48"
+  url "https://files.pythonhosted.org/packages/db/77/c163debaf74354863ebcc64a1fadaf4ec930e17a6db8ceb6473339fa217b/borgmatic-2.1.10.tar.gz"
+  sha256 "cb98f1d893d5586fed43ece8bf6c75477b6892c536e7a5a2eaad189fe00d1541"
   license "GPL-3.0-or-later"
   head "https://projects.torsion.org/borgmatic-collective/borgmatic.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "43ec665d54c96f800f103f73ab80ca6fde7d1c8a065a36e16d6537c29ad9400c"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "a9ed8eea9b96ceebb6362f22b37a63868dd8ff4fac88663bf56afdb5751dc010"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "ff9950fe61cfe509f4383f27dfff3e19104baa0673f37bc5e86a5004be769235"
-    sha256 cellar: :any,                 arm64_linux:       "b0b5b39401bc90bba8f0160c2af5682a995bd6fd46ee95a7c78780045113f632"
-    sha256 cellar: :any,                 x86_64_linux:      "3abba5862fd191fca877bec5433c32b3afc81040456e26a4eb4b137bc676f487"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "a6d6ad54de2239508b61f7b14d35a5c02ed0c4dd7e41c745188ece9c525fc42c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "2a4b48ce7d36788a28d6ac0b08c807f81459d2f72d3934c6624a773e8a26b258"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "10667e573f0fd3af056f0c92d4c2b212b15cd3a91af68310ab55aca98f666126"
+    sha256 cellar: :any,                 arm64_linux:       "0b99651345fb429fcc7054a5423da9c04d7c256fddfb9af4fc8fbbac97ba0acd"
+    sha256 cellar: :any,                 x86_64_linux:      "ebe3b05e0714e118ac714cbc9d8bf5eeb0d66b80852a944244fa3194c4eded70"
   end
 
   depends_on "certifi" => :no_linkage
@@ -28,8 +28,8 @@ class Borgmatic < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/e5/3f/143b048436775b0f76ac3eec145c019e8173ccc2885c8f20319b996d5e83/charset_normalizer-3.5.1.tar.gz"
-    sha256 "6117b84ea48435e5356dc737f5121485c30920ba43375fa7b434fd753df0eac3"
+    url "https://files.pythonhosted.org/packages/33/1c/f41d4e74c28ab327ff3acd36053f7ea506c55872d7a90b0fa71aa3ab0c89/charset_normalizer-3.5.2.tar.gz"
+    sha256 "39de2a259fc954455c57274dc94c79d5842774e1247a016aff30bc0efed0f4ef"
   end
 
   resource "idna" do

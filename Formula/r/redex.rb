@@ -4,20 +4,17 @@ class Redex < Formula
 
   desc "Bytecode optimizer for Android apps"
   homepage "https://fbredex.com/"
-  url "https://ghfast.top/https://github.com/facebook/redex/archive/refs/tags/v2026.04.30.tar.gz"
-  sha256 "60c638403ce608b7d96d76592f4e2bfcb5e541b2eee33f97d06f771f2c147880"
+  url "https://ghfast.top/https://github.com/facebook/redex/archive/refs/tags/v2026.09.09.tar.gz"
+  sha256 "9bea5953cd1e06f6c32ec913c79c11893624caf621a62f3b4d065a6c77e0988e"
   license "MIT"
-  revision 1
   head "https://github.com/facebook/redex.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "1637e7c641492afb10f89d0ab47df964df897ab6026e1af0d6329d4a15d75d87"
-    sha256 cellar: :any, arm64_tahoe:       "bedc7d74c8c6aae4dfde67293b461ddfb8cf0391466a0bca535377adb7546ab4"
-    sha256 cellar: :any, arm64_sequoia:     "8b7979ae9df58e485b86d4de4bdade6e851b7748a256c11ded8bd22f50580357"
-    sha256 cellar: :any, arm64_sonoma:      "80f2572ec3edecb40908bc0de68f18625ec71ac6c21cba6143617e92ef5bd164"
-    sha256 cellar: :any, sonoma:            "3392e2b95d7d3cf00d250e2875fa877f9844d289283470d0591b9a7434438ffd"
-    sha256 cellar: :any, arm64_linux:       "a96632b9d002482b4b69a16a045cac8d05b46c0297d9362e447a7bc6d42c3fc7"
-    sha256 cellar: :any, x86_64_linux:      "f0421685457e0b1657c294396973da261c0e3be40059a5a23c07ebb37ab907f8"
+    sha256 cellar: :any, arm64_golden_gate: "2847301dca16238cc2b0414548295766ad0d7041d31fc27236016381dfd38174"
+    sha256 cellar: :any, arm64_tahoe:       "8aaf4a41ecda48637656989e2219387e1d1dba351f1e0eab1229c7b5815f4d15"
+    sha256 cellar: :any, arm64_sequoia:     "43eb4c24514da2e417a41de814f2a88ed7b16e2946808da0d833cf2c37278727"
+    sha256 cellar: :any, arm64_linux:       "593b532a7a70f4a6389313bfb26fee60faa118adb7ec3a8650e30405609fea42"
+    sha256 cellar: :any, x86_64_linux:      "0885108b93b8059907622ade3399ba9d3bef7c123ec096e1fbdc84b4e69e5da4"
   end
 
   depends_on "cmake" => :build
@@ -31,30 +28,17 @@ class Redex < Formula
     depends_on "zlib-ng-compat"
   end
 
-  resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/4d/5b/dc575711b6b8f2f866131a40d053e30e962e633b332acf7cd2c24843d83d/setuptools-69.2.0.tar.gz"
-    sha256 "0ff4183f8f42cd8fa3acea16c45205521a4ef28f73c6391d8a25e92893134f2e"
-  end
+  pypi_packages package_name:   "",
+                extra_packages: %w[setuptools packaging]
 
   resource "packaging" do
-    url "https://files.pythonhosted.org/packages/a1/d4/1fc4078c65507b51b96ca8f8c3ba19e6a61c8253c72794544580a7b6c24d/packaging-25.0.tar.gz"
-    sha256 "d443872c98d677bf60f6a1f2f8c1cb748e8fe762d2bf9d3148b5599295b0fc4f"
+    url "https://files.pythonhosted.org/packages/7d/fa/3944b40b07da9ce895c0e6303a5ab7d53da063554f534556b134a54d6093/packaging-26.3.tar.gz"
+    sha256 "94edc256424af38762eb31306eed28beb9f0efc50a8837492c9d6fd6004aed79"
   end
 
-  # Patch to allow redex.py to detect redex-binary
-  patch do
-    url "https://github.com/facebook/redex/commit/f1d9211256ac03d92a4176bea36fb97bee581f41.patch?full_index=1"
-    sha256 "d3ce5c0b758ae7f61c30ca7ebea115d782abe43af61672454874be9810201ce1"
-    type :unofficial
-    resolves "https://github.com/facebook/redex/pull/982"
-  end
-
-  # Backport macOS SDK .tbd zlib detection, missing from the v2026.04.30 release
-  patch do
-    url "https://github.com/facebook/redex/commit/a885d52ce6121ed96b78c511d1920116de10ff86.patch?full_index=1"
-    sha256 "ca1321b1fb500203110f5da701106eaab89f61ecbdc62182e94f8747b17cfc65"
-    type :backport
-    resolves "https://github.com/facebook/redex/pull/980"
+  resource "setuptools" do
+    url "https://files.pythonhosted.org/packages/6d/44/f5da03a8ef95d369145c5bb53050e7877c9f3d312e128605fd9504829143/setuptools-84.0.0.tar.gz"
+    sha256 "f4695c21257f0d9b537ec2692c941d02ee143b7cc1276941349a546573b2ef73"
   end
 
   def install

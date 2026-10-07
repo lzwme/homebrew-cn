@@ -1,11 +1,21 @@
 class FreeradiusServer < Formula
   desc "High-performance and highly configurable RADIUS server"
   homepage "https://freeradius.org/"
-  url "https://ghfast.top/https://github.com/FreeRADIUS/freeradius-server/releases/download/release_3_2_10/freeradius-server-3.2.10.tar.gz"
-  sha256 "40e0cdfdcceb22cf0acb79bc29cf7c32995466a61fda09445ce5220608a55afd"
   license all_of: ["GPL-2.0-or-later", "LGPL-2.1-or-later"]
   revision 1
   head "https://github.com/FreeRADIUS/freeradius-server.git", branch: "master"
+
+  stable do
+    url "https://ghfast.top/https://github.com/FreeRADIUS/freeradius-server/releases/download/release_3_2_10/freeradius-server-3.2.10.tar.gz"
+    sha256 "40e0cdfdcceb22cf0acb79bc29cf7c32995466a61fda09445ce5220608a55afd"
+
+    # Backport support for OpenSSL 4
+    patch do
+      url "https://github.com/FreeRADIUS/freeradius-server/commit/6658c9e375637ce0bd14bed733270d863224431e.patch?full_index=1"
+      sha256 "98a204233c5bed7fb1f73d9b8d6d3edcd36cbaad3268ac3f5653f2bcbd84cbc7"
+      type :backport
+    end
+  end
 
   livecheck do
     url :stable

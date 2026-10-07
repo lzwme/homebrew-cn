@@ -25,6 +25,8 @@ class AzureStorageCommonCpp < Formula
 
   uses_from_macos "libxml2"
 
+  deny_network_access!
+
   def install
     ENV["AZURE_SDK_DISABLE_AUTO_VCPKG"] = "1"
     system "cmake", "-S", "sdk/storage/azure-storage-common", "-B", "build", "-DBUILD_SHARED_LIBS=ON", *std_cmake_args

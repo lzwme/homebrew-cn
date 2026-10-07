@@ -34,13 +34,36 @@ class Lcs < Formula
 
   uses_from_macos "ncurses"
 
+  deny_network_access!
+
   def install
     # Workaround for newer Clang
     ENV.append_to_cflags "-Wno-c++11-narrowing" if DevelopmentTools.clang_build_version >= 1403
 
     system "./bootstrap"
     libs = OS.mac? ? "-liconv" : ""
-    system "./configure", "LIBS=#{libs}", "--prefix=#{prefix}"
+    system "./configure", "LIBS=#{libs}", *std_configure_args
     system "make", "install"
+  end
+
+  test do
+    require "pty"
+    require "expect"
+
+    PTY.spawn({ "TERM" => "xterm", "HOME" => testpath.to_s }, bin/"crimesquad") do |r, w, pid|
+      r.winsize = [25, 80]
+      refute_nil r.expect("Inspired by the 1983 version of Oubliette", 15), "Expected title screen"
+      refute_nil r.expect("Liberal Agenda!", 10), "Expected title screen prompt"
+      w.write "\e"
+      r.read
+    rescue Errno::EIO
+      # GNU/Linux raises EIO when read is done on closed pty
+    ensure
+      r.close
+      w.close
+      Process.wait(pid)
+    end
+
+    assert_predicate testpath/".lcs", :directory?
   end
 end

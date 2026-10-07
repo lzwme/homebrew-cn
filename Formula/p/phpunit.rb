@@ -17,6 +17,8 @@ class Phpunit < Formula
 
   depends_on "php" => :test
 
+  deny_network_access!
+
   def install
     bin.install "phpunit-#{version}.phar" => "phpunit"
   end

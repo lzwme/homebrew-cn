@@ -6,6 +6,7 @@ class Uhd < Formula
   url "https://ghfast.top/https://github.com/EttusResearch/uhd/archive/refs/tags/v4.11.0.0.tar.gz"
   sha256 "1e53faec13ea2be9dd8f765956157d1434f41fa0a124fac8f7b2340f8445b026"
   license all_of: ["GPL-3.0-or-later", "LGPL-3.0-or-later", "MIT", "BSD-3-Clause", "Apache-2.0"]
+  revision 1
   compatibility_version 1
   head "https://github.com/EttusResearch/uhd.git", branch: "master"
 
@@ -15,11 +16,11 @@ class Uhd < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "8e97b65c35c514e84b3962a8e2047897f347221da665f3d32578a9f5eb10762c"
-    sha256 arm64_tahoe:       "24d0cbfdbf2e439c93d052f0e28b2ad79794828a244b3476e4a6a0188cd97c80"
-    sha256 arm64_sequoia:     "6a590e3c359eb967d2606a0ed474bcf13595ef8ea473c83a8c849c1978a0bd6f"
-    sha256 arm64_linux:       "4a246347940199a3a4d0d4d21bb03463259bbf4f292312f9c49ade4b68fa6ad8"
-    sha256 x86_64_linux:      "33402626089b2322c4db0b81ba050d95099185f90f84dc952925c315192c26cf"
+    sha256 arm64_golden_gate: "4a4cfbb7d59cde3f5c7a7cff394cfb5d5bba81a42c1e93056e8dcb11344c39f5"
+    sha256 arm64_tahoe:       "fe1050fdb6947910b3b350cecd98544d03788d1c3ac3bbb5d1c360ca73ebb8b8"
+    sha256 arm64_sequoia:     "45155b2e0b2429ef784d88687a0be1b37d8927839ee9e8462dcf502395111b22"
+    sha256 arm64_linux:       "7571d4546d1e6da04c63864b735e9d5c92ba984099263677e4a351d79576bedf"
+    sha256 x86_64_linux:      "569667910683780b269591b3575be974da3b552fbdbc8e154ee7489f91cf52b5"
   end
 
   depends_on "cmake" => :build
@@ -42,13 +43,13 @@ class Uhd < Formula
                 extra_packages: "mako"
 
   resource "mako" do
-    url "https://files.pythonhosted.org/packages/2a/12/b5fa2353e2754cd67fb9f83793fa48ff42c213a5da7e719869d2301f6ab8/mako-1.4.1.tar.gz"
-    sha256 "d7904710b662996425a21627710c4777c45053146942cf8a7aebf757c92b8c27"
+    url "https://files.pythonhosted.org/packages/5a/09/e07c4b5579a79f4b16f8d4f29f6c54514ac787c4ad506b8c4f28a0e6b0bf/mako-1.4.3.tar.gz"
+    sha256 "cd6537fe88d5fec315c55c2f8529bc4ce7a9a352ad7db3eeaa6a66e2dd4ec37a"
   end
 
   resource "markupsafe" do
-    url "https://files.pythonhosted.org/packages/7e/99/7690b6d4034fffd95959cbe0c02de8deb3098cc577c67bb6a24fe5d7caa7/markupsafe-3.0.3.tar.gz"
-    sha256 "722695808f4b6457b320fdc131280796bdceb04ab50fe1795cd540799ebe1698"
+    url "https://files.pythonhosted.org/packages/38/9b/e422a865e1d5d57d0e509b4e0bf1c1a70a7f6382c29a5aa428df994c8bc8/markupsafe-3.0.4.tar.gz"
+    sha256 "2e9ad7dd851bf45fab9f75cbff4cb493fee9979e8d8c7c9c3ee119022518edd6"
   end
 
   # Fix macOS library namespace, upstream PR ref, https://github.com/EttusResearch/uhd/pull/947

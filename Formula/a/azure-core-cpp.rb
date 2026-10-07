@@ -26,6 +26,8 @@ class AzureCoreCpp < Formula
 
   uses_from_macos "curl"
 
+  deny_network_access!
+
   def install
     ENV["AZURE_SDK_DISABLE_AUTO_VCPKG"] = "1"
     system "cmake", "-S", "sdk/core/azure-core", "-B", "build", "-DBUILD_SHARED_LIBS=ON", *std_cmake_args

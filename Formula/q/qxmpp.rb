@@ -1,18 +1,16 @@
 class Qxmpp < Formula
   desc "Cross-platform C++ XMPP client and server library"
   homepage "https://invent.kde.org/libraries/qxmpp"
-  url "https://invent.kde.org/libraries/qxmpp/-/archive/v1.16.3/qxmpp-v1.16.3.tar.bz2"
-  sha256 "8a9833b8e991736584f46b2f70a7c0252366f69846a263fbc2db723628385cad"
+  url "https://invent.kde.org/libraries/qxmpp/-/archive/v1.17.0/qxmpp-v1.17.0.tar.bz2"
+  sha256 "1c480d17489e0f83a976b670bb8a36b81e902152c9d5dcfe08b98e3d75f669e7"
   license "LGPL-2.1-or-later"
-  revision 1
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "de355b907194c1a38ee2e87ac676f1b47d12d883b09f4f416fd155a48ee750d3"
-    sha256 cellar: :any, arm64_tahoe:       "2bf56db80726cde0f650024143022d1056b478db8dddc2b1c142070272e5cc75"
-    sha256 cellar: :any, arm64_sequoia:     "a8d4b84e843c0ba32b2e23b9c47abcb6e8f2548a6181cf77338a487b3a759262"
-    sha256 cellar: :any, arm64_sonoma:      "dd6e6e560d2f48412bfc7e2f69b006f821a40d367d4c03deb3594f374c610a39"
-    sha256 cellar: :any, arm64_linux:       "8e6debf0d0c5ed3bc3d990fa9c9d451c570ff70cbf7ace7ea692b6cae2e1f662"
-    sha256 cellar: :any, x86_64_linux:      "05a6379521d5b41d48bf596a5067f691a5ca041a9284ea4b47af2402a78cd99c"
+    sha256 cellar: :any, arm64_golden_gate: "094ee6d3d1a5618851256efe14a0a562a33a6fbd26527999f2202779095da085"
+    sha256 cellar: :any, arm64_tahoe:       "98b97368021997b724a035e1d885ef2c0c9f68a416bbd2d884999a22bb0e91c7"
+    sha256 cellar: :any, arm64_sequoia:     "b6508883459810aaa13fe43a9c05eed4d4a1076eb054a5cd365372890163158f"
+    sha256 cellar: :any, arm64_linux:       "318136f1803adbb5edcd72330e8899d83540924c74c56fa5363ced198b47125b"
+    sha256 cellar: :any, x86_64_linux:      "d0da451dbbb5676f140708acd832fef645fa754a46dba589890a5c0f38c5c9ed"
   end
 
   depends_on "cmake" => :build

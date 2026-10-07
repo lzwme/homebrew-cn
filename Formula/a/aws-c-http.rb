@@ -21,6 +21,8 @@ class AwsCHttp < Formula
   depends_on "aws-c-compression"
   depends_on "aws-c-io"
 
+  deny_network_access!
+
   def install
     args = ["-DBUILD_SHARED_LIBS=ON"]
     # Avoid linkage to OpenSSL

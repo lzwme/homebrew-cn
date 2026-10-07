@@ -1,30 +1,32 @@
 class Unrtf < Formula
   desc "RTF to other formats converter"
   homepage "https://www.gnu.org/software/unrtf/"
-  url "https://ftpmirror.gnu.org/unrtf/unrtf-0.21.10.tar.gz"
-  mirror "https://ftp.gnu.org/gnu/unrtf/unrtf-0.21.10.tar.gz"
-  sha256 "b49f20211fa69fff97d42d6e782a62d7e2da670b064951f14bbff968c93734ae"
+  url "https://ftpmirror.gnu.org/unrtf/unrtf-0.21.12.tar.gz"
+  mirror "https://ftp.gnu.org/gnu/unrtf/unrtf-0.21.12.tar.gz"
+  sha256 "59ad6062fb1d7ab4d89dd0316a3cee19f5e719525a5387b6da6b69b3178e2098"
   license "GPL-3.0-or-later"
   head "https://hg.savannah.gnu.org/hgweb/unrtf/", using: :hg
 
   bottle do
-    sha256 arm64_golden_gate: "8390fe6b2b493e748a1189002372648285b68b7e3295e7242bb8dc6572631306"
-    sha256 arm64_tahoe:       "47b072cc65135724c6ae7cad739a1dfac82adb69afdfe7692e1e035994b69da0"
-    sha256 arm64_sequoia:     "cea46b40e6483a6d9ca253f214b32830ad9fe133502aeee92b4ff06074da8566"
-    sha256 arm64_sonoma:      "b1dc04615894a229fd0ece73e4e96f5a86e6448dc422714d259bee15a9eec0e9"
-    sha256 arm64_ventura:     "fbc5a59efc2a686ed6968150a3101f3e5121194eb8d505672bcf457b924085a1"
-    sha256 arm64_monterey:    "90ccbe686fedc51d5c3ef8f7088577a625e0ad3c3199632fcdc12d6e4e379f52"
-    sha256 arm64_big_sur:     "7a091ab8d8e5a67f2821d1436300d6c41c9f15ead01a83ade9d38fc9cc2494b6"
-    sha256 sonoma:            "6ca9282faa32d4c1c91cd56cf2e6f885b4b87abea3c6d63df37b24405ff3127a"
-    sha256 ventura:           "9371bbf23b01669c95f9742f469f0762e83c7f86c29234d9975f81936f8cdcb0"
-    sha256 monterey:          "ca17c1fba58a187402fd76342528ce8da2c391d25622b425c2db15c8f0345d71"
-    sha256 big_sur:           "198691cb483c4ae73b4c676d289bee8040937afe2881e07afbfb7b9f1e99a760"
-    sha256 arm64_linux:       "97ef0301bf3d4b776f44f968d7e50c6926ee24a5667c405ded4d84eccd762ad1"
-    sha256 x86_64_linux:      "c3e2f45e057ebc00b8a825db67d9bd29396038f2beb692edcea2815c7b9d1284"
+    sha256 arm64_golden_gate: "77c444157ddf131eebb4bfd35c5461e6d5bac3a5994122da0b8b6b428bf69366"
+    sha256 arm64_tahoe:       "43a75c8efc3f6911db076d4212e3ba2d8ec35ee121adf9508d7013608c94a519"
+    sha256 arm64_sequoia:     "2a38ad9c10a0e5371a016928084c615e8147657a99db59deb5e1eea370ff9b9f"
+    sha256 arm64_linux:       "0eebbeaf9995c85137fd974612447c5503b6d0b146c9acb11ca23130aaccc2ea"
+    sha256 x86_64_linux:      "8b30679815c5580e6bd9419989426260ae52d6ce04c1a54998e143b1b3c06630"
   end
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
+
+  # Fix macOS build errors, MacPorts PR ref, https://github.com/macports/macports-ports/pull/34986
+  patch :p0 do
+    on_macos do
+      url "https://ghfast.top/https://raw.githubusercontent.com/macports/macports-ports/658984b1c0c8032c32a27969853d7e958e9ae6e9/textproc/unrtf/files/patch-src_execdir.c.diff"
+      sha256 "66a8f3509bdf69899c8a8a2b7dfae94a1916b3e8778e69443ab89548a4d3ab84"
+      type :unofficial
+      resolves "https://github.com/macports/macports-ports/pull/34986"
+    end
+  end
 
   def install
     # C23 treats the upstream's unprototyped function pointers as zero-argument functions

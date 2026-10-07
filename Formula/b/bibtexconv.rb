@@ -29,6 +29,8 @@ class Bibtexconv < Formula
     build 1600
   end
 
+  deny_network_access!
+
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args,
                     "-DCRYPTO_LIBRARY=#{formula_opt_lib("openssl@3")}/#{shared_library("libcrypto")}"

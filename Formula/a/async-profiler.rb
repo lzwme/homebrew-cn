@@ -19,6 +19,8 @@ class AsyncProfiler < Formula
   depends_on "cmake" => :build
   depends_on "openjdk" => [:build, :test]
 
+  deny_network_access!
+
   def install
     args = []
     args << "COMMIT_TAG=#{Utils.git_head}" if build.head?

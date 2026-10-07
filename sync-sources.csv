@@ -390,7 +390,6 @@ Homebrew-homebrew-core/Formula/a/avro-cpp.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/avro-tools.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/awk.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/aws-amplify.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/a/aws-auth.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/aws-c-auth.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/aws-c-cal.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/aws-c-common.rb, Homebrew/homebrew-core, 1
@@ -1517,6 +1516,7 @@ Homebrew-homebrew-core/Formula/d/ddd.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/ddgr.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/ddh.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/ddns-go.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/d/ddns-updater.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/ddrescue.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/deadfinder.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/deark.rb, Homebrew/homebrew-core, 0
@@ -2524,7 +2524,7 @@ Homebrew-homebrew-core/Formula/g/gist.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gistit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/git-absorb.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/git-annex-remote-rclone.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/g/git-annex.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/g/git-annex.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/git-appraise.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/git-archive-all.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/git-big-picture.rb, Homebrew/homebrew-core, 0
@@ -6193,7 +6193,6 @@ Homebrew-homebrew-core/Formula/p/pyenv-pip-migrate.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pyenv-virtualenv.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pyenv-virtualenvwrapper.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pyenv.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/p/pyflow.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pygit2.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pygitup.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pygments.rb, Homebrew/homebrew-core, 0
@@ -7943,7 +7942,7 @@ Homebrew-homebrew-core/Formula/u/unordered_dense.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/u/unoserver.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/u/unp.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/u/unpaper.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/u/unrtf.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/u/unrtf.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/u/unshield.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/u/unum.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/u/unuran.rb, Homebrew/homebrew-core, 1
@@ -9228,6 +9227,7 @@ Homebrew-homebrew-cask/Casks/b/buckets@beta.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/b/bugdom.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/b/bugdom2.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/b/buholaunchpad.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/b/buildin.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/buildsettingextractor.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/b/bunch.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/burn.rb, Homebrew/homebrew-cask, 0

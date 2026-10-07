@@ -3,16 +3,16 @@ class Flexget < Formula
 
   desc "Multipurpose automation tool for content"
   homepage "https://www.flexget.com"
-  url "https://files.pythonhosted.org/packages/20/d1/352df00387049399307d8fad473ce3795ec4bb8d586fc437049ef0f5ac93/flexget-3.21.3.tar.gz"
-  sha256 "52c8b2a0882d4e968a00bcebd5a8104e8e3d11bfd8793b347937a719c4904122"
+  url "https://files.pythonhosted.org/packages/87/cf/8d5d47ab821d5d0ec6ed76176c4a82b3652130a8ac7144c8d4c06b7a6baf/flexget-3.21.4.tar.gz"
+  sha256 "10dcbd257cb4ed932b525b16475e9a1204c07597af94548d84138200a974138a"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "aa92a220f69a7402fedd450e3c953a67c216c8feabdf84c1973777da5546d073"
-    sha256 cellar: :any, arm64_tahoe:       "6137c928c8c48a6081403925848e8191906a8321dbdc9a6a6e62dd381de84a40"
-    sha256 cellar: :any, arm64_sequoia:     "d059c14e452eca8eaee2f25734fcef80b004b8f5993f806417a470b8d177b71a"
-    sha256 cellar: :any, arm64_linux:       "33bc560fd94fffccd4b37fb147ae7d6a1a04b5e73acc2e1737c1f296c4d38220"
-    sha256 cellar: :any, x86_64_linux:      "47c4c3b8fa7d5c9c6e5f963994ae0d25e5eece595208ee03c5b054032ec54aa2"
+    sha256 cellar: :any, arm64_golden_gate: "9205510d1a3ec058a38eb151806732746284fa6af401a508f534a871e18628a1"
+    sha256 cellar: :any, arm64_tahoe:       "97a9f50126c1ef75b9c8beda2dceb1fe543d9831e79d369c3c729ee1eff5a3ff"
+    sha256 cellar: :any, arm64_sequoia:     "ba7b6a6d724f1489efc721aafb62e05d95d183ff0327a189cb56bbce268a9a85"
+    sha256 cellar: :any, arm64_linux:       "003b3ae74299194fad09900dd1ebed3f7d0985d8eb1ca15b510b551ea0c50329"
+    sha256 cellar: :any, x86_64_linux:      "d348a2b927f74eabcf70a5150c9d8f168f5b60b07f29a5986ab5b03d9382d65c"
   end
 
   depends_on "rust" => :build
@@ -218,8 +218,8 @@ class Flexget < Formula
   end
 
   resource "markupsafe" do
-    url "https://files.pythonhosted.org/packages/7e/99/7690b6d4034fffd95959cbe0c02de8deb3098cc577c67bb6a24fe5d7caa7/markupsafe-3.0.3.tar.gz"
-    sha256 "722695808f4b6457b320fdc131280796bdceb04ab50fe1795cd540799ebe1698"
+    url "https://files.pythonhosted.org/packages/38/9b/e422a865e1d5d57d0e509b4e0bf1c1a70a7f6382c29a5aa428df994c8bc8/markupsafe-3.0.4.tar.gz"
+    sha256 "2e9ad7dd851bf45fab9f75cbff4cb493fee9979e8d8c7c9c3ee119022518edd6"
   end
 
   resource "mdurl" do
@@ -333,13 +333,13 @@ class Flexget < Formula
   end
 
   resource "sqlalchemy" do
-    url "https://files.pythonhosted.org/packages/a8/cb/7c68da82239ffae9378eca076afe14c310e17a4f01e3d315112f266e26c7/sqlalchemy-2.1.1.tar.gz"
-    sha256 "fcf3cbb33bb23bad75d2150157c21804618745731e9931ab27e61879a9f6123b"
+    url "https://files.pythonhosted.org/packages/02/4b/81d972a46c9f1d978af1795e2abc988855c711453552cb45d75f6e4abbf5/sqlalchemy-2.1.3.tar.gz"
+    sha256 "ade5281df06038c6394f532590d592d3381ee5d11b9e0006a2570aef41145118"
   end
 
   resource "tempora" do
-    url "https://files.pythonhosted.org/packages/fb/91/452a0eeae4a8745ded74cfba94e96a66f85fe0edf1d0697f031b0204ac07/tempora-5.12.0.tar.gz"
-    sha256 "b49b78cc7ec0b252bfbd74cef0187121b18e4f5a0c57e3b9c3d8fc15090af3b4"
+    url "https://files.pythonhosted.org/packages/e5/86/dc12e1334b1ad37dc6a2763330b83feedd3751371b30257cf8bd06e533bc/tempora-5.13.0.tar.gz"
+    sha256 "1e6fe03d8c9ccec557e58f18bf3743e6c1a7b09b32bcda07b73be233ef5b24c1"
   end
 
   resource "transmission-rpc" do
@@ -363,8 +363,8 @@ class Flexget < Formula
   end
 
   resource "tzdata" do
-    url "https://files.pythonhosted.org/packages/e4/31/3d74fa778a63b98b7374323befcc0be5ab3bd94afd4096a0124e7379152c/tzdata-2026.4.tar.gz"
-    sha256 "f1b8bd365d8d210c55353f4d7f8d6d8561c0ba50d704b700d195a9424bba0d79"
+    url "https://files.pythonhosted.org/packages/d9/68/f1b440335057bfce71b6e50a9d09445aa2ecbd08359a337976627b8409e7/tzdata-2026.5.tar.gz"
+    sha256 "8cc73c0a0bfca7dbfa59235d60b2eff82231dee33f53d206db1acd9173cfc0a7"
   end
 
   resource "tzlocal" do

@@ -19,8 +19,6 @@ class Eralchemy < Formula
 
   depends_on "pkgconf" => :build
   depends_on "graphviz"
-  depends_on "libpq"
-  depends_on "openssl@3"
   depends_on "python@3.14"
 
   pypi_packages package_name: "eralchemy[pygraphviz]"

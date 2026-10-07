@@ -1,16 +1,16 @@
 class Sofka < Formula
   desc "Kubernetes TUI, reimagined in Rust"
   homepage "https://github.com/nklmilojevic/sofka"
-  url "https://ghfast.top/https://github.com/nklmilojevic/sofka/archive/refs/tags/v0.29.9.tar.gz"
-  sha256 "76ddd5b75244d0f8defb344983617b93740bb286176cb4f2db7103e8e5b34e12"
+  url "https://ghfast.top/https://github.com/nklmilojevic/sofka/archive/refs/tags/v0.31.0.tar.gz"
+  sha256 "540a6b1a583f83d9c0108a4383443269c21a77d4b5af7c002e81617a57d26f6b"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "4c522aa7ea0de43f657efcb1e3dbb840d2402f75f7c41529aaf4e69f839f230b"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "11bf73844ceb50b627404ac45dd2664a55acaeb3908eb91c49fbdd5d32091e1b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "ff7561db22ceeb8eb9542d14166cc90331ce52030edcb59f00ad5070fef05638"
-    sha256 cellar: :any,                 arm64_linux:       "370c5c007961555079cde14ce177c0c09a73a62e5c1fed599556cfcd2f8ff94e"
-    sha256 cellar: :any,                 x86_64_linux:      "94fc3586bde128365ff0bbc8058eb8e2d70ead5639b62db10976393e744f7198"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "00d779e8565b43770bc93bf28f0a09476920f95eec055a9e0144df13452d4601"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "9da4ebb65d19a9d7b45a06d7179a17f4c2a1b65fed226d08a7ff270355c92756"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "45256d1963af75ec72222dda14d56482fd8b2c962cb8c5c67db6ab66d9aee49d"
+    sha256 cellar: :any,                 arm64_linux:       "f1af9f44fb76d4cc853a2b2e505c92118f3322effa5ee551f37f4fc111f919c9"
+    sha256 cellar: :any,                 x86_64_linux:      "857274914bd793633bba4cee47af306ee507689a908967ea586228b29fedafa8"
   end
 
   depends_on "rust" => :build

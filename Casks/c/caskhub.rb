@@ -1,6 +1,6 @@
 cask "caskhub" do
-  version "0.8.3"
-  sha256 "3b97fcbc52180f5af205016a80ee0e65a17dd118bf0fd3dfaf7c2cf49c70c4da"
+  version "0.9.1"
+  sha256 "b686dac42b554f92975f23db68095de29681aac9dd58ebb6bd6d4ff1fbee83a2"
 
   url "https://ghfast.top/https://github.com/alielsokary/CaskHub/releases/download/#{version}/CaskHub-#{version}.zip"
   name "CaskHub"
@@ -16,6 +16,8 @@ cask "caskhub" do
   depends_on macos: :sequoia
 
   app "CaskHub.app"
+
+  uninstall quit: "com.mag.caskhub"
 
   zap trash: [
     "~/Library/Application Support/CaskHub",

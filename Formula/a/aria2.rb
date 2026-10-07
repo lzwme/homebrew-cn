@@ -32,6 +32,14 @@ class Aria2 < Formula
     depends_on "zlib-ng-compat"
   end
 
+  # Apply open PR to support OpenSSL 4
+  patch do
+    url "https://github.com/aria2/aria2/commit/11b1905b1df26c7e074387b3df2c44f814355863.patch?full_index=1"
+    sha256 "97c7784eeba35e24bfc309d15b1dc6dfab1655dcd67fc2d03be439d06ad371cf"
+    type :unofficial
+    resolves "https://github.com/aria2/aria2/pull/2403"
+  end
+
   # Test downloads a file from the network
   allow_network_access! :test
 

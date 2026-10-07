@@ -24,6 +24,8 @@ class Psalm < Formula
     end
   end
 
+  allow_network_access! :test
+
   def install
     libexec.install "psalm.phar" => "psalm"
 

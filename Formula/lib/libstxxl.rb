@@ -23,6 +23,9 @@ class Libstxxl < Formula
   end
 
   depends_on "cmake" => :build
+  depends_on "pkgconf" => :test
+
+  deny_network_access!
 
   def install
     # Workaround to build with CMake 4
@@ -30,5 +33,27 @@ class Libstxxl < Formula
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
+  end
+
+  test do
+    (testpath/".stxxl").write "disk=#{testpath}/stxxl.tmp,64MiB,syscall delete\n"
+    (testpath/"test.cpp").write <<~CPP
+      #include <iostream>
+      #include <stxxl/vector>
+
+      int main() {
+        stxxl::VECTOR_GENERATOR<int>::result v;
+        for (int i = 0; i < 1000; i++) v.push_back(i);
+        std::cout << v.size() << " " << v[999] << std::endl;
+        return 0;
+      }
+    CPP
+    pkgconf_flags = shell_output("pkgconf --cflags --libs stxxl").chomp.split
+    args = %w[-std=c++11 test.cpp -o test] + pkgconf_flags
+    args += %w[-fopenmp -pthread] if OS.linux?
+    system ENV.cxx, *args
+    assert_match "1000 999", shell_output("./test")
+
+    assert_match "sizeof(void*)", shell_output("#{bin}/stxxl_tool info")
   end
 end

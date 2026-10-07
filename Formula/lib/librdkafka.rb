@@ -1,8 +1,8 @@
 class Librdkafka < Formula
   desc "Apache Kafka C/C++ library"
   homepage "https://github.com/confluentinc/librdkafka"
-  url "https://ghfast.top/https://github.com/confluentinc/librdkafka/archive/refs/tags/v2.15.1.tar.gz"
-  sha256 "23c8575c7d1ced07246cb9cf200c11325b72201fd4134a02414ca869fbdd8ed3"
+  url "https://ghfast.top/https://github.com/confluentinc/librdkafka/archive/refs/tags/v2.16.0.tar.gz"
+  sha256 "e6b61de61d3282879a88e4ee3d9f634a8b05bf78a9198dfc25c4820c0c9ed231"
   license "BSD-2-Clause"
   compatibility_version 1
   head "https://github.com/confluentinc/librdkafka.git", branch: "master"
@@ -13,12 +13,11 @@ class Librdkafka < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "fee19ffd81582acf6edf60b0da2f07232549382601dbe53388da5389adc5c5d7"
-    sha256 cellar: :any, arm64_tahoe:       "ed3fb41a87771c4c1c049b6247daaf5adc8660d20ae743596617401913ee4890"
-    sha256 cellar: :any, arm64_sequoia:     "a7a62196cda98ceca6af3edcf735df04d103dc44e4af131ec28ee2d4ca419c33"
-    sha256 cellar: :any, arm64_sonoma:      "5600c0b03159960f3b59363f279dc4f9f0a416333c60e2a2ebf6cffcec89ced9"
-    sha256 cellar: :any, arm64_linux:       "1a510d17417be5a3e4eee56b731a579145faf12d06dd591734aa24986435a378"
-    sha256 cellar: :any, x86_64_linux:      "d6226b9e6c404280c5921da0a4ae407b05a7e971160008ae7859841f72270afa"
+    sha256 cellar: :any, arm64_golden_gate: "3e64820fd1e75723825b4134102329faf8a93688fb16cb851a16e9c21109cdef"
+    sha256 cellar: :any, arm64_tahoe:       "f0a4fcf1f1088cc99403cbcbf5d400d3ddcd990e56489867637becc88efc29e0"
+    sha256 cellar: :any, arm64_sequoia:     "ebb4812dca0663471306b27ac01113c39a4a09bc3a2ef0d1f8ce81592c64c083"
+    sha256 cellar: :any, arm64_linux:       "a57e3cc3e14a0f3a0cb911127da3c31d8194da3ab6ed4ef93ddfab59ff5a91fc"
+    sha256 cellar: :any, x86_64_linux:      "552e31352ddc5bbc4e8770f58e40acb3108fa4446030eb659bee810e0d4be607"
   end
 
   depends_on "pkgconf" => :build

@@ -15,8 +15,32 @@ class Ccusage < Formula
 
   depends_on "rust" => :build
 
+  resource "litellm-pricing-json" do
+    url "https://ghfast.top/https://raw.githubusercontent.com/BerriAI/litellm/54551529131b9e9f4d867bd292c91812cd639079/model_prices_and_context_window.json"
+    version "54551529131b9e9f4d867bd292c91812cd639079"
+    sha256 "d15998cef99dcf6b6a37ce880735183d1f98376a56132b29d65bb0add4571492"
+
+    # Fetch the latest available resource
+    livecheck do
+      url "https://api.github.com/repos/BerriAI/litellm/branches/main"
+      strategy :json do |json|
+        json.dig("commit", "sha")
+      end
+    end
+  end
+
+  deny_network_access!
+
+  def fetch
+    cd "rust" do
+      system "cargo", "fetch", *std_cargo_fetch_args
+    end
+  end
+
   def install
-    system "cargo", "install", *std_cargo_args(path: "rust/crates/ccusage", features: "fetch-litellm-pricing")
+    resource("litellm-pricing-json").stage buildpath
+    ENV["CCUSAGE_PRICING_JSON_PATH"] = buildpath/"model_prices_and_context_window.json"
+    system "cargo", "install", *std_cargo_args(path: "rust/crates/ccusage")
   end
 
   test do

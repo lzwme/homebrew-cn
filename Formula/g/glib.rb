@@ -3,8 +3,8 @@ class Glib < Formula
 
   desc "Core application library for C"
   homepage "https://docs.gtk.org/glib/"
-  url "https://download.gnome.org/sources/glib/2.90/glib-2.90.0.tar.xz"
-  sha256 "17d15cac2af80a33271127408e0abc2748eb297c595c2a26409e81e14e7d1b8f"
+  url "https://download.gnome.org/sources/glib/2.90/glib-2.90.1.tar.xz"
+  sha256 "93c941aa17d5eb1d53fe838365f29a8b4e539c222a256d974ec8f30fc413e396"
   license "LGPL-2.1-or-later"
   compatibility_version 1
 
@@ -17,11 +17,11 @@ class Glib < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "07422c68ee1c3d01ba6ac6296668e82cad2ee21c9466e60e79a70da2c5947207"
-    sha256 arm64_tahoe:       "e2d2d3cff3bb121e8f6c98f9a831e03f78b66e88063fc5d432a68bf0b4951092"
-    sha256 arm64_sequoia:     "91df2202a093cd00b90fa9919f1c1e61e8f78d8ddd9a307009af6d4007072180"
-    sha256 arm64_linux:       "456f327b958864c762c53286469ec4471fd41a57c031ce2d8c3e24f6dedbad0f"
-    sha256 x86_64_linux:      "91d875d68772c609400983913f59695beb053223973791ee32ee33d1edd9df6c"
+    sha256 arm64_golden_gate: "ac3a58f1d2c1db194a3a5dc8484187d258b1a14e191772323937d17f5fae59fd"
+    sha256 arm64_tahoe:       "a5040035c3e7c6b406b6e8d100973d67dd655c0bf95cabfaf27beebc1d51a314"
+    sha256 arm64_sequoia:     "2c6049f0cc0592ea0967143a0256914dfe11f240b7aee2a5cd8b801dd1f3173f"
+    sha256 arm64_linux:       "1f946d18230376f18f958d3f0257261496f6882905a05f128089523b31ed271d"
+    sha256 x86_64_linux:      "34d5b26ae5146696ff16df027995c7118a051306177eb8c822a18aaddae12483"
   end
 
   depends_on "bison" => :build # for gobject-introspection

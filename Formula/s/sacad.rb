@@ -6,17 +6,15 @@ class Sacad < Formula
   url "https://files.pythonhosted.org/packages/df/39/3ec259100446937a0c36c14e1bc0794e990259100e90f5b83463b23c740d/sacad-2.8.3.tar.gz"
   sha256 "e9b2b114e3f884f6d4e5dd49ff0ae8d4133f061f56fff433719e186df69aa986"
   license "MPL-2.0"
-  revision 7
+  revision 8
   head "https://github.com/desbma/sacad.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "8cb01dc5d334b29717f861bdeccf76d01663c622bb9d57c9d86c77d00b5b077a"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "3f2d00e4c54355186ed968b32d827ab298f89236fef6edcc08fbb3d58d33e79e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "5403f2bd438f6260e228b2dd898e2730437910b6075b9953fbc6baa2ab21ea4e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "1ef6de1a404e13d5434c71d1c7d23b11c7c34f255afb32f8f7331c9700c96c9c"
-    sha256 cellar: :any_skip_relocation, sonoma:            "37d3a3f9732d4b4ef86d524cff5a4036c98c8fe757d174e9134b98f6b32f9b79"
-    sha256 cellar: :any,                 arm64_linux:       "cbd3f25eb47074fd90cd7216c397e2efb9e02b6174d48e0be8bd7954773e6d18"
-    sha256 cellar: :any,                 x86_64_linux:      "0050a32bcce5426c0e36eb12963932e860ce1ae017019424fd34a5c12e8b55c8"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "5484f27886f311788e2a9d676606433650b02ca292e33fe6cd0c2618e79165ed"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "d5d754a8c2efde108a3e544739dced7ed72669c7ce19c6ec478ba243d4c325ac"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "f1253b39559b58df7430244196f1dc7273fe7f3ea4ac07c43392564f17ca431b"
+    sha256 cellar: :any,                 arm64_linux:       "283162d99b33959f493c468625c480bf6c796a2ca811c615d677bcef0bc25f33"
+    sha256 cellar: :any,                 x86_64_linux:      "baa3647c3b311ea541bb8008f76d52f9b4ca0bcbebbe994a59534b6d6e54fb46"
   end
 
   depends_on "pillow" => :no_linkage
@@ -53,8 +51,8 @@ class Sacad < Formula
   end
 
   resource "bitarray" do
-    url "https://files.pythonhosted.org/packages/5f/c9/df9a5450b54e6dcbb6e8f3fd95631ab849ba1ed8e7899844c0d71bab576c/bitarray-3.10.0.tar.gz"
-    sha256 "d8f8dbcda062ea59b3a6d5233b5a9b67f6bf58c1418ad8f418c5138361f9f068"
+    url "https://files.pythonhosted.org/packages/04/f7/6765577df59e2345036e435f7e983e1c291d67b7d76a51918eff04ad1494/bitarray-3.11.0.tar.gz"
+    sha256 "bf19437ec00ec3d40aef82eaeedc14cf4000be9b635c4f5049796506e6630dd8"
   end
 
   resource "cssselect" do
@@ -68,18 +66,18 @@ class Sacad < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/cd/63/9496c57188a2ee585e0f1db071d75089a11e98aa86eb99d9d7618fc1edce/idna-3.18.tar.gz"
-    sha256 "ffb385a7e039654cef1ab9ef32c6fafe283c0c0467bba1d9029738ce4a14a848"
+    url "https://files.pythonhosted.org/packages/f5/08/8eea9d4b8302028f3abb2c0813953f7aec26d33b7a8960ed760e65ff29fa/idna-3.20.tar.gz"
+    sha256 "a7db850025b95ded1eae8a46181a1a6c56c92c96f0e2b005d9ff8dc0210cab44"
   end
 
   resource "lxml" do
-    url "https://files.pythonhosted.org/packages/05/3b/aab6728cae887456f409b4d75e8a01856e4f04bd510de38052a47768b680/lxml-6.1.1.tar.gz"
-    sha256 "ba96ae44888e0185281e937633a743ea90d5a196c6000f82565ebb0580012d40"
+    url "https://files.pythonhosted.org/packages/23/ad/28ecd7cb894d172f3c9c80a075eeeb2017ac62e3632cee05a5f9493547eb/lxml-6.1.3.tar.gz"
+    sha256 "45222d94ddd511536f3b2f7d9deae3b2339b4ce0f075f1ca25703b07cad9dd21"
   end
 
   resource "multidict" do
-    url "https://files.pythonhosted.org/packages/1a/c2/c2d94cbe6ac1753f3fc980da97b3d930efe1da3af3c9f5125354436c073d/multidict-6.7.1.tar.gz"
-    sha256 "ec6652a1bee61c53a3e5776b6049172c53b6aaba34f18c9ad04f82712bac623d"
+    url "https://files.pythonhosted.org/packages/d6/99/1d4d69c3512d0ddbfa3a1b69cfd9a151012ab2eb4eabbb096201b1f0b7d8/multidict-6.9.1.tar.gz"
+    sha256 "0f06e60fa190aa7abd0914c2a766736fdc8e9f34878c4346338534b73d1b20e2"
   end
 
   resource "mutagen" do
@@ -88,13 +86,13 @@ class Sacad < Formula
   end
 
   resource "propcache" do
-    url "https://files.pythonhosted.org/packages/ec/44/c87281c333769159c50594f22610f77398a47ccbfbbf23074e744e86f87c/propcache-0.5.2.tar.gz"
-    sha256 "01c4fc7480cd0598bb4b57022df55b9ca296da7fc5a8760bd8451a7e63a7d427"
+    url "https://files.pythonhosted.org/packages/b3/9a/9fbf4e4ec0c2d7f1c32519fff782ef467859b8faa9fbc5331a96f6395d43/propcache-0.5.4.tar.gz"
+    sha256 "ff6b113f50bc066a698db5d944d2c6dc7507168dd3341e255a8892fd0715a558"
   end
 
   resource "tqdm" do
-    url "https://files.pythonhosted.org/packages/21/3b/6c24bec5be5e743ffd99576daa5cc077722fc7d5bbc00bd133fa0c698dc6/tqdm-4.70.0.tar.gz"
-    sha256 "55b0b0dbd97462d06ebee91e4dac24ed4d4702be82b24f07e6c1d27e08cea220"
+    url "https://files.pythonhosted.org/packages/0d/ea/b2a5bd54b28a324dae8211928b2d730b6547500342c7e6c6dea08bd0a485/tqdm-4.70.1.tar.gz"
+    sha256 "cefd0eca11b2a37a3aee776544d4f4ae913f02688135b5556b8788dfa474afc4"
   end
 
   resource "unidecode" do
@@ -108,8 +106,8 @@ class Sacad < Formula
   end
 
   resource "yarl" do
-    url "https://files.pythonhosted.org/packages/31/33/ebe9e3d1f86c7a0b51094c0a146392045ca1631d2664889539dec8088a33/yarl-1.24.5.tar.gz"
-    sha256 "e81b83143bee16329c23db3c1b2d82b29892fcbcb849186d2f6e98a5abe9a57f"
+    url "https://files.pythonhosted.org/packages/75/16/e8be8e2fb175bbf41a0680381a319f1199fae256588241a2ac8677eafb49/yarl-1.25.1.tar.gz"
+    sha256 "03dd38de09bc213e9a8b29761eec33ee1d5318dac0e49d8af36e4d27830e23a7"
   end
 
   def install

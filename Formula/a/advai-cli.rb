@@ -6,16 +6,14 @@ class AdvaiCli < Formula
   url "https://files.pythonhosted.org/packages/ca/2c/4e7e64f2c6895555a5cf6cc4b7fd030d1b265f77969d1f417cfd84bd802e/advai_cli-1.0.12.tar.gz"
   sha256 "d3e9921e3a878df3f604a85fc62901b9aebbcfbff36beafe2b50f18ea6a7617c"
   license "MIT"
-  revision 1
+  revision 2
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "3c82d8a03b3a11d427a716d4b09949f8c0f7026beab086986a1f0ce41d46d5c7"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "13bf58bf3c0490d68de02c44eed920bd4f6c2817d3297a574a738b91eb484c04"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "e1f524dfb281f5fa803e2e5ac2040be482ce98caa7c6d61960d31ee0e939aada"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "3e50110f2ed9868a0382c3acefcb5df3c98d7617c4fc6190c8f053774c592725"
-    sha256 cellar: :any_skip_relocation, sonoma:            "5d6774e12c41f9dc043defb01c75c1bcb210485bd5a97de6ecfad40fd26d8cf5"
-    sha256 cellar: :any,                 arm64_linux:       "7cb3facf0b8e4d7d82bad0f1d6e388b48b78825825854e19e6d4926989692645"
-    sha256 cellar: :any,                 x86_64_linux:      "d18208306262f53e443a21617d55daef7ab75b10231189bb327e5b12ffc5f38f"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "647dcd5ae40d85b1b4cf7ce37bdb4539c3a3eda7deec752c257e52306fbb7e1a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "166f1a82988f0aba337a80a326fdadfb9728da384828fcd1168b466a3a45c3e2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "377660ae01a4698fe4b07101a2f29eddc17ae39c3ee615dd8993150c6dbf9099"
+    sha256 cellar: :any,                 arm64_linux:       "967c839835fd3cb8ff167a341ed51af52d745866946e853ace7c667987891f34"
+    sha256 cellar: :any,                 x86_64_linux:      "3b24fdf72b6914ce71849c8731989a19e037f94439c71f5fe8c0bda9cb335c45"
   end
 
   depends_on "python@3.14"
@@ -41,8 +39,8 @@ class AdvaiCli < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/76/d4/81420972a676e8ffea40450d8c8c92943e7218a78fe9b64359836cc9876b/click-8.4.2.tar.gz"
-    sha256 "9a6cea6e60b17ebe0a44c5cc636d94f09bd66142c1cd7d8b4cd731c4917a15f6"
+    url "https://files.pythonhosted.org/packages/c7/0e/7fa0ef50764b67090eca4114772a2abf8b6148198475e54c660b97caeee6/click-8.5.0.tar.gz"
+    sha256 "ba0d2089de75ea0310e2dde03160e6ca10009947fb95a182f9b54021bb272e34"
   end
 
   resource "frozenlist" do
@@ -51,23 +49,23 @@ class AdvaiCli < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/cd/63/9496c57188a2ee585e0f1db071d75089a11e98aa86eb99d9d7618fc1edce/idna-3.18.tar.gz"
-    sha256 "ffb385a7e039654cef1ab9ef32c6fafe283c0c0467bba1d9029738ce4a14a848"
+    url "https://files.pythonhosted.org/packages/f5/08/8eea9d4b8302028f3abb2c0813953f7aec26d33b7a8960ed760e65ff29fa/idna-3.20.tar.gz"
+    sha256 "a7db850025b95ded1eae8a46181a1a6c56c92c96f0e2b005d9ff8dc0210cab44"
   end
 
   resource "multidict" do
-    url "https://files.pythonhosted.org/packages/1a/c2/c2d94cbe6ac1753f3fc980da97b3d930efe1da3af3c9f5125354436c073d/multidict-6.7.1.tar.gz"
-    sha256 "ec6652a1bee61c53a3e5776b6049172c53b6aaba34f18c9ad04f82712bac623d"
+    url "https://files.pythonhosted.org/packages/d6/99/1d4d69c3512d0ddbfa3a1b69cfd9a151012ab2eb4eabbb096201b1f0b7d8/multidict-6.9.1.tar.gz"
+    sha256 "0f06e60fa190aa7abd0914c2a766736fdc8e9f34878c4346338534b73d1b20e2"
   end
 
   resource "propcache" do
-    url "https://files.pythonhosted.org/packages/ec/44/c87281c333769159c50594f22610f77398a47ccbfbbf23074e744e86f87c/propcache-0.5.2.tar.gz"
-    sha256 "01c4fc7480cd0598bb4b57022df55b9ca296da7fc5a8760bd8451a7e63a7d427"
+    url "https://files.pythonhosted.org/packages/b3/9a/9fbf4e4ec0c2d7f1c32519fff782ef467859b8faa9fbc5331a96f6395d43/propcache-0.5.4.tar.gz"
+    sha256 "ff6b113f50bc066a698db5d944d2c6dc7507168dd3341e255a8892fd0715a558"
   end
 
   resource "yarl" do
-    url "https://files.pythonhosted.org/packages/31/33/ebe9e3d1f86c7a0b51094c0a146392045ca1631d2664889539dec8088a33/yarl-1.24.5.tar.gz"
-    sha256 "e81b83143bee16329c23db3c1b2d82b29892fcbcb849186d2f6e98a5abe9a57f"
+    url "https://files.pythonhosted.org/packages/75/16/e8be8e2fb175bbf41a0680381a319f1199fae256588241a2ac8677eafb49/yarl-1.25.1.tar.gz"
+    sha256 "03dd38de09bc213e9a8b29761eec33ee1d5318dac0e49d8af36e4d27830e23a7"
   end
 
   def install

@@ -410,7 +410,7 @@ class Semgrep < Formula
            "TREESITTER_OUT=#{formula_opt_prefix("tree-sitter")}"
     system "opam", "exec", "--", "make", "copy-core-for-cli"
 
-    bin.install "_build/install/default/bin/semgrep-core" => "semgrep-core"
+    bin.install "_build/install/default/bin/semgrep-core"
 
     ENV["SEMGREP_SKIP_BIN"] = "1"
     venv = virtualenv_create(libexec, python3)

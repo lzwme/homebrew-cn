@@ -1,16 +1,16 @@
 class HfMcpServer < Formula
   desc "MCP Server for Hugging Face"
   homepage "https://github.com/evalstate/hf-mcp-server"
-  url "https://registry.npmjs.org/@llmindset/hf-mcp-server/-/hf-mcp-server-0.4.27.tgz"
-  sha256 "86ee2387cd30e44f484d535f6bfa99430bbe8bb6becb6f8fc41c1abec446e7e6"
+  url "https://registry.npmjs.org/@llmindset/hf-mcp-server/-/hf-mcp-server-0.4.28.tgz"
+  sha256 "bc309cd2c2978279c33089bb2cfac714ed942d554045336df140d31dfec85910"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "9baa4cca9f3d2b88a9d684ca90215f51bb27c8b883252bff087f8c7d2b480fed"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "9baa4cca9f3d2b88a9d684ca90215f51bb27c8b883252bff087f8c7d2b480fed"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "9baa4cca9f3d2b88a9d684ca90215f51bb27c8b883252bff087f8c7d2b480fed"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "caabcd505a0178ba736373e252ec2496e502b45e52df15e1c332cb6005553eec"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "caabcd505a0178ba736373e252ec2496e502b45e52df15e1c332cb6005553eec"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "dfde17ef289c1ab9311201f818eb8eebd8b4cad2448b9abf5389a465326f324f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "dfde17ef289c1ab9311201f818eb8eebd8b4cad2448b9abf5389a465326f324f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "dfde17ef289c1ab9311201f818eb8eebd8b4cad2448b9abf5389a465326f324f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "b635312d7d4fcdf6b501e7d989e1ab91fc3c265e1131b129123f1246c5439757"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "b635312d7d4fcdf6b501e7d989e1ab91fc3c265e1131b129123f1246c5439757"
   end
 
   depends_on "node"

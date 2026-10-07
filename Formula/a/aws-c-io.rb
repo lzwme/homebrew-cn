@@ -4,27 +4,30 @@ class AwsCIo < Formula
   url "https://ghfast.top/https://github.com/awslabs/aws-c-io/archive/refs/tags/v1.0.0.tar.gz"
   sha256 "5fecb19c2c0a165687cdd94723943a02ab23a0270deade5661fd935a3cd55e78"
   license "Apache-2.0"
+  revision 1
   compatibility_version 2
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "2ec493e1ab13a40ced07a5b7203b2a8cd2ef607547bd9a0543f7ca56a0aa18e4"
-    sha256 cellar: :any, arm64_tahoe:       "65af61010890938814768b618a543ab222ab760ad19a08e8c7e6e075d03d16dd"
-    sha256 cellar: :any, arm64_sequoia:     "85e9dc2ac23c5d280e71e3f71b7107385282f3fb2cc2206a1bb5d8e6a7e2852d"
-    sha256 cellar: :any, arm64_sonoma:      "290d7a03edbc9c44a563458520150777ceb1474514bb53f54a2f8aa560f126ac"
-    sha256 cellar: :any, arm64_linux:       "dda27f924d1af2035f485ac5324803482d396ac4de993e2b4151f45a47632aa9"
-    sha256 cellar: :any, x86_64_linux:      "4c0b9176cfa29cde228f14084758627c0c584c934ac3968313ed39416f5fb587"
+    sha256 cellar: :any, arm64_golden_gate: "f46b7dcad3866a3f34ae47de4dab30213a2f40e82bebe02b675be8fd2cd4afc1"
+    sha256 cellar: :any, arm64_tahoe:       "29951a3f0b658114cb68a5d54de96d24a8118e8c8d8d7705f191c779bbb7d50a"
+    sha256 cellar: :any, arm64_sequoia:     "ae10073e01831d3d5aa291a4d55e09bffea410693caa489f40955283c82ab118"
+    sha256 cellar: :any, arm64_linux:       "46756abd47decefbcb65dea64993c603cebc59417aca691055e69aae8e77b415"
+    sha256 cellar: :any, x86_64_linux:      "425c69594305541fa85d3dcecddc79867e35b87401a2d81f93410340ac12fbf1"
   end
 
   depends_on "cmake" => :build
   depends_on "aws-c-cal"
   depends_on "aws-c-common"
-  depends_on "openssl@3"
   depends_on "s2n"
 
   deny_network_access!
 
   def install
-    system "cmake", "-S", ".", "-B", "build", "-DBUILD_SHARED_LIBS=ON", *std_cmake_args
+    args = ["-DBUILD_SHARED_LIBS=ON"]
+    # Avoid linkage to OpenSSL
+    args << "-DCMAKE_SHARED_LINKER_FLAGS=-Wl,-dead_strip_dylibs" if OS.mac?
+
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end

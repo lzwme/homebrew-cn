@@ -1,16 +1,16 @@
 class SymfonyCli < Formula
   desc "Build, run, and manage Symfony applications"
   homepage "https://symfony.com/download"
-  url "https://ghfast.top/https://github.com/symfony-cli/symfony-cli/archive/refs/tags/v5.21.0.tar.gz"
-  sha256 "90ca2a8f88a52aebaafbdb3c4ec40476ebd763b2ffac108536b1681fcc457077"
+  url "https://ghfast.top/https://github.com/symfony-cli/symfony-cli/archive/refs/tags/v5.22.0.tar.gz"
+  sha256 "00e58f7549b758701ba3fda3d62c00f071c71c086664868c682d5dd70c00878c"
   license "AGPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "c980351a2bd583dc70ab7f17974e9f545cd1228823c91a029aee8f69f18203cc"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "448abc49a4e4d4b55e3b95f5728efaccf65f68e02454d3675561154d4430621c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "31c489bde790c5613bca779e0af30e262598a252e1cb9d1287fc9b06977e83ce"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "8424dd14cee025fa31b75f086dbc873735ac947611adc98bfbcfc4e4b40370d7"
-    sha256 cellar: :any,                 x86_64_linux:      "215c2f42ce34a018f929097e0736f3e8de05f1b97dfe829fcca99eaf0d17ee96"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "fcadbd94f0fd2f5a64a0924313feb8faaea795fbe7d23ec998a4ef819a006e12"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "c1c58c2c0f62224153b9235e6cf0c4e6c58b145c2c982affd0e98edb1bff5bbb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "d03921135766ceee40f803f63e4546598bc288b4f58f6a608312d76eb9ed702c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "4b03a2c337ff676ba733cb1a6e04a9255473073bcdb7c79bceea11bedce75c2d"
+    sha256 cellar: :any,                 x86_64_linux:      "c66a9a109e002964cf8f268af73c151418d87e481de24fc9462ae155e72dcdb8"
   end
 
   depends_on "go" => :build

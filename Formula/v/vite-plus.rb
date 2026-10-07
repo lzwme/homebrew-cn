@@ -1,18 +1,17 @@
 class VitePlus < Formula
   desc "Unified toolchain and entry point for web development"
   homepage "https://viteplus.dev"
-  url "https://ghfast.top/https://github.com/voidzero-dev/vite-plus/archive/refs/tags/v1.0.0.tar.gz"
-  sha256 "2ae9ff19a0c514e55ba76f4025cead2faff67c91da7dce152c60b71a040e5192"
+  url "https://ghfast.top/https://github.com/voidzero-dev/vite-plus/archive/refs/tags/v1.1.0.tar.gz"
+  sha256 "0deac2a55ebd80ac4d5ef83fe6251eab36b142c43d2f42589bb1ab2af380e620"
   license "MIT"
   head "https://github.com/voidzero-dev/vite-plus.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_golden_gate: "fdedbbf30804111ee34740719f6e7c429b5c0fe2e21865d59d1fa180d7b338ed"
-    sha256 cellar: :any, arm64_tahoe:       "dc47ff9adbe8db598401c7e1e7ba0efcd43a0c5ee741e18faf46ac490bc76b61"
-    sha256 cellar: :any, arm64_sequoia:     "bf915c24d620ab5418f6cac83fa2f1291d2c398339a7d497522991d7bf7efa69"
-    sha256               arm64_linux:       "2bdf52aa3a0eedf3000161a70e440078fbe1877cbb1f7488865ef984ea1b895c"
-    sha256               x86_64_linux:      "d27c2519bb56ef4920cbff1d572e159e0ca540bab031c303847210c430b8e095"
+    sha256 cellar: :any, arm64_golden_gate: "b6b1edc9280b76e925b44843dc62771b6259634a5d748d172ddbbe06665f1200"
+    sha256 cellar: :any, arm64_tahoe:       "2e25062f329a10883f949f81e58d7511c31859998da0758417489bf1399a97cb"
+    sha256 cellar: :any, arm64_sequoia:     "ebbbddaa30952450d1652b7db1f00de6920c2fa041509656811d8597f82513eb"
+    sha256               arm64_linux:       "bbcafca5a860792abbff000435602b2bb8cdbcff55390034a0bc2727d080e606"
+    sha256               x86_64_linux:      "e7a530354c531a9a497e8f744c449e5eb1d8a441d26478d18bac699d93bd955f"
   end
 
   depends_on "cmake" => :build
@@ -25,8 +24,8 @@ class VitePlus < Formula
 
   resource "rolldown" do
     url "https://github.com/rolldown/rolldown.git",
-        revision: "8df421985114ecfaf52cce038d4a5a6ea8c05408"
-    version "8df421985114ecfaf52cce038d4a5a6ea8c05408"
+        revision: "45e407b177f5885d04a9795f37f8be71d91f6f17"
+    version "45e407b177f5885d04a9795f37f8be71d91f6f17"
 
     livecheck do
       url "https://ghfast.top/https://raw.githubusercontent.com/voidzero-dev/vite-plus/refs/tags/v#{LATEST_VERSION}/packages/tools/.upstream-versions.json"
@@ -38,8 +37,8 @@ class VitePlus < Formula
 
   resource "vite" do
     url "https://github.com/vitejs/vite.git",
-        revision: "39ddf7ccf7e7469ff6a3ba37bca38c32ea804d6e"
-    version "39ddf7ccf7e7469ff6a3ba37bca38c32ea804d6e"
+        revision: "fea5b21dd9524ed7308632407b996f1fe5942c9c"
+    version "fea5b21dd9524ed7308632407b996f1fe5942c9c"
 
     livecheck do
       url "https://ghfast.top/https://raw.githubusercontent.com/voidzero-dev/vite-plus/refs/tags/v#{LATEST_VERSION}/packages/tools/.upstream-versions.json"
