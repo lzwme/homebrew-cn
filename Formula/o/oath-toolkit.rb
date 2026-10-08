@@ -5,7 +5,7 @@ class OathToolkit < Formula
   mirror "https://download-mirror.savannah.gnu.org/releases/oath-toolkit/oath-toolkit-2.6.14.tar.gz"
   sha256 "8b1da365759f1249be57a82aec6e107f7b57dc77d813f96dc0aaf81624f28971"
   license all_of: ["GPL-3.0-or-later", "LGPL-2.1-or-later"]
-  revision 3
+  revision 4
 
   livecheck do
     url "https://download.savannah.gnu.org/releases/oath-toolkit/"
@@ -13,13 +13,11 @@ class OathToolkit < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "99ba59d037003da05452fc3da17ee83ddde97c07a15ea581c8ae0664550225ee"
-    sha256 cellar: :any, arm64_tahoe:       "0e3189a79283536902ac625eae9bb2b2cf08e94efa223b9c1309f49644c3f916"
-    sha256 cellar: :any, arm64_sequoia:     "5df29b142ddd79a981d26641fe1407185ec13053038e45f518ec0cf2db99b13a"
-    sha256 cellar: :any, arm64_sonoma:      "3eebb109d310fa1a06d6b3f895dc6740651bb2079fa4fb160140c7ebb07f8094"
-    sha256               sonoma:            "a3a81851ae782909c7ea9c6d2fd9634e8154d1de774da00714b6601f24102711"
-    sha256               arm64_linux:       "85e93423745de435c7646aa6b9ae12edbaa4e9196ca43c482b6fd3cb4e763f32"
-    sha256               x86_64_linux:      "6b892babe12808ff3f8470831689114f057b71c4c7e37ccbbee387920257cfbb"
+    sha256 cellar: :any, arm64_golden_gate: "4e662f9f30e5e1bee799d16dcac327e818d2531b575bd8f3ab267384f441d255"
+    sha256 cellar: :any, arm64_tahoe:       "bc7a42c98485476e9702bace709a61aa37ca54e1dd89fdafa11b3a5d6c19348e"
+    sha256 cellar: :any, arm64_sequoia:     "b45a1920453e7471b7320cebc49460ccf1280e19992ddb5e078a802a5ebf13eb"
+    sha256               arm64_linux:       "d9eb606c76e2baa82340f446aafd7cefed6f733c00130222f1f912c4c5a9f892"
+    sha256               x86_64_linux:      "da319675b26f90952f7a0a66fd2cc953529302cbd715a7579e5056e014f37e33"
   end
 
   head do
@@ -35,11 +33,11 @@ class OathToolkit < Formula
 
   depends_on "libxml2"
   depends_on "libxmlsec1"
-  depends_on "openssl@3"
 
   def install
-    system "autoreconf", "--force", "--install", "--verbose" if build.head?
+    ENV.append "LDFLAGS", "-Wl,-dead_strip_dylibs" if OS.mac? # avoid openssl linkage
 
+    system "autoreconf", "--force", "--install", "--verbose" if build.head?
     system "./configure", *std_configure_args
     system "make"
     system "make", "install"

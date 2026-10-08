@@ -39,6 +39,12 @@ class Omniorb < Formula
     end
   end
 
+  # OpenSSL 4 support: https://sourceforge.net/p/omniorb/svn/6818/
+  patch do
+    file "Patches/omniorb/r6818.diff"
+    type :backport
+  end
+
   def install
     odie "bindings resource needs to be updated" if version != resource("bindings").version
 

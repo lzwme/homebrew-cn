@@ -1,8 +1,8 @@
 class Mlkit < Formula
   desc "Compiler for the Standard ML programming language"
   homepage "https://melsman.github.io/mlkit"
-  url "https://ghfast.top/https://github.com/melsman/mlkit/archive/refs/tags/v4.7.23.tar.gz"
-  sha256 "6a79ae8d910392827d3405c2acb3bd975f568c76d0da5db0bf5017077de1fb1f"
+  url "https://ghfast.top/https://github.com/melsman/mlkit/archive/refs/tags/v4.7.24.tar.gz"
+  sha256 "519efe63a8362f7c9411adced5cfa6b9d251ed9cad1eb01c3f195f83452dc905"
   license "GPL-2.0-or-later"
   head "https://github.com/melsman/mlkit.git", branch: "master"
 
@@ -12,10 +12,10 @@ class Mlkit < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "e24b7427a34ac06de335882227851b72ed9a3df7b37d9637862314fc83d3ebfd"
-    sha256 arm64_tahoe:       "f8d5a3680ede372d063795b2da20293cb1713b9a3ed5385ab56ed77a6522c513"
-    sha256 arm64_sequoia:     "a76c1f1fb63cda699f7c31440ae3ceb478603e7cc9d46b3839282dc3348a4186"
-    sha256 x86_64_linux:      "c0aae9571a07a319cdd9e4e6bef46ff6b26adb63a59fa7633c33a8901460e5bd"
+    sha256 arm64_golden_gate: "7d84f1d6f038619900b82d26cb1bef57e6f886c845e48b70a7c08c5e4ea974c5"
+    sha256 arm64_tahoe:       "3f1383d138eab3738a01932697ef4207b4e1fe3f2abc5d86c111df271617800d"
+    sha256 arm64_sequoia:     "68203e7dd1c54d0dc0d7dcf0c15a771f06ed0f620d6af987985f602ff23e7cfb"
+    sha256 x86_64_linux:      "ea3c1367113fef99f9228f7be0175fe0790079522279a4bccfc49ef29893309b"
   end
 
   depends_on "autoconf" => :build
@@ -33,8 +33,8 @@ class Mlkit < Formula
   # Similar to other bootstraps, can keep on oldest compatible version.
   resource "bootstrap" do
     on_arm do
-      url "https://ghfast.top/https://github.com/melsman/mlkit/releases/download/v4.7.23/mlkit-bin-dist-darwin.tgz"
-      sha256 "1872feca49574c2dacc1e508657c6bdec3fdcd38a2fb71b9ab929c1c8735229b"
+      url "https://ghfast.top/https://github.com/melsman/mlkit/releases/download/v4.7.24/mlkit-bin-dist-darwin.tgz"
+      sha256 "3d01153394d967b2fead9fa004332f087066fba3904677b15423ac06e592739b"
     end
   end
 
@@ -45,7 +45,7 @@ class Mlkit < Formula
     if OS.mac? && Hardware::CPU.arm?
       resource("bootstrap").stage("bootstrap")
       ENV["MLKIT_BOOTSTRAP"] = buildpath/"bootstrap/bin/mlkit"
-      ENV["MLKIT_BOOTSTRAP_SML_LIB"] = buildpath/"bootstrap"
+      ENV["MLKIT_BOOTSTRAP_SML_LIB"] = buildpath/"bootstrap/lib/mlkit"
       ENV["MLKIT_BOOTSTRAP_FLAGS"] = "-gc"
       ENV["SML_LIB"] = buildpath
       ENV["DARWIN_NATIVE"] = "1"

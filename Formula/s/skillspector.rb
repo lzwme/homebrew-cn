@@ -9,11 +9,12 @@ class Skillspector < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "7cda90007d87b4249bd0670aaff16c351593597c9055e7510ff3d8336a46e77d"
-    sha256 cellar: :any, arm64_tahoe:       "d1975688ebed7b8ff74b5916008f56597bfe48fe6ed52af8fb9dff9f969983d3"
-    sha256 cellar: :any, arm64_sequoia:     "248f2f64c16151124bdd50c6f7e1bf01e47b42c128d32917748e984830a86aff"
-    sha256 cellar: :any, arm64_linux:       "0f14c535aa8dd21123aa0b818f01a1e07b5d12fc07a235fbc1e0d1e10bf6b085"
-    sha256 cellar: :any, x86_64_linux:      "dce4690df8a164380cf90769f6b8b51c39ed172573d542fc81f81e9bccba7b7a"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "615afab119824c42b998a8f107dc5bb77d788f0ed5168ee8e19dc4d0d3e2119b"
+    sha256 cellar: :any, arm64_tahoe:       "613fb4b5853ac37ef1683363b9f3fe5584fa10e88bd9ba668993046d46f340e6"
+    sha256 cellar: :any, arm64_sequoia:     "a12c03a380e6630cc77cccbfb630ba71c2f71dfcf4b72d75c1a515ce9a1f0e70"
+    sha256 cellar: :any, arm64_linux:       "bd4602be254230cca50765b5974edb9f707a964931e766099426a179efa6a72b"
+    sha256 cellar: :any, x86_64_linux:      "fbf1e00337f09f8aac1c8f11e028b8878832025ec6f0833e4116eb537f9cefa3"
   end
 
   depends_on "pkgconf" => :build
@@ -22,10 +23,10 @@ class Skillspector < Formula
   depends_on "cryptography" => :no_linkage
   depends_on "libyaml"
   depends_on "numpy"
-  depends_on "openssl@3"
   depends_on "pydantic" => :no_linkage
   depends_on "python@3.14"
   depends_on "xxhash"
+  depends_on "yara"
   depends_on "zstd"
 
   pypi_packages exclude_packages: %w[certifi cryptography numpy pydantic]
@@ -319,7 +320,12 @@ class Skillspector < Formula
     # Link against the keg rather than the copy vendored in the sdist.
     ENV["XXHASH_LINK_SO"] = "1"
 
-    venv = virtualenv_install_with_resources without: "zstandard"
+    venv = virtualenv_install_with_resources without: %w[yara-python zstandard]
+
+    resource("yara-python").stage do
+      inreplace "setup.py", "self.dynamic_linking = None", "self.dynamic_linking = True"
+      venv.pip_install Pathname.pwd
+    end
 
     # zstandard only uses the system libzstd when told to at build time.
     resource("zstandard").stage do

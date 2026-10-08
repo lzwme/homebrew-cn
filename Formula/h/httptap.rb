@@ -3,20 +3,21 @@ class Httptap < Formula
 
   desc "HTTP request visualizer with phase-by-phase timing breakdown"
   homepage "https://docs.httptap.dev/"
-  url "https://files.pythonhosted.org/packages/be/7a/b08739a676b327496540b5ea9cbdf050e37a46665b43799f8e9e2875645e/httptap-0.6.3.tar.gz"
-  sha256 "7d24bacf1b3df72aeb06a3465226f72c15c7ae626e650cec44a1abd0a5507c28"
+  url "https://files.pythonhosted.org/packages/92/6c/6b1f118c33b677d0598c4b7bda37a2d6233bebabc09ee44d2dc46fab3084/httptap-0.8.0.tar.gz"
+  sha256 "b5d620866a4ecb1cfde498353c5dc35d4708de0858eea49474ebdf8b118f19c1"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "dd4c86fe82ce58069a6d398d5b754fbccd8bc0eeb43c5765074d4bc0b6ad8d86"
+    sha256 cellar: :any_skip_relocation, all: "ef79d374772951885385822454ba30bfd8066701996bb82a70b05df5536cfda7"
   end
 
   depends_on "rust" => :build
   depends_on "certifi" => :no_linkage
+  depends_on "cryptography" => :no_linkage
   depends_on "python@3.14"
 
   pypi_packages package_name:     "httptap[completion]",
-                exclude_packages: "certifi"
+                exclude_packages: %w[certifi cryptography]
 
   resource "anyio" do
     url "https://files.pythonhosted.org/packages/a9/d2/f4d173e22df740bc37b1db102b386ba719b66e95b0f0d751f556b387e6d2/anyio-4.15.1.tar.gz"
@@ -26,11 +27,6 @@ class Httptap < Formula
   resource "argcomplete" do
     url "https://files.pythonhosted.org/packages/87/6f/5a73f04007ca950701765949209f068da628bd11f9c2da287278ce91e0ee/argcomplete-3.7.2.tar.gz"
     sha256 "aad8b69a0b9969edb62db0d1752354c0d50717b10e0cbb00e2a958381b9fc6b9"
-  end
-
-  resource "dnspython" do
-    url "https://files.pythonhosted.org/packages/8c/8b/57666417c0f90f08bcafa776861060426765fdb422eb10212086fb811d26/dnspython-2.8.0.tar.gz"
-    sha256 "181d3c6996452cb1189c4046c61599b84a5a86e099562ffde77d26984ff26d0f"
   end
 
   resource "h11" do
@@ -64,8 +60,8 @@ class Httptap < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/5f/f7/abb373e5757eaec4b922b92f97ec8d6d7e057cf06778247604fbc4e7c3f3/idna-3.19.tar.gz"
-    sha256 "5e0811a4383b21dc5838069f801c4fb62113b7447663d2530d2bd6e77b49bf15"
+    url "https://files.pythonhosted.org/packages/f5/08/8eea9d4b8302028f3abb2c0813953f7aec26d33b7a8960ed760e65ff29fa/idna-3.20.tar.gz"
+    sha256 "a7db850025b95ded1eae8a46181a1a6c56c92c96f0e2b005d9ff8dc0210cab44"
   end
 
   resource "markdown-it-py" do

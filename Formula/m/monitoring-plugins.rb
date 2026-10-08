@@ -34,19 +34,19 @@ class MonitoringPlugins < Formula
   conflicts_with "nagios-plugins", because: "both install their plugins to the same folder"
 
   # Fix check_snmp build at the site upstream missed when renaming `USE_OPENSSL`
+  # Fix check_snmp build against net-snmp without the legacy `DEFAULT_SNMP_VERSION` alias
   patch do
-    url "https://github.com/monitoring-plugins/monitoring-plugins/commit/b80f5de71eeafd809203da2690aec24d99b381e3.patch?full_index=1"
-    sha256 "7450acc000dccf52bcf9be2cd267e0ffc2a89a575eed52bb1a64978339603dbf"
-    type :unofficial
+    url "https://github.com/monitoring-plugins/monitoring-plugins/commit/09c05ab8d1838c7a39654cfef00eccfc105feb95.patch?full_index=1"
+    sha256 "a22583a8802126c2332179231d4f0fbda2c175e44d9830b9c88073624debf9c8"
+    type :backport
     resolves "https://github.com/monitoring-plugins/monitoring-plugins/pull/2319"
   end
 
-  # Fix check_snmp build against net-snmp without the legacy `DEFAULT_SNMP_VERSION` alias
+  # Backport support for OpenSSL 4
   patch do
-    url "https://github.com/monitoring-plugins/monitoring-plugins/commit/717a74ecedad30973a83b3eca1823dbe284c6de5.patch?full_index=1"
-    sha256 "e965307e728ee0289be0bcf776f92d4ff241b5373adf773e2299673f72005b3e"
-    type :unofficial
-    resolves "https://github.com/monitoring-plugins/monitoring-plugins/pull/2319"
+    file "Patches/monitoring-plugins/openssl-4.0.diff"
+    type :backport
+    resolves "https://github.com/monitoring-plugins/monitoring-plugins/pull/2326"
   end
 
   def install

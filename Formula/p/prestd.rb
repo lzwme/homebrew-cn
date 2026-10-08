@@ -1,8 +1,8 @@
 class Prestd < Formula
   desc "Simplify and accelerate development on any Postgres application, existing or new"
   homepage "https://github.com/prest/prest"
-  url "https://ghfast.top/https://github.com/prest/prest/archive/refs/tags/v2.4.2.tar.gz"
-  sha256 "08909fd777db13403f7c89bed65a88f540fd7b810f3c7140490c6d5bb34072bb"
+  url "https://ghfast.top/https://github.com/prest/prest/archive/refs/tags/v2.5.0.tar.gz"
+  sha256 "9e6be2245817749b9d0749ec0ec6e39e58073834e9f319a27fa1d64c0c59e870"
   license "MIT"
   head "https://github.com/prest/prest.git", branch: "main"
 
@@ -12,13 +12,11 @@ class Prestd < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "0e443f48829321b3cf70db16c7a1874ca100198e93be2c0c811a9edb38974d0f"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "a295e4693979160b07e21d42f0682b103882c67142ff1ca26c2fb77fd1d5213e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "1ad58452d40317e6f41285a7228010ea299a10a9015d6e60f8409e2b3393f829"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "f7e0ce8def38f0592dd4b2f9906553351b5c0b3e72b811f461819214b58f5489"
-    sha256 cellar: :any_skip_relocation, sonoma:            "663858957b1a4fd738195027424f96cc25c95dc3d53846ee0cdc1066e83305f3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "c0a58468f482182314c7aab7b1cc465358f70c488f077077defbc92fe898f47f"
-    sha256 cellar: :any,                 x86_64_linux:      "34f6f07c7bf14a448476292199ec70fafcb9299406ffd07b83988408e3ff3bcd"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "5a8625f33c88c7323ebf7fd8a26d93e0949bd2165dafb68b3e4a68f3e0a131af"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "fe173bf7e2f4a2509460fc56cfbcdce93221b10fb9a7c3ab96b71391cf616fd0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "78c59bfd590e79e59577a15b636e6edeb1c7d7b77b5dccfdbe0016f41a680197"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "0b7eb9df5c294232f68d528f4d5e1a8df0d4400f2e8c4c993bbe1c4225374503"
+    sha256 cellar: :any,                 x86_64_linux:      "c492497ca8b43d0840e8ab6043e63110432fca7729b2724b72377ca574faa923"
   end
 
   depends_on "go" => :build

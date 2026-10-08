@@ -26,7 +26,6 @@ class ShibbolethSp < Formula
   depends_on "httpd"
   depends_on "log4shib"
   depends_on "opensaml"
-  depends_on "openssl@3"
   depends_on "unixodbc"
   depends_on "xerces-c"
   depends_on "xml-security-c"

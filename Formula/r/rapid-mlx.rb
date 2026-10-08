@@ -22,7 +22,6 @@ class RapidMlx < Formula
   depends_on macos: :sonoma
   depends_on "mlx"
   depends_on "numpy"
-  depends_on "openssl@3"
   depends_on "pydantic" => :no_linkage
   depends_on "python@3.14"
   depends_on "rpds-py" => :no_linkage

@@ -1,8 +1,8 @@
 class Mydumper < Formula
   desc "MySQL logical backup tool"
   homepage "https://github.com/mydumper/mydumper"
-  url "https://ghfast.top/https://github.com/mydumper/mydumper/archive/refs/tags/v1.0.5-1.tar.gz"
-  sha256 "2c2307f1655728b59a6874cf6ccbe85ffea26977fb698eaf62a56976bcf5991f"
+  url "https://ghfast.top/https://github.com/mydumper/mydumper/archive/refs/tags/v1.0.9-1.tar.gz"
+  sha256 "501721d12108004f24e2a9d53d0019499f946e39d374900fb2de34ba2bbecdab"
   license "GPL-3.0-or-later"
   head "https://github.com/mydumper/mydumper.git", branch: "master"
 
@@ -13,13 +13,11 @@ class Mydumper < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "def987e6a548f6e3f0b732ff5c079740bcc69b898d833ba11368a9664abc0093"
-    sha256 cellar: :any, arm64_tahoe:       "f9a288d5f5d6ca777822dc5f6c127171eaef7331137a120bf3212ebbd075fcad"
-    sha256 cellar: :any, arm64_sequoia:     "891168ae36cb2b0e8ffa29da4f5f3b87810c2e815aee06a13e9b442d7b1dbd29"
-    sha256 cellar: :any, arm64_sonoma:      "66ae6d5602f2769203e2e603f6186958aa27ed1e11ff01cd6e720b214ba9dd33"
-    sha256 cellar: :any, sonoma:            "bc84e9452fe1dbf9c638ad335888a25a4c0471ab1957aa071dc0564ee016d14a"
-    sha256 cellar: :any, arm64_linux:       "fdade7fba85ea1bd1a264235f390675347c15424f9490a225dfe8b400ef31acb"
-    sha256 cellar: :any, x86_64_linux:      "c97999713e242c5633b67212cac78c53389e604d1d10ac7c155fd98d28432f0c"
+    sha256 cellar: :any, arm64_golden_gate: "bd04bf66fabc1d209cd5e3010a52e5e9cf4dfbec1d090c26ec78a32417d1c0bd"
+    sha256 cellar: :any, arm64_tahoe:       "87fe9ab914c6a01fa54c1601fb7d06a13ca72f19665c8ddd7087100543a05f9c"
+    sha256 cellar: :any, arm64_sequoia:     "45671f9c0d08c96a1e5c3235c5f3c406c6a8688267e7d87fda515acc5ed6e923"
+    sha256 cellar: :any, arm64_linux:       "8197d11ea5baef0004cda0e805ca9f609751bb6204a4d74ba4e81f8b0de079ed"
+    sha256 cellar: :any, x86_64_linux:      "b3e3a1b32959d502c41164e8544adf4f64d8c7fe39a3fc7a16bdcfddb1b719f8"
   end
 
   depends_on "cmake" => :build
@@ -29,20 +27,25 @@ class Mydumper < Formula
   depends_on "mariadb-connector-c"
   depends_on "pcre2"
 
-  on_macos do
-    depends_on "openssl@3"
+  # Use portable close-on-exec pipes, upstream PR ref, https://github.com/mydumper/mydumper/pull/2363
+  patch do
+    url "https://github.com/mydumper/mydumper/commit/585fc5ab687e6a57694490177d52bc9dda47bed9.patch?full_index=1"
+    sha256 "e46de97c4ae0eb34a4ca6234a8f4fa7f762266d9ada0ea635787242eb0c17921"
+    type :unofficial
+    resolves "https://github.com/mydumper/mydumper/pull/2363"
   end
 
   deny_network_access!
 
   def install
+    ENV.append "LDFLAGS", "-Wl,-dead_strip_dylibs" if OS.mac? # avoid openssl linkage
+
     # Avoid installing config into /etc
     inreplace "CMakeLists.txt", "/etc", etc
 
     # Override location of mysql-client
     args = %W[
       -DMYSQL_CONFIG_PREFER_PATH=#{formula_opt_bin("mariadb-connector-c")}
-      -DCMAKE_POLICY_VERSION_MINIMUM=3.5
     ]
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
@@ -51,6 +54,7 @@ class Mydumper < Formula
   end
 
   test do
-    system bin/"mydumper", "--help"
+    assert_match "metadata file was not found",
+                 shell_output("#{bin}/myloader --directory=#{testpath} 2>&1", 1)
   end
 end

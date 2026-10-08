@@ -1,8 +1,8 @@
 class Openshell < Formula
   desc "Safe, private runtime for autonomous AI agents"
   homepage "https://docs.nvidia.com/openshell/latest/"
-  url "https://ghfast.top/https://github.com/NVIDIA/OpenShell/archive/refs/tags/v0.1.2.tar.gz"
-  sha256 "0ea7e81c5980680d4e65ad292a77ed3fc992a3cf5414bb99669f5c57d9ceb551"
+  url "https://ghfast.top/https://github.com/NVIDIA/OpenShell/archive/refs/tags/v0.1.3.tar.gz"
+  sha256 "eb6a8aac8e93951dde74234091e893e81309763d2ac161bd76bbff4822de1cf8"
   license "Apache-2.0"
 
   livecheck do
@@ -11,11 +11,11 @@ class Openshell < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "890457ce849cc38af861eca09f3a1c5e4ae9c11da60f9af7ae040a04c277f364"
-    sha256 cellar: :any, arm64_tahoe:       "726654bbd98c91961e186d03df2e77fef2a0b9ea3a8a7a689017dcd34a08480e"
-    sha256 cellar: :any, arm64_sequoia:     "0735145cba24b3f18e02787ccccdf6d747d3192d0650094ef43055082a0ede8f"
-    sha256 cellar: :any, arm64_linux:       "e08fb4e45922e66b8ed35a8f269110be2e56ad48d3d34b5dbf6510d7a6a89aea"
-    sha256 cellar: :any, x86_64_linux:      "e25ff7231c56129ba48a17adc807daeeea2f378d32a76e3f32352fcafd51cb54"
+    sha256 cellar: :any, arm64_golden_gate: "fba10fe68279064604dc34d89543c14d45208db0833300006d4441af03379e87"
+    sha256 cellar: :any, arm64_tahoe:       "4f7d8c8907eb39ef413495a9c203373ab711197840b961f71f64d8fd4fe2bdcf"
+    sha256 cellar: :any, arm64_sequoia:     "3f73abda2b40dcb1dac12a08dfff0e905e674120c6ec7dfa94bab8c9e872fef1"
+    sha256 cellar: :any, arm64_linux:       "0e4826cac6194d974eac105e4f4e00cf44b62d49278442ca6c53e7948dc37ab8"
+    sha256 cellar: :any, x86_64_linux:      "fec36579f0af1f375ec1f99b455948b95005219001131376e59ff5a1081beef4"
   end
 
   depends_on "pkgconf" => :build

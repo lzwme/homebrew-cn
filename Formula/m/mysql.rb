@@ -58,6 +58,17 @@ class Mysql < Formula
     cause "fails handling PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED"
   end
 
+  # Backports to support OpenSSL 4
+  patch do
+    file "Patches/mysql/26.7.0.diff"
+    type :backport # https://github.com/mysql/mysql-server/commit/04ba58a223afc1339c75b080825042ad17a85b43
+  end
+  patch do
+    url "https://github.com/mysql/mysql-server/commit/a045c23214ec225c49d9bc4caeea78d3d1f99ba9.patch?full_index=1"
+    sha256 "b597781554b7fbcf4e13402dc8dca97bea59e059ed6e40e4eb71cd5c26a91ad9"
+    type :backport
+  end
+
   # Patch out check for Homebrew `boost`.
   # This should not be necessary when building inside `brew`.
   # https://github.com/Homebrew/homebrew-test-bot/pull/820

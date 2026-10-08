@@ -27,28 +27,17 @@ class MariadbConnectorOdbc < Formula
 
   depends_on "cmake" => :build
   depends_on "mariadb-connector-c"
-  depends_on "openssl@3"
   depends_on "unixodbc"
 
   deny_network_access!
 
   def install
     ENV.append_to_cflags "-I#{formula_opt_include("mariadb-connector-c")}/mariadb"
-    ENV.append "LDFLAGS", "-L#{formula_opt_lib("mariadb-connector-c")}/mariadb"
-    ENV.append "LDFLAGS", "-Wl,-rpath,#{formula_opt_lib("mariadb-connector-c")}/mariadb" if OS.linux?
-    args = [
-      "-DMARIADB_LINK_DYNAMIC=1",
-      "-DWITH_SSL=OPENSSL",
-      "-DOPENSSL_ROOT_DIR=#{formula_opt_prefix("openssl@3")}",
-      "-DWITH_IODBC=0",
-      "-DICONV_INCLUDE_DIR=/usr/include",
+    args = %w[
+      -DMARIADB_LINK_DYNAMIC=ON
+      -DWITH_IODBC=OFF
+      -DWITH_SSL=OPENSSL
     ]
-
-    if OS.mac?
-      # Workaround 3.1.11 issues finding system's built-in -liconv
-      # See https://jira.mariadb.org/browse/ODBC-299
-      args << "-DICONV_LIBRARIES=#{MacOS.sdk_path}/usr/lib/libiconv.tbd"
-    end
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
 

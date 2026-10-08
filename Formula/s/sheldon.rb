@@ -1,10 +1,17 @@
 class Sheldon < Formula
   desc "Fast, configurable, shell plugin manager"
   homepage "https://sheldon.cli.rs"
-  url "https://ghfast.top/https://github.com/rossmacarthur/sheldon/archive/refs/tags/0.8.5.tar.gz"
-  sha256 "a32e181667ec8bf235f0c50f2671d3c0d78fbdd7502a61e2f88c7deacb534b20"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/rossmacarthur/sheldon.git", branch: "trunk"
+
+  stable do
+    url "https://ghfast.top/https://github.com/rossmacarthur/sheldon/archive/refs/tags/0.8.5.tar.gz"
+    sha256 "a32e181667ec8bf235f0c50f2671d3c0d78fbdd7502a61e2f88c7deacb534b20"
+
+    # `cargo update --precise 0.9.115 openssl-sys` for minimal update until release with
+    # https://github.com/rossmacarthur/sheldon/commit/93c32b6da53dc9ab8e915bd770280e6ebd7f6659
+    patch :DATA
+  end
 
   bottle do
     sha256 cellar: :any,                 arm64_golden_gate: "fe720316a0d5c9dccd7f2fcf1febf176ced1af6c8f048ae08c710fd3cba2c1a9"
@@ -68,3 +75,21 @@ class Sheldon < Formula
     end
   end
 end
+
+__END__
+diff --git a/Cargo.lock b/Cargo.lock
+index d517ee0..0bbf2b9 100644
+--- a/Cargo.lock
++++ b/Cargo.lock
+@@ -587,9 +587,9 @@ dependencies = [
+ 
+ [[package]]
+ name = "openssl-sys"
+-version = "0.9.109"
++version = "0.9.115"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "90096e2e47630d78b7d1c20952dc621f957103f8bc2c8359ec81290d75238571"
++checksum = "158fe5b292746440aa6e7a7e690e55aeb72d41505e2804c23c6973ad0e9c9781"
+ dependencies = [
+  "cc",
+  "libc",

@@ -3,16 +3,16 @@ class Trafilatura < Formula
 
   desc "Discovery, extraction and processing for Web text"
   homepage "https://trafilatura.readthedocs.io/en/latest/"
-  url "https://files.pythonhosted.org/packages/f3/fa/5d9a80eeaad90ab1c4e20a7126fc597367dedc2029d71aa85e19ba567864/trafilatura-2.3.0.tar.gz"
-  sha256 "6790dbf7f56a8fc761859687db61e1dda5ace89a932854b7ae8107761880f02a"
+  url "https://files.pythonhosted.org/packages/c3/e7/d359fcf887675c4305fb1f4548372484a2d8f0bc793dc6f2da3a748c1253/trafilatura-2.3.1.tar.gz"
+  sha256 "2e5557aeab32d33b9da7ff0debbb677a676c5b648a927e50d91b8277011e1105"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "1acae7ea53a33a2084d1a74b7e282cccaa922e2f1896f4a358487fa52ae77505"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "c862cce33f62bdee1717356d09e20fee4b8029333d0cbb355ec0f8e56d5ac689"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "20056a144feb8c4f341e1e867267a55bc170b3c3e436e7a277097f1357dcd868"
-    sha256 cellar: :any,                 arm64_linux:       "e8c427e20cbafc9cd8ba3b9b6ece255294ad7999536caa3bb4c985d916626ad7"
-    sha256 cellar: :any,                 x86_64_linux:      "796915625b9a7c56ca7f13774bb3cb2bbca2a36a5088c871e33b326073c9299b"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "64dde68a9163505a85c188135687deef01bbbfdc0be1a190d07ae717e66aeedd"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "1452e7b488b8058b3811f51787db13761d895e119197ff06d6df78b12d3bf8c6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "50e7c2204173d2be1e2e65c7332208da1a2e34551d7e46ed7ae8b9dd60e1d0bf"
+    sha256 cellar: :any,                 arm64_linux:       "6089ba1bcc0077316f97617e71c73710b629c30a06d7d0fcd01c78e0c13996cb"
+    sha256 cellar: :any,                 x86_64_linux:      "38dae0d5739d1506f91b617527e5380a269ab053ae41d636a2563318da2bd619"
   end
 
   depends_on "certifi"
@@ -69,8 +69,8 @@ class Trafilatura < Formula
   end
 
   resource "pytz" do
-    url "https://files.pythonhosted.org/packages/b0/ed/fa23d28713004418bbf2407127f80f385bfb0bf4e677bef02c25c27b00ee/pytz-2026.4.tar.gz"
-    sha256 "464303645bafafd72418898368b2429458f709cf1eb6a15372fbcc396b64da63"
+    url "https://files.pythonhosted.org/packages/14/21/d83d6ef28c4c912c4bb4d1dcf591f7b8c6bde87b9c66f9f454677314e16d/pytz-2026.5.tar.gz"
+    sha256 "fa23724b9c486543b9ff54a327ee7569ac83ade54bb9afd0fc18676620401c86"
   end
 
   resource "regex" do

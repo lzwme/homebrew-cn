@@ -1,11 +1,22 @@
 class Pkcs11Helper < Formula
   desc "Library to simplify the interaction with PKCS#11"
   homepage "https://github.com/OpenSC/OpenSC/wiki/pkcs11-helper"
-  url "https://ghfast.top/https://github.com/OpenSC/pkcs11-helper/releases/download/pkcs11-helper-1.31.0/pkcs11-helper-1.31.0.tar.bz2"
-  sha256 "46f0067bccd7be2c28f88b8bca775172b9e52fb6fc1280b44ca8bb831433fef9"
   license any_of: ["BSD-3-Clause", "GPL-2.0-or-later"]
   compatibility_version 1
   head "https://github.com/OpenSC/pkcs11-helper.git", branch: "master"
+
+  stable do
+    url "https://ghfast.top/https://github.com/OpenSC/pkcs11-helper/releases/download/pkcs11-helper-1.31.0/pkcs11-helper-1.31.0.tar.bz2"
+    sha256 "46f0067bccd7be2c28f88b8bca775172b9e52fb6fc1280b44ca8bb831433fef9"
+
+    # Backport support for OpenSSL 4. Using PR commit to avoid conflict from changelog
+    patch do
+      url "https://github.com/OpenSC/pkcs11-helper/commit/9c64c288384a7676c8e89258738d56f39116bd28.patch?full_index=1"
+      sha256 "84421d9689ec9a3f69a92a8606bd2c2de78b5540cd289c5363b322b1eb208316"
+      type :backport # https://github.com/OpenSC/pkcs11-helper/commit/59cc22b8d65669da599f1c435fdfe35d4e07db0e
+      resolves "https://github.com/OpenSC/pkcs11-helper/pull/77"
+    end
+  end
 
   livecheck do
     url :stable

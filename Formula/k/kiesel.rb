@@ -1,19 +1,17 @@
 class Kiesel < Formula
   desc "JavaScript engine written in Zig"
   homepage "https://kiesel.dev/"
-  url "https://codeberg.org/kiesel-js/kiesel/archive/0.3.0.tar.gz"
-  sha256 "ead71398e6a6f12266b73492ff2f8e9a8c76b0294ebda71cd0e11e634b4c8273"
+  url "https://codeberg.org/kiesel-js/kiesel/archive/0.4.0.tar.gz"
+  sha256 "8519832ad3214f0d534ca572a8f94d6b5034eb160e9054ba42247908fee0f937"
   license "MIT"
   head "https://codeberg.org/kiesel-js/kiesel.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "df012b4df97161ac5d3bd3b83e0242ee77b767a4193f51b8699ddb1b7d495bd0"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "ab2f012efc5b1daa9c673502b625b218dc5e3ef575c7c986866ab38897010cce"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "126e96532f3e9f33ceba66842a960de2dac4f3a0d5f3032e700566450cf87333"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "5168af6f7c759476d73167b7c6b1f02b8214ccc12107d749f0a2194746651f68"
-    sha256 cellar: :any_skip_relocation, sonoma:            "3ebc67b627766de2aee4fcc6b91edbb4e6b370b2c294c7cb10eab6b1382a059f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "9dcb61f2b0cec39dfe18b4a7bffdc83af7fe3708c970fb2025884865b03f54f3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "c8ae2ea0cfd415140f011a0cd134cb8a9b812f2e1b4a8c54c31db9e6b4572ef7"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "146ac5e4c884760f6a622cc5f8fc8f9a5d0982cbb4be9ab4265bc9ff1f41629d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "0c24d0e307324d1a3ee16027306803e258742aab6a266ad37ea9a20953ab6052"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "0676d4b20a9e7ab221a5b54f6596923bb94321906a52c6021a1ed8b2607e2c2a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "d262f38e1de91a6c984b2f398f4c51c28fb15ed32dd046c15c55ef18e8e55d8d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "5299bba490569ba8c40b9e6551716d31f8eebd0eea2abee61ce5538929913656"
   end
 
   depends_on "rust" => :build

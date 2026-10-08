@@ -23,7 +23,21 @@ class Pushpin < Formula
   depends_on "python@3.14"
   depends_on "qtbase"
   depends_on "zeromq"
-  depends_on "zurl"
+
+  # `cargo update --precise 0.9.114 openssl-sys` for minimum needed to use OpenSSL 4
+  patch :DATA
+
+  allow_network_access! :test
+
+  def fetch
+    if build.stable?
+      # Release tarball builds with vendored crates but we need to update openssl-sys after patch
+      odie "Remove `cargo vendor`!" if version > "1.42.0"
+      system "cargo", "vendor", "--locked"
+    else
+      system "cargo", "fetch", *std_cargo_fetch_args
+    end
+  end
 
   def install
     # Work around `cc` crate picking non-shim compiler when compiling `ring`.
@@ -117,3 +131,21 @@ class Pushpin < Formula
     end
   end
 end
+
+__END__
+diff --git a/Cargo.lock b/Cargo.lock
+index 4f329199..3bf51d94 100644
+--- a/Cargo.lock
++++ b/Cargo.lock
+@@ -1178,9 +1178,9 @@ checksum = "ff011a302c396a5197692431fc1948019154afc178baf7d8e37367442a4601cf"
+ 
+ [[package]]
+ name = "openssl-sys"
+-version = "0.9.107"
++version = "0.9.114"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "8288979acd84749c744a9014b4382d42b8f7b2592847b5afb2ed29e5d16ede07"
++checksum = "13ce1245cd07fcc4cfdb438f7507b0c7e4f3849a69fd84d52374c66d83741bb6"
+ dependencies = [
+  "cc",
+  "libc",

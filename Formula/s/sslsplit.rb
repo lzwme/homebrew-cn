@@ -41,6 +41,14 @@ class Sslsplit < Formula
   depends_on "libpcap"
   depends_on "openssl@3"
 
+  # Apply Debian patch to support OpenSSL 4
+  patch do
+    url "https://salsa.debian.org/debian/sslsplit/-/raw/1a4c4507193f974bfdd9d08314b46226da592a50/debian/patches/0004-Compatibility-with-OpenSSL-4.patch"
+    sha256 "ca8310d50822d5dda9ac559dc9d09ca473ab62c7f951375cf20ade20151539be"
+    type :unofficial
+    resolves "https://github.com/droe/sslsplit/issues/343"
+  end
+
   allow_network_access! :test
 
   def install

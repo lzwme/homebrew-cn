@@ -1,17 +1,17 @@
 class Hyperfine < Formula
   desc "Command-line benchmarking tool"
   homepage "https://github.com/sharkdp/hyperfine"
-  url "https://ghfast.top/https://github.com/sharkdp/hyperfine/archive/refs/tags/v1.21.0.tar.gz"
-  sha256 "aee01125074fd5a6a556818db7bba0577edae94cbe85165daae0e778aa28348d"
+  url "https://ghfast.top/https://github.com/sharkdp/hyperfine/archive/refs/tags/v2.0.0.tar.gz"
+  sha256 "f4b71df3c78e4cf752ca6fb6ebc4b025f7ea6a5ca5c48fea75f8a1fdb4c7d721"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/sharkdp/hyperfine.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "49d68347bfebd41af0a652dbd4714cda818c8bde1b9996c3f15f5ab208c376f0"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "a3663591c6a59dfefe6d68638fc61d022e78cbee65212472bbf6eee3ba3b053f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "2b46aaeb2d33a2148246b8bdf4df5a7e7200cb8d4e2c5aeba93bb0c147b19062"
-    sha256 cellar: :any,                 arm64_linux:       "cbb753bc1e355d3d50de8d47c30ce63ebf8dfd1bd26f296f77032bec3a4461cd"
-    sha256 cellar: :any,                 x86_64_linux:      "60c45f07fe5bbc674704b386d269dfc765261f3968f5aa7c57c2f45684236801"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "d797e75f328c0e8d5aae214f18640f82cdb620971b207b03105b1b4a25caec63"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "bdef558822250a41bcc15d0ddfdb8edde44a93834abae3c8a33af18047332d97"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "5f6106d336697f7611ba071e98224b1e91a9225e1a40e996f752c1625c5e2da9"
+    sha256 cellar: :any,                 arm64_linux:       "629256719d1898bbbdd683a278110076028f1b3274f2749c0d80c90c1d60d838"
+    sha256 cellar: :any,                 x86_64_linux:      "1cb9dcf00e6071ddbe0ee63a1e0d06bcfe75b3e130130430b5fda2efa98740fd"
   end
 
   depends_on "rust" => :build

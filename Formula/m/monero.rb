@@ -1,9 +1,20 @@
 class Monero < Formula
   desc "Official Monero wallet and CPU miner"
   homepage "https://www.getmonero.org/downloads/#cli"
-  url "https://downloads.getmonero.org/cli/monero-source-v0.18.5.3.tar.bz2"
-  sha256 "57f8bf5a32b0f8862e6826e7e19a911294d953eae630d2b8c05a976d4dced880"
   license "BSD-3-Clause"
+
+  stable do
+    url "https://downloads.getmonero.org/cli/monero-source-v0.18.5.3.tar.bz2"
+    sha256 "57f8bf5a32b0f8862e6826e7e19a911294d953eae630d2b8c05a976d4dced880"
+
+    # Backport support for OpenSSL 4
+    patch do
+      url "https://github.com/monero-project/monero/commit/4f73cfea6d37bc1eccab1e395fc526c94cbb99ba.patch?full_index=1"
+      sha256 "246466b0ce14c4b6f2ec7f424ca80c08369a87950be9cafefeec6171dc05c9cb"
+      type :backport
+      resolves "https://github.com/monero-project/monero/pull/10908"
+    end
+  end
 
   livecheck do
     url "https://downloads.getmonero.org/cli/source"

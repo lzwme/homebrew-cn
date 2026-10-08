@@ -28,6 +28,9 @@ class Projectable < Formula
     depends_on "zlib-ng-compat"
   end
 
+  # `cargo update --precise 0.9.114 openssl-sys` for minimum needed to use OpenSSL 4
+  patch :DATA
+
   def install
     ENV["LIBGIT2_NO_VENDOR"] = "1"
     ENV["LIBSSH2_SYS_USE_PKG_CONFIG"] = "1"
@@ -68,3 +71,30 @@ class Projectable < Formula
     end
   end
 end
+
+__END__
+diff --git a/Cargo.lock b/Cargo.lock
+index a02e66d..d33692c 100644
+--- a/Cargo.lock
++++ b/Cargo.lock
+@@ -1394,9 +1394,9 @@ dependencies = [
+ 
+ [[package]]
+ name = "openssl-sys"
+-version = "0.9.104"
++version = "0.9.114"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "45abf306cbf99debc8195b66b7346498d7b10c210de50418b5ccd7ceba08c741"
++checksum = "13ce1245cd07fcc4cfdb438f7507b0c7e4f3849a69fd84d52374c66d83741bb6"
+ dependencies = [
+  "cc",
+  "libc",
+@@ -1545,7 +1545,7 @@ dependencies = [
+ 
+ [[package]]
+ name = "projectable"
+-version = "1.3.1"
++version = "1.3.2"
+ dependencies = [
+  "ansi-to-tui",
+  "anyhow",

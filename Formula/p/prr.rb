@@ -27,6 +27,9 @@ class Prr < Formula
     depends_on "zlib-ng-compat"
   end
 
+  # `cargo update --precise 0.9.114 openssl-sys` for minimum needed to use OpenSSL 4
+  patch :DATA
+
   deny_network_access!
 
   def fetch
@@ -66,3 +69,21 @@ class Prr < Formula
     end
   end
 end
+
+__END__
+  diff --git a/Cargo.lock b/Cargo.lock
+index 54b9a55..3cf3b7a 100644
+--- a/Cargo.lock
++++ b/Cargo.lock
+@@ -1075,9 +1075,9 @@ dependencies = [
+ 
+ [[package]]
+ name = "openssl-sys"
+-version = "0.9.109"
++version = "0.9.114"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "90096e2e47630d78b7d1c20952dc621f957103f8bc2c8359ec81290d75238571"
++checksum = "13ce1245cd07fcc4cfdb438f7507b0c7e4f3849a69fd84d52374c66d83741bb6"
+ dependencies = [
+  "cc",
+  "libc",

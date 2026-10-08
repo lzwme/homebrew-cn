@@ -22,7 +22,6 @@ class Pdfly < Formula
   depends_on "certifi" => :no_linkage
   depends_on "cryptography" => :no_linkage
   depends_on "libsodium"
-  depends_on "openssl@3"
   depends_on "pillow" => :no_linkage
   depends_on "pydantic" => :no_linkage
   depends_on "python@3.14"

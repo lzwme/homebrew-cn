@@ -1,31 +1,17 @@
 class Subversion < Formula
   desc "Version control system designed to be a better CVS"
   homepage "https://subversion.apache.org/"
+  url "https://www.apache.org/dyn/closer.lua?path=subversion/subversion-1.15.0.tar.bz2"
+  mirror "https://archive.apache.org/dist/subversion/subversion-1.15.0.tar.bz2"
+  sha256 "dfb7b1e5270c7def971ccbd5938b0c03b1b5bd60b6674a2d8a74a9560839fb8c"
   license "Apache-2.0"
-  revision 4
-  compatibility_version 1
-
-  stable do
-    url "https://www.apache.org/dyn/closer.lua?path=subversion/subversion-1.14.5.tar.bz2"
-    mirror "https://archive.apache.org/dist/subversion/subversion-1.14.5.tar.bz2"
-    sha256 "e78a29e7766b8b7b354497d08f71a55641abc53675ce1875584781aae35644a1"
-
-    # Fix -flat_namespace being used on Big Sur and later.
-    patch do
-      file "Patches/libtool/configure-big_sur.diff"
-      type :unofficial
-    end
-  end
 
   bottle do
-    rebuild 1
-    sha256 arm64_golden_gate: "cc5d59e5a07cde988c12742c6aa97f595dc45742bc0467babd55ef427d8cc62a"
-    sha256 arm64_tahoe:       "9533cee4407ac04b7490f359f4270eba5d6b93e97f98342a51a4e9dcca5fe48c"
-    sha256 arm64_sequoia:     "fd07a1c28bb13c19c7573ab2135e9f21be955939254f5b0da6ee533532b136fa"
-    sha256 arm64_sonoma:      "a823a4f2a62c5f4c09bb47d210be76e6e38dd13a27a62e13e7f6f73e793e4ca5"
-    sha256 sonoma:            "33a262adddf6363b241ca6f0f8d737df49d5747a2e3237e9e928e916a19e4121"
-    sha256 arm64_linux:       "8002da7e341966edb214286526abf10bfe45c184fd7b4228220ce60980476b19"
-    sha256 x86_64_linux:      "2b44fafc593cd1c5d7400f99ea8acfee639e3506a9442538cd361a21c6c84fb4"
+    sha256 arm64_golden_gate: "331833ab95fed55f3157fb1bffc7b259d4aca741d101e4f91235c36caa344315"
+    sha256 arm64_tahoe:       "3e975b3f3d4fc10bb05d19249043c14a37b6f71ce2efa824bd5aeb48e764ae4d"
+    sha256 arm64_sequoia:     "7b8558161b3561f95cffe32434d1c88da25da316a2987d87577141e421ff1839"
+    sha256 arm64_linux:       "cf31f268ca18516a866151a6f6e003fdb2ab5300249d3a28107009097108f339"
+    sha256 x86_64_linux:      "ca14d8e9db67886bbadfee087cdc7b1b6739be26050fd14d4ef321e784eecece"
   end
 
   head do
@@ -64,6 +50,10 @@ class Subversion < Formula
   resource "py3c" do
     url "https://ghfast.top/https://github.com/encukou/py3c/archive/refs/tags/v1.4.tar.gz"
     sha256 "abc745079ef906148817f4472c3fb4bc41d62a9ea51a746b53e09819494ac006"
+
+    livecheck do
+      url :url
+    end
   end
 
   def install

@@ -3,17 +3,17 @@ class Tach < Formula
 
   desc "Tool to enforce dependencies using modular architecture"
   homepage "https://docs.gauge.sh/getting-started/introduction"
-  url "https://files.pythonhosted.org/packages/f3/47/72b5a0c5c5902c064da76ad7041f814d3a4e7fe7980cc9eea627daed2a0b/tach-0.35.2.tar.gz"
-  sha256 "513ec05cbf16a0b343daaf54480512918b6cbdd8174e98fdbfcfe4b11da5e1fd"
+  url "https://files.pythonhosted.org/packages/6c/91/8c7ada391a5bc34498893e430f3f8e34082450017892135eccde233086c1/tach-0.35.3.tar.gz"
+  sha256 "251a9cbbadd923f54668ca5f1adc4d5239ccab87fd630c5880efced235175661"
   license "MIT"
   head "https://github.com/tach-org/tach.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "692c081ae46f9e14f4a1ebe3dc77d96577a5923ed1a942afaa125f0a9fbf3ed8"
-    sha256 cellar: :any, arm64_tahoe:       "a01f63151c5a13fc96c1ffab9c8b21e21ab93bb4f2559c89e5a9eec045e380a5"
-    sha256 cellar: :any, arm64_sequoia:     "bf2750e4723afc7f79d4947966ddf0b87c4c37b33cfb1480501b0be5c5700936"
-    sha256 cellar: :any, arm64_linux:       "8ddbbb9d240a5feb5e98e177cbdb0f6f145fd288cd93c20ba85520d9294f3866"
-    sha256 cellar: :any, x86_64_linux:      "1186a063cbbdd237de0beccbe5b177391be8c189d59862a5c4e1b4d4c915d3a8"
+    sha256 cellar: :any, arm64_golden_gate: "7f38d5269f4bdc4a63e3f330c09a932288e87c7087c95d396d50d997ed8f9cfe"
+    sha256 cellar: :any, arm64_tahoe:       "56a624303bac8c3fadc485479f1ae2b95b306ecf5c63fa62ac5c528107bc55d6"
+    sha256 cellar: :any, arm64_sequoia:     "171628896c90a164e7a8c612599ce45df4988e497f603097edefaee0435a138c"
+    sha256 cellar: :any, arm64_linux:       "8c97724988c1ade7ba8905ddbb42befb142170d4ecc83a293597f41399ad74ab"
+    sha256 cellar: :any, x86_64_linux:      "276828671fc1dcc532fc87a8e69e97fab9d6408c484f52989100b7fada6e5186"
   end
 
   depends_on "rust" => :build
@@ -80,19 +80,14 @@ class Tach < Formula
     sha256 "4d9debb8b99007ae47165abc08670bd74cb74b5227dda7f643eccc4e9eb5642c"
   end
 
-  resource "tomli" do
-    url "https://files.pythonhosted.org/packages/22/de/48c59722572767841493b26183a0d1cc411d54fd759c5607c4590b6563a6/tomli-2.4.1.tar.gz"
-    sha256 "7c7e1a961a0b2f2472c1ac5b69affa0ae1132c39adcb67aba98568702b9cc23f"
-  end
-
   resource "tomli-w" do
     url "https://files.pythonhosted.org/packages/19/75/241269d1da26b624c0d5e110e8149093c759b7a286138f4efd61a60e75fe/tomli_w-1.2.0.tar.gz"
     sha256 "2dd14fac5a47c27be9cd4c976af5a12d87fb1f0b4512f81d69cce3b35ae25021"
   end
 
   resource "wcwidth" do
-    url "https://files.pythonhosted.org/packages/dc/ac/3a943d2792c9bb368aaa8b50121c0f778460ba2d7fbdc0a0366201d9e761/wcwidth-0.9.1.tar.gz"
-    sha256 "5823209b0d43af322ce698c689380d7c15ca31fa8e6e3be8459f27031bef0af5"
+    url "https://files.pythonhosted.org/packages/f0/b4/7830542634bb2d3e62aa3b586a72d5b3b6c91c3168929e7000ef3fed041d/wcwidth-0.9.2.tar.gz"
+    sha256 "ae0ef90b90f6af38b54f1fe6d58662ec33b3cb4b8391958a62416d654231727b"
   end
 
   def install

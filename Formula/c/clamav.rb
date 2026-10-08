@@ -1,11 +1,22 @@
 class Clamav < Formula
   desc "Anti-virus software"
   homepage "https://www.clamav.net/"
-  url "https://ghfast.top/https://github.com/Cisco-Talos/clamav/releases/download/clamav-1.5.4/clamav-1.5.4.tar.gz"
-  mirror "https://www.clamav.net/downloads/production/clamav-1.5.4.tar.gz"
-  sha256 "1af1117a228f1b5bc7fa91a0dabc37848a99e7d25188e9be8043332ce721dfd3"
   license "GPL-2.0-or-later"
   head "https://github.com/Cisco-Talos/clamav.git", branch: "main"
+
+  stable do
+    url "https://ghfast.top/https://github.com/Cisco-Talos/clamav/releases/download/clamav-1.5.4/clamav-1.5.4.tar.gz"
+    mirror "https://www.clamav.net/downloads/production/clamav-1.5.4.tar.gz"
+    sha256 "1af1117a228f1b5bc7fa91a0dabc37848a99e7d25188e9be8043332ce721dfd3"
+
+    # Backport support for OpenSSL 4
+    patch do
+      url "https://github.com/Cisco-Talos/clamav/commit/0097a6f99d9f6b78381e12b677a38fb62242c41a.patch?full_index=1"
+      sha256 "3d8d697e3d1b369836b2a3b2a4d618de682330b5c804ae655ae36a16d28f7403"
+      type :backport
+      resolves "https://github.com/Cisco-Talos/clamav/pull/1731"
+    end
+  end
 
   livecheck do
     url :stable

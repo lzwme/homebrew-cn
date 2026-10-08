@@ -1,8 +1,8 @@
 class Tabulate < Formula
   desc "Table Maker for Modern C++"
   homepage "https://github.com/p-ranav/tabulate"
-  url "https://ghfast.top/https://github.com/p-ranav/tabulate/archive/refs/tags/v2.1.tar.gz"
-  sha256 "6f7b17faca249b12366e152242e2fffcef15ea880dbecfb3af63d798971f2686"
+  url "https://ghfast.top/https://github.com/p-ranav/tabulate/archive/refs/tags/v2.2.tar.gz"
+  sha256 "3c12853cbf103adf659c4821351a302351d139513f1c43528095da41e8a37044"
   license all_of: [
     "MIT",
     "BSL-1.0",      # {optional,string_view,variant}_lite.hpp
@@ -10,7 +10,7 @@ class Tabulate < Formula
   ]
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "1e595d61cadc101f3112f1da4b62c2560a0133ae038294edd4f0fa762c786048"
+    sha256 cellar: :any_skip_relocation, all: "079837d4b81f9905891ee95cb53c95d74747f6a61d84677603782411826e9d58"
   end
 
   depends_on "cmake" => :build

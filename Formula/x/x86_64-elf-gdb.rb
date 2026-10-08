@@ -1,9 +1,9 @@
 class X8664ElfGdb < Formula
   desc "GNU debugger for x86_64-elf cross development"
   homepage "https://www.gnu.org/software/gdb/"
-  url "https://ftpmirror.gnu.org/gdb/gdb-17.2.tar.xz"
-  mirror "https://ftp.gnu.org/gnu/gdb/gdb-17.2.tar.xz"
-  sha256 "1c036c0d72e4b3d1fb5c94c88632add6f9d76f4d7c4d2ea793c12a9f19a3228c"
+  url "https://ftpmirror.gnu.org/gdb/gdb-18.1.tar.xz"
+  mirror "https://ftp.gnu.org/gnu/gdb/gdb-18.1.tar.xz"
+  sha256 "cd9fc3fe2b47743840e42c1592d3d87f8302eb18639c0b8b4ba0898002e2348f"
   license "GPL-3.0-or-later"
   head "https://sourceware.org/git/binutils-gdb.git", branch: "master"
 
@@ -12,13 +12,11 @@ class X8664ElfGdb < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "f0c2cc3b8f06f04632697ea3cb63feab2e0dc4d5338982165a520dcebe5bbe92"
-    sha256 arm64_tahoe:       "7edfcad77bf94e4d79afded39765753d83aaae9135b4566924ff5ca5892dfcb0"
-    sha256 arm64_sequoia:     "d979d15d0b0a559d9b34ae1f60173bc0ff745aa52e39b337879eda93ddd6d87b"
-    sha256 arm64_sonoma:      "0b3ed4dfdfb65299d5a3121b27a792825c391991caa7c1f3b6de3bfe2c89ae6c"
-    sha256 sonoma:            "45e5fc1395a37a58bbdaed0b8ed7d3dfe8d39007c201edfe2ff539d5af878b4f"
-    sha256 arm64_linux:       "c926333a6b79b9bf814bc3ce4858b743168c77387ca5d76fa075900237c8f9c9"
-    sha256 x86_64_linux:      "f90c56228eb482f243ebdd0eddfa68a14b6712c56545afba4f2d85d338ec9847"
+    sha256 arm64_golden_gate: "e4f74c2429edefb8676140f14501fa0266088beb1f4b79c98d14af385949367e"
+    sha256 arm64_tahoe:       "effce7fbdd7fc5eee1c7eea3741cd9d51d27afc628d3599ccdd96c4748d85667"
+    sha256 arm64_sequoia:     "8cd3a7fd9a8be3b6c64cd014e66dd1881e06042321c558d97d4db7d65751cf97"
+    sha256 arm64_linux:       "27fd7c16951ba6442aadf8d576ad30f60795388d1b73e72f4e19c23abd59f8f4"
+    sha256 x86_64_linux:      "ded65e1fb41da746ce8b088f2483de1e9c33ed1935183005ba9bf81d306d3a86"
   end
 
   depends_on "pkgconf" => :build

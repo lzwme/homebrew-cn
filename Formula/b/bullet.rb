@@ -22,6 +22,8 @@ class Bullet < Formula
   depends_on "pkgconf" => :build
   depends_on "python@3.14" => [:build, :test]
 
+  deny_network_access!
+
   def install
     common_args = %w[
       -DBT_USE_EGL=ON

@@ -1,29 +1,10 @@
 class Node < Formula
   desc "Open-source, cross-platform JavaScript runtime environment"
   homepage "https://nodejs.org/"
+  url "https://registry.npmmirror.com/-/binary/node/v26.11.0/node-v26.11.0.tar.xz"
+  sha256 "aaad9242704524109e88d48be7bb7b7943486d931e740a352c02e97e107f18c9"
   license "MIT"
-  revision 2
-  compatibility_version 1
   head "https://github.com/nodejs/node.git", branch: "main"
-
-  stable do
-    url "https://registry.npmmirror.com/-/binary/node/v26.10.0/node-v26.10.0.tar.xz"
-    sha256 "7b3a546d33cb7e15a43bdd7a57e0be5d5fd5ffc553e6e4c120033e66f0ba20c5"
-
-    # Backport support for temporal with system ICU
-    patch do
-      url "https://github.com/nodejs/node/commit/c4c11636b1420fd996e16a583b37309c179d17df.patch?full_index=1"
-      sha256 "7790de4db394b03fc6c8df8101c126ea401506347d67cc1555aeeb9be1ad87f1"
-      type :backport
-      resolves "https://github.com/nodejs/node/pull/65992"
-    end
-    patch do
-      url "https://github.com/nodejs/node/commit/bba34225c149b21f5fee96e168d7ee6f0bb5efb9.patch?full_index=1"
-      sha256 "68764ccc83203cd0a9e5b3693ffc4f9673f7dc348dffe76efb15948c07fa3d03"
-      type :backport
-      resolves "https://github.com/nodejs/node/pull/65992"
-    end
-  end
 
   livecheck do
     url "https://registry.npmmirror.com/-/binary/node/"
@@ -31,11 +12,11 @@ class Node < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "227feb0486ba552d51b2b262b53b0c15950b03ac214099d61d45226b4ebdd5e7"
-    sha256 arm64_tahoe:       "e8723f370d99e7d2b9207068261267c8b3bdfa77ac1407e2a5c8b43f1dc43d7d"
-    sha256 arm64_sequoia:     "6bd0f4573a167bbac54a11d7ad9681be379d2d09c078d301ca5b4ca6acadbde1"
-    sha256 arm64_linux:       "d19e4090bcaf1f5058100c5151f52ef8690ae2d22134392984a0afa2a43b9df3"
-    sha256 x86_64_linux:      "7fb0019e5ae78b7bda4cc1929cc1c39835ad026c0bc6ef4e12d320783cfdc6b1"
+    sha256 arm64_golden_gate: "2069278cbae27858ce63ea602b969b5efcc9f23a677ba7a1ea56ce42bbf3d1ae"
+    sha256 arm64_tahoe:       "f348432ab1ac6fa72a7ac5dad7999c74a2911ddf298fb25565816fb3280726c5"
+    sha256 arm64_sequoia:     "a98e1407899f07d4cde3b5b869d1df404b8045d8e594aed3ccf3e73c85872268"
+    sha256 arm64_linux:       "040d84cec0b8506e69613f5419185603da27d89ac8f6133edc7f769bc2c23fdc"
+    sha256 x86_64_linux:      "066e9342fcfbcc22f2b97fddbf868523310c399228dc9b1a69b48790cf4f6921"
   end
 
   depends_on "pkgconf" => :build
@@ -90,8 +71,8 @@ class Node < Formula
   # We track major/minor from upstream Node releases.
   # We will accept *important* npm patch releases when necessary.
   resource "npm" do
-    url "https://registry.npmjs.org/npm/-/npm-11.19.1.tgz"
-    sha256 "9f58bff01604cb1b14008fef14dceb14d836a49225e45c6c2e37de3be3e707f0"
+    url "https://registry.npmjs.org/npm/-/npm-11.20.0.tgz"
+    sha256 "d1a92f40e6c407b84c3a00c3cf978a10b24fd42f153c527e2016cef7bb34a483"
 
     livecheck do
       url "https://raw.githubusercontent.com/nodejs/node/refs/tags/v#{LATEST_VERSION}/deps/npm/package.json"

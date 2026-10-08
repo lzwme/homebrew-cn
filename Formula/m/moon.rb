@@ -1,8 +1,8 @@
 class Moon < Formula
   desc "Task runner and repo management tool for the web ecosystem, written in Rust"
   homepage "https://moonrepo.dev/moon"
-  url "https://ghfast.top/https://github.com/moonrepo/moon/archive/refs/tags/v2.6.0.tar.gz"
-  sha256 "89bd2d1edf7552f7ab1b1d4c817b69a7f0d778dfe2a220799a6e96a4f4b03e76"
+  url "https://ghfast.top/https://github.com/moonrepo/moon/archive/refs/tags/v2.6.1.tar.gz"
+  sha256 "f4ecd6eb69032e4ce201c6064649fa00c747012a08448e328070461ab25271cd"
   license "MIT"
   head "https://github.com/moonrepo/moon.git", branch: "master"
 
@@ -12,11 +12,11 @@ class Moon < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "40b64bb9a14399a212c89b1bbbbc93136a3bc4edfaa77afac8d369bb662bbb6e"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "27b2686feb2c3111ce2f94d0803092f991c5de0241810c2f8df8aa9eaf66d656"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "a269927d0564af2f6cb77fe6a9cec1c5bc60f265a1a108de008439214b736bfa"
-    sha256 cellar: :any,                 arm64_linux:       "fcfaa29fb73aafacec4fe71affb1542382164dd0bd75a170e7c68298a5f2f9ca"
-    sha256 cellar: :any,                 x86_64_linux:      "ae9378140075ad4f8570b8f2036c06148682ece97f5e29bdd45fc4ce2841b33e"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "6e7d941bef933aa754dc9252530b6ece74fdac8595ddfb30500d109763cf674f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "f21f3a5fe8e4f85c6d21a28e87fa3868478d5d3b91bf79707846dd80f9036d42"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "fce44e069b0f3d349b138d1b4e87a575e54f10e3415641772ecefcfb4dacf585"
+    sha256 cellar: :any,                 arm64_linux:       "283b2c88ce2c3e0bf2201f8f89b5e9894f3c53cc80d9f1fc9eedaeb5ab940075"
+    sha256 cellar: :any,                 x86_64_linux:      "8c05aaed254040957b6f666c9c47481cc08f395a9c9c5ccb43f5968c60d34f77"
   end
 
   depends_on "pkgconf" => :build

@@ -13,16 +13,16 @@ class Freetype < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_golden_gate: "fe80e94f6a046b6a473f49fb7a7ec652f4dd921ca29500449c5c198aa83016e9"
-    sha256 cellar: :any,                 arm64_tahoe:       "449e22351da81ba5c8c398f87c295decac6b396bd6fab54becbb3d18800b62d1"
-    sha256 cellar: :any,                 arm64_sequoia:     "905d44c655367754329e9fcc67630c71c03c527f5ee0d9c89794b21e9708b172"
-    sha256 cellar: :any,                 arm64_sonoma:      "4aeceab2c37d3685dd0de24b737f07c33a1098eaf757eb24d8d8bbe6ed68d02d"
-    sha256 cellar: :any,                 sonoma:            "c266877a4676016b189131c87355f3e9be0d5e0edbe3a464b5b6ef039945f199"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "65a5b757dc5949a7d0bcbd86f3ecfc9571b2baca626846d73d214932d0240083"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "4dfd17e1b578e43e2200b48b3b6745e18280df3ce9c9504f365f1bcc8fe8869e"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "f705e663ae79e8687317afd82ff7f2fd83bf06773b728f98c60eacf57e973f63"
+    sha256 cellar: :any, arm64_tahoe:       "12a2e191f4ef6b4fd3c624ac36ed76bb317474893b92b5dac4c5884eb9f1fec3"
+    sha256 cellar: :any, arm64_sequoia:     "6453db5c6dba77200b4a1a653912bc63d251bdf2c8649c69ce19c336cfb3494a"
+    sha256 cellar: :any, arm64_linux:       "6257cffda7c33bead9b19a1fc8999303191b2684e79c965439f945633e5a87eb"
+    sha256 cellar: :any, x86_64_linux:      "dce42875d737b81860b044edfb837626906d4d118cc5f66d03053dbcbcf72908"
   end
 
   depends_on "pkgconf" => :build
+  depends_on "brotli"
   depends_on "libpng"
 
   uses_from_macos "bzip2"
@@ -38,6 +38,7 @@ class Freetype < Formula
 
     system "./configure", "--prefix=#{prefix}",
                           "--enable-freetype-config",
+                          "--with-brotli",
                           "--without-harfbuzz"
     system "make"
     system "make", "install"

@@ -6,6 +6,11 @@ class Gascity < Formula
   license "MIT"
   head "https://github.com/gastownhall/gascity.git", branch: "main"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     sha256                               arm64_golden_gate: "7d41f9aca007b375f741d3ea83ac27752a8423129b577eea7c0578cbb1ca6915"
     sha256                               arm64_tahoe:       "aab58140f12f9bd093b149a89b2dfed47567197de7590eb7ca33410690319446"

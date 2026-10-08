@@ -33,6 +33,8 @@ class Btllib < Formula
     resolves "https://github.com/simongog/sdsl-lite/issues/462"
   end
 
+  deny_network_access!
+
   def install
     # Workaround for CMake 4 compatibility
     ENV["CMAKE_POLICY_VERSION_MINIMUM"] = "3.5"

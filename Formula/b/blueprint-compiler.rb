@@ -19,6 +19,8 @@ class BlueprintCompiler < Formula
   depends_on "pygobject3"
   depends_on "python@3.14"
 
+  deny_network_access!
+
   def install
     venv = virtualenv_create(libexec, python3)
     # Make meson use the venv's python so the launcher shebang and module dir target it

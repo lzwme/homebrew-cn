@@ -1,16 +1,16 @@
 class HelixDb < Formula
   desc "Open-source graph-vector database built from scratch in Rust"
   homepage "https://helix-db.com"
-  url "https://ghfast.top/https://github.com/HelixDB/helix-db/archive/refs/tags/v3.4.3.tar.gz"
-  sha256 "b61acf0a43e5c9f28f7e75375036044cbaf6183fcf1a6304673ef02af7f44b7e"
+  url "https://ghfast.top/https://github.com/HelixDB/helix-db/archive/refs/tags/v3.4.4.tar.gz"
+  sha256 "3386f06852bfb9b5b4a392c97663e38de952183433b0805e985b55a33ecd6f89"
   license "Apache-2.0"
 
   bottle do
-    sha256 arm64_golden_gate: "70cde99f81a6691c26758186141d6d15e589a7e66d14a9757aead900e6f7e055"
-    sha256 arm64_tahoe:       "45a998f79709043a7b549f72df7e74cef34518fefa0988de70cb3c648ab59876"
-    sha256 arm64_sequoia:     "4276e7c4cb90bfa0a0f36ef62c45f88393ba0b90b1e45915080396f2a015e604"
-    sha256 arm64_linux:       "1d15175865a36a79b742211db9c786de98ee70f8e94f8fd02dfb496385a78b55"
-    sha256 x86_64_linux:      "5eb19454ae6edb1a85580b2846df0c810ad170e46d3ba77b65abd6c42e8c739a"
+    sha256 arm64_golden_gate: "a4a782ab5b7f1dd91d8aed1e6f4b80d1e62a419f357895e230c8a2b6650f0af2"
+    sha256 arm64_tahoe:       "fbfe6039519cdff8fa1253e0905ae55ebf4166ae8db1b898eddbac73c2511d2f"
+    sha256 arm64_sequoia:     "005ab9410dd171ace6e27ae09a3b2f4d089004800892921a93ae319ff4b3396d"
+    sha256 arm64_linux:       "0f882f3d8e8e1f601fe636cacd35aabf05a066a9005e9b25613dd55718818754"
+    sha256 x86_64_linux:      "eb692f5eed358edf31975229772a69db5eec46519d3c351d12e3897b698b206d"
   end
 
   depends_on "rust"
