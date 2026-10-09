@@ -1,17 +1,17 @@
 class Kiesel < Formula
   desc "JavaScript engine written in Zig"
   homepage "https://kiesel.dev/"
-  url "https://codeberg.org/kiesel-js/kiesel/archive/0.4.0.tar.gz"
-  sha256 "8519832ad3214f0d534ca572a8f94d6b5034eb160e9054ba42247908fee0f937"
+  url "https://codeberg.org/kiesel-js/kiesel/archive/0.4.1.tar.gz"
+  sha256 "a21430c087ff0089dc52de038e5124fbac8e981ddb11d98c1e205e70e5acf4c4"
   license "MIT"
   head "https://codeberg.org/kiesel-js/kiesel.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "146ac5e4c884760f6a622cc5f8fc8f9a5d0982cbb4be9ab4265bc9ff1f41629d"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "0c24d0e307324d1a3ee16027306803e258742aab6a266ad37ea9a20953ab6052"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "0676d4b20a9e7ab221a5b54f6596923bb94321906a52c6021a1ed8b2607e2c2a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "d262f38e1de91a6c984b2f398f4c51c28fb15ed32dd046c15c55ef18e8e55d8d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "5299bba490569ba8c40b9e6551716d31f8eebd0eea2abee61ce5538929913656"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "8b050d26dc4426b4b2455d46a36c79865a8dc7fbb17ca10f3dea17d052f64105"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "1e5acb716e8f9d174d1c96e3280fca4a76fa9b4da336d5a4d9cf125d4e8775ee"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "0902edf986a74f4d485b205a813afd9da2a9879deafed1cc203a2d44413e1032"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "367d6938dab9462e9a3566aad497f7d63afecd2e9c74eda28cef2e182838ccf7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "f00faed32bee27f6a69425499b24a0108a7cc7370d07cb0a8097b3e1922723af"
   end
 
   depends_on "rust" => :build

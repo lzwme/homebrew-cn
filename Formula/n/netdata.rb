@@ -1,8 +1,8 @@
 class Netdata < Formula
   desc "Diagnose infrastructure problems with metrics, visualizations & alarms"
   homepage "https://www.netdata.cloud/"
-  url "https://ghfast.top/https://github.com/netdata/netdata/releases/download/v2.12.0/netdata-v2.12.0.tar.gz"
-  sha256 "3d53eae673906617aab42c844e307f3356aed625f68771dd4160a02ce129feca"
+  url "https://ghfast.top/https://github.com/netdata/netdata/releases/download/v2.12.1/netdata-v2.12.1.tar.gz"
+  sha256 "39b4aea46a7227391ec592cab41e385af696f286707dd9b40ddfa967d0f24570"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -12,11 +12,11 @@ class Netdata < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "d73b11caae7a4b9837c07d34c2f018c9f61c6b15bc24608c010d17665c2c1eeb"
-    sha256 arm64_tahoe:       "ef5a7516f44de1b61c81b9a55d2d1fe7157b97ecaa67c0b36d0f286828111dc4"
-    sha256 arm64_sequoia:     "82127752d27e74eaf7b9ffc48acd999bededf3bf5209f91fe51833056cc20fde"
-    sha256 arm64_linux:       "7b7b4d058fd0f119bac7f312afff17a858721ab711bcae76693d286aaeb0ea72"
-    sha256 x86_64_linux:      "0963932dc6bbd10b0731736fdf7c49b08fb87f12c9c076cb8f88785eddd9f18f"
+    sha256 arm64_golden_gate: "8cc0fa49a815664bbeedaea5227be14c76e642a2cb6ddf1336c04e7db6ef5a26"
+    sha256 arm64_tahoe:       "bb26cd8535f191a44ccd9b675b929d9748e8fe4a770e298b11838e78e5f36352"
+    sha256 arm64_sequoia:     "9f3a5e31fead93eb205c66046e6e6548008937f4bc9c822d00309be7673e0b0b"
+    sha256 arm64_linux:       "23dc73355dcfd57a7f3564355c364b0f98b3daf0adf99f7e971534675dc9ac2a"
+    sha256 x86_64_linux:      "fdd02121336237e67ff0718c6ccbfadf438d14fba265c1f2ef6201c3d6b3746b"
   end
 
   depends_on "cmake" => :build

@@ -28,6 +28,16 @@ class PdfTocgen < Formula
     sha256 "b3bda1d108d5dd99f4a20d24d9c348e91c4db7ab1b749200bded2f839ccbe68f"
   end
 
+  resource "pdf", :test do
+    url "https://ghfast.top/https://raw.githubusercontent.com/Krasjet/pdf.tocgen/refs/heads/master/spec/files/level2.pdf"
+    sha256 "021e4d025341d31babee19e6b75afb26f167923db42d1d038610edb328b82da2"
+  end
+
+  resource "toc", :test do
+    url "https://ghfast.top/https://raw.githubusercontent.com/Krasjet/pdf.tocgen/refs/heads/master/spec/files/level2.toc"
+    sha256 "b32649c6c86738542720fcfb9eaa3f1dff0b50b27865ee9c1558271010508bf1"
+  end
+
   def install
     virtualenv_install_with_resources
   end
@@ -35,16 +45,6 @@ class PdfTocgen < Formula
   test do
     # Keep pymupdf's `fitz` deprecation warning out of the recipe file
     ENV["PYMUPDF_MESSAGE"] = "fd:2"
-
-    resource "pdf" do
-      url "https://ghfast.top/https://raw.githubusercontent.com/Krasjet/pdf.tocgen/refs/heads/master/spec/files/level2.pdf"
-      sha256 "021e4d025341d31babee19e6b75afb26f167923db42d1d038610edb328b82da2"
-    end
-
-    resource "toc" do
-      url "https://ghfast.top/https://raw.githubusercontent.com/Krasjet/pdf.tocgen/refs/heads/master/spec/files/level2.toc"
-      sha256 "b32649c6c86738542720fcfb9eaa3f1dff0b50b27865ee9c1558271010508bf1"
-    end
 
     testpath.install resource("pdf")
     testpath.install resource("toc")

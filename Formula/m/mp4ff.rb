@@ -22,6 +22,31 @@ class Mp4ff < Formula
     ]
   end
 
+  resource "homebrew-init", :test do
+    url "https://ghfast.top/https://raw.githubusercontent.com/Eyevinn/mp4ff/v0.52.0/mp4/testdata/init.mp4"
+    sha256 "09a99ab8be9a39c80dc41ac6d4c9539b16947aab95abbadec903bfcb7a322221"
+  end
+
+  resource "homebrew-segment", :test do
+    url "https://ghfast.top/https://raw.githubusercontent.com/Eyevinn/mp4ff/v0.52.0/mp4/testdata/1.m4s"
+    sha256 "00dd5f29bc6ba64a9d8540cdbeda7a3e5be0f0ed67475ab307506d7462fc2d98"
+  end
+
+  resource "homebrew-prog", :test do
+    url "https://ghfast.top/https://raw.githubusercontent.com/Eyevinn/mp4ff/v0.52.0/mp4/testdata/prog_8s.mp4"
+    sha256 "86651d2aa80c714440fee3499ac3dd258b75043c4ceb455d70babb7873b16feb"
+  end
+
+  resource "homebrew-subs", :test do
+    url "https://ghfast.top/https://raw.githubusercontent.com/Eyevinn/mp4ff/v0.52.0/cmd/mp4ff-subslister/testdata/multi_vttc.mp4"
+    sha256 "1518ba79c86f28414f9285910f8118e00d3b70aa07c6a48ebb1f80b476b1192a"
+  end
+
+  resource "homebrew-mvhevc", :test do
+    url "https://ghfast.top/https://raw.githubusercontent.com/Eyevinn/mp4ff/v0.53.0/cmd/mp4ff-mvhevc/testdata/stereo_spatial.mp4"
+    sha256 "caa53ab7cf493d5a59d98b0eb8788a6add5faac6b5adcba58e89fd533174f90e"
+  end
+
   allow_network_access! :test
 
   def fetch
@@ -35,31 +60,6 @@ class Mp4ff < Formula
   end
 
   test do
-    resource "homebrew-init" do
-      url "https://ghfast.top/https://raw.githubusercontent.com/Eyevinn/mp4ff/v0.52.0/mp4/testdata/init.mp4"
-      sha256 "09a99ab8be9a39c80dc41ac6d4c9539b16947aab95abbadec903bfcb7a322221"
-    end
-
-    resource "homebrew-segment" do
-      url "https://ghfast.top/https://raw.githubusercontent.com/Eyevinn/mp4ff/v0.52.0/mp4/testdata/1.m4s"
-      sha256 "00dd5f29bc6ba64a9d8540cdbeda7a3e5be0f0ed67475ab307506d7462fc2d98"
-    end
-
-    resource "homebrew-prog" do
-      url "https://ghfast.top/https://raw.githubusercontent.com/Eyevinn/mp4ff/v0.52.0/mp4/testdata/prog_8s.mp4"
-      sha256 "86651d2aa80c714440fee3499ac3dd258b75043c4ceb455d70babb7873b16feb"
-    end
-
-    resource "homebrew-subs" do
-      url "https://ghfast.top/https://raw.githubusercontent.com/Eyevinn/mp4ff/v0.52.0/cmd/mp4ff-subslister/testdata/multi_vttc.mp4"
-      sha256 "1518ba79c86f28414f9285910f8118e00d3b70aa07c6a48ebb1f80b476b1192a"
-    end
-
-    resource "homebrew-mvhevc" do
-      url "https://ghfast.top/https://raw.githubusercontent.com/Eyevinn/mp4ff/v0.53.0/cmd/mp4ff-mvhevc/testdata/stereo_spatial.mp4"
-      sha256 "caa53ab7cf493d5a59d98b0eb8788a6add5faac6b5adcba58e89fd533174f90e"
-    end
-
     # Build a combined fragmented MP4 from init segment + media segment
     resource("homebrew-init").stage(testpath/"init")
     resource("homebrew-segment").stage(testpath/"seg")

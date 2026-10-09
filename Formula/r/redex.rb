@@ -41,6 +41,11 @@ class Redex < Formula
     sha256 "f4695c21257f0d9b537ec2692c941d02ee143b7cc1276941349a546573b2ef73"
   end
 
+  resource "homebrew-test_apk", :test do
+    url "https://ghfast.top/https://raw.githubusercontent.com/facebook/redex/fa32d542d4074dbd485584413d69ea0c9c3cbc98/test/instr/redex-test.apk"
+    sha256 "7851cf2a15230ea6ff076639c2273bc4ca4c3d81917d2e13c05edcc4d537cc04"
+  end
+
   def install
     zlib_home = if OS.linux?
       formula_opt_prefix("zlib-ng-compat")
@@ -49,7 +54,7 @@ class Redex < Formula
     end
 
     venv = virtualenv_create(libexec, python3)
-    venv.pip_install resources
+    venv.pip_install resources.reject(&:test?)
 
     python_scripts = %w[
       apkutil
@@ -82,11 +87,6 @@ class Redex < Formula
   end
 
   test do
-    resource "homebrew-test_apk" do
-      url "https://ghfast.top/https://raw.githubusercontent.com/facebook/redex/fa32d542d4074dbd485584413d69ea0c9c3cbc98/test/instr/redex-test.apk"
-      sha256 "7851cf2a15230ea6ff076639c2273bc4ca4c3d81917d2e13c05edcc4d537cc04"
-    end
-
     (testpath/"homebrew-default.config").write <<~JSON
       {
         "redex": {

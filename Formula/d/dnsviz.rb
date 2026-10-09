@@ -40,6 +40,11 @@ class Dnsviz < Formula
     sha256 "025bccbbf0fa05b6192bc64ae1e7b16e001fd6d6d4d5de03c97b1c1ade523bef"
   end
 
+  resource "example-com-probe-auth", :test do
+    url "https://ghfast.top/https://raw.githubusercontent.com/dnsviz/dnsviz/refs/heads/master/tests/zones/unsigned/example.com-probe-auth.json"
+    sha256 "6d75bf4e6289db41f8da6263aed2e0e8c910b8f303e4f065ec7d359997248997"
+  end
+
   def install
     # TODO: Remove when PyGraphviz discovers nonstandard Graphviz prefixes.
     # https://github.com/pygraphviz/pygraphviz/issues/630
@@ -49,18 +54,13 @@ class Dnsviz < Formula
       ENV.append "LDFLAGS", "-Wl,-rpath,#{graphviz_prefix}/lib/graphviz"
     end
     venv = virtualenv_create(libexec, python3)
-    venv.pip_install resources.reject { |r| r.name == "pygraphviz" }
+    venv.pip_install resources.reject { |r| r.test? || r.name == "pygraphviz" }
     # Use Homebrew's SWIG instead of rebuilding it in pip's isolated environment.
     venv.pip_install resource("pygraphviz"), build_isolation: false
     venv.pip_install_and_link buildpath
   end
 
   test do
-    resource "example-com-probe-auth" do
-      url "https://ghfast.top/https://raw.githubusercontent.com/dnsviz/dnsviz/refs/heads/master/tests/zones/unsigned/example.com-probe-auth.json"
-      sha256 "6d75bf4e6289db41f8da6263aed2e0e8c910b8f303e4f065ec7d359997248997"
-    end
-
     resource("example-com-probe-auth").stage do
       system bin/"dnsviz", "probe", "-d", "0",
         "-r", "example.com-probe-auth.json",

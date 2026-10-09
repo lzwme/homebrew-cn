@@ -22,6 +22,11 @@ class Rtl433 < Formula
   depends_on "libusb"
   depends_on "openssl@3"
 
+  resource "homebrew-test_cu8", :test do
+    url "https://ghfast.top/https://raw.githubusercontent.com/merbanan/rtl_433_tests/038234077f4d8b9022759430da1154d2c3631344/tests/oregon_scientific/uvr128/g001_433.92M_250k.cu8"
+    sha256 "7aa07b72cec9926f463410cda6056eb2411ac9e76006ba4917a0527492c5f65d"
+  end
+
   # Test needs to download resources
   allow_network_access! :test
 
@@ -32,10 +37,6 @@ class Rtl433 < Formula
   end
 
   test do
-    resource "homebrew-test_cu8" do
-      url "https://ghfast.top/https://raw.githubusercontent.com/merbanan/rtl_433_tests/038234077f4d8b9022759430da1154d2c3631344/tests/oregon_scientific/uvr128/g001_433.92M_250k.cu8"
-      sha256 "7aa07b72cec9926f463410cda6056eb2411ac9e76006ba4917a0527492c5f65d"
-    end
     testpath.install resource("homebrew-test_cu8")
 
     # Check following if test fails on new release

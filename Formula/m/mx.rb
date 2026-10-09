@@ -17,6 +17,11 @@ class Mx < Formula
   depends_on "openjdk" => [:build, :test]
   depends_on "python@3.14"
 
+  resource "homebrew-testdata", :test do
+    url "https://ghfast.top/https://github.com/oracle/graal/archive/refs/tags/vm-25.0.2.tar.gz"
+    sha256 "129261a9c43d43ca8cad235b65ee9cf8bfa9a2e2d51e90ac188e3cf5174323a0"
+  end
+
   def install
     libexec.install Dir["*"]
     (bin/"mx").write_env_script libexec/"mx", MX_PYTHON: "#{formula_opt_libexec("python@3.14")}/bin/python"
@@ -29,11 +34,6 @@ class Mx < Formula
   end
 
   test do
-    resource "homebrew-testdata" do
-      url "https://ghfast.top/https://github.com/oracle/graal/archive/refs/tags/vm-25.0.2.tar.gz"
-      sha256 "129261a9c43d43ca8cad235b65ee9cf8bfa9a2e2d51e90ac188e3cf5174323a0"
-    end
-
     ENV["JAVA_HOME"] = Language::Java.java_home
     ENV["MX_ALT_OUTPUT_ROOT"] = testpath
 

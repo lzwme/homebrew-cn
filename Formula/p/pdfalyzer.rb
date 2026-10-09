@@ -77,6 +77,11 @@ class Pdfalyzer < Formula
     sha256 "d33fc7a6361ca780bd019602bfee5f0834dd3b1a65f169981e4ffbbaf4664442"
   end
 
+  resource "homebrew-test-pdf", :test do
+    url "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"
+    sha256 "3df79d34abbca99308e79cb94461c1893582604d68329a41fd4bec1885e6adb4"
+  end
+
   def install
     venv = virtualenv_install_with_resources without: "yara-python"
 
@@ -88,11 +93,6 @@ class Pdfalyzer < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/pdfalyze --version")
-
-    resource "homebrew-test-pdf" do
-      url "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"
-      sha256 "3df79d34abbca99308e79cb94461c1893582604d68329a41fd4bec1885e6adb4"
-    end
 
     resource("homebrew-test-pdf").stage testpath
 

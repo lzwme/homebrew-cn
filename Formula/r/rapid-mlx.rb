@@ -3,14 +3,14 @@ class RapidMlx < Formula
 
   desc "Fast local AI engine for Apple Silicon with an OpenAI-compatible API"
   homepage "https://github.com/raullenchai/Rapid-MLX"
-  url "https://files.pythonhosted.org/packages/14/17/ce898453d294209bfbde0b8caf87229a632ec9b38b44979c332acab0f290/rapid_mlx-0.15.6.tar.gz"
-  sha256 "4a23e7e8c34b5bbd4d075ed8634b480cdd9db8a99e82902e4035c336fc85749a"
+  url "https://files.pythonhosted.org/packages/36/52/38cda5d432bbc0738863790c43513e96add4209c5d5fe3505d4f9e85d892/rapid_mlx-0.15.7.tar.gz"
+  sha256 "b5ad90eab4ad17b558a95438edbf5fed3146a332971c08998a41685c5f426b1b"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "b280b610b0c3008919a2a56dabe51b9a4bc9291c31db2b86df79841985ceb427"
-    sha256 cellar: :any, arm64_tahoe:       "636f19ff8cd1fb8179d62169b454d7cbd85f50f86a899d64a4e1b005eb690336"
-    sha256 cellar: :any, arm64_sequoia:     "275018d8198d5e88c5a0b3674fe73ba6eaebd3b0274865202794da8ff22bf656"
+    sha256 cellar: :any, arm64_golden_gate: "a0e049ca6acf295bcfab47a546cdae09fb8420bdcfaf6c88d31e05cf7dd238cc"
+    sha256 cellar: :any, arm64_tahoe:       "157f4a0dbb0ff32dcc532be439ebdb5c9d794884987583c2d56a5cba6ea6034b"
+    sha256 cellar: :any, arm64_sequoia:     "8f51fb34bdb2503d1d273ab0a8edac528b4256d40aca7ca3539a7cc37e6b430d"
   end
 
   depends_on "cmake" => :build
@@ -64,8 +64,8 @@ class RapidMlx < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/d8/9c/925c4f62920e4200d573d2bfe5cfd1b993134c3aee5f9bd3b7c55e20297e/filelock-4.0.11.tar.gz"
-    sha256 "9dc453a1edd25626a6fc97c2cb1bd9f7e46345843d40b3181c071761fb9a5f7a"
+    url "https://files.pythonhosted.org/packages/53/e4/34efcb869715cf299e47d1ac7b2624d2bcb6f2d3dffc2f0abe8417f65ab2/filelock-4.0.12.tar.gz"
+    sha256 "cf42711a7ac791818b299fab0332a088c65aeeefa36290de98db92c434303b0c"
   end
 
   resource "fsspec" do
@@ -79,8 +79,8 @@ class RapidMlx < Formula
   end
 
   resource "hf-xet" do
-    url "https://files.pythonhosted.org/packages/1b/ab/522a2ab67f27971a9d48ca666d4fca85ef7d5282d142e31fd087e27b1bbe/hf_xet-1.6.0.tar.gz"
-    sha256 "2e58454a340b3556dfa4972d5451aff4fba8dd42a236600ba1a1d2b1514f0fef"
+    url "https://files.pythonhosted.org/packages/9e/27/06d899ea7bd721d272f84aac98bdb238de98af4cc767a69056d967d68c71/hf_xet-1.7.0.tar.gz"
+    sha256 "d406ec79053c0871817f700c2ac8c36ba0d87f9c34b7458b0f0063bb218b0466"
   end
 
   resource "httpcore" do
@@ -169,8 +169,8 @@ class RapidMlx < Formula
   end
 
   resource "opentelemetry-api" do
-    url "https://files.pythonhosted.org/packages/1f/dc/e12c1fe1ed8a7b7149777127b1a0e12ce5bd5a81d97408bedc2128c260f5/opentelemetry_api-1.45.0.tar.gz"
-    sha256 "711ede81773c8025c2c03dac0450bc89f3d30aea6eabcc815c570d4e35a963f7"
+    url "https://files.pythonhosted.org/packages/2e/02/6e0ae9cc61bd3169d401077b507b3ebc344745171e1051ab430be012dcd9/opentelemetry_api-1.45.1.tar.gz"
+    sha256 "aa38ed19bcc084ba42782a73255b3582283eced7ad6dddbd6695189e69adfb75"
   end
 
   resource "packaging" do
@@ -284,8 +284,8 @@ class RapidMlx < Formula
   end
 
   resource "typer" do
-    url "https://files.pythonhosted.org/packages/16/f7/57713ba479fd405eb76de31404b2c744c289e336b2d999511ebf51e496f7/typer-0.27.2.tar.gz"
-    sha256 "269b7eb9d3c202ca84b4bc9618cb04ebb43d3d4d1e567e4c768607232c05f945"
+    url "https://files.pythonhosted.org/packages/03/51/d33db42cc72ffd8c30777547b42d01f0cbf9d95a770457698d0174b3ed71/typer-0.27.3.tar.gz"
+    sha256 "d0396f770a560ab1b0a8504e13b5f254b728cedb05c61cf0359e944e50ce8901"
   end
 
   resource "urllib3" do

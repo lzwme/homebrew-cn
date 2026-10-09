@@ -23,6 +23,11 @@ class Aom < Formula
     depends_on "nasm" => :build
   end
 
+  resource "homebrew-bus_qcif_15fps.y4m", :test do
+    url "https://media.xiph.org/video/derf/y4m/bus_qcif_15fps.y4m"
+    sha256 "868fc3446d37d0c6959a48b68906486bd64788b2e795f0e29613cbb1fa73480e"
+  end
+
   allow_network_access! :test
 
   def install
@@ -51,11 +56,6 @@ class Aom < Formula
   end
 
   test do
-    resource "homebrew-bus_qcif_15fps.y4m" do
-      url "https://media.xiph.org/video/derf/y4m/bus_qcif_15fps.y4m"
-      sha256 "868fc3446d37d0c6959a48b68906486bd64788b2e795f0e29613cbb1fa73480e"
-    end
-
     testpath.install resource("homebrew-bus_qcif_15fps.y4m")
 
     system bin/"aomenc", "--webm",

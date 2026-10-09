@@ -44,16 +44,16 @@ class Apkleaks < Formula
     sha256 "fecb858ff1fb456466f8dcdcd814207b4c15edb95f67cfe0a38c7d7cd4a28d4d"
   end
 
+  resource "homebrew-test.apk", :test do
+    url "https://ghfast.top/https://raw.githubusercontent.com/facebook/redex/fa32d542d4074dbd485584413d69ea0c9c3cbc98/test/instr/redex-test.apk"
+    sha256 "7851cf2a15230ea6ff076639c2273bc4ca4c3d81917d2e13c05edcc4d537cc04"
+  end
+
   def install
     virtualenv_install_with_resources
   end
 
   test do
-    resource "homebrew-test.apk" do
-      url "https://ghfast.top/https://raw.githubusercontent.com/facebook/redex/fa32d542d4074dbd485584413d69ea0c9c3cbc98/test/instr/redex-test.apk"
-      sha256 "7851cf2a15230ea6ff076639c2273bc4ca4c3d81917d2e13c05edcc4d537cc04"
-    end
-
     testpath.install resource("homebrew-test.apk")
     output = shell_output("#{bin}/apkleaks -f #{testpath}/redex-test.apk")
     assert_match "Decompiling APK...", output

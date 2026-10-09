@@ -1,8 +1,8 @@
 class Flowrs < Formula
   desc "TUI application for Apache Airflow"
   homepage "https://github.com/jvanbuel/flowrs"
-  url "https://ghfast.top/https://github.com/jvanbuel/flowrs/archive/refs/tags/flowrs-tui-v0.15.2.tar.gz"
-  sha256 "a2aaaac9f2652a23c7cdedfc8e750f225d72161884f8aaac9b91cac19ac487d6"
+  url "https://ghfast.top/https://github.com/jvanbuel/flowrs/archive/refs/tags/flowrs-tui-v0.16.0.tar.gz"
+  sha256 "7a0c69f6b780e49be80d67d6863e8f175273e74b08acdeb3efcb2a6381ef29e4"
   license "MIT"
   head "https://github.com/jvanbuel/flowrs.git", branch: "main"
 
@@ -12,12 +12,11 @@ class Flowrs < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "d57dba863eb586c02c0996dc06490a870f13be581137d2f613e8d519857e9ddb"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "ec0df5944b5b00d8d7b451bfb7f1aecbd277257682e3375504f6a5165028672c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "843bb8c561f3da1e27e0ac7f58f4797200d5af1bd4bb610406f59ffee0ca516e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "4d86440f284cff7bfef73eb51cd2cc4dedbfd327b41a91ab35dae4dfd6079edf"
-    sha256 cellar: :any,                 arm64_linux:       "80c6b5233df6e740b33422b8ccb88999c70720f9bacaab1e04c031ec2351515f"
-    sha256 cellar: :any,                 x86_64_linux:      "6464a0099e15c867852f878babf3ae3ec5dd89d029e5b999ed07c753bf0e7413"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "268d6d8fbf609afcb148735bac910abe182788b4a2b8e9da0e71f25d224339ab"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "5e598ae1e22f76814ef4a9032bb7730d098e69b919951c82d5ab175f8cd38412"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "858916b666a23e90514456c437667cca1b139f28dea92ae8f291cdc9669bf9ee"
+    sha256 cellar: :any,                 arm64_linux:       "0be1041a372157efd7fb1e404d971afde20e0b0b98f69b3d79e4c3f85060367a"
+    sha256 cellar: :any,                 x86_64_linux:      "97793b282aa2ad464f91fb26f564972f9c6a22f4ac887604751c3628aa58f60e"
   end
 
   depends_on "pkgconf" => :build

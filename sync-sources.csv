@@ -1436,6 +1436,7 @@ Homebrew-homebrew-core/Formula/c/cyclonedx-npm.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cyclonedx-python.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/cycode.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/cyctl.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/c/cymbal.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cyme.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cypher-shell.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/cyphernetes.rb, Homebrew/homebrew-core, 1
@@ -4739,6 +4740,7 @@ Homebrew-homebrew-core/Formula/m/mcp-remote.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mcp-server-chart.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mcp-server-kubernetes.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mcp-toolbox.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/m/mcpc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mcphost.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mcpm.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mcpp.rb, Homebrew/homebrew-core, 0
@@ -10077,6 +10079,7 @@ Homebrew-homebrew-cask/Casks/f/filemon.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/filemonitor.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/filen.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/filepane.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/f/filmcraft.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/f/filo.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/final-fantasy-xiv-online.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/finalshell.rb, Homebrew/homebrew-cask, 0
@@ -13584,6 +13587,7 @@ Homebrew-homebrew-cask/Casks/l/lidanglesensor.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/l/lidarr.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/l/lifesize.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/lightburn.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/l/lightcraft.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/l/lighting.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/l/lightkey.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/lightproxy.rb, Homebrew/homebrew-cask, 1
@@ -13901,7 +13905,6 @@ Homebrew-homebrew-cask/Casks/m/mi.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mi@beta.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mia-for-gmail.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/miaoyan.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/m/mic-drop.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/michaelvillar-timer.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/micro-sniff.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/micro-snitch.rb, Homebrew/homebrew-cask, 0
@@ -15588,7 +15591,6 @@ Homebrew-homebrew-cask/Casks/s/syncterm.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/syncthing-app.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/synfigstudio.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/synology-chat.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/s/synology-cloud-station-backup.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/synology-drive.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/synology-image-assistant.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/synology-note-station-client.rb, Homebrew/homebrew-cask, 0
@@ -16025,6 +16027,7 @@ Homebrew-homebrew-cask/Casks/v/vcam.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/v/vcamapp.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/v/vcmi.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/v/vcv-rack.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/v/vectorcraft.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/v/ved.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/v/veepn.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/v/vellum.rb, Homebrew/homebrew-cask, 0

@@ -20,17 +20,17 @@ class DashMpdCli < Formula
   depends_on "ffmpeg"
   depends_on "mkvtoolnix"
 
+  resource "testfile", :test do
+    url "https://storage.googleapis.com/shaka-demo-assets/angel-one-widevine/dash.mpd"
+    sha256 "4fb9ea292aba0db94ddfe8c941b8423d98decb51dca851afbc203e409bd487d4"
+  end
+
   def install
     ENV.append_to_rustflags "--cfg reqwest_unstable"
     system "cargo", "install", *std_cargo_args
   end
 
   test do
-    resource "testfile" do
-      url "https://storage.googleapis.com/shaka-demo-assets/angel-one-widevine/dash.mpd"
-      sha256 "4fb9ea292aba0db94ddfe8c941b8423d98decb51dca851afbc203e409bd487d4"
-    end
-
     dash_manifest_url = resource("testfile").url
 
     output = shell_output("#{bin}/dash-mpd-cli --simulate --verbose #{dash_manifest_url} 2>&1")

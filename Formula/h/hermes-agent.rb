@@ -3,46 +3,43 @@ class HermesAgent < Formula
 
   desc "Self-improving AI agent that creates skills from experience"
   homepage "https://hermes-agent.nousresearch.com"
-  url "https://ghfast.top/https://github.com/NousResearch/hermes-agent/archive/refs/tags/v2026.9.24.tar.gz"
-  sha256 "15b15ce4e6ec8ea424a081823709d1e17f0943e7b42b59597d24ebb94cbd1742"
+  url "https://ghfast.top/https://github.com/NousResearch/hermes-agent/archive/refs/tags/v0.21.6.tar.gz"
+  sha256 "1ba3500cdbe876bb9d347b3c12f41c591a421293eac58faba23571287dfe1cf8"
   license "MIT"
+  version_scheme 1
   head "https://github.com/NousResearch/hermes-agent.git", branch: "main"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(/^v?(\d{1,3}(?:\.\d+)+)$/i)
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "6a3d762561b12de10dabb52c6fd9fa0dfaf3d64d4328223856fabcda36a2a23f"
-    sha256 cellar: :any, arm64_tahoe:       "cf21172f29d22abbc8e158da1b6a06c2a8cebc8d1c28f557a120cb2b25764934"
-    sha256 cellar: :any, arm64_sequoia:     "f374b2316c6478468883394d45574218ccb80ac1aa6d9a2a6c8acc824823751a"
-    sha256 cellar: :any, arm64_linux:       "46580b51cbd506df50bfa67455f4f2c3bfc5ba13f01a0bc93afcc64e1f9cd799"
-    sha256 cellar: :any, x86_64_linux:      "759975b21a3ce1397de313d9e5244eb12f1e47c16a36780e476f39839e2c5202"
+    sha256 cellar: :any, arm64_golden_gate: "4e1cc6ec79677bc3f0c8ca2a1585876850ab599eca61198c4501cf734ace92cb"
+    sha256 cellar: :any, arm64_tahoe:       "dcad7f732027d0c83d5fb7d8d3d682208e8b766f7b210e351c524670cc605139"
+    sha256 cellar: :any, arm64_sequoia:     "19f66a064f655a8de6398a67bf694e9f45ffebb1de71862ea18035831377714e"
+    sha256 cellar: :any, arm64_linux:       "c48fc6a814ae3716a6c68cc669a4a2a02c0c9b5b4cc6f05ee89d89ab1297cbca"
+    sha256 cellar: :any, x86_64_linux:      "50aee8dc22405af3bcc97c33e01dd59902e173e39c37ee0fb2e2e5a06c86035a"
   end
 
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "certifi" => :no_linkage
-  depends_on "jpeg-turbo" # for pillow
-  depends_on "libffi" # for cffi
+  depends_on "cryptography" => :no_linkage
   depends_on "libheif"
-  depends_on "libtiff" # for pillow
-  depends_on "libyaml"
   depends_on "node"
-  depends_on "openssl@3"
-  # see: https://github.com/Homebrew/homebrew-core/issues/300738
-  depends_on "python@3.13"
+  depends_on "pillow" => :no_linkage
+  depends_on "pydantic" => :no_linkage
+  depends_on "python@3.14"
   depends_on "ripgrep"
   depends_on "tirith"
-  depends_on "webp" # for pillow
 
   on_linux do
-    depends_on "zlib-ng-compat" # for pillow
+    depends_on "aws-lc" # for nemo-relay
   end
 
   pypi_packages package_name:     "hermes-agent[all]",
-                exclude_packages: "certifi"
+                exclude_packages: %w[certifi cryptography pillow pydantic]
 
   # `hermes-acp` imports this at startup with no lazy-install fallback; upstream pins ==0.9.0
   resource "agent-client-protocol" do
@@ -70,11 +67,6 @@ class HermesAgent < Formula
     sha256 "c7e58ce09192557605d8bbd92836d7e1d520ac9580096042c0bfd197efacf1bb"
   end
 
-  resource "annotated-types" do
-    url "https://files.pythonhosted.org/packages/5f/56/a8120250d128bed162cd73c76d45f6ef9991f3e068f62a8ee060afa3104a/annotated_types-0.8.0.tar.gz"
-    sha256 "13b2beaad985e05e2d6407ee4c4f35590b11f8d693a258a561055cac8f64cab7"
-  end
-
   resource "anyio" do
     url "https://files.pythonhosted.org/packages/a9/d2/f4d173e22df740bc37b1db102b386ba719b66e95b0f0d751f556b387e6d2/anyio-4.15.1.tar.gz"
     sha256 "9f28306018cbd6d329e64a36d58256edff76dd996fe423bc957326e578b82a94"
@@ -85,9 +77,14 @@ class HermesAgent < Formula
     sha256 "d03ceb89cb322a8fd706d4fb91940737b6642aa36998fe130a9bc96c985eff32"
   end
 
-  resource "cffi" do
-    url "https://files.pythonhosted.org/packages/9e/ef/008a1939e372c06329a3fce4279c02f328488f3526744906eeec3da7ad5f/cffi-2.1.1.tar.gz"
-    sha256 "dd31f52ea1086513bb9df30f8fcee9b8918323ae067a3d5b78bc826a000712be"
+  resource "browser-harness" do
+    url "https://files.pythonhosted.org/packages/7f/fe/59ab493e7cf76731a7f5aabae3821eea6ea82a628c14c30e7aed48adc362/browser_harness-0.1.13.tar.gz"
+    sha256 "284dc547a042c309feafd9a9f4a74b2a8651b7963ea3ac6cb2f2d64889f6a8f3"
+  end
+
+  resource "cdp-use" do
+    url "https://files.pythonhosted.org/packages/f7/7a/c549417e8c5e4dface6d5d828cd7dc72502dcea33a99f5324abf5a853ce9/cdp_use-1.4.5.tar.gz"
+    sha256 "0da3a32df46336a03ff5a22bc6bc442cd7d2f2d50a118fd4856f29d37f6d26a0"
   end
 
   resource "charset-normalizer" do
@@ -105,11 +102,6 @@ class HermesAgent < Formula
     sha256 "37c504b313956114a983ece2c2b07790b1f1094fe9d81cc94739214748255577"
   end
 
-  resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/de/41/6cbdcf9142d00fe82836fbb51e503e58088575cf7a0fe1dbff6695bf0840/cryptography-50.0.0.tar.gz"
-    sha256 "eeac2acb5a20ed25e0ad6d1df9891a520b78b404266b6d11778f25d5d691a6c9"
-  end
-
   resource "defusedxml" do
     url "https://files.pythonhosted.org/packages/0f/d5/c66da9b79e5bdb124974bfe172b4daf3c984ebd9c2a06e2b8a4dc7331c72/defusedxml-0.7.1.tar.gz"
     sha256 "1bb3032db185915b62d7c6209c5a8792be6a32ab2fedacc84e01b52c51aa3e69"
@@ -123,6 +115,11 @@ class HermesAgent < Formula
   resource "fastapi" do
     url "https://files.pythonhosted.org/packages/22/6f/0eafed8349eea1fa462238b54a624c8b408cd1ba2795c8e64aa6c34f8ab7/fastapi-0.133.1.tar.gz"
     sha256 "ed152a45912f102592976fde6cbce7dae1a8a1053da94202e51dd35d184fadd6"
+  end
+
+  resource "fetch-use" do
+    url "https://files.pythonhosted.org/packages/5d/2d/66784fa8b66a04f170ad8f6598688b30b3a194dad4185b36d53da4ae1505/fetch_use-0.4.0.tar.gz"
+    sha256 "9511987d4907ec6dac501e21d66946d10098f66b5d21bc2aba4189cd81ba189a"
   end
 
   resource "fire" do
@@ -266,8 +263,8 @@ class HermesAgent < Formula
   end
 
   resource "nemo-relay" do
-    url "https://files.pythonhosted.org/packages/b7/0f/274daf96d674f0611b058ba2cc820cc266624360db086eceaa9e99a4f491/nemo_relay-0.8.4.tar.gz"
-    sha256 "daaa980f1627e88cf1d2c6dbebc5b07bcc778150384323fc99fe52fba8713ce9"
+    url "https://files.pythonhosted.org/packages/c3/aa/382e9dc67063efc30dedbc947362515e7376a3beb8925a344dc9245c40a1/nemo_relay-0.9.4.tar.gz"
+    sha256 "7fe6207b97375fe676f092e3af7cbed6acaf454d03a9837faed4c5cafaa28370"
   end
 
   resource "oauthlib" do
@@ -281,8 +278,8 @@ class HermesAgent < Formula
   end
 
   resource "opentelemetry-api" do
-    url "https://files.pythonhosted.org/packages/1f/dc/e12c1fe1ed8a7b7149777127b1a0e12ce5bd5a81d97408bedc2128c260f5/opentelemetry_api-1.45.0.tar.gz"
-    sha256 "711ede81773c8025c2c03dac0450bc89f3d30aea6eabcc815c570d4e35a963f7"
+    url "https://files.pythonhosted.org/packages/2e/02/6e0ae9cc61bd3169d401077b507b3ebc344745171e1051ab430be012dcd9/opentelemetry_api-1.45.1.tar.gz"
+    sha256 "aa38ed19bcc084ba42782a73255b3582283eced7ad6dddbd6695189e69adfb75"
   end
 
   resource "packaging" do
@@ -293,11 +290,6 @@ class HermesAgent < Formula
   resource "pathspec" do
     url "https://files.pythonhosted.org/packages/5a/82/42f767fc1c1143d6fd36efb827202a2d997a375e160a71eb2888a925aac1/pathspec-1.1.1.tar.gz"
     sha256 "17db5ecd524104a120e173814c90367a96a98d07c45b2e10c2f3919fff91bf5a"
-  end
-
-  resource "pillow" do
-    url "https://files.pythonhosted.org/packages/1c/3d/bb7fca845737cf9d7dbde16ed1843984665ff2e0a518f5db43e77ec540b9/pillow-12.3.0.tar.gz"
-    sha256 "3b8182a766685eaa002637e28b4ec8d6b18819a0c71f579bf0dbaa5830297cce"
   end
 
   resource "pillow-heif" do
@@ -345,21 +337,6 @@ class HermesAgent < Formula
     sha256 "677091de870a80aae844b1ca6134f54652fa2c8c5a52aa396440ac3106e941e6"
   end
 
-  resource "pycparser" do
-    url "https://files.pythonhosted.org/packages/1b/7d/92392ff7815c21062bea51aa7b87d45576f649f16458d78b7cf94b9ab2e6/pycparser-3.0.tar.gz"
-    sha256 "600f49d217304a5902ac3c37e1281c9fe94e4d0489de643a9504c5cdfdfc6b29"
-  end
-
-  resource "pydantic" do
-    url "https://files.pythonhosted.org/packages/18/a5/b60d21ac674192f8ab0ba4e9fd860690f9b4a6e51ca5df118733b487d8d6/pydantic-2.13.4.tar.gz"
-    sha256 "c40756b57adaa8b1efeeced5c196f3f3b7c435f90e84ea7f443901bec8099ef6"
-  end
-
-  resource "pydantic-core" do
-    url "https://files.pythonhosted.org/packages/9d/56/921726b776ace8d8f5db44c4ef961006580d91dc52b803c489fafd1aa249/pydantic_core-2.46.4.tar.gz"
-    sha256 "62f875393d7f270851f20523dd2e29f082bcc82292d66db2b64ea71f64b6e1c1"
-  end
-
   resource "pygments" do
     url "https://files.pythonhosted.org/packages/49/2e/ced460408999b33da6b31b0021b0f37d329e202d4169aeb164493778f25b/pygments-2.21.0.tar.gz"
     sha256 "610ca751c9bc2492b38eb9a38a7fbc93edbbb2d7182edaf34e66ae493dee5c8c"
@@ -395,11 +372,6 @@ class HermesAgent < Formula
     sha256 "fa23724b9c486543b9ff54a327ee7569ac83ade54bb9afd0fc18676620401c86"
   end
 
-  resource "pyyaml" do
-    url "https://files.pythonhosted.org/packages/05/8e/961c0007c59b8dd7729d542c61a4d537767a59645b82a0b521206e1e25c2/pyyaml-6.0.3.tar.gz"
-    sha256 "d76623373421df22fb4cf8817020cbb7ef15c725b9d5e45f17e189bfc384190f"
-  end
-
   resource "referencing" do
     url "https://files.pythonhosted.org/packages/22/f5/df4e9027acead3ecc63e50fe1e36aca1523e1719559c499951bb4b53188f/referencing-0.37.0.tar.gz"
     sha256 "44aefc3142c5b842538163acb373e24cce6632bd54bdb01b21ad5863489f50d8"
@@ -415,6 +387,11 @@ class HermesAgent < Formula
     sha256 "b3dffaebd884d8cd778494369603a9e7b58d29111bf6b41bdc2dcd87203af4e9"
   end
 
+  resource "resvg-py" do
+    url "https://files.pythonhosted.org/packages/2e/4e/26c3b88f8d2c2ef96c2d9bf48823f484a91275011c58cbeddbc98b32a0cd/resvg_py-0.4.0.tar.gz"
+    sha256 "7b93183f2179bb23411e8451dc6201ad3bceed9b7e35dca2107faf6d8b157c43"
+  end
+
   resource "rich" do
     url "https://files.pythonhosted.org/packages/b3/c6/f3b320c27991c46f43ee9d856302c70dc2d0fb2dba4842ff739d5f46b393/rich-14.3.3.tar.gz"
     sha256 "b8daa0b9e4eef54dd8cf7c86c03713f53241884e814f4e2f5fb342fe520f639b"
@@ -426,13 +403,8 @@ class HermesAgent < Formula
   end
 
   resource "ruamel-yaml" do
-    url "https://files.pythonhosted.org/packages/3a/2b/7a1f1ebcd6b3f14febdc003e658778d81e76b40df2267904ee6b13f0c5c6/ruamel_yaml-0.18.17.tar.gz"
-    sha256 "9091cd6e2d93a3a4b157ddb8fabf348c3de7f1fb1381346d985b6b247dcd8d3c"
-  end
-
-  resource "ruamel-yaml-clib" do
-    url "https://files.pythonhosted.org/packages/ea/97/60fda20e2fb54b83a61ae14648b0817c8f5d84a3821e40bfbdae1437026a/ruamel_yaml_clib-0.2.15.tar.gz"
-    sha256 "46e4cc8c43ef6a94885f72512094e482114a8a706d3c555a34ed4b0d20200600"
+    url "https://files.pythonhosted.org/packages/9f/c7/ee630b29e04a672ecfc9b63227c87fd7a37eb67c1bf30fe95376437f897c/ruamel.yaml-0.18.16.tar.gz"
+    sha256 "a6e587512f3c998b2225d68aa1f35111c29fad14aed561a26e73fab729ec5e5a"
   end
 
   resource "six" do
@@ -461,6 +433,14 @@ class HermesAgent < Formula
       type :backport
       resolves "https://github.com/sethmlarson/socksio/pull/61"
     end
+
+    # Fix for flit-core>=5
+    patch do
+      url "https://github.com/sethmlarson/socksio/commit/504f7e51682b9526d3ecc7ea893338af1fedfb2d.patch?full_index=1"
+      sha256 "b0c327c4e8fa722669dc372263d735f429015587e02935e2e8cb2b22028c0bfb"
+      type :backport
+      resolves "https://github.com/sethmlarson/socksio/pull/66"
+    end
   end
 
   resource "sse-starlette" do
@@ -483,6 +463,11 @@ class HermesAgent < Formula
     sha256 "348871ca648ec6a9a983a13ab626c0acce02f515b9e1983332b17af7979521c5"
   end
 
+  resource "tomli-w" do
+    url "https://files.pythonhosted.org/packages/19/75/241269d1da26b624c0d5e110e8149093c759b7a286138f4efd61a60e75fe/tomli_w-1.2.0.tar.gz"
+    sha256 "2dd14fac5a47c27be9cd4c976af5a12d87fb1f0b4512f81d69cce3b35ae25021"
+  end
+
   resource "tqdm" do
     url "https://files.pythonhosted.org/packages/0d/ea/b2a5bd54b28a324dae8211928b2d730b6547500342c7e6c6dea08bd0a485/tqdm-4.70.1.tar.gz"
     sha256 "cefd0eca11b2a37a3aee776544d4f4ae913f02688135b5556b8788dfa474afc4"
@@ -491,16 +476,6 @@ class HermesAgent < Formula
   resource "truststore" do
     url "https://files.pythonhosted.org/packages/53/a3/1585216310e344e8102c22482f6060c7a6ea0322b63e026372e6dcefcfd6/truststore-0.10.4.tar.gz"
     sha256 "9d91bd436463ad5e4ee4aba766628dd6cd7010cf3e2461756b3303710eebc301"
-  end
-
-  resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/f6/cc/6253133b5bb138fc3306cebfbda2c520f545d36b5be2c7255cc528bb45d6/typing_extensions-4.16.0.tar.gz"
-    sha256 "dc983d19a509c94dba722ee6abd33940f7c05a89e243c47e907eb4db6f1a43e5"
-  end
-
-  resource "typing-inspection" do
-    url "https://files.pythonhosted.org/packages/a3/26/b09b8010994eccc3c09092e6b34058f36a460eea2d4c3e8b910c695975a0/typing_inspection-0.4.4.tar.gz"
-    sha256 "547274fa6b0a561ccf549cc9524b999a578e737d015d8709d021f9d0d13bea47"
   end
 
   resource "uritemplate" do
@@ -550,17 +525,15 @@ class HermesAgent < Formula
 
   def install
     ENV["HERMES_NIX_BUILD"] = "1"
-    # Work around superenv breaking aws-lc-sys `-O0` needed to build CPU Jitter RNG
-    ENV["AWS_LC_SYS_NO_JITTER_ENTROPY"] = "1"
-
-    venv = virtualenv_install_with_resources(without: "socksio")
-    resource("socksio").stage do
-      # Cap flit-core below 4 as socksio's legacy `[tool.flit.metadata]`
-      # pyproject table is no longer supported since flit-core 4
-      # Ref: https://github.com/sethmlarson/socksio/pull/66
-      inreplace "pyproject.toml", "flit_core >=2", "flit_core >=2,<4"
-      venv.pip_install Pathname.pwd
+    if OS.mac?
+      # Work around superenv breaking aws-lc-sys `-O0` needed to build CPU Jitter RNG
+      ENV["AWS_LC_SYS_NO_JITTER_ENTROPY"] = "1"
+    else
+      # Can use brew aws-lc on Linux. macOS has symbol conflicts with OpenSSL (used by cryptography)
+      ENV["AWS_LC_SYS_USE_SYSTEM"] = "1"
     end
+
+    virtualenv_install_with_resources
 
     # Build the dashboard and TUI bundles the same way upstream's Nix
     # packaging does (nix/web.nix, nix/tui.nix)
@@ -569,8 +542,7 @@ class HermesAgent < Formula
       system "npm", "run", "build"
     end
     pkgshare.install "hermes_cli/web_dist"
-    system "node", "ui-tui/scripts/build.mjs"
-    (pkgshare/"ui-tui").install "ui-tui/dist", "ui-tui/package.json"
+    system "node", "scripts/build/tui.mjs", "--source", buildpath, "--out", pkgshare/"ui-tui"
 
     # Ship the runtime data the wheel deliberately excludes. The env vars
     # below mirror upstream's nix/hermes-agent.nix wrapper, the supported
@@ -620,7 +592,7 @@ class HermesAgent < Formula
     doctor = shell_output("#{bin}/hermes doctor", 1)
     assert_match "Run 'hermes setup' to create .env", doctor
     assert_match "Run 'hermes setup' to configure missing API keys", doctor
-    assert_match "Reinstall entry point", doctor
+    assert_match "Repair or reinstall the Hermes launcher", doctor
 
     plugins_list = shell_output("#{bin}/hermes plugins list")
     assert_match "bundled", plugins_list

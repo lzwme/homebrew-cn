@@ -36,6 +36,11 @@ class Ffms2 < Formula
     depends_on "zlib-ng-compat"
   end
 
+  resource "homebrew-videosample", :test do
+    url "https://samples.mplayerhq.hu/V-codecs/lm20.avi"
+    sha256 "a0ab512c66d276fd3932aacdd6073f9734c7e246c8747c48bf5d9dd34ac8b392"
+  end
+
   def install
     system "./autogen.sh", "--enable-avresample", *std_configure_args
     system "make", "install"
@@ -45,11 +50,6 @@ class Ffms2 < Formula
   end
 
   test do
-    resource "homebrew-videosample" do
-      url "https://samples.mplayerhq.hu/V-codecs/lm20.avi"
-      sha256 "a0ab512c66d276fd3932aacdd6073f9734c7e246c8747c48bf5d9dd34ac8b392"
-    end
-
     # download small sample and check that the index was created
     resource("homebrew-videosample").stage do
       system bin/"ffmsindex", "lm20.avi"

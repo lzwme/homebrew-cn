@@ -4,7 +4,7 @@ class PerconaServerAT84 < Formula
   url "https://downloads.percona.com/downloads/Percona-Server-8.4/Percona-Server-8.4.11-11/source/tarball/percona-server-8.4.11-11.tar.gz"
   sha256 "2fb90e235c25183d73c972cba481a32ea2d90cefca0669fe0786defc2acdfa18"
   license "BSD-3-Clause"
-  revision 1
+  revision 2
 
   livecheck do
     url "https://www.percona.com/wp-admin/admin-ajax.php", post_form: {
@@ -22,11 +22,11 @@ class PerconaServerAT84 < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "cfa332f155423c3627d83a00d3949ff6b76509894484b826504eff84efafd0ea"
-    sha256 arm64_tahoe:       "e629deaf15eac77e19257dcf0013bb8ee03dc5bf2c2930ab18dc1b9caf2613ee"
-    sha256 arm64_sequoia:     "6ae960d900023c838e1e586994b716261a11b7569fbcffb38e835a5171ccfab2"
-    sha256 arm64_linux:       "ccd5d60511ab3bf95d395e4e44fee12caba53aead1057dd45819f1bfd835e80a"
-    sha256 x86_64_linux:      "b17d2521fcc260f32f92d84fd01171766d2b26939b599501dffd83335d1bd9da"
+    sha256 arm64_golden_gate: "4e72e8c283fe28e12cd7ce97a8f7d28c0303105270345263f814773e2af08605"
+    sha256 arm64_tahoe:       "fe820e767694e97f83649e7ba19a3ac8d82556b2949fccaa139fc2b41abd3159"
+    sha256 arm64_sequoia:     "b45a72dead3c3bcf1cd1ffd2f1756b4a4a2a5efb9bb200505251126dd86a20a9"
+    sha256 arm64_linux:       "e05db148ab155ef47bce995acdab91f704c4265e39e877e26803315cdca49b20"
+    sha256 x86_64_linux:      "dec007bab83a9ed3fec2d08b804d2377d1202b8525c4a3fcbeeec3dbea0adcab"
   end
 
   keg_only :versioned_formula
@@ -61,6 +61,13 @@ class PerconaServerAT84 < Formula
   fails_with :gcc do
     version "9"
     cause "Requires GCC 10 or newer"
+  end
+
+  # Apply Debian's MySQL patch to fix build with OpenSSL 4
+  patch do
+    url "https://salsa.debian.org/mariadb-team/mysql/-/raw/ac6576612c0afddccebf939fccedacc3b97db567/debian/patches/support-openssl4.patch"
+    sha256 "fd0eb6d47ce5aaef43e58240d9884d04b1ee30fd3c57395b405d9400ae136a02"
+    type :unofficial
   end
 
   # Patch out check for Homebrew `boost`.

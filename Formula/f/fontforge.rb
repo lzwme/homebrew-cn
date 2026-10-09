@@ -51,6 +51,11 @@ class Fontforge < Formula
     depends_on "zlib-ng-compat"
   end
 
+  resource "homebrew-testdata", :test do
+    url "https://ghfast.top/https://raw.githubusercontent.com/fontforge/fontforge/1346ce6e4c004c312589fdb67e31d4b2c32a1656/tests/fonts/Ambrosia.sfd"
+    sha256 "6a22acf6be4ab9e5c5a3373dc878030b4b8dc4652323395388abe43679ceba81"
+  end
+
   allow_network_access! :test
 
   def install
@@ -81,11 +86,6 @@ class Fontforge < Formula
   end
 
   test do
-    resource "homebrew-testdata" do
-      url "https://ghfast.top/https://raw.githubusercontent.com/fontforge/fontforge/1346ce6e4c004c312589fdb67e31d4b2c32a1656/tests/fonts/Ambrosia.sfd"
-      sha256 "6a22acf6be4ab9e5c5a3373dc878030b4b8dc4652323395388abe43679ceba81"
-    end
-
     system bin/"fontforge", "-version"
     system bin/"fontforge", "-lang=py", "-c", "import fontforge; fontforge.font()"
     system python3, "-c", "import fontforge; fontforge.font()"

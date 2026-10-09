@@ -26,15 +26,16 @@ class Psutils < Formula
     sha256 "bbc43aca292369ccc6cbc8a921991ecf2538a3587ab5a116eff06c321d647155"
   end
 
+  resource "homebrew-test-ps", :test do
+    url "https://ghfast.top/https://raw.githubusercontent.com/rrthomas/psutils/e00061c21e114d80fbd5073a4509164f3799cc24/tests/test-files/psbook/3/expected.ps"
+    sha256 "bf3f1b708c3e6a70d0f28af55b3b511d2528b98c2a1537674439565cecf0aed6"
+  end
+
   def install
     virtualenv_install_with_resources
   end
 
   test do
-    resource "homebrew-test-ps" do
-      url "https://ghfast.top/https://raw.githubusercontent.com/rrthomas/psutils/e00061c21e114d80fbd5073a4509164f3799cc24/tests/test-files/psbook/3/expected.ps"
-      sha256 "bf3f1b708c3e6a70d0f28af55b3b511d2528b98c2a1537674439565cecf0aed6"
-    end
     resource("homebrew-test-ps").stage testpath
 
     expected_psbook_output = "[4] [1] [2] [3] \nWrote 4 pages\n"

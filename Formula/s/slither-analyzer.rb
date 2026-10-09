@@ -224,16 +224,16 @@ class SlitherAnalyzer < Formula
     sha256 "03dd38de09bc213e9a8b29761eec33ee1d5318dac0e49d8af36e4d27830e23a7"
   end
 
+  resource "testdata", :test do
+    url "https://github.com/crytic/slither/raw/d0a4f5595d7177b3b7d4bd35e1384bf35ebc22d4/tests/ast-parsing/compile/variable-0.8.0.sol-0.8.15-compact.zip", using: :nounzip
+    sha256 "2f165f629882d0250d03a56cb67a84e9741375349195915a04385b0666394478"
+  end
+
   def install
     virtualenv_install_with_resources
   end
 
   test do
-    resource "testdata" do
-      url "https://github.com/crytic/slither/raw/d0a4f5595d7177b3b7d4bd35e1384bf35ebc22d4/tests/ast-parsing/compile/variable-0.8.0.sol-0.8.15-compact.zip", using: :nounzip
-      sha256 "2f165f629882d0250d03a56cb67a84e9741375349195915a04385b0666394478"
-    end
-
     resource("testdata").stage do
       # slither exits with code 255 if high severity findings are found
       assert_match("5 result(s) found",

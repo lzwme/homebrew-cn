@@ -1,9 +1,9 @@
 class PhpAT87Debug < Formula
   desc "General-purpose scripting language"
   homepage "https://www.php.net/"
-  url "https://ghfast.top/https://github.com/php/php-src/archive/fb6435df56bfebf2f5773f7871ebe7e60565aa57.tar.gz?commit=fb6435df56bfebf2f5773f7871ebe7e60565aa57"
+  url "https://ghfast.top/https://github.com/php/php-src/archive/c79284711bd8e610fb882bfdad48584b86fcdc62.tar.gz?commit=c79284711bd8e610fb882bfdad48584b86fcdc62"
   version "8.7.0"
-  sha256 "34984f928fb833e136be44bef6e51bca9d580907b62040db61b90cd3e0b8cabc"
+  sha256 "9785a783514afe08465bb2c328f04f5e3f0d658c2ae6941216782b6ab15f402a"
   license all_of: [
     "PHP-3.01",
 
@@ -28,15 +28,15 @@ class PhpAT87Debug < Formula
     "TCL",                   # 7
     "Zlib",                  # 8
   ]
+  revision 1
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/php"
-    rebuild 7
-    sha256 arm64_golden_gate: "aa8e2fd9269b8855737abb2ec95470fa73713d33dbec4ce93da2583543413f57"
-    sha256 arm64_tahoe:       "dae75e20f9d2993f9454d9fe230ace3ca743546ea88d5c925eb9997b4a6c6f7d"
-    sha256 arm64_sequoia:     "082b02304c0674f71ab6db1915914938ee02249c04a7d0219e062d403a05ad03"
-    sha256 arm64_linux:       "74a5c1c66806900996950f5e8595a61dad3fe60e48182cd24e14e55ddb52bc8c"
-    sha256 x86_64_linux:      "9265509e62d67ba572b1c1aca2b4ea53c00b7a57eb713e5dcf3faff655c798bb"
+    sha256 arm64_golden_gate: "2acaf32bf93e348a88534dc7a886255ddb3ac61ea4fcb1385edf7d30c3b3609c"
+    sha256 arm64_tahoe:       "4c79093f98935f8374475fca70d97fe90d90f708709a4c3c3df9df8d595443ef"
+    sha256 arm64_sequoia:     "24bf0fa6bf9bad722cf73fdb6461a237759afc6f2555f3c6d97a46bf79ed7e6c"
+    sha256 arm64_linux:       "9c6059da01a0995fd019f514f5fef4960b6a1d60e90364c7739719abadebe8c2"
+    sha256 x86_64_linux:      "b87fc7cd2e7a1138e36fa16b98337ec07e811c8c675cd33a0c38c2c77ac9f4b1"
   end
 
   keg_only :versioned_formula
@@ -61,7 +61,7 @@ class PhpAT87Debug < Formula
   depends_on "net-snmp"
   depends_on "oniguruma"
   depends_on "openldap"
-  depends_on "openssl@3"
+  depends_on "openssl@4"
   depends_on "pcre2"
   depends_on "sqlite"
   depends_on "tidy-html5"
@@ -229,7 +229,7 @@ class PhpAT87Debug < Formula
       s.gsub! %r{; ?extension_dir = "\./"}, "extension_dir = \"#{HOMEBREW_PREFIX}/lib/php/pecl/#{orig_ext_dir}\""
 
       # Use OpenSSL cert bundle
-      openssl = Formula["openssl@3"]
+      openssl = Formula["openssl@4"]
       s.gsub!(/; ?openssl\.cafile=/, "openssl.cafile = \"#{openssl.pkgetc}/cert.pem\"")
       s.gsub!(/; ?openssl\.capath=/, "openssl.capath = \"#{openssl.pkgetc}/certs\"")
     end

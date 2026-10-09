@@ -30,6 +30,11 @@ class Prjtrellis < Formula
     end
   end
 
+  resource "homeebrew-ecp-config", :test do
+    url "https://www.trabucayre.com/blink.config"
+    sha256 "394d71ba416517cceee5135b853dd1e94f99b07d5e9a809760618fa820d32619"
+  end
+
   # Fix build with Boost 1.89.0
   patch do
     url "https://github.com/YosysHQ/prjtrellis/commit/e821bcbecdc997d71766836a200e16b27535a835.patch?full_index=1"
@@ -50,11 +55,6 @@ class Prjtrellis < Formula
   end
 
   test do
-    resource "homeebrew-ecp-config" do
-      url "https://www.trabucayre.com/blink.config"
-      sha256 "394d71ba416517cceee5135b853dd1e94f99b07d5e9a809760618fa820d32619"
-    end
-
     testpath.install resource("homeebrew-ecp-config")
 
     system bin/"ecppack", testpath/"blink.config", testpath/"blink.bit"

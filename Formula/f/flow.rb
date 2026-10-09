@@ -1,17 +1,17 @@
 class Flow < Formula
   desc "Static type checker for JavaScript"
   homepage "https://flow.org/"
-  url "https://ghfast.top/https://github.com/facebook/flow/archive/refs/tags/v0.334.0.tar.gz"
-  sha256 "dfdf3296e66095fd87a0969851c469bb177591113962df8aa6e1f5a1feccf58f"
+  url "https://ghfast.top/https://github.com/facebook/flow/archive/refs/tags/v0.335.0.tar.gz"
+  sha256 "a0852ee6d0521bf9de0336baee9af235c628eac2291ae852639708d68bd76347"
   license "MIT"
   head "https://github.com/facebook/flow.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "f2a6868f125593226cd0b0d2c31b2bfb27488adf88d502d8d09c237156babdb8"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "0d87c9d2dd1ad7a3126aa5c6018e79fdca6c14e1382b58df40f79cc6093fe8ae"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "86a60e0e3ee7f77801e10033c46b4cc0c301d2be045b22149f2625d86cdff511"
-    sha256 cellar: :any,                 arm64_linux:       "30cf76f4251480994173197d31f8b262768c399556569ae01309a9c22551d5b0"
-    sha256 cellar: :any,                 x86_64_linux:      "6f682c6baed3cd420d841650a1b31b374b92a9f3e4190fc233cdc5cbfaf791a0"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "4adaf59c778a33f1daa9d07b23c47da3b3e893c7191a7812f1c4a4c755713344"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "1dcc37d50564e8330e746dcafdd155bd6d3fffa15d2b9f5ec47b445c53e60f95"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "966d21879aae60e3c6799b911f2b5b857ec0c217cc6665652707ee277eba8971"
+    sha256 cellar: :any,                 arm64_linux:       "363021df5bb5a817e1d745f397f0298e0b0086819e6ac2962b2ae4de675bdbfe"
+    sha256 cellar: :any,                 x86_64_linux:      "d65fd9214d4254c9809f01881fe5d022924f80a33ff2ad9b6b543fa9ba719c11"
   end
 
   depends_on "rust" => :build

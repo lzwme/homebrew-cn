@@ -51,6 +51,9 @@ class Byobu < Formula
   end
 
   test do
+    # Keep the tmux socket out of the shared `/tmp`, where the sandbox blocks connecting to stale ones
+    ENV["TMUX_TMPDIR"] = testpath
+
     system bin/"byobu-status"
     assert_match "open terminal failed", shell_output("#{bin}/byobu-select-session 2>&1", 1)
   end

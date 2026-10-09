@@ -32,6 +32,11 @@ class Qtlottie < Formula
   depends_on "qtbase"
   depends_on "qtdeclarative"
 
+  resource "rect_rotate.json", :test do
+    url "https://ghfast.top/https://raw.githubusercontent.com/qt/qtlottie/888fb0ca5d5e18fe5d8b88ed721544bf204ac158/tests/manual/testApp/rect_rotate.json"
+    sha256 "d0d5d2b036c04d4b2c1211d062fe1c123053ea0d4639cd33a2cec724236bf328"
+  end
+
   allow_network_access! :test
 
   def install
@@ -48,10 +53,6 @@ class Qtlottie < Formula
   end
 
   test do
-    resource "rect_rotate.json" do
-      url "https://ghfast.top/https://raw.githubusercontent.com/qt/qtlottie/888fb0ca5d5e18fe5d8b88ed721544bf204ac158/tests/manual/testApp/rect_rotate.json"
-      sha256 "d0d5d2b036c04d4b2c1211d062fe1c123053ea0d4639cd33a2cec724236bf328"
-    end
     testpath.install resource("rect_rotate.json")
 
     # Based on https://github.com/qt/qtlottie/blob/dev/tests/manual/testApp/main.qml

@@ -24,10 +24,24 @@ class Jailkit < Formula
 
   depends_on "python@3.14"
 
+  deny_network_access!
+
   def install
     ENV["PYTHONINTERPRETER"] = python3
 
     system "./configure", *std_configure_args
     system "make", "install"
+  end
+
+  test do
+    jail = testpath/"jail"
+    (jail/"etc").mkpath
+    (jail/"tmp").mkpath
+    chmod 0777, jail/"tmp"
+    (testpath/"jk_check.ini").write "[#{jail}]\n"
+
+    output = shell_output("#{sbin}/jk_check -c #{testpath}/jk_check.ini 2>&1")
+    assert_match "ERROR: #{jail} is not owned by root:root!", output
+    assert_match "WARNING: #{jail}/tmp/ is writable for others!", output
   end
 end

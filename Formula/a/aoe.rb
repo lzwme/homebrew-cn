@@ -1,18 +1,17 @@
 class Aoe < Formula
   desc "Terminal session manager for AI coding agents"
   homepage "https://github.com/agent-of-empires/agent-of-empires"
-  url "https://ghfast.top/https://github.com/agent-of-empires/agent-of-empires/archive/refs/tags/v1.18.0.tar.gz"
-  sha256 "b91b5c3958f4d1b778dcb21203bbfaa5af0c654a6d29db64ad456ad30517ecd8"
+  url "https://ghfast.top/https://github.com/agent-of-empires/agent-of-empires/archive/refs/tags/v1.19.0.tar.gz"
+  sha256 "2da687d59726f8c9a68741d09dd01bdcd591d752e5de47c45e28702d30762850"
   license "MIT"
   head "https://github.com/agent-of-empires/agent-of-empires.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_golden_gate: "3c4d8b7a5fb52b18573ade01146c38cfaeb8e91b509742b917545bd157ef345a"
-    sha256 cellar: :any, arm64_tahoe:       "66fcc443d4f159c9dddd0bcc5f95f9e94d27c5dcdfa44d1760deb7060cb4f776"
-    sha256 cellar: :any, arm64_sequoia:     "7077fb837eeedf9f941c477f6cbd5a93992066420fda2aca538a06a7398483c8"
-    sha256 cellar: :any, arm64_linux:       "298ef8b674388905e9c4b8ea4492693425fdce29a717ecd492bc618656972703"
-    sha256 cellar: :any, x86_64_linux:      "282cc4a1b103e9f04baf338ffc1117a0f83b359379fcf07deb0465adb2ccc6a8"
+    sha256 cellar: :any, arm64_golden_gate: "f137c265f1d9af96b36c6afebf383501a5d7db826fc5baf93ed9577f715a683f"
+    sha256 cellar: :any, arm64_tahoe:       "262d1c91c12492f7f80a3803e6c4631111bb31b3a2f46440ad103c47c6a95631"
+    sha256 cellar: :any, arm64_sequoia:     "8de5e5a7a0b1871c6f3d35685412785656d2de44c4eb06c4b8a70248c96703bd"
+    sha256 cellar: :any, arm64_linux:       "b760171509f836de746c4fb65eb6aea65c77df301f2dc98505ee2b91f5db233e"
+    sha256 cellar: :any, x86_64_linux:      "9e112e108dc112ff1294ad2700302bf540275cf66d444909f1c1ea1e879b551c"
   end
 
   depends_on "node" => :build
@@ -55,6 +54,9 @@ class Aoe < Formula
   end
 
   test do
+    # Keep the tmux socket out of the shared `/tmp`, where the sandbox blocks connecting to stale ones
+    ENV["TMUX_TMPDIR"] = testpath
+
     assert_match version.to_s, shell_output("#{bin}/aoe --version")
 
     system bin/"aoe", "init", testpath

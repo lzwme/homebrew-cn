@@ -5,6 +5,7 @@ class Apt < Formula
   url "https://salsa.debian.org/apt-team/apt/-/archive/3.3.3/apt-3.3.3.tar.bz2"
   sha256 "2900914cefd4ee9f6f7c742d47600b27082bf2f917a58072fb9e960a2e1bb214"
   license "GPL-2.0-or-later"
+  revision 1
 
   livecheck do
     url "https://deb.debian.org/debian/pool/main/a/apt/"
@@ -12,8 +13,8 @@ class Apt < Formula
   end
 
   bottle do
-    sha256 arm64_linux:  "6bc96e57276465f6a88b57871585328823f3cf0b5ceb5017633eac1c01c9fdf5"
-    sha256 x86_64_linux: "089dd9ecd81b9c930db619d9604a542e9bf206b267547df7b4b3e80209aa61f6"
+    sha256 arm64_linux:  "e1e568fc8f18d360744d47d93f0f8600e3076008b1519a97aed1ee37d555b387"
+    sha256 x86_64_linux: "41c536dabe6789ded2310e16f7544a1dd7592119491d68bdbd01aaa31d081919"
   end
 
   keg_only "it conflicts with system apt"
@@ -35,7 +36,7 @@ class Apt < Formula
   depends_on "dpkg"
   depends_on :linux
   depends_on "lz4"
-  depends_on "openssl@3"
+  depends_on "openssl@4"
   depends_on "perl"
   depends_on "sequoia-sqv"
   depends_on "systemd"

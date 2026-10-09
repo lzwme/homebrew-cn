@@ -26,6 +26,11 @@ class Libtensorflow < Formula
     depends_on "vim" => :build # for xxd, TODO: try to remove in next release
   end
 
+  resource "homebrew-test-model", :test do
+    url "https://github.com/tensorflow/models/raw/v1.13.0/samples/languages/java/training/model/graph.pb"
+    sha256 "147fab50ddc945972818516418942157de5e7053d4b67e7fca0b0ada16733ecb"
+  end
+
   def install
     optflag = ENV["HOMEBREW_OPTFLAGS"].presence
     optflag ||= if Hardware::CPU.arm? && OS.mac?
@@ -115,11 +120,6 @@ class Libtensorflow < Formula
   end
 
   test do
-    resource "homebrew-test-model" do
-      url "https://github.com/tensorflow/models/raw/v1.13.0/samples/languages/java/training/model/graph.pb"
-      sha256 "147fab50ddc945972818516418942157de5e7053d4b67e7fca0b0ada16733ecb"
-    end
-
     (testpath/"test.c").write <<~C
       #include <stdio.h>
       #include <tensorflow/c/c_api.h>

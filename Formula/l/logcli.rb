@@ -21,6 +21,11 @@ class Logcli < Formula
   depends_on "go" => :build
   depends_on "loki" => :test
 
+  resource "homebrew-testdata", :test do
+    url "https://ghfast.top/https://raw.githubusercontent.com/grafana/loki/5c8542036609f157fee45da7efafbba72308e829/cmd/loki/loki-local-config.yaml"
+    sha256 "14557cd65634314d4eec22cf1bac212f3281854156f669b61b17f2784c895ab1"
+  end
+
   # `test do` block runs a local loki server
   allow_network_access! :test
 
@@ -45,11 +50,6 @@ class Logcli < Formula
   end
 
   test do
-    resource "homebrew-testdata" do
-      url "https://ghfast.top/https://raw.githubusercontent.com/grafana/loki/5c8542036609f157fee45da7efafbba72308e829/cmd/loki/loki-local-config.yaml"
-      sha256 "14557cd65634314d4eec22cf1bac212f3281854156f669b61b17f2784c895ab1"
-    end
-
     port = free_port
 
     testpath.install resource("homebrew-testdata")

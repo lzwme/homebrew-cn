@@ -7,23 +7,29 @@ class CargoGeiger < Formula
   head "https://github.com/geiger-rs/cargo-geiger.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_golden_gate: "65fcd034dfe8323592080d1af45ffda42215b4c1a1c34b1047a46f5de89f8bd4"
-    sha256 cellar: :any,                 arm64_tahoe:       "88ec2b410e24b605256007ac5638b8a5a49d5ffb1a62e60393961e11971a1d42"
-    sha256 cellar: :any,                 arm64_sequoia:     "51b91185a2d416c65ad628f9b84a5e1612c8e44a5f0418099bb4407d6cf77fcd"
-    sha256 cellar: :any,                 arm64_sonoma:      "6a5a514bbee93789316736a19e716ea74bfaa877a8627aa45fe28fc9c9033228"
-    sha256 cellar: :any,                 sonoma:            "777ba436a9bb9416bcf1bdd7988a8da9ac1a4b50943990b7dd78f974b070889a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "043847d1967ef34c4e55f3825c3498fa3f919ce919232316323bdcb3e3ed1e18"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "991088f8555c7dabbe84f4519d8d4b527d14bc035f6db978da4a605efb9f1145"
+    rebuild 2
+    sha256 cellar: :any, arm64_golden_gate: "8e4e4cc67afbbf5caa621c99841bd7f0b78c4f3be582d4dc404e5dd05a0898ab"
+    sha256 cellar: :any, arm64_tahoe:       "7f23522c1c5c01537dc7f6d8c67905f5b09b95b37026abd4c9bdcf0bca85bd0d"
+    sha256 cellar: :any, arm64_sequoia:     "5696cddfec7ffea8df91898a6e88039e07736187e8a7f87f237de5e8a333c797"
+    sha256 cellar: :any, arm64_linux:       "740563e04496aac705b6ece0d5aa2ed81257b6f4bdc6fb2705fa3b3a43d807c9"
+    sha256 cellar: :any, x86_64_linux:      "0c403bb34d236369c9384118843bea1d9c843f957c6b69ae34881981e08f4060"
   end
 
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "rustup" => :test
-  depends_on "openssl@3"
+  depends_on "openssl@4"
+
+  uses_from_macos "curl"
 
   on_linux do
     depends_on "zlib-ng-compat"
+  end
+
+  # Backport OpenSSL 4 support to the 0.13.0 release source.
+  patch do
+    file "Patches/cargo-geiger/openssl4-0.13.0.patch"
+    type :backport
   end
 
   allow_network_access! :test
@@ -34,7 +40,7 @@ class CargoGeiger < Formula
 
   def install
     # Ensure that the `openssl` crate picks up the intended library.
-    ENV["OPENSSL_DIR"] = formula_opt_prefix("openssl@3")
+    ENV["OPENSSL_DIR"] = formula_opt_prefix("openssl@4")
 
     system "cargo", "install", *std_cargo_args(path: "cargo-geiger")
   end
@@ -72,8 +78,8 @@ class CargoGeiger < Formula
     require "utils/linkage"
 
     [
-      formula_opt_lib("openssl@3")/shared_library("libcrypto"),
-      formula_opt_lib("openssl@3")/shared_library("libssl"),
+      formula_opt_lib("openssl@4")/shared_library("libcrypto"),
+      formula_opt_lib("openssl@4")/shared_library("libssl"),
     ].each do |library|
       assert Utils.binary_linked_to_library?(bin/"cargo-geiger", library),
              "No linkage with #{library.basename}! Cargo is likely using a vendored version."

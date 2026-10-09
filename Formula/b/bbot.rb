@@ -6,16 +6,15 @@ class Bbot < Formula
   url "https://files.pythonhosted.org/packages/78/3c/d75416669c46b2731f7207545efd0eb54037b1ca5e1e68dd1dd9118bef73/bbot-3.0.2.tar.gz"
   sha256 "92bd672b306d500d8b24787ee3750ff0317a347b66322b21dae4323afcf11c45"
   license "AGPL-3.0-only"
-  revision 1
+  revision 2
   head "https://github.com/blacklanternsecurity/bbot.git", branch: "stable"
 
   bottle do
-    rebuild 1
-    sha256 arm64_golden_gate: "da1552bfc608c320553ae82de7b7cec5a65bc3611b5a1ef320872b79497229b8"
-    sha256 arm64_tahoe:       "5764856b4a0462b48dd0799f758c17786d61f861d5d4c7de100de74603769750"
-    sha256 arm64_sequoia:     "78c9e81d55182fc33be49e1695be816d91ee71361504762289f313727a86053c"
-    sha256 arm64_linux:       "d612e4ad465bf93b1365c80f607971cfce6162c775cfe2ff7e7ecbae6d230f35"
-    sha256 x86_64_linux:      "8fe6667916a53397de63f5e096f20f5acafaeffab446d7bcb0706daae37b032a"
+    sha256 arm64_golden_gate: "1181c738df8bbb14d58ae5719292d26a2a72417bba198e926ea89c16e5dbb242"
+    sha256 arm64_tahoe:       "3c90a885b3881e587e20fab8dbb15445c0a1c65281b05fd4e96dc50e2487b3fd"
+    sha256 arm64_sequoia:     "825e2912315bcc490fa01d60e9abd6245bc3da38c895425697f8deb115916c53"
+    sha256 arm64_linux:       "acc5f9282fd47fe3c14346b93f098b4a6bff93be9f07b3ef5b7bc5c788fa56e5"
+    sha256 x86_64_linux:      "556ac5988c8cd9f6646e44e0a096cea7611b24c32c49eec18f8f1c4e5a3609c1"
   end
 
   depends_on "cmake" => :build
@@ -26,7 +25,7 @@ class Bbot < Formula
   depends_on "certifi" => :no_linkage
   depends_on "cryptography" => :no_linkage
   depends_on "libyaml"
-  depends_on "openssl@3"
+  depends_on "openssl@4"
   depends_on "pydantic" => :no_linkage
   depends_on "python@3.14"
   depends_on "xxhash"
@@ -344,7 +343,7 @@ class Bbot < Formula
     # Work around superenv breaking aws-lc-sys `-O0` needed to build CPU Jitter RNG
     ENV["AWS_LC_SYS_NO_JITTER_ENTROPY"] = "1"
     # Ensure that the `openssl` crate picks up the intended library.
-    ENV["OPENSSL_DIR"] = formula_opt_prefix("openssl@3")
+    ENV["OPENSSL_DIR"] = formula_opt_prefix("openssl@4")
     ENV["XXHASH_LINK_SO"] = "1"
 
     venv = virtualenv_install_with_resources without: %w[yara-python zstandard]

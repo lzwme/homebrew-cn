@@ -1,17 +1,17 @@
 class Simdjson < Formula
   desc "SIMD-accelerated C++ JSON parser"
   homepage "https://simdjson.org"
-  url "https://ghfast.top/https://github.com/simdjson/simdjson/archive/refs/tags/v5.0.2.tar.gz"
-  sha256 "09de4289a26d3a0453569901a3837450b5b98a5c317d635eeee8e2a82b1ebe6b"
+  url "https://ghfast.top/https://github.com/simdjson/simdjson/archive/refs/tags/v5.0.3.tar.gz"
+  sha256 "295e96d96d6d55face58e99b47ddc1f6c7c1a302f2ce5edf2c1ba7518972f0ed"
   license "Apache-2.0"
   head "https://github.com/simdjson/simdjson.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "22bc3d0aba2db5fa993202256d1fea43ca0f451b1e1d05dadc0b13c697a28d49"
-    sha256 cellar: :any, arm64_tahoe:       "0d8b3198b0e1ae67955625e4682cc17dc04325936e0f7f257a6a17718fd6ffd0"
-    sha256 cellar: :any, arm64_sequoia:     "45acfe53312bd870746a8385cae195206dae4640a92802ee5ff5b6befc8db7dd"
-    sha256 cellar: :any, arm64_linux:       "4e53d46e073f386fdefa16793d253804632e42e33c9777bc92e60b5bfd03f11c"
-    sha256 cellar: :any, x86_64_linux:      "b2649460cc179f43131e4ee17013f3358a54d2da4313d31dae63608e1cfcb786"
+    sha256 cellar: :any, arm64_golden_gate: "b70992199d7ae5a050f9b892c6ba79522c032e21733e408743538a351f816b25"
+    sha256 cellar: :any, arm64_tahoe:       "2090cde68e91c5fc5726c5e313fb6480e61acebd3ed0ab56b749d496fa80b765"
+    sha256 cellar: :any, arm64_sequoia:     "096785d15117c33cafa6076af92e359385d2e22ff3a94fd5e6c6de4ff1343168"
+    sha256 cellar: :any, arm64_linux:       "38d5679b0afd29fe94bf7561b1a035e637b790f7ab38a215209fc2ea61336f43"
+    sha256 cellar: :any, x86_64_linux:      "7486cd5238d5e1de866eb047eb8f09574960015fdb1bea4a148546de27552722"
   end
 
   depends_on "cmake" => :build

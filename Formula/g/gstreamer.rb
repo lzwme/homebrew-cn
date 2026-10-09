@@ -2,7 +2,7 @@ class Gstreamer < Formula
   desc "Development framework for multimedia applications"
   homepage "https://gstreamer.freedesktop.org/"
   license all_of: ["LGPL-2.0-or-later", "LGPL-2.1-or-later", "MIT"]
-  revision 2
+  revision 3
   compatibility_version 1
 
   stable do
@@ -26,11 +26,11 @@ class Gstreamer < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "a6e736b6e1ab7a9da87b7c6c8d104becc1cf56fa878433a6e148dbb2c260d8ef"
-    sha256 arm64_tahoe:       "480a5e8b7a30a7a57420881328207a101d09d19e77442c10f2ed9643e7f4343c"
-    sha256 arm64_sequoia:     "a344ccc47d1fd774cd19e60e22c5a2e751d723062932bc94bb3e23b4cd5fb1fc"
-    sha256 arm64_linux:       "23606233a4228f0a09022d38a55343d755c4b5cddeccca6fcc658511883a62c2"
-    sha256 x86_64_linux:      "a563843df0b9a549128a700553e64736bf3c9b919b392b78c416943755acf7de"
+    sha256 arm64_golden_gate: "4b80f4e928a213644aa2bded4f6d909f34118994c7a0f8069c9b8fd31576d2f0"
+    sha256 arm64_tahoe:       "5ca86245b9322351b526bc8f53a8705ef8b651a5d79c374f196adcc2fe921bd6"
+    sha256 arm64_sequoia:     "f44e87a1ef8a298b0f2e423a7101092977ad01a35641085a10607da80f988cf9"
+    sha256 arm64_linux:       "19c3ce129309a0e59ea44fdea09184543df4664b4d5f3daba18e1b9e8b6dca93"
+    sha256 x86_64_linux:      "5560b42b3c7396f365a1fe8d7ab72ae537c5f05fa2c5c15a0d2fee5a53a00ba0"
   end
 
   head do
@@ -91,7 +91,7 @@ class Gstreamer < Formula
   depends_on "opencore-amr"
   depends_on "openexr"
   depends_on "openjpeg"
-  depends_on "openssl@3"
+  depends_on "openssl@4"
   depends_on "opus"
   depends_on "orc"
   depends_on "pango"
@@ -245,7 +245,7 @@ class Gstreamer < Formula
     ENV.append_to_rustflags "--codegen link-args=-Wl,#{rpath_args.join(",")}"
 
     # Make sure the `openssl-sys` crate uses our OpenSSL.
-    ENV["OPENSSL_DIR"] = formula_opt_prefix("openssl@3")
+    ENV["OPENSSL_DIR"] = formula_opt_prefix("openssl@4")
 
     system "meson", "setup", "build", *args, *std_meson_args
     system "meson", "compile", "-C", "build", "--verbose"

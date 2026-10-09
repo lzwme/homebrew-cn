@@ -6,22 +6,22 @@ class Sigstore < Formula
   url "https://files.pythonhosted.org/packages/18/e0/279419065e2d7102413605b3456122adbbccbc42e010b499c7b882fc01f8/sigstore-4.5.0.tar.gz"
   sha256 "020d3e07f622b2916bf453e66ff6ff0711e1fdc5ab69e8bd8902f71d9fcb316f"
   license "Apache-2.0"
-  revision 1
+  revision 2
   head "https://github.com/sigstore/sigstore-python.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "404d7650d9cc5149566a58bff67da162c2a123f311347462e33fc71835ce01ad"
-    sha256 cellar: :any, arm64_tahoe:       "fff1b60b512d2415f8f3835cda22ef10ec56317a08bcb28a9af00c9524dba26f"
-    sha256 cellar: :any, arm64_sequoia:     "67f42526e7f20eb4044a3106a8804429d63a65907c9e0a2f12537979e27e1a4b"
-    sha256 cellar: :any, arm64_linux:       "754657882fceb52cc9443c031dc5d33b87bf648c736cfc443fdec51b308352c9"
-    sha256 cellar: :any, x86_64_linux:      "af70d8efd24ea1b8bb84fbce394e8ab3c203cdf914403edf930429af00823f03"
+    sha256 cellar: :any, arm64_golden_gate: "d8cd78272eb4ede01929e7369e6a705e9072879d040f2387170baefbe34296e4"
+    sha256 cellar: :any, arm64_tahoe:       "219e4f2a3f5594a5c6ff9f93ee5a02696a3b97fc344159f720534f5459107aef"
+    sha256 cellar: :any, arm64_sequoia:     "3bc251e8792c014bc12177a42f41c9fe3f38bbf82667091375ecaba83244836e"
+    sha256 cellar: :any, arm64_linux:       "b62f005a7c37f0a52aacc225e7dd6d38e5154363c4fa1411eae7bbfc3e3a2f5f"
+    sha256 cellar: :any, x86_64_linux:      "e92010a17c7125da4f74ba55380bb0f5ef59cc1b05e28f7199566e0a9ec8306a"
   end
 
   depends_on "pkgconf" => :build # for rfc3161-client
   depends_on "rust" => :build # for rfc3161-client
   depends_on "certifi" => :no_linkage
   depends_on "cryptography" => :no_linkage
-  depends_on "openssl@3" # for rfc3161-client
+  depends_on "openssl@4" # for rfc3161-client
   depends_on "pydantic" => :no_linkage
   depends_on "python@3.14"
 
@@ -132,24 +132,24 @@ class Sigstore < Formula
     sha256 "63bf2ead4c879426ebf22ef2a781eeb4aa3b4ae798a0435506f8687fd5bb9b63"
   end
 
+  # NOTE: This resource and below do not needed to be kept up-to-date
+  # with the latest sigstore-python release.
+  resource "homebrew-test-artifact", :test do
+    url "https://ghfast.top/https://github.com/sigstore/sigstore-python/releases/download/v3.3.0/sigstore-3.3.0.tar.gz", using: :nounzip
+    sha256 "931e9913996ceace713d28e2431989414e711af30606f0b1e8bdc30fcbdd3fbe"
+  end
+
+  resource "homebrew-test-artifact.sigstore", :test do
+    url "https://ghfast.top/https://github.com/sigstore/sigstore-python/releases/download/v3.3.0/sigstore-3.3.0.tar.gz.sigstore"
+    sha256 "1cb946269f563b669183307b603f85169c7b1399835c66b8b4d28d913d26d5f7"
+  end
+
   def install
     virtualenv_install_with_resources
   end
 
   test do
     assert_match version.to_s, shell_output("#{bin}/sigstore -V")
-
-    # NOTE: This resource and below do not needed to be kept up-to-date
-    # with the latest sigstore-python release.
-    resource "homebrew-test-artifact" do
-      url "https://ghfast.top/https://github.com/sigstore/sigstore-python/releases/download/v3.3.0/sigstore-3.3.0.tar.gz", using: :nounzip
-      sha256 "931e9913996ceace713d28e2431989414e711af30606f0b1e8bdc30fcbdd3fbe"
-    end
-
-    resource "homebrew-test-artifact.sigstore" do
-      url "https://ghfast.top/https://github.com/sigstore/sigstore-python/releases/download/v3.3.0/sigstore-3.3.0.tar.gz.sigstore"
-      sha256 "1cb946269f563b669183307b603f85169c7b1399835c66b8b4d28d913d26d5f7"
-    end
 
     resource("homebrew-test-artifact").stage testpath
     resource("homebrew-test-artifact.sigstore").stage testpath

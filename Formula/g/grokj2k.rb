@@ -49,6 +49,11 @@ class Grokj2k < Formula
     cause "GNU compiler version must be at least 10.0"
   end
 
+  resource "homebrew-test_image", :test do
+    url "https://github.com/GrokImageCompression/grok-test-data/raw/43ce4cb/input/nonregression/basn6a08.tif"
+    sha256 "d0b9715d79b10b088333350855f9721e3557b38465b1354b0fa67f230f5679f3"
+  end
+
   allow_network_access! :test
 
   def install
@@ -72,11 +77,6 @@ class Grokj2k < Formula
   end
 
   test do
-    resource "homebrew-test_image" do
-      url "https://github.com/GrokImageCompression/grok-test-data/raw/43ce4cb/input/nonregression/basn6a08.tif"
-      sha256 "d0b9715d79b10b088333350855f9721e3557b38465b1354b0fa67f230f5679f3"
-    end
-
     (testpath/"test.c").write <<~C
       #include <grok/grok.h>
 

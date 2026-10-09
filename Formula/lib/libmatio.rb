@@ -25,6 +25,11 @@ class Libmatio < Formula
     depends_on "zlib-ng-compat"
   end
 
+  resource "homebrew-test_mat_file", :test do
+    url "https://web.uvic.ca/~monahana/eos225/poc_data.mat.sfx"
+    sha256 "a29df222605476dcfa660597a7805176d7cb6e6c60413a3e487b62b6dbf8e6fe"
+  end
+
   # fix pkg-config linkage for hdf5 and zlib
   patch :DATA
 
@@ -41,11 +46,6 @@ class Libmatio < Formula
   end
 
   test do
-    resource "homebrew-test_mat_file" do
-      url "https://web.uvic.ca/~monahana/eos225/poc_data.mat.sfx"
-      sha256 "a29df222605476dcfa660597a7805176d7cb6e6c60413a3e487b62b6dbf8e6fe"
-    end
-
     testpath.install resource("homebrew-test_mat_file")
     (testpath/"mat.c").write <<~C
       #include <stdlib.h>

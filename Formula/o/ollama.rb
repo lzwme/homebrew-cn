@@ -60,6 +60,12 @@ class Ollama < Formula
     end
   end
 
+  # Check llama-server binary; it needs a model as upstream builds it without router mode support
+  resource "homebrew-test-model", :test do
+    url "https://huggingface.co/ggml-org/models/resolve/499bc8821c6b12b4e53c5bffcb21ec206f212d81/tinyllamas/stories260K.gguf"
+    sha256 "270cba1bd5109f42d03350f60406024560464db173c0e387d91f0426d3bd256d"
+  end
+
   # downloads go modules in install and runs a server in test
   deny_network_access! :postinstall
 
@@ -165,11 +171,6 @@ class Ollama < Formula
       assert_match "libmlx.dylib", output
     end
 
-    # Check llama-server binary; it needs a model as upstream builds it without router mode support
-    resource "homebrew-test-model" do
-      url "https://huggingface.co/ggml-org/models/resolve/499bc8821c6b12b4e53c5bffcb21ec206f212d81/tinyllamas/stories260K.gguf"
-      sha256 "270cba1bd5109f42d03350f60406024560464db173c0e387d91f0426d3bd256d"
-    end
     testpath.install resource("homebrew-test-model")
 
     require "pty"

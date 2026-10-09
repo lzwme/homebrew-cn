@@ -6,11 +6,12 @@ class MermanCli < Formula
   license any_of: ["MIT", "Apache-2.0"]
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "dfd0f0d555b053f0223ec45756634efd974c3e2206dbd0fc69d55e94a6c24267"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "a541cd63827a5b7d9987ebede55c8113fce2f9c5cef14adcadb4445c189a2513"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "42497596399555985ca847d0622220b5456926fb5dbdeb4128618b76b2fecd5e"
-    sha256 cellar: :any,                 arm64_linux:       "a634bb48f22175c980a3faf74f2424ad574f3f5e94e5f0d201e1bedfb1fbd016"
-    sha256 cellar: :any,                 x86_64_linux:      "2526d5ca799a1469a5d313ee160cf68800207f7ac1a5ad3ca07045b78cc2a1e6"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "7654d4adc8879c1a718c0e424fa1388f7330a8a5089e8b03d230d867264984a1"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "7820c0e287f61c09c439dda78c87cbec9a5ebdf5276681d83791d6d3c6b3e599"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "e0cfce115cf418d3650919e601d415a07d2dfaf4c9a2c134f6988e00552e7ccf"
+    sha256 cellar: :any,                 arm64_linux:       "b1c920887790f7a290ea8788d78f4fef17fda33fa1a55dc9338222f9c25aeffc"
+    sha256 cellar: :any,                 x86_64_linux:      "98660b7ca55daa771d9be5afa878ac3b150e26ca1110144704a5d9373fc93c10"
   end
 
   depends_on "rust" => :build
@@ -23,6 +24,9 @@ class MermanCli < Formula
 
   def install
     system "cargo", "install", *std_cargo_args(path: "crates/merman-cli")
+
+    generate_completions_from_executable(bin/"merman-cli", "completion", shells: [:bash, :zsh, :fish, :pwsh])
+    man1.install Dir["crates/merman-cli/assets/man/*.1"]
   end
 
   test do

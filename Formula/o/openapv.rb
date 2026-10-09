@@ -20,6 +20,11 @@ class Openapv < Formula
 
   depends_on "cmake" => :build
 
+  resource "homebrew-test_video", :test do
+    url "https://ghfast.top/https://raw.githubusercontent.com/fraunhoferhhi/vvenc/master/test/data/RTn23_80x44p15_f15.yuv"
+    sha256 "ecd2ef466dd2975f4facc889e0ca128a6bea6645df61493a96d8e7763b6f3ae9"
+  end
+
   allow_network_access! :test
 
   def install
@@ -32,11 +37,6 @@ class Openapv < Formula
   end
 
   test do
-    resource "homebrew-test_video" do
-      url "https://ghfast.top/https://raw.githubusercontent.com/fraunhoferhhi/vvenc/master/test/data/RTn23_80x44p15_f15.yuv"
-      sha256 "ecd2ef466dd2975f4facc889e0ca128a6bea6645df61493a96d8e7763b6f3ae9"
-    end
-
     resource("homebrew-test_video").stage testpath
 
     system bin/"oapv_app_enc", "-i", "RTn23_80x44p15_f15.yuv",

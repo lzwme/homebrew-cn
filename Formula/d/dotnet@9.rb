@@ -65,6 +65,13 @@ class DotnetAT9 < Formula
     end
   end
 
+  # Test to avoid uploading broken Intel Sonoma bottle which has stack overflow on restore.
+  # See https://github.com/Homebrew/homebrew-core/issues/197546
+  resource "docfx", :test do
+    url "https://ghfast.top/https://github.com/dotnet/docfx/archive/refs/tags/v2.78.4.tar.gz"
+    sha256 "255f71f4a6fc7b9ffd0c598d0eba11630dc01262f1fa45ec4f1794508f7033cf"
+  end
+
   def install
     odie "Update release.json resource!" if resource("release.json").version != version
     buildpath.install resource("release.json")
@@ -211,12 +218,6 @@ class DotnetAT9 < Formula
     output = shell_output("#{bin}/dotnet run --framework #{target_framework} #{testpath}/test.dll a b c")
     assert_equal "#{testpath}/test.dll,a,b,c\n", output
 
-    # Test to avoid uploading broken Intel Sonoma bottle which has stack overflow on restore.
-    # See https://github.com/Homebrew/homebrew-core/issues/197546
-    resource "docfx" do
-      url "https://ghfast.top/https://github.com/dotnet/docfx/archive/refs/tags/v2.78.4.tar.gz"
-      sha256 "255f71f4a6fc7b9ffd0c598d0eba11630dc01262f1fa45ec4f1794508f7033cf"
-    end
     resource("docfx").stage do
       system bin/"dotnet", "restore", "src/docfx", "--disable-build-servers", "--no-cache"
     end

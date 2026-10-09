@@ -4,7 +4,7 @@ class Pdal < Formula
   url "https://ghfast.top/https://github.com/PDAL/PDAL/releases/download/2.10.2/PDAL-2.10.2-src.tar.bz2"
   sha256 "882b97aa3ae5db682c3b2dc8edef4e29bcc7ecea51c70592e71bc1f34112ad00"
   license "BSD-3-Clause"
-  revision 1
+  revision 2
   compatibility_version 1
   head "https://github.com/PDAL/PDAL.git", branch: "master"
 
@@ -14,13 +14,11 @@ class Pdal < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "5fcedf5dad6c83ae206fb0b915b3148ceacf95d4b3621a58e065c712463e5b91"
-    sha256 cellar: :any, arm64_tahoe:       "2642d99c9f01ff1dcb5b53f40c78099a4da7930d9a2faab98333916fd80dac0c"
-    sha256 cellar: :any, arm64_sequoia:     "95d6d1984c8b04f0f16975c395bb8e9c2045e6046da0e946ffb8d61137046c60"
-    sha256 cellar: :any, arm64_sonoma:      "ab9bb98d89fce6c67a5c0fc10d0d291476b2cc2a6f3b31353e0a77d968e7f3f6"
-    sha256 cellar: :any, sonoma:            "e1f2688f3eff74f797e8268ce8b0fcaedc9026fb7e0deafc7f28f58d27fe2c4e"
-    sha256 cellar: :any, arm64_linux:       "b333653c1099ab0ff2da719b4e5f72280ff53214f474e37d3c33a464d58864bd"
-    sha256 cellar: :any, x86_64_linux:      "194de33dd537a725a2588f5680304cf00420b6c0e7cde3ebb017edad56019fb5"
+    sha256 cellar: :any, arm64_golden_gate: "f205b89ad8bde08b14ddbe4de6968ebd09340fb63835731d7ab9934ff4eed268"
+    sha256 cellar: :any, arm64_tahoe:       "0987b5bedd3a321f0cfad87c7c32a55f462229e739b6f9362f9420cbdb1f237f"
+    sha256 cellar: :any, arm64_sequoia:     "8c328cdf95b5a4c0e2b46f64d95f8d12ae335a2d620c7873b442303e5422fbe7"
+    sha256 cellar: :any, arm64_linux:       "b51d155b5aa60c84cf334160b4ec80b498d2e490acabd91f3d145c38bde3184c"
+    sha256 cellar: :any, x86_64_linux:      "7ddf998cab349680389d8d092fd01be40163f232b740032dc4fba9c5e4744030"
   end
 
   depends_on "cmake" => :build
@@ -37,7 +35,7 @@ class Pdal < Formula
   depends_on "libxml2"
   depends_on "lz4"
   depends_on "numpy"
-  depends_on "openssl@3"
+  depends_on "openssl@4"
   depends_on "proj"
   depends_on "tiledb"
   depends_on "xerces-c"
@@ -65,7 +63,9 @@ class Pdal < Formula
     ]
     if OS.linux?
       libunwind = Formula["libunwind"]
-      ENV.append_to_cflags "-I#{libunwind.opt_include}"
+      # TODO: restore once apache-arrow drops keg-only llvm@22, whose libunwind.h shadows this -I in superenv
+      # ENV.append_to_cflags "-I#{libunwind.opt_include}"
+      ENV.prepend_path "HOMEBREW_INCLUDE_PATHS", libunwind.opt_include
       args += %W[
         -DLIBUNWIND_INCLUDE_DIR=#{libunwind.opt_include}
         -DLIBUNWIND_LIBRARY=#{libunwind.opt_lib/shared_library("libunwind")}

@@ -29,6 +29,11 @@ class Libwmf < Formula
     depends_on "zlib-ng-compat"
   end
 
+  resource "formula1.wmf", :test do
+    url "https://github.com/caolanm/libwmf/raw/3ea3a65ad1b4528ed1c5795071a0142a0e61ec7b/examples/formula1.wmf"
+    sha256 "a0d9829692eebfa3bdb23d62f474d58cc4ea2489c07c6fcb63338eb3fb2c14d2"
+  end
+
   def install
     system "./configure", "--disable-silent-rules",
                           "--with-gsfontdir=#{HOMEBREW_PREFIX}/share/ghostscript/fonts",
@@ -39,10 +44,6 @@ class Libwmf < Formula
   end
 
   test do
-    resource "formula1.wmf" do
-      url "https://github.com/caolanm/libwmf/raw/3ea3a65ad1b4528ed1c5795071a0142a0e61ec7b/examples/formula1.wmf"
-      sha256 "a0d9829692eebfa3bdb23d62f474d58cc4ea2489c07c6fcb63338eb3fb2c14d2"
-    end
     resource("formula1.wmf").stage(testpath)
 
     output = shell_output("#{bin}/wmf2svg --maxwidth=100 --maxheight=100 formula1.wmf")

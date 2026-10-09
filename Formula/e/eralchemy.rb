@@ -43,16 +43,16 @@ class Eralchemy < Formula
     sha256 "0cea48d173cc12fa28ecabc3b837ea3cf6f38c6d1136f85cbaaf598984861466"
   end
 
+  resource "er_example", :test do
+    url "https://ghfast.top/https://raw.githubusercontent.com/Alexis-benoist/eralchemy/refs/tags/v1.1.0/example/newsmeme.er"
+    sha256 "5c475bacd91a63490e1cbbd1741dc70a3435e98161b5b9458d195ee97f40a3fa"
+  end
+
   def install
     virtualenv_install_with_resources
   end
 
   test do
-    resource "er_example" do
-      url "https://ghfast.top/https://raw.githubusercontent.com/Alexis-benoist/eralchemy/refs/tags/v1.1.0/example/newsmeme.er"
-      sha256 "5c475bacd91a63490e1cbbd1741dc70a3435e98161b5b9458d195ee97f40a3fa"
-    end
-
     system bin/"eralchemy", "-v"
     resource("er_example").stage do
       system bin/"eralchemy", "-i", "newsmeme.er", "-o", "test_eralchemy.pdf"

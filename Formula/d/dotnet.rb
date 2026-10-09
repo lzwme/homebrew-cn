@@ -150,6 +150,13 @@ class Dotnet < Formula
     buildpath.install "artifacts/assets/Release"
   end
 
+  # Test to avoid uploading broken Intel Sonoma bottle which has stack overflow on restore.
+  # See https://github.com/Homebrew/homebrew-core/issues/197546
+  resource "docfx", :test do
+    url "https://ghfast.top/https://github.com/dotnet/docfx/archive/refs/tags/v2.78.5.tar.gz"
+    sha256 "79f9e2c4bb8de2225d91a812a4e9d2cc71a8ed5613b3b4b2940d2a1d5db38793"
+  end
+
   def install
     # Make sure CoreCLR builds with our compiler shims
     ENV["CLR_CC"] = which(ENV.cc)
@@ -296,12 +303,6 @@ class Dotnet < Formula
     output = shell_output("#{bin}/dotnet run --framework #{target_framework} #{testpath}/test.dll a b c")
     assert_equal "#{testpath}/test.dll,a,b,c\n", output
 
-    # Test to avoid uploading broken Intel Sonoma bottle which has stack overflow on restore.
-    # See https://github.com/Homebrew/homebrew-core/issues/197546
-    resource "docfx" do
-      url "https://ghfast.top/https://github.com/dotnet/docfx/archive/refs/tags/v2.78.5.tar.gz"
-      sha256 "79f9e2c4bb8de2225d91a812a4e9d2cc71a8ed5613b3b4b2940d2a1d5db38793"
-    end
     resource("docfx").stage do
       system bin/"dotnet", "restore", "src/docfx", "--disable-build-servers", "--no-cache"
     end

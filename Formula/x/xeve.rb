@@ -24,6 +24,11 @@ class Xeve < Formula
 
   depends_on "cmake" => :build
 
+  resource "homebrew-testvideo", :test do
+    url "https://github.com/grusell/svt-av1-homebrew-testdata/raw/main/video_64x64_yuv420p_25frames.yuv"
+    sha256 "0c5cc90b079d0d9c1ded1376357d23a9782a704a83e01731f50ccd162e246492"
+  end
+
   allow_network_access! :test
 
   def install
@@ -34,11 +39,6 @@ class Xeve < Formula
   end
 
   test do
-    resource "homebrew-testvideo" do
-      url "https://github.com/grusell/svt-av1-homebrew-testdata/raw/main/video_64x64_yuv420p_25frames.yuv"
-      sha256 "0c5cc90b079d0d9c1ded1376357d23a9782a704a83e01731f50ccd162e246492"
-    end
-
     testpath.install resource("homebrew-testvideo")
     system bin/"xeve_app", "-i", "video_64x64_yuv420p_25frames.yuv",
                            "-w", "64", "-h", "64", "--fps", "25", "-o", "out.evc"

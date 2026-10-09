@@ -41,6 +41,11 @@ class Regipy < Formula
     sha256 "e2cfde8f79420f6deeffdeda9aaec3b6bc5abce947655d17ac662b126e48a60d"
   end
 
+  resource "homebrew-test_hive", :test do
+    url "https://ghfast.top/https://raw.githubusercontent.com/mkorman90/regipy/71acd6a65bdee11ff776dbd44870adad4632404c/regipy_tests/data/SYSTEM.xz"
+    sha256 "b1582ab413f089e746da0528c2394f077d6f53dd4e68b877ffb2667bd027b0b0"
+  end
+
   def install
     virtualenv_install_with_resources
 
@@ -54,11 +59,6 @@ class Regipy < Formula
   end
 
   test do
-    resource "homebrew-test_hive" do
-      url "https://ghfast.top/https://raw.githubusercontent.com/mkorman90/regipy/71acd6a65bdee11ff776dbd44870adad4632404c/regipy_tests/data/SYSTEM.xz"
-      sha256 "b1582ab413f089e746da0528c2394f077d6f53dd4e68b877ffb2667bd027b0b0"
-    end
-
     testpath.install resource("homebrew-test_hive")
 
     system bin/"regipy-plugins-run", "-p", "computer_name", "-o", "out.json", "SYSTEM"

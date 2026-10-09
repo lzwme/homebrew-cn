@@ -3,14 +3,13 @@ class Fypp < Formula
 
   desc "Python powered Fortran preprocessor"
   homepage "https://fypp.readthedocs.io/en/stable/"
-  url "https://files.pythonhosted.org/packages/01/35/0e2dfffc90201f17436d3416f8d5c8b00e2187e410ec899bb62cf2cea59b/fypp-3.2.tar.gz"
-  sha256 "05c20f71dd9a7206ffe2d8688032723f97b8c2984d472ba045819d7d2b513bce"
+  url "https://files.pythonhosted.org/packages/bb/a8/e156637279a91880d477a8afeb13097f438e46af332c5c1996fed10369f5/fypp-3.3.tar.gz"
+  sha256 "14bb98c370873624c0a5e53bcf30f6ef0e1a3885e0f0cc714774c745ed8543f1"
   license "BSD-2-Clause"
   head "https://github.com/aradi/fypp.git", branch: "main"
 
   bottle do
-    rebuild 6
-    sha256 cellar: :any_skip_relocation, all: "3de4ca648895c9fdec45f2a052785fb54b9b5db303574558d9ba5eb8d2f7940f"
+    sha256 cellar: :any_skip_relocation, all: "e6d97eb979c104d8ced969f231c7c95e4ec163ff542b8f17060b939c05730620"
   end
 
   depends_on "gcc" => :test

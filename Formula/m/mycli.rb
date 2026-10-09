@@ -3,16 +3,16 @@ class Mycli < Formula
 
   desc "CLI for MySQL with auto-completion and syntax highlighting"
   homepage "https://www.mycli.net/"
-  url "https://files.pythonhosted.org/packages/ba/16/68aa12b1ccbd32db6631ab098fe5ebd48d5f10a35da111d16d07d2256a2a/mycli-2.28.1.tar.gz"
-  sha256 "b99c045b6b0e0ba827ab29ae07407d7e52185f34d44c9e05231533001bcc2a43"
+  url "https://files.pythonhosted.org/packages/f0/7c/517ec1bc2ef1b749e8d62280d3139b93b9fbfd9a9cccb22408c2a5ca1127/mycli-2.28.2.tar.gz"
+  sha256 "3bc942e3b489ef578d5849b1cb0432ce657ecd3a9f27a6e68930a26985937585"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "d8d8db5158277b9e891344076535fda03410aca511ca784db2557f9d7750a831"
-    sha256 cellar: :any, arm64_tahoe:       "2cbd91da4eb024df56703138251559adab9d7d03fb5e9a589966df9199238732"
-    sha256 cellar: :any, arm64_sequoia:     "31ad4e94db3121f13e18b7971b4a30a4cb362c87fd8ec938be8fa05d8bca77eb"
-    sha256 cellar: :any, arm64_linux:       "9a68dbd44bb0cf3a0850c9c3c240f5b193aa5aa6fc390cc6239117b4e66cec18"
-    sha256 cellar: :any, x86_64_linux:      "1b4c2d901ab19a249bd1ceb39bd5ded1e754329e31c29f2628c1c5a3c0e03fc3"
+    sha256 cellar: :any, arm64_golden_gate: "b25e4ac184807fd5ced6837349ef82757cb044e39b5a22407fb3cb4d9ead08ad"
+    sha256 cellar: :any, arm64_tahoe:       "21dc4e839b7bed52a7898c26bf04d2851d9d9e6c7fcb139def5b881a27e7bc1c"
+    sha256 cellar: :any, arm64_sequoia:     "e2460432b86833201fe9d086599ae8f2277a82a9dc34d7a53f3ee69978259900"
+    sha256 cellar: :any, arm64_linux:       "33c531b7e620a90c963fa9908386810bcd5c24213cf6580f65562f2249a38941"
+    sha256 cellar: :any, x86_64_linux:      "d691dd205fd7ec09d6018baaee9a0412601b8721acb671fc03fecf1c114e2c87"
   end
 
   depends_on "rust" => :build # for jiter, polars, vl-convert
@@ -164,8 +164,8 @@ class Mycli < Formula
   end
 
   resource "openai" do
-    url "https://files.pythonhosted.org/packages/73/4f/e57670227cb7b61362d8f9bfba54d4e9f7bde799798c342782788bc12d6c/openai-3.24.0.tar.gz"
-    sha256 "1e7463f7d78773ab2ce4fe85710481aa5bd5ffefd54c8de4b067506cd2d42895"
+    url "https://files.pythonhosted.org/packages/b4/07/cd478a4595282ac72e31090531bb37f8a1b6fd9cb45c1da6d6215078a4d9/openai-3.26.0.tar.gz"
+    sha256 "73b470c09cf2171dce930e36af01c6632241adda0120ad84302ad229f9130a5a"
   end
 
   resource "packaging" do
@@ -244,8 +244,8 @@ class Mycli < Formula
   end
 
   resource "rpds-py" do
-    url "https://files.pythonhosted.org/packages/aa/2a/9618a122aeb2a169a28b03889a2995fe297588964333d4a7d67bdf46e147/rpds_py-2026.6.3.tar.gz"
-    sha256 "1cebd1337c242e4ec2293e541f712b2da849b29f48f0c293684b71c0632625d4"
+    url "https://files.pythonhosted.org/packages/42/68/3bd46b8a5e01d3c2ebdf9c5e9497912e3fe0cde02bac21a7130ca866e403/rpds_py-2026.9.1.tar.gz"
+    sha256 "4793ef7f78268b124b73fa933440f01d258bbae01de9fa53e9080c9ab0425a12"
   end
 
   resource "secretstorage" do
@@ -254,8 +254,8 @@ class Mycli < Formula
   end
 
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/34/26/f5d29e25ffdb535afef2d35cdb55b325298f96debd670da4c325e08d70f4/setuptools-83.0.0.tar.gz"
-    sha256 "025bccbbf0fa05b6192bc64ae1e7b16e001fd6d6d4d5de03c97b1c1ade523bef"
+    url "https://files.pythonhosted.org/packages/6d/44/f5da03a8ef95d369145c5bb53050e7877c9f3d312e128605fd9504829143/setuptools-84.0.0.tar.gz"
+    sha256 "f4695c21257f0d9b537ec2692c941d02ee143b7cc1276941349a546573b2ef73"
   end
 
   resource "six" do
@@ -314,13 +314,13 @@ class Mycli < Formula
   end
 
   resource "wcwidth" do
-    url "https://files.pythonhosted.org/packages/66/55/6f6b20e3437c832ec6d9cb02ac7555046f2836a89d593530a5895420bf69/wcwidth-0.8.5.tar.gz"
-    sha256 "720336056169eac7744c5a84165d563cc6f569652615071cbfd575f131e7537f"
+    url "https://files.pythonhosted.org/packages/f0/b4/7830542634bb2d3e62aa3b586a72d5b3b6c91c3168929e7000ef3fed041d/wcwidth-0.9.2.tar.gz"
+    sha256 "ae0ef90b90f6af38b54f1fe6d58662ec33b3cb4b8391958a62416d654231727b"
   end
 
   resource "yaspin" do
-    url "https://files.pythonhosted.org/packages/8d/c5/826a862dcfcb9e85321f96d6f1b4b96b3b9bf37df6f63dce9cffd0b17053/yaspin-3.4.0.tar.gz"
-    sha256 "a83a81ac7a9d161e116fb668a7e4d10d87fb18d02b4b08a17b7e472f465f3c90"
+    url "https://files.pythonhosted.org/packages/37/20/4b44e31e5a1bfe09624267656dc02c31fe920e35e81697722dd45caac9f1/yaspin-3.5.1.tar.gz"
+    sha256 "5cb55fb774eae3543fdd30b5958c46e348dfd316a8b289c9f8db2c6f8a511846"
   end
 
   def install

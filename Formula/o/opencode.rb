@@ -1,8 +1,8 @@
 class Opencode < Formula
   desc "AI coding agent, built for the terminal"
   homepage "https://opencode.ai"
-  url "https://ghfast.top/https://github.com/anomalyco/opencode/archive/refs/tags/v2.0.20.tar.gz"
-  sha256 "e8bc8af7f8f2df976740fc0a3a0564d6d7b34b9389d921ae0007fa2f49c1c236"
+  url "https://ghfast.top/https://github.com/anomalyco/opencode/archive/refs/tags/v2.0.25.tar.gz"
+  sha256 "24160ee799773101e97899bb1321c1d63c0b9d33be559ffc182464c9bcb8deb0"
   license "MIT"
 
   livecheck do
@@ -12,33 +12,55 @@ class Opencode < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "09e117ea473890d1879285a6e976ea6e62f09600eb3a2e72909522799d670b10"
-    sha256 arm64_tahoe:       "11365b59361afa1234c412de7439d3e669a92671e7a7a322984e750996ea02e2"
-    sha256 arm64_sequoia:     "135acd0d4121b99d031acfc7fddf60e9cffebba43b51bb2cfea966a50a24644e"
-    sha256 arm64_linux:       "99a439b3f22d702e81782b383f0353eb5c1a82638726fde037d110657d1c689a"
-    sha256 x86_64_linux:      "789dd396c5454d3a6bd05642ef43de914cc5b9713dd10a09e5e16d3d9664c1f0"
+    sha256 arm64_golden_gate: "99ccbaa47ad99cd9d0a187e4bce624daf7ed21ffa287224e3b6724e6674eb26a"
+    sha256 arm64_tahoe:       "b632de351eade159e028a7e9b26284370f9fa639ecf5cd4ef0dbdcd6f182bd11"
+    sha256 arm64_sequoia:     "19a8651d0786f52eef3ba5c8d05a0779e2463914a5a2ab8dca091c69be0ceb8f"
+    sha256 arm64_linux:       "3cb791fbf3a142bdfd8a480f0511e36753c612f39ad7efbe65e7890274a28ee3"
+    sha256 x86_64_linux:      "5b8a5fd93c49afcbaa45ee8e0be7d367833b7ba789ac5c034168b02b430de259"
   end
 
   depends_on "bun" => :build
   depends_on "python@3.14" => :build
   depends_on "rust" => :build
-  depends_on "zig@0.15" => :build
+  depends_on "zig@0.16" => :build
   depends_on "ripgrep"
 
   on_linux do
     depends_on "icu4c@78"
   end
 
-  # Version must match `@opencode-ai/pty` in packages/cli/package.json
   resource "opencode-pty" do
-    url "https://ghfast.top/https://github.com/anomalyco/opencode-pty/archive/refs/tags/v0.1.13.tar.gz"
-    sha256 "87f86d91eae5b77f9bc1e3dd76c51f85e8c6ff645a60a373f027943557d8b849"
+    url "https://ghfast.top/https://github.com/anomalyco/opencode-pty/archive/refs/tags/v0.2.0.tar.gz"
+    sha256 "7fc1d1ebf4b74cd1b2a83f059afa29a899990b85cf078e73b703004370a52754"
+
+    livecheck do
+      url "https://ghfast.top/https://raw.githubusercontent.com/anomalyco/opencode/refs/tags/v#{LATEST_VERSION}/packages/cli/package.json"
+      strategy :json do |json|
+        json.dig("dependencies", "@opencode-ai/pty")
+      end
+    end
   end
 
-  # Commit must match `GHOSTTY_COMMIT` in the `libghostty-vt-sys` crate's build.rs
+  # opencode-pty's build.rs requires a git checkout of the revision in its `ghostty-revision` file
   resource "ghostty" do
-    url "https://ghfast.top/https://github.com/ghostty-org/ghostty/archive/a887df42c56f6de86c0fe6da9c4eeca37931e083.tar.gz"
-    sha256 "fb4b2f9ffa0af125983041fdbe4ef94d3fa79fb9f2d22b9c213c0e3847a866b6"
+    url "https://github.com/ghostty-org/ghostty.git",
+        revision: "ab0b9da9e88fcb4b0533a1854e84628f663930af"
+    version "ab0b9da9e88fcb4b0533a1854e84628f663930af"
+
+    livecheck do
+      url "https://ghfast.top/https://raw.githubusercontent.com/anomalyco/opencode/refs/tags/v#{LATEST_VERSION}/packages/cli/package.json"
+      regex(/^(\h{40})$/i)
+      strategy :json do |json, regex|
+        pty_version = json.dig("dependencies", "@opencode-ai/pty")
+        next if pty_version.blank?
+
+        revision_url = "https://ghfast.top/https://raw.githubusercontent.com/anomalyco/opencode-pty/refs/tags/v#{pty_version}/ghostty-revision"
+        ghostty_revision = Homebrew::Livecheck::Strategy.page_content(revision_url)[:content]
+        next if ghostty_revision.blank?
+
+        ghostty_revision[regex, 1]
+      end
+    end
   end
 
   def install

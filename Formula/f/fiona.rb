@@ -46,6 +46,11 @@ class Fiona < Formula
     sha256 "a4bc13d623356b373c2c27c53dbd9c68cae5d526270bfa71f6c6fa69669c6b27"
   end
 
+  resource "test_file", :test do
+    url "https://github.com/Toblerity/Fiona/raw/refs/heads/main/tests/data/coutwildrnp.shp"
+    sha256 "fc9f563b2b0f52ec82a921137f47e90fdca307cc3a463563387217b9f91d229b"
+  end
+
   def install
     virtualenv_install_with_resources
 
@@ -56,11 +61,6 @@ class Fiona < Formula
     assert_match version.to_s, shell_output("#{bin}/fio --version")
 
     ENV["SHAPE_RESTORE_SHX"] = "YES"
-
-    resource "test_file" do
-      url "https://github.com/Toblerity/Fiona/raw/refs/heads/main/tests/data/coutwildrnp.shp"
-      sha256 "fc9f563b2b0f52ec82a921137f47e90fdca307cc3a463563387217b9f91d229b"
-    end
 
     testpath.install resource("test_file")
     output = shell_output("#{bin}/fio info #{testpath}/coutwildrnp.shp")

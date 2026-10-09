@@ -23,6 +23,17 @@ class WasmComponentLd < Formula
   depends_on "llvm" => :test
   depends_on "wasmtime" => :test
 
+  # Avoid a dependency loop by using prebuilts for testing
+  resource "builtins", :test do
+    url "https://ghfast.top/https://github.com/WebAssembly/wasi-sdk/releases/download/wasi-sdk-34/libclang_rt-34.0.tar.gz"
+    sha256 "eee3e634dcf71aa22b1333391623cf5c9965a637dc428a27b1a858c026c587f1"
+  end
+
+  resource "wasi-libc", :test do
+    url "https://ghfast.top/https://github.com/WebAssembly/wasi-sdk/releases/download/wasi-sdk-34/wasi-sysroot-34.0.tar.gz"
+    sha256 "9d813544eeebe38b7b8f2244ed591de46b6db812c6dd1a257ff9f0d2a905a2be"
+  end
+
   allow_network_access! :test
 
   def fetch
@@ -34,17 +45,6 @@ class WasmComponentLd < Formula
   end
 
   test do
-    # Avoid a dependency loop by using prebuilts for testing
-    resource "builtins" do
-      url "https://ghfast.top/https://github.com/WebAssembly/wasi-sdk/releases/download/wasi-sdk-34/libclang_rt-34.0.tar.gz"
-      sha256 "eee3e634dcf71aa22b1333391623cf5c9965a637dc428a27b1a858c026c587f1"
-    end
-
-    resource "wasi-libc" do
-      url "https://ghfast.top/https://github.com/WebAssembly/wasi-sdk/releases/download/wasi-sdk-34/wasi-sysroot-34.0.tar.gz"
-      sha256 "9d813544eeebe38b7b8f2244ed591de46b6db812c6dd1a257ff9f0d2a905a2be"
-    end
-
     resource("builtins").stage testpath/"lib"
     resource("wasi-libc").stage testpath/"sysroot"
 

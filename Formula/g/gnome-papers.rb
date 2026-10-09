@@ -46,6 +46,11 @@ class GnomePapers < Formula
     depends_on "harfbuzz"
   end
 
+  resource "test-pdf", :test do
+    url "https://gitlab.freedesktop.org/poppler/test/-/raw/1aca8a13eeaa37403f9330febcb4745affcfd139/tests/text.pdf"
+    sha256 "9fac4cf9ac688f067ee38ddddcf9f237d4f6adf29601672e4ef1765c63997880"
+  end
+
   def install
     ENV["DESTDIR"] = "/"
 
@@ -87,11 +92,6 @@ class GnomePapers < Formula
   end
 
   test do
-    resource "test-pdf" do
-      url "https://gitlab.freedesktop.org/poppler/test/-/raw/1aca8a13eeaa37403f9330febcb4745affcfd139/tests/text.pdf"
-      sha256 "9fac4cf9ac688f067ee38ddddcf9f237d4f6adf29601672e4ef1765c63997880"
-    end
-
     resource("test-pdf").stage testpath
     (testpath/"test.c").write <<~C
       #include <fcntl.h>

@@ -1,16 +1,16 @@
 class PiCodingAgent < Formula
   desc "AI agent toolkit"
   homepage "https://pi.dev/"
-  url "https://registry.npmjs.org/@earendil-works/pi-coding-agent/-/pi-coding-agent-1.0.4.tgz"
-  sha256 "04910bdae661a6529e9d6869b04006f6aad01186398b04a16c6d9793667b96c5"
+  url "https://registry.npmjs.org/@earendil-works/pi-coding-agent/-/pi-coding-agent-1.1.0.tgz"
+  sha256 "09cd8a0a43dbb1d81a67346b09400b439ce71d818caba4e963ea958846a1aed4"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "228fee7f3eeb60e7681b05a8373bbe6ac7c32628ffea3f7fb573ad6b276b9801"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "228fee7f3eeb60e7681b05a8373bbe6ac7c32628ffea3f7fb573ad6b276b9801"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "228fee7f3eeb60e7681b05a8373bbe6ac7c32628ffea3f7fb573ad6b276b9801"
-    sha256 cellar: :any,                 arm64_linux:       "f2c73a751f8c9e5f05f08c0675b583f66c382fe66899a05542f335e935090951"
-    sha256 cellar: :any,                 x86_64_linux:      "e50d78cb2ed40b1a9761f41d9f5435287dbdb1b36324dc7afdab965eb3847108"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "88dca97f8d7a2c2b4e0aaeb2d0ee166613daf05047c3f58d03709079c99cfb0f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "88dca97f8d7a2c2b4e0aaeb2d0ee166613daf05047c3f58d03709079c99cfb0f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "88dca97f8d7a2c2b4e0aaeb2d0ee166613daf05047c3f58d03709079c99cfb0f"
+    sha256 cellar: :any,                 arm64_linux:       "df8bb00f495253a7d45292c5be0e8e1c780afcf5f889aa9efc90e513b8983183"
+    sha256 cellar: :any,                 x86_64_linux:      "b4fd7723cc5afe68ee85325c4bedcb64f233c454074f6621a73fee2e142c6549"
   end
 
   depends_on "node"

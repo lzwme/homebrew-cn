@@ -8,6 +8,7 @@ class Texlive < Formula
   mirror "https://ftp.tu-chemnitz.de/pub/tug/historic/systems/texlive/2026/texlive-20260301-source.tar.xz"
   sha256 "cb120d314d3ceb23ac608af17ddd2c623afcf02331f400a0f25eead5b8ac1d70"
   license :cannot_represent
+  revision 1
   compatibility_version 1
   head "https://github.com/TeX-Live/texlive-source.git", branch: "trunk"
 
@@ -36,13 +37,11 @@ class Texlive < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    sha256 arm64_golden_gate: "98444a17b950edfaef101879b256acdd844a36952b0cc0e1b1108a8142e2d176"
-    sha256 arm64_tahoe:       "107a9d90dadaa539a2b81965d616c213b85884e3ac11b664590cd7499d75aa3d"
-    sha256 arm64_sequoia:     "f95f28f08b5ad97dabcc0ff674a2ba2628cd28a9cb72e4479028057a63afb82d"
-    sha256 arm64_sonoma:      "d0ec9ff9f399284628612edf2dffd3d962272d380216a5425d16faf28086919d"
-    sha256 sonoma:            "457d840d2e97cea5f8a11e46adc9ade67c3e197b54875889033638b143222508"
-    sha256 arm64_linux:       "f04609a0e06b0385278649da3408e8229296ef12d481d32632f564b20d3f94cc"
-    sha256 x86_64_linux:      "4ab2674e0c636ab1cd8c8428ebcac12509976bd881f83853d08310aaab23cf33"
+    sha256 arm64_golden_gate: "da5a6e73b276e162e27793ba169a7fa9a3842ed549cd404644e8da675807d31f"
+    sha256 arm64_tahoe:       "eb892868a93ee3625cd3328b9b2009f83285474d94f0af14677a7bff2cb39698"
+    sha256 arm64_sequoia:     "a95e6d95c77b1c0ec7f43766dddc4ce06bcaf0c972a88024c90f74d6ec6a52ab"
+    sha256 arm64_linux:       "46604e70412d3583a5ff0f96f05d0db1df6b285044aeecfb1e63c5152e6a2949"
+    sha256 x86_64_linux:      "56f000f0b2b267d6880c6c2d4ec52c09540b4df80a8318f4769ec1bfc2b6e934"
   end
 
   depends_on "pkgconf" => :build
@@ -64,7 +63,7 @@ class Texlive < Formula
   depends_on "luajit"
   depends_on "mpfr"
   depends_on "openjdk"
-  depends_on "openssl@3"
+  depends_on "openssl@4"
   depends_on "perl"
   depends_on "pixman"
   depends_on "potrace"
@@ -320,8 +319,16 @@ class Texlive < Formula
   end
 
   resource "Net::SSLeay" do
-    url "https://cpan.metacpan.org/authors/id/C/CH/CHRISN/Net-SSLeay-1.94.tar.gz"
-    sha256 "9d7be8a56d1bedda05c425306cc504ba134307e0c09bda4a788c98744ebcd95d"
+    url "https://cpan.metacpan.org/authors/id/C/CH/CHRISN/Net-SSLeay-1.96.tar.gz"
+    sha256 "ab213691685fb2a576c669cbc8d9266f8165a31563ad15b7c4030b94adfc0753"
+
+    # Backport support for OpenSSL 4.0
+    patch do
+      url "https://github.com/radiator-software/p5-net-ssleay/commit/a55abab4a33b040fbd56cc18fde6c257af2928e2.patch?full_index=1"
+      sha256 "dd0fab47cfb05393ba1124f0b3fcbdf43cb346212ca145beed5aa8af9dfbd12d"
+      type :backport
+      resolves "https://github.com/radiator-software/p5-net-ssleay/pull/553"
+    end
   end
 
   resource "IO::Socket::SSL" do
@@ -351,7 +358,7 @@ class Texlive < Formula
     # Install Perl resources
     ENV.prepend_create_path "PERL5LIB", libexec/"lib/perl5"
     ENV["PERL_MM_USE_DEFAULT"] = "1"
-    ENV["OPENSSL_PREFIX"] = formula_opt_prefix("openssl@3")
+    ENV["OPENSSL_PREFIX"] = formula_opt_prefix("openssl@4")
 
     tex_resources = %w[texlive-extra install-tl texlive-texmf]
 

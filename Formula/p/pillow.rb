@@ -44,6 +44,18 @@ class Pillow < Formula
         .map { |f| f.opt_libexec/"bin/python" }
   end
 
+  # Test webp support
+  resource "test-webp", :test do
+    url "https://ghfast.top/https://raw.githubusercontent.com/python-pillow/Pillow/refs/heads/main/Tests/images/flower.webp"
+    sha256 "af5bf1a0e420467c09d221fbfbb739646956c17f2b67f8280eacfacf87059a37"
+  end
+
+  # Test avif support
+  resource "test-avif", :test do
+    url "https://ghfast.top/https://raw.githubusercontent.com/python-pillow/Pillow/refs/heads/main/Tests/images/avif/exif.avif"
+    sha256 "438dc63eb5aa722f4b23a93ac48cd0c19b7a575865c89e666c86b7ac363cff04"
+  end
+
   def install
     ENV["MAX_CONCURRENCY"] = ENV.make_jobs.to_s
     deps.each do |dep|
@@ -77,12 +89,6 @@ class Pillow < Formula
       assert_equal "JPEG (1, 1) RGB", shell_output("#{python} test.py").chomp
     end
 
-    # Test webp support
-    resource "test-webp" do
-      url "https://ghfast.top/https://raw.githubusercontent.com/python-pillow/Pillow/refs/heads/main/Tests/images/flower.webp"
-      sha256 "af5bf1a0e420467c09d221fbfbb739646956c17f2b67f8280eacfacf87059a37"
-    end
-
     testpath.install resource("test-webp")
     test_webp = testpath/"flower.webp"
     (testpath/"test_webp.py").write <<~PYTHON
@@ -93,12 +99,6 @@ class Pillow < Formula
 
     pythons.each do |python|
       assert_equal "WEBP (480, 360) RGB", shell_output("#{python} test_webp.py").chomp
-    end
-
-    # Test avif support
-    resource "test-avif" do
-      url "https://ghfast.top/https://raw.githubusercontent.com/python-pillow/Pillow/refs/heads/main/Tests/images/avif/exif.avif"
-      sha256 "438dc63eb5aa722f4b23a93ac48cd0c19b7a575865c89e666c86b7ac363cff04"
     end
 
     testpath.install resource("test-avif")
