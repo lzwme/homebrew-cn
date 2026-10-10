@@ -3,23 +3,23 @@ class Tox < Formula
 
   desc "Generic Python virtualenv management and test command-line tool"
   homepage "https://tox.wiki/en/latest/"
-  url "https://files.pythonhosted.org/packages/5b/ce/062f2b42f95cfcbb9f1d7450820d29afffd4cd1967bdaa5e70ae3ad0d7b8/tox-4.64.9.tar.gz"
-  sha256 "6e85d720e350f1fb598498f3b4e742d0afa0a1e2b2e5e8203452729a3fa1da2c"
+  url "https://files.pythonhosted.org/packages/cd/be/9a8d33841569fa73f998d22dfd4b614427072e7cb88cd14951670d9402d5/tox-4.64.10.tar.gz"
+  sha256 "7482b96fefe1e4b49e406a9a62b25b415690bec2cebe9cc0cd59e38af88ce671"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "ea1cf60df5a534d9d691da780433a8def6f99f9064c283458db63206977f79a0"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "ea1cf60df5a534d9d691da780433a8def6f99f9064c283458db63206977f79a0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "ea1cf60df5a534d9d691da780433a8def6f99f9064c283458db63206977f79a0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "8718450dbeb22df23bd94c6b16eb7c8196232f7558668b576365fd911d4b4fe4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "8718450dbeb22df23bd94c6b16eb7c8196232f7558668b576365fd911d4b4fe4"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "94f295c32f6d48b98db2d54a71026a99466f22086e015a3c7bc42ab1540666d9"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "94f295c32f6d48b98db2d54a71026a99466f22086e015a3c7bc42ab1540666d9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "94f295c32f6d48b98db2d54a71026a99466f22086e015a3c7bc42ab1540666d9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "55ff696d6047d528f9f8ceff89f39c390ccb6393d25c1b906e746976a1fd9ab4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "55ff696d6047d528f9f8ceff89f39c390ccb6393d25c1b906e746976a1fd9ab4"
   end
 
   depends_on "python@3.14"
 
   resource "cachetools" do
-    url "https://files.pythonhosted.org/packages/29/2c/3f18755527b03ca9ff6be724bd5370cb777c76a87f17301377cf04a4729b/cachetools-7.2.0.tar.gz"
-    sha256 "bcac1a1b8da6909994a2957238a57b8140dab7c5c5c69a43669654fe87a33c1d"
+    url "https://files.pythonhosted.org/packages/31/44/71476a5812da1ddf2c9a3efd31ae76d01480a1cf03ed13ac28aa8f2402e4/cachetools-7.2.1.tar.gz"
+    sha256 "b1a7537025c06abf96fcc1443e496af9a3fb95e774e70e1f0af226f73f7f2dcc"
   end
 
   resource "colorama" do
@@ -43,8 +43,8 @@ class Tox < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/42/23/4a86fc741c38c5b69792a4ef954b281afa69bea9f083f881de1b0d23bc07/platformdirs-4.12.3.tar.gz"
-    sha256 "427fc0bb321ae0c5b037fa03238ca74820437be162e78b4848c4d4055b9b766c"
+    url "https://files.pythonhosted.org/packages/90/a1/d5f9002a70298c64a789779077d8dd90c10aa1f47fe40c86802df874f2a6/platformdirs-4.12.4.tar.gz"
+    sha256 "63743c02414e755de4e31b8f68125c1407495b86c5a006e203c01ff8b9924250"
   end
 
   resource "pluggy" do
@@ -53,8 +53,8 @@ class Tox < Formula
   end
 
   resource "pyproject-api" do
-    url "https://files.pythonhosted.org/packages/51/24/757e066eafeeb91ac4887c2edb9c0ac5eb2d5420f836897443577719647f/pyproject_api-1.11.3.tar.gz"
-    sha256 "4ca2f09f628d86ae019d7c701ebb65ee667efc28261f8b9ee3bd55bf0985712c"
+    url "https://files.pythonhosted.org/packages/d1/82/9cec47d1613bd5cdd918b82a6ffe54924c5462f1e14c59c71ef238fbc9cf/pyproject_api-1.11.4.tar.gz"
+    sha256 "42332ebb8e5e510a3a9ea498cedb5723134ddd46ddfe2d07693917b2ebea22a7"
   end
 
   resource "python-discovery" do
@@ -68,8 +68,8 @@ class Tox < Formula
   end
 
   resource "virtualenv" do
-    url "https://files.pythonhosted.org/packages/c4/f9/f323b3b6058cff3853b31cf6a49c0425ed797bf9611572ec10d065e08bac/virtualenv-21.14.5.tar.gz"
-    sha256 "c4cb6c13e46b57225a999c7e22a09b163393878facc7ac4c059a57f46faa1647"
+    url "https://files.pythonhosted.org/packages/92/f3/589727d02bc832750cfa00ced4315d127535a22a6d7cfcb369b2fe219a2e/virtualenv-21.14.6.tar.gz"
+    sha256 "c6b74616e64bffa9532cfa9dfd54ffbab0dc9b999df2bb8ec0d75e559b983661"
   end
 
   def install

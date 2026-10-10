@@ -3,17 +3,24 @@ class Jiratui < Formula
 
   desc "Textual User Interface for interacting with Atlassian Jira from your shell"
   homepage "https://jiratui.sh/"
-  url "https://files.pythonhosted.org/packages/ac/4a/36e70a89f425b3b9f1d9a34734c12985798abd8f1c39ebf16e6cdc982e2f/jiratui-1.16.0.tar.gz"
-  sha256 "975d1165e67ba8875a7edeef00a6da557dbdea109d9677ccdd3c768e7420354d"
   license "MIT"
+  revision 1
   head "https://github.com/whyisdifficult/jiratui.git", branch: "main"
 
+  stable do
+    url "https://files.pythonhosted.org/packages/ac/4a/36e70a89f425b3b9f1d9a34734c12985798abd8f1c39ebf16e6cdc982e2f/jiratui-1.16.0.tar.gz"
+    sha256 "975d1165e67ba8875a7edeef00a6da557dbdea109d9677ccdd3c768e7420354d"
+
+    # Backport urllib3 update from https://github.com/whyisdifficult/jiratui/pull/374
+    patch :DATA
+  end
+
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "5befad6caae5736bf9c337551127a5c60ca2ac10f4b705a80c1894d3a82fa3f4"
-    sha256 cellar: :any, arm64_tahoe:       "f9aaee010dfce325e06c04d15e1ec9fbba9eae14a4f6b5cefe59c3febeee281d"
-    sha256 cellar: :any, arm64_sequoia:     "4ee2e26f29450bb1f9a4126dbf92bae9ed9232a2637707866223e47bbff23076"
-    sha256 cellar: :any, arm64_linux:       "9783402c091d438988826b0198b90fe87ffa82236fe8589edca9ba190d7d3f00"
-    sha256 cellar: :any, x86_64_linux:      "2b78b9de98e5b7b58c1d81f1b948914a378355d0be74be1fc370b7bd72e79365"
+    sha256 cellar: :any, arm64_golden_gate: "6b567aab8c5412c5c4b234fd6ad18da6e2a46537f1fd42956ac842edd9da9a51"
+    sha256 cellar: :any, arm64_tahoe:       "c556befc91568f7ced970df349dcc221b7834bc3502efabd9553fdc2777874b2"
+    sha256 cellar: :any, arm64_sequoia:     "5253096e0f67051ef9cf9aa710779059501f98ca6b6a2bbf6d2ef631fe7fcbda"
+    sha256 cellar: :any, arm64_linux:       "ccb1bfbef44ba871a76f5edc9e44ffcd810e8faa0c0213aef4103269c01482a4"
+    sha256 cellar: :any, x86_64_linux:      "5dcb0f4669637e0b76fa0fd92165c3ff57bfbf23df4d54bbbe52f1d6b098d24d"
   end
 
   depends_on "rust" => :build
@@ -269,8 +276,8 @@ class Jiratui < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/53/0c/06f8b233b8fd13b9e5ee11424ef85419ba0d8ba0b3138bf360be2ff56953/urllib3-2.7.0.tar.gz"
-    sha256 "231e0ec3b63ceb14667c67be60f2f2c40a518cb38b03af60abc813da26505f4c"
+    url "https://files.pythonhosted.org/packages/e3/05/b17359e1cefb4f909b5e40b1b90a496d987258916dbbf88e842c729f510e/urllib3-2.8.0.tar.gz"
+    sha256 "63bf2ead4c879426ebf22ef2a781eeb4aa3b4ae798a0435506f8687fd5bb9b63"
   end
 
   resource "wcwidth" do
@@ -290,7 +297,24 @@ class Jiratui < Formula
   end
 
   test do
+    # TODO: remove with patch
+    refute_match "urllib3", pipe_output("#{libexec}/bin/python -m pip check")
+
     assert_match version.to_s, shell_output("#{bin}/jiratui version")
     assert_match "#{testpath}/.config/jiratui/config.yaml", shell_output("#{bin}/jiratui config")
   end
 end
+
+__END__
+diff --git a/pyproject.toml b/pyproject.toml
+index e7046621..e4fa7237 100644
+--- a/pyproject.toml
++++ b/pyproject.toml
+@@ -41,7 +41,7 @@ dependencies = [
+     "textual-autocomplete>=4.0.6",
+     "textual-image>=0.13.2,<0.14.0",
+     "textual[syntax]>=8.2.8,<9.0.0",
+-    "urllib3>=2.6.3,<2.8.0",
++    "urllib3>=2.8.0,<2.9.0",
+     "xdg-base-dirs>=6.0.2",
+ ]

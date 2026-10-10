@@ -9,15 +9,16 @@ class Black < Formula
   head "https://github.com/psf/black.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "a9ba30160c0cc359e4e9dffb3878d4b23737b35e0944e67f56b0cd996f3ea70d"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "f1225cd6d444b7fee1003aa071f7a68432afef375ec160d1516de4a798b9e3a2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "f0ba190c4847da6f3f8307bdf0051537a059dd0116253d07e2ce3ba7b973b110"
-    sha256 cellar: :any,                 arm64_linux:       "f5727722d56dff5da02e5e583f828196d706554466fd463eba540393cbb614cb"
-    sha256 cellar: :any,                 x86_64_linux:      "518a83ccad0e0736d80cc49f71b18fbedcfa96012c64cbc454fc087cae5718af"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "1b5420f3653f4cc204a88e0861a14aa882fc9a40872e467f83d4a1b541e914ff"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "3b52bd680720cfd185d99b679bc0dca7a4dc2628dc9f71b5b89f73aa49c3a53b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "868510c37e23c2953b99d2efb50b1843fabc5834a323841c451aa3a1155f067d"
+    sha256 cellar: :any,                 arm64_linux:       "7aeddd81cb5393d7171a6a9f054a5603145dce016b0dc598074ed6a78c6c73bc"
+    sha256 cellar: :any,                 x86_64_linux:      "565f542349cf2b17314da79bfc688170d3a702f98a6636955d6081b73d7ec5fb"
   end
 
   depends_on "rust" => :build # pytokens -> mypy -> ast-serialize
-  depends_on "python@3.14"
+  depends_on "python@3.15"
 
   pypi_packages package_name: "black[d]"
 
@@ -27,8 +28,8 @@ class Black < Formula
   end
 
   resource "aiohttp" do
-    url "https://files.pythonhosted.org/packages/58/d9/22ce5786ac0c1653ae8b6c23bded02c1686d11f0dbb45b31ce128e0df985/aiohttp-3.14.3.tar.gz"
-    sha256 "9491196535a88924a60afd5b5f434b5b203b6cc616250878dbdb223a8f7844bc"
+    url "https://files.pythonhosted.org/packages/93/2f/6a91adaa2dc26877d6ed2f54c0370c8910f019db7d77c5c6a194611e93ea/aiohttp-3.14.4.tar.gz"
+    sha256 "831fc5bd39ec2517851e348f613ddb5447a47cf4b71cb09845af7ad7ed45d8f9"
   end
 
   resource "aiosignal" do
@@ -77,8 +78,8 @@ class Black < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/42/23/4a86fc741c38c5b69792a4ef954b281afa69bea9f083f881de1b0d23bc07/platformdirs-4.12.3.tar.gz"
-    sha256 "427fc0bb321ae0c5b037fa03238ca74820437be162e78b4848c4d4055b9b766c"
+    url "https://files.pythonhosted.org/packages/90/a1/d5f9002a70298c64a789779077d8dd90c10aa1f47fe40c86802df874f2a6/platformdirs-4.12.4.tar.gz"
+    sha256 "63743c02414e755de4e31b8f68125c1407495b86c5a006e203c01ff8b9924250"
   end
 
   resource "propcache" do

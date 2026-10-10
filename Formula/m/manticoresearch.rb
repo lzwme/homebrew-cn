@@ -6,7 +6,6 @@ class Manticoresearch < Formula
   license all_of: [
     "GPL-3.0-or-later",
     "GPL-2.0-only", # wsrep
-    { "GPL-2.0-only" => { with: "x11vnc-openssl-exception" } }, # galera
     { any_of: ["Unlicense", "MIT"] }, # uni-algo (our formula is too new)
   ]
   version_scheme 1
@@ -21,11 +20,12 @@ class Manticoresearch < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "96ab5a6c528030bf8ac8e8dabe2ff1d8daa31e7e3e7cd1d1c856c55e497f6d75"
-    sha256 arm64_tahoe:       "07b7007c3b5f8d3ccd04e300d6bcbfbee81b4c3fa6e110b4e8a57b2066e25e13"
-    sha256 arm64_sequoia:     "d9a3b7e2706300f492dacc5a8cf5f00b8fbeefe8ea156328edadd083d845739e"
-    sha256 arm64_linux:       "ba864d904bf6e26e20670647a5898bcc59e411fe168a78a3839225908dad7001"
-    sha256 x86_64_linux:      "8d25056aae06eb44bb911e605e90bd6d180403df537a2647ba3442c7f7884d5e"
+    rebuild 1
+    sha256 arm64_golden_gate: "b300b289bac9c47212b9ca40fffb9f61e1e097479f0450fc43400a58c2a77f0c"
+    sha256 arm64_tahoe:       "ea403a1c9652da95083bde6ec82e9dd73557f0374da9994eb8e7b534291d7090"
+    sha256 arm64_sequoia:     "e1daf52484cd88c81dadd902fd8c74200a4d26b89f12dc7e48ab6ad9b563801a"
+    sha256 arm64_linux:       "9d9778ffd584952ce90d88d0ee5d566aecf431e51b6809b12c75e254479ed78d"
+    sha256 x86_64_linux:      "24b7931670a1704be065fa89039adcc83c8070040e2a814c138bd5429429ca13"
   end
 
   depends_on "cmake" => :build
@@ -66,10 +66,9 @@ class Manticoresearch < Formula
   end
 
   # Workarounds for building with Boost 1.89+ and GCC, until fixed upstream:
-  # - galera: disable Boost (Boost.System stub removed in 1.89)
-  #   Issue ref: https://github.com/manticoresoftware/manticoresearch/issues/3673
   # - searchdbuddy: include Boost.Process v1 environment header
   #   (`<boost/process.hpp>` now pulls Process v2 where `environment` is a namespace)
+  #   TODO: Remove in the next release.
   # - sortergroup: drop redundant `using` that GCC rejects as private
   patch :DATA
 
@@ -96,6 +95,7 @@ class Manticoresearch < Formula
       -DCMAKE_REQUIRE_FIND_PACKAGE_xxHash=ON
       -DMYSQL_CONFIG_EXECUTABLE=#{formula_opt_bin("mariadb-connector-c")}/mariadb_config
       -DRE2_LIBRARY=#{formula_opt_lib("re2")/shared_library("libre2")}
+      -DWITH_GALERA=OFF
       -DWITH_ICU_FORCE_STATIC=OFF
       -DWITH_RE2_FORCE_STATIC=OFF
       -DWITH_STEMMER_FORCE_STATIC=OFF
@@ -131,23 +131,6 @@ class Manticoresearch < Formula
 end
 
 __END__
-diff --git a/cmake/galera-imported.cmake.in b/cmake/galera-imported.cmake.in
-index 0ffa9caf1..806c929b4 100644
---- a/cmake/galera-imported.cmake.in
-+++ b/cmake/galera-imported.cmake.in
-@@ -15,9 +15,9 @@ include ( ExternalProject )
- ExternalProject_Add ( galera_populate
- 		URL @GALERA_PLACE@
- 		URL_MD5 @GALERA_SRC_MD5@
--		CMAKE_CACHE_ARGS -DWSREP_PATH:STRING=${wsrep_populate_SOURCE_DIR} -DCMAKE_BUILD_TYPE:STRING=RelWithDebInfo -DGALERA_REV:STRING=@GALERA_REV@
-+		CMAKE_CACHE_ARGS -DWSREP_PATH:STRING=${wsrep_populate_SOURCE_DIR} -DCMAKE_BUILD_TYPE:STRING=RelWithDebInfo -DGALERA_REV:STRING=@GALERA_REV@ -DWITH_BOOST:BOOL=OFF -DCMAKE_CXX_FLAGS:STRING=-DASIO_DISABLE_BOOST_REGEX=1\ -DBOOST_DATE_TIME_POSIX_TIME_STD_CONFIG=1
- 		BUILD_COMMAND "@CMAKE_COMMAND@" --build . --config RelWithDebInfo
- 		INSTALL_COMMAND "@CMAKE_COMMAND@" --install . --config RelWithDebInfo --prefix "@GALERA_BUILD@"
- 		)
- 
--# file configured from cmake/galera-imported.cmake.in
-\ No newline at end of file
-+# file configured from cmake/galera-imported.cmake.in
 diff --git a/src/searchdbuddy.cpp b/src/searchdbuddy.cpp
 index 39985f6..9c83062 100644
 --- a/src/searchdbuddy.cpp

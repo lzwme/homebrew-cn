@@ -1,6 +1,6 @@
 cask "rocket-chat" do
-  version "4.17.4"
-  sha256 "951b31f7ee6a295359d467ce884af542893023f401dc45880ff8eeee4a78e290"
+  version "4.18.1"
+  sha256 "f7b031c57f084021f457ae776c360e8e2bd386a3986b486d6a2539ec7d5dab39"
 
   url "https://ghfast.top/https://github.com/RocketChat/Rocket.Chat.Electron/releases/download/#{version.csv.first}/rocketchat-#{version.csv.second || version.csv.first}-mac.dmg"
   name "Rocket.Chat"

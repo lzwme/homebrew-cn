@@ -25,6 +25,8 @@ class Lla < Formula
   def install
     system "cargo", "install", *std_cargo_args(path: "lla")
 
+    generate_completions_from_executable(bin/"lla", "completion")
+
     (buildpath/"plugins").each_child do |plugin|
       next unless plugin.directory?
 

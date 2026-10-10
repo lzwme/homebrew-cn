@@ -1,8 +1,8 @@
 class OhMyPosh < Formula
   desc "Prompt theme engine for any shell"
   homepage "https://ohmyposh.dev"
-  url "https://ghfast.top/https://github.com/JanDeDobbeleer/oh-my-posh/archive/refs/tags/v31.5.0.tar.gz"
-  sha256 "7278074d81902b5bc218e2476dd0952c4ca64ec2f27a0b5f4d7c6f4b34fed6f7"
+  url "https://ghfast.top/https://github.com/JanDeDobbeleer/oh-my-posh/archive/refs/tags/v31.6.0.tar.gz"
+  sha256 "65c3a9825c8596fddefc17459d85f05b8f0bf5f19a056ac507582d9c42389e7f"
   license "MIT"
   head "https://github.com/JanDeDobbeleer/oh-my-posh.git", branch: "main"
 
@@ -15,11 +15,11 @@ class OhMyPosh < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "05561d4d2836993ca9bc4ca9dc84a5c68bdbe63812a31c89b0f4ced23a0fa63e"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "e9580f2bdc498b5192ef8ec283fb4916c1a18ae4b800e2e54a0cd9135279735e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "4d64ebd39388b3b27e1beedeea7d4a609220861de1aefeddc43419d923c11c3f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "fd850495fd775d672d7c3e2fef72f13672807e21d2283f32b88c053c1bbf87aa"
-    sha256 cellar: :any,                 x86_64_linux:      "dd142f8d99f2b2f4ca0307e77bf17f2827fdf6dccaf726e6df04c29f41809144"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "a633a54cd6e7976e028188709fd5b95266049e86644d0ef79674bc2cac1aac39"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "198d230d0ff96cc999a44bd9a1f90deb7e420e719dc83299a5e43d32c3562bdf"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "fcf4ce5b80a5f29e62015e7e546fd888ce7c6e971c987d957d218a4054ac2bcc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "746e8ad5c089b82c65867c3eee922ddd786afaffe8164aaf9a423121488d598a"
+    sha256 cellar: :any,                 x86_64_linux:      "a5ae780d75cebe32c437b9eab4f14eb35be82774d991bb93ac38a723036c9b41"
   end
 
   depends_on "go" => :build

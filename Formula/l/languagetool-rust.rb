@@ -23,6 +23,12 @@ class LanguagetoolRust < Formula
     depends_on "openssl@3"
   end
 
+  allow_network_access! :test
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
     system "cargo", "install", *std_cargo_args(features: "full")
 
@@ -33,7 +39,7 @@ class LanguagetoolRust < Formula
     assert_match version.to_s, shell_output("#{bin}/ltrs --version")
 
     system bin/"ltrs", "ping"
-    assert_match "\"name\": \"Arabic\"", shell_output("#{bin}/ltrs languages")
+    assert_match '"name": "Arabic"', shell_output("#{bin}/ltrs languages")
 
     output = shell_output("#{bin}/ltrs check --text \"Some phrase with a smal mistake\"")
     assert_match "error[MORFOLOGIK_RULE_EN_US]: Possible spelling mistake found", output

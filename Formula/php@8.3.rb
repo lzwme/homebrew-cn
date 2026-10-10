@@ -27,6 +27,7 @@ class PhpAT83 < Formula
     "TCL",                   # 7
     "Zlib",                  # 8
   ]
+  revision 1
   compatibility_version 1
 
   livecheck do
@@ -36,11 +37,11 @@ class PhpAT83 < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/php"
-    sha256 arm64_golden_gate: "082c458c94a226a5f355a1be27b227ee500d0cbe860acdb6626802515341c2ac"
-    sha256 arm64_tahoe:       "aa7e61cad4b59fe5db7f52eb6951dd00b7d063c77359dff6c7ec7753c4863903"
-    sha256 arm64_sequoia:     "8d6d93bb730df6eee1fa82e97fa893ddc11699410285444359151d8f4800be7e"
-    sha256 arm64_linux:       "538dcac01e117b826828cde7788dac062a2a1a46a466d3899ffa7b7cb5c93482"
-    sha256 x86_64_linux:      "0f13390d0f892f615c623504ea02d31ddaa8ea7e0748c219fbbc9a463ef8919a"
+    sha256 arm64_golden_gate: "72843ad31651e6254b3919b9f6aee693608fd659db05d7f33585aecc00fbf537"
+    sha256 arm64_tahoe:       "ca763fe244f34c19849b17dcdc1c5a98a7d27153d0e53ef88534d8859da38e24"
+    sha256 arm64_sequoia:     "4d383c1ff5fd2b029da0a3de91f6aef4fd180d74b709f955b7508baf97dc2927"
+    sha256 arm64_linux:       "e9a79ecd5c376b281dd5df6ca894e478dc43d541de0c6558ca9b903bec745b86"
+    sha256 x86_64_linux:      "c6b19847be58eae035b9c85e8d8723a0623ba40ff43f02cc9070553e7127d738"
   end
 
   keg_only :versioned_formula
@@ -63,7 +64,7 @@ class PhpAT83 < Formula
   depends_on "libzip"
   depends_on "oniguruma"
   depends_on "openldap"
-  depends_on "openssl@3"
+  depends_on "openssl@4"
   depends_on "pcre2"
   depends_on "sqlite"
   depends_on "tidy-html5"
@@ -239,7 +240,7 @@ class PhpAT83 < Formula
       s.gsub! %r{; ?extension_dir = "\./"}, "extension_dir = \"#{HOMEBREW_PREFIX}/lib/php/pecl/#{orig_ext_dir}\""
 
       # Use OpenSSL cert bundle
-      openssl = Formula["openssl@3"]
+      openssl = Formula["openssl@4"]
       s.gsub!(/; ?openssl\.cafile=/, "openssl.cafile = \"#{openssl.pkgetc}/cert.pem\"")
       s.gsub!(/; ?openssl\.capath=/, "openssl.capath = \"#{openssl.pkgetc}/certs\"")
     end

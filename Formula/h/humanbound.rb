@@ -132,8 +132,6 @@ class Humanbound < Formula
   end
 
   test do
-    require "json"
-
     assert_match version.to_s, shell_output("#{bin}/hb --version")
 
     # reading results with none present must fail cleanly

@@ -1,16 +1,16 @@
 class Qrupdate < Formula
   desc "Fast updates of QR and Cholesky decompositions"
   homepage "https://gitlab.mpi-magdeburg.mpg.de/koehlerm/qrupdate-ng"
-  url "https://gitlab.mpi-magdeburg.mpg.de/koehlerm/qrupdate-ng/-/archive/v1.3.0/qrupdate-ng-v1.3.0.tar.bz2"
-  sha256 "a9bfa9b7dba580859babd89d04e31cfd289e7536b387c17be73bb5d1179273c4"
+  url "https://gitlab.mpi-magdeburg.mpg.de/koehlerm/qrupdate-ng/-/archive/v1.3.1/qrupdate-ng-v1.3.1.tar.bz2"
+  sha256 "3877a52ff7bedd1edd746fed82f8347a8d1c4f48e59ebfbde7841eea79db87ee"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "8de0c15f142b19be3831da75bb4d4ac7ba43d6b4144da6590f0c1cc484e0d702"
-    sha256 cellar: :any, arm64_tahoe:       "1a4ca84219584ba2ec5003c186d1cf09766b31042db215095b7a26c4b1314c96"
-    sha256 cellar: :any, arm64_sequoia:     "79d72c81b79cd10559d03a868c1aa060f138e45406a5cbe13b6c2977cb30d780"
-    sha256 cellar: :any, arm64_linux:       "4a4e8b69827605c9ea7ffe0af429f115a5245be335330ba7b1ddf78d81634125"
-    sha256 cellar: :any, x86_64_linux:      "d48ab978930aab7ca3186597dd05a4fc5e1593f06430d68fd85076533f527205"
+    sha256 cellar: :any, arm64_golden_gate: "20ae004b21fd7bdc2107a200d7f95330606f31d2fdd872dff653ffd28542850d"
+    sha256 cellar: :any, arm64_tahoe:       "5494926f72245393fc03f80befab79cd4d7bd9c7b6c00eb54706c211c33c73b4"
+    sha256 cellar: :any, arm64_sequoia:     "b61f3a3eea17f904797887cadb122bb00914ea64f6fac1657da312012c4d510d"
+    sha256 cellar: :any, arm64_linux:       "bb413db2276e5ff87bd07947dc2aa3be901b74b9e45756167df572fcd315ebc2"
+    sha256 cellar: :any, x86_64_linux:      "e2155413e91f6e08a2dc138e153dc0e0085483932e0d6eab3177731684b563f3"
   end
 
   depends_on "cmake" => :build

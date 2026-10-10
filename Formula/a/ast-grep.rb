@@ -1,18 +1,17 @@
 class AstGrep < Formula
   desc "Code searching, linting, rewriting"
   homepage "https://ast-grep.github.io/"
-  url "https://ghfast.top/https://github.com/ast-grep/ast-grep/archive/refs/tags/0.45.3.tar.gz"
-  sha256 "0ad252ce2535493e105bd4b2dd6db2829439732d15599825aecb0b02fc9e606f"
+  url "https://ghfast.top/https://github.com/ast-grep/ast-grep/archive/refs/tags/0.50.0.tar.gz"
+  sha256 "530ecaf2d9d048bd6aa07645d1c273ea2eded0a0707c7a807240063fc7bcf88f"
   license "MIT"
   head "https://github.com/ast-grep/ast-grep.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "55648a369c60203c733d1baaaeadd78a5903178ab61742917df70a5b80a59033"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "5790bf3727e4c014d457c819b1d53ff7bcd3efa765c74b8939ad90c2e8d7b553"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "3d949edc98046f025389eb34d2dcac423651c8892e2fe89d2952c5210e8c05a8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "e52c74ea6257a03fea0fde87c68f63960bb9f8dd5b6e5adf98c66a6e68de8cf8"
-    sha256 cellar: :any,                 arm64_linux:       "678a9f3478a14ac0e46a99a01a9bd7fbcd6d8166cf75cae5b7b1b42de8ace398"
-    sha256 cellar: :any,                 x86_64_linux:      "ea3a5f2db41fc6fa26fb4151535474376158aa75b81cfce4c6b71c6a38474988"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "e7f1f9f4b996b336f19bc727515923d7f0e82119f235b680fd266564d22b6f7e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "117c53c9af2cec4de8776825343529418bf9bab8e5547b50316a6e0584826233"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "d18830eb9f88a927592a34451d75e396b70aa91c6c9a1aeabc70260280bcdb9f"
+    sha256 cellar: :any,                 arm64_linux:       "15d3100982932163ca5bb217e491813728c64746d65c7076bad886541d21ebe0"
+    sha256 cellar: :any,                 x86_64_linux:      "691fdccda88197c684ddffe9d9cc3e4ec60f219880e919e60be8c8c80cf86c34"
   end
 
   depends_on "rust" => :build

@@ -173,7 +173,6 @@ class Bittensor < Formula
   end
 
   test do
-    require "json"
     wallet_path = testpath/"btcli-brew-test"
     test_wallet_name = "brew-test"
     # Substrate dev seed for //Alice, so the regenerated address is deterministic

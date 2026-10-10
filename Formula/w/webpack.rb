@@ -1,5 +1,3 @@
-require "json"
-
 class Webpack < Formula
   desc "Bundler for JavaScript and friends"
   homepage "https://webpack.js.org/"

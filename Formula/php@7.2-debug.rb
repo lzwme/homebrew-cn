@@ -1,20 +1,19 @@
 class PhpAT72Debug < Formula
   desc "General-purpose scripting language"
   homepage "https://www.php.net/"
-  url "https://ghfast.top/https://github.com/shivammathur/php-src-backports/archive/418ed8a42fc1ff3f1f434873c4d453713d4164ea.tar.gz"
+  url "https://ghfast.top/https://github.com/shivammathur/php-src-backports/archive/b39d5b8abd8dcd20feb0f734ef061a54f8bbd134.tar.gz"
   version "7.2.34"
-  sha256 "8b8104c40d0e453088f8fe703a0ead74ffdb5a4d0deb9b102864aa206bef5d2b"
+  sha256 "5f20df8c8514e84951eebad321abee448b00c5eaff6de7f304f3e760140bc578"
   license "PHP-3.01"
-  revision 17
+  revision 18
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/php"
-    sha256 arm64_golden_gate: "0b277de3f428a1278a29880739d334917a9f51584a635f4d204d45bd437dc9b2"
-    sha256 arm64_tahoe:       "27cbd489ea0ccc811162cc6726cc4f376610200956b48fdafbdbb0e3d523f8c7"
-    sha256 arm64_sequoia:     "019de68a6094f95b9a3146b68f0e0332ef3efddff849be557304cf77b2c57175"
-    sha256 arm64_sonoma:      "c7266dd96ce97f99aba5aba3f4e69601df9ff43dcf59fdce7c3bec10997450a1"
-    sha256 arm64_linux:       "e2912174a1af6e607d1e559d1b67b4b4419292b4a6d9c6fb951a155467fa2f17"
-    sha256 x86_64_linux:      "ed93c12716d142fc87b89c9878e3dfc0623407befe939bc86f398479a83a0a0c"
+    sha256 arm64_golden_gate: "db9bad990d2c568b598fbe35ae0b7be3a683a20cdb6542f4f7580ac4343a6df3"
+    sha256 arm64_tahoe:       "1076e1934a7fe477ed7fab2b0455a08eb79b8a0935863953fa552d4be552d0ea"
+    sha256 arm64_sequoia:     "cd642ddb982a69afd7dd050086a2aab586013bbafddcc66d6ecf45969aa7d2c2"
+    sha256 arm64_linux:       "1828485258f7f8b46264224f1fbed29cacbdf22725aa2e1584942174b9441d04"
+    sha256 x86_64_linux:      "b8784404fd8fedc241cc2fb08ae426a8f014d4c6f4012f861c32287e579c5974"
   end
 
   keg_only :versioned_formula
@@ -49,7 +48,7 @@ class PhpAT72Debug < Formula
   depends_on "libxpm"
   depends_on "libzip"
   depends_on "openldap"
-  depends_on "openssl@3"
+  depends_on "openssl@4"
   depends_on "sqlite"
   depends_on "tidy-html5"
   depends_on "unixodbc"
@@ -192,7 +191,7 @@ class PhpAT72Debug < Formula
       --with-mhash#{headers_path}
       --with-mysql-sock=/tmp/mysql.sock
       --with-mysqli=mysqlnd
-      --with-openssl=#{formula_opt_prefix("openssl@3")}
+      --with-openssl=#{formula_opt_prefix("openssl@4")}
       --with-password-argon2=#{formula_opt_prefix("argon2")}
       --with-pdo-dblib=#{formula_opt_prefix("freetds")}
       --with-pdo-mysql=mysqlnd
@@ -244,7 +243,7 @@ class PhpAT72Debug < Formula
       s.gsub! %r{; ?extension_dir = "\./"}, "extension_dir = \"#{HOMEBREW_PREFIX}/lib/php/pecl/#{orig_ext_dir}\""
 
       # Use OpenSSL cert bundle
-      openssl = Formula["openssl@3"]
+      openssl = Formula["openssl@4"]
       s.gsub!(/; ?openssl\.cafile=/, "openssl.cafile = \"#{openssl.pkgetc}/cert.pem\"")
       s.gsub!(/; ?openssl\.capath=/, "openssl.capath = \"#{openssl.pkgetc}/certs\"")
     end

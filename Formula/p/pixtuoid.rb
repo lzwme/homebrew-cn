@@ -44,7 +44,6 @@ class Pixtuoid < Formula
     system bin/"pixtuoid", "init-pack", testpath/"pack"
     assert_match "OK: pack \"skeleton\"", shell_output("#{bin}/pixtuoid validate-pack #{testpath}/pack")
 
-    require "json"
     connected = JSON.parse(shell_output("#{bin}/pixtuoid connect claude-code --json"))
     assert_equal [{ "id" => "claude-code", "outcome" => "connected" }], connected
     assert_match "pixtuoid-hook", (testpath/".claude/settings.json").read

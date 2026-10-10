@@ -16,7 +16,7 @@ class Chunkah < Formula
   depends_on "openssl@4"
   depends_on "zlib-ng-compat"
 
-  resource "homebrew-test-rootfs" do
+  resource "homebrew-test-rootfs", :test do
     url "https://dl-cdn.alpinelinux.org/alpine/v3.23/releases/x86_64/alpine-minirootfs-3.23.4-x86_64.tar.gz"
     sha256 "85498865362aa7ebececa0d725a2f2e4db7ac4e4b2850b8df21645afa0d03ee3"
   end

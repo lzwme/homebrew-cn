@@ -57,7 +57,7 @@ class Apkid < Formula
 
   test do
     apk = testpath/"test.apk"
-    system "python3", "-c", <<~PY, apk
+    system python3, "-c", <<~PY, apk
       import sys
       import zipfile
       with zipfile.ZipFile(sys.argv[1], "w") as archive:

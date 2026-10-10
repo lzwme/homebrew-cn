@@ -4,7 +4,7 @@ class NodeAT22 < Formula
   url "https://registry.npmmirror.com/-/binary/node/v22.23.3/node-v22.23.3.tar.xz"
   sha256 "bd97093e1a1e9243338950c174a693a64d4e0926a9c6ce259962bc58d5e96909"
   license "MIT"
-  revision 1
+  revision 2
   compatibility_version 1
 
   livecheck do
@@ -13,11 +13,11 @@ class NodeAT22 < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "48468e7651449cc4155630e800ec8ddbc336db158b3e8a678d7a9fbab5d014fb"
-    sha256 cellar: :any, arm64_tahoe:       "249870c0f3a947b0db691e7d747bd65e326f31886d59cddac69155a37b04edaa"
-    sha256 cellar: :any, arm64_sequoia:     "21cafbe6f9d4f7d1dfd4d721d1dc9cd6bb445e9c197befcf79b8385f18a5d628"
-    sha256 cellar: :any, arm64_linux:       "07d9c61719261887c941e97e914f2bf826ce4f81baa0899db3caebe0ccce8063"
-    sha256 cellar: :any, x86_64_linux:      "a1e19e4f70852eaa8b19959a172ffd239187af79daacfbc8301db899a6044cc7"
+    sha256 cellar: :any, arm64_golden_gate: "eba99a8453566a8dc844fa0b67fe5b11126cd08ca267fd7d2df6aa81655f1f75"
+    sha256 cellar: :any, arm64_tahoe:       "0762c7c68cc37e7a194500ef155129181a0b8b9e57eb2c47473199ca7f27abdc"
+    sha256 cellar: :any, arm64_sequoia:     "906a394fe3cd1acd61c2ed0207b58c142e3a1592e3bf858deae47dd99c7dbf07"
+    sha256 cellar: :any, arm64_linux:       "c160b47ad07d925b68b5aabb4f517874b9d95470f35a9c7f6a2b454a13e7fc9f"
+    sha256 cellar: :any, x86_64_linux:      "9c7c66c364cafd8a0f064146f09a14480c2db517fe8d714ed9419a677019e8a7"
   end
 
   keg_only :versioned_formula
@@ -33,7 +33,6 @@ class NodeAT22 < Formula
   depends_on "icu4c@78"
   depends_on "libnghttp2"
   depends_on "libnghttp3"
-  depends_on "libngtcp2"
   depends_on "libuv"
   depends_on "openssl@3"
   depends_on "simdjson"
@@ -63,7 +62,6 @@ class NodeAT22 < Formula
       --shared-libuv
       --shared-nghttp2
       --shared-nghttp3
-      --shared-ngtcp2
       --shared-openssl
       --shared-simdjson
       --shared-simdutf
@@ -81,8 +79,6 @@ class NodeAT22 < Formula
       --shared-nghttp2-libpath=#{formula_opt_lib("libnghttp2")}
       --shared-nghttp3-includes=#{formula_opt_include("libnghttp3")}
       --shared-nghttp3-libpath=#{formula_opt_lib("libnghttp3")}
-      --shared-ngtcp2-includes=#{formula_opt_include("libngtcp2")}
-      --shared-ngtcp2-libpath=#{formula_opt_lib("libngtcp2")}
       --shared-openssl-includes=#{formula_opt_include("openssl@3")}
       --shared-openssl-libpath=#{formula_opt_lib("openssl@3")}
       --shared-simdjson-includes=#{formula_opt_include("simdjson")}
@@ -109,6 +105,7 @@ class NodeAT22 < Formula
     ignored_shared_flags = %w[
       ada
       http-parser
+      ngtcp2
     ].map { |library| "--shared-#{library}" }
 
     configure_help = Utils.safe_popen_read("./configure", "--help")

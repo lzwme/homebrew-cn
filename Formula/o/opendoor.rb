@@ -6,9 +6,10 @@ class Opendoor < Formula
   url "https://files.pythonhosted.org/packages/9b/67/f05f0d3a4c2aaea9651d348ddd196ecb84965e2d50586dc08e1a2f649b0d/opendoor-5.18.0.tar.gz"
   sha256 "f912e876b57b5416bcd1bb9423d74f7440f1366e0289877609e5dd0a8a2b3d67"
   license "GPL-3.0-only"
+  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "78b11419755c4103ea256c866cbd5a30a377697ce98e351301a6d179cb2a4dc1"
+    sha256 cellar: :any_skip_relocation, all: "c63f4f604c3cfe14c171b3dab173deb8637bf907e86de4c4e41ca966f9174336"
   end
 
   depends_on "python@3.14"
@@ -24,8 +25,16 @@ class Opendoor < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/53/0c/06f8b233b8fd13b9e5ee11424ef85419ba0d8ba0b3138bf360be2ff56953/urllib3-2.7.0.tar.gz"
-    sha256 "231e0ec3b63ceb14667c67be60f2f2c40a518cb38b03af60abc813da26505f4c"
+    url "https://files.pythonhosted.org/packages/e3/05/b17359e1cefb4f909b5e40b1b90a496d987258916dbbf88e842c729f510e/urllib3-2.8.0.tar.gz"
+    sha256 "63bf2ead4c879426ebf22ef2a781eeb4aa3b4ae798a0435506f8687fd5bb9b63"
+  end
+
+  # Apply open PR to update urllib3 pin so that metadata is aligned
+  patch do
+    url "https://github.com/stanislav-web/OpenDoor/commit/24700704fffbf2778742a4d6b426dbd1e16772bc.patch?full_index=1"
+    sha256 "3543ac90478118ea55ff4918b91a9ad3bb445298ac489f862ec4b975d4423e8c"
+    type :unofficial
+    resolves "https://github.com/stanislav-web/OpenDoor/pull/134"
   end
 
   def install
@@ -43,6 +52,10 @@ class Opendoor < Formula
   end
 
   test do
+    # Check on manually updated urllib3.
+    # TODO: remove with patch
+    system libexec/"bin/python", "-m", "pip", "check"
+
     port = free_port
     wordlist = testpath/"wordlist.txt"
 
@@ -52,19 +65,19 @@ class Opendoor < Formula
     server_pid = spawn python3, "-m", "http.server", port.to_s,
                                 "--bind", "127.0.0.1",
                                 "--directory", testpath.to_s
-
-    sleep 4
-
-    output = shell_output(
-      "#{bin}/opendoor --host 127.0.0.1 --port #{port} --scheme http:// " \
-      "--scan directories --method GET --wordlist #{wordlist} " \
-      "--threads 1 --include-status 200 --debug -1 2>&1",
-    )
+    output = begin
+      sleep 4
+      shell_output(
+        "#{bin}/opendoor --host 127.0.0.1 --port #{port} --scheme http:// " \
+        "--scan directories --method GET --wordlist #{wordlist} " \
+        "--threads 1 --include-status 200 --debug -1 2>&1",
+      )
+    ensure
+      Process.kill("TERM", server_pid)
+      Process.wait(server_pid)
+    end
 
     assert_match "opendoor-health.txt", output
     refute_match "missing-opendoor.txt", output
-  ensure
-    Process.kill("TERM", server_pid)
-    Process.wait(server_pid)
   end
 end

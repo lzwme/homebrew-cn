@@ -1,10 +1,10 @@
 class AwsCMqtt < Formula
   desc "C99 implementation of the MQTT 3.1.1 specification"
   homepage "https://github.com/awslabs/aws-c-mqtt"
-  url "https://ghfast.top/https://github.com/awslabs/aws-c-mqtt/archive/refs/tags/v1.0.0.tar.gz"
-  sha256 "28d9d9edd5f643b5a8db4e4f116c09d0781fd3715341ad3b039da3233a3d7b12"
+  url "https://ghfast.top/https://github.com/awslabs/aws-c-mqtt/archive/refs/tags/v1.1.1.tar.gz"
+  sha256 "b0423915888c33b065bb3dee5569e8a70abe06c8e2345df8a736c3b18805b294"
   license "Apache-2.0"
-  compatibility_version 2
+  compatibility_version 4
 
   livecheck do
     url :stable
@@ -12,12 +12,11 @@ class AwsCMqtt < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "d01022af3c1a544c5eda5da760529409163fdff1f49287576d54363724afc2a2"
-    sha256 cellar: :any, arm64_tahoe:       "9bbbbeaad158d42ac8689afc77e211df4d345a336722fdde355ad437e21c2f92"
-    sha256 cellar: :any, arm64_sequoia:     "c5faf4a038b12aff6a92847f6447d8efc583ffa77f56d869de994a27b081cd45"
-    sha256 cellar: :any, arm64_sonoma:      "97b95b6ddb79deb0fbc3e13fbf5ef35029aa1f5e1dcc006ee31415caec77ed37"
-    sha256 cellar: :any, arm64_linux:       "d705fef6a3536a4fc23bd4be59ceb5a147f80c80ed8005df2be94dcdee32646f"
-    sha256 cellar: :any, x86_64_linux:      "61c27a2ff01415857feb191245f2e63bec0c17feaa3e8ecf532343476b3ff62e"
+    sha256 cellar: :any, arm64_golden_gate: "151b169d45183e3f5af57eae8c214acd8f2a1d87f447fea18dc21b179a8e393f"
+    sha256 cellar: :any, arm64_tahoe:       "e81211e1a3061bbc72b68ce5a23a2bed3f4d2f31ee4dc218c0e784de58b0fbc1"
+    sha256 cellar: :any, arm64_sequoia:     "a227009eff4a9611443c2ddd787861ad4dd81ec5aeacba43c3e2396067918eb1"
+    sha256 cellar: :any, arm64_linux:       "3b5dbce47017e608d011b77978fb6d3f735bc680ad630cb263e1fddc8694a211"
+    sha256 cellar: :any, x86_64_linux:      "8e51e4e9d97c8184b83b5e349c723ea5e1cbfa9fb90e1dd2b5599df93d6e65e8"
   end
 
   depends_on "cmake" => :build

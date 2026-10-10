@@ -3,16 +3,16 @@ class Fastapi < Formula
 
   desc "CLI for FastAPI framework"
   homepage "https://fastapi.tiangolo.com/"
-  url "https://files.pythonhosted.org/packages/b8/2c/d69ce63c27bf9c5e574ab425118390102924503b4b3cdf33c07a69744dd2/fastapi-0.142.4.tar.gz"
-  sha256 "7fe2e254a0a948b88f432b02b8f627463285248233bba0998ed9640191e2ff57"
+  url "https://files.pythonhosted.org/packages/0b/d7/6a8753ab6c1d432dc53703c3e1b92974a94531b7d047c32bbaae461ea844/fastapi-0.143.0.tar.gz"
+  sha256 "1acffe48206a80917cf7dac21992b5c44b25384e8902bf745c1fd9dabcf6c51f"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "62854817820e3b476ed313da9d4d99efed289ffbe85043625a3c6720d29a554a"
-    sha256 cellar: :any, arm64_tahoe:       "6445c87700fbe6c42b22a6cb37e7d42bc5234d5f4457c315db7b3740e27d1e05"
-    sha256 cellar: :any, arm64_sequoia:     "2ee94c18e5ed889d726726754ab387ad1642624c5ceb7d1292973bacdb763f75"
-    sha256 cellar: :any, arm64_linux:       "9fdfc768afb4f1db2a8cd6579694de25528ba2dc524a084a4731bf0072ee6c76"
-    sha256 cellar: :any, x86_64_linux:      "7792a30241ccf95da501be9c8df02e0c2c05ee16dca58080dfb669ed13311537"
+    sha256 cellar: :any, arm64_golden_gate: "7f98d67f64b647d70986bf47e43d952dc97ed572429c0c1e8ec736dd0059938f"
+    sha256 cellar: :any, arm64_tahoe:       "dc674c346415cb77c28ca00f8b30fb73e9460e1517218de4f4a477e8da039883"
+    sha256 cellar: :any, arm64_sequoia:     "cb4ce3a31ce1a11dd3b88fc84b2061e02478f5a7349310d8555bf44726fb5822"
+    sha256 cellar: :any, arm64_linux:       "3d968d10b47c851cb710b7d107e55709b09beef52c865062a9ee60f1a9a64fb7"
+    sha256 cellar: :any, x86_64_linux:      "cd8085f84db8fb4b8be0984b8b94dc456ce0e74a8bf0bdf83e184dc076cb7cff"
   end
 
   depends_on "rust" => :build # for annotated-doc
@@ -215,8 +215,8 @@ class Fastapi < Formula
   end
 
   resource "rich-toolkit" do
-    url "https://files.pythonhosted.org/packages/9f/1c/f134352beb393cc17e6241ecf0bf4dd41a6759e2e3971a69a6ad185b87a2/rich_toolkit-0.20.5.tar.gz"
-    sha256 "0c9e1c414ffb0720be26285d472e263d1e704b71d31a7e13274b9996db4969e1"
+    url "https://files.pythonhosted.org/packages/61/fe/e851890b72568a075a3574f760eed9014736b449fe104b16fd05a416c321/rich_toolkit-0.20.6.tar.gz"
+    sha256 "04768f19438df877c6279e6e668ab0d88b5fff5c7ef3ac302838d97f7b03472e"
   end
 
   resource "rignore" do

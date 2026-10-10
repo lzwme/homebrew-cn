@@ -27,6 +27,7 @@ class PhpAT82DebugZts < Formula
     "TCL",                   # 7
     "Zlib",                  # 8
   ]
+  revision 1
 
   livecheck do
     url "https://www.php.net/downloads?source=Y"
@@ -35,11 +36,11 @@ class PhpAT82DebugZts < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/php"
-    sha256 arm64_golden_gate: "87488892e258a0aad71a1b0c7887a45a7331e98524b8f9f0d1aa05b274fe0efa"
-    sha256 arm64_tahoe:       "726422741bed11560bb5c0dac48887e9d37af4018f5338abfb08b0e50ba3fe11"
-    sha256 arm64_sequoia:     "ecceffd8f776bc8e12560da77c76298bfec55c4edcf6668eb160740acb5cfdff"
-    sha256 arm64_linux:       "94bdb271bb0c17386efabc7d9623e776412243fc660c4c60a8be9160348578c5"
-    sha256 x86_64_linux:      "5c1e27d157e42f1cc3ac2e6aaafaad0771885460054898a92c424a200c13e5f1"
+    sha256 arm64_golden_gate: "9061ee6eabfe2680b880904aa62e8a109d08dc6b426aafc0f29577a69df8cbc9"
+    sha256 arm64_tahoe:       "e779f036f9cbb37c706ec233206bd06b71d473a00c47dd5b0f0d2319eeae041c"
+    sha256 arm64_sequoia:     "2a2a3a7693978d6a4f6ca12be5933a5e63029efaff03b138f1a9c720b85cf2f0"
+    sha256 arm64_linux:       "a3a85946de7af77ca9025afb8103a8dfbbe0122af60ffc897b7cd8204503eead"
+    sha256 x86_64_linux:      "960d6335ff93d80b1dbfdeb16bea68434d5129a79981de229534b02be2755db0"
   end
 
   keg_only :versioned_formula
@@ -68,7 +69,7 @@ class PhpAT82DebugZts < Formula
   depends_on "libzip"
   depends_on "oniguruma"
   depends_on "openldap"
-  depends_on "openssl@3"
+  depends_on "openssl@4"
   depends_on "pcre2"
   depends_on "sqlite"
   depends_on "tidy-html5"
@@ -266,7 +267,7 @@ class PhpAT82DebugZts < Formula
       s.gsub! %r{; ?extension_dir = "\./"}, "extension_dir = \"#{HOMEBREW_PREFIX}/lib/php/pecl/#{orig_ext_dir}\""
 
       # Use OpenSSL cert bundle
-      openssl = Formula["openssl@3"]
+      openssl = Formula["openssl@4"]
       s.gsub!(/; ?openssl\.cafile=/, "openssl.cafile = \"#{openssl.pkgetc}/cert.pem\"")
       s.gsub!(/; ?openssl\.capath=/, "openssl.capath = \"#{openssl.pkgetc}/certs\"")
     end

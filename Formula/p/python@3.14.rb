@@ -4,7 +4,7 @@ class PythonAT314 < Formula
   url "https://www.python.org/ftp/python/3.14.8/Python-3.14.8.tgz"
   sha256 "a65b20a728f169f4e66ae143f40b1bd3d33c38d770251663f627c9767b79b210"
   license "Python-2.0"
-  revision 1
+  revision 2
   compatibility_version 1
 
   livecheck do
@@ -13,11 +13,11 @@ class PythonAT314 < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "c131b233501a17587283db1fdbd52d9439c183f73044ae0c58614e14507477ed"
-    sha256 arm64_tahoe:       "3e3455b974c5ad42b6c80207337a9c25de03d36c71e09023f1f83a656b0340df"
-    sha256 arm64_sequoia:     "82df08e33f2d7cdf5e13b4cdfb356e1f847c834367d559b629acba8b3330fae7"
-    sha256 arm64_linux:       "0b471edcd8916f7a479a8b53d9c8c82da562e1b890e3653e6629cd949eb3ea58"
-    sha256 x86_64_linux:      "1a15bb2141655b806fefaae0dab9edf4686ad8134befe7686340af0e10693e37"
+    sha256 arm64_golden_gate: "8dc9259de599918f979e124f7eb830db7f72a73f4a14ca97b868ec2dd1b5713a"
+    sha256 arm64_tahoe:       "27af98cd11442db97e282d965572617ed686219e2e86d06f795425723cfcccaa"
+    sha256 arm64_sequoia:     "3985ddbb87c8cf928f0d081e4f44039bc604967462c2a5c2aa4991f94d9678e6"
+    sha256 arm64_linux:       "2e9c8256e20394dec5f2a0f66a724cf391d13aae093e143fcd8c90566111310f"
+    sha256 x86_64_linux:      "37188eb4335276e9d1237968dce853f8ad73a739a15a206367b046dd8ab2f199"
   end
 
   # https://devguide.python.org/versions/#versions
@@ -42,22 +42,8 @@ class PythonAT314 < Formula
     depends_on "zlib-ng-compat"
   end
 
-  link_overwrite "bin/idle3"
-  link_overwrite "bin/pip3"
-  link_overwrite "bin/pydoc3"
-  link_overwrite "bin/python3"
-  link_overwrite "bin/python3-config"
-  link_overwrite "bin/wheel3"
-  link_overwrite "share/man/man1/python3.1"
-  link_overwrite "lib/libpython3.so"
-  link_overwrite "lib/pkgconfig/python3.pc"
-  link_overwrite "lib/pkgconfig/python3-embed.pc"
   link_overwrite "lib/python3.14/site-packages/pip*"
   link_overwrite "lib/python3.14/site-packages/wheel*"
-  link_overwrite "Frameworks/Python.framework/Headers"
-  link_overwrite "Frameworks/Python.framework/Python"
-  link_overwrite "Frameworks/Python.framework/Resources"
-  link_overwrite "Frameworks/Python.framework/Versions/Current"
 
   pypi_packages package_name:   "",
                 extra_packages: %w[flit-core pip wheel]
@@ -507,11 +493,14 @@ class PythonAT314 < Formula
 
     <<~EOS
       Python is installed as
-        #{HOMEBREW_PREFIX}/bin/python3
+        #{HOMEBREW_PREFIX}/bin/python#{version.major_minor}
 
-      Unversioned symlinks `python`, `python-config`, `pip` etc. pointing to
-      `python3`, `python3-config`, `pip3` etc., respectively, are installed into
+      Unversioned and major-versioned symlinks `python`, `python3`, `python-config`, `python3-config`, `pip`, `pip3`, etc. pointing to
+      `python#{version.major_minor}`, `python#{version.major_minor}-config`, `pip#{version.major_minor}` etc., respectively, are installed into
         #{opt_libexec}/bin
+
+      If you do not need a specific version of Python, and always want Homebrew's `python3` in your PATH:
+        brew install python3
 
       `idle#{version.major_minor}` requires tkinter, which is available separately:
         brew install python-tk@#{version.major_minor}

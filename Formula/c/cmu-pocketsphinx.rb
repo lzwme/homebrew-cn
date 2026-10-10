@@ -23,6 +23,8 @@ class CmuPocketsphinx < Formula
 
   depends_on "cmake" => :build
 
+  deny_network_access!
+
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args,
                                               "-DBUILD_SHARED_LIBS=ON",

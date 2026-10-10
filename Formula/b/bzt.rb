@@ -3,18 +3,29 @@ class Bzt < Formula
 
   desc "BlazeMeter Taurus"
   homepage "https://gettaurus.org/"
-  url "https://files.pythonhosted.org/packages/ec/8d/d9f1a447107a6fef4c36af176236b2e70be0c4523a91781623fc934741cb/bzt-1.17.1.tar.gz"
-  sha256 "57144a67010944e5e2f66eca849da5b2900e833baf00e1f3de5f399a8e896227"
   license "Apache-2.0"
-  revision 1
+  revision 2
   head "https://github.com/Blazemeter/taurus.git", branch: "master"
 
+  stable do
+    url "https://files.pythonhosted.org/packages/ec/8d/d9f1a447107a6fef4c36af176236b2e70be0c4523a91781623fc934741cb/bzt-1.17.1.tar.gz"
+    sha256 "57144a67010944e5e2f66eca849da5b2900e833baf00e1f3de5f399a8e896227"
+
+    # Backport urllib3 pin so that we can verify `pip check` for manual resource update
+    patch do
+      url "https://github.com/Blazemeter/taurus/commit/3d47fbac24069cbd8bff950d81cfb50152d02e87.patch?full_index=1"
+      sha256 "f462f9760fb873db80943c4a6f5aede6fc417b39ab7319f658bd1d1fefc31471"
+      type :backport
+      resolves "https://github.com/Blazemeter/taurus/pull/2032"
+    end
+  end
+
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "0c9386816803ce980ede0960f741215e0d0c9323a0a8acb658749a744d5f9c8d"
-    sha256 cellar: :any, arm64_tahoe:       "042523e659f8e72825d2478648a378d1d4f124aa661e4a0c432a31686d0bab4b"
-    sha256 cellar: :any, arm64_sequoia:     "9636bb6bbb6ab4fa5b22d7544ab4caad7108ae5c7a51f9e4648611cb3a1d34eb"
-    sha256 cellar: :any, arm64_linux:       "be351fca4bdd0f25084a8124044d76e2034f79d1a674596378824e1b1926c9f6"
-    sha256 cellar: :any, x86_64_linux:      "d93eb700c0b88780d24e27517b7ab88a80ba1e1745218543d88802ddcd06e242"
+    sha256 cellar: :any, arm64_golden_gate: "a1f089f5907501e3b4ca6d0b217a7c51d2115d3c7d05007bee43636a2548f9fe"
+    sha256 cellar: :any, arm64_tahoe:       "f227356b6a0e9c3bc64c147848f2eda5bb6701ea93065b189989c482b6d9f66e"
+    sha256 cellar: :any, arm64_sequoia:     "f7f3f1aa9f36fda42126c5e6d2bd3093b9fd1fe9c9696aa2c9e86e220d8ee808"
+    sha256 cellar: :any, arm64_linux:       "8005596fd4aec77273f7bfbf24af7cfb09074e132b0a5c5b85c69b03a8b0d82e"
+    sha256 cellar: :any, x86_64_linux:      "c26074c35bc82c821b53ad63d1054fb3a8a27e92f5663dfcdd3fc6ecac572334"
   end
 
   depends_on "cmake" => :build
@@ -42,8 +53,8 @@ class Bzt < Formula
   end
 
   resource "aiohttp" do
-    url "https://files.pythonhosted.org/packages/58/d9/22ce5786ac0c1653ae8b6c23bded02c1686d11f0dbb45b31ce128e0df985/aiohttp-3.14.3.tar.gz"
-    sha256 "9491196535a88924a60afd5b5f434b5b203b6cc616250878dbdb223a8f7844bc"
+    url "https://files.pythonhosted.org/packages/93/2f/6a91adaa2dc26877d6ed2f54c0370c8910f019db7d77c5c6a194611e93ea/aiohttp-3.14.4.tar.gz"
+    sha256 "831fc5bd39ec2517851e348f613ddb5447a47cf4b71cb09845af7ad7ed45d8f9"
   end
 
   resource "aiosignal" do
@@ -162,8 +173,8 @@ class Bzt < Formula
   end
 
   resource "pbr" do
-    url "https://files.pythonhosted.org/packages/5e/ab/1de9a4f730edde1bdbbc2b8d19f8fa326f036b4f18b2f72cfbea7dc53c26/pbr-7.0.3.tar.gz"
-    sha256 "b46004ec30a5324672683ec848aed9e8fc500b0d261d40a3229c2d2bbfcedc29"
+    url "https://files.pythonhosted.org/packages/6b/8d/ce438c28c7958e33184e8ac851ea2225b47a41e5e9e708fa3bddba631135/pbr-7.1.3.tar.gz"
+    sha256 "9a4a85b84e906337708009af0b5f5cdabeeb72d4dc213c9e97974da54fd9acc5"
   end
 
   resource "progressbar33" do
@@ -247,8 +258,8 @@ class Bzt < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/53/0c/06f8b233b8fd13b9e5ee11424ef85419ba0d8ba0b3138bf360be2ff56953/urllib3-2.7.0.tar.gz"
-    sha256 "231e0ec3b63ceb14667c67be60f2f2c40a518cb38b03af60abc813da26505f4c"
+    url "https://files.pythonhosted.org/packages/e3/05/b17359e1cefb4f909b5e40b1b90a496d987258916dbbf88e842c729f510e/urllib3-2.8.0.tar.gz"
+    sha256 "63bf2ead4c879426ebf22ef2a781eeb4aa3b4ae798a0435506f8687fd5bb9b63"
   end
 
   resource "urwid" do
@@ -289,6 +300,9 @@ class Bzt < Formula
   end
 
   test do
+    # TODO: remove with patch
+    system libexec/"bin/python", "-m", "pip", "check"
+
     assert_match version.to_s, shell_output("#{bin}/bzt -h")
 
     scenario = "execution.scenario.requests.0=https://gettaurus.org/"

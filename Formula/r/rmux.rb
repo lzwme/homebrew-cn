@@ -29,8 +29,6 @@ class Rmux < Formula
   end
 
   test do
-    require "json"
-
     assert_match "rmux #{version}", shell_output("#{bin}/rmux -V")
     diagnostics = JSON.parse(shell_output("#{bin}/rmux diagnose --json"))
     assert_equal version.to_s, diagnostics.fetch("version")

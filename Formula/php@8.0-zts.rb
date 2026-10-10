@@ -1,20 +1,19 @@
 class PhpAT80Zts < Formula
   desc "General-purpose scripting language"
   homepage "https://www.php.net/"
-  url "https://ghfast.top/https://github.com/shivammathur/php-src-backports/archive/1bb9988fd6c151c783653e3a2257c1a0897e6633.tar.gz"
+  url "https://ghfast.top/https://github.com/shivammathur/php-src-backports/archive/1c4ef2f91899bcb60abc223859fe5cda502fca19.tar.gz"
   version "8.0.30"
-  sha256 "1969f16cab5dbf112b0f1115279d061f29f63d8910cc56c497cff59c853f9f6c"
+  sha256 "dcaa45c7634e2f44ecb0db4320c7b316fb1f3bff1d0b9730f85beabd680f4103"
   license "PHP-3.01"
-  revision 8
+  revision 9
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/php"
-    sha256 arm64_golden_gate: "baaf88c0b9dda490762039504ce08676bf35865c067d031a8126a20421458361"
-    sha256 arm64_tahoe:       "8c608e9a9c697a0ae6388c77be70e542dd23c08a670a3c8034b503fb6c347550"
-    sha256 arm64_sequoia:     "b59c19cda3a7bef521a5f384a8ed1b733206e1042dd739d573427a97a2413c23"
-    sha256 arm64_sonoma:      "6deccbd159703be71786d0ef2ba52a1795a45215820e166dc2528dc04866bf71"
-    sha256 arm64_linux:       "c2d73c02b1bde34d336c3a193cfa1605cd1f555ff37c974197c7c96734e0d731"
-    sha256 x86_64_linux:      "b3801595ce3525e14f20bd1a893f61f1cd5ae1771d090c68e7fcd89625d0e317"
+    sha256 arm64_golden_gate: "12bae21db77faabcca8252fa3564a712ca5fe6f2660008b617ce620e438b10c1"
+    sha256 arm64_tahoe:       "2d7419758a82678b62417e388a1f778f94e72dce1a1548b81041bf6c74bf8904"
+    sha256 arm64_sequoia:     "5fa6cc93b693d8482ca2451759486385219b0e3046a023e2dae6b54385e39365"
+    sha256 arm64_linux:       "f0a7bf94bd546876c880f5e64f62514f500a0a1ec99f0f36811dc532ee2e0058"
+    sha256 x86_64_linux:      "184a7c34daf7f69583342475a83f4de1e1343ff62cb9cc0e1c715ad31cf5297b"
   end
 
   keg_only :versioned_formula
@@ -45,7 +44,7 @@ class PhpAT80Zts < Formula
   depends_on "libzip"
   depends_on "oniguruma"
   depends_on "openldap"
-  depends_on "openssl@3"
+  depends_on "openssl@4"
   depends_on "pcre2"
   depends_on "sqlite"
   depends_on "tidy-html5"
@@ -230,7 +229,7 @@ class PhpAT80Zts < Formula
       s.gsub! %r{; ?extension_dir = "\./"}, "extension_dir = \"#{HOMEBREW_PREFIX}/lib/php/pecl/#{orig_ext_dir}\""
 
       # Use OpenSSL cert bundle
-      openssl = Formula["openssl@3"]
+      openssl = Formula["openssl@4"]
       s.gsub!(/; ?openssl\.cafile=/, "openssl.cafile = \"#{openssl.pkgetc}/cert.pem\"")
       s.gsub!(/; ?openssl\.capath=/, "openssl.capath = \"#{openssl.pkgetc}/certs\"")
     end

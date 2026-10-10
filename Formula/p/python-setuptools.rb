@@ -4,13 +4,13 @@ class PythonSetuptools < Formula
   url "https://files.pythonhosted.org/packages/6d/44/f5da03a8ef95d369145c5bb53050e7877c9f3d312e128605fd9504829143/setuptools-84.0.0.tar.gz"
   sha256 "f4695c21257f0d9b537ec2692c941d02ee143b7cc1276941349a546573b2ef73"
   license "MIT"
+  revision 1
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "b5f7d984dcb5d2180af1b14f93998a0ad3a54a365b0a5d9eb3c4e46805ee2815"
+    sha256 cellar: :any_skip_relocation, all: "9cd96a30c56de22eb09bf74bc17e433f5a721b97da006ba49d71f1eeac8752a5"
   end
 
-  depends_on "python@3.14" => [:build, :test]
+  depends_on "python@3.15" => [:build, :test]
 
   deny_network_access!
 
@@ -40,5 +40,9 @@ class PythonSetuptools < Formula
 
   test do
     system python3, "-c", "import setuptools"
+
+    # Check that the wheel is safe to use on all pythons
+    wheel = prefix/Language::Python.site_packages(python3)/"setuptools-#{version}.dist-info/WHEEL"
+    assert_match(/^Tag: py3-none-any$/, wheel.read)
   end
 end

@@ -23,11 +23,12 @@ class Flang < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "235ed64bb9d225b6e74a7aede5034ed6f7ec9663ee78d6f2e9d0ff7aa9cf6d98"
-    sha256 cellar: :any, arm64_tahoe:       "a1b79e32d787137e48419048d0689d1c4cd868c592ca80c0ed7b94d2c965c795"
-    sha256 cellar: :any, arm64_sequoia:     "7b529eeae1db4c485f68106aba09b904ed002b5635450f8b88e136de3f3bdaeb"
-    sha256 cellar: :any, arm64_linux:       "8bd72cb4bf4cedfc64d3ad2ded189867de58dbee0594b0897e3b2f2be4d46326"
-    sha256 cellar: :any, x86_64_linux:      "11524899cb5a2b9d2c28bb547cd096bbe93514961e7b33041146bcd4f24b242a"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "4698ff642f581ed568172ad4ad8d09eb6bcb3e7ab4cb77ef6ce6459f3b33aab6"
+    sha256 cellar: :any, arm64_tahoe:       "db8f5bba7c53468f87e62998bb8c7f7983d54ce918923d9f26df1b0555a705b1"
+    sha256 cellar: :any, arm64_sequoia:     "fc336e774207f2a63fa8132d20571edcddb4676fef37d7be2a7eecb55b4d65fc"
+    sha256 cellar: :any, arm64_linux:       "8f1598d665dbed2db278166697c673d40b6f9bc734e469f5acf3b25115d70c56"
+    sha256 cellar: :any, x86_64_linux:      "d3d45b1f8aa76c7f0d3d79e1e6ab4bb7ee0a7f84fe60a77c365a38c2329eb838"
   end
 
   depends_on "cmake" => :build
@@ -180,11 +181,5 @@ class Flang < Formula
     assert_equal expected, shell_output("./omptest").lines(chomp: true).sort
 
     system bin/"flang", "-v", "runtimes.f90"
-
-    return if OS.linux?
-    return unless (etc/"clang").exist? # https://github.com/Homebrew/homebrew-test-bot/issues/805
-
-    assert_match %r{^Configuration file: .*/etc/clang/.*\.cfg$}i,
-                 shell_output("#{bin}/flang --version")
   end
 end

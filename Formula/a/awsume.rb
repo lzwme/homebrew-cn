@@ -7,17 +7,15 @@ class Awsume < Formula
   url "https://ghfast.top/https://github.com/trek10inc/awsume/archive/refs/tags/4.5.5.tar.gz"
   sha256 "33946d1dbd62394024b1d11c09aeb1eb566981b99e0d8eed5255b948e74ccebc"
   license "MIT"
-  revision 1
+  revision 2
   head "https://github.com/trek10inc/awsume.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_golden_gate: "c12164915da3176960ba9654be3cf2085fb3f5e0e328d27f17463a198f532812"
-    sha256 cellar: :any,                 arm64_tahoe:       "912c294f4270cad32ba129a55ad7de6f297a22fcc7af22a62eddeacf4b6e2d46"
-    sha256 cellar: :any,                 arm64_sequoia:     "85513d3816f52eb95a95979227e54763f8f8c977c29910155f41d80169481dcc"
-    sha256 cellar: :any,                 arm64_sonoma:      "06bb905c74719049654e9a9c8c68cd6ff3d284baa2274049b9a48377826ed9d5"
-    sha256 cellar: :any,                 sonoma:            "b154b5ef67b65108428650e7b3d644a25b84d3c2cc448faa877599468cb5be47"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "a750c88a9b764ab55a9ad12c108a422846955f417332ed9c95b4032755938a66"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "35d320dcce1421dab098f6a23f083b3d740a82d67a992db3242778fa48cccf60"
+    sha256 cellar: :any, arm64_golden_gate: "d15e0747fa98ad08636f31e9e536e7b569420d2ca760ce394007fb18ed5827a6"
+    sha256 cellar: :any, arm64_tahoe:       "96acbf7c8abd910520b89ae0cc8360f7aa960331afd6d82e69a3d1f3bac39d67"
+    sha256 cellar: :any, arm64_sequoia:     "f9ecc0fb021fbded32ca6601f923c516a38d5b687fee15f84039c8b736bfe42f"
+    sha256 cellar: :any, arm64_linux:       "9dcd09c376bdc0d22723228c3d769ba7117bd6cb5a87a852c0bd49ec50629fb8"
+    sha256 cellar: :any, x86_64_linux:      "b24eabfae8323a03c4655053a10809a3c926a762ba0bd3132afd331cceb27a58"
   end
 
   # https://github.com/trek10inc/awsume/blob/master/README.md
@@ -30,13 +28,13 @@ class Awsume < Formula
   uses_from_macos "sqlite"
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/0a/37/78c630d1308964aa9abf44951d9c4df776546ff37251ec2434944e205c4e/boto3-1.43.6.tar.gz"
-    sha256 "e6315effaf12b890b99956e6f8e2c3000a3f64e4ee91943cec3895ce9a836afb"
+    url "https://files.pythonhosted.org/packages/2a/80/0430e16c302b0d1a4ca3c8c69ffee9e4f8f2170d56162d2761b34fd512ba/boto3-1.43.109.tar.gz"
+    sha256 "c829bc3352e1e3922d8fe1db10b697182ac411b64ce5fc3acb0a06a29837417e"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/79/a7/23d0f5028011455096a1eeac0ddf3cbe147b3e855e127342f8202552194d/botocore-1.43.6.tar.gz"
-    sha256 "b1e395b347356860398da42e61c808cf1e34b6fa7180cf2b9d87d986e1a06ba0"
+    url "https://files.pythonhosted.org/packages/3c/da/424aaef4727876f4095bd2c10e683bb8531ac3bea56b0b6efd29eeb57f91/botocore-1.43.109.tar.gz"
+    sha256 "46b15bea4d942aaea6d7ab7c4b8a3a7290305064a3b41a6cb271cde9da3ba371"
   end
 
   resource "colorama" do
@@ -70,8 +68,8 @@ class Awsume < Formula
   end
 
   resource "s3transfer" do
-    url "https://files.pythonhosted.org/packages/9b/ec/7c692cde9125b77e84b307354d4fb705f98b8ccad59a036d5957ca75bfc3/s3transfer-0.17.0.tar.gz"
-    sha256 "9edeb6d1c3c2f89d6050348548834ad8289610d886e5bf7b7207728bd43ce33a"
+    url "https://files.pythonhosted.org/packages/76/43/35e4d8aa320bffe8287fe8f65f578fa2d2db0a64212f0e710dce58267854/s3transfer-0.19.2.tar.gz"
+    sha256 "ba0309fd86be3c27dbf78cdd813c13c5e1df16e5874b99d2535ebbdfb9892993"
   end
 
   resource "six" do
@@ -80,8 +78,8 @@ class Awsume < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/53/0c/06f8b233b8fd13b9e5ee11424ef85419ba0d8ba0b3138bf360be2ff56953/urllib3-2.7.0.tar.gz"
-    sha256 "231e0ec3b63ceb14667c67be60f2f2c40a518cb38b03af60abc813da26505f4c"
+    url "https://files.pythonhosted.org/packages/e3/05/b17359e1cefb4f909b5e40b1b90a496d987258916dbbf88e842c729f510e/urllib3-2.8.0.tar.gz"
+    sha256 "63bf2ead4c879426ebf22ef2a781eeb4aa3b4ae798a0435506f8687fd5bb9b63"
   end
 
   def install

@@ -2,17 +2,16 @@ class Gstreamer < Formula
   desc "Development framework for multimedia applications"
   homepage "https://gstreamer.freedesktop.org/"
   license all_of: ["LGPL-2.0-or-later", "LGPL-2.1-or-later", "MIT"]
-  revision 3
   compatibility_version 1
 
   stable do
-    url "https://gitlab.freedesktop.org/gstreamer/gstreamer/-/archive/1.28.7/gstreamer-1.28.7.tar.bz2"
-    sha256 "4aabbbf88837a592d425c592c852c577359df65f62c2f58d57db7695d6ebbaa8"
+    url "https://gitlab.freedesktop.org/gstreamer/gstreamer/-/archive/1.28.8/gstreamer-1.28.8.tar.bz2"
+    sha256 "f181a8e3115326fc9e0abf132c19db7e6b71648c8c001e15d13fd9402ba61625"
 
     # When updating this resource, use the tag that matches the GStreamer version.
     resource "rs" do
-      url "https://gitlab.freedesktop.org/gstreamer/gst-plugins-rs/-/archive/gstreamer-1.28.7/gst-plugins-rs-gstreamer-1.28.7.tar.bz2"
-      sha256 "d5acc3e2cd92f09ccfefa357905758274b205ce9b3521ab1d88dbb4072a25f21"
+      url "https://gitlab.freedesktop.org/gstreamer/gst-plugins-rs/-/archive/gstreamer-1.28.8/gst-plugins-rs-gstreamer-1.28.8.tar.bz2"
+      sha256 "1c0406a1b0e2e5ca71611347273fe584629cf59e874ffcea07f8b82729793b0e"
 
       livecheck do
         formula :parent
@@ -26,11 +25,11 @@ class Gstreamer < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "4b80f4e928a213644aa2bded4f6d909f34118994c7a0f8069c9b8fd31576d2f0"
-    sha256 arm64_tahoe:       "5ca86245b9322351b526bc8f53a8705ef8b651a5d79c374f196adcc2fe921bd6"
-    sha256 arm64_sequoia:     "f44e87a1ef8a298b0f2e423a7101092977ad01a35641085a10607da80f988cf9"
-    sha256 arm64_linux:       "19c3ce129309a0e59ea44fdea09184543df4664b4d5f3daba18e1b9e8b6dca93"
-    sha256 x86_64_linux:      "5560b42b3c7396f365a1fe8d7ab72ae537c5f05fa2c5c15a0d2fee5a53a00ba0"
+    sha256 arm64_golden_gate: "bf79b3d2b57caaece94e5435b2d0741198ad4b91ec98baf104d9a92113ec79a8"
+    sha256 arm64_tahoe:       "581d285f32855aca6cc96f3a76e6853091c8249ad1e6afe60d706814ae56099b"
+    sha256 arm64_sequoia:     "ed31c1148fa87af603e20d46042fa3b0e2c0a985a36cf8f64e521c2244af6440"
+    sha256 arm64_linux:       "a33d08ba182f3ee64cdf260a5d2b81cee03eee80348a4ce0ace19726d0a421b2"
+    sha256 x86_64_linux:      "7c084f3cfce66ee66a4197fa8be39aee98355418839463638e255d0e1d810114"
   end
 
   head do
@@ -246,6 +245,9 @@ class Gstreamer < Formula
 
     # Make sure the `openssl-sys` crate uses our OpenSSL.
     ENV["OPENSSL_DIR"] = formula_opt_prefix("openssl@4")
+
+    # Work around superenv breaking aws-lc-sys `-O0` needed to build CPU Jitter RNG
+    ENV["AWS_LC_SYS_NO_JITTER_ENTROPY"] = "1"
 
     system "meson", "setup", "build", *args, *std_meson_args
     system "meson", "compile", "-C", "build", "--verbose"

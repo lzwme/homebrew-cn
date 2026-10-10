@@ -1,20 +1,19 @@
 class PhpAT56DebugZts < Formula
   desc "General-purpose scripting language"
   homepage "https://secure.php.net/"
-  url "https://ghfast.top/https://github.com/shivammathur/php-src-backports/archive/241845d24ddbbccddc9be4006c103d9ddaf3b724.tar.gz"
+  url "https://ghfast.top/https://github.com/shivammathur/php-src-backports/archive/2f0da72721b16b74c602d3c80f527e07d1cdd49a.tar.gz"
   version "5.6.40"
-  sha256 "836bc6985113313d2a9cfc14864f9506b0c752c24cc9bf0a66454e890921b9d5"
+  sha256 "595bb86a07ce587ae98a04cf1d3cb23f2280a90867a11cc312d67a4b1e87911a"
   license "PHP-3.01"
-  revision 7
+  revision 8
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/php"
-    sha256 arm64_golden_gate: "ea20ce74ac83c691fa57bd7437fa076873a6ff43fbbce6567b675f43cc2347c3"
-    sha256 arm64_tahoe:       "0d35fc1895511035aedac4d50592a3bd53064d249e05f58dcd88fa449215a56c"
-    sha256 arm64_sequoia:     "4261fd481d746093a4b01f4072927cf3928e864409e1cd8ecff4deba897454e1"
-    sha256 arm64_sonoma:      "a07bd84ea5a651642065eae0762de243cc1a32c55c10f8710abb5725b625be65"
-    sha256 arm64_linux:       "c3e8881c8719805be08bba56728be1fc33989739dce6a014240eb81070ddeeea"
-    sha256 x86_64_linux:      "e9bcbc1866180e3c79802276b86bb3fb9a2117f50ced18d8dda1049808b3ed78"
+    sha256 arm64_golden_gate: "866e96413398abc0413dbaf156808a92fca9e9818eadc90be9c4ea4cb4302604"
+    sha256 arm64_tahoe:       "d34882f5b0c5e436d047310e23904b092b4ba0e8a4a77393a0218e6a265db48a"
+    sha256 arm64_sequoia:     "6718fd3a189dadc1d5835ec2ed68a992de67764f5a0da70107de4b3745ac0eb9"
+    sha256 arm64_linux:       "208c7f4e6d5e174aa75566a7d3efc04e312e580b9ec73a1d7ce99f58a0833a7c"
+    sha256 x86_64_linux:      "876e384dd6a77330a61071cce0a35bac8f8c8ba1b5660de8d6d4ac7163b4f624"
   end
 
   keg_only :versioned_formula
@@ -47,7 +46,7 @@ class PhpAT56DebugZts < Formula
   depends_on "libxpm"
   depends_on "libzip"
   depends_on "openldap"
-  depends_on "openssl@3"
+  depends_on "openssl@4"
   depends_on "pcre"
   depends_on "shivammathur/php/autoconf@2.69"
   depends_on "sqlite"
@@ -70,6 +69,8 @@ class PhpAT56DebugZts < Formula
   end
 
   def install
+    inreplace "pear/Makefile.frag", "http://pear.php.net/", "https://pear.php.net/"
+
     # The runtime probe can misdetect glibc's POSIX readdir_r in build containers.
     ENV["ac_cv_what_readdir_r"] = "POSIX" if OS.linux?
 
@@ -202,7 +203,7 @@ class PhpAT56DebugZts < Formula
       --with-mysql-sock=/tmp/mysql.sock
       --with-mysqli=mysqlnd
       --with-mysql=mysqlnd
-      --with-openssl=#{formula_opt_prefix("openssl@3")}
+      --with-openssl=#{formula_opt_prefix("openssl@4")}
       --with-pdo-dblib=#{formula_opt_prefix("freetds")}
       --with-pdo-mysql=mysqlnd
       --with-pdo-odbc=unixODBC,#{formula_opt_prefix("unixodbc")}
@@ -249,7 +250,7 @@ class PhpAT56DebugZts < Formula
       s.gsub! %r{; ?extension_dir = "\./"}, "extension_dir = \"#{HOMEBREW_PREFIX}/lib/php/pecl/#{orig_ext_dir}\""
 
       # Use OpenSSL cert bundle
-      openssl = Formula["openssl@3"]
+      openssl = Formula["openssl@4"]
       s.gsub!(/; ?openssl\.cafile=/, "openssl.cafile = \"#{openssl.pkgetc}/cert.pem\"")
       s.gsub!(/; ?openssl\.capath=/, "openssl.capath = \"#{openssl.pkgetc}/certs\"")
     end

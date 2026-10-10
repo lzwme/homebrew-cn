@@ -1,16 +1,16 @@
 class Promptfoo < Formula
   desc "Test your LLM app locally"
   homepage "https://promptfoo.dev/"
-  url "https://registry.npmjs.org/promptfoo/-/promptfoo-0.124.0.tgz"
-  sha256 "d0aa69e35d40be9b37454ce7569e04c62af67f3b45dd679182e53b170ef69c24"
+  url "https://registry.npmjs.org/promptfoo/-/promptfoo-0.124.1.tgz"
+  sha256 "be3fe4dd4cd78e61a2fc81a8bcaaad1c8f29b63ebed16f08e629a5856f0c270f"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "db55e30e5a07c3ab82aff791c55297f3b794fa96d2e97a9f075f23e6ce0c63bb"
-    sha256 cellar: :any, arm64_tahoe:       "b1ada080bd3e5c9ae7ebe3117c697d33ed06500dffedc5efa84620c0fa9cab23"
-    sha256 cellar: :any, arm64_sequoia:     "9b74b55ffd1ee3e4fa558db03a1fe192ef354fb0992d0c485df559519ece742c"
-    sha256 cellar: :any, arm64_linux:       "b1cade3ee288fb9c922be130221858e9b42d371d227942f1959cdc1fe51706ef"
-    sha256 cellar: :any, x86_64_linux:      "6ccad271a8a766fb4b000501f265cf92fe29429f140c3ee1584427332e9e5e91"
+    sha256 cellar: :any, arm64_golden_gate: "27e2a7bcbaf490f44e0425e36f2b2d033beb40df284d40fabdd793855590ae7f"
+    sha256 cellar: :any, arm64_tahoe:       "f4af3bb74839a01b962bee63ca95a68f627bfa1e8544c48f37bf391e4d1f4fbf"
+    sha256 cellar: :any, arm64_sequoia:     "082bf000c14e3b79015410b90b2cd9eb78e25767a054ed3ee0885c0e0f871f40"
+    sha256 cellar: :any, arm64_linux:       "689c853a0deb58ecdd9386305e701f32dc81ef35411b6434828e2191b34f60d9"
+    sha256 cellar: :any, x86_64_linux:      "a235ba8cceda33a6ab9d094437c3c1a63a0f3d738db1eb7ae9108c33a7a3d58e"
   end
 
   depends_on "cmake" => :build # for `libsql-js` > `libsql-ffi`

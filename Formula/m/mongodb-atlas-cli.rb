@@ -1,22 +1,22 @@
 class MongodbAtlasCli < Formula
   desc "Atlas CLI enables you to manage your MongoDB Atlas"
   homepage "https://www.mongodb.com/docs/atlas/cli/stable/"
-  url "https://ghfast.top/https://github.com/mongodb/mongodb-atlas-cli/archive/refs/tags/atlascli/v1.59.0.tar.gz"
-  sha256 "133c1ab38830bf4503382feda58271ad1aa8709c7a5fbe830faadec4cd102bc8"
+  url "https://ghfast.top/https://github.com/mongodb/mongodb-atlas-cli/archive/refs/tags/v1.59.1.tar.gz"
+  sha256 "25019b03637ac003cd94c548d1f6b4c3f0446832ba849acf091b3f36f28368e6"
   license "Apache-2.0"
   head "https://github.com/mongodb/mongodb-atlas-cli.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(%r{^atlascli/v?(\d+(?:\.\d+)+)$}i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "b063a7523760fe0293d186229c93361a866feb188eb89e8ca1e0cd2b02a9bbf2"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "99db09b969fbee7659e4af4140aed47b6d024358ef7afcd1fc61873f2f9dbcd5"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "9c8a405aa750295adecb814312a500c4207ac5e861526bdfe8347db4c41e633d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "9936ce3d743242a60ab95fce367a8147cc7750e53cd88f06c0c857b4250ab897"
-    sha256 cellar: :any,                 x86_64_linux:      "2c0dad6a8b8433093dd30cffc46a49317d5c15091d52bec4b1b823797178197f"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "d9808569fb12ff427153b03fcd62e40a3943d9a6908cfdfd23f5260abe618094"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "f9a9ebfa59743f865324fe6f69789a48f18f90325525856c2dc59838e1148df7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "5b4be6a7f9168bb7ec9109baa7b144d7f71fb8eafd474e40e9d9993a6bdce33f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "db9ce623b8d7cafb13bb4af03ee84597d667968536758b93fe6f45c143049441"
+    sha256 cellar: :any,                 x86_64_linux:      "6814a71d86da09ab6d06e9e5a093113fa3246b09000e54913a0369b174b2eac2"
   end
 
   depends_on "go" => :build

@@ -4,7 +4,7 @@ class PerconaServerAT84 < Formula
   url "https://downloads.percona.com/downloads/Percona-Server-8.4/Percona-Server-8.4.11-11/source/tarball/percona-server-8.4.11-11.tar.gz"
   sha256 "2fb90e235c25183d73c972cba481a32ea2d90cefca0669fe0786defc2acdfa18"
   license "BSD-3-Clause"
-  revision 2
+  revision 3
 
   livecheck do
     url "https://www.percona.com/wp-admin/admin-ajax.php", post_form: {
@@ -22,11 +22,11 @@ class PerconaServerAT84 < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "4e72e8c283fe28e12cd7ce97a8f7d28c0303105270345263f814773e2af08605"
-    sha256 arm64_tahoe:       "fe820e767694e97f83649e7ba19a3ac8d82556b2949fccaa139fc2b41abd3159"
-    sha256 arm64_sequoia:     "b45a72dead3c3bcf1cd1ffd2f1756b4a4a2a5efb9bb200505251126dd86a20a9"
-    sha256 arm64_linux:       "e05db148ab155ef47bce995acdab91f704c4265e39e877e26803315cdca49b20"
-    sha256 x86_64_linux:      "dec007bab83a9ed3fec2d08b804d2377d1202b8525c4a3fcbeeec3dbea0adcab"
+    sha256 arm64_golden_gate: "028e15b7e832294ca73f9cba0ebe21f0e2b292e746d229a51dbe5002fe1f92d2"
+    sha256 arm64_tahoe:       "92e3cb511536f739e5a4a445e9f00951516011a3b63bafa8435eca9060287e65"
+    sha256 arm64_sequoia:     "8e1da2447c6170bb74e78095cb80a1d4e7934ca3c30cbd2c761cc0839b31ff77"
+    sha256 arm64_linux:       "0b63cfc0a492eb008a3218dd253dddc2c2893e6125cbe312757717fd96e5be10"
+    sha256 x86_64_linux:      "591a319277acf6a475376848ea930ee66430b8bcc60da836db8890cd9078bc56"
   end
 
   keg_only :versioned_formula
@@ -42,7 +42,7 @@ class PerconaServerAT84 < Formula
   depends_on "libfido2"
   depends_on "lz4"
   depends_on "openldap" # Needs `ldap_set_urllist_proc`, not provided by LDAP.framework
-  depends_on "openssl@3"
+  depends_on "openssl@4"
   depends_on "protobuf"
   depends_on "zlib-ng-compat" # Zlib 1.2.13+
   depends_on "zstd"

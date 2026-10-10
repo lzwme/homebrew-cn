@@ -56,6 +56,8 @@ class Colmap < Formula
     sha256 "ff1c44342ab2c84ac9ac74c4028762c50d12ab5a483d20466cc1f635fe8f4d1f"
   end
 
+  deny_network_access!
+
   def install
     resource("poselib").stage do
       system "cmake", "-S", ".", "-B", "build", "-DBUILD_SHARED_LIBS=ON",

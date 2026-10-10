@@ -1,8 +1,8 @@
 class AnycableGo < Formula
   desc "WebSocket server with action cable protocol"
   homepage "https://anycable.io"
-  url "https://ghfast.top/https://github.com/anycable/anycable/archive/refs/tags/v1.6.17.tar.gz"
-  sha256 "40475c64496b4fcbf4dced51c563d1827fd3904c4993ace33a926ba8910b8594"
+  url "https://ghfast.top/https://github.com/anycable/anycable/archive/refs/tags/v1.6.18.tar.gz"
+  sha256 "ec1a43bf16d4009a97f60a813a7da0d74b0949352deba32d479a5db1fdcc11a7"
   license "MIT"
   head "https://github.com/anycable/anycable.git", branch: "main"
 
@@ -12,11 +12,11 @@ class AnycableGo < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "342fb1dbba39be816992caa3d429a1f434854baed5642c137a94eb544abe7435"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "342fb1dbba39be816992caa3d429a1f434854baed5642c137a94eb544abe7435"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "342fb1dbba39be816992caa3d429a1f434854baed5642c137a94eb544abe7435"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "7ba2a3e68dd7a83e66e8358e645f608e29fdbdf3e7d85391ab9039a2de411581"
-    sha256 cellar: :any,                 x86_64_linux:      "c389371d9ce151bc8c744ad4f8a06d72d79f30885761d806bf1c90402e748604"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "13c52077cec329df7eb98a7757a560513538786fbe3508d435f601d9c3565e0b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "13c52077cec329df7eb98a7757a560513538786fbe3508d435f601d9c3565e0b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "13c52077cec329df7eb98a7757a560513538786fbe3508d435f601d9c3565e0b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "008178e3bf31bcf227d3222bb333db33eb5cde492131b5eaada64eb04d32c2c4"
+    sha256 cellar: :any,                 x86_64_linux:      "e9422a99fb5dad8938ef6195b1d1443711d0d40ade8e120c0b31a871a18166e7"
   end
 
   depends_on "go" => :build

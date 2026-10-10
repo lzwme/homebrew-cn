@@ -34,6 +34,8 @@ class Coal < Formula
   depends_on "octomap"
   depends_on "python@3.14"
 
+  deny_network_access!
+
   def install
     ENV.prepend_path "PYTHONPATH", formula_opt_prefix("eigenpy")/Language::Python.site_packages(python3)
     ENV.prepend_path "Eigen3_DIR", Formula["eigen"].opt_share/"eigen3/cmake"

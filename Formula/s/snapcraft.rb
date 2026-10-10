@@ -5,10 +5,9 @@ class Snapcraft < Formula
   homepage "https://snapcraft.io/"
   # Use git checkout so setuptools-scm and update-python-resources works
   url "https://github.com/canonical/snapcraft.git",
-      tag:      "9.1.3",
-      revision: "2714626581672a42439dec34b73bae177cbed445"
+      tag:      "9.1.4",
+      revision: "fdae874725af842d0e67ba6b0a8c1835ba978a5d"
   license "GPL-3.0-only"
-  revision 1
   head "https://github.com/canonical/snapcraft.git", branch: "main"
 
   livecheck do
@@ -17,11 +16,11 @@ class Snapcraft < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "c34df5f69fb99964f36f0e2e156a5c5ea5b20357b6c81f3362f0f7d59f2650fc"
-    sha256 cellar: :any, arm64_tahoe:       "e0d63974e550344544a28f9bf50d0a20dcfef7b9791c4722b3c94babfaf3ddca"
-    sha256 cellar: :any, arm64_sequoia:     "5ce2f51ec1b8243be0d0165df51cec9445f340c67a6a9f9c16f6c9d784de5f64"
-    sha256 cellar: :any, arm64_linux:       "210de7b4a7d145571c072d0eb80dcf464dfd34eaf14dfc3a3194ec05cb5b3d07"
-    sha256 cellar: :any, x86_64_linux:      "0ad608e049f4de0bf8aab71b5d9aadb33922a91cdd9a851a41ea1dd739678375"
+    sha256 cellar: :any, arm64_golden_gate: "33c7e0d9fc460402d1221a37c3f415a1152ffb93a03584b61f8bf4e87c64730f"
+    sha256 cellar: :any, arm64_tahoe:       "f02525b7d81d5cbf5d3830ba7adc1dff1c63452f4df14ea8478e35edac4d39db"
+    sha256 cellar: :any, arm64_sequoia:     "8fa120901c2498206ec7068b7390c087176ae0474661a1e5b485d3a8d42d8f99"
+    sha256 cellar: :any, arm64_linux:       "e964398bb0b98622baba05bba4fa327fbbf491ca0e0d8f1ecbf2e3ef4e8e6d95"
+    sha256 cellar: :any, x86_64_linux:      "16934061b5ecea44cf81754ca3de369dd1c8956a8dee65800924b3ea46936b27"
   end
 
   depends_on "certifi" => :no_linkage

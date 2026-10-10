@@ -1,8 +1,8 @@
 class Ballerina < Formula
   desc "Programming Language for Network Distributed Applications"
   homepage "https://ballerina.io"
-  url "https://dist.ballerina.io/downloads/2201.13.6/ballerina-2201.13.6-swan-lake.zip"
-  sha256 "1fbb2a607e5216b377b6c206f340a0d3070546265d5e83d3bbcbad7c610e4593"
+  url "https://dist.ballerina.io/downloads/2201.13.7/ballerina-2201.13.7-swan-lake.zip"
+  sha256 "fbe8eed8ae21fc437f05c09ffab6f627d41b85933520dad833a183f8fecc2532"
   license "Apache-2.0"
 
   # The Downloads and Installation Options pages don't include any version
@@ -18,10 +18,12 @@ class Ballerina < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "92d4ad32a387764d69891788ba33c1a04cf840daae1c634e9e3759917a0409cb"
+    sha256 cellar: :any_skip_relocation, all: "776c598329b70c36c58682be816fcd25a936cc048a1bb8d7a035b6f2d7b5a5cc"
   end
 
   depends_on "openjdk"
+
+  deny_network_access!
 
   def install
     # Remove Windows files

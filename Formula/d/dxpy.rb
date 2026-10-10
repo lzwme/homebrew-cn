@@ -6,13 +6,14 @@ class Dxpy < Formula
   url "https://files.pythonhosted.org/packages/2a/9b/979fd7e0644dc270e91b165dc60c88fc885750aa7665d869ab7e3fd96e2d/dxpy-0.416.0.tar.gz"
   sha256 "d93bef77f30a4afcef32fba056c9624b6f0c73129360fa02089b7f51736f18a5"
   license "Apache-2.0"
+  revision 2
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "22f03c55f68f225d4d0e063177f5b34e4d1c98779352d2b19ded08c8c7e263c8"
-    sha256 cellar: :any, arm64_tahoe:       "8fcb2f664175d520b80383acd60ae09242f17256fdccd25d81309c786e39c45b"
-    sha256 cellar: :any, arm64_sequoia:     "b3f267377efdf89e1147a1466747206fe8e8fd113b653d779d5aa2d333e1c27a"
-    sha256 cellar: :any, arm64_linux:       "6a5ca8f720e8d18a01db64079d428e18021f908086698a13093ed01cb536c2a1"
-    sha256 cellar: :any, x86_64_linux:      "4e630fb80fdfe383f4574432cd2321f29fb9500cfaf0fedaf4f6d04b71b33e3f"
+    sha256 cellar: :any, arm64_golden_gate: "9d51add2fdc79dc8f3d0f8a9bdb26becfc77e065ac187370a1ae7bab947c3411"
+    sha256 cellar: :any, arm64_tahoe:       "82ccc195aacbe1bb8fae817586b24d1645bab5773469c70ef900742a6eeed17c"
+    sha256 cellar: :any, arm64_sequoia:     "c73e2a7bcfd5c2f128789264edab362cabf91aaf815a9bd63960c101f82f63f7"
+    sha256 cellar: :any, arm64_linux:       "b6e4f894a9547822a4be547f0d0b6ae24f00fd9862b7d4598bf439739eba7e78"
+    sha256 cellar: :any, x86_64_linux:      "b5cd6c6cb1c496db54b61e6d8477ecb1a7a033cbd0b3fafe499f0f67ea3b82dc"
   end
 
   depends_on "aws-c-auth"

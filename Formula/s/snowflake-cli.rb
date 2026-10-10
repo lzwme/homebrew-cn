@@ -6,14 +6,15 @@ class SnowflakeCli < Formula
   url "https://files.pythonhosted.org/packages/76/ff/f5eae9e3f872e9444d2ac16075366b0dffb9154ef2019c9c3bcf802ca2de/snowflake_cli-3.29.0.tar.gz"
   sha256 "130bd84095247de5fb214ac1c411bed4e474938a16dec4a973e3b7c320c38171"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/snowflakedb/snowflake-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "baa7a482462f9e6bb6321926451bf79b9b9e4091ca76104b88da13ed7dcfac00"
-    sha256 cellar: :any, arm64_tahoe:       "9eb5a1b97518b109d2eb89b4717f0796a6dc5946a568c7ebd0f89ce5cbca87c9"
-    sha256 cellar: :any, arm64_sequoia:     "2ed4e26ef751aec0236a14c48648cc9ba8abb9402e2d2da8f4b79096e4a415b0"
-    sha256 cellar: :any, arm64_linux:       "a32d215a22fb4db8273ba12f6163753c3d2d6f65a7115ab948345713dece2b92"
-    sha256 cellar: :any, x86_64_linux:      "2a8367729d0856700c67a594ba929e3138d4aa48e0280a0097aa8448cfd34765"
+    sha256 cellar: :any, arm64_golden_gate: "bde795a9c7061153e95265620fa87ed32228cc5bd084c02f1a97af303d69075e"
+    sha256 cellar: :any, arm64_tahoe:       "17379684b23ffc23459f32b0b36195f6124659a05d96910dbfbcedf2e6006097"
+    sha256 cellar: :any, arm64_sequoia:     "bd99e31631ede658bf0fb9c5ba5396dda62075f059d63338682c86307a517371"
+    sha256 cellar: :any, arm64_linux:       "ac85a84a22aec351edf8a299837d12a4ec9474411029ac5a14a0f0c43d636415"
+    sha256 cellar: :any, x86_64_linux:      "f1447cbac5da3ea798de0b5803e604bf97658bf7f85d684e258359b5bc8ecb1f"
   end
 
   depends_on "protobuf" => :build
@@ -259,6 +260,13 @@ class SnowflakeCli < Formula
   resource "snowflake-connector-python" do
     url "https://files.pythonhosted.org/packages/50/43/59d15290329a2385c1827d6717947f25ab2965b9a5a0c39479b5f40c7df4/snowflake_connector_python-4.7.5.tar.gz"
     sha256 "8ad386df2121894e9539be28de08fa15d74370f40bf25bb6275a59eb5e2f0a5d"
+
+    # Backport update for vendored urllib3. Following commit without conflicting DESCRIPTION.md changes
+    # https://github.com/snowflakedb/snowflake-connector-python/commit/31c53141df367da737a15c31010e996c1e71a2fe
+    patch do
+      file "Patches/snowflake-cli/SNOW-4232077.diff"
+      type :backport
+    end
   end
 
   resource "snowflake-core" do

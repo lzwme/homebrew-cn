@@ -17,8 +17,6 @@ class Amy < Formula
   end
 
   test do
-    require "json"
-
     # NIP-19 bech32: a known key round-trips from hex to npub and back.
     hex = "3bf0c63fcb93463407af97a5e5ee64fa883d107ef9e558472c4eb9aaaefa459d"
     npub = "npub180cvv07tjdrrgpa0j7j7tmnyl2yr6yr7l8j4s3evf6u64th6gkwsyjh6w6"

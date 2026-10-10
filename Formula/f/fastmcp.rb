@@ -3,17 +3,17 @@ class Fastmcp < Formula
 
   desc "Fast, Pythonic way to build MCP servers and clients"
   homepage "https://gofastmcp.com/getting-started/welcome"
-  url "https://files.pythonhosted.org/packages/e4/ca/e76fde836e6e443f49b1a16ad91fa71715ec220141261a290c9241024857/fastmcp-4.0.11.tar.gz"
-  sha256 "55fc7b8e25d4f8365818ba93f7008d1b6e646ce7fe8ae49342687243ccbef9f2"
+  url "https://files.pythonhosted.org/packages/c3/c4/fe4e24af2cb03f4701f45634873d87557c2b5d283d287412345345ad0ede/fastmcp-4.1.0.tar.gz"
+  sha256 "7a8bf4e58cc6c2f3a8552b5a7a17ba1e4682b6fd4cafb7f461920a66dbd2499f"
   license "Apache-2.0"
   head "https://github.com/jlowin/fastmcp.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "1b1791c543f91fa384607b8432cab0df62b1483c556d4a1c587fc2cd264bb4f3"
-    sha256 cellar: :any, arm64_tahoe:       "e5fd7604bb78fecc43243953546711568ad4d315856d9add600c146a56997a14"
-    sha256 cellar: :any, arm64_sequoia:     "59b23f7c999bef01801584f010f650f9cb6a66ef98c49fc63f7e574f2f20d6b8"
-    sha256 cellar: :any, arm64_linux:       "c0e056b40febed87301b45128bbed15cd927ba38de6eeecbb58c2005fa83f79b"
-    sha256 cellar: :any, x86_64_linux:      "7a14bbde631f4b59bad152e728164e9a50cd4b9ee103f2b224012632fc92f68d"
+    sha256 cellar: :any, arm64_golden_gate: "052099e59aa021f215ccae922039c7ea2bc0d36f6ea3bc547c6f7b500db44396"
+    sha256 cellar: :any, arm64_tahoe:       "f7d270821528825ce2135292bbc4468605a918b47e729d1108a5b4ed1be0c0b6"
+    sha256 cellar: :any, arm64_sequoia:     "748d8a7f7815d6136162d755246c0428c241873268ed74db8eb6f9b862ab4fa8"
+    sha256 cellar: :any, arm64_linux:       "84d660137f9a41882879264c54d483dcf9535557f5b1433092215d7d7d2df04e"
+    sha256 cellar: :any, x86_64_linux:      "7654d0150598afa1ea22d14447b8e7fe8e4140f9c13cb299b814a8ba2d685488"
   end
 
   depends_on "rust" => :build # for py_key_value_aio
@@ -54,8 +54,8 @@ class Fastmcp < Formula
   end
 
   resource "cachetools" do
-    url "https://files.pythonhosted.org/packages/29/2c/3f18755527b03ca9ff6be724bd5370cb777c76a87f17301377cf04a4729b/cachetools-7.2.0.tar.gz"
-    sha256 "bcac1a1b8da6909994a2957238a57b8140dab7c5c5c69a43669654fe87a33c1d"
+    url "https://files.pythonhosted.org/packages/31/44/71476a5812da1ddf2c9a3efd31ae76d01480a1cf03ed13ac28aa8f2402e4/cachetools-7.2.1.tar.gz"
+    sha256 "b1a7537025c06abf96fcc1443e496af9a3fb95e774e70e1f0af226f73f7f2dcc"
   end
 
   resource "caio" do
@@ -69,8 +69,8 @@ class Fastmcp < Formula
   end
 
   resource "cyclopts" do
-    url "https://files.pythonhosted.org/packages/85/8c/7a7f5a3af1845cb6b9c28bf2a6db1bc510a6b9661109138c70ab6d8d650a/cyclopts-5.1.1.tar.gz"
-    sha256 "252fe37b01a80f10933f91c312db551e4e86ffd87bee401ab2ed091769135426"
+    url "https://files.pythonhosted.org/packages/28/c1/3debeeb6e0eb74a51d6f8cf1f273ed7c479e3321631cbf89fb9700e65e28/cyclopts-5.2.0.tar.gz"
+    sha256 "b63c1b1beaadf3ead19214385a0f90b990f152c4107c174e1724c45dc71e9541"
   end
 
   resource "dnspython" do
@@ -94,13 +94,13 @@ class Fastmcp < Formula
   end
 
   resource "fastmcp-slim" do
-    url "https://files.pythonhosted.org/packages/02/d3/8d247edc9120c3be157315acd6df17c9790358c39ea45d0f9dfcec6a094b/fastmcp_slim-4.0.11.tar.gz"
-    sha256 "9152aac74d8837bc37576f5f3d83f17567250a9dfcd8187133c43faaaa9dd06f"
+    url "https://files.pythonhosted.org/packages/b8/88/85aafec43ec9940a360d75f2d8e9517eda01ac38b8b1610b0e9e125d61d3/fastmcp_slim-4.1.0.tar.gz"
+    sha256 "390b2b430195e0cdd0327aff80fe5dceb862b2421baf71de6d4eec92f80f99f8"
   end
 
   resource "griffelib" do
-    url "https://files.pythonhosted.org/packages/27/af/018c10bc9edd42b6ef6db2e96b09542050d5253f9b195e74bc910b2d13ab/griffelib-2.3.0.tar.gz"
-    sha256 "7b0952caf5bca6afa4bb5ee8c6a2d183fe3f21b62efc5f6c7243cb2b26d2d115"
+    url "https://files.pythonhosted.org/packages/2b/27/b55f1a5278918be765fb2fd8b20966bc72bbdd3f789f031937cceea7834a/griffelib-2.3.2.tar.gz"
+    sha256 "df00c7a0dee3d86268d76788997a1859272cb1fb7b865658e043d2c0c3d52e60"
   end
 
   resource "h11" do
@@ -204,8 +204,8 @@ class Fastmcp < Formula
   end
 
   resource "opentelemetry-api" do
-    url "https://files.pythonhosted.org/packages/1f/dc/e12c1fe1ed8a7b7149777127b1a0e12ce5bd5a81d97408bedc2128c260f5/opentelemetry_api-1.45.0.tar.gz"
-    sha256 "711ede81773c8025c2c03dac0450bc89f3d30aea6eabcc815c570d4e35a963f7"
+    url "https://files.pythonhosted.org/packages/2e/02/6e0ae9cc61bd3169d401077b507b3ebc344745171e1051ab430be012dcd9/opentelemetry_api-1.45.1.tar.gz"
+    sha256 "aa38ed19bcc084ba42782a73255b3582283eced7ad6dddbd6695189e69adfb75"
   end
 
   resource "packaging" do
@@ -219,8 +219,8 @@ class Fastmcp < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/42/23/4a86fc741c38c5b69792a4ef954b281afa69bea9f083f881de1b0d23bc07/platformdirs-4.12.3.tar.gz"
-    sha256 "427fc0bb321ae0c5b037fa03238ca74820437be162e78b4848c4d4055b9b766c"
+    url "https://files.pythonhosted.org/packages/90/a1/d5f9002a70298c64a789779077d8dd90c10aa1f47fe40c86802df874f2a6/platformdirs-4.12.4.tar.gz"
+    sha256 "63743c02414e755de4e31b8f68125c1407495b86c5a006e203c01ff8b9924250"
   end
 
   resource "py-key-value-aio" do
