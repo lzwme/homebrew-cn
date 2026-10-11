@@ -3,17 +3,16 @@ class Pipdeptree < Formula
 
   desc "CLI to display dependency tree of the installed Python packages"
   homepage "https://github.com/tox-dev/pipdeptree"
-  url "https://files.pythonhosted.org/packages/78/39/632ef8751bc0415c198b7a27aef7cc4fbef619a0b502fd491d70695d5587/pipdeptree-4.2.5.tar.gz"
-  sha256 "0fafc3201c046e72913abb8a7a2b75cb17c3e15ebdd3ed546adf8fe9a9d4f54e"
+  url "https://files.pythonhosted.org/packages/b8/08/1516006b7ea61906e70b1504c2702a22c97415ee91bf00bb9b1799692b8a/pipdeptree-4.2.6.tar.gz"
+  sha256 "e6361a93fcc230669a6a47ce4a55ed812ad508ed4720aad90242b0f038643018"
   license "MIT"
-  revision 1
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "a6ba9b74da54950f9134f83ab9b6a87257688439f57c7cdc27b7cbd10e7492da"
-    sha256 cellar: :any, arm64_tahoe:       "89a4f355c577c3013041045d4ad063fccdc6e805138decd0b98845b1c422c866"
-    sha256 cellar: :any, arm64_sequoia:     "0a3cfa8f82d5fbc5d8df1a43d4f9d8c35c78997c48faf8930c512e69fd269871"
-    sha256 cellar: :any, arm64_linux:       "5544954447f70185dbad2ed91ddbb71361ff98d5bf05ac484edf5412f539fdcd"
-    sha256 cellar: :any, x86_64_linux:      "d019f7467fd225ce3a44f9f55c38d4e56dfe5474da883a79ae0ede750ce05eef"
+    sha256 cellar: :any, arm64_golden_gate: "ee562ea020e58e6646f5bbe41f091d7fd0adf7b0ef65ce932d9dbf6607f0cf1c"
+    sha256 cellar: :any, arm64_tahoe:       "f41c23cc4af0a567ff25781285e68c20eb9fdb67f7e921a6f2ee94c171909eeb"
+    sha256 cellar: :any, arm64_sequoia:     "f56fd7ef54749927d5248066f39781ad250e8eb9593b88b66c69375ae863e6ff"
+    sha256 cellar: :any, arm64_linux:       "b42d43d914a2d5fcfb2e694288c89a4583304f7379b493a093d9b36da37401c8"
+    sha256 cellar: :any, x86_64_linux:      "7b65a31a80c4d612bfea5f4831a8f40a36052c98ba11438e523eb996ffc96a52"
   end
 
   depends_on "meson" => :build
@@ -35,8 +34,8 @@ class Pipdeptree < Formula
   end
 
   resource "meson-python" do
-    url "https://files.pythonhosted.org/packages/82/14/1bafca9db7691ff05767570686cd775bddec57c7358e78504cbfd35ec996/meson_python-0.22.0.tar.gz"
-    sha256 "9c819d0d4efa746edadfaae4663c0e9c75659186ef7e5bab12330bfe22964dfc"
+    url "https://files.pythonhosted.org/packages/b4/40/343ae23722d5d66a7b94b752d1b194202640995296379333b274b1860871/meson_python-0.22.1.tar.gz"
+    sha256 "52c88628b0e5671592dc2306613fb5f6f3615fd24def059b9894f143b7f9a139"
   end
 
   resource "nab" do
@@ -85,8 +84,8 @@ class Pipdeptree < Formula
   end
 
   resource "tomli" do
-    url "https://files.pythonhosted.org/packages/22/de/48c59722572767841493b26183a0d1cc411d54fd759c5607c4590b6563a6/tomli-2.4.1.tar.gz"
-    sha256 "7c7e1a961a0b2f2472c1ac5b69affa0ae1132c39adcb67aba98568702b9cc23f"
+    url "https://files.pythonhosted.org/packages/b0/78/9ad63712633ed3ab5cc1a648d863d7e7da371e9425e209555a0fe711b695/tomli-2.5.0.tar.gz"
+    sha256 "264507556cd8b8c8e7c6ee037cdf443a463f03f4c958e57195e3d369711b8ff6"
   end
 
   resource "tomli-w" do

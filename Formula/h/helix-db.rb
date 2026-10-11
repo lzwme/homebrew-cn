@@ -15,10 +15,6 @@ class HelixDb < Formula
 
   depends_on "rust"
 
-  on_linux do
-    depends_on "openssl@3"
-  end
-
   deny_network_access!
 
   def fetch

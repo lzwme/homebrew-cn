@@ -4,17 +4,18 @@ class XmlrpcC < Formula
   url "https://downloads.sourceforge.net/project/xmlrpc-c/Xmlrpc-c%20Super%20Stable/1.64.04/xmlrpc-c-1.64.04.tgz"
   sha256 "509c3a3bffb77c81e2c364175ac70b95b799e5b695cc37d4bf833ec28fdfe0b6"
   license "BSD-3-Clause"
+  revision 1
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "92ab61ef54709bb7299665b7eb25f117f46a863d7849c39cc60a737855196141"
-    sha256 cellar: :any, arm64_tahoe:       "1d0974886e20a7c9e125e8b499a31ead0cb85f2927c7633e3ec0dbb26b8d578c"
-    sha256 cellar: :any, arm64_sequoia:     "fb66cd0c369f0b0301a8144b39463bfe35415cd3320d9eb10d74046d0f91df11"
-    sha256 cellar: :any, arm64_linux:       "f69fbc28018a29cce2a7a950ac6ddd826cef548580d6ed71ae382e94e907255a"
-    sha256 cellar: :any, x86_64_linux:      "9c9f7ae751eed30030b3dbf084d391b524d73e294faa39a3b2700a15aa91a333"
+    sha256 cellar: :any, arm64_golden_gate: "320d56ff6025d45887470bee950ecfb5cdfda6f7739cefd2b6845e3de7ae3ae1"
+    sha256 cellar: :any, arm64_tahoe:       "e6b25a7720dd3c8f45f6d0e39d0e571b6e07af1a63a1b88ef50af33c56f147b5"
+    sha256 cellar: :any, arm64_sequoia:     "5cad13b02fa09ff044cc43d72f4f19a6893799d9b28b14df5eb724b82bfdfac4"
+    sha256 cellar: :any, arm64_linux:       "a03eb071175741b250d64748c13d226b2affbc19809ba29c39a967107ddf28bb"
+    sha256 cellar: :any, x86_64_linux:      "6a5262279f39aa1051f03f4ec43526aee049a5ff93f1062332fa6c13dfd1dad9"
   end
 
   depends_on "pkgconf" => :build
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   uses_from_macos "curl"
   uses_from_macos "libxml2"

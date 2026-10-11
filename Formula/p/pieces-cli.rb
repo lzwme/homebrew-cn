@@ -6,24 +6,29 @@ class PiecesCli < Formula
   url "https://files.pythonhosted.org/packages/d4/28/e5c3d511e6a81b06f0c293909dfb138fd10d28979968e4a4ad12cf671f73/pieces_cli-1.20.1.tar.gz"
   sha256 "303f04e847bb122e6638e592d1ad0645fd9c1ed5f6494637bf203089d4f0164c"
   license "MIT"
-  revision 8
+  revision 9
   head "https://github.com/pieces-app/cli-agent.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "765f6e1cfe418be2b5e121d4ed197ba70966cb0c9dd221ad071b3f7534d2ecd9"
-    sha256 cellar: :any, arm64_tahoe:       "de42f1eb91eb5893750311c8bb9e5ee3d84b0f35c5e4c1bf752d6f83479cbb33"
-    sha256 cellar: :any, arm64_sequoia:     "3589db3cf0cfbfe8b98c8fb5c8b6da5eec443f1827009519eef8f6784239220b"
-    sha256 cellar: :any, arm64_linux:       "b8457bb42ca24ea714376bbc60f4cd9cab3cae8d5877fb5066a70f331dd06c7a"
-    sha256 cellar: :any, x86_64_linux:      "cafefca2de176f34a18c24da69617b011d700d28adf934920c3a6153801a8d66"
+    sha256 cellar: :any, arm64_golden_gate: "30789dd5fb85131e9443cce1ec62e205415ac4cc0609ebeff16ce942f6f70f0a"
+    sha256 cellar: :any, arm64_tahoe:       "1d112e40129c8d3980178598e1db8d9339a424b91207ff9493474877a6b74d6f"
+    sha256 cellar: :any, arm64_sequoia:     "bafa5ec106bc7a04bbd08333b72066da4646a8d64e86373e4e25861ebb9d4392"
+    sha256 cellar: :any, arm64_linux:       "6b53521ee2c893b89413992a50e7c479b1181b0680e932c6de9e23bb1480591a"
+    sha256 cellar: :any, x86_64_linux:      "9e174714697558a6442111effdd487c18a255a0f5b5f81242578d38e9754e038"
   end
 
+  depends_on "rust" => :build # for pydantic-core
   depends_on "certifi" => :no_linkage
   depends_on "libyaml"
-  depends_on "pydantic" => :no_linkage
   depends_on "python@3.14"
   depends_on "rpds-py" => :no_linkage
 
-  pypi_packages exclude_packages: %w[certifi pydantic rpds-py]
+  pypi_packages exclude_packages: %w[certifi rpds-py]
+
+  resource "annotated-types" do
+    url "https://files.pythonhosted.org/packages/5f/56/a8120250d128bed162cd73c76d45f6ef9991f3e068f62a8ee060afa3104a/annotated_types-0.8.0.tar.gz"
+    sha256 "13b2beaad985e05e2d6407ee4c4f35590b11f8d693a258a561055cac8f64cab7"
+  end
 
   resource "anyio" do
     url "https://files.pythonhosted.org/packages/a9/d2/f4d173e22df740bc37b1db102b386ba719b66e95b0f0d751f556b387e6d2/anyio-4.15.1.tar.gz"
@@ -91,13 +96,23 @@ class PiecesCli < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/89/24/92d90bebedf197eb15b144367ce6fd4ad2de571927cd09dde190a36db8fc/platformdirs-4.11.10.tar.gz"
-    sha256 "9cd351c078ccf7dda1fdc5f8ccb9d8f5258984c63990e6df3627dde0b70b51d0"
+    url "https://files.pythonhosted.org/packages/90/a1/d5f9002a70298c64a789779077d8dd90c10aa1f47fe40c86802df874f2a6/platformdirs-4.12.4.tar.gz"
+    sha256 "63743c02414e755de4e31b8f68125c1407495b86c5a006e203c01ff8b9924250"
   end
 
   resource "prompt-toolkit" do
     url "https://files.pythonhosted.org/packages/7d/ea/39b988c938f75cb75d7045b5c69f8bfed47ee2152c8837fb403de29d6fb8/prompt_toolkit-3.0.53.tar.gz"
     sha256 "9ec8a0ad96d5c56148b3f914aa79c1564c3fde5d2e6b876e7bc327e353cf8fa6"
+  end
+
+  resource "pydantic" do
+    url "https://files.pythonhosted.org/packages/c3/da/b8a7ee04378a53f6fefefc0c5e05570a3ebfdfa0523a878bcd3b475683ee/pydantic-2.12.0.tar.gz"
+    sha256 "c1a077e6270dbfb37bfd8b498b3981e2bb18f68103720e51fa6c306a5a9af563"
+  end
+
+  resource "pydantic-core" do
+    url "https://files.pythonhosted.org/packages/7d/14/12b4a0d2b0b10d8e1d9a24ad94e7bbb43335eaf29c0c4e57860e8a30734a/pydantic_core-2.41.1.tar.gz"
+    sha256 "1ad375859a6d8c356b7704ec0f547a58e82ee80bb41baa811ad710e124bc8f2f"
   end
 
   resource "pydantic-settings" do
@@ -121,8 +136,8 @@ class PiecesCli < Formula
   end
 
   resource "python-dotenv" do
-    url "https://files.pythonhosted.org/packages/6a/53/ed9d74092561d4b01a2ef1349d52cdbc135e526c245f366b089cfca6de49/python_dotenv-1.2.3.tar.gz"
-    sha256 "a20a594dabeaa385725aa239d5244871c143ecb356add8a20fcf23773a6c3a35"
+    url "https://files.pythonhosted.org/packages/74/26/2fbeedb218a787a5eea551c7532cac4e009f83d689dd2faa0d0353473f86/python_dotenv-1.2.4.tar.gz"
+    sha256 "f0d53e69935a851c0dcc78f3ab7aaccd8cabef0b92382b576b824212902873c0"
   end
 
   resource "python-multipart" do
@@ -146,8 +161,8 @@ class PiecesCli < Formula
   end
 
   resource "sentry-sdk" do
-    url "https://files.pythonhosted.org/packages/cc/08/1211e4652384195ef754f8ed570566088dc848f8eda7d005abf13f05f17f/sentry_sdk-2.69.2.tar.gz"
-    sha256 "b4d8915a526e626b0b14a2925907554b722d3b8e3e3781570fc35791712af323"
+    url "https://files.pythonhosted.org/packages/67/93/9ef70bfb7346c778caf09b7cd10c17c33f601f2d17019fa1aedcda738b5f/sentry_sdk-2.71.0.tar.gz"
+    sha256 "7beb27a22f06396f3a05510c3da6ea10e1c79e02e859993c27ce4ff074e296d6"
   end
 
   resource "six" do
@@ -156,13 +171,23 @@ class PiecesCli < Formula
   end
 
   resource "sse-starlette" do
-    url "https://files.pythonhosted.org/packages/2b/54/6767bb789b2f2fed6e0f953df949cd39dc263a384c1b65a95232598621d6/sse_starlette-3.4.11.tar.gz"
-    sha256 "1bae716c02f3e6f294be41ff333220692dae7c3cbab077c900f159676719dade"
+    url "https://files.pythonhosted.org/packages/e4/be/0123026f719d1a7936f214a88b553bb5701e04ff2511147c1dab0c5035eb/sse_starlette-3.5.0.tar.gz"
+    sha256 "75de713aa8a9441513cc283220826da079d982770965b951e9437720e8bafdb2"
   end
 
   resource "starlette" do
-    url "https://files.pythonhosted.org/packages/b5/b4/205b0d5241d934e8add0c38aa924c4f9fb7330834ff11e5444db964ec3f9/starlette-1.6.0.tar.gz"
-    sha256 "d4e3ac5e546444960c710297a3c9fc3f7ebae1b7e963f3d36173b49da535be9b"
+    url "https://files.pythonhosted.org/packages/7b/2b/3850dc6bf7ef71b088962eba31dafc6cffd2f96e577ebb0bb316df96da3e/starlette-1.7.0.tar.gz"
+    sha256 "c79f74ea63cff761804fbbfb182f1e0b440c2d07b164d24700c5a1bab5d6ff5d"
+  end
+
+  resource "typing-extensions" do
+    url "https://files.pythonhosted.org/packages/f6/cc/6253133b5bb138fc3306cebfbda2c520f545d36b5be2c7255cc528bb45d6/typing_extensions-4.16.0.tar.gz"
+    sha256 "dc983d19a509c94dba722ee6abd33940f7c05a89e243c47e907eb4db6f1a43e5"
+  end
+
+  resource "typing-inspection" do
+    url "https://files.pythonhosted.org/packages/a3/26/b09b8010994eccc3c09092e6b34058f36a460eea2d4c3e8b910c695975a0/typing_inspection-0.4.4.tar.gz"
+    sha256 "547274fa6b0a561ccf549cc9524b999a578e737d015d8709d021f9d0d13bea47"
   end
 
   resource "urllib3" do
@@ -171,13 +196,13 @@ class PiecesCli < Formula
   end
 
   resource "uvicorn" do
-    url "https://files.pythonhosted.org/packages/5d/ad/04bbb797c84fc1f26cb171f7394716f4865ffb8d8c5e1eef42565c2dfa6b/uvicorn-0.53.0.tar.gz"
-    sha256 "a9356f0cb89b3b8621529c5d5eebd69bfe154f4c3f68b4cf2de47e45fa855c2e"
+    url "https://files.pythonhosted.org/packages/da/34/30e9280707135d2cfc589dfff3cb796bd07a3aeb1a3e415ba09dd89d7bb4/uvicorn-0.54.0.tar.gz"
+    sha256 "a2e33cbfaa0306f8e6b0c13e0cb89d7d7a2da3e62b90c66e18c33d9807b28620"
   end
 
   resource "wcwidth" do
-    url "https://files.pythonhosted.org/packages/3d/7a/f98d4ada7c499565ab0c0fcef28a4e54fafa72b8228a6309803c80493c92/wcwidth-0.8.4.tar.gz"
-    sha256 "2dae09efa25253ae2874188e86d6861af3b1652aef4118cdf3f0bda288a957fb"
+    url "https://files.pythonhosted.org/packages/f0/b4/7830542634bb2d3e62aa3b586a72d5b3b6c91c3168929e7000ef3fed041d/wcwidth-0.9.2.tar.gz"
+    sha256 "ae0ef90b90f6af38b54f1fe6d58662ec33b3cb4b8391958a62416d654231727b"
   end
 
   resource "websocket-client" do

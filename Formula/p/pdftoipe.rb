@@ -1,29 +1,20 @@
 class Pdftoipe < Formula
   desc "Reads arbitrary PDF files and generates an XML file readable by Ipe"
   homepage "https://github.com/otfried/ipe-tools"
-  url "https://ghfast.top/https://github.com/otfried/ipe-tools/archive/refs/tags/v7.2.29.2.tar.gz"
-  sha256 "c8de0dc7eb8fa959c96539fb19ebfb8e16f459e9b4ef9259aeb30b76072cd083"
+  url "https://ghfast.top/https://github.com/otfried/ipe-tools/archive/refs/tags/v7.3.1.1.tar.gz"
+  sha256 "93bf863b757d7b7e29096b99cfb46fae8d354476b3c8ccb855e314ef792ba081"
   license "GPL-2.0-or-later"
-  revision 7
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "eab950e03cf807d0a4b4c48c95b9415b849a44473d090f8d3c2ad02548d86855"
-    sha256 cellar: :any, arm64_tahoe:       "88c7c470ac5f9bf2f2bfe134d3aab7ccd76b29ac2f73bb7dae4a917024a78867"
-    sha256 cellar: :any, arm64_sequoia:     "3e0e835afc52eedc6ab19c1a9ff2281aae8504e0a14ff2ddc5ffc3cc5195f6d7"
-    sha256 cellar: :any, arm64_linux:       "3c8becc66f6fb46b53421f5f9d5732c6bbea0d2f28f02270692c3d7dc8135566"
-    sha256 cellar: :any, x86_64_linux:      "257b4b203ec6591017ea165d9e688907b03ff4163e4b50e7d8024417fdc1df48"
+    sha256 cellar: :any, arm64_golden_gate: "4f6e9ba96322a350067c072d9ae5363303eebad345cb6d07e87df44c722a94bc"
+    sha256 cellar: :any, arm64_tahoe:       "d8b6832219a141c994cb44204d7a6d96940e083c36f91b8083eaeaf0c4cea3a7"
+    sha256 cellar: :any, arm64_sequoia:     "4e01c0c4770f7618f8d232989045635b0158a55a5fe6efd876da6a370c080610"
+    sha256 cellar: :any, arm64_linux:       "f00e60561c20da1ff50e84a55e90972f88a5b7d3db1bb7f4b9f3d7a6e3399d57"
+    sha256 cellar: :any, x86_64_linux:      "ce49485bf140ac3c0a8b6ea7345b4b20b15b3434a4f912320ddd0d55451c572e"
   end
 
   depends_on "pkgconf" => :build
   depends_on "poppler"
-
-  # Workaround for poppler 26.06.
-  patch do
-    url "https://github.com/otfried/ipe-tools/commit/3875da3ae31515dad4f2aa7ac5f59f2c2f70c32c.patch?full_index=1"
-    sha256 "15369effacfa0df2559049a1dcc01f20036b0a158bb3059c6ce333287549de7a"
-    type :backport
-    resolves "https://github.com/otfried/ipe-tools/pull/82"
-  end
 
   def install
     cd "pdftoipe" do

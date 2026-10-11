@@ -8,26 +8,28 @@ class Dnsviz < Formula
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "8e48b3e7cb89aa85550f66524d85ed5950756c0431402824a5d9406c4f8c01f1"
-    sha256 cellar: :any, arm64_tahoe:       "42faff5f1b61dbd115b70a7def664786ceeb6a97ac85bed19a143d0d9a1cd23d"
-    sha256 cellar: :any, arm64_sequoia:     "43772acbfda4f9fee812c2437f529bafafcdaa41b4d25579e20f322e5dd5148e"
-    sha256 cellar: :any, arm64_linux:       "e6dc72330fa9cd5f3c46c263098a658cf89d1e1e2810248e90992c4aa6d88f16"
-    sha256 cellar: :any, x86_64_linux:      "18d33a674437e289bb28cb78e0677be2729eb7194f35b0273b3f76731fa43d79"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "9c0fe85faca1c39f39a0f6f095674faaa5e38374887e827aadb1a66e78dfbd9b"
+    sha256 cellar: :any, arm64_tahoe:       "d62abc01ab3f338c19d104ad364ed8b409341baf55695042e33d7e898e380de0"
+    sha256 cellar: :any, arm64_sequoia:     "67f433fbbd71572f0863a2788216f95d5446667478919bec2d3782e086d5e9be"
+    sha256 cellar: :any, arm64_linux:       "283453170a5296c8ce9cee0837a0977ddc6d011ac8f885b2e13fcfe0517cc139"
+    sha256 cellar: :any, x86_64_linux:      "6e8f91c8af7a24a9de3abbe56e70754a3d7a7a5422f6b38d0b5072d82908cf13"
   end
 
   depends_on "bind" => [:build, :test]
   depends_on "pkgconf" => :build
+  depends_on "rust" => :build # for dnspython > uv_build > maturin
   depends_on "swig" => :build
   depends_on "json-c" => :test
   depends_on "cryptography" => :no_linkage
   depends_on "graphviz"
-  depends_on "python@3.14"
+  depends_on "python@3.15"
 
   pypi_packages extra_packages: ["dnspython", "pygraphviz", "setuptools"]
 
   resource "dnspython" do
-    url "https://files.pythonhosted.org/packages/8c/8b/57666417c0f90f08bcafa776861060426765fdb422eb10212086fb811d26/dnspython-2.8.0.tar.gz"
-    sha256 "181d3c6996452cb1189c4046c61599b84a5a86e099562ffde77d26984ff26d0f"
+    url "https://files.pythonhosted.org/packages/ef/4a/50822184bd67cc6493f0fb6a880749158fcd31ab3fa07409acfd91f9fc85/dnspython-2.9.0.tar.gz"
+    sha256 "b44dc6b18f07a8b1c56676a19fbfdb5209415b046a9cece286baafa87ff3f7f1"
   end
 
   resource "pygraphviz" do
@@ -36,13 +38,17 @@ class Dnsviz < Formula
   end
 
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/34/26/f5d29e25ffdb535afef2d35cdb55b325298f96debd670da4c325e08d70f4/setuptools-83.0.0.tar.gz"
-    sha256 "025bccbbf0fa05b6192bc64ae1e7b16e001fd6d6d4d5de03c97b1c1ade523bef"
+    url "https://files.pythonhosted.org/packages/6d/44/f5da03a8ef95d369145c5bb53050e7877c9f3d312e128605fd9504829143/setuptools-84.0.0.tar.gz"
+    sha256 "f4695c21257f0d9b537ec2692c941d02ee143b7cc1276941349a546573b2ef73"
   end
 
   resource "example-com-probe-auth", :test do
     url "https://ghfast.top/https://raw.githubusercontent.com/dnsviz/dnsviz/refs/heads/master/tests/zones/unsigned/example.com-probe-auth.json"
     sha256 "6d75bf4e6289db41f8da6263aed2e0e8c910b8f303e4f065ec7d359997248997"
+
+    livecheck do
+      skip "Test fixture"
+    end
   end
 
   def install

@@ -4,6 +4,7 @@ class Baysor < Formula
   url "https://ghfast.top/https://github.com/kharchenkolab/Baysor/archive/refs/tags/cpp-0.9.0.tar.gz"
   sha256 "d495e85207a5961bfb4e937f8833973b4230d10b54f883df25e778d9414b2d5c"
   license "MIT"
+  revision 1
   head "https://github.com/kharchenkolab/Baysor.git", branch: "cpp"
 
   livecheck do
@@ -12,11 +13,11 @@ class Baysor < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "15871ca312ff13755b07232a65deffc766848562f08d9df28d91c79c70b26df8"
-    sha256 cellar: :any, arm64_tahoe:       "64ee99bcb2ecbd0c1987495b81515b41ce025e5e348ab3e75446e05ea1483b3f"
-    sha256 cellar: :any, arm64_sequoia:     "115c3c8e82347b294400d7a1e64e5a5f05ec2a73c2b6f5ddf80e56cf30075c36"
-    sha256 cellar: :any, arm64_linux:       "bd96da2b869124532746134f67b904fdb40e50bde7b8a3e68f7f11299cd9383a"
-    sha256 cellar: :any, x86_64_linux:      "4b0c12ebc6ea6d514b3a2fc878723eea270587a0c10e018da8a0104ae8b6b39d"
+    sha256 cellar: :any, arm64_golden_gate: "8f006d8aa75998b1ba52dfea091863677777ad7186f5bac7fd7e5a9a0910eb6e"
+    sha256 cellar: :any, arm64_tahoe:       "b7ddf651a44519c6eb0987c9df48852a529bc72b3f551dede8d724531fb66234"
+    sha256 cellar: :any, arm64_sequoia:     "09df3493765d46b1f73f84e02fafaedb0e65fdfbdfa2c98208caf91135e37040"
+    sha256 cellar: :any, arm64_linux:       "f740545e7a63200cab7e205b2abb8b35175ccb9822fd6f448ee2eab59692497f"
+    sha256 cellar: :any, x86_64_linux:      "1e1ef48028875d03530942d3da4da979c0820e9322c7a187a01658cf609a91cf"
   end
 
   depends_on "cgal" => :build

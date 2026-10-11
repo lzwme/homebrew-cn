@@ -8,18 +8,16 @@ class Xxh < Formula
   license "BSD-2-Clause"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_golden_gate: "17b8a5fb2bcd68541d341b6a1f4534087e07ddfc2ff3355182693d78448fa5a4"
-    sha256 cellar: :any,                 arm64_tahoe:       "07ed49c087bd4b82099ff25d213a71627a53d0c86bce7f95938a0072cf1e05ac"
-    sha256 cellar: :any,                 arm64_sequoia:     "9d00fc1786130a6714ae9b87c8d2477b4487605bc921fe37666c22d2794a73d1"
-    sha256 cellar: :any,                 arm64_sonoma:      "15847d147ad2cc7806d50a69f2df443ca95a081a99222eac211d809047e57583"
-    sha256 cellar: :any,                 sonoma:            "8a1313dff05fbd4a04345cc3c5782d2142eb07ad9ba0dfa21761d58363ac76c7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "f69ba9f8e23d52efd349c6d51cdfcd2dec59c8828b76589ba2a2a94765b58301"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "4fe168ea7da7ddf85fba4193337c1c4e60d52f0005fdc48c3510de8c35cef67b"
+    rebuild 3
+    sha256 cellar: :any, arm64_golden_gate: "923abfd2d054fbfe70eb2e7a38ab8572730bc25bea1101f81fd238015f92cdf2"
+    sha256 cellar: :any, arm64_tahoe:       "bbd88ea9a7e45d7ef0311cd04e1ee522f616c182fb4b6c5e50fc063e97e3d727"
+    sha256 cellar: :any, arm64_sequoia:     "22c559c25b18d828a505323f020f6433b996e42f99e31084b90b6fe2c6c17d68"
+    sha256 cellar: :any, arm64_linux:       "dba58e415e8bd4c41eb30a26ae6dcc076890e0b46d73afab3b7b1e35b05562c2"
+    sha256 cellar: :any, x86_64_linux:      "6d3c717281bc03fb6df9f22554728dbe580f07a7cc99d7634b49e433c629d42a"
   end
 
   depends_on "libyaml"
-  depends_on "python@3.14"
+  depends_on "python@3.15"
 
   resource "pexpect" do
     url "https://files.pythonhosted.org/packages/42/92/cc564bf6381ff43ce1f4d06852fc19a2f11d180f23dc32d9588bee2f149d/pexpect-4.9.0.tar.gz"

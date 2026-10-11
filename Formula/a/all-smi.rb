@@ -1,17 +1,17 @@
 class AllSmi < Formula
   desc "GPU monitoring tool for NVIDIA/Jetson/Apple Silicon/Tenstorrent"
   homepage "https://github.com/lablup/all-smi"
-  url "https://ghfast.top/https://github.com/lablup/all-smi/archive/refs/tags/v0.27.0.tar.gz"
-  sha256 "31703c3b4a0bcb53eec9bd9c613a4327e310459bb5f22d0b276a69de989b3a8f"
+  url "https://ghfast.top/https://github.com/lablup/all-smi/archive/refs/tags/v0.27.1.tar.gz"
+  sha256 "52d01dbfa3565b38860538edfcffd834c5190649c926d605d1677883371fb75c"
   license "Apache-2.0"
   head "https://github.com/lablup/all-smi.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "cd1b38bd00fa9091f78381ff69281c6601b5db634c951fdc2ea97d7df1446b09"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "9824a91fbc8cd5c582fc007f6e44071580f3d99c5373f9ddac9aea63b52db0bb"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "1fe7a29dc04fed1d56400fca1964a5c200ac7469a6b816ad5e32ba707b6a5bb9"
-    sha256 cellar: :any,                 arm64_linux:       "6bf8a8abc22c3436131368a607913858529f30a420ce27cd72ae3176184c4090"
-    sha256 cellar: :any,                 x86_64_linux:      "1d872a8167290426bb12922f373ef3ce01a2b71c680e7e11232aa431468c5fe2"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "33cc1de6971918ef8c43793409a0a87638bfa53963485980fae5bc3e9b3a9b4c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "4c0376fe6491dc533a89d529cd8e4957f783ed42cfd563af6b894b27443d8c02"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "e7f640c6512a8bbc3ca8b5f838749710110c1d85bc6266d2b345c61b2fed1efd"
+    sha256 cellar: :any,                 arm64_linux:       "f5c5394a96c1159a3c2897269fcab2a4d8250b50612b09cab1db3f13696c0f75"
+    sha256 cellar: :any,                 x86_64_linux:      "3c6cabcde7d4db3767b2baabc5c8c675a6f4b8c05a7159ced499e3bfacb91255"
   end
 
   depends_on "rust" => :build

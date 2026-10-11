@@ -8,12 +8,13 @@ class Fobis < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "f9f7c95f20df51346831cd5796ba2a4ac1b0c78022321cdee91adae5859ea34d"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "cbde637426047ae42a69abc5d2fda25b56877b8f1f07d21b553e1542b7243eff"
   end
 
   depends_on "gcc" # for gfortran
   depends_on "graphviz"
-  depends_on "python@3.14"
+  depends_on "python@3.15"
 
   resource "annotated-doc" do
     url "https://files.pythonhosted.org/packages/5a/8e/38aa427ed5402449e226975b649c5dc73ccadfefeb95e6aecb8f8ea4b6b6/annotated_doc-0.0.5.tar.gz"

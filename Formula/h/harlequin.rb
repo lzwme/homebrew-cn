@@ -6,16 +6,17 @@ class Harlequin < Formula
   url "https://files.pythonhosted.org/packages/c9/67/aa8c31405378d0a2b755597d164daea2eb2f7754b713385d4e7e9662d345/harlequin-2.16.1.tar.gz"
   sha256 "f60956a36c298913297a044e287df03bf051e392f797c649219b7195f0f70d15"
   license "MIT"
+  revision 1
   head "https://github.com/tconbeer/harlequin.git", branch: "main"
 
   no_autobump! because: "has non-PyPI resources"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "669da53b39737c1d598b63ac723ead611d6418c64be880d024cacd1dc609f571"
-    sha256 cellar: :any, arm64_tahoe:       "b7cc52297ccd3a476b3d3bd2d6b9f50fc46d2e4a9025df15381b0f7fd260daa5"
-    sha256 cellar: :any, arm64_sequoia:     "8c1c29f83bc60ad6985665a449f26a448d5d213bd38f06a2fd7b1888bd7bbdfc"
-    sha256 cellar: :any, arm64_linux:       "dfc518cfeebef424f6ef0387bc266785c5f9b27e683aab399c468bc63199342f"
-    sha256 cellar: :any, x86_64_linux:      "36f86d2f192eed99e9d0203209eb34f42c423d9fa9073dcb7dca0e9471cdc3e3"
+    sha256 cellar: :any, arm64_golden_gate: "9c44d8a17561e8da81dd6b54dbbe1155644b24353ad9ca671937e47beb83dd1f"
+    sha256 cellar: :any, arm64_tahoe:       "c75670d76b528b29420d7265e42c3c04f2eeb7c6169af765ae805359f44c4dcd"
+    sha256 cellar: :any, arm64_sequoia:     "caf7c2f56a7c44eb5bcafd08e7a869b0c2c6c8f6201ccc99e6cd6ba253707fa6"
+    sha256 cellar: :any, arm64_linux:       "f445f557591b090591ccfcdd214b68d932a30671710a8b5a34709d23f6fd6a0a"
+    sha256 cellar: :any, x86_64_linux:      "0eed76293ea8f6b44a5e06043eaab43a160b1c0e78057d295960122377f995a7"
   end
 
   depends_on "cmake" => :build
@@ -127,8 +128,8 @@ class Harlequin < Formula
   end
 
   resource "pyarrow" do
-    url "https://files.pythonhosted.org/packages/3d/e3/27f57f80141379d60defe6703eb50a707325706f07fedfd1312c7a751995/pyarrow-25.0.1.tar.gz"
-    sha256 "9150a83248bfed9813ea3c3af74c3856c1984d444aa28e58bf7733b9750ddf6a"
+    url "https://files.pythonhosted.org/packages/ec/34/17c34cb38e5d940e38f0f0d9fdfa0e8a506676409ea9b85aff7e3079f831/pyarrow-26.0.0.tar.gz"
+    sha256 "0cccd36e00ea3afeb52ded61f2721ce71f604853d70c45365c58324eb773d6ae"
   end
 
   resource "pygments" do

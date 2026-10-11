@@ -8,11 +8,12 @@ class Auditwheel < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "65da5fbaead988dfbcc6e68330356ab7ccdee99d3d8cf6960cf03932a836a7f8"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "67943d7c0e4ac5fefeb877bf5c64c73c76fae624084cb202ad8b35d58a8317a8"
   end
 
   depends_on :linux
-  depends_on "python@3.14"
+  depends_on "python@3.15"
 
   resource "cffi", :test do
     on_arm do

@@ -8,16 +8,17 @@ class Apprise < Formula
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "be297b3100126b76ae9d7593c704c95cc09fc4f9159a001f65f2d0f7eb88af9f"
-    sha256 cellar: :any, arm64_tahoe:       "58a8d8113e7377b94c5bc4e93a1edf8c26a1aeff47346b48287214fbf060fc97"
-    sha256 cellar: :any, arm64_sequoia:     "ffbf9217b42a8ce6f8e1fdf403ded99a08bf5040b162b2caaf8fa20a55b13924"
-    sha256 cellar: :any, arm64_linux:       "41d3c4f0e3d807529a7e94643e21dc158da7725ce099fb82cab023524362449d"
-    sha256 cellar: :any, x86_64_linux:      "31901f42efe011f37116586e85f97d64d6feaf6a8ef1639a8f04a8ad924fe95e"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "25be84c8c8bad4d754765e52ca4a27ad543c79bbb039902797665d5c82777af7"
+    sha256 cellar: :any, arm64_tahoe:       "8759d983fdb68d6c59d2e81955d1bd78b72ed2805aad0f31a72f4fb6e1e605a2"
+    sha256 cellar: :any, arm64_sequoia:     "1443c724659ec7814fbb59b2afa58d0a4e48e0d794fb140852dd55968b199cf5"
+    sha256 cellar: :any, arm64_linux:       "59ddff6fc8fb0c35e2c4b2f3490a92786fdea18abe0965951d7359bd8920863b"
+    sha256 cellar: :any, x86_64_linux:      "7a39502d41e7d5d36d76a09bc290c942650fdcf19a0235ee0ad687b0620b1a18"
   end
 
   depends_on "certifi"
   depends_on "libyaml"
-  depends_on "python@3.14"
+  depends_on "python@3.15"
 
   pypi_packages exclude_packages: "certifi"
 

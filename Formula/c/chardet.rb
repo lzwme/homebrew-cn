@@ -8,10 +8,11 @@ class Chardet < Formula
   license "0BSD"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "bda17abefbfa43a7690eed29b3124ef3573d55771e6e599344c36806da1d3f73"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "eb5da8cd1c212d3784072bd05c2b737637e69c804b511ee6ca0e3bc28ac7bcdb"
   end
 
-  depends_on "python@3.14"
+  depends_on "python@3.15"
 
   def install
     virtualenv_install_with_resources

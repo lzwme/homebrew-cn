@@ -9,16 +9,17 @@ class Commitizen < Formula
   head "https://github.com/commitizen-tools/commitizen.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "635317d0d56c58ea1297cc6bbf28a20b0371ddbf30da41aa346e75ee1fe5d26d"
-    sha256 cellar: :any, arm64_tahoe:       "0af50392a3395c79d77037b787155355a284ea559b9162edb9ea58e9f3eeb4b0"
-    sha256 cellar: :any, arm64_sequoia:     "4cbb9d8e606d7f627c3265b0c2cd5949b34db9bfaa5603597d736d55ef4bdd83"
-    sha256 cellar: :any, arm64_linux:       "37a6f9ccb9c04ad8f9e3260ece503615bdbfbc94a93330e17797b32b130f18ec"
-    sha256 cellar: :any, x86_64_linux:      "a1bb82c4b986f171357d53b856b5fee00341586f461569f3045bdce10d26ed8a"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "d494db3edf823e13f234f19d6e14f330467b9ce164be33cf715c78390fac7b05"
+    sha256 cellar: :any, arm64_tahoe:       "fa37aee9ed4da2c9e0d0f9783deb4881c3c3989ac235c7ace8f3356f33030082"
+    sha256 cellar: :any, arm64_sequoia:     "213327bf957b985d1f4692d089d91ff94faeb0b3af649a505cd0963a167b9cb7"
+    sha256 cellar: :any, arm64_linux:       "6f1bc3c66b619bb2884fe5e631b0cdfcb1506791d5ff633c4cd2e14a11709ea8"
+    sha256 cellar: :any, x86_64_linux:      "bc0e8b11d47232c7dd38ad8e570f67b26e93b7e072a7219fadca1309b204800e"
   end
 
   depends_on "rust" => :build
   depends_on "libyaml"
-  depends_on "python@3.14"
+  depends_on "python@3.15"
 
   resource "argcomplete" do
     url "https://files.pythonhosted.org/packages/87/6f/5a73f04007ca950701765949209f068da628bd11f9c2da287278ce91e0ee/argcomplete-3.7.2.tar.gz"

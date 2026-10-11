@@ -1,15 +1,30 @@
 class Manticoresearch < Formula
   desc "Open source text search engine"
   homepage "https://manticoresearch.com"
-  url "https://ghfast.top/https://github.com/manticoresoftware/manticoresearch/archive/refs/tags/29.9.0.tar.gz"
-  sha256 "e1dc58dc671e74278a6ab5327c2fc666d75ae3ad6fbc59587f60376043f3cb4e"
   license all_of: [
     "GPL-3.0-or-later",
-    "GPL-2.0-only", # wsrep
     { any_of: ["Unlicense", "MIT"] }, # uni-algo (our formula is too new)
   ]
   version_scheme 1
   head "https://github.com/manticoresoftware/manticoresearch.git", branch: "main"
+
+  stable do
+    url "https://ghfast.top/https://github.com/manticoresoftware/manticoresearch/archive/refs/tags/29.9.0.tar.gz"
+    sha256 "e1dc58dc671e74278a6ab5327c2fc666d75ae3ad6fbc59587f60376043f3cb4e"
+
+    resource "mcl" do
+      url "https://ghfast.top/https://github.com/manticoresoftware/columnar/archive/cb282a2442d2d51349fbea67cda97c2dda37f0bd.tar.gz"
+      version "cb282a2442d2d51349fbea67cda97c2dda37f0bd"
+      sha256 "5d444222405c00ce21f3a360e5983b140247f43b18c7f01b85d4b564e87a8432"
+
+      livecheck do
+        url "https://api.github.com/repos/manticoresoftware/manticoresearch/contents/mcl?ref=#{LATEST_VERSION}"
+        strategy :json do |json|
+          json["sha"]
+        end
+      end
+    end
+  end
 
   # There can be a notable gap between when a version is tagged and a
   # corresponding release is created, so we check the "latest" release instead
@@ -20,12 +35,12 @@ class Manticoresearch < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_golden_gate: "b300b289bac9c47212b9ca40fffb9f61e1e097479f0450fc43400a58c2a77f0c"
-    sha256 arm64_tahoe:       "ea403a1c9652da95083bde6ec82e9dd73557f0374da9994eb8e7b534291d7090"
-    sha256 arm64_sequoia:     "e1daf52484cd88c81dadd902fd8c74200a4d26b89f12dc7e48ab6ad9b563801a"
-    sha256 arm64_linux:       "9d9778ffd584952ce90d88d0ee5d566aecf431e51b6809b12c75e254479ed78d"
-    sha256 x86_64_linux:      "24b7931670a1704be065fa89039adcc83c8070040e2a814c138bd5429429ca13"
+    rebuild 2
+    sha256 arm64_golden_gate: "b4d2c707b3bac8580073a52ef3c9935b33739e0448f5755803ecfecd83febacc"
+    sha256 arm64_tahoe:       "5f243308e1c8e196e54c7f5b56aed3d105f71085f35625a56651d012affe8e95"
+    sha256 arm64_sequoia:     "2a74feafe1230e7dda0f136d85efdc1bba78926a6669419323a35010dbfac174"
+    sha256 arm64_linux:       "367fc7fbc92d9f5cdc1849199ba07a8c478fb6739e7de5b0522e10bd86d4b654"
+    sha256 x86_64_linux:      "0b414d42405f1927ed56b5c190454fd29304bc35d9270bf85ba4cd24b36edb96"
   end
 
   depends_on "cmake" => :build
@@ -35,6 +50,7 @@ class Manticoresearch < Formula
   # NOTE: `libpq`, `mariadb-connector-c`, `unixodbc` and `zstd` are dynamically loaded rather than linked
   depends_on "boost"
   depends_on "cctz"
+  depends_on "croaring"
   depends_on "icu4c@78"
   depends_on "libpq"
   depends_on "mariadb-connector-c"
@@ -52,16 +68,13 @@ class Manticoresearch < Formula
     depends_on "zlib-ng-compat"
   end
 
-  resource "mcl" do
-    url "https://ghfast.top/https://github.com/manticoresoftware/columnar/archive/cb282a2442d2d51349fbea67cda97c2dda37f0bd.tar.gz"
-    version "cb282a2442d2d51349fbea67cda97c2dda37f0bd"
-    sha256 "5d444222405c00ce21f3a360e5983b140247f43b18c7f01b85d4b564e87a8432"
+  resource "uni-algo" do
+    url "https://ghfast.top/https://github.com/manticoresoftware/uni-algo/archive/refs/tags/v0.7.2.tar.gz"
+    sha256 "4df3a10b6f9f0cc3be98834f09100c822ba3e3be13e9dfd23cf4810ed229633f"
 
     livecheck do
-      url "https://api.github.com/repos/manticoresoftware/manticoresearch/contents/mcl?ref=#{LATEST_VERSION}"
-      strategy :json do |json|
-        json["sha"]
-      end
+      url "https://ghfast.top/https://raw.githubusercontent.com/manticoresoftware/manticoresearch/refs/tags/release-#{LATEST_VERSION}/cmake/GetUniAlgo.cmake"
+      regex(%r{UNIALGO_GITHUB.*?/v?(\d+(?:\.\d+)+)\.t}i)
     end
   end
 
@@ -72,8 +85,17 @@ class Manticoresearch < Formula
   # - sortergroup: drop redundant `using` that GCC rejects as private
   patch :DATA
 
+  deny_network_access!
+
   def install
-    resource("mcl").stage buildpath/"mcl"
+    resource("mcl").stage("mcl") if build.stable?
+
+    resource("uni-algo").stage do
+      system "cmake", "-S", ".", "-B", "build", *std_cmake_args(install_prefix: buildpath/"uni-algo")
+      system "cmake", "--build", "build"
+      system "cmake", "--install", "build"
+      ENV.append_path "CMAKE_PREFIX_PATH", buildpath/"uni-algo"
+    end
 
     # Avoid statically linking to boost
     inreplace "src/CMakeLists.txt", "set ( Boost_USE_STATIC_LIBS ON )", "set ( Boost_USE_STATIC_LIBS OFF )"
@@ -91,11 +113,13 @@ class Manticoresearch < Formula
       -DCMAKE_REQUIRE_FIND_PACKAGE_cctz=ON
       -DCMAKE_REQUIRE_FIND_PACKAGE_nlohmann_json=ON
       -DCMAKE_REQUIRE_FIND_PACKAGE_re2=ON
+      -DCMAKE_REQUIRE_FIND_PACKAGE_roaring=ON
       -DCMAKE_REQUIRE_FIND_PACKAGE_stemmer=ON
       -DCMAKE_REQUIRE_FIND_PACKAGE_xxHash=ON
       -DMYSQL_CONFIG_EXECUTABLE=#{formula_opt_bin("mariadb-connector-c")}/mariadb_config
       -DRE2_LIBRARY=#{formula_opt_lib("re2")/shared_library("libre2")}
       -DWITH_GALERA=OFF
+      -DWITH_JIEBA=OFF
       -DWITH_ICU_FORCE_STATIC=OFF
       -DWITH_RE2_FORCE_STATIC=OFF
       -DWITH_STEMMER_FORCE_STATIC=OFF

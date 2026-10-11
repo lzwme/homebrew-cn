@@ -4,17 +4,17 @@ class MetaPackageManager < Formula
 
   desc "Wrapper around all package managers with a unifying CLI"
   homepage "https://kdeldycke.github.io/meta-package-manager/"
-  url "https://files.pythonhosted.org/packages/02/16/97bb9cc6a27796b84ff80b0119450b0a03627964c56b9559780bfaa6f3f3/meta_package_manager-8.1.0.tar.gz"
-  sha256 "59bb2c0b5d973da044f5f5713c6684f762190e37dd9a2ad7795a2adcb5c217a1"
+  url "https://files.pythonhosted.org/packages/46/af/1189bce69fc2f194b24098990bcc11355ecc87a593dfd24980b7595ac2c4/meta_package_manager-8.1.1.tar.gz"
+  sha256 "dd892a4eeb42ff229821b2b8f5cfac9532dbbdf9d6d83ccb6514088e74b314c8"
   license "GPL-2.0-or-later"
   head "https://github.com/kdeldycke/meta-package-manager.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "c81abeeaff1c01e2fd1d4755c5e89fae3391282dd7ca969863a015654f9789a9"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "6b0980f7c1aea5ae166ee8d9b87c425b854a74d2f4848fe6b7d1473bdf99038d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "6e1d63fa296170c36a1caecb715ba848ada2a61f6a291eae382d7f0e03451c5d"
-    sha256 cellar: :any,                 arm64_linux:       "86d46836164e7c239c8f59daa48c3237042d718d21581dd965e94a8cf39eb752"
-    sha256 cellar: :any,                 x86_64_linux:      "1be751932ff77e702e14f996cdd702702a5859bb9ef8fd9b9b9d4ac24c918c5a"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "d1da876f59695afaf2f579e4de0ac0f852f6af9db8782c927f217b0cb2afc2f6"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "13ec46c9f766097b1ac579c3fb7472c7312b6b66db6690548d2fa950d327e29f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "eb3e191cb48296e5ee2c2338c3419734b1088c03002553369c49b89fa246b125"
+    sha256 cellar: :any,                 arm64_linux:       "03d04c3d286209210edb4324f1795a74c302576f45f7fdcc99189e52ca6be73d"
+    sha256 cellar: :any,                 x86_64_linux:      "1ad30a6d98036fcde53229fbc7ad7e849a1ede5b9aaa92470ef9f3760d9d67de"
   end
 
   depends_on "rust" => :build
@@ -45,8 +45,8 @@ class MetaPackageManager < Formula
   end
 
   resource "click-extra" do
-    url "https://files.pythonhosted.org/packages/c1/50/b1461452bb7dcdf9d0b18a10888ea26ce84f06d38663f79c8268ab74414e/click_extra-9.4.0.tar.gz"
-    sha256 "35f2fe0fdb863663dde284145b1e8c86b6533b1b62ac81fdd7126a6619e3754c"
+    url "https://files.pythonhosted.org/packages/13/20/e2d60c90277a668b10a00f7a74cd52a87ab0c85afd5b8975cc582601eafc/click_extra-9.4.1.tar.gz"
+    sha256 "065df41b1c8f6601bd9e550d79ac34a73ba40bfc84cfdb320cdcfe066c40a6d1"
   end
 
   resource "cloup" do
@@ -85,8 +85,8 @@ class MetaPackageManager < Formula
   end
 
   resource "wcwidth" do
-    url "https://files.pythonhosted.org/packages/dc/ac/3a943d2792c9bb368aaa8b50121c0f778460ba2d7fbdc0a0366201d9e761/wcwidth-0.9.1.tar.gz"
-    sha256 "5823209b0d43af322ce698c689380d7c15ca31fa8e6e3be8459f27031bef0af5"
+    url "https://files.pythonhosted.org/packages/f0/b4/7830542634bb2d3e62aa3b586a72d5b3b6c91c3168929e7000ef3fed041d/wcwidth-0.9.2.tar.gz"
+    sha256 "ae0ef90b90f6af38b54f1fe6d58662ec33b3cb4b8391958a62416d654231727b"
   end
 
   resource "xmltodict" do

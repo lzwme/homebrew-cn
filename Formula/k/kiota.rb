@@ -1,18 +1,17 @@
 class Kiota < Formula
   desc "OpenAPI based HTTP Client code generator"
   homepage "https://aka.ms/kiota/docs"
-  url "https://ghfast.top/https://github.com/microsoft/kiota/archive/refs/tags/v1.35.0.tar.gz"
-  sha256 "dbf6050dc24f80c74a354893cc4c0146ddf7b9bc255d3d95a06e9fa17dc4ad9a"
+  url "https://ghfast.top/https://github.com/microsoft/kiota/archive/refs/tags/v1.36.0.tar.gz"
+  sha256 "270d166792183bb97dbc4a61fcb1d9bfbf790ea7190356097d27b99da3e28747"
   license "MIT"
   head "https://github.com/microsoft/kiota.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "4b87845f945786d6b686d73e611cfd6e2d2e63cd13cd6760d15845b6dce32e58"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "4a9c77a399ba1c195f46f0ac9fba316ca3961b95bd932f692a488151161b30d0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "78f4b23e3ec267cb0ab4e12ba3d759a664fcb6e69ebcbd29edef04d820021312"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "5e14039346cb054f65d1e2c1e13a76ad431298db00bb9930a35d36f7c9d7352f"
-    sha256 cellar: :any,                 arm64_linux:       "06e6370227aca99b8fd718f27513e493a3be1d169f0f21de6a46782bf3bb12f2"
-    sha256 cellar: :any,                 x86_64_linux:      "073a5802af59ff09c924102e3cab02b37f0f98d1bb885b2cd60971a46a6402ef"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "8e2f42fda752e101696d481cd29143b25a2c0f58f1de8503a934bf2d11208a12"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "74cbec6eac179ab82daf99050ddbe0fa46a2db34d754bb217913ca3d043d3974"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "caef875dd30f31b2fc2b140ef4f6f37885965a5d87575bdee35674a395987881"
+    sha256 cellar: :any,                 arm64_linux:       "862ae3b875bcd0df3f85e38b17b059b2295c9e6184ebf6311b4d1c0d8e7d2f97"
+    sha256 cellar: :any,                 x86_64_linux:      "5ac620a9843b4ee355752c8d730dd0594c0693f3ccd4620ee5c934043998fec7"
   end
 
   depends_on "dotnet"

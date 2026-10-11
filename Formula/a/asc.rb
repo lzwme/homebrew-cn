@@ -1,20 +1,22 @@
 class Asc < Formula
   desc "Fast, lightweight CLI for App Store Connect"
   homepage "https://asccli.sh"
-  url "https://ghfast.top/https://github.com/rorkai/App-Store-Connect-CLI/archive/refs/tags/5.14.0.tar.gz"
-  sha256 "8e1759a166c834d6848f82f6c160fcec17fabff7a1e9deb9435a9491a8ba5753"
+  url "https://ghfast.top/https://github.com/rorkai/App-Store-Connect-CLI/archive/refs/tags/5.14.1.tar.gz"
+  sha256 "7389815ef5d3e131e4338c1e6a05a0bf0fa235e8624be05fae0cbcb9f2ccfc71"
   license "MIT"
   head "https://github.com/rorkai/App-Store-Connect-CLI.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "011c3fa345a12e9349d031794f89dd59ba92f21bd7fb58b2bf2d9ae57511fd93"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "c2093cb0ef0891bfa5b4774ab7404863325838760ef7bb6a6a3e0437e46d7406"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "5f7b17078e980a52006eedc8121270e816557bd4a7bf76e1dda7c867a902861c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "b9e95f85c8047a0016bbdc301ed8ca4aa9f9980d80a49baf4c7d69de52984ed4"
-    sha256 cellar: :any,                 x86_64_linux:      "90b7f04ea07c039eb29f1444a1273c47a144b3fea916913682672560badec936"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "60688aa2c270020e1eec14bca7a4160a582781a410176160be2a4ed14f2798ba"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "85dea296abb108c9ae29823115f53ac8b088ac9d6b6d0ed08d3f97b593de740e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "485e0ad59946cad621ba7797c53a67974bb69fe93941c63bb590fc4331e5ab8b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "eb7664e245736983fadfcf6a006de86d0feae260675186c72e620d703946b3c0"
+    sha256 cellar: :any,                 x86_64_linux:      "e8efa4a1ccb0d0a796799210db95d968eeb451e6ac9d2f03b395ef26b6033b90"
   end
 
   depends_on "go" => :build
+
+  conflicts_with "asccli", because: "both install `asc` binaries"
 
   deny_network_access!
 

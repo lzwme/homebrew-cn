@@ -9,11 +9,12 @@ class Hf < Formula
   head "https://github.com/huggingface/huggingface_hub.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "e3ebf7721dd1a8e0c98fb75c6594786a2a2952fe5882d1eb96742855fc2acd2d"
-    sha256 cellar: :any, arm64_tahoe:       "208333cbd9366cbd007f549df2fa5febabec380d573dc1d6129491f4184048a2"
-    sha256 cellar: :any, arm64_sequoia:     "b1163bd2d1357b422590e72f906f56ddcbacce41d832b8968a61103aa048ebff"
-    sha256 cellar: :any, arm64_linux:       "e813e5bb0fd7d2868cd385a6ab728265a87cf2e07966ea3ef9320a173dea9be3"
-    sha256 cellar: :any, x86_64_linux:      "6026a0c51059d4b46a7e20ba1ebe12f16f0ba46238b5b1da0cb429af047d96af"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "9e00d9c0ba1e4d9ceab34031bec953dee2d2bacbdffe0ea288612922f25214b5"
+    sha256 cellar: :any, arm64_tahoe:       "4edafd6cce3f901367f7dda9aa71efddec1fd5b5e7b549ac36b433b870dbf0c1"
+    sha256 cellar: :any, arm64_sequoia:     "ace4aac197db65f463982779dfb3f6b63aafccc3322c7680f0010c7c0869f8c5"
+    sha256 cellar: :any, arm64_linux:       "3b11cb5cf2a83daa0f1fd8931218bf5ab069cd33e6d38da22d68900be6f79607"
+    sha256 cellar: :any, x86_64_linux:      "a1aff5065b5deaba34ef781a7ba553e4b52eef822df04bbcf1a92ffd320533e0"
   end
 
   depends_on "pkgconf" => :build
@@ -22,7 +23,7 @@ class Hf < Formula
   depends_on "certifi" => :no_linkage
   depends_on "git-lfs"
   depends_on "libyaml"
-  depends_on "python@3.14"
+  depends_on "python@3.15"
 
   on_linux do
     depends_on "openssl@4"

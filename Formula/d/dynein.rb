@@ -1,10 +1,21 @@
 class Dynein < Formula
   desc "DynamoDB CLI"
   homepage "https://github.com/awslabs/dynein"
-  url "https://ghfast.top/https://github.com/awslabs/dynein/archive/refs/tags/v0.3.0.tar.gz"
-  sha256 "40be5866288f565ac00494910d5dbb266ca0c34d56d50d839bc2c2aad34dc470"
   license "Apache-2.0"
-  head "https://github.com/awslabs/dynein.git", branch: "main"
+
+  stable do
+    # TODO: Remove stable dependencies on next release and use head dependencies
+    url "https://ghfast.top/https://github.com/awslabs/dynein/archive/refs/tags/v0.3.0.tar.gz"
+    sha256 "40be5866288f565ac00494910d5dbb266ca0c34d56d50d839bc2c2aad34dc470"
+
+    depends_on "cmake" => :build # for libz-ng-sys crate
+
+    uses_from_macos "bzip2"
+
+    on_linux do
+      depends_on "openssl@3" # need to build `openssl-sys`
+    end
+  end
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_golden_gate: "96fcaad8e13be4babcf5d576e3cb93352f845b07a1a7fcfa25feea99fcb184af"
@@ -20,15 +31,14 @@ class Dynein < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:      "c5842684aeeca93f1a9869327cb4f41a75c708ab354c47a2e124063cd8108ea8"
   end
 
-  depends_on "cmake" => :build # for libz-ng-sys crate
+  head do
+    url "https://github.com/awslabs/dynein.git", branch: "main"
+
+    depends_on "aws-lc"
+  end
+
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
-
-  uses_from_macos "bzip2"
-
-  on_linux do
-    depends_on "openssl@3" # need to build `openssl-sys`
-  end
 
   deny_network_access!
 
@@ -37,6 +47,8 @@ class Dynein < Formula
   end
 
   def install
+    ENV["AWS_LC_SYS_USE_SYSTEM"] = "1" if build.head?
+
     system "cargo", "install", *std_cargo_args
   end
 

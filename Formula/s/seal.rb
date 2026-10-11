@@ -1,16 +1,16 @@
 class Seal < Formula
   desc "Easy-to-use homomorphic encryption library"
   homepage "https://github.com/microsoft/SEAL"
-  url "https://ghfast.top/https://github.com/microsoft/SEAL/archive/refs/tags/v4.5.1.tar.gz"
-  sha256 "77debe0a4a1d8b1b97cd66c7dad29c072d6e52108ed22ceb6669c2e7690a7c15"
+  url "https://ghfast.top/https://github.com/microsoft/SEAL/archive/refs/tags/v4.6.0.tar.gz"
+  sha256 "e868a126f8ac1a0a7a0213fa5ff6bf60de8b0a6c345bdc9b806b32d376787569"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "965588c516a8726756caec9bae0e64610dcfc442c42e04b9690c5efbe7d018dc"
-    sha256 cellar: :any, arm64_tahoe:       "c95f9e405c114050faa70e8af1e38b3f3e0817f3f384560ecf5030b8184ced9a"
-    sha256 cellar: :any, arm64_sequoia:     "e44e1a5bfd2a8cb5e635db977e31d2d978527b55942d4db9c2316f821dbcb401"
-    sha256 cellar: :any, arm64_linux:       "f6cb77cbf6d91bc8d75c0f03d351384e2397d683e576d32933b34cbb2fdb045d"
-    sha256 cellar: :any, x86_64_linux:      "21ca40ceddfefdb3067715adbd9921ea1a4525dc94a39a2a0a1819bbfc1995ec"
+    sha256 cellar: :any, arm64_golden_gate: "c830450bcb69d2c180700882dc0d858bdae5814aa0e5c86858ca3e9c370b899d"
+    sha256 cellar: :any, arm64_tahoe:       "5142694856f32d39e691d7fb2198ae06dc21323733726044c4421a20aea6bb1f"
+    sha256 cellar: :any, arm64_sequoia:     "df2cb228ebc1c2161e30cb5849613b11858c132c3e2f43b8cfe3d3234eba97a3"
+    sha256 cellar: :any, arm64_linux:       "3a3b5e67ddccf01a0fb3cc8e79fbc013bdf1f5e9dbd8426346935a0359b34d91"
+    sha256 cellar: :any, x86_64_linux:      "deea617e02b999bc91f39309f0dbdf15570c8a7b28083169d46ccde7a92aa3d1"
   end
 
   depends_on "cmake" => [:build, :test]

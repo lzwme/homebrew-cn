@@ -42,7 +42,7 @@ class OpensslAT4 < Formula
     if OS.mac?
       arch_args += %W[darwin64-#{Hardware::CPU.arch}-cc enable-ec_nistp_64_gcc_128]
     elsif Hardware::CPU.intel?
-      arch_args << (Hardware::CPU.is_64_bit? ? "linux-x86_64" : "linux-elf")
+      arch_args << "linux-x86_64"
     elsif Hardware::CPU.arm?
       arch_args << (Hardware::CPU.is_64_bit? ? "linux-aarch64" : "linux-armv4")
     end

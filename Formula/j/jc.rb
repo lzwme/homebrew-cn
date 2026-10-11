@@ -8,11 +8,12 @@ class Jc < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "0d8a86f96b0690a4b0881521c6d610bc21bf6df58a99aeea76470b9a8615b580"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "83eb7edaca6677c7f6c9167d84de760339c71ac4d2a793237093735513ea039e"
   end
 
   depends_on "libyaml"
-  depends_on "python@3.14"
+  depends_on "python@3.15"
 
   resource "pygments" do
     url "https://files.pythonhosted.org/packages/49/2e/ced460408999b33da6b31b0021b0f37d329e202d4169aeb164493778f25b/pygments-2.21.0.tar.gz"

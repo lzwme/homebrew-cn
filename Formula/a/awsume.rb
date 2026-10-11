@@ -11,11 +11,12 @@ class Awsume < Formula
   head "https://github.com/trek10inc/awsume.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "d15e0747fa98ad08636f31e9e536e7b569420d2ca760ce394007fb18ed5827a6"
-    sha256 cellar: :any, arm64_tahoe:       "96acbf7c8abd910520b89ae0cc8360f7aa960331afd6d82e69a3d1f3bac39d67"
-    sha256 cellar: :any, arm64_sequoia:     "f9ecc0fb021fbded32ca6601f923c516a38d5b687fee15f84039c8b736bfe42f"
-    sha256 cellar: :any, arm64_linux:       "9dcd09c376bdc0d22723228c3d769ba7117bd6cb5a87a852c0bd49ec50629fb8"
-    sha256 cellar: :any, x86_64_linux:      "b24eabfae8323a03c4655053a10809a3c926a762ba0bd3132afd331cceb27a58"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "af78cb0c83bc75400956e97603400ce0ade2f6de01db4ae1785c688b58a779a9"
+    sha256 cellar: :any, arm64_tahoe:       "a81ceb553ac9409547c59d070bd68b1c64b6c1f19d84900e386c26604398fc4c"
+    sha256 cellar: :any, arm64_sequoia:     "a13aa72b6bb24485d4073eaf156a6b0bf7fd4d56c6f2941e54e90b5dbfaaebe3"
+    sha256 cellar: :any, arm64_linux:       "30c8e3fb89ad78901d2c132faa4d3cbc9ce57fdbbf9e5b7c30238a895cb516b1"
+    sha256 cellar: :any, x86_64_linux:      "14dd52a12ed8466386ddbb196dd6b3033dc2231d6af221cf20930b1fca18b8e6"
   end
 
   # https://github.com/trek10inc/awsume/blob/master/README.md
@@ -23,18 +24,18 @@ class Awsume < Formula
   disable! date: "2027-09-11", because: :deprecated_upstream, replacement_formula: "awscli"
 
   depends_on "libyaml"
-  depends_on "python@3.14"
+  depends_on "python@3.15"
 
   uses_from_macos "sqlite"
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/2a/80/0430e16c302b0d1a4ca3c8c69ffee9e4f8f2170d56162d2761b34fd512ba/boto3-1.43.109.tar.gz"
-    sha256 "c829bc3352e1e3922d8fe1db10b697182ac411b64ce5fc3acb0a06a29837417e"
+    url "https://files.pythonhosted.org/packages/a9/6e/fe973c8ce8fe4f59d6df6128600b9cc7c4ed75788bed5f5f615f88379529/boto3-1.43.110.tar.gz"
+    sha256 "0251b67d99cc0e7b958db48e7dd149094d453377fcd03299fde7329f975db2e6"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/3c/da/424aaef4727876f4095bd2c10e683bb8531ac3bea56b0b6efd29eeb57f91/botocore-1.43.109.tar.gz"
-    sha256 "46b15bea4d942aaea6d7ab7c4b8a3a7290305064a3b41a6cb271cde9da3ba371"
+    url "https://files.pythonhosted.org/packages/a7/d8/7a2320aabf1b1e62580e990f8a52760e396f4ec56e3ebcbce07d23acc031/botocore-1.43.110.tar.gz"
+    sha256 "888cd54d59502e2195dac30805e5c08dd1be5416932a3793373e81b8f463e006"
   end
 
   resource "colorama" do

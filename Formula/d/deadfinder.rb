@@ -37,9 +37,6 @@ class Deadfinder < Formula
   end
 
   def install
-    ENV["CRYSTAL_LIBRARY_PATH"] = formula_opt_lib("openssl@3")
-    ENV.prepend_path "PKG_CONFIG_PATH", formula_opt_lib("openssl@3")/"pkgconfig"
-
     # Use our lexbor as long as compatible with https://github.com/kostya/lexbor
     (buildpath/"lib/lexbor/src/ext/lexbor-c/build").install_symlink formula_opt_lib("lexbor")/"liblexbor_static.a"
 

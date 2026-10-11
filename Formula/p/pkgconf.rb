@@ -1,10 +1,10 @@
 class Pkgconf < Formula
   desc "Package compiler and linker metadata toolkit"
   homepage "https://github.com/pkgconf/pkgconf"
-  url "https://distfiles.ariadne.space/pkgconf/pkgconf-3.0.7.tar.xz"
-  mirror "https://ghfast.top/https://github.com/pkgconf/pkgconf/releases/download/pkgconf-3.0.7/pkgconf-3.0.7.tar.xz"
-  mirror "http://fresh-center.net/linux/misc/pkgconf-3.0.7.tar.xz"
-  sha256 "c926ff491cbd9a331a589160811bd97ab1749b4d5198a519338f2cdfabe6940a"
+  url "https://distfiles.ariadne.space/pkgconf/pkgconf-3.0.8.tar.xz"
+  mirror "https://ghfast.top/https://github.com/pkgconf/pkgconf/releases/download/pkgconf-3.0.8/pkgconf-3.0.8.tar.xz"
+  mirror "http://fresh-center.net/linux/misc/pkgconf-3.0.8.tar.xz"
+  sha256 "943f0bc88bcaeceb630b00262e2a8ad5ea4fac3fba72a4267d8b9ec6b35d1194"
   license "ISC"
   compatibility_version 2
 
@@ -14,12 +14,11 @@ class Pkgconf < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "3e42e1d7b73409b21ae8397794f50c640049730f771db4cd35b22e73dd9c0835"
-    sha256 arm64_tahoe:       "338c66b0d559ed78c2f77c038e141cd7b0060d6fcdf80affd1034509e8ab180c"
-    sha256 arm64_sequoia:     "3394224fbc510e07acb45f3ad41d62857cfefe2394e8f71ca2e976b59864d5e6"
-    sha256 arm64_sonoma:      "e066c26946cd5f27212a6e03e1745d27feba8aa0d0d0547ce36c793abb55d8ff"
-    sha256 arm64_linux:       "801bdc18fd03a143979e2cc987730019307966420604aea19d46d6020ae7c81d"
-    sha256 x86_64_linux:      "8aacaf8f20d4c277d425163f3c8e9e5df6611f05cb0c32a8ec1069917efd5ffe"
+    sha256 arm64_golden_gate: "5bb5d8521f63317b2fdbc7852fc6a865d3e3a2ec32c3ff2daf8c4aa0dd6123b9"
+    sha256 arm64_tahoe:       "cfcd403c852da8f88324056c0881ce69880fcb675181b20345ff7ffc99d4f586"
+    sha256 arm64_sequoia:     "49d58eb2aa7368f027beff1cbc2c5baf648e5c81c3c3e163384f4717ba97b89c"
+    sha256 arm64_linux:       "42994339755a8405b04b3c52c55471ad9b4018588a6aa6617e09d570901b7dea"
+    sha256 x86_64_linux:      "ee273b8faae5547652cc11b61a13ccc08a7cfafd063956eed586bf400c035fbb"
   end
 
   head do

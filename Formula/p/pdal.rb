@@ -4,7 +4,7 @@ class Pdal < Formula
   url "https://ghfast.top/https://github.com/PDAL/PDAL/releases/download/2.10.2/PDAL-2.10.2-src.tar.bz2"
   sha256 "882b97aa3ae5db682c3b2dc8edef4e29bcc7ecea51c70592e71bc1f34112ad00"
   license "BSD-3-Clause"
-  revision 2
+  revision 3
   compatibility_version 1
   head "https://github.com/PDAL/PDAL.git", branch: "master"
 
@@ -14,11 +14,11 @@ class Pdal < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "f205b89ad8bde08b14ddbe4de6968ebd09340fb63835731d7ab9934ff4eed268"
-    sha256 cellar: :any, arm64_tahoe:       "0987b5bedd3a321f0cfad87c7c32a55f462229e739b6f9362f9420cbdb1f237f"
-    sha256 cellar: :any, arm64_sequoia:     "8c328cdf95b5a4c0e2b46f64d95f8d12ae335a2d620c7873b442303e5422fbe7"
-    sha256 cellar: :any, arm64_linux:       "b51d155b5aa60c84cf334160b4ec80b498d2e490acabd91f3d145c38bde3184c"
-    sha256 cellar: :any, x86_64_linux:      "7ddf998cab349680389d8d092fd01be40163f232b740032dc4fba9c5e4744030"
+    sha256 cellar: :any, arm64_golden_gate: "7ebdb611e1030b880a1b010756a2044b594dd99912f05195a56df6d4350cd6fc"
+    sha256 cellar: :any, arm64_tahoe:       "8fb6679f4772ef1ec02c673955881ad31736b2c7177e3e437fff8ec6f651c2d9"
+    sha256 cellar: :any, arm64_sequoia:     "b38c4fecb72eed066aeb20bc5198e42e91760398ca53295849cb9ae0c2ddbd48"
+    sha256 cellar: :any, arm64_linux:       "3bce625b62b623b892f08fa4c7e84dc86ca32b9754efca36cda3b316f27eda73"
+    sha256 cellar: :any, x86_64_linux:      "64ddb25edfcccc3c8f41ed0eaaa8af99001a94b9c81145e7baa058b1446eec27"
   end
 
   depends_on "cmake" => :build
@@ -46,6 +46,12 @@ class Pdal < Formula
     depends_on "zlib-ng-compat"
   end
 
+  # Arrow 26 API from PDAL 2.10-maintenance: PDAL/PDAL#5078, PDAL/PDAL#5098, PDAL/PDAL#5100
+  patch do
+    file "Patches/pdal/arrow-26.diff"
+    type :backport
+  end
+
   def install
     args = %w[
       -DWITH_TESTS=OFF
@@ -63,9 +69,7 @@ class Pdal < Formula
     ]
     if OS.linux?
       libunwind = Formula["libunwind"]
-      # TODO: restore once apache-arrow drops keg-only llvm@22, whose libunwind.h shadows this -I in superenv
-      # ENV.append_to_cflags "-I#{libunwind.opt_include}"
-      ENV.prepend_path "HOMEBREW_INCLUDE_PATHS", libunwind.opt_include
+      ENV.append_to_cflags "-I#{libunwind.opt_include}"
       args += %W[
         -DLIBUNWIND_INCLUDE_DIR=#{libunwind.opt_include}
         -DLIBUNWIND_LIBRARY=#{libunwind.opt_lib/shared_library("libunwind")}

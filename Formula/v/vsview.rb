@@ -3,19 +3,19 @@ class Vsview < Formula
 
   desc "Next-generation VapourSynth previewer"
   homepage "https://jaded-encoding-thaumaturgy.github.io/vs-view/"
-  url "https://files.pythonhosted.org/packages/92/b1/98dfc148c277e07ecd35cf17b5718eb2db5063f1a0c4e24c2f3286586fd2/vsview-0.12.0.tar.gz"
-  sha256 "191ea7cadbf998aef7b07658ab58ce9deb69d21c59634017c7c368efec01a6f9"
+  url "https://files.pythonhosted.org/packages/e4/1c/e1eac58c9a8df00de8a91235e00921dbbd6116a0c68c50e4949c9e0d9081/vsview-0.12.1.tar.gz"
+  sha256 "0c00a25539488fd059786c762ffec022c9e3c8dbf9ec5d1a1afac912b6963afc"
   license all_of: [
     "EUPL-1.2",
     all_of: ["MIT", "Apache-2.0", "ISC", "OFL-1.1"], # src/vsview/assets/
   ]
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "a61e465d7e0eec56617a2173adfcceb66e684f62dcb2a014a98643c048da088a"
-    sha256 cellar: :any, arm64_tahoe:       "668f925ccef57ee8bb6d8fdd36a8dd8db8548465da33a5b4894446153fee321e"
-    sha256 cellar: :any, arm64_sequoia:     "d7e119634de2a101885c2a3b5c92a13ae364962848ef115e3f404efaa2939f4b"
-    sha256 cellar: :any, arm64_linux:       "926b27c159b855177e3748994b63129ec14fd8dfb1d60c91f632f3ffd8c8ca69"
-    sha256 cellar: :any, x86_64_linux:      "c44e94f02f3095e3d361d5a0dc497bdd8d8a855a6df49be9dead96ed3038b9bf"
+    sha256 cellar: :any, arm64_golden_gate: "f0b7dc54a674405cb027a7a70a2b18e166b29990d280190cdd540364d3b859a8"
+    sha256 cellar: :any, arm64_tahoe:       "972aa7105e4fc4df05c370589ddba018c59c928a43ed6a56032a1bf2465e9dcc"
+    sha256 cellar: :any, arm64_sequoia:     "03127297e67eb86c30d8404cfa855d282aed75da511d001b71aefaacc17af114"
+    sha256 cellar: :any, arm64_linux:       "5950395bf4bf692a0f110a40c0b7bd81da85a80372485dd664e4a47cf75f7e84"
+    sha256 cellar: :any, x86_64_linux:      "21dcff8f1cd9a0c85431731c85bbae804c051685b21be155d59c0305e79f4adc"
   end
 
   depends_on "cmake" => :build
@@ -137,8 +137,8 @@ class Vsview < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/42/23/4a86fc741c38c5b69792a4ef954b281afa69bea9f083f881de1b0d23bc07/platformdirs-4.12.3.tar.gz"
-    sha256 "427fc0bb321ae0c5b037fa03238ca74820437be162e78b4848c4d4055b9b766c"
+    url "https://files.pythonhosted.org/packages/90/a1/d5f9002a70298c64a789779077d8dd90c10aa1f47fe40c86802df874f2a6/platformdirs-4.12.4.tar.gz"
+    sha256 "63743c02414e755de4e31b8f68125c1407495b86c5a006e203c01ff8b9924250"
   end
 
   resource "pluggy" do

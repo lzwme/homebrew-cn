@@ -59,7 +59,6 @@ class Libshout < Formula
         return 0;
       }
     C
-    ENV.prepend_path "PKG_CONFIG_PATH", formula_opt_lib("openssl@3")/"pkgconfig"
     pkgconf_flags = shell_output("pkgconf --cflags --libs shout").chomp.split
     system ENV.cc, "test.c", "-o", "test", *pkgconf_flags
     assert_equal "#{version} 127.0.0.1", shell_output("./test").strip

@@ -6,14 +6,14 @@ class Dvc < Formula
   url "https://files.pythonhosted.org/packages/13/1e/957a50eab8af18a5837bf47f148b90dac36650150faca840d5c020272098/dvc-3.67.1.tar.gz"
   sha256 "0a941016a10ac8c99b5342e5a964c9bff29c191f7b3539ff3e04910d828f82ab"
   license "Apache-2.0"
-  revision 16
+  revision 17
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "752b0e2e7d59c46301f1d3b809df6c175d4401711a7ce3530cf05c346ed78b9a"
-    sha256 cellar: :any, arm64_tahoe:       "1758bed48fae5320ffeeae35974401c43ab4cc9a69cfc2ab834e24fce720c331"
-    sha256 cellar: :any, arm64_sequoia:     "23f674ea4622b21d3957d1b83f2cbf407885f6fa2e421caf42cb732225e596c9"
-    sha256 cellar: :any, arm64_linux:       "3fa8c9fe700f6bc94ee2dabb82bc9835d5323cdd7ce8c1b801076387b3d807a5"
-    sha256 cellar: :any, x86_64_linux:      "63203d00de8f5ef427a6cf376154f5e213e43c59697e53e37e9faee4ac73e57b"
+    sha256 cellar: :any, arm64_golden_gate: "d6198031a330bb00ba4e67d87be7b6bc8d7c48a7578aa62128d6dc11274a2513"
+    sha256 cellar: :any, arm64_tahoe:       "9e68c1ab6ff6a3c9f928ddf59f11c4d9bcdf9d1048f293a9776dedf4ee4d75c6"
+    sha256 cellar: :any, arm64_sequoia:     "10e41581a7742fd1111571332c2457ea6865558276e951c24913e0daa94a2bec"
+    sha256 cellar: :any, arm64_linux:       "a49e5dbaa9dbcf9efd57eba923ca0b26b6da74178b37778ccf7c75c28c0bc0b8"
+    sha256 cellar: :any, x86_64_linux:      "c25d2137bce42a0f31b444887652c84b4646f7c056948130d752e120128dab5f"
   end
 
   # `pkgconf` and `rust` are for bcrypt
@@ -605,8 +605,8 @@ class Dvc < Formula
   end
 
   resource "pyarrow" do
-    url "https://files.pythonhosted.org/packages/3d/e3/27f57f80141379d60defe6703eb50a707325706f07fedfd1312c7a751995/pyarrow-25.0.1.tar.gz"
-    sha256 "9150a83248bfed9813ea3c3af74c3856c1984d444aa28e58bf7733b9750ddf6a"
+    url "https://files.pythonhosted.org/packages/ec/34/17c34cb38e5d940e38f0f0d9fdfa0e8a506676409ea9b85aff7e3079f831/pyarrow-26.0.0.tar.gz"
+    sha256 "0cccd36e00ea3afeb52ded61f2721ce71f604853d70c45365c58324eb773d6ae"
   end
 
   resource "pyasn1" do

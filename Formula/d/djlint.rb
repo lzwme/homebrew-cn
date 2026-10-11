@@ -9,15 +9,16 @@ class Djlint < Formula
   head "https://github.com/djlint/djLint.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "87838d24c2dcd24f21b2765f3ecf764ae7683aa0658040f838349415be51400a"
-    sha256 cellar: :any, arm64_tahoe:       "383d1e65b571f5444a5320bfa199e36962d5587fd8e72eb159ff26e827e691c3"
-    sha256 cellar: :any, arm64_sequoia:     "6d90dc0409c97ce430e3e8d63ee747a7e93ae7439bade5b53310f836127bc9ba"
-    sha256 cellar: :any, arm64_linux:       "e406b7806a8524addfc00422ed0731257987ab6f0af9145c08559668f62e29f8"
-    sha256 cellar: :any, x86_64_linux:      "3c4c3914835f46f9ed17f1aba80ffe391ef45440a2fd2d5a6eff6f30dec9878e"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "66a83272f9ecbece3e6e7b33f2120709802c9d6a2f38e3190b94dfffdd36eea0"
+    sha256 cellar: :any, arm64_tahoe:       "77512ded4eeee16b4d5a9c97d42c7d2414f5c35561280befc3b9d5af9a50c189"
+    sha256 cellar: :any, arm64_sequoia:     "7a877975f2be608565a08f09e29752d673d0b02204a60c55cd1e2d9df5d62577"
+    sha256 cellar: :any, arm64_linux:       "db0e46465bab1d07d159fbb31318428d6abc76f8e1cbcb010c707ec23a73c431"
+    sha256 cellar: :any, x86_64_linux:      "c77f8d4c3069f60e7e152b81409b96f53b98b7ff3af8ef981042a07c482d0199"
   end
 
   depends_on "libyaml"
-  depends_on "python@3.14"
+  depends_on "python@3.15"
 
   resource "click" do
     url "https://files.pythonhosted.org/packages/c7/0e/7fa0ef50764b67090eca4114772a2abf8b6148198475e54c660b97caeee6/click-8.5.0.tar.gz"
@@ -40,8 +41,8 @@ class Djlint < Formula
   end
 
   resource "json5" do
-    url "https://files.pythonhosted.org/packages/e4/7d/05c46a96a78147ae3bf99c2f4169ce144a70220b8d6fcd56f6ec368b8ce9/json5-0.15.0.tar.gz"
-    sha256 "7424d1f1eb1d56da6e3d70643f53619862b4ce81440bdb8ecfd6f875e5ba4a71"
+    url "https://files.pythonhosted.org/packages/80/63/503651a3946bfacb6d6098985f2af6b3bf880d8eedc53035761c628d13bc/json5-0.16.0.tar.gz"
+    sha256 "8b135a77b231f22e3656c601fec7621c5354c64c4fb2773715ee0814e4dc6bf7"
   end
 
   resource "pathspec" do

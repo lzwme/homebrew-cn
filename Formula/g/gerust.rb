@@ -1,10 +1,14 @@
 class Gerust < Formula
   desc "Project generator for Rust backend projects"
   homepage "https://gerust.rs/"
-  url "https://ghfast.top/https://github.com/mainmatter/gerust/archive/refs/tags/v0.0.6.tar.gz"
-  sha256 "1036cc5461e91f775bf499575f2352cba8a91ac2c97d2b312bdc19601d300038"
   license "MIT"
-  head "https://github.com/mainmatter/gerust.git", branch: "main"
+
+  stable do
+    url "https://ghfast.top/https://github.com/mainmatter/gerust/archive/refs/tags/v0.0.6.tar.gz"
+    sha256 "1036cc5461e91f775bf499575f2352cba8a91ac2c97d2b312bdc19601d300038"
+
+    depends_on "openssl@3"
+  end
 
   bottle do
     rebuild 1
@@ -17,9 +21,14 @@ class Gerust < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:      "7a5f6bf8d2ea34da1b57dc86f60931adc25fe48d61ec7bec58905c8c1ee20296"
   end
 
+  head do
+    url "https://github.com/mainmatter/gerust.git", branch: "main"
+
+    depends_on "aws-lc"
+  end
+
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
-  depends_on "openssl@3"
 
   on_linux do
     depends_on "zlib-ng-compat"
@@ -32,7 +41,11 @@ class Gerust < Formula
   end
 
   def install
-    ENV["OPENSSL_DIR"] = formula_opt_prefix("openssl@3")
+    if build.stable?
+      ENV["OPENSSL_DIR"] = formula_opt_prefix("openssl@3")
+    else
+      ENV["AWS_LC_SYS_USE_SYSTEM"] = "1"
+    end
 
     system "cargo", "install", *std_cargo_args
   end

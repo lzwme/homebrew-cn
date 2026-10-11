@@ -1,18 +1,16 @@
 class Lerna < Formula
   desc "Tool for managing JavaScript projects with multiple packages"
   homepage "https://lerna.js.org"
-  url "https://registry.npmjs.org/lerna/-/lerna-10.0.1.tgz"
-  sha256 "82addf9fca6007e0cb504085038975fd78d6d3538529379c8162c832ce2da8fe"
+  url "https://registry.npmjs.org/lerna/-/lerna-10.1.0.tgz"
+  sha256 "b8ac6e340253a2dad144082f9436ea1d60afa66b27f423d714302d0660854f52"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_golden_gate: "4b153fae9877dea8586cb9d254bf5ca2f7da12f853ffd24c5fb5ebede4c80b22"
-    sha256 cellar: :any,                 arm64_tahoe:       "acd83ce4f07421043105ea98e1d5d48815d2b3fc02f8ed2a613e697d65b27da6"
-    sha256 cellar: :any,                 arm64_sequoia:     "acd83ce4f07421043105ea98e1d5d48815d2b3fc02f8ed2a613e697d65b27da6"
-    sha256 cellar: :any,                 arm64_sonoma:      "acd83ce4f07421043105ea98e1d5d48815d2b3fc02f8ed2a613e697d65b27da6"
-    sha256 cellar: :any,                 sonoma:            "99fe166264cc5c13574503b02038c987179c38bf91e437c6b62bf0c380c17823"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "9e597b91a782760a6f503c72b0499652926251d50ba6f1faa01ffa082e5c7c4f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "fd4a6226f6770d37453fa13059b67a092256e55d11da456d16bfc8bc7dd4ce99"
+    sha256 cellar: :any,                 arm64_golden_gate: "b7d4284ce43f55a997d56062560e7fe3f89ad13a5296ad8455f10149dfd062cf"
+    sha256 cellar: :any,                 arm64_tahoe:       "b7d4284ce43f55a997d56062560e7fe3f89ad13a5296ad8455f10149dfd062cf"
+    sha256 cellar: :any,                 arm64_sequoia:     "b7d4284ce43f55a997d56062560e7fe3f89ad13a5296ad8455f10149dfd062cf"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "b908b6fc1948abc0f228e600ec18f43923f9337fa71617cd06c694595edf330a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "337773b8999431b6cda1ddce4886a6c43dc33adda29418146eb68cb985f51229"
   end
 
   depends_on "node"

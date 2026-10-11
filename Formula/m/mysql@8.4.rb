@@ -6,7 +6,7 @@ class MysqlAT84 < Formula
   url "https://cdn.mysql.com/Downloads/MySQL-8.4/mysql-8.4.11.tar.gz"
   sha256 "eb3051164d625dd346a8203f76e0d5d5d9aec51dbe9d51788e39ec6b3f1394c2"
   license "GPL-2.0-only" => { with: "Universal-FOSS-exception-1.0" }
-  revision 6
+  revision 7
 
   livecheck do
     url "https://dev.mysql.com/downloads/mysql/8.4.html?tpl=files&os=src&version=8.4",
@@ -15,11 +15,11 @@ class MysqlAT84 < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "b306443fd470a77fe971a8c0d73ba8f67299f9d8dd742e31da0e37996004ec9d"
-    sha256 arm64_tahoe:       "cfdd96121d7ebfcb3170128da5ca9a0fe48166d90a031e17e0f2a4f60605ba46"
-    sha256 arm64_sequoia:     "9b07f4d2e067e57b92fe8c282ce75da387e71747f8e41acf2f3289710feddd82"
-    sha256 arm64_linux:       "98447dff2d3eff1cbf7657e0a0a85ac37821cadc958c31042656ef5a12003e1c"
-    sha256 x86_64_linux:      "490f9955d65829dc8698e85669feb6a2be1134bfcaf6cb2c120630ec6062710a"
+    sha256 arm64_golden_gate: "f0849839c1c1ab1bd514be39c7192ff28e525a1a461e7924a7b2e1aa6b203b5e"
+    sha256 arm64_tahoe:       "281cff7ee37830908f35e4c36f57f66e14760b2ebe91d8cda4f538424585371d"
+    sha256 arm64_sequoia:     "88c1d662b11082b2cc82be2318f3ef1f5a61d61442b21ce5a56a19928b7518dd"
+    sha256 arm64_linux:       "df26661c6984e04aceb32a14bab23ce65fa6923f7a72c03b16fe0eb4f853a088"
+    sha256 x86_64_linux:      "0043238d5cecb5cd8617959bc8711c47c9324f6fe2be5a7797252700e6839c9d"
   end
 
   keg_only :versioned_formula
@@ -33,7 +33,7 @@ class MysqlAT84 < Formula
   depends_on "abseil"
   depends_on "icu4c@78"
   depends_on "lz4"
-  depends_on "openssl@3"
+  depends_on "openssl@4"
   depends_on "protobuf"
   depends_on "zlib-ng-compat" # Zlib 1.2.13+
   depends_on "zstd"
@@ -59,6 +59,13 @@ class MysqlAT84 < Formula
   fails_with :gcc do
     version "9"
     cause "Requires C++20"
+  end
+
+  # Apply Debian's patch to fix build with OpenSSL 4
+  patch do
+    url "https://salsa.debian.org/mariadb-team/mysql/-/raw/ac6576612c0afddccebf939fccedacc3b97db567/debian/patches/support-openssl4.patch"
+    sha256 "fd0eb6d47ce5aaef43e58240d9884d04b1ee30fd3c57395b405d9400ae136a02"
+    type :unofficial
   end
 
   # Patch out check for Homebrew `boost`.
@@ -96,7 +103,7 @@ class MysqlAT84 < Formula
       -DMYSQL_DATADIR=#{datadir}
       -DSYSCONFDIR=#{etc}
       -DBISON_EXECUTABLE=#{formula_opt_bin("bison")}/bison
-      -DOPENSSL_ROOT_DIR=#{formula_opt_prefix("openssl@3")}
+      -DOPENSSL_ROOT_DIR=#{formula_opt_prefix("openssl@4")}
       -DWITH_ICU=#{icu4c.opt_prefix}
       -DWITH_SYSTEM_LIBS=ON
       -DWITH_EDITLINE=system

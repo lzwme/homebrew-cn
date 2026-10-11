@@ -3,8 +3,8 @@ class V8 < Formula
   homepage "https://v8.dev/docs"
   # Track V8 version from Chrome stable: https://chromiumdash.appspot.com/releases?platform=Mac
   # Check `brew livecheck --resources v8` for any resource updates
-  url "https://ghfast.top/https://github.com/v8/v8/archive/refs/tags/15.5.35.20.tar.gz"
-  sha256 "0755edce1e9a15dccc165171a3ba04a89e67a7ea75c45c9b741e21b7949f25e1"
+  url "https://ghfast.top/https://github.com/v8/v8/archive/refs/tags/15.6.75.8.tar.gz"
+  sha256 "80f7f66d716612d651bb374bad4a3c4ce18bc6859cbe9aa3639f02eb451a46f2"
   license "BSD-3-Clause"
 
   livecheck do
@@ -24,11 +24,11 @@ class V8 < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "12cd8e05b4b04348513a03ee05d96634ae6d3b26726d7dacf0c32b935307e1f3"
-    sha256 cellar: :any, arm64_tahoe:       "7b53efa50e2d29baaf9a516be9ecc7cf5484b071c52dcddedf98313ee78f59e2"
-    sha256 cellar: :any, arm64_sequoia:     "5e4cf92b0ef8068ac84c9889593d5e7d3307552a198d66ad6b81bd2c639e8887"
-    sha256 cellar: :any, arm64_linux:       "68a375f112c4018f7cd4783e43993f0f86686d17347b16f465a0f22dd79b6dcc"
-    sha256 cellar: :any, x86_64_linux:      "989357fd47ff98f1f61d5833781046a27698a1af25ddb4999e27bb6188d1393a"
+    sha256 cellar: :any, arm64_golden_gate: "75c3d99cd6e73a6169e3e88c4d1d5ef1939548b43c2b37e7d01d1f8e79b8f56a"
+    sha256 cellar: :any, arm64_tahoe:       "b78205b725c5c699e6c9d4cf4b755d7acf72aba70d21834f57c91d2e0ce3bab7"
+    sha256 cellar: :any, arm64_sequoia:     "0f7278b33a9207e06b0826ab914bdd57e619d623365fb89cc0a337aec26e7bfa"
+    sha256 cellar: :any, arm64_linux:       "0f1e33ad3fd1275d2ba2fb1fe8af735d00b494a99849c850569b4ce641788813"
+    sha256 cellar: :any, x86_64_linux:      "1dd28bd65bf4bae16e8b78e6f2ad15ffc712041179a5922ca8a32451ef59f968"
   end
 
   depends_on "llvm" => :build
@@ -58,8 +58,8 @@ class V8 < Formula
   # e.g. for CIPD dependency gn: https://chromium.googlesource.com/v8/v8.git/+/refs/tags/<version>/DEPS#99
   resource "gn" do
     url "https://gn.googlesource.com/gn.git",
-        revision: "a99d46a9d04c770d6bb87387058e1d7b151758ce"
-    version "a99d46a9d04c770d6bb87387058e1d7b151758ce"
+        revision: "127dd2a6d582528d6d61c4d838dc17385ef31abd"
+    version "127dd2a6d582528d6d61c4d838dc17385ef31abd"
 
     livecheck do
       url "https://ghfast.top/https://raw.githubusercontent.com/v8/v8/refs/tags/#{LATEST_VERSION}/DEPS"
@@ -69,8 +69,8 @@ class V8 < Formula
 
   resource "build" do
     url "https://chromium.googlesource.com/chromium/src/build.git",
-        revision: "8ca8a372cab9ff143072204053d30fbc2c17bd7a"
-    version "8ca8a372cab9ff143072204053d30fbc2c17bd7a"
+        revision: "bc0661cf80717e97e1b6868396f61f7f94f2d04a"
+    version "bc0661cf80717e97e1b6868396f61f7f94f2d04a"
 
     livecheck do
       url "https://ghfast.top/https://raw.githubusercontent.com/v8/v8/refs/tags/#{LATEST_VERSION}/DEPS"
@@ -80,8 +80,8 @@ class V8 < Formula
 
   resource "buildtools" do
     url "https://chromium.googlesource.com/chromium/src/buildtools.git",
-        revision: "6f6a5dbf04b734214f3b1f386567d101ec9d607e"
-    version "6f6a5dbf04b734214f3b1f386567d101ec9d607e"
+        revision: "c202b4a9dac30e789ed6e3b2354efa94357a56f3"
+    version "c202b4a9dac30e789ed6e3b2354efa94357a56f3"
 
     livecheck do
       url "https://ghfast.top/https://raw.githubusercontent.com/v8/v8/refs/tags/#{LATEST_VERSION}/DEPS"
@@ -91,8 +91,8 @@ class V8 < Formula
 
   resource "third_party/abseil-cpp" do
     url "https://chromium.googlesource.com/chromium/src/third_party/abseil-cpp.git",
-        revision: "435e7d977fb36fb47854a4c552c0706dad0bd7cf"
-    version "435e7d977fb36fb47854a4c552c0706dad0bd7cf"
+        revision: "edf0931ff4e2cddfeecade307ae948b5d09b8b38"
+    version "edf0931ff4e2cddfeecade307ae948b5d09b8b38"
 
     livecheck do
       url "https://ghfast.top/https://raw.githubusercontent.com/v8/v8/refs/tags/#{LATEST_VERSION}/DEPS"
@@ -113,8 +113,8 @@ class V8 < Formula
 
   resource "third_party/fast_float/src" do
     url "https://chromium.googlesource.com/external/github.com/fastfloat/fast_float.git",
-        revision: "34164f547b7df3f5d794ff67e9f885c36819ebfc"
-    version "34164f547b7df3f5d794ff67e9f885c36819ebfc"
+        revision: "b0ab987b3dfdde13fa1915f65ef2a5c068d9208c"
+    version "b0ab987b3dfdde13fa1915f65ef2a5c068d9208c"
 
     livecheck do
       url "https://ghfast.top/https://raw.githubusercontent.com/v8/v8/refs/tags/#{LATEST_VERSION}/DEPS"
@@ -157,8 +157,8 @@ class V8 < Formula
 
   resource "third_party/icu" do
     url "https://chromium.googlesource.com/chromium/deps/icu.git",
-        revision: "6ebb40c594776cc2c21ea14df85a2a89a328b364"
-    version "6ebb40c594776cc2c21ea14df85a2a89a328b364"
+        revision: "5aa526207171ecadf31597f0980a7b7ad8872f33"
+    version "5aa526207171ecadf31597f0980a7b7ad8872f33"
 
     livecheck do
       url "https://ghfast.top/https://raw.githubusercontent.com/v8/v8/refs/tags/#{LATEST_VERSION}/DEPS"
@@ -179,8 +179,8 @@ class V8 < Formula
 
   resource "third_party/llvm-libc/src" do
     url "https://chromium.googlesource.com/external/github.com/llvm/llvm-project/libc.git",
-        revision: "43a9a99ce4b5a04954090f8a0e74bf2786f59379"
-    version "43a9a99ce4b5a04954090f8a0e74bf2786f59379"
+        revision: "5e61624667bf9e44ea452191dbda0172997018a2"
+    version "5e61624667bf9e44ea452191dbda0172997018a2"
 
     livecheck do
       url "https://ghfast.top/https://raw.githubusercontent.com/v8/v8/refs/tags/#{LATEST_VERSION}/DEPS"
@@ -201,8 +201,8 @@ class V8 < Formula
 
   resource "third_party/partition_alloc" do
     url "https://chromium.googlesource.com/chromium/src/base/allocator/partition_allocator.git",
-        revision: "c029851c21b7e1154fa3964e08c97710adc92cc7"
-    version "c029851c21b7e1154fa3964e08c97710adc92cc7"
+        revision: "a0f30e381c6e132215a0c8d809fd08ff4cdad244"
+    version "a0f30e381c6e132215a0c8d809fd08ff4cdad244"
 
     livecheck do
       url "https://ghfast.top/https://raw.githubusercontent.com/v8/v8/refs/tags/#{LATEST_VERSION}/DEPS"
@@ -223,8 +223,8 @@ class V8 < Formula
 
   resource "third_party/zlib" do
     url "https://chromium.googlesource.com/chromium/src/third_party/zlib.git",
-        revision: "285e94b8fa95ad3b7d16b80798ec8dce6febb8c8"
-    version "285e94b8fa95ad3b7d16b80798ec8dce6febb8c8"
+        revision: "13395eebe853e811d274f7bd9b71fb7d9b5a5851"
+    version "13395eebe853e811d274f7bd9b71fb7d9b5a5851"
 
     livecheck do
       url "https://ghfast.top/https://raw.githubusercontent.com/v8/v8/refs/tags/#{LATEST_VERSION}/DEPS"
@@ -234,6 +234,11 @@ class V8 < Formula
 
   def install
     resources.each { |r| r.stage(buildpath/r.name) }
+
+    # `internal_allocator_forward.h` uses `size_t` without <cstddef>, which libstdc++ doesn't provide via <new>.
+    # Remove when partition_alloc includes it.
+    inreplace "third_party/partition_alloc/src/partition_alloc/internal_allocator_forward.h",
+              "#include <new>\n", "#include <cstddef>\n#include <new>\n"
 
     # Build gn from source and add it to the PATH
     cd "gn" do

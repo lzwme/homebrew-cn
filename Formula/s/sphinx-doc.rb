@@ -10,15 +10,16 @@ class SphinxDoc < Formula
   head "https://github.com/sphinx-doc/sphinx.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "2c5882313dc84dacc9c4051a4d1ab6f0c3416d0d3d5e63a076f3fd0e66d33860"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "2ab1021e7e43adf8c6db209ea54ce7a075339538d540085b510d7d2e584ac832"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "dccc88236d2010318b878e310aefa32dca64f444cbfd5be2e94497a81c4e23ed"
-    sha256 cellar: :any,                 arm64_linux:       "079427d808f4af9dac83c3e07b0fa8c9426adb04ac621757ab1289b1e89081e9"
-    sha256 cellar: :any,                 x86_64_linux:      "8d6009063844f4920a8184926dffa39062e5ef1c4ac269de52517c6d0792da46"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "4b662b590741463e307229c4a0477b6ed3f40f05fc7853982e86d36a863931b7"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "1b6cf7d17bde1534210232323f2145503dd96dc0ea50f86f357e71138205e7c8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "bab271952b2aaaeae1ea6bb1d7d54ad0eaa6ffb6ab2706f94f036cbe11d421f0"
+    sha256 cellar: :any,                 arm64_linux:       "f1e4cc34fd87a3cf3f25ab88d1bbb92e335166897ccdc784c58886f83ec16157"
+    sha256 cellar: :any,                 x86_64_linux:      "4138d8f12fe533af8d350b86b7156fe1693e211aace6a224a02a2a269cb697d0"
   end
 
   depends_on "certifi"
-  depends_on "python@3.14"
+  depends_on "python@3.15"
 
   pypi_packages exclude_packages: "certifi",
                 extra_packages:   "numpydoc"

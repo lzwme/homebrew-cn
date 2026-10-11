@@ -2,18 +2,16 @@ class PowermanDockerize < Formula
   desc "Utility to simplify running applications in docker containers"
   homepage "https://github.com/powerman/dockerize"
   url "https://github.com/powerman/dockerize.git",
-      tag:      "v0.25.2",
-      revision: "311635aeeeac3869b2550879c856510698d05969"
+      tag:      "v0.25.3",
+      revision: "3d7daff8fe0bcdfce5145e619f2712410585979e"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "a6f366ff8c7fb725c74978d91e2dd72fc703163de771a22a35ed1d9a187c7f22"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "d6fdbc6037fed44ebded956c36a61b776f08436e3f8a0bd143c006ff126bcec9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "d6fdbc6037fed44ebded956c36a61b776f08436e3f8a0bd143c006ff126bcec9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "d6fdbc6037fed44ebded956c36a61b776f08436e3f8a0bd143c006ff126bcec9"
-    sha256 cellar: :any_skip_relocation, sonoma:            "28c4d01f697d9b172c693f9805e03a24fe05e3a0da57970561654e12a6bfa854"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "6344495c51394121cde81a263cbed6afcae46b98098170f4c2dd034008941247"
-    sha256 cellar: :any,                 x86_64_linux:      "bbad7943b1992243603d57cf4b015860c67458ba9949cab317e6e1dee4d6b236"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "29024ed78719cb70c612994e07a52160fbdad44ae85c15b95ae3e22eb75f3c3d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "29024ed78719cb70c612994e07a52160fbdad44ae85c15b95ae3e22eb75f3c3d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "29024ed78719cb70c612994e07a52160fbdad44ae85c15b95ae3e22eb75f3c3d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "95ef14092ebf49ba05d9ad78ec62175b4fca4fa76933510768b479c9f9e51046"
+    sha256 cellar: :any,                 x86_64_linux:      "bae286d15738680f7763f12ebbf0f392e0919d10d8e2005d71df2589c3044ee4"
   end
 
   depends_on "go" => :build

@@ -10,25 +10,24 @@ class Localstack < Formula
   compatibility_version 1
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "f96bbdc22e41d80e4647fa4150de51def89b3d9637dfd39e3d936a6c77053098"
-    sha256 cellar: :any, arm64_tahoe:       "46cf8c1cab3364c887e2abcffb5254b2b7f718f9f58bb33e5c56d3efde610681"
-    sha256 cellar: :any, arm64_sequoia:     "a4f47ef038718ddfb4451112f5bd0ab320b2b1c682faea111229814800506c8a"
-    sha256 cellar: :any, arm64_linux:       "be23a3121a5b46e84bf38e381b3a9ce17ca7e7207e25d7cfc580d3b1800c85c3"
-    sha256 cellar: :any, x86_64_linux:      "c022dd449dd0905a2aad6816850469cabc3d0a05db3ce994750ba064ded6f83b"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "49d8e029dfa4f28158c0f1dc44909057157077a94d25831b01c36f3244f4af4f"
+    sha256 cellar: :any, arm64_tahoe:       "712fe12abf4dd36b537c8676a71d17daff7c6a9df02073676d3836683da3cc2e"
+    sha256 cellar: :any, arm64_sequoia:     "bffb15e283da24f2a249aa750cd7470469d28a076e2ab149d835b3d2bbbe4954"
+    sha256 cellar: :any, arm64_linux:       "546f693a1d9272a92f2b5994b3ed61398169b62c8d7bedba2a4dbce2f2dd57f7"
+    sha256 cellar: :any, x86_64_linux:      "fd956158bea7ebf7802e238660471e3a4fadf7a7390218a65176b45e7e9f99a3"
   end
 
   # Project got archived on 2026-03-23 per https://github.com/localstack/localstack/pull/13901
   deprecate! date: "2026-04-12", because: :unmaintained
   disable! date: "2027-04-12", because: :unmaintained
 
-  depends_on "pkgconf" => :build # for localstack_ext
-  depends_on "rust" => :build # for orjson
+  depends_on "rust" => :build # for dnspython
   depends_on "docker" => :test
-  depends_on "certifi"
-  depends_on "cryptography"
+  depends_on "certifi" => :no_linkage
+  depends_on "cryptography" => :no_linkage
   depends_on "libyaml"
-  depends_on "openssl@3" # for localstack_ext
-  depends_on "python@3.14"
+  depends_on "python@3.15"
 
   pypi_packages exclude_packages: %w[certifi cryptography]
 
@@ -58,8 +57,8 @@ class Localstack < Formula
   end
 
   resource "dnspython" do
-    url "https://files.pythonhosted.org/packages/8c/8b/57666417c0f90f08bcafa776861060426765fdb422eb10212086fb811d26/dnspython-2.8.0.tar.gz"
-    sha256 "181d3c6996452cb1189c4046c61599b84a5a86e099562ffde77d26984ff26d0f"
+    url "https://files.pythonhosted.org/packages/ef/4a/50822184bd67cc6493f0fb6a880749158fcd31ab3fa07409acfd91f9fc85/dnspython-2.9.0.tar.gz"
+    sha256 "b44dc6b18f07a8b1c56676a19fbfdb5209415b046a9cece286baafa87ff3f7f1"
   end
 
   resource "docker" do

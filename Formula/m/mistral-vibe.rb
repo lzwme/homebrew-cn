@@ -3,17 +3,17 @@ class MistralVibe < Formula
 
   desc "Minimal CLI coding agent"
   homepage "https://github.com/mistralai/mistral-vibe"
-  url "https://files.pythonhosted.org/packages/e6/26/3abc9e1301c575838a6b883636c73bcf9d79805265f527dcd82757857509/mistral_vibe-2.26.0.tar.gz"
-  sha256 "86ee13da13f9ca6b2f023cc5ca254a81bd99eeb5d2caa7b9e791421531bb2f5c"
+  url "https://files.pythonhosted.org/packages/36/a3/ab0ebab5586cdd56094d43b9dc1e3edb58f26aa6e9688da5d2a3ce04aa39/mistral_vibe-2.26.1.tar.gz"
+  sha256 "e92402b2a1705c66463cad9d1f33d549ea2d8fc1bb608ec228c7acaf49ef4332"
   license "Apache-2.0"
   head "https://github.com/mistralai/mistral-vibe.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "5d4fdece1e97051bb627a354e8bdb3f66832261d8297ebe73b269ad957a3af02"
-    sha256 cellar: :any, arm64_tahoe:       "fd1b132ef1446a9c3e0f74ee780495ae3e0a225d29d354ee5e43f1ea0506aa4c"
-    sha256 cellar: :any, arm64_sequoia:     "fac32e2ce962e196e3096ac3aaae2290f4598f20a934b21352218723183c249c"
-    sha256 cellar: :any, arm64_linux:       "4803948fb6952f622aaeb15054024873d93eaec81333bc0ea9f23c1558af85de"
-    sha256 cellar: :any, x86_64_linux:      "28668be6b8bf56ad551d3e1a657d269b0f7b79c4f0d757563573138453d21b66"
+    sha256 cellar: :any, arm64_golden_gate: "a96efeaa81ea950f8ded3d8c04dc393473c7d1c3f9942a3fc0825e37c5682702"
+    sha256 cellar: :any, arm64_tahoe:       "c4368ff66161a93123725de7c9f4387036280ef3128bcaa6936be33490460cc1"
+    sha256 cellar: :any, arm64_sequoia:     "fba96af114f5eb8495da2076b79ee4f477b814bd31d212712c86311ca1ac24df"
+    sha256 cellar: :any, arm64_linux:       "a5a34babbab83da1c46edd9d8b75c5ffcc07cc23e7017b6a3524ff06fbbbc8f8"
+    sha256 cellar: :any, x86_64_linux:      "0408434c36cf3b12aca2b963297cb1f5a7195469512b6acdd1fa9b58feb237b4"
   end
 
   depends_on "pkgconf" => :build
