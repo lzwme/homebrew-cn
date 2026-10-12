@@ -10,23 +10,22 @@ class Gcovr < Formula
   head "https://github.com/gcovr/gcovr.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "1bc061dc3752aedb21b2dea81649b898e469af71586df9c76c9a053bec97cd8f"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "6265636e24087c0242e1f62f319fe862e8212f6605724bb089ee6f9478982462"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "c91e85b8d3665cc865dbed4f86e6b125c0d510eebdfd65c8b894ac55bab4dd1e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "093f459d8b5c0c354933fb57054118eb3811b5fe2679e5e4cb85d6ae6c769632"
-    sha256 cellar: :any_skip_relocation, sonoma:            "47eddd0901cae25a5c021dc59274fe5aa9f747ae9492b497ae0c253f0fd9794a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "6095be0359be4260dd5bf6df97b3c6f4e5537e9a4bd56378ec124505b5df61ae"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "09fba8ca9f888cc853b640d8d8d41a83ad74f59f25ea338b420586ae7c1513ce"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "32126a702c47ea147ab8845c17996c2d13f9b4f9d28339afdfed9d4c1cbaf6ce"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "25aa5effb9e3b6519dbfc474b6e9c27d3299c9282b37153ac03816354e672d6b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "8707f523f88369bdd860ceeb9dee4d37139f187e8e55c8462b7b779923ac0812"
+    sha256 cellar: :any,                 arm64_linux:       "d8049dce31f55e436aac95d4244fb1fd055e826b5ca4f3cc47f652037cd7e0b3"
+    sha256 cellar: :any,                 x86_64_linux:      "53edf1f3a9177a57227bae6fc720385be544500af323211ba5bc43dea1c0b45c"
   end
 
-  depends_on "python@3.14"
+  depends_on "python@3.15"
 
   uses_from_macos "libxml2", since: :ventura
   uses_from_macos "libxslt"
 
   resource "colorlog" do
-    url "https://files.pythonhosted.org/packages/a2/61/f083b5ac52e505dfc1c624eafbf8c7589a0d7f32daa398d2e7590efa5fda/colorlog-6.10.1.tar.gz"
-    sha256 "eb4ae5cb65fe7fec7773c2306061a8e63e02efc2c72eba9d27b0fa23c94f1321"
+    url "https://files.pythonhosted.org/packages/8c/55/ba79756cb90c8d69d599d57785398ac87bba7b19c80e87f4e8a562197c93/colorlog-6.12.0.tar.gz"
+    sha256 "2a7924c1dadf18b22a0eb8b06d1c7b01d5341707ec1641eb6fcc4fde0c3e8e5f"
   end
 
   resource "jinja2" do
@@ -35,18 +34,18 @@ class Gcovr < Formula
   end
 
   resource "lxml" do
-    url "https://files.pythonhosted.org/packages/28/30/9abc9e34c657c33834eaf6cd02124c61bdf5944d802aa48e69be8da3585d/lxml-6.1.0.tar.gz"
-    sha256 "bfd57d8008c4965709a919c3e9a98f76c2c7cb319086b3d26858250620023b13"
+    url "https://files.pythonhosted.org/packages/23/ad/28ecd7cb894d172f3c9c80a075eeeb2017ac62e3632cee05a5f9493547eb/lxml-6.1.3.tar.gz"
+    sha256 "45222d94ddd511536f3b2f7d9deae3b2339b4ce0f075f1ca25703b07cad9dd21"
   end
 
   resource "markupsafe" do
-    url "https://files.pythonhosted.org/packages/7e/99/7690b6d4034fffd95959cbe0c02de8deb3098cc577c67bb6a24fe5d7caa7/markupsafe-3.0.3.tar.gz"
-    sha256 "722695808f4b6457b320fdc131280796bdceb04ab50fe1795cd540799ebe1698"
+    url "https://files.pythonhosted.org/packages/38/9b/e422a865e1d5d57d0e509b4e0bf1c1a70a7f6382c29a5aa428df994c8bc8/markupsafe-3.0.4.tar.gz"
+    sha256 "2e9ad7dd851bf45fab9f75cbff4cb493fee9979e8d8c7c9c3ee119022518edd6"
   end
 
   resource "pygments" do
-    url "https://files.pythonhosted.org/packages/c3/b2/bc9c9196916376152d655522fdcebac55e66de6603a76a02bca1b6414f6c/pygments-2.20.0.tar.gz"
-    sha256 "6757cd03768053ff99f3039c1a36d6c0aa0b263438fcab17520b30a303a82b5f"
+    url "https://files.pythonhosted.org/packages/49/2e/ced460408999b33da6b31b0021b0f37d329e202d4169aeb164493778f25b/pygments-2.21.0.tar.gz"
+    sha256 "610ca751c9bc2492b38eb9a38a7fbc93edbbb2d7182edaf34e66ae493dee5c8c"
   end
 
   def install

@@ -8,17 +8,18 @@ class Humanbound < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "c9dadb2eb25bac2ded31add9482960d775e5b5dd3b15d8802325f5fb415ebdbd"
-    sha256 cellar: :any, arm64_tahoe:       "b88549bec3be5b5215fd7226bb715a99b3e430cc6d775148cc05038db540cf5c"
-    sha256 cellar: :any, arm64_sequoia:     "65c7d661f4123b4e1d96b6e4e69074618fdf44f15a3c9a5b69a48be1a04d8ce9"
-    sha256 cellar: :any, arm64_linux:       "11b3aa5a94087b0891229ccf8251acb1b550e6b1706bfe9ea09ef352ae19cfcc"
-    sha256 cellar: :any, x86_64_linux:      "1eb069d690ed10ec58fbc3a203b0380cd3d760a1658da06e57301bfe30613b7d"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "f384d4aa79fd42b3483fea220a6222ad323e071e97401096a28d708beb9f388e"
+    sha256 cellar: :any, arm64_tahoe:       "c26b02756bcb654ef3ed5da6484028696e9a17c53957dfddd8b7a65ff9826fe3"
+    sha256 cellar: :any, arm64_sequoia:     "7fff93fc05444b9b5fec1242cc891c3a86d14d0de463740a9331cf991f358fc3"
+    sha256 cellar: :any, arm64_linux:       "dc2d2ae87dee0f10cac1459262e6c92c6bf3c82e06fe86076a7f7f69c25b26a0"
+    sha256 cellar: :any, x86_64_linux:      "289f151839ebfb068552f06e0e94a7e6beb25b37a5cd8f6084b1a9f69e867bc4"
   end
 
   depends_on "certifi" => :no_linkage
   depends_on "libyaml"
   depends_on "pydantic" => :no_linkage
-  depends_on "python@3.14"
+  depends_on "python@3.15"
 
   pypi_packages exclude_packages: %w[certifi pydantic]
 
@@ -83,8 +84,8 @@ class Humanbound < Formula
   end
 
   resource "posthog" do
-    url "https://files.pythonhosted.org/packages/38/a8/32f9749118b57e6418b81c8d4f0108116c69bfd9c2c8b80dc723ddf56f86/posthog-7.62.0.tar.gz"
-    sha256 "b5bb53bf3ab634ccfe3a8ac6b5ea3fa502b019db4b55313f929f1706bea098a7"
+    url "https://files.pythonhosted.org/packages/34/1d/bb4b6538c94b63c32bbe32a4782393ae0560d49f9517f51b04fe3e970d4a/posthog-7.67.0.tar.gz"
+    sha256 "37feb3c125f067ca077800dd986a5a9f1d264a3d92d75ca3061047c4db93565e"
   end
 
   resource "pygments" do

@@ -9,10 +9,11 @@ class Opendoor < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "c63f4f604c3cfe14c171b3dab173deb8637bf907e86de4c4e41ca966f9174336"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "019f22d6e8a7629e5def6a7efe5cd216ba237b2270eaf12ddf0ffb742921a720"
   end
 
-  depends_on "python@3.14"
+  depends_on "python@3.15"
 
   resource "packaging" do
     url "https://files.pythonhosted.org/packages/d7/f1/e7a6dd94a8d4a5626c03e4e99c87f241ba9e350cd9e6d75123f992427270/packaging-26.2.tar.gz"
@@ -37,6 +38,14 @@ class Opendoor < Formula
     resolves "https://github.com/stanislav-web/OpenDoor/pull/134"
   end
 
+  # Python 3.15 runtime support, upstream PR ref, https://github.com/stanislav-web/OpenDoor/pull/135
+  patch do
+    url "https://github.com/stanislav-web/OpenDoor/commit/213bff67f0d777edbba79e28ffcdbe92fd767594.patch?full_index=1"
+    sha256 "13940d730310fd00802a9c5262999065c13cad7c6a52dd2c6eb49c74a171b477"
+    type :unofficial
+    resolves "https://github.com/stanislav-web/OpenDoor/pull/135"
+  end
+
   def install
     venv = virtualenv_install_with_resources
 
@@ -52,21 +61,33 @@ class Opendoor < Formula
   end
 
   test do
-    # Check on manually updated urllib3.
-    # TODO: remove with patch
+    require "socket"
+
     system libexec/"bin/python", "-m", "pip", "check"
 
-    port = free_port
+    server = TCPServer.new("127.0.0.1", 0)
+    port = server.addr[1]
     wordlist = testpath/"wordlist.txt"
 
     wordlist.write ["opendoor-health.txt", "missing-opendoor.txt", ""].join(10.chr)
-    (testpath/"opendoor-health.txt").write "ok"
 
-    server_pid = spawn python3, "-m", "http.server", port.to_s,
-                                "--bind", "127.0.0.1",
-                                "--directory", testpath.to_s
+    server_pid = fork do
+      loop do
+        socket = server.accept
+        begin
+          request = socket.gets("\r\n\r\n")
+          next unless request
+
+          found = request.lines.first.split[1] == "/opendoor-health.txt"
+          status = found ? "200 OK" : "404 Not Found"
+          body = found ? "ok" : "not found"
+          socket.print "HTTP/1.1 #{status}\r\nContent-Length: #{body.bytesize}\r\nConnection: close\r\n\r\n#{body}"
+        ensure
+          socket.close
+        end
+      end
+    end
     output = begin
-      sleep 4
       shell_output(
         "#{bin}/opendoor --host 127.0.0.1 --port #{port} --scheme http:// " \
         "--scan directories --method GET --wordlist #{wordlist} " \

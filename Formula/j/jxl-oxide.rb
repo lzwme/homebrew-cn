@@ -23,6 +23,12 @@ class JxlOxide < Formula
     sha256 "6617480923e1fdef555e165a1e7df9ca648068dd0bdbc41a22c0e4213392d834"
   end
 
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
     ENV["LCMS2_LIB_DIR"] = formula_opt_lib("little-cms2").to_s
     system "cargo", "install", *std_cargo_args(path: "crates/jxl-oxide-cli")

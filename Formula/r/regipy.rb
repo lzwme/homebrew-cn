@@ -9,10 +9,11 @@ class Regipy < Formula
   head "https://github.com/mkorman90/regipy.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "0f603d354b5663547bd47b732a7b80fa9848b37a74b4fb701e4fcf7e2a73e695"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "0168514a88c05d4dfaf485f8bee80c544039cc72d97d70753bd79a1a199bf79f"
   end
 
-  depends_on "python@3.14"
+  depends_on "python@3.15"
 
   pypi_packages package_name: "regipy[cli]"
 

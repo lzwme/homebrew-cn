@@ -6,13 +6,15 @@ class Oterm < Formula
   url "https://files.pythonhosted.org/packages/b4/44/eafe2e420ab2b772ab23b92a90b69c6b7922cc00ec79bac0babade174e99/oterm-0.25.0.tar.gz"
   sha256 "bf126ee0c4b2f1f6e0c51ac83477758aea9948852ec905dcdde6c1236ebd8e26"
   license "MIT"
+  revision 1
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "cfe47f600bfeb2dcb484c81defb66da3ee9a96d04d5bbf4f9019653335147725"
-    sha256 cellar: :any, arm64_tahoe:       "31a969e2cbbbead5a4effbcee7f958a1dc38397ec64513ae3d5d92a0cfc80485"
-    sha256 cellar: :any, arm64_sequoia:     "3f27c9b4e1556009ec5f1c4c5401611127d941a5a19aaa41f4cc2befc3e24537"
-    sha256 cellar: :any, arm64_linux:       "84bd94d9d7f2e9f014d4603b61d672bfcc94904e868cbff7f1afbacdf14cb718"
-    sha256 cellar: :any, x86_64_linux:      "c5071bf512b262af397a9b5ff21692bb92bbcd81fc6f9ebeb29348575179d761"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "e9cf612f7d28f870271ce7871828e96bad155d8ed5371cf8d6b423df705c110f"
+    sha256 cellar: :any, arm64_tahoe:       "935815e5f858183570de8d2d34c55472cc8b300829cfa9dee2c06f2fdf3eaaec"
+    sha256 cellar: :any, arm64_sequoia:     "8dfb7cc6bb5ac5433e2b57605a9398ca920f0f3174f628dd130f97f432e103e0"
+    sha256 cellar: :any, arm64_linux:       "c029f651935ad01084b8c9cd3f5a4c1cfe7d31dced56797ab789b548b80be297"
+    sha256 cellar: :any, x86_64_linux:      "f8a3163239f3d36c76f29c92b9d15dde417a2b54a25d6604db49bfc55ae5f374"
   end
 
   depends_on "pkgconf" => :build
@@ -29,7 +31,7 @@ class Oterm < Formula
   uses_from_macos "libxslt"
 
   on_linux do
-    depends_on "openssl@3"
+    depends_on "openssl@4"
     depends_on "zlib-ng-compat"
   end
 
@@ -217,8 +219,8 @@ class Oterm < Formula
   end
 
   resource "hf-xet" do
-    url "https://files.pythonhosted.org/packages/53/92/ec9ad04d0b5728dca387a45af7bc98fbb0d73b2118759f5f6038b61a57e8/hf_xet-1.4.3.tar.gz"
-    sha256 "8ddedb73c8c08928c793df2f3401ec26f95be7f7e516a7bee2fbb546f6676113"
+    url "https://files.pythonhosted.org/packages/1b/ab/522a2ab67f27971a9d48ca666d4fca85ef7d5282d142e31fd087e27b1bbe/hf_xet-1.6.0.tar.gz"
+    sha256 "2e58454a340b3556dfa4972d5451aff4fba8dd42a236600ba1a1d2b1514f0fef"
   end
 
   resource "httpcore" do
@@ -652,26 +654,19 @@ class Oterm < Formula
   end
 
   def install
-    # Work around superenv breaking aws-lc-sys `-O0` needed to build CPU Jitter RNG
+    # Work around superenv breaking aws-lc-sys `-O0` needed to build CPU Jitter RNG for primp
     ENV["AWS_LC_SYS_NO_JITTER_ENTROPY"] = "1"
     # `tokenizers` and `hf-xet` build PyO3 extensions through maturin.
-    ENV.append_to_rustflags "-C link-arg=-Wl,-undefined,dynamic_lookup"
+    ENV.append_to_rustflags "--codegen link-arg=-Wl,-undefined,dynamic_lookup" if OS.mac?
 
     without = ["hf-xet"]
     without += %w[jeepney secretstorage] unless OS.linux?
     venv = virtualenv_install_with_resources(without:)
 
     resource("hf-xet").stage do
-      # Use native-tls instead since building bundled aws-lc is tricky to do indirectly within superenv.
-      # Can consider switching if system copy is supported https://github.com/aws/aws-lc-rs/issues/936
-      inreplace "xet_client/Cargo.toml", 'default = ["rustls-tls"]', 'default = ["native-tls"]'
-
-      # Disable sha2-asm which requires a minimum of -march=armv8-a+crypto
-      if ENV.effective_arch == :armv8
-        inreplace "xet_data/Cargo.toml",
-                  'sha2 = { workspace = true, features = ["asm"] }',
-                  "sha2 = { workspace = true }"
-      end
+      # Use native-tls rather than needing to build another rustls + aws-lc
+      inreplace %w[xet_client/Cargo.toml xet_data/Cargo.toml xet_pkg/Cargo.toml],
+                'default = ["rustls-tls"]', 'default = ["native-tls"]'
       venv.pip_install Pathname.pwd
     end
 

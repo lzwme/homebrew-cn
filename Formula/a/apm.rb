@@ -9,18 +9,19 @@ class Apm < Formula
   head "https://github.com/microsoft/apm.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "04a2a97805449298b0f58e5a95ab0373f6a9475d51fc37301b73858090d12abe"
-    sha256 cellar: :any, arm64_tahoe:       "91d2a5ef8b51692a2183e02a5640ce1a4e7a4b399ab35d7ebc84234804d41320"
-    sha256 cellar: :any, arm64_sequoia:     "a3ae60a3e93a54823e486560e609f3ef8d7d443270fc662690da34ff97b064d3"
-    sha256 cellar: :any, arm64_linux:       "6abf349d3361651e1dee05140a0c2caf1d0526b6b4f38a4f1b519a7a447ca62c"
-    sha256 cellar: :any, x86_64_linux:      "27ac2e31149b115bcdef315d93a87d352fd230ab14f8404cd55140517cfb98c2"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "349ce95ca98b3ae5afd129983e70f254eb1a7981998abae5f937f8043ed00a4d"
+    sha256 cellar: :any, arm64_tahoe:       "06422efe604d73e7a9c11b658538b226a5634166498f6e458a8dc7a7980a13b2"
+    sha256 cellar: :any, arm64_sequoia:     "134a10fd640da69eb82a828b2fa89a3a18daab2ba1a4dd30f9bb7be752395233"
+    sha256 cellar: :any, arm64_linux:       "1b60225f71907ef97574dc29ee0afa0894def6c682c58353c8c545813c736ff2"
+    sha256 cellar: :any, x86_64_linux:      "4bdeaa8ba4cdb4342cfdd230bcf0eaff1c153113c58690445bf3bccb9d12654c"
   end
 
   depends_on "rust" => :build # for jiter
   depends_on "certifi" => :no_linkage
   depends_on "libyaml"
   depends_on "pydantic" => :no_linkage
-  depends_on "python@3.14"
+  depends_on "python@3.15"
 
   pypi_packages package_name: "apm-cli", exclude_packages: ["certifi", "pydantic"]
 
@@ -30,8 +31,8 @@ class Apm < Formula
   end
 
   resource "aiohttp" do
-    url "https://files.pythonhosted.org/packages/58/d9/22ce5786ac0c1653ae8b6c23bded02c1686d11f0dbb45b31ce128e0df985/aiohttp-3.14.3.tar.gz"
-    sha256 "9491196535a88924a60afd5b5f434b5b203b6cc616250878dbdb223a8f7844bc"
+    url "https://files.pythonhosted.org/packages/93/2f/6a91adaa2dc26877d6ed2f54c0370c8910f019db7d77c5c6a194611e93ea/aiohttp-3.14.4.tar.gz"
+    sha256 "831fc5bd39ec2517851e348f613ddb5447a47cf4b71cb09845af7ad7ed45d8f9"
   end
 
   resource "aiosignal" do
@@ -85,8 +86,8 @@ class Apm < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/70/51/2bc9e529f154fad99b6cd0073e609291eb32fd23581b32362d33d164d316/filelock-4.0.9.tar.gz"
-    sha256 "635e7d67fa92654eed444e75e9ca18426d34e77ad9c469bf4373f75a932f7b22"
+    url "https://files.pythonhosted.org/packages/4c/58/6fd434bec86eff7c38a3168454cb132b762b2bea9b3ac094101a2f7bc32a/filelock-4.1.0.tar.gz"
+    sha256 "ad7f724afef953e731b1cc39bcd3a09166d72ed7fcdf29e6e88b1c3235c6715d"
   end
 
   resource "frozenlist" do
@@ -160,8 +161,8 @@ class Apm < Formula
   end
 
   resource "openai" do
-    url "https://files.pythonhosted.org/packages/73/4f/e57670227cb7b61362d8f9bfba54d4e9f7bde799798c342782788bc12d6c/openai-3.24.0.tar.gz"
-    sha256 "1e7463f7d78773ab2ce4fe85710481aa5bd5ffefd54c8de4b067506cd2d42895"
+    url "https://files.pythonhosted.org/packages/b7/a3/3b5576af9c4b8cb7eef1383d33c48a9431b292983fe4b78cbffb31d0aeeb/openai-3.28.0.tar.gz"
+    sha256 "cf0509d32d7bd8eb6a3db02417957cb455212b6629d071826b9ea1f61659e2a4"
   end
 
   resource "pluggy" do

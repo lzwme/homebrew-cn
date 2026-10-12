@@ -9,18 +9,19 @@ class Cycode < Formula
   head "https://github.com/cycodehq/cycode-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "3f829b2b03870b4e141702ee420f6120f64bf07911b0ee5c9b3dc36701ad9325"
-    sha256 cellar: :any, arm64_tahoe:       "d5dc44da0d5a12dce0396a6db00586548daa13a93e3fabd0174f4a7b76509c42"
-    sha256 cellar: :any, arm64_sequoia:     "9642ea95327c7cb5ad5813587e6f2f0240664f6ae041b2ea0f5c64fb3d2aaab0"
-    sha256 cellar: :any, arm64_linux:       "2031d20d4a06fa906e80b9a9a7fb051a2f8a9bfa7578b72f3a1a8b5e532e0ce8"
-    sha256 cellar: :any, x86_64_linux:      "54f5cee0a1489ef4ddd943d2169be725f730038245a4e6174bd668ed93546719"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "0f6786520c989e6b38cd7396c1b7aee7aff22c1f0b9fb46ac6e1c08d93dad250"
+    sha256 cellar: :any, arm64_tahoe:       "d1d0a9f272abca5015d5f792b0bc598281c305b6f06173d0cfef6c703cb80e03"
+    sha256 cellar: :any, arm64_sequoia:     "08888e92632cd5a91850f9ad66e4316f97e38367cffb05a45e2849b986bf16e4"
+    sha256 cellar: :any, arm64_linux:       "2e9024489e3255326508c070b11ea8a1e1fa6139efcbc333a10aa080eff680d2"
+    sha256 cellar: :any, x86_64_linux:      "b18525b75aa4fd3f18b4ed87ec27b5abd44947bc23ff8b5e375d414fbb8a0541"
   end
 
   depends_on "certifi" => :no_linkage
   depends_on "cryptography" => :no_linkage
   depends_on "libyaml"
   depends_on "pydantic" => :no_linkage
-  depends_on "python@3.14"
+  depends_on "python@3.15"
   depends_on "rpds-py" => :no_linkage
 
   pypi_packages exclude_packages: %w[certifi cryptography pydantic rpds-py]

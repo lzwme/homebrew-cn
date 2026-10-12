@@ -31,10 +31,6 @@ class Bkmr < Formula
   end
 
   def install
-    # Ensure that the `openssl` crate picks up the intended library.
-    # https://docs.rs/openssl/latest/openssl/#manual
-    ENV["OPENSSL_DIR"] = formula_opt_prefix("openssl@3")
-
     # Add Homebrew lib to rpath so dlopen("libonnxruntime.dylib") finds it at runtime
     ENV.append_to_rustflags "-C link-args=-Wl,-rpath,#{rpath(target: formula_opt_lib("onnxruntime"))}"
 

@@ -2,6 +2,7 @@ class Dotnet < Formula
   desc ".NET Core"
   homepage "https://dotnet.microsoft.com/"
   license "MIT"
+  revision 1
   version_scheme 1
   compatibility_version 7
 
@@ -37,6 +38,15 @@ class Dotnet < Formula
           end
         end
       end
+
+      # Backport OpenSSL 4 support
+      patch do
+        url "https://github.com/dotnet/runtime/commit/73ae2764c385c0f7dd6ecd53aeaa961fd6db508c.patch?full_index=1"
+        sha256 "5238ab26337672635a0ffc969680ef1db8399fa38e769a563a01a39568dbaf28"
+        directory "src/runtime"
+        type :backport
+        resolves "https://github.com/dotnet/runtime/pull/135534"
+      end
     end
 
     resource "1xx-manifest" do
@@ -67,12 +77,11 @@ class Dotnet < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_golden_gate: "a5024a30fdc501d20ff89c6f5d9466fb6b6bcb2ff9322f3e0af70e6838a4e5fb"
-    sha256 cellar: :any, arm64_tahoe:       "6dfc193bf00817200f19683c7993e7ce5b96240842aac662456b702323f9da7f"
-    sha256 cellar: :any, arm64_sequoia:     "4c2036895068dff02de38d0d70e56106a3fb6d013cfd5685d2ffe474283e1094"
-    sha256 cellar: :any, arm64_linux:       "a10b57d633642f97861efa31a614ef3667cd7606af1b4fe230eb6e712443777c"
-    sha256 cellar: :any, x86_64_linux:      "e5d520ed9ebfd35b82e215de0aef3c5ace18b8809e74f7f02443c97b50d7f527"
+    sha256 cellar: :any, arm64_golden_gate: "fd2793f413fe9f83ace182f636abd8d44184185d80dc8e1fd23527934479b33b"
+    sha256 cellar: :any, arm64_tahoe:       "5ff0fd2eee7bf478f5bd546c21a9c723f0800365facdff1b430e1cc9404ffb1f"
+    sha256 cellar: :any, arm64_sequoia:     "8cf597a57a7b49286aa0c52f9c3f5f41a50232e892214eda60bdfe80bd4fbed9"
+    sha256 cellar: :any, arm64_linux:       "54bdde5fe4b356fd19493f892389d3e79ca963de0b9c3640f7824c460a928814"
+    sha256 cellar: :any, x86_64_linux:      "66a2980731a0f7e1a51e9cb12cab3eea87a2a2c251a4c88371b15179fdfc52fa"
   end
 
   head do
@@ -91,7 +100,7 @@ class Dotnet < Formula
   depends_on "rapidjson" => :build
   depends_on "brotli"
   depends_on "icu4c@78"
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   uses_from_macos "cpio" => :build
   uses_from_macos "python" => :build

@@ -4,6 +4,7 @@ class Nushell < Formula
   url "https://ghfast.top/https://github.com/nushell/nushell/archive/refs/tags/0.116.1.tar.gz"
   sha256 "0cca0c5bc9d9eb608dee00c75b6b511917df6e66c784b034468bab2ff0fbb9b4"
   license "MIT"
+  revision 1
   head "https://github.com/nushell/nushell.git", branch: "main"
 
   livecheck do
@@ -13,16 +14,16 @@ class Nushell < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "0930ba1cf28d06546348cc6476e92b553e2d04893e9c26dfe408b97cb1ab074b"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "7544b2f1c956665c6bb0f448edd5d3bca4a5da53c65507dff558643edbb9f93e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "9b7be3a9b66c6a8b6f51bc9d3ac28625eb09966ecc8febd445343edcc83250a7"
-    sha256 cellar: :any,                 arm64_linux:       "5b03d3203041620799d03b3d3be38cd7e1d73e3b151bbc95a9a8dc20d07d6877"
-    sha256 cellar: :any,                 x86_64_linux:      "7a3001c12276b25a0fd73f0d39d5140e08b81ff62995582a01637b71792dc012"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "d18196a0a8500ce635f118eab3f3d6cbf8459042a22d3fa123d7cf466379a86c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "4c2f83ab98dec74d69d142f1de6630c39c9a5f2d3ab53dceece1bb309d0d647d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "565e6bf6e0e8fc13e8cf898465b942d575aae19fdf9b47ecfd67c77bfa6e1b71"
+    sha256 cellar: :any,                 arm64_linux:       "a138bc04782c9c0c761a0f8b75422d2fe5fecb930445f1dad971e6ce4ae2aa00"
+    sha256 cellar: :any,                 x86_64_linux:      "d8c5b15f24e509634e7b634fda6bbf4575288933ccb131365741344efd323791"
   end
 
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   uses_from_macos "curl"
 

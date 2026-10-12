@@ -7,15 +7,16 @@ class Rawdog < Formula
   url "https://files.pythonhosted.org/packages/3c/ab/eaae3e0f2fac4a717d632990795fd6a560efaf9e54a1741e842234dec1cb/rawdog_ai-0.1.6.tar.gz"
   sha256 "1fc37d0e3336e87568ae9ee5dde5e7c68c1af652efd0956ee0c62281ddf14b41"
   license "Apache-2.0"
-  revision 26
+  revision 27
   head "https://github.com/granawkins/rawdog.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "933c6430478095a9d43380bd093bde173da97389f07afbe1eca58b149e51a561"
-    sha256 cellar: :any, arm64_tahoe:       "ba3592f844375142a4dc40b1a347c41e5bf228f04cf48ee685645adc19772cc8"
-    sha256 cellar: :any, arm64_sequoia:     "51c5d65bb8ab0eb2089508609ed9c0e5edf564af0b5882fe09bec19a59b2123b"
-    sha256 cellar: :any, arm64_linux:       "5f2e7bc1df0f2e3c1ce1e53ee8b51a9dc44844c3f633694ccc910f20cc97327a"
-    sha256 cellar: :any, x86_64_linux:      "c241c0f22cfcf8baca2b32603d4ee54345ce5c1b6a26f1e2159feccf071b3271"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "4092b443f8d094584bbadba27392ea173ff25dd4ebeb8567f2aa87d027f0ee54"
+    sha256 cellar: :any, arm64_tahoe:       "521d53cfa5ab35d2b81d1855c29a12dd2255cfd549e6a093a1a01313a42d3112"
+    sha256 cellar: :any, arm64_sequoia:     "0e84e2d856a4f278f81274bd293b2d836ac808766d59dcfe3433523cf5a8aeea"
+    sha256 cellar: :any, arm64_linux:       "6f366e88ca268334030db39c8b8479a1376f5e804af3e081edfd73c028e51d7f"
+    sha256 cellar: :any, x86_64_linux:      "6605f4683883e8e9ad2961f84f55328bf1eb4ad2de9d23eb2c3270bec28d18aa"
   end
 
   depends_on "pkgconf" => :build
@@ -25,9 +26,10 @@ class Rawdog < Formula
   depends_on "pydantic" => :no_linkage
   depends_on "python@3.14"
   depends_on "rpds-py" => :no_linkage
+  depends_on "sqlite"
 
   on_linux do
-    depends_on "openssl@3" # for hf-xet
+    depends_on "openssl@4" # for hf-xet
   end
 
   pypi_packages exclude_packages: ["certifi", "pydantic", "rpds-py"]
@@ -38,8 +40,8 @@ class Rawdog < Formula
   end
 
   resource "aiohttp" do
-    url "https://files.pythonhosted.org/packages/58/d9/22ce5786ac0c1653ae8b6c23bded02c1686d11f0dbb45b31ce128e0df985/aiohttp-3.14.3.tar.gz"
-    sha256 "9491196535a88924a60afd5b5f434b5b203b6cc616250878dbdb223a8f7844bc"
+    url "https://files.pythonhosted.org/packages/93/2f/6a91adaa2dc26877d6ed2f54c0370c8910f019db7d77c5c6a194611e93ea/aiohttp-3.14.4.tar.gz"
+    sha256 "831fc5bd39ec2517851e348f613ddb5447a47cf4b71cb09845af7ad7ed45d8f9"
   end
 
   resource "aiosignal" do
@@ -58,13 +60,13 @@ class Rawdog < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/48/59/fb93b6ebd9ad43eb9a58c7a6da51a0fe24ab0c04bc4d534a0bfc5eba7f59/boto3-1.43.108.tar.gz"
-    sha256 "03341f089158368acf83e921aca98b706095322ca52bc4c039a616940aa5ad41"
+    url "https://files.pythonhosted.org/packages/59/d3/fa092ae1c109100d0c5c14c69a316cd6d53c05fb57183fa77b1fcdef86ce/boto3-1.43.111.tar.gz"
+    sha256 "5ae342a16c848909cd42d4be404f69d9082e5705460198d4d3327eca5f6cddcb"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/61/16/6b4477f433da2c11193802f538330ce080076c2f38d817ad437ed3cd1465/botocore-1.43.108.tar.gz"
-    sha256 "ee4f75cf3bdbb0da7912e089950e8112f692016539d939312c771499958e6cfd"
+    url "https://files.pythonhosted.org/packages/6c/43/257e97270ddd6833fd54b11e544a09b441b02f8c731bdeb29b90479be565/botocore-1.43.111.tar.gz"
+    sha256 "44d5e80962ac6cb9e85af72667b77c9586451e3328ab0ce33195380767e213d8"
   end
 
   resource "charset-normalizer" do
@@ -88,8 +90,8 @@ class Rawdog < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/70/51/2bc9e529f154fad99b6cd0073e609291eb32fd23581b32362d33d164d316/filelock-4.0.9.tar.gz"
-    sha256 "635e7d67fa92654eed444e75e9ca18426d34e77ad9c469bf4373f75a932f7b22"
+    url "https://files.pythonhosted.org/packages/0f/59/e19834834cb01a32febfbb0f8a23a9088088f5d45991824ff2bc3b5e8acb/filelock-3.32.7.tar.gz"
+    sha256 "37b8a3d9811b0f9aef7e5ec5c71bb320de52df51e6ca9bcd6f5ad81187660da7"
   end
 
   resource "frozenlist" do
@@ -113,8 +115,8 @@ class Rawdog < Formula
   end
 
   resource "hf-xet" do
-    url "https://files.pythonhosted.org/packages/1b/ab/522a2ab67f27971a9d48ca666d4fca85ef7d5282d142e31fd087e27b1bbe/hf_xet-1.6.0.tar.gz"
-    sha256 "2e58454a340b3556dfa4972d5451aff4fba8dd42a236600ba1a1d2b1514f0fef"
+    url "https://files.pythonhosted.org/packages/9e/27/06d899ea7bd721d272f84aac98bdb238de98af4cc767a69056d967d68c71/hf_xet-1.7.0.tar.gz"
+    sha256 "d406ec79053c0871817f700c2ac8c36ba0d87f9c34b7458b0f0063bb218b0466"
   end
 
   resource "hpack" do
@@ -178,8 +180,8 @@ class Rawdog < Formula
   end
 
   resource "litellm" do
-    url "https://files.pythonhosted.org/packages/89/ac/c11888f2fbd37225c48ecdb8535b38f8b0e0cb2219dcd5f3f1698c28ff58/litellm-1.103.2.tar.gz"
-    sha256 "fa4f6f158bb6e9da41958fe57dd292ac851f23ecceb75b50e70177255e291d3b"
+    url "https://files.pythonhosted.org/packages/c5/dc/d8597453971ad7ed012389c6197641a01f578f7f86c95d5b94e10c5331ea/litellm-1.104.2.tar.gz"
+    sha256 "f766de3dd38b977ca70f17f409df04c0a9a3e90aed82582a965d348b6e2fe399"
   end
 
   resource "markupsafe" do
@@ -263,8 +265,8 @@ class Rawdog < Formula
   end
 
   resource "tokenizers" do
-    url "https://files.pythonhosted.org/packages/18/1e/bc6587c5ab643b2e17776cace9070a2ae73549c86bffac9934a600bf3c31/tokenizers-0.23.2.tar.gz"
-    sha256 "7f0f085686b9de0d0079e6f874ae053600db64c5d13049e0bbc0119926d25aac"
+    url "https://files.pythonhosted.org/packages/e0/7c/2cabb2174e772636683008f2c5621949b645da7d303c596589e84516a184/tokenizers-0.23.3.tar.gz"
+    sha256 "cded33237c77caeef62944d32aa9a7ef42bdce2b3497e18d137e072a8c4be438"
   end
 
   resource "tqdm" do
@@ -283,23 +285,24 @@ class Rawdog < Formula
   end
 
   resource "zipp" do
-    url "https://files.pythonhosted.org/packages/b9/d8/eab98a517c14134c0b2eb4e2387bc5f457334293ec5d2dd3857ec2966802/zipp-4.1.0.tar.gz"
-    sha256 "4cb57381f544315db7688e976e922a2b18cdb513d21cc194eb42232ba2a3e602"
+    url "https://files.pythonhosted.org/packages/dc/23/655a1802fe8041302c959774ca7c80b53bc24737ff3ef45cb50ef11bd96c/zipp-4.1.1.tar.gz"
+    sha256 "7ebb7a44c021b29fd8dbd7cce6812d0d7b5b454521f93cc71af6ccd155aaa70b"
   end
 
   def install
     # `tokenizers` and `hf-xet` build PyO3 extensions through maturin.
-    ENV.append_to_rustflags "-C link-arg=-Wl,-undefined,dynamic_lookup"
+    ENV.append_to_rustflags "--codegen link-arg=-Wl,-undefined,dynamic_lookup" if OS.mac?
 
-    # Work around superenv breaking aws-lc-sys `-O0` needed to build CPU Jitter RNG
+    ENV["LIBSQLITE3_SYS_USE_PKG_CONFIG"] = "1"
+    # Work around superenv breaking aws-lc-sys `-O0` needed to build CPU Jitter RNG in litellm
     ENV["AWS_LC_SYS_NO_JITTER_ENTROPY"] = "1"
 
     venv = virtualenv_install_with_resources(without: "hf-xet")
 
     resource("hf-xet").stage do
-      # Use native-tls instead since building bundled aws-lc is tricky to do indirectly within superenv.
-      # Can consider switching if system copy is supported https://github.com/aws/aws-lc-rs/issues/936
-      inreplace "xet_client/Cargo.toml", 'default = ["rustls-tls"]', 'default = ["native-tls"]'
+      # Use native-tls rather than needing to build another rustls + aws-lc
+      inreplace %w[xet_client/Cargo.toml xet_data/Cargo.toml xet_pkg/Cargo.toml],
+                'default = ["rustls-tls"]', 'default = ["native-tls"]'
       venv.pip_install Pathname.pwd
     end
   end

@@ -9,16 +9,17 @@ class Fanficfare < Formula
   head "https://github.com/JimmXinu/FanFicFare.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "fb172ec23fbb462d108f3b49cfd9e8eac0e2afbb3dff1223e7714c6993f7f88e"
-    sha256 cellar: :any, arm64_tahoe:       "79fffb8b07d48ee4e85d0e166540e612706944369d04682fba3a7550021ec2d9"
-    sha256 cellar: :any, arm64_sequoia:     "46c94b4c03e8d7ca1f5cd22266b150750abf368102d83bbf86e797377c2f0040"
-    sha256 cellar: :any, arm64_linux:       "22b152b2648d9b375ed38fef292a4e1da7c50ab1c38482611d654f3b573e51ec"
-    sha256 cellar: :any, x86_64_linux:      "66e46cc88b5bfde5d9c3d8e1ca8884fb413c3c0db43429f8bffd14dad837f7a3"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "1291b98eda99c52263ba1d83b7d3cf523fbba5bfe6d349926b49fd56b24615fe"
+    sha256 cellar: :any, arm64_tahoe:       "3c81959855c0c3c60c64ef0e7ae0ed1c8390c50c446967fe25b34bdbb52fba2e"
+    sha256 cellar: :any, arm64_sequoia:     "0ee111db4d1e41fe97dc6a505b4eb99d99597eaeb64afa411af3dfd68ee8c30a"
+    sha256 cellar: :any, arm64_linux:       "b1df7ad87c033aac3e5d47a5a0ca9febc7434d702a8c6f17239bde8abd70a0f1"
+    sha256 cellar: :any, x86_64_linux:      "6bdafa1002391eeac4513a7f1bbfb6026be57786c008d3787c6cbf0dc460677e"
   end
 
   depends_on "pkgconf" => :build
   depends_on "certifi" => :no_linkage
-  depends_on "python@3.14"
+  depends_on "python@3.15"
   depends_on "sqlite" # APSW requires SQLite APIs not provided by macOS
 
   pypi_packages package_name:     "FanFicFare",
@@ -111,8 +112,8 @@ class Fanficfare < Formula
   end
 
   resource "soupsieve" do
-    url "https://files.pythonhosted.org/packages/71/c3/1b817965ac12dc002d7c9cd7dfffdd7d4fbf9b45763ef2ffe7b86ee94670/soupsieve-2.10.tar.gz"
-    sha256 "49e9380d7d2905463583bafe285e818c7366a9ed7b3aee221c1ac79c905d8bc0"
+    url "https://files.pythonhosted.org/packages/0e/b9/014459776d0be4dd5f0c196fd2c8dc523a4b817a561667fae4f330b04b48/soupsieve-3.0.1.tar.gz"
+    sha256 "713d5c69f90ef84deffec0b9c6244796575e3c9fc9081cefb96091ce1200a308"
   end
 
   resource "typing-extensions" do

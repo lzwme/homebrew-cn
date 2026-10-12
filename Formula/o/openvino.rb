@@ -41,7 +41,6 @@ class Openvino < Formula
     depends_on "automake" => :build
     depends_on "opencl-clhpp-headers" => :build
     depends_on "opencl-headers" => :build
-    depends_on "openssl@3" => :build
     depends_on "rapidjson" => :build
     depends_on "opencl-icd-loader"
 

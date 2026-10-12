@@ -3,13 +3,12 @@ class McpProxy < Formula
 
   desc "Bridge between Streamable HTTP and stdio MCP transports"
   homepage "https://github.com/sparfenyuk/mcp-proxy"
-  url "https://files.pythonhosted.org/packages/3e/59/140a08a3282ee66b9c4726db4fb168844110f773cd1248bf051409bef04a/mcp_proxy-0.12.0.tar.gz"
-  sha256 "bbe09d6760534e28e716c4662a9e0830b8f7a2804463c9791114889813ccb5d1"
+  url "https://files.pythonhosted.org/packages/7d/19/0612c8ddd6d3274da0a73fa45d067d4dbaeebb0239a01c1c0055b8b2e5d2/mcp_proxy-0.13.0.tar.gz"
+  sha256 "16ab358a4da5aeb4377772e982d6258f5e9bcc9ad8efea990e74f6a76e443853"
   license "MIT"
-  revision 5
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "b6830feacc7d8d10de7537f23748fc861de8fa695c82aad37cb5348357825a98"
+    sha256 cellar: :any_skip_relocation, all: "4499cfe7e15ca6c7596cc78dbb8939882b918e1c4e9ccf5dbf19ba0c685fb698"
   end
 
   depends_on "certifi" => :no_linkage
@@ -93,8 +92,8 @@ class McpProxy < Formula
   end
 
   resource "python-dotenv" do
-    url "https://files.pythonhosted.org/packages/6a/53/ed9d74092561d4b01a2ef1349d52cdbc135e526c245f366b089cfca6de49/python_dotenv-1.2.3.tar.gz"
-    sha256 "a20a594dabeaa385725aa239d5244871c143ecb356add8a20fcf23773a6c3a35"
+    url "https://files.pythonhosted.org/packages/74/26/2fbeedb218a787a5eea551c7532cac4e009f83d689dd2faa0d0353473f86/python_dotenv-1.2.4.tar.gz"
+    sha256 "f0d53e69935a851c0dcc78f3ab7aaccd8cabef0b92382b576b824212902873c0"
   end
 
   resource "python-multipart" do

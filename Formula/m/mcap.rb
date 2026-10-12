@@ -38,6 +38,12 @@ class Mcap < Formula
     sha256 "cb779e0296d288ad2290d3c1911a77266a87c0bdfee957049563169f15d6ba8e"
   end
 
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
     system "cargo", "install", *std_cargo_args(path: "rust/cli")
     generate_completions_from_executable(bin/"mcap", "completion")

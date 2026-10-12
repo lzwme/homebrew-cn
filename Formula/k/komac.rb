@@ -24,7 +24,7 @@ class Komac < Formula
     depends_on "zlib-ng-compat"
   end
 
-  resource "testdata" do
+  resource "testdata", :test do
     url "https://ghfast.top/https://github.com/russellbanks/Komac/releases/download/v2.13.0/komac-setup-2.13.0-x86_64-pc-windows-msvc.exe"
     sha256 "32c460e6d29903396f92f7b44dee1f9ac57f15d5c882d306e9af19fc7828842c"
   end
@@ -41,9 +41,8 @@ class Komac < Formula
   end
 
   test do
-    resource("testdata").stage do
-      assert_match "DisplayVersion: 2.13.0",
-shell_output("#{bin}/komac analyse komac-setup-2.13.0-x86_64-pc-windows-msvc.exe")
-    end
+    resource("testdata").stage(testpath)
+    output = shell_output("#{bin}/komac analyse komac-setup-2.13.0-x86_64-pc-windows-msvc.exe")
+    assert_match "DisplayVersion: 2.13.0", output
   end
 end

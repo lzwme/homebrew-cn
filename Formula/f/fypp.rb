@@ -9,11 +9,12 @@ class Fypp < Formula
   head "https://github.com/aradi/fypp.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "e6d97eb979c104d8ced969f231c7c95e4ec163ff542b8f17060b939c05730620"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "f6b6a6d36e74518217f6d23f153428bc0e46ff091eee77e5afbc63605af3822e"
   end
 
   depends_on "gcc" => :test
-  depends_on "python@3.14"
+  depends_on "python@3.15"
 
   def install
     system python3, "-m", "pip", "install", *std_pip_args(build_isolation: true), "."

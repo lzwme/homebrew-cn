@@ -19,6 +19,13 @@ class Gitnr < Formula
   depends_on "rust" => :build
   depends_on "openssl@3"
 
+  # `test do` block downloads a GitHub template.
+  allow_network_access! :test
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
     ENV["OPENSSL_DIR"] = formula_opt_prefix("openssl@3")
     system "cargo", "install", *std_cargo_args

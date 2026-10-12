@@ -9,23 +9,24 @@ class TerraformLocal < Formula
   revision 2
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "2ef87f6bac651a620c62dac48b2ee87ff05ea7a462cb095494039350ae82f3d0"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "4bbfef31720a5f3e1cbb985498aa2792dce4ac0db3ccd0893c41a841c8bd64b9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "c427f87dc4ae95cf4fe88158c803b48025158e8b0c2bfb80f1d0f3a028ecf15b"
-    sha256 cellar: :any,                 arm64_linux:       "5848a9094c949336713a4760d3f7c22a51d44b7e20aa59a908f73db1a7f6e826"
-    sha256 cellar: :any,                 x86_64_linux:      "ecbb3024b35e267b4d513fc02731c79d60d12391780980c5d1a0a50ae537c698"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "b16bf0c646b86194c21f3abbcfe66f1275527dcb00b4cdfdada567164ee46014"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "9531fe80b4a63c2b0f3ffd4ca22eb25aa69bbe40d54bde84071983ce2fea3d90"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "0661ada350ffe37a175eeb885a90159fe764ddd37be829c500fb0527bcc2e87a"
+    sha256 cellar: :any,                 arm64_linux:       "e46b18ce0884baeca63b0f356b398c38ce36bfa694bd2fa18ab2644ba458d74d"
+    sha256 cellar: :any,                 x86_64_linux:      "8bb96b5f08b54042e6b27f83263fea186f03c2cddb4b1090e2a5c47b2d4981be"
   end
 
-  depends_on "python@3.14"
+  depends_on "python@3.15"
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/48/59/fb93b6ebd9ad43eb9a58c7a6da51a0fe24ab0c04bc4d534a0bfc5eba7f59/boto3-1.43.108.tar.gz"
-    sha256 "03341f089158368acf83e921aca98b706095322ca52bc4c039a616940aa5ad41"
+    url "https://files.pythonhosted.org/packages/59/d3/fa092ae1c109100d0c5c14c69a316cd6d53c05fb57183fa77b1fcdef86ce/boto3-1.43.111.tar.gz"
+    sha256 "5ae342a16c848909cd42d4be404f69d9082e5705460198d4d3327eca5f6cddcb"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/61/16/6b4477f433da2c11193802f538330ce080076c2f38d817ad437ed3cd1465/botocore-1.43.108.tar.gz"
-    sha256 "ee4f75cf3bdbb0da7912e089950e8112f692016539d939312c771499958e6cfd"
+    url "https://files.pythonhosted.org/packages/6c/43/257e97270ddd6833fd54b11e544a09b441b02f8c731bdeb29b90479be565/botocore-1.43.111.tar.gz"
+    sha256 "44d5e80962ac6cb9e85af72667b77c9586451e3328ab0ce33195380767e213d8"
   end
 
   resource "jmespath" do

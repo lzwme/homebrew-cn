@@ -4,20 +4,20 @@ class Gitversion < Formula
   url "https://ghfast.top/https://github.com/GitTools/GitVersion/archive/refs/tags/6.8.2.tar.gz"
   sha256 "02b7efc0b9cfee26971c0f89b27724eb51d33c3230788963e77dc94070173c21"
   license "MIT"
+  revision 1
 
   no_autobump! because: :bumped_by_upstream
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_golden_gate: "27eb919eded79ab5813b14491887641e3d98383c83a0eafd74be46f4cac31e59"
-    sha256 cellar: :any, arm64_tahoe:       "7f514ea7bd2159c84e06d03daba4e900aafa36df3569a54fc69399a377b63882"
-    sha256 cellar: :any, arm64_sequoia:     "fb0f4e2c648885d6fee65dce3f09942f2e7b00591f0ae2c02b9654de23d71396"
-    sha256 cellar: :any, arm64_linux:       "4f48cf0bc6bf56c1aa2375e0ef93a4fd6ef68cb6676b53b89053dd151cedfe57"
-    sha256 cellar: :any, x86_64_linux:      "773910581edef4075a4f6108f3e9216debaa0a41072040de5e7d0f034336c14c"
+    sha256 cellar: :any, arm64_golden_gate: "53dd452592c6c061609ed3ebc09588213ad73e42d082aedb7745d6e529f27f61"
+    sha256 cellar: :any, arm64_tahoe:       "67dc8435b985c3f4b81d60c87f61a4daad680471a453574c62b64f4243ffdaac"
+    sha256 cellar: :any, arm64_sequoia:     "f983efd2abb47dd6ae67aafb15c0d45dc87852cf2a2dc3bc3b1a44abf7f76375"
+    sha256 cellar: :any, arm64_linux:       "41ac3fea51b94565a08fa4f9ae6d4d10717ecad319efe979d69779731096c007"
+    sha256 cellar: :any, x86_64_linux:      "d9a08ba35f4c80a141529f090071640dc1bb20525dbcd02149b4e371cc2b72f6"
   end
 
   depends_on "dotnet"
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   deny_network_access!
 

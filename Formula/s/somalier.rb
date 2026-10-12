@@ -4,20 +4,20 @@ class Somalier < Formula
   url "https://ghfast.top/https://github.com/brentp/somalier/archive/refs/tags/v0.3.5.tar.gz"
   sha256 "506f540589495cdc933b5c9e014f01b16261a567e003bcce60afbcf8de4519a8"
   license "MIT"
+  revision 1
   head "https://github.com/brentp/somalier.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "339d9361d8e804b216c069e51e4ac9a4b318ff84b826d899b6bbb8e4a05c80a7"
-    sha256 cellar: :any, arm64_tahoe:       "04bab8218031928411b50449a2e36df85ab0ab13cfcb41d7d31f5bd552fe191e"
-    sha256 cellar: :any, arm64_sequoia:     "d1aeffe146658c15fb904ad87bd7863ac35aeb07af7cd185f905d57116f41eba"
-    sha256 cellar: :any, arm64_linux:       "f9f41f7c9d298c42005ccb11b8c4406173d17c14bd98ef1f4d87368e06ccd08b"
-    sha256 cellar: :any, x86_64_linux:      "58e92f860a2e73d15baecc6a76517a8a41da648712579a5a92283ff10774afa7"
+    sha256 cellar: :any, arm64_golden_gate: "47489292e066b50811cd332e16350fd722764bddbf1603c1d35a6ec4df75fb57"
+    sha256 cellar: :any, arm64_tahoe:       "8b6efdc6e672d19af061a0d4ee93f872f482daa71437a16423d81569103b1802"
+    sha256 cellar: :any, arm64_sequoia:     "4b74676aa9d352d203b20835b325ac30a8635f2c016c6da06196ee82ace16124"
+    sha256 cellar: :any, arm64_linux:       "9fa3af840d4f961870ca127983dc9da1d41db8a32ec91fefb245295a734e4795"
+    sha256 cellar: :any, x86_64_linux:      "4cff4cf723b05a256472f8961ba66333dd194a5b17448c2abd76c737a4dd4531"
   end
 
   depends_on "nim" => :build
   depends_on "htslib"
   depends_on "libdeflate"
-  depends_on "openssl@3"
   depends_on "xz"
 
   uses_from_macos "bzip2"
@@ -184,13 +184,11 @@ class Somalier < Formula
       "--passC:-I#{formula_opt_include("htslib")}",
       "--passL:-L#{formula_opt_lib("htslib")} -lhts",
       "--passL:-L#{formula_opt_lib("libdeflate")} -ldeflate",
-      "--passL:-L#{formula_opt_lib("openssl@3")} -lcrypto -lssl",
       "--passL:-L#{formula_opt_lib("xz")} -llzma",
       "--passL:-lz -lbz2 -lcurl",
       "--dynlibOverride:hts",
       "--passL:-Wl,-rpath,#{rpath(target: formula_opt_lib("htslib"))}",
       "--passL:-Wl,-rpath,#{rpath(target: formula_opt_lib("libdeflate"))}",
-      "--passL:-Wl,-rpath,#{rpath(target: formula_opt_lib("openssl@3"))}",
       "--passL:-Wl,-rpath,#{rpath(target: formula_opt_lib("xz"))}",
     ]
 

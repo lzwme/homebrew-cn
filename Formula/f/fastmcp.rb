@@ -9,11 +9,12 @@ class Fastmcp < Formula
   head "https://github.com/jlowin/fastmcp.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "052099e59aa021f215ccae922039c7ea2bc0d36f6ea3bc547c6f7b500db44396"
-    sha256 cellar: :any, arm64_tahoe:       "f7d270821528825ce2135292bbc4468605a918b47e729d1108a5b4ed1be0c0b6"
-    sha256 cellar: :any, arm64_sequoia:     "748d8a7f7815d6136162d755246c0428c241873268ed74db8eb6f9b862ab4fa8"
-    sha256 cellar: :any, arm64_linux:       "84d660137f9a41882879264c54d483dcf9535557f5b1433092215d7d7d2df04e"
-    sha256 cellar: :any, x86_64_linux:      "7654d0150598afa1ea22d14447b8e7fe8e4140f9c13cb299b814a8ba2d685488"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "fb2dd67bf5e3352880dfb8bb3fac8963beaa8a177ae999d83d1f970bae906ada"
+    sha256 cellar: :any, arm64_tahoe:       "d450af9530cd2dc9c9b9251867ac36fcfe9a8722413219d5b23c1e3705eecd45"
+    sha256 cellar: :any, arm64_sequoia:     "1dc5b29464a0d1c387e7d6207d022c8a3fbb7a6db966ce87ad272a8524919d29"
+    sha256 cellar: :any, arm64_linux:       "6a1c2751b773b52f6efd0fe35076d0bface9ec24a1d5d11a489760ec6f01d652"
+    sha256 cellar: :any, x86_64_linux:      "f968625ee452ca00d7a1e01862f8d3de000ba724c7ecf1327035cd02fb9253b4"
   end
 
   depends_on "rust" => :build # for py_key_value_aio
@@ -21,7 +22,7 @@ class Fastmcp < Formula
   depends_on "cryptography" => :no_linkage
   depends_on "libyaml"
   depends_on "pydantic" => :no_linkage
-  depends_on "python@3.14"
+  depends_on "python@3.15"
   depends_on "rpds-py" => :no_linkage
   depends_on "uv"
 
@@ -49,8 +50,8 @@ class Fastmcp < Formula
   end
 
   resource "beartype" do
-    url "https://files.pythonhosted.org/packages/c7/94/1009e248bbfbab11397abca7193bea6626806be9a327d399810d523a07cb/beartype-0.22.9.tar.gz"
-    sha256 "8f82b54aa723a2848a56008d18875f91c1db02c32ef6a62319a002e3e25a975f"
+    url "https://files.pythonhosted.org/packages/74/b7/6f162c0116815b45de8ac81cde5aaacfc67cce4b573fb2e194c3a8c623eb/beartype-0.23.0.tar.gz"
+    sha256 "9d915ce043a2262ee3eb110d1c1c528179f06eb4145e375a750f72ddbdf40fa3"
   end
 
   resource "cachetools" do
@@ -74,8 +75,8 @@ class Fastmcp < Formula
   end
 
   resource "dnspython" do
-    url "https://files.pythonhosted.org/packages/8c/8b/57666417c0f90f08bcafa776861060426765fdb422eb10212086fb811d26/dnspython-2.8.0.tar.gz"
-    sha256 "181d3c6996452cb1189c4046c61599b84a5a86e099562ffde77d26984ff26d0f"
+    url "https://files.pythonhosted.org/packages/ef/4a/50822184bd67cc6493f0fb6a880749158fcd31ab3fa07409acfd91f9fc85/dnspython-2.9.0.tar.gz"
+    sha256 "b44dc6b18f07a8b1c56676a19fbfdb5209415b046a9cece286baafa87ff3f7f1"
   end
 
   resource "docstring-parser" do
@@ -299,8 +300,8 @@ class Fastmcp < Formula
   end
 
   resource "uncalled-for" do
-    url "https://files.pythonhosted.org/packages/6b/5a/92ce0b3ea5481915f55da994c2c2c5f7a3c09949afde196ee89f8ab961aa/uncalled_for-0.4.0.tar.gz"
-    sha256 "335b95bd2422332ec210d518f314a16e4c640921c39fc8bf2ad095bd3538f4af"
+    url "https://files.pythonhosted.org/packages/6c/54/4651e4c5fe84300f8e03c0390aaad41bcb9c7b81d7783542a3ee690b40ee/uncalled_for-0.4.1.tar.gz"
+    sha256 "6412b19d1b1e7d431981fee01f8b47be7802f48328a48cbe9603acee757ec553"
   end
 
   resource "uvicorn" do

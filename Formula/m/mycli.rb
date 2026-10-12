@@ -3,16 +3,16 @@ class Mycli < Formula
 
   desc "CLI for MySQL with auto-completion and syntax highlighting"
   homepage "https://www.mycli.net/"
-  url "https://files.pythonhosted.org/packages/f0/7c/517ec1bc2ef1b749e8d62280d3139b93b9fbfd9a9cccb22408c2a5ca1127/mycli-2.28.2.tar.gz"
-  sha256 "3bc942e3b489ef578d5849b1cb0432ce657ecd3a9f27a6e68930a26985937585"
+  url "https://files.pythonhosted.org/packages/01/dc/da9a3c3f34f40c91fa60b440f5a0de2aa152e769a0107200ac707e03f9b5/mycli-2.29.1.tar.gz"
+  sha256 "5ba428024c438113d05109c880c5045536b9acc64155210d554a3ae857c2dbed"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "b25e4ac184807fd5ced6837349ef82757cb044e39b5a22407fb3cb4d9ead08ad"
-    sha256 cellar: :any, arm64_tahoe:       "21dc4e839b7bed52a7898c26bf04d2851d9d9e6c7fcb139def5b881a27e7bc1c"
-    sha256 cellar: :any, arm64_sequoia:     "e2460432b86833201fe9d086599ae8f2277a82a9dc34d7a53f3ee69978259900"
-    sha256 cellar: :any, arm64_linux:       "33c531b7e620a90c963fa9908386810bcd5c24213cf6580f65562f2249a38941"
-    sha256 cellar: :any, x86_64_linux:      "d691dd205fd7ec09d6018baaee9a0412601b8721acb671fc03fecf1c114e2c87"
+    sha256 cellar: :any, arm64_golden_gate: "f89baa32ef1d15a6dd17641419db1147f10bbccc8a8bbbc652918f2595691fe7"
+    sha256 cellar: :any, arm64_tahoe:       "7ac045e9d9d5b927809918a35bcda722e1d9e02b6a712753ccf6b7d136af7fc6"
+    sha256 cellar: :any, arm64_sequoia:     "d2fe0dc08e7e259ea09b04957cac6375f2b919f5768264915b134bd954fc09d4"
+    sha256 cellar: :any, arm64_linux:       "88646c9652ebcd337ea9f523acac4724b062daba04ed9dbbc9639c1ec0564085"
+    sha256 cellar: :any, x86_64_linux:      "bac42b8895b5e751ad49bf0b06db32d1bd6bb576895e99caa9a6531dcab46407"
   end
 
   depends_on "rust" => :build # for jiter, polars, vl-convert
@@ -34,8 +34,8 @@ class Mycli < Formula
                 extra_packages:   %w[jeepney secretstorage]
 
   resource "altair" do
-    url "https://files.pythonhosted.org/packages/06/a1/5e6cc638a66da48cfc89a79c2f4810dfec00b63385f9b009ab1f069779bb/altair-6.2.2.tar.gz"
-    sha256 "a1ff9d9cfe81c75414641826312b9471780e19d39293ba0b012933f6b6cba0fe"
+    url "https://files.pythonhosted.org/packages/e8/de/9731304fae332b5783fdc3ed18531dfaf4a3cc62a66aaaa74c047355b70f/altair-6.3.0.tar.gz"
+    sha256 "fa632121aca6d0fcb198a3d8a9f7d937fa5b7518ec947951cfffb44e736d97c8"
   end
 
   resource "anyio" do
@@ -159,13 +159,13 @@ class Mycli < Formula
   end
 
   resource "narwhals" do
-    url "https://files.pythonhosted.org/packages/35/68/5351e34623d253423240ea7de3f8fc74fa8ab14b1ab3c0ec4ac8997413c9/narwhals-2.26.0.tar.gz"
-    sha256 "6b9cadca82f375c7e4cf584fdc86ca25da54827307a9c58f94547ee6104b82dd"
+    url "https://files.pythonhosted.org/packages/bf/21/f64d6b2dbea7bf3f8c38cdc786dcc6ef012ca3d173ad208c782c9a7bedf6/narwhals-2.27.1.tar.gz"
+    sha256 "aed93076a3ea42d9c32c88e4eb5ea422a21937011cbe1f480f9572a523c82094"
   end
 
   resource "openai" do
-    url "https://files.pythonhosted.org/packages/b4/07/cd478a4595282ac72e31090531bb37f8a1b6fd9cb45c1da6d6215078a4d9/openai-3.26.0.tar.gz"
-    sha256 "73b470c09cf2171dce930e36af01c6632241adda0120ad84302ad229f9130a5a"
+    url "https://files.pythonhosted.org/packages/b7/a3/3b5576af9c4b8cb7eef1383d33c48a9431b292983fe4b78cbffb31d0aeeb/openai-3.28.0.tar.gz"
+    sha256 "cf0509d32d7bd8eb6a3db02417957cb455212b6629d071826b9ea1f61659e2a4"
   end
 
   resource "packaging" do
@@ -179,13 +179,13 @@ class Mycli < Formula
   end
 
   resource "polars" do
-    url "https://files.pythonhosted.org/packages/a4/15/e8541eefc22fbc7ca89bcb5112298a153729f73cfbc0cf6a668e509f975c/polars-1.44.2.tar.gz"
-    sha256 "86c8e26b6c2de8c8d344bb910b74dfc47b118ac3fe0f19b44909467990a0b281"
+    url "https://files.pythonhosted.org/packages/8e/e9/001f371ec6a1bb54893f599ceebd56e6144fed4091f09f09fec0021a9276/polars-2.0.0.tar.gz"
+    sha256 "62da109e27a19a9d36657ee25dc035c9d3f87e7bd610526fe467dc37ea7dc115"
   end
 
   resource "polars-runtime-32" do
-    url "https://files.pythonhosted.org/packages/d4/a1/a7eace6587b56f22cf2a21ab4d5e695db372dc23fd96accb68b1ec12660b/polars_runtime_32-1.44.2.tar.gz"
-    sha256 "b84842f7d621aaca7a52e165e19a24f89db45f8aa13744941430218419a14a67"
+    url "https://files.pythonhosted.org/packages/34/ad/dbb6f6d7070867951532bcfe5e6a648d8777b416b18cddabc07030404e8c/polars_runtime_32-2.0.0.tar.gz"
+    sha256 "b5f9afcc742b4a67eabd2c680ff0f12eb02ede9b4bf807bffabd6dbb9a58d5c7"
   end
 
   resource "prompt-toolkit" do

@@ -8,27 +8,28 @@ class Cfripper < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "dbfcb1d68d02af269284081af856d43cb84a94295ef0f18251fa68e28c95e31e"
-    sha256 cellar: :any, arm64_tahoe:       "4c80a1022b5b84d61ade9b08df7f7c5f263c4f93d754a0258c0260a648425e61"
-    sha256 cellar: :any, arm64_sequoia:     "005d40a58b9dba77cf30a02d0f3e6e2c63cd460bcad76de2a0cf6cf444e24e8a"
-    sha256 cellar: :any, arm64_linux:       "0aa764cacf2e38e92d97b91a00bb2964d1291a8f9f0b5495d0c1efadfb3297f4"
-    sha256 cellar: :any, x86_64_linux:      "1f7d329f221cab234cc74f8958eb5c432356d65881e93eee2ec5456653fb51f4"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "c5bd149fe3f2458eabcf974c602382c695f2113be1859ed65fb7b620020d0a88"
+    sha256 cellar: :any, arm64_tahoe:       "f78e16317bcf991113e5f3c3539e3a2bde610a0d14cc0eb49e48a050ac4b1e60"
+    sha256 cellar: :any, arm64_sequoia:     "18fa3e8cb2e158671f04fd4f4cd77d61447056b4f880d29db26594137fc89a29"
+    sha256 cellar: :any, arm64_linux:       "3020e3139b318246e94b3341f27d44e619f605d7e3cf4d15959587411e4d4b05"
+    sha256 cellar: :any, x86_64_linux:      "c138e1b32c50fe2228eb8634c6e8037c2874c3224b0e01a00037c51e4b72b841"
   end
 
   depends_on "libyaml"
   depends_on "pydantic" => :no_linkage
-  depends_on "python@3.14"
+  depends_on "python@3.15"
 
   pypi_packages exclude_packages: "pydantic"
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/48/59/fb93b6ebd9ad43eb9a58c7a6da51a0fe24ab0c04bc4d534a0bfc5eba7f59/boto3-1.43.108.tar.gz"
-    sha256 "03341f089158368acf83e921aca98b706095322ca52bc4c039a616940aa5ad41"
+    url "https://files.pythonhosted.org/packages/59/d3/fa092ae1c109100d0c5c14c69a316cd6d53c05fb57183fa77b1fcdef86ce/boto3-1.43.111.tar.gz"
+    sha256 "5ae342a16c848909cd42d4be404f69d9082e5705460198d4d3327eca5f6cddcb"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/61/16/6b4477f433da2c11193802f538330ce080076c2f38d817ad437ed3cd1465/botocore-1.43.108.tar.gz"
-    sha256 "ee4f75cf3bdbb0da7912e089950e8112f692016539d939312c771499958e6cfd"
+    url "https://files.pythonhosted.org/packages/6c/43/257e97270ddd6833fd54b11e544a09b441b02f8c731bdeb29b90479be565/botocore-1.43.111.tar.gz"
+    sha256 "44d5e80962ac6cb9e85af72667b77c9586451e3328ab0ce33195380767e213d8"
   end
 
   resource "cfn-flip" do

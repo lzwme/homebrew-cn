@@ -4,7 +4,7 @@ class SpatialiteGui < Formula
   url "https://www.gaia-gis.it/gaia-sins/spatialite-gui-sources/spatialite_gui-2.1.0-beta1.tar.gz"
   sha256 "ba48d96df18cebc3ff23f69797207ae1582cce62f4596b69bae300ca3c23db33"
   license "GPL-3.0-or-later"
-  revision 15
+  revision 16
 
   livecheck do
     url "https://www.gaia-gis.it/gaia-sins/spatialite-gui-sources/"
@@ -12,12 +12,11 @@ class SpatialiteGui < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_golden_gate: "fd3bd2f0d2c11810655371e72b8930edb4aa788a789e29282ea7cc9c94bf10d4"
-    sha256 cellar: :any, arm64_tahoe:       "bd19251db318c8c1bd7b20c31a533101c6590ade1264ffe213dc11e243decd46"
-    sha256 cellar: :any, arm64_sequoia:     "115d4f6e56f1ffc00967fb8536c42b5e1b0c578e719a5b53ed020dad0bcadefc"
-    sha256 cellar: :any, arm64_linux:       "9ae847c480f6aadd42bfb988903323475e7c44ca4f9b22958651b5c816f5555e"
-    sha256 cellar: :any, x86_64_linux:      "3ad274b1b83512372e326d105d2d9ac72b517a96aac551310ab1da519649ee9c"
+    sha256 cellar: :any, arm64_golden_gate: "93fdbd18e22cb0a45a427a779cad02ed4232ff2f45cae78120fdb50fe2030aa0"
+    sha256 cellar: :any, arm64_tahoe:       "28181f5f00cb7a61259dbbfd43367c5dab14b8b5c14de96b06aa75d25b3a651c"
+    sha256 cellar: :any, arm64_sequoia:     "c7b839f7ff8b73db523941bd65bbed24f1b611c271aad397b1389a16b0200ced"
+    sha256 cellar: :any, arm64_linux:       "685389f23d6a6cffc260f1eb0560344c5bce96df72e9f527173cb92d52ce17b9"
+    sha256 cellar: :any, x86_64_linux:      "af2931bb82097e4e0dbb1f762e73d9325e1b0404753012717da31a97ab16280a"
   end
 
   depends_on "pkgconf" => :build

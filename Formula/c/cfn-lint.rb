@@ -6,18 +6,20 @@ class CfnLint < Formula
   url "https://files.pythonhosted.org/packages/41/93/996a8c4a8916ed10b71207de4276c7dbec4d13ad0f9a21830f9eed04f771/cfn_lint-1.57.2.tar.gz"
   sha256 "7e859164badf01d2bd62c6d362284ab6e814d036f0a64249ba6a05287d787d68"
   license "MIT-0"
+  head "https://github.com/aws-cloudformation/cfn-lint.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "a263394c216de5386a4eb672ed615fc03657131bc7c638991b4c70f110ec098c"
-    sha256 cellar: :any, arm64_tahoe:       "3e3df3436882f05a3225a015eabbaff0740a7f4aae72740eee473956bb2a7014"
-    sha256 cellar: :any, arm64_sequoia:     "55affdbe6c76c71cd72d9726e8e0e65fe3aaf65aab735ad59a4fb70a9212dfc4"
-    sha256 cellar: :any, arm64_linux:       "d37130428a592bf9a6673b1071a8bd2a75eb47817395f3d7bee6d19dc2c0fc63"
-    sha256 cellar: :any, x86_64_linux:      "3a6529058549d12f2d4e0f26f089ad277dac2f02a7f6a35f1453ade32041d5ea"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "a98b7ccc75c3fdb9490cf3bb66856aafe561865ab837798feb4b0dcebf7bf1b2"
+    sha256 cellar: :any, arm64_tahoe:       "955ec38261e94b6e7439d847c307f8cf33852bfb4f6203e04d4ab5299d7a92ba"
+    sha256 cellar: :any, arm64_sequoia:     "5e85b402b66080ec6aaffc2f752c45e2ac8bc41e4b580e6d5e9aa0c458035947"
+    sha256 cellar: :any, arm64_linux:       "352500fdf9d54dc6dd2035b35f82471f3feed98f5131cc8bfa0718b7b0bd8e82"
+    sha256 cellar: :any, x86_64_linux:      "b9c254968a65d2ab609525218ff39dd1e23f9da59004e818a12c814c495fa0db"
   end
 
   depends_on "libyaml"
   depends_on "pydantic" => :no_linkage
-  depends_on "python@3.14"
+  depends_on "python@3.15"
   depends_on "rpds-py" => :no_linkage
 
   pypi_packages exclude_packages: ["pydantic", "rpds-py"]
@@ -63,6 +65,7 @@ class CfnLint < Formula
   end
 
   def install
+    inreplace "pyproject.toml", 'requires-python = ">=3.10,<3.15"', 'requires-python = ">=3.10"'
     virtualenv_install_with_resources
   end
 

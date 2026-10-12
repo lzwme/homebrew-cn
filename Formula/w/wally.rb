@@ -27,6 +27,13 @@ class Wally < Formula
     depends_on "zlib-ng-compat"
   end
 
+  # `test do` block clones the package registry.
+  allow_network_access! :test
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
     ENV["OPENSSL_DIR"] = formula_opt_prefix("openssl@3")
     system "cargo", "install", *std_cargo_args

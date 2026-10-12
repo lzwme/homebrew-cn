@@ -5,6 +5,7 @@ class Julia < Formula
   url "https://ghfast.top/https://github.com/JuliaLang/julia/releases/download/v1.13.1/julia-1.13.1-full.tar.gz"
   sha256 "1c2006bced7a1f8b6c92598ef65b7b24fc74aeaadc53535a45e4c6197001057c"
   license all_of: ["MIT", "BSD-3-Clause", "Apache-2.0", "BSL-1.0"]
+  revision 1
   head "https://github.com/JuliaLang/julia.git", branch: "master"
 
   # Upstream creates GitHub releases for both stable and LTS versions, so the
@@ -17,11 +18,11 @@ class Julia < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "acb7c48f853d410f4dab33903e76fdf4418474d95dd945652517f44cca65051c"
-    sha256 cellar: :any, arm64_tahoe:       "08ba412d490309837c59a45e8f51a0fe640b54d50c9fcc136e3a89f750f619bb"
-    sha256 cellar: :any, arm64_sequoia:     "3ea8eb8f6c4a48371c9758a10b48b9735543757f4ff589f3a9b0d44572d30255"
-    sha256 cellar: :any, arm64_linux:       "6a74cfab12b935cf155d348ac019daa167ca015e78315c7f5b45a945ce117c88"
-    sha256 cellar: :any, x86_64_linux:      "15b66f938dbc2e052a56652a17feaa499e56d30b7aa0f2d167cbf13efb44f25e"
+    sha256 cellar: :any, arm64_golden_gate: "3cbbaf0a3c037e416f678135aa31e51b4206d570c7396393d8241b768593f2db"
+    sha256 cellar: :any, arm64_tahoe:       "7e5b77958ef24b606f635f7484375f25952671070124b98fe543cde662ee66fc"
+    sha256 cellar: :any, arm64_sequoia:     "add11f3fe793137df4cf383faa14c93ed702e1166a9f31e93204b017c45c567f"
+    sha256 cellar: :any, arm64_linux:       "0f92d33afec747226861e56d7f7cd88134dd1a4c803b4d917ef851c3954cd8b6"
+    sha256 cellar: :any, x86_64_linux:      "493933fa867049b8e06076549a562ac41e263c3b42542f1746a60595adc8aa11"
   end
 
   depends_on "cmake" => :build # Needed to build LLVM
@@ -37,7 +38,7 @@ class Julia < Formula
   depends_on "mpfr" => :no_linkage
   depends_on "openblas64" => :no_linkage
   depends_on "openlibm" => :no_linkage
-  depends_on "openssl@3"
+  depends_on "openssl@4"
   depends_on "p7zip"
   depends_on "pcre2"
   depends_on "suite-sparse"
@@ -183,11 +184,11 @@ class Julia < Formula
     end
 
     # Remove library versions from nghttp2_jll and others
-    # https://git.archlinux.org/svntogit/community.git/tree/trunk/julia-hardcoded-libs.patch?h=packages/julia
-    stdlib_deps = %w[nghttp2 LibGit2 OpenLibm SuiteSparse]
+    # https://gitlab.archlinux.org/archlinux/packaging/packages/julia/-/blob/main/julia-hardcoded-libs.patch
+    stdlib_deps = %w[nghttp2 LibGit2 OpenLibm SuiteSparse OpenSSL]
     stdlib_deps.each do |dep|
-      inreplace (buildpath/"stdlib").glob("**/#{dep}_jll.jl") do |s|
-        s.gsub!(%r{@rpath/lib(\w+)(\.\d+)*\.dylib}, "@rpath/lib\\1.dylib")
+      inreplace "stdlib/#{dep}_jll/src/#{dep}_jll.jl" do |s|
+        s.gsub!(/lib(\w+)(\.\d+)*\.dylib/, "lib\\1.dylib")
         s.gsub!(/lib(\w+)\.so(\.\d+)*/, "lib\\1.so")
       end
     end
@@ -266,16 +267,10 @@ class Julia < Formula
     JULIA
     system bin/"julia", *args, "library_test.jl"
 
-    # Skipping tests on Intel macOS as CI runner is too slow and exceeds `brew test` 5 min limit
-    return if OS.mac? && Hardware::CPU.intel? && ENV["HOMEBREW_GITHUB_ACTIONS"]
-
     with_env(CI: nil) do
-      # FIXME: Skipping test on macOS as runners keep timing out
-      unless OS.mac?
-        # Julia writes JSON reports beside its test sources.
-        cp_r pkgshare/"test", testpath/"test"
-        system bin/"julia", *args, testpath/"test/runtests.jl", "--buildroot=#{pkgshare}", "core"
-      end
+      # Julia writes JSON reports beside its test sources.
+      cp_r pkgshare/"test", testpath/"test"
+      system bin/"julia", *args, testpath/"test/runtests.jl", "--buildroot=#{pkgshare}", "core"
     end
 
     # Check that Julia can load stdlibs that load non-Julia code.

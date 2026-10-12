@@ -10,14 +10,15 @@ class Trailscraper < Formula
   head "https://github.com/flosell/trailscraper.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "f13c9e8a10d5486c8c530bc3c117b44aa1c3772976b7011f8082faef02664206"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "c4b6975531056857a239dd634fca456c76a654908f55abb430c5c5523dca8da2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "38a2b46bdd21cba9fbd22d1e491ffef40110871db1e6c1867ee3da944e0665e4"
-    sha256 cellar: :any,                 arm64_linux:       "aeeba5272056ed969c563ed7900772fa7b4ee0b696ba2270d15d2e94b9f43296"
-    sha256 cellar: :any,                 x86_64_linux:      "a514e3546c7f53236597048e7cde38403429609065d287d56ca0805896eb8570"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "eec88c98182eb61bf65dd8d01fd2e97bc0131fe1260e493b11a86fa94c7a33c9"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "693eeedd593afd2995ddebfc0ecfe1c01368e17506b48b257e40559301bbd448"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "baa09f916378cc877666d7806241a17edc51bae74bbb6e8485cb4ec5bf9af434"
+    sha256 cellar: :any,                 arm64_linux:       "22c1c5cdfb844776876a946971e4ba3a1159180587c9a896d1fa9bb4b81f0651"
+    sha256 cellar: :any,                 x86_64_linux:      "9f8380af44faf46a4826ea58ab5111d2f2105d5aac97975bfc24b9520d261a84"
   end
 
-  depends_on "python@3.14"
+  depends_on "python@3.15"
 
   resource "boto3" do
     url "https://files.pythonhosted.org/packages/61/ce/d6fbf9cdda1b40023ef60507adc1de1d7ba0786dc73ddca59f4bed487e40/boto3-1.38.3.tar.gz"

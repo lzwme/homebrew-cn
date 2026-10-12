@@ -15,25 +15,38 @@ class Ispc < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "bbac7253257134d948a69c6328ec3a790417ca7c760b9966e8a222bbc5dc1931"
-    sha256 cellar: :any, arm64_tahoe:       "1c27e7b22b2d8bc1bdee0e0ce6e167ccecbff130b00d2c407d04bcaaaf9a75bf"
-    sha256 cellar: :any, arm64_sequoia:     "ad0ac922f31c76f5ecf0232520466dbec4172c062a7acd7fc83b1c0538dfda45"
-    sha256 cellar: :any, arm64_sonoma:      "4024f80c33dd1bd300fa33c090f55866dba123585fd750f5564fbf65f73400d4"
-    sha256 cellar: :any, sonoma:            "87b33c51f994bfd8ff01557a081643505d0be68295194368ff02e52e035d421a"
-    sha256 cellar: :any, arm64_linux:       "799d33e2c0deda1c85e9761c83e05be55d187c1c4ff7ffeb1d360a53ef7ae5dd"
-    sha256 cellar: :any, x86_64_linux:      "04a0e27587dc7a90b5d6e3dc7b7d18b816fe8d9356b753476cd9cb159d31c0a3"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "71f5effcb42ca591e78651baf434f4ef46d2b725867e9ad266be4758337ca8ec"
+    sha256 cellar: :any, arm64_tahoe:       "318e4fbcc3ad01b2853b84b735cb03a32584ad632ddd823ad98bf36ecc4902c1"
+    sha256 cellar: :any, arm64_sequoia:     "3be3e6b2c8bd96adb633b50aadd491670afb0755398faad3441ade6c2e64923a"
+    sha256 cellar: :any, arm64_linux:       "5fe01ed96b41f24bd2fa0204dad4a102d7b3a49e5ee52dd89d75cffd11694163"
+    sha256 cellar: :any, x86_64_linux:      "e958ae79abb08ded50ebd89a39797a42987169e0188d4ffd4d65b1bbc93ed57d"
   end
 
   depends_on "bison" => :build
   depends_on "cmake" => :build
   depends_on "flex" => :build
-  depends_on "llvm@22"
+  depends_on "llvm"
 
   uses_from_macos "python" => :build
 
   on_linux do
     depends_on "tbb"
   end
+
+  # Backport LLVM 24 devel support which allows building with LLVM 23.1.x stable release
+  patch do
+    url "https://github.com/ispc/ispc/commit/32217788b98b6e8d532799d7b10792fb7c1c732c.patch?full_index=1"
+    sha256 "896666bba85daa114276eeae95701ff7a9190dae27927fc225b17dc57eec0532"
+    type :backport
+  end
+  patch do
+    url "https://github.com/ispc/ispc/commit/bc5136ff9a5f5acb52fede66333a1e4879328fc1.patch?full_index=1"
+    sha256 "e5e13f1937190d3996ffcfb66b5eae0df28d7866cc9945f52ec1b7c0cfabfe4e"
+    type :backport
+  end
+
+  deny_network_access!
 
   def llvm
     deps.map(&:to_formula).find { |f| f.name.match? "^llvm" }

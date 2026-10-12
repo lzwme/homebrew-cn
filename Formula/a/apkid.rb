@@ -9,14 +9,15 @@ class Apkid < Formula
   head "https://github.com/rednaga/APKiD.git", branch: "master"
 
   bottle do
-    sha256 arm64_golden_gate: "a619ba728210bcca5bcac54004f23ead7582b26a13451f7b0bd04fc4cc85df9d"
-    sha256 arm64_tahoe:       "88e4f4be8e08ed138b5bea2860075a655c6002f3de31ab124cd7a6480bbf53a6"
-    sha256 arm64_sequoia:     "10f11e9ad3150cb70444eefeac6b318612bcec544592a225f99d965de614b039"
-    sha256 arm64_linux:       "a48cb83cace0ecccbd065017e7babb6464dfd92f23c6811769223a1d2122bb9b"
-    sha256 x86_64_linux:      "e131cdc6cac6ab22968c6ccf08ca3e6d222f99e217dedc64662df45ff353b882"
+    rebuild 1
+    sha256 arm64_golden_gate: "3a5c78eabbf3d544051d0396a3e120cbb01d88b272ae481bd1b6140b845b637e"
+    sha256 arm64_tahoe:       "3c073aad9b3eb34cc7ee245cba568767531a528984a4354a2e8d711da2d120be"
+    sha256 arm64_sequoia:     "d9917f0cea045f3ccda9a22ed81add45d6d5b8c17d384e4f06c68e3a5aeac61c"
+    sha256 arm64_linux:       "55ce33c7b03a596b06d2769928665f7d81ac52b906dc1d09c8d514d668179c21"
+    sha256 x86_64_linux:      "40df10352001ba9a89682fd0aaf47c8e53da4969db3465b453f7d25b682fb4a0"
   end
 
-  depends_on "python@3.14"
+  depends_on "python@3.15"
   depends_on "yara"
 
   # `yara-python-dex` has no recent sdist; link `yara-python` to Homebrew's `yara`, which enables DEX

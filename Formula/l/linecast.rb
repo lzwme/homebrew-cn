@@ -8,10 +8,15 @@ class Linecast < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "9c64fd2dd132ea5fe33b1a39a4a2207f8afe74017e6d2719dc38675e817d17b7"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "c2b23d0ef81b7a5a71f3dd3989ec0c9f26e8b9890c0ad480d398ef5761eb17c6"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "c2b23d0ef81b7a5a71f3dd3989ec0c9f26e8b9890c0ad480d398ef5761eb17c6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "c2b23d0ef81b7a5a71f3dd3989ec0c9f26e8b9890c0ad480d398ef5761eb17c6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "406ac38930c5825bb60460e548d8148c06de05fc9d4b6dbd3f68ee26c218dc2e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "406ac38930c5825bb60460e548d8148c06de05fc9d4b6dbd3f68ee26c218dc2e"
   end
 
-  depends_on "python@3.14"
+  depends_on "python@3.15"
 
   def install
     virtualenv_install_with_resources

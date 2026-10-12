@@ -4,25 +4,24 @@ class Pillow < Formula
   url "https://files.pythonhosted.org/packages/1c/3d/bb7fca845737cf9d7dbde16ed1843984665ff2e0a518f5db43e77ec540b9/pillow-12.3.0.tar.gz"
   sha256 "3b8182a766685eaa002637e28b4ec8d6b18819a0c71f579bf0dbaa5830297cce"
   license "MIT-CMU"
+  revision 1
   compatibility_version 1
   head "https://github.com/python-pillow/Pillow.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "c08a81ebfdcc9070ab20dce92e40198ab50e7433d87103d835871bddf8117cda"
-    sha256 cellar: :any, arm64_tahoe:       "368dd59ca13924d5bb3389dbc251dddc0fa4bc931f8a723cfa132ce1d31055dc"
-    sha256 cellar: :any, arm64_sequoia:     "3b3e8bfaa5ca2d7fc699923c86610e18c240bd8bab70e5f54bebfbdc0f7e5de1"
-    sha256 cellar: :any, arm64_sonoma:      "b3df9bfe1c2b7423a9cb2c6e3565bd17e9d4fdc7069e2c733414d46cc8f714e9"
-    sha256 cellar: :any, sonoma:            "5b5f330f08114aee902d719119fa41fd256064dfcde8c6f77690c18c8059009f"
-    sha256               arm64_linux:       "aa36b1124bca6af72026c6b6ab8e4155239f7c9d4a43a3da109aa082c6896878"
-    sha256               x86_64_linux:      "d7968166b5d2d7dba702ad5672f23100b47c876cfd0ef337863742894d649474"
+    sha256 cellar: :any, arm64_golden_gate: "3c5bc8e2a49d851a97da19117ce2cdafeafc055e1be464cecf2166d3e14d50d8"
+    sha256 cellar: :any, arm64_tahoe:       "38622dd480a77959c55acf9d1bba35db3e43cadda17f1fb5788544e51ca3eef8"
+    sha256 cellar: :any, arm64_sequoia:     "8ab334b3953a6ace637c4ad0ad7ba52ee41a7e1f419104574f1004585e644c22"
+    sha256               arm64_linux:       "151c06ee218d8a64d724c3aefb9b58cc8f9923b5d3b715672b60eb264e4ce001"
+    sha256               x86_64_linux:      "446c9258f15ad22d623c81a6e73fd82265c540a9b89b5c19fa1b19fb26a8be7f"
   end
 
   depends_on "cmake" => :build
   depends_on "ninja" => :build
   depends_on "pkgconf" => :build
   depends_on "pybind11" => :build
-  depends_on "python@3.13" => [:build, :test]
   depends_on "python@3.14" => [:build, :test]
+  depends_on "python@3.15" => [:build, :test]
   depends_on "freetype"
   depends_on "jpeg-turbo"
   depends_on "libavif"

@@ -8,18 +8,19 @@ class Fastapi < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "7f98d67f64b647d70986bf47e43d952dc97ed572429c0c1e8ec736dd0059938f"
-    sha256 cellar: :any, arm64_tahoe:       "dc674c346415cb77c28ca00f8b30fb73e9460e1517218de4f4a477e8da039883"
-    sha256 cellar: :any, arm64_sequoia:     "cb4ce3a31ce1a11dd3b88fc84b2061e02478f5a7349310d8555bf44726fb5822"
-    sha256 cellar: :any, arm64_linux:       "3d968d10b47c851cb710b7d107e55709b09beef52c865062a9ee60f1a9a64fb7"
-    sha256 cellar: :any, x86_64_linux:      "cd8085f84db8fb4b8be0984b8b94dc456ce0e74a8bf0bdf83e184dc076cb7cff"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "3593f5beb795bbb68079b7545a6fd96eb98284b28699229c033b9350e7eb8939"
+    sha256 cellar: :any, arm64_tahoe:       "d8be3863c39950881256aafee4185294cc01a1feecc81a5355fbc311fcdeed73"
+    sha256 cellar: :any, arm64_sequoia:     "4ccd09c150a85f449167d469296a6a26e6623954867ede840da0222c4a1faaf5"
+    sha256 cellar: :any, arm64_linux:       "94cc9fb0249e78d07807f04645305d29ba96ae2a1ace6d6956a0c567ae873fc0"
+    sha256 cellar: :any, x86_64_linux:      "03a366ff6ce20be6b5510cffd8daa180a29b16639eac58cd2d6758d4f6512f1a"
   end
 
   depends_on "rust" => :build # for annotated-doc
   depends_on "certifi" => :no_linkage
   depends_on "libyaml"
   depends_on "pydantic" => :no_linkage
-  depends_on "python@3.14"
+  depends_on "python@3.15"
 
   pypi_packages package_name:     "fastapi[standard]",
                 exclude_packages: ["certifi", "pydantic"]
@@ -55,8 +56,8 @@ class Fastapi < Formula
   end
 
   resource "dnspython" do
-    url "https://files.pythonhosted.org/packages/8c/8b/57666417c0f90f08bcafa776861060426765fdb422eb10212086fb811d26/dnspython-2.8.0.tar.gz"
-    sha256 "181d3c6996452cb1189c4046c61599b84a5a86e099562ffde77d26984ff26d0f"
+    url "https://files.pythonhosted.org/packages/ef/4a/50822184bd67cc6493f0fb6a880749158fcd31ab3fa07409acfd91f9fc85/dnspython-2.9.0.tar.gz"
+    sha256 "b44dc6b18f07a8b1c56676a19fbfdb5209415b046a9cece286baafa87ff3f7f1"
   end
 
   resource "email-validator" do
@@ -95,8 +96,8 @@ class Fastapi < Formula
   end
 
   resource "httptools" do
-    url "https://files.pythonhosted.org/packages/43/e5/d471fcb0e14523fe1c3f4ba58ca52480e7bd70ad7109a3846bc75892f7fb/httptools-0.8.0.tar.gz"
-    sha256 "6b2a32f18d97e16e90827d7a819ffa8dbd8cc245fc4e1fa9d1095b54ef4bd999"
+    url "https://files.pythonhosted.org/packages/3a/ec/deed52912ab7ca6c0b12859330c571c60c61d7267b341b28951fcbf13694/httptools-0.9.0.tar.gz"
+    sha256 "d484ebb7e3a3f3597b0f645fbd1b85633674ca808c1f5ba11c2caf7c66f5c8b6"
   end
 
   resource "httpx" do

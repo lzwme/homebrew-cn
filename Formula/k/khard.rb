@@ -8,10 +8,11 @@ class Khard < Formula
   license "GPL-3.0-only"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "1a1e083cb3faabfdb3db3111e95290a04b8247c51abc5ff22e07bcec4593e18c"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "4c195f3132769a2c3f54d34585f5aaf9434f5b9c6d7f2f9d5cb05e8a3a060f5b"
   end
 
-  depends_on "python@3.14"
+  depends_on "python@3.15"
 
   resource "configobj" do
     url "https://files.pythonhosted.org/packages/f5/c4/c7f9e41bc2e5f8eeae4a08a01c91b2aea3dfab40a3e14b25e87e7db8d501/configobj-5.0.9.tar.gz"
@@ -24,8 +25,8 @@ class Khard < Formula
   end
 
   resource "pytz" do
-    url "https://files.pythonhosted.org/packages/b0/ed/fa23d28713004418bbf2407127f80f385bfb0bf4e677bef02c25c27b00ee/pytz-2026.4.tar.gz"
-    sha256 "464303645bafafd72418898368b2429458f709cf1eb6a15372fbcc396b64da63"
+    url "https://files.pythonhosted.org/packages/14/21/d83d6ef28c4c912c4bb4d1dcf591f7b8c6bde87b9c66f9f454677314e16d/pytz-2026.5.tar.gz"
+    sha256 "fa23724b9c486543b9ff54a327ee7569ac83ade54bb9afd0fc18676620401c86"
   end
 
   resource "ruamel-yaml" do

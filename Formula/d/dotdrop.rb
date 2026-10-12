@@ -10,16 +10,17 @@ class Dotdrop < Formula
   head "https://github.com/deadc0de6/dotdrop.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "34fd269c1331a1fd306d2ae958223a5ccf0fd04ac01abda922377190c5fa9058"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "4cf0c2df0bea01e44a0390b6f43d8f5f5a418ddba510b2cc94e35f51a2698da0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "8f7eeb0d05d35b1f34a4312418a12397a9e3b6cba179382fa9d6d8ed744e6f32"
-    sha256 cellar: :any,                 arm64_linux:       "3a3a393d8a42cb406cd7dc2e2cdafba604afaaad283423a535d010ce20ea5495"
-    sha256 cellar: :any,                 x86_64_linux:      "473979b0f5a22238ea886a8433d8d525c4c166bc27fbea3442ba9d61265f2f95"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "0b98237ff47c061d1ce665dee69152f87658aa3884d7a413eac4c376d8931fe5"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "9e2e75f98f99134dc994e46a035d9943e7f8a5a9cfba6d1ee66fd34207fb5f01"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "348d298d04d922f3f98e7db002b392783d134938317b310d0bf817b24bb24a55"
+    sha256 cellar: :any,                 arm64_linux:       "c533b20df1c00b62c1a46b9e0ca83aa31ddc8326f0ce371e7a3edd5c72116d97"
+    sha256 cellar: :any,                 x86_64_linux:      "be47a1f348d37ea2adc72132613f3dbd8505afb10d9f068b9017758b71168f12"
   end
 
   depends_on "certifi" => :no_linkage
   depends_on "libmagic" => :no_linkage
-  depends_on "python@3.14"
+  depends_on "python@3.15"
 
   pypi_packages exclude_packages: "certifi"
 
@@ -49,8 +50,8 @@ class Dotdrop < Formula
   end
 
   resource "markupsafe" do
-    url "https://files.pythonhosted.org/packages/7e/99/7690b6d4034fffd95959cbe0c02de8deb3098cc577c67bb6a24fe5d7caa7/markupsafe-3.0.3.tar.gz"
-    sha256 "722695808f4b6457b320fdc131280796bdceb04ab50fe1795cd540799ebe1698"
+    url "https://files.pythonhosted.org/packages/38/9b/e422a865e1d5d57d0e509b4e0bf1c1a70a7f6382c29a5aa428df994c8bc8/markupsafe-3.0.4.tar.gz"
+    sha256 "2e9ad7dd851bf45fab9f75cbff4cb493fee9979e8d8c7c9c3ee119022518edd6"
   end
 
   resource "packaging" do

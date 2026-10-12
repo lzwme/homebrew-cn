@@ -4,6 +4,7 @@ class Netdata < Formula
   url "https://ghfast.top/https://github.com/netdata/netdata/releases/download/v2.12.1/netdata-v2.12.1.tar.gz"
   sha256 "39b4aea46a7227391ec592cab41e385af696f286707dd9b40ddfa967d0f24570"
   license "GPL-3.0-or-later"
+  revision 1
 
   livecheck do
     url :stable
@@ -12,11 +13,11 @@ class Netdata < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "8cc0fa49a815664bbeedaea5227be14c76e642a2cb6ddf1336c04e7db6ef5a26"
-    sha256 arm64_tahoe:       "bb26cd8535f191a44ccd9b675b929d9748e8fe4a770e298b11838e78e5f36352"
-    sha256 arm64_sequoia:     "9f3a5e31fead93eb205c66046e6e6548008937f4bc9c822d00309be7673e0b0b"
-    sha256 arm64_linux:       "23dc73355dcfd57a7f3564355c364b0f98b3daf0adf99f7e971534675dc9ac2a"
-    sha256 x86_64_linux:      "fdd02121336237e67ff0718c6ccbfadf438d14fba265c1f2ef6201c3d6b3746b"
+    sha256 arm64_golden_gate: "1bcafd98f190ef13dc3bc9191839c68e10179c29f343a4b4d9e53e254b7f9fd2"
+    sha256 arm64_tahoe:       "9e79af6c33460337c0b257a38a4419bc8c9db2061cfc9ac7e04ec63cb156ca4d"
+    sha256 arm64_sequoia:     "05cb2c12148f2186e9c998dadacbe6f81aa9aa992f51a35c4aecee3fb0e115aa"
+    sha256 arm64_linux:       "c34f01d1b70c8b85d58383aac0ea65da3035b397d1a851ce5fac80695ba96a2d"
+    sha256 x86_64_linux:      "2b9a21fa5545bf4cc742adf3146761c3ec58f1ff5d09c6026a917ef8e79e2999"
   end
 
   depends_on "cmake" => :build
@@ -30,7 +31,7 @@ class Netdata < Formula
   depends_on "libuv"
   depends_on "libyaml"
   depends_on "lz4"
-  depends_on "openssl@3"
+  depends_on "openssl@4"
   depends_on "pcre2"
   depends_on "protobuf"
   depends_on "snappy"

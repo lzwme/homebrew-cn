@@ -9,14 +9,15 @@ class Twtxt < Formula
   revision 12
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "4aa71fbf65006f35536166fe0d820275b9f87718bd38a70f4bd0f5ce97c1e611"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "c7f9543318cf3d8c49672de7c09c290d73875655cb2f2713b5692f3bcc0458b6"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "47072dffdb8585785eb8c17f1840f560e57fee2c92b34743b1a64fb56291b8df"
-    sha256 cellar: :any,                 arm64_linux:       "96bc060049b25a0d642a5733bf45e38eb147152cd4bf4cdd6d1bfa3cb6239454"
-    sha256 cellar: :any,                 x86_64_linux:      "731fff664ca93db349805424545df2a5e106048458b02c026826ea2af6d1e928"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "83eee3ff9eb8b2bb2cde3ccee7d436f2a1a50a03624dc4f56b2f09d2b9f4aa0e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "fae6b1b95360079fd88d10511b5bd24a8f028a516126fea48f08e5767bd8953c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "3fcf2030f54cc6e42f26ce7f853fab573b64e8c4347d309383befb01c5e1f0ad"
+    sha256 cellar: :any,                 arm64_linux:       "8bbb5ed9abef0c541b34c987a7fc8b54c4ef306ac8c64ec8a848ce9205064b26"
+    sha256 cellar: :any,                 x86_64_linux:      "73e61029bf91bdf9739118547f21d797dd5c07d4dd8d0f1ef3f5c16f916475db"
   end
 
-  depends_on "python@3.14"
+  depends_on "python@3.15"
 
   resource "aiohappyeyeballs" do
     url "https://files.pythonhosted.org/packages/ce/f4/eec0465c2f67b2664688d0240b3212d5196fd89e741df67ddb81f8d35658/aiohappyeyeballs-2.7.1.tar.gz"
@@ -24,8 +25,8 @@ class Twtxt < Formula
   end
 
   resource "aiohttp" do
-    url "https://files.pythonhosted.org/packages/58/d9/22ce5786ac0c1653ae8b6c23bded02c1686d11f0dbb45b31ce128e0df985/aiohttp-3.14.3.tar.gz"
-    sha256 "9491196535a88924a60afd5b5f434b5b203b6cc616250878dbdb223a8f7844bc"
+    url "https://files.pythonhosted.org/packages/6c/4c/bdccd81e9ee225b69c60e7766c9a5b05364f118f4d383713b89a682d772d/aiohttp-3.14.5.tar.gz"
+    sha256 "5558a7f5a05af9ecf744af91e5baefc436f93c9333e656c27ec253f9a6bbe178"
   end
 
   resource "aiosignal" do
@@ -59,8 +60,8 @@ class Twtxt < Formula
   end
 
   resource "multidict" do
-    url "https://files.pythonhosted.org/packages/d6/99/1d4d69c3512d0ddbfa3a1b69cfd9a151012ab2eb4eabbb096201b1f0b7d8/multidict-6.9.1.tar.gz"
-    sha256 "0f06e60fa190aa7abd0914c2a766736fdc8e9f34878c4346338534b73d1b20e2"
+    url "https://files.pythonhosted.org/packages/f9/79/84ddb5ba16c4eb2c69c71db76ae3c579fe546e511f7170c7e27eedbab7c1/multidict-7.1.0.tar.gz"
+    sha256 "61a4e5d81b8d4e4ad61964b230129e7a2b914793d96289029078fc9009f074ec"
   end
 
   resource "propcache" do

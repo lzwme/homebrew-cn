@@ -8,10 +8,11 @@ class Httpx2 < Formula
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "8a23743181de610a83b539c587e1024d6f60ed12db4a8d5ed0d79e33072b275f"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "4eebc21b6495189028c23f5f9bee80670a0da2c126810eab81eae659b077d74c"
   end
 
-  depends_on "python@3.14"
+  depends_on "python@3.15"
 
   pypi_packages package_name: "httpx2[cli,http2]"
 
@@ -78,11 +79,6 @@ class Httpx2 < Formula
   resource "truststore" do
     url "https://files.pythonhosted.org/packages/53/a3/1585216310e344e8102c22482f6060c7a6ea0322b63e026372e6dcefcfd6/truststore-0.10.4.tar.gz"
     sha256 "9d91bd436463ad5e4ee4aba766628dd6cd7010cf3e2461756b3303710eebc301"
-  end
-
-  resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/f6/cc/6253133b5bb138fc3306cebfbda2c520f545d36b5be2c7255cc528bb45d6/typing_extensions-4.16.0.tar.gz"
-    sha256 "dc983d19a509c94dba722ee6abd33940f7c05a89e243c47e907eb4db6f1a43e5"
   end
 
   def install

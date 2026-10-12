@@ -9,11 +9,12 @@ class Instaloader < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "1f8f400780a1de924d3b4ff80d27537c6f706de9ef24a940943b162f3141d3b4"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "1c8761cb71739e3acbcc0e48f766eb41f293d3bd37aa4ee26b67da9e4b28fe20"
   end
 
   depends_on "certifi" => :no_linkage
-  depends_on "python@3.14"
+  depends_on "python@3.15"
 
   pypi_packages exclude_packages: "certifi"
 

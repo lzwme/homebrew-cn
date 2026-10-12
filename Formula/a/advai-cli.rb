@@ -9,14 +9,15 @@ class AdvaiCli < Formula
   revision 2
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "647dcd5ae40d85b1b4cf7ce37bdb4539c3a3eda7deec752c257e52306fbb7e1a"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "166f1a82988f0aba337a80a326fdadfb9728da384828fcd1168b466a3a45c3e2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "377660ae01a4698fe4b07101a2f29eddc17ae39c3ee615dd8993150c6dbf9099"
-    sha256 cellar: :any,                 arm64_linux:       "967c839835fd3cb8ff167a341ed51af52d745866946e853ace7c667987891f34"
-    sha256 cellar: :any,                 x86_64_linux:      "3b24fdf72b6914ce71849c8731989a19e037f94439c71f5fe8c0bda9cb335c45"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "2cc0c8949eb3092b2f8def18ab3cb9f8f88eae0e39d693df5045e241b74904bc"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "da76e821b614781289d45c20d5cac89de5313361ef5367b805e13b4220e6d09f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "04876c32b8ca41b9c84fef25cfa6a670145514dd68b75f972a03e6b12bd81dbc"
+    sha256 cellar: :any,                 arm64_linux:       "9fd7b19b0526a8919a3e4916d2fed550ba35ffc9b49cc4595744106f31be4aaa"
+    sha256 cellar: :any,                 x86_64_linux:      "771fe1a26e99706eb61cffbe57890ca39b200ba62a2867298efb45b868bc3e8c"
   end
 
-  depends_on "python@3.14"
+  depends_on "python@3.15"
 
   resource "aiohappyeyeballs" do
     url "https://files.pythonhosted.org/packages/ce/f4/eec0465c2f67b2664688d0240b3212d5196fd89e741df67ddb81f8d35658/aiohappyeyeballs-2.7.1.tar.gz"
@@ -24,8 +25,8 @@ class AdvaiCli < Formula
   end
 
   resource "aiohttp" do
-    url "https://files.pythonhosted.org/packages/58/d9/22ce5786ac0c1653ae8b6c23bded02c1686d11f0dbb45b31ce128e0df985/aiohttp-3.14.3.tar.gz"
-    sha256 "9491196535a88924a60afd5b5f434b5b203b6cc616250878dbdb223a8f7844bc"
+    url "https://files.pythonhosted.org/packages/93/2f/6a91adaa2dc26877d6ed2f54c0370c8910f019db7d77c5c6a194611e93ea/aiohttp-3.14.4.tar.gz"
+    sha256 "831fc5bd39ec2517851e348f613ddb5447a47cf4b71cb09845af7ad7ed45d8f9"
   end
 
   resource "aiosignal" do

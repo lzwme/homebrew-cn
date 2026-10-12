@@ -1,17 +1,17 @@
 class Maki < Formula
   desc "Efficient AI coding agent extendable by neovim-like Lua plugins"
   homepage "https://maki.sh"
-  url "https://ghfast.top/https://github.com/tontinton/maki/archive/refs/tags/v0.6.2.tar.gz"
-  sha256 "4c1d4bfcf0e26a6006143dab7c12b5567467d856d67f3ae7fa4244913e029a06"
+  url "https://ghfast.top/https://github.com/tontinton/maki/archive/refs/tags/v0.6.3.tar.gz"
+  sha256 "6e1b7228c57b2c63a70b8396fb4c864985786c671b54227557c860e197107d30"
   license "MIT"
   head "https://github.com/tontinton/maki.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "df6296ef1a53cecc14679554e16bcad6bff2eaff12d10ace01cbab15a29a0c01"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "ba6165049c0d3b03abcb0d5aba2299cbd948c4dccd9c5f41ff2f4f980cbbd186"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "d462df32e832d7e837a3a54b0c29a219f651b3bfdd58cb96056903e66b944b61"
-    sha256 cellar: :any,                 arm64_linux:       "8a05dc8317ad7b3b8373c6c94786d64dbb270be834d2c83b258c102eaf490eaf"
-    sha256 cellar: :any,                 x86_64_linux:      "fd62e0da7a03e77a9e216c193ed15d8d408c0e6657129ce4de4da548c1a6de7b"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "02a8db419a43d53c6d524ebe538f02437f81a2a1a3b2902763f9ea2c6640a288"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "d06de76eb13f2fb84a0e86c549cf7a99d2dfcb8435acefc0fdc5feec9b99f775"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "444b28c93401f645ebf42cffb58ce46ce7cb88513daabbc2f049df3e4b0116a6"
+    sha256 cellar: :any,                 arm64_linux:       "7213b633233964e88b4263386c02d3c9987e81d19c4a63e9904c9c98a5caaa99"
+    sha256 cellar: :any,                 x86_64_linux:      "1e7b3e3a15b594823f6195c3caa1a028e471a96fb18c48de2f7c0caa0eaf21e1"
   end
 
   depends_on "pkgconf" => :build
