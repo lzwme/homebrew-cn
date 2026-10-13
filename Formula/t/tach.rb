@@ -9,16 +9,17 @@ class Tach < Formula
   head "https://github.com/tach-org/tach.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "7f38d5269f4bdc4a63e3f330c09a932288e87c7087c95d396d50d997ed8f9cfe"
-    sha256 cellar: :any, arm64_tahoe:       "56a624303bac8c3fadc485479f1ae2b95b306ecf5c63fa62ac5c528107bc55d6"
-    sha256 cellar: :any, arm64_sequoia:     "171628896c90a164e7a8c612599ce45df4988e497f603097edefaee0435a138c"
-    sha256 cellar: :any, arm64_linux:       "8c97724988c1ade7ba8905ddbb42befb142170d4ecc83a293597f41399ad74ab"
-    sha256 cellar: :any, x86_64_linux:      "276828671fc1dcc532fc87a8e69e97fab9d6408c484f52989100b7fada6e5186"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "2d7f128c89a22142f23aa47d4d488e46907c2e46a840b0b323dd69058b2d6047"
+    sha256 cellar: :any, arm64_tahoe:       "4cb8eab69952b7c93c6c59d3b6d947ebe90a471372be8502640a9ab73063caef"
+    sha256 cellar: :any, arm64_sequoia:     "ea0f53cb5a7eecc7d05b8e236352c881a3d4b5e0ec0b84c3f66a99963c25cc0e"
+    sha256 cellar: :any, arm64_linux:       "241c27233939fac50405435a0f83cd4640856652a9f90f3bdc08ce6a3e412187"
+    sha256 cellar: :any, x86_64_linux:      "59c8819280e13855e1b6d80fc9fdf504da74194ba79afa48214b2b1cc5eb3c87"
   end
 
   depends_on "rust" => :build
   depends_on "libyaml"
-  depends_on "python@3.14"
+  depends_on "python@3.15"
 
   resource "gitdb" do
     url "https://files.pythonhosted.org/packages/72/94/63b0fc47eb32792c7ba1fe1b694daec9a63620db1e313033d18140c2320a/gitdb-4.0.12.tar.gz"

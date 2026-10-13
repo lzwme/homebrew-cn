@@ -3,19 +3,17 @@ class BumpMyVersion < Formula
 
   desc "Version bump your Python project"
   homepage "https://callowayproject.github.io/bump-my-version/"
-  url "https://files.pythonhosted.org/packages/23/09/5b09ac74962eca809cbf7010a08ea6ad405852bdd53489209a9f473d775c/bump_my_version-1.5.1.tar.gz"
-  sha256 "5079e443ab8c9a9903f140b427ff9f6fe8dd54013a55a4cf48b89326f3a71c07"
+  url "https://files.pythonhosted.org/packages/73/75/8f7d22e08f304cc3923adcdaa184edad857f174519cef3667acfa31bd9d3/bump_my_version-1.6.0.tar.gz"
+  sha256 "ba2c81ed0c17bf0a95e24f9676b8ffaf3b24d29fcb978f06b4ef0f57ee9f39ad"
   license "MIT"
-  revision 1
   head "https://github.com/callowayproject/bump-my-version.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "f5af0bb29040ec741ab93d5d99561ed9a40ce1c7fa3cc320f5a27922c66a81e5"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "198ad6a57d5f49eb012c64d12a7bbd5464dc46ce3844f1d69af84617b4f44879"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "c77bc80302f820e974bfc9af487bf210a94f5d0a56ab74642c05c959a8c76060"
-    sha256 cellar: :any,                 arm64_linux:       "997c58d8b86e74d09ed572646c2a968d2202fcbc452c3fe59cfb23d3039fff70"
-    sha256 cellar: :any,                 x86_64_linux:      "d3bfd6adbbd6cc5f9a06df913459d1530590858b7face48997c8c5d7a386e3d1"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "c05fe43453a791be9e1a81cb79d4ba0be72bed9b56f7d5207ebbe0756af7d020"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "274cd1eda427749717e996264b102e705c3c2f77b19cd634aaa8eb44c50d3d56"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "ce3759a8b5bd3691ab3d6bdb892ddfaa1924452fb126dd63bfa7677a85b32951"
+    sha256 cellar: :any,                 arm64_linux:       "9549b86a539b4a6030a97e571545ff75529a219b39216e4a5af162980232234d"
+    sha256 cellar: :any,                 x86_64_linux:      "b6a0981359bfddd4e07bee4905e2849d9f5aae1605f56c0c27faadb7eaeafe73"
   end
 
   depends_on "certifi" => :no_linkage
@@ -115,8 +113,8 @@ class BumpMyVersion < Formula
   end
 
   resource "wcmatch" do
-    url "https://files.pythonhosted.org/packages/57/43/30e407989e313677dbb9d5f045f966549a7254834571e342eaa4b55cc67b/wcmatch-11.0.1.tar.gz"
-    sha256 "1ea2b4fa678b8ca268253798d5963935df39132d47c3e241c0a0732224005e7d"
+    url "https://files.pythonhosted.org/packages/78/cd/0e028d8b7d906d51acdac537334fbe85f8284f2a8147d48bc9403af77a0d/wcmatch-11.1.tar.gz"
+    sha256 "f2b6f0fad6f5e2571498723fcb3c8facdd0fba0dcc139f31d32f592eb648153e"
   end
 
   resource "wcwidth" do

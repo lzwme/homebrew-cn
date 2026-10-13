@@ -7,11 +7,12 @@ class Wxpython < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "83fa059b54cdd2d5714eb6dfb71caa7b9a69de493db1cc1a0d9ab8d05441324b"
-    sha256 cellar: :any, arm64_tahoe:       "fb977bc8f8c01c9943df6cf26abab0e0abb3debe22653e99782819ca9f66cd1b"
-    sha256 cellar: :any, arm64_sequoia:     "724c6dc1e3616fe016a16ec4b692044d709f4be20f6267b5e583523a3108d9df"
-    sha256               arm64_linux:       "2d54a48cc89d843f585d9752e08a0b0c8ee9aa27cf5590cdff1010e45bb71a51"
-    sha256               x86_64_linux:      "cfd784a9121c9f921bd93c0be1984be5617f9725f61c5099fa292eeb5e13a145"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "b2504d738c9aad32c12a333d25adaef240da7f2219d53215db21411ed11d454d"
+    sha256 cellar: :any, arm64_tahoe:       "31577157f3d007aba55a46d6142d1d8ebbf3def4c61e976d8fb17b1b20b4177a"
+    sha256 cellar: :any, arm64_sequoia:     "b141ed8f2313c7f988622a3761657c493b2aab883e2f79be80652b297c933226"
+    sha256               arm64_linux:       "e49558656cb3a04c7136148eaaff1bdc46746c2ca14764882d92ba3c633d0082"
+    sha256               x86_64_linux:      "8db396922e0b4ebba03eb3eb0626b3ffa4eb4831ba1797b66d8a542f1da79bc6"
   end
 
   depends_on "cython" => :build
@@ -20,7 +21,7 @@ class Wxpython < Formula
   depends_on "sip" => :build
   depends_on "numpy"
   depends_on "pillow"
-  depends_on "python@3.14"
+  depends_on "python@3.15"
   depends_on "wxwidgets"
 
   on_linux do

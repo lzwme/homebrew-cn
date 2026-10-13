@@ -1,8 +1,8 @@
 class Murex < Formula
   desc "Bash-like shell designed for greater command-line productivity and safer scripts"
   homepage "https://murex.rocks"
-  url "https://ghfast.top/https://github.com/lmorg/murex/archive/refs/tags/v7.3.1231.tar.gz"
-  sha256 "318a283faf9de54ef5caec711cb26a38bbd22f243f5940dceebc8c7b5f80c791"
+  url "https://ghfast.top/https://github.com/lmorg/murex/archive/refs/tags/v7.3.1232.tar.gz"
+  sha256 "a907bea8e343c3c3627fe4934233f352de2cc0f87d53230745534bd8f0037de4"
   license "GPL-2.0-only"
   head "https://github.com/lmorg/murex.git", branch: "master"
 
@@ -12,11 +12,11 @@ class Murex < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "ff257762e52e9ce6d9884ab8f461a5abaf43dca8ed0fbfd65630489c0ab57996"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "ff257762e52e9ce6d9884ab8f461a5abaf43dca8ed0fbfd65630489c0ab57996"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "ff257762e52e9ce6d9884ab8f461a5abaf43dca8ed0fbfd65630489c0ab57996"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "be8a4b9c9840f626f37253f3fa6c12c9d1a2e6dec6e75668217dc8912da917e1"
-    sha256 cellar: :any,                 x86_64_linux:      "a7ca0b3614ae11eca85012da4280de9bf67bc5d58b96da98568f7bd2e76338d3"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "ebec12002794e223cdc399161696710369675709e159db1c06364edd0f4e87d4"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "ebec12002794e223cdc399161696710369675709e159db1c06364edd0f4e87d4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "ebec12002794e223cdc399161696710369675709e159db1c06364edd0f4e87d4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "731cdbaa96d155b1519715178c14f372803448817e8deaa255a7ffc67dad09c8"
+    sha256 cellar: :any,                 x86_64_linux:      "525c0d71c611fb36e689d81dfcf4b26dc21bb1ce0954e66343a91af3315250c5"
   end
 
   depends_on "go" => :build

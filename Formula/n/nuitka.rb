@@ -9,15 +9,16 @@ class Nuitka < Formula
   head "https://github.com/Nuitka/Nuitka.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "6cde5728b0d148ec3d3f31b9d968820af3ebc8831d55b11352bf098c4a26c6e4"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "d3bea860eec56c1c8cb5543064d04f9008a9854c69945d9aa2c457e4e27ab329"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "62786db218092ca5c02a4ed7135c8e8c63f695bc95d924ad9bbf273ea3d24a12"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "e2ff10e1b8cb95547c38d972d1595da5568a11adba73dd852a9ef5bc99c3e760"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "7b00046cdf474c6fb6f616dd8363953e2dba3b4209727aa42b3b060c617b5288"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "c92145173db4f50d13d3d2202745c6b63b9b2a273fa81fed28bd5ce1534c8d06"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "c2e6a917d74e8a77bdc08e3773cbd9f94d5b1ba9d128309d141a375f3bb8a86d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "8386a7d7dbe156c0cf2e6c82eba50ee2cf3f964122afb92c9454592f006aba2a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "88d3343e17c5a08af6c3aa3c61f30054af8bbe5737de1c06ed799a60db33f35d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "8cf599ef317d6538561d73b0056f49d3b59764a5b8b4c669448cbb39289c857b"
   end
 
   depends_on "ccache"
-  depends_on "python@3.14"
+  depends_on "python@3.15"
 
   on_linux do
     depends_on "patchelf"

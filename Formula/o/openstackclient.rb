@@ -8,17 +8,18 @@ class Openstackclient < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "c2fa78be3a6f3ec6526e5e4bc4f653033c52731ce780ede387bb00bbe569199c"
-    sha256 cellar: :any, arm64_tahoe:       "13aeedd7229c849126eb444ac4cc701395271e329770ffb3958ee5dd60e23a9f"
-    sha256 cellar: :any, arm64_sequoia:     "d772fc7f938a80ed0a0c5a7991a4dd8c2a44b0106340a1932648217e7b852218"
-    sha256 cellar: :any, arm64_linux:       "edcc9981556ae9f7c0c763c53310779282e0adb171c824c67f4b8dd7a099c753"
-    sha256 cellar: :any, x86_64_linux:      "387359cd7acae07a2b8c19f00711fc841a09ad711badee3a0f9ed34d418605c0"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "707841790dd16509aed65152c74e6eb9ddc9f6f133b056c5d6488b3303c5bb86"
+    sha256 cellar: :any, arm64_tahoe:       "4d560c30574bd1628b70e0f2716763d3649359b4b6e60646dd23f3ecec35a9eb"
+    sha256 cellar: :any, arm64_sequoia:     "f59d04e813deb7e504f6a7c69c52251ae561cb59ba2ddda4ceb13a9300e5a065"
+    sha256 cellar: :any, arm64_linux:       "f42a0f8c164b03fa184bad5425f33ec131e612b6da57cfa819ba2cc14ebd4229"
+    sha256 cellar: :any, x86_64_linux:      "bcb8c5763972b5c719de3a222b566c437fdbcf0170067c5cf2cf398096515bfa"
   end
 
   depends_on "certifi" => :no_linkage
   depends_on "cryptography" => :no_linkage
   depends_on "libyaml"
-  depends_on "python@3.14"
+  depends_on "python@3.15"
   depends_on "rpds-py" => :no_linkage
 
   pypi_packages extra_packages:   %w[keyring osc-placement python-barbicanclient
@@ -93,19 +94,14 @@ class Openstackclient < Formula
     sha256 "880c577ec9720b3a052d5bc611fb9f2269b3d87902ef42440df443b88e443280"
   end
 
-  resource "jeepney" do
-    url "https://files.pythonhosted.org/packages/7b/6f/357efd7602486741aa73ffc0617fb310a29b588ed0fd69c2399acbb85b0c/jeepney-0.9.0.tar.gz"
-    sha256 "cf0e9e845622b81e4a28df94c40345400256ec608d0e55bb8a3feaa9163f5732"
-  end
-
   resource "jmespath" do
     url "https://files.pythonhosted.org/packages/d3/59/322338183ecda247fb5d1763a6cbe46eff7222eaeebafd9fa65d4bf5cb11/jmespath-1.1.0.tar.gz"
     sha256 "472c87d80f36026ae83c6ddd0f1d05d4e510134ed462851fd5f754c8c3cbb88d"
   end
 
   resource "jsonpatch" do
-    url "https://files.pythonhosted.org/packages/42/78/18813351fe5d63acad16aec57f94ec2b70a09e53ca98145589e185423873/jsonpatch-1.33.tar.gz"
-    sha256 "9fcd4009c41e6d12348b4a0ff2563ba56a2923a7dfee731d004e212e1ee5030c"
+    url "https://files.pythonhosted.org/packages/df/f8/48a6033ebdd5013a58b5a79402eacb15ffb6e208f244c1c17f6f1e3b29c2/jsonpatch-1.35.tar.gz"
+    sha256 "679ad08672b4663c7ef1e5f3331d940f5e7786661b9acc1530104be1638e7a4f"
   end
 
   resource "jsonpath-rw" do
@@ -119,8 +115,8 @@ class Openstackclient < Formula
   end
 
   resource "jsonpointer" do
-    url "https://files.pythonhosted.org/packages/5a/30/76a208d3eb75a5e2bcfec4e132c207ea1e22253d10b52a06c8ff3839dfc9/jsonpointer-3.2.0.tar.gz"
-    sha256 "807db557622fbe07a0d49e19cf4795a269d55eee5ba345fb9959d148eba5ef94"
+    url "https://files.pythonhosted.org/packages/33/a2/c92f0a7ed439c490d2c8ad712fdb074c311afa4f77870987826a3b1483ba/jsonpointer-3.2.1.tar.gz"
+    sha256 "47c846513b3a4ec46eecef1105207fba075e2a3659048e362bd7daff0fc33342"
   end
 
   resource "jsonschema" do
@@ -229,8 +225,8 @@ class Openstackclient < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/90/a1/d5f9002a70298c64a789779077d8dd90c10aa1f47fe40c86802df874f2a6/platformdirs-4.12.4.tar.gz"
-    sha256 "63743c02414e755de4e31b8f68125c1407495b86c5a006e203c01ff8b9924250"
+    url "https://files.pythonhosted.org/packages/80/a8/66d45abadff219e36e2a824181b8f6a67e7ed4572934d6252c71c29d5731/platformdirs-4.13.0.tar.gz"
+    sha256 "1aa0b0d3f224c1f07c295121e312a5a24a180d6ae5a8425ea1784b3e3863e9c0"
   end
 
   resource "ply" do
@@ -371,11 +367,6 @@ class Openstackclient < Formula
   resource "rich-argparse" do
     url "https://files.pythonhosted.org/packages/6a/e5/1064c43203a357d668cd42435f7a15fe6af51512d85b2104fecb937aa861/rich_argparse-1.8.0.tar.gz"
     sha256 "679df3d832fa94ad6e4bdb07ded088cd7ea2dddc58ae9b2b46346a40b06cbc0c"
-  end
-
-  resource "secretstorage" do
-    url "https://files.pythonhosted.org/packages/1c/03/e834bcd866f2f8a49a85eaff47340affa3bfa391ee9912a952a1faa68c7b/secretstorage-3.5.0.tar.gz"
-    sha256 "f04b8e4689cbce351744d5537bf6b1329c6fc68f91fa666f60a380edddcd11be"
   end
 
   resource "setuptools" do

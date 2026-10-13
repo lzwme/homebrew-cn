@@ -1,17 +1,17 @@
 class GitPkgsBrief < Formula
   desc "Tool that detects and reports a project's toolchain, configuration, and more"
   homepage "https://github.com/git-pkgs/brief"
-  url "https://ghfast.top/https://github.com/git-pkgs/brief/archive/refs/tags/v0.14.0.tar.gz"
-  sha256 "c5b9e56fac95826fc9a26e3c0427ce08ca1b7ce6f7b1c316270c316a8bca9741"
+  url "https://ghfast.top/https://github.com/git-pkgs/brief/archive/refs/tags/v0.14.1.tar.gz"
+  sha256 "2f329799ee6772a13e1def9a767334cf58b682dfccd8078b040dde5e717a3670"
   license "MIT"
   head "https://github.com/git-pkgs/brief.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "c19ece3b346ca0dfe099ea827094fb085c6f8d54a4011f8471d73f6bf48af487"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "c19ece3b346ca0dfe099ea827094fb085c6f8d54a4011f8471d73f6bf48af487"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "c19ece3b346ca0dfe099ea827094fb085c6f8d54a4011f8471d73f6bf48af487"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "9aed02561980f9ba2603b69820e5ea72d16bd00dbaf1f8c120533ca424829426"
-    sha256 cellar: :any,                 x86_64_linux:      "edc0ac1817149b6336e070cba0494fd4352f401b5397f6c4ea395ae22ce171cb"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "771dec52891babf0bc7cc5c6464346d3693b2f0399a604262f43d2853f01b52c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "771dec52891babf0bc7cc5c6464346d3693b2f0399a604262f43d2853f01b52c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "771dec52891babf0bc7cc5c6464346d3693b2f0399a604262f43d2853f01b52c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "e378cc96a164dc9f2bf1143fccba567e600e0669c9f2e327faf7ea83eefdb568"
+    sha256 cellar: :any,                 x86_64_linux:      "41a92f6a7375700d4f2616d9d2d7b7253706aab7e6a9c104b698efbb7e438d55"
   end
 
   depends_on "go" => :build

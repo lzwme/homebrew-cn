@@ -9,16 +9,17 @@ class Pferd < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "8b21bbbee16d1cd8338661266baeeaba8f53c22537ae04abc4dc28c763bca4d1"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "846266e334516f06281d751043a7856680d8c195bba5fce77a03c2a285d5fa7b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "6f7b1ae673fcd961f7fa39c80ce72828850f798abad2c9e2812613ea39a02779"
-    sha256 cellar: :any,                 arm64_linux:       "21b72229a782a09026ddef749e17776768ba2c870b5af0e14e93b070a0e906c9"
-    sha256 cellar: :any,                 x86_64_linux:      "095ae9f9801a7a4ede32e5b903e164de3941ef08b92d731b3d019ce112d4ae13"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "8bbf87b98faea821b2be0d193959cefdc6b9aaee6a30d57b500a4e1f22193448"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "241d5cfb873247c8c63ee779cb3fea71123cf70f84ccbc5d3a1df023ef4425aa"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "6cb831d2be2efb04d48233db1c9159f6d4fa3e235363d63b800a3ae9cf6366d3"
+    sha256 cellar: :any,                 arm64_linux:       "e5b53d97e76e46e14aa1990ccbf9f2a08c4994265115f73b93bdc3c44fd20ab8"
+    sha256 cellar: :any,                 x86_64_linux:      "5bce33d0ba67bbe60741ffe560145e78a0aed769d529148e5aca6e7c6626d8b0"
   end
 
   depends_on "certifi" => :no_linkage
   depends_on "cryptography" => :no_linkage
-  depends_on "python@3.14"
+  depends_on "python@3.15"
 
   pypi_packages exclude_packages: %w[certifi cryptography],
                 extra_packages:   %w[jeepney secretstorage]
@@ -29,8 +30,8 @@ class Pferd < Formula
   end
 
   resource "aiohttp" do
-    url "https://files.pythonhosted.org/packages/58/d9/22ce5786ac0c1653ae8b6c23bded02c1686d11f0dbb45b31ce128e0df985/aiohttp-3.14.3.tar.gz"
-    sha256 "9491196535a88924a60afd5b5f434b5b203b6cc616250878dbdb223a8f7844bc"
+    url "https://files.pythonhosted.org/packages/6c/4c/bdccd81e9ee225b69c60e7766c9a5b05364f118f4d383713b89a682d772d/aiohttp-3.14.5.tar.gz"
+    sha256 "5558a7f5a05af9ecf744af91e5baefc436f93c9333e656c27ec253f9a6bbe178"
   end
 
   resource "aiosignal" do
@@ -99,8 +100,8 @@ class Pferd < Formula
   end
 
   resource "multidict" do
-    url "https://files.pythonhosted.org/packages/d6/99/1d4d69c3512d0ddbfa3a1b69cfd9a151012ab2eb4eabbb096201b1f0b7d8/multidict-6.9.1.tar.gz"
-    sha256 "0f06e60fa190aa7abd0914c2a766736fdc8e9f34878c4346338534b73d1b20e2"
+    url "https://files.pythonhosted.org/packages/f9/79/84ddb5ba16c4eb2c69c71db76ae3c579fe546e511f7170c7e27eedbab7c1/multidict-7.1.0.tar.gz"
+    sha256 "61a4e5d81b8d4e4ad61964b230129e7a2b914793d96289029078fc9009f074ec"
   end
 
   resource "propcache" do

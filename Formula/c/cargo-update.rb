@@ -29,6 +29,15 @@ class CargoUpdate < Formula
     depends_on "zlib-ng-compat"
   end
 
+  # The test downloads the beta toolchain using rustup.
+  allow_network_access! :test
+
+  def fetch
+    # The release does not include a `Cargo.lock`.
+    system "cargo", "generate-lockfile"
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
     ENV["LIBGIT2_NO_VENDOR"] = "1"
     ENV["LIBSSH2_SYS_USE_PKG_CONFIG"] = "1"

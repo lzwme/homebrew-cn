@@ -8,11 +8,12 @@ class Posting < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "e60f733cb8622a5fddfc7e401d1c0f49fa8e4499665e83bda614e34c0b5a9568"
-    sha256 cellar: :any, arm64_tahoe:       "51952906336233f93dbec73a5e7f8f68b87ef7d5d704388dfad9be1292bac7ce"
-    sha256 cellar: :any, arm64_sequoia:     "92316e00010ff036132e9a52b40c49cc97a8fe70badc4a65e421f07967dd12cb"
-    sha256 cellar: :any, arm64_linux:       "5155a1150d2c23f3074fd554140237288c8b9ca038f115f9a25b9daad1ba3dda"
-    sha256 cellar: :any, x86_64_linux:      "766749880ab1abeb11576b01553438832d0bd83cf8eaea312e1ad62665d29028"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "a6bbf05d13805da8547f47549f7aff048a6014a393afec6927025dda78e9d0da"
+    sha256 cellar: :any, arm64_tahoe:       "f6c7e0b49e59956d143aea9de32eb7926de836abafabf1014a23a621a7c038ca"
+    sha256 cellar: :any, arm64_sequoia:     "d56355e820b5259c5b913add486119f429f9daff781796072f914350f20c15b8"
+    sha256 cellar: :any, arm64_linux:       "263cb82ceb8b92df4d5539e1ac7f31839bb468802dd6043d5e891e1531bdfd04"
+    sha256 cellar: :any, x86_64_linux:      "97a66fc2f0064ba2ce7df754f10d1351a4ee839c08e6dc4684f0514b03152149"
   end
 
   depends_on "cmake" => :build
@@ -22,7 +23,7 @@ class Posting < Formula
   depends_on "certifi" => :no_linkage
   depends_on "libyaml"
   depends_on "pydantic" => :no_linkage
-  depends_on "python@3.14"
+  depends_on "python@3.15"
   depends_on "tree-sitter" => :no_linkage
 
   pypi_packages exclude_packages: ["certifi", "pydantic"]

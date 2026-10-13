@@ -10,16 +10,17 @@ class Scrapy < Formula
   head "https://github.com/scrapy/scrapy.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "5866767f3d838094b371eadf838f51f8c80a1fe454276956dc1d9e7e7493a4e0"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "0a1b3b67455bc70f52d58cba6b6ef8d09a3eb4068cd3532b8cff5a4336ff2779"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "8c18a62957b354f001a0db460b4b4f886acc0bff070a046fa3bbbed58407b5b8"
-    sha256 cellar: :any,                 arm64_linux:       "aa3cc857a14b0bc6d52f2a05a7639c6167ae36eb8dbec122eea57ec40e9850cd"
-    sha256 cellar: :any,                 x86_64_linux:      "70e6c8727d382efcdf31d97660b7308f8b9b3a44640c370c51f7f9e0d2a6ec85"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "061c147c1b70b7dca3f064e83f1f2cc1d48df478ed36242fa27671749bbfa4c7"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "75974ce3e784b6acf4db2911c3f8d30700808d0dbc5d814af96ed0afd9e02256"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "26e73d66cac50d32c96579da99fd4e1d806b7e2c9daae7a529e92cd0ae79dcaa"
+    sha256 cellar: :any,                 arm64_linux:       "2ace56e5ebc6d5ac86784682f2f73b73b37d0132dce3bb6ebc069845111ac9a4"
+    sha256 cellar: :any,                 x86_64_linux:      "1fa01ac8cd4a7d66b4b49fa5b5741d95ab106a46065c0c68e0adb04af34a379a"
   end
 
   depends_on "certifi" => :no_linkage
   depends_on "cryptography" => :no_linkage
-  depends_on "python@3.14"
+  depends_on "python@3.15"
 
   uses_from_macos "libxml2", since: :ventura
   uses_from_macos "libxslt"
@@ -32,8 +33,8 @@ class Scrapy < Formula
   end
 
   resource "aiohttp" do
-    url "https://files.pythonhosted.org/packages/58/d9/22ce5786ac0c1653ae8b6c23bded02c1686d11f0dbb45b31ce128e0df985/aiohttp-3.14.3.tar.gz"
-    sha256 "9491196535a88924a60afd5b5f434b5b203b6cc616250878dbdb223a8f7844bc"
+    url "https://files.pythonhosted.org/packages/6c/4c/bdccd81e9ee225b69c60e7766c9a5b05364f118f4d383713b89a682d772d/aiohttp-3.14.5.tar.gz"
+    sha256 "5558a7f5a05af9ecf744af91e5baefc436f93c9333e656c27ec253f9a6bbe178"
   end
 
   resource "aiosignal" do
@@ -67,8 +68,8 @@ class Scrapy < Formula
   end
 
   resource "cssselect" do
-    url "https://files.pythonhosted.org/packages/8e/5a/6d6fcf922709391fac986f0a03ad4546f4f45b94d10aeb6c1ee041599993/cssselect-1.5.0.tar.gz"
-    sha256 "3cbe82dd7acbee9ba9e5723b5f9e4749826912f1fb31cd7f92aabed5fde15b15"
+    url "https://files.pythonhosted.org/packages/c8/8b/dc32df939ab541fca6ee8964d26aa231dbe231cdc2b2713228161441ba9c/cssselect-1.6.0.tar.gz"
+    sha256 "8c83a7139e97b93aa5ebdc0f46e785f7056a08a8bf201e597a6a2629d7eb11db"
   end
 
   resource "defusedxml" do
@@ -77,8 +78,8 @@ class Scrapy < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/70/51/2bc9e529f154fad99b6cd0073e609291eb32fd23581b32362d33d164d316/filelock-4.0.9.tar.gz"
-    sha256 "635e7d67fa92654eed444e75e9ca18426d34e77ad9c469bf4373f75a932f7b22"
+    url "https://files.pythonhosted.org/packages/35/c8/1d457d9150ff948f2ce6ada7715e0eeebbe5d3b58a45271a1e222474bcd3/filelock-4.1.1.tar.gz"
+    sha256 "7ba0927482c5a814b0a7f391d029ccdb8010f576f0a74c0dcde1811e8bc4c1b6"
   end
 
   resource "frozenlist" do
@@ -122,8 +123,8 @@ class Scrapy < Formula
   end
 
   resource "multidict" do
-    url "https://files.pythonhosted.org/packages/d6/99/1d4d69c3512d0ddbfa3a1b69cfd9a151012ab2eb4eabbb096201b1f0b7d8/multidict-6.9.1.tar.gz"
-    sha256 "0f06e60fa190aa7abd0914c2a766736fdc8e9f34878c4346338534b73d1b20e2"
+    url "https://files.pythonhosted.org/packages/f9/79/84ddb5ba16c4eb2c69c71db76ae3c579fe546e511f7170c7e27eedbab7c1/multidict-7.1.0.tar.gz"
+    sha256 "61a4e5d81b8d4e4ad61964b230129e7a2b914793d96289029078fc9009f074ec"
   end
 
   resource "packaging" do
@@ -137,8 +138,8 @@ class Scrapy < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/17/c8/721b3855fe457da514fe249247d404b9b39c5d16532278f70ebaa6acf18b/platformdirs-4.12.2.tar.gz"
-    sha256 "eab5f70271a490ef74618bb314fbb86e3c7e82fa3b9c922c2ea0e0a1a155d329"
+    url "https://files.pythonhosted.org/packages/80/a8/66d45abadff219e36e2a824181b8f6a67e7ed4572934d6252c71c29d5731/platformdirs-4.13.0.tar.gz"
+    sha256 "1aa0b0d3f224c1f07c295121e312a5a24a180d6ae5a8425ea1784b3e3863e9c0"
   end
 
   resource "propcache" do
@@ -182,8 +183,8 @@ class Scrapy < Formula
   end
 
   resource "tldextract" do
-    url "https://files.pythonhosted.org/packages/01/a9/ed5d3be29bfaf90c00b7159d3884b311f3880b55833d1c7be764164dc288/tldextract-5.3.2.tar.gz"
-    sha256 "c017431bc0800f2d3d1b57cce36e06668f0930f60a6d8c4615d4e2b8da298fa9"
+    url "https://files.pythonhosted.org/packages/fd/5d/45ece871390ccc985f821353543165bcf3784fa97d8484fd0ca5f2726612/tldextract-5.4.0.tar.gz"
+    sha256 "6c9223212c15c25c0da2bf7313893c14f175cb36b64a0c42da67a468e0c61ee3"
   end
 
   resource "twisted" do

@@ -8,12 +8,13 @@ class Notifiers < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "be2cf7305f2ef0da3eaba5f19cdb5cbce7eb66ce39bf03c5a527076d411867e1"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "e8ebdcde6d7bdda31d53b5b09a22328912e23e3b2b988298fb05d876bb7c1c12"
   end
 
   depends_on "certifi" => :no_linkage
   depends_on "pydantic" => :no_linkage
-  depends_on "python@3.14"
+  depends_on "python@3.15"
 
   pypi_packages exclude_packages: %w[certifi pydantic]
 

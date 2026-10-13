@@ -5,6 +5,7 @@ class Rdkit < Formula
   url "https://ghfast.top/https://github.com/rdkit/rdkit/archive/refs/tags/Release_2026_09_1.tar.gz"
   sha256 "86711e340759a3a0678a2e62f54f26f7ff564c3a02de0460f60b1ce89ac1bfe9"
   license "BSD-3-Clause"
+  revision 1
   head "https://github.com/rdkit/rdkit.git", branch: "master"
 
   livecheck do
@@ -16,11 +17,11 @@ class Rdkit < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "a061790105db0118a998193489ce6d834ec4eb7ad5d0cf0b559d6f82ba4b276a"
-    sha256 cellar: :any, arm64_tahoe:       "abdba9b65abfe462ed1aa4cb2e5401d7742e9245d32d88dda53467fd546f2d49"
-    sha256 cellar: :any, arm64_sequoia:     "3523a26e6e8aac1ddd1eddc760a2dda87318b9622c3c7e33fe3c72e141957e1f"
-    sha256 cellar: :any, arm64_linux:       "68ca0c1506133ea4a30bb726f6b551a70bc2cabe7626c4b21cd57b88e7400109"
-    sha256 cellar: :any, x86_64_linux:      "c223fe99c7bc62a27ed9bd766a0a082f1db2e881ffa4426ac9ae124ad4f41bf5"
+    sha256 cellar: :any, arm64_golden_gate: "cc7299912e5ea88e5c2b18dd9989d6b6603e599bc0bd3b05e343fd2e79230e9a"
+    sha256 cellar: :any, arm64_tahoe:       "7659b2095d779622ee0cc1385cca073ea9e29a2584f2d7a94c5550686da8a6c2"
+    sha256 cellar: :any, arm64_sequoia:     "2195c188923bfc38103871bde616a0e0472a0ff0f8f705d2f314a8c907ab6d5c"
+    sha256 cellar: :any, arm64_linux:       "733aa225b08793d129fdc26f980af7d1e7c9bb979dfab818d89400b28f643baa"
+    sha256 cellar: :any, x86_64_linux:      "c01c00c00793e0a6d279d335c4cbe81be2c917621ddf101947ebeaaaf14a436b"
   end
 
   depends_on "catch2" => :build
@@ -38,7 +39,7 @@ class Rdkit < Formula
   depends_on "maeparser"
   depends_on "numpy"
   depends_on "py3cairo" => :no_linkage
-  depends_on "python@3.14"
+  depends_on "python@3.15"
 
   uses_from_macos "expat", since: :sequoia # minimum macOS due to python
 

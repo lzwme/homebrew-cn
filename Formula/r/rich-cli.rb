@@ -9,11 +9,12 @@ class RichCli < Formula
   revision 6
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "49f1efae7c4d326342ccedd1cc7e6a07a376d5951ead2cc85bf5d3c140d03ed1"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "3a369b9982741fb5cc3479091004ec62767e434a9ade7b118cf58c10fc2b18ca"
   end
 
   depends_on "certifi" => :no_linkage
-  depends_on "python@3.14"
+  depends_on "python@3.15"
 
   pypi_packages exclude_packages: "certifi"
 

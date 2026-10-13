@@ -6,11 +6,12 @@ class IcpCli < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "2f1cf2897c761e6b7ceb23f701e989a12a383f3f428aa6f345ba7b61b463616c"
-    sha256 cellar: :any, arm64_tahoe:       "9c5301855f0e6d57726b9c84642290c1d849c10af0d5e7041c64744ed8091339"
-    sha256 cellar: :any, arm64_sequoia:     "ebe097dbc3ee5cc82d987738103fbfaaf2ae3c78324daa1e14f0b5c599db4666"
-    sha256 cellar: :any, arm64_linux:       "15564ce13051d357f33eb434b48093c00b4d2fc0f21e748d7bca1fa8a0e4c6b4"
-    sha256 cellar: :any, x86_64_linux:      "ff8c8460f898f79ba35687969a1e3d5abc21817998629b09899ed2b4063f8f07"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "7c7d5ce1d150a1bdd6991273a1a8be1e87e7cb47b010856f0e9dd315dfe33e5a"
+    sha256 cellar: :any, arm64_tahoe:       "2cb84025f91de9b43b7b77bb4c841c5f1df8f757c1dcbe59421c3742a7074fc4"
+    sha256 cellar: :any, arm64_sequoia:     "32f403e53717b1cacd42d7f48da6063ef4a050b2c3dd6a50e432dd426cf8c4a7"
+    sha256 cellar: :any, arm64_linux:       "e5ed2ced0e09ec16e3793a868f198c70af9ac3aaa607fce8bf0ff455aa4f51bd"
+    sha256 cellar: :any, x86_64_linux:      "f02b2dce4bbb05b43c8547739a7537be2836e946acc6febf7b837927c678e4d9"
   end
 
   depends_on "lld" => :build # for `wasm-ld`
@@ -32,6 +33,7 @@ class IcpCli < Formula
     ENV.append_to_rustflags "--sysroot #{HOMEBREW_PREFIX}"
 
     system "cargo", "install", *std_cargo_args(path: "crates/icp-cli")
+    generate_completions_from_executable(bin/"icp", shell_parameter_format: :clap)
   end
 
   test do

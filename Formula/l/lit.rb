@@ -6,11 +6,12 @@ class Lit < Formula
   license "Apache-2.0" => { with: "LLVM-exception" }
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "d4eda668c399bf151670fa0cd981301e163050d5b7ba201235f6731b41b20f3c"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "b54dec36fed5b49b4e9e403dd27e612573d3ba5a92582f659baad621ae6d44af"
   end
 
   depends_on "llvm" => :test
-  depends_on "python@3.14"
+  depends_on "python@3.15"
 
   conflicts_with "luvit", because: "both install `lit` binaries"
 

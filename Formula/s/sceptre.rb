@@ -9,16 +9,17 @@ class Sceptre < Formula
   revision 2
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "0e6fef7e020f5661b9077338e75ca04428dcbb2de4d1a05be1d79afdd1d33bb4"
-    sha256 cellar: :any, arm64_tahoe:       "83893f1106459fe6e4298ea769a736ea351bb6acf7e5daf8bcdc7c6a526a6ba8"
-    sha256 cellar: :any, arm64_sequoia:     "a86b648ff5415cdba464b31b8ba6bfb5f7b8eac1d01b6fd5a6b3d4500d3a7892"
-    sha256 cellar: :any, arm64_linux:       "b794cf223e2d6833a302089df21b2874bb33ed46bb1f40e7be2e430a9bd9d8b8"
-    sha256 cellar: :any, x86_64_linux:      "4458090a4248b43d78b4dad4b0c52d2cff4f0c992667c82496223f5ab5621056"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "69fe897d67e513f5ed8a4766ac36fb8b23f9153559e4afbd3536dff576e60682"
+    sha256 cellar: :any, arm64_tahoe:       "0f1ebc9b6214033b0979e29fb29cb2e156989f9d4443e4789414ce2ee027040d"
+    sha256 cellar: :any, arm64_sequoia:     "5dab2c9889073a655057a205957c20d00119b4de62fb6d844fa5d02b4470e798"
+    sha256 cellar: :any, arm64_linux:       "5445a893e7f365cd13a589f27e64a0ea5f5aba8f14cc8966f7e49995edbeba66"
+    sha256 cellar: :any, x86_64_linux:      "7a4762892145b3f975c5de5f4cb1735cf0a4b90882e6580b5229613dfc5666fb"
   end
 
   depends_on "certifi" => :no_linkage
   depends_on "libyaml"
-  depends_on "python@3.14"
+  depends_on "python@3.15"
 
   pypi_packages exclude_packages: ["certifi"]
 
@@ -28,13 +29,13 @@ class Sceptre < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/2a/c4/c68d22d91482898f1294dab7541ad83f8bcf9df83107e6d8436d6e9dbf01/boto3-1.43.107.tar.gz"
-    sha256 "c4e0f1a0295cbb7103f2950128cf88463c076d220080a7d0f127cf834969fc3a"
+    url "https://files.pythonhosted.org/packages/59/d3/fa092ae1c109100d0c5c14c69a316cd6d53c05fb57183fa77b1fcdef86ce/boto3-1.43.111.tar.gz"
+    sha256 "5ae342a16c848909cd42d4be404f69d9082e5705460198d4d3327eca5f6cddcb"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/4d/22/3aed44a1e0b9820485124a9ad25e9bccd5539c547ef12827547c3cbeb25f/botocore-1.43.107.tar.gz"
-    sha256 "4a37fa072a00280c746313532d19b00e2dc53f1993222601df104d71d548d5b6"
+    url "https://files.pythonhosted.org/packages/6c/43/257e97270ddd6833fd54b11e544a09b441b02f8c731bdeb29b90479be565/botocore-1.43.111.tar.gz"
+    sha256 "44d5e80962ac6cb9e85af72667b77c9586451e3328ab0ce33195380767e213d8"
   end
 
   resource "cfn-flip" do
@@ -88,8 +89,8 @@ class Sceptre < Formula
   end
 
   resource "markupsafe" do
-    url "https://files.pythonhosted.org/packages/7e/99/7690b6d4034fffd95959cbe0c02de8deb3098cc577c67bb6a24fe5d7caa7/markupsafe-3.0.3.tar.gz"
-    sha256 "722695808f4b6457b320fdc131280796bdceb04ab50fe1795cd540799ebe1698"
+    url "https://files.pythonhosted.org/packages/38/9b/e422a865e1d5d57d0e509b4e0bf1c1a70a7f6382c29a5aa428df994c8bc8/markupsafe-3.0.4.tar.gz"
+    sha256 "2e9ad7dd851bf45fab9f75cbff4cb493fee9979e8d8c7c9c3ee119022518edd6"
   end
 
   resource "networkx" do

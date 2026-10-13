@@ -10,18 +10,19 @@ class MetaPackageManager < Formula
   head "https://github.com/kdeldycke/meta-package-manager.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "d1da876f59695afaf2f579e4de0ac0f852f6af9db8782c927f217b0cb2afc2f6"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "13ec46c9f766097b1ac579c3fb7472c7312b6b66db6690548d2fa950d327e29f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "eb3e191cb48296e5ee2c2338c3419734b1088c03002553369c49b89fa246b125"
-    sha256 cellar: :any,                 arm64_linux:       "03d04c3d286209210edb4324f1795a74c302576f45f7fdcc99189e52ca6be73d"
-    sha256 cellar: :any,                 x86_64_linux:      "1ad30a6d98036fcde53229fbc7ad7e849a1ede5b9aaa92470ef9f3760d9d67de"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "46ba5bce8dd614e1cdead25cc8aa076ec4472aeb5f51ea9f19d47958a4386391"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "3f8572f49d35ae2d288b0be8fcf7556225bc56471b7d342ad5878c1aa2d98103"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "63ab0dbc3528e363b169214c29d9e7603b3ceb0cf3616ff3803927d6347763e7"
+    sha256 cellar: :any,                 arm64_linux:       "50a225ef527537425e3ec42eee3463d82fd1dd28dc82f4b259196b323629c8c4"
+    sha256 cellar: :any,                 x86_64_linux:      "09006fd7963691a71e4db0659fc46ecb3deea9c5d751b0e91695e714940c21bf"
   end
 
   depends_on "rust" => :build
 
   depends_on "certifi" => :no_linkage
   depends_on "libyaml"
-  depends_on "python@3.14"
+  depends_on "python@3.15"
   depends_on "rpds-py" => :no_linkage
 
   uses_from_macos "libxml2"
@@ -80,8 +81,8 @@ class MetaPackageManager < Formula
   end
 
   resource "wcmatch" do
-    url "https://files.pythonhosted.org/packages/57/43/30e407989e313677dbb9d5f045f966549a7254834571e342eaa4b55cc67b/wcmatch-11.0.1.tar.gz"
-    sha256 "1ea2b4fa678b8ca268253798d5963935df39132d47c3e241c0a0732224005e7d"
+    url "https://files.pythonhosted.org/packages/78/cd/0e028d8b7d906d51acdac537334fbe85f8284f2a8147d48bc9403af77a0d/wcmatch-11.1.tar.gz"
+    sha256 "f2b6f0fad6f5e2571498723fcb3c8facdd0fba0dcc139f31d32f592eb648153e"
   end
 
   resource "wcwidth" do

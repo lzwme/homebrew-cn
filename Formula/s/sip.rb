@@ -3,16 +3,17 @@ class Sip < Formula
 
   desc "Tool to create Python bindings for C and C++ libraries"
   homepage "https://python-sip.readthedocs.io/en/latest/"
-  url "https://files.pythonhosted.org/packages/ef/1e/2a8018d798af124d32fc9da01e8c97241d6a7c89ed1b64fbd5ff49f4df32/sip-6.17.0.tar.gz"
-  sha256 "8c8839fb1fe87247cd315671c41897780b760aa76d01a6440f85c1fe76456bf4"
+  url "https://files.pythonhosted.org/packages/0d/d6/4108ef066e4a8452b393d5acd03fed176d7178c0512b2ecf564dc8dcf796/sip-6.17.1.tar.gz"
+  sha256 "34e2c1389e25394f5ba3c6b9d999d04373baf8d7161410536d444f48226d2f50"
   license "BSD-2-Clause"
   head "https://github.com/Python-SIP/sip.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "1515f4e7db71ad630a88d0053cc8b4baf74d0819ad6706bfebae94a10a4239a7"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "7c2f94bb2a11ee8ea21a05c604490cd1fdaf83b0e82cac7746bc9bd23783fcce"
   end
 
-  depends_on "python@3.14"
+  depends_on "python@3.15"
 
   resource "packaging" do
     url "https://files.pythonhosted.org/packages/7d/fa/3944b40b07da9ce895c0e6303a5ab7d53da063554f534556b134a54d6093/packaging-26.3.tar.gz"

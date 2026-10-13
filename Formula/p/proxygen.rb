@@ -1,10 +1,9 @@
 class Proxygen < Formula
   desc "Collection of C++ HTTP libraries"
   homepage "https://github.com/facebook/proxygen"
-  url "https://ghfast.top/https://github.com/facebook/proxygen/releases/download/v2026.10.05.00/proxygen-v2026.10.05.00.tar.gz"
-  sha256 "53315c7dfbb805baaf1f8eafc7b9830f7c7dddad29f4f4f7dd748313aa54d635"
+  url "https://ghfast.top/https://github.com/facebook/proxygen/releases/download/v2026.10.12.00/proxygen-v2026.10.12.00.tar.gz"
+  sha256 "45b5630f5b5b18606a1b7ca9f5334180f85d1bcccef705a5baeca4f57ce1e707"
   license "BSD-3-Clause"
-  revision 1
   head "https://github.com/facebook/proxygen.git", branch: "main"
 
   livecheck do
@@ -13,11 +12,11 @@ class Proxygen < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "13eb9532b6277afbf22912497f7227edb42cc72e48bc86d8183ba6f0c8aea9d3"
-    sha256 cellar: :any, arm64_tahoe:       "0cb2391464676adb1b8ceb01d651e0fee283aa9eb33ef5d398a97794fea0914a"
-    sha256 cellar: :any, arm64_sequoia:     "1c1ad08e9dbdf1e866ae3f2867cb4ed9c22247b0ae2922143e073cf0d89b29e3"
-    sha256 cellar: :any, arm64_linux:       "acac0103cfdb45877b4fb299fe69a107ca351ceacaa18a63cd4211f2aefc595e"
-    sha256 cellar: :any, x86_64_linux:      "02c98b22285c8bc5908b020e1810a96de9cf3d376fcf675a295fd1f14c096a13"
+    sha256 cellar: :any, arm64_golden_gate: "d394b96dfc8d209a793d4c91aed2de76370fb923f909707fbe9f1e523a372b8d"
+    sha256 cellar: :any, arm64_tahoe:       "0d351b43f96645b336c497758a21b7405e1f1fb647ba31d3642ad8b21fbb25cc"
+    sha256 cellar: :any, arm64_sequoia:     "91ee32d12ce00555a69e1f6ea55da5d916e4c58a79eb3e3910817c03e51528f9"
+    sha256 cellar: :any, arm64_linux:       "11169b3fccc75f90cf405e978bdc23f51fa1aac255ca3321f425366438e91c13"
+    sha256 cellar: :any, x86_64_linux:      "8cfa9f1bdaa29fb8e1c18bce76bdac0a7540e9795bbe2cb707a3a0bdba73662e"
   end
 
   depends_on "boost" => :build
@@ -41,15 +40,6 @@ class Proxygen < Formula
   end
 
   conflicts_with "hq", because: "both install `hq` binaries"
-
-  # Fix c-ares 1.34.8 compatibility.
-  # TODO: Remove when https://github.com/facebook/proxygen/pull/650 is released.
-  patch do
-    url "https://github.com/facebook/proxygen/commit/61d1f695cb3b095980b0d307dc3b9bb08dc58e4b.patch?full_index=1"
-    sha256 "35e427ef211b9fd1fcfe3f1a523505a1fde9eb548a434f7fc48f0650c468a671"
-    type :unofficial
-    resolves "https://github.com/facebook/proxygen/issues/649"
-  end
 
   allow_network_access! :test
 

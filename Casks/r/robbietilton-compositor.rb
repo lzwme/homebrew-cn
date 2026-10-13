@@ -1,6 +1,6 @@
 cask "robbietilton-compositor" do
-  version "1.4.10"
-  sha256 "eff1e3b1393dca15132698deada26c3fbb6ad5de9b72dadd5ad1e529a2a8e935"
+  version "1.5.1"
+  sha256 "9cd2c3489120995b920b57576b92882994e685ae22a14746d53725bb32a22865"
 
   url "https://ghfast.top/https://github.com/robbietilton/Compositor/releases/download/v#{version}/Compositor.dmg"
   name "Compositor"

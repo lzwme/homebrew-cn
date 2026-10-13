@@ -1,18 +1,17 @@
 class Freerdp < Formula
   desc "X11 implementation of the Remote Desktop Protocol (RDP)"
   homepage "https://www.freerdp.com/"
-  url "https://ghfast.top/https://github.com/FreeRDP/FreeRDP/archive/refs/tags/3.32.1.tar.gz"
-  sha256 "8803dd26ec9660550252f255cf2d672a785ddd8f544bb475834993e96807c87f"
+  url "https://ghfast.top/https://github.com/FreeRDP/FreeRDP/archive/refs/tags/3.32.2.tar.gz"
+  sha256 "9ccb8357bf0188044a460de775c7ea289ca7d2a2a917eca0f0a7c4dc9c8b08ea"
   license "Apache-2.0"
-  revision 1
   head "https://github.com/FreeRDP/FreeRDP.git", branch: "master"
 
   bottle do
-    sha256 arm64_golden_gate: "3967d20fca4a3662ca38d1dae940828d34a016e68a2719e3df956f24ffb08972"
-    sha256 arm64_tahoe:       "c9114711256f4b4161b280f344ce55fcfaf4d9484e6a89ef652a03f334fba479"
-    sha256 arm64_sequoia:     "af48acb4359183c31759658d2b1f9751b52ce161b2e07dfea08d9da21d135a0c"
-    sha256 arm64_linux:       "be8d3e4149fd826e30306eb17487e907d14560249c207ac51a80570540392835"
-    sha256 x86_64_linux:      "0a061566853b61f12d1ec2537fc192f7a6e1ea120793b7bd64f58d88f07db068"
+    sha256 arm64_golden_gate: "0aef4cfa585b774e24a7bc03a5db730be082c42daa35145d4a12c2bbb0dd3fc2"
+    sha256 arm64_tahoe:       "cfe9f2a888cd21533e4794d23e2e9998c9ab89c8e491b85bda2b465f91fe2f3b"
+    sha256 arm64_sequoia:     "fa2a36085a4ee4279d6a615b99a630382bf1b2dbaba288f55b0d02e59cfecfa3"
+    sha256 arm64_linux:       "24d129ada36fa8710a1ae25b42783be8806d930761898fc9ad4b27402e65313f"
+    sha256 x86_64_linux:      "d935cc0139f4c2835d186a47835f823f024395ba07bbd745f770043f68110366"
   end
 
   depends_on "cmake" => :build

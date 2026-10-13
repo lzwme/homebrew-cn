@@ -3,18 +3,17 @@ class Urlscan < Formula
 
   desc "View/select the URLs in an email message or file"
   homepage "https://github.com/firecat53/urlscan"
-  url "https://files.pythonhosted.org/packages/5c/d2/3e3923b54bd185352b68359f60728529c0eae30fcef8e01eee0e7c3978af/urlscan-1.1.2.tar.gz"
-  sha256 "e4f01037dcb84f0cc5733b9423732ebf368cb9b4c9714bdaf7dd336d883a78b2"
+  url "https://files.pythonhosted.org/packages/0d/e0/9e33a713d45f31f9ec5f8a8a7b3edd188a5a22cec9340be1637dbc539b08/urlscan-1.2.0.tar.gz"
+  sha256 "27ffbc49a98da0f3d0a533b23e04c71784d4e10fbf2ee4e1f443ef39364fce5b"
   license "GPL-2.0-or-later"
   head "https://github.com/firecat53/urlscan.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "c6beef329e0a219493eb3e2bb95bf3a05538b2a25361fb07a43fdcfd1ce5ca49"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "6b12eede310eabbef546ca8494148daf86b5f16928e904d9fe4bdf9d539648d5"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "daf43668d4e0c86590b4bba564fecd92b7b814a583e2ed3b390008838a7fb398"
-    sha256 cellar: :any,                 arm64_linux:       "d73d2956c3b2ba9849c41dbfb8cc771b48615a29d1dbd191d54914c84b90052b"
-    sha256 cellar: :any,                 x86_64_linux:      "4f3cacfc50827dd5c1d028cf1b8b4939874c0d75e76a5cf9ae3aa49922242f39"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "4c60c3331ca35e51bf612954664183bd02ae615b7d5330e7f91ca46326a68e73"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "db794f758d3d607b98d8c2684e294d59893570dfec5aa26a35880e05faa75785"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "3fc6bcd3a26192b3fc1365a2d148804a7b5d2f6ffda34b61fbc15dc218c1e385"
+    sha256 cellar: :any,                 arm64_linux:       "777676c3d49f4aaa9722c4b5a64a06b00e0563bec8206f2f69ea3d9ebf25e4f0"
+    sha256 cellar: :any,                 x86_64_linux:      "e631815fc8c8b9433013c03f32751daf616af6b6d49fc74ccd6bb7ab5f2ebc89"
   end
 
   depends_on "python@3.15"

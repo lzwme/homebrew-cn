@@ -8,18 +8,19 @@ class Locust < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "2d9d75fa2cfaa0db76a07839814cb292511927e27a7f92b55c9b459707b7939b"
-    sha256 cellar: :any, arm64_tahoe:       "257d39d1c766b6845e34e560ec06b4ef7e44f6e73f330e482665e40f5229d9c6"
-    sha256 cellar: :any, arm64_sequoia:     "cce2af0aaa3dcb32f5aca8ef700b877d689fd69349591617e664825e34d89433"
-    sha256 cellar: :any, arm64_linux:       "8328058721a0344ec086eccf0462753f10e215a20a0e49c778758e05cb2e3f79"
-    sha256 cellar: :any, x86_64_linux:      "e541bb7fde4bda4d11920f4ad34d39c5533d454c0ad31be34608fcdac5a13f9b"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "a7d4839346dd2480e0882419b585b4c65a01adc4e0e831efdaff997074a6cd1c"
+    sha256 cellar: :any, arm64_tahoe:       "1681addbd029d950e8ddf8ba716c9d6296881f26a84ac21c0f89a1da0e1c767e"
+    sha256 cellar: :any, arm64_sequoia:     "2d1449cf676aad2b6bbc75905d114ea9e5f71251a5e13a8b14d5d2e7960105f2"
+    sha256 cellar: :any, arm64_linux:       "f1263d8036c23d04cf03792bc5154f8a59e07ca9d357c542743c7a05dae2ddef"
+    sha256 cellar: :any, x86_64_linux:      "be6d8cb81d3423c0035610bfee4e1ea41a4e118ddedbfcd21ef438365128856e"
   end
 
   depends_on "cmake" => :build # for pyzmq
   depends_on "ninja" => :build # for pyzmq
   depends_on "rust" => :build # for bidict
   depends_on "certifi"
-  depends_on "python@3.14"
+  depends_on "python@3.15"
   depends_on "zeromq"
 
   pypi_packages exclude_packages: "certifi"
@@ -75,8 +76,8 @@ class Locust < Formula
   end
 
   resource "geventhttpclient" do
-    url "https://files.pythonhosted.org/packages/f1/68/34577ab9caad3bd9f6cde27cb0822a9f71d05a6d48969d7088cac2ead2f0/geventhttpclient-2.5.1.tar.gz"
-    sha256 "9a5e9baf254dc63f57e04bf606aa4475a858d005c191ce346bda2e63152409c6"
+    url "https://files.pythonhosted.org/packages/5f/e4/2835286913c2901f3d2246843deb8d99ba33de2b3a2ef8c4bb4c1a99f314/geventhttpclient-2.6.1.tar.gz"
+    sha256 "b15f0b0b959e75f4b8d97f3652e07db6d1050308027e1081eecddfbaa8412c92"
   end
 
   resource "greenlet" do
@@ -95,8 +96,8 @@ class Locust < Formula
   end
 
   resource "iniconfig" do
-    url "https://files.pythonhosted.org/packages/72/34/14ca021ce8e5dfedc35312d08ba8bf51fdd999c576889fc2c24cb97f4f10/iniconfig-2.3.0.tar.gz"
-    sha256 "c76315c77db068650d49c5b56314774a7804df16fee4402c1f19d6d15d8c4730"
+    url "https://files.pythonhosted.org/packages/01/e1/2069291243c926a2ff1cd706c7f3eeb9b62144bf60f77c9fb9ff2fb26bd3/iniconfig-2.3.1.tar.gz"
+    sha256 "67f4b9c50da0dedf52af349e7749a80a9057a5031199791b906c3bb3ae878960"
   end
 
   resource "itsdangerous" do

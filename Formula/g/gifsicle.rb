@@ -1,8 +1,8 @@
 class Gifsicle < Formula
   desc "GIF image/animation creator/editor"
   homepage "https://www.lcdf.org/gifsicle/"
-  url "https://www.lcdf.org/gifsicle/gifsicle-1.96.tar.gz"
-  sha256 "fd23d279681a6dfe3c15264e33f344045b3ba473da4d19f49e67a50994b077fb"
+  url "https://www.lcdf.org/gifsicle/gifsicle-1.97.tar.gz"
+  sha256 "17d98f305372e8c6c47c3fa7c75a9ebd9a8dea0b47c739d0b3be6c30a1c1da7a"
   license "GPL-2.0-only"
 
   livecheck do
@@ -11,15 +11,11 @@ class Gifsicle < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "3ac5fc4133a16d9d71ddb730140c0416c6dcdd2ede69ac8ec35dd4bf3cc7a8c7"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "33c1243bdc845aa74b15f5e89eb46be030360140687dca87a06eebb30b8d0308"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "75b564ba2a3671f341b02b63b0a8429ea02db301a6ecf1ab346a31d158f44139"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "90eddb31b7d51d074eb66c11a6f7dcbb39e086adf5fa37465e3d6c53f7eb9790"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:     "bddb0e3c75d143311b6d718302aa0aaa73c2ffa7dec3506087c3302d1397c09e"
-    sha256 cellar: :any_skip_relocation, sonoma:            "fddb207d04bf9452a711aa8fdfad464e8a11ced975329263f41025abf1dfaa5c"
-    sha256 cellar: :any_skip_relocation, ventura:           "19fe7f8c9fc05b0998a762d8b57d4736d858e56a24e97b4f23078ab17bbd1e9e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "2b41540353a764c3307806e38aa2f3e8d0a7e1af16dd3366e277d6361f0919d4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "a1e4342a1be7ae45ff3d7edacfdaee5f4f57753835353ad86e0dc5b3c528e302"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "6beb9fdcf26ccd1a787913ec81fa54d22941b6ca4897d6b36346d10a63028123"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "68d013fc286c59a4bf3e3278019aef0fce9de2cceeee68e3849aa337b1a292a2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "2b70a92a797ea903eac7671e8e2e51d99c728205b127228bb3cdcf7a52f0bb70"
+    sha256 cellar: :any,                 arm64_linux:       "5ac9d75933a972d72cee89563e0e8e52a06df298f96ada531b10e7ed05ed62e3"
+    sha256 cellar: :any,                 x86_64_linux:      "c81594962a1fa63410da27146e0fe193f5c4d132d29326223166fea9c7340dfd"
   end
 
   head do

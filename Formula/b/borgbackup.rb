@@ -10,18 +10,19 @@ class Borgbackup < Formula
   head "https://github.com/borgbackup/borg.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "7beafc264e9eecdc9796b4315e38d6cf7018583114f522dcb9f263f11bb09141"
-    sha256 cellar: :any, arm64_tahoe:       "87f345d494116ec16325d95a2b6476f950217de3c2bab918efda40edd79a22cf"
-    sha256 cellar: :any, arm64_sequoia:     "6e99e7ecc16203dd41cafa0d158d816954c1312d39d68e9afc25e0f4e0b492be"
-    sha256 cellar: :any, arm64_linux:       "9a1be4acf86f6cd5d6db6031e58588337a2f362b0ddfe1f1f46e2046f7470a32"
-    sha256 cellar: :any, x86_64_linux:      "e7eb1b80871b9a629af3c4f0ad44466f27003fccc68e204953ef6a61d4d40fe8"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "05a9cc854e2bc6b0d8c3b538005183af2fe945089d8d48d140c5271ade7b71c4"
+    sha256 cellar: :any, arm64_tahoe:       "19316a0d35fdf740fa189c58662e56d6fb77f1cbccc5a5a97f9e6b36893cd608"
+    sha256 cellar: :any, arm64_sequoia:     "909a4356fd646a2646376586d73b698ddd3f834a93688022e9a4f5445d16a701"
+    sha256 cellar: :any, arm64_linux:       "b66826caaaff982a458aaee68e4399e7471231fcf88efe4629a06326d1a9da52"
+    sha256 cellar: :any, x86_64_linux:      "3cf6acdf1f1829988ecd76440b3a4d768c3e58c2bb1f8a0d4ab3e3ffe0404f56"
   end
 
   depends_on "pkgconf" => :build
   depends_on "libb2"
   depends_on "lz4"
   depends_on "openssl@4"
-  depends_on "python@3.14"
+  depends_on "python@3.15"
   depends_on "xxhash"
   depends_on "zstd"
 
@@ -35,16 +36,16 @@ class Borgbackup < Formula
   end
 
   resource "packaging" do
-    url "https://files.pythonhosted.org/packages/d7/f1/e7a6dd94a8d4a5626c03e4e99c87f241ba9e350cd9e6d75123f992427270/packaging-26.2.tar.gz"
-    sha256 "ff452ff5a3e828ce110190feff1178bb1f2ea2281fa2075aadb987c2fb221661"
+    url "https://files.pythonhosted.org/packages/7d/fa/3944b40b07da9ce895c0e6303a5ab7d53da063554f534556b134a54d6093/packaging-26.3.tar.gz"
+    sha256 "94edc256424af38762eb31306eed28beb9f0efc50a8837492c9d6fd6004aed79"
   end
 
   def install
-    ENV["BORG_LIBB2_PREFIX"] = Formula["libb2"].prefix
-    ENV["BORG_LIBLZ4_PREFIX"] = Formula["lz4"].prefix
-    ENV["BORG_LIBXXHASH_PREFIX"] = Formula["xxhash"].prefix
-    ENV["BORG_LIBZSTD_PREFIX"] = Formula["zstd"].prefix
-    ENV["BORG_OPENSSL_PREFIX"] = Formula["openssl@4"].prefix
+    ENV["BORG_LIBB2_PREFIX"] = formula_opt_prefix("libb2")
+    ENV["BORG_LIBLZ4_PREFIX"] = formula_opt_prefix("lz4")
+    ENV["BORG_LIBXXHASH_PREFIX"] = formula_opt_prefix("xxhash")
+    ENV["BORG_LIBZSTD_PREFIX"] = formula_opt_prefix("zstd")
+    ENV["BORG_OPENSSL_PREFIX"] = formula_opt_prefix("openssl@4")
 
     # Parallel cythonize needs POSIX semaphores, which the Linux build sandbox denies
     inreplace "setup.py", /^cpu_threads = .*/, "cpu_threads = None"

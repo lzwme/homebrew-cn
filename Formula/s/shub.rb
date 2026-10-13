@@ -10,16 +10,17 @@ class Shub < Formula
   head "https://github.com/scrapinghub/shub.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "04d94cf3aeaee9a76ac050efbfa4bfe3ebe91fa13e5157b61bc3b1d3030fe5a2"
-    sha256 cellar: :any, arm64_tahoe:       "bba10d15f5979360b98eb36febc95b1a94476a3a209a9880462f1c6628872a92"
-    sha256 cellar: :any, arm64_sequoia:     "dd1e1e4ffe14043b27ec931a6ec80b051c1b6b93e38e3ef6eb89f096ba224003"
-    sha256 cellar: :any, arm64_linux:       "009c7cc325c10f34519850db9c1ea27d32cea3268b75811c66fd462896cfd5d7"
-    sha256 cellar: :any, x86_64_linux:      "220e4d7edce2e0bda6856e10f87564135d146bedb6719986e191cb9364311e53"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "77e6fe20efaf4d32eb1183872540aaf65ae856fc4dff054b41b3e882836156b5"
+    sha256 cellar: :any, arm64_tahoe:       "0c90fc93486d14e0cbb4b64e12bf75775496ae49d4de0924901a59fa39aaf80a"
+    sha256 cellar: :any, arm64_sequoia:     "f6eebc6e9d9f4fe7edd4ad71301bc286d0d9d164b161590b15dc074ff6499781"
+    sha256 cellar: :any, arm64_linux:       "4427a984b56dc73932576175c07a1e5d8b798a9ea2d3ba9a27dcccc8ec911d56"
+    sha256 cellar: :any, x86_64_linux:      "5ff6ebd803970305aac6dc9f7b032add12e401c6c81430ed5d2381471392539e"
   end
 
   depends_on "certifi" => :no_linkage
   depends_on "libyaml"
-  depends_on "python@3.14"
+  depends_on "python@3.15"
 
   pypi_packages exclude_packages: "certifi"
 

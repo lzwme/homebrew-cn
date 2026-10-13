@@ -9,12 +9,13 @@ class Durdraw < Formula
   head "https://github.com/cmang/durdraw.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "3ec53d1a36ea6657ef3c7391e12c4431ae216415f3c1df8a917e626ab137f754"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "681124fb02743eaccec1a07aa21b7f3d1cd72b4134d4feb9760b9187a12f0770"
   end
 
   depends_on "ansilove" => :no_linkage
   depends_on "pillow" => :no_linkage
-  depends_on "python@3.14"
+  depends_on "python@3.15"
 
   def install
     virtualenv_install_with_resources

@@ -10,11 +10,12 @@ class Overturemaps < Formula
   head "https://github.com/OvertureMaps/overturemaps-py.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "59a0ea05004acc39b395d18af3dd541edd26e1aabe9fb4dd747ca39371d73a3c"
-    sha256 cellar: :any, arm64_tahoe:       "7d0504b77b112248d1434c41573b72073c13c759fbe516ed8de23042931e6e14"
-    sha256 cellar: :any, arm64_sequoia:     "109c4f39517221149bea7634c22a76a48a6e1bc0c44bc468c3ef7ffbfcd36adb"
-    sha256 cellar: :any, arm64_linux:       "c183e08b2a29581264e08abf900ed21bd626c40c20affcd849a90b33fbb671dd"
-    sha256 cellar: :any, x86_64_linux:      "eec861cde922ac228afa484efe7220d5a147b891d4be4b81a160797e1cfa091c"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "1197410527a2b02304f7b78e47741c22dc1297864c2650c3cbb980529c27c2cd"
+    sha256 cellar: :any, arm64_tahoe:       "b07dfd9ae243c02b7b35cc0174174613fdb581d35c0c94fc235eaeae53a6d786"
+    sha256 cellar: :any, arm64_sequoia:     "a046a37e5fee566701e977818989c0c22631ecf10519f85ae0e74db77891bf51"
+    sha256 cellar: :any, arm64_linux:       "382adcc11cbe87560c52dfdada6288fabaf06ad452db23dc68e48c7b5bcd0fa2"
+    sha256 cellar: :any, x86_64_linux:      "aba42503aa0ffcfe827f90f16c118a3b5ac3232233e8260301c25ae8562b8fa0"
   end
 
   depends_on "cmake" => :build  # for pyarrow
@@ -23,7 +24,7 @@ class Overturemaps < Formula
   depends_on "apache-arrow"
   depends_on "geos"             # for shapely
   depends_on "numpy"
-  depends_on "python@3.14"
+  depends_on "python@3.15"
 
   on_linux do
     depends_on "patchelf" => :build # for pyarrow
@@ -32,8 +33,8 @@ class Overturemaps < Formula
   pypi_packages exclude_packages: "numpy"
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/76/d4/81420972a676e8ffea40450d8c8c92943e7218a78fe9b64359836cc9876b/click-8.4.2.tar.gz"
-    sha256 "9a6cea6e60b17ebe0a44c5cc636d94f09bd66142c1cd7d8b4cd731c4917a15f6"
+    url "https://files.pythonhosted.org/packages/c7/0e/7fa0ef50764b67090eca4114772a2abf8b6148198475e54c660b97caeee6/click-8.5.0.tar.gz"
+    sha256 "ba0d2089de75ea0310e2dde03160e6ca10009947fb95a182f9b54021bb272e34"
   end
 
   resource "colorama" do
@@ -42,8 +43,8 @@ class Overturemaps < Formula
   end
 
   resource "orjson" do
-    url "https://files.pythonhosted.org/packages/0f/f3/742fb1f62b825f2c010697eaf4e828004bc2a81e7e806666989c132c7c42/orjson-3.12.0.tar.gz"
-    sha256 "d14203fb1aae2ad9b3d52f8a0e82aeb10197ef1c9bc61da7f358bd70b00123d5"
+    url "https://files.pythonhosted.org/packages/f2/72/380b97dc45bd162d23afe5194721ef678d9eac7cfaa549fe2873f7f0a518/orjson-3.13.0.tar.gz"
+    sha256 "d1de5eb04485110c5da4c657e49168995d55e076b1ce60f1a042e254f4186c4f"
   end
 
   resource "pyarrow" do
@@ -57,13 +58,13 @@ class Overturemaps < Formula
   end
 
   resource "shapely" do
-    url "https://files.pythonhosted.org/packages/4d/bc/0989043118a27cccb4e906a46b7565ce36ca7b57f5a18b78f4f1b0f72d9d/shapely-2.1.2.tar.gz"
-    sha256 "2ed4ecb28320a433db18a5bf029986aa8afcfd740745e78847e330d5d94922a9"
+    url "https://files.pythonhosted.org/packages/f3/ab/924b6e202f796d270a3041a230151f7908db5ea48c74effe6f8023e9bd05/shapely-2.2.0.tar.gz"
+    sha256 "e8865e553d874a1ec4a032057ea81fca9def37b188cd8fb550af3b3480b3f88c"
   end
 
   resource "tqdm" do
-    url "https://files.pythonhosted.org/packages/21/3b/6c24bec5be5e743ffd99576daa5cc077722fc7d5bbc00bd133fa0c698dc6/tqdm-4.70.0.tar.gz"
-    sha256 "55b0b0dbd97462d06ebee91e4dac24ed4d4702be82b24f07e6c1d27e08cea220"
+    url "https://files.pythonhosted.org/packages/0d/ea/b2a5bd54b28a324dae8211928b2d730b6547500342c7e6c6dea08bd0a485/tqdm-4.70.1.tar.gz"
+    sha256 "cefd0eca11b2a37a3aee776544d4f4ae913f02688135b5556b8788dfa474afc4"
   end
 
   def install

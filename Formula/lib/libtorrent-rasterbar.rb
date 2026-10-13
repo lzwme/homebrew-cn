@@ -4,7 +4,7 @@ class LibtorrentRasterbar < Formula
   url "https://ghfast.top/https://github.com/arvidn/libtorrent/releases/download/v2.1.2/libtorrent-rasterbar-2.1.2.tar.gz"
   sha256 "3362546d9cd71b9e49ee6cac7d3f1f914ce9cdb217c86b63d5b22cbed0334dbc"
   license "BSD-3-Clause"
-  revision 1
+  revision 2
   compatibility_version 1
   head "https://github.com/arvidn/libtorrent.git", branch: "RC_2_1"
 
@@ -14,11 +14,11 @@ class LibtorrentRasterbar < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "3669e32d47c0062f3b5f1ee296f1e2fd6ae498a749d0ed3ba8771bbf0993e304"
-    sha256 cellar: :any, arm64_tahoe:       "2a00b6f34129497b8af04bd05e0b712b2f5c4e1655bdef6cb73e082b686922e5"
-    sha256 cellar: :any, arm64_sequoia:     "c67e03e26dd7e93367e00044d9b53b9fc6a39504f38d745f3032ef95af41cfa1"
-    sha256 cellar: :any, arm64_linux:       "732f6726280fe95ccfc897da874099e430dab57bf7e90145a1f8b8fcfdfe1de7"
-    sha256 cellar: :any, x86_64_linux:      "a6e0406e9831e0e759777d2a0d2a8e1202f592d511a31cf6dcf9aa71de0f4e4e"
+    sha256 cellar: :any, arm64_golden_gate: "6a89ef19e50b0224335d6ae76fe440e3f8d99e6f33d1ef7ec3f4e42ca0294703"
+    sha256 cellar: :any, arm64_tahoe:       "f309aa3265ddbc39cabe72603df175e5c88e8faa1d410eebaf391186eeeb53c9"
+    sha256 cellar: :any, arm64_sequoia:     "42a6c62e568da3d24378dfb3f81897ae48432762e54af90aca629c72ce72923a"
+    sha256 cellar: :any, arm64_linux:       "674a733d7895c82e39f5834f7045d8289e2f185e1b1062637954f7cd7b038c73"
+    sha256 cellar: :any, x86_64_linux:      "add3131860b21e513e6e565e7d1cd1144af9a73947298ef479cc32736a2d4a97"
   end
 
   depends_on "cmake" => :build
@@ -26,7 +26,7 @@ class LibtorrentRasterbar < Formula
   depends_on "boost"
   depends_on "boost-python3"
   depends_on "openssl@4"
-  depends_on "python@3.14"
+  depends_on "python@3.15"
 
   conflicts_with "libtorrent-rakshasa", because: "both use the same libname"
 

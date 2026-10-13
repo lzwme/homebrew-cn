@@ -10,11 +10,12 @@ class Tvnamer < Formula
   head "https://github.com/dbr/tvnamer.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "c5814e714bcf39de1b937b9e646223aab5efe223863885c1080df6d2849921a6"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "14af555342d269febac06261304c291cb99fad4507f7f6907d349c9d44799dc8"
   end
 
   depends_on "certifi"
-  depends_on "python@3.14"
+  depends_on "python@3.15"
 
   pypi_packages exclude_packages: "certifi"
 

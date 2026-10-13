@@ -9,26 +9,25 @@ class Snakefmt < Formula
   head "https://github.com/snakemake/snakefmt.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "9c78388ddae56f5de766544e2d6a7de4550e3d685c2f3885e6c9542be4617e5b"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "dd946af9a59c83626ac7853000173f2c4cde885150fa97bd64dd07c568daf02a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "34f75c44e906383165fc9ab77b6ee7b89ac225d645e1d312452531f40aec135b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "de18c359cbd2e9698f571acb1b59ea132dca7554a2d0657fbe853f8346f988ce"
-    sha256 cellar: :any_skip_relocation, sonoma:            "b9264f3424e3dc5d2f7293bda329a865dbc8141aa4e9dc844704f12e6360251b"
-    sha256 cellar: :any,                 arm64_linux:       "c95c7ebbeabc84cc79f15c656f5392f6b41eba98e0452fa885d69e41e64c11ac"
-    sha256 cellar: :any,                 x86_64_linux:      "a295296c9db66ce5aa4fef29428e231b7bc4ff7d020442c6a186d3cb90f3bc15"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "bbb02ece86447f5d9080b03540368e7886ff6cd3b99593b0116710699e0bb9cc"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "bcaf138f5feb6369142ea4880f35666ad43834c7ce93cd04795852115a677cea"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "0d9dbd25483a5ba96ec090b04de717a4f77d9ddaa5d7914cceda100ac6b7278f"
+    sha256 cellar: :any,                 arm64_linux:       "057c62a1fdbc478c54625178d4e6741ded1d28621ae1a7061b8854032048c6db"
+    sha256 cellar: :any,                 x86_64_linux:      "515a0a579702c6a73b173e7d473c8dc3c888ca74397fddcff95ca3a1b0e23e5b"
   end
 
   depends_on "rust" => :build # pytokens -> mypy -> ast-serialize
-  depends_on "python@3.14"
+  depends_on "python@3.15"
 
   resource "black" do
-    url "https://files.pythonhosted.org/packages/c0/37/5628dd55bf2b34257fc7603f0fe97c40e3aaf24265f416a9c85c95ca1436/black-26.5.1.tar.gz"
-    sha256 "dd321f668053961824bcc1be1cc1df748b2d7e4fa28086b08331e577b0100a73"
+    url "https://files.pythonhosted.org/packages/f8/65/a9611a6ec0a8c88d86e59385da02d68d9533f7e86a05913d20c67be54029/black-26.10.1.tar.gz"
+    sha256 "5f9f83beae62437e060dafd53d7f1fc327e3d3494f74d72ee5c2b73eb90fc4e7"
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/76/d4/81420972a676e8ffea40450d8c8c92943e7218a78fe9b64359836cc9876b/click-8.4.2.tar.gz"
-    sha256 "9a6cea6e60b17ebe0a44c5cc636d94f09bd66142c1cd7d8b4cd731c4917a15f6"
+    url "https://files.pythonhosted.org/packages/c7/0e/7fa0ef50764b67090eca4114772a2abf8b6148198475e54c660b97caeee6/click-8.5.0.tar.gz"
+    sha256 "ba0d2089de75ea0310e2dde03160e6ca10009947fb95a182f9b54021bb272e34"
   end
 
   resource "mypy-extensions" do
@@ -37,8 +36,8 @@ class Snakefmt < Formula
   end
 
   resource "packaging" do
-    url "https://files.pythonhosted.org/packages/d7/f1/e7a6dd94a8d4a5626c03e4e99c87f241ba9e350cd9e6d75123f992427270/packaging-26.2.tar.gz"
-    sha256 "ff452ff5a3e828ce110190feff1178bb1f2ea2281fa2075aadb987c2fb221661"
+    url "https://files.pythonhosted.org/packages/7d/fa/3944b40b07da9ce895c0e6303a5ab7d53da063554f534556b134a54d6093/packaging-26.3.tar.gz"
+    sha256 "94edc256424af38762eb31306eed28beb9f0efc50a8837492c9d6fd6004aed79"
   end
 
   resource "pathspec" do
@@ -47,8 +46,8 @@ class Snakefmt < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/d7/47/e4501f49c178ae1d9f4a75073fda4204f52647993f075a9db4d14930e0c5/platformdirs-4.10.0.tar.gz"
-    sha256 "31e761a6a0ca04faf7353ea759bdba55652be214725111e5aac52dfa29d4bef7"
+    url "https://files.pythonhosted.org/packages/80/a8/66d45abadff219e36e2a824181b8f6a67e7ed4572934d6252c71c29d5731/platformdirs-4.13.0.tar.gz"
+    sha256 "1aa0b0d3f224c1f07c295121e312a5a24a180d6ae5a8425ea1784b3e3863e9c0"
   end
 
   resource "pytokens" do
@@ -57,8 +56,8 @@ class Snakefmt < Formula
   end
 
   resource "shfmt-py" do
-    url "https://files.pythonhosted.org/packages/06/d5/c2ad5c6593a34da7344cf39bde65763e8cda752589074ba1619e55b317ad/shfmt_py-4.0.0.tar.gz"
-    sha256 "1e5fdacf40aabaa77a97639d52a6220df0893b46658d82b7f136f4e66e2b2fb0"
+    url "https://files.pythonhosted.org/packages/ee/91/0ae8bbc703ac6779427fcdb40da7784b844278032f7896dbe54cb7e11e0e/shfmt_py-4.2.0.tar.gz"
+    sha256 "cf7842d69e9f787ce97503c1280e65417f2c08014d594018dda245fcba96ff51"
   end
 
   def install

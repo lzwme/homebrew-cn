@@ -3,18 +3,17 @@ class Virtualenv < Formula
 
   desc "Tool for creating isolated virtual python environments"
   homepage "https://virtualenv.pypa.io/"
-  url "https://files.pythonhosted.org/packages/92/f3/589727d02bc832750cfa00ced4315d127535a22a6d7cfcb369b2fe219a2e/virtualenv-21.14.6.tar.gz"
-  sha256 "c6b74616e64bffa9532cfa9dfd54ffbab0dc9b999df2bb8ec0d75e559b983661"
+  url "https://files.pythonhosted.org/packages/dc/3f/935cf1757643381fb7f7cc98197b4bc119223d9c2cf37dc3b03ad2a4455f/virtualenv-21.14.7.tar.gz"
+  sha256 "5f427d56f39eb7e7447d641dd4b7ab1e9c92793f498f35f26da2e4972c5546ae"
   license "MIT"
   head "https://github.com/pypa/virtualenv.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "b93c98ef69ed6cf562a83bb61b6025524c6aea19af0b1ba0c598ae594b0cfdfd"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "b93c98ef69ed6cf562a83bb61b6025524c6aea19af0b1ba0c598ae594b0cfdfd"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "b93c98ef69ed6cf562a83bb61b6025524c6aea19af0b1ba0c598ae594b0cfdfd"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "a846fa2eb2b2d1255e40671ee4f71959fc287006433bce6df51c52c7535a5e87"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "a846fa2eb2b2d1255e40671ee4f71959fc287006433bce6df51c52c7535a5e87"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "bc6c118232d70dd7315ee832f89dd67c8688523e779a4f6eda1f68f06f31aec5"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "bc6c118232d70dd7315ee832f89dd67c8688523e779a4f6eda1f68f06f31aec5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "bc6c118232d70dd7315ee832f89dd67c8688523e779a4f6eda1f68f06f31aec5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "3bfc2e51423a3a8726cbec1622d7d865727d98e9a99dfaf54f0adf2b9d9b2636"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "3bfc2e51423a3a8726cbec1622d7d865727d98e9a99dfaf54f0adf2b9d9b2636"
   end
 
   depends_on "python@3.15"
@@ -25,8 +24,8 @@ class Virtualenv < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/53/e4/34efcb869715cf299e47d1ac7b2624d2bcb6f2d3dffc2f0abe8417f65ab2/filelock-4.0.12.tar.gz"
-    sha256 "cf42711a7ac791818b299fab0332a088c65aeeefa36290de98db92c434303b0c"
+    url "https://files.pythonhosted.org/packages/35/c8/1d457d9150ff948f2ce6ada7715e0eeebbe5d3b58a45271a1e222474bcd3/filelock-4.1.1.tar.gz"
+    sha256 "7ba0927482c5a814b0a7f391d029ccdb8010f576f0a74c0dcde1811e8bc4c1b6"
   end
 
   resource "packaging" do
@@ -35,13 +34,13 @@ class Virtualenv < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/90/a1/d5f9002a70298c64a789779077d8dd90c10aa1f47fe40c86802df874f2a6/platformdirs-4.12.4.tar.gz"
-    sha256 "63743c02414e755de4e31b8f68125c1407495b86c5a006e203c01ff8b9924250"
+    url "https://files.pythonhosted.org/packages/80/a8/66d45abadff219e36e2a824181b8f6a67e7ed4572934d6252c71c29d5731/platformdirs-4.13.0.tar.gz"
+    sha256 "1aa0b0d3f224c1f07c295121e312a5a24a180d6ae5a8425ea1784b3e3863e9c0"
   end
 
   resource "python-discovery" do
-    url "https://files.pythonhosted.org/packages/0c/57/250bd238b966cece44328235eb85290045d059265fdaf7527a3a958123db/python_discovery-1.6.1.tar.gz"
-    sha256 "cf87d3627dfb4412437fdd5b13eae402607722998d21567993aedbc59b23c15e"
+    url "https://files.pythonhosted.org/packages/b0/73/54993df8fc57e906dc9b7e01d1d9b0b2d3eb0ce3190639e33dccb12853f7/python_discovery-1.6.2.tar.gz"
+    sha256 "cd1738ca1d37c86ef9d0b654dd46fcee1e41c97c6add12575e8501ced39afdb4"
   end
 
   allow_network_access! :build

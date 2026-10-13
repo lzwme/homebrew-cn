@@ -1,11 +1,10 @@
 class CargoC < Formula
   desc "Helper program to build and install c-like libraries"
   homepage "https://github.com/lu-zero/cargo-c"
-  url "https://static.crates.io/crates/cargo-c/cargo-c-0.10.25+cargo-0.99.0.crate"
-  version "0.10.25"
-  sha256 "6b2ddde58a8a773ccce4b6384acacd3ce01373f52717dd2424633ed46755c627"
+  url "https://static.crates.io/crates/cargo-c/cargo-c-0.10.26+cargo-0.100.0.crate"
+  version "0.10.26"
+  sha256 "5ff6e05531e58286d3c02ec0adb7f254e5d532a8d4b667f30b9942d802e1db25"
   license "MIT"
-  revision 1
 
   livecheck do
     url :homepage
@@ -13,11 +12,11 @@ class CargoC < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "0d71262d524db3e19ad34dcd815c368816a82fbee67a5342aea9c4b3afd54a91"
-    sha256 cellar: :any, arm64_tahoe:       "eb13fd4d7d4e986d0865a581f008dd963e9f38417fcb782470f35eaec7b622b3"
-    sha256 cellar: :any, arm64_sequoia:     "097299cf61942672a6845b78003ccb81f3821871f01fd06b81fb069b03cfe47e"
-    sha256 cellar: :any, arm64_linux:       "31585985200e33b1fc1f26cf99a7ad892f7da398a82e8a2129f1577a97ec1fbe"
-    sha256 cellar: :any, x86_64_linux:      "9f6dc50e0f0e712f6b87b62da625ae6a5a07f3712faaa4eec5c9fe38f0004bff"
+    sha256 cellar: :any, arm64_golden_gate: "d4147427eef427595fe053c750508bc7f9e580cf946b2d374648319b25e20592"
+    sha256 cellar: :any, arm64_tahoe:       "3dbc1cc9570dcb085be641c3de1dd7cd38dc0ae03f011eadc6ebe413a6f65451"
+    sha256 cellar: :any, arm64_sequoia:     "5c0c3d446d1067668275333b63c24c348ce4732768368f808d12af907672d547"
+    sha256 cellar: :any, arm64_linux:       "8bdb4d595ea1a80873b37805379b3b5d8d3a338bd4faa70f52aa93df4a81624a"
+    sha256 cellar: :any, x86_64_linux:      "0ce0e3ed42df0a0d74eea5e66f726683d44cd65587039166c21e4b6cda43fb1a"
   end
 
   depends_on "pkgconf" => :build

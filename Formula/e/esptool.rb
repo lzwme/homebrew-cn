@@ -8,17 +8,18 @@ class Esptool < Formula
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "0ab6f8b55f996cc2cbc7fc8385af205378f443c1a297a1763e208c94d44e12b2"
-    sha256 cellar: :any, arm64_tahoe:       "19a27e76e2b45a393ae47b13dd93606a852c4ae7af94b448a0bec80f4ad5677a"
-    sha256 cellar: :any, arm64_sequoia:     "84aaa61bbbd7aede123584703645d0fbf3779d24d322a49537c795d412ceea70"
-    sha256 cellar: :any, arm64_linux:       "5902c44ab6e195d03465fd21b4d73a1d9130f6db7ad5339e09ac71084d247b54"
-    sha256 cellar: :any, x86_64_linux:      "a7a18467a7f895fef88ad68ce8769a5239a2a54120cc49fa0b1b6ca60b33f0c7"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "3d8a3f604c541ec418a49b82e79f4024e130c4f3c34ccbb168e0e7db545f9379"
+    sha256 cellar: :any, arm64_tahoe:       "fc9b8a4aa9fbb3042fa7937d8c4884f9a71eb3a7c713f13829fa48dc32b560b5"
+    sha256 cellar: :any, arm64_sequoia:     "1943d53c96eb80c92b707ec979bfae43230ff649cb1d62a35f114168d5c280aa"
+    sha256 cellar: :any, arm64_linux:       "76057da7816da93950b0f724fb7d45efa87776ff74ea48e5286c09ab72a119aa"
+    sha256 cellar: :any, x86_64_linux:      "ab6a86e3df0c735d9e54c89c86a516c326755230dfe31659522395a120850ad0"
   end
 
   depends_on "rust" => :build # for tibs
   depends_on "cryptography" => :no_linkage
   depends_on "libyaml"
-  depends_on "python@3.14"
+  depends_on "python@3.15"
 
   pypi_packages exclude_packages: "cryptography"
 
@@ -88,8 +89,8 @@ class Esptool < Formula
   end
 
   resource "tibs" do
-    url "https://files.pythonhosted.org/packages/57/cd/6cf028decf1c2df4d26077dd5d0532587d93d4917233d5e004133166a940/tibs-0.5.7.tar.gz"
-    sha256 "173dfbecb2309edd9771f453580c88cf251e775613461566b23dbd756b3d54cb"
+    url "https://files.pythonhosted.org/packages/9f/4e/731ae9c3ccc0e65363a4ce411cb8d887e07fa0cb6a3a860b8ce0c57483dd/tibs-2.0.2.tar.gz"
+    sha256 "63a7b87e262c558ccc16be67d34fe60620e39b49bf644ac65e71c4553173ac8f"
   end
 
   resource "websockets" do

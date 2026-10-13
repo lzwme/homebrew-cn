@@ -10,15 +10,16 @@ class SolcSelect < Formula
   head "https://github.com/crytic/solc-select.git", branch: "dev"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "dcd444c503fe48bc0f82f5ee1262425501e23a9e08c9e4e2ffe0fd58ab91e2d8"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "7e21f8fb0ecfca55625e9fc0342faa4f9bf090ae716c28f1f4e60ed51a1d68bc"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "e18da01b24d61c9f4564add1e0792e114689d8a83167dc43f2f84fcf4046f912"
-    sha256 cellar: :any,                 arm64_linux:       "62c378f598113eba70a630d960802f1dcfa9ee1d2a54997815681c8a79874328"
-    sha256 cellar: :any,                 x86_64_linux:      "5e20fc1a22c02d1d892cea1b78c8b2b2eaf0ffcb65cca86252c8a913d86e15fb"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "b7cef9539199d0f0a25bf399c4ea51812b26cb52147d3e7acb0a3cedbd5b2d07"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "ab3a9c4f9f6f28ac2475bcbe064118220b57b459a3920b5a4521e365a9ea2252"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "961762be7ccd77e13ae0f980bf74d8321ae4f8b9f2b6adae63d8cab032536c8b"
+    sha256 cellar: :any,                 arm64_linux:       "320ead883691a0d16ca398a5452ffe02d123fbcdb8ed89f4f8567e83b70f9944"
+    sha256 cellar: :any,                 x86_64_linux:      "6f3bbb14d5fb5a20adc643778ae6067cc2d95429ddf79c8453bf5698465b8d44"
   end
 
   depends_on "certifi" => :no_linkage
-  depends_on "python@3.14"
+  depends_on "python@3.15"
 
   conflicts_with "solidity", because: "both install `solc` binaries"
 
@@ -40,8 +41,8 @@ class SolcSelect < Formula
   end
 
   resource "pycryptodome" do
-    url "https://files.pythonhosted.org/packages/8e/a6/8452177684d5e906854776276ddd34eca30d1b1e15aa1ee9cefc289a33f5/pycryptodome-3.23.0.tar.gz"
-    sha256 "447700a657182d60338bab09fdb27518f8856aecd80ae4c6bdddb67ff5da44ef"
+    url "https://files.pythonhosted.org/packages/34/e0/0d0bd5b1089a4bf5ef48164459289ddf02a9110ca1db854edaad25127e64/pycryptodome-3.24.0.tar.gz"
+    sha256 "9140779b40405476a799305b9ac1bcaab4ee6791dc3d38b12a9aa84ffbd6aabf"
   end
 
   resource "requests" do

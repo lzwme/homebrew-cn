@@ -8,15 +8,16 @@ class Sqlfluff < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "8bc45001a5e14b9ac769d9975143847dbd531eec42de62fd752ac0f941332898"
-    sha256 cellar: :any, arm64_tahoe:       "a728345cee2ea58a26ca682e8e45a0e362706f423b2dea18aa3ea1634d59fee3"
-    sha256 cellar: :any, arm64_sequoia:     "6560c8072cf6a561cd7dcf2f047a7301a5da8aa68360ceac1c33963168c9484d"
-    sha256 cellar: :any, arm64_linux:       "6a8c8f78b975840f8178a6f4aafa0f67824e62ceaa226b077c2762cd3b8d8945"
-    sha256 cellar: :any, x86_64_linux:      "f089e9f77facc1bc4da93591cb3b83f80e7e59995d6457cf645c05d93b7e0c80"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "ce891fcd17c20b6a4cad481ec62fbfd5485d4b99a69a49fdb1c097fbc450eaac"
+    sha256 cellar: :any, arm64_tahoe:       "ca8b445abc3c1b1203d499790ee12e49f38ad10b29c9d13a31bf738c009431b6"
+    sha256 cellar: :any, arm64_sequoia:     "a3fb92284291eced431dc40938216ac8ed1f8656326e123a36cf30383e410a95"
+    sha256 cellar: :any, arm64_linux:       "6c8bb1e30cc47867db8cdb20aa2213ee0ee2d846d6203ce29862689f09dad960"
+    sha256 cellar: :any, x86_64_linux:      "d541c3e74813ff1cb8bb85681fd53cd59c295dc5b60eb11b2e58efc23cbe0877"
   end
 
   depends_on "libyaml"
-  depends_on "python@3.14"
+  depends_on "python@3.15"
 
   resource "chardet" do
     url "https://files.pythonhosted.org/packages/b1/51/cd61c567092a6cec796144510a68aff158ebfc1df82950a45bae65f28413/chardet-7.6.0.tar.gz"
@@ -44,8 +45,8 @@ class Sqlfluff < Formula
   end
 
   resource "markupsafe" do
-    url "https://files.pythonhosted.org/packages/7e/99/7690b6d4034fffd95959cbe0c02de8deb3098cc577c67bb6a24fe5d7caa7/markupsafe-3.0.3.tar.gz"
-    sha256 "722695808f4b6457b320fdc131280796bdceb04ab50fe1795cd540799ebe1698"
+    url "https://files.pythonhosted.org/packages/38/9b/e422a865e1d5d57d0e509b4e0bf1c1a70a7f6382c29a5aa428df994c8bc8/markupsafe-3.0.4.tar.gz"
+    sha256 "2e9ad7dd851bf45fab9f75cbff4cb493fee9979e8d8c7c9c3ee119022518edd6"
   end
 
   resource "pathspec" do
@@ -54,8 +55,8 @@ class Sqlfluff < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/17/c8/721b3855fe457da514fe249247d404b9b39c5d16532278f70ebaa6acf18b/platformdirs-4.12.2.tar.gz"
-    sha256 "eab5f70271a490ef74618bb314fbb86e3c7e82fa3b9c922c2ea0e0a1a155d329"
+    url "https://files.pythonhosted.org/packages/80/a8/66d45abadff219e36e2a824181b8f6a67e7ed4572934d6252c71c29d5731/platformdirs-4.13.0.tar.gz"
+    sha256 "1aa0b0d3f224c1f07c295121e312a5a24a180d6ae5a8425ea1784b3e3863e9c0"
   end
 
   resource "pluggy" do

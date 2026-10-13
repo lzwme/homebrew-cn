@@ -1,8 +1,8 @@
 class Flix < Formula
   desc "Statically typed functional, imperative, and logic programming language"
   homepage "https://flix.dev/"
-  url "https://ghfast.top/https://github.com/flix/flix/archive/refs/tags/v0.77.0.tar.gz"
-  sha256 "9152e8a42e271c5120a60ff7f6a85c1e7bcb01c435d434494a581605356481d5"
+  url "https://ghfast.top/https://github.com/flix/flix/archive/refs/tags/v0.78.0.tar.gz"
+  sha256 "a27525de67b34ee4ca4bfb48f3756e4de5577323871023738b216ca2a48c0521"
   license "Apache-2.0"
   head "https://github.com/flix/flix.git", branch: "master"
 
@@ -12,11 +12,7 @@ class Flix < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "831a70101b583dccbf582e9292333afa6d28a144b27db9a10f75ef903d427b10"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "4ede84659705a51f25552ea773213eab591c79ba6f3224d09edc0345a2fa7b81"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "c5c1e9b8ffad0200c8ce7053bfee620bfb98ea7c36e3ecffe8c962f4f3190042"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "8af000c9c0a10febd74678db5140ef791d0dc0064e1572e88daebde747820c0b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "8982b3adb109c3cd3d668b4c53a4c9f710a70405d7c8ec61f5b649492b8d8501"
+    sha256 cellar: :any_skip_relocation, all: "6b7e594d9ee58bfc7e8cd7cd033d93826da9643a520217af260891aad8d402ad"
   end
 
   depends_on "mill" => :build

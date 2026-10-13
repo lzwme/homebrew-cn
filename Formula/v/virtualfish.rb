@@ -10,15 +10,16 @@ class Virtualfish < Formula
   head "https://github.com/justinmayer/virtualfish.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "0ec7d315ffa74e0af9509d52ac82f4407b2722f578c058ac60d76dfa5b93890c"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "4b589647c6d7eccb9ff5b6ad8322cde12d4179cc3a0547d1a9ea6684d6b8df7e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "f4ea35f7009bdec568fa19c64f799247cadf99f9d47a4753cfc4fccaea42c1ec"
-    sha256 cellar: :any,                 arm64_linux:       "9d2c2c173f6474c6d1f6f1814c46c451dffaf660c33eb4c04f92f8c929444b8d"
-    sha256 cellar: :any,                 x86_64_linux:      "19ea5b4c379cff7ddb882aded55c0c99cd3aaf2d8beeb9df99d2d8bf922f1087"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "ae4975856c31ab7414f9ec5c7f9f6fe38630976eac88ee91e6215074cf3fe0c8"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "c31fb3da7a2ddf41666046451fee111e219ecd6c9a535fa7cb25160484e2d99e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "820ca69ac2a9913797c28573b52e2188b600cc5a142346f58d1e39fa8c90f638"
+    sha256 cellar: :any,                 arm64_linux:       "697dc36756a2bb3985b78c05be9a72909fb6a3c040e071574c76805e4ffb4bd0"
+    sha256 cellar: :any,                 x86_64_linux:      "04a487e17876dfbcf45c68038cc0a1bb4fb17282cae84b4626f82f84aa652af4"
   end
 
   depends_on "fish"
-  depends_on "python@3.14"
+  depends_on "python@3.15"
 
   resource "distlib" do
     url "https://files.pythonhosted.org/packages/c9/02/bd72be9134d25ed783ecbbc38a539ffaefbf90c78418c7fb7229600dbac7/distlib-0.4.3.tar.gz"
@@ -26,8 +27,8 @@ class Virtualfish < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/70/51/2bc9e529f154fad99b6cd0073e609291eb32fd23581b32362d33d164d316/filelock-4.0.9.tar.gz"
-    sha256 "635e7d67fa92654eed444e75e9ca18426d34e77ad9c469bf4373f75a932f7b22"
+    url "https://files.pythonhosted.org/packages/35/c8/1d457d9150ff948f2ce6ada7715e0eeebbe5d3b58a45271a1e222474bcd3/filelock-4.1.1.tar.gz"
+    sha256 "7ba0927482c5a814b0a7f391d029ccdb8010f576f0a74c0dcde1811e8bc4c1b6"
   end
 
   resource "packaging" do
@@ -41,8 +42,8 @@ class Virtualfish < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/17/c8/721b3855fe457da514fe249247d404b9b39c5d16532278f70ebaa6acf18b/platformdirs-4.12.2.tar.gz"
-    sha256 "eab5f70271a490ef74618bb314fbb86e3c7e82fa3b9c922c2ea0e0a1a155d329"
+    url "https://files.pythonhosted.org/packages/80/a8/66d45abadff219e36e2a824181b8f6a67e7ed4572934d6252c71c29d5731/platformdirs-4.13.0.tar.gz"
+    sha256 "1aa0b0d3f224c1f07c295121e312a5a24a180d6ae5a8425ea1784b3e3863e9c0"
   end
 
   resource "psutil" do
@@ -51,13 +52,13 @@ class Virtualfish < Formula
   end
 
   resource "python-discovery" do
-    url "https://files.pythonhosted.org/packages/0c/57/250bd238b966cece44328235eb85290045d059265fdaf7527a3a958123db/python_discovery-1.6.1.tar.gz"
-    sha256 "cf87d3627dfb4412437fdd5b13eae402607722998d21567993aedbc59b23c15e"
+    url "https://files.pythonhosted.org/packages/b0/73/54993df8fc57e906dc9b7e01d1d9b0b2d3eb0ce3190639e33dccb12853f7/python_discovery-1.6.2.tar.gz"
+    sha256 "cd1738ca1d37c86ef9d0b654dd46fcee1e41c97c6add12575e8501ced39afdb4"
   end
 
   resource "virtualenv" do
-    url "https://files.pythonhosted.org/packages/c4/f9/f323b3b6058cff3853b31cf6a49c0425ed797bf9611572ec10d065e08bac/virtualenv-21.14.5.tar.gz"
-    sha256 "c4cb6c13e46b57225a999c7e22a09b163393878facc7ac4c059a57f46faa1647"
+    url "https://files.pythonhosted.org/packages/92/f3/589727d02bc832750cfa00ced4315d127535a22a6d7cfcb369b2fe219a2e/virtualenv-21.14.6.tar.gz"
+    sha256 "c6b74616e64bffa9532cfa9dfd54ffbab0dc9b999df2bb8ec0d75e559b983661"
   end
 
   def install

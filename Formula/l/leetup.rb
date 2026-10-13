@@ -31,6 +31,14 @@ class Leetup < Formula
     depends_on "openssl@4"
   end
 
+  deny_network_access!
+
+  def fetch
+    # The release does not include a `Cargo.lock`.
+    system "cargo", "generate-lockfile"
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
     system "cargo", "install", *std_cargo_args
   end

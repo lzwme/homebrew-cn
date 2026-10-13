@@ -9,18 +9,19 @@ class Woob < Formula
   revision 10
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "9b4dd2283ec187cf230e59c15ded75ecf0f94c629a7cedd09f5d527d32d72e8b"
-    sha256 cellar: :any, arm64_tahoe:       "1b499f11ddce11a930f3d1e4223013da6d2b23acc990291f148b44194787e54a"
-    sha256 cellar: :any, arm64_sequoia:     "7e76c51b9a979679f0ba94300209076786262a05e0b91212ed7cf72594159c1b"
-    sha256 cellar: :any, arm64_linux:       "ec751713c2611501f3ca6c5af778fafd42decba62cba13ad8e01989f034a35d2"
-    sha256 cellar: :any, x86_64_linux:      "560028a448a7339d7c94338876129216545e2ef024a4e07b3fb6b9a6aa0a5b04"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "e9b3796494e506daabc0ab48928837f3934c76027e801db5e0c10ebdb2a2a566"
+    sha256 cellar: :any, arm64_tahoe:       "b50e7fb396568d19a1d0632c358e25e6006c65dd5806e40a0fb659b9976a6595"
+    sha256 cellar: :any, arm64_sequoia:     "eaa96eb2cf6643f13864adf6e8b0b7e5139a9344caad7af14e6e6c47fbb9591c"
+    sha256 cellar: :any, arm64_linux:       "66173cc57333aaee4b8fc0f4a75d5d9df5a5edfc6bd0a425d9c2f32084a47e53"
+    sha256 cellar: :any, x86_64_linux:      "f79c92e6ea89a2d9dcb1677a8a3d62c0fb214892565ec1c81ce5999f76356f97"
   end
 
   depends_on "certifi"
   depends_on "gnupg"
   depends_on "libyaml"
   depends_on "pillow"
-  depends_on "python@3.14"
+  depends_on "python@3.15"
 
   uses_from_macos "libxml2", since: :ventura
   uses_from_macos "libxslt"

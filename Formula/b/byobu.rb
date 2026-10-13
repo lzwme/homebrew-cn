@@ -4,6 +4,7 @@ class Byobu < Formula
   url "https://ghfast.top/https://github.com/dustinkirkland/byobu/archive/refs/tags/7.21.tar.gz"
   sha256 "4d2836e528c9b3f6f761679badfecc085f4a05855337b4ee7772feceb444a08f"
   license "GPL-3.0-only"
+  revision 1
 
   livecheck do
     url :stable
@@ -11,11 +12,11 @@ class Byobu < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "70b60f7b7d40f324afbdc82ae51c8781a9e4b538faeb95b832e9ee093d2f08be"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "70b60f7b7d40f324afbdc82ae51c8781a9e4b538faeb95b832e9ee093d2f08be"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "70b60f7b7d40f324afbdc82ae51c8781a9e4b538faeb95b832e9ee093d2f08be"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "8e5f14d0958691c11927a11802da4ab90c60443e30e0131dd7f4f3f171f248ec"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "8e5f14d0958691c11927a11802da4ab90c60443e30e0131dd7f4f3f171f248ec"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "68239f0b82c218d99967183fab6356e764046bb306e59489359cff393510126a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "68239f0b82c218d99967183fab6356e764046bb306e59489359cff393510126a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "68239f0b82c218d99967183fab6356e764046bb306e59489359cff393510126a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "c61670ee235836e1effbe4dbf6985a2571fa5f1390b3e647d0a8d779eabecd7e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "c61670ee235836e1effbe4dbf6985a2571fa5f1390b3e647d0a8d779eabecd7e"
   end
 
   depends_on "autoconf" => :build

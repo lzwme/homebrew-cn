@@ -8,15 +8,16 @@ class Mktxp < Formula
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "d062bad94f53020d4b193d982140d9c786f3bba20315376a9830802b29077fca"
-    sha256 cellar: :any, arm64_tahoe:       "281be2729b5f845264ccfccc30b79cc83f9013dc09212988ea22391b0a0da120"
-    sha256 cellar: :any, arm64_sequoia:     "12dc183aa4be5278e3c939f945b845a45e1a3e3ad67a510e25d5bb6fe7778a09"
-    sha256 cellar: :any, arm64_linux:       "af2bf16080f116150084d5db472737be2f8291d44e160b33ed3d7699213a51e0"
-    sha256 cellar: :any, x86_64_linux:      "a0b56ddbf219ad6c59978a3c6d1683da1d2249dfa60e1fa585cb3a7487bbf26c"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "8221919640065bb1619015cc13a0d868065c47e09de71620c493a68258d1318d"
+    sha256 cellar: :any, arm64_tahoe:       "fa0d566f09be01a3f38c53f675ccabde367b52f7f925aaf0c6d85f72f6349eec"
+    sha256 cellar: :any, arm64_sequoia:     "23c6a67a3733fcb1f1bf0aaaadcae732b8905e7e54ef7ac802701ea72652b075"
+    sha256 cellar: :any, arm64_linux:       "30290df60d61d727da154daf8fd8ffa99e50777ee3e14b691f60a92f02faf6be"
+    sha256 cellar: :any, x86_64_linux:      "358cee7781a1154a4ac50d01cccf950b2f69172ba19b10e40e1ebb52cb86201e"
   end
 
   depends_on "libyaml"
-  depends_on "python@3.14"
+  depends_on "python@3.15"
 
   resource "configobj" do
     url "https://files.pythonhosted.org/packages/f5/c4/c7f9e41bc2e5f8eeae4a08a01c91b2aea3dfab40a3e14b25e87e7db8d501/configobj-5.0.9.tar.gz"

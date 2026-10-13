@@ -8,17 +8,18 @@ class Schemathesis < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "5b2ddc2c57da33a2fd469bc553a91021701f01307ae4a9b92c4b83b78523032e"
-    sha256 cellar: :any, arm64_tahoe:       "cc80fc86b79e2a0b4b3a49472dbc959ccb9a6e00c90a1f91f2a4f4dc0be2f6ce"
-    sha256 cellar: :any, arm64_sequoia:     "0f2478ed62887aa4d428f6891c19702162c0cdf1836c218bc92f86659cef5efc"
-    sha256 cellar: :any, arm64_linux:       "68bcb79808e9f903fcad29f8fa59a48a168e01889b5697e2aca1df1c0ae291e9"
-    sha256 cellar: :any, x86_64_linux:      "1126acc56f84d129a3ef7424c97eed81a8f026cc86b0b6ec9ecc5720ee2efe67"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "8dbd516a9badc56481bf562442370ab968565ba9b30244a308f6e5a14e205825"
+    sha256 cellar: :any, arm64_tahoe:       "ce3d9c0c7a503da3bce7c9e7b285b63c377b7c095609548b507769c9dcc953f0"
+    sha256 cellar: :any, arm64_sequoia:     "c6d0a5470a3a27b7341238f17a638e7170973a82057cb5d000ecfacbb371d56b"
+    sha256 cellar: :any, arm64_linux:       "bcce9369c6bd531db01b7b9f4b9e1d14fe9a9ca9f777c2d84d64d538e069a592"
+    sha256 cellar: :any, x86_64_linux:      "537a0af59ad3f481b350a8512ab636a8c8c5a2ef20e25ded91e27895a62c26af"
   end
 
   depends_on "rust" => :build # for jsonschema-rs
   depends_on "certifi" => :no_linkage
   depends_on "libyaml"
-  depends_on "python@3.14"
+  depends_on "python@3.15"
   depends_on "rpds-py" => :no_linkage
 
   conflicts_with "st", because: "both install `st` binaries"
@@ -51,8 +52,8 @@ class Schemathesis < Formula
   end
 
   resource "hypothesis" do
-    url "https://files.pythonhosted.org/packages/93/a8/bd70d7c2966e561228b9fdc075ee77c0ba577dcbbfbf921edf614db14f6a/hypothesis-6.168.5.tar.gz"
-    sha256 "76b9226962fe11d40858253a967eda95bb65811365286317e0118f4ec8f808c7"
+    url "https://files.pythonhosted.org/packages/b7/b7/fcddfc235d1ab24b831e99ad3385361e87eb4fed427f527a7f15866214ad/hypothesis-6.169.0.tar.gz"
+    sha256 "b65749d7f7a2fddfb106bb57c9902db4ab25ce8724c821f4af50cc58891a6b7b"
   end
 
   resource "hypothesis-graphql" do

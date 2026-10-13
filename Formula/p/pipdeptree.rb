@@ -8,17 +8,18 @@ class Pipdeptree < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "cf859c86399f501b73b45441214efe9051fabe4f8188060fc567cc6edcb1c61c"
-    sha256 cellar: :any, arm64_tahoe:       "44102c1626e76a0508f0182bff57b1c281c965a993b4ca5a03e32ac3ba7749fb"
-    sha256 cellar: :any, arm64_sequoia:     "4cf74c2f4572c407459d7985fbd0af66fb5aade2330401b5c3da2a572c957863"
-    sha256 cellar: :any, arm64_linux:       "d0a92d49c397b2cbaea915082e8c725e901b24babbd7d782ef715ace0800a98f"
-    sha256 cellar: :any, x86_64_linux:      "e1fdc36ce05da0750ab4f4fd2f1f2f6eb0b3ae10340d29e344a65f6673c71cca"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "a303c9b5d597b6f54f7095e8574d3c9ce7158f2b0acf2bebeb0b90095148ccf6"
+    sha256 cellar: :any, arm64_tahoe:       "b0d738e45474ccef18c1ad7736b3cd29a2a2c40b1cdee48e2a4b94879ed4fb05"
+    sha256 cellar: :any, arm64_sequoia:     "bdf8a94f6211ddc96f75ce21a4ae6a6b5f47edbfeb29ff4403c3570a23dc3ecd"
+    sha256 cellar: :any, arm64_linux:       "4dee9cd4a19e9041b3eaaf5b8231ca9962979324e07664ee1641c54b2a20e509"
+    sha256 cellar: :any, x86_64_linux:      "5484feb37ef4bfd643ca78773a1210643aff103a86330666ef126be71e2afb51"
   end
 
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "rust" => :build
-  depends_on "python@3.14"
+  depends_on "python@3.15"
 
   pypi_packages exclude_packages: "meson",
                 extra_packages:   "meson-python"

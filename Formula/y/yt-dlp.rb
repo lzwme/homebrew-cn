@@ -10,11 +10,12 @@ class YtDlp < Formula
   compatibility_version 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "29a0c18a345cf5222ffc262c4c87f747db4b0869a8fbc85f7ae686a5d919eb2a"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "e6884fb0dc8b3b6fce3a6384a05803ec8197b6764813f5846d0de3dc35001ad6"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "c5be27c4bbc1d1ffc5201708a274a356843e4b7e8db355120677ab2602102403"
-    sha256 cellar: :any,                 arm64_linux:       "8c341c2dce9c323079bc77873adaec716f336bfc25dea5b6b2209cb6a5a9796f"
-    sha256 cellar: :any,                 x86_64_linux:      "d43b79149bbc1c95259f9ef0b39fd75a0b2e28a5b82f90e97e32c262c0e2a7e2"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "8e8ed94760ee7d35e5b39d26e2a1baf11a74e919900672c4429f0976b7136105"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "9ef93f5fdbc2b0f061471c05797b6aeb5c46248252205951a2ac35b5b98b7e6c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "0d110ce0649bcb289ccf96271e8fb2247b1492890d7b0b242282c6cfb53003d4"
+    sha256 cellar: :any,                 arm64_linux:       "6ad45b5ec0186fa85589b7b2c7256c8edfa5fd1ee7c07cdc87d576a9f0e90363"
+    sha256 cellar: :any,                 x86_64_linux:      "e72e6150ca4156caa870039cd1ea2866d513986e9ba4238b7ad5fc263423a011"
   end
 
   head do
@@ -27,7 +28,7 @@ class YtDlp < Formula
   depends_on "cffi"
   depends_on "deno"
   depends_on "pycparser"
-  depends_on "python@3.14"
+  depends_on "python@3.15"
 
   pypi_packages package_name:     "yt-dlp[default,curl-cffi]",
                 exclude_packages: %w[certifi cffi pycparser]
@@ -58,8 +59,8 @@ class YtDlp < Formula
   end
 
   resource "pycryptodomex" do
-    url "https://files.pythonhosted.org/packages/c9/85/e24bf90972a30b0fcd16c73009add1d7d7cd9140c2498a68252028899e41/pycryptodomex-3.23.0.tar.gz"
-    sha256 "71909758f010c82bc99b0abf4ea12012c98962fbf0583c2164f8b84533c2e4da"
+    url "https://files.pythonhosted.org/packages/4c/25/214ea825a9031f5af2c8b2506ee16701a2560d4712165dd00098dd527bcb/pycryptodomex-3.24.0.tar.gz"
+    sha256 "0428f19f13452c6b89bbaf2c530f84f369873811dfa77f0cee0da4f40fb0474f"
   end
 
   resource "requests" do
@@ -73,8 +74,8 @@ class YtDlp < Formula
   end
 
   resource "websockets" do
-    url "https://files.pythonhosted.org/packages/18/72/fba934cb3dff7a85d811820efffcd141ddd52b5a2a01637f64551373ff4d/websockets-17.1.tar.gz"
-    sha256 "acfea4c20bf54384883ea33b1240fc1db4f52e190823a4e2b334bc3e8bfca96a"
+    url "https://files.pythonhosted.org/packages/01/89/3f825ab71c242fffb62ea8fe638741c290f62f8d7aadf8125ff897747af3/websockets-17.2.tar.gz"
+    sha256 "36c2fb94c990cc2545143b12690e2de6c16300f9dbe5b4f33fa300cf57dc8792"
   end
 
   resource "yt-dlp-ejs" do

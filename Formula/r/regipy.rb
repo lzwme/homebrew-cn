@@ -3,14 +3,13 @@ class Regipy < Formula
 
   desc "Offline registry hive parsing tool"
   homepage "https://github.com/mkorman90/regipy"
-  url "https://files.pythonhosted.org/packages/c2/3a/d154b10bbf5ac4051937493311ab74b05c67cab57053875968d7898bb84c/regipy-6.4.0.tar.gz"
-  sha256 "dc3f2fd33af7566ae66a9ddb0b78f15552ac009de262568e4ab7c4e36cb9a9e1"
+  url "https://files.pythonhosted.org/packages/8f/2f/dff9b51191b02c9639fe7bac600a1d658a4a9467d98805ac8fcd6d3d5fd0/regipy-6.5.0.tar.gz"
+  sha256 "8c01a71a1232ed4fc945e2463b35e1ef01f32751fdb8a5adf84de895121976ec"
   license "MIT"
   head "https://github.com/mkorman90/regipy.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "0168514a88c05d4dfaf485f8bee80c544039cc72d97d70753bd79a1a199bf79f"
+    sha256 cellar: :any_skip_relocation, all: "57738fe53628ee77b5565594c9df115561c6f23818ca5e0f1782183d529fc423"
   end
 
   depends_on "python@3.15"
@@ -33,8 +32,8 @@ class Regipy < Formula
   end
 
   resource "pytz" do
-    url "https://files.pythonhosted.org/packages/b0/ed/fa23d28713004418bbf2407127f80f385bfb0bf4e677bef02c25c27b00ee/pytz-2026.4.tar.gz"
-    sha256 "464303645bafafd72418898368b2429458f709cf1eb6a15372fbcc396b64da63"
+    url "https://files.pythonhosted.org/packages/14/21/d83d6ef28c4c912c4bb4d1dcf591f7b8c6bde87b9c66f9f454677314e16d/pytz-2026.5.tar.gz"
+    sha256 "fa23724b9c486543b9ff54a327ee7569ac83ade54bb9afd0fc18676620401c86"
   end
 
   resource "tabulate" do

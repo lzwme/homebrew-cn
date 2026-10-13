@@ -21,11 +21,12 @@ class Bzt < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "a1f089f5907501e3b4ca6d0b217a7c51d2115d3c7d05007bee43636a2548f9fe"
-    sha256 cellar: :any, arm64_tahoe:       "f227356b6a0e9c3bc64c147848f2eda5bb6701ea93065b189989c482b6d9f66e"
-    sha256 cellar: :any, arm64_sequoia:     "f7f3f1aa9f36fda42126c5e6d2bd3093b9fd1fe9c9696aa2c9e86e220d8ee808"
-    sha256 cellar: :any, arm64_linux:       "8005596fd4aec77273f7bfbf24af7cfb09074e132b0a5c5b85c69b03a8b0d82e"
-    sha256 cellar: :any, x86_64_linux:      "c26074c35bc82c821b53ad63d1054fb3a8a27e92f5663dfcdd3fc6ecac572334"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "d0cc435a053d91b4a751ebfe012b4d024d5be5a8cecb6783ff8d55d1a236946a"
+    sha256 cellar: :any, arm64_tahoe:       "0922ccb99abda9679165dcfeb23ec1add076a4fff626cfb9ff2ef3b64274298c"
+    sha256 cellar: :any, arm64_sequoia:     "36b851f9fc8b56be54de2f9653911f777a3210d5b6c664205005deb7563f2f9f"
+    sha256 cellar: :any, arm64_linux:       "ea27d9f13a0a444a6a0ca77df7ec848eb43c5392db33414e92e99bb2c92488d2"
+    sha256 cellar: :any, x86_64_linux:      "2c51ae71ca2399205beaceb98ea0264cd56289f1b8b0b6535cff0f044aea42a1"
   end
 
   depends_on "cmake" => :build
@@ -34,7 +35,7 @@ class Bzt < Formula
   depends_on "certifi"
   depends_on "libyaml"
   depends_on "numpy"
-  depends_on "python@3.14"
+  depends_on "python@3.15"
 
   uses_from_macos "libxml2", since: :ventura
   uses_from_macos "libxslt"
@@ -53,8 +54,8 @@ class Bzt < Formula
   end
 
   resource "aiohttp" do
-    url "https://files.pythonhosted.org/packages/93/2f/6a91adaa2dc26877d6ed2f54c0370c8910f019db7d77c5c6a194611e93ea/aiohttp-3.14.4.tar.gz"
-    sha256 "831fc5bd39ec2517851e348f613ddb5447a47cf4b71cb09845af7ad7ed45d8f9"
+    url "https://files.pythonhosted.org/packages/6c/4c/bdccd81e9ee225b69c60e7766c9a5b05364f118f4d383713b89a682d772d/aiohttp-3.14.5.tar.gz"
+    sha256 "5558a7f5a05af9ecf744af91e5baefc436f93c9333e656c27ec253f9a6bbe178"
   end
 
   resource "aiosignal" do
@@ -88,8 +89,8 @@ class Bzt < Formula
   end
 
   resource "cssselect" do
-    url "https://files.pythonhosted.org/packages/8e/5a/6d6fcf922709391fac986f0a03ad4546f4f45b94d10aeb6c1ee041599993/cssselect-1.5.0.tar.gz"
-    sha256 "3cbe82dd7acbee9ba9e5723b5f9e4749826912f1fb31cd7f92aabed5fde15b15"
+    url "https://files.pythonhosted.org/packages/c8/8b/dc32df939ab541fca6ee8964d26aa231dbe231cdc2b2713228161441ba9c/cssselect-1.6.0.tar.gz"
+    sha256 "8c83a7139e97b93aa5ebdc0f46e785f7056a08a8bf201e597a6a2629d7eb11db"
   end
 
   resource "cython" do
@@ -158,8 +159,8 @@ class Bzt < Formula
   end
 
   resource "multidict" do
-    url "https://files.pythonhosted.org/packages/d6/99/1d4d69c3512d0ddbfa3a1b69cfd9a151012ab2eb4eabbb096201b1f0b7d8/multidict-6.9.1.tar.gz"
-    sha256 "0f06e60fa190aa7abd0914c2a766736fdc8e9f34878c4346338534b73d1b20e2"
+    url "https://files.pythonhosted.org/packages/f9/79/84ddb5ba16c4eb2c69c71db76ae3c579fe546e511f7170c7e27eedbab7c1/multidict-7.1.0.tar.gz"
+    sha256 "61a4e5d81b8d4e4ad61964b230129e7a2b914793d96289029078fc9009f074ec"
   end
 
   resource "multiprocess" do

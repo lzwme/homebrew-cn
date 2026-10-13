@@ -10,11 +10,12 @@ class RobotFramework < Formula
   head "https://github.com/robotframework/robotframework.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "2b3473a2ba83ec157fdc092e5789309bdcf459fb5899cff191aa856e11f6271f"
-    sha256 cellar: :any, arm64_tahoe:       "aec0b05617440fc9ecd3f3af503640162bf7193a820efea7257756773a7b143d"
-    sha256 cellar: :any, arm64_sequoia:     "770808d290e75b21f7147072bdcb55225964401ece77125775b415637768d5d4"
-    sha256 cellar: :any, arm64_linux:       "210d92b7ffc177f31446d6deb3331d49cea9d490b7dce575a9c171fe6d21733e"
-    sha256 cellar: :any, x86_64_linux:      "a2a44d17306e356eb19db5b2f6c094ccdd76c223eddbce691ff890969da1c172"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "6aa514724bff5611852a44f4d00e668e76519e8497cd2b0d26d3ff716a7aba58"
+    sha256 cellar: :any, arm64_tahoe:       "e1255c47a78dd59a06c60a0fdf140a9fe80d7cf6a4c9bce159d387e72dff59ca"
+    sha256 cellar: :any, arm64_sequoia:     "49bd47d57a7db0ff3dd90239110c505414c010daebdcbf1e52a2252c25cdabf3"
+    sha256 cellar: :any, arm64_linux:       "099d0b031ac9f50f6ae3732b11d2da6c8f964047c87037947cb8ea3908d3c218"
+    sha256 cellar: :any, x86_64_linux:      "0b4110a762071b8839acbab0cc804e15f26466c0025ad59506f6b1722fa9fe3e"
   end
 
   # `pkgconf` and `rust` are for bcrypt
@@ -23,7 +24,7 @@ class RobotFramework < Formula
   depends_on "certifi" => :no_linkage
   depends_on "cryptography" => :no_linkage
   depends_on "libsodium" # for pynacl
-  depends_on "python@3.14"
+  depends_on "python@3.15"
 
   uses_from_macos "bzip2"
 
@@ -112,13 +113,13 @@ class RobotFramework < Formula
   end
 
   resource "scp" do
-    url "https://files.pythonhosted.org/packages/f8/35/fcef45d52d76a6dc70778c11eea719ff0ab550594bc51e55e66d28b5f424/scp-0.16.1.tar.gz"
-    sha256 "3f2b260bf9bd4c2b6857f697a1d7e8edc26fa569282b77027e849dfe1e48580a"
+    url "https://files.pythonhosted.org/packages/38/c3/4d0230664b7c505ba2fa7bf9fe4bee83f6f1fa195e865ad7f92b12917e59/scp-0.16.2.tar.gz"
+    sha256 "d049f9aa77db4042c44b922cecabe97ef0716fb334a95701d68d1c7991684fc2"
   end
 
   resource "selenium" do
-    url "https://files.pythonhosted.org/packages/1f/6c/09a5bdf96a5f850a2bf69ee670a246ae30a132dca3975c7fb081aae09338/selenium-4.50.0.tar.gz"
-    sha256 "80402fb6f48e0ee2183ec1d58b257a593dcd5c8130c1e6419ee7509f2128be5d"
+    url "https://files.pythonhosted.org/packages/c3/d3/c925308af2c9b9a9ccf531cf23ffba4f38c0d750f088a06e560fb2ca0c59/selenium-4.51.0.tar.gz"
+    sha256 "6bec9bd8d9b6599f850b0f6e9fb06d44d2e4245adccd11ae02c9d5cde7596276"
   end
 
   resource "sniffio" do

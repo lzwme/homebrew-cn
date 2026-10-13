@@ -9,16 +9,17 @@ class YleDl < Formula
   head "https://github.com/aajanki/yle-dl.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "bf396fa1492095d3b0aeefe58ee6474e4292c16db6cae1a46e9725e75572e3eb"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "b3fa34e6d698cc529d9ec4c68ea5104520371b3cc1dc484723d3df3ac5c4107e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "d0d7dc122af136e6fa3c95078f938edd0bee88c2ed114e7414cc582c551d0493"
-    sha256 cellar: :any,                 arm64_linux:       "1d3edcb058315e14a7e63ab390b4f86a776c520c37537c361ad160b2df8927b7"
-    sha256 cellar: :any,                 x86_64_linux:      "d12fa0b478de116b0080998f5a8f73166efa0771f634a26d83f04a4aa6242d64"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "19b7d01f30b775e117d76151b4b1eedfd0da2fe9edc603ad0c3b54cc9c789742"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "bb650d353752de26f9c15b1d337e4baa9a776c78c8ce16f00664e8047d8f4dd4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "0f4a47c6a9beb0a356fefd1a055c5510e8066d77eb10135b9317881995ceedd9"
+    sha256 cellar: :any,                 arm64_linux:       "360e91062edb0c70b1d201780d6bcb43c4b20ff796a78895c457d4aa509dd640"
+    sha256 cellar: :any,                 x86_64_linux:      "355cae7351bcfd49e30cefdf024036ac192e557590bf245cd7d7ba507194e917"
   end
 
   depends_on "certifi"
   depends_on "ffmpeg"
-  depends_on "python@3.14"
+  depends_on "python@3.15"
   depends_on "rtmpdump"
 
   uses_from_macos "libxml2", since: :ventura

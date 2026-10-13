@@ -9,17 +9,18 @@ class GalleryDl < Formula
   head "https://codeberg.org/mikf/gallery-dl.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "51e7b665bb1d50c03d02a2c2e5e404f4845e57418c5a17df1eadee74f531df65"
-    sha256 cellar: :any, arm64_tahoe:       "5b5425ef2c176005f2d8ac7d614d7f5f6355e65f43cfd4f49dac94cd85ab50cb"
-    sha256 cellar: :any, arm64_sequoia:     "aee580ffea65456336ebad9b7b25a96b479f7df67b714bc3a3731060871d7579"
-    sha256 cellar: :any, arm64_linux:       "f166f04914feb38f66b90404f6c19eb81c9ddfbd60900391563c895d1dbfbdea"
-    sha256 cellar: :any, x86_64_linux:      "cce9138f8cf1f8f4569250b4198e8e585e1bf8adf3811e850a85abbe750f1ef1"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "095ae9bd32e0dd483e5de37a099ae4b46d4fd33307555fe49efd04fdf6f81031"
+    sha256 cellar: :any, arm64_tahoe:       "7f9fd54ae4b957c03abb4a845532f9558953e66a7e0424e7fbe632737faa01e0"
+    sha256 cellar: :any, arm64_sequoia:     "718b3cd866d4779b7f9ccc6fcd64caa4e40003574727c3b913117f560a291bb8"
+    sha256 cellar: :any, arm64_linux:       "09affa1017e84f98338f11bfd0f1772da771b9ff71e69342c0b442acff73bb93"
+    sha256 cellar: :any, x86_64_linux:      "299f661510b57ca72471572a97e1cdf91af633f10cd1c4c9c6c2055797130566"
   end
 
   depends_on "certifi" => :no_linkage
   depends_on "cryptography" => :no_linkage
   depends_on "libyaml"
-  depends_on "python@3.14"
+  depends_on "python@3.15"
   depends_on "yt-dlp" => :no_linkage
 
   pypi_packages package_name:     "gallery-dl[extra]",

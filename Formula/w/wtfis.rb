@@ -10,12 +10,13 @@ class Wtfis < Formula
   head "https://github.com/pirxthepilot/wtfis.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "439997701d51e8b2dc777de958d68f6802399f57bedc540c91fc7ad9cafa357e"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "84096a3b01bd8c885915810a02b618a351bd635d1873a5c8feb58018332f0ca4"
   end
 
   depends_on "certifi" => :no_linkage
   depends_on "pydantic" => :no_linkage
-  depends_on "python@3.14"
+  depends_on "python@3.15"
 
   pypi_packages exclude_packages: ["certifi", "pydantic"]
 

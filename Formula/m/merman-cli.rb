@@ -1,17 +1,16 @@
 class MermanCli < Formula
   desc "Mermaid.js, but headless, in Rust"
   homepage "https://frankorz.com/merman/"
-  url "https://ghfast.top/https://github.com/Latias94/merman/archive/refs/tags/v0.8.0.tar.gz"
-  sha256 "900fcb1c947e886ba501f5b5663f89455724fe16c3623fa5bb30b116bec7e33a"
+  url "https://ghfast.top/https://github.com/Latias94/merman/archive/refs/tags/v0.9.0.tar.gz"
+  sha256 "b185e0c25e3ac24c6ef0d26846a838a72e1612d3a375aa117c0ab1fdf28182fd"
   license any_of: ["MIT", "Apache-2.0"]
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "7654d4adc8879c1a718c0e424fa1388f7330a8a5089e8b03d230d867264984a1"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "7820c0e287f61c09c439dda78c87cbec9a5ebdf5276681d83791d6d3c6b3e599"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "e0cfce115cf418d3650919e601d415a07d2dfaf4c9a2c134f6988e00552e7ccf"
-    sha256 cellar: :any,                 arm64_linux:       "b1c920887790f7a290ea8788d78f4fef17fda33fa1a55dc9338222f9c25aeffc"
-    sha256 cellar: :any,                 x86_64_linux:      "98660b7ca55daa771d9be5afa878ac3b150e26ca1110144704a5d9373fc93c10"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "4b75b264a6249df640a0482645b146c97ca4df357e31203723f9c5c15b8d1ca9"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "2ebf24752f9cd6ea0fe34910b7a056b1f17b8008dfe098a7eb2065470fb0cd8f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "032e9d1b02eba6aafe03727c91cbfc996facdc10e940936360ab79f56a5338fb"
+    sha256 cellar: :any,                 arm64_linux:       "631378e1b951eed2b0874cd051e578e0c4a13476cad20733c860ea4ea260df4a"
+    sha256 cellar: :any,                 x86_64_linux:      "661b8923be476e0945759005295f057dad39286b89f1a7cafb2c6ecc407d3a93"
   end
 
   depends_on "rust" => :build

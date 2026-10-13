@@ -10,16 +10,17 @@ class CryticCompile < Formula
   head "https://github.com/crytic/crytic-compile.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "9fded727d106f47a06410dd3eb5f49f236ddaa19d3cebc71b6a2fcbcf9bb3262"
-    sha256 cellar: :any, arm64_tahoe:       "476d3ca6dea32e86a63eb62a9658da4ffa74367882abea15012bdf72fdb9ae9b"
-    sha256 cellar: :any, arm64_sequoia:     "900b632d6f71a5b9ea075e636873976ee4c22debce245567b97d7a64af2e1485"
-    sha256 cellar: :any, arm64_linux:       "cb4c6f7a1a77040ff09bfb8e048770f13e269092e3709e8b3569b161d95b8a82"
-    sha256 cellar: :any, x86_64_linux:      "9238a4eabb7a759e96afd8d9251bbac83b36ee519db54861a17e2f65d3c03477"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "3836d8778a1c41c75032daf47a92be3f1097f52436e45be801b5e5d6363832d0"
+    sha256 cellar: :any, arm64_tahoe:       "8bc2b0b9b77d37c7750a20691915750cd8100f0c8e332829808170f92df12865"
+    sha256 cellar: :any, arm64_sequoia:     "b2a04f96745ee13d89a72f8d781b2d08b41654554322fe9eb82290243a6042fe"
+    sha256 cellar: :any, arm64_linux:       "dc331d689fa177b75685657a248151be09ee7f227695572261840a6cd1e8c93e"
+    sha256 cellar: :any, x86_64_linux:      "0be12845fb4350b453257bfaabb3e6a71337fe8b53a0aceb1926ebb05daedcd1"
   end
 
   depends_on "rust" => :build # for `cbor2`
   depends_on "certifi" => :no_linkage
-  depends_on "python@3.14"
+  depends_on "python@3.15"
 
   pypi_packages exclude_packages: "certifi"
 

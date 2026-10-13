@@ -8,18 +8,19 @@ class Specify < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "8a26f23fc8fb0c72e8e550efbad751d118ab641c23fe974028c6d9d852021196"
-    sha256 cellar: :any, arm64_tahoe:       "cda41e17c0b4ee85c8d1a172f0524790f98a47b96457eefc396497407cc86c77"
-    sha256 cellar: :any, arm64_sequoia:     "1d68b7c62c5d1fa0a0cc3e115e34bfb1603741b2f579b9f9cdcb4be725f118da"
-    sha256 cellar: :any, arm64_linux:       "82d988ce955c98d913fe2a361e82845f5cb8cc40a1ca5ec5fb070667fad693ea"
-    sha256 cellar: :any, x86_64_linux:      "278db9ab2d1982893719ff70c76cca69f29b06c5c7b6406aa5437b3d5cdf58a3"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "7da081934f6731e2b622434e407f150b95d53b90046ee2143ba4dd5daae4864b"
+    sha256 cellar: :any, arm64_tahoe:       "011bcbb0df569640768bff114f2f3fea8fecdbceaab9a7a29212175d17ff54bc"
+    sha256 cellar: :any, arm64_sequoia:     "d8cb655ae9942a836f1be170cc890e48359a505900957b8c28e1d5e81f4ffe97"
+    sha256 cellar: :any, arm64_linux:       "cc7a228054f538718e7efe254aca48de81d8ad25037c30b3f373fb02a95d18df"
+    sha256 cellar: :any, x86_64_linux:      "7c5257a2925f7d2988db5204a5406855c8a95b06530a29ad31c9c7595573ff25"
   end
 
   depends_on "certifi" => :no_linkage
   depends_on "cryptography" => :no_linkage
   depends_on "libyaml"
   depends_on "pydantic" => :no_linkage
-  depends_on "python@3.14"
+  depends_on "python@3.15"
   depends_on "rpds-py" => :no_linkage
 
   pypi_packages exclude_packages: %w[certifi cryptography pydantic rpds-py]
@@ -65,8 +66,8 @@ class Specify < Formula
   end
 
   resource "json5" do
-    url "https://files.pythonhosted.org/packages/80/63/503651a3946bfacb6d6098985f2af6b3bf880d8eedc53035761c628d13bc/json5-0.16.0.tar.gz"
-    sha256 "8b135a77b231f22e3656c601fec7621c5354c64c4fb2773715ee0814e4dc6bf7"
+    url "https://files.pythonhosted.org/packages/16/1f/58a4d7ee466f81bc3c7337036380fc6d49de3afb7855d74f8121b1e89b32/json5-0.17.3.tar.gz"
+    sha256 "8d0278ad34ebaa9c3af76d9519274811830224a2d1cd5af156dbd067f461b8a4"
   end
 
   resource "jsonschema" do

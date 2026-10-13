@@ -1,17 +1,17 @@
 class Serie < Formula
   desc "Rich git commit graph in your terminal"
   homepage "https://lusingander.github.io/serie/"
-  url "https://ghfast.top/https://github.com/lusingander/serie/archive/refs/tags/v0.9.3.tar.gz"
-  sha256 "2ee06db3694e8ac4c1c0e5e08f3a46de69780637539862b969896d9481032085"
+  url "https://ghfast.top/https://github.com/lusingander/serie/archive/refs/tags/v0.10.0.tar.gz"
+  sha256 "619f4ca2dc349ca421e36ac5a08e170b8701401d448fe97389010ac0b94f34de"
   license "MIT"
   head "https://github.com/lusingander/serie.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "34ca6ee6372bcd9f2b628eeba50ffccfebff24d0f4c01ba55699609d2817f461"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "3a2a601e62cc74e16ec2a20369805d9d439b71006e62aaa72f89c31472f46c14"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "bed1b9057bd0fd37e07b7460499cd89bb0530e6d3dc80049493a925bd367dd02"
-    sha256 cellar: :any,                 arm64_linux:       "9941b6c3d3d6f85afad4f2e5363b06069065a23ac7b37591fb7f6d511d83a6bf"
-    sha256 cellar: :any,                 x86_64_linux:      "59d8dbe92378c70ee45a5bdf36eabf1da971217f930f5aec9c400aa46fdc1af6"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "7e94c149170c652ce375b0183c0e84c7649fe22443b175733b6a91acf7fc4832"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "0da1b045d9630d7d5fa1260e591cb9485ee6f794e839c93ac3ca2bde97311935"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "0a1d925974ebd44a3ac4e69079e60e9c6c862a6ef90e439defaef8c111794354"
+    sha256 cellar: :any,                 arm64_linux:       "29bab7b391f58ffc53e8e23beaebd1b0cd34ae6d78e9ef60d42ced763a0e4fda"
+    sha256 cellar: :any,                 x86_64_linux:      "2f099d294d359c844de9c0826ce6c81c08338fd61ca2ab3cb582a0d6588f7d10"
   end
 
   depends_on "rust" => :build

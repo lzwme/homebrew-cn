@@ -11,7 +11,7 @@ class Libevdev < Formula
   end
 
   depends_on "pkgconf" => :build
-  depends_on "python@3.14" => :build
+  depends_on "python@3.15" => :build
   depends_on :linux
 
   deny_network_access!

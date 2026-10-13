@@ -10,16 +10,17 @@ class Xml2rfc < Formula
   head "https://github.com/ietf-tools/xml2rfc.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "0ecb4fc0f781d92f1e01afbae1b63ae26cf1f4dfa66173d5234bd7fbf8931942"
-    sha256 cellar: :any, arm64_tahoe:       "ab5dd5e4a1e9c40f5209ef53f4cf87ead294b81ab2a53fbf2ce45ee075e003aa"
-    sha256 cellar: :any, arm64_sequoia:     "910482eded1ab2b73c7881ddbb2d1b668024b115cd3d1c755e78d9d289b237dc"
-    sha256 cellar: :any, arm64_linux:       "c00ca7fb86e4f98f0684c23bbbc79c70a366af32965581fa22da1c55f052b0a3"
-    sha256 cellar: :any, x86_64_linux:      "3860e0383a6065685ea2a58054750f85d47626266db62ea177329ed1802f77b3"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "c82fecdbbed219c00c1d3fb3e112d874b1379ec68c9dd4426d70920a3ebb5072"
+    sha256 cellar: :any, arm64_tahoe:       "f9ff370320712cd8721e891defd250f9e8df737f3553be2efa399fe04bdda470"
+    sha256 cellar: :any, arm64_sequoia:     "cf0093bc07be35967d158541ee2158d523c8bcc7449ae01288790a25508c8c23"
+    sha256 cellar: :any, arm64_linux:       "637236f512047f8b76c6fe44236809025a3b4382a786a2c7fa7f2f66448f56ab"
+    sha256 cellar: :any, x86_64_linux:      "1cb5a79a7abffacd1a6362172d798d12304dbad8dffaf9393f5f3b0d4fbb1be2"
   end
 
   depends_on "certifi" => :no_linkage
   depends_on "libyaml"
-  depends_on "python@3.14"
+  depends_on "python@3.15"
   uses_from_macos "libxml2", since: :ventura
   uses_from_macos "libxslt"
 
@@ -78,8 +79,8 @@ class Xml2rfc < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/17/c8/721b3855fe457da514fe249247d404b9b39c5d16532278f70ebaa6acf18b/platformdirs-4.12.2.tar.gz"
-    sha256 "eab5f70271a490ef74618bb314fbb86e3c7e82fa3b9c922c2ea0e0a1a155d329"
+    url "https://files.pythonhosted.org/packages/80/a8/66d45abadff219e36e2a824181b8f6a67e7ed4572934d6252c71c29d5731/platformdirs-4.13.0.tar.gz"
+    sha256 "1aa0b0d3f224c1f07c295121e312a5a24a180d6ae5a8425ea1784b3e3863e9c0"
   end
 
   resource "pycountry" do
@@ -108,8 +109,8 @@ class Xml2rfc < Formula
   end
 
   resource "wcwidth" do
-    url "https://files.pythonhosted.org/packages/dc/ac/3a943d2792c9bb368aaa8b50121c0f778460ba2d7fbdc0a0366201d9e761/wcwidth-0.9.1.tar.gz"
-    sha256 "5823209b0d43af322ce698c689380d7c15ca31fa8e6e3be8459f27031bef0af5"
+    url "https://files.pythonhosted.org/packages/f0/b4/7830542634bb2d3e62aa3b586a72d5b3b6c91c3168929e7000ef3fed041d/wcwidth-0.9.2.tar.gz"
+    sha256 "ae0ef90b90f6af38b54f1fe6d58662ec33b3cb4b8391958a62416d654231727b"
   end
 
   def install

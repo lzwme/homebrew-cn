@@ -9,11 +9,12 @@ class TrezorAgent < Formula
   revision 3
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "df1e7ded83ccd2cc4326941f7014c5bdf593340bddd5d0f1d4c38b84e68a0fc4"
-    sha256 cellar: :any, arm64_tahoe:       "1793ddbfefdc9104b8d7c84994b85423cb77d29aef19c5a8cdc2dbc17d737bc7"
-    sha256 cellar: :any, arm64_sequoia:     "ee47ecc78f80b2eb3a84b3173b1583fadac3014224b901b87bee527cc796f425"
-    sha256 cellar: :any, arm64_linux:       "96b5c1e9823a22629771ec5ce71f2de5c9646f7ff442e843804bc093124d2692"
-    sha256 cellar: :any, x86_64_linux:      "ee7b7f13e89e13884a033dd4dbfcba4e0d1b6e24fd7c463eb7fc544a1718d8d8"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "97804b8eecbaf51b9a94b6475787838b5ecd3195676950b0972c6fc1e019a999"
+    sha256 cellar: :any, arm64_tahoe:       "828001b238b2c1887d7467ee25de3b9636a7063724da87fdc501e3a1c47a045a"
+    sha256 cellar: :any, arm64_sequoia:     "acb8eb85bd86ceb346716865b732a8dec3cc002b60eb03904721376c489b5c31"
+    sha256 cellar: :any, arm64_linux:       "c5f16fc0edfc52cc80650784e6f36f204c5d42ed9350645c3c2f93f06b42b87c"
+    sha256 cellar: :any, x86_64_linux:      "70a9ed32c73b92c5f9a6c68670212316bd4b872b7a2dc2bd5e8b49f946a5956b"
   end
 
   depends_on "pkgconf" => :build # for hidapi resource
@@ -23,7 +24,7 @@ class TrezorAgent < Formula
   depends_on "hidapi"
   depends_on "libsodium" # for pynacl
   depends_on "libusb" # for libusb1
-  depends_on "python@3.14"
+  depends_on "python@3.15"
 
   pypi_packages exclude_packages: %w[certifi cryptography],
                 extra_packages:   %w[jeepney secretstorage]
@@ -144,8 +145,8 @@ class TrezorAgent < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/17/c8/721b3855fe457da514fe249247d404b9b39c5d16532278f70ebaa6acf18b/platformdirs-4.12.2.tar.gz"
-    sha256 "eab5f70271a490ef74618bb314fbb86e3c7e82fa3b9c922c2ea0e0a1a155d329"
+    url "https://files.pythonhosted.org/packages/80/a8/66d45abadff219e36e2a824181b8f6a67e7ed4572934d6252c71c29d5731/platformdirs-4.13.0.tar.gz"
+    sha256 "1aa0b0d3f224c1f07c295121e312a5a24a180d6ae5a8425ea1784b3e3863e9c0"
   end
 
   resource "pymsgbox" do

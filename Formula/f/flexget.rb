@@ -8,18 +8,19 @@ class Flexget < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "2417f3a81150fff4d22c2905c90d8816a21346c2c54d1c887e078f21b20674ed"
-    sha256 cellar: :any, arm64_tahoe:       "ffaa7ffd94e7257c7f95c5994493a9e21ff6dd9dbacaebcec42ddb52936ae348"
-    sha256 cellar: :any, arm64_sequoia:     "48b177a1b50a77699f34bd6e89b7205e9ae26e92b6e6a05ef8c8ddaf357d6101"
-    sha256 cellar: :any, arm64_linux:       "a60f5f434ad1f4c3eab3d92f6614d8dd5cff6bf2020769ae01dd8fba321bbb00"
-    sha256 cellar: :any, x86_64_linux:      "2e0e087633698c48248f88715a785bff830cc5cce9e8f8ec3704e9099fe23300"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "fae905aa9875114b3f273bf2a4562f06867bb35603100bceb5e9a23dd13713e6"
+    sha256 cellar: :any, arm64_tahoe:       "1dec6084641caa2b754481434d468e3a4af3e6cca50d9de052a4825c7ac192e0"
+    sha256 cellar: :any, arm64_sequoia:     "8c5264bd3292ce600ddcfbb1be6bc1cb9059ca6ad6b92175e0473ae998e874ec"
+    sha256 cellar: :any, arm64_linux:       "066afef84445ab99b40978dc8ebd6552b72e46c434dcf819300a50c5f737300d"
+    sha256 cellar: :any, x86_64_linux:      "26d90b207e263a4e41ddc42ce11df841a783b59a4e2ab14f7185b1079d5738e0"
   end
 
   depends_on "rust" => :build
   depends_on "certifi" => :no_linkage
   depends_on "cryptography" => :no_linkage
   depends_on "libyaml"
-  depends_on "python@3.14"
+  depends_on "python@3.15"
   depends_on "rpds-py" => :no_linkage
 
   pypi_packages package_name:     "flexget[transmission]",
@@ -240,6 +241,13 @@ class Flexget < Formula
   resource "pendulum" do
     url "https://files.pythonhosted.org/packages/cb/72/9a51afa0a822b09e286c4cb827ed7b00bc818dac7bd11a5f161e493a217d/pendulum-3.2.0.tar.gz"
     sha256 "e80feda2d10fa3ff8b1526715f7d33dcb7e08494b3088f2c8a3ac92d4a4331ce"
+
+    # Bump `pyo3` version to support Python 3.15
+    patch do
+      url "https://github.com/python-pendulum/pendulum/commit/72a744e387a1b8f208a05e0ba7e8d9c03aff78ed.patch?full_index=1"
+      sha256 "d5374bfde8cfaee9e36bab687ec7cb7503bedd895555d641ef78fc202245900e"
+      type :backport
+    end
   end
 
   resource "plumbum" do

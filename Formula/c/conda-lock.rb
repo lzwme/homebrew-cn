@@ -3,18 +3,16 @@ class CondaLock < Formula
 
   desc "Lightweight lockfile for conda environments"
   homepage "https://conda.github.io/conda-lock/"
-  url "https://files.pythonhosted.org/packages/06/44/52deb5012f8ef85c224cb3b1638c09c3b3d70b2f9e101e893bb61b9ee9ba/conda_lock-4.0.2.tar.gz"
-  sha256 "c4ebc4404ea760b1dd0035d6403fa27e291050269a5fd1b629b89fcbc75ef32a"
+  url "https://files.pythonhosted.org/packages/4b/a2/5b088ae0b780cb98849a8ee93d293d82076f6d297850fc3797d31521fe8d/conda_lock-4.0.3.tar.gz"
+  sha256 "455efdfddb8e03cb44f2c4b7921e0ddc9d30e949c90611569dbe5aa652eb3079"
   license "MIT"
-  revision 7
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_golden_gate: "457e67ccb608d189d809b92c0d913f10644c6ac159baca3dd24eabbb87a84e64"
-    sha256 cellar: :any, arm64_tahoe:       "2911d027ff5c2b82717944dad03f474c7fde2c572ca5da205fe88c6ef673f5c2"
-    sha256 cellar: :any, arm64_sequoia:     "639aefc6689195577be677135afe0fffe1f9de22157074804609271713e9a48e"
-    sha256 cellar: :any, arm64_linux:       "d0c866942e26fd60cfd7352a9ee17004979fb4c0cf144ac005566a023e7e3de9"
-    sha256 cellar: :any, x86_64_linux:      "5bdc16e5cb49e0ce9599e2e237ac7b26fad1252de6fff50fdae1bd2afbc958c7"
+    sha256 cellar: :any, arm64_golden_gate: "2857858d68adc4c2ed01d880bc5f6d379a55c7fd2eba7779216420360977c966"
+    sha256 cellar: :any, arm64_tahoe:       "dfdab67946e54140650d0ba0ab06e49d354f7f8b199e68dbff84440dab549696"
+    sha256 cellar: :any, arm64_sequoia:     "ec059f700467f4b395f66e39ce46e097b32091ae50e017f205f78e45dcd03157"
+    sha256 cellar: :any, arm64_linux:       "ac1081ed4463446fa0fbad29318a2fa63a184e09451896f8ed1b9ae7a7e9f961"
+    sha256 cellar: :any, x86_64_linux:      "c3559e0b1c0865af43d8cc412f1cf0a42f873099f54459e57fc57c81eb1d88cc"
   end
 
   depends_on "rust" => :build # for cachecontrol, uv-backend
@@ -178,8 +176,8 @@ class CondaLock < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/90/a1/d5f9002a70298c64a789779077d8dd90c10aa1f47fe40c86802df874f2a6/platformdirs-4.12.4.tar.gz"
-    sha256 "63743c02414e755de4e31b8f68125c1407495b86c5a006e203c01ff8b9924250"
+    url "https://files.pythonhosted.org/packages/80/a8/66d45abadff219e36e2a824181b8f6a67e7ed4572934d6252c71c29d5731/platformdirs-4.13.0.tar.gz"
+    sha256 "1aa0b0d3f224c1f07c295121e312a5a24a180d6ae5a8425ea1784b3e3863e9c0"
   end
 
   resource "pyproject-hooks" do

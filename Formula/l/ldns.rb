@@ -15,16 +15,17 @@ class Ldns < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "5be2dfec48a0ef2c5af221172a93e8309149a5c0dcaed215964436c52dc87f7d"
-    sha256 cellar: :any, arm64_tahoe:       "03966b363928b66a20db0a6bd5e48f1c5229648709f91f208b5ceaa84b8a43f4"
-    sha256 cellar: :any, arm64_sequoia:     "d752514ae2395b210185bcb1159dfbd57d60acf397b66aff1c484fb59aa16246"
-    sha256 cellar: :any, arm64_linux:       "d002925575623e03940e6e000bbd307330db894f1b76821ac7078a63a4a74dd7"
-    sha256 cellar: :any, x86_64_linux:      "0b389096fc4ddb6d4288b88c22e943365a7f0e82f2ca45c6488cd06403581fce"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "bd5f2fd751a447da77cb8528bda0019d8230d0045dd094bafac0b40579280ff9"
+    sha256 cellar: :any, arm64_tahoe:       "b091aad44eaf206d452c168760e542ab1a288241670dd06b4e8854b98db3d22a"
+    sha256 cellar: :any, arm64_sequoia:     "ea5496fc061586e2b9f4547ed614d2f18ba10b771524fcff4ea3080c63447288"
+    sha256 cellar: :any, arm64_linux:       "bea6ef6fb5b2e072190a57984806f124112feb22e18a41fd6ba914cac2919cff"
+    sha256 cellar: :any, x86_64_linux:      "e11ba0a197b2396e6e92ea269044210a2d7a279afc03cf6522ad65f3dc3bcc31"
   end
 
   depends_on "swig" => :build
   depends_on "openssl@4"
-  depends_on "python@3.14"
+  depends_on "python@3.15"
 
   conflicts_with "drill", because: "both install a `drill` binary"
 

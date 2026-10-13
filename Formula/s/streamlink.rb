@@ -9,17 +9,18 @@ class Streamlink < Formula
   head "https://github.com/streamlink/streamlink.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "fdda9726fd0cbae5dea87676bb48d1bc5e87e692de6396d308010542b2080fe3"
-    sha256 cellar: :any, arm64_tahoe:       "0a52baa3d39a5bb1f96c29b8c2302705f8f86b4ec042910967e69af5a2a68106"
-    sha256 cellar: :any, arm64_sequoia:     "348de886a65ea1552994ff7c9faae52f5747e1f4c2bb9af6f4cd128721c7a70c"
-    sha256 cellar: :any, arm64_linux:       "7b85def4d0705a62061a926e8235ddb9d23d2e7e9f4273c63bdf6f3a405c01ac"
-    sha256 cellar: :any, x86_64_linux:      "18277f7a066081c71e8c3838e976b7691765bc9ffee4d21dd49c3fcacb7900e5"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "90ff7fe1e3e1c1dd0c21c94648041f09ef7c9f2013e1dc0724fa3992ddb6ded3"
+    sha256 cellar: :any, arm64_tahoe:       "8887767201550c631b1d2ee0e1e51a4b85f61d7428ac9cbedf5318e769e132f9"
+    sha256 cellar: :any, arm64_sequoia:     "4bb213892cdc12e563b8622147c8d7858db9c87aa05e509dd8b1b372f52a7f0d"
+    sha256 cellar: :any, arm64_linux:       "e5b5746f9a63da8a5880bd8a9edfe241928e392c89e2ffe70c225dd738ed045b"
+    sha256 cellar: :any, x86_64_linux:      "6845de4b7be34152eb59af8bc2742e0d0590e90035eb0519ef11a5837ae4d918"
   end
 
   depends_on "pkgconf" => :build
   depends_on "certifi" => :no_linkage
   depends_on "libxml2" # https://github.com/Homebrew/homebrew-core/issues/98468
-  depends_on "python@3.14"
+  depends_on "python@3.15"
 
   uses_from_macos "libffi"
   uses_from_macos "libxslt"

@@ -10,11 +10,12 @@ class Standardebooks < Formula
   head "https://github.com/standardebooks/tools.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "3723daedb5a7e73a3fb186cdaa7c720dff741caa21d60cdc8c6ea94711bcde3d"
-    sha256 cellar: :any, arm64_tahoe:       "286847bd5237df96035f513ba3dc8ecbf8b768da0b9f87a1a3d9d15633abfe3c"
-    sha256 cellar: :any, arm64_sequoia:     "fa3e3527f06b420bb6d4e23a6650d72680ebb4b05532e544394763dc8fbe9852"
-    sha256 cellar: :any, arm64_linux:       "6b4f1e6bf3722dcea9bc97f60864a57765b119ffb72f7a643bd396dee7dbcc06"
-    sha256 cellar: :any, x86_64_linux:      "fc9c57900353df4fb28dad44203ce0621fecb75337a40c2e6ea167ab447b18ff"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "dc439a0350a4be230f981ba325e4ee8d11bc4beeb4781eb3b8c944c5fb581a28"
+    sha256 cellar: :any, arm64_tahoe:       "1a8055402e634bc15550f523a724f0d88af9f3d8a6d9df3314526edce8bc141a"
+    sha256 cellar: :any, arm64_sequoia:     "61b3d27634f93ae36c6375297e2d3427d1addd05f46eab7b1fec06d2fe39de68"
+    sha256 cellar: :any, arm64_linux:       "f20dd18e3aa5fee64de90437ffd53516452581bfcef4bc754597bc73dd061119"
+    sha256 cellar: :any, x86_64_linux:      "ef5ce55b77bd6511afd6cf5443e0134cc3fbc53988a68668611f5b1ac50ce9fa"
   end
 
   depends_on "rust" => :build # for selenium
@@ -23,7 +24,7 @@ class Standardebooks < Formula
   depends_on "openjdk"
   depends_on "pillow" => :no_linkage
   depends_on "pycparser" => :no_linkage
-  depends_on "python@3.14"
+  depends_on "python@3.15"
 
   uses_from_macos "libxml2"
   uses_from_macos "libxslt"
@@ -266,8 +267,8 @@ class Standardebooks < Formula
   end
 
   resource "wcwidth" do
-    url "https://files.pythonhosted.org/packages/dc/ac/3a943d2792c9bb368aaa8b50121c0f778460ba2d7fbdc0a0366201d9e761/wcwidth-0.9.1.tar.gz"
-    sha256 "5823209b0d43af322ce698c689380d7c15ca31fa8e6e3be8459f27031bef0af5"
+    url "https://files.pythonhosted.org/packages/f0/b4/7830542634bb2d3e62aa3b586a72d5b3b6c91c3168929e7000ef3fed041d/wcwidth-0.9.2.tar.gz"
+    sha256 "ae0ef90b90f6af38b54f1fe6d58662ec33b3cb4b8391958a62416d654231727b"
   end
 
   resource "webencodings" do

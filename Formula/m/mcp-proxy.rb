@@ -8,13 +8,14 @@ class McpProxy < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "4499cfe7e15ca6c7596cc78dbb8939882b918e1c4e9ccf5dbf19ba0c685fb698"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "3162fb959487d7c3842aeda406304c4add05c48cf0aba57407c59d8ca9d3346a"
   end
 
   depends_on "certifi" => :no_linkage
   depends_on "cryptography" => :no_linkage
   depends_on "pydantic" => :no_linkage
-  depends_on "python@3.14"
+  depends_on "python@3.15"
   depends_on "rpds-py" => :no_linkage
 
   # TODO: Remove the MCP 1.x pin when upstream supports MCP 2.x: https://github.com/sparfenyuk/mcp-proxy/issues/235

@@ -11,11 +11,12 @@ class KeeperCommander < Formula
   no_autobump! because: "macOS resources cannot be updated on linux CI"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "6bda0a3d5434ffa80ac78e64896a2ce2c7f938e7868350d1584d212b77ad0b46"
-    sha256 cellar: :any, arm64_tahoe:       "67bed7494f9fb1308533e76404d9860dcc2e70eb1e57be1f2ea42e2d19442f67"
-    sha256 cellar: :any, arm64_sequoia:     "4e86a6a264a9db5303e5a2124351b4088d0086565ec8164f62810b973dfd9e1c"
-    sha256 cellar: :any, arm64_linux:       "fe5e70990d1481ab983777b935fdfd883abc9b0a0b844d8e4d0c172580b5fa42"
-    sha256 cellar: :any, x86_64_linux:      "6baf0225c22d23577ce12a91ba8bdc949b38539d783f5c6acadc889e0785542f"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "996eb28c2678ae0348b7ebcb78fe3282da5a137657c947d15793fa4e281faca0"
+    sha256 cellar: :any, arm64_tahoe:       "2e5ab0d2472a3d787f07d224619d2f9e2d7c0913be5f82dedc814246c9284e8c"
+    sha256 cellar: :any, arm64_sequoia:     "fda6e8365406207caa571d9cca802784f8e9b539e9c20f34ea14789dfd2eec0a"
+    sha256 cellar: :any, arm64_linux:       "16f9c43eb8d998e550eb7ad7f6b6a915e5ed86f1dfc2d453fb001deed240378b"
+    sha256 cellar: :any, x86_64_linux:      "4b240ddc5dbf9445fda5a9635e363dcc505dc573db9d884bcf385493230227a8"
   end
 
   # `pkgconf` and `rust` are for bcrypt
@@ -26,7 +27,7 @@ class KeeperCommander < Formula
   depends_on "libyaml"
   depends_on "pillow" => :no_linkage
   depends_on "pydantic" => :no_linkage
-  depends_on "python@3.14"
+  depends_on "python@3.15"
 
   on_macos do
     depends_on "llvm" => :build if DevelopmentTools.clang_build_version <= 1699

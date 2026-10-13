@@ -10,16 +10,17 @@ class SigmaCli < Formula
   head "https://github.com/SigmaHQ/sigma-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "bb5a1c4268488991b4a0a07a2d71e52b01f6f508b0638db67695eae1fe529347"
-    sha256 cellar: :any, arm64_tahoe:       "3f718873e97ab93eb8f6fbd4f87feea191a128430282fbd621518bf5d65ce8a2"
-    sha256 cellar: :any, arm64_sequoia:     "a4674e4c6deb422d2bc2963377c975f7378319c783cd8b364bcda4e614cf9bee"
-    sha256 cellar: :any, arm64_linux:       "26b0cd77c7f7cfb55d8d8d100e86e67303f9b4141545ab7efd9c26bdec9edfbd"
-    sha256 cellar: :any, x86_64_linux:      "40da62ff691169ff3a1af719325a1f7c601a92da80d551e2ceda57a83e0c0318"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "12e9823b55736f03b8a0cbdbcb6a49097da106db7f44de68b2649ae95a67e619"
+    sha256 cellar: :any, arm64_tahoe:       "565430f809112fba99721693959219b23da559ee2b4e94369aa03493c9c12cef"
+    sha256 cellar: :any, arm64_sequoia:     "32043e2f46f5a689120f2e57efb777ca89781f941ba1abb9251f79a07d0f60aa"
+    sha256 cellar: :any, arm64_linux:       "2cfba78756752f072a62cc315d0b53b9bb4fac2981c88400335c60c969829915"
+    sha256 cellar: :any, x86_64_linux:      "8f71c638ef23e16908f330b4bfc24b011e5477949bf0640e9fc93fd40ea00ec7"
   end
 
   depends_on "certifi" => :no_linkage
   depends_on "libyaml"
-  depends_on "python@3.14"
+  depends_on "python@3.15"
 
   conflicts_with "open-simh", because: "both install `sigma` binaries"
 
@@ -67,8 +68,8 @@ class SigmaCli < Formula
   end
 
   resource "markupsafe" do
-    url "https://files.pythonhosted.org/packages/7e/99/7690b6d4034fffd95959cbe0c02de8deb3098cc577c67bb6a24fe5d7caa7/markupsafe-3.0.3.tar.gz"
-    sha256 "722695808f4b6457b320fdc131280796bdceb04ab50fe1795cd540799ebe1698"
+    url "https://files.pythonhosted.org/packages/38/9b/e422a865e1d5d57d0e509b4e0bf1c1a70a7f6382c29a5aa428df994c8bc8/markupsafe-3.0.4.tar.gz"
+    sha256 "2e9ad7dd851bf45fab9f75cbff4cb493fee9979e8d8c7c9c3ee119022518edd6"
   end
 
   resource "packaging" do
@@ -122,8 +123,8 @@ class SigmaCli < Formula
   end
 
   resource "wcwidth" do
-    url "https://files.pythonhosted.org/packages/dc/ac/3a943d2792c9bb368aaa8b50121c0f778460ba2d7fbdc0a0366201d9e761/wcwidth-0.9.1.tar.gz"
-    sha256 "5823209b0d43af322ce698c689380d7c15ca31fa8e6e3be8459f27031bef0af5"
+    url "https://files.pythonhosted.org/packages/f0/b4/7830542634bb2d3e62aa3b586a72d5b3b6c91c3168929e7000ef3fed041d/wcwidth-0.9.2.tar.gz"
+    sha256 "ae0ef90b90f6af38b54f1fe6d58662ec33b3cb4b8391958a62416d654231727b"
   end
 
   def install

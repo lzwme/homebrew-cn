@@ -1,8 +1,8 @@
 class Turso < Formula
   desc "Interactive SQL shell for Turso"
   homepage "https://github.com/tursodatabase/turso"
-  url "https://ghfast.top/https://github.com/tursodatabase/turso/archive/refs/tags/v0.8.2.tar.gz"
-  sha256 "4e090970e8f71790e9499ee76e6ef4019366ba7ff9e9271534e74059e9bc175b"
+  url "https://ghfast.top/https://github.com/tursodatabase/turso/archive/refs/tags/v0.8.3.tar.gz"
+  sha256 "18912d5142b3d4abe29aeeb771ccbbdb4c819105627833d2232d746013d9cd0a"
   license "MIT"
   head "https://github.com/tursodatabase/turso.git", branch: "main"
 
@@ -12,11 +12,11 @@ class Turso < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "2c6502fc4421c86f0f826bcbe0a49ce984acea566c0459aed19b3d37d4657432"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "0afe20e2f25618456dcc365a7c33a2aa54aa131e68fe8b81e3a04bb055b7b477"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "08b0e326f7328111358f1ca8d1135b5559bb9b4b607b7439005b4db04a694c35"
-    sha256 cellar: :any,                 arm64_linux:       "ef7f8bf691028a531b12650545ba90ec7b2642486432a091d18688d4cb93ec9c"
-    sha256 cellar: :any,                 x86_64_linux:      "2ffd0daa14a38b44fae913fd9b065b5f3e7aa126a85da70f0eda43b3f3181152"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "47a0890fdb028897e341dacabb91b07e5f3484751c1b33250491ac12c965ea3a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "67efadc00266071e8fc9b037ab61445c7754dff0818a326cdb56bcd09a724f99"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "99561b3c357353314453bf05568c5c3abab90332f1d5dbc050da3b92e993222a"
+    sha256 cellar: :any,                 arm64_linux:       "576bc4d735a57baa6592c44780384d17b23d4a335419decf755c0b72e6747848"
+    sha256 cellar: :any,                 x86_64_linux:      "1e608dff13ccf307732081dfa1f5cbd9e8a1f4eee8ff112999173e1c3bcd87d9"
   end
 
   depends_on "rust" => :build

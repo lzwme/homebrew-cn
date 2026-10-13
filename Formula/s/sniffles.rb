@@ -8,18 +8,19 @@ class Sniffles < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "4189038b0b707ffa495d0f9a25969a7bf0222d53bd31a71af4f087465a0bbc67"
-    sha256 cellar: :any, arm64_tahoe:       "9480c9d33fd1412d60e9be51d004f05a73d0f318c4827d35932d26d082c17616"
-    sha256 cellar: :any, arm64_sequoia:     "d9eec24da712042a6a33e789755bb498a443f4537273fce0921fb3564da1cbc2"
-    sha256 cellar: :any, arm64_linux:       "e71b2f9a88fe607d9ac634d82b343545de9a1c9512dd70ff4ff95e2aba228411"
-    sha256 cellar: :any, x86_64_linux:      "d1891d05d791dad88aaace8bd1f33efbe9498e669ef4e7be3fc7c27233996050"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "3a6c1a70e2868a6abad4b4ef2b60b2a7c4a7e548c89c965519271b5d29ce4b51"
+    sha256 cellar: :any, arm64_tahoe:       "8ae934b1011fa9995db5f5c8fd5cacb4db7d116cd421fec74e0e410787949c5c"
+    sha256 cellar: :any, arm64_sequoia:     "92abb13a1b4494251fe55560bcbf91e1acf9dcd2d5bba3017c93e2e8099923eb"
+    sha256 cellar: :any, arm64_linux:       "6abad35c55e535f52ffb2465ca2076178cad44a320be5a68f2d730f531c16f0d"
+    sha256 cellar: :any, x86_64_linux:      "ac3ec06deba12708c1da0b57706f5077a8aad977694866de256773aab67c2985"
   end
 
   depends_on "pybind11" => :build
   depends_on "samtools" => :test
   depends_on "htslib"
   depends_on "numpy"
-  depends_on "python@3.14"
+  depends_on "python@3.15"
   depends_on "spoa"
 
   on_linux do

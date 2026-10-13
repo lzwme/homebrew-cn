@@ -10,11 +10,12 @@ class Ggshield < Formula
   head "https://github.com/GitGuardian/ggshield.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "b9cf79249e72f0bb9ebff7bc9bcd9e06d779e0a0f02f05edf72e9002aaf9cf56"
-    sha256 cellar: :any, arm64_tahoe:       "423a8494daac0e7caea150822a8b9b6f441944f0d0c8240286710b258b8c2da4"
-    sha256 cellar: :any, arm64_sequoia:     "1cb95c8d1c128be465b1ee320a0b09c5280282840fad5a6dca3908390b3afa06"
-    sha256 cellar: :any, arm64_linux:       "e62a14fe4960e68da48645e08c8d1dc8a3f23125b7d2ebb5d1e02a63920fcc12"
-    sha256 cellar: :any, x86_64_linux:      "59e9b38b66a762092347afe76c2e6290132892e712c39f482812a37482a0bfb1"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "37cd5965dfab5de9ca7c4149a0289eb374539d1d3d0fe11b633d41000f4d577a"
+    sha256 cellar: :any, arm64_tahoe:       "16beb2aacc7300eaa98fedcc8465421e8e5a2ec438dd9c3152170434bb4d4bb8"
+    sha256 cellar: :any, arm64_sequoia:     "5e6d9c731a6253c768b126182d3ed53a6cf2334f7fa8abc87d8a517339e81c35"
+    sha256 cellar: :any, arm64_linux:       "4e49af240356157a16e1d26bf5299b0338c0f0e16d1cf9a7ab64c2921fc42a9e"
+    sha256 cellar: :any, x86_64_linux:      "69fe59188766fbb1a5a743c01b516053facf972abd3f20de1195337620f18a8c"
   end
 
   depends_on "pkgconf" => :build # for `rfc3161_client`
@@ -24,7 +25,7 @@ class Ggshield < Formula
   depends_on "libyaml"
   depends_on "openssl@4"
   depends_on "pydantic" => :no_linkage
-  depends_on "python@3.14"
+  depends_on "python@3.15"
 
   pypi_packages exclude_packages: %w[certifi cryptography pydantic],
                 extra_packages:   %w[jeepney secretstorage]
@@ -50,8 +51,8 @@ class Ggshield < Formula
   end
 
   resource "dnspython" do
-    url "https://files.pythonhosted.org/packages/8c/8b/57666417c0f90f08bcafa776861060426765fdb422eb10212086fb811d26/dnspython-2.8.0.tar.gz"
-    sha256 "181d3c6996452cb1189c4046c61599b84a5a86e099562ffde77d26984ff26d0f"
+    url "https://files.pythonhosted.org/packages/ef/4a/50822184bd67cc6493f0fb6a880749158fcd31ab3fa07409acfd91f9fc85/dnspython-2.9.0.tar.gz"
+    sha256 "b44dc6b18f07a8b1c56676a19fbfdb5209415b046a9cece286baafa87ff3f7f1"
   end
 
   resource "email-validator" do
@@ -60,8 +61,8 @@ class Ggshield < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/4f/b8/9ba8f569df649beb7058db5eb392a5f779bdbc3b82cf3942f0be439fb99e/filelock-4.0.3.tar.gz"
-    sha256 "87296d60478e14204fd9406e79831400fef76693bae2895deec236c98e87a8aa"
+    url "https://files.pythonhosted.org/packages/4c/58/6fd434bec86eff7c38a3168454cb132b762b2bea9b3ac094101a2f7bc32a/filelock-4.1.0.tar.gz"
+    sha256 "ad7f724afef953e731b1cc39bcd3a09166d72ed7fcdf29e6e88b1c3235c6715d"
   end
 
   resource "h11" do
@@ -165,8 +166,8 @@ class Ggshield < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/ea/dd/65804b0c2925a1c821a05502ea57517b69a073ff400d25ab9faa3a2cf012/platformdirs-4.11.12.tar.gz"
-    sha256 "e8dc1cb58f1153fd7f61db1374317770baababec2480b37b8f01c6cc25b45267"
+    url "https://files.pythonhosted.org/packages/80/a8/66d45abadff219e36e2a824181b8f6a67e7ed4572934d6252c71c29d5731/platformdirs-4.13.0.tar.gz"
+    sha256 "1aa0b0d3f224c1f07c295121e312a5a24a180d6ae5a8425ea1784b3e3863e9c0"
   end
 
   resource "pyasn1" do
@@ -185,8 +186,8 @@ class Ggshield < Formula
   end
 
   resource "pyjwt" do
-    url "https://files.pythonhosted.org/packages/02/a5/5197bfd06417837ac079921c66fa6393f1dea3557272a263cebfef69e432/pyjwt-2.15.0.tar.gz"
-    sha256 "b11c5f9791d7bf51c2b39a81ed669f6b2dbbd669df2942f6c60167e9e3d1abe4"
+    url "https://files.pythonhosted.org/packages/43/ea/5194e52748b0da83d71e082d75496eaec6e58f419f5e184786ded517e6a9/pyjwt-2.15.1.tar.gz"
+    sha256 "4f259e80cdfb6b3fc18a7de51fd1ef9ec79652f25019bae68975ca2468a34df8"
   end
 
   resource "pyopenssl" do
@@ -195,8 +196,8 @@ class Ggshield < Formula
   end
 
   resource "python-dotenv" do
-    url "https://files.pythonhosted.org/packages/6a/53/ed9d74092561d4b01a2ef1349d52cdbc135e526c245f366b089cfca6de49/python_dotenv-1.2.3.tar.gz"
-    sha256 "a20a594dabeaa385725aa239d5244871c143ecb356add8a20fcf23773a6c3a35"
+    url "https://files.pythonhosted.org/packages/74/26/2fbeedb218a787a5eea551c7532cac4e009f83d689dd2faa0d0353473f86/python_dotenv-1.2.4.tar.gz"
+    sha256 "f0d53e69935a851c0dcc78f3ab7aaccd8cabef0b92382b576b824212902873c0"
   end
 
   resource "pyyaml" do

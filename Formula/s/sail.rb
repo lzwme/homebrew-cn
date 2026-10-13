@@ -9,11 +9,12 @@ class Sail < Formula
   revision 3
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "51b2f2424e5e19b7eadce805a5603e92923d32e1d537a5edd3f8ee8733f7116d"
-    sha256 cellar: :any, arm64_tahoe:       "75f4adae35048158bb979856a3d047a9db13a4c0fe1c9b3686967e41a2d7ed72"
-    sha256 cellar: :any, arm64_sequoia:     "00322187686c552a0587892ffc5d1257da79933c8102bc5ebb61498968df744f"
-    sha256 cellar: :any, arm64_linux:       "ac54637712a6e85ba581fb193f8ae66ce02d1f112b3b83013504713c863ae027"
-    sha256 cellar: :any, x86_64_linux:      "ddcba8cbb23446447c92d83c6f45f3722f83fdfd48b897b90e5402d26bea618e"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "9f1ef917a6f04b093c852c7f8fa76a3fe00aa73372c4a965aab4c797a38d025b"
+    sha256 cellar: :any, arm64_tahoe:       "017eee0950a149b3292fc249ad78dc538e74c32e0641a74e204d90ff1cc1afd4"
+    sha256 cellar: :any, arm64_sequoia:     "8dae1b8049366d5fceebaf50e88eee6e5985cbe4b108f7deef41c58205c07739"
+    sha256 cellar: :any, arm64_linux:       "428413f0043aa1fe77818b41b9812c9bcdf70aab611adabdd18071cad8520c68"
+    sha256 cellar: :any, x86_64_linux:      "19195164710329b704c739c283b1d46194b3de06c87a0a69820543f0fdcf05e6"
   end
 
   # `pkgconf` and `rust` are for bcrypt
@@ -23,7 +24,7 @@ class Sail < Formula
   depends_on "cryptography" => :no_linkage
   depends_on "libsodium" # for pynacl
   depends_on "libyaml"
-  depends_on "python@3.14"
+  depends_on "python@3.15"
 
   pypi_packages exclude_packages: %w[certifi cryptography]
 
@@ -60,8 +61,8 @@ class Sail < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/53/e4/34efcb869715cf299e47d1ac7b2624d2bcb6f2d3dffc2f0abe8417f65ab2/filelock-4.0.12.tar.gz"
-    sha256 "cf42711a7ac791818b299fab0332a088c65aeeefa36290de98db92c434303b0c"
+    url "https://files.pythonhosted.org/packages/35/c8/1d457d9150ff948f2ce6ada7715e0eeebbe5d3b58a45271a1e222474bcd3/filelock-4.1.1.tar.gz"
+    sha256 "7ba0927482c5a814b0a7f391d029ccdb8010f576f0a74c0dcde1811e8bc4c1b6"
   end
 
   resource "idna" do

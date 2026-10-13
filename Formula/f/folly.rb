@@ -1,30 +1,18 @@
 class Folly < Formula
   desc "Collection of reusable C++ library artifacts developed at Facebook"
   homepage "https://github.com/facebook/folly"
+  url "https://ghfast.top/https://github.com/facebook/folly/archive/refs/tags/v2026.10.12.00.tar.gz"
+  sha256 "95108eb46030a249326343a468c543bc0d1e5599a4f37e31f241501877fc0c8c"
   license "Apache-2.0"
-  revision 1
   compatibility_version 1
   head "https://github.com/facebook/folly.git", branch: "main"
 
-  stable do
-    url "https://ghfast.top/https://github.com/facebook/folly/archive/refs/tags/v2026.10.05.00.tar.gz"
-    sha256 "403a1180bb6ade75182c8609929463cbb14bfe63696e39ab86bd691446fe76ec"
-
-    # Apply open PR to support OpenSSL 4
-    patch do
-      url "https://github.com/facebook/folly/commit/e3330eaa1edef120fe13911fa259152c8b1f8734.patch?full_index=1"
-      sha256 "d85da885a98a12d73e6c970aa62f18ad8db8a1653bfd0eee722f3aee2de1c4e2"
-      type :unofficial
-      resolves "https://github.com/facebook/folly/pull/2706"
-    end
-  end
-
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "dcf618295c85ada758e841e86ba82139386820bbcc4d1bb42368c55b20b283a5"
-    sha256 cellar: :any, arm64_tahoe:       "da891e47c4887b54886c512cbcaafb984f58b0e907a4c6afe8aa34cb5124d8f3"
-    sha256 cellar: :any, arm64_sequoia:     "c548152b7f7114bda4ce5496858769bc79152992151e02fe3b6cf372b5a8256a"
-    sha256 cellar: :any, arm64_linux:       "2f3ba187209c93b42e56122f0e39ab7a9a3c0f707f7caff990f751de7b49508b"
-    sha256 cellar: :any, x86_64_linux:      "49c717ba90a1a1877b2b7c8e7d8210f9681ce1b53d33a39ab6c1da3a44eaffe4"
+    sha256 cellar: :any, arm64_golden_gate: "68178d1f6d0efd228aea97014d3c3a2abf0ece8582decba379108f9950de41f6"
+    sha256 cellar: :any, arm64_tahoe:       "45aaaf4eb65c63240a8b10a440d94f8bd356feef075547945b3f104440088613"
+    sha256 cellar: :any, arm64_sequoia:     "be91f7693006bee3ac649e594aefdb5a9dfabc9cdd1bb3fba30b8d8cc3b43dd0"
+    sha256 cellar: :any, arm64_linux:       "4a07099e9c72c480237e656e045c989bd935a5379f4f6a1632d77277cd6f4010"
+    sha256 cellar: :any, x86_64_linux:      "a3f523536b4ba3165a835f563fb02e47079460a9ba2f2615a569e35a932ceb68"
   end
 
   depends_on "cmake" => :build

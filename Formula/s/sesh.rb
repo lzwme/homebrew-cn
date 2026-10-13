@@ -1,17 +1,17 @@
 class Sesh < Formula
   desc "Smart session manager for the terminal"
   homepage "https://github.com/joshmedeski/sesh"
-  url "https://ghfast.top/https://github.com/joshmedeski/sesh/archive/refs/tags/v2.32.0.tar.gz"
-  sha256 "0d4f7dbd1889b5862fae56941595f902dcfe03d66d6b07fe6bd4959bee5a7ce5"
+  url "https://ghfast.top/https://github.com/joshmedeski/sesh/archive/refs/tags/v2.33.0.tar.gz"
+  sha256 "43110dcc20b91996a12dab3424f7685c029d6700d99bc497b889dac355c72dbb"
   license "MIT"
   head "https://github.com/joshmedeski/sesh.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "6f7f2288d369b1e4b35dab54b701334b458fc531845dbad865b35c86c03f76a2"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "6f7f2288d369b1e4b35dab54b701334b458fc531845dbad865b35c86c03f76a2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "6f7f2288d369b1e4b35dab54b701334b458fc531845dbad865b35c86c03f76a2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "17aeabfa9b20366ec0f6787deb955a1437e90da1950cddaf8bf55dd62371de68"
-    sha256 cellar: :any,                 x86_64_linux:      "06d6b0cd536b09518ee7b9ea4bc0237f9a7aa808ee05cfe5df8f3d4f22a7f4fe"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "abaa8dcb5a27baebca7a336171fa2b976206e7c07724d1b8387ef8e1b24cba60"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "abaa8dcb5a27baebca7a336171fa2b976206e7c07724d1b8387ef8e1b24cba60"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "abaa8dcb5a27baebca7a336171fa2b976206e7c07724d1b8387ef8e1b24cba60"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "6b042c6c917b5b4e28efad77963f1dc377a10446e7135debbc491098ac47a3b7"
+    sha256 cellar: :any,                 x86_64_linux:      "664573abbcd6509a7803e28dbc77f5b06a481c58891ce68e08a066c04b30c255"
   end
 
   depends_on "go" => :build

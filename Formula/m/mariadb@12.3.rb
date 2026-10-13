@@ -4,6 +4,7 @@ class MariadbAT123 < Formula
   url "https://archive.mariadb.org/mariadb-12.3.3/source/mariadb-12.3.3.tar.gz"
   sha256 "e99d739fd4a55f9a11dea7bd2287a262673e287550af3071c8469dd2bec0c163"
   license "GPL-2.0-only"
+  revision 1
 
   livecheck do
     url "https://downloads.mariadb.org/rest-api/mariadb/all-releases/?olderReleases=false"
@@ -18,11 +19,11 @@ class MariadbAT123 < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "39619b7883e117921f9212d22be6a081e18ad131337589bd81f41480a397b06c"
-    sha256 arm64_tahoe:       "6918546ff109fd80df13ae4955787920c61c13d8b1413fa03741c727dd8965f0"
-    sha256 arm64_sequoia:     "0e271cc0bb85baf89350847218e526d73c854618ebc25565c4ed7571f1cde756"
-    sha256 arm64_linux:       "ba33f97e6295694e853d3bfc67bfd60caeec7bbf415a7e3bdb4997b5e7a6c043"
-    sha256 x86_64_linux:      "78440e316ef838206c7b2ac7c4b2d16f4c3fe7c06fdd36f2d792b5276b2179f6"
+    sha256 arm64_golden_gate: "6c25ed808b4270ee2dc80093895c3ffc71bc92e591c78aa1fe3ccf37cc10f74f"
+    sha256 arm64_tahoe:       "dbe5e0c684ae4be33cfd38a3390d4da278ed986e9b24a08651e6d7e93dd4f480"
+    sha256 arm64_sequoia:     "f537386d9428d879192442ca5c465221b89e05fa8b3be0a42fcb829137f4dd4b"
+    sha256 arm64_linux:       "6e36af7b8cb26155c6febd2832b870bfffb7d19bc1f425b31f30b3e6dfa44222"
+    sha256 x86_64_linux:      "7fc5fe5f8bb74f6b0d64c041457dabaeb2d07b26296cd0469bbbc27d55b83abc"
   end
 
   keg_only :versioned_formula
@@ -37,7 +38,7 @@ class MariadbAT123 < Formula
   depends_on "groonga"
   depends_on "lz4"
   depends_on "lzo"
-  depends_on "openssl@3"
+  depends_on "openssl@4"
   depends_on "pcre2"
   depends_on "xz"
   depends_on "zstd"
@@ -57,6 +58,18 @@ class MariadbAT123 < Formula
     depends_on "linux-pam"
     depends_on "zlib-ng-compat"
   end
+
+  # Apply open PR to fix issue when using OpenSSL 4. This has been applied by
+  # Debian Forky / Ubuntu Stonking since Aug/Sep 2026. MariaDB may end up merging
+  # https://github.com/MariaDB/server/pull/5652 instead but it doesn't cleanly apply.
+  patch do
+    url "https://github.com/MariaDB/server/commit/5ca4ab639ad5f99d74f794b54ba1b4d6182ec2a9.patch?full_index=1"
+    sha256 "a0cc83631f63368457f8880626a18bb791409dfe02a672989b94b205c2cefaef"
+    type :unofficial
+    resolves "https://github.com/MariaDB/server/pull/5029"
+  end
+
+  allow_network_access! :test
 
   def install
     ENV.runtime_cpu_detection

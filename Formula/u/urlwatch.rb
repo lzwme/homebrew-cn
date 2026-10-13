@@ -9,16 +9,17 @@ class Urlwatch < Formula
   revision 10
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "257d97276efe7b471eb1fd12cf088748db460d7db99801d8b09e88c032896b5b"
-    sha256 cellar: :any, arm64_tahoe:       "273ab245776803857496a9266b3c24debe60d28979180f22c540b8b00927270e"
-    sha256 cellar: :any, arm64_sequoia:     "f63fa849de1a8f3bfbd0eec462a2847a763d2f91cda26609aa3c71bab3e03665"
-    sha256 cellar: :any, arm64_linux:       "cd4200fc7af79d7b1e349033918db61b15bcf33e17e5f7fa262ad624eb3cd93e"
-    sha256 cellar: :any, x86_64_linux:      "7fcdfaeb46dc5b37548aeaeb5e55956a62b74f49057abbdf617cc05b180528a3"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "f9889a3885bbf9f8b9234283893c8164bc0ff58dcb942ae8406078d2c2a2c8f6"
+    sha256 cellar: :any, arm64_tahoe:       "b0e5e22c4423559f7b2db5e2a49dbf436ae75d98097fffedf81895e4253fed59"
+    sha256 cellar: :any, arm64_sequoia:     "50b228b2ea421cc84ae4b8127f973b4b4a6d226f6acdb6284dff5f56217d2daa"
+    sha256 cellar: :any, arm64_linux:       "83a6a3a110988b1a9ce64e9032396a6a0b3b372ccd97616ee8e736d6a73fd061"
+    sha256 cellar: :any, x86_64_linux:      "b2501e30af53c68c0a1f020ac9a1a31251ec02d24815af3c2e2271abb8bbdfab"
   end
 
   depends_on "certifi"
   depends_on "libyaml"
-  depends_on "python@3.14"
+  depends_on "python@3.15"
 
   uses_from_macos "libxml2", since: :ventura
   uses_from_macos "libxslt"
@@ -36,8 +37,8 @@ class Urlwatch < Formula
   end
 
   resource "cssselect" do
-    url "https://files.pythonhosted.org/packages/8e/5a/6d6fcf922709391fac986f0a03ad4546f4f45b94d10aeb6c1ee041599993/cssselect-1.5.0.tar.gz"
-    sha256 "3cbe82dd7acbee9ba9e5723b5f9e4749826912f1fb31cd7f92aabed5fde15b15"
+    url "https://files.pythonhosted.org/packages/c8/8b/dc32df939ab541fca6ee8964d26aa231dbe231cdc2b2713228161441ba9c/cssselect-1.6.0.tar.gz"
+    sha256 "8c83a7139e97b93aa5ebdc0f46e785f7056a08a8bf201e597a6a2629d7eb11db"
   end
 
   resource "idna" do
@@ -86,8 +87,8 @@ class Urlwatch < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/17/c8/721b3855fe457da514fe249247d404b9b39c5d16532278f70ebaa6acf18b/platformdirs-4.12.2.tar.gz"
-    sha256 "eab5f70271a490ef74618bb314fbb86e3c7e82fa3b9c922c2ea0e0a1a155d329"
+    url "https://files.pythonhosted.org/packages/80/a8/66d45abadff219e36e2a824181b8f6a67e7ed4572934d6252c71c29d5731/platformdirs-4.13.0.tar.gz"
+    sha256 "1aa0b0d3f224c1f07c295121e312a5a24a180d6ae5a8425ea1784b3e3863e9c0"
   end
 
   resource "pyyaml" do

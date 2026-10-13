@@ -13,12 +13,12 @@ class AwscliAT1 < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_golden_gate: "bbb5c7e1d0432db8998bd0be4bd43716c3bf0a0d576f013b06eb466860bba989"
-    sha256 cellar: :any, arm64_tahoe:       "2dc27fa5a4e3e830aeb719500fea15f017ff87d71d8b23a0b12d24e1ce83b086"
-    sha256 cellar: :any, arm64_sequoia:     "a2424b2fbd69658dac9bdbd18931730a13ee2e491f47aa3427a3ea60110bb880"
-    sha256 cellar: :any, arm64_linux:       "31252201294a3e02affb850045719fc3219071073a049abb5522c988fdc4701c"
-    sha256 cellar: :any, x86_64_linux:      "4485dca6b0d2e331047992b4ad86b50c240160f0c55bf77c526b1bdcf0575049"
+    rebuild 2
+    sha256 cellar: :any, arm64_golden_gate: "7a35ba6643440cda5057227270cfe9ebad4fa3b9abd5748fa5fa4596be2f4728"
+    sha256 cellar: :any, arm64_tahoe:       "553793b4a27673b7917c21b27e6336145d0d229b0b3e375ce523f6b99c59df2f"
+    sha256 cellar: :any, arm64_sequoia:     "0ef28df1b73d7e87ed5348abc07164e673f6ab33e0784b60291cbe9e41e07758"
+    sha256 cellar: :any, arm64_linux:       "9078c6a46bfa4df369aa8e46585e99d3b9832e79948e3decdc4423b46e6398d6"
+    sha256 cellar: :any, x86_64_linux:      "71fcf97490bebf10e24eece539cf5a854c2d023247eda31a6eb32f5359b18953"
   end
 
   keg_only :versioned_formula
@@ -28,7 +28,7 @@ class AwscliAT1 < Formula
   disable! date: "2027-07-15", because: :deprecated_upstream, replacement_formula: "awscli"
 
   depends_on "libyaml"
-  depends_on "python@3.14"
+  depends_on "python@3.15"
 
   uses_from_macos "mandoc"
 

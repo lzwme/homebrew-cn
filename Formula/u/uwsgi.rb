@@ -8,18 +8,19 @@ class Uwsgi < Formula
   head "https://github.com/unbit/uwsgi.git", branch: "master"
 
   bottle do
-    sha256 arm64_golden_gate: "a29b126a753820f4a6e3cf50aaa11873e82bfc1de65baf5925fd2d3d71abc42f"
-    sha256 arm64_tahoe:       "80d5489fdf10ae70b91c04ef719b2768b6a4d59bc4ae161b7983427ad80f1bab"
-    sha256 arm64_sequoia:     "63cef171e2ca558fd9af19a285589466a5302c6a6167003476518d42e5a08016"
-    sha256 arm64_linux:       "410033733e9b8fe6a1491513004ff318202f5921fecb3cb1b6938fc847711935"
-    sha256 x86_64_linux:      "68aec48b4b6c6cde543388e38acc9a58bab419a96a54f5b3c5584f9968c9ad40"
+    rebuild 1
+    sha256 arm64_golden_gate: "c3c4882b13f589ddd83b30b7a0669f3eeb865d8d97b57709244491a1c5539584"
+    sha256 arm64_tahoe:       "13c8016763b564bb5eb29276015851074a7324f85d39ebe01d3e663b3bf111fe"
+    sha256 arm64_sequoia:     "2c982164edbba34380742406043c0852215d0baf6e118e2f1620615c59fd554f"
+    sha256 arm64_linux:       "6311f021ab5137ce0f7a609899bce8a36c15b6dc18abd51b0189e247ede125b5"
+    sha256 x86_64_linux:      "0ac025b3af5d75ac1e3147ebbd95299e2d5dc395e83a14fe8c7237285de8a52a"
   end
 
   depends_on "pkgconf" => :build
   depends_on "jansson"
   depends_on "openssl@4"
   depends_on "pcre2"
-  depends_on "python@3.14"
+  depends_on "python@3.15"
   depends_on "sqlite"
 
   uses_from_macos "curl"

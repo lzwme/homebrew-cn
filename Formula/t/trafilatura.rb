@@ -8,15 +8,16 @@ class Trafilatura < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "64dde68a9163505a85c188135687deef01bbbfdc0be1a190d07ae717e66aeedd"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "1452e7b488b8058b3811f51787db13761d895e119197ff06d6df78b12d3bf8c6"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "50e7c2204173d2be1e2e65c7332208da1a2e34551d7e46ed7ae8b9dd60e1d0bf"
-    sha256 cellar: :any,                 arm64_linux:       "6089ba1bcc0077316f97617e71c73710b629c30a06d7d0fcd01c78e0c13996cb"
-    sha256 cellar: :any,                 x86_64_linux:      "38dae0d5739d1506f91b617527e5380a269ab053ae41d636a2563318da2bd619"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "77a6011c5f679152a505a87bad6de8f592222b997bcc8030e69d03a64a183506"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "02384a585e5bc23d663504df1739f03376e310bea431e976239f8771f4c0c0b9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "dd665903a089e5ff141399c2bd81e083bb98301af976a8d7ec6e9263324e8750"
+    sha256 cellar: :any,                 arm64_linux:       "49fc8b15450adf1e5e9d12e043604fe41a7a7e678a10a8129456d8568fa9edd2"
+    sha256 cellar: :any,                 x86_64_linux:      "3416f7f73e499e63d1bd227f02b36a06b396f40ca3cca6d782697ad8ec3a29fb"
   end
 
   depends_on "certifi"
-  depends_on "python@3.14"
+  depends_on "python@3.15"
 
   uses_from_macos "libxml2", since: :ventura
   uses_from_macos "libxslt"

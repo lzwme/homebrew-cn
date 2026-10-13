@@ -9,15 +9,16 @@ class Jupytext < Formula
   head "https://github.com/mwouts/jupytext.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "6ba0a1c6c6f797f14d746ef8de790a98f82ddac22e8c819ef834f94fb0e93169"
-    sha256 cellar: :any, arm64_tahoe:       "cde528ccd886e16a0b26086131653a86ec8a7a546ce8f3939c7d69ff4688d864"
-    sha256 cellar: :any, arm64_sequoia:     "6c35e0934539e99b3ce559046826d6c2d44317adc54f87a4124f77ab8e345b13"
-    sha256 cellar: :any, arm64_linux:       "da93e7eb6a9d45ee2f92efa39d24a8604f1b66aa1edf2c02068b8b69afbaae20"
-    sha256 cellar: :any, x86_64_linux:      "fe7edaddd44063829849ef6c98ee3960a10497f07c0ec4a4828b6eb060f09f29"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "8173d8e6921ebc4d39621689913527509d98ec7ba18492776ef4be1510fc6fe7"
+    sha256 cellar: :any, arm64_tahoe:       "4c0b6cd9248b894678e3c07c7d224be9fce1b627f1a637857aa4d14aaa43ff1d"
+    sha256 cellar: :any, arm64_sequoia:     "52cb6e8cb8d08f7aad40fa9d312f3d40e7474b5640cb4146e55d87e17d337859"
+    sha256 cellar: :any, arm64_linux:       "6ac4d12d82795fa8af521d21a838e1a64927a66eacdb5d813eaba7376ecf44af"
+    sha256 cellar: :any, x86_64_linux:      "5e617572426bf56747f196f76f9fa99f9f9044e88a8cab06daad8df37a708d0a"
   end
 
   depends_on "libyaml"
-  depends_on "python@3.14"
+  depends_on "python@3.15"
   depends_on "rpds-py" => :no_linkage
 
   pypi_packages exclude_packages: "rpds-py"
@@ -73,8 +74,8 @@ class Jupytext < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/42/23/4a86fc741c38c5b69792a4ef954b281afa69bea9f083f881de1b0d23bc07/platformdirs-4.12.3.tar.gz"
-    sha256 "427fc0bb321ae0c5b037fa03238ca74820437be162e78b4848c4d4055b9b766c"
+    url "https://files.pythonhosted.org/packages/80/a8/66d45abadff219e36e2a824181b8f6a67e7ed4572934d6252c71c29d5731/platformdirs-4.13.0.tar.gz"
+    sha256 "1aa0b0d3f224c1f07c295121e312a5a24a180d6ae5a8425ea1784b3e3863e9c0"
   end
 
   resource "pyyaml" do
