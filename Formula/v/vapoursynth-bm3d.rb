@@ -4,21 +4,22 @@ class VapoursynthBm3d < Formula
   url "https://files.pythonhosted.org/packages/5b/16/6f1d0e05ceff921106281db6866d45e1b7eb284f078886e463ca9a1e6566/vapoursynth_bm3d-11.0.tar.gz"
   sha256 "a1d02dd4bf7e2b5bfaa2b3c6744e5093b225e8562a39d183a6ba239554cd876c"
   license "MIT"
+  revision 1
   head "https://github.com/HomeOfVapourSynthEvolution/VapourSynth-BM3D.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "a5e60dde90038691650f7c53f381df99785318179f20b23ac8ba7db293ef0298"
-    sha256 cellar: :any, arm64_tahoe:       "d3b873d6c2906cbeeef57a6841800d0246b13ce44a1788a31bac833bf003aee9"
-    sha256 cellar: :any, arm64_sequoia:     "f517d09ad1bd774e0b90c25b363412b2de491ad3fcedf2d701f443c9a0284e5f"
-    sha256 cellar: :any, arm64_linux:       "63c157268ec452547c8b08d73d6e658880b8df2799260a2647dae401a3ff2cf3"
-    sha256 cellar: :any, x86_64_linux:      "f51c018381b52974e446e5a7b2713a7b4580c50045be062abf1c713e51a803c5"
+    sha256 cellar: :any, arm64_golden_gate: "a4568f68ca8028edd94f823ce6fc149deaecc07d5525e59a820e2e0559a24b19"
+    sha256 cellar: :any, arm64_tahoe:       "faee395d92887023f61a9f96cd847fcd26d30944f2d45422773e6e51dd06cd9d"
+    sha256 cellar: :any, arm64_sequoia:     "8e9ca5540ef744fc1fc3270584e999400f87787f1a2caf5dc60ed104cc9a9938"
+    sha256 cellar: :any, arm64_linux:       "c871181495a457b365302de4ceb4e38b693052790a6313a8a9e9e837f794572e"
+    sha256 cellar: :any, x86_64_linux:      "9e31dd2395507d12c6cfa185f52fc066a034b5991dece3f2e84edab649ab2860"
   end
 
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkgconf" => :build
   depends_on "fftw"
-  depends_on "python@3.14"
+  depends_on "python@3.15"
   depends_on "vapoursynth"
 
   deny_network_access!

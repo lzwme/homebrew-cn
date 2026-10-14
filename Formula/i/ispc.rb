@@ -1,10 +1,9 @@
 class Ispc < Formula
   desc "Compiler for SIMD programming on the CPU"
   homepage "https://ispc.github.io"
-  url "https://ghfast.top/https://github.com/ispc/ispc/archive/refs/tags/v1.31.0.tar.gz"
-  sha256 "671c79bdff2d97aead3897da1a6b67a163af8c4e329350d07cf3e63d592955ff"
+  url "https://ghfast.top/https://github.com/ispc/ispc/archive/refs/tags/v1.32.0.tar.gz"
+  sha256 "705b818062602a0c6b62965a8aa011508ef7f9decce716cf1645f2b04ba1e9f8"
   license "BSD-3-Clause"
-  revision 1
 
   # Upstream sometimes creates releases that use a stable tag (e.g., `v1.2.3`)
   # but are labeled as "pre-release" on GitHub, so it's necessary to use the
@@ -15,12 +14,11 @@ class Ispc < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_golden_gate: "71f5effcb42ca591e78651baf434f4ef46d2b725867e9ad266be4758337ca8ec"
-    sha256 cellar: :any, arm64_tahoe:       "318e4fbcc3ad01b2853b84b735cb03a32584ad632ddd823ad98bf36ecc4902c1"
-    sha256 cellar: :any, arm64_sequoia:     "3be3e6b2c8bd96adb633b50aadd491670afb0755398faad3441ade6c2e64923a"
-    sha256 cellar: :any, arm64_linux:       "5fe01ed96b41f24bd2fa0204dad4a102d7b3a49e5ee52dd89d75cffd11694163"
-    sha256 cellar: :any, x86_64_linux:      "e958ae79abb08ded50ebd89a39797a42987169e0188d4ffd4d65b1bbc93ed57d"
+    sha256 cellar: :any, arm64_golden_gate: "58a32becf7ec6476e04c77a74ed8b7a3b1ec16956bc7862b5212c7670663a643"
+    sha256 cellar: :any, arm64_tahoe:       "82bec983967c0d8fd9ac4390227cd1c1aa278d7127cdda7b766bf4ed51c22987"
+    sha256 cellar: :any, arm64_sequoia:     "2fe0d82015851d5cdab69354091881fa7a1ef4d6f408763302da78517445f292"
+    sha256 cellar: :any, arm64_linux:       "bc73fa3d46eacdd1658353e6dcf01ab6ba2455f9343c447bddd4234cb1c4a588"
+    sha256 cellar: :any, x86_64_linux:      "b94b7178f6ceaea3c6e7f142c06e33cb08628da63e5abc230d352b6fc8632403"
   end
 
   depends_on "bison" => :build
@@ -32,18 +30,6 @@ class Ispc < Formula
 
   on_linux do
     depends_on "tbb"
-  end
-
-  # Backport LLVM 24 devel support which allows building with LLVM 23.1.x stable release
-  patch do
-    url "https://github.com/ispc/ispc/commit/32217788b98b6e8d532799d7b10792fb7c1c732c.patch?full_index=1"
-    sha256 "896666bba85daa114276eeae95701ff7a9190dae27927fc225b17dc57eec0532"
-    type :backport
-  end
-  patch do
-    url "https://github.com/ispc/ispc/commit/bc5136ff9a5f5acb52fede66333a1e4879328fc1.patch?full_index=1"
-    sha256 "e5e13f1937190d3996ffcfb66b5eae0df28d7866cc9945f52ec1b7c0cfabfe4e"
-    type :backport
   end
 
   deny_network_access!

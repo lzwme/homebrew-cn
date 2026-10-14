@@ -1,10 +1,10 @@
 class Qtserialbus < Formula
   desc "Provides access to serial industrial bus interfaces"
   homepage "https://www.qt.io/"
-  url "https://download.qt.io/official_releases/qt/6.11/6.11.2/submodules/qtserialbus-everywhere-src-6.11.2.tar.xz"
-  mirror "https://qt.mirror.constant.com/archive/qt/6.11/6.11.2/submodules/qtserialbus-everywhere-src-6.11.2.tar.xz"
-  mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.11/6.11.2/submodules/qtserialbus-everywhere-src-6.11.2.tar.xz"
-  sha256 "8f06c9ba95f6b045ec43f011094e35a4116047310aa24280966541b720df36c1"
+  url "https://download.qt.io/official_releases/qt/6.12/6.12.0/submodules/qtserialbus-everywhere-src-6.12.0.tar.xz"
+  mirror "https://qt.mirror.constant.com/archive/qt/6.12/6.12.0/submodules/qtserialbus-everywhere-src-6.12.0.tar.xz"
+  mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.12/6.12.0/submodules/qtserialbus-everywhere-src-6.12.0.tar.xz"
+  sha256 "1099cc24aff9d20c5ba7897c0b617c318098f009edf92f4e6ca97c815f5bdf38"
   license all_of: [
     { any_of: ["LGPL-3.0-only", "GPL-2.0-only", "GPL-3.0-only"] },
     { "GPL-3.0-only" => { with: "Qt-GPL-exception-1.0" } }, # canbusutil
@@ -18,12 +18,11 @@ class Qtserialbus < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "a0aed066bb8ed5abde84864fb151bacab440351a301490beee7d600ef5762f5f"
-    sha256 cellar: :any, arm64_tahoe:       "8b4b84cb66fb8983650e508fa19102ad529b980ec3bc277d230488788ab8e8a3"
-    sha256 cellar: :any, arm64_sequoia:     "bb5e795db2d2f4a5e610b79b5a2adc30332a1cb7a4da886c5d40c8a555a01159"
-    sha256 cellar: :any, arm64_sonoma:      "ae3efabc11f9fc5997ecee32cb1a27c2f027988d3e0cc1354a79863d169ad22c"
-    sha256 cellar: :any, arm64_linux:       "af0045f4766726b9283ff5f6cbd71332049a8b805a29e64d572a8625aba07cfc"
-    sha256 cellar: :any, x86_64_linux:      "e6fc900bdc2b8d4f5825daef66d43a7d6431e15fcf6ad440b7502faeee3567f2"
+    sha256 cellar: :any, arm64_golden_gate: "94adf81ca8080144033e3ded1c6dc331b5d7cac89484fd7a2b08d2e295949549"
+    sha256 cellar: :any, arm64_tahoe:       "c950941d4803c25d6be0e89218c004b679df1e7501da6d1d7106f5fc1ac4ebbe"
+    sha256 cellar: :any, arm64_sequoia:     "e38844c585d282e5878660e22c4af16a94562517ddf3d31510e1e6d94cc1cbd7"
+    sha256 cellar: :any, arm64_linux:       "84a99963b4ff8277f16ee4c9be181443fe23f116100bbea6df829cfd79cd998a"
+    sha256 cellar: :any, x86_64_linux:      "5634496809b94cf5b4ea72b79e4e0341e11ed8568c1d353595b2e8525e4d9e04"
   end
 
   depends_on "cmake" => [:build, :test]

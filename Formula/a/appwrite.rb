@@ -15,6 +15,13 @@ class Appwrite < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    # `go mod tidy` needs module metadata beyond what `go mod download` fetches
+    system "go", "mod", "tidy"
+  end
+
   def install
     # https://github.com/appwrite/sdk-for-cli/blob/4399a3321898f40cf982acbd4859d506c9d4d9f4/.goreleaser.yaml#L19-L22
     system "go", "mod", "tidy"

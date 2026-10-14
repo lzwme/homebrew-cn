@@ -21,6 +21,13 @@ class Mmctl < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "make", "-C", "server", "setup-go-work"
+    system "go", "mod", "download", "-C", "server"
+  end
+
   def install
     # remove non open source files
     rm_r("server/enterprise")

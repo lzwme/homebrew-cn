@@ -1,29 +1,28 @@
-class OpensslAT35 < Formula
+class OpensslAT36 < Formula
   desc "Cryptography and SSL/TLS Toolkit"
   homepage "https://openssl-library.org"
-  url "https://ghfast.top/https://github.com/openssl/openssl/releases/download/openssl-3.5.9/openssl-3.5.9.tar.gz"
-  sha256 "603f5602e2eef00d77fbd429d34dcd5822bb301757a1bc9cdb24c670f1eb859a"
+  url "https://ghfast.top/https://github.com/openssl/openssl/releases/download/openssl-3.6.5/openssl-3.6.5.tar.gz"
+  sha256 "a2157c2830efdec3788939b00c9b0638306d3f0bbb76dc4832ee503bb397df98"
   license "Apache-2.0"
 
   livecheck do
     url "https://openssl-library.org/source/"
-    regex(/href=.*?openssl[._-]v?(3\.5(?:\.\d+)+)\.t/i)
+    regex(/href=.*?openssl[._-]v?(3\.6(?:\.\d+)+)\.t/i)
   end
 
   bottle do
-    sha256 arm64_golden_gate: "f3b85e60518f62352127f940b8f5c575643edb5bca6343fbb850fa3b4d97502e"
-    sha256 arm64_tahoe:       "4c8961697f6b84c98203770441447a3751afe833c875d213976d47b74c11169a"
-    sha256 arm64_sequoia:     "4e4ab22f0a3ccd43e156fa824e4db53fa78850868179c81486dfe31c999f6b55"
-    sha256 arm64_linux:       "8f3815e63f9593c3dcac0c8f1d9ec588aa40ef3a197c9647b98aab7f19dfcd55"
-    sha256 x86_64_linux:      "104749ec292891f3dd7ecadfa49db0f61497067774e8af8eb7bcbbd143165198"
+    sha256 arm64_golden_gate: "9b26d88fbeef0006bea7ff1dce2cd18b77924d199607135092dbb6af1bf4df80"
+    sha256 arm64_tahoe:       "af714c3eca585a0a9b2ab707a9cc9d54966ed34d6db09eefca0e1ffe4bfd092e"
+    sha256 arm64_sequoia:     "815c8d6a5ebdf26cab2d7f5f7a7e5a1ec5916f34cc9afe29ebf04aa7c7c97053"
+    sha256 arm64_linux:       "74b8e7df20d8069b957e9754d0affb207be9e56924b40734e32e60ce68284318"
+    sha256 x86_64_linux:      "cd4ad11e241dbb2b9c38964e97b3c8321366f5e59358bdc8d5523a99c3ad9c87"
   end
 
   keg_only :versioned_formula
 
-  # https://openssl-library.org/post/2026-09-16-eol30/
-  # OpenSSL 3.5 is a LTS version
-  deprecate! date: "2030-04-08", because: :unmaintained
-  disable! date: "2031-04-08", because: :unmaintained
+  # https://openssl-library.org/roadmap/index.html#:~:text=08%20Apr%202030-,3.6,-Non%2DLTS
+  deprecate! date: "2026-11-01", because: :unmaintained
+  disable! date: "2027-11-01", because: :unmaintained
 
   depends_on "ca-certificates" => :no_linkage
 
@@ -65,6 +64,9 @@ class OpensslAT35 < Formula
     args
   end
 
+  # Tests require network access
+  allow_network_access! :build
+
   def install
     if OS.linux?
       ENV.prepend_create_path "PERL5LIB", buildpath/"lib/perl5"
@@ -78,9 +80,6 @@ class OpensslAT35 < Formula
         end
       end
     end
-
-    # This could interfere with how we expect OpenSSL to build.
-    ENV.delete("OPENSSL_LOCAL_CONFIG_DIR")
 
     # This ensures where Homebrew's Perl is needed the Cellar path isn't
     # hardcoded into OpenSSL's scripts, causing them to break every Perl update.
@@ -102,7 +101,9 @@ class OpensslAT35 < Formula
     system "make", "install", "MANDIR=#{man}", "MANSUFFIX=ssl"
     # AF_ALG support isn't always enabled (e.g. some containers), which breaks the tests.
     # AF_ALG is a kernel feature and failures are unlikely to be issues with the formula.
-    system "make", "HARNESS_JOBS=#{ENV.make_jobs}", "test", "TESTS=-test_afalg"
+    # `test_quick_tserver` intermittently fails on CI.
+    # It has been reported upstream with no resolution in over a year, so we skip it.
+    system "make", "HARNESS_JOBS=#{ENV.make_jobs}", "test", "TESTS=-test_afalg -test_quic_tserver" if build.bottle?
 
     # Prevent `brew` from pruning the `certs` and `private` directories.
     touch %w[certs private].map { |subdir| openssldir/subdir/".keepme" }

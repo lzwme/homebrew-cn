@@ -20,6 +20,12 @@ class Filebeat < Formula
   depends_on "go" => :build
   depends_on "mage" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ENV["CGO_ENABLED"] = "1" if OS.linux? && Hardware::CPU.arm?
 

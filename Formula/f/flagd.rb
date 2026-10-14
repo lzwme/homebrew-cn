@@ -27,15 +27,22 @@ class Flagd < Formula
 
   depends_on "go" => :build
 
-  def install
+  # `test do` block runs a local flagd server with flags from a remote URL
+  allow_network_access! :test
+
+  def fetch
     ENV["GOPRIVATE"] = "buf.build/gen/go"
+    system "make", "workspace-init"
+    system "go", "mod", "download"
+  end
+
+  def install
     ldflags = %W[
       -X main.version=#{version}
       -X main.commit=#{Utils.git_head}
       -X main.date=#{time.iso8601}
     ]
 
-    system "make", "workspace-init"
     system "go", "build", *std_go_args(ldflags:), "./flagd/main.go"
     generate_completions_from_executable(bin/"flagd", shell_parameter_format: :cobra)
   end

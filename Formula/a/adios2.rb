@@ -4,7 +4,7 @@ class Adios2 < Formula
   url "https://ghfast.top/https://github.com/ornladios/ADIOS2/archive/refs/tags/v2.12.1.tar.gz"
   sha256 "71edd8f721448311852122fca8d83ae497b43846e5bfcdfd275dc06bb7f3d0c5"
   license "Apache-2.0"
-  revision 1
+  revision 2
   head "https://github.com/ornladios/ADIOS2.git", branch: "master"
 
   livecheck do
@@ -13,11 +13,11 @@ class Adios2 < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "e481e2641918fd333be2d8c1f03200be99e5e8db11ecad5b0c0c7628adbf3155"
-    sha256 cellar: :any, arm64_tahoe:       "f8043b7ab8a3b45c0fe6e403f98c380dc8a78dd9f9cc9e2412de92de9064b1f1"
-    sha256 cellar: :any, arm64_sequoia:     "f7658f4b9f3a5ba14a8dc8957c0a30c89c01e9f1f39304b93a2fe8cbfb87a57f"
-    sha256 cellar: :any, arm64_linux:       "b7158912c812bfc1ae0e1d8dd40974b75759cdef73aff9e6f2274b63faacfd51"
-    sha256 cellar: :any, x86_64_linux:      "b81a85cf971df0720d3b89d4dcf868f928c6a7151e0234c1241805f71a96df0d"
+    sha256 cellar: :any, arm64_golden_gate: "88ceacce907560d13eef2864e34100b8d08b98f26766d28677731e611f7caf99"
+    sha256 cellar: :any, arm64_tahoe:       "f1cb508a9939ce64631c156eea6f3311cc4c92ecc15eda53d4f1b1592e839f30"
+    sha256 cellar: :any, arm64_sequoia:     "cb4409665a4ab4ae7fa0a591bd55145c2876fff872f6e1b0a44b9f66b74e38c3"
+    sha256 cellar: :any, arm64_linux:       "11e084f06858c647a7067aa0f29d5e9061cbbcfdd96403994143a9646bcd0395"
+    sha256 cellar: :any, x86_64_linux:      "0d8e0a6bc7bee7f941cc30707f8be8183102ff5df52a754a61d20343e3158d26"
   end
 
   depends_on "cmake" => :build
@@ -34,7 +34,7 @@ class Adios2 < Formula
   depends_on "open-mpi"
   depends_on "openssl@4"
   depends_on "pugixml"
-  depends_on "python@3.14"
+  depends_on "python@3.15"
   depends_on "sqlite"
   depends_on "yaml-cpp"
   depends_on "zeromq"

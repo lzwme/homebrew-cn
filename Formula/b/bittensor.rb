@@ -8,18 +8,19 @@ class Bittensor < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "71a594f3e1ab142712bd31c2a8fa642056be10301cca354a8b776f37bf66a32a"
-    sha256 cellar: :any, arm64_tahoe:       "4efe0f9a7133ef5cb02d81a4b39d78c976c3ae59551e86ff25fd425c9bc97c61"
-    sha256 cellar: :any, arm64_sequoia:     "3a8f73e57bdd1ccd3736993a6c7723b02c14bba8aa62d9b305cd62d7e89ff52b"
-    sha256 cellar: :any, arm64_linux:       "0235726705720f3bdd9398d8db4514fb208761624706697dc124719d074a80be"
-    sha256 cellar: :any, x86_64_linux:      "792a537a2658b131f879bd3fd810606335db28412144a611847613413682809d"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "f8cbd87bd655b6a2733e579ebb7bff016ce5435d71da9a51712eeed9c1804c66"
+    sha256 cellar: :any, arm64_tahoe:       "63b5366de84f5e5141d10159086bc5e2bc47b35bd20ab63a2ba15339f8e36aba"
+    sha256 cellar: :any, arm64_sequoia:     "e71af8e2d98b5284591be8899e9fcffcb43b347140e10ff079448328d541c2a2"
+    sha256 cellar: :any, arm64_linux:       "56a4ee8eeff4adc4d06a4c6a1013abf1ef80b396719c685953f2da28ae538907"
+    sha256 cellar: :any, x86_64_linux:      "cb29e721a14c7aa8d3008e3d2ba57cbd682ba879bc36fd5dbc7ba8e2a2ae0ef6"
   end
 
   depends_on "rust" => :build # for bittensor-core
 
   depends_on "openssl@4"
   depends_on "pydantic" => :no_linkage
-  depends_on "python@3.14"
+  depends_on "python@3.15"
 
   conflicts_with "btcli", "btpd", because: "both install `btcli` binaries"
 
@@ -163,6 +164,9 @@ class Bittensor < Formula
   def install
     ENV["OPENSSL_DIR"] = formula_opt_prefix("openssl@4")
     ENV["OPENSSL_NO_VENDOR"] = "1"
+
+    # Allow Python 3.15
+    inreplace "pyproject.toml", 'requires-python = ">=3.10,<3.15"', 'requires-python = ">=3.10,<3.16"'
 
     virtualenv_install_with_resources
 

@@ -8,12 +8,12 @@ class Posting < Formula
   license "Apache-2.0"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_golden_gate: "a6bbf05d13805da8547f47549f7aff048a6014a393afec6927025dda78e9d0da"
-    sha256 cellar: :any, arm64_tahoe:       "f6c7e0b49e59956d143aea9de32eb7926de836abafabf1014a23a621a7c038ca"
-    sha256 cellar: :any, arm64_sequoia:     "d56355e820b5259c5b913add486119f429f9daff781796072f914350f20c15b8"
-    sha256 cellar: :any, arm64_linux:       "263cb82ceb8b92df4d5539e1ac7f31839bb468802dd6043d5e891e1531bdfd04"
-    sha256 cellar: :any, x86_64_linux:      "97a66fc2f0064ba2ce7df754f10d1351a4ee839c08e6dc4684f0514b03152149"
+    rebuild 2
+    sha256 cellar: :any, arm64_golden_gate: "78b409016c226915a661e6d4b3f15603bdb99da22dd4f5ccdc8524409db0edeb"
+    sha256 cellar: :any, arm64_tahoe:       "294e93d1862bfad298dd3802ae8bbc4717afede0e0a231b94d0a6f1c9f6e91d7"
+    sha256 cellar: :any, arm64_sequoia:     "70ca1136f577e50fd1a996fcd6abc16ca5fe39cc8d6346a7643a99a43573f817"
+    sha256 cellar: :any, arm64_linux:       "ef80956a7055fbe647988bec2412485bf9e74c3d41cc5b72c664243bf773d89c"
+    sha256 cellar: :any, x86_64_linux:      "39c5a0e022dfb99c104e8c6e8c7d8ab02db581743fa005ccd77686f31958ecdd"
   end
 
   depends_on "cmake" => :build
@@ -94,8 +94,8 @@ class Posting < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/42/23/4a86fc741c38c5b69792a4ef954b281afa69bea9f083f881de1b0d23bc07/platformdirs-4.12.3.tar.gz"
-    sha256 "427fc0bb321ae0c5b037fa03238ca74820437be162e78b4848c4d4055b9b766c"
+    url "https://files.pythonhosted.org/packages/80/a8/66d45abadff219e36e2a824181b8f6a67e7ed4572934d6252c71c29d5731/platformdirs-4.13.0.tar.gz"
+    sha256 "1aa0b0d3f224c1f07c295121e312a5a24a180d6ae5a8425ea1784b3e3863e9c0"
   end
 
   resource "pydantic-settings" do

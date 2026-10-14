@@ -14,16 +14,17 @@ class Torrra < Formula
   no_autobump! because: "`update-python-resources` cannot determine dependencies"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "f74d59e3aca60f3a5e0595b0b5d12f389ea1dbe0f3ca023a136980c09ef4aff1"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "f74d59e3aca60f3a5e0595b0b5d12f389ea1dbe0f3ca023a136980c09ef4aff1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "f74d59e3aca60f3a5e0595b0b5d12f389ea1dbe0f3ca023a136980c09ef4aff1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "3f45a9aadf52ccdb6b20d7865464e1be47a544e2f1fd1aa802d88650546780cb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "3f45a9aadf52ccdb6b20d7865464e1be47a544e2f1fd1aa802d88650546780cb"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "6c4c0e428b484bdd4620d8eb088715643f86eb800ee9a29602069259a0e43fcd"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "6c4c0e428b484bdd4620d8eb088715643f86eb800ee9a29602069259a0e43fcd"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "6c4c0e428b484bdd4620d8eb088715643f86eb800ee9a29602069259a0e43fcd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "3085f27bb1e6133ae9422b2f3616660405e1d8c9dfa1eb72448004be992e1a86"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "3085f27bb1e6133ae9422b2f3616660405e1d8c9dfa1eb72448004be992e1a86"
   end
 
   depends_on "certifi" => :no_linkage
   depends_on "libtorrent-rasterbar" => :no_linkage
-  depends_on "python@3.14"
+  depends_on "python@3.15"
 
   pypi_packages exclude_packages: %w[certifi libtorrent libtorrent-windows-dll]
 
@@ -83,8 +84,8 @@ class Torrra < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/42/23/4a86fc741c38c5b69792a4ef954b281afa69bea9f083f881de1b0d23bc07/platformdirs-4.12.3.tar.gz"
-    sha256 "427fc0bb321ae0c5b037fa03238ca74820437be162e78b4848c4d4055b9b766c"
+    url "https://files.pythonhosted.org/packages/80/a8/66d45abadff219e36e2a824181b8f6a67e7ed4572934d6252c71c29d5731/platformdirs-4.13.0.tar.gz"
+    sha256 "1aa0b0d3f224c1f07c295121e312a5a24a180d6ae5a8425ea1784b3e3863e9c0"
   end
 
   resource "pygments" do

@@ -1,18 +1,17 @@
 class CargoGeiger < Formula
   desc "Detects usage of unsafe Rust in a Rust crate and its dependencies"
   homepage "https://github.com/geiger-rs/cargo-geiger"
-  url "https://ghfast.top/https://github.com/geiger-rs/cargo-geiger/archive/refs/tags/cargo-geiger-0.13.0.tar.gz"
-  sha256 "02a3999b58e45527932cc9fa60503b3197f011778dc1954909fb5fe9dd168f72"
+  url "https://ghfast.top/https://github.com/geiger-rs/cargo-geiger/archive/refs/tags/geiger-0.14.0.tar.gz"
+  sha256 "60bc6aa6e0169aa9be755188fd42f496b92cf8fb3b6c9e9c1c10be48fe2ea82c"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/geiger-rs/cargo-geiger.git", branch: "master"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any, arm64_golden_gate: "8e4e4cc67afbbf5caa621c99841bd7f0b78c4f3be582d4dc404e5dd05a0898ab"
-    sha256 cellar: :any, arm64_tahoe:       "7f23522c1c5c01537dc7f6d8c67905f5b09b95b37026abd4c9bdcf0bca85bd0d"
-    sha256 cellar: :any, arm64_sequoia:     "5696cddfec7ffea8df91898a6e88039e07736187e8a7f87f237de5e8a333c797"
-    sha256 cellar: :any, arm64_linux:       "740563e04496aac705b6ece0d5aa2ed81257b6f4bdc6fb2705fa3b3a43d807c9"
-    sha256 cellar: :any, x86_64_linux:      "0c403bb34d236369c9384118843bea1d9c843f957c6b69ae34881981e08f4060"
+    sha256 cellar: :any, arm64_golden_gate: "c2582520ce44aeaa862431604617396e65f792e3486dd0439f5754ac41c3d144"
+    sha256 cellar: :any, arm64_tahoe:       "973839796b092a60d16096c2fbce68bf73f32625bfd605e2e797186e9b6d0e73"
+    sha256 cellar: :any, arm64_sequoia:     "0739657c209ab356518f0924bcb0c5e6ab7802ba30377423c90d4ff0a5a4826d"
+    sha256 cellar: :any, arm64_linux:       "a7fa7a4e581da9ab923ee28c274dacc84d8471950c38b8ffb9c33d8e36cbd8c5"
+    sha256 cellar: :any, x86_64_linux:      "6a31427b3e30682fd030328e2f9c486df5f88629244842ddca524df784cbbdf6"
   end
 
   depends_on "pkgconf" => :build
@@ -24,12 +23,6 @@ class CargoGeiger < Formula
 
   on_linux do
     depends_on "zlib-ng-compat"
-  end
-
-  # Backport OpenSSL 4 support to the 0.13.0 release source.
-  patch do
-    file "Patches/cargo-geiger/openssl4-0.13.0.patch"
-    type :backport
   end
 
   allow_network_access! :test

@@ -15,11 +15,12 @@ class SyslogNg < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "d143f193d9e150cc2a50f4104811b030f9c42f52d887e5663f3e90ecedfda8b1"
-    sha256 arm64_tahoe:       "bc810af9557eed1064291237033e1d46e971c2028623c39e438fd7f373afafd2"
-    sha256 arm64_sequoia:     "8088270f141dc508e9533f21950e7e414de375824499fadb8d955290ddeca879"
-    sha256 arm64_linux:       "c88d42fecebf959679c133429bde5c3bf49b2e526a0ac3333f718919b3672cc5"
-    sha256 x86_64_linux:      "4cb0ca1bbc5ef2c2f246763192f12ebf12d8eb286afa39dca8d3646788556e45"
+    rebuild 1
+    sha256 arm64_golden_gate: "97f63ebddd427d47b54e0b65a505a5044d15c5c290912d63c45b68f43bb7149e"
+    sha256 arm64_tahoe:       "38e63488711f80e239bc7043d9e5ac63dd518c8d1e52a34e800a01da765cd50c"
+    sha256 arm64_sequoia:     "d661e591104c4bd1993ef34f2cb8d9408eea4108100e396dad5732cb1dd553f3"
+    sha256 arm64_linux:       "447beca43870a0d8ed4fe25bfd2c282a4d78a4d6fde603b5b898094a3cf8a8e5"
+    sha256 x86_64_linux:      "44409eff526d29d149b66cc99a72dc860b44d5b21bcfea0d89790dd12ebf8c81"
   end
 
   depends_on "pkgconf" => :build
@@ -42,7 +43,7 @@ class SyslogNg < Formula
   depends_on "openssl@4"
   depends_on "pcre2"
   depends_on "protobuf"
-  depends_on "python@3.14"
+  depends_on "python@3.15"
   depends_on "rabbitmq-c"
   depends_on "riemann-client"
 

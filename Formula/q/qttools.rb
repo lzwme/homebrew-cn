@@ -1,17 +1,16 @@
 class Qttools < Formula
   desc "Facilitate the design, development, testing and deployment of applications"
   homepage "https://www.qt.io/"
-  url "https://download.qt.io/official_releases/qt/6.11/6.11.2/submodules/qttools-everywhere-src-6.11.2.tar.xz"
-  mirror "https://qt.mirror.constant.com/archive/qt/6.11/6.11.2/submodules/qttools-everywhere-src-6.11.2.tar.xz"
-  mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.11/6.11.2/submodules/qttools-everywhere-src-6.11.2.tar.xz"
-  sha256 "9ea75af35c512f7e09e61c8c3af3997f13b4d43bb099cf43fcec470126b4041e"
+  url "https://download.qt.io/official_releases/qt/6.12/6.12.0/submodules/qttools-everywhere-src-6.12.0.tar.xz"
+  mirror "https://qt.mirror.constant.com/archive/qt/6.12/6.12.0/submodules/qttools-everywhere-src-6.12.0.tar.xz"
+  mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.12/6.12.0/submodules/qttools-everywhere-src-6.12.0.tar.xz"
+  sha256 "8dab8f3611496486a470ad5f115ceea584f36bc22a2b8b6f6ebdbafbb8160693"
   license all_of: [
     { any_of: ["LGPL-3.0-only", "GPL-2.0-only", "GPL-3.0-only"] },
     { "GPL-3.0-only" => { with: "Qt-GPL-exception-1.0" } },
     "BSD-3-Clause", # *.cmake
     "BSL-1.0", # bundled catch2
   ]
-  revision 1
   head "https://code.qt.io/qt/qttools.git", branch: "dev"
 
   livecheck do
@@ -19,12 +18,11 @@ class Qttools < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "bd09f31f569d3d0c50a9715ef48ec16901e64f9a50863b61741b444a064b442e"
-    sha256 cellar: :any, arm64_tahoe:       "bfa3b31e8c5e13163476f62302e6ca3e93d2eaca559cc7bf90b34761aa713f31"
-    sha256 cellar: :any, arm64_sequoia:     "b2ac23fcf18daa058f65806f691517cf8299bb4fab775fffdb4cfc635746596e"
-    sha256 cellar: :any, arm64_sonoma:      "ca05919b151e8e6d4b937745f09e87770207675e06751645dadd91a5904963c3"
-    sha256 cellar: :any, arm64_linux:       "761efe70e18f05fbade316d2f88e93bd2692f4623da68f60321ac4df63dc3555"
-    sha256 cellar: :any, x86_64_linux:      "9cc0642a824fbf6f8530a57652dbbce0692db9616abcc6ba608ced6ac3e0a3ef"
+    sha256 cellar: :any, arm64_golden_gate: "08a0d618ff3eb5ccf7b08420aa7cc56d01b757c6df6a21f8efd8d7e33059e876"
+    sha256 cellar: :any, arm64_tahoe:       "5d85af23fb8da1cedc8536b997d01e2074ba32e3238d336a4745fccc6f92efa0"
+    sha256 cellar: :any, arm64_sequoia:     "9375ade0c4418ff2c2a0bb99596c1bad39a61ddc6646ae6f17b3fc23124df5be"
+    sha256 cellar: :any, arm64_linux:       "cd4ad31f272acfa96ee5289397f8f1a3b55eb913cef43884b763258d25554762"
+    sha256 cellar: :any, x86_64_linux:      "deffd266aeec3030369eac0d6bf8c1525d1db168c4f01abe8296709863e6e12c"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -41,13 +39,6 @@ class Qttools < Formula
   end
 
   conflicts_with "qt@5", because: "both link conflicting binaries"
-
-  # Backport qlitehtml's litehtml 0.10 support, which qttools has not pulled into its submodule yet.
-  patch do
-    file "Patches/qttools/litehtml-0.10.patch"
-    type :backport
-    resolves "https://code.qt.io/cgit/playground/qlitehtml.git/commit/?id=1f56cfe0a8e9a8a99072e0d325632bd8dc0e20d3"
-  end
 
   def install
     rm_r("src/assistant/qlitehtml/src/3rdparty/litehtml")

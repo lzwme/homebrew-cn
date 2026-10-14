@@ -17,6 +17,7 @@ class Modal < Formula
 
   depends_on "rust" => :build # for `cbor2`
   depends_on "certifi" => :no_linkage
+  # TODO: Does not support Python 3.15 yet, check on next release
   depends_on "python@3.14"
 
   pypi_packages exclude_packages: "certifi"

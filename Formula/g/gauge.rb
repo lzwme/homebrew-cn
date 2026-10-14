@@ -1,20 +1,27 @@
 class Gauge < Formula
   desc "Test automation tool that supports executable documentation"
   homepage "https://gauge.org"
-  url "https://ghfast.top/https://github.com/getgauge/gauge/archive/refs/tags/v1.6.39.tar.gz"
-  sha256 "5062073294f7d0986380652c7935a6509fa7a7ae274ca51dd28b1587af844ded"
+  url "https://ghfast.top/https://github.com/getgauge/gauge/archive/refs/tags/v1.6.40.tar.gz"
+  sha256 "5c3e2262c96164599a04382d1fecd9462d69efd03cfba6863d67b624973429da"
   license "Apache-2.0"
   head "https://github.com/getgauge/gauge.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "a712fff5a161c00d2a5d9bf0ace9453d99dd34913beb402d3c5c1506ada19a34"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "7ca457aa91b74a0f2b8df5517231f50e434808e4929980900cc25a402e5b8206"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "bb1190c94d716f73fbad8aaf018482d4ecd44e68c475cb51a10523573fb8a2d1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "006e458e217fdb249d99c84e20cc049e4ac541b7a911b9a83022619868ac47e5"
-    sha256 cellar: :any,                 x86_64_linux:      "eccac1327c4441806f3ab635bfb1643f23445072aac9fe9d84d46d7acff6fe2f"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "05342a58f9b807f73ecb5e559cc5b5fa7e00e06cd69ad5cf8443631c77d6d0bf"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "36473c686dc9985b2e5dd4858bacff6738dbf3ca01cc3dcb5fbc93e6561db5f5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "36b27cd518553cd664a10bca9f9152d89db64121a898f4561e7008381f731ef9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "631dc9b7256f0dd63d3508f64d3cddf0eef68932896c59ba54e6bf099c2333b6"
+    sha256 cellar: :any,                 x86_64_linux:      "84f1a537f6882828355ed000881907cd967930b4585433f82badaeff5874fbb1"
   end
 
   depends_on "go" => :build
+
+  # Test installs a gauge plugin
+  allow_network_access! :test
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     system "go", "run", "build/make.go"

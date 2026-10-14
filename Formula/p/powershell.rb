@@ -2,10 +2,9 @@ class Powershell < Formula
   desc "Command-line shell and scripting language"
   homepage "https://github.com/PowerShell/PowerShell"
   url "https://github.com/PowerShell/PowerShell.git",
-      tag:      "v7.6.6",
-      revision: "f260eb9c31ec72c5282f98e5ea24d9be4f8d7536"
+      tag:      "v7.6.7",
+      revision: "c10ef6d557c0d6fe661836f78dbd6fc355261326"
   license "MIT"
-  revision 1
 
   livecheck do
     url :stable
@@ -13,11 +12,11 @@ class Powershell < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "d28301b155236b399a77a6d13190e6ec7405877ce8defb42b2975c3df9db0ccf"
-    sha256 cellar: :any, arm64_tahoe:       "70ba5e8f53a78a08fbaf4a7770fad53ecebcbea094efe46bdd04e4f501f38e75"
-    sha256 cellar: :any, arm64_sequoia:     "5dfa2921a9c56528ab83ceb4f9d6aa8957277f040143383c476639675822655b"
-    sha256 cellar: :any, arm64_linux:       "38e037bf3a659d3edcd6774b76cde907351a88c244478107f72472450508fbff"
-    sha256 cellar: :any, x86_64_linux:      "7b3ff9bd0a6d115a0d05f1648a953c6e89daf2b5c70ba24b02555a52e9a7bfbd"
+    sha256 cellar: :any, arm64_golden_gate: "263d0d9e424e5e1c79dfbe21c4d35c39b5e8dc00633681bd345ac70185c7d665"
+    sha256 cellar: :any, arm64_tahoe:       "68333c07a75ca58fdb154591518809e8271a5d59789641c2089efc6ecf35daa3"
+    sha256 cellar: :any, arm64_sequoia:     "7dfd8ab2e6996e343fa22cfee5481025ea4f2dc0d397e3c295213c9c9c68027b"
+    sha256 cellar: :any, arm64_linux:       "508b729b99a1f0c3c9adacecc0110098d0a24069d24b9e2b3dd61d6b57c407ea"
+    sha256 cellar: :any, x86_64_linux:      "a049b5b4414694dc63878d41457160751bc6e4a1e5eb1d8f539eec182748f164"
   end
 
   depends_on "dotnet"

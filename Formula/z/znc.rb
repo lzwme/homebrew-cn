@@ -13,11 +13,12 @@ class Znc < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "8a35a25662a388a118498819f9052c1fa48f3ee75ab127115575bb416fa58af7"
-    sha256 arm64_tahoe:       "66c8f070b336cb7cbaff6f46ae2efcae78804ccdf6a1c29fc70f554915b98ce9"
-    sha256 arm64_sequoia:     "ebfcd7b77821598a83331d4691ede5094658b22b877c0401a664ccf7b0092319"
-    sha256 arm64_linux:       "7fc31807e492d15a974bf3a7e919a71c709ffefcbeb004b4c97b0f74ae7fad1a"
-    sha256 x86_64_linux:      "a3a23af630776dc4f85ae2e7de99945253e95a93f2a45a60ddcf1ae1c4b44743"
+    rebuild 1
+    sha256 arm64_golden_gate: "7d56ba643d97ce111f37285a843e895104e3f420fee43e2e456c2f0d1db76a12"
+    sha256 arm64_tahoe:       "7947ed8151d94715a4745285e071ad45d07ac32a3a901fe46a1abee72120db23"
+    sha256 arm64_sequoia:     "c552474ddc59e597bca1588744225576c3bd3ec6fb53c4c6f2fcc60cdabad667"
+    sha256 arm64_linux:       "1feb09519eb7ad832c682c7b5a818093fac86fcc03836ba96eba19cb54a9b8f0"
+    sha256 x86_64_linux:      "ecc44e5e3720123161361c6978f7a28c2b26804ad27b26c82131c2895b12311c"
   end
 
   depends_on "cmake" => :build
@@ -27,7 +28,7 @@ class Znc < Formula
   depends_on "cctz"
   depends_on "icu4c@78"
   depends_on "openssl@4"
-  depends_on "python@3.14"
+  depends_on "python@3.15"
 
   on_linux do
     depends_on "cyrus-sasl"

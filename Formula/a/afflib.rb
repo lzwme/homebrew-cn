@@ -10,18 +10,19 @@ class Afflib < Formula
   revision 2
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "a1a9c63abded72d914c6619081d539dc450e8ca453855258a06a877e94f0a8a0"
-    sha256 cellar: :any, arm64_tahoe:       "e8a43633e8a98a2e10d134960a046f185cadf2ca17b75d141b4a8a294d34c1ec"
-    sha256 cellar: :any, arm64_sequoia:     "0a2772ed4ad037c391e4a0db9f957309131fe2076aeb93ac381befd96d6160c5"
-    sha256 cellar: :any, arm64_linux:       "c8ed596857ea4714458fdf969ae7963120d01fa5a8dc8cad08ef180e782e09e9"
-    sha256 cellar: :any, x86_64_linux:      "ba64302a25269e9d0d70ac12c3e36ca43f851003bc141389bac968120108c1ac"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "b784f415c0153eb93255ebf0b03ede2dbd451f106994b63e0179999bea6fd86d"
+    sha256 cellar: :any, arm64_tahoe:       "96657dcee0d8338b2b38786a9f750b71f4baa78b994d28375aeb6e1956616fc2"
+    sha256 cellar: :any, arm64_sequoia:     "2b273ea2335bf183fdb60d40625cad40f9b5fb7f2683081d0bb9446d90f202ba"
+    sha256 cellar: :any, arm64_linux:       "c54ee296316ec0944d8e452a13ecd60f5c2fd55845fc2d932e89ec0bb3fbb2d8"
+    sha256 cellar: :any, x86_64_linux:      "8136600ece77d52143d1401a1d3363a4aa5a0a362e955b29bee680b40c519809"
   end
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
   depends_on "pkgconf" => :build
-  depends_on "python@3.14" => [:build, :test] # for bindings, avoid runtime dependency due to `expat`
+  depends_on "python@3.15" => [:build, :test] # for bindings, avoid runtime dependency due to `expat`
   depends_on "openssl@4"
 
   uses_from_macos "curl"

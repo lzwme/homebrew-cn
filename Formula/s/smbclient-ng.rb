@@ -10,16 +10,18 @@ class SmbclientNg < Formula
   head "https://github.com/p0dalirius/smbclient-ng.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "bf27301c47761b6d8c7b39079ccf5de0a339670cbe39972b5388a50e8208093a"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "c77b40df8ca784c630a45d502a67fe20e64529ac0ca364f7e68086f606bf53ac"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "eaa41914a681e1ea5a2d156efd755aef3bb7130ed8b39d83df8860fb851e5902"
-    sha256 cellar: :any,                 arm64_linux:       "66416a2b01e46f4465a10f1280f0ab10502df8c15126ec0d82543fd0e00e1e32"
-    sha256 cellar: :any,                 x86_64_linux:      "cfe728a0517f39d8dc64c559fbaa80fbd09f0307619ebcaddaff940398f964a6"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "ded580b62e19e62cb2c13573053e05fa1347a61d1b7c9c2c57fac8b6d7c9adf9"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "fde48527079eba9922985109fb908aeeb8e2921610776b12b0209dd5a2d9eadb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "2df508997dba97ab33fca076574781f764e83dfaf5cecdce32b585a6afc5eb42"
+    sha256 cellar: :any,                 arm64_linux:       "a159e8a31240ca91ae4e77e4de0f04db786298546d39d3f773a51c040d9ab092"
+    sha256 cellar: :any,                 x86_64_linux:      "3410dc6967cffb800acd9ca547997d79b09d77e64a400e2887237d1b782ef91f"
   end
 
+  depends_on "rust" => :build # for dnspython > uv_build > maturin
   depends_on "samba" => :test
   depends_on "cryptography" => :no_linkage
-  depends_on "python@3.14"
+  depends_on "python@3.15"
 
   uses_from_macos "libffi"
 
@@ -41,8 +43,8 @@ class SmbclientNg < Formula
   end
 
   resource "dnspython" do
-    url "https://files.pythonhosted.org/packages/8c/8b/57666417c0f90f08bcafa776861060426765fdb422eb10212086fb811d26/dnspython-2.8.0.tar.gz"
-    sha256 "181d3c6996452cb1189c4046c61599b84a5a86e099562ffde77d26984ff26d0f"
+    url "https://files.pythonhosted.org/packages/ef/4a/50822184bd67cc6493f0fb6a880749158fcd31ab3fa07409acfd91f9fc85/dnspython-2.9.0.tar.gz"
+    sha256 "b44dc6b18f07a8b1c56676a19fbfdb5209415b046a9cece286baafa87ff3f7f1"
   end
 
   resource "flask" do
@@ -106,8 +108,8 @@ class SmbclientNg < Formula
   end
 
   resource "pycryptodomex" do
-    url "https://files.pythonhosted.org/packages/4c/25/214ea825a9031f5af2c8b2506ee16701a2560d4712165dd00098dd527bcb/pycryptodomex-3.24.0.tar.gz"
-    sha256 "0428f19f13452c6b89bbaf2c530f84f369873811dfa77f0cee0da4f40fb0474f"
+    url "https://files.pythonhosted.org/packages/f4/e7/50e72301e32acb73a314e663c2014e1ddefc019d5f434ff14ec89861d664/pycryptodomex-3.24.1.tar.gz"
+    sha256 "09081666ffc599976c0b8b29caf2cf82212c0f05bed233c8f8ed53e4f6e1d356"
   end
 
   resource "pygments" do

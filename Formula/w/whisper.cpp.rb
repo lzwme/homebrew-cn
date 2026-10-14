@@ -53,7 +53,7 @@ class WhisperCpp < Formula
       To obtain model files (.bin), visit one of these locations:
 
         https://huggingface.co/ggerganov/whisper.cpp/tree/main
-        https://ggml.ggerganov.com/
+        https://github.com/ggml-org/whisper.cpp/tree/master/models
     EOS
   end
 

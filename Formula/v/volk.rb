@@ -22,11 +22,12 @@ class Volk < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "064a12142b6a5db630acdc6ad43739178ec1e5e92ae45d02546c1a691edf743e"
-    sha256 cellar: :any, arm64_tahoe:       "537a5468aeee011491cee324d7515d0e70309e8184b41af722ef049f0bcb50e9"
-    sha256 cellar: :any, arm64_sequoia:     "171af672ac4f4c50f1aca6c9e675e33774d2c2908f53720ec057dd0fbe3c7e0c"
-    sha256 cellar: :any, arm64_linux:       "6b8c1758e38fc748a047f67bfe5a2078cf3dd4893737c8fd591d2b5905b32866"
-    sha256 cellar: :any, x86_64_linux:      "8db67d0983446bd027566318c8debcc4058bc45eaef61dc5e8f06fb769d99eba"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "4c7107f873563792a3331165478d81e21d3eb6959795abb02b1c2100f8e4235f"
+    sha256 cellar: :any, arm64_tahoe:       "32f197fc9ed1e52973bc0dd90dc643e84480b7fee8b525d74e04478bf6d9d518"
+    sha256 cellar: :any, arm64_sequoia:     "09cc4a97b1af64c4a804b4e40dc0a049d3d622402c925c85bf8f7752646daffb"
+    sha256 cellar: :any, arm64_linux:       "1231efc8b87da47a558bae6693aa69a524dc129367935850562063928506eced"
+    sha256 cellar: :any, x86_64_linux:      "4b41845d71eab03ba8da3df9822ed08f663c2304113716b2319806697aaba0d2"
   end
 
   depends_on "cmake" => :build
@@ -34,7 +35,7 @@ class Volk < Formula
   depends_on "cpu_features"
   depends_on "fmt"
   depends_on "orc"
-  depends_on "python@3.14"
+  depends_on "python@3.15"
 
   conflicts_with "vulkan-volk", because: "both install volkConfig.cmake"
 

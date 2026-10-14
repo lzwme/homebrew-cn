@@ -1,16 +1,16 @@
 class Seal < Formula
   desc "Easy-to-use homomorphic encryption library"
   homepage "https://github.com/microsoft/SEAL"
-  url "https://ghfast.top/https://github.com/microsoft/SEAL/archive/refs/tags/v4.6.1.tar.gz"
-  sha256 "42f38fdeca6fa0f24dcb031b6366db0bf407c2bbf659acdd72f47318a528dff3"
+  url "https://ghfast.top/https://github.com/microsoft/SEAL/archive/refs/tags/v4.6.2.tar.gz"
+  sha256 "98e382852faf336808959c3dee0bbfff9148dbad1dab4e70dc39004cc94e93f6"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "417bfdd6f945dad4e641511476a743e8767062d445df6cbcc9aee0cd7c899a15"
-    sha256 cellar: :any, arm64_tahoe:       "7629bcf6e5fcb78d64a91b0c9dbec9be5afd428680733704f3fb4a2716ab0acc"
-    sha256 cellar: :any, arm64_sequoia:     "c8dbefc9497d7d2fdcfeee756a9907be7151b5e8c913546e6a1bc855705c661b"
-    sha256 cellar: :any, arm64_linux:       "6feec47b16c9827af28c7a44da67e19c54c17009eb8c8b5a4d546aa8d70c2d2b"
-    sha256 cellar: :any, x86_64_linux:      "87a53fe29b700fd9bbdda8266acea229410d09459c8f2c63e9a7f27797fcf8de"
+    sha256 cellar: :any, arm64_golden_gate: "ca6ec4b9c770ee04b44df2b7d67c5aa85b3aca804d86feb247de8afa218dd490"
+    sha256 cellar: :any, arm64_tahoe:       "1ba27deb9621ea509fcdb7cc69a550a6d5472f00d71edec5b3ecafad2b04e98e"
+    sha256 cellar: :any, arm64_sequoia:     "26defea1093638701fa36d50f8153645a3309d356ee826f2061b599edf09dc15"
+    sha256 cellar: :any, arm64_linux:       "d970bde44939d0f20106588515b0948937f2f5872a335c5bb4a32f78f447acb6"
+    sha256 cellar: :any, x86_64_linux:      "4233119a2d7e3d88edd46439975263b528aa0e028a24baaaba2b38a8a84853aa"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -33,9 +33,6 @@ class Seal < Formula
   deny_network_access!
 
   def install
-    # Support Microsoft GSL 5.x, which upstream has not widened its version request to yet
-    inreplace "CMakeLists.txt", "Microsoft.GSL 4 CONFIG", "Microsoft.GSL 5 CONFIG"
-
     if Hardware::CPU.intel?
       resource("hexl").stage do
         hexl_args = %w[

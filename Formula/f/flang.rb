@@ -2,6 +2,7 @@ class Flang < Formula
   desc "LLVM Fortran Frontend"
   homepage "https://flang.llvm.org/"
   license "Apache-2.0" => { with: "LLVM-exception" }
+  revision 1
   head "https://github.com/llvm/llvm-project.git", branch: "main"
 
   stable do
@@ -23,12 +24,11 @@ class Flang < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_golden_gate: "4698ff642f581ed568172ad4ad8d09eb6bcb3e7ab4cb77ef6ce6459f3b33aab6"
-    sha256 cellar: :any, arm64_tahoe:       "db8f5bba7c53468f87e62998bb8c7f7983d54ce918923d9f26df1b0555a705b1"
-    sha256 cellar: :any, arm64_sequoia:     "fc336e774207f2a63fa8132d20571edcddb4676fef37d7be2a7eecb55b4d65fc"
-    sha256 cellar: :any, arm64_linux:       "8f1598d665dbed2db278166697c673d40b6f9bc734e469f5acf3b25115d70c56"
-    sha256 cellar: :any, x86_64_linux:      "d3d45b1f8aa76c7f0d3d79e1e6ab4bb7ee0a7f84fe60a77c365a38c2329eb838"
+    sha256 cellar: :any, arm64_golden_gate: "d8500579706a7a47736d3843bb576db9678c6926f5927453eed62ddc900e5672"
+    sha256 cellar: :any, arm64_tahoe:       "900fae16fbfe78fcabf4271400220ed9158bca50ae5bd4ff6a2e0f3e2e5ad789"
+    sha256 cellar: :any, arm64_sequoia:     "2c69f20a64aca859379ac5739b2a69e5c0250cfdf01b870973d8629866bea12d"
+    sha256 cellar: :any, arm64_linux:       "73f08db2a97f958cedb1b90746d4e9901a6635655f040b4ac28fc274ec3a37a9"
+    sha256 cellar: :any, x86_64_linux:      "96b88f2dbcb6eb7877c648ad48f30d344bb9f45371661dadbce1d8a825611ac9"
   end
 
   depends_on "cmake" => :build
@@ -55,15 +55,14 @@ class Flang < Formula
       -DLLVM_ENABLE_LTO=ON
     ]
 
-    # LLVM_INSTALL_TOOLCHAIN_ONLY is to avoid shipping unnecessary libraries. Gentoo uses the same option.
-    # Fedora builds as part of full LLVM so manually removes files after install to achieve a similar result:
-    # https://src.fedoraproject.org/rpms/llvm/blob/821c6dcbd0d721d2c91e7c87bb4e483aaf1af715/f/llvm.spec#_2477-2523
+    # Libraries are static because `-DBUILD_SHARED_LIBS=ON` duplicated MLIR singletons and miscompiled (#301233).
+    # Add back `-DBUILD_SHARED_LIBS=ON` when this is fixed upstream:
+    # https://github.com/llvm/llvm-project/issues/219579
     flang_args = %W[
       -DCLANG_DIR=#{llvm.opt_lib}/cmake/clang
       -DFLANG_INCLUDE_TESTS=OFF
       -DFLANG_REPOSITORY_STRING=#{tap&.issues_url}
       -DFLANG_VENDOR=#{tap&.user}
-      -DLLVM_INSTALL_TOOLCHAIN_ONLY=ON
       -DLLVM_RAM_PER_COMPILE_JOB=5000
       -DLLVM_RAM_PER_LINK_JOB=10000
       -DLLVM_USE_SYMLINKS=ON
@@ -181,5 +180,29 @@ class Flang < Formula
     assert_equal expected, shell_output("./omptest").lines(chomp: true).sort
 
     system bin/"flang", "-v", "runtimes.f90"
+
+    (testpath/"plugin.cpp").write <<~CPP
+      #include "flang/Frontend/FrontendActions.h"
+      #include "flang/Frontend/FrontendPluginRegistry.h"
+      #include "flang/Parser/parse-tree.h"
+      #include "flang/Parser/parsing.h"
+
+      using namespace Fortran::frontend;
+
+      struct CountUnits : PluginParseTreeAction {
+        void executeAction() override {
+          llvm::outs() << "units: " << getParsing().parseTree()->v.size() << "\\n";
+        }
+      };
+
+      static FrontendPluginRegistry::Add<CountUnits> X("count-units", "Count program units");
+    CPP
+
+    plugin = testpath/shared_library("plugin")
+    args = %W[-std=c++17 -shared -fPIC -DFLANG_LITTLE_ENDIAN=1 -I#{include} -I#{formula_opt_include("llvm")}]
+    args << "-Wl,-undefined,dynamic_lookup" if OS.mac?
+    system formula_opt_bin("llvm")/"clang++", *args, "plugin.cpp", "-o", plugin
+    output = shell_output("#{bin}/flang -fc1 -load #{plugin} -plugin count-units sqrt72.f90")
+    assert_equal "units: 2", output.strip
   end
 end

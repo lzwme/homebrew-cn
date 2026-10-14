@@ -1,16 +1,16 @@
 class Pdftoipe < Formula
   desc "Reads arbitrary PDF files and generates an XML file readable by Ipe"
   homepage "https://github.com/otfried/ipe-tools"
-  url "https://ghfast.top/https://github.com/otfried/ipe-tools/archive/refs/tags/v7.3.1.1.tar.gz"
-  sha256 "93bf863b757d7b7e29096b99cfb46fae8d354476b3c8ccb855e314ef792ba081"
+  url "https://ghfast.top/https://github.com/otfried/ipe-tools/archive/refs/tags/v7.3.1.2.tar.gz"
+  sha256 "edb8f098c32f0ae626ac20ebdd0f2114fc1d1cc4d730a7abb648cfe9c131e40d"
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "4f6e9ba96322a350067c072d9ae5363303eebad345cb6d07e87df44c722a94bc"
-    sha256 cellar: :any, arm64_tahoe:       "d8b6832219a141c994cb44204d7a6d96940e083c36f91b8083eaeaf0c4cea3a7"
-    sha256 cellar: :any, arm64_sequoia:     "4e01c0c4770f7618f8d232989045635b0158a55a5fe6efd876da6a370c080610"
-    sha256 cellar: :any, arm64_linux:       "f00e60561c20da1ff50e84a55e90972f88a5b7d3db1bb7f4b9f3d7a6e3399d57"
-    sha256 cellar: :any, x86_64_linux:      "ce49485bf140ac3c0a8b6ea7345b4b20b15b3434a4f912320ddd0d55451c572e"
+    sha256 cellar: :any, arm64_golden_gate: "9d0f60bcaefa22fa0d3b7ea75457e767d5232ae5f8b58cddd848bcdb241fde69"
+    sha256 cellar: :any, arm64_tahoe:       "e35dcb1395e75b638212d36be26cb747197de46f39c66c251d52fb4aa71b6cb1"
+    sha256 cellar: :any, arm64_sequoia:     "7de44d51f6057f20717726fd8d4c7364ba53af1bf405a7dc68ef24d7c9105534"
+    sha256 cellar: :any, arm64_linux:       "9192e9a2551397c3b333541a65a4d76844d6a28685d69c3cf9bd2fd4e9c1dbb6"
+    sha256 cellar: :any, x86_64_linux:      "ab5fd4cd156359e431bf77d1e504b4ac957239ea628c7de789294899b0d33834"
   end
 
   depends_on "pkgconf" => :build

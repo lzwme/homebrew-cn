@@ -18,8 +18,15 @@ class Mediamtx < Formula
 
   depends_on "go" => :build
 
-  def install
+  # `test do` block queries the API of a local mediamtx server
+  allow_network_access! :test
+
+  def fetch
+    system "go", "mod", "download"
     system "go", "generate", "./..."
+  end
+
+  def install
     system "go", "build", *std_go_args
 
     # Install default config

@@ -3,18 +3,17 @@ class Py7zr < Formula
 
   desc "7-zip in Python"
   homepage "https://github.com/miurahr/py7zr"
-  url "https://files.pythonhosted.org/packages/59/3f/ac248f25f3901d3d6cf80ac99d5bac6fd1e5e6543c1812c79b02b6074c60/py7zr-1.1.3.tar.gz"
-  sha256 "8d51894abb38355bf14881088bb97f01fe4cb5b14ebe22f66d6297668c7e1a74"
+  url "https://files.pythonhosted.org/packages/d6/31/d5469ec310b57c730785068c227caf2263391be846ae5e99488f69b394eb/py7zr-1.1.4.tar.gz"
+  sha256 "7674697559bd06b697bf6e8249985cee6dc704a4b07b8e11f24d0b1695707c3e"
   license "LGPL-2.1-or-later"
   head "https://github.com/miurahr/py7zr.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "5b8acf0d36338f192a0a9c3ef1a4e46d3aee1df3c3a9998f1bb268f391548ef8"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "713463cbf015aca58057cbc94c2c655da7cd80610574d894da6f77fd17769f13"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "e34f3fc7e8dc45dcd03fcfa89b71973401f0d415a8344cf8318b6de97299887c"
-    sha256 cellar: :any,                 arm64_linux:       "605e1b0c0dd4846a85a7b1c90726e3e0c0f4f92afd9c6f1a03617fb69883a197"
-    sha256 cellar: :any,                 x86_64_linux:      "0256a847dc6be97d5888db3fd42f4600f5276c4a300c9b6082562cb4a6889995"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "bf1e66ce13f5015342666ebe0fee3fc8ce061fcea63d43873f281bcd0b2d886c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "6d133c53a16c1f45cf35f344b2c63b6c3edb28fda3d396910090e7877d321d49"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "0166f521ff9822300eae45ca010b1989578adf0adf66985cedc0134adb0469f7"
+    sha256 cellar: :any,                 arm64_linux:       "fa72d91dbc535048b7d91b3a9ffc750c86016671f8ca31b490c67ac60ebcd3e2"
+    sha256 cellar: :any,                 x86_64_linux:      "8546ad3e682a00ec8e90ddb090009b10fd11659333a1127d1626071b377f4719"
   end
 
   depends_on "python@3.15"
@@ -45,8 +44,8 @@ class Py7zr < Formula
   end
 
   resource "pycryptodomex" do
-    url "https://files.pythonhosted.org/packages/4c/25/214ea825a9031f5af2c8b2506ee16701a2560d4712165dd00098dd527bcb/pycryptodomex-3.24.0.tar.gz"
-    sha256 "0428f19f13452c6b89bbaf2c530f84f369873811dfa77f0cee0da4f40fb0474f"
+    url "https://files.pythonhosted.org/packages/f4/e7/50e72301e32acb73a314e663c2014e1ddefc019d5f434ff14ec89861d664/pycryptodomex-3.24.1.tar.gz"
+    sha256 "09081666ffc599976c0b8b29caf2cf82212c0f05bed233c8f8ed53e4f6e1d356"
   end
 
   resource "pyppmd" do
@@ -55,8 +54,8 @@ class Py7zr < Formula
   end
 
   resource "texttable" do
-    url "https://files.pythonhosted.org/packages/1c/dc/0aff23d6036a4d3bf4f1d8c8204c5c79c4437e25e0ae94ffe4bbb55ee3c2/texttable-1.7.0.tar.gz"
-    sha256 "2d2068fb55115807d3ac77a4ca68fa48803e84ebb0ee2340f858107a36522638"
+    url "https://files.pythonhosted.org/packages/72/c8/c926b35a849405ae0cb21956f8d7bd5e4f2c277c211784ed7d441df1b807/texttable-1.7.1.tar.gz"
+    sha256 "ce71fc5928ede6cd7a60dbe3cb2845e6df8f5598fe435252ea1b31722415fda7"
   end
 
   def install

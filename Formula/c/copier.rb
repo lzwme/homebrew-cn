@@ -3,17 +3,16 @@ class Copier < Formula
 
   desc "Utility for rendering projects templates"
   homepage "https://copier.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/f9/60/2fe1777b27f489450ed8ac5c75390caf91a175d647be05b4284bf515b413/copier-9.18.2.tar.gz"
-  sha256 "0f97902fee79374551c9391fb1132f5a038079f3b497f4dad673295489fc032e"
+  url "https://files.pythonhosted.org/packages/80/17/169a7c1ac85014a77aeade65d53e950fa131521e51310ed6733cd8bf3c0e/copier-9.19.0.tar.gz"
+  sha256 "9b39865d5605f03984f2acda9367cf21652e0a0215bf4ac6a60fdb70272a2970"
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_golden_gate: "4b3d465ec14a8d0f90ac4990ba2c3ce50ee59b9290e999a4aad3a15619589b06"
-    sha256 cellar: :any, arm64_tahoe:       "a1e16476de8cebbf7ded6082af309de7b54fc1253e5b8af6c54c612fd908ea70"
-    sha256 cellar: :any, arm64_sequoia:     "3aa901adc6de098438c4c190ba4d48f7fdd79948dbcb2b33425dfe5c6f89a771"
-    sha256 cellar: :any, arm64_linux:       "4aa993d3ec902f65fe4937212d5bdd5b89510601c950225ac66e61ea8ec20570"
-    sha256 cellar: :any, x86_64_linux:      "de0c05432ed331d206539e4a5eb0abf31ec265ee9c46654122a1917cd1de3abf"
+    sha256 cellar: :any, arm64_golden_gate: "768844e1fc5e2e190d89450d987efb6201466b37d7a088a9c803cc52d290c380"
+    sha256 cellar: :any, arm64_tahoe:       "40e2a0f17ef9f1e68724065edeb2a2d34557bcc385c3b942d2a69d80ee5ccccc"
+    sha256 cellar: :any, arm64_sequoia:     "c4826747c6646f3bdf80288816bcc1b48f442274b1ceceaf6c6ff0b55cc10e52"
+    sha256 cellar: :any, arm64_linux:       "9f1ee4d4164f7d280e70ca58a6a45e693255b690892a69ec36d9966f020b1df3"
+    sha256 cellar: :any, x86_64_linux:      "2c6263bee5b2b768a524bbe77d20c8b34d5bbbc10bda61311cb465d077fe4e44"
   end
 
   depends_on "libyaml"
@@ -63,8 +62,8 @@ class Copier < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/90/a1/d5f9002a70298c64a789779077d8dd90c10aa1f47fe40c86802df874f2a6/platformdirs-4.12.4.tar.gz"
-    sha256 "63743c02414e755de4e31b8f68125c1407495b86c5a006e203c01ff8b9924250"
+    url "https://files.pythonhosted.org/packages/80/a8/66d45abadff219e36e2a824181b8f6a67e7ed4572934d6252c71c29d5731/platformdirs-4.13.0.tar.gz"
+    sha256 "1aa0b0d3f224c1f07c295121e312a5a24a180d6ae5a8425ea1784b3e3863e9c0"
   end
 
   resource "plumbum" do

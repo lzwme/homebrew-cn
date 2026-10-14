@@ -10,17 +10,18 @@ class Sherlock < Formula
   head "https://github.com/sherlock-project/sherlock.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "b74c5b2a8b63d55fa7bdb6a89cf23b77aa2f6b8f2b11d41ae77439b4b8393aa2"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "6fec5cb545dc405ee029aa10432438cf1c1c8b750adaeb79143dd04db2737d75"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "be06eb18d8a25e9d5662b3abda3a94bf9d9a3a6cf32fcb2b91bb921c2f8326ca"
-    sha256 cellar: :any,                 arm64_linux:       "b2c8c9be1345955ff19cbfc2729ab7ff056f35738182f2da05621f43745ad8ef"
-    sha256 cellar: :any,                 x86_64_linux:      "9790e06763fe25d2ec68a0e9defbc033f4f04b33d85977fc292c4c0d3723cf60"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "04cd2ef76415bf14668e74f59c7375e90416c64d1cdc40365f2ae6273797d572"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "9a418e9e66532490c88bc30a8b78d9eee0b08a79d59eb3cb3efb744dbd7bdf6f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "a12e3db604fa9ff70800168b87b16246d1dede8217144c5715b86814c1e8324d"
+    sha256 cellar: :any,                 arm64_linux:       "38f525aeea866629c1d1ad7a8e6ffe8ab9cab93006a457ec652f62788a97d111"
+    sha256 cellar: :any,                 x86_64_linux:      "9cdd9de3bf60acdbbea5206802fe19666f94ac43834fe8c7c21bb2abf36df7d0"
   end
 
   depends_on "cmake" => :build
   depends_on "certifi" => :no_linkage
   depends_on "numpy"
-  depends_on "python@3.14"
+  depends_on "python@3.15"
 
   on_linux do
     depends_on "patchelf" => :build
@@ -77,8 +78,8 @@ class Sherlock < Formula
   end
 
   resource "pytz" do
-    url "https://files.pythonhosted.org/packages/b0/ed/fa23d28713004418bbf2407127f80f385bfb0bf4e677bef02c25c27b00ee/pytz-2026.4.tar.gz"
-    sha256 "464303645bafafd72418898368b2429458f709cf1eb6a15372fbcc396b64da63"
+    url "https://files.pythonhosted.org/packages/14/21/d83d6ef28c4c912c4bb4d1dcf591f7b8c6bde87b9c66f9f454677314e16d/pytz-2026.5.tar.gz"
+    sha256 "fa23724b9c486543b9ff54a327ee7569ac83ade54bb9afd0fc18676620401c86"
   end
 
   resource "requests" do
@@ -102,13 +103,13 @@ class Sherlock < Formula
   end
 
   resource "tomli" do
-    url "https://files.pythonhosted.org/packages/22/de/48c59722572767841493b26183a0d1cc411d54fd759c5607c4590b6563a6/tomli-2.4.1.tar.gz"
-    sha256 "7c7e1a961a0b2f2472c1ac5b69affa0ae1132c39adcb67aba98568702b9cc23f"
+    url "https://files.pythonhosted.org/packages/b0/78/9ad63712633ed3ab5cc1a648d863d7e7da371e9425e209555a0fe711b695/tomli-2.5.0.tar.gz"
+    sha256 "264507556cd8b8c8e7c6ee037cdf443a463f03f4c958e57195e3d369711b8ff6"
   end
 
   resource "tzdata" do
-    url "https://files.pythonhosted.org/packages/e4/31/3d74fa778a63b98b7374323befcc0be5ab3bd94afd4096a0124e7379152c/tzdata-2026.4.tar.gz"
-    sha256 "f1b8bd365d8d210c55353f4d7f8d6d8561c0ba50d704b700d195a9424bba0d79"
+    url "https://files.pythonhosted.org/packages/d9/68/f1b440335057bfce71b6e50a9d09445aa2ecbd08359a337976627b8409e7/tzdata-2026.5.tar.gz"
+    sha256 "8cc73c0a0bfca7dbfa59235d60b2eff82231dee33f53d206db1acd9173cfc0a7"
   end
 
   resource "urllib3" do

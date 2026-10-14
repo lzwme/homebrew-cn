@@ -3,14 +3,13 @@ class ReorderPythonImports < Formula
 
   desc "Rewrites source to reorder python imports"
   homepage "https://github.com/asottile/reorder-python-imports"
-  url "https://files.pythonhosted.org/packages/e9/3e/56100d88371014a60d3b9185f29759e9c9947d97e79df3ded672fad2bfc1/reorder_python_imports-3.18.0.tar.gz"
-  sha256 "89e73e4e30a6272117daedd5b2573d2e03f9a40bc9676999d2617c8618a3e34d"
+  url "https://files.pythonhosted.org/packages/1a/5a/4c37aa9e062adf680f7d93ba7c954b571feaed1984b93f2f6932ded628b3/reorder_python_imports-3.19.0.tar.gz"
+  sha256 "457e65fc0adb50d724b633cae2825e484c119dc381f01353c4fe7693216451c0"
   license "MIT"
   head "https://github.com/asottile/reorder-python-imports.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "ccd1785d60285dd0b3f3aabc97f97b3154fc158fc0185eb2398d274a88c82ced"
+    sha256 cellar: :any_skip_relocation, all: "e172e3e27fc03b30feb21847ce55d14b4c9f30351eddf1bc857f5676b6ae24b1"
   end
 
   depends_on "python@3.15"

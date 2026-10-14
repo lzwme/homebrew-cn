@@ -3,7 +3,9 @@ class Prestodb < Formula
 
   desc "Distributed SQL query engine for big data"
   homepage "https://prestodb.io"
-  url "https://search.maven.org/remotecontent?filepath=com/facebook/presto/presto-server/0.299/presto-server-0.299.tar.gz"
+  # Maven Central rate-limits this runtime artifact (HTTP 429), so use Google's mirror of it
+  url "https://maven-central.storage-download.googleapis.com/maven2/com/facebook/presto/presto-server/0.299/presto-server-0.299.tar.gz"
+  mirror "https://search.maven.org/remotecontent?filepath=com/facebook/presto/presto-server/0.299/presto-server-0.299.tar.gz"
   sha256 "2e2cc76252d66a76c6de1d3110559f6378d48ba260e2d035f48af4533dfc1dee"
   license "Apache-2.0"
 
@@ -16,11 +18,12 @@ class Prestodb < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "96c22750c1c36a7e04f87269adc3410294568368c0728663109c7bf74e98d82a"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "4e8ebf1909043a7dd36c48c9423929872ca07c7671a5fec79166b96250b820f5"
   end
 
   depends_on "openjdk@17"
-  depends_on "python@3.14"
+  depends_on "python@3.15"
 
   resource "presto-cli" do
     url "https://ghfast.top/https://github.com/prestodb/presto/releases/download/0.299/presto-cli-0.299-executable.jar"

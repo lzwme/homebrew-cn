@@ -7,15 +7,14 @@ class Qtbase < Formula
     "BSD-3-Clause", # *.cmake
     "GFDL-1.3-no-invariants-only", # *.qdoc
   ]
-  revision 1
   compatibility_version 1
   head "https://code.qt.io/qt/qtbase.git", branch: "dev"
 
   stable do
-    url "https://download.qt.io/official_releases/qt/6.11/6.11.2/submodules/qtbase-everywhere-src-6.11.2.tar.xz"
-    mirror "https://qt.mirror.constant.com/archive/qt/6.11/6.11.2/submodules/qtbase-everywhere-src-6.11.2.tar.xz"
-    mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.11/6.11.2/submodules/qtbase-everywhere-src-6.11.2.tar.xz"
-    sha256 "5b2e00eccaf5a4d8c14134ffa0ea8dfd0a35ae1ffc7f8d87fa4305a1ed23cf22"
+    url "https://download.qt.io/official_releases/qt/6.12/6.12.0/submodules/qtbase-everywhere-src-6.12.0.tar.xz"
+    mirror "https://qt.mirror.constant.com/archive/qt/6.12/6.12.0/submodules/qtbase-everywhere-src-6.12.0.tar.xz"
+    mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.12/6.12.0/submodules/qtbase-everywhere-src-6.12.0.tar.xz"
+    sha256 "a951bd163c7b80fc6b8c88d7668fb56abf91c152373e13c10666763238131307"
 
     # Backport to support md4c 0.6.0
     patch do
@@ -33,11 +32,11 @@ class Qtbase < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "ee64b7f08ef251bd2585ecfdfd9c32f487b857e9a4052631a00dfa08de604215"
-    sha256 cellar: :any, arm64_tahoe:       "793d33d1496520c6d0ea5403680e4f2d99f771825115a8933bab373a36e404f9"
-    sha256 cellar: :any, arm64_sequoia:     "2273d27938c1646b7363f39a2ab68ba3307d71b252c70ef6041ff2aa635ab9aa"
-    sha256 cellar: :any, arm64_linux:       "735bb3d1442e40507af8db5dfce5b78ce1c73bc57552b32830b705f362b2c0a0"
-    sha256 cellar: :any, x86_64_linux:      "937513a3f45c7a7b204a83efb10232df9fd1e2d989f99b40b4bf8b76aa7a835e"
+    sha256 cellar: :any, arm64_golden_gate: "33f80fd31c736fd7596decb81317283c8b88a9be83e2581bc867813f6d0aefd2"
+    sha256 cellar: :any, arm64_tahoe:       "8f2e7639fe17e5818af3f985f21987fd98228ea6ba9c06b9b2766c06629b0b92"
+    sha256 cellar: :any, arm64_sequoia:     "05a650cc37066dedbb32b05355608e7902590d4bd3ff21649adce04275502d08"
+    sha256 cellar: :any, arm64_linux:       "90894129c986e7372b6a8b85786086c83fc3f2875f8778f8bc9748f25bec26a2"
+    sha256 cellar: :any, x86_64_linux:      "a057f2f917766dbfc6bedbe102e5215712fc74ff8e102333b9e42ae83d853806"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -150,12 +149,7 @@ class Qtbase < Formula
                 'set(QT_CONFIGURE_LIBLOCATION_TO_PREFIX_PATH "${from_lib_location_to_prefix}")',
                 "set(QT_CONFIGURE_LIBLOCATION_TO_PREFIX_PATH \"#{HOMEBREW_PREFIX.relative_path_from(lib)}\")"
 
-      # Cannoy deploy to version later than 14, due to functions obsoleted in macOS 15.0
-      # https://bugreports.qt.io/browse/QTBUG-128900
-      deploy = [MacOS.version, MacOSVersion.from_symbol(:sonoma)].min
-
-      %W[
-        -DCMAKE_OSX_DEPLOYMENT_TARGET=#{deploy}.0
+      %w[
         -DFEATURE_relocatable=ON
         -DQT_NO_APPLE_SDK_AND_XCODE_CHECK=ON
       ]
@@ -225,6 +219,7 @@ class Qtbase < Formula
 
   test do
     modules = %w[Core Gui Widgets Sql Concurrent Network]
+    vulkan_include = formula_opt_include("vulkan-headers")
 
     (testpath/"CMakeLists.txt").write <<~CMAKE
       cmake_minimum_required(VERSION 4.0)
@@ -244,7 +239,7 @@ class Qtbase < Formula
       CONFIG  -= app_bundle
       TEMPLATE = app
       SOURCES += main.cpp
-      INCLUDEPATH += #{formula_opt_include("vulkan-headers")}
+      INCLUDEPATH += #{vulkan_include}
     QMAKE
 
     (testpath/"main.cpp").write <<~CPP
@@ -286,7 +281,7 @@ class Qtbase < Formula
     # Test compiler and linker flags work separately
     cflags = shell_output("pkgconf --cflags Qt6#{modules.join(" Qt6")}").chomp.split
     ldflags = shell_output("pkgconf --libs Qt6#{modules.join(" Qt6")}").chomp.split
-    system ENV.cxx, "-std=c++17", "-c", "main.cpp", "-o", "main.o", *cflags
+    system ENV.cxx, "-std=c++17", "-c", "main.cpp", "-o", "main.o", "-I#{vulkan_include}", *cflags
     system ENV.cxx, "main.o", "-o", "test", *ldflags
     system "./test"
 

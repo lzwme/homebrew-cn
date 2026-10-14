@@ -13,16 +13,18 @@ class ReconNg < Formula
   revision 4
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "170649799201ad9fca70d351013a7960872d577e6f8495446565c7be233d75da"
-    sha256 cellar: :any, arm64_tahoe:       "fbbc2562a2bc60dd52b6c54fe94682737ef6c6ff4cd6b87fa034a9aa92ddee85"
-    sha256 cellar: :any, arm64_sequoia:     "cf923031d490c3196648641678505f5d2674e670c78faba48a6864ba3d6b0143"
-    sha256 cellar: :any, arm64_linux:       "f1a6e23d2fab30b1631ee9eba7a3ad8d3ce1818663e59e6a9f348b4378deb382"
-    sha256 cellar: :any, x86_64_linux:      "c51bea20716d3726fcb263285f55a459fabe86412fb12fd70c37f9cb051ba6ce"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "9f2a1d478a796ad6513e190f7082d724886b172b9e3704c497a1f8e792dff5de"
+    sha256 cellar: :any, arm64_tahoe:       "186e7b0ad2cbe98e3f26acceaa09cf82039e857eb25229caf9f5462b1dd657dd"
+    sha256 cellar: :any, arm64_sequoia:     "c73c4ff4dbf7040e3e1e9f0e75437d5bff9adf0fed1f414c0ad2b32da5d484ba"
+    sha256 cellar: :any, arm64_linux:       "fedd996aa00f0a6701bf2ffea5eb3253838cd81c2a2d9305ead9e6922a81875d"
+    sha256 cellar: :any, x86_64_linux:      "26897223594b7b30c59f399b82c379c861f76af3a4b00cdaa6cc361793e25e82"
   end
 
+  depends_on "rust" => :build # for dnspython > uv_build > maturin
   depends_on "certifi" => :no_linkage
   depends_on "libyaml"
-  depends_on "python@3.14"
+  depends_on "python@3.15"
   depends_on "rpds-py" => :no_linkage
 
   uses_from_macos "libxml2", since: :ventura
@@ -70,8 +72,8 @@ class ReconNg < Formula
   end
 
   resource "dnspython" do
-    url "https://files.pythonhosted.org/packages/8c/8b/57666417c0f90f08bcafa776861060426765fdb422eb10212086fb811d26/dnspython-2.8.0.tar.gz"
-    sha256 "181d3c6996452cb1189c4046c61599b84a5a86e099562ffde77d26984ff26d0f"
+    url "https://files.pythonhosted.org/packages/ef/4a/50822184bd67cc6493f0fb6a880749158fcd31ab3fa07409acfd91f9fc85/dnspython-2.9.0.tar.gz"
+    sha256 "b44dc6b18f07a8b1c56676a19fbfdb5209415b046a9cece286baafa87ff3f7f1"
   end
 
   resource "flasgger" do

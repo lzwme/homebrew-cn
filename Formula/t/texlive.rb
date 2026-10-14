@@ -37,11 +37,12 @@ class Texlive < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    sha256 arm64_golden_gate: "da5a6e73b276e162e27793ba169a7fa9a3842ed549cd404644e8da675807d31f"
-    sha256 arm64_tahoe:       "eb892868a93ee3625cd3328b9b2009f83285474d94f0af14677a7bff2cb39698"
-    sha256 arm64_sequoia:     "a95e6d95c77b1c0ec7f43766dddc4ce06bcaf0c972a88024c90f74d6ec6a52ab"
-    sha256 arm64_linux:       "46604e70412d3583a5ff0f96f05d0db1df6b285044aeecfb1e63c5152e6a2949"
-    sha256 x86_64_linux:      "56f000f0b2b267d6880c6c2d4ec52c09540b4df80a8318f4769ec1bfc2b6e934"
+    rebuild 1
+    sha256 arm64_golden_gate: "10dad928a43900b07a552aabe6c437cb684fcda63350a9c836e8a3b932577cfa"
+    sha256 arm64_tahoe:       "62f080ddb07da865d57b30ac72112451fdac24769e17d8b26a55cec49525ed09"
+    sha256 arm64_sequoia:     "5d874379f5d594ac5d96cc5632625bd484f451b28436af79e98d840176acb6da"
+    sha256 arm64_linux:       "aa6fec05d51c5424d6076395703fbb05c0025b5f124ef9aff931ffbb3f83b4cd"
+    sha256 x86_64_linux:      "e771c73576d8a6ade8542d7bd575b3c6aff50aed25bb4791310941d344795aad"
   end
 
   depends_on "pkgconf" => :build
@@ -68,7 +69,7 @@ class Texlive < Formula
   depends_on "pixman"
   depends_on "potrace"
   depends_on "pstoedit"
-  depends_on "python@3.14"
+  depends_on "python@3.15"
   depends_on "tcl-tk"
 
   uses_from_macos "ncurses"
@@ -347,8 +348,8 @@ class Texlive < Formula
   end
 
   resource "pygments" do
-    url "https://files.pythonhosted.org/packages/b0/77/a5b8c569bf593b0140bde72ea885a803b82086995367bf2037de0159d924/pygments-2.19.2.tar.gz"
-    sha256 "636cb2477cec7f8952536970bc533bc43743542f70392ae026374600add5b887"
+    url "https://files.pythonhosted.org/packages/49/2e/ced460408999b33da6b31b0021b0f37d329e202d4169aeb164493778f25b/pygments-2.21.0.tar.gz"
+    sha256 "610ca751c9bc2492b38eb9a38a7fbc93edbbb2d7182edaf34e66ae493dee5c8c"
   end
 
   def install

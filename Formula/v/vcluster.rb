@@ -26,8 +26,14 @@ class Vcluster < Formula
   depends_on "helm"
   depends_on "kubernetes-cli"
 
-  def install
+  deny_network_access!
+
+  def fetch
+    # `go generate` downloads the disposable email domains blocklist
     system "go", "generate", "./..."
+  end
+
+  def install
     system "go", "build", "-mod", "vendor", *std_go_args(ldflags: "-X main.version=#{version}"), "./cmd/vclusterctl"
 
     generate_completions_from_executable(bin/"vcluster", shell_parameter_format: :cobra)

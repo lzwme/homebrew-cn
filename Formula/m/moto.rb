@@ -8,11 +8,12 @@ class Moto < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "07399867a434d3be325ae95fc8f81a50545367be7f38f094e19ac428eee3529b"
-    sha256 cellar: :any, arm64_tahoe:       "f6593577572d9fb255f26d2523e5c1268f8e30e325c328c4c0e4dbef1ac471b7"
-    sha256 cellar: :any, arm64_sequoia:     "9e87b0a9ca30ef0ad56522d43db00224445f3130989545a5e7df767e7f8cc12b"
-    sha256 cellar: :any, arm64_linux:       "920bfacf9bb0951c0a69d182fa7712f81c644a66976dcefa46a6cb7fece4bf9a"
-    sha256 cellar: :any, x86_64_linux:      "dcf988b0f3a3fecdb514c39291dd73c13f55d07ef9347ab919d8d4f1867d9460"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "53a4ae2b087d8ee10c61c3be5caec4011d80441a093a33892a8bd42bd454c5f1"
+    sha256 cellar: :any, arm64_tahoe:       "58ef702c092c252bdf357ed081d040a5876ffb01f15cb0eaeb5b5eed146b54e5"
+    sha256 cellar: :any, arm64_sequoia:     "27ec39e9f180bcb755a0193a951e9184327b853abc73584b15b86bb39bef87c7"
+    sha256 cellar: :any, arm64_linux:       "a0afe418c88cc6d44d2decf487b419a5c0f9d3bd69607698ecc7b3e4de7227ff"
+    sha256 cellar: :any, x86_64_linux:      "247b8694e39d585be789f0c17881b5ae7cf4e051a1d7fc48453029f5aa51c65a"
   end
 
   depends_on "rust" => :build
@@ -21,7 +22,7 @@ class Moto < Formula
   depends_on "cryptography" => :no_linkage
   depends_on "libyaml"
   depends_on "pydantic" => :no_linkage
-  depends_on "python@3.14"
+  depends_on "python@3.15"
   depends_on "rpds-py" => :no_linkage
 
   pypi_packages package_name:     "moto[all,server]",
@@ -35,6 +36,11 @@ class Moto < Formula
   resource "attrs" do
     url "https://files.pythonhosted.org/packages/9a/8e/82a0fe20a541c03148528be8cac2408564a6c9a0cc7e9171802bc1d26985/attrs-26.1.0.tar.gz"
     sha256 "d03ceb89cb322a8fd706d4fb91940737b6642aa36998fe130a9bc96c985eff32"
+  end
+
+  resource "aws-sam-translator" do
+    url "https://files.pythonhosted.org/packages/24/84/06ffa6d6cc658f4b4b205f9482d2d8e68a9c6de7cacdeebbad17cd0ecd2f/aws_sam_translator-1.114.0.tar.gz"
+    sha256 "680b24eae8fbd56ac1e013b8e9baf5a9bfff14cc2f96f5a7d8158b774bb5080b"
   end
 
   resource "aws-xray-sdk" do
@@ -58,8 +64,8 @@ class Moto < Formula
   end
 
   resource "cfn-lint" do
-    url "https://files.pythonhosted.org/packages/41/93/996a8c4a8916ed10b71207de4276c7dbec4d13ad0f9a21830f9eed04f771/cfn_lint-1.57.2.tar.gz"
-    sha256 "7e859164badf01d2bd62c6d362284ab6e814d036f0a64249ba6a05287d787d68"
+    url "https://files.pythonhosted.org/packages/0a/fd/81468395bd6bbf3483b64045a247d094cb305fd849a0b044dc3a744baf76/cfn_lint-1.48.1.tar.gz"
+    sha256 "1855dce6b97528ff532e3f5a3aa5b659f40e51c338192a0ba82c1af88882b6f7"
   end
 
   resource "charset-normalizer" do

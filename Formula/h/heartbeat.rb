@@ -18,6 +18,13 @@ class Heartbeat < Formula
   depends_on "go" => :build
   depends_on "mage" => :build
 
+  # `test do` block runs a local TCP server for the monitor to check
+  allow_network_access! :test
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     # remove non open source files
     rm_r("x-pack")

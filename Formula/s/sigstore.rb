@@ -10,11 +10,12 @@ class Sigstore < Formula
   head "https://github.com/sigstore/sigstore-python.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "d8cd78272eb4ede01929e7369e6a705e9072879d040f2387170baefbe34296e4"
-    sha256 cellar: :any, arm64_tahoe:       "219e4f2a3f5594a5c6ff9f93ee5a02696a3b97fc344159f720534f5459107aef"
-    sha256 cellar: :any, arm64_sequoia:     "3bc251e8792c014bc12177a42f41c9fe3f38bbf82667091375ecaba83244836e"
-    sha256 cellar: :any, arm64_linux:       "b62f005a7c37f0a52aacc225e7dd6d38e5154363c4fa1411eae7bbfc3e3a2f5f"
-    sha256 cellar: :any, x86_64_linux:      "e92010a17c7125da4f74ba55380bb0f5ef59cc1b05e28f7199566e0a9ec8306a"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "887fb0de75d12909e9f33e65efed698ebc36d1d0ca0e4b9d8d0701ca1526c9a6"
+    sha256 cellar: :any, arm64_tahoe:       "8a20ad28a732424e010e522c9a3927ed45d8a1408498f3f6c00058eceaa2f408"
+    sha256 cellar: :any, arm64_sequoia:     "845519c23682f5ae63d7a985b2b8e3eab2a8af9b342c91183c276b68801a0faa"
+    sha256 cellar: :any, arm64_linux:       "9b52a31b579b241d737d1ca0966274ccb1921bcc3bd4ff4c987907911efb9fe2"
+    sha256 cellar: :any, x86_64_linux:      "ef22bcc803fbea2487d8f6944b160d93288800be23cd0d2b3f454d190c5fac49"
   end
 
   depends_on "pkgconf" => :build # for rfc3161-client
@@ -23,18 +24,18 @@ class Sigstore < Formula
   depends_on "cryptography" => :no_linkage
   depends_on "openssl@4" # for rfc3161-client
   depends_on "pydantic" => :no_linkage
-  depends_on "python@3.14"
+  depends_on "python@3.15"
 
   pypi_packages exclude_packages: %w[certifi cryptography pydantic]
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/e5/3f/143b048436775b0f76ac3eec145c019e8173ccc2885c8f20319b996d5e83/charset_normalizer-3.5.1.tar.gz"
-    sha256 "6117b84ea48435e5356dc737f5121485c30920ba43375fa7b434fd753df0eac3"
+    url "https://files.pythonhosted.org/packages/33/1c/f41d4e74c28ab327ff3acd36053f7ea506c55872d7a90b0fa71aa3ab0c89/charset_normalizer-3.5.2.tar.gz"
+    sha256 "39de2a259fc954455c57274dc94c79d5842774e1247a016aff30bc0efed0f4ef"
   end
 
   resource "dnspython" do
-    url "https://files.pythonhosted.org/packages/8c/8b/57666417c0f90f08bcafa776861060426765fdb422eb10212086fb811d26/dnspython-2.8.0.tar.gz"
-    sha256 "181d3c6996452cb1189c4046c61599b84a5a86e099562ffde77d26984ff26d0f"
+    url "https://files.pythonhosted.org/packages/ef/4a/50822184bd67cc6493f0fb6a880749158fcd31ab3fa07409acfd91f9fc85/dnspython-2.9.0.tar.gz"
+    sha256 "b44dc6b18f07a8b1c56676a19fbfdb5209415b046a9cece286baafa87ff3f7f1"
   end
 
   resource "email-validator" do
@@ -63,8 +64,8 @@ class Sigstore < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/c3/8a/84ef03c1c83eacd7cc4540b05428a93b5cd4e42f62fb0b98ac2cb6ed3a6d/platformdirs-4.12.1.tar.gz"
-    sha256 "38da801a4af303033cbffccb39030db22bf0473e6414309b02acebeee7ca8bf1"
+    url "https://files.pythonhosted.org/packages/80/a8/66d45abadff219e36e2a824181b8f6a67e7ed4572934d6252c71c29d5731/platformdirs-4.13.0.tar.gz"
+    sha256 "1aa0b0d3f224c1f07c295121e312a5a24a180d6ae5a8425ea1784b3e3863e9c0"
   end
 
   resource "pyasn1" do
@@ -137,11 +138,19 @@ class Sigstore < Formula
   resource "homebrew-test-artifact", :test do
     url "https://ghfast.top/https://github.com/sigstore/sigstore-python/releases/download/v3.3.0/sigstore-3.3.0.tar.gz", using: :nounzip
     sha256 "931e9913996ceace713d28e2431989414e711af30606f0b1e8bdc30fcbdd3fbe"
+
+    livecheck do
+      skip "Test fixture"
+    end
   end
 
   resource "homebrew-test-artifact.sigstore", :test do
     url "https://ghfast.top/https://github.com/sigstore/sigstore-python/releases/download/v3.3.0/sigstore-3.3.0.tar.gz.sigstore"
     sha256 "1cb946269f563b669183307b603f85169c7b1399835c66b8b4d28d913d26d5f7"
+
+    livecheck do
+      skip "Test fixture"
+    end
   end
 
   def install

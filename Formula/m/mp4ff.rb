@@ -1,16 +1,16 @@
 class Mp4ff < Formula
   desc "Tools for parsing and manipulating MP4/ISOBMFF files"
   homepage "https://github.com/Eyevinn/mp4ff"
-  url "https://ghfast.top/https://github.com/Eyevinn/mp4ff/archive/refs/tags/v0.59.0.tar.gz"
-  sha256 "7e0c697a658e243a27131756775ea53d2c7c57e3ed771fc24d3e21dea55c0b3d"
+  url "https://ghfast.top/https://github.com/Eyevinn/mp4ff/archive/refs/tags/v0.60.0.tar.gz"
+  sha256 "7da1d4f80e6c61d7c3fbe6adea2d29eeecb9cdc7966ebf793db7898d2ce387b8"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "4c71e04b85776143de390372be13d1c2f1379f64f96edd6c2da334f3455ee654"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "4c71e04b85776143de390372be13d1c2f1379f64f96edd6c2da334f3455ee654"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "4c71e04b85776143de390372be13d1c2f1379f64f96edd6c2da334f3455ee654"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "b348412ebf763d88a014c65a0503a6c0ec74c08a319ea2bfc31dbcc4a917d873"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "b09db7c989581d5f41681ab6b5ba249201700653ac48e6f9ab776588a71657d3"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "9b1ea8a8cbcb723898484a0ad1a811a4f75a412d430efe9348d37b244adb736d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "9b1ea8a8cbcb723898484a0ad1a811a4f75a412d430efe9348d37b244adb736d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "9b1ea8a8cbcb723898484a0ad1a811a4f75a412d430efe9348d37b244adb736d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "da8a16b60b6f013000e33cd6f72d8b1a6cad7a04a339577424720bc3b33cb286"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "bc45c9396e809ce23609303e971e501facafa4ec24b5f5247baf02cd57d8fd63"
   end
 
   depends_on "go" => :build
@@ -54,8 +54,9 @@ class Mp4ff < Formula
   end
 
   def install
+    ldflags = "-X github.com/Eyevinn/mp4ff/internal.commitVersion=v#{version}"
     tools.each do |tool|
-      system "go", "build", *std_go_args(output: bin/tool), "./cmd/#{tool}"
+      system "go", "build", *std_go_args(ldflags:, output: bin/tool), "./cmd/#{tool}"
     end
   end
 

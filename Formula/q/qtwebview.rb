@@ -1,10 +1,10 @@
 class Qtwebview < Formula
   desc "Displays web content in a QML application"
   homepage "https://www.qt.io/"
-  url "https://download.qt.io/official_releases/qt/6.11/6.11.2/submodules/qtwebview-everywhere-src-6.11.2.tar.xz"
-  mirror "https://qt.mirror.constant.com/archive/qt/6.11/6.11.2/submodules/qtwebview-everywhere-src-6.11.2.tar.xz"
-  mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.11/6.11.2/submodules/qtwebview-everywhere-src-6.11.2.tar.xz"
-  sha256 "7e21e109ee89dadeef2d3edd786bcb9d64a5562ea546f89dcc79b3f52f881f4c"
+  url "https://download.qt.io/official_releases/qt/6.12/6.12.0/submodules/qtwebview-everywhere-src-6.12.0.tar.xz"
+  mirror "https://qt.mirror.constant.com/archive/qt/6.12/6.12.0/submodules/qtwebview-everywhere-src-6.12.0.tar.xz"
+  mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.12/6.12.0/submodules/qtwebview-everywhere-src-6.12.0.tar.xz"
+  sha256 "bee0642225614d7fc9486a2ca6db7d2c82a28c311404d1503185a360792c504e"
   license all_of: [
     { any_of: ["LGPL-3.0-only", "GPL-2.0-only", "GPL-3.0-only"] },
     "BSD-3-Clause", # *.cmake
@@ -17,12 +17,11 @@ class Qtwebview < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "c8673882004045b44eccfbf14b9d01c6b3d6c175c0ced43eb348d7ff61889fbc"
-    sha256 cellar: :any, arm64_tahoe:       "885ca728bade5ac4ff77e16214702710304b2633d925aa39df8baa50a15b9563"
-    sha256 cellar: :any, arm64_sequoia:     "92180c71643e8d69a2f03d42bc7a538652abbdb1bf37efdcf5c0924d66b19e48"
-    sha256 cellar: :any, arm64_sonoma:      "3dcb03116185af260b362bd89beb2e6754af8f1afe90e43de432ff0f293a0278"
-    sha256 cellar: :any, arm64_linux:       "65f470201641db39394ccc2c4504fe249784feb92cbe56b04be883bac739bbfd"
-    sha256 cellar: :any, x86_64_linux:      "1013154bf62a2c0f087a0a2e0b2d49466fb10530fab623460dfbaa573980fa44"
+    sha256 cellar: :any, arm64_golden_gate: "e02f36790976cef4b0bdce2b5cfdc6148eef017f39ea3772cd3f74be59b76714"
+    sha256 cellar: :any, arm64_tahoe:       "98d5b9c98f8ae934e853dde839ba82bace112b7a34739d84bcdfa5a7214f498e"
+    sha256 cellar: :any, arm64_sequoia:     "58732ceb9551bc274913054077d573df0d98ebea8a0a2cf2323ffe93c02c7214"
+    sha256 cellar: :any, arm64_linux:       "0669bce5224977445c2908e1ba4cbd225fb06ef623726b4e267968ae2cd06f01"
+    sha256 cellar: :any, x86_64_linux:      "bec172c549909782a5176cbc1b853c3433fae0eea08b59b4d96da2c74950fafc"
   end
 
   depends_on "cmake" => :build
@@ -42,6 +41,7 @@ class Qtwebview < Formula
   def install
     args = ["-DCMAKE_STAGING_PREFIX=#{prefix}"]
     args << "-DQT_NO_APPLE_SDK_AND_XCODE_CHECK=ON" if OS.mac?
+    args << "-DQT_NO_PACKAGE_VERSION_CHECK=TRUE" # TODO: remove once QtWebEngine 6.140.0 is available
 
     system "cmake", "-S", ".", "-B", "build", "-G", "Ninja",
                     *args, *std_cmake_args(install_prefix: HOMEBREW_PREFIX, find_framework: "FIRST")

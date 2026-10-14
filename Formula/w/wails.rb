@@ -16,6 +16,17 @@ class Wails < Formula
 
   depends_on "go"
 
+  # Test scaffolds a project, which downloads Go modules
+  allow_network_access! :test
+
+  def fetch
+    # Match `install`, which builds the v2 module with workspace mode disabled
+    ENV["GOWORK"] = "off"
+    cd "v2" do
+      system "go", "mod", "download"
+    end
+  end
+
   def install
     # The top-level go.work only lists v3, so disable workspace mode to build v2.
     ENV["GOWORK"] = "off"
