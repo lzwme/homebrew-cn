@@ -1,8 +1,8 @@
 class Coder < Formula
   desc "Tool for provisioning self-hosted development environments with Terraform"
   homepage "https://coder.com"
-  url "https://ghfast.top/https://github.com/coder/coder/archive/refs/tags/v2.36.7.tar.gz"
-  sha256 "b7d9a712645ae54a2547f580d7d37961e86d0c930fe2e5120269ed64130b23bd"
+  url "https://ghfast.top/https://github.com/coder/coder/archive/refs/tags/v2.37.4.tar.gz"
+  sha256 "40c461d4fbf6c9b971c428a7bdcdb48e87c6e2e91c08d8d6417832d3f732aecf"
   license "AGPL-3.0-only"
   head "https://github.com/coder/coder.git", branch: "main"
 
@@ -15,11 +15,11 @@ class Coder < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "79c84a4de7fff2e1d8855f4828c2d40a5351034519e1362704c0dd08e7be67c8"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "564ba0ddf76a4024e7bd187a3f66cfbe8f5c99050f2609c0b104db296ef9fc77"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "2c12ad71356a5c31fc16103c4363f0290a8808b66ec465b330c29f3efd653ede"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "2462a10fc07bc0b6da00e6389f5e44a046ec67afcfd32dc946bd49b309413665"
-    sha256 cellar: :any,                 x86_64_linux:      "9c0d24fc17623f83871aae6ae492debc53e06b54e8548b3866b66b785df9bc83"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "c231309ecb91dcaff5bf3b37a26baaadfadf187a467d72467f1d0801686c5172"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "c61c912546eaf3d3fc8393096b7fe7d62fe582a185fe214e6e40c03f30503cce"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "e7ef55525e13b2246870cac964dc871ced6c9bee2dd1fcb2a5ca235e03fa6cc7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "7b92fbe3e46140a52fa45c58478c06797bc54813dee893d27f46c35f196fffa2"
+    sha256 cellar: :any,                 x86_64_linux:      "5988d8d8a20c3402ec62f1b0bdaf7028e0c708ba31bfd4044de30c56f9caa4cb"
   end
 
   # TODO: unpin go@1.26 when coder supports go 1.27

@@ -1,16 +1,16 @@
 class Pake < Formula
   desc "Turn any webpage into a desktop app with Rust with ease"
   homepage "https://github.com/tw93/Pake"
-  url "https://registry.npmjs.org/pake-cli/-/pake-cli-3.17.3.tgz"
-  sha256 "53a7db4987d99d8f6b93a2961c4a963428a20f4eb7cd49140547b20373eb5e0b"
+  url "https://registry.npmjs.org/pake-cli/-/pake-cli-3.17.4.tgz"
+  sha256 "570f99b062575a85af3361417215ea5e7a92c51e4855af7bf519cec7260a8d00"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "d3d41e7f593a3d3e0a6ab60c6f54d57be27259b904060fb812ca66ed12f1976a"
-    sha256 cellar: :any, arm64_tahoe:       "f6274b90742b92aa1f7d0dc44947d21733e7ab8baf9ae7292f69c0934bbef1b9"
-    sha256 cellar: :any, arm64_sequoia:     "8a2e125366b652fc7b48b5a55ab5dccfa377a941863af5b1fa63cda724c09f06"
-    sha256 cellar: :any, arm64_linux:       "817239292518b09ba5db98d83b2cc52b4c331cb0ca558b61e3d5e7bf1cd81c7a"
-    sha256 cellar: :any, x86_64_linux:      "790150a058d691672f5e60f3c5d36c2f68c44e9a0957e39f1936b035720b2b86"
+    sha256 cellar: :any, arm64_golden_gate: "0a8719948c6b1dd4a56f6df59c450d936343af74bbb0b8ea900ccd5431deff64"
+    sha256 cellar: :any, arm64_tahoe:       "d2af3d895865270f1ce5a0a2ad1bcb252cb0bcdcf243586b3848f9172e8ab8bc"
+    sha256 cellar: :any, arm64_sequoia:     "420bcebb0b8dabfb45ea54ca09a84a221da3b4f3a3db32bb2fe8a54b137f3483"
+    sha256 cellar: :any, arm64_linux:       "1ab2ce80bc000d844583b6cbb243adce4c7ddadfaab6697dc50c60270c8ea1e7"
+    sha256 cellar: :any, x86_64_linux:      "9c00fafc7499e329d7f2412550f87e6f4f7a3319c1ed50236f73654ef911ff1b"
   end
 
   depends_on "pkgconf" => :build

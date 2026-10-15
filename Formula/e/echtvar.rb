@@ -17,7 +17,7 @@ class Echtvar < Formula
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
-  depends_on "python@3.14" => :test
+  depends_on "python@3.15" => :test
   depends_on "openssl@4"
 
   uses_from_macos "llvm" => :build # for `libclang`, used by `hts-sys` bindgen

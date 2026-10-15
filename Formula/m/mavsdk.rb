@@ -21,7 +21,6 @@ class Mavsdk < Formula
 
   depends_on "asio" => :build
   depends_on "cmake" => :build
-  depends_on "python@3.14" => :build
   depends_on "rust" => :build
   depends_on "abseil"
   depends_on "c-ares"
@@ -34,6 +33,8 @@ class Mavsdk < Formula
   depends_on "re2"
   depends_on "tinyxml2"
   depends_on "xz"
+
+  uses_from_macos "python" => :build
 
   on_macos do
     # `cpp/tools/generate_from_protos.sh` uses `mapfile`, which needs Bash 4

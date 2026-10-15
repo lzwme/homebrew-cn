@@ -3,19 +3,17 @@ class Subliminal < Formula
 
   desc "Library to search and download subtitles"
   homepage "https://subliminal.readthedocs.io"
-  url "https://files.pythonhosted.org/packages/9f/08/f602bac8c35f04021e6dfcd0bebea917cd2b57116229a74a0b97e63c72ab/subliminal-2.7.1.tar.gz"
-  sha256 "f2649914d3067904effa2b4ce8d83aae994cd47008253311d5ae7949f467939f"
+  url "https://files.pythonhosted.org/packages/e7/3d/ff49ee5bffbac38dc4d4a154d11115e854859c0d65315594090a8275e1ed/subliminal-2.8.0.tar.gz"
+  sha256 "0d784e621d0fa7d173f75798427b3572d4ab071a90bc0b9a8a88f1925670f691"
   license "MIT"
-  revision 1
   head "https://github.com/Diaoul/subliminal.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_golden_gate: "5be58207b2d60bd7c757659af835709a4df4fb537dba951ae13a77a332f38688"
-    sha256 cellar: :any, arm64_tahoe:       "b651f7da640127cfb184dfac545f8d65cdfb1165c0bf5a8e1d763101e1d16b20"
-    sha256 cellar: :any, arm64_sequoia:     "6dafbbe41ed906b5893377aef4f4e822ae4b6a968d3b75748730803c05d4fc38"
-    sha256 cellar: :any, arm64_linux:       "52c98baf34186a3726298ef310682ff3803642f910e672cbefc499ade07fa60b"
-    sha256 cellar: :any, x86_64_linux:      "bede60cb9827f26d03574395f78592d577962fe99a9d30e15f161ff94e6b4f9a"
+    sha256 cellar: :any, arm64_golden_gate: "92987be181d593533e22371f0e9e75398d3a8e14f38990a17e813e5dc947be14"
+    sha256 cellar: :any, arm64_tahoe:       "b86ad778fc48699326cc7eca8bd7b42e9f4708f0ea10b79009702a09634c2bc1"
+    sha256 cellar: :any, arm64_sequoia:     "92cee8676ca6b88fa8863f6f4b46b8538c5b9dce04174dc5b9f0ff073049c70e"
+    sha256 cellar: :any, arm64_linux:       "870601b7e98df7fbd39b6c39479c2cd76a6c8399ed4e1ba1591a4f40e589ddf4"
+    sha256 cellar: :any, x86_64_linux:      "6a0b27de0d6042e357093b09c6c7449fdc1d5b4c18a0b7eb5c2686441966e567"
   end
 
   depends_on "rust" => :build # for rebulk > uv_build > maturin
@@ -131,8 +129,8 @@ class Subliminal < Formula
   end
 
   resource "soupsieve" do
-    url "https://files.pythonhosted.org/packages/71/c3/1b817965ac12dc002d7c9cd7dfffdd7d4fbf9b45763ef2ffe7b86ee94670/soupsieve-2.10.tar.gz"
-    sha256 "49e9380d7d2905463583bafe285e818c7366a9ed7b3aee221c1ac79c905d8bc0"
+    url "https://files.pythonhosted.org/packages/5e/77/2dcfa996b01702ab8fd0763d84098f6a640d6162a328f1c04c2697579a1a/soupsieve-3.0.3.tar.gz"
+    sha256 "7dcf6022eed0399eb9934a75e020148f7a2024c37b7dfcd3cf2c5505d69c364e"
   end
 
   resource "srt" do

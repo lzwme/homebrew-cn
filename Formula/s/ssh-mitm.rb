@@ -3,19 +3,17 @@ class SshMitm < Formula
 
   desc "SSH server for security audits and malware analysis"
   homepage "https://docs.ssh-mitm.at"
-  url "https://files.pythonhosted.org/packages/dc/21/ffbab2b3452b57053607f7d2ebb81a0e41723cefba44ec4c0cfc2304e70b/ssh_mitm-6.0.0.tar.gz"
-  sha256 "ff6f69e8a7f28ba52deef8b992bf3cc2f03151297ad77c152c5303e6647a69ba"
+  url "https://files.pythonhosted.org/packages/8b/10/d7cc27daf70eeba2e687bc50184772ad0b28744396fd9aa2de52c71dce10/ssh_mitm-6.0.1.tar.gz"
+  sha256 "70d870dbd30cf1431255711910e6d101ff48a7163a851bc16956ec3f427b7ae5"
   license "GPL-3.0-only"
-  revision 1
   head "https://github.com/ssh-mitm/ssh-mitm.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_golden_gate: "c08a010deab4b97156fba52fcffcbbdb3c1a2d735ebc13fbc537d04f68df9a11"
-    sha256 cellar: :any, arm64_tahoe:       "b0ece11459d1f091acb7a334993b334cad4ab89bade2c5dc412143b89e07ac2c"
-    sha256 cellar: :any, arm64_sequoia:     "6215b903d7f22318d1fafb9da8d058869bc8a0c5281e67bbfebb540aa8828a56"
-    sha256 cellar: :any, arm64_linux:       "12aba74e76351af35da78f6b0c5b9250f33577f9779423250364981dc31cc7c9"
-    sha256 cellar: :any, x86_64_linux:      "34645d9a8fdc0666bbdbef253c2dba51ba411bd741f36d2b2c3640830a2a2d8d"
+    sha256 cellar: :any, arm64_golden_gate: "5dac6a46ac8ec89e69421034a7b747559a27d35e0394f52548eb691dd76c1031"
+    sha256 cellar: :any, arm64_tahoe:       "1aaf11d39f39551470a4ac3edcbc541d5a403fe82d1ee605957374f99479765c"
+    sha256 cellar: :any, arm64_sequoia:     "7417e6d87ac118477d31bd19744b134a89fef313d9cf636473d729431decbae6"
+    sha256 cellar: :any, arm64_linux:       "de8766219dc196948ff83f0a7895a6b0be013559b03e060b9d8e5baa58a290f3"
+    sha256 cellar: :any, x86_64_linux:      "33a3aa1e1922d3cbb6965caa04ebad1b2a075613b6e2db7407e650653ba96f73"
   end
 
   # `pkgconf` and `rust` are for bcrypt
@@ -67,11 +65,6 @@ class SshMitm < Formula
     sha256 "39de2a259fc954455c57274dc94c79d5842774e1247a016aff30bc0efed0f4ef"
   end
 
-  resource "colored" do
-    url "https://files.pythonhosted.org/packages/7a/b6/c07f766b24cc3c92e3e24339ccacbc949d004f0fde759cdf24727c5c02bd/colored-2.3.2.tar.gz"
-    sha256 "d6b7f0737a732c54c92b271f2932c91e386238c8b6ded49d4180eed44eb50684"
-  end
-
   resource "frozenlist" do
     url "https://files.pythonhosted.org/packages/2d/f5/c831fac6cc817d26fd54c7eaccd04ef7e0288806943f7cc5bbf69f3ac1f0/frozenlist-1.8.0.tar.gz"
     sha256 "3ede829ed8d842f6cd48fc7081d7a41001a56f1f38603f9d49bf3020d59a31ad"
@@ -98,8 +91,8 @@ class SshMitm < Formula
   end
 
   resource "markdown" do
-    url "https://files.pythonhosted.org/packages/f8/4f/700155c8c20d9e655dd0732b5fc3c7614f291b9148da271d7388e50bf774/markdown-3.11.tar.gz"
-    sha256 "180224db6aed87ba9ce1f2781ebcd5826253de8ff637112090e24b84502bbf9f"
+    url "https://files.pythonhosted.org/packages/4e/d4/f3f4b6ed70b7c7608fa026ff3bbe59ace9b1ebca43d8ae4886c87c95e81d/markdown-3.11.1.tar.gz"
+    sha256 "496f4f80f9ebd3395a04c8ec9595c40bbe8ec19e9c67d21fe071a1643e876606"
   end
 
   resource "markdown-it-py" do
@@ -147,11 +140,6 @@ class SshMitm < Formula
     sha256 "497d0463ff3316681da6c0b9e8d06cb465d61abce00b613ab42226175644d1bb"
   end
 
-  resource "psrpcore" do
-    url "https://files.pythonhosted.org/packages/aa/7f/cdb91db4951081b719cd771fa6d53f6b4da9552e6d8468016f6a64350618/psrpcore-0.3.1.tar.gz"
-    sha256 "f86c4af74aadd41a2343ee559c121412dafde9df2000bb1f7f79169b10098d8b"
-  end
-
   resource "pygments" do
     url "https://files.pythonhosted.org/packages/49/2e/ced460408999b33da6b31b0021b0f37d329e202d4169aeb164493778f25b/pygments-2.21.0.tar.gz"
     sha256 "610ca751c9bc2492b38eb9a38a7fbc93edbbb2d7182edaf34e66ae493dee5c8c"
@@ -165,16 +153,6 @@ class SshMitm < Formula
   resource "pyte" do
     url "https://files.pythonhosted.org/packages/ab/ab/b599762933eba04de7dc5b31ae083112a6c9a9db15b01d3109ad797559d9/pyte-0.8.2.tar.gz"
     sha256 "5af970e843fa96a97149d64e170c984721f20e52227a2f57f0a54207f08f083f"
-  end
-
-  resource "python-json-logger" do
-    url "https://files.pythonhosted.org/packages/21/25/5473e46b179f8e8b4ad3aeeb36773d1701b7770eaf5e5bc2025c7303b598/python_json_logger-4.2.0.tar.gz"
-    sha256 "e371ebe22ec01e289850102091a2b1f6fc9e655c7f1f5f29073936756c290afa"
-  end
-
-  resource "pytz" do
-    url "https://files.pythonhosted.org/packages/14/21/d83d6ef28c4c912c4bb4d1dcf591f7b8c6bde87b9c66f9f454677314e16d/pytz-2026.5.tar.gz"
-    sha256 "fa23724b9c486543b9ff54a327ee7569ac83ade54bb9afd0fc18676620401c86"
   end
 
   resource "pyyaml" do
@@ -213,8 +191,8 @@ class SshMitm < Formula
   end
 
   resource "wrapt" do
-    url "https://files.pythonhosted.org/packages/3e/d2/a254a26d8ceaea87e0eee2e89fcfe53ddc1858418647493bb2937549ab6f/wrapt-2.5.0.tar.gz"
-    sha256 "c48cdb6c904dca76d9915a579e4a5fab6b0c25f650c1019ce78a78effaf7a345"
+    url "https://files.pythonhosted.org/packages/04/22/89e2f3bdae5cb34e0cab0cd86d7172dbf418de4b46c9b17b9c7a560dfa44/wrapt-2.5.1.tar.gz"
+    sha256 "f595bb0185aab3e9dc31950c95d914f56ea8278810c3b928f3426e12ed6d27bc"
   end
 
   resource "yarl" do

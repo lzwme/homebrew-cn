@@ -12,17 +12,18 @@ class Gdcm < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "2ee1cedcbe12a7dc904cd90dd2fed07b4359e815c2b8fc5005999caec69016ea"
-    sha256 arm64_tahoe:       "da182dcf5e433917b034fe4c92847c314813abc756a5baa9ecd2d0753099d784"
-    sha256 arm64_sequoia:     "06bea333e514d4d2e03e497b03551efbc585b88519a22a0aa14e74e85053a93c"
-    sha256 arm64_linux:       "9f615c631ef1255e11832d527393b73030b014df150619a12da12ecca9af4928"
-    sha256 x86_64_linux:      "5561c82eade00a159c1de70e2e1ff9d508667ab57192f6d24965b10e209a5210"
+    rebuild 1
+    sha256 arm64_golden_gate: "99b7e963bb2c5d1130f510467cab8b281ee944dd499c25046fe11accb9aafce5"
+    sha256 arm64_tahoe:       "4f418fe7041cd0575970c66fb70504b1244a1ef0c66ee27a84cfe670b789fcbe"
+    sha256 arm64_sequoia:     "69de185dd736947607d0862a9c0ce03a17d72b28a888e18ea3ab7f5ef8db129f"
+    sha256 arm64_linux:       "193d94dc1ff0e45394c72938335fdbc858da901496dd67a2906ebfc98d2e5eae"
+    sha256 x86_64_linux:      "3ac46a9e66373c0898640a60ef5f93d30d6be52cfd3481d73fe7151436093008"
   end
 
   depends_on "cmake" => :build
   depends_on "ninja" => :build
   depends_on "pkgconf" => :build
-  depends_on "python@3.14" => [:build, :test] # for bindings, avoid runtime dependency due to `expat`
+  depends_on "python@3.15" => [:build, :test] # for bindings, avoid runtime dependency due to `expat`
   depends_on "swig" => :build
   depends_on "charls"
   depends_on "json-c"
@@ -33,7 +34,7 @@ class Gdcm < Formula
   uses_from_macos "libxml2"
 
   on_linux do
-    depends_on "python@3.14"
+    depends_on "python@3.15"
     depends_on "util-linux" # for libuuid
     depends_on "zlib-ng-compat"
   end

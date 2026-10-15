@@ -3,16 +3,16 @@ class Tox < Formula
 
   desc "Generic Python virtualenv management and test command-line tool"
   homepage "https://tox.wiki/en/latest/"
-  url "https://files.pythonhosted.org/packages/58/e0/3e2a5f99e0559879cc02ca11d483ae9f48bd5d7d28a725560334f1b75452/tox-4.65.4.tar.gz"
-  sha256 "e416fcfef86874001ba90787c282f4c6ecae6e2e167dbe65e7b8b53f9d43c931"
+  url "https://files.pythonhosted.org/packages/cf/da/fede1f079b72862a9383eeff8508fa87c26c2386427cc97eab0a589fd058/tox-4.65.5.tar.gz"
+  sha256 "9b7296cc43f358736665afecb9154b04309e500c1ebe6aafe86632211b8cad41"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "e2ec170c654692c3d7d5390dca193c91fa01240b46ffdbcd6e8a65b38593e0d5"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "e2ec170c654692c3d7d5390dca193c91fa01240b46ffdbcd6e8a65b38593e0d5"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "e2ec170c654692c3d7d5390dca193c91fa01240b46ffdbcd6e8a65b38593e0d5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "a2757d83dfd21e0514f9206481d13f9627178e66bc2c23a8ed249c79d024e717"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "a2757d83dfd21e0514f9206481d13f9627178e66bc2c23a8ed249c79d024e717"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "29f318a6efd01a57a3a3a1b460d30fee2da263e98902e108a5ed6f66d02e3d5e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "29f318a6efd01a57a3a3a1b460d30fee2da263e98902e108a5ed6f66d02e3d5e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "29f318a6efd01a57a3a3a1b460d30fee2da263e98902e108a5ed6f66d02e3d5e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "8bae0eccf2b631bc0a5a84013d227d9bc171dc6a30b8b24a44cd00da8a6552fd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "8bae0eccf2b631bc0a5a84013d227d9bc171dc6a30b8b24a44cd00da8a6552fd"
   end
 
   depends_on "python@3.15"

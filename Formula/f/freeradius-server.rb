@@ -26,17 +26,18 @@ class FreeradiusServer < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "a50fc97d64a71a8f518163ac072d17a31f9293673bcb652f5004972a9a0063c9"
-    sha256 arm64_tahoe:       "d502d714e8521d018c3e06faf742c0d357725db18c4f574674cb0d6871320b3a"
-    sha256 arm64_sequoia:     "5dcef7e0b6f785f74d13408b62130864803b22cb334eeaa3d3c7b9d3cc2e2252"
-    sha256 arm64_linux:       "61e23770a0c3ecea031904854ab9b119ff59f412fb4d38885ecac03d1e396fff"
-    sha256 x86_64_linux:      "9ca8034146bf722e409a8a4f1aedd8ce7abc46a09f14bce9d842ba76396e417c"
+    rebuild 1
+    sha256 arm64_golden_gate: "d7149365cb570ebb614aebd846a5e9570b3579dd0372f604b45fc5d8204af5f5"
+    sha256 arm64_tahoe:       "ef3f26b5994560ed1a500cdc41f1252ca80517e0f202ea0266db872a3a7fa43b"
+    sha256 arm64_sequoia:     "db633983aa249511fc8cd50a6172e51c3b4f0d47176cc8bdf7aa591dbdb192d4"
+    sha256 arm64_linux:       "cbf0847480affcd294b7aad591bf22e88faf7d22b95976228d43e279da5b01e3"
+    sha256 x86_64_linux:      "9fb29c45da9f274e0ef0dc46f1efe4976ebab6455b1f103c2f5368527af1df60"
   end
 
   depends_on "collectd"
   depends_on "json-c"
   depends_on "openssl@4"
-  depends_on "python@3.14"
+  depends_on "python@3.15"
   depends_on "talloc"
 
   uses_from_macos "krb5"

@@ -18,7 +18,7 @@ class Nift < Formula
     sha256 cellar: :any,                 x86_64_linux:      "1cc5ff86ccf24a0ec26fac0b7a7aa7ba9d9fec263a34d6474d9fc98d768b62a3"
   end
 
-  depends_on "python@3.14" => :build
+  uses_from_macos "python" => :build
 
   on_sequoia :or_older do
     depends_on "llvm"

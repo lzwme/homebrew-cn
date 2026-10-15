@@ -1,9 +1,9 @@
 class Freetype < Formula
   desc "Software library to render fonts"
   homepage "https://www.freetype.org/"
-  url "https://downloads.sourceforge.net/project/freetype/freetype2/2.14.3/freetype-2.14.3.tar.xz"
-  mirror "https://download.savannah.gnu.org/releases/freetype/freetype-2.14.3.tar.xz"
-  sha256 "36bc4f1cc413335368ee656c42afca65c5a3987e8768cc28cf11ba775e785a5f"
+  url "https://downloads.sourceforge.net/project/freetype/freetype2/2.15.0/freetype-2.15.0.tar.xz"
+  mirror "https://download.savannah.gnu.org/releases/freetype/freetype-2.15.0.tar.xz"
+  sha256 "93cd47eb719c325107f2d3cf087d06299e944c3b48a40b55537302304dea1dd5"
   license "FTL"
   compatibility_version 1
 
@@ -13,12 +13,11 @@ class Freetype < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_golden_gate: "f705e663ae79e8687317afd82ff7f2fd83bf06773b728f98c60eacf57e973f63"
-    sha256 cellar: :any, arm64_tahoe:       "12a2e191f4ef6b4fd3c624ac36ed76bb317474893b92b5dac4c5884eb9f1fec3"
-    sha256 cellar: :any, arm64_sequoia:     "6453db5c6dba77200b4a1a653912bc63d251bdf2c8649c69ce19c336cfb3494a"
-    sha256 cellar: :any, arm64_linux:       "6257cffda7c33bead9b19a1fc8999303191b2684e79c965439f945633e5a87eb"
-    sha256 cellar: :any, x86_64_linux:      "dce42875d737b81860b044edfb837626906d4d118cc5f66d03053dbcbcf72908"
+    sha256 cellar: :any, arm64_golden_gate: "e95cd1f10672199f21f824b4f8a848c3a4f733df2fcd6e3d88b08446131eeed3"
+    sha256 cellar: :any, arm64_tahoe:       "75125d33e1fa0ea106b138e0458aba3054abd86ad7fbadd86ee4ed81fc8a2174"
+    sha256 cellar: :any, arm64_sequoia:     "7e7a7bb07a484cf6fccb168587d697ed24b98cce52e6ac735debb22adb422237"
+    sha256 cellar: :any, arm64_linux:       "da5494c91d3d359701c6af3bb2c0c3525aa512d1f90fee0fd915c92497b5387d"
+    sha256 cellar: :any, x86_64_linux:      "0f637083d41afca2d7b9b8aae297fc08583897b4659b170f5495f96bdf696c11"
   end
 
   depends_on "pkgconf" => :build
@@ -30,6 +29,8 @@ class Freetype < Formula
   on_linux do
     depends_on "zlib-ng-compat"
   end
+
+  deny_network_access!
 
   def install
     # This file will be installed to bindir, so we want to avoid embedding the

@@ -1,17 +1,17 @@
 class Minify < Formula
   desc "Minifier for HTML, CSS, JS, JSON, SVG, and XML"
   homepage "https://go.tacodewolff.nl/minify"
-  url "https://ghfast.top/https://github.com/tdewolff/minify/archive/refs/tags/v2.24.19.tar.gz"
-  sha256 "7c3759e8d98c060efabfa9a49def043f7315d82b363eca2e0563ca6bf87ac20a"
+  url "https://ghfast.top/https://github.com/tdewolff/minify/archive/refs/tags/v2.24.20.tar.gz"
+  sha256 "ef6eaec43bb0fb7c140e97278079f602c7c0150f44d2b74231cab3f53a3a091e"
   license "MIT"
   head "https://github.com/tdewolff/minify.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "abf4f92408d45082814fd30954a2af00ffd5064548b4b6eea6429472e4dfb3e4"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "abf4f92408d45082814fd30954a2af00ffd5064548b4b6eea6429472e4dfb3e4"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "abf4f92408d45082814fd30954a2af00ffd5064548b4b6eea6429472e4dfb3e4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "48c435b4d4982bbd1f3e34327cd3cfb8432954e292b7fb400379381377c06a43"
-    sha256 cellar: :any,                 x86_64_linux:      "24a3c0782a160765453f90a9a7419c33e9bf66aa131f6b40b133182988b030f7"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "17be35ccabbeb6662e6cece71ec78eeeec47f9f0682047f4a4eb4d33fd56c226"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "17be35ccabbeb6662e6cece71ec78eeeec47f9f0682047f4a4eb4d33fd56c226"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "17be35ccabbeb6662e6cece71ec78eeeec47f9f0682047f4a4eb4d33fd56c226"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "198d48f38c08d4c1cbb166306413ccb0b2166eb0cc7f047e411fc1a933b41203"
+    sha256 cellar: :any,                 x86_64_linux:      "70dc6ca50b5e0ebee40cd46f0f0e94843699d232b692fe0b3ccc06a834b8e7ea"
   end
 
   depends_on "go" => :build

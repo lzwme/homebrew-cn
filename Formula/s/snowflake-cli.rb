@@ -10,11 +10,12 @@ class SnowflakeCli < Formula
   head "https://github.com/snowflakedb/snowflake-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "bde795a9c7061153e95265620fa87ed32228cc5bd084c02f1a97af303d69075e"
-    sha256 cellar: :any, arm64_tahoe:       "17379684b23ffc23459f32b0b36195f6124659a05d96910dbfbcedf2e6006097"
-    sha256 cellar: :any, arm64_sequoia:     "bd99e31631ede658bf0fb9c5ba5396dda62075f059d63338682c86307a517371"
-    sha256 cellar: :any, arm64_linux:       "ac85a84a22aec351edf8a299837d12a4ec9474411029ac5a14a0f0c43d636415"
-    sha256 cellar: :any, x86_64_linux:      "f1447cbac5da3ea798de0b5803e604bf97658bf7f85d684e258359b5bc8ecb1f"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "0009dcba029b38f6cc723a248ae87be902744943c248124fe243da4ffeea5ccb"
+    sha256 cellar: :any, arm64_tahoe:       "595edd9289f47fbf03148a317d2e1712ec8f211cd4d28743acfd3d8be4b6b4c8"
+    sha256 cellar: :any, arm64_sequoia:     "a5a6a36a87495e973413a2fc4e0185f6b2107aaa217a42d49c1bc19ead4211c0"
+    sha256 cellar: :any, arm64_linux:       "6d2737522eaefc05593110f5e83208a009b55f8e9a9824c256980c3b9a82cce0"
+    sha256 cellar: :any, x86_64_linux:      "18bcc3e6bc32995de1efc66d23b49e3b5d166a9d7cf22023fbbaffb19d25eec4"
   end
 
   depends_on "protobuf" => :build
@@ -22,7 +23,7 @@ class SnowflakeCli < Formula
   depends_on "cryptography" => :no_linkage
   depends_on "libyaml"
   depends_on "pydantic" => :no_linkage
-  depends_on "python@3.14"
+  depends_on "python@3.15"
 
   conflicts_with "snow", because: "both install `snow` binaries"
 
@@ -331,6 +332,8 @@ class SnowflakeCli < Formula
 
     # run separately to avoid `protoc-wheel-0` dependency
     ENV.append_path "PATH", venv.root/"bin"
+    # Drop `python_requires` upper bound to allow Python 3.15
+    ENV["SNOWFLAKE_IS_PYTHON_RUNTIME_TEST"] = "1"
     venv.pip_install(resource("snowflake-snowpark-python"), build_isolation: false)
 
     generate_completions_from_executable(bin/"snow", shell_parameter_format: :typer)

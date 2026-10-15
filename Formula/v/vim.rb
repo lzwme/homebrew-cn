@@ -26,16 +26,17 @@ class Vim < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "1714ffe420e510f8e9ed57d848c8ad5220286dd6966dacab6d0aefa2f6d9397c"
-    sha256 arm64_tahoe:       "4ec75a2d0d560a4cebbdd471c8253d7aefbe75d48cf976864a73ba370995ae3b"
-    sha256 arm64_sequoia:     "8ebd1e6d14aaabc2ba09bfd70226f56058b8a8bd2d1cffcfb719e3ace458d871"
-    sha256 arm64_linux:       "2ccd1e778eb868d4d03f3ca3e5843713f2cb8093de31a37435959de68053e62a"
-    sha256 x86_64_linux:      "e39d13291a949d6de3462e7c021f312f9bb1e2906608a15e7df1b59a8f7c0340"
+    rebuild 1
+    sha256 arm64_golden_gate: "5b1c34c26bb2906a295bac9811ff74f78a4fb725272993a002e2c7903e761cd6"
+    sha256 arm64_tahoe:       "906c3e173bd2476d03d43aa670edbc392bdb44dae4cf8aea9fb4014daa721a43"
+    sha256 arm64_sequoia:     "3a3da4f00ded7697f9875a72143924060307e3a89cc23c3ee36f35a3f4f340d6"
+    sha256 arm64_linux:       "f206635d492ca20c40ca9ffd2183d4d2fd0a50ad41a2bf4eab63f9accfddf388"
+    sha256 x86_64_linux:      "4fcca1d60472b2650f32ec39d17fece2bb0cdeb0f7d33fd83f74519eb12abff2"
   end
 
   depends_on "gettext" => :build
   depends_on "lua" => [:build, :test]
-  depends_on "python@3.14" => [:build, :test]
+  depends_on "python@3.15" => [:build, :test]
   depends_on "ruby" => [:build, :test]
   depends_on "libsodium"
   depends_on "ncurses"
@@ -59,7 +60,7 @@ class Vim < Formula
   deny_network_access!
 
   def install
-    ENV.prepend_path "PATH", formula_opt_libexec("python@3.14")/"bin"
+    ENV.prepend_path "PATH", python3.dirname
 
     # Allow dynamically loading formulae libraries when not linked
     extra_deps.each do |dep|

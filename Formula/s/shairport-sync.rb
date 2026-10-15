@@ -1,10 +1,9 @@
 class ShairportSync < Formula
   desc "AirTunes emulator that adds multi-room capability"
   homepage "https://github.com/mikebrady/shairport-sync"
-  url "https://ghfast.top/https://github.com/mikebrady/shairport-sync/archive/refs/tags/5.5.2.tar.gz"
-  sha256 "abcdb59674b6eedb4f3f6228f3c702e65d2cdc037231b0c48617fd90891b49e9"
+  url "https://ghfast.top/https://github.com/mikebrady/shairport-sync/archive/refs/tags/5.6.tar.gz"
+  sha256 "20271e220e859b8f60a707597187564d3bda7dbf69dd61aa1357ec1656285246"
   license "MIT"
-  revision 1
   head "https://github.com/mikebrady/shairport-sync.git", branch: "master"
 
   livecheck do
@@ -13,16 +12,17 @@ class ShairportSync < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "ca485aa845f0ace913c96b738b163cfec02599168aba1f1db59df901b65a6f58"
-    sha256 arm64_tahoe:       "36feac3b5b915d840388c62e691a03ce76efed097f679a09a1856ea8fe069164"
-    sha256 arm64_sequoia:     "bf601a0a9329ce643f86ffe518aa743cbeee46ce1994c7d71aeb4c51dd68669b"
-    sha256 arm64_linux:       "eabcee3a05fe35cd898275815818244f658dbec8c783b17e7c35ab7bd6559da2"
-    sha256 x86_64_linux:      "035dacb2f4addfd76a3a18a44903f7c49f786c844bec821c909465dcee6df697"
+    sha256 arm64_golden_gate: "69133210df44133c1ef9309eba4ffd86542119c265fa6b8cce539281c30f6650"
+    sha256 arm64_tahoe:       "3785a5c2ae04c6dd6272bb1f8313a0e8c45eb5e3bb2f875f4cb99d890ef6189c"
+    sha256 arm64_sequoia:     "1b378d9169ecdf297d9c9c91c6bb131e4f8794458c9d9fd3e2c66b24a2e32516"
+    sha256 arm64_linux:       "df04476e1ffce3bf3dddc1d10300de5e5681d31036731cb6577934e701d88964"
+    sha256 x86_64_linux:      "a608e850ee24834e59974dac0b4325dbd946a3991ef58cb3172e2e49942afb78"
   end
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "pkgconf" => :build
+  depends_on "ffmpeg"
   depends_on "libao"
   depends_on "libconfig"
   depends_on "libdaemon"
@@ -30,6 +30,8 @@ class ShairportSync < Formula
   depends_on "openssl@4"
   depends_on "popt"
   depends_on "pulseaudio"
+
+  deny_network_access!
 
   def install
     system "autoreconf", "--force", "--install", "--verbose"

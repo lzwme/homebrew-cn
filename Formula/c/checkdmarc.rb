@@ -3,14 +3,13 @@ class Checkdmarc < Formula
 
   desc "Command-line parser for SPF and DMARC DNS records"
   homepage "https://domainaware.github.io/checkdmarc/"
-  url "https://files.pythonhosted.org/packages/20/80/6b00921132e81462042c8e9e1c13192c66f1740e202bf4ddc7a35587edbd/checkdmarc-6.0.3.tar.gz"
-  sha256 "e9f8f23151b81fa229a76c8b39ec697245391f22b8d3b3e41ce8dd1a90256b80"
+  url "https://files.pythonhosted.org/packages/a5/9b/6a25ad12100a86fe6636d41c04d2946d25ec610264023a85612f3452ba41/checkdmarc-6.0.4.tar.gz"
+  sha256 "27113185ec5fd981ee163d5fbd86b8d8c1e15021e0f311c714a878bcb3e8b261"
   license "Apache-2.0"
   head "https://github.com/domainaware/checkdmarc.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "972d5aec940559682ae122549ec50ecbb06e6c809aa56c0c0dece814c2df77e6"
+    sha256 cellar: :any_skip_relocation, all: "a75ce57fcc79ffa1f79a59420add6b6a6c688173bdce2cf1e3390df5396e11a2"
   end
 
   depends_on "rust" => :build # for dnspython > uv_build > maturin
@@ -96,8 +95,8 @@ class Checkdmarc < Formula
   end
 
   resource "publicsuffixlist" do
-    url "https://files.pythonhosted.org/packages/a7/09/8b44f8db9ace72939c488f0a7eacc3696350230f1dacbf2be5a60d08b49a/publicsuffixlist-1.0.2.20261007.tar.gz"
-    sha256 "4f1bedc2c2c5cc4b0b60b270c579d475c7580e6441d262d1fcfc62f3d45a58e0"
+    url "https://files.pythonhosted.org/packages/95/4f/54b0f7bf18b0ec89742d7d2657f04feaadd27f7ca99800296c526daf1a84/publicsuffixlist-1.1.0.20261010.tar.gz"
+    sha256 "1ebd4c9edade8a6c9bd01995a6f9e67220948dca5879b1fd48a565cb429d9aeb"
   end
 
   resource "pyleri" do
@@ -111,8 +110,8 @@ class Checkdmarc < Formula
   end
 
   resource "truststore" do
-    url "https://files.pythonhosted.org/packages/53/a3/1585216310e344e8102c22482f6060c7a6ea0322b63e026372e6dcefcfd6/truststore-0.10.4.tar.gz"
-    sha256 "9d91bd436463ad5e4ee4aba766628dd6cd7010cf3e2461756b3303710eebc301"
+    url "https://files.pythonhosted.org/packages/ee/9f/c5201d42a484c061e528825fc8e2d565f5abd50a4ced6fb7d29c4ec99b2b/truststore-0.10.5.tar.gz"
+    sha256 "30d36967ccaded5cbb38d602c433f53600036c79d502f4533a49b60a03bbefcd"
   end
 
   resource "urllib3" do

@@ -12,11 +12,12 @@ class Aarch64ElfGdb < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "503d596f5615aa4347b7130c5b2631f6d82821206e1bdcf35593745075c1569c"
-    sha256 arm64_tahoe:       "35b9a904b49aa5f6a59eaaf18d06c8dd8641be7bf7dcfd9660d2fb535aa048b8"
-    sha256 arm64_sequoia:     "b1ab40dec2e3bf3abd4583555d3212bbf8756c60dfa35f7b88a47223372b4be6"
-    sha256 arm64_linux:       "03b905f671e8bed5ccd761641ea3ac6f072233aa090ac09c9daf01689959daa6"
-    sha256 x86_64_linux:      "f04148decadce870043397548a52b4911281e934bfb0aab662bbd2d9b5602a73"
+    rebuild 1
+    sha256 arm64_golden_gate: "2c3e6b49cf2bc36df341e57d4811788ea82c1e20babac1515b949c5fca7dff0d"
+    sha256 arm64_tahoe:       "653ddaee64b53fd4029d3b4c6ea6aedd119684e5fa75a853666c56fe7072ccb5"
+    sha256 arm64_sequoia:     "f475560d0ea7603a5101a6bdc385e56f407359bd2dac95ce79151fc093825d79"
+    sha256 arm64_linux:       "bed612519115fabc085749b3bad91eda6bb95e5d2f6348af88cf23d02526447f"
+    sha256 x86_64_linux:      "59028ce682dad68dd197989ac07b1640469584c589dd4cd95d84d79e53d30366"
   end
 
   depends_on "pkgconf" => :build
@@ -24,7 +25,7 @@ class Aarch64ElfGdb < Formula
   depends_on "gmp"
   depends_on "mpfr"
   depends_on "ncurses" # https://github.com/Homebrew/homebrew-core/issues/224294
-  depends_on "python@3.14"
+  depends_on "python@3.15"
   depends_on "readline"
   depends_on "xz" # required for lzma support
   depends_on "zstd"

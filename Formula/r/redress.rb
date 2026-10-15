@@ -1,8 +1,8 @@
 class Redress < Formula
   desc "Tool for analyzing stripped Go binaries compiled with the Go compiler"
   homepage "https://github.com/goretk/redress"
-  url "https://ghfast.top/https://github.com/goretk/redress/archive/refs/tags/v1.2.93.tar.gz"
-  sha256 "aafd8278787ebf57d865be70073266849554ac9201bf770746b410db9ab6b1f7"
+  url "https://ghfast.top/https://github.com/goretk/redress/archive/refs/tags/v1.2.94.tar.gz"
+  sha256 "267d9253a12b035d7505a21cf9425d19a5b825477914e352a6974c58f6129da2"
   license "AGPL-3.0-only"
   head "https://github.com/goretk/redress.git", branch: "develop"
 
@@ -12,11 +12,11 @@ class Redress < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "166abb90610f164b301a2c870e17cc50ca0a1b61ab816add3a710c92e2d392fa"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "30fa402c0fb23402fa754fbdba5ca5a3eee92b6e867f38e6c7bedf42d4479062"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "fbc13eab23252d1c01972b2437bcc386da3a39075d6d4a62065598f56453c16e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "6c01b4657d282fced6be3e36bd26bdc3368e7acade14c937b27cb5d68cf701f4"
-    sha256 cellar: :any,                 x86_64_linux:      "958584691baf4815988e9eabdf210b14276df1c444f5689ffb4436bc53a1b8d8"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "a5f00f8b58eb3cd8d94065b4441e30c075269487d0e663891c5dfb0426532d0e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "12fccfa95773827eb937f4be98a9eadc7a95eb3be80cebfd1a830ffe13d61769"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "17e48e15d9130db42075cc2edba3bcd32766bf95dc399242cb1a91998720a23d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "432b2435341d0dac7901220c4b1dead057bb0d7648ef67e494f3dd5b98514210"
+    sha256 cellar: :any,                 x86_64_linux:      "19efa4cefb882f1607927d495bf27d8b508dd1af88d7b9a707a2b2e1cca02845"
   end
 
   depends_on "go" => :build

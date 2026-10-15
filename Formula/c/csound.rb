@@ -40,11 +40,12 @@ class Csound < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "163dc7f5a1d21cf601ad3e96682cdcfc9a106e34af199fab0474e160acb1cb62"
-    sha256 arm64_tahoe:       "ff45fa869edf2d93b628e64015889a2b4c6282ec94badf5d7c4900a568136037"
-    sha256 arm64_sequoia:     "3498a768a458e644ee25b22beea9cf4ae54628b598a6f64bf32a381a8190eb23"
-    sha256 arm64_linux:       "265393a74867bbdfa790372086af54b96817832f7bfdf6a1b4953f5feac34bd2"
-    sha256 x86_64_linux:      "c87b6dc5ecfaa4311fb147ead72db2b83970baed903b09246e01ed0be586a987"
+    rebuild 1
+    sha256 arm64_golden_gate: "cb405dbf38d9291281c13a38aebc1351a51e3b2fcbcfd7d552ac0ef9213f8065"
+    sha256 arm64_tahoe:       "9caad7f594d564dc2a6c68cf9ce8cdfd18eccbfbdb2069f5d87831796faeb486"
+    sha256 arm64_sequoia:     "8a6541812e99b3920f402625bcd0b90ef9c949b882f771563e38e5122a919f11"
+    sha256 arm64_linux:       "5a19e2217e2a0e4b0a09e27e9828efdca31ae2c67dfed1c18a166520a23d7ab6"
+    sha256 x86_64_linux:      "3edd6181b8d2edfa0188223692fafb99a2e9e19dacfdecaaf3948c633db4ddc5"
   end
 
   depends_on "asio" => :build
@@ -68,7 +69,7 @@ class Csound < Formula
   depends_on "openssl@4"
   depends_on "portaudio"
   depends_on "portmidi"
-  depends_on "python@3.14"
+  depends_on "python@3.15"
   depends_on "stk"
   depends_on "wiiuse"
 

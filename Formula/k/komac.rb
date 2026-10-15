@@ -1,19 +1,17 @@
 class Komac < Formula
   desc "Community Manifest Creator for Windows Package Manager (WinGet)"
   homepage "https://github.com/russellbanks/Komac"
-  url "https://ghfast.top/https://github.com/russellbanks/Komac/archive/refs/tags/v2.16.0.tar.gz"
-  sha256 "a88eb12956091e2e5bd9b15184a4efc953c037346fe66f81d2553c08b9e81da4"
+  url "https://ghfast.top/https://github.com/russellbanks/Komac/archive/refs/tags/v2.17.1.tar.gz"
+  sha256 "b87a4cec1c2dc8a334812d240c668692ab463f81ca58dc210b95f599f148b183"
   license "GPL-3.0-or-later"
   head "https://github.com/russellbanks/Komac.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "04d74402fa9c4327e533bc05b7fdf388f1e90b8bab59d5e5303db5fea7e14085"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "73b35bb2d85e740a8601845dfa23958bd12d6d6d0b85831665e11e2ae8b63b9e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "35e910178255d87137e43f4f7d71396982e9b8c930b40a777ec2f382b66caf23"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "92eb2c50aad8a8a812245f5118f71ed5a8e8f28b04ead558f60439ca755f2575"
-    sha256 cellar: :any_skip_relocation, sonoma:            "70d1b06a7ecbda682281841b977f16c1b9d81d838f4280c4734374a902dc0825"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "295c4d298fedffa4ff7f6becf30607c6b5651ee5b892309e9e13f033144653f2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "362ef26a8e39f78324a3020a0bf4e446c52a60c70d22e7eb6b1191f10e83d618"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "133f49198854a51380f4c17f320adf081ff2476ae6955fb54a648b72aaf3df3a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "62e9d5dd0341f6d9435013a0f50ed608c0d502160730d8335ab8ee3f561907aa"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "ab4ce57db700bc451c1944c490ca588afcd05bda343b5737a32db2a7d04b02e1"
+    sha256 cellar: :any,                 arm64_linux:       "bc072c0f77c1f4aec340ebd43acdc1817c3b9b59d2f12418ace4697cbc62e0a4"
+    sha256 cellar: :any,                 x86_64_linux:      "6e37334ccb91dd46f5043ccca54429e7345fe2d3b0ca69393adfc266198898f7"
   end
 
   depends_on "pkgconf" => :build

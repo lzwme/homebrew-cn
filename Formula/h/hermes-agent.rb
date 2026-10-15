@@ -3,8 +3,8 @@ class HermesAgent < Formula
 
   desc "Self-improving AI agent that creates skills from experience"
   homepage "https://hermes-agent.nousresearch.com"
-  url "https://ghfast.top/https://github.com/NousResearch/hermes-agent/archive/refs/tags/v0.21.6.tar.gz"
-  sha256 "1ba3500cdbe876bb9d347b3c12f41c591a421293eac58faba23571287dfe1cf8"
+  url "https://ghfast.top/https://github.com/NousResearch/hermes-agent/archive/refs/tags/v0.22.0.tar.gz"
+  sha256 "61333ab64f7ad728bc265d103fd73b2eb4b936f9c8d9fe3ccf2531ad955e96a1"
   license "MIT"
   version_scheme 1
   head "https://github.com/NousResearch/hermes-agent.git", branch: "main"
@@ -15,11 +15,11 @@ class HermesAgent < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "4e1cc6ec79677bc3f0c8ca2a1585876850ab599eca61198c4501cf734ace92cb"
-    sha256 cellar: :any, arm64_tahoe:       "dcad7f732027d0c83d5fb7d8d3d682208e8b766f7b210e351c524670cc605139"
-    sha256 cellar: :any, arm64_sequoia:     "19f66a064f655a8de6398a67bf694e9f45ffebb1de71862ea18035831377714e"
-    sha256 cellar: :any, arm64_linux:       "c48fc6a814ae3716a6c68cc669a4a2a02c0c9b5b4cc6f05ee89d89ab1297cbca"
-    sha256 cellar: :any, x86_64_linux:      "50aee8dc22405af3bcc97c33e01dd59902e173e39c37ee0fb2e2e5a06c86035a"
+    sha256 cellar: :any, arm64_golden_gate: "afc62e6c5e2d9d22f5caf01a3b484cdbf8ba5f8856e6f8fde6d1228c0103f05f"
+    sha256 cellar: :any, arm64_tahoe:       "2c3f6f969f3d85c9c91191ff1ce4bbc3c8c9ff2359b8f3411286234d7d8f02dc"
+    sha256 cellar: :any, arm64_sequoia:     "a5f03bf5d18ab110d0f505facc0a8e7b48ff2ff3c2c2644217f47640648798ba"
+    sha256 cellar: :any, arm64_linux:       "d9733e782544fede21163114b6457652741f7c6e9e11163e3cdea2de336185b8"
+    sha256 cellar: :any, x86_64_linux:      "a777473fddd0dc8391ceb4636b78d455a1cd0a51a7c5abc8b41e63661239d685"
   end
 
   depends_on "pkgconf" => :build
@@ -32,6 +32,7 @@ class HermesAgent < Formula
   depends_on "pydantic" => :no_linkage
   depends_on "python@3.14"
   depends_on "ripgrep"
+  depends_on "rpds-py" => :no_linkage
   depends_on "tirith"
 
   on_linux do
@@ -39,7 +40,7 @@ class HermesAgent < Formula
   end
 
   pypi_packages package_name:     "hermes-agent[all]",
-                exclude_packages: %w[certifi cryptography pillow pydantic]
+                exclude_packages: %w[certifi cryptography pillow pydantic rpds-py]
 
   # `hermes-acp` imports this at startup with no lazy-install fallback; upstream pins ==0.9.0
   resource "agent-client-protocol" do
@@ -138,8 +139,8 @@ class HermesAgent < Formula
   end
 
   resource "google-api-core" do
-    url "https://files.pythonhosted.org/packages/0a/c7/5c90a4b12d68efe3a6c277c9d0336e3d1e7f64b41dfb780e35d0eefec77a/google_api_core-2.41.0.tar.gz"
-    sha256 "73e89a86baef6680934adeee6fbd0ceaf20c1393ab229b2f9b34efb23b0fdef3"
+    url "https://files.pythonhosted.org/packages/ac/aa/2aa84799e6920216f8aa2866d3b43daa20f7060dcb6efc8f0449e8be0ab0/google_api_core-2.42.0.tar.gz"
+    sha256 "82cf5daa2ef1b456d4e29ff1de1a5c2995c7be3ccf4fc608184326e03390c1ee"
   end
 
   resource "google-api-python-client" do
@@ -263,8 +264,8 @@ class HermesAgent < Formula
   end
 
   resource "nemo-relay" do
-    url "https://files.pythonhosted.org/packages/c3/aa/382e9dc67063efc30dedbc947362515e7376a3beb8925a344dc9245c40a1/nemo_relay-0.9.4.tar.gz"
-    sha256 "7fe6207b97375fe676f092e3af7cbed6acaf454d03a9837faed4c5cafaa28370"
+    url "https://files.pythonhosted.org/packages/16/e8/016a4c95429c37c456d5580d92dffb46bd7d071017fea6d751c5b73582ca/nemo_relay-0.10.0.tar.gz"
+    sha256 "d3382e826d3d65551f3a307128c15116057fd7f45277f8a8d0cb51f8aca3ed68"
   end
 
   resource "oauthlib" do
@@ -293,8 +294,8 @@ class HermesAgent < Formula
   end
 
   resource "pillow-heif" do
-    url "https://files.pythonhosted.org/packages/bb/4c/d5319a1f276c70528ff97893afc42a300ff28029e27ca8de89bb3b271680/pillow_heif-1.8.0.tar.gz"
-    sha256 "e47c27432c6fd3d66c22f0de9f27fd379383b646c947520bc485854ce72060d0"
+    url "https://files.pythonhosted.org/packages/44/c1/82145984920ca055675af2c2795bd30da6f7461215c41f3c1eacb3d66353/pillow_heif-1.8.1.tar.gz"
+    sha256 "521ebffb8a181d56c3904e5a61f20903edee0d9d3275967b8fb345f866215c06"
   end
 
   resource "prompt-toolkit" do
@@ -395,11 +396,6 @@ class HermesAgent < Formula
   resource "rich" do
     url "https://files.pythonhosted.org/packages/b3/c6/f3b320c27991c46f43ee9d856302c70dc2d0fb2dba4842ff739d5f46b393/rich-14.3.3.tar.gz"
     sha256 "b8daa0b9e4eef54dd8cf7c86c03713f53241884e814f4e2f5fb342fe520f639b"
-  end
-
-  resource "rpds-py" do
-    url "https://files.pythonhosted.org/packages/42/68/3bd46b8a5e01d3c2ebdf9c5e9497912e3fe0cde02bac21a7130ca866e403/rpds_py-2026.9.1.tar.gz"
-    sha256 "4793ef7f78268b124b73fa933440f01d258bbae01de9fa53e9080c9ab0425a12"
   end
 
   resource "ruamel-yaml" do

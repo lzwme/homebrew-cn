@@ -23,7 +23,8 @@ class Smlnj < Formula
 
   depends_on "autoconf" => :build
   depends_on "cmake" => :build
-  depends_on "python@3.14" => :build
+
+  uses_from_macos "python" => :build
 
   on_linux do
     depends_on "zlib-ng-compat"
@@ -66,7 +67,7 @@ class Smlnj < Formula
   end
 
   test do
-    hello_sml = <<~EOF
+    hello_sml = <<~SML
       val () = print "Hello, Homebrew!\n";
       val _ = (
         CM.make "$/smlnj-lib.cm";
@@ -81,7 +82,7 @@ class Smlnj < Formula
         CM.make "$/uuid-lib.cm";
         CM.make "$/xml-lib.cm"
       ) handle _ => OS.Process.exit OS.Process.failure
-    EOF
+    SML
     output = pipe_output(bin/"sml", hello_sml, 0)
     banner = Regexp.new("Standard ML of New Jersey [[Version #{version}, 64-bit; .*]]")
     assert_match banner, output

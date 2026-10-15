@@ -10,11 +10,12 @@ class Gptme < Formula
   head "https://github.com/ErikBjare/gptme.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "9d983d389077e5d85529301b6fca6d11424664df3eba302329586350ed2e8c57"
-    sha256 cellar: :any, arm64_tahoe:       "5b665449fbd283d5665d2675d01ecf7f47ed2ff54ffb164a3c7714fd1849496b"
-    sha256 cellar: :any, arm64_sequoia:     "cdbeac3e4c3e83c4e5e03bccb3f01feee9a8fa076a4bf56a1e371d39533ce0f6"
-    sha256 cellar: :any, arm64_linux:       "5a9edf061251c2bc05a92643eef421c876d97e642baf8634bcde2e8c5dc22310"
-    sha256 cellar: :any, x86_64_linux:      "339e440b837a5983395b7607976b27816901bb70a54ee4b651747bd51e74361c"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "41e38c864efe84024669eaeeb1fd9430ac428bb7688201ebc7006bdf009e020a"
+    sha256 cellar: :any, arm64_tahoe:       "ad3f49a29f9ae377e9898a2c4e0a657631fd5a41e612a98a311da3b11b03debc"
+    sha256 cellar: :any, arm64_sequoia:     "4dca5a15f3fe62b961694c2b5a57b9d821ec4692e2e0340d21bfdf6b20dcbfd4"
+    sha256 cellar: :any, arm64_linux:       "7114bf03798d5c035f1be4ed04243975d02b8809d1d517962d93ff8b40519fd3"
+    sha256 cellar: :any, x86_64_linux:      "6226491a423a78807f39c5c5889d1205e0cefc1af1ed94d0b4b525a97ebc0744"
   end
 
   depends_on "rust" => :build # for jitter
@@ -23,7 +24,7 @@ class Gptme < Formula
   depends_on "libyaml"
   depends_on "pillow" => :no_linkage
   depends_on "pydantic" => :no_linkage
-  depends_on "python@3.14"
+  depends_on "python@3.15"
   depends_on "rpds-py" => :no_linkage
 
   uses_from_macos "libxml2", since: :ventura
@@ -347,6 +348,9 @@ class Gptme < Formula
   end
 
   def install
+    # Allow Python 3.15
+    inreplace "pyproject.toml", 'requires-python = ">=3.10,<3.15"', 'requires-python = ">=3.10,<3.16"'
+
     virtualenv_install_with_resources
 
     generate_completions_from_executable(bin/"gptme", shell_parameter_format: :click)

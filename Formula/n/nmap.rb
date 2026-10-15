@@ -14,11 +14,12 @@ class Nmap < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "7e1efad06959894b07fa340e3d36e51dac4090cf6d23e48694551f10b239135c"
-    sha256 arm64_tahoe:       "f6739e639b4b1af576ecc01d0799bd5ddb3918b61af5ce43a22e7ec357b3fee5"
-    sha256 arm64_sequoia:     "48f2ffa147eda489dd656b95de347494b4913715e0b59164df20ff80a4e6a865"
-    sha256 arm64_linux:       "bcdee62675a7c60cb7c53478b3e8c146c83dd3e034dfe75bc87d3737d24c77f2"
-    sha256 x86_64_linux:      "142a6521d7a319282f3d8c96ec36e4e48ce07f4c2e622e8015effd1d27958470"
+    rebuild 1
+    sha256 arm64_golden_gate: "300582ff9816078b46ee25141fe88840a76228dedd4a0b15b32081ef4165bc66"
+    sha256 arm64_tahoe:       "dd43dd9335ff2b6ecc25398155fda5c657b74a307c57e226fb9207f53739829e"
+    sha256 arm64_sequoia:     "5c2bd58115e740dfd308474e6d6ab769d119ef5287ab04ae5252f9512264a68f"
+    sha256 arm64_linux:       "680031f7ef3264df3c587c03df3690e0380feff16fa387171b3793267d8ba12f"
+    sha256 x86_64_linux:      "85107b6aad9b643ee32c4d78c8932511caefe90cd6a50bdf32be43bde71cb80d"
   end
 
   depends_on "python-setuptools" => :build
@@ -28,7 +29,7 @@ class Nmap < Formula
   depends_on "lua"
   depends_on "openssl@4"
   depends_on "pcre2"
-  depends_on "python@3.14" # for ndiff
+  depends_on "python@3.15" # for ndiff
 
   uses_from_macos "bison" => :build
   uses_from_macos "flex" => :build
@@ -50,11 +51,7 @@ class Nmap < Formula
 
     ENV.deparallelize
 
-    libpcap_path = if OS.mac?
-      MacOS.sdk_path/"usr/"
-    else
-      formula_opt_prefix("libpcap")
-    end
+    libpcap_path = OS.mac? ? MacOS.sdk_path/"usr/" : formula_opt_prefix("libpcap")
 
     args = %W[
       --with-liblua=#{formula_opt_prefix("lua")}
@@ -72,7 +69,7 @@ class Nmap < Formula
     system "make", "install"
 
     # Install `ndiff` separately so that we can use `pip` and `setuptools`.
-    system "python3", "-m", "pip", "install", *std_pip_args, "./ndiff"
+    system python3, "-m", "pip", "install", *std_pip_args, "./ndiff"
     bin.glob("uninstall_*").map(&:unlink) # Users should use brew uninstall.
   end
 

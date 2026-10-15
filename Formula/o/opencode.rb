@@ -8,7 +8,7 @@ class Opencode < Formula
   livecheck do
     url :stable
     regex(/^v?(\d+(?:\.\d+)+)$/i)
-    throttle 5
+    throttle days: 1
   end
 
   bottle do

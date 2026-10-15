@@ -1,8 +1,8 @@
 class MkConfigure < Formula
   desc "Lightweight replacement for GNU autotools"
   homepage "https://github.com/cheusov/mk-configure"
-  url "https://downloads.sourceforge.net/project/mk-configure/mk-configure/mk-configure-0.40.0/mk-configure-0.40.0.tar.gz"
-  sha256 "2a422f78752d25f37800cdfe5e96f1d081066837feefb8c8109db4e1daf51d4d"
+  url "https://downloads.sourceforge.net/project/mk-configure/mk-configure/mk-configure-0.40.1/mk-configure-0.40.1.tar.gz"
+  sha256 "aa685810e60838f24c225243f89d9f61efd2d9eba1ebf4c2f361c452686e861a"
   license all_of: ["BSD-2-Clause", "BSD-3-Clause", "MIT", "MIT-CMU"]
 
   livecheck do
@@ -11,15 +11,11 @@ class MkConfigure < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "469ef9b0f490ff4aa42af2d22914fdbe78567224bde394e9c88285a1fa378c4d"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "0e4ed19f77dc079bbb5a81a8d7d68c938dae9b24249eee52100c4f0878fe551b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "991206600e83a6063a6518b312d991f8bf8390defd941c41af274354e5fe24f5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "8a6000f58e84b8f47257cbaed106b59f9a908a5cc0897a88eeaf81e779b6e176"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:     "5e4df5fafb64a8b2b6c58d5f10f97316016731381ba859ec61fe79222e3404ac"
-    sha256 cellar: :any_skip_relocation, sonoma:            "38eff0dd90436b640ff6ddc3cc0f2f208d5a1a5f0f609c873c8a093fe90cc2be"
-    sha256 cellar: :any_skip_relocation, ventura:           "6981ba14741216c3651d168e0f29810904547ad38df976ca0cd6305c7f3a29a4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "a75eda4ef70758b92fedce279ab4c2dbb0c83a2b050c45a419e9e12e005102c3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "434d05bf1acf22ab6f0f9f3fda53b07228fdadac453d2c6fbf7ba38e5a32d637"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "5ca1b1b6d144864ae8d9257167923eae61630a3850aee7e854674e00a233542a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "9b63da219e7bcc87ce10ba4af30e82635f87d3db6992a2c8ac018e4bc62793c7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "6e933f9d30e60ec9c0c501053a59bcf1858a6e26d2d701183e21931a6445cfe2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "3a7b25e4f5d04d236ebdb29d1576c107b7b9b4901b5a639a71bb71d436668eb3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "e1f1b43c494096be65eff50c7e467a6a430f7814bdaad970a3ec205cf9b1e80f"
   end
 
   depends_on "bmake"

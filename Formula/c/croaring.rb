@@ -1,17 +1,17 @@
 class Croaring < Formula
   desc "Roaring bitmaps in C (and C++)"
   homepage "https://roaringbitmap.org"
-  url "https://ghfast.top/https://github.com/RoaringBitmap/CRoaring/archive/refs/tags/v5.2.3.tar.gz"
-  sha256 "dc50d870559af47cbbd60cf83d98ca141dddad4c19e5af262cd0bacc1d67df2b"
+  url "https://ghfast.top/https://github.com/RoaringBitmap/CRoaring/archive/refs/tags/v5.2.4.tar.gz"
+  sha256 "0047582c0b1ac7a2a950156f0b23b52ad060dbfbd1f082939ffa369014675838"
   license "Apache-2.0"
   head "https://github.com/RoaringBitmap/CRoaring.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "0a33740d63cf4ef1eb5b87e32e9683d129ce8d78bd0cd3759ea3faa95ded7657"
-    sha256 cellar: :any, arm64_tahoe:       "5c09739c61f6b2a082f2b0714d62fca737fe8146872f7349c40e0e87ad3f7f92"
-    sha256 cellar: :any, arm64_sequoia:     "1f7a1ed37c239d8dbf5f341264ed418d57853ec51cda51ac90026ba187f7e52f"
-    sha256 cellar: :any, arm64_linux:       "967bbcaec7fa97884af4418c9ae1428637f48848cf1c1f16ef4e8621df46c765"
-    sha256 cellar: :any, x86_64_linux:      "5662c2a43d24967c9d40aa2f49015f56fc55c425579bdbaf498f32cf94223496"
+    sha256 cellar: :any, arm64_golden_gate: "8c9f28974ee315d1eae65f157426a0ffd12d92909283fbc186f9dfa2e737d1cf"
+    sha256 cellar: :any, arm64_tahoe:       "f87675c1a5e8980eb6646f86d46f9c5838682bd563a21e304e8a3752742ff0a0"
+    sha256 cellar: :any, arm64_sequoia:     "291f27666b0c8812266f15945665e1647e648b0d97341cc602fd1fa4fa72256c"
+    sha256 cellar: :any, arm64_linux:       "200d5c66b24d78e75ea40d6db3e717cbcfacfbf75009f0c651d0fb7cdb5b3fea"
+    sha256 cellar: :any, x86_64_linux:      "bf08fc77fc695d37c232e1c8430a0ec1414611ca2f4ee1f953f5f31d11ffe3d3"
   end
 
   depends_on "cmake" => :build

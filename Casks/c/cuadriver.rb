@@ -1,6 +1,6 @@
 cask "cuadriver" do
-  version "0.35.2"
-  sha256 "84c4cb9abd3f92324a34a191a77c58027881454168a6a84fc6d6767b3760de2f"
+  version "0.35.4"
+  sha256 "97d5ea2fd446331947c717c433d4cf5aae063f4824e1ba24303c4696184ec52e"
 
   url "https://ghfast.top/https://github.com/trycua/cua/releases/download/cua-driver-rs-v#{version}/cua-driver-rs-#{version}-darwin-universal.tar.gz"
   name "Cua Driver"
@@ -10,6 +10,14 @@ cask "cuadriver" do
   livecheck do
     url :url
     regex(/^cua[._-]driver[._-]rs[._-]v?(\d+(?:\.\d+)+)$/i)
+    strategy :github_releases do |json, regex|
+      json.map do |release|
+        match = release["tag_name"]&.match(regex)
+        next if match.blank?
+
+        match[1]
+      end
+    end
   end
 
   depends_on macos: :ventura

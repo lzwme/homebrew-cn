@@ -7,13 +7,12 @@ class Proxsuite < Formula
   head "https://github.com/Simple-Robotics/proxsuite.git", branch: "devel"
 
   bottle do
-    sha256 cellar: :any,                 arm64_golden_gate: "7079277a0824a394c9a7da08056790cfc1940b337ce1b2c7976bad187f25dbd7"
-    sha256 cellar: :any,                 arm64_tahoe:       "0bf056d143141e3660a576f96b2e4522558443aacfcd2e1ec9d40621f421578e"
-    sha256 cellar: :any,                 arm64_sequoia:     "eead59678eb4a71600feb14764e7748e63166c1790e9dfb435b722a2d56e7229"
-    sha256 cellar: :any,                 arm64_sonoma:      "7abbc7e4b505cb780732626cb8864101201c461a9919b063e5f8918b4d318d0d"
-    sha256 cellar: :any,                 sonoma:            "249aefe18bee8ce9f9123f35ed09ff00ba654023537826c4c6cb5101d4cce723"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "5bf63cea4f9f3f1acfe15b6627759bf6176dc3c21903c355ed2ece2b2243276e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "9c7a07960a47c7e1aa6f4f1ab72f82a7dde10197b3dbe5f179c54f3742231905"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "ac0f9e0e38e27c9a5cf185dfcdde783c6d8702ada5a763724c5b89f16e7e2a74"
+    sha256 cellar: :any, arm64_tahoe:       "c785322d10144d0ef53903773a531d1a80690275a34c5971f35316ecfc6a9c6b"
+    sha256 cellar: :any, arm64_sequoia:     "845d275a4c9e480f5f5fab44d2da69fa0128c44878fb0a3f72ec3cab91ef3fe7"
+    sha256 cellar: :any, arm64_linux:       "9eac14d08c8fd0b1ce5c497c3702e4af2e9afc54716d75964077e3af150f5cc4"
+    sha256 cellar: :any, x86_64_linux:      "8787ca950ebbd54aeeb67e03325758f94934c7a830750733bb2c6d93698452af"
   end
 
   depends_on "cmake" => :build
@@ -21,7 +20,7 @@ class Proxsuite < Formula
   depends_on "pkgconf" => :build
   depends_on "eigen"
   depends_on "numpy"
-  depends_on "python@3.14"
+  depends_on "python@3.15"
   depends_on "scipy" => :no_linkage
   depends_on "simde"
 

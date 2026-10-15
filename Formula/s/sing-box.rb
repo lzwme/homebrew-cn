@@ -7,11 +7,12 @@ class SingBox < Formula
   head "https://github.com/SagerNet/sing-box.git", branch: "testing"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "266e2f6c97f2251276429c44da9c9f329a102164583f8018092fef6cf775382b"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "f28b5e8504f36da5757fdf32f5456a393635966cac730c687b3ac29a4fb87f1f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "63c9da8c36b07b4888e0fee08bf9aaef560f62209bf12c17dda1b3b0fc1cf613"
-    sha256 cellar: :any,                 arm64_linux:       "21bb598481016a57003e90ef7ebf0e5baed17126a0dfd6196f9f276a27d88c9b"
-    sha256 cellar: :any,                 x86_64_linux:      "9a305d90f7e6d89e4d5e598e53fbdfa96bd72128a572061f2def3aa4f061b42d"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "11f1a8aae4492a19c67e3ccda1e0f31adb990585377b6901a15023bcf7ebfbe6"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "59e406755f0171fc95337afc9a51d22cb80c798531acf6724c8168730c075702"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "781ce4d99d5e755a25fcc925354770bc0e0091820faf360a01aaee7f8459acdf"
+    sha256 cellar: :any,                 arm64_linux:       "1f4df3f9502dc03fdd199fa5bc495260210303e0a3b6001ea698079223c71406"
+    sha256 cellar: :any,                 x86_64_linux:      "1298b232dcfbce1e40b17ebc32ffa4afc33ce24ef9c28ef6b4fc37258d021869"
   end
 
   # TODO: unpin go@1.26 when sing-box supports go 1.27
@@ -19,7 +20,7 @@ class SingBox < Formula
   depends_on "go@1.26" => :build
   depends_on "llvm" => :build
   depends_on "ninja" => :build
-  depends_on "python@3.14" => :build # extract_histograms.py fails with macOS python
+  depends_on "python@3.15" => :build # extract_histograms.py fails with macOS python
 
   on_macos do
     depends_on xcode: :build # for xcodebuild

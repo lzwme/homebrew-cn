@@ -1,8 +1,8 @@
 class Herdr < Formula
   desc "Agent multiplexer that lives in your terminal"
   homepage "https://herdr.dev"
-  url "https://ghfast.top/https://github.com/herdrdev/herdr/archive/refs/tags/v0.9.4.tar.gz"
-  sha256 "ef44377e496ef674e72ce4084bb9cc5f0f52601a5688fa1708b4414fc88cb0b7"
+  url "https://ghfast.top/https://github.com/herdrdev/herdr/archive/refs/tags/v0.9.5.tar.gz"
+  sha256 "a2486b09a8153630f6a19e72606ba1c961a6194bce13c09cba67ccce5e4252de"
   license "Apache-2.0"
   head "https://github.com/herdrdev/herdr.git", branch: "master"
 
@@ -12,11 +12,11 @@ class Herdr < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "302cbb66ba02820f547a14035443553232366dca260d6523fedadeeaa4f71565"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "759c28bd5ec340546cf65ae8edd45332582d7de4599124f82a8b96fccaf87d52"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "116a136d97fc887e7846c924646dcea92d45e9e97978be2500726eb8656987bf"
-    sha256 cellar: :any,                 arm64_linux:       "46adbaf257860108cb581ec9b28cedee7c269eaa70dca25dcb0a29472da74f3b"
-    sha256 cellar: :any,                 x86_64_linux:      "1781f55949674e0b05a89e0ebced8b6bbddc93dc75eb926a36453e41d7a45265"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "8388671d573476682d75b7517fbef151d75bc92e4a5859100dd7975c165bd1c5"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "098f518ee5ce5438495eff09ddf67d7372a5ca60dfe995e6e4bfe5dd10391798"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "f1a0773148e4ad392a75123f6ac6f23031d8957c658bb5525528aab12015bee5"
+    sha256 cellar: :any,                 arm64_linux:       "2ec4113acb84c6e47f77b7cefd3743b09d253d08f5ce53217d783c8306080701"
+    sha256 cellar: :any,                 x86_64_linux:      "eeef311abfa814833f7a380439b9f9e489f18fe0a476866d5815c33544c2aa6f"
   end
 
   depends_on "rust" => :build

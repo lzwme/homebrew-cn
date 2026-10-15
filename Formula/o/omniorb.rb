@@ -12,16 +12,17 @@ class Omniorb < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "82b7a30ae2b47146013a79691f713034c3f94b042689228d8487eda5fa3d8c7b"
-    sha256 cellar: :any, arm64_tahoe:       "536d279eea55b93c6c8fa314d4f954245f9b900ac021a1f25a8ec2784f746f6b"
-    sha256 cellar: :any, arm64_sequoia:     "4a0b96d64f16f919f9e18a56c7de205d3bbb4067802d70f2c0b35bf4ba8cbd71"
-    sha256 cellar: :any, arm64_linux:       "fd187ce56c0eedb5dba72b79f9372ad6705254d759d14a6e76aaf4da679f3a77"
-    sha256 cellar: :any, x86_64_linux:      "d17e0ae63583d347b1ec6be6536a436e920be2ee35818dfbbc52d8a2f720f9cb"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "2f295a5b5815b86ad2e9c61fabe16bf0b7cec0216dab957c377054bed0a2f12d"
+    sha256 cellar: :any, arm64_tahoe:       "ce64157802869aae85e73fe2cd9ea5518b845762eeaa64fa714a085d3112ad4c"
+    sha256 cellar: :any, arm64_sequoia:     "bd2c60e99cb87a30a3512ec0752264695994848b6f52816f05ce6ca7580cd99f"
+    sha256 cellar: :any, arm64_linux:       "d8c353d71b184c88feb2a65276664bca66dc76505a4d3baadd5212968f68aa6b"
+    sha256 cellar: :any, x86_64_linux:      "2fa39f3e59ea67986bf78b2fb3c81b57c082eeb02e2fe7b52aa0ef58e646618f"
   end
 
   depends_on "pkgconf" => :build
   depends_on "openssl@4"
-  depends_on "python@3.14"
+  depends_on "python@3.15"
   depends_on "zstd"
 
   on_linux do

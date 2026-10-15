@@ -8,16 +8,17 @@ class Soapysdr < Formula
   head "https://github.com/pothosware/SoapySDR.git", branch: "master"
 
   bottle do
-    sha256               arm64_golden_gate: "3469254e475fe092bdecc175945e7cc4ff34d85467f3b0b2e6251102e99607e1"
-    sha256               arm64_tahoe:       "fba3e96fa13388d32a5cc49143bf70759155a0a13c9e49b5868337c4e99e65d8"
-    sha256               arm64_sequoia:     "b8358cb10b130a3049118b94ff30d34e8009bf3e254d83ecf334fb67cf9660ff"
-    sha256               arm64_linux:       "27fd6309c60ae3e93a0b6f4021f9305ec4ddd437cc2680fbb0b729f5206753fa"
-    sha256 cellar: :any, x86_64_linux:      "bfff74ca26f2f85dfe71381ffa8df93b0324e666ff4d2428dad6cfc1d2bc3765"
+    rebuild 1
+    sha256               arm64_golden_gate: "03ad4b177ad980188fce89ccc390525225c5524fc98aebb84ff364490b06db09"
+    sha256               arm64_tahoe:       "7cc27887c271fee034f0aa63c2130059ac39349f3443da4b84e24f591a45339d"
+    sha256               arm64_sequoia:     "e098f6a65671bacfdf27830af5bc5518c386fac38ce0965d3e3aec58967dd993"
+    sha256               arm64_linux:       "1bd333b6d699d20d320a31cde93d0f4a40aee307a365a4d0f0640b368c89e458"
+    sha256 cellar: :any, x86_64_linux:      "05c6f575acd7c76017f3890f07e99bfce5f828c14b36e248aeb391e150ab72eb"
   end
 
   depends_on "cmake" => :build
   depends_on "swig" => :build
-  depends_on "python@3.14"
+  depends_on "python@3.15"
 
   deny_network_access!
 

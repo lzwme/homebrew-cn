@@ -1,16 +1,16 @@
 class Noodle < Formula
   desc "Terminal REST client with file-based collections"
   homepage "https://noodlerest.dev"
-  url "https://ghfast.top/https://github.com/wilfredinni/noodle/archive/refs/tags/v0.9.8.tar.gz"
-  sha256 "b1678e5807c4368b3c502002b6f75f61dc7a16eb9c370db10493c8e171674347"
+  url "https://ghfast.top/https://github.com/wilfredinni/noodle/archive/refs/tags/v0.10.0.tar.gz"
+  sha256 "71778afecc1efdac23a822b7330c9703d85d47b9d95f20b4f2856ad3df6a34ef"
   license "Apache-2.0"
 
   bottle do
-    sha256 arm64_golden_gate: "8385a3b6dc42edec08c42ba7b0ed1d14164ee5ec420127d25cd236b5c78e174f"
-    sha256 arm64_tahoe:       "1ddf5340e09c5e720e032e558836ac6a5adea9697ab1efb4c8b4d3799ade017f"
-    sha256 arm64_sequoia:     "d757b04783b64e518f49cc70ae9c41052f04382b503ed2981bbab9030f9bfffb"
-    sha256 arm64_linux:       "e2c438752dcbb0caa4a971847b051deba627c573736bc515d4212edd5a8e89aa"
-    sha256 x86_64_linux:      "668006f56dd3bd53b7b5fdea1a51ff6136e73b56cdfcc8b3a862bc76c03fd4d2"
+    sha256 arm64_golden_gate: "1171c75eb2d87c31940a6c27365a653a03e85bab97da77e32a5fdc3bede9ecff"
+    sha256 arm64_tahoe:       "bb746bdbfa14b0481969a3029776cd0c47510046ca9e29e6a2db7a16e881773c"
+    sha256 arm64_sequoia:     "fc5eb60b13ac4cc1a21f0bbde8ae360f18c225ea1875441c2e74ca785cfc4bca"
+    sha256 arm64_linux:       "5e8ed1abe2582c75df03644a499a9ed389bf90ad87dfe7eda433b291339bc9ed"
+    sha256 x86_64_linux:      "4b6ec0afe44e7462baf77427afdeac667d404486c6180f3c14f96be4e72eadec"
   end
 
   depends_on "bun" => :build
@@ -25,6 +25,13 @@ class Noodle < Formula
   resource "opentui" do
     url "https://ghfast.top/https://github.com/anomalyco/opentui/archive/refs/tags/v0.5.14.tar.gz"
     sha256 "0e092b7405934c3a30f6eca2cb6e35eb00d9d8948d15daa69af2371e1e641a6e"
+
+    livecheck do
+      url "https://ghfast.top/https://raw.githubusercontent.com/wilfredinni/noodle/refs/tags/v#{LATEST_VERSION}/package.json"
+      strategy :json do |json|
+        json.dig("dependencies", "@opentui/core")
+      end
+    end
   end
 
   deny_network_access!

@@ -7,11 +7,12 @@ class Treemd < Formula
   head "https://github.com/epistates/treemd.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "2dc5aca2bd1f3bd8dd8eb2e76dd4d2fe32345b57c2061ce7e75141452f94d7a7"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "18ce4b347ebd996ccc53993500baeefbaadb4f23810720aa4cb8557833202e77"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "b638337dcc82e9433db4229fd4b2d111df4207383d84c07a58118a09afa6490d"
-    sha256 cellar: :any,                 arm64_linux:       "a53f402bec05a410f6b264b9b945b8926d8cb5fc598d4808088a5de3f0421389"
-    sha256 cellar: :any,                 x86_64_linux:      "5ee2a2e6ec96709d396d009bbf2c586750b18859503aff8c3380485bb41d6760"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "f17018a95f2b04425a33a32ef4b5c83f36c4cb18f5fa49959ca00ec194cc1497"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "63b21fa04b499fd90ae168a840df13d7ca41bc09f5f239951f7bbb17158b8f07"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "33f803b751a2836fefd5e2bd42fdf8bfaa17cca05960e86cc6db99cff58deecf"
+    sha256 cellar: :any,                 arm64_linux:       "ce60711486f813bf06142c8b8f09ff12e48f0afb33a9af620e0f044482e040f7"
+    sha256 cellar: :any,                 x86_64_linux:      "a9063e7dea3eaffbc4b841f63c8b7359d4ff15722ede7f303fc050b544f0c997"
   end
 
   depends_on "rust" => :build
@@ -24,6 +25,7 @@ class Treemd < Formula
 
   def install
     system "cargo", "install", *std_cargo_args
+    generate_completions_from_executable(bin/"treemd", shell_parameter_format: :clap)
   end
 
   test do

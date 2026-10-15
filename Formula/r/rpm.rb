@@ -19,16 +19,17 @@ class Rpm < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "b9a09cd6636045ba84afea2d831165a32b919830371e5f416072eb39d54db07b"
-    sha256 arm64_tahoe:       "da9167d09a0febdf1c1b37417b5594ff2c44e31a9ed50fe5526a1e9525f7a3b6"
-    sha256 arm64_sequoia:     "e4fbc543bd34952c19310a53fc605c0070608caa307975930d9e886442cf6deb"
-    sha256 arm64_linux:       "819181f217e87378b793171b897191474e0e160cfa7708edc66adda360e5c612"
-    sha256 x86_64_linux:      "40b3c5f92eef86cafc86593949eac57928f88ded0210a770593447fed0c0173d"
+    rebuild 1
+    sha256 arm64_golden_gate: "2b5916fb69a8e3c55701b74c7d67fe53eec5850363197a76abe21137c124995e"
+    sha256 arm64_tahoe:       "33d39e2d3e1481aafb3faccdd4a36062b06df14eb2f143bece294db6e4a6d47d"
+    sha256 arm64_sequoia:     "314f950d2cdbae36c3e790012232d44e29735ecab9d96f63e555c26444cc7f35"
+    sha256 arm64_linux:       "fe92215edd10c09329e6d38240544170a454e28a8e5994b5ecb762bc34f7e206"
+    sha256 x86_64_linux:      "2c0afb031c39a2a069094ba0f51bb36ee04011ee7f803e540ad708a1bf042d38"
   end
 
   depends_on "cmake" => :build
   depends_on "gettext" => :build
-  depends_on "python@3.14" => [:build, :test]
+  depends_on "python@3.15" => [:build, :test]
   depends_on "rust" => :build # for rpm-sequoia
   depends_on "scdoc" => :build
 

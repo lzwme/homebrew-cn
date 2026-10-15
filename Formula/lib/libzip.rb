@@ -1,10 +1,9 @@
 class Libzip < Formula
   desc "C library for reading, creating, and modifying zip archives"
   homepage "https://libzip.org/"
-  url "https://libzip.org/download/libzip-1.12.tar.xz"
-  sha256 "376908d0f0fda13180a19fdc4f7062a1abfb59e09ca07a392d361253b8e60c2b"
+  url "https://libzip.org/download/libzip-1.12.1.tar.xz"
+  sha256 "c40062022a1963c80573d48f6070792297cecd7c6bffe3aefcac0d8b9bee8913"
   license "BSD-3-Clause"
-  revision 1
   compatibility_version 1
 
   livecheck do
@@ -13,11 +12,11 @@ class Libzip < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "c1b0d545310f9986d3086363f1b79f5066b75eeff9cd3588d21ff925ded0fb24"
-    sha256 cellar: :any, arm64_tahoe:       "24a451df5142724086a16439fac719df1b0da9fa0c68a1bfe0133f5db51f05e6"
-    sha256 cellar: :any, arm64_sequoia:     "925c64a198b759de45cbe32aeeae0854560278363e43c9b538e42c6623002c7f"
-    sha256 cellar: :any, arm64_linux:       "2aba53af620dc970f5ee4d354c27ebca615eb2960e3779445e8bf5e5bb7686b5"
-    sha256 cellar: :any, x86_64_linux:      "fd69a2649a8c1dd235d5a8e1cdbef7d60fcdcb76704d99e18cd1d3fdf26a9f21"
+    sha256 cellar: :any, arm64_golden_gate: "904a47abb734c9c388a5e2cc0838b35327bbbe44f65fe0f89f7860b1c915db5e"
+    sha256 cellar: :any, arm64_tahoe:       "9c216cb9fcb520b58d2c2011e4cf8f04d36d2ddb6508ef05b1bddbb55992fc47"
+    sha256 cellar: :any, arm64_sequoia:     "cb823dd0266ec50ea17789d93c11ef1bcdaec9c1c7f6aa6e8cc9f8e48e0da58b"
+    sha256 cellar: :any, arm64_linux:       "af29e3d236c144d411f4d2ce00be8eb350152b1f9e766459adaef3559990b85a"
+    sha256 cellar: :any, x86_64_linux:      "3c741ad61d7b47ca1d29a932cde97a5d919c91265c3ea69d2df2f98860a67a21"
   end
 
   depends_on "cmake" => :build

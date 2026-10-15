@@ -7,11 +7,12 @@ class Gensio < Formula
   revision 2
 
   bottle do
-    sha256 arm64_golden_gate: "136af11ce4e9d4198a6b36e9c5a84b8b3b62d7b28e6fef7cde1e14ef39d9da00"
-    sha256 arm64_tahoe:       "0a28339c40b788c31a013584dc2ef1e2333d3b692b8ccd46a1b1dee307efebee"
-    sha256 arm64_sequoia:     "5767240b5c48ac251b0ced1e1cc6787c122e6306c235b197e73da61e4ad71568"
-    sha256 arm64_linux:       "6b1626cddaf9165981c5f17fb9832af93d7465f034dd38bebfe3425e91bb2c0a"
-    sha256 x86_64_linux:      "42a6784805b71b775280bd2d86dfd303d882101312e10db8b2fe392ce8133102"
+    rebuild 1
+    sha256 arm64_golden_gate: "060ca9f89e9d2deaf99e760862a2126681eb6ec47442b36ddf32a5b35312583f"
+    sha256 arm64_tahoe:       "a5c3a8ab7365409caf6f4dcff3502026bf14e282d9481632a41e8f39895515d7"
+    sha256 arm64_sequoia:     "b564a7a57d9f33c88a38986d60946fcf615f86b2d574179e4e497f9a8f07f40d"
+    sha256 arm64_linux:       "9f2bb6bb84500d9e09b0bdfcd35b19ade960da515cb8c7ae79424e7e89654c89"
+    sha256 x86_64_linux:      "bbd5f2a8eca323b5f842a7c2fa0ee925b441f50787daa146783d4a5aaea69492"
   end
 
   depends_on "go" => :build
@@ -20,7 +21,7 @@ class Gensio < Formula
 
   depends_on "glib"
   depends_on "openssl@4"
-  depends_on "python@3.14"
+  depends_on "python@3.15"
   depends_on "tcl-tk"
 
   on_macos do

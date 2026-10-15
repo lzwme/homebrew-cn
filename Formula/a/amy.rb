@@ -1,12 +1,12 @@
 class Amy < Formula
   desc "Nostr client from the Amethyst project"
   homepage "https://github.com/vitorpamplona/amethyst"
-  url "https://ghfast.top/https://github.com/vitorpamplona/amethyst/releases/download/v1.18.0/amy-1.18.0-jvm.tar.gz"
-  sha256 "91fbe322bc86e9784120ee3dfb53eb2d28268cf38fa8b4c6c4e8d3975ed6e84c"
+  url "https://ghfast.top/https://github.com/vitorpamplona/amethyst/releases/download/v1.19.0/amy-1.19.0-jvm.tar.gz"
+  sha256 "2cd532a961123329f875f6270c8d400447daed4acc93b60718879c6cc7e00686"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "b5f4abbc732c524f76db5d9d7fb3d69515104fbaa1e5371c95a29687af036b3f"
+    sha256 cellar: :any_skip_relocation, all: "885d0219ee233f12e71d5c15663aab4a9690a93cf1e027f5d0cf906581d489ff"
   end
 
   depends_on "openjdk"

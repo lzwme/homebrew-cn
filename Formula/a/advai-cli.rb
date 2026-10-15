@@ -9,12 +9,12 @@ class AdvaiCli < Formula
   revision 2
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "2cc0c8949eb3092b2f8def18ab3cb9f8f88eae0e39d693df5045e241b74904bc"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "da76e821b614781289d45c20d5cac89de5313361ef5367b805e13b4220e6d09f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "04876c32b8ca41b9c84fef25cfa6a670145514dd68b75f972a03e6b12bd81dbc"
-    sha256 cellar: :any,                 arm64_linux:       "9fd7b19b0526a8919a3e4916d2fed550ba35ffc9b49cc4595744106f31be4aaa"
-    sha256 cellar: :any,                 x86_64_linux:      "771fe1a26e99706eb61cffbe57890ca39b200ba62a2867298efb45b868bc3e8c"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "e4efb729d6b5c2519a8e49035667441de1bf930434dbee74ce91cdd0bcc62149"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "d90172b8e1f71627df0adf990bc7f5aa8ef220e18b6178a7c2fed2a2a71f73ac"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "cdf652f2fc3b772b9161abcc46c1c18e9419b59776ecafe1b01189b51ad677de"
+    sha256 cellar: :any,                 arm64_linux:       "638c1df1df717b501bff8b27d4fc7867cb2b24b91f85b9328829782df8a1ff62"
+    sha256 cellar: :any,                 x86_64_linux:      "a2291a233c20dc2ec3b55d99ddcbbceb83281ded88b4b9b33849176eff1cc3e3"
   end
 
   depends_on "python@3.15"
@@ -71,6 +71,7 @@ class AdvaiCli < Formula
 
   def install
     virtualenv_install_with_resources
+    generate_completions_from_executable(bin/"advai", shell_parameter_format: :click)
   end
 
   test do
