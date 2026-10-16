@@ -9,11 +9,12 @@ class Watchman < Formula
   head "https://github.com/facebook/watchman.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "ae74137ed1a465b0d5215e52f55217b5ecf510e778ab118f70baa8950cafdee3"
-    sha256 cellar: :any, arm64_tahoe:       "c327f3ab45deabb9fd11ac1f1dcbcebde06d223c63fc84c4ad4ce777010675e0"
-    sha256 cellar: :any, arm64_sequoia:     "c3e85bd88f1b406958cb8d633eb12dfe703886f509e9bd990787871f0a40bf89"
-    sha256 cellar: :any, arm64_linux:       "e886f4745ade9e5773d1dd5ed6aa5df30462eb939b6632ac27f5638714dc2f43"
-    sha256 cellar: :any, x86_64_linux:      "833f7c9f689e73562b6b94d5afc1fdf11a6def63d125dc4befef60b691cb94e9"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "6630eb55a90dd248aeb78efea018823306acbd6667bc5e4c76782cd891daddb5"
+    sha256 cellar: :any, arm64_tahoe:       "28953dd8166a767f3416c821e3ef052e9fada5640364931c36dc0342349308e3"
+    sha256 cellar: :any, arm64_sequoia:     "524ed9c5584a48ec9ee58e12306d942cc7a08828d3018109464ae245c5d15abe"
+    sha256 cellar: :any, arm64_linux:       "8ff8980695ff64ad7a43cdeca0ef519e7b672982567df2203dff04cf4883047e"
+    sha256 cellar: :any, x86_64_linux:      "d64b291a95e75384abe49eb7b36de1452cc1bc67d7d7abafa7f45f4beb56ca9d"
   end
 
   depends_on "cmake" => :build
@@ -33,7 +34,7 @@ class Watchman < Formula
   depends_on "folly"
   depends_on "glog"
   depends_on "pcre2"
-  depends_on "python@3.14"
+  depends_on "python@3.15"
 
   on_linux do
     depends_on "boost"

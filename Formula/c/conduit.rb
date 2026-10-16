@@ -1,8 +1,8 @@
 class Conduit < Formula
   desc "Streams data between data stores. Kafka Connect replacement. No JVM required"
   homepage "https://conduitio.github.io/"
-  url "https://ghfast.top/https://github.com/ConduitIO/conduit/archive/refs/tags/v0.20.0.tar.gz"
-  sha256 "676738e6403dfb67d735a17f01139f161566b751801b1e8184508cc83a1ff616"
+  url "https://ghfast.top/https://github.com/ConduitIO/conduit/archive/refs/tags/v0.20.3.tar.gz"
+  sha256 "d60f7fb4a250634d7efa298ccd381db1644a0f8668ab98a979dcff3f2f503654"
   license "Apache-2.0"
   head "https://github.com/ConduitIO/conduit.git", branch: "main"
 
@@ -12,11 +12,11 @@ class Conduit < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "6e24b53d5933d10d5c625468465a4b879632b99d44f9aba87fe6e4697e42ba2a"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "7d56b4b578213bdc214e27b14c137936530fa15750fc48683566e1c6e8c7816d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "41eed4d932b61c1891fcfeb9dbaf9ef71c12ae6ac65468a33fc10fe9c6d5011e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "c20d75dd5b8d2537d9db6df671b6dce79a1c6eaca69d2788adbbecd71350ee86"
-    sha256 cellar: :any,                 x86_64_linux:      "e38306725064923f101c5fe0299269443e5b170866edea33bcb1fb61d2fa5ba5"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "5e1441e21a382bc48ad2a941371c6cb2ea62397827e16a880121c6b59f7d2d5b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "50995df118108fbdfb84d8f0175e026bf8295151819a99a5d606f91eaa6e1179"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "42c1f739e43ba882f1cadbf7396658fee8d2cc90ff394b4e1c4b3b441a1c52c7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "7ee95ada5c845e5f66fe42eb8d9b7f65c1dc9babd54ee472e92c1515620a5fb8"
+    sha256 cellar: :any,                 x86_64_linux:      "1a9d3ddc6a7dccf5622442115e0f3ccb2b382eaafe44aa9d6d7c3666f2a261b5"
   end
 
   depends_on "go" => :build

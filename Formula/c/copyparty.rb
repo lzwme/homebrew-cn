@@ -3,17 +3,16 @@ class Copyparty < Formula
 
   desc "Portable file server"
   homepage "https://github.com/9001/copyparty"
-  url "https://files.pythonhosted.org/packages/28/ba/62234403a757cf38e20ff804982423cd66dfe1b58742a65b6ab584b3bd14/copyparty-1.20.25.tar.gz"
-  sha256 "c41c655ae527886136cbb95fc96f10a9061ef6936e51341a56f9025ec1ab78ce"
+  url "https://files.pythonhosted.org/packages/5d/c7/135022ae843a8ad8b96212b4d0616826b07a3052edeee3533cebcee1d248/copyparty-1.20.26.tar.gz"
+  sha256 "6ecf20b612e1e59f2fce54ee31fb47278747769036504c21720e75b5d2799725"
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_golden_gate: "ad959f8723c029b71da05e4a542d1c9faa0b9fd2448dd1ac1b7487975be7ad15"
-    sha256 cellar: :any, arm64_tahoe:       "3dd0f38aa64626fb3e87687db3a302afeeb24f37221ec7f14b4137af78515d15"
-    sha256 cellar: :any, arm64_sequoia:     "46c5b10e055597c6800396b08ec1dbe05a7c1647b154dbf0a20806e392c5d880"
-    sha256 cellar: :any, arm64_linux:       "8828fff1105f207ef128250eb2e606fdb4b9155af49237c91ed76c8120cb041c"
-    sha256 cellar: :any, x86_64_linux:      "823ee25415ae9805e5718af581879c1b1852eaf467e643d3f264d2d14f03c34e"
+    sha256 cellar: :any, arm64_golden_gate: "6755778132e90472c274f14269a315baeb3ed6bb0b106769aedf85b7ed443ca0"
+    sha256 cellar: :any, arm64_tahoe:       "bc139eeb073f218ff6a75e91925f3b1acf682f19a5e3fa896b072db31762d774"
+    sha256 cellar: :any, arm64_sequoia:     "761eea76a89dc526a952c699da713eece96f352f02193ba9374722024c2565c3"
+    sha256 cellar: :any, arm64_linux:       "35ad8ae234871581893dc972a9eef850f3ccab97c3e16e9e9aadf06d1daf083e"
+    sha256 cellar: :any, x86_64_linux:      "868ff12964bb6ca6e68ea103eb5164ad8e99f874860d3ec06993b1f5ae8abd05"
   end
 
   # `pkgconf` and `rust` are for bcrypt

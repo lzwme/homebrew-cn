@@ -7,18 +7,19 @@ class Komac < Formula
   head "https://github.com/russellbanks/Komac.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "133f49198854a51380f4c17f320adf081ff2476ae6955fb54a648b72aaf3df3a"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "62e9d5dd0341f6d9435013a0f50ed608c0d502160730d8335ab8ee3f561907aa"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "ab4ce57db700bc451c1944c490ca588afcd05bda343b5737a32db2a7d04b02e1"
-    sha256 cellar: :any,                 arm64_linux:       "bc072c0f77c1f4aec340ebd43acdc1817c3b9b59d2f12418ace4697cbc62e0a4"
-    sha256 cellar: :any,                 x86_64_linux:      "6e37334ccb91dd46f5043ccca54429e7345fe2d3b0ca69393adfc266198898f7"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "a2704b7b8549287b71ad9df0f62555e176fed67e9bf3d7e9d726c8caadb6d475"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "647d7f8a44675c86dbe5bfe71de100a2da78c7f10438d6784824856ced374394"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "17bb460e323fa5b893b98e505f372984063925ccd21fb2004a7a4dfb3465b101"
+    sha256 cellar: :any,                 arm64_linux:       "b838ceab8feafb86b0721be77c2e699b25d9e80fc987533dafbaf1eee87ad229"
+    sha256 cellar: :any,                 x86_64_linux:      "849b3df1e76027bb651b8005f72d90520fbe869923079145567efe7767d9765a"
   end
 
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
 
   on_linux do
-    depends_on "openssl@3"
+    depends_on "openssl@4"
     depends_on "zlib-ng-compat"
   end
 

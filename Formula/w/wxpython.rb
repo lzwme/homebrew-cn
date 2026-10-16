@@ -1,18 +1,16 @@
 class Wxpython < Formula
   desc "Python bindings for wxWidgets"
   homepage "https://www.wxpython.org/"
-  url "https://files.pythonhosted.org/packages/3d/dd/026f6286f8beefcdd9551ad2e05b4e3edb45e638cdc067db211c53c950ce/wxpython-4.3.1.tar.gz"
-  sha256 "4e3a95b63175be8e10f0662de506a36d8cc6cb86ecc5b30ae880c8dafb34a0cd"
+  url "https://files.pythonhosted.org/packages/0b/a7/da0cde189c0764e33ddb9f326005596956855de90d889a8025d517396ab6/wxpython-4.3.2.tar.gz"
+  sha256 "5531baa9344488a15081a6b2eaeb67af047d12a814cf657c082360ccc37204fb"
   license "LGPL-2.0-or-later" => { with: "WxWindows-exception-3.1" }
-  revision 1
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_golden_gate: "b2504d738c9aad32c12a333d25adaef240da7f2219d53215db21411ed11d454d"
-    sha256 cellar: :any, arm64_tahoe:       "31577157f3d007aba55a46d6142d1d8ebbf3def4c61e976d8fb17b1b20b4177a"
-    sha256 cellar: :any, arm64_sequoia:     "b141ed8f2313c7f988622a3761657c493b2aab883e2f79be80652b297c933226"
-    sha256               arm64_linux:       "e49558656cb3a04c7136148eaaff1bdc46746c2ca14764882d92ba3c633d0082"
-    sha256               x86_64_linux:      "8db396922e0b4ebba03eb3eb0626b3ffa4eb4831ba1797b66d8a542f1da79bc6"
+    sha256 cellar: :any, arm64_golden_gate: "67dea137c83fa377c922b3fe3d1a314588a73eefab8b56ca34924605ba70644c"
+    sha256 cellar: :any, arm64_tahoe:       "37b612a78a8c6ed233badd4b583833375fd93fafaadd181936ec538d8a86e0f6"
+    sha256 cellar: :any, arm64_sequoia:     "110bfbf2f74c2ddbcd21aed2402d511f70041d84f71c934a3e483eb3f28c97f2"
+    sha256               arm64_linux:       "433d169b864f80dded24d5062266eb1474900951530a748bcf3de734061012b7"
+    sha256               x86_64_linux:      "fc7ad9b39428bb394bd640ff9e2c4a647acfddce166fdb7cae41304b735e2f02"
   end
 
   depends_on "cython" => :build
@@ -34,20 +32,6 @@ class Wxpython < Formula
   # Upstream pins Doxygen 1.9.1, which keeps `constexpr` in the XML type; ours is newer
   # and reports it as an attribute, so `constexpr` members get a setter and fail to build.
   patch :DATA
-
-  # Fix Doxygen binding generation, upstream PR ref, https://github.com/wxWidgets/Phoenix/pull/2963
-  patch do
-    url "https://github.com/wxWidgets/Phoenix/commit/911bd596087a4be61aa1da6654e2e4410f30a461.patch?full_index=1"
-    sha256 "90c3c3273efdc7d5f9239e2b3f462ca7e9b564fc62ac0311dfa603f909a1122c"
-    type :unofficial
-  end
-
-  # Declare the SIP ABI requirement, upstream PR ref, https://github.com/wxWidgets/Phoenix/pull/2964
-  patch do
-    url "https://github.com/wxWidgets/Phoenix/commit/169e00e00824bb68af6b66b951f7dc082ffe9c7f.patch?full_index=1"
-    sha256 "864eebaef96a87cb6ff5cc911a550b08e7795ebfc0d1de763750e6af6338b57e"
-    type :unofficial
-  end
 
   def install
     wxwidgets = deps.find { |dep| dep.name.match?(/^wxwidgets(@\d+(\.\d+)*)?$/) }.to_formula

@@ -1,17 +1,17 @@
 class Typdiff < Formula
   desc "Diff tool that generates Typst documents highlighting differences between inputs"
   homepage "https://github.com/sou1118/typdiff"
-  url "https://ghfast.top/https://github.com/sou1118/typdiff/archive/refs/tags/v0.1.3.tar.gz"
-  sha256 "ed9b0415a318df8d824cc01e145e22b16b3ce5f4ffa7435947fd37e8273603da"
+  url "https://ghfast.top/https://github.com/sou1118/typdiff/archive/refs/tags/v0.1.4.tar.gz"
+  sha256 "d7739a28bd42d674491ea4149fce6f8046a2ad7873f24efc3a809b621fb4508d"
   license "Apache-2.0"
   head "https://github.com/sou1118/typdiff.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "7d0a51735ba917be1f61c35dc591cf54eed9bc1b9e38fb5d0d533e6dafdea26a"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "c18155295702e388845b80c97ee29d2d807246bf6b0758ccd888fb8cdcb15251"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "721d394bc36fd55820b5bab02800a5336f0d6305728ab8b53693217b3ce8b82a"
-    sha256 cellar: :any,                 arm64_linux:       "79f3474ea7b1213e0c6e0b4fdf016a6c067b323602b69b7ebaee7ad390a8304f"
-    sha256 cellar: :any,                 x86_64_linux:      "d18d49d8e93461aedcc7081f7c334a3d345988483252d83bcf5005963da867a1"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "7d83a91146d20c565a5e558be80515f57a2db6cd5018b8b4519fa5af797318d1"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "7a3d45b7ac0dee958f8d5b9adbfa505b7c1eea1a2bf45661d83d85b4ab4ea4aa"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "43c4a3767d0cbc836bc440440a529c56820753a65ff9bfcedff4eea1944c187b"
+    sha256 cellar: :any,                 arm64_linux:       "87ed3c5397fe1cdafa3a8d20ebdae1039d3296b91abbe61abdc1bc6eceef1f98"
+    sha256 cellar: :any,                 x86_64_linux:      "cb0583e465bd2d8f44eb2995bea740507c2e14d97e8626dcb9f06b8077ca3524"
   end
 
   depends_on "rust" => :build

@@ -1,17 +1,17 @@
 class Oasis < Formula
   desc "CLI for interacting with the Oasis Protocol network"
   homepage "https://github.com/oasisprotocol/cli"
-  url "https://ghfast.top/https://github.com/oasisprotocol/cli/archive/refs/tags/v0.21.0.tar.gz"
-  sha256 "e9227789981113ff6f4f7018afb65b395259904669073e254acdf8b92e2aece4"
+  url "https://ghfast.top/https://github.com/oasisprotocol/cli/archive/refs/tags/v0.22.0.tar.gz"
+  sha256 "442367d23ba1185bf5108a7f19a4b845b62b2361a5ba112420d88b9d6dd704a8"
   license "Apache-2.0"
   head "https://github.com/oasisprotocol/cli.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "e93f2eb540c43d7920a500d5aec2129b23cb6e06984738061cfeeac5152265cb"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "0afec38790a413fdb43b7df8e35a905d3bfd6099fa425c89463c678196a8f715"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "803dc16de9db22fd637872aa2cfda3979a149bb9085c44c4ec1f9dea2763a536"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "04670060c5a653acf4cee655ec056f699add7d2840300a1b96932605b98b2a04"
-    sha256 cellar: :any,                 x86_64_linux:      "8b889114a227206672a2c2b1a908cccee8020db5091896ae6258dd18d516f2ad"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "198a7734db9d69e93ca25b1ec9ed0141360ee0ea1c10c407ff82233e0375a30b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "8bcde26c4184feeb10e90bbf4d6ad65efc9575642a39216431beabf74f2b47e2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "cb8d41072c82283b4616ae4f09a58974f187e7f764f5229de0963f2ff73e1fe2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "96bf770793c447fa2b1f8e45a6f5ad2ef20cbfdd13aac4a317ac9c24ae7039a5"
+    sha256 cellar: :any,                 x86_64_linux:      "a4ec3fe0488bf15ef8082c536d448f5d6144c7b3dd20c1e8863a0225a0a6a97f"
   end
 
   depends_on "go" => :build

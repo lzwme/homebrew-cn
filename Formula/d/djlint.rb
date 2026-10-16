@@ -3,18 +3,17 @@ class Djlint < Formula
 
   desc "Lint & Format HTML Templates"
   homepage "https://djlint.com"
-  url "https://files.pythonhosted.org/packages/97/89/802575614cda0554b57e112c025a79729b50a0bcc32daaf4f8a989850d68/djlint-1.46.4.tar.gz"
-  sha256 "5e05f356bf14a7ecd3d885867b5110e778dafba19640ef88e701c060f3a98a20"
+  url "https://files.pythonhosted.org/packages/95/5c/b441f3553d4f05906e5f5ec66f28cdc58f5a8b3e7235da8491ccd0296c8d/djlint-1.46.5.tar.gz"
+  sha256 "dd207a095848bd9c2f758bbf2b95e34900964f471931dbc7a4b1b7a04713083b"
   license "GPL-3.0-or-later"
   head "https://github.com/djlint/djLint.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_golden_gate: "66a83272f9ecbece3e6e7b33f2120709802c9d6a2f38e3190b94dfffdd36eea0"
-    sha256 cellar: :any, arm64_tahoe:       "77512ded4eeee16b4d5a9c97d42c7d2414f5c35561280befc3b9d5af9a50c189"
-    sha256 cellar: :any, arm64_sequoia:     "7a877975f2be608565a08f09e29752d673d0b02204a60c55cd1e2d9df5d62577"
-    sha256 cellar: :any, arm64_linux:       "db0e46465bab1d07d159fbb31318428d6abc76f8e1cbcb010c707ec23a73c431"
-    sha256 cellar: :any, x86_64_linux:      "c77f8d4c3069f60e7e152b81409b96f53b98b7ff3af8ef981042a07c482d0199"
+    sha256 cellar: :any, arm64_golden_gate: "3a1e43a9d43f11cd50aef9bcd3ed556e0a7a9fa554e5781213dd89063087e2cf"
+    sha256 cellar: :any, arm64_tahoe:       "6b932b27074fe15e8e4774abdc6ecb733fa6481334e0c549da3496872fa2939c"
+    sha256 cellar: :any, arm64_sequoia:     "2785fab4bde491154bd688ee437898739d1f8609b5c7ed8554f9ce3391350e24"
+    sha256 cellar: :any, arm64_linux:       "a1d519763c89136f149a75d5e0e845ef5cda339d26c89cda9c5cb10c22b98b82"
+    sha256 cellar: :any, x86_64_linux:      "1ae49712e1a894a208dd1263ba815dca32bd81424992543223e33dd747000a5b"
   end
 
   depends_on "libyaml"
@@ -41,8 +40,8 @@ class Djlint < Formula
   end
 
   resource "json5" do
-    url "https://files.pythonhosted.org/packages/80/63/503651a3946bfacb6d6098985f2af6b3bf880d8eedc53035761c628d13bc/json5-0.16.0.tar.gz"
-    sha256 "8b135a77b231f22e3656c601fec7621c5354c64c4fb2773715ee0814e4dc6bf7"
+    url "https://files.pythonhosted.org/packages/16/1f/58a4d7ee466f81bc3c7337036380fc6d49de3afb7855d74f8121b1e89b32/json5-0.17.3.tar.gz"
+    sha256 "8d0278ad34ebaa9c3af76d9519274811830224a2d1cd5af156dbd067f461b8a4"
   end
 
   resource "pathspec" do

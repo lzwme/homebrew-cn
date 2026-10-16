@@ -18,7 +18,8 @@ class Btllib < Formula
   depends_on "cmake" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
-  depends_on "python@3.14" => :build
+
+  uses_from_macos "python" => :build
 
   on_macos do
     depends_on "libomp"

@@ -3,21 +3,14 @@ class Mlx < Formula
 
   desc "Array framework for Apple silicon"
   homepage "https://ml-explore.github.io/mlx/build/html/index.html"
+  url "https://ghfast.top/https://github.com/ml-explore/mlx/archive/refs/tags/v0.32.4.tar.gz"
+  sha256 "0276db8d7bf1af8db6d4ae25c7c550abea4d5b3b6a16207610a5d4a0c19fe1a0"
   license all_of: [
     "MIT", # main license
     "Apache-2.0", # metal-cpp resource
   ]
-  compatibility_version 6
+  compatibility_version 7
   head "https://github.com/ml-explore/mlx.git", branch: "main"
-
-  stable do
-    url "https://ghfast.top/https://github.com/ml-explore/mlx/archive/refs/tags/v0.32.3.tar.gz"
-    sha256 "4129039ddcb36cb860982b616c975a5b9b8e6d8fa97efa86335b4427c29c4b4b"
-
-    # TODO: Remove when a release includes the macOS 27 fix in upstream PR #4594.
-    # Adapted for this release's kernel layout: https://github.com/ml-explore/mlx/pull/4594
-    patch :DATA
-  end
 
   livecheck do
     url :stable
@@ -25,9 +18,9 @@ class Mlx < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "ff61d3f2794860355e1d9316ca61b227feb4f0a8a5a947a46c45f61504c8addb"
-    sha256 cellar: :any, arm64_tahoe:       "03fd34f25a4f94239579087cf7857fe68c3efa80f3e4389116cd7c6f59ae32e3"
-    sha256 cellar: :any, arm64_sequoia:     "2c339dc778676bb6fe85706cdba5fbd795de1f68d3eb849a157c05b0809e032e"
+    sha256 cellar: :any, arm64_golden_gate: "33535dc013f285ef6fbea2e9ddd6be2a6f3f71b48ae642e9d6253da55daaa669"
+    sha256 cellar: :any, arm64_tahoe:       "ffa4d6ec493da3452637f438860f42cbbf1fc689cea0c5f358a0d3053ba1d4fb"
+    sha256 cellar: :any, arm64_sequoia:     "6539ae6fa0ca10467bf410c065083646d143584fd2f7ab750054488a7a6ff4e4"
   end
 
   depends_on "cmake" => :build
@@ -39,7 +32,7 @@ class Mlx < Formula
   depends_on xcode: ["15.0", :build] # for metal
   depends_on arch: :arm64
   depends_on macos: :sonoma
-  depends_on "python@3.14"
+  depends_on "python@3.15"
 
   # https://github.com/ml-explore/mlx/blob/v#{version}/CMakeLists.txt
   # Included in not_a_binary_url_prefix_allowlist.json
@@ -117,40 +110,3 @@ class Mlx < Formula
     system python3, "test.py"
   end
 end
-
-__END__
---- a/mlx/backend/metal/kernels/gated_delta_update_nax.h
-+++ b/mlx/backend/metal/kernels/gated_delta_update_nax.h
-@@ -127,8 +127,8 @@
-       gemm_op
-           .template get_right_input_cooperative_tensor<AType, BType, CType>();
-   auto ct_c = gemm_op.template get_destination_cooperative_tensor<
--      decltype(ct_a),
--      decltype(ct_b),
-+      metal::remove_addrspace_t<decltype(ct_a)>,
-+      metal::remove_addrspace_t<decltype(ct_b)>,
-       CType>();
-
-   STEEL_PRAGMA_UNROLL
-@@ -173,8 +173,8 @@
-       gemm_op
-           .template get_right_input_cooperative_tensor<AType, BType, CType>();
-   auto ct_c = gemm_op.template get_destination_cooperative_tensor<
--      decltype(ct_a),
--      decltype(ct_b),
-+      metal::remove_addrspace_t<decltype(ct_a)>,
-+      metal::remove_addrspace_t<decltype(ct_b)>,
-       CType>();
-
-   STEEL_PRAGMA_UNROLL
-@@ -226,8 +226,8 @@
-
-   // Create matmul output in register
-   auto ct_c = gemm_op.template get_destination_cooperative_tensor<
--      decltype(ct_a),
--      decltype(ct_b),
-+      metal::remove_addrspace_t<decltype(ct_a)>,
-+      metal::remove_addrspace_t<decltype(ct_b)>,
-       CType>();
-
-   // Load A in to left operand registers

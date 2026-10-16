@@ -1,8 +1,8 @@
 class SwiftSection < Formula
   desc "CLI tool for parsing mach-o files to obtain Swift information"
   homepage "https://github.com/MxIris-Reverse-Engineering/MachOSwiftSection"
-  url "https://ghfast.top/https://github.com/MxIris-Reverse-Engineering/MachOSwiftSection/archive/refs/tags/0.22.0.tar.gz"
-  sha256 "c1b15018a901314e83279c9fc044a036fa6b663affb7c08fc9a2755ac9fee2db"
+  url "https://ghfast.top/https://github.com/MxIris-Reverse-Engineering/MachOSwiftSection/archive/refs/tags/0.23.0.tar.gz"
+  sha256 "c303f2d70b066076e51e87cbb7095a6f1e4fda9de4894fd42af2d512abf248a9"
   license "MIT"
   head "https://github.com/MxIris-Reverse-Engineering/MachOSwiftSection.git", branch: "main"
 
@@ -12,8 +12,8 @@ class SwiftSection < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "54f70be58d73c5a880c4a8e103da3ba12b06ac3d69dee4f4cacddc88cb6a425a"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "e43725b55ae2e454586dabc2a94853092198baa7098ee5a3e7dbaa580a5e1af6"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "1540a44575694d2a56514a570a9e2318cd8432c255fc51ef70b024da300d3270"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "5e8861654d1f13e6d1d30485cf2fc4fdc8f731e0e5e28cf87df72ca38d3ee5c8"
   end
 
   # The Package.swift file requires Swift 6.2 or later.

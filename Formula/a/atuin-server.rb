@@ -1,18 +1,17 @@
 class AtuinServer < Formula
   desc "Sync server for atuin - Improved shell history for zsh, bash, fish and nushell"
   homepage "https://atuin.sh"
-  url "https://ghfast.top/https://github.com/atuinsh/atuin/releases/download/v18.23.0/source.tar.gz"
-  sha256 "64b4b9b0f84ef34bcfa88e992d38cc0b95d3cf1f6d470bb695d3ef0231445b26"
+  url "https://ghfast.top/https://github.com/atuinsh/atuin/releases/download/v18.24.0/source.tar.gz"
+  sha256 "ea0509b52f41b4accba22890ed04279f230cea4f2816395f4a7a30c08b51d3ce"
   license "MIT"
   head "https://github.com/atuinsh/atuin.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "2fde158fe3c5c944150834572f99ba5dde2d9242a80309dac59c469959411751"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "3e115f548dd4f0928bc0ad11148a6260cd51e2892575b7f91b74b2d5d283cb82"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "f04f60e264439225eebf32cb51b0902c73d00633894aecf1241188704748bfa4"
-    sha256 cellar: :any,                 arm64_linux:       "78ec7e09447d56df2e18b0cce34a0b6d2221a1385a0fb56de81c20b31a1d649c"
-    sha256 cellar: :any,                 x86_64_linux:      "f29cdc0be3e639d24395558e31fdd1a2a991e74d123dbd78eea3dd662c28f59b"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "99ad507773eae8d06937e4e0c052fda211dfe2e8d4e2f1c174f3cc9db3ce776e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "aa743244df21946675cf1b3aad17d8bc95e7d4550fa763ec6d3985683540f190"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "ca6208fc71007901f2c3e76cf11a78220473b405b2c917dd6c450cce68a8cd48"
+    sha256 cellar: :any,                 arm64_linux:       "3ea8695b2cf1ea5f510ed68404a889a881baa9d6cce4ca3b807dc70260d22d38"
+    sha256 cellar: :any,                 x86_64_linux:      "458df950ade97d1aff93498ae6c154a035d4270310c10005102861e4d0f22264"
   end
 
   depends_on "pkgconf" => :build

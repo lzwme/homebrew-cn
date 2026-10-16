@@ -16,16 +16,17 @@ class Emscripten < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "2189371825100fee4ee40c75a02e0f0bbd1a5132d7f22b968ba7b7d8ab497a07"
-    sha256 cellar: :any, arm64_tahoe:       "d66c608a6477524cbfd42f8e41ff43362dd57fe131eac753165a725dd802b361"
-    sha256 cellar: :any, arm64_sequoia:     "9251f3c4e8cc79853240cc95cf4f1dc8774f62a0f4a76039eb0550b8f1e7dae8"
-    sha256 cellar: :any, arm64_linux:       "db1021d362ed7da09bc499fbd109287291c1974d14d61a0bfda60bc785ad5a6f"
-    sha256 cellar: :any, x86_64_linux:      "b56131c7481e5772f0f098e6fa86eb533bff6265119e837f2cac20540cc4247f"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "95b37c154d79ee333861c2c7389cc45477fe3e372a9e651e7c364b98dc764ed3"
+    sha256 cellar: :any, arm64_tahoe:       "60ead67a967515ef6a7abec395d5276ad63aba34dadc41a43282459787ee66e2"
+    sha256 cellar: :any, arm64_sequoia:     "cb8e674a2bcd0290b4207081856a2000961b089b3cf428bfeceff80e3a1868a7"
+    sha256 cellar: :any, arm64_linux:       "abf94624b4bdd26b3702120c751417044e75a1ceb90434b1b11cf83f0b16aec7"
+    sha256 cellar: :any, x86_64_linux:      "14e56027d71d30b8fa8533411770e0d21ee6d101d8143de033d69102fd801171"
   end
 
   depends_on "cmake" => :build
   depends_on "node"
-  depends_on "python@3.14"
+  depends_on "python@3.15"
   depends_on "yuicompressor"
 
   # OpenJDK is needed as a dependency on Linux and ARM64 for google-closure-compiler,

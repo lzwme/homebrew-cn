@@ -30,7 +30,7 @@ class LlvmAT17 < Formula
   # https://llvm.org/docs/GettingStarted.html#requirement
   depends_on "cmake" => :build
   depends_on "ninja" => :build
-  depends_on "python@3.14" => [:build, :test]
+  depends_on "python@3.14" => [:build, :test] # NOTE: avoid migrating to preserve bottles
   depends_on "zstd"
 
   uses_from_macos "libedit"

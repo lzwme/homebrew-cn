@@ -9,7 +9,7 @@ class VirtManager < Formula
   head "https://github.com/virt-manager/virt-manager.git", branch: "main"
 
   stable do
-    url "https://releases.pagure.org/virt-manager/virt-manager-5.1.0.tar.xz"
+    url "https://ghfast.top/https://github.com/virt-manager/virt-manager/releases/download/v5.1.0/virt-manager-5.1.0.tar.xz"
     sha256 "ccfc44b6c1c0be8398beb687c675d9ea4ca1c721dfb67bd639209a7b0dec11b1"
 
     # Backport support for etree rather than deprecated libxml2 python bindings
@@ -41,7 +41,8 @@ class VirtManager < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "bb0c7553f426720dcf449b57c1f2bf3f1fb68d341b71eca915ea0f9045bee0e6"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "652774da2005b93011d2df76ed403c650913a1ecc11af917f3605801f397fbc3"
   end
 
   depends_on "docutils" => :build
@@ -60,7 +61,7 @@ class VirtManager < Formula
   depends_on "osinfo-db"
   depends_on "py3cairo" => :no_linkage
   depends_on "pygobject3" => :no_linkage
-  depends_on "python@3.14"
+  depends_on "python@3.15"
   depends_on "spice-gtk"
   depends_on "vte3"
 

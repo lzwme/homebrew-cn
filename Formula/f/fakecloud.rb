@@ -7,20 +7,27 @@ class Fakecloud < Formula
   head "https://github.com/faiscadev/fakecloud.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "9a85acf082bccfd112c91479ee52ea14583109bec307013ea79920216b125a29"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "49aae679dcca78368ecf7540fd01c28ac825ce9f9a6a37fb350ffaa8f7ad91ea"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "3da3bbb7b52ae2fd00d6ae6e93b9b683a4ca8a0a8644c805830452729d68e37e"
-    sha256 cellar: :any,                 arm64_linux:       "65e8f5d13ad381f425a4452ee792108607cd48cca952d3dd79a6874e343b068c"
-    sha256 cellar: :any,                 x86_64_linux:      "75904426288fba454aaadf61190e8ba7b988b7ddb7148271969a52990d51a11c"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "a401995fb394b4cbde9a7993d1ca1e38287d40be9f89b07d63c5a0ff1ba5a8d1"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "4470fc4f640f0ea01f07647ab1f95ac67577fd4888af6455bb5f822ef389dd12"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "704d73e7e4bb361ce3d979ed35cecfa35bfad92e63edc4329484efa226f4ae9f"
+    sha256 cellar: :any,                 arm64_linux:       "72892d0330ca4b22b5afe8e76b4bf5869310be18e158d8e7dbf1c2945869eccb"
+    sha256 cellar: :any,                 x86_64_linux:      "55ea6312ce0a955c0c124ff435a0ec70fd2be60dd2e59075937d4e85ac174293"
   end
 
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
 
+  uses_from_macos "bzip2"
+  uses_from_macos "xz"
+
   on_linux do
-    depends_on "openssl@3"
+    depends_on "openssl@4"
     depends_on "zlib-ng-compat"
   end
+
+  # Update to openssl 0.10.78 and openssl-sys 0.9.114 for minimum needed to use OpenSSL 4
+  patch :DATA
 
   # Test binds and queries a local fakecloud server
   allow_network_access! :test
@@ -39,17 +46,47 @@ class Fakecloud < Formula
   end
 
   test do
-    port = free_port
-
     assert_match version.to_s, shell_output("#{bin}/fakecloud --version")
 
+    port = free_port
     pid = spawn bin/"fakecloud", "--addr", "127.0.0.1:#{port}"
-    sleep 3
-
-    output = shell_output("curl -s http://127.0.0.1:#{port}/_fakecloud/health 2>&1")
-    assert_match "ok", output.downcase
-  ensure
-    Process.kill("TERM", pid)
-    Process.wait(pid)
+    begin
+      sleep 3
+      output = shell_output("curl -s http://127.0.0.1:#{port}/_fakecloud/health 2>&1")
+      assert_match "ok", output.downcase
+    ensure
+      Process.kill("TERM", pid)
+      Process.wait(pid)
+    end
   end
 end
+
+__END__
+diff --git a/Cargo.lock b/Cargo.lock
+index f63bd5443..fb0457ff9 100644
+--- a/Cargo.lock
++++ b/Cargo.lock
+@@ -9308,9 +9308,9 @@ checksum = "c08d65885ee38876c4f86fa503fb49d7b507c2b62552df7c70b2fce627e06381"
+ 
+ [[package]]
+ name = "openssl"
+-version = "0.10.77"
++version = "0.10.78"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "bfe4646e360ec77dff7dde40ed3d6c5fee52d156ef4a62f53973d38294dad87f"
++checksum = "f38c4372413cdaaf3cc79dd92d29d7d9f5ab09b51b10dded508fb90bb70b9222"
+ dependencies = [
+  "bitflags 2.11.1",
+  "cfg-if",
+@@ -9355,9 +9355,9 @@ dependencies = [
+ 
+ [[package]]
+ name = "openssl-sys"
+-version = "0.9.113"
++version = "0.9.114"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "ad2f2c0eba47118757e4c6d2bff2838f3e0523380021356e7875e858372ce644"
++checksum = "13ce1245cd07fcc4cfdb438f7507b0c7e4f3849a69fd84d52374c66d83741bb6"
+ dependencies = [
+  "cc",
+  "libc",

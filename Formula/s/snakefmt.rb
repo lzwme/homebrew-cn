@@ -3,18 +3,17 @@ class Snakefmt < Formula
 
   desc "Snakemake code formatter"
   homepage "https://github.com/snakemake/snakefmt/"
-  url "https://files.pythonhosted.org/packages/da/9b/c3dce69468a32d9b2dd9366c41c472b59ecafa28971761e8620466fb288f/snakefmt-2.0.3.tar.gz"
-  sha256 "1aecfed46d631eaae8179e4bedd09450c8c306d221cfd4b3594e35a8dccd0618"
+  url "https://files.pythonhosted.org/packages/13/d3/c414af23ff5377ee4203efb0a080c2954be232a121c8bb04b13ceaf46abe/snakefmt-2.1.0.tar.gz"
+  sha256 "6a6ce79ff5b0ee18888896cb1660eb888a41592dbc36dccfd2c4f2a161d6dd7f"
   license "MIT"
   head "https://github.com/snakemake/snakefmt.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "bbb02ece86447f5d9080b03540368e7886ff6cd3b99593b0116710699e0bb9cc"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "bcaf138f5feb6369142ea4880f35666ad43834c7ce93cd04795852115a677cea"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "0d9dbd25483a5ba96ec090b04de717a4f77d9ddaa5d7914cceda100ac6b7278f"
-    sha256 cellar: :any,                 arm64_linux:       "057c62a1fdbc478c54625178d4e6741ded1d28621ae1a7061b8854032048c6db"
-    sha256 cellar: :any,                 x86_64_linux:      "515a0a579702c6a73b173e7d473c8dc3c888ca74397fddcff95ca3a1b0e23e5b"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "90107909fe7ff8127b4494890450735a860ab1f0a2160133ea80c100236023ef"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "ef91dcaea544f7cf703497f6b40f303a430e4dcea297f4100e5d2121e61ab5b4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "a8a8289150d325a996aa1859ac812e04ea77db1acb68f3c82f394cedbbf30d40"
+    sha256 cellar: :any,                 arm64_linux:       "18fa98c341363375e0a8079aba5377ed311ad3acafa465a002075f32466ad578"
+    sha256 cellar: :any,                 x86_64_linux:      "941cad09004c1b24eb4569cddd7d5cfa2f015ad4d292eb6db652962962cb70ca"
   end
 
   depends_on "rust" => :build # pytokens -> mypy -> ast-serialize

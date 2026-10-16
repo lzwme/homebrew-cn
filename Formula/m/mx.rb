@@ -11,11 +11,12 @@ class Mx < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "5429b542dc94d238b27ab3d9cd953431b4aebbc0007b6758b3bc663bcd3b6f20"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "6eff080907f099d653139d4898ab614ff6d621d758b74ad9413bb19f7643bad6"
   end
 
   depends_on "openjdk" => [:build, :test]
-  depends_on "python@3.14"
+  depends_on "python@3.15"
 
   resource "homebrew-testdata", :test do
     url "https://ghfast.top/https://github.com/oracle/graal/archive/refs/tags/vm-25.0.2.tar.gz"
@@ -24,7 +25,7 @@ class Mx < Formula
 
   def install
     libexec.install Dir["*"]
-    (bin/"mx").write_env_script libexec/"mx", MX_PYTHON: "#{formula_opt_libexec("python@3.14")}/bin/python"
+    (bin/"mx").write_env_script libexec/"mx", MX_PYTHON: python3
     bash_completion.install libexec/"bash_completion/mx" => "mx"
 
     # Run a simple `mx` command to create required directories inside libexec

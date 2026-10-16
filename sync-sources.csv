@@ -5943,6 +5943,7 @@ Homebrew-homebrew-core/Formula/p/pktanon.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pla.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/plakar.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/planck.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/p/planetiler.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/plank.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/plantuml.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/planus.rb, Homebrew/homebrew-core, 1
@@ -7671,6 +7672,7 @@ Homebrew-homebrew-core/Formula/t/tiny-remapper.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/tiny.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tinycbor.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tinycdb.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/t/tinyframe.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/tinyice.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tinymist.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tinyproxy.rb, Homebrew/homebrew-core, 1
@@ -8058,7 +8060,6 @@ Homebrew-homebrew-core/Formula/v/vegeta.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/veilid.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/v/velero.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/verapdf.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/v/vercel.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/v/verilator.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vermin.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/v/verovio.rb, Homebrew/homebrew-core, 1
@@ -8098,7 +8099,7 @@ Homebrew-homebrew-core/Formula/v/vip.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/v/vips.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vipsdisp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/virglrenderer.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/v/virt-manager.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/v/virt-manager.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/virtctl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/virtiofsd.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/v/virtualenv.rb, Homebrew/homebrew-core, 0
@@ -9121,6 +9122,7 @@ Homebrew-homebrew-cask/Casks/b/bindiff.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/b/bing-wallpaper.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/bino.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/birdfont.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/b/biscotti.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/b/biscuit.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/b/bison-wallet.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/b/bisq.rb, Homebrew/homebrew-cask, 1
@@ -14946,6 +14948,7 @@ Homebrew-homebrew-cask/Casks/r/reamp.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/reaper.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/recaf.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/r/receiptquicklook.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/r/receipts-space.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/receipts.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/recents.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/recordly.rb, Homebrew/homebrew-cask, 1
@@ -15793,6 +15796,7 @@ Homebrew-homebrew-cask/Casks/t/timescribe.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/timeular.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/timing.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/tinderbox.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/t/tine.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/tinkerwell.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/tint.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/tiny-player.rb, Homebrew/homebrew-cask, 0
