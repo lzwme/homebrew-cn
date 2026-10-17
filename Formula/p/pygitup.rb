@@ -3,13 +3,12 @@ class Pygitup < Formula
 
   desc "Nicer 'git pull'"
   homepage "https://github.com/msiemens/PyGitUp"
-  url "https://files.pythonhosted.org/packages/3d/ac/a0830d6398ef627770e8acdf74dc616875a543efd6b5fea14894bde66d84/git_up-2.6.0.tar.gz"
-  sha256 "288db38c4b11652c865c612a1203428aecbc58f64f4a7f724b9dde3a4a1432cb"
+  url "https://files.pythonhosted.org/packages/d8/30/379a2daabd6ec00144afa6e19055684a566a7bbe58fddbadd2bfe36bda85/git_up-2.6.1.tar.gz"
+  sha256 "f2e55a6f6a5254a5cfaa98ebdf53a0cb0ab93aa474d7445a8694a20b450306ec"
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "1c1c158e56551ad29b142cd65bffc0c54c33a0f293c03bbcb58a912d412e51a7"
+    sha256 cellar: :any_skip_relocation, all: "f19c7f12d11ee83705ee1f9cfebd477482cc6459bbc6872d8afc62797353b004"
   end
 
   depends_on "python@3.15"
@@ -25,8 +24,8 @@ class Pygitup < Formula
   end
 
   resource "gitpython" do
-    url "https://files.pythonhosted.org/packages/6e/2d/6f6e649818da44d4499604802c89329b8d9799687a124e3a5e467a643336/gitpython-3.2.0.tar.gz"
-    sha256 "fb92310af6844d96adc95ca066ed2e617c00e1dbd146a326626c81e72e18cc2e"
+    url "https://files.pythonhosted.org/packages/c0/ff/fee293f1ec3e1b64db6eb270e00964f29c086d769201474cedb8d1608930/gitpython-3.2.1.tar.gz"
+    sha256 "0f1229ec5c057bdabdeeda8bda4f17bda679ab33dbccc00f24e6a480553c8613"
   end
 
   resource "packaging" do

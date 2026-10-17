@@ -26,8 +26,8 @@ class Prowler < Formula
   depends_on "libsodium" # for pynacl
   depends_on "libyaml"
   depends_on "lz4"
-  depends_on "openssl@3"
-  depends_on "python@3.13"
+  depends_on "openssl@3" # TODO: use `openssl@4` with python 3.14+
+  depends_on "python@3.13" # TODO: https://github.com/prowler-cloud/prowler/issues/12649
 
   uses_from_macos "libffi"
 

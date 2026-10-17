@@ -10,11 +10,12 @@ class Fava < Formula
   head "https://github.com/beancount/fava.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "81a9b4efafd138b452633620b14e601e5073379ff9326c34a618a28a20cc86e3"
-    sha256 cellar: :any, arm64_tahoe:       "bd15f74b58ad964a2ba8e77192a61a3a9752e036609fce22fe9988a2279f2462"
-    sha256 cellar: :any, arm64_sequoia:     "5f30bff5f4cb61365e6e53cb81d3dbef8463bb659411cbd48fde2c722e23e9c5"
-    sha256 cellar: :any, arm64_linux:       "7babd11d589f98efa06ce91fb195c584e73792cccea2d90a31bc5df6928946c4"
-    sha256 cellar: :any, x86_64_linux:      "4615627de2dffcb1dec71ad8f83ce13096579d3479dd91658973e08bf9ba297e"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "87ca8e1ad0dce2c1a4ae54282093dc965f87f6e6dbff74fab6a38902f6ff68e2"
+    sha256 cellar: :any, arm64_tahoe:       "786f198ad01c1366f7302b6afa414da62ae552154523dff5b8ae32219d576a62"
+    sha256 cellar: :any, arm64_sequoia:     "e18203f32908516a353362af0d11d0501c616f2eb1591a5c01572cd41dd70141"
+    sha256 cellar: :any, arm64_linux:       "90c5953052e46f0a16d449cd81b07ec5b95157e917a4b00ca223f54472131ed6"
+    sha256 cellar: :any, x86_64_linux:      "96ea43ced925342f258bedc66d00f5702949507f7d8aeb88cd6fb2d0ee041bd3"
   end
 
   depends_on "bison" => :build # for beancount
@@ -22,7 +23,7 @@ class Fava < Formula
   depends_on "ninja" => :build # for beancount
   depends_on "rust" => :build # for watchfiles
   depends_on "certifi" => :no_linkage
-  depends_on "python@3.14"
+  depends_on "python@3.15"
 
   uses_from_macos "flex" => :build # for beancount
   uses_from_macos "libxml2", since: :ventura

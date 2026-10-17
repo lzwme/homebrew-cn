@@ -1,10 +1,9 @@
 class Nmap < Formula
   desc "Port scanning utility for large networks"
   homepage "https://nmap.org/"
-  url "https://nmap.org/dist/nmap-7.991.tar.bz2"
-  sha256 "a5d507f29437bef3bedd4771ff9aaa8fc1c2a109ddba1f5b1cf12027456929be"
+  url "https://nmap.org/dist/nmap-7.992.tar.bz2"
+  sha256 "0c12660eddbf7eabeff6996cb0c044a4eadf2bb0c6fbcb340d6cf72b1caee402"
   license :cannot_represent
-  revision 1
   compatibility_version 1
   head "https://svn.nmap.org/nmap/"
 
@@ -14,12 +13,11 @@ class Nmap < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_golden_gate: "300582ff9816078b46ee25141fe88840a76228dedd4a0b15b32081ef4165bc66"
-    sha256 arm64_tahoe:       "dd43dd9335ff2b6ecc25398155fda5c657b74a307c57e226fb9207f53739829e"
-    sha256 arm64_sequoia:     "5c2bd58115e740dfd308474e6d6ab769d119ef5287ab04ae5252f9512264a68f"
-    sha256 arm64_linux:       "680031f7ef3264df3c587c03df3690e0380feff16fa387171b3793267d8ba12f"
-    sha256 x86_64_linux:      "85107b6aad9b643ee32c4d78c8932511caefe90cd6a50bdf32be43bde71cb80d"
+    sha256 arm64_golden_gate: "ccc2756db90d4a7fe768b473ce4e006109002ab5c91aba60034c9969e0be0d8c"
+    sha256 arm64_tahoe:       "affe98fb2db9b7712ca41b6485a4403aad4af549c626032b6c1ea6ed57a75c7a"
+    sha256 arm64_sequoia:     "e3fbe5d32fee8255873112ea0b334370e69dd06d2cdc67ae4595e61aa015066f"
+    sha256 arm64_linux:       "c2aed414bec25d82ed498b9f66cae486a8e586cd75ab4dd5af50a3dfe22d6830"
+    sha256 x86_64_linux:      "3fe32360824e60cd1f0ed7da590edeaf1ffe629a3a14e2dffab1f32794992f28"
   end
 
   depends_on "python-setuptools" => :build

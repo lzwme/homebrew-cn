@@ -3,17 +3,16 @@ class Esptool < Formula
 
   desc "ESP8266 and ESP32 serial bootloader utility"
   homepage "https://docs.espressif.com/projects/esptool/en/latest/esp32/"
-  url "https://files.pythonhosted.org/packages/6a/c8/15a0d5a80a81d7a33d1bdf4a75db4c3b4334e53ef81f178cd52567acde80/esptool-5.5.0.tar.gz"
-  sha256 "cfc1d1c6d1699427451af1be7335efa835b7974c61ed86d77927d9553c443d57"
+  url "https://files.pythonhosted.org/packages/96/4c/a949409e527b87f863f237cea9f997d25644607f799293a3d247f1b40e67/esptool-5.6.0.tar.gz"
+  sha256 "86c7249e9cc3a824e032ede9ba20abad057a2c49e231418cc4f02b177bb36f42"
   license "GPL-2.0-or-later"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_golden_gate: "3d8a3f604c541ec418a49b82e79f4024e130c4f3c34ccbb168e0e7db545f9379"
-    sha256 cellar: :any, arm64_tahoe:       "fc9b8a4aa9fbb3042fa7937d8c4884f9a71eb3a7c713f13829fa48dc32b560b5"
-    sha256 cellar: :any, arm64_sequoia:     "1943d53c96eb80c92b707ec979bfae43230ff649cb1d62a35f114168d5c280aa"
-    sha256 cellar: :any, arm64_linux:       "76057da7816da93950b0f724fb7d45efa87776ff74ea48e5286c09ab72a119aa"
-    sha256 cellar: :any, x86_64_linux:      "ab6a86e3df0c735d9e54c89c86a516c326755230dfe31659522395a120850ad0"
+    sha256 cellar: :any, arm64_golden_gate: "d3fcd438913417ef3235e07458151e715364dad1789fbc9b4c1e6a9a9e3e5431"
+    sha256 cellar: :any, arm64_tahoe:       "7c09ad796fb80a435ae7630d071c29218c05581a9060028c0d2943f9b6096d9d"
+    sha256 cellar: :any, arm64_sequoia:     "71b3f82ebadd6db5a6f7456cf7ddd36e3db4962feb8ec232a297ae47ca488ad0"
+    sha256 cellar: :any, arm64_linux:       "b5e7c6cf2dcbb8b7db668e2b77cb45be362da4ec5f7bd8ef1d21ccc4a645ff53"
+    sha256 cellar: :any, x86_64_linux:      "543df09a8a8c82a92a888fd0c76d5665925c04270a0210dadb998caa0754a8e1"
   end
 
   depends_on "rust" => :build # for tibs
@@ -22,16 +21,6 @@ class Esptool < Formula
   depends_on "python@3.15"
 
   pypi_packages exclude_packages: "cryptography"
-
-  resource "bitarray" do
-    url "https://files.pythonhosted.org/packages/04/f7/6765577df59e2345036e435f7e983e1c291d67b7d76a51918eff04ad1494/bitarray-3.11.0.tar.gz"
-    sha256 "bf19437ec00ec3d40aef82eaeedc14cf4000be9b635c4f5049796506e6630dd8"
-  end
-
-  resource "bitstring" do
-    url "https://files.pythonhosted.org/packages/36/d3/de6fe4e7065df8c2f1ac1766f5fdccbe75bc18af2cf2dbeecd34d68e1518/bitstring-4.4.0.tar.gz"
-    sha256 "e682ac522bb63e041d16cbc9d0ca86a4f00194db16d0847c7efe066f836b2e37"
-  end
 
   resource "click" do
     url "https://files.pythonhosted.org/packages/c7/0e/7fa0ef50764b67090eca4114772a2abf8b6148198475e54c660b97caeee6/click-8.5.0.tar.gz"
@@ -86,11 +75,6 @@ class Esptool < Formula
   resource "rich-click" do
     url "https://files.pythonhosted.org/packages/96/3e/5688fdd83aea416de336582a274f2bc8236b5c261b04c11e17bc262786ad/rich_click-1.9.9.tar.gz"
     sha256 "324cba7513cd4187ee92b2eef21f071714e45be062458c8b157bd7e0c81103e3"
-  end
-
-  resource "tibs" do
-    url "https://files.pythonhosted.org/packages/9f/4e/731ae9c3ccc0e65363a4ce411cb8d887e07fa0cb6a3a860b8ce0c57483dd/tibs-2.0.2.tar.gz"
-    sha256 "63a7b87e262c558ccc16be67d34fe60620e39b49bf644ac65e71c4553173ac8f"
   end
 
   resource "websockets" do

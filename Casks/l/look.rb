@@ -1,8 +1,11 @@
 cask "look" do
-  version "0.7.2"
-  sha256 "87c0e50e8b3861f06747571fa26a533346200d4af3719407854544835ce0479d"
+  arch intel: "-x86_64"
 
-  url "https://ghfast.top/https://github.com/kunkka19xx/look/releases/download/v#{version}/Look-#{version}-macOS.zip"
+  version "0.7.4"
+  sha256 arm:   "dfa451f39df55c8344f9cdb67d6ba8209bbb7a658bb09ac9ae2c3b3832e9b725",
+         intel: "31091834af9cdaee24c1372e41857a1220e0df3e82583146694c1007a144237a"
+
+  url "https://ghfast.top/https://github.com/kunkka19xx/look/releases/download/v#{version}/Look-#{version}-macOS#{arch}.zip"
   name "Look"
   desc "Keyboard-first local launcher"
   homepage "https://github.com/kunkka19xx/look"

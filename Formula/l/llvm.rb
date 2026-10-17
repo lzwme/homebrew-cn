@@ -2,7 +2,7 @@ class Llvm < Formula
   desc "Next-gen compiler infrastructure"
   homepage "https://llvm.org/"
   license "Apache-2.0" => { with: "LLVM-exception" }
-  revision 1
+  revision 2
   compatibility_version 2
   head "https://github.com/llvm/llvm-project.git", branch: "main"
 
@@ -24,11 +24,11 @@ class Llvm < Formula
   end
 
   bottle do
-    sha256               arm64_golden_gate: "898e12b0177748eaa8e87b2de4dc76e5104bc9e46b26186f85356dc5dc0dbd3c"
-    sha256               arm64_tahoe:       "569a3ec02072ac72fe0709bb596485256da6f2337ee0141de47222866b5952f8"
-    sha256               arm64_sequoia:     "81865cd3aa4d981e27c9979f1ef229bcf85b5427d40407f5f0e167dde3b5fb9d"
-    sha256 cellar: :any, arm64_linux:       "44d405fcee06bfc7e0454b85c8522e4b48e2188306871b5f08bce41a0717f5c4"
-    sha256 cellar: :any, x86_64_linux:      "0973e9902d24b8b2433efd686f845e24eed0c0e808a985639a81b37c702cd980"
+    sha256               arm64_golden_gate: "f2435845b5fcd20ecbe28fc8206e0705d6abf72a47a443414629ab75ba72444a"
+    sha256               arm64_tahoe:       "100c1b67a834daa56b5ebe88cedef1b06caf085613f95c04b4b5a1f318315688"
+    sha256               arm64_sequoia:     "cd68b4b54d1bcd70da83984a3fd139b96cdfc4b4db3171b2b836b29d8e1f7ab6"
+    sha256 cellar: :any, arm64_linux:       "79cd22427ede911e8ff1abaaa0178bbc786f5550607ad30091cf0fffc7b431df"
+    sha256 cellar: :any, x86_64_linux:      "9cbc1a162b3d64fa6faaaea96e6ecf56dd4d33a124a8bfc79baf63b17801b74b"
   end
 
   keg_only :provided_by_macos
@@ -36,7 +36,7 @@ class Llvm < Formula
   # https://llvm.org/docs/GettingStarted.html#requirement
   depends_on "cmake" => :build
   depends_on "ninja" => :build
-  depends_on "python@3.14" => [:build, :test]
+  depends_on "python@3.15" => [:build, :test]
   depends_on "zstd"
 
   uses_from_macos "libedit"

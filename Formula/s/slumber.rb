@@ -1,17 +1,17 @@
 class Slumber < Formula
   desc "Terminal-based HTTP/REST client"
   homepage "https://slumber.lucaspickering.me/"
-  url "https://ghfast.top/https://github.com/LucasPickering/slumber/archive/refs/tags/v5.4.0.tar.gz"
-  sha256 "f781bf8f0a369641d0b6c8e19336be3cb26ddd44c06a008edc0aad6d7b927442"
+  url "https://ghfast.top/https://github.com/LucasPickering/slumber/archive/refs/tags/v5.4.2.tar.gz"
+  sha256 "2b5e484de05008236ad7d55a923ff41e6bb04eb7629ee26ac240c08a9ca4e7e9"
   license "MIT"
   head "https://github.com/LucasPickering/slumber.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "7652bef7dec5ba7e31a5c1ceba7bbee81e0fd548cfd49e02c4d3b9d9680267e3"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "b39ff8afe4d7a9ad198439e3409ebbc3c27ae01ff8468848563c1bcb3fb31510"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "5c4b4075667d2b5a45bba6df3d3f6c5691f1c12d5b7bffd4be658dbb89827d6d"
-    sha256 cellar: :any,                 arm64_linux:       "2679a3bfd45b633e189ed3aebf63916c9fbeda2ccf51479017eaa8818ccade81"
-    sha256 cellar: :any,                 x86_64_linux:      "f1ebf30c3b59694dc651c485941ccf3beabe4716961bb4a0436890da62ff197f"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "2efb531c109281581433347e44ff2edf2c2d380441584faf3e9053bc8b893934"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "d8abe7f1c9454e6da7fc6b85c082cb73c160114e7dea30cb62ff511378010032"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "4f8a6353a8ebc57f4fed487e557ab1139366d5a25dda1b9090934a1df811ead9"
+    sha256 cellar: :any,                 arm64_linux:       "e7e67062384f19cd2363bdd007ee1615cf0f48b764faa9ec4ed3c2d622c1dd0e"
+    sha256 cellar: :any,                 x86_64_linux:      "df426dbf81c82ebb1731d6c3374901e254ab0d250efb96bdeb65f8717586e52e"
   end
 
   depends_on "rust" => :build

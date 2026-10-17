@@ -4,16 +4,16 @@ class Ccache < Formula
   url "https://ghfast.top/https://github.com/ccache/ccache/releases/download/v4.14.1/ccache-4.14.1.tar.xz"
   sha256 "29f10de481ac2c41c91bfabead63d803bd2fe823e09752aade5b0b8704cc4f30"
   license "GPL-3.0-or-later"
-  revision 1
+  revision 2
   compatibility_version 1
   head "https://github.com/ccache/ccache.git", branch: "master"
 
   bottle do
-    sha256 arm64_golden_gate: "11e7ae888dae9f976bb9d9998dda8d15dd19fd9f6872e46ae467cfecdd6e052f"
-    sha256 arm64_tahoe:       "6f206f6d5ed490c672d9c98ab467abc2ef76ff30bb34ed70e81769318a1d7308"
-    sha256 arm64_sequoia:     "80c68a802b0708869cb0bd9456e5d2df434f676601f26e15af0c5061cd8b5d5c"
-    sha256 arm64_linux:       "24d8ab852ca70d0bc88affaa47011496ecee0e6608cde5ccec70b4a507700206"
-    sha256 x86_64_linux:      "aaa452ec09271006a2fb2b03ab6c6cfde082fa9f5237104fc2b9255b7c33665d"
+    sha256 arm64_golden_gate: "843995a663c32acc5c87d4a88c1627e36cf461fe6c475e5242d0ce6741980686"
+    sha256 arm64_tahoe:       "cab61162fe5c94fdf6653b1ab79fc31e07e2da727b27f85177eb04d594f7c583"
+    sha256 arm64_sequoia:     "7414b0b6787f998cbaf6bc922a8cf9da64ebe4adc786cf6f9ae64f211704662e"
+    sha256 arm64_linux:       "8ddf47b2c127a3f13acf1a8d45dfa5e1bc0217acb5bacb27e54910bff137d6da"
+    sha256 x86_64_linux:      "fc6ea73487bdf2ca1378e6217abb8daf1fd38c1e25f226c56a7572494e16b3c0"
   end
 
   depends_on "asciidoctor" => :build

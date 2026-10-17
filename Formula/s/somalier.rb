@@ -8,11 +8,12 @@ class Somalier < Formula
   head "https://github.com/brentp/somalier.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "47489292e066b50811cd332e16350fd722764bddbf1603c1d35a6ec4df75fb57"
-    sha256 cellar: :any, arm64_tahoe:       "8b6efdc6e672d19af061a0d4ee93f872f482daa71437a16423d81569103b1802"
-    sha256 cellar: :any, arm64_sequoia:     "4b74676aa9d352d203b20835b325ac30a8635f2c016c6da06196ee82ace16124"
-    sha256 cellar: :any, arm64_linux:       "9fa3af840d4f961870ca127983dc9da1d41db8a32ec91fefb245295a734e4795"
-    sha256 cellar: :any, x86_64_linux:      "4cff4cf723b05a256472f8961ba66333dd194a5b17448c2abd76c737a4dd4531"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "2a052913ff9dd15d787839e4101df2d448bf476e93fdcbfdd7914ade90764d3c"
+    sha256 cellar: :any, arm64_tahoe:       "b93a8382e401f62054c7a499e7b5e565a5d393665a1132f05aefbc8aeebd1117"
+    sha256 cellar: :any, arm64_sequoia:     "a2a91e38eb270c7918363de2553388cfe1faf77b9855f24a6c2ab52c703cd174"
+    sha256 cellar: :any, arm64_linux:       "93bc4ca4122594098e9cf3a0178838bf3063e2780240109e8b56831ca24b2c0e"
+    sha256 cellar: :any, x86_64_linux:      "92f506756375ecdbd7f5783ab95ceedce4eca2bade5af9bece07285c6de30ffa"
   end
 
   depends_on "nim" => :build
@@ -22,11 +23,11 @@ class Somalier < Formula
 
   uses_from_macos "bzip2"
   uses_from_macos "curl"
-  uses_from_macos "zlib"
 
   on_linux do
     # arraymancer's BLAS/LAPACK backend; macOS uses the Accelerate framework.
     depends_on "openblas"
+    depends_on "zlib-ng-compat"
   end
 
   # Nim library dependencies, resolved offline instead of via `nimble`, from the

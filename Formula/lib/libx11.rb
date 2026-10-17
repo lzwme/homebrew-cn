@@ -7,12 +7,12 @@ class Libx11 < Formula
   compatibility_version 1
 
   bottle do
-    rebuild 1
-    sha256 arm64_golden_gate: "0e2fe58e32bcc6a65fd01f653b9f6986c38723f295a60fdf3648111d774dc3ee"
-    sha256 arm64_tahoe:       "eea875959b2cd7b129fe9459e1771141b9215f3452e671996434f664fe96e193"
-    sha256 arm64_sequoia:     "af553e32325d1817b6526682e3ca5d73e354145df362790eb9fc9f231e6d8a35"
-    sha256 arm64_linux:       "93f44b03e57d3d6b02eb9a5155a969b974b0b4040d8de2f0a88d25e34f5eaff1"
-    sha256 x86_64_linux:      "bf17b051a14a369ee1aa3e3566338aafe21fedae9735f6b178197e871d042ac2"
+    rebuild 2
+    sha256 arm64_golden_gate: "3e6faf3d4501c50eb1fc7321adcb18186dc1f9d86e71adfeb5c381008525ad81"
+    sha256 arm64_tahoe:       "42c1e92a711a2c323b0476b85dd3f481e005e61486b25044f9f4ae07e3bd9fe0"
+    sha256 arm64_sequoia:     "5c92e4dfaacd0572841617a150ed85fbecb50d2274355d53d08dad10d963376c"
+    sha256 arm64_linux:       "4300cc7459d6e52564209f84a9e899a57f8eed04c6ab5a9fb24a57c326518e6c"
+    sha256 x86_64_linux:      "591e3d91a6823846b95d6cc055c95d3f062771f14ecf1ffc0715e4b05691e579"
   end
 
   depends_on "pkgconf" => :build
@@ -33,7 +33,6 @@ class Libx11 < Formula
       --enable-unix-transport
       --enable-tcp-transport
       --enable-ipv6
-      --enable-loadable-i18n
       --enable-xthreads
       --enable-specs=no
     ]
@@ -46,8 +45,13 @@ class Libx11 < Formula
   test do
     (testpath/"test.c").write <<~C
       #include <X11/Xlib.h>
+      #include <locale.h>
       #include <stdio.h>
+
       int main() {
+        setlocale(LC_ALL, "");
+        printf("XSupportsLocale=%d", XSupportsLocale());
+
         Display* disp = XOpenDisplay(NULL);
         if (disp == NULL)
         {
@@ -76,6 +80,6 @@ class Libx11 < Formula
       }
     C
     system ENV.cc, "test.c", "-L#{lib}", "-lX11", "-o", "test", "-I#{include}"
-    system "./test"
+    assert_match "XSupportsLocale=1", shell_output("./test")
   end
 end

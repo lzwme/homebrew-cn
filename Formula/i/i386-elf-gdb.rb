@@ -12,11 +12,12 @@ class I386ElfGdb < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "7d8dae6125aea91a06205808df4813f61aa8979e0c80152263d9d8e3f469a04b"
-    sha256 arm64_tahoe:       "b115317a12e507614d87ca4eb31b29cab18ec8df494a58cd02d934db3bd3bd53"
-    sha256 arm64_sequoia:     "c1a848fd965b00a32a7942754e29e8cfe5dfc181d76ffdbf902deba0186367dc"
-    sha256 arm64_linux:       "976a08ec6cc328bf63376b9064f74308b0bdf77063a6ce7fe4f4693560622839"
-    sha256 x86_64_linux:      "cf45e67a187d0f9ffeb49ea93a3f39831a2f32938e4d4a8d5afffb387f799db2"
+    rebuild 1
+    sha256 arm64_golden_gate: "b79f61a8232cd4b91a7138878f2d8f903d0f7d3993e1394130930b75b1bbbb93"
+    sha256 arm64_tahoe:       "7faf826fdb7c0fcfd6cc7fad9ae013dc9f1d42a92fd4872b0fb21c8aa156e77a"
+    sha256 arm64_sequoia:     "2d25ffc1eba3ecae47f37b71b049dc8ee9bc3208a8e60a4b0d9a701457118fc1"
+    sha256 arm64_linux:       "6b065e9d9a1d21c42c791fd6b8d214bc552809b9bde46210213dcfad54cb6345"
+    sha256 x86_64_linux:      "8da7b5ff0dea9c32a3e95cdbce1cee8a00ea0baaca1acd250797577e663f3296"
   end
 
   depends_on "pkgconf" => :build
@@ -24,7 +25,7 @@ class I386ElfGdb < Formula
   depends_on "gmp"
   depends_on "mpfr"
   depends_on "ncurses" # https://github.com/Homebrew/homebrew-core/issues/224294
-  depends_on "python@3.14"
+  depends_on "python@3.15"
   depends_on "readline"
   depends_on "xz" # required for lzma support
   depends_on "zstd"
@@ -80,7 +81,8 @@ class I386ElfGdb < Formula
     (testpath/"test.c").write "void _start(void) {}"
     system formula_opt_bin("i686-elf-gcc")/"i686-elf-gcc", "-g", "-nostdlib", "test.c"
 
-    output = shell_output("#{bin}/i386-elf-gdb -batch -ex 'info address _start' a.out")
+    # `--cd` sets gdb's working directory without `getcwd`, which the Linux sandbox denies
+    output = shell_output("#{bin}/i386-elf-gdb -batch --cd=#{testpath} -ex 'info address _start' a.out")
     assert_match "Symbol \"_start\" is a function at address 0x", output
   end
 end

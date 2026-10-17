@@ -1,17 +1,17 @@
 class Memex < Formula
   desc "Index and search local agent conversation history"
   homepage "https://github.com/nicosuave/memex"
-  url "https://ghfast.top/https://github.com/nicosuave/memex/archive/refs/tags/v0.29.0.tar.gz"
-  sha256 "636a1ef97226f6e491e778112ffed154c8f7a6b933f57890e12e68afba0a52f0"
+  url "https://ghfast.top/https://github.com/nicosuave/memex/archive/refs/tags/v0.29.1.tar.gz"
+  sha256 "b37440eb6aa313ec2c22e2863d7ecdaeee3f4e5d372653aec59ff3ddd7bee066"
   license "MIT"
   head "https://github.com/nicosuave/memex.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "76ff97cc304805961da5d1dc9b4d4452a4b73ca5f530096feecadfc5b2f3d389"
-    sha256 cellar: :any, arm64_tahoe:       "07e01f6b5160d4ab4feca27eb0191d11076bf6b6ac9bd5a505935475cbe68e5a"
-    sha256 cellar: :any, arm64_sequoia:     "640dea7538dfd2601be9f748978035875203683297d44583685b7d15aead57b9"
-    sha256 cellar: :any, arm64_linux:       "8ca3d3e83d9ac01b0b07ae34fed12dabc4618bceecf46c438ea8125ddd3fe73c"
-    sha256 cellar: :any, x86_64_linux:      "0eff47792b9c7e48807b336826743563ae157d9a482bc00aeac42f9bec18d3dd"
+    sha256 cellar: :any, arm64_golden_gate: "085f2841213600d8c06adc9965b4526753b8df7233813d3340eabeb6c39efda5"
+    sha256 cellar: :any, arm64_tahoe:       "256c0cd62f0db875a80dc8e549e2208892599260fc67ffcdb661f8fbde8e9557"
+    sha256 cellar: :any, arm64_sequoia:     "5fca54963d9b38a9f63a90644ac9e5d62a0015b9262805af4ce2ba0ab6278abc"
+    sha256 cellar: :any, arm64_linux:       "2c57fa3198596ae57e0260a9880193a3df6d2444b4cdf999432ee9d72c205b78"
+    sha256 cellar: :any, x86_64_linux:      "c18023c702abc50633dce01d49a8446052a8e7d0c8bbdfbdd00fd1172aefbc24"
   end
 
   depends_on "pkgconf" => :build

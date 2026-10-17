@@ -1,8 +1,8 @@
 class QobineTui < Formula
   desc "Tui player for Qobuz"
   homepage "https://github.com/SofusA/qobine"
-  url "https://ghfast.top/https://github.com/sofusA/qobine/archive/refs/tags/v2026-10-12.tar.gz"
-  sha256 "8662611505a903300d6364fba5f4436d4ee5231639e49aa0095640420820669a"
+  url "https://ghfast.top/https://github.com/sofusA/qobine/archive/refs/tags/v2026-10-16.tar.gz"
+  sha256 "826ddc36d1f297b7cd9da4fb542361eec5b321364378290a8c42c6b46ffb63cf"
   license "GPL-3.0-only"
   head "https://github.com/sofusa/qobine.git", branch: "main"
 
@@ -13,11 +13,11 @@ class QobineTui < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "95f2b453e98b89aaad2dc1dc0b8f70ea6fa99b7c28cdde21c351b5647f19d7ec"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "7240cdf6c7c5d894c7c09883fe1cb988403fcb4f45350371947a06e57b735280"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "e727dbea14badae49d0ee7c81083bae3d0dd6837d8530128bb438e72b24850fc"
-    sha256 cellar: :any,                 arm64_linux:       "12c201a72bb64f28104857670b6ecb3e153a5edd07ca6f452db5d08f38602da5"
-    sha256 cellar: :any,                 x86_64_linux:      "febffa4ee1060c0f8d173e7168cca3af042b5244dc5d78972a687121ae8ca42d"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "46e3aafa6b14684e12f07b4c165fe42435cc19b6b6aeb4c55d2192d72ef62c1c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "c283782845c5e0c20c6dc37fe9b0a4685b9cc600b79afd26fcd937f300262f26"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "e3e000280e8f7def9c006c3c5a8920a7be77ab40ba3a5850b1b79f41d869cec8"
+    sha256 cellar: :any,                 arm64_linux:       "7eb3aea1d1885c98340ca79cf1523f660bcf47a7c7d7980c86529bb7fb614b43"
+    sha256 cellar: :any,                 x86_64_linux:      "e95c5519645182977e4fa32ef4604eb59f1e53f002e4f53a773152a77583babb"
   end
 
   depends_on "pkgconf" => :build
@@ -26,6 +26,12 @@ class QobineTui < Formula
   on_linux do
     depends_on "alsa-lib"
     depends_on "openssl@4"
+  end
+
+  allow_network_access! :test
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
   end
 
   def install

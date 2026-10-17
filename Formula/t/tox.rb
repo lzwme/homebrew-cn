@@ -3,23 +3,23 @@ class Tox < Formula
 
   desc "Generic Python virtualenv management and test command-line tool"
   homepage "https://tox.wiki/en/latest/"
-  url "https://files.pythonhosted.org/packages/cf/da/fede1f079b72862a9383eeff8508fa87c26c2386427cc97eab0a589fd058/tox-4.65.5.tar.gz"
-  sha256 "9b7296cc43f358736665afecb9154b04309e500c1ebe6aafe86632211b8cad41"
+  url "https://files.pythonhosted.org/packages/83/6e/00870fc3e18befbd39ea5543b4c4e113baabee0cfb2d9aa04c86a1442837/tox-4.65.6.tar.gz"
+  sha256 "d5970575e4bca29316f6c758eb8a5ce29f4bca310e30878aa390d0adb7c2f13f"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "29f318a6efd01a57a3a3a1b460d30fee2da263e98902e108a5ed6f66d02e3d5e"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "29f318a6efd01a57a3a3a1b460d30fee2da263e98902e108a5ed6f66d02e3d5e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "29f318a6efd01a57a3a3a1b460d30fee2da263e98902e108a5ed6f66d02e3d5e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "8bae0eccf2b631bc0a5a84013d227d9bc171dc6a30b8b24a44cd00da8a6552fd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "8bae0eccf2b631bc0a5a84013d227d9bc171dc6a30b8b24a44cd00da8a6552fd"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "7bf60b96b4fd63ea8d418a710225c8634e59e68db518ac138132d392cef6bc96"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "7bf60b96b4fd63ea8d418a710225c8634e59e68db518ac138132d392cef6bc96"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "7bf60b96b4fd63ea8d418a710225c8634e59e68db518ac138132d392cef6bc96"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "c7dc2831e3352b689286fa5f01903c14a6a700bc3ea1b1e7e5e8768185f0d1c0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "c7dc2831e3352b689286fa5f01903c14a6a700bc3ea1b1e7e5e8768185f0d1c0"
   end
 
   depends_on "python@3.15"
 
   resource "cachetools" do
-    url "https://files.pythonhosted.org/packages/31/44/71476a5812da1ddf2c9a3efd31ae76d01480a1cf03ed13ac28aa8f2402e4/cachetools-7.2.1.tar.gz"
-    sha256 "b1a7537025c06abf96fcc1443e496af9a3fb95e774e70e1f0af226f73f7f2dcc"
+    url "https://files.pythonhosted.org/packages/85/e0/27b467a38de29583a68973edbf99eeeee5b105567bdbd7d208e5b07525a7/cachetools-7.2.2.tar.gz"
+    sha256 "d521dc98d501ba9efd8d2b1663bbf88163509c0c0a090eea6dc154b421ec5410"
   end
 
   resource "colorama" do
@@ -33,8 +33,8 @@ class Tox < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/35/c8/1d457d9150ff948f2ce6ada7715e0eeebbe5d3b58a45271a1e222474bcd3/filelock-4.1.1.tar.gz"
-    sha256 "7ba0927482c5a814b0a7f391d029ccdb8010f576f0a74c0dcde1811e8bc4c1b6"
+    url "https://files.pythonhosted.org/packages/f4/a9/1af41b37c3279712b22cdc63aac78a52432202b6fe1f9666a2a3d2831fb4/filelock-4.2.0.tar.gz"
+    sha256 "7a60906c75227cf04d0c273afadc8219400f11aeb13cc69591d4f6cdc6c8036e"
   end
 
   resource "packaging" do
@@ -43,18 +43,18 @@ class Tox < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/80/a8/66d45abadff219e36e2a824181b8f6a67e7ed4572934d6252c71c29d5731/platformdirs-4.13.0.tar.gz"
-    sha256 "1aa0b0d3f224c1f07c295121e312a5a24a180d6ae5a8425ea1784b3e3863e9c0"
+    url "https://files.pythonhosted.org/packages/16/35/146546aa5b9286a83248d29c51781476bbb4b0a608523361120059e0f7ed/platformdirs-4.13.1.tar.gz"
+    sha256 "ee77cf2d36d5a515b2acf68ede6434cf3a8fc70b822bb6b3264d01b96c69a8e0"
   end
 
   resource "pluggy" do
-    url "https://files.pythonhosted.org/packages/f9/e2/3e91f31a7d2b083fe6ef3fa267035b518369d9511ffab804f839851d2779/pluggy-1.6.0.tar.gz"
-    sha256 "7dcc130b76258d33b90f61b658791dede3486c3e6bfb003ee5c9bfb396dd22f3"
+    url "https://files.pythonhosted.org/packages/bf/db/7fc19e6f2dc92a966727031389fc2e08b558f0f25eb7403c1119ad4713cd/pluggy-1.7.0.tar.gz"
+    sha256 "d1eaa46ebb595891b860ab086b4d09c8588af65ebd4361b8e8f4bb8920b90ba8"
   end
 
   resource "pyproject-api" do
-    url "https://files.pythonhosted.org/packages/3c/e1/148e4bbb469b26b6648dac4ee292aed80c1205c06ecd2e32987c7ed3e6f5/pyproject_api-1.11.5.tar.gz"
-    sha256 "79294e79953a30fd3eac04bdf8b57241d33e2c8b7230b94c1b76e4d765fe09ad"
+    url "https://files.pythonhosted.org/packages/ce/04/15a06959a6a40d62b5aa001f6df5d26bba3961a84563f745ac337a79e979/pyproject_api-1.11.7.tar.gz"
+    sha256 "408e31b80e054e70d26f11b0ae3f60210ae6d54cd050e904aac63462b56404e9"
   end
 
   resource "python-discovery" do

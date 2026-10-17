@@ -1,17 +1,17 @@
 class Xcsift < Formula
   desc "Swift tool to parse xcodebuild output for coding agents"
   homepage "https://ldomaradzki.github.io/xcsift/"
-  url "https://ghfast.top/https://github.com/ldomaradzki/xcsift/archive/refs/tags/v1.6.0.tar.gz"
-  sha256 "48ac88921b4b8221d4e4cbacf42cdc7772bf97e5b5889f5d8afed8cffcf9ece9"
+  url "https://ghfast.top/https://github.com/ldomaradzki/xcsift/archive/refs/tags/v1.7.0.tar.gz"
+  sha256 "0d231c7b7e2db9fc4de259d1b47768f4bcaf3fceb01e1a3aef8469b1b9050a02"
   license "MIT"
   head "https://github.com/ldomaradzki/xcsift.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "02744b0c09effb698ebd741b2db1def9a9d30c8348c680da4fff7e0b74ab7169"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "c2fde5c66639c7c5827db331f87233d380e1e9fc04d787536ec739fed42647b7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "6dd9d95c227ee7e6840b359d5dd83be394ad71f57be767967761b295b74a2ee7"
-    sha256 cellar: :any,                 arm64_linux:       "b0ad45fb18b7386acd343fd25d9a9190895069a117eae04228f703246e33d4f3"
-    sha256 cellar: :any,                 x86_64_linux:      "f6a5eb164b2c41661dfc12e75818ce87e38141178f1c674d761fda850ae8cd51"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "d82c57ca5f336e346d4d79b5fe792c1933bf460636db63e0fa09dfb1e322a971"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "b1d9aaf232a4160eeadce41ddeea68cd19a9614c9fbb5ec9a3da45cdcb528a50"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "5975596ee63ddd5adf3fb64cc09197d74b07f1615fa34b0574bd84f617a5603b"
+    sha256 cellar: :any,                 arm64_linux:       "e71803e25f8b38320989c87e8a2d65354cbb460e774fb24b4e5e6fd4e4b5567a"
+    sha256 cellar: :any,                 x86_64_linux:      "48f66ca9234a06b58a886eada862c37c5f18f23bd7318a294f00d58e073c0a30"
   end
 
   uses_from_macos "swift" => :build, since: :sonoma

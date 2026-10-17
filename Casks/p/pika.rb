@@ -1,6 +1,6 @@
 cask "pika" do
-  version "2.0.0"
-  sha256 "77e3fdfbd0b5b8f3505545a317a6942ede0231c911daf025ffc78407d47708c6"
+  version "2.0.1"
+  sha256 "265d9cc9d00454965ed48cf8aeedae3b296372512d569c6800b88b2ac31c89f3"
 
   url "https://ghfast.top/https://github.com/superhighfives/pika/releases/download/#{version}/Pika-#{version}.dmg"
   name "Pika"
@@ -22,7 +22,10 @@ cask "pika" do
 
   zap trash: [
     "~/Library/Application Scripts/com.superhighfives.Pika-LaunchAtLoginHelper",
+    "~/Library/Application Support/Pika",
+    "~/Library/Caches/com.superhighfives.Pika",
     "~/Library/Containers/com.superhighfives.Pika-LaunchAtLoginHelper",
+    "~/Library/HTTPStorages/com.superhighfives.Pika",
     "~/Library/Preferences/com.superhighfives.Pika.plist",
   ]
 end

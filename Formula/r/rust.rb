@@ -2,13 +2,12 @@ class Rust < Formula
   desc "Safe, concurrent, practical language"
   homepage "https://www.rust-lang.org/"
   license any_of: ["Apache-2.0", "MIT"]
-  revision 1
   compatibility_version 1
   head "https://github.com/rust-lang/rust.git", branch: "main"
 
   stable do
-    url "https://static.rust-lang.org/dist/rustc-1.99.0-src.tar.gz"
-    sha256 "2035e4077b834a42ff8afd07f277ae3f06340098b86b1d2843aa234b4cfcae67"
+    url "https://static.rust-lang.org/dist/rustc-1.99.1-src.tar.gz"
+    sha256 "db56bbc64db491ceda6b78a2811a6d121c639338906fd944f720289cbd02245c"
 
     # From https://github.com/rust-lang/rust/blob/#{version}/src/stage0
     # HEAD does not use these as it needs a nightly rust
@@ -85,11 +84,11 @@ class Rust < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "0da15430cde258714a498cddf4ab7d32a70b843b83af8f3bc9061519f66044d7"
-    sha256 cellar: :any, arm64_tahoe:       "e8d91650aa4254656b78799e78d0219914103e5fd2452e6fb96893c4fbfe0f90"
-    sha256 cellar: :any, arm64_sequoia:     "ddac723f8c85f964f49235745a85a2efbc3ee09632d2dd2b0306d9c2bbdf46c9"
-    sha256 cellar: :any, arm64_linux:       "64a99b9c9fe16ed1ea2a5d5affabdbbd5b76fe234eb3b98491ae0bfa27ea4f7d"
-    sha256 cellar: :any, x86_64_linux:      "db380ae1e78c0763b101611a50d2a5afdfadfa97db40d3cbd0bbc80f8aeaf070"
+    sha256 cellar: :any, arm64_golden_gate: "ad99261670bcdffa5ef4518662eaffecb4bb07e20c265e24ace2f7239366b6d5"
+    sha256 cellar: :any, arm64_tahoe:       "3e8f3b4af11744d0120a5759ea9e4b2ebd387549e59c77e70cc75d132aa04dad"
+    sha256 cellar: :any, arm64_sequoia:     "f64776767e36296e228aa92c2badf6ab1c2a434d64364cbdc36871da114b3f7a"
+    sha256 cellar: :any, arm64_linux:       "60bfac4b423bdb48812bac2e0718657f7b9db49021a4a8689de71db8dcc21f84"
+    sha256 cellar: :any, x86_64_linux:      "4e57acd710d4a84dd72812af61f4e2ee618c60dec758dc2b7b73abb0304f86a4"
   end
 
   depends_on "libgit2"

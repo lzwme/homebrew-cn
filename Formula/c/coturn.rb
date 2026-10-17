@@ -4,7 +4,7 @@ class Coturn < Formula
   url "https://ghfast.top/https://github.com/coturn/coturn/archive/refs/tags/4.18.0.tar.gz"
   sha256 "28d55294ac596fbd129b293a85e7bb1c5dc4bd15b7fb55c500f355149e5f4e28"
   license "BSD-3-Clause"
-  revision 1
+  revision 2
 
   livecheck do
     url :stable
@@ -12,11 +12,11 @@ class Coturn < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "9df190b12d0f6fa96502cb4479c63642cbc503efce74cb4f2443da00efa2b913"
-    sha256 arm64_tahoe:       "3ea90ccd1c0543554533ebc49c2c31c57b529949c81614b9438707ba47a4b442"
-    sha256 arm64_sequoia:     "902078b63e96cde7ceb87f01c312691ffb7aa554ff1423825976e6e173ef0ef5"
-    sha256 arm64_linux:       "73c0a714385eb5f96b407191e3cf01d4c38541fbba63301e077583bf949076ca"
-    sha256 x86_64_linux:      "0242aca0eb1e6ce68e5350b1eeed62177d594bfc9dd217794d865516cbfdff6b"
+    sha256 arm64_golden_gate: "71e97601ccf89f74388f5d4814aba56ca90311220ef0568e3e72ea6de975ea83"
+    sha256 arm64_tahoe:       "4c2cb1d8f0a6c9676f651faef2e33b229b1d7921c2f983e297cd3fde2ed281d7"
+    sha256 arm64_sequoia:     "69f8a4cf97efda24c1767636600e3b878cfbd02f47c51b2ca09b94cb915bf3a6"
+    sha256 arm64_linux:       "a9bd7e210909fa8cf75f96a313f01ad90622c06a27d96e7474c9879e3c82b8db"
+    sha256 x86_64_linux:      "708eb4814d939879c12f3d969250c94c13a38a6839969c4284e47c3792bc9370"
   end
 
   depends_on "pkgconf" => :build

@@ -1,8 +1,8 @@
 class Pnpm < Formula
   desc "Fast, disk space efficient package manager"
   homepage "https://pnpm.io/"
-  url "https://ghfast.top/https://github.com/pnpm/pnpm/archive/refs/tags/v12.11.2.tar.gz"
-  sha256 "47497b2279792a6f26a47f4e696e4eff4069dd3ee73a33b7e35e148bb368ac2c"
+  url "https://ghfast.top/https://github.com/pnpm/pnpm/archive/refs/tags/v12.14.0.tar.gz"
+  sha256 "493c61b27f55435962a2e9c6602eba16aad544e488760540ff8d4967831b7f86"
   license "MIT"
   compatibility_version 1
   head "https://github.com/pnpm/pnpm.git", branch: "main"
@@ -15,11 +15,11 @@ class Pnpm < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "332a3475f9f27edcacf92e222ab98900914cf99a168c93ac5e60dc3300bc25ff"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "1ea5201e2ee44c8c3ec8329006303eee0b81ab5cb4e2fbd7c6285c23c060b19c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "a1795faf8c8f5d29bf400ae9fd17f94cd6e178baaa7b0c835694a55a4ca7b67a"
-    sha256 cellar: :any,                 arm64_linux:       "32e9771c528c86cea2bf9a9efd9ecb5d4658e9ba15ad3b2d09e0468801f93751"
-    sha256 cellar: :any,                 x86_64_linux:      "9d99ad893f874027a7a5b6728d334876d24f8145aa59ee36e52e72aa2a9e8efe"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "f6dc0bca8fcd790303ac47a8a6e8e6f54cb3b18a973ba925f5843fe5bea6bccd"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "f830ddb5eb2594aacaadfca5c734ddc30752d4b36f7484d5c6566c49697c9f74"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "d0c58b30836c53e7376dff6197ed37f91e49763acf53e41e2ce092b5c811497b"
+    sha256 cellar: :any,                 arm64_linux:       "62240087b9fbd9904743106ccbd0123ae146cf07c8dac2dbda0f62284da1759a"
+    sha256 cellar: :any,                 x86_64_linux:      "4526e706370fd473ac4ef9b21d2c27313c56e6ebe588825e1d6707867c2564b1"
   end
 
   depends_on "esbuild" => :build

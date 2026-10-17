@@ -32,6 +32,8 @@ class Yara < Formula
   depends_on "openssl@4"
   depends_on "protobuf-c"
 
+  deny_network_access!
+
   def install
     system "./bootstrap.sh"
     system "./configure", "--disable-silent-rules",

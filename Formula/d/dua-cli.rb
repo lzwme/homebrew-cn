@@ -11,11 +11,12 @@ class DuaCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "05596039f6decfec05fde8ef4ff60ba076dee71d48e7d6d61dd485ea2f76336a"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "88a8bf183814b7d5659e23e6aec79d6ffd7e8de608277701a77634c3659483d6"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "efbdc550e2cc3be5d280e364edd531f5c8866944ca8b613776f3cce0a6d9e287"
-    sha256 cellar: :any,                 arm64_linux:       "90a6aad0bd2e85915761774ee9d4135296b007134a7df4e85c3a9c22cf1a8bf5"
-    sha256 cellar: :any,                 x86_64_linux:      "95339cc892b25f900981b0771f679c4b380950ec391d009a9f103be6d7b6b9f8"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "7e728ed0d5b741cab050256709ac34aee81b0d2036de23a87be16afb87054544"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "a93918412fd520729b20b3e6cc7a4d98f4dbb811d7a3f79bf88a3a0ff696f2b3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "abfd426181cc6a25d5e39861268c6b64d0a051f410a90f2e28cdf9ecd7ac9669"
+    sha256 cellar: :any,                 arm64_linux:       "1b0d58074619c7eb1b276bea9b3aa8e40f9348cc38604921397aae5f3c953072"
+    sha256 cellar: :any,                 x86_64_linux:      "15eb1f2db2dbae8ec45312acb94895df780a2faa85097140119c2dab3c34ec8c"
   end
 
   depends_on "rust" => :build
@@ -28,6 +29,8 @@ class DuaCli < Formula
 
   def install
     system "cargo", "install", *std_cargo_args
+
+    generate_completions_from_executable(bin/"dua", "completions", shells: [:bash, :zsh, :fish, :pwsh])
   end
 
   test do

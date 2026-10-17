@@ -1,17 +1,17 @@
 class Gogcli < Formula
   desc "Google Suite CLI"
   homepage "https://gogcli.sh"
-  url "https://ghfast.top/https://github.com/openclaw/gogcli/archive/refs/tags/v0.44.0.tar.gz"
-  sha256 "c31feeb39bc8fdef38ffe2aa31bd62a812d724efbaff1262d94e20a3c5c8c032"
+  url "https://ghfast.top/https://github.com/openclaw/gogcli/archive/refs/tags/v0.45.0.tar.gz"
+  sha256 "500a30dcffc88ab4299c59a2c7e36916f6f5c0d8d215c24ebe482594b785c7d6"
   license "MIT"
   head "https://github.com/openclaw/gogcli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "0d8536d764b6c1f693473b4a778ff56b39eee2d9c0403f1c7ed2845ee91c787e"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "77433ea4ebedca153647c6c2dddf04ea63c8408dcfcf6fa76a35725bdf695f3c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "abe36b6231bca3d5f632ac117603f464b62438451e0619d60603caa3726b2199"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "1d0fc26e11632cd7b42dde04bcf9adcacab1a62213a6b642b3775a840f1d517c"
-    sha256 cellar: :any,                 x86_64_linux:      "3aab6bab7cff1037f86186e45443729ea6faf6a89bf3c665f75523e43d13be24"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "aa4dbeb07865b12874c170cdcb28aeaf6dd8cf2a1715df2a90e5f9466518bb63"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "c5160669c09641ec4ec7590354765eed2e5c235ec6b3987fac0a0ba45b42bc4a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "9629354d558e2c23806d0356579d6e1353501a042f464832c936e92f58ff339b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "b5028925ed4b12745db180f652b03540fe6f005effaf504d4527e8a125457bfa"
+    sha256 cellar: :any,                 x86_64_linux:      "a2747f3faa7227e4e7221a89a3a732d4451f27fdca882d6a247bff716c4876f8"
   end
 
   depends_on "go" => :build

@@ -3,19 +3,17 @@ class Ggshield < Formula
 
   desc "Scanner for secrets and sensitive data in code"
   homepage "https://www.gitguardian.com"
-  url "https://files.pythonhosted.org/packages/1c/93/bebb2317a2e1eda08870f39a8caf6ee769e0a50cfc899976ec163350ecd1/ggshield-1.55.0.tar.gz"
-  sha256 "06b8bbef8885abaa18ab87c70708584e625a1ddbd0902ccf93ba97e15784f766"
+  url "https://files.pythonhosted.org/packages/9b/96/f17606e742f65981bac50bf7edcfa5706e145d597010c913f1a55530ea99/ggshield-1.56.0.tar.gz"
+  sha256 "1b0e9c6471e357cb570a0c2f6df46acd7fe462881db6a95f1833cf17cacea92d"
   license "MIT"
-  revision 1
   head "https://github.com/GitGuardian/ggshield.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_golden_gate: "37cd5965dfab5de9ca7c4149a0289eb374539d1d3d0fe11b633d41000f4d577a"
-    sha256 cellar: :any, arm64_tahoe:       "16beb2aacc7300eaa98fedcc8465421e8e5a2ec438dd9c3152170434bb4d4bb8"
-    sha256 cellar: :any, arm64_sequoia:     "5e6d9c731a6253c768b126182d3ed53a6cf2334f7fa8abc87d8a517339e81c35"
-    sha256 cellar: :any, arm64_linux:       "4e49af240356157a16e1d26bf5299b0338c0f0e16d1cf9a7ab64c2921fc42a9e"
-    sha256 cellar: :any, x86_64_linux:      "69fe59188766fbb1a5a743c01b516053facf972abd3f20de1195337620f18a8c"
+    sha256 cellar: :any, arm64_golden_gate: "ba8df01b773ab582cb72a80d70dae6508ac18effc209b26d9068dc480c9fce5c"
+    sha256 cellar: :any, arm64_tahoe:       "f256ef074c0daedb0db6334b8fafd1d15dd583b6514fdb915dfb647873ab2d1d"
+    sha256 cellar: :any, arm64_sequoia:     "ec8cdaacbeb50019302cd77cb0b054c559306a4f5be60e0c9a31797758029a25"
+    sha256 cellar: :any, arm64_linux:       "7a5cf3920e1d14a0d2d6bcff4c00bc6a40b8d71711fd4ee1f3268bb790b4bad6"
+    sha256 cellar: :any, x86_64_linux:      "dd016a1d907b2052e3a58ae8b7daecb4dc9aaeeabd351cea2fc025c259559d17"
   end
 
   depends_on "pkgconf" => :build # for `rfc3161_client`
@@ -61,8 +59,8 @@ class Ggshield < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/4c/58/6fd434bec86eff7c38a3168454cb132b762b2bea9b3ac094101a2f7bc32a/filelock-4.1.0.tar.gz"
-    sha256 "ad7f724afef953e731b1cc39bcd3a09166d72ed7fcdf29e6e88b1c3235c6715d"
+    url "https://files.pythonhosted.org/packages/f4/a9/1af41b37c3279712b22cdc63aac78a52432202b6fe1f9666a2a3d2831fb4/filelock-4.2.0.tar.gz"
+    sha256 "7a60906c75227cf04d0c273afadc8219400f11aeb13cc69591d4f6cdc6c8036e"
   end
 
   resource "h11" do
@@ -141,8 +139,8 @@ class Ggshield < Formula
   end
 
   resource "more-itertools" do
-    url "https://files.pythonhosted.org/packages/de/1d/f4da6f02cdffe04d6362210b807146a26044c88d839208aec273bb0d9184/more_itertools-11.1.0.tar.gz"
-    sha256 "48e8f4d9e7e5878571ecf6f2b4e57634f93cd474cc8cfbd2376f2d11b396e30d"
+    url "https://files.pythonhosted.org/packages/52/b8/c63995bebbb9ac9c059350e0fb8c82c2420c85aeca7d34e40aecf3df9281/more_itertools-11.2.1.tar.gz"
+    sha256 "cbf08fd0af284dc69718b9b76a8e6203df624d70209ea511e4219d350c856f63"
   end
 
   resource "mypy-extensions" do
@@ -225,6 +223,11 @@ class Ggshield < Formula
     sha256 "439594978a49a09530cff7ebc4b5c7103ef57baf48d5ea3184f21d9a2befa098"
   end
 
+  resource "ruamel-yaml" do
+    url "https://files.pythonhosted.org/packages/c7/3b/ebda527b56beb90cb7652cb1c7e4f91f48649fbcd8d2eb2fb6e77cd3329b/ruamel_yaml-0.19.1.tar.gz"
+    sha256 "53eb66cd27849eff968ebf8f0bf61f46cdac2da1d1f3576dd4ccee9b25c31993"
+  end
+
   resource "secretstorage" do
     url "https://files.pythonhosted.org/packages/1c/03/e834bcd866f2f8a49a85eaff47340affa3bfa391ee9912a952a1faa68c7b/secretstorage-3.5.0.tar.gz"
     sha256 "f04b8e4689cbce351744d5537bf6b1329c6fc68f91fa666f60a380edddcd11be"
@@ -261,8 +264,8 @@ class Ggshield < Formula
   end
 
   resource "truststore" do
-    url "https://files.pythonhosted.org/packages/53/a3/1585216310e344e8102c22482f6060c7a6ea0322b63e026372e6dcefcfd6/truststore-0.10.4.tar.gz"
-    sha256 "9d91bd436463ad5e4ee4aba766628dd6cd7010cf3e2461756b3303710eebc301"
+    url "https://files.pythonhosted.org/packages/ee/9f/c5201d42a484c061e528825fc8e2d565f5abd50a4ced6fb7d29c4ec99b2b/truststore-0.10.5.tar.gz"
+    sha256 "30d36967ccaded5cbb38d602c433f53600036c79d502f4533a49b60a03bbefcd"
   end
 
   resource "tuf" do

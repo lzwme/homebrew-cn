@@ -9,18 +9,19 @@ class Gdb < Formula
   head "https://sourceware.org/git/binutils-gdb.git", branch: "master"
 
   bottle do
-    sha256 arm64_golden_gate: "73783de1676450dfa84775af3b1f21a156f58cab83afae2ee830ee0df3b4d398"
-    sha256 arm64_tahoe:       "0acd0ff7cef293eb7c9d188c424de3e32c35daa0d1ce406e47a438fab70e2f27"
-    sha256 arm64_sequoia:     "b9f623abb1770948ba8cfa3e60ce42fb255642c325cf19df50dde9c85539babb"
-    sha256 arm64_linux:       "9e95d6f677e130979eea1a1537b97f3c69aaa8365b50d10cfffa3a2f70ea8e4c"
-    sha256 x86_64_linux:      "1a8f84a44be494e949ad98966ebe44dc149f9dd30d69cd79a5443c267573c526"
+    rebuild 1
+    sha256 arm64_golden_gate: "91247f76ee73fbc366d3044eb8535481ec1bfb9cda70a2a44fa5c4e9ed0b7673"
+    sha256 arm64_tahoe:       "9f783087782b9503fe7f9cceab6dbf7d157fff4bc5655f60d58960986904b647"
+    sha256 arm64_sequoia:     "a95e812778d999050c682e0ee353c18e0ab8d33d32834fa31c13ea661f622d24"
+    sha256 arm64_linux:       "3eb3f9425ed5084dd39521f62fdd1009ac9e105a121959c6c7d5a5f07e0a590a"
+    sha256 x86_64_linux:      "e790c95283f479fa22c597833c8bb6044f46758a0ea242effb30bc9d4c0b36b4"
   end
 
   depends_on "pkgconf" => :build
   depends_on "gmp"
   depends_on "mpfr"
   depends_on "ncurses" # https://github.com/Homebrew/homebrew-core/issues/224294
-  depends_on "python@3.14"
+  depends_on "python@3.15"
   depends_on "readline"
   depends_on "xz" # required for lzma support
   depends_on "zstd"

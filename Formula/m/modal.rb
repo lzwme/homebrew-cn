@@ -3,16 +3,16 @@ class Modal < Formula
 
   desc "Client library and CLI for Modal"
   homepage "https://modal.com/"
-  url "https://files.pythonhosted.org/packages/65/ba/2b36899ea5633bf101e6ba6f7e95a4da3e4b1f57f52bd0ba8f4cfd12e808/modal-1.6.1.tar.gz"
-  sha256 "ff17768f67a65595aa7882e893e6cb78e2e001b3653aa52cfe98d4051d8d9e9e"
+  url "https://files.pythonhosted.org/packages/f1/4c/4546bf12b132224a65a809766b6ada95a9a9fd63e28fb1abab1e1b962c2f/modal-1.6.2.tar.gz"
+  sha256 "f96bcd2de02abb74ac8ec3ff7d62400403633867a42c9c7b43f69f75ea00b952"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "525937f6cb816b1142e3c08ff0f917a4cbc73880ff332d15e5975e4cabd1dcc9"
-    sha256 cellar: :any, arm64_tahoe:       "5ae922d391cd2de5ed31982413de874b24122adf72f58a0b60978bd8af61f844"
-    sha256 cellar: :any, arm64_sequoia:     "6a2e1423b74fde36451900ef51ea89f8288db2976b1bd52deb44f47a974793f8"
-    sha256 cellar: :any, arm64_linux:       "2b4b0aa35a3b764bb5c661720ebd907357e446b45d9d2436f6b8e3c99cc0de0b"
-    sha256 cellar: :any, x86_64_linux:      "70c2d62e8331d4148a9c31b2ac7953561b620f4d6777d4058b44cc843b70eb67"
+    sha256 cellar: :any, arm64_golden_gate: "a79d985cf390093f7bda7eb455397110a88b85a93fdb810750966716344228bb"
+    sha256 cellar: :any, arm64_tahoe:       "f80d18229d94ce94556da870173e1267e9c380ca5a5fab70189734a0f1b6e19c"
+    sha256 cellar: :any, arm64_sequoia:     "a5ad9afd4804f611961bb7fd0193385124ee3e4e9adfbe1f2503d8b7a0879191"
+    sha256 cellar: :any, arm64_linux:       "7950117f04985bee96f887522bc8f7945ffbd69afbc31de8a50d5339484ae44a"
+    sha256 cellar: :any, x86_64_linux:      "a893ff5f1b5dafe65417d493ea915206b7d5bd0417c93296cac6a65c0a1715cd"
   end
 
   depends_on "rust" => :build # for `cbor2`
@@ -28,8 +28,8 @@ class Modal < Formula
   end
 
   resource "aiohttp" do
-    url "https://files.pythonhosted.org/packages/58/d9/22ce5786ac0c1653ae8b6c23bded02c1686d11f0dbb45b31ce128e0df985/aiohttp-3.14.3.tar.gz"
-    sha256 "9491196535a88924a60afd5b5f434b5b203b6cc616250878dbdb223a8f7844bc"
+    url "https://files.pythonhosted.org/packages/6c/4c/bdccd81e9ee225b69c60e7766c9a5b05364f118f4d383713b89a682d772d/aiohttp-3.14.5.tar.gz"
+    sha256 "5558a7f5a05af9ecf744af91e5baefc436f93c9333e656c27ec253f9a6bbe178"
   end
 
   resource "aiosignal" do
@@ -98,8 +98,8 @@ class Modal < Formula
   end
 
   resource "multidict" do
-    url "https://files.pythonhosted.org/packages/d6/99/1d4d69c3512d0ddbfa3a1b69cfd9a151012ab2eb4eabbb096201b1f0b7d8/multidict-6.9.1.tar.gz"
-    sha256 "0f06e60fa190aa7abd0914c2a766736fdc8e9f34878c4346338534b73d1b20e2"
+    url "https://files.pythonhosted.org/packages/f9/79/84ddb5ba16c4eb2c69c71db76ae3c579fe546e511f7170c7e27eedbab7c1/multidict-7.1.0.tar.gz"
+    sha256 "61a4e5d81b8d4e4ad61964b230129e7a2b914793d96289029078fc9009f074ec"
   end
 
   resource "propcache" do

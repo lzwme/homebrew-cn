@@ -3,18 +3,16 @@ class Skillspector < Formula
 
   desc "Security scanner for AI agent skills"
   homepage "https://github.com/NVIDIA/SkillSpector"
-  url "https://ghfast.top/https://github.com/NVIDIA/SkillSpector/archive/refs/tags/v2.12.0.tar.gz"
-  sha256 "c8c473512283a0025d74798ee300d96e570645fe2af2754284774352c9738953"
+  url "https://ghfast.top/https://github.com/NVIDIA/SkillSpector/archive/refs/tags/v2.13.0.tar.gz"
+  sha256 "eb61b4631ec33d41300404b527ec75262bde52d55ac7ae43f9abb52722dc62ee"
   license "Apache-2.0"
-  revision 1
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_golden_gate: "615afab119824c42b998a8f107dc5bb77d788f0ed5168ee8e19dc4d0d3e2119b"
-    sha256 cellar: :any, arm64_tahoe:       "613fb4b5853ac37ef1683363b9f3fe5584fa10e88bd9ba668993046d46f340e6"
-    sha256 cellar: :any, arm64_sequoia:     "a12c03a380e6630cc77cccbfb630ba71c2f71dfcf4b72d75c1a515ce9a1f0e70"
-    sha256 cellar: :any, arm64_linux:       "bd4602be254230cca50765b5974edb9f707a964931e766099426a179efa6a72b"
-    sha256 cellar: :any, x86_64_linux:      "fbf1e00337f09f8aac1c8f11e028b8878832025ec6f0833e4116eb537f9cefa3"
+    sha256 cellar: :any, arm64_golden_gate: "08168f2c3478aa1a69415a4d12ff46e86fb97eec6d911f478e136d763dc325b0"
+    sha256 cellar: :any, arm64_tahoe:       "69502668b53e0d10a987d999e5457428e09e803fd8d2600848a076acfa772ee4"
+    sha256 cellar: :any, arm64_sequoia:     "387459dfae3195feba1deea21a113fd07f0d771f0855ff4446a33a3cbb89b120"
+    sha256 cellar: :any, arm64_linux:       "a42fd43ac348eec7c9558de686c8498b4a884f80fa3969502ed400d04df5eec3"
+    sha256 cellar: :any, x86_64_linux:      "fdb261fe85a79125c2e67b26fc6b6d16e609fb0e13b9fa2434f90d7a4f166509"
   end
 
   depends_on "pkgconf" => :build

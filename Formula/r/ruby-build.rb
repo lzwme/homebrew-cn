@@ -13,7 +13,7 @@ class RubyBuild < Formula
 
   depends_on "autoconf"
   depends_on "libyaml"
-  depends_on "openssl@3"
+  depends_on "openssl@3" # TODO: OpenSSL 4 needs https://github.com/rbenv/ruby-build/pull/2647
   depends_on "pkgconf"
   depends_on "readline"
 

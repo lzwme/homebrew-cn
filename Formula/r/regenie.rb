@@ -12,11 +12,12 @@ class Regenie < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "a1ceeafdc26399bddf01ec45c13fbc6d8147c0ad26824a42860a7f9ae6fb73fb"
-    sha256 cellar: :any, arm64_tahoe:       "a756b1984f78cc34264bc670311bdeb75d6bd19fd4a9d115fb521ea62cc233a7"
-    sha256 cellar: :any, arm64_sequoia:     "25da0962c05bfe203317514889555061a0bea3ffa9e17d784466dfde022b0607"
-    sha256 cellar: :any, arm64_linux:       "ac4ca62699360970fbac1d0f171bdb3223499e3baeb6444fa6acdd6d425c0853"
-    sha256 cellar: :any, x86_64_linux:      "10b9607bf96821246328091ebde2e8361a6645353b7a070b05aa120ad0b20a0c"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "13876d8c5fcb0eb688ff8a6f49d15f876c5e8555654bbc5530ceae757d654f65"
+    sha256 cellar: :any, arm64_tahoe:       "fd63d66177575c7fdb73945ec9ef1a5682a0351a46e70a04338f2e3e55d8b1a4"
+    sha256 cellar: :any, arm64_sequoia:     "c56d6f0f780ebae11db4b612a539d76f7de035c8035f1954dbad67222e9eba20"
+    sha256 cellar: :any, arm64_linux:       "c3c4f1567a8f38670cba925360c1983816279401984c962c66a6fe1a00886c27"
+    sha256 cellar: :any, x86_64_linux:      "f235c6c0fbd6630aaf2f8d740a498d4676ff6a772d308e499a2708877d2d0314"
   end
 
   depends_on "cmake" => :build
@@ -24,7 +25,10 @@ class Regenie < Formula
   depends_on "gcc" # for libgfortran
 
   uses_from_macos "python" => :build
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   # Git mirror as the Fossil server (code.enkre.net) often answers HTTP 508
   resource "bgen" do

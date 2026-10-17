@@ -19,6 +19,12 @@ class IcannRdap < Formula
 
   conflicts_with "rdap", because: "rdap also ships a rdap binary"
 
+  allow_network_access! :test
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
     system "cargo", "install", "--bin=rdap", *std_cargo_args(path: "icann-rdap-cli")
     system "cargo", "install", "--bin=rdap-test", *std_cargo_args(path: "icann-rdap-cli")

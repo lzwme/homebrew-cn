@@ -4,6 +4,7 @@ class Openshell < Formula
   url "https://ghfast.top/https://github.com/NVIDIA/OpenShell/archive/refs/tags/v0.1.4.tar.gz"
   sha256 "e7b80d636456eac7fea05494894f018b170d4c7b3bf89aa769e3f909554013e9"
   license "Apache-2.0"
+  revision 1
 
   livecheck do
     url :stable
@@ -11,11 +12,11 @@ class Openshell < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "f9c5efae81528206eb5ff14245d6d99665458cb6902bf9e964f3e91118c23df4"
-    sha256 cellar: :any, arm64_tahoe:       "81dcdce8c6c400c5bc994d7f47a36b56481e6d289a60e1c357cb300b34bffe72"
-    sha256 cellar: :any, arm64_sequoia:     "ba855b5c55fa1b374823d007a659d20c788b1e4fe462bf7b11ac92f38856b076"
-    sha256 cellar: :any, arm64_linux:       "6c065124f0333c7002533c4088da217ce76386c0bcb46beb8b3436d6c1ec95a2"
-    sha256 cellar: :any, x86_64_linux:      "8c11b31e08b537ed61bb9df7e9187ea81fde3b30e65390b270e09a2d19371e12"
+    sha256 cellar: :any, arm64_golden_gate: "3487186eba889c1784c59864b74b4e57c4d765dbbc6e93dd9f2c9b2790b152d4"
+    sha256 cellar: :any, arm64_tahoe:       "ab9ab20b8d3d743924e3407d600009bbf80f994e6c6e7eb8a39eac17253d7edc"
+    sha256 cellar: :any, arm64_sequoia:     "6617da1ca4611feca3b3f77b608791d9576ba3a1162dab2e95c9c925d2dc3031"
+    sha256 cellar: :any, arm64_linux:       "6070a6852c0fdaf3c83f6bd74725b458f8d96159e32fd573d833757eb6e8ebea"
+    sha256 cellar: :any, x86_64_linux:      "db468cf9de27b8b6038321ab6b8cd5158526383bb93ce88f03c1efeae42709fb"
   end
 
   depends_on "pkgconf" => :build

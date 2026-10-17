@@ -23,6 +23,8 @@ class Yafc < Formula
     depends_on "libbsd"
   end
 
+  allow_network_access! :test
+
   def install
     args = %W[
       --prefix=#{prefix}

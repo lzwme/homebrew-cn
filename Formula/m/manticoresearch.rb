@@ -5,7 +5,7 @@ class Manticoresearch < Formula
     "GPL-3.0-or-later",
     { any_of: ["Unlicense", "MIT"] }, # uni-algo (our formula is too new)
   ]
-  revision 1
+  revision 2
   version_scheme 1
   head "https://github.com/manticoresoftware/manticoresearch.git", branch: "main"
 
@@ -36,11 +36,11 @@ class Manticoresearch < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "8957be3eb317823094153d99f04cec46756e8028db6d6391246421b3eda362eb"
-    sha256 arm64_tahoe:       "9332a7b2f9e52cdf29f8ed88fb32b838aa62bc431b03cd97b4da3b1e89deaa8b"
-    sha256 arm64_sequoia:     "927f847be4df469635b0809939192ab77e24f60d8aa5b2cab9352248753e3193"
-    sha256 arm64_linux:       "c1813501584264575c8bfb7c41e20b7c7d70b95d78f15c7ff138a021d1a07eab"
-    sha256 x86_64_linux:      "b232300588a0ddbc5686935b066f220c3904a4374875d70bf6bee123ee34688a"
+    sha256 arm64_golden_gate: "0923f5b6eadf34697fc478fccce0221b7876f76381278f1cc49036c493e9c3a3"
+    sha256 arm64_tahoe:       "d07a13884658435b6376a6c031c656e7628b84285d936353902d868819b6047f"
+    sha256 arm64_sequoia:     "7f83ed8151c4a68651e6ebabf0aecb1869d65eb7f6f0ed01d3cec36316424860"
+    sha256 arm64_linux:       "9ec9be6b7b4fa65a5e45883811c7f1e8685df8ca796d595c37cf573849f6e4b7"
+    sha256 x86_64_linux:      "5372b3eaaeb6112d29d98bde4be95b8e60131dee671cbe6633f7a6d206dfaa6d"
   end
 
   depends_on "cmake" => :build

@@ -1,16 +1,16 @@
 class SentryNative < Formula
   desc "Sentry SDK for C, C++ and native applications"
   homepage "https://docs.sentry.io/platforms/native/"
-  url "https://ghfast.top/https://github.com/getsentry/sentry-native/releases/download/0.17.3/sentry-native.zip"
-  sha256 "930039d20b8f7d5520c8cb1d9911d63ce8a9e0635b56ae08256936d1f45b66ac"
+  url "https://ghfast.top/https://github.com/getsentry/sentry-native/releases/download/0.17.4/sentry-native.zip"
+  sha256 "804811557b5d42ddd51cb1241bf851964d75547a4eb7b5ad97b73a4de965ab25"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "28a0a3e6df01800f2c16c898b8a770fed26755b04841431eba38f1ca825c630c"
-    sha256 cellar: :any, arm64_tahoe:       "b54dad0ef0d1b60724465dfc0adc558dad466d2ad92e4f0abc5bc1b8c729750b"
-    sha256 cellar: :any, arm64_sequoia:     "1d1691b02985b553509f9cc67de20bd156fc96363d5392876d4f56db803f732b"
-    sha256 cellar: :any, arm64_linux:       "d7c40e041b0818642a44ee2c5f4a8687ae5ec57346ffb2ce4ce01459147b8bc5"
-    sha256 cellar: :any, x86_64_linux:      "042a326277318772b932206e0d0cb3539267278597aa36de05a4cc2b3d0762e7"
+    sha256 cellar: :any, arm64_golden_gate: "bcbb1a324999408b9d69c270a6c7f0363be739c7e3eb880caaf9080fb1823664"
+    sha256 cellar: :any, arm64_tahoe:       "f59e53728b3b56e9ae5ba883c48a7d7956c136342714a8cfe0a955f6e427cc0b"
+    sha256 cellar: :any, arm64_sequoia:     "67786eb922b38bddc02c491c4d42c96e8e173c856bb55effd0987fad2e5ae506"
+    sha256 cellar: :any, arm64_linux:       "2c0a587e2b4f1ea31062156eb2e4032404dc229cea6b28c2ca77ad33725a8e25"
+    sha256 cellar: :any, x86_64_linux:      "ddd19f7b7b3cb24baa6ec4b404916ef42221858c716197e13fdfff626436c462"
   end
 
   depends_on "cmake" => :build
@@ -22,6 +22,8 @@ class SentryNative < Formula
     depends_on "libunwind"
     depends_on "zlib-ng-compat"
   end
+
+  allow_network_access! :test
 
   def install
     rm_r("vendor/libunwind")

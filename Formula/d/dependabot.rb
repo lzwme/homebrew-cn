@@ -1,17 +1,17 @@
 class Dependabot < Formula
   desc "Tool for testing and debugging Dependabot update jobs"
   homepage "https://github.com/dependabot/cli"
-  url "https://ghfast.top/https://github.com/dependabot/cli/archive/refs/tags/v1.95.0.tar.gz"
-  sha256 "cd387c2d4dbf7810fbef4838ec6645eada9a86ef5725215ba9e657c7d0fa685c"
+  url "https://ghfast.top/https://github.com/dependabot/cli/archive/refs/tags/v1.96.0.tar.gz"
+  sha256 "2c8401f1b98e2b42851e7670599e473458af5cd2ffe02c35383c875158c3b6f9"
   license "MIT"
   head "https://github.com/dependabot/cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "3173374035296f3b72f47fe83d1342d4ce7c0790b05a574506b96ca6c90272e0"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "3173374035296f3b72f47fe83d1342d4ce7c0790b05a574506b96ca6c90272e0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "3173374035296f3b72f47fe83d1342d4ce7c0790b05a574506b96ca6c90272e0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "e1e90ce406870a123f41e7447bfa5cc5d2d94b177e5bda577133e11149b8628f"
-    sha256 cellar: :any,                 x86_64_linux:      "eb887ad0ed9592ecef9f8c69376a3309e092e8d9d816f809e26dbf385579d237"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "b9c162d2668c83ea0adcf1b580dc3decc9508c1d6fb15aa2fc43f44c132a714b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "b9c162d2668c83ea0adcf1b580dc3decc9508c1d6fb15aa2fc43f44c132a714b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "b9c162d2668c83ea0adcf1b580dc3decc9508c1d6fb15aa2fc43f44c132a714b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "319367f6c59bbe214f2c3695b4aa76701e063f3e4883f055d6b82cd12b798d33"
+    sha256 cellar: :any,                 x86_64_linux:      "a63d36adeca466e94f4df2deef557a4b95a7848634197b0c8bbab698906db3ad"
   end
 
   depends_on "go" => :build

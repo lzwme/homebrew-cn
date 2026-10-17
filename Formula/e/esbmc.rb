@@ -4,6 +4,7 @@ class Esbmc < Formula
   url "https://ghfast.top/https://github.com/esbmc/esbmc/archive/refs/tags/v8.6.tar.gz"
   sha256 "a691bbf63a51da753a24b59027dd603c91bc2e90fcdd1abc042e241453164f5a"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/esbmc/esbmc.git", branch: "master"
 
   livecheck do
@@ -12,12 +13,11 @@ class Esbmc < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_golden_gate: "44476a30964abea53df222aa536bd7d471bd1b39e943aa259baec8c1cd4bf08e"
-    sha256 cellar: :any, arm64_tahoe:       "0995d9e8ede3f65925393ff0102cf79a2259a8c8eb7da12c6ca2fa35f1fa0122"
-    sha256 cellar: :any, arm64_sequoia:     "7f355de6103d392b9259139afc71665206dfdee0204ce61e8764ccc99e001dfb"
-    sha256 cellar: :any, arm64_linux:       "e27f24bbda9154222a0de7c60859add61e858f26d3875bce0c7c3b2dbc215da7"
-    sha256 cellar: :any, x86_64_linux:      "894c0cce54af2776b08ca7530d071a5f929aeec07002683f2473086a53b768b8"
+    sha256 cellar: :any, arm64_golden_gate: "0020fe66e37d0233a9471d5ac085299dd6bd4bc97de4a3b80f1126e77eb3b8ce"
+    sha256 cellar: :any, arm64_tahoe:       "4c28f7a1c1668e0eadee5019308fc8e46388ead31e9039cbe8afe96676655a82"
+    sha256 cellar: :any, arm64_sequoia:     "8c6dbffd9547418c3651c3b37649e6fbe31f06bcd1b9e20e195de41dc608285a"
+    sha256 cellar: :any, arm64_linux:       "742b99d2696114f88817909bb03661cc280ad45a81224b20d8653067757b9883"
+    sha256 cellar: :any, x86_64_linux:      "623987a5773f09c96bd6d89191f10b06fab0c4f58f619e3ab67513a83ece0f2b"
   end
 
   depends_on "bison" => :build # macOS ships 2.3; esbmc requires >= 2.6.1
@@ -30,7 +30,7 @@ class Esbmc < Formula
   depends_on "fmt"
   depends_on "gmp"
   depends_on "llvm@22"
-  depends_on "python@3.14"
+  depends_on "python@3.15"
   depends_on "yaml-cpp"
   depends_on "z3"
 
@@ -39,10 +39,14 @@ class Esbmc < Formula
   # Avoid std::atomic<double> arithmetic, which needs libc++ 18 or newer.
   patch :DATA
 
+  def python = deps.map(&:name).find { |d| d.match?(/^python(@\d+(\.\d+)*)?$/) }
+
+  def llvm = deps.map(&:name).find { |d| d.match?(/^llvm(@\d+(\.\d+)*)?$/) }
+
   def install
     args = %W[
-      -DLLVM_DIR=#{formula_opt_lib("llvm@22")}/cmake/llvm
-      -DClang_DIR=#{formula_opt_lib("llvm@22")}/cmake/clang
+      -DLLVM_DIR=#{formula_opt_lib(llvm)}/cmake/llvm
+      -DClang_DIR=#{formula_opt_lib(llvm)}/cmake/clang
       -DPython3_EXECUTABLE=#{python3}
       -DBitwuzla_DIR=#{formula_opt_prefix("bitwuzla")}
       -DENABLE_PYTHON_FRONTEND=ON
@@ -59,7 +63,7 @@ class Esbmc < Formula
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
-    bin.env_script_all_files libexec/"bin", PATH: "#{formula_opt_libexec("python@3.14")}/bin:$PATH"
+    bin.env_script_all_files libexec/"bin", PATH: "#{formula_opt_libexec(python)}/bin:$PATH"
   end
 
   test do

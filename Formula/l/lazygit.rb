@@ -1,8 +1,8 @@
 class Lazygit < Formula
   desc "Simple terminal UI for git commands"
   homepage "https://github.com/jesseduffield/lazygit/"
-  url "https://ghfast.top/https://github.com/jesseduffield/lazygit/archive/refs/tags/v0.66.1.tar.gz"
-  sha256 "75d82496e7e99a4ae58279efd37186ee5d10de9bb751077775487639c07185af"
+  url "https://ghfast.top/https://github.com/jesseduffield/lazygit/archive/refs/tags/v0.66.2.tar.gz"
+  sha256 "fcaad0909af765ef87bd873164a4de78435515ab4d8b04f58d6ad51e8ecd00e5"
   license "MIT"
   head "https://github.com/jesseduffield/lazygit.git", branch: "master"
 
@@ -12,11 +12,11 @@ class Lazygit < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "e277cb254fc844733c5f933871d35aba510924f5e7c6d12d00638b4a96ddc5a8"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "e277cb254fc844733c5f933871d35aba510924f5e7c6d12d00638b4a96ddc5a8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "e277cb254fc844733c5f933871d35aba510924f5e7c6d12d00638b4a96ddc5a8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "1f9a996f757d67434ffcf85497029488ef6fa9e96523d8218125fa92cf6caacb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "444d4d8bf3d1ef602171aec1dbe2ffa585ccac36ff7d2aec37af24bfbbd8011a"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "db6a66ed7de3bcd899afeace9009710c73b6140247b9db397199b8aec67d6392"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "db6a66ed7de3bcd899afeace9009710c73b6140247b9db397199b8aec67d6392"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "db6a66ed7de3bcd899afeace9009710c73b6140247b9db397199b8aec67d6392"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "95609ee32af62e7e6a930f64cf27abc25b8361bd55986b0fb58d8d99ff2d3c13"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "8710c6883bd73c4186591fe928cb4887f110d7df7ce76871ef1d332487cff705"
   end
 
   depends_on "go" => :build
@@ -27,6 +27,8 @@ class Lazygit < Formula
     ENV["CGO_ENABLED"] = OS.mac? ? "1" : "0"
     ldflags = "-X main.version=#{version} -X main.buildSource=#{tap.user}"
     system "go", "build", "-mod=vendor", *std_go_args(ldflags:)
+
+    generate_completions_from_executable(bin/"lazygit", "completion", shells: [:bash, :zsh, :fish, :pwsh])
   end
 
   test do

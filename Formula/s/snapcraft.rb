@@ -5,8 +5,8 @@ class Snapcraft < Formula
   homepage "https://snapcraft.io/"
   # Use git checkout so setuptools-scm and update-python-resources works
   url "https://github.com/canonical/snapcraft.git",
-      tag:      "9.1.4",
-      revision: "fdae874725af842d0e67ba6b0a8c1835ba978a5d"
+      tag:      "9.2.0",
+      revision: "d3ef94ad7a5cb59ba863cc1ad28959c72bb7a264"
   license "GPL-3.0-only"
   head "https://github.com/canonical/snapcraft.git", branch: "main"
 
@@ -16,12 +16,11 @@ class Snapcraft < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_golden_gate: "0c8a79215e36fdbe710f079bab3d568dbf9f58059dc34308bf6cd3919937dc17"
-    sha256 cellar: :any, arm64_tahoe:       "122fc19ac7a23c32e6fabe57ee4b30d3ff1fcddc32e9e0608ab01442b67071c1"
-    sha256 cellar: :any, arm64_sequoia:     "ae5755a93a4c8ce0eddd6dd2b90a4f1d58f777aea0083320145a79525e6c7a56"
-    sha256 cellar: :any, arm64_linux:       "dd45ff7453d7ce8a3d05b84526d5a8a4b82a8674480455b2209bcdbf2c3eb744"
-    sha256 cellar: :any, x86_64_linux:      "751fbe56f394f1cdae26ca0d9fa860cf252633ed384084e78e98e38f6cc9037d"
+    sha256 cellar: :any, arm64_golden_gate: "4b39906b7eba4e89f97863e26ff3bd2b49073d1c4e2aae804e9609b6d76d6b94"
+    sha256 cellar: :any, arm64_tahoe:       "11d74a797473e536b1ff7cd01f49f2fc57c0736ad6eb323b20290283f4ab2802"
+    sha256 cellar: :any, arm64_sequoia:     "99b6e9895276b4beea70091f1fc9f39abc21d382756e8d7dc6781c563630f1d4"
+    sha256 cellar: :any, arm64_linux:       "0eb62e0999aecc79d49066d34d2c97b3693db537f9bf5229ce5daeb34b6bdcae"
+    sha256 cellar: :any, x86_64_linux:      "edcc1c278d536bdb40e0cfb3ef6604eed91b01cb27a03aa0b9033e6677f9b068"
   end
 
   depends_on "certifi" => :no_linkage
@@ -44,9 +43,8 @@ class Snapcraft < Formula
     depends_on "apt"
   end
 
-  # Pin until snapcraft's `Init.initialise_project` accepts the `vcs` argument passed by craft-application 7.3.0+
   pypi_packages exclude_packages: %w[certifi cryptography pydantic pygit2],
-                extra_packages:   %w[catkin-pkg craft-application==7.2.1 jeepney pylxd secretstorage]
+                extra_packages:   %w[catkin-pkg jeepney pylxd secretstorage]
 
   # We hit a build failure with requested 2.4.0ubuntu1 tarball so just using latest Debian
   resource "anyio" do
@@ -75,8 +73,8 @@ class Snapcraft < Formula
   end
 
   resource "craft-application" do
-    url "https://files.pythonhosted.org/packages/bf/30/9f520439e4f4a1c9ad538180b9c7057e4945c4e95994f2d2d93759202401/craft_application-7.2.1.tar.gz"
-    sha256 "86f1f35be4b447bada10305d91a252b178d20910f3d5a7d5bb8ac6d3d9810d49"
+    url "https://files.pythonhosted.org/packages/76/29/f20207aec16d26a5d0a433b2be9f49349870c9e4523ec2486816121c56e2/craft_application-7.5.0.tar.gz"
+    sha256 "6a2b33d4760815442d6e4cab8491960dc8da5e2c8b8111b32695a563a3282620"
   end
 
   resource "craft-archives" do
@@ -95,8 +93,8 @@ class Snapcraft < Formula
   end
 
   resource "craft-parts" do
-    url "https://files.pythonhosted.org/packages/df/81/85f27ec2ea9bd062f8bc323672f72203892144b604a7dc32bb2bac3c2077/craft_parts-2.35.2.tar.gz"
-    sha256 "ceb977f8f1b260ab5f8f598657867af7afb0eb4ad424aa97f6b3a67a53ee2b81"
+    url "https://files.pythonhosted.org/packages/e3/38/4632253537e825d6dd58779f7dc3d67b998c0aa1689bcdaa33c16042ec62/craft_parts-2.37.2.tar.gz"
+    sha256 "747770e00651d1db40645e330a78bc4e6c2920cac5b5461708c0c0ba8098ad05"
   end
 
   resource "craft-platforms" do
@@ -190,8 +188,8 @@ class Snapcraft < Formula
   end
 
   resource "launchpadlib" do
-    url "https://files.pythonhosted.org/packages/17/05/79115eea3f46a2048552b766d2e031740b53baff5a084d6a3f6318642ffe/launchpadlib-2.2.0.tar.gz"
-    sha256 "d4f7bb6b95739d4667dd6093d410220317b2415b6c2ef5b143379ebc5f5363a9"
+    url "https://files.pythonhosted.org/packages/5a/46/f5f8b44b85eede380d3ac2bfc1a5e90df0d33fb3ef9bf82b6406aabed9e7/launchpadlib-2.3.0.tar.gz"
+    sha256 "a39261632baa060872f65fe149a8acd6e1ada55964ee1afc9f25915e3b95e68b"
   end
 
   resource "lazr-restfulclient" do
@@ -225,8 +223,8 @@ class Snapcraft < Formula
   end
 
   resource "more-itertools" do
-    url "https://files.pythonhosted.org/packages/de/1d/f4da6f02cdffe04d6362210b807146a26044c88d839208aec273bb0d9184/more_itertools-11.1.0.tar.gz"
-    sha256 "48e8f4d9e7e5878571ecf6f2b4e57634f93cd474cc8cfbd2376f2d11b396e30d"
+    url "https://files.pythonhosted.org/packages/55/e5/8735dc589d9e3571e76cd684e7763dc0fcc940b811f71640410458749689/more_itertools-11.2.0.tar.gz"
+    sha256 "59960f488835254863a857eb501f69e4ec92fdc8822f098c0f48dba530afd487"
   end
 
   resource "oauthlib" do
@@ -370,8 +368,8 @@ class Snapcraft < Formula
   end
 
   resource "validators" do
-    url "https://files.pythonhosted.org/packages/53/66/a435d9ae49850b2f071f7ebd8119dd4e84872b01630d6736761e6e7fd847/validators-0.35.0.tar.gz"
-    sha256 "992d6c48a4e77c81f1b4daba10d16c3a9bb0dbb79b3a19ea847ff0928e70497a"
+    url "https://files.pythonhosted.org/packages/7b/3f/4fe7905f73ba0e768baa102a09ba9458f2f0bb4a676102e1fd7a3cb55c2b/validators-0.36.0.tar.gz"
+    sha256 "92ad9ed00bbed320b784cec0ea90b213cf08904cf605b3d0852cfa4108e32a2c"
   end
 
   resource "wadllib" do

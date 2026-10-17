@@ -6,19 +6,12 @@ class H264bitstream < Formula
   license "LGPL-2.1-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_golden_gate: "c663a21f5399fb8b3f330a343fb39cf82b2dd308d263683493f0e27fc5959d70"
-    sha256 cellar: :any,                 arm64_tahoe:       "77e29214581bbed1453a6aea582cafb5f4525634fca321e4ad503873722acabb"
-    sha256 cellar: :any,                 arm64_sequoia:     "4616a724fcfbdc091a8be99a5746c3c1a20e9be058fd4acd09a3e4ac12ab7756"
-    sha256 cellar: :any,                 arm64_sonoma:      "946ce648f0daf4e64a182e2f39811d0d78946a5150899dffe5984bb1926a88f2"
-    sha256 cellar: :any,                 arm64_ventura:     "9fd917379072e27703bae053f19aefc1abbf328dfcf5857e6aa4192babe3fc48"
-    sha256 cellar: :any,                 arm64_monterey:    "21fef413b7c8c4ae235dcdd1aba11a77553cd382f74d328c5958ba7e6ed47c39"
-    sha256 cellar: :any,                 arm64_big_sur:     "86d9c15b08de87f85f791e45669241a1a27fefef2ddbccf6016642505e69c6e6"
-    sha256 cellar: :any,                 sonoma:            "614b023114612bd3882c240f6a76ccae5b0fb4a10a8f79660e0c7cf4a6aa8931"
-    sha256 cellar: :any,                 ventura:           "befe3309e1c2b4670bd77c741ac73abadcbb23fab0199422b61d901111fae7b3"
-    sha256 cellar: :any,                 monterey:          "65af04578c1f21572695b045a268c8de1f3e8592dde3c407a2cc0c9e5aae797f"
-    sha256 cellar: :any,                 big_sur:           "2ace75ebe5094b847024fb80a23a82bba3acfa7869399f3962c6910089ebc777"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "fc3ca9983f5e3f12e4f0f602606d56aa96e40ecdc224dd27018b9e7d3220a42f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "c79de8d86abcc4f3f95f8bd7a504116fe189546101cec66d52ab6295bf0bf376"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "d3a17c017f2a07e9b1fcdbb28a13bcb77a832a13ca822c526ed3d950b579cd41"
+    sha256 cellar: :any, arm64_tahoe:       "2a26f743521111c30c2ddd9baa974de4b4908511a2bbc8caed57d46fe6790881"
+    sha256 cellar: :any, arm64_sequoia:     "da6abbf4e95da2578b850a730702a1cf3ca352109dc5dec1b2c75f255e76e0d1"
+    sha256 cellar: :any, arm64_linux:       "889ae466230e1cc674724a8122a766664306e0e1b99028d74c6eb7b7055b829d"
+    sha256 cellar: :any, x86_64_linux:      "678717fcf8026815b982d8d98509f43015b13c297c4dcc6c7e344ca9fd06a883"
   end
 
   depends_on "autoconf" => :build

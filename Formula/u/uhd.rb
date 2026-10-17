@@ -16,11 +16,12 @@ class Uhd < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "b0ca37978a7ea6800cf252748dc91596b22a619ddc93b06a1512912500afea3c"
-    sha256 arm64_tahoe:       "5d4ce264b8be392a4dbdfd6c85a924d8e22513bae2ae57f345ec708cc42a460b"
-    sha256 arm64_sequoia:     "59df61d94f002bc45661de0b32540557eab7265ad1f0ee3e29f62a62b36f017b"
-    sha256 arm64_linux:       "1d10142c19cfabfe6f63f595bdd1156e39659b4607bb2e341a5674bdb45d5654"
-    sha256 x86_64_linux:      "396a4f3628c7a3acbbdde4d5224b084aa83a0896ce88eb26082a3e210a1e9b9b"
+    rebuild 1
+    sha256 arm64_golden_gate: "847ca0ec5b746785f4705eaa4c20cb69c9adba076ff58f30caa5091a718d5499"
+    sha256 arm64_tahoe:       "81e042315eecde9fcedb3dba3bb7004cc44e10a2056fff72cdf10f740ad9a56e"
+    sha256 arm64_sequoia:     "bbc1bdd55eedbcdf6144a37541338f2105056ae7b5354792aae0de9ef15f4df5"
+    sha256 arm64_linux:       "bd8da91511fbcf52ffa73a33ac5cf7876c6b709f8c3f651d3c4923e9a23a838e"
+    sha256 x86_64_linux:      "9a07f4a5d353299fd565f15e80178a3751b200a33462b2f033d98ecaf9770a54"
   end
 
   depends_on "cmake" => :build
@@ -32,7 +33,7 @@ class Uhd < Formula
   depends_on "libusb"
   depends_on "openssl@4"
   depends_on "protobuf"
-  depends_on "python@3.14"
+  depends_on "python@3.15"
   depends_on "re2"
 
   on_linux do

@@ -1,9 +1,9 @@
 cask "mcplinker" do
   arch arm: "aarch64", intel: "x64"
 
-  version "2.6.0"
-  sha256 arm:   "9aa6e5ad6c0ffff10e32b29fd8b24e5dfb50adadfc405af390ba5721002c98b6",
-         intel: "53ab4e2332a6ba3e6389a61b190c5112502fe358781677aa5199378296529148"
+  version "2.7.0"
+  sha256 arm:   "105f835f49864b8f743e1675f0645544a8433ed97390f866aa2eb1aefe14d007",
+         intel: "c73d1ddb0f2390d35c7b3b33e59cb0c62405af77ccf0ba660d358833018df36e"
 
   url "https://ghfast.top/https://github.com/milisp/mcp-linker/releases/download/v#{version}/MCPLinker_#{version}_#{arch}.dmg"
   name "MCP Linker"
@@ -17,6 +17,7 @@ cask "mcplinker" do
   zap trash: [
     "~/.cache/mcp-linker",
     "~/.config/mcplinker",
+    "~/Library/Application Support/dev.milisp.mcplinker",
     "~/Library/Caches/dev.milisp.mcplinker",
     "~/Library/HTTPStorages/dev.milisp.mcplinker.binarycookies",
     "~/Library/Preferences/dev.milisp.mcplinker.plist",
