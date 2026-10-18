@@ -2,8 +2,8 @@ class StellarCore < Formula
   desc "Backbone of the Stellar (XLM) network"
   homepage "https://www.stellar.org/"
   url "https://github.com/stellar/stellar-core.git",
-      tag:      "v29.0.0",
-      revision: "a9d72b0cac3a89ebbcf926af449ac73089e0f8f7"
+      tag:      "v30.0.0",
+      revision: "0e49751aa9ddf892302cca02cea7f3f5d97df9f1"
   license "Apache-2.0"
   head "https://github.com/stellar/stellar-core.git", branch: "master"
 
@@ -16,11 +16,11 @@ class StellarCore < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "95d56a34a921ea2e23eab49edc58c907b948e6fd522d6d6f4ef90fb5f16413e9"
-    sha256 cellar: :any, arm64_tahoe:       "884617cff2757c17589372284b085e9e268a17fe15e1563179fb6e4ff1ea6081"
-    sha256 cellar: :any, arm64_sequoia:     "b6918bb7dcf79e47b58c04636148f6a470d93e46c9140af6bf0d673fe76ececd"
-    sha256 cellar: :any, arm64_linux:       "de4b7b7a0a2f3de1d326f7d2ba6ff0df349264fe694083a2ff07f59f9ca8fbb2"
-    sha256 cellar: :any, x86_64_linux:      "7aa89eedf19160d9a080b17f51974d7d3dc8b8a73081cf4f227a79aa990e697d"
+    sha256 cellar: :any, arm64_golden_gate: "41d48362f55480aa57590dd0f90938ed15a7cf096b5b43d39568d9e7df136d50"
+    sha256 cellar: :any, arm64_tahoe:       "4f2963bae1af06b037e8ce6e397719ed3721e093d89f98d8358f69ec457aa25c"
+    sha256 cellar: :any, arm64_sequoia:     "bee2b67e4625de8f1c63353e89cdf4acb348a62d9bc929d294562181c127b709"
+    sha256 cellar: :any, arm64_linux:       "fd6a9808efb97796fa4c185ebcb46e10875e51bd5f3ee4555e8de107fd3e534b"
+    sha256 cellar: :any, x86_64_linux:      "f9cbeb8c633bc22fbbf5fbbbc8fd2ba60c47f063173c0bcc6ed069360bc1fe44"
   end
 
   depends_on "autoconf" => :build
@@ -56,7 +56,7 @@ class StellarCore < Formula
     system "./autogen.sh"
     system "./configure", "--disable-silent-rules",
                           "--enable-postgres",
-                          *std_configure_args
+                          *std_configure_args.reject { |s| s["--disable-debug"] }
 
     # The p21-p26 soroban host submodules lock `ethnum` 1.5.0, which fails on
     # current Rust: it transmutes `()` into the now-non-zero-sized

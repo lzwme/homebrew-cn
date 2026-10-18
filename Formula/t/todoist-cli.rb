@@ -1,16 +1,16 @@
 class TodoistCli < Formula
   desc "Official command-line interface for Todoist"
   homepage "https://github.com/Doist/todoist-cli"
-  url "https://registry.npmjs.org/@doist/todoist-cli/-/todoist-cli-5.5.1.tgz"
-  sha256 "d0ad1b99ad9eba010f990ca319539410570bbc45a5f709a0c46f45b023434169"
+  url "https://registry.npmjs.org/@doist/todoist-cli/-/todoist-cli-5.5.2.tgz"
+  sha256 "bdee0c37a9c10357c2d6af2e9f5d699da2e0c31a6c2c5043f8b5d969bf8d1d33"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_golden_gate: "707784c7216ba8aef584df7e9fcf11d049353451381fe62b3a2a54a9e5ce8e42"
-    sha256 cellar: :any,                 arm64_tahoe:       "0f34042caf0b2a416a6170b1a8b2480912942856db21686bee4bcd270d5d8fd1"
-    sha256 cellar: :any,                 arm64_sequoia:     "985d6edada2391fda6cb0a512eaf37c06e5e334e7e97ba7538bf0fe7cd26423c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "5ec60f6c7c2487d28f63ee4f6bdf2d93fae0a07303bdc8f85cdab9891c58987d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "a551a316b16857bdde24055012eb61412319476c86452720288f466a6890c53b"
+    sha256 cellar: :any,                 arm64_golden_gate: "500d25ead079ed555a67a7e0f87f5a773cc511040c75ace861cce8a05fece566"
+    sha256 cellar: :any,                 arm64_tahoe:       "182434fc3703a3389b906b5cf42db3fc55a59816222808feb18562f9b898b748"
+    sha256 cellar: :any,                 arm64_sequoia:     "0b9af9a7f2cae6cea60ff5db6ea6c528e5fe52e56232cef18eb938a224e187d2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "776d61e01e0d1b2627868d1056530a1a2516a6f8fe0fb9907aa006acdfdb482e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "10c8d20aea224c6330c368f4f9168b23b7ba83edc6c7a4779a28c03fbffeae10"
   end
 
   depends_on "rust" => :build

@@ -8,11 +8,12 @@ class Modal < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "a79d985cf390093f7bda7eb455397110a88b85a93fdb810750966716344228bb"
-    sha256 cellar: :any, arm64_tahoe:       "f80d18229d94ce94556da870173e1267e9c380ca5a5fab70189734a0f1b6e19c"
-    sha256 cellar: :any, arm64_sequoia:     "a5ad9afd4804f611961bb7fd0193385124ee3e4e9adfbe1f2503d8b7a0879191"
-    sha256 cellar: :any, arm64_linux:       "7950117f04985bee96f887522bc8f7945ffbd69afbc31de8a50d5339484ae44a"
-    sha256 cellar: :any, x86_64_linux:      "a893ff5f1b5dafe65417d493ea915206b7d5bd0417c93296cac6a65c0a1715cd"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "e8c4039e63c381b8b3e3a4096e9cd7127ea572ffc131216f4a63d291bcc2076f"
+    sha256 cellar: :any, arm64_tahoe:       "36621ef5045c58729896b742648c973d0e51fe0285ab74ee38c28e56cb33e5cb"
+    sha256 cellar: :any, arm64_sequoia:     "87b1fe3d9f2c1f62811856ea6caecf9434e4ba76bffa29b9b5586ea88abac5b7"
+    sha256 cellar: :any, arm64_linux:       "4bcccbbe0da53d9bd97e0ed2db4f519e6f2fd5389482b89a79a7034c96b22497"
+    sha256 cellar: :any, x86_64_linux:      "3ef91e4a4195091a40b68f73640dac090bc8f4100a08b0ec14a43ec04e6e4e53"
   end
 
   depends_on "rust" => :build # for `cbor2`
@@ -159,6 +160,7 @@ class Modal < Formula
 
   def install
     virtualenv_install_with_resources
+    generate_completions_from_executable(bin/"modal", shell_parameter_format: :click)
   end
 
   test do

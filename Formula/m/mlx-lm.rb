@@ -3,15 +3,15 @@ class MlxLm < Formula
 
   desc "Run LLMs with MLX"
   homepage "https://github.com/ml-explore/mlx-lm"
-  url "https://files.pythonhosted.org/packages/0c/6c/7901eee82ce19c0b49238cd09e33ce899514b0900174973bcc09bd5834d5/mlx_lm-0.32.1.tar.gz"
-  sha256 "7934554bdde3acbd3b2dcc8e0ba36538c30ae1b6c98e232329d320e9cdd6ce2a"
+  url "https://files.pythonhosted.org/packages/e1/46/eff1c17019b82912020d4d716527e6fcf4ac392b55cddef03eeb60566ab4/mlx_lm-0.32.2.tar.gz"
+  sha256 "1af8a92f6a141c3e2bf5b0369ac4464203a8e2189c47b9e40d3e921e5b3a1fe9"
   license "MIT"
   head "https://github.com/ml-explore/mlx-lm.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "bdedcfd4aca91895dc780d86d82e2a9f50a428219d2c984b11ae9e00157a74db"
-    sha256 cellar: :any, arm64_tahoe:       "08f8ea5a692816f8a0d5065da307f087ca0c4782965973db912d3e5782d12401"
-    sha256 cellar: :any, arm64_sequoia:     "0b612cd566b2f62c8312404a7603032e1756d1426f8c1f09ac2bf1704b8685bd"
+    sha256 cellar: :any, arm64_golden_gate: "ddc37561a33ee96b5f51c95bbf2cbe431733ebe7e98d22c87193c62957cdcd75"
+    sha256 cellar: :any, arm64_tahoe:       "59c12ec2e98330c35e826fa051d45026c261eecceeae76b06b691fb7c7cabb7b"
+    sha256 cellar: :any, arm64_sequoia:     "40196c4099a8b6a77cec00b75baa860cb47249207cb7c2934f506ee1fc9cbe0b"
   end
 
   depends_on "cmake" => :build

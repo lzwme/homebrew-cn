@@ -1,18 +1,17 @@
 class Gitlogue < Formula
   desc "Cinematic Git commit replay tool"
   homepage "https://github.com/unhappychoice/gitlogue"
-  url "https://ghfast.top/https://github.com/unhappychoice/gitlogue/archive/refs/tags/v0.12.0.tar.gz"
-  sha256 "57925fead2e74773e45cd268d4c4905c8ef4856b642141411f58a3e36bee76c9"
+  url "https://ghfast.top/https://github.com/unhappychoice/gitlogue/archive/refs/tags/v0.12.1.tar.gz"
+  sha256 "1d271302883be633d7d8dfdb7540d2382f2ab0742c9772e43a585e769230ea29"
   license "ISC"
   head "https://github.com/unhappychoice/gitlogue.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_golden_gate: "b9f40652c9e6d75a923c32367442870ea70a40e152714e350d2d5a9310585727"
-    sha256 cellar: :any, arm64_tahoe:       "2df4baa13440dc4e1bdd31d47febc9afff67d3bccca02146dfe7d0039253a058"
-    sha256 cellar: :any, arm64_sequoia:     "1d08d7b3d9941765454c00734606ef9385226bcae45ee53ce522a602f01cd9d7"
-    sha256 cellar: :any, arm64_linux:       "7aa41d3a8cccb77fa0e53ca1ec765159b6d00801038d454602bbdaaa668fec2d"
-    sha256 cellar: :any, x86_64_linux:      "290e44420f605f258efc3fad78b9e49e7eb85620ce3b51f1024ef25d041b4aa1"
+    sha256 cellar: :any, arm64_golden_gate: "0e836415cefe7aff2a809b38b18c6640c88d0e125891346d86c693d548b86b95"
+    sha256 cellar: :any, arm64_tahoe:       "4bc975efe411ef6196721117290251c2a360566a03f0a136e990a61c7afec627"
+    sha256 cellar: :any, arm64_sequoia:     "405b4fe91564718e05a52a500090d3d15033432a2698fb9d9362bdbf79c1330b"
+    sha256 cellar: :any, arm64_linux:       "77e90d887d1daf13ceb1be806b7693e9db86cf38b5baf74140032061fa4c73fb"
+    sha256 cellar: :any, x86_64_linux:      "95d1d0db0d287a3a3eef69be068c3b67ca85b19d32d82b67c69e093e4d3a9d7b"
   end
 
   depends_on "openssl@4" => :build

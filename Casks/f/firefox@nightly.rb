@@ -1,72 +1,72 @@
 cask "firefox@nightly" do
-  version "160.0a1,2026-10-16-19-38-15"
+  version "160.0a1,2026-10-17-21-03-36"
 
   language "ca" do
-    sha256 "8fda2970508bb45ded17bf49222b3e5c1720cdf5e4b2254a7ea724e23bb875dd"
+    sha256 "23568765c8aee3128c595e51d4a84089f27e2049da8acbf0d27ce6ed4e9bbf5f"
     "ca"
   end
   language "cs" do
-    sha256 "688df9e6b7b4762344771a00d0de22802c089737ba87a1954416df417b274d4c"
+    sha256 "3a0b0bac7dec55d2876800b8c6de93457dd29eb7c19beb4f9cc5c8a7a37f0092"
     "cs"
   end
   language "de" do
-    sha256 "40cda46aec093fc59386d7982d488f8bdaf2ad00af886628a800074e54789758"
+    sha256 "f54d1d4795dbb71e423cdce484d14df9d286b33c7814e62ecff7c420632d04c2"
     "de"
   end
   language "en-CA" do
-    sha256 "7496470be06af62a07f938ae50a772e0128ba7fbe3cfd48324987b353673ac14"
+    sha256 "1cb9787186df43ab24be64949c94c0415a4eb931c64b80338444e8c7c9233800"
     "en-CA"
   end
   language "en-GB" do
-    sha256 "82d413246592bf82e6379bac68ad1bd6c876d3512e098231f862ae1245ae0b80"
+    sha256 "694f72db03249bf64b0cc9a46fe701fb290e07245b97de424c98aaf4a47133ac"
     "en-GB"
   end
   language "en", default: true do
-    sha256 "731e912fc7dab5fd5a7963d93215bf6fd1c81e05835492740acc70603172a6bb"
+    sha256 "1ae3a0093d4bf30536e8eb549c0023094d6da8c32da792dae60266521d9250ca"
     "en-US"
   end
   language "es" do
-    sha256 "c427a010ca5d45d43a909b7148e347cefa4605b41d31687938672cf7795606ab"
+    sha256 "b3940e35dba2297e9569f8b91ca329dadc4a5becdc154b48ca5a469d06ed3e33"
     "es-ES"
   end
   language "fr" do
-    sha256 "4a27320c3ed3645fa252add4e2b72e34b67e636b85ac8f511fcaef973023a06b"
+    sha256 "7bb09fddbfcff88e6cf9e1848b357279e515a3e1da8b05ab1ee5ca5a90ec79ce"
     "fr"
   end
   language "it" do
-    sha256 "f29fdd97f3bd19e1a9c85758e093d68f0c37a88ce8310f2ec0de02e9f72aa833"
+    sha256 "4774b248dda3f49b7291474d024ebc65e2036d42fba1576cfd37c2ef9fef2a01"
     "it"
   end
   language "ja" do
-    sha256 "57b76b495bfe4898cbe71d7f246de7de87f788f4f9dec84a0b7028f10dff7add"
+    sha256 "b7046efac7b8da84375294b7925f57897a798f94f132048f66f100a46d260bbb"
     "ja-JP-mac"
   end
   language "ko" do
-    sha256 "ee9510db21a1342e6a2521a807c596202b6669c4ec58a5828cbff044a03a59f7"
+    sha256 "bf2d6aaebc77f4674bf85ec1fa7ffeddb0b732552d553a6f438bb4ca7efabe28"
     "ko"
   end
   language "nl" do
-    sha256 "6253d682f3c8480609f4e2616914915ea52b3c87e79454ddb6a1d125159edb2f"
+    sha256 "865848417bb4e005022ebf2b0643096a00c0244a675fd87e05b84e4c2224e112"
     "nl"
   end
   language "pt-BR" do
-    sha256 "f2b0b8a90078a476a984df13822fae7addb4feb99fa26cc5eca530eec9344865"
+    sha256 "2f305a309892b472c45964169bd84142b5381b33e6c453e2fbe27f9471989072"
     "pt-BR"
   end
   language "ru" do
-    sha256 "a26f32ff0e2bcbc964c90f9397196d2d0ed2515804cf111d7892744f8654ecdf"
+    sha256 "e7362d4383b56b6f41cb83c4163e0545f4e7817544da8386b64f0da617ebd12f"
     "ru"
   end
   language "uk" do
-    sha256 "48da242090f31642446c902f28fbadec2f21ef0ccfb48231a5a4d21879f9f57d"
+    sha256 "48c2999266a06b6caa9c71197c33e3b07072cf74ede25dab655967c509fea9f6"
     "uk"
   end
   language "zh-TW" do
-    sha256 "06e3a441f35b512cb008a4e2b95f62f239282c3af5d91e74ccd112a3e5696d49"
+    sha256 "6f0a99ed5fe45404accaf2dc810c2c4c208a10640babefcd0b85a9e4134576d9"
     "zh-TW"
   end
   language "zh" do
-    sha256 "39750724d5ea073934591bf76cf847168cbacc355171fc8cd0726418c9d3c528"
+    sha256 "1d16ca6e022d752981b3cc85c028c904dcb2faa61ce5b4e901b82b72e364a175"
     "zh-CN"
   end
 

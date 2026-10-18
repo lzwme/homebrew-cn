@@ -1,6 +1,6 @@
 cask "manus-cue" do
-  version "1.0.12"
-  sha256 "4ce9b751b34aa58baece0009dfa0b2956af03722b6d1d5677e446808a71c18b9"
+  version "1.1.0"
+  sha256 "9f5b2cd5e198415e8bd0e635e65884e04935c9e503a234af7168448cddfade7c"
 
   url "https://download.cue.im/Cue-#{version}-mac-arm64.dmg"
   name "Cue"
@@ -23,6 +23,8 @@ cask "manus-cue" do
   zap trash: [
     "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/ai.manus.agents.sfl*",
     "~/Library/Application Support/Cue",
+    "~/Library/Application Support/cue-desktop",
+    "~/Library/Logs/Cue",
     "~/Library/Preferences/ai.manus.agents.plist",
   ]
 end

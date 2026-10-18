@@ -33,6 +33,8 @@ class TechnitiumLibrary < Formula
   end
 
   test do
+    # .NET named mutexes need `XDG_RUNTIME_DIR` (or `USER`) on Linux, which test containers may lack
+    ENV["XDG_RUNTIME_DIR"] = testpath
     dotnet = Formula["dotnet"]
     target_framework = "net#{dotnet.version.major_minor}"
 

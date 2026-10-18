@@ -1,6 +1,6 @@
 cask "mindroom" do
-  version "2026.10.320"
-  sha256 "bcda7948e10a4387bb350c1f82fccfb8c5f0b79d717d43749cc780c5cae174ce"
+  version "2026.10.340"
+  sha256 "e8ece93d1579fa03642ec768f411d006e3ca2aa82ea928e7c0c543a682e97b9b"
 
   url "https://ghfast.top/https://github.com/mindroom-ai/mindroom/releases/download/v#{version}/MindRoom.dmg"
   name "MindRoom"
@@ -23,8 +23,10 @@ cask "mindroom" do
             quit:      "chat.mindroom.menubar"
 
   zap trash: [
+    "~/Library/Caches/chat.mindroom.menubar",
     "~/Library/LaunchAgents/chat.mindroom.local.plist",
     "~/Library/Logs/mindroom",
     "~/Library/Preferences/chat.mindroom.menubar.plist",
+    "~/Library/WebKit/chat.mindroom.menubar",
   ]
 end

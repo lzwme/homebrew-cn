@@ -1,6 +1,6 @@
 cask "pulse" do
-  version "0.1.20"
-  sha256 "740462359359a92bc33ee5b9a9715d27e53a70349583eec9f607b2fd3d62e7e3"
+  version "0.1.27"
+  sha256 "b2411ece3b9d55572a63747b474298f3719561d7534e0b03b8e48a82d4ba5d50"
 
   url "https://ghfast.top/https://github.com/egoist/pulse-feedback/releases/download/v#{version}/Pulse.#{version}.arm64.dmg"
   name "Pulse"
@@ -20,5 +20,8 @@ cask "pulse" do
 
   uninstall quit: "com.egoist.pulse"
 
-  zap trash: "~/Library/Application Support/Pulse"
+  zap trash: [
+    "~/Library/Application Support/Pulse",
+    "~/Library/Preferences/com.egoist.pulse.plist",
+  ]
 end

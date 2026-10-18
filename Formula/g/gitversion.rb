@@ -57,6 +57,8 @@ class Gitversion < Formula
 
     # Circumvent GitVersion's build server detection scheme:
     ENV["GITHUB_ACTIONS"] = nil
+    # .NET named mutexes need `XDG_RUNTIME_DIR` (or `USER`) on Linux, which test containers may lack
+    ENV["XDG_RUNTIME_DIR"] = testpath
 
     (testpath/"test.txt").write("test")
     system "git", "init"

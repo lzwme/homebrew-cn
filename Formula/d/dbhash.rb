@@ -1,9 +1,9 @@
 class Dbhash < Formula
   desc "Computes the SHA1 hash of schema and content of a SQLite database"
   homepage "https://www.sqlite.org/dbhash.html"
-  url "https://www.sqlite.org/2026/sqlite-src-3540000.zip"
-  version "3.54.0"
-  sha256 "8847659821e0c5116bd14a94644c82ba932b2d9a05ac81af2e34af814aad7c58"
+  url "https://www.sqlite.org/2026/sqlite-src-3540100.zip"
+  version "3.54.1"
+  sha256 "387e7f6cad4797b17848c07d453dc6606917bb356a6cfe5a3abafd38c240c71b"
   license "blessing"
 
   livecheck do
@@ -13,11 +13,11 @@ class Dbhash < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "b77ad95bc82d8047af615bf4864f4daaa46925aae4991a17e75b0cd994b25343"
-    sha256 cellar: :any, arm64_tahoe:       "92f3e342efd9399e89cf6d2c97c09cd74450986755ebd34b1eb51550967ba35a"
-    sha256 cellar: :any, arm64_sequoia:     "375b21f302fc65751bb0f570a0e4be4118945e4a8794cafc0db14c1feacd5087"
-    sha256 cellar: :any, arm64_linux:       "e576e58232a17cf725af4cb8f73b1e2c331a61413124129881b6fd5a78d38a66"
-    sha256 cellar: :any, x86_64_linux:      "c2aa4544a7ae0719e3a9c603497c339af352b4653195324e7f83314640d8fff2"
+    sha256 cellar: :any, arm64_golden_gate: "c990a1919fd832cc83cf43a8a7556d0b90e095fa8e3f1ecf0a84c0182cdcd9da"
+    sha256 cellar: :any, arm64_tahoe:       "41476d5c27ab7ef028dca51329eae35457d2142e53b3b0f75ec95e4976afc848"
+    sha256 cellar: :any, arm64_sequoia:     "55b4cc15061fc531b0adafdd2966e6180b7dc6ecf4a79481d89480f311aed930"
+    sha256 cellar: :any, arm64_linux:       "e43c7616bc28867722d764a3d4a7efcc6f74b344053692b947fd15176c18a9a3"
+    sha256 cellar: :any, x86_64_linux:      "43856b93646cdb800ad70f5c75650b4515592ffd7548fe3fbc2070bed2d450ab"
   end
 
   uses_from_macos "tcl-tk" => :build

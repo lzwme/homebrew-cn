@@ -1,17 +1,17 @@
 class Draco < Formula
   desc "3D geometric mesh and point cloud compression library"
   homepage "https://google.github.io/draco/"
-  url "https://ghfast.top/https://github.com/google/draco/archive/refs/tags/1.5.8.tar.gz"
-  sha256 "d42d730526c8dd0ed2ac0b3edc6495bda4bc78298031ad5cb4dc94a8bdd93f94"
+  url "https://ghfast.top/https://github.com/google/draco/archive/refs/tags/1.5.9.tar.gz"
+  sha256 "5b84e0e212ccc7b03ace681760a65a66fe2481a5f54df65154cfc8f0cbb87148"
   license "Apache-2.0"
-  compatibility_version 1
+  compatibility_version 2
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "75458f215bf72aa807ac07049cd76cb666c9d2581fa7b48b27a9ca49217de918"
-    sha256 cellar: :any, arm64_tahoe:       "73463c7496e38b2d644e86a63867210a499214f4503b1d10a60ff75cdde34280"
-    sha256 cellar: :any, arm64_sequoia:     "a4888d9b21db5246d6c5f463a76fc25c69d277bb9d33c5eae9840cec2076d2b7"
-    sha256 cellar: :any, arm64_linux:       "8bdf152932b6cd59843b70ff79303f6133d61c9eb23e545d629e16623635a0a5"
-    sha256 cellar: :any, x86_64_linux:      "a5d58d6d8fbb89d69c7f48778c313f6bee19e8b02ff47bb40bfcdc108cde3c6c"
+    sha256 cellar: :any, arm64_golden_gate: "7f205e9b9a4565fa0a4e7b7028fc12fc0218859ca47616ff25b5b1d91ae3af87"
+    sha256 cellar: :any, arm64_tahoe:       "1b99931105dd24c8722c4b0aa60af834afb73f8fc1f437b4d6d3fc2f8925e218"
+    sha256 cellar: :any, arm64_sequoia:     "4e1ffb8ea4289615cbaabdc48ab37d0292528118fca630a53ef75951f7917f43"
+    sha256 cellar: :any, arm64_linux:       "be0317ca7678eec139ecf0d8b1f5279b2f3967f49ed72669b6eb1043c2ba49b3"
+    sha256 cellar: :any, x86_64_linux:      "602821e32976b8986c73f1446f1e096c095ccf89f64bc518342c63c0aa7fa22c"
   end
 
   depends_on "cmake" => :build

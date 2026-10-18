@@ -2,6 +2,7 @@ class Gstreamer < Formula
   desc "Development framework for multimedia applications"
   homepage "https://gstreamer.freedesktop.org/"
   license all_of: ["LGPL-2.0-or-later", "LGPL-2.1-or-later", "MIT"]
+  revision 1
   compatibility_version 1
 
   stable do
@@ -25,11 +26,11 @@ class Gstreamer < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "bf79b3d2b57caaece94e5435b2d0741198ad4b91ec98baf104d9a92113ec79a8"
-    sha256 arm64_tahoe:       "581d285f32855aca6cc96f3a76e6853091c8249ad1e6afe60d706814ae56099b"
-    sha256 arm64_sequoia:     "ed31c1148fa87af603e20d46042fa3b0e2c0a985a36cf8f64e521c2244af6440"
-    sha256 arm64_linux:       "a33d08ba182f3ee64cdf260a5d2b81cee03eee80348a4ce0ace19726d0a421b2"
-    sha256 x86_64_linux:      "7c084f3cfce66ee66a4197fa8be39aee98355418839463638e255d0e1d810114"
+    sha256 arm64_golden_gate: "6e828b3ce12f10260b8df4de3236564a7950dd4c79b7b191562d05539be5232c"
+    sha256 arm64_tahoe:       "1c0f1ed663251c654b8a1a76cdd8305874a2bd13f5d2bcbff1dd5f56afb26e12"
+    sha256 arm64_sequoia:     "5ae3cdb0f56b6b73d89ba2d7982e5518d9e9a53e0799f702e8362fd7e2ec4e7b"
+    sha256 arm64_linux:       "47fa680a32e96a4a475d7bf5a52632d438a0bb0865549dcf8fe61a74c6579b4e"
+    sha256 x86_64_linux:      "7aeac0022e7fcdd4bac3ae56e8cd6a252d79300509feca3194b72cb317bc813b"
   end
 
   head do
@@ -95,7 +96,7 @@ class Gstreamer < Formula
   depends_on "orc"
   depends_on "pango"
   depends_on "pygobject3" => :no_linkage
-  depends_on "python@3.14"
+  depends_on "python@3.15"
   depends_on "rtmpdump"
   depends_on "speex"
   depends_on "srt"
@@ -144,7 +145,7 @@ class Gstreamer < Formula
   # These paths used to live in various `gst-*` formulae.
   link_overwrite "bin/gst-*", "lib/ligst*", "lib/libges*", "lib/girepository-1.0/Gst*-1.0.typelib"
   link_overwrite "lib/girepository-1.0/GES-1.0.typelib", "lib/gst-validate-launcher/*", "lib/gstreamer-1.0/*"
-  link_overwrite "lib/pkgconfig/gst*.pc", "lib/python3.14/site-packages/gi/overrides/*", "include/gstreamer-1.0/*"
+  link_overwrite "lib/pkgconfig/gst*.pc", "lib/python3.15/site-packages/gi/overrides/*", "include/gstreamer-1.0/*"
   link_overwrite "share/gir-1.0/Gst*.gir", "share/gir-1.0/GES-1.0.gir", "share/gstreamer-1.0/*"
   link_overwrite "share/locale/*/LC_MESSAGES/gst-*.mo", "share/man/man1/g*"
 

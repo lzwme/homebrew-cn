@@ -1,17 +1,17 @@
 class Bookokrat < Formula
   desc "Terminal EPUB Book Reader"
   homepage "https://bugzmanov.github.io/bookokrat/index.html"
-  url "https://ghfast.top/https://github.com/bugzmanov/bookokrat/archive/refs/tags/v0.3.13.tar.gz"
-  sha256 "71a8b91ec59193cbca3f9f2182d8dd5a3717501c311d68a7093f07a8723a6b87"
+  url "https://ghfast.top/https://github.com/bugzmanov/bookokrat/archive/refs/tags/v0.3.14.tar.gz"
+  sha256 "8c69c25e25c00edfef40f845db2c36969f0333454c0cb6a91356454be82c38cd"
   license "AGPL-3.0-or-later"
   head "https://github.com/bugzmanov/bookokrat.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "aea504dc84c4d93682d514896a7dec82b46dcfebb6de70230407d68e08fa59d3"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "b9183d1235ad341146851f7c3d0c213282abdce86b54a0e251ac65584dd406cb"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "d1b0da3bc406af1e59befc2ee5587bacd623627ce2c3e849741fb4144480a21d"
-    sha256 cellar: :any,                 arm64_linux:       "139ff8657dc540ccf93d68f03c62c798d134fc9abda8af177a8e18853211c16d"
-    sha256 cellar: :any,                 x86_64_linux:      "266d61d6433a8d8ad344fb8bdd38646df89bbdfe76faf1a6fd7781abc1c576c4"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "d4b05cc529db11ce7273c6e414db52fbf99bfbeaf29425dce826bd2de3474373"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "9bb541c783912364b51cd8cc757846e876345444eee8a25d56d6919648582874"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "347a7ff88656b215c3133f6a5b4687cd024011b8db340f26eae4f65e2757f50b"
+    sha256 cellar: :any,                 arm64_linux:       "bf9bd4443c30bae93ac6c97fe2ae81ad23a8bd7e778c738c259a33313d93c58d"
+    sha256 cellar: :any,                 x86_64_linux:      "b7468649e24f8869dfed7d176d4de41f3e5d9815bd6f5540cd6b9f88f1cd7fd1"
   end
 
   depends_on "pkgconf" => :build

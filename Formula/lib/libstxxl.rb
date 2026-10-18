@@ -6,20 +6,12 @@ class Libstxxl < Formula
   license "BSL-1.0"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "e8753b2d51a1040106cefa8d94cacc0a5937cb2a9c4b900d64cde7927b71d2ec"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "e9a97733a67a95ca7bcaeb336a2573cf54c7110163448db00a1d27e98d49c364"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "30d099063deeb524f2ebe459a34fccb9236780abee29b1a8487f131922b015b3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "2fa5cbb1eb4ac3bf9d3603d0eb56d2e75db5b4962ed87c625f45deb988713a6b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:     "c553b5d40fc2b5c081634ce666570017b82f4c74c0f5915173bd9024d959de1c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey:    "e487af039d6286b34dc4aeac3c0eaba10668054b33a368e54f9cb8647834ed55"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:     "8454123ffed231405d684ed18c2ef1a0ab1bd118d74614748a5b5df23d8bb5fe"
-    sha256 cellar: :any_skip_relocation, sonoma:            "8974e02f766e33348b526ff4545441e9edc78dfb55847b996c115b53a8811211"
-    sha256 cellar: :any_skip_relocation, ventura:           "2da4cce955e2b91e309712edd7e0271ff7671e3b472536972d802102547ba5a3"
-    sha256 cellar: :any_skip_relocation, monterey:          "5916828893681e83b360fbd3638499592b65f39a546b64156aac85bf52a90550"
-    sha256 cellar: :any_skip_relocation, big_sur:           "c3f8dceb4e0a1716a2c193daf4b5eeb4ae3e8e96224bdc78ae8f74c2a3059152"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "830762e021660cbe0143faa6737a34aa03104344f17f561b6bbabf5befaa799b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "8651bc71eeb58d5fc34d8b934576ceec8d7735575c595e50e8dd8e4d2dc84ae9"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "c551ef2ed7fbb9a13218b7cb6a1640fe56bb94ba4cd4c1e945466c0acf70ed0f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "03c216058f8bc2bcc297b0703e6138afbb06eb45b4e2ac46cd72338d99afdb49"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "ac60f2dfc0086a695e795f12152c7738118487cfe73195a0b26d4642e75fe668"
+    sha256 cellar: :any,                 arm64_linux:       "116a180c7ea88a3d33344e6aba74ae73bc71948c62f0b2589a71127d29e3499c"
+    sha256 cellar: :any,                 x86_64_linux:      "6661e2db6c85d5b2012445d59fa16804543eb328690fefde1b8bf22271c94cd7"
   end
 
   depends_on "cmake" => :build

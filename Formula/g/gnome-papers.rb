@@ -22,7 +22,6 @@ class GnomePapers < Formula
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkgconf" => [:build, :test]
-  depends_on "python@3.14" => :build # For blueprint-compiler
   depends_on "rust" => :build
 
   depends_on "adwaita-icon-theme"
@@ -41,6 +40,8 @@ class GnomePapers < Formula
   depends_on "libtiff"
   depends_on "pango"
   depends_on "poppler"
+
+  uses_from_macos "python" => :build
 
   on_macos do
     depends_on "gettext"

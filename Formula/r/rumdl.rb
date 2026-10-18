@@ -1,8 +1,8 @@
 class Rumdl < Formula
   desc "Markdown Linter and Formatter written in Rust"
   homepage "https://github.com/rvben/rumdl"
-  url "https://ghfast.top/https://github.com/rvben/rumdl/archive/refs/tags/v0.2.79.tar.gz"
-  sha256 "748aa833adbe3851ae538547260dfd38e965f7a62e8cbc24da4382987e87c457"
+  url "https://ghfast.top/https://github.com/rvben/rumdl/archive/refs/tags/v0.3.0.tar.gz"
+  sha256 "7b6d9020870823122132755a34b113c6a11d2468c6c3b12fe97f705f45915a3c"
   license "MIT"
 
   livecheck do
@@ -11,11 +11,11 @@ class Rumdl < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "4a3efb122ede702e1a39d120178eae489bfb0b543e92ef9aa284fcc07da4c21f"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "a264a3ce53c6a2ad46a276b66950dacb16a192efaafa4c55fb9ad1ea257008e4"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "98ecd4123ebc3150113d3291baba863382292e7ddf00f4f630a8abcba69e7fb7"
-    sha256 cellar: :any,                 arm64_linux:       "6a52103ecba1d9220fae3b4fedc2d51fffd8ea2e65b7ae3819b3d6ee453e626a"
-    sha256 cellar: :any,                 x86_64_linux:      "6b3afa00164fa06db24c975338b680845eaec03054edcf59b1b6f21f19591d8d"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "192b73e04cc39713fd3a51771bdaa42029f3fbe877a906682f0bd2e17a48a34a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "337ea5a077de3cf041e9d2523f69b1b95fe369b4bf2ecdb4d5a84e599a151806"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "0ea767b104016234d80b7c73c0a65ac77d79b44218041b62175f0818dbfdf662"
+    sha256 cellar: :any,                 arm64_linux:       "7637a443127698b547d6685dd22d3f7c7f6079887cbc8859aff6064d26bc6b61"
+    sha256 cellar: :any,                 x86_64_linux:      "5654ff4d64ad63e7300259a10ac719a3099365eae243461ce096fcba0c430048"
   end
 
   depends_on "rust" => :build

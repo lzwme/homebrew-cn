@@ -1,17 +1,17 @@
 class Kubefwd < Formula
   desc "Bulk port forwarding Kubernetes services for local development"
   homepage "https://kubefwd.com"
-  url "https://ghfast.top/https://github.com/txn2/kubefwd/archive/refs/tags/v1.25.17.tar.gz"
-  sha256 "72dc112f9587afe179d966ca61fc6949a89f18355644ee6c0e31405e10aa0b37"
+  url "https://ghfast.top/https://github.com/txn2/kubefwd/archive/refs/tags/v1.25.18.tar.gz"
+  sha256 "5c6e0f7a9407729a0fd948078b259790554eec9a15506c935083e688c3cbf371"
   license "Apache-2.0"
   head "https://github.com/txn2/kubefwd.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "f11741a998843cd2f2c28490ad3f2fae1c53bbf0998cb6d0b2864245b16bcefa"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "878bf9cc5837353b131f1229840125021bc30358550880a98c565ca60edea950"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "3fc593bcc7b8fbf67cebb2ad2875264b356f9bf823fee976972234b5d192a946"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "66425a07b31c62fc8cc28bfcecbdb6a772bdc27d5953db87181c77f77a696dbf"
-    sha256 cellar: :any,                 x86_64_linux:      "972328643e1fefcfa65d9198c9c785ff4dc6d6e99a1a9eb995dcc0064ebe2043"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "5589c67ebb429b699dacb123d1ff919f4c33538259c4937173f69b4d3a1f3246"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "7cfded812f4412a791c339acadd33e8688d2b8176e7f2dea030d7fbe14354293"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "4c009b30d2a3732a101908da60cb085cf379a833d64023968595083c491e93bb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "66341215f9fb23d18723db0ed89e50b34e642b92391d458b4fca98b89c5afb4c"
+    sha256 cellar: :any,                 x86_64_linux:      "783ed3d69463b63f0904b80fbb225ed1963481748284b46a9bb5637b903781af"
   end
 
   depends_on "go" => :build

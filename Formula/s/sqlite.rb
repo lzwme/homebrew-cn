@@ -1,9 +1,9 @@
 class Sqlite < Formula
   desc "Command-line interface for SQLite"
   homepage "https://sqlite.org/index.html"
-  url "https://www.sqlite.org/2026/sqlite-autoconf-3540000.tar.gz"
-  version "3.54.0"
-  sha256 "134ec0802dda5795816e25d25872d20b312cb3973438c49b30bc40b7705ea9ed"
+  url "https://www.sqlite.org/2026/sqlite-autoconf-3540100.tar.gz"
+  version "3.54.1"
+  sha256 "926ef8d3eab93fbf6e06011901273eec076b25594a4e1cdadd50c987f4f6d64e"
   license "blessing"
   compatibility_version 1
 
@@ -18,11 +18,11 @@ class Sqlite < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "0420684ae4e97f1829ba9677b1a7bfac84c07e84e6fc48416024598d7198761a"
-    sha256 cellar: :any, arm64_tahoe:       "7d95089d3dd3abf4aec197d1f91964d14d6481713e55411b9838ea5e969588dc"
-    sha256 cellar: :any, arm64_sequoia:     "b36720af4c3db32f5d1f16ee6129018bdde236cd8f7e6189092b52c20d31c5ca"
-    sha256 cellar: :any, arm64_linux:       "5995bfea48ddb4407ceb0dbcb46c957547cde2f200b7db3581e0707fe37274dd"
-    sha256 cellar: :any, x86_64_linux:      "0e841d8379a66a12d41215296068ca49c577fb41cca7c39e16db002d809fdb57"
+    sha256 cellar: :any, arm64_golden_gate: "3c8be00f5e80568f00ff389c40e2a738949b08e199935a4538d2f5d054ef4457"
+    sha256 cellar: :any, arm64_tahoe:       "813f7e1a708d256259a07a0aa113d1d62bad4909d04e7ad24296900b60d18d6a"
+    sha256 cellar: :any, arm64_sequoia:     "38bdb30f8e13a07cdcd86233de9ab4d8db29f2b81cb08c15c202ecea6835ab2f"
+    sha256 cellar: :any, arm64_linux:       "5b011ca14e5e52141cc8eb358171ca7c3a20eec06fc5eb3955114ef0b0551e22"
+    sha256 cellar: :any, x86_64_linux:      "8783ecd3f534390d2cb8733f0c21d6a9e7ae85802226ee4a891bedd8654271b7"
   end
 
   keg_only :provided_by_macos

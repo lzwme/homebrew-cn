@@ -1,6 +1,6 @@
 cask "ntfstool" do
-  version "4.7.2.6"
-  sha256 "39013317dd9a53adfb66f04ebdc208ac0212825ea95b71dba22ded2039ef42aa"
+  version "4.7.2.8"
+  sha256 "d027446b5c17883904933a21d70e7609b7b703a93cc3c577013ec3443caab349"
 
   url "https://ghfast.top/https://github.com/ntfstool/ntfstool/releases/download/#{version}/Ntfstool_#{version}_release.pkg"
   name "NTFSTool"

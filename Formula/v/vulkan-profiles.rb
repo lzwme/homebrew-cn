@@ -14,17 +14,18 @@ class VulkanProfiles < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "b2641c149e9752515ae7b98db8a461321b5990256c9e572125f4a4ffd1456639"
-    sha256 cellar: :any, arm64_tahoe:       "9e42f20e31038503084017a22b38de054162ef38b94c615e884417421f18ec66"
-    sha256 cellar: :any, arm64_sequoia:     "08de1cbb4a52ac22ba3c87444a4e35594904c3121aa36b805d94f00d078fa938"
-    sha256 cellar: :any, arm64_linux:       "aae5a6705aacf2998bd43a74a5156fd647b276ef56956f6900c5d92e297d4c42"
-    sha256 cellar: :any, x86_64_linux:      "f68c716e910a42515f3f0758f70e2e21abe74bec105f38850ecc551232e55d32"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "7476e238f9e4b2f270d6cec730d5f46d788a2268a8b9a54a07c8fd61256cc7a8"
+    sha256 cellar: :any, arm64_tahoe:       "767ec83c78e4e1b5f213a2f3b1de54ab3c32d5b98766b733c76162523879e2f5"
+    sha256 cellar: :any, arm64_sequoia:     "a8843f2bac528d1ac39460b94f05496624e828807de4090f9985933f5208037b"
+    sha256 cellar: :any, arm64_linux:       "02cbd67c3648730b17e0acf68bfda119b920c5c24acb38614c4be6debc9c848b"
+    sha256 cellar: :any, x86_64_linux:      "9f2814ef5425a72a8d274e247d2b9fd933d2a15295f7743757f751e7b5828805"
   end
 
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
   depends_on "pyinstaller" => :build
-  depends_on "python@3.14" => :build
+  depends_on "python@3.15" => :build
   depends_on "rpds-py" => :build
   depends_on "vulkan-tools" => :test
   depends_on "jsoncpp"

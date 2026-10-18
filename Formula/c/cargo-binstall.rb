@@ -1,8 +1,8 @@
 class CargoBinstall < Formula
   desc "Binary installation for rust projects"
   homepage "https://github.com/cargo-bins/cargo-binstall"
-  url "https://ghfast.top/https://github.com/cargo-bins/cargo-binstall/archive/refs/tags/v1.25.3.tar.gz"
-  sha256 "4a570a613cece4b831f1d00fa16e73100542d067df9415e5a560940f0e0911cc"
+  url "https://ghfast.top/https://github.com/cargo-bins/cargo-binstall/archive/refs/tags/v1.26.0.tar.gz"
+  sha256 "69c4f4399ce2a5747d216adfaf85b557aa4d1b91d9014b52885d0fad458dc06f"
   license "GPL-3.0-only"
   head "https://github.com/cargo-bins/cargo-binstall.git", branch: "main"
 
@@ -15,11 +15,11 @@ class CargoBinstall < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "76efe080fc58f2a901ffbbd829fd92e275d51d80295d8a3f1e5123d538aa9f74"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "bb0fc72bc7f19dd00b33abeeeafd5f7464fee58e568fe17e49a74ea15b2ae7c7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "15ae62bd9c329e1ee56db0cb46ef4d20e92203405c0b63da90527e97a5a0dec2"
-    sha256 cellar: :any,                 arm64_linux:       "23ddb5da2bcc89c7826748ef4822d9751878c036171f85632d2e2988f564147d"
-    sha256 cellar: :any,                 x86_64_linux:      "013be1d2754fbb40d0b3d7fe94252da27759de3e21205cb95b4101b9fdaa5887"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "58f6d86c8277448c6825d5db08b6cf43b39f130ae8a837c0a71337db830de1c6"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "0f49a0c74aa5233d67ce7948b2c00fa0207f929686f651e9dcc3fa31ae7f1353"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "d673c12cd2b8594f931841e3c4a1d569bd82ba8cf9990f368c6ccb4adf5904c6"
+    sha256 cellar: :any,                 arm64_linux:       "a2d19cc9efb531944f2069daf1f441ee5e511e22b8d87fe42c0289b0e98dc35a"
+    sha256 cellar: :any,                 x86_64_linux:      "b246e9f69d236e8fe79c72d4369509cffe82e1e08704fb6805800e055a2907d0"
   end
 
   depends_on "rust" => :build

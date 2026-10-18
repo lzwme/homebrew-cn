@@ -22,8 +22,9 @@ class NodeAT24 < Formula
   keg_only :versioned_formula
 
   # https://github.com/nodejs/release#release-schedule
-  # disable! date: "2028-04-30", because: :unsupported
-  deprecate! date: "2027-04-30", because: :unsupported
+  # Deprecation set 6 months before EOL and disable date set 6 months after EOL
+  deprecate! date: "2027-10-30", because: "is in maintenance and will be end-of-life on 2028-04-30"
+  disable! date: "2028-10-30", because: :unsupported
 
   depends_on "pkgconf" => :build
   depends_on "python@3.13" => :build

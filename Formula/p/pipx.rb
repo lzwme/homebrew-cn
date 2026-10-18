@@ -3,17 +3,17 @@ class Pipx < Formula
 
   desc "Execute binaries from Python packages in isolated environments"
   homepage "https://pipx.pypa.io"
-  url "https://files.pythonhosted.org/packages/1c/79/f25969caba2d93077b02b0dd3016ee6ec7fe779b319cddcc2c61b992a89f/pipx-1.18.1.tar.gz"
-  sha256 "1b8746014b73226196bf04257b1b6de33e0b79097296f94e56df5accc661fcf2"
+  url "https://files.pythonhosted.org/packages/43/33/5986c0bc019beb9e7ef914378f939b806a55de349d730e7badc9520c62d5/pipx-1.18.2.tar.gz"
+  sha256 "5116b1a1fb09494c0f38df5388787b2910f41eb58e9a64172af970f81c0d94e4"
   license "MIT"
   head "https://github.com/pypa/pipx.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "f5d078f7058df088cc2100a467ff5d043d7157e0e8dbeb7d280a4f4e34ce7ce3"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "f5d078f7058df088cc2100a467ff5d043d7157e0e8dbeb7d280a4f4e34ce7ce3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "f5d078f7058df088cc2100a467ff5d043d7157e0e8dbeb7d280a4f4e34ce7ce3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "b30ade919e7b7a99e71e885808ea37dd15968ff29f1aca44406000a7b1b37621"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "b30ade919e7b7a99e71e885808ea37dd15968ff29f1aca44406000a7b1b37621"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "5e1516a9c3c4ee0d7c3d34f0eadd94e847e880f46941448dff3b55c11ac29826"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "5e1516a9c3c4ee0d7c3d34f0eadd94e847e880f46941448dff3b55c11ac29826"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "5e1516a9c3c4ee0d7c3d34f0eadd94e847e880f46941448dff3b55c11ac29826"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "2554cb3d188ebb2c233718f832eb80656b645da6b9fe7987fba131d06b024f0e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "2554cb3d188ebb2c233718f832eb80656b645da6b9fe7987fba131d06b024f0e"
   end
 
   depends_on "python@3.15"
@@ -39,8 +39,8 @@ class Pipx < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/80/a8/66d45abadff219e36e2a824181b8f6a67e7ed4572934d6252c71c29d5731/platformdirs-4.13.0.tar.gz"
-    sha256 "1aa0b0d3f224c1f07c295121e312a5a24a180d6ae5a8425ea1784b3e3863e9c0"
+    url "https://files.pythonhosted.org/packages/da/91/4a03cfdb03314cfca262921797fff04ff4054bd86a160aed76eddf8aa12b/platformdirs-4.13.3.tar.gz"
+    sha256 "5e567f664eb087ab8521c0179cd8d1bd60857d271136567a39719e28e2d383ce"
   end
 
   resource "userpath" do

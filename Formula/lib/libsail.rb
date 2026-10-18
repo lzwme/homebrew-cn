@@ -1,21 +1,20 @@
 class Libsail < Formula
   desc "Missing small and fast image decoding library for humans (not for machines)"
   homepage "https://sail.software"
-  url "https://ghfast.top/https://github.com/HappySeaFox/sail/archive/refs/tags/v1.2.0.tar.gz"
-  sha256 "fe2673d76e8088084447f388b94b4639f060afec4fab4e080e493049fbb24bf2"
+  url "https://ghfast.top/https://github.com/HappySeaFox/sail/archive/refs/tags/v1.3.0.tar.gz"
+  sha256 "586df996e499b8978b9217f0079a3b90abeea3bd6f59e27f4bf5f83c7acec804"
   license "MIT"
-  revision 1
 
   bottle do
-    sha256 arm64_golden_gate: "e09a763116e7c282df8374e004538111d29a96edbcb5c0b88e7b7ed52387c4f6"
-    sha256 arm64_tahoe:       "80a9bd81cdf68b81cc545711c31cabe522b23ca105f1b144e0d51888e793db84"
-    sha256 arm64_sequoia:     "b705ff94784f2cd13f575bf96aadd088d4525da5aa17ce45b3f3d5a939927511"
-    sha256 arm64_linux:       "0c5cfedc418a52ba343522dc98d9d690254e74b0ee41b780b34e12166bd3d0b9"
-    sha256 x86_64_linux:      "5afdb283b316ad83adec1799dcc464fd2a1b52aaa7994bbad891110014838798"
+    sha256 arm64_golden_gate: "ac94e35789a296f17bc23560e0d1a96a23bbfe0902624aacd66418513cd8f025"
+    sha256 arm64_tahoe:       "a5c17f58c48d26277888eedc1352333854237079c1642e4e2be0824b81c2bae9"
+    sha256 arm64_sequoia:     "c20b32d02b99e81353b0b23a1935ae80113a46e8a479e9946e1da51709a12acd"
+    sha256 arm64_linux:       "bc3531212fec47c5ec2c10ebe7e78de3ad8f54edbd9d2f9895302ba061b885e3"
+    sha256 x86_64_linux:      "8e29929c22d66d47d6b96069ed224ce46053e835988bbfbfb9201cfd7b996ead"
   end
 
   depends_on "cmake" => :build
-  depends_on "pkgconf" => [:build, :test]
+  depends_on "pkgconf" => :build
   depends_on "ffmpeg" # for `libavutil`
   depends_on "giflib"
   depends_on "imath"
@@ -69,9 +68,7 @@ class Libsail < Formula
       }
     C
 
-    flags = shell_output("#{formula_opt_bin("pkgconf")}/pkgconf --cflags --libs sail").strip.split
-
-    system ENV.cc, "test.c", "-o", "test", *flags
+    system ENV.cc, "test.c", "-o", "test", "-I#{include}/sail", "-L#{lib}", "-lsail", "-lsail-common"
     system "./test", test_fixtures("test.jpg")
   end
 end
