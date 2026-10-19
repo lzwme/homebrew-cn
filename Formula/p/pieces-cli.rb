@@ -10,20 +10,22 @@ class PiecesCli < Formula
   head "https://github.com/pieces-app/cli-agent.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "30789dd5fb85131e9443cce1ec62e205415ac4cc0609ebeff16ce942f6f70f0a"
-    sha256 cellar: :any, arm64_tahoe:       "1d112e40129c8d3980178598e1db8d9339a424b91207ff9493474877a6b74d6f"
-    sha256 cellar: :any, arm64_sequoia:     "bafa5ec106bc7a04bbd08333b72066da4646a8d64e86373e4e25861ebb9d4392"
-    sha256 cellar: :any, arm64_linux:       "6b53521ee2c893b89413992a50e7c479b1181b0680e932c6de9e23bb1480591a"
-    sha256 cellar: :any, x86_64_linux:      "9e174714697558a6442111effdd487c18a255a0f5b5f81242578d38e9754e038"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "d732d50cb0e42b50905c404a67e026c626f2aa032ec4296280ad78697a68c0ef"
+    sha256 cellar: :any, arm64_tahoe:       "c1fc9470bee9a712e33e6d78135eb0a28fdbb630e10af074853dc93dee67ed73"
+    sha256 cellar: :any, arm64_sequoia:     "3b3d7545097d10b299408a49ee5fa51b32c515b79a15ffc0e63063eda82baa3c"
+    sha256 cellar: :any, arm64_linux:       "171898eb4274e0fc46763b973aea88bcd1b33be3ae9a71d8871ecca68e8ac675"
+    sha256 cellar: :any, x86_64_linux:      "354b3079dc2a03ba97c2b85c6ae8367c8be03257a21530d10f656238b4f362ab"
   end
 
-  depends_on "rust" => :build # for pydantic-core
   depends_on "certifi" => :no_linkage
+  depends_on "cryptography" => :no_linkage
   depends_on "libyaml"
-  depends_on "python@3.14"
+  depends_on "pydantic" => :no_linkage
+  depends_on "python@3.15"
   depends_on "rpds-py" => :no_linkage
 
-  pypi_packages exclude_packages: %w[certifi rpds-py]
+  pypi_packages exclude_packages: %w[certifi cryptography pydantic rpds-py]
 
   resource "annotated-types" do
     url "https://files.pythonhosted.org/packages/5f/56/a8120250d128bed162cd73c76d45f6ef9991f3e068f62a8ee060afa3104a/annotated_types-0.8.0.tar.gz"
@@ -86,8 +88,8 @@ class PiecesCli < Formula
   end
 
   resource "mcp" do
-    url "https://files.pythonhosted.org/packages/5a/79/5724a540df19e192e8606c543cdcf162de8eb435077520cca150f7365ec0/mcp-1.17.0.tar.gz"
-    sha256 "1b57fabf3203240ccc48e39859faf3ae1ccb0b571ff798bbedae800c73c6df90"
+    url "https://files.pythonhosted.org/packages/ba/93/0142dc84a666daf8ad51a34268f34c12fd6fda4f3810c4be2504eecc8212/mcp-1.30.0.tar.gz"
+    sha256 "445414625fce5c295faa505bb11bacece661ab6f4028d57c935db57820b7a3e4"
   end
 
   resource "mdurl" do
@@ -105,16 +107,6 @@ class PiecesCli < Formula
     sha256 "9ec8a0ad96d5c56148b3f914aa79c1564c3fde5d2e6b876e7bc327e353cf8fa6"
   end
 
-  resource "pydantic" do
-    url "https://files.pythonhosted.org/packages/c3/da/b8a7ee04378a53f6fefefc0c5e05570a3ebfdfa0523a878bcd3b475683ee/pydantic-2.12.0.tar.gz"
-    sha256 "c1a077e6270dbfb37bfd8b498b3981e2bb18f68103720e51fa6c306a5a9af563"
-  end
-
-  resource "pydantic-core" do
-    url "https://files.pythonhosted.org/packages/7d/14/12b4a0d2b0b10d8e1d9a24ad94e7bbb43335eaf29c0c4e57860e8a30734a/pydantic_core-2.41.1.tar.gz"
-    sha256 "1ad375859a6d8c356b7704ec0f547a58e82ee80bb41baa811ad710e124bc8f2f"
-  end
-
   resource "pydantic-settings" do
     url "https://files.pythonhosted.org/packages/68/ca/31c57507b13119d7d3cfa1576dad2911a4861e3be07b579395f4e9d393f9/pydantic_settings-2.15.0.tar.gz"
     sha256 "694b793e84f766ba76a90ebdefc01d0a9a045dab0382bee70393da93712ad117"
@@ -123,6 +115,11 @@ class PiecesCli < Formula
   resource "pygments" do
     url "https://files.pythonhosted.org/packages/49/2e/ced460408999b33da6b31b0021b0f37d329e202d4169aeb164493778f25b/pygments-2.21.0.tar.gz"
     sha256 "610ca751c9bc2492b38eb9a38a7fbc93edbbb2d7182edaf34e66ae493dee5c8c"
+  end
+
+  resource "pyjwt" do
+    url "https://files.pythonhosted.org/packages/43/ea/5194e52748b0da83d71e082d75496eaec6e58f419f5e184786ded517e6a9/pyjwt-2.15.1.tar.gz"
+    sha256 "4f259e80cdfb6b3fc18a7de51fd1ef9ec79652f25019bae68975ca2468a34df8"
   end
 
   resource "pyperclip" do
@@ -211,6 +208,9 @@ class PiecesCli < Formula
   end
 
   def install
+    # Allow Python 3.15
+    inreplace "pyproject.toml", 'python = ">=3.11,<3.15"', 'python = ">=3.11"'
+
     virtualenv_install_with_resources
 
     generate_completions_from_executable(bin/"pieces", "completion", shells: [:bash, :zsh, :fish, :pwsh])

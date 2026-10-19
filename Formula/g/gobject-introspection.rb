@@ -7,15 +7,15 @@ class GobjectIntrospection < Formula
   url "https://download.gnome.org/sources/gobject-introspection/1.86/gobject-introspection-1.86.0.tar.xz"
   sha256 "920d1a3fcedeadc32acff95c2e203b319039dd4b4a08dd1a2dfd283d19c0b9ae"
   license all_of: ["GPL-2.0-or-later", "LGPL-2.0-or-later", "MIT"]
-  revision 4
+  revision 5
   compatibility_version 1
 
   bottle do
-    sha256 arm64_golden_gate: "fe949284e88c8a8aeb4769a3693f459ba280c6432252719c55ea38c0d720ee10"
-    sha256 arm64_tahoe:       "87ae8192aa4d9caf136a0b1c42125e6c34d3e366013beb0c185316f081844e29"
-    sha256 arm64_sequoia:     "d70659f28e8e125c1497e872b9eada816bb85eb49204e84f6bf66316262b83fd"
-    sha256 arm64_linux:       "c34a74946df6431e09867828ef75a6cd7d237bbf0ba942e3712960903c91adec"
-    sha256 x86_64_linux:      "830673494fdd06a9b331d030cc928328e3f3187dada5bd490c1c685399b66acb"
+    sha256 arm64_golden_gate: "bf75452655dd860a22248f3cd6f7978015212a7c63d5aee881daaa5de4bdb538"
+    sha256 arm64_tahoe:       "58065fd01aded5a2542e52430cfcc5fbb11f7f51421d12f05402c95f1fe2f375"
+    sha256 arm64_sequoia:     "f8ae7c52e7c71a75d187fab3c4d6e524ad2a33fa80a38f3b4a36989eb8c9b5a8"
+    sha256 arm64_linux:       "7e066ae8f54f1e69f625a6ff0a0599d18f2d03367a7e7799791ee580978ae4b0"
+    sha256 x86_64_linux:      "19ac75340133f5c431233f2741f2cc2f5de0fcee70508952c7eaf90fd0760958"
   end
 
   depends_on "bison" => :build
@@ -24,8 +24,8 @@ class GobjectIntrospection < Formula
   depends_on "cairo"
   depends_on "glib"
   depends_on "pkgconf"
-  # Ships a `_giscanner.cpython-314-darwin.so`, so needs a specific version.
-  depends_on "python@3.14"
+  # Ships a `_giscanner.cpython-315-darwin.so`, so needs a specific version.
+  depends_on "python@3.15"
 
   uses_from_macos "flex" => :build
   uses_from_macos "libffi"

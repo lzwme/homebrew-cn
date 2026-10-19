@@ -9,6 +9,7 @@ class Qtwebview < Formula
     { any_of: ["LGPL-3.0-only", "GPL-2.0-only", "GPL-3.0-only"] },
     "BSD-3-Clause", # *.cmake
   ]
+  revision 1
   compatibility_version 1
   head "https://code.qt.io/qt/qtwebview.git", branch: "dev"
 
@@ -17,11 +18,11 @@ class Qtwebview < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "e02f36790976cef4b0bdce2b5cfdc6148eef017f39ea3772cd3f74be59b76714"
-    sha256 cellar: :any, arm64_tahoe:       "98d5b9c98f8ae934e853dde839ba82bace112b7a34739d84bcdfa5a7214f498e"
-    sha256 cellar: :any, arm64_sequoia:     "58732ceb9551bc274913054077d573df0d98ebea8a0a2cf2323ffe93c02c7214"
-    sha256 cellar: :any, arm64_linux:       "0669bce5224977445c2908e1ba4cbd225fb06ef623726b4e267968ae2cd06f01"
-    sha256 cellar: :any, x86_64_linux:      "bec172c549909782a5176cbc1b853c3433fae0eea08b59b4d96da2c74950fafc"
+    sha256 cellar: :any, arm64_golden_gate: "7306cdfd14f09e86ccd6a591ccc421de2fe571046f991c9aca2f61cc13164d53"
+    sha256 cellar: :any, arm64_tahoe:       "8cbc8b44707b0bf28e8869325b223718463651737491773af18b9426b84a2bbe"
+    sha256 cellar: :any, arm64_sequoia:     "db07ff8f985dd4faa817eb7782cbdc7e24fdb38130e7e4a860725ad5544069fb"
+    sha256 cellar: :any, arm64_linux:       "112da0c9ed24d8f3f480f07a6761eb1190e8818c12b3787011b3917b33867bac"
+    sha256 cellar: :any, x86_64_linux:      "17e445b09ad3ecf32a3af3200bce39a74979b80fc2e1900387c00644830ab2c4"
   end
 
   depends_on "cmake" => :build

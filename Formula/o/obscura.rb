@@ -6,17 +6,18 @@ class Obscura < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "6e6265bdc923ade5310d0c0cdf0e47cc7f0887559d2816aef7d5a82c3f12ca73"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "a2d0978cde32fbf83590312e8316d767f2c5cd4b486a6616eb03a4734c758280"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "5579abb9a0269a21bce70edd61c3534dad61c6d89b4c62cdb7fbeae71b48fa67"
-    sha256 cellar: :any,                 arm64_linux:       "0c62b7720beb99ed061a9711b1a8c3e77cca6448fcf78b5c40bb8fc168dcf880"
-    sha256 cellar: :any,                 x86_64_linux:      "58e5d625a91e995dae52d7a24b0922bbdb6942f983869cc6df0974b3915f4e0a"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "bc74fa36af69116f69f76355a859ae443e91e8318e5a312c67f2aae21412d899"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "a5194dfb186815761c1cabeb78385f7a74f8aa3a3d016d199ea2e28657eed119"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "be54c5f7f125aa3e22b3b70ae8006f4a1186c62d65cd76b3ff74d3987686cf7c"
+    sha256 cellar: :any,                 arm64_linux:       "29367528a991a78daa0601b7d1bbefc5b4bed05908377f53dcad8c08528446fa"
+    sha256 cellar: :any,                 x86_64_linux:      "455533e00843bbefbd3082e654f16778fd4a6be8d0d3e9f7786f1c056b6e2514"
   end
 
   depends_on "rust" => :build
 
   def install
-    system "cargo", "install", *std_cargo_args(path: "crates/obscura-cli")
+    system "cargo", "install", *std_cargo_args(path: "crates/obscura-cli", features: "render")
   end
 
   test do
@@ -24,6 +25,11 @@ class Obscura < Formula
       "#{bin}/obscura fetch 'data:text/html,<title>Homebrew Test</title>' --eval 'document.title'",
     )
     assert_equal "Homebrew Test\n", output
+
+    assert_equal "rgb(255, 0, 0)\n", shell_output(
+      %Q(#{bin}/obscura fetch 'data:text/html,<style>p{color:red}</style><p>x' \
+      --eval 'getComputedStyle(document.querySelector("p")).color'),
+    )
 
     # obscura blocks fetches to loopback/private addresses by default (SSRF protection)
     blocked = shell_output("#{bin}/obscura fetch http://127.0.0.1:1/ 2>&1", 1)

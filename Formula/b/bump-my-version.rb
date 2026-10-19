@@ -3,17 +3,17 @@ class BumpMyVersion < Formula
 
   desc "Version bump your Python project"
   homepage "https://callowayproject.github.io/bump-my-version/"
-  url "https://files.pythonhosted.org/packages/73/75/8f7d22e08f304cc3923adcdaa184edad857f174519cef3667acfa31bd9d3/bump_my_version-1.6.0.tar.gz"
-  sha256 "ba2c81ed0c17bf0a95e24f9676b8ffaf3b24d29fcb978f06b4ef0f57ee9f39ad"
+  url "https://files.pythonhosted.org/packages/04/2a/e8215506bcce08b8a9038ae647844babdc367b0d4d7133ec751326a50daa/bump_my_version-1.6.1.tar.gz"
+  sha256 "29bc31e366a3745ce6c64e750a5ac7c5265a085c22dc1e858c006bc3d27e5ce0"
   license "MIT"
   head "https://github.com/callowayproject/bump-my-version.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "c05fe43453a791be9e1a81cb79d4ba0be72bed9b56f7d5207ebbe0756af7d020"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "274cd1eda427749717e996264b102e705c3c2f77b19cd634aaa8eb44c50d3d56"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "ce3759a8b5bd3691ab3d6bdb892ddfaa1924452fb126dd63bfa7677a85b32951"
-    sha256 cellar: :any,                 arm64_linux:       "9549b86a539b4a6030a97e571545ff75529a219b39216e4a5af162980232234d"
-    sha256 cellar: :any,                 x86_64_linux:      "b6a0981359bfddd4e07bee4905e2849d9f5aae1605f56c0c27faadb7eaeafe73"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "ed63f8e003fe62aaa393941ba0142a868534e03a660582510e4132b229a8fe41"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "82a554c96ba72a87e0d7f13a7298590461528147c69403ccdd19e5b9974f44c1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "dd2feaf0c104d5ddd253e348452d361959ea9986ab0a19d8d0285f26abd6ab7e"
+    sha256 cellar: :any,                 arm64_linux:       "b6e3907f5101e62d270075403515924bf179d0c36745fec921081a81730fa4b5"
+    sha256 cellar: :any,                 x86_64_linux:      "93daa5acbdd6e00c8a92fa35520583671cd3e297d4219d0ac480f481692e8cc8"
   end
 
   depends_on "certifi" => :no_linkage
@@ -28,8 +28,8 @@ class BumpMyVersion < Formula
   end
 
   resource "bracex" do
-    url "https://files.pythonhosted.org/packages/ac/01/5f394b8bcd6e5b92f73130990960423bbb19711f906bd9fe9ea5557c667c/bracex-3.0.1.tar.gz"
-    sha256 "4e38e32392e4a4780fe15d644bfc7c8514057cfc3861e060b11814ce829c25e4"
+    url "https://files.pythonhosted.org/packages/e1/60/e2a6409041cb3f8ce7ac3d6917b5b30c39f81a0a5b2d414ec30f36fd96bf/bracex-3.1.tar.gz"
+    sha256 "35c69fc105f08d77c02722e8ae707c656ff298dd4d26c89bcb3c98fca8bc3614"
   end
 
   resource "click" do
@@ -73,8 +73,8 @@ class BumpMyVersion < Formula
   end
 
   resource "pydantic-settings" do
-    url "https://files.pythonhosted.org/packages/68/ca/31c57507b13119d7d3cfa1576dad2911a4861e3be07b579395f4e9d393f9/pydantic_settings-2.15.0.tar.gz"
-    sha256 "694b793e84f766ba76a90ebdefc01d0a9a045dab0382bee70393da93712ad117"
+    url "https://files.pythonhosted.org/packages/2e/3b/a5d2294799b53b448319978cfb5bd139d5a9d45e862af91661614f14c922/pydantic_settings-2.16.0.tar.gz"
+    sha256 "5b6c578049ede4db0e2ef3b4eaa4ad4069cfa9211f83fb38df899dfade50a614"
   end
 
   resource "pygments" do
@@ -103,13 +103,13 @@ class BumpMyVersion < Formula
   end
 
   resource "tomlkit" do
-    url "https://files.pythonhosted.org/packages/94/96/e07752635b98536177fa1f37671c8f3cdde2e724c6bcf6034b2cfb571565/tomlkit-0.15.1.tar.gz"
-    sha256 "e25bbf38843005246210a12982776f27f99cb9be67160e14434d0c0d21ee1e97"
+    url "https://files.pythonhosted.org/packages/08/72/fc01563df95c189a9f65850096bdc205bc2fe37da6c740cd64afaf18d07e/tomlkit-0.15.2.tar.gz"
+    sha256 "83e32755ba1d20d9340bd069ee97e9f6232ba2346b63ffcba425de01f7e327a6"
   end
 
   resource "truststore" do
-    url "https://files.pythonhosted.org/packages/53/a3/1585216310e344e8102c22482f6060c7a6ea0322b63e026372e6dcefcfd6/truststore-0.10.4.tar.gz"
-    sha256 "9d91bd436463ad5e4ee4aba766628dd6cd7010cf3e2461756b3303710eebc301"
+    url "https://files.pythonhosted.org/packages/ee/9f/c5201d42a484c061e528825fc8e2d565f5abd50a4ced6fb7d29c4ec99b2b/truststore-0.10.5.tar.gz"
+    sha256 "30d36967ccaded5cbb38d602c433f53600036c79d502f4533a49b60a03bbefcd"
   end
 
   resource "wcmatch" do

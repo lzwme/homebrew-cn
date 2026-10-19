@@ -9,6 +9,7 @@ class Qtspeech < Formula
     { any_of: ["LGPL-3.0-only", "GPL-2.0-only", "GPL-3.0-only"] },
     "BSD-3-Clause", # *.cmake
   ]
+  revision 1
   compatibility_version 1
   head "https://code.qt.io/qt/qtspeech.git", branch: "dev"
 
@@ -17,11 +18,11 @@ class Qtspeech < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "5a1a077576dfc4c1cf0db63b2159d9877c561327b108918cda1f3613776f47e4"
-    sha256 cellar: :any, arm64_tahoe:       "1d8b74824ba16465de1a50c78e973dfa90f3cad6b72f19634c0761b6967944ee"
-    sha256 cellar: :any, arm64_sequoia:     "4426756294aabf5c192c0086c3a0cc75f25345db579f7cfb5625770d2d1318e5"
-    sha256 cellar: :any, arm64_linux:       "b4c7988f91f67ed2ee0e900cf18e2c9885a68d05bb3c787ae2ba67a997eb64a8"
-    sha256 cellar: :any, x86_64_linux:      "fdce97609de1f523d6f84e931a543c946aab9d48b000dc89d89602cb532003fc"
+    sha256 cellar: :any, arm64_golden_gate: "d2b90d48c9b2f0e5e000060c360d536088ea4220810efcc5105dc5a44f5a3d28"
+    sha256 cellar: :any, arm64_tahoe:       "9ddbb7fb6484edf036f581f4c4b1328b2216ae4cabe51073f9e58ada1d4693d2"
+    sha256 cellar: :any, arm64_sequoia:     "803df3b6612d164b97e482165bc614302b14b978b26ef79c5038ae9330088f16"
+    sha256 cellar: :any, arm64_linux:       "256b4ed578df4f93fe1f1885bd1b431bc8e45c011e658b8144dea50c60d8bb7e"
+    sha256 cellar: :any, x86_64_linux:      "2fb06bc281c97ea967160b21d3195bf2b24026f474c9ad5663acca6befd00ce3"
   end
 
   depends_on "cmake" => [:build, :test]

@@ -6,6 +6,7 @@ class Pytorch < Formula
   url "https://ghfast.top/https://github.com/pytorch/pytorch/releases/download/v2.14.1/pytorch-v2.14.1.tar.gz"
   sha256 "d0ebad9ca4219959b29b7ad9ab6469fe49a3d668f8b5a62dd115f02f3a914447"
   license "BSD-3-Clause"
+  revision 1
   compatibility_version 3
 
   livecheck do
@@ -14,16 +15,16 @@ class Pytorch < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "8541a88e7d1c04013772d726b745d2271e2aa15cc9b6dc6345d30ee9f7b9444a"
-    sha256 cellar: :any, arm64_tahoe:       "80cb101e0ba864c0160627c0a470d6aa0331623db1f83c3da5c718288947fb03"
-    sha256 cellar: :any, arm64_sequoia:     "63aee7d35798c3bfc0ae55b0a5ec39a060cdc534fa94f5c997c9fb9ad1b20aad"
-    sha256 cellar: :any, arm64_linux:       "cac0918672ffbccbbd9602ffa7997bd8fe6482de5c424bb1ed405536f14fcb54"
-    sha256 cellar: :any, x86_64_linux:      "be0c8346c6a003bf24015a358220eb8a1f32105fe1a89c7e611ae16a325580b4"
+    sha256 cellar: :any, arm64_golden_gate: "b69626b30488114e314c7ca4d91a4e2f27e847c34bd00596c07f13c1ca4af1ec"
+    sha256 cellar: :any, arm64_tahoe:       "f5e9473c9219b74a40f212e7655573d661ca05daf601023e38a5a5990f85236f"
+    sha256 cellar: :any, arm64_sequoia:     "28dd667557401c4cf353b4ba0ef4474e623f1828647240c9e9a2d859a8442a83"
+    sha256 cellar: :any, arm64_linux:       "34c994eb3e97bb32db644679e068d2b591eeb50cc5aae8cce8bd872d6ce970e6"
+    sha256 cellar: :any, x86_64_linux:      "68cf9b44e1b1e292de18e9f4a5e21b008fcabe38a288d419b37dada5f9e24528"
   end
 
   depends_on "cmake" => :build
   depends_on "ninja" => :build
-  depends_on "python@3.14" => [:build, :test]
+  depends_on "python@3.15" => [:build, :test]
   depends_on "abseil"
   depends_on "eigen"
   depends_on "libuv"

@@ -9,6 +9,7 @@ class Qtconnectivity < Formula
     { any_of: ["LGPL-3.0-only", "GPL-2.0-only", "GPL-3.0-only"] },
     "BSD-3-Clause", # *.cmake
   ]
+  revision 1
   compatibility_version 1
   head "https://code.qt.io/qt/qtconnectivity.git", branch: "dev"
 
@@ -17,11 +18,11 @@ class Qtconnectivity < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "05bcea18fb3770c4c2818a35ac06d9e92f48e597a39dc9ca098d446e60e4bddd"
-    sha256 cellar: :any, arm64_tahoe:       "6b8e1893d4c9e40a8f9b93192b0e97d39b061992bd991540cc332177bc3a9df8"
-    sha256 cellar: :any, arm64_sequoia:     "8e36c2b4c7ffc4323a866a63f7bd4bd2361cf276ee6acdf1cd9176ef4ccc9278"
-    sha256 cellar: :any, arm64_linux:       "5174abe989d1e1aab261349fcf38c6fc68e5e960dbfd8ba037d78e45e65b7416"
-    sha256 cellar: :any, x86_64_linux:      "e50251fd12eaffb5a99a561fb321ebcc51b7b53c4984e265b1f66057790a4909"
+    sha256 cellar: :any, arm64_golden_gate: "276aeb46883320717bcf17b114b4d3886c5e45a9e163b60fda6882b8521b11a6"
+    sha256 cellar: :any, arm64_tahoe:       "093afb7946cd05be0f8454fbf0c1bbab1d117b02f6eac9f2f1a97e62ef70d934"
+    sha256 cellar: :any, arm64_sequoia:     "180887340213edff5abdf471ab94ad111751420666aa57d33932be64b3d9c6ce"
+    sha256 cellar: :any, arm64_linux:       "3741a7533163a016c4287e94bd022c0fb46392db4da4bd5c7b482ec06691f344"
+    sha256 cellar: :any, x86_64_linux:      "49c327f696faa14fe8e2ec4d554a626f09e181c798bdf1b7d203eaabd7fd5ead"
   end
 
   depends_on "cmake" => [:build, :test]

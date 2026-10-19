@@ -10,6 +10,7 @@ class Qt3d < Formula
     "BSD-3-Clause", # *.cmake
     "MIT", # bundled imgui
   ]
+  revision 1
   compatibility_version 1
   head "https://code.qt.io/qt/qt3d.git", branch: "dev"
 
@@ -18,11 +19,11 @@ class Qt3d < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "46a305e5139039898a4ad38acf742317075d3e15eb54655264a238e2ac66733a"
-    sha256 cellar: :any, arm64_tahoe:       "318f01567005485318bb79d9c007613ff0c4018c27554f0c1459877cb4a69109"
-    sha256 cellar: :any, arm64_sequoia:     "2b4fb6efa6ecdf088b7bedb674202047b5a52a0c1a876f4c80eb74c9fbc8e72c"
-    sha256 cellar: :any, arm64_linux:       "3d3bcfc6894bbdbea6b4c98c3b786edfea5d02037575bec8f593333d662d968c"
-    sha256 cellar: :any, x86_64_linux:      "71fedd3dfc86c32117e1729685efdaf6308f4c9ca6af8bee97d6e85ce183c3cf"
+    sha256 cellar: :any, arm64_golden_gate: "ea8a51b7c696adba02f1be4e5c4e84b44965416e29e5a619516153c562f54813"
+    sha256 cellar: :any, arm64_tahoe:       "0ab93fd0a6448735eeb72d8bbc6c1d1c9e962dbcc2c2b4206d0986e798a04bc7"
+    sha256 cellar: :any, arm64_sequoia:     "fe7c4a922801af5a658764e45f97a785bc1d8ec597efbe268db2f61d88909500"
+    sha256 cellar: :any, arm64_linux:       "26af039492dd460fdc35e1e8c8aff5d9fb3c03b48ec1427f2f76ce4900c2c275"
+    sha256 cellar: :any, x86_64_linux:      "c7d3d305868ab95e2686c6b090fd61d7814d577ed8c1c6c6dcaf2fd6e4b929d5"
   end
 
   depends_on "cmake" => [:build, :test]

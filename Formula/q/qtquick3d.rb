@@ -12,6 +12,7 @@ class Qtquick3d < Formula
     "BSD-3-Clause", # bundled tinyexr; *.cmake
     "MIT",          # bundled jsoncpp
   ]
+  revision 1
   compatibility_version 1
   head "https://code.qt.io/qt/qtquick3d.git", branch: "dev"
 
@@ -20,11 +21,11 @@ class Qtquick3d < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "da99c8988f8bd497bd9e3d3889db2af409e8365124d73bc5335f60282da0d3f8"
-    sha256 cellar: :any, arm64_tahoe:       "528abe41f513dc8a6d1a555ae41c7adb65f86e7f82a080906c1f1d0950b64cae"
-    sha256 cellar: :any, arm64_sequoia:     "a8064f2b3e7c1a02931cc29be1f38ce079626e12cb775293c5ae07411baadcff"
-    sha256 cellar: :any, arm64_linux:       "c37ab9e18c535ed328a18159ff56c1d2c650153d0d30bb70e00e4d524d9391b5"
-    sha256 cellar: :any, x86_64_linux:      "b63668f5ffe0b437e6713f0211fdc74c7bd9092fbf9541bbd804cb1c6174bce7"
+    sha256 cellar: :any, arm64_golden_gate: "f75c1a997db86d38fcec286f175b2c59c739781602dcb484a5e8a4c42be1cee1"
+    sha256 cellar: :any, arm64_tahoe:       "23571d65a5d98da6ec2cbf2c9fa11f8792d247575f2574e2d01e3c9ec7ea6c93"
+    sha256 cellar: :any, arm64_sequoia:     "8070dd0ddee483be14185e43548f23d0a93f349baafde40045bee4c077b5f12d"
+    sha256 cellar: :any, arm64_linux:       "1363f38795472013723e7379a074e4506b700840f84de65bdfb4868eac0efd94"
+    sha256 cellar: :any, x86_64_linux:      "12f6a5eeda171cc476a504aa8b3d1093d409da0e2ac4c62f6d0628da1f46c0ed"
   end
 
   depends_on "cmake" => [:build, :test]

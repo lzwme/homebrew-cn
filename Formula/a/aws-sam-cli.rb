@@ -9,11 +9,12 @@ class AwsSamCli < Formula
   head "https://github.com/aws/aws-sam-cli.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "2f4b33efbc68bccb62ae7a86f2083696362027fcafe4da14e60ab9ed5bf834ab"
-    sha256 cellar: :any, arm64_tahoe:       "ed702b01406e4e33b2e70b1f29f121bff85549ac88bca70f44ad8db006668666"
-    sha256 cellar: :any, arm64_sequoia:     "e05fdce373917239ff0bf3ff91a4bbeebba458938868cf471c10e867ef708f39"
-    sha256 cellar: :any, arm64_linux:       "9fabc8b8875c726d42aa56bd0529dba47f4a63b61afd346181626f8349efe907"
-    sha256 cellar: :any, x86_64_linux:      "840ca67bab8815a9d4263021d9cdc813bf873b73ec16648fd8840b4dab224ef8"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "7f254211cac76073b914fd7dc0df9ffda380b9fc01fb791d2dbbcab85a60bc99"
+    sha256 cellar: :any, arm64_tahoe:       "40ce3804ed9cb00e2358cc6bd32de619e3ca98473d352d8e04b7b96b799708f9"
+    sha256 cellar: :any, arm64_sequoia:     "81b654d08a3824766e17f18d155543beec9947dc91527de5576c688e78097278"
+    sha256 cellar: :any, arm64_linux:       "ee7e2b6512d726c25075a23ed51de24f5b88abf35c669fa6928c5f55e4dc89c3"
+    sha256 cellar: :any, x86_64_linux:      "75a4a6c7305e9f8a65a53c95a90d2423d9d32361e738bb3a34c790cb60cdb5ce"
   end
 
   depends_on "go" => :build
@@ -31,7 +32,7 @@ class AwsSamCli < Formula
   depends_on "cryptography" => :no_linkage
   depends_on "libyaml"
   depends_on "pydantic" => :no_linkage
-  depends_on "python@3.14"
+  depends_on "python@3.15"
   depends_on "rpds-py" => :no_linkage
 
   pypi_packages exclude_packages: %w[certifi cryptography pydantic rpds-py]
@@ -412,7 +413,12 @@ class AwsSamCli < Formula
     ENV.append "LDFLAGS", "-Wl,-dead_strip_dylibs" if OS.mac?
 
     venv = virtualenv_create(libexec, python3, system_site_packages: false)
-    venv.pip_install resources.reject { |r| r.name == "aws-lambda-rie" }
+    venv.pip_install resources.reject { |r| %w[aws-lambda-rie cfn-lint].include?(r.name) }
+    resource("cfn-lint").stage do
+      # Allow Python 3.15
+      inreplace "pyproject.toml", 'requires-python = ">=3.10,<3.15"', 'requires-python = ">=3.10"'
+      venv.pip_install Pathname.pwd
+    end
     venv.pip_install_and_link buildpath, build_isolation: false
 
     generate_completions_from_executable(bin/"sam", shell_parameter_format: :click)

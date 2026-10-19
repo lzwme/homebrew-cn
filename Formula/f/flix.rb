@@ -1,8 +1,8 @@
 class Flix < Formula
   desc "Statically typed functional, imperative, and logic programming language"
   homepage "https://flix.dev/"
-  url "https://ghfast.top/https://github.com/flix/flix/archive/refs/tags/v0.78.0.tar.gz"
-  sha256 "a27525de67b34ee4ca4bfb48f3756e4de5577323871023738b216ca2a48c0521"
+  url "https://ghfast.top/https://github.com/flix/flix/archive/refs/tags/v0.79.0.tar.gz"
+  sha256 "f168b41e2999332c1cb3190b98fd63dc5d007aaa81b2718c3a81d01ef64c544b"
   license "Apache-2.0"
   head "https://github.com/flix/flix.git", branch: "master"
 
@@ -12,7 +12,7 @@ class Flix < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "6b7e594d9ee58bfc7e8cd7cd033d93826da9643a520217af260891aad8d402ad"
+    sha256 cellar: :any_skip_relocation, all: "412db87fd6c924a045944f837e4eae02e4f02c655b7beb1cae05face7effbdff"
   end
 
   depends_on "mill" => :build

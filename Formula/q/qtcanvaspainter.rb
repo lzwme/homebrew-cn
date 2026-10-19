@@ -11,6 +11,7 @@ class Qtcanvaspainter < Formula
     "BSD-3-Clause", # *.cmake
     "Zlib", # nanovg
   ]
+  revision 1
   head "https://code.qt.io/qt/qtcanvaspainter.git", branch: "dev"
 
   livecheck do
@@ -18,11 +19,11 @@ class Qtcanvaspainter < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "503849f6242fd7955c57752d5ebf165d25c39707078b87dc07df66ec947c8d9f"
-    sha256 cellar: :any, arm64_tahoe:       "b87b2bf00d96c481b660975715a5a0e9c89fa046cb68a8c9692c0f75a841bb44"
-    sha256 cellar: :any, arm64_sequoia:     "e85e2e2596f0d563dbc5c2199777bec038b82448f06ee59a6a30831cbe950d4a"
-    sha256 cellar: :any, arm64_linux:       "a230e0ece68d599bcd57082cf00ea2d1cf41d275b333a4880c8178df6551a80a"
-    sha256 cellar: :any, x86_64_linux:      "2ee7a78f35dff5e55b1a272cd5a30dd13b63f7ab752d0053bffafd4bcfc43137"
+    sha256 cellar: :any, arm64_golden_gate: "6b137b07df5e98359bd3620fbc6517648199c8e7f240a785371014eccb93cc1c"
+    sha256 cellar: :any, arm64_tahoe:       "6907281a4aa62b2396e9626de0957f675108920d9f2a0fbf1a5947d67f5101c7"
+    sha256 cellar: :any, arm64_sequoia:     "28dc91ed03c7eb3e413b2768857a5bee1544a4641639d31aa725e951bd9b39f4"
+    sha256 cellar: :any, arm64_linux:       "febd792b408cad59e0af64225395af89113d9e8c108b578f9beb4df912e67149"
+    sha256 cellar: :any, x86_64_linux:      "2ca1313d26f18d61969cb2d594d3439c8409deb945d6d78a4e96537dc7bf84d3"
   end
 
   depends_on "cmake" => [:build, :test]

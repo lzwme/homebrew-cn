@@ -13,6 +13,7 @@ class Qtmultimedia < Formula
     "GPL-3.0-only", # Qt6MultimediaTestLib
     "MIT",          # bundled signalsmith-stretch (Linux)
   ]
+  revision 1
   compatibility_version 1
   head "https://code.qt.io/qt/qtmultimedia.git", branch: "dev"
 
@@ -21,11 +22,11 @@ class Qtmultimedia < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "5360f6abcb3e5c4afcddc0f8d0bb3d503ae3cd5593621da30eb9b97d8e8ac8aa"
-    sha256 cellar: :any, arm64_tahoe:       "c2b1662131ebf71f7e9bd32cfe8dc0d94bf1893d416d8ad3508ec6ff6018b506"
-    sha256 cellar: :any, arm64_sequoia:     "feb9f54ba089493a413976792bbaf5dc0be8ae8f984e66b2b6ab7abc2209b075"
-    sha256 cellar: :any, arm64_linux:       "733c32f50cbf171427b55610c5e4cb594ca08a218df3bb828aecc0f49c0b42ee"
-    sha256 cellar: :any, x86_64_linux:      "51e13587df534a6e93d2e96aa8aaa41cfdfccb572c4f4940857860142cd38c3a"
+    sha256 cellar: :any, arm64_golden_gate: "4faf4cbe2cf29955823b1ea917ed787040c38a4c0c03bccb5f1a0b31dbe21ecb"
+    sha256 cellar: :any, arm64_tahoe:       "5442c1ba479b6b589d98c3429db5b03c6358fb136cd063e355edfc845cb9a76c"
+    sha256 cellar: :any, arm64_sequoia:     "cbe62faafd224dcf14272c815da062d05c8d881740b4cd08f9ec9e6266eef347"
+    sha256 cellar: :any, arm64_linux:       "8c1d8b0a8a386451f3aa4e36fe58f42dfe604771141f7d5736c6f4a05769e1ce"
+    sha256 cellar: :any, x86_64_linux:      "03734555e3a78307d9ede6b2e6479b37018c476c6c5ce7aeb4afe9a4be820935"
   end
 
   depends_on "cmake" => [:build, :test]

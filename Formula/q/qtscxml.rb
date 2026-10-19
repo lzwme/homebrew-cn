@@ -10,6 +10,7 @@ class Qtscxml < Formula
     { "GPL-3.0-only" => { with: "Qt-GPL-exception-1.0" } }, # qscxmlc
     "BSD-3-Clause", # *.cmake
   ]
+  revision 1
   compatibility_version 1
   head "https://code.qt.io/qt/qtscxml.git", branch: "dev"
 
@@ -18,11 +19,11 @@ class Qtscxml < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "baec4dc4ee72166852670c999761531ae872ed9f9b2d69f07018255679cd8efd"
-    sha256 cellar: :any, arm64_tahoe:       "81e03ebeb293035b6cf2536cc373ea19e4afd9b7db56912d41ec5f4cac4a75ec"
-    sha256 cellar: :any, arm64_sequoia:     "dab721dcc017ad7e1c4834e655458b8caa4bbd872e72c5ed3d031f037a112c8d"
-    sha256 cellar: :any, arm64_linux:       "3dd0e8a462ab90f6a9161b7d8ec3a3d13b2da0bf486808fb020ad920765ab544"
-    sha256 cellar: :any, x86_64_linux:      "3d39a325a1abec9349546fbe075af93b0ffda484b123b44011bb278392ac6c3b"
+    sha256 cellar: :any, arm64_golden_gate: "ab4689bca4c161984c13e17a81937b8f78f044cfd5d796ec249f2fe124323e95"
+    sha256 cellar: :any, arm64_tahoe:       "453d82cd3840a7666a88c045d49e80e119082e7d948e706ad79b392b0dd778e7"
+    sha256 cellar: :any, arm64_sequoia:     "923b34bffb3272ff906b8141ba06dbb2344c17902db5b009a901eb38423b84a4"
+    sha256 cellar: :any, arm64_linux:       "c1f882345ef2a066fa9d64692fb83e0d84609ecf9168ccce7081dd7b349b7703"
+    sha256 cellar: :any, x86_64_linux:      "ff5246eb256ac60c1c09d5205aed5a830a0d137187a4e87860ebdc33396703c2"
   end
 
   depends_on "cmake" => [:build, :test]

@@ -9,6 +9,7 @@ class Qtlottie < Formula
     "GPL-3.0-only",
     "BSD-3-Clause", # *.cmake
   ]
+  revision 1
   compatibility_version 1
   head "https://code.qt.io/qt/qtlottie.git", branch: "dev"
 
@@ -17,11 +18,11 @@ class Qtlottie < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "f4d2269cf7366c3db64c48bc2de2349e711695679e02f93c61d3c1c4698a3164"
-    sha256 cellar: :any, arm64_tahoe:       "3b7af01e392056e40594446fa2ad375b985f3b0bb88274630008a0a5da4526c3"
-    sha256 cellar: :any, arm64_sequoia:     "54c36ec8c568cdc1e13abe1c718cb936589598eb71869b97e53f20633c7b63d8"
-    sha256 cellar: :any, arm64_linux:       "070891135e4a10ad825a65f60a1102926633ab968ebc9f2938c6da6bf2d98d08"
-    sha256 cellar: :any, x86_64_linux:      "1d4fe4f122c1ed62f5061ed71e212dcace11f3d600dbe5ac385d8fc4a35ceaa3"
+    sha256 cellar: :any, arm64_golden_gate: "10e6085eb0014cd0b100dd00e34cd70295d2b56ce6a8cb6e242632183df8805f"
+    sha256 cellar: :any, arm64_tahoe:       "abf3075e4efd657f7bdd3eea1a0100d8026ba64fe28ba2a8dacb8dc24e6c93ba"
+    sha256 cellar: :any, arm64_sequoia:     "daad2907205829155b17f3292ba7c67f64b57575d7ffb48346b7eead1d523ba6"
+    sha256 cellar: :any, arm64_linux:       "76f0a75037cbf0e5d8d05686f603a5a081bae92a0105c9ff4b86ea9da79af1ed"
+    sha256 cellar: :any, x86_64_linux:      "50ddcd61d0e18ae013d0ef7204a2ea207f00e23b4471d2d4582eca91af011f8c"
   end
 
   depends_on "cmake" => [:build, :test]

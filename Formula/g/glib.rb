@@ -17,11 +17,12 @@ class Glib < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "ac3a58f1d2c1db194a3a5dc8484187d258b1a14e191772323937d17f5fae59fd"
-    sha256 arm64_tahoe:       "a5040035c3e7c6b406b6e8d100973d67dd655c0bf95cabfaf27beebc1d51a314"
-    sha256 arm64_sequoia:     "2c6049f0cc0592ea0967143a0256914dfe11f240b7aee2a5cd8b801dd1f3173f"
-    sha256 arm64_linux:       "1f946d18230376f18f958d3f0257261496f6882905a05f128089523b31ed271d"
-    sha256 x86_64_linux:      "34d5b26ae5146696ff16df027995c7118a051306177eb8c822a18aaddae12483"
+    rebuild 1
+    sha256 arm64_golden_gate: "5ccb7a549258ed35cddc280882a11a854bd0ef1b2329a1ce77e43e39d2d98e3a"
+    sha256 arm64_tahoe:       "56145c606a672f7b69845be6e16e8e6f1611052620e4638237116c177fe15c43"
+    sha256 arm64_sequoia:     "ce9568a335281cb6bd12c48fd89d7a118a046f9df16761c120826fdae116e468"
+    sha256 arm64_linux:       "3ce028927d1d01745efb1b6f83f1469e0bb967b801096a601b223030dfb87279"
+    sha256 x86_64_linux:      "ca0144204f1844125166d69208650c5b12c2fbd68bbd3fa904127c6e4fe8a3b1"
   end
 
   depends_on "bison" => :build # for gobject-introspection
@@ -30,7 +31,7 @@ class Glib < Formula
   depends_on "ninja" => :build
   depends_on "pkgconf" => [:build, :test]
   depends_on "python-setuptools" => :build # for gobject-introspection
-  depends_on "python@3.14" => :build
+  depends_on "python@3.15" => :build
   depends_on "pcre2"
 
   uses_from_macos "flex" => :build # for gobject-introspection

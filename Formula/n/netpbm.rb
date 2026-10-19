@@ -1,31 +1,20 @@
 class Netpbm < Formula
   desc "Image manipulation"
   homepage "https://netpbm.sourceforge.net/"
-  # Maintainers: Look at https://sourceforge.net/p/netpbm/code/HEAD/tree/
-  # for stable versions and matching revisions.
-  url "https://ghfast.top/https://github.com/jwilk-mirrors/netpbm/archive/1b46fe4049e370ddb84a0b1a8925fc1321f1ad60.tar.gz"
-  version "11.02.30"
-  sha256 "1be456548e2df865bb1225af0b31fbd4ae4085fea75841a05ab100fc7638963c"
+  # We track "super stable" release series as subversion checkouts are not allowed for stable url
+  url "https://downloads.sourceforge.net/project/netpbm/super_stable/10.86.51/netpbm-10.86.51.tgz"
+  sha256 "17d41387e7343da10925690b813ba91c6bd901b417e51500ba4272556a4e5302"
   license "GPL-3.0-or-later"
-  version_scheme 1
-  compatibility_version 1
+  version_scheme 2
+  compatibility_version 2
   head "https://svn.code.sf.net/p/netpbm/code/trunk"
 
-  livecheck do
-    url "https://sourceforge.net/p/netpbm/code/HEAD/log/?path=/stable"
-    regex(/Release\s+v?(\d+(?:\.\d+)+)/i)
-    strategy :page_match
-  end
-
-  no_autobump! because: :incompatible_version_format
-
   bottle do
-    rebuild 1
-    sha256 arm64_golden_gate: "2bb73565c2911bdee88e9a226f23624c9fe4b4a39208e76564ef866b4d33d912"
-    sha256 arm64_tahoe:       "fdbe8b6d5b08ede5472be2be177d83a669b3e21303da72a2d8f0a0d7cacc0323"
-    sha256 arm64_sequoia:     "0e11b57ed36c5a8c460c26bbc845b4a7c48e7ad96a7ce4b5a8a0c43a74158870"
-    sha256 arm64_linux:       "bda397bb2cad3e20df64e739d98af18f36cef8676bfee7eb9b94419eca60ee9a"
-    sha256 x86_64_linux:      "6aa00ede2592c4361312c001a60dcbd4349e3d7f2b63400426aada91ccf51d9c"
+    sha256 arm64_golden_gate: "ed9cb4f4f4594ef2c5d2afd7e5ba7bea80bd9d1bbb8d042302385fdce5caa05e"
+    sha256 arm64_tahoe:       "3e19506a833bc9090193d61b2c19b348a02ab377d743824f9d16db9e57ea1726"
+    sha256 arm64_sequoia:     "5c3d55c105decbc650943223197f02a6a35d08c9011a3ed8ce537332a1ff842c"
+    sha256 arm64_linux:       "cb22b0c20d45f0a62b274b8ce0d7c30d1231142f110cd8260007b7bd3f1b8bf6"
+    sha256 x86_64_linux:      "4d4afc6d0bc8f5806f2128fd96e868047b5f75b79e90b38f9367d8bb2ea47f47"
   end
 
   depends_on "pkgconf" => :build
@@ -43,20 +32,6 @@ class Netpbm < Formula
   end
 
   conflicts_with "jbigkit", because: "both install `pbm.5` and `pgm.5` files"
-
-  resource "html" do
-    # Rolling release, latest revision also documents previous software versions
-    # Version matches the upstream SVN revision
-    url "https://ghfast.top/https://github.com/jwilk-mirrors/netpbm/archive/c40c8579cba246f61135ef690eb117be4377eb02.tar.gz"
-    version "5348"
-    sha256 "32eb6dbee627533ce40b4f755e1f383f0e207af08cf5f2dff8a6abc2c74774d1"
-
-    livecheck do
-      url "https://sourceforge.net/p/netpbm/code/HEAD/log/?path=/userguide"
-      regex(/\[r?(\d+)\]/i)
-      strategy :page_match
-    end
-  end
 
   deny_network_access!
 
@@ -107,18 +82,6 @@ class Netpbm < Formula
     # Generate unversioned library symlink (upstream does not do this)
     libnetpbm = lib.glob(shared_library("libnetpbm", "*")).reject(&:symlink?).first.basename
     lib.install_symlink libnetpbm => shared_library("libnetpbm")
-
-    resource("html").stage buildpath/"userguide"
-    make_args = %W[
-      USERGUIDE=#{buildpath}/userguide
-      -f
-      #{buildpath}/buildtools/manpage.mk
-    ]
-    mkdir buildpath/"netpbmdoc" do
-      system "make", *make_args, "manpages"
-      [man1, man3, man5].map(&:mkpath)
-      system "make", "MANDIR=#{man}", *make_args, "installman"
-    end
   end
 
   test do

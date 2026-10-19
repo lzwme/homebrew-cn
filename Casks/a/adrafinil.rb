@@ -1,6 +1,6 @@
 cask "adrafinil" do
-  version "1.13.0"
-  sha256 "538e8aa21bdcb34d93bb7136b22dadea51a15e7223f65348dd9f2b4e0f6c8704"
+  version "1.13.1"
+  sha256 "89eb7c82f0a706235eed5ef13ce5700e6fd12d2e5155cce5d1179decd50dfa0b"
 
   url "https://ghfast.top/https://github.com/kageroumado/adrafinil/releases/download/v#{version}/Adrafinil-#{version}.dmg"
   name "Adrafinil"
@@ -15,6 +15,7 @@ cask "adrafinil" do
   uninstall quit: "glass.kagerou.adrafinil"
 
   zap trash: [
+    "~/Library/Application Support/Adrafinil",
     "~/Library/Caches/glass.kagerou.adrafinil",
     "~/Library/Preferences/glass.kagerou.adrafinil.plist",
     "~/Library/Saved Application State/glass.kagerou.adrafinil.savedState",

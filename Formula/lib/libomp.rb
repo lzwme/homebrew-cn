@@ -12,11 +12,12 @@ class Libomp < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "5a881ebfbca7088ccc37b1fe67c8cc204af6c51e474cf3829c07ed562983e5d0"
-    sha256 cellar: :any, arm64_tahoe:       "16242d8803a0f31370b94f685a219c83783317748a76f02b9144cd6ce7cfb20b"
-    sha256 cellar: :any, arm64_sequoia:     "b2aee1d6ce67ec1c8d597ce79eee46583531f3629491cb5454eead3d2a7a739b"
-    sha256 cellar: :any, arm64_linux:       "9a1828a9b58dcd3c30c97bf3b9dbcdc1e5bbc4af463e6eb344d7d7a2f8796908"
-    sha256 cellar: :any, x86_64_linux:      "3c33d702dfec3414e7cb2e551ef556eaa5f03d479e7ade6df6b1c9c66385b2c0"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "69b5e4dc5cb9c4e7cd1afd3628a5a360f6cd9525cc6f9a7b60703f4968b26c01"
+    sha256 cellar: :any, arm64_tahoe:       "936c7fb255125af74a9a6b2a324011eeb03ce6cc39bb976ab29d0f4ff69bc28c"
+    sha256 cellar: :any, arm64_sequoia:     "49d22905a734647ee6ab31863a44fdced713bb5a5ca0d44ed46031e7f17e5730"
+    sha256 cellar: :any, arm64_linux:       "a909c496bdee1f0dc8c57087e979e778b4f41a1bc3bc0580a4e5852e47461d4a"
+    sha256 cellar: :any, x86_64_linux:      "944acab051142d152bdde9ab1add7e9b74a4eec507f85aec2c3258712a4e8dd5"
   end
 
   # Ref: https://github.com/Homebrew/homebrew-core/issues/112107
@@ -26,7 +27,7 @@ class Libomp < Formula
   uses_from_macos "llvm" => :build
 
   on_linux do
-    depends_on "python@3.14"
+    depends_on "python@3.15"
   end
 
   deny_network_access!

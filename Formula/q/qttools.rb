@@ -11,6 +11,7 @@ class Qttools < Formula
     "BSD-3-Clause", # *.cmake
     "BSL-1.0", # bundled catch2
   ]
+  revision 1
   head "https://code.qt.io/qt/qttools.git", branch: "dev"
 
   livecheck do
@@ -18,11 +19,11 @@ class Qttools < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "08a0d618ff3eb5ccf7b08420aa7cc56d01b757c6df6a21f8efd8d7e33059e876"
-    sha256 cellar: :any, arm64_tahoe:       "5d85af23fb8da1cedc8536b997d01e2074ba32e3238d336a4745fccc6f92efa0"
-    sha256 cellar: :any, arm64_sequoia:     "9375ade0c4418ff2c2a0bb99596c1bad39a61ddc6646ae6f17b3fc23124df5be"
-    sha256 cellar: :any, arm64_linux:       "cd4ad31f272acfa96ee5289397f8f1a3b55eb913cef43884b763258d25554762"
-    sha256 cellar: :any, x86_64_linux:      "deffd266aeec3030369eac0d6bf8c1525d1db168c4f01abe8296709863e6e12c"
+    sha256 cellar: :any, arm64_golden_gate: "7dfee97bbb7d1b4a2474e3449f2a2d0e836439bac5da1de4cb672e0b1eb4215a"
+    sha256 cellar: :any, arm64_tahoe:       "f04dfe220eb9a4bf083001e7885785fd4c177168a346f7243a87bb07818ca3b3"
+    sha256 cellar: :any, arm64_sequoia:     "dda285ceee6e4547ed2da70b80089df0946a812f31747513901c09c35e53cf00"
+    sha256 cellar: :any, arm64_linux:       "962a181d0da98cce3852b61139fe7f9134f45fccf19428fc9ce9d6b7eac33483"
+    sha256 cellar: :any, x86_64_linux:      "0526289e13b3fee48968d455f82d32856b257fb668c17b28c40f88cd912dcb0b"
   end
 
   depends_on "cmake" => [:build, :test]

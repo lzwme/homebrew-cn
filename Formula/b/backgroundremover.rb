@@ -6,15 +6,14 @@ class Backgroundremover < Formula
   url "https://files.pythonhosted.org/packages/01/23/b6db66a9a7ad24e34581bae7910e77e16fce103fd9658bd5b6aef4e5effd/backgroundremover-0.4.5.tar.gz"
   sha256 "b9fe5ebaa234d43bfae02a2f28734e589ee895a861e55c02f6f1a41518587852"
   license "MIT"
-  revision 2
+  revision 3
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_golden_gate: "507ff0285837c051c372035fbe96260845ca991d6af036a2685dac9f835112fe"
-    sha256 cellar: :any, arm64_tahoe:       "d6863c2209bb05130a0dbcb1be13fccd4378d967d92b59154267b6563d3bc135"
-    sha256 cellar: :any, arm64_sequoia:     "2787164a631abad0a719166da17b43697fc300600e277f9c8e13e130529f20cc"
-    sha256 cellar: :any, arm64_linux:       "1ede254655e6a9ac4c56b197a771f61bda4e8f46f6204a095cb58e76a8bb56a3"
-    sha256 cellar: :any, x86_64_linux:      "0fe1fd69e87cd7d1e63e49c29d0a0b398d774c6a8e1f572102ec116eefab1ba6"
+    sha256 cellar: :any, arm64_golden_gate: "569b20528f93a651d066ad2e1ea2b40891bf9ef08ec1637b5ea52ee8de2392cd"
+    sha256 cellar: :any, arm64_tahoe:       "8ddeb0fe7753974d2f594b939f831a77cdfbb231e7d28113533d1fad8dce5a1d"
+    sha256 cellar: :any, arm64_sequoia:     "1d31c5ea586142985af2a5d5a6dbe23175141ce1f81af07e8888d36f3ab16878"
+    sha256 cellar: :any, arm64_linux:       "348fa66d4dd9c27ca2e0be759bdc768d63dfd662968dbcf96bb7f1a6de860326"
+    sha256 cellar: :any, x86_64_linux:      "ac02020d59db0ad0e5d25cc8329e9c0a4dde766850f8fedc050681194ffc2f2b"
   end
 
   depends_on "cmake" => :build
@@ -26,7 +25,7 @@ class Backgroundremover < Formula
   depends_on "llvm@22"
   depends_on "numpy" => :no_linkage
   depends_on "pillow" => :no_linkage
-  depends_on "python@3.14"
+  depends_on "python@3.15"
   depends_on "pytorch" => :no_linkage
   depends_on "scipy" => :no_linkage
   depends_on "torchvision" => :no_linkage

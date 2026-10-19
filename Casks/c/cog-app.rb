@@ -1,6 +1,6 @@
 cask "cog-app" do
-  version "3790,a46091bae"
-  sha256 "cf66c6bed9e99e7f18651afa73c9ec9e777ec785ebb3918ff89b583222c49ca1"
+  version "3810,ef45e7982"
+  sha256 "84090bbee6169219ddfdead16df990644f432fd8a526abf9b63cd3b22aa3c028"
 
   url "https://cogcdn.cog.losno.co/Cog-#{version.csv.second}.zip"
   name "Cog"
@@ -26,9 +26,12 @@ cask "cog-app" do
   uninstall quit: "org.cogx.cog"
 
   zap trash: [
+    "~/Library/Application Scripts/group.org.cogx.cog",
     "~/Library/Application Scripts/org.cogx.cog",
     "~/Library/Application Support/Cog",
     "~/Library/Caches/org.cogx.cog",
+    "~/Library/Containers/org.cogx.cog",
+    "~/Library/Group Containers/group.org.cogx.cog",
     "~/Library/Preferences/org.cogx.cog.plist",
   ]
 end

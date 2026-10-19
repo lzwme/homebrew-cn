@@ -7,11 +7,12 @@ class SoftServe < Formula
   head "https://github.com/charmbracelet/soft-serve.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "f4f9266aa23b1fdf9cb12adc147ce74c7ada2578d7303ef5b1d54ccff2a92b51"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "da16b731d451389d9ee179c86ee459ef89821fd344781534be776a1ebbbb88fa"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "1e8d53da103a8b8bcba0a646820956846120c3bc2bbbb6f2a70f3551ff6f0422"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "b30fca717c4e56c414f19f82ce7065afc18952b15edde9b1ed321d991fdff196"
-    sha256 cellar: :any,                 x86_64_linux:      "42d4a2c7c976ca4f3d44d1cbc39ce7ffbcba57cae0192c8d3e9546d032c79807"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "cd6ba5b0d65601554d12fb60a2bcf7336223875539f0bc3173de13b54c4a5882"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "faf41f54c5439d3828db70fcfddc21b0955d8f5a3ef465675b9a6e4559154f6a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "cb54ea4504971f6a6dc7f59a51ccf4bf999f1e697a000553a41ec09b0fa131ef"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "fb37fa67fe12d6dfd52412c1fe6f5be4cfb79cd761eefb35d3881b97e0625602"
+    sha256 cellar: :any,                 x86_64_linux:      "dad6677fbfa8ce06563c7cc29757e30cb7163b536211b52bf08f6b31bf27b84b"
   end
 
   depends_on "go" => :build
@@ -25,6 +26,7 @@ class SoftServe < Formula
   def install
     ldflags = "-X main.Version=#{version} -X main.CommitSHA=#{tap.user} -X main.CommitDate=#{time.iso8601}"
     system "go", "build", *std_go_args(ldflags:, output: bin/"soft"), "./cmd/soft"
+    generate_completions_from_executable(bin/"soft", shell_parameter_format: :cobra)
   end
 
   test do

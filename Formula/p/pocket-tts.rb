@@ -6,15 +6,15 @@ class PocketTts < Formula
   url "https://files.pythonhosted.org/packages/56/e4/08262e47704291a99c211515b17e754d4891a899323a8171e220f468e45b/pocket_tts-3.3.0.tar.gz"
   sha256 "997b3dd39d43c0555cdd9b8efd72ac926dbfcd250fb5f3575aa29c33db5b6621"
   license "MIT"
-  revision 1
+  revision 2
   head "https://github.com/kyutai-labs/pocket-tts.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "a95221fd37ef3c31035baf5665c5eee6fda203d69b6812cb7d9debc3252dfe9c"
-    sha256 cellar: :any, arm64_tahoe:       "9922646470b3114b11dc5ec8bba98e70b94f7765da153666eee3833aa9e87b83"
-    sha256 cellar: :any, arm64_sequoia:     "76767390c1d63a5ab94f1f3bd1326e44a823d43a71a49ec7137e38f1d4546931"
-    sha256 cellar: :any, arm64_linux:       "5b04c936e3d8104de72cc565e6146d43999b421ae0dcab09d96c1098693d74f2"
-    sha256 cellar: :any, x86_64_linux:      "bb4e4531eb8e64fe640e0c3be3d8e51dacec87fba340dc31caa572514bb09725"
+    sha256 cellar: :any, arm64_golden_gate: "153cbce5664be5c87ac91560e2f32aecad729f4075be2be21156670f53e7b60e"
+    sha256 cellar: :any, arm64_tahoe:       "92fd409f23cc430b12463314a4e30a61c350cc1e56453d5658be5de1e9957da5"
+    sha256 cellar: :any, arm64_sequoia:     "a8cd3d8d93b09a29bc3fc10877582ea3e6c8297a2e31914638a144f6bef63b4c"
+    sha256 cellar: :any, arm64_linux:       "f6c4e02b8b4f60dbfeb39399f35170bddc1a7f14ecbe907db1be426bd5feb7d5"
+    sha256 cellar: :any, x86_64_linux:      "dd9e60fa965782ef581ae261e754a3e52a6088f8fe324665a00f245269779f50"
   end
 
   depends_on "cmake" => :build
@@ -23,7 +23,7 @@ class PocketTts < Formula
   depends_on "certifi" => :no_linkage
   depends_on "libyaml"
   depends_on "pydantic" => :no_linkage
-  depends_on "python@3.14"
+  depends_on "python@3.15"
   depends_on "pytorch"
   depends_on "scipy" => :no_linkage
 
@@ -184,6 +184,9 @@ class PocketTts < Formula
 
     # `tokenizers` builds a PyO3 extension through maturin.
     ENV.append_to_rustflags "-C link-arg=-Wl,-undefined,dynamic_lookup"
+
+    # Allow Python 3.15
+    inreplace "pyproject.toml", 'requires-python = ">= 3.10,<3.15"', 'requires-python = ">= 3.10"'
 
     venv = virtualenv_install_with_resources(without: ["hf-xet", "sentencepiece"])
 

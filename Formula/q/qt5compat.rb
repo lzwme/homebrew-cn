@@ -10,6 +10,7 @@ class Qt5compat < Formula
     "BSD-2-Clause", # src/core5/codecs
     "BSD-3-Clause", # *.cmake
   ]
+  revision 1
   compatibility_version 1
   head "https://code.qt.io/qt/qt5compat.git", branch: "dev"
 
@@ -18,11 +19,11 @@ class Qt5compat < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "c2cef4e1c4dfce293af55b4c49e8e7960f9a08bc884f94ade782baeb697fbcdd"
-    sha256 cellar: :any, arm64_tahoe:       "df469b4f3bca9d05a183498087fb699a54ca9a974a46576774ca6bd28e54165f"
-    sha256 cellar: :any, arm64_sequoia:     "4c8e2ef0c6d89ddc1712645df48853d16e7a21b6bd40630e6a154c162eb111e2"
-    sha256 cellar: :any, arm64_linux:       "0d672511952d432923d8b2a8f90228a133a662f58832842e0bb442efa26f0e28"
-    sha256 cellar: :any, x86_64_linux:      "dd80a023c11e9695424f84aa7a7fc8cc0d37c744e2bfb7d92758dd6c2bdae578"
+    sha256 cellar: :any, arm64_golden_gate: "b146ea7b9becf02815f78e768bd5b0d89bf6e8df7ad8cb36253d79c79d49035c"
+    sha256 cellar: :any, arm64_tahoe:       "756b5c3de7a8c689f0be8c676502f8e7afd64e7e55a41416e62146f9bb755175"
+    sha256 cellar: :any, arm64_sequoia:     "12215ab971d52b87e6842b83cf604942d90134aeef9a5f9dd532cebe4b6b1404"
+    sha256 cellar: :any, arm64_linux:       "b0a861b4dbae500fb6fadc4260a834fe69c2f9bc39fceb0fa2217dabde38253f"
+    sha256 cellar: :any, x86_64_linux:      "0ff1f3d5c9abb68a915a1998d9713a7375437aaceca23cac1109d0670baf9fa4"
   end
 
   depends_on "cmake" => [:build, :test]

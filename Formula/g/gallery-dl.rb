@@ -3,18 +3,17 @@ class GalleryDl < Formula
 
   desc "Command-line downloader for image-hosting site galleries and collections"
   homepage "https://codeberg.org/mikf/gallery-dl"
-  url "https://files.pythonhosted.org/packages/86/65/9fb8b494ea145a7148e64ab6a577adca0413b0f9e90b422e8349cdb95a2f/gallery_dl-1.32.16.tar.gz"
-  sha256 "bacd7d63423ad45db98704fedafa1302343db6f250f9e9f69a9e142754ed9e37"
+  url "https://files.pythonhosted.org/packages/4e/7e/3ba52253f4edc121c2e5d4cc1bbc613c29822acd3435eecc54e6308157a5/gallery_dl-1.32.17.tar.gz"
+  sha256 "7e49b3140d23b88e020ff24049dfac59edd855d6fdfb11bc725ad44b0335bbb6"
   license "GPL-2.0-only"
   head "https://codeberg.org/mikf/gallery-dl.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_golden_gate: "095ae9bd32e0dd483e5de37a099ae4b46d4fd33307555fe49efd04fdf6f81031"
-    sha256 cellar: :any, arm64_tahoe:       "7f9fd54ae4b957c03abb4a845532f9558953e66a7e0424e7fbe632737faa01e0"
-    sha256 cellar: :any, arm64_sequoia:     "718b3cd866d4779b7f9ccc6fcd64caa4e40003574727c3b913117f560a291bb8"
-    sha256 cellar: :any, arm64_linux:       "09affa1017e84f98338f11bfd0f1772da771b9ff71e69342c0b442acff73bb93"
-    sha256 cellar: :any, x86_64_linux:      "299f661510b57ca72471572a97e1cdf91af633f10cd1c4c9c6c2055797130566"
+    sha256 cellar: :any, arm64_golden_gate: "2343bea0d4405b6aa63ff27cab0c544d8bd86d359e345973f2d47d4056b3cf78"
+    sha256 cellar: :any, arm64_tahoe:       "07210af70cf13f08ff430de66880a6933e9094317ba529d4ada16c78cafa70cd"
+    sha256 cellar: :any, arm64_sequoia:     "0d91966dba93929bc6c42a83e7cae2e5151f8b6925d34280570c6ad89caa011d"
+    sha256 cellar: :any, arm64_linux:       "55f7116cf36536f4e617be6560e7be8668ea7778de208df9ef22541fd0c7c896"
+    sha256 cellar: :any, x86_64_linux:      "4dfc4d37bd6a7068b0113e4b9a966401819adbebccd071d36f238a3db7eea292"
   end
 
   depends_on "certifi" => :no_linkage
@@ -63,8 +62,8 @@ class GalleryDl < Formula
   end
 
   resource "pycryptodomex" do
-    url "https://files.pythonhosted.org/packages/4c/25/214ea825a9031f5af2c8b2506ee16701a2560d4712165dd00098dd527bcb/pycryptodomex-3.24.0.tar.gz"
-    sha256 "0428f19f13452c6b89bbaf2c530f84f369873811dfa77f0cee0da4f40fb0474f"
+    url "https://files.pythonhosted.org/packages/f4/e7/50e72301e32acb73a314e663c2014e1ddefc019d5f434ff14ec89861d664/pycryptodomex-3.24.1.tar.gz"
+    sha256 "09081666ffc599976c0b8b29caf2cf82212c0f05bed233c8f8ed53e4f6e1d356"
   end
 
   resource "pysocks" do
@@ -88,8 +87,8 @@ class GalleryDl < Formula
   end
 
   resource "truststore" do
-    url "https://files.pythonhosted.org/packages/53/a3/1585216310e344e8102c22482f6060c7a6ea0322b63e026372e6dcefcfd6/truststore-0.10.4.tar.gz"
-    sha256 "9d91bd436463ad5e4ee4aba766628dd6cd7010cf3e2461756b3303710eebc301"
+    url "https://files.pythonhosted.org/packages/ee/9f/c5201d42a484c061e528825fc8e2d565f5abd50a4ced6fb7d29c4ec99b2b/truststore-0.10.5.tar.gz"
+    sha256 "30d36967ccaded5cbb38d602c433f53600036c79d502f4533a49b60a03bbefcd"
   end
 
   resource "urllib3" do

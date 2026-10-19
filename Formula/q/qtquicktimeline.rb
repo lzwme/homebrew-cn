@@ -9,6 +9,7 @@ class Qtquicktimeline < Formula
     "GPL-3.0-only",
     "BSD-3-Clause", # *.cmake
   ]
+  revision 1
   compatibility_version 1
   head "https://code.qt.io/qt/qtquicktimeline.git", branch: "dev"
 
@@ -17,11 +18,11 @@ class Qtquicktimeline < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "53b25fa6dc13127561a3bfd910dd9bf28b77898b2b11f44f01a77d931c18c00d"
-    sha256 cellar: :any, arm64_tahoe:       "223b501a5c82c4c995a8cbab0c224fe1c21e7e2e6fbdae4faf612030b7abd52a"
-    sha256 cellar: :any, arm64_sequoia:     "61747d337bd1fc584f6e551ce8fbb48161149fad2029953e672aaeb0af6ac2af"
-    sha256 cellar: :any, arm64_linux:       "570812fab067fd681283266c27a9ffcabbfec643f74f9ea5c5d5e321e3026b61"
-    sha256 cellar: :any, x86_64_linux:      "e0faf8ddb1b372f5dd51ac5a3557b751ce38542f6d46b12d57c07eed075e3690"
+    sha256 cellar: :any, arm64_golden_gate: "8e1c25ac92af0b667d7a65f85ede01a78ebb71026bb56efd161c6cd23d435f38"
+    sha256 cellar: :any, arm64_tahoe:       "df48d1792b7b60237609af44156cdf90c835a419643f341a5b103280a8bbbcc3"
+    sha256 cellar: :any, arm64_sequoia:     "c8287d3680eb2a02d3cb5245e4961b64de4924c5ba849e4a3c6ca9600e83ce4b"
+    sha256 cellar: :any, arm64_linux:       "81a9f5570175c47db4daa2b83bb761994e0d1c1a296a2954d38bd47be60046ad"
+    sha256 cellar: :any, x86_64_linux:      "fe3893f4aade36ed82423f8af512eb6de663bc7dc949221006ea13108cc6e903"
   end
 
   depends_on "cmake" => :build

@@ -10,6 +10,7 @@ class Qtquick3dphysics < Formula
     { "GPL-3.0-only" => { with: "Qt-GPL-exception-1.0" } }, # cooker
     "BSD-3-Clause", # bundled PhysX; *.cmake
   ]
+  revision 1
   compatibility_version 1
   head "https://code.qt.io/qt/qtquick3dphysics.git", branch: "dev"
 
@@ -18,11 +19,11 @@ class Qtquick3dphysics < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "cdd3f60d8cb64188034c4e5d507c068e8d1aebbae0209c3072951b7b60027e04"
-    sha256 cellar: :any, arm64_tahoe:       "0c257a1dabae94318db465d5b180d8a5007413de3c72af52a22251b93f55982a"
-    sha256 cellar: :any, arm64_sequoia:     "3064e30a85de56eaa6ef4891f18cf0ea25447d821748a4c2be8ff58ddc9b9dbc"
-    sha256 cellar: :any, arm64_linux:       "e18d309050233df6552c1cd3437e27e4afb2886b2c32d87e1fc1b4668d8146ce"
-    sha256 cellar: :any, x86_64_linux:      "978992a2e8a3ca84e087b920e69380049222197e7eb1ef4f2554a8bdb9f300d1"
+    sha256 cellar: :any, arm64_golden_gate: "832491a2ac014c14a2c4698002f92d4ab7f6ee802253fbca6ef5745e6c66d3e6"
+    sha256 cellar: :any, arm64_tahoe:       "9854eac2835edfa18987f713ddf0fe2b84d339b4561480b5a7f3fc712929f9d9"
+    sha256 cellar: :any, arm64_sequoia:     "1ce3eb673a6124ef352d5988050484a37c01ffc8ffbd3a2fa3832415c4ac9be2"
+    sha256 cellar: :any, arm64_linux:       "7d2eb79526cd3b61d283f0b008247d254981a4afd2d4d53c46bd464a25bf59e3"
+    sha256 cellar: :any, x86_64_linux:      "74967a22f58a5f897af08e83305e50ce34d869e1a7c5584e84ea8823f9a4d841"
   end
 
   depends_on "cmake" => :build

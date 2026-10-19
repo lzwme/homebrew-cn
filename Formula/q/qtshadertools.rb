@@ -13,6 +13,7 @@ class Qtshadertools < Formula
                "GPL-3.0-or-later" => { with: "Bison-exception-2.2" }] }, # bundled glslang
     "BSD-3-Clause", # *.cmake
   ]
+  revision 1
   compatibility_version 1
   head "https://code.qt.io/qt/qtshadertools.git", branch: "dev"
 
@@ -21,11 +22,11 @@ class Qtshadertools < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "9c3e9e5ad2cf8be1eda40730a426156ed30a3335d35bbe4c51a2e183b5bdca1c"
-    sha256 cellar: :any, arm64_tahoe:       "0dea8fe0ada58edff01410a8c13023b0598f8c663da8adf7d3cc63d1680a5ef5"
-    sha256 cellar: :any, arm64_sequoia:     "2937ef88f11c0de2d0c7d205564fd5f6aff973f1ec4cceda8f29cac6af2b7810"
-    sha256 cellar: :any, arm64_linux:       "408d8d0a7e6ab7d3f38695779332d5194cf249c671e3300eb9fb27624cdca472"
-    sha256 cellar: :any, x86_64_linux:      "f7ad630934cb32756fac4138d07256607d6e001281b5a9d9c0c0b3c6c40f4ce4"
+    sha256 cellar: :any, arm64_golden_gate: "ce0f6de39dc8979ba041360ab5fcbd5aa585f573e60dbb775d4ba8ef600cb50f"
+    sha256 cellar: :any, arm64_tahoe:       "ce8f56aa405011bebcaa4dcccefc310cb4b241396dcc2af4db3cefdd071ab44e"
+    sha256 cellar: :any, arm64_sequoia:     "5666a2efc40797b9e07f47175c8552025b68a581ac15427f7b432c23fdbd6248"
+    sha256 cellar: :any, arm64_linux:       "14f149ad4f3022336a96d8464de84ffbb8d95b98d3f63dba17efb50a9ad5a725"
+    sha256 cellar: :any, x86_64_linux:      "d441c46cbff4308b951820fa0183679d73e1a7ef8e73dcbd9cf27a5b6ab96997"
   end
 
   depends_on "cmake" => :build

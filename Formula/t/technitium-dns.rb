@@ -1,16 +1,16 @@
 class TechnitiumDns < Formula
   desc "Self host a DNS server for privacy & security"
   homepage "https://technitium.com/dns/"
-  url "https://ghfast.top/https://github.com/TechnitiumSoftware/DnsServer/archive/refs/tags/v15.6.1.tar.gz"
-  sha256 "1e288eb4922066a6fb04aab92b1081ff1bb4384351b05413a9ca032134236491"
+  url "https://ghfast.top/https://github.com/TechnitiumSoftware/DnsServer/archive/refs/tags/v15.6.2.tar.gz"
+  sha256 "7fe162a7c1db828ca3ce0d754e9739118e5d666ddac526d2302509b47c3d513b"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "ab81e811297317d900503f3ce24e438dd0a01bffdcb0f05907e4a3da18a1c50c"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "b23eaaf97de4ae815b45b58fb8bdbb1cdee376d69dce816f2b52a22d054ef4a0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "962927e5dd9ae49d96ab935c11284a50950cc3d9d126d427b8fc867c6ec50d42"
-    sha256 cellar: :any,                 arm64_linux:       "4b860ee34fe4541b9f3f07f59ca33c2a0eddb4c9ec2c232a4075dd659754485a"
-    sha256 cellar: :any,                 x86_64_linux:      "866c264c4482b2209b6e6f29c1d099adb08cc183fd77eaab140f153dd4bee04d"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "1bd7da4ce294a6024bb095e6cbbbaa03c3f6a855b247bda743f44ef71dbb876c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "d6211a64ce374fa65aaf8896ed85c904167bd578f2af61f23dc37ef0e12e38e6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "126e5b530051886c59fb5f977d7414d958aded471a5f005c63e41bb1f2bd5ead"
+    sha256 cellar: :any,                 arm64_linux:       "b1759001fe356e46056825ebd041ddfc8ba8fe44951a85252f4718c898e03943"
+    sha256 cellar: :any,                 x86_64_linux:      "3edf0c1262bf7d89558dc6aa0a1e4b65fab7b4d684c3855916ef4be089465ce3"
   end
 
   depends_on "dotnet"
@@ -23,6 +23,7 @@ class TechnitiumDns < Formula
 
   def install
     ENV["DOTNET_CLI_TELEMETRY_OPTOUT"] = "1"
+    ENV["XDG_RUNTIME_DIR"] = buildpath
 
     dotnet = Formula["dotnet"]
     args = %W[
@@ -59,6 +60,7 @@ class TechnitiumDns < Formula
   test do
     # The sandbox denies FSEvents, so .NET's config file watcher would hang
     ENV["DOTNET_USE_POLLING_FILE_WATCHER"] = "1" if OS.mac?
+    ENV["XDG_RUNTIME_DIR"] = testpath
 
     dotnet = Formula["dotnet"]
     # Start the DNS server

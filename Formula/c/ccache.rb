@@ -1,19 +1,18 @@
 class Ccache < Formula
   desc "Object-file caching compiler wrapper"
   homepage "https://ccache.dev/"
-  url "https://ghfast.top/https://github.com/ccache/ccache/releases/download/v4.14.1/ccache-4.14.1.tar.xz"
-  sha256 "29f10de481ac2c41c91bfabead63d803bd2fe823e09752aade5b0b8704cc4f30"
+  url "https://ghfast.top/https://github.com/ccache/ccache/releases/download/v4.14.2/ccache-4.14.2.tar.xz"
+  sha256 "0feb2707d9cb48885abb950e5d629e85f57fa79a2439cbbdfa681d6c3dc5f0dc"
   license "GPL-3.0-or-later"
-  revision 2
   compatibility_version 1
   head "https://github.com/ccache/ccache.git", branch: "master"
 
   bottle do
-    sha256 arm64_golden_gate: "843995a663c32acc5c87d4a88c1627e36cf461fe6c475e5242d0ce6741980686"
-    sha256 arm64_tahoe:       "cab61162fe5c94fdf6653b1ab79fc31e07e2da727b27f85177eb04d594f7c583"
-    sha256 arm64_sequoia:     "7414b0b6787f998cbaf6bc922a8cf9da64ebe4adc786cf6f9ae64f211704662e"
-    sha256 arm64_linux:       "8ddf47b2c127a3f13acf1a8d45dfa5e1bc0217acb5bacb27e54910bff137d6da"
-    sha256 x86_64_linux:      "fc6ea73487bdf2ca1378e6217abb8daf1fd38c1e25f226c56a7572494e16b3c0"
+    sha256 arm64_golden_gate: "8a3df0218130b3a456cc55e8d795b95c150b5c4a3ab25dc5bf234445ce3ea12b"
+    sha256 arm64_tahoe:       "3ac7f3e3e0373e379d33c39483af4b9a8cf7ad22c2807992198fd7d9f0bde5ec"
+    sha256 arm64_sequoia:     "6c45bb9f0429eb114b09e8ea5d3225cb895d90db31da3dc55b5e4d18b48bc54c"
+    sha256 arm64_linux:       "37719daf3f2ebb1a9ca05b3525f5f4fb502632ba29d3e3a4389990c93e877842"
+    sha256 x86_64_linux:      "20d1d5d4127c06da376c7c8c2e83617a7f7f6f2344c5af6b1c3e0183c2125ae5"
   end
 
   depends_on "asciidoctor" => :build
@@ -31,17 +30,27 @@ class Ccache < Formula
   depends_on "xxhash"
   depends_on "zstd"
 
-  on_macos do
-    depends_on "gcc" => :build
+  on_linux do
+    depends_on "elfutils" => :build
+    depends_on "zlib-ng-compat"
   end
 
-  on_linux do
-    depends_on "zlib-ng-compat"
+  # Workaround to allow running tests with Xcode 27 / LLVM 23 after
+  # https://github.com/swiftlang/llvm-project/commit/1e4f2519930f8756f49865096636954a33334217
+  # https://github.com/llvm/llvm-project/commit/aba18cf1cc65d5333940c4299251d986f66dee9a
+  patch do
+    on_macos do
+      file "Patches/ccache/fix-tests-xcode27.diff"
+      type :unofficial
+    end
   end
 
   deny_network_access!
 
   def install
+    # Homebrew-specific workaround due to macOS sandbox blocking Unix socket in /tmp
+    inreplace "test/CMakeLists.txt", "addtest(remote_helper)", "# \\0" if OS.mac?
+
     system "cmake", "-S", ".", "-B", "build",
                     "-DCMAKE_INSTALL_SYSCONFDIR=#{etc}",
                     "-DENABLE_IPO=TRUE",
@@ -55,15 +64,7 @@ class Ccache < Formula
     # (especially with IPO enabled), adds negligible time to the build process, and we don't actually test
     # this formula properly in the test block since doing so would be too complicated.
     # See https://github.com/Homebrew/homebrew-core/pull/83900#issuecomment-90624064
-    #
-    # FIXME: Running test with clang adds SDKSettings.json which causes test failures
-    # and also hit test.remote_helper after a brew change.
-    test_cc = if OS.mac?
-      formula_opt_bin("gcc")/"gcc"
-    else
-      DevelopmentTools.locate(DevelopmentTools.default_compiler)
-    end
-    with_env(CC: test_cc) do
+    with_env(CC: DevelopmentTools.locate(DevelopmentTools.default_compiler)) do
       system "ctest", "-j#{ENV.make_jobs}", "--test-dir", "build", "--rerun-failed", "--output-on-failure"
     end
 

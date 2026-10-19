@@ -6,6 +6,7 @@ class AstrometryNet < Formula
   url "https://ghfast.top/https://github.com/dstndstn/astrometry.net/releases/download/0.97/astrometry.net-0.97.tar.gz"
   sha256 "e4eef1b658ba5ad462282b661c0ca3a5c538ba1716e853f7970b7b9fa4a33459"
   license "BSD-3-Clause"
+  revision 1
 
   livecheck do
     url :stable
@@ -13,12 +14,11 @@ class AstrometryNet < Formula
   end
 
   bottle do
-    rebuild 3
-    sha256 cellar: :any, arm64_golden_gate: "6aced9489f6f1264309e9f0bb71fe0e2c853daa3187c925300a116f38d0b1d5d"
-    sha256 cellar: :any, arm64_tahoe:       "4324f3f4a32d45adc7775f6ab3214fa7e4b3289dadb45de3dc3c92cb92046506"
-    sha256 cellar: :any, arm64_sequoia:     "585abe378d00f393fa4891b28f4f4a0fbe27ea7df4fb7e765267bebe2eb1c8f1"
-    sha256 cellar: :any, arm64_linux:       "103b3e0c6e58f9fda5d3777f88c75d78212f7b7f72d66e087e43d74f5e7c4727"
-    sha256 cellar: :any, x86_64_linux:      "41a088b52c44eee234a365260555725f67a59f86591b44eb8090812516f9ce8b"
+    sha256 cellar: :any, arm64_golden_gate: "46bfc0a2f53fe5874800a68344de95c1414e27751705e4dcb4c175e6c4aec2d6"
+    sha256 cellar: :any, arm64_tahoe:       "f54631a7c5d08be6c5c5e537afe3bd0a3fb44c4b7429a92615b1b43b3bf26810"
+    sha256 cellar: :any, arm64_sequoia:     "f349d1a6c482db7ce372ed3500ee0879e9f4354e34b7b5b9b05b1425a4db9e14"
+    sha256 cellar: :any, arm64_linux:       "131874437054f0f1d4efcf4319984814edf5bfd3637df83befd7eb32fd2690c6"
+    sha256 cellar: :any, x86_64_linux:      "6c34882b97cba749132013da4db732c9ac0fff77016bf3e95fac367190a627a3"
   end
 
   depends_on "pkgconf" => :build

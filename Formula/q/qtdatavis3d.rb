@@ -9,6 +9,7 @@ class Qtdatavis3d < Formula
     "GPL-3.0-only",
     "BSD-3-Clause", # *.cmake
   ]
+  revision 1
   compatibility_version 1
   head "https://code.qt.io/qt/qtdatavis3d.git", branch: "dev"
 
@@ -17,11 +18,11 @@ class Qtdatavis3d < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "4a13e080ae1241293cdd11c2120ee78ba5149af03dcb0c9c10bb8d99b379941e"
-    sha256 cellar: :any, arm64_tahoe:       "0d82dacf06ea9f72347724c4e84d09b01e7cdabe4f2bae522a8857a7474df0e5"
-    sha256 cellar: :any, arm64_sequoia:     "60c0eb75412c42f55fa8a7504b78971356d7fd49d760162919c4c95ba647587c"
-    sha256 cellar: :any, arm64_linux:       "d2b106f896983c1f046f38feb8aeacc23191bbc3d83618e2f350ff2c52af5b86"
-    sha256 cellar: :any, x86_64_linux:      "47664819f135582bcb006d926064ecebd305981922b6e72233149d2bee19aa66"
+    sha256 cellar: :any, arm64_golden_gate: "6d50b8b0760fc06ce06343c3bbe008bb129a7300570f0949d953595da9d86851"
+    sha256 cellar: :any, arm64_tahoe:       "36cf8c70cd02348f5e579e775f03bcb3ce7e1f7a5f72a15641736645a07a015a"
+    sha256 cellar: :any, arm64_sequoia:     "987721425856d7ad2ea8f7a0a088beb9500cf34be59ff5b05dd26001319878b5"
+    sha256 cellar: :any, arm64_linux:       "8fe868062608859ddb3d7d82e99b9119c5ca288a691c4026e578b4208dc6d35e"
+    sha256 cellar: :any, x86_64_linux:      "5b6c7da05c84993682b8146ae72aba692bb518f9885372909f0687fa37000342"
   end
 
   depends_on "cmake" => [:build, :test]

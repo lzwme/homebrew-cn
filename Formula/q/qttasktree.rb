@@ -9,6 +9,7 @@ class Qttasktree < Formula
     { any_of: ["LGPL-3.0-only", "GPL-2.0-only", "GPL-3.0-only"] },
     "BSD-3-Clause", # *.cmake
   ]
+  revision 1
   head "https://code.qt.io/qt/qttasktree.git", branch: "dev"
 
   livecheck do
@@ -16,11 +17,11 @@ class Qttasktree < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "eea54fe1170043b8366ba1aa3a1e0cd243cb5c9aa3aa64c07582e7434e4014e7"
-    sha256 cellar: :any, arm64_tahoe:       "ffa26cfc43970c25439e1e364bc2bc30f3b39dc8fd22b47e60fe4bd4826ebc44"
-    sha256 cellar: :any, arm64_sequoia:     "c365e79a041d93944cf082d0445812c680268ad68d064e0da9511c6074ef900e"
-    sha256 cellar: :any, arm64_linux:       "d36307c7f8e035760e5406a80f798b83ff2db4f1293e618db7c53805de1b53dc"
-    sha256 cellar: :any, x86_64_linux:      "e933df07722918bb0e66133ef87db92c4dddb200eacc946401da727f6014e2a7"
+    sha256 cellar: :any, arm64_golden_gate: "472e73f7476bd4e4abc01f8c7d24adc70cb8f6cbe29ea371c358f5e07e3fa96d"
+    sha256 cellar: :any, arm64_tahoe:       "a765704da0fe5c72bd44662059e58e0888117c3e18d468ccc292a53eaa3963ad"
+    sha256 cellar: :any, arm64_sequoia:     "d73d736d7e09c41f05d2b3f7a45a7bb05c53407a99f455123c4178a95ae843a0"
+    sha256 cellar: :any, arm64_linux:       "86e87d3111f27e228d08c0636a16291380148ad51ba9036b63fef422a35f4d8d"
+    sha256 cellar: :any, x86_64_linux:      "fede8b6f805ca65b0a256def7899c44185ffbc9b7a2e2d820c48a732e93c7a90"
   end
 
   depends_on "cmake" => [:build, :test]

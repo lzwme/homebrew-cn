@@ -10,6 +10,7 @@ class Qtvirtualkeyboard < Formula
     "Apache-2.0",   # bundled openwnn, pinyin and tcime
     "BSD-3-Clause", # bundled tcime; *.cmake
   ]
+  revision 1
   compatibility_version 1
   head "https://code.qt.io/qt/qtvirtualkeyboard.git", branch: "dev"
 
@@ -18,11 +19,11 @@ class Qtvirtualkeyboard < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "649c2c45427475a6edadc0bad1d7723f1b5cef78eba80e1aa9d5e29dbcafc590"
-    sha256 cellar: :any, arm64_tahoe:       "49fbdf71fd5120d45f1749d6a43a6fdd9a4d014f33739ba36914d437bc5a93de"
-    sha256 cellar: :any, arm64_sequoia:     "e60cbc00e3f45b431701185e8992fa458c773f7f03550df139d299c2a7d51e3a"
-    sha256 cellar: :any, arm64_linux:       "1614a74abf6361bbde0edb19286ee7e98e6db53228b4e03e800e506ad87e7cbb"
-    sha256 cellar: :any, x86_64_linux:      "a6b887d5ad40336ae9211ad584f0c9c0970dbc4a502893aa263b5a924eccf09b"
+    sha256 cellar: :any, arm64_golden_gate: "d929bb281f37dfab1a21e8c2b1fb90787d96650a921fcb372ea1b065b03ad4c0"
+    sha256 cellar: :any, arm64_tahoe:       "d345516e638ef95db5464ae5f592ab4b2399d0ef31680363aca2f5dbedc40bea"
+    sha256 cellar: :any, arm64_sequoia:     "cf4655ae02da9601d1d93f27f1cb4223de699bc6dda994dfbb0829bb72a1b837"
+    sha256 cellar: :any, arm64_linux:       "f8e9841102a710daf95395980aaff668ad5c51b1318ada8247cc01c6cdb57b01"
+    sha256 cellar: :any, x86_64_linux:      "18fc455af551f520a2559b2f61a4156df62e6ec1c3a5dc0164bf8e403eb637c7"
   end
 
   depends_on "cmake" => :build

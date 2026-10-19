@@ -1,6 +1,6 @@
 cask "boltai" do
-  version "2.18.0"
-  sha256 "3505995227f14c50450156f08563bf732a26ed4e302a47c482370cf5ce601c5b"
+  version "2.18.1"
+  sha256 "5329c3c8c85578b489441b3668dbf9b399952de4f5f24c744acdf6533d295ac8"
 
   url "https://updates.boltai.com/dmg/BoltAI-#{version}.dmg"
   name "BoltAI 2"
@@ -20,8 +20,10 @@ cask "boltai" do
   app "BoltAI.app"
 
   zap trash: [
-    "~/Library/Application Scripts/co.podzim.boltai-mobile",
-    "~/Library/Containers/co.podzim.boltai-mobile",
-    "~/Library/Saved Application State/co.podzim.boltai-mobile.savedState",
-  ]
+        "~/Library/Application Scripts/co.podzim.boltai-mobile",
+        "~/Library/Application Support/BoltAI",
+        "~/Library/Containers/co.podzim.boltai-mobile",
+        "~/Library/Saved Application State/co.podzim.boltai-mobile.savedState",
+      ],
+      rmdir: "~/.boltai"
 end

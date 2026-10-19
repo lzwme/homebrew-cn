@@ -1,17 +1,16 @@
 class Pgbackrest < Formula
   desc "Reliable PostgreSQL Backup & Restore"
   homepage "https://pgbackrest.org"
-  url "https://ghfast.top/https://github.com/pgbackrest/pgbackrest/releases/download/release/2.59.3/pgbackrest-2.59.3.tar.gz"
-  sha256 "14037901db002e5536a948bf9f0fc0ff6cde31f4e675d3e9b46f129071bf2e5f"
+  url "https://ghfast.top/https://github.com/pgbackrest/pgbackrest/releases/download/release/2.60.0/pgbackrest-2.60.0.tar.gz"
+  sha256 "6d3ee1b5defdadc85228969b4be804096f5e65e54707bb95c7c4c4ce41f5d007"
   license "MIT"
-  revision 1
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "c9294ab2876ec2f905bc623cc56038ccf8f33cd3dd56cad0bfecdbf98f29bfdc"
-    sha256 cellar: :any, arm64_tahoe:       "dd9da8be4dd10a9f9fe24186e620fc1c50be46174f4c076a7b6457a39e614ff2"
-    sha256 cellar: :any, arm64_sequoia:     "e253dd5b91c6820fc3bbf3e8cd46f1c206a15c67d4c8aadb542334c70ac2a6f3"
-    sha256 cellar: :any, arm64_linux:       "12dcfe6c173c1eb866def53e5178ced58a4f0463253eb0c2c183edce47da2d98"
-    sha256 cellar: :any, x86_64_linux:      "5e0487cd496dc53f1e6ed415fe48aadbdef5e5f5a7922a0286224c3c2e7d2b58"
+    sha256 cellar: :any, arm64_golden_gate: "95df2decd2f9e146cd3de3fd0bbd94a0b073ae714490b6834a40679541bb60f5"
+    sha256 cellar: :any, arm64_tahoe:       "67dfc0e88fc5a7b8bce77d2d128037282c6e1144382fb233a9b52cac735ff082"
+    sha256 cellar: :any, arm64_sequoia:     "5657bc628b3b017db202ee0a63367966def23331dec49cc70519eb1efda014eb"
+    sha256 cellar: :any, arm64_linux:       "b51c10b3274577fc6b828a352658c42ebb3e048155eb9881888eb895bbe0052f"
+    sha256 cellar: :any, x86_64_linux:      "36a0dce8a41f209795b30592560815aa9bba7342b4d47abe54ae6f6cbffa2a19"
   end
 
   depends_on "cmake" => :build

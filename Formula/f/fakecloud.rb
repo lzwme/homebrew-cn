@@ -1,18 +1,17 @@
 class Fakecloud < Formula
   desc "Free, open-source local AWS cloud emulator for integration testing"
   homepage "https://fakecloud.dev/"
-  url "https://ghfast.top/https://github.com/faiscadev/fakecloud/archive/refs/tags/v0.50.0.tar.gz"
-  sha256 "8bfc6c977a773f8488911458e400d1e3bb01e0719a1c320f2286e68b7a7d4759"
+  url "https://ghfast.top/https://github.com/faiscadev/fakecloud/archive/refs/tags/v0.51.0.tar.gz"
+  sha256 "23c16293013a73bc5eb7a7248fe36cb02deb6f93db84543d698252743dd94bd0"
   license "AGPL-3.0-or-later"
   head "https://github.com/faiscadev/fakecloud.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "a401995fb394b4cbde9a7993d1ca1e38287d40be9f89b07d63c5a0ff1ba5a8d1"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "4470fc4f640f0ea01f07647ab1f95ac67577fd4888af6455bb5f822ef389dd12"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "704d73e7e4bb361ce3d979ed35cecfa35bfad92e63edc4329484efa226f4ae9f"
-    sha256 cellar: :any,                 arm64_linux:       "72892d0330ca4b22b5afe8e76b4bf5869310be18e158d8e7dbf1c2945869eccb"
-    sha256 cellar: :any,                 x86_64_linux:      "55ea6312ce0a955c0c124ff435a0ec70fd2be60dd2e59075937d4e85ac174293"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "e7d01740059f7fd4913fa11b06caf43e5009b8aad900cdd4fcf9bf8d19c51ba5"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "f27adb08c838dd552ac1074f7b59f3dbee82169d3f9cc0d869793b6962115713"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "6b3987f8d0584aa28c4d779280d75d70b8026ca3505b5636c3c3ea8225d8b705"
+    sha256 cellar: :any,                 arm64_linux:       "3a1938366bf5eef7780e436cefead5a1733b58e2fbc76f2f1f6e2f3beb7b5e7c"
+    sha256 cellar: :any,                 x86_64_linux:      "6402a75f955fd8c38ce591cc306dfcde018fa097ef0b5613c259fdfbd8a3ab93"
   end
 
   depends_on "pkgconf" => :build

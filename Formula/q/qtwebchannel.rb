@@ -9,6 +9,7 @@ class Qtwebchannel < Formula
     { any_of: ["LGPL-3.0-only", "GPL-2.0-only", "GPL-3.0-only"] },
     "BSD-3-Clause", # *.cmake
   ]
+  revision 1
   compatibility_version 1
   head "https://code.qt.io/qt/qtwebchannel.git", branch: "dev"
 
@@ -17,11 +18,11 @@ class Qtwebchannel < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "2adc10be8cc82dce24293d8a343c0c6141744c676f27a5373fcd164240a98dae"
-    sha256 cellar: :any, arm64_tahoe:       "7e239a134e5698575a5a8f98d546367c6fab7b8b842cad079e84cc8ef2ee2dea"
-    sha256 cellar: :any, arm64_sequoia:     "8666d892431aa55eb16980a1b416c6876b88d497100f52dd72e0ca8ed83fc31c"
-    sha256 cellar: :any, arm64_linux:       "558e530e1d8be2b772a61b719393a6b3f3814a74a00b6ed13b24e08422f6a1f5"
-    sha256 cellar: :any, x86_64_linux:      "ff08bf0324864108bd494a2ae52b2183dfa41f87060b8c1e797dc48b0c43b7d8"
+    sha256 cellar: :any, arm64_golden_gate: "e7af1c2aaf09f7fc1b52e55b444a5aed7b8b4b1fd79e50c4c97e57a5d7fef7f0"
+    sha256 cellar: :any, arm64_tahoe:       "f75b51565c3eac0e9e0df5bc2a2d1102e81f621a3515390cef1ebf9523eccdac"
+    sha256 cellar: :any, arm64_sequoia:     "233df8c01d68225e0c2c7944a0a2440b9de83c85f7cb784a9d99b0c3ba75bb76"
+    sha256 cellar: :any, arm64_linux:       "11bf12246de376eb09ef55b81131adac19a01637a2b42ec918407f9bf390397d"
+    sha256 cellar: :any, x86_64_linux:      "082b90005a3645271585d2be1aeeb56c5c9760d6c2d4e69c11d0333b57604752"
   end
 
   depends_on "cmake" => [:build, :test]

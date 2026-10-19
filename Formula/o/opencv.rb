@@ -25,11 +25,12 @@ class Opencv < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "217b3b79c156d292ec5614ec9d46dbcfe4749937d5514559d5f7e8dd347ffed8"
-    sha256 arm64_tahoe:       "f810e9773bfd51ec2987aee78d2cfabed539ccd08364641caacd83766a524dc3"
-    sha256 arm64_sequoia:     "8a5bedeb962be8544d6e2985f3e0bb5b177a8fdfd45dd8a547fde84ebc86e439"
-    sha256 arm64_linux:       "ecc76a5f06f991e66c7da99c145b29a7b3f76289d61155a440bd2c50d3c45997"
-    sha256 x86_64_linux:      "ccb98ff109ae0232f16f57c6dcf2ae67297eb839c049595280bcdc867b3da7d5"
+    rebuild 1
+    sha256 arm64_golden_gate: "8bd01cf556280d8502fc165fed77eb630d4965dee6d50d874e05eec14de01aca"
+    sha256 arm64_tahoe:       "82623a069a62ae58bdb128b90cbcf03889387b983b705778a4db120ffb8bc3bf"
+    sha256 arm64_sequoia:     "1cd40a1ba11bdf9a33d97fc2a5c0cae62fb6281c967ba012053e22e9f0505658"
+    sha256 arm64_linux:       "53fe905a223ceb31b1b5f9f638c386c14d1c3f261b0f60af75a3e5029efffad8"
+    sha256 x86_64_linux:      "912886fa3fd8418758c1de7c843b2f1e6bb30a565458a6974b53aec66a7e8314"
   end
 
   head do
@@ -53,6 +54,7 @@ class Opencv < Formula
   depends_on "harfbuzz"
   depends_on "jpeg-turbo"
   depends_on "jsoncpp"
+  depends_on "libavif"
   depends_on "libpng"
   depends_on "libtiff"
   depends_on "numpy"
@@ -152,6 +154,7 @@ class Opencv < Formula
       -DOPENCV_GENERATE_PKGCONFIG=ON
       -DPROTOBUF_UPDATE_FILES=ON
       -DWITH_1394=OFF
+      -DWITH_AVIF=ON
       -DWITH_CUDA=OFF
       -DWITH_EIGEN=ON
       -DWITH_FFMPEG=ON
@@ -218,6 +221,15 @@ class Opencv < Formula
         cv::Mat img = cv::imread("#{test_fixtures("test.jpg")}", cv::IMREAD_COLOR);
         if (img.empty()) {
           std::cerr << "Could not read test.jpg fixture" << std::endl;
+          return 1;
+        }
+        if (!cv::haveImageWriter("test.avif") || !cv::imwrite("test.avif", img)) {
+          std::cerr << "Could not write AVIF image" << std::endl;
+          return 1;
+        }
+        cv::Mat avif = cv::imread("test.avif", cv::IMREAD_COLOR);
+        if (avif.empty() || avif.size() != img.size() || avif.type() != img.type()) {
+          std::cerr << "Could not read AVIF image with the expected dimensions and type" << std::endl;
           return 1;
         }
         return 0;

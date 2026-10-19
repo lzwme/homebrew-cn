@@ -3,13 +3,12 @@ class Termaid < Formula
 
   desc "Render Mermaid diagrams in the terminal"
   homepage "https://github.com/fasouto/termaid"
-  url "https://files.pythonhosted.org/packages/3a/6f/56eab35efefdbee574ab59aa1b715781a89ae63888dbdd910c29e3435792/termaid-0.9.0.tar.gz"
-  sha256 "0b183f139638015b0a8d52be214050187ea1e944c2c6f86b404c675c9e3c7ad6"
+  url "https://files.pythonhosted.org/packages/6c/5c/e2bc0d27c30de7a55a1c7fac8326454353058385864c5cda4a0d9d19ec59/termaid-0.9.1.tar.gz"
+  sha256 "e81ccdf92590182873b5a6437d709264fd70611a91f130f14418e80fad4c7ecf"
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "b0c0e746bc7cf02eeba068dbeaccdabbfe7c85e66d97976e9f15c6aff1543a1b"
+    sha256 cellar: :any_skip_relocation, all: "3a1095535fd0344ee263417054872c4533846151ca5a4efb3c61058bfdf9716a"
   end
 
   depends_on "python@3.15"

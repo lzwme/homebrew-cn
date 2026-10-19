@@ -11,6 +11,7 @@ class Qtpositioning < Formula
     "BSL-1.0",      # bundled clipper
     "MIT",          # bundled clip2tri
   ]
+  revision 1
   compatibility_version 1
   head "https://code.qt.io/qt/qtpositioning.git", branch: "dev"
 
@@ -19,11 +20,11 @@ class Qtpositioning < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "72e5d9efa1150706ed93d5274a3f97a00120ef523e11daadb86554fb9c1f6c07"
-    sha256 cellar: :any, arm64_tahoe:       "6590f79ba4ad96ee8502cb7263b7103405038797a0cb597bdf87613c9d653d37"
-    sha256 cellar: :any, arm64_sequoia:     "5c87ad2518b73ee16f96497fa97e43b20ac64dcd8b9fc4f0f5a4f80cf6be69c4"
-    sha256 cellar: :any, arm64_linux:       "a6f53d9c9f2c9e4ffbc99e0f4b0b19b2b515a7b8e45ad5b2cf8b1029dac567fc"
-    sha256 cellar: :any, x86_64_linux:      "6d75f4a34d8f1390fa332308ffdd35dde11db64fea9067bc9a46ac8d38c4ecbf"
+    sha256 cellar: :any, arm64_golden_gate: "12125c2ec3766ce780fa7bd9339dd254163e7526a96d27c7ac3e87d493cc0020"
+    sha256 cellar: :any, arm64_tahoe:       "55d3d1b360b6b960f7589d461f558cdcfcdf4dc278083b021213424fe32b47a7"
+    sha256 cellar: :any, arm64_sequoia:     "1810c555ac2c8915746e0567b643c4a40e81c2a7bca7783d686bba18237315ae"
+    sha256 cellar: :any, arm64_linux:       "998d1f2e4ce66aac4cfa2c51a57629f94488db507dd004ce077cb3bb5ee41dc8"
+    sha256 cellar: :any, x86_64_linux:      "0831b254e98f0ec298f3124e2aef9f83dedfc10e183d814f779e365893ea401a"
   end
 
   depends_on "cmake" => [:build, :test]

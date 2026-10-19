@@ -9,6 +9,7 @@ class Qtserialport < Formula
     { any_of: ["LGPL-3.0-only", "GPL-2.0-only", "GPL-3.0-only"] },
     "BSD-3-Clause", # *.cmake
   ]
+  revision 1
   compatibility_version 1
   head "https://code.qt.io/qt/qtserialport.git", branch: "dev"
 
@@ -17,11 +18,11 @@ class Qtserialport < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "88380548ee0932994ce17d314d306d9acc18ad3092d1bbc527ce7706a7b4e3ae"
-    sha256 cellar: :any, arm64_tahoe:       "e57a8afb5c96109a67043eb0b982c8ceae877be82a9c84382fe1f7103e53baca"
-    sha256 cellar: :any, arm64_sequoia:     "2250d641dbaae7132f1ca809b4c54d18bd32c9b46580870c5b85aa85746b3dc1"
-    sha256 cellar: :any, arm64_linux:       "8a476746535006e8191802c04ac15b9bcd3236816b6ff0453f3beb8472a6be00"
-    sha256 cellar: :any, x86_64_linux:      "10c9f19b02cc972d884c3849cf7b139d193d4d5a4dd123f13ebc15261b6a2c23"
+    sha256 cellar: :any, arm64_golden_gate: "f104c77d6cda7bef8d2c44095607bc7e0a34e998162fd739c445c1b346edefa7"
+    sha256 cellar: :any, arm64_tahoe:       "1a8e539944c593bb5076120744f685831247f4b295eb703d9a69cd4413233c0e"
+    sha256 cellar: :any, arm64_sequoia:     "e3532cf6eec20dc93b589f24c78ff5dad3f088068fff98192bc851d887e62c4a"
+    sha256 cellar: :any, arm64_linux:       "5488f7ca73dd83159cc8840978a034ffe6c3318100b74cd4320e55bbd87c77c5"
+    sha256 cellar: :any, x86_64_linux:      "1b9cf2b845472e0945804de5502346e5253baffc96e3d91fa79fdb4fae01b493"
   end
 
   depends_on "cmake" => [:build, :test]

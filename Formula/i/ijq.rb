@@ -1,19 +1,17 @@
 class Ijq < Formula
   desc "Interactive jq"
   homepage "https://codeberg.org/gpanders/ijq"
-  url "https://codeberg.org/gpanders/ijq/archive/v1.4.0.tar.gz"
-  sha256 "3bc925a05755f621926ac21051a257220f924bb7fa6dd85dc1367cd508b391cb"
+  url "https://codeberg.org/gpanders/ijq/archive/v1.4.1.tar.gz"
+  sha256 "5a4397999a6dd7f3c31e6f907de7137ee9a1fa24e7a425718ce50f035b262036"
   license "GPL-3.0-or-later"
   head "https://codeberg.org/gpanders/ijq.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "78bd80a6492c19fd7b16abb8b3f49145183eb6a5ed50d947e4fded55c9e4d862"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "13d3c521194f5cf432f787a993ca5ef9c32b02953b5bb2be514f0ac2602e9bf9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "67f3a41b5f1a6924916d0e8d216da83dbdc273c253e82929b0064a93ca36a8ae"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "f978d17e05a71ed4fc7da15ae9eb6d000900b80c4fd0eefd04ce3d9ce408dee0"
-    sha256 cellar: :any_skip_relocation, sonoma:            "1d1d6f14e2540892f375d93666ba3f4f7eec93833d49e2e22eb7448db8603f9d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "ec1a6d78030c28b2dfaf94d330d61efe313ffd778fc93a219e0f0d729da57570"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "8a2a01a981e0f6ee906a5b0d6e889c989f159c3a3f50b11f05665f8ffde6cdc2"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "718a953482cc92269a6d2de9959248b96e4524b1270ecbb00b8a79b634a1a289"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "f5e79b77282979f791c5348745b92f8295c818fbab9525b17f6df0ed30ff59f8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "295676b10bd1564e13a09d8d59f6029207944adbdb3b940fdf2c47214fa4a9fb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "a3f6f849e4100d19392308b6824b032f6784677220d0e93897523c692660f4ca"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "7c819542c75d1bf62815fa87abeecf6e838240ee3e1ae5a1586dc8168cd2ff53"
   end
 
   depends_on "go" => :build

@@ -9,6 +9,7 @@ class Qtlocation < Formula
     { any_of: ["LGPL-3.0-only", "GPL-2.0-only", "GPL-3.0-only"] },
     "BSD-3-Clause", # *.cmake
   ]
+  revision 1
   compatibility_version 1
   head "https://code.qt.io/qt/qtlocation.git", branch: "dev"
 
@@ -17,11 +18,11 @@ class Qtlocation < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "c471ce0a8197cf04b3615b03a3702eb2000128a68b44c614cc5c25b09f51663c"
-    sha256 cellar: :any, arm64_tahoe:       "9a4e75201ca15d7dd3aa738f2b12d9da4d27b1b76fc81f7f37963c26becf4198"
-    sha256 cellar: :any, arm64_sequoia:     "a9c4edfab350efadf0541009dd4ba57e16ff32271a3bbf8f4efc5da246c3df82"
-    sha256 cellar: :any, arm64_linux:       "131cd9c670dfda80b8115098ac705189b3739aa117eb622440204096a040572d"
-    sha256 cellar: :any, x86_64_linux:      "9288df890da7f3ca9fe4d48f742570cb9ea89fe4961d4c96211b461693915edc"
+    sha256 cellar: :any, arm64_golden_gate: "1bce6b6cf3c4ee0b2ae44e9f53c8d3f0f9534ab1a7a2cd358b125c75bd576a71"
+    sha256 cellar: :any, arm64_tahoe:       "72811f07a0189d3cd97a35d2bfe7986259d532af6e3fb7ab30fd2764c82d925c"
+    sha256 cellar: :any, arm64_sequoia:     "4ea807c0e8193276e8be59b1a44ec74dc9da9d0566b14d7a01b378dc729e71e5"
+    sha256 cellar: :any, arm64_linux:       "758119b8a2d1b6b89997dd8667c9fc4e41451966a690d75b65d58bf7d06cb460"
+    sha256 cellar: :any, x86_64_linux:      "82bb25d19e039237b6cab8165f1a3277aea76acd1933049426726f52a23f68ae"
   end
 
   depends_on "cmake" => [:build, :test]

@@ -3,16 +3,16 @@ class Flexget < Formula
 
   desc "Multipurpose automation tool for content"
   homepage "https://www.flexget.com"
-  url "https://files.pythonhosted.org/packages/06/fb/5eff4be880f2a54a6afd5a9f426efd018a5ab005f425a7805f556d658a1f/flexget-3.22.4.tar.gz"
-  sha256 "b0eb64f5c9c287148101cb85d0abcafa265289f5d0f7f4c6120af572b19d6c00"
+  url "https://files.pythonhosted.org/packages/ee/03/f7cf437ccf7686af12faca418e2d33a57cde63be3d794160748b711b7aaa/flexget-3.22.5.tar.gz"
+  sha256 "d0b98f9e81a430ba03fc02774ba1c4cdbe22346667a5fa331240e6158d38acfb"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "86aa1a2e64aa7f2791340f5c531956dac0317f40ba510a8b78c5c8dd088100e8"
-    sha256 cellar: :any, arm64_tahoe:       "72bd0596ec97b2e1239007b1baa7b05f339c2c159343535543c163e14adc1d53"
-    sha256 cellar: :any, arm64_sequoia:     "d0170a5b3b5c69402c33714016497a0568459697293505932345ba954bf91792"
-    sha256 cellar: :any, arm64_linux:       "64a490a7c3eb83d09669222d2fceae825cd1a11ca639a99e7a97269ef996599e"
-    sha256 cellar: :any, x86_64_linux:      "7ac7c20a60fd4780c9809497eac9a47f8b3fe897624d6529289be14ab681e112"
+    sha256 cellar: :any, arm64_golden_gate: "0524c07c6ad26213085b5d09d25666fde87af39ef8f55548653ae5fc8ca37d04"
+    sha256 cellar: :any, arm64_tahoe:       "99f73cc701e43b6880968fa8c533239fcc2210e5f6c2ebadf6c825b143e2bda8"
+    sha256 cellar: :any, arm64_sequoia:     "368f5d66590db53b8ce6cf455e75ffb464f1580b5301691e941513cb5a11d42f"
+    sha256 cellar: :any, arm64_linux:       "f2cfa913c6c211543a395d441feaaaec5ee52e42fcf0f1db9a55ef5eaddab6ec"
+    sha256 cellar: :any, x86_64_linux:      "46a1992af3a8a10d2fdf6584ecee0007512befdafb8d567d240ed7db9825c6be"
   end
 
   depends_on "rust" => :build
@@ -333,8 +333,8 @@ class Flexget < Formula
   end
 
   resource "sqlalchemy" do
-    url "https://files.pythonhosted.org/packages/1f/44/311bac6b6ef81e4dfd0287d04900108b1f5c00c9761dd3c0a2b7b9d0f86b/sqlalchemy-2.1.4.tar.gz"
-    sha256 "7bd7ad604487daa7eab8716471c29a7185f17b5287ce73bb7bc79fea050d8cfd"
+    url "https://files.pythonhosted.org/packages/08/bb/28e3106ee586e5b2f5ecf211eec1348055f0f926314b13fe23b9cffa9039/sqlalchemy-2.1.5.tar.gz"
+    sha256 "0df76cf1ca680ad745bd378a6299a058611a8a784eeaeb4ed78ad4a0b7ce2003"
   end
 
   resource "tempora" do

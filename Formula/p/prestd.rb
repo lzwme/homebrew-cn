@@ -1,8 +1,8 @@
 class Prestd < Formula
   desc "Simplify and accelerate development on any Postgres application, existing or new"
   homepage "https://github.com/prest/prest"
-  url "https://ghfast.top/https://github.com/prest/prest/archive/refs/tags/v2.5.1.tar.gz"
-  sha256 "9835165284a6ac20d7f17aa2314db605fa876a03e7add68dd923b8dd524c85d4"
+  url "https://ghfast.top/https://github.com/prest/prest/archive/refs/tags/v2.5.2.tar.gz"
+  sha256 "6bcc88a8e97524732838599d80ccc33a93ee6d4c9beb568904a318dfd130ab51"
   license "MIT"
   head "https://github.com/prest/prest.git", branch: "main"
 
@@ -12,11 +12,11 @@ class Prestd < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "e6adecf6c2c607f16463611ec16ea813c467bca3fc91db216dd3fdbf17aa31aa"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "c1672a0d8c596d85ff2b4befc2e1aa8d1870a443b39cb5f3eb9033b8ed5855a9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "b1e4f0ce8622375a1fae478149135dae9db107b7cdc22903ec434ebbdcc523e3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "c7ac0a354ce18272fadc5cbeaedc5261027f2c64db12638e4f4152ba351b3111"
-    sha256 cellar: :any,                 x86_64_linux:      "367b0ec5fbb85ffab1f49a2af84c88f36067114165c110d9a3fe0033e3adbac6"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "7b4d57cb462f049cd5d83b9c3bf94d887fc53cc01c2c2937380ee5fc25668a2a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "6a10a8788b74888a52c8bba2732344ed400cca4f7a2971cca318f4a2cea148c4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "17b74397d920b16899029d073806f898674a6676284297db4c0563976b61f211"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "3f1576e947f2697574dc8f0849d5e55669f6336c80c02ab3a3031a7bf95430c9"
+    sha256 cellar: :any,                 x86_64_linux:      "746d1e98705c273b39ba6674250ff63026368a4bb62c025ac4822c6a35c7bdb0"
   end
 
   depends_on "go" => :build

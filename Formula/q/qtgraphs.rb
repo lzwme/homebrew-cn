@@ -9,6 +9,7 @@ class Qtgraphs < Formula
     "GPL-3.0-only",
     "BSD-3-Clause", # *.cmake
   ]
+  revision 1
   compatibility_version 1
   head "https://code.qt.io/qt/qtgraphs.git", branch: "dev"
 
@@ -17,11 +18,11 @@ class Qtgraphs < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "b6a23ceb828432483e06b1ec845fd751593f1d75364d65c4cdada56811d8dbf3"
-    sha256 cellar: :any, arm64_tahoe:       "1bb7a23e67c1110bc59fd318de0d75d4a481986320905a38346c2fd7b6ccb053"
-    sha256 cellar: :any, arm64_sequoia:     "77d80995a52314c2819b9fdc8ad77b576f3a32318de7bfb08f9ed5c6cfe277b0"
-    sha256 cellar: :any, arm64_linux:       "70cfcf91fde584b1d73c87208a4c482e65b10cbc473d9a0a159f3b2d354d2838"
-    sha256 cellar: :any, x86_64_linux:      "4b634a9a583fbf6e34e606e672f6c19c0d016fe30f8163f0f43659d2a72f61ae"
+    sha256 cellar: :any, arm64_golden_gate: "3b9b72dc57fc0389c797526bde9201ed9999dfbf134dcf6227511304a7d621a8"
+    sha256 cellar: :any, arm64_tahoe:       "3a6694fc51a6b9de788bb4a1cea1057115a29473c02e110b3f9d1aed0c271cdf"
+    sha256 cellar: :any, arm64_sequoia:     "b4b744cdced50cbf055ff3b00f6e46bc55821e27a5f2e70108c4b8f357d265f2"
+    sha256 cellar: :any, arm64_linux:       "2a9933d40958ec4f929f6e599d3c5fb351ab3cce63e78f72da3566a7ee1811db"
+    sha256 cellar: :any, x86_64_linux:      "b86c04fe471e4b10788208a0bb5b404f2abec8716a0325b4023f2b9c509f52ae"
   end
 
   depends_on "cmake" => [:build, :test]

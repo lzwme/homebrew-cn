@@ -9,6 +9,7 @@ class Qthttpserver < Formula
     "GPL-3.0-only",
     "BSD-3-Clause", # *.cmake
   ]
+  revision 1
   compatibility_version 1
   head "https://code.qt.io/qt/qthttpserver.git", branch: "dev"
 
@@ -17,11 +18,11 @@ class Qthttpserver < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "5cd6d053b5b9519455bb3a77959e697f4dc2337ad7c8d7fffd17fe56153b9d09"
-    sha256 cellar: :any, arm64_tahoe:       "32ae7509cc9a60f76d40d9d25761b88847e4c3c967f560f16be5f3fe33ba09c9"
-    sha256 cellar: :any, arm64_sequoia:     "acf6095fbb23bfbdac234384aaa82a88cb8be092a5ed88707f3ebb2f2ab4c59f"
-    sha256 cellar: :any, arm64_linux:       "4540c5a250715a336eee659486cd9d65dbf4f3e7677e242f76acad649c08cd8a"
-    sha256 cellar: :any, x86_64_linux:      "96abca1495061cf6eed27892aba3f6a018576760fe9bed0e70941290d4ccfb8b"
+    sha256 cellar: :any, arm64_golden_gate: "ec36f218e451c5039fc0ba44e6c591ec164df8fa97e2fa72a76e556c626b36a0"
+    sha256 cellar: :any, arm64_tahoe:       "4072c5e676409d2d5400e069ffe419849923660c9381018983ec3debc89cf191"
+    sha256 cellar: :any, arm64_sequoia:     "02a3db78f1db552b517538dd439efe30a60c8e85c77a1189288337ea136968bc"
+    sha256 cellar: :any, arm64_linux:       "ecf666685ebc2ee4cd6a165b1ae1ff028894f87ee03cadc3019242bf3b55bc7a"
+    sha256 cellar: :any, x86_64_linux:      "720b1df9fb3554160822d7347988661ce2f459c7d8d8685d5b10f0a123415eb0"
   end
 
   depends_on "cmake" => [:build, :test]

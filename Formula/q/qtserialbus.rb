@@ -10,6 +10,7 @@ class Qtserialbus < Formula
     { "GPL-3.0-only" => { with: "Qt-GPL-exception-1.0" } }, # canbusutil
     "BSD-3-Clause", # *.cmake
   ]
+  revision 1
   compatibility_version 1
   head "https://code.qt.io/qt/qtserialbus.git", branch: "dev"
 
@@ -18,11 +19,11 @@ class Qtserialbus < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "94adf81ca8080144033e3ded1c6dc331b5d7cac89484fd7a2b08d2e295949549"
-    sha256 cellar: :any, arm64_tahoe:       "c950941d4803c25d6be0e89218c004b679df1e7501da6d1d7106f5fc1ac4ebbe"
-    sha256 cellar: :any, arm64_sequoia:     "e38844c585d282e5878660e22c4af16a94562517ddf3d31510e1e6d94cc1cbd7"
-    sha256 cellar: :any, arm64_linux:       "84a99963b4ff8277f16ee4c9be181443fe23f116100bbea6df829cfd79cd998a"
-    sha256 cellar: :any, x86_64_linux:      "5634496809b94cf5b4ea72b79e4e0341e11ed8568c1d353595b2e8525e4d9e04"
+    sha256 cellar: :any, arm64_golden_gate: "a161b39fe46416abb48c66601ab66b9a93172edf4ac430edd95eaa891a33f5e4"
+    sha256 cellar: :any, arm64_tahoe:       "8dc903baa16bd557615bb375d0686477e856a16aede6b641d4a9dfe1e3d72159"
+    sha256 cellar: :any, arm64_sequoia:     "d3f01cf7fbe46daa51bed40905ef0267b91a2ef703411f122db3049c21f5649c"
+    sha256 cellar: :any, arm64_linux:       "6a0342f22c0138a9ab53b11cd21b610301fcd1cceb7ead52c7ad06c7d78fef24"
+    sha256 cellar: :any, x86_64_linux:      "ca92c9b4d9c385a509a0724234e2306f327c70b79a3942feaaadcec081cca1e0"
   end
 
   depends_on "cmake" => [:build, :test]

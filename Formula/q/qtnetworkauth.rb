@@ -9,6 +9,7 @@ class Qtnetworkauth < Formula
     "GPL-3.0-only",
     "BSD-3-Clause", # *.cmake
   ]
+  revision 1
   compatibility_version 1
   head "https://code.qt.io/qt/qtnetworkauth.git", branch: "dev"
 
@@ -17,11 +18,11 @@ class Qtnetworkauth < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "78980fa41ff6a8b7844cc7eb847871d8f4696a8ba6e8f9cd57267cf80852ae18"
-    sha256 cellar: :any, arm64_tahoe:       "bab9559065d670e0ee2ca1d4f819cab53eadd8b76a3e8e049cc83c01b8999293"
-    sha256 cellar: :any, arm64_sequoia:     "fd2f154b995d79cfe4bcdac96ddce987fa1b9fe7d252187240d0e191fe2a9ce1"
-    sha256 cellar: :any, arm64_linux:       "d4a7ff086221355047cea365bcc65220e4919f23ebdcbe5e33416d0a3f9479cf"
-    sha256 cellar: :any, x86_64_linux:      "dde5e695260822af24adca77580b00342681a608ee11634a660d7ea053a8d75d"
+    sha256 cellar: :any, arm64_golden_gate: "166eebdb9b1f587f252c1ecf5bba11715080f6c2c9993c917ba9b647a1cc6e58"
+    sha256 cellar: :any, arm64_tahoe:       "0c8b19cccbf8a6024b83727cca865636f29207e94bc55d692311033055f960c6"
+    sha256 cellar: :any, arm64_sequoia:     "9c28e80a98532ce825b55d3afbb6615e654a931f8eb4e93b9ad60cac710dce19"
+    sha256 cellar: :any, arm64_linux:       "72c465c1048274465fd1829f5f8e4fee5947b3cf5676a08e978f21fd8dfaf831"
+    sha256 cellar: :any, x86_64_linux:      "31bc22b0969775e6a8cdfbcd0d4264edde853ae1854ae123575b7360b6675780"
   end
 
   depends_on "cmake" => [:build, :test]
