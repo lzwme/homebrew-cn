@@ -3,13 +3,12 @@ class Jc < Formula
 
   desc "Serializes the output of command-line tools to structured JSON output"
   homepage "https://github.com/kellyjonbrazil/jc"
-  url "https://files.pythonhosted.org/packages/95/5f/9e6e8dc65cb15662fcfc090a52ed4fc4334ab7703b42107bc992777d19a1/jc-1.26.0.tar.gz"
-  sha256 "576b5615b5677c7bf4aacf97dcc6c6b4bf437bbc420c7db77b43ae1785372c9e"
+  url "https://files.pythonhosted.org/packages/e8/e0/ac16e68e8e56d0c63eb97d6d9a0f1d0320dcd16763ab288de4ea950eb7ca/jc-1.26.1.tar.gz"
+  sha256 "fdf1a58d05db351bd597438cf3b67ff7a9653cc0da4c63234ce77fe26051a4dc"
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "83eb7edaca6677c7f6c9167d84de760339c71ac4d2a793237093735513ea039e"
+    sha256 cellar: :any_skip_relocation, all: "19a86ea3827623a5ba95cdd39cdde12bf2c77de43a67a22b8e3386c20ffed5f4"
   end
 
   depends_on "libyaml"

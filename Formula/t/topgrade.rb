@@ -1,8 +1,8 @@
 class Topgrade < Formula
   desc "Upgrade all the things"
   homepage "https://github.com/topgrade-rs/topgrade"
-  url "https://ghfast.top/https://github.com/topgrade-rs/topgrade/archive/refs/tags/v17.13.1.tar.gz"
-  sha256 "bd41bb93050d16194568063f8fdb45d3d89f9d27fb6e58fb87991602b0288d87"
+  url "https://ghfast.top/https://github.com/topgrade-rs/topgrade/archive/refs/tags/v17.14.0.tar.gz"
+  sha256 "3f7580a52af5c11d7f51002c1b0d3153c52812f5ddcc53ab5d83417ae34cf552"
   license "GPL-3.0-or-later"
   head "https://github.com/topgrade-rs/topgrade.git", branch: "main"
 
@@ -14,11 +14,11 @@ class Topgrade < Formula
   no_autobump! because: :bumped_by_upstream
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "f9fd201ad0f95bcd489302a9420ace7fa697d1b1af6b033ab5fa7b6185cfc8c0"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "857891b9ab6b9de6d239a304111ea5aadbc995bed12482d4d4661991dad69489"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "637266737a97943537010d02d2dfc3b0b03fdfdb7931a94193957455310ed58a"
-    sha256 cellar: :any,                 arm64_linux:       "2ecb7e1419659c84e1f06f901fa0a5cb16939c11068527acde331ccacefaa9a1"
-    sha256 cellar: :any,                 x86_64_linux:      "642122b92cf30d93c66790f7e78c1e604a4eab3df358a43a523978e4dab43a47"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "d2402c198b9901ab39cdeba901efe2eaa2ce0b30174e77033d79ad02163c97a5"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "7486a535804491631cb8882a700b365804e4e549ddeb82da8a3f44d03676b8a4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "089dc3cff1a44155f1a678bfc0f82623e232f0c714b896528f531ebb190e1fc8"
+    sha256 cellar: :any,                 arm64_linux:       "ea8a39a50f0f0e8abd6f44f97f2fd483f4fc1e01230f7d93ff6cc2e8c43a83d1"
+    sha256 cellar: :any,                 x86_64_linux:      "0beb10b33331c47d8ce346e50b9ada9ffe56387ec3816d49dbedc7aae0200b13"
   end
 
   depends_on "rust" => :build

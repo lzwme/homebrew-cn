@@ -12,11 +12,12 @@ class QtPerconaServer < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "fb1a6e83a4d88a3cc1a0d7b2895085a57dfa12a70638c7defcdac78b47e316c4"
-    sha256 cellar: :any, arm64_tahoe:       "71d442b5f7b726623078db58218b50652478b5084c857a50fe9acedd12050139"
-    sha256 cellar: :any, arm64_sequoia:     "3b08e53bcbdd464a2e1edcd4b37341afb1f1a9b48a8bd65660be04c1d96b6d33"
-    sha256 cellar: :any, arm64_linux:       "daf8379cb290660b0e1d3125c488b8ba7328b6033e8008b81c057c268b984000"
-    sha256 cellar: :any, x86_64_linux:      "b797bb56b9a1acbc2d709deca0ab161ded2b0effbaa309729c03b5c165b8516c"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "c1819ba1c492abcd663eb3e3ddee66fed0cddb3c8fee5ee4b173aafd15f1bdbd"
+    sha256 cellar: :any, arm64_tahoe:       "0d70d3e0acd07253d4b6af4a5c54da298abc8641488c81d6ce0c26d1fbdea31e"
+    sha256 cellar: :any, arm64_sequoia:     "06dd1d8540bf01fbcc00dfeadaf83c03783aea29445bf9ea699fe0023f63be01"
+    sha256 cellar: :any, arm64_linux:       "b673647cf627dac7271722a1cb00450cf7751ed3692fa54d2c1c0a22c9790d20"
+    sha256 cellar: :any, x86_64_linux:      "71cb921fa8517d86f213bcb9f5856c87a7e62477aee857b8e5a127c22a762f0c"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -40,6 +41,7 @@ class QtPerconaServer < Formula
       -DQT_GENERATE_SBOM=OFF
     ]
     args << "-DQT_NO_APPLE_SDK_AND_XCODE_CHECK=ON" if OS.mac?
+    args << "-DCMAKE_BUILD_WITH_INSTALL_RPATH=ON" if OS.linux?
 
     system "cmake", "-S", "src/plugins/sqldrivers", "-B", "build", "-G", "Ninja", *args, *std_cmake_args
     system "cmake", "--build", "build"

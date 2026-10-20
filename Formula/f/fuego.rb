@@ -1,7 +1,7 @@
 class Fuego < Formula
   desc "Collection of C++ libraries for the game of Go"
   homepage "https://fuego.sourceforge.net/"
-  url "https://ghfast.top/https://github.com/svn2github/fuego/archive/edd2392f7a87d8f1dc9b83f6a5b54a17edf20826.tar.gz"
+  url "https://ghfast.top/https://github.com/mmueller65/fuego/archive/edd2392f7a87d8f1dc9b83f6a5b54a17edf20826.tar.gz"
   version "1.1"
   sha256 "85cf2fe4556847c2d48364980faf1d7a558d8170d4aea1fb1f4441819ad0b725"
   license any_of: ["GPL-3.0-only", "LGPL-3.0-only"]

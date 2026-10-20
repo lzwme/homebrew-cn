@@ -1,9 +1,9 @@
 class DockerMachine < Formula
   desc "Create Docker hosts locally and on cloud providers"
   homepage "https://docs.gitlab.com/runner/executors/docker_machine.html"
-  url "https://gitlab.com/gitlab-org/ci-cd/docker-machine/-/archive/v0.16.2-gitlab.62/docker-machine-v0.16.2-gitlab.62.tar.bz2"
-  version "0.16.2-gitlab.62"
-  sha256 "499a62e0eb71a8c7e6bb130f1b9f928fa0910beba30afda95be06ef35243eb5e"
+  url "https://gitlab.com/gitlab-org/ci-cd/docker-machine/-/archive/v0.16.2-gitlab.63/docker-machine-v0.16.2-gitlab.63.tar.bz2"
+  version "0.16.2-gitlab.63"
+  sha256 "0144733564f8a45ab0a044710f89f7a4ac053d938dc07aef34fb0b69ae458c88"
   license "Apache-2.0"
   compatibility_version 1
   head "https://gitlab.com/gitlab-org/ci-cd/docker-machine.git", branch: "main"
@@ -14,11 +14,11 @@ class DockerMachine < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "dd91ec6425c15e4284f67ee386bd76abfd459ba9652f9aa910ec1bf176055426"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "dd91ec6425c15e4284f67ee386bd76abfd459ba9652f9aa910ec1bf176055426"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "dd91ec6425c15e4284f67ee386bd76abfd459ba9652f9aa910ec1bf176055426"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "0b1f2db69862961106ca3d5c611179acfe735af69bc2c8498f957f6a758c1b6d"
-    sha256 cellar: :any,                 x86_64_linux:      "4136ce26f249a2659c818198e2a442f9752cccd54f47f473b30ca929f6cf7e10"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "0312462b1841f4d76d74aef1335417a81485eed64343fb3f506c0ab722a364fb"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "0312462b1841f4d76d74aef1335417a81485eed64343fb3f506c0ab722a364fb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "0312462b1841f4d76d74aef1335417a81485eed64343fb3f506c0ab722a364fb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "0c2ce38d2c6f842eb4c146698b15f7abb25bef4431305b895fc7edfadb42e2b3"
+    sha256 cellar: :any,                 x86_64_linux:      "8d5bfef012854b9e19bad78e4b7893f59d34f46d2fb965b538a5b8bd182f7d82"
   end
 
   # After Docker ended support for original docker-machine[^1], we have used

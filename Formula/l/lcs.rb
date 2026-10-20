@@ -1,9 +1,9 @@
 class Lcs < Formula
   desc "Satirical console-based political role-playing/strategy game"
   homepage "https://sourceforge.net/projects/lcsgame/"
-  url "https://ghfast.top/https://github.com/GregorStocks/lcsgame/archive/59744167aff8d39b8e4b36fa2b529ad5671c9dd0.tar.gz"
+  url "https://ghfast.top/https://github.com/ashley-s-fox/Liberal-Crime-Squad/archive/59744167aff8d39b8e4b36fa2b529ad5671c9dd0.tar.gz"
   version "4.07.4b"
-  sha256 "2c3a2b1e68e1db61b551537ead174804527ee146ecc741b390ed8299ad73ca66"
+  sha256 "77832463f2c244e346b869d6e8586856d34134e32df02a3a1c54a7efd77ca445"
   license "GPL-2.0-or-later"
   head "https://svn.code.sf.net/p/lcsgame/code/trunk"
 

@@ -5,6 +5,11 @@ class Spotbugs < Formula
   sha256 "cce3244900cc215ccd9f5a8db29ed9468fc47824faf662f4fad005343d96007e"
   license "LGPL-2.1-or-later"
 
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, all: "d55488bdf0421e05da53eae4f78088d1ef3e2c3e7596385fc49e3accaaa7dd3a"
   end

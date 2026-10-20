@@ -37,6 +37,8 @@ class Fbthrift < Formula
     depends_on "zlib-ng-compat"
   end
 
+  conflicts_with "thrift", because: "both install `thrift` binaries"
+
   def install
     # Work around build failure with Xcode 16
     # Issue ref: https://github.com/facebook/fbthrift/issues/618

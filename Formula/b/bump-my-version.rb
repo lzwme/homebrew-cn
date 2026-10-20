@@ -3,17 +3,17 @@ class BumpMyVersion < Formula
 
   desc "Version bump your Python project"
   homepage "https://callowayproject.github.io/bump-my-version/"
-  url "https://files.pythonhosted.org/packages/04/2a/e8215506bcce08b8a9038ae647844babdc367b0d4d7133ec751326a50daa/bump_my_version-1.6.1.tar.gz"
-  sha256 "29bc31e366a3745ce6c64e750a5ac7c5265a085c22dc1e858c006bc3d27e5ce0"
+  url "https://files.pythonhosted.org/packages/30/4a/c8d1330dd23349ee3f1a0f0ae2fb9ffb8f8e8e3f1a6cfc8511edcced2b12/bump_my_version-1.6.3.tar.gz"
+  sha256 "a886d5b8a86b439bb1119eecc3625a940c545e8e7b093ae5fd52a754c904c165"
   license "MIT"
   head "https://github.com/callowayproject/bump-my-version.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "ed63f8e003fe62aaa393941ba0142a868534e03a660582510e4132b229a8fe41"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "82a554c96ba72a87e0d7f13a7298590461528147c69403ccdd19e5b9974f44c1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "dd2feaf0c104d5ddd253e348452d361959ea9986ab0a19d8d0285f26abd6ab7e"
-    sha256 cellar: :any,                 arm64_linux:       "b6e3907f5101e62d270075403515924bf179d0c36745fec921081a81730fa4b5"
-    sha256 cellar: :any,                 x86_64_linux:      "93daa5acbdd6e00c8a92fa35520583671cd3e297d4219d0ac480f481692e8cc8"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "4df8f7185bf7eb593486a065196ba862e9bc5fcd1f02e41dbfd645ecc942824a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "38d3e13ef0be046755282ee77e4578bebf1d60eb4a7b7ccafde680c6c4a2d2f1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "91c7c1b93dfaaa9b0dd155d8a6318619afa3a3f26b9cfd4c34b22c5aa4dbc850"
+    sha256 cellar: :any,                 arm64_linux:       "44f9a67f0e90abd91bbe7515992a6bc0e4a7727caaef1ed789d3508e12359f11"
+    sha256 cellar: :any,                 x86_64_linux:      "365301cb04264bf15ab7bf6012b86ebf9035681c6fbbc21fb55c4f6e351a7847"
   end
 
   depends_on "certifi" => :no_linkage
@@ -43,13 +43,13 @@ class BumpMyVersion < Formula
   end
 
   resource "httpcore2" do
-    url "https://files.pythonhosted.org/packages/cb/f3/1db7aa2bc2524062192bb0e0323969492d1883152a232fe36eea65f4e35c/httpcore2-2.13.1.tar.gz"
-    sha256 "e0aa977abe17e69a3b820a24542a6fa88702676d83880b8d194dcd18408e5103"
+    url "https://files.pythonhosted.org/packages/30/ff/b53af1b49bb2cb5fa97c92215614b173ca5c1a99ded80e2d52f15a94fa6d/httpcore2-2.14.0.tar.gz"
+    sha256 "4f57a1a8249fe6af589d935cfd456f1d13bbdcb0f0fc72af9142368fc94811d7"
   end
 
   resource "httpx2" do
-    url "https://files.pythonhosted.org/packages/d5/44/474bef2a0e9d90f1715d32cb98b0738695ca17ba324095fb2497ed7fbd59/httpx2-2.13.1.tar.gz"
-    sha256 "e48744a19e3af5ee48313d0ce5fe941d5422fae5705ea922a4aabf94d7800dfa"
+    url "https://files.pythonhosted.org/packages/e8/67/58353f1848b4ba568e1ec22ea1e0d8e039f0bca5fde7e2d1f07739fd83e7/httpx2-2.14.0.tar.gz"
+    sha256 "47ad61a3c40282cd8d0dc96311531f00f5bfc71a066c6fe3b36d8f63fb9e4f6e"
   end
 
   resource "idna" do

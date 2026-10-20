@@ -1,18 +1,17 @@
 class Code2prompt < Formula
   desc "CLI tool to convert your codebase into a single LLM prompt"
   homepage "https://code2prompt.dev/"
-  url "https://ghfast.top/https://github.com/mufeedvh/code2prompt/archive/refs/tags/v4.2.0.tar.gz"
-  sha256 "de0fe811914bee2d03a0025e734d702d1cb50472dd75c42017cc65ac9435e481"
+  url "https://static.crates.io/crates/code2prompt/code2prompt-4.3.0.crate"
+  sha256 "990ebe1d34dec07580dd23e4097423989f0bd6c8d4f4de9d47c0ae77a0c2c732"
   license "MIT"
   head "https://github.com/mufeedvh/code2prompt.git", branch: "main"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any, arm64_golden_gate: "b090851dfcd0dc2583c7c377ed6b59cdf2d830efe521362c56d59eb4f434eeea"
-    sha256 cellar: :any, arm64_tahoe:       "2be0d24fdbc8bfb222bcff99065ba5867b8559642ad7b78083751f35f1ad7632"
-    sha256 cellar: :any, arm64_sequoia:     "1047431409b54042918926912d428ca67dc8dbb956a41c07109de3504b36599a"
-    sha256 cellar: :any, arm64_linux:       "ae335c12d5b34b8a069e377d9e2c0c770f967b0f94ed416961d606db997869a7"
-    sha256 cellar: :any, x86_64_linux:      "540c490ca2c252c350d64c30e4cc95c5c213c2006127e23a9113508dbc32f171"
+    sha256 cellar: :any, arm64_golden_gate: "2d50d0a0b2e6b17376d54114227d8faeef934990586dac85d642728a6bb81c08"
+    sha256 cellar: :any, arm64_tahoe:       "1d2ef2f2614821901b55959c0d5202f8baba4b395370b7c2ef5ee13fdec9eaee"
+    sha256 cellar: :any, arm64_sequoia:     "6c44b6490c5b23ff62845d1868308168cb2849c09067d4c59bfc63aed7988f0a"
+    sha256 cellar: :any, arm64_linux:       "36770c0a2f2e665fdbacbb5034679524ddce920d225cb6b19a421f4aa306580d"
+    sha256 cellar: :any, x86_64_linux:      "cb845d3dc985f9bd98e60ad2b34bb24cacbfe05e6b919283bc42b2f3ed644f4e"
   end
 
   depends_on "pkgconf" => :build
@@ -21,13 +20,6 @@ class Code2prompt < Formula
 
   on_linux do
     depends_on "zlib-ng-compat"
-  end
-
-  # `cargo update --precise 0.9.114 openssl-sys` for minimum needed to use OpenSSL 4
-  patch do
-    file "Patches/code2prompt/4.2.0-openssl-sys-0.9.114.patch"
-    type :backport
-    resolves "https://github.com/mufeedvh/code2prompt/commit/f9ff9796f9835d0aae143d40bfc91a02a6c5ada0"
   end
 
   deny_network_access!
@@ -40,7 +32,8 @@ class Code2prompt < Formula
     # Ensure the correct `openssl` will be picked up.
     ENV["OPENSSL_DIR"] = formula_opt_prefix("openssl@4")
 
-    system "cargo", "install", *std_cargo_args(path: "crates/code2prompt")
+    path = build.head? ? "crates/code2prompt" : "."
+    system "cargo", "install", *std_cargo_args(path:)
   end
 
   test do

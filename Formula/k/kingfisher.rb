@@ -1,16 +1,16 @@
 class Kingfisher < Formula
   desc "MongoDB's blazingly fast secret scanning and validation tool"
   homepage "https://mongodb.github.io/kingfisher/"
-  url "https://ghfast.top/https://github.com/mongodb/kingfisher/archive/refs/tags/v2.13.0.tar.gz"
-  sha256 "b7e4679832363590d2f2efd07c60d6f8ba1df2bb92582b8e646592bbcfec0440"
+  url "https://ghfast.top/https://github.com/mongodb/kingfisher/archive/refs/tags/v2.14.0.tar.gz"
+  sha256 "97f5fe6d609ac9445da305e518e6f37dbaa45c657304ade227f147f5f47712a6"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "cfc5e2b8aaa766bc1d6f584da8576c4449c39edddba06fe70df37ba3d2c4b06d"
-    sha256 cellar: :any, arm64_tahoe:       "2d464bcdb80b0cdc32e59b1dbb3530a68c734926042583ba8dc99e56c44348c7"
-    sha256 cellar: :any, arm64_sequoia:     "08a2f90917dadaeeb4faf924717da527f523883a2f64288061645d1ff6a9c305"
-    sha256 cellar: :any, arm64_linux:       "128f1935486225b4f1fce1a73ff1bcc6d1af54f9b9add6acea134ba9c383a6d0"
-    sha256 cellar: :any, x86_64_linux:      "44416643f76e39112d8425214d4fcfe4a8fb48477848261ddf422f0ea1f2f969"
+    sha256 cellar: :any, arm64_golden_gate: "29c75eb5ecbc15f5c358dffdd89fe9e7fa9ca6cbee3a158a1c2263467a6f6c54"
+    sha256 cellar: :any, arm64_tahoe:       "7ec0139e985c19a0c1013120b92121f320841143bf1e94dac9e694ca39a104b6"
+    sha256 cellar: :any, arm64_sequoia:     "a4b28b0ec29b60e0283472471e916eac34554d4b3c79bbea778c3f004fdb11c3"
+    sha256 cellar: :any, arm64_linux:       "9e4feb56a501e76a1a8b8426be0de93d58c87cbbed4991800b89d6c3abde2ba9"
+    sha256 cellar: :any, x86_64_linux:      "3a9a4a1d41cd16386643547ea0fc362ef84af1b004890abcbfbaff48ba95f6bf"
   end
 
   depends_on "pkgconf" => :build

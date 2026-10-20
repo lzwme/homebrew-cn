@@ -1,16 +1,16 @@
 class Shadcn < Formula
   desc "CLI for adding components to your project"
   homepage "https://ui.shadcn.com"
-  url "https://registry.npmjs.org/shadcn/-/shadcn-4.22.0.tgz"
-  sha256 "51ea23db4e8d9cc1d3d56ff352a8fa60b70f3e125fcf5c563e585dcb4b0e7cf6"
+  url "https://registry.npmjs.org/shadcn/-/shadcn-4.22.1.tgz"
+  sha256 "93c7018d30af36399f2ad886f046adc63f0f64c6865d9117d2599ccb5ab49226"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "fd45f494c1a6f86f764d482fd1fba5dbd0ca68db9d6984fb0f2c91e37515cc7b"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "fd45f494c1a6f86f764d482fd1fba5dbd0ca68db9d6984fb0f2c91e37515cc7b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "fd45f494c1a6f86f764d482fd1fba5dbd0ca68db9d6984fb0f2c91e37515cc7b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "cc439e7ee5086c2d982465a05b3275e4e840992b081ef401aa8874f377bb7dc8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "cc439e7ee5086c2d982465a05b3275e4e840992b081ef401aa8874f377bb7dc8"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "071278a154825368befd7d5438345f822599d418960f12735108499097f8d5a6"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "071278a154825368befd7d5438345f822599d418960f12735108499097f8d5a6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "071278a154825368befd7d5438345f822599d418960f12735108499097f8d5a6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "19d61949b1d882890353298b60150377382c2fbaa56d480c9d18e9e68a7578b1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "19d61949b1d882890353298b60150377382c2fbaa56d480c9d18e9e68a7578b1"
   end
 
   depends_on "node"

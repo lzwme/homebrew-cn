@@ -3,18 +3,17 @@ class Streamrip < Formula
 
   desc "Scriptable music downloader for Qobuz, Tidal, SoundCloud, and Deezer"
   homepage "https://github.com/nathom/streamrip"
-  url "https://files.pythonhosted.org/packages/b8/c9/6997772e0217f3081e4e692c7b8b104aaa564c008f2593341e81bbbd2396/streamrip-2.1.0.tar.gz"
-  sha256 "e59b4b406f9ac77eb59c927a1a082644e0902152ffeb6212b6b24af7fbef5540"
+  # TODO: check if we can switch back to PyPI in next release
+  url "https://ghfast.top/https://github.com/nathom/streamrip/archive/refs/tags/v2.2.0.tar.gz"
+  sha256 "fd7889d02c56ceca66a0f8e2e066d6c403242450ca3a82429e25889b819e4e4b"
   license "GPL-3.0-only"
-  revision 13
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "26044a7d6a4fe61432b40ee3f8a85d679ff05eaec4ae655ae13ed0475894c81e"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "c2b1ef27012c3eacf5bb6069aa1e8aa28e5766b82ca0423677c59a06199e7b91"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "ae3aa8a4da5e28404dbde738eae9c1a446bb084d5b7d09d79c81b0b72be68113"
-    sha256 cellar: :any,                 arm64_linux:       "d9ba9f649f08b6be905b2d5d01bf3cdb3e6137f96110c8d8f4a17c9d6a6a2613"
-    sha256 cellar: :any,                 x86_64_linux:      "13e0da07487b360263cac46d225f086a2132cceaf2b45edeb5353df74e9a9ad5"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "5a6615144922f18822aff2ab2ad3de62f196d3bd185461afcd11fa2a5cade61a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "f12de47b8857aa9fc99178607f80cd3b1c5d23a9b5b143e15c214a1bd04d16c8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "dd1990c7fa67a2384d1559f6005bf435c642061e5ab468b03452d87c9837add2"
+    sha256 cellar: :any,                 arm64_linux:       "d7e8318d15f57f7d3949f691f3cc757de70981de24740059d05e744f77fcb2bf"
+    sha256 cellar: :any,                 x86_64_linux:      "4bd789ba246e5070d77d0d68f30a2babe4199007d5ff64a3f06576e4acd0e146"
   end
 
   depends_on "certifi" => :no_linkage
@@ -144,8 +143,8 @@ class Streamrip < Formula
   end
 
   resource "pycryptodomex" do
-    url "https://files.pythonhosted.org/packages/4c/25/214ea825a9031f5af2c8b2506ee16701a2560d4712165dd00098dd527bcb/pycryptodomex-3.24.0.tar.gz"
-    sha256 "0428f19f13452c6b89bbaf2c530f84f369873811dfa77f0cee0da4f40fb0474f"
+    url "https://files.pythonhosted.org/packages/f4/e7/50e72301e32acb73a314e663c2014e1ddefc019d5f434ff14ec89861d664/pycryptodomex-3.24.1.tar.gz"
+    sha256 "09081666ffc599976c0b8b29caf2cf82212c0f05bed233c8f8ed53e4f6e1d356"
   end
 
   resource "pygments" do

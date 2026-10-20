@@ -1,11 +1,24 @@
 class Spim < Formula
   desc "MIPS32 simulator"
   homepage "https://spimsimulator.sourceforge.net/"
-  url "https://ghfast.top/https://github.com/billsix/spimulator/archive/6cb6a0828c806024b7f72c86173ced415abe3d68.tar.gz"
-  version "9.1.24"
-  sha256 "69d6fe14c0821c957ec72b2c15b9371c74b22fccc731c1502aac6a571f7ca98b"
   license "BSD-3-Clause"
   head "https://svn.code.sf.net/p/spimsimulator/code/"
+
+  stable do
+    url "https://src.fedoraproject.org/repo/pkgs/spim/spimsimulator-spim-20230804.tar.gz/sha512/628801e566c73ad4e0ebce04dedb97b1d55618cd7709cac6a1742c46523ce6be9e820c2e3afc87207ee9bc0304880ac2e15563630cde1d43c0dfb1022b6767b9/spimsimulator-spim-20230804.tar.gz"
+    version "9.1.24"
+    sha256 "f163fc3e9d58ea9d63d24c0df2b0ff374354d5ecfeda8d8aefab8e6e6ffa9924"
+
+    resource "CPU" do
+      url "https://src.fedoraproject.org/repo/pkgs/spim/spimsimulator-CPU-20230804.tar.gz/sha512/d5732125ffdefbb75d6795a5358cda18c3f22114af80ce4e34c43ea2f9556ede6220b5032454fab6fd334521eddecd3928706cc0ee1835a39035aeceacdd9684/spimsimulator-CPU-20230804.tar.gz"
+      sha256 "0368c73db63d1dcfa2db79e8f620d38500c0080f539e491dfa6494354357f9d7"
+    end
+
+    resource "Documentation" do
+      url "https://src.fedoraproject.org/repo/pkgs/spim/spimsimulator-Documentation-20230804.tar.gz/sha512/f8fe10b07265ed71582c30205e352d345fd2f80a4d98206910f470a3255740623d594119a450bde9a75784e0dc0d6f3fc12170d71b8df7991c54b2bb932e5f6d/spimsimulator-Documentation-20230804.tar.gz"
+      sha256 "baad6b5fc94b9c6ef957cd08e510735b1e0c174e329ea966cff776991227737c"
+    end
+  end
 
   no_autobump! because: :incompatible_version_format
 
@@ -18,13 +31,13 @@ class Spim < Formula
     sha256 x86_64_linux:      "c1b178dd6ac7d8be0bb3fc1c5cde0fa5da7ae94159ff69013a050fd0051676ba"
   end
 
-  deprecate! date: "2026-10-17", because: "does not have a checksummed source"
-  disable! date: "2027-04-17", because: "does not have a checksummed source"
-
   uses_from_macos "bison" => :build
   uses_from_macos "flex" => :build
 
   def install
+    (buildpath/"spim").install Dir["*"] if build.stable?
+    resources.each { |r| r.stage buildpath/r.name }
+
     bin.mkpath
     cd "spim" do
       system "make", "EXCEPTION_DIR=#{share}"

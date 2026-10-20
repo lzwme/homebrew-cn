@@ -3,18 +3,17 @@ class Jiratui < Formula
 
   desc "Textual User Interface for interacting with Atlassian Jira from your shell"
   homepage "https://jiratui.sh/"
-  url "https://files.pythonhosted.org/packages/dd/ac/3618e68fd05498812049cd1ba65252ea38bd86c23bd5b585f1a56dc20617/jiratui-1.17.0.tar.gz"
-  sha256 "8a1eb82476768969c80b3f13acfe6b1aab7c1ff58009f454735b18a463ea5811"
+  url "https://files.pythonhosted.org/packages/07/fd/41f2de6d8b0debe5e8e233c7b2d6b07e2c4a9d82a40f54e58c34978a9d44/jiratui-1.18.0.tar.gz"
+  sha256 "982595aea9aa3a8aa0edff03f196eccff6d5075628753bfd95b002c01a1437cb"
   license "MIT"
   head "https://github.com/whyisdifficult/jiratui.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_golden_gate: "12bf48f3c3f12d3bf056b9acee4ab66e72bbed3ac3b013ec422dd6560d12e176"
-    sha256 cellar: :any, arm64_tahoe:       "18e912954c2fa482433e8797e22d7e5f36aa9859712d77888a5b72497d589088"
-    sha256 cellar: :any, arm64_sequoia:     "58ad8a20977f1196ee696a2eb5c6d33d4be32b608f4f8b2ff8a18df08749d2f2"
-    sha256 cellar: :any, arm64_linux:       "75ef0f9f04aeadce610d606610a2c4467861d9d14d17ea7dd61673d4a93a90d4"
-    sha256 cellar: :any, x86_64_linux:      "419d2e302b38f22bb0e73afdcbfceaf0d4c361166ed3aba384ad8f28f3c9538a"
+    sha256 cellar: :any, arm64_golden_gate: "eeb558228f44e502a9aa3d3d714d46dc1b606f4049b6f3f0e62e901f32ae5dfc"
+    sha256 cellar: :any, arm64_tahoe:       "8ba9293541f3c9b49c5c807b1c9fd7e48b0a79f35f64e10f4999b07577fe9524"
+    sha256 cellar: :any, arm64_sequoia:     "2f0ca9885b5a3493366441ab38a02d5c74e90ae5f7164ab48907ac51e9165216"
+    sha256 cellar: :any, arm64_linux:       "4948bdd28524c736865677f11925d46b6e1117763c1950cebb21d8553ee56c89"
+    sha256 cellar: :any, x86_64_linux:      "29eee4c700b58d6a6593fbbe135f353d5cf588f51454dc08cca0fdcbdf12c8a5"
   end
 
   depends_on "rust" => :build
@@ -110,8 +109,8 @@ class Jiratui < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/90/a1/d5f9002a70298c64a789779077d8dd90c10aa1f47fe40c86802df874f2a6/platformdirs-4.12.4.tar.gz"
-    sha256 "63743c02414e755de4e31b8f68125c1407495b86c5a006e203c01ff8b9924250"
+    url "https://files.pythonhosted.org/packages/b7/89/dfd269de936e76319cf27787d9eaaca513491f635d49b0fbe7cdb6d3bf6f/platformdirs-4.13.4.tar.gz"
+    sha256 "dd96496961684a7f42041923f842ec7494e09f5e87aded99117e1109cd40570e"
   end
 
   resource "prompt-toolkit" do
@@ -125,8 +124,8 @@ class Jiratui < Formula
   end
 
   resource "pydantic-settings" do
-    url "https://files.pythonhosted.org/packages/68/ca/31c57507b13119d7d3cfa1576dad2911a4861e3be07b579395f4e9d393f9/pydantic_settings-2.15.0.tar.gz"
-    sha256 "694b793e84f766ba76a90ebdefc01d0a9a045dab0382bee70393da93712ad117"
+    url "https://files.pythonhosted.org/packages/2e/3b/a5d2294799b53b448319978cfb5bd139d5a9d45e862af91661614f14c922/pydantic_settings-2.16.0.tar.gz"
+    sha256 "5b6c578049ede4db0e2ef3b4eaa4ad4069cfa9211f83fb38df899dfade50a614"
   end
 
   resource "pygments" do

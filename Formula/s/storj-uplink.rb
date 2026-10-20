@@ -1,8 +1,8 @@
 class StorjUplink < Formula
   desc "Uplink CLI for the Storj network"
   homepage "https://storj.io"
-  url "https://ghfast.top/https://github.com/storj/storj/archive/refs/tags/v1.165.1.tar.gz"
-  sha256 "1e14c445446450e1fb5a41e98bd456b62b39a4f553db326e33725e3db509435a"
+  url "https://ghfast.top/https://github.com/storj/storj/archive/refs/tags/v1.165.2.tar.gz"
+  sha256 "ae08d238138e5f513f2622759715e2b9af79803bf3cc7a3887a062b378d291dd"
   license "AGPL-3.0-only"
 
   # Upstream creates stable releases and marks them as "pre-release" before
@@ -18,11 +18,11 @@ class StorjUplink < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "5a704a352853e297ddcb11a4eeb0ec3f4cfda6a14ec68aad8d438da3b7c3ac69"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "5a704a352853e297ddcb11a4eeb0ec3f4cfda6a14ec68aad8d438da3b7c3ac69"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "5a704a352853e297ddcb11a4eeb0ec3f4cfda6a14ec68aad8d438da3b7c3ac69"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "bc1fb2c37af5b5809141b0e1e983ee9121096ba8285ef79d287cab56e4340018"
-    sha256 cellar: :any,                 x86_64_linux:      "ab5c4b208ac5e18530b81edc460940ed1ed2f5f13e06815f80f43fbb19963f09"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "bcca7a152df19d5845ccc9a14ce8ea6563a4f36338056bc68b4d815f231d6c4a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "bcca7a152df19d5845ccc9a14ce8ea6563a4f36338056bc68b4d815f231d6c4a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "bcca7a152df19d5845ccc9a14ce8ea6563a4f36338056bc68b4d815f231d6c4a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "e50b2ca51e284c60545128de06dfc7174131f96401c3c4176b23764094d79e17"
+    sha256 cellar: :any,                 x86_64_linux:      "dea1fddb0b182a5ff03191f5acedc57e1535ac7c97f991583781cb6e611b154e"
   end
 
   depends_on "go" => :build

@@ -6,6 +6,11 @@ class DartSdk < Formula
   license "BSD-3-Clause"
   compatibility_version 3
 
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   bottle do
     sha256 cellar: :any, arm64_golden_gate: "ba2fe7dee081e6782d25e7b93c9b8856c03dadc6f199ae7cabc14a7889b3deee"
     sha256 cellar: :any, arm64_tahoe:       "ec74532ed9ee0061a7fdcf2b731f207bc9e095756a4d04ca921d1d52e0f40614"
