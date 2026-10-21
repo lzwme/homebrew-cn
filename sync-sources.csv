@@ -3956,7 +3956,7 @@ Homebrew-homebrew-core/Formula/l/locateme.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/lockrun.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/locust.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/log4c.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/l/log4cplus.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/l/log4cplus.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/log4cpp.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/log4cxx.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/log4shib.rb, Homebrew/homebrew-core, 0
@@ -4285,7 +4285,7 @@ Homebrew-homebrew-core/Formula/lib/libmaa.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libmagic.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libmapper.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libmarpa.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/lib/libmatio.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/lib/libmatio.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libmatroska.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libmaxminddb.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libmd.rb, Homebrew/homebrew-core, 0
@@ -6953,7 +6953,7 @@ Homebrew-homebrew-core/Formula/s/shepherd.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/sherif.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sherlock.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/shfmt.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/s/shibboleth-sp.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/s/shibboleth-sp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/shiki.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/shimmy.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/shivavg.rb, Homebrew/homebrew-core, 0
@@ -7763,6 +7763,7 @@ Homebrew-homebrew-core/Formula/t/tox.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/toxcore.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/toxiproxy.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tpack.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/t/tpcgen-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tpix.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tpl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tpm.rb, Homebrew/homebrew-core, 1
@@ -13036,7 +13037,6 @@ Homebrew-homebrew-cask/Casks/g/gpt4all.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/g/gpxsee.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/gqrx.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/g/graalvm-jdk.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/g/graalvm-jdk@17.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/graalvm-jdk@21.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/graalvm-jdk@25.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/grads.rb, Homebrew/homebrew-cask, 0
@@ -13157,6 +13157,7 @@ Homebrew-homebrew-cask/Casks/h/hoptodesk.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/h/horos.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/h/hostsx.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/h/hot.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/h/hotkeyclash.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/h/hotovo-aider-desk.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/h/houdahspot.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/h/hovrly.rb, Homebrew/homebrew-cask, 1
@@ -15398,6 +15399,7 @@ Homebrew-homebrew-cask/Casks/s/soulver-cli.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/soulver.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/sound-control.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/sound-siphon.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/s/sound-studio.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/soundanchor.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/soundcraft.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/soundflower.rb, Homebrew/homebrew-cask, 1

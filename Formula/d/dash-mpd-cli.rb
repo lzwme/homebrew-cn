@@ -25,6 +25,12 @@ class DashMpdCli < Formula
     sha256 "4fb9ea292aba0db94ddfe8c941b8423d98decb51dca851afbc203e409bd487d4"
   end
 
+  allow_network_access! :test
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
     ENV.append_to_rustflags "--cfg reqwest_unstable"
     system "cargo", "install", *std_cargo_args

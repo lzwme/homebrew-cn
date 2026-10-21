@@ -13,11 +13,12 @@ class PythonAT314 < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "8dc9259de599918f979e124f7eb830db7f72a73f4a14ca97b868ec2dd1b5713a"
-    sha256 arm64_tahoe:       "27af98cd11442db97e282d965572617ed686219e2e86d06f795425723cfcccaa"
-    sha256 arm64_sequoia:     "3985ddbb87c8cf928f0d081e4f44039bc604967462c2a5c2aa4991f94d9678e6"
-    sha256 arm64_linux:       "2e9c8256e20394dec5f2a0f66a724cf391d13aae093e143fcd8c90566111310f"
-    sha256 x86_64_linux:      "37188eb4335276e9d1237968dce853f8ad73a739a15a206367b046dd8ab2f199"
+    rebuild 1
+    sha256 arm64_golden_gate: "789869eac42ee37cc4311059d65f88cb673fa62d170693da4ab44d00c014f4f2"
+    sha256 arm64_tahoe:       "a6e9f54e583c2ca8668a4c63141ef599dd6db5cf927f3cb210820321e97c86cd"
+    sha256 arm64_sequoia:     "3849a3188921562ed6d698a84e9a0f5d9c0c7b921f40e1fcb0c21d4ce531b99f"
+    sha256 arm64_linux:       "9d53b15def0d3bc96d0d0cc5b7c84286fc69d5bc38955a22924224c580865334"
+    sha256 x86_64_linux:      "8e2ea9ce754771c5be07ad023887a1511708a136370770895204ab715e4cd3a6"
   end
 
   # https://devguide.python.org/versions/#versions
@@ -434,7 +435,6 @@ class PythonAT314 < Formula
       # This file is created by Homebrew and is executed on each python startup.
       # Don't print from here, or else python command line scripts may fail!
       # <https://docs.brew.sh/Homebrew-and-Python>
-      import re
       import os
       import site
       import sys
@@ -452,22 +452,20 @@ class PythonAT314 < Formula
       if os.path.realpath(sys.executable).startswith('#{rack}'):
           # the Cellar site-packages is a symlink to the HOMEBREW_PREFIX
           # site_packages; prefer the shorter paths
-          long_prefix = re.compile(r'#{rack}/[0-9\\._abrc]+/(?:Frameworks/Python\\.framework/Versions/#{version.major_minor}/)?lib/python#{version.major_minor}/site-packages')
-          sys.path = [long_prefix.sub('#{site_packages}', p) for p in sys.path]
+          sys.path = [p.replace('#{site_packages_cellar}', '#{site_packages}') for p in sys.path]
           # Set the sys.executable to use the opt_prefix. Only do this if PYTHONEXECUTABLE is not
           # explicitly set and we are not in a virtualenv:
           if 'PYTHONEXECUTABLE' not in os.environ and sys.prefix == sys.base_prefix:
               sys.executable = sys._base_executable = '#{opt_bin}/python#{version.major_minor}'
       if 'PYTHONHOME' not in os.environ:
-          cellar_prefix = re.compile(r'#{rack}/[0-9\\._abrc]+(?=/|$)')
           if os.path.realpath(sys.base_prefix).startswith('#{rack}'):
-              new_prefix = cellar_prefix.sub('#{opt_prefix}', sys.base_prefix)
+              new_prefix = sys.base_prefix.replace('#{prefix}', '#{opt_prefix}')
               site.PREFIXES[:] = [new_prefix if x == sys.base_prefix else x for x in site.PREFIXES]
               if sys.prefix == sys.base_prefix:
                   sys.prefix = new_prefix
               sys.base_prefix = new_prefix
           if os.path.realpath(sys.base_exec_prefix).startswith('#{rack}'):
-              new_exec_prefix = cellar_prefix.sub('#{opt_prefix}', sys.base_exec_prefix)
+              new_exec_prefix = sys.base_exec_prefix.replace('#{prefix}', '#{opt_prefix}')
               site.PREFIXES[:] = [new_exec_prefix if x == sys.base_exec_prefix else x for x in site.PREFIXES]
               if sys.exec_prefix == sys.base_exec_prefix:
                   sys.exec_prefix = new_exec_prefix

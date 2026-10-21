@@ -3,18 +3,17 @@ class Apm < Formula
 
   desc "Dependency manager for AI agent configuration"
   homepage "https://microsoft.github.io/apm/"
-  url "https://files.pythonhosted.org/packages/84/3f/e383f7c304d46656d77e5959db7d914e590c283af5b407ddf94205d02edb/apm_cli-0.33.0.tar.gz"
-  sha256 "a523805a3cc9b51f80573c1efce13982b3a5665c8ae749a51e5648575a1d6633"
+  url "https://files.pythonhosted.org/packages/bb/1a/7a1714c044295c9844fe50f338fa04f302112cf9102618098c3b8b570809/apm_cli-0.34.0.tar.gz"
+  sha256 "55610c84c0b1f7eab4a8658767d1b01fe74f95261f39186f3492ccd24a155117"
   license "MIT"
   head "https://github.com/microsoft/apm.git", branch: "main"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any, arm64_golden_gate: "4ecea812da0307a04684e136e5b42f3648e7fd29fde4cf435f9fdc43ff37891f"
-    sha256 cellar: :any, arm64_tahoe:       "98a409a453bc6e5877de43cc96aadaf8773c3ae229e8c8590470c8042899bc1f"
-    sha256 cellar: :any, arm64_sequoia:     "0ce3409d4cfa92c7d8bcaa29d2271e5d6bf318c19938a1d7467c376c16f7d129"
-    sha256 cellar: :any, arm64_linux:       "7a0d5071a8d00ce3330be6bf77c3f7ed06ba47e12f155f5710759c0f1a171286"
-    sha256 cellar: :any, x86_64_linux:      "02e25ec944c425d42e603d16c1a1dad380b6baa58c82ebc76a50926949710ce3"
+    sha256 cellar: :any, arm64_golden_gate: "40a3b2011a1017fe1cd3c34a34ecb57cc4c5fab5ddef4590908cd85fc428a036"
+    sha256 cellar: :any, arm64_tahoe:       "3175167bdcbbfd6fc26d979e23b3d7b58ee9880036bb8e993697dedaa326e389"
+    sha256 cellar: :any, arm64_sequoia:     "2f57faa2d3b1ec1fe61fefd9fb32ddab0f9c4d917d537485add5925ce58bf355"
+    sha256 cellar: :any, arm64_linux:       "14866e10f36f0f216a7f1547c419a5d11bf0aebd94c857a250e763b327ff3c43"
+    sha256 cellar: :any, x86_64_linux:      "dbf70f3c64f0b048e5e73c01d2a88b226a098d2612189abb48413dfdcbcb0d7a"
   end
 
   depends_on "rust" => :build # for jiter
@@ -31,8 +30,8 @@ class Apm < Formula
   end
 
   resource "aiohttp" do
-    url "https://files.pythonhosted.org/packages/93/2f/6a91adaa2dc26877d6ed2f54c0370c8910f019db7d77c5c6a194611e93ea/aiohttp-3.14.4.tar.gz"
-    sha256 "831fc5bd39ec2517851e348f613ddb5447a47cf4b71cb09845af7ad7ed45d8f9"
+    url "https://files.pythonhosted.org/packages/6c/4c/bdccd81e9ee225b69c60e7766c9a5b05364f118f4d383713b89a682d772d/aiohttp-3.14.5.tar.gz"
+    sha256 "5558a7f5a05af9ecf744af91e5baefc436f93c9333e656c27ec253f9a6bbe178"
   end
 
   resource "aiosignal" do
@@ -86,8 +85,8 @@ class Apm < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/4c/58/6fd434bec86eff7c38a3168454cb132b762b2bea9b3ac094101a2f7bc32a/filelock-4.1.0.tar.gz"
-    sha256 "ad7f724afef953e731b1cc39bcd3a09166d72ed7fcdf29e6e88b1c3235c6715d"
+    url "https://files.pythonhosted.org/packages/d8/28/3893324bcadf8f89b1616637468d766af3f625008c0735bf704fdfa86617/filelock-4.2.4.tar.gz"
+    sha256 "c6d8663535e1650ee430507b4ffbac7b464dd64b7647ea0112a9f406499d163d"
   end
 
   resource "frozenlist" do
@@ -101,8 +100,8 @@ class Apm < Formula
   end
 
   resource "gitpython" do
-    url "https://files.pythonhosted.org/packages/6e/2d/6f6e649818da44d4499604802c89329b8d9799687a124e3a5e467a643336/gitpython-3.2.0.tar.gz"
-    sha256 "fb92310af6844d96adc95ca066ed2e617c00e1dbd146a326626c81e72e18cc2e"
+    url "https://files.pythonhosted.org/packages/c0/ff/fee293f1ec3e1b64db6eb270e00964f29c086d769201474cedb8d1608930/gitpython-3.2.1.tar.gz"
+    sha256 "0f1229ec5c057bdabdeeda8bda4f17bda679ab33dbccc00f24e6a480553c8613"
   end
 
   resource "h11" do
@@ -111,13 +110,13 @@ class Apm < Formula
   end
 
   resource "httpcore2" do
-    url "https://files.pythonhosted.org/packages/cb/f3/1db7aa2bc2524062192bb0e0323969492d1883152a232fe36eea65f4e35c/httpcore2-2.13.1.tar.gz"
-    sha256 "e0aa977abe17e69a3b820a24542a6fa88702676d83880b8d194dcd18408e5103"
+    url "https://files.pythonhosted.org/packages/30/ff/b53af1b49bb2cb5fa97c92215614b173ca5c1a99ded80e2d52f15a94fa6d/httpcore2-2.14.0.tar.gz"
+    sha256 "4f57a1a8249fe6af589d935cfd456f1d13bbdcb0f0fc72af9142368fc94811d7"
   end
 
   resource "httpx2" do
-    url "https://files.pythonhosted.org/packages/d5/44/474bef2a0e9d90f1715d32cb98b0738695ca17ba324095fb2497ed7fbd59/httpx2-2.13.1.tar.gz"
-    sha256 "e48744a19e3af5ee48313d0ce5fe941d5422fae5705ea922a4aabf94d7800dfa"
+    url "https://files.pythonhosted.org/packages/e8/67/58353f1848b4ba568e1ec22ea1e0d8e039f0bca5fde7e2d1f07739fd83e7/httpx2-2.14.0.tar.gz"
+    sha256 "47ad61a3c40282cd8d0dc96311531f00f5bfc71a066c6fe3b36d8f63fb9e4f6e"
   end
 
   resource "idna" do
@@ -156,18 +155,18 @@ class Apm < Formula
   end
 
   resource "multidict" do
-    url "https://files.pythonhosted.org/packages/d6/99/1d4d69c3512d0ddbfa3a1b69cfd9a151012ab2eb4eabbb096201b1f0b7d8/multidict-6.9.1.tar.gz"
-    sha256 "0f06e60fa190aa7abd0914c2a766736fdc8e9f34878c4346338534b73d1b20e2"
+    url "https://files.pythonhosted.org/packages/f9/79/84ddb5ba16c4eb2c69c71db76ae3c579fe546e511f7170c7e27eedbab7c1/multidict-7.1.0.tar.gz"
+    sha256 "61a4e5d81b8d4e4ad61964b230129e7a2b914793d96289029078fc9009f074ec"
   end
 
   resource "openai" do
-    url "https://files.pythonhosted.org/packages/b7/a3/3b5576af9c4b8cb7eef1383d33c48a9431b292983fe4b78cbffb31d0aeeb/openai-3.28.0.tar.gz"
-    sha256 "cf0509d32d7bd8eb6a3db02417957cb455212b6629d071826b9ea1f61659e2a4"
+    url "https://files.pythonhosted.org/packages/87/4c/609b16f2a6e9a99f27a82ce93ff75868e7cb364fe6daff50cc0c1d620772/openai-3.35.1.tar.gz"
+    sha256 "b33e6561b90586e450def8a388e7d364755325da6884fc71348be5542e043bd0"
   end
 
   resource "pluggy" do
-    url "https://files.pythonhosted.org/packages/f9/e2/3e91f31a7d2b083fe6ef3fa267035b518369d9511ffab804f839851d2779/pluggy-1.6.0.tar.gz"
-    sha256 "7dcc130b76258d33b90f61b658791dede3486c3e6bfb003ee5c9bfb396dd22f3"
+    url "https://files.pythonhosted.org/packages/bf/db/7fc19e6f2dc92a966727031389fc2e08b558f0f25eb7403c1119ad4713cd/pluggy-1.7.0.tar.gz"
+    sha256 "d1eaa46ebb595891b860ab086b4d09c8588af65ebd4361b8e8f4bb8920b90ba8"
   end
 
   resource "propcache" do
@@ -266,13 +265,13 @@ class Apm < Formula
   end
 
   resource "tomlkit" do
-    url "https://files.pythonhosted.org/packages/94/96/e07752635b98536177fa1f37671c8f3cdde2e724c6bcf6034b2cfb571565/tomlkit-0.15.1.tar.gz"
-    sha256 "e25bbf38843005246210a12982776f27f99cb9be67160e14434d0c0d21ee1e97"
+    url "https://files.pythonhosted.org/packages/08/72/fc01563df95c189a9f65850096bdc205bc2fe37da6c740cd64afaf18d07e/tomlkit-0.15.2.tar.gz"
+    sha256 "83e32755ba1d20d9340bd069ee97e9f6232ba2346b63ffcba425de01f7e327a6"
   end
 
   resource "truststore" do
-    url "https://files.pythonhosted.org/packages/53/a3/1585216310e344e8102c22482f6060c7a6ea0322b63e026372e6dcefcfd6/truststore-0.10.4.tar.gz"
-    sha256 "9d91bd436463ad5e4ee4aba766628dd6cd7010cf3e2461756b3303710eebc301"
+    url "https://files.pythonhosted.org/packages/ee/9f/c5201d42a484c061e528825fc8e2d565f5abd50a4ced6fb7d29c4ec99b2b/truststore-0.10.5.tar.gz"
+    sha256 "30d36967ccaded5cbb38d602c433f53600036c79d502f4533a49b60a03bbefcd"
   end
 
   resource "urllib3" do

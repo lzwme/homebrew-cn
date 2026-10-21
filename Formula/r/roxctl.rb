@@ -1,8 +1,8 @@
 class Roxctl < Formula
   desc "CLI for Stackrox"
   homepage "https://www.stackrox.io/"
-  url "https://ghfast.top/https://github.com/stackrox/stackrox/archive/refs/tags/4.11.5.tar.gz"
-  sha256 "64d366577b9e32612de2ce4bc56f005a0c78440ff9930303b5c3bb15704d24d7"
+  url "https://ghfast.top/https://github.com/stackrox/stackrox/archive/refs/tags/4.11.6.tar.gz"
+  sha256 "ed6a42650fb8c3c87ff50ece55ff1138153b9106e84b61800accc75fbd884e2f"
   license "Apache-2.0"
   head "https://github.com/stackrox/stackrox.git", branch: "master"
 
@@ -15,11 +15,11 @@ class Roxctl < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "86530d2d8a82042e9369d7939fd98500e16051d45a50a4c12135bd0e836c0cc7"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "67f3d2c9df01b4838388afab9b599983ca7f05d9ec7014fbde5c5c754bdf69c3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "40c67b034239a46e37598dc4827396b2a964fc2c2cd0bcfaf97e504426305671"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "3b2ec33102d976900105afb7ad5639ed0e0b007aa1fa9cfd637f0f99fc11ab05"
-    sha256 cellar: :any,                 x86_64_linux:      "34b22e77eb18f65eda22c6779b0b3e2ce993077b3bf7b63d8ba20c8c1d7a93fd"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "699fb0b5f5666c91578ffd942347892daa11b067db11e822b0c4a961e5323872"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "5b3d1f95657b111b029da9bc4dcc35d6d40c55a12cb1707521eca5a1db1a7afa"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "8c95c1ea4ff5a8db54fcbfadca701d5290006d9b1d6f6e0ddcd795f493a8806e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "5fa201749d675c66e9eade21ea5fdee16d58f3a0aee0cbf6e014dd700db3c433"
+    sha256 cellar: :any,                 x86_64_linux:      "9e87678a9224daf6f25c0d66a8e661fc1c8f4e9e62412c3bacaaef69e3610818"
   end
 
   depends_on "go" => :build

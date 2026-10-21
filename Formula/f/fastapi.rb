@@ -3,16 +3,16 @@ class Fastapi < Formula
 
   desc "CLI for FastAPI framework"
   homepage "https://fastapi.tiangolo.com/"
-  url "https://files.pythonhosted.org/packages/cd/5b/f3b4277844c3ce66c16f62670cd2a26236489aa97115d04182171ce714a9/fastapi-0.146.0.tar.gz"
-  sha256 "e96047fc353ff43f7fda069c3578a7d94902a762d9aca2e065f7f801abd91a49"
+  url "https://files.pythonhosted.org/packages/b9/37/6e7ec4dbe12d9721902066ddb83dd9c6e7adb1cee81e094502c43024e4d1/fastapi-0.149.0.tar.gz"
+  sha256 "aba5779358d0c5233759ddcddd84fe7269d71f775fd754b653b608f770558a41"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "2021f0844f2657aa62d3f7e92f6a4542c16814812a72d8b05325310ac9449871"
-    sha256 cellar: :any, arm64_tahoe:       "4913fc50e87741084d3585f5029bde1776860b5eb59c643d420d3fb061d4c2ea"
-    sha256 cellar: :any, arm64_sequoia:     "fb986f0f651e6d726575eb5999b9305367b94ac0c3ab29defccc2f9a72748b7d"
-    sha256 cellar: :any, arm64_linux:       "00eec6fac87649cb7ebcb5011aba749f94bec7b309514c08d3646949ba0b7d09"
-    sha256 cellar: :any, x86_64_linux:      "5da3176a78456fb7a57c8038f638c05182a5952b62be355d25ae4744e1a5d4fe"
+    sha256 cellar: :any, arm64_golden_gate: "411f8786c88348cdcb3062edaeec67351e9603f77ba03109af42999633e17053"
+    sha256 cellar: :any, arm64_tahoe:       "ca090dfc49129574c970daf45d906d614dbdcd06c4538b77957517cb869d46fb"
+    sha256 cellar: :any, arm64_sequoia:     "07f6b32073e14dcfb6ba298413da418749794afac03e7de8d5e4b06db2555f60"
+    sha256 cellar: :any, arm64_linux:       "1e6e51571d7afe2a6cbe0619fd5a78ceceee2f2ec32485771fd81ff2add819b4"
+    sha256 cellar: :any, x86_64_linux:      "bc418e5104dc1ab23ebb2321fdffa9be152dc3bdb5d99fe0798e673f900599bf"
   end
 
   depends_on "rust" => :build # for annotated-doc
@@ -280,8 +280,8 @@ class Fastapi < Formula
   end
 
   resource "websockets" do
-    url "https://files.pythonhosted.org/packages/01/89/3f825ab71c242fffb62ea8fe638741c290f62f8d7aadf8125ff897747af3/websockets-17.2.tar.gz"
-    sha256 "36c2fb94c990cc2545143b12690e2de6c16300f9dbe5b4f33fa300cf57dc8792"
+    url "https://files.pythonhosted.org/packages/30/4b/4692be6d5bf739ed049b3813901c42091f8c054df89d5c089343823dea0d/websockets-17.3.tar.gz"
+    sha256 "1c7dd93a1c9f89297471493674b1fc1d9467cafd45374f2172213046bdb3a329"
   end
 
   def install

@@ -1,8 +1,8 @@
 class Opencode < Formula
   desc "AI coding agent, built for the terminal"
   homepage "https://opencode.ai"
-  url "https://ghfast.top/https://github.com/anomalyco/opencode/archive/refs/tags/v2.0.32.tar.gz"
-  sha256 "d9e080eae0965104dfe3857aabbc8ce976e9aeaa62110ce101bc1a107d243d97"
+  url "https://ghfast.top/https://github.com/anomalyco/opencode/archive/refs/tags/v2.1.0.tar.gz"
+  sha256 "c2e3f3b1684c93e61efb5bf94ea3dec62f6cfaf9b4930e5103ab49b37d3b2a39"
   license "MIT"
 
   livecheck do
@@ -12,11 +12,11 @@ class Opencode < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "2ad4927218ccc834800f2655333f542522e9f07e017fbc587fb876b6a5e89b48"
-    sha256 arm64_tahoe:       "54e7614c80bf6200d41a98942c38a49bd16bcaadbd8447eba8db49ddbab2e3ee"
-    sha256 arm64_sequoia:     "a1f5daca02b849b521c48105aa41ee6e9036ca5a337abe66bd430bdf00f1032a"
-    sha256 arm64_linux:       "3af471f8e388b18ebb1a36d1513089ace1856f0eb43b276e1e65e4536cf6cb7c"
-    sha256 x86_64_linux:      "24aa2114bc96d379ea7d19f20a3137e22e1e0f40b9da8b729d345afd732dc567"
+    sha256 arm64_golden_gate: "6051ffbe2846c3ff5521f24f35a57e7eb18c685495324431efa761fd667603be"
+    sha256 arm64_tahoe:       "f1246cccdf801556f3943978604c25fbfbd11dd7f22e9cd87647cd9c84bf02ed"
+    sha256 arm64_sequoia:     "86c45795addc3277692c1e0e6b74c979e28fbab580b2e8758ab76e359b45555b"
+    sha256 arm64_linux:       "46aa4c7f1abf3535c43a819cf47110f34ec760093824098b427429854e13db55"
+    sha256 x86_64_linux:      "8e5cae1c14cc242b65269847279ffe8c331d91e20cfef6aef50393f6d0822831"
   end
 
   depends_on "bun" => :build
@@ -30,8 +30,8 @@ class Opencode < Formula
   end
 
   resource "opencode-pty" do
-    url "https://ghfast.top/https://github.com/anomalyco/opencode-pty/archive/refs/tags/v0.2.0.tar.gz"
-    sha256 "7fc1d1ebf4b74cd1b2a83f059afa29a899990b85cf078e73b703004370a52754"
+    url "https://ghfast.top/https://github.com/anomalyco/opencode-pty/archive/refs/tags/v0.3.1.tar.gz"
+    sha256 "101efcfde719cd9ead649d1fc1e1c31a31e89c854bf63b9cd2e977a7661f18a0"
 
     livecheck do
       url "https://ghfast.top/https://raw.githubusercontent.com/anomalyco/opencode/refs/tags/v#{LATEST_VERSION}/packages/cli/package.json"

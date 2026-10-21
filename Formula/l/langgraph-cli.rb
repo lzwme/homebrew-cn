@@ -3,16 +3,16 @@ class LanggraphCli < Formula
 
   desc "Command-line interface for deploying apps to the LangGraph platform"
   homepage "https://www.github.com/langchain-ai/langgraph"
-  url "https://files.pythonhosted.org/packages/67/fe/6c1ea752c94e04b24f8b1be32ac33330b4e435f292549163f22567b0c054/langgraph_cli-0.4.36.tar.gz"
-  sha256 "5999916a0e34c57cafadf60040e2aa7ca023cf4da14086ce56ab4c8c2d3b76e5"
+  url "https://files.pythonhosted.org/packages/55/53/f2214b9103621c114c4835db908c350b0f1360bc696fa4f3348d7baa6b74/langgraph_cli-0.4.37.tar.gz"
+  sha256 "a24ac16135a72de158576aba358d731c33372dc0ab4caa6f9f8618c70942c638"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "972e443448ea01afd4b914beb263ddaa3691d347546b6b952b0661a0f5b24a4b"
-    sha256 cellar: :any, arm64_tahoe:       "05e5100e4082c64cc12d52222d4c6dcba9a8b9dde6768344702dfc3086b3c849"
-    sha256 cellar: :any, arm64_sequoia:     "f53901bbf4dcf572fcc7a27e4c67192d173c7d9736de99da0e412cb87fb68334"
-    sha256 cellar: :any, arm64_linux:       "70acf9a3a869c7614158219ac90ad503272752ff47f0c662cd461860c976c8c9"
-    sha256 cellar: :any, x86_64_linux:      "ce2411e98ad70b30330861c6f073d22109a65a4a4927d6512a56321f03217561"
+    sha256 cellar: :any, arm64_golden_gate: "40b1263b55aa1fda9f46fbbf43493bd419072653611e5d9d517d4f91bb754aac"
+    sha256 cellar: :any, arm64_tahoe:       "4f1ecd3f6abe1effd7cc01ba4967fd818ed6fb45122370b487fe140db479a020"
+    sha256 cellar: :any, arm64_sequoia:     "26b43b2bb734d67f9f8bf6f77ef4885283bcf87bdce1528d3a457fc63b3ac704"
+    sha256 cellar: :any, arm64_linux:       "c289de5aaa57326ec02387ffb1cbe5044d6838a381bdcd20a97546ce46064de5"
+    sha256 cellar: :any, x86_64_linux:      "553bcfab0456d40ca03412384c226cc5c5814cb7b44ed5cfae86bf3ef9edf996"
   end
 
   depends_on "rust" => :build # for orjson
@@ -56,8 +56,8 @@ class LanggraphCli < Formula
   end
 
   resource "httpcore2" do
-    url "https://files.pythonhosted.org/packages/cb/f3/1db7aa2bc2524062192bb0e0323969492d1883152a232fe36eea65f4e35c/httpcore2-2.13.1.tar.gz"
-    sha256 "e0aa977abe17e69a3b820a24542a6fa88702676d83880b8d194dcd18408e5103"
+    url "https://files.pythonhosted.org/packages/30/ff/b53af1b49bb2cb5fa97c92215614b173ca5c1a99ded80e2d52f15a94fa6d/httpcore2-2.14.0.tar.gz"
+    sha256 "4f57a1a8249fe6af589d935cfd456f1d13bbdcb0f0fc72af9142368fc94811d7"
   end
 
   resource "httpx" do
@@ -66,8 +66,8 @@ class LanggraphCli < Formula
   end
 
   resource "httpx2" do
-    url "https://files.pythonhosted.org/packages/d5/44/474bef2a0e9d90f1715d32cb98b0738695ca17ba324095fb2497ed7fbd59/httpx2-2.13.1.tar.gz"
-    sha256 "e48744a19e3af5ee48313d0ce5fe941d5422fae5705ea922a4aabf94d7800dfa"
+    url "https://files.pythonhosted.org/packages/e8/67/58353f1848b4ba568e1ec22ea1e0d8e039f0bca5fde7e2d1f07739fd83e7/httpx2-2.14.0.tar.gz"
+    sha256 "47ad61a3c40282cd8d0dc96311531f00f5bfc71a066c6fe3b36d8f63fb9e4f6e"
   end
 
   resource "idna" do
@@ -76,18 +76,18 @@ class LanggraphCli < Formula
   end
 
   resource "jsonpatch" do
-    url "https://files.pythonhosted.org/packages/df/f8/48a6033ebdd5013a58b5a79402eacb15ffb6e208f244c1c17f6f1e3b29c2/jsonpatch-1.35.tar.gz"
-    sha256 "679ad08672b4663c7ef1e5f3331d940f5e7786661b9acc1530104be1638e7a4f"
+    url "https://files.pythonhosted.org/packages/8e/39/c534bb172e9318400d5631074b1eda6c78b7c918d0f04233b50caa8e2c10/jsonpatch-1.36.tar.gz"
+    sha256 "7e110cb3c5a1c8768f7170bf8fb9887c4aa575fba74c95239e868b494bd9a522"
   end
 
   resource "jsonpointer" do
-    url "https://files.pythonhosted.org/packages/33/a2/c92f0a7ed439c490d2c8ad712fdb074c311afa4f77870987826a3b1483ba/jsonpointer-3.2.1.tar.gz"
-    sha256 "47c846513b3a4ec46eecef1105207fba075e2a3659048e362bd7daff0fc33342"
+    url "https://files.pythonhosted.org/packages/52/77/9be5cce647fa4d7afa9047c0c1029bc73292c27430e64fc9d2393ccf6727/jsonpointer-3.4.tar.gz"
+    sha256 "e57015ae65af3821c6a3976069860789cf326103f38b22b2178d41d021adad25"
   end
 
   resource "langchain-core" do
-    url "https://files.pythonhosted.org/packages/06/ae/3af9efe9e6280bb13d9e7d2c8b1173fd870aff0202d239a9710c8c2ce922/langchain_core-1.6.11.tar.gz"
-    sha256 "1ae4133bba30fb14100f74718ea7458cb6134d135704977354f8f178d561122a"
+    url "https://files.pythonhosted.org/packages/12/c2/9779d64322d4e270f6d5392bc86b30f735581a87b5eefd6ad15a0828a169/langchain_core-1.6.12.tar.gz"
+    sha256 "dc6b2a965c351b4cc94df1c80220bcf3c5472e14437d2186c8290ea22f4d0219"
   end
 
   resource "langchain-protocol" do
@@ -96,8 +96,8 @@ class LanggraphCli < Formula
   end
 
   resource "langgraph-sdk" do
-    url "https://files.pythonhosted.org/packages/0e/5d/cbeacb114f4a6269fc476f7d2feba088f6ada0c00f81bf5decc587f81511/langgraph_sdk-0.4.7.tar.gz"
-    sha256 "6827560be31e38daae1514234e9aa12c345dd40d4d4b94aa1b443729bfccda69"
+    url "https://files.pythonhosted.org/packages/5e/2a/bb6b4ca7a735901542c885e59ce3d1a128e2914b072b0c9a9feaf927195a/langgraph_sdk-0.4.8.tar.gz"
+    sha256 "6dd0c55d0d9040686716581c9e302c21c31ad6e2eebda0defc944a8bb38ec011"
   end
 
   resource "langsmith" do
@@ -161,8 +161,8 @@ class LanggraphCli < Formula
   end
 
   resource "uuid-utils" do
-    url "https://files.pythonhosted.org/packages/4c/80/cf6934a2030a5f6763f604314c1105f851d90aa1fe344c2692c3b88a9d95/uuid_utils-0.17.1.tar.gz"
-    sha256 "10c51d54ecdf0617640e505eae6d2e6443d8e414d4f9d6e8d43949a450c56e6b"
+    url "https://files.pythonhosted.org/packages/d1/89/3720bd4ef165d9694530290d4bf639f4b45b92b28279f7e37acade45d14c/uuid_utils-0.18.0.tar.gz"
+    sha256 "20e21f57fdc985132c65ab19c03c08c06f186f5bae62fc8a88ea84365ba9da37"
   end
 
   resource "websockets" do
@@ -171,8 +171,8 @@ class LanggraphCli < Formula
   end
 
   resource "xxhash" do
-    url "https://files.pythonhosted.org/packages/f6/a5/1386f35da1475fcaeef42581deae73417c6d2a6a0b2d2e8914de18844dcd/xxhash-4.0.1.tar.gz"
-    sha256 "d55bf4ef10eb09b8b6866790e083d26d087d84caa3cc0946ba87c3ca7ecaf7b7"
+    url "https://files.pythonhosted.org/packages/39/e6/ed6c428055ffd3f9299db3ec8671fd78b70c24173c040b8faafb6348ebbb/xxhash-4.0.2.tar.gz"
+    sha256 "af3d1b3cfa5280e84d8968e9f30c9eca75781db4915eb6d6acb0dd4fc93e0f47"
   end
 
   resource "zstandard" do

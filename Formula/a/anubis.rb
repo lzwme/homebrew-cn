@@ -32,6 +32,12 @@ class Anubis < Formula
     depends_on "bash" => :build # error: shopt: globstar: invalid shell option name on macos
   end
 
+  allow_network_access! :test
+
+  def fetch
+    system "make", "deps"
+  end
+
   def install
     ENV["CARGO_TARGET_WASM32_UNKNOWN_UNKNOWN_LINKER"] = "wasm-ld"
     ENV.append_to_rustflags "--sysroot #{HOMEBREW_PREFIX}"

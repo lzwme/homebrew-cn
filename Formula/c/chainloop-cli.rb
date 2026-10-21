@@ -1,8 +1,8 @@
 class ChainloopCli < Formula
   desc "CLI for interacting with Chainloop"
   homepage "https://docs.chainloop.dev"
-  url "https://ghfast.top/https://github.com/chainloop-dev/chainloop/archive/refs/tags/v1.125.0.tar.gz"
-  sha256 "2906c9c0016f6dfa22a6a2c2a505a5c1293a6161bc43f227d3bf382393081b7b"
+  url "https://ghfast.top/https://github.com/chainloop-dev/chainloop/archive/refs/tags/v1.126.0.tar.gz"
+  sha256 "c36dc824812684a7c73095fd2ad253d4bfa685cf7845f1746127a8cd8713cde5"
   license "Apache-2.0"
   head "https://github.com/chainloop-dev/chainloop.git", branch: "main"
 
@@ -12,11 +12,11 @@ class ChainloopCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "3bf839b63e026c9647b2cec1d89151b95186eab506346d371bf631f59c55514c"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "3bf839b63e026c9647b2cec1d89151b95186eab506346d371bf631f59c55514c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "3bf839b63e026c9647b2cec1d89151b95186eab506346d371bf631f59c55514c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "266f1d0cee7b78bc723d078d68289f928834b785503c7d2804eb913b154f7731"
-    sha256 cellar: :any,                 x86_64_linux:      "71f8fcb6ef39726363ea27637755af64306d489b2e9384a98bd6024f561acbe8"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "2f5a5e388e5b79506a6c3468bdc1bc3f16c06b4ba788b48525e87c0762f84952"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "2f5a5e388e5b79506a6c3468bdc1bc3f16c06b4ba788b48525e87c0762f84952"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "2f5a5e388e5b79506a6c3468bdc1bc3f16c06b4ba788b48525e87c0762f84952"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "2f369694ada605132af1fad00c719fe2504ead2001c8bb668f7b7fbe0c427d6f"
+    sha256 cellar: :any,                 x86_64_linux:      "b5b6a209a4edf1065ff7e52bc3fb9e767b71f590a6a961d7135b97082cc04cae"
   end
 
   depends_on "go" => :build

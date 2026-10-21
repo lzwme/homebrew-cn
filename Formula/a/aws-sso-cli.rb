@@ -1,19 +1,17 @@
 class AwsSsoCli < Formula
   desc "Securely manage AWS API credentials using AWS SSO"
   homepage "https://synfinatic.github.io/aws-sso-cli/"
-  url "https://ghfast.top/https://github.com/synfinatic/aws-sso-cli/archive/refs/tags/v2.3.2.tar.gz"
-  sha256 "3847945ad19bf9dddaea3a095095fb6e6425d95f8f1ca30d0a5a1f569aeaeaa3"
+  url "https://ghfast.top/https://github.com/synfinatic/aws-sso-cli/archive/refs/tags/v2.3.3.tar.gz"
+  sha256 "5e8607442d3f072f9362d6d34bc8f557ecb4839da71ef7f64c71dccbb996aa1d"
   license "GPL-3.0-only"
   head "https://github.com/synfinatic/aws-sso-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "914fa90cdb0388ccedc1aa34a70986b65b580cac55f707db2a199074495b7ffd"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "f47036c2b8442cebbf46a951d601851b01ce31e6c075dbb30f2d4a179bf8946e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "aa4bcaf928d65a51d381adeddc0c82a2f76c25b605dbbfb67474ac0622bdbc14"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "fe0f94d12f81a718e14ca383c28f7bce59be609673b9af5f456731222d12c1c0"
-    sha256 cellar: :any_skip_relocation, sonoma:            "9ef27a3008e909b44d6db8c7c2c7bd75efee8eaedc18277dddc28273b4abe7e6"
-    sha256 cellar: :any,                 arm64_linux:       "e83522c25cf6fe87164978ca43667cce6ad75dcba79cfeeb5ee4589c00f9834b"
-    sha256 cellar: :any,                 x86_64_linux:      "b00d7b1911c9da19a42476f185d956f596663cf0d5e6f20df01d560ba3ae2b81"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "4c4e080019e8e7d3683402255e5e127b7d63015a57a8207159ad942c17b6200b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "1087eef29a8e4176621bacf11dc2eb351b7320e49f15a6e85965f4e4da86d197"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "aff3046bacfc93449c8fd2f02aa534ada48e7972e90f4c523fe943617d260726"
+    sha256 cellar: :any,                 arm64_linux:       "403bc69bad1dc6a82be567b3642fdd371a1cb59681a928d8ff6f0cc6d21b5e32"
+    sha256 cellar: :any,                 x86_64_linux:      "d0693ae7f6fcde130cb78681985b925010413986f0083b2fd5c7be278db92acb"
   end
 
   depends_on "go" => :build

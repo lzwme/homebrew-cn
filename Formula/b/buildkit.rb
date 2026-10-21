@@ -1,8 +1,8 @@
 class Buildkit < Formula
   desc "Concurrent, cache-efficient, and Dockerfile-agnostic builder toolkit"
   homepage "https://github.com/moby/buildkit"
-  url "https://ghfast.top/https://github.com/moby/buildkit/archive/refs/tags/v0.34.0.tar.gz"
-  sha256 "b51e3a6bb7e0a0381adef47bffb8527817409f477fc5d26054517af29a11ff65"
+  url "https://ghfast.top/https://github.com/moby/buildkit/archive/refs/tags/v0.34.1.tar.gz"
+  sha256 "0f7d4a765b273359d0752aa1c8a309606578fd0db42e71f0fc5de845d3b1139b"
   license "Apache-2.0"
   head "https://github.com/moby/buildkit.git", branch: "master"
 
@@ -15,11 +15,11 @@ class Buildkit < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "855c4d561cdf4d11da4b392b1bf39681392f333cb1a5621c8720ec4ac5d73ce5"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "855c4d561cdf4d11da4b392b1bf39681392f333cb1a5621c8720ec4ac5d73ce5"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "855c4d561cdf4d11da4b392b1bf39681392f333cb1a5621c8720ec4ac5d73ce5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "3cb2a0fa8d73c5185170ae1dc4034d6a78be21e183ec8d6b398aacdf20d75f8c"
-    sha256 cellar: :any,                 x86_64_linux:      "5cc08808aa6a50b29d0af4114bd241c90d46f9a80a5f29775312add3910cdba6"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "c0722324f498a0036b58d7ff0a5e9f006b701aa124b79ac4022926dd7047c227"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "c0722324f498a0036b58d7ff0a5e9f006b701aa124b79ac4022926dd7047c227"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "c0722324f498a0036b58d7ff0a5e9f006b701aa124b79ac4022926dd7047c227"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "39a5741a214f732b1b18ce4a83de432e124b434feff955c4f1d8cf9bb77019e9"
+    sha256 cellar: :any,                 x86_64_linux:      "2b334440734d40124d27f34904aff8d6f1fefd232fc2c60bd116c1d3a42ec361"
   end
 
   depends_on "go" => :build

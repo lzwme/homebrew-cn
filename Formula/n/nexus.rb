@@ -2,8 +2,8 @@ class Nexus < Formula
   desc "Repository manager for binary software components"
   homepage "https://www.sonatype.com/"
   url "https://github.com/sonatype/nexus-public.git",
-      tag:      "release-3.97.0-13",
-      revision: "76b8303954ef1296507631aaabb69f980069a163"
+      tag:      "release-3.97.1-02",
+      revision: "eaff45d27427f5c0b430b887a7691161626eb9ed"
   license "EPL-1.0"
 
   # As of writing, upstream is publishing both v2 and v3 releases. The "latest"
@@ -15,11 +15,11 @@ class Nexus < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "b94862b13c26c205cfa196a5256c7f6d5e90658cfd6fcf84cfdf17cf2c089dce"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "b863c3110eba9fd050586e72d27709df95e6f2a388c0970b81416c9a3b2c5c54"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "31fd046cf84444fdce6bfbd5555910873d4c92027f0f4555d3db70216d1bfe3d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "558800ce293c15e17730f707b1181fbe1575279a725db76022097ddca706adc6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "ab1451a2067cf90c80f0a59be28f1f8b4e384b8565e0a9764dc5df4fdc47a39d"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "9eea62dbfcb85f85a4d150306f59e1903ed1a79b4ef2ee4db935bf086902416a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "f02d063a3b35c78934630e6b20e4b09967d01004c894d095eaa8435aff2f76ee"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "f9c5457232612ad25c6d4b92c10855e0bba4181573cf63e2f7bb4ea1e56c6112"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "776033c0dfc457d4f9e82e8ad1172ad8694f83d41802511656f1da2f8cb6d679"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "4c5fcc0068f42f5b7aaf87df25b31df0ed2c3f424e3b007d00cf128a4459fee4"
   end
 
   depends_on "maven" => :build

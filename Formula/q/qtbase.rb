@@ -158,9 +158,12 @@ class Qtbase < Formula
                 'set(QT_CONFIGURE_LIBLOCATION_TO_PREFIX_PATH "${from_lib_location_to_prefix}")',
                 "set(QT_CONFIGURE_LIBLOCATION_TO_PREFIX_PATH \"#{HOMEBREW_PREFIX.relative_path_from(lib)}\")"
 
+      # Avoid opportunistic linkage to `at-spi2-core`. The AT-SPI bridge is
+      # Linux-only and fails to build on macOS if `at-spi2-core` is installed.
       %w[
         -DFEATURE_relocatable=ON
         -DQT_NO_APPLE_SDK_AND_XCODE_CHECK=ON
+        -DFEATURE_accessibility_atspi_bridge=OFF
       ]
     else
       # FIXME: Unable to use workaround for relocatable installs as paths are resolved relative

@@ -1,17 +1,17 @@
 class Ketch < Formula
   desc "Web search and scraping for agents"
   homepage "https://github.com/1broseidon/ketch"
-  url "https://ghfast.top/https://github.com/1broseidon/ketch/archive/refs/tags/v0.19.0.tar.gz"
-  sha256 "e493e64e8b0da049faea10e831c41964c8005c965ef3b5f74a58b247b171b227"
+  url "https://ghfast.top/https://github.com/1broseidon/ketch/archive/refs/tags/v0.20.0.tar.gz"
+  sha256 "d47d037d9dc350b18a54d253ab3519211aef8f3a50fc0e3ce3f3b36c68f773ed"
   license "MIT"
   head "https://github.com/1broseidon/ketch.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "91772c0015f7a9edd2cad12f370c133ac29cabf359fe649cee7b05804f1827d1"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "91772c0015f7a9edd2cad12f370c133ac29cabf359fe649cee7b05804f1827d1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "91772c0015f7a9edd2cad12f370c133ac29cabf359fe649cee7b05804f1827d1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "7360a21881be40d6da7868ee86488fe0d870085863fd6b32ca38a0f9d3808339"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "f22aeccae661b941a4ee5b3407bc19c0f26b16f8f4377617ebe19eccdc79f0a5"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "fba81d1904294a842cc2e260f350c76fcbb072843d69cc531246e6a3de00a1f9"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "fba81d1904294a842cc2e260f350c76fcbb072843d69cc531246e6a3de00a1f9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "fba81d1904294a842cc2e260f350c76fcbb072843d69cc531246e6a3de00a1f9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "7b401488b3983372bfaf4cd651c349df59b43494ed09ad36ce5517a1be042bf1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "1e76bbc3e5b933df96169ff5a22fc9b83f0d4dd00fc9a363b060a05972318e80"
   end
 
   depends_on "go" => :build

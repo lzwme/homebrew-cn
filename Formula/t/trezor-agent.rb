@@ -6,15 +6,14 @@ class TrezorAgent < Formula
   url "https://files.pythonhosted.org/packages/d9/b1/e533c417259dc112a067226d4c95cb772d7c090b696a61a065e1e41429d6/trezor_agent-0.13.0.tar.gz"
   sha256 "f3324a7c5708db0e40682e272720f5d9e9dac7b62281ee740ee7825e6a23e8ff"
   license "LGPL-3.0-only"
-  revision 3
+  revision 4
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_golden_gate: "97804b8eecbaf51b9a94b6475787838b5ecd3195676950b0972c6fc1e019a999"
-    sha256 cellar: :any, arm64_tahoe:       "828001b238b2c1887d7467ee25de3b9636a7063724da87fdc501e3a1c47a045a"
-    sha256 cellar: :any, arm64_sequoia:     "acb8eb85bd86ceb346716865b732a8dec3cc002b60eb03904721376c489b5c31"
-    sha256 cellar: :any, arm64_linux:       "c5f16fc0edfc52cc80650784e6f36f204c5d42ed9350645c3c2f93f06b42b87c"
-    sha256 cellar: :any, x86_64_linux:      "70a9ed32c73b92c5f9a6c68670212316bd4b872b7a2dc2bd5e8b49f946a5956b"
+    sha256 cellar: :any, arm64_golden_gate: "066756a0e16caa09cb541ef49af4fb3e0048c38895ff70ccf784b0a98aab48b3"
+    sha256 cellar: :any, arm64_tahoe:       "4bec687a5769f9bccf58be325540fdac695a7cfa05996730b89492e23a82fc88"
+    sha256 cellar: :any, arm64_sequoia:     "79d450620d9439f3fe16bf1e32767c03270a8d365aa18a56734bdef3ab14dd58"
+    sha256 cellar: :any, arm64_linux:       "207fcdade8ceb1ba8f37ee10f831f59d734ec595ba740584f84317af1809c5a2"
+    sha256 cellar: :any, x86_64_linux:      "4d71c2a318239ae3c8656905c7330c8a7f91e7a748e6005d1501e74459941e80"
   end
 
   depends_on "pkgconf" => :build # for hidapi resource
@@ -69,11 +68,6 @@ class TrezorAgent < Formula
     sha256 "746f5060322511280a1e50eb76846ed6bf2342984b2ac04dc42caa1a8d78799e"
   end
 
-  resource "ecdsa" do
-    url "https://files.pythonhosted.org/packages/25/ca/8de7744cb3bc966c85430ca2d0fcaeea872507c6a4cf6e007f7fe269ed9d/ecdsa-0.19.2.tar.gz"
-    sha256 "62635b0ac1ca2e027f82122b5b81cb706edc38cd91c63dda28e4f3455a2bf930"
-  end
-
   resource "hidapi" do
     url "https://files.pythonhosted.org/packages/74/f6/caad9ed701fbb9223eb9e0b41a5514390769b4cb3084a2704ab69e9df0fe/hidapi-0.15.0.tar.gz"
     sha256 "ecbc265cbe8b7b88755f421e0ba25f084091ec550c2b90ff9e8ddd4fcd540311"
@@ -110,8 +104,8 @@ class TrezorAgent < Formula
   end
 
   resource "libagent" do
-    url "https://files.pythonhosted.org/packages/01/f8/c8759b7ed2b8b42a83c9989d37ad4d0594960593067cca40acc560cf4d37/libagent-0.16.1.tar.gz"
-    sha256 "7132c11100e53d3a54cb276fe9d03577c61c8c357025e2716de0812bd94f2763"
+    url "https://files.pythonhosted.org/packages/f2/bb/fca9523e1d7b9cc99937d126fd2b9806ad1832b7083b62eac65c3fc25880/libagent-0.16.2.tar.gz"
+    sha256 "23fd3b828a822d98ef76802c58e1ea892b3026c06da9646a3304fd11feab3c9d"
   end
 
   resource "libusb1" do
@@ -130,8 +124,8 @@ class TrezorAgent < Formula
   end
 
   resource "more-itertools" do
-    url "https://files.pythonhosted.org/packages/de/1d/f4da6f02cdffe04d6362210b807146a26044c88d839208aec273bb0d9184/more_itertools-11.1.0.tar.gz"
-    sha256 "48e8f4d9e7e5878571ecf6f2b4e57634f93cd474cc8cfbd2376f2d11b396e30d"
+    url "https://files.pythonhosted.org/packages/52/b8/c63995bebbb9ac9c059350e0fb8c82c2420c85aeca7d34e40aecf3df9281/more_itertools-11.2.1.tar.gz"
+    sha256 "cbf08fd0af284dc69718b9b76a8e6203df624d70209ea511e4219d350c856f63"
   end
 
   resource "noiseprotocol" do
@@ -145,8 +139,8 @@ class TrezorAgent < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/80/a8/66d45abadff219e36e2a824181b8f6a67e7ed4572934d6252c71c29d5731/platformdirs-4.13.0.tar.gz"
-    sha256 "1aa0b0d3f224c1f07c295121e312a5a24a180d6ae5a8425ea1784b3e3863e9c0"
+    url "https://files.pythonhosted.org/packages/58/e6/d0abbb256b44e6a05748c6942511ff67db8dbb068de0c35b24bf1b395b09/platformdirs-4.13.5.tar.gz"
+    sha256 "05831adf87d392760f4b5c3a0a95579ab5a10b18b9b9bd43680dcb47544788a0"
   end
 
   resource "pymsgbox" do
@@ -182,11 +176,6 @@ class TrezorAgent < Formula
   resource "shamir-mnemonic" do
     url "https://files.pythonhosted.org/packages/b2/fd/9f5b305b5280795209817efe6b0cd6017f4714e3f36d160b2d4dfcc78c02/shamir_mnemonic-0.3.0.tar.gz"
     sha256 "bc04886a1ddfe2a64d8a3ec51abf0f664d98d5b557cc7e78a8ad2d10a1d87438"
-  end
-
-  resource "six" do
-    url "https://files.pythonhosted.org/packages/94/e7/b2c673351809dca68a0e064b6af791aa332cf192da575fd474ed7d6f16a2/six-1.17.0.tar.gz"
-    sha256 "ff70335d468e7eb6ec65b95b99d3a2836546063f63acc5171de367e834932a81"
   end
 
   resource "slip10" do

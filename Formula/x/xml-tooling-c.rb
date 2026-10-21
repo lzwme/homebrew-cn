@@ -4,7 +4,7 @@ class XmlToolingC < Formula
   url "https://shibboleth.net/downloads/c++-opensaml/3.3.0/xmltooling-3.3.0.tar.bz2"
   sha256 "0a2c421be976f3a44b876d6b06ba1f6a2ffbc404f4622f8a65a66c3ba77cb047"
   license "Apache-2.0"
-  revision 3
+  revision 4
 
   livecheck do
     url "https://shibboleth.net/downloads/c++-opensaml/latest/"
@@ -12,11 +12,11 @@ class XmlToolingC < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "f20166f690baf32e03d9e4ad82b0cf205b46715850c89b82abcdb66e6f41a40c"
-    sha256 cellar: :any, arm64_tahoe:       "bd6a26521213b096e1e6e54cc31125179b4b5c6762b6bd33d01f3c823639573b"
-    sha256 cellar: :any, arm64_sequoia:     "ff990be7b6b19eae06bd13b96f0e31c739a9d90a9386d80e75c7a93ba5a900a1"
-    sha256 cellar: :any, arm64_linux:       "f2baa1f231272a9c836a43c64ace973278a1bbbade7cd2936a486c6d0bd8dc61"
-    sha256 cellar: :any, x86_64_linux:      "38efcaee7dfca49e8375d7654c1d421a3587ff4b2d6597555a1bbed60adc5a56"
+    sha256 cellar: :any, arm64_golden_gate: "24f8416d12a12404f420d824d72a8b7ca6a8dfcab15902746c5d4bf3aef12193"
+    sha256 cellar: :any, arm64_tahoe:       "d889fdfae1d6248708e26a28c14d68b4e534a8106e921722740038b4db0b70f7"
+    sha256 cellar: :any, arm64_sequoia:     "cfd6b7765d312c1fde25856e0b1a57ef15c02a459666a7b8292e333567a781b1"
+    sha256 cellar: :any, arm64_linux:       "35257f3fb8970b5f719c149d2887d6b4dd1bc6d70985ae39a889a774aeb93a38"
+    sha256 cellar: :any, x86_64_linux:      "ced2458cb470dbbd61bd23b7bb3460f20670d4755431195e9ff65edd790e514b"
   end
 
   depends_on "pkgconf" => :build
@@ -43,6 +43,8 @@ class XmlToolingC < Formula
     ENV.cxx11
     system "./configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
+
+    inreplace [lib/"pkgconfig/xmltooling.pc", lib/"pkgconfig/xmltooling-lite.pc"], prefix, opt_prefix
   end
 
   test do

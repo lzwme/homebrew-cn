@@ -1,18 +1,17 @@
 class VapoursynthBm3d < Formula
   desc "BM3D denoising filter for VapourSynth"
   homepage "https://github.com/HomeOfVapourSynthEvolution/VapourSynth-BM3D"
-  url "https://files.pythonhosted.org/packages/5b/16/6f1d0e05ceff921106281db6866d45e1b7eb284f078886e463ca9a1e6566/vapoursynth_bm3d-11.0.tar.gz"
-  sha256 "a1d02dd4bf7e2b5bfaa2b3c6744e5093b225e8562a39d183a6ba239554cd876c"
+  url "https://files.pythonhosted.org/packages/7b/b5/f7c6b2035409be2c3417f44426f29d9434075a42e5fcfd477ad765183f11/vapoursynth_bm3d-12.0.tar.gz"
+  sha256 "576abdee38944001a545804b4fbecd65d8789dd2ebc11eaea13e0b4e95223896"
   license "MIT"
-  revision 1
   head "https://github.com/HomeOfVapourSynthEvolution/VapourSynth-BM3D.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "a4568f68ca8028edd94f823ce6fc149deaecc07d5525e59a820e2e0559a24b19"
-    sha256 cellar: :any, arm64_tahoe:       "faee395d92887023f61a9f96cd847fcd26d30944f2d45422773e6e51dd06cd9d"
-    sha256 cellar: :any, arm64_sequoia:     "8e9ca5540ef744fc1fc3270584e999400f87787f1a2caf5dc60ed104cc9a9938"
-    sha256 cellar: :any, arm64_linux:       "c871181495a457b365302de4ceb4e38b693052790a6313a8a9e9e837f794572e"
-    sha256 cellar: :any, x86_64_linux:      "9e31dd2395507d12c6cfa185f52fc066a034b5991dece3f2e84edab649ab2860"
+    sha256 cellar: :any, arm64_golden_gate: "100bbe3525e64f05a9519fad09cbe8bef1d5951e45c4cd2442ae606c847cd450"
+    sha256 cellar: :any, arm64_tahoe:       "4baa36264f436024e6aebe7a6910ec07aaa5e587ea09a8ba97471110ecafef1b"
+    sha256 cellar: :any, arm64_sequoia:     "7bd087bd90cc07f0054820a50ef74b593afe44fafa8c20f074cd8a961d3a9c64"
+    sha256 cellar: :any, arm64_linux:       "fd10236149ed5690afcbc99f80cd60f017db3e900e8c32833db4a6086371b479"
+    sha256 cellar: :any, x86_64_linux:      "a93819a5ca7475d16c06170e733acd77fb3eb601c625365e8012326bb957d269"
   end
 
   depends_on "meson" => :build
@@ -21,6 +20,8 @@ class VapoursynthBm3d < Formula
   depends_on "fftw"
   depends_on "python@3.15"
   depends_on "vapoursynth"
+
+  pypi_packages exclude_packages: "vapoursynth"
 
   deny_network_access!
 

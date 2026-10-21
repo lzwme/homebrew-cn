@@ -1,8 +1,8 @@
 class FernApi < Formula
   desc "Stripe-level SDKs and Docs for your API"
   homepage "https://buildwithfern.com/"
-  url "https://registry.npmjs.org/fern-api/-/fern-api-5.166.0.tgz"
-  sha256 "b7d37ec7ade97f119495725e2a6cab4ad9e9ffe4e753408d84e711b70bdac8ff"
+  url "https://registry.npmjs.org/fern-api/-/fern-api-5.169.0.tgz"
+  sha256 "9322d047ac8d2a55465a0660a0bf08efec894748b3d1f853d5bfe4b3c83eecbf"
   license "Apache-2.0"
 
   livecheck do
@@ -10,11 +10,11 @@ class FernApi < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_golden_gate: "ec8df6a59324f3998b7c8e3a34b6d1005aa7fdff0714202df52f7739fb3d4a4b"
-    sha256 cellar: :any,                 arm64_tahoe:       "ec8df6a59324f3998b7c8e3a34b6d1005aa7fdff0714202df52f7739fb3d4a4b"
-    sha256 cellar: :any,                 arm64_sequoia:     "ec8df6a59324f3998b7c8e3a34b6d1005aa7fdff0714202df52f7739fb3d4a4b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "63d27cc0d0e154896ce7181e5fe3daef54b059fda22de62d57bf8970d0030915"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "225040eb5ac8ae951657e4b57d12c228f7d70b3f50b911badc3bd04e2d066b2a"
+    sha256 cellar: :any,                 arm64_golden_gate: "df14956dec6ebd930bea83057634043654ae64d042d0dfb070627c48dbcdb855"
+    sha256 cellar: :any,                 arm64_tahoe:       "df14956dec6ebd930bea83057634043654ae64d042d0dfb070627c48dbcdb855"
+    sha256 cellar: :any,                 arm64_sequoia:     "df14956dec6ebd930bea83057634043654ae64d042d0dfb070627c48dbcdb855"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "4ecb0047d945f7f569a09dadb8f981d71cf74db9735d7758a39d61c616ce41ad"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "2d6762eae426bc748d79e40395a47c0be0c14312d11b44d5939d9eaeec849e52"
   end
 
   depends_on "node"

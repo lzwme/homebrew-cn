@@ -1,17 +1,17 @@
 class Ggc < Formula
   desc "Modern Git CLI"
   homepage "https://github.com/bmf-san/ggc"
-  url "https://ghfast.top/https://github.com/bmf-san/ggc/archive/refs/tags/v8.7.5.tar.gz"
-  sha256 "af893a01471700e27d560d8320f8c72d13842954b9ba0eba55b14dae300a3381"
+  url "https://ghfast.top/https://github.com/bmf-san/ggc/archive/refs/tags/v8.7.6.tar.gz"
+  sha256 "b524691a42dbb5fe06bcadfca05d18bd69ce472ca9a2116181b727a1a5cb0158"
   license "MIT"
   head "https://github.com/bmf-san/ggc.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "1a6e66665dcc5ef682ea63a8588552d61c68c8151b7c228db0db5d86ec25951e"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "1a6e66665dcc5ef682ea63a8588552d61c68c8151b7c228db0db5d86ec25951e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "1a6e66665dcc5ef682ea63a8588552d61c68c8151b7c228db0db5d86ec25951e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "bcae00d0c32e85c2e2e9c530b93aa80a6076f921daa2260888664d5bc2cf1367"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "8453938134de041601fea1b8a1b6420bcc7a4e702ed1debf2b22b7b597dc3b7b"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "84e714fdb673f9c9d4ce1c298c7f7802e68f0d77661a2252c350c16aef215938"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "84e714fdb673f9c9d4ce1c298c7f7802e68f0d77661a2252c350c16aef215938"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "84e714fdb673f9c9d4ce1c298c7f7802e68f0d77661a2252c350c16aef215938"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "69d0dc31becbd4eca6fa8fccaae1fde2c3295db66c3744f16b2b5eb9c9f9656e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "de86a67ee5e79727dd13289380ade7ef0f4267e174154e3f87dc628040997c92"
   end
 
   depends_on "go" => :build

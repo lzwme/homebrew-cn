@@ -3,16 +3,16 @@ class Specify < Formula
 
   desc "Toolkit to help you get started with Spec-Driven Development"
   homepage "https://github.github.com/spec-kit/"
-  url "https://ghfast.top/https://github.com/github/spec-kit/archive/refs/tags/v1.2.1.tar.gz"
-  sha256 "afc45be2a61449732ff5d8c442f8c8cb05fdae342412b981ff03fe17e6c0e9d0"
+  url "https://ghfast.top/https://github.com/github/spec-kit/archive/refs/tags/v1.2.2.tar.gz"
+  sha256 "a8632f418128f01b8de5c4bcd67bbdbef13c630d6b0f5c9b515d0edbbb49a26e"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "c421fb36025f9e913f0036e707bd21f8a05dedf886b38be73ac69a4bc1d1eab9"
-    sha256 cellar: :any, arm64_tahoe:       "12ebfd772c73bc7b9b4babcd727a46db388e7e916d5c8d0396c9548e4982b079"
-    sha256 cellar: :any, arm64_sequoia:     "ecccc46336611e884f4a56065cc71c8560cfeca8674fc728aa4a2001d34f0df6"
-    sha256 cellar: :any, arm64_linux:       "c2b42e5ce90a2bdfb0cb06957beb0db8e946a4f3299f9c1743b44b932297b2dc"
-    sha256 cellar: :any, x86_64_linux:      "58345b50ec650e78bce5de356a8db9931026f17c3897ec75e561966bcdca616e"
+    sha256 cellar: :any, arm64_golden_gate: "59dc212aba19861d91aaf9bd30ce7fd85ee278df1a7ece0b702b25848a853548"
+    sha256 cellar: :any, arm64_tahoe:       "953660c5dc9b97e1dfdfb3e0541c42379d3941f057521a7e70e543af80d63bd5"
+    sha256 cellar: :any, arm64_sequoia:     "2079d277ff3e5006a871e2b21a225607b7bac9821b1cb5abcc405ed2a2117e33"
+    sha256 cellar: :any, arm64_linux:       "2125ec5cb0cf47c49d13a8483fefc071bc5a0d08fb792d66853ada447809a448"
+    sha256 cellar: :any, x86_64_linux:      "5d5a4339d3284ce72a29de4a53cf8d35bef30be507abb1ceb7e2a5c0a6412460"
   end
 
   depends_on "certifi" => :no_linkage
@@ -50,13 +50,13 @@ class Specify < Formula
   end
 
   resource "httpcore2" do
-    url "https://files.pythonhosted.org/packages/cb/f3/1db7aa2bc2524062192bb0e0323969492d1883152a232fe36eea65f4e35c/httpcore2-2.13.1.tar.gz"
-    sha256 "e0aa977abe17e69a3b820a24542a6fa88702676d83880b8d194dcd18408e5103"
+    url "https://files.pythonhosted.org/packages/30/ff/b53af1b49bb2cb5fa97c92215614b173ca5c1a99ded80e2d52f15a94fa6d/httpcore2-2.14.0.tar.gz"
+    sha256 "4f57a1a8249fe6af589d935cfd456f1d13bbdcb0f0fc72af9142368fc94811d7"
   end
 
   resource "httpx2" do
-    url "https://files.pythonhosted.org/packages/d5/44/474bef2a0e9d90f1715d32cb98b0738695ca17ba324095fb2497ed7fbd59/httpx2-2.13.1.tar.gz"
-    sha256 "e48744a19e3af5ee48313d0ce5fe941d5422fae5705ea922a4aabf94d7800dfa"
+    url "https://files.pythonhosted.org/packages/e8/67/58353f1848b4ba568e1ec22ea1e0d8e039f0bca5fde7e2d1f07739fd83e7/httpx2-2.14.0.tar.gz"
+    sha256 "47ad61a3c40282cd8d0dc96311531f00f5bfc71a066c6fe3b36d8f63fb9e4f6e"
   end
 
   resource "idna" do
@@ -160,13 +160,13 @@ class Specify < Formula
   end
 
   resource "starlette" do
-    url "https://files.pythonhosted.org/packages/7b/2b/3850dc6bf7ef71b088962eba31dafc6cffd2f96e577ebb0bb316df96da3e/starlette-1.7.0.tar.gz"
-    sha256 "c79f74ea63cff761804fbbfb182f1e0b440c2d07b164d24700c5a1bab5d6ff5d"
+    url "https://files.pythonhosted.org/packages/ad/eb/4e197bf26b023abafc5e9043ec8710d7de0fcb032d0969045236d72aa0b1/starlette-1.9.0.tar.gz"
+    sha256 "3d931de246ed870e35ce605974440816ef895e592f255d1396cfdf191d4c4318"
   end
 
   resource "truststore" do
-    url "https://files.pythonhosted.org/packages/53/a3/1585216310e344e8102c22482f6060c7a6ea0322b63e026372e6dcefcfd6/truststore-0.10.4.tar.gz"
-    sha256 "9d91bd436463ad5e4ee4aba766628dd6cd7010cf3e2461756b3303710eebc301"
+    url "https://files.pythonhosted.org/packages/ee/9f/c5201d42a484c061e528825fc8e2d565f5abd50a4ced6fb7d29c4ec99b2b/truststore-0.10.5.tar.gz"
+    sha256 "30d36967ccaded5cbb38d602c433f53600036c79d502f4533a49b60a03bbefcd"
   end
 
   resource "typer" do
