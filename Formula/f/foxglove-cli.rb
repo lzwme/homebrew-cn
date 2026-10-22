@@ -1,17 +1,17 @@
 class FoxgloveCli < Formula
   desc "Foxglove command-line tool"
   homepage "https://github.com/foxglove/foxglove-cli"
-  url "https://ghfast.top/https://github.com/foxglove/foxglove-cli/archive/refs/tags/v2.0.0.tar.gz"
-  sha256 "491085b6ee1e4213ab54e83154fda16a9571d1568cab81d5fa5b334bcb1428f2"
+  url "https://ghfast.top/https://github.com/foxglove/foxglove-cli/archive/refs/tags/v2.0.1.tar.gz"
+  sha256 "5cd9729fdc440a77471400de4fb327d9bc9aaaab3f01ea7d18b5012ed3075ee7"
   license "MIT"
   head "https://github.com/foxglove/foxglove-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "687341376acde855f8a96ad578df91c5406f58e97a2e53707e3a8d639bea29b5"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "ac1f73eb6054c377719332eca1c9c588bf1f0dd069c9034d9122396356a7ae44"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "6583e30cef581361fb17f2364220cfce347d2048ae147fd1357d98e6d7e6663e"
-    sha256 cellar: :any,                 arm64_linux:       "61e960f194d89e87bd2e50c1a4014d825d8bf3e0c47ac762a951bcd02dcccb4b"
-    sha256 cellar: :any,                 x86_64_linux:      "885c9d1732b4f4aeeb3da2bacfac187ae44b44336d900d76f031e41318ac86b7"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "fabede3a42b576c1b49ba736119ad1d1e0d69df2833c87ed87130e6dcb56268a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "6d2097ea7ec57f3ec3e78c96c452b1da5168a1dc96ec07d6e931116245c5184c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "c1866c857801f4d81537e2b91adb01dc1c41dd456bc727fe3399c42a0e509968"
+    sha256 cellar: :any,                 arm64_linux:       "98b79acccc066c8165f08b5ef3d5da515e601ad75f7931514e77a2ce9ba1eac1"
+    sha256 cellar: :any,                 x86_64_linux:      "02d3201bdf03952299cc6898d2628ffa0568e13a832c5e84de76e772f26beb9c"
   end
 
   depends_on "rust" => :build

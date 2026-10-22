@@ -3,17 +3,17 @@ class OciCli < Formula
 
   desc "Oracle Cloud Infrastructure CLI"
   homepage "https://docs.cloud.oracle.com/iaas/Content/API/Concepts/cliconcepts.htm"
-  url "https://files.pythonhosted.org/packages/44/60/386f415a77c2ce81d462d2a657cd05ca5a278b773d8f26c13e054da7d34d/oci_cli-3.95.0.tar.gz"
-  sha256 "663e558dea4cdf64fe20e9db2f7252a01852ac13b30639a60710163c86428f4f"
+  url "https://files.pythonhosted.org/packages/8b/18/edefd9613dbd2501f6e95377ea55db169756a19e42fd375cb3b1c327eb7c/oci_cli-3.95.1.tar.gz"
+  sha256 "d73767295d697ca72f24cc500aa966465e2b37ea8c58d67c151cd7fb1ada15be"
   license any_of: ["UPL-1.0", "Apache-2.0"]
   head "https://github.com/oracle/oci-cli.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "4d124387b99032e341b4efea1b59322713a601062bd1315bb86e22291ff1bed7"
-    sha256 cellar: :any, arm64_tahoe:       "0ea46efaa8eb353e092733896a4da76c4107385b64216a891dd6a09459dda6d9"
-    sha256 cellar: :any, arm64_sequoia:     "cb97c9ce34d3bcf060a9205262da2d2dd255b78701ea2d403b12eccdb03459bd"
-    sha256 cellar: :any, arm64_linux:       "7ce6b264744c4cfe3a04bac1cba4c05ae59614a8a327274c2801137517bc470d"
-    sha256 cellar: :any, x86_64_linux:      "fd40eca864a5970c41c0e622fb11c7f5853a39fefcf04b0bc28f0a007c405791"
+    sha256 cellar: :any, arm64_golden_gate: "9f562362d5f86b7662e4d22a5c39e9bfa139237892300773eb83e1c04d6c4e86"
+    sha256 cellar: :any, arm64_tahoe:       "6306fb035e9030982f8c94290e7cad8b9d95924cab13de15fbc96c0b60b86244"
+    sha256 cellar: :any, arm64_sequoia:     "527c7b0e3ccc4778ed890c596f9de3bbe40797075d5f4e72d675533a45951a12"
+    sha256 cellar: :any, arm64_linux:       "164477285e4e30e4095c33f800b3d00c258ec80eaea6fbeb23d13c036946245f"
+    sha256 cellar: :any, x86_64_linux:      "ddb20b421cc768b529e6b40985229c56054e51f210866919f6c0324b81b42fef"
   end
 
   depends_on "certifi" => :no_linkage
@@ -89,8 +89,8 @@ class OciCli < Formula
   end
 
   resource "oci" do
-    url "https://files.pythonhosted.org/packages/8e/09/69de33858a8574f6e7f7ebf3d027ac198986c95d3f0efd5c203a882be8d6/oci-2.188.0.tar.gz"
-    sha256 "a4ff307ed315112cf357d9dc0bd5091cb0bae77892870b51ffd0cf46175ba8b6"
+    url "https://files.pythonhosted.org/packages/b8/69/8845bfdfbf919ab93f9539f5433cf1ababa1a621167465f050ab089c031b/oci-2.189.0.tar.gz"
+    sha256 "0df9efe9eb0f18e66f1fdf05b46e60c5a77ddfbd46f5b274ad95b2afce4dc687"
   end
 
   resource "prompt-toolkit" do

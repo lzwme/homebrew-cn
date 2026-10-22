@@ -1,8 +1,8 @@
 class Hl < Formula
   desc "Fast and powerful log viewer and processor"
   homepage "https://github.com/pamburus/hl"
-  url "https://ghfast.top/https://github.com/pamburus/hl/archive/refs/tags/v0.36.4.tar.gz"
-  sha256 "ff4420d0529f490e4e953c037f62ef05b73b9d900a7a5492049f32f0b90b648e"
+  url "https://ghfast.top/https://github.com/pamburus/hl/archive/refs/tags/v0.36.5.tar.gz"
+  sha256 "a40337288a0c113326ed739930166fdf9202d40f4f40583f05a5a27c1c043d3d"
   license "MIT"
   head "https://github.com/pamburus/hl.git", branch: "master"
 
@@ -12,11 +12,11 @@ class Hl < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "6d796a0df1ff8dbc8dd93db584c196b6e37433aa230848ce51e3e114a4693150"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "71cf9fba5197ace28d27bb3f7adea55f53d2362589323b8d66211fefedc4dba5"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "2ac29c584f18bb6ca9371e35aaa83a5fe450b72ae854f0d0d0addd690c4b49ac"
-    sha256 cellar: :any,                 arm64_linux:       "1f1c0635418a3bc7843ba47091cd50bcef64961a6c883d42f26043da438ac5c0"
-    sha256 cellar: :any,                 x86_64_linux:      "3908316e2828e5ba791529fa769aa752b68185cace2e428bd927b4f9a74f6c72"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "42c97646c22584c4b4b9df01dc2ebf89f14663b19b7821f60095271824bbb50d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "9d34d6c5e2ade39fa93dfc5c969f94d7f053b48c8756d7c7b79f85b362d06e81"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "62218be7c51556ce2f2b761686e02ce03969c3f471521e906deae4ce5618a364"
+    sha256 cellar: :any,                 arm64_linux:       "00bf85a442ad97605a371efc1b1d73b4de848c80539f22333c4a8a0ebdf92c62"
+    sha256 cellar: :any,                 x86_64_linux:      "4724574d3234dbf3c77ff1323a9fcbe8b84213f03651a01dda070a2b869832bf"
   end
 
   depends_on "rust" => :build

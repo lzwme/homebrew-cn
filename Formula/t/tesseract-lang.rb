@@ -12,7 +12,7 @@ class TesseractLang < Formula
 
   depends_on "tesseract"
 
-  resource "testfile" do
+  resource "testfile", :test do
     url "https://ghfast.top/https://raw.githubusercontent.com/tesseract-ocr/test/6dd816cdaf3e76153271daf773e562e24c928bf5/testing/eurotext.tif"
     sha256 "7b9bd14aba7d5e30df686fbb6f71782a97f48f81b32dc201a1b75afe6de747d6"
   end

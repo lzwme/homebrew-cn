@@ -1,10 +1,9 @@
 class F3d < Formula
   desc "Fast and minimalist 3D viewer"
   homepage "https://f3d.app"
-  url "https://ghfast.top/https://github.com/f3d-app/f3d/archive/refs/tags/v3.5.0.tar.gz"
-  sha256 "033845b5d49af3ae60fcc3fe85d82c841d990d3534638a4472123f84b3e82795"
+  url "https://ghfast.top/https://github.com/f3d-app/f3d/archive/refs/tags/v4.0.0.tar.gz"
+  sha256 "3edb481a5ab7bb6689fc3f37689895465eceecf1052bc30e4f86ad14f4ee1d71"
   license "BSD-3-Clause"
-  revision 3
 
   # Upstream creates releases that use a stable tag (e.g., `v1.2.3`) but are
   # labeled as "pre-release" on GitHub before the version is released, so it's
@@ -15,19 +14,18 @@ class F3d < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "bcc40fc9127046898c708eefda230f733cb829bf06bca885b29c0049205e6049"
-    sha256 cellar: :any, arm64_tahoe:       "04810776ae67df0d47db54b06f72bbac2db97e53dd897794f07a80b5e36552de"
-    sha256 cellar: :any, arm64_sequoia:     "b88be3ae8e39f954500453230bd4da83b29145ae06f9ea7a972061805eb82104"
-    sha256 cellar: :any, arm64_sonoma:      "d14d57470cc9fa38892ef71ed9fd1fc87081320307d561e489340ecfb6b14b0a"
-    sha256 cellar: :any, sonoma:            "ac7cf4483fcfc5d4356b1fab1ea535f1c45361041190e416ce0c50c6c809e0b5"
-    sha256 cellar: :any, arm64_linux:       "26376a44ceb96a85f27c6b33b200a0ca1b38b7d75d2ccd37e569de81c56b2093"
-    sha256 cellar: :any, x86_64_linux:      "c1bf2bee831bc117377a070ecf002d9cae957db7cc17fe468e7dc2c05e933427"
+    sha256 cellar: :any, arm64_golden_gate: "be405efb260d3cd95103bb2e39a22c6a96c58f033eeeaeb308559c1458f09c36"
+    sha256 cellar: :any, arm64_tahoe:       "09316bcfe83d002c3304b4c5bd7044af3245d0f3e2a4959552161e41f7c37f8c"
+    sha256 cellar: :any, arm64_sequoia:     "c9a9e3332fe5ec88eb00212d0a2a629d3ae619724c2253b1c95c07e46558549e"
+    sha256 cellar: :any, arm64_linux:       "a6f26b53fff064fc7361eebc5c27f8fa34f7afd86cb40fc96692c08ed1b79d5e"
+    sha256 cellar: :any, x86_64_linux:      "47c4b9d1441d1734cfbcbccbef394cb38542ed334c423117a61cb924f12b84ad"
   end
 
   depends_on "cmake" => :build
   depends_on "alembic"
   depends_on "assimp"
   depends_on "freetype"
+  depends_on "libpng"
   depends_on "opencascade"
   depends_on "vtk"
 

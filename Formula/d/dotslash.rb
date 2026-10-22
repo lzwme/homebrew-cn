@@ -22,12 +22,20 @@ class Dotslash < Formula
 
   depends_on "rust" => :build
 
+  allow_network_access! :test
+
+  def fetch
+    odie "Remove `generate-lockfile`" if version > "0.5.9"
+    system "cargo", "generate-lockfile"
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
     system "cargo", "install", *std_cargo_args
   end
 
   test do
-    (testpath/"node").write <<~EOS
+    (testpath/"node").write <<~JSON
       #!/usr/bin/env dotslash
 
       // Example file from https://dotslash-cli.com/docs/.
@@ -86,7 +94,7 @@ class Dotslash < Formula
           }
         }
       }
-    EOS
+    JSON
     chmod 0755, testpath/"node"
     assert_match "v18.19.0", shell_output("#{testpath}/node -v")
   end

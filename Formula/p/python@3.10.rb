@@ -4,14 +4,15 @@ class PythonAT310 < Formula
   url "https://www.python.org/ftp/python/3.10.22/Python-3.10.22.tgz"
   sha256 "9448b34d16f8e3db0964ac3ed9fb283197747543c2c021f283ffd2c8b7287357"
   license "Python-2.0"
+  revision 1
   compatibility_version 1
 
   bottle do
-    sha256 arm64_golden_gate: "36d2aa8d81c08b1711a8873e34e241da83f270b632d6479271541ea50c7a659c"
-    sha256 arm64_tahoe:       "a9d8a906b76635ff7e9b473f8d4375936841a2cf124dfef651c7e47c0b22a7c5"
-    sha256 arm64_sequoia:     "d14a16a39c5eca3a403197215f88f55517f194d95bd2b1641a4c1a20375a25fc"
-    sha256 arm64_linux:       "f6b0296809912b8085543561f2fd0c7554133dd4905f763cd1d91b0a3fcc45b9"
-    sha256 x86_64_linux:      "805a9a19f09d1c976dbe6f6dbd3d09f83c7cf7dc3060f36a57c361ea49f08360"
+    sha256 arm64_golden_gate: "3e0cc28d77d7099b06b9b92cafaa18aad1dbdc71f941b28e26f3b5200edae535"
+    sha256 arm64_tahoe:       "937976ef51396eb7259ea45a3df2439df3a5bdc81f6f1c95072411f3c5875c21"
+    sha256 arm64_sequoia:     "e16f7daed7561cfba57dcfc7537f97b28c55d655bbf17bb0a1f2a134c53494a3"
+    sha256 arm64_linux:       "ea417eab3c836c1d6a06c0208aeabec7426aca434f374e203393bb27a3dae8dd"
+    sha256 x86_64_linux:      "84a79862cddeb137aaae260f851668dd5b40153c836316879391407c1467bd22"
   end
 
   # setuptools remembers the build flags python is built with and uses them to
@@ -57,8 +58,8 @@ class PythonAT310 < Formula
   end
 
   resource "pip" do
-    url "https://files.pythonhosted.org/packages/ae/15/4500e320e6b101ec3b719ae85b697d9940b6cda672bc555bd6016fc60c6f/pip-26.2.1.tar.gz"
-    sha256 "f6ad667e89a1fe78046c8f13232b247200f5258d7828f3f7883d660878e0813f"
+    url "https://files.pythonhosted.org/packages/fa/e8/0842d757e483e895e670f655084cfe8b8c72580c6769a76b30b2789a0608/pip-26.2.2.tar.gz"
+    sha256 "3a8e5c800492787f33a4114ef54444546c340df428974ebba17e0fd47e11af2f"
   end
 
   resource "setuptools" do

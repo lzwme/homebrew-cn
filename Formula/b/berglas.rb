@@ -1,18 +1,17 @@
 class Berglas < Formula
   desc "Tool for managing secrets on Google Cloud"
   homepage "https://github.com/GoogleCloudPlatform/berglas"
-  url "https://ghfast.top/https://github.com/GoogleCloudPlatform/berglas/archive/refs/tags/v2.0.17.tar.gz"
-  sha256 "398be8a793f72670307139ba9250f5082829f6b73870555bba17900a54e93c7a"
+  url "https://ghfast.top/https://github.com/GoogleCloudPlatform/berglas/archive/refs/tags/v2.0.18.tar.gz"
+  sha256 "7066f3cdd8b23fa16cdc5945a97711785eb906c5fbdc70dcace5b79a48a69c82"
   license "Apache-2.0"
   head "https://github.com/GoogleCloudPlatform/berglas.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "4ebd8f428d86e1cec1ad5d2813a923a8ff3d403f38879ded45cbcba790139295"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "4ebd8f428d86e1cec1ad5d2813a923a8ff3d403f38879ded45cbcba790139295"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "4ebd8f428d86e1cec1ad5d2813a923a8ff3d403f38879ded45cbcba790139295"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "4ebd8f428d86e1cec1ad5d2813a923a8ff3d403f38879ded45cbcba790139295"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "e306be8ef9b46ca6eb000b6e26b5832d250e441fe36e4f8a4e0be12cfdf61b2c"
-    sha256 cellar: :any,                 x86_64_linux:      "4b306c05c322373c23b8b2a80cb7b6b48b3b6ce3c10341203d3143835c73f177"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "6a6306bd1581c3bfaf49601375169bfede33e73d83ca90073d6396940f0be111"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "6a6306bd1581c3bfaf49601375169bfede33e73d83ca90073d6396940f0be111"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "6a6306bd1581c3bfaf49601375169bfede33e73d83ca90073d6396940f0be111"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "62afdab7acd5d97b5ae4f32e6e0c373a438a17cbef54a20534e7c383ddf0e129"
+    sha256 cellar: :any,                 x86_64_linux:      "7fa2e3d514920d3a5a8b48e70ab5ee8e1528c7c305c997433698387fefc57eaf"
   end
 
   depends_on "go" => :build

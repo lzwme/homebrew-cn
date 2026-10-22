@@ -3,18 +3,16 @@ class RdiffBackup < Formula
 
   desc "Reverse differential backup tool, over a network or locally"
   homepage "https://rdiff-backup.net/"
-  url "https://files.pythonhosted.org/packages/e9/9b/487229306904a54c33f485161105bb3f0a6c87951c90a54efdc0fc04a1c9/rdiff-backup-2.2.6.tar.gz"
-  sha256 "d0778357266bc6513bb7f75a4570b29b24b2760348bbf607babfc3a6f09458cf"
+  url "https://files.pythonhosted.org/packages/ab/23/3fab9ee2a2691859bcd99601682806cd86f530bfeaff13d284c5f1f8bfae/rdiff_backup-2.2.7.tar.gz"
+  sha256 "a88a1eb895f3c6c7dcc12d897ab53e301f9f49c9ac61b05039be212891c7d5d7"
   license "GPL-2.0-or-later"
-  revision 2
 
   bottle do
-    rebuild 4
-    sha256 cellar: :any, arm64_golden_gate: "6ed4437995d6dfb5354c16626742ab2330df442c4722e0f8f5d8293b19f95857"
-    sha256 cellar: :any, arm64_tahoe:       "3586159c45c3a4614efd126fc6c4b14070f59d462973db35640a15836bb42e10"
-    sha256 cellar: :any, arm64_sequoia:     "fe543f0236e963f360d46bad87fe34a5bcc46ab812c048ef156ccede727ca2ec"
-    sha256 cellar: :any, arm64_linux:       "de5aa5852eca3304c45d6a5809d64a118441bb1f3f0dffc8a6bbf186cf924672"
-    sha256 cellar: :any, x86_64_linux:      "f6671330b9e3e371e18829c5babec44df0c1147736addec60a39382fd944e3fc"
+    sha256 cellar: :any, arm64_golden_gate: "bd794dd0f598c1069b8c19f2ecdbf703dd29d4ad449de318435badb5918eb4bc"
+    sha256 cellar: :any, arm64_tahoe:       "02e02612c2b348abe1ea2bfe25218ffb52e982f6a85789f4d474f13298dea740"
+    sha256 cellar: :any, arm64_sequoia:     "e40643ee8da8d16804b9900c0d872f5de44c3f02258a6c46604583e97f8d4896"
+    sha256 cellar: :any, arm64_linux:       "e2f94b9318635896b15aac24d9f2db6252432a9c6c9ab579b339da3270f0bb0b"
+    sha256 cellar: :any, x86_64_linux:      "6dd27b9aae721d3c8e8f1d9371fbcf85ac3edd118bc01830fa59d24fd9e049ea"
   end
 
   depends_on "librsync"

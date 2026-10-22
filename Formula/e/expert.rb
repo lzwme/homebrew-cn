@@ -1,17 +1,18 @@
 class Expert < Formula
   desc "Official Elixir Language Server Protocol implementation"
   homepage "https://expert-lsp.org"
-  url "https://ghfast.top/https://github.com/expert-lsp/expert/archive/refs/tags/v0.1.11.tar.gz"
-  sha256 "8784b2e26cbd4c512459278239659a855d3f074a7dea93310ab299b1d19378f2"
+  url "https://ghfast.top/https://github.com/expert-lsp/expert/archive/refs/tags/v0.2.0.tar.gz"
+  sha256 "af65f7172e2ba54fe19064c8dea9c38619d50bd70a97961ae826a3c4d3bc378f"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/expert-lsp/expert.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "f4efd5a46350b9c9e7a7aea1d86bdc38ae242f36914025f8d5f72cfeac093c83"
-    sha256 cellar: :any, arm64_tahoe:       "6242dbe156e9d1aab3753c614e8cd999c356385ff9d382de4ddf11d95ce5a1bd"
-    sha256 cellar: :any, arm64_sequoia:     "24aaf88ef24a590b9f4601e66476d5c1d5b7ad35c66c077c6ca7685a3a2ac0c2"
-    sha256 cellar: :any, arm64_linux:       "c7d0a0fb9294dafe4005fd71aec987e80a4c67337917f78fc12512386e6f71bc"
-    sha256 cellar: :any, x86_64_linux:      "3fb57d0c964b46703a1f47ae72d30b89be4ff2c7bb8b99cb075db37bae3b3a71"
+    sha256 cellar: :any, arm64_golden_gate: "74af20ae4d17e8842f7212077225feb4976a942b95a8eb8976c8772497184429"
+    sha256 cellar: :any, arm64_tahoe:       "159358ec9792598243a01cd3fa900ede214c2836b9fb168f7eae00b9a2a34241"
+    sha256 cellar: :any, arm64_sequoia:     "cce840479721041225109fca581e240fd38ef2a7f5842e2b9c917454292f476e"
+    sha256 cellar: :any, arm64_linux:       "a972254509903e74d30ec51911c07fc6be6b6cbf576695bdbc4c6374dfd695be"
+    sha256 cellar: :any, x86_64_linux:      "3e25ee773156f96336203423365b6b581d4ec3c86d43d9c6356089582e2776d1"
   end
 
   depends_on "elixir" => :build
@@ -30,6 +31,11 @@ class Expert < Formula
     system "mix", "local.rebar", "--force", "--if-missing"
 
     system "just", "install", "--prefix=#{prefix}"
+
+    # Use brewed ca-certificates PEM file instead of the bundled copy
+    cacerts = libexec.glob("expert/lib/*/priv/engine_source/apps/engine/deps/castore/priv/cacerts.pem").fetch(0)
+    rm cacerts
+    cacerts.make_relative_symlink Formula["openssl@4"].pkgetc/"cert.pem"
   end
 
   test do

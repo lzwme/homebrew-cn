@@ -1,9 +1,9 @@
 class Zigmod < Formula
   desc "Package manager for the Zig programming language"
   homepage "https://nektro.github.io/zigmod/"
-  url "https://ghfast.top/https://github.com/nektro/zigmod/archive/refs/tags/r105.tar.gz"
-  version "r105"
-  sha256 "b88a477602b63ce4f013701369ab4356ff91830915021443aa74380df474c1b3"
+  url "https://ghfast.top/https://github.com/nektro/zigmod/archive/refs/tags/r106.tar.gz"
+  version "r106"
+  sha256 "faea9f58a0cf9f582d51ebd7252b624e062c1bb6e41ea98bddbe4592005999ae"
   license "MIT"
   version_scheme 1
 
@@ -13,34 +13,29 @@ class Zigmod < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "97cd47ddf8b006b927ad700079ef1d0a1ea55a9fa381fa121665aa257d4a4cbc"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "f37c874532fafe5bebe759e1d780063e8a8e1203ab0eab92397c4e51e7911bc0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "bc17ae0d9a279c31fc35588761117b8533f3e03c05190e7f05d8823d29f074bc"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "f3a25a78f5a61d2d5e1e7b828bd5532adf9e13c51b35dc78512d907cecb3ae32"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "b614aa01d3a6253b86ad4c066fc24902db2e6db296d6277e899de656d5ea9d67"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "456c7505eecfd41737459a8cf5d4f3f2f4a745a9e71421b6bda86fa515320e55"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "48f1354039c373af7484e8c01d708e8a4a4b9cef3a79d6638e4e3388b9be8799"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "a8f569311a51a5a7aa1c9a5e8724f8343588750593fe9acef4f5f5681ab9393c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "15f5993924de3b66fa1d7730c850b500ac35ed8e4307df16b7ed32028a9d8f76"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "029e185a8e67b79bf24d1450efbc0b5d27bf9971546b6584bfd9105369291c7e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "d04a4f7e7db74ba760cf6bef4866b38b5c024a0643fe6f40b0387a7a5d7b2994"
   end
 
-  depends_on "zig@0.16" => :build
+  depends_on "git" => :build # `zig build fetch` runs `git clone --revision` (git 2.49+)
   depends_on "zig"
 
   deny_network_access!
 
   def fetch
-    ENV.prepend_path "PATH", formula_opt_bin("zig@0.16")
     system "zig", "build", "fetch", "-Dtag=#{version}"
   end
 
   def install
-    ENV.prepend_path "PATH", formula_opt_bin("zig@0.16")
-
     args = %W[
       -Dtag=#{version}
       -Dstrip=true
     ]
 
-    # Upstream doesn't use `-Doptimize`, see: https://github.com/nektro/zigmod/pull/109
-    system "zig", "build", *args, *std_zig_args.map { |s| s.sub "-Doptimize=", "-Dmode=" }
+    system "zig", "build", *args, *std_zig_args
   end
 
   test do

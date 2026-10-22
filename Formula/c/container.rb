@@ -1,14 +1,14 @@
 class Container < Formula
   desc "Create and run Linux containers using lightweight virtual machines"
   homepage "https://apple.github.io/container/documentation/"
-  url "https://ghfast.top/https://github.com/apple/container/archive/refs/tags/1.5.0.tar.gz"
-  sha256 "e1066ad42939c0a4a7f1c677104a8e16c666f7c7c13ec3e2eadb534620f212c1"
+  url "https://ghfast.top/https://github.com/apple/container/archive/refs/tags/1.6.0.tar.gz"
+  sha256 "5a5b66eb9ee55890b781d1236b0af807245378a05f082797c2af6400398f756a"
   license "Apache-2.0"
   head "https://github.com/apple/container.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "fd3afb5d464c3f8533599c6fe1be6f4f2f667a4ac24af2cd85b2d8a871d7942c"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "a9b7121413818bc5199a099a86bf688bca2b30c587e73ea184ace6a80f155f75"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "12b1f3decf39019ffda1266ad6519ed615cb793234726bbe612978c1dcbb606d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "e5729a7300cc616bc75f5b2583ba4ab3e82b95eca77c18e752917a5dbb04ddb2"
   end
 
   depends_on xcode: ["26.0", :build]
@@ -39,13 +39,17 @@ class Container < Formula
       "container-network-vmnet" => { source: "NetworkVMNet",     entitlements: true  },
       "container-runtime-linux" => { source: "RuntimeLinux",     entitlements: true  },
       "machine-apiserver"       => { source: "MachineAPIServer", entitlements: false,
-                                     resources: ["init", "create-user.sh"] },
+                                     resources: ["init"] },
       "k8s"                     => { source: "K8s",              entitlements: false,
                                      resources: ["kindnet.yaml"] },
+      "build"                   => { source: "ContainerBuild",   entitlements: false,
+                                     binary: "container-build" },
+      "builder"                 => { source: "ContainerBuilder", entitlements: false,
+                                     binary: "container-builder" },
     }
     plugins.each do |bin_name, opts|
       plugin_dir = libexec/"container-plugins/#{bin_name}"
-      (plugin_dir/"bin").install release_dir/bin_name
+      (plugin_dir/"bin").install release_dir/(opts[:binary] || bin_name) => bin_name
       plugin_dir.install "Sources/Plugins/#{opts[:source]}/config.toml"
       opts[:resources]&.each do |resource|
         (plugin_dir/"resources").install "Sources/Plugins/#{opts[:source]}/Resources/#{resource}"

@@ -12,11 +12,12 @@ class TransmissionCli < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "76843aa95b41290e9b1c8d45cab8f0be62d60adb8522a6edbb7b6095b829c129"
-    sha256 arm64_tahoe:       "1c63731e69dba41d05c1858d40d2fd2f6a0ffef87206ebf030ac1a443b67a97e"
-    sha256 arm64_sequoia:     "75c76a6f72003a0dc6c5780778451f98c0a825e0a906ca62e5c69495c6b9eae6"
-    sha256 arm64_linux:       "40d6725e0a9341a0dae2bc155b3a2d8ad365c799290d2612ee98b273f9c08b46"
-    sha256 x86_64_linux:      "30b56003fb0fddb082ab9ae078b1a471a233d0f00d71250b2befcc9caf708703"
+    rebuild 1
+    sha256 arm64_golden_gate: "e37ca28b0a7f92964f29138c627f89fcfaf7cbcdd476dac9a93487fdb682c3a1"
+    sha256 arm64_tahoe:       "6d61551707802dcfd5982c6fb4813a9ded2e9b3c36864013acb992f44216c94d"
+    sha256 arm64_sequoia:     "5811811858a492bd69597c1fa28a3c07013f32be2f0fa8f25282976a1299c407"
+    sha256 arm64_linux:       "741d0fa868aa2345c4ce14887a3b1c646be81aa6b11d24445ae7569103abf14d"
+    sha256 x86_64_linux:      "e2588c56a4fa9b6343e31af2437e35c86ecff55cbf1f697c539c94d2b4b6cc87"
   end
 
   depends_on "cmake" => :build
@@ -40,6 +41,7 @@ class TransmissionCli < Formula
     args = %w[
       -DENABLE_CLI=ON
       -DENABLE_DAEMON=ON
+      -DENABLE_GTK=OFF
       -DENABLE_MAC=OFF
       -DENABLE_NLS=OFF
       -DENABLE_QT=OFF

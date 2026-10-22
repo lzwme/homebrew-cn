@@ -1,17 +1,18 @@
 class Prek < Formula
   desc "Fast Git hook manager written in Rust, drop-in alternative to pre-commit"
   homepage "https://prek.j178.dev/"
-  url "https://ghfast.top/https://github.com/j178/prek/archive/refs/tags/v0.5.6.tar.gz"
-  sha256 "ad2a7fe633864c3b9a02bb81267d97a1741cdd231ab1df1eedf9be784a620e37"
+  url "https://ghfast.top/https://github.com/j178/prek/archive/refs/tags/v0.5.7.tar.gz"
+  sha256 "c14bfbb5121c24421aea5fbb91a9c835e3e3372e53bdaeb3dedd87cc8eda56b5"
   license "MIT"
-  head "https://github.com/j178/prek.git", branch: "master"
+  head "https://github.com/j178/prek.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "2d79f4cf2572068415986ee0711efb5b577ef0ff703a6c0b6e2e1f2b24f65faf"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "16ffb50b07467bad7112c44a11020c89f7f3530f09c66e263cc54d9fc2bc443f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "b6424fed84acf8dfe9c8da40f101bc37f77069242b29bf6a310f3268f3a07a0d"
-    sha256 cellar: :any,                 arm64_linux:       "94112434315b79aedf025092a4697024b4accc12a2c28964b2bd5f89c3154db7"
-    sha256 cellar: :any,                 x86_64_linux:      "791cd8380fef074fb0103efb1acb300a6534f0d2ef2b830f799b7c9f65648cb1"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "12f9c13b9e3c26db850bace474d31be1e6904660a56e278008081f72c373ea62"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "d02daa563803d64b9f76609a35da042c2fc2b518d7dfa2b387036d16af119eaa"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "2ffd7a5a97bfcb400265ef035eaca923ef4df023887c2887502027f392e1db99"
+    sha256 cellar: :any,                 arm64_linux:       "439c2b7b4d35857af9ec389df68dd0f6408d3b123a56980e4efb6d0d992f91c3"
+    sha256 cellar: :any,                 x86_64_linux:      "5e60d758eb76b3099a19c5ed5177f9b55cab978734ae2de31b1e03427cbbaddf"
   end
 
   depends_on "rust" => :build

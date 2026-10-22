@@ -24,6 +24,12 @@ class Smartdns < Formula
     depends_on "bind" => :test # for `dig`
   end
 
+  allow_network_access! :test
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
     system "cargo", "install", "--no-default-features", *std_cargo_args(features: "homebrew")
     sbin.install bin/"smartdns"

@@ -5,8 +5,8 @@ class Semgrep < Formula
   homepage "https://semgrep.dev"
   # Pull from git tag to get submodules, https://github.com/semgrep/semgrep/issues/10877
   url "https://github.com/semgrep/semgrep.git",
-      tag:      "v1.181.0",
-      revision: "72d3525fe7e02f486428386078f192f8c4756804"
+      tag:      "v1.182.0",
+      revision: "240da9f30cd06fb4ee00c2c31c114c1c1f5ee0f4"
   license "LGPL-2.1-only"
   head "https://github.com/semgrep/semgrep.git", branch: "develop"
 
@@ -16,11 +16,11 @@ class Semgrep < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "7647e142dfc1db080e48bffc5b8508b33a9a052706fef1537056933d96e0aa38"
-    sha256 cellar: :any, arm64_tahoe:       "249e52cf2a3450d7e54f5a73a7455f16796fc7d84eeb32d48199e76c95072f3c"
-    sha256 cellar: :any, arm64_sequoia:     "0063337cf6e721354278dde00adb6890ff9e09f014cc8cdaf8c6cf16353523a7"
-    sha256               arm64_linux:       "026de0b9e38c86f6d2c5d4a2ac4abcc1c8e3483e4795f30cc7952b9c761661b5"
-    sha256               x86_64_linux:      "a5b00b47415fe0b5bdb2b05f5fb51205d6c9b5829ee44761a8125ecc2f915bcd"
+    sha256 cellar: :any, arm64_golden_gate: "865e0f17f1caa44107ef3d4599cf42e96c162f70359d5b79b0c479e0616b354e"
+    sha256 cellar: :any, arm64_tahoe:       "56765523e35b478bfe0582a1b090d99baa1456231c19af582ea9381f3c54206e"
+    sha256 cellar: :any, arm64_sequoia:     "a6b30a95964c7d7057b6845ce9ff46d11ce9837912a62fc661b1163b3bd0de37"
+    sha256               arm64_linux:       "328abe4afcf9a9a125bad3e92096fdf9424160830167cfe7aaa5f9fed70aa7e4"
+    sha256               x86_64_linux:      "3deb352c22f3d75a8aa0eb371a3f3e80197a3d69e873765b7a428a52300e079f"
   end
 
   depends_on "ocaml" => :build
@@ -231,8 +231,8 @@ class Semgrep < Formula
   end
 
   resource "pydantic-settings" do
-    url "https://files.pythonhosted.org/packages/2e/3b/a5d2294799b53b448319978cfb5bd139d5a9d45e862af91661614f14c922/pydantic_settings-2.16.0.tar.gz"
-    sha256 "5b6c578049ede4db0e2ef3b4eaa4ad4069cfa9211f83fb38df899dfade50a614"
+    url "https://files.pythonhosted.org/packages/05/ca/7817b4bf0c4b15c6a6ab8cdf4cb96c268335a8ca2f525de93b6ebe4c7d28/pydantic_settings-2.16.1.tar.gz"
+    sha256 "aff602a1886338c2df3d1e958e2193a8dc33cec75b91f202e83fd98484b4b0da"
   end
 
   resource "pygments" do
@@ -291,8 +291,8 @@ class Semgrep < Formula
   end
 
   resource "starlette" do
-    url "https://files.pythonhosted.org/packages/e9/0c/6efb252d091ecccd7d62048ae11f0ea35cd75a4fbaeea5e30f9c3bf91d10/starlette-1.8.0.tar.gz"
-    sha256 "1565dc0b35d5737a271ed1e0e04e949f4e81198799f216d2667b0a0fb9cf9522"
+    url "https://files.pythonhosted.org/packages/ad/eb/4e197bf26b023abafc5e9043ec8710d7de0fcb032d0969045236d72aa0b1/starlette-1.9.0.tar.gz"
+    sha256 "3d931de246ed870e35ce605974440816ef895e592f255d1396cfdf191d4c4318"
   end
 
   resource "tomli" do

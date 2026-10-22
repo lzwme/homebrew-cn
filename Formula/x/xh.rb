@@ -1,19 +1,17 @@
 class Xh < Formula
   desc "Friendly and fast tool for sending HTTP requests"
   homepage "https://github.com/ducaale/xh"
-  url "https://ghfast.top/https://github.com/ducaale/xh/archive/refs/tags/v0.26.2.tar.gz"
-  sha256 "61a88a5b3beac225b75a11d6ed32659af78db7ff29c825def0ab7f4a2906cbd7"
+  url "https://ghfast.top/https://github.com/ducaale/xh/archive/refs/tags/v0.26.3.tar.gz"
+  sha256 "8c54c7e8e878600d1a322151e0158c4fa6e6793283a45e355d0c1f87ca6d5640"
   license "MIT"
   head "https://github.com/ducaale/xh.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "8127db20a02b32bfad9e7d96d2c7299bd6b169e66f33db859b862f5ea0fe3daa"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "4d0e8c1d0310e6b2a692628ece06131afcfd8ccb6bcef9bed2ca60044d073df6"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "d4e4088d22998419a48bc55932cd4f838136c5cd96c90d21c1b5f98994d52c1e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "6e0a28c5d06c4fe1d0413466063cca1b06a465d6ce56cf6a558c2a776b880e59"
-    sha256 cellar: :any_skip_relocation, sonoma:            "72e0506b810317c1da6775841545b22aef259860663bb25951d2789b019debdf"
-    sha256 cellar: :any,                 arm64_linux:       "06d4bb935ad0f0820e43f45a7bf91430d55a2c3633b8bec73f7ab463f40cf68b"
-    sha256 cellar: :any,                 x86_64_linux:      "c9f7ad71ebc63d83fa4efa47cae0d47838499c1f3765135f3bdca67ed14dacbf"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "cdfe778ca3c14fe721f7d7d16e23fb2608fd2128983ef9c4a6ffce613001dca4"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "9e757a2ef860ddea72a59c353923a50176a73eff3fba4078b9fa92d9a50e8f78"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "36e4112dd55f49239d99b491acda4a0a0f764d00deef64d3c12adaef6f97d054"
+    sha256 cellar: :any,                 arm64_linux:       "a6333eae3cb87c763c1f41cd3aa688f220403671acd39aacceb637fc9b4d3152"
+    sha256 cellar: :any,                 x86_64_linux:      "61b30b810b3bcc4a9e428a57ea18522cb821ad9537c686ae2312267420aeb3a1"
   end
 
   depends_on "rust" => :build

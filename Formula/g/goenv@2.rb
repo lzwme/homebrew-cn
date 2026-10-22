@@ -1,8 +1,8 @@
 class GoenvAT2 < Formula
   desc "Go version management"
   homepage "https://github.com/go-nv/goenv"
-  url "https://ghfast.top/https://github.com/go-nv/goenv/archive/refs/tags/2.2.47.tar.gz"
-  sha256 "645fc410877a804f2ab0d127feaf9acb695d00d1824704f678c6c8d11c472cc7"
+  url "https://ghfast.top/https://github.com/go-nv/goenv/archive/refs/tags/2.2.48.tar.gz"
+  sha256 "7cc888037ef367c20128aff107eb90d84ee56a61cc8ef34beac61ec641c3ea22"
   license "MIT"
 
   livecheck do
@@ -11,7 +11,7 @@ class GoenvAT2 < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "bef2fbb4cfca77558fb7bfdee0ec80ecf4797562fabec6733be77bb23d73c2c4"
+    sha256 cellar: :any_skip_relocation, all: "208263888ad83d91cf7499f92654e41eea699c091f8571007f8cb9acd81de9ab"
   end
 
   keg_only :versioned_formula

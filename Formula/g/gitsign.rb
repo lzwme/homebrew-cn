@@ -1,19 +1,17 @@
 class Gitsign < Formula
   desc "Keyless Git signing using Sigstore"
   homepage "https://github.com/sigstore/gitsign"
-  url "https://ghfast.top/https://github.com/sigstore/gitsign/archive/refs/tags/v0.17.1.tar.gz"
-  sha256 "0325dc76ec9e2d8d81d96aaeb6dfde0317f6cdfc60710fbab9eb636648388085"
+  url "https://ghfast.top/https://github.com/sigstore/gitsign/archive/refs/tags/v0.18.0.tar.gz"
+  sha256 "d87dbb00624d0e6874ef2df37b3bb3b3a89416c3a19114753d3c3cb932dcdcba"
   license "Apache-2.0"
   head "https://github.com/sigstore/gitsign.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "c330a2b0569d1d5e9b09ea0bb7c01780cdf227d827e8808d38173f75c1c8a7e7"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "a0a2862749bcdb0b3265a178290032099fc025ce58e80eabe93028cd8550a1b7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "a0a2862749bcdb0b3265a178290032099fc025ce58e80eabe93028cd8550a1b7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "a0a2862749bcdb0b3265a178290032099fc025ce58e80eabe93028cd8550a1b7"
-    sha256 cellar: :any_skip_relocation, sonoma:            "84d92453d5dbac80d6b43ce40a36c5587a3ae5474fb97017aaf4a65218773cb3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "9375d212e62861f39f5233a393ef464dbcf9e57b3150922bb9575d859cd8a46f"
-    sha256 cellar: :any,                 x86_64_linux:      "28225b1ebb6598c3cd16425e34d6760753c103b3f6a6e439b78618a87fade8d7"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "541ab7e2bc2745da306de99d48600f74c4142f2d31b7f02f6644c57e2de2fc3d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "bb3f400070762e48004d00857b5a50e78441d2b5de49e8542f0208ae5db6de78"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "8db1fec475b6d26250ed5d3bf0181090e4c7adbcd71a262caa6d077de4122b68"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "d83e588401b06b14dcee0f11c9c58c7000086287c349c0ce9a4135a10b92e9a7"
+    sha256 cellar: :any,                 x86_64_linux:      "b65b887928e3538c90a1bccc152b6f7633a6912f1664d68eb468761f6c6529a7"
   end
 
   depends_on "go" => :build
@@ -28,7 +26,7 @@ class Gitsign < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/gitsign --version")
+    assert_match version.to_s, shell_output("#{bin}/gitsign version")
 
     system "git", "clone", "https://github.com/sigstore/gitsign.git"
     cd testpath/"gitsign" do

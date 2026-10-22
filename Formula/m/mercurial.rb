@@ -15,11 +15,12 @@ class Mercurial < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "d363fcc95236e6edca3bac88da8980df936f0b5463cf756a5a164e7c14de80c5"
-    sha256 arm64_tahoe:       "ebf09fb38004564a0ba4a541fd76311f81e3d6dfbdb62f50500747b83cbb3482"
-    sha256 arm64_sequoia:     "2eb365be6ed29ed8660821e397bd642109e1737dc260985c03c3249c5373a6a5"
-    sha256 arm64_linux:       "d98dadc553aeec645cb1474f907c32eeacfb21a3a1a0dba99a221fdd06fdfdbf"
-    sha256 x86_64_linux:      "1c0d442b34cff0e5d7ad3ecd0e09a6b65b0b4fb5718c6426889166b70bdc6710"
+    rebuild 1
+    sha256 arm64_golden_gate: "f404695a2f2632b2850044689d3f7928c2eb8cbdbdf0ce99eef4646383b1f480"
+    sha256 arm64_tahoe:       "f9afc817efd2545b02f89429025d09d102b718389f062be37a3a0e68ec9e301c"
+    sha256 arm64_sequoia:     "f4845ec09190626fbb87ca93cd9d6204043fb20c4c2c27ceaca5f64125e028f6"
+    sha256 arm64_linux:       "52600582f0f1976467b09627fa0eba95eb6945948e6f0ad3e8da0c015ef364f8"
+    sha256 x86_64_linux:      "cca8f1bba048ef8d6dd12662dd4bcaa87de300585e16b63953a1607902498a72"
   end
 
   depends_on "python@3.15"
@@ -27,7 +28,7 @@ class Mercurial < Formula
   # Backport to support Python 3.15 with OpenSSL 4
   patch do
     url "https://foss.heptapod.net/mercurial/mercurial-devel/-/commit/5f775798ca43e215b6b190a88733ad8751beb90c.diff"
-    sha256 "67d80601f03b08b7691511094647bdd2b6b438edcd09ecdcf1e1150b5b1216c9"
+    sha256 "41fc8b871057ea4c0649e907a8a5c29506273b350e9adb2b08840caad6136ca9"
     type :backport
   end
 

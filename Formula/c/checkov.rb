@@ -3,8 +3,8 @@ class Checkov < Formula
 
   desc "Prevent cloud misconfigurations during build-time for IaC tools"
   homepage "https://www.checkov.io/"
-  url "https://files.pythonhosted.org/packages/88/a6/8945e7a78742a6bd87526d3537cde857e5f077824adf22b4012872660b26/checkov-3.3.20.tar.gz"
-  sha256 "493bfabc1d41526ab5da5b145e0fe0d9f2870d3963be3b655c0f8c31ddce4688"
+  url "https://files.pythonhosted.org/packages/40/ed/9ff6eb2510d68671640ee7f305f560d260edd918ffea1bf35c7c788974ef/checkov-3.3.30.tar.gz"
+  sha256 "d827f79e25797d0a54a6643683869dea9893ea06e16e1b81635c9d21c1f0f4a4"
   license "Apache-2.0"
 
   livecheck do
@@ -17,12 +17,11 @@ class Checkov < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_golden_gate: "f3c24b6e1008f5e18919ab8343f71b229809f2e36a59bc083d628a0c7a4472ec"
-    sha256 cellar: :any, arm64_tahoe:       "6155c5b7b692b39490cf94d8cbe24acc7ecf170da4ebbe1be7c044b982e09e5f"
-    sha256 cellar: :any, arm64_sequoia:     "26ad03e7fb10541872cab1845803cdfe5afc71a77238e454163d9f51741b0acb"
-    sha256 cellar: :any, arm64_linux:       "c1009d6851671d33239640ed29ddd48cebb1988434c1bd409ed969cef7284ced"
-    sha256 cellar: :any, x86_64_linux:      "e38744a109e5b1939c099b191ae1c0025597745b90160551fe1b6c1dce3aee2a"
+    sha256 cellar: :any, arm64_golden_gate: "9187f37f5d2ad005858a47050fe2c6d05837f8444183354565467d2ce7cbd476"
+    sha256 cellar: :any, arm64_tahoe:       "2d106cd8890c84506867caa95e6746b3656b9da7723dcbf7b3824845149364c3"
+    sha256 cellar: :any, arm64_sequoia:     "e93d44c38c9e1e829596a5f22c08a7b6c2697ff8e015d1096eafd66e7c4488c8"
+    sha256 cellar: :any, arm64_linux:       "4f83a31f38378e57756bde54b6b262ecc5c18e2f1cf606c6721e69d2cb94e72f"
+    sha256 cellar: :any, x86_64_linux:      "218bcb0acbc6ad9f3def30ee43745a89db5df4d8d69666d877703d82d4828cd6"
   end
 
   depends_on "cmake" => :build # for igraph
@@ -80,8 +79,8 @@ class Checkov < Formula
   end
 
   resource "bc-detect-secrets" do
-    url "https://files.pythonhosted.org/packages/49/6d/ffa40dbb29321b45827329e26029a371f81463b803da76e99e9bf6f57e69/bc_detect_secrets-1.5.50.tar.gz"
-    sha256 "99037375d9cb49ed07e5bb12722f4bbb76fb8acaff6f367eef9df7559e7642b3"
+    url "https://files.pythonhosted.org/packages/da/a6/8833c273f54c33e5d6fa421dc38117f35a9fc36b60c8c2cd7d8958628702/bc_detect_secrets-1.5.52.tar.gz"
+    sha256 "bb437db4b4ad81b19d52feaf8e0ebaf6ca0421ee6fefbdd9d41210bd4983e16b"
   end
 
   resource "bc-jsonpath-ng" do
@@ -210,8 +209,8 @@ class Checkov < Formula
   end
 
   resource "gitpython" do
-    url "https://files.pythonhosted.org/packages/6e/2d/6f6e649818da44d4499604802c89329b8d9799687a124e3a5e467a643336/gitpython-3.2.0.tar.gz"
-    sha256 "fb92310af6844d96adc95ca066ed2e617c00e1dbd146a326626c81e72e18cc2e"
+    url "https://files.pythonhosted.org/packages/c0/ff/fee293f1ec3e1b64db6eb270e00964f29c086d769201474cedb8d1608930/gitpython-3.2.1.tar.gz"
+    sha256 "0f1229ec5c057bdabdeeda8bda4f17bda679ab33dbccc00f24e6a480553c8613"
   end
 
   resource "idna" do
@@ -260,8 +259,8 @@ class Checkov < Formula
   end
 
   resource "markdown" do
-    url "https://files.pythonhosted.org/packages/f8/4f/700155c8c20d9e655dd0732b5fc3c7614f291b9148da271d7388e50bf774/markdown-3.11.tar.gz"
-    sha256 "180224db6aed87ba9ce1f2781ebcd5826253de8ff637112090e24b84502bbf9f"
+    url "https://files.pythonhosted.org/packages/f4/32/0b4d0297064244f04af4331b65de16237cc3cce07474171ee14222a28981/markdown-3.11.2.tar.gz"
+    sha256 "87bf5d90f2d2882e2c02fcda182c2800456b985bff38913867c49706481514b0"
   end
 
   resource "markupsafe" do
@@ -295,8 +294,8 @@ class Checkov < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/90/a1/d5f9002a70298c64a789779077d8dd90c10aa1f47fe40c86802df874f2a6/platformdirs-4.12.4.tar.gz"
-    sha256 "63743c02414e755de4e31b8f68125c1407495b86c5a006e203c01ff8b9924250"
+    url "https://files.pythonhosted.org/packages/58/e6/d0abbb256b44e6a05748c6942511ff67db8dbb068de0c35b24bf1b395b09/platformdirs-4.13.5.tar.gz"
+    sha256 "05831adf87d392760f4b5c3a0a95579ab5a10b18b9b9bd43680dcb47544788a0"
   end
 
   resource "ply" do
@@ -405,8 +404,8 @@ class Checkov < Formula
   end
 
   resource "soupsieve" do
-    url "https://files.pythonhosted.org/packages/71/c3/1b817965ac12dc002d7c9cd7dfffdd7d4fbf9b45763ef2ffe7b86ee94670/soupsieve-2.10.tar.gz"
-    sha256 "49e9380d7d2905463583bafe285e818c7366a9ed7b3aee221c1ac79c905d8bc0"
+    url "https://files.pythonhosted.org/packages/5e/77/2dcfa996b01702ab8fd0763d84098f6a640d6162a328f1c04c2697579a1a/soupsieve-3.0.3.tar.gz"
+    sha256 "7dcf6022eed0399eb9934a75e020148f7a2024c37b7dfcd3cf2c5505d69c364e"
   end
 
   resource "spdx-tools" do

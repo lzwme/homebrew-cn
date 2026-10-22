@@ -1,9 +1,8 @@
 class MecabUnidicExtended < Formula
   desc "Extended morphological analyzer for MeCab"
   homepage "https://clrd.ninjal.ac.jp/unidic/en/back_number_en.html"
-  url "https://mirrors.dotsrc.org/osdn/unidic/58338/unidic-mecab_kana-accent-2.1.2_src.zip"
-  mirror "https://clrd.ninjal.ac.jp/unidic_archive/cwj/2.1.2/unidic-mecab_kana-accent-2.1.2_src.zip"
-  sha256 "6cce98269214ce7de6159f61a25ffc5b436375c098cc86d6aa98c0605cbf90d4"
+  url "https://clrd.ninjal.ac.jp/unidic_archive/cwj/2.1.2/unidic-mecab_kana-accent-2.1.2_src.zip"
+  sha256 "70793cacda81b403eda71736cc180f3144303623755a612b13e1dffeb6554591"
   license any_of: ["BSD-3-Clause", "GPL-2.0-only", "LGPL-2.1-only"]
 
   # The OSDN releases page asynchronously fetches separate HTML for each
@@ -15,8 +14,8 @@ class MecabUnidicExtended < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "16217e32273610a5314c981b56a06476002a596ad3e17af6bd8ad48adf7f8f23"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, all: "5c9eebc9df1254cf1dd0a6247f4a84f582755f5bb07eca9bd70b7cc6737b0294"
   end
 
   depends_on "mecab"

@@ -36,6 +36,12 @@ class Librespot < Formula
     resolves "https://github.com/librespot-org/librespot/pull/1707"
   end
 
+  allow_network_access! :test
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
     if OS.mac?
       ENV["COREAUDIO_SDK_PATH"] = MacOS.sdk_path.to_s

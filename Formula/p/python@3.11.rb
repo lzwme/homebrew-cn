@@ -4,6 +4,7 @@ class PythonAT311 < Formula
   url "https://www.python.org/ftp/python/3.11.17/Python-3.11.17.tgz"
   sha256 "53cdee63ac4bf12387b7b33a53d3b1f8f4941cad73807a7b4fe91bb001ef004a"
   license "Python-2.0"
+  revision 1
   compatibility_version 1
 
   livecheck do
@@ -12,11 +13,11 @@ class PythonAT311 < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "fc66c139434cb4139fecc36ccbfefddb9e2364f7ff613f5f124ad9ed07a824bf"
-    sha256 arm64_tahoe:       "7d173a6a3d5d782c47f9900af6653ef57a92203ccf82db6c1793975b712187ff"
-    sha256 arm64_sequoia:     "f12fb013f32c98e4c6f5c1d0ae2276b0a7807c57f993ad4edef4ec11b18cfd35"
-    sha256 arm64_linux:       "dd97f5d0caee2c259aa129df79ef419a0f7bae8f800bad144eefd57691a703be"
-    sha256 x86_64_linux:      "d85ffc204295a24dd17fb481546d41fb50f3fda23d4f34ff9c65aa98b4dbe307"
+    sha256 arm64_golden_gate: "2a9b48a3adcba59f9b147314d74c9b3e16b19d9ede9192e6c0a1aac3706dd5e5"
+    sha256 arm64_tahoe:       "c850890df7f46a52d85346cf92ffdc12d1d6ed775b196c59e780eca8bc808e03"
+    sha256 arm64_sequoia:     "8fb2b035b745e7f5e93f2c6c4238d43dcfef827c0e66eaf1027112731f58a8c8"
+    sha256 arm64_linux:       "d99033154fdd4bea46084d3db2e48746374e7e2a449a48dfa409e7f57f1f57d7"
+    sha256 x86_64_linux:      "ed05cb663f8cc78669d640a3bf04a86981a0d0d26a70f638de33ef697ad287fc"
   end
 
   # setuptools remembers the build flags python is built with and uses them to
@@ -62,8 +63,8 @@ class PythonAT311 < Formula
   end
 
   resource "pip" do
-    url "https://files.pythonhosted.org/packages/ae/15/4500e320e6b101ec3b719ae85b697d9940b6cda672bc555bd6016fc60c6f/pip-26.2.1.tar.gz"
-    sha256 "f6ad667e89a1fe78046c8f13232b247200f5258d7828f3f7883d660878e0813f"
+    url "https://files.pythonhosted.org/packages/fa/e8/0842d757e483e895e670f655084cfe8b8c72580c6769a76b30b2789a0608/pip-26.2.2.tar.gz"
+    sha256 "3a8e5c800492787f33a4114ef54444546c340df428974ebba17e0fd47e11af2f"
   end
 
   resource "setuptools" do

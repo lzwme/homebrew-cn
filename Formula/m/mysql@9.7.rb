@@ -1,10 +1,9 @@
 class MysqlAT97 < Formula
   desc "Open source relational database management system"
   homepage "https://github.com/mysql/mysql-server"
-  url "https://cdn.mysql.com/Downloads/MySQL-9.7/mysql-9.7.2.tar.gz"
-  sha256 "e5a676c7cb73738dc6ea33db2093806ebd512b629a139b897fcab68fcd81aaa4"
+  url "https://cdn.mysql.com/Downloads/MySQL-9.7/mysql-9.7.4.tar.gz"
+  sha256 "9188eb1abec42b8ab8bb69948492f06258dd27e6aabd13e2d4c6197dbcde75b2"
   license "GPL-2.0-only" => { with: "Universal-FOSS-exception-1.0" }
-  revision 4
 
   livecheck do
     url "https://dev.mysql.com/downloads/mysql/9.7.html?tpl=files&os=src",
@@ -13,11 +12,11 @@ class MysqlAT97 < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "6b963cba6a1a530d4c54c47f7bb51982e600dfddf652b520cd66bfe40a6ef6d8"
-    sha256 arm64_tahoe:       "42e6a0ae9303cc0b8a8d3246b229fe133b92f09f3cd8f9f2a114d7868c498576"
-    sha256 arm64_sequoia:     "02e79d71225ee0e3459936a754d2274b23291a38bdb06930ac44d62329380c73"
-    sha256 arm64_linux:       "a892005be11b00bbaf811cfbe40e976e4c261ba90ddcad212a8043554b455ae6"
-    sha256 x86_64_linux:      "48a6fa9839fdd933d98beeb8d75e59fa0731dc7a36e69da20b988392b9d2fc13"
+    sha256 arm64_golden_gate: "4e899ba31695a4bd0d26b49c41c4a81e834a7e3179e5933c602452a908af1b88"
+    sha256 arm64_tahoe:       "b676e9a17178de5f44c82e28805bd7a64a4e741190642729f830b6707af12727"
+    sha256 arm64_sequoia:     "ec5b069ad92df500c804fa1d6f210d64b2ed80731a4c82f54eae15bb79b0bc0b"
+    sha256 arm64_linux:       "f35d17a2f276771f88f350a50c26a0d8f04d981d1ff5730a51f0fbb75ca8283d"
+    sha256 x86_64_linux:      "ebd0be88c2a32ec57824be34b8367bb8cb6cd63aedbf6edc4dc2abf7814fac59"
   end
 
   keg_only :versioned_formula
@@ -30,6 +29,7 @@ class MysqlAT97 < Formula
   depends_on "pkgconf" => :build
   depends_on "abseil"
   depends_on "icu4c@78"
+  depends_on "libfido2"
   depends_on "lz4"
   depends_on "openssl@4"
   depends_on "protobuf"
@@ -38,6 +38,7 @@ class MysqlAT97 < Formula
 
   uses_from_macos "curl"
   uses_from_macos "cyrus-sasl"
+  uses_from_macos "krb5"
   uses_from_macos "libedit"
 
   on_ventura :or_older do
@@ -76,6 +77,10 @@ class MysqlAT97 < Formula
     var/"mysql"
   end
 
+  def icu4c = deps.map(&:name).find { |dep| dep.start_with?("icu4c@") }
+
+  def openssl = deps.map(&:name).find { |dep| dep.start_with?("openssl@") }
+
   def install
     # Remove bundled libraries other than explicitly allowed below.
     # `boost` and `rapidjson` must use bundled copy due to patches.
@@ -93,8 +98,6 @@ class MysqlAT97 < Formula
       ENV.prepend_path "HOMEBREW_LIBRARY_PATHS", formula_opt_lib("llvm")/"c++"
     end
 
-    icu4c = deps.find { |dep| dep.name.match?(/^icu4c(@\d+)?$/) }
-                .to_formula
     # -DINSTALL_* are relative to `CMAKE_INSTALL_PREFIX` (`prefix`)
     # -DWITH_FIDO=system isn't set as feature isn't enabled and bundled copy was removed.
     # Formula paths are set to avoid HOMEBREW_HOME logic in CMake scripts
@@ -109,8 +112,8 @@ class MysqlAT97 < Formula
       -DMYSQL_DATADIR=#{datadir}
       -DSYSCONFDIR=#{etc}
       -DBISON_EXECUTABLE=#{formula_opt_bin("bison")}/bison
-      -DOPENSSL_ROOT_DIR=#{formula_opt_prefix("openssl@4")}
-      -DWITH_ICU=#{icu4c.opt_prefix}
+      -DOPENSSL_ROOT_DIR=#{formula_opt_prefix(openssl)}
+      -DWITH_ICU=#{formula_opt_prefix(icu4c)}
       -DWITH_SYSTEM_LIBS=ON
       -DWITH_EDITLINE=system
       -DWITH_LZ4=system

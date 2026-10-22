@@ -40,7 +40,7 @@ class Ggml < Formula
   link_overwrite "include/ggml*", "include/gguf.h", "lib/cmake/ggml/", "lib/libggml*"
 
   # Lengthy test so not worth installing. Shorter examples/tests haven't been ported to new DL backend
-  resource "test-backend-ops.cpp" do
+  resource "test-backend-ops.cpp", :test do
     url "https://ghfast.top/https://raw.githubusercontent.com/ggml-org/ggml/refs/tags/v0.27.0/tests/test-backend-ops.cpp"
     sha256 "bc0d8a7a4ba1d9a9b67a56b099513f06f9d1b9f58a84efe3a5404b0d603dee1a"
 

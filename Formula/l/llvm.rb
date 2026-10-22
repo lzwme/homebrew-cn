@@ -2,13 +2,12 @@ class Llvm < Formula
   desc "Next-gen compiler infrastructure"
   homepage "https://llvm.org/"
   license "Apache-2.0" => { with: "LLVM-exception" }
-  revision 2
   compatibility_version 2
   head "https://github.com/llvm/llvm-project.git", branch: "main"
 
   stable do
-    url "https://ghfast.top/https://github.com/llvm/llvm-project/releases/download/llvmorg-23.1.3/llvm-project-23.1.3.src.tar.xz"
-    sha256 "c44186a7762ed28954be72e5ff6df9808e0779d4f1bf014ecc4e7e211d31ee34"
+    url "https://ghfast.top/https://github.com/llvm/llvm-project/releases/download/llvmorg-23.1.4/llvm-project-23.1.4.src.tar.xz"
+    sha256 "819ecf7351f1a66f76b2d701d8942faaf5faeb324cb90c9d5b090de142434bb2"
 
     # Fix triple config loading for clang-cl
     patch do
@@ -24,11 +23,11 @@ class Llvm < Formula
   end
 
   bottle do
-    sha256               arm64_golden_gate: "f2435845b5fcd20ecbe28fc8206e0705d6abf72a47a443414629ab75ba72444a"
-    sha256               arm64_tahoe:       "100c1b67a834daa56b5ebe88cedef1b06caf085613f95c04b4b5a1f318315688"
-    sha256               arm64_sequoia:     "cd68b4b54d1bcd70da83984a3fd139b96cdfc4b4db3171b2b836b29d8e1f7ab6"
-    sha256 cellar: :any, arm64_linux:       "79cd22427ede911e8ff1abaaa0178bbc786f5550607ad30091cf0fffc7b431df"
-    sha256 cellar: :any, x86_64_linux:      "9cbc1a162b3d64fa6faaaea96e6ecf56dd4d33a124a8bfc79baf63b17801b74b"
+    sha256               arm64_golden_gate: "4005890f2e921a5cacf6f3c0db9bdcfd73b44d8657660386811ae8e33639edfc"
+    sha256               arm64_tahoe:       "a5c46d2e124d1df2edae4a0f304a0af28f2bad257b6077c18cf93987048fb45f"
+    sha256               arm64_sequoia:     "a836e589e11986da5742a3e034df4777feacfa76b1e765488c8feec6f81ce6d6"
+    sha256 cellar: :any, arm64_linux:       "d9d4d08af8c879264b61f8417bffe2bf821d5fd4838ebc1109418cede21d896c"
+    sha256 cellar: :any, x86_64_linux:      "0dd3fc8bba2fee7716b41c29438d17bb6541b0b384c973ea87b750aa9067a9be"
   end
 
   keg_only :provided_by_macos

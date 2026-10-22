@@ -1,16 +1,16 @@
 class Easyengine < Formula
   desc "Command-line control panel to manage WordPress sites"
   homepage "https://easyengine.io/"
-  url "https://ghfast.top/https://github.com/EasyEngine/easyengine/releases/download/v4.13.2/easyengine.phar"
-  sha256 "e47cc3cdf33be54008126e2c07e7a685dbc9ca5c1da8718e8430da83468a698b"
+  url "https://ghfast.top/https://github.com/EasyEngine/easyengine/releases/download/v4.13.3/easyengine.phar"
+  sha256 "13364d76ab4df809d9c70b080401df2b50ccca980c9044ffa9f56e6981a194ec"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "0bb24e95d9b1b46ae7279ddfcce8674f1c64a4a6a6e85560d1232150b1e021da"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "0bb24e95d9b1b46ae7279ddfcce8674f1c64a4a6a6e85560d1232150b1e021da"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "0bb24e95d9b1b46ae7279ddfcce8674f1c64a4a6a6e85560d1232150b1e021da"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "b2b9315e5b97f0269a9d17f3a5dc707ee58896569b2c6c63dd113e8b9dcee6c3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "b2b9315e5b97f0269a9d17f3a5dc707ee58896569b2c6c63dd113e8b9dcee6c3"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "95a009c0a6e83ed2659861aabdc45d503bc4cb8fa46a54b776070652a163c454"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "95a009c0a6e83ed2659861aabdc45d503bc4cb8fa46a54b776070652a163c454"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "95a009c0a6e83ed2659861aabdc45d503bc4cb8fa46a54b776070652a163c454"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "6f23351e9bc0216d9e00dfc62913d13e6895cb5652a959c1cdaf8be4a4b802a1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "6f23351e9bc0216d9e00dfc62913d13e6895cb5652a959c1cdaf8be4a4b802a1"
   end
 
   depends_on "dnsmasq"

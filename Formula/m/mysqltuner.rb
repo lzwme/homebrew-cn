@@ -1,8 +1,8 @@
 class Mysqltuner < Formula
   desc "Increase performance and stability of a MySQL installation"
   homepage "https://mysqltuner.com/"
-  url "https://ghfast.top/https://github.com/jmrenouard/MySQLTuner-perl/archive/refs/tags/v2.9.2.tar.gz"
-  sha256 "314113c2179db6b17f409ead367900a5247c18fe5ba77944cb076ba7dee1ee3b"
+  url "https://ghfast.top/https://github.com/jmrenouard/MySQLTuner-perl/archive/refs/tags/v2.9.3.tar.gz"
+  sha256 "19580893f2cb3be94bc5a73329935a3c045a15d209077b72f34213628fbdd18b"
   license "GPL-3.0-or-later"
   head "https://github.com/jmrenouard/MySQLTuner-perl.git", branch: "master"
 
@@ -12,7 +12,7 @@ class Mysqltuner < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "6687cd0dbf7d7a65bb1acfbadd31ed456204b2184dca3f8a1cad8ee91fede8f4"
+    sha256 cellar: :any_skip_relocation, all: "cea9c5c4d882742ce18a814d03d8eb5245f2ae4dace7289134df3d9512516878"
   end
 
   def install

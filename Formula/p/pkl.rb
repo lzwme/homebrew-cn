@@ -1,18 +1,16 @@
 class Pkl < Formula
   desc "CLI for the Pkl programming language"
   homepage "https://pkl-lang.org"
-  url "https://ghfast.top/https://github.com/apple/pkl/archive/refs/tags/0.32.1.tar.gz"
-  sha256 "a0c4b4c67711b1e6b79a43ae6833d99a1613d163d2b93323785c8f4699f03fdb"
+  url "https://ghfast.top/https://github.com/apple/pkl/archive/refs/tags/0.32.2.tar.gz"
+  sha256 "ca6a2efd6e89e8e9c230023fafa2a58b746c84db7c1c17a6f6b9ade4a7d63eab"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "41bf5a058d65c52da2d9e362de05ccb86cb30e16e736030db4aefe87a4725069"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "b16ee390b9713158589b7dd095a4931b00c81207c0b0a53f887eb7d2b0a571a0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "115fbb80ba094c6f84c4cb43f83bebea6f21fcb0ce2819c58c872d97c66883c2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "c165aeca1146bcc69f4cbb7864b270153c30cbf98c30b0515811e8f3394c097b"
-    sha256 cellar: :any_skip_relocation, sonoma:            "df6dcd16b83d520376cfeb64b7085b5b747e200f6114dcb11420f48a283e2c8e"
-    sha256 cellar: :any,                 arm64_linux:       "dfb2d79f373c5befd9bb35a01e711fd292526c5f95abbe140c784d081c08ffa0"
-    sha256 cellar: :any,                 x86_64_linux:      "91f78fd26468cd9625aa34be24ae0f008cdbe2e4c7ccfef09a6cdda119139d1f"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "aeaf9ab0d02ba647314dc9361bbadf14439b1d7c4c7c01d2c234115f0894f212"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "a6f087f7e63e446fbbdb6a384415c08a066b0d866f6766a875d512b6a301f73d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "f7561b7aee0420b995b18f0165de4066476aea379ab13c3fc8964b1a6fd5b174"
+    sha256 cellar: :any,                 arm64_linux:       "d9e064da1399c0178e81c35497b983ae014847b2ab2d0fa0d38f44fe1f14dcd5"
+    sha256 cellar: :any,                 x86_64_linux:      "521d6d0b467cb296706e9b11c832b634b3f91445b854f7cbcd41546f40d3be6c"
   end
 
   depends_on "gradle" => :build

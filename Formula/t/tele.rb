@@ -26,7 +26,7 @@ class Tele < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/tele -version")
-    assert_match "dumped from tele-dark", shell_output("#{bin}/tele -theme-dump tele-dark")
+    assert_match version.to_s, shell_output("#{bin}/tele --version")
+    assert_match "dumped from tele-dark", shell_output("#{bin}/tele --theme-dump=tele-dark")
   end
 end

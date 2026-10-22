@@ -1,16 +1,16 @@
 class Treehouse < Formula
   desc "Manage worktrees without managing worktrees"
   homepage "https://github.com/kunchenguid/treehouse"
-  url "https://ghfast.top/https://github.com/kunchenguid/treehouse/archive/refs/tags/v3.1.4.tar.gz"
-  sha256 "f56be997c91032c986fa7b9597ee1aaccc887321ea57a52503fb21d0ddb6c342"
+  url "https://ghfast.top/https://github.com/kunchenguid/treehouse/archive/refs/tags/v3.1.5.tar.gz"
+  sha256 "0cc99fc3856198eecc75e1a9338acc7e0bab123e2c356ea88830b361179fa331"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "fc4f47269735a20ebed153e1c7ab13cee2a1206863d8ad9489c7ed7bfb84fd1a"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "5cc6d7aaf22aae10c3f9d9b9dceccb20d2da64cdd096fa18971f137eae8ab9e2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "0254e20077767b2d965da0596e5cca654cf4e4786c20c8969d1092ed0eb7bef8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "1ac52e960821e2b3f8dd28abc4769e1708929a7f4bdf55915c059dc68540c40b"
-    sha256 cellar: :any,                 x86_64_linux:      "4c213c55245fee47ad7479b09a0c0eaecebec84b6327dd56b89900a1bec3aacc"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "3ff153e71b4c7f8dc81d4dee2bf79df96078194faf6edd53bd7ea40f452e022e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "28d5112c1e957425bce82781e58a8ae3d3203f534cdaefd9bd08edf1d58062bc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "f987ede1591bb88ac90ae182cfacee9a0f85ccc9906d262d3575831d65676a6f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "6642cc6245997b53f4e704e22f8cbc4790f760e8f22441364dfd0102a62612b1"
+    sha256 cellar: :any,                 x86_64_linux:      "c0a5263051b9f511492624e41ae3c6726c26e0162093826eadf6ed4b96097825"
   end
 
   depends_on "go" => :build

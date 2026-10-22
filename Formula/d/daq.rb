@@ -1,19 +1,17 @@
 class Daq < Formula
   desc "Network intrusion prevention and detection system"
   homepage "https://www.snort.org/"
-  url "https://ghfast.top/https://github.com/snort3/libdaq/archive/refs/tags/v3.0.27.tar.gz"
-  sha256 "03fac3da27e3230a7d26262f2480cd65a409cee3596c6758a7f9eacb7f24601c"
+  url "https://ghfast.top/https://github.com/snort3/libdaq/archive/refs/tags/v3.0.28.tar.gz"
+  sha256 "a72bc8882abdcfaf475b18d547b5a08785d574005584ce258e533d247bc62771"
   license "GPL-2.0-only"
   head "https://github.com/snort3/libdaq.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_golden_gate: "c05223985d10d5084a5691ff425f03b131b19e870bb380c2df37969a33870850"
-    sha256 cellar: :any,                 arm64_tahoe:       "d7a9c596136102d3a7cd140178b9e30fcb0ba527ba2d58d7795f971c6793a4e8"
-    sha256 cellar: :any,                 arm64_sequoia:     "261762fc04618a6f9e13252f58c08c1a8ebde7cc24d83d5b8fd70865696d9b89"
-    sha256 cellar: :any,                 arm64_sonoma:      "d54a17fad985d4a696d1445beef32daa15a59ecf7b8e42d05057432dcaaa596a"
-    sha256 cellar: :any,                 sonoma:            "1458daa5b057fd3f539cc53e95876c240564bd85a618a020f2b654437eb90f15"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "e790783a96e3e08b0c6529bff97f7b531c268beb95fa2ee233887374559335f0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "fe57804cfdca5b15a86fbe37f4a2733a5c73568d5191e9ed5aa13a93b8a0d17f"
+    sha256 cellar: :any, arm64_golden_gate: "7a89b4b16c0687a5a9be075ba323202356767735ee02a4ef6be699372a84ddcc"
+    sha256 cellar: :any, arm64_tahoe:       "8721db9bd1ec3ff068a556475be3906909eb0cdacceab4fe21a9a9128c1b012e"
+    sha256 cellar: :any, arm64_sequoia:     "1fc47bdc946014528761ec801507ae7a7201d166cfee5350b119bbf332a09e8e"
+    sha256 cellar: :any, arm64_linux:       "d3150d2c1d289fd74b6881984a5ac80cf8482a33f000c4fe44a104d6165e1d54"
+    sha256 cellar: :any, x86_64_linux:      "df08f47fd60d1ce98c54c9a58e73720fcfb3b10486771baf7c7ab06101641ede"
   end
 
   depends_on "autoconf" => :build

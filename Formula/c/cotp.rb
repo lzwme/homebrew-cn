@@ -1,19 +1,17 @@
 class Cotp < Formula
   desc "TOTP/HOTP authenticator app with import functionality"
   homepage "https://github.com/replydev/cotp"
-  url "https://ghfast.top/https://github.com/replydev/cotp/archive/refs/tags/v1.10.0.tar.gz"
-  sha256 "9194f1cb838783fe5c4d27651d836364c04adca126ea67808574ccdf064413a6"
+  url "https://ghfast.top/https://github.com/replydev/cotp/archive/refs/tags/v1.11.0.tar.gz"
+  sha256 "8ef923c82397e1ce82b07cb1ac901a82c680d20cfd211d2f79b68a338006da08"
   license "GPL-3.0-only"
   head "https://github.com/replydev/cotp.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "3c20fa1282e7e0ad7e74b6b103313649432b4477b4c195a63b3cc2aea13729ef"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "12bfbbe7c25d0d9e37605a0968d6357c9d4eb13e4577efaffbbf40b54dfe13cc"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "2b74821e2e7fe50aa44e9850dc76dd71ff95e2e8a863d7ee1994197bd6428634"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "69324a3d122b7ec785d35cc1ebcc8d00ad2ee23145e697627df17d054421a77a"
-    sha256 cellar: :any_skip_relocation, sonoma:            "8144ec19e58ab30adb8fe654da99f68ecdde4d1207686fb664b613d6cc7a9cc3"
-    sha256 cellar: :any,                 arm64_linux:       "75cbaf9812b81f7ef9d13697f5997b0fe910e55c0a31e8ead594eaf87ecc5430"
-    sha256 cellar: :any,                 x86_64_linux:      "159db74c67cc9051aac7935e4fbba0989f04f4f0dee464c000e5b29b4f99e565"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "68d1b25c6d5ec926d68d1f36b5b2d08c08700161fb5fe2e8ef841b653aa35ce8"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "e6dfe12d41d465cc450bfdcf2798c90149841951d7b1a8c3c2467e0885e9035a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "a80e1c0e9b9d3c434b32e6b6df638893d417ab07986af72ac06da3083f5bd60b"
+    sha256 cellar: :any,                 arm64_linux:       "7f5444e5adce066e154b1a394106aecaf205bab507bb5c7e0c58478fa126d82a"
+    sha256 cellar: :any,                 x86_64_linux:      "b71cbf3e4ec227d46ae3b209486d3ac164377bb6876abffcc4e64c77b50a6254"
   end
 
   depends_on "rust" => :build

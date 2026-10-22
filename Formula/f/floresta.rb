@@ -31,13 +31,18 @@ class Floresta < Formula
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
 
-  def install
+  allow_network_access! :test
+
+  def fetch
     odie "Remove `bitcoinkernel` pin!" if build.stable? && version > "0.9.1"
     # `bitcoinkernel` 0.2.0 vendors a Bitcoin Core that fails to build against
     # boost 1.92. Upstream pinned 0.2.1 in
     # https://github.com/getfloresta/Floresta/commit/7ad1324f7a72272b54820138b617b31a19cf5990
     system "cargo", "update", "-p", "bitcoinkernel", "--precise", "0.2.1"
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
 
+  def install
     ENV["LIBCLANG_PATH"] = formula_opt_lib("llvm").to_s
     system "cargo", "install", *std_cargo_args(path: "bin/florestad")
     system "cargo", "install", *std_cargo_args(path: "bin/floresta-cli")

@@ -1,6 +1,6 @@
 cask "hstracker" do
-  version "3.7.0"
-  sha256 "568c3dca55e7f6733402b33167e95e91d72bf95e95afad787baff0b84e36038b"
+  version "3.7.1"
+  sha256 "b610dcba0968e1fb520a3ede7bceb6286561d75fffbce936efdb5848672bd36b"
 
   url "https://ghfast.top/https://github.com/HearthSim/HSTracker/releases/download/#{version}/HSTracker.app.zip"
   name "Hearthstone Deck Tracker"
@@ -27,6 +27,7 @@ cask "hstracker" do
     "~/Library/Caches/HSTracker",
     "~/Library/Caches/net.hearthsim.hstracker",
     "~/Library/Cookies/net.hearthsim.hstracker.binarycookies*",
+    "~/Library/HTTPStorages/net.hearthsim.hstracker",
     "~/Library/Logs/HSTracker",
     "~/Library/Preferences/net.hearthsim.hstracker.plist",
     "~/Library/Saved Application State/net.hearthsim.hstracker.savedState",

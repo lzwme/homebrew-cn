@@ -1,17 +1,16 @@
 class Camlpdf < Formula
   desc "OCaml library for reading, writing and modifying PDF files"
   homepage "https://github.com/johnwhitington/camlpdf"
-  url "https://ghfast.top/https://github.com/johnwhitington/camlpdf/archive/refs/tags/v2.9.2.tar.gz"
-  sha256 "1885549dbb2e243b12d1b3752f443efc460400283ce318ec56fbe2f438a57ac8"
+  url "https://ghfast.top/https://github.com/johnwhitington/camlpdf/archive/refs/tags/v2.9.3.tar.gz"
+  sha256 "b90f79dacd9cfbae140581c8548b3d2e5cdda7176ce62d2724e616f94750f6cb"
   license "LGPL-2.1-only" => { with: "OCaml-LGPL-linking-exception" }
-  revision 1
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "8622f4faf3a68302b19a14c6956c853f5b28d4bd6adbcd2e115c3fe7f41d48f7"
-    sha256 cellar: :any, arm64_tahoe:       "d230195e3669115b5c9f13685055d91d349e1f585de5920877314ed75ac82a62"
-    sha256 cellar: :any, arm64_sequoia:     "2d4802aa515ad59381258620151faef8ccb4273b8a60036eb25f62d82ffe9896"
-    sha256 cellar: :any, arm64_linux:       "601c933dc03bc2a863f4a2c4eb39ee5de5232c73218389300c179101b5df6dcc"
-    sha256 cellar: :any, x86_64_linux:      "62a0307c0039cec147c066be4a3da3e2712b23e7e972731537571a461565541c"
+    sha256 cellar: :any, arm64_golden_gate: "7bef7996de845d20c79d55157a68a938d7d62c41d3a3e68e4f67708fa28ab6e2"
+    sha256 cellar: :any, arm64_tahoe:       "ab2bf8eeda38ac239d793929b97802fd5bc51f4f90a51b05a564e2dc2e63e90b"
+    sha256 cellar: :any, arm64_sequoia:     "7ac7f77695a9cdc9f0c2c7bbc35d8cad1683548d03eae54a08638ae3f879c0ba"
+    sha256 cellar: :any, arm64_linux:       "33f13f35e25769b5ebddc43b619c7c4e0d9c23551a6dc6f9dab04211db32f2e5"
+    sha256 cellar: :any, x86_64_linux:      "6f8276c2abdae74385424500fe5bc67efdf3b36795564b9e0382fed31f3087bb"
   end
 
   depends_on "ocaml-findlib" => :build

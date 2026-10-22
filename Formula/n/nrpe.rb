@@ -1,19 +1,16 @@
 class Nrpe < Formula
   desc "Nagios remote plugin executor"
   homepage "https://www.nagios.org/"
-  url "https://ghfast.top/https://github.com/NagiosEnterprises/nrpe/releases/download/nrpe-4.1.3/nrpe-4.1.3.tar.gz"
-  sha256 "5a86dfde6b9732681abcd6ea618984f69781c294b8862a45dfc18afaca99a27a"
+  url "https://ghfast.top/https://github.com/NagiosEnterprises/nrpe/releases/download/nrpe-4.2.0/nrpe-4.2.0.tar.gz"
+  sha256 "0d1eac6845d360b200b037f2b8c0199f1acbe3bea36ad72236ad619e5447e555"
   license "GPL-2.0-or-later"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_golden_gate: "d3031157d0584e8e0deaf526d31de194fe94139384a53b5c4649fd1c05332d51"
-    sha256 cellar: :any,                 arm64_tahoe:       "07fee8d6d39bfded2363a9ffb8c95ca5700948e889194f0f5f21d149bbffcf1f"
-    sha256 cellar: :any,                 arm64_sequoia:     "13aae650600b1f2bba6c2ae01fb48b20be2ea55382ef85b930b3800ebac3629a"
-    sha256 cellar: :any,                 arm64_sonoma:      "2402923dcc08342f07df2ed6eca7be468ede9ab2446731dc1d6a5d09b445be32"
-    sha256 cellar: :any,                 sonoma:            "a1eb81992236474786db808dc9dfd8b5a605c08a30505c00383a8d2770d06764"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "21b4958641e1851b4cb580603b4cbe0eb4de0441bd01d67baa8f7625ce983cd7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "777c9bbafb34853267f741afdd9f3e9977c82b2a6e8892e522c582fde5f24e4e"
+    sha256 cellar: :any, arm64_golden_gate: "53a9deab35083b2965d61f1984df70dd46f845bad0fec3b9d7758d7b69ac6fa0"
+    sha256 cellar: :any, arm64_tahoe:       "573e537c720f51d9d7bc3c35100c0f89366369199194aab434bdace272f1486f"
+    sha256 cellar: :any, arm64_sequoia:     "039145ca0194d851d6f147b2b0538be03ffaee183772b2745cd4981556e387ed"
+    sha256 cellar: :any, arm64_linux:       "618dfa1d26af8f485dd1b4857d87d9651361037d4f04c1e226dd597986c149cb"
+    sha256 cellar: :any, x86_64_linux:      "70511e5e7cb13df75c8c1b6eb475739c35c8723696d7c639d38c6ef5f2dba4d8"
   end
 
   depends_on "nagios-plugins"

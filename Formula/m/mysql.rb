@@ -1,11 +1,10 @@
 class Mysql < Formula
   desc "Open source relational database management system"
   homepage "https://github.com/mysql/mysql-server"
-  url "https://cdn.mysql.com/Downloads/MySQL-26.7/mysql-26.7.0.tar.gz"
-  mirror "https://repo.mysql.com/apt/ubuntu/pool/mysql-innovation/m/mysql-community/mysql-community_26.7.0.orig.tar.gz"
-  sha256 "95e949183b94bbe39e70c6355e6c90d2a640a62ede996ca5f7a6a3e0827a3260"
+  url "https://cdn.mysql.com/Downloads/MySQL-26.10/mysql-26.10.0.tar.gz"
+  mirror "https://repo.mysql.com/apt/ubuntu/pool/mysql-innovation/m/mysql-community/mysql-community_26.10.0.orig.tar.gz"
+  sha256 "984507622ddfa4d84ad23fc56ec5b5f18f4fda328af5a23e5f5b1a062301ea2c"
   license "GPL-2.0-only" => { with: "Universal-FOSS-exception-1.0" }
-  revision 4
 
   livecheck do
     url "https://dev.mysql.com/downloads/mysql/?tpl=files&os=src",
@@ -14,11 +13,11 @@ class Mysql < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "ebe505361b50d58f951d5dbf3a6ce45ddf4a4160d5cb21e2abd033509c71c598"
-    sha256 arm64_tahoe:       "5e7eb267efe81c469fe344924a40220a2a9897af0798b0bab2d4daee8f70ce3a"
-    sha256 arm64_sequoia:     "2d8cc59cc82d275549ff091afb631e5114b115e71e886971fd63d4d684ec3ced"
-    sha256 arm64_linux:       "c616a966e3d84d17db8abcb27b75fe58695e70fb4da891dd9560ac769eed0304"
-    sha256 x86_64_linux:      "1558dc149823e8edb06951403f8f700742fc23d742e928658364951024de4454"
+    sha256 arm64_golden_gate: "74eca3660c90cd1d61fe9ce98f2c907586884d1e317487b9c704a2af77fb9955"
+    sha256 arm64_tahoe:       "8e2eae800af9669474c08b4dd86e2921d7ca9fe333a2103f5f32d229a3e7905e"
+    sha256 arm64_sequoia:     "7634f1bdc64e28382e6f0d25185e94cb934b8d8fd28ba3df29f52c361cf2b0de"
+    sha256 arm64_linux:       "b21e82789e2a4e47746879cb4ddd5286035fd23ceb63506b781f1260764971a3"
+    sha256 x86_64_linux:      "0a31037bc0b1f06e5c6ed11f084d23fa054f3ed1a9a84b95ab70019f5ab7463c"
   end
 
   depends_on "bison" => :build
@@ -58,25 +57,19 @@ class Mysql < Formula
     cause "fails handling PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED"
   end
 
-  # Backports to support OpenSSL 4
-  patch do
-    file "Patches/mysql/26.7.0.diff"
-    type :backport # https://github.com/mysql/mysql-server/commit/04ba58a223afc1339c75b080825042ad17a85b43
-  end
-  patch do
-    url "https://github.com/mysql/mysql-server/commit/a045c23214ec225c49d9bc4caeea78d3d1f99ba9.patch?full_index=1"
-    sha256 "b597781554b7fbcf4e13402dc8dca97bea59e059ed6e40e4eb71cd5c26a91ad9"
-    type :backport
-  end
-
   # Patch out check for Homebrew `boost`.
   # This should not be necessary when building inside `brew`.
   # https://github.com/Homebrew/homebrew-test-bot/pull/820
+  # Also use `my_char_traits`, as libc++ 19 removed `std::char_traits<unsigned char>`.
   patch :DATA
 
   def datadir
     var/"mysql"
   end
+
+  def icu4c = deps.map(&:name).find { |dep| dep.start_with?("icu4c@") }
+
+  def openssl = deps.map(&:name).find { |dep| dep.start_with?("openssl@") }
 
   def install
     # Remove bundled libraries other than explicitly allowed below.
@@ -95,10 +88,8 @@ class Mysql < Formula
       ENV.prepend_path "HOMEBREW_LIBRARY_PATHS", formula_opt_lib("llvm")/"c++"
     end
 
-    icu4c = deps.find { |dep| dep.name.match?(/^icu4c(@\d+)?$/) }
-                .to_formula
     # -DINSTALL_* are relative to `CMAKE_INSTALL_PREFIX` (`prefix`)
-    # -DWITH_FIDO=system isn't set as feature isn't enabled and bundled copy was removed.
+    # -DWITH_FIDO=system isn't set as WebAuthn is disabled and bundled copy was removed.
     # Formula paths are set to avoid HOMEBREW_HOME logic in CMake scripts
     args = %W[
       -DCOMPILATION_COMMENT=Homebrew
@@ -111,8 +102,9 @@ class Mysql < Formula
       -DMYSQL_DATADIR=#{datadir}
       -DSYSCONFDIR=#{etc}
       -DBISON_EXECUTABLE=#{formula_opt_bin("bison")}/bison
-      -DOPENSSL_ROOT_DIR=#{formula_opt_prefix("openssl@4")}
-      -DWITH_ICU=#{icu4c.opt_prefix}
+      -DOPENSSL_ROOT_DIR=#{formula_opt_prefix(openssl)}
+      -DWITH_ICU=#{formula_opt_prefix(icu4c)}
+      -DWITH_AUTHENTICATION_WEBAUTHN=OFF
       -DWITH_SYSTEM_LIBS=ON
       -DWITH_EDITLINE=system
       -DWITH_LZ4=system
@@ -272,3 +264,53 @@ index 438dff720c5..47863c17e23 100644
  IF(WITH_AUTHENTICATION_WEBAUTHN OR
    WITH_AUTHENTICATION_CLIENT_PLUGINS)
    IF(WITH_FIDO STREQUAL "system" AND
+diff --git a/storage/innobase/include/log0parsed_index_lru_cache.h b/storage/innobase/include/log0parsed_index_lru_cache.h
+index 25c2ac9..4dbe2b2 100644
+--- a/storage/innobase/include/log0parsed_index_lru_cache.h
++++ b/storage/innobase/include/log0parsed_index_lru_cache.h
+@@ -40,8 +40,8 @@ class Parsed_index_lru_cache {
+   and one for each of srv_n_read_io_threads. */
+   static constexpr size_t k_capacity = 100;
+ 
+-  using sequence = std::basic_string<byte>;
+-  using sequence_view = std::basic_string_view<byte>;
++  using sequence = std::basic_string<byte, my_char_traits<byte>>;
++  using sequence_view = std::basic_string_view<byte, my_char_traits<byte>>;
+ 
+   Parsed_index_lru_cache() : m_cache(k_capacity) {}
+   Parsed_index_lru_cache(const Parsed_index_lru_cache &) = delete;
+diff --git a/storage/innobase/include/ut0prefix_cache.h b/storage/innobase/include/ut0prefix_cache.h
+index 3c21580..eba417a 100644
+--- a/storage/innobase/include/ut0prefix_cache.h
++++ b/storage/innobase/include/ut0prefix_cache.h
+@@ -30,6 +30,7 @@ this program; if not, write to the Free Software Foundation, Inc.,
+ #include <string_view>
+ #include <utility>
+ 
++#include "my_char_traits.h"
+ #include "univ.i"
+ 
+ namespace ut {
+@@ -50,8 +51,9 @@ prefixes such that one is a proper prefix of another. */
+ template <typename CharType, typename Value>
+ class prefix_cache {
+  public:
+-  using sequence = std::basic_string<CharType>;
+-  using sequence_view = std::basic_string_view<CharType>;
++  using sequence = std::basic_string<CharType, my_char_traits<CharType>>;
++  using sequence_view =
++      std::basic_string_view<CharType, my_char_traits<CharType>>;
+ 
+   /** Create a cache with at most @p capacity stored prefixes.
+ 
+@@ -148,8 +150,8 @@ class prefix_cache {
+ 
+   static bool is_prefix(sequence_view key, sequence_view buffer) {
+     return buffer.size() >= key.size() &&
+-           std::char_traits<CharType>::compare(key.data(), buffer.data(),
+-                                               key.size()) == 0;
++           my_char_traits<CharType>::compare(key.data(), buffer.data(),
++                                             key.size()) == 0;
+   }
+ 
+   It try_find(sequence_view buffer) {

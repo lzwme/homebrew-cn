@@ -1,8 +1,8 @@
 class Pinact < Formula
   desc "Pins GitHub Actions to full hashes and versions"
   homepage "https://github.com/suzuki-shunsuke/pinact"
-  url "https://ghfast.top/https://github.com/suzuki-shunsuke/pinact/archive/refs/tags/v5.0.0.tar.gz"
-  sha256 "fe9a37ca6f3e264697ba3b93ae412f88c9112e41ef56a46e2d2b25b705c7a8e0"
+  url "https://ghfast.top/https://github.com/suzuki-shunsuke/pinact/archive/refs/tags/v5.0.1.tar.gz"
+  sha256 "37253e5545c5e27b04389df10bcc9b863dbe236117788e9841e416296b41036d"
   license "MIT"
   head "https://github.com/suzuki-shunsuke/pinact.git", branch: "main"
 
@@ -14,11 +14,11 @@ class Pinact < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "e5bc3704f75de4338ac7b615649439d9efffd39b124976ff699aa4c0016ba1cc"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "e5bc3704f75de4338ac7b615649439d9efffd39b124976ff699aa4c0016ba1cc"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "e5bc3704f75de4338ac7b615649439d9efffd39b124976ff699aa4c0016ba1cc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "7bc8138de3da4e2e2f525fea3ab70862136cddce749d12782e099f6cb40c5148"
-    sha256 cellar: :any,                 x86_64_linux:      "cb54357d3a2b4f6d7b2c0adc02df5cb1297235b562d0fafb9428e17a1dcca5a8"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "5f717d6f8118a927598c767ec09c11ed8f7f73c45f6d92d77f8e5162f8c82108"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "5f717d6f8118a927598c767ec09c11ed8f7f73c45f6d92d77f8e5162f8c82108"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "5f717d6f8118a927598c767ec09c11ed8f7f73c45f6d92d77f8e5162f8c82108"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "b4fe908869c1c7b957d9ee98080343bf7eec24ecb424a5ff45b03219f786d584"
+    sha256 cellar: :any,                 x86_64_linux:      "8da4bc1c70173723e2ec66c32fa3f0c41dd29d32fe435b1e0de028c2c1ddf239"
   end
 
   depends_on "go" => :build

@@ -1,24 +1,25 @@
 class VapoursynthVszip < Formula
   desc "VapourSynth Zig Image Process"
   homepage "https://github.com/dnjulek/vapoursynth-zip"
-  url "https://files.pythonhosted.org/packages/3e/5e/3823f1c3ce492c3f0acca288501e67cbd1de4be317c436c71d5fdfdd81c9/vapoursynth_vszip-22.1.0.tar.gz"
-  sha256 "93c1aaf5867ad43e1f21b77418fa89b0b1ed2191d0c4bfb03a65c958826ed8c9"
+  url "https://files.pythonhosted.org/packages/16/d0/7f54ac694e2895e6db2a7fa09f27936db9b8257847a12935078f60b38554/vapoursynth_vszip-23.1.0.tar.gz"
+  sha256 "1187c34e6965bd289c42eb96e6104288d59949723316c2730b118fa3b1e70d94"
   license "MIT"
-  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "dddfa06563a0c12bd158063bf6a8c5bc81761f2a5af6f649f1de073601e5420a"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "e5b0241efb4b15eaa961932306d985fae2a86bc3aaeff159776310de1f0d6930"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "845006e5771a2c76e7dc91bcd5720006bbfc8188786a643f7a4d5db097a2232d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "4ac5fc970fc22067131ef1512d6a496102b35a0cc01f672914b9ec61257d70a3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "5cdc4a3deac4aaff6e38fac617eae0a5513bec603cedd4610021def0071848a3"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "dd810cd37b335772be7ea9219e240146ad4baad213fb2d22a287bfcb574817ca"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "bc02aee7ae5724a476a6f96b315172c496f8626d300bbea6bf5ec5ea8854c544"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "87443a9d918b108e0f691dcaf9417d1dc9e7d638ac4ea11d55a8d407d2ce11ac"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "f4be4f576c338877ca9fd323cc91ac063c497eba746cb493d3fbab46f2923f2f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "8d8f14caf5709ff7995fb2cc5c8f61ea3f6f4b94f8ee80d4138f1a7cd70e0f2e"
   end
 
-  depends_on "zig@0.16" => :build
+  depends_on "zig" => :build
   depends_on "python@3.15"
   depends_on "vapoursynth"
 
   preserve_rpath # skip unnecessary relocation for plugin which avoids headerpad errors
+
+  pypi_packages exclude_packages: "vapoursynth"
 
   deny_network_access!
 

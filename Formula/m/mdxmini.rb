@@ -23,9 +23,9 @@ class Mdxmini < Formula
 
   depends_on "sdl2-compat"
 
-  resource "test_song" do
-    url "https://ftp.modland.com/pub/modules/MDX/-%20unknown/Popful%20Mail/pop-00.mdx"
-    sha256 "86f21fbbaf93eb60e79fa07c759b906a782afe4e1db5c7e77a1640e6bf63fd14"
+  resource "test_song", :test do
+    url "https://github.com/vampirefrog/mdxtools/raw/5d14443c57c7f4c9b5220a56e6fdb2334f0c7256/sounds/BOM_01.MDX"
+    sha256 "fcb08be1d849bad00d0e81b0e51aea7431413386e4e37f9fb85bddd93518afa4"
   end
 
   # Fix build on Linux
@@ -69,23 +69,16 @@ class Mdxmini < Formula
           printf("%s\\n", title);
       }
     C
-    sdl2 = Formula["sdl2-compat"]
-    system ENV.cc, "mdxtest.c", "-L#{lib}", "-L#{sdl2.opt_lib}", "-lmdxmini", "-lSDL2", "-o", "mdxtest", "-lm"
+    system ENV.cc, "mdxtest.c", "-L#{lib}", "-L#{formula_opt_lib("sdl2-compat")}",
+                                "-lmdxmini", "-lSDL2", "-o", "mdxtest", "-lm"
 
-    result = shell_output("#{testpath}/mdxtest #{testpath}/pop-00.mdx #{testpath}").chomp
+    result = shell_output("#{testpath}/mdxtest #{testpath}/BOM_01.MDX #{testpath}").chomp
     result.force_encoding("ascii-8bit") if result.respond_to? :force_encoding
 
-    # Song title is in Shift-JIS
-    # Trailing whitespace is intentional & shouldn't be removed.
-    l1 = "\x82\xDB\x82\xC1\x82\xD5\x82\xE9\x83\x81\x83C\x83\x8B         "
-    l2 = "\x83o\x83b\x83N\x83A\x83b\x83v\x8D\xEC\x90\xAC          "
-    expected = <<~EOS
-      #{l1}
-      #{l2}
-      (C)Falcom 1992 cv.\x82o\x82h. ass.\x82s\x82`\x82o\x81{
-    EOS
+    l1 = "\x82a\x82n\x82l\x82a\x82d\x82q \x82l\x82`\x82m"
+    expected = "#{l1}  [   Music No.01   ] (C)\x82rystem \x82roft  >MDX By \x82\xCB\x82\xCB\x82\xC1\x82\xC6"
     expected.force_encoding("ascii-8bit") if result.respond_to? :force_encoding
-    assert_equal expected.delete!("\n"), result
+    assert_equal expected, result
   end
 end
 

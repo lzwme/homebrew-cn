@@ -1,18 +1,18 @@
 class Ttl < Formula
   desc "Modern traceroute/mtr-style TUI with hop stats and ASN/geo enrichment"
   homepage "https://github.com/lance0/ttl"
-  url "https://ghfast.top/https://github.com/lance0/ttl/archive/refs/tags/v0.24.0.tar.gz"
-  sha256 "db1fd6933ad07f01029c5bedf3c6ccd485683eadf8e875564552f0891142f40d"
+  url "https://ghfast.top/https://github.com/lance0/ttl/archive/refs/tags/v0.24.1.tar.gz"
+  sha256 "7093ee7bd8cb0f10cf391b2c1842463ac84f7823ca6e0f998cd8932de844c17d"
   license "MIT"
 
   head "https://github.com/lance0/ttl.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "030bf84a71de5df73f88e049c13f82c8ea23b54d18645b309e8f6dbf602d0d23"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "c024dd50fdbec0c36bd3200361ae21f8f1e06bb29d31791c471af52f96994617"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "2d9c728c96de83719ac1e018550e691a18fde78c634e9230f6cae582e6c80694"
-    sha256 cellar: :any,                 arm64_linux:       "ed5b6e690aadb51d456ed24507ece61f2e9f60ec5b5482c403e33da372201c66"
-    sha256 cellar: :any,                 x86_64_linux:      "e1fcc7cd56f0942fedde10d35ea91ba84ee4995e4106b3071ac276242a63ef33"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "59f1015fc9b7835b7580ddbe50579af68c2ceb7500b0fb9de24034d03d6c541e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "8fdd5a009dd73f5224a759edb694a0cc5ed04871bbe13f2a6bbd19c621a036b7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "be450f738cee7af0315e01ee82d84caa67ce689ab05903b40896397cb78123a9"
+    sha256 cellar: :any,                 arm64_linux:       "f91e47a7f426674755faf6a56676f27bede878f92394678bb666fe30cec6eb72"
+    sha256 cellar: :any,                 x86_64_linux:      "35a9071e498e292b7e259dff44cc4669fe43d11776bb7cbdd76cc6c9905b06f2"
   end
 
   depends_on "rust" => :build

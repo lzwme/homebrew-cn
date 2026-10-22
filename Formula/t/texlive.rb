@@ -8,7 +8,7 @@ class Texlive < Formula
   mirror "https://ftp.tu-chemnitz.de/pub/tug/historic/systems/texlive/2026/texlive-20260301-source.tar.xz"
   sha256 "cb120d314d3ceb23ac608af17ddd2c623afcf02331f400a0f25eead5b8ac1d70"
   license :cannot_represent
-  revision 1
+  revision 2
   compatibility_version 1
   head "https://github.com/TeX-Live/texlive-source.git", branch: "trunk"
 
@@ -37,12 +37,11 @@ class Texlive < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    rebuild 1
-    sha256 arm64_golden_gate: "10dad928a43900b07a552aabe6c437cb684fcda63350a9c836e8a3b932577cfa"
-    sha256 arm64_tahoe:       "62f080ddb07da865d57b30ac72112451fdac24769e17d8b26a55cec49525ed09"
-    sha256 arm64_sequoia:     "5d874379f5d594ac5d96cc5632625bd484f451b28436af79e98d840176acb6da"
-    sha256 arm64_linux:       "aa6fec05d51c5424d6076395703fbb05c0025b5f124ef9aff931ffbb3f83b4cd"
-    sha256 x86_64_linux:      "e771c73576d8a6ade8542d7bd575b3c6aff50aed25bb4791310941d344795aad"
+    sha256 arm64_golden_gate: "aa269d1f84bd4a176bafc835f90e5e5f311f24b9f3cc6c55127ab03d42f93403"
+    sha256 arm64_tahoe:       "c1aec161730a0402d95eb03692cfaa55c57931373361ae334c6f2476d06fa669"
+    sha256 arm64_sequoia:     "0e457cce9dbffbf1f9c370560c702f920ca498d9aed0a51a57d20c8e996022df"
+    sha256 arm64_linux:       "02d3f1ff8b28d1c4da9df84d46195028687f54b52fc70745ca6dcbc557aed439"
+    sha256 x86_64_linux:      "8f3e068824f8014f22d7cf89dd70dc8ad989d27e5760a75932a39ebacf873633"
   end
 
   depends_on "pkgconf" => :build
@@ -315,8 +314,8 @@ class Texlive < Formula
   end
 
   resource "Mozilla::CA" do
-    url "https://cpan.metacpan.org/authors/id/L/LW/LWP/Mozilla-CA-20250602.tar.gz"
-    sha256 "adeac0752440b2da094e8036bab6c857e22172457658868f5ac364f0c7b35481"
+    url "https://cpan.metacpan.org/authors/id/L/LW/LWP/Mozilla-CA-20261020.tar.gz"
+    sha256 "1aeed97a463389e582e085e82de03ae0bffae74d46cf8ee4c511341e5508c21d"
   end
 
   resource "Net::SSLeay" do

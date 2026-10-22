@@ -2,17 +2,17 @@ class Ejdb < Formula
   desc "Embeddable JSON Database engine C11 library"
   homepage "https://ejdb.org"
   url "https://github.com/Softmotions/ejdb.git",
-      tag:      "v2.92",
-      revision: "a57c40eeb9a834359fb76b880a5eb350d44129bf"
+      tag:      "v2.93",
+      revision: "c9394e229af2c6db747c83caae1cca74ed77e670"
   license "MIT"
   head "https://github.com/Softmotions/ejdb.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "b1f67422d8aea16e47d938568ed8f27b2df2af3eb0a6c32c4b954c9881f677db"
-    sha256 cellar: :any, arm64_tahoe:       "02d86f8264045ca0ef2a4c88b916f2c75ee302ad33683ce3a7e6779223548456"
-    sha256 cellar: :any, arm64_sequoia:     "f7185a5da23f5f0d5c250740639518964a4096e8ab4385552a3adafcea29a1d6"
-    sha256 cellar: :any, arm64_linux:       "ccfb01427cc7cd186ae40b30782a06593c3a663b1a43816eade4827f4dce4047"
-    sha256 cellar: :any, x86_64_linux:      "71ec322bd0654408acee22c0bce22ff13febc3c91fb02170c977ad04e02151da"
+    sha256 cellar: :any, arm64_golden_gate: "37ef9f14a48a470ca4e9037115bd6e9fb4f1a9918aa5fbc07aaa499e02da94c3"
+    sha256 cellar: :any, arm64_tahoe:       "56662dad6e3d731a18f5443365a535dc00551438ca7b198919d1fcd3bb8b1a27"
+    sha256 cellar: :any, arm64_sequoia:     "ed7b32afae6ff47f8cd908cdc979f7be041d43b7fd7a8976e58d62b2ab98e9c7"
+    sha256 cellar: :any, arm64_linux:       "d37f2c94d134e7d6f2036bf81a037248dc9d1dde5876fe5c0601862f49c3d044"
+    sha256 cellar: :any, x86_64_linux:      "93d2af92cd98d8f567a0e63a35021a5cf4b9937c452527675deae40ae708629c"
   end
 
   depends_on "pkgconf" => :build
@@ -26,20 +26,13 @@ class Ejdb < Formula
   end
 
   resource "iwnet" do
-    url "https://ghfast.top/https://github.com/Softmotions/iwnet/archive/refs/tags/v1.3.1.tar.gz"
-    sha256 "2f6bee87943dd383f4d86f18f907fe078bbb09fdb1cb828c9abe297d18435478"
-
-    # Fix macOS builds, upstream PR ref, https://github.com/Softmotions/iwnet/pull/11
-    patch do
-      url "https://github.com/Softmotions/iwnet/commit/f11675b71373f561d9c0690e2f4cc4044f666a15.patch?full_index=1"
-      sha256 "446667fcc1cded631c39071786499680a54c7d38a70e4537802da4006cacff3f"
-      type :unofficial
-    end
+    url "https://ghfast.top/https://github.com/Softmotions/iwnet/archive/refs/tags/v1.4.0.tar.gz"
+    sha256 "4ea347171f5a39d8755d3f240c84a9e340a9839d1fd36110f10b03e5ce948a36"
   end
 
   resource "iowow" do
-    url "https://ghfast.top/https://github.com/Softmotions/iowow/archive/refs/tags/v1.5.2.tar.gz"
-    sha256 "24b91edcc69a48a752b2a1892a0b935e980afb8a04eb659c699e77d29253ab61"
+    url "https://ghfast.top/https://github.com/Softmotions/iowow/archive/refs/tags/v1.7.0.tar.gz"
+    sha256 "3e2c12bad094e3e3f9c21f06123f1f7f6d322535dfbbd4d5b9f9d742ce783099"
   end
 
   deny_network_access! :test
@@ -52,12 +45,16 @@ class Ejdb < Formula
     # Keep dependency libraries in Homebrew's lib directory on Linux too.
     inreplace ["Autark", "iwnet/iowow.autark"], "--prefix", "--libdir=lib --prefix"
 
-    # Use the staged resource instead of downloading the development branch.
+    # Use the staged resource instead of downloading it.
     inreplace "iwnet/iowow.autark",
-              "https://ghfast.top/https://github.com/Softmotions/iowow/archive/refs/heads/master.zip",
+              %r{https://github\.com/Softmotions/iowow/archive/\S+\.zip},
               "dir://#{buildpath}/iowow"
 
-    system "./build.sh", "--prefix=#{prefix}", "--libdir=lib", "--jobs=#{ENV.make_jobs}",
+    # Bundled peg's `make install` can copy its man page before creating the directory
+    jobs = ENV.make_jobs
+    ENV.deparallelize
+
+    system "./build.sh", "--prefix=#{prefix}", "--libdir=lib", "--jobs=#{jobs}",
                          "-DIWNET_URL=dir://#{buildpath}/iwnet", "-DEJDB_BUILD_SHARED_LIBS=1"
   end
 

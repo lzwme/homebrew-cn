@@ -1,17 +1,17 @@
 class Ldcli < Formula
   desc "CLI for managing LaunchDarkly feature flags"
   homepage "https://launchdarkly.com/docs/home/getting-started/ldcli"
-  url "https://ghfast.top/https://github.com/launchdarkly/ldcli/archive/refs/tags/v3.12.0.tar.gz"
-  sha256 "ba83dee7860e5903379a2f91e642caf66c086fb8fda2dacc6069842379358939"
+  url "https://ghfast.top/https://github.com/launchdarkly/ldcli/archive/refs/tags/v3.14.0.tar.gz"
+  sha256 "486e9e043d40e8186a1ae04b83eba30453d809b263a48e76d09f1d06c6fad013"
   license "Apache-2.0"
   head "https://github.com/launchdarkly/ldcli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "d7e8f1ed2c0a4b174c12dd32958902d1ab6661ec7f972ae7becb6e6f6c1add30"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "682d67caf76cbf73770540b6ce301966fa8c0ff38b75e6ed755e738a6155f6e5"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "6339c5bb738de6423681a24ae728b4e6767c66faefdfd4b2a31ea9f1cce85d3d"
-    sha256 cellar: :any,                 arm64_linux:       "e51fe8827f26946d5f001b9b3cb2115a2e063fc2fca046d992bc1858c57ce7b6"
-    sha256 cellar: :any,                 x86_64_linux:      "62e8e402745cd6b245b93f501b5acad1e5a44ec7c1293d19b2bff8205b8a93b2"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "fabd02fb93318eb011f92476c019d7ca9ee1ddb0d6304473b80e98a2012569ee"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "c5392de0ac5ac95e9d62d6df4d870017c508b75ad0611c79d778641fce00f4d1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "59b720ea4699cfe36616d779068cae0489d0ef55b7ee22fb0163668d8e9db3f9"
+    sha256 cellar: :any,                 arm64_linux:       "bc1a84f18d7381ad3c2607a1c5c56b8ca23aceeb1cd96164e61c2ce09bf00e14"
+    sha256 cellar: :any,                 x86_64_linux:      "a905e01b3e6a4b928b175c09d409d79e254997858283653024c004b1fe0e8152"
   end
 
   depends_on "go" => :build

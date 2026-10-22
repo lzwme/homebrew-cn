@@ -1,8 +1,7 @@
 class MecabUnidic < Formula
   desc "Morphological analyzer for MeCab"
   homepage "https://clrd.ninjal.ac.jp/unidic/en/"
-  url "https://mirrors.dotsrc.org/osdn/unidic/58338/unidic-mecab-2.1.2_src.zip"
-  mirror "https://clrd.ninjal.ac.jp/unidic_archive/cwj/2.1.2/unidic-mecab-2.1.2_src.zip"
+  url "https://clrd.ninjal.ac.jp/unidic_archive/cwj/2.1.2/unidic-mecab-2.1.2_src.zip"
   sha256 "6cce98269214ce7de6159f61a25ffc5b436375c098cc86d6aa98c0605cbf90d4"
   license any_of: ["GPL-2.0-only", "LGPL-2.1-only", "BSD-3-Clause"]
 

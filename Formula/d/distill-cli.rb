@@ -24,6 +24,14 @@ class DistillCli < Formula
     depends_on "openssl@4"
   end
 
+  deny_network_access!
+
+  def fetch
+    # `Cargo.lock` is ignored
+    system "cargo", "generate-lockfile"
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
     ENV["OPENSSL_DIR"] = formula_opt_prefix("openssl@4") if OS.linux?
     system "cargo", "install", *std_cargo_args

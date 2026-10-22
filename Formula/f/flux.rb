@@ -39,6 +39,18 @@ class Flux < Formula
     end
   end
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+    cd "libflux" do
+      system "cargo", "fetch", *std_cargo_fetch_args
+    end
+    resource("pkg-config-wrapper").stage do
+      system "go", "mod", "download"
+    end
+  end
+
   def install
     # `flux-core` Workaround for `error: hiding a lifetime that's elided elsewhere is confusing` with `rust` 1.89+
     ENV.append_to_rustflags "--allow dead_code --allow mismatched_lifetime_syntaxes"

@@ -1,17 +1,17 @@
 class PocketId < Formula
   desc "Open-source identity provider for secure user authentication"
   homepage "https://pocket-id.org"
-  url "https://ghfast.top/https://github.com/pocket-id/pocket-id/archive/refs/tags/v2.18.0.tar.gz"
-  sha256 "a5a3c6c1fa81151073f3c3876fd591e13879a2479c665dc747d1765946bef657"
+  url "https://ghfast.top/https://github.com/pocket-id/pocket-id/archive/refs/tags/v2.19.1.tar.gz"
+  sha256 "30e54b7743fe8291cba333d5ec3bee3d7b7539871861858f09afca9ed48b2a94"
   license "BSD-2-Clause"
   head "https://github.com/pocket-id/pocket-id.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "fe6464e6ebb46907ac9f31b5e3547e1ac00687023a505970a84d1547c0d9c9ff"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "3e40ae3f8338624fb15def9104fe2f92a19488b4bb138f0e22e1ba358b65c6bd"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "d373f819c6b9ec41f23f16fcc113f468b629508ffc7e1e0734d9173769e72746"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "8fd7b21961888ef6c4378ba184afa3726b44a74259aca1e73286b0297d0a1376"
-    sha256 cellar: :any,                 x86_64_linux:      "9b063fc76ef16bf31772f3e1a7b0bb35c840dd2b6fd9ae4fc30d1b7107cad1e5"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "f02f3af7b96006c885d08e53bbf31724f48684788d3cac82a9ebb4b3ce598298"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "a2b428147a6f07dff93a8ac04638f723b94fe7ef94274a83d187739a68f24919"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "339e69c3d5197ea2abec515b0c4a1a4c45e91e7a2ad7f7261379c72b7701c615"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "dbdfba61706208369fd9be0adbccdd583ccc510ccfd7bee9ff82379bb7b4bc2b"
+    sha256 cellar: :any,                 x86_64_linux:      "9736d367a6c2fc239a7c5c04340818552e8930d9217782f84bb35111ea21eb8c"
   end
 
   depends_on "go" => :build

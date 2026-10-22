@@ -34,7 +34,7 @@ class Pwsafe < Formula
   depends_on "readline"
 
   # A password database for testing is provided upstream. How nice!
-  resource "test-pwsafe-db" do
+  resource "test-pwsafe-db", :test do
     url "https://ghfast.top/https://raw.githubusercontent.com/nsd20463/pwsafe/208de3a94339df36b6e9cd8aeb7e0be0a67fd3d7/test.dat"
     sha256 "7ecff955871e6e58e55e0794d21dfdea44a962ff5925c2cd0683875667fbcc79"
   end

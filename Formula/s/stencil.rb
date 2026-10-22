@@ -1,17 +1,17 @@
 class Stencil < Formula
   desc "Modern living-template engine for evolving repositories"
   homepage "https://stencil.rgst.io"
-  url "https://git.rgst.io/rgst-io/stencil/archive/v3.0.2.tar.gz"
-  sha256 "e9898dd678cd949c8108c4d1bb2ae00fbe1cba64c7b936c9a0fe25e4c9f0680d"
+  url "https://git.rgst.io/rgst-io/stencil/archive/v3.0.3.tar.gz"
+  sha256 "93ae08d70bb6fccd6c659532963d5be49eb650f9fcf909c598ceea893d4216a9"
   license "Apache-2.0"
   head "https://git.rgst.io/rgst-io/stencil.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "d0680e93b782708e6a2bc758075fcd5eb455e355153b97c1510aeb339060af36"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "1aeed447ae38105ffe9713aba75c4bb27af7b6809cf3384afd472374862f3822"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "5616c8062c45cec5f0fb1097de3f49f7bc61a7ce6edd1e6543a54100ae478966"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "5e3ef803e5148106b07296878b1d709b42465e22d4c094029f283e539ea2493e"
-    sha256 cellar: :any,                 x86_64_linux:      "0624a63a97fa69fcb251d5f2270c9d7c66b1b8ceb73c365bea5545dc23c5968c"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "4455add6a17576c817bfe18aab5ec4d568cbd876afd705e16cdc0465fdd7cd15"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "ed9a9effc2ab07f3eca740507385e2b757a21ce236d1aab5822bc50999be8235"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "6586b92e9b1033547290908d439ca1fbfa19c2efe69d1dfe11b0f39d2a7c97d3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "670bf349b0286164d240cca52f2c28e1cf63efb0d99b45dcb842b50397db45f1"
+    sha256 cellar: :any,                 x86_64_linux:      "539fac1652cb952966b714a090377b8ca23f1f10751f2b2efcbc34c2a5317953"
   end
 
   depends_on "go" => :build

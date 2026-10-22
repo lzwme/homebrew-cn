@@ -1,27 +1,38 @@
 class Lunarr < Formula
   desc "Self-hosted media streaming server and Plex alternative for movies and TV"
   homepage "https://github.com/lunarr-app/lunarr-go"
-  url "https://ghfast.top/https://github.com/lunarr-app/lunarr-go/archive/refs/tags/v0.10.0.tar.gz"
-  sha256 "b035633a2d8b98b171da2a2c59663ecf98faee2f630b78598afcedc45ec91464"
+  url "https://ghfast.top/https://github.com/lunarr-app/lunarr-go/archive/refs/tags/v0.11.0.tar.gz"
+  sha256 "e1d0317e8217d8a880e7b9eb340172dd6239854ca224bd845862e777ce6628c7"
   license "Apache-2.0"
   head "https://github.com/lunarr-app/lunarr-go.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_golden_gate: "53317b1d617acca892fb46a24adfa8ce85960f1fd66a85395c38195bcdfe7ca8"
-    sha256 cellar: :any, arm64_tahoe:       "3e4b112b6a344d508977a70b97541181128bd49f06ba45ca4a4e12a741721da4"
-    sha256 cellar: :any, arm64_sequoia:     "1b094b8872d1e1ffe33a83725e6f00a765c18790a9e65a932da32fa39ee20b8a"
-    sha256 cellar: :any, arm64_linux:       "598a67ea9d4c4d237a8719306b2a30dd3dfcbb185b09c5afd9803c02109b58f9"
-    sha256 cellar: :any, x86_64_linux:      "e30fcc34d3135f53a47b9e5db359f218753b1e383343c6093cc4072d5064408f"
+    sha256 cellar: :any, arm64_golden_gate: "06bed68be6afcec061f7fcdf800b2bc096369ff8c397476164a095116dddd649"
+    sha256 cellar: :any, arm64_tahoe:       "23482bcf4d90f553b209c97b638b39a5265bfedf477bdb5178d930341652e64f"
+    sha256 cellar: :any, arm64_sequoia:     "fdf2cdeafd2eea7ce0a31b39a9a6c1e066ab44654d19aa0a0d546fb42643f4de"
+    sha256 cellar: :any, arm64_linux:       "ee12f9bd057eb4a643b85a63a6084d79097ffe402972b898d3486574ec195bd7"
+    sha256 cellar: :any, x86_64_linux:      "8901ebe4cf41d4acf10bf629da5036fb69301e0c2df1f37d8c56474134100f71"
   end
 
   depends_on "ffmpeg"
   depends_on "node"
 
+  # `better-auth` needs its exact `@better-auth/core`; npm otherwise resolves a newer one with mismatched peers
+  resource "better-auth-core" do
+    url "https://registry.npmjs.org/@better-auth/core/-/core-1.7.11.tgz"
+    sha256 "ec150a0c7fee44737af5e5bf72dfcf1e80e2c863a8ec06445c7f8e4dd2c167b6"
+
+    livecheck do
+      url "https://ghfast.top/https://raw.githubusercontent.com/lunarr-app/lunarr-go/refs/tags/v#{LATEST_VERSION}/package.json"
+      regex(/(\d+(?:\.\d+)+)/)
+      strategy :json do |json, regex|
+        json.dig("dependencies", "better-auth")&.[](regex, 1)
+      end
+    end
+  end
+
   def install
-    # FIXME: pin `@better-auth/core` to match `better-auth`; newer versions drop exports it imports
-    system "npm", "pkg", "set", "overrides[@better-auth/core]=1.7.2"
-    system "npm", "install", *std_npm_args(prefix: false)
+    system "npm", "install", *std_npm_args(prefix: false), *resources.map(&:cached_download)
     system "npm", "run", "build"
     system "npm", "prune", "--omit=dev"
 

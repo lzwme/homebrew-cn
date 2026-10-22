@@ -3,17 +3,16 @@ class SvtplayDl < Formula
 
   desc "Download videos from https://www.svtplay.se/"
   homepage "https://svtplay-dl.se/"
-  url "https://files.pythonhosted.org/packages/35/ed/7c28095881f133289284ca75c53ee64cb2e71f900e44b7da7acdfeba9f5b/svtplay_dl-4.199.tar.gz"
-  sha256 "ef7213ea504b339fec42cf1e6e99a048d1f75654d80325d45f418a971906c4ea"
+  url "https://files.pythonhosted.org/packages/0e/9e/b95e155f3e551caaf81f33610799728568b886cc835aa22426e094dcb24c/svtplay_dl-4.211.tar.gz"
+  sha256 "e7b4ce2ed481f000a442201477926036ba3ab647f8b53029d6afbf89a35cb0a8"
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_golden_gate: "6bc0f9afd06aa376fa1dcb789fccd15f93dd9822deed4830ca274bd9c8b982c4"
-    sha256 cellar: :any, arm64_tahoe:       "3f3727f48ecb667ed1a09da6a875fbef21a14ca53aecb9d9fd54b79bdcff1879"
-    sha256 cellar: :any, arm64_sequoia:     "0c99f841f73bd3e499e9a13951c1b0ff63ac5c9fdbeb3832a4b2bda15c0139bf"
-    sha256 cellar: :any, arm64_linux:       "e16cd5af3fd0490b5be30ad697394f54f3518d760e7a0a937e8ad3af56f839a9"
-    sha256 cellar: :any, x86_64_linux:      "6ed42a809d1e2a61e5eb87946b190373a28325e6b915340a78bcce5bb7a6d58a"
+    sha256 cellar: :any, arm64_golden_gate: "fd253431b7c5f817433c6ccc8307be72478a8c12e7ac6b12ca65439981bc6f93"
+    sha256 cellar: :any, arm64_tahoe:       "fbcd8e4bff6ad2210e10e61a40388768ff3f5f00f2ff8e5b727efb6fd719b539"
+    sha256 cellar: :any, arm64_sequoia:     "32b1f491988c1d4be42f450df1e5d4b5a74035e728bb26ff6137ce703b445624"
+    sha256 cellar: :any, arm64_linux:       "05d8593a140a3b06bfe5cab75f17f1cd9355c9036dda64d8fc2c4e770a08aae9"
+    sha256 cellar: :any, x86_64_linux:      "b2aeb1730f9eb7d0f7b802762e866f292aadb2873eee36a727aaa1d38a85e179"
   end
 
   depends_on "certifi"

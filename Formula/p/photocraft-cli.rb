@@ -1,17 +1,17 @@
 class PhotocraftCli < Formula
   desc "Headless PhotoCraft engine to convert, inspect and batch-edit images"
   homepage "https://getartcraft.com/apps/photocraft"
-  url "https://ghfast.top/https://github.com/storytold/photocraft/archive/refs/tags/v0.11.1.tar.gz"
-  sha256 "5c9ee3e85cb3d12ee12866a001728aa619d07a8cc2fd8b3f08280334f7381d16"
+  url "https://ghfast.top/https://github.com/storytold/photocraft/archive/refs/tags/v0.12.0.tar.gz"
+  sha256 "48742a420d9cf4d166ec1b778f43a86d529de5069828b457c38977232c37a401"
   license any_of: ["MIT", "Apache-2.0"]
   head "https://github.com/storytold/photocraft.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "0520427f7688917ac8c395adf92bbe19e45e73f983409e3d371e47eed756a298"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "caaf41f6e5c8af5a6ca0aad60b4aea8cd914e223638e69705308603ead926b92"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "ff4f37150730df36a8517dcb4c66f840e19ea0479ce7196e36c0f7407810189d"
-    sha256 cellar: :any,                 arm64_linux:       "ee9707b874b3c2ec144af5a1fc8d4c3d2f651d89c38fc81f694a3fc2772080ab"
-    sha256 cellar: :any,                 x86_64_linux:      "3deabb34db0fbe9e7a819d50f08ad387620b4dbf52db6c6c9d72c83cd1a78bc8"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "4c3633e1481b29c33ce2e7f5157abf4c84d34f4475f0c79c9661fb5206bf87d9"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "2ddb2819d2e70c1b04a212213e2ec7aaff6ef183909967e148a071b8e02e478f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "f6746c4903074d4b88bb4c4588065c9faf997f363616f3e90a4ed0b15dc18bc9"
+    sha256 cellar: :any,                 arm64_linux:       "1bb13419624ce20d3ef6b35385341f121271541a816262a2db029c45e3766500"
+    sha256 cellar: :any,                 x86_64_linux:      "66165d876761f3841016640731ef912ebd457b4df661424ac4f8c017621d6829"
   end
 
   depends_on "rust" => :build

@@ -16,6 +16,8 @@ class Libjodycode < Formula
   # These files used to be distributed as part of the jdupes formula
   link_overwrite "include/libjodycode.h", "share/man/man7/libjodycode.7", "lib/libjodycode.a"
 
+  deny_network_access!
+
   def install
     system "make"
     system "make", "install", "PREFIX=#{prefix}"

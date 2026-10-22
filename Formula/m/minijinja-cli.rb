@@ -1,8 +1,8 @@
 class MinijinjaCli < Formula
   desc "Render Jinja2 templates directly from the command-line to stdout"
   homepage "https://docs.rs/minijinja/latest/minijinja/"
-  url "https://ghfast.top/https://github.com/mitsuhiko/minijinja/archive/refs/tags/3.0.1.tar.gz"
-  sha256 "447573b2380cb5631cf2bb09091e5b1abaac4f0a2fa79551a9712b1c6b5e7700"
+  url "https://ghfast.top/https://github.com/mitsuhiko/minijinja/archive/refs/tags/3.0.2.tar.gz"
+  sha256 "d9e92138e1e664bfdd04afec0c2e894454bad872c570a5398ba6fecbdf4e23f9"
   license "Apache-2.0"
   head "https://github.com/mitsuhiko/minijinja.git", branch: "main"
 
@@ -11,11 +11,11 @@ class MinijinjaCli < Formula
     strategy :github_latest
   end
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "06b09b22c841cfe1950f43d4e887bb68097a77521b66080c9ad8bf4d9421abd0"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "cdc99ee5ffe4f8fb1bc8e8092b8a22ce1e1052d7d2d49c3f6d6498120ae87ccc"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "cdb643dcda937738bcad45bd59492795a195e85765cdc82bcd8fcc68b270e7ef"
-    sha256 cellar: :any,                 arm64_linux:       "1a053b382c71abf3a53b6a3755192199e01161fe038a4fa07220d29c758ba944"
-    sha256 cellar: :any,                 x86_64_linux:      "63e6f1a9457ac86afb314f6342d91ce703344c82db953d5db2107885cda627a8"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "0aa14cfe0f33842dc2204759ccb01eabf9db652756eb441aaa098a3157e2d4b8"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "bacd79664d10a9d5dd43bc50ad9556f8532effe51a877ed23ebf3d7ff03a488b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "2ccae253205f7fed678dc60c2d4a27924414daf1eeb03a41f28307d7490a71cf"
+    sha256 cellar: :any,                 arm64_linux:       "28fd0747c2a692d573684f317dbe0ed9f91652d6401bcea8168a1e053ad8681a"
+    sha256 cellar: :any,                 x86_64_linux:      "9d4ce16dc3626a58a0aaf82d626cf48a57110cfc607ff978088366a49c3bf9c1"
   end
 
   depends_on "rust" => :build

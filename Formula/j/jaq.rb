@@ -1,8 +1,8 @@
 class Jaq < Formula
   desc "JQ clone focussed on correctness, speed, and simplicity"
   homepage "https://github.com/01mf02/jaq"
-  url "https://ghfast.top/https://github.com/01mf02/jaq/archive/refs/tags/v3.1.1.tar.gz"
-  sha256 "9b8587436be48b5791c8276573321a3d4f404e0dc77ea6503d05725a55edd266"
+  url "https://ghfast.top/https://github.com/01mf02/jaq/archive/refs/tags/v3.1.2.tar.gz"
+  sha256 "54ac66fac30a1d28c54f19716215cf4256877c69964c1c0150c3976bde618b93"
   license "MIT"
   head "https://github.com/01mf02/jaq.git", branch: "main"
 
@@ -12,13 +12,11 @@ class Jaq < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "a620bad3325dd42b857c80fc03bafee6538a2de3cbaeff921cf827a69c61d6f8"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "c1f221a72087e5d29553141796fa1a9ccbc7cedd3b603ac2f717caf20d1dbc08"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "10d51e61acc515284f578db8df2c7ab94cf432931fc5a8bb22b03660743abec4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "a9a96d328018fbbc726bee27c0ca539902e13f2c6579676e33a438c242f2f237"
-    sha256 cellar: :any_skip_relocation, sonoma:            "cfc04af8418a27e03da1a77f1ba193e5d7b8a4fb60cde064428707e6bb80daa5"
-    sha256 cellar: :any,                 arm64_linux:       "460f49c6c2e4c2bcf6314d04821d4266c3ef03004a1bd88c2074c252d897719e"
-    sha256 cellar: :any,                 x86_64_linux:      "89de760d1fa47a2d6ac248c835e2860188c82f18cb75c4a6438b18fc7c7c32ac"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "9f78dd3539265e37db02cccc2247c07b52e19c41d5e08b6bacda3143e107cc13"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "2d37ff64edfcc2f11468a4f962b47b572efd4018ee38a6836436efbe3e9d7010"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "c8cc80e3fa08e8fb2e998ca0c62db60ada9a88b728cb36d8a0d5132963cb735f"
+    sha256 cellar: :any,                 arm64_linux:       "b5ee914f151ba112005b3edcc0851b1cd11cfb04bc35a0afd04d3e71d14ee0d6"
+    sha256 cellar: :any,                 x86_64_linux:      "d19b747393180c9b93a2eb9b6f8bb88918f7797a74e095f89ca46f03c0361e70"
   end
 
   depends_on "rust" => :build

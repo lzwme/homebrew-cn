@@ -8,18 +8,17 @@ class Modal < Formula
   license "Apache-2.0"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_golden_gate: "e8c4039e63c381b8b3e3a4096e9cd7127ea572ffc131216f4a63d291bcc2076f"
-    sha256 cellar: :any, arm64_tahoe:       "36621ef5045c58729896b742648c973d0e51fe0285ab74ee38c28e56cb33e5cb"
-    sha256 cellar: :any, arm64_sequoia:     "87b1fe3d9f2c1f62811856ea6caecf9434e4ba76bffa29b9b5586ea88abac5b7"
-    sha256 cellar: :any, arm64_linux:       "4bcccbbe0da53d9bd97e0ed2db4f519e6f2fd5389482b89a79a7034c96b22497"
-    sha256 cellar: :any, x86_64_linux:      "3ef91e4a4195091a40b68f73640dac090bc8f4100a08b0ec14a43ec04e6e4e53"
+    rebuild 2
+    sha256 cellar: :any, arm64_golden_gate: "dfba0f81715ae090d3c35f073b41d4eabcdda4eff1ddfb1804c3a1b5ecdfcf76"
+    sha256 cellar: :any, arm64_tahoe:       "75b04134caf813a4f3aae3ce433fadc5bbc121b6a5b0637fb0390b6ee9b6a177"
+    sha256 cellar: :any, arm64_sequoia:     "91ccba50e00c09f7fa64395b93a9b34d72a428be80a514a3dc841770bb047963"
+    sha256 cellar: :any, arm64_linux:       "2257e903f66e4653d72245d64be3e7df771ef39db26491cd85e25ef32ee84cad"
+    sha256 cellar: :any, x86_64_linux:      "28146c1564fc15615f689dc67eae7f4474ba9296b313a93cc7116f5952c05ed7"
   end
 
   depends_on "rust" => :build # for `cbor2`
   depends_on "certifi" => :no_linkage
-  # TODO: Does not support Python 3.15 yet, check on next release
-  depends_on "python@3.14"
+  depends_on "python@3.15"
 
   pypi_packages exclude_packages: "certifi"
 

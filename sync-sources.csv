@@ -747,6 +747,7 @@ Homebrew-homebrew-core/Formula/b/buildapp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/buildifier.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/buildkit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/buildkitd.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/b/buildkite.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/buildozer.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/buildpulse-test-reporter.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/buku.rb, Homebrew/homebrew-core, 1
@@ -9407,6 +9408,7 @@ Homebrew-homebrew-cask/Casks/c/cisdem-pdf-converter-ocr.rb, Homebrew/homebrew-ca
 Homebrew-homebrew-cask/Casks/c/citrix-workspace.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/cityofzion-neon.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/ckan-app.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/c/clamshell.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/clamxav.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/clarc.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/clarify.rb, Homebrew/homebrew-cask, 1
@@ -11607,6 +11609,7 @@ Homebrew-homebrew-cask/Casks/font/font-m/font-meie-script.rb, Homebrew/homebrew-
 Homebrew-homebrew-cask/Casks/font/font-m/font-melete.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-m/font-meltho.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-m/font-menbere.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/font/font-m/font-mengshen-handwritten.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-m/font-mengshen-regular.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-m/font-menlo-for-powerline.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-m/font-meow-script.rb, Homebrew/homebrew-cask, 0
@@ -11773,6 +11776,7 @@ Homebrew-homebrew-cask/Casks/font/font-n/font-niramit.rb, Homebrew/homebrew-cask
 Homebrew-homebrew-cask/Casks/font/font-n/font-nixie-one.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-n/font-nobile.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-n/font-nokora.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/font/font-n/font-nordwand-mono.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-n/font-norican.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-n/font-nosifer-caps.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-n/font-nosifer.rb, Homebrew/homebrew-cask, 0
@@ -15451,6 +15455,7 @@ Homebrew-homebrew-cask/Casks/s/spotify.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/spotify4bigsur.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/spotmenu.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/springtoolsforeclipse.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/s/sprites.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/spundle.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/spybuster.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/spyder.rb, Homebrew/homebrew-cask, 1
@@ -15548,7 +15553,7 @@ Homebrew-homebrew-cask/Casks/s/sunsama.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/sunvox.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/supacode.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/supasidebar.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/s/supaterm.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/s/supaterm.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/super-productivity.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/super.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/supercollider.rb, Homebrew/homebrew-cask, 1

@@ -1,19 +1,17 @@
 class CargoMsrv < Formula
   desc "Find the minimum supported Rust version (MSRV) for your project"
   homepage "https://foresterre.github.io/cargo-msrv"
-  url "https://ghfast.top/https://github.com/foresterre/cargo-msrv/archive/refs/tags/v0.19.3.tar.gz"
-  sha256 "b5a66ccd44e7f28bae070a730d315b71bbca727b7ea558db9af93ab23e703883"
+  url "https://ghfast.top/https://github.com/foresterre/cargo-msrv/archive/refs/tags/v0.19.6.tar.gz"
+  sha256 "bd1108422a7dd76acba5bdd787a4bb36f4d97333b624aec3531f7d860dc2838a"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/foresterre/cargo-msrv.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "ebf083dd82e964da7c6e777de0ec88accd24c1a788027eadba9efd391d7c1a40"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "d09bad53b1c25eae5a27275c4f09c8b4bd2c51c5903c15128f55bd6b0530dfc9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "825fb00050c312c391d40fc958ca2e6e2b94462fd1d1c10facbf05a58e313d32"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "65327c59fc5c3f2617cc71b6b5162ea4997b48bcdd6b90a945277bd77e668a4f"
-    sha256 cellar: :any_skip_relocation, sonoma:            "169dc4d52e971a7bb085f8ba167bb169ee04e64b42abab3e84a324fdea294b03"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "5cfc25fa3873fb3eec306edd674660ca76cddfa5c0a6187ca3bfb29cd46f03e6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "f0c5646166caad838c63ed6c446c6235759b8622df2e7f70b15e794b99df893a"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "d5e15218c3a7a023eb8d5443d3a1b595fc4c0efdbbe63878179ebcd37be14767"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "4e4f620c6b60d312f7e1bb5b25036f0b77d78f493455712069f5cb6b388a281a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "8205ee574e62ba13c2fc8239c0351ab6a6b1318782c31b152a63296a1b20fb5d"
+    sha256 cellar: :any,                 arm64_linux:       "b0d4d923eb556191d228d767c837421f3d6fbd26a023347d1247bbdc2a2e12c5"
+    sha256 cellar: :any,                 x86_64_linux:      "8ce672e4304f1877d2af8249bd0c4b25837c713f0f2919195c0633cc05071aa5"
   end
 
   depends_on "rust" => :build

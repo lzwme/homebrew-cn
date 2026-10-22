@@ -1,8 +1,8 @@
 class PythonAT313 < Formula
   desc "Interpreted, interactive, object-oriented programming language"
   homepage "https://www.python.org/"
-  url "https://www.python.org/ftp/python/3.13.16/Python-3.13.16.tgz"
-  sha256 "cfac63bddf956deafb1172ca131ae5dcaafd6f95056086e233fca205593ed427"
+  url "https://www.python.org/ftp/python/3.13.17/Python-3.13.17.tgz"
+  sha256 "9cb057caa588f122577a5054a22531cd9c23ab6706f1a19bc95a55380a895177"
   license "Python-2.0"
   compatibility_version 1
 
@@ -12,12 +12,11 @@ class PythonAT313 < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_golden_gate: "95a2262d815e7e4a0a4ab85e0d57e41b8c199f1523dcbb1a61d4036602441af2"
-    sha256 arm64_tahoe:       "d555c4e7c2b230064a427d979bd0a75b7911d35449a64f6452966d20079c81e0"
-    sha256 arm64_sequoia:     "562cad593b6a2c02a729410516a836dbdb43a8407aa8a8e28d5d4990696d5057"
-    sha256 arm64_linux:       "8114eb935d2eb1d1a52a4b28111b113fbed97a33f08bc90d0008cdfbde3c62ed"
-    sha256 x86_64_linux:      "9a377a18f024bb74615b25d7126202e9eb0f5cb1ce7752bc667bf2a5258191ad"
+    sha256 arm64_golden_gate: "bdfff9104df2cde8465f79f360a5f6be389b3101afead3e3ff851e81188539a1"
+    sha256 arm64_tahoe:       "30537f4c2bd1c27ab6bca2e0643c6348a7cc5d9923635960cebe8d348794be4d"
+    sha256 arm64_sequoia:     "cb695aea81973433567d52fa64aff8c40220c62cf9d7f0a6fef7ab93324be8b1"
+    sha256 arm64_linux:       "16a58d58c998bd72c03a695de805b73d858467d57c29f60bdf63b65e29a98179"
+    sha256 x86_64_linux:      "00c743e33537cf729805d20d84a7dc872c195a019d7fc5a24b11b6aff9290cbe"
   end
 
   # https://devguide.python.org/versions/#versions
@@ -57,8 +56,8 @@ class PythonAT313 < Formula
   end
 
   resource "pip" do
-    url "https://files.pythonhosted.org/packages/ae/15/4500e320e6b101ec3b719ae85b697d9940b6cda672bc555bd6016fc60c6f/pip-26.2.1.tar.gz"
-    sha256 "f6ad667e89a1fe78046c8f13232b247200f5258d7828f3f7883d660878e0813f"
+    url "https://files.pythonhosted.org/packages/fa/e8/0842d757e483e895e670f655084cfe8b8c72580c6769a76b30b2789a0608/pip-26.2.2.tar.gz"
+    sha256 "3a8e5c800492787f33a4114ef54444546c340df428974ebba17e0fd47e11af2f"
   end
 
   resource "wheel" do

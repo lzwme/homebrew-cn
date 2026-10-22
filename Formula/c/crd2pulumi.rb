@@ -16,6 +16,9 @@ class Crd2pulumi < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:      "79965c3032a6e4efb67fcc2222bac344808753bdc24e4c777d6c21683c20b5b9"
   end
 
+  deprecate! date: "2026-10-21", because: :repo_archived
+  disable! date: "2027-04-21", because: :repo_archived
+
   depends_on "go" => :build
 
   allow_network_access! :test

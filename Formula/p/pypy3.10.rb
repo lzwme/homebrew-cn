@@ -4,6 +4,7 @@ class Pypy310 < Formula
   url "https://ghfast.top/https://github.com/pypy/pypy/archive/refs/tags/release-pypy3.10-v7.3.19.tar.gz"
   sha256 "48648aa0a63f4e5fa30315e06b27999ea7157da68a8d4503ebc4a7ee308b5f66"
   license "MIT"
+  revision 1
   head "https://github.com/pypy/pypy.git", branch: "main"
 
   bottle do
@@ -47,8 +48,8 @@ class Pypy310 < Formula
 
   # always pull the latest pip, https://pypi.org/project/pip/#files
   resource "pip" do
-    url "https://files.pythonhosted.org/packages/b7/06/6b1ad0ae8f97d7a0d6f6ad640db10780578999e647a9593512ceb6f06469/pip-23.3.2.tar.gz"
-    sha256 "7fd9972f96db22c8077a1ee2691b172c8089b17a5652a44494a9ecb0d78f9149"
+    url "https://files.pythonhosted.org/packages/fa/e8/0842d757e483e895e670f655084cfe8b8c72580c6769a76b30b2789a0608/pip-26.2.2.tar.gz"
+    sha256 "3a8e5c800492787f33a4114ef54444546c340df428974ebba17e0fd47e11af2f"
   end
 
   def abi_version

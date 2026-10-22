@@ -1,8 +1,8 @@
 class Prometheus < Formula
   desc "Service monitoring system and time series database"
   homepage "https://prometheus.io/"
-  url "https://ghfast.top/https://github.com/prometheus/prometheus/archive/refs/tags/v3.15.0.tar.gz"
-  sha256 "d6383dea2f9b26c1673a52859c453653f2c6c046f7fb6d01db59603a65a732eb"
+  url "https://ghfast.top/https://github.com/prometheus/prometheus/archive/refs/tags/v3.15.1.tar.gz"
+  sha256 "dc204963713b5fce7aca92292bc3bf69482b088f9d7a6761e60525750c1ddfd2"
   license "Apache-2.0"
 
   # There can be a notable gap between when a version is tagged and a
@@ -14,11 +14,11 @@ class Prometheus < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "28086726d128ad0b3d52482100b7a23c28e7c350203bd6c05509bb84ef13293d"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "bb64ae1b4a5e90da2d243d578259ddb8e68706f957abb15982bab7b261571171"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "261b129f76cba193a585d9d67e7f4aae20a56a44fd62d54f3f485b9f3e7b7baa"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "0fab160304f69b07add0e434b8d1d552151c3c97d7696b25af1915913197d67b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "37203530939eef519518dc8b3dfb0456d6fa0703ba705b759569a6b8be6f98b8"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "6607be636ac1b5496110d1a21f11a0414dd60f6bd5eb29a8805d648d99dfad22"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "6c80ba4a82ad7082c4a28c352deed958c5fae171cd318b76e42364f288e60506"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "058b8e12bc99aac286016d3cc3c13692fdb0054163e6cf44cab9fa445c6afe44"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "343de893d9a9188419ee54039292fe4451dfac967d5b61fd3b10318d12a648e6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "77b0cde2792eff4146e63ec5158068526b370268f120fec993ae6491a84c82fc"
   end
 
   depends_on "gnu-tar" => :build

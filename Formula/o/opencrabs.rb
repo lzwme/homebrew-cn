@@ -1,28 +1,17 @@
 class Opencrabs < Formula
   desc "Autonomous, self-improving AI agent in a single Rust binary"
   homepage "https://opencrabs.com"
+  url "https://ghfast.top/https://github.com/opencrabs/opencrabs/archive/refs/tags/v0.5.12.tar.gz"
+  sha256 "6a2a9d7500eaa943be1212a0abdf9ff1ce85d21b978aa3c1171f67777b531316"
   license "MIT"
   head "https://github.com/opencrabs/opencrabs.git", branch: "main"
 
-  stable do
-    url "https://ghfast.top/https://github.com/opencrabs/opencrabs/archive/refs/tags/v0.5.11.tar.gz"
-    sha256 "134b7383c6eebf4e636062d5199b210679d846e3f360c3d83812f8f5b520c3eb"
-
-    # Fix `opencrabs init` failing on a fresh install
-    patch do
-      url "https://github.com/opencrabs/opencrabs/commit/09f25a468cdd16b5f61519468a8fe6a32e6f820a.patch?full_index=1"
-      sha256 "0e01a74cea9782a3078f1c91d324979dd0c733b37ed1c2c8e250ba2f96bafab5"
-      type :backport
-      resolves "https://github.com/opencrabs/opencrabs/issues/2093"
-    end
-  end
-
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "5a799b87b2512a8bbd778c9774a5d72ba79b204ae789e1e2d558d99ab932d788"
-    sha256 cellar: :any, arm64_tahoe:       "78dcbb23717e6cb3598003bd1a2f0286d89a83330e6dd75634303ea26f8c2ef9"
-    sha256 cellar: :any, arm64_sequoia:     "daabaf4dbb06177797de174255597c91a3e156f8cdbac916b5e047f95092fd4b"
-    sha256 cellar: :any, arm64_linux:       "4ea6bb8134b7f193d10435759675c791d1a2c302b08c28005d39b907348ac6f5"
-    sha256 cellar: :any, x86_64_linux:      "e22dc176bba836ce302b924746c78832020e2a29c6842676784240298c662626"
+    sha256 cellar: :any, arm64_golden_gate: "6e8c0bfcb792c3f0bcc85a635f86624604e7c15d6334a558672835228b94250c"
+    sha256 cellar: :any, arm64_tahoe:       "aa3e7279413207cc2087f5d5395112805c428cdd1014e5864bdbe16ffe510442"
+    sha256 cellar: :any, arm64_sequoia:     "b8a57242f8175388bfc40fefd3f626fc9bf4bf32bdfe7dbc0e8ec8e658942b41"
+    sha256 cellar: :any, arm64_linux:       "b47319823cf1b8645c29b1e7174a63d4a51c58aad1106c1f2afd8617241d7b07"
+    sha256 cellar: :any, x86_64_linux:      "b3264c1f21452304ec6476e8f0b1ad102f6337bfded94b9745e10b88fb9b51fc"
   end
 
   depends_on "cmake" => :build

@@ -1,8 +1,8 @@
 class Gsoap < Formula
   desc "SOAP stub and skeleton compiler for C and C++"
   homepage "https://www.genivia.com/products.html"
-  url "https://downloads.sourceforge.net/project/gsoap2/gsoap_2.8.144.zip"
-  sha256 "b981818fbbd4bf9f6f4feac03136800f6e16a7d0b7515924ff7a2661ca26e581"
+  url "https://downloads.sourceforge.net/project/gsoap2/gsoap_2.8.145.zip"
+  sha256 "176767e2443f3586048108209d9424a71b0ae7ba2658655878ab513edec1eede"
   # Parts of the software are alternatively licensed under gSOAP-1.3b, but this
   # license is considered non-free by Debian and Fedora due to section 3.2:
   #
@@ -19,12 +19,11 @@ class Gsoap < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_golden_gate: "1ebfc73f68fd8b605fc534a7d553c9d0d7ec259c40af6a586dd6cbdbb9f38567"
-    sha256 arm64_tahoe:       "ab7d9c9430423bc601ea9e5678ea3096da984d6c10fd36817a4ad40ae136038d"
-    sha256 arm64_sequoia:     "dc6b37c1318b6e72b4df10cd1fb1501ffe5f621dd495f85b2e92fcaffd1cf9e9"
-    sha256 arm64_linux:       "56dbcbbcd995345656af0c704fd01aa220b7c5428e8b6247fe6053f97eff372e"
-    sha256 x86_64_linux:      "152b38e9e29792155f6453e21ba26e835ae369673dfff0f7dbdb1786552f7dac"
+    sha256 arm64_golden_gate: "ed6c8e53cc2a24d72eb625698a67313e839be49f68de9b456f4172ed04c647af"
+    sha256 arm64_tahoe:       "c470c69c6c5823a4e740bfe32fba89fdbb78865e981ac989635886148fdf014a"
+    sha256 arm64_sequoia:     "0fa9a240ad4441ec373f28a74f2ddb40d3655c92cc73b62bd3c9dffbdacf00a9"
+    sha256 arm64_linux:       "8697ce03d6bd41763ea93987a93b0c3a1bbf055ee570a3fc1e4f003adfae5b17"
+    sha256 x86_64_linux:      "58146108cd5d8935dc1c8d2efa3c8523b49072b758e889f92ba1dcb08b32632e"
   end
 
   depends_on "autoconf" => :build

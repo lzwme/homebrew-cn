@@ -4,8 +4,8 @@ class WhodbCli < Formula
   license "Apache-2.0"
 
   stable do
-    url "https://ghfast.top/https://github.com/clidey/whodb/archive/refs/tags/0.135.0.tar.gz"
-    sha256 "b1dc1a43c96d2ddc6743b13a2e492976d0f44a5bc9545bcc9dcf3a7aef7d7c9d"
+    url "https://ghfast.top/https://github.com/clidey/whodb/archive/refs/tags/0.136.0.tar.gz"
+    sha256 "87c3833c997675750d78d0194bcd37bfa3fcf18d5e1ab96b0488ebded7bbef92"
 
     resource "baml" do
       url "https://ghfast.top/https://github.com/BoundaryML/baml/archive/refs/tags/0.226.2.tar.gz"
@@ -24,12 +24,11 @@ class WhodbCli < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_golden_gate: "ba2a1891ffc13c2197519ecb86a68660a630cf3680164fd4a85d0b5e7f666911"
-    sha256 cellar: :any, arm64_tahoe:       "f9e78124349ae260574b70ceffbe234f2c165fd8f5b95a3c0ba16da4f47ebfe3"
-    sha256 cellar: :any, arm64_sequoia:     "96612d3ac525b8d1f6ce69ed52f5e2e08f7a2274239459703abccc897e41aca5"
-    sha256 cellar: :any, arm64_linux:       "c21f7004ee96fef682090898d25f277d2e172ac7803992efb42761edbd1ab33a"
-    sha256 cellar: :any, x86_64_linux:      "dba5dc162c84cb734a0b4e68d53beb3d6d715f6fb89643e4f5d707090e01ba63"
+    sha256 cellar: :any, arm64_golden_gate: "71c7915d6af60541cdb366821737bdec8ff4e528e61c548304a4e8a1c7b131be"
+    sha256 cellar: :any, arm64_tahoe:       "d3d973cf2160c0c18bf1ad3ad6266dd5865ea84d7fb3dc2b3ec05b50cacd19df"
+    sha256 cellar: :any, arm64_sequoia:     "b7bfd826f60ef88e7ce09e7ff92a1b690951b6c07ca6f9d003ff8a2dac202525"
+    sha256 cellar: :any, arm64_linux:       "5536b80fbd48f4b775f5c08536eb4d650ac2d9d8b737252db7c78546f44330ef"
+    sha256 cellar: :any, x86_64_linux:      "83b0dadec4148a679926378dc0320570ca658e16d647e2f127873ea5933e0898"
   end
 
   head do

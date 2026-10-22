@@ -19,7 +19,7 @@ class Xleak < Formula
 
   depends_on "rust" => :build
 
-  resource "testfile" do
+  resource "testfile", :test do
     url "https://ghfast.top/https://github.com/chenrui333/github-action-test/releases/download/2025.11.16/test.xlsx"
     sha256 "1231165a2dcf688ba902579f0aafc63fc1481886c2ec7c2aa0b537d9cfd30676"
   end

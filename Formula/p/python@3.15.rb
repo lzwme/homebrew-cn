@@ -4,6 +4,7 @@ class PythonAT315 < Formula
   url "https://www.python.org/ftp/python/3.15.0/Python-3.15.0.tgz"
   sha256 "438596cac081036d3c1d532ab7e7335eeb35567bc961749a0d5797176db0db68"
   license "Python-2.0"
+  revision 1
 
   livecheck do
     url "https://www.python.org/downloads/source/"
@@ -11,12 +12,11 @@ class PythonAT315 < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_golden_gate: "ed8efc9123bc50bddbd0b0c57b5c4d1454511a1f9b5948cc3980e06284702b4f"
-    sha256 arm64_tahoe:       "6a1b2ad4571091179ce825066d183a7d16f1665b1a143a7803dd8398717d92cd"
-    sha256 arm64_sequoia:     "504b9ffb9a1db9c6f7a51de5497a0512e0cb967e202eddb9bc9ce98d2aae85a4"
-    sha256 arm64_linux:       "fb447d1e1dbcd50cfa19dcedef5aeead8c72900db95812428830ead0df70d8d8"
-    sha256 x86_64_linux:      "55d5fd47939581549c571436b57bae1775f4fd29cf7ea0a78d1c02b5ecc5b822"
+    sha256 arm64_golden_gate: "eedef73be0c403fa4684e22306ee745e21f2fecb1581b2a4328686c05b92589b"
+    sha256 arm64_tahoe:       "2cc8f1a34bb23a2721ead1931da03ce8ab7fbc4aabc3fe30d5b3388cd713a065"
+    sha256 arm64_sequoia:     "1089aa9fa48924d864b6ff2ed006d298180a5b55b9208d25453f51bdf4f69da7"
+    sha256 arm64_linux:       "e474e49a6c698e4e09c28b6ac5c75e0661b6eca8e746d68f53bb83e4d8063e71"
+    sha256 x86_64_linux:      "44e4cc346dff52f13b39518f02cfb93df1f79d566bfb7eb5cc27c4e74128b81e"
   end
 
   # https://devguide.python.org/versions/#versions
@@ -65,8 +65,8 @@ class PythonAT315 < Formula
   end
 
   resource "pip" do
-    url "https://files.pythonhosted.org/packages/ae/15/4500e320e6b101ec3b719ae85b697d9940b6cda672bc555bd6016fc60c6f/pip-26.2.1.tar.gz"
-    sha256 "f6ad667e89a1fe78046c8f13232b247200f5258d7828f3f7883d660878e0813f"
+    url "https://files.pythonhosted.org/packages/fa/e8/0842d757e483e895e670f655084cfe8b8c72580c6769a76b30b2789a0608/pip-26.2.2.tar.gz"
+    sha256 "3a8e5c800492787f33a4114ef54444546c340df428974ebba17e0fd47e11af2f"
   end
 
   # Modify default sysconfig to match the brew install layout.

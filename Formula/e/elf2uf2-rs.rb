@@ -22,6 +22,12 @@ class Elf2uf2Rs < Formula
     depends_on "systemd" # for libudev
   end
 
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
     system "cargo", "install", *std_cargo_args
     (pkgshare/"examples").install Dir.glob("*.elf")

@@ -1,8 +1,8 @@
 class MysqlConnectorCxx < Formula
   desc "MySQL database connector for C++ applications"
   homepage "https://github.com/mysql/mysql-connector-cpp"
-  url "https://cdn.mysql.com/Downloads/Connector-C++/mysql-connector-c++-26.7.0-src.tar.gz"
-  sha256 "5b84d0b662ad7d5c0e3ac2c6d9cc708065941efe365097fa96bde24b1606b319"
+  url "https://cdn.mysql.com/Downloads/Connector-C++/mysql-connector-c++-26.10.0-src.tar.gz"
+  sha256 "25d83a76164da29592b4e029c6e771cd05139453be2f8fc206cc7c73d19fa9b2"
   license "GPL-2.0-only" => { with: "Universal-FOSS-exception-1.0" }
 
   livecheck do
@@ -12,13 +12,11 @@ class MysqlConnectorCxx < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "c3c44802b03e697b4237dbf3ad2f94b4597df401f06d5dc8d130679d1a10076e"
-    sha256 cellar: :any, arm64_tahoe:       "629d29b77b00791626e1e962d2086d6870b4c513b8a455d63524e3587564eac8"
-    sha256 cellar: :any, arm64_sequoia:     "c3e1202ff7f3781c250a710c2b089715ae611cc618e35a9ef8c891612dcad498"
-    sha256 cellar: :any, arm64_sonoma:      "f1ea4c69d8b8256e208ba38020780d3da82e34e3f1a3b77422fc1ddb9bee76b7"
-    sha256 cellar: :any, sonoma:            "42766f509ce4a339b53f71f867ce9f234d06048443572bd86811e6998ad45b53"
-    sha256 cellar: :any, arm64_linux:       "a6ca7ff0f18824da9673cfd440679f7e5a3704b7c74b427069eff69e269b405f"
-    sha256 cellar: :any, x86_64_linux:      "1551e59b6282a42e5fb0f9abebb3e4293700cf351ba9a4a8976ff7ca41316d9f"
+    sha256 cellar: :any, arm64_golden_gate: "3e0e6658995b94c714164677ea4f698d02b0234b5623ba7e33ae65921c4f8f6e"
+    sha256 cellar: :any, arm64_tahoe:       "17bffea0ae2c87a8ac512f377d795c13272cf3c0c630fee44f03e880bbd42952"
+    sha256 cellar: :any, arm64_sequoia:     "f8a0f6c03be9d1aa6da11bc1e3a8810cbc6ace9e52501c9062288981b46913bb"
+    sha256 cellar: :any, arm64_linux:       "cd8270917b88028c42c66fb7d9e6f836685f1bb2c1ca3b2bd02fc1737d4b1d2f"
+    sha256 cellar: :any, x86_64_linux:      "21766b9eeae2f3b0518fe70991cf9aa549ffdeb1e79e7e6667f1147240490422"
   end
 
   depends_on "cmake" => :build

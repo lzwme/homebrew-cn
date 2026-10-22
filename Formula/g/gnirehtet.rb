@@ -30,6 +30,14 @@ class Gnirehtet < Formula
     sha256 "816748078fa6a304600a294a13338a06ac778bcc0e57b62d88328c7968ad2d3a"
   end
 
+  allow_network_access! :test
+
+  def fetch
+    cd "relay-rust" do
+      system "cargo", "fetch", *std_cargo_fetch_args
+    end
+  end
+
   def install
     resource("java_bundle").stage { libexec.install "gnirehtet.apk" }
 

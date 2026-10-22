@@ -3,19 +3,17 @@ class SphinxDoc < Formula
 
   desc "Tool to create intelligent and beautiful documentation"
   homepage "https://www.sphinx-doc.org/"
-  url "https://files.pythonhosted.org/packages/cd/bd/f08eb0f4eed5c83f1ba2a3bd18f7745a2b1525fad70660a1c00224ec468a/sphinx-9.1.0.tar.gz"
-  sha256 "7741722357dd75f8190766926071fed3bdc211c74dd2d7d4df5404da95930ddb"
+  url "https://files.pythonhosted.org/packages/fc/73/567727fc8c8d85bc3adc88a246e12937cfda8d565cf1d80e85bceaa61fe5/sphinx-9.1.1.tar.gz"
+  sha256 "48b627f02908f22c601b3ba9c7b17265b4f315dd05c8bc64cd4da41183f44fbc"
   license "BSD-2-Clause"
-  revision 5
   head "https://github.com/sphinx-doc/sphinx.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "4b662b590741463e307229c4a0477b6ed3f40f05fc7853982e86d36a863931b7"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "1b6cf7d17bde1534210232323f2145503dd96dc0ea50f86f357e71138205e7c8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "bab271952b2aaaeae1ea6bb1d7d54ad0eaa6ffb6ab2706f94f036cbe11d421f0"
-    sha256 cellar: :any,                 arm64_linux:       "f1e4cc34fd87a3cf3f25ab88d1bbb92e335166897ccdc784c58886f83ec16157"
-    sha256 cellar: :any,                 x86_64_linux:      "4138d8f12fe533af8d350b86b7156fe1693e211aace6a224a02a2a269cb697d0"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "574731819db2b4db3679b4fd054486fb65253f3d57421c81c97ada6bb02e3b63"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "1232041a4b0e11bdce466ebdeac561fc62f075dac59422f930a7e914a863286a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "baaa33c292f880c1f0ebc02712ea31df9d91be1dc440c509da0b09248383f0ae"
+    sha256 cellar: :any,                 arm64_linux:       "43d4d6f7656c389870228b684bfcaa07d0f36fd31fbdc39917407eafb2357699"
+    sha256 cellar: :any,                 x86_64_linux:      "186e53f2bc044ab4a2efc29b1c24e607b44b2f70d9b793c2963e18913bcc7a8a"
   end
 
   depends_on "certifi"

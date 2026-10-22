@@ -24,7 +24,7 @@ class Zpaq < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:      "fcee2715716cfdbac67ff81332d2cfc39eeae7ff286ff645c3740375b848e8ec"
   end
 
-  resource "test" do
+  resource "test", :test do
     url "https://mattmahoney.net/dc/calgarytest2.zpaq"
     sha256 "b110688939477bbe62263faff1ce488872c68c0352aa8e55779346f1bd1ed07e"
   end

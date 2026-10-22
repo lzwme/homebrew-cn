@@ -4,6 +4,7 @@ class Pypy311 < Formula
   url "https://downloads.python.org/pypy/pypy3.11-v8.0.1-src.tar.gz"
   sha256 "7e5f2801ee87d52fb4de096fb650bca4d5605cd8b5fe278dba5500019fa3739e"
   license "MIT"
+  revision 1
 
   livecheck do
     url "https://downloads.python.org/pypy/"
@@ -11,11 +12,11 @@ class Pypy311 < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "ca845243ea3f0e6c8ec1fd9fc2575e26c653af9a72d2d506291b3135c5bf2368"
-    sha256 cellar: :any, arm64_tahoe:       "ecfa389e41b553f51acce467a336b6b18a2d8e35122ba6c22c6a8d3deac16574"
-    sha256 cellar: :any, arm64_sequoia:     "abc52ea4fc5c308b145a11c9fe4d809298f660112db33f22148f1b0a024ce365"
-    sha256 cellar: :any, arm64_linux:       "ec6aabbf69b4000e0eaf31c9de8b9cfe8875bd85aa32c7a2c5e8637c90bafd43"
-    sha256 cellar: :any, x86_64_linux:      "f52576942c51569d7bb155bca6e8484a96c5c5922e83f0d71d203b70d589369c"
+    sha256 cellar: :any, arm64_golden_gate: "cce75bf2734107abf87bfe133df028dae987af735d6c12b501a49495c11ac231"
+    sha256 cellar: :any, arm64_tahoe:       "b5fc3e54403505caa9f3d5d827446397302e20264812a033f654b580cd20cc11"
+    sha256 cellar: :any, arm64_sequoia:     "2b7280bff3bd81f11f2354cd7c0311c7637bdde9212b5a3138bc09dc4b3fbc3c"
+    sha256 cellar: :any, arm64_linux:       "e98aed8918189dd0b4f1ccea0bf4db3c3a50f5ea068d7dd6d4ea73653c181454"
+    sha256 cellar: :any, x86_64_linux:      "55f815f81197613477b4a5979a36035283ae25c7775981ace48de0a95d464e8f"
   end
 
   # https://github.com/pypy/pypy/blob/main/pypy/doc/release-v8.0.1.rst
@@ -54,8 +55,8 @@ class Pypy311 < Formula
   end
 
   resource "pip" do
-    url "https://files.pythonhosted.org/packages/ae/15/4500e320e6b101ec3b719ae85b697d9940b6cda672bc555bd6016fc60c6f/pip-26.2.1.tar.gz"
-    sha256 "f6ad667e89a1fe78046c8f13232b247200f5258d7828f3f7883d660878e0813f"
+    url "https://files.pythonhosted.org/packages/fa/e8/0842d757e483e895e670f655084cfe8b8c72580c6769a76b30b2789a0608/pip-26.2.2.tar.gz"
+    sha256 "3a8e5c800492787f33a4114ef54444546c340df428974ebba17e0fd47e11af2f"
   end
 
   resource "setuptools" do

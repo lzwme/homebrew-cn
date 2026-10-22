@@ -2,16 +2,15 @@ class Flang < Formula
   desc "LLVM Fortran Frontend"
   homepage "https://flang.llvm.org/"
   license "Apache-2.0" => { with: "LLVM-exception" }
-  revision 1
   head "https://github.com/llvm/llvm-project.git", branch: "main"
 
   stable do
-    url "https://ghfast.top/https://github.com/llvm/llvm-project/releases/download/llvmorg-23.1.3/llvm-project-23.1.3.src.tar.xz"
-    sha256 "c44186a7762ed28954be72e5ff6df9808e0779d4f1bf014ecc4e7e211d31ee34"
+    url "https://ghfast.top/https://github.com/llvm/llvm-project/releases/download/llvmorg-23.1.4/llvm-project-23.1.4.src.tar.xz"
+    sha256 "819ecf7351f1a66f76b2d701d8942faaf5faeb324cb90c9d5b090de142434bb2"
 
     resource "llvm_man_pages" do
-      url "https://ghfast.top/https://github.com/llvm/llvm-project/releases/download/llvmorg-23.1.3/llvm_man_pages-23.1.3.tar.xz"
-      sha256 "f5e6461a6b7cb176ed243c8a93c96669c4de6ed6dfc134b18a81c5c3b8779a31"
+      url "https://ghfast.top/https://github.com/llvm/llvm-project/releases/download/llvmorg-23.1.4/llvm_man_pages-23.1.4.tar.xz"
+      sha256 "b7b4b998a49ca14faebcc292e7dd2fbb2ba71b4655001d61959e32e4bd7c5b10"
 
       livecheck do
         formula :parent
@@ -24,11 +23,11 @@ class Flang < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "d8500579706a7a47736d3843bb576db9678c6926f5927453eed62ddc900e5672"
-    sha256 cellar: :any, arm64_tahoe:       "900fae16fbfe78fcabf4271400220ed9158bca50ae5bd4ff6a2e0f3e2e5ad789"
-    sha256 cellar: :any, arm64_sequoia:     "2c69f20a64aca859379ac5739b2a69e5c0250cfdf01b870973d8629866bea12d"
-    sha256 cellar: :any, arm64_linux:       "73f08db2a97f958cedb1b90746d4e9901a6635655f040b4ac28fc274ec3a37a9"
-    sha256 cellar: :any, x86_64_linux:      "96b88f2dbcb6eb7877c648ad48f30d344bb9f45371661dadbce1d8a825611ac9"
+    sha256 cellar: :any, arm64_golden_gate: "0105e20aa70b6e3ef935caeb6ca57efebf67bba93af6a16d7a34e42e6dee43eb"
+    sha256 cellar: :any, arm64_tahoe:       "7a3eced05e8ac3d1cfd410f81df099ab2932541c88bf4270a9759192ae7a111c"
+    sha256 cellar: :any, arm64_sequoia:     "c78563fec1f4d360780be0b9d86efa948bdc5bdee1d59d38bd61cc35f0a070b2"
+    sha256 cellar: :any, arm64_linux:       "e5a1989c9672a01a0a73d4b875eb1a19e9579dd0c4b2f5ec495fd789e2365f03"
+    sha256 cellar: :any, x86_64_linux:      "57b94f31a11385f257f8a5c985fadb76a758ac05fe16f5845afceaac03a574b6"
   end
 
   depends_on "cmake" => :build

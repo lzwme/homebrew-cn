@@ -1,16 +1,16 @@
 class Seal < Formula
   desc "Easy-to-use homomorphic encryption library"
   homepage "https://github.com/microsoft/SEAL"
-  url "https://ghfast.top/https://github.com/microsoft/SEAL/archive/refs/tags/v4.7.0.tar.gz"
-  sha256 "e92a6dd668e83d592c020b233538496d754721dc9a48c7629412a81c4e136717"
+  url "https://ghfast.top/https://github.com/microsoft/SEAL/archive/refs/tags/v4.7.1.tar.gz"
+  sha256 "49dfc5eed8274c1aaa7cb7ccfea9ec448f8896ce9305db949e27d89f4f752931"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "bf94ef0aa33b544bb631b67473a5e444947acff40393edff5c5275739817df05"
-    sha256 cellar: :any, arm64_tahoe:       "ae057a459ce62f1f773e2d5489edef39ed4df7e03c80e8c409af7388aa541c81"
-    sha256 cellar: :any, arm64_sequoia:     "f94d4f4503c5f886f8079120867795ff839bff0c7ab52c7b5bfb48a9a6f9a59a"
-    sha256 cellar: :any, arm64_linux:       "7f780d03bf5118f6d521386544d617ae4b083be4a30566e59b19c9946e620316"
-    sha256 cellar: :any, x86_64_linux:      "93202b6b14325c31c06ec80a4f641e323bb519bdb7d4e4f78980e45969bc6777"
+    sha256 cellar: :any, arm64_golden_gate: "f4746248e1a760844bf12f69bd0ee196e4cf9a484791b1c9402b17a92345d88c"
+    sha256 cellar: :any, arm64_tahoe:       "a98bed98f1341203e17dff16938e36e45e1bbe385f979f9b544069aaa787e6ce"
+    sha256 cellar: :any, arm64_sequoia:     "26943293499ea5d53a7ca452f1aa9c553b016b2e5a3a9052ee14242b3f3ce686"
+    sha256 cellar: :any, arm64_linux:       "4a3bfe95683a55e6321ced5403bb5ad9a76a17ef0bccd0ca2d250fa011bf70d6"
+    sha256 cellar: :any, x86_64_linux:      "ccb5ae0868adec45b2985dda5a84eece09b60ead44f7c36899ea131a30c9b17c"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -91,7 +91,8 @@ class Seal < Formula
       # Import Microsoft SEAL
       find_package(SEAL #{version} EXACT REQUIRED
           # Providing a path so this can be built without installing Microsoft SEAL
-          PATHS ${SEALExamples_SOURCE_DIR}/../src/cmake
+          PATHS #{lib}/cmake/SEAL
+          NO_DEFAULT_PATH
       )
 
       # Link Microsoft SEAL

@@ -1,8 +1,8 @@
 class Opencode < Formula
   desc "AI coding agent, built for the terminal"
   homepage "https://opencode.ai"
-  url "https://ghfast.top/https://github.com/anomalyco/opencode/archive/refs/tags/v2.1.0.tar.gz"
-  sha256 "c2e3f3b1684c93e61efb5bf94ea3dec62f6cfaf9b4930e5103ab49b37d3b2a39"
+  url "https://ghfast.top/https://github.com/anomalyco/opencode/archive/refs/tags/v2.1.2.tar.gz"
+  sha256 "a99505d27899664c4d0778ac40b8589401fbc2256ed56389ca70ee120c5047bb"
   license "MIT"
 
   livecheck do
@@ -12,11 +12,11 @@ class Opencode < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "6051ffbe2846c3ff5521f24f35a57e7eb18c685495324431efa761fd667603be"
-    sha256 arm64_tahoe:       "f1246cccdf801556f3943978604c25fbfbd11dd7f22e9cd87647cd9c84bf02ed"
-    sha256 arm64_sequoia:     "86c45795addc3277692c1e0e6b74c979e28fbab580b2e8758ab76e359b45555b"
-    sha256 arm64_linux:       "46aa4c7f1abf3535c43a819cf47110f34ec760093824098b427429854e13db55"
-    sha256 x86_64_linux:      "8e5cae1c14cc242b65269847279ffe8c331d91e20cfef6aef50393f6d0822831"
+    sha256 arm64_golden_gate: "dfdbe7ab742d996f07384ef29e84f2fa34c655aab3be402703a3425bb560da3b"
+    sha256 arm64_tahoe:       "430424f2707c7ff5e05d891b23e3bd36a2c2cdee611ae64d40499b231378a98b"
+    sha256 arm64_sequoia:     "3c4a366e55778affffc04e7f8fcde998c9cd69cac2e74e376e88a809df9e7709"
+    sha256 arm64_linux:       "93337dc921e0b5661d9dd1ec30f11a1d80ed708320564252c546e850e742a31f"
+    sha256 x86_64_linux:      "995c1d53e9102d3bacd4c3d009c64c6c6517770f802f40967d6ce0d22c70deaa"
   end
 
   depends_on "bun" => :build

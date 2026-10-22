@@ -1,8 +1,8 @@
 class Anyzig < Formula
   desc "Universal zig executable that runs any version of zig"
   homepage "https://github.com/marler8997/anyzig"
-  url "https://ghfast.top/https://github.com/marler8997/anyzig/archive/refs/tags/v2026_10_13.tar.gz"
-  sha256 "fa87b33ea91cda5f7df7bfb74fdb4ead644b53f68a5bdf9480b7292bcb1affbe"
+  url "https://ghfast.top/https://github.com/marler8997/anyzig/archive/refs/tags/v2026_10_20.tar.gz"
+  sha256 "36ad6d7304e755347de26cba7423b4bcef8c9a35fb55e32a1c67baf2cbadd479"
   license "MIT"
 
   livecheck do
@@ -13,14 +13,12 @@ class Anyzig < Formula
     end
   end
 
-  no_autobump! because: :incompatible_version_format
-
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "59f476bf71a90d6166bb03115d81576680f174d2158ee6d04fd073afe8191448"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "b48dc89c7179364378d93e421209812f5514f4adcca340a3a88d4196dde79aa5"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "b7fc211cf8b92a6ba711060929c8f4091e9486be706dafb78037ccb02b48a6f0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "c36b277f82fbd5b97605f15f09399006c656db2df8d48790cd7dbe13e7363466"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "e0f6b8a9e59298eb131045a38d6444a3d26c735fcfc77916ae758936d8f0a5c8"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "1c2efa73f5e36b58fab5b8fc74e3883f6fe30d38da3157896f0548e0101a630f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "3dcc69817eab9f039b7ad80a62b17311342857b534ab380daa5f3e06a1617af7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "8822caedeb7b0d34db039bb4c3847e9ad8c02775613e08da2e35093cfe0eed8d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "e0e33ea195631afd98a412bf1783c525bff9fe63487412cefb9fd101e868632b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "e7c636b367dbf3c5e089ac3a3f914a26241b922049c3d14ec5ee03f0ac91a393"
   end
 
   keg_only "it conflicts with zig"

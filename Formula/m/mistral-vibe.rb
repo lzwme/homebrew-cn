@@ -3,18 +3,17 @@ class MistralVibe < Formula
 
   desc "Minimal CLI coding agent"
   homepage "https://github.com/mistralai/mistral-vibe"
-  url "https://files.pythonhosted.org/packages/36/a3/ab0ebab5586cdd56094d43b9dc1e3edb58f26aa6e9688da5d2a3ce04aa39/mistral_vibe-2.26.1.tar.gz"
-  sha256 "e92402b2a1705c66463cad9d1f33d549ea2d8fc1bb608ec228c7acaf49ef4332"
+  url "https://files.pythonhosted.org/packages/83/b1/2a33b2abc136ac33d2ee0edc413ddbbf470f5c4e8cca5ac7e35599da3bcd/mistral_vibe-3.0.0.tar.gz"
+  sha256 "49d90b1bce61ae2a2835e19bb24237958fa1323f9a2f12ce1968b9333bb3fee7"
   license "Apache-2.0"
   head "https://github.com/mistralai/mistral-vibe.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_golden_gate: "8106905937cd73a50d9c7bcb2d0e37babf3bdea937c458bf29c5755b992f796a"
-    sha256 cellar: :any, arm64_tahoe:       "05172ad5e0d9d4ef77fe21ada0dd663424560fe4784dad057f438ee89fac4f79"
-    sha256 cellar: :any, arm64_sequoia:     "a2c018028add802304b1ec632ab7c874f8dc1d3cb0218a9eb8eab839559cc428"
-    sha256 cellar: :any, arm64_linux:       "daabaf05ddac087d563c2ec410f353fe7bfe78ba17c0b818cad883d295fb2815"
-    sha256 cellar: :any, x86_64_linux:      "038c588d43447a36ddf5f84de86c4c489990afb41b59653e89188007875f6260"
+    sha256 cellar: :any, arm64_golden_gate: "149714623af8da4c2c2b8e3d0929a6ec9f35bc0590ea63411c5d20b421c0c7a5"
+    sha256 cellar: :any, arm64_tahoe:       "9cbf3a32df96f77bb58d165eba3156cfba38ce2327fab19fc3b80202d07092e0"
+    sha256 cellar: :any, arm64_sequoia:     "f7f26bb1045860bad92b217ef1435e9032a5bfb01403fac8d9da3f02700a98e7"
+    sha256 cellar: :any, arm64_linux:       "965e72baff5717524ed5f3e5fe9095bf6a5f608f09b2c905f3fe85c39408cede"
+    sha256 cellar: :any, x86_64_linux:      "d219e1cb93d29e48c35d0e0b3fd4842328f8bc64ede29ab79ebf53f7bc0cf1ee"
   end
 
   depends_on "pkgconf" => :build
@@ -150,11 +149,6 @@ class MistralVibe < Formula
   resource "jaraco-functools" do
     url "https://files.pythonhosted.org/packages/0f/27/056e0638a86749374d6f57d0b0db39f29509cce9313cf91bdc0ac4d91084/jaraco_functools-4.4.0.tar.gz"
     sha256 "da21933b0417b89515562656547a77b4931f98176eb173644c0d35032a33d6bb"
-  end
-
-  resource "jeepney" do
-    url "https://files.pythonhosted.org/packages/7b/6f/357efd7602486741aa73ffc0617fb310a29b588ed0fd69c2399acbb85b0c/jeepney-0.9.0.tar.gz"
-    sha256 "cf0e9e845622b81e4a28df94c40345400256ec608d0e55bb8a3feaa9163f5732"
   end
 
   resource "jsonpatch" do
@@ -357,19 +351,14 @@ class MistralVibe < Formula
     sha256 "edd07a4824c6b40189fb7ac9bc4c52536e9780fbbfbddf6f1e2502c31b068c36"
   end
 
-  resource "secretstorage" do
-    url "https://files.pythonhosted.org/packages/1c/03/e834bcd866f2f8a49a85eaff47340affa3bfa391ee9912a952a1faa68c7b/secretstorage-3.5.0.tar.gz"
-    sha256 "f04b8e4689cbce351744d5537bf6b1329c6fc68f91fa666f60a380edddcd11be"
-  end
-
   resource "sentry-sdk" do
     url "https://files.pythonhosted.org/packages/60/31/b7341f156a5f6f36f0b4845d6f1c28a2ae4799171dba7007f3a1e9b234b4/sentry_sdk-2.64.0.tar.gz"
     sha256 "68be2c29e14ae310f8a39e1a79916b6d85c6cb41dcce789d14ff05fe293e4c55"
   end
 
   resource "setproctitle" do
-    url "https://files.pythonhosted.org/packages/49/b0/6b8a516c5a9e9630bd5293db78314ac012f690305fe93beadea388626efb/setproctitle-1.3.8.tar.gz"
-    sha256 "cafe209d064a6efb88cb45a03e97981ff8832802b2b5d009dde0197a3b7b41c8"
+    url "https://files.pythonhosted.org/packages/8d/48/49393a96a2eef1ab418b17475fb92b8fcfad83d099e678751b05472e69de/setproctitle-1.3.7.tar.gz"
+    sha256 "bc2bc917691c1537d5b9bca1468437176809c7e11e5694ca79a9ca12345dcb9e"
   end
 
   resource "six" do

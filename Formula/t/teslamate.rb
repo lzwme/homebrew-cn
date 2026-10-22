@@ -4,13 +4,14 @@ class Teslamate < Formula
   url "https://ghfast.top/https://github.com/teslamate-org/teslamate/archive/refs/tags/v4.3.0.tar.gz"
   sha256 "b27b77ba878211f59f4c6399dcbf434063f36c9cee06d581475834804a242728"
   license "AGPL-3.0-or-later"
+  revision 1
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "5e5f641bb146a54e5f5fb719416c1ae4090941104aee08b95af14e1bbeebe205"
-    sha256 cellar: :any, arm64_tahoe:       "31baf7e293f89cfc858aad5d483f856e464226556b196a7af533b787b263d033"
-    sha256 cellar: :any, arm64_sequoia:     "204df32d836b0597d38703e7d64945f04ca5315facdd667edfac36b37e527fb2"
-    sha256 cellar: :any, arm64_linux:       "8933b9aa579e206256875d6f96baad10b99b6f3cddd6e50c36258043e8cf7751"
-    sha256 cellar: :any, x86_64_linux:      "1ab997fa20bb349fe93f06cb06d4b2a7d42abe44d7a2d6df142d389e1c4f1d4f"
+    sha256 cellar: :any, arm64_golden_gate: "812c9f84ada8c65130cec0bdc55d0bc2ea856f1af7e10b52b4df2d84a8af980c"
+    sha256 cellar: :any, arm64_tahoe:       "5680d900281148cb2a03a8bc3a49ab39f73c6daf37bfceb599e5f305510d65fb"
+    sha256 cellar: :any, arm64_sequoia:     "b91a53c3370806b034de58f018c57946113deb7dcbcd74942a786e3b67a4a2bd"
+    sha256 cellar: :any, arm64_linux:       "b08408496f111590909b6aacd8d39310ec2602f6e1d9f9c20966394b3faf3428"
+    sha256 cellar: :any, x86_64_linux:      "59050a2af964d6cf4d66ae43b1c037b6f45b38096e16c8d214c17295f39c70dc"
   end
 
   depends_on "elixir" => :build
@@ -51,6 +52,11 @@ class Teslamate < Formula
       #{bin}/teslamate eval "TeslaMate.Release.migrate"
       exec #{bin}/teslamate start
     BASH
+
+    # Use brewed ca-certificates PEM file instead of the bundled copy
+    cacerts = libexec.glob("lib/castore-*/priv/cacerts.pem").fetch(0)
+    rm cacerts
+    cacerts.make_relative_symlink Formula["openssl@4"].pkgetc/"cert.pem"
   end
 
   service do
